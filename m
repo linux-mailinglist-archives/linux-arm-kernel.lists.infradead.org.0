@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9813B1BB769
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:25:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 911A51BB787
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:30:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7EtMkDLF5Pnx1Besq5VRQmrry6/2RHU87zseuObXdrU=; b=r4VgROWqSmoszu
-	AcgYhLwaWGDD29IQl0F5mF5qwBE2HYp+vOTjgpK6v6aRMARMP3B8iS2dlaVTV8fIUckFGyAr6q7QM
-	xhfc/WDv0q0M2PbRNBc0BTrreqn9AkrpBNiNXesTLyVE22QVrfZxIFYSmE/xErTRqymuxnHDmFOg8
-	ljoXEB9Hszpq9DJEYemn79+uzgrm6VIOslgTLTVZBOd9PGGOfr9c5Y2I60bFRvQsLMIpQS0tHcvzO
-	1VgV0zYpZJfl4N3U3O2htgmHsyV17AMDCP51xENalbpAUNsqZKUW2DxMTzkdbJRmJF0A7/4+IOqT1
-	2VBvUPzfyYp3PAn5qeHg==;
+	List-Owner; bh=VJhq25mohUldYtlFqXSMWZ0Ln7HZFMvU5THXIU/IMYE=; b=XoXDffjE2i9P3s
+	kK21xB3hjJ867sjHoXS3VaRfkY15IvvHwtT5o26FcRLgxTPPIS+GQ6ThVdlIrtOF0WNKNIcoBNXLV
+	/jXUiss7CUDTHJUvIf94Iz+/zHpSK9iYenmHzG4+sltCS5ZSo562vPY9tURXcDuEgclYOxXwOEHT5
+	POsr0q5sOf7e4WwtfYCk1QZZ5jFUX/BJ4SjqD57hJ/PfF9vavK62OogY/flVtdZRFu38QiGOSX+up
+	M7XY88cJt0KjxiRhzXuygYjOUNJ+xJYuHQf/ZNXHcCdB5Px0YA5BXRcE2Zi63To+zStTUrssAMPEf
+	Hi4b0w+hamXMjiXYfayg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTKcW-0007vg-FW; Tue, 28 Apr 2020 07:25:32 +0000
+	id 1jTKhb-0003n0-Ux; Tue, 28 Apr 2020 07:30:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTKcJ-0007uK-8O
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:25:20 +0000
+ id 1jTKhQ-0003lr-8G
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:30:37 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 15A6E20661;
- Tue, 28 Apr 2020 07:25:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5F5F9206B8;
+ Tue, 28 Apr 2020 07:30:27 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588058714;
- bh=GLu5j27TIX4wZFikcdS3374+orGJgRuWeeuefdu1XMk=;
+ s=default; t=1588059028;
+ bh=lt9Ss7Lhe+IkC8Wr+elmsXdyPZ1tUoSwVIeuzTfvlPI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=PpheMqqd0u7obdLb311fFWl0BWxLCIGElMpzR1JL+EihHlxLyJdxEAwhK4VvGdvaK
- LMO3BvQ1yvDDuzCNWC/3b8XDj6TzxcjtBA7kyGe/WOQsT2l266x1XYEN3utRQjv+ld
- vuEeQRiIBnmS97jAdAO5hSbLU/lwE+4vU4tF/PT8=
-Date: Tue, 28 Apr 2020 08:25:09 +0100
+ b=c6A8DxJ/RoQ17XqK/nqiSkerPTPQmw6Q19eWiaBtJoYrWK5cf0NcSCPT0lp0iP1ni
+ LOSdbhwMjadscRqRsNMLioRlN3tPMopECuN7vC1vojtpvHXvP7uxAGVAAbRiN87SKv
+ 0jxKOQ6qU5+1Xt469H/nO5ul9F0xUTgKPWijGGTk=
+Date: Tue, 28 Apr 2020 08:30:24 +0100
 From: Will Deacon <will@kernel.org>
-To: Gavin Shan <gshan@redhat.com>
-Subject: Re: [PATCH] arm64/mm: Reject invalid NUMA option
-Message-ID: <20200428072509.GA4049@willie-the-truck>
-References: <20200424045314.16017-1-gshan@redhat.com>
- <20200424101132.GC1167@C02TD0UTHF1T.local>
- <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
- <20200427225406.7cacc796@gandalf.local.home>
- <20200427225944.185d4431@gandalf.local.home>
- <20200427230920.3d606a2e@gandalf.local.home>
- <7e85ea83-de5f-c789-2e3c-e468a50ed4bd@redhat.com>
+To: Oliver Graute <oliver.graute@kococonnector.com>
+Subject: Re: arm64: imx8qm: tlb SW workaround for IMX8QM
+Message-ID: <20200428073023.GB4049@willie-the-truck>
+References: <20200427082348.GA98329@archlinux.localdomain>
+ <20200427130328.GA101181@archlinux.localdomain>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <7e85ea83-de5f-c789-2e3c-e468a50ed4bd@redhat.com>
+In-Reply-To: <20200427130328.GA101181@archlinux.localdomain>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_002519_326498_9F6D1F2E 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20200428_003036_318621_961E669F 
+X-CRM114-Status: GOOD (  10.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -82,40 +77,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- shan.gavin@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: aisheng.dong@nxp.com, anson.huang@nxp.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, oliver.graute@gmail.com, linux-imx@nxp.com,
+ jason.hui.liu@nxp.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 02:35:20PM +1000, Gavin Shan wrote:
-> On 4/28/20 1:09 PM, Steven Rostedt wrote:
-> 
-> [...]
-> 
+On Mon, Apr 27, 2020 at 03:03:28PM +0200, Oliver Graute wrote:
+> On 27/04/20, Oliver Graute wrote:
+> > Hello,
 > > 
-> > Could this be a bug in the implementation of strncmp() in
-> > arch/arm64/lib/strncmp.S. As I don't know arm64 assembly, I have no idea
-> > what it is trying to do.
+> > is this nxp software workaround already proposed to linux community? can
+> > someone point me to the discussion if available.
 > > 
-> > But strncmp("o","off",3) returning zero *is* a bug.
-> > 
+> > https://source.codeaurora.org/external/imx/linux-imx/commit/?h=3Dimx_5.4.3_=
+> > 2.0.0&id=3D593bea4e36d8c8a4fd65ef4f07fb8144dab2de1c
 > 
-> I think it's false alarm. The patch has been in my local repo for a while.
-> I checked out 5.7.rc3 and tried passing "numa=o" to the kernel, @numa_off
-> is unchanged and its value is false. I also check the return value from
-> strncmp() as below, it's correct. Nothing is broken. I should have retested
-> before posting it. Sorry for the noise. Please ignore the crap patch :)
+> sry for the broken link. Here the right one:
+> 
+> https://source.codeaurora.org/external/imx/linux-imx/commit/?h=imx_5.4.3_2.0.0&id=593bea4e36d8c8a4fd65ef4f07fb8144dab2de1c
 
-Hmm, it's still worrying that you had that patch kicking around though, as
-it sounds like it /used/ to be broken. Would you be able to test the LTS
-kernels (5.4, 4.19, 4.14, 4.9, 4.4) to check that we're not missing a
-backport, please? Sorry to be a pain, but I'd like to get to the bottom of
-this!
+Hey, if we're trading links then it should be fixed by:
 
-Thanks,
+https://www.hobbytronics.co.uk/jumper-kit-140
+
+Unfortunately, I don't think there's a gift-wrap option for the hardware
+folks ;)
 
 Will
 
