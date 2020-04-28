@@ -2,59 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E21C1BBC26
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:15:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 040351BBC4D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:19:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2rSxNH2mMSqG1fH3IPsLY56DXEI6+KpXiRZwY8YUI1M=; b=DxdfA2W/WTkwdD
-	Lu9HeZNiC2byAJbw+FJvvBhlAAG8fU4hezO40QxUlSE88avX8FdNCQHi1pTwrGLIDEPA4GZknybqK
-	wCon48Wq/G3G32M+CzBdg/SWCZ7dXE0NHGUpk8dTxalECCK4h5kcd6/pTEIWB8cx6fu85x7u23XyW
-	AGuTiItYLr0trrpuUrsw8NvoQ44q1KOF4VLI4ksawZ4J0JDxPg1Gp68upNkvRm5/mkCb+2igLwMqr
-	BdeyzwR/+VZyYx+KcLRbrRltxNmlpSHm8hZ0YIlXh9vSzGOCj6xPfJANpYp73bGxOlcm78/+/IV0/
-	rqJ5FPVlcMW4k7YsUq5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=M4PwPQcb6WKIzTbeBX6wf5h1Nnzd5MIFY8b3WXmdenw=; b=TPIolrOzKK16ha
+	Kjntj+OBKBI8dZl2aNGsQ4Fp1ZkRhOBlWxMYURZ7lN2MLMby1rzWzsdmojpGHZViMwkv5d5lWADYt
+	9FtLQgRuFZkI9JcvH52ShxU5oNZuTC4mAe4exrjzoKZouf1GeJTYhSy0Z/Mp3MZXAW2GQPjQP2X/2
+	3GttvyVpXiE3w/LCe5Tn0FrsugSxxAsmjmm6a/hUyR9kV7MfZF8VDugcXyaQkSQmPbl8PPYhf1QHA
+	TlfR/uuBVLAZhRIgJ3aPGrOaZN+ko/wBif7ZanWQBl3cLCV7IdUeuA7zjuneaSJD5JLs0Yx6mhkcQ
+	kSjmxpW9pH6vo/slyQJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTODF-00022F-8n; Tue, 28 Apr 2020 11:15:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTOCO-0007dr-Iy
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:14:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1912130E;
- Tue, 28 Apr 2020 04:14:48 -0700 (PDT)
-Received: from [10.37.8.217] (unknown [10.37.8.217])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ED21C3F73D;
- Tue, 28 Apr 2020 04:14:46 -0700 (PDT)
-Subject: Re: arm64 vdso might miss .eh_frame
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200415092336.GK987@arm.com>
- <20200428073435.GC4049@willie-the-truck>
- <152f54d5-2fa9-bc08-d931-ed2f3675da6b@arm.com>
- <20200428111123.GA15519@C02TD0UTHF1T.local>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <d6b501ef-c587-8d5a-48ff-93188b78458a@arm.com>
-Date: Tue, 28 Apr 2020 12:15:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jTOGX-0003vY-CH; Tue, 28 Apr 2020 11:19:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTOGD-0003v1-NO
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:18:46 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 76334206D6;
+ Tue, 28 Apr 2020 11:18:44 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588072724;
+ bh=cTbH1jyXaJgV0FHofLFJaxzBEqrP3IX3dYt4iQDTkcA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=y1JLmVMQnEo2l2sL0mUfy8t81I9jhNm+SHA6QJBHCyeYNFRyV0qdt5wtiK4N6DKd4
+ EnCi+QLriR3ovNnlKrzZKRLAaRKaKEG6u3vjRB6OirRbEO3TP4d/z0Q/EVaRlohJXn
+ wl76F2SFH9YI6ZIK+q8X9ZYj28shIdD6Ivzu/CKY=
+Date: Tue, 28 Apr 2020 13:18:42 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH -next] tty: serial: bcm63xx: fix missing clk_put() in
+ bcm63xx_uart
+Message-ID: <20200428111842.GA1159152@kroah.com>
+References: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+ <4cd8f963-9292-faef-1e24-df90821274d6@suse.cz>
+ <73c4cebb-467b-e5d5-89bf-8a6fe29cf858@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200428111123.GA15519@C02TD0UTHF1T.local>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <73c4cebb-467b-e5d5-89bf-8a6fe29cf858@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_041448_678543_F0DFF544 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_041845_778340_912F5402 
+X-CRM114-Status: GOOD (  15.07  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,64 +75,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Tamas Zsoldos <tamas.zsoldos@arm.com>
+Cc: linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-serial@vger.kernel.org, Zou Wei <zou_wei@huawei.com>,
+ Jiri Slaby <jslaby@suse.cz>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On 4/28/20 12:11 PM, Mark Rutland wrote:
-> On Tue, Apr 28, 2020 at 11:54:25AM +0100, Vincenzo Frascino wrote:
->> Hi Will,
->>
->> On 4/28/20 8:34 AM, Will Deacon wrote:
->>> On Wed, Apr 15, 2020 at 10:23:36AM +0100, Szabolcs Nagy wrote:
->>>> On aarch64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
->>>> by default since gcc-8, so now the de facto platform ABI is to allow
->>>> unwinding from async signal handlers.
->>>>
->>>> However on bare metal targets (aarch64-none-elf), and on old gcc,
->>>> async and sync unwind tables are not enabled by default to avoid
->>>> runtime memory costs.
->>>>
->>>> This means if linux is built with a baremetal toolchain the vdso.so
->>>> may not have unwind tables which breaks our (undocumented) platform
->>>> ABI guarantee in userspace. So adding -fasynchronous-unwind-tables
->>>> explicitly to the vgettimeofday.o cflags would be nice (the other
->>>> objects in the vdso seem to be asm).
->>>>
->>>> There was also a report that android clang built linux vdso.so lacks
->>>> .eh_frame completely, that may be a missing --eh-frame-hdr or different
->>>> platform ABI on android, Tamas on cc may be able to verify this.
->>>
->>> Vincenzo? Looks like this is a regression caused by the move to C -- please
->>> can you take a look?
->>
->> I have already, locally, a patch that addresses the problem presented in this
->> email, based on Szabolcs comment. I did not post it yet because I was waiting
->> for Tamas' comment and address everything in one go.
+On Mon, Apr 27, 2020 at 10:29:58AM -0700, Florian Fainelli wrote:
 > 
-> Can I suggest that you post the patch as-is here, even if it's not
-> complete, so that we can all review/test in parallel?
 > 
-
-Sure, I will write a sensible comment and send it out.
-
-> If you do that and explicitly ask Tamas for specific feedback in that
-> posting, it'll be obvious to everyone what's expected and where things
-> stand.
+> On 4/26/2020 11:19 PM, Jiri Slaby wrote:
+> > On 21. 04. 20, 14:31, Zou Wei wrote:
+> >> This patch fixes below error reported by coccicheck
+> >>
+> >> drivers/tty/serial/bcm63xx_uart.c:848:2-8: ERROR: missing clk_put;
+> >> clk_get on line 842 and execution via conditional on line 846
+> >>
+> >> Fixes: ab4382d27412 ("tty: move drivers/serial/ to drivers/tty/serial/")
+> >> Reported-by: Hulk Robot <hulkci@huawei.com>
+> >> Signed-off-by: Zou Wei <zou_wei@huawei.com>
+> >> ---
+> >>  drivers/tty/serial/bcm63xx_uart.c | 4 +++-
+> >>  1 file changed, 3 insertions(+), 1 deletion(-)
+> >>
+> >> diff --git a/drivers/tty/serial/bcm63xx_uart.c b/drivers/tty/serial/bcm63xx_uart.c
+> >> index 5674da2..ed0aa5c 100644
+> >> --- a/drivers/tty/serial/bcm63xx_uart.c
+> >> +++ b/drivers/tty/serial/bcm63xx_uart.c
+> >> @@ -843,8 +843,10 @@ static int bcm_uart_probe(struct platform_device *pdev)
+> >>  	if (IS_ERR(clk) && pdev->dev.of_node)
+> >>  		clk = of_clk_get(pdev->dev.of_node, 0);
+> >>  
+> >> -	if (IS_ERR(clk))
+> >> +	if (IS_ERR(clk)) {
+> >> +		clk_put(clk);
+> > 
+> > Why would you want to put an erroneous clk?
 > 
-> Thanks,
-> Mark.
-> 
+> Doh, somehow I completely missed, you are right this does not look legit.
 
--- 
-Regards,
-Vincenzo
+Ugh, can you send a revert for this please?
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
