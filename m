@@ -2,88 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A00D51BC439
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:57:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 191761BC444
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:58:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=pyOZg+tVy7U6BAt4yFG+7aVW8uqfUvPOcV0V1G2f59s=; b=FmAQZcTVuBzpARQwDs5WR1Zv4
-	uqxHRguWE8VnH3AOO2TgJny0tHmgoZDI65w/2aaopC8YNDCiI0todNUzGxaEcHLpBMAYk8JgjE1m6
-	engx3h8d3KW7B3uN1b/bDeeofy5wsErOKrWNPmHqWNereIksaZc6HlrxKqLZJqUS8xM+ImRg1VdbD
-	fGRpIlH5pgqSrTWAdNPpIgmUK6gnAQeP9K9Z7xICYgjKWEJbkowmvFlXdJAoP7QJNUNUXKHGZ7FbX
-	Qh6+cufdBqyx8A76+0+fNv7jX56y9AkFV1nxrsvIvXQIrgHchm2Vp7Jl0WAvPATPMWMHH5bI0SGVm
-	uqfmLGhjg==;
+	 bh=Mh43IB0IfBIqiSNykD7U4YVHFkCWM+xJMjn8DUml3Lo=; b=eo5TkcNvWGzgzX3PPCK8N1MPQ
+	mV/sN0PKz1vgWnp3X45M0B3pGtNRxo70B0GqZAv24FwCsXhsNs0DSDaJYcrTDsdHj8wxlAdRJdP5h
+	91Z08mJX8Dzp/RekthgY9yZnYyaZ6MougHALmRkKa908fFG07eUazULCe1RexCzBcBFxlQS65ca1W
+	fpExFgUMxuJpF3kYFbHL1HNxRk8Td6KmrexBhnC4wSJ3Vr4p+YP1iZp/aj6XC92AHJ0AEFA0Jo4/m
+	Nlam3FXl4xEULoR5Yvsg3UCqxVWimVVrm6mZMK/jV6gaEE7M/6H/DcNTd3BqJPT5x0mHKl64+tK/K
+	0GUKD9ykA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTSc8-0003Y4-4h; Tue, 28 Apr 2020 15:57:40 +0000
-Received: from wnew2-smtp.messagingengine.com ([64.147.123.27])
+	id 1jTSd7-0004Cb-Ab; Tue, 28 Apr 2020 15:58:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTSbu-0003W3-Fm; Tue, 28 Apr 2020 15:57:28 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 59D541C2;
- Tue, 28 Apr 2020 11:57:22 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 28 Apr 2020 11:57:23 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=UeapUTooUsi8NUN5twL9bPAz6Yg
- /DJgy7xJgqDr5Y6c=; b=RLk9EM1C9TJEvZCAU5DJZ0cCSNanK5z1+QD4E7Ut9d4
- +iLj2VcNxVMWt0IJGCua/Ffy2XMG65Cr0smcaCNQ6MfefND1JC0eaQv3v6t+ene8
- vIbhO6SStety36zyW+DYBAOxRJk3ZNdbNDjUh2TVPJbvjSNnsy9x0e0xu1c2M8wf
- jc173DzSwV6rhtL7J6GPBJWzAYYYmxaq+88t2FREtl6AsvVKpYLpeb8N8g5ZpOoB
- iMh+V5KaT9jpgHvadzvQUNW494RbSEbKw9iWkBglIbr+KvkYquNwqq6F3Plrq3wJ
- Ks0h3MR/LSe0I+LjgNooNj8NJ/LvKOxkPJ1GFb+8mTg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=UeapUT
- ooUsi8NUN5twL9bPAz6Yg/DJgy7xJgqDr5Y6c=; b=hgDtuLchjXMz1TEkEUCBHw
- bUfyNf/9vo+YS+uAIhVpeb8q7R3LMXDl/lb40k0Yt35l9djrIarWIMJXKgBcn/qf
- 67PtECtSJghbPBtG/65qpIsI9X0MMxzmVRqiXYulD3S9L4yq9qeZ280l5EbUpnjD
- Y1ouItmn4dfEKTg3de42m3Ovn7cu1dN7C6Vv3Mc7vcmI/zjP7kxiLTlAwqCW2/c8
- o6wX7AjobJ5utOh6qX4GU94rb6jyg1tbHjjI7USQF8COu5oNZ9sMumCVrrV+4zZF
- SbWZ91JdnCT7dKWMkFvd/Y04TiIBeuXSDtbI/cQAYEzaXjPjej4ziGKLpI4KW8Zg
- ==
-X-ME-Sender: <xms:XlKoXlpiljCRuyEbI1P70oZLf3sZF27Th0b5wKxhdtwWIzMKTKT1lg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedriedugdelgecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:XlKoXvITVDvxYw84oLi5IlO3HLnZEoiWzIY9G9SS3fmcuVrK0M6bbQ>
- <xmx:XlKoXoQAdJX7pouiH8Y4iaruQDf4vGU9llAm7J0U8G1xj9sxbGty0Q>
- <xmx:XlKoXu_ZOxxw57ufXt3rtmZHB_MTP2GeFsXio4LbpWm4q2IasfX4Xw>
- <xmx:YVKoXoxrLRzekRuL-T3mPvgCesyROqCeLee8hFDJ57WjMcKqHEWEGOqitAg>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 124523280068;
- Tue, 28 Apr 2020 11:57:17 -0400 (EDT)
-Date: Tue, 28 Apr 2020 17:57:11 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Stefan Wahren <stefan.wahren@i2se.com>
-Subject: Re: [PATCH v2 79/91] drm/vc4: hdmi: Deal with multiple debugfs files
-Message-ID: <20200428155711.efpq6vbqcq52gjk5@gilmour.lan>
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <4cd617827cc28875ef36f3632122a83cff2ea4a7.1587742492.git-series.maxime@cerno.tech>
- <63f9e71a-1beb-7a67-ea48-dbc579fa3161@i2se.com>
+ id 1jTSch-0003xP-25
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:58:16 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1E97F20661;
+ Tue, 28 Apr 2020 15:58:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588089494;
+ bh=9TW1ekAy/plmUmvDsp58sZbU5BRtwtBDznTog9YdzDs=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vggH6IunjsexihMHuZ1LkEoFGXuw/IsSxeF2VISAqmeWQP8cRjRMT7X2QWbDImWmx
+ OkPGHCXNhAH5LR5or/+ahqXHmRVJV5D9ITw0a745tCajzLCI147NRzZ6E9/fKW6Ldi
+ W1x0zIwY+AggNwLUsuJzGxqokq3OUMBXC0Ow9y10=
+Date: Tue, 28 Apr 2020 16:58:12 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200428155808.GJ5677@sirena.org.uk>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200422154436.GJ4898@sirena.org.uk> <20200422162954.GF3585@gaia>
+ <20200428132804.GF6791@willie-the-truck>
+ <20200428151205.GH5677@sirena.org.uk>
+ <20200428151815.GB12697@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <63f9e71a-1beb-7a67-ea48-dbc579fa3161@i2se.com>
+In-Reply-To: <20200428151815.GB12697@willie-the-truck>
+X-Cookie: Eschew obfuscation.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_085726_782785_C2B270A4 
-X-CRM114-Status: GOOD (  14.59  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200428_085815_141587_58E0D64D 
+X-CRM114-Status: GOOD (  13.19  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.27 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -92,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,95 +80,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: multipart/mixed; boundary="===============3048463841235700224=="
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
+Content-Type: multipart/mixed; boundary="===============2665257472575098231=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3048463841235700224==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="6nlx63qexjyyiyf5"
+--===============2665257472575098231==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="GvznHscUikHnwW2p"
 Content-Disposition: inline
 
 
---6nlx63qexjyyiyf5
-Content-Type: text/plain; charset=iso-8859-1
+--GvznHscUikHnwW2p
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-Hi Stefan,
+On Tue, Apr 28, 2020 at 04:18:16PM +0100, Will Deacon wrote:
+> On Tue, Apr 28, 2020 at 04:12:05PM +0100, Mark Brown wrote:
 
-On Sat, Apr 25, 2020 at 11:26:31PM +0200, Stefan Wahren wrote:
-> Am 24.04.20 um 17:35 schrieb Maxime Ripard:
-> > The HDMI driver was registering a single debugfs file so far with the n=
-ame
-> > hdmi_regs.
-> >
-> > Obviously, this is not going to work anymore when will have multiple HD=
-MI
-> > controllers since we will end up trying to register two files with the =
-same
-> > name.
-> >
-> > Let's use the ID to avoid that name conflict.
->=20
-> even with this patch there is a name conflict in debugfs using Linux
-> 5.7-rc1. Dave Stevenson addressed this by using different card names
-> [1]. Since this patch won't apply anymore here is my suggestion:
->=20
-> diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdm=
-i.c
-> index 29287ab..7209397 100644
-> --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-> +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> @@ -1181,9 +1181,14 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi
-> *vc4_hdmi)
-> =A0
-> =A0=A0=A0=A0 card->dai_link =3D dai_link;
-> =A0=A0=A0=A0 card->num_links =3D 1;
-> -=A0=A0=A0 card->name =3D "vc4-hdmi";
-> =A0=A0=A0=A0 card->dev =3D dev;
-> =A0
-> +=A0=A0=A0 if (vc4_hdmi->variant->encoder_type =3D=3D VC4_ENCODER_TYPE_HD=
-MI1) {
-> +=A0=A0=A0 =A0=A0=A0 card->name =3D "vc4-hdmi1";
-> +=A0=A0=A0 } else {
-> +=A0=A0=A0 =A0=A0=A0 card->name =3D "vc4-hdmi";
-> +=A0=A0=A0 }
-> +
+> > It's probably easier for me if you just use the existing branch, I've
+> > already got a branch based on a merge down.
 
-Thinking about this some more, we don't really need VC4_ENCODER_TYPE_HDMI0 =
-and
-HDMI1, and it can all work with the same encoder type for both, so I'll drop
-them.
+> Okey doke, I'll funnel that in the direction of linux-next then. It does
+> mean that any subsequent patches for 5.8 that depend on BTI will need to
+> be based on this branch, so as long as you're ok with that then it's fine
+> by me (since I won't be able to apply patches if they refer to changes
+> introduced in the recent merge window).
 
-To address this issue though, we can add a card name string to the variant,=
- like
-I did for debugfs. Is that alright for you?
+That's not a problem, that's what I've got already and if I try to send
+everything based off -rc3 directly the series would get unmanagably
+large.  Actually unless you think it's a bad idea I think what I'll do
+is go and send out a couple of the preparatory changes (the insn updates
+and the last bit of annotation conversions) separately for that branch
+while I finalize the revisions of the main BTI kernel bit, hopefully
+that'll make the review a bit more approachable.
 
-Maxime
-
---6nlx63qexjyyiyf5
+--GvznHscUikHnwW2p
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqhSVwAKCRDj7w1vZxhR
-xXjUAP4soMkyOTFFSXXn/qMZXtJpGyIJR6qHlIruzu9KCXFNogEAqHA7EpmVcFbT
-+9FFfp7tSgB32/xDKpblWqG4wa8yaAY=
-=nBTY
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6oUo8ACgkQJNaLcl1U
+h9ANJwf/WRlo08Mn6rULa8b3pqa1bQzdRN/zAGUfNf93UHKMH2yvxQZ6GTGie8us
+Kw24VCNz5n7f6AjcO0v+vH6pAJxlD2DHraSawXDaEKZJ2YMnFSryzWFrWJr12klT
+DRRRi3+D2+GBFPflADAl2YaCfEV9D2USZGPG6OB/gkF43dmK1VIAon0ixx8WL7dw
+GtmV9U8DZlC9FrJd7gh9jbJGYiIgZ7hcMR2eyuzH5Z2gW4WPwWOkfd+pc9eBuyNl
+vbBauk5tAYnPssGMtNUG7M9gakg5U1GsRBY7E1QUJ97iMAUqiKN2Z1mharmqU6cs
+sswMEKQMo98MespYoImEM/wHQ5GqJw==
+=KIkv
 -----END PGP SIGNATURE-----
 
---6nlx63qexjyyiyf5--
+--GvznHscUikHnwW2p--
 
 
---===============3048463841235700224==
+--===============2665257472575098231==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -202,5 +158,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3048463841235700224==--
+--===============2665257472575098231==--
 
