@@ -2,90 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F90D1BBE46
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 14:52:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 224411BBE47
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 14:52:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FZnaPRt8xQ6mmWhfPvjU8mHTQYseLX9vNaYnGC0I0nU=; b=flODVXkLnMjCmr
-	4BxSP3C2qjZXGFHqqFBb4N1SpOocxTskKIjEOzoWBh6yb9eay9xOc+yLa2NaYiDiki6cyVd3ndKdi
-	LUYxzwawX3Im19EiLIgKbxQf6H1JgAP0GnXR9CRi/fe1argyJrZ9P3FD3M/DAFbvsvp1MO0GSv+Uo
-	xMfEgGxQE7F5gVt6iUTOhcGJVNV5a1/PneVyWw3NpL5VoXR3elfrJdlLzL9amA1aLK2Qy3QXtJl9g
-	aLpUx0OF3zIUgZd11o3Kp75tID6iwi8kfVAwbUPzRZfxfiQjpGjI6vWwk1BQx2Eyx7U5w83xI2O3t
-	XFGFZBIy0GbnQ0B0uowQ==;
+	List-Owner; bh=hjscg7aPjvxRHbnQwvmHht00f4GKb0doismrq8tYLgA=; b=pTHFIPLD6BAGdx
+	0qN18BHQlFHUFE+xJPGhbCpRc1bGNZBG/nE4L1JuD6h+TVH2+6AFWQABTSRpSzxEWVL01dpS03txr
+	Kvm4O13xLDTjwOM2QJGCXhX9vZC9O42urKzuOnw2fbJI2bLMGB/j/WPmXWNGYEXL/4mu8GiB9EjRZ
+	44OiNXBjCzPIxnU7JKGo6ygj5ODYdMF476oo3Q2xn2dzpbdONHVn0o6yDLRCNp+/pngUwdy4pkszF
+	yw9ArvkXObe44YpBrCz99WE/MslLo0ePJ0AYL6uExQhNgR2rHOANTBNuTpKTdIhuWHBKPfpHYfB5N
+	P9ZBgTyUpxOFHOOEk9wQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTPia-0004zS-9c; Tue, 28 Apr 2020 12:52:08 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jTPix-0005D1-Qp; Tue, 28 Apr 2020 12:52:31 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTPhJ-00042B-Ux
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 12:50:52 +0000
-Received: by mail-wm1-x342.google.com with SMTP id x25so2628101wmc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 05:50:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=8anzHF+dcSSxDMelqgrQkASv+bLpdKTF9+EFoyjXFfw=;
- b=UsN7wtHWwKfyL1O8DH1Sq3V3gztXpybUf4qG/ArSdLZDTdOJnV/OSfcBsiV7uoWAf9
- GGQAMrwsmsFiBOvUwHCbgHFSIbRaHRb0TJfq7IBYy/Fdd1pP1fvOlEaboSAqZ5Yu2m6l
- mTUQ9BwbHNFEvkVOenRDXWZmrBNeFLH0EI1h0isQbYqHuDi+llKondq+RcHPmur9IbrN
- SbS1dvkN2rJNgd2G1amWbvc8w0s+EEsjgAL+jAlHjROjuXALLTBlu15anIrLEFTTYKBQ
- ldQbNJnXQN1tjE8avdQ7tvbBoeF7W+j5O59HrEkFmFlAB34VLGVkPJFk49s8O7kjuU8w
- ZFTA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=8anzHF+dcSSxDMelqgrQkASv+bLpdKTF9+EFoyjXFfw=;
- b=cqSjok77vJve4X81xQQ9ydWmExQjTxFCKMjuXvX8HszXCC2ftrakQbb0ONuLOIdNcH
- BxHpZZ0FzM/3trs+M71Ktl+3U6ZhfM/322RIrWk3EC1hhWkiAAVFjNRnG8CA82vJ23u8
- jUJW3tIgjGvIfE+bLD6KiQJFkOe3u5jaoxNvYR7mW81xHl2FPg9bnBaNZX5IvlhJLlJx
- COY8/20pXZP+rx2n5vsX9cpTo+6pffg4mGbe00qnVpH52Kj8ok5/meOcTZs5FKTaMWFV
- gvAmHne6Co7vqJHdhoXBtl25bblkW1sxeVEP3XLv1uVAamaGQVkJhBlb7LGIauYy+eic
- 2Mgw==
-X-Gm-Message-State: AGi0PuYGoSGECiV319E2Jr8ObwASFJ/4LJ92k0Rr0F0W0m6cd4uxKu3Q
- mlXuxpnyy9z1NLgJ0z+8vVkyeQ==
-X-Google-Smtp-Source: APiQypL2YZ2MBbSoNvS5Iov1MdtpqzDWil3z2ABheuAvBMkWKWYpV0eo2905q8DEJG+ftCWJ8Pd7+A==
-X-Received: by 2002:a7b:c4c9:: with SMTP id g9mr4367301wmk.171.1588078248287; 
- Tue, 28 Apr 2020 05:50:48 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
- by smtp.gmail.com with ESMTPSA id
- q184sm3246115wma.25.2020.04.28.05.50.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 05:50:47 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: linux-media@vger.kernel.org,
-	hverkuil-cisco@xs4all.nl
-Subject: [PATCH 3/3] MAINTAINERS: update the Amlogic VDEC driver maintainer
- entry
-Date: Tue, 28 Apr 2020 14:50:36 +0200
-Message-Id: <20200428125036.9401-4-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20200428125036.9401-1-narmstrong@baylibre.com>
-References: <20200428125036.9401-1-narmstrong@baylibre.com>
+ id 1jTPhN-000453-57
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 12:50:55 +0000
+IronPort-SDR: Wr2AvDZ0L3wQnhcWWtksp+yWany70lcrwozFW6x2BS1KhXCnBBqNBvuXCmteoUR+lAe1CPOUwO
+ fmeq3jt1/Zsg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga002.fm.intel.com ([10.253.24.26])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 28 Apr 2020 05:50:52 -0700
+IronPort-SDR: SCQqSllUydQSHNN+qQ7dk5wAut5zz6fYbhReVhnikxqFFMRrSYFI7FjQSqPzVDIbL7k/3aJrl1
+ wfTwI3PK4ZWA==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,327,1583222400"; d="scan'208";a="292845050"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga002.fm.intel.com with ESMTP; 28 Apr 2020 05:50:47 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jTPhJ-003YnF-8d; Tue, 28 Apr 2020 15:50:49 +0300
+Date: Tue, 28 Apr 2020 15:50:49 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Michael Walle <michael@walle.cc>
+Subject: Re: [PATCH v3 05/16] mfd: Add support for Kontron sl28cpld
+ management controller
+Message-ID: <20200428125049.GU185537@smile.fi.intel.com>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-6-michael@walle.cc>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200423174543.17161-6-michael@walle.cc>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_055050_000657_270CA5B2 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200428_055053_929180_C95C1F1F 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,40 +74,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add myself as co-maintainer of the Amlogic VDEC driver, and add the
-missing vdec DT yaml bindings.
+On Thu, Apr 23, 2020 at 07:45:32PM +0200, Michael Walle wrote:
+> This patch adds core support for the board management controller found
+> on the SMARC-sAL28 board. It consists of the following functions:
+>  - watchdog
+>  - GPIO controller
+>  - PWM controller
+>  - fan sensor
+>  - interrupt controller
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- MAINTAINERS | 2 ++
- 1 file changed, 2 insertions(+)
+...
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index d633a131dcd7..0c183f02d7fa 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -11009,10 +11009,12 @@ F:	drivers/mtd/nand/raw/meson_*
- 
- MESON VIDEO DECODER DRIVER FOR AMLOGIC SOCS
- M:	Maxime Jourdan <mjourdan@baylibre.com>
-+M:	Neil Armstrong <narmstrong@baylibre.com>
- L:	linux-media@vger.kernel.org
- L:	linux-amlogic@lists.infradead.org
- S:	Supported
- T:	git git://linuxtv.org/media_tree.git
-+F:	Documentation/devicetree/bindings/media/amlogic,gx-vdec.yaml
- F:	drivers/staging/media/meson/vdec/
- 
- METHODE UDPU SUPPORT
+>  obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
+>  
+>  obj-$(CONFIG_SGI_MFD_IOC3)	+= ioc3.o
+> +
+> +obj-$(CONFIG_MFD_SL28CPLD)	+= sl28cpld.o
+
+Perhaps keep an order?
+
+...
+
+> +	return devm_mfd_add_devices(dev, -1, sl28cpld_devs,
+
+-1 has its own definition.
+
+> +				    ARRAY_SIZE(sl28cpld_devs), NULL,
+> +				    i2c->irq, NULL);
+> +}
+
 -- 
-2.22.0
+With Best Regards,
+Andy Shevchenko
+
 
 
 _______________________________________________
