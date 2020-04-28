@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6AD41BC5BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:50:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 733D41BC5C0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:50:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=W5o8dcBRGV5gTGJbQjF+mJZ9rZ4FtgcmuQNoSks8pZk=; b=LEY
-	b3pePUvOOHVE0cNTLahQYySR8N9CyeypXGOB9ZkvvPHOZBYEySHDjZv4Yc+HGFiL3p4J+tJnr3QPi
-	hjqi6lFk5OS2QifcN+FcrMUf3aTNmX6UYxsv4Uw3/HriLfQZzMS123rls4RyqKscjifKktSJs0k/2
-	AjgTMGNCSHUR/tJMGTZcT6ltTzPeQ2LmWifMtQ2NlkvFIJvFmfS3/bX5p/E6e0Lm92IXAQs4/jkcj
-	CWTYBoYVeD07NROOJM2WA/L1Ya0lLIFD7Plyynvucc/J3/ncEz2u8dALSYS+uEngx/lYIuw+X9yGp
-	/+7zFLP5KYIhUZm3KexLnIvlSdWsoRg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=WcEbIfTZr9kr8ImayegQP+YitskDZ5tS0XXTD9Rnuts=; b=LXA4pyy8euNxtNQyPq77QPXMRu
+	8W+rKQeFrHTzO5uJlISolbIPtvmjg6M3L8vNhX5dZ04uWnCiI2qWGTtBvYG56ICU015Zikiz2+Gb8
+	cVVbCxbLpYS9/yD9z6fS5rtaQn0o9eDQdSyHGPF46zRFLYvVvXGKBd6DxTRKDGgPmIqH1VA4MII2G
+	Z+Ado75gaBMxQ/lus/RFxMsQpzE5UYoW3hjhDldJjBvIX9+ShGnEb+WB2LHAtkd6xjuwt6QLy+jU9
+	dZN6HQtmIYsUqFEHhuLEGCcdDdmHhOs5uv0abXn+K+OMYELaeAZhcybJM5ZWOk+bTiQSohovA/6aV
+	jFTNQ4wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTTQm-0004S1-8d; Tue, 28 Apr 2020 16:50:00 +0000
+	id 1jTTRO-0007XY-8D; Tue, 28 Apr 2020 16:50:38 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTTQG-0004Ac-PG
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:49:30 +0000
+ id 1jTTQI-0004E0-3M
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:49:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAFE130E;
- Tue, 28 Apr 2020 09:49:26 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 71177C14;
+ Tue, 28 Apr 2020 09:49:28 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 02B953F305;
- Tue, 28 Apr 2020 09:49:25 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A6DD43F305;
+ Tue, 28 Apr 2020 09:49:27 -0700 (PDT)
 From: Mark Rutland <mark.rutland@arm.com>
 To: linux-arm-kernel@lists.infradead.org,
 	will@kernel.org
-Subject: [PATCHv2 0/4]  arm64: vdso: cleanups
-Date: Tue, 28 Apr 2020 17:49:17 +0100
-Message-Id: <20200428164921.41641-1-mark.rutland@arm.com>
+Subject: [PATCHv2 1/4] arm64: vdso: remove aarch32_vdso_pages[]
+Date: Tue, 28 Apr 2020 17:49:18 +0100
+Message-Id: <20200428164921.41641-2-mark.rutland@arm.com>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20200428164921.41641-1-mark.rutland@arm.com>
+References: <20200428164921.41641-1-mark.rutland@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_094928_883039_74168212 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200428_094930_199953_2194237A 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,38 +70,85 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+The aarch32_vdso_pages[] array is unnecessarily confusing. We only ever
+use the C_VECTORS and C_SIGPAGE slots, and the other slots are unused
+despite having corresponding mappings (sharing pages with the AArch64
+vDSO).
 
-While attempting to review an arm64 vdso patch, I noticed some of the existing
-code was somewhat baroque, making it harder than necessary to understand and
-extend. These patches attempt to improve this by making the code more
-consistent and avoiding unnecessary duplication.
+Let's make this clearer by using separate variables for the vectors page
+and the sigreturn page. A subsequent patch will clean up the C_* naming
+and conflation of pages with mappings.
 
-The series is based on v5.7-rc3 and can be found in my arm64/vdso-cleanup
-branch [1].
+Note that since both the vectors page and sig page are single
+pages, and the mapping is a single page long, their pages array do not
+need to be NULL-terminated (and this was not the case with the existing
+code for the sig page as it was the last entry in the aarch32_vdso_pages
+array).
 
-Since v1 [2]:
-* Drop merged patch
-* Fix broken AARCH32/AA32 naming in final two patches
+There should be no functional change as a result of this patch.
 
-I've build-tested each patch in this series with and without CONFIG_COMPAT_VDSO
-selected, atop of defconfig, using the GCC 8.1.0 kernel.org cross toolchains
-for arm64 and arm.
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/vdso.c | 19 ++++++++++++-------
+ 1 file changed, 12 insertions(+), 7 deletions(-)
 
-Thanks,
-Mark.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/vdso-cleanup
-
-Mark Rutland (4):
-  arm64: vdso: remove aarch32_vdso_pages[]
-  arm64: vdso: simplify arch_vdso_type ifdeffery
-  arm64: vdso: use consistent 'abi' nomenclature
-  arm64: vdso: use consistent 'map' nomenclature
-
- arch/arm64/kernel/vdso.c | 149 +++++++++++++++++++++--------------------------
- 1 file changed, 68 insertions(+), 81 deletions(-)
-
+diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
+index 033a48f30dbb..263bc6084c71 100644
+--- a/arch/arm64/kernel/vdso.c
++++ b/arch/arm64/kernel/vdso.c
+@@ -206,11 +206,16 @@ static int aarch32_vdso_mremap(const struct vm_special_mapping *sm,
+ #define C_SIGPAGE	1
+ #define C_PAGES		(C_SIGPAGE + 1)
+ #endif /* CONFIG_COMPAT_VDSO */
+-static struct page *aarch32_vdso_pages[C_PAGES] __ro_after_init;
++
++static struct page *aarch32_vectors_page __ro_after_init;
++#ifndef CONFIG_COMPAT_VDSO
++static struct page *aarch32_sig_page __ro_after_init;
++#endif
++
+ static struct vm_special_mapping aarch32_vdso_spec[C_PAGES] = {
+ 	{
+ 		.name	= "[vectors]", /* ABI */
+-		.pages	= &aarch32_vdso_pages[C_VECTORS],
++		.pages	= &aarch32_vectors_page,
+ 	},
+ #ifdef CONFIG_COMPAT_VDSO
+ 	{
+@@ -223,7 +228,7 @@ static struct vm_special_mapping aarch32_vdso_spec[C_PAGES] = {
+ #else
+ 	{
+ 		.name	= "[sigpage]", /* ABI */
+-		.pages	= &aarch32_vdso_pages[C_SIGPAGE],
++		.pages	= &aarch32_sig_page,
+ 	},
+ #endif /* CONFIG_COMPAT_VDSO */
+ };
+@@ -243,8 +248,8 @@ static int aarch32_alloc_kuser_vdso_page(void)
+ 
+ 	memcpy((void *)(vdso_page + 0x1000 - kuser_sz), __kuser_helper_start,
+ 	       kuser_sz);
+-	aarch32_vdso_pages[C_VECTORS] = virt_to_page(vdso_page);
+-	flush_dcache_page(aarch32_vdso_pages[C_VECTORS]);
++	aarch32_vectors_page = virt_to_page(vdso_page);
++	flush_dcache_page(aarch32_vectors_page);
+ 	return 0;
+ }
+ 
+@@ -275,8 +280,8 @@ static int __aarch32_alloc_vdso_pages(void)
+ 		return -ENOMEM;
+ 
+ 	memcpy((void *)sigpage, __aarch32_sigret_code_start, sigret_sz);
+-	aarch32_vdso_pages[C_SIGPAGE] = virt_to_page(sigpage);
+-	flush_dcache_page(aarch32_vdso_pages[C_SIGPAGE]);
++	aarch32_sig_page = virt_to_page(sigpage);
++	flush_dcache_page(aarch32_sig_page);
+ 
+ 	ret = aarch32_alloc_kuser_vdso_page();
+ 	if (ret)
 -- 
 2.11.0
 
