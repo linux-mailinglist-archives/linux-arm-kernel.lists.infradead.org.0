@@ -2,77 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD9781BBE2C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 14:50:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 750561BBE2B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 14:50:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o/Sq2TGDfOQyq2+JpB93wE3f/qk7DaXTH9Ndt+viZc4=; b=T2ImR7ma5Np2Vi
-	Tht4CqA8uSLzOwJhDZjcJ1oJ9dtjn/FqOEEOoBYwOYuy+tRImbXWnzL+Sr+Jk20G6d9j375WOj7ap
-	6Bh11b2yh/vlE8OYV5weeohdnVdbvgdBG9lZyFeFczY9GrVhx3MJHi0RchnKVYhJW/U67S1XHFTmR
-	cntFMAybnm9hfL65R3m51BajpZrcrPofhjMM9IQ8OWbj5+8plTK+M2oLH2HTFfj6Tq8xgLY5vZP76
-	hXivM/0TkNIPxeRvnX6V3CCGzFFm/ZCmdGDdKtwwCgzK78ErMmL95vnRQSGcRIaqzHueSVNccKOFS
-	GdCXFvvEm52bc0Kq+OaA==;
+	List-Owner; bh=oiNPs1mFzaMOqsYEJdmR2jj+R3evW/vd/40dJnXpWJM=; b=EYwpmSUJgOSAUK
+	RCnTTd3ZklgaOhqTaxuMUI/r+gcBJgiOBlH0eenVuXRd2MZDP7jFXbc7Pdvy/bCVrcIJQ3+Rbli9D
+	R7wBmE7j5it6TSxAAicQ4dIGvMQJWAPNGTCoAdWG2viYq7rM6ZovD1C4bBMj9j0B/ERjXW2mJ0a+u
+	bhUALimexQnL4Y3bDMm3OwWzsw7X5AgT42rJnqY8SwkkHhQC0mppdRllKJUichAU2jfunDMLVTlDP
+	L/1/RC8BBYffNb0VlLwCCQJxBG20ZXSmLe7bljTGwFN9HZbAb16g2RtxteGa3ognrBbWuoBEw/2p5
+	q12CT/Qx3EAMxs13+KVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTPhA-0001EA-As; Tue, 28 Apr 2020 12:50:40 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1jTPgW-00015K-CL; Tue, 28 Apr 2020 12:50:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTPgM-000145-Ld
+ id 1jTPgM-00014B-M2
  for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 12:49:52 +0000
-Received: by mail-lf1-x142.google.com with SMTP id f8so16794795lfe.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 05:49:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UL/TVs62faF1qHVs/iiuWvqOrsmLsKHyIOog76Ui4vY=;
- b=VVzJkCiuPUgRSo5KUL+WQU5C4r/qwXnkA0/rH3dMnEHBm1e4tgddRH1V/HnB6F5iGK
- 6ib22DEAlDbVPG7vXaKfYvHPpXUXg82m/Jl5PNK6yT1oufMeKGeZFqkHKGUG+OQes4IP
- agBRex/tDRgpxy4wUHqJpz1gj+GMHf093SEeP83nm1BXRcMi6+dHfhlG0KcAGHG5r7A/
- wTcuVPeQX1gFZ1n/iZb2/PqbErlG8zUwuEvEKct2LiiC99fi947KLNDpuypP+2ZWrz0m
- NLqhkYR/CKdvqtvHlxp7gVzsJ5fRCBYFmBwEjITSas4Z3RbVgfHXBUykZr4mT9O7fFTd
- 7M/Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UL/TVs62faF1qHVs/iiuWvqOrsmLsKHyIOog76Ui4vY=;
- b=sXRD1YfPnzE1dK3aP3lFOBf5WNHWRXKIxzQqSkhoc7HbBabaoZmhNFe1Gxz15R3SB/
- zWArTTN64dJ5a30vvczQTzNS2uUueVgHDqGJYQdrtMIoEW2JOvWQlH7cjBaiqKmMuV0t
- k66OyFD/moig1sdCFV3hHlB+l98LlhgNsAjU01PWctK9Azsj5oHBAPNafGcEEBRLEYXZ
- Op88mfmlm2lkxluEDgdYcJExa0+rQmRsfR8GdDeUxkGwCL2A4uFvKkw+p3zd5cUhx60E
- XVNeLNJBHbQ2v8sR4musbdeIvgLU5AiyauRDqxBdqJqq528g0Rlju2NuuNJk2Kf8OAm7
- evCA==
-X-Gm-Message-State: AGi0Puaag77hBManUiEseIg5Js5WB+VaM3irQ5tRhihT72auGUbYDBtA
- 5/klBwHy47SdRiWYNTTxECD3JU4HsAEN2+4LKvksYw4S
-X-Google-Smtp-Source: APiQypJYIQJ85qOD1cwJ8t3Ko6n/QlAkuFT5C5YrkLuzUTtDUSKQTsPmMdAaXkYcqBPYL//zz5+kD6YQtD4IfGvW0B4=
-X-Received: by 2002:a05:6512:685:: with SMTP id
- t5mr19029129lfe.47.1588078188674; 
- Tue, 28 Apr 2020 05:49:48 -0700 (PDT)
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 81E4E206D6;
+ Tue, 28 Apr 2020 12:49:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588078190;
+ bh=YvK8cnRJ+c26bobXQgCFS/gJ7htpo/wnKiDJsMGymFU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=NDNAv6mLz9Y0FX9pTC93BLElvbUcF3IVvoAE5/zNve1p8J3ISm4610xLxRQutrzQ+
+ dhzsb4cTw+8YDnUX8djlGR2+iBkgbIpjgxOEhwgSV2MK052QgkzLSZyqre1L/UbQuS
+ w1nvPZZLkE8JoJ8UjOeOK56nNJUSoTWJTSvZXoSU=
+Date: Tue, 28 Apr 2020 13:49:46 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 0/5] arm64: vdso: cleanups
+Message-ID: <20200428124945.GC6791@willie-the-truck>
+References: <20200414104252.16061-1-mark.rutland@arm.com>
 MIME-Version: 1.0
-References: <20200422072513.8352-1-amelie.delaunay@st.com>
-In-Reply-To: <20200422072513.8352-1-amelie.delaunay@st.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 28 Apr 2020 14:49:37 +0200
-Message-ID: <CACRpkdaG8PPA13gMXMS62Fow7De5vDaG=gZ+HAEx6yhpOH0sTw@mail.gmail.com>
-Subject: Re: [PATCH 1/1] pinctrl: stmfx: stmfx_pinconf_set doesn't require to
- get direction anymore
-To: Amelie Delaunay <amelie.delaunay@st.com>
+Content-Disposition: inline
+In-Reply-To: <20200414104252.16061-1-mark.rutland@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_054950_743827_938448AB 
-X-CRM114-Status: UNSURE (   7.88  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200428_054950_740506_783B7965 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -82,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,28 +76,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: catalin.marinas@arm.com, vincenzo.frascino@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 22, 2020 at 9:26 AM Amelie Delaunay <amelie.delaunay@st.com> wrote:
+On Tue, Apr 14, 2020 at 11:42:47AM +0100, Mark Rutland wrote:
+> While attempting to review an arm64 vdso patch, I noticed some of the existing
+> code was somewhat baroque, making it harder than necessary to understand and
+> extend. These patches attempt to improve this by making the code more
+> consistent and avoiding unnecessary duplication.
+> 
+> The first patch in the series fixes a bug in a boot time error path. This bug
+> was made obvious during the refactoring but I've moved it to the start so that
+> it can be backported more easily.
+> 
+> The series is based on v5.7-rc1 and can be found in my arm64/vdso-cleanup
+> branch [1].
+> 
+> Thanks,
+> Mark.
+> 
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=arm64/vdso-cleanup
+> 
+> Mark Rutland (5):
+>   arm64: vdso: don't free unallocated pages
+>   arm64: vdso: remove aarch32_vdso_pages[]
+>   arm64: vdso: simplify arch_vdso_type ifdeffery
+>   arm64: vdso: use consistent 'abi' nomenclature
+>   arm64: vdso: use consistent 'map' nomenclature
 
-> Pin direction is not used to set pin configuration.
->
-> Fixes: a502b343ebd0 ("pinctrl: stmfx: update pinconf settings")
-> Signed-off-by: Amelie Delaunay <amelie.delaunay@st.com>
+I tried to queue 2-5 but the compat vDSO fails to build for me:
 
-Patch applied.
 
-Yours,
-Linus Walleij
+arch/arm64/kernel/vdso.c:246:12: error: use of undeclared identifier 'VDSO_ABI_AARCH32'; did you mean 'VDSO_ABI_AA32'?
+        vdso_info[VDSO_ABI_AARCH32].dm = &aarch32_vdso_maps[AA32_MAP_VVAR];
+                  ^~~~~~~~~~~~~~~~
+                  VDSO_ABI_AA32
+arch/arm64/kernel/vdso.c:39:2: note: 'VDSO_ABI_AA32' declared here
+        VDSO_ABI_AA32,
+        ^
+arch/arm64/kernel/vdso.c:247:12: error: use of undeclared identifier 'VDSO_ABI_AARCH32'; did you mean 'VDSO_ABI_AA32'?
+        vdso_info[VDSO_ABI_AARCH32].cm = &aarch32_vdso_maps[AA32_MAP_VDSO];
+                  ^~~~~~~~~~~~~~~~
+                  VDSO_ABI_AA32
+arch/arm64/kernel/vdso.c:39:2: note: 'VDSO_ABI_AA32' declared here
+        VDSO_ABI_AA32,
+        ^
+2 errors generated.
+
+
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
