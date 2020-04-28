@@ -2,81 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 837A91BC45E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8348C1BC464
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:02:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=m/N2rn/Wcq/CIWQSiw5r1qWHr5cZLRon0J/jtww4R3o=; b=i1NFwZj909BELk
-	1npL2QqZwLvDG/4kt6OPgZA6LslZwCE1kqI6T8wiEU4uRUweIopE7seLGw1jtAPfX/dEJ++06zp9y
-	gnaTLZg4ESZy1Pe/UtJBNszlimiYG5Np4dGEUhi1VSkmopVrbSBNtw5CiVoTT8x3WGlGu1/0YZpnf
-	dm2LECi8i1nhL7m1BTyFZXvB8BVzClbm2nopYNA+iMnQAuWhEiftleeTmXbMH1pP4OzE6kZVwGIem
-	fK8nHEzjg083LB2H7liUwPp0dyyKKM+qidSBJCPkB0Cc8u6tP+UEMzvVrsCCJLefRYuSegX/2H1As
-	3OJrGMyjwyMTzbjhSv7g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yvoytCIHZW8iEJ6fnSPjsIblcfhol/YPeanXHUPdKww=; b=dzqnvyDuxJJO3H
+	lkdnDt5+6LDt6lnZZnjythrug23FOEbmAvE056OKD+rxuWR1MZBeCZZer7Wsp4Tf5hxHp3+s/o5py
+	B0cqx+UfhvnUD5u5/bYmePcBVFGcuGh2WBgHL0v+hDIbf+g8djkJxkrKoTw4iGDnfY2tTsE6s0b7j
+	o6RD5EHTU5Yo4tQKDKfAj3nDv8+Ia/+K523BLEMmJngnnmkXPTjQAIU2zp1YJ3aTzksRFCKgraiOH
+	3Ic6W7MIBlJjnWE1GcNlHmURFO/MmhJe+vdP8rzLLoa1l8qXFGuiG9kAYSLu9185iSNv7mqZ68ETp
+	Hj+gx9CNCZ/pFcw2+BMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTSfm-0007G6-QF; Tue, 28 Apr 2020 16:01:26 +0000
+	id 1jTSgM-0007fq-Kv; Tue, 28 Apr 2020 16:02:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTSfd-0007FP-Sv
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:01:19 +0000
-Received: from [192.168.1.74] (75-58-59-55.lightspeed.rlghnc.sbcglobal.net
- [75.58.59.55])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5594320575;
- Tue, 28 Apr 2020 16:01:16 +0000 (UTC)
+ id 1jTSgA-0007f7-PV
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:01:51 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AC13F20575;
+ Tue, 28 Apr 2020 16:01:46 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588089677;
- bh=SWWuqtYeFWZ3I38DWk43ah6fy3VoLbdmJTw+uLQwDoI=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=yaI41Jkq+YEXEWlPtQ1lcY8i1uGO7n5apErXelEicg+EfkI5N+z8am7E0XXlGBHEH
- xmABJW4riW9ZKJDwCUQ9qLJMMxh8iveS+Auh3Zc6HraVQHnjVolcQ4myd4WFi9mrM2
- 4izd940/7PNWJkzUZAjQWqS4zhNX3uvG3/trrxKs=
-Subject: Re: [PATCH] dmaengine: qcom_hidma: Simplify error handling path in
- hidma_probe
-To: Dan Carpenter <dan.carpenter@oracle.com>,
- Christophe JAILLET <christophe.jaillet@wanadoo.fr>
-References: <20200427111043.70218-1-christophe.jaillet@wanadoo.fr>
- <20200428125426.GE2014@kadam>
-From: Sinan Kaya <okaya@kernel.org>
-Autocrypt: addr=okaya@kernel.org; keydata=
- mQENBFrnOrUBCADGOL0kF21B6ogpOkuYvz6bUjO7NU99PKhXx1MfK/AzK+SFgxJF7dMluoF6
- uT47bU7zb7HqACH6itTgSSiJeSoq86jYoq5s4JOyaj0/18Hf3/YBah7AOuwk6LtV3EftQIhw
- 9vXqCnBwP/nID6PQ685zl3vH68yzF6FVNwbDagxUz/gMiQh7scHvVCjiqkJ+qu/36JgtTYYw
- 8lGWRcto6gr0eTF8Wd8f81wspmUHGsFdN/xPsZPKMw6/on9oOj3AidcR3P9EdLY4qQyjvcNC
- V9cL9b5I/Ud9ghPwW4QkM7uhYqQDyh3SwgEFudc+/RsDuxjVlg9CFnGhS0nPXR89SaQZABEB
- AAG0HVNpbmFuIEtheWEgPG9rYXlhQGtlcm5lbC5vcmc+iQFOBBMBCAA4FiEEYdOlMSE+a7/c
- ckrQvGF4I+4LAFcFAlztcAoCGwMFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQvGF4I+4L
- AFfidAf/VKHInxep0Z96iYkIq42432HTZUrxNzG9IWk4HN7c3vTJKv2W+b9pgvBF1SmkyQSy
- 8SJ3Zd98CO6FOHA1FigFyZahVsme+T0GsS3/OF1kjrtMktoREr8t0rK0yKpCTYVdlkHadxmR
- Qs5xLzW1RqKlrNigKHI2yhgpMwrpzS+67F1biT41227sqFzW9urEl/jqGJXaB6GV+SRKSHN+
- ubWXgE1NkmfAMeyJPKojNT7ReL6eh3BNB/Xh1vQJew+AE50EP7o36UXghoUktnx6cTkge0ZS
- qgxuhN33cCOU36pWQhPqVSlLTZQJVxuCmlaHbYWvye7bBOhmiuNKhOzb3FcgT7kBDQRa5zq1
- AQgAyRq/7JZKOyB8wRx6fHE0nb31P75kCnL3oE+smKW/sOcIQDV3C7mZKLf472MWB1xdr4Tm
- eXeL/wT0QHapLn5M5wWghC80YvjjdolHnlq9QlYVtvl1ocAC28y43tKJfklhHiwMNDJfdZbw
- 9lQ2h+7nccFWASNUu9cqZOABLvJcgLnfdDpnSzOye09VVlKr3NHgRyRZa7me/oFJCxrJlKAl
- 2hllRLt0yV08o7i14+qmvxI2EKLX9zJfJ2rGWLTVe3EJBnCsQPDzAUVYSnTtqELu2AGzvDiM
- gatRaosnzhvvEK+kCuXuCuZlRWP7pWSHqFFuYq596RRG5hNGLbmVFZrCxQARAQABiQEfBBgB
- CAAJBQJa5zq1AhsMAAoJELxheCPuCwBX2UYH/2kkMC4mImvoClrmcMsNGijcZHdDlz8NFfCI
- gSb3NHkarnA7uAg8KJuaHUwBMk3kBhv2BGPLcmAknzBIehbZ284W7u3DT9o1Y5g+LDyx8RIi
- e7pnMcC+bE2IJExCVf2p3PB1tDBBdLEYJoyFz/XpdDjZ8aVls/pIyrq+mqo5LuuhWfZzPPec
- 9EiM2eXpJw+Rz+vKjSt1YIhg46YbdZrDM2FGrt9ve3YaM5H0lzJgq/JQPKFdbd5MB0X37Qc+
- 2m/A9u9SFnOovA42DgXUyC2cSbIJdPWOK9PnzfXqF3sX9Aol2eLUmQuLpThJtq5EHu6FzJ7Y
- L+s0nPaNMKwv/Xhhm6Y=
-Message-ID: <1efa0186-7fbe-9cb5-2719-2d7192f99e27@kernel.org>
-Date: Tue, 28 Apr 2020 12:01:15 -0400
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ s=default; t=1588089710;
+ bh=+hCcSrtU4Z9NRNiGVI8Xsd43qyZ27ONKAD8GFB/miMU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ilt3xTEkYMKB4sqTEUeQ5Qt9HWHPAIk9ZUBmkp4cvxACNz+SabFBXiVl5D67vY2Ps
+ MaAXQNKjTVFGpMSTnWuxXiiGB160mdCBU9AkxqppIi9bY9vg6eg/U+dj2uXxLjq66z
+ Hv1w6WxTY0r9q0pcA8koz/oNQuQXrlcFAsnmn/es=
+Date: Tue, 28 Apr 2020 17:01:43 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200428160141.GD12697@willie-the-truck>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200422154436.GJ4898@sirena.org.uk> <20200422162954.GF3585@gaia>
+ <20200428132804.GF6791@willie-the-truck>
+ <20200428151205.GH5677@sirena.org.uk>
+ <20200428151815.GB12697@willie-the-truck>
+ <20200428155808.GJ5677@sirena.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200428125426.GE2014@kadam>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200428155808.GJ5677@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_090117_972353_85FAE2B6 
-X-CRM114-Status: GOOD (  11.75  )
+X-CRM114-CacheID: sfid-20200428_090150_845512_2A830713 
+X-CRM114-Status: GOOD (  15.04  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -105,51 +81,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org, vkoul@kernel.org,
- agross@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/28/2020 8:54 AM, Dan Carpenter wrote:
->> @@ -897,7 +897,6 @@ static int hidma_probe(struct platform_device *pdev)
->>  	if (msi)
->             ^^^
-> This test doesn't work.  It will call free hidma_free_msis() if the
-> hidma_request_msi() call fails.  We should do:
+On Tue, Apr 28, 2020 at 04:58:12PM +0100, Mark Brown wrote:
+> On Tue, Apr 28, 2020 at 04:18:16PM +0100, Will Deacon wrote:
+> > On Tue, Apr 28, 2020 at 04:12:05PM +0100, Mark Brown wrote:
 > 
-> 	if (msi) {
-> 		rc = hidma_request_msi(dmadev, pdev);
-> 		msi = false;
-> 	}
+> > > It's probably easier for me if you just use the existing branch, I've
+> > > already got a branch based on a merge down.
 > 
-> 	if (!msi) {
-> 		hidma_ll_setup_irq(dmadev->lldev, false);
-> 		rc = devm_request_irq(&pdev->dev, chirq, hidma_chirq_handler,
-> 				      0, "qcom-hidma", dmadev->lldev);
-> 		if (rc)
-> 			goto uninit;
-> 	}
+> > Okey doke, I'll funnel that in the direction of linux-next then. It does
+> > mean that any subsequent patches for 5.8 that depend on BTI will need to
+> > be based on this branch, so as long as you're ok with that then it's fine
+> > by me (since I won't be able to apply patches if they refer to changes
+> > introduced in the recent merge window).
 > 
-> 
+> That's not a problem, that's what I've got already and if I try to send
+> everything based off -rc3 directly the series would get unmanagably
+> large.  Actually unless you think it's a bad idea I think what I'll do
+> is go and send out a couple of the preparatory changes (the insn updates
+> and the last bit of annotation conversions) separately for that branch
+> while I finalize the revisions of the main BTI kernel bit, hopefully
+> that'll make the review a bit more approachable.
 
-Let me clarify how this works. MSI capability is not present on all
-platforms. Therefore, this is detected by an ACPI/DTS parameter called
-HIDMA_MSI_CAP.
+Okey doke, sounds good to me. I'm queuing stuff atm, so as long you tell
+me what I need to apply things against then we should be good.
 
-msi = hidma_test_capability(&pdev->dev, HIDMA_MSI_CAP);
-
-Therefore,
-
-1. Code will request MSI capability if it is present.
-2. Code will fallback to plain IRQ, if MSI allocation also fails.
-
-I hope this helps.
-
-We need both #1 and #2 to be supported.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
