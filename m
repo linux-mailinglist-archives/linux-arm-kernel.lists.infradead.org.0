@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F4491BBA75
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:58:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7532F1BBA8E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 12:01:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MfIFF/qBkQ2R9dzuOdYisYdcnlRcGpqbVkSBWte3W4g=; b=R0kB8qWvN2QEqK
-	dcHCD7Pw+2XjR0MckvhDqSHn/SuXzXQFaTQiosN+sVBPUTeu3Jw7r2nytq0uzlNOpfTvVImrskoLt
-	ZaTG2uVcU9zMOVyBHac5Hev0QSSfpwXmcwl2yVWWEL9MzHo1z5mbpKZewS4YbIuDt0uNx5XyxHXVH
-	+ySBux6yvKvyrTu7vXajxoJ0zmDdBplbP/RjuHHlGsbzLCCvcnfsPSsRq+r9aLmTwepqJg504mYGI
-	56Dy8oxNzmzPxygC+q/KVFpi5Q1tXJ/AjCmao7ebuMeD3EcBc3ks2zFDJ3Rrej3Yz4wlj3GjrkBB2
-	+3kQDMAsQmSQqnKBS9ww==;
+	List-Owner; bh=HwuWwQXg86b0gJF3QkBbd9DBjITixFNF11200s4DBs4=; b=oRO7VtKALfVRf8
+	Na/hrlAWEBsThmVWBaJiUp3qYHzwvJYXvnjao6MdLFMy/UMqy/6LRnqjAojBJDWcvK4ilGYM3PFio
+	PgbOoCDeOroXLCW71O2Olm6RA+Bag1uHDfhd7SH2kqjKpyrMTtjuFQDYNvjkGvb8XKfNuys5wwYtv
+	oEiURYRSvWd8M939qeNBTNEyjkiCo4IuN8tx7RlcKdj59faD/2pLori6XRAKiyo5/BO/2mx3U8he9
+	DkQWJndpYFWggvVx/Nuf0tIgYSSYAAoQQEUcGlVZKklmgqei3Vj85Hpv4fZ1f4CVNIn/6bhJeiFzh
+	PkRqg/fKhhwEPEe8Bd1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTN0U-0003HR-Ej; Tue, 28 Apr 2020 09:58:26 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
+	id 1jTN3e-0006dL-Pn; Tue, 28 Apr 2020 10:01:42 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTN0I-0003Gi-CG
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:58:15 +0000
-Received: by mail-lf1-x141.google.com with SMTP id r17so16366034lff.2
+ id 1jTN3N-0006ba-1U
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 10:01:26 +0000
+Received: by mail-lj1-x244.google.com with SMTP id u15so20819226ljd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 02:58:13 -0700 (PDT)
+ Tue, 28 Apr 2020 03:01:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=K2sBtRNx7PhSzPZ9iZVY4Qa3ve/fLU6E7fXk7zTXtP8=;
- b=mVHgFUR1ptdq+Ra8ChQLqF/rBEoIstE8ZBn5MRfdiJ14YLJ6cavaqDVU6z+YK01SxN
- 9oSCd2xltXsQOw+tPEZsGRD8GYzQGPo1Ea1wLTII2u0YadLLZY0MXG/yJ6kRCVDL3vuW
- hfAP1AZTWzl9jOEHnzzQdL9pm2ue0k344DbUvhnI0zDXPTwdaMCeezeZtKVQACEAl6S/
- 0daqPZV9EqIaH5rndilcywTc+NddK9HZCNH8sesUleOkWX8U+CSkZUJ4GcNHQEaIDvV8
- SejsV30Q/Wb93azr7u4zwHNknX/4kq9pPDrLjAqQT+bGtfLqT0VE/8dnE0NEmVwR8mBY
- sfuw==
+ :cc; bh=vLmsZ8FzUvZ2qyUD84j1b22i18dHEE70Jtvscxhc09k=;
+ b=YuSW84MJxGm4qTrO7x6FDa0tNZ2DwTGnBZcdLuuUJwmIySl3NXFo5FIxgcdvSWhhHw
+ w8f3SVhylLAGIenBWpXFofh7SIqxoYqGlwz7LQm+YJ51a177fjUJO5Xr8wTKk7PLE9Ow
+ sq0njirZjcIVJgrpYtz0SI1Xkqde9Fx+gJzIVvtihqPzC8b+RubH3I+eAsZH3kyRJCaT
+ TGV1gQgqGK9ntlhlHxoERIFjvIwg0mp1TnG9kPacdcpTqghNObPflJ8OxLxmk7azsenJ
+ 5pB5uU4FilL+JAVfPKMCSGlURLIKRawxY2bwR16A3geOEdTBD8NnehNPWlwNekdReDCw
+ g9WA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=K2sBtRNx7PhSzPZ9iZVY4Qa3ve/fLU6E7fXk7zTXtP8=;
- b=XpeONDpNUaK+hb5RN31veiCMvMvMVScwvYEurWVJ7MdCaImWHGEDJUpNnzHlDulzg2
- c8zeVfVfo3meTq6zhIYttXKqc0oH8KpZw4Y54HU+GxicV6+Ucact1a3PBl8RoSozU4rV
- vGntsYTIY18mblBAd2dogTRckJ6wJcty6Y07FFZBdhe1JiF7gr9yOUp2RenWphCAceTe
- wY2EY2ZZutHaCrGu8kxXby8MpMiHTZqu5yfl3zhqqSdOytGta814y/GhGey8sWd15zGn
- T/kb7UjWebe7bSN17fhhwtXHHZOF5DSBxeD8g+EbPavALXaWMWimTNxFPrBcUi9cXiB2
- Lgpw==
-X-Gm-Message-State: AGi0PuaAHIJh0RZSY4Ras/K/UmEP+wGK/7jfprS/ypeuF8/OwIk1BTm5
- 05Xso67WuwpxAx1IUJam0uw4dVXAsujT13sNP79q0A==
-X-Google-Smtp-Source: APiQypJgR9W6U13zcfDrGvlRdKXdtFC8wu0m0JoeHg9XV6mKnUUCD0eedTeCwViJJKUt9nBuCBxDv6Y3SnUETZJxBQs=
-X-Received: by 2002:ac2:5c4e:: with SMTP id s14mr18862973lfp.77.1588067892086; 
- Tue, 28 Apr 2020 02:58:12 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=vLmsZ8FzUvZ2qyUD84j1b22i18dHEE70Jtvscxhc09k=;
+ b=oR4LELQXCdsbeJLkhWGGoAUvxG9Q5Q6Y06IwTbc1Lp3dHDI/vZ8AgBk97wP8KmYOgT
+ UN0KqTqvic/oz82xzMNs4VOmOtnP40C9ZWe4yNEj1PW+zUVw+XZANTkVvPVGKQWWUqLr
+ srcgQxAi/966oao+X4RF9zuW1xvzKS/VpVloFLB7J3EzgRKmGYJ3iZXQrJnwZlXb5Jua
+ gS9ZZeGop9gQmvYoQlDTM1wCLLR3QEK+lDLYXAzNB01/RjI7lRkiRbHKzKugPEAjrMNy
+ 9MbzyU90PkTCVNkAAgBnpbBNDYvpejT3zHc9v6bfYsDJ4Q2mcbSoj2PRupv5tn3v2xwP
+ 2h8Q==
+X-Gm-Message-State: AGi0PuYE+OneNVCtvr3HtZDl87nwh9yIWouvy16uUHbfe4B7R6TlBwFC
+ XlzldbuUrJrGto18QUdcQbeke1xfW8H5bAiZnMKa4w==
+X-Google-Smtp-Source: APiQypILX45Ac1tiqnMnI+HFKCHUmn1qsryssGy+UbF1Sz2zs9tEQxqIByqukAumdnDai62XdgrEeXgjb4HSD+iqAwQ=
+X-Received: by 2002:a2e:2ac2:: with SMTP id q185mr8308858ljq.125.1588068083674; 
+ Tue, 28 Apr 2020 03:01:23 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200417092112.12303-1-yanaijie@huawei.com>
-In-Reply-To: <20200417092112.12303-1-yanaijie@huawei.com>
+References: <20200417183349.1283092-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200417183349.1283092-1-martin.blumenstingl@googlemail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 28 Apr 2020 11:58:01 +0200
-Message-ID: <CACRpkdb5Ozz_MKAUDoyOxdnu_NkN72vRu=ZY7j_Lb5uMAiS3SA@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: remove unused 'pwm37_pins'
-To: Jason Yan <yanaijie@huawei.com>, 
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Date: Tue, 28 Apr 2020 12:01:12 +0200
+Message-ID: <CACRpkdZ82tjcBc_kF29zUMiLLH==0zKbOd=fTRGq5-4FOiez5w@mail.gmail.com>
+Subject: Re: [PATCH RESEND v2 0/2] pinctrl-meson: two small improvements
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_025814_429619_4C14E761 
-X-CRM114-Status: UNSURE (   7.89  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200428_030125_252191_EF19A9F0 
+X-CRM114-Status: GOOD (  10.10  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,26 +90,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+Cc: Kevin Hilman <khilman@baylibre.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Hulk Robot <hulkci@huawei.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBBcHIgMTcsIDIwMjAgYXQgMTA6NTQgQU0gSmFzb24gWWFuIDx5YW5haWppZUBodWF3
-ZWkuY29tPiB3cm90ZToKCj4gRml4IHRoZSBmb2xsb3dpbmcgZ2NjIHdhcm5pbmc6Cj4KPiBkcml2
-ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAuYzoyNjM6Mjc6IHdhcm5pbmc6IOKAmHB3bTM3X3Bp
-bnPigJkgZGVmaW5lZAo+IGJ1dCBub3QgdXNlZCBbLVd1bnVzZWQtY29uc3QtdmFyaWFibGU9XQo+
-ICBzdGF0aWMgY29uc3QgdW5zaWduZWQgaW50IHB3bTM3X3BpbnNbXSA9IHsgMTEwIH07Cj4gICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgXn5+fn5+fn5+fgo+Cj4gUmVwb3J0ZWQtYnk6IEh1bGsg
-Um9ib3QgPGh1bGtjaUBodWF3ZWkuY29tPgo+IFNpZ25lZC1vZmYtYnk6IEphc29uIFlhbiA8eWFu
-YWlqaWVAaHVhd2VpLmNvbT4KCkknbSBzY2VwdGljIGFib3V0IHRoaXMuIEkgdGhpbmsgUFdNMzcg
-ZXhpc3RzIGFuZCBqdXN0IG5lZWQgdG8gYmUKcHJvcGVybHkgZGVmaW5lZC4KCk1hbmkgd2lsbCBr
-bm93IHRoZSByaWdodCBzb2x1dGlvbiB0byB0aGlzLgoKWW91cnMsCkxpbnVzIFdhbGxlaWoKCl9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1r
-ZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
-dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJu
-ZWwK
+On Fri, Apr 17, 2020 at 8:34 PM Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+
+> While playing with audio output on Meson8b I found out that the
+> vendor kernel uses a custom version of the GPIO_PULL_UP flag. I
+> suspect that we will need this for audio support on Meson8b and/or
+> Meson8m2 but I don't see it hurt other platforms.
+>
+> Also while comparing the register bits with the GPIO direction (of
+> GPIOs exported to sysfs) I sometimes had a mismatch. This also wires
+> up gpio_chip.get_direction to have sysfs and the actual registers in
+> sync.
+
+Patches applied.
+
+Yours,
+Linus Walleij
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
