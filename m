@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 467F51BC78F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 868541BC793
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:11:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9PkeKAee6zeVWjSy9zkyK1uW9nsO0lpMUBPLQyYBwGQ=; b=BFtXwdtXCoq10k
-	Jox1pRi1zxpcUXWNxYgObig1lO8hzHeEWnDKbP9t7XMIubwrqqZqcfvOPoGqZZ79MBFHfIeaJBn9X
-	ZXjyPkDzI1Vim4QEHD6VfEdfdo593i6B4pWgYzWJFiedYzBLRbD7O5YvI0nEFz3H9h2IlPL092t/w
-	hNmFlxzZPDy5rn+ScXeW1deMbL6Fpp7MU7xulu44WDA5OsRiLYVLgcA4IwwDJPTZCGqcUpbgw3I22
-	DLF+25iCKUcmPBkrYRb6erP8rDK2grt5QhncPMWfoj9MWoa2Vb+ih88xgeIh1BAlezfSFvADZiteG
-	jeem3/u9bqgQlE6Lni+A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vhdVnjntHYvpzf8CZngnUH9Gkabtn9bmiblmlh5JnMU=; b=VTzEsiCMSw3l2S
+	wobiz9fwYCpnyaGkPQGmo6pmb81r/giVBbA1bBQC7XywUU23bcWOlFW4I+WO84P0xPcDxzdgoDcGb
+	BwuTmYCRG3PVc6peUxP9HKO9gZ34/fcDlY7PVBbZAib2Wkpvw5/DgHGDdZor3WG2Ft51DtJWGDjRS
+	WuJkgT4rBA77RGMlfkZnpU+osue6EcPLwWIemygvDiD3uU/KvGBhB/9Ix7xqFx+xNfJNxAwLyp9Wa
+	G5IS2Nhkf1vqoMxMTwp8d3uIiSIEfCvImXyo5xTzKDMwuJbob7aXXhttFbDD5nf6gwZOLF/T3yOgC
+	PRrCmwP7r4nwv7j6yqvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTUge-0005d8-V7; Tue, 28 Apr 2020 18:10:28 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jTUh7-0005q9-T6; Tue, 28 Apr 2020 18:10:57 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTUgO-0005Z1-Ug
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:10:14 +0000
-Received: by mail-pg1-x544.google.com with SMTP id r4so10762357pgg.4
+ id 1jTUgP-0005cJ-J9
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:10:15 +0000
+Received: by mail-pf1-x444.google.com with SMTP id d184so11093648pfd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 11:10:12 -0700 (PDT)
+ Tue, 28 Apr 2020 11:10:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YR7svNgZLAa/GMNq00Z1PiEarel0TnzPpj7HuP93QpM=;
- b=jwGWffsD4IH6FHp9Z9ZmMHmEBsm/dQLaHbL3mMwSRiS95j4klMWLaCkN7rQjMN4Ffu
- /su/x7WQH6L/v3beF0mrj0vm9456iZulgBznPQeJfgUKZXCn3vP0dDRGM/zb71TAgYlz
- tVa4FUkgnhzNXt5j3ZpZ+iiIYUEBe+ya1E2B4=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=pzR0VAatcGCv2TaFAPhug2WYMJZ8JLRsVVUKQdZJepo=;
+ b=jdkX6l3UqUCLDCTewHorQRjMf21oxTo6rOvLVMIJNk2uIdHTHZzvqWa5kgmcPOrxUi
+ NWQEMSjo6yk0IWsdl+dHB1UVJNpsjboN+5JgTrsmDUL1lhFMxR4mEfucfx3Ejm52yNJq
+ 4AVDhISobCn3yLHKS0nzOIqhewaE+HztbgNOw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YR7svNgZLAa/GMNq00Z1PiEarel0TnzPpj7HuP93QpM=;
- b=aCfpltt6XvCerztze/JOVLcq/Zp3rH5+xA44CLx5N6IiEEw08BJtkE/n5VPPbhkZju
- kht5dXeTgvNLqQqT/IwT78bsrSxzVi24F663/x4gYhlbNxMtCL6s8c9MwtOc8xxMw9FT
- 0NcGF+OFXv6/uK+Yl2/+4d6ZE6GX1JWJCH70VhmmyyQ2nohRpbUe0fkIPtU/pnzIip5K
- SBNLZsbYolq5P8uu9/N5/WoesLhWZEvmmWGkCoNoyjragRJc4NnvpfSRAGs54/vILHr3
- wCSF8WnMuKXxF5LBsFpEXzdURdIo4kqT6U4S5YTyPb7gHeW4uj7Y5cndCCwJ3WOVU/Zq
- uNIw==
-X-Gm-Message-State: AGi0PuY/kESn67/9VOL5zvmT8f6Y2QR2QRknoJo624Red6ew8JfVT8mA
- Kdra+hfByIMWMnKziDLC2/SnFQ==
-X-Google-Smtp-Source: APiQypI9HqVyd1i7Zguj/Ug8tJ6Cif/uN5YcUFbKGqXOIuN5Gf/zPIyJZUoGWDwNsgTGF5Jv7wWhng==
-X-Received: by 2002:a63:5853:: with SMTP id i19mr27344873pgm.288.1588097411858; 
- Tue, 28 Apr 2020 11:10:11 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=pzR0VAatcGCv2TaFAPhug2WYMJZ8JLRsVVUKQdZJepo=;
+ b=GDY2/4IIsc/K+f0GwSDE0jCQbCeOfNa48YhAHvPDQWO6mz/gOA9owZvI8SnvXyaPW2
+ 8Bqk0JCqtq0CEdlvMEnO99POuMFf+N1GJtpNhYwKBEpi4EjQsln7VE+kbSMZgQckRr0H
+ OddP4utirkMo9J0Z2Dvv6cL5DtrhMy/gK/sqR95HA/7JtkH661tlf4Oo4lmNP7dHW3Dh
+ QR98uUFv48+awi3wRYVYc3gZRlwSJg3mpbkkVjbr1DiSVJVThGw7tSaY/tToQrT4LH3D
+ k2FGbktyu2SG28Nc4cG+WGCZQVOwvyBND8KOLsqWbvrnlA+8h2SunIlb5RTE8W/nAs3d
+ bPOA==
+X-Gm-Message-State: AGi0PuZtdgUsxUNTl97hNLAc/8Gtvkap4lYyIiBPwQ3HUxigtz0Q7gvu
+ PtnzfYb4jwr0VMQyC1U8+TBI4Q==
+X-Google-Smtp-Source: APiQypIbQFQdy+iWWUMbbuNFGA5jRE5oHCH/IGvzlWQeCyuF1u6U87LYpWBmIbmboyJidQzTnibkxQ==
+X-Received: by 2002:aa7:9ac9:: with SMTP id x9mr12944651pfp.304.1588097412814; 
+ Tue, 28 Apr 2020 11:10:12 -0700 (PDT)
 Received: from smtp.gmail.com ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id h197sm16260910pfe.208.2020.04.28.11.10.11
+ by smtp.gmail.com with ESMTPSA id h197sm16260910pfe.208.2020.04.28.11.10.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 11:10:11 -0700 (PDT)
+ Tue, 28 Apr 2020 11:10:12 -0700 (PDT)
 From: Stephen Boyd <swboyd@chromium.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: [PATCH v2 0/2] Minor sparse and style fixes
-Date: Tue, 28 Apr 2020 11:10:08 -0700
-Message-Id: <20200428181010.170568-1-swboyd@chromium.org>
+Subject: [PATCH v2 1/2] coresight: Include required headers in C files
+Date: Tue, 28 Apr 2020 11:10:09 -0700
+Message-Id: <20200428181010.170568-2-swboyd@chromium.org>
 X-Mailer: git-send-email 2.26.2.303.gf8c07b1a785-goog
+In-Reply-To: <20200428181010.170568-1-swboyd@chromium.org>
+References: <20200428181010.170568-1-swboyd@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_111013_039814_8CC66460 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200428_111013_651914_BE2C19AD 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -93,45 +94,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Douglas Anderson <dianders@chromium.org>,
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
  Mike Leach <mike.leach@linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
+ linux-arm-kernel@lists.infradead.org, Douglas Anderson <dianders@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I got a report that kcalloc() didn't exist in coresight-cti-platform.c
-on arm builds and that looked like we didn't include very many headers
-to get prototypes of functions like kcalloc(), etc. The first patch fixes
-this problem by including the headers and then the rest of these
-patches fix minor sparse and style issues that I saw while looking
-through the coresight directory.
+We should include headers that C files use in the C files that use them
+and avoid relying on implicit includes as much as possible. This helps
+avoid compiler errors in the future about missing declarations when
+header files change includes in the future.
 
-Pathes based on linux-next.
-
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com> 
-Cc: Mike Leach <mike.leach@linaro.org>
 Cc: Douglas Anderson <dianders@chromium.org>
-
-Changes from v1:
- * Dropped patches that were applied
- * Added more includes to cti.c and priv.h
-
-Stephen Boyd (2):
-  coresight: Include required headers in C files
-  coresight: Avoid casting void pointers
-
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+Cc: Mike Leach <mike.leach@linaro.org>
+Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+---
  .../hwtracing/coresight/coresight-cti-platform.c    |  8 +++++++-
  drivers/hwtracing/coresight/coresight-cti-sysfs.c   |  7 +++++++
  drivers/hwtracing/coresight/coresight-cti.c         | 13 +++++++++++++
  drivers/hwtracing/coresight/coresight-cti.h         |  8 +++++++-
- drivers/hwtracing/coresight/coresight-priv.h        |  9 ++++++---
- 5 files changed, 40 insertions(+), 5 deletions(-)
+ 4 files changed, 34 insertions(+), 2 deletions(-)
 
-
-base-commit: 62eb0c79662ccb3c09c3724d0d4df2501cb8277c
+diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
+index c6c0c9b4827e..ab3bd4ed0910 100644
+--- a/drivers/hwtracing/coresight/coresight-cti-platform.c
++++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
+@@ -2,11 +2,17 @@
+ /*
+  * Copyright (c) 2019, The Linaro Limited. All rights reserved.
+  */
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/err.h>
++#include <linux/of.h>
++#include <linux/property.h>
++#include <linux/slab.h>
+ 
+ #include <dt-bindings/arm/coresight-cti-dt.h>
+-#include <linux/of.h>
+ 
+ #include "coresight-cti.h"
++#include "coresight-priv.h"
+ 
+ /* Number of CTI signals in the v8 architecturally defined connection */
+ #define NR_V8PE_IN_SIGS		2
+diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+index aeea39cbd161..77e14e770806 100644
+--- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
++++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+@@ -4,7 +4,14 @@
+  * Author: Mike Leach <mike.leach@linaro.org>
+  */
+ 
++#include <linux/atomic.h>
+ #include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/slab.h>
++#include <linux/spinlock.h>
++#include <linux/sysfs.h>
+ 
+ #include "coresight-cti.h"
+ 
+diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+index 7fc1fc8d7738..be61c1705916 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.c
++++ b/drivers/hwtracing/coresight/coresight-cti.c
+@@ -4,7 +4,20 @@
+  * Author: Mike Leach <mike.leach@linaro.org>
+  */
+ 
++#include <linux/amba/bus.h>
++#include <linux/atomic.h>
++#include <linux/bits.h>
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/io.h>
++#include <linux/kernel.h>
++#include <linux/list.h>
++#include <linux/mutex.h>
++#include <linux/pm_runtime.h>
+ #include <linux/property.h>
++#include <linux/spinlock.h>
++
++#include "coresight-priv.h"
+ #include "coresight-cti.h"
+ 
+ /**
+diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
+index 004df3ab9dd0..acf7b545e6b9 100644
+--- a/drivers/hwtracing/coresight/coresight-cti.h
++++ b/drivers/hwtracing/coresight/coresight-cti.h
+@@ -7,8 +7,14 @@
+ #ifndef _CORESIGHT_CORESIGHT_CTI_H
+ #define _CORESIGHT_CORESIGHT_CTI_H
+ 
+-#include <asm/local.h>
++#include <linux/coresight.h>
++#include <linux/device.h>
++#include <linux/fwnode.h>
++#include <linux/list.h>
+ #include <linux/spinlock.h>
++#include <linux/sysfs.h>
++#include <linux/types.h>
++
+ #include "coresight-priv.h"
+ 
+ /*
 -- 
 Sent by a computer, using git, on the internet
 
