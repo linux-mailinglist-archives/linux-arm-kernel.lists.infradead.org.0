@@ -2,62 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2D8B1BB377
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:34:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B57411BB3A2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:55:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KXnazHmC+WCyJ6PNxArszni8IvSLGJL2r2FSSHZH1vc=; b=WaoYAkqaPSyXK6
-	ujJKkfG96S1heAxcc3lueYvbbtGOEhpi8IkaDkbcbtzZrZBZYHS5bm+wu7+pVugjFUKjzCCuvjPh3
-	+teybIXgPkkX6SKEqTT3mdt+6NmN1iYbi/8F/9/Wx7E8GtDH+Id7sHsbOkv3CVFfkgX+xEJZmSplI
-	LOpXTlaJ5Pzde5EBRgFeQUi+TJsvH6PFTHMM92DJR+obkI12Dr1dfKyXDrD6KyldBoevB2PzUBWhW
-	fvfVUftdhi7gWixz+cSWdvHotQqIpS6oy3LabhuQ9dPKRu6fh+VvWY3fDsaN8FDyAulHP0wuiEGk+
-	rge1tDRiGrIrCIEX4d5A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=OSpD3GKqoKFnRAImhVeGJQKbefvvSxXV+CxK31xx+o0=; b=C2tHjHOtO1wTPd
+	gST2KqPMkbAD3qQfyyEEnBmSg92qc+JR4RmYkgEPxtquKIKUQk3w/o5bDS3JpAEQECnRXuPSPIL7b
+	UEVemGg/l4O/Kz6suUy0ko5XP+i3m0BaW63GIzeEaswpc/dmAdzJ0Deiy4NeNrCar9fDauRDD/wZq
+	VnWHcAOQHqBh4sgdbSPPqBYRv9myCM9ypvoM2zt5yiv5pt8k62fD1c9223pw23mOKJ0IUtSNLROo+
+	p9ywghFJo4qsQdttxSniy8Wx1xUslCygr56w+6grcGtOOU6wTJjiFGX4xLRWI6XtvDE+P1WfAbKrJ
+	KfGOR49W5j7QEFlTvt1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTF8i-0008Ad-Sw; Tue, 28 Apr 2020 01:34:24 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jTFSV-0004hF-QF; Tue, 28 Apr 2020 01:54:51 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTF8a-00089h-Gm; Tue, 28 Apr 2020 01:34:18 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id D0A9999B00C42AE7E8BD;
- Tue, 28 Apr 2020 09:34:09 +0800 (CST)
-Received: from [10.65.58.147] (10.65.58.147) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0;
- Tue, 28 Apr 2020 09:34:07 +0800
-Subject: Re: [PATCH v4 05/16] mtd: spi-nor: default to address width of 3 for
- configurable widths
-To: Pratyush Yadav <me@yadavpratyush.com>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <20200424184410.8578-6-p.yadav@ti.com>
- <6b6384ad-d37a-eea6-af29-322e83924912@hisilicon.com>
- <20200427172336.ihezwq3wn75m7k3l@yadavpratyush.com>
-From: Yicong Yang <yangyicong@hisilicon.com>
-Message-ID: <f6a593ab-8685-18e0-04c8-25edd1cab11a@hisilicon.com>
-Date: Tue, 28 Apr 2020 09:34:46 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.7.1
+ id 1jTFSN-0004gG-3u
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 01:54:44 +0000
+Received: by mail-io1-xd44.google.com with SMTP id b12so21117436ion.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 18:54:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=Dn5FsFHXDoP63PfOK+hSyyadWEoDt1vFl68jXDW6Zcs=;
+ b=DIysdPazFDSPjWrk9J98X+PHbjtukRlthArlsiKuuAdwBzWfCicMgBuJ0xfyvX7NQA
+ OWgWZ8KUgpqJQgeK8x61TqtaPo+WcfYOyCM+yzAW3UUIRconylO19z25qm6WYlx0mmM1
+ sbTETGjjaQ0hsRQFPAGzSo/6+tDT7W0hc+/uk=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=Dn5FsFHXDoP63PfOK+hSyyadWEoDt1vFl68jXDW6Zcs=;
+ b=TpLn1p0pahp0D+IuTaLcFfTS/Z6KNL2oveG7jNoNGlVEidqGklq17F8J0C6G8C4D3x
+ zJ3QG3cmKJ1D7tgvG7LEt679CLE5+iNvQRg1OIkQs5ViQCz8v3mcpwOXWO3t5bXfmoBu
+ dvjDzNQIwr55tPXS3ZJA5kfpnn8ytAyCn8PYqO24e4OJzlVta34IdhTtHwQ1lZhpSMq+
+ 52OqCabFJhP4RIl1vYI3MxNIT7Cc09iRoNBJxynzG3S+bvSzqR5W1vxRuwk5pGuTt7bj
+ 3YIf05RWjgBnGSv19iBUjU0OsiLU+0Nw06gMYNXc1rBc3zQEJyAyBZHYWhp/icj8FGhb
+ V8iw==
+X-Gm-Message-State: AGi0PuZejPEtQp3Dp/OUm2HnYYYJShiILohryDDaeiyJb6F+YMJtNMk5
+ Q1TZ4B9/buLVnOemw3w236XyXgl1aY8JaS1O
+X-Google-Smtp-Source: APiQypJeUgm0Aq5+hefPlTGR7S3zgwR0gCZyg0ApiBVHAJKTMCerc43uBNkCRBVA/ndw8h0krrrfQA==
+X-Received: by 2002:a5e:9806:: with SMTP id s6mr24105060ioj.59.1588038880736; 
+ Mon, 27 Apr 2020 18:54:40 -0700 (PDT)
+Received: from mail-io1-f43.google.com (mail-io1-f43.google.com.
+ [209.85.166.43])
+ by smtp.gmail.com with ESMTPSA id j20sm5943302ile.41.2020.04.27.18.54.39
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
+Received: by mail-io1-f43.google.com with SMTP id y26so11272174ioj.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
+X-Received: by 2002:a6b:9088:: with SMTP id
+ s130mr23613954iod.122.1588038879127; 
+ Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200427172336.ihezwq3wn75m7k3l@yadavpratyush.com>
-X-Originating-IP: [10.65.58.147]
-X-CFilter-Loop: Reflected
+References: <20200420060834.44461-1-amistry@google.com>
+ <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
+In-Reply-To: <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
+From: "Anand K. Mistry" <amistry@chromium.org>
+Date: Tue, 28 Apr 2020 11:54:28 +1000
+X-Gmail-Original-Message-ID: <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
+Message-ID: <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
+Subject: Re: [PATCH] drm/mediatek: stop iterating dma addresses when
+ sg_dma_len() == 0
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_183416_722693_0F7ADA5B 
-X-CRM114-Status: GOOD (  19.34  )
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200427_185443_160636_BC8811BE 
+X-CRM114-Status: GOOD (  17.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,90 +104,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Mark Brown <broonie@kernel.org>, linux-mtd@lists.infradead.org,
- Miquel Raynal <miquel.raynal@bootlin.com>, linux-spi@vger.kernel.org,
- Pratyush Yadav <p.yadav@ti.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Matthias Brugger <matthias.bgg@gmail.com>, CK Hu <ck.hu@mediatek.com>,
+ "moderated list:ARM/Mediatek SoC support"
+ <linux-mediatek@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pratyush,
-
-
-On 2020/4/28 1:23, Pratyush Yadav wrote:
-> Hi Yicong,
->
-> On 26/04/20 11:53AM, Yicong Yang wrote:
->> On 2020/4/25 2:43, Pratyush Yadav wrote:
->>> JESD216D.01 says that when the address width can be 3 or 4, it defaults
->>> to 3 and enters 4-byte mode when given the appropriate command. So, when
->>> we see a configurable width, default to 3 and let flash that default to
->>> 4 change it in a post-bfpt fixup.
->>>
->>> This fixes SMPT parsing for flashes with configurable address width. If
->>> the SMPT descriptor advertises variable address width, we use
->>> nor->addr_width as the address width. But since it was not set to any
->>> value from the SFDP table, the read command uses an address width of 0,
->>> resulting in an incorrect read being issued.
->>>
->>> Signed-off-by: Pratyush Yadav <p.yadav@ti.com>
->>> ---
->>>  drivers/mtd/spi-nor/sfdp.c | 1 +
->>>  1 file changed, 1 insertion(+)
->>>
->>> diff --git a/drivers/mtd/spi-nor/sfdp.c b/drivers/mtd/spi-nor/sfdp.c
->>> index f917631c8110..5cecc4ba2141 100644
->>> --- a/drivers/mtd/spi-nor/sfdp.c
->>> +++ b/drivers/mtd/spi-nor/sfdp.c
->>> @@ -460,6 +460,7 @@ static int spi_nor_parse_bfpt(struct spi_nor *nor,
->>>  	/* Number of address bytes. */
->>>  	switch (bfpt.dwords[BFPT_DWORD(1)] & BFPT_DWORD1_ADDRESS_BYTES_MASK) {
->>>  	case BFPT_DWORD1_ADDRESS_BYTES_3_ONLY:
->>> +	case BFPT_DWORD1_ADDRESS_BYTES_3_OR_4:
->>>  		nor->addr_width = 3;
->>>  		break;
->> Should we also assign address width to 3 in default condition. At least we should not
->> leave it uninitialized here.
-> The default condition would be taken when this field is 3. The value 3 
-> is reserved, and so no current device should use this value. That said, 
-> I don't see any downsides of doing so. If the value 3 means something 
-> else in later revisions of the standard, this code would need to change 
-> anyway. If not, we would use a relatively sane default for devices with 
-> a faulty BFPT.
-
-The purpose is to set one possible value which may be used later in parsing smpt.
-In current driver, if we do nothing with the post-bfpt fixup, then the width will
-be unset. Otherwise, maybe the width can also be set in spi_nor_smpt_addr_width()
-
-    default:
-   +    if (!nor->addr_width)
-   +        nor->addr_width = 3;
-        return nor->addr_width;
-
-But set when parsing bfpt seems more reasonable.
-
-> I haven't received any comments on my series so far. If end up having to
-> re-roll it, I will add this change. Otherwise, I'm not sure if it is a 
-> good idea to re-roll a 16-patch series for a one liner that isn't fixing 
-> some major bug. In that case, maybe you can send an independent patch 
-> that does this after mine is merged?
-
-Fine. :)
-
-Regards,
-Yicong
-
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gU3VuLCAyNiBBcHIgMjAyMCBhdCAxODowNCwgQ2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1
+QGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gSGksIEFuYW5kOgo+Cj4gQW5hbmQgSyBNaXN0cnkgPGFt
+aXN0cnlAY2hyb21pdW0ub3JnPiDmlrwgMjAyMOW5tDTmnIgyMOaXpSDpgLHkuIAg5LiL5Y2IMjow
+OeWvq+mBk++8mgo+ID4KPiA+IElmIGRtYV9tYXBfc2coKSBtZXJnZXMgcGFnZXMgd2hlbiBjcmVh
+dGluZyB0aGUgbWFwcGluZywgb25seSB0aGUgZmlyc3QKPiA+IGVudHJpZXMgd2lsbCBoYXZlIGEg
+dmFsaWQgc2dfZG1hX2FkZHJlc3MoKSBhbmQgc2dfZG1hX2xlbigpLCBmb2xsb3dlZCBieQo+ID4g
+ZW50cmllcyB3aXRoIHNnX2RtYV9sZW4oKSA9PSAwLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IEFu
+YW5kIEsgTWlzdHJ5IDxhbWlzdHJ5QGdvb2dsZS5jb20+Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL2dw
+dS9kcm0vbWVkaWF0ZWsvbXRrX2RybV9nZW0uYyB8IDMgKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQs
+IDMgaW5zZXJ0aW9ucygrKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vbWVk
+aWF0ZWsvbXRrX2RybV9nZW0uYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2dl
+bS5jCj4gPiBpbmRleCBiMDRhM2MyYjExMWUwOS4uZjhmZDhiOThjMzBlM2QgMTAwNjQ0Cj4gPiAt
+LS0gYS9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RybV9nZW0uYwo+ID4gKysrIGIvZHJp
+dmVycy9ncHUvZHJtL21lZGlhdGVrL210a19kcm1fZ2VtLmMKPiA+IEBAIC0yMjQsNiArMjI0LDkg
+QEAgc3RydWN0IGRybV9nZW1fb2JqZWN0ICptdGtfZ2VtX3ByaW1lX2ltcG9ydF9zZ190YWJsZShz
+dHJ1Y3QgZHJtX2RldmljZSAqZGV2LAo+ID4KPiA+ICAgICAgICAgZXhwZWN0ZWQgPSBzZ19kbWFf
+YWRkcmVzcyhzZy0+c2dsKTsKPiA+ICAgICAgICAgZm9yX2VhY2hfc2coc2ctPnNnbCwgcywgc2ct
+Pm5lbnRzLCBpKSB7Cj4gPiArICAgICAgICAgICAgICAgaWYgKCFzZ19kbWFfbGVuKHMpKQo+ID4g
+KyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4KPiBJIHRoaW5rIHRoaXMgc2hvdWxkIGJl
+ICdjb250aW51ZScKCnNjYXR0ZXJsaXN0LmggaGFzIHRoZSBjb21tZW50OgovKgogKiBUaGVzZSBt
+YWNyb3Mgc2hvdWxkIGJlIHVzZWQgYWZ0ZXIgYSBkbWFfbWFwX3NnIGNhbGwgaGFzIGJlZW4gZG9u
+ZQogKiB0byBnZXQgYnVzIGFkZHJlc3NlcyBvZiBlYWNoIG9mIHRoZSBTRyBlbnRyaWVzIGFuZCB0
+aGVpciBsZW5ndGhzLgogKiBZb3Ugc2hvdWxkIG9ubHkgd29yayB3aXRoIHRoZSBudW1iZXIgb2Yg
+c2cgZW50cmllcyBkbWFfbWFwX3NnCiAqIHJldHVybnMsIG9yIGFsdGVybmF0aXZlbHkgc3RvcCBv
+biB0aGUgZmlyc3Qgc2dfZG1hX2xlbihzZykgd2hpY2gKICogaXMgMC4KICovCgpTbyBicmVha2lu
+ZyBvbiB0aGUgZmlyc3Qgc2dfZG1hX2xlbihzZykgPT0gMCBhcHBlYXJzIHRvIGJlIChvbmUgb2Yp
+CnRoZSBkb2N1bWVudGVkIGFwcHJvYWNoLgoKPgo+IFJlZ2FyZHMsCj4gQ2h1bi1LdWFuZy4KPgo+
+ID4gKwo+ID4gICAgICAgICAgICAgICAgIGlmIChzZ19kbWFfYWRkcmVzcyhzKSAhPSBleHBlY3Rl
+ZCkgewo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJzZ190YWJsZSBpcyBu
+b3QgY29udGlndW91cyIpOwo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgcmV0ID0gLUVJTlZB
+TDsKPiA+IC0tCj4gPiAyLjI2LjEuMzAxLmc1NWJjM2ViN2NiOS1nb29nCj4gPgo+ID4KPiA+IF9f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiBMaW51eC1t
+ZWRpYXRlayBtYWlsaW5nIGxpc3QKPiA+IExpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5v
+cmcKPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
+bWVkaWF0ZWsKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
+cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
+bnV4LWFybS1rZXJuZWwK
