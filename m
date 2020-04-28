@@ -2,72 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00BDF1BBF9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:33:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A187A1BBFA2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:34:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e5tJ+dNzzDGm++Ykp5R0M12lXIE901ICmmWHmY9v8yA=; b=Q/73yTyIDZiyVC
-	bi31C/E6YDLbLIwv+BuO1V6ME3KGc5QZrfjZ37kptZLnKwKB/be6IvLGJH1KnaMiNSgN9VK+LT/0y
-	TjOaaBHPu7jivDaet7l4xq3zzCW9uZUJtfctsBghGTAuq/8GB2/yqBwKFrYy4e+JSurFA+bCm2/tc
-	8+HQVlWUgMUEfic2hT0bX8ycPzU5+ia4BAKhH5/PX3sx2Q0FfH4B9u//clS0GUvbSJGo7TsOD83fz
-	5cAvZ7VUOSbKlcQXQ+TCC/lwBR+Ol/H01ATUxhiPp1t6Oqglj0hPygi4HfXRwJsBeJkx61G4uVLwR
-	t8jowyaAfO/83n8uQIfA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7IKTEun8NuMQSneg3qMqKQDzGm7GDWmncawp1zCa+MU=; b=nNndd96WATQdZp
+	HEjCx8syb7EUgRBXfUAq6m2O5e89oiEFP2bTeCwTWAdA4bx9+G0MUubbQ3vHCBqYX5hRg2aKYPgNH
+	N2AfwnCmgy4eSlNMrULAmOBKJbaFuW7sxfBT1Jx7Zi+2QQvwgDo/q0lhPmE2IesFyXF21AjiYNa94
+	+/6ejd4NnM2+YWWUWx72Zc0J17PUp0E/rlaJo2WcO2J+rzx/kCNMc/dDmVizMdFrTRyfuc5F2iQyy
+	NU5ypnOWCdb0SA9+NowiMi4ggHcrZBzn0TgLlxF1A4SgcYUX8ukO4wilSeKPgEKZk2PruRlB+X8H9
+	dOuPJQ3GqjHzAYL/fqrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTQMi-0000Va-0t; Tue, 28 Apr 2020 13:33:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTQMW-0000Us-1d
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:33:25 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A0A56206D6;
- Tue, 28 Apr 2020 13:33:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588080803;
- bh=nFJRU5OEWSiAQ4Q9k4LEUQLiG7tjQtjzOxXRZzu/Pww=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=x6GTKodN5o7FQM8UV6klZ4W7r3stqkmrQveQ52Z2SjUOS+4dHtcTKpCHQmY8akcs1
- WrnR1hQNcmLLDX1Ltvfx274Wx5WxcUVnS+UX59h0IMAzJYX2FljpsM4VRxEkBcTHY2
- OFEULwHPFvERIIPg+JGVaznXva/c1Z0/bPNugdr8=
-Date: Tue, 28 Apr 2020 14:33:19 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH 2/3] arm64: insn: Add constants for PAC and BTI
- instruction decode
-Message-ID: <20200428133318.GH6791@willie-the-truck>
-References: <20200324194822.15682-1-broonie@kernel.org>
- <20200324194822.15682-3-broonie@kernel.org>
- <20200428114353.GG5677@sirena.org.uk>
+	id 1jTQNe-0000uq-Ur; Tue, 28 Apr 2020 13:34:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTQNT-0000s4-50
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:34:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5208931B;
+ Tue, 28 Apr 2020 06:34:21 -0700 (PDT)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6CC873F68F;
+ Tue, 28 Apr 2020 06:34:20 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: vdso: Add -fasynchronous-unwind-tables to cflags
+Date: Tue, 28 Apr 2020 14:34:11 +0100
+Message-Id: <20200428133411.44092-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.25.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200428114353.GG5677@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_063324_107786_40728657 
-X-CRM114-Status: GOOD (  10.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_063423_232858_CAF4D983 
+X-CRM114-Status: GOOD (  12.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,30 +60,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: tamas.zsoldos@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 12:43:53PM +0100, Mark Brown wrote:
-> On Tue, Mar 24, 2020 at 07:48:21PM +0000, Mark Brown wrote:
-> 
-> > +	AARCH64_INSN_HINT_BTI   = 0x40 << 5,
-> > +	AARCH64_INSN_HINT_BTIC  = 0x42 << 5,
-> > +	AARCH64_INSN_HINT_BTIJ  = 0x44 << 5,
-> > +	AARCH64_INSN_HINT_BTIJC = 0x4C << 5,
-> 
-> These constants are wrong (I checked the others, they're fine) - I'll
-> send out a fixed version as part of the next version of the BTI kernel
-> patches since they will depend on these.
+On arm64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
+by default since gcc-8, so now the de facto platform ABI is to allow
+unwinding from async signal handlers.
 
-Ok, I'll ignore this series then.
+However on bare metal targets (aarch64-none-elf), and on old gcc,
+async and sync unwind tables are not enabled by default to avoid
+runtime memory costs.
 
-Will
+This means if linux is built with a baremetal toolchain the vdso.so
+may not have unwind tables which breaks the gcc platform ABI guarantee
+in userspace.
+
+Add -fasynchronous-unwind-tables explicitly to the vgettimeofday.o
+cflags to address the ABI change.
+
+Cc: Will Deacon <will@kernel.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+---
+ arch/arm64/kernel/vdso/Makefile | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index 331290a0cead..b388ce4c6d5f 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -33,7 +33,8 @@ KCOV_INSTRUMENT			:= n
+ CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny
+ 
+ ifneq ($(c-gettimeofday-y),)
+-  CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
++  CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y) \
++				-fasynchronous-unwind-tables
+ endif
+ 
+ # Clang versions less than 8 do not support -mcmodel=tiny
+-- 
+2.25.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
