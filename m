@@ -2,92 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D31E01BB4BF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 05:36:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 985CE1BB4D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 05:51:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Lu8+xNlX3r5KIA4InA1mzyyEo+83kTreI5nB5FJKPnI=; b=r+HkkuLiFbQ1FE
-	VntK9+rI/M5ZWtBfpJzLMqyUVlkpQ09YLUVZ4QWHjZfmaXnlQb837zYGFAHbV2wNNuu9zHOSFaPFs
-	xS7k8tIiZXnCVAMZbyrlEJ5UtkJIrMLuDGrToQcMsgOXoyjy4qZeQmFE6WtN5/qCmPg5YA/V6bJLE
-	0m4mYBHwaNl3eAA8B3o35WH3+L63idAcIQsxj8B0dOUeM9HISnPQEuafmWlTyaFSaQm/5tjxpkfJO
-	Wg+hKbSfuQIG6nNqGmV0UwqwAtcv2Wo3BWQs6lKuF7l/3hyY0y27EC4jUwogZaVH3LM3WKf2EhcZI
-	p27VrCvvFfEml0tlrx7w==;
+	List-Owner; bh=K7DHwJqTOFuZgiKZOWk9PW0sas3581Ts1VxikHrDlOs=; b=eZeX/ELr63rIAk
+	NfPGRstKwsw8ZeMQsCafS2/allaUB+80/T3ImPkbjZpNEsCFiQHJRz22oVzTLwz0HeNCfbWtGUvcI
+	sQL8cTPuiH5J04CxCkJc0FMPekWbj/zxVltbY4jhY1BvkCTSh7nSS4PiTB8nu/EJhhTzPdk+8ZF9V
+	EY83PceSdkuOGB4FqotVFKrIqxWgBGRlxFy7LKmxE6jRdUajg5o9tc3VAOt1mjSHbAXxZba/jvSnF
+	eYkbqaD6BoCK0ca9jPx2Py39skuLw+3zHUecfZclp4SRZyQVrQF2NZpq3h0D2zXAa/2I4ySl1eSq/
+	WZApBtri0x3+e7qvgUcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTH2m-00084S-2i; Tue, 28 Apr 2020 03:36:24 +0000
-Received: from mail-lf1-f67.google.com ([209.85.167.67])
+	id 1jTHH6-0000tk-Pn; Tue, 28 Apr 2020 03:51:12 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTH2c-00083e-F5
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 03:36:15 +0000
-Received: by mail-lf1-f67.google.com with SMTP id m2so15639319lfo.6
+ id 1jTHGy-0000t9-Bi
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 03:51:05 +0000
+Received: by mail-lj1-x241.google.com with SMTP id u6so19896833ljl.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 20:36:11 -0700 (PDT)
+ Mon, 27 Apr 2020 20:51:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=linux-foundation.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Q1Hl4EoAQeecS6RJeMB353EzxseO3r7Hp2yIzNObp3I=;
- b=SplrAUntYpA62B1N75YvHPdEO4shjtitO6O7fp81NGqZCL/liBkn4YGhS2ufiW89mA
- 6QRtLc38lw6xNb2vgvLJDvqC9mE3aqUJAqwD+PeOfBSBP94LeZ1hMSN6COmTdIaxaQpS
- UpK5WWl4Kpc44DM72q0SRTuLkDG5Cy7pTFjlU=
+ :cc; bh=VVBS2zR8u10QnId+SjIws+E/mbDlgxt11FVLpUCy9Fk=;
+ b=fSI/ijUiq7Zsrz+mYpIid9wBMr+ufvXZJdEGYfYAV6Wa7WrfJcI8pP8JyJG39ryg8H
+ oS3R8qQuk5cLe0fU2CCWNj05+kTTXNRrrHruAKyDUm0TOEQcvdS9B6OBB0/HcU2kGNsZ
+ OclGbGyiNhfGDIr+gFIj8hC2fmRzB7XJRVfjs=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Q1Hl4EoAQeecS6RJeMB353EzxseO3r7Hp2yIzNObp3I=;
- b=Lfm+IVqh7WCOs0I5eASEcwQ0JXUGSp5UNKQIAoqxfPPrK1ePX5jULdYzbmq3CNs1Y0
- /+jj02tr21jMITjexIRekQv83WvnD7WoCXIcMlxEuTFoy1SaVFLuBaWNiI47K8dOyaMU
- aMxiYhldi6jCnrxw2p9t7TPadsQQvscb78OtC/1Kxrm4jYc0SGSxvmXggLJ2Hnez9jRT
- /0FuoD70PUt1CYUhkHGBlEX13hnu9/NAAzdkWzC6dAAgtkHV+qDEbHkMPiXPj3yTYQEa
- JOeuOFWZf02bTA2zMuRteu85l9jKm/H0Q8ZZFJjpztGp7fbGV1H4NNkDHujGQPzgB6Zk
- Wo5g==
-X-Gm-Message-State: AGi0Pubb8RX4ZpxvoZgxW646ssffmn69qJLU2oD2u17uBPFAvAslce6H
- lDK9sy+q6lGe7VqY5/pTuwVaGjAoO1Q=
-X-Google-Smtp-Source: APiQypJE21CW7KP2xXbqrExPSMfl6Uuo089AHRWrWI0NO9x6CUBiFB5I7P0a2UGy4zdvel+Cwrs5Fw==
-X-Received: by 2002:a19:760a:: with SMTP id c10mr17836841lff.126.1588044963411; 
- Mon, 27 Apr 2020 20:36:03 -0700 (PDT)
-Received: from mail-lf1-f47.google.com (mail-lf1-f47.google.com.
- [209.85.167.47])
- by smtp.gmail.com with ESMTPSA id k22sm11713002ljj.85.2020.04.27.20.36.02
+ bh=VVBS2zR8u10QnId+SjIws+E/mbDlgxt11FVLpUCy9Fk=;
+ b=KrrU+ogUi2LgwbqstaB1xvZXpjCFEy6mdNdvV1nmab0Y0xFfwZsmsYFIHxDZH/FrVo
+ mBudPdpvJa4YMO8rPmga2nmaSBqA3FWBNf/N45iHnEacT4F/EL4fA0TtLDBPk+UxptLi
+ VsWcOy4eQoymqaLJ5W2lH6yYgFOETriFOowW4PnO9Mh3mCDi7q9Q/KqEjcDpen3OHTd5
+ FXCVt27gnqi87GUvWPFyiNsIunI6ZFfFENpFhgDxe6by0oOYMpqdiXDW5uDIvWII/VYe
+ AYChBjf9O/A1DTQMqqCfH9O7LL9SPP5iZqixSIugtQZEu5NZUJuywxLQiGhVd7E133+Q
+ ulXA==
+X-Gm-Message-State: AGi0PubBWbNp9MMWkKCjNTGxqHaxA1OiirtBSYFtZIsPbTGiSx2xSqOc
+ CZGPoun4aB3PfF3T1uvzRChKSN5Pwl0=
+X-Google-Smtp-Source: APiQypLK4Z0THTWWtvrW6wCFtQbuIETwxfARho6EuezWINbvfDP/5+eL3w9bwXS3Zgov9VxqzceQlA==
+X-Received: by 2002:a2e:9acc:: with SMTP id p12mr16442228ljj.68.1588045858234; 
+ Mon, 27 Apr 2020 20:50:58 -0700 (PDT)
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com.
+ [209.85.208.172])
+ by smtp.gmail.com with ESMTPSA id j14sm13120312lfm.73.2020.04.27.20.50.56
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 27 Apr 2020 20:36:02 -0700 (PDT)
-Received: by mail-lf1-f47.google.com with SMTP id t11so15625716lfe.4
+ Mon, 27 Apr 2020 20:50:57 -0700 (PDT)
+Received: by mail-lj1-f172.google.com with SMTP id a21so19924094ljb.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 20:36:02 -0700 (PDT)
-X-Received: by 2002:a19:9109:: with SMTP id t9mr18095968lfd.10.1588044961861; 
- Mon, 27 Apr 2020 20:36:01 -0700 (PDT)
+ Mon, 27 Apr 2020 20:50:56 -0700 (PDT)
+X-Received: by 2002:a2e:7308:: with SMTP id o8mr16201494ljc.16.1588045856507; 
+ Mon, 27 Apr 2020 20:50:56 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200428032745.133556-1-jannh@google.com>
- <20200428032745.133556-3-jannh@google.com>
-In-Reply-To: <20200428032745.133556-3-jannh@google.com>
+ <20200428032745.133556-6-jannh@google.com>
+In-Reply-To: <20200428032745.133556-6-jannh@google.com>
 From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Mon, 27 Apr 2020 20:35:45 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wjSYTpTH0X8EcGGJD84tsJS62BN3tC6NfzmjvXdSkFVxg@mail.gmail.com>
-Message-ID: <CAHk-=wjSYTpTH0X8EcGGJD84tsJS62BN3tC6NfzmjvXdSkFVxg@mail.gmail.com>
-Subject: Re: [PATCH 2/5] coredump: Fix handling of partial writes in
- dump_emit()
+Date: Mon, 27 Apr 2020 20:50:40 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wgBNSQhH1gyjo+Z2NFy4tOQnBQB4rra-jh+3XTpOjnThQ@mail.gmail.com>
+Message-ID: <CAHk-=wgBNSQhH1gyjo+Z2NFy4tOQnBQB4rra-jh+3XTpOjnThQ@mail.gmail.com>
+Subject: Re: [PATCH 5/5] mm/gup: Take mmap_sem in get_dump_page()
 To: Jann Horn <jannh@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_203614_502459_B7ACC328 
-X-CRM114-Status: UNSURE (   9.45  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200427_205104_402339_F1C6519E 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.67 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.67 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -124,18 +121,30 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Mon, Apr 27, 2020 at 8:28 PM Jann Horn <jannh@google.com> wrote:
 >
-> After a partial write, we have to update the input buffer pointer.
+> Properly take the mmap_sem before calling into the GUP code from
+> get_dump_page(); and play nice, allowing __get_user_pages_locked() to drop
+> the mmap_sem if it has to sleep.
 
-Interesting. It seems this partial write case never triggers (except
-for actually killing the core-dump).
+This makes my skin crawl.
 
-Or did you find a case where it actually matters?
+The only reason for this all is that page cache flushing.
 
-Your fix is obviously correct, but it also makes me go "that function
-clearly never actually worked for partial writes, maybe we shouldn't
-even bother?"
+My gut feeling is that it should be done by get_user_pages() anyway,
+since all the other users presumably want it to be coherent in the
+cache.
 
-             Linus
+And in fact, looking at __get_user_pages(), it already does that
+
+                if (pages) {
+                        pages[i] = page;
+                        flush_anon_page(vma, page, start);
+                        flush_dcache_page(page);
+                        ctx.page_mask = 0;
+                }
+
+and I think that the get_dump_page() logic is unnecessary to begin with.
+
+               Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
