@@ -2,97 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5ABC1BC033
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:51:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0B4B1BC032
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:51:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=uYhkyvVjM9z8HrUEMHb8sadDd5+8H3GIidgf1dSfN3Q=; b=D4T29cDjXjTwhVhvsX2oO3Qar
-	Dk/crZQiU3RBhOr/bLjjW/QqNgoEYfktjN89TKzWz1SPCV3TyIL+uXuVHfIwRQ0AH399rr+kzU4O+
-	f7x64HoOqI+6X0ZjqGSWtVD0vopG/OFzSaBKIjZhKkEmmRM2DvM4XnoUnyza2nloduXY2bqoPOupJ
-	NFdlsKFG+ozRL0Cx5E3x8e0yFnGQMcqkOMXBK4ZA0et99uDsJMTQblMZB2b2Z+D7YUE6ntsb9ipm3
-	z+B6G9RhGefjdsxsgxCC8lnP8mhsciqT0dqPc+N4hK6/Up1ocmRK00BvS4/wnVM1a3cBeC5REoZ4o
-	HgsuNLuQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jRD4ac0rvPjONoR6XuKTpmqQMhQmCr0IWaY9bf1fDdA=; b=SCQtRfwWX2v8U5
+	0H6tuC3F+JxyMvr95OPH0IwZMJuF/qV7lgtOmlcpfrYqJahv5xqxiKTYGF6TUbJYF6ZtMSalcIhc5
+	yGphUYUPjf2FEhS8GoNOtVDaLBvoC937BebMb/z/yIkOc3Vpj3iiUwGMw5Q/1/OqHEyLfKIaRBhvp
+	9v9eX16Hw/PQre0fogMV40Jici77o2YNmyIJXV2jC3aX6sQzfyGgXuL1GQZqvzpD+jHNIFS94oyV0
+	rggYb3p7H2sL86ClzC+3ueB+9J+V2vJNeBmSHaSHjX95TT8vEERc47XTmN9LkJz5CDqnS1e/r9+Qd
+	doqw19urIluEIhp96sWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTQdu-0006bs-Fs; Tue, 28 Apr 2020 13:51:22 +0000
-Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTQdO-0006Ql-Ca; Tue, 28 Apr 2020 13:50:52 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 7C86A68A;
- Tue, 28 Apr 2020 09:50:44 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 28 Apr 2020 09:50:45 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=4iAZAo8TV910VLKndZ5Wk9WKzuI
- ARrXA2SHPPX+ivMs=; b=sWE34aPsKoEhvAvsNx6TDGAHBMXKKikJSzYRGkUHg8w
- mFef2xGfaSY0hLeh4H/1xIVQwjYoPdRlRWZ0vQ8uPesLLytqysvxFiYI+Tyuttoe
- 23CjL2YBsWp/9Jz1plx9NH8Q6Iv8cd7Vdnj+7Ra+OgDWhxSDCzL1aWsSbctJoP6e
- 8e0ZErOy42owcsjzGEXrWglV7tY2WdKyyqzgoWXk2aXgcjUXUqBufXtRW2Cm2Noo
- cC/uGOjmB77N40IOhlNuQbiEp9/6TU95nj8lOIchTe0xht50om4C1bAt0oEgQazW
- KdgP4pBJYe8ABZmu48I9IIre0ZyOtDAhKpBnwG6XDSw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=4iAZAo
- 8TV910VLKndZ5Wk9WKzuIARrXA2SHPPX+ivMs=; b=hVmCUKbWPfnl2YIzTa4hEs
- ofc+8FVBBXEeSEArgjnGJTnzcdQDwVFWJB3LPpL65+aJ7sCzN9W7lc2DaPm1Zp2C
- w+AD3pNt65ra32K43ajZSjxhrmNEp1wuqOD5FPq7uDw+dOWEmCD5J3XYqNXVB6Gu
- ZGw1vsPXo9oboaHhpg2HpepA0uKDajAwlzBaDx0D8di60R2KcvMz0VzZUGb0Sz55
- zPVgeBkGLyoQKfiWLYQNrxzG5TRk0kzYR6Karl72zoz8NWrMsLiSIbr6g35mmJEb
- dJx0uWKXvMqEVNv2B1BjsyiiU3OP9yN2TGVmwyLv/RR+f1CvydUtq53LTFFnE3sA
- ==
-X-ME-Sender: <xms:szSoXspECv2ZMBzZNr5zIHvZnhS-qfmAQhYWYU5CS2I8MdGcqgSjGg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedriedugdeilecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:szSoXucwlkqZ27aA4XRiG9WDDJo4416B0FhhR0PBtfqSHaIZAg5oPg>
- <xmx:szSoXsmVJ-GmWQd__p_Hm7AjNZbiNPnCS3oaWn2L0T71TnYAmrxh0g>
- <xmx:szSoXtaZZwSkglEMDDgagVpkIA2CgKl5lxF6J8umJKpaLCZPWf1UZg>
- <xmx:tDSoXrZfdMeE1aAqgGQE3LInrs5bbZ6VEhqJFj9rVKwZbY3wJQK-HQ>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id D1531328005A;
- Tue, 28 Apr 2020 09:50:42 -0400 (EDT)
-Date: Tue, 28 Apr 2020 15:50:41 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v2 04/91] firmware: rpi: Only create clocks device if we
- don't have a node for it
-Message-ID: <20200428135041.zg5h454fkc5wgxp3@gilmour.lan>
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <b181d867cb9523e1877a3dfd258bafde2988024f.1587742492.git-series.maxime@cerno.tech>
- <4842d1b72192bb7c461a2d50c8798f178da964e0.camel@suse.de>
+	id 1jTQda-0006SI-9m; Tue, 28 Apr 2020 13:51:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTQdM-0006Qf-Sw
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:50:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A573231B;
+ Tue, 28 Apr 2020 06:50:46 -0700 (PDT)
+Received: from [192.168.0.110] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 984B83F68F;
+ Tue, 28 Apr 2020 06:50:45 -0700 (PDT)
+Subject: Re: [PATCH] KVM: arm64: Make KVM_CAP_MAX_VCPUS compatible with the
+ selected GIC version
+To: Marc Zyngier <maz@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+References: <20200427141507.284985-1-maz@kernel.org>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <5ac78e8b-4776-70c7-c05c-8ffe536e175d@arm.com>
+Date: Tue, 28 Apr 2020 14:51:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <4842d1b72192bb7c461a2d50c8798f178da964e0.camel@suse.de>
+In-Reply-To: <20200427141507.284985-1-maz@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_065050_486661_C13245B0 
-X-CRM114-Status: GOOD (  21.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200428_065049_025165_6C6EC029 
+X-CRM114-Status: GOOD (  24.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.20 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,116 +65,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5825874609926835580=="
+Cc: James Morse <james.morse@arm.com>, Ard Biesheuvel <ardb@kernel.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============5825874609926835580==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="tdisr6odiqdkp6jx"
-Content-Disposition: inline
+On 4/27/20 3:15 PM, Marc Zyngier wrote:
+> KVM_CAP_MAX_VCPUS always return the maximum possible number of
 
+s/return/returns?
 
---tdisr6odiqdkp6jx
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> VCPUs, irrespective of the selected interrupt controller. This
+> is pretty misleading for userspace that selects a GICv2 on a GICv3
+> system that supports v2 compat: It always gets a maximum of 512
+> VCPUs, even if the effective limit is 8. The 9th VCPU will fail
+> to be created, which is unexpected as far as userspace is concerned.
+>
+> Fortunately, we already have the right information stashed in the
+> kvm structure, and we can return it as requested.
+>
+> Reported-by: Ard Biesheuvel <ardb@kernel.org>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  virt/kvm/arm/arm.c | 15 ++++++++++-----
+>  1 file changed, 10 insertions(+), 5 deletions(-)
+>
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index 48d0ec44ad77..f9b0528f7305 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -95,6 +95,11 @@ int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
+>  	return r;
+>  }
+>  
+> +static int kvm_arm_default_max_vcpus(void)
+> +{
+> +	return vgic_present ? kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
+> +}
+> +
+>  /**
+>   * kvm_arch_init_vm - initializes a VM data structure
+>   * @kvm:	pointer to the KVM struct
+> @@ -128,8 +133,7 @@ int kvm_arch_init_vm(struct kvm *kvm, unsigned long type)
+>  	kvm->arch.vmid.vmid_gen = 0;
+>  
+>  	/* The maximum number of VCPUs is limited by the host's GIC model */
+> -	kvm->arch.max_vcpus = vgic_present ?
+> -				kvm_vgic_get_max_vcpus() : KVM_MAX_VCPUS;
+> +	kvm->arch.max_vcpus = kvm_arm_default_max_vcpus();
 
-Hi Nicolas,
+Nitpicking, but the comment is not 100% true because the maximum number of vcpus
+is limited based on the requested vgic type, even before this patch.
 
-On Mon, Apr 27, 2020 at 01:24:14PM +0200, Nicolas Saenz Julienne wrote:
-> Hi Maxime,
->=20
-> On Fri, 2020-04-24 at 17:33 +0200, Maxime Ripard wrote:
-> > The firmware clocks driver was previously probed through a platform_dev=
-ice
-> > created by the firmware driver.
-> >=20
-> > Since we will now have a node for that clocks driver, we need to create=
- the
-> > device only in the case where there's no node for it already.
-> >=20
-> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> > ---
-> >  drivers/firmware/raspberrypi.c | 17 +++++++++++++++--
-> >  1 file changed, 15 insertions(+), 2 deletions(-)
-> >=20
-> > diff --git a/drivers/firmware/raspberrypi.c b/drivers/firmware/raspberr=
-ypi.c
-> > index da26a584dca0..1874f41b007c 100644
-> > --- a/drivers/firmware/raspberrypi.c
-> > +++ b/drivers/firmware/raspberrypi.c
-> > @@ -210,6 +210,15 @@ rpi_register_hwmon_driver(struct device *dev, stru=
-ct
-> > rpi_firmware *fw)
-> > =20
-> >  static void rpi_register_clk_driver(struct device *dev)
-> >  {
-> > +	/*
-> > +	 * Earlier DTs don't have a node for the firmware clocks but
-> > +	 * rely on us creating a platform device by hand. If we do
-> > +	 * have a node for the firmware clocks, just bail out here.
-> > +	 */
-> > +	if (of_get_compatible_child(dev->of_node,
-> > +				    "raspberrypi,firmware-clocks"))
-> > +		return;
-> > +
-> >  	rpi_clk =3D platform_device_register_data(dev, "raspberrypi-clk",
-> >  						-1, NULL, 0);
-> >  }
-> > @@ -262,8 +271,12 @@ static int rpi_firmware_remove(struct platform_dev=
-ice
-> > *pdev)
-> > =20
-> >  	platform_device_unregister(rpi_hwmon);
-> >  	rpi_hwmon =3D NULL;
-> > -	platform_device_unregister(rpi_clk);
-> > -	rpi_clk =3D NULL;
-> > +
-> > +	if (rpi_clk) {
->=20
-> rpi_clk, being a static global variable, will be zeroed by default. So, i=
-f you
-> don't register the platform device, rpi_clk is going to be NULL, which yo=
-u're
-> allowed to feed platform_device_unregister(), so no need to be extra care=
-ful.
+>  
+>  	return ret;
+>  out_free_stage2_pgd:
+> @@ -204,10 +208,11 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+>  		r = num_online_cpus();
 
-Indeed, I'll fix that up.
+Not relevant to this patch. If the host has a GICv3, and userspace requests a
+GICv2, it is possible that KVM_CAP_NR_VCPUS > KVM_CAP_MAX_VCPUS. I am curious, I
+don't see anything in the KVM API documentation about this case, so I suppose it's
+perfectly legal, right?
 
-Thanks!
-Maxime
+>  		break;
+>  	case KVM_CAP_MAX_VCPUS:
+> -		r = KVM_MAX_VCPUS;
+> -		break;
+>  	case KVM_CAP_MAX_VCPU_ID:
+> -		r = KVM_MAX_VCPU_ID;
+> +		if (kvm)
+> +			r = kvm->arch.max_vcpus;
+> +		else
+> +			r = kvm_arm_default_max_vcpus();
 
---tdisr6odiqdkp6jx
-Content-Type: application/pgp-signature; name="signature.asc"
+This works as expected - when KVM_CHECK_EXTENSION is called on the kvm fd, struct
+kvm is NULL.
 
------BEGIN PGP SIGNATURE-----
+>  		break;
+>  	case KVM_CAP_MSI_DEVID:
+>  		if (!kvm)
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqg0sQAKCRDj7w1vZxhR
-xbQ1AP9u2PkigXhbvMvsCOEqNwJ8D7x0AE8RyRBsAh+1uyg8kgEApwI7mCx3Oyv0
-OKLPLIDceoiTcYK3Qs3FCOaUJ+9WKgs=
-=W0Du
------END PGP SIGNATURE-----
+The patch looks fine to me:
 
---tdisr6odiqdkp6jx--
+Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
 
+Tested it on a rockpro64, which has a GICv3 that can also emulate a GICv2. When
+the vgic is a GICv3, before and after instantiating the device, the ioctl returns
+512 on both /dev/kvm and the vm fd, as you would expect. When the vgic is a GICv2,
+the ioctl return 512 on /dev/kvm and the vm fd before instantiating the vgic;
+afterward it returns 512 on /dev/kvm and 8 on the vm fd:
 
---===============5825874609926835580==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Tested-by: Alexandru Elisei
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5825874609926835580==--
-
