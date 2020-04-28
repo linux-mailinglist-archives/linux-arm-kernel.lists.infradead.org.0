@@ -2,86 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B750B1BC15F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:32:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297381BC165
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:34:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYAhFHJ2VxQPRgG2wZh64gLHp963b5b4xopRbUoWMy4=; b=AO+nGmt/k2gQJw
-	/W1aQM3GcclhHAWqmq4eCJwnTapxg6Fs8cr+psY3NynJfnimhf4jMybNkWqwXM40X1aUV6hZmtD4B
-	xJS1YTvKqWMxCkk/hQ7OCX/9r/funrP5ThXIWKONEr78z9BIDvm7Xu6zVYCJVaaPICM/41f3FmB9z
-	/B6lPE+7lRzWQOXbGxV87XlOFBatx4vkhkQcB3+ZcH8TdaxGnBBG2kl5qZOj5eLScuhCJ735+Rmcf
-	AyMfIRHBEMAg6xImrx3HOnJ2V/B2nlWW4OkBQN30M+CgxdS4VeFKIXLATsU5/udflRC4qgduTbJOb
-	RVz0cPWXCtgQ16wIqpJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7VYcf1UiQ/d6b18IK0pEKKVsIgk3a2To+K9v5A1ijrI=; b=pgBVaDWCg9Sswe
+	vUIm4KNmNt9vo9zYpUJmXDUDwhOqa7PLEMXz4dneldiUNabU/07XMWdwTok0Er0+3GFE8RCgjBNrg
+	D9r5tIVW+2LYGmhKnS7PEScDR0SZa9Zypqzu37BIpKYdNIjGh+ZhrQfq1XvcWIQzpRQ8qAgU8NXcE
+	X+Oa1zla+ZKj0wxm9VNThJ0w+n4FTbeG4OsUdmrBs02UkqEYi6Ty76cq4OGWlsGre5tOumuiF8fnt
+	eTNM3EPu+EIVwPwI+sJWeEWO/kzl4DfNJwmacf5fCdMDCOCXor4QP9deiZObVv4Cuh9asCBWaS7Jk
+	h82KIIACY9AcfXGtBuMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTRHw-0005F0-Bj; Tue, 28 Apr 2020 14:32:44 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTRHh-0005Dk-3W
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:32:30 +0000
-Received: by mail-lj1-x243.google.com with SMTP id j3so21659317ljg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 07:32:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=psr7yNqTXqMfQvqVzYJ3WgK/XrorFzoihdkLU14qe3w=;
- b=GNiAeQhgB/N+m40azYZMqkMYXjkfb7QkJq/BtD6t0WwK9uLf8zfINMclqp7OsmxGDZ
- H7p5uQXQhNAIxz/85JMYPZgfGGWVucEvqeAs0Vm//oqQLmsZsGxg+GrHGXMbCtJ01BRj
- 10tN2AYH7R6BQlgRnqwLhnqCu55YUoKgD/shuGy6qCrkfLGuwBraErTOfjk3qO2zNy74
- UYWFVk7AFpbRGXfapyYzscgE4U207W4wdvXzgCVEC3UCuupa+aZpO6q2HtqwrDmZInO0
- DurvuXNHk81MnOMb/bQv4ZwbRpwTaeQG0pHbo1Fb33CGAWUjuY7RnO68aYP5eZterWHO
- SaIg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=psr7yNqTXqMfQvqVzYJ3WgK/XrorFzoihdkLU14qe3w=;
- b=mhqDQvtLP6MijxVAsWR4F7JWf/XAfGIQgMfimX0aPfEddJRlsfpqcgZaYax+q5Sm6J
- 2cBNnaKwOeh7Vl0XIwtter1AVLOQ2SEVUTngiBn9xOT5uu9lB2w1vl0QDdO4VEr87607
- H5Sha1jEf8/AA5glWxW0qgUsAaPU90066CKciMcBYqGe3i+9MctQe2RMMYhrVmUQP4jB
- 1JVW9qjnRG/GqPtzsNZi7YDyoKme2no7wZUdEH44ey81dHZ2VTYnvuIkaMzjFyRhEGxR
- zv7rlt4WG8EMG5XIiqaNOF0eJ8LAyDT7zzRBFF28ozlDAN3UR8EDWQrOnMGjBt5X5ByC
- NJLA==
-X-Gm-Message-State: AGi0PuZW34b3jYpl+RaIzsdp8Q7sz+ymSFbH2WpuTnWryCjb+PUiwiZU
- MjY8XhiD+/s7OB7C7ebJxJFayIytSUI6co+puhG3Dg==
-X-Google-Smtp-Source: APiQypKVikJwVUY4aCnhdxfj2r5hZ+MavanhuJYX2Qu/0kL47XqZliyypaH3vT3ucDc/5Fb1DO9yg2SDlr/F5VKH+JE=
-X-Received: by 2002:a2e:8805:: with SMTP id x5mr18610567ljh.223.1588084347589; 
- Tue, 28 Apr 2020 07:32:27 -0700 (PDT)
+	id 1jTRJa-0005hd-Bh; Tue, 28 Apr 2020 14:34:26 +0000
+Received: from mail.secom.com.pl ([213.216.87.26])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTRJO-0005g0-5H
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:34:16 +0000
+Received: from debian-2019.secom.com.pl ([192.168.192.41])
+ by mail.secom.com.pl; Tue, 28 Apr 2020 16:33:47 +0200
+From: =?UTF-8?q?Rafa=C5=82=20Hibner?= <rafal.hibner@secom.com.pl>
+To: 
+Subject: [PATCH] dma: zynqmp_dma: Initialize descriptor list after freeing
+ during reset
+Date: Tue, 28 Apr 2020 16:32:26 +0200
+Message-Id: <20200428143225.3357-1-rafal.hibner@secom.com.pl>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <20200420134800.31604-1-benjamin.gaignard@st.com>
- <20200420134800.31604-2-benjamin.gaignard@st.com>
- <CACRpkdatGwWyruTLC=+BUtnunvqyxnXAYDhcHqy26oeud8Bs1w@mail.gmail.com>
- <13b16e13-690b-ad3f-a800-28c7805cbb96@st.com>
-In-Reply-To: <13b16e13-690b-ad3f-a800-28c7805cbb96@st.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 28 Apr 2020 16:32:16 +0200
-Message-ID: <CACRpkdYLxX-vYypC=9xxuWRQ43v-xm6=LC1shdC2ciH3BtxsYQ@mail.gmail.com>
-Subject: Re: [PATCH 1/5] dt-bindings: bus: Add firewall bindings
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_073229_154042_9365B01A 
-X-CRM114-Status: GOOD (  10.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200428_073414_541963_2EBE060A 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,38 +55,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Loic PALLARDY <loic.pallardy@st.com>, Greg KH <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: =?UTF-8?q?Rafa=C5=82=20Hibner?= <rafal.hibner@secom.com.pl>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ open list <linux-kernel@vger.kernel.org>, Vinod Koul <vkoul@kernel.org>,
+ Appana Durga Kedareswara rao <appana.durga.rao@xilinx.com>,
+ "open list:DMA GENERIC OFFLOAD ENGINE SUBSYSTEM" <dmaengine@vger.kernel.org>,
+ Harini Katakam <harini.katakam@xilinx.com>,
+ Dan Williams <dan.j.williams@intel.com>,
+ "moderated list:ARM/ZYNQ ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 3:13 PM Benjamin GAIGNARD
-<benjamin.gaignard@st.com> wrote:
+List elements are not formally removed from list therefore
+list head is not initialized during zynqmp_dma_reset.
 
-> Does the following description sound good for you:
-> Firewall properties provide the possible firewall bus controller
-> configurations for a device.
-> Bus firewall controllers are typically used to control if a hardware
-> block can perform read or write operations on bus.
-> The contents of the firewall bus configuration properties are defined by
-> the binding for the individual firewall controller device.
-> The first configuration 'firewall-0' or the one named 'default' is
-> applied before probing the device itself.
+Signed-off-by: Rafal Hibner <rafal.hibner@secom.com.pl>
 
-Looks good to me!
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-with this added.
+This BUG causes kernel panic when transaction is unsuccessful:
+ ------------[ cut here ]------------
+[   62.710730] list_add corruption. prev->next should be next (ffffffc07d308040), but was dead000000000100. (prev=ffffffc0540b40b8).
+[   62.727960] WARNING: CPU: 0 PID: 1845 at /home/rafalh11/zynq_proj/zynq_platform/KERNEL/linux-xlnx/lib/list_debug.c:28 __list_add_valid+0x74/0xa0
+[   62.746374] Modules linked in: secom_mx_rpmsg(O) rpmsg_char secom_mx_retune(O) ad9680(O) ad5686_spi(O) ad5686(O) ad7298(O) ltc5594(O) lmx2594(O) ad8366(O) secom_mx(O) axi_jesd204_rx(O) axi_adxcvr(O) xilinx_transceiver(O) cf_axi_adc_core(O) hmc7044(O)
+[   62.768546] CPU: 0 PID: 1845 Comm: mx Tainted: G           O      4.19.0 #10
+[   62.775582] Hardware name: xlnx,zynqmp (DT)
+[   62.779750] pstate: 60000005 (nZCv daif -PAN -UAO)
+[   62.784524] pc : __list_add_valid+0x74/0xa0
+[   62.788690] lr : __list_add_valid+0x74/0xa0
+[   62.792855] sp : ffffff8008003da0
+[   62.796154] x29: ffffff8008003da0 x28: 0000000000000020
+[   62.801457] x27: 0000000000000000 x26: dead000000000100
+[   62.806760] x25: ffffffc07d308040 x24: ffffffc0540b40a0
+[   62.812064] x23: ffffffc07d308018 x22: 0000000000000000
+[   62.817359] x21: ffffffc07d308018 x20: ffffffc0540b40b8
+[   62.822654] x19: ffffffc0540b40b8 x18: ffffffffffffffff
+[   62.827957] x17: 0000000000000000 x16: 0000000000000000
+[   62.833252] x15: ffffff8008f88648 x14: 3034303830336437
+[   62.838546] x13: ffffff8008f88670 x12: ffffff80085d0ec0
+[   62.843841] x11: ffffff8008f65018 x10: 0000000000000006
+[   62.849136] x9 : 657270202e6e6f69 x8 : 3462303435306366
+[   62.854431] x7 : 66666666663d7665 x6 : 00000000000001a2
+[   62.859726] x5 : 0000000000000064 x4 : 0000000000000000
+[   62.865020] x3 : 0000000000000000 x2 : ffffffffffffffff
+[   62.870315] x1 : 0cbee765ba0ec900 x0 : 0000000000000000
+[   62.875611] Call trace:
+[   62.878042]  __list_add_valid+0x74/0xa0
+[   62.881864]  zynqmp_dma_free_descriptor+0x48/0x100
+[   62.886644]  zynqmp_dma_chan_desc_cleanup+0xb4/0xf8
+[   62.891505]  zynqmp_dma_do_tasklet+0x68/0x110
+[   62.895847]  tasklet_action_common.isra.3+0x7c/0x168
+[   62.900801]  tasklet_action+0x24/0x30
+[   62.904447]  __do_softirq+0x10c/0x200
+[   62.908092]  irq_exit+0xac/0xc0
+[   62.911219]  __handle_domain_irq+0x60/0xb0
+[   62.915305]  gic_handle_irq+0x64/0xc0
+[   62.918951]  el1_irq+0xb0/0x140
+[   62.922078]  schedule_timeout+0x218/0x3a0
+[   62.926077]  wait_for_common+0x170/0x268
+[   62.929983]  wait_for_completion_timeout+0x10/0x18
+[   62.934761]  ioctl+0x64/0x270 [secom_mx_retune]
+[   62.939281]  do_vfs_ioctl+0xb8/0x900
+[   62.942838]  ksys_ioctl+0x44/0x90
+[   62.946137]  __arm64_sys_ioctl+0x1c/0x28
+[   62.950044]  el0_svc_common+0x60/0xe8
+[   62.953689]  el0_svc_handler+0x6c/0x88
+[   62.957421]  el0_svc+0x8/0xc
+[   62.960284] ---[ end trace 91b4fdfe685446c4 ]---
+[   62.964934] ------------[ cut here ]------------
 
-Yours,
-Linus Walleij
+---
+ drivers/dma/xilinx/zynqmp_dma.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/drivers/dma/xilinx/zynqmp_dma.c b/drivers/dma/xilinx/zynqmp_dma.c
+index 931e41a72..a2b0be07e 100644
+--- a/drivers/dma/xilinx/zynqmp_dma.c
++++ b/drivers/dma/xilinx/zynqmp_dma.c
+@@ -453,6 +453,7 @@ static void zynqmp_dma_free_desc_list(struct zynqmp_dma_chan *chan,
+ 
+ 	list_for_each_entry_safe(desc, next, list, node)
+ 		zynqmp_dma_free_descriptor(chan, desc);
++	INIT_LIST_HEAD(list);
+ }
+ 
+ /**
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
