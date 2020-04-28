@@ -2,80 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E9AD1BB562
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 06:35:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 033901BB565
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 06:43:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CWtxVoe2c7O/8JKiUNnDM2rVB/wqHJr8MFLRBJM9ZAg=; b=epxNde7VqTgOBJ
-	9PwmlqAfZlqa4rY0pfglk5pVgmcYCHnYVnox3qlxlGds8KzpO85Y9J9hcoy9gvL3fwKEzrvLXs27v
-	LB4xXDP4o6ln3bD0M+f05ZeLj+SnnexEINBMfzxaniW21RUyPR86xdkxc1jycIZEiLoL21OdSb7AQ
-	NIKlq90EkySIkmPrwpiMdf8n7PeNElkkZW4YptXvnLeFBrRzLEfPSAAyKE1dKZBjypFfG8LiB0sQo
-	ztA2uYiysH7P+N565E9HyPhYl0UyMNPdAENYji+tgqF8KMXVcASYp8KSElW6vBlwHPNmPCxxJEZzZ
-	Okp2AveVyJjmZU6cud4Q==;
+	List-Owner; bh=bOI9Rfeva/SAWeFeUrvjZvL8+zT2IkZMUaeimH16VHg=; b=ULjtnnS0G78tl/
+	I7mtywyTRkIjq/XDjJtjk4G+toRyF+lqmEAMHbYfPaCGeWS7V0p4GwqOCZ6sjiNVgrFHQnreXRH9/
+	o6ZdZbpRghURM2jzyGd1Q+gWGiq/Ds22/ftQZzOj5OJ+vOFAo8ri5uLXYwqYZgKJ1WL/4f2byYB55
+	FDdrCxk+UBBP/TXRF11FGOAd6N3R123xgUg+DUOQblbbjyLaSGrciPxoQPfyDNsf7/Is20pciCnfa
+	ImjiYYJbHxJtD0bYpaYWDGIz7ZRdHzV2E8N9XBQ9U5X0s6YtsjCK0TYuloIb2HmStICsvZITzia84
+	pfngTjyImi4FEJLrbweg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTHyD-0003m3-A5; Tue, 28 Apr 2020 04:35:45 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-1.mimecast.com)
+	id 1jTI5m-00076m-K0; Tue, 28 Apr 2020 04:43:34 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTHy5-0003la-6G
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 04:35:38 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588048534;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=7HOk8Yr6S3xlCmaSoOzLqX7HGoHGUwpA1okgxRGClTk=;
- b=cCaKx0gPX5YJc0oHIpbFpRdctbdhh/r7VMwPiul1tADcP3Cr0HR0E5COvzuWg9qW/yGTAk
- VWL7JkPiHkXBAVTdFpujr8qKe/My1NWuCDc66xbWOmIC1ditCmb4zq2EuBLNC9D1jzHbJF
- 9xlhuLtquuxlwYsGzO/WGx8Lk2kWM9Q=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-18-PmAvVPc_NI6x2PYmjDXjJA-1; Tue, 28 Apr 2020 00:35:27 -0400
-X-MC-Unique: PmAvVPc_NI6x2PYmjDXjJA-1
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3B1FD107ACCA;
- Tue, 28 Apr 2020 04:35:26 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-127.bne.redhat.com
- [10.64.54.127])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id 81AE010013D9;
- Tue, 28 Apr 2020 04:35:23 +0000 (UTC)
-Subject: Re: [PATCH] arm64/mm: Reject invalid NUMA option
-To: Steven Rostedt <rostedt@goodmis.org>
-References: <20200424045314.16017-1-gshan@redhat.com>
- <20200424101132.GC1167@C02TD0UTHF1T.local>
- <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
- <20200427225406.7cacc796@gandalf.local.home>
- <20200427225944.185d4431@gandalf.local.home>
- <20200427230920.3d606a2e@gandalf.local.home>
-From: Gavin Shan <gshan@redhat.com>
-Message-ID: <7e85ea83-de5f-c789-2e3c-e468a50ed4bd@redhat.com>
-Date: Tue, 28 Apr 2020 14:35:20 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
+ id 1jTI5a-000757-OV
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 04:43:24 +0000
+Received: by mail-pg1-x541.google.com with SMTP id p8so9719260pgi.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 21:43:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6MzIVWZpSVCHDb5pf6WQNcJ/ckZ7Y5e/ESVb+fFzIZA=;
+ b=WD0Vdo9P4/N4GSEpKAhopNTQVyTrPiPKK3hWvrtsiHMzebOMrruO2aJX9wZe95BGHj
+ XGk8c62wFBqDPwNbo61yYZGaWDExozBcGqaTvzvhgue/6PH25ZdF3jIcE9D0iv7XULGu
+ hc0qeug7S/R/21XHC27bLSFzxUVEnjHArDV38=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6MzIVWZpSVCHDb5pf6WQNcJ/ckZ7Y5e/ESVb+fFzIZA=;
+ b=dbDFEyBmbNbrM5eFwlArODLGzxwQTnmMhcGLZP79TTtpncwW2MAJId4v7jAyT/cqRl
+ j0oh7hgMUJbZnN5J4x/uccd6kgMTS/gWaCMIFF8mmyattp1tvyBsVmfgjdZlTIKPozog
+ ZD7esi5wF5B70LzWaVKInA6pDVmMdRpPskfUPQOzk9IGSDV23zy0KU31+JeTnIFj0aRd
+ BDXPVkfl++Y75gqzR+bGWtengCaP+/alIsDppUmkKG1JWhyxC7Y8W7B/LVgXCQgEqX8t
+ SdoGbL34LpcStHtCVzC5gzpbl3iK6364WnMdA8WlPjOwMpmuwnivNsv3wmMdTRAXouxj
+ xwag==
+X-Gm-Message-State: AGi0Pubd5Etu7y/MPGYQwNr35JubXHyZRTasDMu27I+EsA53FqU54ecM
+ lleCTIKLg3sqXRnhJ5cQbv9tlcdBQ4Q=
+X-Google-Smtp-Source: APiQypLiAWSh9x1cKOkSEnOT0Rh2bsz2ms33Ntt0PX7rXyZiSfynHHXqCsiqJOuHfKYE9SEmUhLY0Q==
+X-Received: by 2002:a63:7f1a:: with SMTP id a26mr14090125pgd.252.1588048999941; 
+ Mon, 27 Apr 2020 21:43:19 -0700 (PDT)
+Received: from mail-pl1-f177.google.com (mail-pl1-f177.google.com.
+ [209.85.214.177])
+ by smtp.gmail.com with ESMTPSA id mn1sm815085pjb.24.2020.04.27.21.43.18
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 27 Apr 2020 21:43:19 -0700 (PDT)
+Received: by mail-pl1-f177.google.com with SMTP id k18so7858364pll.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 27 Apr 2020 21:43:18 -0700 (PDT)
+X-Received: by 2002:a67:f9d0:: with SMTP id c16mr19912596vsq.53.1588048997072; 
+ Mon, 27 Apr 2020 21:43:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200427230920.3d606a2e@gandalf.local.home>
-Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+References: <20200423044036.234578-1-evanbenn@chromium.org>
+ <20200423143945.v5.2.Ia92bb4d4ce84bcefeba1d00aaa1c1e919b6164ef@changeid>
+ <CAODwPW9-c8EcZh_zB6SwohzvHtCQasaNLQM0fj2bj5O5KuVPfg@mail.gmail.com>
+In-Reply-To: <CAODwPW9-c8EcZh_zB6SwohzvHtCQasaNLQM0fj2bj5O5KuVPfg@mail.gmail.com>
+From: Evan Benn <evanbenn@chromium.org>
+Date: Tue, 28 Apr 2020 14:42:50 +1000
+X-Gmail-Original-Message-ID: <CAKz_xw0nQL2t1a-ofosLVb72JwSAGXCea5wOuddstOMrULNygg@mail.gmail.com>
+Message-ID: <CAKz_xw0nQL2t1a-ofosLVb72JwSAGXCea5wOuddstOMrULNygg@mail.gmail.com>
+Subject: Re: [PATCH v5 2/2] watchdog: Add new arm_smc_wdt watchdog driver
+To: Julius Werner <jwerner@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_213537_448462_7B7765FA 
-X-CRM114-Status: GOOD (  16.10  )
+X-CRM114-CacheID: sfid-20200427_214322_822000_D1E94192 
+X-CRM114-Status: GOOD (  15.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,63 +102,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, shan.gavin@gmail.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Rob Herring <robh@kernel.org>,
+ Anson Huang <Anson.Huang@nxp.com>,
+ Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ Guenter Roeck <linux@roeck-us.net>,
+ LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
+ "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Steven and Mark,
+On Fri, Apr 24, 2020 at 8:17 AM Julius Werner <jwerner@chromium.org> wrote:
+>
+> > +       err = of_property_read_u32(pdev->dev.of_node, "arm,smc-id",
+> > +                                  &smc_func_id);
+> > +       if (err < 0)
+> > +               return err;
+> > +       watchdog_set_drvdata(wdd, (void *)(uintptr_t)smc_func_id);
+>
+> Your device tree binding says there's a default and this is optional.
+> I think you need to change the code so that that's actually true.
 
-On 4/28/20 1:09 PM, Steven Rostedt wrote:
-
-[...]
-
-> 
-> Could this be a bug in the implementation of strncmp() in
-> arch/arm64/lib/strncmp.S. As I don't know arm64 assembly, I have no idea
-> what it is trying to do.
-> 
-> But strncmp("o","off",3) returning zero *is* a bug.
-> 
-
-I think it's false alarm. The patch has been in my local repo for a while.
-I checked out 5.7.rc3 and tried passing "numa=o" to the kernel, @numa_off
-is unchanged and its value is false. I also check the return value from
-strncmp() as below, it's correct. Nothing is broken. I should have retested
-before posting it. Sorry for the noise. Please ignore the crap patch :)
-
-diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
-index 4decf1659700..a8e5c6f7ba25 100644
---- a/arch/arm64/mm/numa.c
-+++ b/arch/arm64/mm/numa.c
-@@ -32,6 +32,13 @@ static __init int numa_parse_early_param(char *opt)
-         if (str_has_prefix(opt, "off"))
-                 numa_off = true;
-  
-+       pr_info("numa_off=%s\n", numa_off ? "true" : "false");
-+       pr_info("opt=%s\n", opt);
-+       pr_info("len=%d\n", (int)strlen("off"));
-+       pr_info("\n");
-+       pr_info("================================\n");
-+       pr_info("strncmp(opt, 'off', 3)=%d\n", strncmp(opt, "off", 3));
-+
-
-[    0.000000] NUMA: numa_off=false
-[    0.000000] NUMA: opt=o
-[    0.000000] NUMA: len=3
-[    0.000000] NUMA:
-[    0.000000] NUMA: ================================
-[    0.000000] NUMA: strncmp(opt, 'off', 3)=-102
-
-Thanks,
-Gavin
-
-
-
+I think I have misunderstood the device tree json-schema spec.
+My intention was for the device tree to fill in a default value in the dtb for
+arm,smc-id if it was omitted in the dts. But now I see that does not seem to
+happen, I cannot really find any documentation of `default`, so I will just put
+a documentation string in instead and force the default in the driver.
 
 _______________________________________________
 linux-arm-kernel mailing list
