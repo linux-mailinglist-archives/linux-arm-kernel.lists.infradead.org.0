@@ -2,69 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E29EC1BC202
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:54:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89C611BC20B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:55:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F1R73XWpYMO8FAGK+pz8MSrxvVjMY+Vs1adf0S6GYZQ=; b=BJtzT0xCmqQoUG
-	rdUg6eNz/LEt47QwlnwBcrOetJzuZ+UIuu8Z/6TEMR41he7fF/1Ewsw+2lQR7acKiSp6SdMxwRAxb
-	Ap8QVz/t3oMR6YcdV3aq/aUQmikdaUcxtgtxQKDx0tlJqzpyt7ST2dhf9aSEvYLr0fCe81J8OWE1/
-	mAs+Urt4dWrB121TGo8jQzw65xYQuiyQrb+z9/7FhGICXAl4Y3f6qR7YqfFki5Ueol8MCcGYA47qB
-	ON63X6k78qe+O/Ow0TXtH2XhFbpC+xnvMJ0VoDwokqs6avChONVvmGmDDGCI6NavECrs5fHBs5u4f
-	r9uORpWgtpe2K3/Mb2EQ==;
+	List-Owner; bh=CtRSPZwOkEv0uwp1AOKNvBk+waq0dFUa7SSbtS9Tgok=; b=J6arbar4XKF3U8
+	qi7BWtPVggYPUw5S5NZU0ddGKU2QElK2PYXBY+jaIX3OImUDJjiGDrymZ66a2hYSoVVbBYQXIHtqJ
+	efnIhG1p3AfDj5t2SoqXDPaK2nvOB4OBO1+1ZqNzUNFE5EB0FpFyR2qKDD4Jx8oFJy2kvOvzqSKfl
+	mMA9sDSvjmlSZ5N4iPbN/ISXkymvQ1NohMgBmwwBSogE7ceRQqh9vGb0ZQ068JnJvm3aM2bL2EDkk
+	nxV93lL94mE8dXvfqRTeotp2JNoEj28TUis53EhT4cBwaozdDluV3/ZEMyUibBfwa5B32tFxpH/Cq
+	Y15FVjhWJTpYoOFIs1Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTRd6-0005i0-Ql; Tue, 28 Apr 2020 14:54:36 +0000
-Received: from mga07.intel.com ([134.134.136.100])
+	id 1jTReE-0000WV-4n; Tue, 28 Apr 2020 14:55:46 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTRYj-00008M-1T
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:50:07 +0000
-IronPort-SDR: mh6CNvx+xC/bl1UoB6qPm3cMSW9lt+L+VDxOpS71PMsWvKi28axvS9xjirA9KAe/r87Si+39W9
- CzUsyunQhxfQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 28 Apr 2020 07:50:02 -0700
-IronPort-SDR: TIm9BnP5eTWiaT9SoCeMc1+yPT6amVcHlv8tmFBZ2L8njNT66dS/UjZGIRiR3nyY1Lyov1WfuY
- QLWN1Mr2JzFg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,328,1583222400"; d="scan'208";a="292873815"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 28 Apr 2020 07:49:56 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jTRYc-003Zjk-TU; Tue, 28 Apr 2020 17:49:58 +0300
-Date: Tue, 28 Apr 2020 17:49:58 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Michael Walle <michael@walle.cc>
-Subject: Re: [PATCH v3 05/16] mfd: Add support for Kontron sl28cpld
- management controller
-Message-ID: <20200428144958.GZ185537@smile.fi.intel.com>
-References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-6-michael@walle.cc>
- <20200428125049.GU185537@smile.fi.intel.com>
- <5e2d486077f9e2ce8bd9b171cf806fd9@walle.cc>
+ id 1jTRZj-0003A8-Qi
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:51:12 +0000
+Received: by mail-io1-xd43.google.com with SMTP id w4so23086228ioc.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 07:51:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=GgeqmdEmb09cwWnZURvh19BHVHs9QFAo9j/uyja5xe8=;
+ b=ftbhbo46DIoclP20MgqTJq6QQRg5IIitlwWEB+J2uWIkW1NTCjW5+JN0e+g2WLF9vX
+ EKTRwC5obL6iWDl+wsizqv27kDrSnFwS5opGl2Zcq/MAtIokvA2YFVb/2/tWigKsAib0
+ uOLaSE6BjfNoo30LntGvtNE2THRjybP1x/+YqnPP2BlCbHmTKKEBQzl/FzpdYc0xsuyD
+ IFf76F2YqZH5MyVkpyeq5vO1yglnBvM0Qo75HG5bdTFhecuJIxKxzuiPOzs5nIBDXZs4
+ fNpAWwOZwDSEjEVCu5IZKwpebijosF2ybxlz7kyBJ12/OlwYf9qgogeqZMxcghVtFbM+
+ rlFg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=GgeqmdEmb09cwWnZURvh19BHVHs9QFAo9j/uyja5xe8=;
+ b=Nt5+ztxb56g0BaU14cCJszm5nREsJ4/eWh8MPG3kFMJr3NqxelvsUBNrjP1GN+QkOA
+ GqDxZ+QbcZGeC/fEAWloCvNdfHuUoYe6MzYJ6x09Gll1mQUETPv2cKIfYuEyi4zF+Ilj
+ hpzO4R83RC4ICcVhUDimJW+h37/aVC5PsvfeZjTWG3P7uT0QXzBDBuRtfoJYNhT0mHg2
+ 18TWC1VK22kthAEofje0nM6pCg82zRleabQFoUS0O4SflP/o7htUSKg8XbBg8TOqy0kS
+ e4GRNkn2WLshdY9rcG0Mhs4dTIiqnr+Dm5+5mu3iahyht+ak3M0Qmq5S9GaQ8i10qcsH
+ FTDA==
+X-Gm-Message-State: AGi0PuZaLwdl+BttNHbMizir0QUrTE2OFdjizvZxX44J7gswIDKfCCNG
+ u6W+GvyvKbPCoNxGApWxyw9Yx6yd/m3DjYoTLMY=
+X-Google-Smtp-Source: APiQypKTD+S1WqOLrfRlXdxvtseawzRWMNX6kR8updafIakHcwBAhBmXxHQROLhLlZ95M3jOMARBiMD5WpWSOUrqEXQ=
+X-Received: by 2002:a5d:9494:: with SMTP id v20mr26401979ioj.101.1588085465427; 
+ Tue, 28 Apr 2020 07:51:05 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5e2d486077f9e2ce8bd9b171cf806fd9@walle.cc>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+References: <20200426161605.52121-1-samuel@sholland.org>
+In-Reply-To: <20200426161605.52121-1-samuel@sholland.org>
+From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Date: Tue, 28 Apr 2020 16:50:54 +0200
+Message-ID: <CAJiuCcdgDd=xrGU6iDjo=Og+OW=4cbrLG_NWZpzRZXdjJbnRXQ@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v2] arm64: dts: allwinner: a64: Remove
+ unused SPDIF sound card
+To: Samuel Holland <samuel@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_075005_162244_FA40A0B4 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_075107_918098_5FF4C6FE 
+X-CRM114-Status: GOOD (  20.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.100 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [peron.clem[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,58 +94,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Marc Zyngier <maz@kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Rob Herring <robh+dt@kernel.org>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Marcus Cooper <codekipper@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 04:43:24PM +0200, Michael Walle wrote:
-> Am 2020-04-28 14:50, schrieb Andy Shevchenko:
-> > On Thu, Apr 23, 2020 at 07:45:32PM +0200, Michael Walle wrote:
-> > > This patch adds core support for the board management controller found
-> > > on the SMARC-sAL28 board. It consists of the following functions:
-> > >  - watchdog
-> > >  - GPIO controller
-> > >  - PWM controller
-> > >  - fan sensor
-> > >  - interrupt controller
-> > 
-> > ...
-> > 
-> > >  obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
-> > > 
-> > >  obj-$(CONFIG_SGI_MFD_IOC3)	+= ioc3.o
-> > > +
-> > > +obj-$(CONFIG_MFD_SL28CPLD)	+= sl28cpld.o
-> > 
-> > Perhaps keep an order?
-> 
-> I don't see any order in that makefile. Looked to me like every new
-> file was added at the end.
-
-Okay, just didn't note from above context.
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpPbiBTdW4sIDI2IEFwciAyMDIwIGF0IDE4OjEyLCBTYW11ZWwgSG9sbGFuZCA8c2FtdWVs
+QHNob2xsYW5kLm9yZz4gd3JvdGU6Cj4KPiBBcyBvZiB2NS43LXJjMiwgTGludXggbm93IHByaW50
+cyB0aGUgZm9sbG93aW5nIG1lc3NhZ2UgYXQgYm9vdDoKPgo+ICAgWyAgIDMzLjg0ODUyNV0gcGxh
+dGZvcm0gc291bmRfc3BkaWY6IGRlZmVycmVkIHByb2JlIHBlbmRpbmcKPgo+IFRoaXMgaXMgYmVj
+YXVzZSBzb3VuZF9zcGRpZiBpcyB3YWl0aW5nIG9uIGl0cyBDUFUgREFJICZzcGRpZiB0byBwcm9i
+ZSwKPiBidXQgJnNwZGlmIGlzIGRpc2FibGVkIGluIHRoZSBkZXZpY2UgdHJlZS4KPgo+IEV4cG9z
+dXJlIG9mIHRoZSBTUERJRiBwaW4gaXMgYm9hcmQtc3BlY2lmaWMgZnVuY3Rpb25hbGl0eSwgc28g
+dGhlIHNvdW5kCj4gY2FyZCBhbmQgY29kZWMgREFJIGJlbG9uZyBpbiB0aGUgaW5kaXZpZHVhbCBi
+b2FyZCBEVFMsIG5vdCB0aGUgU29DIERUU0kuCj4gSW4gZmFjdCwgbm8gaW4tdHJlZSBBNjQgYm9h
+cmQgRFRTIGVuYWJsZXMgJnNwZGlmLCBzbyBsZXQncyByZW1vdmUgdGhlCj4gY2FyZCBhbmQgREFJ
+IGVudGlyZWx5LgoKQ0M6IE1hcmN1cyBDb29wZXIgPGNvZGVraXBwZXJAZ21haWwuY29tPgoKV2l0
+aG91dCBhbnkgdmFsdWUgOgpBY2tlZC1ieTogQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdt
+YWlsLmNvbT4KClJlZ2FyZHMsCkNsZW1lbnQKCj4KPiBUaGlzIHJldmVydHMgY29tbWl0IDc4ZTA3
+MTM3MGE4NjQ3M2YyNTkyM2UwM2I1MWNiYmFkYWNmOGJlMGYuCj4KPiBTaWduZWQtb2ZmLWJ5OiBT
+YW11ZWwgSG9sbGFuZCA8c2FtdWVsQHNob2xsYW5kLm9yZz4KPiAtLS0KPgo+IENoYW5nZXMgc2lu
+Y2UgdjE6Cj4gIC0gUmVtb3ZlIHRoZSBub2RlIGluc3RlYWQgb2YgZGlzYWJsaW5nIGl0Cj4gIC0g
+QWxzbyByZW1vdmUgdGhlIGNvZGVjIERBSQo+Cj4gLS0tCj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMv
+YWxsd2lubmVyL3N1bjUwaS1hNjQuZHRzaSB8IDE4IC0tLS0tLS0tLS0tLS0tLS0tLQo+ICAxIGZp
+bGUgY2hhbmdlZCwgMTggZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9i
+b290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWE2NC5kdHNpIGIvYXJjaC9hcm02NC9ib290L2R0cy9h
+bGx3aW5uZXIvc3VuNTBpLWE2NC5kdHNpCj4gaW5kZXggMzExNDNmZTY0ZDkxLi5jMjZjYzFmY2Fm
+ZmQgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWE2
+NC5kdHNpCj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWE2NC5k
+dHNpCj4gQEAgLTE1NCwyNCArMTU0LDYgQEAgbGlua19jb2RlYzogc2ltcGxlLWF1ZGlvLWNhcmQs
+Y29kZWMgewo+ICAgICAgICAgICAgICAgICB9Owo+ICAgICAgICAgfTsKPgo+IC0gICAgICAgc291
+bmRfc3BkaWYgewo+IC0gICAgICAgICAgICAgICBjb21wYXRpYmxlID0gInNpbXBsZS1hdWRpby1j
+YXJkIjsKPiAtICAgICAgICAgICAgICAgc2ltcGxlLWF1ZGlvLWNhcmQsbmFtZSA9ICJPbi1ib2Fy
+ZCBTUERJRiI7Cj4gLQo+IC0gICAgICAgICAgICAgICBzaW1wbGUtYXVkaW8tY2FyZCxjcHUgewo+
+IC0gICAgICAgICAgICAgICAgICAgICAgIHNvdW5kLWRhaSA9IDwmc3BkaWY+Owo+IC0gICAgICAg
+ICAgICAgICB9Owo+IC0KPiAtICAgICAgICAgICAgICAgc2ltcGxlLWF1ZGlvLWNhcmQsY29kZWMg
+ewo+IC0gICAgICAgICAgICAgICAgICAgICAgIHNvdW5kLWRhaSA9IDwmc3BkaWZfb3V0PjsKPiAt
+ICAgICAgICAgICAgICAgfTsKPiAtICAgICAgIH07Cj4gLQo+IC0gICAgICAgc3BkaWZfb3V0OiBz
+cGRpZi1vdXQgewo+IC0gICAgICAgICAgICAgICAjc291bmQtZGFpLWNlbGxzID0gPDA+Owo+IC0g
+ICAgICAgICAgICAgICBjb21wYXRpYmxlID0gImxpbnV4LHNwZGlmLWRpdCI7Cj4gLSAgICAgICB9
+Owo+IC0KPiAgICAgICAgIHRpbWVyIHsKPiAgICAgICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJh
+cm0sYXJtdjgtdGltZXIiOwo+ICAgICAgICAgICAgICAgICBhbGx3aW5uZXIsZXJyYXR1bS11bmtu
+b3duMTsKPiAtLQo+IDIuMjQuMQo+Cj4gLS0KPiBZb3UgcmVjZWl2ZWQgdGhpcyBtZXNzYWdlIGJl
+Y2F1c2UgeW91IGFyZSBzdWJzY3JpYmVkIHRvIHRoZSBHb29nbGUgR3JvdXBzICJsaW51eC1zdW54
+aSIgZ3JvdXAuCj4gVG8gdW5zdWJzY3JpYmUgZnJvbSB0aGlzIGdyb3VwIGFuZCBzdG9wIHJlY2Vp
+dmluZyBlbWFpbHMgZnJvbSBpdCwgc2VuZCBhbiBlbWFpbCB0byBsaW51eC1zdW54aSt1bnN1YnNj
+cmliZUBnb29nbGVncm91cHMuY29tLgo+IFRvIHZpZXcgdGhpcyBkaXNjdXNzaW9uIG9uIHRoZSB3
+ZWIsIHZpc2l0IGh0dHBzOi8vZ3JvdXBzLmdvb2dsZS5jb20vZC9tc2dpZC9saW51eC1zdW54aS8y
+MDIwMDQyNjE2MTYwNS41MjEyMS0xLXNhbXVlbCU0MHNob2xsYW5kLm9yZy4KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
