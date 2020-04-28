@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B08C1BBF81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:28:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8F01BBF94
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 15:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NQs8KowItnN+gdc9ojy2YF3y/pHDr8PvxLTI8GCM3QI=; b=k7XiCKs0LP8NOr
-	9dAhHH8eZ9QfmKTK2djxepWG8lqgUyr2XNyKx6GJAkMVkDT5MgigkQtCVOTHK2fWtpNCBP5s6WrA6
-	wxdCCfwgsiAD+8k3kYhJm6MrJonEh2bMrd+bhFPaSIXCLog43Nvbz+h4/u4jwDyXj4WAvHy3nc/hl
-	9/Q49LNdwP445vDOzqhP7veHMYsJmtSsBS93zq8zhcRM85fdHPDuPMdfSa8jrnFilSMZEJG+J85PH
-	I2XEofD73mcf9fVpbTITmGgUKgTOUVqL3D82HdzdIpP/rI1AAURFLulyE8RY2WLeV117dTo6pD+c6
-	OKpBM9ptYG+sJSzXW7lA==;
+	List-Owner; bh=BkS5wf0my4H7A+o7emiRXAlxY0mBSPY8ZAji3zrvkCI=; b=LMfrT+C22/dbtD
+	+KVXIai0K2xgTlKWn2VnN20n21oTFq1wjOmiEe6xnOCfy0aomW+tKAhZp76z/Gu9H+44p+1/sgxhW
+	blvz3GpTrubqQSh7Q1N6M5x7y/+S66KgqRprlCSf+ZfzaFiXAi/aDQNLgW4p6XSTJCGXymtDvRiIe
+	53RrM3mdYyFWvdc5ohytHWxBEvDWiS4cJMg8L7TjgUV22MNck0zHUZZHknRoB5z6s8VAlglEfz016
+	IwRZ0MVAaIdkw206Qev2AgwFzSjQBcKG762FKq1hWhynkb4u9Wrm56xvL2p3dlt2rCawIlnLi3uxz
+	MgyRnCrRud+7qQtvZt4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTQHf-0004Dn-Od; Tue, 28 Apr 2020 13:28:23 +0000
+	id 1jTQKi-0007zO-KO; Tue, 28 Apr 2020 13:31:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTQHU-0004DE-JA
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:28:13 +0000
+ id 1jTQKZ-0007yQ-5B
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 13:31:24 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 439F5206F0;
- Tue, 28 Apr 2020 13:28:08 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 56C90206D6;
+ Tue, 28 Apr 2020 13:31:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588080492;
- bh=e2h+YGX8UNd7RGu9S/wztUu2W9Zxes42cCR7ChuzclQ=;
+ s=default; t=1588080682;
+ bh=4IjMN/3nSMM2CXswAlECOTw3UvL1UdbgXql3tahnnIs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=IaFvCu6krhFeoqDRhlxn4Rt0HIxMcHkb8PJJjF/01l9E9bBbYc0uSUxxo5MRegT8S
- rcMlMNwdwADZCmdFUqk1E3PWHt/iQ+TBzEOqu6W95E2Gppu3nhQV4pELCaIVMxuAMr
- VdBgg/Q/DMYyELaZHTFaB9/B+wUhZEkt8jkDc01A=
-Date: Tue, 28 Apr 2020 14:28:05 +0100
+ b=U8hgL19C4C/65u6AvzzNc2gAU07onDsuhSvKBUnFsyc8jis0wBbvVyvRZ3Gu3K8/W
+ BjEzYoj6UAgRg9E3imbQQgq8J3IKqFg2S92i/njMoITh1GZPTlNl14wjK1DI4rpXZj
+ DXfkv3RdTn+ULjbdewpr8eBIPOeNtkA7tUneGiHo=
+Date: Tue, 28 Apr 2020 14:31:17 +0100
 From: Will Deacon <will@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
-Message-ID: <20200428132804.GF6791@willie-the-truck>
-References: <20200316165055.31179-1-broonie@kernel.org>
- <20200422154436.GJ4898@sirena.org.uk> <20200422162954.GF3585@gaia>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 2/3] PCI: host-generic: Support building as modules
+Message-ID: <20200428133116.GG6791@willie-the-truck>
+References: <20200409234923.21598-1-robh@kernel.org>
+ <20200409234923.21598-3-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422162954.GF3585@gaia>
+In-Reply-To: <20200409234923.21598-3-robh@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_062812_664393_C9D580B8 
-X-CRM114-Status: GOOD (  16.18  )
+X-CRM114-CacheID: sfid-20200428_063123_219621_1E31E181 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,45 +77,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Andrew Jones <drjones@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
- Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Richard Henderson <richard.henderson@linaro.org>,
- Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Florian Weimer <fweimer@redhat.com>, linux-kernel@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Sudakshina Das <sudi.das@arm.com>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-pci@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, Robert Richter <rrichter@marvell.com>,
+ linux-acpi@vger.kernel.org, Zhou Wang <wangzhou1@hisilicon.com>,
+ Mans Rullgard <mans@mansr.com>, Jonathan Chocron <jonnyc@amazon.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Toan Le <toan@os.amperecomputing.com>,
+ Len Brown <lenb@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 22, 2020 at 05:29:54PM +0100, Catalin Marinas wrote:
-> On Wed, Apr 22, 2020 at 04:44:36PM +0100, Mark Brown wrote:
-> > On Mon, Mar 16, 2020 at 04:50:42PM +0000, Mark Brown wrote:
-> > > This patch series implements support for ARMv8.5-A Branch Target
-> > > Identification (BTI), which is a control flow integrity protection
-> > > feature introduced as part of the ARMv8.5-A extensions.
-> > 
-> > I've not resent this since the branch is still sitting in the arm64 tree
-> > but it's also not in -next at the minute - is there anything you're
-> > waiting for from my end here?
+On Thu, Apr 09, 2020 at 05:49:22PM -0600, Rob Herring wrote:
+> Enable building host-generic and its host-common dependency as a
+> module.
 > 
-> It's up to Will whether he wants a new series posted. The for-next/bti
-> branch is complete AFAICT, only that normally we start queueing stuff
-> (and push to -next) around -rc3.
+> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Andrew Murray <amurray@thegoodpenguin.co.uk>
+> Cc: Bjorn Helgaas <bhelgaas@google.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: linux-pci@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  drivers/pci/controller/Kconfig            | 4 ++--
+>  drivers/pci/controller/pci-host-common.c  | 5 +++++
+>  drivers/pci/controller/pci-host-generic.c | 7 +++++--
+>  drivers/pci/ecam.c                        | 4 ++++
+>  drivers/pci/setup-bus.c                   | 1 +
+>  include/linux/pci-ecam.h                  | 2 +-
+>  6 files changed, 18 insertions(+), 5 deletions(-)
 
-I'm happy either way, but it would be nice to base other BTI patches on
-top of this branch. Mark -- is it easier for you to refresh the series
-against v5.7-rc3, or leave it like it is? Please just let me know either
-way.
-
-Thanks,
+Acked-by: Will Deacon <will@kernel.org>
 
 Will
 
