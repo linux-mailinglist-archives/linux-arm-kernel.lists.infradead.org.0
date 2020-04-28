@@ -2,63 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 675621BC63D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:11:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0AE1BC688
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:24:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tEndSG81OU2i/6aWgpWgR48cs6ytVEHSnoJ27NGLM90=; b=mkTYdoKFWtjHGvsXlkF7iPYgG
-	qYTnybPCmwaQ3UuL2g8x0zZgsz1pcShZvYX9mJJf+6l9R+ICvK9nrBXy6UM9yZ292+v9/b2xXazzF
-	Fm9l6Rsrps+/h2GUqKBaAa/KN35bArn9dtV9q9y34335vOyIGqYJxuUhWtLywEXm7SjzPy2Ob//rA
-	SXxadDUYTJ9JSko//JR+P1EjhQUJ9AK8BfuFodh6/v74QazxRJ3q17yYzgdbXP/Ig5NhhsEOkZ74j
-	N5BG+G4++yptp4tUdfQTKir5ivuTzgjSze+U9HkFcbAeVgkwC+RMLhpHLjyW4CBa4rDX9c8iWORiN
-	W82Ybwcpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wgNW3wIqq1yL6PHlPbpJql/IYzP94oeknPfa4lXPFf8=; b=HDyivqI9e4IJ+Y
+	SuS2ATRWT2MiU7308+roNorPCx+GL/0WdRf327G8/pfxnK2DINrS4Mo0SbQlbCqbqvVoo28P/9pIH
+	lu8FGQTQyUqqWf2cB/eh6VThv5npOOIVuaZIPXppnZscvVyVempeMSUMLjjrh6RO/3hO6BIxfiJDM
+	LS9YgWehygy1L397pGsg/8BDamWarBPu2UcG91UC4SZfgdpeTTc1RyDzqQFFgtV3SEk6OuP0Ac7SU
+	sMADkZCCq2kG5pz25bvBGkBuw81bXHcb3iTG/lX2jWHn84pjwrlMmAzGykE5mPPyX2jQshXLGLmp1
+	Myj3JaEMH6zqMPkRynMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTTll-0006Zn-Vc; Tue, 28 Apr 2020 17:11:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTTlb-0006Z6-47
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:11:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FC6430E;
- Tue, 28 Apr 2020 10:11:30 -0700 (PDT)
-Received: from [10.57.33.170] (unknown [10.57.33.170])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D0ADD3F305;
- Tue, 28 Apr 2020 10:11:27 -0700 (PDT)
-Subject: Re: Audio sound card name [was [PATCH 4/7] arm64: dts: allwinner:
- a64: Add HDMI audio]
-To: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Mark Brown <broonie@kernel.org>
-References: <20200426120442.11560-1-peron.clem@gmail.com>
- <20200426120442.11560-5-peron.clem@gmail.com>
- <20200428080020.35qcuylwq2ylmubu@gilmour.lan>
- <CAJiuCcc2LQ4L36KSfO8iLVFBUO6k+zsZFX+_Ovm_10PoWO4AsA@mail.gmail.com>
- <20200428160417.6q5oab2guaumhhwi@gilmour.lan>
- <CAJiuCccFFUJJzXwygLQbDK4fGJ61p72Hv7vj3WVP-=z=J1Yj0Q@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <031ee5d3-8a30-82ee-76db-c0e8a1073046@arm.com>
-Date: Tue, 28 Apr 2020 18:11:26 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jTTxa-0005Ql-P6; Tue, 28 Apr 2020 17:23:54 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTTxO-0005QM-Ct
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:23:43 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SHN2qP036115;
+ Tue, 28 Apr 2020 17:23:34 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=date : from : to : cc
+ : subject : message-id : references : mime-version : content-type :
+ in-reply-to; s=corp-2020-01-29;
+ bh=nYRe3Y8uXuglxFzIR12FaigY66zRmKUyGWDwXjiXdU8=;
+ b=cN0Bqq2/+5KRYNGOWfNpmF2uU9/AZOaZnRLCqrEa8dn/0TSCuzme1svSzlLnwkW+8rYK
+ jzh/40NuUaLzABl4FTCby60G7PoklecspEg0nyHSr1hxFRfjRyZwPFsZ6tGzrZBTmWee
+ MvmtIlZOmgx7CjGwclIUJCMoLxqkrrj5A1oyoVl2EYeGhENkvDUFWwnT/c/bu8D04hVX
+ FXm09Uq2SZSxcK+ljsRt4CiKw7kNzfsHCiowYVFK1yRlJ3r4JdBHENHhhQDcWvdxLv18
+ Sm7ZZuhoihIJCxCDuZ817tUtdbF8Ml176gGjCnb6k6HPu5udZg67li7HyjLtkdB5fIzE Nw== 
+Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
+ by aserp2120.oracle.com with ESMTP id 30nucg1br4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 Apr 2020 17:23:34 +0000
+Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
+ by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SHC1EK003111;
+ Tue, 28 Apr 2020 17:21:34 GMT
+Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
+ by aserp3030.oracle.com with ESMTP id 30mxrt194w-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 Apr 2020 17:21:34 +0000
+Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
+ by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03SHLUSY017447;
+ Tue, 28 Apr 2020 17:21:30 GMT
+Received: from kadam (/41.57.98.10) by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 28 Apr 2020 10:21:29 -0700
+Date: Tue, 28 Apr 2020 20:21:16 +0300
+From: Dan Carpenter <dan.carpenter@oracle.com>
+To: Sinan Kaya <okaya@kernel.org>
+Subject: Re: [PATCH] dmaengine: qcom_hidma: Simplify error handling path in
+ hidma_probe
+Message-ID: <20200428172116.GG2014@kadam>
+References: <20200427111043.70218-1-christophe.jaillet@wanadoo.fr>
+ <20200428125426.GE2014@kadam>
+ <1efa0186-7fbe-9cb5-2719-2d7192f99e27@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <CAJiuCccFFUJJzXwygLQbDK4fGJ61p72Hv7vj3WVP-=z=J1Yj0Q@mail.gmail.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1efa0186-7fbe-9cb5-2719-2d7192f99e27@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 mlxscore=0
+ phishscore=0 suspectscore=2
+ mlxlogscore=999 malwarescore=0 bulkscore=0 spamscore=0 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2004280136
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
+ priorityscore=1501
+ mlxlogscore=999 impostorscore=0 suspectscore=2 malwarescore=0
+ lowpriorityscore=0 mlxscore=0 spamscore=0 adultscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004280137
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_101131_285130_2F61C6BD 
-X-CRM114-Status: GOOD (  19.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_102342_523637_E8A0577D 
+X-CRM114-Status: GOOD (  16.30  )
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.9 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
+ [141.146.126.78 listed in bl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,66 +116,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Takashi Iwai <tiwai@suse.com>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Liam Girdwood <lgirdwood@gmail.com>,
- Marcus Cooper <codekipper@gmail.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- Maxime Ripard <maxime@cerno.tech>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: linux-arm-msm@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, bjorn.andersson@linaro.org, vkoul@kernel.org,
+ agross@kernel.org, Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNC0yOCA1OjQ5IHBtLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gSGkgTWFyaywg
-Um9iLAo+IAo+IE9uIFR1ZSwgMjggQXByIDIwMjAgYXQgMTg6MDQsIE1heGltZSBSaXBhcmQgPG1h
-eGltZUBjZXJuby50ZWNoPiB3cm90ZToKPj4KPj4gT24gVHVlLCBBcHIgMjgsIDIwMjAgYXQgMTA6
-NTQ6MDBBTSArMDIwMCwgQ2zDqW1lbnQgUMOpcm9uIHdyb3RlOgo+Pj4gSGkgTWF4aW1lLAo+Pj4K
-Pj4+IE9uIFR1ZSwgMjggQXByIDIwMjAgYXQgMTA6MDAsIE1heGltZSBSaXBhcmQgPG1heGltZUBj
-ZXJuby50ZWNoPiB3cm90ZToKPj4+Pgo+Pj4+IE9uIFN1biwgQXByIDI2LCAyMDIwIGF0IDAyOjA0
-OjM5UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPj4+Pj4gRnJvbTogTWFyY3VzIENv
-b3BlciA8Y29kZWtpcHBlckBnbWFpbC5jb20+Cj4+Pj4+Cj4+Pj4+IEFkZCBhIHNpbXBsZS1zb3Vu
-ZGNhcmQgdG8gbGluayBhdWRpbyBiZXR3ZWVuIEhETUkgYW5kIEkyUy4KPj4+Pj4KPj4+Pj4gU2ln
-bmVkLW9mZi1ieTogSmVybmVqIFNrcmFiZWMgPGplcm5lai5za3JhYmVjQHNpb2wubmV0Pgo+Pj4+
-PiBTaWduZWQtb2ZmLWJ5OiBNYXJjdXMgQ29vcGVyIDxjb2Rla2lwcGVyQGdtYWlsLmNvbT4KPj4+
-Pj4gU2lnbmVkLW9mZi1ieTogQ2zDqW1lbnQgUMOpcm9uIDxwZXJvbi5jbGVtQGdtYWlsLmNvbT4K
-Pj4+Pj4gLS0tCj4+Pj4+ICAgYXJjaC9hcm02NC9ib290L2R0cy9hbGx3aW5uZXIvc3VuNTBpLWE2
-NC5kdHNpIHwgMjEgKysrKysrKysrKysrKysrKysrKwo+Pj4+PiAgIDEgZmlsZSBjaGFuZ2VkLCAy
-MSBpbnNlcnRpb25zKCspCj4+Pj4+Cj4+Pj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3Qv
-ZHRzL2FsbHdpbm5lci9zdW41MGktYTY0LmR0c2kgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdp
-bm5lci9zdW41MGktYTY0LmR0c2kKPj4+Pj4gaW5kZXggZTU2ZTFlM2Q0YjczLi4wOGFiNmI1ZTcy
-YTUgMTAwNjQ0Cj4+Pj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lubmVyL3N1bjUw
-aS1hNjQuZHRzaQo+Pj4+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5lci9zdW41
-MGktYTY0LmR0c2kKPj4+Pj4gQEAgLTEwMiw2ICsxMDIsMjUgQEAKPj4+Pj4gICAgICAgICAgICAg
-ICAgc3RhdHVzID0gImRpc2FibGVkIjsKPj4+Pj4gICAgICAgIH07Cj4+Pj4+Cj4+Pj4+ICsgICAg
-IGhkbWlfc291bmQ6IGhkbWktc291bmQgewo+Pj4+PiArICAgICAgICAgICAgIGNvbXBhdGlibGUg
-PSAic2ltcGxlLWF1ZGlvLWNhcmQiOwo+Pj4+PiArICAgICAgICAgICAgIHNpbXBsZS1hdWRpby1j
-YXJkLGZvcm1hdCA9ICJpMnMiOwo+Pj4+PiArICAgICAgICAgICAgIHNpbXBsZS1hdWRpby1jYXJk
-LG5hbWUgPSAiYWxsd2lubmVyLGhkbWkiOwo+Pj4+Cj4+Pj4gSSdtIG5vdCBzdXJlIHdoYXQgdGhl
-IHVzdWFsIGNhcmQgbmFtZSBzaG91bGQgYmUgbGlrZSB0aG91Z2guIEkgd291bGQgYXNzdW1lIHRo
-YXQKPj4+PiB0aGlzIHNob3VsZCBiZSBzb21ldGhpbmcgc3BlY2lmaWMgZW5vdWdoIHNvIHRoYXQg
-eW91J3JlIGFibGUgdG8gZGlmZmVyZW50aWF0ZQo+Pj4+IGJldHdlZW4gYm9hcmRzIC8gU29DIHNv
-IHRoYXQgdGhlIHVzZXJzcGFjZSBjYW4gY2hvb3NlIGEgZGlmZmVyZW50IGNvbmZpZ3VyYXRpb24K
-Pj4+PiBiYXNlZCBvbiBpdD8KPj4+Cj4+PiBJIHJlYWxseSBkb24ndCBrbm93IHdoYXQgd2Ugc2hv
-dWxkIHVzZSBoZXJlLAo+Pj4gSSBqdXN0IGhhdmUgYSBsb29rIGF0IG90aGVyIFNvQzoKPj4+IHJr
-MzMyODogIkhETUkiCj4+PiByazMzOTk6ICJoZG1pLXNvdW5kIgo+Pj4gcjhhNzc0YzAtY2F0ODc0
-OiAiQ0FUODc0IEhETUkgc291bmQiCj4+Pgo+Pj4gQnV0IG1heWJlIGl0J3MgdGltZSB0byBpbnRy
-b2R1Y2UgcHJvcGVyIG5hbWU6Cj4+PiBXaGF0IGFib3V0IDoKPj4+IHBhdAo+Pj4gc3VuNTBpLWg2
-LWhkbWkKPj4KPj4gSXQncyBwcmV0dHkgbXVjaCB3aGF0IHdlJ3ZlIGJlZW4gdXNpbmcgZm9yIHRo
-ZSBvdGhlciBzb3VuZCBjYXJkcyB3ZSBoYXZlLCBzbyBpdAo+PiBtYWtlcyBzZW5zZSB0byBtZS4K
-PiAKPiBJIGhhdmUgYSBxdWVzdGlvbiByZWdhcmRpbmcgdGhlIHNpbXBsZS1hdWRpby1jYXJkLG5h
-bWUuCj4gSW4gdGhpcyBwYXRjaCwgSSB3b3VsZCBsaWtlIHRvIGludHJvZHVjZSBhIHNpbXBsZS1h
-dWRpby1jYXJkIGZvciB0aGUKPiBBbGx3aW5uZXIgQTY0IEhETUkuCj4gCj4gV2hhdCBzaG91bGQg
-YmUgdGhlIHByZWZlcnJlZCBuYW1lIGZvciB0aGlzIHNvdW5kIGNhcmQ/Cj4gInN1bjUwaS1hNjQt
-aGRtaSIgPyAiYWxsd2lubmVyLCBzdW41MGktYTY0LWhkbWkiID8KCkkgY2FuIGF0IGxlYXN0IHNw
-ZWFrIGZvciBSSzMzMjgsIGFuZCB0aGUgcmVhc29uaW5nIHRoZXJlIHdhcyB0aGF0IGFzIHRoZSAK
-dXNlciBsb29raW5nIGF0IHdoYXQgYGFwbGF5IC1sYCBzYXlzLCBJIGRvbid0IGdpdmUgYSBob290
-IGFib3V0IHdoYXQgdGhlIApTb0MgbWF5IGJlIGNhbGxlZCwgSSBzZWUgdHdvIGNhcmRzIGFuZCBJ
-IHdhbnQgdG8ga25vdywgd2l0aCB0aGUgbGVhc3QgCmFtb3VudCBvZiB1bmNlcnRhaW50eSwgd2hp
-Y2ggb25lIHdpbGwgbWFrZSB0aGUgc291bmQgY29tZSBvdXQgb2YgdGhlIApwb3J0IHRoYXQncyBs
-YWJlbGxlZCAiSERNSSIgb24gdGhlIGJveCA7KQoKUm9iaW4uCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+I apologize, I wrote my code hurriedly and did no explain the bug well.
+I understood what the code is doing, but my fix was missing an if
+condition.
+
+On Tue, Apr 28, 2020 at 12:01:15PM -0400, Sinan Kaya wrote:
+> On 4/28/2020 8:54 AM, Dan Carpenter wrote:
+> >> @@ -897,7 +897,6 @@ static int hidma_probe(struct platform_device *pdev)
+> >>  	if (msi)
+> >             ^^^
+> > This test doesn't work.  It will call free hidma_free_msis() if the
+> > hidma_request_msi() call fails.  We should do:
+> > 
+> > 	if (msi) {
+> > 		rc = hidma_request_msi(dmadev, pdev);
+> > 		msi = false;
+
+What I meant to say here was:
+
+	if (msi) {
+		rc = hidma_request_msi(dmadev, pdev);
+		if (rc)
+			msi = false;
+
+Otherwise we end up checking freeing the msi in the error handling
+code when we did not take it.
+
+Hopefully, that clears things up?
+
+regards,
+dan carpenter
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
