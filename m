@@ -2,56 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25BF01BBCE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:56:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 962771BBCE9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:59:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NymJr8dySAD+13JZ0ChF2Li2dFnG/g54B17SsEGzWow=; b=nWXbxGhkNCpivI
-	IZFKmTkLb84qwyd/R+jyNiGRSi41HGhFwdDOueZ611kqDEuCZG3m2Yo7dBtp3gclco9xGI4GiTkDG
-	KsSE9xOjiTED1o+uxx6wu1YQK6SC1Weddb4LgKX72VBX94wYTTsjuHiv7vue1kUDwVkXLgvGBUhZ3
-	S0bXgaQFjJ0OYh6aOMkWbZJWGFwtEww/wfw0aTnpD0i3HYsNq/orNTpfDfbQg4h8MViant3FvPoVH
-	wvdXG8LWYpCi1Dy0DFaxYWK/b2IMzq+ewU1xpBTffHX5m0LWcUU4/ncZJCb887gCmMUVGUMhtJ/qV
-	wwIN6dY9dZ1jYzGb3Gzg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pHSpzH2DB2D8ELjbcx6GvHS0Dd5qzxy6I0IfOVGd/ns=; b=hOek9SY8xFqtnN
+	Im6OpDxMDn4wtaOmuZgHbuWcSdVXzsCtIsVf2M35U6EJuKev+7xYSkytsdegBz7W3yD4LM22BUa8C
+	TOYpVan1vxiEgAYA41MFzdgq3ERAs1GKjbnJAREuXfAxD/OxHSSKed4qBQveWQ8SfUKsomGFF3U8p
+	hSOH0RJF1tEY8kn3lG1Vns8MXnH4BoEq+jP/DrLjqmLjGIvibp/NrjgS6KSsj3TaYVmRCxW7tcMSV
+	2ywjBytx1mOF8CnABvn6l2163RZNEhvE5TcniN4vgKjiEBOB1KsPVx/EQo+VdQAORu7C/57CCCG7I
+	+CrLMm4dh3ZONXV4WI7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTOr3-00076p-2W; Tue, 28 Apr 2020 11:56:49 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jTOt2-0007hp-4p; Tue, 28 Apr 2020 11:58:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTOqt-00075k-Mk
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:56:41 +0000
-Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id E6470767EDA26952B564;
- Tue, 28 Apr 2020 19:56:29 +0800 (CST)
-Received: from huawei.com (10.175.124.28) by DGGEMS408-HUB.china.huawei.com
- (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Tue, 28 Apr 2020
- 19:56:19 +0800
-From: Jason Yan <yanaijie@huawei.com>
-To: <manivannan.sadhasivam@linaro.org>, <linus.walleij@linaro.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-gpio@vger.kernel.org>
-Subject: [PATCH] pinctrl: add pwm37 to bm1880_pctrl_groups
-Date: Tue, 28 Apr 2020 19:55:43 +0800
-Message-ID: <20200428115543.33379-1-yanaijie@huawei.com>
-X-Mailer: git-send-email 2.21.1
+ id 1jTOsr-0007hG-Fp
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:58:42 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F1BC8206D7;
+ Tue, 28 Apr 2020 11:58:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588075121;
+ bh=mGmzPCWeGF97BEnRFbfyXl7PoPmIB2NTIo0PyRYBzKw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=x5+294cgndK7ZqqTcZ66SUPS7ee7GBnrD5ReDB+847sWKk2qk/UdGkosk72PTjVMM
+ GXuuKF/GUU/yz578Td2YCgXT4EpciExHTzZLjMl6vwCq7cT4QxktLjlG5cEhCu4VX4
+ VQKaumWf5UvXHS2QjMugUq02wz2VlsYngdXZEyMs=
+Date: Tue, 28 Apr 2020 12:58:36 +0100
+From: Will Deacon <will@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: arm64 vdso might miss .eh_frame
+Message-ID: <20200428115835.GA6791@willie-the-truck>
+References: <20200415092336.GK987@arm.com>
+ <20200428073435.GC4049@willie-the-truck>
+ <152f54d5-2fa9-bc08-d931-ed2f3675da6b@arm.com>
+ <20200428111123.GA15519@C02TD0UTHF1T.local>
+ <d6b501ef-c587-8d5a-48ff-93188b78458a@arm.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.175.124.28]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <d6b501ef-c587-8d5a-48ff-93188b78458a@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_045639_915930_5022543C 
-X-CRM114-Status: UNSURE (   8.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_045841_547283_B90B401B 
+X-CRM114-Status: GOOD (  17.68  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,28 +80,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Yan <yanaijie@huawei.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Tamas Zsoldos <tamas.zsoldos@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlICdwd20zNycgaXMgbm90IGFkZGVkIHRvIGJtMTg4MF9wY3RybF9ncm91cHMsIHdoaWNoIHRy
-aWdnZXJzIGEgZ2NjCmJ1aWxkIHdhcm5pbmc6Cgpkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4
-ODAuYzoyNjM6Mjc6IHdhcm5pbmc6IOKAmHB3bTM3X3BpbnPigJkgZGVmaW5lZApidXQgbm90IHVz
-ZWQgWy1XdW51c2VkLWNvbnN0LXZhcmlhYmxlPV0KIHN0YXRpYyBjb25zdCB1bnNpZ25lZCBpbnQg
-cHdtMzdfcGluc1tdID0geyAxMTAgfTsKClNpZ25lZC1vZmYtYnk6IEphc29uIFlhbiA8eWFuYWlq
-aWVAaHVhd2VpLmNvbT4KLS0tCiBkcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAuYyB8IDEg
-KwogMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9w
-aW5jdHJsL3BpbmN0cmwtYm0xODgwLmMgYi9kcml2ZXJzL3BpbmN0cmwvcGluY3RybC1ibTE4ODAu
-YwppbmRleCBmN2RmZjRmMTQxMDEuLmQxYTdkOTgzNjc4NyAxMDA2NDQKLS0tIGEvZHJpdmVycy9w
-aW5jdHJsL3BpbmN0cmwtYm0xODgwLmMKKysrIGIvZHJpdmVycy9waW5jdHJsL3BpbmN0cmwtYm0x
-ODgwLmMKQEAgLTQwOCw2ICs0MDgsNyBAQCBzdGF0aWMgY29uc3Qgc3RydWN0IGJtMTg4MF9wY3Ry
-bF9ncm91cCBibTE4ODBfcGN0cmxfZ3JvdXBzW10gPSB7CiAJQk0xODgwX1BJTkNUUkxfR1JQKHB3
-bTM0KSwKIAlCTTE4ODBfUElOQ1RSTF9HUlAocHdtMzUpLAogCUJNMTg4MF9QSU5DVFJMX0dSUChw
-d20zNiksCisJQk0xODgwX1BJTkNUUkxfR1JQKHB3bTM3KSwKIAlCTTE4ODBfUElOQ1RSTF9HUlAo
-aTJjMCksCiAJQk0xODgwX1BJTkNUUkxfR1JQKGkyYzEpLAogCUJNMTg4MF9QSU5DVFJMX0dSUChp
-MmMyKSwKLS0gCjIuMjEuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue, Apr 28, 2020 at 12:15:46PM +0100, Vincenzo Frascino wrote:
+> On 4/28/20 12:11 PM, Mark Rutland wrote:
+> > On Tue, Apr 28, 2020 at 11:54:25AM +0100, Vincenzo Frascino wrote:
+> >> On 4/28/20 8:34 AM, Will Deacon wrote:
+> >>> On Wed, Apr 15, 2020 at 10:23:36AM +0100, Szabolcs Nagy wrote:
+> >>>> On aarch64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
+> >>>> by default since gcc-8, so now the de facto platform ABI is to allow
+> >>>> unwinding from async signal handlers.
+> >>>>
+> >>>> However on bare metal targets (aarch64-none-elf), and on old gcc,
+> >>>> async and sync unwind tables are not enabled by default to avoid
+> >>>> runtime memory costs.
+> >>>>
+> >>>> This means if linux is built with a baremetal toolchain the vdso.so
+> >>>> may not have unwind tables which breaks our (undocumented) platform
+> >>>> ABI guarantee in userspace. So adding -fasynchronous-unwind-tables
+> >>>> explicitly to the vgettimeofday.o cflags would be nice (the other
+> >>>> objects in the vdso seem to be asm).
+> >>>>
+> >>>> There was also a report that android clang built linux vdso.so lacks
+> >>>> .eh_frame completely, that may be a missing --eh-frame-hdr or different
+> >>>> platform ABI on android, Tamas on cc may be able to verify this.
+> >>>
+> >>> Vincenzo? Looks like this is a regression caused by the move to C -- please
+> >>> can you take a look?
+> >>
+> >> I have already, locally, a patch that addresses the problem presented in this
+> >> email, based on Szabolcs comment. I did not post it yet because I was waiting
+> >> for Tamas' comment and address everything in one go.
+> > 
+> > Can I suggest that you post the patch as-is here, even if it's not
+> > complete, so that we can all review/test in parallel?
+> > 
+> 
+> Sure, I will write a sensible comment and send it out.
+
+Thanks!
+
+Will
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
