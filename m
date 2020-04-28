@@ -2,57 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED5BF1BC3C3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:32:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F1791BC3C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:32:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=h+nnVQobPA2aPcBxZ8Lq2goMRxu4N770/wO8jCqjX6g=; b=Is8Wua9lx7U09P0Zhc0dG95GA
-	nlVYId7O96ZSzfktT8HGrUV4+7W9V3uQA3R/bjvfSR9ARimGHiDuLhKTvUc3y/r+dE/g5QfLVuVj9
-	+Y03tEJ+7YDTqVy+/m4wnDcRoHhYdrhTciRIlvemI1YQq4qmXl+7QcJNOeFwpbl0gFWTfboiD3oVd
-	Ca9F3BtSkw1sHeHKYjMVIu4inPtlqhE3XmMn2URWLoe2s2jY3FJnJE8vsSE4toCa83I90dsucHMAN
-	LAINYwNui2mUMT/syQljp3+mUcs5enzVvGrty3FQrC7Po3MlFTqA0xreGtzjIxfj9iqP+KVdB5gpF
-	Z6w5GAT2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5sF2bk4yFgT8IfPtWZ2KobvRqLNOhMDv8ZFJ2ij1+mI=; b=inWCP8X4L6cpnT
+	4ckDEUzvwri9cK9w0TmdJnK9MJYmpolDoV98xBCUjAHD8pcDC9cDyeFBbB0ZpPsln+XeypRM+SwKF
+	NXaEWaWD3V7G4BYTZFFIwIiqnaAgypf/GQ809m1JF+8MjTNR9ogr75sMgXKfExSOhx5bjLvKce5S0
+	tLyFcxPpMvY2EtomNcceCDi3zaNkJ9LLqh5eGpROamC6QxfKzeMs9pquWXm2F9AVHgGbeIGG8rJwq
+	hbwmvSkDKIe+EsXs+JuO0Q7UJc4Qt0xICBVCT2vai1vpO0VrdhiGY9EBHG9BbjMuGxfyFbcJo6594
+	ih6/b83UyQ3dxDqgtowA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTSDM-0003V0-9J; Tue, 28 Apr 2020 15:32:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTSDB-0003T4-8P
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:31:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0538B30E;
- Tue, 28 Apr 2020 08:31:50 -0700 (PDT)
-Received: from [10.37.12.125] (unknown [10.37.12.125])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E0ACA3F305;
- Tue, 28 Apr 2020 08:31:44 -0700 (PDT)
-Subject: Re: [PATCH v3 4/4] thermal: cpuidle: Register cpuidle cooling device
-To: Daniel Lezcano <daniel.lezcano@linaro.org>, rui.zhang@intel.com
-References: <20200414220837.9284-1-daniel.lezcano@linaro.org>
- <20200414220837.9284-4-daniel.lezcano@linaro.org>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <db4eeecf-2126-e455-ef02-fc034c631e09@arm.com>
-Date: Tue, 28 Apr 2020 16:31:40 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jTSDe-0003kS-6p; Tue, 28 Apr 2020 15:32:22 +0000
+Received: from mail-wm1-x332.google.com ([2a00:1450:4864:20::332])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTSDP-0003fM-4m
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:32:09 +0000
+Received: by mail-wm1-x332.google.com with SMTP id x25so3289554wmc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 08:32:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=date:from:to:cc:subject:message-id:mail-followup-to:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=fyTgxWA2/HoMwR8ETQ07Hg4eZzNMuWdW9xEgr0yJj2c=;
+ b=JnahAMhEEz80r2yHKCjybbTF6t6+SIYUFMUPAtQp+GL3mUUzkfUaqp5KTHLcTJv+bq
+ P81fy3Eh2D06/VO0ChUgMzUqlCQznBNcz0ezSC/Grx8Mg9Ct3d9vHUd1Fi4rVLtYvIEe
+ M0+tdFHnDzbT2poSNgYQX/Eonc2j0jEST5fYI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to;
+ bh=fyTgxWA2/HoMwR8ETQ07Hg4eZzNMuWdW9xEgr0yJj2c=;
+ b=hyaQb4BFUCVd7vuhXINGhtKfzw3xVb1CmsZky9seni+CqOlYOrqA8itOIN/A/+3Pj9
+ psX0GugWQtoVG40qPh1ScIEWJMa6OK1LoFO0jljnPqO6/0bM1/bVG5T2VWNwjnJ/xEm4
+ i3BOFNdNNAO1tY7m1SMMAAuKMPrarYSle6vlJG6IlYcv4RMUaG+Dc76rF8HO0kuPQ0rV
+ hZ5lAWna8ZBiIL2210nLhfGxbhfSCOpw4CrNO6RPCZ5JBrdT7RIiLkR0llqoaKpCFOTZ
+ GAdWfdpFcPX7lwG1IbC2lom8vbrZZJ8kIUjoZsMkZRUdybwU8MCabi5vdBAXxNOSt87P
+ /LBg==
+X-Gm-Message-State: AGi0PuaJOyKGU/kGsFVTznrkT+8kAjpYrhGnoUkqs+clQ2RxtFXjGTjG
+ OpsRc9ExWepr2FJvS9tNIlsczQ==
+X-Google-Smtp-Source: APiQypK6liIbViG0xJy6SG6E2JLUCRqc/Rd4DEdt0buwtJigcJZRTqgPIaD55s8f3mCsTYZkcr3q5w==
+X-Received: by 2002:a1c:4b0a:: with SMTP id y10mr5073523wma.24.1588087925505; 
+ Tue, 28 Apr 2020 08:32:05 -0700 (PDT)
+Received: from phenom.ffwll.local ([2a02:168:57f4:0:efd0:b9e5:5ae6:c2fa])
+ by smtp.gmail.com with ESMTPSA id p7sm27283944wrf.31.2020.04.28.08.32.03
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Apr 2020 08:32:04 -0700 (PDT)
+Date: Tue, 28 Apr 2020 17:32:02 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [RFC 00/17] DRM: fix struct sg_table nents vs. orig_nents misuse
+Message-ID: <20200428153202.GY3456981@phenom.ffwll.local>
+Mail-Followup-To: Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
+ linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org,
+ Robin Murphy <robin.murphy@arm.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Sumit Semwal <sumit.semwal@linaro.org>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ intel-gfx@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, amd-gfx@lists.freedesktop.org,
+ David Airlie <airlied@linux.ie>
+References: <CGME20200428132022eucas1p2aa4716cbaca61c432ee8028be15fef7a@eucas1p2.samsung.com>
+ <20200428132005.21424-1-m.szyprowski@samsung.com>
+ <20200428140257.GA3433@lst.de>
 MIME-Version: 1.0
-In-Reply-To: <20200414220837.9284-4-daniel.lezcano@linaro.org>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200428140257.GA3433@lst.de>
+X-Operating-System: Linux phenom 5.3.0-3-amd64 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_083153_341994_51857402 
-X-CRM114-Status: GOOD (  21.04  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_083207_202227_7748995C 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:332 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,94 +108,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kucheria@verdurent.com, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>
+Cc: Daniel Vetter <daniel@ffwll.ch>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, intel-gfx@lists.freedesktop.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linaro-mm-sig@lists.linaro.org, iommu@lists.linux-foundation.org,
+ amd-gfx@lists.freedesktop.org,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Robin Murphy <robin.murphy@arm.com>, Sumit Semwal <sumit.semwal@linaro.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 4/14/20 11:08 PM, Daniel Lezcano wrote:
-> The cpuidle driver can be used as a cooling device by injecting idle
-> cycles. The DT binding for the idle state added an optional
+On Tue, Apr 28, 2020 at 04:02:57PM +0200, Christoph Hellwig wrote:
+> On Tue, Apr 28, 2020 at 03:19:48PM +0200, Marek Szyprowski wrote:
+> > 1. introduce a dma_{map,sync,unmap}_sgtable() wrappers, which will use
+> >    a proper sg_table entries and call respective DMA-mapping functions
+> >    and adapt current code to it
 > 
-> When the property is set, register the cpuidle driver with the idle
-> state node pointer as a cooling device. The thermal framework will do
-> the association automatically with the thermal zone via the
-> cooling-device defined in the device tree cooling-maps section.
+> That sounds reasonable to me.  Those could be pretty trivial wrappers.
 > 
-> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> ---
->   drivers/cpuidle/cpuidle-arm.c  | 5 +++++
->   drivers/cpuidle/cpuidle-psci.c | 5 +++++
->   2 files changed, 10 insertions(+)
+> >
+> > 
+> > 2. rename nents and orig_nents to nr_pages, nr_dmas to clearly state
+> >    which one refers to which part of the scatterlist; I'm open for
+> >    other names for those entries
 > 
-> diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
-> index 9e5156d39627..2406ac0ae134 100644
-> --- a/drivers/cpuidle/cpuidle-arm.c
-> +++ b/drivers/cpuidle/cpuidle-arm.c
-> @@ -8,6 +8,7 @@
->   
->   #define pr_fmt(fmt) "CPUidle arm: " fmt
->   
-> +#include <linux/cpu_cooling.h>
->   #include <linux/cpuidle.h>
->   #include <linux/cpumask.h>
->   #include <linux/cpu_pm.h>
-> @@ -124,6 +125,10 @@ static int __init arm_idle_init_cpu(int cpu)
->   	if (ret)
->   		goto out_kfree_drv;
->   
-> +	ret = cpuidle_cooling_register(drv);
-> +	if (ret)
-> +		pr_err("Failed to register the idle cooling device: %d\n", ret);
+> nr_cpu_ents and nr_dma_ents might be better names, but it still would be
+> a whole lot of churn for little gain.  I think just good wrappers like
+> suggested above might be more helpful.
 
-This and similar from cpuidle-psci.c might produce a lot of error log
-entries. The 'return 0' below does not take into account that we failed
-to register cpuidle cooling. Thus, I would rather ignore the return from 
-cpuidle_cooling_register and move this print into
-cpuidle_cooling_register function, changing it also to debug level.
+I guess long-term we could aim for both? I.e. roll out better wrappers
+first, once that's soaked through the tree, rename the last offenders.
 
-> +
->   	return 0;
->   
->   out_kfree_drv:
-> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> index edd7a54ef0d3..8e805bff646f 100644
-> --- a/drivers/cpuidle/cpuidle-psci.c
-> +++ b/drivers/cpuidle/cpuidle-psci.c
-> @@ -9,6 +9,7 @@
->   #define pr_fmt(fmt) "CPUidle PSCI: " fmt
->   
->   #include <linux/cpuhotplug.h>
-> +#include <linux/cpu_cooling.h>
->   #include <linux/cpuidle.h>
->   #include <linux/cpumask.h>
->   #include <linux/cpu_pm.h>
-> @@ -305,6 +306,10 @@ static int __init psci_idle_init_cpu(int cpu)
->   	if (ret)
->   		goto out_kfree_drv;
->   
-> +	ret = cpuidle_cooling_register(drv);
-> +	if (ret)
-> +		pr_err("Failed to register the idle cooling device: %d\n", ret);
-> +
-
-The same here. I would change it into one line:
-+	cpuidle_cooling_register(drv);
-
->   	return 0;
->   
->   out_kfree_drv:
-> 
-
-Regards,
-Lukasz
+Personally I like nr_cpu_ents and nr_dma_ents, that's about as clear as it
+gets.
+-Daniel
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
