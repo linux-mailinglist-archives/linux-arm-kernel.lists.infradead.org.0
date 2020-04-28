@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33F301BBBB0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 12:56:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 864111BBBCE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:01:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ezqVrSuRqqrhotLAe2C3rcXkDC/EnKgtg3I8G4dpDWE=; b=HMAuBveJGx/1rb
-	xtn83d+5qy9aMXGudWpcPRxLpCFSCyGVQ6503Sqck3j8DjovhYYjUwSFmykqk2XWZK3ut7ZxnXQVI
-	slXyjunuCRkiblRKkwbIqG1ZOYmC0uYdA2+f09JWZk6jn6nU/jKkUePq7SWvsMqAswQDVFR978W7C
-	+pbzkyw9Yfp1msSalMzIynZdu0FkyGEj5sMBFf3utDWlLVVXkQfLAIvZWUJKtg9J1IeGASQkkh0B1
-	dQhLifGEkSmRFXAZtqay5aKEI3ol1MYyfClXghNDZ9WcrSegOl3m7iRxGdBLlT0r4TVOIc/XxdSVZ
-	AaHVfluv+NyFESKdxPNQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xjMho/uuzB8gCtsgZVhb8mLXWF3dosIBx/NbD8IqKs0=; b=q6D3r7zAp0Yjqr
+	T8WP5izpWoEPVzlyBwBpVmPSefue0vJc1Axsv+y6rJ8AEIStXGmuw0ZCcoYv8zdynQT8d/P+/negC
+	v7s9jDThYDtGwTdvqUSuOstsT6zq8M38BoPB3xwH7nD94FM+SgvITepQYjB7j661whWVN3QOO/tp+
+	bY2xdpAlFrYFCwOBbfvFTBgZFZx8L458Vjr36boErgqmHuz0tuosf+vEDA8CT+17QVoUss9PVUUvT
+	0xDnYR4U4CrD2O8p+PZDvOpVX9/NoLBOOLFg1l4kdpchaV6wnEVuvKNXSJR8S66arm6s7ZrQ2bTD+
+	QlX9fxty5eu6WNaQ0+pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTNub-0004hr-Bp; Tue, 28 Apr 2020 10:56:25 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jTNzm-0008AI-74; Tue, 28 Apr 2020 11:01:46 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTNuS-0004hD-4A
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 10:56:17 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j1so24118403wrt.1
+ id 1jTNzX-00088n-8H
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:01:32 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id t40so976627pjb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 03:56:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=C9HT9T3sVHrOZBKILD60eSWOeR7JckWoGT8oUYZeX9Q=;
- b=gn9Rq/4YAsv3kVD1X98o2XKcvxM6FpneKD79RZzyslKC2FvVwRST4O++pEK8rPexzg
- r/Vl6RIQLw6FDpHqynBeALOS+dueugLcmWxumA5UrN8TSdspaht7A3+I81+umdeAKya2
- mHRYuPzt9PBiskyRzZunPj1XcPwCX+UYYZYkYqs183Z+YcYW4wr+QVbs9wHbDCEF2wkq
- 4cH5kzVCdRlFdF2bEKda5tBPci53Lq6Cis4ic31b2lLeLzplNF0g8bL+Nheb5+GllcEX
- PmSIw060Lvtf3doTKh2doz5hmiI3h8+oGSHK5n79JENB65VZDnmGo7AGrWrJFP9YcFmT
- pc1A==
+ Tue, 28 Apr 2020 04:01:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=ZECYmOh8GHeDtWKEVN9mB2cMfDA4CqdHy3DVPieFtU8=;
+ b=Fp6Rdy7X/Au1Bogcm9JL1jp6M4qSLsYbzFhSC9yOg6l+3kkiXKIi8rdJl0lMmjYsMm
+ q2eAMBXUdoiBgNdIcVvDdJtwn51TJIBDUoRmMmMRO65okmPBGBQnqa4N2mW34RVNy+NS
+ /ExDJhJme0OTu0O+ThAbuwtuOn9QVCqcocS2OAbos64IX7v99N7dXsjYPfR94kImkQdL
+ 2C4SKfj5IHeZRVtrj9RCGzxPkrzc+ekNRHs9yMP7N2wdx0Z331vPSyXPvI3E7ud8GKzg
+ HCR2Mo3MrY6wCTSX+YaHkiccIMPd/cE90wlzZDas+3LNmUPVv3C3TMpQqP+CqlpbyaYl
+ Oc3A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=C9HT9T3sVHrOZBKILD60eSWOeR7JckWoGT8oUYZeX9Q=;
- b=cEM6gE7+2Teh1YtSZw0g57Cah5Ft+0iPTDwP+5bn+sfraV8R1heL9GW9FNPcD0kT9t
- i8RaZlJVYWCG88zkYJ2BjbiJP1WgTsjKhg4RdfOaFH+5humFNjr/3vl1kI/TAqpKejMo
- g3+3YIr8s5XrewupBAZH9kJ2NRDtMbSn/pHodyXVLawsuFpHoyQsZl5HZibyByQmr0s+
- 4xrJfukH++kGtMg9ok1qxn/+YZhRFEmrzmysDiFz+M+TbAkMrxnEd7sbO/aOjnddoKBI
- 73e1o0kYr+jIj+7Mc41TBKMD3E+EidwnJFRJC5AW3J57o3kCB67hE2IcDxGFm/QABWLn
- +6/Q==
-X-Gm-Message-State: AGi0PuYewe6HY3oJ88CKlS74prABKUPamX9Lo2A5XK/MCgERNuM8l0DU
- 6100EobOhmSAgac27BTiaqA=
-X-Google-Smtp-Source: APiQypJpMHNB4ZhFrn8kd+snTeuQ+WeBpbEdrXCMu3bKIrb14Gc+733ciOV7qgr37GnvYQfB6xcd3g==
-X-Received: by 2002:a5d:6946:: with SMTP id r6mr30244836wrw.291.1588071374527; 
- Tue, 28 Apr 2020 03:56:14 -0700 (PDT)
-Received: from localhost.localdomain ([188.24.130.199])
- by smtp.gmail.com with ESMTPSA id e13sm15530968wrp.15.2020.04.28.03.56.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 03:56:13 -0700 (PDT)
-From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-To: =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Subject: [PATCH 1/1] dma: actions: Fix lockdep splat for owl-dma
-Date: Tue, 28 Apr 2020 13:56:12 +0300
-Message-Id: <7d503c3dcac2b3ef29d4122a74eacfce142a8f98.1588069418.git.cristian.ciocaltea@gmail.com>
-X-Mailer: git-send-email 2.26.2
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=ZECYmOh8GHeDtWKEVN9mB2cMfDA4CqdHy3DVPieFtU8=;
+ b=Ts6oI81jn8tRcTDHKTWYDOjYkomyts6c1TzGAyfI4mwu4sO27wui8FQa59tKBQGPHa
+ JjmlVNyUhej+VSMjs8H001eA/CjK54G8IpB3vsMquyNKqS74TTAQ3HJd8iXCCbqulFiO
+ TrYKL5J5Uh+ZDMcDqqNosEPnhGvSh6+IPBN2T2+NgX1c4glphSiLCCeflqA0+aXc47Yf
+ +/hH+kngP5H6FdQ7Jxe33XM0bzT/Da97DMqoSjnQRFrCzxCmiqISObz0zK7kdu5flEzr
+ y1YdsNJ+2ckoKR6fryjddJLUYo25x/uleR3jZidZxIC3/6ZZvYCFYgR9aTpsZgF2YVPz
+ Ac5A==
+X-Gm-Message-State: AGi0PuZWHHjR4+S4oh4P3AlmSu7nQ05EaXepj1bBGuWKIo4Kj0y+anmu
+ AT+1Vo1ny9SY1RRhFFyAqfXuIXyiieI=
+X-Google-Smtp-Source: APiQypKCUoSWq+WSJVcxTjVfaz6aX0BH3kxmg8S6JEc81aCuemoUOA0OgzndCgwVZlV3UAjOtj9NPQ==
+X-Received: by 2002:a17:902:7793:: with SMTP id
+ o19mr28241721pll.107.1588071688818; 
+ Tue, 28 Apr 2020 04:01:28 -0700 (PDT)
+Received: from localhost ([122.171.118.46])
+ by smtp.gmail.com with ESMTPSA id b24sm14158840pfi.4.2020.04.28.04.01.27
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 28 Apr 2020 04:01:28 -0700 (PDT)
+Date: Tue, 28 Apr 2020 16:31:25 +0530
+From: Viresh Kumar <viresh.kumar@linaro.org>
+To: rjw@rjwysocki.net, Mian Yousaf Kaukab <ykaukab@suse.de>
+Subject: Re: [PATCH v2 1/2] cpufreq: qoriq: convert to a platform driver
+Message-ID: <20200428110125.lobyrsbma6astfmq@vireshk-i7>
+References: <20200421083000.16740-1-ykaukab@suse.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200421083000.16740-1-ykaukab@suse.de>
+User-Agent: NeoMutt/20180716-391-311a52
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_035616_165573_ED5829B6 
-X-CRM114-Status: GOOD (  13.07  )
+X-CRM114-CacheID: sfid-20200428_040131_322869_BB189D16 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [cristian.ciocaltea[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,70 +98,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: andy.tang@nxp.com, linux-pm@vger.kernel.org, sboyd@kernel.org,
+ linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
+ leoyang.li@nxp.com, shawnguo@kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the kernel is build with lockdep support and the owl-dma driver is
-used, the following message is shown:
+On 21-04-20, 10:29, Mian Yousaf Kaukab wrote:
+> The driver has to be manually loaded if it is built as a module. It
+> is neither exporting MODULE_DEVICE_TABLE nor MODULE_ALIAS. Moreover,
+> no platform-device is created (and thus no uevent is sent) for the
+> clockgen nodes it depends on.
+> 
+> Convert the module to a platform driver with its own alias. Moreover,
+> drop whitelisted SOCs. Platform device will be created only for the
+> compatible platforms.
+> 
+> Reviewed-by: Yuantian Tang <andy.tang@nxp.com>
+> Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
+> Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
+> ---
+> v2:
+>  +Rafael, Stephen, linux-clk
+>  Add Reviewed-by and Acked-by tags
+> 
+>  drivers/cpufreq/qoriq-cpufreq.c | 76 ++++++++++++++++-------------------------
+>  1 file changed, 29 insertions(+), 47 deletions(-)
 
-[    2.496939] INFO: trying to register non-static key.
-[    2.501889] the code is fine but needs lockdep annotation.
-[    2.507357] turning off the locking correctness validator.
-[    2.512834] CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.6.3+ #15
-[    2.519084] Hardware name: Generic DT based system
-[    2.523878] Workqueue: events_freezable mmc_rescan
-[    2.528681] [<801127f0>] (unwind_backtrace) from [<8010da58>] (show_stack+0x10/0x14)
-[    2.536420] [<8010da58>] (show_stack) from [<8080fbe8>] (dump_stack+0xb4/0xe0)
-[    2.543645] [<8080fbe8>] (dump_stack) from [<8017efa4>] (register_lock_class+0x6f0/0x718)
-[    2.551816] [<8017efa4>] (register_lock_class) from [<8017b7d0>] (__lock_acquire+0x78/0x25f0)
-[    2.560330] [<8017b7d0>] (__lock_acquire) from [<8017e5e4>] (lock_acquire+0xd8/0x1f4)
-[    2.568159] [<8017e5e4>] (lock_acquire) from [<80831fb0>] (_raw_spin_lock_irqsave+0x3c/0x50)
-[    2.576589] [<80831fb0>] (_raw_spin_lock_irqsave) from [<8051b5fc>] (owl_dma_issue_pending+0xbc/0x120)
-[    2.585884] [<8051b5fc>] (owl_dma_issue_pending) from [<80668cbc>] (owl_mmc_request+0x1b0/0x390)
-[    2.594655] [<80668cbc>] (owl_mmc_request) from [<80650ce0>] (mmc_start_request+0x94/0xbc)
-[    2.602906] [<80650ce0>] (mmc_start_request) from [<80650ec0>] (mmc_wait_for_req+0x64/0xd0)
-[    2.611245] [<80650ec0>] (mmc_wait_for_req) from [<8065aa10>] (mmc_app_send_scr+0x10c/0x144)
-[    2.619669] [<8065aa10>] (mmc_app_send_scr) from [<80659b3c>] (mmc_sd_setup_card+0x4c/0x318)
-[    2.628092] [<80659b3c>] (mmc_sd_setup_card) from [<80659f0c>] (mmc_sd_init_card+0x104/0x430)
-[    2.636601] [<80659f0c>] (mmc_sd_init_card) from [<8065a3e0>] (mmc_attach_sd+0xcc/0x16c)
-[    2.644678] [<8065a3e0>] (mmc_attach_sd) from [<8065301c>] (mmc_rescan+0x3ac/0x40c)
-[    2.652332] [<8065301c>] (mmc_rescan) from [<80143244>] (process_one_work+0x2d8/0x780)
-[    2.660239] [<80143244>] (process_one_work) from [<80143730>] (worker_thread+0x44/0x598)
-[    2.668323] [<80143730>] (worker_thread) from [<8014b5f8>] (kthread+0x148/0x150)
-[    2.675708] [<8014b5f8>] (kthread) from [<801010b4>] (ret_from_fork+0x14/0x20)
-[    2.682912] Exception stack(0xee8fdfb0 to 0xee8fdff8)
-[    2.687954] dfa0:                                     00000000 00000000 00000000 00000000
-[    2.696118] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
-[    2.704277] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+@Rafael,
 
-The required fix is to use spin_lock_init() on the pchan lock before
-attempting to call any spin_lock_irqsave() in owl_dma_get_pchan().
+Though this looks to be PPC stuff, but it is used on both ARM and PPC. Do you
+want to pick them up or should I do that ?
 
-Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
----
- drivers/dma/owl-dma.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
-index c683051257fd..d9d0f0488e70 100644
---- a/drivers/dma/owl-dma.c
-+++ b/drivers/dma/owl-dma.c
-@@ -1131,6 +1131,7 @@ static int owl_dma_probe(struct platform_device *pdev)
- 
- 		pchan->id = i;
- 		pchan->base = od->base + OWL_DMA_CHAN_BASE(i);
-+		spin_lock_init(&pchan->lock);
- 	}
- 
- 	/* Init virtual channel */
 -- 
-2.26.2
-
+viresh
 
 _______________________________________________
 linux-arm-kernel mailing list
