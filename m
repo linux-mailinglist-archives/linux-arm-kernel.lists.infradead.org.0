@@ -2,83 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9C711BBA14
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:41:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 121941BBA18
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:42:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PHhEjNSD+bP3oxWnjFbFbaN1CCE+VBeVLcIVpeecKpA=; b=EzATQEDwJSS8zf
-	KZFPHsW/V1vGKG9pPveA25xYmJOW7N5Uc5tQxirtHXNt0lFsBLE992uJj5kbOPBjaEhkUDX+iqHFX
-	sxL37ffYHi9JqOlyveriTsP3hr95Ik7r+ZxJBaem9KF+J66ncRu+LbqVL+9ehIHFws57wqKtUoZMp
-	R/iCMLB/H/SQbDjDLKTYrJcK0w0YZit1DQrlEb8yM8uTHnkCAlF+hjaXV8rRPnXUPBo+k2RqG6BCm
-	BAlrNl07TOWtieYcNeWgBgDNtBLOol6KaeboSnLmQlXozzEac7Xl+JhPbIIMDxvPVZc8omCjq9Jlp
-	+FMthLRLE2R/uZryeQ2A==;
+	List-Owner; bh=mzYfTMqtNTGMD8i7x5BTaTvBsgGATCH6AZgQgHKKtgU=; b=SJm4eKoJ5iA7ck
+	v96CoT+/19uXv556gVcjUfIg9bNnCCxSPxLTDrso0ddG99C7zQnUFc6CtXaTHSEXHEZUvTSac9T/a
+	wjsB5g7Zm0Wy+MdiK5isqyGEsYk01nOheAaCT+HJNTh/4Ab5k6nbM7nB0g7kVVle8DykjCvxWHVsp
+	ulaXhsWA3+W5Sbhnm4ytygkhWD85oiJimLf3s9xlXQ0kYwGZQryWEVCCaE10kJ40+3gR1SfOMxh4V
+	RiiJrQEAILpf1gPADREGPRMGCpptND0ru60S1vyNCQrJ03wSHk/MYH0mQikoBoUxgc2fxh2KuWVq6
+	/zfuSsk+USFPwrIfw55w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTMjX-000737-Ea; Tue, 28 Apr 2020 09:40:55 +0000
-Received: from mail-ej1-f68.google.com ([209.85.218.68])
+	id 1jTMl6-0007fP-43; Tue, 28 Apr 2020 09:42:32 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTMjF-000724-OQ
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:40:39 +0000
-Received: by mail-ej1-f68.google.com with SMTP id e2so16655426eje.13
+ id 1jTMkh-0007ba-EB
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:42:09 +0000
+Received: by mail-lj1-x241.google.com with SMTP id f18so20740582lja.13
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 02:40:36 -0700 (PDT)
+ Tue, 28 Apr 2020 02:42:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=WT6mF0IwJRAWJibfVj6jkV3JG6t831H/TM7wsxX5kmk=;
+ b=Oc8uD1mS503FcEMlkUqEA6u5te4rKpMM/UsnhiU+pzKrxq6vCg8ReWomPx9ySZjDJr
+ +Upu1NQfJO+9N/qO+diiboHKlAuEJqt9aZ34HX/ZsPFxm7O5vOSC3B8Rwi2sfl2TcR45
+ oq9TMx8Y30Anq/gkwzDocYWGUdVgj9/lmWha+za55Aoq9wVaZP22v4DdjzkOAP0plN1V
+ KumbSL9f451cSixc4MIxZOBdo+1+k+YAMuF1d2Svjh8djlHUICTmr/SGlky8XOl49+Cb
+ Pf1WGvOF+fGJjYSzYy2u403Vg+4dsi6C5uSxe2QqlhAJlD48Vqs+BiUvJuRW0EFZ7g3H
+ VMlA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=QPpy8dELuAAjDK6ELgslqKgtZGdGtoakZnwFCsFyxiY=;
- b=TVDA/Jj0UawGkLmOoqGM9CNir252roCeW5F9zse22JlFKhf988xC7SlsE4nlryOS5T
- 3aZL/nIDFIG0HGhavGnNWgIW53iP8OAZwwSfFwcpAeAUlGq4UAHAOzdVvuEFNtMPii7q
- mgSs0Q7xTlNxKzuLlYW6iKDSnfZyOGL4+ywoFqlgNriKeHV9g+5WuGUITIPg6pSlld15
- APJrqFMAsuVpz4mTNS64luckO+e6aEqDAJUmS5SLEsQusXZTbvriHFxzzo8zqR+yQU1K
- V1tjrl3X1SAhAStk/GX1By2GUuWpQVjrPVgHStnWqjfuzwNv1VecHditRIpviVFW9toJ
- Y35Q==
-X-Gm-Message-State: AGi0PuYChkLUoEz0LCofuH46ifIybxvEPuLCBDhluf9qejXE16H4xYZ3
- XOd9oJE+DPUH/CqK31srWSQ=
-X-Google-Smtp-Source: APiQypK/J2mRSfYf1Diw96LSTO8Uy+VHIm/8bbRhhtGMjC1QU33gdmtKQlVA6cbWyNIKnF5z1H2Phw==
-X-Received: by 2002:a17:907:20b5:: with SMTP id
- pw21mr22933290ejb.227.1588066835749; 
- Tue, 28 Apr 2020 02:40:35 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.237])
- by smtp.googlemail.com with ESMTPSA id yd11sm398829ejb.8.2020.04.28.02.40.34
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 28 Apr 2020 02:40:34 -0700 (PDT)
-Date: Tue, 28 Apr 2020 11:40:32 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jonathan Bakker <xc-racer2@live.ca>
-Subject: Re: [PATCH] pinctrl: samsung: Save/restore eint_mask over suspend
- for EINT_TYPE GPIOs
-Message-ID: <20200428094032.GA23462@kozik-lap>
-References: <BN6PR04MB06600C848C2C1531F73DAD7BA3D10@BN6PR04MB0660.namprd04.prod.outlook.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=WT6mF0IwJRAWJibfVj6jkV3JG6t831H/TM7wsxX5kmk=;
+ b=c9Rccb07oEkpJSp7HnaWNUSsriMs4/5Q4a93aX7dbN7jidfWrauHL9J8G03b1sWgWL
+ rlT1gABYD8EHGBCKVWX7PvhLvRI64tk/B4ESS8Y9o7oVtGae9GR8aYCDWfVBlZs4qI9M
+ ///aOJRHAnrKEIu7aHM9cTo+YlMmvbD9fIid766+aoBPdsOsdM6h4e6PuNNrs+KamZHZ
+ RV1kKEJJb7p991vfBtpfPVl1XUrEehA6HswNffx+y+FvmhVsqUa6vU1wPuDWE+CwnaZ3
+ a9pgZJl28UwMOkaaoRPUmOo7UwNATP1g8FZ/9+m1FIGjyF0jEJgqOU7lF8ZU/2/6GjNk
+ 3mhQ==
+X-Gm-Message-State: AGi0PuaB2OHQrybn3MN0HXl0Y1vEtGPb6oorrmPtBEwbysfpFWF9W3gX
+ HYfvf3v/BtCHC7bn4pS5ihDFBcDWqOy4ZwJyhvaqNg==
+X-Google-Smtp-Source: APiQypJWdiCBwLqc2g8Irmc7/w41rf19eHaus5+KTPDZiZJ8NEqF3rSuv3WOFk23DG+Abnjohh4H216Y6yGgj84RaY4=
+X-Received: by 2002:a2e:2ac2:: with SMTP id q185mr8261669ljq.125.1588066924774; 
+ Tue, 28 Apr 2020 02:42:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BN6PR04MB06600C848C2C1531F73DAD7BA3D10@BN6PR04MB0660.namprd04.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200417073455.42146-1-yanaijie@huawei.com>
+In-Reply-To: <20200417073455.42146-1-yanaijie@huawei.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 28 Apr 2020 11:41:53 +0200
+Message-ID: <CACRpkdZv4W3LVxRqDx2EaqATW7a-dhZeDjzoa2iQu+dDtpkfww@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: nomadik: ab8505: remove unused 'gpio50_a_1_pins'
+To: Jason Yan <yanaijie@huawei.com>, Patrice CHOTARD <patrice.chotard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_024038_418615_D7DFA030 
-X-CRM114-Status: GOOD (  13.34  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200428_024207_510623_88769C25 
+X-CRM114-Status: UNSURE (   8.00  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.218.68 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.218.68 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,41 +92,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
- tomasz.figa@gmail.com, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, kgene@kernel.org, s.nawrocki@samsung.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Hulk Robot <hulkci@huawei.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Apr 25, 2020 at 04:10:46PM -0700, Jonathan Bakker wrote:
-> Currently, for EINT_TYPE GPIOs, the CON and FLTCON registers
-> are saved and restored over a suspend/resume cycle.  However, the
-> EINT_MASK registers are not.
-> 
-> On S5PV210 at the very least, these registers are not retained over
-> suspend, leading to the interrupts remaining masked upon resume and
-> therefore no interrupts being triggered for the device.  There should
-> be no effect on any SoCs that do retain these registers as theoretically
-> we would just be re-writing what was already there.
-> 
-> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
-> ---
->  drivers/pinctrl/samsung/pinctrl-exynos.c | 9 +++++++++
->  1 file changed, 9 insertions(+)
-
-Exynos4412 (Odroid U3) also did not retain the register values. SD card
-detect interrupt should be affected.
-
-Thanks, applied (with CC-stable).
-
-Best regards,
-Krzysztof
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBBcHIgMTcsIDIwMjAgYXQgOTowOCBBTSBKYXNvbiBZYW4gPHlhbmFpamllQGh1YXdl
+aS5jb20+IHdyb3RlOgoKPiBGaXggdGhlIGZvbGxvd2luZyBnY2Mgd2FybmluZzoKPgo+IGRyaXZl
+cnMvcGluY3RybC9ub21hZGlrL3BpbmN0cmwtYWI4NTA1LmM6MTM3OjIzOiB3YXJuaW5nOgo+IOKA
+mGdwaW81MF9hXzFfcGluc+KAmSBkZWZpbmVkIGJ1dCBub3QgdXNlZCBbLVd1bnVzZWQtY29uc3Qt
+dmFyaWFibGU9XQo+ICBzdGF0aWMgY29uc3QgdW5zaWduZWQgZ3BpbzUwX2FfMV9waW5zW10gPSB7
+IEFCODUwNV9QSU5fTDQgfTsKPiAgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+fn5+fn5+fn5+
+fgo+Cj4gUmVwb3J0ZWQtYnk6IEh1bGsgUm9ib3QgPGh1bGtjaUBodWF3ZWkuY29tPgo+IFNpZ25l
+ZC1vZmYtYnk6IEphc29uIFlhbiA8eWFuYWlqaWVAaHVhd2VpLmNvbT4KClRoaXMgc2hvdWxkIG5v
+dCBiZSBkZWxldGVkLCBpdCBzaG91bGQgYmUgdXNlZC4gSSB3aWxsIHNlbmQgYW4gYWx0ZXJuYXRp
+dmUKcGF0Y2ggd2l0aCB5b3UgYXMgUmVwb3J0ZWQtYnkuCgpZb3VycywKTGludXMgV2FsbGVpagoK
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
+LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
+Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
+cm5lbAo=
