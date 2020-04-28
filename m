@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA35D1BC1EC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:52:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C0BAD1BC1F4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:53:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/hJ2FMtKPn9zjWSv5k1k8Az1D6SH/ERnnho5cuhOErE=; b=dfDCMf18rnys4/
-	ZoWMlsCyyWVvaKLINFk6vzUF5gkWCGttBIvJ7XineV/ByJv9GbiTVLs3HZhIZLdJrrbIPOoZgh0cW
-	z75Z5cxrYVof/noE+Dh8ptgj+W3tD68Mw9qMBpFHm56HnOLKpxXlDsHL/9NXPrwpk64GhWn3o1xB+
-	V8G5qDnkLKO2UYMhZq19SEjIJrgkJ12Nr/zxxYsnoA434TKkpQg90ES3h2TATCFTMRFV55aHJIWg6
-	W9CoAFZzldwWNakMy0j5A+TxrISiI/XhdIrmhmReKx/vwuKRzURgkgoLDidOeafu6i+9ZQKsWQTRx
-	PKaJ3o9Frb9DC4R54rrA==;
+	List-Owner; bh=LqOVIqwgAF2JhT/jnjHeKY8GzOGYl4WJcdqyGnicF2c=; b=nJCV9mwlqj0E38
+	lQcgUL0O93rCjQ9KhYxyY3IirRZtDSlFtfp8Sr9yhWGaApXxudiyYw3nwVybRTS42pV6BwPnVM0G3
+	6TdD1wl+5sc5Yl9cpWQygdDeSMfltN7pWyjgMXgnv+9RhnCsF/PkzVNsDwz2EhNeNyaJaqajw37NF
+	W/INqMje8zBvI1but75ChrlDcM8bPYIhnyzxH/ZvKCc6evHC9FCvb6Ytg29Bw/PDC3HhRASCoVSmN
+	y0KG06LK5H5U+hfFSLljgFbhoLA2O4ggtetfUMFcMd8LDjjr4TbuDn24GqOEXXhDOMHYev7IPgxCv
+	yuQbPYjCdTiWD8dzHdsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTRbB-0003uM-11; Tue, 28 Apr 2020 14:52:37 +0000
+	id 1jTRbp-0004NT-RQ; Tue, 28 Apr 2020 14:53:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTRYX-0008Oj-8S
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:49:57 +0000
+ id 1jTRYY-0008Py-V0
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:49:59 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB3D2206B9;
- Tue, 28 Apr 2020 14:49:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 586DB2070B;
+ Tue, 28 Apr 2020 14:49:53 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588085392;
- bh=BugMc3ks5/5bdizWs8Gx3lzSC0Zpc761wRxA7/dmonM=;
+ s=default; t=1588085394;
+ bh=/0CscgUhw+hG67rkycE13dJ4JpaLGY7SZmZg0Hd4bJw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=prF9BOKu3H59ioAU9wii5JpYFAYd5E4E/ZzkXE0flq+0IhREE6fO6XYnsHH3pHGxZ
- 76Vzk1jhvazwF5LcCQtHAwkl/K55DvGovIUwtxtFR7505EUcuGtCEOFoLnt7138avM
- fFcGmWjjSHsPunvqui0WFglrVeKUdDeeayHm11gY=
+ b=xI7xmjH3h0TjzZX1Lld2PfUTkecfsNTW8c2hKqwA5ER4GanG3/LCnnjjipSI2m6h/
+ CQd7tVyNEyzC2QExEqqujN0mWKbH6c50qmIbFmp/CNqu936cgiCyUuIgwWmb9aPVqv
+ Klayg2UBcsqKXB3h6SJXPU7kXoWhAwVXYaNEKD+A=
 From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>,
-	linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] arm64: set TEXT_OFFSET to 0x0 in preparation for removing
- it entirely
-Date: Tue, 28 Apr 2020 15:49:35 +0100
-Message-Id: <158808120907.217905.4632288691847383619.b4-ty@kernel.org>
+To: Mark Brown <broonie@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH] arm64: lib: Consistently enable crc32 extension
+Date: Tue, 28 Apr 2020 15:49:36 +0100
+Message-Id: <158808099268.217262.1591672882839113602.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200415082922.32709-1-ardb@kernel.org>
-References: <20200415082922.32709-1-ardb@kernel.org>
+In-Reply-To: <20200414182843.31664-1-broonie@kernel.org>
+References: <20200414182843.31664-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_074953_453269_FBBC3A82 
-X-CRM114-Status: GOOD (  11.06  )
+X-CRM114-CacheID: sfid-20200428_074955_401361_B6EC9D1A 
+X-CRM114-Status: UNSURE (   7.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,28 +77,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com,
- Will Deacon <will@kernel.org>, james.morse@arm.com, suzuki.poulose@arm.com
+Cc: Will Deacon <will@kernel.org>, Ard Biesheuvel <ardb@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 15 Apr 2020 10:29:22 +0200, Ard Biesheuvel wrote:
-> TEXT_OFFSET on arm64 is a historical artifact from the early days of
-> the arm64 port where the boot protocol was basically 'copy this image
-> to the base of memory + 512k', giving us 512 KB of guaranteed BSS space
-> to put the swapper page tables. When the arm64 port was merged for
-> v3.10, the Image header already carried the actual value of TEXT_OFFSET,
-> to allow the bootloader to discover it dynamically rather than hardcode
-> it to 512 KB.
-> 
-> [...]
+On Tue, 14 Apr 2020 19:28:43 +0100, Mark Brown wrote:
+> Currently most of the assembly files that use architecture extensions
+> enable them using the .arch directive but crc32.S uses .cpu instead. Move
+> that over to .arch for consistency.
 
 Applied to arm64 (for-next/misc), thanks!
 
-[1/1] arm64: set TEXT_OFFSET to 0x0 in preparation for removing it entirely
-      https://git.kernel.org/arm64/c/cfa7ede20f13
+[1/1] arm64: lib: Consistently enable crc32 extension
+      https://git.kernel.org/arm64/c/30218da5974c
 
 Cheers,
 -- 
