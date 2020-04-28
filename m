@@ -2,74 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62CC11BC5F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:02:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BB771BC620
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:06:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2Scm/o5KDa1V3YYdkdT8+Q4bTPGXtR1FeBKFFP68JwU=; b=qExKSOtyQ8yszo
-	i6iGdtk7nmo5+eGNl8U5EyMKQiMvH8EElZc8TKi+KqK3xVa+sQLqgLBUSSDhmiEaDPMwz12h3UoSr
-	B8kWpV2JR9WM5rxYbT3dmZao/ZnGiVCJSoifsnOftStVKwXPxslVgmXP//9wrU4l4UnWMG2atYpPK
-	5HTxLnADKzs6iz6tHmcvpHdUcP5PgFDY2NeIwhxWYObY0YTT6vynyLm8C6ZOD7oewyF7GuwrxwIoN
-	mQBDWZZ6HF2Z04T9iceSH8gf1xBeV1nwb7aPU7Xj1m7RCXBPIVo7ojFh0L2lWt7sQGXsKVcyipadk
-	V4HCeFBX8jw/IaAbQiFA==;
+	List-Owner; bh=ZuQMQFStIC8OuSgE8jhzrS/yDowuZE1volhkfxZ8zkg=; b=ebZy+menKgzONo
+	DOp0uouvF55mmRuOQ87spsjXr7pBE1B3vpwZAp1h3h6QaytUqq+BUrt/KT/eEm2HtJO1te0vEkwCN
+	cYyt4hMXGY3WS354xWXLYNTwbacbb96SsfJ9Bcm76mUsFa73s3xSz+bXWLVkjyNehpG0dHJzWY1Yb
+	5ZQKIFWHcez1NqWWm1T+lcjHgE2aDxiMTGxDNLXwIORa4QQGdofnsSjx+RfU9X7BZduIolvjEKxrY
+	4Xo/J28HLrWprx1nno7K7qSm/VSkSTrvg/EeQYJekudVEe4Qx1C80HhVMX6ARjjTSlZZtM+dCV92f
+	yQripC5xMR4zxAH5dSvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTTcI-0008Fu-0V; Tue, 28 Apr 2020 17:01:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jTTg9-00035l-Fy; Tue, 28 Apr 2020 17:05:53 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTTc9-0008FE-AP
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:01:46 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 051E620730;
- Tue, 28 Apr 2020 17:01:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588093305;
- bh=xcQPhPELoJFmrkYBG9DGhjiWZOwVw5TLM1bfB0MNv0o=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=CeyQtE+MJq+TQHXeEpQybkBUhgB1VpjAq4ANhMU0tPZMvw6Pzf+I+SVmcZCm5CJ9k
- cZ7BjROAZ+eHsAghzfoHDkWNDzBN7tLVfjRUtlPotAGFypSeC/kBqQfxe/w9dh5NS5
- FjO9iq000CUQqKuybnjyZPwchnyjs93uwhP+AJ6g=
-Date: Tue, 28 Apr 2020 18:01:39 +0100
-From: Will Deacon <will@kernel.org>
-To: Ard Biesheuvel <ardb@kernel.org>
-Subject: Re: [PATCH] arm64: iort: take _DMA methods into account for named
- components
-Message-ID: <20200428170138.GF12697@willie-the-truck>
-References: <20200404073047.17898-1-ardb@kernel.org>
- <20200420084051.GA12852@red-moon.cambridge.arm.com>
- <CAMj1kXHjeSFK7yH+pZCcdaK8Sdf+fhJFm+yn6JA3gH8jgbZwCA@mail.gmail.com>
- <20200420091342.GA6867@e121166-lin.cambridge.arm.com>
- <CAMj1kXHFJMyw6jYPd9puaN=xc1BYpF7+VnCMkBhMxBgDm9skgg@mail.gmail.com>
+ id 1jTTfv-0000GZ-At
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:05:41 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 03B7F20022;
+ Tue, 28 Apr 2020 19:03:27 +0200 (CEST)
+Date: Tue, 28 Apr 2020 19:03:26 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: Daniel Vetter <daniel@ffwll.ch>
+Subject: Re: [PATCH 56/59] drm/aspeed: Use managed drmm_mode_config_cleanup
+Message-ID: <20200428170326.GB27234@ravnborg.org>
+References: <20200415074034.175360-1-daniel.vetter@ffwll.ch>
+ <20200415074034.175360-57-daniel.vetter@ffwll.ch>
+ <20200424181002.GL7074@ravnborg.org>
+ <20200428141221.GM3456981@phenom.ffwll.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMj1kXHFJMyw6jYPd9puaN=xc1BYpF7+VnCMkBhMxBgDm9skgg@mail.gmail.com>
+In-Reply-To: <20200428141221.GM3456981@phenom.ffwll.local>
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=ULXz4hXy c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=kj9zAlcOel0A:10 a=QyXUC8HyAAAA:8 a=voM4FWlXAAAA:8 a=JfrnYn6hAAAA:8
+ a=7gkXJVJtAAAA:8 a=enx1l9sRoPJb_agsY6UA:9 a=zjnPc2nJzrSlpMA7:21
+ a=QoBruPAAwtBn6P47:21 a=CjuIK1q_8ugA:10 a=IC2XNlieTeVoXbcui8wp:22
+ a=1CNFftbPRP8L7MoqJWF3:22 a=E9Po1WZjFZOl8hwRPBS3:22
+ a=pHzHmUro8NiASowvMSCR:22 a=nt3jZW36AmriUCFCBwmW:22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_100145_383450_308C7FEB 
-X-CRM114-Status: GOOD (  20.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_100540_334709_DED662A4 
+X-CRM114-Status: GOOD (  23.16  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,64 +70,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, robin.murphy@arm.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Intel Graphics Development <intel-gfx@lists.freedesktop.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ Joel Stanley <joel@jms.id.au>, Daniel Vetter <daniel.vetter@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 20, 2020 at 11:14:50AM +0200, Ard Biesheuvel wrote:
-> On Mon, 20 Apr 2020 at 11:13, Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
-> >
-> > On Mon, Apr 20, 2020 at 10:58:02AM +0200, Ard Biesheuvel wrote:
-> > > On Mon, 20 Apr 2020 at 10:41, Lorenzo Pieralisi
-> > > <lorenzo.pieralisi@arm.com> wrote:
-> > > >
-> > > > On Sat, Apr 04, 2020 at 09:30:47AM +0200, Ard Biesheuvel wrote:
-> > > > > Where IORT nodes for named components can describe simple DMA limits
-> > > > > expressed as the number of address bits a device can driver, _DMA methods
-> > > > > in AML can express more complex topologies, involving DMA translation in
-> > > > > particular.
-> > > > >
-> > > > > Currently, we only take this _DMA method into account if it appears on a
-> > > > > ACPI device node describing a PCIe root complex, but it is perfectly
-> > > > > acceptable to attach them to named components as well, so let's ensure
-> > > > > we take them into account in those cases too.
-> > > > >
-> > > > > Reported-by: Andrei Warkentin <awarkentin@vmware.com>
-> > > > > Fixes: 7ad4263980826e8b ("ACPI: Make acpi_dma_configure() DMA regions aware")
-> > > > > Cc: <stable@vger.kernel.org> # v4.14+
-> > > > > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > > > > ---
-> > > > >  drivers/acpi/arm64/iort.c | 11 ++++-------
-> > > > >  1 file changed, 4 insertions(+), 7 deletions(-)
-> > > >
-> > > > Only question is whether there is FW in the field with _DMA methods that
-> > > > now we would start parsing (and hopefully everything will still work)
-> > > > but for that the only choice is applying this patch and see, so:
-> > > >
-> > >
-> > > Perhaps it would be better to call acpi_dma_get_range() on dev->parent then?
-> >
-> > I think it is fine as it is -  maybe we can hold off sending it all
-> > the way to stable kernels until we are confident it does not cause
-> > unintended breakage ?
-> >
-> > Anyway, thanks for putting it together.
-> >
-> > Minor nit: I'd make "arm64: iort:" in the subject "ACPI/IORT:"
-> > just to keep logs uniform.
-> >
+On Tue, Apr 28, 2020 at 04:12:21PM +0200, Daniel Vetter wrote:
+> On Fri, Apr 24, 2020 at 08:10:02PM +0200, Sam Ravnborg wrote:
+> > On Wed, Apr 15, 2020 at 09:40:31AM +0200, Daniel Vetter wrote:
+> > > Since aspeed doesn't use devm_kzalloc anymore we can use the managed
+> > > mode config cleanup.
+> > > 
+> > > Signed-off-by: Daniel Vetter <daniel.vetter@intel.com>
+> > > Cc: Joel Stanley <joel@jms.id.au>
+> > > Cc: Andrew Jeffery <andrew@aj.id.au>
+> > > Cc: linux-aspeed@lists.ozlabs.org
+> > > Cc: linux-arm-kernel@lists.infradead.org
+> > 
+> > Hmm, the helper function makes no sense, maybe embed it?
+> > 
+> > One Q below. Whith Q addressed:
+> > Acked-by: Sam Ravnborg <sam@ravnborg.org>
+> > 
+> > > ---
+> > >  drivers/gpu/drm/aspeed/aspeed_gfx_drv.c | 11 ++++++-----
+> > >  1 file changed, 6 insertions(+), 5 deletions(-)
+> > > 
+> > > diff --git a/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c b/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
+> > > index 6b27242b9ee3..6e464b84a256 100644
+> > > --- a/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
+> > > +++ b/drivers/gpu/drm/aspeed/aspeed_gfx_drv.c
+> > > @@ -63,15 +63,15 @@ static const struct drm_mode_config_funcs aspeed_gfx_mode_config_funcs = {
+> > >  	.atomic_commit		= drm_atomic_helper_commit,
+> > >  };
+> > >  
+> > > -static void aspeed_gfx_setup_mode_config(struct drm_device *drm)
+> > > +static int aspeed_gfx_setup_mode_config(struct drm_device *drm)
+> > >  {
+> > > -	drm_mode_config_init(drm);
+> > > -
+> > >  	drm->mode_config.min_width = 0;
+> > >  	drm->mode_config.min_height = 0;
+> > >  	drm->mode_config.max_width = 800;
+> > >  	drm->mode_config.max_height = 600;
+> > >  	drm->mode_config.funcs = &aspeed_gfx_mode_config_funcs;
+> > > +
+> > > +	return drmm_mode_config_init(drm);
+> > 
+> > I do not see anything that documents that it is OK to init min/max
+> > width/heigh not funcs before drmm_mode_config_init() is called.
+> > Maybe drmm_mode_config_init() gain an memset(drm->mode_config),
+> > and we loose all the assingments from before the call to init().
+> > 
+> > Also most (all?) other users of drmm_mode_config_init()
+> > set them after the call to drmm_mode_config_init().
+> > So re-order here and then embed while you are touching the code again.
 > 
-> OK, I'll respin and resend, with the ACPI folks on cc this time.
+> Only reason I've done it like this is that it saves a few lines of diff
+> compared to other options.
+> 
+> Wrt calling stuff the wrong way round: We pretty much assume throughout
+> that structures are allocated with kzalloc, none of our _init() functions
+> in drm have a memset. We'd break the world if we start doing memset() in
+> random _init() functions I think.
+> 
+> Also the main aspeed_gfx_load() function is quite long already, smashing
+> more random stuff in there won't help it's readability.
+> 
+> Anyway I don't care, if you insist I'm happy to repaint this in whatever
+> color choice you deem best :-)
 
-Thanks. I'm happy to queue this in the arm64 tree with the CC: stable
-dropped for now, so please keep me on cc for v2.
+From the principle of least suprises, you should at least call init and
+then set min_width and friends.
+This is easy to do in the helper, so easy to avoid the inlining I
+suggested.
 
-Will
+	Sam
 
 _______________________________________________
 linux-arm-kernel mailing list
