@@ -2,58 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5ACB91BC097
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:06:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 562631BC0D9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:12:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9bTFKgbxCaxOT5nq5+RQNEmVPiLkjW3G2mUTE4DrS98=; b=TRuRDNIwoo/GJ9
-	sqaNWGGSuX1AWohxxu+8O2ojJ34sOWLU2jJGkSzXVpZIDSS6c+Qzht/VOs7PXcQrZ4UNcfgVwjCpl
-	EqAnZTa6Rq/1zW1b2WppNd0tSxqzSgGmp4UGTz4v0oojJbNIjJIVabaB7lWFnZ8linzYtbqH8vM/M
-	bVf5omvRziAdFN0a2pTHznce+zeC+ZvRZVL8GQSViEpNvbqI+lKIsQBfKc1PB3TMMyddzzfACxQOA
-	e2QVPkmMWz2FxQ7uUS/cK6vTzzRqdBQoZIJWheJIichOPOjo30iG7QdO7R7aAW6Sx8FNZohjAq51L
-	OqSVeSS8pVLpNYcWqzag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JT1NGN7vFQuIahEAcu/oNS1KhgOL7rDgDTPPJL8Kfss=; b=tL1wJ3xi0VxXo0YbpmxsUmqfV
+	zi2NHAHAJBh4RVtf2rhNtUfj8KCvoO9QHk+Hk4aMa8GP1Wt1D3WHTPS4UxSjoXCeHhBHbAX7lX513
+	oBPM1v03H4XjBf0Y9WI+fTLtKFYSx0ixiBXCXwKgFOA0IVDFBBt1v75NNRGSJsYWQsU44IQCaiXC9
+	OQH5ej+6yGNHV409rpyXz81wLrBb5qHAn16OGfatXlSE29zrSklIRP450JEnTzVok60mr+5UzbdjL
+	s/76Z7B32qt+mKwZU+eUVFW6f+5T0f+G66FgBgylrrYISSzoRgdn+QyGHscozkcWqivlkrxih1FxB
+	C8biQwhsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTQsi-0001Z1-Nf; Tue, 28 Apr 2020 14:06:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTQsa-0001YC-00
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:06:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9E2731B;
- Tue, 28 Apr 2020 07:06:30 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 30FA73F68F;
- Tue, 28 Apr 2020 07:06:29 -0700 (PDT)
-Date: Tue, 28 Apr 2020 15:06:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Martin <dave.martin@arm.com>
-Subject: Re: [PATCH v3 20/23] fs: Allow copy_mount_options() to access
- user-space in a single pass
-Message-ID: <20200428140626.GJ3868@gaia>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-21-catalin.marinas@arm.com>
- <20200427165641.GC15808@arm.com>
+	id 1jTQyc-0005uS-AD; Tue, 28 Apr 2020 14:12:46 +0000
+Received: from wnew1-smtp.messagingengine.com ([64.147.123.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTQy1-0005d2-TM; Tue, 28 Apr 2020 14:12:11 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.west.internal (Postfix) with ESMTP id EFC1A537;
+ Tue, 28 Apr 2020 10:11:57 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 28 Apr 2020 10:11:58 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=0KxVBVYs0AHv0VR+aaPL51bJk2Z
+ WuGKpm7rDGF8ENwE=; b=kkAfDby8QBaDdrJ1JRkLM/F29ZwOJzwSujk6jFkoXmK
+ +JWMFoK9WBDj7xOwbZKgqb/Fju1dSU11CZhAq52yKoxalEb8KKoZQdcfmUISVt6X
+ fx7s879sWd5J8bmToMA9NkZHJoZaZXwssls/Fbw5sKwBHqMMm54LcBJwPgLnoIGr
+ OJtvYyOkVHO6EJATQvi5I7tGkqOY1Q44z6ITVeeaBYwOV+WsHeUT7WtA7+3vY+JJ
+ iL6okA2iVaN2lzxwdote8eyfApTznZ4PjPsr/uDgr4+ZD+9rCleri0+m5B+rbAy0
+ WCLSxOPxJOuvc3c41zBREU8Qd4acVN+j+Waf8qujdGg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=0KxVBV
+ Ys0AHv0VR+aaPL51bJk2ZWuGKpm7rDGF8ENwE=; b=bBHd/JsDzd6U6Jj2pk7r7s
+ 9adptEPJ8bYklmwPx6yoQQ/ryib1GSykxnuaWNnExFhquvkshGFntpl6bHUJNvdt
+ WgbH1K8p5Lua1RkzMUuavW2cYU6lLqnJA+lBnDvy//kvkflb8xac3R/YM/eK6RZ4
+ Gxc/ONbNv2xZupjyAJS+WY7KPu/HFMUiIHITfbPKUw59g+J/aDrZ1zxJAPIvweBv
+ YJwoWpQvvZiPbeXqCMYOAur3cmRVVKqF2Btgfz9yhrm5FWgfXgAZRla9QdSzg+CU
+ 8a7fZ7Qp7TUKZdnjPPOB8YI/naft2DZy70hhutGFGbVW6RzoIQ5eQ0VNKOXJZkDA
+ ==
+X-ME-Sender: <xms:qjmoXngQ8rthCZWjGsXrGgb9BU3wlMpYgnW19yBbuUdNu-Gp-hyAeQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedriedugdejfecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucffohhmrghinh
+ epghhithhhuhgsrdgtohhmnecukfhppeeltddrkeelrdeikedrjeeinecuvehluhhsthgv
+ rhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnh
+ hordhtvggthh
+X-ME-Proxy: <xmx:qjmoXia97xJ_LAD6HQ2iwwEZv8R9l0WbUjJHriZj3eb9E9axqhz_0w>
+ <xmx:qjmoXjFmd0IAb6sxOvQHrwfq2RtQHVkpXeXPe6H_e2pKJX9zp9-iIw>
+ <xmx:qjmoXnYfLgaSFWDw2vxpO7O7Vo87vq-osznzrGEZ8q58YO_BLeFzGA>
+ <xmx:rTmoXgf2m6B-6uM1t3STX1ynXZnyhixiG59_yF8LDNvM0l47f7i3TUCQZ4U>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 2CDE9328005A;
+ Tue, 28 Apr 2020 10:11:54 -0400 (EDT)
+Date: Tue, 28 Apr 2020 16:11:49 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Stefan Wahren <stefan.wahren@i2se.com>
+Subject: Re: [PATCH v2 91/91] ARM: dts: bcm2711: Enable the display pipeline
+Message-ID: <20200428141149.22n24halgw3p3qa6@gilmour.lan>
+References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
+ <7e7941611dad8106e5d9b03eeae06a6aefc0772c.1587742492.git-series.maxime@cerno.tech>
+ <aba321ef-16fa-4f9b-a3a6-47b394daeac2@i2se.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427165641.GC15808@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <aba321ef-16fa-4f9b-a3a6-47b394daeac2@i2se.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_070632_079848_B72F5ADA 
-X-CRM114-Status: GOOD (  20.64  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_071209_987517_78B97E6F 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.26 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,68 +104,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org, Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ Phil Elwell <phil@raspberrypi.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Content-Type: multipart/mixed; boundary="===============5894635858426895920=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 05:56:42PM +0100, Dave P Martin wrote:
-> On Tue, Apr 21, 2020 at 03:26:00PM +0100, Catalin Marinas wrote:
-> > The copy_mount_options() function takes a user pointer argument but not
-> > a size. It tries to read up to a PAGE_SIZE. However, copy_from_user() is
-> > not guaranteed to return all the accessible bytes if, for example, the
-> > access crosses a page boundary and gets a fault on the second page. To
-> > work around this, the current copy_mount_options() implementations
-> > performs to copy_from_user() passes, first to the end of the current
-> > page and the second to what's left in the subsequent page.
-> > 
-> > Some architectures like arm64 can guarantee an exact copy_from_user()
-> > depending on the size (since the arch function performs some alignment
-> > on the source register). Introduce an arch_has_exact_copy_from_user()
-> > function and allow copy_mount_options() to perform the user access in a
-> > single pass.
-> > 
-> > While this function is not on a critical path, the single-pass behaviour
-> > is required for arm64 MTE (memory tagging) support where a uaccess can
-> > trigger intra-page faults (tag not matching). With the current
-> > implementation, if this happens during the first page, the function will
-> > return -EFAULT.
-> 
-> Do you know how much extra overhead we'd incur if we read at must one
-> tag granule at a time, instead of PAGE_SIZE?
 
-Our copy routines already read 16 bytes at a time, so that's the tag
-granule. With current copy_mount_options() we have the issue that it
-assumes a fault in the first page is fatal.
+--===============5894635858426895920==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="2uzyukowame55xt3"
+Content-Disposition: inline
 
-Even if we change it to a loop of smaller uaccess, we still have the
-issue of unaligned accesses which can fail without reading all that's
-possible (i.e. the access goes across a tag granule boundary).
 
-The previous copy_mount_options() implementation (from couple of months
-ago I think) had a fallback to byte-by-byte, didn't have this issue.
+--2uzyukowame55xt3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> I'm guessing that in practice strcpy_from_user() type operations copy
-> much less than a page most of the time, so what we lose in uaccess
-> overheads we _might_ regain in less redundant copying.
+Hi Stefan,
 
-strncpy_from_user() has a fallback to byte by byte, so we don't have an
-issue here.
+On Sat, Apr 25, 2020 at 10:54:22PM +0200, Stefan Wahren wrote:
+> Hi Maxime,
+>=20
+> Am 24.04.20 um 17:35 schrieb Maxime Ripard:
+> > Now that all the drivers have been adjusted for it, let's bring in the
+> > necessary device tree changes.
+> >
+> > Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> > ---
+> >  arch/arm/boot/dts/bcm2711-rpi-4-b.dts |  46 +++++++++++-
+> >  arch/arm/boot/dts/bcm2711.dtsi        | 115 ++++++++++++++++++++++++++-
+> >  2 files changed, 160 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/=
+bcm2711-rpi-4-b.dts
+> > index 3205d2dfa898..0efbc4412dc9 100644
+> > --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+> > +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
+> > @@ -220,3 +220,49 @@
+> >  &vchiq {
+> >  	interrupts =3D <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+> >  };
+> > +
+> > +&vc4 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pixelvalve0 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pixelvalve1 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pixelvalve2 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pixelvalve3 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&pixelvalve4 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&hdmi0 {
+> > +	clocks =3D <&firmware_clocks 13>, <&dvp 0>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&ddc0 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&hdmi1 {
+> > +	clocks =3D <&firmware_clocks 13>, <&dvp 1>;
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&ddc1 {
+> > +	status =3D "okay";
+> > +};
+> > +
+> > +&hvs {
+> > +	clocks =3D <&firmware_clocks 4>;
+> > +};
+> > diff --git a/arch/arm/boot/dts/bcm2711.dtsi b/arch/arm/boot/dts/bcm2711=
+=2Edtsi
+> > index 00bcaed1be32..a6549fa6e62b 100644
+> > --- a/arch/arm/boot/dts/bcm2711.dtsi
+> > +++ b/arch/arm/boot/dts/bcm2711.dtsi
+> > @@ -12,6 +12,11 @@
+> > =20
+> >  	interrupt-parent =3D <&gicv2>;
+> > =20
+> ...
+> > +
+> > +		ddc0: i2c@7ef04500 {
+> > +			compatible =3D "brcm,bcm2711-hdmi-i2c";
+> > +			reg =3D <0x7ef04500 0x100>, <0x7ef00b00 0x300>;
+> > +			reg-names =3D "bsc", "auto-i2c";
+> > +			clock-frequency =3D <390000>;
+>=20
+> according to a patch [1] from Dave Stevenson the i2c clock frequencies
+> are too high.
+>=20
+> [1] -
+> https://github.com/raspberrypi/linux/pull/3515/commits/c09f108de27e8bd199=
+5e7713c6128fa79e69579a
 
-The above is only for synchronous accesses. For async, in v3 I disabled
-such checks for the uaccess routines.
+Good catch, I'll merge it in my next round of changes
 
--- 
-Catalin
+Maxime
+
+--2uzyukowame55xt3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqg5pQAKCRDj7w1vZxhR
+xQ1LAP91xvr/EAIzvWK5E+bjOZazwPcp4DpONK5z9Xr2cRoGMgD/dGYehbr08g+i
+YgQKRp6pnmAlE6W5yIlpR5WwrJ2vSwQ=
+=6BJB
+-----END PGP SIGNATURE-----
+
+--2uzyukowame55xt3--
+
+
+--===============5894635858426895920==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5894635858426895920==--
+
