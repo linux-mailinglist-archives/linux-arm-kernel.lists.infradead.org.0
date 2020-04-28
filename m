@@ -2,75 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B89691BC36F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED5BF1BC3C3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:32:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zEGsuxdFiIm0FS+6TKh3NVnExakMQT0hq/FWf9IPAlE=; b=VpN9T+/FzpSdkwVVpa4tRROSI
-	1TnX5wuYg7QWpZ3qAq99qcQscqBj5O5cy8wFqO3fvSSMqqgzzPfVDKr5rWSj1wHPEpxrMDrXSxa57
-	UG8lWLREvrdJv4X0q5CwTc2xuUv5gdA+CbbKY4Yxhf9DXn9GGmiu4ci+S8sWT5Xa/no/n2Wg2GINt
-	6RAdXKPrxmiY4sdEQVFkEAKS5EebyEj/rZZ/HGbSzI8M68M0fmA0AGfAvkwLm2ig/hYm/qt5+YP0a
-	LNy9bcOLRMxR/rqBY7nYd9zWhR37giKLBuVAcNz6wQ+IR1w+YTc4HptKbn2Z1ogiV6SKwsGB9m11R
-	Mc5WzXA3A==;
+	 bh=h+nnVQobPA2aPcBxZ8Lq2goMRxu4N770/wO8jCqjX6g=; b=Is8Wua9lx7U09P0Zhc0dG95GA
+	nlVYId7O96ZSzfktT8HGrUV4+7W9V3uQA3R/bjvfSR9ARimGHiDuLhKTvUc3y/r+dE/g5QfLVuVj9
+	+Y03tEJ+7YDTqVy+/m4wnDcRoHhYdrhTciRIlvemI1YQq4qmXl+7QcJNOeFwpbl0gFWTfboiD3oVd
+	Ca9F3BtSkw1sHeHKYjMVIu4inPtlqhE3XmMn2URWLoe2s2jY3FJnJE8vsSE4toCa83I90dsucHMAN
+	LAINYwNui2mUMT/syQljp3+mUcs5enzVvGrty3FQrC7Po3MlFTqA0xreGtzjIxfj9iqP+KVdB5gpF
+	Z6w5GAT2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTS7V-0007ip-Po; Tue, 28 Apr 2020 15:26:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTS7H-0007hn-6r
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:25:48 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C4838206D8;
- Tue, 28 Apr 2020 15:25:45 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588087546;
- bh=th3tqv11ZgZgj8E96bFG6ckng9nKhzjnFA3FZBoCqDM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UlWrbndNBYw9f/3rJZ9vWhuiMI9bols+NUpDrkpb6nMDPcIB+exm9thHsajcNMv2s
- zF8ons1G+Tu9b/RtEzHyR4oERYHCJhNFS7iYENen9Yfm5zJskPzV8YzecKgzoPwIBB
- YihdZq8p8AkIueprECGqpetiJGVIrRNXwJ4Om4/8=
-Date: Tue, 28 Apr 2020 16:25:43 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH v3 02/16] mfd: mfd-core: Don't overwrite the dma_mask of
- the child device
-Message-ID: <20200428152543.GI5677@sirena.org.uk>
-References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-3-michael@walle.cc>
- <20200428124548.GS185537@smile.fi.intel.com>
- <3cd3705a-4f48-6a46-e869-3ee11dc17323@arm.com>
- <20200428142938.GX185537@smile.fi.intel.com>
- <6ccad285-7b5f-3037-d4d5-ff4d9571b612@arm.com>
+	id 1jTSDM-0003V0-9J; Tue, 28 Apr 2020 15:32:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTSDB-0003T4-8P
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:31:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0538B30E;
+ Tue, 28 Apr 2020 08:31:50 -0700 (PDT)
+Received: from [10.37.12.125] (unknown [10.37.12.125])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E0ACA3F305;
+ Tue, 28 Apr 2020 08:31:44 -0700 (PDT)
+Subject: Re: [PATCH v3 4/4] thermal: cpuidle: Register cpuidle cooling device
+To: Daniel Lezcano <daniel.lezcano@linaro.org>, rui.zhang@intel.com
+References: <20200414220837.9284-1-daniel.lezcano@linaro.org>
+ <20200414220837.9284-4-daniel.lezcano@linaro.org>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <db4eeecf-2126-e455-ef02-fc034c631e09@arm.com>
+Date: Tue, 28 Apr 2020 16:31:40 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <6ccad285-7b5f-3037-d4d5-ff4d9571b612@arm.com>
-X-Cookie: Eschew obfuscation.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200414220837.9284-4-daniel.lezcano@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_082547_274718_A2CEE416 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_083153_341994_51857402 
+X-CRM114-Status: GOOD (  21.04  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,79 +64,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Michael Walle <michael@walle.cc>,
- Shawn Guo <shawnguo@kernel.org>
-Content-Type: multipart/mixed; boundary="===============3465008472606018569=="
+Cc: amit.kucheria@verdurent.com, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ open list <linux-kernel@vger.kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3465008472606018569==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="LYw3s/afESlflPpp"
-Content-Disposition: inline
 
+On 4/14/20 11:08 PM, Daniel Lezcano wrote:
+> The cpuidle driver can be used as a cooling device by injecting idle
+> cycles. The DT binding for the idle state added an optional
+> 
+> When the property is set, register the cpuidle driver with the idle
+> state node pointer as a cooling device. The thermal framework will do
+> the association automatically with the thermal zone via the
+> cooling-device defined in the device tree cooling-maps section.
+> 
+> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> ---
+>   drivers/cpuidle/cpuidle-arm.c  | 5 +++++
+>   drivers/cpuidle/cpuidle-psci.c | 5 +++++
+>   2 files changed, 10 insertions(+)
+> 
+> diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
+> index 9e5156d39627..2406ac0ae134 100644
+> --- a/drivers/cpuidle/cpuidle-arm.c
+> +++ b/drivers/cpuidle/cpuidle-arm.c
+> @@ -8,6 +8,7 @@
+>   
+>   #define pr_fmt(fmt) "CPUidle arm: " fmt
+>   
+> +#include <linux/cpu_cooling.h>
+>   #include <linux/cpuidle.h>
+>   #include <linux/cpumask.h>
+>   #include <linux/cpu_pm.h>
+> @@ -124,6 +125,10 @@ static int __init arm_idle_init_cpu(int cpu)
+>   	if (ret)
+>   		goto out_kfree_drv;
+>   
+> +	ret = cpuidle_cooling_register(drv);
+> +	if (ret)
+> +		pr_err("Failed to register the idle cooling device: %d\n", ret);
 
---LYw3s/afESlflPpp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+This and similar from cpuidle-psci.c might produce a lot of error log
+entries. The 'return 0' below does not take into account that we failed
+to register cpuidle cooling. Thus, I would rather ignore the return from 
+cpuidle_cooling_register and move this print into
+cpuidle_cooling_register function, changing it also to debug level.
 
-On Tue, Apr 28, 2020 at 03:49:49PM +0100, Robin Murphy wrote:
+> +
+>   	return 0;
+>   
+>   out_kfree_drv:
+> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> index edd7a54ef0d3..8e805bff646f 100644
+> --- a/drivers/cpuidle/cpuidle-psci.c
+> +++ b/drivers/cpuidle/cpuidle-psci.c
+> @@ -9,6 +9,7 @@
+>   #define pr_fmt(fmt) "CPUidle PSCI: " fmt
+>   
+>   #include <linux/cpuhotplug.h>
+> +#include <linux/cpu_cooling.h>
+>   #include <linux/cpuidle.h>
+>   #include <linux/cpumask.h>
+>   #include <linux/cpu_pm.h>
+> @@ -305,6 +306,10 @@ static int __init psci_idle_init_cpu(int cpu)
+>   	if (ret)
+>   		goto out_kfree_drv;
+>   
+> +	ret = cpuidle_cooling_register(drv);
+> +	if (ret)
+> +		pr_err("Failed to register the idle cooling device: %d\n", ret);
+> +
 
-> For better or worse, the platform bus is the dumping ground for random crap,
-> so we just have to deal with all the abstraction breakage that leaks out of
-> that.
+The same here. I would change it into one line:
++	cpuidle_cooling_register(drv);
 
-The reason we're using the platform bus for this is that historically
-people were creating buses which were essentially carbon copies of the
-platform bus with the name changed and it was felt that rather than
-duplicate code it was better to just use platform devices with no MMIO
-ranges defined.  If there's some assumptions about DMA for platform
-devices floating about somewhere it might be reasonable to revisit this
-and create a non-DMA variant of platform devices since there is a
-meaningful difference.
+>   	return 0;
+>   
+>   out_kfree_drv:
+> 
 
---LYw3s/afESlflPpp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6oSvYACgkQJNaLcl1U
-h9Bs4Qf/RCa5JW+qq8H0nchlRU4JeR7TBiAfPi1/fksL+W8k+qMkV0/KwPSMqloA
-CaWErSXTzc1Mk3WKIT7UxNlcK1QsuUfNZnyA3JhFXAg39xjWpt2vSM7A/zY5mnOm
-ZkujuFzw0NzNuBoxG+8OaBH1Ltitu/KpgCPJgrmwT09V5WuZ5uf8b3mjnEo0reaN
-DYcUgV/u3XkUeSbMd1iljqd8bt+jHFHoFlVOVtcw+xh20cKvQ6kOzIPYlDbuz9rM
-tGPZwlyojrQeFd8YYTh1hqSzqeB6E19JgdPEi9P34gi7rIctOcI6b9PwFO9er5fW
-ov2hgkFJC60dI+z5f9j70bLBQfMw/w==
-=hzNB
------END PGP SIGNATURE-----
-
---LYw3s/afESlflPpp--
-
-
---===============3465008472606018569==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3465008472606018569==--
-
