@@ -2,69 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B5541BB7AE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:35:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA8841BB7EC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:45:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k+RakUpKHElOo3rbPkFb3uWfKjm0bniMA9i3jdt18rM=; b=OTE8Ts1SRcvayZ
-	oEYsEdxqphNlGoRg71+fP1jYbQ7xl5O1+73tp7+PRpD3qFVSO0IrrKBvlTkUfZhuV346wGZnfzMUx
-	PW+ZJo3/C9esWBqO6cJM2fS53Cidc8ApnNZkFsRx/ubIe9P+2pX8UMXHbTxtoC9+FISyuqtLpoS+D
-	+fnk4WSJWbPUBKX89UhYuym8TsGRAXM7lo7ZFpGz9YC70bar8eC10a3nGaa5JCvrtYgSjEY9+wyMj
-	z9L+1IkN6NM367NLSB87vWvJBrH4qV9drc58JM+tkuS6lgZ1OkpBeXXMu1zIuuxiPKXUBl57icDdN
-	m+bvk0f8Z7L8pQsnOvbQ==;
+	List-Owner; bh=gnCzOn8WumZZurMKnYGIqW1HMOIkWCsXGdZt4srn2Qs=; b=lC2Qs8QaXHSaa7
+	WAxLnvGX5sFEdYhqVR4qc7kJ/8HGC/6htH8fWAE22oFz4z7XxjZdExEoPGDjjD84Rl+8l7EtikdTq
+	qS2gPT1gnUwL+pSnBCT1oqksddxD+m6/9N6HW1wwZnmAEHJBPfKwWP8o95hSuNOuqIvuY9WNxQoX0
+	f6kruMUq+vradUd+WYki+3roDlMuUJnI9CB5leqK15N/k2pWkRnpP1JE6akQ+En9qHKNda03RMpsf
+	MUeBztgABm4KP9r5ZsiThPp+1MN8BSqWKqu93S3oFzsFcatqd5figgQEwokMCZAxFaPRjshFacT5L
+	9enb0ATwSdQvBqnyJA4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTKm7-0005rv-5U; Tue, 28 Apr 2020 07:35:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jTKvb-0000NG-2D; Tue, 28 Apr 2020 07:45:15 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTKlM-0005bq-DG
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:34:41 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EF906206D9;
- Tue, 28 Apr 2020 07:34:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588059280;
- bh=Ij7cKVnIonfucw210eJQSpASNDrQWgMhCCdpFFpQWvc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lLyX/U4TLpN1vT2REDLFDIRX7lLSspJBA8MAcJxiUXiClH0a60z5PNE8mvoCJrxLy
- wrR5yCHzRZdq43COnv6rpOCsMN/kGmwYk3F1iURnolKcMcgoxLrrp4q/RZaT7MStPJ
- oB85UMPKlpyPwkCi31jO8hHcBj1AiGelx6BiRQaY=
-Date: Tue, 28 Apr 2020 08:34:35 +0100
-From: Will Deacon <will@kernel.org>
-To: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Subject: Re: arm64 vdso might miss .eh_frame
-Message-ID: <20200428073435.GC4049@willie-the-truck>
-References: <20200415092336.GK987@arm.com>
+ id 1jTKvF-0000Mf-8c
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:44:54 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jTKvD-0000hA-Tc; Tue, 28 Apr 2020 09:44:51 +0200
+Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <sha@pengutronix.de>)
+ id 1jTKvA-0007AL-Tl; Tue, 28 Apr 2020 09:44:48 +0200
+Date: Tue, 28 Apr 2020 09:44:48 +0200
+From: Sascha Hauer <s.hauer@pengutronix.de>
+To: Madalin Bucur <madalin.bucur@nxp.com>
+Subject: Re: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
+Message-ID: <20200428074448.GW5877@pengutronix.de>
+References: <20200423102212.5412-1-s.hauer@pengutronix.de>
+ <DB8PR04MB6985EB9D28A17723C8C061CCECD30@DB8PR04MB6985.eurprd04.prod.outlook.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200415092336.GK987@arm.com>
+In-Reply-To: <DB8PR04MB6985EB9D28A17723C8C061CCECD30@DB8PR04MB6985.eurprd04.prod.outlook.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 09:42:22 up 68 days, 15:12, 94 users,  load average: 0.13, 0.15, 0.12
 User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: sha@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_003440_472686_AD6FDD8D 
-X-CRM114-Status: GOOD (  13.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_004453_301338_9E897531 
+X-CRM114-Status: GOOD (  30.51  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,38 +74,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, Tamas Zsoldos <tamas.zsoldos@arm.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, "u-boot@lists.denx.de" <u-boot@lists.denx.de>,
+ "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Leo Li <leoyang.li@nxp.com>, "joe.hershberger@ni.com" <joe.hershberger@ni.com>,
+ Shawn Guo <shawnguo@kernel.org>, "davem@davemloft.net" <davem@davemloft.net>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 10:23:36AM +0100, Szabolcs Nagy wrote:
-> On aarch64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
-> by default since gcc-8, so now the de facto platform ABI is to allow
-> unwinding from async signal handlers.
-> 
-> However on bare metal targets (aarch64-none-elf), and on old gcc,
-> async and sync unwind tables are not enabled by default to avoid
-> runtime memory costs.
-> 
-> This means if linux is built with a baremetal toolchain the vdso.so
-> may not have unwind tables which breaks our (undocumented) platform
-> ABI guarantee in userspace. So adding -fasynchronous-unwind-tables
-> explicitly to the vgettimeofday.o cflags would be nice (the other
-> objects in the vdso seem to be asm).
-> 
-> There was also a report that android clang built linux vdso.so lacks
-> .eh_frame completely, that may be a missing --eh-frame-hdr or different
-> platform ABI on android, Tamas on cc may be able to verify this.
+Hi Madalin,
 
-Vincenzo? Looks like this is a regression caused by the move to C -- please
-can you take a look?
+On Thu, Apr 23, 2020 at 12:59:16PM +0000, Madalin Bucur wrote:
+> > -----Original Message-----
+> > From: Sascha Hauer <s.hauer@pengutronix.de>
+> > Sent: Thursday, April 23, 2020 1:22 PM
+> > To: linux-arm-kernel@lists.infradead.org
+> > Cc: Madalin Bucur <madalin.bucur@nxp.com>; Shawn Guo
+> > <shawnguo@kernel.org>; Leo Li <leoyang.li@nxp.com>; Sascha Hauer
+> > <s.hauer@pengutronix.de>
+> > Subject: [PATCH] arm64: dts: ls1046ardb: Set aqr106 phy mode to usxgmii
+> > 
+> > The AQR107 family of phy devices do not support xgmii, but usxgmii
+> > instead. Since ce64c1f77a9d ("net: phy: aquantia: add USXGMII support
+> > and warn if XGMII mode is set") the kernel warns about xgmii being
+> > used. Change device tree to usxgmii.
+> > 
+> > Signed-off-by: Sascha Hauer <s.hauer@pengutronix.de>
+> > ---
+> >  arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> > b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> > index d53ccc56bb63..02fbef92b96a 100644
+> > --- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> > +++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-rdb.dts
+> > @@ -151,7 +151,7 @@ ethernet@ea000 {
+> > 
+> >  	ethernet@f0000 { /* 10GEC1 */
+> >  		phy-handle = <&aqr106_phy>;
+> > -		phy-connection-type = "xgmii";
+> > +		phy-connection-type = "usxgmii";
+> >  	};
+> > 
+> >  	ethernet@f2000 { /* 10GEC2 */
+> > --
+> > 2.26.1
+> 
+> Hi Sascha,
+> 
+> thank you for trying to correct this problem. Unfortunately
+> "usxgmii" here is incorrect too, as that mode is not supported
+> by the LS1046A SoC. The connection mode used, as documented
+> by the SoC and PHY datasheets, is XFI. Unfortunately there was
+> resistance against including this connection type in the list
+> supported by the kernel (please note the distinction between
+> connection type and connection mode). At a certain moment the
+> two were aliased and the kernel uses connection mode, not
+> connection type. While we should describe here the hardware,
+> the board connection type (XFI), in the kernel the connection
+> mode was lately preferred (10G-BaseR). So, today we cannot use
+> "xfi" here, as the hardware description property should read.
+> The closest thing we can use is "10gbase-r". Unfortunately, in
+> u-boot support for "xfi" is already in place [1] and the device
+> tree should be different for the two for this reason - this goes
+> against the spirit of the device tree that should not depend on
+> the software using it...
+> 
+> I had on my agenda to fix this problem, had to stop when "xfi"
+> was rejected, at the time not even "10gbase-r" was an option.
+> Also worth noting here is that, while we change "xgmii" to a
+> correct/better value, we should also tolerate the old variant,
+> as there are users in the wild unable/unwilling to update the
+> device tree and backwards compatibility should be ensured,
+> further complicating the matter.
 
-Will
+Thanks for the explanation. It looked like one of those simple patch
+opportunities at first, apparently it isn't.
+
+Sascha
+
+-- 
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
