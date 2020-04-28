@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5336A1BBC50
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:22:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E4EF1BBC57
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:24:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ECPmliQ1DW+D85XIrQCDlC3O6KUovPDG+LJ/tIWJIgs=; b=cN8vi92xMsiFaz
-	UU0STTVwk9EgiX7yS3SRTljnb29/xUqfVSrdF7Ir9Sc4/4jO2woNe4S/ax9MF3f7T6WDJ6isUeY8E
-	iO9zVX50retbANibhZBQiH+8/dYTZdFCZGSK0A1mU/TIgBQ1ZpSJ7hjQgJ65Cw4Ye2vnQ2ujLTpR5
-	CL1ZiWU9Su+swrphMwDX/pfcyDB/WfQRXnXSeBojMmPKZwRUjv4E+Y1Kb57Biww+gGVgYPA5WLjSh
-	SamBMjKly+oIDlq4bPnReZMDuaBt0xypF7nKSLXwu8wQ6g3BhYud/coIrdB1CuBRmfBTtDOQ9FXzt
-	Y/pFU2rCKFFKf/gSQlGA==;
+	List-Owner; bh=kJAaQ5rXpi2TA76LKt+AAkHj+EH292iwaiO1BefmVbE=; b=rr8KfrCHDKjT5b
+	YHkRbHspwCsnLdzGPaFXz8AbcdAzZ0s3MyDicSU8z1fpXAN7xrBpm6cJlGi8ML6FiucwGQmdTvEqV
+	bJjghvHBIMCBkCyWyQ0LCrM/I5C37KMt2z1UxJ1lra7D4l3e0pypltSI1PW7o6EVRrgTivJ+IBmlS
+	th/Tbd45f82zhPWWZALtz9ey9EzSeqpsYw4hYc12UbNPXhmZuiuiG4QP7A5fPYBtZDo4rweQ0orya
+	yDkgCuEQEIH9atjbKCloZ1pCm1hF11p73UPJQjV9TtnDDC//GQLtc5bWV1Ud3rvxnqVBooA2zQyAC
+	CR7bqx57GLV8VuNQV3ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTOJY-0007GE-SG; Tue, 28 Apr 2020 11:22:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTOJP-0007FR-8h
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:22:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 69C3730E;
- Tue, 28 Apr 2020 04:22:02 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.1.132])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B3713F73D;
- Tue, 28 Apr 2020 04:22:00 -0700 (PDT)
-Date: Tue, 28 Apr 2020 12:21:57 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Gavin Shan <gshan@redhat.com>
-Subject: Re: [PATCH v2] arm64/kernel: Fix range on invalidating dcache for
- boot page tables
-Message-ID: <20200428112157.GB15519@C02TD0UTHF1T.local>
-References: <20200427235700.112220-1-gshan@redhat.com>
+	id 1jTOLm-00083G-8r; Tue, 28 Apr 2020 11:24:30 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTOLX-00082E-Q2
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:24:18 +0000
+Received: by mail-lj1-x243.google.com with SMTP id a21so21051630ljb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 04:24:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dtSCC/6Zk0CAn9Haq8H1TnXYmgXgUR49no/7MjmVHFQ=;
+ b=wbyZMmT9xNXh+i0FXuT8+Zx0WQdZUgyX61MnLeN982X/SWM7j8uLKdx4JNX0goNrlW
+ XNleJW0Aumfkz+/nYc6WoQ8Mbrxe3w1WLfSNynijdPAXIoQCU3Axz5WeoIANm/zvra2V
+ ijUUTgiTMZ8y0QAkIuJ2Bp78VCRcPB15ZdTKvt9ubTDohSlkhyXFMXv4xeDA7kXorXIc
+ jgucg0wgYdFFOPB7eDr41HD8vwo4BbHTO7E1pPV6RY/Q68xD3pDZwrTL4LOvetZ3bQ51
+ zH9VJUmgfofrM3p7AOv5Jsy5qEsxI1mNerRs3/gEPO5WEqb6omAGtU1ZPiO6iCLwZeNd
+ V+ow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dtSCC/6Zk0CAn9Haq8H1TnXYmgXgUR49no/7MjmVHFQ=;
+ b=gU9dHE3UDAKWzcGkYDBux6rrYwfh1QK6nNyCGanMX3E98vVrxSrFUpjTqN31VIDFGS
+ fvfeiENF2o8/+M5RbKOYXWCbAZYGpPuL3yyQlVnCx+EqquY4gzMB9hcVaiKTEcx58oZI
+ tWrfJ85IlCA+t9pc3aP4pfCEEsmJGpYhapWLb37CUAcMOVu3kmJDPmixAlxsuS+bWXg4
+ nGceBIWX39K8WMfDuuw/O9Ll3L66x07kjImQrFMDe/nvUcyblaOlg2B5FSS0n2Ykk/DC
+ 102kX4egpjHQBdyASEkLovsBaHugN0d/k9YixJ4qdPcb3A65v4ilO7/hMHJTLCFttQM1
+ OGhg==
+X-Gm-Message-State: AGi0Pua9RpOfObZtcbZWdUFGcn9yVM6midQqH3Z2Bn9Ujp7qH/8iNU0D
+ xI91l4bZ9d/8TaeEbO9Gl9oBtyquxZArakiywfBl/g==
+X-Google-Smtp-Source: APiQypIAZegG6Qn5JvZ0uvEzFCZSmajX66iK5f+sKRerbAwYFi9OxxOsRKHMp8MI1JCk0ToY+5PLv4Mls7VQnu506Fk=
+X-Received: by 2002:a2e:8805:: with SMTP id x5mr18067893ljh.223.1588073053796; 
+ Tue, 28 Apr 2020 04:24:13 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427235700.112220-1-gshan@redhat.com>
+References: <20200420134800.31604-1-benjamin.gaignard@st.com>
+ <20200420134800.31604-2-benjamin.gaignard@st.com>
+In-Reply-To: <20200420134800.31604-2-benjamin.gaignard@st.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Tue, 28 Apr 2020 13:24:01 +0200
+Message-ID: <CACRpkdatGwWyruTLC=+BUtnunvqyxnXAYDhcHqy26oeud8Bs1w@mail.gmail.com>
+Subject: Re: [PATCH 1/5] dt-bindings: bus: Add firewall bindings
+To: Benjamin Gaignard <benjamin.gaignard@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_042203_394444_FF0F7D44 
-X-CRM114-Status: GOOD (  20.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_042416_369059_F82766F4 
+X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,105 +92,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: steve.capper@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- broonie@kernel.org, shan.gavin@gmail.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
+ Loic PALLARDY <loic.pallardy@st.com>, Greg KH <gregkh@linuxfoundation.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 09:57:00AM +1000, Gavin Shan wrote:
-> Prior to commit 8eb7e28d4c642c31 ("arm64/mm: move runtime pgds to
-> rodata"), idmap_pgd_dir, tramp_pg_dir, reserved_ttbr0, swapper_pg_dir,
-> and init_pg_dir were contiguous at the end of the kernel image. The
-> maintenance at the end of __create_page_tables assumed these were
-> contiguous, and affected everything from the start of idmap_pg_dir
-> to the end of init_pg_dir.
-> 
-> That commit moved all but init_pg_dir into the .rodata section, with
-> other data placed between idmap_pg_dir and init_pg_dir, but did not
-> update the maintenance. Hence the maintenance is performed on much
-> more data than necessary (but as the bootloader previously made this
-> clean to the PoC there is no functional problem).
-> 
-> As we only alter idmap_pg_dir, and init_pg_dir, we only need to perform
-> maintenance for these. As the other dirs are in .rodata, the bootloader
-> will have initialised them as expected and cleaned them to the PoC. The
-> kernel will initialize them as necessary after enabling the MMU.
-> 
-> This patch reworks the maintenance to only cover the idmap_pg_dir and
-> init_pg_dir to avoid this unnecessary work.
-> 
-> Signed-off-by: Gavin Shan <gshan@redhat.com>
+Hi Benjamin,
 
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
+On Mon, Apr 20, 2020 at 3:48 PM Benjamin Gaignard
+<benjamin.gaignard@st.com> wrote:
+>
+> Add schemas for firewall consumer and provider.
+>
+> Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 
-Mark.
-
-> ---
-> v2: Include the suggested commit log    (Mark Rutland)
->     Improved comments and code          (Mark Rutland)
-> ---
->  arch/arm64/include/asm/pgtable.h |  1 +
->  arch/arm64/kernel/head.S         | 12 +++++++++---
->  arch/arm64/kernel/vmlinux.lds.S  |  1 +
->  3 files changed, 11 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-> index 8c20e2bd6287..5caff09c6a3a 100644
-> --- a/arch/arm64/include/asm/pgtable.h
-> +++ b/arch/arm64/include/asm/pgtable.h
-> @@ -457,6 +457,7 @@ extern pgd_t init_pg_dir[PTRS_PER_PGD];
->  extern pgd_t init_pg_end[];
->  extern pgd_t swapper_pg_dir[PTRS_PER_PGD];
->  extern pgd_t idmap_pg_dir[PTRS_PER_PGD];
-> +extern pgd_t idmap_pg_end[];
->  extern pgd_t tramp_pg_dir[PTRS_PER_PGD];
->  
->  extern void set_swapper_pgd(pgd_t *pgdp, pgd_t pgd);
-> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-> index 57a91032b4c2..32f5ecbec0ea 100644
-> --- a/arch/arm64/kernel/head.S
-> +++ b/arch/arm64/kernel/head.S
-> @@ -394,13 +394,19 @@ SYM_FUNC_START_LOCAL(__create_page_tables)
->  
->  	/*
->  	 * Since the page tables have been populated with non-cacheable
-> -	 * accesses (MMU disabled), invalidate the idmap and swapper page
-> -	 * tables again to remove any speculatively loaded cache lines.
-> +	 * accesses (MMU disabled), invalidate those tables again to
-> +	 * remove any speculatively loaded cache lines.
->  	 */
-> +	dmb	sy
+> +$id: http://devicetree.org/schemas/bus/stm32/firewall-consumer.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
->  	adrp	x0, idmap_pg_dir
-> +	adrp	x1, idmap_pg_end
-> +	sub	x1, x1, x0
-> +	bl	__inval_dcache_area
+> +title: Common Bus Firewall consumer binding
 > +
-> +	adrp	x0, init_pg_dir
->  	adrp	x1, init_pg_end
->  	sub	x1, x1, x0
-> -	dmb	sy
->  	bl	__inval_dcache_area
->  
->  	ret	x28
-> diff --git a/arch/arm64/kernel/vmlinux.lds.S b/arch/arm64/kernel/vmlinux.lds.S
-> index 497f9675071d..94402aaf5f5c 100644
-> --- a/arch/arm64/kernel/vmlinux.lds.S
-> +++ b/arch/arm64/kernel/vmlinux.lds.S
-> @@ -139,6 +139,7 @@ SECTIONS
->  
->  	idmap_pg_dir = .;
->  	. += IDMAP_DIR_SIZE;
-> +	idmap_pg_end = .;
->  
->  #ifdef CONFIG_UNMAP_KERNEL_AT_EL0
->  	tramp_pg_dir = .;
-> -- 
-> 2.23.0
-> 
+> +maintainers:
+> +  - Benjamin Gaignard <benjamin.gaignard@st.com>
+
+This really needs a description: to tell what is going on and what
+these firewalls
+are for and how they are supposed to work.
+
+I suppose just a bit of cut'n'paste from the cover letter :D
+
+Otherwise it looks good to me.
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
