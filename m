@@ -2,50 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB1931BB9BD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:21:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECBE01BB9C1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:22:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Y0TjuG/0Nef9yr4fjczgumhIdEWdNUc9s7yyx3sSMaE=; b=nqRdM2fsTkrdDU
-	q5TUP9vvHDJAVHz+SpjZH4SunDWBqFjlt3M76KpsHSNdtSPmjbboZTGKhG+9iHMHZiokacgQGXPvk
-	5lbp5MCrxNiFoa6JpOn99XAUSTHSthvGD23P8t8LOk/F7g0vdjG1+Ool+q9Xz5MmdtQAPMA4JAPMJ
-	wPvRQNfyk4gGq3HCaIDNSbz41D+ZN31BMe+srw6mYsEVys1FdSyS8DaFWNOmBGcwtJbJewtRCNlyo
-	ojJGxm5ydm9D0F0nwSK8RaEfawkMU1BRN2qMbRjY6yt/16QNOFOzImzYXtEEPIodh/T2BefcGKecs
-	e9q6fNGHPugebm4QzQjg==;
+	List-Owner; bh=BbKJbQYuy5drm3gLjtF68rI5DgBjDbB8YR0/xphBxUQ=; b=scrCJyRl6eudFO
+	Rqg4IvKQKPT/Nbnr2Yh4vKsqW4iOslI5r+KRkRfCtNv2ufTOrzkg8D9v4loKwkvsZkSOAmOpD+9k6
+	u2+oFABEDAmRqdRBu/LWHuuZEymurOD5WLsD8r3mkZBpRk2DK3PpyeKKT4dQEwxIgXNRqJ1xKLdvd
+	f7PkYa70h/Va7/DtTo0XS0EqMKU/7ZCfD3TFLCfTdpVoPxtsyVG9YInRmHsDgW+bQUjGB2GgqNC2/
+	USaxeXvp6NtNX1KqHud2onOor8CV7EQZcD7xV2oSccktj5dzlVWCEZuHsk/c7Qxe2hSqtEzjOmszG
+	QhpfbmBJYOpO/0SGsVVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTMQp-0000XX-5r; Tue, 28 Apr 2020 09:21:35 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jTMRS-00015s-R5; Tue, 28 Apr 2020 09:22:14 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTMQa-0000Vf-1Z
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:21:22 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
- with ESMTPSA id E9CE82A15C3
-From: =?UTF-8?q?Ricardo=20Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
-To: robh+dt@kernel.org
-Subject: [RFC PATCH] dt-bindings: display: ti,tfp410.txt: convert to yaml
-Date: Tue, 28 Apr 2020 11:20:48 +0200
-Message-Id: <20200428092048.14939-1-ricardo.canuelo@collabora.com>
-X-Mailer: git-send-email 2.18.0
+ id 1jTMRA-00013J-Hv
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:21:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g13so23761351wrb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 02:21:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2cLq0w8TGR36+W3YRP72xjNvZ3bw9fmtT1+3RjgE/Tc=;
+ b=P4bEHbFevVQ5KU9k6DnsiU/uvu2lKw96YtQSNTZWRu12/7WmLzR7TJd3TDGV8k4Cx2
+ q8nOXSaelMy5TRT9I+Peqb13FpfXbfTd1ntvAMOkDMSdrREPsT1um6ibH6ArZ8CfELzA
+ Ed4bI06QHFzLHIVK73cyrnS67KiIORQGe3HuA7IywRCYy57SSaqugxcDWdvZztzYn6NW
+ TlOpqrb6XU35NcSHiKpJQmhOVghhmP7d6dLWxnUM3ecT7FQGnNp9S9f2WCg5+4PRDBL9
+ x5mtluu91d2IFGpmhWOkGd1jr4iyx707nHWIOyHbPrGoRz4rHhwSvgvB6jDs0CvlO8yH
+ HXmQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=2cLq0w8TGR36+W3YRP72xjNvZ3bw9fmtT1+3RjgE/Tc=;
+ b=QsjXTxOdTnEh1CqdA9sEd7dPElUrtbkz6uFQepOpMipMfftytAS93vnmxgyYgrVWfm
+ HZOQD10tUok4HhjUkU2lD1A87VzBjABuophceje1oNSfOqVwUOoWAiVf2oqjI8Jh0AnF
+ ZpwyfjAhA/5gy3W+6bzfvsQzjfigNB+S9ErQKfa5LNwGmTql/16DGyQG7xglQ/krNiyj
+ hrHFKcbcK5jcrbGNW93xnMNyDgplUDvoAN8DWAez6n3xOUrk3FprPHh8x0F5IZm7Q+K0
+ 1zA4QknH+sZ7whn0Geaym+OFZHUrTCj6lz1TJgsFKHWgzIaUvVLuTOPbJBnPS7vmPryY
+ p8cQ==
+X-Gm-Message-State: AGi0PubuAKjJgLeOMkXlsiWfISbqUV06xxdTMbGuj1TPUJcvEKjqLxSV
+ Lxca5hXRw3VneEIe/T0bdSEIpA==
+X-Google-Smtp-Source: APiQypK/F5J4biTNEmlibX5kxJGlzXkr4Zfavai0prURf4Z5JUdj8rlNiP+V33qMLKDMbEU/iVJ5pQ==
+X-Received: by 2002:a5d:6946:: with SMTP id r6mr29841088wrw.291.1588065715131; 
+ Tue, 28 Apr 2020 02:21:55 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
+ by smtp.gmail.com with ESMTPSA id
+ w12sm24070297wrk.56.2020.04.28.02.21.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Apr 2020 02:21:54 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH v2] drm/meson: add mode selection limits against specific SoC
+ revisions
+Date: Tue, 28 Apr 2020 11:21:47 +0200
+Message-Id: <20200428092147.13698-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_022120_357330_A400DBD4 
-X-CRM114-Status: GOOD (  23.36  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200428_022156_616061_C460604A 
+X-CRM114-Status: GOOD (  16.43  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,156 +93,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, jason@lakedaemon.net,
- dri-devel@lists.freedesktop.org, tomi.valkeinen@ti.com, kernel@collabora.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: martin.blumenstingl@googlemail.com, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q29udmVydCB0aGUgRFQgYmluZGluZyBkb2N1bWVudGF0aW9uIGZvciB0aGUgVEkgVEZQNDEwIERQ
-SS10by1EVkkKZW5jb2RlciB0byBqc29uLXNjaGVtYS4KClNpZ25lZC1vZmYtYnk6IFJpY2FyZG8g
-Q2HDsXVlbG8gPHJpY2FyZG8uY2FudWVsb0Bjb2xsYWJvcmEuY29tPgotLS0KSGkgYWxsLAoKSSBm
-b3VuZCBzb21lIGlzc3VlcyB3aGlsZSBjb252ZXJ0aW5nIHRoaXMgYmluZGluZyBhbmQgSSdkIGxp
-a2UgdG8ga25vdwp5b3VyIG9waW5pb25zIG9uIGhvdyB0byB0YWNrbGUgdGhlbS4KCjEpIGR0YnNf
-Y2hlY2sgZmFpbHMgZm9yIGFyY2gvYXJtL2Jvb3QvZHRzL2RvdmUtc2JjLWE1MTAuZHRzCgogIFRo
-aXMgYm9hcmQgdXNlcyB0aGUgVEZQNDEwIGVuY29kZXIgYnV0IGl0IGRvZXNuJ3QgZGVmaW5lIGFu
-eSBwb3J0cyBmb3IKICBpdC4gSSBjYW4ndCBmaW5kIGFueSBzdWl0YWJsZSByZW1vdGUgZW5kcG9p
-bnRzIGluIGl0cyBkZXNjcmlwdGlvbgogIGVpdGhlci4gTWF5YmUgdGhpcyBib2FyZCBkZXNjcmlw
-dGlvbiBzaG91bGQgYmUgcmV3b3JrZWQ/IFRoZSBjdXJyZW50CiAgZHJpdmVyIHdvbid0IGhhbmRs
-ZSB0aGUgZGV2aWNlIGlmIGl0IGRvZXNuJ3QgZGVmaW5lIGFueSBwb3J0cyBvcgogIGVuZHBvaW50
-cyBhbnl3YXkuCgogIEl0IGFsc28gdXNlcyB0aGUgJ3Bvd2VyZG93bi1ncGlvJyBwcm9wZXJ0eSBp
-bnN0ZWFkIG9mCiAgJ3Bvd2VyZG93bi1ncGlvcycuIEFGQUlDVCB0aGlzIHNob3VsZG4ndCBiZSBh
-IHByb2JsZW0gZnJvbSB0aGUgZHJpdmVyCiAgcG9pbnQgb2YgdmlldywgYnV0IHRoZSBnZW5lcmFs
-IHN0YW5kYXJkIGluIERUIGJpbmRpbmdzIGlzIHRvIHVzZSB0aGUKICBwbHVyYWwuIFRoaXMgaXMg
-dHJpdmlhbCB0byBmaXguCgoyKSBUaGUgZGVmaW5pdGlvbiBvZiB0aSxkZXNrZXcgaW4gdGhlIG9y
-aWdpbmFsIGJpbmRpbmcgc2VlbXMgdG8gYmUKdGFpbG9yZWQgdG8gdGhlIGN1cnJlbnQgZHJpdmVy
-IGFuZCB0aGUgd2F5IGl0J3MgZGVmaW5lZCBtYXkgbm90IGJlIHZlcnkKRFQtZnJpZW5kbHkuCgog
-IFRoaXMgcGFyYW1ldGVyIG1hcHMgdG8gYSAzLWJpdCBmaWVsZCBpbiBhIGhhcmR3YXJlIHJlZ2lz
-dGVyIHRoYXQgdGFrZXMKICBhIHZhbHVlIGZyb20gMCB0byA3LCBzbyB0aGUgWy00LCAzXSByYW5n
-ZSBkZXNjcmliZWQgZm9yIHRoaXMgd291bGQgbWFwCiAgdG8gWzAwMCwgMTExXTogLTQgLT4gMDAw
-LCAtMyAtPiAwMDEsIC0yIC0+IDAxMCwgLi4uIDMgLT4gMTExLgoKICBUaGVuLCB0aGUgZHJpdmVy
-IHBhcnNlcyB0aGUgcGFyYW1ldGVyICh1bnNpZ25lZCkgYW5kIGNhc3RzIGl0IHRvIGEKICBzaWdu
-ZWQgaW50ZWdlciB0byBnZXQgYSBudW1iZXIgaW4gdGhlIFstNCwgM10gcmFuZ2UuCgogIEEgdmVu
-ZG9yLXNwZWNpZmljIHByb3BlcnR5IG11c3QgaGF2ZSBhIHR5cGUgZGVmaW5pdGlvbiBpbiBqc29u
-LXNjaGVtYSwKICBzbyBpZiBJIHRyYW5zbGF0ZSB0aGUgb3JpZ2luYWwgYmluZGluZ3Mgc2VtYW50
-aWNzIGRpcmVjdGx5LCBJIHNob3VsZAogIGRlZmluZSB0aSxkZXNrZXcgYXMgYW4gaW50MzIsIGJ1
-dCB0aGlzIG1ha2VzIGR0X2JpbmRpbmdfY2hlY2sgZmFpbCBpZgogIHRoZSBwcm9wZXJ0eSBoYXMg
-YSBuZWdhdGl2ZSB2YWx1ZSBpbiB0aGUgZXhhbXBsZSBiZWNhdXNlIG9mIHRoZQogIGludGVybmFs
-IHJlcHJlc2VudGF0aW9uIG9mIGNlbGxzIGFzIHVuc2lnbmVkIGludGVnZXJzOgoKICAgICB0aSxk
-ZXNrZXc6MDowOiA0Mjk0OTY3MjkzIGlzIGdyZWF0ZXIgdGhhbiB0aGUgbWF4aW11bSBvZiAyMTQ3
-NDgzNjQ3CgogIFNvIEkgY2FuIHRoaW5rIG9mIHR3byBzb2x1dGlvbnMgdG8gdGhpczoKCiAgYSkg
-S2VlcCB0aGUgdGksZGVza2V3IHByb3BlcnR5IGFzIGFuIHVpbnQzMiBhbmQgZG9jdW1lbnQgdGhl
-IHZhbGlkCiAgcmFuZ2UgKFstNCwgM10pIGluIHRoZSBwcm9wZXJ0eSBkZXNjcmlwdGlvbiAodGhp
-cyBpcyB3aGF0IHRoaXMgcGF0Y2gKICBkb2VzIGN1cnJlbnRseSkuCgogIGIpIFJlZGVmaW5lIHRo
-aXMgcHJvcGVydHkgdG8gYmUgY2xvc2VyIHRvIHRoZSBkYXRhc2hlZXQgZGVzY3JpcHRpb24KICAo
-aWUuIHVuc2lnbmVkIGludGVnZXJzIGZyb20gMCB0byA3KSBhbmQgYWRhcHQgdGhlIGRyaXZlciBh
-Y2NvcmRpbmdseS4KICBUaGlzIHdvdWxkIGFsc28gbGV0IHVzIGRlZmluZSBpdHMgcmFuZ2UgcHJv
-cGVybHkgdXNpbmcgbWluaW11bSBhbmQKICBtYXhpbXVtIHByb3BlcnRpZXMgZm9yIGl0LgoKICBJ
-IHRoaW5rIChiKSBpcyB0aGUgcmlnaHQgdGhpbmcgdG8gZG8gYnV0IEkgd2FudCB0byBrbm93IHlv
-dXIKICBvcGluaW9uLiBCZXNpZGVzLCBJIGRvbid0IGhhdmUgdGhpcyBoYXJkd2FyZSBhdCBoYW5k
-IGFuZCBpZiBJIHVwZGF0ZWQKICB0aGUgZHJpdmVyIEkgd291bGRuJ3QgYmUgYWJsZSB0byB0ZXN0
-IGl0LgoKVGhhbmtzLgoKUGF0Y2ggdGVzdGVkIHdpdGg6CgptYWtlIGR0X2JpbmRpbmdfY2hlY2sg
-QVJDSD1hcm0gRFRfU0NIRU1BX0ZJTEVTPTwuLi4vdGksdGZwNDEwLnlhbWw+Cm1ha2UgZHRic19j
-aGVjayBBUkNIPWFybSBEVF9TQ0hFTUFfRklMRVM9PC4uLi90aSx0ZnA0MTAueWFtbD4KCiAuLi4v
-YmluZGluZ3MvZGlzcGxheS9icmlkZ2UvdGksdGZwNDEwLnR4dCAgICAgfCAgNjYgLS0tLS0tLS0t
-LQogLi4uL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL3RpLHRmcDQxMC55YW1sICAgIHwgMTIxICsr
-KysrKysrKysrKysrKysrKwogMiBmaWxlcyBjaGFuZ2VkLCAxMjEgaW5zZXJ0aW9ucygrKSwgNjYg
-ZGVsZXRpb25zKC0pCiBkZWxldGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL3RpLHRmcDQxMC50eHQKIGNyZWF0ZSBtb2RlIDEwMDY0
-NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvdGksdGZw
-NDEwLnlhbWwKCmRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-ZGlzcGxheS9icmlkZ2UvdGksdGZwNDEwLnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9i
-aW5kaW5ncy9kaXNwbGF5L2JyaWRnZS90aSx0ZnA0MTAudHh0CmRlbGV0ZWQgZmlsZSBtb2RlIDEw
-MDY0NAppbmRleCA1ZmY0ZjY0ZWY4ZTguLjAwMDAwMDAwMDAwMAotLS0gYS9Eb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvdGksdGZwNDEwLnR4dAorKysgL2Rl
-di9udWxsCkBAIC0xLDY2ICswLDAgQEAKLVRGUDQxMCBEUEkgdG8gRFZJIGVuY29kZXIKLT09PT09
-PT09PT09PT09PT09PT09PT09PT0KLQotUmVxdWlyZWQgcHJvcGVydGllczoKLS0gY29tcGF0aWJs
-ZTogInRpLHRmcDQxMCIKLQotT3B0aW9uYWwgcHJvcGVydGllczoKLS0gcG93ZXJkb3duLWdwaW9z
-OiBwb3dlci1kb3duIGdwaW8KLS0gcmVnOiBJMkMgYWRkcmVzcy4gSWYgYW5kIG9ubHkgaWYgcHJl
-c2VudCB0aGUgZGV2aWNlIG5vZGUgc2hvdWxkIGJlIHBsYWNlZAotICBpbnRvIHRoZSBJMkMgY29u
-dHJvbGxlciBub2RlIHdoZXJlIHRoZSBURlA0MTAgSTJDIGlzIGNvbm5lY3RlZCB0by4KLS0gdGks
-ZGVza2V3OiBkYXRhIGRlLXNrZXcgaW4gMzUwcHMgaW5jcmVtZW50cywgZnJvbSAtNCB0byArMywg
-YXMgY29uZmlndXJlZAotICB0aHJvdWdoIHRoIERLWzM6MV0gcGlucy4gVGhpcyBwcm9wZXJ0eSBz
-aGFsbCBiZSBwcmVzZW50IG9ubHkgaWYgdGhlIFRGUDQxMAotICBpcyBub3QgY29ubmVjdGVkIHRo
-cm91Z2ggSTJDLgotCi1SZXF1aXJlZCBub2RlczoKLQotVGhpcyBkZXZpY2UgaGFzIHR3byB2aWRl
-byBwb3J0cy4gVGhlaXIgY29ubmVjdGlvbnMgYXJlIG1vZGVsZWQgdXNpbmcgdGhlIE9GCi1ncmFw
-aCBiaW5kaW5ncyBzcGVjaWZpZWQgaW4gWzFdLiBFYWNoIHBvcnQgbm9kZSBzaGFsbCBoYXZlIGEg
-c2luZ2xlIGVuZHBvaW50LgotCi0tIFBvcnQgMCBpcyB0aGUgRFBJIGlucHV0IHBvcnQuIEl0cyBl
-bmRwb2ludCBzdWJub2RlIHNoYWxsIGNvbnRhaW4gYQotICBwY2xrLXNhbXBsZSBhbmQgYnVzLXdp
-ZHRoIHByb3BlcnR5IGFuZCBhIHJlbW90ZS1lbmRwb2ludCBwcm9wZXJ0eSBhcyBzcGVjaWZpZWQK
-LSAgaW4gWzFdLgotICAtIElmIHBjbGstc2FtcGxlIGlzIG5vdCBkZWZpbmVkLCBwY2xrLXNhbXBs
-ZSA9IDAgc2hvdWxkIGJlIGFzc3VtZWQgZm9yCi0gICAgYmFja3dhcmQgY29tcGF0aWJpbGl0eS4K
-LSAgLSBJZiBidXMtd2lkdGggaXMgbm90IGRlZmluZWQgdGhlbiBidXMtd2lkdGggPSAyNCBzaG91
-bGQgYmUgYXNzdW1lZCBmb3IKLSAgICBiYWNrd2FyZCBjb21wYXRpYmlsaXR5LgotICAgIGJ1cy13
-aWR0aCA9IDI0OiAyNCBkYXRhIGxpbmVzIGFyZSBjb25uZWN0ZWQgYW5kIHNpbmdsZS1lZGdlIG1v
-ZGUKLSAgICBidXMtd2lkdGggPSAxMjogMTIgZGF0YSBsaW5lcyBhcmUgY29ubmVjdGVkIGFuZCBk
-dWFsLWVkZ2UgbW9kZQotCi0tIFBvcnQgMSBpcyB0aGUgRFZJIG91dHB1dCBwb3J0LiBJdHMgZW5k
-cG9pbnQgc3Vibm9kZSBzaGFsbCBjb250YWluIGEKLSAgcmVtb3RlLWVuZHBvaW50IHByb3BlcnR5
-IGlzIHNwZWNpZmllZCBpbiBbMV0uCi0KLVsxXSBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy50eHQKLQotCi1FeGFtcGxlCi0tLS0tLS0tCi0K
-LXRmcDQxMDogZW5jb2RlckAwIHsKLQljb21wYXRpYmxlID0gInRpLHRmcDQxMCI7Ci0JcG93ZXJk
-b3duLWdwaW9zID0gPCZ0d2xfZ3BpbyAyIEdQSU9fQUNUSVZFX0xPVz47Ci0JdGksZGVza2V3ID0g
-PDQ+OwotCi0JcG9ydHMgewotCQkjYWRkcmVzcy1jZWxscyA9IDwxPjsKLQkJI3NpemUtY2VsbHMg
-PSA8MD47Ci0KLQkJcG9ydEAwIHsKLQkJCXJlZyA9IDwwPjsKLQotCQkJdGZwNDEwX2luOiBlbmRw
-b2ludEAwIHsKLQkJCQlwY2xrLXNhbXBsZSA9IDwxPjsKLQkJCQlidXMtd2lkdGggPSA8MjQ+Owot
-CQkJCXJlbW90ZS1lbmRwb2ludCA9IDwmZHBpX291dD47Ci0JCQl9OwotCQl9OwotCi0JCXBvcnRA
-MSB7Ci0JCQlyZWcgPSA8MT47Ci0KLQkJCXRmcDQxMF9vdXQ6IGVuZHBvaW50QDAgewotCQkJCXJl
-bW90ZS1lbmRwb2ludCA9IDwmZHZpX2Nvbm5lY3Rvcl9pbj47Ci0JCQl9OwotCQl9OwotCX07Ci19
-OwpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkv
-YnJpZGdlL3RpLHRmcDQxMC55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdz
-L2Rpc3BsYXkvYnJpZGdlL3RpLHRmcDQxMC55YW1sCm5ldyBmaWxlIG1vZGUgMTAwNjQ0CmluZGV4
-IDAwMDAwMDAwMDAwMC4uNzk2NjZlZTU0MGY5Ci0tLSAvZGV2L251bGwKKysrIGIvRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL3RpLHRmcDQxMC55YW1sCkBA
-IC0wLDAgKzEsMTIxIEBACisjIFNQRFgtTGljZW5zZS1JZGVudGlmaWVyOiAoR1BMLTIuMC1vbmx5
-IE9SIEJTRC0yLUNsYXVzZSkKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVl
-Lm9yZy9zY2hlbWFzL2Rpc3BsYXkvYnJpZGdlL3RpLHRmcDQxMC55YW1sIworJHNjaGVtYTogaHR0
-cDovL2RldmljZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCisKK3RpdGxlOiBURlA0
-MTAgRFBJIHRvIERWSSBlbmNvZGVyCisKK21haW50YWluZXJzOgorICAtIFRvbWkgVmFsa2VpbmVu
-IDx0b21pLnZhbGtlaW5lbkB0aS5jb20+CisgIC0gSnlyaSBTYXJoYSA8anNhcmhhQHRpLmNvbT4K
-KworcHJvcGVydGllczoKKyAgY29tcGF0aWJsZToKKyAgICBjb25zdDogInRpLHRmcDQxMCIKKwor
-ICByZWc6CisgICAgZGVzY3JpcHRpb246IEkyQyBhZGRyZXNzIG9mIHRoZSBkZXZpY2UuCisgICAg
-bWF4SXRlbXM6IDEKKworICBwb3dlcmRvd24tZ3Bpb3M6CisgICAgbWF4SXRlbXM6IDEKKworICB0
-aSxkZXNrZXc6CisgICAgZGVzY3JpcHRpb246CisgICAgICBEYXRhIGRlLXNrZXcgaW4gMzUwcHMg
-aW5jcmVtZW50cywgZnJvbSAtNCB0byArMywgYXMgY29uZmlndXJlZAorICAgICAgdGhyb3VnaCB0
-aGUgREtbMzoxXSBwaW5zLiBUaGlzIHByb3BlcnR5IHNoYWxsIGJlIHByZXNlbnQgb25seSBpZgor
-ICAgICAgdGhlIFRGUDQxMCBpcyBub3QgY29ubmVjdGVkIHRocm91Z2ggSTJDLgorICAgIG1heEl0
-ZW1zOiAxCisgICAgYWxsT2Y6CisgICAgICAtICRyZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2Rl
-ZmluaXRpb25zL3VpbnQzMgorCisgIHBvcnRzOgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgQSBu
-b2RlIGNvbnRhaW5pbmcgaW5wdXQgYW5kIG91dHB1dCBwb3J0IG5vZGVzIHdpdGggZW5kcG9pbnQK
-KyAgICAgIGRlZmluaXRpb25zIGFzIGRvY3VtZW50ZWQgaW4KKyAgICAgIERvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9tZWRpYS92aWRlby1pbnRlcmZhY2VzLnR4dAorICAgIHR5cGU6
-IG9iamVjdAorCisgICAgcHJvcGVydGllczoKKyAgICAgIHBvcnRAMDoKKyAgICAgICAgZGVzY3Jp
-cHRpb246IERQSSBpbnB1dCBwb3J0LgorICAgICAgICB0eXBlOiBvYmplY3QKKworICAgICAgICBw
-cm9wZXJ0aWVzOgorICAgICAgICAgIHJlZzoKKyAgICAgICAgICAgIGNvbnN0OiAwCisKKyAgICAg
-ICAgICBlbmRwb2ludDoKKyAgICAgICAgICAgIHR5cGU6IG9iamVjdAorCisgICAgICAgICAgICBw
-cm9wZXJ0aWVzOgorICAgICAgICAgICAgICBwY2xrLXNhbXBsZToKKyAgICAgICAgICAgICAgICBk
-ZXNjcmlwdGlvbjogRW5kcG9pbnQgc2FtcGxpbmcgZWRnZS4KKyAgICAgICAgICAgICAgICBlbnVt
-OgorICAgICAgICAgICAgICAgICAgLSAwICAjIEZhbGxpbmcgZWRnZQorICAgICAgICAgICAgICAg
-ICAgLSAxICAjIFJpc2luZyBlZGdlCisKKyAgICAgICAgICAgICAgYnVzLXdpZHRoOgorICAgICAg
-ICAgICAgICAgIGRlc2NyaXB0aW9uOiBFbmRwb2ludCBidXMgd2lkdGguCisgICAgICAgICAgICAg
-ICAgZW51bTogWyAxMiwgMjQgXQorCisgICAgICAgIHJlcXVpcmVkOgorICAgICAgICAgIC0gZW5k
-cG9pbnQKKworICAgICAgcG9ydEAxOgorICAgICAgICBkZXNjcmlwdGlvbjogRFZJIG91dHB1dCBw
-b3J0LgorICAgICAgICB0eXBlOiBvYmplY3QKKworICAgICAgICBwcm9wZXJ0aWVzOgorICAgICAg
-ICAgIHJlZzoKKyAgICAgICAgICAgIGNvbnN0OiAxCisKKyAgICAgICAgICBlbmRwb2ludDoKKyAg
-ICAgICAgICAgIHR5cGU6IG9iamVjdAorCisgICAgICAgIHJlcXVpcmVkOgorICAgICAgICAgIC0g
-ZW5kcG9pbnQKKworICAgIHJlcXVpcmVkOgorICAgICAgLSBwb3J0QDAKKyAgICAgIC0gcG9ydEAx
-CisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSBwb3J0cworCithZGRpdGlvbmFsUHJv
-cGVydGllczogZmFsc2UKKworZXhhbXBsZXM6CisgIC0gfAorICAgICNpbmNsdWRlIDxkdC1iaW5k
-aW5ncy9ncGlvL2dwaW8uaD4KKworICAgIHRmcDQxMDogZW5jb2RlciB7CisgICAgICAgIGNvbXBh
-dGlibGUgPSAidGksdGZwNDEwIjsKKyAgICAgICAgcG93ZXJkb3duLWdwaW9zID0gPCZ0d2xfZ3Bp
-byAyIEdQSU9fQUNUSVZFX0xPVz47CisgICAgICAgIHRpLGRlc2tldyA9IDwzPjsKKworICAgICAg
-ICBwb3J0cyB7CisgICAgICAgICAgICAjYWRkcmVzcy1jZWxscyA9IDwxPjsKKyAgICAgICAgICAg
-ICNzaXplLWNlbGxzID0gPDA+OworCisgICAgICAgICAgICBwb3J0QDAgeworICAgICAgICAgICAg
-ICAgIHJlZyA9IDwwPjsKKyAgICAgICAgICAgICAgICB0ZnA0MTBfaW46IGVuZHBvaW50IHsKKyAg
-ICAgICAgICAgICAgICAgICAgcGNsay1zYW1wbGUgPSA8MT47CisgICAgICAgICAgICAgICAgICAg
-IGJ1cy13aWR0aCA9IDwyND47CisgICAgICAgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9
-IDwmZHBpX291dD47CisgICAgICAgICAgICAgICAgfTsKKyAgICAgICAgICAgIH07CisKKyAgICAg
-ICAgICAgIHBvcnRAMSB7CisgICAgICAgICAgICAgICAgcmVnID0gPDE+OworICAgICAgICAgICAg
-ICAgIHRmcDQxMF9vdXQ6IGVuZHBvaW50IHsKKyAgICAgICAgICAgICAgICAgICAgcmVtb3RlLWVu
-ZHBvaW50ID0gPCZkdmlfY29ubmVjdG9yX2luPjsKKyAgICAgICAgICAgICAgICB9OworICAgICAg
-ICAgICAgfTsKKyAgICAgICAgfTsKKyAgICB9OworCisuLi4KLS0gCjIuMTguMAoKCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+The Amlogic S805X/Y uses the same die as the S905X, but with more
+limited graphics capabilities.
+
+This adds a soc version detection adding specific limitations on the HDMI
+mode selections.
+
+Here, we limit to HDMI 1.3a max HDMI PHY clock frequency.
+
+Changes sinces v1:
+- Moved frequency check in the vclk code, and also checks DMT modes
+
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ drivers/gpu/drm/meson/meson_drv.c     | 29 ++++++++++++++++++++++++++-
+ drivers/gpu/drm/meson/meson_drv.h     |  6 ++++++
+ drivers/gpu/drm/meson/meson_dw_hdmi.c |  2 +-
+ drivers/gpu/drm/meson/meson_vclk.c    | 16 ++++++++++++++-
+ drivers/gpu/drm/meson/meson_vclk.h    |  3 ++-
+ 5 files changed, 52 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index 6f29fab79952..621f6de0f076 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -11,6 +11,7 @@
+ #include <linux/component.h>
+ #include <linux/module.h>
+ #include <linux/of_graph.h>
++#include <linux/sys_soc.h>
+ #include <linux/platform_device.h>
+ #include <linux/soc/amlogic/meson-canvas.h>
+ 
+@@ -183,6 +184,24 @@ static void meson_remove_framebuffers(void)
+ 	kfree(ap);
+ }
+ 
++struct meson_drm_soc_attr {
++	struct meson_drm_soc_limits limits;
++	const struct soc_device_attribute *attrs;
++};
++
++static const struct meson_drm_soc_attr meson_drm_soc_attrs[] = {
++	/* S805X/S805Y HDMI PLL won't lock for HDMI PHY freq > 1,65GHz */
++	{
++		.limits = {
++			.max_hdmi_phy_freq = 1650000,
++		},
++		.attrs = (const struct soc_device_attribute []) {
++			{ .soc_id = "GXL (S805*)", },
++			{ /* sentinel */ },
++		}
++	},
++};
++
+ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ {
+ 	struct platform_device *pdev = to_platform_device(dev);
+@@ -191,7 +210,7 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	struct drm_device *drm;
+ 	struct resource *res;
+ 	void __iomem *regs;
+-	int ret;
++	int ret, i;
+ 
+ 	/* Checks if an output connector is available */
+ 	if (!meson_vpu_has_available_connectors(dev)) {
+@@ -281,6 +300,14 @@ static int meson_drv_bind_master(struct device *dev, bool has_components)
+ 	if (ret)
+ 		goto free_drm;
+ 
++	/* Assign limits per soc revision/package */
++	for (i = 0 ; i < ARRAY_SIZE(meson_drm_soc_attrs) ; ++i) {
++		if (soc_device_match(meson_drm_soc_attrs[i].attrs)) {
++			priv->limits = &meson_drm_soc_attrs[i].limits;
++			break;
++		}
++	}
++
+ 	/* Remove early framebuffers (ie. simplefb) */
+ 	meson_remove_framebuffers();
+ 
+diff --git a/drivers/gpu/drm/meson/meson_drv.h b/drivers/gpu/drm/meson/meson_drv.h
+index 04fdf3826643..5b23704a80d6 100644
+--- a/drivers/gpu/drm/meson/meson_drv.h
++++ b/drivers/gpu/drm/meson/meson_drv.h
+@@ -30,6 +30,10 @@ struct meson_drm_match_data {
+ 	struct meson_afbcd_ops *afbcd_ops;
+ };
+ 
++struct meson_drm_soc_limits {
++	unsigned int max_hdmi_phy_freq;
++};
++
+ struct meson_drm {
+ 	struct device *dev;
+ 	enum vpu_compatible compat;
+@@ -48,6 +52,8 @@ struct meson_drm {
+ 	struct drm_plane *primary_plane;
+ 	struct drm_plane *overlay_plane;
+ 
++	const struct meson_drm_soc_limits *limits;
++
+ 	/* Components Data */
+ 	struct {
+ 		bool osd1_enabled;
+diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+index e8c94915a4fc..5be963e9db05 100644
+--- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
++++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
+@@ -695,7 +695,7 @@ dw_hdmi_mode_valid(struct drm_connector *connector,
+ 	dev_dbg(connector->dev->dev, "%s: vclk:%d phy=%d venc=%d hdmi=%d\n",
+ 		__func__, phy_freq, vclk_freq, venc_freq, hdmi_freq);
+ 
+-	return meson_vclk_vic_supported_freq(phy_freq, vclk_freq);
++	return meson_vclk_vic_supported_freq(priv, phy_freq, vclk_freq);
+ }
+ 
+ /* Encoder */
+diff --git a/drivers/gpu/drm/meson/meson_vclk.c b/drivers/gpu/drm/meson/meson_vclk.c
+index fdf26dac9fa8..0eb86943a358 100644
+--- a/drivers/gpu/drm/meson/meson_vclk.c
++++ b/drivers/gpu/drm/meson/meson_vclk.c
+@@ -725,6 +725,13 @@ meson_vclk_dmt_supported_freq(struct meson_drm *priv, unsigned int freq)
+ 	/* In DMT mode, path after PLL is always /10 */
+ 	freq *= 10;
+ 
++	/* Check against soc revision/package limits */
++	if (priv->limits) {
++		if (priv->limits->max_hdmi_phy_freq &&
++		    freq > priv->limits->max_hdmi_phy_freq)
++			return MODE_CLOCK_HIGH;
++	}
++
+ 	if (meson_hdmi_pll_find_params(priv, freq, &m, &frac, &od))
+ 		return MODE_OK;
+ 
+@@ -762,7 +769,7 @@ static void meson_hdmi_pll_generic_set(struct meson_drm *priv,
+ }
+ 
+ enum drm_mode_status
+-meson_vclk_vic_supported_freq(unsigned int phy_freq,
++meson_vclk_vic_supported_freq(struct meson_drm *priv, unsigned int phy_freq,
+ 			      unsigned int vclk_freq)
+ {
+ 	int i;
+@@ -770,6 +777,13 @@ meson_vclk_vic_supported_freq(unsigned int phy_freq,
+ 	DRM_DEBUG_DRIVER("phy_freq = %d vclk_freq = %d\n",
+ 			 phy_freq, vclk_freq);
+ 
++	/* Check against soc revision/package limits */
++	if (priv->limits) {
++		if (priv->limits->max_hdmi_phy_freq &&
++		    phy_freq > priv->limits->max_hdmi_phy_freq)
++			return MODE_CLOCK_HIGH;
++	}
++
+ 	for (i = 0 ; params[i].pixel_freq ; ++i) {
+ 		DRM_DEBUG_DRIVER("i = %d pixel_freq = %d alt = %d\n",
+ 				 i, params[i].pixel_freq,
+diff --git a/drivers/gpu/drm/meson/meson_vclk.h b/drivers/gpu/drm/meson/meson_vclk.h
+index aed0ab2efa71..60617aaf18dd 100644
+--- a/drivers/gpu/drm/meson/meson_vclk.h
++++ b/drivers/gpu/drm/meson/meson_vclk.h
+@@ -25,7 +25,8 @@ enum {
+ enum drm_mode_status
+ meson_vclk_dmt_supported_freq(struct meson_drm *priv, unsigned int freq);
+ enum drm_mode_status
+-meson_vclk_vic_supported_freq(unsigned int phy_freq, unsigned int vclk_freq);
++meson_vclk_vic_supported_freq(struct meson_drm *priv, unsigned int phy_freq,
++			      unsigned int vclk_freq);
+ 
+ void meson_vclk_setup(struct meson_drm *priv, unsigned int target,
+ 		      unsigned int phy_freq, unsigned int vclk_freq,
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
