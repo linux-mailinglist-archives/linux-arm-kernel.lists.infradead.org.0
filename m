@@ -2,78 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31A961BC6DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:34:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28AD31BC73F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:53:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ruicn7/xKrB1HdjkeuMg1hnZx6sXbwy5lv1pDGm9D+M=; b=j41RhHC6UKecgw
-	WSYzUOWL49834WIby0GVeMU5wVetFHPpU96lSHmxgw60wCoeGTHCg+PDl3j6Qnc5C0N5rdQspzX0s
-	xrUWoNSCMPmf1JksMcwT5RLmE+2wPjtrd+YFEb/jlL/+mJD/ZyIcdEFhcEp7OZvIDb1M5Kz1xitzV
-	tXyKoy+3DR3t/TJhtgViVR6mluMtOqSvRQzg+gp3mtH2xRYYO/Gr0Z2PpLup1DoshXC+d8/8EkUcc
-	LVzNMmLv8RxnXW0wXbXYmZRic7OMzXme08/+I4OsnXy7+LBOcsTkespGsvSrj75Hm4SLyETC6Q/4b
-	thXYxA8q0LFNKhu5ykqA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1D5y8aSsfzE9BYjjXLUjJ5bwcGbvYmuT7yHeCG2ES3w=; b=hNmh+SOzgAAlRC
+	j4dreq+pSZsNvsMAdG59kHabyFxiMjSQD6u+5kwzQLR00roTTxaQEyglq7fsVKULZo6RfuLV6829H
+	zR8k49A4s4s0cQwzvkFlW6Jp2F+Gq86ZbNWQK09/b0Pju2OkDFNOAGgTEsYrY4ZZdv5RNfwNsxi98
+	0F96/NK8m3lTpsxs2ObMXsbTEgQFSEpW421v2QLo8Zw8wDQoKfGXxhBL+3X6YDC16ySYziPan846a
+	4ywt8D0nOjM9bz19QTYHB0kUCxxD1Wqq/DOibTC+BlXD+1QcY7xcZrBmPWqJBYDPSvxG40k0eoClT
+	DnX0vvrwFtksbQLSXEtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTU7z-00054R-J5; Tue, 28 Apr 2020 17:34:39 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jTUQ0-0000YP-0A; Tue, 28 Apr 2020 17:53:16 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTU7p-00053g-R3
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:34:31 +0000
-Received: by mail-pg1-x544.google.com with SMTP id n11so2584066pgl.9
+ id 1jTUPp-0000XW-DF
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:53:07 +0000
+Received: by mail-wr1-x441.google.com with SMTP id k1so25768782wrx.4
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 10:34:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:content-transfer-encoding:in-reply-to:references
- :subject:from:cc:to:date:message-id:user-agent;
- bh=Hq1q1mnJoP2paSR/R7OXn312kKcNLyIMvnjuhvouCkM=;
- b=K58VDUtmyQvj/iLoc30RsS2j/WCyVrAefbG72Iee2W3GxQR2siQCLGI8R04W+JPLFc
- mSav2rT3PVIf+TS0ZpEw9brbMhhOhT0o85TN9wAg4lgEiWhzspHqqpE/5gESe58Fg9jY
- /t7kjQT+ZZPA2b50l7cRWc3vqr0WsEhQ+5RNE=
+ Tue, 28 Apr 2020 10:53:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=v7ZheI6bSLrba/+brpRVrq5vYClF+WQ9iVO178jEk78=;
+ b=btf9HJsIOuNOn/IaKbfEXolv40jSRzhjuA7EQllCso1sWwBvadsB7piU0hkDwFkkRG
+ LaY0rDWvMUKkER6yps4hDEpVnL0fVqydIPLDTQo63yH6uPIfFJNB8jGZBOdwRYZGKCYL
+ BSTV9m9vj4HDIWkBSOeFIYrD3pfTLjVSy0IjdrJvAlmOlyJE4bWWR0NSzr0dptFQ90zI
+ Uz55v2Aego1u6y92cVjuPpMztMf2e6mr0bHdHBFG22uDECmKCdAtU/l7wqJSuXnGifdz
+ 9vJFSjsRbToibdoDhCJXMnWg4cJknVMhLuOw2zE/PKHpaBnwqYeyJtTbE2iGgsKdy1rc
+ +WEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:content-transfer-encoding
- :in-reply-to:references:subject:from:cc:to:date:message-id
- :user-agent;
- bh=Hq1q1mnJoP2paSR/R7OXn312kKcNLyIMvnjuhvouCkM=;
- b=d8c54IOcb5VUD2NgpYZFvUlf1NW3RYwsjXtcRuZxX0iJOatsJChlX14B+9NZ78Wo1G
- ALTTP/ul7t8wKXCxckv5F0CjkufbXxl0O0qxg6EiQP9RwzlH1uMimlQlEkTt9fMF9Vst
- JbJx0fdQ9j+0zKqWjUbFzlYA3mnELqHzjsy0BJCtvBQlbkRJLoBpbmwPyacOuOZCZ/x4
- LQve8JI+INHY0V+khsI5ateiURtdojr+67w7MBJGW19UsCZoEd2eHTkgZSRD/9GMbsRF
- le02r9H3ReSY1AEngcHSi8b3Pb+Jw0boONPx5dmgnRBk81PgH/oMKgVKx+7QTbQ+V42l
- /BYg==
-X-Gm-Message-State: AGi0PuZw9Sh1U46F9kXOd5wMwXG1pgBoi21riP5349dZh4ibclrBYy8Z
- B2lwcvRtThcIokt1T6FpBCEbGQ==
-X-Google-Smtp-Source: APiQypIZMt6MMwYV4S1v9x7vgPnqCllbfzaTQXxPuXwyKkX4R4PMuOM9/eU0KS/F2uFJfSvhkzglTQ==
-X-Received: by 2002:a62:17c3:: with SMTP id 186mr20673137pfx.159.1588095268756; 
- Tue, 28 Apr 2020 10:34:28 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id o1sm2619138pjs.39.2020.04.28.10.34.28
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=v7ZheI6bSLrba/+brpRVrq5vYClF+WQ9iVO178jEk78=;
+ b=MSiQLGh1OQttt6UJ7OPlNbJ2M5K2rEoK6UmHVnZR7DP7rv8TDcovREpFmA3+TEqqbm
+ 16TN53b85eCEJ7CmQBW+4IK/BW4ip+GKLRbgZ9LbnGLEbaSuikfnDhW0VvGP0GAjiPBW
+ lBft7vKnOapZzYcsx4xUepwsx85lHxIAR0yIBjVfd05+ZMxqPGLIaFmm+N/RV+dKY+/p
+ ehzV2w44uIV6p3gMW/YgkEg3qVscohcR65gOeURIZvBgV4jVPCBxb+9258os6uF1/mc3
+ BRSqUyNuUT6cdvb5rlt7O5ojTif7S3NwHMZpHUpnCGfn41Z7nTJkEBagQ5bkD4440oHF
+ 4K6Q==
+X-Gm-Message-State: AGi0PuaRXMj9rmcMRdan8jbBqFdQxUfShluQtncXB6OMXAAOuuHtvlU2
+ MltuVIPSz3EZ+xcsFrED9zcoXg==
+X-Google-Smtp-Source: APiQypJBzvsMCtmM5SRHuXXkW8Kz57HKLHp0Lw/JQvJ56JGgP4HXd6+ek1foHwIi/20tTjW8a25S/g==
+X-Received: by 2002:adf:f784:: with SMTP id q4mr34356002wrp.102.1588096383541; 
+ Tue, 28 Apr 2020 10:53:03 -0700 (PDT)
+Received: from xps7590.local ([37.120.81.28])
+ by smtp.gmail.com with ESMTPSA id k9sm27936467wrd.17.2020.04.28.10.53.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 10:34:28 -0700 (PDT)
+ Tue, 28 Apr 2020 10:53:02 -0700 (PDT)
+From: Robert Foss <robert.foss@linaro.org>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Marco Felsch <m.felsch@pengutronix.de>,
+ Maxime Ripard <maxime@cerno.tech>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v5 v5 0/3] media: ov8856: Add devicetree support
+Date: Tue, 28 Apr 2020 19:52:52 +0200
+Message-Id: <20200428175255.1608569-1-robert.foss@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20200427163446.GB10601@xps15>
-References: <20200426185805.14923-1-swboyd@chromium.org>
- <20200426185805.14923-2-swboyd@chromium.org> <20200427163446.GB10601@xps15>
-Subject: Re: [PATCH 1/5] coresight: Include required headers in C files
-From: Stephen Boyd <swboyd@chromium.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 28 Apr 2020 10:34:27 -0700
-Message-ID: <158809526723.117437.7665630882841875855@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_103429_898133_CB28837A 
-X-CRM114-Status: GOOD (  11.45  )
+X-CRM114-CacheID: sfid-20200428_105305_970697_AF913201 
+X-CRM114-Status: UNSURE (   7.81  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -84,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,51 +99,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mike Leach <mike.leach@linaro.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Douglas Anderson <dianders@chromium.org>
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Robert Foss <robert.foss@linaro.org>,
+ Tomasz Figa <tfiga@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Mathieu Poirier (2020-04-27 09:34:46)
-> On Sun, Apr 26, 2020 at 11:58:01AM -0700, Stephen Boyd wrote:
-> > diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
-> > index 004df3ab9dd0..d80123b905a8 100644
-> > --- a/drivers/hwtracing/coresight/coresight-cti.h
-> > +++ b/drivers/hwtracing/coresight/coresight-cti.h
-> > @@ -7,8 +7,10 @@
-> >  #ifndef _CORESIGHT_CORESIGHT_CTI_H
-> >  #define _CORESIGHT_CORESIGHT_CTI_H
-> >  
-> > -#include <asm/local.h>
-> > +#include <linux/list.h>
-> >  #include <linux/spinlock.h>
-> > +#include <linux/types.h>
-> > +
-> >  #include "coresight-priv.h"
-> >  
-> >  /*
-> > @@ -52,6 +54,12 @@
-> >   */
-> >  #define CTIINOUTEN_MAX               32
-> >  
-> > +struct attribute;
-> > +struct attribute_group;
-> > +struct coresight_device;
-> > +struct device;
-> > +struct fwnode_handle;
-> > +
-> 
-> I would prefer adding the headers rather than forward declarations, it scales
-> better.
-> 
+This adds devicetree support to the ov8856 driver.
+In order to to aid debugging and enable future sensor
+modes to be supported, module revision detection is also added.
 
-Ok. I'm worried that including too many headers when they're not
-necessary means it's easier to get into the problem that I'm trying to
-solve here where kcalloc() isn't defined. Anyway, I'll update the
-patch and resend!
+
+Dongchun Zhu (1):
+  media: dt-bindings: ov8856: Document YAML bindings
+
+Robert Foss (2):
+  media: ov8856: Add devicetree support
+  media: ov8856: Implement sensor module revision identification
+
+ .../devicetree/bindings/media/i2c/ov8856.yaml | 140 +++++++++++++
+ MAINTAINERS                                   |   1 +
+ drivers/media/i2c/ov8856.c                    | 192 ++++++++++++++++--
+ 3 files changed, 320 insertions(+), 13 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
