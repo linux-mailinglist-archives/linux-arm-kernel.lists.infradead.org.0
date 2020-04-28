@@ -2,97 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B57411BB3A2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:55:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F40811BB437
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 04:54:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OSpD3GKqoKFnRAImhVeGJQKbefvvSxXV+CxK31xx+o0=; b=C2tHjHOtO1wTPd
-	gST2KqPMkbAD3qQfyyEEnBmSg92qc+JR4RmYkgEPxtquKIKUQk3w/o5bDS3JpAEQECnRXuPSPIL7b
-	UEVemGg/l4O/Kz6suUy0ko5XP+i3m0BaW63GIzeEaswpc/dmAdzJ0Deiy4NeNrCar9fDauRDD/wZq
-	VnWHcAOQHqBh4sgdbSPPqBYRv9myCM9ypvoM2zt5yiv5pt8k62fD1c9223pw23mOKJ0IUtSNLROo+
-	p9ywghFJo4qsQdttxSniy8Wx1xUslCygr56w+6grcGtOOU6wTJjiFGX4xLRWI6XtvDE+P1WfAbKrJ
-	KfGOR49W5j7QEFlTvt1Q==;
+	List-Owner; bh=MZvoskgDXhtPSOSD3ELfNmYhenoCotyaMyiQ6b/LEgo=; b=JCOaCc6cmWWcB4
+	D/m8wNpxXZF9zRtT8IvuUYQmhNjlbPAW4E2Gr8j5m3DS9mWQAR6kzFgallUh2kKGXvWKLHabz+Xsp
+	nD/7frAlNmq3r7lpjpySxPhdN7HFNqz5KcxTpG7Yg9eWQrHyllUhjFqyg7nv3EJZMbpL0263d/+A4
+	TJs5cB+YYUEARC96ACbQ//wBmvy98ZImhFPAELd+9tzxHyUeWhR5kjvetAJfcikWvnkMyr/sw2Sxr
+	AWDUCVYj6YnHSJz8JOFo7l8mQh17iDnM2sgkCIXVK5UQs17dLPVKzRMvUqlD/U/VEhg7LE0no/pgp
+	CFepcB7730r8ag3qaaAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTFSV-0004hF-QF; Tue, 28 Apr 2020 01:54:51 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1jTGO1-0001r5-Ch; Tue, 28 Apr 2020 02:54:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTFSN-0004gG-3u
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 01:54:44 +0000
-Received: by mail-io1-xd44.google.com with SMTP id b12so21117436ion.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 18:54:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Dn5FsFHXDoP63PfOK+hSyyadWEoDt1vFl68jXDW6Zcs=;
- b=DIysdPazFDSPjWrk9J98X+PHbjtukRlthArlsiKuuAdwBzWfCicMgBuJ0xfyvX7NQA
- OWgWZ8KUgpqJQgeK8x61TqtaPo+WcfYOyCM+yzAW3UUIRconylO19z25qm6WYlx0mmM1
- sbTETGjjaQ0hsRQFPAGzSo/6+tDT7W0hc+/uk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Dn5FsFHXDoP63PfOK+hSyyadWEoDt1vFl68jXDW6Zcs=;
- b=TpLn1p0pahp0D+IuTaLcFfTS/Z6KNL2oveG7jNoNGlVEidqGklq17F8J0C6G8C4D3x
- zJ3QG3cmKJ1D7tgvG7LEt679CLE5+iNvQRg1OIkQs5ViQCz8v3mcpwOXWO3t5bXfmoBu
- dvjDzNQIwr55tPXS3ZJA5kfpnn8ytAyCn8PYqO24e4OJzlVta34IdhTtHwQ1lZhpSMq+
- 52OqCabFJhP4RIl1vYI3MxNIT7Cc09iRoNBJxynzG3S+bvSzqR5W1vxRuwk5pGuTt7bj
- 3YIf05RWjgBnGSv19iBUjU0OsiLU+0Nw06gMYNXc1rBc3zQEJyAyBZHYWhp/icj8FGhb
- V8iw==
-X-Gm-Message-State: AGi0PuZejPEtQp3Dp/OUm2HnYYYJShiILohryDDaeiyJb6F+YMJtNMk5
- Q1TZ4B9/buLVnOemw3w236XyXgl1aY8JaS1O
-X-Google-Smtp-Source: APiQypJeUgm0Aq5+hefPlTGR7S3zgwR0gCZyg0ApiBVHAJKTMCerc43uBNkCRBVA/ndw8h0krrrfQA==
-X-Received: by 2002:a5e:9806:: with SMTP id s6mr24105060ioj.59.1588038880736; 
- Mon, 27 Apr 2020 18:54:40 -0700 (PDT)
-Received: from mail-io1-f43.google.com (mail-io1-f43.google.com.
- [209.85.166.43])
- by smtp.gmail.com with ESMTPSA id j20sm5943302ile.41.2020.04.27.18.54.39
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
-Received: by mail-io1-f43.google.com with SMTP id y26so11272174ioj.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
-X-Received: by 2002:a6b:9088:: with SMTP id
- s130mr23613954iod.122.1588038879127; 
- Mon, 27 Apr 2020 18:54:39 -0700 (PDT)
+ id 1jTGNu-0001p4-5O
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 02:54:11 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 66323206E2;
+ Tue, 28 Apr 2020 02:54:08 +0000 (UTC)
+Date: Mon, 27 Apr 2020 22:54:06 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Gavin Shan <gshan@redhat.com>
+Subject: Re: [PATCH] arm64/mm: Reject invalid NUMA option
+Message-ID: <20200427225406.7cacc796@gandalf.local.home>
+In-Reply-To: <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
+References: <20200424045314.16017-1-gshan@redhat.com>
+ <20200424101132.GC1167@C02TD0UTHF1T.local>
+ <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20200420060834.44461-1-amistry@google.com>
- <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
-In-Reply-To: <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
-From: "Anand K. Mistry" <amistry@chromium.org>
-Date: Tue, 28 Apr 2020 11:54:28 +1000
-X-Gmail-Original-Message-ID: <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
-Message-ID: <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
-Subject: Re: [PATCH] drm/mediatek: stop iterating dma addresses when
- sg_dma_len() == 0
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_185443_160636_BC8811BE 
-X-CRM114-Status: GOOD (  17.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_195410_244749_8F89D5A6 
+X-CRM114-Status: GOOD (  27.70  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,51 +65,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Matthias Brugger <matthias.bgg@gmail.com>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-mediatek@lists.infradead.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- DRI Development <dri-devel@lists.freedesktop.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, shan.gavin@gmail.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU3VuLCAyNiBBcHIgMjAyMCBhdCAxODowNCwgQ2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1
-QGtlcm5lbC5vcmc+IHdyb3RlOgo+Cj4gSGksIEFuYW5kOgo+Cj4gQW5hbmQgSyBNaXN0cnkgPGFt
-aXN0cnlAY2hyb21pdW0ub3JnPiDmlrwgMjAyMOW5tDTmnIgyMOaXpSDpgLHkuIAg5LiL5Y2IMjow
-OeWvq+mBk++8mgo+ID4KPiA+IElmIGRtYV9tYXBfc2coKSBtZXJnZXMgcGFnZXMgd2hlbiBjcmVh
-dGluZyB0aGUgbWFwcGluZywgb25seSB0aGUgZmlyc3QKPiA+IGVudHJpZXMgd2lsbCBoYXZlIGEg
-dmFsaWQgc2dfZG1hX2FkZHJlc3MoKSBhbmQgc2dfZG1hX2xlbigpLCBmb2xsb3dlZCBieQo+ID4g
-ZW50cmllcyB3aXRoIHNnX2RtYV9sZW4oKSA9PSAwLgo+ID4KPiA+IFNpZ25lZC1vZmYtYnk6IEFu
-YW5kIEsgTWlzdHJ5IDxhbWlzdHJ5QGdvb2dsZS5jb20+Cj4gPiAtLS0KPiA+ICBkcml2ZXJzL2dw
-dS9kcm0vbWVkaWF0ZWsvbXRrX2RybV9nZW0uYyB8IDMgKysrCj4gPiAgMSBmaWxlIGNoYW5nZWQs
-IDMgaW5zZXJ0aW9ucygrKQo+ID4KPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vbWVk
-aWF0ZWsvbXRrX2RybV9nZW0uYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2dl
-bS5jCj4gPiBpbmRleCBiMDRhM2MyYjExMWUwOS4uZjhmZDhiOThjMzBlM2QgMTAwNjQ0Cj4gPiAt
-LS0gYS9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RybV9nZW0uYwo+ID4gKysrIGIvZHJp
-dmVycy9ncHUvZHJtL21lZGlhdGVrL210a19kcm1fZ2VtLmMKPiA+IEBAIC0yMjQsNiArMjI0LDkg
-QEAgc3RydWN0IGRybV9nZW1fb2JqZWN0ICptdGtfZ2VtX3ByaW1lX2ltcG9ydF9zZ190YWJsZShz
-dHJ1Y3QgZHJtX2RldmljZSAqZGV2LAo+ID4KPiA+ICAgICAgICAgZXhwZWN0ZWQgPSBzZ19kbWFf
-YWRkcmVzcyhzZy0+c2dsKTsKPiA+ICAgICAgICAgZm9yX2VhY2hfc2coc2ctPnNnbCwgcywgc2ct
-Pm5lbnRzLCBpKSB7Cj4gPiArICAgICAgICAgICAgICAgaWYgKCFzZ19kbWFfbGVuKHMpKQo+ID4g
-KyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4KPiBJIHRoaW5rIHRoaXMgc2hvdWxkIGJl
-ICdjb250aW51ZScKCnNjYXR0ZXJsaXN0LmggaGFzIHRoZSBjb21tZW50OgovKgogKiBUaGVzZSBt
-YWNyb3Mgc2hvdWxkIGJlIHVzZWQgYWZ0ZXIgYSBkbWFfbWFwX3NnIGNhbGwgaGFzIGJlZW4gZG9u
-ZQogKiB0byBnZXQgYnVzIGFkZHJlc3NlcyBvZiBlYWNoIG9mIHRoZSBTRyBlbnRyaWVzIGFuZCB0
-aGVpciBsZW5ndGhzLgogKiBZb3Ugc2hvdWxkIG9ubHkgd29yayB3aXRoIHRoZSBudW1iZXIgb2Yg
-c2cgZW50cmllcyBkbWFfbWFwX3NnCiAqIHJldHVybnMsIG9yIGFsdGVybmF0aXZlbHkgc3RvcCBv
-biB0aGUgZmlyc3Qgc2dfZG1hX2xlbihzZykgd2hpY2gKICogaXMgMC4KICovCgpTbyBicmVha2lu
-ZyBvbiB0aGUgZmlyc3Qgc2dfZG1hX2xlbihzZykgPT0gMCBhcHBlYXJzIHRvIGJlIChvbmUgb2Yp
-CnRoZSBkb2N1bWVudGVkIGFwcHJvYWNoLgoKPgo+IFJlZ2FyZHMsCj4gQ2h1bi1LdWFuZy4KPgo+
-ID4gKwo+ID4gICAgICAgICAgICAgICAgIGlmIChzZ19kbWFfYWRkcmVzcyhzKSAhPSBleHBlY3Rl
-ZCkgewo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJzZ190YWJsZSBpcyBu
-b3QgY29udGlndW91cyIpOwo+ID4gICAgICAgICAgICAgICAgICAgICAgICAgcmV0ID0gLUVJTlZB
-TDsKPiA+IC0tCj4gPiAyLjI2LjEuMzAxLmc1NWJjM2ViN2NiOS1nb29nCj4gPgo+ID4KPiA+IF9f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiBMaW51eC1t
-ZWRpYXRlayBtYWlsaW5nIGxpc3QKPiA+IExpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5v
-cmcKPiA+IGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgt
-bWVkaWF0ZWsKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+On Tue, 28 Apr 2020 10:59:14 +1000
+Gavin Shan <gshan@redhat.com> wrote:
+
+> Hi Mark,
+> 
+> On 4/24/20 8:11 PM, Mark Rutland wrote:
+> > [Adding Steve, who added str_has_prefix()]
+> > 
+> > On Fri, Apr 24, 2020 at 02:53:14PM +1000, Gavin Shan wrote:  
+> >> The NUMA option is parsed by str_has_prefix() and the invalid option
+> >> like "numa=o" can be regarded as "numa=off" wrongly.  
+> > 
+> > Are you certain that can pass? If that can happen, str_has_prefix() is
+> > misnamed and does not seem to do what its kerneldoc says it does, as
+> > "off" is not a prefix of "o".
+> >   
+> 
+> Yes, It's possible. str_has_prefix() depends on strncmp(). In this particular
+> case, it's equal to the snippet of code as below: strncmp() returns zero.
+> str_has_prefix() returns 3.
+
+Wait! strncmp("o", "off", 3) returns zero?
+
+That to me looks like a bug!
+
+This means str_has_prefix() is broken in other areas as well.
+
+
+> 
+> int strncmp(const char *cs, const char *ct, size_t count)
+> {
+>          unsigned char c1, c2;
+> 
+>          while (count) {
+>                  c1 = *cs++;
+>                  c2 = *ct++;
+>                  if (c1 != c2)
+>                          return c1 < c2 ? -1 : 1;
+>                  if (!c1)                             /* break after first character is compared */
+
+Crap! That is totally wrong!
+
+/me goes to fix...
+
+-- Steve
+
+>                          break;
+>                  count--;
+>          }
+>          return 0;                                    /* 0 returned */
+> }
+> 
+> static __always_inline size_t str_has_prefix(const char *str, const char *prefix)
+> {
+>          size_t len = strlen("o");
+>          return strncmp("o", "off", 1) == 0 ? len : 0;
+> }
+> 
+> >> This fixes the issue with sysfs_streq(), which have more sanity checks,
+> >> to avoid accepting the invalid options.  
+> > 
+> > That doesn't sound immediately right, since this is an early parameter,
+> > which has nothing to do with sysfs. Perhaps that's just a misleading
+> > name?
+> >   
+> 
+> sysfs_streq() was introduced to compare the parameters received from sysfs
+> entry, but I don't think it has to be necessarily tied with sysfs entry.
+> So the name is bit misleading. Alternatively, we also can fix it in another
+> way (as below) if we try to avoid using sysfs_streq().
+> 
+> diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
+> index 4decf1659700..b0c1ec78f50f 100644
+> --- a/arch/arm64/mm/numa.c
+> +++ b/arch/arm64/mm/numa.c
+> @@ -29,9 +29,13 @@ static __init int numa_parse_early_param(char *opt)
+>   {
+>          if (!opt)
+>                  return -EINVAL;
+> -       if (str_has_prefix(opt, "off"))
+> +
+> +       if (strlen(opt) >= 3 && str_has_prefix(opt, "off"))
+>                  numa_off = true;
+> 
+> > Thanks,
+> > Mark.
+> >   
+> 
+> Thanks,
+> Gavin
+> 
+> >> Signed-off-by: Gavin Shan <gshan@redhat.com>
+> >> ---
+> >>   arch/arm64/mm/numa.c | 3 ++-
+> >>   1 file changed, 2 insertions(+), 1 deletion(-)
+> >>
+> >> diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
+> >> index 4decf1659700..bd458b28616a 100644
+> >> --- a/arch/arm64/mm/numa.c
+> >> +++ b/arch/arm64/mm/numa.c
+> >> @@ -29,7 +29,8 @@ static __init int numa_parse_early_param(char *opt)
+> >>   {
+> >>   	if (!opt)
+> >>   		return -EINVAL;
+> >> -	if (str_has_prefix(opt, "off"))
+> >> +
+> >> +	if (sysfs_streq(opt, "off"))
+> >>   		numa_off = true;
+> >>   
+> >>   	return 0;
+> >> -- 
+> >> 2.23.0
+> >>  
+> > 
+> > _______________________________________________
+> > linux-arm-kernel mailing list
+> > linux-arm-kernel@lists.infradead.org
+> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> >   
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
