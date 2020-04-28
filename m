@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0B371BB9A5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:17:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B1FE1BB9A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:18:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,56 +11,57 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=adjPuZ5qsLJe5vCAKT8eGPU/kipMjnT1a6PuN/Oj8t0=; b=cSDmXsdb6dfeV+mUakg30kZW52
-	X5E/2P+MhjJdN22gtvuHsoEvl76sKRPAFpITcRS+10iwMwYf10tdD5kxqA2Dyu7HDheRCDIcrZ+gW
-	qgspexnpQjuk1EJ98ADpNgHrmbJritUTsT/VZXF8ATjlEwMLzcCHuod9+5CrSWvdMiqFxi9fnWupo
-	gW10dXbG8JRgJYITd1lZRSHNZZCqWusiGv6mCnNnc8TWsDiYyRxoFkDrLGUPr+4zOECX2/Bu863QY
-	eUzvnREES+XnkSOr61gn5EQn4XmLdaTvAC9g8lOWfaHyL5oxinFVP7RRjm+pblUD85/CqL+F+ALOT
-	QElMdvLQ==;
+	bh=pEIgzd2c4Gbtr9YTKKFs7l0QGhYqtqfWMzza1dYfv8o=; b=sXQX78htNdfHpZ/+lWBtSwc42E
+	TY/LRh6wLVBRV4XyqlK0tIW+tJAxxvLmdWEG1Vr6a3gsPm/5MhCTAaxciz89ZdTIslEQQiV0gNn5O
+	/tv07oEWnfNRJ5aovBkRe8PowM7TBH2Nl7kkpaMWsd+lbt86m+5rT6dinzQlGvFzMoTrOdjdUeAVZ
+	AYWGcX8UPiV8Sfw/CYq9pCn3lCrQ7FOGXCVHf5zC/q+5bWlIPzqLkMIQTxbBEFXUPzssambqy1ug1
+	NNnELL9JRE8aGh8YXOp2b9nvzt4s5g7FA7esYpDokYJK5ilNiU5fUwPYnnTAdO2wLsTaHm5sj0tYs
+	WMnWRuyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTMN0-00050N-LH; Tue, 28 Apr 2020 09:17:38 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jTMNb-0005KF-NR; Tue, 28 Apr 2020 09:18:15 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTMMp-0004xr-09
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:17:28 +0000
-Received: by mail-wm1-x342.google.com with SMTP id r26so2025349wmh.0
+ id 1jTMNR-0005J9-Uk
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:18:07 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g13so23747488wrb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 02:17:24 -0700 (PDT)
+ Tue, 28 Apr 2020 02:18:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:references:from:autocrypt:organization:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=hxRFxgzfbY4fG5zDG8kNf2BxkovyUOAXka3Z/9SntaM=;
- b=cPgE9XU5NTlXVKzcxihqA8wMrM8wexyi92a9ojbpLwGUQ+cDbI1kovQcsaLK5IeqmP
- Iom9EvUPI57FF/b4rPheQX1njMKgxORbAbnfqGQivoV9F8ZhQr+C3Q46WCoAKmTvSF8M
- jwRbMmhzShCNGiy7KBDeNRoJCLTMK4V43dntY3B1z9NNaUXCD+QvExkb8aTa4fhUI8pg
- jg0OhqjVd7USvXsG4KXpw71i5FS4st0ZtWbwP8KU0Z49Ib1XnSqOIkRBpJBNVDOIzrOT
- 69inrkF080vjkomyKpkQQmYY2ewf7R4JteQERJFheFel2x3KlV/hAQ0Yw/Kc6Wkcom5z
- u7Hw==
+ bh=iP8Gqu6pUGGGOlIHJ9NtxKdj7vpj5Mjw7h1t/BfyRls=;
+ b=Axa0zTFE0gOShxiDjNrI1Qoux2ujDamYP2BRgnpdVD0EReYnjpdoUjqRRmvDW6YaKU
+ nsyqolwloVt+6wEMob8ap4zBKpzx6lX0e/wjj2pTQu1Wp87nJeuWm2X4nY13zMYb3c4k
+ Mmc7Q6y3NTVvhpBRpx0ploXPM7BhWUxq67UR+NSf7ah+tGY1Z2sfLfawbqu2/7Oym0qV
+ 1GhY8ae9VOM5RrsSXUKHJ3Tw+j3fpyCNVlzxgF27arJQ2cYcV39J6w+1pYYQZt5TAPbY
+ lwiiBIYZyxFpRwfDd5EOWbKCu9al/GTzs6V4Ip+lw4F3d0jvL9RKe7yUb1fQt1+S2Cqe
+ sxLA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:references:from:autocrypt
  :organization:message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=hxRFxgzfbY4fG5zDG8kNf2BxkovyUOAXka3Z/9SntaM=;
- b=NpFHhOTt2yjgTc9SUH1doiWkhvB39c/zU7K1pw4CutotE1qnhozW626xDX/dNqSCO/
- 0hYmjp3w1lqrvR/AVjlTckKdNldaQOuENr7G7qKrqzFXS2fLfz2X3srKMuZtAXtt8UGT
- JoDstKgfjOLei262ZrDmS4kgQ0iPW6R/h2MEK3pRwANc5rwPqLFQWUCX58Lrf2BOOMFX
- 8u/Fa9uLTe1Ay+2tMfdnA3TF7Losf7iaZfDHGI963sz3RyZhBz0zwaK+JqGoRYpcZFIi
- ZjcMenAVq6fesQbmcm7DR7ZUnxADYDK+am6GQ7JmFNGQJ1lYYSNxygoJFgUuGKBKsd9I
- 0QDA==
-X-Gm-Message-State: AGi0PubUVEI6Ezn1x2w6mOIMJQTAsM5LzCjBidFEYcz5FdAvlPxa1Zeo
- ttgG/VzPDCd0veY+u2bEJqv/Ug==
-X-Google-Smtp-Source: APiQypJz/ci6GTN3Orxmj45mS0Ksldxcq/H7zWBpjyovDf8f8smhU98Y03YsqpcEtYChC6mYm/MUVQ==
-X-Received: by 2002:a7b:c5d4:: with SMTP id n20mr3650389wmk.92.1588065443027; 
- Tue, 28 Apr 2020 02:17:23 -0700 (PDT)
+ bh=iP8Gqu6pUGGGOlIHJ9NtxKdj7vpj5Mjw7h1t/BfyRls=;
+ b=U9nt03CH1fSTsG6su7f0Bs6k7c1MaemLLFO+CQVJbt+XYCtgeflUP7tSxtGO8hqCZf
+ FbNCfn9u+QNKnDsIKxdHHQ2PI9yTHTYcS+csj1vqpqMfdwG9aVMFPLFfywpGfXGqpVmD
+ Sm4oLRvfYGVgSanBnmxdON5ob12BHD4Q3YN/U+y6n2/AUCDE31x4l7GyKhrzvn3K7jN7
+ dnnE1OO7OXwFuStdoUGjp+oQdS28Duk4pZv29mqNOfMekT3GCwCXg1xRu705nyT/zJhI
+ ihb9E6/3NEMQKb45I7FG4/zaFBphAcECQhjVc5M5FDz7jkBMbE8OXX1SioVZp6pTL5Iq
+ Siuw==
+X-Gm-Message-State: AGi0PuZ7Elra26v7ONvT0St1s7dt9Vxa7xHnpRs+vltMzGf9Bphz+yKr
+ dzcbl+dmyI42GA2BsbX2SzqPAg==
+X-Google-Smtp-Source: APiQypJ/dlK2v3uHfy2WC21n1pbr1jSVMF6xKfJa5E0dOoaoZFv3TXeOzu25/z1o34BuS5IcL0PSBw==
+X-Received: by 2002:a05:6000:12c5:: with SMTP id
+ l5mr33178827wrx.185.1588065483943; 
+ Tue, 28 Apr 2020 02:18:03 -0700 (PDT)
 Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
  ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
- by smtp.gmail.com with ESMTPSA id y7sm2596132wmb.43.2020.04.28.02.17.21
+ by smtp.gmail.com with ESMTPSA id g25sm2433513wmh.24.2020.04.28.02.18.02
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 28 Apr 2020 02:17:22 -0700 (PDT)
+ Tue, 28 Apr 2020 02:18:03 -0700 (PDT)
 Subject: Re: [PATCH] drm/meson: Remove unneeded semicolon
 To: Zheng Bin <zhengbin13@huawei.com>, khilman@baylibre.com,
  airlied@linux.ie, daniel@ffwll.ch, dri-devel@lists.freedesktop.org,
@@ -117,23 +118,23 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <e02655f4-1fed-3c13-2355-2dea7f0fbed7@baylibre.com>
-Date: Tue, 28 Apr 2020 11:17:21 +0200
+Message-ID: <45523b6f-4cd5-3f13-782f-d23d284fea1f@baylibre.com>
+Date: Tue, 28 Apr 2020 11:18:02 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
 In-Reply-To: <20200424074949.12309-1-zhengbin13@huawei.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_021727_038392_F7B9C529 
-X-CRM114-Status: GOOD (  15.46  )
+X-CRM114-CacheID: sfid-20200428_021805_991012_FDB808E8 
+X-CRM114-Status: GOOD (  15.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -184,7 +185,7 @@ On 24/04/2020 09:49, Zheng Bin wrote:
 > 2.26.0.106.g9fadedd
 > 
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+Applied to drm-misc-next
 
 _______________________________________________
 linux-arm-kernel mailing list
