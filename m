@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1EA31BC186
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:40:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DF9C1BC190
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 16:43:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TeaSCgugyF42nJCpYUZA6NKOdmlcwMoedWUl6Z0G08s=; b=ohgW1s7iqlDRdjUcoapF0erVO
-	6ds/QvaKbpgwT/RVhVpxuOwYPEvpWTYmqKFJd+qX84Q4Y6WY4EdpNmZHm48zoFDOe5HxhoiT3qmrZ
-	2YwoRhJwvJg3QJaL88kB0qgV6fnw1O5pX2mePMgc9IHV1rEYkBFGeMvhelTJ0MErA9ITUG4oYCYtz
-	n5mReVKclVOXTmWrlSraIbzOF7MPCJ0VBlXdFvlxx5+q6bgnC2ft2xGUYdQXaUb2CGjxrTPOEEpa5
-	3PaU20nLBJ8ggLgC91vOLfaA4jO0kNmjMGhCo7PNQWVU6rp1+RDc4Qdphgl45c+74dJ5oNh9fv02j
-	05wqzD5QQ==;
+	 bh=F1oRcphMa6rZqZhkJ660WKKDEBzvWrsBkA0ziY7Be4o=; b=CHciw4u3Ag+DN2mVgeXHaX7qV
+	gTdsBj4LLfwYTX807+/Y2hLPPT5YCaBM0TuaEaKnS2eiJ/XQrpGkjetmKH56YkZpGLChSje83XyoK
+	sy8t8rlwhU0TLhknK/WERX44FT07cFm5isYtsjzcdb4EgVmqBQvAO5+LUBNAFM55hySxtwsNUHWRB
+	T6KUXqlrTU2lxDhLh4IfOGeZvKRqCuTvgl70b0pAVQAUOaxB6yUBImUxZDSXwjkzLa7Lo9iLYZXfJ
+	DPj56h3PUaPQJKiZpgwsi8dgFXyewo8PvT6x9xvbRJVW++FS7AsHV5EHAHOYT43dDW7euxjtHIUx7
+	8txp9MTeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTROw-0000qc-Ou; Tue, 28 Apr 2020 14:39:58 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1jTRSU-00049Y-Vz; Tue, 28 Apr 2020 14:43:39 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTROm-0000pQ-N8
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:39:51 +0000
+ id 1jTRSI-00048r-SN
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 14:43:28 +0000
 Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id DD1D322FE6;
- Tue, 28 Apr 2020 16:39:44 +0200 (CEST)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id D244A23E35;
+ Tue, 28 Apr 2020 16:43:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1588084785;
+ s=mail2016061301; t=1588085004;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  content-transfer-encoding:content-transfer-encoding:
  in-reply-to:in-reply-to:references:references;
- bh=VljnFWRje4D0ru9e1R32t4AeXBUBPd+3TTh0NdwxNg0=;
- b=toML35UXiuO/pHVOeK9HR/DC0PB0wxQEVGlm7qwqQIB7OAAjl0JywWe+p3OUN++VwB0caY
- iHa060chUra4KIS7CwEXRsTp17tZkdr1ZKXj1F6sKZ2TR8DcvHK/1RPnJ8Yc/6mdVhb3nO
- nm0qRY5Ks5FPSrPFg82RuwiH4jv90tI=
+ bh=xV8UmXfmKOCo8rfAL1DHuYOW1sEqi/rRvTk8GPWV4YM=;
+ b=dD/b1QybujEq1dnyH/G+lR91pdkgakvlBONpoZS6Xx7NNwYvvX3uFX0eVIbX5Ds7xdM5UZ
+ RxA4N3EXfDOCrKes3GUVj3mPYLA/re4CjAOlkJReUFK95YBLArORW9GADSg5lD02r7drlK
+ 3LJQ0MRP5dWCdxqidl4b8Nj4TampY60=
 MIME-Version: 1.0
-Date: Tue, 28 Apr 2020 16:39:44 +0200
+Date: Tue, 28 Apr 2020 16:43:24 +0200
 From: Michael Walle <michael@walle.cc>
 To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Subject: Re: [PATCH v3 04/16] dt-bindings: mfd: Add bindings for sl28cpld
-In-Reply-To: <20200428124825.GT185537@smile.fi.intel.com>
+Subject: Re: [PATCH v3 05/16] mfd: Add support for Kontron sl28cpld management
+ controller
+In-Reply-To: <20200428125049.GU185537@smile.fi.intel.com>
 References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-5-michael@walle.cc>
- <20200428124825.GT185537@smile.fi.intel.com>
-Message-ID: <8cc4a2bd3fcaf836d7f393ce2425c872@walle.cc>
+ <20200423174543.17161-6-michael@walle.cc>
+ <20200428125049.GU185537@smile.fi.intel.com>
+Message-ID: <5e2d486077f9e2ce8bd9b171cf806fd9@walle.cc>
 X-Sender: michael@walle.cc
 User-Agent: Roundcube Webmail/1.3.10
 X-Spamd-Bar: +
@@ -55,30 +56,28 @@ X-Spam-Level: *
 X-Rspamd-Server: web
 X-Spam-Status: No, score=1.40
 X-Spam-Score: 1.40
-X-Rspamd-Queue-Id: DD1D322FE6
+X-Rspamd-Queue-Id: D244A23E35
 X-Spamd-Result: default: False [1.40 / 15.00]; FROM_HAS_DN(0.00)[];
  TO_DN_SOME(0.00)[]; FREEMAIL_ENVRCPT(0.00)[gmail.com];
  TO_MATCH_ENVRCPT_ALL(0.00)[]; TAGGED_RCPT(0.00)[dt];
  MIME_GOOD(-0.10)[text/plain]; DKIM_SIGNED(0.00)[];
- RCPT_COUNT_TWELVE(0.00)[24]; NEURAL_HAM(-0.00)[-0.787];
+ RCPT_COUNT_TWELVE(0.00)[24]; NEURAL_HAM(-0.00)[-0.819];
  RCVD_COUNT_ZERO(0.00)[0]; FROM_EQ_ENVFROM(0.00)[];
  MIME_TRACE(0.00)[0:+];
  FREEMAIL_CC(0.00)[vger.kernel.org,lists.infradead.org,linaro.org,baylibre.com,kernel.org,suse.com,roeck-us.net,gmail.com,pengutronix.de,linux-watchdog.org,nxp.com,linutronix.de,lakedaemon.net,linuxfoundation.org];
  MID_RHS_MATCH_FROM(0.00)[]; SUSPICIOUS_RECIPS(1.50)[]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_073948_908075_94ED19C2 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200428_074327_075997_4E488B7D 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -116,27 +115,45 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-04-28 14:48, schrieb Andy Shevchenko:
-> On Thu, Apr 23, 2020 at 07:45:31PM +0200, Michael Walle wrote:
->> This adds device tree bindings for the board management controller 
->> found
->> on the Kontron SMARC-sAL28 board.
+Am 2020-04-28 14:50, schrieb Andy Shevchenko:
+> On Thu, Apr 23, 2020 at 07:45:32PM +0200, Michael Walle wrote:
+>> This patch adds core support for the board management controller found
+>> on the SMARC-sAL28 board. It consists of the following functions:
+>>  - watchdog
+>>  - GPIO controller
+>>  - PWM controller
+>>  - fan sensor
+>>  - interrupt controller
 > 
-> I think it should be independent patches (same way as you do for 
-> drivers).
+> ...
+> 
+>>  obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
+>> 
+>>  obj-$(CONFIG_SGI_MFD_IOC3)	+= ioc3.o
+>> +
+>> +obj-$(CONFIG_MFD_SL28CPLD)	+= sl28cpld.o
+> 
+> Perhaps keep an order?
 
-It used to be several patches but Rob suggested to put it into one:
-https://lore.kernel.org/linux-devicetree/20200330223535.GA31402@bogus/
+I don't see any order in that makefile. Looked to me like every new
+file was added at the end.
 
+> 
+> ...
+> 
+>> +	return devm_mfd_add_devices(dev, -1, sl28cpld_devs,
+> 
+> -1 has its own definition.
+
+ok, I'll replace that by PLATFORM_DEVID_NONE.
+
+Thanks,
 -michael
 
 > 
->>  .../bindings/gpio/kontron,sl28cpld-gpio.yaml  |  51 ++++++
->>  .../hwmon/kontron,sl28cpld-hwmon.yaml         |  27 +++
->>  .../bindings/mfd/kontron,sl28cpld.yaml        | 162 
->> ++++++++++++++++++
->>  .../bindings/pwm/kontron,sl28cpld-pwm.yaml    |  35 ++++
->>  .../watchdog/kontron,sl28cpld-wdt.yaml        |  35 ++++
+>> +				    ARRAY_SIZE(sl28cpld_devs), NULL,
+>> +				    i2c->irq, NULL);
+>> +}
 
 _______________________________________________
 linux-arm-kernel mailing list
