@@ -2,83 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 28AD31BC73F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 19:53:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D612E1BC76C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:04:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1D5y8aSsfzE9BYjjXLUjJ5bwcGbvYmuT7yHeCG2ES3w=; b=hNmh+SOzgAAlRC
-	j4dreq+pSZsNvsMAdG59kHabyFxiMjSQD6u+5kwzQLR00roTTxaQEyglq7fsVKULZo6RfuLV6829H
-	zR8k49A4s4s0cQwzvkFlW6Jp2F+Gq86ZbNWQK09/b0Pju2OkDFNOAGgTEsYrY4ZZdv5RNfwNsxi98
-	0F96/NK8m3lTpsxs2ObMXsbTEgQFSEpW421v2QLo8Zw8wDQoKfGXxhBL+3X6YDC16ySYziPan846a
-	4ywt8D0nOjM9bz19QTYHB0kUCxxD1Wqq/DOibTC+BlXD+1QcY7xcZrBmPWqJBYDPSvxG40k0eoClT
-	DnX0vvrwFtksbQLSXEtA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=wrHCzHjE+2GCBOgviMMC+GJlg9+OzTVzfAwKCZq4Mck=; b=ivyl/h0KbP+Oc6amIB+dwJVwo
+	DF8oRIJKOhTZSTVd32Rs/GTpAgSJ8KU+1BAmSDVzkrRa85++HwZsp8OhPe/y2XrngUhXrkizgUkox
+	FIKpgtA0ISFSXejpYEkMyBFG3vSXd72EvwNsU1JXTMDRMGPwqs4RGDSQZ9NIRgIWH1eTzMztLhmTd
+	j6iJUrkCTg52FDCd7uuSvZGPa/I/o6xdJlfJj9vg4a8fh7XkymHZZch4uk80C4gYDUygg4a4Ta5cs
+	KbkAHCjVXsaosu/1cBXoWtZBtGPn21cpVZsVg05stHscoy/ob8hYQviVQZ/rO3DPKzzL4Oup2VHJV
+	/Pij7tahQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTUQ0-0000YP-0A; Tue, 28 Apr 2020 17:53:16 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jTUaT-0007Wl-ON; Tue, 28 Apr 2020 18:04:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTUPp-0000XW-DF
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 17:53:07 +0000
-Received: by mail-wr1-x441.google.com with SMTP id k1so25768782wrx.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 10:53:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=v7ZheI6bSLrba/+brpRVrq5vYClF+WQ9iVO178jEk78=;
- b=btf9HJsIOuNOn/IaKbfEXolv40jSRzhjuA7EQllCso1sWwBvadsB7piU0hkDwFkkRG
- LaY0rDWvMUKkER6yps4hDEpVnL0fVqydIPLDTQo63yH6uPIfFJNB8jGZBOdwRYZGKCYL
- BSTV9m9vj4HDIWkBSOeFIYrD3pfTLjVSy0IjdrJvAlmOlyJE4bWWR0NSzr0dptFQ90zI
- Uz55v2Aego1u6y92cVjuPpMztMf2e6mr0bHdHBFG22uDECmKCdAtU/l7wqJSuXnGifdz
- 9vJFSjsRbToibdoDhCJXMnWg4cJknVMhLuOw2zE/PKHpaBnwqYeyJtTbE2iGgsKdy1rc
- +WEw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=v7ZheI6bSLrba/+brpRVrq5vYClF+WQ9iVO178jEk78=;
- b=MSiQLGh1OQttt6UJ7OPlNbJ2M5K2rEoK6UmHVnZR7DP7rv8TDcovREpFmA3+TEqqbm
- 16TN53b85eCEJ7CmQBW+4IK/BW4ip+GKLRbgZ9LbnGLEbaSuikfnDhW0VvGP0GAjiPBW
- lBft7vKnOapZzYcsx4xUepwsx85lHxIAR0yIBjVfd05+ZMxqPGLIaFmm+N/RV+dKY+/p
- ehzV2w44uIV6p3gMW/YgkEg3qVscohcR65gOeURIZvBgV4jVPCBxb+9258os6uF1/mc3
- BRSqUyNuUT6cdvb5rlt7O5ojTif7S3NwHMZpHUpnCGfn41Z7nTJkEBagQ5bkD4440oHF
- 4K6Q==
-X-Gm-Message-State: AGi0PuaRXMj9rmcMRdan8jbBqFdQxUfShluQtncXB6OMXAAOuuHtvlU2
- MltuVIPSz3EZ+xcsFrED9zcoXg==
-X-Google-Smtp-Source: APiQypJBzvsMCtmM5SRHuXXkW8Kz57HKLHp0Lw/JQvJ56JGgP4HXd6+ek1foHwIi/20tTjW8a25S/g==
-X-Received: by 2002:adf:f784:: with SMTP id q4mr34356002wrp.102.1588096383541; 
- Tue, 28 Apr 2020 10:53:03 -0700 (PDT)
-Received: from xps7590.local ([37.120.81.28])
- by smtp.gmail.com with ESMTPSA id k9sm27936467wrd.17.2020.04.28.10.53.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 10:53:02 -0700 (PDT)
-From: Robert Foss <robert.foss@linaro.org>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Sakari Ailus <sakari.ailus@iki.fi>, Marco Felsch <m.felsch@pengutronix.de>,
- Maxime Ripard <maxime@cerno.tech>, linux-media@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 v5 0/3] media: ov8856: Add devicetree support
-Date: Tue, 28 Apr 2020 19:52:52 +0200
-Message-Id: <20200428175255.1608569-1-robert.foss@linaro.org>
-X-Mailer: git-send-email 2.25.1
+ id 1jTUaK-0007WK-QD
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:03:57 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 67453206A1;
+ Tue, 28 Apr 2020 18:03:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588097036;
+ bh=Cs+kIiosUe791V7Z5t03iJ9kPgSd432o6JZePUdLsUk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Mj4Kibe0SeTW+5PkgBRQxo2v5NNV/siY7n3m2TUmtZfkLvGF9xGxB91klXOWmXWHg
+ 9ICOIR3igwxYZ1dhYTO/CWpXjOXCz3r69qyueK5YgF5xDrfEBqPmW3ZCI3G4dpDR4/
+ s8/TdlNHydSciWfIPyZT2Iphvn/pKaE0EgB//Mb4=
+Date: Tue, 28 Apr 2020 19:03:53 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH 04/10] arm64: Set GP bit in kernel page tables to enable
+ BTI for the kernel
+Message-ID: <20200428180353.GN5677@sirena.org.uk>
+References: <20200415130750.18645-1-broonie@kernel.org>
+ <20200415130750.18645-5-broonie@kernel.org>
+ <20200428172432.GB18257@gaia>
 MIME-Version: 1.0
+In-Reply-To: <20200428172432.GB18257@gaia>
+X-Cookie: Eschew obfuscation.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_105305_970697_AF913201 
-X-CRM114-Status: UNSURE (   7.81  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200428_110356_871120_0C7C4838 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,6 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,37 +79,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>, Robert Foss <robert.foss@linaro.org>,
- Tomasz Figa <tfiga@chromium.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Kees Cook <keescook@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5627030312383529008=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds devicetree support to the ov8856 driver.
-In order to to aid debugging and enable future sensor
-modes to be supported, module revision detection is also added.
+
+--===============5627030312383529008==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="p1Od3smaOkJqivj4"
+Content-Disposition: inline
 
 
-Dongchun Zhu (1):
-  media: dt-bindings: ov8856: Document YAML bindings
+--p1Od3smaOkJqivj4
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-Robert Foss (2):
-  media: ov8856: Add devicetree support
-  media: ov8856: Implement sensor module revision identification
+On Tue, Apr 28, 2020 at 06:24:32PM +0100, Catalin Marinas wrote:
+> On Wed, Apr 15, 2020 at 02:07:43PM +0100, Mark Brown wrote:
 
- .../devicetree/bindings/media/i2c/ov8856.yaml | 140 +++++++++++++
- MAINTAINERS                                   |   1 +
- drivers/media/i2c/ov8856.c                    | 192 ++++++++++++++++--
- 3 files changed, 320 insertions(+), 13 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+> > +#define PAGE_KERNEL_EXEC_GP	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_GP)
+> >  #define PAGE_KERNEL_EXEC_CONT	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_CONT)
 
--- 
-2.25.1
+> Are the PAGE_*_GP defines used anywhere in this series?
 
+Not any more, I'll drop them.
+
+> > +#ifdef CONFIG_ARM64_BTI_KERNEL
+> > +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
+> > +#else
+> >  		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> > +#endif
+
+> As with PtrAuth, I'm tempted to have a single config for both user and
+> kernel. Not a strong opinion though, just looking for some consistency.
+
+Yeah, it's not ideal.  My concern with this was that at the time I sent
+the patches out GCC had a sufficiently severe code generation issue that
+it was unsustainable to use for building the kernel.  That seemed
+excessively restrictive so I made it a separate option.  This will be
+fixed in GCC 10 all being well (one of the things I need to do before
+reposting this is to verify that the current fix addresses everything I
+was seeing and update the dependencies) so it's less of a concern
+although still a bit annoying.
+
+--p1Od3smaOkJqivj4
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6ocAgACgkQJNaLcl1U
+h9DEEwf/UaS8sYjOTv43fN70yoBROa93BBnVc3TG376JdSWHIa+2QJwsxwOHmwRa
+JTJoZGi1KI8fPAhWeK0aaMJ3wJ6or00EH4oYKgXzxizgIFMwJCKOWgNED8y6iScQ
+QdVkv7AkjECVyFE1CZjyY0w9U1aoZ0YIdcdqgp+uC5elOt8tw6DouDd1uJ9E6tER
+MAp6/npnACoPyJbt2OJBAgD61pfN9tbgIxd4J+JKhR3fPar/B1ZVkX9nGnkQMxou
+V/aU5O+fpEl3o2gdOAbuEIaZDdYv+Q8FBd+iuL9lyMcUBv7xV2I5I8pY7EM9kMfq
+Vaei/2vWQd5Uko6UTPrKcCh7ul85CQ==
+=SHOs
+-----END PGP SIGNATURE-----
+
+--p1Od3smaOkJqivj4--
+
+
+--===============5627030312383529008==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5627030312383529008==--
+
