@@ -2,79 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65AD41BB9D9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:28:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9C711BBA14
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 11:41:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H244M/CJXsaUq7VGXEHb9oI3idN5PDw02G18H4e5ap8=; b=XcgP09hB3sBs0A
-	StjmQ1u4jf4429kKAMboO5zUzNqzhiP59KJmK7YreH0fAwHxV7QhDqydz6PLav+lOV0wXHFVGGP7w
-	3u8s7HPCwdqMBfoNzVxxwBhXWvG/dIL/DHM+4SnwewIY1Asc3E+e0eVW0Toe7HmmdGOEH4i++GBgA
-	aR3TPie1JWCidhS4LTKudVTHwsukO//zZpvDKs01cTuqkVfo5UHpIoHODopd63zO2ZPcFobJVqO1B
-	A5ZczrrEszT61raMsvSfVTuo6HkENmlzJrKHqwqn6eU+ipYwBmJPgW7GJx+BppCnphuT9d4+mV7vn
-	+rKINdSuB0bivsOnrwIA==;
+	List-Owner; bh=PHhEjNSD+bP3oxWnjFbFbaN1CCE+VBeVLcIVpeecKpA=; b=EzATQEDwJSS8zf
+	KZFPHsW/V1vGKG9pPveA25xYmJOW7N5Uc5tQxirtHXNt0lFsBLE992uJj5kbOPBjaEhkUDX+iqHFX
+	sxL37ffYHi9JqOlyveriTsP3hr95Ik7r+ZxJBaem9KF+J66ncRu+LbqVL+9ehIHFws57wqKtUoZMp
+	R/iCMLB/H/SQbDjDLKTYrJcK0w0YZit1DQrlEb8yM8uTHnkCAlF+hjaXV8rRPnXUPBo+k2RqG6BCm
+	BAlrNl07TOWtieYcNeWgBgDNtBLOol6KaeboSnLmQlXozzEac7Xl+JhPbIIMDxvPVZc8omCjq9Jlp
+	+FMthLRLE2R/uZryeQ2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTMXV-00053y-BG; Tue, 28 Apr 2020 09:28:29 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jTMjX-000737-Ea; Tue, 28 Apr 2020 09:40:55 +0000
+Received: from mail-ej1-f68.google.com ([209.85.218.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTMXK-00051R-5b; Tue, 28 Apr 2020 09:28:19 +0000
-X-UUID: 9a29e7e72cbe4ae6893718ca6ee2c864-20200428
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=m3Ksv+ksgjGvXF0pXLMlpIAwkf0dzAHmcRs39NPBbsk=; 
- b=B20eOiTh7l/29srMJjLhvV6XU6dgavF3w0G5qapIRMzTQERJSWLXte/kGX19TPu/goL6PaCf7AHznx0QVxyIeSgqbT45LX3rChPq6vEVyB9bS9Rd/VaAToJ3TVslxM5LKvd+tiBhtlPazL2156Yd0Q/+9usO3eRk207zoAz0/XM=;
-X-UUID: 9a29e7e72cbe4ae6893718ca6ee2c864-20200428
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.mao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 890450091; Tue, 28 Apr 2020 01:28:13 -0800
-Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 28 Apr 2020 02:28:09 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
- (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 28 Apr 2020 17:28:04 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 28 Apr 2020 17:28:04 +0800
-Message-ID: <1588066038.30914.28.camel@mhfsdcap03>
-Subject: Re: [PATCH 1/3] mmc: core: need do mmc_power_cycle in
- mmc_sdio_resend_if_cond
-From: "yong.mao@mediatek.com" <yong.mao@mediatek.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 28 Apr 2020 17:27:18 +0800
-In-Reply-To: <CAPDyKFo40tBpowmWN3gxH8b=jMmCK8O5ALNQ7y6XZ5AosX=GUA@mail.gmail.com>
-References: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
- <1586835611-13857-2-git-send-email-yong.mao@mediatek.com>
- <CAPDyKFo40tBpowmWN3gxH8b=jMmCK8O5ALNQ7y6XZ5AosX=GUA@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jTMjF-000724-OQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 09:40:39 +0000
+Received: by mail-ej1-f68.google.com with SMTP id e2so16655426eje.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 02:40:36 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QPpy8dELuAAjDK6ELgslqKgtZGdGtoakZnwFCsFyxiY=;
+ b=TVDA/Jj0UawGkLmOoqGM9CNir252roCeW5F9zse22JlFKhf988xC7SlsE4nlryOS5T
+ 3aZL/nIDFIG0HGhavGnNWgIW53iP8OAZwwSfFwcpAeAUlGq4UAHAOzdVvuEFNtMPii7q
+ mgSs0Q7xTlNxKzuLlYW6iKDSnfZyOGL4+ywoFqlgNriKeHV9g+5WuGUITIPg6pSlld15
+ APJrqFMAsuVpz4mTNS64luckO+e6aEqDAJUmS5SLEsQusXZTbvriHFxzzo8zqR+yQU1K
+ V1tjrl3X1SAhAStk/GX1By2GUuWpQVjrPVgHStnWqjfuzwNv1VecHditRIpviVFW9toJ
+ Y35Q==
+X-Gm-Message-State: AGi0PuYChkLUoEz0LCofuH46ifIybxvEPuLCBDhluf9qejXE16H4xYZ3
+ XOd9oJE+DPUH/CqK31srWSQ=
+X-Google-Smtp-Source: APiQypK/J2mRSfYf1Diw96LSTO8Uy+VHIm/8bbRhhtGMjC1QU33gdmtKQlVA6cbWyNIKnF5z1H2Phw==
+X-Received: by 2002:a17:907:20b5:: with SMTP id
+ pw21mr22933290ejb.227.1588066835749; 
+ Tue, 28 Apr 2020 02:40:35 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.237])
+ by smtp.googlemail.com with ESMTPSA id yd11sm398829ejb.8.2020.04.28.02.40.34
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 Apr 2020 02:40:34 -0700 (PDT)
+Date: Tue, 28 Apr 2020 11:40:32 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jonathan Bakker <xc-racer2@live.ca>
+Subject: Re: [PATCH] pinctrl: samsung: Save/restore eint_mask over suspend
+ for EINT_TYPE GPIOs
+Message-ID: <20200428094032.GA23462@kozik-lap>
+References: <BN6PR04MB06600C848C2C1531F73DAD7BA3D10@BN6PR04MB0660.namprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: BAFC90E4F4919F58F4A0398CAB2A7E72863110198F1657AD58274E69C3418E782000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <BN6PR04MB06600C848C2C1531F73DAD7BA3D10@BN6PR04MB0660.namprd04.prod.outlook.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_022818_235806_2A87A4C3 
-X-CRM114-Status: GOOD (  24.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200428_024038_418615_D7DFA030 
+X-CRM114-Status: GOOD (  13.34  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.218.68 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.218.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,96 +90,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, mka@chromium.org,
- "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- Chaotian Jing <chaotian.jing@mediatek.com>, Matthias
- Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-samsung-soc@vger.kernel.org, linus.walleij@linaro.org,
+ tomasz.figa@gmail.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, kgene@kernel.org, s.nawrocki@samsung.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, Apr 25, 2020 at 04:10:46PM -0700, Jonathan Bakker wrote:
+> Currently, for EINT_TYPE GPIOs, the CON and FLTCON registers
+> are saved and restored over a suspend/resume cycle.  However, the
+> EINT_MASK registers are not.
+> 
+> On S5PV210 at the very least, these registers are not retained over
+> suspend, leading to the interrupts remaining masked upon resume and
+> therefore no interrupts being triggered for the device.  There should
+> be no effect on any SoCs that do retain these registers as theoretically
+> we would just be re-writing what was already there.
+> 
+> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+> ---
+>  drivers/pinctrl/samsung/pinctrl-exynos.c | 9 +++++++++
+>  1 file changed, 9 insertions(+)
 
-On Fri, 2020-04-24 at 12:09 +0200, Ulf Hansson wrote:
-> On Tue, 14 Apr 2020 at 05:40, Yong Mao <yong.mao@mediatek.com> wrote:
-> >
-> > From: yong mao <yong.mao@mediatek.com>
-> >
-> > When mmc_sdio_resned_if_cond is invoked, it indicates the SDIO
-> > device is not in the right state. In this condition, the previous
-> > implementation of mmc_sdio_resend_if_cond can't make sure SDIO
-> > device be back to idle state. mmc_power_cycle can reset the SDIO
-> > device by HW and also make sure SDIO device enter to idle state
-> > correctly.
-> >
-> > Signed-off-by: Yong Mao <yong.mao@mediatek.com>
-> > ---
-> >  drivers/mmc/core/sdio.c | 1 +
-> >  1 file changed, 1 insertion(+)
-> >
-> > diff --git a/drivers/mmc/core/sdio.c b/drivers/mmc/core/sdio.c
-> > index ebb387a..ada0a80 100644
-> > --- a/drivers/mmc/core/sdio.c
-> > +++ b/drivers/mmc/core/sdio.c
-> > @@ -546,6 +546,7 @@ static int mmc_sdio_init_uhs_card(struct mmc_card *card)
-> >  static void mmc_sdio_resend_if_cond(struct mmc_host *host,
-> >                                     struct mmc_card *card)
-> >  {
-> > +       mmc_power_cycle(host, host->card->ocr);
-> 
-> This looks wrong to me. mmc_sdio_resend_if_cond() is called from two places.
-> 
-> 1. In the case when mmc_set_uhs_voltage() fails in
-> mmc_sdio_init_card(), which means a call to mmc_power_cycle() has
-> already been done.
-> 
-  Thanks for your comment.
-  Yes. It is right that mmc_power_cycle() has already been done when
-  mmc_sdio_resend_if_cond() is called. In normal re-initialization case, 
-  this mmc_power_cycle() (currently in 1.8v voltage and 208Mhz clock) 
-  can make SDIO device really back to idle state. Unfortunately, in some
-  special SDIO device, it will enter to unstable state.
+Exynos4412 (Odroid U3) also did not retain the register values. SD card
+detect interrupt should be affected.
 
-  At this unstable state, device may keep data0 always low after receiving CMD11.
-  And then every other SDIO CMD can't be sent to device any more due to card 
-  is busy(data0 is low). Therefore, previous implementation can't save the 
-  device. At this time, mmc_power_cycle() may be the final solution to make 
-  sure SDIO device can back to idle state correctly.
+Thanks, applied (with CC-stable).
 
-> 2. Wen sdio_read_cccr() fails and when we decide to retry the UHS-I
-> voltage switch. Then perhaps it could make sense to run a power cycle.
-> But if so, we better do it only for that path.
-> 
-> I will continue to look a bit, as I think there are really more issues
-> that we may want to look into while looking at this piece of code.
-> However, allow me some more time before I can provide some more ideas
-> of how to move forward.
-  In the actual project, we do encounter many relative issues about re-initialized card.
-  The following two categories are the most common issue we met before.
-  A. the SDIO card is initialized by UHS-I mode at the first time, but will be 
-     re-initialized by High Speed mode at the second time.
-     ==> All this type of issues is relative with S18A in response of CMD5.
-	 And most of the issues are related to the interval between powering off and 
-         powering on card.
-  B. If there is something wrong in the flow of voltage switch(after CMD11), card will
-     always keep all data pins to low. And then it hangs up because data0 is always low.
-  Hope this information will be helpful for you.
-  
-  Anyway, we will wait for your advises. 
-> 
-> >         sdio_reset(host);
-> >         mmc_go_idle(host);
-> >         mmc_send_if_cond(host, host->ocr_avail);
-> > --
-> > 1.9.1
-> 
-> Kind regards
-> Uffe
-
+Best regards,
+Krzysztof
 
 
 _______________________________________________
