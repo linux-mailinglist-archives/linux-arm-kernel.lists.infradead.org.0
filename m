@@ -2,53 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C0C1BC24B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:09:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB77E1BC25D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 17:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GZAlQnsB9wrP8cN+X93MvE6tB+WY759MajPcNjCpg28=; b=nIYLY1oVBB6ERA
-	fAguELZIXaYD//ip3mfL37qvjwHXTFNatiBWWrbSrttgbmHH+ywNdaZ9RMdN+toMGjASym1MTXAvo
-	xYhLukRKRpc0SWARUIXsgcyMl/Kwz6r7M/+L44brsxBIiahVO4NysVWq4b+k4Vk1DgzsoLGJJ+wAE
-	7NOeHou818JD4QQ5pJCzS+9Kx+EiSFor2efKXOqc4Nc4svK9r+NPQ1+60OR44/VkI0C2CDmpaLT5U
-	UWZU/XqOorT05xbg9bGJPeJdfD8+cFvyPv3svmRg5vVC+lFQPq1nKr+4ol+G4FbuOFHwqRwJEgfBX
-	+QtCY8rOzU0ER0GoJPhQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+HLjhWm/Bc62S9dXnQXgg7WYOCyn2IIVNPcujg0lx08=; b=dm6Jb+IlR7EYbl
+	gl6CuAz1nzlu4c8GUusAwz+LsGgd8CnjY30FlvCEDuk/2RmzepuRYPXrvv5RWZ/NlV5Xtpx6OC0HV
+	MRxjPqKe9y4Uulzjy5aRKWKlUcCIfWdqAmDIT6FcfD6dS/lO3/OpyEZBpXYqIjEraVu7bsEbNTLz1
+	DSDC4qYgKGJq5+MIBTEG46wi6yS3UAJXPeNr9lLA1GOUsWQEziz3G5IW0SkXK+gRHojjoRairUEru
+	865HBVw1jqXFGTFdYAyYaiKsWvbjZDdNum97zcfluAfwcvxKsltObYbarHiK3bWFk5GTP2KvUTeEM
+	GqI9k6G6M0Ls8vrwzhSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTRrM-00010L-LU; Tue, 28 Apr 2020 15:09:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTRrD-0000za-LR
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:09:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BD46530E;
- Tue, 28 Apr 2020 08:09:09 -0700 (PDT)
-Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
- [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D78393F305;
- Tue, 28 Apr 2020 08:09:08 -0700 (PDT)
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: vdso: Fix ldflags for -Bsymbolic
-Date: Tue, 28 Apr 2020 16:08:54 +0100
-Message-Id: <20200428150854.33130-1-vincenzo.frascino@arm.com>
-X-Mailer: git-send-email 2.25.2
+	id 1jTRtd-0003uV-Ew; Tue, 28 Apr 2020 15:11:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTRtS-0003ty-8E
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 15:11:31 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 95B6D205C9;
+ Tue, 28 Apr 2020 15:11:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588086689;
+ bh=aamxra8/L8gjllOiveVDPAUmrn8wwP+GQF0Iq8KS/QI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jpiRez2WIvdzuInq82Nf0S3PYv5YCwZqKrjdv4MQBiyq+3u9y8W2hoKAgxgVlFhJo
+ AIk4vnsqN+dwq5AOhKZVvfs0Muvx8BvsscxPjCua0GhClnTEC2uAJc/BBnbKJIb7/L
+ nv8pJ8p4peMND1YYHAKBL3M+9Mnl/X9mt028uGac=
+Date: Tue, 28 Apr 2020 16:11:25 +0100
+From: Will Deacon <will@kernel.org>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [PATCH v2 5/8] efi/libstub/arm64: align PE/COFF sections to
+ segment alignment
+Message-ID: <20200428151123.GA12697@willie-the-truck>
+References: <20200413155521.24698-1-ardb@kernel.org>
+ <20200413155521.24698-6-ardb@kernel.org>
+ <CAMj1kXFrzfKerYNL1c+iS33uMR++3w673kxg93bGfdG7ohWJsA@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMj1kXFrzfKerYNL1c+iS33uMR++3w673kxg93bGfdG7ohWJsA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_080911_744729_67A7D88B 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_081130_310367_8C524C80 
+X-CRM114-Status: GOOD (  20.30  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,67 +79,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geoff Levand <geoff@infradead.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-efi <linux-efi@vger.kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>
+ Arvind Sankar <nivedita@alum.mit.edu>,
+ Jonathan Cameron <Jonathan.Cameron@huawei.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The vDSO library adds -Bsymbolic to the ldflags because when the shared
-library is built it adds a flag in the dynamic section of the binary
-called DT_SYMBOLIC which alters the dynamic linker's symbol resolution
-algorithm to search for references for a symbol inside the library first
-and then into the executable.
+On Wed, Apr 22, 2020 at 11:39:39AM +0200, Ard Biesheuvel wrote:
+> On Mon, 13 Apr 2020 at 17:55, Ard Biesheuvel <ardb@kernel.org> wrote:
+> >
+> > The arm64 kernel's segment alignment is fixed at 64 KB for any page
+> > size, and relocatable kernels are able to fix up any misalignment of
+> > the kernel image with respect to the 2 MB section alignment that is
+> > mandated by the arm64 boot protocol.
+> >
+> > Let's increase the PE/COFF section alignment to the same value, so that
+> > kernels loaded by the UEFI PE/COFF loader are guaranteed to end up at
+> > an address that doesn't require any reallocation to be done if the
+> > kernel is relocatable.
+> >
+> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > ---
+> >  arch/arm64/kernel/efi-header.S  | 2 +-
+> >  arch/arm64/kernel/vmlinux.lds.S | 3 ++-
+> >  2 files changed, 3 insertions(+), 2 deletions(-)
+> >
+> 
+> Catalin, Will: any thoughts whether this should go via the arm64 tree
+> or the EFI tree? It is part of a change on the EFI side to stop
+> needlessly copying the kernel around before boot, but this particular
+> change could go through either tree, as it is not build time
+> dependency for the EFI changes, nor does it have a boot time impact
+> beyond making it more likely that the copy can be elided (but the code
+> still needs to deal with the possibility that it cannot be elided in
+> any case)
 
-In the current implementation of the library for arm64 the flag has been
-wrongly added to VDSO_LDFLAGS which is never used.
+I've queued this one in the arm64 tree for 5.8. Should appear on
+for-next/misc in the next day or so.
 
-Restore the correct behavior adding the flag to ldflags.
+Thanks,
 
-Note: -Bsymbolic has been added for consistency with arm and future
-proof.
-
-Fixes: 28b1a824a4f44 ("arm64: vdso: Substitute gettimeofday() with C implementation")
-Cc: Will Deacon <will@kernel.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Ard Biesheuvel <ardb@kernel.org>
-Reported-by: Geoff Levand <geoff@infradead.org>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
----
- arch/arm64/kernel/vdso/Makefile | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index abb3347a925b..6ba222ad8cc2 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -17,14 +17,17 @@ obj-vdso := vgettimeofday.o note.o sigreturn.o
- targets := $(obj-vdso) vdso.so vdso.so.dbg
- obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
- 
-+# -Bsymbolic has been added for consistency with arm and future proof.
-+# It adds a flag in the dynamic section of the binary called DT_SYMBOLIC
-+# which alters the dynamic linker's symbol resolution algorithm to search
-+# for references for a symbol inside the library first and then into the
-+# executable.
- ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
--		--build-id -n -T
-+		-Bsymbolic --build-id -n -T
- 
- ccflags-y := -fno-common -fno-builtin -fno-stack-protector -ffixed-x18
- ccflags-y += -DDISABLE_BRANCH_PROFILING
- 
--VDSO_LDFLAGS := -Bsymbolic
--
- CFLAGS_REMOVE_vgettimeofday.o = $(CC_FLAGS_FTRACE) -Os
- KBUILD_CFLAGS			+= $(DISABLE_LTO)
- KASAN_SANITIZE			:= n
--- 
-2.25.2
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
