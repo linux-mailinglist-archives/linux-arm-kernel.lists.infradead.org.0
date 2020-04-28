@@ -2,80 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F255C1BCDA3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:43:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6B6A1BCDAE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:50:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ipSw8jQ0oHV8GjliU4+hDBOGZC41uLGXisFndk49Ig=; b=ki4n0vy8irpWKZ
-	sn1NardQRBFprC3DSeYJOitS6cQWEEfxD9dbvCFvhU+cgCOv75lMHJ1PPd4trb9NcHyLTv/raItgh
-	sFJZQLkFc6WZB7nn7mTdZw0SpTtp+vTceWRchDpszA6rfdB5QM9c/wbeZbW7IEi8NSL1ewtuPBPOI
-	ioENe2sui8as+OstXKHUuMVncbNOgkoucDF4GAmYH/c5PmQEsKAO9VxTwtgxn9wXd3tMNNbllgug+
-	4FCWirdHc2PgY9rJCgRUgAxlQ+0dKQ0Ncj9u/2uGNtm+ZumJ1VwmRamu6gBnrrl2Jb1zQEdOtx/+m
-	NxSDFdtjIQOdRsq+JzuA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fgQBjPSSDmTWd27ofnMYJUChGqZIKOxh65LIfUoCgVI=; b=JiVzaqAaTaOXTx
+	pEjlJrhIiiwrUm1oGIQV+N2ZiU4ztfvh78dT8gIZxyHxAhR0IixrCAtkimIZy9IeQd7+U4eZK6EvX
+	Eqzf26RBVihgpfpW2n/54RBIafI1quJpMHZTeYqMaDTQD65MiFv1IZ3wydCKHE53RJEb+ntEr7NAy
+	wllaA2HlA0Rfg9kEBk1bk/3x4HW1GLRjARwa61LJoMnYtN60wgZ3r994C90pvUz9D9kf5JEt53iYd
+	H0EYzCvMU1KGbHkdCAzTF5YA3gAITEGNlyB/N6cZY5DCWNiILQZnCpc5rHyD4SCuCo+89y0kupCCI
+	wZ5uKRNCpQA2HL1mcT6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTX4p-0007G9-Rv; Tue, 28 Apr 2020 20:43:35 +0000
-Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
+	id 1jTXB2-0002Uo-CG; Tue, 28 Apr 2020 20:50:00 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTX4e-0007FY-0I
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 20:43:25 +0000
-Received: by mail-vk1-xa43.google.com with SMTP id w68so70041vke.5
+ id 1jTXAq-0002U7-Cs
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 20:49:49 +0000
+Received: by mail-ot1-f65.google.com with SMTP id e26so35296955otr.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 13:43:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/OSHGWesGAjIQKdOPpoKsn+XeE0l9RMqKCT+tPNC2z4=;
- b=zX6Iakul0LkrFXuvvK6fla1W/wqCi4+6Vv0VkHkIeJuwdsqVxPwZCn+2bPbmUGyx3Y
- uYs65uOc8V43C8V26+c/UCnzteqOdMsTRnrxVnbkx3ZHHV9QnkIK781R6AkXe7E/Kbf0
- ldnBZ5ISzENYyaHpx0zxsAtR0fK/y8OvXL1S85GHBhf3wKSJC/tuBGpBQtuJNsK9Bn6E
- HEr3RomC/5KSQOWnug5HoXnpEJywQXpW3BMxvYaqrm0WkB5Fyxsd4oY9fAEQ4BF2n/6s
- igsVJwKx55OfcDMhhmHTE1jTAA0zImbzD4u4NmBTT3qPePwldQT09+gE9wFhTPowWYvt
- GJcg==
+ Tue, 28 Apr 2020 13:49:47 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/OSHGWesGAjIQKdOPpoKsn+XeE0l9RMqKCT+tPNC2z4=;
- b=f9OjCwXMkwsBrxhA6CFeGie9mCK8/r3L/3xCWSxf9voU+ikxza6MVEFVJj1dD1b6Qq
- wdyfPnhUhfFUG5MCmaIIWidYVECaZiMA1bewEa3A8Io9VnsJwhm0GAUBwv1ajFs/BBCD
- 3Z0SHnx5SOX0ThwRe+b40xE+lKQtujbkPyabLUyAPnZOg3xi6OWbRJBXDWcoWVagjbt1
- tlydvac8yzDlUNrGLTtNodn9VsISpEVZYrSzL2wWZgpUISCNGUoBlFvebQh2fo4/9XHB
- psg2FBo92yFIOvPNLY+PpN9h3OQA22DPtqTBQgHksoaIdTrg8vv8P7e4qtJIYnWRbe8T
- sGpA==
-X-Gm-Message-State: AGi0PuZK4/zcuBtjZZdtLgVHKN+HC7OyGIYl3mbDzHz9OwkhtBt2OV33
- 3LvGyByrdEEQRLOBA59ZpLHHG9aKkZRHYv5lC6xMxQ==
-X-Google-Smtp-Source: APiQypKCUKt3jJ4sj9lTa6XBBwThMQqjqJzLuTpJ4h/WRkAacfQ6QQbfN6+a9FmS4vKfBKHCvunkUWb/88bEQfn0/Zw=
-X-Received: by 2002:a1f:2a13:: with SMTP id q19mr10178790vkq.73.1588106602833; 
- Tue, 28 Apr 2020 13:43:22 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=6EeJQUcQx1ZUEC6Sz+HmpaKf0KrWlHRUUSnQJGXOOU4=;
+ b=Wh7nwaiGon4wpdeT5hJrAWQ9S41aAr9TFXk6XtdnBvqfmX78eYwGp9dweBOuTWUHSM
+ wgTD+DeAGBjos0eKqg1hXljNhaEfVEmpDdC+LgY+5dOa2dHVVmBa5W4/EehhJJbNtQSd
+ eOIkpDqpIiRGgqZqAXcczO5b/0ag/4wSC2Bfy1a0IEKyx58pG6nd3Ltb/LdcDauE/XBX
+ IIGQ3LkaJHaljIjyRjfgI2wLSkQWA7pO656HEhQmdavCzwRKUwYfrAKho3PMOFqi4wKW
+ /hpEn+hZa2HlhamxHrFKTKD+XC+R0KdpimLK/J6/ywm6H2a0teg7Z70J8Y8XHqVxG91X
+ WvfQ==
+X-Gm-Message-State: AGi0PuYj2N3vS4pKyoTYioDM7Bg+uEWeryFLuTfQnKMVyW3twf9Ka0nn
+ jCCyTsjNZ501wBL6WDHIXQ==
+X-Google-Smtp-Source: APiQypImciVBBbDsKwb7MoERjDQFaLAa6CEeYV+23Ln+YWTVS91K0H71jB579oSoRpkXUBz4Xdp2+A==
+X-Received: by 2002:a9d:7414:: with SMTP id n20mr25652200otk.61.1588106987239; 
+ Tue, 28 Apr 2020 13:49:47 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id r67sm5109606oie.19.2020.04.28.13.49.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Apr 2020 13:49:46 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH] clk: versatile: Drop the legacy IM-PD1 clock code
+Date: Tue, 28 Apr 2020 15:49:45 -0500
+Message-Id: <20200428204945.21067-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <1587477544-20052-1-git-send-email-Anson.Huang@nxp.com>
-In-Reply-To: <1587477544-20052-1-git-send-email-Anson.Huang@nxp.com>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Wed, 29 Apr 2020 02:12:47 +0530
-Message-ID: <CAHLCerM0w=Zc0seb6u0f2=wpsObuv4O9fZiKaZJbS7ojDgx7EA@mail.gmail.com>
-Subject: Re: [PATCH V3] dt-bindings: thermal: Convert i.MX8MM to json-schema
-To: Anson Huang <Anson.Huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_134324_049718_B70B704D 
-X-CRM114-Status: GOOD (  18.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200428_134948_435987_B7E4D684 
+X-CRM114-Status: GOOD (  14.88  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,128 +88,188 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Linux PM list <linux-pm@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- LKML <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- dl-linux-imx <Linux-imx@nxp.com>, kernel@pengutronix.de,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- lakml <linux-arm-kernel@lists.infradead.org>
+Cc: Stephen Boyd <sboyd@kernel.org>, soc@kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 7:37 PM Anson Huang <Anson.Huang@nxp.com> wrote:
->
-> Convert the i.MX8MM thermal binding to DT schema format using json-schema
->
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Now that the non-DT IM-PD1 support code has been removed, drop the clock
+related code from clk-impd1.c.
 
-Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
+Cc: Linus Walleij <linus.walleij@linaro.org>
+Cc: Stephen Boyd <sboyd@kernel.org>
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-clk@vger.kernel.org
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+This is depends on the pending IM-PD1 DT support Linus has queued up. 
+Perhaps apply on top of his PR '[GIT PULL] Versatile changes for v5.8 
+take 1'.
 
+ drivers/clk/versatile/clk-impd1.c            | 121 -------------------
+ include/linux/platform_data/clk-integrator.h |   2 -
+ 2 files changed, 123 deletions(-)
+ delete mode 100644 include/linux/platform_data/clk-integrator.h
 
-> ---
-> Changes since V2:
->         - drop unnecessary description for reg/clocks;
->         - improve compatible;
->         - use thermal-sensor as node name.
-> ---
->  .../devicetree/bindings/thermal/imx8mm-thermal.txt | 15 ------
->  .../bindings/thermal/imx8mm-thermal.yaml           | 58 ++++++++++++++++++++++
->  2 files changed, 58 insertions(+), 15 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
->  create mode 100644 Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
->
-> diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
-> deleted file mode 100644
-> index 3629d3c..0000000
-> --- a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.txt
-> +++ /dev/null
-> @@ -1,15 +0,0 @@
-> -* Thermal Monitoring Unit (TMU) on Freescale i.MX8MM SoC
-> -
-> -Required properties:
-> -- compatible : Must be "fsl,imx8mm-tmu" or "fsl,imx8mp-tmu".
-> -- reg : Address range of TMU registers.
-> -- clocks : TMU's clock source.
-> -- #thermal-sensor-cells : Should be 0 or 1. See ./thermal.txt for a description.
-> -
-> -Example:
-> -tmu: tmu@30260000 {
-> -       compatible = "fsl,imx8mm-tmu";
-> -       reg = <0x30260000 0x10000>;
-> -       clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
-> -       #thermal-sensor-cells = <0>;
-> -};
-> diff --git a/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
-> new file mode 100644
-> index 0000000..3885287
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/thermal/imx8mm-thermal.yaml
-> @@ -0,0 +1,58 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/thermal/imx8mm-thermal.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: NXP i.MX8M Mini Thermal Binding
-> +
-> +maintainers:
-> +  - Anson Huang <Anson.Huang@nxp.com>
-> +
-> +description: |
-> +  i.MX8MM has TMU IP to allow temperature measurement, there are
-> +  currently two distinct major versions of the IP that is supported
-> +  by a single driver. The IP versions are named v1 and v2, v1 is
-> +  for i.MX8MM which has ONLY 1 sensor, v2 is for i.MX8MP which has
-> +  2 sensors.
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - fsl,imx8mm-tmu
-> +      - fsl,imx8mp-tmu
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  "#thermal-sensor-cells":
-> +    description: |
-> +      Number of cells required to uniquely identify the thermal
-> +      sensors, 0 for ONLY one sensor and 1 for multiple sensors.
-> +    enum:
-> +      - 0
-> +      - 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - '#thermal-sensor-cells'
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/clock/imx8mm-clock.h>
-> +
-> +    thermal-sensor@30260000 {
-> +         compatible = "fsl,imx8mm-tmu";
-> +         reg = <0x30260000 0x10000>;
-> +         clocks = <&clk IMX8MM_CLK_TMU_ROOT>;
-> +         #thermal-sensor-cells = <0>;
-> +    };
-> +
-> +...
-> --
-> 2.7.4
->
+diff --git a/drivers/clk/versatile/clk-impd1.c b/drivers/clk/versatile/clk-impd1.c
+index b05da8516d4c..95129d39a44b 100644
+--- a/drivers/clk/versatile/clk-impd1.c
++++ b/drivers/clk/versatile/clk-impd1.c
+@@ -8,7 +8,6 @@
+ #include <linux/err.h>
+ #include <linux/io.h>
+ #include <linux/platform_device.h>
+-#include <linux/platform_data/clk-integrator.h>
+ #include <linux/module.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/regmap.h>
+@@ -20,26 +19,6 @@
+ #define IMPD1_OSC2	0x04
+ #define IMPD1_LOCK	0x08
+ 
+-struct impd1_clk {
+-	char *pclkname;
+-	struct clk *pclk;
+-	char *vco1name;
+-	struct clk *vco1clk;
+-	char *vco2name;
+-	struct clk *vco2clk;
+-	struct clk *mmciclk;
+-	char *uartname;
+-	struct clk *uartclk;
+-	char *spiname;
+-	struct clk *spiclk;
+-	char *scname;
+-	struct clk *scclk;
+-	struct clk_lookup *clks[15];
+-};
+-
+-/* One entry for each connected IM-PD1 LM */
+-static struct impd1_clk impd1_clks[4];
+-
+ /*
+  * There are two VCO's on the IM-PD1
+  */
+@@ -80,106 +59,6 @@ static const struct clk_icst_desc impd1_icst2_desc = {
+ 	.lock_offset = IMPD1_LOCK,
+ };
+ 
+-/**
+- * integrator_impd1_clk_init() - set up the integrator clock tree
+- * @base: base address of the logic module (LM)
+- * @id: the ID of this LM
+- */
+-void integrator_impd1_clk_init(void __iomem *base, unsigned int id)
+-{
+-	struct impd1_clk *imc;
+-	struct clk *clk;
+-	struct clk *pclk;
+-	int i;
+-
+-	if (id > 3) {
+-		pr_crit("no more than 4 LMs can be attached\n");
+-		return;
+-	}
+-	imc = &impd1_clks[id];
+-
+-	/* Register the fixed rate PCLK */
+-	imc->pclkname = kasprintf(GFP_KERNEL, "lm%x-pclk", id);
+-	pclk = clk_register_fixed_rate(NULL, imc->pclkname, NULL, 0, 0);
+-	imc->pclk = pclk;
+-
+-	imc->vco1name = kasprintf(GFP_KERNEL, "lm%x-vco1", id);
+-	clk = icst_clk_register(NULL, &impd1_icst1_desc, imc->vco1name, NULL,
+-				base);
+-	imc->vco1clk = clk;
+-	imc->clks[0] = clkdev_alloc(pclk, "apb_pclk", "lm%x:01000", id);
+-	imc->clks[1] = clkdev_alloc(clk, NULL, "lm%x:01000", id);
+-
+-	/* VCO2 is also called "CLK2" */
+-	imc->vco2name = kasprintf(GFP_KERNEL, "lm%x-vco2", id);
+-	clk = icst_clk_register(NULL, &impd1_icst2_desc, imc->vco2name, NULL,
+-				base);
+-	imc->vco2clk = clk;
+-
+-	/* MMCI uses CLK2 right off */
+-	imc->clks[2] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00700", id);
+-	imc->clks[3] = clkdev_alloc(clk, NULL, "lm%x:00700", id);
+-
+-	/* UART reference clock divides CLK2 by a fixed factor 4 */
+-	imc->uartname = kasprintf(GFP_KERNEL, "lm%x-uartclk", id);
+-	clk = clk_register_fixed_factor(NULL, imc->uartname, imc->vco2name,
+-				   CLK_IGNORE_UNUSED, 1, 4);
+-	imc->uartclk = clk;
+-	imc->clks[4] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00100", id);
+-	imc->clks[5] = clkdev_alloc(clk, NULL, "lm%x:00100", id);
+-	imc->clks[6] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00200", id);
+-	imc->clks[7] = clkdev_alloc(clk, NULL, "lm%x:00200", id);
+-
+-	/* SPI PL022 clock divides CLK2 by a fixed factor 64 */
+-	imc->spiname = kasprintf(GFP_KERNEL, "lm%x-spiclk", id);
+-	clk = clk_register_fixed_factor(NULL, imc->spiname, imc->vco2name,
+-				   CLK_IGNORE_UNUSED, 1, 64);
+-	imc->clks[8] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00300", id);
+-	imc->clks[9] = clkdev_alloc(clk, NULL, "lm%x:00300", id);
+-
+-	/* The GPIO blocks and AACI have only PCLK */
+-	imc->clks[10] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00400", id);
+-	imc->clks[11] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00500", id);
+-	imc->clks[12] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00800", id);
+-
+-	/* Smart Card clock divides CLK2 by a fixed factor 4 */
+-	imc->scname = kasprintf(GFP_KERNEL, "lm%x-scclk", id);
+-	clk = clk_register_fixed_factor(NULL, imc->scname, imc->vco2name,
+-				   CLK_IGNORE_UNUSED, 1, 4);
+-	imc->scclk = clk;
+-	imc->clks[13] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00600", id);
+-	imc->clks[14] = clkdev_alloc(clk, NULL, "lm%x:00600", id);
+-
+-	for (i = 0; i < ARRAY_SIZE(imc->clks); i++)
+-		clkdev_add(imc->clks[i]);
+-}
+-EXPORT_SYMBOL_GPL(integrator_impd1_clk_init);
+-
+-void integrator_impd1_clk_exit(unsigned int id)
+-{
+-	int i;
+-	struct impd1_clk *imc;
+-
+-	if (id > 3)
+-		return;
+-	imc = &impd1_clks[id];
+-
+-	for (i = 0; i < ARRAY_SIZE(imc->clks); i++)
+-		clkdev_drop(imc->clks[i]);
+-	clk_unregister(imc->spiclk);
+-	clk_unregister(imc->uartclk);
+-	clk_unregister(imc->vco2clk);
+-	clk_unregister(imc->vco1clk);
+-	clk_unregister(imc->pclk);
+-	kfree(imc->scname);
+-	kfree(imc->spiname);
+-	kfree(imc->uartname);
+-	kfree(imc->vco2name);
+-	kfree(imc->vco1name);
+-	kfree(imc->pclkname);
+-}
+-EXPORT_SYMBOL_GPL(integrator_impd1_clk_exit);
+-
+ static int integrator_impd1_clk_spawn(struct device *dev,
+ 				      struct device_node *parent,
+ 				      struct device_node *np)
+diff --git a/include/linux/platform_data/clk-integrator.h b/include/linux/platform_data/clk-integrator.h
+deleted file mode 100644
+index addd48cac625..000000000000
+--- a/include/linux/platform_data/clk-integrator.h
++++ /dev/null
+@@ -1,2 +0,0 @@
+-void integrator_impd1_clk_init(void __iomem *base, unsigned int id);
+-void integrator_impd1_clk_exit(unsigned int id);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
