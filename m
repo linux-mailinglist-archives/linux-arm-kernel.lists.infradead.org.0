@@ -2,87 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59F871BC4FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:20:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B396E1BC502
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 18:21:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rY7fHmXiBOYFPXMStOc75Kw4KQowztH8rvPVlGDsEOg=; b=fgNYgSl4ILbVS4
-	glcKHq3jOz6pnXBOFuWsCfmm8UxR8KnRs8YCTzJZLu3e42yAX2YRwd8Cij5OyrZv91aZGLGWJ1voQ
-	zAagNI+MA9TPspv9lzaRzX2X3almNn0LfEcaI1m6oPD1RJ9P03gdJjUYzYjJ0NDd/kvpbfl0qFid2
-	mWg2kVxLptOPHjn1lwS5ZRSfSbfbOarJmhtHmMUP8AmqaUm0tFiWb8VlkJbIB8aOjmFx77CyBlUbq
-	jf0UQypjD4+OBIt23+FT2Np0rGRjwBMDH7I3kMKZCUdjzu5c7Yz2nX0kobzkxFtFq5f87XaSEsU3L
-	VSNB1yZM/53rjMuRuZ8Q==;
+	List-Owner; bh=WOOpVWSL1bJGsLHBA9rx/KfdU4HOm8ilNQ1sd6t/iGQ=; b=EMQ3nMVk7/iJ1P
+	1gEv96yUxCw/HCsZwWsjHzS9s2b6SAnhPjGTdSwwBSAn8MU3YW+73s/9woeo4psXP8Qpz9AAiVZS7
+	2NJYLwVbmXwbHOxpUQzUDULIvVLzjwzZyKxRlw3sEYg+9o55Z0tgI6tPIVPBZdQKYyQe15QStoQyV
+	1HTVQWYF/L7IEDnj1CSJ6Co63wIFKmv+96aPxg9QSYe3WXVOHFrnFgswTJF0s5156p60cjLDumDfx
+	pzmQN+WjKlD6O0q4B3AOXW1pG+gNNAZzGFE9hSBbBuDjoOZn9QfA55nx/2cSszvFNxJsQXgOI7pdC
+	m2mOziEel/Mr1pTwKc3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTSy4-0002VT-9d; Tue, 28 Apr 2020 16:20:20 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jTSyp-0005I6-EO; Tue, 28 Apr 2020 16:21:07 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTSxh-0002U1-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:19:58 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x4so3478641wmj.1
+ id 1jTSyg-0005Gw-Dp
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 16:20:59 +0000
+Received: by mail-ot1-f65.google.com with SMTP id g14so33555402otg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 09:19:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=raspberrypi.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NopApeXh01c7L2Io03QMx8cqkS9YkQo3viws4wlNnSg=;
- b=PryLDU8fNN6N3kbaEKSnFW3ZljxLU0aEKb/QT9PXimf+nSVuMU7ucP99uGmeVTuXFL
- 0p/ee18S1smX9x1e3ceylcDz2SWJwa72ZTbsMwetmBYWEVX4cF27O41AGTzVcwrn8u5g
- PbIsYOtqM23NIaTvc9y3sESXaAwIbJCxITZ2P2HQx3/XwghUA3gnM5d5HELhhFuWkpcF
- jsrnu3vL/GB66Xo166FKKryG/ir7ksho4hffwu3LLfhCcE98upCyoVzWUi8wsLFGyxd+
- bjwNjleFhAVyz2XyiubXZlKf1ikUnHD9bAdfHhukEalyqgFJiEGxZrgQIzqPY+WYytnp
- esGw==
+ Tue, 28 Apr 2020 09:20:58 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=NopApeXh01c7L2Io03QMx8cqkS9YkQo3viws4wlNnSg=;
- b=M6hQgecCRTUxvbThodETSdJ3Dhv9RsaST84FMV/ohOsZQuLF8/xjjxBZeIEy5Mcv7Z
- /PVIbci8l2HRv3vFB8MxFWtJV+o4bc6ooaNmAsTGfeGJjQVybP7VspG1Tzk95xB7Afcj
- bc8+vJZ838W8Y6yJ1Llfm/8bRv/3mw7urwrOl+ViKhmevEXImXBWOXwMTlDRJ8WiFiIs
- 84PQeBsGmHbkHwYW+yHKOSEf9DCBYLCUqXjJEiQpRtdGQh7DUbprhl4dNBvt9V7QHTO1
- sptNl456aezfVDAdVhlhQj4eN7nijMnwnJKJ0CBfPC5cedfizFrhGpb52OcRe5iBMpWS
- urcg==
-X-Gm-Message-State: AGi0PuYIEaaJVlhDwbZTuGTeCZTCT48bANgoNd1ZInTC4BMaKlZiuT2X
- TlyfzSuGD6plFL+b7FY8N9qCaXm4Ha3naOqvSVzIqA==
-X-Google-Smtp-Source: APiQypL3EsQ0jh1kA70/8Mgecdub3pq/2jqTXvhu/nseZ/tzt8oMEkOy7SFss8lrIFNxrKhvMfuy0TfvWG9Tvdn0UgM=
-X-Received: by 2002:a1c:2457:: with SMTP id k84mr5090599wmk.96.1588090793272; 
- Tue, 28 Apr 2020 09:19:53 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=JMWn8pXLk5/8kiVuu/q953brTdcIK/PY1BQH6BDELfQ=;
+ b=d7RpKSztxK5tzns5pc2Le2qxUVAz0t6tp42aYS09hY7J5m07D5rA9Fh6vGIiYOshhv
+ ccvG8/s2LW4fL8YFHgOuHdJL/T0/XMjvenpqdUvrjYp8Zafs04VPoxkDs8MgxpMaHeqr
+ 8kmBQvfq3SWpZ5tgT/Veg+4362I9zBBhioWGrm3Cq1iSIr75P2e7t/sCIG3X74kubcpG
+ uXksl1NEX6Vg6eEb0hUCoL5ndEeSRbh8sl9bEn7+UiteVtLrqNsiB4h184Ov10OrxN1E
+ TwAwxZy5LD88qR2lVIwYE/KdwU6as+Mkm+83xvlvFL4hjx6PdgW3THAfqjsI4Aw9gYcA
+ niQw==
+X-Gm-Message-State: AGi0PuYgPsW8pNEB1e6E9ugE/jHbgiYk3Hlz8y5wa0kRYAq2p9rArSWw
+ weFjdoUvrQylY5oHAqcXEg==
+X-Google-Smtp-Source: APiQypJy0uIwGwXRPYx/W8t8j3YChbO+ZkOIvCk2Wk0UGCLxk4GNBBlbC22NGmfDdkMnCXWLDnPaYw==
+X-Received: by 2002:aca:f482:: with SMTP id s124mr3552378oih.128.1588090857546; 
+ Tue, 28 Apr 2020 09:20:57 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id l19sm4939433otp.16.2020.04.28.09.20.56
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Apr 2020 09:20:56 -0700 (PDT)
+Received: (nullmailer pid 337 invoked by uid 1000);
+ Tue, 28 Apr 2020 16:20:55 -0000
+Date: Tue, 28 Apr 2020 11:20:55 -0500
+From: Rob Herring <robh@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH] dt-bindings: thermal: Convert UniPhier thermal monitor
+ to json-schema
+Message-ID: <20200428162055.GA27628@bogus>
+References: <1587013935-21760-1-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <4cd617827cc28875ef36f3632122a83cff2ea4a7.1587742492.git-series.maxime@cerno.tech>
- <63f9e71a-1beb-7a67-ea48-dbc579fa3161@i2se.com>
- <20200428155711.efpq6vbqcq52gjk5@gilmour.lan>
-In-Reply-To: <20200428155711.efpq6vbqcq52gjk5@gilmour.lan>
-From: Dave Stevenson <dave.stevenson@raspberrypi.com>
-Date: Tue, 28 Apr 2020 17:19:38 +0100
-Message-ID: <CAPY8ntBkKebzCM8uG0=YN_XngWS=Kgmgs_LBXmJb1nY3uPEWUw@mail.gmail.com>
-Subject: Re: [PATCH v2 79/91] drm/vc4: hdmi: Deal with multiple debugfs files
-To: Maxime Ripard <maxime@cerno.tech>
+Content-Disposition: inline
+In-Reply-To: <1587013935-21760-1-git-send-email-hayashi.kunihiko@socionext.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_091957_452717_6D82F3CB 
-X-CRM114-Status: GOOD (  22.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200428_092058_465439_43EE0F1C 
+X-CRM114-Status: GOOD (  16.03  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,81 +94,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Tim Gover <tim.gover@raspberrypi.com>, LKML <linux-kernel@vger.kernel.org>,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Phil Elwell <phil@raspberrypi.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stefan and Maxime
+On Thu, Apr 16, 2020 at 02:12:15PM +0900, Kunihiko Hayashi wrote:
+> Convert the UniPhier thermal monitor binding to DT schema format.
+> 
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  .../thermal/socionext,uniphier-thermal.yaml        | 57 +++++++++++++++++++
+>  .../bindings/thermal/uniphier-thermal.txt          | 65 ----------------------
+>  2 files changed, 57 insertions(+), 65 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
+> 
+> diff --git a/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+> new file mode 100644
+> index 0000000..bdddc5b
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+> @@ -0,0 +1,57 @@
+> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/thermal/socionext,uniphier-thermal.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Socionext UniPhier thermal monitor
+> +
+> +description: |
+> +  This describes the devicetree bindings for thermal monitor supported by
+> +  PVT(Process, Voltage and Temperature) monitoring unit implemented on
+> +  Socionext UniPhier SoCs.
+> +
+> +maintainers:
+> +  - Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> +
+> +properties:
+> +  compatible:
+> +    enum:
+> +      - socionext,uniphier-pxs2-thermal
+> +      - socionext,uniphier-ld20-thermal
+> +      - socionext,uniphier-pxs3-thermal
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  "#thermal-sensor-cells":
+> +    const: 0
+> +
+> +  socionext,tmod-calibration:
+> +    $ref: /schemas/types.yaml#/definitions/uint32-array
+> +    description:
+> +      A pair of calibrated values referred from PVT, in case that the values
+> +      aren't set on SoC, like a reference board.
 
-On Tue, 28 Apr 2020 at 16:57, Maxime Ripard <maxime@cerno.tech> wrote:
->
-> Hi Stefan,
->
-> On Sat, Apr 25, 2020 at 11:26:31PM +0200, Stefan Wahren wrote:
-> > Am 24.04.20 um 17:35 schrieb Maxime Ripard:
-> > > The HDMI driver was registering a single debugfs file so far with the name
-> > > hdmi_regs.
-> > >
-> > > Obviously, this is not going to work anymore when will have multiple HDMI
-> > > controllers since we will end up trying to register two files with the same
-> > > name.
-> > >
-> > > Let's use the ID to avoid that name conflict.
-> >
-> > even with this patch there is a name conflict in debugfs using Linux
-> > 5.7-rc1. Dave Stevenson addressed this by using different card names
-> > [1]. Since this patch won't apply anymore here is my suggestion:
-> >
-> > diff --git a/drivers/gpu/drm/vc4/vc4_hdmi.c b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > index 29287ab..7209397 100644
-> > --- a/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > +++ b/drivers/gpu/drm/vc4/vc4_hdmi.c
-> > @@ -1181,9 +1181,14 @@ static int vc4_hdmi_audio_init(struct vc4_hdmi
-> > *vc4_hdmi)
-> >
-> >      card->dai_link = dai_link;
-> >      card->num_links = 1;
-> > -    card->name = "vc4-hdmi";
-> >      card->dev = dev;
-> >
-> > +    if (vc4_hdmi->variant->encoder_type == VC4_ENCODER_TYPE_HDMI1) {
-> > +        card->name = "vc4-hdmi1";
-> > +    } else {
-> > +        card->name = "vc4-hdmi";
-> > +    }
-> > +
->
-> Thinking about this some more, we don't really need VC4_ENCODER_TYPE_HDMI0 and
-> HDMI1, and it can all work with the same encoder type for both, so I'll drop
-> them.
->
-> To address this issue though, we can add a card name string to the variant, like
-> I did for debugfs. Is that alright for you?
+So?:
 
-My patch doesn't fix everything with the audio debugfs entries anyway.
-I'm working against 5.4 on our downstream tree, and even with my patch
-I get
-[    7.459508] debugfs: Directory 'fef00700.hdmi' with parent
-'vc4-hdmi' already present!
-[    7.511017] debugfs: Directory 'fef05700.hdmi' with parent
-'vc4-hdmi1' already present!
-I seem to recall I reduced the number of complaints over 'vc4-hdmi',
-but internal to sound/soc-core the node is still registered twice.
+maxItems: 2
 
-There was discussion about this a few months back.
-https://lore.kernel.org/lkml/1jblpvraho.fsf@starbuckisacylon.baylibre.com/
-seemed to conclude that it wasn't totally trivial to solve.
-
-Regards,
-  Dave
+> +
+> +required:
+> +  - compatible
+> +  - interrupts
+> +  - "#thermal-sensor-cells"
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    // The UniPhier thermal should be a subnode of a "syscon" compatible node.
+> +
+> +    sysctrl@61840000 {
+> +        compatible = "socionext,uniphier-ld20-sysctrl",
+> +                     "simple-mfd", "syscon";
+> +        reg = <0x61840000 0x10000>;
+> +
+> +        pvtctl: thermal {
+> +                compatible = "socionext,uniphier-ld20-thermal";
+> +                interrupts = <0 3 1>;
+> +                #thermal-sensor-cells = <0>;
+> +        };
+> +    };
 
 _______________________________________________
 linux-arm-kernel mailing list
