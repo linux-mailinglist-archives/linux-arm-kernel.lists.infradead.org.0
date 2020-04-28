@@ -2,103 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B10C81BB50B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 06:18:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E9AD1BB562
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 06:35:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tM5npeUFF0jHFpPZ5MlihBBXy3opC/4/PvxRfhatpmw=; b=ubIINp9vD2AR+d
-	SDnDx7QEeHG+EP1CfDw7HMtxtAuVgInzymjRW0f9i7vV4c8+jzvK0XxmbTxS8aKtnjBpq74nII8uY
-	anAjttn6fPVcmWKc8DND+61OofoQl+unVXky6YzFI4udHNel/WEQ49shBSP9K4OA1ln+Tf5/CPQUH
-	SVWJsiaBDh+gMn3QtmVG7TlxlOW8O3UjTbapnbwjY/K/3HF7Rvbh+kDlwiqxNJRWaQmh5q/0dGeSf
-	L/BnMBu5ga1yiNOz1vpLe/Hdu2sBSamSFSaEgF6TMEgcGKjPnNK8kuUBXq10IbKju0A/Bm1Xnr0FY
-	PpRcYiY/kCBi+i4vvQzw==;
+	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CWtxVoe2c7O/8JKiUNnDM2rVB/wqHJr8MFLRBJM9ZAg=; b=epxNde7VqTgOBJ
+	9PwmlqAfZlqa4rY0pfglk5pVgmcYCHnYVnox3qlxlGds8KzpO85Y9J9hcoy9gvL3fwKEzrvLXs27v
+	LB4xXDP4o6ln3bD0M+f05ZeLj+SnnexEINBMfzxaniW21RUyPR86xdkxc1jycIZEiLoL21OdSb7AQ
+	NIKlq90EkySIkmPrwpiMdf8n7PeNElkkZW4YptXvnLeFBrRzLEfPSAAyKE1dKZBjypFfG8LiB0sQo
+	ztA2uYiysH7P+N565E9HyPhYl0UyMNPdAENYji+tgqF8KMXVcASYp8KSElW6vBlwHPNmPCxxJEZzZ
+	Okp2AveVyJjmZU6cud4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTHhG-0000D0-Et; Tue, 28 Apr 2020 04:18:14 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jTHyD-0003m3-A5; Tue, 28 Apr 2020 04:35:45 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTHh4-0000CH-IH; Tue, 28 Apr 2020 04:18:04 +0000
-Received: from pps.filterd (m0098420.ppops.net [127.0.0.1])
- by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03S44aiX124128; Tue, 28 Apr 2020 00:17:28 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0b-001b2d01.pphosted.com with ESMTP id 30pd53g8rh-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Apr 2020 00:17:28 -0400
-Received: from m0098420.ppops.net (m0098420.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 03S47gjm130005;
- Tue, 28 Apr 2020 00:17:27 -0400
-Received: from ppma04fra.de.ibm.com (6a.4a.5195.ip4.static.sl-reverse.com
- [149.81.74.106])
- by mx0b-001b2d01.pphosted.com with ESMTP id 30pd53g8pd-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Apr 2020 00:17:26 -0400
-Received: from pps.filterd (ppma04fra.de.ibm.com [127.0.0.1])
- by ppma04fra.de.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 03S45tWP018939;
- Tue, 28 Apr 2020 04:17:24 GMT
-Received: from b06cxnps4074.portsmouth.uk.ibm.com
- (d06relay11.portsmouth.uk.ibm.com [9.149.109.196])
- by ppma04fra.de.ibm.com with ESMTP id 30mcu58gsm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 28 Apr 2020 04:17:24 +0000
-Received: from d06av25.portsmouth.uk.ibm.com (d06av25.portsmouth.uk.ibm.com
- [9.149.105.61])
- by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 03S4HLNp41943218
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 28 Apr 2020 04:17:21 GMT
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 79F1911C052;
- Tue, 28 Apr 2020 04:17:21 +0000 (GMT)
-Received: from d06av25.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 6834611C04A;
- Tue, 28 Apr 2020 04:17:14 +0000 (GMT)
-Received: from [9.199.43.234] (unknown [9.199.43.234])
- by d06av25.portsmouth.uk.ibm.com (Postfix) with ESMTP;
- Tue, 28 Apr 2020 04:17:14 +0000 (GMT)
-Subject: Re: [PATCH v3 2/4] hugetlbfs: move hugepagesz= parsing to arch
- independent code
-To: Mike Kravetz <mike.kravetz@oracle.com>
-References: <20200417185049.275845-1-mike.kravetz@oracle.com>
- <20200417185049.275845-3-mike.kravetz@oracle.com>
- <7583dfcc-62d8-2a54-6eef-bcb4e01129b3@gmail.com>
- <5a380060-38db-b690-1003-678ca0f28f07@oracle.com>
- <b1f04f9f-fa46-c2a0-7693-4a0679d2a1ee@oracle.com>
-From: Sandipan Das <sandipan@linux.ibm.com>
-Message-ID: <9c82a0b1-db0e-9b34-88a1-bc810d6b5eec@linux.ibm.com>
-Date: Tue, 28 Apr 2020 09:47:13 +0530
+ id 1jTHy5-0003la-6G
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 04:35:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588048534;
+ h=from:from:reply-to:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=7HOk8Yr6S3xlCmaSoOzLqX7HGoHGUwpA1okgxRGClTk=;
+ b=cCaKx0gPX5YJc0oHIpbFpRdctbdhh/r7VMwPiul1tADcP3Cr0HR0E5COvzuWg9qW/yGTAk
+ VWL7JkPiHkXBAVTdFpujr8qKe/My1NWuCDc66xbWOmIC1ditCmb4zq2EuBLNC9D1jzHbJF
+ 9xlhuLtquuxlwYsGzO/WGx8Lk2kWM9Q=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-18-PmAvVPc_NI6x2PYmjDXjJA-1; Tue, 28 Apr 2020 00:35:27 -0400
+X-MC-Unique: PmAvVPc_NI6x2PYmjDXjJA-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 3B1FD107ACCA;
+ Tue, 28 Apr 2020 04:35:26 +0000 (UTC)
+Received: from localhost.localdomain (vpn2-54-127.bne.redhat.com
+ [10.64.54.127])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 81AE010013D9;
+ Tue, 28 Apr 2020 04:35:23 +0000 (UTC)
+Subject: Re: [PATCH] arm64/mm: Reject invalid NUMA option
+To: Steven Rostedt <rostedt@goodmis.org>
+References: <20200424045314.16017-1-gshan@redhat.com>
+ <20200424101132.GC1167@C02TD0UTHF1T.local>
+ <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
+ <20200427225406.7cacc796@gandalf.local.home>
+ <20200427225944.185d4431@gandalf.local.home>
+ <20200427230920.3d606a2e@gandalf.local.home>
+From: Gavin Shan <gshan@redhat.com>
+Message-ID: <7e85ea83-de5f-c789-2e3c-e468a50ed4bd@redhat.com>
+Date: Tue, 28 Apr 2020 14:35:20 +1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-In-Reply-To: <b1f04f9f-fa46-c2a0-7693-4a0679d2a1ee@oracle.com>
+In-Reply-To: <20200427230920.3d606a2e@gandalf.local.home>
 Content-Language: en-US
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-27_17:2020-04-27,
- 2020-04-27 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- spamscore=0 adultscore=0
- suspectscore=0 phishscore=0 priorityscore=1501 mlxscore=0 mlxlogscore=999
- bulkscore=0 lowpriorityscore=0 clxscore=1011 malwarescore=0
- impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004280027
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_211802_716578_7D8CBFF6 
-X-CRM114-Status: GOOD (  28.89  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200427_213537_448462_7B7765FA 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -110,145 +97,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-doc@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- linux-mm@kvack.org, Paul Mackerras <paulus@samba.org>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- linux-s390@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Longpeng <longpeng2@huawei.com>, Albert Ou <aou@eecs.berkeley.edu>,
- Vasily Gorbik <gor@linux.ibm.com>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- linux-kernel@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S.Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
+Reply-To: Gavin Shan <gshan@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, shan.gavin@gmail.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
+Hi Steven and Mark,
 
-On 28/04/20 12:39 am, Mike Kravetz wrote:
-> On 4/27/20 10:25 AM, Mike Kravetz wrote:
->> On 4/26/20 10:04 PM, Sandipan Das wrote:
->>> On 18/04/20 12:20 am, Mike Kravetz wrote:
->>>> Now that architectures provide arch_hugetlb_valid_size(), parsing
->>>> of "hugepagesz=" can be done in architecture independent code.
->>>
->>> This isn't working as expected on powerpc64.
->>>
->>>   [    0.000000] Kernel command line: root=UUID=dc7b49cf-95a2-4996-8e7d-7c64ddc7a6ff hugepagesz=16G hugepages=2 
->>>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepagesz = 16G
->>>   [    0.000000] HugeTLB: huge pages not supported, ignoring hugepages = 2
->>>   [    0.284177] HugeTLB registered 16.0 MiB page size, pre-allocated 0 pages
->>>   [    0.284182] HugeTLB registered 16.0 GiB page size, pre-allocated 0 pages
->>>   [    2.585062]     hugepagesz=16G
->>>   [    2.585063]     hugepages=2
->>>
->>
->> In the new arch independent version of hugepages_setup, I added the following
->> code in patch 4 off this series:
->>
->>> +	if (!hugepages_supported()) {
->>> +		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
->>> +		return 0;
->>> +	}
->>> +
->>
->> The easy solution is to remove all the hugepages_supported() checks from
->> command line parsing routines and rely on the later check in hugetlb_init().
+On 4/28/20 1:09 PM, Steven Rostedt wrote:
+
+[...]
+
 > 
-> Here is a patch to address the issue.  Sorry, as my series breaks all hugetlb
-> command line processing on powerpc.
+> Could this be a bug in the implementation of strncmp() in
+> arch/arm64/lib/strncmp.S. As I don't know arm64 assembly, I have no idea
+> what it is trying to do.
 > 
-> Sandipan, can you test the following patch?
+> But strncmp("o","off",3) returning zero *is* a bug.
 > 
 
-The following patch does fix the issue. Thanks.
+I think it's false alarm. The patch has been in my local repo for a while.
+I checked out 5.7.rc3 and tried passing "numa=o" to the kernel, @numa_off
+is unchanged and its value is false. I also check the return value from
+strncmp() as below, it's correct. Nothing is broken. I should have retested
+before posting it. Sorry for the noise. Please ignore the crap patch :)
 
-Tested-by: Sandipan Das <sandipan@linux.ibm.com>
+diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
+index 4decf1659700..a8e5c6f7ba25 100644
+--- a/arch/arm64/mm/numa.c
++++ b/arch/arm64/mm/numa.c
+@@ -32,6 +32,13 @@ static __init int numa_parse_early_param(char *opt)
+         if (str_has_prefix(opt, "off"))
+                 numa_off = true;
+  
++       pr_info("numa_off=%s\n", numa_off ? "true" : "false");
++       pr_info("opt=%s\n", opt);
++       pr_info("len=%d\n", (int)strlen("off"));
++       pr_info("\n");
++       pr_info("================================\n");
++       pr_info("strncmp(opt, 'off', 3)=%d\n", strncmp(opt, "off", 3));
++
+
+[    0.000000] NUMA: numa_off=false
+[    0.000000] NUMA: opt=o
+[    0.000000] NUMA: len=3
+[    0.000000] NUMA:
+[    0.000000] NUMA: ================================
+[    0.000000] NUMA: strncmp(opt, 'off', 3)=-102
+
+Thanks,
+Gavin
 
 
-> From 480fe2847361e2a85aeec1fb39fe643bb7100a07 Mon Sep 17 00:00:00 2001
-> From: Mike Kravetz <mike.kravetz@oracle.com>
-> Date: Mon, 27 Apr 2020 11:37:30 -0700
-> Subject: [PATCH] hugetlbfs: fix changes to command line processing
-> 
-> Previously, a check for hugepages_supported was added before processing
-> hugetlb command line parameters.  On some architectures such as powerpc,
-> hugepages_supported() is not set to true until after command line
-> processing.  Therefore, no hugetlb command line parameters would be
-> accepted.
-> 
-> Remove the additional checks for hugepages_supported.  In hugetlb_init,
-> print a warning if !hugepages_supported and command line parameters were
-> specified.
-> 
-> Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
-> ---
->  mm/hugetlb.c | 20 ++++----------------
->  1 file changed, 4 insertions(+), 16 deletions(-)
-> 
-> diff --git a/mm/hugetlb.c b/mm/hugetlb.c
-> index 1075abdb5717..5548e8851b93 100644
-> --- a/mm/hugetlb.c
-> +++ b/mm/hugetlb.c
-> @@ -3212,8 +3212,11 @@ static int __init hugetlb_init(void)
->  {
->  	int i;
->  
-> -	if (!hugepages_supported())
-> +	if (!hugepages_supported()) {
-> +		if (hugetlb_max_hstate || default_hstate_max_huge_pages)
-> +			pr_warn("HugeTLB: huge pages not supported, ignoring associated command-line parameters\n");
->  		return 0;
-> +	}
->  
->  	/*
->  	 * Make sure HPAGE_SIZE (HUGETLB_PAGE_ORDER) hstate exists.  Some
-> @@ -3315,11 +3318,6 @@ static int __init hugepages_setup(char *s)
->  	unsigned long *mhp;
->  	static unsigned long *last_mhp;
->  
-> -	if (!hugepages_supported()) {
-> -		pr_warn("HugeTLB: huge pages not supported, ignoring hugepages = %s\n", s);
-> -		return 0;
-> -	}
-> -
->  	if (!parsed_valid_hugepagesz) {
->  		pr_warn("HugeTLB: hugepages=%s does not follow a valid hugepagesz, ignoring\n", s);
->  		parsed_valid_hugepagesz = true;
-> @@ -3372,11 +3370,6 @@ static int __init hugepagesz_setup(char *s)
->  	struct hstate *h;
->  
->  	parsed_valid_hugepagesz = false;
-> -	if (!hugepages_supported()) {
-> -		pr_warn("HugeTLB: huge pages not supported, ignoring hugepagesz = %s\n", s);
-> -		return 0;
-> -	}
-> -
->  	size = (unsigned long)memparse(s, NULL);
->  
->  	if (!arch_hugetlb_valid_size(size)) {
-> @@ -3424,11 +3417,6 @@ static int __init default_hugepagesz_setup(char *s)
->  	unsigned long size;
->  
->  	parsed_valid_hugepagesz = false;
-> -	if (!hugepages_supported()) {
-> -		pr_warn("HugeTLB: huge pages not supported, ignoring default_hugepagesz = %s\n", s);
-> -		return 0;
-> -	}
-> -
->  	if (parsed_default_hugepagesz) {
->  		pr_err("HugeTLB: default_hugepagesz previously specified, ignoring %s\n", s);
->  		return 0;
-> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
