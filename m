@@ -2,59 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8F4F1BC7A1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:16:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C3361BC7A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:18:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=zwjgya1E33JMbIwVi+MdizMvg+DMuMzcejMzhNiY/P0=; b=lusBidAdw2pPnn4hEHGZedsev
-	MV6cxTZgyye4a+hHN7SHY98XRhO9zg5Zm0TdzmAAiVUTxPBAkb217BtTldXP+jhHh15neYeqh+VnW
-	RzDgU5YM+c8TZGsoPtihyBUeKlMuZd7xuUZdWRAZfh8oRE7+hexczdd9fKQSMhtn0w9xa2Gb4BLEq
-	Wxv5fGrw/KuDUniCsL2qXx3I1O4cnNETIo+K66BgXDtF4TJXPVHl3YLF6ojZQSStaFFKENjWXa+7V
-	z45SV019QHYdg4a1xwm6HnGEtmAneWjnlw/tiVWGPiWVx1NuGSHSkGrSyiD+LEAhPSUvrZXZzkJnj
-	kQoO7xkQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=usJDEt+SF7H1eU+CjZfwPVpkDm4zehoqioo2TBOJKHs=; b=dVgqf5RjhyxxqO
+	15xMGu/Do+ZF5Z1YXf3r9OWqHHSAdrgisHbtwLmc572TWCv2otLDw6EL6AE4Dn7M1HTT8uoG1Qr9J
+	Au6ayYVN/3kiVs8kd9uunDtzC98PdGkjQEww8AiaOeylZFNR3dHDH9AWDLYwZWjHXQYBo/eR7Fg3L
+	sDNntIcKVqxB/sgV6jQrWcjIjs+tKPEpF29uZlQZ2CrXT/K3PnY7I1G0FqCCIPD1Y28DveIydWEd2
+	leCGH87g34OgnenBCYvqYwwR5V7kPgnVhQlnytpTuvuP90kfw8Y8CTjHkcSAZc/nvHqRqa460R6I4
+	+lk0CGlLENpwR6xCBtLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTUmm-0002BT-2Z; Tue, 28 Apr 2020 18:16:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTUmZ-00029z-Lu
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:16:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CFA7DC14;
- Tue, 28 Apr 2020 11:16:32 -0700 (PDT)
-Received: from [192.168.178.25] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 560853F305;
- Tue, 28 Apr 2020 11:16:31 -0700 (PDT)
-Subject: Re: [PATCH v3 20/23] fs: Allow copy_mount_options() to access
- user-space in a single pass
-To: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-21-catalin.marinas@arm.com>
-From: Kevin Brodsky <kevin.brodsky@arm.com>
-Message-ID: <9544d86b-d445-3497-fbbf-56c590400f83@arm.com>
-Date: Tue, 28 Apr 2020 19:16:29 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.1
+	id 1jTUoK-0002jA-0a; Tue, 28 Apr 2020 18:18:24 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTUo9-0002iZ-OH
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:18:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id o185so10800385pgo.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 11:18:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=aWjUSEtM8VL/pwqd96TGANtM3JG2NeQg+1Wfmoi2z40=;
+ b=Ss1DSPtwmv6ojHUBYH3RIM/TGpQMJwmWVNrv61JcwPZK+zDfwCAmMNhUw6kPxlbClj
+ S03Z1elXYdzGW90wxxesFNTgOpjveQ0M7TZllOFqtAkXaqmNFxQfwPlRT/J8fGvy8JTc
+ tzOgceQdRQWixpv2JWCJcwHrR5Nj5axGQ/P7rhGkkChtMnyB8j8bk2kOLVpZSRFfEKoI
+ 97zoiI9gUJxZKJgfDD3tiLB5pcCxF0jLhiNfxfTyNOSChvEbZdMga9a7yD9h4gS4OUi4
+ 7vqZZdEdQHy9GvB8JAsyff1ZO0YJ+rQsetWwWqomx1keaNWhywV/tkzdreIdqactcjXG
+ PVBg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=aWjUSEtM8VL/pwqd96TGANtM3JG2NeQg+1Wfmoi2z40=;
+ b=KXfBa3PYYJX7m6+s//gjfBf00Z5xS1aSLRVDiW4/8DIYKCpHJRZ1dz42PNaK5NnZ+a
+ /M4O4QsjTYQVuGMdqtBEjLOZ2V9ws6dWhuQjAsncDoCOngrljm+awCcHL/dNKtRbcScG
+ vkkea9JsnlPz8I/XHQ4DYHyAEWAhhQ3/ucR6Qj1I9X3CfYdftoCR0kMp65qo4DHC3KPp
+ 9hMOOFbSstq+PROIdSUC5Tq3OclRnzwXqFFhOsPbU73nsuGMQXJzTU7+bmzq55gasza1
+ NcR521h0FmeSQ6v3rqcAYpsaCRtjD97FLRAS5c1Fwg4KT/NmXOKTP34gOG4YoWb8GmGJ
+ 6TPA==
+X-Gm-Message-State: AGi0PubiKNChorrORCk+/4JIn30AWvcE9bAVoRP8ZNEix3ASJjl+hQOI
+ l1SquTGEO24i16vhRo3RmoMF
+X-Google-Smtp-Source: APiQypJOUABsqi4HENB6HKsGRzv2n+guO71nsjgxfB0xQtqrcjmT1vPI+RoPczAM+EJM/Jfv6BqVug==
+X-Received: by 2002:a63:6f4c:: with SMTP id k73mr28964286pgc.241.1588097893019; 
+ Tue, 28 Apr 2020 11:18:13 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:816:a859:6d8a:8338:74e:a3d1])
+ by smtp.gmail.com with ESMTPSA id 199sm4078133pgc.39.2020.04.28.11.18.07
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 28 Apr 2020 11:18:12 -0700 (PDT)
+Date: Tue, 28 Apr 2020 23:48:03 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+Subject: Re: [PATCH 1/1] dma: actions: Fix lockdep splat for owl-dma
+Message-ID: <20200428181803.GD5259@Mani-XPS-13-9360>
+References: <7d503c3dcac2b3ef29d4122a74eacfce142a8f98.1588069418.git.cristian.ciocaltea@gmail.com>
+ <20200428164921.GC5259@Mani-XPS-13-9360>
+ <20200428181115.GB26885@BV030612LT>
 MIME-Version: 1.0
-In-Reply-To: <20200421142603.3894-21-catalin.marinas@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200428181115.GB26885@BV030612LT>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_111635_810495_8C089508 
-X-CRM114-Status: GOOD (  27.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200428_111813_805356_67626AF6 
+X-CRM114-Status: GOOD (  27.73  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,129 +99,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- Andrey Konovalov <andreyknvl@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Cc: linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21/04/2020 15:26, Catalin Marinas wrote:
-> The copy_mount_options() function takes a user pointer argument but not
-> a size. It tries to read up to a PAGE_SIZE. However, copy_from_user() is
-> not guaranteed to return all the accessible bytes if, for example, the
-> access crosses a page boundary and gets a fault on the second page. To
-> work around this, the current copy_mount_options() implementations
-> performs to copy_from_user() passes, first to the end of the current
-> page and the second to what's left in the subsequent page.
->
-> Some architectures like arm64 can guarantee an exact copy_from_user()
-> depending on the size (since the arch function performs some alignment
-> on the source register). Introduce an arch_has_exact_copy_from_user()
-> function and allow copy_mount_options() to perform the user access in a
-> single pass.
->
-> While this function is not on a critical path, the single-pass behaviour
-> is required for arm64 MTE (memory tagging) support where a uaccess can
-> trigger intra-page faults (tag not matching). With the current
-> implementation, if this happens during the first page, the function will
-> return -EFAULT.
->
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Alexander Viro <viro@zeniv.linux.org.uk>
-> Cc: Will Deacon <will@kernel.org>
-> ---
->
-> Notes:
->      New in v3.
->
->   arch/arm64/include/asm/uaccess.h | 11 +++++++++++
->   fs/namespace.c                   |  7 +++++--
->   include/linux/uaccess.h          |  8 ++++++++
->   3 files changed, 24 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-> index 32fc8061aa76..566da441eba2 100644
-> --- a/arch/arm64/include/asm/uaccess.h
-> +++ b/arch/arm64/include/asm/uaccess.h
-> @@ -416,6 +416,17 @@ extern unsigned long __must_check __arch_copy_in_user(void __user *to, const voi
->   #define INLINE_COPY_TO_USER
->   #define INLINE_COPY_FROM_USER
->   
-> +static inline bool arch_has_exact_copy_from_user(unsigned long n)
-> +{
-> +	/*
-> +	 * copy_from_user() aligns the source pointer if the size is greater
-> +	 * than 15. Since all the loads are naturally aligned, they can only
-> +	 * fail on the first byte.
-> +	 */
-> +	return n > 15;
-> +}
-> +#define arch_has_exact_copy_from_user
-> +
->   extern unsigned long __must_check __arch_clear_user(void __user *to, unsigned long n);
->   static inline unsigned long __must_check __clear_user(void __user *to, unsigned long n)
->   {
-> diff --git a/fs/namespace.c b/fs/namespace.c
-> index a28e4db075ed..8febc50dfc5d 100644
-> --- a/fs/namespace.c
-> +++ b/fs/namespace.c
-> @@ -3025,13 +3025,16 @@ void *copy_mount_options(const void __user * data)
->   	if (!copy)
->   		return ERR_PTR(-ENOMEM);
->   
-> -	size = PAGE_SIZE - offset_in_page(data);
-> +	size = PAGE_SIZE;
-> +	if (!arch_has_exact_copy_from_user(size))
-> +		size -= offset_in_page(data);
->   
-> -	if (copy_from_user(copy, data, size)) {
-> +	if (copy_from_user(copy, data, size) == size) {
->   		kfree(copy);
->   		return ERR_PTR(-EFAULT);
->   	}
->   	if (size != PAGE_SIZE) {
-> +		WARN_ON(1);
+On Tue, Apr 28, 2020 at 09:11:15PM +0300, Cristian Ciocaltea wrote:
+> On Tue, Apr 28, 2020 at 10:19:21PM +0530, Manivannan Sadhasivam wrote:
+> > Hi,
+> > 
+> > On Tue, Apr 28, 2020 at 01:56:12PM +0300, Cristian Ciocaltea wrote:
+> > > When the kernel is build with lockdep support and the owl-dma driver is
+> > > used, the following message is shown:
+> > > 
+> > > [    2.496939] INFO: trying to register non-static key.
+> > > [    2.501889] the code is fine but needs lockdep annotation.
+> > > [    2.507357] turning off the locking correctness validator.
+> > > [    2.512834] CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.6.3+ #15
+> > > [    2.519084] Hardware name: Generic DT based system
+> > > [    2.523878] Workqueue: events_freezable mmc_rescan
+> > > [    2.528681] [<801127f0>] (unwind_backtrace) from [<8010da58>] (show_stack+0x10/0x14)
+> > > [    2.536420] [<8010da58>] (show_stack) from [<8080fbe8>] (dump_stack+0xb4/0xe0)
+> > > [    2.543645] [<8080fbe8>] (dump_stack) from [<8017efa4>] (register_lock_class+0x6f0/0x718)
+> > > [    2.551816] [<8017efa4>] (register_lock_class) from [<8017b7d0>] (__lock_acquire+0x78/0x25f0)
+> > > [    2.560330] [<8017b7d0>] (__lock_acquire) from [<8017e5e4>] (lock_acquire+0xd8/0x1f4)
+> > > [    2.568159] [<8017e5e4>] (lock_acquire) from [<80831fb0>] (_raw_spin_lock_irqsave+0x3c/0x50)
+> > > [    2.576589] [<80831fb0>] (_raw_spin_lock_irqsave) from [<8051b5fc>] (owl_dma_issue_pending+0xbc/0x120)
+> > > [    2.585884] [<8051b5fc>] (owl_dma_issue_pending) from [<80668cbc>] (owl_mmc_request+0x1b0/0x390)
+> > > [    2.594655] [<80668cbc>] (owl_mmc_request) from [<80650ce0>] (mmc_start_request+0x94/0xbc)
+> > > [    2.602906] [<80650ce0>] (mmc_start_request) from [<80650ec0>] (mmc_wait_for_req+0x64/0xd0)
+> > > [    2.611245] [<80650ec0>] (mmc_wait_for_req) from [<8065aa10>] (mmc_app_send_scr+0x10c/0x144)
+> > > [    2.619669] [<8065aa10>] (mmc_app_send_scr) from [<80659b3c>] (mmc_sd_setup_card+0x4c/0x318)
+> > > [    2.628092] [<80659b3c>] (mmc_sd_setup_card) from [<80659f0c>] (mmc_sd_init_card+0x104/0x430)
+> > > [    2.636601] [<80659f0c>] (mmc_sd_init_card) from [<8065a3e0>] (mmc_attach_sd+0xcc/0x16c)
+> > > [    2.644678] [<8065a3e0>] (mmc_attach_sd) from [<8065301c>] (mmc_rescan+0x3ac/0x40c)
+> > > [    2.652332] [<8065301c>] (mmc_rescan) from [<80143244>] (process_one_work+0x2d8/0x780)
+> > > [    2.660239] [<80143244>] (process_one_work) from [<80143730>] (worker_thread+0x44/0x598)
+> > > [    2.668323] [<80143730>] (worker_thread) from [<8014b5f8>] (kthread+0x148/0x150)
+> > > [    2.675708] [<8014b5f8>] (kthread) from [<801010b4>] (ret_from_fork+0x14/0x20)
+> > > [    2.682912] Exception stack(0xee8fdfb0 to 0xee8fdff8)
+> > > [    2.687954] dfa0:                                     00000000 00000000 00000000 00000000
+> > > [    2.696118] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> > > [    2.704277] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> > > 
+> > > The required fix is to use spin_lock_init() on the pchan lock before
+> > > attempting to call any spin_lock_irqsave() in owl_dma_get_pchan().
+> > > 
+> > 
+> > Right, this is a bug. But while looking at the code now, I feel that we don't
+> > need 'pchan->lock'. The idea was to protect 'pchan->vchan', but I think
+> > 'od->lock' is the better candidate for that since it already protects it in
+> > 'owl_dma_terminate_pchan'.
+> > 
+> > So I'd be happy if you remove the lock from 'pchan' and just directly use the
+> > one in 'od'.
+> > 
+> > Out of curiosity, on which platform you're testing this?
+> > 
+> > Thanks,
+> > Mani
+> > 
+> 
+> Hi Mani,
+> 
+> Totally agree, I will send a new patch revision as soon as I do some
+> more testing.
+> 
 
-I'm not sure I understand the rationale here. If we don't have exact copy_from_user 
-for size, then we will attempt to copy up to the end of the page. Assuming this 
-doesn't fault, we then want to carry on copying from the start of the next page, 
-until we reach a total size of up to 4K. Why would we warn in that case? AIUI, if you 
-don't have exact copy_from_user, there are 3 cases:
-1. copy_from_user() returns size, we bail out.
-2. copy_from_user() returns 0, we carry on copying from the next page.
-3. copy_from_user() returns anything else, we return immediately.
+Coo, thanks!
 
-I think you're not handling case 3 here.
+> I'm currently experimenting on an Actions S500 based board (Roseapple Pi)
+> trying to extend, if possible, the existing mainline support for those
+> SoCs.
 
-Kevin
+Awesome! It's great to see that Actions platform is seeing some attention
+these days :)
 
->   		if (copy_from_user(copy + size, data + size, PAGE_SIZE - size))
->   			memset(copy + size, 0, PAGE_SIZE - size);
->   	}
-> diff --git a/include/linux/uaccess.h b/include/linux/uaccess.h
-> index 67f016010aad..00e097a9e8d6 100644
-> --- a/include/linux/uaccess.h
-> +++ b/include/linux/uaccess.h
-> @@ -152,6 +152,14 @@ copy_to_user(void __user *to, const void *from, unsigned long n)
->   		n = _copy_to_user(to, from, n);
->   	return n;
->   }
-> +
-> +#ifndef arch_has_exact_copy_from_user
-> +static inline bool arch_has_exact_copy_from_user(unsigned long n)
-> +{
-> +	return false;
-> +}
-> +#endif
-> +
->   #ifdef CONFIG_COMPAT
->   static __always_inline unsigned long __must_check
->   copy_in_user(void __user *to, const void __user *from, unsigned long n)
+> I don't have much progress so far, since I started quite recently
+> and I also lack experience in the kernel development area, but I do my
+> best to come back with more patches once I get a consistent functionality.
+> 
 
+No worries. Feel free to reach out to me if you have any questions. There is
+a lot of work to do and for sure it will be a good learning curve.
+
+We do have an IRC channel (##linux-actions) for quick discussions. Fee free
+to join!
+
+Thanks,
+Mani
+
+> Thanks a lot for your support,
+> Cristi
+> 
+> > > Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+> > > ---
+> > >  drivers/dma/owl-dma.c | 1 +
+> > >  1 file changed, 1 insertion(+)
+> > > 
+> > > diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+> > > index c683051257fd..d9d0f0488e70 100644
+> > > --- a/drivers/dma/owl-dma.c
+> > > +++ b/drivers/dma/owl-dma.c
+> > > @@ -1131,6 +1131,7 @@ static int owl_dma_probe(struct platform_device *pdev)
+> > >  
+> > >  		pchan->id = i;
+> > >  		pchan->base = od->base + OWL_DMA_CHAN_BASE(i);
+> > > +		spin_lock_init(&pchan->lock);
+> > >  	}
+> > >  
+> > >  	/* Init virtual channel */
+> > > -- 
+> > > 2.26.2
+> > > 
 
 _______________________________________________
 linux-arm-kernel mailing list
