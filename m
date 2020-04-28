@@ -2,62 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D612E1BC76C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:04:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 614B41BC77F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 20:07:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wrHCzHjE+2GCBOgviMMC+GJlg9+OzTVzfAwKCZq4Mck=; b=ivyl/h0KbP+Oc6amIB+dwJVwo
-	DF8oRIJKOhTZSTVd32Rs/GTpAgSJ8KU+1BAmSDVzkrRa85++HwZsp8OhPe/y2XrngUhXrkizgUkox
-	FIKpgtA0ISFSXejpYEkMyBFG3vSXd72EvwNsU1JXTMDRMGPwqs4RGDSQZ9NIRgIWH1eTzMztLhmTd
-	j6iJUrkCTg52FDCd7uuSvZGPa/I/o6xdJlfJj9vg4a8fh7XkymHZZch4uk80C4gYDUygg4a4Ta5cs
-	KbkAHCjVXsaosu/1cBXoWtZBtGPn21cpVZsVg05stHscoy/ob8hYQviVQZ/rO3DPKzzL4Oup2VHJV
-	/Pij7tahQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8tjBusGshDl1kNHkuiQE0sSikc7bEK1nWQJaWo2Ie/E=; b=nTJbfTW7UC9Z+U
+	j6uF3pYjiiiY4JrQ8t6j3xZQJdIuLnvsaInMf3CHv7zGaCQtM34M/bj6OEpjufIvODCXv99SXbbnU
+	egdDBsx4xudjEASLVIlo2HW6H/nmWBFfSUC0pBrfv17se7YClealby57U2/v7Apzzh11BGqANOvO0
+	XNxUcI7r59q7xB73WODQ1VJK47vlJBZRfIVXXr9VFJFoSBbTd7b16myBCTHRCTJGQZwabapk472oq
+	YrT4/J/X0Ge5jepMEup6uCw/49+6WAxkskeVKDrbY87BQVJNZ41IV8+zbL2HYzSlTdI3GZrgV7gFB
+	cTwipTYZfwURKqhhL0dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTUaT-0007Wl-ON; Tue, 28 Apr 2020 18:04:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jTUdr-0002Br-Hq; Tue, 28 Apr 2020 18:07:35 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTUaK-0007WK-QD
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:03:57 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 67453206A1;
- Tue, 28 Apr 2020 18:03:55 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588097036;
- bh=Cs+kIiosUe791V7Z5t03iJ9kPgSd432o6JZePUdLsUk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Mj4Kibe0SeTW+5PkgBRQxo2v5NNV/siY7n3m2TUmtZfkLvGF9xGxB91klXOWmXWHg
- 9ICOIR3igwxYZ1dhYTO/CWpXjOXCz3r69qyueK5YgF5xDrfEBqPmW3ZCI3G4dpDR4/
- s8/TdlNHydSciWfIPyZT2Iphvn/pKaE0EgB//Mb4=
-Date: Tue, 28 Apr 2020 19:03:53 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH 04/10] arm64: Set GP bit in kernel page tables to enable
- BTI for the kernel
-Message-ID: <20200428180353.GN5677@sirena.org.uk>
-References: <20200415130750.18645-1-broonie@kernel.org>
- <20200415130750.18645-5-broonie@kernel.org>
- <20200428172432.GB18257@gaia>
+ id 1jTUdf-0002A8-6w
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 18:07:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id s10so25807419wrr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 11:07:23 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VPA3w2FdcezMr0VjYZPl3nlwaovVy4TaRn2qmUqyAi4=;
+ b=TLmz9BS/d2TYOsdIdUAD5o/Fp3XUwakv6RIGZZUA/4tYljrFh9j7d0DW/ISgTFgG/Z
+ 1Ask2XFRkfmE2kunQsPwOEeyY2Yyy4y9HQch6RvVhQW2EWSrluFucZfkbRPFmxV84dJw
+ beIaRHbmse3RIiV7+JQl41EdEC/SzOgXPM5rWr4AdNijexqE//CX2nM+fP3OA1OP4RU0
+ 4t8bpOFRD8TDtI4sIZHdchuA7+yYtWGk2cbJZt9Opc6nQNGsTiPLB6dHNcECM/fIVirv
+ jKA5yOjYxhCghMVIe7bxTHBaCT/dYBWz66+w7DAtyv2Qwvki5ydKbS0lrLOWL8rhk/9X
+ 8Kbg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=VPA3w2FdcezMr0VjYZPl3nlwaovVy4TaRn2qmUqyAi4=;
+ b=UVeeDn0fxGWLVxZvB+7+aMssKQnyPLKF4z9ixziKxFNVpmZEIV9c4dtnnxmMUYNuto
+ 27hs7FTFla/OdGig2nxT4x3jR2sJ/eF2W3EIt6c5fQpyxDpz8hOGO+xo8XzY9N4rAknW
+ BV+yMolnj8Ptu91ftNFaQI7sbmc51jy6bULDKPVjjQ5WLe68wSsU8aE+TKmW3FS3EPiB
+ Oo4JjVXYOlkCrBsdIs0dI9qVc3ke9TR5cEHlYh0/zHleCeJsWbIowgKT/NmdXxJUEn1m
+ sSyuchGV7QeJj8ZlpjSJHpFIog1g9zNOSRnG23zGIehnyGIJCsUm5FreV9QU4BevRU5V
+ 4weg==
+X-Gm-Message-State: AGi0PuZ7ZkyIcbbkg/gooYYw0d/SURKNFJnKzJ8p3+2A+UsMuI1fPFN6
+ +RFNKk+xSFhp6jjqwo26vB3J/A==
+X-Google-Smtp-Source: APiQypINfxdob9FO2QvTVw7sPiDBDVf4K2zUjDUnciTcfESlBOyJPryvyeFbi74J9/PMNz7LW2fubQ==
+X-Received: by 2002:a5d:6689:: with SMTP id l9mr33641451wru.261.1588097241896; 
+ Tue, 28 Apr 2020 11:07:21 -0700 (PDT)
+Received: from xps7590.local ([37.120.81.28])
+ by smtp.gmail.com with ESMTPSA id m14sm26202789wrs.76.2020.04.28.11.07.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 28 Apr 2020 11:07:21 -0700 (PDT)
+From: Robert Foss <robert.foss@linaro.org>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Marco Felsch <m.felsch@pengutronix.de>,
+ Maxime Ripard <maxime@cerno.tech>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v8 v5 1/3] media: dt-bindings: ov8856: Document YAML bindings
+Date: Tue, 28 Apr 2020 20:07:16 +0200
+Message-Id: <20200428180718.1609826-1-robert.foss@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20200428172432.GB18257@gaia>
-X-Cookie: Eschew obfuscation.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_110356_871120_0C7C4838 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200428_110723_267757_8F339E13 
+X-CRM114-Status: GOOD (  14.35  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,80 +98,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Will Deacon <will@kernel.org>, Kees Cook <keescook@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5627030312383529008=="
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Robert Foss <robert.foss@linaro.org>,
+ Tomasz Figa <tfiga@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 
---===============5627030312383529008==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="p1Od3smaOkJqivj4"
-Content-Disposition: inline
+This patch adds documentation of device tree in YAML schema for the
+OV8856 CMOS image sensor.
 
+Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Signed-off-by: Robert Foss <robert.foss@linaro.org>
+---
 
---p1Od3smaOkJqivj4
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+- Changes since v7:
+  * Marco: Make 'port' property optional
+  * Maxime & Sakari: Add 'link-frequencies' property to dt binding
+  * robher: Improve description for 'port' property
 
-On Tue, Apr 28, 2020 at 06:24:32PM +0100, Catalin Marinas wrote:
-> On Wed, Apr 15, 2020 at 02:07:43PM +0100, Mark Brown wrote:
+- Changes since v6:
+  * Marco: remove qcom specifics from DT example
+   
+- Changes since v5:
+  * Add assigned-clocks and assigned-clock-rates
+  * robher: dt-schema errors
 
-> > +#define PAGE_KERNEL_EXEC_GP	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_GP)
-> >  #define PAGE_KERNEL_EXEC_CONT	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_CONT)
+- Changes since v4:
+  * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
+  * Add clock-lanes property to example
+  * robher: Fix syntax error in devicetree example
 
-> Are the PAGE_*_GP defines used anywhere in this series?
+- Changes since v3:
+  * robher: Fix syntax error
+  * robher: Removed maxItems
+  * Fixes yaml 'make dt-binding-check' errors
 
-Not any more, I'll drop them.
+- Changes since v2:
+  Fixes comments from from Andy, Tomasz, Sakari, Rob.
+  * Convert text documentation to YAML schema.
 
-> > +#ifdef CONFIG_ARM64_BTI_KERNEL
-> > +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
-> > +#else
-> >  		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-> > +#endif
+- Changes since v1:
+  Fixes comments from Sakari, Tomasz
+  * Add clock-frequency and link-frequencies in DT
 
-> As with PtrAuth, I'm tempted to have a single config for both user and
-> kernel. Not a strong opinion though, just looking for some consistency.
+ .../devicetree/bindings/media/i2c/ov8856.yaml | 140 ++++++++++++++++++
+ MAINTAINERS                                   |   1 +
+ 2 files changed, 141 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
 
-Yeah, it's not ideal.  My concern with this was that at the time I sent
-the patches out GCC had a sufficiently severe code generation issue that
-it was unsustainable to use for building the kernel.  That seemed
-excessively restrictive so I made it a separate option.  This will be
-fixed in GCC 10 all being well (one of the things I need to do before
-reposting this is to verify that the current fix addresses everything I
-was seeing and update the dependencies) so it's less of a concern
-although still a bit annoying.
+diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yaml b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+new file mode 100644
+index 000000000000..f78d3eae81cb
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+@@ -0,0 +1,140 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++# Copyright (c) 2019 MediaTek Inc.
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
++
++maintainers:
++  - Ben Kao <ben.kao@intel.com>
++  - Dongchun Zhu <dongchun.zhu@mediatek.com>
++
++description: |-
++  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapixel, CMOS
++  image sensor that delivers 3264x2448 at 30fps. It provides full-frame,
++  sub-sampled, and windowed 10-bit MIPI images in various formats via the
++  Serial Camera Control Bus (SCCB) interface. This chip is programmable
++  through I2C and two-wire SCCB. The sensor output is available via CSI-2
++  serial data output (up to 4-lane).
++
++properties:
++  compatible:
++    const: ovti,ov8856
++
++  reg:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    description:
++      Input clock for the sensor.
++    items:
++      - const: xvclk
++
++  clock-frequency:
++    description:
++      Frequency of the xvclk clock in Hertz.
++
++  dovdd-supply:
++    description:
++      Definition of the regulator used as interface power supply.
++
++  avdd-supply:
++    description:
++      Definition of the regulator used as analog power supply.
++
++  dvdd-supply:
++    description:
++      Definition of the regulator used as digital power supply.
++
++  reset-gpios:
++    description:
++      The phandle and specifier for the GPIO that controls sensor reset.
++      This corresponds to the hardware pin XSHUTDOWN which is physically
++      active low.
++
++  port:
++    type: object
++    additionalProperties: false
++    description:
++      A node containing an output port node with an endpoint definition
++      as documented in
++      Documentation/devicetree/bindings/media/video-interfaces.txt
++
++    properties:
++      endpoint:
++        type: object
++
++        properties:
++          clock-lanes:
++            maxItems: 1
++
++          data-lanes:
++            maxItems: 1
++
++          link-frequencies:
++            maxItems: 1
++
++          remote-endpoint: true
++
++        required:
++          - clock-lanes
++          - data-lanes
++          - remote-endpoint
++          - link-frequencies
++
++    required:
++      - endpoint
++
++required:
++  - compatible
++  - reg
++  - clocks
++  - clock-names
++  - clock-frequency
++  - dovdd-supply
++  - avdd-supply
++  - dvdd-supply
++  - reset-gpios
++
++additionalProperties: false
++
++examples:
++  - |
++    #include <dt-bindings/gpio/gpio.h>
++
++    i2c {
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        ov8856: camera@10 {
++            compatible = "ovti,ov8856";
++            reg = <0x10>;
++
++            reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
++            pinctrl-names = "default";
++            pinctrl-0 = <&clk_24m_cam>;
++
++            clocks = <&cam_osc>;
++            clock-names = "xvclk";
++            clock-frequency = <19200000>;
++
++            avdd-supply = <&mt6358_vcama2_reg>;
++            dvdd-supply = <&mt6358_vcamd_reg>;
++            dovdd-supply = <&mt6358_vcamio_reg>;
++
++            port {
++                wcam_out: endpoint {
++                    remote-endpoint = <&mipi_in_wcam>;
++                    clock-lanes = <0>;
++                    data-lanes = <1 2 3 4>;
++                    link-frequencies = /bits/ 64 <360000000 180000000>;
++                };
++            };
++        };
++    };
++...
+\ No newline at end of file
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 26f281d9f32a..84b262afd13d 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -12489,6 +12489,7 @@ L:	linux-media@vger.kernel.org
+ S:	Maintained
+ T:	git git://linuxtv.org/media_tree.git
+ F:	drivers/media/i2c/ov8856.c
++F:	Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+ 
+ OMNIVISION OV9640 SENSOR DRIVER
+ M:	Petr Cvek <petrcvekcz@gmail.com>
+-- 
+2.25.1
 
---p1Od3smaOkJqivj4
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6ocAgACgkQJNaLcl1U
-h9DEEwf/UaS8sYjOTv43fN70yoBROa93BBnVc3TG376JdSWHIa+2QJwsxwOHmwRa
-JTJoZGi1KI8fPAhWeK0aaMJ3wJ6or00EH4oYKgXzxizgIFMwJCKOWgNED8y6iScQ
-QdVkv7AkjECVyFE1CZjyY0w9U1aoZ0YIdcdqgp+uC5elOt8tw6DouDd1uJ9E6tER
-MAp6/npnACoPyJbt2OJBAgD61pfN9tbgIxd4J+JKhR3fPar/B1ZVkX9nGnkQMxou
-V/aU5O+fpEl3o2gdOAbuEIaZDdYv+Q8FBd+iuL9lyMcUBv7xV2I5I8pY7EM9kMfq
-Vaei/2vWQd5Uko6UTPrKcCh7ul85CQ==
-=SHOs
------END PGP SIGNATURE-----
-
---p1Od3smaOkJqivj4--
-
-
---===============5627030312383529008==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5627030312383529008==--
-
