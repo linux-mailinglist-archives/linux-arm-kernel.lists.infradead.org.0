@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4255C1BCC3B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 21:21:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EEE61BCC6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 21:31:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pDDyAWQTkDsO3FVk/PlKevgT4M1amgq7LirhQYsJ8Kk=; b=RrlcXWoy834gJA
-	GKMYGYQSa4e9LKQecWpwTsQswplPIi4oNR09yYhpREDPswD/Ai7IbMf18vqCBIGVQyMUGbyX720vI
-	7XfMZoAQuj2dEBabDW5WUidyDPM8Q3bnGUNEeM+QApcsD976Mk0hu7RNWIUswX5smmQ+1j7rJ1sRu
-	brAI0k+6Hem/p/sPiroujXAAI7O3/51lHZQI2bnuS+ZV4tawyShz5cnIXtgPLkONON26foom4OR48
-	MQ+ejbINUz70qfv/8Qng2j8OU2WuthCWsLm42c6HBOEJtc3uNwiSk1BYm4ytehjnlefreuFT+qrpJ
-	n9djyLVyZSuETZ02UZyg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ghQPY4UQ9bqMArqEqq2lHOkTKy/9JYI8X6l2O6la6A8=; b=iYqaMUf9chVIKMFffgItTpziE
+	3tc3K1bUcwJyQ49y8kBwJ9LuEopyBookJzGaPVxmsgpmFxd55/h9LbPSaCEoVRQyxezb1XC6c4Nqh
+	fubKH1EoBbGJkS3zFrMvpsf4hrGWIanJ+skr0QJvoRRIplgOUUOXh5uHE7uMPwYF5GbinApu1CMYV
+	vGJeHP1nJgIyV3rCdhUfyv4KVs+Rj7hR4HOsT1NCRAOqr66pziKtkX2LwWQexgzvYZWWtQj39yWO1
+	b34fesJLUlM9jn3D0tk869za1ceVhoX6mLQfrFMdAgK/kt4ihk2clmFCa7r7NH/IPv92FP+vgLo91
+	7tQpLixEw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTVnT-0000zN-33; Tue, 28 Apr 2020 19:21:35 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1jTVxB-0007Ow-P9; Tue, 28 Apr 2020 19:31:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTVnI-0000yP-7A
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 19:21:26 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
+ id 1jTVx1-0007MX-Dj
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 19:31:28 +0000
+Received: from earth.universe (dyndsl-095-033-172-075.ewe-ip-backbone.de
+ [95.33.172.75])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id B949680441;
- Tue, 28 Apr 2020 21:21:18 +0200 (CEST)
-Date: Tue, 28 Apr 2020 21:21:17 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Ricardo =?iso-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>
-Subject: Re: [RFC PATCH] dt-bindings: display: ti,tfp410.txt: convert to yaml
-Message-ID: <20200428192117.GA13894@ravnborg.org>
-References: <20200428092048.14939-1-ricardo.canuelo@collabora.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id A3BFA21707;
+ Tue, 28 Apr 2020 19:31:26 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588102286;
+ bh=xj/V0eXDEGpxei/D4tRMMNGrhD6ZfmLPRgXfOZqZIGY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=u/FoPomPbU1vPfODWtg6PZi8uOI/TJdHLpuHwDWL8wmZG/ki/i8heElf78GyUXuYr
+ YDQTitPOORz1q5RWM34tPzESu94USs0MWCUDpKDC3h/f28pTs+3d17VchijSrYU8Fj
+ cFHEBWN2uv4vgGyI/R/lZQt4GMyBAtBf8FBvn26Q=
+Received: by earth.universe (Postfix, from userid 1000)
+ id DDA173C08C6; Tue, 28 Apr 2020 21:31:24 +0200 (CEST)
+Date: Tue, 28 Apr 2020 21:31:24 +0200
+From: Sebastian Reichel <sre@kernel.org>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 04/17] power/reset: vexpress: Support building as a module
+Message-ID: <20200428193124.xe53lgorhc6uyffv@earth.universe>
+References: <20200419170810.5738-1-robh@kernel.org>
+ <20200419170810.5738-5-robh@kernel.org>
+ <CAK8P3a2BZLti5pLrru8s-45Yz54SA0JZbyjvYEstSDJZfnzEmA@mail.gmail.com>
+ <CAL_Jsq+Hk_WuK=c+eHi1Kz3EPzm=zOw2ctETXEySPH1WgAGjug@mail.gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200428092048.14939-1-ricardo.canuelo@collabora.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=MOBOZvRl c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=8nJEP1OIZ-IA:10 a=QX4gbG5DAAAA:8 a=gEfo2CItAAAA:8 a=sozttTNsAAAA:8
- a=e5mUnYsNAAAA:8 a=5Q1QhKhd6o2KWyfzDbIA:9 a=FI4-JCA4KLYWKuIK:21
- a=vwSoZJe330k_mNyO:21 a=wPNLvfGTeEIA:10 a=AbAUZ8qAyYyZVLSsDulk:22
- a=sptkURWiP4Gy88Gu7hUp:22 a=aeg5Gbbo78KNqacMgKqU:22
- a=Vxmtnl_E_bksehYqCbjh:22
+In-Reply-To: <CAL_Jsq+Hk_WuK=c+eHi1Kz3EPzm=zOw2ctETXEySPH1WgAGjug@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_122124_614742_C95F269B 
-X-CRM114-Status: GOOD (  40.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200428_123127_504247_75212A86 
+X-CRM114-Status: GOOD (  19.54  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,363 +80,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, jason@lakedaemon.net, robh+dt@kernel.org,
- tomi.valkeinen@ti.com, dri-devel@lists.freedesktop.org, kernel@collabora.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ Will Deacon <will@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Linux PM list <linux-pm@vger.kernel.org>, Lee Jones <lee.jones@linaro.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============7609458863881448297=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ricardo.
 
-Thanks for looking into this bridge binding.
-Some comments in the following.
-
-	Sam
-
-On Tue, Apr 28, 2020 at 11:20:48AM +0200, Ricardo Ca=F1uelo wrote:
-> Convert the DT binding documentation for the TI TFP410 DPI-to-DVI
-> encoder to json-schema.
-> =
-
-> Signed-off-by: Ricardo Ca=F1uelo <ricardo.canuelo@collabora.com>
-> ---
-> Hi all,
-> =
-
-> I found some issues while converting this binding and I'd like to know
-> your opinions on how to tackle them.
-> =
-
-> 1) dtbs_check fails for arch/arm/boot/dts/dove-sbc-a510.dts
-> =
-
->   This board uses the TFP410 encoder but it doesn't define any ports for
->   it. I can't find any suitable remote endpoints in its description
->   either. Maybe this board description should be reworked? The current
->   driver won't handle the device if it doesn't define any ports or
->   endpoints anyway.
-> =
+--===============7609458863881448297==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="6ujoodgxix7zrbfc"
+Content-Disposition: inline
 
 
-It is expected that there are a few DT files that will need an update
-when they are checked more fomally.
-So post a sepearate patch to fix it - preferably before the
-conversion.
+--6ujoodgxix7zrbfc
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->   It also uses the 'powerdown-gpio' property instead of
->   'powerdown-gpios'. AFAICT this shouldn't be a problem from the driver
->   point of view, but the general standard in DT bindings is to use the
->   plural. This is trivial to fix.
-Use the plural form as everyone else.
+Hi,
 
-> 2) The definition of ti,deskew in the original binding seems to be
-> tailored to the current driver and the way it's defined may not be very
-> DT-friendly.
-> =
+On Mon, Apr 20, 2020 at 12:23:13PM -0500, Rob Herring wrote:
+> On Mon, Apr 20, 2020 at 10:24 AM Arnd Bergmann <arnd@arndb.de> wrote:
+> >
+> > On Sun, Apr 19, 2020 at 7:08 PM Rob Herring <robh@kernel.org> wrote:
+> > >
+> > > Enable building the VExpress power-off/reset driver as a module.
+> >
+> > Your change allows loading and unloading the driver, but actually
+> > unloading is a bug with the current implementation, as there is no
+> > 'release' handler to undo the _vexpress_register_restart_handler()
+> > function.
+>=20
+> And also to save and restore pm_power_off...
 
->   This parameter maps to a 3-bit field in a hardware register that takes
->   a value from 0 to 7, so the [-4, 3] range described for this would map
->   to [000, 111]: -4 -> 000, -3 -> 001, -2 -> 010, ... 3 -> 111.
-> =
+I'm fine with providing Acked-by for this for merging through a
+different tree or taking it through my tree.
 
->   Then, the driver parses the parameter (unsigned) and casts it to a
->   signed integer to get a number in the [-4, 3] range.
-> =
+> > It should not be hard to add a release handler, or you could just
+> > mark the function as non-unloadable by only having a module_init()
+> > but no module_exit() function.
+> >
+> > I suppose if you do the latter, there should also be a suppress_bind_at=
+trs
+> > flag in the device_driver. This is a preexisting bug.
+>=20
+> I may just drop this patch. I wrote it and then realized I don't need
+> it as PSCI can be used instead.
 
->   A vendor-specific property must have a type definition in json-schema,
->   so if I translate the original bindings semantics directly, I should
->   define ti,deskew as an int32, but this makes dt_binding_check fail if
->   the property has a negative value in the example because of the
->   internal representation of cells as unsigned integers:
-> =
+So is the driver useless on arm64 and depends can be reduced to
+arm32?
 
->      ti,deskew:0:0: 4294967293 is greater than the maximum of 2147483647
+-- Sebastian
 
-Can you define it as an enum like this:
+--6ujoodgxix7zrbfc
+Content-Type: application/pgp-signature; name="signature.asc"
 
-	enum: [-4, -3, -2, -1, 0, 1, 2, 3]
+-----BEGIN PGP SIGNATURE-----
 
-And then maybe in the descrition describe how they map to 0..7.
-The problem is that the binding is an API so we cannot just change
-the interpretation of the value 0 etc.
+iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl6ohIwACgkQ2O7X88g7
++ppDwRAAjzNQt+XW6UyQw1RRYM2D/aruiSteQDj9cf12K3voQf5RNkTLuRqVnJ07
+Va8MWbiUbK95NMhhwkqIf8QZ3hpt3tTR5c0f8pLvBhbG7EJvhK8VVNqDmfFsjy4v
+ahU0XxqIYt7pFxtsEo/WZ3o6L0maB15vdguIhKpEetmpd8hY9HJazdiiqrwu+dHX
+J/bQpZ0ogKb6Nzckn9NZDOQGpAyi4qHkIjss7lvB6FCq/e2I4SIbxbhmE9UPhNcH
+nJGSIbCTei/AhVDZApM4OBfcgg1QZQq4gffNPGXoA45hYNl/aCdLRNz+9syiSZhl
+4vLICMyDPCCSFiud5CFnFeUXRcmc8Le/oAM+xVAY/O0loHmKZLELXkXR/NjrCyGn
+ZKuQ70LBrMULyd/rqz+FhYKuObOTX1fZEaFW/NSSTMFpDHdpP1g6qmj92XCZK0V5
+xpqZPyKjDvSRRfTFFVK9a8RhK34oV7WuL6HbSuo+2IktoavQjIQNKmem56qGUjrF
+S+SR6r1majboQHs8NngZ7usn+u2oCLAst2LAsNUkz/Bi18JtjS8yqL9mRp8xYnDQ
+BOL4zeUZMo/fBBksGeNwOYvf7bLKEneQ6kNhclGgqDc+81rbkv/YQYDW/wTXHw+a
+yMPT/3lDRKcsUJoXQRgWWurcXn8WG6ii/qONJQMei2HQM9NtI/w=
+=XM6R
+-----END PGP SIGNATURE-----
 
-
-> =
-
->   So I can think of two solutions to this:
-> =
-
->   a) Keep the ti,deskew property as an uint32 and document the valid
->   range ([-4, 3]) in the property description (this is what this patch
->   does currently).
-> =
-
->   b) Redefine this property to be closer to the datasheet description
->   (ie. unsigned integers from 0 to 7) and adapt the driver accordingly.
->   This would also let us define its range properly using minimum and
->   maximum properties for it.
-> =
-
->   I think (b) is the right thing to do but I want to know your
->   opinion. Besides, I don't have this hardware at hand and if I updated
->   the driver I wouldn't be able to test it.
-> =
-
-> Thanks.
-> =
-
-> Patch tested with:
-> =
-
-> make dt_binding_check ARCH=3Darm DT_SCHEMA_FILES=3D<.../ti,tfp410.yaml>
-> make dtbs_check ARCH=3Darm DT_SCHEMA_FILES=3D<.../ti,tfp410.yaml>
-> =
-
->  .../bindings/display/bridge/ti,tfp410.txt     |  66 ----------
->  .../bindings/display/bridge/ti,tfp410.yaml    | 121 ++++++++++++++++++
->  2 files changed, 121 insertions(+), 66 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/display/bridge/ti,t=
-fp410.txt
->  create mode 100644 Documentation/devicetree/bindings/display/bridge/ti,t=
-fp410.yaml
-> =
-
-> diff --git a/Documentation/devicetree/bindings/display/bridge/ti,tfp410.t=
-xt b/Documentation/devicetree/bindings/display/bridge/ti,tfp410.txt
-> deleted file mode 100644
-> index 5ff4f64ef8e8..000000000000
-> --- a/Documentation/devicetree/bindings/display/bridge/ti,tfp410.txt
-> +++ /dev/null
-> @@ -1,66 +0,0 @@
-> -TFP410 DPI to DVI encoder
-> -=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
-=3D
-> -
-> -Required properties:
-> -- compatible: "ti,tfp410"
-> -
-> -Optional properties:
-> -- powerdown-gpios: power-down gpio
-> -- reg: I2C address. If and only if present the device node should be pla=
-ced
-> -  into the I2C controller node where the TFP410 I2C is connected to.
-> -- ti,deskew: data de-skew in 350ps increments, from -4 to +3, as configu=
-red
-> -  through th DK[3:1] pins. This property shall be present only if the TF=
-P410
-> -  is not connected through I2C.
-> -
-> -Required nodes:
-> -
-> -This device has two video ports. Their connections are modeled using the=
- OF
-> -graph bindings specified in [1]. Each port node shall have a single endp=
-oint.
-> -
-> -- Port 0 is the DPI input port. Its endpoint subnode shall contain a
-> -  pclk-sample and bus-width property and a remote-endpoint property as s=
-pecified
-> -  in [1].
-
-> -  - If pclk-sample is not defined, pclk-sample =3D 0 should be assumed f=
-or
-> -    backward compatibility.
-> -  - If bus-width is not defined then bus-width =3D 24 should be assumed =
-for
-> -    backward compatibility.
-> -    bus-width =3D 24: 24 data lines are connected and single-edge mode
-> -    bus-width =3D 12: 12 data lines are connected and dual-edge mode
-These comments are missing in the new binding.
+--6ujoodgxix7zrbfc--
 
 
-> -
-> -- Port 1 is the DVI output port. Its endpoint subnode shall contain a
-> -  remote-endpoint property is specified in [1].
-> -
-> -[1] Documentation/devicetree/bindings/media/video-interfaces.txt
-> -
-> -
-> -Example
-> --------
-> -
-> -tfp410: encoder@0 {
-> -	compatible =3D "ti,tfp410";
-> -	powerdown-gpios =3D <&twl_gpio 2 GPIO_ACTIVE_LOW>;
-> -	ti,deskew =3D <4>;
-> -
-> -	ports {
-> -		#address-cells =3D <1>;
-> -		#size-cells =3D <0>;
-> -
-> -		port@0 {
-> -			reg =3D <0>;
-> -
-> -			tfp410_in: endpoint@0 {
-> -				pclk-sample =3D <1>;
-> -				bus-width =3D <24>;
-> -				remote-endpoint =3D <&dpi_out>;
-> -			};
-> -		};
-> -
-> -		port@1 {
-> -			reg =3D <1>;
-> -
-> -			tfp410_out: endpoint@0 {
-> -				remote-endpoint =3D <&dvi_connector_in>;
-> -			};
-> -		};
-> -	};
-> -};
-> diff --git a/Documentation/devicetree/bindings/display/bridge/ti,tfp410.y=
-aml b/Documentation/devicetree/bindings/display/bridge/ti,tfp410.yaml
-> new file mode 100644
-> index 000000000000..79666ee540f9
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/bridge/ti,tfp410.yaml
-> @@ -0,0 +1,121 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-You need to obtain approval to change the license to include BSD.
-The current binfing is GPL-2-0-only as it is default in the tree.
-
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/bridge/ti,tfp410.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: TFP410 DPI to DVI encoder
-> +
-> +maintainers:
-> +  - Tomi Valkeinen <tomi.valkeinen@ti.com>
-> +  - Jyri Sarha <jsarha@ti.com>
-> +
-> +properties:
-> +  compatible:
-> +    const: "ti,tfp410"
-No "" around the compatible name
-
-> +
-> +  reg:
-> +    description: I2C address of the device.
-> +    maxItems: 1
-> +
-> +  powerdown-gpios:
-> +    maxItems: 1
-> +
-> +  ti,deskew:
-> +    description:
-> +      Data de-skew in 350ps increments, from -4 to +3, as configured
-> +      through the DK[3:1] pins. This property shall be present only if
-> +      the TFP410 is not connected through I2C.
-> +    maxItems: 1
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/uint32
-No need for the allOf: - $ref.
-Just use a plain $ref
-
-
-> +
-> +  ports:
-> +    description:
-> +      A node containing input and output port nodes with endpoint
-> +      definitions as documented in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> +    type: object
-> +
-> +    properties:
-> +      port@0:
-> +        description: DPI input port.
-> +        type: object
-> +
-> +        properties:
-> +          reg:
-> +            const: 0
-> +
-> +          endpoint:
-> +            type: object
-> +
-> +            properties:
-> +              pclk-sample:
-> +                description: Endpoint sampling edge.
-> +                enum:
-> +                  - 0  # Falling edge
-> +                  - 1  # Rising edge
-> +
-> +              bus-width:
-> +                description: Endpoint bus width.
-> +                enum: [ 12, 24 ]
-> +
-> +        required:
-> +          - endpoint
-> +
-> +      port@1:
-> +        description: DVI output port.
-> +        type: object
-> +
-> +        properties:
-> +          reg:
-> +            const: 1
-> +
-> +          endpoint:
-> +            type: object
-> +
-> +        required:
-> +          - endpoint
-> +
-> +    required:
-> +      - port@0
-> +      - port@1
-> +
-> +required:
-> +  - compatible
-> +  - ports
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    tfp410: encoder {
-> +        compatible =3D "ti,tfp410";
-> +        powerdown-gpios =3D <&twl_gpio 2 GPIO_ACTIVE_LOW>;
-> +        ti,deskew =3D <3>;
-> +
-> +        ports {
-> +            #address-cells =3D <1>;
-> +            #size-cells =3D <0>;
-> +
-> +            port@0 {
-> +                reg =3D <0>;
-> +                tfp410_in: endpoint {
-> +                    pclk-sample =3D <1>;
-> +                    bus-width =3D <24>;
-> +                    remote-endpoint =3D <&dpi_out>;
-> +                };
-> +            };
-> +
-> +            port@1 {
-> +                reg =3D <1>;
-> +                tfp410_out: endpoint {
-> +                    remote-endpoint =3D <&dvi_connector_in>;
-> +                };
-> +            };
-> +        };
-> +    };
-> +
-> +...
-> -- =
-
-> 2.18.0
-> =
-
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+--===============7609458863881448297==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7609458863881448297==--
+
