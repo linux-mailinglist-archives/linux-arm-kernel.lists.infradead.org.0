@@ -2,84 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EA46A1BB82F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:55:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD6C51BB842
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 09:58:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=knibS0blJ2lGX7TEjL5PuGXg7g2soIih6TMF2rFCi0I=; b=AalkVOWC1vzlo9KjGwAI8jlJ+
-	lPJo62J01CXjxMRUzBT3lk4alFyrjyLcvpm+i88197jYH2qeIo8zUdcCK20JgRxd12kyxWGkFB+fr
-	2B6tOLgvnKYBT00FY2B9qJLUJSWoUdbpLc4+jg9qU4CWZr9eczLLesG9hEuHMCPgrjELZUjCqrpya
-	Oii88IyYPYBQrdmCsSIOw/DjVzczoKrCFrz5HfdVBZmmtEeboE/DTXi5gU6ZpiXcyIRzC/Uj8rz0l
-	c3+xSt6LKZDMBu9kEwA4e8SjMSHPJf8Uv+JXwYFlzB1jhGsB2aw3Q0KX4KoQlY9949nQrgjNidM4x
-	rhR9xEtwA==;
+	 bh=1+CnjOCXxzMCQ6ORLCOy7KhiYql1p+L8+mwHhvmVC0Y=; b=YxcTBZtr1MwcG+v2vozQf9tFU
+	SSaPhlVVINbKc1AcBiEHDdmvMrcMGXHgO1W52oFIldSs4gmzt0D0y49M6PyXmZFdbEvD9M2LH0DA7
+	XIWpeaJNBe3R4nqwpwvfq6C1Yo2lntvuHCWGMMrzrg3yAGZoRMX78fq2wB8c7eKX86H1eTXZdX8FX
+	TUriT9M6hSH7kuvX9sH8yTICgVFQFFkStEXCN4DlF+B3yUgEUQ5ymZX3fch4Tb2AweMr8+5dRdE9B
+	R7/75xwVST2qEKr6WV5aAOjvwsl2IdZWCBUWQa8JP+RJq7SKInB1pE+TSaLiHhAhhArg8Wd4uoLjy
+	bMDQ9D3Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTL5O-0003PC-Up; Tue, 28 Apr 2020 07:55:22 +0000
+	id 1jTL8Q-0005G5-B2; Tue, 28 Apr 2020 07:58:30 +0000
 Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTL5A-0002L3-Ow
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:55:10 +0000
+ id 1jTL8G-0005Fj-3p
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 07:58:21 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id D71FD5801B9;
- Tue, 28 Apr 2020 03:55:06 -0400 (EDT)
+ by mailnew.nyi.internal (Postfix) with ESMTP id 53D78580139;
+ Tue, 28 Apr 2020 03:58:19 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Tue, 28 Apr 2020 03:55:06 -0400
+ by compute4.internal (MEProxy); Tue, 28 Apr 2020 03:58:19 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=3Ly4DUDSUpkyQ57Uyx52tImyR/V
- 7cGw1VRugpX+pW4g=; b=o2owi7ebNFkyAxuDt0S0E4gMjDAPl+rlEs413NF3wrZ
- QD1LxrZMT1bx9d2Xiaht6gsGzwmwE39UCG1jJlPr+LlxzLWfDZC3TSsy5EeG4dBB
- +Ld7llM3WFIeiQn+ZuobU870M87rwbTpC4bzFGo85lDtxtm/LzY27SLRWRs7RbKV
- vL0s+ouSm+pLTydOadSYn7pNPkxHWyYIFPdAOBbix61Eyxd0lEMBsvQbxJTpMIWr
- MAkZSpvQnttVf1DQb1OoAzRpcVBJyquSbmXgZIz081PW4JFbxRSAtOL93jhkKYG7
- wf3nY/mU8pAqJ14oHC3mokmxqCUctXka1bFpnSFNqww==
+ :content-type:in-reply-to; s=fm2; bh=E2zDRhRAXT59srKZrN/sdPOtf/1
+ VxLhZFcu+n6RQ+70=; b=e+s/MFO1aKDyXc98fjOF6sGkjUtEDWkRrtpM1gXl59Y
+ /4bEIjhRPD8pcErFk+EStYtKDaXCs3erk4Cifkz4VNoPzt7YcisKqsXB3oemRy9G
+ jWXc95m9/dApLNcaJ78xwkS/aUmQ+3Gq2GS5OLevDuwMjFs+v4rWl2SFJ2l4r//M
+ g8tXmawyEt7QgMxu2cKcvQA5dHWxVI7+HSSBhGxjD3QC9Rm6f1sedhccHvfZo9kN
+ UCCGHR/QdLfbOW5j8iSpojFHZGXIFfM5RI2RE33GrhW+OZi5jv14ChIpm4OyV1IW
+ vAxuwUvzNrz4V5a0+qrUIxfw3EzSJD/zAYqpSPNPRAg==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=3Ly4DU
- DSUpkyQ57Uyx52tImyR/V7cGw1VRugpX+pW4g=; b=rmOcc2Vnwerk37bE3zrswg
- JZZRXT/vUZOSv1thw+gTfqY7sq4K45Dh8UWjurjZaEYhNDXBsW2Ek/yVk5lFdsFa
- mBF1FsL50xFPW30cFD2s9CLue8c3xG6JC9HnTRCitN9caGh8e+D21TxdM4g6z+Jw
- pgyt75yoIFYHdncoYOlB+B9y5hRjAAdGQ2QxOBuqzekL4/jdE51RxjhSdep+xsjt
- 7+IVtBaDdMXesFbmSYmc8j2RApLOPdPFeneP7aDN7QrdQ9ha0C1xU8zhctTdSNk1
- +3WsWVtFSxsMeCIhXsvOknaJnA0+PeDtXKXACnyPQGYTLhl5WrvsrEMq9P94En2A
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=E2zDRh
+ RAXT59srKZrN/sdPOtf/1VxLhZFcu+n6RQ+70=; b=G+Do9nnyXMVKs+tVrfUW/x
+ lPzV2CSYXrAZkSaVCBm8LxW0KlOHZVn9VpMs49KE4FlxhYhgJO/d/Q53fJcYnF+8
+ 6ls8hCtb2voX1zGPjVnPqdyhV4fv4uCxKDJPytvXJvJZkUS/JHqHG6WYheSXpFy5
+ CxI/V1qdyujXz/Cdvy+bGl8wEk1XFGFB+jSqCug+MjESFUqjs3ZCKpcxNX3fBoYd
+ z2NjTa32fi4kGAWZrUsom6+C5weSGcXrvjKADn6MhaUAzKqpxAgY+pcp+99oR4XY
+ ST0uuaNKIQ07k83mmeCygu2IHyLZw7lw0z1bbJ7adAE1JAxPAwQ7w1ounSwPMseA
  ==
-X-ME-Sender: <xms:WeGnXr2kiIe9Nna4uMsIplj4cWOL8LkAS7YpQUgKGiIVH6O6E18E6g>
+X-ME-Sender: <xms:GuKnXlQp9-TvG0uZNDh0JTcfGTyDVOWb_vI5cCDQ7sHPnzaPNX-U3Q>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedriedtgdduvddvucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddvnecuhfhrohhmpeforgigihhm
- vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecuffhomhgrih
- hnpeguvghvihgtvghtrhgvvgdrohhrghenucfkphepledtrdekledrieekrdejieenucev
- lhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvg
- estggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:WeGnXkKXNeQAHdF25E0lMqJFjK8KyV4BTYiOoi9a-n7xlygAo2ykGg>
- <xmx:WeGnXuwLDE6M2xiVAnbufxzc7f_WjQtfmPAUuqd5KE_YQs12eIT9Uw>
- <xmx:WeGnXowGzHwORiE6YCTQVXbShNboMDsHPdPWmKMkFirCUqH8uhdflA>
- <xmx:WuGnXs_B6lTCI76oCVDXt1qyT7caIAhVUlOWIvduG1BvzvG4AujUXg>
+ cujfgurhepfffhvffukfhfgggtuggjsehgtderredttddunecuhfhrohhmpeforgigihhm
+ vgcutfhiphgrrhguuceomhgrgihimhgvsegtvghrnhhordhtvggthheqnecukfhppeeltd
+ drkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghi
+ lhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:GuKnXpCuCThrunnZ6dFJYzWl3_95Qc-NEcGLy3N09_n9Nz8qtkDHdw>
+ <xmx:GuKnXsmBtkjBZaH7hPWjH0_OynDP__2OulZYbSq882aHtQ-wCIC7tA>
+ <xmx:GuKnXhkewsyxDRHdqfwjYNbJ49HYxCPwbj3_A4iYLuIMRF6pUtU41g>
+ <xmx:G-KnXhewACw1mmiW1mKWwm47E5k5TAvNIRXUXQPs-9F1wK6umaOnwg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id AF3543280065;
- Tue, 28 Apr 2020 03:55:05 -0400 (EDT)
-Date: Tue, 28 Apr 2020 09:55:04 +0200
+ by mail.messagingengine.com (Postfix) with ESMTPA id 025803280067;
+ Tue, 28 Apr 2020 03:58:17 -0400 (EDT)
+Date: Tue, 28 Apr 2020 09:58:16 +0200
 From: Maxime Ripard <maxime@cerno.tech>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v7 1/3] media: dt-bindings: ov8856: Document YAML bindings
-Message-ID: <20200428075504.ovzugt2mbgan7z3k@gilmour.lan>
-References: <20200408110816.2712841-1-robert.foss@linaro.org>
- <20200408110816.2712841-2-robert.foss@linaro.org>
- <20200415160729.GA4438@bogus>
- <20200415162110.bmorj4u4hkqohqjx@pengutronix.de>
- <CAG3jFysg34=HJ7xefuAKw4Uq6W0POm5TsJmzQku6WwkhH_j=-w@mail.gmail.com>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH 2/7] arm: dts: sunxi: h3/h5: Add HDMI audio
+Message-ID: <20200428075816.p46abv7rrnlg6my6@gilmour.lan>
+References: <20200426120442.11560-1-peron.clem@gmail.com>
+ <20200426120442.11560-3-peron.clem@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAG3jFysg34=HJ7xefuAKw4Uq6W0POm5TsJmzQku6WwkhH_j=-w@mail.gmail.com>
+In-Reply-To: <20200426120442.11560-3-peron.clem@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_005508_999397_A462AD2E 
-X-CRM114-Status: GOOD (  21.70  )
+X-CRM114-CacheID: sfid-20200428_005820_295326_1364CC7D 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -87,10 +83,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [66.111.4.221 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.221 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -110,164 +106,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
- Marco Felsch <m.felsch@pengutronix.de>, Tomasz Figa <tfiga@chromium.org>,
- Sakari Ailus <sakari.ailus@iki.fi>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============8872496222828953434=="
+Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
+ linux-kernel@vger.kernel.org, linux-sunxi <linux-sunxi@googlegroups.com>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Takashi Iwai <tiwai@suse.com>,
+ Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7447498742924845130=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8872496222828953434==
+--===============7447498742924845130==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="bgh5jcvervb4fpgs"
+	protocol="application/pgp-signature"; boundary="bats57frlj3pqipa"
 Content-Disposition: inline
 
 
---bgh5jcvervb4fpgs
-Content-Type: text/plain; charset=us-ascii
+--bats57frlj3pqipa
+Content-Type: text/plain; charset=iso-8859-1
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Mon, Apr 27, 2020 at 05:13:42PM +0200, Robert Foss wrote:
-> On Wed, 15 Apr 2020 at 18:21, Marco Felsch <m.felsch@pengutronix.de> wrot=
-e:
-> >
-> > On 20-04-15 11:07, Rob Herring wrote:
-> > > On Wed, Apr 08, 2020 at 01:08:14PM +0200, Robert Foss wrote:
-> > > > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > >
-> > > > This patch adds documentation of device tree in YAML schema for the
-> > > > OV8856 CMOS image sensor.
-> > > >
-> > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > > ---
-> > > >
-> > > > - Changes since v6:
-> > > >   * Marco: remove qcom specifics from DT example
-> > > >
-> > > > - Changes since v5:
-> > > >   * Add assigned-clocks and assigned-clock-rates
-> > > >   * robher: dt-schema errors
-> > > >
-> > > > - Changes since v4:
-> > > >   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in descrip=
-tion
-> > > >   * Add clock-lanes property to example
-> > > >   * robher: Fix syntax error in devicetree example
-> > > >
-> > > > - Changes since v3:
-> > > >   * robher: Fix syntax error
-> > > >   * robher: Removed maxItems
-> > > >   * Fixes yaml 'make dt-binding-check' errors
-> > > >
-> > > > - Changes since v2:
-> > > >   Fixes comments from from Andy, Tomasz, Sakari, Rob.
-> > > >   * Convert text documentation to YAML schema.
-> > > >
-> > > > - Changes since v1:
-> > > >   Fixes comments from Sakari, Tomasz
-> > > >   * Add clock-frequency and link-frequencies in DT
-> > > >
-> > > >  .../devicetree/bindings/media/i2c/ov8856.yaml | 143 ++++++++++++++=
-++++
-> > > >  MAINTAINERS                                   |   1 +
-> > > >  2 files changed, 144 insertions(+)
-> > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8=
-856.yaml
-> > > >
-> > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yam=
-l b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > > > new file mode 100644
-> > > > index 000000000000..96bef5403d7e
-> > > > --- /dev/null
-> > > > +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> > > > @@ -0,0 +1,143 @@
-> > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > +# Copyright (c) 2019 MediaTek Inc.
-> > > > +%YAML 1.2
-> > > > +---
-> > > > +$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
-> > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > +
-> > > > +title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
-> > > > +
-> > > > +maintainers:
-> > > > +  - Ben Kao <ben.kao@intel.com>
-> > > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > +
-> > > > +description: |-
-> > > > +  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapix=
-el, CMOS
-> > > > +  image sensor that delivers 3264x2448 at 30fps. It provides full-=
-frame,
-> > > > +  sub-sampled, and windowed 10-bit MIPI images in various formats =
-via the
-> > > > +  Serial Camera Control Bus (SCCB) interface. This chip is program=
-mable
-> > > > +  through I2C and two-wire SCCB. The sensor output is available vi=
-a CSI-2
-> > > > +  serial data output (up to 4-lane).
-> > > > +
-> > > > +properties:
-> > > > +  compatible:
-> > > > +    const: ovti,ov8856
-> > > > +
-> > > > +  reg:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  clocks:
-> > > > +    maxItems: 1
-> > > > +
-> > > > +  clock-names:
-> > > > +    description:
-> > > > +      Input clock for the sensor.
-> > > > +    items:
-> > > > +      - const: xvclk
-> > > > +
-> > > > +  assigned-clocks:
-> > > > +    description:
-> > > > +      Input clock for the sensor.
-> > > > +
-> > > > +  assigned-clock-rates:
-> > > > +    description:
-> > > > +      Frequency of the xvclk clock in Hertz.
-> > >
-> > > These 2 should have a 'maxItems: 1'
-> >
-> > Don't know why those properties are needed here.. IMHO this shouldn't be
-> > part of the binding or at least it should be optional and not required.
-> > All we need is the clocks and the clock-names property.
->=20
-> Thanks Marco, I'll make it optional for the next revision.
+Hi,
 
-Well, the whole discussion we had was about removing them entirely?
+On Sun, Apr 26, 2020 at 02:04:37PM +0200, Cl=E9ment P=E9ron wrote:
+> From: Marcus Cooper <codekipper@gmail.com>
+>=20
+> Add a simple-soundcard to link audio between HDMI and I2S.
+>=20
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> Signed-off-by: Cl=E9ment P=E9ron <peron.clem@gmail.com>
+> ---
+>  arch/arm/boot/dts/sunxi-h3-h5.dtsi | 21 +++++++++++++++++++++
+>  1 file changed, 21 insertions(+)
+>=20
+> diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi=
+-h3-h5.dtsi
+> index 9be13378d4df..3a4262294950 100644
+> --- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+> +++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
+> @@ -105,6 +105,25 @@
+>  		status =3D "disabled";
+>  	};
+> =20
+> +	hdmi_sound: hdmi-sound {
+> +		compatible =3D "simple-audio-card";
+> +		simple-audio-card,format =3D "i2s";
+> +		simple-audio-card,name =3D "allwinner,hdmi";
+> +		simple-audio-card,mclk-fs =3D <128>;
+> +		simple-audio-card,frame-inversion;
+> +		status =3D "disabled";
+> +
+> +		simple-audio-card,codec {
+> +			sound-dai =3D <&hdmi>;
+> +		};
+> +
+> +		simple-audio-card,cpu {
+> +			sound-dai =3D <&i2s2>;
+> +			dai-tdm-slot-num =3D <2>;
+> +			dai-tdm-slot-width =3D <32>;
+> +		};
+> +	};
+> +
+>  	soc {
+>  		compatible =3D "simple-bus";
+>  		#address-cells =3D <1>;
+> @@ -672,6 +691,7 @@
+>  			dmas =3D <&dma 27>;
+>  			resets =3D <&ccu RST_BUS_I2S2>;
+>  			dma-names =3D "tx";
+> +			allwinner,playback-channels =3D <8>;
+
+This property doesn't exist in the binding
 
 Maxime
 
---bgh5jcvervb4fpgs
+--bats57frlj3pqipa
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqfhWAAKCRDj7w1vZxhR
-xXg4AP9QpJm1SeDBHxg+crTVi5icwwj1p96ALN1LEBBdS0vlzgD+IHz1H62cHcBI
-cgbH2BwkU2AT26cxWg6C2u5UtOXswQQ=
-=qFiE
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqfiGAAKCRDj7w1vZxhR
+xXKlAQCv6MNWlrAX1U69XHGf0wvaL+nfygE1iVSzCRhMAp+wdAD/d9UJm7+SpDnw
+YKDqJ4jLcBeUm3rEGjBnSLcIByUUNwI=
+=l3WT
 -----END PGP SIGNATURE-----
 
---bgh5jcvervb4fpgs--
+--bats57frlj3pqipa--
 
 
---===============8872496222828953434==
+--===============7447498742924845130==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -278,5 +209,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8872496222828953434==--
+--===============7447498742924845130==--
 
