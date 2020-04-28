@@ -2,123 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BFAB01BD0B7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 01:50:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 147101BD0C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 01:52:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S11jBoATsAJ57T0PU7Ihgc+SWxnAA+wlKeFDXt3FvHQ=; b=U8hM1ahLzufKul
-	AbO/jPmD2QjZEnbwS8Z/bQVZdpF9FcpzqxuHXrDVev5YTSYFrWFUCwrFhFxf4BMjVvsQ2iSAEG/eM
-	Gy5bJok6IU7F2Fi1NTohAgvZGXFs4P5cwdsPvTI1PzcWzUWHhw22sPhRHK1N/NkSfGcrZUMHnNoo9
-	ZcKCFeLRKxB2t0ZZpW3Z79onhOmQudSPdcaE+bQikjgdw7wjv/dixEwzE5L/W5JG2sX6cTT6w/f55
-	J9Au5pw9e3a6huUWcBB1HFuXAgTWGhoQ7XuuaboxlRen9XBoIcCw2WfAgPT6jp50rgl0YIT1L30+F
-	fdvWHlW6YYTCWxA4Q+lg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=W/HIgEnlL8x1s458dpjrudqCH/AgOnqYAWXlAdeLJiw=; b=ETSGCdnOXt7y9xwsYBBwX8Eyy
+	pS9176UWdmzUQlMlljcn/p/cQ0k7zDXqBjSqcI17jtKzJXSmgFpulsptAVPjZA9X94LQ7aPNfHBpj
+	gBWFG1LSNw65fxbmpDbIfh7oWEJsbws8DxSRTxUwSXWHwF2VA3P5cFHrnwiU+WJJlurmkhmDLdEuY
+	w7pTDIj0B8tlIU1g1vlT6fOUnz6UToHyZ4P2ndHIXdp+ET6Zq34n4x/VMLgBHz0x9rEZ/MV5gMHYx
+	01ZwHs+LxypHAXr1DRgBXzULqoQpSkO95bolUKry8FKI2Uu4rri8JM/kRaT5Qcc/ZBzrFa+kFB5r/
+	8No9n8Jyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTZzB-000312-3h; Tue, 28 Apr 2020 23:49:57 +0000
-Received: from mail-co1nam11olkn2029.outbound.protection.outlook.com
- ([40.92.18.29] helo=NAM11-CO1-obe.outbound.protection.outlook.com)
+	id 1jTa1V-0006JH-8t; Tue, 28 Apr 2020 23:52:21 +0000
+Received: from sed198n136.sedsystems.ca ([198.169.180.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTZz1-0002zu-74
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 23:49:48 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NCpnuG92b/4TXsAzJg383vLjb/UNNne1WmQ1KgFnbYAoFvakFSqcTba7/wPvgRPU+kuKLNUSyLZDWkREmF9lYuvUTvy6gQ4HgNcUkTI3ftgUi6CZDPENiTcoRbLnOirJiBxIVfrpDSVGBqyUF0uBspUNuIuUqlFHuCLRf+Nk7F09E9231OgpdH2oUs2qrA4UqTdvmJE82nbQB2yUS/hRD+fDT4BKVtf7J8wBNLn4vF4IXCBaAQnVnFS5Dbn9I+w2eDjkbrXH8InVsvvtciX74/j4jBX+a8L2r999kEXVUWGZ1Svr5HlMqhG8c4QVW/BrNn+p9I9lWww4hjdBtO7B0A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7o2b4VOkqLcT8Z37/4J4wISDZ/GXzpWzfr4qlYl9VAM=;
- b=TvuQ6OdHP6hkeeoUTLL6hPNyzL+2CSQ1Mzeqw8QsUQgDxGb+pJCU+rlB8Bd9kAIcR+et92YvW3Jz2hbzu9KUSA4rrUe+rX5Qd8gN7hwOlM24jS2lDumHXeL1Un/IfliZZBXXvblJ1oWBjOqg7aPyTt4lDAKgVrxlnTZUs7xUBnltLnSw6uHOPBlaFxawAF5TPE8xVm6tDh4vLT7yC26Z5plx5kxfM+o7WZhgAVKmOHHta4AqICMBz6wg+sW+P04mHLpVXzoSZ6Ew4fhU+XRe4At168EL5G77fo0Qx7ieC3QolWulqpM5pa10nctcLfxa9kTsBoBvMu6nW1hGy7xkyg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
- header.d=live.ca; arc=none
-Received: from CO1NAM11FT035.eop-nam11.prod.protection.outlook.com
- (2a01:111:e400:3861::49) by
- CO1NAM11HT136.eop-nam11.prod.protection.outlook.com (2a01:111:e400:3861::330)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.15; Tue, 28 Apr
- 2020 23:49:44 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:3861::4d) by CO1NAM11FT035.mail.protection.outlook.com
- (2a01:111:e400:3861::292) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.19 via Frontend
- Transport; Tue, 28 Apr 2020 23:49:44 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:C12EF5187D361EFD1EB31559DCB06F2DB769488FFA1C4A24ADD8F4E82E63E26D;
- UpperCasedChecksum:2CF29841EE3EFB20F02EEB309A3157F140C85DE9B5A33AA07DC9EA996E993811;
- SizeAsReceived:9168; Count:50
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2937.023; Tue, 28 Apr 2020
- 23:49:40 +0000
-Subject: Re: [PATCH 02/13] arm: dts: s5pv210: fascinate4g: Add sleep GPIO
- configuration
-To: Krzysztof Kozlowski <krzk@kernel.org>
-References: <20200426183604.28494-1-xc-racer2@live.ca>
- <BN6PR04MB0660532FF97089208CCEEB2AA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
- <20200428100244.GA23963@kozik-lap>
-From: Jonathan Bakker <xc-racer2@live.ca>
-Message-ID: <BN6PR04MB06605BE9E1559751E083B4E4A3AC0@BN6PR04MB0660.namprd04.prod.outlook.com>
-Date: Tue, 28 Apr 2020 16:49:36 -0700
+ id 1jTa1L-0006I3-6y
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 23:52:13 +0000
+Received: from barney.sedsystems.ca (barney [198.169.180.121])
+ by sed198n136.sedsystems.ca  with ESMTP id 03SNpxH7030661
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Tue, 28 Apr 2020 17:51:59 -0600 (CST)
+Received: from [192.168.233.77] (ovpn77.sedsystems.ca [192.168.233.77])
+ by barney.sedsystems.ca (8.14.7/8.14.4) with ESMTP id 03SNpwW6013339
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NO);
+ Tue, 28 Apr 2020 17:51:58 -0600
+Subject: Re: Xilinx axienet 1000BaseX support
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20200110152215.GF25745@shell.armlinux.org.uk>
+ <20200110170457.GH25745@shell.armlinux.org.uk>
+ <20200118112258.GT25745@shell.armlinux.org.uk>
+ <3b28dcb4-6e52-9a48-bf9c-ddad4cf5e98a@arm.com>
+ <20200120154554.GD25745@shell.armlinux.org.uk>
+ <20200127170436.5d88ca4f@donnerap.cambridge.arm.com>
+ <20200127185344.GA25745@shell.armlinux.org.uk>
+ <bf2448d0-390c-5045-3503-885240829fbf@sedsystems.ca>
+ <20200422075124.GJ25745@shell.armlinux.org.uk>
+ <8a829647-34a8-6e6a-05cf-76f5e88b8410@sedsystems.ca>
+ <20200428230112.GS25745@shell.armlinux.org.uk>
+From: Robert Hancock <hancock@sedsystems.ca>
+Message-ID: <d44d53d1-6718-e2d1-1186-b4f06d2b74cd@sedsystems.ca>
+Date: Tue, 28 Apr 2020 17:51:58 -0600
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
-In-Reply-To: <20200428100244.GA23963@kozik-lap>
-Content-Language: en-US
-X-ClientProxiedBy: MWHPR20CA0022.namprd20.prod.outlook.com
- (2603:10b6:300:13d::32) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <f7e0d6ca-5c5e-5865-7aa0-105bec9799d8@live.ca>
+ Firefox/68.0 Thunderbird/68.7.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [IPv6:2001:569:fb67:7300:9f89:4b96:de0b:cd14]
- (2001:569:fb67:7300:9f89:4b96:de0b:cd14) by
- MWHPR20CA0022.namprd20.prod.outlook.com (2603:10b6:300:13d::32) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.19 via Frontend
- Transport; Tue, 28 Apr 2020 23:49:39 +0000
-X-Microsoft-Original-Message-ID: <f7e0d6ca-5c5e-5865-7aa0-105bec9799d8@live.ca>
-X-TMN: [urxjVJmIoHa3wwJ+XOyxKQ2Ug8VtqWSjlFzV2QePtD5/pyVmwnRcmQ5yxF4WUN+O]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 50
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 1e061ef5-4c7f-4618-dbde-08d7ebced12c
-X-MS-TrafficTypeDiagnostic: CO1NAM11HT136:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: XQhSjac/clKMJB0hJ8kLDiuA5OsD6rcBE9cIkoJDLu3VjmqqFqBn+AHzENkuTQw27Bq6F5e8nAgsrXW9IMhOsLQhhpidfsUjnX6nBRP7wK1Og0tJnLIRjV1qv8TLP6DkH5roLTedvb5W4mGvHNW6ABrxzgsaxYQx+cRPiqbaMV+lOgl/HauyzcfjQylR/9ab1he63hLPsq8ChXwQ21B13Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: spED9M2pDCHmVrPNLg4X4PE0pFnGJByvR/1V7EZZIV2SeBfZzI7BkG78WWWeOfH6E+x7BIsqZ23qUZOULMmuVnEb5cKHibA+iuKdxu5bFJgZBTyuTz43aYsH0mrpGcjMHaZHI9sCQ9q8Ws9JNJLFy1kosKoFjjms5SwMVy39lkLgBrWfdD7Yyb2g0DlXfO45nfVW+Wih0hbhZlA34i7YWA==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 1e061ef5-4c7f-4618-dbde-08d7ebced12c
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 28 Apr 2020 23:49:40.5131 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO1NAM11HT136
+In-Reply-To: <20200428230112.GS25745@shell.armlinux.org.uk>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.64 on 198.169.180.136
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_164947_263963_CD9B66EA 
-X-CRM114-Status: GOOD (  16.62  )
-X-Spam-Score: 2.6 (++)
+X-CRM114-CacheID: sfid-20200428_165211_372862_C12B11E2 
+X-CRM114-Status: GOOD (  27.61  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (2.6 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.18.29 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [198.169.180.136 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.18.29 listed in wl.mailspike.net]
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
- 1.6 FORGED_MUA_MOZILLA     Forged mail pretending to be from Mozilla
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -130,312 +76,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
+Cc: Andrew Lunn <andrew@lunn.ch>, Andre Przywara <andre.przywara@arm.com>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Krzysztof,
-
-On 2020-04-28 3:02 a.m., Krzysztof Kozlowski wrote:
-> On Sun, Apr 26, 2020 at 11:35:53AM -0700, Jonathan Bakker wrote:
->> In order to minimize leakage current during sleep, set a config
->> for sleep GPIOs.
+On 2020-04-28 5:01 p.m., Russell King - ARM Linux admin wrote:
+> On Tue, Apr 28, 2020 at 03:59:45PM -0600, Robert Hancock wrote:
+>> On 2020-04-22 1:51 a.m., Russell King - ARM Linux admin wrote:
+>>> On Tue, Apr 21, 2020 at 07:45:47PM -0600, Robert Hancock wrote:
+>>>> Hi Andre/Russell,
+>>>>
+>>>> Just wondering where things got to with the changes for SGMII on Xilinx
+>>>> axienet that you were discussing (below)? I am looking into our Xilinx setup
+>>>> using 1000BaseX SFP and trying to get it working "properly" with newer
+>>>> kernels. My understanding is that the requirements for 1000BaseX and SGMII
+>>>> are somewhat similar. I gathered that SGMII was working somewhat already,
+>>>> but that not all link modes had been tested. However, it appears 1000BaseX
+>>>> is not yet working in the stock kernel.
+>>>>
+>>>> The way I had this working before with a 4.19-based kernel was basically a
+>>>> hack to phylink to allow the Xilinx PCS/PMA PHY to be configured
+>>>> sufficiently as a PHY for it to work, and mostly ignored the link status of
+>>>> the SFP PHY itself, even though we were using in-band signalling mode with
+>>>> an SFP module. That was using this patch:
+>>>>
+>>>> https://patchwork.ozlabs.org/project/netdev/patch/1559330285-30246-5-git-send-email-hancock@sedsystems.ca/
+>>>>
+>>>> Of course, that's basically just a hack which I suspect mostly worked by
+>>>> luck. I see that there are some helpers that were added to phylink to allow
+>>>> setting PHY advertisements and reading PHY status from clause 22 PHY
+>>>> devices, so I'm guessing that is the way to go in this case? Something like:
+>>>>
+>>>> axienet_mac_config: if using in-band mode, use
+>>>> phylink_mii_c22_pcs_set_advertisement to configure the Xilinx PHY.
+>>>>
+>>>> axienet_mac_pcs_get_state: use phylink_mii_c22_pcs_get_state to get the MAC
+>>>> PCS state from the Xilinx PHY
+>>>>
+>>>> axienet_mac_an_restart: if using in-band mode, use
+>>>> phylink_mii_c22_pcs_an_restart to restart autonegotiation on Xilinx PHY
+>>>>
+>>>> To use those c22 functions, we need to find the mdio_device that's
+>>>> referenced by the phy-handle in the device tree - I guess we can just use
+>>>> some of the guts of of_phy_find_device to do that?
+>>>
+>>> Please see the code for DPAA2 - it's changed slightly since I sent a
+>>> copy to the netdev mailing list, and it still isn't clear whether this
+>>> is the final approach (DPAA2 has some fun stuff such as several
+>>> different PHYs at address 0.) NXP basically didn't like the approach
+>>> I had in the patches I sent to netdev, we had a call, they presented
+>>> an alternative appraoch, I implemented it, then they decided my
+>>> original approach was the better solution for their situation.
+>>>
+>>> See http://git.armlinux.org.uk/cgit/linux-arm.git/log/?h=cex7
+>>>
+>>> specifically the patches from:
+>>>
+>>>     "dpaa2-mac: add 1000BASE-X/SGMII PCS support"
+>>>
+>>> through to:
+>>>
+>>>     "net: phylink: add interface to configure clause 22 PCS PHY"
+>>>
+>>> You may also need some of the patches further down in the net-queue
+>>> branch:
+>>>
+>>>     "net: phylink: avoid mac_config calls"
+>>>
+>>> through to:
+>>>
+>>>     "net: phylink: rejig link state tracking"
 >>
->> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
->> ---
->>  arch/arm/boot/dts/s5pv210-fascinate4g.dts | 242 ++++++++++++++++++++++
->>  1 file changed, 242 insertions(+)
+>> I've been playing with this a bit on a 5.4 kernel with some of these patches
+>> backported. However, I'm running into something that my previous hacks for
+>> this basically dealt with as a side effect: when phylink_start is called,
+>> sfp_upstream_start gets called, an SFP module is detected,
+>> phylink_connect_phy gets called, but then it hits this condition and bails
+>> out, because we are using INBAND mode with 1000BaseX:
 >>
->> diff --git a/arch/arm/boot/dts/s5pv210-fascinate4g.dts b/arch/arm/boot/dts/s5pv210-fascinate4g.dts
->> index 07a8d9bbe5b8..94dcb9b64b9a 100644
->> --- a/arch/arm/boot/dts/s5pv210-fascinate4g.dts
->> +++ b/arch/arm/boot/dts/s5pv210-fascinate4g.dts
->> @@ -36,3 +36,245 @@
->>  		};
->>  	};
->>  };
->> +
->> +&pinctrl0 {
->> +	pinctrl-names = "default";
->> +	pinctrl-0 = <&sleep_cfg>;
->> +
->> +	sleep_cfg: sleep-cfg {
->> +		PIN_SLP(gpa0-0, PREV, NONE);
->> +		PIN_SLP(gpa0-1, PREV, NONE);
->> +		PIN_SLP(gpa0-2, PREV, NONE);
->> +		PIN_SLP(gpa0-3, OUT1, NONE);
+>> 	if (WARN_ON(pl->cfg_link_an_mode == MLO_AN_FIXED ||
+>> 		    (pl->cfg_link_an_mode == MLO_AN_INBAND &&
+>> 		     phy_interface_mode_is_8023z(interface))))
+>> 		return -EINVAL;
 > 
-> I would be happy to see some reasoning why certain pins have disabled
-> pull down (e.g. they are not connected or you use the same configuration
-> as running one) and why you set them as output.
-> 
+> I'm expecting SGMII mode to be used when there's an external PHY as
+> that gives greatest flexibility (as it allows 10 and 100Mbps speeds
+> as well.)  From what I remember, these blocks support SGMII, so it
+> should just be a matter of adding that.
 
-Mostly it's copied from the vendor kernel configuration.  Without schematics, I can
-only guess what's actually there.  I can go through and note what each pin appears
-to be used for if you'd like.
-
->> +		PIN_SLP(gpa0-4, PREV, NONE);
->> +		PIN_SLP(gpa0-5, PREV, NONE);
->> +		PIN_SLP(gpa0-6, PREV, NONE);
->> +		PIN_SLP(gpa0-7, PREV, NONE);
->> +
->> +		PIN_SLP(gpa1-0, INPUT, DOWN);
->> +		PIN_SLP(gpa1-1, OUT0, NONE);
->> +		PIN_SLP(gpa1-2, INPUT, DOWN);
->> +		PIN_SLP(gpa1-3, OUT0, NONE);
->> +
->> +		PIN_SLP(gpb-0, OUT0, NONE);
->> +		PIN_SLP(gpb-1, OUT1, NONE);
->> +		PIN_SLP(gpb-2, OUT0, NONE);
->> +		PIN_SLP(gpb-3, PREV, NONE);
->> +		PIN_SLP(gpb-4, INPUT, NONE);
->> +		PIN_SLP(gpb-5, PREV, NONE);
->> +		PIN_SLP(gpb-6, INPUT, DOWN);
->> +		PIN_SLP(gpb-7, OUT0, NONE);
->> +
->> +		PIN_SLP(gpc0-0, OUT0, NONE);
->> +		PIN_SLP(gpc0-1, INPUT, DOWN);
->> +		PIN_SLP(gpc0-2, OUT0, NONE);
->> +		PIN_SLP(gpc0-3, INPUT, DOWN);
->> +		PIN_SLP(gpc0-4, OUT0, NONE);
->> +
->> +		PIN_SLP(gpc1-0, INPUT, DOWN);
->> +		PIN_SLP(gpc1-1, INPUT, DOWN);
->> +		PIN_SLP(gpc1-2, INPUT, DOWN);
->> +		PIN_SLP(gpc1-3, INPUT, DOWN);
->> +		PIN_SLP(gpc1-4, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpd0-0, INPUT, DOWN);
->> +		PIN_SLP(gpd0-1, OUT0, NONE);
->> +		PIN_SLP(gpd0-2, INPUT, DOWN);
->> +		PIN_SLP(gpd0-3, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpd1-0, INPUT, NONE);
->> +		PIN_SLP(gpd1-1, INPUT, NONE);
->> +		PIN_SLP(gpd1-2, INPUT, DOWN);
->> +		PIN_SLP(gpd1-3, INPUT, DOWN);
->> +		PIN_SLP(gpd1-4, INPUT, DOWN);
->> +		PIN_SLP(gpd1-5, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpe0-0, INPUT, DOWN);
->> +		PIN_SLP(gpe0-1, INPUT, DOWN);
->> +		PIN_SLP(gpe0-2, INPUT, DOWN);
->> +		PIN_SLP(gpe0-3, INPUT, DOWN);
->> +		PIN_SLP(gpe0-4, INPUT, DOWN);
->> +		PIN_SLP(gpe0-5, INPUT, DOWN);
->> +		PIN_SLP(gpe0-6, INPUT, DOWN);
->> +		PIN_SLP(gpe0-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpe1-0, INPUT, DOWN);
->> +		PIN_SLP(gpe1-1, INPUT, DOWN);
->> +		PIN_SLP(gpe1-2, INPUT, DOWN);
->> +		PIN_SLP(gpe1-3, OUT0, NONE);
->> +		PIN_SLP(gpe1-4, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpf0-0, OUT0, NONE);
->> +		PIN_SLP(gpf0-1, OUT0, NONE);
->> +		PIN_SLP(gpf0-2, OUT0, NONE);
->> +		PIN_SLP(gpf0-3, OUT0, NONE);
->> +		PIN_SLP(gpf0-4, OUT0, NONE);
->> +		PIN_SLP(gpf0-5, OUT0, NONE);
->> +		PIN_SLP(gpf0-6, OUT0, NONE);
->> +		PIN_SLP(gpf0-7, OUT0, NONE);
->> +
->> +		PIN_SLP(gpf1-0, OUT0, NONE);
->> +		PIN_SLP(gpf1-1, OUT0, NONE);
->> +		PIN_SLP(gpf1-2, OUT0, NONE);
->> +		PIN_SLP(gpf1-3, OUT0, NONE);
->> +		PIN_SLP(gpf1-4, OUT0, NONE);
->> +		PIN_SLP(gpf1-5, OUT0, NONE);
->> +		PIN_SLP(gpf1-6, OUT0, NONE);
->> +		PIN_SLP(gpf1-7, OUT0, NONE);
->> +
->> +		PIN_SLP(gpf2-0, OUT0, NONE);
->> +		PIN_SLP(gpf2-1, OUT0, NONE);
->> +		PIN_SLP(gpf2-2, OUT0, NONE);
->> +		PIN_SLP(gpf2-3, OUT0, NONE);
->> +		PIN_SLP(gpf2-4, OUT0, NONE);
->> +		PIN_SLP(gpf2-5, OUT0, NONE);
->> +		PIN_SLP(gpf2-6, OUT0, NONE);
->> +		PIN_SLP(gpf2-7, OUT0, NONE);
->> +
->> +		PIN_SLP(gpf3-0, OUT0, NONE);
->> +		PIN_SLP(gpf3-1, OUT0, NONE);
->> +		PIN_SLP(gpf3-2, OUT0, NONE);
->> +		PIN_SLP(gpf3-3, OUT0, NONE);
->> +		PIN_SLP(gpf3-4, PREV, NONE);
->> +		PIN_SLP(gpf3-5, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpg0-0, INPUT, DOWN);
->> +		PIN_SLP(gpg0-1, INPUT, DOWN);
->> +		PIN_SLP(gpg0-2, INPUT, NONE);
->> +		PIN_SLP(gpg0-3, INPUT, DOWN);
->> +		PIN_SLP(gpg0-4, INPUT, DOWN);
->> +		PIN_SLP(gpg0-5, INPUT, DOWN);
->> +		PIN_SLP(gpg0-6, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpg1-0, OUT0, NONE);
->> +		PIN_SLP(gpg1-1, OUT1, NONE);
->> +		PIN_SLP(gpg1-2, PREV, NONE);
->> +		PIN_SLP(gpg1-3, OUT1, NONE);
->> +		PIN_SLP(gpg1-4, OUT1, NONE);
->> +		PIN_SLP(gpg1-5, OUT1, NONE);
->> +		PIN_SLP(gpg1-6, OUT1, NONE);
->> +
->> +		PIN_SLP(gpg2-0, OUT0, NONE);
->> +		PIN_SLP(gpg2-1, OUT0, NONE);
->> +		PIN_SLP(gpg2-2, INPUT, NONE);
->> +		PIN_SLP(gpg2-3, OUT0, NONE);
->> +		PIN_SLP(gpg2-4, OUT0, NONE);
->> +		PIN_SLP(gpg2-5, OUT0, NONE);
->> +		PIN_SLP(gpg2-6, OUT0, NONE);
->> +
->> +		PIN_SLP(gpg3-0, PREV, UP);
->> +		PIN_SLP(gpg3-1, PREV, UP);
->> +		PIN_SLP(gpg3-2, INPUT, NONE);
->> +		PIN_SLP(gpg3-3, INPUT, DOWN);
->> +		PIN_SLP(gpg3-4, OUT0, NONE);
->> +		PIN_SLP(gpg3-5, OUT0, NONE);
->> +		PIN_SLP(gpg3-6, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpi-0, PREV, NONE);
-> 
-> No such name. Did you mean gpgi?
-> 
-> 
-
-The node in s5pv210-pinctrl.dtsi is called "gpgi", but the i2s0_bus config
-in that file uses just "gpi".  drivers/pinctrl/samsung/pinctrl-exynos-arm.c also
-notes it just as "gpi".  I think the node should probably be renamed.
-
->> +		PIN_SLP(gpi-1, INPUT, DOWN);
->> +		PIN_SLP(gpi-2, PREV, NONE);
->> +		PIN_SLP(gpi-3, PREV, NONE);
->> +		PIN_SLP(gpi-4, PREV, NONE);
->> +		PIN_SLP(gpi-5, INPUT, DOWN);
->> +		PIN_SLP(gpi-6, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpj0-0, INPUT, NONE);
->> +		PIN_SLP(gpj0-1, INPUT, NONE);
->> +		PIN_SLP(gpj0-2, INPUT, NONE);
->> +		PIN_SLP(gpj0-3, INPUT, NONE);
->> +		PIN_SLP(gpj0-4, INPUT, NONE);
->> +		PIN_SLP(gpj0-5, INPUT, DOWN);
->> +		PIN_SLP(gpj0-6, OUT0, NONE);
->> +		PIN_SLP(gpj0-7, INPUT, NONE);
->> +
->> +		PIN_SLP(gpj1-0, OUT1, NONE);
->> +		PIN_SLP(gpj1-1, OUT0, NONE);
->> +		PIN_SLP(gpj1-2, INPUT, DOWN);
->> +		PIN_SLP(gpj1-3, PREV, NONE);
->> +		PIN_SLP(gpj1-4, PREV, NONE);
->> +		PIN_SLP(gpj1-5, OUT0, NONE);
->> +
->> +		PIN_SLP(gpj2-0, INPUT, DOWN);
->> +		PIN_SLP(gpj2-1, INPUT, DOWN);
->> +		PIN_SLP(gpj2-2, OUT0, NONE);
->> +		PIN_SLP(gpj2-3, INPUT, DOWN);
->> +		PIN_SLP(gpj2-4, INPUT, DOWN);
->> +		PIN_SLP(gpj2-5, PREV, NONE);
->> +		PIN_SLP(gpj2-6, PREV, NONE);
->> +		PIN_SLP(gpj2-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(gpj3-0, INPUT, NONE);
->> +		PIN_SLP(gpj3-1, INPUT, NONE);
->> +		PIN_SLP(gpj3-2, OUT0, NONE);
->> +		PIN_SLP(gpj3-3, INPUT, DOWN);
->> +		PIN_SLP(gpj3-4, INPUT, NONE);
->> +		PIN_SLP(gpj3-5, INPUT, NONE);
->> +		PIN_SLP(gpj3-6, INPUT, NONE);
->> +		PIN_SLP(gpj3-7, INPUT, NONE);
->> +
->> +		PIN_SLP(gpj4-0, INPUT, NONE);
->> +		PIN_SLP(gpj4-1, INPUT, DOWN);
->> +		PIN_SLP(gpj4-2, PREV, NONE);
->> +		PIN_SLP(gpj4-3, INPUT, NONE);
->> +		PIN_SLP(gpj4-4, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp01-0, OUT1, NONE);
->> +		PIN_SLP(mp01-1, OUT0, NONE);
->> +		PIN_SLP(mp01-2, INPUT, DOWN);
->> +		PIN_SLP(mp01-3, INPUT, DOWN);
->> +		PIN_SLP(mp01-4, OUT1, NONE);
->> +		PIN_SLP(mp01-5, INPUT, DOWN);
->> +		PIN_SLP(mp01-6, INPUT, DOWN);
->> +		PIN_SLP(mp01-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp02-0, INPUT, DOWN);
->> +		PIN_SLP(mp02-1, INPUT, DOWN);
->> +		PIN_SLP(mp02-2, INPUT, NONE);
->> +		PIN_SLP(mp02-3, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp03-0, INPUT, DOWN);
->> +		PIN_SLP(mp03-1, INPUT, DOWN);
->> +		PIN_SLP(mp03-2, OUT1, NONE);
->> +		PIN_SLP(mp03-3, OUT0, NONE);
->> +		PIN_SLP(mp03-4, INPUT, NONE);
->> +		PIN_SLP(mp03-5, OUT0, NONE);
->> +		PIN_SLP(mp03-6, INPUT, DOWN);
->> +		PIN_SLP(mp03-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp04-0, INPUT, DOWN);
->> +		PIN_SLP(mp04-1, OUT0, NONE);
->> +		PIN_SLP(mp04-2, INPUT, DOWN);
->> +		PIN_SLP(mp04-3, OUT0, NONE);
->> +		PIN_SLP(mp04-4, INPUT, DOWN);
->> +		PIN_SLP(mp04-5, INPUT, DOWN);
->> +		PIN_SLP(mp04-6, OUT0, NONE);
->> +		PIN_SLP(mp04-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp05-0, INPUT, NONE);
->> +		PIN_SLP(mp05-1, INPUT, NONE);
->> +		PIN_SLP(mp05-2, INPUT, NONE);
->> +		PIN_SLP(mp05-3, INPUT, NONE);
->> +		PIN_SLP(mp05-4, INPUT, DOWN);
->> +		PIN_SLP(mp05-5, OUT0, NONE);
->> +		PIN_SLP(mp05-6, INPUT, DOWN);
->> +		PIN_SLP(mp05-7, PREV, NONE);
->> +
->> +		PIN_SLP(mp06-0, INPUT, DOWN);
->> +		PIN_SLP(mp06-1, INPUT, DOWN);
->> +		PIN_SLP(mp06-2, INPUT, DOWN);
->> +		PIN_SLP(mp06-3, INPUT, DOWN);
->> +		PIN_SLP(mp06-4, INPUT, DOWN);
->> +		PIN_SLP(mp06-5, INPUT, DOWN);
->> +		PIN_SLP(mp06-6, INPUT, DOWN);
->> +		PIN_SLP(mp06-7, INPUT, DOWN);
->> +
->> +		PIN_SLP(mp07-0, INPUT, DOWN);
->> +		PIN_SLP(mp07-1, INPUT, DOWN);
->> +		PIN_SLP(mp07-2, INPUT, DOWN);
->> +		PIN_SLP(mp07-3, INPUT, DOWN);
->> +		PIN_SLP(mp07-4, INPUT, DOWN);
->> +		PIN_SLP(mp07-5, INPUT, DOWN);
->> +		PIN_SLP(mp07-6, INPUT, DOWN);
->> +		PIN_SLP(mp07-7, INPUT, DOWN);
->> +	};
-> 
-> What about gphX?
-
-The gphX pins are in the alive area and don't have power down configs, they retain their
-state over suspend.  Therefore the samsung,pin-con-pdn and samsung,pin-pud-pdn properties
-have no effect (they're analogous to the gpxX pins in later Samsung SoCs).
+They do support SGMII, but unfortunately it's not a runtime configurable 
+parameter, it's a synthesis-level parameter on the FPGA IP core so you 
+have to pick one or the other for any given build. We want to be able to 
+support various fiber module types as well, and my understanding is that 
+at least some of those only do 1000BaseX, so that ends up being the 
+standard in common that we are using.
 
 > 
-> Best regards,
-> Krzysztof
+>> I guess I'm not sure how this is supposed to work when the PHY on the SFP
+>> module gets detected, i.e. if there's supposed to be another code path that
+>> this is supposed to go down, or this is something that just hasn't been
+>> fully implemented yet?
 > 
->> +};
->> -- 
->> 2.20.1
->>
+> Copper PHYs work fine - using SGMII mode everywhere so far.
+> 
+> The problem is, if you want to use them as 1000BASE-X, you generally
+> have to ensure that the PHY is appropriately programmed for 1000BASE-X
+> negotiation, and the copper side advertisement only indicates 1G
+> support. Not all copper PHYs have the PHY accessible for such
+> programming, and in that case it becomes an exercise of "read the
+> SFP documentation before buying"!
+> 
+> The other complication is... there's nothing in the module EEPROM
+> that really says whether they are 1000BASE-X or SGMII.
+> 
+> What saves us thus far is that most copper SFPs use the Marvell
+> 88E1111 chip, which is I2C accessible, and we drive that using
+> phylib - and the phylib Marvell driver knows how to ensure that
+> the PHY is configured for SGMII mode.  I'm not sure the same is
+> true with 1000BASE-X mode.
+> 
 
-Thanks,
-Jonathan
+-- 
+Robert Hancock
+Senior Hardware Designer
+SED Systems, a division of Calian Ltd.
+Email: hancock@sedsystems.ca
 
 _______________________________________________
 linux-arm-kernel mailing list
