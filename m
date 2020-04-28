@@ -2,96 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015A71BCDDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:58:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 924D61BCDDC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:59:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zjxPtLH8SBGlAVGpwhKuedRSZ61RwGHCPu5qmqbN2Dk=; b=LelqAePc8ZxUfO
-	Mhwg7jxP556GdVebE47QWPLimuWfEUGhAb6jrCTJkdj286AaVtsoBE81o2euoXD/+BQWLM2x5tSaS
-	nhEkaCuHAIuJ9Noq+fHEwZoCY4ZGEz9WYvdiX1oB/8y8QP+fgm+yaYerok820YVPFV0Q/Fa/86s0t
-	x+jf1wmKN0HO9+CGmDul7c6JAEcpfJiF47wzcE2A6xxCWmylIAawWiGfemD5XcMGdmrp7VgPs41yR
-	HOD0nZ919k4yw3zCxSlGL9feEM4z1plDZj0hRB4LKSMG4KSOc0aALhj9dnoFgY/R00Xqa6pWT9ILx
-	ns65g5BNT7EZJKXXi0Yg==;
+	List-Owner; bh=9rfv5d90W5Q9znF1m5VcssMiS0QOg/V+2QQG4hy1n8E=; b=CZ4ZIbsQBWX7cm
+	cd4cpirQ6eI+qKHKk6ecZNXQhARreVA1+0Ew5dR1ZfQvFCaKzjkOF+VXf99iN4hm5kVXXxy4tPy5U
+	czLXWb3lYZ8MxPY8yGoK5b9yoFRnGq0U1T0MnWt/xTRFgbi8XmaPb4l7IsoWZTUcB0bTV1dAsTuOJ
+	hTPN4oqAWI+4dLQnA6mMJ1I69DvgfZJeUFpTczwm8R/XCndgEB6UZn3CEtouc2D2/JN8vaFU7IEPi
+	P6XTO++I0Veb+Q4nE7vt89grpW50nRwg6JVrnrdJZZbWe2R1PBx09fPYMMFdcw67ojnIN95QHPwHW
+	FEMlrcZQBPSeg/CNuOPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTXJW-0001TX-Ne; Tue, 28 Apr 2020 20:58:46 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1jTXJq-0001ph-EK; Tue, 28 Apr 2020 20:59:06 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTXIt-000186-LI; Tue, 28 Apr 2020 20:58:09 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SKqqwx036350;
- Tue, 28 Apr 2020 20:56:37 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=TcR/3N1Umwt2ZLhtt7996sCLAl5ai2GiRInnwoKySSk=;
- b=XN2F5EtTvJ+WThIo726f0bMN3jaeFq/78DRWL/+UoEp9S9gMTISsHhBuSDFguiFHiohE
- u1zlNaPfsgRuuJlHqMq0LVBQEQ3/4r3sXoczuOMIQJyrq1zUg5CMI3J5oytKP7LkC6OM
- 87CQthCXTAf7p7lYhUIZqeIIyYG2iKhOEW0+WPwQlDscHIXikHPGFy1T5Vf4Y3om0/z8
- rPwe9YX1QnAsmajpeqGsUjoPPBLRaV0t6tDBI5yc2W8qnAYjolof7U1IXU1HxstcEh4u
- y17yc/Iy20rl+dtZFLKuxRIB5ZX9x4O1Xks1aAWGVC8kzZ7O81LIatuJveRcjvpGdGgP HQ== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 30nucg2bu0-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 28 Apr 2020 20:56:37 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SKr0hx002847;
- Tue, 28 Apr 2020 20:56:37 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3020.oracle.com with ESMTP id 30my0ebv3d-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 28 Apr 2020 20:56:37 +0000
-Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 03SKuYdJ026275;
- Tue, 28 Apr 2020 20:56:34 GMT
-Received: from monkey.oracle.com (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 28 Apr 2020 13:56:33 -0700
-From: Mike Kravetz <mike.kravetz@oracle.com>
-To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
- linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
- sparclinux@vger.kernel.org, linux-doc@vger.kernel.org
-Subject: [PATCH v4 4/4] hugetlbfs: clean up command line processing
-Date: Tue, 28 Apr 2020 13:56:14 -0700
-Message-Id: <20200428205614.246260-5-mike.kravetz@oracle.com>
-X-Mailer: git-send-email 2.25.4
-In-Reply-To: <20200428205614.246260-1-mike.kravetz@oracle.com>
-References: <20200428205614.246260-1-mike.kravetz@oracle.com>
+ id 1jTXJN-0001aX-RY
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 20:58:39 +0000
+Received: by mail-ej1-x641.google.com with SMTP id q8so34273eja.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 28 Apr 2020 13:58:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OSzO1rJO0R184LhoOiiy43Vbf5CZ5lYIXfcp6IiNMuk=;
+ b=fW8/VJuKoPUP7uviDlRt5iWPklR6159dL8OqPXAYkQt9jT0QXQH20Vj9C11FGoyFvc
+ OmLtFM7kkC1koJGiB6xpfGZtZ5KQla2TT0FJ0a62xNBnSaBDE5mcnxixIXf215wOmA2x
+ bz5s03577i+7pt7SX5d+h4+D+TvfNRIGHm5exgfywa5JPZAkLGGlYKVJ1xOOXfp4y32z
+ H/OOSJvk+DvAC9eCBwXFeQ72VKvf6z6DSYPHye8eGQW9zYal4Z7bSHNJMbnI/Ugqef1v
+ U6385QbNHByFEDZBtIQhEEYNiVIsvaguzMhSGX7AJ6VGb7NALY801/q3RB/Dl4z90Kza
+ Ej5w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OSzO1rJO0R184LhoOiiy43Vbf5CZ5lYIXfcp6IiNMuk=;
+ b=oVrd4K/eqC8cMhjLnARijqQUdvfD5XKSBAteWu2Z+HrBxFM5cG/OgKztmKyT8msWAI
+ TxjY227FiWzFklnAOdYdX0udxMTKYJ0jxgM4/EeQXd2OMBLAPBckSF12W59txDzwKJB5
+ jkibIEL8+ZlwyAcrjNn9KJU4kLN0eN4WAA0MSsNG2EwlMna5RLFYPPF8R1kSWnfmdmTj
+ cFzj3FLVTYswnZbU6bSq/kMs4eYOYTJGO8dQsuTjV8oB0aIul2WPd7/BGmo5jYtX/L5X
+ FeOAj4uVDJQ2OitafTaT7L95LDVAt2DJNJJzaow5dwPx04CFRdGJPJ1O2Gr8Ih9UrVAK
+ /iYA==
+X-Gm-Message-State: AGi0PuaG+HFc1WlrQ6rQirs/tbzNL0RFLNyFEVh5KIb+feZctD0NoeUs
+ X20VFefCt2MVUHgQdqk0NEV5Lti6ZKEvWb0tgD9Zig==
+X-Google-Smtp-Source: APiQypIDmIaYEXVfqX5Ab4PeJvhjul4YnZzP2xIfW1kiZtODLOShV6xLWrmLPJ+wBx6xyCCV+2sKrWG5awxiNEHaSK4=
+X-Received: by 2002:a17:906:5918:: with SMTP id
+ h24mr27104025ejq.210.1588107515478; 
+ Tue, 28 Apr 2020 13:58:35 -0700 (PDT)
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
- spamscore=0
- suspectscore=0 adultscore=0 mlxlogscore=999 bulkscore=0 phishscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004280163
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
- signatures=668686
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
- priorityscore=1501
- mlxlogscore=999 impostorscore=0 suspectscore=0 malwarescore=0
- lowpriorityscore=0 mlxscore=0 spamscore=0 adultscore=0 phishscore=0
- bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2004280163
+References: <20200428181010.170568-1-swboyd@chromium.org>
+ <20200428181010.170568-3-swboyd@chromium.org>
+In-Reply-To: <20200428181010.170568-3-swboyd@chromium.org>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Tue, 28 Apr 2020 21:58:24 +0100
+Message-ID: <CAJ9a7VjJpZWMJFkwxwnc=w8p1cemx-vM7yrWWWEHp_ThjkJoSA@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] coresight: Avoid casting void pointers
+To: Stephen Boyd <swboyd@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_135807_791431_6837552E 
-X-CRM114-Status: GOOD (  33.03  )
-X-Spam-Score: -1.6 (-)
+X-CRM114-CacheID: sfid-20200428_135837_959042_09B61CBF 
+X-CRM114-Status: GOOD (  17.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-1.6 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- 0.9 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
- [141.146.126.78 listed in bl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -100,10 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,424 +92,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
- Paul Mackerras <paulus@samba.org>, Sandipan Das <sandipan@linux.ibm.com>,
- Will Deacon <will@kernel.org>, Mina Almasry <almasrymina@google.com>,
- Jonathan Corbet <corbet@lwn.net>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Longpeng <longpeng2@huawei.com>,
- Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- Christophe Leroy <christophe.leroy@c-s.fr>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
- Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
- "David S . Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
+Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Joe Perches <joe@perches.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With all hugetlb page processing done in a single file clean up code.
-- Make code match desired semantics
-  - Update documentation with semantics
-- Make all warnings and errors messages start with 'HugeTLB:'.
-- Consistently name command line parsing routines.
-- Warn if !hugepages_supported() and command line parameters have
-  been specified.
-- Add comments to code
-  - Describe some of the subtle interactions
-  - Describe semantics of command line arguments
+Reviewed-by mike.leach@linaro.org
 
-This patch also fixes issues with implicitly setting the number of
-gigantic huge pages to preallocate.  Previously on X86 command line,
-        hugepages=2 default_hugepagesz=1G
-would result in zero 1G pages being preallocated and,
-        # grep HugePages_Total /proc/meminfo
-        HugePages_Total:       0
-        # sysctl -a | grep nr_hugepages
-        vm.nr_hugepages = 2
-        vm.nr_hugepages_mempolicy = 2
-        # cat /proc/sys/vm/nr_hugepages
-        2
-After this patch 2 gigantic pages will be preallocated and all the
-proc, sysfs, sysctl and meminfo files will accurately reflect this.
+On Tue, 28 Apr 2020 at 19:10, Stephen Boyd <swboyd@chromium.org> wrote:
+>
+> We don't need to cast void pointers, such as the amba_id data. Assign to
+> a local variable to make the code prettier and also return NULL instead
+> of 0 to make sparse happy.
+>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: Mike Leach <mike.leach@linaro.org>
+> Reviewed-by: Joe Perches <joe@perches.com>
+> Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+> ---
+>
+> Thanks Joe for finding my thinko!
+>
+>  drivers/hwtracing/coresight/coresight-priv.h | 9 ++++++---
+>  1 file changed, 6 insertions(+), 3 deletions(-)
+>
+> diff --git a/drivers/hwtracing/coresight/coresight-priv.h b/drivers/hwtracing/coresight/coresight-priv.h
+> index 5a36f0f50899..36c943ae94d5 100644
+> --- a/drivers/hwtracing/coresight/coresight-priv.h
+> +++ b/drivers/hwtracing/coresight/coresight-priv.h
+> @@ -215,9 +215,12 @@ cti_remove_assoc_from_csdev(struct coresight_device *csdev) {}
+>  /* extract the data value from a UCI structure given amba_id pointer. */
+>  static inline void *coresight_get_uci_data(const struct amba_id *id)
+>  {
+> -       if (id->data)
+> -               return ((struct amba_cs_uci_id *)(id->data))->data;
+> -       return 0;
+> +       struct amba_cs_uci_id *uci_id = id->data;
+> +
+> +       if (!uci_id)
+> +               return NULL;
+> +
+> +       return uci_id->data;
+>  }
+>
+>  void coresight_release_platform_data(struct coresight_device *csdev,
+> --
+> Sent by a computer, using git, on the internet
+>
 
-To address the issue with gigantic pages, a small change in behavior
-was made to command line processing.  Previously the command line,
-        hugepages=128 default_hugepagesz=2M hugepagesz=2M hugepages=256
-would result in the allocation of 256 2M huge pages.  The value 128
-would be ignored without any warning.  After this patch, 128 2M pages
-will be allocated and a warning message will be displayed indicating
-the value of 256 is ignored.  This change in behavior is required
-because allocation of implicitly specified gigantic pages must be done
-when the default_hugepagesz= is encountered for gigantic pages.
-Previously the code waited until later in the boot process (hugetlb_init),
-to allocate pages of default size.  However the bootmem allocator required
-for gigantic allocations is not available at this time.
 
-Signed-off-by: Mike Kravetz <mike.kravetz@oracle.com>
-Acked-by: Gerald Schaefer <gerald.schaefer@de.ibm.com>  [s390]
-Acked-by: Will Deacon <will@kernel.org>
-Tested-by: Sandipan Das <sandipan@linux.ibm.com>
----
- .../admin-guide/kernel-parameters.txt         |  40 +++--
- Documentation/admin-guide/mm/hugetlbpage.rst  |  35 ++++
- mm/hugetlb.c                                  | 149 ++++++++++++++----
- 3 files changed, 179 insertions(+), 45 deletions(-)
-
-diff --git a/Documentation/admin-guide/kernel-parameters.txt b/Documentation/admin-guide/kernel-parameters.txt
-index 7bc83f3d9bdf..cbe657b86d0e 100644
---- a/Documentation/admin-guide/kernel-parameters.txt
-+++ b/Documentation/admin-guide/kernel-parameters.txt
-@@ -834,12 +834,15 @@
- 			See also Documentation/networking/decnet.txt.
- 
- 	default_hugepagesz=
--			[same as hugepagesz=] The size of the default
--			HugeTLB page size. This is the size represented by
--			the legacy /proc/ hugepages APIs, used for SHM, and
--			default size when mounting hugetlbfs filesystems.
--			Defaults to the default architecture's huge page size
--			if not specified.
-+			[HW] The size of the default HugeTLB page. This is
-+			the size represented by the legacy /proc/ hugepages
-+			APIs.  In addition, this is the default hugetlb size
-+			used for shmget(), mmap() and mounting hugetlbfs
-+			filesystems.  If not specified, defaults to the
-+			architecture's default huge page size.  Huge page
-+			sizes are architecture dependent.  See also
-+			Documentation/admin-guide/mm/hugetlbpage.rst.
-+			Format: size[KMG]
- 
- 	deferred_probe_timeout=
- 			[KNL] Debugging option to set a timeout in seconds for
-@@ -1479,13 +1482,24 @@
- 			hugepages using the cma allocator. If enabled, the
- 			boot-time allocation of gigantic hugepages is skipped.
- 
--	hugepages=	[HW,X86-32,IA-64] HugeTLB pages to allocate at boot.
--	hugepagesz=	[HW,IA-64,PPC,X86-64] The size of the HugeTLB pages.
--			On x86-64 and powerpc, this option can be specified
--			multiple times interleaved with hugepages= to reserve
--			huge pages of different sizes. Valid pages sizes on
--			x86-64 are 2M (when the CPU supports "pse") and 1G
--			(when the CPU supports the "pdpe1gb" cpuinfo flag).
-+	hugepages=	[HW] Number of HugeTLB pages to allocate at boot.
-+			If this follows hugepagesz (below), it specifies
-+			the number of pages of hugepagesz to be allocated.
-+			If this is the first HugeTLB parameter on the command
-+			line, it specifies the number of pages to allocate for
-+			the default huge page size.  See also
-+			Documentation/admin-guide/mm/hugetlbpage.rst.
-+			Format: <integer>
-+
-+	hugepagesz=
-+			[HW] The size of the HugeTLB pages.  This is used in
-+			conjunction with hugepages (above) to allocate huge
-+			pages of a specific size at boot.  The pair
-+			hugepagesz=X hugepages=Y can be specified once for
-+			each supported huge page size. Huge page sizes are
-+			architecture dependent.  See also
-+			Documentation/admin-guide/mm/hugetlbpage.rst.
-+			Format: size[KMG]
- 
- 	hung_task_panic=
- 			[KNL] Should the hung task detector generate panics.
-diff --git a/Documentation/admin-guide/mm/hugetlbpage.rst b/Documentation/admin-guide/mm/hugetlbpage.rst
-index 1cc0bc78d10e..5026e58826e2 100644
---- a/Documentation/admin-guide/mm/hugetlbpage.rst
-+++ b/Documentation/admin-guide/mm/hugetlbpage.rst
-@@ -100,6 +100,41 @@ with a huge page size selection parameter "hugepagesz=<size>".  <size> must
- be specified in bytes with optional scale suffix [kKmMgG].  The default huge
- page size may be selected with the "default_hugepagesz=<size>" boot parameter.
- 
-+Hugetlb boot command line parameter semantics
-+hugepagesz - Specify a huge page size.  Used in conjunction with hugepages
-+	parameter to preallocate a number of huge pages of the specified
-+	size.  Hence, hugepagesz and hugepages are typically specified in
-+	pairs such as:
-+		hugepagesz=2M hugepages=512
-+	hugepagesz can only be specified once on the command line for a
-+	specific huge page size.  Valid huge page sizes are architecture
-+	dependent.
-+hugepages - Specify the number of huge pages to preallocate.  This typically
-+	follows a valid hugepagesz or default_hugepagesz parameter.  However,
-+	if hugepages is the first or only hugetlb command line parameter it
-+	implicitly specifies the number of huge pages of default size to
-+	allocate.  If the number of huge pages of default size is implicitly
-+	specified, it can not be overwritten by a hugepagesz,hugepages
-+	parameter pair for the default size.
-+	For example, on an architecture with 2M default huge page size:
-+		hugepages=256 hugepagesz=2M hugepages=512
-+	will result in 256 2M huge pages being allocated and a warning message
-+	indicating that the hugepages=512 parameter is ignored.  If a hugepages
-+	parameter is preceded by an invalid hugepagesz parameter, it will
-+	be ignored.
-+default_hugepagesz - Specify the default huge page size.  This parameter can
-+	only be specified once on the command line.  default_hugepagesz can
-+	optionally be followed by the hugepages parameter to preallocate a
-+	specific number of huge pages of default size.  The number of default
-+	sized huge pages to preallocate can also be implicitly specified as
-+	mentioned in the hugepages section above.  Therefore, on an
-+	architecture with 2M default huge page size:
-+		hugepages=256
-+		default_hugepagesz=2M hugepages=256
-+		hugepages=256 default_hugepagesz=2M
-+	will all result in 256 2M huge pages being allocated.  Valid default
-+	huge page size is architecture dependent.
-+
- When multiple huge page sizes are supported, ``/proc/sys/vm/nr_hugepages``
- indicates the current number of pre-allocated huge pages of the default size.
- Thus, one can use the following command to dynamically allocate/deallocate
-diff --git a/mm/hugetlb.c b/mm/hugetlb.c
-index 2ae0e506cfc7..8852b0b12270 100644
---- a/mm/hugetlb.c
-+++ b/mm/hugetlb.c
-@@ -59,8 +59,8 @@ __initdata LIST_HEAD(huge_boot_pages);
- /* for command line parsing */
- static struct hstate * __initdata parsed_hstate;
- static unsigned long __initdata default_hstate_max_huge_pages;
--static unsigned long __initdata default_hstate_size;
- static bool __initdata parsed_valid_hugepagesz = true;
-+static bool __initdata parsed_default_hugepagesz;
- 
- /*
-  * Protects updates to hugepage_freelists, hugepage_activelist, nr_huge_pages,
-@@ -3060,7 +3060,7 @@ static void __init hugetlb_sysfs_init(void)
- 		err = hugetlb_sysfs_add_hstate(h, hugepages_kobj,
- 					 hstate_kobjs, &hstate_attr_group);
- 		if (err)
--			pr_err("Hugetlb: Unable to add hstate %s", h->name);
-+			pr_err("HugeTLB: Unable to add hstate %s", h->name);
- 	}
- }
- 
-@@ -3164,7 +3164,7 @@ static void hugetlb_register_node(struct node *node)
- 						nhs->hstate_kobjs,
- 						&per_node_hstate_attr_group);
- 		if (err) {
--			pr_err("Hugetlb: Unable to add hstate %s for node %d\n",
-+			pr_err("HugeTLB: Unable to add hstate %s for node %d\n",
- 				h->name, node->dev.id);
- 			hugetlb_unregister_node(node);
- 			break;
-@@ -3212,22 +3212,41 @@ static int __init hugetlb_init(void)
- {
- 	int i;
- 
--	if (!hugepages_supported())
-+	if (!hugepages_supported()) {
-+		if (hugetlb_max_hstate || default_hstate_max_huge_pages)
-+			pr_warn("HugeTLB: huge pages not supported, ignoring associated command-line parameters\n");
- 		return 0;
-+	}
- 
--	if (!size_to_hstate(default_hstate_size)) {
--		if (default_hstate_size != 0) {
--			pr_err("HugeTLB: unsupported default_hugepagesz %lu. Reverting to %lu\n",
--			       default_hstate_size, HPAGE_SIZE);
-+	/*
-+	 * Make sure HPAGE_SIZE (HUGETLB_PAGE_ORDER) hstate exists.  Some
-+	 * architectures depend on setup being done here.
-+	 */
-+	hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
-+	if (!parsed_default_hugepagesz) {
-+		/*
-+		 * If we did not parse a default huge page size, set
-+		 * default_hstate_idx to HPAGE_SIZE hstate. And, if the
-+		 * number of huge pages for this default size was implicitly
-+		 * specified, set that here as well.
-+		 * Note that the implicit setting will overwrite an explicit
-+		 * setting.  A warning will be printed in this case.
-+		 */
-+		default_hstate_idx = hstate_index(size_to_hstate(HPAGE_SIZE));
-+		if (default_hstate_max_huge_pages) {
-+			if (default_hstate.max_huge_pages) {
-+				char buf[32];
-+
-+				string_get_size(huge_page_size(&default_hstate),
-+					1, STRING_UNITS_2, buf, 32);
-+				pr_warn("HugeTLB: Ignoring hugepages=%lu associated with %s page size\n",
-+					default_hstate.max_huge_pages, buf);
-+				pr_warn("HugeTLB: Using hugepages=%lu for number of default huge pages\n",
-+					default_hstate_max_huge_pages);
-+			}
-+			default_hstate.max_huge_pages =
-+				default_hstate_max_huge_pages;
- 		}
--
--		default_hstate_size = HPAGE_SIZE;
--		hugetlb_add_hstate(HUGETLB_PAGE_ORDER);
--	}
--	default_hstate_idx = hstate_index(size_to_hstate(default_hstate_size));
--	if (default_hstate_max_huge_pages) {
--		if (!default_hstate.max_huge_pages)
--			default_hstate.max_huge_pages = default_hstate_max_huge_pages;
- 	}
- 
- 	hugetlb_cma_check();
-@@ -3287,20 +3306,29 @@ void __init hugetlb_add_hstate(unsigned int order)
- 	parsed_hstate = h;
- }
- 
--static int __init hugetlb_nrpages_setup(char *s)
-+/*
-+ * hugepages command line processing
-+ * hugepages normally follows a valid hugepagsz or default_hugepagsz
-+ * specification.  If not, ignore the hugepages value.  hugepages can also
-+ * be the first huge page command line  option in which case it implicitly
-+ * specifies the number of huge pages for the default size.
-+ */
-+static int __init hugepages_setup(char *s)
- {
- 	unsigned long *mhp;
- 	static unsigned long *last_mhp;
- 
- 	if (!parsed_valid_hugepagesz) {
--		pr_warn("hugepages = %s preceded by "
--			"an unsupported hugepagesz, ignoring\n", s);
-+		pr_warn("HugeTLB: hugepages=%s does not follow a valid hugepagesz, ignoring\n", s);
- 		parsed_valid_hugepagesz = true;
--		return 1;
-+		return 0;
- 	}
-+
- 	/*
--	 * !hugetlb_max_hstate means we haven't parsed a hugepagesz= parameter yet,
--	 * so this hugepages= parameter goes to the "default hstate".
-+	 * !hugetlb_max_hstate means we haven't parsed a hugepagesz= parameter
-+	 * yet, so this hugepages= parameter goes to the "default hstate".
-+	 * Otherwise, it goes with the previously parsed hugepagesz or
-+	 * default_hugepagesz.
- 	 */
- 	else if (!hugetlb_max_hstate)
- 		mhp = &default_hstate_max_huge_pages;
-@@ -3308,8 +3336,8 @@ static int __init hugetlb_nrpages_setup(char *s)
- 		mhp = &parsed_hstate->max_huge_pages;
- 
- 	if (mhp == last_mhp) {
--		pr_warn("hugepages= specified twice without interleaving hugepagesz=, ignoring\n");
--		return 1;
-+		pr_warn("HugeTLB: hugepages= specified twice without interleaving hugepagesz=, ignoring hugepages=%s\n", s);
-+		return 0;
- 	}
- 
- 	if (sscanf(s, "%lu", mhp) <= 0)
-@@ -3327,42 +3355,99 @@ static int __init hugetlb_nrpages_setup(char *s)
- 
- 	return 1;
- }
--__setup("hugepages=", hugetlb_nrpages_setup);
-+__setup("hugepages=", hugepages_setup);
- 
-+/*
-+ * hugepagesz command line processing
-+ * A specific huge page size can only be specified once with hugepagesz.
-+ * hugepagesz is followed by hugepages on the command line.  The global
-+ * variable 'parsed_valid_hugepagesz' is used to determine if prior
-+ * hugepagesz argument was valid.
-+ */
- static int __init hugepagesz_setup(char *s)
- {
- 	unsigned long size;
-+	struct hstate *h;
- 
-+	parsed_valid_hugepagesz = false;
- 	size = (unsigned long)memparse(s, NULL);
- 
- 	if (!arch_hugetlb_valid_size(size)) {
--		parsed_valid_hugepagesz = false;
--		pr_err("HugeTLB: unsupported hugepagesz %s\n", s);
-+		pr_err("HugeTLB: unsupported hugepagesz=%s\n", s);
- 		return 0;
- 	}
- 
--	if (size_to_hstate(size)) {
--		pr_warn("HugeTLB: hugepagesz %s specified twice, ignoring\n", s);
--		return 0;
-+	h = size_to_hstate(size);
-+	if (h) {
-+		/*
-+		 * hstate for this size already exists.  This is normally
-+		 * an error, but is allowed if the existing hstate is the
-+		 * default hstate.  More specifically, it is only allowed if
-+		 * the number of huge pages for the default hstate was not
-+		 * previously specified.
-+		 */
-+		if (!parsed_default_hugepagesz ||  h != &default_hstate ||
-+		    default_hstate.max_huge_pages) {
-+			pr_warn("HugeTLB: hugepagesz=%s specified twice, ignoring\n", s);
-+			return 0;
-+		}
-+
-+		/*
-+		 * No need to call hugetlb_add_hstate() as hstate already
-+		 * exists.  But, do set parsed_hstate so that a following
-+		 * hugepages= parameter will be applied to this hstate.
-+		 */
-+		parsed_hstate = h;
-+		parsed_valid_hugepagesz = true;
-+		return 1;
- 	}
- 
- 	hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
-+	parsed_valid_hugepagesz = true;
- 	return 1;
- }
- __setup("hugepagesz=", hugepagesz_setup);
- 
-+/*
-+ * default_hugepagesz command line input
-+ * Only one instance of default_hugepagesz allowed on command line.
-+ */
- static int __init default_hugepagesz_setup(char *s)
- {
- 	unsigned long size;
- 
-+	parsed_valid_hugepagesz = false;
-+	if (parsed_default_hugepagesz) {
-+		pr_err("HugeTLB: default_hugepagesz previously specified, ignoring %s\n", s);
-+		return 0;
-+	}
-+
- 	size = (unsigned long)memparse(s, NULL);
- 
- 	if (!arch_hugetlb_valid_size(size)) {
--		pr_err("HugeTLB: unsupported default_hugepagesz %s\n", s);
-+		pr_err("HugeTLB: unsupported default_hugepagesz=%s\n", s);
- 		return 0;
- 	}
- 
--	default_hstate_size = size;
-+	hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
-+	parsed_valid_hugepagesz = true;
-+	parsed_default_hugepagesz = true;
-+	default_hstate_idx = hstate_index(size_to_hstate(size));
-+
-+	/*
-+	 * The number of default huge pages (for this size) could have been
-+	 * specified as the first hugetlb parameter: hugepages=X.  If so,
-+	 * then default_hstate_max_huge_pages is set.  If the default huge
-+	 * page size is gigantic (>= MAX_ORDER), then the pages must be
-+	 * allocated here from bootmem allocator.
-+	 */
-+	if (default_hstate_max_huge_pages) {
-+		default_hstate.max_huge_pages = default_hstate_max_huge_pages;
-+		if (hstate_is_gigantic(&default_hstate))
-+			hugetlb_hstate_alloc_pages(&default_hstate);
-+		default_hstate_max_huge_pages = 0;
-+	}
-+
- 	return 1;
- }
- __setup("default_hugepagesz=", default_hugepagesz_setup);
 -- 
-2.25.4
-
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
