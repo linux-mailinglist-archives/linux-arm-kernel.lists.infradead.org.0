@@ -2,82 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 864111BBBCE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:01:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 218A31BBBEF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 13:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xjMho/uuzB8gCtsgZVhb8mLXWF3dosIBx/NbD8IqKs0=; b=q6D3r7zAp0Yjqr
-	T8WP5izpWoEPVzlyBwBpVmPSefue0vJc1Axsv+y6rJ8AEIStXGmuw0ZCcoYv8zdynQT8d/P+/negC
-	v7s9jDThYDtGwTdvqUSuOstsT6zq8M38BoPB3xwH7nD94FM+SgvITepQYjB7j661whWVN3QOO/tp+
-	bY2xdpAlFrYFCwOBbfvFTBgZFZx8L458Vjr36boErgqmHuz0tuosf+vEDA8CT+17QVoUss9PVUUvT
-	0xDnYR4U4CrD2O8p+PZDvOpVX9/NoLBOOLFg1l4kdpchaV6wnEVuvKNXSJR8S66arm6s7ZrQ2bTD+
-	QlX9fxty5eu6WNaQ0+pQ==;
+	List-Owner; bh=AI14ctd+ChgSB0hjECwwhHR/hAPVrDU1a1IBt9aUx4U=; b=fIRb/mlDIHtB7F
+	yEPy/3sAr1jepFQDh9Xie/5eB/dP3c1pjbCIIksU0hH0dEpOvOBmg3wR/tuqfQhN8xjRLpiUOua7S
+	khBxLLMPhnHrRjTkeGfAGHrwy6lLqYPyt9B3xjRcTVxNt3jbtNezP2tWItnsifcfBkmXhP7L+aSWR
+	UIlOHR+uO5kTxBBVZsaHD3jaSyppSAd/GCwiYp4/kMTKemLDcvN+CIlpSMKO60P0s3Xlve7N+Sm84
+	eFq0DoQN8RZD1Nx84/b6PSCn+F+bgwo22yjwoC7WJAdEDLgy4HW7+N7nmmm5D6smEHZYXr8Ti2kC6
+	q58a6LUorLds83r/SvXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTNzm-0008AI-74; Tue, 28 Apr 2020 11:01:46 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jTO5I-0003EI-D9; Tue, 28 Apr 2020 11:07:28 +0000
+Received: from mail.skyhub.de ([2a01:4f8:190:11c2::b:1457])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTNzX-00088n-8H
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:01:32 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id t40so976627pjb.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 04:01:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZECYmOh8GHeDtWKEVN9mB2cMfDA4CqdHy3DVPieFtU8=;
- b=Fp6Rdy7X/Au1Bogcm9JL1jp6M4qSLsYbzFhSC9yOg6l+3kkiXKIi8rdJl0lMmjYsMm
- q2eAMBXUdoiBgNdIcVvDdJtwn51TJIBDUoRmMmMRO65okmPBGBQnqa4N2mW34RVNy+NS
- /ExDJhJme0OTu0O+ThAbuwtuOn9QVCqcocS2OAbos64IX7v99N7dXsjYPfR94kImkQdL
- 2C4SKfj5IHeZRVtrj9RCGzxPkrzc+ekNRHs9yMP7N2wdx0Z331vPSyXPvI3E7ud8GKzg
- HCR2Mo3MrY6wCTSX+YaHkiccIMPd/cE90wlzZDas+3LNmUPVv3C3TMpQqP+CqlpbyaYl
- Oc3A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZECYmOh8GHeDtWKEVN9mB2cMfDA4CqdHy3DVPieFtU8=;
- b=Ts6oI81jn8tRcTDHKTWYDOjYkomyts6c1TzGAyfI4mwu4sO27wui8FQa59tKBQGPHa
- JjmlVNyUhej+VSMjs8H001eA/CjK54G8IpB3vsMquyNKqS74TTAQ3HJd8iXCCbqulFiO
- TrYKL5J5Uh+ZDMcDqqNosEPnhGvSh6+IPBN2T2+NgX1c4glphSiLCCeflqA0+aXc47Yf
- +/hH+kngP5H6FdQ7Jxe33XM0bzT/Da97DMqoSjnQRFrCzxCmiqISObz0zK7kdu5flEzr
- y1YdsNJ+2ckoKR6fryjddJLUYo25x/uleR3jZidZxIC3/6ZZvYCFYgR9aTpsZgF2YVPz
- Ac5A==
-X-Gm-Message-State: AGi0PuZWHHjR4+S4oh4P3AlmSu7nQ05EaXepj1bBGuWKIo4Kj0y+anmu
- AT+1Vo1ny9SY1RRhFFyAqfXuIXyiieI=
-X-Google-Smtp-Source: APiQypKCUoSWq+WSJVcxTjVfaz6aX0BH3kxmg8S6JEc81aCuemoUOA0OgzndCgwVZlV3UAjOtj9NPQ==
-X-Received: by 2002:a17:902:7793:: with SMTP id
- o19mr28241721pll.107.1588071688818; 
- Tue, 28 Apr 2020 04:01:28 -0700 (PDT)
-Received: from localhost ([122.171.118.46])
- by smtp.gmail.com with ESMTPSA id b24sm14158840pfi.4.2020.04.28.04.01.27
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 28 Apr 2020 04:01:28 -0700 (PDT)
-Date: Tue, 28 Apr 2020 16:31:25 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: rjw@rjwysocki.net, Mian Yousaf Kaukab <ykaukab@suse.de>
-Subject: Re: [PATCH v2 1/2] cpufreq: qoriq: convert to a platform driver
-Message-ID: <20200428110125.lobyrsbma6astfmq@vireshk-i7>
-References: <20200421083000.16740-1-ykaukab@suse.de>
+ id 1jTO59-0003Ci-4p
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 11:07:21 +0000
+Received: from zn.tnic (p200300EC2F0EA50005F31991FCF74C40.dip0.t-ipconnect.de
+ [IPv6:2003:ec:2f0e:a500:5f3:1991:fcf7:4c40])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.skyhub.de (SuperMail on ZX Spectrum 128k) with ESMTPSA id 6EB821EC0CE4;
+ Tue, 28 Apr 2020 13:07:08 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alien8.de; s=dkim;
+ t=1588072028;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:in-reply-to:in-reply-to:  references:references;
+ bh=6yM3ywV4SHYRhMID8a0485MgrxeuX8DEuZQLHvXZu6Q=;
+ b=JMxXKhjn18H3V9nLLHLvhBv7M38fREPnFGpmQ/rKPlrxu3FxzTLqpP8b50grNQYfWT85Cw
+ XgwLzTnKZ3tM6dRdrUvBwrJmkxNPMoIiz82Ihj/jG3OWo/eOhQ9B89fILz4RVTFYORo0RB
+ 3y/So7HpASg3dOx1fp6J5wslbr2xbgg=
+Date: Tue, 28 Apr 2020 13:06:59 +0200
+From: Borislav Petkov <bp@alien8.de>
+To: robh+dt@kernel.org
+Subject: Re: [PATCH v6 1/2] dt-bindings: edac: al-mc-edac: Amazon's Annapurna
+ Labs Memory Controller EDAC
+Message-ID: <20200428110659.GA11272@zn.tnic>
+References: <20200224134132.23924-1-talel@amazon.com>
+ <20200224134132.23924-2-talel@amazon.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200421083000.16740-1-ykaukab@suse.de>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20200224134132.23924-2-talel@amazon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_040131_322869_BB189D16 
-X-CRM114-Status: GOOD (  13.05  )
+X-CRM114-CacheID: sfid-20200428_040719_338039_0F7440F9 
+X-CRM114-Status: GOOD (  11.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,43 +78,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andy.tang@nxp.com, linux-pm@vger.kernel.org, sboyd@kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- leoyang.li@nxp.com, shawnguo@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, benh@kernel.crashing.org,
+ dwmw@amazon.co.uk, gregkh@linuxfoundation.org, eitan@amazon.com,
+ hhhawa@amazon.com, jonnyc@amazon.com, hanochu@amazon.com, davem@davemloft.net,
+ james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ catalin.marinas@arm.com, ronenk@amazon.com, mchehab@kernel.org,
+ will@kernel.org, Talel Shenhar <talel@amazon.com>,
+ linux-kernel@vger.kernel.org, linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 21-04-20, 10:29, Mian Yousaf Kaukab wrote:
-> The driver has to be manually loaded if it is built as a module. It
-> is neither exporting MODULE_DEVICE_TABLE nor MODULE_ALIAS. Moreover,
-> no platform-device is created (and thus no uevent is sent) for the
-> clockgen nodes it depends on.
+On Mon, Feb 24, 2020 at 03:41:31PM +0200, Talel Shenhar wrote:
+> Document Amazon's Annapurna Labs Memory Controller EDAC SoC binding.
 > 
-> Convert the module to a platform driver with its own alias. Moreover,
-> drop whitelisted SOCs. Platform device will be created only for the
-> compatible platforms.
-> 
-> Reviewed-by: Yuantian Tang <andy.tang@nxp.com>
-> Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
-> Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
+> Signed-off-by: Talel Shenhar <talel@amazon.com>
+> Reviewed-by: Rob Herring <robh@kernel.org>
 > ---
-> v2:
->  +Rafael, Stephen, linux-clk
->  Add Reviewed-by and Acked-by tags
+>  .../bindings/edac/amazon,al-mc-edac.yaml      | 52 +++++++++++++++++++
+>  1 file changed, 52 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/edac/amazon,al-mc-edac.yaml
 > 
->  drivers/cpufreq/qoriq-cpufreq.c | 76 ++++++++++++++++-------------------------
->  1 file changed, 29 insertions(+), 47 deletions(-)
+> diff --git a/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.yaml b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.yaml
+> new file mode 100644
+> index 000000000000..20505f37c9f8
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.yaml
+> @@ -0,0 +1,52 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
 
-@Rafael,
+WARNING: DT binding documents should be licensed (GPL-2.0-only OR BSD-2-Clause)
+#36: FILE: Documentation/devicetree/bindings/edac/amazon,al-mc-edac.yaml:1:
++# SPDX-License-Identifier: GPL-2.0-only
 
-Though this looks to be PPC stuff, but it is used on both ARM and PPC. Do you
-want to pick them up or should I do that ?
+Hi Rob, should I listen to checkpatch or ignore it?
 
 -- 
-viresh
+Regards/Gruss,
+    Boris.
+
+https://people.kernel.org/tglx/notes-about-netiquette
 
 _______________________________________________
 linux-arm-kernel mailing list
