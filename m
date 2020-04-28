@@ -2,78 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12A8F1BB31F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 02:59:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 727D41BB33F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 03:08:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:Reply-To:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Content-ID:Content-Description:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pTmut2XG/2ZaR50yS3tj0JN7Z7QcSrX2+KRq335O+CA=; b=jb/UEOHKZQ/QjO
-	9SXFh7Le2iPS2M9OtQakWtn1YSl9tu5AhMz/1lOi1kRLrYIYuTwYrCpLYC8Bjt8TFg63OLasK6hWs
-	RyjBkYIb5wBSJ28jk2jm1rc0wZj0Hbz++38AStpfJNsLSBg3FbcmN8F/wPmohPBLW3Kv1YcAEu7JM
-	6vF3M5nxWkBTNK9jIa0d6qSuXRuIkSJZpwG2GR8ynB0Ho9AU7ibXkpP3dl3+0fF0Db7NClhQQfmza
-	ujhg34t2Vo/mLK0leGCPlUgiNZhs1pZ1htPA4sXjxBG8c0TAVrU9ZGPYXrao6I61dHvPQdcQWDjIe
-	fH1rEcqfPH5rCyAVWPyg==;
+	List-Owner; bh=19gau5qeEBoAIda6jvzXMNqoZSEFbTtdn4i3j4fDWAI=; b=HbFWyfGEGy0i8y
+	5nyMNMOF+WKsu7syiwUoNZZzcrX3K6LV5zm1efNeekZLNttfdkMsOpE3Y9dLrHeJXgOiwwb0BfSMu
+	lFg4mEs7wLv92wFfB99mqDcdQ0ZNk833VJIcnQ3/cULLcBjfO11aSaXWQWg8WqPhQKzbNyLz5qGp8
+	dFz4XdT1LGdPYXKUUSvgWtD3H9biGV2hbjrhtLCuSu5Ek3dRCTe25SeK0ebEtktXnBrs1jFrxOia8
+	Ywuh8dxoWuR3MuNQxkC3t2cVCjiWThcyBLVF0Me3mz6ErPdVSSNeZJ21+39wxfaQJbfY0WfCHvk+d
+	N4QhEKM5XxGRt2fd7sxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTEb5-0001DB-HG; Tue, 28 Apr 2020 00:59:39 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jTEjY-0000K2-8H; Tue, 28 Apr 2020 01:08:24 +0000
+Received: from mail-eopbgr150059.outbound.protection.outlook.com
+ ([40.107.15.59] helo=EUR01-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTEaw-0001BJ-8B
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 00:59:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588035567;
- h=from:from:reply-to:reply-to:subject:subject:date:date:
- message-id:message-id:to:to:cc:cc:mime-version:mime-version:
- content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=eCXtDAIPXE5kafrfekAlH3tsNBYP9X2R1z9BOoq2aRk=;
- b=YKt1hryqKzUo05yylcpxXYsCc9Wahcu3yB2apuNgIGBO6XqwerZThLoUu9SebE6e1OHxUI
- gg9VyNAdt7LXUxSjDYqwyRP+Doe9XgsG1nzVb31tgSUzfTG+rEp1T3kKtI5Swg11khYtmh
- rm0M2AxyeGdtxh1lxt8sjjTtctHpxCU=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-249-Z_pq3ejJNnaSiSk3m0hvjw-1; Mon, 27 Apr 2020 20:59:20 -0400
-X-MC-Unique: Z_pq3ejJNnaSiSk3m0hvjw-1
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 4D786468;
- Tue, 28 Apr 2020 00:59:19 +0000 (UTC)
-Received: from localhost.localdomain (vpn2-54-127.bne.redhat.com
- [10.64.54.127])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id C40F750C22;
- Tue, 28 Apr 2020 00:59:16 +0000 (UTC)
-Subject: Re: [PATCH] arm64/mm: Reject invalid NUMA option
-To: Mark Rutland <mark.rutland@arm.com>
-References: <20200424045314.16017-1-gshan@redhat.com>
- <20200424101132.GC1167@C02TD0UTHF1T.local>
-From: Gavin Shan <gshan@redhat.com>
-Message-ID: <f83c0ce1-b1b2-31f4-60c8-15567b87a8ff@redhat.com>
-Date: Tue, 28 Apr 2020 10:59:14 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.2.0
-MIME-Version: 1.0
-In-Reply-To: <20200424101132.GC1167@C02TD0UTHF1T.local>
+ id 1jTEjQ-0000JW-Ms
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 01:08:18 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Rnp0pI95npxur8b1v8V0pnSANjZjdW8jTemYgZuzrrhA/Xmc9F8qxMwNUc34QSGVbYVSXUtyW4HPwKhpw1UIskei/Wp61ONREdVUxhhoRCpyuFpbo3Vde+D/p8KFnhnYD67eH/zn6IHV6YnkYZ//tuhIX81lS4aAodQ2OBceUsf5ygmC/L+Vcz40L9AvCunxRpZ28ACk4tTfq/tT7lAwGfME++XETC/lF8hHAoVob9FgTwuiGkvjryYDDqWgu/fd9HFH0FuBEHcu7iVe5qhuEBQkQkrTrKIqmDWvQzkue7K68ECRHZJi/PcIkIZV0prxJJKOPN/4KlM8morEb03iBw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vbCAKYXzXLvUpEIshvpVq1AbAwGgFLNoxHJqs4pwWOE=;
+ b=T2IO/ha6exrEriZIve4QTziuz24XGFWPUiF06YpaI8FTCDi/9YyRH3gc8tmnp5xSmWIGk9zGJxGFg4LsHqJKLDwhXxGD9OAlW4XTjalzbk6QOpzstM6KtO/krLe6np7rHms8CaKsxanB4G61DX7yAC5OgXT98SAmwTclq4ulhpSmTyDQ+gbyCfjl5IJh2SPZ+4d6yQcgRjnrcg6Zc2V4R2IeFDX5X4hDWPYCXZapq9hxHlRzcLh8qxy25skiMFo04t67VZ2mQwG6rZrVxXRnbT098aUtnX81Ng629KYloT6nF2+8cePZGtmemfq0P5TvTGdSGvLbuGLd860Ef180Tw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=vbCAKYXzXLvUpEIshvpVq1AbAwGgFLNoxHJqs4pwWOE=;
+ b=FCnnCnInWauVp3U66IKKZqQ9BT8qb3u9xhdzA6280Rrh8t5T3Gx28/YXt2X2KcHd36TaSEjGEBoDg44Plp58J5iHaR1garXACHM5dAvbFahsRp1yJB5Am8CCCN/gyvsrcwHGgS0HSEd1ji0u65SOwwsieX8dAeV1goWwiA3JMHM=
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2759.eurprd04.prod.outlook.com (2603:10a6:4:a2::19)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Tue, 28 Apr
+ 2020 01:08:13 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2937.020; Tue, 28 Apr 2020
+ 01:08:13 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>, Anson Huang
+ <anson.huang@nxp.com>
+Subject: RE: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
+Thread-Topic: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite clk
+Thread-Index: AQHV+FjOyMJp4JjxAkWF8jtS4KMMQqiOAaZg
+Date: Tue, 28 Apr 2020 01:08:12 +0000
+Message-ID: <DB6PR0402MB2760D005442F4AF283F89B1B88AC0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+References: <1584008384-11578-1-git-send-email-peng.fan@nxp.com>
+ <1584008384-11578-8-git-send-email-peng.fan@nxp.com>
+ <VI1PR04MB69418E9348D5765B4AE01D18EED00@VI1PR04MB6941.eurprd04.prod.outlook.com>
+ <DB6PR0402MB2760726D128E4BA868F03D9488AF0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+ <VI1PR04MB694162B89953B58266395091EEAF0@VI1PR04MB6941.eurprd04.prod.outlook.com>
+In-Reply-To: <VI1PR04MB694162B89953B58266395091EEAF0@VI1PR04MB6941.eurprd04.prod.outlook.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 758498ee-021a-4f91-7c6a-08d7eb109fef
+x-ms-traffictypediagnostic: DB6PR0402MB2759:|DB6PR0402MB2759:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB6PR0402MB2759C2D32F87CE0FBDF3B16488AC0@DB6PR0402MB2759.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0387D64A71
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(39860400002)(376002)(346002)(396003)(136003)(6636002)(86362001)(186003)(26005)(4326008)(52536014)(33656002)(478600001)(55016002)(71200400001)(81156014)(66946007)(7416002)(2906002)(8936002)(316002)(66476007)(5660300002)(9686003)(54906003)(66446008)(7696005)(8676002)(6506007)(66556008)(64756008)(76116006)(110136005)(44832011)(53546011);
+ DIR:OUT; SFP:1101; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: rNDXW13XYMw/17h+OTPs7qz949PkmudYbWXrxVrwHa09XHgkfmLZ2GviS8X4/WxmgSycAkL+ulGoSUQG+AvSET1oA/BKhLYbk9Gf2mpJDM1mzHwPPn56U6swIaUNNfBjIVN0okLJ/7xs7HCelyaB+bhy5sPdmyHqL+D+fawd+7+03H8TYZx/O+YOYWLTZPfLXV5oYQF7mCtj8NhsLYaI+Ouj3dB8IhvAZh3CdusYEG96XZsF5Hi+KyUOgnEDH4e5Flyo32zT5SQ1ojUuAEvptpGGIxP9ye6nXsvDzd1FJADOhvVVDFzVpsUEp1bSnchEsZCvVNJtljfGcyRnEQB+Edo6iCxHFn37SUB6wJ+w2T3BwABAa9/GNxkiIlTp8z6HwvQx/HN9D3GJ6W7rOdBHoFVrTGzVBz7vjZM2EkevlDo5/nJmRRqfKv+IVM21tTFi
+x-ms-exchange-antispam-messagedata: pPpdlJhqdIF4DFqVJbFm1CEA6b3guUXjBUwFEEYGyOD6sHPH70igUJOOeMiVz1zxYUx4yX46DYaUSreiFP8QLfDt7GjzweW6ARtDl+zjP6oT3OY+066qS/CCjCsTi/J9WJb3dt6ybbWFzA9eDub2WKrkzU9qyDYFFiW/E30mQzX/vYwOkqhKFvuXF56tU/qMFIMS/WxT08i6aln9RxuHsNtBXMcBoLySIUwCDoBGtYeCaLIHbS+LHU98aGoQdWpjMmfh0iz2HunyuKCbEq+e4IVFCkPdwDkNHlbNiDpK9G6O6H+xkdmm5wvnAehsVaOiG4a3xW4+a3AhKKi3/melrNL8Jelh+jMDZLf4MPXS/gEYvUMGJoYIq5Lgz2P/vfeW+tm+z6KNOY1fHKWOiRULVDu1W/HO/OKEqh2kw4IvUyqtVVT6j5KAlgVBZs3ph5XHiwGJwXP1E5oM0d8dSD73SUsrJbApoSfOnuUEs4W5wghOo9CeO5sufWhEUZx4Z8+tI8fSTCZNWLgsUnOCorFCXgQkjMSSr8QErkbsDLEMrCP2qDk1dnXv6vf+x7gO2kLuMrYWGVjJtbx2SSGe391F/TCAXkRxKx0gDPSsPL/1Vd9WHxRKVtaGu9wHBbNm9ODrRo1vHcjZTye7Gr84TtA2sm3iLPq2BnuIXFkUYcugNrn2eF5mKnjcF9Mb+Iu+BP5b9Z3wBYLNRdSp0DqPIBadBQNU52aTO3V3fmfn6nwh/dwY71uqUnpquUcVuSWMlkYYJwYqiZ+MOwt0wBq+DCYHv8lUkdQd91NLqMGQRpc7dA8=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 758498ee-021a-4f91-7c6a-08d7eb109fef
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Apr 2020 01:08:12.9221 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Prmns/pJxcugQFHNNNBS3P3ft323GBjiAw5dl3Hd2LF55N2gMUXCQ9ajBv452MXloLquxUh7wXnYZ8VPYU/txA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2759
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200427_175930_377300_A886CE79 
-X-CRM114-Status: GOOD (  23.49  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200427_180816_823458_C579CD31 
+X-CRM114-Status: GOOD (  17.39  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.120 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.15.59 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.15.59 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -81,7 +117,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,117 +128,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: Gavin Shan <gshan@redhat.com>
-Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, shan.gavin@gmail.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Daniel Baluta <daniel.baluta@nxp.com>, Andy Duan <fugang.duan@nxp.com>,
+ Abel Vesa <abel.vesa@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "angus@akkea.ca" <angus@akkea.ca>, "heiko@sntech.de" <heiko@sntech.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "andrew.smirnov@gmail.com" <andrew.smirnov@gmail.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "l.stach@pengutronix.de" <l.stach@pengutronix.de>,
+ "aford173@gmail.com" <aford173@gmail.com>, Jun Li <jun.li@nxp.com>,
+ "festevam@gmail.com" <festevam@gmail.com>, "agx@sigxcpu.org" <agx@sigxcpu.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark,
-
-On 4/24/20 8:11 PM, Mark Rutland wrote:
-> [Adding Steve, who added str_has_prefix()]
+> Subject: Re: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M composite
+> clk
 > 
-> On Fri, Apr 24, 2020 at 02:53:14PM +1000, Gavin Shan wrote:
->> The NUMA option is parsed by str_has_prefix() and the invalid option
->> like "numa=o" can be regarded as "numa=off" wrongly.
+> On 2020-04-27 12:15 PM, Peng Fan wrote:
+> >> Subject: Re: [PATCH V2 07/10] clk: imx: add mux ops for i.MX8M
+> >> composite clk
+> >>
+> >> On 2020-03-12 12:27 PM, Peng Fan wrote:
+> >>> From: Peng Fan <peng.fan@nxp.com>
+> >>>
+> >>> The CORE/BUS root slice has following design, simplied graph:
+> >>> The difference is core not have pre_div block.
+> >>> A composite core/bus clk has 8 inputs for mux to select, saying clk[0-7].
+> >>>
+> >>>               SEL_A  GA
+> >>>               +--+  +-+
+> >>>               |  +->+ +------+
+> >>> CLK[0-7]--->+  |  +-+      |
+> >>>          |    |  |      +----v---+    +----+
+> >>>          |    +--+      |pre_diva+---->    |  +---------+
+> >>>          |              +--------+    |mux +--+post_div |
+> >>>          |    +--+      |pre_divb+--->+    |  +---------+
+> >>>          |    |  |      +----^---+    +----+
+> >>>          +--->+  |  +-+      |
+> >>>               |  +->+ +------+
+> >>>               +--+  +-+
+> >>>               SEL_B  GB
+> >>>
+> >>> There will be system hang, when doing the following steps:
+> >>> 1. switch mux from clk0 to clk1
+> >>> 2. gate off clk0
+> >>> 3. swtich from clk1 to clk2, or gate off clk1
+> >>>
+> >>> Step 3 triggers system hang.
+> >>>
+> >>> If we skip step2, keep clk0 on, step 3 will not trigger system hang.
+> >>> However we have CLK_OPS_PARENT_ENABLE flag, which will unprepare
+> >>> disable the clk0 which will not be used.
+> >>
+> >> As far as I understand when switching from clk1 to clk2 this is done
+> >> by temporarily switching the rightmost SELECT mux to whatever was in
+> >> the spare SEL, which is essentially arbitrary from linux POV.
+> >
+> > No. The fixes in this patches has been confirmed by IC design owner
+> >
+> >>
+> >> This is quite unexpected but in theory it might be desirable to use a
+> >> third parent as a fallback.
+> >
+> > No. this will make things complicated. To CCM SEL_A and SEL_B, it is
+> > controlled by a hardware counter. Saying you write n times to the
+> > target interface.
+> >
+> > The mux will use n % 2 to choose SEL_A or SEL_B. write twice to make
+> > sure SEL_A and SEL_B has the same value.
 > 
-> Are you certain that can pass? If that can happen, str_has_prefix() is
-> misnamed and does not seem to do what its kerneldoc says it does, as
-> "off" is not a prefix of "o".
-> 
+> What if SEL_A and SEL_B have different values on boot? The first time linux
+> does set_parent it will switch to the other SEL_X which might be off.
 
-Yes, It's possible. str_has_prefix() depends on strncmp(). In this particular
-case, it's equal to the snippet of code as below: strncmp() returns zero.
-str_has_prefix() returns 3.
+If SEL_A and SEL_B has different values on boot, SEL_A or SEL_B will
+be effective according internal counter. There must be one
+chosen for mux usage whether SEL_A or SEL_B.
 
-int strncmp(const char *cs, const char *ct, size_t count)
-{
-         unsigned char c1, c2;
-
-         while (count) {
-                 c1 = *cs++;
-                 c2 = *ct++;
-                 if (c1 != c2)
-                         return c1 < c2 ? -1 : 1;
-                 if (!c1)                             /* break after first character is compared */
-                         break;
-                 count--;
-         }
-         return 0;                                    /* 0 returned */
-}
-
-static __always_inline size_t str_has_prefix(const char *str, const char *prefix)
-{
-         size_t len = strlen("o");
-         return strncmp("o", "off", 1) == 0 ? len : 0;
-}
-
->> This fixes the issue with sysfs_streq(), which have more sanity checks,
->> to avoid accepting the invalid options.
-> 
-> That doesn't sound immediately right, since this is an early parameter,
-> which has nothing to do with sysfs. Perhaps that's just a misleading
-> name?
-> 
-
-sysfs_streq() was introduced to compare the parameters received from sysfs
-entry, but I don't think it has to be necessarily tied with sysfs entry.
-So the name is bit misleading. Alternatively, we also can fix it in another
-way (as below) if we try to avoid using sysfs_streq().
-
-diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
-index 4decf1659700..b0c1ec78f50f 100644
---- a/arch/arm64/mm/numa.c
-+++ b/arch/arm64/mm/numa.c
-@@ -29,9 +29,13 @@ static __init int numa_parse_early_param(char *opt)
-  {
-         if (!opt)
-                 return -EINVAL;
--       if (str_has_prefix(opt, "off"))
-+
-+       if (strlen(opt) >= 3 && str_has_prefix(opt, "off"))
-                 numa_off = true;
-
-> Thanks,
-> Mark.
-> 
+The CCM ROOT slice only has SEL_A and SEL_B, no SEL_X. SEL_A and SEL_B
+both have 7 mux inputs.
 
 Thanks,
-Gavin
-
->> Signed-off-by: Gavin Shan <gshan@redhat.com>
->> ---
->>   arch/arm64/mm/numa.c | 3 ++-
->>   1 file changed, 2 insertions(+), 1 deletion(-)
->>
->> diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
->> index 4decf1659700..bd458b28616a 100644
->> --- a/arch/arm64/mm/numa.c
->> +++ b/arch/arm64/mm/numa.c
->> @@ -29,7 +29,8 @@ static __init int numa_parse_early_param(char *opt)
->>   {
->>   	if (!opt)
->>   		return -EINVAL;
->> -	if (str_has_prefix(opt, "off"))
->> +
->> +	if (sysfs_streq(opt, "off"))
->>   		numa_off = true;
->>   
->>   	return 0;
->> -- 
->> 2.23.0
->>
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-
+Peng.
 
 _______________________________________________
 linux-arm-kernel mailing list
