@@ -2,81 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6B6A1BCDAE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:50:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE0CB1BCDCA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 22:58:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=fgQBjPSSDmTWd27ofnMYJUChGqZIKOxh65LIfUoCgVI=; b=JiVzaqAaTaOXTx
-	pEjlJrhIiiwrUm1oGIQV+N2ZiU4ztfvh78dT8gIZxyHxAhR0IixrCAtkimIZy9IeQd7+U4eZK6EvX
-	Eqzf26RBVihgpfpW2n/54RBIafI1quJpMHZTeYqMaDTQD65MiFv1IZ3wydCKHE53RJEb+ntEr7NAy
-	wllaA2HlA0Rfg9kEBk1bk/3x4HW1GLRjARwa61LJoMnYtN60wgZ3r994C90pvUz9D9kf5JEt53iYd
-	H0EYzCvMU1KGbHkdCAzTF5YA3gAITEGNlyB/N6cZY5DCWNiILQZnCpc5rHyD4SCuCo+89y0kupCCI
-	wZ5uKRNCpQA2HL1mcT6A==;
+	List-Owner; bh=xrbHMFeP30wsCBwctlFjwWv/LVggee9lrxZoY2QKZLk=; b=oYgzii8D1oi2JG
+	QQfv8VngqBU8/ITBt0EdEJrsjxtKj+xl8kpdKXdgfn9cNSn98VyLAxtG2M+EZ1des3XpkTKvrrrhB
+	XVP7bs3UXEPX4gUgqUbei3Fv77jRl3+oroGBGwhlCnqT9qBAHy7b/r6GQhqHD5ToLTBdsONz67g9S
+	JKBgSeYF0VAAojDF51/4S4EiFdDQI6t32yP170SllBeijtS+Bb7ZWh/EZxtM0ijjG+x0Slmq7fcBY
+	ajUkrYQ1uSyfjfeN2rZGbRkCoaBtAyzN621kgR3DIsupFO58nK2EjFlVNkREoLK+LguyjkKwtqDZ6
+	0T8XYrWVVbJsVC86HJIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTXB2-0002Uo-CG; Tue, 28 Apr 2020 20:50:00 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jTXJ9-0001D7-7e; Tue, 28 Apr 2020 20:58:23 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTXAq-0002U7-Cs
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 20:49:49 +0000
-Received: by mail-ot1-f65.google.com with SMTP id e26so35296955otr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 13:49:47 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=6EeJQUcQx1ZUEC6Sz+HmpaKf0KrWlHRUUSnQJGXOOU4=;
- b=Wh7nwaiGon4wpdeT5hJrAWQ9S41aAr9TFXk6XtdnBvqfmX78eYwGp9dweBOuTWUHSM
- wgTD+DeAGBjos0eKqg1hXljNhaEfVEmpDdC+LgY+5dOa2dHVVmBa5W4/EehhJJbNtQSd
- eOIkpDqpIiRGgqZqAXcczO5b/0ag/4wSC2Bfy1a0IEKyx58pG6nd3Ltb/LdcDauE/XBX
- IIGQ3LkaJHaljIjyRjfgI2wLSkQWA7pO656HEhQmdavCzwRKUwYfrAKho3PMOFqi4wKW
- /hpEn+hZa2HlhamxHrFKTKD+XC+R0KdpimLK/J6/ywm6H2a0teg7Z70J8Y8XHqVxG91X
- WvfQ==
-X-Gm-Message-State: AGi0PuYj2N3vS4pKyoTYioDM7Bg+uEWeryFLuTfQnKMVyW3twf9Ka0nn
- jCCyTsjNZ501wBL6WDHIXQ==
-X-Google-Smtp-Source: APiQypImciVBBbDsKwb7MoERjDQFaLAa6CEeYV+23Ln+YWTVS91K0H71jB579oSoRpkXUBz4Xdp2+A==
-X-Received: by 2002:a9d:7414:: with SMTP id n20mr25652200otk.61.1588106987239; 
- Tue, 28 Apr 2020 13:49:47 -0700 (PDT)
-Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id r67sm5109606oie.19.2020.04.28.13.49.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 28 Apr 2020 13:49:46 -0700 (PDT)
-From: Rob Herring <robh@kernel.org>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH] clk: versatile: Drop the legacy IM-PD1 clock code
-Date: Tue, 28 Apr 2020 15:49:45 -0500
-Message-Id: <20200428204945.21067-1-robh@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ id 1jTXIt-000185-LI; Tue, 28 Apr 2020 20:58:09 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SKqvaJ036359;
+ Tue, 28 Apr 2020 20:56:31 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=from : to : cc :
+ subject : date : message-id : mime-version : content-transfer-encoding;
+ s=corp-2020-01-29; bh=3EBd0JFCCDiBFwAIUR2awq/QssydoJhBBr3apN0hNL4=;
+ b=nzmQliv6J5k3gHWPvWJnPS0vCXA935IwAWlquOi+UB4cAOG5GVA8x0EevBJ6Y7/4S/Wk
+ cv/nnjbngxq/xJG7dp3yAjkB+bsgpWoDW9qZNV+cAqAZns+fDRhkr+rg2+tDHEZ/681c
+ xkLQsXTstu9RMA24ANZwGtc5hQztAHf/yefkq+EIN6UcQxslL2wUYZ6Tq5F8xiUINzSg
+ WRLXyPu9XyyVs0d1h1qHTOO5xQEIKOY9IVd4tzdbzR0qekcaam1PlrOpTOfy61AeKw2P
+ r2lDbxIbSa7ZBs2XqvAuCMXzfVZKlVpJeAzcr+bTdwGyAVkjeLBKw+Kw/mVMVWpq+i94 sQ== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by aserp2120.oracle.com with ESMTP id 30nucg2bth-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 Apr 2020 20:56:31 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 03SKr0DT002838;
+ Tue, 28 Apr 2020 20:56:31 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by aserp3020.oracle.com with ESMTP id 30my0ebuum-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Tue, 28 Apr 2020 20:56:31 +0000
+Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id 03SKuJJT014969;
+ Tue, 28 Apr 2020 20:56:20 GMT
+Received: from monkey.oracle.com (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Tue, 28 Apr 2020 13:56:19 -0700
+From: Mike Kravetz <mike.kravetz@oracle.com>
+To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
+ linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
+ sparclinux@vger.kernel.org, linux-doc@vger.kernel.org
+Subject: [PATCH v4 0/4] Clean up hugetlb boot command line processing
+Date: Tue, 28 Apr 2020 13:56:10 -0700
+Message-Id: <20200428205614.246260-1-mike.kravetz@oracle.com>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 malwarescore=0
+ spamscore=0
+ suspectscore=0 adultscore=0 mlxlogscore=999 bulkscore=0 phishscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004280163
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9605
+ signatures=668686
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 clxscore=1015
+ priorityscore=1501
+ mlxlogscore=999 impostorscore=0 suspectscore=0 malwarescore=0
+ lowpriorityscore=0 mlxscore=0 spamscore=0 adultscore=0 phishscore=0
+ bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2004280163
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_134948_435987_B7E4D684 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20200428_135807_791154_D8D4D21E 
+X-CRM114-Status: GOOD (  18.06  )
+X-Spam-Score: -1.6 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.9 RCVD_IN_MSPIKE_L3      RBL: Low reputation (-3)
+ [141.146.126.78 listed in bl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_BL      Mailspike blacklisted
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,187 +112,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stephen Boyd <sboyd@kernel.org>, soc@kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, Peter Xu <peterx@redhat.com>,
+ Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
+ Mina Almasry <almasrymina@google.com>, Jonathan Corbet <corbet@lwn.net>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Longpeng <longpeng2@huawei.com>,
+ Albert Ou <aou@eecs.berkeley.edu>, Vasily Gorbik <gor@linux.ibm.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Christophe Leroy <christophe.leroy@c-s.fr>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Randy Dunlap <rdunlap@infradead.org>,
+ Palmer Dabbelt <palmer@dabbelt.com>, Andrew Morton <akpm@linux-foundation.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the non-DT IM-PD1 support code has been removed, drop the clock
-related code from clk-impd1.c.
+v4 -
+   Fixed huge page order definitions for arm64 (Qian Cai)
+   Removed hugepages_supported() checks in command line processing as
+     powerpc does not set hugepages_supported until later in boot (Sandipan)
+   Added Acks, Reviews and Tested (Will, Gerald, Anders, Sandipan)
 
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Stephen Boyd <sboyd@kernel.org>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-clk@vger.kernel.org
-Signed-off-by: Rob Herring <robh@kernel.org>
----
-This is depends on the pending IM-PD1 DT support Linus has queued up. 
-Perhaps apply on top of his PR '[GIT PULL] Versatile changes for v5.8 
-take 1'.
+v3 -
+   Used weak attribute method of defining arch_hugetlb_valid_size.
+     This eliminates changes to arch specific hugetlb.h files (Peter)
+   Updated documentation (Peter, Randy)
+   Fixed handling of implicitly specified gigantic page preallocation
+     in existing code and removed documentation of such.  There is now
+     no difference between handling of gigantic and non-gigantic pages.
+     (Peter, Nitesh).
+     This requires the most review as there is a small change to
+     undocumented behavior.  See patch 4 commit message for details.
+   Added Acks and Reviews (Mina, Peter)
 
- drivers/clk/versatile/clk-impd1.c            | 121 -------------------
- include/linux/platform_data/clk-integrator.h |   2 -
- 2 files changed, 123 deletions(-)
- delete mode 100644 include/linux/platform_data/clk-integrator.h
+v2 -
+   Fix build errors with patch 1 (Will)
+   Change arch_hugetlb_valid_size arg to unsigned long and remove
+     irrelevant 'extern' keyword (Christophe)
+   Documentation and other misc changes (Randy, Christophe, Mina)
+   Do not process command line options if !hugepages_supported()
+     (Dave, but it sounds like we may want to additional changes to
+      hugepages_supported() for x86?  If that is needed I would prefer
+      a separate patch.)
 
-diff --git a/drivers/clk/versatile/clk-impd1.c b/drivers/clk/versatile/clk-impd1.c
-index b05da8516d4c..95129d39a44b 100644
---- a/drivers/clk/versatile/clk-impd1.c
-+++ b/drivers/clk/versatile/clk-impd1.c
-@@ -8,7 +8,6 @@
- #include <linux/err.h>
- #include <linux/io.h>
- #include <linux/platform_device.h>
--#include <linux/platform_data/clk-integrator.h>
- #include <linux/module.h>
- #include <linux/mfd/syscon.h>
- #include <linux/regmap.h>
-@@ -20,26 +19,6 @@
- #define IMPD1_OSC2	0x04
- #define IMPD1_LOCK	0x08
- 
--struct impd1_clk {
--	char *pclkname;
--	struct clk *pclk;
--	char *vco1name;
--	struct clk *vco1clk;
--	char *vco2name;
--	struct clk *vco2clk;
--	struct clk *mmciclk;
--	char *uartname;
--	struct clk *uartclk;
--	char *spiname;
--	struct clk *spiclk;
--	char *scname;
--	struct clk *scclk;
--	struct clk_lookup *clks[15];
--};
--
--/* One entry for each connected IM-PD1 LM */
--static struct impd1_clk impd1_clks[4];
--
- /*
-  * There are two VCO's on the IM-PD1
-  */
-@@ -80,106 +59,6 @@ static const struct clk_icst_desc impd1_icst2_desc = {
- 	.lock_offset = IMPD1_LOCK,
- };
- 
--/**
-- * integrator_impd1_clk_init() - set up the integrator clock tree
-- * @base: base address of the logic module (LM)
-- * @id: the ID of this LM
-- */
--void integrator_impd1_clk_init(void __iomem *base, unsigned int id)
--{
--	struct impd1_clk *imc;
--	struct clk *clk;
--	struct clk *pclk;
--	int i;
--
--	if (id > 3) {
--		pr_crit("no more than 4 LMs can be attached\n");
--		return;
--	}
--	imc = &impd1_clks[id];
--
--	/* Register the fixed rate PCLK */
--	imc->pclkname = kasprintf(GFP_KERNEL, "lm%x-pclk", id);
--	pclk = clk_register_fixed_rate(NULL, imc->pclkname, NULL, 0, 0);
--	imc->pclk = pclk;
--
--	imc->vco1name = kasprintf(GFP_KERNEL, "lm%x-vco1", id);
--	clk = icst_clk_register(NULL, &impd1_icst1_desc, imc->vco1name, NULL,
--				base);
--	imc->vco1clk = clk;
--	imc->clks[0] = clkdev_alloc(pclk, "apb_pclk", "lm%x:01000", id);
--	imc->clks[1] = clkdev_alloc(clk, NULL, "lm%x:01000", id);
--
--	/* VCO2 is also called "CLK2" */
--	imc->vco2name = kasprintf(GFP_KERNEL, "lm%x-vco2", id);
--	clk = icst_clk_register(NULL, &impd1_icst2_desc, imc->vco2name, NULL,
--				base);
--	imc->vco2clk = clk;
--
--	/* MMCI uses CLK2 right off */
--	imc->clks[2] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00700", id);
--	imc->clks[3] = clkdev_alloc(clk, NULL, "lm%x:00700", id);
--
--	/* UART reference clock divides CLK2 by a fixed factor 4 */
--	imc->uartname = kasprintf(GFP_KERNEL, "lm%x-uartclk", id);
--	clk = clk_register_fixed_factor(NULL, imc->uartname, imc->vco2name,
--				   CLK_IGNORE_UNUSED, 1, 4);
--	imc->uartclk = clk;
--	imc->clks[4] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00100", id);
--	imc->clks[5] = clkdev_alloc(clk, NULL, "lm%x:00100", id);
--	imc->clks[6] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00200", id);
--	imc->clks[7] = clkdev_alloc(clk, NULL, "lm%x:00200", id);
--
--	/* SPI PL022 clock divides CLK2 by a fixed factor 64 */
--	imc->spiname = kasprintf(GFP_KERNEL, "lm%x-spiclk", id);
--	clk = clk_register_fixed_factor(NULL, imc->spiname, imc->vco2name,
--				   CLK_IGNORE_UNUSED, 1, 64);
--	imc->clks[8] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00300", id);
--	imc->clks[9] = clkdev_alloc(clk, NULL, "lm%x:00300", id);
--
--	/* The GPIO blocks and AACI have only PCLK */
--	imc->clks[10] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00400", id);
--	imc->clks[11] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00500", id);
--	imc->clks[12] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00800", id);
--
--	/* Smart Card clock divides CLK2 by a fixed factor 4 */
--	imc->scname = kasprintf(GFP_KERNEL, "lm%x-scclk", id);
--	clk = clk_register_fixed_factor(NULL, imc->scname, imc->vco2name,
--				   CLK_IGNORE_UNUSED, 1, 4);
--	imc->scclk = clk;
--	imc->clks[13] = clkdev_alloc(pclk, "apb_pclk", "lm%x:00600", id);
--	imc->clks[14] = clkdev_alloc(clk, NULL, "lm%x:00600", id);
--
--	for (i = 0; i < ARRAY_SIZE(imc->clks); i++)
--		clkdev_add(imc->clks[i]);
--}
--EXPORT_SYMBOL_GPL(integrator_impd1_clk_init);
--
--void integrator_impd1_clk_exit(unsigned int id)
--{
--	int i;
--	struct impd1_clk *imc;
--
--	if (id > 3)
--		return;
--	imc = &impd1_clks[id];
--
--	for (i = 0; i < ARRAY_SIZE(imc->clks); i++)
--		clkdev_drop(imc->clks[i]);
--	clk_unregister(imc->spiclk);
--	clk_unregister(imc->uartclk);
--	clk_unregister(imc->vco2clk);
--	clk_unregister(imc->vco1clk);
--	clk_unregister(imc->pclk);
--	kfree(imc->scname);
--	kfree(imc->spiname);
--	kfree(imc->uartname);
--	kfree(imc->vco2name);
--	kfree(imc->vco1name);
--	kfree(imc->pclkname);
--}
--EXPORT_SYMBOL_GPL(integrator_impd1_clk_exit);
--
- static int integrator_impd1_clk_spawn(struct device *dev,
- 				      struct device_node *parent,
- 				      struct device_node *np)
-diff --git a/include/linux/platform_data/clk-integrator.h b/include/linux/platform_data/clk-integrator.h
-deleted file mode 100644
-index addd48cac625..000000000000
---- a/include/linux/platform_data/clk-integrator.h
-+++ /dev/null
-@@ -1,2 +0,0 @@
--void integrator_impd1_clk_init(void __iomem *base, unsigned int id);
--void integrator_impd1_clk_exit(unsigned int id);
+Longpeng(Mike) reported a weird message from hugetlb command line processing
+and proposed a solution [1].  While the proposed patch does address the
+specific issue, there are other related issues in command line processing.
+As hugetlbfs evolved, updates to command line processing have been made to
+meet immediate needs and not necessarily in a coordinated manner.  The result
+is that some processing is done in arch specific code, some is done in arch
+independent code and coordination is problematic.  Semantics can vary between
+architectures.
+
+The patch series does the following:
+- Define arch specific arch_hugetlb_valid_size routine used to validate
+  passed huge page sizes.
+- Move hugepagesz= command line parsing out of arch specific code and into
+  an arch independent routine.
+- Clean up command line processing to follow desired semantics and
+  document those semantics.
+
+[1] https://lore.kernel.org/linux-mm/20200305033014.1152-1-longpeng2@huawei.com
+
+Mike Kravetz (4):
+  hugetlbfs: add arch_hugetlb_valid_size
+  hugetlbfs: move hugepagesz= parsing to arch independent code
+  hugetlbfs: remove hugetlb_add_hstate() warning for existing hstate
+  hugetlbfs: clean up command line processing
+
+ .../admin-guide/kernel-parameters.txt         |  40 ++--
+ Documentation/admin-guide/mm/hugetlbpage.rst  |  35 ++++
+ arch/arm64/mm/hugetlbpage.c                   |  30 +--
+ arch/powerpc/mm/hugetlbpage.c                 |  30 +--
+ arch/riscv/mm/hugetlbpage.c                   |  24 +--
+ arch/s390/mm/hugetlbpage.c                    |  24 +--
+ arch/sparc/mm/init_64.c                       |  43 +----
+ arch/x86/mm/hugetlbpage.c                     |  23 +--
+ include/linux/hugetlb.h                       |   2 +-
+ mm/hugetlb.c                                  | 180 ++++++++++++++----
+ 10 files changed, 260 insertions(+), 171 deletions(-)
+
 -- 
-2.20.1
+2.25.4
 
 
 _______________________________________________
