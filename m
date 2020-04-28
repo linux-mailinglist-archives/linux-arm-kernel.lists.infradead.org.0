@@ -2,83 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51DE61BBB5E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 12:38:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 616831BBB66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 28 Apr 2020 12:43:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Jr+60rV4aZX8leRannNnGIWXH5EoXxvVB2vlyly65mc=; b=XNV35s7OalVL8M
-	mEdqjj/hGAslT5WjJPDqukoAKpktrH6NOESfYXOdkrDsJBWhZL4pj0OiHKxrFII29Lng6w4G6K2zQ
-	scp1raUtU9iPjCL0DExFf7yw9VBmGazSpVUnXyeCKiIvsJOExVkfeSnIN0+CS1lY4fH8BecY7DUVb
-	gHpLMsh2jgIH7ALlqKNo9K9LskbdxF2f03lu+6pm+BQnxpVXTitJSgRVBPqGCesIvCSRxomZKZjQK
-	Jc7TL8F1N1ky3OPmMfp1WRuYLu8lTSSf2o6kHNeAb6j8hpRPcOAQ3m9auzP4fZv+hqliGYLbzwmhw
-	KU/uNROcjpic2J8yQuJw==;
+	List-Owner; bh=AdssJbSDkCj0j/6zGTpcoc6wWQbbDbBzorneQZLw+nk=; b=abBmGJZrqSFFaI
+	sU6lbMmI99YyhuRax/rx7P/9KNEwOqiRmtnhHG6srpCzlVqodZ6/sWwn/duKGaCyaFxpgBGhP/jIl
+	uBTkh8xwOT/2QhVMGf2Nd0s7H7g7lpWv/3LqJfYJb34pIjHUQOpqJDa+JMRwHqML/EcqHUKLPOZOI
+	Ai2qDdtddo5FPnkJJCnPGR5RGUDrDeWlxyB73hG0J4JpqUaS52mIVL/fyBo0wdGI1hO7vXerPOL8/
+	SvP9vtkZpgkjJ/GCl2nWPHxaGz8YuOptQs/QYlmpFvLVmxJUXyqA6NX9y5snSBYBw7h/zgo6S5dpg
+	pkYc6slFiTMm7iarKZjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTNdP-000052-Qf; Tue, 28 Apr 2020 10:38:39 +0000
-Received: from mail-ej1-f66.google.com ([209.85.218.66])
+	id 1jTNiA-0003En-7T; Tue, 28 Apr 2020 10:43:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTNdE-0008Vx-KF
- for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 10:38:29 +0000
-Received: by mail-ej1-f66.google.com with SMTP id rh22so16845248ejb.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 28 Apr 2020 03:38:28 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=QS4c9ls6yzOR+yRWTJD8hrerOuMZYga2B1YWCy646HU=;
- b=UvGAW28YoOGFZu5BoZte6O98dKuIiblhgiFgulC/q/okOaObPNJIurT4mAf8Bnr67b
- yHzysM7YX9unuAhZCCUZ5r+omZBgzs/qFTcu8KQ01Z8e4ArYCWwsfAXVq5bSL+uBt60n
- RUJJA2qhL9TFIiOT/xgxclEJzEnskIRNc8/mHUvq+pL9jQ7gHuIti1/C/EhtEywqLZ7a
- MeAr9sRI757MtUp879vytLaWJeiWtLoDdh4ajjpMhISoLbfLgQ1Hg8CJS6+LgCqdKH8v
- 7RHfamFMaWdPHItIRiSLs/awYT3J7Xr7L+mtPH5UzmaAhIM0DduF4z2N5EnTaaVqUFnI
- VhHA==
-X-Gm-Message-State: AGi0PuYyudhO9sjclx6juhYzuLGfWNia1SlHmKxA+IOxpR+F2r2lzkUt
- 7ddOPPA/WSmsjzNb+TXC7EU=
-X-Google-Smtp-Source: APiQypIJTK4SUmp8jTM+oNe7+uJOVbtyCyJrubIWc/QoIsByKo+wNj3JnrX0SttughUGYKSrljqd1w==
-X-Received: by 2002:a17:906:9706:: with SMTP id
- k6mr24724371ejx.103.1588070307272; 
- Tue, 28 Apr 2020 03:38:27 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.237])
- by smtp.googlemail.com with ESMTPSA id qo12sm411994ejb.14.2020.04.28.03.38.26
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 28 Apr 2020 03:38:26 -0700 (PDT)
-Date: Tue, 28 Apr 2020 12:38:24 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jonathan Bakker <xc-racer2@live.ca>
-Subject: Re: [PATCH 00/13] S5PV210 and Aries DTS improvements
-Message-ID: <20200428103824.GF23963@kozik-lap>
-References: <BN6PR04MB06601A5656CF70A4DCA7998BA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
+ id 1jTNhw-0003Di-Bh
+ for linux-arm-kernel@lists.infradead.org; Tue, 28 Apr 2020 10:43:21 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1BEAE206D9;
+ Tue, 28 Apr 2020 10:43:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588070599;
+ bh=GvZw02cDp/CB7bcGKkjmCqmDGDrOeQgcQkmxq9uAkNw=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=R7EDXT/qG39tLOu7cRfMhq1+dsHmUmxnrYlp5b0go0iiuTKsBX3eTlwjUUCtUBwnE
+ c9OVr9dQZ+Qid/9sQkqFxJiqAxA3dqbHGnMC3pJWF94DULpDwePDoPEq5HbTvQWt8a
+ jwZUxaPOogBbcLxfXMVWebTm6PlE2QMvyZcDvkcQ=
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org, Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH 0/2] arm64: pointer authentication initialization cleanup
+Date: Tue, 28 Apr 2020 11:43:13 +0100
+Message-Id: <158806940157.152989.16762478723906705606.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200423101606.37601-1-mark.rutland@arm.com>
+References: <20200423101606.37601-1-mark.rutland@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BN6PR04MB06601A5656CF70A4DCA7998BA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_033828_663981_9A209DCB 
-X-CRM114-Status: GOOD (  12.43  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200428_034320_423519_C0B2F8DF 
+X-CRM114-Status: UNSURE (   9.14  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.218.66 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.218.66 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,43 +77,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, kgene@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: amit.kachhap@arm.com, catalin.marinas@arm.com,
+ Will Deacon <will@kernel.org>, james.morse@arm.com, suzuki.poulose@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gU3VuLCBBcHIgMjYsIDIwMjAgYXQgMTE6MzU6NTFBTSAtMDcwMCwgSm9uYXRoYW4gQmFra2Vy
-IHdyb3RlOgo+IFRoaXMgcGF0Y2hzZXQgbWFrZXMgc2V2ZXJhbCBpbXByb3ZlbWVudHMgdG8gQXJp
-ZXMgZGV2aWNlcyB3aGljaCBhcmUKPiBiYXNlZCBvbiBTNVBWMjEwLiAgU2V2ZXJhbCBwdWxscyBv
-biBHUElPcyB3ZXJlIGluY29ycmVjdC9ub3Qgc3BlY2lmaWVkLAo+IHNsZWVwIEdQSU8gY29uZmln
-dXJhdGlvbnMgaGF2ZSBiZWVuIGFkZGVkLCBhbmQgbW9yZSBkZXZpY2VzIGhhdmUgYmVlbgo+IGFk
-ZGVkLgo+IAo+IFRvdWNoaW5nIHRoZSBjb21tb24gUzVQVjIxMCBEVFNJIGFyZSB0aGUgYWRkaXRp
-b24gb2YgdGhlIEFEQyBub2RlCj4gYXMgd2VsbCBhcyBmaXhlcyB0byB0aGUgRklNQyBkZWZpbml0
-aW9ucyBhbmQgYSBzbGVlcCBHUElPIGhlbHBlcgo+IGFkZGVkLgo+IAo+IFRoZSBwYXRjaGVzIGhh
-dmUgYmVlbiB0ZXN0ZWQgb24gYm90aCBhIEdULWk5MDAwIGFzIHdlbGwgYXMgYW4KPiBTR0gtVDk1
-OVAgYW5kIGJvdGggY2FuIG5vdyBzdXNwZW5kL3Jlc3VtZSBwcm9wZXJseS4KPiAKPiBKb25hdGhh
-biBCYWtrZXIgKDEyKToKPiAgIGFybTogZHRzOiBzNXB2MjEwOiBBZGQgaGVscGVyIGRlZmluZSBm
-b3Igc2xlZXAgZ3BpbyBjb25maWcKPiAgIGFybTogZHRzOiBzNXB2MjEwOiBmYXNjaW5hdGU0Zzog
-QWRkIHNsZWVwIEdQSU8gY29uZmlndXJhdGlvbgo+ICAgYXJtOiBkdHM6IHM1cHYyMTA6IGdhbGF4
-eXM6IEFkZCBzbGVlcCBHUElPIGNvbmZpZ3VyYXRpb24KPiAgIGFybTogZHRzOiBzNXB2MjEwOiBh
-cmllczogU2V0IGtlZXAtcG93ZXItaW4tc3VzcGVuZCBmb3IgU0RIQ0kxCj4gICBhcm06IGR0czog
-czVwdjIxMDogYXJpZXM6IERpc2FibGUgcHVsbHMgb24gR1BJTyBpMmMgYWRhcHRlcnMKPiAgIGFy
-bTogZHRzOiBzNXB2MjEwOiBhcmllczogQWRkIHN1cHBvcnQgZm9yIG1vcmUgZGV2aWNlcwo+ICAg
-YXJtOiBkdHM6IHM1cHYyMTA6IGFyaWVzOiBEaXNhYmxlIHB1bGwgZm9yIHZpYnJhdG9yIGVuYSBH
-UElPCj4gICBhcm06IGR0czogczVwdjIxMDogQWRkIGFuIEFEQyBub2RlCj4gICBhcm06IGR0czog
-czVwdjIxMDogYXJpZXM6IEVuYWJsZSBBREMgbm9kZQo+ICAgYXJtOiBkdHM6IHM1cHYyMTA6IEFz
-c2lnbiBjbG9ja3MgdG8gTU1DIGRldmljZXMKPiAgIGFybTogZHRzOiBzNXB2MjEwOiBDb3JyZWN0
-IEZJTUMgZGVmaW5pdGlvbnMKPiAgIGFybTogZHRzOiBzNXB2MjEwOiBhcmllczogU2V0IE1BWDg5
-OTggR1BJTyBwdWxscwo+IAo+IFBhd2XFgiBDaG1pZWwgKDEpOgo+ICAgYXJtOiBkdHM6IHM1cHYy
-MTA6IGdhbGF4eXM6IEFkZCBzaTQ3MHggZm1yYWRpbwoKVGhhbmtzIGZvciB0aGUgcGF0Y2hlcywg
-bmljZSB3b3JrIQoKSSBjb21tZW50ZWQgb24gc29tZSBvZiB0aGVtLiBUaGUgb3RoZXIgbG9vayBn
-b29kIGJ1dCBJIHdpbGwgd2FpdCB3aXRoCmFwcGx5aW5nIGZvciB2Mi4gV2hlbiByZXNlbmRpbmcg
-ZXZlcnl0aGluZywgY2hhbmdlIHRoZSBzdWJqZWN0IG9mIGVhY2gKcGF0Y2ggdG8gbWF0Y2ggc3Vi
-c3lzdGVtLCBzbzoKCUFSTTogZHRzOiBzNXB2MjEwOgoKQmVzdCByZWdhcmRzLApLcnp5c3p0b2YK
-CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
-cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
-a2VybmVsCg==
+On Thu, 23 Apr 2020 11:16:04 +0100, Mark Rutland wrote:
+> These patches refactor the pointer authentication initialization code to make
+> it easier to reason about and to reduce duplication of code.
+> 
+> The big wins are:
+> 
+> * Moving the initialization after the MMU has been enabled. This means we can
+>   initialize the keys using the same helpers as context switch, and don't need
+>   to temporarily duplicate them in secondary_data.
+> 
+> [...]
+
+Applied to arm64 (for-next/ptr-auth), thanks!
+
+[1/2] arm64: remove ptrauth_keys_install_kernel sync arg
+      https://git.kernel.org/arm64/c/d0055da5266a
+[2/2] arm64: simplify ptrauth initialization
+      https://git.kernel.org/arm64/c/62a679cb2825
+
+Cheers,
+-- 
+Will
+
+https://fixes.arm64.dev
+https://next.arm64.dev
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
