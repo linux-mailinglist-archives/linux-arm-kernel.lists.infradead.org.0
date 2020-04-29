@@ -2,49 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD1F41BD69F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:54:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C7D911BD6AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:57:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=M+nSjqv0JZyZ7JrFXI3LHBLIEaL8URVDXeL5+kK+700=; b=Ppu3fYRrrc8q0EANpjqhsynRg
-	hsXp+5btuURKKuJ8sTNOoJbzmuOzJC2/DHz/D/BWDeTjyK2hgJ5IMAV+wnmvhC6CzAv8UdNYnl5b9
-	lw2HZCYh1dtOfqm18v/V4rVdP1hO9kc4QnKcKPVtZ+Z+6XtKC3em6Xp9J3GyZwn82MO5qenOcSowB
-	eDjE+kUEsgH0KgYayDTdrmOYmn3CDBvtPWzy/L6FwePOjLeaGVbm10Xb+q9ZMZCGmUb3ScJFTzDtC
-	rsEHpqmIOb1ByObaYAbZga7ie911OJt3Mk8pWo8Ypgfl7hLt5oqXEz0R8DCTDlcaNfJXbYCD/PzYB
-	GA8o6roiw==;
+	 bh=oRrrz+Gg7oT6cP1dCScX8o0Kx+/6Bw42/kkzp7RJz8M=; b=lhLhVORmOCtjwCe4CLf0nfDt4
+	cVHH8dv8TqQ9MAHWOlLAWOm552PumOiMhIZhmVfaKYuqjgWFMKngvs5xje3PUHi2ZqfR92kGpc4r4
+	4u9jzamTUwW4qrNrjevN6OhI7ZBxefPn0FOIYao3cOrP/u2M9JDt+dI0SSvOuOo8n5YIMRXXg8OBQ
+	tgdo4Q6bHo26bUgBhdLvBcXSNlft21O0se1pVwIidEIi1vWqstZPQBXBNP2xWXTSd8JQ7WfJQu8hV
+	cPrrx04HHNj/05astq+vIb5G/9Y3McwZpwO04beCfjiMNlWrraJJ8lpkeL7GjJ2qTd4Tixi/FUMAZ
+	khQNXifbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThXo-0003Kg-5U; Wed, 29 Apr 2020 07:54:12 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThXc-0003J4-MN
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:54:02 +0000
-Received: from localhost (p54B330EB.dip0.t-ipconnect.de [84.179.48.235])
- by pokefinder.org (Postfix) with ESMTPSA id 3F6972C08B2;
- Wed, 29 Apr 2020 09:53:59 +0200 (CEST)
-Date: Wed, 29 Apr 2020 09:53:57 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: ryan_chen <ryan_chen@aspeedtech.com>
-Subject: Re: [PATCH v0 linux master] i2c/busses: Avoid i2c interrupt status
- clear race condition.
-Message-ID: <20200429075357.GA1957@kunai>
-References: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
+	id 1jThau-0006ya-2y; Wed, 29 Apr 2020 07:57:24 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jThaj-0006wj-Bu
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:57:15 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03T7qJAT024847; Wed, 29 Apr 2020 09:57:06 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=xx8kRde0lYZzEHpvs5LF95CF5clpUWEokyEoQEW0HZY=;
+ b=UPiWO1xuI06+BfehbbCbANWIelm4CKW9QA0nL/uHBJrEma7ZlfWLtGBmIPJAe3Mk8//q
+ JTby8NcNppK0D8xC0ZZhqd4bBjKXauHOUCl8ceuV5r4iB6fbYVRdAawAQ7yUvXmazKYT
+ 2WaZ64fZKZ1QV1084MrgohMGNTqTp6174XgAP+L9Pp57vXkZIOsNLp01gu0Qw/6LOW3U
+ J8e0A6X4g8C8FkTA/Z+vuOtRnxt+PLfl4neqK+mmtmm0davjBx9Gb7Aspho9TDqL8Pj3
+ SSfSB5BLqckyFyu8QQn12m2TZc1LRPLvbPy92BTcnDlf4R1am9k/qwS5nDJGvyaZcrcM 4g== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30n4j6100c-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 29 Apr 2020 09:57:06 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 562F010002A;
+ Wed, 29 Apr 2020 09:57:06 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3EC7920663E;
+ Wed, 29 Apr 2020 09:57:06 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.51) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 29 Apr
+ 2020 09:57:02 +0200
+Subject: Re: [PATCH V5 00/20] ARM: dts: stm32: Repair AV96 board
+To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
+References: <20200422104613.96944-1-marex@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <e47b72fc-9591-021d-7abc-14a7166a4845@st.com>
+Date: Wed, 29 Apr 2020 09:56:56 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
+In-Reply-To: <20200422104613.96944-1-marex@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-29_02:2020-04-28,
+ 2020-04-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_005400_880662_27C2E620 
-X-CRM114-Status: GOOD (  14.56  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200429_005713_715649_C5E57853 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,110 +96,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
- Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org,
- linux-i2c@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============1563597670179732980=="
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marek
 
---===============1563597670179732980==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="0F1p//8PRICkK4MW"
-Content-Disposition: inline
+On 4/22/20 12:45 PM, Marek Vasut wrote:
+> The AV96 board device tree is completely broken and does not match the
+> hardware. This series fixes it up.
+> 
+> Marek Vasut (20):
+>    ARM: dts: stm32: Repair PMIC configuration on AV96
+>    ARM: dts: stm32: Repair PMIC interrupt on AV96
+>    ARM: dts: stm32: Add alternate pinmux for ethernet RGMII
+>    ARM: dts: stm32: Repair ethernet operation on AV96
+>    ARM: dts: stm32: Add missing ethernet PHY reset on AV96
+>    ARM: dts: stm32: Add missing ethernet PHY skews on AV96
+>    ARM: dts: stm32: Add alternate pinmux for SDMMC pins
+>    ARM: dts: stm32: Repair SDMMC1 operation on AV96
+>    ARM: dts: stm32: Add eMMC attached to SDMMC2 on AV96
+>    ARM: dts: stm32: Add QSPI NOR on AV96
+>    ARM: dts: stm32: Add configuration EEPROM on AV96
+>    ARM: dts: stm32: Enable WiFi on AV96
+>    ARM: dts: stm32: Add alternate pinmux for USART2 pins
+>    ARM: dts: stm32: Enable Bluetooth on AV96
+>    ARM: dts: stm32: Add alternate pinmux for LTDC pins
+>    ARM: dts: stm32: Add bindings for HDMI video on AV96
+>    ARM: dts: stm32: Add alternate pinmux for SAI2 pins
+>    ARM: dts: stm32: Add bindings for audio on AV96
+>    ARM: dts: stm32: Add bindings for USB on AV96
+>    ARM: dts: stm32: Rename LEDs to match silkscreen on AV96
+> 
+>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi    | 280 +++++++++++++++++
+>   arch/arm/boot/dts/stm32mp157a-avenger96.dts | 324 ++++++++++++++++++--
+>   2 files changed, 572 insertions(+), 32 deletions(-)
+> 
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Patrice Chotard <patrice.chotard@st.com>
+> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> To: linux-arm-kernel@lists.infradead.org
+> 
 
+Series applied on stm32-next.
 
---0F1p//8PRICkK4MW
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, Apr 29, 2020 at 11:37:37AM +0800, ryan_chen wrote:
-> In AST2600 there have a slow peripheral bus between CPU
->  and i2c controller.
-> Therefore GIC i2c interrupt status clear have delay timing,
-> when CPU issue write clear i2c controller interrupt status.
-> To avoid this issue, the driver need have read after write
->  clear at i2c ISR.
->=20
-> Signed-off-by: ryan_chen <ryan_chen@aspeedtech.com>
-
-v0? is it a prototype?
-
-And is there maybe a Fixes: tag for it?
-
-> ---
->  drivers/i2c/busses/i2c-aspeed.c | 5 ++++-
->  1 file changed, 4 insertions(+), 1 deletion(-)
->=20
-> diff --git a/drivers/i2c/busses/i2c-aspeed.c b/drivers/i2c/busses/i2c-asp=
-eed.c
-> index 07c1993274c5..f51702d86a90 100644
-> --- a/drivers/i2c/busses/i2c-aspeed.c
-> +++ b/drivers/i2c/busses/i2c-aspeed.c
-> @@ -603,6 +603,7 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq, void *=
-dev_id)
->  	/* Ack all interrupts except for Rx done */
->  	writel(irq_received & ~ASPEED_I2CD_INTR_RX_DONE,
->  	       bus->base + ASPEED_I2C_INTR_STS_REG);
-> +	readl(bus->base + ASPEED_I2C_INTR_STS_REG);
->  	irq_remaining =3D irq_received;
-> =20
->  #if IS_ENABLED(CONFIG_I2C_SLAVE)
-> @@ -645,9 +646,11 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq, void =
-*dev_id)
->  			irq_received, irq_handled);
-> =20
->  	/* Ack Rx done */
-> -	if (irq_received & ASPEED_I2CD_INTR_RX_DONE)
-> +	if (irq_received & ASPEED_I2CD_INTR_RX_DONE) {
->  		writel(ASPEED_I2CD_INTR_RX_DONE,
->  		       bus->base + ASPEED_I2C_INTR_STS_REG);
-> +		readl(bus->base + ASPEED_I2C_INTR_STS_REG);
-> +	}
->  	spin_unlock(&bus->lock);
->  	return irq_remaining ? IRQ_NONE : IRQ_HANDLED;
->  }
-> --=20
-> 2.17.1
->=20
-
---0F1p//8PRICkK4MW
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6pMo4ACgkQFA3kzBSg
-KbbntRAAs++ZnC+iCmSLY5Q3M4OON+jEs3K4ZhdSuNgzbZsLaWVt5Cx7cCjT/JDi
-988C8kzysPKL8Cknlqyv4GBus0cCPwylvFZGHWXdot89RmG4stjYb3JbaV+Qm9Ov
-8bCKE8xEWEHyYFFEgreqtLbEFCnHCNf7TnX21b8+L6E988R1AE7r5qIFCTuK1/4/
-hrNCRmEoXYLp0pSDC6BuAgJvayrewlTkvCfnBVv39FzN95ghtC21cC73I6SKfDat
-qxCyKy1x++V6n03sprTFgc8MCqOpYu6rIgFKm94NSltyJWaRAZKY1vd/Pzj7D0Oc
-UPhtu7ldQAbllMAZmMutCDf8m0ek+Ob4jHF+DQKqq2E8MQZs35RxrNnDYzFOLm7r
-NISJkGAZ6ZmC3lmyH1t1GRxZls5RfqpUJuVFIke07C4eSO7r6y9rWoOOhzMYJERC
-cQuG05T6fcJRGx35/h9GHbcb9+kafQXXRaM65H4aEPKBjbtDbyC8j9PT5WGTRFwS
-kS0iSZ5XnSiCccMv33mJqgotV9yPTaVHstupHCnI7K77MH0b7l4Ni1Q7DAnR0cE/
-7mhN81qc04aqCi4+Zi1PtWRKMBcgvdX9QmHQnt2KYc7kSmgD9gy454O1NOIbA97S
-c1UOGjbptbrnl1VaH9/o0SldOXlHGdNzkzspFGAhk/5ioC8I2oE=
-=hr47
------END PGP SIGNATURE-----
-
---0F1p//8PRICkK4MW--
-
-
---===============1563597670179732980==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1563597670179732980==--
-
