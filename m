@@ -2,70 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF22C1BD70F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:21:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A6471BD716
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:22:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zNcNzksPYKwdC7/dxwQNfIVIc0o/kM8l6l/C6aqhzVM=; b=I3A4WpLgucYeH7
-	YWsjZYv2Eesk3QWPTk6v+6VgccjgVVVMRSydUUtt0f+I0bMzLGehWwzXh1WKKg/Lx0/pk/yMK8cPc
-	3aYEEHc5uATMh84ZMVXnlDmRGOqCB6HF/Yf2PRTUOUwr/9SrfKw/LxV/V94kr1/MI2Rg9EF9qlHU+
-	jVToOIcpRRd0EHaocXHpMet5Z6YhrwVzeZFXTXM2VbDZmKjwgcSkHtBuDQhuauQKwPlVPVlOy854W
-	sOg36ovOKFnPJ5Br8EHz8C1vARuT7PjGAz/YXP5vE1F+4B9msHIZhS/iCvgrbnYqsuY/anCq0GRsI
-	0QX9LyC4XX+nyybiWASg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=U1oGU09lUDmzYDM3aJYcuJSX3vh0ToEO/kYla7IgH/s=; b=hmPKMTvOngrUCakLUXl1EdrcL
+	SOvDndeoMemqjCs+3iaLiWWvVMvan96Re9FM2hweLNFzVxiysmPe0IjZ323kjbQjGZSijK881JP3a
+	+vX/FYAQDI02lAL8fZ5JBVfN4zKEVHMtfI9wU/roIOvwrsjsdZDi3bFc/XbpuKpB/qjUY2HcTbcbR
+	Hm2W3WzydKKDwIce3ORwwOWioZCDIlQpsapGrzIdaO3Af7Gqk+I77DXHvfXgTpwbPZ+JhsRdNw63g
+	UGpfDnfw1B0qXl6mkQvm2cEENt7b9NF5vxFSnkDyF/gpdCgOyH2yZaBvDRom04hm0xRWBj5TCTTxs
+	SqdQDPnLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThyB-0008Ir-5s; Wed, 29 Apr 2020 08:21:27 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jThyd-00007x-2U; Wed, 29 Apr 2020 08:21:55 +0000
+Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThy1-0008IG-9c; Wed, 29 Apr 2020 08:21:19 +0000
-X-UUID: 9142eb1fffab48beb44844f7727e4fb2-20200429
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=lTlqFTrPf5IrpTbBnQKpE5jaipjUNN+C3YGiRSNSEWc=; 
- b=LV6yTAD3UDfkQnSDnLIBnej7cdePvbLY4vLSinZMKhcmAzpjIBp2XQlnaOucWe+eN3ayWnLezCcrUVEYI7Wy2tOqxLCV6VJzk/eB8Q5CjOQfP4DJMxZgn75px+NQJikDpYI9xWBO8FFqJnmoPn3tfGitm2uLjq45xbWlqeWQ8bg=;
-X-UUID: 9142eb1fffab48beb44844f7727e4fb2-20200429
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <yong.mao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 709936542; Wed, 29 Apr 2020 00:21:41 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 29 Apr 2020 01:21:11 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Wed, 29 Apr 2020 16:21:05 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 29 Apr 2020 16:21:05 +0800
-Message-ID: <1588148417.10768.18.camel@mhfsdcap03>
-Subject: Re: [PATCH 1/3] mmc: core: need do mmc_power_cycle in
- mmc_sdio_resend_if_cond
-From: "yong.mao@mediatek.com" <yong.mao@mediatek.com>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Wed, 29 Apr 2020 16:20:17 +0800
-In-Reply-To: <CAPDyKFrBd0E2Qy89JgTE3YH0iiXB7due0JmnSVAhYL5aubSczA@mail.gmail.com>
-References: <1586835611-13857-1-git-send-email-yong.mao@mediatek.com>
- <1586835611-13857-2-git-send-email-yong.mao@mediatek.com>
- <CAPDyKFo40tBpowmWN3gxH8b=jMmCK8O5ALNQ7y6XZ5AosX=GUA@mail.gmail.com>
- <1588066038.30914.28.camel@mhfsdcap03>
- <CAPDyKFrBd0E2Qy89JgTE3YH0iiXB7due0JmnSVAhYL5aubSczA@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jThyF-0008Qu-53
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:21:32 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5ea938c50002>; Wed, 29 Apr 2020 01:20:21 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 29 Apr 2020 01:21:27 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 29 Apr 2020 01:21:27 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL107.nvidia.com
+ (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
+ 2020 08:21:27 +0000
+Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
+ 2020 08:21:22 +0000
+Subject: Re: Re: [TEGRA194_CPUFREQ Patch 1/3] firmware: tegra: adding function
+ to get BPMP data
+To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring
+ <robh+dt@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, "Rafael J.
+ Wysocki" <rjw@rjwysocki.net>
+References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
+ <20191203174229.GA1721849@ulmo>
+ <9404232d-84ce-a117-89dd-f2d8de80993e@kapsi.fi>
+ <20191204091703.d32to5omdm3eynon@vireshk-i7> <20191204093339.GA2784830@ulmo>
+ <20191204095138.rrul5vxnkprfwmku@vireshk-i7> <20200407100520.GA1720957@ulmo>
+ <20200427071800.GA3451400@ulmo>
+From: Sumit Gupta <sumitg@nvidia.com>
+Message-ID: <e320f849-bbd0-3ab9-64b2-d54da97500a4@nvidia.com>
+Date: Wed, 29 Apr 2020 13:51:19 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: A51CEC974ABE8E0E27E20E1F54AE553FB2971B2713AD31F285230F0E28E9CB742000:8
-X-MTK: N
+In-Reply-To: <20200427071800.GA3451400@ulmo>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+ t=1588148421; bh=3T8uyQ4yXKerxDV81gNnyh9w/zfWOeHLjgfBDDESJBI=;
+ h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
+ User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
+ X-ClientProxiedBy:Content-Type:Content-Language:
+ Content-Transfer-Encoding;
+ b=Hp8QSRuYhrSjW5iSVnv77wXZqnN0jg2R1n46ywRFLQfqE/DSAHB3IYpMhOvcb8fXA
+ 6R8UP8eSGS0Y4l2KzgI8IJfzAb5a2ztW0F3mD9LRCCLd1+e7SYPeqMLmAyO48EgAul
+ zgtdvV+3l/BNvGBzxcrXJZZGSmFOQdDzIs6hsdHM2IeAnQQcv67Axtk7gA7iHCYbtt
+ 3yuFDVKmFXzQPLLYh2EiWa8DUDekia62iMwrbwQDhXwjIBGik30Rm33X6dtTHnOcpO
+ qoykp0kBRRkWpyRT5xmLQ0z44fkgSfT/GvXgU+tAbOZyWyprpK644cxGd93Yc0UgMk
+ DWM+hPL9Ba8LQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_012117_349910_E75BF433 
-X-CRM114-Status: GOOD (  38.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_012131_215770_27E39768 
+X-CRM114-Status: GOOD (  25.05  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [216.228.121.64 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -75,8 +90,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,149 +102,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: srv_heupstream <srv_heupstream@mediatek.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Matthias Kaehlcke <mka@chromium.org>, "moderated list:ARM/Mediatek SoC
- support" <linux-mediatek@lists.infradead.org>,
- Chaotian Jing <chaotian.jing@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Mikko Perttunen <cyndis@kapsi.fi>,
+ linux-pm@vger.kernel.org, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
+ bbasu@nvidia.com, linux-tegra@vger.kernel.org, Sumit Gupta <sumitg@nvidia.com>,
+ mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2020-04-28 at 14:13 +0200, Ulf Hansson wrote:
-> On Tue, 28 Apr 2020 at 11:28, yong.mao@mediatek.com
-> <yong.mao@mediatek.com> wrote:
-> >
-> >
-> > On Fri, 2020-04-24 at 12:09 +0200, Ulf Hansson wrote:
-> > > On Tue, 14 Apr 2020 at 05:40, Yong Mao <yong.mao@mediatek.com> wrote:
-> > > >
-> > > > From: yong mao <yong.mao@mediatek.com>
-> > > >
-> > > > When mmc_sdio_resned_if_cond is invoked, it indicates the SDIO
-> > > > device is not in the right state. In this condition, the previous
-> > > > implementation of mmc_sdio_resend_if_cond can't make sure SDIO
-> > > > device be back to idle state. mmc_power_cycle can reset the SDIO
-> > > > device by HW and also make sure SDIO device enter to idle state
-> > > > correctly.
-> > > >
-> > > > Signed-off-by: Yong Mao <yong.mao@mediatek.com>
-> > > > ---
-> > > >  drivers/mmc/core/sdio.c | 1 +
-> > > >  1 file changed, 1 insertion(+)
-> > > >
-> > > > diff --git a/drivers/mmc/core/sdio.c b/drivers/mmc/core/sdio.c
-> > > > index ebb387a..ada0a80 100644
-> > > > --- a/drivers/mmc/core/sdio.c
-> > > > +++ b/drivers/mmc/core/sdio.c
-> > > > @@ -546,6 +546,7 @@ static int mmc_sdio_init_uhs_card(struct mmc_card *card)
-> > > >  static void mmc_sdio_resend_if_cond(struct mmc_host *host,
-> > > >                                     struct mmc_card *card)
-> > > >  {
-> > > > +       mmc_power_cycle(host, host->card->ocr);
-> > >
-> > > This looks wrong to me. mmc_sdio_resend_if_cond() is called from two places.
-> > >
-> > > 1. In the case when mmc_set_uhs_voltage() fails in
-> > > mmc_sdio_init_card(), which means a call to mmc_power_cycle() has
-> > > already been done.
-> > >
-> >   Thanks for your comment.
-> >   Yes. It is right that mmc_power_cycle() has already been done when
-> >   mmc_sdio_resend_if_cond() is called. In normal re-initialization case,
-> >   this mmc_power_cycle() (currently in 1.8v voltage and 208Mhz clock)
-> >   can make SDIO device really back to idle state. Unfortunately, in some
-> >   special SDIO device, it will enter to unstable state.
-> >
-> >   At this unstable state, device may keep data0 always low after receiving CMD11.
-> >   And then every other SDIO CMD can't be sent to device any more due to card
-> >   is busy(data0 is low). Therefore, previous implementation can't save the
-> >   device. At this time, mmc_power_cycle() may be the final solution to make
-> >   sure SDIO device can back to idle state correctly.
-> 
-> Well, this still sounds a bit vague to me. I need to understand more
-> exactly under what circumstances the problem occurs.
-> 
-> What platform are you testing with and what SDIO card is being used?
- The platform information is mt8173 + Marvell sdio device + kernel-3.18
-
-> 
-> Is the problem happening during the system resume phase?
-  The problem happen when mmc_sdio_runtime_resume is invoked.
-> 
-> Are the SDIO func driver using runtime PM and then is the host capable
-> of MMC_CAP_POWER_OFF_CARD?
-> 
-  Yes. SDIO func driver uses runtime PM and MMC_CAP_POWER_OFF_CARD is
-enabled.
-
-> Is it easy to reproduce the problem for you?
-> 
- There are only two units out of many produced units that can always
-reproduce this issue.
- 
-> >
-> > > 2. Wen sdio_read_cccr() fails and when we decide to retry the UHS-I
-> > > voltage switch. Then perhaps it could make sense to run a power cycle.
-> > > But if so, we better do it only for that path.
-> > >
-> > > I will continue to look a bit, as I think there are really more issues
-> > > that we may want to look into while looking at this piece of code.
-> > > However, allow me some more time before I can provide some more ideas
-> > > of how to move forward.
-> >   In the actual project, we do encounter many relative issues about re-initialized card.
-> >   The following two categories are the most common issue we met before.
-> >   A. the SDIO card is initialized by UHS-I mode at the first time, but will be
-> >      re-initialized by High Speed mode at the second time.
-> >      ==> All this type of issues is relative with S18A in response of CMD5.
-> >          And most of the issues are related to the interval between powering off and
-> >          powering on card.
-> >   B. If there is something wrong in the flow of voltage switch(after CMD11), card will
-> >      always keep all data pins to low. And then it hangs up because data0 is always low.
-> >   Hope this information will be helpful for you.
-> 
-> Thanks for sharing these details! I think we need to continue to debug
-> this issue, to fully understand.
-> 
-> In principle, it sounds to me that maybe mmc_power_cycle(), isn't
-> really successfully power-cycling the SDIO card. Perhaps insert a few
-> delays or so in that code to see how that would affect things?
-> 
-> Anyway, how is the power to the SDIO card controlled in this case? Are
-> you using a mmc-pwrseq?
-> 
-  vmmc is controlled through GPIO to supply 3.3v power.
-  And the vqmmc is supplied from PMIC which is always 1.8v.
-  (There is no 3.3v here. Perhaps this is one of the reasons to happen
-this issues)
-
-> >
-> >   Anyway, we will wait for your advises.
-> > >
-> > > >         sdio_reset(host);
-> > > >         mmc_go_idle(host);
-> > > >         mmc_send_if_cond(host, host->ocr_avail);
-> > > > --
-> > > > 1.9.1
-> > >
-> > > Kind regards
-> > > Uffe
-> 
-> I have a few patches in the pipe, which fixes some other problems in
-> mmc_sdio_init_card(). Possibly those can be related, but I need a day
-> or so to post them, let's see.
-The codebase of this project is kernel-3.18. Maybe it is hard to apply 
-these new patches. Anyway, We will try it when we get the patches.
-Thanks. 
 
 
+On 27/04/20 12:48 PM, Thierry Reding wrote:
+> On Tue, Apr 07, 2020 at 12:05:20PM +0200, Thierry Reding wrote:
+>> On Wed, Dec 04, 2019 at 03:21:38PM +0530, Viresh Kumar wrote:
+>>> On 04-12-19, 10:33, Thierry Reding wrote:
+>>>> Yeah, the code that registers this device is in drivers/base/cpu.c in
+>>>> register_cpu(). It even retrieves the device tree node for the CPU from
+>>>> device tree and stores it in cpu->dev.of_node, so we should be able to
+>>>> just pass &cpu->dev to tegra_bpmp_get() in order to retrieve a reference
+>>>> to the BPMP.
+>>>>
+>>>> That said, I'm wondering if perhaps we could just add a compatible
+>>>> string to the /cpus node for cases like this where we don't have an
+>>>> actual device representing the CPU complex. There are a number of CPU
+>>>> frequency drivers that register dummy devices just so that they have
+>>>> something to bind a driver to.
+>>>>
+>>>> If we allow the /cpus node to represent the CPU complex (if no other
+>>>> "device" does that yet), we can add a compatible string and have the
+>>>> cpufreq driver match on that.
+>>>>
+>>>> Of course this would be slightly difficult to retrofit into existing
+>>>> drivers because they'd need to remain backwards compatible with existing
+>>>> device trees. But it would allow future drivers to do this a little more
+>>>> elegantly. For some SoCs this may not matter, but especially once you
+>>>> start depending on additional resources this would come in handy.
+>>>>
+>>>> Adding Rob and the device tree mailing list for feedback on this idea.
+>>>
+>>> Took some time to find this thread, but something around this was
+>>> suggested by Rafael earlier.
+>>>
+>>> https://lore.kernel.org/lkml/8139001.Q4eV8YG1Il@vostro.rjw.lan/
+>>
+>> I gave this a try and came up with the following:
+>>
+>> --- >8 ---
+>> diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+>> index f4ede86e32b4..e4462f95f0b3 100644
+>> --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+>> +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+>> @@ -1764,6 +1764,9 @@ bpmp_thermal: thermal {
+>>   	};
+>>   
+>>   	cpus {
+>> +		compatible = "nvidia,tegra194-ccplex";
+>> +		nvidia,bpmp = <&bpmp>;
+>> +
+>>   		#address-cells = <1>;
+>>   		#size-cells = <0>;
+>>   
+>> --- >8 ---
+>>
+>> Now I can do something rougly like this, although I have a more complete
+>> patch locally that also gets rid of all the global variables because we
+>> now actually have a struct platform_device that we can anchor everything
+>> at:
+>>
+>> --- >8 ---
+>> static const struct of_device_id tegra194_cpufreq_of_match[] = {
+>> 	{ .compatible = "nvidia,tegra194-ccplex", },
+>> 	{ /* sentinel */ }
+>> };
+>> MODULE_DEVICE_TABLE(of, tegra194_cpufreq_of_match);
+>>
+>> static struct platform_driver tegra194_ccplex_driver = {
+>> 	.driver = {
+>> 		.name = "tegra194-cpufreq",
+>> 		.of_match_table = tegra194_cpufreq_of_match,
+>> 	},
+>> 	.probe = tegra194_cpufreq_probe,
+>> 	.remove = tegra194_cpufreq_remove,
+>> };
+>> module_platform_driver(tegra194_ccplex_driver);
+>> --- >8 ---
+>>
+>> I don't think that's exactly what Rafael (Cc'ed) had in mind, since the
+>> above thread seems to have mostly talked about binding a driver to each
+>> individual CPU.
+>>
+>> But this seems a lot better than having to instantiate a device from
+>> scratch just so that a driver can bind to it and it allows additional
+>> properties to be associated with the CCPLEX device.
+>>
+>> Rob, any thoughts on this from a device tree point of view? The /cpus
+>> bindings don't mention the compatible property, but there doesn't seem
+>> to be anything in the bindings that would prohibit its use.
+>>
+>> If we can agree on that, I can forward my local changes to Sumit for
+>> inclusion or reference.
 > 
-> Kind regards
-> Uffe
+> Rob, do you see any reason why we shouldn't be able to use a compatible
+> string in the /cpus node for devices such as Tegra194 where there is no
+> dedicated hardware block for the CCPLEX?
+> 
+> Thierry
+> 
+
+Ping.
+Please suggest if we can add compatible string in the '/cpus' node.
+If not then i propose accepting the current patch to get BPMP data 
+without adding any property in respective driver's DT node.
+We can push separate patch later if we need to add compatible string in 
+the '/cpus' node or create new DT node for cpufreq.
+
+Regards,
+Sumit
 
 _______________________________________________
 linux-arm-kernel mailing list
