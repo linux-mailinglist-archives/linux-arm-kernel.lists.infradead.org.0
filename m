@@ -2,91 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82C721BE602
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 20:13:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 615E61BE617
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 20:17:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ytyxyhjr9YVyj4VY5bCC4bbnmiB2tbqs2f9OcPQYvIg=; b=DiEFjeKjigxy5N
-	0ocickK7fD0WO2VK7ccKS0TA5TiNpNoRw2rkf0M2JUsZ+hBiLLT9yl6cnXKxSrJPreYszUCnRmzer
-	3YASDrBBo0I5DHeCMjgcgcLCd1g+X1qs1+FI1PZ+Rw70FDenfZpS7JNRtt2TCRRQ8FIoRdJZEveLY
-	/J3LvPl/1uhYxTqRCSWYLkFCCh7Nhq2epf4ZapdU87rJhFYWv4O/UenFi+ZbeWsPwQWtDE5HNNoUp
-	k5D57Llq5TOjXPuHT5HFlZvspM7E4eDtB338mDNKBw54lZ5zkEwSxxeSQdj6lb0+9iY0W2rXnQyab
-	lvgVr/I7361rICsB6YwQ==;
+	List-Owner; bh=/1f2EW3VGfXIebQFqeqi2hDJmCpTg7FDGvmATrf3Lnk=; b=V7OXjkZlM02Sa5
+	f3ZZcB1Se9FaXd3MHYKfFNFXJcOaQCDgOVDTtZTCPy9f9cGcmezwPteVW0ZefPkaf9GQAXxeSPaXS
+	5cKP8aj3i8i+BfnqRk1xCjrSVBHbYlWP/4ZoWfsMUuGt45hg8sAgpWDimRHblXjiAWwqyU/ZZRcRe
+	pgrjzHijCrZ97LAnSX5Emf96pogj6rzlXvpOe4sQB0o4rLMsi8mn9eu3J2Nu1UpuJJeX8yyKOWjY7
+	ezvfjliEwqCsl/hKIC1tXYQBFXVtHKbMS0m8YLkaJWxj85x+ekPO9h+PqXDHMsEapxIuFEKxa5VEq
+	NNYwGxGszws0lpF7aGQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTrCW-0004i6-02; Wed, 29 Apr 2020 18:12:52 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jTrHK-0000D5-8K; Wed, 29 Apr 2020 18:17:50 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTrBk-0004Ft-1Z
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 18:12:06 +0000
-Received: by mail-qt1-x844.google.com with SMTP id v26so2718438qto.0
+ id 1jTrH7-0000Bd-Cy
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 18:17:39 +0000
+Received: by mail-wr1-x441.google.com with SMTP id k13so3710365wrw.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 11:12:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=2tsSqdNWnb3CiuOvg96gs7sg5rhYKvwHlBRsWbohoX4=;
- b=p4WsQDKVxAz07MQA8hvDDKFPZMOxcFuvPUKCfaz8nY2dZ7WnmYgSOoDOobts8uWuvo
- ZIcaaUm1ApaCNIvFdCdSbVP3+b4Qc6Xn23PTrLU9ul80cxZdoD02Ok2mE1EIMRIHJJXI
- yjExhQiHAHJg8SjYdCjE3cSHxPBoeMhEWCxsqJy64KziBdBvPyFIL2u7/RNmhnKXp+bv
- WTASNdkj+S4YmcGpI3V//KYIg/zkKVb+FuBQwALXWhCKmRTbslaW+HTZa98NStwz4dOi
- RkXlsx9MfonxSRxhbh0nh5F/kD1T0obPNRx34CvhmcVOTjjZZtbr+b/lHgijj5fe9fq0
- NN1g==
+ Wed, 29 Apr 2020 11:17:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=6lfBNlbD4T5zHjO+6zb4aZNCWH8fCBIeJ2zjUEDU5Bc=;
+ b=FKjVRVJHicGYD5WTdJMpWpXGtXFSDFjc3LSxc/83GGZ8OWLBuAvH48kbmhFmH5ZKHB
+ d6KbAlikjeM2P79sOAnW/zi0L2TjWf6Cr6J/FSc9jNiv/XGitGeOwKbgrCuHv9ganP1U
+ /fZeIlvVbQ1LF9LRihu8SJyJ4OHY0kVwWrIMT4nC0afpeRcj4PspcxUtSdELtnTvVhRv
+ 5rFC1BrK19UiqlmhPKi8ZsKVsvwJC4YuRI2YvtiSDgPHSiH0Qz01kzhtgLmpHjiY2U1K
+ +LdAafAP9WKp1Z4p9nowV648/ClsicXciqHrLDPmj4I2kWcm5QXnh+y7IOgSx9nDF1lw
+ AWFg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=2tsSqdNWnb3CiuOvg96gs7sg5rhYKvwHlBRsWbohoX4=;
- b=r9enJj+dZvAc3CJecexSKO9/Ynwi5FLKe//kTZjI09ju5zHCfJX3Jb1td0YJJrE1Q4
- GFbzZOheX2QauQ/oGbnWX9f0ZwPUddZPp8U2vwz0VzCJYdpt5DuhfDzHFdzS3VYl186t
- swuBJjTb/XjIm+1k9FFra4FrefefyYuBzSVWbFMvY7AS+CTkPn2eP7PGmcpYK5A58TO9
- bgdrYQWG+CaVpwtsHAb/O+FBPn2e9VNDq/xIlZHvdF8RIlwZKk/BW6D44hQXPD0KhSuq
- 1Lr7L9neGKUPDI2wqb3Y8fEsiMDw5fH/T9VLwOU92WP0l9LjbdTuM1yClsuxkqQjwlri
- C40Q==
-X-Gm-Message-State: AGi0PuZGLTtkfTw/7jSM9raTFljcDAAAq0LsB8pNMvAk+ONzJLOJIbj7
- ahiRKCvlEqoSRXVzThwzhW4=
-X-Google-Smtp-Source: APiQypKY8OpPGQ+A02xX2a1aWXbNyQ9A0dh8ssyUBdOY9769gG4lAy9hnA/fuVUNNmetqVHdZBDzeg==
-X-Received: by 2002:aed:2766:: with SMTP id n93mr35352318qtd.130.1588183922632; 
- Wed, 29 Apr 2020 11:12:02 -0700 (PDT)
-Received: from localhost.localdomain (072-189-064-225.res.spectrum.com.
- [72.189.64.225])
- by smtp.gmail.com with ESMTPSA id o43sm16315082qtf.46.2020.04.29.11.12.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 11:12:01 -0700 (PDT)
-From: William Breathitt Gray <vilhelm.gray@gmail.com>
-To: jic23@kernel.org
-Subject: [PATCH 4/4] docs: counter: Document character device interface
-Date: Wed, 29 Apr 2020 14:11:38 -0400
-Message-Id: <639b231a155fee0b1786aafb441f61e8094dcf75.1588176662.git.vilhelm.gray@gmail.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <cover.1588176662.git.vilhelm.gray@gmail.com>
-References: <cover.1588176662.git.vilhelm.gray@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=6lfBNlbD4T5zHjO+6zb4aZNCWH8fCBIeJ2zjUEDU5Bc=;
+ b=AKEsSKKlO1OYZse4eF86EnKwdjcSlWqui4IVr0uisyLlNDbvovr7SgaB+t3Nnu28u7
+ OJVIjiotm6yk0CcW18rH84FUYHlO5wEst20srxpe9/z9Lh2dxbghUDHIgwFpJSeTlHEm
+ H7ZnH+zkNspMa9rG/35rpU7bfcwkromQgb/PV/4zBVqAgNp0ghSEi1AwSO4qBWXricOe
+ w0SblqjHFwJk+kDfHNSivWbURteY2DsKD/ccfV2gftCTUn8rQMCXCIH6GAhLHfxr1PJP
+ WD9bFOKwFvUufUn6voAdmkUNhPLjmJ9IyWul4CEdRvMu4ElQn5hUm13jqvB/ire9fHQq
+ e28A==
+X-Gm-Message-State: AGi0PuZ8rUUXLzixoarM+dLwhDew4sV6mclDX0yCEcTdIILR9TJ8eRNH
+ fuWJiZ6okd93XHtpd1PxcFnGgA==
+X-Google-Smtp-Source: APiQypKmIw7W+i+Z4WSURtf6yTrOuBc3eZpc5F2oz+HJ9/6IIKwwniMHrNOG570XslOxNrE5vDfyfA==
+X-Received: by 2002:a5d:5081:: with SMTP id a1mr44188891wrt.81.1588184255519; 
+ Wed, 29 Apr 2020 11:17:35 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id a24sm8596897wmb.24.2020.04.29.11.17.33
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 Apr 2020 11:17:34 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>, kishon@ti.com, balbi@kernel.org,
+ martin.blumenstingl@googlemail.com
+Subject: Re: [PATCH v2 10/14] arm64: dts: amlogic: use the new USB control
+ driver for GXL and GXM
+In-Reply-To: <20200326134507.4808-11-narmstrong@baylibre.com>
+References: <20200326134507.4808-1-narmstrong@baylibre.com>
+ <20200326134507.4808-11-narmstrong@baylibre.com>
+Date: Wed, 29 Apr 2020 11:17:31 -0700
+Message-ID: <7hr1w6kvgk.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_111204_107097_358E974B 
-X-CRM114-Status: GOOD (  12.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_111737_506919_F591AB05 
+X-CRM114-Status: UNSURE (   7.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [vilhelm.gray[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -99,161 +96,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
- felipe.balbi@linux.intel.com, linux-iio@vger.kernel.org, syednwaris@gmail.com,
- alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- mcoquelin.stm32@gmail.com, patrick.havelange@essensium.com,
- William Breathitt Gray <vilhelm.gray@gmail.com>, fabrice.gasnier@st.com,
- fabien.lahoudere@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, alexandre.torgue@st.com
+Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds high-level documentation about the Counter subsystem
-character device interface. The 0x3E major number and respective minor
-number range is reserved for Counter character device interface ioctl
-calls.
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-Signed-off-by: William Breathitt Gray <vilhelm.gray@gmail.com>
----
- Documentation/driver-api/generic-counter.rst  | 87 ++++++++++++-------
- .../userspace-api/ioctl/ioctl-number.rst      |  1 +
- 2 files changed, 56 insertions(+), 32 deletions(-)
+> From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+>
+> Add the correcly architectured USB Glue node and adapt all the Amlogic
+> GXL and GXM board to the new organization.
+>
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 
-diff --git a/Documentation/driver-api/generic-counter.rst b/Documentation/driver-api/generic-counter.rst
-index 3ab8125b9c05..959c4074078c 100644
---- a/Documentation/driver-api/generic-counter.rst
-+++ b/Documentation/driver-api/generic-counter.rst
-@@ -223,19 +223,6 @@ whether an input line is differential or single-ended) and instead focus
- on the core idea of what the data and process represent (e.g. position
- as interpreted from quadrature encoding data).
- 
--Userspace Interface
--===================
--
--Several sysfs attributes are generated by the Generic Counter interface,
--and reside under the /sys/bus/counter/devices/counterX directory, where
--counterX refers to the respective counter device. Please see
--Documentation/ABI/testing/sysfs-bus-counter for detailed
--information on each Generic Counter interface sysfs attribute.
--
--Through these sysfs attributes, programs and scripts may interact with
--the Generic Counter paradigm Counts, Signals, and Synapses of respective
--counter devices.
--
- Driver API
- ==========
- 
-@@ -409,25 +396,32 @@ driver can be exemplified by the following::
-                         |               / driver callbacks /
-                         |               -------------------
-                         |                       |
--                +-------+                       |
-+                +-------+---------------+       |
-+                |                       |       |
-+                |               +-------|-------+
-+                |               |       |
-+                V               |       V
-+        +--------------------+  |  +---------------------+
-+        | Counter sysfs      |<-+->| Counter chrdev      |
-+        +--------------------+     +---------------------+
-+        | Translates to the  |     | Translates to the   |
-+        | standard Counter   |     | standard Counter    |
-+        | sysfs output       |     | character device    |
-+        |--------------------|     |---------------------+
-+        | Type: const char * |     | Type: unsigned long |
-+        | Value: "42"        |     | Value: 42           |
-+        +--------------------+     +---------------------+
-                 |                               |
--                |               +---------------+
--                |               |
--                V               |
--        +--------------------+  |
--        | Counter sysfs      |<-+
--        +--------------------+
--        | Translates to the  |
--        | standard Counter   |
--        | sysfs output       |
--        |--------------------|
--        | Type: const char * |
--        | Value: "42"        |
--        +--------------------+
--                |
--         ---------------
--        / const char * /
--        ---------------
-+         ---------------                 ----------------
-+        / const char * /                / unsigned long /
-+        ---------------                 ----------------
-+                |                               |
-+                |                               V
-+                |                       +-----------+
-+                |                       | ioctl     |
-+                |                       +-----------+
-+                |                       \ Count: 42 /
-+                |                        -----------
-                 |
-                 V
-         +--------------------------------------------------+
-@@ -436,7 +430,7 @@ driver can be exemplified by the following::
-         \ Count: "42"                                      /
-          --------------------------------------------------
- 
--There are three primary components involved:
-+There are four primary components involved:
- 
- Counter device driver
- ---------------------
-@@ -456,3 +450,32 @@ and vice versa.
- Please refer to the `Documentation/ABI/testing/sysfs-bus-counter` file
- for a detailed breakdown of the available Generic Counter interface
- sysfs attributes.
-+
-+Counter chrdev
-+--------------
-+Translates counter data to the standard Counter character device; data
-+is transferred via ioctl calls.
-+
-+Sysfs Interface
-+===============
-+
-+Several sysfs attributes are generated by the Generic Counter interface,
-+and reside under the `/sys/bus/counter/devices/counterX` directory,
-+where `X` is to the respective counter device id. Please see
-+Documentation/ABI/testing/sysfs-bus-counter for detailed information on
-+each Generic Counter interface sysfs attribute.
-+
-+Through these sysfs attributes, programs and scripts may interact with
-+the Generic Counter paradigm Counts, Signals, and Synapses of respective
-+counter devices.
-+
-+Counter Character Device
-+========================
-+
-+Counter character device nodes are created under the `/dev` directory as
-+`counterX`, where `X` is the respective counter device id. Device
-+information and control is exposed via a set of standard Counter
-+subsystem ioctl commands.
-+
-+.. kernel-doc:: include/uapi/linux/counter.h
-+   :internal:
-diff --git a/Documentation/userspace-api/ioctl/ioctl-number.rst b/Documentation/userspace-api/ioctl/ioctl-number.rst
-index f759edafd938..8136a26fb81c 100644
---- a/Documentation/userspace-api/ioctl/ioctl-number.rst
-+++ b/Documentation/userspace-api/ioctl/ioctl-number.rst
-@@ -88,6 +88,7 @@ Code  Seq#    Include File                                           Comments
-                                                                      <http://infiniband.sourceforge.net/>
- 0x20  all    drivers/cdrom/cm206.h
- 0x22  all    scsi/sg.h
-+0x3E  00-1F  linux/counter.h                                         <mailto:linux-iio@vger.kernel.org>
- '!'   00-1F  uapi/linux/seccomp.h
- '#'   00-3F                                                          IEEE 1394 Subsystem
-                                                                      Block for the entire subsystem
--- 
-2.26.2
+Queued for v5.8,
 
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
