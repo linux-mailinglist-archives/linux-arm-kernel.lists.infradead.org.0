@@ -2,83 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9FB91BE4CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:08:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 527EE1BE4EE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=i/MBDuZF/RLOo2Fo3WxP6qiEHw6Az9VBJj1lEkE5/w4=; b=tMqhP49ftVzp2a
-	QoiRQxgZUIQo2JdDOgOtQs159sea4gXZ+RFE9CNHXmCvkqKyrv3FO0M+GF9rMok8d91doJWTsatpS
-	VZ/L1CUQ4qOmyEDlCthvEr1ZPLzwNlgP9zYivC+qNao9DSIqttgRnju5h6BAybWk5CZ7xLV2QTYfR
-	32+9w9WgpGeeqvyyC1pDDEIW6FyGQyAukk7IExA5TpCeWPWv/lidq/kx9c/FBMzeaoMVYG5EwwYOH
-	anEAqD5+egMWcnCjuN+pOkBPXU3UUzvqo9fuqbEAX4SvMFbH0KMgTe68ORDYElD4qZkKl9uwNU+pU
-	9ooHoP4mjiF+c9P0imcA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=oG89r2BZh0F8Lsqcy3LZxc09IBbBiIyG8AVnuy/FzuY=; b=FQKyOTCcu7l7BBhTgS5ZJ5Mkn
+	G4Jn4OizbFb5bb4Mk2y2rKLDTPTARKZ+5POXrIk0eLo5EpTGfatNworg1BNkjz2+4I1kEI/hx2ocP
+	xnhwKISY5Hn4/kzRDOczclZc7xzxZ6Mgmk92ds9IoMPeRsWko1hWeJzoJKxWEnQm50rthr+2NTmne
+	G8K7UTTZ7nF/GLOHtcuKSi6Koc31dri3wzVRnqU9HDnttVjZgq744NkleOsDF4JNdz4cadqTUgB0d
+	fVqFlYZR6Z/WDqtXEbjgN3UfAKg7gpw6h/xJ73GYywudZXNtY1GQPxnyKlyPUx4fERZFwwrhuIsNR
+	jMNdW/Nzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTqCN-0000Da-1n; Wed, 29 Apr 2020 17:08:39 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jTqFA-000487-QJ; Wed, 29 Apr 2020 17:11:32 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTqCD-0000C7-3R
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 17:08:30 +0000
-Received: by mail-lj1-x241.google.com with SMTP id u15so3451874ljd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 10:08:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=2F/GGX+E0c0+b/vD1LG0X0Imv+S43d6dDOK/FkPT3g8=;
- b=jNkYpc6S0ZAt1d7I3WBLADvu8AvAoumyVfy15MqXYeffwC+o4Cob9YDhPtMZ8QWvH+
- NIwdCDYO3Ztb8zQ3NlSssEXDT66TreFG8fQZFp2Sf/GUZvt3pdbYSGtLKGnxRX+tQTcQ
- zb1kabUEdqdEgPGAX3PG8+MATiYMctEl87v0wIV8vw6cs9cJg5IaVwlKG6Zfiv5akn75
- jDsY1e2YbK6YsNoc8BmOCB3Kw7UeY8zYQ1iUdKYUGLuug2TQemrSwaCGKE4Xe4nS9V9P
- WBX0kvYhtVFlazgSsG0wd6v0mt1vwy7k9/83/pCmG6nJkn1eoGUkQmSC02Cnl2AeuK8+
- nCzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2F/GGX+E0c0+b/vD1LG0X0Imv+S43d6dDOK/FkPT3g8=;
- b=L5E8A1Bylh55KUEbpf2Ji9ozllrm6MgLZcPjcAbH5WDmroNNAK3pbkLWXaBFk2b7pU
- x1DeKasA8/enUpKoaogJH8/ZfAA59FJQwip5f05LneOa92bxyrzv6ufk6DX4Z+/UGA7K
- 0y6cfeInsfFGJzYzH9tWAAjnxotWl4mIelIC7jXZPZBsL/cNyyzHEgqFfok9akCV96sO
- wdfeCFTw3SJhc0cMTsQkNfgE6lBSLjtOjFVDk2zefHjZFBfVmErGtZSVqsBlgoR4KbBM
- 1798awmFpm1YwiGxjVl1JGfHLljM9QFTpnGrKi2mTIaRPyr6DhMjSq+REaZzwJS9PtNv
- xtJg==
-X-Gm-Message-State: AGi0PubJD0LHI4/HF79RkxsbKYmzYpekth5zAoWpJJuIKmJkM0Tz0vT0
- RaaOg8BEMrgethEI5QYGz5f8WkmoLj/wKEnU+sdSJQ==
-X-Google-Smtp-Source: APiQypI/p8hMCfeSVM1tpb+Hmphas9b6HroclmJaxP7F1hxtSeUvsqPKT++NGG1tH/H5GveF7lU55+kiTYZblxp87+I=
-X-Received: by 2002:a2e:8046:: with SMTP id p6mr20607906ljg.21.1588180106288; 
- Wed, 29 Apr 2020 10:08:26 -0700 (PDT)
+ id 1jTqEy-00047T-O1
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 17:11:23 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1588180282; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=2H/grRhp1qnjOIul3MbQSy7YNYNUS9RRvwG048+TsJY=;
+ b=F+IUXWmXU4b6uiVU4tVxkqbqc6ePvHf4N4qLNzRMthBYgpoIYhXV5T/kfjXILkJr/Op3bnTn
+ KCyv3X3A87HdZkT+A7mvvPDkXjakoFIBn1sJqACcZI9+4uxODbiSlLt1aXT42VsMf31SCqXg
+ fmYdn+dsZxa/6fx5l9h4CAouWsk=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ea9b52c.7f0d18f4a848-smtp-out-n03;
+ Wed, 29 Apr 2020 17:11:08 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 23D1AC433BA; Wed, 29 Apr 2020 17:11:07 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 834D7C433D2;
+ Wed, 29 Apr 2020 17:11:06 +0000 (UTC)
 MIME-Version: 1.0
-References: <20200424114058.21199-1-benjamin.gaignard@st.com>
- <7657495.QyJl4BcWH5@kreacher>
-In-Reply-To: <7657495.QyJl4BcWH5@kreacher>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Wed, 29 Apr 2020 19:08:14 +0200
-Message-ID: <CAKfTPtBNH8x=83RVQajgK859qQGjMTyvEdP4GioMONEZp9t-NA@mail.gmail.com>
-Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
-To: "Rafael J. Wysocki" <rjw@rjwysocki.net>
+Date: Wed, 29 Apr 2020 22:41:06 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
+ connections
+In-Reply-To: <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
+References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+ <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
+ <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
+ <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
+ <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
+ <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
+ <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
+ <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
+ <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
+ <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
+ <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
+Message-ID: <ae0fe2050be01cc1403c7d53a0da8cb8@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_100829_143755_CCCFC1A4 
-X-CRM114-Status: GOOD (  13.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_101122_636924_47A4B080 
+X-CRM114-Status: GOOD (  24.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -91,47 +97,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Len Brown <len.brown@intel.com>, Alexandre TORGUE <alexandre.torgue@st.com>,
- "open list:THERMAL" <linux-pm@vger.kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>, Pavel Machek <pavel@ucw.cz>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>, linux-media@vger.kernel.org,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, hugues.fruchet@st.com,
- mchehab@kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- LAK <linux-arm-kernel@lists.infradead.org>,
- Benjamin Gaignard <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Apr 2020 at 17:50, Rafael J. Wysocki <rjw@rjwysocki.net> wrote:
->
-> On Friday, April 24, 2020 1:40:55 PM CEST Benjamin Gaignard wrote:
-> > When start streaming from the sensor the CPU load could remain very low
-> > because almost all the capture pipeline is done in hardware (i.e. without
-> > using the CPU) and let believe to cpufreq governor that it could use lower
-> > frequencies. If the governor decides to use a too low frequency that
-> > becomes a problem when we need to acknowledge the interrupt during the
-> > blanking time.
-> > The delay to ack the interrupt and perform all the other actions before
-> > the next frame is very short and doesn't allow to the cpufreq governor to
-> > provide the required burst of power. That led to drop the half of the frames.
-> >
-> > To avoid this problem, DCMI driver informs the cpufreq governors by adding
-> > a cpufreq minimum load QoS resquest.
->
-> This seems to be addressing a use case that can be addressed with the help of
-> utilization clamps with less power overhead.
+Hi Mike,
 
-Can't freq_qos_update_request() be also used if you don't have cgroup
-enabled on your system ?
+On 2020-04-29 22:28, Mike Leach wrote:
+> Hi,
+> 
 
->
-> Thanks!
->
->
->
+[...]
+
+>> >> > You need to find what is resetting the IDFILTERs to 0 for replicator1.
+>> >> >
+>> >>
+>> >> That is right.
+>> >>
+>> >
+>> > By default all replicators have the IDFILTER registers set to 0 out of
+>> > hardware reset. This ensures that programmable replicators behave in
+>> > the same way as non-programmable replicators out of reset.
+>> >
+>> > The  dynamic_replicator_reset() is of course a driver state reset -
+>> > which filters out all trace on the output ports. The trace is then
+>> > enabled when we set the trace path from source to sink.
+>> >
+>> 
+>> Thanks for these explanations.
+>> 
+>> > It seems to me that you have 2 problems that need solving here:
+>> >
+>> > 1) Why does the reset_replicator() called from probe() _not_ work
+>> > correctly on replicator 1? It seems to work later if you introduce a
+>> > reset after more of the system has powered and booted. This is
+>> > startiing to look a little like a PM / clocking issue.
+>> 
+>> reset_replicator() does work in probe correctly for both replicators,
+>> below logs is collected before and after reset in probe. It is later
+>> that it's set back to 0x0 and hence the suggestion to look at firmware
+>> using this replicator1.
+>> 
+> OK - sorry I read your statement saying that replicator1 was 0 after
+> the reset in probe(), rather than look at the logs.
+> 
+> From the logs it is working at the time probe() occurs, but by the
+> time we come to enable the replicator later, something has reset these
+> registers / hardware outside the control of the replicator driver.
+> 
+
+Yes, I will try to get some more information from the firmware side if 
+there is anything messing up.
+
+> 
+>> [    8.477669] func replicator_probe before reset replicator 
+>> replicator1
+>> REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+>> [    8.489470] func replicator_probe after reset replicator 
+>> replicator1
+>> REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+>> 
+>> >
+>> > This failure is causing the state when we are trying to set an output
+>> > port that both branches of this replicator are enabled for output.
+>> > In effect for this replicator, setting the output port has no effect
+>> > as it is already enabled.
+>> >
+>> > 2) Why does having both ports of this repilicator enabled cause a hard
+>> > lockup? This is a separate hardware  / system issue.
+>> >
+>> > The worst that should happen if both branches of a replicator are
+>> > enabled is that you get undesirable back pressure. (e.g. there is a
+>> > system we have seen - I think it is Juno - where there is a static
+>> > replicator feeding the TPIU and ETR - we need to disable the TPIU to
+>> > prevent undesired back pressure).
+>> >
+>> 
+>> Ok so hardlockup is not expected because of this backpressure.
+>> 
+> 
+> Hardlockup is not expected, but this is not related to any possible
+> backpressure.
+> 
+> Ordinarily having both legs of a replicator enabled should not cause
+> system failure.
+> 
+
+Ok got it, thanks.
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
