@@ -2,68 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFEEA1BE41E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:41:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D74221BE424
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:42:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fXxwVlwSEV/jQC4Txsw8AhaJcnZZXC4PXvFi7bX5/4c=; b=BOiGW7zfesLOdE
-	Gny7Ldp6Bp67/lJQHdXOZuVzusRxMsMNbSPduaTVDJOVgvRpHWepRmiIrjP6TjUvRsJsWAxy7t8Wp
-	J43L5hmX8mgCPtIobziaIpyHimyKNVauAmVF33njrpoDUCZ9YrOf81ySRw4/dpRvopvt3aADLxt2e
-	SK6YrgOo8DsXazSAJ9TATE5TcxW42HCPVxMbPXTc0XUKqNawQLjwHI8mFKgjQeybHfE17Q2qtbmsK
-	fSAkSJNIhc+9v5rsKHG+PQGC/sWpSol6+KShL2/ySGxSEGrSkCquvjTkgsGWX5Vfrp5tr+91lZsNQ
-	w5h3thaQtR76Hpq5JoTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=TfLKQaF3RY6x3LXU8iA0SMY2QUyptolYcHQm9ajrdd4=; b=cV6SO30XCxrKN6
+	37G4W8BbLeOx9YwEs49ea8VclW+pN1Rra0GrAL0lnzKrl8ADSAbrJ82JBzGwxryD6Xr8v59n1CFak
+	dxlz/klJ1AA0AS5cDgDQ8UYEm5xeS0FbFwT5DUUW7ZAXSDORB2xAT5naAJWShyko4reP6u9dUmvoG
+	w5gubvEr3xuDUO9jCJrjCSY55D5uv9nOPPUB19+jCxy9Jzd7WGHIprbD0MKBF3wPLnsIeg79u0HeP
+	6eqP3xcD4JZ4noybGz8iQozNgKGUfXjiP95XDGiOtlCIuTaI57ikuEvoGe59zsugYCflXJELZbR8o
+	toEQQ1AWmJW2E5gfV7xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTpmK-0002ef-VB; Wed, 29 Apr 2020 16:41:45 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jTpml-00032T-5p; Wed, 29 Apr 2020 16:42:11 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTpis-0005yH-GP
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:38:14 +0000
+ id 1jTpk7-0006z1-ES
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:39:34 +0000
 Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 49C4291Xy8z1rtN6;
- Wed, 29 Apr 2020 18:38:09 +0200 (CEST)
+ by mail-out.m-online.net (Postfix) with ESMTP id 49C43d73GBz1qs4B;
+ Wed, 29 Apr 2020 18:39:25 +0200 (CEST)
 Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 49C4291Bplz1qv7g;
- Wed, 29 Apr 2020 18:38:09 +0200 (CEST)
+ by mail.m-online.net (Postfix) with ESMTP id 49C43d6f4dz1qqkP;
+ Wed, 29 Apr 2020 18:39:25 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at mnet-online.de
 Received: from mail.mnet-online.de ([192.168.8.182])
  by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
  port 10024)
- with ESMTP id eNyJaCkk4_CD; Wed, 29 Apr 2020 18:38:06 +0200 (CEST)
-X-Auth-Info: xzNOlm/lncI5b2PdZm90PjIsBAZ02EGTQyGH8YGYXOA=
+ with ESMTP id W4tG2cisgiQM; Wed, 29 Apr 2020 18:39:23 +0200 (CEST)
+X-Auth-Info: dm1kTWx54nyY4tPOqc/s4QxkM1DLPFQw1erLQ1To/no=
 Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
  by mail.mnet-online.de (Postfix) with ESMTPSA;
- Wed, 29 Apr 2020 18:38:05 +0200 (CEST)
+ Wed, 29 Apr 2020 18:39:22 +0200 (CEST)
 From: Marek Vasut <marex@denx.de>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 12/12] ARM: dts: stm32: Add DTs for STM32MP15x variants of the
- DHCOR SOM and AV96
-Date: Wed, 29 Apr 2020 18:37:43 +0200
-Message-Id: <20200429163743.67854-12-marex@denx.de>
+Subject: [PATCH] ARM: dts: stm32: Add DTs for STM32MP15x variants of the DHCOM
+ SOM and PDK2
+Date: Wed, 29 Apr 2020 18:39:14 +0200
+Message-Id: <20200429163914.67921-1-marex@denx.de>
 X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200429163743.67854-1-marex@denx.de>
-References: <20200429163743.67854-1-marex@denx.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_093810_960078_8DCC53E3 
-X-CRM114-Status: GOOD (  16.08  )
+X-CRM114-CacheID: sfid-20200429_093927_875040_EF518E57 
+X-CRM114-Status: GOOD (  15.59  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ low trust [212.18.0.9 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -80,419 +78,308 @@ Cc: Marek Vasut <marex@denx.de>, Alexandre Torgue <alexandre.torgue@st.com>,
  Patrice Chotard <patrice.chotard@st.com>,
  Patrick Delaunay <patrick.delaunay@st.com>,
  Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
  linux-stm32@st-md-mailman.stormreply.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Avenger96 can be populated with DH Electronics DHCOR SoM with any
-STM32MP15xA variant. Add the DTs describing the remaining combinations.
-Since the board is a combination of carrier board and SoM, update the
-DT name, however keep the old DT for backward compatibility.
+The DH Electronics PDK2 can be populated with SoM with any STM32MP15x
+variant. Add the DTs describing the remaining combinations.
 
 Signed-off-by: Marek Vasut <marex@denx.de>
 Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
 Cc: Patrice Chotard <patrice.chotard@st.com>
 Cc: Patrick Delaunay <patrick.delaunay@st.com>
 Cc: linux-stm32@st-md-mailman.stormreply.com
 To: linux-arm-kernel@lists.infradead.org
 ---
- arch/arm/boot/dts/Makefile                    |   3 +
- .../boot/dts/stm32mp151a-dhcor-avenger96.dts  |   9 +
- arch/arm/boot/dts/stm32mp151a-dhcor-som.dtsi  |   8 +
- .../boot/dts/stm32mp153a-dhcor-avenger96.dts  |  23 +
- arch/arm/boot/dts/stm32mp153a-dhcor-som.dtsi  |   8 +
- arch/arm/boot/dts/stm32mp157a-avenger96.dts   | 416 +-----------------
- .../boot/dts/stm32mp157a-dhcor-avenger96.dts  |  23 +
- arch/arm/boot/dts/stm32mp157a-dhcor-som.dtsi  | 206 +--------
- .../boot/dts/stm32mp15xa-dhcor-avenger96.dtsi | 405 +++++++++++++++++
- ...o1v8.dtsi => stm32mp15xa-dhcor-io1v8.dtsi} |   0
- arch/arm/boot/dts/stm32mp15xx-dhcor-som.dtsi  | 209 +++++++++
- 11 files changed, 692 insertions(+), 618 deletions(-)
- create mode 100644 arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
- create mode 100644 arch/arm/boot/dts/stm32mp151a-dhcor-som.dtsi
- create mode 100644 arch/arm/boot/dts/stm32mp153a-dhcor-avenger96.dts
- create mode 100644 arch/arm/boot/dts/stm32mp153a-dhcor-som.dtsi
- create mode 100644 arch/arm/boot/dts/stm32mp157a-dhcor-avenger96.dts
- create mode 100644 arch/arm/boot/dts/stm32mp15xa-dhcor-avenger96.dtsi
- rename arch/arm/boot/dts/{stm32mp157a-dhcor-io1v8.dtsi => stm32mp15xa-dhcor-io1v8.dtsi} (100%)
- create mode 100644 arch/arm/boot/dts/stm32mp15xx-dhcor-som.dtsi
+ arch/arm/boot/dts/Makefile                    |   2 +
+ arch/arm/boot/dts/stm32mp151c-dhcom-pdk2.dts  |   8 +
+ arch/arm/boot/dts/stm32mp151c-dhcom-som.dtsi  |   8 +
+ arch/arm/boot/dts/stm32mp153c-dhcom-pdk2.dts  |  15 +
+ arch/arm/boot/dts/stm32mp153c-dhcom-som.dtsi  |   8 +
+ arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts  | 268 +------------
+ arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi  | 360 +----------------
+ arch/arm/boot/dts/stm32mp15xc-dhcom-pdk2.dtsi | 269 +++++++++++++
+ arch/arm/boot/dts/stm32mp15xx-dhcom-som.dtsi  | 361 ++++++++++++++++++
+ 9 files changed, 676 insertions(+), 623 deletions(-)
+ create mode 100644 arch/arm/boot/dts/stm32mp151c-dhcom-pdk2.dts
+ create mode 100644 arch/arm/boot/dts/stm32mp151c-dhcom-som.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp153c-dhcom-pdk2.dts
+ create mode 100644 arch/arm/boot/dts/stm32mp153c-dhcom-som.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xc-dhcom-pdk2.dtsi
+ create mode 100644 arch/arm/boot/dts/stm32mp15xx-dhcom-som.dtsi
 
 diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index f43467b02bcd..b4a4d2b0f18e 100644
+index b4a4d2b0f18e..adc60dbefb64 100644
 --- a/arch/arm/boot/dts/Makefile
 +++ b/arch/arm/boot/dts/Makefile
-@@ -1029,6 +1029,9 @@ dtb-$(CONFIG_ARCH_STM32) += \
- 	stm32h743i-eval.dtb \
- 	stm32h743i-disco.dtb \
- 	stm32mp157a-avenger96.dtb \
-+	stm32mp151a-dhcor-avenger96.dtb \
-+	stm32mp153a-dhcor-avenger96.dtb \
-+	stm32mp157a-dhcor-avenger96.dtb \
+@@ -1033,6 +1033,8 @@ dtb-$(CONFIG_ARCH_STM32) += \
+ 	stm32mp153a-dhcor-avenger96.dtb \
+ 	stm32mp157a-dhcor-avenger96.dtb \
  	stm32mp157a-dk1.dtb \
++	stm32mp151c-dhcom-pdk2.dtb \
++	stm32mp153c-dhcom-pdk2.dtb \
  	stm32mp157c-dhcom-pdk2.dtb \
  	stm32mp157c-dk2.dtb \
-diff --git a/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
+ 	stm32mp157c-ed1.dtb \
+diff --git a/arch/arm/boot/dts/stm32mp151c-dhcom-pdk2.dts b/arch/arm/boot/dts/stm32mp151c-dhcom-pdk2.dts
 new file mode 100644
-index 000000000000..0f3875fbdd73
+index 000000000000..196a6bddfcf0
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
-@@ -0,0 +1,9 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++++ b/arch/arm/boot/dts/stm32mp151c-dhcom-pdk2.dts
+@@ -0,0 +1,8 @@
++// SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
 +/*
 + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
 + */
-+
 +/dts-v1/;
 +
-+#include "stm32mp151a-dhcor-som.dtsi"
-+#include "stm32mp15xa-dhcor-avenger96.dtsi"
-diff --git a/arch/arm/boot/dts/stm32mp151a-dhcor-som.dtsi b/arch/arm/boot/dts/stm32mp151a-dhcor-som.dtsi
++#include "stm32mp151c-dhcom-som.dtsi"
++#include "stm32mp15xc-dhcom-pdk2.dtsi"
+diff --git a/arch/arm/boot/dts/stm32mp151c-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp151c-dhcom-som.dtsi
 new file mode 100644
-index 000000000000..40718ae324b3
+index 000000000000..7754b6d74e16
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp151a-dhcor-som.dtsi
++++ b/arch/arm/boot/dts/stm32mp151c-dhcom-som.dtsi
 @@ -0,0 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
 +/*
 + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
 + */
 +
 +#include "stm32mp151.dtsi"
 +#include "stm32mp15xc.dtsi"
-+#include "stm32mp15xx-dhcor-som.dtsi"
-diff --git a/arch/arm/boot/dts/stm32mp153a-dhcor-avenger96.dts b/arch/arm/boot/dts/stm32mp153a-dhcor-avenger96.dts
++#include "stm32mp15xx-dhcom-som.dtsi"
+diff --git a/arch/arm/boot/dts/stm32mp153c-dhcom-pdk2.dts b/arch/arm/boot/dts/stm32mp153c-dhcom-pdk2.dts
 new file mode 100644
-index 000000000000..e6d674e47e7e
+index 000000000000..4f114b4f075a
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp153a-dhcor-avenger96.dts
-@@ -0,0 +1,23 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++++ b/arch/arm/boot/dts/stm32mp153c-dhcom-pdk2.dts
+@@ -0,0 +1,15 @@
++// SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
 +/*
 + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
 + */
-+
 +/dts-v1/;
 +
-+#include "stm32mp153a-dhcor-som.dtsi"
-+#include "stm32mp15xa-dhcor-avenger96.dtsi"
++#include "stm32mp153c-dhcom-som.dtsi"
++#include "stm32mp15xc-dhcom-pdk2.dtsi"
 +
 +&m_can1 {
 +	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&m_can1_pins_b>;
-+	pinctrl-1 = <&m_can1_sleep_pins_b>;
-+	status = "disabled";
++	pinctrl-0 = <&m_can1_pins_a>;
++	pinctrl-1 = <&m_can1_sleep_pins_a>;
++	status = "okay";
 +};
-+
-+&m_can2 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&m_can2_pins_a>;
-+	pinctrl-1 = <&m_can2_sleep_pins_a>;
-+	status = "disabled";
-+};
-diff --git a/arch/arm/boot/dts/stm32mp153a-dhcor-som.dtsi b/arch/arm/boot/dts/stm32mp153a-dhcor-som.dtsi
+diff --git a/arch/arm/boot/dts/stm32mp153c-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp153c-dhcom-som.dtsi
 new file mode 100644
-index 000000000000..e33587e7bd11
+index 000000000000..111fe9419f05
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp153a-dhcor-som.dtsi
++++ b/arch/arm/boot/dts/stm32mp153c-dhcom-som.dtsi
 @@ -0,0 +1,8 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
 +/*
 + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
 + */
 +
 +#include "stm32mp153.dtsi"
 +#include "stm32mp15xc.dtsi"
-+#include "stm32mp15xx-dhcor-som.dtsi"
-diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-index 10f11ca53c7d..dc3bbd576756 100644
---- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
-@@ -1,421 +1,9 @@
- // SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++#include "stm32mp15xx-dhcom-som.dtsi"
+diff --git a/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts b/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
+index 13b1586d4a8f..e65869ab35f1 100644
+--- a/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
++++ b/arch/arm/boot/dts/stm32mp157c-dhcom-pdk2.dts
+@@ -1,173 +1,11 @@
+ // SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
  /*
-- * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
-- * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-  * Copyright (C) 2020 Marek Vasut <marex@denx.de>
+- * Copyright (C) 2019 Marek Vasut <marex@denx.de>
++ * Copyright (C) 2019-2020 Marek Vasut <marex@denx.de>
   */
++/dts-v1/;
  
- /dts-v1/;
- 
--#include "stm32mp157a-dhcor-som.dtsi"
--/* Avenger96 uses DHCOR SoM configured for 1V8 IO operation */
--#include "stm32mp157a-dhcor-io1v8.dtsi"
+ #include "stm32mp157c-dhcom-som.dtsi"
+-#include <dt-bindings/pwm/pwm.h>
 -
 -/ {
--	model = "Arrow Electronics STM32MP157A Avenger96 board";
--	compatible = "arrow,stm32mp157a-avenger96", "st,stm32mp157";
+-	model = "STMicroelectronics STM32MP157C DHCOM Premium Developer Kit (2)";
+-	compatible = "dh,stm32mp157c-dhcom-pdk2", "st,stm32mp157";
 -
 -	aliases {
--		ethernet0 = &ethernet0;
--		mmc0 = &sdmmc1;
 -		serial0 = &uart4;
--		serial1 = &uart7;
--		serial2 = &usart2;
--		spi0 = &qspi;
--	};
--
--	/* XTal Q1 */
--	cec_clock: clk-cec-fixed {
--		#clock-cells = <0>;
--		compatible = "fixed-clock";
--		clock-frequency = <24000000>;
+-		serial1 = &usart3;
+-		serial2 = &uart8;
+-		ethernet0 = &ethernet0;
 -	};
 -
 -	chosen {
 -		stdout-path = "serial0:115200n8";
 -	};
 -
--	hdmi-out {
--		compatible = "hdmi-connector";
--		type = "a";
+-	clk_ext_audio_codec: clock-codec {
+-		compatible = "fixed-clock";
+-		#clock-cells = <0>;
+-		clock-frequency = <24000000>;
+-	};
+-
+-	display_bl: display-bl {
+-		compatible = "pwm-backlight";
+-		pwms = <&pwm2 0 500000 PWM_POLARITY_INVERTED>;
+-		brightness-levels = <0 16 22 30 40 55 75 102 138 188 255>;
+-		default-brightness-level = <8>;
+-		enable-gpios = <&gpioi 0 GPIO_ACTIVE_HIGH>;
+-		status = "okay";
+-	};
+-
+-	ethernet_vio: vioregulator {
+-		compatible = "regulator-fixed";
+-		regulator-name = "vio";
+-		regulator-min-microvolt = <3300000>;
+-		regulator-max-microvolt = <3300000>;
+-		gpio = <&gpiog 3 GPIO_ACTIVE_LOW>;
+-		regulator-always-on;
+-		regulator-boot-on;
+-	};
+-
+-	panel {
+-		compatible = "edt,etm0700g0edh6";
+-		backlight = <&display_bl>;
 -
 -		port {
--			hdmi_con: endpoint {
--				remote-endpoint = <&adv7513_out>;
+-			lcd_panel_in: endpoint {
+-				remote-endpoint = <&lcd_display_out>;
 -			};
 -		};
 -	};
 -
--	led {
--		compatible = "gpio-leds";
--		led1 {
--			label = "green:user0";
--			gpios = <&gpioz 7 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "heartbeat";
--			default-state = "off";
--		};
--
--		led2 {
--			label = "green:user1";
--			gpios = <&gpiof 3 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "mmc0";
--			default-state = "off";
--		};
--
--		led3 {
--			label = "green:user2";
--			gpios = <&gpiog 0 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "mmc1";
--			default-state = "off";
--		};
--
--		led4 {
--			label = "green:user3";
--			gpios = <&gpiog 1 GPIO_ACTIVE_HIGH>;
--			linux,default-trigger = "none";
--			default-state = "off";
--			panic-indicator;
--		};
--	};
--
--	sd_switch: regulator-sd_switch {
--		compatible = "regulator-gpio";
--		regulator-name = "sd_switch";
--		regulator-min-microvolt = <1800000>;
--		regulator-max-microvolt = <2900000>;
--		regulator-type = "voltage";
--		regulator-always-on;
--
--		gpios = <&gpioi 5 GPIO_ACTIVE_HIGH>;
--		gpios-states = <0>;
--		states = <1800000 0x1>,
--			 <2900000 0x0>;
--	};
--
 -	sound {
 -		compatible = "audio-graph-card";
--		label = "STM32MP1-AV96-HDMI";
--		dais = <&sai2a_port>;
+-		routing =
+-			"MIC_IN", "Capture",
+-			"Capture", "Mic Bias",
+-			"Playback", "HP_OUT";
+-		dais = <&sai2a_port &sai2b_port>;
 -		status = "okay";
--	};
--
--	wlan_pwr: regulator-wlan {
--		compatible = "regulator-fixed";
--
--		regulator-name = "wl-reg";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--
--		gpios = <&gpioz 3 GPIO_ACTIVE_HIGH>;
--		enable-active-high;
 -	};
 -};
 -
--&adc {
+-&cec {
 -	pinctrl-names = "default";
--	pinctrl-0 = <&adc12_ain_pins_b>;
--	vdd-supply = <&vdd>;
--	vdda-supply = <&vdda>;
--	vref-supply = <&vdda>;
+-	pinctrl-0 = <&cec_pins_a>;
 -	status = "okay";
--
--	adc1: adc@0 {
--		st,adc-channels = <0 1 6>;
--		st,min-sample-time-nsecs = <5000>;
--		status = "okay";
--	};
--
--	adc2: adc@100 {
--		st,adc-channels = <0 1 2>;
--		st,min-sample-time-nsecs = <5000>;
--		status = "okay";
--	};
 -};
 -
 -&ethernet0 {
 -	status = "okay";
--	pinctrl-0 = <&ethernet0_rgmii_pins_c>;
--	pinctrl-1 = <&ethernet0_rgmii_sleep_pins_c>;
+-	pinctrl-0 = <&ethernet0_rmii_pins_a>;
+-	pinctrl-1 = <&ethernet0_rmii_sleep_pins_a>;
 -	pinctrl-names = "default", "sleep";
--	phy-mode = "rgmii";
--	max-speed = <1000>;
+-	phy-mode = "rmii";
+-	max-speed = <100>;
 -	phy-handle = <&phy0>;
+-	st,eth-ref-clk-sel;
+-	phy-reset-gpios = <&gpioh 15 GPIO_ACTIVE_LOW>;
 -
 -	mdio0 {
 -		#address-cells = <1>;
 -		#size-cells = <0>;
 -		compatible = "snps,dwmac-mdio";
--		reset-gpios = <&gpioz 2 GPIO_ACTIVE_LOW>;
--		reset-delay-us = <1000>;
 -
--		phy0: ethernet-phy@7 {
--			reg = <7>;
--
--			rxc-skew-ps = <1500>;
--			rxdv-skew-ps = <540>;
--			rxd0-skew-ps = <420>;
--			rxd1-skew-ps = <420>;
--			rxd2-skew-ps = <420>;
--			rxd3-skew-ps = <420>;
--
--			txc-skew-ps = <1440>;
--			txen-skew-ps = <540>;
--			txd0-skew-ps = <420>;
--			txd1-skew-ps = <420>;
--			txd2-skew-ps = <420>;
--			txd3-skew-ps = <420>;
+-		phy0: ethernet-phy@1 {
+-			reg = <1>;
 -		};
 -	};
 -};
 -
--&i2c1 {	/* X6 I2C1 */
+-&i2c2 {	/* Header X22 */
 -	pinctrl-names = "default";
--	pinctrl-0 = <&i2c1_pins_b>;
+-	pinctrl-0 = <&i2c2_pins_a>;
 -	i2c-scl-rising-time-ns = <185>;
 -	i2c-scl-falling-time-ns = <20>;
 -	status = "okay";
+-	/* spare dmas for other usage */
 -	/delete-property/dmas;
 -	/delete-property/dma-names;
+-	status = "okay";
 -};
 -
--&i2c2 {	/* X6 I2C2 */
+-&i2c5 {	/* Header X21 */
 -	pinctrl-names = "default";
--	pinctrl-0 = <&i2c2_pins_c>;
+-	pinctrl-0 = <&i2c5_pins_a>;
 -	i2c-scl-rising-time-ns = <185>;
 -	i2c-scl-falling-time-ns = <20>;
 -	status = "okay";
+-	/* spare dmas for other usage */
 -	/delete-property/dmas;
 -	/delete-property/dma-names;
--};
 -
--&i2c4 {
--	hdmi-transmitter@3d {
--		compatible = "adi,adv7513";
--		reg = <0x3d>, <0x2d>, <0x4d>, <0x5d>;
--		reg-names = "main", "cec", "edid", "packet";
--		clocks = <&cec_clock>;
--		clock-names = "cec";
+-	sgtl5000: codec@a {
+-		compatible = "fsl,sgtl5000";
+-		reg = <0x0a>;
+-		#sound-dai-cells = <0>;
+-		clocks = <&clk_ext_audio_codec>;
+-		VDDA-supply = <&v3v3>;
+-		VDDIO-supply = <&vdd>;
 -
--		avdd-supply = <&v3v3>;
--		dvdd-supply = <&v3v3>;
--		pvdd-supply = <&v3v3>;
--		dvdd-3v-supply = <&v3v3>;
--		bgvdd-supply = <&v3v3>;
--
--		interrupts = <9 IRQ_TYPE_EDGE_FALLING>;
--		interrupt-parent = <&gpiog>;
--
--		status = "okay";
--
--		adi,input-depth = <8>;
--		adi,input-colorspace = "rgb";
--		adi,input-clock = "1x";
--		adi,input-style = <1>;
--		adi,input-justification = "evenly";
--
--		ports {
+-		sgtl5000_port: port {
 -			#address-cells = <1>;
 -			#size-cells = <0>;
 -
--			port@0 {
+-			sgtl5000_tx_endpoint: endpoint@0 {
 -				reg = <0>;
--				adv7513_in: endpoint {
--					remote-endpoint = <&ltdc_ep0_out>;
--				};
+-				remote-endpoint = <&sai2a_endpoint>;
+-				frame-master;
+-				bitclock-master;
 -			};
 -
--			port@1 {
+-			sgtl5000_rx_endpoint: endpoint@1 {
 -				reg = <1>;
--				adv7513_out: endpoint {
--					remote-endpoint = <&hdmi_con>;
--				};
--			};
--
--			port@2 {
--				reg = <2>;
--				adv7513_i2s0: endpoint {
--					remote-endpoint = <&sai2a_endpoint>;
--				};
+-				remote-endpoint = <&sai2b_endpoint>;
+-				frame-master;
+-				bitclock-master;
 -			};
 -		};
+-
+-	};
+-
+-	polytouch@38 {
+-		compatible = "edt,edt-ft5x06";
+-		reg = <0x38>;
+-		interrupt-parent = <&gpiog>;
+-		interrupts = <2 IRQ_TYPE_EDGE_FALLING>; /* GPIO E */
+-		linux,wakeup;
 -	};
 -};
 -
 -&ltdc {
 -	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&ltdc_pins_d>;
--	pinctrl-1 = <&ltdc_sleep_pins_d>;
+-	pinctrl-0 = <&ltdc_pins_b>;
+-	pinctrl-1 = <&ltdc_sleep_pins_b>;
 -	status = "okay";
 -
 -	port {
--		#address-cells = <1>;
--		#size-cells = <0>;
--
--		ltdc_ep0_out: endpoint@0 {
--			reg = <0>;
--			remote-endpoint = <&adv7513_in>;
+-		lcd_display_out: endpoint {
+-			remote-endpoint = <&lcd_panel_in>;
 -		};
 -	};
 -};
--
--&m_can1 {
--	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&m_can1_pins_b>;
--	pinctrl-1 = <&m_can1_sleep_pins_b>;
--	status = "disabled";
--};
--
--&m_can2 {
--	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&m_can2_pins_a>;
--	pinctrl-1 = <&m_can2_sleep_pins_a>;
--	status = "disabled";
--};
++#include "stm32mp15xc-dhcom-pdk2.dtsi"
+ 
+ &m_can1 {
+ 	pinctrl-names = "default", "sleep";
+@@ -175,103 +13,3 @@ &m_can1 {
+ 	pinctrl-1 = <&m_can1_sleep_pins_a>;
+ 	status = "okay";
+ };
 -
 -&sai2 {
 -	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
--	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&sai2a_pins_c>;
--	pinctrl-1 = <&sai2a_sleep_pins_c>;
 -	clock-names = "pclk", "x8k", "x11k";
+-	pinctrl-names = "default", "sleep";
+-	pinctrl-0 = <&sai2a_pins_b &sai2b_pins_b>;
+-	pinctrl-1 = <&sai2a_sleep_pins_b &sai2b_sleep_pins_b>;
 -	status = "okay";
 -
 -	sai2a: audio-controller@4400b004 {
@@ -504,119 +391,71 @@ index 10f11ca53c7d..dc3bbd576756 100644
 -
 -		sai2a_port: port {
 -			sai2a_endpoint: endpoint {
--				remote-endpoint = <&adv7513_i2s0>;
+-				remote-endpoint = <&sgtl5000_tx_endpoint>;
 -				format = "i2s";
--				mclk-fs = <256>;
+-				mclk-fs = <512>;
+-				dai-tdm-slot-num = <2>;
+-				dai-tdm-slot-width = <16>;
+-			};
+-		};
+-	};
+-
+-	sai2b: audio-controller@4400b024 {
+-		dma-names = "rx";
+-		st,sync = <&sai2a 2>;
+-		clocks = <&rcc SAI2_K>, <&sai2a>;
+-		clock-names = "sai_ck", "MCLK";
+-		status = "okay";
+-
+-		sai2b_port: port {
+-			sai2b_endpoint: endpoint {
+-				remote-endpoint = <&sgtl5000_rx_endpoint>;
+-				format = "i2s";
+-				mclk-fs = <512>;
+-				dai-tdm-slot-num = <2>;
+-				dai-tdm-slot-width = <16>;
 -			};
 -		};
 -	};
 -};
 -
--&sdmmc1 {
--	pinctrl-names = "default", "opendrain", "sleep";
--	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
--	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_b>;
--	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_b>;
--	cd-gpios = <&gpioi 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
--	disable-wp;
--	st,sig-dir;
--	st,neg-edge;
--	st,use-ckin;
--	bus-width = <4>;
--	vmmc-supply = <&vdd_sd>;
--	vqmmc-supply = <&sd_switch>;
--	status = "okay";
--};
--
--&sdmmc2 {
--	pinctrl-names = "default", "opendrain", "sleep";
--	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_b>;
--	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_b>;
--	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_b>;
--	bus-width = <8>;
--	mmc-ddr-1_8v;
--	no-sd;
--	no-sdio;
--	non-removable;
--	st,neg-edge;
--	vmmc-supply = <&v3v3>;
--	vqmmc-supply = <&vdd_io>;
--	status = "okay";
--};
--
--&sdmmc3 {
--	pinctrl-names = "default", "opendrain", "sleep";
--	pinctrl-0 = <&sdmmc3_b4_pins_b>;
--	pinctrl-1 = <&sdmmc3_b4_od_pins_b>;
--	pinctrl-2 = <&sdmmc3_b4_sleep_pins_b>;
--	broken-cd;
--	non-removable;
--	st,neg-edge;
--	bus-width = <4>;
--	vmmc-supply = <&wlan_pwr>;
--	status = "okay";
--
--	#address-cells = <1>;
--	#size-cells = <0>;
--	brcmf: bcrmf@1 {
--		reg = <1>;
--		compatible = "brcm,bcm4329-fmac";
--	};
--};
--
--&spi2 {
--	pinctrl-names = "default";
--	pinctrl-0 = <&spi2_pins_a>;
--	cs-gpios = <&gpioi 0 0>;
--	status = "disabled";
+-&timers2 {
+-	/* spare dmas for other usage (un-delete to enable pwm capture) */
 -	/delete-property/dmas;
 -	/delete-property/dma-names;
--};
--
--&uart4 {
--	/* On Low speed expansion header */
--	label = "LS-UART1";
--	pinctrl-names = "default";
--	pinctrl-0 = <&uart4_pins_b>;
 -	status = "okay";
--};
--
--&uart7 {
--	/* On Low speed expansion header */
--	label = "LS-UART0";
--	pinctrl-names = "default";
--	pinctrl-0 = <&uart7_pins_a>;
--	status = "okay";
--};
--
--/* Bluetooth */
--&usart2 {
--	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&usart2_pins_a>;
--	pinctrl-1 = <&usart2_sleep_pins_a>;
--	st,hw-flow-ctrl;
--	status = "okay";
--
--	bluetooth {
--		compatible = "brcm,bcm43438-bt";
--		max-speed = <3000000>;
--		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
+-	pwm2: pwm {
+-		pinctrl-0 = <&pwm2_pins_a>;
+-		pinctrl-names = "default";
+-		status = "okay";
 -	};
+-	timer@1 {
+-		status = "okay";
+-	};
+-};
+-
+-&usart3 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&usart3_pins_a>;
+-	status = "okay";
+-};
+-
+-&uart8 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&uart8_pins_a>;
+-	status = "okay";
 -};
 -
 -&usbh_ehci {
 -	phys = <&usbphyc_port0>;
--	phy-names = "usb";
 -	status = "okay";
 -};
 -
 -&usbotg_hs {
--	pinctrl-0 = <&usbotg_hs_pins_a>;
--	pinctrl-names = "default";
--	phy-names = "usb2-phy";
+-	dr_mode = "peripheral";
 -	phys = <&usbphyc_port1 0>;
+-	phy-names = "usb2-phy";
 -	status = "okay";
--	vbus-supply = <&vbus_otg>;
 -};
 -
 -&usbphyc {
@@ -634,64 +473,109 @@ index 10f11ca53c7d..dc3bbd576756 100644
 -	vdda1v1-supply = <&reg11>;
 -	vdda1v8-supply = <&reg18>;
 -};
-+/* This DT is here only for backward compatibility */
-+#include "stm32mp157a-dhcor-avenger96.dts"
-diff --git a/arch/arm/boot/dts/stm32mp157a-dhcor-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-dhcor-avenger96.dts
-new file mode 100644
-index 000000000000..7355af3d14f6
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp157a-dhcor-avenger96.dts
-@@ -0,0 +1,23 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
-+/*
-+ * Copyright (C) 2020 Marek Vasut <marex@denx.de>
-+ */
-+
-+/dts-v1/;
-+
-+#include "stm32mp157a-dhcor-som.dtsi"
-+#include "stm32mp15xa-dhcor-avenger96.dtsi"
-+
-+&m_can1 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&m_can1_pins_b>;
-+	pinctrl-1 = <&m_can1_sleep_pins_b>;
-+	status = "disabled";
-+};
-+
-+&m_can2 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&m_can2_pins_a>;
-+	pinctrl-1 = <&m_can2_sleep_pins_a>;
-+	status = "disabled";
-+};
-diff --git a/arch/arm/boot/dts/stm32mp157a-dhcor-som.dtsi b/arch/arm/boot/dts/stm32mp157a-dhcor-som.dtsi
-index 7144afeab6ca..7dac547e7996 100644
---- a/arch/arm/boot/dts/stm32mp157a-dhcor-som.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157a-dhcor-som.dtsi
-@@ -1,210 +1,8 @@
- // SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+diff --git a/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
+index f97e0d2ecf17..776e041fb81e 100644
+--- a/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
++++ b/arch/arm/boot/dts/stm32mp157c-dhcom-som.dtsi
+@@ -1,364 +1,8 @@
+ // SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
  /*
-- * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
-- * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-  * Copyright (C) 2020 Marek Vasut <marex@denx.de>
+- * Copyright (C) 2019 Marek Vasut <marex@denx.de>
++ * Copyright (C) 2019-2020 Marek Vasut <marex@denx.de>
   */
+-/dts-v1/;
  
  #include "stm32mp157.dtsi"
+ #include "stm32mp15xc.dtsi"
 -#include "stm32mp15-pinctrl.dtsi"
--#include "stm32mp15xxac-pinctrl.dtsi"
+-#include "stm32mp15xxaa-pinctrl.dtsi"
 -#include <dt-bindings/gpio/gpio.h>
 -#include <dt-bindings/mfd/st,stpmic1.h>
 -
 -/ {
--	aliases {
--		spi0 = &qspi;
--	};
--
 -	memory@c0000000 {
 -		device_type = "memory";
--		reg = <0xc0000000 0x40000000>;
+-		reg = <0xC0000000 0x40000000>;
 -	};
+-
+-	reserved-memory {
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		ranges;
+-
+-		mcuram2: mcuram2@10000000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x10000000 0x40000>;
+-			no-map;
+-		};
+-
+-		vdev0vring0: vdev0vring0@10040000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x10040000 0x1000>;
+-			no-map;
+-		};
+-
+-		vdev0vring1: vdev0vring1@10041000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x10041000 0x1000>;
+-			no-map;
+-		};
+-
+-		vdev0buffer: vdev0buffer@10042000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x10042000 0x4000>;
+-			no-map;
+-		};
+-
+-		mcuram: mcuram@30000000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x30000000 0x40000>;
+-			no-map;
+-		};
+-
+-		retram: retram@38000000 {
+-			compatible = "shared-dma-pool";
+-			reg = <0x38000000 0x10000>;
+-			no-map;
+-		};
+-	};
+-};
+-
+-&adc {
+-	vdd-supply = <&vdd>;
+-	vdda-supply = <&vdda>;
+-	vref-supply = <&vdda>;
+-	status = "okay";
+-
+-	adc1: adc@0 {
+-		st,min-sample-time-nsecs = <5000>;
+-		st,adc-channels = <0>;
+-		status = "okay";
+-	};
+-
+-	adc2: adc@100 {
+-		st,adc-channels = <1>;
+-		st,min-sample-time-nsecs = <5000>;
+-		status = "okay";
+-	};
+-};
+-
+-&dac {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&dac_ch1_pins_a &dac_ch2_pins_a>;
+-	vref-supply = <&vdda>;
+-	status = "okay";
+-
+-	dac1: dac@1 {
+-		status = "okay";
+-	};
+-	dac2: dac@2 {
+-		status = "okay";
+-	};
+-};
+-
+-&dts {
+-	status = "okay";
 -};
 -
 -&i2c4 {
@@ -700,8 +584,14 @@ index 7144afeab6ca..7dac547e7996 100644
 -	i2c-scl-rising-time-ns = <185>;
 -	i2c-scl-falling-time-ns = <20>;
 -	status = "okay";
+-	/* spare dmas for other usage */
 -	/delete-property/dmas;
 -	/delete-property/dma-names;
+-
+-	rtc@32 {
+-		compatible = "microcrystal,rv8803";
+-		reg = <0x32>;
+-	};
 -
 -	pmic: stpmic@33 {
 -		compatible = "st,stpmic1";
@@ -713,7 +603,6 @@ index 7144afeab6ca..7dac547e7996 100644
 -
 -		regulators {
 -			compatible = "st,stpmic1-regulators";
--
 -			ldo1-supply = <&v3v3>;
 -			ldo2-supply = <&v3v3>;
 -			ldo3-supply = <&vdd_ddr>;
@@ -724,7 +613,7 @@ index 7144afeab6ca..7dac547e7996 100644
 -
 -			vddcore: buck1 {
 -				regulator-name = "vddcore";
--				regulator-min-microvolt = <1200000>;
+-				regulator-min-microvolt = <800000>;
 -				regulator-max-microvolt = <1350000>;
 -				regulator-always-on;
 -				regulator-initial-mode = <0>;
@@ -742,9 +631,10 @@ index 7144afeab6ca..7dac547e7996 100644
 -
 -			vdd: buck3 {
 -				regulator-name = "vdd";
--				regulator-min-microvolt = <2900000>;
--				regulator-max-microvolt = <2900000>;
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
 -				regulator-always-on;
+-				st,mask-reset;
 -				regulator-initial-mode = <0>;
 -				regulator-over-current-protection;
 -			};
@@ -782,6 +672,8 @@ index 7144afeab6ca..7dac547e7996 100644
 -
 -			vdd_usb: ldo4 {
 -				regulator-name = "vdd_usb";
+-				regulator-min-microvolt = <3300000>;
+-				regulator-max-microvolt = <3300000>;
 -				interrupts = <IT_CURLIM_LDO4 0>;
 -			};
 -
@@ -798,12 +690,12 @@ index 7144afeab6ca..7dac547e7996 100644
 -				regulator-min-microvolt = <1800000>;
 -				regulator-max-microvolt = <1800000>;
 -				interrupts = <IT_CURLIM_LDO6 0>;
--				regulator-enable-ramp-delay = <300000>;
 -			};
 -
 -			vref_ddr: vref_ddr {
 -				regulator-name = "vref_ddr";
 -				regulator-always-on;
+-				regulator-over-current-protection;
 -			};
 -
 -			bst_out: boost {
@@ -814,20 +706,20 @@ index 7144afeab6ca..7dac547e7996 100644
 -			vbus_otg: pwr_sw1 {
 -				regulator-name = "vbus_otg";
 -				interrupts = <IT_OCP_OTG 0>;
--				regulator-active-discharge = <1>;
 -			};
 -
 -			vbus_sw: pwr_sw2 {
 -				regulator-name = "vbus_sw";
 -				interrupts = <IT_OCP_SWOUT 0>;
--				regulator-active-discharge = <1>;
+-				regulator-active-discharge;
 -			};
 -		};
 -
 -		onkey {
 -			compatible = "st,stpmic1-onkey";
--			interrupts = <IT_PONKEY_F 0>, <IT_PONKEY_R 1>;
+-			interrupts = <IT_PONKEY_F 0>, <IT_PONKEY_R 0>;
 -			interrupt-names = "onkey-falling", "onkey-rising";
+-			power-off-time-sec = <10>;
 -			status = "okay";
 -		};
 -
@@ -837,15 +729,36 @@ index 7144afeab6ca..7dac547e7996 100644
 -		};
 -	};
 -
--	eeprom@53 {
+-	touchscreen@49 {
+-		compatible = "ti,tsc2004";
+-		reg = <0x49>;
+-		vio-supply = <&v3v3>;
+-		interrupts-extended = <&gpioh 3 IRQ_TYPE_EDGE_FALLING>;
+-	};
+-
+-	eeprom@50 {
 -		compatible = "atmel,24c02";
--		reg = <0x53>;
+-		reg = <0x50>;
 -		pagesize = <16>;
 -	};
 -};
 -
+-&ipcc {
+-	status = "okay";
+-};
+-
 -&iwdg2 {
 -	timeout-sec = <32>;
+-	status = "okay";
+-};
+-
+-&m4_rproc {
+-	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
+-			<&vdev0vring1>, <&vdev0buffer>;
+-	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
+-	mbox-names = "vq0", "vq1", "shutdown";
+-	interrupt-parent = <&exti>;
+-	interrupts = <68 1>;
 -	status = "okay";
 -};
 -
@@ -856,14 +769,14 @@ index 7144afeab6ca..7dac547e7996 100644
 -
 -&qspi {
 -	pinctrl-names = "default", "sleep";
--	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a>;
--	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a>;
--	reg = <0x58003000 0x1000>, <0x70000000 0x200000>;
+-	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a &qspi_bk2_pins_a>;
+-	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a &qspi_bk2_sleep_pins_a>;
+-	reg = <0x58003000 0x1000>, <0x70000000 0x4000000>;
 -	#address-cells = <1>;
 -	#size-cells = <0>;
 -	status = "okay";
 -
--	flash0: spi-flash@0 {
+-	flash0: mx66l51235l@0 {
 -		compatible = "jedec,spi-nor";
 -		reg = <0>;
 -		spi-rx-bus-width = <4>;
@@ -880,278 +793,239 @@ index 7144afeab6ca..7dac547e7996 100644
 -&rtc {
 -	status = "okay";
 -};
-+#include "stm32mp15xc.dtsi"
-+#include "stm32mp15xx-dhcor-som.dtsi"
-diff --git a/arch/arm/boot/dts/stm32mp15xa-dhcor-avenger96.dtsi b/arch/arm/boot/dts/stm32mp15xa-dhcor-avenger96.dtsi
+-
+-&sdmmc1 {
+-	pinctrl-names = "default", "opendrain", "sleep";
+-	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
+-	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_a>;
+-	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_a>;
+-	broken-cd;
+-	st,sig-dir;
+-	st,neg-edge;
+-	st,use-ckin;
+-	bus-width = <4>;
+-	vmmc-supply = <&vdd_sd>;
+-	status = "okay";
+-};
+-
+-&sdmmc2 {
+-	pinctrl-names = "default", "opendrain", "sleep";
+-	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_a>;
+-	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_a>;
+-	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_a>;
+-	non-removable;
+-	no-sd;
+-	no-sdio;
+-	st,neg-edge;
+-	bus-width = <8>;
+-	vmmc-supply = <&v3v3>;
+-	vqmmc-supply = <&v3v3>;
+-	mmc-ddr-3_3v;
+-	status = "okay";
+-};
+-
+-&sdmmc3 {
+-	pinctrl-names = "default", "opendrain", "sleep";
+-	pinctrl-0 = <&sdmmc3_b4_pins_a>;
+-	pinctrl-1 = <&sdmmc3_b4_od_pins_a>;
+-	pinctrl-2 = <&sdmmc3_b4_sleep_pins_a>;
+-	broken-cd;
+-	st,neg-edge;
+-	bus-width = <4>;
+-	vmmc-supply = <&v3v3>;
+-	vqmmc-supply = <&v3v3>;
+-	mmc-ddr-3_3v;
+-	status = "okay";
+-};
+-
+-&uart4 {
+-	pinctrl-names = "default";
+-	pinctrl-0 = <&uart4_pins_a>;
+-	status = "okay";
+-};
++#include "stm32mp15xx-dhcom-som.dtsi"
+diff --git a/arch/arm/boot/dts/stm32mp15xc-dhcom-pdk2.dtsi b/arch/arm/boot/dts/stm32mp15xc-dhcom-pdk2.dtsi
 new file mode 100644
-index 000000000000..baec592aee13
+index 000000000000..f5e71f2036ab
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xa-dhcor-avenger96.dtsi
-@@ -0,0 +1,405 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++++ b/arch/arm/boot/dts/stm32mp15xc-dhcom-pdk2.dtsi
+@@ -0,0 +1,269 @@
++// SPDX-License-Identifier: GPL-2.0+ OR BSD-3-Clause
 +/*
-+ * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
-+ * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-+ * Copyright (C) 2020 Marek Vasut <marex@denx.de>
++ * Copyright (C) 2019 Marek Vasut <marex@denx.de>
 + */
 +
-+#include "stm32mp157a-dhcor-som.dtsi"
-+/* Avenger96 uses DHCOR SoM configured for 1V8 IO operation */
-+#include "stm32mp15xa-dhcor-io1v8.dtsi"
++#include <dt-bindings/pwm/pwm.h>
 +
 +/ {
-+	model = "Arrow Electronics STM32MP157A Avenger96 board";
-+	compatible = "arrow,stm32mp157a-avenger96", "st,stm32mp157";
++	model = "STMicroelectronics STM32MP157C DHCOM Premium Developer Kit (2)";
++	compatible = "dh,stm32mp157c-dhcom-pdk2", "st,stm32mp157";
 +
 +	aliases {
-+		ethernet0 = &ethernet0;
-+		mmc0 = &sdmmc1;
 +		serial0 = &uart4;
-+		serial1 = &uart7;
-+		serial2 = &usart2;
-+		spi0 = &qspi;
-+	};
-+
-+	/* XTal Q1 */
-+	cec_clock: clk-cec-fixed {
-+		#clock-cells = <0>;
-+		compatible = "fixed-clock";
-+		clock-frequency = <24000000>;
++		serial1 = &usart3;
++		serial2 = &uart8;
++		ethernet0 = &ethernet0;
 +	};
 +
 +	chosen {
 +		stdout-path = "serial0:115200n8";
 +	};
 +
-+	hdmi-out {
-+		compatible = "hdmi-connector";
-+		type = "a";
++	clk_ext_audio_codec: clock-codec {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <24000000>;
++	};
++
++	display_bl: display-bl {
++		compatible = "pwm-backlight";
++		pwms = <&pwm2 0 500000 PWM_POLARITY_INVERTED>;
++		brightness-levels = <0 16 22 30 40 55 75 102 138 188 255>;
++		default-brightness-level = <8>;
++		enable-gpios = <&gpioi 0 GPIO_ACTIVE_HIGH>;
++		status = "okay";
++	};
++
++	ethernet_vio: vioregulator {
++		compatible = "regulator-fixed";
++		regulator-name = "vio";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++		gpio = <&gpiog 3 GPIO_ACTIVE_LOW>;
++		regulator-always-on;
++		regulator-boot-on;
++	};
++
++	panel {
++		compatible = "edt,etm0700g0edh6";
++		backlight = <&display_bl>;
 +
 +		port {
-+			hdmi_con: endpoint {
-+				remote-endpoint = <&adv7513_out>;
++			lcd_panel_in: endpoint {
++				remote-endpoint = <&lcd_display_out>;
 +			};
 +		};
 +	};
 +
-+	led {
-+		compatible = "gpio-leds";
-+		led1 {
-+			label = "green:user0";
-+			gpios = <&gpioz 7 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "heartbeat";
-+			default-state = "off";
-+		};
-+
-+		led2 {
-+			label = "green:user1";
-+			gpios = <&gpiof 3 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "mmc0";
-+			default-state = "off";
-+		};
-+
-+		led3 {
-+			label = "green:user2";
-+			gpios = <&gpiog 0 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "mmc1";
-+			default-state = "off";
-+		};
-+
-+		led4 {
-+			label = "green:user3";
-+			gpios = <&gpiog 1 GPIO_ACTIVE_HIGH>;
-+			linux,default-trigger = "none";
-+			default-state = "off";
-+			panic-indicator;
-+		};
-+	};
-+
-+	sd_switch: regulator-sd_switch {
-+		compatible = "regulator-gpio";
-+		regulator-name = "sd_switch";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <2900000>;
-+		regulator-type = "voltage";
-+		regulator-always-on;
-+
-+		gpios = <&gpioi 5 GPIO_ACTIVE_HIGH>;
-+		gpios-states = <0>;
-+		states = <1800000 0x1>,
-+			 <2900000 0x0>;
-+	};
-+
 +	sound {
 +		compatible = "audio-graph-card";
-+		label = "STM32MP1-AV96-HDMI";
-+		dais = <&sai2a_port>;
++		routing =
++			"MIC_IN", "Capture",
++			"Capture", "Mic Bias",
++			"Playback", "HP_OUT";
++		dais = <&sai2a_port &sai2b_port>;
 +		status = "okay";
-+	};
-+
-+	wlan_pwr: regulator-wlan {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "wl-reg";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		gpios = <&gpioz 3 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
 +	};
 +};
 +
-+&adc {
++&cec {
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&adc12_ain_pins_b>;
-+	vdd-supply = <&vdd>;
-+	vdda-supply = <&vdda>;
-+	vref-supply = <&vdda>;
++	pinctrl-0 = <&cec_pins_a>;
 +	status = "okay";
-+
-+	adc1: adc@0 {
-+		st,adc-channels = <0 1 6>;
-+		st,min-sample-time-nsecs = <5000>;
-+		status = "okay";
-+	};
-+
-+	adc2: adc@100 {
-+		st,adc-channels = <0 1 2>;
-+		st,min-sample-time-nsecs = <5000>;
-+		status = "okay";
-+	};
 +};
 +
 +&ethernet0 {
 +	status = "okay";
-+	pinctrl-0 = <&ethernet0_rgmii_pins_c>;
-+	pinctrl-1 = <&ethernet0_rgmii_sleep_pins_c>;
++	pinctrl-0 = <&ethernet0_rmii_pins_a>;
++	pinctrl-1 = <&ethernet0_rmii_sleep_pins_a>;
 +	pinctrl-names = "default", "sleep";
-+	phy-mode = "rgmii";
-+	max-speed = <1000>;
++	phy-mode = "rmii";
++	max-speed = <100>;
 +	phy-handle = <&phy0>;
++	st,eth-ref-clk-sel;
++	phy-reset-gpios = <&gpioh 15 GPIO_ACTIVE_LOW>;
 +
 +	mdio0 {
 +		#address-cells = <1>;
 +		#size-cells = <0>;
 +		compatible = "snps,dwmac-mdio";
-+		reset-gpios = <&gpioz 2 GPIO_ACTIVE_LOW>;
-+		reset-delay-us = <1000>;
 +
-+		phy0: ethernet-phy@7 {
-+			reg = <7>;
-+
-+			rxc-skew-ps = <1500>;
-+			rxdv-skew-ps = <540>;
-+			rxd0-skew-ps = <420>;
-+			rxd1-skew-ps = <420>;
-+			rxd2-skew-ps = <420>;
-+			rxd3-skew-ps = <420>;
-+
-+			txc-skew-ps = <1440>;
-+			txen-skew-ps = <540>;
-+			txd0-skew-ps = <420>;
-+			txd1-skew-ps = <420>;
-+			txd2-skew-ps = <420>;
-+			txd3-skew-ps = <420>;
++		phy0: ethernet-phy@1 {
++			reg = <1>;
 +		};
 +	};
 +};
 +
-+&i2c1 {	/* X6 I2C1 */
++&i2c2 {	/* Header X22 */
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c1_pins_b>;
++	pinctrl-0 = <&i2c2_pins_a>;
 +	i2c-scl-rising-time-ns = <185>;
 +	i2c-scl-falling-time-ns = <20>;
 +	status = "okay";
++	/* spare dmas for other usage */
 +	/delete-property/dmas;
 +	/delete-property/dma-names;
++	status = "okay";
 +};
 +
-+&i2c2 {	/* X6 I2C2 */
++&i2c5 {	/* Header X21 */
 +	pinctrl-names = "default";
-+	pinctrl-0 = <&i2c2_pins_c>;
++	pinctrl-0 = <&i2c5_pins_a>;
 +	i2c-scl-rising-time-ns = <185>;
 +	i2c-scl-falling-time-ns = <20>;
 +	status = "okay";
++	/* spare dmas for other usage */
 +	/delete-property/dmas;
 +	/delete-property/dma-names;
-+};
 +
-+&i2c4 {
-+	hdmi-transmitter@3d {
-+		compatible = "adi,adv7513";
-+		reg = <0x3d>, <0x2d>, <0x4d>, <0x5d>;
-+		reg-names = "main", "cec", "edid", "packet";
-+		clocks = <&cec_clock>;
-+		clock-names = "cec";
++	sgtl5000: codec@a {
++		compatible = "fsl,sgtl5000";
++		reg = <0x0a>;
++		#sound-dai-cells = <0>;
++		clocks = <&clk_ext_audio_codec>;
++		VDDA-supply = <&v3v3>;
++		VDDIO-supply = <&vdd>;
 +
-+		avdd-supply = <&v3v3>;
-+		dvdd-supply = <&v3v3>;
-+		pvdd-supply = <&v3v3>;
-+		dvdd-3v-supply = <&v3v3>;
-+		bgvdd-supply = <&v3v3>;
-+
-+		interrupts = <9 IRQ_TYPE_EDGE_FALLING>;
-+		interrupt-parent = <&gpiog>;
-+
-+		status = "okay";
-+
-+		adi,input-depth = <8>;
-+		adi,input-colorspace = "rgb";
-+		adi,input-clock = "1x";
-+		adi,input-style = <1>;
-+		adi,input-justification = "evenly";
-+
-+		ports {
++		sgtl5000_port: port {
 +			#address-cells = <1>;
 +			#size-cells = <0>;
 +
-+			port@0 {
++			sgtl5000_tx_endpoint: endpoint@0 {
 +				reg = <0>;
-+				adv7513_in: endpoint {
-+					remote-endpoint = <&ltdc_ep0_out>;
-+				};
++				remote-endpoint = <&sai2a_endpoint>;
++				frame-master;
++				bitclock-master;
 +			};
 +
-+			port@1 {
++			sgtl5000_rx_endpoint: endpoint@1 {
 +				reg = <1>;
-+				adv7513_out: endpoint {
-+					remote-endpoint = <&hdmi_con>;
-+				};
-+			};
-+
-+			port@2 {
-+				reg = <2>;
-+				adv7513_i2s0: endpoint {
-+					remote-endpoint = <&sai2a_endpoint>;
-+				};
++				remote-endpoint = <&sai2b_endpoint>;
++				frame-master;
++				bitclock-master;
 +			};
 +		};
++
++	};
++
++	polytouch@38 {
++		compatible = "edt,edt-ft5x06";
++		reg = <0x38>;
++		interrupt-parent = <&gpiog>;
++		interrupts = <2 IRQ_TYPE_EDGE_FALLING>; /* GPIO E */
++		linux,wakeup;
 +	};
 +};
 +
 +&ltdc {
 +	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&ltdc_pins_d>;
-+	pinctrl-1 = <&ltdc_sleep_pins_d>;
++	pinctrl-0 = <&ltdc_pins_b>;
++	pinctrl-1 = <&ltdc_sleep_pins_b>;
 +	status = "okay";
 +
 +	port {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+
-+		ltdc_ep0_out: endpoint@0 {
-+			reg = <0>;
-+			remote-endpoint = <&adv7513_in>;
++		lcd_display_out: endpoint {
++			remote-endpoint = <&lcd_panel_in>;
 +		};
 +	};
 +};
 +
 +&sai2 {
 +	clocks = <&rcc SAI2>, <&rcc PLL3_Q>, <&rcc PLL3_R>;
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&sai2a_pins_c>;
-+	pinctrl-1 = <&sai2a_sleep_pins_c>;
 +	clock-names = "pclk", "x8k", "x11k";
++	pinctrl-names = "default", "sleep";
++	pinctrl-0 = <&sai2a_pins_b &sai2b_pins_b>;
++	pinctrl-1 = <&sai2a_sleep_pins_b &sai2b_sleep_pins_b>;
 +	status = "okay";
 +
 +	sai2a: audio-controller@4400b004 {
@@ -1163,119 +1037,71 @@ index 000000000000..baec592aee13
 +
 +		sai2a_port: port {
 +			sai2a_endpoint: endpoint {
-+				remote-endpoint = <&adv7513_i2s0>;
++				remote-endpoint = <&sgtl5000_tx_endpoint>;
 +				format = "i2s";
-+				mclk-fs = <256>;
++				mclk-fs = <512>;
++				dai-tdm-slot-num = <2>;
++				dai-tdm-slot-width = <16>;
++			};
++		};
++	};
++
++	sai2b: audio-controller@4400b024 {
++		dma-names = "rx";
++		st,sync = <&sai2a 2>;
++		clocks = <&rcc SAI2_K>, <&sai2a>;
++		clock-names = "sai_ck", "MCLK";
++		status = "okay";
++
++		sai2b_port: port {
++			sai2b_endpoint: endpoint {
++				remote-endpoint = <&sgtl5000_rx_endpoint>;
++				format = "i2s";
++				mclk-fs = <512>;
++				dai-tdm-slot-num = <2>;
++				dai-tdm-slot-width = <16>;
 +			};
 +		};
 +	};
 +};
 +
-+&sdmmc1 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_b>;
-+	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_b>;
-+	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_b>;
-+	cd-gpios = <&gpioi 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-+	disable-wp;
-+	st,sig-dir;
-+	st,neg-edge;
-+	st,use-ckin;
-+	bus-width = <4>;
-+	vmmc-supply = <&vdd_sd>;
-+	vqmmc-supply = <&sd_switch>;
-+	status = "okay";
-+};
-+
-+&sdmmc2 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_b>;
-+	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_b>;
-+	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_b>;
-+	bus-width = <8>;
-+	mmc-ddr-1_8v;
-+	no-sd;
-+	no-sdio;
-+	non-removable;
-+	st,neg-edge;
-+	vmmc-supply = <&v3v3>;
-+	vqmmc-supply = <&vdd_io>;
-+	status = "okay";
-+};
-+
-+&sdmmc3 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc3_b4_pins_b>;
-+	pinctrl-1 = <&sdmmc3_b4_od_pins_b>;
-+	pinctrl-2 = <&sdmmc3_b4_sleep_pins_b>;
-+	broken-cd;
-+	non-removable;
-+	st,neg-edge;
-+	bus-width = <4>;
-+	vmmc-supply = <&wlan_pwr>;
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	brcmf: bcrmf@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+	};
-+};
-+
-+&spi2 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&spi2_pins_a>;
-+	cs-gpios = <&gpioi 0 0>;
-+	status = "disabled";
++&timers2 {
++	/* spare dmas for other usage (un-delete to enable pwm capture) */
 +	/delete-property/dmas;
 +	/delete-property/dma-names;
-+};
-+
-+&uart4 {
-+	/* On Low speed expansion header */
-+	label = "LS-UART1";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart4_pins_b>;
 +	status = "okay";
-+};
-+
-+&uart7 {
-+	/* On Low speed expansion header */
-+	label = "LS-UART0";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&uart7_pins_a>;
-+	status = "okay";
-+};
-+
-+/* Bluetooth */
-+&usart2 {
-+	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&usart2_pins_a>;
-+	pinctrl-1 = <&usart2_sleep_pins_a>;
-+	st,hw-flow-ctrl;
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "brcm,bcm43438-bt";
-+		max-speed = <3000000>;
-+		shutdown-gpios = <&gpioz 6 GPIO_ACTIVE_HIGH>;
++	pwm2: pwm {
++		pinctrl-0 = <&pwm2_pins_a>;
++		pinctrl-names = "default";
++		status = "okay";
 +	};
++	timer@1 {
++		status = "okay";
++	};
++};
++
++&usart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&usart3_pins_a>;
++	status = "okay";
++};
++
++&uart8 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart8_pins_a>;
++	status = "okay";
 +};
 +
 +&usbh_ehci {
 +	phys = <&usbphyc_port0>;
-+	phy-names = "usb";
 +	status = "okay";
 +};
 +
 +&usbotg_hs {
-+	pinctrl-0 = <&usbotg_hs_pins_a>;
-+	pinctrl-names = "default";
-+	phy-names = "usb2-phy";
++	dr_mode = "peripheral";
 +	phys = <&usbphyc_port1 0>;
++	phy-names = "usb2-phy";
 +	status = "okay";
-+	vbus-supply = <&vbus_otg>;
 +};
 +
 +&usbphyc {
@@ -1293,37 +1119,106 @@ index 000000000000..baec592aee13
 +	vdda1v1-supply = <&reg11>;
 +	vdda1v8-supply = <&reg18>;
 +};
-diff --git a/arch/arm/boot/dts/stm32mp157a-dhcor-io1v8.dtsi b/arch/arm/boot/dts/stm32mp15xa-dhcor-io1v8.dtsi
-similarity index 100%
-rename from arch/arm/boot/dts/stm32mp157a-dhcor-io1v8.dtsi
-rename to arch/arm/boot/dts/stm32mp15xa-dhcor-io1v8.dtsi
-diff --git a/arch/arm/boot/dts/stm32mp15xx-dhcor-som.dtsi b/arch/arm/boot/dts/stm32mp15xx-dhcor-som.dtsi
+diff --git a/arch/arm/boot/dts/stm32mp15xx-dhcom-som.dtsi b/arch/arm/boot/dts/stm32mp15xx-dhcom-som.dtsi
 new file mode 100644
-index 000000000000..04fbb324a541
+index 000000000000..ba905196fb54
 --- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp15xx-dhcor-som.dtsi
-@@ -0,0 +1,209 @@
-+// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
++++ b/arch/arm/boot/dts/stm32mp15xx-dhcom-som.dtsi
+@@ -0,0 +1,361 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR BSD-3-Clause)
 +/*
-+ * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
-+ * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-+ * Copyright (C) 2020 Marek Vasut <marex@denx.de>
++ * Copyright (C) 2019-2020 Marek Vasut <marex@denx.de>
 + */
 +
 +#include "stm32mp15-pinctrl.dtsi"
-+#include "stm32mp15xxac-pinctrl.dtsi"
++#include "stm32mp15xxaa-pinctrl.dtsi"
 +#include <dt-bindings/gpio/gpio.h>
 +#include <dt-bindings/mfd/st,stpmic1.h>
 +
 +/ {
-+	aliases {
-+		spi0 = &qspi;
-+	};
-+
 +	memory@c0000000 {
 +		device_type = "memory";
-+		reg = <0xc0000000 0x40000000>;
++		reg = <0xC0000000 0x40000000>;
 +	};
++
++	reserved-memory {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges;
++
++		mcuram2: mcuram2@10000000 {
++			compatible = "shared-dma-pool";
++			reg = <0x10000000 0x40000>;
++			no-map;
++		};
++
++		vdev0vring0: vdev0vring0@10040000 {
++			compatible = "shared-dma-pool";
++			reg = <0x10040000 0x1000>;
++			no-map;
++		};
++
++		vdev0vring1: vdev0vring1@10041000 {
++			compatible = "shared-dma-pool";
++			reg = <0x10041000 0x1000>;
++			no-map;
++		};
++
++		vdev0buffer: vdev0buffer@10042000 {
++			compatible = "shared-dma-pool";
++			reg = <0x10042000 0x4000>;
++			no-map;
++		};
++
++		mcuram: mcuram@30000000 {
++			compatible = "shared-dma-pool";
++			reg = <0x30000000 0x40000>;
++			no-map;
++		};
++
++		retram: retram@38000000 {
++			compatible = "shared-dma-pool";
++			reg = <0x38000000 0x10000>;
++			no-map;
++		};
++	};
++};
++
++&adc {
++	vdd-supply = <&vdd>;
++	vdda-supply = <&vdda>;
++	vref-supply = <&vdda>;
++	status = "okay";
++
++	adc1: adc@0 {
++		st,min-sample-time-nsecs = <5000>;
++		st,adc-channels = <0>;
++		status = "okay";
++	};
++
++	adc2: adc@100 {
++		st,adc-channels = <1>;
++		st,min-sample-time-nsecs = <5000>;
++		status = "okay";
++	};
++};
++
++&dac {
++	pinctrl-names = "default";
++	pinctrl-0 = <&dac_ch1_pins_a &dac_ch2_pins_a>;
++	vref-supply = <&vdda>;
++	status = "okay";
++
++	dac1: dac@1 {
++		status = "okay";
++	};
++	dac2: dac@2 {
++		status = "okay";
++	};
++};
++
++&dts {
++	status = "okay";
 +};
 +
 +&i2c4 {
@@ -1332,8 +1227,14 @@ index 000000000000..04fbb324a541
 +	i2c-scl-rising-time-ns = <185>;
 +	i2c-scl-falling-time-ns = <20>;
 +	status = "okay";
++	/* spare dmas for other usage */
 +	/delete-property/dmas;
 +	/delete-property/dma-names;
++
++	rtc@32 {
++		compatible = "microcrystal,rv8803";
++		reg = <0x32>;
++	};
 +
 +	pmic: stpmic@33 {
 +		compatible = "st,stpmic1";
@@ -1345,7 +1246,6 @@ index 000000000000..04fbb324a541
 +
 +		regulators {
 +			compatible = "st,stpmic1-regulators";
-+
 +			ldo1-supply = <&v3v3>;
 +			ldo2-supply = <&v3v3>;
 +			ldo3-supply = <&vdd_ddr>;
@@ -1356,7 +1256,7 @@ index 000000000000..04fbb324a541
 +
 +			vddcore: buck1 {
 +				regulator-name = "vddcore";
-+				regulator-min-microvolt = <1200000>;
++				regulator-min-microvolt = <800000>;
 +				regulator-max-microvolt = <1350000>;
 +				regulator-always-on;
 +				regulator-initial-mode = <0>;
@@ -1374,9 +1274,10 @@ index 000000000000..04fbb324a541
 +
 +			vdd: buck3 {
 +				regulator-name = "vdd";
-+				regulator-min-microvolt = <2900000>;
-+				regulator-max-microvolt = <2900000>;
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
 +				regulator-always-on;
++				st,mask-reset;
 +				regulator-initial-mode = <0>;
 +				regulator-over-current-protection;
 +			};
@@ -1414,6 +1315,8 @@ index 000000000000..04fbb324a541
 +
 +			vdd_usb: ldo4 {
 +				regulator-name = "vdd_usb";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3300000>;
 +				interrupts = <IT_CURLIM_LDO4 0>;
 +			};
 +
@@ -1430,12 +1333,12 @@ index 000000000000..04fbb324a541
 +				regulator-min-microvolt = <1800000>;
 +				regulator-max-microvolt = <1800000>;
 +				interrupts = <IT_CURLIM_LDO6 0>;
-+				regulator-enable-ramp-delay = <300000>;
 +			};
 +
 +			vref_ddr: vref_ddr {
 +				regulator-name = "vref_ddr";
 +				regulator-always-on;
++				regulator-over-current-protection;
 +			};
 +
 +			bst_out: boost {
@@ -1446,20 +1349,20 @@ index 000000000000..04fbb324a541
 +			vbus_otg: pwr_sw1 {
 +				regulator-name = "vbus_otg";
 +				interrupts = <IT_OCP_OTG 0>;
-+				regulator-active-discharge = <1>;
 +			};
 +
 +			vbus_sw: pwr_sw2 {
 +				regulator-name = "vbus_sw";
 +				interrupts = <IT_OCP_SWOUT 0>;
-+				regulator-active-discharge = <1>;
++				regulator-active-discharge;
 +			};
 +		};
 +
 +		onkey {
 +			compatible = "st,stpmic1-onkey";
-+			interrupts = <IT_PONKEY_F 0>, <IT_PONKEY_R 1>;
++			interrupts = <IT_PONKEY_F 0>, <IT_PONKEY_R 0>;
 +			interrupt-names = "onkey-falling", "onkey-rising";
++			power-off-time-sec = <10>;
 +			status = "okay";
 +		};
 +
@@ -1469,15 +1372,36 @@ index 000000000000..04fbb324a541
 +		};
 +	};
 +
-+	eeprom@53 {
++	touchscreen@49 {
++		compatible = "ti,tsc2004";
++		reg = <0x49>;
++		vio-supply = <&v3v3>;
++		interrupts-extended = <&gpioh 3 IRQ_TYPE_EDGE_FALLING>;
++	};
++
++	eeprom@50 {
 +		compatible = "atmel,24c02";
-+		reg = <0x53>;
++		reg = <0x50>;
 +		pagesize = <16>;
 +	};
 +};
 +
++&ipcc {
++	status = "okay";
++};
++
 +&iwdg2 {
 +	timeout-sec = <32>;
++	status = "okay";
++};
++
++&m4_rproc {
++	memory-region = <&retram>, <&mcuram>, <&mcuram2>, <&vdev0vring0>,
++			<&vdev0vring1>, <&vdev0buffer>;
++	mboxes = <&ipcc 0>, <&ipcc 1>, <&ipcc 2>;
++	mbox-names = "vq0", "vq1", "shutdown";
++	interrupt-parent = <&exti>;
++	interrupts = <68 1>;
 +	status = "okay";
 +};
 +
@@ -1488,14 +1412,14 @@ index 000000000000..04fbb324a541
 +
 +&qspi {
 +	pinctrl-names = "default", "sleep";
-+	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a>;
-+	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a>;
-+	reg = <0x58003000 0x1000>, <0x70000000 0x200000>;
++	pinctrl-0 = <&qspi_clk_pins_a &qspi_bk1_pins_a &qspi_bk2_pins_a>;
++	pinctrl-1 = <&qspi_clk_sleep_pins_a &qspi_bk1_sleep_pins_a &qspi_bk2_sleep_pins_a>;
++	reg = <0x58003000 0x1000>, <0x70000000 0x4000000>;
 +	#address-cells = <1>;
 +	#size-cells = <0>;
 +	status = "okay";
 +
-+	flash0: spi-flash@0 {
++	flash0: mx66l51235l@0 {
 +		compatible = "jedec,spi-nor";
 +		reg = <0>;
 +		spi-rx-bus-width = <4>;
@@ -1510,6 +1434,56 @@ index 000000000000..04fbb324a541
 +};
 +
 +&rtc {
++	status = "okay";
++};
++
++&sdmmc1 {
++	pinctrl-names = "default", "opendrain", "sleep";
++	pinctrl-0 = <&sdmmc1_b4_pins_a &sdmmc1_dir_pins_a>;
++	pinctrl-1 = <&sdmmc1_b4_od_pins_a &sdmmc1_dir_pins_a>;
++	pinctrl-2 = <&sdmmc1_b4_sleep_pins_a &sdmmc1_dir_sleep_pins_a>;
++	broken-cd;
++	st,sig-dir;
++	st,neg-edge;
++	st,use-ckin;
++	bus-width = <4>;
++	vmmc-supply = <&vdd_sd>;
++	status = "okay";
++};
++
++&sdmmc2 {
++	pinctrl-names = "default", "opendrain", "sleep";
++	pinctrl-0 = <&sdmmc2_b4_pins_a &sdmmc2_d47_pins_a>;
++	pinctrl-1 = <&sdmmc2_b4_od_pins_a &sdmmc2_d47_pins_a>;
++	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a &sdmmc2_d47_sleep_pins_a>;
++	non-removable;
++	no-sd;
++	no-sdio;
++	st,neg-edge;
++	bus-width = <8>;
++	vmmc-supply = <&v3v3>;
++	vqmmc-supply = <&v3v3>;
++	mmc-ddr-3_3v;
++	status = "okay";
++};
++
++&sdmmc3 {
++	pinctrl-names = "default", "opendrain", "sleep";
++	pinctrl-0 = <&sdmmc3_b4_pins_a>;
++	pinctrl-1 = <&sdmmc3_b4_od_pins_a>;
++	pinctrl-2 = <&sdmmc3_b4_sleep_pins_a>;
++	broken-cd;
++	st,neg-edge;
++	bus-width = <4>;
++	vmmc-supply = <&v3v3>;
++	vqmmc-supply = <&v3v3>;
++	mmc-ddr-3_3v;
++	status = "okay";
++};
++
++&uart4 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart4_pins_a>;
 +	status = "okay";
 +};
 -- 
