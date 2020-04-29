@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 55D4B1BE1B6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:52:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 708DD1BE1C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:54:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XXjd3TcUz6yt7sfI3LW7NzBb+Lm3LEeNMkj5fVYElCY=; b=YboxRGB0qb1Gd2
-	SgG35elTxGMy+872r+Mh0gfrwGZiWbo5HxQ7Nk8lHAXlgYFSzyakHQwf1wXP4I+AYoGktxjruc3/1
-	f4rQhqEPcDL45+l9CUb+P/5d1O6UMsKuBTIKMkhyUvDxtHMi/pkf6m+9E1Jq2mjUHhCZ/9SGUgaZf
-	/a1QJeA1AGlFlJ4cjGBA6m0VRQiJKVu0VwfVqV37KPiq4djNjS4JkWnGvIgxMpv71lDfomzmyJk/f
-	7ocg8w4fwnta6nJx7ouPlBF/kX+R/B65Wkm8BB/3UWDY6QaeVaB9H5GP2A5y6Tj9keNTO9QOe4v8H
-	R1E/m2KEtm31BPdR1lUg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aCraDPR4BcfigPoCktabZGzmG1ovdYhvfP8XypYEjfY=; b=O2aVYW34le3OAL
+	x75PA6xIGWJ6sv9O1AApfHeCtlF7aZx92wXfD0VbKeFy/6Dqt/iJWO9q1+c5IuO80jgGoF5Zhg5EN
+	T7czrdJzd+/EkQ2CL8xttkLjBVzDo+yjfMa6AXiAgHViuuabyp1VBMlqLrdKSmfofxyi3hVzSZjQQ
+	6aCLkbHxzNTFFWXlRik+mxuFGq/bWpUAdRhv8BgJUm2MHr7p8NpnbmjJSedEwBNJmEu3sFhgF/P6E
+	tUSzHOdEyqBhOYoasE/JzwHTQKB4Jip/Bp3XVCLlmk8YdhMDBIDWwlkUeumfByxSmb6SV7/E7IgRj
+	gKv8b9k7YP/zffkrNhHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTo4j-0006OJ-Fv; Wed, 29 Apr 2020 14:52:37 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jTo6j-0006uO-8Z; Wed, 29 Apr 2020 14:54:41 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTo4V-0006NF-DD
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:52:25 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03TEqKrF025571; Wed, 29 Apr 2020 16:52:20 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=k4HHTwS+8Ljbwqtos9h637MEEsprgCn+OA+4OMP7vFM=;
- b=MOaili/s/VJ0fiUvGwJyitOHHjHTrw54nh0Chwl9+QzytQIlBGkcQzCavUDbaLCgtUqn
- 552MnWhqHPq9pZdFCBdi3KR5en+UQi8FaFqHh+q6f3mVuK/jhfHMhyg+wncyvR4XIZmd
- UlLJBdrW11H0bRqWyoLj9xUBGtPNeB0B69AgpyI/4VF6Ku9YfLIClRwpQsQdXttjtPDO
- di18l2lPdHUe+Qaq83dAJjNIOyAsYDp9keWtKqVXPf9k5TnsOhXRjX0Y87kUHsGle7lt
- LecV34D//WmmYfrJ+9FEdKajqgQlxd+oe/Oef6+XDTllvg2LzkOXWjxKewKfHzBGFiwZ Dg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30n4j6352n-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 29 Apr 2020 16:52:20 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6CAE710002A;
- Wed, 29 Apr 2020 16:52:19 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5AA232AAF70;
- Wed, 29 Apr 2020 16:52:19 +0200 (CEST)
-Received: from lmecxl0889.tpe.st.com (10.75.127.47) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
- 2020 16:52:18 +0200
-Subject: Re: [PATCH v2 09/12] remoteproc: stm32: Update M4 state in
- stm32_rproc_stop()
-To: Mathieu Poirier <mathieu.poirier@linaro.org>, <bjorn.andersson@linaro.org>,
- <ohad@wizery.com>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <20200424202505.29562-10-mathieu.poirier@linaro.org>
-From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Message-ID: <f4394e9d-2915-2e15-38e4-80b23baf678e@st.com>
-Date: Wed, 29 Apr 2020 16:52:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jTo6a-0006tc-Dd
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:54:33 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CEA49206F0;
+ Wed, 29 Apr 2020 14:54:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588172071;
+ bh=NnGtLY1Txl0eqZ1+mAGVP+P0WikaT3c3sYQawPpbhK0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=J1lqrn0FKyxkuVAk1w/eZ1JoI5/F5IW5983mowWAWBmc6JEsrV9mg5zpnugpRofZ2
+ L+Kj5LtY9/UlvzNDPgXIXWpYxi++ViHne6ZPHb9x3InlFEvB8MOBS/xGrI+QxKxDGN
+ aUfHGqkqEziXwJ64xGNpY/VXOAySVpR7I5lGxrj4=
+Date: Wed, 29 Apr 2020 15:54:27 +0100
+From: Will Deacon <will@kernel.org>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH] arm64: vdso: Add -fasynchronous-unwind-tables to cflags
+Message-ID: <20200429145426.GB30247@willie-the-truck>
+References: <20200428133411.44092-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200424202505.29562-10-mathieu.poirier@linaro.org>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-29_07:2020-04-29,
- 2020-04-29 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200428133411.44092-1-vincenzo.frascino@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_075223_743026_32D35497 
-X-CRM114-Status: GOOD (  18.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_075432_486291_0466755B 
+X-CRM114-Status: GOOD (  17.57  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,67 +76,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-remoteproc@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, loic.pallardy@st.com,
- linux-kernel@vger.kernel.org
+Cc: tamas.zsoldos@arm.com, Catalin Marinas <catalin.marinas@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 4/24/20 10:25 PM, Mathieu Poirier wrote:
-> Update the M4 co-processor state in function stm32_rproc_stop() so
-> that it can be used in synchronisation scenarios.
+On Tue, Apr 28, 2020 at 02:34:11PM +0100, Vincenzo Frascino wrote:
+> On arm64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
+> by default since gcc-8, so now the de facto platform ABI is to allow
+> unwinding from async signal handlers.
 > 
-> Mainly based on the work published by Arnaud Pouliquen [1].
+> However on bare metal targets (aarch64-none-elf), and on old gcc,
+> async and sync unwind tables are not enabled by default to avoid
+> runtime memory costs.
 > 
-> [1]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=239877
+> This means if linux is built with a baremetal toolchain the vdso.so
+> may not have unwind tables which breaks the gcc platform ABI guarantee
+> in userspace.
 > 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Add -fasynchronous-unwind-tables explicitly to the vgettimeofday.o
+> cflags to address the ABI change.
+> 
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> ---
+>  arch/arm64/kernel/vdso/Makefile | 3 ++-
+>  1 file changed, 2 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+> index 331290a0cead..b388ce4c6d5f 100644
+> --- a/arch/arm64/kernel/vdso/Makefile
+> +++ b/arch/arm64/kernel/vdso/Makefile
+> @@ -33,7 +33,8 @@ KCOV_INSTRUMENT			:= n
+>  CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny
+>  
+>  ifneq ($(c-gettimeofday-y),)
+> -  CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
+> +  CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y) \
+> +				-fasynchronous-unwind-tables
 
-Reviewed-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
+Minor comment, but why is this inside the conditional block and not part
+of the CFLAGS_vgettimeofday.o directly above it?
+
+Anyway, Szabolcs -- please can you confirm this fixes the problem for you?
 
 Thanks,
-Arnaud
 
-> ---
->  drivers/remoteproc/stm32_rproc.c | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
-> 
-> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index 404f17a97095..86d23c35d805 100644
-> --- a/drivers/remoteproc/stm32_rproc.c
-> +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -493,6 +493,18 @@ static int stm32_rproc_stop(struct rproc *rproc)
->  		}
->  	}
->  
-> +	/* update coprocessor state to OFF if available */
-> +	if (ddata->m4_state.map) {
-> +		err = regmap_update_bits(ddata->m4_state.map,
-> +					 ddata->m4_state.reg,
-> +					 ddata->m4_state.mask,
-> +					 M4_STATE_OFF);
-> +		if (err) {
-> +			dev_err(&rproc->dev, "failed to set copro state\n");
-> +			return err;
-> +		}
-> +	}
-> +
->  	return 0;
->  }
->  
-> @@ -531,6 +543,7 @@ static struct rproc_ops st_rproc_ops = {
->  
->  static __maybe_unused struct rproc_ops st_rproc_sync_ops = {
->  	.start		= stm32_rproc_sync_start,
-> +	.stop		= stm32_rproc_stop,
->  };
->  
->  static const struct of_device_id stm32_rproc_match[] = {
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
