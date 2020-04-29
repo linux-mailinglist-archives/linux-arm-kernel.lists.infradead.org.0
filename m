@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BF621BE9BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:21:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32FD61BE9C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:21:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sI6ibTLzIezXoa3shOdPOnOfcEaTb0IiDoqSk0K/9VY=; b=V0cBqzRrNgq5GG
-	ZFMxYP6Ps2ASGSlYnrNF4aUEasCZhIUFQZxLlDnNFWiRF2RMsQHW6p8eBLrJ3daXN6DqmdzZUQgI0
-	UdYXTVckTX/qCNb6tLlI1mWv9ppH5QCq13JLJ3NBBRNFr/Jj2guFpTlOjsBvWHtl5x4szzrLY7czy
-	EYki/42GFGZvKemn6vnMXqGkHCPTk/aN4crBZVpqmhuz7g+7O0AE0wKMRx+v1t4wbYQU7D0d8W3qf
-	qahA/ivBKOT1Vg8xj5xG73GUxwZY7rXH/AUpfgeb5NI2SYPD636U2CQ8YuV68bEjAThTxvqxdy2JY
-	EXhUj/bmzxFQ6R25ihHA==;
+	List-Owner; bh=UMoXrH+DxS91uLP+9TRWAaQ2hcsgWgKFXLsgvr8jPCg=; b=T1/v7/DmfgRfvv
+	xZ8AbJC9H3vh8wgKiVISimBAU3k0UozO4bwUu8U0AubMC3TG9ICOFr0j4+nEAVVZq/RN+S1N3WWlh
+	J2NcQdfOeY1+XFsxXroFGsSntMTU0NCCPUyDzt762b+yPA87oWKEAOsXSxkfTsl4mhxKOYCNl7sNj
+	/WweRzglmo11fLyQ/18fzPXLjrFJbpzSHixHyKV4r9oV+4lkt12DetTg3qAtPpe8Ot68A3JckKnZS
+	fRXMsauNpkTvIqe55dyxQ4hnp4B8d1we9Y4kc6gBrlkbWqAp/s2AcL5l/R914NPUwGdUSW699L4/b
+	xmXwmmFEao8zm8BpJS8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTu8X-0000RC-5K; Wed, 29 Apr 2020 21:20:57 +0000
+	id 1jTu8u-0000j0-B5; Wed, 29 Apr 2020 21:21:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTu7Y-00063m-NQ
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:19:57 +0000
+ id 1jTu7c-00065a-1i
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:20:01 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBD8F2076B;
- Wed, 29 Apr 2020 21:19:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DC63C2076B;
+ Wed, 29 Apr 2020 21:19:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588195196;
- bh=F/zbGx9awGb7X4Qq/eWzyaS7RABWV/r3+pj/oVStL5I=;
+ s=default; t=1588195199;
+ bh=1ClEF24KkovzjqfQabT0MQwh0TRA0Cbu70zzC6fhiNc=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=LyttrXuBhk1jQMIkwmHAh/hHSqEapUb8zgN6NIjRJXwbBgix1aH7oEFn6yabXDupF
- 8i9BOG+XgRQJcc3g0pP7LoPZgm5EViDjoCel5+kUcBgm7dhffbGDz/CGzHJNPVnCBd
- k+VBYBjCcxekb8nVmAZiy8250B29DZfK2N8DYCZY=
+ b=Ypk9jUcXTsM3HHxWtGTDh7cKKVcc4XPzeucqzgXX+N6MggU98L32dDwIUjs6Nd9GF
+ 0FH4gAg5RmIensKJ+YamEIQAam70AqTkoFL04EQ348WSqkZRv6mqzimgLx4bBiBfXi
+ IuTP7hTGCjOwvVlsCztc73niIy0qctn3yhUHBhJM=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v2 01/10] arm64: bti: Support building kernel C code using BTI
-Date: Wed, 29 Apr 2020 22:16:32 +0100
-Message-Id: <20200429211641.9279-2-broonie@kernel.org>
+Subject: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when building
+ the kernel with BTI
+Date: Wed, 29 Apr 2020 22:16:33 +0100
+Message-Id: <20200429211641.9279-3-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200429211641.9279-1-broonie@kernel.org>
 References: <20200429211641.9279-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_141956_782052_B008CB5B 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200429_142000_138359_5F7BE02C 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,34 +84,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When running with BTI enabled we need to ask the compiler to enable
-generation of BTI landing pads beyond those generated as a result of
-pointer authentication instructions being landing pads. Since the two
-features are practically speaking unlikely to be used separately we
-will make kernel mode BTI depend on pointer authentication in order
-to simplify the Makefile.
+When the kernel is built for BTI override SYM_FUNC_START and related macros
+to add a BTI landing pad to the start of all global functions, ensuring that
+they are BTI safe. The ; at the end of the BTI_C macro is for the benefit of
+the macro-generated functions in xen-hypercall.S.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- arch/arm64/Makefile | 4 ++++
- 1 file changed, 4 insertions(+)
+ arch/arm64/include/asm/linkage.h | 46 ++++++++++++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
 
-diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
-index 85e4149cc5d5..90150b5b180e 100644
---- a/arch/arm64/Makefile
-+++ b/arch/arm64/Makefile
-@@ -71,7 +71,11 @@ branch-prot-flags-y += $(call cc-option,-mbranch-protection=none)
+diff --git a/arch/arm64/include/asm/linkage.h b/arch/arm64/include/asm/linkage.h
+index ebee3113a62f..d8d5b0f77216 100644
+--- a/arch/arm64/include/asm/linkage.h
++++ b/arch/arm64/include/asm/linkage.h
+@@ -4,6 +4,52 @@
+ #define __ALIGN		.align 2
+ #define __ALIGN_STR	".align 2"
  
- ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
- branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
-+ifeq ($(CONFIG_ARM64_BTI_KERNEL),y)
-+branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET_BTI) := -mbranch-protection=pac-ret+leaf+bti
-+else
- branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
-+endif
- # -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the
- # compiler to generate them and consequently to break the single image contract
- # we pass it only to the assembler. This option is utilized only in case of non
++#ifdef CONFIG_ARM64_BTI_KERNEL
++
++/*
++ * Since current versions of gas reject the BTI instruction unless we
++ * set the architecture version to v8.5 we use the hint instruction
++ * instead.
++ */
++#define BTI_C hint 34 ;
++#define BTI_J hint 36 ;
++
++/*
++ * When using in-kernel BTI we need to ensure that assembly functions
++ * have suitable annotations.  Override SYM_FUNC_START to insert a BTI
++ * landing pad at the start of everything.
++ */
++#define SYM_FUNC_START(name)				\
++	SYM_START(name, SYM_L_GLOBAL, SYM_A_ALIGN)	\
++	BTI_C
++
++#define SYM_FUNC_START_NOALIGN(name)			\
++	SYM_START(name, SYM_L_GLOBAL, SYM_A_NONE)	\
++	BTI_C
++
++#define SYM_FUNC_START_LOCAL(name)			\
++	SYM_START(name, SYM_L_LOCAL, SYM_A_ALIGN)	\
++	BTI_C
++
++#define SYM_FUNC_START_LOCAL_NOALIGN(name)		\
++	SYM_START(name, SYM_L_LOCAL, SYM_A_NONE)	\
++	BTI_C
++
++#define SYM_FUNC_START_WEAK(name)			\
++	SYM_START(name, SYM_L_WEAK, SYM_A_ALIGN)	\
++	BTI_C
++
++#define SYM_FUNC_START_WEAK_NOALIGN(name)		\
++	SYM_START(name, SYM_L_WEAK, SYM_A_NONE)		\
++	BTI_C
++
++#define SYM_INNER_LABEL(name, linkage)			\
++	.type name SYM_T_NONE ASM_NL			\
++	SYM_ENTRY(name, linkage, SYM_A_NONE)		\
++	BTI_J
++
++#endif
++
+ /*
+  * Annotate a function as position independent, i.e., safe to be called before
+  * the kernel virtual mapping is activated.
 -- 
 2.20.1
 
