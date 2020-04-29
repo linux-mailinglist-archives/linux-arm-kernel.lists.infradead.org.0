@@ -2,95 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A6471BD716
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:22:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89ABF1BD71B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:22:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=U1oGU09lUDmzYDM3aJYcuJSX3vh0ToEO/kYla7IgH/s=; b=hmPKMTvOngrUCakLUXl1EdrcL
-	SOvDndeoMemqjCs+3iaLiWWvVMvan96Re9FM2hweLNFzVxiysmPe0IjZ323kjbQjGZSijK881JP3a
-	+vX/FYAQDI02lAL8fZ5JBVfN4zKEVHMtfI9wU/roIOvwrsjsdZDi3bFc/XbpuKpB/qjUY2HcTbcbR
-	Hm2W3WzydKKDwIce3ORwwOWioZCDIlQpsapGrzIdaO3Af7Gqk+I77DXHvfXgTpwbPZ+JhsRdNw63g
-	UGpfDnfw1B0qXl6mkQvm2cEENt7b9NF5vxFSnkDyF/gpdCgOyH2yZaBvDRom04hm0xRWBj5TCTTxs
-	SqdQDPnLQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=h6JWFoZpW4nO1/0ozKG/VrJL1W0FPX54PG9CAhgrmtE=; b=cm3
+	aNP6Xrn2VLSckIsgdoQ03E9rB7heZFWXtrmnnXdFElxRH2LMsyA4aS40G9KtdVQvCVGi/gt1B4seH
+	pPH80WdQ/ktHjbc6dnLKRppEqnhu0xvdXdOekevwCEpjpSyJmYG/skNL3oKkRSRFeH8h883tMjU1j
+	KIqeQiDixreD1yvDPeYohmernxDNRDlQEf7MOE9Fp5Ni4l/SVl1BXUqQHMBma2U69bGLvX1+oV+fr
+	hwv+s5PZPGSzA0eQ5mUR3AKob2TxBGvfUneORozyGOF/1UeUnFoxey2xBB6eoha96X3cOZapRM+ST
+	yjoeiZ/BAfumuUGFzDWIEhqla8guRfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThyd-00007x-2U; Wed, 29 Apr 2020 08:21:55 +0000
-Received: from hqnvemgate25.nvidia.com ([216.228.121.64])
+	id 1jThyx-0000Ov-Tt; Wed, 29 Apr 2020 08:22:16 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThyF-0008Qu-53
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:21:32 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqnvemgate25.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5ea938c50002>; Wed, 29 Apr 2020 01:20:21 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Wed, 29 Apr 2020 01:21:27 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Wed, 29 Apr 2020 01:21:27 -0700
-Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
- 2020 08:21:27 +0000
-Received: from [10.24.37.103] (10.124.1.5) by DRHQMAIL107.nvidia.com
- (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
- 2020 08:21:22 +0000
-Subject: Re: Re: [TEGRA194_CPUFREQ Patch 1/3] firmware: tegra: adding function
- to get BPMP data
-To: Thierry Reding <thierry.reding@gmail.com>, Rob Herring
- <robh+dt@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>
-References: <1575394348-17649-1-git-send-email-sumitg@nvidia.com>
- <20191203174229.GA1721849@ulmo>
- <9404232d-84ce-a117-89dd-f2d8de80993e@kapsi.fi>
- <20191204091703.d32to5omdm3eynon@vireshk-i7> <20191204093339.GA2784830@ulmo>
- <20191204095138.rrul5vxnkprfwmku@vireshk-i7> <20200407100520.GA1720957@ulmo>
- <20200427071800.GA3451400@ulmo>
-From: Sumit Gupta <sumitg@nvidia.com>
-Message-ID: <e320f849-bbd0-3ab9-64b2-d54da97500a4@nvidia.com>
-Date: Wed, 29 Apr 2020 13:51:19 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20200427071800.GA3451400@ulmo>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- DRHQMAIL107.nvidia.com (10.27.9.16)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1588148421; bh=3T8uyQ4yXKerxDV81gNnyh9w/zfWOeHLjgfBDDESJBI=;
- h=X-PGP-Universal:Subject:To:CC:References:From:Message-ID:Date:
- User-Agent:MIME-Version:In-Reply-To:X-Originating-IP:
- X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=Hp8QSRuYhrSjW5iSVnv77wXZqnN0jg2R1n46ywRFLQfqE/DSAHB3IYpMhOvcb8fXA
- 6R8UP8eSGS0Y4l2KzgI8IJfzAb5a2ztW0F3mD9LRCCLd1+e7SYPeqMLmAyO48EgAul
- zgtdvV+3l/BNvGBzxcrXJZZGSmFOQdDzIs6hsdHM2IeAnQQcv67Axtk7gA7iHCYbtt
- 3yuFDVKmFXzQPLLYh2EiWa8DUDekia62iMwrbwQDhXwjIBGik30Rm33X6dtTHnOcpO
- qoykp0kBRRkWpyRT5xmLQ0z44fkgSfT/GvXgU+tAbOZyWyprpK644cxGd93Yc0UgMk
- DWM+hPL9Ba8LQ==
+ id 1jThyP-0008WT-Ux
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:21:46 +0000
+Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:182a:142e:a95f:66c2])
+ by laurent.telenet-ops.be with bizsmtp
+ id YYMN2200C0w8ZL601YMNip; Wed, 29 Apr 2020 10:21:28 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1jThy6-0005bT-4l; Wed, 29 Apr 2020 10:21:22 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1jThy6-0004FA-1N; Wed, 29 Apr 2020 10:21:22 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Dmitry Osipenko <digetx@gmail.com>, Russell King <linux@armlinux.org.uk>,
+ Nicolas Pitre <nico@fluxnic.net>, Arnd Bergmann <arnd@arndb.de>,
+ Eric Miao <eric.miao@nvidia.com>,
+ =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
+Subject: [PATCH v6] ARM: boot: Obtain start of physical memory from DTB
+Date: Wed, 29 Apr 2020 10:21:20 +0200
+Message-Id: <20200429082120.16259-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_012131_215770_27E39768 
-X-CRM114-Status: GOOD (  25.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200429_012142_161202_F14E2607 
+X-CRM114-Status: GOOD (  17.92  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,124 +67,230 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Mikko Perttunen <cyndis@kapsi.fi>,
- linux-pm@vger.kernel.org, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, jonathanh@nvidia.com, talho@nvidia.com,
- bbasu@nvidia.com, linux-tegra@vger.kernel.org, Sumit Gupta <sumitg@nvidia.com>,
- mperttunen@nvidia.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
+ Masahiro Yamada <masahiroy@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-renesas-soc@vger.kernel.org, Chris Brandt <chris.brandt@renesas.com>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Currently, the start address of physical memory is obtained by masking
+the program counter with a fixed mask of 0xf8000000.  This mask value
+was chosen as a balance between the requirements of different platforms.
+However, this does require that the start address of physical memory is
+a multiple of 128 MiB, precluding booting Linux on platforms where this
+requirement is not fulfilled.
 
+Fix this limitation by obtaining the start address from the DTB instead,
+if available (either explicitly passed, or appended to the kernel).
+Fall back to the traditional method when needed.
 
-On 27/04/20 12:48 PM, Thierry Reding wrote:
-> On Tue, Apr 07, 2020 at 12:05:20PM +0200, Thierry Reding wrote:
->> On Wed, Dec 04, 2019 at 03:21:38PM +0530, Viresh Kumar wrote:
->>> On 04-12-19, 10:33, Thierry Reding wrote:
->>>> Yeah, the code that registers this device is in drivers/base/cpu.c in
->>>> register_cpu(). It even retrieves the device tree node for the CPU from
->>>> device tree and stores it in cpu->dev.of_node, so we should be able to
->>>> just pass &cpu->dev to tegra_bpmp_get() in order to retrieve a reference
->>>> to the BPMP.
->>>>
->>>> That said, I'm wondering if perhaps we could just add a compatible
->>>> string to the /cpus node for cases like this where we don't have an
->>>> actual device representing the CPU complex. There are a number of CPU
->>>> frequency drivers that register dummy devices just so that they have
->>>> something to bind a driver to.
->>>>
->>>> If we allow the /cpus node to represent the CPU complex (if no other
->>>> "device" does that yet), we can add a compatible string and have the
->>>> cpufreq driver match on that.
->>>>
->>>> Of course this would be slightly difficult to retrofit into existing
->>>> drivers because they'd need to remain backwards compatible with existing
->>>> device trees. But it would allow future drivers to do this a little more
->>>> elegantly. For some SoCs this may not matter, but especially once you
->>>> start depending on additional resources this would come in handy.
->>>>
->>>> Adding Rob and the device tree mailing list for feedback on this idea.
->>>
->>> Took some time to find this thread, but something around this was
->>> suggested by Rafael earlier.
->>>
->>> https://lore.kernel.org/lkml/8139001.Q4eV8YG1Il@vostro.rjw.lan/
->>
->> I gave this a try and came up with the following:
->>
->> --- >8 ---
->> diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> index f4ede86e32b4..e4462f95f0b3 100644
->> --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
->> @@ -1764,6 +1764,9 @@ bpmp_thermal: thermal {
->>   	};
->>   
->>   	cpus {
->> +		compatible = "nvidia,tegra194-ccplex";
->> +		nvidia,bpmp = <&bpmp>;
->> +
->>   		#address-cells = <1>;
->>   		#size-cells = <0>;
->>   
->> --- >8 ---
->>
->> Now I can do something rougly like this, although I have a more complete
->> patch locally that also gets rid of all the global variables because we
->> now actually have a struct platform_device that we can anchor everything
->> at:
->>
->> --- >8 ---
->> static const struct of_device_id tegra194_cpufreq_of_match[] = {
->> 	{ .compatible = "nvidia,tegra194-ccplex", },
->> 	{ /* sentinel */ }
->> };
->> MODULE_DEVICE_TABLE(of, tegra194_cpufreq_of_match);
->>
->> static struct platform_driver tegra194_ccplex_driver = {
->> 	.driver = {
->> 		.name = "tegra194-cpufreq",
->> 		.of_match_table = tegra194_cpufreq_of_match,
->> 	},
->> 	.probe = tegra194_cpufreq_probe,
->> 	.remove = tegra194_cpufreq_remove,
->> };
->> module_platform_driver(tegra194_ccplex_driver);
->> --- >8 ---
->>
->> I don't think that's exactly what Rafael (Cc'ed) had in mind, since the
->> above thread seems to have mostly talked about binding a driver to each
->> individual CPU.
->>
->> But this seems a lot better than having to instantiate a device from
->> scratch just so that a driver can bind to it and it allows additional
->> properties to be associated with the CCPLEX device.
->>
->> Rob, any thoughts on this from a device tree point of view? The /cpus
->> bindings don't mention the compatible property, but there doesn't seem
->> to be anything in the bindings that would prohibit its use.
->>
->> If we can agree on that, I can forward my local changes to Sumit for
->> inclusion or reference.
-> 
-> Rob, do you see any reason why we shouldn't be able to use a compatible
-> string in the /cpus node for devices such as Tegra194 where there is no
-> dedicated hardware block for the CCPLEX?
-> 
-> Thierry
-> 
+This allows to boot Linux on r7s9210/rza2mevb using the 64 MiB of SDRAM
+on the RZA2MEVB sub board, which is located at 0x0C000000 (CS3 space),
+i.e. not at a multiple of 128 MiB.
 
-Ping.
-Please suggest if we can add compatible string in the '/cpus' node.
-If not then i propose accepting the current patch to get BPMP data 
-without adding any property in respective driver's DT node.
-We can push separate patch later if we need to add compatible string in 
-the '/cpus' node or create new DT node for cpufreq.
+Suggested-by: Nicolas Pitre <nico@fluxnic.net>
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+Tested-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Tested-by: Dmitry Osipenko <digetx@gmail.com>
+---
+This depends on "[PATCH v5] ARM: decompressor: simplify libfdt builds"
+(https://lore.kernel.org/r/20200422130853.1907809-1-masahiroy@kernel.org)
 
-Regards,
-Sumit
+v6:
+  - Rebase on top of "[PATCH v5] ARM: decompressor: simplify libfdt
+    builds",
+  - Include <linux/libfdt.h> instead of <libfdt.h>,
+
+v5:
+  - Add Tested-by, Reviewed-by,
+  - Round up start of memory to satisfy 16 MiB alignment rule,
+
+v4:
+  - Fix stack location after commit 184bf653a7a452c1 ("ARM:
+    decompressor: factor out routine to obtain the inflated image
+    size"),
+
+v3:
+  - Add Reviewed-by,
+  - Fix ATAGs with appended DTB,
+  - Add Tested-by,
+
+v2:
+  - Use "cmp r0, #-1", instead of "cmn r0, #1",
+  - Add missing stack setup,
+  - Support appended DTB.
+---
+ arch/arm/boot/compressed/Makefile            |  5 +-
+ arch/arm/boot/compressed/fdt_get_mem_start.c | 56 ++++++++++++++++++++
+ arch/arm/boot/compressed/head.S              | 54 ++++++++++++++++++-
+ 3 files changed, 113 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm/boot/compressed/fdt_get_mem_start.c
+
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index 00602a6fba04733f..c873d3882375f5e5 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -81,11 +81,14 @@ libfdt_objs := fdt_rw.o fdt_ro.o fdt_wip.o fdt.o
+ ifeq ($(CONFIG_ARM_ATAG_DTB_COMPAT),y)
+ OBJS	+= $(libfdt_objs) atags_to_fdt.o
+ endif
++ifeq ($(CONFIG_USE_OF),y)
++OBJS	+= $(libfdt_objs) fdt_get_mem_start.o
++endif
+ 
+ # -fstack-protector-strong triggers protection checks in this code,
+ # but it is being used too early to link to meaningful stack_chk logic.
+ nossp-flags-$(CONFIG_CC_HAS_STACKPROTECTOR_NONE) := -fno-stack-protector
+-$(foreach o, $(libfdt_objs) atags_to_fdt.o, \
++$(foreach o, $(libfdt_objs) atags_to_fdt.o fdt_get_mem_start.o, \
+ 	$(eval CFLAGS_$(o) := -I $(srctree)/scripts/dtc/libfdt $(nossp-flags-y)))
+ 
+ # These were previously generated C files. When you are building the kernel
+diff --git a/arch/arm/boot/compressed/fdt_get_mem_start.c b/arch/arm/boot/compressed/fdt_get_mem_start.c
+new file mode 100644
+index 0000000000000000..ae71fde731b869d7
+--- /dev/null
++++ b/arch/arm/boot/compressed/fdt_get_mem_start.c
+@@ -0,0 +1,56 @@
++// SPDX-License-Identifier: GPL-2.0-only
++
++#include <linux/kernel.h>
++#include <linux/libfdt.h>
++#include <linux/sizes.h>
++
++static const void *getprop(const void *fdt, const char *node_path,
++			   const char *property)
++{
++	int offset = fdt_path_offset(fdt, node_path);
++
++	if (offset == -FDT_ERR_NOTFOUND)
++		return NULL;
++
++	return fdt_getprop(fdt, offset, property, NULL);
++}
++
++static uint32_t get_addr_size(const void *fdt)
++{
++	const __be32 *addr_len = getprop(fdt, "/", "#address-cells");
++
++	if (!addr_len) {
++		/* default */
++		return 1;
++	}
++
++	return fdt32_to_cpu(*addr_len);
++}
++
++/*
++ * Get the start of physical memory
++ */
++
++unsigned long fdt_get_mem_start(const void *fdt)
++{
++	uint32_t addr_size, mem_start;
++	const __be32 *memory;
++
++	if (!fdt)
++		return -1;
++
++	if (*(__be32 *)fdt != cpu_to_fdt32(FDT_MAGIC))
++		return -1;
++
++	/* Find the first memory node */
++	memory = getprop(fdt, "/memory", "reg");
++	if (!memory)
++		return -1;
++
++	/* There may be multiple cells on LPAE platforms */
++	addr_size = get_addr_size(fdt);
++
++	mem_start = fdt32_to_cpu(memory[addr_size - 1]);
++	/* Must be a multiple of 16 MiB for phys/virt patching */
++	return round_up(mem_start, SZ_16M);
++}
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index e8e1c866e413a287..1d7c86624b3eeddc 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -254,8 +254,58 @@ not_angel:
+ 		.text
+ 
+ #ifdef CONFIG_AUTO_ZRELADDR
++#ifdef CONFIG_USE_OF
+ 		/*
+-		 * Find the start of physical memory.  As we are executing
++		 * Find the start of physical memory.
++		 * Try the DTB first, if available.
++		 */
++		adr	r0, LC0
++		ldr	r1, [r0]	@ get absolute LC0
++		ldr	sp, [r0, #24]	@ get stack location
++		sub	r1, r0, r1	@ compute relocation offset
++		add	sp, sp, r1	@ apply relocation
++
++#ifdef CONFIG_ARM_APPENDED_DTB
++		/*
++		 * Look for an appended DTB. If found, use it and
++		 * move stack away from it.
++		 */
++		ldr	r6, [r0, #12]	@ get &_edata
++		add	r6, r6, r1	@ relocate it
++		ldmia	r6, {r0, r5}	@ get DTB signature and size
++#ifndef __ARMEB__
++		ldr	r1, =0xedfe0dd0	@ sig is 0xd00dfeed big endian
++		/* convert DTB size to little endian */
++		eor	r2, r5, r5, ror #16
++		bic	r2, r2, #0x00ff0000
++		mov	r5, r5, ror #8
++		eor	r5, r5, r2, lsr #8
++#else
++		ldr	r1, =0xd00dfeed
++#endif
++		cmp	r0, r1		@ do we have a DTB there?
++		bne	1f
++
++		/* preserve 64-bit alignment */
++		add	r5, r5, #7
++		bic	r5, r5, #7
++		add	sp, sp, r5	@ if so, move stack above DTB
++		mov	r0, r6		@ and extract memory start from DTB
++		b	2f
++
++1:
++#endif /* CONFIG_ARM_APPENDED_DTB */
++
++		mov	r0, r8
++2:
++		bl	fdt_get_mem_start
++		mov	r4, r0
++		cmp	r0, #-1
++		bne	1f
++#endif /* CONFIG_USE_OF */
++
++		/*
++		 * Fall back to the traditional method.  As we are executing
+ 		 * without the MMU on, we are in the physical address space.
+ 		 * We just need to get rid of any offset by aligning the
+ 		 * address.
+@@ -273,6 +323,8 @@ not_angel:
+ 		 */
+ 		mov	r4, pc
+ 		and	r4, r4, #0xf8000000
++
++1:
+ 		/* Determine final kernel image address. */
+ 		add	r4, r4, #TEXT_OFFSET
+ #else
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
