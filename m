@@ -2,87 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E226C1BEB7C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 00:07:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DC3C1BEB7D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 00:07:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wxF7PcORRU4NOLhJDWgFG/kfkhe3tMW74byQgV4Akrs=; b=pAjHE8eqOVKYO8
-	Ht/snyVOM/+IhKLJ5N2Dwzz7k5DrbzZSPVKhW8f0jTKj9Hlc1fUDM69IzSWofnYO6Ye3VcLrWaUoY
-	Bzma52DROIX+9IDPnwWLM9UiGlHLiBa7tShHUSHP5tl6/gioYdTlLSYfnsTRTc7ABki+PgFpWaoFX
-	t3RTMKoaMyuABQzQcihcnVrUphza0RY9xV9FY9h71/hCG2p+4dIIf8jF6F6MgyLkYgTWgvyOpfb7L
-	ZMK24wkD8ZFG7ml/jvOiIX8Le7x+IuKWVkgbZ74PCQQaBki6kbJ84KDaaWxqkF8SxIwHhm6XMLmuy
-	tZjJ3gcqXCaaDohTRctg==;
+	List-Owner; bh=57C70A9QIkAnz7XOFrgXl5K8DatC8V2vJoBBCRHVfts=; b=sAZMFkS5fRKdAI
+	wn1O4fmZu4Og7U/yC9b3NpQR8y1wnIia8tLy/YFV7KEMf8NWHOFrJl+L8O0YKXEJcSrHCFFqf+gYr
+	9hgH4OOH7aH/W5t9Jup4TxxfHAdNsZSEknbKZYsfGAFk+Dm+3Ytuj+iooLN0iL+LW5Rg/0MY+CZ0s
+	I7EkRdWFNjRKibKqj6S0aeGGFmi1AXAIIFYd0Tp8G8Wdu553PypGiDYYGiXGlhn9TZgCTWrZA7+O2
+	s+stezQhLrnUMY+JGgRcaBCK3YC+uFt3vPhffrBBClC8VJ36Trh62ewSjVH9iQpd7/+B60bwPge66
+	NruglCdJsu9swbTwxW1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTurR-0003KT-TQ; Wed, 29 Apr 2020 22:07:21 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTuo5-0006PG-Pn
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 22:03:55 +0000
-Received: by mail-oi1-x241.google.com with SMTP id i13so3314428oie.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 15:03:51 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=VuIJyUBI77A7IsS+UOzXlF4URqxn4aKY6yPSfUat6bs=;
- b=jYjww6TRFcRX3Y23g1fUDaSBixBCmtlAr7R6Tr647wYfD6+VQtLpQyI3KQy3e9YvVZ
- GpcxE8fFEo6OWVSKuQwuHBjMY4thiSIdKoHlvitdIYxmtyZpsMeQejW1hdtDaMB4wmk0
- F7jHmJII2Gtb6LCbj5zCojkV1FYAgJwh+xYKpP2RtNrp7FRaObjHYxH9sg/TrRzwJHs6
- li/TE2Nx2Vs6kvMJWzIHQzUj7Egf5+H/qSp0aglmR2A/9ci3Mcn2ZBQRk2z4sNW5E2k8
- wD3tk7bVwZl351JxP4iOxPoHCGy92KYF/3XHy2wtZdSpGhHG4SJRGO7npCeAVQIm061u
- 6Yyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=VuIJyUBI77A7IsS+UOzXlF4URqxn4aKY6yPSfUat6bs=;
- b=shcRW1LYsm8Ve3+MiJM+02mx9gEtAJUzs8DykCz4nuFqiB9T+cpaHnaB7MoyXQeDgo
- L7qzzP5/Q74HTPOnOmdmTP6tODJp8PrYiOIwJ8vywe5Rs3nvYwGFusaMHSgmdDABlai8
- DHjuIBAsKtS7n2Op0TnvV99C9xzF6Bd4p/zcGIysD16b0LuOzbY6vZZTkrb47uRTu1pD
- /UJWl14d1C3sMEAWgQfSHsIfOgSuGpzmNwSs85Fiqy18unCxdeL9X5Cdr7pFj8FAPhsX
- i8pb4F20Xb60nykbtzgmGSy7RK7NMg0zvVfTGAEioYHHhBvKknaZ4UkIXTN1bU7vEaE+
- E0Xg==
-X-Gm-Message-State: AGi0Pub9EDriXvvVX42giUz+LglxlT6snBrqAtWlf6TBuxneZgIIMbmx
- IKxkQqIA5ZFvKlXTNwz12jhy8ptfpbw9r21hfLI=
-X-Google-Smtp-Source: APiQypJ3zwVfJk2nMrXMJzcY0A34yx8sFc7iQq4Qt4G4w6K/OJdPad49V5wxoF+Zc/LWhjYb6zlkiutTqfBQpvdh7bQ=
-X-Received: by 2002:aca:b783:: with SMTP id h125mr349467oif.62.1588197830734; 
- Wed, 29 Apr 2020 15:03:50 -0700 (PDT)
+	id 1jTurs-0003iM-Q3; Wed, 29 Apr 2020 22:07:48 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTurQ-0003XP-Aw
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 22:07:21 +0000
+Received: from atomide.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTPS id B2F93810A;
+ Wed, 29 Apr 2020 22:08:07 +0000 (UTC)
+Date: Wed, 29 Apr 2020 15:07:14 -0700
+From: Tony Lindgren <tony@atomide.com>
+To: Tero Kristo <t-kristo@ti.com>
+Subject: Re: [PATCH 1/8] ARM: dts: omap4: fix node names for the l4_cm
+ clkctrl nodes
+Message-ID: <20200429220714.GV37466@atomide.com>
+References: <20200429143002.5050-1-t-kristo@ti.com>
+ <20200429143002.5050-2-t-kristo@ti.com>
 MIME-Version: 1.0
-References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <20200429215955.GN1551@shell.armlinux.org.uk>
-In-Reply-To: <20200429215955.GN1551@shell.armlinux.org.uk>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Wed, 29 Apr 2020 23:03:24 +0100
-Message-ID: <CA+V-a8syz--q7MCNL_5TZmnYqgc7W6nuXJOt6VJhJutuS3seKQ@mail.gmail.com>
-Subject: Re: [PATCH 04/18] ARM: debug-ll: Add support for r8a7742
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Content-Disposition: inline
+In-Reply-To: <20200429143002.5050-2-t-kristo@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_150353_865559_9201801C 
-X-CRM114-Status: GOOD (  14.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_150720_422636_14852172 
+X-CRM114-Status: GOOD (  13.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,53 +60,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Geert Uytterhoeven <geert+renesas@glider.be>, linux-gpio@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Magnus Damm <magnus.damm@gmail.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, dmaengine@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>,
- LAK <linux-arm-kernel@lists.infradead.org>
+Cc: linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+* Tero Kristo <t-kristo@ti.com> [200429 14:31]:
+> The node name for these should be clk instead of clock. Otherwise the
+> clock driver won't be able to map the parent/child relationships
+> properly, and large number of clocks end up in orphaned state.
+> 
+> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+> ---
+>  arch/arm/boot/dts/omap44xx-clocks.dtsi | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/omap44xx-clocks.dtsi b/arch/arm/boot/dts/omap44xx-clocks.dtsi
+> index 532868591107..b82b1ca0e557 100644
+> --- a/arch/arm/boot/dts/omap44xx-clocks.dtsi
+> +++ b/arch/arm/boot/dts/omap44xx-clocks.dtsi
+> @@ -1279,13 +1279,13 @@
+>  		#size-cells = <1>;
+>  		ranges = <0 0x1400 0x200>;
+>  
+> -		l4_per_clkctrl: clock@20 {
+> +		l4_per_clkctrl: clk@20 {
+>  			compatible = "ti,clkctrl-l4-per", "ti,clkctrl";
+>  			reg = <0x20 0x144>;
+>  			#clock-cells = <2>;
+>  		};
+>  
+> -		l4_secure_clkctrl: clock@1a0 {
+> +		l4_secure_clkctrl: clk@1a0 {
+>  			compatible = "ti,clkctrl-l4-secure", "ti,clkctrl";
+>  			reg = <0x1a0 0x3c>;
+>  			#clock-cells = <2>;
 
-Thank you for the review.
+Heh this is no longer needed since commit 6c3090520554
+("clk: ti: clkctrl: Fix hidden dependency to node name")
+that added support for using the compatible name :)
 
-On Wed, Apr 29, 2020 at 11:00 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Wed, Apr 29, 2020 at 10:56:41PM +0100, Lad Prabhakar wrote:
-> > @@ -1701,6 +1709,7 @@ config DEBUG_UART_PHYS
-> >       default 0xe6e60000 if DEBUG_RCAR_GEN2_SCIF0
-> >       default 0xe6e68000 if DEBUG_RCAR_GEN2_SCIF1
-> >       default 0xe6ee0000 if DEBUG_RCAR_GEN2_SCIF4
-> > +     default 0xe6c60000 if DEBUG_RCAR_GEN2_SCIFA2
->
-> Hi,
->
-> This is ordered by address.  Please keep it so.
->
-Sure will do that.
+Maybe you are using some older tree? Or else there's
+still something wrong somewhere.
 
-Cheers,
---Prabhakar
+Regards,
 
-> Thanks.
->
-> --
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Tony
 
 _______________________________________________
 linux-arm-kernel mailing list
