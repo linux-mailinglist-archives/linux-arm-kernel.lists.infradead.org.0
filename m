@@ -2,90 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 527EE1BE4EE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:11:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 205BD1BE55F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:36:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
 	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=oG89r2BZh0F8Lsqcy3LZxc09IBbBiIyG8AVnuy/FzuY=; b=FQKyOTCcu7l7BBhTgS5ZJ5Mkn
-	G4Jn4OizbFb5bb4Mk2y2rKLDTPTARKZ+5POXrIk0eLo5EpTGfatNworg1BNkjz2+4I1kEI/hx2ocP
-	xnhwKISY5Hn4/kzRDOczclZc7xzxZ6Mgmk92ds9IoMPeRsWko1hWeJzoJKxWEnQm50rthr+2NTmne
-	G8K7UTTZ7nF/GLOHtcuKSi6Koc31dri3wzVRnqU9HDnttVjZgq744NkleOsDF4JNdz4cadqTUgB0d
-	fVqFlYZR6Z/WDqtXEbjgN3UfAKg7gpw6h/xJ73GYywudZXNtY1GQPxnyKlyPUx4fERZFwwrhuIsNR
-	jMNdW/Nzg==;
+	 bh=DfhjDSN66pgvOGffDSaAoDpuOgsWAJLN4CUVtLRe1VU=; b=gjGlG78Ger9j2fmGa8QdRt9g7
+	k8CqbbiCBWRBJ3OWrevg+Fq3js4hyN0ZhBcT4zw1uQ4UKtsYQbjxDu9QLN/iuwFUb3/4g2SIXycH3
+	AxrTNNgCf29eLhBaMNwReFkKewLQIszgg688ioGs/GQOiegjzl3Iy+npk/ZKQrc0xFzRuPvlOa0mD
+	X6Yd0uq8gr5ZtXUFiH3XV2fTP2g0K2YSP5FphVhivuPo7ugWSBOxBGIeZnixNnKA3tzvM29vAY3Dt
+	i+qGQrJ2UyitdOs9skISSb43Seq1KH8pbiPfV+s1ISuFUrGZSBOtd6BSyp/Ap/8xj996axBVc9Ff6
+	AtSxExnVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTqFA-000487-QJ; Wed, 29 Apr 2020 17:11:32 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jTqd5-0003j8-05; Wed, 29 Apr 2020 17:36:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTqEy-00047T-O1
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 17:11:23 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588180282; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=2H/grRhp1qnjOIul3MbQSy7YNYNUS9RRvwG048+TsJY=;
- b=F+IUXWmXU4b6uiVU4tVxkqbqc6ePvHf4N4qLNzRMthBYgpoIYhXV5T/kfjXILkJr/Op3bnTn
- KCyv3X3A87HdZkT+A7mvvPDkXjakoFIBn1sJqACcZI9+4uxODbiSlLt1aXT42VsMf31SCqXg
- fmYdn+dsZxa/6fx5l9h4CAouWsk=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ea9b52c.7f0d18f4a848-smtp-out-n03;
- Wed, 29 Apr 2020 17:11:08 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 23D1AC433BA; Wed, 29 Apr 2020 17:11:07 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ id 1jTqc2-0001qa-Ux; Wed, 29 Apr 2020 17:35:13 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 834D7C433D2;
- Wed, 29 Apr 2020 17:11:06 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B7B520757;
+ Wed, 29 Apr 2020 17:35:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588181708;
+ bh=HCu4rd3iGFe31INEB+mn0hoOQeWn8CQzYZyDgXLQLoQ=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Mbct03VHiVYz9/BwCDjssF+MlW4jv2b7iou5lYdSYCAiqKANc8LJzvh3woRim0zs8
+ +MsGtan1eBFjRTw+3rbZWUE0ukpEXR8Y95G5tm1BNU2P4dMcNIeEjCVXRqpoz7g1mr
+ aLSyzRRAChfojm9onMKIobgPbAEVFgHmgvjFVNYQ=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jTqby-007mdk-PK; Wed, 29 Apr 2020 18:35:06 +0100
 MIME-Version: 1.0
-Date: Wed, 29 Apr 2020 22:41:06 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-In-Reply-To: <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
-References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
- <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
- <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
- <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
- <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
- <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
- <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
- <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
- <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
- <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
- <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
-Message-ID: <ae0fe2050be01cc1403c7d53a0da8cb8@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Date: Wed, 29 Apr 2020 18:35:06 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+Subject: Re: [PATCH v9 15/18] arm64: kexec: kexec EL2 vectors
+In-Reply-To: <20200326032420.27220-16-pasha.tatashin@soleen.com>
+References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
+ <20200326032420.27220-16-pasha.tatashin@soleen.com>
+User-Agent: Roundcube Webmail/1.4.3
+Message-ID: <e5f1ee17f8e4ac3a5f5077d85318e0ed@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: pasha.tatashin@soleen.com, jmorris@namei.org,
+ sashal@kernel.org, ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org, james.morse@arm.com,
+ vladimir.murzin@arm.com, matthias.bgg@gmail.com, bhsharma@redhat.com,
+ linux-mm@kvack.org, mark.rutland@arm.com, steve.capper@arm.com,
+ rfontana@redhat.com, tglx@linutronix.de, selindag@gmail.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_101122_636924_47A4B080 
-X-CRM114-Status: GOOD (  24.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200429_103511_158054_CB3876CC 
+X-CRM114-Status: GOOD (  20.38  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,107 +93,173 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
+ corbet@lwn.net, catalin.marinas@arm.com, bhsharma@redhat.com,
+ steve.capper@arm.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
+ selindag@gmail.com, jmorris@namei.org, linux-mm@kvack.org, james.morse@arm.com,
+ ebiederm@xmission.com, matthias.bgg@gmail.com, rfontana@redhat.com,
+ will@kernel.org, tglx@linutronix.de, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
+On 2020-03-26 03:24, Pavel Tatashin wrote:
+> If we have a EL2 mode without VHE, the EL2 vectors are needed in order
+> to switch to EL2 and jump to new world with hyperivsor privileges.
+> 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> ---
+>  arch/arm64/include/asm/kexec.h      |  5 +++++
+>  arch/arm64/kernel/asm-offsets.c     |  1 +
+>  arch/arm64/kernel/machine_kexec.c   |  5 +++++
+>  arch/arm64/kernel/relocate_kernel.S | 35 +++++++++++++++++++++++++++++
+>  4 files changed, 46 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/kexec.h 
+> b/arch/arm64/include/asm/kexec.h
+> index d944c2e289b2..0f758fd51518 100644
+> --- a/arch/arm64/include/asm/kexec.h
+> +++ b/arch/arm64/include/asm/kexec.h
+> @@ -95,6 +95,7 @@ static inline void crash_post_resume(void) {}
+>  extern const unsigned long kexec_relocate_code_size;
+>  extern const unsigned char kexec_relocate_code_start[];
+>  extern const unsigned long kexec_kern_reloc_offset;
+> +extern const unsigned long kexec_el2_vectors_offset;
+>  #endif
+> 
+>  /*
+> @@ -104,6 +105,9 @@ extern const unsigned long kexec_kern_reloc_offset;
+>   *		kernel, or purgatory entry address).
+>   * kern_arg0	first argument to kernel is its dtb address. The other
+>   *		arguments are currently unused, and must be set to 0
+> + * el2_vector	If present means that relocation routine will go to EL1
+> + *		from EL2 to do the copy, and then back to EL2 to do the jump
+> + *		to new world.
+>   */
+>  struct kern_reloc_arg {
+>  	phys_addr_t head;
+> @@ -112,6 +116,7 @@ struct kern_reloc_arg {
+>  	phys_addr_t kern_arg1;
+>  	phys_addr_t kern_arg2;
+>  	phys_addr_t kern_arg3;
+> +	phys_addr_t el2_vector;
+>  };
+> 
+>  #define ARCH_HAS_KIMAGE_ARCH
+> diff --git a/arch/arm64/kernel/asm-offsets.c 
+> b/arch/arm64/kernel/asm-offsets.c
+> index 448230684749..ff974b648347 100644
+> --- a/arch/arm64/kernel/asm-offsets.c
+> +++ b/arch/arm64/kernel/asm-offsets.c
+> @@ -136,6 +136,7 @@ int main(void)
+>    DEFINE(KEXEC_KRELOC_KERN_ARG1,	offsetof(struct kern_reloc_arg, 
+> kern_arg1));
+>    DEFINE(KEXEC_KRELOC_KERN_ARG2,	offsetof(struct kern_reloc_arg, 
+> kern_arg2));
+>    DEFINE(KEXEC_KRELOC_KERN_ARG3,	offsetof(struct kern_reloc_arg, 
+> kern_arg3));
+> +  DEFINE(KEXEC_KRELOC_EL2_VECTOR,	offsetof(struct kern_reloc_arg, 
+> el2_vector));
+>  #endif
+>    return 0;
+>  }
+> diff --git a/arch/arm64/kernel/machine_kexec.c
+> b/arch/arm64/kernel/machine_kexec.c
+> index ab571fca9bd1..bd398def7627 100644
+> --- a/arch/arm64/kernel/machine_kexec.c
+> +++ b/arch/arm64/kernel/machine_kexec.c
+> @@ -84,6 +84,11 @@ int machine_kexec_post_load(struct kimage *kimage)
+>  	kern_reloc_arg->head = kimage->head;
+>  	kern_reloc_arg->entry_addr = kimage->start;
+>  	kern_reloc_arg->kern_arg0 = kimage->arch.dtb_mem;
+> +	/* Setup vector table only when EL2 is available, but no VHE */
+> +	if (is_hyp_mode_available() && !is_kernel_in_hyp_mode()) {
+> +		kern_reloc_arg->el2_vector = __pa(reloc_code)
+> +						+ kexec_el2_vectors_offset;
+> +	}
+>  	kexec_image_info(kimage);
+> 
+>  	return 0;
+> diff --git a/arch/arm64/kernel/relocate_kernel.S
+> b/arch/arm64/kernel/relocate_kernel.S
+> index aa9f2b2cd77c..6fd2fc0ef373 100644
+> --- a/arch/arm64/kernel/relocate_kernel.S
+> +++ b/arch/arm64/kernel/relocate_kernel.S
+> @@ -89,6 +89,38 @@ ENTRY(arm64_relocate_new_kernel)
+>  .ltorg
+>  END(arm64_relocate_new_kernel)
+> 
+> +.macro el1_sync_64
+> +	br	x4			/* Jump to new world from el2 */
+> +	.fill 31, 4, 0			/* Set other 31 instr to zeroes */
+> +.endm
 
-On 2020-04-29 22:28, Mike Leach wrote:
-> Hi,
-> 
+The common idiom to write this is to align the beginning of the
+macro, and not to bother about what follows:
 
-[...]
+.macro whatever
+         .align 7
+         br      x4
+.endm
 
->> >> > You need to find what is resetting the IDFILTERs to 0 for replicator1.
->> >> >
->> >>
->> >> That is right.
->> >>
->> >
->> > By default all replicators have the IDFILTER registers set to 0 out of
->> > hardware reset. This ensures that programmable replicators behave in
->> > the same way as non-programmable replicators out of reset.
->> >
->> > The  dynamic_replicator_reset() is of course a driver state reset -
->> > which filters out all trace on the output ports. The trace is then
->> > enabled when we set the trace path from source to sink.
->> >
->> 
->> Thanks for these explanations.
->> 
->> > It seems to me that you have 2 problems that need solving here:
->> >
->> > 1) Why does the reset_replicator() called from probe() _not_ work
->> > correctly on replicator 1? It seems to work later if you introduce a
->> > reset after more of the system has powered and booted. This is
->> > startiing to look a little like a PM / clocking issue.
->> 
->> reset_replicator() does work in probe correctly for both replicators,
->> below logs is collected before and after reset in probe. It is later
->> that it's set back to 0x0 and hence the suggestion to look at firmware
->> using this replicator1.
->> 
-> OK - sorry I read your statement saying that replicator1 was 0 after
-> the reset in probe(), rather than look at the logs.
-> 
-> From the logs it is working at the time probe() occurs, but by the
-> time we come to enable the replicator later, something has reset these
-> registers / hardware outside the control of the replicator driver.
-> 
+Specially given that 0 is an undefined instruction, and I really hate to 
+see
+those in the actual text. On the contrary, .align generates NOPs.
 
-Yes, I will try to get some more information from the firmware side if 
-there is anything messing up.
+> +
+> +.macro invalid_vector label
+> +\label:
+> +	b \label
+> +	.fill 31, 4, 0			/* Set other 31 instr to zeroes */
+> +.endm
+> +
+> +/* el2 vectors - switch el2 here while we restore the memory image. */
+> +	.align 11
+> +ENTRY(kexec_el2_vectors)
 
-> 
->> [    8.477669] func replicator_probe before reset replicator 
->> replicator1
->> REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
->> [    8.489470] func replicator_probe after reset replicator 
->> replicator1
->> REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
->> 
->> >
->> > This failure is causing the state when we are trying to set an output
->> > port that both branches of this replicator are enabled for output.
->> > In effect for this replicator, setting the output port has no effect
->> > as it is already enabled.
->> >
->> > 2) Why does having both ports of this repilicator enabled cause a hard
->> > lockup? This is a separate hardware  / system issue.
->> >
->> > The worst that should happen if both branches of a replicator are
->> > enabled is that you get undesirable back pressure. (e.g. there is a
->> > system we have seen - I think it is Juno - where there is a static
->> > replicator feeding the TPIU and ETR - we need to disable the TPIU to
->> > prevent undesired back pressure).
->> >
->> 
->> Ok so hardlockup is not expected because of this backpressure.
->> 
-> 
-> Hardlockup is not expected, but this is not related to any possible
-> backpressure.
-> 
-> Ordinarily having both legs of a replicator enabled should not cause
-> system failure.
-> 
+Please see commit 617a2f392c92 ("arm64: kvm: Annotate assembly using 
+modern
+annoations"), and follow the same pattern.
 
-Ok got it, thanks.
+> +	invalid_vector el2_sync_invalid_sp0	/* Synchronous EL2t */
+> +	invalid_vector el2_irq_invalid_sp0	/* IRQ EL2t */
+> +	invalid_vector el2_fiq_invalid_sp0	/* FIQ EL2t */
+> +	invalid_vector el2_error_invalid_sp0	/* Error EL2t */
+> +	invalid_vector el2_sync_invalid_spx	/* Synchronous EL2h */
+> +	invalid_vector el2_irq_invalid_spx	/* IRQ EL2h */
+> +	invalid_vector el2_fiq_invalid_spx	/* FIQ EL2h */
+> +	invalid_vector el2_error_invalid_spx	/* Error EL2h */
+> +		el1_sync_64			/* Synchronous 64-bit EL1 */
+> +	invalid_vector el1_irq_invalid_64	/* IRQ 64-bit EL1 */
+> +	invalid_vector el1_fiq_invalid_64	/* FIQ 64-bit EL1 */
+> +	invalid_vector el1_error_invalid_64	/* Error 64-bit EL1 */
+> +	invalid_vector el1_sync_invalid_32	/* Synchronous 32-bit EL1 */
+> +	invalid_vector el1_irq_invalid_32	/* IRQ 32-bit EL1 */
+> +	invalid_vector el1_fiq_invalid_32	/* FIQ 32-bit EL1 */
+> +	invalid_vector el1_error_invalid_32	/* Error 32-bit EL1 */
+> +END(kexec_el2_vectors)
+
+Please write the vectors in 4 groups of 4, as this makes it a lot easier
+to follow what is what.
+
+> +
+>  .Lkexec_relocate_code_end:
+>  .org	KEXEC_CONTROL_PAGE_SIZE
+>  .align 3	/* To keep the 64-bit values below naturally aligned. */
+> @@ -102,3 +134,6 @@ kexec_relocate_code_size:
+>  .globl kexec_kern_reloc_offset
+>  kexec_kern_reloc_offset:
+>  	.quad	arm64_relocate_new_kernel - kexec_relocate_code_start
+> +.globl kexec_el2_vectors_offset
+> +kexec_el2_vectors_offset:
+> +	.quad	kexec_el2_vectors - kexec_relocate_code_start
 
 Thanks,
-Sai
 
+         M.
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
