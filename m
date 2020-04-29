@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3954C1BD71C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:22:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B86D21BD729
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:23:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WAf868AeqgxkRR8NTJkN0gCl/RIGmDJadCEtpjOnKuc=; b=eRDRCfJOB0BUnw
-	L9WBUJ7hWeRMjHm446pXWfnRXFsMCKJpW+HerRJiuurPh39KfA4+khyl6XeSWiJnKUSkSzHe1IX3X
-	7knR72ZiR3ttS8snc5lYNEmgs5Yqx2Ui/x8z7DgwpuuWi+IOZ9sRgPF0m7bBKszuKtyhhuSpp9nGM
-	ka4DMEb+LDYAFwLEZspkjHDhws9WH5VfP3Wbuvi6EYX1Mhzs5XNNUJcxPKkOCw2ie4inh0rvCkZj5
-	gd7Us9makUaNZHIQZB3if3ohwPJmjzL78XcBwfGRmcDzxWE+cUQmXxeM0nxHh9FMceEg4oPsDYr2u
-	9DKywFHPwo/GkCIMR+ow==;
+	List-Owner; bh=pdoEU5LiFk3yatEQVq70Mq5Wpbeyxapcg5ltSI/A0tg=; b=l/S4oo7vcZP5i/
+	c82ZoPuZ9SqEU30i9RuobUrnuv0jrZcyGrEOIvoTrDTibX4rXkJojkSeJx3hrDc9IwVwN7+C//X64
+	/8rqELx9XlmBhCC+qXBSj55FQhsXIDr5KNK/cUj+NUttaIZXqRL3bPIojogZhYI/VI9o1l4SicsCw
+	vRB/holY/1SXrNRXMFMAjOPcGbuukiydNI2EywqWJRPrkKQxVZVqElmPYu24HlNyp0DX7nEh4j/fL
+	kyoQHQ6CQtnoAt1gpIei7QCELYmku8hC7nDzdLSnXDdNoIyLW76UMVRsxn1KdXB2q2haBwhmbndla
+	d9tGIKWKMjva/9/z56JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThz9-0000Zf-7v; Wed, 29 Apr 2020 08:22:27 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jThzc-0000zF-IO; Wed, 29 Apr 2020 08:22:56 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThyZ-0000F4-4X
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:21:54 +0000
-Received: by mail-wm1-x343.google.com with SMTP id x25so988865wmc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 01:21:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=9YrQOHDbmJnPKKTvmQG5p/Lai5qrrvsqVUCdrarGgC0=;
- b=I9pcgC8TZZt5Kg0A7T7Sj2GX1f3NndD9VL3+SitseYmNYZCHbW4qyQbSaIhgJ2k8F9
- A4I/PYoz9MXS1mMf5mMtKKa8odnpWVMfBdSeYkjsmyccvPIjsyDG2KvoZckg84yWXCAT
- Y6BibMgeLOuRP5/QlCmQbtJbOwX2chmzcYD+0bKcOGgb2Jv2xrHxrCh8hYEH2YHJ6vF/
- 6YBdsXb5KcdSrNCXK005EXZs+/4NDKa0kcEOmgHV35NNBcB18QblhsCRsehmWumsgBh4
- CE+724OEI0a1mlv9maOUA39PwHvLs1bBqHnYrym3q5oe0JXZlwl/nIpAO6g3UoDq/rNh
- SFsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9YrQOHDbmJnPKKTvmQG5p/Lai5qrrvsqVUCdrarGgC0=;
- b=N8I6o7zJfbPeQsmcs032t5hMxMPAERWr3k+RUccHEEK3M1guV/oUW5XGtpqRdsUCC9
- GGfyZjnp3b4WZ8HAmQ6pN16MJQjKZskBIWvNCTJAIayeCIFH+Xg/i+GLdMMhZu06/CSn
- C7A2NhIIYu5NAkUY0RhLg7eAeC6Ot6z2/epPOsvBWTZDjW9pFtNAK/Aib9I0rgzbDgLE
- 1DlJLLzuLD2Wquu1vVk2ZwQr3ahs/XrvMx2+43t41VCUmTiZzgZ3LiR/4h9PNheHwbUb
- SCxMgoVHox8t41T9nhvTmOQBIrGdAXRDjmneGbrk2SNe6djFCq8O+/zLyMB7zqUogzyG
- pDRg==
-X-Gm-Message-State: AGi0PuY3Ja4ReQB72UETd5Gk8n49QQA4u5ypGhSI5HonQi1rIJPpQZNb
- Nkr+/JH++bHmeXhC2OWtSTmDnvoojHFsBpGm0uQ=
-X-Google-Smtp-Source: APiQypKGkoXSNV8IrqXx0pbjTev2ByLg0A0Y8YCXnburHa1C62WyWY3/obBJqfCR72hvN1/GNuPReGW+qHxhMBIIIcs=
-X-Received: by 2002:a1c:9948:: with SMTP id b69mr1828574wme.44.1588148507074; 
- Wed, 29 Apr 2020 01:21:47 -0700 (PDT)
+ id 1jThzJ-0000tg-Kk
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:22:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=1O07RDTpQ5ZoKMW6ZVxYT8lzbt0uzLpAusgf6xrOFtg=; b=lHgHDj1TrJewlXLgITrP2MNFn
+ esiw/07nXyboAXo6tpp0M4Dga/9Gr03f0jksyrsndOw8YyC6KfnPlXAV62b9Fgi4sxzIecxz1wz5E
+ jvBjAE344LfYUXNDkdchPrBk+7QoklvIB105cvcvNMyM5E1ktYGcxYq2xgyHHemYEw3F9cCkbKfLv
+ skZ9Z6sxxmvxKj8vKx13Lrc5t7zEFu8j9HZ4aVS3cvajVCn/Zdtt8S8jw9Nq8C5KW0SYkIBs4iUl5
+ rhFoYfROGOSM3ko8G+bOmM5qDexHvutwm1PCdRkiBaNIG/UFFkQYGmZQ/WBcdBvFDTJCh1IzNrgTy
+ e2MVkL+LQ==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:51424)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jThyn-0006MM-DI; Wed, 29 Apr 2020 09:22:05 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jThyg-0000vM-Ak; Wed, 29 Apr 2020 09:21:58 +0100
+Date: Wed, 29 Apr 2020 09:21:58 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Robert Hancock <hancock@sedsystems.ca>
+Subject: Re: Xilinx axienet 1000BaseX support
+Message-ID: <20200429082158.GA1551@shell.armlinux.org.uk>
+References: <20200118112258.GT25745@shell.armlinux.org.uk>
+ <3b28dcb4-6e52-9a48-bf9c-ddad4cf5e98a@arm.com>
+ <20200120154554.GD25745@shell.armlinux.org.uk>
+ <20200127170436.5d88ca4f@donnerap.cambridge.arm.com>
+ <20200127185344.GA25745@shell.armlinux.org.uk>
+ <bf2448d0-390c-5045-3503-885240829fbf@sedsystems.ca>
+ <20200422075124.GJ25745@shell.armlinux.org.uk>
+ <8a829647-34a8-6e6a-05cf-76f5e88b8410@sedsystems.ca>
+ <20200428230112.GS25745@shell.armlinux.org.uk>
+ <d44d53d1-6718-e2d1-1186-b4f06d2b74cd@sedsystems.ca>
 MIME-Version: 1.0
-References: <20200428212752.2901778-1-arnd@arndb.de>
- <6b39fbba-c65d-2c02-14bf-11c2d00547af@linux.intel.com>
- <CAK8P3a24whg2RhJE3Vf5u3EWy+wvFqhXdp7EQZuQx0shPsMARw@mail.gmail.com>
- <f91c9a68-7641-beb8-a23e-bd1b9b8d0acb@linux.intel.com>
- <b784c008-7094-05cb-6200-6b246ff39bb8@linux.intel.com>
-In-Reply-To: <b784c008-7094-05cb-6200-6b246ff39bb8@linux.intel.com>
-From: Daniel Baluta <daniel.baluta@gmail.com>
-Date: Wed, 29 Apr 2020 11:21:35 +0300
-Message-ID: <CAEnQRZCr0NAfx4UGcd3v6Cr5bZpUmQg5VCG9OA=aj=4uJX0qOg@mail.gmail.com>
-Subject: Re: [PATCH] ASoC: SOF: sort out Kconfig, again
-To: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>,
- Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <d44d53d1-6718-e2d1-1186-b4f06d2b74cd@sedsystems.ca>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_012152_363101_008F20AA 
-X-CRM114-Status: GOOD (  23.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_012237_698387_9C8E0677 
+X-CRM114-Status: GOOD (  33.15  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [daniel.baluta[at]gmail.com]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,74 +95,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ranjani Sridharan <ranjani.sridharan@linux.intel.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>,
- ALSA Development Mailing List <alsa-devel@alsa-project.org>,
- Fabio Estevam <festevam@gmail.com>,
- Kai Vehmanen <kai.vehmanen@linux.intel.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, YueHaibing <yuehaibing@huawei.com>,
- Takashi Iwai <tiwai@suse.com>, Krzysztof Kozlowski <krzk@kernel.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- sound-open-firmware@alsa-project.org
+Cc: Andrew Lunn <andrew@lunn.ch>, Andre Przywara <andre.przywara@arm.com>,
+ Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>, linux-kernel@vger.kernel.org,
+ netdev@vger.kernel.org, "David S . Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd, Pierre,
+On Tue, Apr 28, 2020 at 05:51:58PM -0600, Robert Hancock wrote:
+> On 2020-04-28 5:01 p.m., Russell King - ARM Linux admin wrote:
+> > On Tue, Apr 28, 2020 at 03:59:45PM -0600, Robert Hancock wrote:
+> > > On 2020-04-22 1:51 a.m., Russell King - ARM Linux admin wrote:
+> > > > On Tue, Apr 21, 2020 at 07:45:47PM -0600, Robert Hancock wrote:
+> > > > > Hi Andre/Russell,
+> > > > > 
+> > > > > Just wondering where things got to with the changes for SGMII on Xilinx
+> > > > > axienet that you were discussing (below)? I am looking into our Xilinx setup
+> > > > > using 1000BaseX SFP and trying to get it working "properly" with newer
+> > > > > kernels. My understanding is that the requirements for 1000BaseX and SGMII
+> > > > > are somewhat similar. I gathered that SGMII was working somewhat already,
+> > > > > but that not all link modes had been tested. However, it appears 1000BaseX
+> > > > > is not yet working in the stock kernel.
+> > > > > 
+> > > > > The way I had this working before with a 4.19-based kernel was basically a
+> > > > > hack to phylink to allow the Xilinx PCS/PMA PHY to be configured
+> > > > > sufficiently as a PHY for it to work, and mostly ignored the link status of
+> > > > > the SFP PHY itself, even though we were using in-band signalling mode with
+> > > > > an SFP module. That was using this patch:
+> > > > > 
+> > > > > https://patchwork.ozlabs.org/project/netdev/patch/1559330285-30246-5-git-send-email-hancock@sedsystems.ca/
+> > > > > 
+> > > > > Of course, that's basically just a hack which I suspect mostly worked by
+> > > > > luck. I see that there are some helpers that were added to phylink to allow
+> > > > > setting PHY advertisements and reading PHY status from clause 22 PHY
+> > > > > devices, so I'm guessing that is the way to go in this case? Something like:
+> > > > > 
+> > > > > axienet_mac_config: if using in-band mode, use
+> > > > > phylink_mii_c22_pcs_set_advertisement to configure the Xilinx PHY.
+> > > > > 
+> > > > > axienet_mac_pcs_get_state: use phylink_mii_c22_pcs_get_state to get the MAC
+> > > > > PCS state from the Xilinx PHY
+> > > > > 
+> > > > > axienet_mac_an_restart: if using in-band mode, use
+> > > > > phylink_mii_c22_pcs_an_restart to restart autonegotiation on Xilinx PHY
+> > > > > 
+> > > > > To use those c22 functions, we need to find the mdio_device that's
+> > > > > referenced by the phy-handle in the device tree - I guess we can just use
+> > > > > some of the guts of of_phy_find_device to do that?
+> > > > 
+> > > > Please see the code for DPAA2 - it's changed slightly since I sent a
+> > > > copy to the netdev mailing list, and it still isn't clear whether this
+> > > > is the final approach (DPAA2 has some fun stuff such as several
+> > > > different PHYs at address 0.) NXP basically didn't like the approach
+> > > > I had in the patches I sent to netdev, we had a call, they presented
+> > > > an alternative appraoch, I implemented it, then they decided my
+> > > > original approach was the better solution for their situation.
+> > > > 
+> > > > See http://git.armlinux.org.uk/cgit/linux-arm.git/log/?h=cex7
+> > > > 
+> > > > specifically the patches from:
+> > > > 
+> > > >     "dpaa2-mac: add 1000BASE-X/SGMII PCS support"
+> > > > 
+> > > > through to:
+> > > > 
+> > > >     "net: phylink: add interface to configure clause 22 PCS PHY"
+> > > > 
+> > > > You may also need some of the patches further down in the net-queue
+> > > > branch:
+> > > > 
+> > > >     "net: phylink: avoid mac_config calls"
+> > > > 
+> > > > through to:
+> > > > 
+> > > >     "net: phylink: rejig link state tracking"
+> > > 
+> > > I've been playing with this a bit on a 5.4 kernel with some of these patches
+> > > backported. However, I'm running into something that my previous hacks for
+> > > this basically dealt with as a side effect: when phylink_start is called,
+> > > sfp_upstream_start gets called, an SFP module is detected,
+> > > phylink_connect_phy gets called, but then it hits this condition and bails
+> > > out, because we are using INBAND mode with 1000BaseX:
+> > > 
+> > > 	if (WARN_ON(pl->cfg_link_an_mode == MLO_AN_FIXED ||
+> > > 		    (pl->cfg_link_an_mode == MLO_AN_INBAND &&
+> > > 		     phy_interface_mode_is_8023z(interface))))
+> > > 		return -EINVAL;
+> > 
+> > I'm expecting SGMII mode to be used when there's an external PHY as
+> > that gives greatest flexibility (as it allows 10 and 100Mbps speeds
+> > as well.)  From what I remember, these blocks support SGMII, so it
+> > should just be a matter of adding that.
+> 
+> They do support SGMII, but unfortunately it's not a runtime configurable
+> parameter, it's a synthesis-level parameter on the FPGA IP core so you have
+> to pick one or the other for any given build. We want to be able to support
+> various fiber module types as well, and my understanding is that at least
+> some of those only do 1000BaseX, so that ends up being the standard in
+> common that we are using.
 
-Thanks for looking at this.
+1G Fibre modules are all 1000BaseX only.
 
-> >>> Thanks Arnd, do you mind sharing your config?
-> >>
-> >> https://pastebin.com/HRX5xi3R
-> >
-> > will give it a try, thanks!
-> >
-> >>> We noticed last week that
-> >>> there's a depend/select confusion might be simpler to fix, see
-> >>> https://github.com/thesofproject/linux/pull/2047/commits
-> >>>
-> >>> If I look at the first line I see a IMX_DSP=n which looks exactly like
-> >>> what we wanted to fix.
-> >>
-> >> Yes, I think that fix addresses the build warning as well, but looking
-> >> more closely I don't think it's what you want: If you do this on
-> >> a config that has the IMX_DSP disabled, it would appear to the
-> >> user that you have enabled the drivers, but the actual code is still
-> >> disabled.
-> >
-> > Are you sure? we added a select IMX_DSP, so not sure how it can be
-> > disabled?
->
-> I just tested Arnd's config with the patch we came up with for SOF
-> (attached) and it makes the unmet dependency go away and builds fine.
-> the problem is really using select IMX_DSP if it can be disabled by
-> something else. My proposal looks simpler but I will agree it's not
-> necessarily super elegant to move the dependency on IMX_BOX into SOF, so
-> no sustained objection from me on Arnd's proposal.
->
-> Daniel, this is your part of SOF, please chime in.
-
-I would go in favor of Arnd's patch as it gets rid of exposing
-IMX_MBOX into SOF.
-The code will be fine even IMX_DSP=n, because the exported functions
-used by SOF have dummy implementations in case IMX_DSP is not selected.
-
-One concern is that we could end up in a case where IMX_DSP={y|m} but
-IMX_MBOX=n.
-
-Technically this is not possible because IMX_DSP depends on IMX_MBOX. So,
-one cannot generate such a .config file from menuconfig interface.
-
-You can add my:
-
-Acked-by: Daniel Baluta <daniel.baluta@nxp.com>
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
