@@ -2,57 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E1311BE189
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:48:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4202F1BE192
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:49:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cwAfWqGAq8CaqDLhkcnFGfyrL8ReBCZobqVqnDfzgnM=; b=kAk+/9Ks4pgiPX
-	XBv3OtbfEVRwM+9rypGzBWOLK8NAE6CBU6jIs9UvGb+7ey3Vgzt+k44QXfVv9Eq490ovAX+TV1+AN
-	Gd/z18OGZd6CsCx87YhCFAYn7A/x6u3R1+g7yzKA8rdUHqhbtWYya8OwI32NoHxnSsBaiZzHnovM0
-	9bcEkt/2+fcZHX24J8omtNq52mwa4LtJ6nGjCVD0CSf6YZ1ViPreBGPr2uYp/kkFNsuclZw1SnJCw
-	OeNKMO+TXl+F12JrlsYaFlc6aYSbBF9WsUMRgqvVsRTdkKZSXrAWL+wlJb5L7r1keii4QYTsvz+JR
-	/iH5ggx9LT5olTrdcy1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8K3IZYoCg4c3V5lUSogZh2or+dRUCKfgpdalntEMPKE=; b=tx0CxqWp7EYluxaoyxYH/OvEG
+	dU6GsCJ/pKpszl1xTN7eYXknZQh/GhqYDGwgbeMEGkgh6i/seoi4mNc/tb3b+iG3SHYSODuXiNfKO
+	8hj2IgMRoP3uDrtzLGPsYjMAOPFhwiEcK9QzCaiuQYtbz5KEXYGxn9EqUrY6t7M55naRft3nfL74n
+	8TXevAWg/5xqTn+0Qja6tvAmw6deAqK3WStejA2CZZB48a+zkUKrcJBfHRvwZ6yOOcyOoH2GTG7fi
+	IQP05F7I9r3xekTBJd7xpBD7/pjO6OzAE3gCn/qZy/9SwEPIhNummZYCifRARfZLoG0lezM0Ld5sz
+	kaV6zt62A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTo0K-00029x-2h; Wed, 29 Apr 2020 14:48:04 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTo04-00027t-7Z; Wed, 29 Apr 2020 14:47:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CA2F1045;
- Wed, 29 Apr 2020 07:47:46 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.53])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E7CD3F68F;
- Wed, 29 Apr 2020 07:47:44 -0700 (PDT)
-Date: Wed, 29 Apr 2020 15:47:41 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Richard Weinberger <richard@nod.at>
-Subject: Re: [PATCH] mtd: cfi_cmdset_0001: Support the absence of protection
- registers
-Message-ID: <20200429144741.GB16356@bogus>
-References: <20200417142325.2931423-1-jean-philippe@linaro.org>
+	id 1jTo1O-0002xB-Cm; Wed, 29 Apr 2020 14:49:10 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTo10-0002n2-P7
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:48:50 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1588171728; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=cBvwW5avddGOz4+VMKe7nngaLFyj5X3264YJy7F3MiY=;
+ b=cSLMpwFKghEWqBeaYNB4iEku2xv9gSV3x3bAh6bzYHniZaSo25F1877yZShyOH9CkOLw5JLe
+ FOSnP91ikcKRZhJAfV5Ag95vOrnqnM2O76utH1n4o1lhrFnNng58YQ+3Z4ZizKfzbaRgypKu
+ p1BK8rdwuAPklnMc8EEx/zRQCms=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ea993c7.7f505680a308-smtp-out-n05;
+ Wed, 29 Apr 2020 14:48:39 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 6523EC433F2; Wed, 29 Apr 2020 14:48:38 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id B7F75C433CB;
+ Wed, 29 Apr 2020 14:48:37 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200417142325.2931423-1-jean-philippe@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+Date: Wed, 29 Apr 2020 20:18:37 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
+ connections
+In-Reply-To: <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
+References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+ <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
+ <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
+ <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
+ <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
+ <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
+ <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
+ <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
+ <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
+Message-ID: <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_074748_342873_55F2082E 
-X-CRM114-Status: GOOD (  14.92  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200429_074848_693772_387ED07D 
+X-CRM114-Status: GOOD (  22.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,39 +95,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mtd@lists.infradead.org, vigneshr@ti.com,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Stephen Boyd <swboyd@chromium.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBBcHIgMTcsIDIwMjAgYXQgMDQ6MjM6MjZQTSArMDIwMCwgSmVhbi1QaGlsaXBwZSBC
-cnVja2VyIHdyb3RlOgo+IFRoZSBmbGFzaCBjb250cm9sbGVyIGltcGxlbWVudGVkIGJ5IHRoZSBB
-cm0gQmFzZSBwbGF0Zm9ybSBiZWhhdmVzIGxpa2UKPiB0aGUgSW50ZWwgU3RyYXRhRmxhc2ggSjMg
-ZGV2aWNlLCBidXQgb21pdHMgc2V2ZXJhbCBmZWF0dXJlcy4gSW4KPiBwYXJ0aWN1bGFyIGl0IGRv
-ZXNuJ3QgaW1wbGVtZW50IGEgcHJvdGVjdGlvbiByZWdpc3Rlciwgc28gIk51bWJlciBvZgo+IFBy
-b3RlY3Rpb24gcmVnaXN0ZXIgZmllbGRzIiBpbiB0aGUgUHJpbWFyeSBWZW5kb3ItU3BlY2lmaWMg
-RXh0ZW5kZWQKPiBRdWVyeSwgaXMgMC4KPiAKPiBUaGUgSW50ZWwgU3RyYXRhRmxhc2ggSjMgZGF0
-YXNoZWV0IG9ubHkgbGlzdHMgMSBhcyBhIHZhbGlkIHZhbHVlIGZvcgo+IE51bVByb3RlY3Rpb25G
-aWVsZHMuIEl0IGRlc2NyaWJlcyB0aGUgZmllbGQgYXM6Cj4gCj4gCSJOdW1iZXIgb2YgUHJvdGVj
-dGlvbiByZWdpc3RlciBmaWVsZHMgaW4gSkVERUMgSUQgc3BhY2UuCj4gCeKAnDAwaCzigJ0gaW5k
-aWNhdGVzIHRoYXQgMjU2IHByb3RlY3Rpb24gYnl0ZXMgYXJlIGF2YWlsYWJsZSIKPiAKPiBXaGls
-ZSBhIHZhbHVlIG9mIDAgbWF5IGFyZ3VhYmx5IG5vdCBiZSBhcmNoaXRlY3R1cmFsbHkgdmFsaWQs
-IHRoZQo+IGRyaXZlcidzIGN1cnJlbnQgYmVoYXZpb3IgaXMgY2VydGFpbmx5IHdyb25nOiBpZiBO
-dW1Qcm90ZWN0aW9uRmllbGRzIGlzCj4gMCwgcmVhZF9wcmlfaW50ZWxleHQoKSBhZGRzIGEgbmVn
-YXRpdmUgdmFsdWUgdG8gdGhlIHVuc2lnbmVkIGV4dHJhX3NpemUsCj4gYW5kIGVuZHMgdXAgaW4g
-YW4gaW5maW5pdGUgbG9vcC4KPiAKPiBGaXggaXQgYnkgaWdub3JpbmcgYSBOdW1Qcm90ZWN0aW9u
-RmllbGRzIG9mIDAuCj4gCj4gU2lnbmVkLW9mZi1ieTogSmVhbi1QaGlsaXBwZSBCcnVja2VyIDxq
-ZWFuLXBoaWxpcHBlQGxpbmFyby5vcmc+Cj4gLS0tCj4gSSBndWVzcyB0aGlzIGZsYXNoIGRldmlj
-ZSBoYXMgbmV2ZXIgYmVlbiB0ZXN0ZWQgb24gTGludXguIFRoZSBidWcgc2hvd2VkCj4gdXAgd2hl
-biB0cnlpbmcgdG8gYm9vdCB0aGUgbGF0ZXN0IGFybTY0IGRlZmNvbmZpZywgd2hpY2ggZW5hYmxl
-ZAo+IENPTkZJR19NVERfUEhZU01BUF9PRiwgb24gdGhlIFJldkMgRmFzdE1vZGVsLiBXaXRob3V0
-IHRoaXMgY29uZmlnIG9wdGlvbgo+IHRoZSBkZXZpY2UgaXNuJ3QgcHJvYmVkLgoKQW55IHByb2dy
-ZXNzIHdpdGggdGhpcyBwYXRjaCA/CgpGV0lXLCB0aGlzIGZpeGVzIGJvb3Qgb24gZmV3IGFybTY0
-IEFybSBMdGQgRmFzdE1vZGVscyB3ZSB1c2UgZm9yCmRldmVsb3BtZW50IGluY2x1ZGluZyB0aGUg
-YWJvdmUgbWVudGlvbmVkIFJldkMgRmFzdE1vZGVsLiBTbywKClRlc3RlZC1ieTogIFN1ZGVlcCBI
-b2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+CgotLSAKUmVnYXJkcywKU3VkZWVwCgpfX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
-IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
-L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Mike,
+
+On 2020-04-29 19:57, Mike Leach wrote:
+> Hi,
+> 
+
+[...]
+
+>> >> Looking more into replicator1(swao_replicator) values as 0x0 even
+>> >> after replicator_reset()
+>> >> in replicator probe, I added dynamic_replicator_reset in
+>> >> dynamic_replicator_enable()
+>> >> and am not seeing any hardlockup. Also I added some prints to check
+>> >> the idfilter
+>> >> values before and after reset and found that its not set to 0xff even
+>> >> after replicator_reset()
+>> >> in replicator probe, I don't see any other path setting it to 0x0.
+>> >>
+>> >> After probe:
+>> >>
+>> >> [    8.477669] func replicator_probe before reset replicator
+>> >> replicator1 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+>> >> [    8.489470] func replicator_probe after reset replicator
+>> >> replicator1 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+>> >
+>> > AFAICS, after the reset both of them are set to 0xff.
+>> 
+>> Yes I see this too as we call replicator_reset() in probe. What I 
+>> wanted
+>> to highlight was the below part where it is set to 0x0 before enabling
+>> dynamic replicator.
+>> 
+>> >
+>> >> [    8.502738] func replicator_probe before reset replicator
+>> >> replicator0 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+>> >> [    8.515214] func replicator_probe after reset replicator
+>> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+>> >
+>> >
+>> >
+>> >> localhost ~ #
+>> >> localhost ~ #
+>> >> localhost ~ # echo 1 > /sys/bus/coresight/devices/tmc_etr0/enable_sink
+>> >> localhost ~ #
+>> >> localhost ~ # echo 1 > /sys/bus/coresight/devices/etm0/enable_source
+>> >> [   58.490485] func dynamic_replicator_enable before reset replicator
+>> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+>> >> [   58.503246] func dynamic_replicator_enable after reset replicator
+>> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+>> >> [   58.520902] func dynamic_replicator_enable before reset replicator
+>> >> replicator1 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+>> >
+>> > You need to find what is resetting the IDFILTERs to 0 for replicator1.
+>> >
+>> 
+>> That is right.
+>> 
+> 
+> By default all replicators have the IDFILTER registers set to 0 out of
+> hardware reset. This ensures that programmable replicators behave in
+> the same way as non-programmable replicators out of reset.
+> 
+> The  dynamic_replicator_reset() is of course a driver state reset -
+> which filters out all trace on the output ports. The trace is then
+> enabled when we set the trace path from source to sink.
+> 
+
+Thanks for these explanations.
+
+> It seems to me that you have 2 problems that need solving here:
+> 
+> 1) Why does the reset_replicator() called from probe() _not_ work
+> correctly on replicator 1? It seems to work later if you introduce a
+> reset after more of the system has powered and booted. This is
+> startiing to look a little like a PM / clocking issue.
+
+reset_replicator() does work in probe correctly for both replicators, 
+below logs is collected before and after reset in probe. It is later 
+that it's set back to 0x0 and hence the suggestion to look at firmware 
+using this replicator1.
+
+[    8.477669] func replicator_probe before reset replicator replicator1 
+REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+[    8.489470] func replicator_probe after reset replicator replicator1 
+REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+
+> 
+> This failure is causing the state when we are trying to set an output
+> port that both branches of this replicator are enabled for output.
+> In effect for this replicator, setting the output port has no effect
+> as it is already enabled.
+> 
+> 2) Why does having both ports of this repilicator enabled cause a hard
+> lockup? This is a separate hardware  / system issue.
+> 
+> The worst that should happen if both branches of a replicator are
+> enabled is that you get undesirable back pressure. (e.g. there is a
+> system we have seen - I think it is Juno - where there is a static
+> replicator feeding the TPIU and ETR - we need to disable the TPIU to
+> prevent undesired back pressure).
+> 
+
+Ok so hardlockup is not expected because of this backpressure.
+
+Thanks,
+Sai
+
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
