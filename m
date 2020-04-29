@@ -2,92 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 373AA1BD621
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7BCA1BD623
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:34:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4SSJcHCaM8Xi695dJBQEi55O+4QjYDP3Qdh+dJ+b5Ro=; b=CU5qFWVB1Yi2Ys
-	e2WlDkFlft1MKz30zIHE6nqMdfQHIGWOG+m6w/lDuXnYp0lFPk52tmTEVxe7PyWoN/b5soxS/mz7+
-	+5L0CFQCN8X76R9LH858sLy47KxUMCHXrasGUkfYdNuspLXvuTwiOvwRMRplmJ0m8oDmnWUcYotkf
-	Q0/ZpItv5AdTTXHwJizKMBHNnZEc8ttAobfUNYwCEX/Yzz+kZP3alsS9qpVAwl+J4Zi6/XOa6sR3b
-	fM4TlBahB1dG7J/QchO9C4w1gnpoM8n9YV7ISS+8jFKcyJZoV9427x7yWuaLlI4pxOXtU/hzORIJa
-	sAlEZ4RLBBMzOXqexyFQ==;
+	List-Owner; bh=re6ejZ4jIsX0VxdP+JWwZh0qW4ap9RABHlLgUYWwE+g=; b=Rm1U79tyHenEzJ
+	JcBkL34Gi/DWVD/iMIsDoyR5kXk/YxoqOECxVx1evWnP54vyxt8ayVqXytM6vDHd2AqJ5XTq25FUr
+	R72Xkgq+QOh6Ap2APpIF1TxQ2eY/N9XSNc4UVBqJu5TOo8rsixn+aPSdL/Fg6oI+wLKSpN2ztdbkH
+	cKh424fD1IoXdGoep5E5Gr6BkrCk54CIX4mo6MJX+aSBvyYMg8YwXGofqhngfclB/kglXtezX6Hex
+	q9Q/AZ1VZXENX0zfh4F6kCDM28rbvt61RBTZbnXqkf6y6gunRUpv/sS9xPc4IgEYAamJ9bpGXQEA4
+	BMNi3ksRSzXAtQkm0dqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThEB-0005FB-E9; Wed, 29 Apr 2020 07:33:55 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1jThEf-0005Uk-1l; Wed, 29 Apr 2020 07:34:25 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThE2-0005Ec-Bq
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:33:48 +0000
-Received: by mail-oi1-x244.google.com with SMTP id o24so1004253oic.0
+ id 1jThEV-0005UI-FV
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:34:16 +0000
+Received: by mail-oi1-f194.google.com with SMTP id o24so1005260oic.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 00:33:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IcXQ08t2W8c/2dEBG4FRM5sIS4gP2ylI5VKbzNwowo0=;
- b=pdoTOIrw610Yqb9QtrA+nZF4Kva/D5G2N3zjYWZXMdkAUfrUlm7sOlp5U0uF3XGpER
- zPRGwW0FMnLgx2soQnoByHaaL5Drp8C1wf/UdvvSl6Z4gq+PZpE1R2ET/1NOFEVh7e0Q
- lC7214F2D663aUmf188X+MY7XQBPK/1SDwNwFfqHx17klMxLBgUgZ9dOK4ekIrTOChlR
- fnoN2LkoIDaUZd933bK3jbd/2IIBek6Sids97bMeoGYjLPh5vVw2JDcLFe4UVIbsHamp
- A6JY5UFAoPIlCL9xvK4JXC4YTpNMLoc00AouoAh04oHGmg0vGCAXVctyhQCGoQ+3aFZQ
- jlvg==
+ Wed, 29 Apr 2020 00:34:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=IcXQ08t2W8c/2dEBG4FRM5sIS4gP2ylI5VKbzNwowo0=;
- b=FUykj8xPse3DgMdgfvsh7iVQu9ungKmD4ujJIxWkKYuuOTPcSUYa6hgEfWKkS0Efcd
- NSg9fuTVG8WQ02pjNvLnesHsiuTZ7W/X6vn49mvvoEE83GGyVukHV8TwF+OhecBZvTT+
- 1dO/ATSJqK5cQ9f8LFg9HrstPZhRBBUuq3clAJl1BX/85N1XUnjUTeUoVaVOqMure4br
- T3IZ5IoenFCi7EG77piL3m1NKwwVgFDWwiZYYmjbh/kFWeOFJVWD0+u5oe2hMOoi2atO
- YjADCksAvBzxPqtJs755NcpAgAVbH5uvKKqrdJbQdeOmewfUGd3fXytYegkX/I3XXat0
- ydbw==
-X-Gm-Message-State: AGi0PuZHbuWqr9cCV0Ja6vg1GSCL+JIewCdGUwspY+mymluuRvBs73vG
- 90im/IrETXQSEtRsSD61n9izevj4ytmzjLd5KtGt7Q==
-X-Google-Smtp-Source: APiQypLG6uX3M+GgB0+qSb8maqG9spFZnfD3y/vDtToEl6eDzvx9bqPxJdSbx+jt1HartzSaX5MX7al9DuZmyY0Dox0=
-X-Received: by 2002:aca:abc6:: with SMTP id u189mr813007oie.30.1588145620794; 
- Wed, 29 Apr 2020 00:33:40 -0700 (PDT)
+ bh=SyWquW6C3h9yYRPnL8ZX6mVqONgOMsOlS/nbLkzCvR8=;
+ b=G43x0pC2rscikVO4hLFX5ftthJl0XQGlYA/g448dwPMmySAvOQx3ji04bAQjUkGERE
+ Fo3bJon/ZKCNZggTrR5y1P1fnRW4vgwJnGB+wv4tU3G6Q+OLtdCmPT7n/C8N9v6E7NTm
+ +dQlc8dPMBvOmVZp7zjSgsonHcvtuLXi5PB4Ow/Kh1x4KcLdmRdlCIsOHnhnuV+XYaZG
+ WPyTyk/QHNoNlsTp7Rj0qD7Xu0UzoVqBxVhGbjURBPey1BxLRTIMhGm02JLLBr3Ql8Es
+ 1FRMWWzLhP8h6tT+eF3icYbBwh3yn0ucq/aF8p980HjydFK7zZULyZgqfMK26RZWNl0v
+ 4wuw==
+X-Gm-Message-State: AGi0Pub4fvkPVYeMUcpHQtZRuXbMeaUQsOtxCUxZWvfAnc8/HfHy608G
+ MOHaNSBmJO3zNd3moAy+jM//016PTS1GnwaRcMNvWQ==
+X-Google-Smtp-Source: APiQypJAsZR6cJVnPhd52DhYQokiZWeX1PxL/6m2Vvtp1dgHuL2QQU2M5utJVEIEaKuPsXF6mplj99rnUrUZngmlKtw=
+X-Received: by 2002:aca:d50f:: with SMTP id m15mr810760oig.54.1588145654121;
+ Wed, 29 Apr 2020 00:34:14 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200427212514.11219-1-robh@kernel.org>
- <CGME20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f@eucas1p2.samsung.com>
- <CACRpkdZSPb8FxTSt8F3F1VcsTM4qG=6gxz1pBPjTZ0Dk2iVfSQ@mail.gmail.com>
- <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
-In-Reply-To: <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
-From: Saravana Kannan <saravanak@google.com>
-Date: Wed, 29 Apr 2020 00:33:04 -0700
-Message-ID: <CAGETcx8Cn-b6L2y10LKb91S3n06b6+Be2z_A0402EyNy-8yECg@mail.gmail.com>
-Subject: Re: [PATCH] amba: Retry adding deferred devices at late_initcall
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+References: <20200428194449.22615-1-willy@infradead.org>
+ <20200428194449.22615-3-willy@infradead.org>
+In-Reply-To: <20200428194449.22615-3-willy@infradead.org>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Wed, 29 Apr 2020 09:34:02 +0200
+Message-ID: <CAMuHMdUw38VD8WJe5Zbaudnee74ZgLwbfhRwU8Pi9ALitre+_Q@mail.gmail.com>
+Subject: Re: [PATCH 2/7] mm: Move pt_mm within struct page
+To: Matthew Wilcox <willy@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_003346_433490_EB538A4A 
-X-CRM114-Status: GOOD (  24.27  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200429_003415_517456_259220B4 
+X-CRM114-Status: GOOD (  14.82  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,93 +82,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- John Stultz <john.stultz@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux MM <linux-mm@kvack.org>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 11:06 PM Marek Szyprowski
-<m.szyprowski@samsung.com> wrote:
->
-> Hi Linus,
->
-> On 28.04.2020 22:39, Linus Walleij wrote:
-> > On Mon, Apr 27, 2020 at 11:25 PM Rob Herring <robh@kernel.org> wrote:
-> >> If amba bus devices defer when adding, the amba bus code simply retries
-> >> adding the devices every 5 seconds. This doesn't work well as it
-> >> completely unsynchronized with starting the init process which can
-> >> happen in less than 5 secs. Add a retry during late_initcall. If the
-> >> amba devices are added, then deferred probe takes over. If the
-> >> dependencies have not probed at this point, then there's no improvement
-> >> over previous behavior. To completely solve this, we'd need to retry
-> >> after every successful probe as deferred probe does.
-> >>
-> >> The list_empty() check now happens outside the mutex, but the mutex
-> >> wasn't necessary in the first place.
-> >>
-> >> This needed to use deferred probe instead of fragile initcall ordering
-> >> on 32-bit VExpress systems where the apb_pclk has a number of probe
-> >> dependencies (vexpress-sysregs, vexpress-config).
-> >>
-> >> Cc: John Stultz <john.stultz@linaro.org>
-> >> Cc: Saravana Kannan <saravanak@google.com>
-> >> Cc: Linus Walleij <linus.walleij@linaro.org>
-> >> Cc: Sudeep Holla <sudeep.holla@arm.com>
-> >> Cc: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> >> Cc: Geert Uytterhoeven <geert+renesas@glider.be>
-> >> Cc: Russell King <linux@armlinux.org.uk>
-> >> Signed-off-by: Rob Herring <robh@kernel.org>
-> > Makes sense to me, and the same approach is found
-> > in the generic code in drivers/base/dd.c so
-> > Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> >
-> > The timer-based re-probe was added by Marek Szyprowski
-> > in commit a41980f2a3eb33ed7a2636e83498b47e95ceb05b
-> > do deal with power domains. I guess it mimics dd.c
-> > deferred probe at this point?
-> >
-> > There are a bit of other differences that have piled up,
-> > should we take a quick look at dd.c so there is not something
-> > else we're missing? I see some PM code for example.
->
-> Well, late initcall based approach is what earlier version of my patch did:
->
-> https://lkml.org/lkml/2016/4/12/414
->
-> but then it has been requested to solve the issue 'properly':
->
-> https://lkml.org/lkml/2016/4/12/455
->
-> https://lkml.org/lkml/2016/4/14/875
->
-> For me it is fine to get back to late initcall based solution, though.
->
+Hi Matthew,
 
-I haven't really dealt with a platform with AMBA devices and am not
-too familiar with it, so apologies in advance if any of my suggestions
-are silly.
+On Tue, Apr 28, 2020 at 9:44 PM Matthew Wilcox <willy@infradead.org> wrote:
+> From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
+> Instead of a per-arch word within struct page, use a formerly reserved
+> word.  This word is shared with page->mapping, so it must be cleared
+> before being freed as it is checked in free_pages().
+>
+> Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
 
-This whole "don't add a device before the clocks/resources needed to
-read the PID/CID" seems like something that can be solved by having a
-dummy device that "probes" when those resources are available. And
-during its probe, it adds the real amba device. That should avoid all
-the reinvention of deferred probing that amba/bus.c seems to be
-attempting.
+Thanks for your patch!
 
-Any reason to not do something like that? I'd think that should clean
-up a whole lot of this code. Also, if we are primarily dealing with
-AMBA devices created from DT, then we might even be able to massage
-the fw_devlink feature to optimize this even more when fw_devlink=on.
+> --- a/include/linux/mm_types.h
+> +++ b/include/linux/mm_types.h
+> @@ -149,11 +149,8 @@ struct page {
+>                                         pgtable_t pmd_huge_pte;
+>                                 };
+>                         };
+> -                       unsigned long _pt_pad_2;        /* mapping */
+> -                       union {
+> -                               struct mm_struct *pt_mm; /* x86 pgds only */
+> -                               atomic_t pt_frag_refcount; /* powerpc */
+> -                       };
+> +                       struct mm_struct *pt_mm;
+> +                       atomic_t pt_frag_refcount; /* powerpc */
 
-Just my 2 cents.
+So here is now an implicit hole on 64-bit platforms, right?
+Do we have any where alignof(long) != 8?
 
--Saravana
+>  #if ALLOC_SPLIT_PTLOCKS
+>                         spinlock_t *ptl;
+>  #else
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
