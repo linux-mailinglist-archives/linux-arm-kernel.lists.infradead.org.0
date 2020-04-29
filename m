@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4202F1BE192
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:49:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 00AC91BE19B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:50:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8K3IZYoCg4c3V5lUSogZh2or+dRUCKfgpdalntEMPKE=; b=tx0CxqWp7EYluxaoyxYH/OvEG
-	dU6GsCJ/pKpszl1xTN7eYXknZQh/GhqYDGwgbeMEGkgh6i/seoi4mNc/tb3b+iG3SHYSODuXiNfKO
-	8hj2IgMRoP3uDrtzLGPsYjMAOPFhwiEcK9QzCaiuQYtbz5KEXYGxn9EqUrY6t7M55naRft3nfL74n
-	8TXevAWg/5xqTn+0Qja6tvAmw6deAqK3WStejA2CZZB48a+zkUKrcJBfHRvwZ6yOOcyOoH2GTG7fi
-	IQP05F7I9r3xekTBJd7xpBD7/pjO6OzAE3gCn/qZy/9SwEPIhNummZYCifRARfZLoG0lezM0Ld5sz
-	kaV6zt62A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uW50QePZz2TnM4r7likHU/UuImm6tbw57ISSrIl4ejQ=; b=DvDalEoHwceBDf
+	RW9w/zfmRw/8FldJP448Q5y8uogTmAKSj9FvIKCu9t3Guh3JjUK7YhBp1Qmad12Fx6A32v/cSP/St
+	rwwpFwWPHCz1jOP4ALrpj9SqHFZeTaHfB1AZk8zly19mKtCnRbjiy6AI8kRVQXZKuyH740LrqqqZL
+	5AAQVe4+efhAVrDnzmdHFlkJ/sm8Tz1QAPWD8aTCQ2CSdj9W2dAuSgyN0miCKXKasA9+78xacpWl4
+	iE0vqdS4/72BrjmwozJS7P+FJyNMxVfaM/Yrd9CLJAD02trsZV3bG2nmZHqvd+i2VZPPPq+dgUcnv
+	K7NgnWK9C0/lyhE8mqlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTo1O-0002xB-Cm; Wed, 29 Apr 2020 14:49:10 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jTo2a-0005Nv-V6; Wed, 29 Apr 2020 14:50:24 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTo10-0002n2-P7
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:48:50 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588171728; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=cBvwW5avddGOz4+VMKe7nngaLFyj5X3264YJy7F3MiY=;
- b=cSLMpwFKghEWqBeaYNB4iEku2xv9gSV3x3bAh6bzYHniZaSo25F1877yZShyOH9CkOLw5JLe
- FOSnP91ikcKRZhJAfV5Ag95vOrnqnM2O76utH1n4o1lhrFnNng58YQ+3Z4ZizKfzbaRgypKu
- p1BK8rdwuAPklnMc8EEx/zRQCms=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ea993c7.7f505680a308-smtp-out-n05;
- Wed, 29 Apr 2020 14:48:39 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 6523EC433F2; Wed, 29 Apr 2020 14:48:38 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B7F75C433CB;
- Wed, 29 Apr 2020 14:48:37 +0000 (UTC)
+ id 1jTo2K-0004Rh-2R
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:50:10 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03TEmXHb002888; Wed, 29 Apr 2020 16:50:05 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=Kr1XXbzLTlBBBZ4y6p9Pc2Y8Dqf2pHM8kUu97rhSPs8=;
+ b=qPTpZJMYIZCSukhS/KRaf8VGAJz9sKiwwCb9HtlYB140Ftw1hKr8cNT5kJvVRAJ6a/dl
+ Id4LZpXwdHSqRYfaE/zGkwrulkDbfo8TurbuXsWnv8feUSvRAYxktZKYdFvZbpePPmzX
+ 41fN5Ag0pm2JGHcbjV2nXmPB6LQfIRAH2HXgQL4UdR10joFX2A3ehFmRzRiAh5/1FggC
+ 7CYp+YEkzbugb7IulSzL0L5J0W5JynnCkJeBjXp3DPvCvPvwYazJXtznWoobr9cRbdgg
+ k+Vt8M94UsN5UPHP6UzatGrkG6M0bTvA4Rtheg6Q/Pmbt26ir3geY9oK2gr+8E63foKv wg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30mhjwy0tv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 29 Apr 2020 16:50:05 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 20E06100034;
+ Wed, 29 Apr 2020 16:50:05 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 10E532AAF6B;
+ Wed, 29 Apr 2020 16:50:05 +0200 (CEST)
+Received: from lmecxl0889.tpe.st.com (10.75.127.46) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
+ 2020 16:50:03 +0200
+Subject: Re: [PATCH v2 08/12] remoteproc: stm32: Introduce new start ops for
+ synchronisation
+To: Mathieu Poirier <mathieu.poirier@linaro.org>, <bjorn.andersson@linaro.org>,
+ <ohad@wizery.com>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
+References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
+ <20200424202505.29562-9-mathieu.poirier@linaro.org>
+From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
+Message-ID: <d9df6dba-6e99-d3cb-56e5-d7b9be0925f8@st.com>
+Date: Wed, 29 Apr 2020 16:50:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Date: Wed, 29 Apr 2020 20:18:37 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-In-Reply-To: <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
-References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
- <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
- <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
- <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
- <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
- <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
- <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
- <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
- <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
-Message-ID: <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+In-Reply-To: <20200424202505.29562-9-mathieu.poirier@linaro.org>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.46]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG3NODE1.st.com
+ (10.75.127.7)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-29_07:2020-04-29,
+ 2020-04-29 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_074848_693772_387ED07D 
-X-CRM114-Status: GOOD (  22.14  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200429_075008_439288_22EED256 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -95,127 +100,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org, linux-remoteproc@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, loic.pallardy@st.com,
+ linux-kernel@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
 
-On 2020-04-29 19:57, Mike Leach wrote:
-> Hi,
-> 
 
-[...]
+On 4/24/20 10:25 PM, Mathieu Poirier wrote:
+> Introduce new start functions to be used when synchonising with an MCU.
+> 
+> Mainly based on the work published by Arnaud Pouliquen [1].
+> 
+> [1]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=239877
+> 
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
->> >> Looking more into replicator1(swao_replicator) values as 0x0 even
->> >> after replicator_reset()
->> >> in replicator probe, I added dynamic_replicator_reset in
->> >> dynamic_replicator_enable()
->> >> and am not seeing any hardlockup. Also I added some prints to check
->> >> the idfilter
->> >> values before and after reset and found that its not set to 0xff even
->> >> after replicator_reset()
->> >> in replicator probe, I don't see any other path setting it to 0x0.
->> >>
->> >> After probe:
->> >>
->> >> [    8.477669] func replicator_probe before reset replicator
->> >> replicator1 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
->> >> [    8.489470] func replicator_probe after reset replicator
->> >> replicator1 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
->> >
->> > AFAICS, after the reset both of them are set to 0xff.
->> 
->> Yes I see this too as we call replicator_reset() in probe. What I 
->> wanted
->> to highlight was the below part where it is set to 0x0 before enabling
->> dynamic replicator.
->> 
->> >
->> >> [    8.502738] func replicator_probe before reset replicator
->> >> replicator0 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
->> >> [    8.515214] func replicator_probe after reset replicator
->> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
->> >
->> >
->> >
->> >> localhost ~ #
->> >> localhost ~ #
->> >> localhost ~ # echo 1 > /sys/bus/coresight/devices/tmc_etr0/enable_sink
->> >> localhost ~ #
->> >> localhost ~ # echo 1 > /sys/bus/coresight/devices/etm0/enable_source
->> >> [   58.490485] func dynamic_replicator_enable before reset replicator
->> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
->> >> [   58.503246] func dynamic_replicator_enable after reset replicator
->> >> replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
->> >> [   58.520902] func dynamic_replicator_enable before reset replicator
->> >> replicator1 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
->> >
->> > You need to find what is resetting the IDFILTERs to 0 for replicator1.
->> >
->> 
->> That is right.
->> 
-> 
-> By default all replicators have the IDFILTER registers set to 0 out of
-> hardware reset. This ensures that programmable replicators behave in
-> the same way as non-programmable replicators out of reset.
-> 
-> The  dynamic_replicator_reset() is of course a driver state reset -
-> which filters out all trace on the output ports. The trace is then
-> enabled when we set the trace path from source to sink.
-> 
-
-Thanks for these explanations.
-
-> It seems to me that you have 2 problems that need solving here:
-> 
-> 1) Why does the reset_replicator() called from probe() _not_ work
-> correctly on replicator 1? It seems to work later if you introduce a
-> reset after more of the system has powered and booted. This is
-> startiing to look a little like a PM / clocking issue.
-
-reset_replicator() does work in probe correctly for both replicators, 
-below logs is collected before and after reset in probe. It is later 
-that it's set back to 0x0 and hence the suggestion to look at firmware 
-using this replicator1.
-
-[    8.477669] func replicator_probe before reset replicator replicator1 
-REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
-[    8.489470] func replicator_probe after reset replicator replicator1 
-REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
-
-> 
-> This failure is causing the state when we are trying to set an output
-> port that both branches of this replicator are enabled for output.
-> In effect for this replicator, setting the output port has no effect
-> as it is already enabled.
-> 
-> 2) Why does having both ports of this repilicator enabled cause a hard
-> lockup? This is a separate hardware  / system issue.
-> 
-> The worst that should happen if both branches of a replicator are
-> enabled is that you get undesirable back pressure. (e.g. there is a
-> system we have seen - I think it is Juno - where there is a static
-> replicator feeding the TPIU and ETR - we need to disable the TPIU to
-> prevent undesired back pressure).
-> 
-
-Ok so hardlockup is not expected because of this backpressure.
+Reviewed-by: Arnaud Pouliquen <arnaud.pouliquen@st.com>
 
 Thanks,
-Sai
+Arnaud
 
--- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+> ---
+>  drivers/remoteproc/stm32_rproc.c | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
+> 
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 8ba69e903851..404f17a97095 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -449,6 +449,13 @@ static int stm32_rproc_start(struct rproc *rproc)
+>  	return stm32_rproc_set_hold_boot(rproc, true);
+>  }
+>  
+> +static int stm32_rproc_sync_start(struct rproc *rproc)
+> +{
+> +	stm32_rproc_add_coredump_trace(rproc);
+> +
+> +	return stm32_rproc_set_hold_boot(rproc, true);
+> +}
+> +
+>  static int stm32_rproc_stop(struct rproc *rproc)
+>  {
+>  	struct stm32_rproc *ddata = rproc->priv;
+> @@ -522,6 +529,10 @@ static struct rproc_ops st_rproc_ops = {
+>  	.get_boot_addr	= rproc_elf_get_boot_addr,
+>  };
+>  
+> +static __maybe_unused struct rproc_ops st_rproc_sync_ops = {
+> +	.start		= stm32_rproc_sync_start,
+> +};
+> +
+>  static const struct of_device_id stm32_rproc_match[] = {
+>  	{ .compatible = "st,stm32mp1-m4" },
+>  	{},
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
