@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE0CD1BE42A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:43:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96ED51BE434
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:46:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YMmNObC4/PH4mhSDVS0+nhfpjFzdB0HxyWeH25GErYY=; b=oUCwj+jQBeBzeh
-	7vie76ddVQ88VifYr3UVijfvh5NPF1Z5lI0SBUi9W0jDkwIm6ZSFNYCH1S4CXblaJx8WCNldmA6BE
-	JyiYnB5EKm+U7cGXLEoUw2UhF+k6bB6y6ppSCFCPjiI7QtJrTzD4JG9vH5WJZi9Fl6jY0Xvd7OXho
-	C1U8gMzzTCqGkmrLCaEt3k7OLargNZ/qH1gzVoI0zX6Yc4Qu3EY92d9CztYeQwwY8SUaIrHpvDkHq
-	N6lgmHkQfftNpBePQSAZrKydVs+f23CpL5apzgLlEvntQuhI52+VzCsUrgynfwtKavu8zctzPk6Sm
-	g9LCVDow013xisNsPipQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Ref+wABRHsUpozNAKQnmQ4zOspICB2UkNCtVBvd/QCo=; b=BnqsuQwJd7bHXt
+	Vo+w/x88NL32G8qRSoIGUFjnbghX2G0j54jnUr/eaWNqZsSfLlVNs/HltYlW9hF+9RpZTxuvPhSPV
+	j2mmr21ka/HzaMY8FOKP49vsGNhIg7jb0l1hstySfRGUH+yjJ0NMYxMf8pojYKxUms7WuJbDrtxIA
+	NpmfxORDzo8CnXB6n+ZKehVZ36zNsqfvebLKQ6LYHplsp8DxvW+/sNdWEti1hbU1My3dU1+9TDoKh
+	KApiKJv5E7QCdEN0S4b6sMVQ85fwoddG6GGpHh7YlVvX2aim4zI5jmu8f1yKQ5lGRKLf+H0hZFJ2p
+	yt42+e+nh7ALCYg1JvjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTpnh-0003kN-Uz; Wed, 29 Apr 2020 16:43:09 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTpnC-0003bc-3i; Wed, 29 Apr 2020 16:42:47 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 56B6020787;
- Wed, 29 Apr 2020 16:42:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588178557;
- bh=vH8eIR3MMlTacZK4WfkYpv1el05yTxrI9SEhKlzGIcg=;
- h=From:To:Cc:Subject:Date:From;
- b=aV5IKpRSmbzOy/KapP8clDwAjF1XQgvhlAAKcGpyPC3fA71gVOlb1VJEFJUyWeh5R
- b8Q2FzDd80vPcdKaLjRdVqQEl3atumGCJaFIhAFsbNFW1Fz0nhWOEWLApaaE/SvBfl
- OZn2BehNgeP9BLcn27Z3FwzmO5d9zEizNcZLDDyU=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jTpn9-007lrk-7s; Wed, 29 Apr 2020 17:42:35 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: linux-pci@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] PCI: amlogic: meson: Don't use FAST_LINK_MODE to set up link
-Date: Wed, 29 Apr 2020 17:42:30 +0100
-Message-Id: <20200429164230.309922-1-maz@kernel.org>
-X-Mailer: git-send-email 2.26.2
+	id 1jTpqp-0006ex-0n; Wed, 29 Apr 2020 16:46:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTpqf-0006dq-1y
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:46:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 449A51045;
+ Wed, 29 Apr 2020 09:46:11 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 61F2B3F73D;
+ Wed, 29 Apr 2020 09:46:09 -0700 (PDT)
+Date: Wed, 29 Apr 2020 17:46:07 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+Message-ID: <20200429164607.GE30377@arm.com>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-pci@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- yue.wang@Amlogic.com, lorenzo.pieralisi@arm.com, robh@kernel.org,
- bhelgaas@google.com, khilman@baylibre.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <20200421142603.3894-20-catalin.marinas@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_094238_195636_958645B7 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200429_094613_190019_21220F04 
+X-CRM114-Status: GOOD (  33.24  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,61 +63,360 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Kevin Hilman <khilman@baylibre.com>, Yue Wang <yue.wang@Amlogic.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Luis Machado <luis.machado@linaro.org>, Will Deacon <will@kernel.org>,
+ Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Alan Hayward <Alan.Hayward@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-My vim3l board stubbornly refuses to play ball with a bog
-standard PCIe switch (ASM1184e), spitting all kind of errors
-ranging from link never coming up to crazy things like downstream
-ports falling off the face of the planet.
+On Tue, Apr 21, 2020 at 03:25:59PM +0100, Catalin Marinas wrote:
+> Add support for bulk setting/getting of the MTE tags in a tracee's
+> address space at 'addr' in the ptrace() syscall prototype. 'data' points
+> to a struct iovec in the tracer's address space with iov_base
+> representing the address of a tracer's buffer of length iov_len. The
+> tags to be copied to/from the tracer's buffer are stored as one tag per
+> byte.
+> 
+> On successfully copying at least one tag, ptrace() returns 0 and updates
+> the tracer's iov_len with the number of tags copied. In case of error,
+> either -EIO or -EFAULT is returned, trying to follow the ptrace() man
+> page.
+> 
+> Note that the tag copying functions are not performance critical,
+> therefore they lack optimisations found in typical memory copy routines.
 
-Upon investigating how the PCIe RC is configured, I found the
-following nugget: the Sysnopsys DWC PCIe Reference Manual, in the
-section dedicated to the PLCR register, describes bit 7 (FAST_LINK_MODE)
-as:
+Doesn't quite belong here, but:
 
-"Sets all internal timers to fast mode for simulation purposes."
+Can we dump the tags and possible the faulting mode etc. when dumping
+core?
 
-I completely understand the need for setting this bit from a simulation
-perspective, but what I have on my desk is actual silicon, which
-expects timers to have a nominal value (and I expect this is the
-case for most people).
+That information seems potentially valuable for debugging.
+Tweaking the fault mode from a debugger may also be useful (which is
+quite easy to achieve if coredump support is done by wrapping the MTE
+control word in a regset).
 
-Making sure the FAST_LINK_MODE bit is cleared when configuring the RC
-solves this problem.
+These could probably be added later, though.
 
-Fixes: 9c0ef6d34fdb ("PCI: amlogic: Add the Amlogic Meson PCIe controller driver")
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- drivers/pci/controller/dwc/pci-meson.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-index 3715dceca1bf..ca59ba9e0ecd 100644
---- a/drivers/pci/controller/dwc/pci-meson.c
-+++ b/drivers/pci/controller/dwc/pci-meson.c
-@@ -289,11 +289,11 @@ static void meson_pcie_init_dw(struct meson_pcie *mp)
- 	meson_cfg_writel(mp, val, PCIE_CFG0);
- 
- 	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
--	val &= ~LINK_CAPABLE_MASK;
-+	val &= ~(LINK_CAPABLE_MASK | FAST_LINK_MODE);
- 	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
- 
- 	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
--	val |= LINK_CAPABLE_X1 | FAST_LINK_MODE;
-+	val |= LINK_CAPABLE_X1;
- 	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
- 
- 	val = meson_elb_readl(mp, PCIE_GEN2_CTRL_OFF);
--- 
-2.26.2
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Alan Hayward <Alan.Hayward@arm.com>
+> Cc: Luis Machado <luis.machado@linaro.org>
+> Cc: Omair Javaid <omair.javaid@linaro.org>
+> ---
+> 
+> Notes:
+>     New in v3.
+> 
+>  arch/arm64/include/asm/mte.h         |  17 ++++
+>  arch/arm64/include/uapi/asm/ptrace.h |   3 +
+>  arch/arm64/kernel/mte.c              | 127 +++++++++++++++++++++++++++
+>  arch/arm64/kernel/ptrace.c           |  15 +++-
+>  arch/arm64/lib/mte.S                 |  50 +++++++++++
+>  5 files changed, 211 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/mte.h b/arch/arm64/include/asm/mte.h
+> index 22eb3e06f311..0ca2aaff07a1 100644
+> --- a/arch/arm64/include/asm/mte.h
+> +++ b/arch/arm64/include/asm/mte.h
+> @@ -2,12 +2,21 @@
+>  #ifndef __ASM_MTE_H
+>  #define __ASM_MTE_H
+>  
+> +#define MTE_ALLOC_SIZE	UL(16)
+> +#define MTE_ALLOC_MASK	(~(MTE_ALLOC_SIZE - 1))
+> +#define MTE_TAG_SHIFT	(56)
+> +#define MTE_TAG_SIZE	(4)
+> +
 
+Nit: pointless () on the last two #defines.
+
+[...]
+
+> diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
+> index fa4a4196b248..0cb496ed9bf9 100644
+> --- a/arch/arm64/kernel/mte.c
+> +++ b/arch/arm64/kernel/mte.c
+> @@ -3,12 +3,17 @@
+>   * Copyright (C) 2020 ARM Ltd.
+>   */
+>  
+> +#include <linux/kernel.h>
+> +#include <linux/mm.h>
+>  #include <linux/prctl.h>
+>  #include <linux/sched.h>
+> +#include <linux/sched/mm.h>
+>  #include <linux/thread_info.h>
+> +#include <linux/uio.h>
+>  
+>  #include <asm/cpufeature.h>
+>  #include <asm/mte.h>
+> +#include <asm/ptrace.h>
+>  #include <asm/sysreg.h>
+>  
+>  static void update_sctlr_el1_tcf0(u64 tcf0)
+> @@ -133,3 +138,125 @@ long get_mte_ctrl(void)
+>  
+>  	return ret;
+>  }
+> +
+> +/*
+> + * Access MTE tags in another process' address space as given in mm. Update
+> + * the number of tags copied. Return 0 if any tags copied, error otherwise.
+> + * Inspired by __access_remote_vm().
+> + */
+> +static int __access_remote_tags(struct task_struct *tsk, struct mm_struct *mm,
+> +				unsigned long addr, struct iovec *kiov,
+> +				unsigned int gup_flags)
+> +{
+> +	struct vm_area_struct *vma;
+> +	void __user *buf = kiov->iov_base;
+> +	size_t len = kiov->iov_len;
+> +	int ret;
+> +	int write = gup_flags & FOLL_WRITE;
+> +
+> +	if (down_read_killable(&mm->mmap_sem))
+> +		return -EIO;
+> +
+> +	if (!access_ok(buf, len))
+> +		return -EFAULT;
+
+Leaked down_read()?
+
+> +
+> +	while (len) {
+> +		unsigned long tags, offset;
+> +		void *maddr;
+> +		struct page *page = NULL;
+> +
+> +		ret = get_user_pages_remote(tsk, mm, addr, 1, gup_flags,
+> +					    &page, &vma, NULL);
+> +		if (ret <= 0)
+> +			break;
+> +
+> +		/* limit access to the end of the page */
+> +		offset = offset_in_page(addr);
+> +		tags = min(len, (PAGE_SIZE - offset) / MTE_ALLOC_SIZE);
+> +
+> +		maddr = page_address(page);
+> +		if (write) {
+> +			tags = mte_copy_tags_from_user(maddr + offset, buf, tags);
+> +			set_page_dirty_lock(page);
+> +		} else {
+> +			tags = mte_copy_tags_to_user(buf, maddr + offset, tags);
+> +		}
+> +		put_page(page);
+> +
+> +		/* error accessing the tracer's buffer */
+> +		if (!tags)
+> +			break;
+> +
+> +		len -= tags;
+> +		buf += tags;
+> +		addr += tags * MTE_ALLOC_SIZE;
+> +	}
+> +	up_read(&mm->mmap_sem);
+> +
+> +	/* return an error if no tags copied */
+> +	kiov->iov_len = buf - kiov->iov_base;
+> +	if (!kiov->iov_len) {
+> +		/* check for error accessing the tracee's address space */
+> +		if (ret <= 0)
+> +			return -EIO;
+> +		else
+> +			return -EFAULT;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * Copy MTE tags in another process' address space at 'addr' to/from tracer's
+> + * iovec buffer. Return 0 on success. Inspired by ptrace_access_vm().
+> + */
+> +static int access_remote_tags(struct task_struct *tsk, unsigned long addr,
+> +			      struct iovec *kiov, unsigned int gup_flags)
+> +{
+> +	struct mm_struct *mm;
+> +	int ret;
+> +
+> +	mm = get_task_mm(tsk);
+> +	if (!mm)
+> +		return -EPERM;
+> +
+> +	if (!tsk->ptrace || (current != tsk->parent) ||
+> +	    ((get_dumpable(mm) != SUID_DUMP_USER) &&
+> +	     !ptracer_capable(tsk, mm->user_ns))) {
+> +		mmput(mm);
+> +		return -EPERM;
+> +	}
+> +
+> +	ret = __access_remote_tags(tsk, mm, addr, kiov, gup_flags);
+> +	mmput(mm);
+> +
+> +	return ret;
+> +}
+> +
+> +int mte_ptrace_copy_tags(struct task_struct *child, long request,
+> +			 unsigned long addr, unsigned long data)
+> +{
+> +	int ret;
+> +	struct iovec kiov;
+> +	struct iovec __user *uiov = (void __user *)data;
+> +	unsigned int gup_flags = FOLL_FORCE;
+> +
+> +	if (!system_supports_mte())
+> +		return -EIO;
+> +
+> +	if (get_user(kiov.iov_base, &uiov->iov_base) ||
+> +	    get_user(kiov.iov_len, &uiov->iov_len))
+> +		return -EFAULT;
+> +
+> +	if (request == PTRACE_POKEMTETAGS)
+> +		gup_flags |= FOLL_WRITE;
+> +
+> +	/* align addr to the MTE tag granule */
+> +	addr &= MTE_ALLOC_MASK;
+> +
+> +	ret = access_remote_tags(child, addr, &kiov, gup_flags);
+> +	if (!ret)
+> +		ret = __put_user(kiov.iov_len, &uiov->iov_len);
+
+Should this be put_user()?  We didn't use __get_user() above, and I
+don't see what guards the access.
+
+> +
+> +	return ret;
+> +}
+> diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+> index 077e352495eb..1fdb841ad536 100644
+> --- a/arch/arm64/kernel/ptrace.c
+> +++ b/arch/arm64/kernel/ptrace.c
+> @@ -34,6 +34,7 @@
+>  #include <asm/cpufeature.h>
+>  #include <asm/debug-monitors.h>
+>  #include <asm/fpsimd.h>
+> +#include <asm/mte.h>
+>  #include <asm/pgtable.h>
+>  #include <asm/pointer_auth.h>
+>  #include <asm/stacktrace.h>
+> @@ -1797,7 +1798,19 @@ const struct user_regset_view *task_user_regset_view(struct task_struct *task)
+>  long arch_ptrace(struct task_struct *child, long request,
+>  		 unsigned long addr, unsigned long data)
+>  {
+> -	return ptrace_request(child, request, addr, data);
+> +	int ret;
+> +
+> +	switch (request) {
+> +	case PTRACE_PEEKMTETAGS:
+> +	case PTRACE_POKEMTETAGS:
+> +		ret = mte_ptrace_copy_tags(child, request, addr, data);
+> +		break;
+
+Nit: return mte_trace_copy_tags()?
+
+This is a new function, so we don't need to follow the verbose style of
+the core code.  Not everyone likes returning out of switches though.
+
+> +	default:
+> +		ret = ptrace_request(child, request, addr, data);
+> +		break;
+> +	}
+> +
+> +	return ret;
+>  }
+>  
+>  enum ptrace_syscall_dir {
+> diff --git a/arch/arm64/lib/mte.S b/arch/arm64/lib/mte.S
+> index bd51ea7e2fcb..45be04a8c73c 100644
+> --- a/arch/arm64/lib/mte.S
+> +++ b/arch/arm64/lib/mte.S
+> @@ -5,6 +5,7 @@
+>  #include <linux/linkage.h>
+>  
+>  #include <asm/assembler.h>
+> +#include <asm/mte.h>
+>  
+>  /*
+>   * Compare tags of two pages
+> @@ -44,3 +45,52 @@ SYM_FUNC_START(mte_memcmp_pages)
+>  
+>  	ret
+>  SYM_FUNC_END(mte_memcmp_pages)
+> +
+> +/*
+> + * Read tags from a user buffer (one tag per byte) and set the corresponding
+> + * tags at the given kernel address. Used by PTRACE_POKEMTETAGS.
+> + *   x0 - kernel address (to)
+> + *   x1 - user buffer (from)
+> + *   x2 - number of tags/bytes (n)
+
+Is it worth checking for x2 == 0?  Currently, x2 will underflow and
+we'll try to loop 2^64 times (until a fault stops us).
+
+I don't think callers currently pass 0 here, but it feels like an
+accident waiting to happen.  Things like memcpy() usually try to close
+this loophole.
+
+Similarly for _to_user().
+
+Cheers
+---Dave
+
+> + * Returns:
+> + *   x0 - number of tags read/set
+> + */
+> +SYM_FUNC_START(mte_copy_tags_from_user)
+> +	mov	x3, x1
+> +1:
+> +USER(2f, ldtrb	w4, [x1])
+> +	lsl	x4, x4, #MTE_TAG_SHIFT
+> +	stg	x4, [x0], #MTE_ALLOC_SIZE
+> +	add	x1, x1, #1
+> +	subs	x2, x2, #1
+> +	b.ne	1b
+> +
+> +	// exception handling and function return
+> +2:	sub	x0, x1, x3		// update the number of tags set
+> +	ret
+> +SYM_FUNC_END(mte_copy_tags_from_user)
+> +
+> +/*
+> + * Get the tags from a kernel address range and write the tag values to the
+> + * given user buffer (one tag per byte). Used by PTRACE_PEEKMTETAGS.
+> + *   x0 - user buffer (to)
+> + *   x1 - kernel address (from)
+> + *   x2 - number of tags/bytes (n)
+> + * Returns:
+> + *   x0 - number of tags read/set
+> + */
+> +SYM_FUNC_START(mte_copy_tags_to_user)
+> +	mov	x3, x0
+> +1:
+> +	ldg	x4, [x1]
+> +	ubfx	x4, x4, #MTE_TAG_SHIFT, #MTE_TAG_SIZE
+> +USER(2f, sttrb	w4, [x0])
+> +	add	x0, x0, #1
+> +	add	x1, x1, #MTE_ALLOC_SIZE
+> +	subs	x2, x2, #1
+> +	b.ne	1b
+> +
+> +	// exception handling and function return
+> +2:	sub	x0, x0, x3		// update the number of tags copied
+> +	ret
+> +SYM_FUNC_END(mte_copy_tags_from_user)
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
