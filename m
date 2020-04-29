@@ -2,100 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AD4F1BE342
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 17:59:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E65191BE347
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:02:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8It+AcUYasBau81JpOfeLcazHv8S8BSKm0XsAIqPTRo=; b=H85wn+zt033H8q
-	ps2I+Cj85GeHXyhn67okwskHLdQrr4A3oP3iLv7Bd5gwZyR7QiX2fmYuzyr8pG0fspSkoGeJmtddi
-	FhZHVpG3Trq2HZTlRnLl7WFN4TN4s/vBa1PPjb72Yo5+SWLXOilnUhJxjt9UL7c2sGDqqBeGgsiLT
-	cDu7HAUy7+y4hT+0M25y+n/eiIEninOdEpe6M79NDQ3qXSX6KguB1jd/LHUwLhuYVY8jDIhLrhjyU
-	qgCzoj1afM9oEAMr+mQsJKjP7arBUPxwzTvqHT3dB5hgpo3gacM63nSvBbXQ0GLGYZs/nRd69QpPF
-	Dh1ZLCSWocdXe3XLJXRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=miFaptp4FXQw4R5AIKvhZpFcoArgGJdv+1dJtMfmitE=; b=ZD582pfKEIvmPIghHzIXVKVBR
+	+IJGBa4FLfg3IeEZ/T6waHGBUk6+MJPGsRH3rzxZyZPJWTkd/8wAaJuFuuVLpHSq65dpVPRko1r7f
+	lh4nVaKPrmyR6ko2Sut03N1NITuoQLeZNorIemhvRlb7k2bLmMrozACPyIMHhA541xdmZmgpZ2j+e
+	9f3dHDEn4r3YhnMy8sLByOwjImePyog2zxhWalzuDjw9zuXoLvSguCk956eiHhC8QLIDWwxsdy6kG
+	zwU5h4+hyiZqGeaYP6cc7YdvpH3uTgBpuZNfom5PvgYadEhI4hGXknW0/Q+gG37IU6jetQ9dkjY1j
+	CRBvObUXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTp7i-0007CN-0E; Wed, 29 Apr 2020 15:59:46 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTp5e-0005Us-7D
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 15:57:41 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03TFuuIM025268; Wed, 29 Apr 2020 17:57:23 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=eCkbsHOC25FPIY1TTTZpD48jm9gXnoWIY4Y9Jr6sfic=;
- b=e53jiOwYKO+LkzbBqboM45RGmMiiNkfaPP7dB0FnECk37XNxJDKYXKJMGbOfKFUYwjSE
- 8dP5SR4YDXAyTNwQ4NxhiLrUCZAJF+Zafkjf+cRlDYacMCuo4H+eonM8wdy2r+K550a2
- 3nFsUM0ABpsrSC4gLE9tnea1Xbm7+7dUF43as0cNgn5S7Xi728/+i69xr9UFwX2suOkI
- WPeluJ/H57/IfWNpu8ApMehPvf06gWc96+I9LdK3rupRqwMHzisCxjgqIJXAyKIkLWgo
- hWxeqVIMJtMv8osZYnjXx5lT84OGwDv95LYkAsV05mYwPN18/i2JqFczglp3t7YKtgLm rA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhq67a5f-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 29 Apr 2020 17:57:23 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 579AF100034;
- Wed, 29 Apr 2020 17:57:22 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 1E9D52AD2DB;
- Wed, 29 Apr 2020 17:57:22 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
- 2020 17:57:21 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Wed, 29 Apr 2020 17:57:21 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: "Rafael J. Wysocki" <rjw@rjwysocki.net>
-Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Topic: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Index: AQHWGi06wBgeAQBseECYOK/U7Qvw76iQJdAAgAACCYA=
-Date: Wed, 29 Apr 2020 15:57:21 +0000
-Message-ID: <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
-References: <20200424114058.21199-1-benjamin.gaignard@st.com>
- <7657495.QyJl4BcWH5@kreacher>
-In-Reply-To: <7657495.QyJl4BcWH5@kreacher>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.51]
-Content-ID: <C0367D8B3A5F0840A331F12D91CA5561@st.com>
+	id 1jTpAR-0002ma-HA; Wed, 29 Apr 2020 16:02:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTpAH-0002mB-A1
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:02:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 73C6E1045;
+ Wed, 29 Apr 2020 09:02:24 -0700 (PDT)
+Received: from [10.57.22.235] (unknown [10.57.22.235])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 777933F73D;
+ Wed, 29 Apr 2020 09:02:21 -0700 (PDT)
+Subject: Re: [PATCH v2] arm64: Optimize ptrauth by enabling it for non-leaf
+ functions
+To: Mark Rutland <mark.rutland@arm.com>
+References: <1588149371-20310-1-git-send-email-amit.kachhap@arm.com>
+ <20200429101839.GB28631@C02TD0UTHF1T.local>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <996f1dfb-7df8-df15-7957-3e9d7994348e@arm.com>
+Date: Wed, 29 Apr 2020 21:31:59 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-29_08:2020-04-29,
- 2020-04-29 signatures=0
+In-Reply-To: <20200429101839.GB28631@C02TD0UTHF1T.local>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_085738_771355_C5996638 
-X-CRM114-Status: GOOD (  16.05  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_090225_437394_7CAFC4FE 
+X-CRM114-Status: GOOD (  28.45  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,49 +65,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "len.brown@intel.com" <len.brown@intel.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>, "pavel@ucw.cz" <pavel@ucw.cz>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Daniel Kiss <daniel.kiss@arm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Mark,
 
+On 4/29/20 3:48 PM, Mark Rutland wrote:
+> Hi Amit,
+> 
+> On Wed, Apr 29, 2020 at 02:06:10PM +0530, Amit Daniel Kachhap wrote:
+>> Compilers are optimized to not create the frame record for the leaf
+>> function and hence lr is not signed and stored in the stack. Thus the leaf
+>> functions cannot be used for ROP gadget attack.
+> 
+> IIUC Will's point on the last posting was that leaf functions can be
+> used as a restricted ROP gadget, where the LR isn't controlled via the
+> stack.
+> 
+> e.g. you might have a gadget that does something like:
+> 
+> <gadget>:
+> 	LDP	x0, x1, [SP], #16
+> 	STR	x0, [x1]
+> 	RET				// LR == <gadget>
+> 
+> ... and if the LR had previously been set up to point to gadget, it
+> would return recursively, performing a sequence of arbitrary stores.
+> With an AUT, it would fail after the first store.
+> 
+> That does rely on already subverting control flow (probably via a
+> forward-edge BR where we don't have BTI), and so maybe we've already
+> lost in practical terms, but there is at least some possibility of a
+> gadget that AUT would catch here. There's some nuance to capture in the
+> commit message for that.
 
-On 4/29/20 5:50 PM, Rafael J. Wysocki wrote:
-> On Friday, April 24, 2020 1:40:55 PM CEST Benjamin Gaignard wrote:
->> When start streaming from the sensor the CPU load could remain very low
->> because almost all the capture pipeline is done in hardware (i.e. without
->> using the CPU) and let believe to cpufreq governor that it could use lower
->> frequencies. If the governor decides to use a too low frequency that
->> becomes a problem when we need to acknowledge the interrupt during the
->> blanking time.
->> The delay to ack the interrupt and perform all the other actions before
->> the next frame is very short and doesn't allow to the cpufreq governor to
->> provide the required burst of power. That led to drop the half of the frames.
+ok sure. It makes sense to write some details for this scenario. Thanks 
+for the details.
+
+> 
+>> This patch selects pointer authentication only for non-leaf function
+>> and the compiler option is modified to -mbranch-protection=pac-ret and
+>> -msign-return-address=non-leaf.
 >>
->> To avoid this problem, DCMI driver informs the cpufreq governors by adding
->> a cpufreq minimum load QoS resquest.
-> This seems to be addressing a use case that can be addressed with the help of
-> utilization clamps with less power overhead.
-Do mean clamping the policy frequencies ? I may have miss the API to do 
-that...
->
-> Thanks!
->
->
->
+>> As there are no PAC instructions(PACIASP and AUTIASP) inserted in the leaf
+>> functions so the kernel code size reduces by ~0.01%.
+> 
+> Do we expect this to matter? The size difference isn't that large, so is
+> there a performance issue?
+> 
+> Are there any leaf functions which we consider critical to performance?
+> 
+> I know that one concern is that PACIASP acts as an implicit landing pad,
+> and so its use everywhere potentially weakens BTI. Do we have any data
+> to indicate that would be a concern here? e.g. with and without this,
+> how many instances of  PACIASP and BTI *C exist?
+
+I don't have any dynamic performance numbers now. I have some static 
+numbers from 5.7-rc1 kernel with a simple grep.
+
+Total functions(leaf+non leaf) = 55682(PACIASP instructions).
+Total non-leaf functions = 47425.
+so leaf functions = 8257(14.8% of total).
+
+Leaf functions used for indirect calls = 1345 (extra "bti c" 
+instructions if -mbranch-protection=standard used).
+Leaf functions used for direct calls = 6192.
+
+So statically there should be performance improvement with this patch.
+
+Reduction of extra instructions with ptrauth = 14.8%
+Reduction of extra instructions with both ptrauth + bti = 12.32%
+
+Cheers,
+Amit
+> 
+> Thanks,
+> Mark.
+> 
+>> Note, As PACIASP instruction is also used for Armv8.5 BTI branching so the
+>> compiler may insert BTI instructions in case of leaf functions which are
+>> candidate of JOP gadget for the upcoming BTI in-kernel support.
+>>
+>> Reported-by: Daniel Kiss <daniel.kiss@arm.com>
+>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>> ---
+>> Changes since v1:
+>> * Updated the commit logs as per the comments from Will and Mark[1].
+>>
+>> [1]: https://www.spinics.net/lists/arm-kernel/msg798518.html
+>>
+>>
+>>   arch/arm64/Kconfig  | 4 ++--
+>>   arch/arm64/Makefile | 4 ++--
+>>   2 files changed, 4 insertions(+), 4 deletions(-)
+>>
+>> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+>> index 40fb05d..29cfe05 100644
+>> --- a/arch/arm64/Kconfig
+>> +++ b/arch/arm64/Kconfig
+>> @@ -1541,11 +1541,11 @@ config ARM64_PTR_AUTH
+>>   
+>>   config CC_HAS_BRANCH_PROT_PAC_RET
+>>   	# GCC 9 or later, clang 8 or later
+>> -	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
+>> +	def_bool $(cc-option,-mbranch-protection=pac-ret)
+>>   
+>>   config CC_HAS_SIGN_RETURN_ADDRESS
+>>   	# GCC 7, 8
+>> -	def_bool $(cc-option,-msign-return-address=all)
+>> +	def_bool $(cc-option,-msign-return-address=non-leaf)
+>>   
+>>   config AS_HAS_PAC
+>>   	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
+>> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+>> index 85e4149..895f506 100644
+>> --- a/arch/arm64/Makefile
+>> +++ b/arch/arm64/Makefile
+>> @@ -70,8 +70,8 @@ endif
+>>   branch-prot-flags-y += $(call cc-option,-mbranch-protection=none)
+>>   
+>>   ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+>> -branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+>> -branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
+>> +branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=non-leaf
+>> +branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret
+>>   # -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the
+>>   # compiler to generate them and consequently to break the single image contract
+>>   # we pass it only to the assembler. This option is utilized only in case of non
+>> -- 
+>> 2.7.4
+>>
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
