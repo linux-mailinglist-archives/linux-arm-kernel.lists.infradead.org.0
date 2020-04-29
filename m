@@ -2,61 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FC651BDA5A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:08:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69B911BDA6A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:13:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=14eQ1i9jsalYmGTBg9hYau8YnQqBxp5Ff+o12wyJcog=; b=nWiTLoXYPSvKIGTbw7yqJIsJu
-	mmgQRkFkR0JPxJw8XQ9bqArzdxU3NnvB0BvdMybgGor7tuY2CBwmeAb0qfjj87i+ubcCofuXCkuRP
-	KTUIXeyHFmmeps7rQkxWB/kni8ETG5eTvHixXd3oeBz4TovBC4zX2+DlG44fWPY/+9dLsNj/VAFMV
-	D3X/MGNX1EBpy+H7bEZPtzrNN4fCdd7uEnZem7FGC4pldPQMk8FbbUraSDPnoE8yfh4neO4temeiM
-	k1DuF6mxw+AKmFzo4Kv/sRKiRojpcSTGxKcYVVHIUU6F0DaVgY7expkDnuevvbN6Uo4BvRe75eYoC
-	trJb3t0fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=En2/4nlBWI9C+rUYizv7CjbSFhtB4jNFF/1Gcb3UfZk=; b=sHUsvuYqDROmAR
+	sPDW1AzARM+QRsOFlGQkIrlrj+NAaR6oatfm9BPtGBDbWgssAkS+IpuISG39yuSjxA/NiXuCnzgVV
+	3dyUASQTtJNQGG3ieI2SRX/aKTa4QsiN29wpG3P3008ZBl0h9V/maP/O6V0GI2oWV9rt7xrYUQfPM
+	32xUG+0uE8QLf2tns11ycpDmbEIEzi3Guauzpm5UT3iH6DsbXggyHMUG3wsHH0twuAfhtEOXqUyQI
+	5DzjvwQwjkxqjdCV5xgEGmJYQ6SmDgNnaXsqscZkjnUPEJ/GqEYymPg8R9heSd4O6aHTGxqoNKqT/
+	X09gwcd1x7WeUerXsO0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTkZY-00022U-IN; Wed, 29 Apr 2020 11:08:12 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTkZO-00021S-VT
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:08:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBABE1042;
- Wed, 29 Apr 2020 04:08:01 -0700 (PDT)
-Received: from [10.57.33.170] (unknown [10.57.33.170])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E52D3F73D;
- Wed, 29 Apr 2020 04:07:59 -0700 (PDT)
-Subject: Re: [linux-sunxi] Re: Audio sound card name [was [PATCH 4/7] arm64:
- dts: allwinner: a64: Add HDMI audio]
-To: =?UTF-8?Q?Jernej_=c5=a0krabec?= <jernej.skrabec@siol.net>,
- Maxime Ripard <maxime@cerno.tech>, Chen-Yu Tsai <wens@csie.org>
-References: <20200426120442.11560-1-peron.clem@gmail.com>
- <20200429081729.qa3gqtl5sof2jhem@gilmour.lan>
- <f9b701d9-0c4e-6e41-1ce8-52adf0f59a2a@arm.com>
- <2545943.S5iK65abk1@jernej-laptop>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <8a6b9707-d6c0-04ea-97a6-27cbbe468631@arm.com>
-Date: Wed, 29 Apr 2020 12:07:56 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jTkek-0005jK-S4; Wed, 29 Apr 2020 11:13:34 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTkeZ-0005ii-So
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:13:25 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 80288634C8F;
+ Wed, 29 Apr 2020 14:13:07 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1jTkeJ-0000JO-AB; Wed, 29 Apr 2020 14:13:07 +0300
+Date: Wed, 29 Apr 2020 14:13:07 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [PATCH v5 v5 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200429111307.GA867@valkosipuli.retiisi.org.uk>
+References: <20200428180718.1609826-1-robert.foss@linaro.org>
+ <20200428180718.1609826-2-robert.foss@linaro.org>
+ <20200429090012.vhhwatojkncjquwd@gilmour.lan>
+ <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <2545943.S5iK65abk1@jernej-laptop>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_040803_100649_DC4FE90E 
-X-CRM114-Status: GOOD (  24.97  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200429_041324_288920_85B3176A 
+X-CRM114-Status: GOOD (  27.44  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,121 +69,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>,
  linux-kernel <linux-kernel@vger.kernel.org>,
- Marcus Cooper <codekipper@gmail.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
- =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+ Marco Felsch <m.felsch@pengutronix.de>, Maxime Ripard <maxime@cerno.tech>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNC0yOSAxMTo1MyBhbSwgSmVybmVqIMWga3JhYmVjIHdyb3RlOgo+IERuZSBzcmVk
-YSwgMjkuIGFwcmlsIDIwMjAgb2IgMTI6NDM6MDYgQ0VTVCBqZSBSb2JpbiBNdXJwaHkgbmFwaXNh
-bChhKToKPj4gT24gMjAyMC0wNC0yOSA5OjE3IGFtLCBNYXhpbWUgUmlwYXJkIHdyb3RlOgo+Pj4g
-T24gV2VkLCBBcHIgMjksIDIwMjAgYXQgMDI6MjQ6MDBQTSArMDgwMCwgQ2hlbi1ZdSBUc2FpIHdy
-b3RlOgo+Pj4+IE9uIFdlZCwgQXByIDI5LCAyMDIwIGF0IDE6MTEgQU0gUm9iaW4gTXVycGh5IDxy
-b2Jpbi5tdXJwaHlAYXJtLmNvbT4KPiB3cm90ZToKPj4+Pj4gT24gMjAyMC0wNC0yOCA1OjQ5IHBt
-LCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4+Pj4+PiBIaSBNYXJrLCBSb2IsCj4+Pj4+Pgo+Pj4+
-Pj4gT24gVHVlLCAyOCBBcHIgMjAyMCBhdCAxODowNCwgTWF4aW1lIFJpcGFyZCA8bWF4aW1lQGNl
-cm5vLnRlY2g+IHdyb3RlOgo+Pj4+Pj4+IE9uIFR1ZSwgQXByIDI4LCAyMDIwIGF0IDEwOjU0OjAw
-QU0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPj4+Pj4+Pj4gSGkgTWF4aW1lLAo+Pj4+
-Pj4+Pgo+Pj4+Pj4+PiBPbiBUdWUsIDI4IEFwciAyMDIwIGF0IDEwOjAwLCBNYXhpbWUgUmlwYXJk
-IDxtYXhpbWVAY2Vybm8udGVjaD4KPiB3cm90ZToKPj4+Pj4+Pj4+IE9uIFN1biwgQXByIDI2LCAy
-MDIwIGF0IDAyOjA0OjM5UE0gKzAyMDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPj4+Pj4+Pj4+
-PiBGcm9tOiBNYXJjdXMgQ29vcGVyIDxjb2Rla2lwcGVyQGdtYWlsLmNvbT4KPj4+Pj4+Pj4+Pgo+
-Pj4+Pj4+Pj4+IEFkZCBhIHNpbXBsZS1zb3VuZGNhcmQgdG8gbGluayBhdWRpbyBiZXR3ZWVuIEhE
-TUkgYW5kIEkyUy4KPj4+Pj4+Pj4+Pgo+Pj4+Pj4+Pj4+IFNpZ25lZC1vZmYtYnk6IEplcm5laiBT
-a3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9sLm5ldD4KPj4+Pj4+Pj4+PiBTaWduZWQtb2ZmLWJ5
-OiBNYXJjdXMgQ29vcGVyIDxjb2Rla2lwcGVyQGdtYWlsLmNvbT4KPj4+Pj4+Pj4+PiBTaWduZWQt
-b2ZmLWJ5OiBDbMOpbWVudCBQw6lyb24gPHBlcm9uLmNsZW1AZ21haWwuY29tPgo+Pj4+Pj4+Pj4+
-IC0tLQo+Pj4+Pj4+Pj4+Cj4+Pj4+Pj4+Pj4gICAgIGFyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lu
-bmVyL3N1bjUwaS1hNjQuZHRzaSB8IDIxCj4+Pj4+Pj4+Pj4gICAgICsrKysrKysrKysrKysrKysr
-KysKPj4+Pj4+Pj4+PiAgICAgMSBmaWxlIGNoYW5nZWQsIDIxIGluc2VydGlvbnMoKykKPj4+Pj4+
-Pj4+Pgo+Pj4+Pj4+Pj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FsbHdpbm5l
-ci9zdW41MGktYTY0LmR0c2kKPj4+Pj4+Pj4+PiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lu
-bmVyL3N1bjUwaS1hNjQuZHRzaSBpbmRleAo+Pj4+Pj4+Pj4+IGU1NmUxZTNkNGI3My4uMDhhYjZi
-NWU3MmE1IDEwMDY0NAo+Pj4+Pj4+Pj4+IC0tLSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYWxsd2lu
-bmVyL3N1bjUwaS1hNjQuZHRzaQo+Pj4+Pj4+Pj4+ICsrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMv
-YWxsd2lubmVyL3N1bjUwaS1hNjQuZHRzaQo+Pj4+Pj4+Pj4+IEBAIC0xMDIsNiArMTAyLDI1IEBA
-Cj4+Pj4+Pj4+Pj4KPj4+Pj4+Pj4+PiAgICAgICAgICAgICAgICAgIHN0YXR1cyA9ICJkaXNhYmxl
-ZCI7Cj4+Pj4+Pj4+Pj4gICAgICAgICAgCj4+Pj4+Pj4+Pj4gICAgICAgICAgfTsKPj4+Pj4+Pj4+
-Pgo+Pj4+Pj4+Pj4+ICsgICAgIGhkbWlfc291bmQ6IGhkbWktc291bmQgewo+Pj4+Pj4+Pj4+ICsg
-ICAgICAgICAgICAgY29tcGF0aWJsZSA9ICJzaW1wbGUtYXVkaW8tY2FyZCI7Cj4+Pj4+Pj4+Pj4g
-KyAgICAgICAgICAgICBzaW1wbGUtYXVkaW8tY2FyZCxmb3JtYXQgPSAiaTJzIjsKPj4+Pj4+Pj4+
-PiArICAgICAgICAgICAgIHNpbXBsZS1hdWRpby1jYXJkLG5hbWUgPSAiYWxsd2lubmVyLGhkbWki
-Owo+Pj4+Pj4+Pj4KPj4+Pj4+Pj4+IEknbSBub3Qgc3VyZSB3aGF0IHRoZSB1c3VhbCBjYXJkIG5h
-bWUgc2hvdWxkIGJlIGxpa2UgdGhvdWdoLiBJIHdvdWxkCj4+Pj4+Pj4+PiBhc3N1bWUgdGhhdCB0
-aGlzIHNob3VsZCBiZSBzb21ldGhpbmcgc3BlY2lmaWMgZW5vdWdoIHNvIHRoYXQgeW91J3JlCj4+
-Pj4+Pj4+PiBhYmxlIHRvIGRpZmZlcmVudGlhdGUgYmV0d2VlbiBib2FyZHMgLyBTb0Mgc28gdGhh
-dCB0aGUgdXNlcnNwYWNlCj4+Pj4+Pj4+PiBjYW4gY2hvb3NlIGEgZGlmZmVyZW50IGNvbmZpZ3Vy
-YXRpb24gYmFzZWQgb24gaXQ/Cj4+Pj4+Pj4+Cj4+Pj4+Pj4+IEkgcmVhbGx5IGRvbid0IGtub3cg
-d2hhdCB3ZSBzaG91bGQgdXNlIGhlcmUsCj4+Pj4+Pj4+IEkganVzdCBoYXZlIGEgbG9vayBhdCBv
-dGhlciBTb0M6Cj4+Pj4+Pj4+IHJrMzMyODogIkhETUkiCj4+Pj4+Pj4+IHJrMzM5OTogImhkbWkt
-c291bmQiCj4+Pj4+Pj4+IHI4YTc3NGMwLWNhdDg3NDogIkNBVDg3NCBIRE1JIHNvdW5kIgo+Pj4+
-Pj4+Pgo+Pj4+Pj4+PiBCdXQgbWF5YmUgaXQncyB0aW1lIHRvIGludHJvZHVjZSBwcm9wZXIgbmFt
-ZToKPj4+Pj4+Pj4gV2hhdCBhYm91dCA6Cj4+Pj4+Pj4+IHBhdAo+Pj4+Pj4+PiBzdW41MGktaDYt
-aGRtaQo+Pj4+Pj4+Cj4+Pj4+Pj4gSXQncyBwcmV0dHkgbXVjaCB3aGF0IHdlJ3ZlIGJlZW4gdXNp
-bmcgZm9yIHRoZSBvdGhlciBzb3VuZCBjYXJkcyB3ZQo+Pj4+Pj4+IGhhdmUsIHNvIGl0IG1ha2Vz
-IHNlbnNlIHRvIG1lLgo+Pj4+Pj4KPj4+Pj4+IEkgaGF2ZSBhIHF1ZXN0aW9uIHJlZ2FyZGluZyB0
-aGUgc2ltcGxlLWF1ZGlvLWNhcmQsbmFtZS4KPj4+Pj4+IEluIHRoaXMgcGF0Y2gsIEkgd291bGQg
-bGlrZSB0byBpbnRyb2R1Y2UgYSBzaW1wbGUtYXVkaW8tY2FyZCBmb3IgdGhlCj4+Pj4+PiBBbGx3
-aW5uZXIgQTY0IEhETUkuCj4+Pj4+Pgo+Pj4+Pj4gV2hhdCBzaG91bGQgYmUgdGhlIHByZWZlcnJl
-ZCBuYW1lIGZvciB0aGlzIHNvdW5kIGNhcmQ/Cj4+Pj4+PiAic3VuNTBpLWE2NC1oZG1pIiA/ICJh
-bGx3aW5uZXIsIHN1bjUwaS1hNjQtaGRtaSIgPwo+Pj4+Pgo+Pj4+PiBJIGNhbiBhdCBsZWFzdCBz
-cGVhayBmb3IgUkszMzI4LCBhbmQgdGhlIHJlYXNvbmluZyB0aGVyZSB3YXMgdGhhdCBhcyB0aGUK
-Pj4+Pj4gdXNlciBsb29raW5nIGF0IHdoYXQgYGFwbGF5IC1sYCBzYXlzLCBJIGRvbid0IGdpdmUg
-YSBob290IGFib3V0IHdoYXQgdGhlCj4+Pj4+IFNvQyBtYXkgYmUgY2FsbGVkLCBJIHNlZSB0d28g
-Y2FyZHMgYW5kIEkgd2FudCB0byBrbm93LCB3aXRoIHRoZSBsZWFzdAo+Pj4+PiBhbW91bnQgb2Yg
-dW5jZXJ0YWludHksIHdoaWNoIG9uZSB3aWxsIG1ha2UgdGhlIHNvdW5kIGNvbWUgb3V0IG9mIHRo
-ZQo+Pj4+PiBwb3J0IHRoYXQncyBsYWJlbGxlZCAiSERNSSIgb24gdGhlIGJveCA7KQo+Pj4+Cj4+
-Pj4gSSBhZ3JlZS4gVGhlIHVzZXIgcmVhbGx5IGRvZXNuJ3QgY2FyZSB3aGF0IFNvQyB0aGUgc3lz
-dGVtIHVzZXMuIFRoZSBvbmx5Cj4+Pj4gcmVhbCByZXF1aXJlbWVudCBpcyB0byBiZSBhYmxlIHRv
-IHRlbGwgd2hpY2ggb3V0cHV0IHRoZSBjYXJkIGlzIHJlbGF0ZWQKPj4+PiB0bywgaS5lLiBpcyBp
-dCBvbmJvYXJkIG9yIGFuIGV4dGVybmFsIERBQywgaXMgaXQgYW5hbG9nIG9yIEhETUksIGV0Yy4u
-Cj4+Pgo+Pj4gWWVhaCwgYnV0IGl0J3MgZXhhY3RseSB0aGUgcG9pbnQuCj4+Pgo+Pj4gSWYgd2Ug
-YWxzbyBlbmQgdXAgd2l0aCAiSERNSSIgYXMgb3VyIGNhcmQgbmFtZSwgdGhlbiB0aGUgdXNlcnNw
-YWNlIGhhcyBubwo+Pj4gd2F5IHRvIHRlbGwgYW55bW9yZSBpZiBpdCdzIHJ1bm5pbmcgZnJvbSBh
-biByazMzMjggb3IgYW4gYWxsd2lubmVyIFNvQywKPj4+IG9yIHNvbWV0aGluZyBlbHNlIGVudGly
-ZWx5LiBBbmQgdGhlcmVmb3JlIGl0IGNhbm5vdCByZWFsbHkgY29uZmlndXJlCj4+PiBhbnl0aGlu
-ZyB0byB3b3JrIG91dCBvZiB0aGUgYm94IGFueW1vcmUuCj4+Cj4+IE9LLCB5b3UncmUgYSB1c2Vy
-c3BhY2UgYXVkaW8gYXBwbGljYXRpb24gLSBlbmxpZ2h0ZW4gbWUgYXMgdG8gd2hhdCBleGFjdAo+
-PiBjaGlwIHlvdSdyZSBydW5uaW5nIG9uIGhlcmUsIGFuZCB3aHkgeW91IG5lZWQgdG8ga25vdzoK
-Pj4KPj4gY2FyZCAwOiBIRE1JIFtIREEgQVRJIEhETUldCj4+Cj4+IG9yIGhvdyBhYm91dCBoZXJl
-Pwo+Pgo+PiBjYXJkIDA6IEludGVsIFtIREEgSW50ZWxdCj4+Cj4+Cj4+IEZ1cnRoZXJtb3JlLCB5
-b3VyIGFyZ3VtZW50IHdvcmtzIGJvdGggd2F5cyAtIGlmIHRoZSBlcXVpdmFsZW50IChvciBpbgo+
-PiBjb21tb24gY2FzZXMgbGlrZSBEZXNpZ25XYXJlIElQIGJsb2NrcywgZXhhY3Qgc2FtZSkgdGhp
-bmcgYWNyb3NzIDMKPj4gZGlmZmVyZW50IFNvQ3MgaGFzIDMgZGlmZmVyZW50IG5hbWVzLCB0aGVu
-IGl0J3MgdGhhdCBtdWNoIGhhcmRlciBmb3IKPj4gdXNlcnNwYWNlIHRoYXQgd2FudHMgdG8gcHJl
-c2VudCBhIGNvbnNpc3RlbnQgYmVoYXZpb3VyLiBJIGRvbid0IGtub3cKPj4gZXhhY3RseSB3aHkg
-TGlicmVFTEVDIGhhdmUgZG93bnN0cmVhbSBwYXRjaGVzIHRoYXQgc3RhbmRhcmRpc2UgYWxsIHRo
-ZQo+PiBSb2NrY2hpcCBvbmVzIHRvICJIRE1JIiwgYnV0IEkgY2FuJ3QgaGVscCBub3RpbmcgdGhh
-dCB0aGV5IGRvLgo+Pgo+PiBXaXRoIHNpbXBsZS1hdWRpby1jYXJkIHdlJ3JlIHRhbGtpbmcgYWJv
-dXQgdHJpdmlhbCBpbnRlcmZhY2VzIHRoYXQgb2Z0ZW4KPj4gZG9uJ3QgZXhwb3NlIGFueSBjb250
-cm9scyBhdCBhbGwsIHNvIHRoZXJlJ3MgdW5saWtlbHkgdG8gYmUgbXVjaAo+PiAnY29uZmlndXJh
-dGlvbicgZm9yIHVzZXJzcGFjZSB0byBkbyBiZXlvbmQgY2hvb3Npbmcgd2hpY2ggY2FyZCB0byBv
-dXRwdXQgdG8uCj4gCj4gVGhpcyBjb21iaW5hdGlvbiAoRGVzaWduV2FyZSBIRE1JIGNvbnRyb2xs
-ZXIgKyBJMlMpIGlzIHNhbWUgYXMgb24gUm9ja2NoaXAuCj4gT25seSBkaWZmZXJlbmNlIGlzIHNs
-aWdodGx5IGRpZmZlcmVudCB2ZXJzaW9uIG9mIEhETUkgY29udHJvbGxlciBhbmQgZGlmZmVyZW50
-Cj4gSTJTIGNvcmUuIE5vdCBzdXJlIHdoYXQga2luZCBvZiBjb25maWd1cmF0aW9uIGRvIHlvdSBo
-YXZlIGluIG1pbmQsIGJ1dCBhbGwKPiB0aGVzZSBjb250cm9sbGVycyBzdXBwb3J0IDItOCBjaGFu
-bmVscywgZGlmZmVyZW50IHNhbXBsZSBzaXplcywgZXZlbgo+IHBhc3N0aHJvdWdoIG1vZGUgY2Fu
-IGJlIHNldCAoYnV0IGl0J3Mgbm90IGltcGxlbWVudGVkIHlldCkuIEkgd291bGQgc2F5IHRoYXQK
-PiB0aGlzIGF1ZGlvIG91dHB1dCBzdXBwb3J0cyBxdWlldCBhIGZldyBwb3NzaWJsZSBjb25maWd1
-cmF0aW9ucy4KClJpZ2h0LCB3aGF0IEknbSBnZXR0aW5nIGF0IGlzIHRoYXQgdGhlIHN0dWZmIHRo
-YXQgbWF0dGVycyBpcyBhbGwgcmVndWxhciAKYXVkaW8gY2FwYWJpbGl0aWVzIGV4cG9zZWQgdmlh
-IHRoZSBhcHByb3ByaWF0ZSBBUElzLCBhbmQgYW55IGNob2ljZXMgYXJlIApnb2luZyB0byBiZSBt
-b3N0bHkgYmFzZWQgb24gdGhlIGF1ZGlvIGJlaW5nIHBsYXllZCBhbmQgd2hhdCB0aGUgcmVjZWl2
-ZXIgCm9uIHRoZSBvdGhlciBlbmQgb2YgdGhlIGxpbmsgc3VwcG9ydHMuIEknbSBnZW51aW5lbHkg
-Y3VyaW91cyBhcyB0byB3aGF0IAphY3R1YWwgY29uZmlndXJhdGlvbiBkZWNpc2lvbiBjb3VsZCBi
-ZSBtYWRlIHB1cmVseSBiYXNlZCBvbiB0aGUgU29DIApuYW1lLCByZWdhcmRsZXNzIG9mIHRoZSBi
-b2FyZCwgcmVjZWl2ZXIsIG9yIHRoZSBjYXBhYmlsaXRpZXMgYWR2ZXJ0aXNlZCAKYnkgdGhlIGlu
-dGVyZmFjZSBpdHNlbGYuCgpUaGFua3MsClJvYmluLgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Robert, Maxime,
+
+On Wed, Apr 29, 2020 at 12:19:38PM +0200, Robert Foss wrote:
+> On Wed, 29 Apr 2020 at 11:00, Maxime Ripard <maxime@cerno.tech> wrote:
+> >
+> > Hi,
+> >
+> > On Tue, Apr 28, 2020 at 08:07:17PM +0200, Robert Foss wrote:
+> > > Add match table, enable ov8856_probe() to support
+> > > both ACPI and DT modes.
+> > >
+> > > ACPI and DT modes are primarily distinguished from
+> > > each other by relying on devm_XXX_get_optional()
+> > > will return NULL instead of a reference for the
+> > > desired managed resource.
+> > >
+> > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> > > ---
+> > >
+> > > - Changes since v4:
+> > >   * Maxime & Sakari: Switch to clock-frequency
+> > >
+> > > - Changes since v3:
+> > >   * Remove redundant {}-brackets
+> > >   * Compare xvclk_rate to 5% tolerance
+> > >   * Andy: Use dev_fwnode()
+> > >   * Andy: Use %pe instead of %ld + PTR_ERR()
+> > >   * Andy: Invert reset_gpio logic
+> > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
+> > >   * Andy: Use dev_err for logging for failures
+> > >   * Andy: Remove dev_warn from EDEFER/regulator error path
+> > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
+> > >   * Maxime & Sakari: Verify clock frequency from DT
+> > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT devices
+> > >   * Sakari: Remove duplicate ov8856->dev assignment
+> > >
+> > > - Changes since v2:
+> > >   * Added "struct device *dev" member to struct ov8856
+> > >   * Andy: Switch to optional version of devm_gpiod_get
+> > >   * Andy: Switch to optional version of devm_clk_get
+> > >   * Fabio: Add reset sleep period
+> > >   * Sakari: Unify defines for 19.2Mhz
+> > >   * Sakari: Remove 24Mhz clock, since it isn't needed for supported modes
+> > >   * Sakari: Replace dev_info() with dev_dbg()
+> > >   * Sakari: Switch induction variable type to unsigned
+> > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
+> > >   * Sakari: Pull reset GPIO high on power on failure
+> > >   * Sakari: Add power on/off to resume/suspend
+> > >   * Sakari: Fix indentation
+> > >   * Sakari: Power off during ov8856_remove()
+> > >   * Sakari: Don't sleep during power-on in ACPI mode
+> > >   * Sakari: Switch to getting xvclk from clk_get_rate
+> > >
+> > > - Changes since v1:
+> > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
+> > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
+> > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
+> > >   * Fabio: Remove empty line
+> > >   * Fabio: Remove real error from devm_gpiod_get() failures
+> > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
+> > >   * Sakari: Use XVCLK rate as provided by DT
+> > >
+> > >  drivers/media/i2c/ov8856.c | 139 +++++++++++++++++++++++++++++++++----
+> > >  1 file changed, 126 insertions(+), 13 deletions(-)
+> > >
+> > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
+> > > index 8655842af275..48b02b8d205f 100644
+> > > --- a/drivers/media/i2c/ov8856.c
+> > > +++ b/drivers/media/i2c/ov8856.c
+> > > @@ -3,10 +3,13 @@
+> > >
+> > >  #include <asm/unaligned.h>
+> > >  #include <linux/acpi.h>
+> > > +#include <linux/clk.h>
+> > >  #include <linux/delay.h>
+> > > +#include <linux/gpio/consumer.h>
+> > >  #include <linux/i2c.h>
+> > >  #include <linux/module.h>
+> > >  #include <linux/pm_runtime.h>
+> > > +#include <linux/regulator/consumer.h>
+> > >  #include <media/v4l2-ctrls.h>
+> > >  #include <media/v4l2-device.h>
+> > >  #include <media/v4l2-fwnode.h>
+> > > @@ -18,7 +21,7 @@
+> > >  #define OV8856_LINK_FREQ_360MHZ              360000000ULL
+> > >  #define OV8856_LINK_FREQ_180MHZ              180000000ULL
+> > >  #define OV8856_SCLK                  144000000ULL
+> > > -#define OV8856_MCLK                  19200000
+> > > +#define OV8856_XVCLK_19_2            19200000
+> > >  #define OV8856_DATA_LANES            4
+> > >  #define OV8856_RGB_DEPTH             10
+> > >
+> > > @@ -64,6 +67,12 @@
+> > >
+> > >  #define to_ov8856(_sd)                       container_of(_sd, struct ov8856, sd)
+> > >
+> > > +static const char * const ov8856_supply_names[] = {
+> > > +     "dovdd",        /* Digital I/O power */
+> > > +     "avdd",         /* Analog power */
+> > > +     "dvdd",         /* Digital core power */
+> > > +};
+> > > +
+> > >  enum {
+> > >       OV8856_LINK_FREQ_720MBPS,
+> > >       OV8856_LINK_FREQ_360MBPS,
+> > > @@ -566,6 +575,11 @@ struct ov8856 {
+> > >       struct media_pad pad;
+> > >       struct v4l2_ctrl_handler ctrl_handler;
+> > >
+> > > +     struct device           *dev;
+> > > +     struct clk              *xvclk;
+> > > +     struct gpio_desc        *reset_gpio;
+> > > +     struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
+> > > +
+> > >       /* V4L2 Controls */
+> > >       struct v4l2_ctrl *link_freq;
+> > >       struct v4l2_ctrl *pixel_rate;
+> > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
+> > >       return ret;
+> > >  }
+> > >
+> > > +static int __ov8856_power_on(struct ov8856 *ov8856)
+> > > +{
+> > > +     struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> > > +     int ret;
+> > > +
+> > > +     ret = clk_prepare_enable(ov8856->xvclk);
+> > > +     if (ret < 0) {
+> > > +             dev_err(&client->dev, "failed to enable xvclk\n");
+> > > +             return ret;
+> > > +     }
+> > > +
+> > > +     if (is_acpi_node(dev_fwnode(ov8856->dev)))
+> > > +             return 0;
+> > > +
+> > > +     if (ov8856->reset_gpio) {
+> > > +             gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > +             usleep_range(1000, 2000);
+> > > +     }
+> > > +
+> > > +     ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
+> > > +                                 ov8856->supplies);
+> > > +     if (ret < 0) {
+> > > +             dev_err(&client->dev, "failed to enable regulators\n");
+> > > +             goto disable_clk;
+> > > +     }
+> > > +
+> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
+> > > +     usleep_range(1500, 1800);
+> > > +
+> > > +     return 0;
+> > > +
+> > > +disable_clk:
+> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > +     clk_disable_unprepare(ov8856->xvclk);
+> > > +
+> > > +     return ret;
+> > > +}
+> > > +
+> > > +static void __ov8856_power_off(struct ov8856 *ov8856)
+> > > +{
+> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > +     regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
+> > > +                            ov8856->supplies);
+> > > +     clk_disable_unprepare(ov8856->xvclk);
+> > > +}
+> > > +
+> > >  static int __maybe_unused ov8856_suspend(struct device *dev)
+> > >  {
+> > >       struct i2c_client *client = to_i2c_client(dev);
+> > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
+> > >       if (ov8856->streaming)
+> > >               ov8856_stop_streaming(ov8856);
+> > >
+> > > +     __ov8856_power_off(ov8856);
+> > >       mutex_unlock(&ov8856->mutex);
+> > >
+> > >       return 0;
+> > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struct device *dev)
+> > >       int ret;
+> > >
+> > >       mutex_lock(&ov8856->mutex);
+> > > +
+> > > +     __ov8856_power_on(ov8856);
+> > >       if (ov8856->streaming) {
+> > >               ret = ov8856_start_streaming(ov8856);
+> > >               if (ret) {
+> > > @@ -1092,29 +1155,58 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
+> > >       return 0;
+> > >  }
+> > >
+> > > -static int ov8856_check_hwcfg(struct device *dev)
+> > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
+> > >  {
+> > > +     struct device *dev = ov8856->dev;
+> > >       struct fwnode_handle *ep;
+> > >       struct fwnode_handle *fwnode = dev_fwnode(dev);
+> > >       struct v4l2_fwnode_endpoint bus_cfg = {
+> > >               .bus_type = V4L2_MBUS_CSI2_DPHY
+> > >       };
+> > > -     u32 mclk;
+> > > +     u32 xvclk_rate;
+> > >       int ret;
+> > >       unsigned int i, j;
+> > >
+> > >       if (!fwnode)
+> > >               return -ENXIO;
+> > >
+> > > -     ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
+> > > +     ret = fwnode_property_read_u32(fwnode, "clock-frequency",
+> > > +             &xvclk_rate);
+> > >       if (ret)
+> > >               return ret;
+> > >
+> > > -     if (mclk != OV8856_MCLK) {
+> > > -             dev_err(dev, "external clock %d is not supported", mclk);
+> > > +     if (!is_acpi_node(fwnode)) {
+> > > +             ov8856->xvclk = devm_clk_get(dev, "xvclk");
+> > > +             if (IS_ERR(ov8856->xvclk)) {
+> > > +                     dev_err(dev, "could not get xvclk clock (%pe)\n",
+> > > +                                     ov8856->xvclk);
+> > > +                     return PTR_ERR(ov8856->xvclk);
+> > > +             }
+> > > +
+> > > +             clk_set_rate(ov8856->xvclk, xvclk_rate);
+> > > +             xvclk_rate = clk_get_rate(ov8856->xvclk);
+> > > +     }
+> > > +
+> > > +     /* external clock must be 19.2MHz, allow 5% tolerance */
+> >
+> > Where is that 5% tolerance coming from? Experimentations, datasheets, something
+> > that looks good enough? Either way, this should be in the comment.
+> 
+> I don't have access to the full datasheet unfortunately. A 24Mhz rate
+> is as far as I understand it supported and required for higher
+> bandwidth count modes.
+> It was suggested to me that adding a tolerance is the best practice,
+> the ov5645 driver uses a 1% tolerance, which may be more appropriate.
+
+The frequency should really be exact. Sometimes what happens is, however,
+that a register list based driver does not have the register lists for a
+frequency that is available on a given system. That's why some drivers have
+allowed some difference to the intended frequency.
+
+That 5 % seems like a random value, just like any other number that differs
+from the exact frequency would be.
+
+I'd issue a warning if the frequency differs from what was intended, but
+still proceed with probe. This way we can make sure the difference is noted
+while boards that cannot provide the exact frequency supported by the
+driver can still function.
+
+-- 
+Regards,
+
+Sakari Ailus
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
