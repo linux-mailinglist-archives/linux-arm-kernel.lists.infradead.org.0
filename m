@@ -2,79 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0A241BDC19
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 14:27:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7F6231BDC1B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 14:27:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jYpw4JCaA6fkD+ESp2e76d9EQMiTAEMzs+8CJsiqewg=; b=l4FETki76jAHV1
-	7BItuOdtLjlzZUJiT0uO8q3PdABJs0o3NKFjmXSzCGQVcdf/Fe1UZThU3eXWYdf1jg+QChbdKVeXo
-	naHGgvovDxOoiieWz0vjg4994omRK7WvTkz+IKkpCS8F/ys7lP7UFupDUJ0wnzwO8mlDujT1LluJt
-	deK1mmATLfRu+eVLQuA0RQQOhvptlQlomLcIWfqmNNcXLiNEvafYGX9u+KIn3vsjNVh/YfliMWHHQ
-	MsaMNowWGQ8HwouBaU6FX9+mi7rAieudazLWrI4G0F6X1IGbcIkJU1dxL1WWiQceZdPNnAeTSTGWp
-	yXzkc7ibpxHOpWnZMEmA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:Message-Id:To:
+	Subject:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=lbtSv9B1XMquhCzexR/YCcRxI0C0AgIGKfssk/hY+oA=; b=Y+h11M8yvrSu2NfrFAVIeAye0
+	kCrxm585v84ekAVsF/zwdJF7XqYi+y9mLQjkzBKKACvfUcrf12ayUkiJKU5JokV/nuC+tqIcHf5bi
+	IFmUbC8CbwwbsYG/FDnbsypIS0b94NP9mb5KPs1Bdyccn9rqLfqoSxC++5yOZjZcyy7+uZ7R9QWF0
+	KT9bYNGIcU61cBUYrQY9v4eCFQJfEeAlZoHwf6Jl+VBKXwwS1pSWIshw1UVE7LHVD+8ewQ5G12TP2
+	dbBo88WmT9kP7YKVj3jxK9UlkTkP/7xKL8BxqlUchTppjFM38F8WcY7kiSkniS9iph+9/PV0LQuOC
+	ZqQ5inoKw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTlnx-0003H8-FV; Wed, 29 Apr 2020 12:27:09 +0000
-Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
+	id 1jTloF-0003SA-PP; Wed, 29 Apr 2020 12:27:27 +0000
+Received: from outils.crapouillou.net ([89.234.176.41] helo=crapouillou.net)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTlnn-0003GG-JW
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 12:27:00 +0000
-Received: by mail-lf1-x144.google.com with SMTP id m2so1476145lfo.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 05:26:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=8AVYfRNBk5SfjUGcIYpm9D16vfFbFb3Os+d6TzVS3+g=;
- b=QlO97oXJ1h1yKASmnWSSsvDLiT7uvlzXfDlywwMx1gWh3EmukLK9KQwV4zsUURYYg8
- o35A7ZGE0xcisSwY8SRFG4fsPdun64m7qVWuEzjQcBMfoT1rkc7Pdml/hv2bAWN53QWN
- FkF9LgIH/u+BwnaqYkCUdXkOK2rbBoe7RtdkF6G+muzIfOXo2PWYT7OhfXst3pa9lXQF
- zzddeSWxfLLH6PJzfjW5LSj5r1wmNEUEitIF4IPvPSjIFRhP3teESWjCncaV4bdZSuk5
- 7C5h6nHZNYJqK6TNOUqxJfxB1vo0PJaaEQgwea+cYvBxRJ4+TfWj2U5wPXTSVExvulCY
- WDIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=8AVYfRNBk5SfjUGcIYpm9D16vfFbFb3Os+d6TzVS3+g=;
- b=hVng8bxUJy9i4s9UhNNZX25yvZk+YRKUcZY2s7jarQ9T8D6cwvj0p8gQv+d0qxsOwn
- n0cvzQDH7DnThlAI4UJRot2uYs7V+fSxb/MeNnceDGifRBE8Yh3rc8UH9jnTRETgNvkR
- oD1JFheP8oTADtqn/isxbOOEnSU3dT+9oRVo65JiqDOz8gkM5RaMzFbqYwfjG+xA3CX9
- guTwe3M9QonLN4CG8dSUgrw+9+pb2W/+jeYeklHv23EWIGcXkwWphrpdx0/RIcW2K1Lk
- EDpIbo2oetHrlMsuii6+LegYJebrmOIq02kWiyS+QjhEMQFBTVckOO/I8FBiL5fmUqbE
- qduQ==
-X-Gm-Message-State: AGi0PuY1cdcvcGDuKKq093MGtZ9Bd+1KafyW7bwQUpsWBVkHSoOOV7hG
- CEe/BwjXnyFQf+fKiphiyeoE654uCz/xqTD1dSdjvg==
-X-Google-Smtp-Source: APiQypK0XFTJiAXFLcUsDWl48m8EemW//x3P2XglJ5+pVhuWux3Dz03+qiqrpeKEd3ynEv8VSjR2WJhKjLnFK7JGiGM=
-X-Received: by 2002:ac2:5c4e:: with SMTP id s14mr22982327lfp.77.1588163212051; 
- Wed, 29 Apr 2020 05:26:52 -0700 (PDT)
+ id 1jTlnv-0003M1-JZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 12:27:09 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crapouillou.net;
+ s=mail; t=1588163225; h=from:from:sender:reply-to:subject:subject:date:date:
+ message-id:message-id:to:to:cc:cc:mime-version:mime-version:
+ content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=UB85kJRWkAnE/ldP2rd2WB1otm7LsPHBG/QdCMbeTtw=;
+ b=Y7SJJo7sZnaAuNIPATy0AiHIaWVsd2iyJrs83ZKmUFLR4e0sPDVaCrXhPJh3FdwWeKj5+B
+ ymuqI/fKXp9dnLKIal7QsfsqkUT5AoaSpooZL4M9yoymur1N6pMByU7yw/6mHtmHFpYRn4
+ m+cKuE3cU7bSMeleVwTgsV9u39AqbSE=
+Date: Wed, 29 Apr 2020 14:26:46 +0200
+From: Paul Cercueil <paul@crapouillou.net>
+Subject: Re: [PATCH v7 08/12] arm: dts: s5pv210: Add node for SGX 540
+To: Jonathan Bakker <xc-racer2@live.ca>
+Message-Id: <MKUJ9Q.OQG3OJ6IYGUE3@crapouillou.net>
+In-Reply-To: <BN6PR04MB0660044B5B1D45BE4CBCD2AAA3AC0@BN6PR04MB0660.namprd04.prod.outlook.com>
+References: <cover.1587760454.git.hns@goldelico.com>
+ <3fd18c747426e15fd1f3500b9c4adce2db9ddd0c.1587760454.git.hns@goldelico.com>
+ <NYBE9Q.YH08US7A7DC3@crapouillou.net>
+ <BN6PR04MB0660A180D2069848E5C03D7EA3AE0@BN6PR04MB0660.namprd04.prod.outlook.com>
+ <20200427154617.GA1798@pi3>
+ <BN6PR04MB06605F014024061C894AFBA4A3AC0@BN6PR04MB0660.namprd04.prod.outlook.com>
+ <BN6PR04MB0660044B5B1D45BE4CBCD2AAA3AC0@BN6PR04MB0660.namprd04.prod.outlook.com>
 MIME-Version: 1.0
-References: <20200427212514.11219-1-robh@kernel.org>
- <CGME20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f@eucas1p2.samsung.com>
- <CACRpkdZSPb8FxTSt8F3F1VcsTM4qG=6gxz1pBPjTZ0Dk2iVfSQ@mail.gmail.com>
- <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
-In-Reply-To: <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 29 Apr 2020 14:26:38 +0200
-Message-ID: <CACRpkdaE7BRnZbBbx2Lk3CoG6uSiCV1dJWMgF9wU0UyHe2QP0Q@mail.gmail.com>
-Subject: Re: [PATCH] amba: Retry adding deferred devices at late_initcall
-To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_052659_644983_81072623 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20200429_052708_027108_2BC6881D 
+X-CRM114-Status: GOOD (  13.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,40 +75,174 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Saravana Kannan <saravanak@google.com>, Russell King <linux@armlinux.org.uk>,
- John Stultz <john.stultz@linaro.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-omap@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ James Hogan <jhogan@kernel.org>, devicetree@vger.kernel.org,
+ Daniel Vetter <daniel@ffwll.ch>, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, letux-kernel@openphoenux.org,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ =?iso-8859-1?q?Beno=EEt?= Cousson <bcousson@baylibre.com>,
+ kernel@pyra-handheld.com
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 8:06 AM Marek Szyprowski
-<m.szyprowski@samsung.com> wrote:
-> [Me]
-> > There are a bit of other differences that have piled up,
-> > should we take a quick look at dd.c so there is not something
-> > else we're missing? I see some PM code for example.
->
-> Well, late initcall based approach is what earlier version of my patch did:
+Hi Jonathan,
 
-I see, thanks for the context.
+Le mar. 28 avril 2020 =E0 15:58, Jonathan Bakker <xc-racer2@live.ca> a =
 
-> For me it is fine to get back to late initcall based solution, though.
+=E9crit :
+> Hi all,
+> =
 
-The idea here is to do both/and initcall and timer deferred probe,
-not either/or.
+> On 2020-04-28 2:39 p.m., Jonathan Bakker wrote:
+>>  Hi Krzysztof,
+>> =
 
-And the dd.c core also does both/and.
+>>  On 2020-04-27 8:46 a.m., Krzysztof Kozlowski wrote:
+>>>  On Sun, Apr 26, 2020 at 07:57:12AM -0700, Jonathan Bakker wrote:
+>>>>  Hi Paul,
+>>>> =
 
-And then it does some more things, so I was thinking we may be
-missing out on some of them?
+>>>>  On 2020-04-26 5:56 a.m., Paul Cercueil wrote:
+>>>>> =
 
-Yours,
-Linus Walleij
+>>>>> =
+
+>>>>>  Le ven. 24 avril 2020 =E0 22:34, H. Nikolaus Schaller =
+
+>>>>> <hns@goldelico.com> a =E9crit :
+>>>>>>  From: Jonathan Bakker <xc-racer2@live.ca>
+>>>>>> =
+
+>>>>>>  All s5pv210 devices have a PowerVR SGX 540 (revision 120) =
+
+>>>>>> attached.
+>>>>>> =
+
+>>>>>>  There is no external regulator for it so it can be enabled by =
+
+>>>>>> default.
+>>>>>> =
+
+>>>>>>  Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
+>>>>>>  Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
+>>>>>>  ---
+>>>>>>   arch/arm/boot/dts/s5pv210.dtsi | 13 +++++++++++++
+>>>>>>   1 file changed, 13 insertions(+)
+>>>>>> =
+
+>>>>>>  diff --git a/arch/arm/boot/dts/s5pv210.dtsi =
+
+>>>>>> b/arch/arm/boot/dts/s5pv210.dtsi
+>>>>>>  index 2ad642f51fd9..abbdda205c1b 100644
+>>>>>>  --- a/arch/arm/boot/dts/s5pv210.dtsi
+>>>>>>  +++ b/arch/arm/boot/dts/s5pv210.dtsi
+>>>>>>  @@ -512,6 +512,19 @@ vic3: interrupt-controller@f2300000 {
+>>>>>>               #interrupt-cells =3D <1>;
+>>>>>>           };
+>>>>>> =
+
+>>>>>>  +        gpu: gpu@f3000000 {
+>>>>>>  +            compatible =3D "samsung,s5pv210-sgx540-120";
+>>> =
+
+>>>  This should not pass the bindings check because you missed last
+>>>  compatibles.
+>>> =
+
+>> =
+
+>>  Thanks for pointing that out, I'll add it and make sure it passes =
+
+>> the bindings check.
+>> =
+
+>>>>>>  +            reg =3D <0xf3000000 0x10000>;
+>>>>>>  +            interrupt-parent =3D <&vic2>;
+>>>>>>  +            interrupts =3D <10>;
+>>>>>>  +            clock-names =3D "core";
+>>>>>>  +            clocks =3D <&clocks CLK_G3D>;
+>>>>>>  +
+>>>>>>  +            assigned-clocks =3D <&clocks MOUT_G3D>, <&clocks =
+
+>>>>>> DOUT_G3D>;
+>>>>>>  +            assigned-clock-rates =3D <0>, <66700000>;
+>>>>>>  +            assigned-clock-parents =3D <&clocks MOUT_MPLL>;
+>>>>> =
+
+>>>>>  What are these clocks for, and why are they reparented / =
+
+>>>>> reclocked?
+>>>>> =
+
+>>>>>  Shouldn't they be passed to 'clocks' as well?
+>>>>> =
+
+>>>>>  -Paul
+>>>>> =
+
+>>>> =
+
+>>>>  The G3D clock system can have multiple parents, and for stable =
+
+>>>> operation
+>>>>  it's recommended to use the MPLL clock as the parent (which in =
+
+>>>> turn
+>>>>  is actually a mux as well).  MOUT_G3D is simply the mux for =
+
+>>>> CLK_G3D
+>>>>  (SGX core clock), DOUT_G3D is the divider.  DOUT_G3D could =
+
+>>>> equally be CLK_G3D
+>>>>  (and probably should be, for readability) as CLK_G3D is simply =
+
+>>>> the gate and
+>>>>  DOUT_G3D is the divider for it.
+>>> =
+
+>>>  Good point, it should be CLK_G3D instead of DOUT.  Can you fix =
+
+>>> this as
+>>>  well?
+>> =
+
+>>  Yep, will do.  Nikolaus, I'll send you an updated patch to include.
+>> =
+
+> =
+
+> How are assigned-clocks handled in the yaml DT schema?  When running =
+
+> make dtbs_check,
+> I end up with messages such as
+> =
+
+> arch/arm/boot/dts/s5pv210-aquila.dt.yaml: gpu@f3000000: =
+
+> 'assigned-clock-parents', 'assigned-clock-rates', 'assigned-clocks' =
+
+> do not match any of the regexes: 'pinctrl-[0-9]+'
+> =
+
+> Do they need to explicitly be listed as valid entries?
+
+The assigned-* can also be moved inside the node of the clocks =
+
+provider. I would say it makes more sense to have them there.
+
+-Paul
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
