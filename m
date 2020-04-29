@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EBC11BD1FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:01:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B1C31BD1FF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:01:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NY+Xl9xGaiDCkSrPMJOlntuA6Qr2YxgHeJ6WX7H9X4=; b=Mdeo8avNqpdFal
-	ClSQ6AwZu3hF4LL9aPHywIr0mPCDYEl8lCNDRkWex2J2d+yIN9s3WH4XKevW7nsFZlPKXzKgEnqzl
-	PuzoqflXnaj1pszMkYhiYxpj9EUHi3dEtw5DEI1CZAwrjBP94cjHXbT8CqzzS1vsAbIrmDW3rLNkr
-	OJ247UbCB8rYabOJNgi1KkfqThERaNSyOBxs8ouH21SGVJjsA5RpEuQ5lVz1FB/gycYnfqfChi0wx
-	deewjKXeCS6FnWndiG4VlMz6PfiIR5Hs7rjGUjQ/341lez+hCHvR0Rno0DnVJODM+1K3W4jZmYkur
-	tTKlK42yBjGG6XD2uVTg==;
+	List-Owner; bh=cZretQFSbT02inJJrwk049N156vEVUBR21IBRy+YhM8=; b=meM/s0K8iX5fyb
+	7HcaosOWY4Jrj+jgy5k4rH/rSxAPlVSUmMU6GvEBRnzZM7xpTQ8xKYO2Wk3IEdH2HpFKbkEIakaQk
+	Y+CkSpOEEW5I/ZLmngyWLNXBWksJMrybUz63rUQw0MoKyjyMeakQPZZiN52EHapISvBkhxwpxs+yi
+	NUW3MtmZtEXsUT3/VfdH82zIxkftDoOLDU8zCWWlwJHFmrGbww/0Xay9CXy7/Ot1haFrYHAu6dX+1
+	YS8YHnx4ZmG7ermH6heizC6RgQ9eeUmwlQJ8N4HjxppmDaEmsM6flQFDcYtEnTDxGsqz3fFiuJfpK
+	nmWRwkmEvi+vlnDv1ZuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTc2L-00062p-Pa; Wed, 29 Apr 2020 02:01:21 +0000
+	id 1jTc2k-0006No-IV; Wed, 29 Apr 2020 02:01:46 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTc20-0005yX-V3
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:01:03 +0000
+ id 1jTc2U-0006Mr-1p
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:01:31 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 639AB20731;
- Wed, 29 Apr 2020 02:00:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6642520731;
+ Wed, 29 Apr 2020 02:01:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588125660;
- bh=607TfLr7Ei75EXNZgLh0M4pFPfnTu/5m48GVom9BDOU=;
+ s=default; t=1588125689;
+ bh=f/1DqKlL9kcH1bIup6JMOAlUdBjFxO2nIQviNagNhPQ=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u3+f0cS73Vh+jljPOthiezXpV2M5yL6EX4sCz/mhDl5jdwssD32hhNQBUqbzTlX+9
- 2A9B1a6DMR7PbGOZlif6zhCVmO69lT9ObocOP/TVd55LBKp04HHY23tNQibCQUaz7S
- ZrPCHqqiKqgIaTV5kprQklZgirbozAvv1ENC6HSE=
-Date: Wed, 29 Apr 2020 10:00:54 +0800
+ b=blXgUPFpyDOshjuyyqaPphLfhPHQGWDufL+u0Zws3Y0AX2LY18DEiApJWDICZ4+O+
+ cj+Z74GQY2Q8RVKf9LZldyvOMFG7r/P3WyxcQbMgst3Lc12QzHn4567715VZzyZVRb
+ garWNUwcTEnVqmWjk2kwkjqGBcKGtuIG12nPGGnY=
+Date: Wed, 29 Apr 2020 10:01:22 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Abel Vesa <abel.vesa@nxp.com>
-Subject: Re: [PATCH v3 06/13] clk: imx: pll14xx: Add the device as argument
- when registering
-Message-ID: <20200429020053.GE32592@dragon>
+Subject: Re: [PATCH v3 07/13] clk: imx: Add helpers for passing the device as
+ argument
+Message-ID: <20200429020121.GF32592@dragon>
 References: <1586937773-5836-1-git-send-email-abel.vesa@nxp.com>
- <1586937773-5836-7-git-send-email-abel.vesa@nxp.com>
+ <1586937773-5836-8-git-send-email-abel.vesa@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1586937773-5836-7-git-send-email-abel.vesa@nxp.com>
+In-Reply-To: <1586937773-5836-8-git-send-email-abel.vesa@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_190101_041908_8F5A4461 
-X-CRM114-Status: GOOD (  10.17  )
+X-CRM114-CacheID: sfid-20200428_190130_109045_BF547E10 
+X-CRM114-Status: GOOD (  10.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -91,14 +91,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 11:02:46AM +0300, Abel Vesa wrote:
-> In order to allow runtime PM, the device needs to be passed on
-> to the register function. Audiomix clock controller, used on
-> i.MX8MP and future platforms, registers a pll14xx and has runtime
-> PM support.
+On Wed, Apr 15, 2020 at 11:02:47AM +0300, Abel Vesa wrote:
+> All the imx clocks that need to be registered by the audiomix need to
+> pass on the device so that the runtime PM support could work properly.
 > 
 > Signed-off-by: Abel Vesa <abel.vesa@nxp.com>
 > Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+> Reviewed-by: Peng Fan <peng.fan@nxp.com>
 
 Applied, thanks.
 
