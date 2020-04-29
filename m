@@ -2,72 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 539701BE9EA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:30:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E1451BEA0A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ErZ6fIjz9NsBWX/a6cNJ3NyZYt5rS+uMIc6Ak1l63aI=; b=V46RHPMiAZ+qv2
-	RTP2ATzyqryCHFJKMIoaQe5Rsq6FcWtmOgs1ixN/j7oSZ9KAQv70/EtNdXkvAfwfWhMN8sgb6W+fT
-	JoR4Pix7ZdtPWKoc8ZtN4eI63naMebinCumrTmt9o0+zo0ssAdL1ocNtPi6OmegQp3kDz+fTsyjxP
-	dzjzSRXhvVWOLZSrudXogIAzqAp67xJffP8y6DnlzHh+Rtt4KOZU81hOLWca63n9ufQDhGOZ3qdtK
-	HInje1whyTH4OtMZ6gmFYBRYH8UbFrwetSfYdpyluQYkIQOjITfRav2yADnpw5+9MaU/SUbz7/6Dx
-	yAh29wB+wl0+wBtNW9Pg==;
+	List-Owner; bh=9TUqnwBRNovC8B7LeYCQe3WceeFY2ZwwigJ93fsev6U=; b=oe7VPDx3g1LMA4
+	twHFFFstJFvAW2LeDpfEu8tVvYuT5smXkYgrGB6I/VsROkECyUBgR0d/pTd4o/VjQRFFUM/pQg6Mi
+	rn/Sk2dP1M5nXaLsV5krgNYzj25E1yOm9/VPfrI4i9A0Xnod2HUz0a1Y/d72XnVfIQ1tQYC1pRgFO
+	6eaV0a7a52P9B2iAQ+7nYP9FZ0kv0Oif8AlBCbYrgDMqREQ/Lzza57kL5axpSUvLOtjwR3B6TsPaB
+	Ag32Moz8Hai8Wk8q0G7A0WXrImgn9OUKD9EpRPZrwLvkvQMLU6bhETpD5Tm39Mf+1o9mALj58l/OV
+	XS6WENF3e+rViN8ejm6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTuI5-0002AQ-2m; Wed, 29 Apr 2020 21:30:49 +0000
-Received: from mail-oo1-f67.google.com ([209.85.161.67])
+	id 1jTuNf-0006hl-Qw; Wed, 29 Apr 2020 21:36:35 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTuHt-00029V-4E; Wed, 29 Apr 2020 21:30:38 +0000
-Received: by mail-oo1-f67.google.com with SMTP id h23so772070oos.10;
- Wed, 29 Apr 2020 14:30:37 -0700 (PDT)
+ id 1jTuNW-0006hQ-CF
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:36:27 +0000
+Received: by mail-oi1-f193.google.com with SMTP id q204so3217408oia.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 14:36:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=sNKlT+9/zIdQsL5FmjDdatJ2sdOrBvQb7gIEQfxHgsc=;
- b=o4UuyZ5jtDI8QIyGsoAOPV3MITuXsoJjEE49bIOhctRz8hr15AE/JFJs9g2xHjPFxm
- e97pXaqrOrQ0SIumbvr1dOtMuhfOCRfUualdUj9mKV3z2oiiytM0mxhC8cu3URyeeRot
- 9kHcYwcyChQ315uikAOgfQJLsKeulO2Ryx6FecQFyZQ708l+j/4lc0mXOOAHHXKK/aXz
- Cpa5x7UpasF8vfXyS3vkkgxX5fmCMYQHA0ke7Wq9PC8v6pLncSnhauyLJpocmrlwFLqX
- uyBuH/RzEJetJUf0M5basCPnFz3X4KTwI4PMlFKlSfE1p9BLZqzWBnkr6jh0LV1I+6b0
- wnzg==
-X-Gm-Message-State: AGi0PuZvkCKMrh0EpOR0OMjuzEwgGfRZI0j2MOYjvjtRI5PNe4Hh2MFX
- 4HXTNdguSsifcnc4Urws7Q==
-X-Google-Smtp-Source: APiQypK+APtg89af1Xjg8bKvZAVWBN2auKSMy5LvFjCDfw9Xw+dgMjfH9LB7Dui73Y7zFNedvbVvyA==
-X-Received: by 2002:a4a:e5c5:: with SMTP id r5mr88626oov.56.1588195836410;
- Wed, 29 Apr 2020 14:30:36 -0700 (PDT)
+ bh=OeAhLLVksUW5/hckjGBTuqnB90/z5Gzog71jRuY3aSM=;
+ b=Tpgf/htnKau5tq6SuY5PtSxL0dNytkHpoYvv+mCEmAfiXTxWDuoROvMH5TplSycsOB
+ k452/+D6pwxWni5e6VEAzWL3Rbpf5yrEdZetXIteodzbFfPGaDEI38Ti+bRaqc+gNuNE
+ nXsSW7wwBD/v1g7LUKGXNQ8M/mITLASNzTdDQLvKUAnbc06+Ua+aexSJ8iB3svJpAcNC
+ 5LKMHQDU35C4o+lJ77QGLUwyqriAGso+yWioR0q3wNSKwmCaRyVxzbXOqJpDdobtTe/o
+ jGnxA0wPcoTmctaP6jPSKdGNY0+WxNrNZPbeLFW/y2MjUzF3R+OY7RXGJw4HkS4VytbQ
+ cffQ==
+X-Gm-Message-State: AGi0PuaW0Lv3Dqk8gPeBruWJHp3EIF7PZ6kjJM3BuOyFzWYj1pVmST12
+ 8yBjCI8lruhm6miIzBr2DQ==
+X-Google-Smtp-Source: APiQypIHLcP4uyi6iBBQnRex1vtx/0RRUYf5g8oaCu2AISmGpvY3rzNZu/dOpNArZjbBHTIgH3Vtmg==
+X-Received: by 2002:aca:2807:: with SMTP id 7mr239980oix.15.1588196185150;
+ Wed, 29 Apr 2020 14:36:25 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id t13sm684710otr.43.2020.04.29.14.30.35
+ by smtp.gmail.com with ESMTPSA id z13sm685565oth.10.2020.04.29.14.36.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 14:30:35 -0700 (PDT)
-Received: (nullmailer pid 31939 invoked by uid 1000);
- Wed, 29 Apr 2020 21:30:34 -0000
-Date: Wed, 29 Apr 2020 16:30:34 -0500
+ Wed, 29 Apr 2020 14:36:24 -0700 (PDT)
+Received: (nullmailer pid 8147 invoked by uid 1000);
+ Wed, 29 Apr 2020 21:36:23 -0000
+Date: Wed, 29 Apr 2020 16:36:23 -0500
 From: Rob Herring <robh@kernel.org>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH 1/2] dt-bindings: phy-mtk-tphy: add the property about
- force_vbus
-Message-ID: <20200429213034.GA29572@bogus>
-References: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
+To: Michael Tretter <m.tretter@pengutronix.de>
+Subject: Re: [PATCH v3 2/6] ARM: dts: define indexes for output clocks
+Message-ID: <20200429213623.GA8109@bogus>
+References: <20200417070526.7178-1-m.tretter@pengutronix.de>
+ <20200417070526.7178-3-m.tretter@pengutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1587100986-3104-1-git-send-email-macpaul.lin@mediatek.com>
+In-Reply-To: <20200417070526.7178-3-m.tretter@pengutronix.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_143037_165756_1F39125E 
-X-CRM114-Status: GOOD (  15.88  )
+X-CRM114-CacheID: sfid-20200429_143626_415348_FAE5D06B 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.67 listed in list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -76,9 +79,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,50 +94,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- linux-kernel@vger.kernel.org, Kishon Vijay Abraham I <kishon@ti.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
- Min Guo <min.Guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
- Macpaul Lin <macpaul.lin@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Dhaval Shah <dshah@xilinx.com>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Michael Tretter <m.tretter@pengutronix.de>, kernel@pengutronix.de,
+ Rohit Visavalia <rohit.visavalia@xilinx.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 17, 2020 at 01:23:05PM +0800, Macpaul Lin wrote:
-> For some platforms, they don't have vbus pin connection between usb's phy
-> and mac. Hence we need to control force_vbus related registers to keep
-> hardware works normal.
-> This patch add the required bool property force_vbus.
+On Fri, 17 Apr 2020 09:05:22 +0200, Michael Tretter wrote:
+> The VCU System-Level Control provides 4 clocks. Defined indexes for
+> these clocks.
 > 
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
+> Signed-off-by: Michael Tretter <m.tretter@pengutronix.de>
 > ---
->  Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 3 +++
->  1 file changed, 3 insertions(+)
+> Changelog:
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-> index dd75b676b71d..6b49b651becc 100644
-> --- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-> +++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-> @@ -37,6 +37,9 @@ Optional properties (controller (parent) node):
->  		  calibrate
->   - mediatek,src-coef	: coefficient for slew rate calibrate, depends on
->  		  SoC process
-> + - force_vbus	: if the platform has no vbus connection between phy and mac,
+> v2 -> v3:
+> - none
+> 
+> v1 -> v2:
+> - none
+> ---
+>  include/dt-bindings/clock/xlnx-vcu.h | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+>  create mode 100644 include/dt-bindings/clock/xlnx-vcu.h
+> 
 
-mediatek,force-vbus
-
-This is board specific? If SoC specific, you should drop and imply this 
-from the compatible string.
-
-> +		  (force_vbus mode), then this property should be exist.
-> +		  Otherwise not to add this property.
->  
->  Required properties (port (child) node):
->  - reg		: address and length of the register set for the port.
-> -- 
-> 2.18.0
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
