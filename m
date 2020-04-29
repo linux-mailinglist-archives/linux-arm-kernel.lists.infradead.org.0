@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7AD31BD23A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:26:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53D101BD249
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:32:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V+uuT4Oq79KyFYjkk/0J/5in9dlz0++D3V/sA8SWfZ0=; b=Oilw4p27fHsWhu
-	+mbZaQEMhHjnI5/OXW/4aOPa6ar+GAQ2yQM7H0boBQjepMJ70yl38f54tMd3rxzNtgzizqpRtC7CJ
-	VdInhkz1EPZzJ1qrn24FBPKIPHJl/uggstq9W+Y1vIRRHOhDjp6rJAKugKiSNn5j1H0dG3Z0Bytn+
-	ELGT/fDJQ/iWqukE7I1EJbK39bCNr5nQ76fgtZr7/e8/KpitzSxYdZjQD0b4nFRUkDUe+zqoW7HSs
-	HphdMkZxBjYLgUaHub3LfbiXhvTdZJI3aWVfMP8/W7JB1ANfzmA4FOu5z5h8rPVRQ4TUJUQuqlz+h
-	xasMayd+zeJTnPPnvIeQ==;
+	List-Owner; bh=ptPQDHk7qEE+yJnbTx0S0VJ9CyiZDIRrJGa7pW5Vl9I=; b=OCux3zFTB9hhAS
+	dsCNrJdcMHMpzTseoXm3csIcAq/iXp76EqnkRFvhvP+k58qZBWWB2w8RotoV70Z/FRcHc3zjEQLha
+	3BZr8AohZW9nlxkazh/4eqccE4hPVUoYrU1NE1x9sBs5yfp12M1xqoVXPQM8XsfTgoCbN3IQ7j/u6
+	sVwtWOrNTgoYxPLx+NN1CaYAN6ypcH627Ek2HRIqOzkra4+HHxtz8cwUH5bP8W5fEOK/FFKMHVbjW
+	sZPhSlOKZbue8YdohJU3yRAvC3gY3KiZc/i6fWL4uiQwRdinGb3e27BqkqpRfdwgSqYjmtd9/NdZm
+	wTvBqgU4auWykIhmL19A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTcQG-0005N2-CG; Wed, 29 Apr 2020 02:26:04 +0000
+	id 1jTcWJ-0000jz-SH; Wed, 29 Apr 2020 02:32:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTcQ7-0005MQ-2Y
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:25:56 +0000
+ id 1jTcWA-0000jX-Ni
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:32:11 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C6F8620730;
- Wed, 29 Apr 2020 02:25:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 12F8620730;
+ Wed, 29 Apr 2020 02:32:06 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588127154;
- bh=e+U033hDstnBu8fB+0dMrx0cNzJaV/LiGFtHSdioxwE=;
+ s=default; t=1588127530;
+ bh=W8/EyZPYK/miEiqAgzNxrcEQq3GEA2RTZHOJSMhHw38=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Lkn4sS5RiT81mpXoftTU3hQa4SMap19YJb5zc8JwKMmhtxx49hvhOe2RdDrEW/fB0
- pL/f1PMXJAvrYxWIK3nMrs3W5qb7pJxa7ly5jKuWeyorrn5fP3Hmr90V1wf178ygFc
- STHtomLAg/v4gXTAeZb1IML+W/gDhXj6qEEDij7E=
-Date: Wed, 29 Apr 2020 10:25:47 +0800
+ b=jCbkO5/izw0BXWLaRIUG1HrsPMhgFXEcXH8Pohqne7jNYyiRUTUlVyZlPW3wl+sGv
+ 3xtV0TcqiyNQqsPIm6u433+WVvpUQX6IE4LbkPyaiOe7lvYPVnAEv+FflIFNSQkG7P
+ d6vF5sg58rwM4gPwwwa+RKyDl+82lGfIxXkZnwag=
+Date: Wed, 29 Apr 2020 10:32:02 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: peng.fan@nxp.com
-Subject: Re: [PATCH V1 1/4] ARM: imx: use device_initcall for
- imx_soc_device_init
-Message-ID: <20200429022546.GI32592@dragon>
+Subject: Re: [PATCH V1 2/4] ARM: imx: cpu: drop dead code
+Message-ID: <20200429023201.GJ32592@dragon>
 References: <1584004645-26720-1-git-send-email-peng.fan@nxp.com>
- <1584004645-26720-2-git-send-email-peng.fan@nxp.com>
+ <1584004645-26720-3-git-send-email-peng.fan@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1584004645-26720-2-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1584004645-26720-3-git-send-email-peng.fan@nxp.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_192555_158472_BF21AD0A 
-X-CRM114-Status: GOOD (  19.52  )
+X-CRM114-CacheID: sfid-20200428_193210_794126_F5673C7A 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,201 +87,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Mar 12, 2020 at 05:17:22PM +0800, peng.fan@nxp.com wrote:
+On Thu, Mar 12, 2020 at 05:17:23PM +0800, peng.fan@nxp.com wrote:
 > From: Peng Fan <peng.fan@nxp.com>
 > 
-> This is preparation to move imx_soc_device_init to drivers/soc/imx/
-> 
-> There is no reason to must put dt devices under /sys/devices/soc0,
-> they could also be under /sys/devices/platform, so we could
-> pass NULL as parent when calling of_platform_default_populate.
-> 
-> Following soc-imx8.c soc-imx-scu.c using device_initcall, need
-> to change return type to int type for imx_soc_device_init.
+> imx_soc_device_init is only called by i.MX6Q/SL/SX/UL/7D/7ULP.
+> So we could drop the switch case for i.MX1/2/3/5 which are dead code
+> that never be executed.
 > 
 > Signed-off-by: Peng Fan <peng.fan@nxp.com>
 > ---
->  arch/arm/mach-imx/common.h       | 1 -
->  arch/arm/mach-imx/cpu.c          | 9 +++++----
->  arch/arm/mach-imx/mach-imx6q.c   | 8 +-------
->  arch/arm/mach-imx/mach-imx6sl.c  | 8 +-------
->  arch/arm/mach-imx/mach-imx6sx.c  | 8 +-------
->  arch/arm/mach-imx/mach-imx6ul.c  | 8 +-------
->  arch/arm/mach-imx/mach-imx7d.c   | 6 ------
->  arch/arm/mach-imx/mach-imx7ulp.c | 2 +-
->  8 files changed, 10 insertions(+), 40 deletions(-)
+>  arch/arm/mach-imx/cpu.c | 24 ------------------------
+>  1 file changed, 24 deletions(-)
 > 
-> diff --git a/arch/arm/mach-imx/common.h b/arch/arm/mach-imx/common.h
-> index 5aa5796cff0e..72c3fcc32910 100644
-> --- a/arch/arm/mach-imx/common.h
-> +++ b/arch/arm/mach-imx/common.h
-> @@ -49,7 +49,6 @@ void imx_aips_allow_unprivileged_access(const char *compat);
->  int mxc_device_init(void);
->  void imx_set_soc_revision(unsigned int rev);
->  void imx_init_revision_from_anatop(void);
-> -struct device *imx_soc_device_init(void);
->  void imx6_enable_rbc(bool enable);
->  void imx_gpc_check_dt(void);
->  void imx_gpc_set_arm_power_in_lpm(bool power_off);
 > diff --git a/arch/arm/mach-imx/cpu.c b/arch/arm/mach-imx/cpu.c
-> index 06f8d64b65af..2df649a84697 100644
+> index 2df649a84697..0302cb66134b 100644
 > --- a/arch/arm/mach-imx/cpu.c
 > +++ b/arch/arm/mach-imx/cpu.c
-> @@ -83,7 +83,7 @@ void __init imx_aips_allow_unprivileged_access(
->  	}
->  }
+> @@ -108,30 +108,6 @@ static int __init imx_soc_device_init(void)
+>  		goto free_soc;
 >  
-> -struct device * __init imx_soc_device_init(void)
-> +static int __init imx_soc_device_init(void)
->  {
->  	struct soc_device_attribute *soc_dev_attr;
->  	const char *ocotp_compat = NULL;
-> @@ -97,7 +97,7 @@ struct device * __init imx_soc_device_init(void)
->  
->  	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
->  	if (!soc_dev_attr)
-> -		return NULL;
-> +		return PTR_ERR(soc_dev_attr);
->  
->  	soc_dev_attr->family = "Freescale i.MX";
->  
-> @@ -219,7 +219,7 @@ struct device * __init imx_soc_device_init(void)
->  	if (IS_ERR(soc_dev))
->  		goto free_serial_number;
->  
-> -	return soc_device_to_device(soc_dev);
-> +	return 0;
->  
->  free_serial_number:
->  	kfree(soc_dev_attr->serial_number);
-> @@ -227,5 +227,6 @@ struct device * __init imx_soc_device_init(void)
->  	kfree(soc_dev_attr->revision);
->  free_soc:
->  	kfree(soc_dev_attr);
-> -	return NULL;
-> +	return -ENOMEM;
+>  	switch (__mxc_cpu_type) {
+> -	case MXC_CPU_MX1:
+> -		soc_id = "i.MX1";
+> -		break;
+> -	case MXC_CPU_MX21:
+> -		soc_id = "i.MX21";
+> -		break;
+> -	case MXC_CPU_MX25:
+> -		soc_id = "i.MX25";
+> -		break;
+> -	case MXC_CPU_MX27:
+> -		soc_id = "i.MX27";
+> -		break;
+> -	case MXC_CPU_MX31:
+> -		soc_id = "i.MX31";
+> -		break;
+> -	case MXC_CPU_MX35:
+> -		soc_id = "i.MX35";
+> -		break;
+> -	case MXC_CPU_MX51:
+> -		soc_id = "i.MX51";
+> -		break;
+> -	case MXC_CPU_MX53:
+> -		soc_id = "i.MX53";
+> -		break;
 
--ENOMEM?  Shouldn't it return the error code from the call where it
-fails.
+The code is here to completeness.  If it doesn't get in your way, let's
+just keep it.
 
 Shawn
 
->  }
-> +device_initcall(imx_soc_device_init);
-> diff --git a/arch/arm/mach-imx/mach-imx6q.c b/arch/arm/mach-imx/mach-imx6q.c
-> index 284bce1112d2..85c084a716ab 100644
-> --- a/arch/arm/mach-imx/mach-imx6q.c
-> +++ b/arch/arm/mach-imx/mach-imx6q.c
-> @@ -245,21 +245,15 @@ static void __init imx6q_axi_init(void)
->  
->  static void __init imx6q_init_machine(void)
->  {
-> -	struct device *parent;
-> -
->  	if (cpu_is_imx6q() && imx_get_soc_revision() == IMX_CHIP_REVISION_2_0)
->  		imx_print_silicon_rev("i.MX6QP", IMX_CHIP_REVISION_1_0);
->  	else
->  		imx_print_silicon_rev(cpu_is_imx6dl() ? "i.MX6DL" : "i.MX6Q",
->  				imx_get_soc_revision());
->  
-> -	parent = imx_soc_device_init();
-> -	if (parent == NULL)
-> -		pr_warn("failed to initialize soc device\n");
-> -
->  	imx6q_enet_phy_init();
->  
-> -	of_platform_default_populate(NULL, NULL, parent);
-> +	of_platform_default_populate(NULL, NULL, NULL);
->  
->  	imx_anatop_init();
->  	cpu_is_imx6q() ?  imx6q_pm_init() : imx6dl_pm_init();
-> diff --git a/arch/arm/mach-imx/mach-imx6sl.c b/arch/arm/mach-imx/mach-imx6sl.c
-> index e27a6889cc56..f6e87363d605 100644
-> --- a/arch/arm/mach-imx/mach-imx6sl.c
-> +++ b/arch/arm/mach-imx/mach-imx6sl.c
-> @@ -45,13 +45,7 @@ static void __init imx6sl_init_late(void)
->  
->  static void __init imx6sl_init_machine(void)
->  {
-> -	struct device *parent;
-> -
-> -	parent = imx_soc_device_init();
-> -	if (parent == NULL)
-> -		pr_warn("failed to initialize soc device\n");
-> -
-> -	of_platform_default_populate(NULL, NULL, parent);
-> +	of_platform_default_populate(NULL, NULL, NULL);
->  
->  	if (cpu_is_imx6sl())
->  		imx6sl_fec_init();
-> diff --git a/arch/arm/mach-imx/mach-imx6sx.c b/arch/arm/mach-imx/mach-imx6sx.c
-> index d5310bf307ff..781e2a94fdd7 100644
-> --- a/arch/arm/mach-imx/mach-imx6sx.c
-> +++ b/arch/arm/mach-imx/mach-imx6sx.c
-> @@ -63,13 +63,7 @@ static inline void imx6sx_enet_init(void)
->  
->  static void __init imx6sx_init_machine(void)
->  {
-> -	struct device *parent;
-> -
-> -	parent = imx_soc_device_init();
-> -	if (parent == NULL)
-> -		pr_warn("failed to initialize soc device\n");
-> -
-> -	of_platform_default_populate(NULL, NULL, parent);
-> +	of_platform_default_populate(NULL, NULL, NULL);
->  
->  	imx6sx_enet_init();
->  	imx_anatop_init();
-> diff --git a/arch/arm/mach-imx/mach-imx6ul.c b/arch/arm/mach-imx/mach-imx6ul.c
-> index 3b0e16ccd59d..e018e716735f 100644
-> --- a/arch/arm/mach-imx/mach-imx6ul.c
-> +++ b/arch/arm/mach-imx/mach-imx6ul.c
-> @@ -55,13 +55,7 @@ static inline void imx6ul_enet_init(void)
->  
->  static void __init imx6ul_init_machine(void)
->  {
-> -	struct device *parent;
-> -
-> -	parent = imx_soc_device_init();
-> -	if (parent == NULL)
-> -		pr_warn("failed to initialize soc device\n");
-> -
-> -	of_platform_default_populate(NULL, NULL, parent);
-> +	of_platform_default_populate(NULL, NULL, NULL);
->  	imx6ul_enet_init();
->  	imx_anatop_init();
->  	imx6ul_pm_init();
-> diff --git a/arch/arm/mach-imx/mach-imx7d.c b/arch/arm/mach-imx/mach-imx7d.c
-> index ebb27592a9f7..879c35929a13 100644
-> --- a/arch/arm/mach-imx/mach-imx7d.c
-> +++ b/arch/arm/mach-imx/mach-imx7d.c
-> @@ -78,12 +78,6 @@ static inline void imx7d_enet_init(void)
->  
->  static void __init imx7d_init_machine(void)
->  {
-> -	struct device *parent;
-> -
-> -	parent = imx_soc_device_init();
-> -	if (parent == NULL)
-> -		pr_warn("failed to initialize soc device\n");
-> -
->  	imx_anatop_init();
->  	imx7d_enet_init();
->  }
-> diff --git a/arch/arm/mach-imx/mach-imx7ulp.c b/arch/arm/mach-imx/mach-imx7ulp.c
-> index 11ac71aaf965..128cf4c92aab 100644
-> --- a/arch/arm/mach-imx/mach-imx7ulp.c
-> +++ b/arch/arm/mach-imx/mach-imx7ulp.c
-> @@ -57,7 +57,7 @@ static void __init imx7ulp_init_machine(void)
->  
->  	mxc_set_cpu_type(MXC_CPU_IMX7ULP);
->  	imx7ulp_set_revision();
-> -	of_platform_default_populate(NULL, NULL, imx_soc_device_init());
-> +	of_platform_default_populate(NULL, NULL, NULL);
->  }
->  
->  static const char *const imx7ulp_dt_compat[] __initconst = {
+>  	case MXC_CPU_IMX6SL:
+>  		ocotp_compat = "fsl,imx6sl-ocotp";
+>  		soc_id = "i.MX6SL";
 > -- 
 > 2.16.4
 > 
