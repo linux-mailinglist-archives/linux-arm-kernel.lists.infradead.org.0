@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27EF81BD99B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:27:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADF7E1BD99A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=22XWxHHMM5wCyTMV90o5p5RnaoJMUJ3iqGvfOrcKTDU=; b=gzqyCT7oxzrlgh
-	RYLxv0Sjkqeiny9hYfxCz1cklSHCg0z/oBgf250NQECFqdu2TJUgBRFnTWaQNrJCuV49sdSnmA0se
-	vjBz+YSYAkw3161uDaiOS/3n2xbFuKqdtxW9/lxdtzEdiUtQ4eJ+yKGv3iOjJF2eL9joyCNTkYEz9
-	TN8kV5K5LtUYbw98kkoCc+YLQsjUYOQuBIb2iBHKByM+7IvbzlY1PH+QLJ0KU2IWuJnRFgTJoLp+9
-	OgDruKX7TXIrLXPUB+lchilH3U6W7+fzWpCLTqPzdgoKw/MrO2Gh8mIN3h5U6o7FT//G1PtZozNYf
-	fioeGIzqujho73GKwUEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fYm90FRqL129QC0mAA33ugJrvrJMkGqry8lB4gmLJq0=; b=bkml8siw0/qj5d
+	uAW0iqjYT1zx1HcMlNqlFzq09pgT/OUqOto7lTicuHYKmqJrjweybS+XHyJ9yFzSG3EigWpPeAHcu
+	2t3gBY+ZWStikI7Cc0fMsI9A5AGMOG1X6zrFltWZ785LUaGzbXU5nkAap5blVmRIsnVA9ZpX6dnGb
+	rIzdBW/yT7wj4BHOkvBjU/HZEpJaKd3kLe3Ohl5gWbDuSxYkg1jHEA6lc0wHNL8XiPsD6GPxhsz/N
+	dnpmp5lJQ32AVClCTxJGpeE5MzDLChr6R0BNW9P9q8JbOpx6xCGpLAKr7Ee91zxRCwvQ5cwVTqUqY
+	2U/lz0JodSMEcFH/5dWQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTjwJ-0004T6-Bl; Wed, 29 Apr 2020 10:27:39 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTjvO-0003uh-6p
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:26:48 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03TAIPhm031773; Wed, 29 Apr 2020 12:26:29 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=KfrwcIEAAxzZTZPX1fo//g25aXA6YdvAOUL28w3PuTE=;
- b=Lay7I5hExdMtnFVTkpr+NIhd2XgmCPQPOzT27AEFV99+bVAqiBZeiUB2Joj3M3RjD/xs
- Jy5QZWjLgUavyRTcgyeWCs8MLApjdeKbDWfpXV8/GRXeGKgWEB+LKgl4K9ssk3PfEWe5
- Di141+m41OY8nri1Hk0XZSVbHYbIT9tKBehSUNqbwLXyrDpNFOHem4N7nngpN4GxCsWO
- obcIPKI6Q3XfDkYvGbRslEO6zM8XRrO8X6KyyWJf+BPcVRT1NI/fEJF6LJiYpkbeOFLc
- fLgsmYw/hPbaoTnJYxjzIIlZK67iaFk1i4ui3Ze39c4Qt4Nz1/6fZXMgFteDXo2PrNu6 8Q== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhjwwrfg-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 29 Apr 2020 12:26:29 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B3BA0100034;
- Wed, 29 Apr 2020 12:26:28 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag6node3.st.com [10.75.127.18])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A44F820C7A6;
- Wed, 29 Apr 2020 12:26:28 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SFHDAG6NODE3.st.com (10.75.127.18)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Wed, 29 Apr 2020 12:26:28 +0200
-From: <patrice.chotard@st.com>
-To: Mark Brown <broonie@kernel.org>, Alexandre Torgue <alexandre.torgue@st.com>
-Subject: spi: stm32-qspi: Fix unbalanced pm_runtime_enable issue
-Date: Wed, 29 Apr 2020 12:26:25 +0200
-Message-ID: <20200429102625.25974-1-patrice.chotard@st.com>
-X-Mailer: git-send-email 2.17.1
+	id 1jTjw0-0004AN-8B; Wed, 29 Apr 2020 10:27:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTjvE-0003uy-7j
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:26:35 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ADEBDC14;
+ Wed, 29 Apr 2020 03:26:31 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 445393F73D;
+ Wed, 29 Apr 2020 03:26:30 -0700 (PDT)
+Date: Wed, 29 Apr 2020 11:26:28 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v3 10/23] arm64: mte: Handle synchronous and asynchronous
+ tag check faults
+Message-ID: <20200429102628.GB30377@arm.com>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-11-catalin.marinas@arm.com>
+ <20200427165822.GE15808@arm.com> <20200428134301.GI3868@gaia>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG3NODE1.st.com (10.75.127.7) To SFHDAG6NODE3.st.com
- (10.75.127.18)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-29_03:2020-04-29,
- 2020-04-29 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200428134301.GI3868@gaia>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_032642_585616_85679044 
-X-CRM114-Status: GOOD (  12.12  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_032632_376584_7EAE2D9C 
+X-CRM114-Status: GOOD (  23.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,55 +65,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Patrice Chotard <patrice.chotard@st.com>,
- mcoquelin.stm32@gmail.com, linux-spi@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Patrice Chotard <patrice.chotard@st.com>
+On Tue, Apr 28, 2020 at 02:43:01PM +0100, Catalin Marinas wrote:
+> On Mon, Apr 27, 2020 at 05:58:22PM +0100, Dave P Martin wrote:
+> > On Tue, Apr 21, 2020 at 03:25:50PM +0100, Catalin Marinas wrote:
+> > > From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> > > 
+> > > The Memory Tagging Extension has two modes of notifying a tag check
+> > > fault at EL0, configurable through the SCTLR_EL1.TCF0 field:
+> > > 
+> > > 1. Synchronous raising of a Data Abort exception with DFSC 17.
+> > > 2. Asynchronous setting of a cumulative bit in TFSRE0_EL1.
+> > > 
+> > > Add the exception handler for the synchronous exception and handling of
+> > > the asynchronous TFSRE0_EL1.TF0 bit setting via a new TIF flag in
+> > > do_notify_resume().
+> > > 
+> > > On a tag check failure in user-space, whether synchronous or
+> > > asynchronous, a SIGSEGV will be raised on the faulting thread.
+> > 
+> > Has there been any discussion on whether this should be SIGSEGV or
+> > SIGBUS?
+> > 
+> > Probably neither is much more appropriate than the other.
+> 
+> You could argue either way. I don't recall a firm conclusion on this, so
+> I picked one that follows SPARC ADI.
 
-Issue detected by unbinding/binding the stm32 qspi driver as following:
+Agreed, that precedent is good enough for me.  I hadn't refreshed my
+memory of how sparc was using these signals.
 
-root@stm32mp2:~# echo 40430000.spi > /sys/bus/platform/drivers/stm32-qspi/404300
-00.spi/driver/unbind
-root@stm32mp2:~# echo 40430000.spi > /sys/bus/platform/drivers/stm32-qspi/bind
-[  969.864021] stm32-qspi 40430000.spi: Unbalanced pm_runtime_enable!
-[  970.225161] spi-nor spi0.0: mx66u51235f (65536 Kbytes)
-[  970.935721] spi-nor spi0.1: mx66u51235f (65536 Kbytes)
+> 
+> > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
+> > > index 339882db5a91..e377d77c065e 100644
+> > > --- a/arch/arm64/kernel/signal.c
+> > > +++ b/arch/arm64/kernel/signal.c
+> > > @@ -732,6 +732,9 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
+> > >  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
+> > >  	regs->pc = (unsigned long)ka->sa.sa_handler;
+> > >  
+> > > +	/* TCO (Tag Check Override) always cleared for signal handlers */
+> > > +	regs->pstate &= ~PSR_TCO_BIT;
+> > > +
+> > >  	if (ka->sa.sa_flags & SA_RESTORER)
+> > >  		sigtramp = ka->sa.sa_restorer;
+> > >  	else
+> > > @@ -923,6 +926,11 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
+> > >  			if (thread_flags & _TIF_UPROBE)
+> > >  				uprobe_notify_resume(regs);
+> > >  
+> > > +			if (thread_flags & _TIF_MTE_ASYNC_FAULT) {
+> > > +				clear_thread_flag(TIF_MTE_ASYNC_FAULT);
+> > > +				force_signal_inject(SIGSEGV, SEGV_MTEAERR, 0);
+> > > +			}
+> > > +
+> > 
+> > Should this definitely be a force_signal_inject()?
+> > 
+> > SEGV_MTEAERR is not intrinsically fatal: it must be possible to run past
+> > the error, because that's the whole point -- chances are we already did.
+> > 
+> > Compare this with MTESERR where running past the signal would lead to a
+> > spin.
+> 
+> Good point. This can be a send_sig_fault() (I need to check the right
+> API).
 
-Fixes: 9d282c17b023 ("spi: stm32-qspi: Add pm_runtime support")
+Sounds fair.
 
-Signed-off-by: Patrice Chotard <patrice.chotard@st.com>
----
- drivers/spi/spi-stm32-qspi.c | 5 +++++
- 1 file changed, 5 insertions(+)
-
-diff --git a/drivers/spi/spi-stm32-qspi.c b/drivers/spi/spi-stm32-qspi.c
-index 2f2ea2c42d6e..3c44bb2fd9b1 100644
---- a/drivers/spi/spi-stm32-qspi.c
-+++ b/drivers/spi/spi-stm32-qspi.c
-@@ -555,10 +555,15 @@ static const struct spi_controller_mem_ops stm32_qspi_mem_ops = {
- 
- static void stm32_qspi_release(struct stm32_qspi *qspi)
- {
-+	pm_runtime_get_sync(qspi->dev);
- 	/* disable qspi */
- 	writel_relaxed(0, qspi->io_base + QSPI_CR);
- 	stm32_qspi_dma_free(qspi);
- 	mutex_destroy(&qspi->lock);
-+	pm_runtime_put_noidle(qspi->dev);
-+	pm_runtime_disable(qspi->dev);
-+	pm_runtime_set_suspended(qspi->dev);
-+	pm_runtime_dont_use_autosuspend(qspi->dev);
- 	clk_disable_unprepare(qspi->clk);
- }
- 
--- 
-2.17.1
-
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
