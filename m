@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E341BE276
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 17:23:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5F19A1BE289
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 17:25:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=A2CIaTRtCqI5u5U29eVM1hZTY7ywH37NukGfv637HLU=; b=jfT1QoS9WdXvEzsHE1gfLqXqy0
-	JLeJzpBnxMWwQF4rK+bhx9BvQlaGyT0XqbWa0Yp+FOFPGcKMhUV/ojXUck/BtD+pHcAOKA/zQYCtc
-	10JmLVxG/KB8pZhbNeqeiNMklIiXzPQ6Yayg1rI+rEHccR3JyoJ+dykiIjUai41eqBvPf1ocJtrmB
-	XzCwA2DmUTH3lyhV/JmOOmPLis+UlTspiY/WTVKvp69+9Uh3LMrDM7sYSmGAL6mWjESEFo+UT6nUs
-	8co40Spszef05yx6ENcRZW3L6V0vZPLc639ySH9nS7lbWuWNPa3jZkPxRrmEXFDgw0Ed7xfLQ0AJn
-	qoXDv8Wg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fI5ssnoogdqw5hCvpHZBJytutDst6AZiizCBvgTmDho=; b=BidH2SGGN7oBTU
+	W1rcrcIYtjf0JjIrJc4cIr1FLze2TNzOoik3UwiDpllfbK54ZYLU8HD94oiQS1dbId3wr5yWtDuq5
+	ujv67T4AgHnAyd+N3Y+Mo8ujE1iZiKSp4ObPntMIrGaLYWENS7Dl59IQXJAky1p4MPqWIr+8kt6FD
+	yO45GipQ/+S8Vfttln3XQ+fc2XIVIynot5zUWICQoH52AI2El8znze2VDRwQ3ktXyNCd3XmnnZKEp
+	1sTmEdJd+3mTzWRfn6iFGTeGs9InDijghDdUFShMQQAKaYRYakad8JsZjSc49zbsBAmur8fINLF9F
+	ZK7mc0nhr+rxuZqO4dxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jToXy-0003Rt-Id; Wed, 29 Apr 2020 15:22:50 +0000
-Received: from lists.gateworks.com ([108.161.130.12])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jToXo-0003Qp-Nh
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 15:22:41 +0000
-Received: from 068-189-091-139.biz.spectrum.com ([68.189.91.139]
- helo=tharvey.pdc.gateworks.com)
- by lists.gateworks.com with esmtp (Exim 4.82)
- (envelope-from <tharvey@gateworks.com>)
- id 1jToa1-0006N5-QF; Wed, 29 Apr 2020 15:24:57 +0000
-From: Tim Harvey <tharvey@gateworks.com>
-To: Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] ARM: dts: gw552x: add USB OTG support
-Date: Wed, 29 Apr 2020 08:22:35 -0700
-Message-Id: <1588173755-18045-1-git-send-email-tharvey@gateworks.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1587748215-9587-1-git-send-email-tharvey@gateworks.com>
-References: <1587748215-9587-1-git-send-email-tharvey@gateworks.com>
+	id 1jToa4-00043p-2t; Wed, 29 Apr 2020 15:25:00 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jToZt-00042i-7e
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 15:24:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64F0A1045;
+ Wed, 29 Apr 2020 08:24:48 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8FD523F68F;
+ Wed, 29 Apr 2020 08:24:46 -0700 (PDT)
+Date: Wed, 29 Apr 2020 16:24:44 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Kevin Brodsky <kevin.brodsky@arm.com>
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+Message-ID: <20200429152443.GD10651@gaia>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
+ <e568615c-7f13-5ad6-48cc-45f5211ed1df@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <e568615c-7f13-5ad6-48cc-45f5211ed1df@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_082240_812327_469BCF45 
-X-CRM114-Status: UNSURE (   9.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200429_082449_327216_F6E75E99 
+X-CRM114-Status: GOOD (  17.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -61,57 +64,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Harvey <tharvey@gateworks.com>
-MIME-Version: 1.0
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Luis Machado <luis.machado@linaro.org>, Omair Javaid <omair.javaid@linaro.org>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Alan Hayward <Alan.Hayward@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GW552x-B board revision adds USB OTG support.
+On Wed, Apr 29, 2020 at 11:27:10AM +0100, Kevin Brodsky wrote:
+> On 21/04/2020 15:25, Catalin Marinas wrote:
+> > diff --git a/arch/arm64/lib/mte.S b/arch/arm64/lib/mte.S
+> > index bd51ea7e2fcb..45be04a8c73c 100644
+> > --- a/arch/arm64/lib/mte.S
+> > +++ b/arch/arm64/lib/mte.S
+> > @@ -5,6 +5,7 @@
+> >   #include <linux/linkage.h>
+> >   #include <asm/assembler.h>
+> > +#include <asm/mte.h>
+> >   /*
+> >    * Compare tags of two pages
+> > @@ -44,3 +45,52 @@ SYM_FUNC_START(mte_memcmp_pages)
+> >   	ret
+> >   SYM_FUNC_END(mte_memcmp_pages)
+> > +
+> > +/*
+> > + * Read tags from a user buffer (one tag per byte) and set the corresponding
+> > + * tags at the given kernel address. Used by PTRACE_POKEMTETAGS.
+> > + *   x0 - kernel address (to)
+> > + *   x1 - user buffer (from)
+> > + *   x2 - number of tags/bytes (n)
+> > + * Returns:
+> > + *   x0 - number of tags read/set
+> > + */
+> > +SYM_FUNC_START(mte_copy_tags_from_user)
+> > +	mov	x3, x1
+> > +1:
+> > +USER(2f, ldtrb	w4, [x1])
+> 
+> Here we are making either of the following assumptions:
+> 1. The __user pointer (here `from`) actually points to user memory, not
+> kernel memory (and we have set_fs(USER_DS) in place).
+> 2. CONFIG_ARM64_UAO is enabled and the hardware implements UAO.
+> 
+> 1. is currently true because these functions are only used for the new
+> ptrace requests, which indeed pass pointers to user memory. However, future
+> users of these functions may not know about this requirement.
+> 2. is not necessarily true because ARM64_MTE does not depend on ARM64_UAO.
+> 
+> It is unlikely that future users of these functions actually need to pass
+> __user pointers to kernel memory, so adding a comment spelling out the first
+> assumption is probably fine.
 
-Enable the device-tree node and configure the OTG_ID pin.
+I found it easier to add uao_user_alternative rather than writing a
+comment ;).
 
-Signed-off-by: Tim Harvey <tharvey@gateworks.com>
----
- arch/arm/boot/dts/imx6qdl-gw552x.dtsi | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+Thanks.
 
-diff --git a/arch/arm/boot/dts/imx6qdl-gw552x.dtsi b/arch/arm/boot/dts/imx6qdl-gw552x.dtsi
-index dc646b7..bb35971 100644
---- a/arch/arm/boot/dts/imx6qdl-gw552x.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-gw552x.dtsi
-@@ -258,6 +258,14 @@
- 	status = "okay";
- };
- 
-+&usbotg {
-+	vbus-supply = <&reg_5p0v>;
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&pinctrl_usbotg>;
-+	disable-over-current;
-+	status = "okay";
-+};
-+
- &wdog1 {
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_wdog>;
-@@ -359,6 +367,12 @@
- 		>;
- 	};
- 
-+	pinctrl_usbotg: usbotggrp {
-+		fsl,pins = <
-+			MX6QDL_PAD_ENET_RX_ER__USB_OTG_ID	0x13059
-+		>;
-+	};
-+
- 	pinctrl_wdog: wdoggrp {
- 		fsl,pins = <
- 			MX6QDL_PAD_DISP0_DAT8__WDOG1_B		0x1b0b0
 -- 
-2.7.4
-
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
