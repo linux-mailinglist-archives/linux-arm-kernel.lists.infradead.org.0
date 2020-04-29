@@ -2,99 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADCBB1BDAF6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:47:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C05E61BDAFC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:48:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=YHeZrscoREIQ47opjVVVpflCPX8JDqGQmy/lXQrzP/Y=; b=ugdSIIEyBd9R5a6jbe8RgABGL
-	g8H+d2d0++gQbaQq0eQR0s7SYXYdZm8TYa2KT/pOBnfo0q/vAbNvLnVjd29cj6Eoo3D6gcQRO56bz
-	agYHhtkpzRnRB4vJFB9hfGmqY7OahBlM2xH74BEDT+pl8UI8vdI0z1msDy5uj0fqFJnN/zgSM3Cb2
-	N9/e+W8luOPR7EzGPOyzbRQSFf9dwAJfkfY3TrmJLYcls2QvDfilrSzhjlpYIYza3loYbYBR89zqr
-	nm3Wsz7saThKNPAHqiXwrXcyMsPLuK2iiDJ5b22DETwr1v/+bOaB9HJPJfrdFmgSnb9uoDI055e0Z
-	Ah7XrapYQ==;
+	 bh=UCQ9CYsrP7sDD10j/Nc2qwyytB0+zLw+8AykNAL8NrI=; b=E8WRyzEKrXskbtp716RtHvWeM
+	2GrhjgqakcK7deBw0+HiwqZjscxiH8Kq+kkel6oGRET1mr59klz1h59hjqKCIMXvxa26FBZ0ZhgAG
+	sFeEaeeX0bIbvKHO7lMjPZGuOiJ7TuEzloeWWTZDVa4EQevF7zKmelz4O0upNdlbkKdT55eFco5+u
+	RZMmiwlFnHgDmLBm8Pz0d6y8hU1dEBZdeH2Fd1jg9QwMMv7wKKY3uv5esumeVLYiYQyXYgTs35AO+
+	IIsSNtf4IIMSfDpwgL8UtD4WANJ+3jNuNAU1Zn5k+7jRPsjchyLJqJdc48y0UiMXLNVnqlK/mW2Yv
+	qsQH175AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTlBG-0006KS-2w; Wed, 29 Apr 2020 11:47:10 +0000
-Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
+	id 1jTlBy-0006dk-P4; Wed, 29 Apr 2020 11:47:54 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTlB4-0006JJ-Co
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:47:01 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.west.internal (Postfix) with ESMTP id 4E60771A;
- Wed, 29 Apr 2020 07:46:56 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Wed, 29 Apr 2020 07:46:57 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=GNg8N4MpEqbpY0+HdKjq545IT9a
- sX3IFSheqvawzyns=; b=mzigDqR66/wPW6d/Bl2C6VS0hPS23t0ag/Vl+wjE8za
- zjZiu50YzDnQlwZAprMvwgpAHXCdaBOHOn3zDwQWELdd6fPoptIOUHFXivmwP9h3
- 0rlslxuMoJZG4WWEUzZIHYP7W2XedQ5kpJoRjXP7Z16m3B5tNl4wOMmo5H42uxFf
- zQIbVxYciIIzeTKTMLDmJ64xmAitW9VZjguBOB7xksDVr9L3Ph684Kl3+rBDir6Y
- tgHSJ6hvI2MqOf6URFJsy2/RmpfgYS/nYX1OYDJ+99Px3erzP/RfEatYs52t4g8i
- +t95Xu/YSIZunEzmnlxshZoLjrmfzaMX5o5UXfCIocQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=GNg8N4
- MpEqbpY0+HdKjq545IT9asX3IFSheqvawzyns=; b=LixaC0mQ3xBTYJ9RoIE53l
- vwV8UAJeauGMHhNsM9t7hC6sdDGMKqidJIaTmQuOIjENWrIellzoEtXhd7g3Rxkc
- C/f1orJ37Pm486aNRxv+aCuGpVL85Vy1bsNHXE59mVdEkNiJkxeUdF6I9hNeAEPC
- oLcnPJbcQDvA4L8QUoUoUqIJglmwi19EhbgHteDpMy3e75QwBuhiC3Jctb/O5Qgz
- RA9hLcTT0ZcPhWsv0tBO4VIHYl1x14/DPhj8UO2+x5lXT/Th1jSVxc+oZpreYjS4
- fbiySOseihBiuBARr3iFYRZaGR4MLhSY7qk2XLvyjHgF//yXtunHN+IWacnC1VyA
- ==
-X-ME-Sender: <xms:L2mpXuQIjPH0YGUJgRFgQ9YBY0ktkty_6ZnqVh9Vrslei89vaxBXew>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieefgdeggecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
- ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
- fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:L2mpXv2pEb4K0JdhRCtn6ByzyreQgAY8ToIyEOwcFgObySG-wEbj3g>
- <xmx:L2mpXhxpGX4eh3Gs53qud0xc22gNACGUfYjUqX4YTVZqqUQwNdFHRg>
- <xmx:L2mpXq_2YqkqFCL2Jee6g0fCd7iSwquf4rjXchnq8MsItmqkwslY_w>
- <xmx:L2mpXnK9Ha19zwGGTCDtRvYCOk4ekKsIT3WEXoE7LjQQjUb3IeDmMKT-bFs>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id E96CC3065EEB;
- Wed, 29 Apr 2020 07:46:54 -0400 (EDT)
-Date: Wed, 29 Apr 2020 13:46:53 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v5 v5 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200429114653.ifzi4z2qzpys4i4q@gilmour.lan>
-References: <20200428180718.1609826-1-robert.foss@linaro.org>
- <20200428180718.1609826-2-robert.foss@linaro.org>
- <20200429090012.vhhwatojkncjquwd@gilmour.lan>
- <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
- <20200429111307.GA867@valkosipuli.retiisi.org.uk>
- <CAG3jFyvvX6J6TSnXr=KUzu5BuQ351sNbNC2mtY0QWdqBdAz7JA@mail.gmail.com>
+ id 1jTlBn-0006ct-Lf
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:47:45 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1588160862; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=79lO4foXlw6J8ugqTXZwErfGUb0sv/L3QrDS4q0L9l4=;
+ b=DGd1kzdK3mKrJUVOpECE0vqTOsMaUEFxjU4P7qaU8S8RgljrcXd4OAloT4R1VMtV0d99dras
+ JiHrLCnNBiD7GEvrTJhbuLW8mgfk2zM/6x0uPr0FoaqjFLioFs5hy78BZmuGe/99oEJyuw32
+ hdvWWJsMfRZ0Ej2vBAPiK2omd2I=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ea9695d.7f3d26fdac70-smtp-out-n03;
+ Wed, 29 Apr 2020 11:47:41 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 7887AC43637; Wed, 29 Apr 2020 11:47:41 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED autolearn=ham
+ autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 16C3BC433D2;
+ Wed, 29 Apr 2020 11:47:41 +0000 (UTC)
 MIME-Version: 1.0
-In-Reply-To: <CAG3jFyvvX6J6TSnXr=KUzu5BuQ351sNbNC2mtY0QWdqBdAz7JA@mail.gmail.com>
+Date: Wed, 29 Apr 2020 17:17:41 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Suzuki K Poulose <suzuki.poulose@arm.com>, mike.leach@linaro.org
+Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
+ connections
+In-Reply-To: <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
+References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
+ <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
+ <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
+ <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
+ <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
+Message-ID: <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_044659_807945_E4A5C46F 
-X-CRM114-Status: GOOD (  31.24  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_044743_768621_AAE05877 
+X-CRM114-Status: GOOD (  20.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.18 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -107,340 +91,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- Marco Felsch <m.felsch@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Sakari Ailus <sakari.ailus@iki.fi>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: multipart/mixed; boundary="===============1920743208417749558=="
+Cc: linux-arm-kernel@lists.infradead.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mathieu.poirier@linaro.org, swboyd@chromium.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020-04-28 17:53, Sai Prakash Ranjan wrote:
+> On 2020-04-27 19:23, Suzuki K Poulose wrote:
+>> On 04/27/2020 10:45 AM, Mike Leach wrote:
+> [...]
+>>>> 
+>>>> This is not sufficient. You must prevent another session trying to
+>>>> enable the other port of the replicator as this could silently fail
+>>>> the "on-going" session. Not ideal. Fail the attempt to enable a port
+>>>> if the other port is active. You could track this in software and
+>>>> fail early.
+>>>> 
+>>>> Suzuki
+>>> 
+>>> While I have no issue in principle with not enabling a path to a sink
+>>> that is not in use - indeed in some cases attaching to unused sinks
+>>> can cause back-pressure that slows throughput (cf TPIU) - I am
+>>> concerned that this modification is masking an underlying issue with
+>>> the platform in question.
+>>> 
+>>> Should we decide to enable the diversion of different IDs to 
+>>> different
+>>> sinks or allow different sessions go to different sinks, then this 
+>>> has
+>>> potential to fail on the SC7180 SoC - and it will be difficult in
+>>> future to associate a problem with this discussion.
+>> 
+>> Mike,
+>> 
+>> I think thats a good point.
+>> Sai, please could we narrow down this to the real problem and may be
+>> work around it for the "device" ? Do we know which sink is causing the
+>> back pressure ? We could then push the "work around" to the replicator
+>> it is connected to.
+>> 
+>> Suzuki
+> 
+> Hi Suzuki, Mike,
+> 
+> To add some more to the information provided earlier,
+> swao_replicator(6b06000) and etf are
+> in AOSS (Always-On-SubSystem) group. Also TPIU(connected to
+> qdss_replicator) and EUD(connected
+> to swao_replicator) sinks are unused.
+> 
+> Please ignore the id filter values provided earlier.
+> Here are ID filter values after boot and before enabling replicator. As 
+> per
+> these idfilter values, we should not try to enable replicator if its 
+> already
+> enabled (in this case for swao_replicator) right?
+> 
+> localhost ~ # cat
+> /sys/bus/amba/devices/6b06000.replicator/replicator1/mgmt/idfilter0
+> 0x0
+> localhost ~ # cat
+> /sys/bus/amba/devices/6b06000.replicator/replicator1/mgmt/idfilter1
+> 0x0
+> 
+> localhost ~ # cat
+> /sys/bus/amba/devices/6046000.replicator/replicator0/mgmt/idfilter0
+> 0xff
+> localhost ~ # cat
+> /sys/bus/amba/devices/6046000.replicator/replicator0/mgmt/idfilter1
+> 0xff
+> 
 
---===============1920743208417749558==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4e2ce4wi52h6jxye"
-Content-Disposition: inline
+Looking more into replicator1(swao_replicator) values as 0x0 even after 
+replicator_reset()
+in replicator probe, I added dynamic_replicator_reset in 
+dynamic_replicator_enable()
+and am not seeing any hardlockup. Also I added some prints to check the 
+idfilter
+values before and after reset and found that its not set to 0xff even 
+after replicator_reset()
+in replicator probe, I don't see any other path setting it to 0x0.
 
+After probe:
 
---4e2ce4wi52h6jxye
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+[    8.477669] func replicator_probe before reset replicator replicator1 
+REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+[    8.489470] func replicator_probe after reset replicator replicator1 
+REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+[    8.502738] func replicator_probe before reset replicator replicator0 
+REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+[    8.515214] func replicator_probe after reset replicator replicator0 
+REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+localhost ~ #
+localhost ~ #
+localhost ~ # echo 1 > /sys/bus/coresight/devices/tmc_etr0/enable_sink
+localhost ~ #
+localhost ~ # echo 1 > /sys/bus/coresight/devices/etm0/enable_source
+[   58.490485] func dynamic_replicator_enable before reset replicator 
+replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+[   58.503246] func dynamic_replicator_enable after reset replicator 
+replicator0 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+[   58.520902] func dynamic_replicator_enable before reset replicator 
+replicator1 REPLICATOR_IDFILTER0=0x0 REPLICATOR_IDFILTER1=0x0
+[   58.533500] func dynamic_replicator_enable after reset replicator 
+replicator1 REPLICATOR_IDFILTER0=0xff REPLICATOR_IDFILTER1=0xff
+localhost ~ #
 
-On Wed, Apr 29, 2020 at 01:39:12PM +0200, Robert Foss wrote:
-> On Wed, 29 Apr 2020 at 13:13, Sakari Ailus <sakari.ailus@iki.fi> wrote:
-> >
-> > Hi Robert, Maxime,
-> >
-> > On Wed, Apr 29, 2020 at 12:19:38PM +0200, Robert Foss wrote:
-> > > On Wed, 29 Apr 2020 at 11:00, Maxime Ripard <maxime@cerno.tech> wrote:
-> > > >
-> > > > Hi,
-> > > >
-> > > > On Tue, Apr 28, 2020 at 08:07:17PM +0200, Robert Foss wrote:
-> > > > > Add match table, enable ov8856_probe() to support
-> > > > > both ACPI and DT modes.
-> > > > >
-> > > > > ACPI and DT modes are primarily distinguished from
-> > > > > each other by relying on devm_XXX_get_optional()
-> > > > > will return NULL instead of a reference for the
-> > > > > desired managed resource.
-> > > > >
-> > > > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > > > ---
-> > > > >
-> > > > > - Changes since v4:
-> > > > >   * Maxime & Sakari: Switch to clock-frequency
-> > > > >
-> > > > > - Changes since v3:
-> > > > >   * Remove redundant {}-brackets
-> > > > >   * Compare xvclk_rate to 5% tolerance
-> > > > >   * Andy: Use dev_fwnode()
-> > > > >   * Andy: Use %pe instead of %ld + PTR_ERR()
-> > > > >   * Andy: Invert reset_gpio logic
-> > > > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
-> > > > >   * Andy: Use dev_err for logging for failures
-> > > > >   * Andy: Remove dev_warn from EDEFER/regulator error path
-> > > > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
-> > > > >   * Maxime & Sakari: Verify clock frequency from DT
-> > > > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT =
-devices
-> > > > >   * Sakari: Remove duplicate ov8856->dev assignment
-> > > > >
-> > > > > - Changes since v2:
-> > > > >   * Added "struct device *dev" member to struct ov8856
-> > > > >   * Andy: Switch to optional version of devm_gpiod_get
-> > > > >   * Andy: Switch to optional version of devm_clk_get
-> > > > >   * Fabio: Add reset sleep period
-> > > > >   * Sakari: Unify defines for 19.2Mhz
-> > > > >   * Sakari: Remove 24Mhz clock, since it isn't needed for support=
-ed modes
-> > > > >   * Sakari: Replace dev_info() with dev_dbg()
-> > > > >   * Sakari: Switch induction variable type to unsigned
-> > > > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
-> > > > >   * Sakari: Pull reset GPIO high on power on failure
-> > > > >   * Sakari: Add power on/off to resume/suspend
-> > > > >   * Sakari: Fix indentation
-> > > > >   * Sakari: Power off during ov8856_remove()
-> > > > >   * Sakari: Don't sleep during power-on in ACPI mode
-> > > > >   * Sakari: Switch to getting xvclk from clk_get_rate
-> > > > >
-> > > > > - Changes since v1:
-> > > > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
-> > > > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
-> > > > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTI=
-VE_LOW change
-> > > > >   * Fabio: Remove empty line
-> > > > >   * Fabio: Remove real error from devm_gpiod_get() failures
-> > > > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_S=
-UPPLIES
-> > > > >   * Sakari: Use XVCLK rate as provided by DT
-> > > > >
-> > > > >  drivers/media/i2c/ov8856.c | 139 +++++++++++++++++++++++++++++++=
-++----
-> > > > >  1 file changed, 126 insertions(+), 13 deletions(-)
-> > > > >
-> > > > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov885=
-6.c
-> > > > > index 8655842af275..48b02b8d205f 100644
-> > > > > --- a/drivers/media/i2c/ov8856.c
-> > > > > +++ b/drivers/media/i2c/ov8856.c
-> > > > > @@ -3,10 +3,13 @@
-> > > > >
-> > > > >  #include <asm/unaligned.h>
-> > > > >  #include <linux/acpi.h>
-> > > > > +#include <linux/clk.h>
-> > > > >  #include <linux/delay.h>
-> > > > > +#include <linux/gpio/consumer.h>
-> > > > >  #include <linux/i2c.h>
-> > > > >  #include <linux/module.h>
-> > > > >  #include <linux/pm_runtime.h>
-> > > > > +#include <linux/regulator/consumer.h>
-> > > > >  #include <media/v4l2-ctrls.h>
-> > > > >  #include <media/v4l2-device.h>
-> > > > >  #include <media/v4l2-fwnode.h>
-> > > > > @@ -18,7 +21,7 @@
-> > > > >  #define OV8856_LINK_FREQ_360MHZ              360000000ULL
-> > > > >  #define OV8856_LINK_FREQ_180MHZ              180000000ULL
-> > > > >  #define OV8856_SCLK                  144000000ULL
-> > > > > -#define OV8856_MCLK                  19200000
-> > > > > +#define OV8856_XVCLK_19_2            19200000
-> > > > >  #define OV8856_DATA_LANES            4
-> > > > >  #define OV8856_RGB_DEPTH             10
-> > > > >
-> > > > > @@ -64,6 +67,12 @@
-> > > > >
-> > > > >  #define to_ov8856(_sd)                       container_of(_sd, s=
-truct ov8856, sd)
-> > > > >
-> > > > > +static const char * const ov8856_supply_names[] =3D {
-> > > > > +     "dovdd",        /* Digital I/O power */
-> > > > > +     "avdd",         /* Analog power */
-> > > > > +     "dvdd",         /* Digital core power */
-> > > > > +};
-> > > > > +
-> > > > >  enum {
-> > > > >       OV8856_LINK_FREQ_720MBPS,
-> > > > >       OV8856_LINK_FREQ_360MBPS,
-> > > > > @@ -566,6 +575,11 @@ struct ov8856 {
-> > > > >       struct media_pad pad;
-> > > > >       struct v4l2_ctrl_handler ctrl_handler;
-> > > > >
-> > > > > +     struct device           *dev;
-> > > > > +     struct clk              *xvclk;
-> > > > > +     struct gpio_desc        *reset_gpio;
-> > > > > +     struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_suppl=
-y_names)];
-> > > > > +
-> > > > >       /* V4L2 Controls */
-> > > > >       struct v4l2_ctrl *link_freq;
-> > > > >       struct v4l2_ctrl *pixel_rate;
-> > > > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_sub=
-dev *sd, int enable)
-> > > > >       return ret;
-> > > > >  }
-> > > > >
-> > > > > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > > > > +{
-> > > > > +     struct i2c_client *client =3D v4l2_get_subdevdata(&ov8856->=
-sd);
-> > > > > +     int ret;
-> > > > > +
-> > > > > +     ret =3D clk_prepare_enable(ov8856->xvclk);
-> > > > > +     if (ret < 0) {
-> > > > > +             dev_err(&client->dev, "failed to enable xvclk\n");
-> > > > > +             return ret;
-> > > > > +     }
-> > > > > +
-> > > > > +     if (is_acpi_node(dev_fwnode(ov8856->dev)))
-> > > > > +             return 0;
-> > > > > +
-> > > > > +     if (ov8856->reset_gpio) {
-> > > > > +             gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > > > +             usleep_range(1000, 2000);
-> > > > > +     }
-> > > > > +
-> > > > > +     ret =3D regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_name=
-s),
-> > > > > +                                 ov8856->supplies);
-> > > > > +     if (ret < 0) {
-> > > > > +             dev_err(&client->dev, "failed to enable regulators\=
-n");
-> > > > > +             goto disable_clk;
-> > > > > +     }
-> > > > > +
-> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-> > > > > +     usleep_range(1500, 1800);
-> > > > > +
-> > > > > +     return 0;
-> > > > > +
-> > > > > +disable_clk:
-> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > > > +     clk_disable_unprepare(ov8856->xvclk);
-> > > > > +
-> > > > > +     return ret;
-> > > > > +}
-> > > > > +
-> > > > > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > > > > +{
-> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > > > +     regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
-> > > > > +                            ov8856->supplies);
-> > > > > +     clk_disable_unprepare(ov8856->xvclk);
-> > > > > +}
-> > > > > +
-> > > > >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> > > > >  {
-> > > > >       struct i2c_client *client =3D to_i2c_client(dev);
-> > > > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(stru=
-ct device *dev)
-> > > > >       if (ov8856->streaming)
-> > > > >               ov8856_stop_streaming(ov8856);
-> > > > >
-> > > > > +     __ov8856_power_off(ov8856);
-> > > > >       mutex_unlock(&ov8856->mutex);
-> > > > >
-> > > > >       return 0;
-> > > > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struc=
-t device *dev)
-> > > > >       int ret;
-> > > > >
-> > > > >       mutex_lock(&ov8856->mutex);
-> > > > > +
-> > > > > +     __ov8856_power_on(ov8856);
-> > > > >       if (ov8856->streaming) {
-> > > > >               ret =3D ov8856_start_streaming(ov8856);
-> > > > >               if (ret) {
-> > > > > @@ -1092,29 +1155,58 @@ static int ov8856_identify_module(struct =
-ov8856 *ov8856)
-> > > > >       return 0;
-> > > > >  }
-> > > > >
-> > > > > -static int ov8856_check_hwcfg(struct device *dev)
-> > > > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
-> > > > >  {
-> > > > > +     struct device *dev =3D ov8856->dev;
-> > > > >       struct fwnode_handle *ep;
-> > > > >       struct fwnode_handle *fwnode =3D dev_fwnode(dev);
-> > > > >       struct v4l2_fwnode_endpoint bus_cfg =3D {
-> > > > >               .bus_type =3D V4L2_MBUS_CSI2_DPHY
-> > > > >       };
-> > > > > -     u32 mclk;
-> > > > > +     u32 xvclk_rate;
-> > > > >       int ret;
-> > > > >       unsigned int i, j;
-> > > > >
-> > > > >       if (!fwnode)
-> > > > >               return -ENXIO;
-> > > > >
-> > > > > -     ret =3D fwnode_property_read_u32(fwnode, "clock-frequency",=
- &mclk);
-> > > > > +     ret =3D fwnode_property_read_u32(fwnode, "clock-frequency",
-> > > > > +             &xvclk_rate);
-> > > > >       if (ret)
-> > > > >               return ret;
-> > > > >
-> > > > > -     if (mclk !=3D OV8856_MCLK) {
-> > > > > -             dev_err(dev, "external clock %d is not supported", =
-mclk);
-> > > > > +     if (!is_acpi_node(fwnode)) {
-> > > > > +             ov8856->xvclk =3D devm_clk_get(dev, "xvclk");
-> > > > > +             if (IS_ERR(ov8856->xvclk)) {
-> > > > > +                     dev_err(dev, "could not get xvclk clock (%p=
-e)\n",
-> > > > > +                                     ov8856->xvclk);
-> > > > > +                     return PTR_ERR(ov8856->xvclk);
-> > > > > +             }
-> > > > > +
-> > > > > +             clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > > > +             xvclk_rate =3D clk_get_rate(ov8856->xvclk);
-> > > > > +     }
-> > > > > +
-> > > > > +     /* external clock must be 19.2MHz, allow 5% tolerance */
-> > > >
-> > > > Where is that 5% tolerance coming from? Experimentations, datasheet=
-s, something
-> > > > that looks good enough? Either way, this should be in the comment.
-> > >
-> > > I don't have access to the full datasheet unfortunately. A 24Mhz rate
-> > > is as far as I understand it supported and required for higher
-> > > bandwidth count modes.
-> > > It was suggested to me that adding a tolerance is the best practice,
-> > > the ov5645 driver uses a 1% tolerance, which may be more appropriate.
-> >
-> > The frequency should really be exact. Sometimes what happens is, howeve=
-r,
-> > that a register list based driver does not have the register lists for a
-> > frequency that is available on a given system. That's why some drivers =
-have
-> > allowed some difference to the intended frequency.
-> >
-> > That 5 % seems like a random value, just like any other number that dif=
-fers
-> > from the exact frequency would be.
-> >
-> > I'd issue a warning if the frequency differs from what was intended, but
-> > still proceed with probe. This way we can make sure the difference is n=
-oted
-> > while boards that cannot provide the exact frequency supported by the
-> > driver can still function.
->=20
-> Issuing a warning sounds like a good solution to me. What do you think Ma=
-xime?
+Can we have a replicator_reset in dynamic_replicator_enable?
 
-Sounds good to me too :)
-Maxime
+diff --git a/drivers/hwtracing/coresight/coresight-replicator.c 
+b/drivers/hwtracing/coresight/coresight-replicator.c
+index e7dc1c31d20d..794f8e4c049f 100644
+--- a/drivers/hwtracing/coresight/coresight-replicator.c
++++ b/drivers/hwtracing/coresight/coresight-replicator.c
+@@ -68,6 +68,8 @@ static int dynamic_replicator_enable(struct 
+replicator_drvdata *drvdata,
+         int rc = 0;
+         u32 reg;
 
---4e2ce4wi52h6jxye
-Content-Type: application/pgp-signature; name="signature.asc"
++       dynamic_replicator_reset(drvdata);
++
+         switch (outport) {
+         case 0:
+                 reg = REPLICATOR_IDFILTER0;
 
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqlpLQAKCRDj7w1vZxhR
-xfy5AP9WB6qj36xGc19gDUzaiYtAzYINqK4aVmuNMeieKOESdAD/X643GOOZCaKS
-+tW21zB5c9ZbIZnEBKZ9vft+BXIJjQw=
-=khOj
------END PGP SIGNATURE-----
-
---4e2ce4wi52h6jxye--
-
-
---===============1920743208417749558==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Thanks,
+Sai
+-- 
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1920743208417749558==--
-
