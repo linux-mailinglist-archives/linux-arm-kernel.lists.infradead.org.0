@@ -2,75 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7BCA1BD623
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:34:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2EED1BD63C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 09:40:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=re6ejZ4jIsX0VxdP+JWwZh0qW4ap9RABHlLgUYWwE+g=; b=Rm1U79tyHenEzJ
-	JcBkL34Gi/DWVD/iMIsDoyR5kXk/YxoqOECxVx1evWnP54vyxt8ayVqXytM6vDHd2AqJ5XTq25FUr
-	R72Xkgq+QOh6Ap2APpIF1TxQ2eY/N9XSNc4UVBqJu5TOo8rsixn+aPSdL/Fg6oI+wLKSpN2ztdbkH
-	cKh424fD1IoXdGoep5E5Gr6BkrCk54CIX4mo6MJX+aSBvyYMg8YwXGofqhngfclB/kglXtezX6Hex
-	q9Q/AZ1VZXENX0zfh4F6kCDM28rbvt61RBTZbnXqkf6y6gunRUpv/sS9xPc4IgEYAamJ9bpGXQEA4
-	BMNi3ksRSzXAtQkm0dqg==;
+	List-Owner; bh=WesQ3qpq6Ar34CpU6lt8uHdQhdUnm5mrl+c1NWEDvts=; b=qBMx9HsWC5um6r
+	h/1baQzDPfxM5XGdVu1+ejf13EIdgqArh6SOOxzIP03TkxIr+m5rfAyJOqIbMXZE05vM3sExtr4DT
+	dihAsz2Y8xXLdLb4dpHJfPD6e+jZz/isyiFqPBs0WXzEYabUifIWjTthRwerCcYQ4P8yRL1U50l5t
+	wWY9bGxC14J4k42MvUJKmmjIHaNqGSBsOW2AwKWIX3V92YlRGBxV3LeZJh84Ccw38KWoRfj4zJ6zP
+	ad10RrQ8T1wPogUae+p71zIXctOvq9fjNg5FSeJ44md39JgnLzbQEYgtkcAj51PCfj3+0Qc2U3fvw
+	FcYfno/MBtJdVjmW/x3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jThEf-0005Uk-1l; Wed, 29 Apr 2020 07:34:25 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jThKb-0003DS-TO; Wed, 29 Apr 2020 07:40:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jThEV-0005UI-FV
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:34:16 +0000
-Received: by mail-oi1-f194.google.com with SMTP id o24so1005260oic.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 00:34:14 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SyWquW6C3h9yYRPnL8ZX6mVqONgOMsOlS/nbLkzCvR8=;
- b=G43x0pC2rscikVO4hLFX5ftthJl0XQGlYA/g448dwPMmySAvOQx3ji04bAQjUkGERE
- Fo3bJon/ZKCNZggTrR5y1P1fnRW4vgwJnGB+wv4tU3G6Q+OLtdCmPT7n/C8N9v6E7NTm
- +dQlc8dPMBvOmVZp7zjSgsonHcvtuLXi5PB4Ow/Kh1x4KcLdmRdlCIsOHnhnuV+XYaZG
- WPyTyk/QHNoNlsTp7Rj0qD7Xu0UzoVqBxVhGbjURBPey1BxLRTIMhGm02JLLBr3Ql8Es
- 1FRMWWzLhP8h6tT+eF3icYbBwh3yn0ucq/aF8p980HjydFK7zZULyZgqfMK26RZWNl0v
- 4wuw==
-X-Gm-Message-State: AGi0Pub4fvkPVYeMUcpHQtZRuXbMeaUQsOtxCUxZWvfAnc8/HfHy608G
- MOHaNSBmJO3zNd3moAy+jM//016PTS1GnwaRcMNvWQ==
-X-Google-Smtp-Source: APiQypJAsZR6cJVnPhd52DhYQokiZWeX1PxL/6m2Vvtp1dgHuL2QQU2M5utJVEIEaKuPsXF6mplj99rnUrUZngmlKtw=
-X-Received: by 2002:aca:d50f:: with SMTP id m15mr810760oig.54.1588145654121;
- Wed, 29 Apr 2020 00:34:14 -0700 (PDT)
+ id 1jThKS-0003C0-Dh
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 07:40:25 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1CAF32073E;
+ Wed, 29 Apr 2020 07:40:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588146020;
+ bh=DEnkRcxLwdAamo5hCdkBse8Ox/fKU72UTlCSL9YLApE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FLXQl3NisbVfzEWTAuwakK1bl4QcHnCiMW3pqQAHkzYJueB1SOxJBQFRK2JXiEG/b
+ RFTFBq7alWYH496+mosfG6bDAEKCijzHdsWcvDTp2zDqsHc3WrR9z85wmhvk4oPItF
+ pOhMJf40W6G1hfF0t4hP7n2WJMwlioiqlFzavIsc=
+Date: Wed, 29 Apr 2020 08:40:15 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH 04/10] arm64: Set GP bit in kernel page tables to enable
+ BTI for the kernel
+Message-ID: <20200429074012.GA29143@willie-the-truck>
+References: <20200415130750.18645-1-broonie@kernel.org>
+ <20200415130750.18645-5-broonie@kernel.org>
+ <20200428172432.GB18257@gaia> <20200428180353.GN5677@sirena.org.uk>
 MIME-Version: 1.0
-References: <20200428194449.22615-1-willy@infradead.org>
- <20200428194449.22615-3-willy@infradead.org>
-In-Reply-To: <20200428194449.22615-3-willy@infradead.org>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 29 Apr 2020 09:34:02 +0200
-Message-ID: <CAMuHMdUw38VD8WJe5Zbaudnee74ZgLwbfhRwU8Pi9ALitre+_Q@mail.gmail.com>
-Subject: Re: [PATCH 2/7] mm: Move pt_mm within struct page
-To: Matthew Wilcox <willy@infradead.org>
+Content-Disposition: inline
+In-Reply-To: <20200428180353.GN5677@sirena.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_003415_517456_259220B4 
-X-CRM114-Status: GOOD (  14.82  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200429_004024_481587_A97CBEC4 
+X-CRM114-Status: GOOD (  17.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,59 +80,49 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux MM <linux-mm@kvack.org>, linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Matthew,
+On Tue, Apr 28, 2020 at 07:03:53PM +0100, Mark Brown wrote:
+> On Tue, Apr 28, 2020 at 06:24:32PM +0100, Catalin Marinas wrote:
+> > On Wed, Apr 15, 2020 at 02:07:43PM +0100, Mark Brown wrote:
+> 
+> > > +#define PAGE_KERNEL_EXEC_GP	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_GP)
+> > >  #define PAGE_KERNEL_EXEC_CONT	__pgprot((PROT_NORMAL & ~PTE_PXN) | PTE_CONT)
+> 
+> > Are the PAGE_*_GP defines used anywhere in this series?
+> 
+> Not any more, I'll drop them.
+> 
+> > > +#ifdef CONFIG_ARM64_BTI_KERNEL
+> > > +		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
+> > > +#else
+> > >  		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+> > > +#endif
+> 
+> > As with PtrAuth, I'm tempted to have a single config for both user and
+> > kernel. Not a strong opinion though, just looking for some consistency.
+> 
+> Yeah, it's not ideal.  My concern with this was that at the time I sent
+> the patches out GCC had a sufficiently severe code generation issue that
+> it was unsustainable to use for building the kernel.  That seemed
+> excessively restrictive so I made it a separate option.  This will be
+> fixed in GCC 10 all being well (one of the things I need to do before
+> reposting this is to verify that the current fix addresses everything I
+> was seeing and update the dependencies) so it's less of a concern
+> although still a bit annoying.
 
-On Tue, Apr 28, 2020 at 9:44 PM Matthew Wilcox <willy@infradead.org> wrote:
-> From: "Matthew Wilcox (Oracle)" <willy@infradead.org>
-> Instead of a per-arch word within struct page, use a formerly reserved
-> word.  This word is shared with page->mapping, so it must be cleared
-> before being freed as it is checked in free_pages().
->
-> Signed-off-by: Matthew Wilcox (Oracle) <willy@infradead.org>
+FWIW, I don't agree with Catalin here (I realise this is unhelpful ;) and
+would much prefer to have separate config options for user and kernel. I
+also think it would be worth doing this for pointer auth too, since at the
+moment we have nonsensical dependencies such as user pointer auth depending
+on VHE if KVM is enabled.
 
-Thanks for your patch!
-
-> --- a/include/linux/mm_types.h
-> +++ b/include/linux/mm_types.h
-> @@ -149,11 +149,8 @@ struct page {
->                                         pgtable_t pmd_huge_pte;
->                                 };
->                         };
-> -                       unsigned long _pt_pad_2;        /* mapping */
-> -                       union {
-> -                               struct mm_struct *pt_mm; /* x86 pgds only */
-> -                               atomic_t pt_frag_refcount; /* powerpc */
-> -                       };
-> +                       struct mm_struct *pt_mm;
-> +                       atomic_t pt_frag_refcount; /* powerpc */
-
-So here is now an implicit hole on 64-bit platforms, right?
-Do we have any where alignof(long) != 8?
-
->  #if ALLOC_SPLIT_PTLOCKS
->                         spinlock_t *ptl;
->  #else
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
