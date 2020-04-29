@@ -2,91 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC5341BEC68
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 01:04:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69D0C1BEC94
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 01:18:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+Zb8pJ56N5pMIURo1ihNiV/pthS5YpSdajxN2faoy/U=; b=GoLz8uWOb1w9EiaD7faIhoRQY
-	/PWhIYo3yGWGCbdwwNOVRl1ducQCPW7ypJZcAU/196jLfAQuVv6U0RkpN8Axv4h1MIj/6SuHEwTZ6
-	eUe78kWsrbudYxIsuHhK6kqQ+ozjhd6VVyApANN5jOAxvJuTrOok33up4XOP9n88QsfB/L0VPAaQR
-	8opdPOiYhJFUF6Jn2vabkKGRAaxnuFUWZGa/BJp5ootcyrjrof5aY8PjqVz8f03M44LSh6zmenaRM
-	YMyBy951I550WmEH8vCsHcseaQPIHkcRNRWQZt9lpqcEhla9IzVeiI4dyrJzGSoxk6SXJ98sqDTwr
-	6MVK4ahkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mn/YNVIWI756OlTQV4YpkeSN6s0IbRNFZd69tO/PyDk=; b=X8avxHu6xL3Wql
+	/uexb7ueQ4WbOzOw0Fcw6yn6uj5E06ZI7pWunRmyEXL6Y3J8gJTjAcOerYE61de5lskUWn5wTVGAO
+	sOPkxsSYDnoCuARSFXOxEE+gB46YXw/Hmwvh7W7fFMadiWTBbTBrSpUXHJNc/Nzgc0VKaWpQZz3oz
+	Y+7hzn0/87dbfeS2c3jZc1jVuS38C5zp0T257OnbtZkX8rD5YBUajrozS+YMdVsA7z4IaX15ICPmh
+	aqt5sSnJ9SqwPlRl/J+DyrEO4np2fMih7KPJxAzZr2frRb+d30p0hXxuks+N6RDfXKWq2G5stChG4
+	P2uH6E8xOO+rAMihjgbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTvkl-0001xf-Sa; Wed, 29 Apr 2020 23:04:31 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jTvyY-0003oH-Jm; Wed, 29 Apr 2020 23:18:46 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTvkP-0001pg-5r
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 23:04:13 +0000
-Received: by mail-pf1-x441.google.com with SMTP id f7so1850092pfa.9
+ id 1jTvyM-0003mp-3S
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 23:18:36 +0000
+Received: by mail-lf1-x141.google.com with SMTP id r17so3169310lff.2
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 16:04:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-transfer-encoding:content-language;
- bh=pTsAs2CDlbVr46p0BUoXzORZ7PJqz3PIVNdyQM5hvA4=;
- b=CdmBNX7N3jvCxhnclyKjAisrCfjyJw95MD3shTrp1r6CmwGIN7H1/Pe2hnfly4p4PO
- 0fzH1jsEO3VwWjfzTAlMTeXo1sP8SzpQEvZpEEAk7t/sUBLMMCH1yx3D/tl4Xy4G5z72
- AC7iaQy3XJAbuU0T+mYFO3vRkqx4GL0oQiEQw=
+ Wed, 29 Apr 2020 16:18:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=CbLlq66sQ9c2dpjM4PO9GavQ8mLZTTgTJBAsom1lrl4=;
+ b=o8v4X9ARjoK8udY7bCronH4Z5nsYMjaLUGECMiOK6+ImTYIaP4L0QfuiqTJsQWGfyZ
+ iVZaCX4dFBne8lLO9qw04RZnCmhRRCVP+q4HhEBFiDT1RtCx91VSkez1xEyc/Y7/vlPq
+ 7d1gacWSSSKG5H3oXWBD1xhcvLCeCfwkQtoMLjuYZXPuuwy/8U5SKbvL5oW7KbOLDozO
+ sagHydZoXyUXwc91/CgRlnk2Tr7xq0d65/CmHUILhvoEWpOjBmUO1LfvUJKWnAdfLMjc
+ ye3tHnkPlfnU/y3KDVT9NDEDLuYV+qwy6VSH1vNTijEhO+2p0005IvV4533VEWfFfkOy
+ 4BwQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-transfer-encoding
- :content-language;
- bh=pTsAs2CDlbVr46p0BUoXzORZ7PJqz3PIVNdyQM5hvA4=;
- b=D2KvbIubbSLx8G8GZB8QAEeckntqtYzPQlosp1gl+nSS3XSqZlgu04HCgf6Nh2BUt6
- WvLrSFsU18yyWuB1nXgI0QEosupPLnLSX4MpGkdMkC6PZ68MqBZY/1ED971zAzXiobZl
- CR8TklSC4mHS5cF41WUy4Vc5dH5GjqdcedNdNlvfPTJuB2mr++UKAFCnkg16yY/C7nZo
- a0at1kMqHsiPDiLUDK/8PJGWupI/qCMxz1aly4MPTOHwUS+V8/oHgYlAsHFhmLvythDD
- Q1mnfK1tQ8GUXWu4dZIUh3bZ9qUgc5qcpGloRgg5rXbEMuiFV+9cqZo++Qv43DVU4/1g
- zZww==
-X-Gm-Message-State: AGi0PuZvMaWWA3YGKTsWrpJpKQPYOmIUlKiBqmPzrys+oUg4zt+rfhJ0
- 3sLciQPKK1cLMtEMT7Psj/Ty0Q==
-X-Google-Smtp-Source: APiQypKUxErsH+JxyFE5+lXNYp86SmB717RFqVubaZnyDLfFMUyyoUO8X3/GyvAYk7iDD2eJBJY2tQ==
-X-Received: by 2002:aa7:8042:: with SMTP id y2mr504718pfm.94.1588201446938;
- Wed, 29 Apr 2020 16:04:06 -0700 (PDT)
-Received: from [10.136.13.65] ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id l37sm255572pje.12.2020.04.29.16.04.04
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 29 Apr 2020 16:04:06 -0700 (PDT)
-Subject: Re: Re: [RESEND PATCH v5 2/5] arm64/crash_core: Export TCR_EL1.T1SZ
- in vmcoreinfo
-To: Bhupesh Sharma <bhsharma@redhat.com>, Amit Kachhap <amit.kachhap@arm.com>
-References: <1575057559-25496-1-git-send-email-bhsharma@redhat.com>
- <1575057559-25496-3-git-send-email-bhsharma@redhat.com>
- <63d6e63c-7218-d2dd-8767-4464be83603f@arm.com>
- <af0fd2b0-99db-9d58-bc8d-0dd9d640b1eb@redhat.com>
- <f791e777-781c-86ce-7619-1de3fe3e7b90@arm.com>
- <351975548.1986001.1578682810951.JavaMail.zimbra@redhat.com>
- <04287d60-e99e-631b-c134-d6dc39e6a193@redhat.com>
- <974f3601-25f8-f4e6-43a8-ff4275e9c174@arm.com>
- <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
-From: Scott Branden <scott.branden@broadcom.com>
-Message-ID: <d401b003-af3e-c525-ba00-0de48486b7a0@broadcom.com>
-Date: Wed, 29 Apr 2020 16:04:03 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=CbLlq66sQ9c2dpjM4PO9GavQ8mLZTTgTJBAsom1lrl4=;
+ b=NV4SWytBHSqNkSMoJ/j7vnmHn1vY81pn3DkEhritJFHdzIYdOmomncxpkLWhfR9Dbh
+ Fec2HU1tlnwOYfIaODizfK3B4m5OmCwwO1ysFs0nvZM1Wholq12Cwx5pZlunRN4faFee
+ xfRMgF4bVjAvQ47WGV3SYIXxg8x1b/hy3DWasPFuHAFZqQ7O9cma3LjBueGgxu2Lkp8B
+ FLxuxLJFx7LrRT2IkwKAVAJ0+Nd9gexbe/BthcA7aPjqyX6BxRhT76M/vC0TSYBfrUNh
+ Uy2RWcLT3qZLBR0pGMta6CRT+eTqfS8xzMkus5vqgs2fpxa6jBGVsWMLEnEtjjqZPEoy
+ RBZg==
+X-Gm-Message-State: AGi0Pub0iI+loCAiLTI+Kn2Tbx3Aj/mE1+s6kVKAVm7qJ/Nu1BUdVXC3
+ 1FNqqEzZIOfBKEiu0UwFMvmY7RlMo82eIv6wr9hSzg==
+X-Google-Smtp-Source: APiQypKsmAiIkZkAXJv3TNFdsoOqjHZqol0/KFmcRvdMfyq15JAnSuckNesRRNLYTgIi6bvQRGu8dTBYopRYlYR4oik=
+X-Received: by 2002:a19:7909:: with SMTP id u9mr136944lfc.130.1588202309097;
+ Wed, 29 Apr 2020 16:18:29 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CACi5LpOK6Q3ud3M3zakexLJNOtHy9TODHyYSHVwE3JHVakKzqA@mail.gmail.com>
-Content-Language: en-US
+References: <20200306042831.17827-1-elder@linaro.org>
+In-Reply-To: <20200306042831.17827-1-elder@linaro.org>
+From: Evan Green <evgreen@google.com>
+Date: Wed, 29 Apr 2020 16:17:52 -0700
+Message-ID: <CAE=gft6dezobVsdmKwa8qYJzS-2ZaTxG7Vp6MYK2ve_hawSagw@mail.gmail.com>
+Subject: Re: [PATCH v2 00/17] net: introduce Qualcomm IPA driver (UPDATED)
+To: Alex Elder <elder@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_160410_086085_DEE9ACD8 
-X-CRM114-Status: GOOD (  28.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_161834_171670_A7759681 
+X-CRM114-Status: GOOD (  34.50  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,7 +83,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,147 +96,267 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kazuhito Hagio <k-hagio@ab.jp.nec.com>,
- Bharat Gooty <bharat.gooty@broadcom.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, x86@kernel.org,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ray Jui <ray.jui@broadcom.com>, linuxppc-dev@lists.ozlabs.org,
- James Morse <james.morse@arm.com>, Dave Anderson <anderson@redhat.com>,
- bhupesh linux <bhupesh.linux@gmail.com>, Will Deacon <will@kernel.org>,
- kexec mailing list <kexec@lists.infradead.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Steve Capper <steve.capper@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Ohad Ben-Cohen <ohad@wizery.com>,
+ Susheel Yadav Yadagiri <syadagir@codeaurora.org>,
+ Eric Caruso <ejcaruso@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Dan Williams <dcbw@redhat.com>,
+ netdev@vger.kernel.org, LKML <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Siddharth Gupta <sidgup@codeaurora.org>, Andy Gross <agross@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Subash Abhinov Kasiviswanathan <subashab@codeaurora.org>,
+ Johannes Berg <johannes@sipsolutions.net>, linux-soc@vger.kernel.org,
+ David Miller <davem@davemloft.net>,
+ Chaitanya Pratapa <cpratapa@codeaurora.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bhupesh,
+On Thu, Mar 5, 2020 at 8:28 PM Alex Elder <elder@linaro.org> wrote:
+>
+> This series presents the driver for the Qualcomm IP Accelerator (IPA).
+>
+> This is version 2 of this updated series.  It includes the following
+> small changes since the previous version:
+>   - Now based on net-next instead of v5.6-rc
+>   - Config option now named CONFIG_QCOM_IPA
+>   - Some minor cleanup in the GSI code
+>   - Small change to replenish logic
+>   - No longer depends on remoteproc bug fixes
+> What follows is the basically same explanation as was posted previously.
+>
+>                                         -Alex
+>
+> I have posted earlier versions of this code previously, but it has
+> undergone quite a bit of development since the last time, so rather
+> than calling it "version 3" I'm just treating it as a new series
+> (indicating it's been updated in this message).  The fast/data path
+> is the same as before.  But the driver now (nearly) supports a
+> second platform, its transaction handling has been generalized
+> and improved, and modem activities are now handled in a more
+> unified way.
+>
+> This series is available (based on net-next in branch "ipa_updated-v2"
+> in this git repository:
+>   https://git.linaro.org/people/alex.elder/linux.git
+>
+> The branch depends on other one other small patch that I sent out
+> for review earlier.
+>   https://lore.kernel.org/lkml/20200306042302.17602-1-elder@linaro.org/
+>
 
-On 2020-02-23 10:25 p.m., Bhupesh Sharma wrote:
-> Hi Amit,
->
-> On Fri, Feb 21, 2020 at 2:36 PM Amit Kachhap <amit.kachhap@arm.com> wrote:
->> Hi Bhupesh,
->>
->> On 1/13/20 5:44 PM, Bhupesh Sharma wrote:
->>> Hi James,
->>>
->>> On 01/11/2020 12:30 AM, Dave Anderson wrote:
->>>> ----- Original Message -----
->>>>> Hi Bhupesh,
->>>>>
->>>>> On 25/12/2019 19:01, Bhupesh Sharma wrote:
->>>>>> On 12/12/2019 04:02 PM, James Morse wrote:
->>>>>>> On 29/11/2019 19:59, Bhupesh Sharma wrote:
->>>>>>>> vabits_actual variable on arm64 indicates the actual VA space size,
->>>>>>>> and allows a single binary to support both 48-bit and 52-bit VA
->>>>>>>> spaces.
->>>>>>>>
->>>>>>>> If the ARMv8.2-LVA optional feature is present, and we are running
->>>>>>>> with a 64KB page size; then it is possible to use 52-bits of address
->>>>>>>> space for both userspace and kernel addresses. However, any kernel
->>>>>>>> binary that supports 52-bit must also be able to fall back to 48-bit
->>>>>>>> at early boot time if the hardware feature is not present.
->>>>>>>>
->>>>>>>> Since TCR_EL1.T1SZ indicates the size offset of the memory region
->>>>>>>> addressed by TTBR1_EL1 (and hence can be used for determining the
->>>>>>>> vabits_actual value) it makes more sense to export the same in
->>>>>>>> vmcoreinfo rather than vabits_actual variable, as the name of the
->>>>>>>> variable can change in future kernel versions, but the architectural
->>>>>>>> constructs like TCR_EL1.T1SZ can be used better to indicate intended
->>>>>>>> specific fields to user-space.
->>>>>>>>
->>>>>>>> User-space utilities like makedumpfile and crash-utility, need to
->>>>>>>> read/write this value from/to vmcoreinfo
->>>>>>> (write?)
->>>>>> Yes, also write so that the vmcoreinfo from an (crashing) arm64
->>>>>> system can
->>>>>> be used for
->>>>>> analysis of the root-cause of panic/crash on say an x86_64 host using
->>>>>> utilities like
->>>>>> crash-utility/gdb.
->>>>> I read this as as "User-space [...] needs to write to vmcoreinfo".
->>> That's correct. But for writing to vmcore dump in the kdump kernel, we
->>> need to read the symbols from the vmcoreinfo in the primary kernel.
->>>
->>>>>>>> for determining if a virtual address lies in the linear map range.
->>>>>>> I think this is a fragile example. The debugger shouldn't need to know
->>>>>>> this.
->>>>>> Well that the current user-space utility design, so I am not sure we
->>>>>> can
->>>>>> tweak that too much.
->>>>>>
->>>>>>>> The user-space computation for determining whether an address lies in
->>>>>>>> the linear map range is the same as we have in kernel-space:
->>>>>>>>
->>>>>>>>      #define __is_lm_address(addr)    (!(((u64)addr) &
->>>>>>>> BIT(vabits_actual -
->>>>>>>>      1)))
->>>>>>> This was changed with 14c127c957c1 ("arm64: mm: Flip kernel VA
->>>>>>> space"). If
->>>>>>> user-space
->>>>>>> tools rely on 'knowing' the kernel memory layout, they must have to
->>>>>>> constantly be fixed
->>>>>>> and updated. This is a poor argument for adding this to something that
->>>>>>> ends up as ABI.
->>>>>> See above. The user-space has to rely on some ABI/guaranteed
->>>>>> hardware-symbols which can be
->>>>>> used for 'determining' the kernel memory layout.
->>>>> I disagree. Everything and anything in the kernel will change. The
->>>>> ABI rules apply to
->>>>> stuff exposed via syscalls and kernel filesystems. It does not apply
->>>>> to kernel internals,
->>>>> like the memory layout we used yesterday. 14c127c957c1 is a case in
->>>>> point.
->>>>>
->>>>> A debugger trying to rely on this sort of thing would have to play
->>>>> catchup whenever it
->>>>> changes.
->>>> Exactly.  That's the whole point.
->>>>
->>>> The crash utility and makedumpfile are not in the same league as other
->>>> user-space tools.
->>>> They have always had to "play catchup" precisely because they depend
->>>> upon kernel internals,
->>>> which constantly change.
->>> I agree with you and DaveA here. Software user-space debuggers are
->>> dependent on kernel internals (which can change from time-to-time) and
->>> will have to play catch-up (which has been the case since the very start).
->>>
->>> Unfortunately we don't have any clear ABI for software debugging tools -
->>> may be something to look for in future.
->>>
->>> A case in point is gdb/kgdb, which still needs to run with KASLR
->>> turned-off (nokaslr) for debugging, as it confuses gdb which resolve
->>> kernel symbol address from symbol table of vmlinux. But we can
->>> work-around the same in makedumpfile/crash by reading the 'kaslr_offset'
->>> value. And I have several users telling me now they cannot use gdb on
->>> KASLR enabled kernel to debug panics, but can makedumpfile + crash
->>> combination to achieve the same.
->>>
->>> So, we should be looking to fix these utilities which are broken since
->>> the 52-bit changes for arm64. Accordingly, I will try to send the v6
->>> soon while incorporating the comments posted on the v5.
->> Any update on the next v6 version. Since this patch series is fixing the
->> current broken kdump so need this series to add some more fields in
->> vmcoreinfo for Pointer Authentication work.
-> Sorry for the delay. I was caught up in some other urgent arm64
-> user-space issues.
-> I am preparing the v6 now and hopefully will be able to post it out
-> for review later today.
+I realize this is all already in (yay!), but it took me a long time to
+get around to fully reading this driver. I'll paste my notes here for
+posterity or possible future patches. Overall the driver seemed well
+documented and thoughtfully written. As someone who has seen the old
+downstream IPA driver (though I didn't look long as my brain started
+hurting), I greatly appreciate the work required by Alex to polish
+this all up. So firstly, thanks Alex!
 
-Did v6 get sent out?
+Onto the notes. There are a couple themes I noticed. The driver seems
+occasionally to be unnecessarily layer-caked. I noticed "could be
+inlined" as a common refrain in my feedback. There are also a couple
+places with hand-rolled refcounting, atomic exchanges, and odd
+mutexes. I haven't fully digested those to be able to know how to get
+rid of them, but I'll point them out as something that "doesn't smell
+quite right".
 
->
-> Thanks,
-> Bhupesh
->
->
-Regards,
-Scott
+Acronyms (for my own benefit):
+ee - execution environment
+ep - endpoint
+er - endpoint or route ID
+rt - resource type
+dcd - Dynamic clock division (request to GCC to turn you off)
+bcr - Backwards compatibility register
+comp - Core master port
+holb - ???
+
+ipa_main.c:
+What is IPA_VALIDATION. Can this just be on always or removed?
+otherwise it will likely bit rot.
+I'd like to see this suspend_ref go away.
+ipa_reg.c can be inlined
+ipa_mem_init can be inlined.
+
+
+IPA_NOTIFY:
+Shouldn't CONFIG_IPA depend on IPA_NOTIFY?
+
+
+ipa_data.h
+Why are ipa_resource_src and ipa_resource_dst separate structures?
+maybe the extern globals at the bottom should just be moved into ipa_main.c
+
+
+ipa_endpoint.h
+Add a note for enum ipa_endpoint_name indicating who is TXing and RXing
+
+
+ipa_data-sc7180.c
+Where is IPA_ENDPOINT_MODEM_LAN_TX definition?
+
+
+ipa_clock.c
+IPA_CORE_CLOCK_RATE - Should probably be specified in DT as a fixed
+frequency rather than here in code.
+Interconnect bandwidths - Are these a function of the core clock rate?
+This may be fine for the initial version, but is there any way to
+derive the bandwidth requirement?
+ipa_interconnect_init_one - Probably best to just inline this
+ipa_clock_get_additional - Seems sketchy, would like to remove this
+Overall don't like the homebrew reference counting here. Would runtime
+PM help you do this?
+
+
+ipa_interrupt.h
+I'd like to get rid of ipa_interrupt_add and ipa_interrupt_remove.
+Seems like there's no need for these to be dynamically added, it's all
+one driver.
+
+
+ipa_interrupt.c
+Why does ipa_interrupt_setup() need to dynamically allocate the
+structure, can't we just embed it in struct ipa?
+Without the kzalloc, ipa_interrupt_setup() and
+ipa_interrupt_teardown() are simple enough they can probably be
+inlined (at least teardown for sure).
+Interrupt processing seems a little odd. What I would have expected is:
+Hard ISR reads pending bits, and immediately writes all pending bits
+to quiesce them. Save bitmask of pending bits, and send to the
+threaded handler. Threaded handler then reads and clears pending bits
+out, and acts on any.
+Fixes interrupt storm in ipa_isr() if an unexpected interrupt comes in
+but an expected interrupt is also pending.
+Avoids multiple register writes (one for each bit) in ipa_interrupt_process()
+Saves all the register reads in ipa_interrupt_process_all(). That
+additional read in the loop seems like it shouldn't be there either
+way.
+
+
+ipa_mem.h
+Is IPA_SHARED_MEM_SIZE supposed to be defined? It's mentioned in the comment.
+Comment says the number of canaries is the same for all IPA versions,
+but ipa_data-sdm845.c and ipa_data-sc7180.c seem to have different
+canary counts for IPA_MEM_UC_INFO?
+Should the number of canaries really be part of the chipset-specific
+config info if it's never going to change?
+Do the canary values eat into the previous region? Can we add a
+warning to ensure we don't write canary values off the beginning of
+the memory region?
+
+
+ipa_mem.c
+Maybe remove ipa_mem_teardown() if we're not planning to add anything
+to it soon, or inline it in the header for now.
+Does ipa_mem_zero_modem() erase canary values previously set up?
+
+
+gsi.h
+Why make gsi_evt_ring_state 0xf? Remove assignments and let enum do its thing.
+enum gsi_ee_id - Probably worth commenting that this defines the
+layout of the per-EE register regions, so rearranging this would
+horribly break our access to hardware.
+
+
+gsi_reg.h
+What is gsi v2.0? Is that the same as IPA 4.0?
+Why do the channel macros have things like CH_C and EE_N in them? Why
+not just CH and EE? Oh, I also see CH_E, what's that?
+
+
+gsi.c:
+enum gsi_err_code: Where's 0x7?
+gsi_channel_deprogram(): delete
+gsi_channel_update(): I'm worried about this refcount thing, how does it work?
+gsi_event_bitmap_init() can be inlined
+gsi_evt_ring_setup() and gsi_evt_ring_teardown() can be removed
+gsi_teardown(): inline
+gsi_evt_ring_exit(): remove
+
+
+ipa_gsi.h:
+Comment for ipa_gsi_channel_tx_completed has wrong function name copypasta.
+
+
+ipa_gsi.c:
+This is an interesting mezzanine interface, it looks like it was
+designed to keep GSI code from calling IPA code directly. Why is that?
+Could these at least be inlined into the ipa_gsi.h?
+
+
+gsi_trans.h:
+Why is it important that struct gsi_trans be < 128 bytes?
+
+
+gsi_trans.c:
+gsi_tre_type - Should this be in a header?
+TRE_FLAGS_ - Should these be in a header? Also, replace GENMASK(x,x)
+with BIT(x). TRE_FLAGS_IEOB_FMASK is never used (which is fine, but
+should it be?)
+gsi_trans_tre_reserve() - Why atomic_try_cmpxchg? What's the
+difference between that and atomic_cmpxchg?
+gsi_tre_len_opcode() - If len is truncated to 16 bits, why is u32
+passed in? Is len sometimes used as 32 bits?
+gsi_trans_tre_fill() - If it doesn't do a 16-byte atomic write, is
+this a problem? Could the controller see a half-baked TRE?
+
+
+ipa_endpoint.c:
+What is HOLB timer?
+
+
+ipa_table.c:
+ipa_table_valid() - This just runs all 3-bit possibilities. Could use
+flags and a loop instead.
+ipa_table_teardown() - Remove?
+
+
+ipa_cmd.c:
+ipa_cmd_tag_process_add() - What happened here? Is this just
+functionality we're not using right now?
+
+
+ipa_modem.c
+ipa_start_xmit() - Could returning BUSY result in an infinite loop if
+something goes wrong in the lower layers?
+ipa_modem_start() - Shouldn't we print some errors if the state
+variable has an unexpected value (ie not RUNNING)? In those cases we
+are likely not in a good place.
+
+
+ipa_qmi.c:
+ipa_qmi_indication() could be inlined
+init_modem_driver_req() use of static means this can never run
+concurrently with itself, right? Also if the request gets stuck in
+qmi_txn_wait() you're hosed.
+
+
+ipa_qmi_msg.c
+You could macro-ize the initialization of these elements, which would
+make things way shorter, and probably easier to read. I'm imagining
+for instance the first element in the file could be reduced to
+IPA_QMI_ELEM(QMI_OPT_FLAG, 1, struct ipa_indication_register_req,
+master_driver_init_complete_valid, 0x10)
+
+
+ipa_smp2p.c:
+s/Motex/Mutex/
+Actually I don't get why the mutex is needed at all. It's certainly
+not needed in ipa_smp2p_disable() (stores are already atomic), and
+threaded irqs already have mutual exclusion. Or are you trying to make
+sure ipa_smp2p_disable() doesn't return until
+ipa_smp2p_modem_setup_ready_isr() has fully completed? If that's
+really why, you should explain that's what it's doing and why it's
+necessary.
+Thinking more about it, why can't you just actually disable the irq?
+That calls synchronize_irq, which will flush out any instances of the
+irq running. Then no mutex necessary!
+ipa_smp2p_irq_init(), and _exit() can be inlined.
+I'd love to see clock_on and the weird reference counting go away. Is
+that really necessary?
 
 _______________________________________________
 linux-arm-kernel mailing list
