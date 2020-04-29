@@ -2,58 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B08751BD987
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:26:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5CF21BD98C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:27:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A9nuAo00BMrI8S6SfUkJHLBZlR0gq07dK9VFnkeISNU=; b=lEiZilSGFOqasa
-	pgOgrm+p0QSy6ZG/FLEZh1DdAV8mgFg7G2XgrjvthYpBsZlbjQu8VxKkhuDX93sSWoqIB16E4K2+P
-	mwjfMhF7Ovz7GQ+w/AcO43WgQy2uo3iWPi2wzpHL9NLX4hIecbz2ftCMFb08v4hrLZsHz4EuHXlNp
-	x6jXN66XkxlPJ/LGQYVlhtHEycpbuKtNtDJWNYz57jMJwY0uQnXOl00FxfrQwAKB+qU717gCoJ5/Z
-	Bybywa4UVoFXkrhiI+cbeEWI/BWDFpAswTMpbwxiyBq78nIguboaAhEYDj5kkRjgwMMhbjZsr8mgm
-	z2LuOg6lwaFju1F9y6WQ==;
+	List-Owner; bh=X3akiZxbZCjc2R9f3YJrH+BiKI4fkDCsthUk5tRvnDA=; b=sVORgaYMKSWhRW
+	L6uCxRoAkG688FesVkv6enPqZ9unp9dSj+MZnekE/hkguDEv1c1Hrqhe1dybs+SR0+kRbvm8PPJsu
+	b3/O5rC4pziL+7GRPYThoQQsymtk8A0zoc+uS3li22tx3kz2rBLCtL+Cz0EvxaBN39OPhbsDCn7rC
+	zzRZcLJBiv4pso5BnJzPi9ayDSRAdBK+k+UHAGcvoYdNpwSPmgYXCz3E7sz7tVstGeC9SVSG8+5am
+	j1rDj2LeyvNq80Vq6ZT4oKckL1B4NPLV+cm0JJPEDYMIaqeuwks1bpPfLhSl9dROGpndcb5kh5jdO
+	JpB+WlIfnq86VVksHAGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTjv3-0003dq-4a; Wed, 29 Apr 2020 10:26:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTjut-0003cz-OD
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:26:13 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 998C0C14;
- Wed, 29 Apr 2020 03:26:09 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F2663F73D;
- Wed, 29 Apr 2020 03:26:08 -0700 (PDT)
-Date: Wed, 29 Apr 2020 11:26:00 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 01/23] arm64: alternative: Allow alternative_insn to
- always issue the first instruction
-Message-ID: <20200429102600.GA30377@arm.com>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-2-catalin.marinas@arm.com>
- <20200427165737.GD15808@arm.com> <20200428114354.GE3868@gaia>
+	id 1jTjva-0003vT-0u; Wed, 29 Apr 2020 10:26:54 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTjv9-0003o4-5X
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:26:28 +0000
+Received: by mail-ot1-f65.google.com with SMTP id m13so1232309otf.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 03:26:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=mvIHWhU04g3v6LjKSsky5pEk63GBz533E/sobmoo7Wc=;
+ b=B43mNTPvn05b7zC3wVLBAWVD8tooebpq02I7cLhICFsTdeLGf1wmj2M0sInByuuHa+
+ RcbrsPuGi7FvWD4chdRf08r4PGSsxvXo7pIM4UImuK1v5yocGuFC9klQ2gqdhq815muP
+ PGXpeRRI1iqM0tGFTIzamgYFA5sLDhZNVYOXrtapT5PFo08eUx0tRPwE9nUl8tNIwmbY
+ 3aXgCVNSRrof/8CDg9roRyOJpkUPdOmHaQXBHqoCeGpvkS23CqxYklhPaSxex2yZvWcU
+ vhYB9yfpYVy965/Gm5t8rIGJWb6u17OIXTRxHtCIWXFBnpJI82LT2tVbpdjjNE1i/Yi9
+ TIPw==
+X-Gm-Message-State: AGi0PuYwJ3JJSPMqoDv9GM4QbUun+HcUylRL74mJ+YZgF5bboju8lMqU
+ FKhBOt923219JsEX+zjGE4kp1IhdZYyUkcWcACU=
+X-Google-Smtp-Source: APiQypJnyzo4VqldDo304UGZQtLY+7AXB7jFtaFmqclX/7CuNEy43JujxFtdEqaZN6afWwi2LXcTKDkxwr3nMu1panQ=
+X-Received: by 2002:a9d:6ac8:: with SMTP id m8mr26003040otq.262.1588155984780; 
+ Wed, 29 Apr 2020 03:26:24 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200428114354.GE3868@gaia>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <20200427132409.23664-1-calvin.johnson@oss.nxp.com>
+ <20200427135820.GH25745@shell.armlinux.org.uk>
+ <20200427143238.GA26436@lsv03152.swis.in-blr01.nxp.com>
+ <20200427144806.GI25745@shell.armlinux.org.uk>
+ <20200429053753.GA12533@lsv03152.swis.in-blr01.nxp.com>
+In-Reply-To: <20200429053753.GA12533@lsv03152.swis.in-blr01.nxp.com>
+From: "Rafael J. Wysocki" <rafael@kernel.org>
+Date: Wed, 29 Apr 2020 12:26:12 +0200
+Message-ID: <CAJZ5v0g4oaDGGk1Jg5rihaG1kj1BYHpZpwTFrXX4Jo4tettbgg@mail.gmail.com>
+Subject: Re: [net-next PATCH v2 0/3] Introduce new APIs to support phylink and
+ phy layers
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_032611_875899_396277CE 
-X-CRM114-Status: GOOD (  34.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200429_032627_227216_CF617AF4 
+X-CRM114-Status: GOOD (  26.22  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rjwysocki[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,138 +87,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Len Brown <lenb@kernel.org>, Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 12:43:54PM +0100, Catalin Marinas wrote:
-> Hi Dave,
-> 
-> On Mon, Apr 27, 2020 at 05:57:37PM +0100, Dave P Martin wrote:
-> > On Tue, Apr 21, 2020 at 03:25:41PM +0100, Catalin Marinas wrote:
-> > > There are situations where we do not want to disable the whole block
-> > > based on a config option, only the alternative part while keeping the
-> > > first instruction. Improve the alternative_insn assembler macro to take
-> > > a 'first_insn' argument, default 0, to preserve the current behaviour.
-> > > 
-> > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > ---
-> > >  arch/arm64/include/asm/alternative.h | 8 +++++++-
-> > >  1 file changed, 7 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/arch/arm64/include/asm/alternative.h b/arch/arm64/include/asm/alternative.h
-> > > index 5e5dc05d63a0..67d7cc608336 100644
-> > > --- a/arch/arm64/include/asm/alternative.h
-> > > +++ b/arch/arm64/include/asm/alternative.h
-> > > @@ -111,7 +111,11 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
-> > >  	.byte \alt_len
-> > >  .endm
-> > >  
-> > > -.macro alternative_insn insn1, insn2, cap, enable = 1
-> > > +/*
-> > > + * Disable the whole block if enable == 0, unless first_insn == 1 in which
-> > > + * case insn1 will always be issued but without an alternative insn2.
-> > > + */
-> > > +.macro alternative_insn insn1, insn2, cap, enable = 1, first_insn = 0
-> > >  	.if \enable
-> > >  661:	\insn1
-> > >  662:	.pushsection .altinstructions, "a"
-> > > @@ -122,6 +126,8 @@ static inline void apply_alternatives_module(void *start, size_t length) { }
-> > >  664:	.popsection
-> > >  	.org	. - (664b-663b) + (662b-661b)
-> > >  	.org	. - (662b-661b) + (664b-663b)
-> > > +	.elseif \first_insn
-> > > +	\insn1
-> > 
-> > This becomes quite unreadable at the invocation site, especially when
-> > invoked as "alternative_insn ..., 1".  "... first_insn=1" is not much
-> > better either).
-> 
-> That I agree.
-> 
-> The reason I didn't leave the alternative in place here is that if gas
-> doesn't support MTE, it will fail to compile. I wanted to avoid the
-> several #ifdef's.
+On Wed, Apr 29, 2020 at 7:38 AM Calvin Johnson
+<calvin.johnson@oss.nxp.com> wrote:
+>
+> On Mon, Apr 27, 2020 at 03:48:07PM +0100, Russell King - ARM Linux admin wrote:
+> > On Mon, Apr 27, 2020 at 08:02:38PM +0530, Calvin Johnson wrote:
+> > > On Mon, Apr 27, 2020 at 02:58:20PM +0100, Russell King - ARM Linux admin wrote:
+> > > > On Mon, Apr 27, 2020 at 06:54:06PM +0530, Calvin Johnson wrote:
+> > > > > Following functions are defined:
+> > > > >   phylink_fwnode_phy_connect()
+> > > > >   phylink_device_phy_connect()
+> > > > >   fwnode_phy_find_device()
+> > > > >   device_phy_find_device()
+> > > > >   fwnode_get_phy_node()
+> > > > >
+> > > > > First two help in connecting phy to phylink instance.
+> > > > > Next two help in finding a phy on a mdiobus.
+> > > > > Last one helps in getting phy_node from a fwnode.
+> > > > >
+> > > > > Changes in v2:
+> > > > >   move phy code from base/property.c to net/phy/phy_device.c
+> > > > >   replace acpi & of code to get phy-handle with fwnode_find_reference
+> > > > >   replace of_ and acpi_ code with generic fwnode to get phy-handle.
+> > > > >
+> > > > > Calvin Johnson (3):
+> > > > >   device property: Introduce phy related fwnode functions
+> > > > >   net: phy: alphabetically sort header includes
+> > > > >   phylink: Introduce phylink_fwnode_phy_connect()
+> > > >
+> > > > Thanks for this, but there's more work that needs to be done here.  I
+> > > > also think that we must have an ack from ACPI people before this can be
+> > > > accepted - you are in effect proposing a new way for representing PHYs
+> > > > in ACPI.
+> > >
+> > > Thanks for your review.
+> > >
+> > > Agree that we need an ack from ACPI people.
+> > > However, I don't think it is a completely new way as similar acpi approach to
+> > > get phy-handle is already in place.
+> > > Please see this:
+> > > https://elixir.bootlin.com/linux/v5.7-rc3/source/drivers/net/ethernet/apm/xgene/xgene_enet_hw.c#L832
+> >
+> > That was added by:
+> >
+> > commit 8089a96f601bdfe3e1b41d14bb703aafaf1b8f34
+> > Author: Iyappan Subramanian <isubramanian@apm.com>
+> > Date:   Mon Jul 25 17:12:41 2016 -0700
+> >
+> >     drivers: net: xgene: Add backward compatibility
+> >
+> >     This patch adds xgene_enet_check_phy_hanlde() function that checks whether
+> >     MDIO driver is probed successfully and sets pdata->mdio_driver to true.
+> >     If MDIO driver is not probed, ethernet driver falls back to backward
+> >     compatibility mode.
+> >
+> >     Since enum xgene_enet_cmd is used by MDIO driver, removing this from
+> >     ethernet driver.
+> >
+> >     Signed-off-by: Iyappan Subramanian <isubramanian@apm.com>
+> >     Tested-by: Fushen Chen <fchen@apm.com>
+> >     Tested-by: Toan Le <toanle@apm.com>
+> >     Signed-off-by: David S. Miller <davem@davemloft.net>
+> >
+> > The commit message says nothing about adding ACPI stuff, and searching
+> > the 'net for the posting of this patch seems to suggest that it wasn't
+> > obviously copied to any ACPI people:
+> >
+> >     https://lists.openwall.net/netdev/2016/07/26/11
+> >
+> > Annoyingly, searching for:
+> >
+> >     "drivers: net: xgene: Add backward compatibility" site:lore.kernel.org
+> >
+> > doesn't find it on lore, so can't get the full headers and therefore
+> > addresses.
+> >
+> > So, yes, there's another driver using it, but the ACPI folk probably
+> > never got a look-in on that instance.  Even if they had been copied,
+> > the patch description is probably sufficiently poor that they wouldn't
+> > have read the patch.
+> >
+> > I'd say there's questions over whether ACPI people will find this an
+> > acceptable approach.
+> >
+> > Given that your patch moves this from one driver to a subsystem thing,
+> > it needs to be ratified by ACPI people, because it's effectively
+> > becoming a standardised way to represent a PHY in ACPI.
+>
+> How can we get attention/response from ACPI people?
 
-We could solve that by synthesising the opcodes instead of relying on
-gas (as we do for other extensions).
+This is in my queue, but the processing of this has been slow for a
+while, sorry about that.
 
-But I'd agree that's just pushing the problem around rather than solving
-it.  It seems dumb to go to that trouble for a case where the affected
-insn isn't going to be emitted...
+If you have a new version of the series, please submit it, otherwise
+ping me in a couple of days if I don't respond to the patches in the
+meantime.
 
-
-> > I'm struggling to find non-trivial users of this that actually want the
-> > whole block to be deleted dependent on the config.
-> 
-> Some of the errata stuff like CONFIG_ARM64_REPEAT_TLBI ends up with
-> unnecessary nops. Similarly for CONFIG_ARM64_UAO/PAN and maybe a few
-> others (it's all additional nops). We also have a few errata workaround
-> where we didn't bother with the config enable option at all.
-
-OK, looks like I may have missed some cases.  There's a dense thicket of
-macros that call each other here, and I've not looked at it for a while ;)
-
-> While this is C code + inline asm, I'd like to have a consistent
-> behaviour of ALTERNATIVE between C and .S files. Now, given that some of
-> them (like UAO/PAN) are on by default, it probably doesn't make any
-> difference if we always keep the first block (non-alternative).
-> 
-> We could add a new macro ALTERNATIVE_OR_NOP.
-
-alternative_insn doesn't seem exist for C at all.  Did I miss something?
-
-
-> > Can we instead just always behave as if first_insn=1 instead?  This this
-> > works intuitively as an alternative, not the current weird 3-way choice
-> > between insn1, insn2 and nothing at all.  The only time that makes sense
-> > is when one of the insns is a branch that skips the block, but that's
-> > handled via the alternative_if macros instead.
-> > 
-> > Behaving always like first_insn=1 provides an if-else that is statically
-> > optimised if the relevant feature is configured out, which I think is
-> > the only thing people are ever going to want.
-> > 
-> > Maybe something depends on the current behaviour, but I can't see it so
-> > far...
-> 
-> I'll give it a go in v4 and see how it looks.
-> 
-> Another option would be an alternative_else which takes an enable
-> argument.
-
-Sure, I think it could make sense to have a different wrapper so that
-the meaning of invocations is clearer for this special case.
-
-
-For the underlying macro, maybe it would be simpler to make it truly
-3-way:
-
-.macro alternative_insn insn_with_cap:req, insn_without_cap:req, cap:req, \
-				enable_alternative=1, fallback_insn=
-	// ...
-	.if (\enable_alternative)
-		// as currently
-	.else
-	\fallback_insn
-	.endif
-.endm
-
-Then we can rejig the various frontends around that.
-
-If you don't want anything when the alternative is disabled, you just
-omit fallback_insn.
-
-Cheers
----Dave
+Thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
