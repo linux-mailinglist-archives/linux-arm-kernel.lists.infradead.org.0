@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C52441BE96C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:00:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973D51BE96E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:01:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T1a/IfMZt9731vz/sMXQ+iFFaaGn1TsniaXVEkLMRgo=; b=Jbg4xGZ4kAdpcD
-	WcgDDwapRan4TRVKArWk72fr9Qs+hjkL7D+FX4Sq2/2cDZIVaWnGjzIx3kUm4mTD0k9yj6lnpXwA7
-	cp554n4jXdVH/zcsZwlqTXlAYl2bhTy2A47RXfOuIJYxZ0oWs5S9VI/TEGcBpFNkPLjrCDCLqdVJi
-	a21dhElci1jRuDgHj3zciyvv0nG+0hQ/+IyJLE8tC1cbDoKewM9V0hjAG65ihQcEVkLrTTkXv4+N6
-	0Ed/z2A+xBMn+Icr5/XFquNj5tPk5GUEdbhuSDoB/LPaHM/ZGY/cSWXbEZwEruedCGFQFsK0aZ6p7
-	2Ny6gHuAn2QssoFWQFQg==;
+	List-Owner; bh=i6Hupy2AFznk2Pn4G/qPbtFug6f27hhKQkh1niZK71I=; b=Rb4Czk3/wTwbq4
+	Yp4CaV1neOx3TJpf0lBgJwZo0esgLSCVGZxKdLyUw+CCLymO2kYGPjl75W1vGWkIZC/iUvlfHc2jA
+	lwSZ+PCTAcZcQgA7ogXG3hgih6S4udi+9byYI7QTxMHGdecyvmLdBYZl4mJ9cH+IyIqPRkN9DS/xy
+	z7pxKgidSEnoGlxGIbl8gYnKLzHdgYMPF9kg4AMF8Xm+RTr4FT8CuGuWIDfcn76FRgpoN4nD36xw1
+	xupD7aRShU+MTtBlWNK3mM7sFMRYz1Lw4LWFkA0AaxAxIKMmNdlYXM+ONRJxFIisB/5me+4Ko52/T
+	qtWjXHLYu6w8PDNAY1pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTtok-000686-5n; Wed, 29 Apr 2020 21:00:30 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jTtpP-0000lo-PU; Wed, 29 Apr 2020 21:01:13 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTtmu-00057Y-Ge
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:58:37 +0000
-Received: by mail-oi1-f194.google.com with SMTP id j16so3116402oih.10
+ id 1jTtmv-000593-SI
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:58:39 +0000
+Received: by mail-oi1-f196.google.com with SMTP id k133so3117928oih.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 13:58:36 -0700 (PDT)
+ Wed, 29 Apr 2020 13:58:37 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=D2qb/OvsZeuot/6uM8EwDvWFdbtAPyr2Mv3N5hc2RTw=;
- b=dKj41Liezrypkr59eRjVcysMh7lm21dCy0O/1azB94e5Wq+QoF8T06GMRD8N1wZiml
- 4onEwyPoa9ClI7Ehix4MhwpmCJ5Dl0mJ3k1fRZPc8rpMroRdVSajZYade10z6cvB7DWC
- wfzJ/HMrJsWkKdvmj8R2OU3C3RatA3vY6Sn7HxZ1hvZ/1JgJ0OoQPPacZPoxc4AZZXmb
- 0m5H1fIs7mfX7ijGdIOWG/mLYx20l8Cq/C1+yyxlpi5iJFiCR4J8c23E01Y0PvKJ9Dbn
- DSqZkJhIy96+dBA2jCyEaMGTancSGrY8m+YKYqHvFCGqPelXCVlshpugVgloL6ZQ3HuU
- By9g==
-X-Gm-Message-State: AGi0PuZjml3G27PrUSW/NYOgb/zpTp+0/9nTrFBBq8oVfY/t0ZqEqnXO
- ztI9k7JeY4FivmU2crEKKA==
-X-Google-Smtp-Source: APiQypInPg4wr8U7ru0AiPOb2rYYQ+qLy6mnlNZK1mQLdkr/zxHbjhm53Jiw7qfUFFZqUi5e6teEPA==
-X-Received: by 2002:aca:b382:: with SMTP id c124mr140690oif.64.1588193915509; 
- Wed, 29 Apr 2020 13:58:35 -0700 (PDT)
+ bh=EoRdXSXyDk/x1mGGqjsqWksS6mCyDXiHkJ0dVC6MTqs=;
+ b=ijZvLLpFIgtoaOU5O1u7H0uJ/T8TXmh2vq7I2OfCrtGXnacA4WDxFUYuRArseUDVyI
+ FlmfSC6G+GouuCgjhftZburuBISC5O7LnYGyt8S31yw8R79QYWhfmu2R5MCZ+MFp6PMk
+ zd5oyW72JINbmzb2DjZ9HSc+W46eVtNcc+zoFcYDw9n9VdGVQLHQP42PBv4735xjusJY
+ a56/QJHwDUmfadTEGftHhIDsCwVi+aveWlsR+y1QdIikv0UKweJOE9YN6RGhaw3bTzN5
+ 2VH7f6G8eqOJkhorqS5BbHNoe9ZOGl1rz09L2qsQT4R026f6JvJIQz6XVJhSGPDUbNi5
+ tNRw==
+X-Gm-Message-State: AGi0PuY16goYHhQJXEl92Eiq53lxHcIqdouLPq/ga3fxYredpQx3iuRi
+ kBfxKri9UAIjJgkPUOOBYcGJtJo=
+X-Google-Smtp-Source: APiQypLdCoQOqyhUOrgVpALW16PrMgDTQhtSkj/rPf8nCMNL3vEltambBtSQoCpAq6uy/8hcmIv3FA==
+X-Received: by 2002:a54:4801:: with SMTP id j1mr108023oij.101.1588193916924;
+ Wed, 29 Apr 2020 13:58:36 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id z13sm653162oth.10.2020.04.29.13.58.34
+ by smtp.googlemail.com with ESMTPSA id z13sm653162oth.10.2020.04.29.13.58.35
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 13:58:34 -0700 (PDT)
+ Wed, 29 Apr 2020 13:58:36 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Liviu Dudau <liviu.dudau@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>
-Subject: [PATCH v2 05/16] clk: versatile: Only enable SP810 on 32-bit by
- default
-Date: Wed, 29 Apr 2020 15:58:14 -0500
-Message-Id: <20200429205825.10604-6-robh@kernel.org>
+Subject: [PATCH v2 06/16] clk: vexpress-osc: Use the devres clock API variants
+Date: Wed, 29 Apr 2020 15:58:15 -0500
+Message-Id: <20200429205825.10604-7-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200429205825.10604-1-robh@kernel.org>
 References: <20200429205825.10604-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_135836_571907_B0ABEB7F 
-X-CRM114-Status: GOOD (  12.61  )
+X-CRM114-CacheID: sfid-20200429_135837_932023_00A291B6 
+X-CRM114-Status: GOOD (  13.22  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -79,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ [209.85.167.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -104,36 +103,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While 64-bit Arm reference platforms have SP810 for clocks for SP804
-timers, they are not needed since the arch timers are used instead.
+In preparation to enable the vexpress-osc clock driver as a module,
+convert the driver to use the managed devres clock API variants. With
+this, a driver .remove() hook is not needed.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Sudeep Holla <sudeep.holla@arm.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Stephen Boyd <sboyd@kernel.org>
 Cc: linux-clk@vger.kernel.org
 Acked-by: Arnd Bergmann <arnd@arndb.de>
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Acked-by: Liviu Dudau <liviu.dudau@arm.com>
+Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/clk/versatile/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/clk/versatile/clk-vexpress-osc.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
-index df0d50bb846c..a47dd6c86d2e 100644
---- a/drivers/clk/versatile/Kconfig
-+++ b/drivers/clk/versatile/Kconfig
-@@ -17,7 +17,7 @@ config ICST
+diff --git a/drivers/clk/versatile/clk-vexpress-osc.c b/drivers/clk/versatile/clk-vexpress-osc.c
+index 7ade146a3ea9..5bb1d5a714d0 100644
+--- a/drivers/clk/versatile/clk-vexpress-osc.c
++++ b/drivers/clk/versatile/clk-vexpress-osc.c
+@@ -65,8 +65,8 @@ static int vexpress_osc_probe(struct platform_device *pdev)
+ {
+ 	struct clk_init_data init;
+ 	struct vexpress_osc *osc;
+-	struct clk *clk;
+ 	u32 range[2];
++	int ret;
  
- config CLK_SP810
- 	bool "Clock driver for ARM SP810 System Controller"
--	default y if ARCH_VEXPRESS
-+	default y if (ARCH_VEXPRESS && ARM)
- 	---help---
- 	  Supports clock muxing (REFCLK/TIMCLK to TIMERCLKEN0-3) capabilities
- 	  of the ARM SP810 System Controller cell.
+ 	osc = devm_kzalloc(&pdev->dev, sizeof(*osc), GFP_KERNEL);
+ 	if (!osc)
+@@ -92,11 +92,11 @@ static int vexpress_osc_probe(struct platform_device *pdev)
+ 
+ 	osc->hw.init = &init;
+ 
+-	clk = clk_register(NULL, &osc->hw);
+-	if (IS_ERR(clk))
+-		return PTR_ERR(clk);
++	ret = devm_clk_hw_register(&pdev->dev, &osc->hw);
++	if (ret < 0)
++		return ret;
+ 
+-	of_clk_add_provider(pdev->dev.of_node, of_clk_src_simple_get, clk);
++	devm_of_clk_add_hw_provider(&pdev->dev, of_clk_hw_simple_get, &osc->hw);
+ 	clk_hw_set_rate_range(&osc->hw, osc->rate_min, osc->rate_max);
+ 
+ 	dev_dbg(&pdev->dev, "Registered clock '%s'\n", init.name);
 -- 
 2.20.1
 
