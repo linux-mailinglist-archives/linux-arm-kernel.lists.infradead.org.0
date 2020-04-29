@@ -2,58 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1CC491BE382
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:12:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 532CF1BE3B3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 18:25:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pOKvPsm6/i89YsNrZSwNx/Aikz6PblP94PzHZcBrxIY=; b=NRrMiabXaJGCZd
-	x82OHIkwdVefbCTGIOTFm7uumDUs4uVdwDk4z7IEkSk0jeXU6xsVsS4qFWf9AJmizx2u0TruHKEp1
-	RG6BLTjxkc3iqzsU/3Tz7b+pi2bj4tEfUMBpVNDKcaeSuznZXQg8vdCfVbcEiVb+1uXe6zZI17h1K
-	IqCI6KWDexCUZUtLJMW1ReEPINF/Zq9uD5dKH7KCyupeeDnfqCll8zdxl1LvuEP700qc6tejvP6ri
-	JJn3xXlaR7VSGuWGne5PATWGKtmICpIHg0C7399JV1bl7/H49tA3+/PkhekY4DQWz9JHaTJCKgphB
-	Enas/8hVSWcLutDRGD2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=h4xHAWPpdP+f02bgRabv2s2SfhrjBjLqiR/gBtlbgTg=; b=OMtQrwWQAnnrdh
+	lTS7BVzWUcWaU/L9KTCEgNTJDO7yEmcxPkStm8/hJobSoceYphnG7r1xuROJdeg2Ul9MdE+BSJtHF
+	ogy7PhdAGbMkLK88irUoF+QvM2lsTPBjXkHhFKId0e3ZDD1zKjfC6EKzv1+18vOy4ss7eYf0bRdqJ
+	3OGmmORUO3hAhenfBbUmEcdPoRXaPBkx9g0lCLYlxuHZWgWxiJcQ/eu7lHst2HS2Ipj8uNiFiD9k3
+	OxR2RH+b2OeMKY/LTe6gZg09KLhs/djqYC0eSZdAA2pMm2nrSESzUIl9lpHAi1htDgDGrMi+2Jmu+
+	2IuAIfMs0tafq3Y7XNyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTpKF-0002CL-IM; Wed, 29 Apr 2020 16:12:43 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTpK6-0002BD-02
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:12:35 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7552E1045;
- Wed, 29 Apr 2020 09:12:31 -0700 (PDT)
-Received: from [10.0.2.15] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 89FE63F73D;
- Wed, 29 Apr 2020 09:12:29 -0700 (PDT)
-Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>
-References: <20200424114058.21199-1-benjamin.gaignard@st.com>
- <7657495.QyJl4BcWH5@kreacher> <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
-From: Valentin Schneider <valentin.schneider@arm.com>
-Message-ID: <70e743cf-b88e-346a-5114-939b8724c83d@arm.com>
-Date: Wed, 29 Apr 2020 17:12:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jTpW1-00024E-S2; Wed, 29 Apr 2020 16:24:53 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTpVr-00022T-51
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 16:24:46 +0000
+Received: by mail-wr1-x441.google.com with SMTP id k13so3283315wrw.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 09:24:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ADiqVCpvp8u+dzB9ke1O/BxJ8B4T05czfzaYmje6w94=;
+ b=nfg9FBtzRkNNFB895zwDXF5h1SCzLtHIHEArxQOIypisEW+sLJeEFFsl5jQZOAQUm1
+ Gk2W/HepcONJybmjc7yjUPdCpz45ff/0ZoYTN8+ncWXr18rhjybizCruAH25c3QdQBnC
+ InPigL/BxQnpb6RwI+uNMKDmQ+FA65z8S7lVPXLYPDGV6s+r0nmcwrDvCdMxbpkQCay3
+ Zj5oe0cn2dguQVi883e+4v3r19aNtH2BbOZK1DfS8UHBvUIdTvlDrKumUW3PHp4MYIpe
+ CcIKR8XPnWNp9FFyqHJUNSLb2QZuAFgwmKX+txpPHgeXMyUySi2VEXNcmiY1Lcsm/0fu
+ mjVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ADiqVCpvp8u+dzB9ke1O/BxJ8B4T05czfzaYmje6w94=;
+ b=pTa+NVMFdSXk8Ok7BFzewHjJ/QeiMcbgzMXkhMmTXgBGLOnm6fMZu7HKjeveyY9eIT
+ Wd4i4pStDgFY7ZYqL12K6BCZtN3EOlgJAW2EULly9WUM90Yn2GowsThNCTrav9M+/2aL
+ 2wwxVddXL0w1i6LYfGE6btaBH1QdDuEMTs5MRHiIj8EMNzsrygD8RGEfqKdEEd1ZH4b4
+ e2OncBKuQ9B7pH3fE5aoQfm1LD+bC5yEyL5eTXbBpxrOsn1jSQwdGuP8E3NUREmRhCiz
+ hHengqENzYXhNJrAir+i/nYYC8C2DlNhkf00APo/HvVYaXVLwqh94QNfvLksNXn/trcn
+ yfqw==
+X-Gm-Message-State: AGi0PuaYXc5UnfVt1zBey+oFrTIDDAEgQX04QbBclKNlWa6BnVc6pz6l
+ xP6nYEi/LASgxtLQqUfkF/DBNw==
+X-Google-Smtp-Source: APiQypLrrX5chyfQ776G/ANPebYHVEwsF2r9aqYcDy10DPmWsl+HRRFigDXqGRIWFJXTPDwD5WMOTQ==
+X-Received: by 2002:adf:ce02:: with SMTP id p2mr39887093wrn.173.1588177481814; 
+ Wed, 29 Apr 2020 09:24:41 -0700 (PDT)
+Received: from xps7590.local ([37.120.81.28])
+ by smtp.gmail.com with ESMTPSA id h2sm32616554wro.9.2020.04.29.09.24.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Apr 2020 09:24:41 -0700 (PDT)
+From: Robert Foss <robert.foss@linaro.org>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Marco Felsch <m.felsch@pengutronix.de>,
+ Maxime Ripard <maxime@cerno.tech>, linux-media@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v6 v6 0/3] media: ov8856: Add devicetree support
+Date: Wed, 29 Apr 2020 18:24:34 +0200
+Message-Id: <20200429162437.2025699-1-robert.foss@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_091234_081216_25B0F1B9 
-X-CRM114-Status: GOOD (  14.05  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200429_092444_662816_F25507C4 
+X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,64 +99,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "len.brown@intel.com" <len.brown@intel.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>, "pavel@ucw.cz" <pavel@ucw.cz>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: Fabio Estevam <festevam@gmail.com>,
+ Dongchun Zhu <dongchun.zhu@mediatek.com>, Robert Foss <robert.foss@linaro.org>,
+ Tomasz Figa <tfiga@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/04/2020 16:57, Benjamin GAIGNARD wrote:
-> 
-> 
-> On 4/29/20 5:50 PM, Rafael J. Wysocki wrote:
->> On Friday, April 24, 2020 1:40:55 PM CEST Benjamin Gaignard wrote:
->>> When start streaming from the sensor the CPU load could remain very low
->>> because almost all the capture pipeline is done in hardware (i.e. without
->>> using the CPU) and let believe to cpufreq governor that it could use lower
->>> frequencies. If the governor decides to use a too low frequency that
->>> becomes a problem when we need to acknowledge the interrupt during the
->>> blanking time.
->>> The delay to ack the interrupt and perform all the other actions before
->>> the next frame is very short and doesn't allow to the cpufreq governor to
->>> provide the required burst of power. That led to drop the half of the frames.
->>>
->>> To avoid this problem, DCMI driver informs the cpufreq governors by adding
->>> a cpufreq minimum load QoS resquest.
->> This seems to be addressing a use case that can be addressed with the help of
->> utilization clamps with less power overhead.
-> Do mean clamping the policy frequencies ? I may have miss the API to do 
-> that...
->>
+This adds devicetree support to the ov8856 driver.
+In order to to aid debugging and enable future sensor
+modes to be supported, module revision detection is also added.
 
-IIUC Rafael is referring to uclamp, i.e. scheduler utilization clamping, see:
 
-  https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html#cpu
+Dongchun Zhu (1):
+  media: dt-bindings: ov8856: Document YAML bindings
 
-The above describes the cgroup interface, note that you can also set clamps
-per task (via sched_setattr()).
+Robert Foss (2):
+  media: ov8856: Add devicetree support
+  media: ov8856: Implement sensor module revision identification
 
-One thing that comes to mind however is that schedutil only "sees" the clamps
-of runnable tasks, and from reading your changelog you may not have moments
-without any (i.e. gears are grinding in HW). You'd have to try boosting
-(setting a high uclamp.min) whatever tasks you have on the software side and
-see how it all behaves.
+ .../devicetree/bindings/media/i2c/ov8856.yaml | 140 +++++++++++++
+ MAINTAINERS                                   |   1 +
+ drivers/media/i2c/ov8856.c                    | 190 ++++++++++++++++--
+ 3 files changed, 317 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
 
->> Thanks!
->>
->>
->>
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
