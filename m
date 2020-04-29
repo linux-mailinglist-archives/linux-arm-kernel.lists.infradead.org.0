@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C47A1BD25B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:44:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 240DB1BD29F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 04:47:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eBdvoEr+3/KqW+1cWg8Gm2Kq0KSfhRdAIc4UrrH339k=; b=NZiLXf5SHX/TJo
-	TgfXKTX7QNqcQvTs/RUYa45s/fmn6hCetyo+jw5f8r0amWKUKpKpQOJfCeSTlB3SN4roIg39TwRvL
-	+8Lnj+5waeInEjbRFLOesI0fFO6blL9IU2lmSJGMNNSHyYfTeenpR4sNWh9nLjNxEnCyju0qhhjH0
-	sedhcyecJTXDXQiOccaigrlAad8NPfno9GvI81fadgO7ZEdjALGGAiay3fgZxrMh4XfDDvgHGJYxT
-	1hsulowIvLttSNbZ6RTERqgKKn7ebye2Qxj0DB0GNQ7+RZ4sqzXGci1F7zXQ/RSEg4AxUiuLDjMBE
-	QNRdRtL+tkcPhg4WcsVA==;
+	List-Owner; bh=a7qc/aPSHPPXn+ULMI0ENGXpZECNV9SjMGS8kwgMYpc=; b=ESumFsLfGfShny
+	S38cn2G+Qrg/tN+Jy42jgBaeuiqQyk+LEeX3j0AxLBiq1tkzAfYs2PDvjfy4p5TQgYmRfzYv5208q
+	AO/JztxWNgzET1y1Eb77hIDTaF5DB69EmK1Fp/COUC7nJCigSVpZDuS1jaGCOyP21e7g+mssWGIao
+	JIUP18luLuzURJ4jHxiQ1eZHqrq4RgAi1OO/xbvJAzt5yL79G/pry9oclwe1pRDKy1EwMnG3AsaUl
+	jnITk2odTZXSVxPOW7gBsoU5cqNPQv/gYBjLgiPcBVAR/fjEDjw6wzGFEsjCgMzsRekdzqC5i/RjJ
+	J4FT4iSQ9m79Ue39TFOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTci6-0006vT-OT; Wed, 29 Apr 2020 02:44:30 +0000
+	id 1jTckc-0001st-Qh; Wed, 29 Apr 2020 02:47:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTchx-0006uk-Kx
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:44:22 +0000
+ id 1jTckN-0001qk-AJ
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 02:46:53 +0000
 Received: from dragon (80.251.214.228.16clouds.com [80.251.214.228])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2105D20737;
- Wed, 29 Apr 2020 02:44:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF90920737;
+ Wed, 29 Apr 2020 02:46:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588128261;
- bh=iKaEe0wr+T3cUT/15Dj5pKEtbeFfU3hERoXeJ5Grxw4=;
+ s=default; t=1588128411;
+ bh=i/beAvLFST2zpd8Kzs30/5TtRc3y6I9BsrZ9LT5jD3Q=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=s+P5EFUNmDhJCFYcVgXyNzSE/ZgV3ZgcLPDt+g+W3CiMPo8uZRuOqnnOiDCnI7bJY
- GKrImGkc17aBQneRU/gs1ThRNLvAGOJU04Dn9fNFUuocIi9cTiw3nJFZrb67APV1Lh
- HqaI7gjm+eFHAEGIcHKoLn5MqQyXzNZqCuDd/1sk=
-Date: Wed, 29 Apr 2020 10:44:15 +0800
+ b=oE44iFbDA8l5+pIUkhCjvjYqB3CdLOo/xE3SJ8scLw3NEE072VFMwIBKna8Zp83Lb
+ C8ShYMGnDpmHXZu1b7J0dLvuNylBH8rUoVEbochDChE5OMu4jmzu8lUaAgsQEr70pd
+ Zosytjw13rZFSlK5kcODISxdnWNTzC9zIFD9nl38=
+Date: Wed, 29 Apr 2020 10:46:45 +0800
 From: Shawn Guo <shawnguo@kernel.org>
-To: Russell King <rmk+kernel@armlinux.org.uk>
-Subject: Re: [PATCH] arm: dts: imx6-sr-som: add ethernet PHY configuration
-Message-ID: <20200429024414.GK32592@dragon>
-References: <E1jOkD3-00067R-RZ@rmk-PC.armlinux.org.uk>
+To: Matt Porter <mporter@konsulko.com>
+Subject: Re: [PATCH] arm64: dts: imx8mm: specify #sound-dai-cells for SAI nodes
+Message-ID: <20200429024644.GL32592@dragon>
+References: <20200415185941.13956-1-mporter@konsulko.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <E1jOkD3-00067R-RZ@rmk-PC.armlinux.org.uk>
+In-Reply-To: <20200415185941.13956-1-mporter@konsulko.com>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_194421_706856_F8A7BFD2 
-X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-CacheID: sfid-20200428_194652_408914_0F2F82A0 
+X-CRM114-Status: UNSURE (   9.04  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,27 +77,24 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Oleksij Rempel <o.rempel@pengutronix.de>, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Devicetree List <devicetree@vger.kernel.org>,
+ Anson Huang <Anson.Huang@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Leonard Crestez <leonard.crestez@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ Linux ARM Kernel List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 15, 2020 at 04:44:17PM +0100, Russell King wrote:
-> Add ethernet PHY configuration ahead of removing the quirk that
-> configures the clocking mode for the PHY.  The RGMII delay is
-> already set correctly.
+On Wed, Apr 15, 2020 at 02:59:41PM -0400, Matt Porter wrote:
+> Add #sound-dai-cells properties to SAI nodes.
 > 
-> Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
+> Signed-off-by: Matt Porter <mporter@konsulko.com>
 
-Changed the subject prefix to 'ARM: ...', and applied the patch.
-
-Shawn
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
