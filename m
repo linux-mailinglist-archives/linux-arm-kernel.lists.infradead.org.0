@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 830AC1BDFA9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:56:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB6931BDFC1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:57:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pBL1QQLFr9cL9eNsiXj7IJ4+tkuQ/6o+i3r/CDzpmGg=; b=Lf02hO5K8QMDEP
-	o8D3KnXLD8L5RG+B+BREA8dX4XUT7AWGQ9r95aWURL0fiOBvgoatqekaQDw9oy8TJf7mvheogwuT3
-	9LNvx59/AK4gbEIeBtphURcnMhhAbV+AmVmOCWANXAd8rP5N+ljmH2GxJqGsodSWwdq0R+iNzearT
-	ahyLhVUf6s9OfQo4M6hgnFS2c/9C3BJv9RXdlbmsTksuFKKxAqpnZQqGJ14eiwh+BPDx8zbANjwDW
-	Oz4nrM2F+0uMCmxC50pgC8F/GMrx1uzpV1PRTvcZjvPNl2gZsbV9tNgSORrpdfg868+3hyMHJ8IPU
-	qyPC/6NhNASqjferzsAw==;
+	List-Owner; bh=xyNT4JRZSVMj/2mLhQna37CtfR4fwG2NRfrDxuA0zfg=; b=KYOzFr/+QAAqEM
+	rGmQIcT0UyIMPQ/yQeM/qE2lusdA5N4rpevOlhI08zp72V+IFdW5qHDLGbIfxXvMEdbSLGP1azuad
+	0newtt17r+XH5mJflzgKdKxjVI+tsi2EF3sLoe5AFB36Xc5EKC6fozndbmnpzqSDUVwAT7/Exg2yO
+	jp0FtaQGe+3xTMBFmaSYwQCGB8phSei9t2H+GDe30dnZKt4yrRV07UGkXSj5+qDLhA/aGjXJnwpbJ
+	Eg7PWB+IgRxZkCxZDArv6zL7qC9odZPwTe4v8AJaR6TL3VhVhW1EcjzumPwtE5anO5eOwAMQMhLUU
+	NU5EgECyZUHw+vWJZiCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTnCO-0008ON-3s; Wed, 29 Apr 2020 13:56:28 +0000
+	id 1jTnDi-0001CL-KV; Wed, 29 Apr 2020 13:57:50 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTnCD-0008N8-I7; Wed, 29 Apr 2020 13:56:18 +0000
-X-UUID: 0ee5b67c49b9475eb9bb254d6029b1ce-20200429
+ id 1jTnCS-0000AU-MW; Wed, 29 Apr 2020 13:56:35 +0000
+X-UUID: 801e108f1cfb49d7abacb5a8b05ad8f3-20200429
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=TtiqXGvs1ddJ8sOI7BA0Q8oUmtYb84kP4m655wKXu4U=; 
- b=etqFUgvjkSUTWyQDdXJG8eWHlZZ3IBUWG+sVmLd2rv3xZvx/VM88+jNk+UX9HtAq9LSXbP6KXMQhfiVErHBxv90jF8MXfYVmmtxpiQmmjowjpBDaWcLfhmvFo6ZGMa/PDN+qloTOCOfiJxg9EBPbFEyflwZhkJ9RRxoWbU1Uc4Q=;
-X-UUID: 0ee5b67c49b9475eb9bb254d6029b1ce-20200429
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ bh=fPTiGPT1DHjIU2xCuYLMGcb5HokbGjWKo4RHJXhd6Ic=; 
+ b=Ac66w3GFb4+X1Qc+ldn3fUUQvUq6wWpqL3B21kiTdmgBYQ+V+7s0POEqgTCfte6zmPuEUmXfE/HWdDmwqwAC0qS6vCrGatLE8D2HXAWV4mQba9VGnlxAbPR4LsFRSDmzLAEQTWpbLpZfyHazyTPG2FCDwa5FxveYBaJ8oiY4dXg=;
+X-UUID: 801e108f1cfb49d7abacb5a8b05ad8f3-20200429
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 161421106; Wed, 29 Apr 2020 05:57:14 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ with ESMTP id 360489473; Wed, 29 Apr 2020 05:57:27 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 29 Apr 2020 06:56:10 -0700
+ 15.0.1497.2; Wed, 29 Apr 2020 06:56:23 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Wed, 29 Apr 2020 21:56:10 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -46,18 +46,19 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v2 1/5] scsi: ufs: allow legacy UFS devices to enable
- WriteBooster
-Date: Wed, 29 Apr 2020 21:56:06 +0800
-Message-ID: <20200429135610.23750-2-stanley.chu@mediatek.com>
+Subject: [PATCH v2 2/5] scsi: ufs: add "index" in parameter list of
+ ufshcd_query_flag()
+Date: Wed, 29 Apr 2020 21:56:07 +0800
+Message-ID: <20200429135610.23750-3-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200429135610.23750-1-stanley.chu@mediatek.com>
 References: <20200429135610.23750-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 88695E1D9718EB9997EAC1CB2300480093288BC620EC6B0CE6385F5FA42925602000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_065617_609208_4751EA16 
-X-CRM114-Status: GOOD (  11.56  )
+X-CRM114-CacheID: sfid-20200429_065633_194509_DC530106 
+X-CRM114-Status: GOOD (  12.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,73 +98,166 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-WriteBooster feature may be supported by some legacy UFS devices
-(i.e., < 3.1) by upgrading firmware.
-
-To enable WriteBooster feature in such devices, relax the entrance
-condition of ufshcd_wb_probe() to allow host driver to check those
-devices' WriteBooster capability.
-
-WriteBooster feature can be available if below both conditions are
-satisfied,
-
-1. Device descriptor has dExtendedUFSFeaturesSupport field.
-2. WriteBooster support is specified in above field.
+For preparation of LU Dedicated buffer mode support on WriteBooster
+feature, "index" parameter shall be added and allowed to be specified
+by callers.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 Reviewed-by: Bean Huo <beanhuo@micron.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 19 +++++++++++++------
- 1 file changed, 13 insertions(+), 6 deletions(-)
+ drivers/scsi/ufs/ufs-sysfs.c |  2 +-
+ drivers/scsi/ufs/ufshcd.c    | 28 +++++++++++++++-------------
+ drivers/scsi/ufs/ufshcd.h    |  2 +-
+ 3 files changed, 17 insertions(+), 15 deletions(-)
 
+diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
+index 93484408bc40..b86b6a40d7e6 100644
+--- a/drivers/scsi/ufs/ufs-sysfs.c
++++ b/drivers/scsi/ufs/ufs-sysfs.c
+@@ -631,7 +631,7 @@ static ssize_t _name##_show(struct device *dev,				\
+ 	struct ufs_hba *hba = dev_get_drvdata(dev);			\
+ 	pm_runtime_get_sync(hba->dev);					\
+ 	ret = ufshcd_query_flag(hba, UPIU_QUERY_OPCODE_READ_FLAG,	\
+-		QUERY_FLAG_IDN##_uname, &flag);				\
++		QUERY_FLAG_IDN##_uname, 0, &flag);			\
+ 	pm_runtime_put_sync(hba->dev);					\
+ 	if (ret)							\
+ 		return -EINVAL;						\
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 915e963398c4..111812c5304a 100644
+index 111812c5304a..465ee023ea4b 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -6800,9 +6800,16 @@ static int ufshcd_scsi_add_wlus(struct ufs_hba *hba)
- 
- static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
- {
-+	if (hba->desc_size.dev_desc <= DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP)
-+		goto wb_disabled;
-+
- 	hba->dev_info.d_ext_ufs_feature_sup =
- 		get_unaligned_be32(desc_buf +
- 				   DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP);
-+
-+	if (!(hba->dev_info.d_ext_ufs_feature_sup & UFS_DEV_WRITE_BOOSTER_SUP))
-+		goto wb_disabled;
-+
- 	/*
- 	 * WB may be supported but not configured while provisioning.
- 	 * The spec says, in dedicated wb buffer mode,
-@@ -6818,11 +6825,12 @@ static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
- 	hba->dev_info.b_presrv_uspc_en =
- 		desc_buf[DEVICE_DESC_PARAM_WB_PRESRV_USRSPC_EN];
- 
--	if (!((hba->dev_info.d_ext_ufs_feature_sup &
--		 UFS_DEV_WRITE_BOOSTER_SUP) &&
--		hba->dev_info.b_wb_buffer_type &&
-+	if (!(hba->dev_info.b_wb_buffer_type &&
- 	      hba->dev_info.d_wb_alloc_units))
--		hba->caps &= ~UFSHCD_CAP_WB_EN;
-+		goto wb_disabled;
-+
-+wb_disabled:
-+	hba->caps &= ~UFSHCD_CAP_WB_EN;
+@@ -2782,13 +2782,13 @@ static inline void ufshcd_init_query(struct ufs_hba *hba,
  }
  
- static int ufs_get_device_desc(struct ufs_hba *hba)
-@@ -6862,8 +6870,7 @@ static int ufs_get_device_desc(struct ufs_hba *hba)
+ static int ufshcd_query_flag_retry(struct ufs_hba *hba,
+-	enum query_opcode opcode, enum flag_idn idn, bool *flag_res)
++	enum query_opcode opcode, enum flag_idn idn, u8 index, bool *flag_res)
+ {
+ 	int ret;
+ 	int retries;
  
- 	model_index = desc_buf[DEVICE_DESC_PARAM_PRDCT_NAME];
+ 	for (retries = 0; retries < QUERY_REQ_RETRIES; retries++) {
+-		ret = ufshcd_query_flag(hba, opcode, idn, flag_res);
++		ret = ufshcd_query_flag(hba, opcode, idn, index, flag_res);
+ 		if (ret)
+ 			dev_dbg(hba->dev,
+ 				"%s: failed with error %d, retries %d\n",
+@@ -2809,16 +2809,17 @@ static int ufshcd_query_flag_retry(struct ufs_hba *hba,
+  * @hba: per-adapter instance
+  * @opcode: flag query to perform
+  * @idn: flag idn to access
++ * @index: flag index to access
+  * @flag_res: the flag value after the query request completes
+  *
+  * Returns 0 for success, non-zero in case of failure
+  */
+ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+-			enum flag_idn idn, bool *flag_res)
++			enum flag_idn idn, u8 index, bool *flag_res)
+ {
+ 	struct ufs_query_req *request = NULL;
+ 	struct ufs_query_res *response = NULL;
+-	int err, index = 0, selector = 0;
++	int err, selector = 0;
+ 	int timeout = QUERY_REQ_TIMEOUT;
  
--	/* Enable WB only for UFS-3.1 */
--	if (dev_info->wspecversion >= 0x310)
-+	if (ufshcd_is_wb_allowed(hba))
- 		ufshcd_wb_probe(hba, desc_buf);
+ 	BUG_ON(!hba);
+@@ -4175,7 +4176,7 @@ static int ufshcd_complete_dev_init(struct ufs_hba *hba)
+ 	bool flag_res = true;
  
- 	err = ufshcd_read_string_desc(hba, model_index,
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-		QUERY_FLAG_IDN_FDEVICEINIT, NULL);
++		QUERY_FLAG_IDN_FDEVICEINIT, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev,
+ 			"%s setting fDeviceInit flag failed with error %d\n",
+@@ -4186,7 +4187,7 @@ static int ufshcd_complete_dev_init(struct ufs_hba *hba)
+ 	/* poll for max. 1000 iterations for fDeviceInit flag to clear */
+ 	for (i = 0; i < 1000 && !err && flag_res; i++)
+ 		err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_READ_FLAG,
+-			QUERY_FLAG_IDN_FDEVICEINIT, &flag_res);
++			QUERY_FLAG_IDN_FDEVICEINIT, 0, &flag_res);
+ 
+ 	if (err)
+ 		dev_err(hba->dev,
+@@ -5001,7 +5002,7 @@ static int ufshcd_enable_auto_bkops(struct ufs_hba *hba)
+ 		goto out;
+ 
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-			QUERY_FLAG_IDN_BKOPS_EN, NULL);
++			QUERY_FLAG_IDN_BKOPS_EN, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev, "%s: failed to enable bkops %d\n",
+ 				__func__, err);
+@@ -5051,7 +5052,7 @@ static int ufshcd_disable_auto_bkops(struct ufs_hba *hba)
+ 	}
+ 
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_CLEAR_FLAG,
+-			QUERY_FLAG_IDN_BKOPS_EN, NULL);
++			QUERY_FLAG_IDN_BKOPS_EN, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev, "%s: failed to disable bkops %d\n",
+ 				__func__, err);
+@@ -5217,7 +5218,7 @@ static int ufshcd_wb_ctrl(struct ufs_hba *hba, bool enable)
+ 		opcode = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, opcode,
+-				      QUERY_FLAG_IDN_WB_EN, NULL);
++				      QUERY_FLAG_IDN_WB_EN, 0, NULL);
+ 	if (ret) {
+ 		dev_err(hba->dev, "%s write booster %s failed %d\n",
+ 			__func__, enable ? "enable" : "disable", ret);
+@@ -5241,7 +5242,7 @@ static int ufshcd_wb_toggle_flush_during_h8(struct ufs_hba *hba, bool set)
+ 		val = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+ 
+ 	return ufshcd_query_flag_retry(hba, val,
+-			       QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8,
++			       QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8, 0,
+ 				       NULL);
+ }
+ 
+@@ -5262,7 +5263,8 @@ static int ufshcd_wb_buf_flush_enable(struct ufs_hba *hba)
+ 		return 0;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, NULL);
++				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN,
++				      0, NULL);
+ 	if (ret)
+ 		dev_err(hba->dev, "%s WB - buf flush enable failed %d\n",
+ 			__func__, ret);
+@@ -5281,7 +5283,7 @@ static int ufshcd_wb_buf_flush_disable(struct ufs_hba *hba)
+ 		return 0;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_CLEAR_FLAG,
+-				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, NULL);
++				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, 0, NULL);
+ 	if (ret) {
+ 		dev_warn(hba->dev, "%s: WB - buf flush disable failed %d\n",
+ 			 __func__, ret);
+@@ -7254,7 +7256,7 @@ static int ufshcd_device_params_init(struct ufs_hba *hba)
+ 	ufs_fixup_device_setup(hba);
+ 
+ 	if (!ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_READ_FLAG,
+-			QUERY_FLAG_IDN_PWR_ON_WPE, &flag))
++			QUERY_FLAG_IDN_PWR_ON_WPE, 0, &flag))
+ 		hba->dev_info.f_power_on_wp_en = flag;
+ 
+ 	/* Probe maximum power mode co-supported by both UFS host and device */
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index 056537e52c19..e555d794d441 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -946,7 +946,7 @@ int ufshcd_read_desc_param(struct ufs_hba *hba,
+ int ufshcd_query_attr(struct ufs_hba *hba, enum query_opcode opcode,
+ 		      enum attr_idn idn, u8 index, u8 selector, u32 *attr_val);
+ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+-	enum flag_idn idn, bool *flag_res);
++	enum flag_idn idn, u8 index, bool *flag_res);
+ 
+ void ufshcd_auto_hibern8_enable(struct ufs_hba *hba);
+ void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit);
 -- 
 2.18.0
 _______________________________________________
