@@ -2,58 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 187401BDF99
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:52:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52FE31BDFBF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:57:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VQq5+MA5tc9x9Dg1i3lVG/OmuL4vNyopjX4/4Wi00HI=; b=WZZR/Croq1c1qM
-	seeW25JX1WX1mUT8a0Maz1ewG+Iex7JZohTiDFsxGmD6UX7qqyWNdG4Dk5s2vzJaphFOi2Ho5zH9Y
-	FzEzZepLJXz9HNKm9ZEJ2gJp4+GoitQRS8HlRRr/F+Xna1uNW6mx6vkgLfworOXcp/VEMCSJ97nWq
-	JX3X5ZQhl99dtJshZFF/YXLiOifsLX2qKc+OvKkNWPrejOFxh+v+2WL3+QsKHZuLCyqi8WWDa1Zno
-	KpM1UsxILTsQxhm35ic1to8od4PEPQgDn6WZSDE6KmFWIZieyEh3ojH2NCKIUNyAbQ23eJhsE2t7S
-	wdHws0IFNP+sNkfy2GNA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PAtz+x2Ag+nrtxrXvEBO3eDBF7YVbOOSO4JaS0Rvk/Q=; b=OcPLSXEvcgopp8
+	j9CHCZusn9/lFEBmnujwxtMYdKBWiVQcvvJqJjCFtPLDe3nUxLDwDz7s3Qwk9Fe9ITeyZpaUWAjFB
+	9snriUIx/U3tIntLMQ3jqzXTGKNwgD1gdzHtol14UnmiFSQn13sf++W6fpdapOkyF5ih8jzxeD/t8
+	pqOxojPGTOLAN0LcP7RUqYYjdHVD2FQxpKaZqbZwYA8Ytt6tagvw3EFgVIBjoDeMgix6Or3S95ZCe
+	G/E8/rNVnXXZvaO5CbIqSAjnnx5acJyMZdlthWCAxich8wIg767/2j+LkxtkBkcEH4ObRejDzBEuT
+	fkvYQVM56mTLcfqTNzKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTn8k-0004by-E2; Wed, 29 Apr 2020 13:52:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTn8Z-0004aZ-4E
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:52:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 699A61045;
- Wed, 29 Apr 2020 06:52:29 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B2B563F68F;
- Wed, 29 Apr 2020 06:52:27 -0700 (PDT)
-Date: Wed, 29 Apr 2020 14:52:25 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v3 20/23] fs: Allow copy_mount_options() to access
- user-space in a single pass
-Message-ID: <20200429135224.GB10651@gaia>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-21-catalin.marinas@arm.com>
- <20200429102650.GC30377@arm.com>
+	id 1jTnDX-0000vG-P1; Wed, 29 Apr 2020 13:57:39 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTnCR-00009S-Mm; Wed, 29 Apr 2020 13:56:33 +0000
+X-UUID: 2623206bba7d453ea4369df2f788b650-20200429
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=oSE2OoXFjN34Iayd4h3+QPXE9+S+ncvnsRfCYGToq28=; 
+ b=X+YKqdQ85AB3isGEdVQ/7eDzrY6t+45i9QkTc92Q+w60c/64PiwUk676rni8kz4qwPHQBJvfGjJhoeWTkvM6+icZnJjTd8V+vqBtxU8Vo/fcjfCQtbgO5fvesMJxucp4uQ8roaQnU81AVejwEshvtOapU1XV1+79tpc8ALr5tpc=;
+X-UUID: 2623206bba7d453ea4369df2f788b650-20200429
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1642997950; Wed, 29 Apr 2020 05:57:27 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 29 Apr 2020 06:56:23 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 29 Apr 2020 21:56:10 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Wed, 29 Apr 2020 21:56:08 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <asutoshd@codeaurora.org>
+Subject: [PATCH v2 0/5] scsi: ufs: support LU Dedicated buffer type for
+ WriteBooster
+Date: Wed, 29 Apr 2020 21:56:05 +0800
+Message-ID: <20200429135610.23750-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200429102650.GC30377@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_065231_210016_7E3AAB7C 
-X-CRM114-Status: GOOD (  18.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200429_065631_926156_3D3AA0E8 
+X-CRM114-Status: UNSURE (   6.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,77 +86,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Alexander Viro <viro@zeniv.linux.org.uk>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 11:26:51AM +0100, Dave P Martin wrote:
-> On Tue, Apr 21, 2020 at 03:26:00PM +0100, Catalin Marinas wrote:
-> > diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-> > index 32fc8061aa76..566da441eba2 100644
-> > --- a/arch/arm64/include/asm/uaccess.h
-> > +++ b/arch/arm64/include/asm/uaccess.h
-> > @@ -416,6 +416,17 @@ extern unsigned long __must_check __arch_copy_in_user(void __user *to, const voi
-> >  #define INLINE_COPY_TO_USER
-> >  #define INLINE_COPY_FROM_USER
-> >  
-> > +static inline bool arch_has_exact_copy_from_user(unsigned long n)
-> > +{
-> > +	/*
-> > +	 * copy_from_user() aligns the source pointer if the size is greater
-> > +	 * than 15. Since all the loads are naturally aligned, they can only
-> > +	 * fail on the first byte.
-> > +	 */
-> > +	return n > 15;
-> > +}
-> > +#define arch_has_exact_copy_from_user
-> 
-> Did you mean:
-> 
-> #define arch_has_exact_copy_from_user arch_has_exact_copy_from_user
+Hi,
 
-Yes (and I shouldn't write patches late in the day).
+This patchset adds LU dedicated buffer mode support for WriteBooster.
 
-> Mind you, if this expands to 1 I'd have expected copy_mount_options()
-> not to compile, so I may be missing something.
+In the meanwhile, enable WriteBooster capability on MediaTek UFS platforms.
 
-I think arch_has_exact_copy_from_user() (with the braces) is looked up
-in the function namespace, so the macro isn't expanded. So arguably the
-patch is correct but pretty dodgy ;).
+v1 -> v2:
+  - Change the definition name of WriteBooster buffer mode to correspond to specification (Bean Huo)
+  - Add patch #5: "scsi: ufs: cleanup WriteBooster feature"
 
-I scrapped this in my second attempt in reply to Kevin.
+Stanley Chu (5):
+  scsi: ufs: allow legacy UFS devices to enable WriteBooster
+  scsi: ufs: add "index" in parameter list of ufshcd_query_flag()
+  scsi: ufs: add LU Dedicated buffer mode support for WriteBooster
+  scsi: ufs-mediatek: enable WriteBooster capability
+  scsi: ufs: cleanup WriteBooster feature
 
-> > diff --git a/fs/namespace.c b/fs/namespace.c
-> > index a28e4db075ed..8febc50dfc5d 100644
-> > --- a/fs/namespace.c
-> > +++ b/fs/namespace.c
-> > @@ -3025,13 +3025,16 @@ void *copy_mount_options(const void __user * data)
-> 
-> [ Is this applying a band-aid to duct tape?
-> 
-> The fs presumably knows ahead of time whether it's expecting a string or
-> a fixed-size blob for data, so I'd hope we could just DTRT rather than
-> playing SEGV roulette here.
-> 
-> This might require more refactoring than makes sense for this series
-> though. ]
-
-That's possible but it means moving the copy from sys_mount() to the
-specific places where it has additional information (the filesystems).
-I'm not even sure it's guaranteed to be strings. If it is, we could just
-replace all this with a strncpy_from_user().
+ drivers/scsi/ufs/ufs-mediatek.c |   3 +
+ drivers/scsi/ufs/ufs-sysfs.c    |   2 +-
+ drivers/scsi/ufs/ufs.h          |   7 ++
+ drivers/scsi/ufs/ufshcd.c       | 112 ++++++++++++++++++++++----------
+ drivers/scsi/ufs/ufshcd.h       |   2 +-
+ 5 files changed, 90 insertions(+), 36 deletions(-)
 
 -- 
-Catalin
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
