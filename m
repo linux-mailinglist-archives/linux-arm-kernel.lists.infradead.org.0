@@ -2,80 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 015931BD9C6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:37:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC2911BD9D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:40:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mKpKT3Bnrpo8ceV4oVBbvoYSMeywQ+wuMyp5doTuJIQ=; b=ZMIN9DI4PJ0XJEcroCoGVKGTDl
-	uB5NidSmsLTD0mocjkGfKIeILpftdGLNwKd7Vt81P2c+A5KOVrKLoPRsNxrt+Q/m8fV9/Au5QPt+i
-	rXWf1fKjcto7cFHzHS9rpGgPZ1n4X3o42QYV73wKMp8kMI99SPp2PNEygtij1wF2MYgoRmqMKdMWN
-	4/MIb9YI5ZEWHxYxHTZsFytfdQHblfXmdFh26SkkukEUa23aiPiMIs1iYK47lXhkoJiu1SJocGdrY
-	8lc+tXhOw/EmCvbnKhRFtgD+d5oin9iB0GjWh+W/NOz980ZfnFRtIBBWKeZrvoXP32agl7PPUmMgd
-	ZvihG7XA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zvDQT47OkswDe0/pfBX5vqziMAVSvxtGRzejWIkv/44=; b=pvjcsspC7YvWqo
+	gRrOWy1L3IANIhoY5dOmA+G1y11jR7Xva/DI5+9leckRp0iwTLrmmgDIjgRpacl/0n0tCrqQiHfJo
+	hA/55YP+iy6fus8p+nNWWfx5jbmZfWVAeigiECuFcUzj9bo9H9xw94p2SxjCmjR5WwldTbigjGkHG
+	XwYHQ3mtSXnhALXJKnve6gSX+yKLBvfVQYn5rQBcWv6WFeioiVXFaN4rU6nyZd7zlhV8miFk6/Avl
+	Ah8MafOpAVf2+GYofuSH/t5lzmWQgaQ3rHypQgR8KRXtpA7DwI9AnUdrqW6gJllppOeHscqvYQJCZ
+	9gI7KE1/c3diDoT3qCyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTk5x-0003mv-5S; Wed, 29 Apr 2020 10:37:37 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jTk8S-0004TZ-IP; Wed, 29 Apr 2020 10:40:12 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTk5o-0003m0-RO
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:37:30 +0000
-Received: by mail-wm1-x342.google.com with SMTP id u16so1453058wmc.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 03:37:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=Ajg0V3YAnieY8dp7jTqVJrYiDVgIPrXCOEB/FDyd0IQ=;
- b=DIXfay/duBznmXB5ADvUzPnyxxtfIxj2kizhan9HisAwxNdjLTa9l9i34gr0wqk+xa
- 2uanBNCtdDDTcrKxiKdyuGrCXH7HBG+yfZXWa2pdBp8lCpCnGKL0Ls2zQkox09/Mpzhw
- FZGjZ7b4fdPWGsKhHWwwHmbv/9x9fX8Wz+BHSQZYT+yxx89w0Fiqa8v3d5jRt8Jbtf8s
- 8s5RCIs36RQOsJvNFWuPXx7N6wNGWHwA5BhBM8VCLlZAfOlTHJQCLZ0mudu5YNzTwJbf
- u7P+sm/ev50j2OXnv85QUHDySZCx66DCWZOUPqqDrwJi29iaIJ/S6F81weuQ/XuYqzRe
- RFzw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=Ajg0V3YAnieY8dp7jTqVJrYiDVgIPrXCOEB/FDyd0IQ=;
- b=b6+feNEjuuxPs2JWtN3lPEcrAzM05vUhz9nw+51a6obnCPBnbWQEX7ybTpkxpOWAF6
- Mgo4hTl0V6/OTd2Lzr5TzItqM7tFIX9UzvyQ4wNtAbxJMW9oCVL5Q9rm+BIVGz92B3ep
- nTnImog1IKglXLO2gTvEgsiGlWi6pvt1+b0l88oDleJATH7ejmkAcRKu4Uku2L9SPskW
- tMCfr1ora5h2S25H+FCjuTeOvTFD5ZRc5iFRaTHMljlfPYWPvVFuI3UqAuWLMKfXiELh
- dqpZvlMyP6JMUoChEqihNnAAztqjy3verTyQVVEQM5heBGVQuJyN+ZmcmfnZjT+cdEgT
- k8zg==
-X-Gm-Message-State: AGi0PuaHfZ9UD0Lp2novtWtWTcANH2C19M+L5r0bFFqzyrx+ytm/R7dI
- /CHI1HT+/qWJ+y/flZcSCCtzAA==
-X-Google-Smtp-Source: APiQypL2Sn2tfnITVPTTIZTbiEuPWWxOp8fRjGWJTovGUEqEE9S7DWyLRwyQAHtRin4DiTrlvqRpGQ==
-X-Received: by 2002:a1c:bd08:: with SMTP id n8mr2479044wmf.23.1588156646488;
- Wed, 29 Apr 2020 03:37:26 -0700 (PDT)
-Received: from localhost.localdomain ([2a01:e34:ed2f:f020:d494:5741:b700:698f])
- by smtp.gmail.com with ESMTPSA id f23sm6899576wml.4.2020.04.29.03.37.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 03:37:25 -0700 (PDT)
-From: Daniel Lezcano <daniel.lezcano@linaro.org>
-To: daniel.lezcano@linaro.org,
-	rui.zhang@intel.com
-Subject: [PATCH v4 4/4] thermal: cpuidle: Register cpuidle cooling device
-Date: Wed, 29 Apr 2020 12:36:42 +0200
-Message-Id: <20200429103644.5492-4-daniel.lezcano@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200429103644.5492-1-daniel.lezcano@linaro.org>
-References: <20200429103644.5492-1-daniel.lezcano@linaro.org>
+ id 1jTk84-0004Qp-8g; Wed, 29 Apr 2020 10:39:49 +0000
+X-UUID: 1f29d2e6862a4540a73b07d2e77ebd19-20200429
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=GttMsEeHxSRQEiWkFwaLHZKTBEqyMow0zfNFhprWC1Y=; 
+ b=HTUH8yhNrLswapj/N2iLKmbj3hzYFopyPmqOgamo+lqZPbsX4MBelEy792673JqpnY5VEUmcmzoqL0B3BBV9qpkOAZ/K/bZOoaGB7ewMFN2iYkdXTCoXSQfFTf460ULxB2CViulk06q2R2fPFzGKbnK8NnFEseeby3VvjV87VFg=;
+X-UUID: 1f29d2e6862a4540a73b07d2e77ebd19-20200429
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1851398877; Wed, 29 Apr 2020 02:40:19 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 29 Apr 2020 03:39:36 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 29 Apr 2020 18:39:34 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 29 Apr 2020 18:39:34 +0800
+Message-ID: <1588156776.3573.1.camel@mtksdccf07>
+Subject: Re: [PATCH] thermal: power_allocate: add upper and lower limits
+From: Michael Kao <michael.kao@mediatek.com>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Date: Wed, 29 Apr 2020 18:39:36 +0800
+In-Reply-To: <accb83e0-ffbe-b6e3-6bf9-e7cc8b9fe19c@arm.com>
+References: <20200424071601.2636-1-michael.kao@mediatek.com>
+ <accb83e0-ffbe-b6e3-6bf9-e7cc8b9fe19c@arm.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_033728_886132_FA21C7CA 
-X-CRM114-Status: GOOD (  13.13  )
+X-CRM114-CacheID: sfid-20200429_033948_319027_18C63A3F 
+X-CRM114-Status: GOOD (  24.46  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,6 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,81 +83,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>, lukasz.luba@arm.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Zhang Rui <rui.zhang@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The cpuidle driver can be used as a cooling device by injecting idle
-cycles. The DT binding for the idle state added an optional
-
-When the property is set, register the cpuidle driver with the idle
-state node pointer as a cooling device. The thermal framework will do
-the association automatically with the thermal zone via the
-cooling-device defined in the device tree cooling-maps section.
-
-Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
----
- - V4:
-   - Do not check the return value as the function does no longer return one
----
- drivers/cpuidle/cpuidle-arm.c  | 3 +++
- drivers/cpuidle/cpuidle-psci.c | 3 +++
- 2 files changed, 6 insertions(+)
-
-diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
-index 9e5156d39627..8c758920d699 100644
---- a/drivers/cpuidle/cpuidle-arm.c
-+++ b/drivers/cpuidle/cpuidle-arm.c
-@@ -8,6 +8,7 @@
- 
- #define pr_fmt(fmt) "CPUidle arm: " fmt
- 
-+#include <linux/cpu_cooling.h>
- #include <linux/cpuidle.h>
- #include <linux/cpumask.h>
- #include <linux/cpu_pm.h>
-@@ -124,6 +125,8 @@ static int __init arm_idle_init_cpu(int cpu)
- 	if (ret)
- 		goto out_kfree_drv;
- 
-+	cpuidle_cooling_register(drv);
-+
- 	return 0;
- 
- out_kfree_drv:
-diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-index bae9140a65a5..1f38e0dfc9b2 100644
---- a/drivers/cpuidle/cpuidle-psci.c
-+++ b/drivers/cpuidle/cpuidle-psci.c
-@@ -9,6 +9,7 @@
- #define pr_fmt(fmt) "CPUidle PSCI: " fmt
- 
- #include <linux/cpuhotplug.h>
-+#include <linux/cpu_cooling.h>
- #include <linux/cpuidle.h>
- #include <linux/cpumask.h>
- #include <linux/cpu_pm.h>
-@@ -313,6 +314,8 @@ static int __init psci_idle_init_cpu(int cpu)
- 	if (ret)
- 		goto out_kfree_drv;
- 
-+	cpuidle_cooling_register(drv);
-+
- 	return 0;
- 
- out_kfree_drv:
--- 
-2.17.1
+On Fri, 2020-04-24 at 10:22 +0100, Lukasz Luba wrote:
+> Hi Michael,
+> 
+> On 4/24/20 8:16 AM, Michael Kao wrote:
+> > The upper and lower limits of thermal throttle state in the
+> > device tree do not apply to the power_allocate governor.
+> > Add the upper and lower limits to the power_allocate governor.
+> > 
+> > Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> > ---
+> >   drivers/thermal/thermal_core.c | 2 +-
+> >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/thermal/thermal_core.c b/drivers/thermal/thermal_core.c
+> > index 9a321dc548c8..f6feed2265bd 100644
+> > --- a/drivers/thermal/thermal_core.c
+> > +++ b/drivers/thermal/thermal_core.c
+> > @@ -598,7 +598,7 @@ int power_actor_set_power(struct thermal_cooling_device *cdev,
+> >   	if (ret)
+> >   		return ret;
+> >   
+> > -	instance->target = state;
+> > +	instance->target = clamp_val(state, instance->lower, instance->upper);
+> >   	mutex_lock(&cdev->lock);
+> >   	cdev->updated = false;
+> >   	mutex_unlock(&cdev->lock);
+> > 
+> 
+> Thank you for the patch and having to look at it. I have some concerns
+> with this approach. Let's analyze it further.
+> 
+> In default the cooling devices in the thermal zone which is used by IPA
+> do not have this 'lower' and 'upper' limits. They are set to
+> THERMAL_NO_LIMIT in DT to give full control to IPA over the states.
+> 
+> This the function 'power_actor_set_power' actually translates granted
+> power to the state that device will run for the next period.
+> The IPA algorithm has already split the power budget.
+> Now what happen when the 'lower' value will change the state to a state
+> which consumes more power than was calculated in the IPA alg... It will
+> became unstable.
+> 
+> I would rather see a change which uses these 'lower' and 'upper' limits
+> before the IPA do the calculation of the power budget. But this wasn't
+> a requirement and we assumed that IPA has full control over the cooling
+> device (which I described above with this DT THERMAL_NO_LIMIT).
+> 
+> Is there a problem with your platform that it has to provide some
+> minimal performance, so you tried to introduce this clamping?
+> 
+> Regards,
+> Lukasz
 
 
+Hi Lukasz,
+
+I refer to the documentation settings of the thermal device tree
+(Documentation / devicetree / bindings / thermal / thermal.txt).
+
+It shows that cooling-device is a mandatory property, so max/min cooling
+state should be able to support in framework point of view.
+Otherwise, the limitation should be added in binding document.
+
+Different hardware mechanisms have different heat dissipation
+capabilities.
+Limiting the input heat source can slow down the heat accumulation and
+temperature burst.
+We want to reduce the accumulation of heat at high temperature by
+limiting the minimum gear of thermal throttle.
+
+Best Regards,
+Michael
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
