@@ -2,61 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D63B1BD76A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:39:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE3681BD76E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=FVeMyvLYwERHDA/9pbcLfWDwAPNDZgGYX2Lrwn1/wx8=; b=KQk5KWBziRo4TYHXgFOx7w69+
-	YW/5cI3RUhbHCMQD2vAcCuUXbQuclTIujZacTA23Rn9Cu48aVgnJl6ze4zDNpS+56aaAkXFrnDUH+
-	Z+EUjXLuj0pbjucaeyB8tgDtZdhA7MS+8Try0UdeZ7OmpMfWdb8UKz/s+WF5mVkNpdCAGX1QVZVwG
-	Nx4FmvE2HKfXxx1PBrSbd9n4bW7R7H/2j1kD/DHiLM/wI78DEhSfIqnqfZyGjJSJ1UrUeXRTK1756
-	7dt09VwW1akU3p2uCW/2MvU4fUVGLn/lToB9qhhxPBwPF+5q7e49FNy4jh8koEJHJPv9luKaIiqp0
-	m8iaOnMeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MbOKQZgoGKLOWXJMnPw3JYWqhYw4sh6XoGtcV7SaM34=; b=ZBrSYou7jyY14s
+	yG87kOMIwGU/nrCjHh0J+ctuRFuLR89YXiUvRnhx8SVMghGvPTQrMi+UDXuBDVFp3rVD31lm/4IK8
+	goRYA3SaMIOP+AfLkSzB05ld9NqDcmz990xpafhPR6T4ypUS6Q7ApGCT1Rt1pAERcaJ8yji/ufdTS
+	YwxFMDyTQQUpeehvrAZc9wFpNCU4BdWEH9C3xTUAbP7vqSaLyReCuylgSW5tDXP46QTYq5D0iq4YK
+	z9CXThuw4DgT580lCX/tA6o8ai3RDVhiIAr+yqXdz7QOU4GIYm9R4pfr05EgKtNkvCIMVDybTbFEO
+	x0vQKDYfZebD7Nc3yTGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTiFL-0004jy-LJ; Wed, 29 Apr 2020 08:39:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTiF7-0004iy-Se
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:38:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 100F6C14;
- Wed, 29 Apr 2020 01:38:57 -0700 (PDT)
-Received: from [10.57.22.235] (unknown [10.57.22.235])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5BCC33F305;
- Wed, 29 Apr 2020 01:38:54 -0700 (PDT)
-Subject: Re: [PATCH] arm64: Optimize ptrauth by enabling it for non-leaf
- functions
-To: Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
-References: <1586856741-26839-1-git-send-email-amit.kachhap@arm.com>
- <20200414100033.GA26395@willie-the-truck>
- <20200414101649.GC1278@C02TD0UTHF1T.local>
- <20200414110056.GB26395@willie-the-truck>
- <20200414110922.GC2486@C02TD0UTHF1T.local>
- <20200414131005.GA28750@willie-the-truck>
- <20200414140749.GI2486@C02TD0UTHF1T.local>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <617b2851-7a59-37cb-a0f5-e6ef4995bb66@arm.com>
-Date: Wed, 29 Apr 2020 14:08:30 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
-MIME-Version: 1.0
-In-Reply-To: <20200414140749.GI2486@C02TD0UTHF1T.local>
+	id 1jTiGZ-0007f5-RV; Wed, 29 Apr 2020 08:40:27 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTiGP-0007eP-MN
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 29 Apr 2020 08:40:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:In-Reply-To:References:Message-ID:Date:Subject:CC:To:From:Sender
+ :Reply-To:Content-ID:Content-Description;
+ bh=rh3Usnw8bOex69mvNB+d0nBhcgpfGnAT8Fk1eVONbL0=; b=GfsCilVzpkal4McJZJ4xKqL6vs
+ T+lsi1JeCr5Xk2zTCG7hXhnkpihmmM1it+14dFSHBYg54x22BNgDk9BXN5WKV4NegMtWOyPmO3UdL
+ KvL4p7P0x1qQ6v2lLu3lDM8pkNgj1O4Ijnzr+ImAD12kS5dxuDak1StAitctWLFAIR7VLgYR4eWXZ
+ op4e4+9zp7WrNkv7rg7Hins6X0FlZ4915b0ERXQlxF5tTY5DBBl0bjEjRZCMtABQUWurJ+ZeZrUvC
+ 0OmwfJMpc+9TL/wkUGd50cOMB48ivlUmutWySoj6vmxAWcvmxz9XnGBeVe/XVwSb/wCZlmLKSFBHv
+ MYOUQkpA==;
+Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
+ by merlin.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTiGN-0007B9-4a
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:40:16 +0000
+Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
+ TLS) by relay.mimecast.com with ESMTP id
+ uk-mta-153-r75nPERROFeEoEJIwkJHxw-1; Wed, 29 Apr 2020 09:39:34 +0100
+X-MC-Unique: r75nPERROFeEoEJIwkJHxw-1
+Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
+ AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
+ Server (TLS) id 15.0.1347.2; Wed, 29 Apr 2020 09:39:33 +0100
+Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
+ AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
+ Wed, 29 Apr 2020 09:39:33 +0100
+From: David Laight <David.Laight@ACULAB.COM>
+To: 'Sami Tolvanen' <samitolvanen@google.com>, Ard Biesheuvel <ardb@kernel.org>
+Subject: RE: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
+Thread-Topic: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
+Thread-Index: AQHWHOCVWHSK1xvpOUef91FgkS/f7KiPxyTg
+Date: Wed, 29 Apr 2020 08:39:33 +0000
+Message-ID: <6762b8d0974d49de80c3b398d714b3fb@AcuMS.aculab.com>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200427160018.243569-1-samitolvanen@google.com>
+ <CAMj1kXGASSCjTjvXJh=_iPwEPG50_pVRe2QO1hoRW+KHtugFVQ@mail.gmail.com>
+ <CAMj1kXFYv6YQJ0KGnFh=d6_K-39PYW+2bUj9TDnutA04czhOjQ@mail.gmail.com>
+ <20200427220942.GB80713@google.com>
+In-Reply-To: <20200427220942.GB80713@google.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_013857_967294_E390F47E 
-X-CRM114-Status: GOOD (  19.06  )
-X-Spam-Score: -2.3 (--)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.202.205.107]
+MIME-Version: 1.0
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: aculab.com
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on merlin.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [146.101.78.151 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -70,70 +90,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
- James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org, Daniel Kiss <daniel.kiss@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
+ "kernel-hardening@lists.openwall.com"
+ <kernel-hardening@lists.openwall.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Masahiro Yamada <masahiroy@kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Ingo Molnar <mingo@redhat.com>, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Marek <michal.lkml@markovi.net>, Ard
+ Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will/Mark,
+From: Sami Tolvanen
+> Sent: 27 April 2020 23:10
+...
+> > > Alternatively, I wonder if there is a way we could let the SCS and
+> > > ordinary stack share the [bottom of] the vmap'ed region. That would
+> > > give rather nasty results if the ordinary stack overflows into the
+> > > SCS, but for cases where we really recurse out of control, we could
+> > > catch this occurrence on either stack, whichever one occurs first. And
+> > > the nastiness -when it does occur- will not corrupt any state beyond
+> > > the stack of the current task.
+> >
+> > Hmm, I guess that would make it quite hard to keep the SCS address
+> > secret though :-(
+> 
+> Yes, and the stack potentially overflowing into the SCS sort of defeats
+> the purpose. I'm fine with increasing the SCS size to something safer,
+> but using a vmapped shadow stack seems like the correct solution to this
+> problem, at least on devices where allocating a full page isn't an issue.
 
-On 4/14/20 7:37 PM, Mark Rutland wrote:
-> On Tue, Apr 14, 2020 at 02:10:06PM +0100, Will Deacon wrote:
->> On Tue, Apr 14, 2020 at 12:09:22PM +0100, Mark Rutland wrote:
->>> On Tue, Apr 14, 2020 at 12:00:56PM +0100, Will Deacon wrote:
->>>> On Tue, Apr 14, 2020 at 11:16:49AM +0100, Mark Rutland wrote:
->>>>> I believe this is because leaf functions don't store the LR to the stack
->>>>> (as they don't create a frame record), so it cannot be modified by a
->>>>> stray memory write.
->>>>
->>>> That makes some sense, but doesn't it also mean you can jump into the middle
->>>> of a leaf function and it will happily return to whatever sits in LR?
->>>
->>> If you can do that, you've already subverted control flow, and can
->>> probably do the same for a regular function, since for:
->>>
->>> | AUTIASP
->>> | RET
->>>
->>> ... you can just jump to the RET instead.
->>
->> Perhaps, but it's not at all clear to me that being able to jump over the
->> AUT instruction is just as easy or useful as being able to jump into the
->> middle of a leaf function, which might act as a form of gadget. The commit
->> message is quite bold in saying "[this] is not useful from security point
->> of view".
+Wouldn't you do it the other way around - so shadow stack overflow
+corrupts the bottom of the normal stack?
+That can be detected 'after the fact' in a few places (eg process
+switch and return to user)
 
-I re-worded the commit log and posted the V2 version.
+Actually you might want to do syscall entry at the base of stack area,
+then (effectively) allocate an on-stack buffer for the shadow stack.
 
-Cheers,
-Amit
-> 
-> Ah, I see.
-> 
-> You're right that this would give some number of potentially useful
-> gadgets.
-> 
->> How would this interact with BTI? Would we need to have different landing
->> pads for leaf functions?
-> 
-> IIRC the compiler would emit a BTI instruction where the PACIASP would
-> have been, unless the function were only ever called directly in which
-> case the BTI can also be omitted.
-> 
-> For functions that can only be called directly, this prevents the whole
-> function (which might not be AAPCS compliant) from being a gadget. For
-> functions that can be called indirectly, the only saving is the omission
-> of AUTIASP, which I suspect is not a significant saving.
-> 
-> The tradeoff isn't clear to me.
-> 
-> Thanks,
-> Mark.
-> 
+I'd have though that kernel code could be the shadow stack address
+by just reading r18?
+Userspace isn't supposed to be able to get the main kernel stack
+address either.
+
+	David
+
+-
+Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
+Registration No: 1397386 (Wales)
+
 
 _______________________________________________
 linux-arm-kernel mailing list
