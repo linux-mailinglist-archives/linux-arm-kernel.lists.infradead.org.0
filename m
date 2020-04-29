@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2287E1BE9D1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:24:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D62F61BE9D8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:26:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dY38brTn5SLt7Lg9sLwqPLbcTLJ6b1SFTbqU7nQ8tLk=; b=ij+d7t3uQxYiKP
-	u4cjXwB7knR0a2CcvaRQKGi9liHE6urIUOiI3IaV80DoUxxOEj7fQbZtyeqC3jAjPya4x8V9cu4AJ
-	7IevpjKRcF2i2L0hOmFckE0zbef2phG1yVnAEiz3kp9jEd5i7hDyZwDKGMIO3MSvV6xxAJwipdZfU
-	uAh3jkyetGduAsLFjjfwpQa3KzNvVwvSOENiNyzNzuei4zbPWxgYLMxILjSlKJvFsXMkGTJd9pH7F
-	vajfwZjstjg8an8LMwBDrJyBxtdyzERIlCfS54kIZnJE2sJ+C7blkSkmR6NbLp8mf0ZfHJjQpjeLp
-	XDYDGHzaYPMlxqD4dopg==;
+	List-Owner; bh=aFfCz/h6bC9JrSkLtri1jRZs34RfhDf1FEBqwRuLm3A=; b=Rhp/IKTpA8EmdG
+	i3AF9SYkBEzchQRurcQIZkSHdhiApY6EfgSEVkO9lpUWRq772Bzjlqt7nyh5Gac+5AqNphgXabeVV
+	e+6JjoppBEYxEXe5E729e67v3uMeZdB/86dd4MAHN2ln2OYVX3jm6RBHtQwSZIz7OkDVO5APvoYxY
+	e7ZY5jRnXGOavnyjv44J1WLIdTpIrcf63PBK7bzlm65JI94UXrPoO3ycnQxne4Oa64zxh3F3aPJRj
+	mXaVgs2S2zlz6Uz3bwYa0Qffic35Z9sAplzwXs5ZU0Wfagg3jC7XfsKPyip5qYZdCUHaVwpe1B3CG
+	HVkKpoETfY9lTFEQnsxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTuBU-0003BR-T8; Wed, 29 Apr 2020 21:24:00 +0000
+	id 1jTuDt-0006Il-Uq; Wed, 29 Apr 2020 21:26:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTu91-000128-3K
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:21:29 +0000
+ id 1jTuDk-0006IL-1X
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:26:21 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6719120731;
- Wed, 29 Apr 2020 21:21:24 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 308092073E;
+ Wed, 29 Apr 2020 21:26:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588195285;
- bh=olpRxHNgV+oEXgIZZUijb0WZpWYHdPMEI3rNunuiYuY=;
+ s=default; t=1588195579;
+ bh=MaCkXnxZeesUHYpyP7Lu3SfMr1AsQhB6Xpct+XkQlHs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=D5KOghXV6/UdQ3XHAYPT+KcvuaY4k9tb2WDLfdGEgx5DLxaiV6f4u5xR1bZC0rlZP
- /tvuyKL8ZB8gdwf6+Jx9wz+BNzTb3W5FRs21IIAC8x0XeO0144V6n9e49CHKb5x9JC
- YxqyuUG1gI8Pk+YyogxrFdATYaOVoKl81ES1Td8c=
-Date: Wed, 29 Apr 2020 22:21:21 +0100
+ b=Wg6NBLr2LtkWbzxJYrDsfKqukVBwgLUfEJKVdEL0kjfpwdZ+k4QFReJsRr4NSLlOw
+ nUQQq0i8zZ4EMboEDkYuWrzMT30K1TAanS76Bu+dqqte5yH4qxZqvKzwFeP7TN13BG
+ 3x6WHb1IJb6kCS3Nlc97pghn74qI1UnoR9H8TleE=
+Date: Wed, 29 Apr 2020 22:26:15 +0100
 From: Will Deacon <will@kernel.org>
-To: Andrew Scull <ascull@google.com>
-Subject: Re: [PATCH v2] arm64: Unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
-Message-ID: <20200429212120.GC8604@willie-the-truck>
-References: <20200422161346.67325-1-ascull@google.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 00/16] arm64/cpufeature: Introduce ID_PFR2, ID_DFR1,
+ ID_MMFR5 and other changes
+Message-ID: <20200429212614.GD8604@willie-the-truck>
+References: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
+ <6749304e-8a4d-f4b9-eb40-91f0dd13166e@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422161346.67325-1-ascull@google.com>
+In-Reply-To: <6749304e-8a4d-f4b9-eb40-91f0dd13166e@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_142127_517199_A52A633A 
-X-CRM114-Status: GOOD (  13.18  )
+X-CRM114-CacheID: sfid-20200429_142620_107822_6E19F62B 
+X-CRM114-Status: GOOD (  16.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,49 +78,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ maz@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+Hi Anshuman,
 
-On Wed, Apr 22, 2020 at 05:13:46PM +0100, Andrew Scull wrote:
-> Errata 1165522, 1319367 and 1530923 each allow TLB entries to be
-> allocated as a result of a speculative AT instruction. In order to
-> avoid mandating VHE on certain affected CPUs, apply the workaround to
-> both the nVHE and the VHE case for all affected CPUs.
-> 
-> Signed-off-by: Andrew Scull <ascull@google.com>
-> CC: Marc Zyngier <maz@kernel.org>
-> CC: James Morse <james.morse@arm.com>
-> CC: Suzuki K Poulose <suzuki.poulose@arm.com>
-> CC: Will Deacon <will@kernel.org>
-> CC: Steven Price <steven.price@arm.com>
-> ---
-> * From v1 <20200327143941.195626-1-ascull@google.com>:
->   - Restored registers in VHE path
+On Wed, Apr 29, 2020 at 03:07:15PM +0530, Anshuman Khandual wrote:
+> On 04/14/2020 03:18 PM, Anshuman Khandual wrote:
+> > This series is primarily motivated from an adhoc list from Mark Rutland
+> > during our previous ID_ISAR6 discussion [1]. The current proposal also
+> > accommodates some more suggestions from Will and Suzuki.
+> > 
+> > This series adds missing 32 bit system registers (ID_PFR2, ID_DFR1 and
+> > ID_MMFR5), adds missing features bits on all existing system registers
+> > (32 and 64 bit) and some other miscellaneous changes. While here it also
+> > includes a patch which does macro replacement for various open bits shift
+> > encodings for various CPU ID registers. There is a slight re-order of the
+> > patches here as compared to the previous version (V1).
+> > 
+> > This series is based on v5.7-rc1. All feature bits enabled here can be
+> > referred in ARM DDI 0487F.a specification. Though I have tried to select
+> > appropriate values for each new feature being added here, there might be
+> > some inconsistencies (or mistakes). In which case, please do let me know
+> > if anything needs to change. Thank you.
+> > 
+> > [1] https://patchwork.kernel.org/patch/11287805/
+> > 
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Mark Rutland <mark.rutland@arm.com> 
+> > Cc: Marc Zyngier <maz@kernel.org>
+> > Cc: James Morse <james.morse@arm.com>
+> > Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > Cc: kvmarm@lists.cs.columbia.edu
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > Cc: linux-kernel@vger.kernel.org
+> > 
+> > Changes in V2:
+> > 
+> > - Added Suggested-by tag from Mark Rutland for all changes he had proposed
+> > - Added comment for SpecSEI feature on why it is HIGHER_SAFE per Suzuki
+> > - Added a patch which makes ID_AA64DFR0_DOUBLELOCK a signed feature per Suzuki
+> > - Added ID_DFR1 and ID_MMFR5 system register definitions per Will
+> > - Added remaining features bits for relevant 64 bit system registers per Will
+> > - Changed commit message on [PATCH 5/7] regarding TraceFilt feature per Suzuki
+> > - Changed ID_PFR2.CSV3 (FTR_STRICT -> FTR_NONSTRICT) as 64 bit registers per Will
+> > - Changed ID_PFR0.CSV2 (FTR_STRICT -> FTR_NONSTRICT) as 64 bit registers per Will 
+> > - Changed some commit messages
+>
+> Just a gentle ping. I am wondering if you had a chance to glance
+> through this updated series.
 
-This largely looks good to me, but I don't understand these bits:
-
-> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> index 8a1e81a400e0..651820f537fb 100644
-> --- a/arch/arm64/kvm/hyp/switch.c
-> +++ b/arch/arm64/kvm/hyp/switch.c
-> @@ -138,7 +138,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
->  
->  	write_sysreg(val, cptr_el2);
->  
-> -	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
-> +	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT)) {
-
-It seems like you consistently replace cpus_have_final_cap() with
-cpus_have_const_cap(), but I can't figure out why that's required.
-
-Cheers,
+Please can you resend based on for-next/cpufeature?
 
 Will
 
