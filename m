@@ -2,111 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2C071BD8F3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:00:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81E31BD8EB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 11:58:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=wuHxcrrVEn1PSn7hy9oz8c1Oi4cnhHpDC5i2Js+D7EQ=; b=c8veyXi92QKdAy
-	MtPR7XGlDEGZr7Dw1VKcdXzBSQHyNUZuh0ruEYk9z3jzYWdYqUMnQVgPoa/38av8XazMb3IHiF9Hq
-	zsf12F1QWY/NMlH021A3yUVr3Tn1YzFeQXDLVM6cyPEZQ2RuVdh3gWrSFM/tvmI9DS+QCIBP8FRO7
-	/0BPXZrZrDnft4m/ahHKY0YQAWu9CoFX6boU/4uzND2g9wvo8quMUupaywEF+mBpjekQkbkz+krFS
-	YxvO79xvtoy46VO9c1U02Rinsh3Z+OmfTUphAVJFBxWpRRnuX9MwD3GeoEulOVvRiNlEo6lHNCXD2
-	CcvMEucqB7Aa6kcv05PQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rHe4EFG8d4Arbw4BQTveqTo/RcAsWwEVzZA+xQXVUtA=; b=TyiFUQLHKcALJE
+	Z2np5I2j3nrsHyJr1oh1PIStRqTsgu6bXM01gqZQas6nhW2Im+0CU7rWUYor/QN8qHmIDXPgQgv3n
+	2X2VSzHHmlaT+6A2+g2U+WKSBkFKU4qxIft/5LcFNUgtDMwO1pvxXfAuRx8dMzZ8eoOXp8I3E+2qR
+	3TSHLwSIhHirj/xeYSN2sFDPiMnAwoEndsJ8m3Ry2QnTGVQaNPAcg00UzJbn/Uo5N8KAzMBl2wy3P
+	IF9LjhamZ8nBRgdukUitEQk/U5Hn0PdHYlsDNuA21xJ8SyHqAhFLSR9FwS5XCzHHYlRBoOv+ViY+R
+	Cg7e/uTP93wF5GKJm1fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTjWC-0001Ug-Me; Wed, 29 Apr 2020 10:00:40 +0000
-Received: from mail-eopbgr80053.outbound.protection.outlook.com ([40.107.8.53]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1jTjTz-0006S9-Vu; Wed, 29 Apr 2020 09:58:23 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTjVz-0001T7-8X
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:00:32 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=GPIOBzQ/EROmkwhgRbSxTAlz6MlywyMZo+s6aoTzapdn77r7Si0hwUbhcNqD8wv65+88W905YhOdfp1UeNEy7t0tzd3TAxzGQuvTYorcCbdkPy4gyomNONgukPH8SbH67RhRNRgqfgZl7GMXFMbuU4Fd0i3kamYM0wBm2cuVVOnZD93UZrGmHck6wzDqkPMN131Fz/RiWJPjHEceKYTd286BEs9u26cZIP6sc8eETp3I3fkQmCXLg9DgAU4KYR8j8ao8/hlfZsjE/6KSNMeD/ZWlI/eTybTO+daxONoGHjmjgfl3vmNcJd+ORKJ5owgs4KWP+OMmKQumUnta6RGJng==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=R/+Z1Qx46Xi10d3ABNRQc7C7zH3kGPN6Lb1rli9ymhg=;
- b=IudWNZT9E+F0PkaY+rACJkSRsIzRt+OuBrNOz45GJfLux84bcLZAsVsDvm6NC0Ba0f5rodvnGcUgB9UAswLc9i0cDqAOmgkYWi+U3kD8iG6+9lRrkyp0Rmta86c9lUPM95YS35xeWJLsnXbj+bIvsMQNkvKr9U+RkHoTIq09Gf8GH+nhZy5u8c7OXdLmZ5mDTaPETjkL1Su2ghFr3E/xj5WPTYLhfRrblbJhsUayDLxZOup8B7ng7b+vsYtNFGwi0Gm3wXP9b/i768C5r9CoxLcf8bqEILhFGI3ub8vOl4twJatnOJQNgXMpqs5XXU9pHZIRuqAuP2aTBmsn0Chx3g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=R/+Z1Qx46Xi10d3ABNRQc7C7zH3kGPN6Lb1rli9ymhg=;
- b=I/P8d4xRprc1KTs1DJjQfUa4TOPg+U0EeL6POgC9ZFADrkwgV5tECU7yMxY76DJb1meknzoCaaWZ0KGooT7fdclTZ/t37A09s6R9GE95fj09sW7oKt+kj1Zr+5pOieW1UK639UJxe8M7eNCaoVszpmfPTzgOZwHAnReHLuOspgU=
-Authentication-Results: arm.com; dkim=none (message not signed)
- header.d=none;arm.com; dmarc=none action=none header.from=nxp.com;
-Received: from HE1PR0402MB2745.eurprd04.prod.outlook.com (2603:10a6:3:d7::12)
- by HE1PR0402MB3436.eurprd04.prod.outlook.com (2603:10a6:7:82::25)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Wed, 29 Apr
- 2020 10:00:21 +0000
-Received: from HE1PR0402MB2745.eurprd04.prod.outlook.com
- ([fe80::e802:dffa:63bb:2e3d]) by HE1PR0402MB2745.eurprd04.prod.outlook.com
- ([fe80::e802:dffa:63bb:2e3d%10]) with mapi id 15.20.2937.028; Wed, 29 Apr
- 2020 10:00:20 +0000
-From: fugang.duan@nxp.com
-To: catalin.marinas@arm.com,
-	will@kernel.org
-Subject: [PATCH 1/1] arm64: configs: build in REALTEK PHY
-Date: Wed, 29 Apr 2020 17:55:23 +0800
-Message-Id: <1588154123-13592-1-git-send-email-fugang.duan@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-ClientProxiedBy: SG2PR04CA0187.apcprd04.prod.outlook.com
- (2603:1096:4:14::25) To HE1PR0402MB2745.eurprd04.prod.outlook.com
- (2603:10a6:3:d7::12)
+ id 1jTjTq-0006RG-HN
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 09:58:16 +0000
+Received: by mail-pl1-x641.google.com with SMTP id t7so676737plr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 02:58:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=kQWwU0V3P2cG9Df5CLi5Aes1IF7DF82n54z1tZA0tj8=;
+ b=cQvDE5r8qFSkTrzZ4i81Gzp9dqP8ohUksJfLHUOBX+Po2pmMP1o2x1SSUZbwTC8ztO
+ zpFtzt+mwbM1zrcinR/taemda/w0yc07a72tRJ+6+0IqETkEPswX0PzdXQJA5MSkyDmy
+ bKGwQYt2bvw3qkOGUhOoR/WrST1Z0rVWR0Ba7OvU/32/ioUNtW8tLcJLNx7kKr4R5fq9
+ xr7H/GbrVerDj9h4NkOjjmltmQnAiuozN55x/j7xKkGcazgitsrOdRcgn6qX+AmsxrKA
+ bba2c5CNuwCwg+sVjBVP/Qb3NEU0bcRuttgfKRjy1jPmEEYaWLyGS5n2r52Mc3UZ4Gwv
+ K/tQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=kQWwU0V3P2cG9Df5CLi5Aes1IF7DF82n54z1tZA0tj8=;
+ b=GWjE7JsmyetJag1BBP93CCm/Hn2vxYfaPPNJcWRtx3u4A/afO8G3FFm1amH8Ql68m5
+ kK3Pyr5lkbDjlukiCJhT712VXBAIM6eu9Sfhu3D1VnCeCS6hzpuT3pnUFKppF8wl8DBZ
+ sdMAW1Z4imL06YTIXjLDlV3QUQRXD1qDCHHNS1NLKxYOn9AKEuM684jhpP3mfWhvnnx/
+ gHspk9LSvIvPHT+Bm41X3Avi1MapizK22XYc0kJ2cDyt3zMR77DmL9MC68fRr6Eu3jbJ
+ KE4FqN3Aug9mO5+6tMvlo50pHSRCmYx/d9wO1uu1GjPqPZX/5n93lJ8gyYf+nwweHoPb
+ /7ig==
+X-Gm-Message-State: AGi0PuY6Z/oj+WZtQaUsaYnhNFTrDLgtPdgmMZjtcOLI5p2G/UkayEVF
+ Ii9Umvmrz0wMSH4OU45n1Z4j
+X-Google-Smtp-Source: APiQypJq9Vv8kOy3qRauSuH1fn2l54cguipwDjEbc1fxWc9BOiY6PCKS0U4dHaO2yA/f4lXw0vFZ9A==
+X-Received: by 2002:a17:90a:d085:: with SMTP id
+ k5mr2279937pju.91.1588154293427; 
+ Wed, 29 Apr 2020 02:58:13 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:6114:a3cc:cde9:1262:3f57:5dd])
+ by smtp.gmail.com with ESMTPSA id f99sm4493906pjg.22.2020.04.29.02.58.08
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 Apr 2020 02:58:12 -0700 (PDT)
+Date: Wed, 29 Apr 2020 15:28:02 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>
+Subject: Re: [PATCH 1/1] dma: actions: Fix lockdep splat for owl-dma
+Message-ID: <20200429095802.GB6443@Mani-XPS-13-9360>
+References: <7d503c3dcac2b3ef29d4122a74eacfce142a8f98.1588069418.git.cristian.ciocaltea@gmail.com>
+ <20200428164921.GC5259@Mani-XPS-13-9360>
+ <20200428181115.GB26885@BV030612LT>
+ <20200428181803.GD5259@Mani-XPS-13-9360>
+ <a70a2352-7b22-6b85-848b-94d9ee17c022@suse.de>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from b38611.ap.freescale.net (119.31.174.66) by
- SG2PR04CA0187.apcprd04.prod.outlook.com (2603:1096:4:14::25) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2937.13 via Frontend Transport; Wed, 29 Apr 2020 10:00:17 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 4ee218f3-c391-43df-c555-08d7ec242064
-X-MS-TrafficTypeDiagnostic: HE1PR0402MB3436:|HE1PR0402MB3436:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <HE1PR0402MB3436D69B1AF6B3FB0A592A99FFAD0@HE1PR0402MB3436.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1247;
-X-Forefront-PRVS: 03883BD916
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:HE1PR0402MB2745.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(39860400002)(376002)(346002)(366004)(136003)(8676002)(9686003)(2906002)(4326008)(6512007)(6666004)(2616005)(5660300002)(6486002)(956004)(8936002)(86362001)(52116002)(316002)(36756003)(478600001)(66946007)(26005)(4744005)(66476007)(16526019)(186003)(6506007)(66556008);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: JxoCR+wqnug8dQUUwcbLvW7I33WBLOyk2+4njM+7LuUDNzTRi+9BMMWd4sV4ACr7vq+n/yhYUdciJfErfdVIFvbkK8qOnN9N+o3Zp3FYNzpgRMd0Kt1rzarqnOztEYjL9up7UO2+qePTnZPPTzr3pLmr6LZuBLwLGNqfp1ZtslNNWgNM2LC8H3mdInmlBJ4gmASUY+tDR9Ku1/zJmkg062Qpib/bguDyLan9NOCi4Tb+HLeRcKxaFhpGGZOBuPWX3uQ/dLa9Deby8oX31YPJB5XMKxM27FW5QKrd2BcTPfU72jry9b7XI3y/6ybX+P0xH8jP0y05TX0syW79+iHRIjzeSAHWGV8Ovc0CiIDReuIgnBnqeFUpsjSrx+MVPfHmjwso3shclbRzEtxfjAXvp+uDXb56/DbHuKY8O04JA3CfWLz7zo+ijtBW3jss4wPi
-X-MS-Exchange-AntiSpam-MessageData: mlCzxzhmTksh2x7c+c34IP5bojbgaW4KblgmrFFXXl1k3hfvQ/fH96uOwh8r8niQEGEtMHDWTGv7GUpSqPgsjJcr8a6yLXxJvFHqj22OsoiniWgJP3jIsT9e+yAszBLxeW++a4WiP2jOHJp/0Fm7T396KTMSbxOcSebVlitK6F33mBkUgkZvVvpou55voni1V2J6DqPnI0GVzgWkR8veMfgkCJa/qssyA5GQhvPsDyWP53PA4ciprV3MvzRumrdxwXKXwMsjZ7Eyby+pgH0ALeRv5Ds3lrbiRhF77cUw64y5Z69op06Jk1RIRpgq1j9bH2l93xFcmNWzSTpkNBbP0RSHPnAO1jTcAMIjDTebF53pJNJEcyZcDfK2pCf4lVGGc9ucig4N7V1pPXnBgfBBAPb2mgnpVKZnXDOSVXMcaIBCo8XzeVXcWmR4lOzmYntq2dqaCRRmll3+rGcom/z5vaSEKGGNRXrDhQmQnUa9FwQJDvDoErndtRqLaxrYQGr0sXJC+6VrOlDp2TT7xC4tBa9+OqigMkZ79wcrDRg1XyP9cP3IVhmxp3OwrWtPPLF+3LvyaVcfTkNUmULJeR/XEORgK/2cGJragcTb06nM6+S9e8AfVqNiGt3Z7aq/Acy9FJoqdsSKRfS3EgcGASHTGSdTaByy34aV/QXg3mo5wFlxdSoBf1c/Am+Ku9hL9vaYagR+6DWQ2BcxBkLLwjVp1ueicScbukFchhK7dKHp7KRwt+D2Yzdkm5j3l1XvbvedyNFKS023w8emRhatQbJHykE+qc3bxrO1h4HwoVqYwA4=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 4ee218f3-c391-43df-c555-08d7ec242064
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Apr 2020 10:00:20.7545 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: cCVwLRsfTVuFdPwEyIXelQ5aatO/RggpYcDTHINIFZlXn3u9bz18Kidvh3lNUO1f/WtGjzjSHoeYw1r3u5w73A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0402MB3436
+Content-Disposition: inline
+In-Reply-To: <a70a2352-7b22-6b85-848b-94d9ee17c022@suse.de>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_030030_195150_6AC89A3D 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_025814_617022_928DCC07 
+X-CRM114-Status: GOOD (  26.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.8.53 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.8.53 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -114,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,41 +103,118 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aisheng.dong@nxp.com, fugang.duan@nxp.com, leoyang.li@nxp.com,
- bjorn.andersson@linaro.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Cristian Ciocaltea <cristian.ciocaltea@gmail.com>,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Fugang Duan <fugang.duan@nxp.com>
+Hi Andreas,
 
-Build in REALTEK ethernet PHY by setting CONFIG_REALTEK_PHY
-to 'y' due to i.MX8MP EVK board install two RTL8211FDI PHYs
-on board, which is useful for LAVA daily test with NFS boot.
+On Wed, Apr 29, 2020 at 10:36:01AM +0200, Andreas F=E4rber wrote:
+> Am 28.04.20 um 20:18 schrieb Manivannan Sadhasivam:
+> > On Tue, Apr 28, 2020 at 09:11:15PM +0300, Cristian Ciocaltea wrote:
+> > > On Tue, Apr 28, 2020 at 10:19:21PM +0530, Manivannan Sadhasivam wrote:
+> > > > On Tue, Apr 28, 2020 at 01:56:12PM +0300, Cristian Ciocaltea wrote:
+> > > > > When the kernel is build with lockdep support and the owl-dma dri=
+ver is
+> > > > > used, the following message is shown:
+> [...]
+> > > > > The required fix is to use spin_lock_init() on the pchan lock bef=
+ore
+> > > > > attempting to call any spin_lock_irqsave() in owl_dma_get_pchan().
+> > > > =
 
-Signed-off-by: Fugang Duan <fugang.duan@nxp.com>
----
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> > > > Right, this is a bug. But while looking at the code now, I feel tha=
+t we don't
+> > > > need 'pchan->lock'. The idea was to protect 'pchan->vchan', but I t=
+hink
+> > > > 'od->lock' is the better candidate for that since it already protec=
+ts it in
+> > > > 'owl_dma_terminate_pchan'.
+> > > > =
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 37e512c135ba..256892149049 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -322,7 +322,7 @@ CONFIG_MESON_GXL_PHY=m
- CONFIG_MICREL_PHY=y
- CONFIG_MICROSEMI_PHY=y
- CONFIG_AT803X_PHY=y
--CONFIG_REALTEK_PHY=m
-+CONFIG_REALTEK_PHY=y
- CONFIG_ROCKCHIP_PHY=y
- CONFIG_VITESSE_PHY=y
- CONFIG_USB_PEGASUS=m
--- 
-2.17.1
+> > > > So I'd be happy if you remove the lock from 'pchan' and just direct=
+ly use the
+> > > > one in 'od'.
+> > > > =
 
+> > > > Out of curiosity, on which platform you're testing this?
+> > > =
+
+> > > Totally agree, I will send a new patch revision as soon as I do some
+> > > more testing.
+> > =
+
+> > Coo[l], thanks!
+> > =
+
+> > > I'm currently experimenting on an Actions S500 based board (Roseapple=
+ Pi)
+> > > trying to extend, if possible, the existing mainline support for those
+> > > SoCs.
+> > =
+
+> > Awesome! It's great to see that Actions platform is seeing some attenti=
+on
+> > these days :)
+> > =
+
+> > > I don't have much progress so far, since I started quite recently
+> > > and I also lack experience in the kernel development area, but I do my
+> > > best to come back with more patches once I get a consistent functiona=
+lity.
+> > =
+
+> > No worries. Feel free to reach out to me if you have any questions. The=
+re is
+> > a lot of work to do and for sure it will be a good learning curve.
+> > =
+
+> > We do have an IRC channel (##linux-actions) for quick discussions. Fee[=
+l] free
+> > to join!
+> =
+
+> Please also CC the linux-actions mailing list on any patches:
+> =
+
+> https://lists.infradead.org/mailman/listinfo/linux-actions
+> =
+
+> Mani, do you have a 5.7-rc1 tree set up or should I queue patches this
+> round?
+
+I haven't set up the branch. You can do the maintainership duties for this
+cycle.
+
+> It still seems missing in MAINTAINERS, and then there's Matheus'
+> patches in review.
+> =
+
+
+Yeah, the MAINTAINERS patch has fallen through cracks:
+
+[PATCH v2 6/6] MAINTAINERS: Add linux-actions mailing list for Actions Semi
+
+I did this as a part of S500 clk series. Feel free to pick it up.
+
+Thanks,
+Mani
+
+> Thanks,
+> Andreas
+> =
+
+> -- =
+
+> SUSE Software Solutions Germany GmbH
+> Maxfeldstr. 5, 90409 N=FCrnberg, Germany
+> GF: Felix Imend=F6rffer
+> HRB 36809 (AG N=FCrnberg)
 
 _______________________________________________
 linux-arm-kernel mailing list
