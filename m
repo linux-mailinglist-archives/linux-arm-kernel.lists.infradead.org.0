@@ -2,62 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69B911BDA6A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:13:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CCF71BDACE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:38:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=En2/4nlBWI9C+rUYizv7CjbSFhtB4jNFF/1Gcb3UfZk=; b=sHUsvuYqDROmAR
-	sPDW1AzARM+QRsOFlGQkIrlrj+NAaR6oatfm9BPtGBDbWgssAkS+IpuISG39yuSjxA/NiXuCnzgVV
-	3dyUASQTtJNQGG3ieI2SRX/aKTa4QsiN29wpG3P3008ZBl0h9V/maP/O6V0GI2oWV9rt7xrYUQfPM
-	32xUG+0uE8QLf2tns11ycpDmbEIEzi3Guauzpm5UT3iH6DsbXggyHMUG3wsHH0twuAfhtEOXqUyQI
-	5DzjvwQwjkxqjdCV5xgEGmJYQ6SmDgNnaXsqscZkjnUPEJ/GqEYymPg8R9heSd4O6aHTGxqoNKqT/
-	X09gwcd1x7WeUerXsO0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=orhQGANNVA5KQKfomE6UvIsRizWq96n2WA7JsAyDd78=; b=CBL82U047DqXB0
+	5jVp1DD9UEehQO2jaEhHV8/G6Ko7zVNd1PGZTQGzQksyQ+mf3t2Ech7OSQvUV96i7wXl4ee1tshBe
+	piuOR+xUtrBz6LnJ+aih8MAtTlhbFU8hxOiIoQn+yd3cf8umxwg1aHjBqfFyyw9RIy6YtTi87NvA/
+	ZwU0SuK4HK+syIHUT5IYbs3gjH0Y4/Jvfvavofw6FW+laqN1u8Fl3ylbvP0qaAsen8t5a+uskTNRi
+	PbVsd1Mgc0mYGYwM8Xn0r3XqAVhEZo2kCpQmyvMl2jsloB4SNDmr/iwjBsE2aNnh12VObeoG+9QsH
+	RMKxjHXKs3oE/uf8hORA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTkek-0005jK-S4; Wed, 29 Apr 2020 11:13:34 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1jTl2G-00072v-Py; Wed, 29 Apr 2020 11:37:52 +0000
+Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTkeZ-0005ii-So
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:13:25 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 80288634C8F;
- Wed, 29 Apr 2020 14:13:07 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1jTkeJ-0000JO-AB; Wed, 29 Apr 2020 14:13:07 +0300
-Date: Wed, 29 Apr 2020 14:13:07 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v5 v5 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200429111307.GA867@valkosipuli.retiisi.org.uk>
-References: <20200428180718.1609826-1-robert.foss@linaro.org>
- <20200428180718.1609826-2-robert.foss@linaro.org>
- <20200429090012.vhhwatojkncjquwd@gilmour.lan>
- <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
+ id 1jTl26-00071B-PF
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:37:44 +0000
+Received: from localhost (unknown [127.0.0.1])
+ by mta-01.yadro.com (Postfix) with ESMTP id 107BB4C84A;
+ Wed, 29 Apr 2020 11:37:35 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
+ content-type:content-type:content-transfer-encoding:mime-version
+ :x-mailer:message-id:date:date:subject:subject:from:from
+ :received:received:received; s=mta-01; t=1588160253; x=
+ 1589974654; bh=ris/S+h/BaYOTDo3Pe8u3fQ3xLa1WXG1qllWW6QAfuc=; b=N
+ aZG81+gZaNF1YUpTyisS4B3+10BmQ2WYvhqnrDFGfLsrzDZFwbVpmnZ8USJVKslr
+ uOS7u8EXshDMc+W36dTgQ41yDdSScn8XuiKw48wTgUn2+kTpRZv1MqwC4/iSuLLj
+ BWKlBcOm65LkUqYrqyFY6caca0RB6ljM8K7Cl1FMPQ=
+X-Virus-Scanned: amavisd-new at yadro.com
+Received: from mta-01.yadro.com ([127.0.0.1])
+ by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id hJO9ugMjHQkP; Wed, 29 Apr 2020 14:37:33 +0300 (MSK)
+Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
+ [172.17.10.102])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mta-01.yadro.com (Postfix) with ESMTPS id 112B14A498;
+ Wed, 29 Apr 2020 14:37:33 +0300 (MSK)
+Received: from bbwork.com (172.17.14.122) by T-EXCH-02.corp.yadro.com
+ (172.17.10.102) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id 15.1.669.32; Wed, 29
+ Apr 2020 14:37:34 +0300
+From: Alexander Filippov <a.filippov@yadro.com>
+To: <linux-aspeed@lists.ozlabs.org>
+Subject: [PATCH v7] ARM: DTS: Aspeed: Add YADRO Nicole BMC
+Date: Wed, 29 Apr 2020 14:37:11 +0300
+Message-ID: <20200429113711.13183-1-a.filippov@yadro.com>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [172.17.14.122]
+X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
+ T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_041324_288920_85B3176A 
-X-CRM114-Status: GOOD (  27.44  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200429_043743_179793_F52336E7 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 WEIRD_QUOTING          BODY: Weird repeated double-quotation marks
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,277 +87,373 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Marco Felsch <m.felsch@pengutronix.de>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
+Cc: devicetree@vger.kernel.org, Andrew Jeffery <andrew@aj.id.au>,
+ linux-kernel@vger.kernel.org, Alexander Filippov <a.filippov@yadro.com>,
+ Patrick Williams <patrick@stwcx.xyz>, Rob Herring <robh+dt@kernel.org>,
+ Joel Stanley <joel@jms.id.au>, Andrew Geissler <geissonator@yahoo.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert, Maxime,
+Nicole is an OpenPower machine with an Aspeed 2500 BMC SoC manufactured
+by YADRO.
 
-On Wed, Apr 29, 2020 at 12:19:38PM +0200, Robert Foss wrote:
-> On Wed, 29 Apr 2020 at 11:00, Maxime Ripard <maxime@cerno.tech> wrote:
-> >
-> > Hi,
-> >
-> > On Tue, Apr 28, 2020 at 08:07:17PM +0200, Robert Foss wrote:
-> > > Add match table, enable ov8856_probe() to support
-> > > both ACPI and DT modes.
-> > >
-> > > ACPI and DT modes are primarily distinguished from
-> > > each other by relying on devm_XXX_get_optional()
-> > > will return NULL instead of a reference for the
-> > > desired managed resource.
-> > >
-> > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > ---
-> > >
-> > > - Changes since v4:
-> > >   * Maxime & Sakari: Switch to clock-frequency
-> > >
-> > > - Changes since v3:
-> > >   * Remove redundant {}-brackets
-> > >   * Compare xvclk_rate to 5% tolerance
-> > >   * Andy: Use dev_fwnode()
-> > >   * Andy: Use %pe instead of %ld + PTR_ERR()
-> > >   * Andy: Invert reset_gpio logic
-> > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
-> > >   * Andy: Use dev_err for logging for failures
-> > >   * Andy: Remove dev_warn from EDEFER/regulator error path
-> > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
-> > >   * Maxime & Sakari: Verify clock frequency from DT
-> > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT devices
-> > >   * Sakari: Remove duplicate ov8856->dev assignment
-> > >
-> > > - Changes since v2:
-> > >   * Added "struct device *dev" member to struct ov8856
-> > >   * Andy: Switch to optional version of devm_gpiod_get
-> > >   * Andy: Switch to optional version of devm_clk_get
-> > >   * Fabio: Add reset sleep period
-> > >   * Sakari: Unify defines for 19.2Mhz
-> > >   * Sakari: Remove 24Mhz clock, since it isn't needed for supported modes
-> > >   * Sakari: Replace dev_info() with dev_dbg()
-> > >   * Sakari: Switch induction variable type to unsigned
-> > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
-> > >   * Sakari: Pull reset GPIO high on power on failure
-> > >   * Sakari: Add power on/off to resume/suspend
-> > >   * Sakari: Fix indentation
-> > >   * Sakari: Power off during ov8856_remove()
-> > >   * Sakari: Don't sleep during power-on in ACPI mode
-> > >   * Sakari: Switch to getting xvclk from clk_get_rate
-> > >
-> > > - Changes since v1:
-> > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
-> > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
-> > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
-> > >   * Fabio: Remove empty line
-> > >   * Fabio: Remove real error from devm_gpiod_get() failures
-> > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
-> > >   * Sakari: Use XVCLK rate as provided by DT
-> > >
-> > >  drivers/media/i2c/ov8856.c | 139 +++++++++++++++++++++++++++++++++----
-> > >  1 file changed, 126 insertions(+), 13 deletions(-)
-> > >
-> > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-> > > index 8655842af275..48b02b8d205f 100644
-> > > --- a/drivers/media/i2c/ov8856.c
-> > > +++ b/drivers/media/i2c/ov8856.c
-> > > @@ -3,10 +3,13 @@
-> > >
-> > >  #include <asm/unaligned.h>
-> > >  #include <linux/acpi.h>
-> > > +#include <linux/clk.h>
-> > >  #include <linux/delay.h>
-> > > +#include <linux/gpio/consumer.h>
-> > >  #include <linux/i2c.h>
-> > >  #include <linux/module.h>
-> > >  #include <linux/pm_runtime.h>
-> > > +#include <linux/regulator/consumer.h>
-> > >  #include <media/v4l2-ctrls.h>
-> > >  #include <media/v4l2-device.h>
-> > >  #include <media/v4l2-fwnode.h>
-> > > @@ -18,7 +21,7 @@
-> > >  #define OV8856_LINK_FREQ_360MHZ              360000000ULL
-> > >  #define OV8856_LINK_FREQ_180MHZ              180000000ULL
-> > >  #define OV8856_SCLK                  144000000ULL
-> > > -#define OV8856_MCLK                  19200000
-> > > +#define OV8856_XVCLK_19_2            19200000
-> > >  #define OV8856_DATA_LANES            4
-> > >  #define OV8856_RGB_DEPTH             10
-> > >
-> > > @@ -64,6 +67,12 @@
-> > >
-> > >  #define to_ov8856(_sd)                       container_of(_sd, struct ov8856, sd)
-> > >
-> > > +static const char * const ov8856_supply_names[] = {
-> > > +     "dovdd",        /* Digital I/O power */
-> > > +     "avdd",         /* Analog power */
-> > > +     "dvdd",         /* Digital core power */
-> > > +};
-> > > +
-> > >  enum {
-> > >       OV8856_LINK_FREQ_720MBPS,
-> > >       OV8856_LINK_FREQ_360MBPS,
-> > > @@ -566,6 +575,11 @@ struct ov8856 {
-> > >       struct media_pad pad;
-> > >       struct v4l2_ctrl_handler ctrl_handler;
-> > >
-> > > +     struct device           *dev;
-> > > +     struct clk              *xvclk;
-> > > +     struct gpio_desc        *reset_gpio;
-> > > +     struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
-> > > +
-> > >       /* V4L2 Controls */
-> > >       struct v4l2_ctrl *link_freq;
-> > >       struct v4l2_ctrl *pixel_rate;
-> > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> > >       return ret;
-> > >  }
-> > >
-> > > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > > +{
-> > > +     struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > > +     int ret;
-> > > +
-> > > +     ret = clk_prepare_enable(ov8856->xvclk);
-> > > +     if (ret < 0) {
-> > > +             dev_err(&client->dev, "failed to enable xvclk\n");
-> > > +             return ret;
-> > > +     }
-> > > +
-> > > +     if (is_acpi_node(dev_fwnode(ov8856->dev)))
-> > > +             return 0;
-> > > +
-> > > +     if (ov8856->reset_gpio) {
-> > > +             gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > +             usleep_range(1000, 2000);
-> > > +     }
-> > > +
-> > > +     ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
-> > > +                                 ov8856->supplies);
-> > > +     if (ret < 0) {
-> > > +             dev_err(&client->dev, "failed to enable regulators\n");
-> > > +             goto disable_clk;
-> > > +     }
-> > > +
-> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-> > > +     usleep_range(1500, 1800);
-> > > +
-> > > +     return 0;
-> > > +
-> > > +disable_clk:
-> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > +     clk_disable_unprepare(ov8856->xvclk);
-> > > +
-> > > +     return ret;
-> > > +}
-> > > +
-> > > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > > +{
-> > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > +     regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
-> > > +                            ov8856->supplies);
-> > > +     clk_disable_unprepare(ov8856->xvclk);
-> > > +}
-> > > +
-> > >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> > >  {
-> > >       struct i2c_client *client = to_i2c_client(dev);
-> > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
-> > >       if (ov8856->streaming)
-> > >               ov8856_stop_streaming(ov8856);
-> > >
-> > > +     __ov8856_power_off(ov8856);
-> > >       mutex_unlock(&ov8856->mutex);
-> > >
-> > >       return 0;
-> > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struct device *dev)
-> > >       int ret;
-> > >
-> > >       mutex_lock(&ov8856->mutex);
-> > > +
-> > > +     __ov8856_power_on(ov8856);
-> > >       if (ov8856->streaming) {
-> > >               ret = ov8856_start_streaming(ov8856);
-> > >               if (ret) {
-> > > @@ -1092,29 +1155,58 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
-> > >       return 0;
-> > >  }
-> > >
-> > > -static int ov8856_check_hwcfg(struct device *dev)
-> > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
-> > >  {
-> > > +     struct device *dev = ov8856->dev;
-> > >       struct fwnode_handle *ep;
-> > >       struct fwnode_handle *fwnode = dev_fwnode(dev);
-> > >       struct v4l2_fwnode_endpoint bus_cfg = {
-> > >               .bus_type = V4L2_MBUS_CSI2_DPHY
-> > >       };
-> > > -     u32 mclk;
-> > > +     u32 xvclk_rate;
-> > >       int ret;
-> > >       unsigned int i, j;
-> > >
-> > >       if (!fwnode)
-> > >               return -ENXIO;
-> > >
-> > > -     ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
-> > > +     ret = fwnode_property_read_u32(fwnode, "clock-frequency",
-> > > +             &xvclk_rate);
-> > >       if (ret)
-> > >               return ret;
-> > >
-> > > -     if (mclk != OV8856_MCLK) {
-> > > -             dev_err(dev, "external clock %d is not supported", mclk);
-> > > +     if (!is_acpi_node(fwnode)) {
-> > > +             ov8856->xvclk = devm_clk_get(dev, "xvclk");
-> > > +             if (IS_ERR(ov8856->xvclk)) {
-> > > +                     dev_err(dev, "could not get xvclk clock (%pe)\n",
-> > > +                                     ov8856->xvclk);
-> > > +                     return PTR_ERR(ov8856->xvclk);
-> > > +             }
-> > > +
-> > > +             clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > +             xvclk_rate = clk_get_rate(ov8856->xvclk);
-> > > +     }
-> > > +
-> > > +     /* external clock must be 19.2MHz, allow 5% tolerance */
-> >
-> > Where is that 5% tolerance coming from? Experimentations, datasheets, something
-> > that looks good enough? Either way, this should be in the comment.
-> 
-> I don't have access to the full datasheet unfortunately. A 24Mhz rate
-> is as far as I understand it supported and required for higher
-> bandwidth count modes.
-> It was suggested to me that adding a tolerance is the best practice,
-> the ov5645 driver uses a 1% tolerance, which may be more appropriate.
+Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+---
+ arch/arm/boot/dts/Makefile                  |   1 +
+ arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts | 326 ++++++++++++++++++++
+ 2 files changed, 327 insertions(+)
+ create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
 
-The frequency should really be exact. Sometimes what happens is, however,
-that a register list based driver does not have the register lists for a
-frequency that is available on a given system. That's why some drivers have
-allowed some difference to the intended frequency.
-
-That 5 % seems like a random value, just like any other number that differs
-from the exact frequency would be.
-
-I'd issue a warning if the frequency differs from what was intended, but
-still proceed with probe. This way we can make sure the difference is noted
-while boards that cannot provide the exact frequency supported by the
-driver can still function.
-
+diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+index e8dd99201397..6f9fe0f959f2 100644
+--- a/arch/arm/boot/dts/Makefile
++++ b/arch/arm/boot/dts/Makefile
+@@ -1347,6 +1347,7 @@ dtb-$(CONFIG_ARCH_ASPEED) += \
+ 	aspeed-bmc-microsoft-olympus.dtb \
+ 	aspeed-bmc-opp-lanyang.dtb \
+ 	aspeed-bmc-opp-mihawk.dtb \
++	aspeed-bmc-opp-nicole.dtb \
+ 	aspeed-bmc-opp-palmetto.dtb \
+ 	aspeed-bmc-opp-romulus.dtb \
+ 	aspeed-bmc-opp-swift.dtb \
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+new file mode 100644
+index 000000000000..91dced7e7849
+--- /dev/null
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+@@ -0,0 +1,326 @@
++// SPDX-License-Identifier: GPL-2.0+
++// Copyright 2019 YADRO
++/dts-v1/;
++#include "aspeed-g5.dtsi"
++#include <dt-bindings/gpio/aspeed-gpio.h>
++
++/ {
++	model = "Nicole BMC";
++	compatible = "yadro,nicole-bmc", "aspeed,ast2500";
++
++	chosen {
++		stdout-path = &uart5;
++		bootargs = "console=ttyS4,115200 earlyprintk";
++	};
++
++	memory@80000000 {
++		reg = <0x80000000 0x20000000>;
++	};
++
++	reserved-memory {
++		#address-cells = <1>;
++		#size-cells = <1>;
++		ranges;
++
++		vga_memory: framebuffer@9f000000 {
++			no-map;
++			reg = <0x9f000000 0x01000000>; /* 16M */
++		};
++
++		flash_memory: region@98000000 {
++			no-map;
++			reg = <0x98000000 0x04000000>; /* 64M */
++		};
++
++		coldfire_memory: codefire_memory@9ef00000 {
++			reg = <0x9ef00000 0x00100000>;
++			no-map;
++		};
++
++		gfx_memory: framebuffer {
++			size = <0x01000000>;
++			alignment = <0x01000000>;
++			compatible = "shared-dma-pool";
++			reusable;
++		};
++
++		video_engine_memory: jpegbuffer {
++			size = <0x02000000>;	/* 32M */
++			alignment = <0x01000000>;
++			compatible = "shared-dma-pool";
++			reusable;
++		};
++	};
++
++	leds {
++		compatible = "gpio-leds";
++
++		power {
++			label = "platform:green:power";
++			gpios = <&gpio ASPEED_GPIO(AA, 4) GPIO_ACTIVE_HIGH>;
++		};
++
++		identify {
++			label = "platform:blue:indicator";
++			gpios = <&gpio ASPEED_GPIO(AA, 7) GPIO_ACTIVE_HIGH>;
++		};
++
++		fault {
++			label = "platform:red:fault";
++			gpios = <&gpio ASPEED_GPIO(AA, 3) GPIO_ACTIVE_HIGH>;
++		};
++
++		attention {
++			label = "platform:yellow:alarm";
++			gpios = <&gpio ASPEED_GPIO(AA, 1) GPIO_ACTIVE_HIGH>;
++		};
++	};
++
++	fsi: gpio-fsi {
++		compatible = "aspeed,ast2500-cf-fsi-master", "fsi-master";
++		#address-cells = <2>;
++		#size-cells = <0>;
++		no-gpio-delays;
++
++		memory-region = <&coldfire_memory>;
++		aspeed,sram = <&sram>;
++		aspeed,cvic = <&cvic>;
++
++		clock-gpios = <&gpio ASPEED_GPIO(AA, 0) GPIO_ACTIVE_HIGH>;
++		data-gpios = <&gpio ASPEED_GPIO(AA, 2) GPIO_ACTIVE_HIGH>;
++		mux-gpios = <&gpio ASPEED_GPIO(A, 6) GPIO_ACTIVE_HIGH>;
++		enable-gpios = <&gpio ASPEED_GPIO(D, 0) GPIO_ACTIVE_HIGH>;
++		trans-gpios = <&gpio ASPEED_GPIO(P, 1) GPIO_ACTIVE_HIGH>;
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++
++		checkstop {
++			label = "checkstop";
++			gpios = <&gpio ASPEED_GPIO(J, 2) GPIO_ACTIVE_LOW>;
++			linux,code = <ASPEED_GPIO(J, 2)>;
++		};
++	};
++
++	iio-hwmon-battery {
++		compatible = "iio-hwmon";
++		io-channels = <&adc 12>;
++	};
++};
++
++&fmc {
++	status = "okay";
++	flash@0 {
++		status = "okay";
++		m25p,fast-read;
++		label = "bmc";
++		spi-max-frequency = <50000000>;
++#include "openbmc-flash-layout.dtsi"
++	};
++};
++
++&spi1 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_spi1_default>;
++
++	flash@0 {
++		status = "okay";
++		m25p,fast-read;
++		label = "pnor";
++		spi-max-frequency = <100000000>;
++	};
++};
++
++&lpc_ctrl {
++	status = "okay";
++	memory-region = <&flash_memory>;
++	flash = <&spi1>;
++};
++
++&uart1 {
++	/* Rear RS-232 connector */
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_txd1_default
++			&pinctrl_rxd1_default
++			&pinctrl_nrts1_default
++			&pinctrl_ndtr1_default
++			&pinctrl_ndsr1_default
++			&pinctrl_ncts1_default
++			&pinctrl_ndcd1_default
++			&pinctrl_nri1_default>;
++};
++
++&uart5 {
++	status = "okay";
++};
++
++&mac0 {
++	status = "okay";
++
++	use-ncsi;
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_rmii1_default>;
++	clocks = <&syscon ASPEED_CLK_GATE_MAC1CLK>,
++		 <&syscon ASPEED_CLK_MAC1RCLK>;
++	clock-names = "MACCLK", "RCLK";
++};
++
++&i2c0 {
++	status = "okay";
++
++	eeprom@50 {
++		compatible = "atmel,24c256";
++		reg = <0x50>;
++		pagesize = <64>;
++	};
++};
++
++&i2c2 {
++	status = "okay";
++	/* CPU0 characterization connector */
++};
++
++&i2c3 {
++	status = "okay";
++	/* CLK GEN SI5338 */
++};
++
++&i2c4 {
++	status = "okay";
++	/* Voltage regulators for CPU0 */
++};
++
++&i2c5 {
++	status = "okay";
++	/* Voltage regulators for CPU1 */
++};
++
++&i2c6 {
++	status = "okay";
++
++	rtc@32 {
++		compatible = "epson,rx8900";
++		reg = <0x32>;
++	};
++};
++
++&i2c7 {
++	status = "okay";
++	/* CPLD */
++};
++
++&gpio {
++	gpio-line-names =
++	/*A0-A7*/	"","cfam-reset","","","","","fsi-mux","",
++	/*B0-B7*/	"","","","","","","","",
++	/*C0-C7*/	"","","","","","","","",
++	/*D0-D7*/	"fsi-enable","bmc_power_up","sys_pwrok_buf",
++			"func_mode0","func_mode1","func_mode2","","",
++	/*E0-E7*/	"","ncsi_cfg","","","","","","",
++	/*F0-F7*/	"","","","","","","","",
++	/*G0-G7*/	"","","","","","","","",
++	/*H0-H7*/	"","","","","","","","",
++	/*I0-I7*/	"","","","","","","","",
++	/*J0-J7*/	"","","checkstop","","","","","",
++	/*K0-K7*/	"","","","","","","","",
++	/*L0-L7*/	"","","","","","","","",
++	/*M0-M7*/	"","","","","","","","",
++	/*N0-N7*/	"","","","","","","","",
++	/*O0-O7*/	"","","power-button","","","","","",
++	/*P0-P7*/	"","fsi-trans","pm_rtc_adc_en","","","","","",
++	/*Q0-Q7*/	"","","","","","","","id-button",
++	/*R0-R7*/	"","software_pwrgood","","","","","","",
++	/*S0-S7*/	"","","","","","","","seq_cont",
++	/*T0-T7*/	"","","","","","","","",
++	/*U0-U7*/	"","","","","","","","",
++	/*V0-V7*/	"","","","","","","","",
++	/*W0-W7*/	"","","","","","","","",
++	/*X0-X7*/	"","","","","","","","",
++	/*Y0-Y7*/	"","","","","","","","",
++	/*Z0-Z7*/	"","","","","","","","",
++	/*AA0-AA7*/	"fsi-clock","led-attention","fsi-data","led-fault",
++			"led-power","","","led-identify",
++	/*AB0-AB7*/	"","","","","","","","",
++	/*AC0-AC7*/	"","","","","","","","";
++
++	func_mode0 {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(D, 3) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	func_mode1 {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(D, 4) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	func_mode2 {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(D, 5) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	seq_cont {
++		gpio-hog;
++		gpios = <ASPEED_GPIO(S, 7) GPIO_ACTIVE_HIGH>;
++		output-low;
++	};
++	ncsi_cfg {
++		gpio-hog;
++		input;
++		gpios = <ASPEED_GPIO(E, 1) GPIO_ACTIVE_HIGH>;
++	};
++};
++
++&vuart {
++	status = "okay";
++};
++
++&gfx {
++	status = "okay";
++	memory-region = <&gfx_memory>;
++};
++
++&pinctrl {
++	aspeed,external-nodes = <&gfx &lhc>;
++};
++
++&ibt {
++	status = "okay";
++};
++
++&vhub {
++	status = "okay";
++};
++
++&adc {
++	status = "okay";
++
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_adc0_default
++			&pinctrl_adc1_default
++			&pinctrl_adc2_default
++			&pinctrl_adc3_default
++			&pinctrl_adc4_default
++			&pinctrl_adc5_default
++			&pinctrl_adc6_default
++			&pinctrl_adc7_default
++			&pinctrl_adc8_default
++			&pinctrl_adc9_default
++			&pinctrl_adc10_default
++			&pinctrl_adc11_default
++			&pinctrl_adc12_default
++			&pinctrl_adc13_default
++			&pinctrl_adc14_default
++			&pinctrl_adc15_default>;
++};
++
++&video {
++	status = "okay";
++	memory-region = <&video_engine_memory>;
++};
++
++#include "ibm-power9-dual.dtsi"
 -- 
-Regards,
+2.21.1
 
-Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
