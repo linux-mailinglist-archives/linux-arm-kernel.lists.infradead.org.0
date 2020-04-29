@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 039B81BEA44
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:50:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF24E1BEA47
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:From:Subject:References:Mime-Version
 	:Message-Id:In-Reply-To:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=swVXf+92JXyJ4vJLxRWSb5s71RW1mCHIsBYRTGg1jEU=; b=kzZp9oJpWUK+AB
-	HnbGBEffFGWvEgZHWZhaDWU3FVnefM6OpBT1Iuw30Nm/OvuiucT42w3lSB+WG8pkardYT/hG/ZLXS
-	CLttBCWtEu5fwwDFD8rHLV0VpbdP+lKqOvJU2esCCsHC830wHwkR7C9UJ3px6LRjSpuZ5JR1HL32V
-	LZAKCx3Z/13qVGmbhcgElMHeoTSoBPGmd8/wjlb6X4sDVyBchbk3uOk1R26dVS8YF6Z+ks9HRlBZK
-	8NXz5F11cGJIdPzNieaeOxCLQ076viOqj2nJ5fmie7BsJ22D3P4tW6zZc0yonU8GQrO3RWx73pFk4
-	ZShibTqzdQ0f1YuXYFrw==;
+	List-Owner; bh=CAbqfj1QX/j+uHyIYW/r7iS/4flLHndfE8Dcya81y8c=; b=hJ4oUQgwpsGA8E
+	iNpbJn8Z0GKzkb+xZzroijZTAM4s2UC+GMwMOzZ5oFBopPopbIKX58AnnTHkuZsFCbhGtMLHR3lNe
+	9VwI1HuXIvsSlMaNR1Sm9kgkSRjZbd/Bp8eSVy/B18jsb5dAEY4x+d1zbGStW8mg3UgjC1KZhRRhk
+	wm6IWKSLeHBzfi9rot2p1gORmOSMQvMS+qiFp/rrxkriS8xXvJRjg8sv6e8uAdJ890OZwD9AorlgA
+	hNbzAu/4BTz30uNFJUhtl3d6sjWZrL/016hsxu5pDlyBu0YEaSXgeIueQ8tJwDbaxpUNoYZMilbyp
+	3s6yzZj6p0Nbr0FA7log==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTubU-0000GW-MH; Wed, 29 Apr 2020 21:50:52 +0000
-Received: from mail-yb1-xb4a.google.com ([2607:f8b0:4864:20::b4a])
+	id 1jTubl-0000aQ-0D; Wed, 29 Apr 2020 21:51:09 +0000
+Received: from mail-qv1-xf4a.google.com ([2607:f8b0:4864:20::f4a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTuas-0008Rw-OC
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:50:17 +0000
-Received: by mail-yb1-xb4a.google.com with SMTP id e2so5132251ybm.19
+ id 1jTuaw-0008TM-Oj
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:50:21 +0000
+Received: by mail-qv1-xf4a.google.com with SMTP id v2so4182552qvy.1
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 14:50:13 -0700 (PDT)
+ Wed, 29 Apr 2020 14:50:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=date:in-reply-to:message-id:mime-version:references:subject:from:to
- :cc; bh=X8Ilta2TozKsEzasXrZac28hkMQagz57pEK9xvAhCMU=;
- b=hq7/1zfUEsP2iAtt4ZQ4PwzfpMH/LEAjv1O6M4T2kyI5ocMSPyrezh78agwH8E2fzC
- 5UoVyHnot4yvU3uT3T/gW30svDPED38wwzcwKUzc1ikntjBs+9t1DIScbtC1T7t5gt+O
- mS6z/RcBXMryw96KRHKWMXSzRFEqU6HnTb477iWgeCgmihZ523VW2z3+tpWL0Olncc0H
- DbIb3P9b+pQ9ux7Mr0Ope9w48HA1d2qcLTAWT5s9KeaNQb1A3h6o/n0bM6oiKdKbONLG
- xXvcA9wtEp7X3YvX7oN/lCMYNvQZ5hT+jnRwGzIUoXJDAz6icA6ycOc2YEueJSe+gqSn
- I33Q==
+ :cc; bh=JqiR2vOdqFfBqjhyMGJp8d/qL3dB8+X/PfK7MWBosOQ=;
+ b=aiXVr9LW0+RfYp/BGKCZwf2eFb8u9bW41qbryYBrMOTMAxizbTvkyUsj2hMqoewXVA
+ EbenkI3pjlj6j3Jz6v58GVbjLsRucPnyBIwyrf/cQxI7QYwEK5k1uOps+KFUBQSyYzSq
+ 4ScWZwqWRdd/I9EOQCike+A/g8LgBL08ZkugaoTqx2zKcpO0yY7MZeP+Y4VZXfi2opO+
+ u0ixT5IVpYsz33tv0SuE/w161GkFjCv2PC0mWH6RqlvaBsCA3Nae7CGPq+IMF6tcDpg/
+ xDEfx6+SvCzPkM2Gw22E+XqkcpxanCcgz9Szd+JSjxTdcGi6OboSgHQ79epRcTxfLjBk
+ yKJA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:in-reply-to:message-id:mime-version
  :references:subject:from:to:cc;
- bh=X8Ilta2TozKsEzasXrZac28hkMQagz57pEK9xvAhCMU=;
- b=e4ff/vSmw2rfaKHHbxHzAWZKDGYPNLUtLvR2rmrOrLLPK56aW5yZ9iicd4Zog4xTpj
- KiOLh/ezoqb7Ti9rcu1bZ1yuMX4qenSX3et6uU1JoO+5lL5my5UeDAZm4lORwUhbvhss
- bpawDXwNPJugz2jnZJjuDKadB/s8TQtEsB9uxnhzpYA9HwRbMfdbr43qiDddNlZ9Wsd9
- A1g8KfKI8wp76QHNV1bTqjzdoWt+CkjvKIJX2jvKWARIqP139dLIPaKJFHcYy6ddIQsd
- hCQnSB45B2WucPUVMfz3MVfpMpdM5EggzX7hqtxZZCudNwBrqctXNE+AqeghPJPfhAbu
- A35g==
-X-Gm-Message-State: AGi0PuaXrkZ7vglQj9zd/xa2ERh9W+hy+ce5W+0RofHv+0qw1L58B3go
- N5GbAC+Qm+wjJU8ZZo63xWdmRrdcRg==
-X-Google-Smtp-Source: APiQypK393UboBZKtVhF2VXC53kboONpVDbYMmk4wx3dfVKrxYMarbZX5Q8DMVWqcVWoG5mrxwWJr8Q+6w==
-X-Received: by 2002:a25:c048:: with SMTP id c69mr565867ybf.169.1588197012786; 
- Wed, 29 Apr 2020 14:50:12 -0700 (PDT)
-Date: Wed, 29 Apr 2020 23:49:50 +0200
+ bh=JqiR2vOdqFfBqjhyMGJp8d/qL3dB8+X/PfK7MWBosOQ=;
+ b=D38Qviz5TsV3csoYPg7i129Uv7mWPnpwiWvEtNq9nXTi8bsyBc0E8QHQgO5hGpZKA3
+ GlAvbwhJlwfJreN68uFlD7kqMnulgMZ817HfUMimIg8MWUO2F0ULdkfkHkCwQSpUOSDH
+ iWyD9N8FiLzyo4/6Jt+cFJK8TJX5B+gDlD9+PJGnXdm158OCgnqGVE2xlCrNYNh3RphT
+ 1IkALdrVZmgGpuS7QFM7fxm3ZSdOve2ecJkHbs7kqg9Jii4UI17oKISzQnVdyLFbrwUd
+ 5lGhewd2l6HAVUygM2IvrPsVH5g7HSguw2+PkqxIgsFMYIBcaUdptNACgIN2EdmCyOBY
+ 56ng==
+X-Gm-Message-State: AGi0Pua045RFB8uaParRaYHro7TjuqsqGufUzt+oPGxKQZ1Oa1b2wzPx
+ edAlbVW33UiFTBJHV/YjLEzEYBI25g==
+X-Google-Smtp-Source: APiQypIhYRdYrJfvjviu8u64QDDNe2LAeKB+wfqrsyuISOkwKNnezPoPTQS28YSpGgdHWAPJujbNXC6IaA==
+X-Received: by 2002:ad4:49d3:: with SMTP id j19mr34024184qvy.78.1588197016281; 
+ Wed, 29 Apr 2020 14:50:16 -0700 (PDT)
+Date: Wed, 29 Apr 2020 23:49:51 +0200
 In-Reply-To: <20200429214954.44866-1-jannh@google.com>
-Message-Id: <20200429214954.44866-2-jannh@google.com>
+Message-Id: <20200429214954.44866-3-jannh@google.com>
 Mime-Version: 1.0
 References: <20200429214954.44866-1-jannh@google.com>
 X-Mailer: git-send-email 2.26.2.526.g744177e7f7-goog
-Subject: [PATCH v2 1/5] binfmt_elf_fdpic: Stop using dump_emit() on user
- pointers on !MMU
+Subject: [PATCH v2 2/5] coredump: Let dump_emit() bail out on short writes
 From: Jann Horn <jannh@google.com>
 To: Andrew Morton <akpm@linux-foundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_145014_790324_63E61065 
-X-CRM114-Status: GOOD (  14.79  )
+X-CRM114-CacheID: sfid-20200429_145019_211831_1A597A02 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -7.7 (-------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-7.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b4a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f4a listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
  white-list
@@ -110,125 +109,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dump_emit() is for kernel pointers, and VMAs describe userspace memory.
-Let's be tidy here and avoid accessing userspace pointers under KERNEL_DS,
-even if it probably doesn't matter much on !MMU systems - especially given
-that it looks like we can just use the same get_dump_page() as on MMU if
-we move it out of the CONFIG_MMU block.
+dump_emit() has a retry loop, but there seems to be no way for that retry
+logic to actually be used; and it was also buggy, writing the same data
+repeatedly after a short write.
 
+Let's just bail out on a short write.
+
+Suggested-by: Linus Torvalds <torvalds@linux-foundation.org>
 Signed-off-by: Jann Horn <jannh@google.com>
 ---
- fs/binfmt_elf_fdpic.c |  8 ------
- mm/gup.c              | 58 +++++++++++++++++++++----------------------
- 2 files changed, 29 insertions(+), 37 deletions(-)
+ fs/coredump.c | 22 +++++++++++-----------
+ 1 file changed, 11 insertions(+), 11 deletions(-)
 
-diff --git a/fs/binfmt_elf_fdpic.c b/fs/binfmt_elf_fdpic.c
-index c62c17a5c34a9..f5b47076fa762 100644
---- a/fs/binfmt_elf_fdpic.c
-+++ b/fs/binfmt_elf_fdpic.c
-@@ -1495,14 +1495,11 @@ static bool elf_fdpic_dump_segments(struct coredump_params *cprm)
- 	struct vm_area_struct *vma;
- 
- 	for (vma = current->mm->mmap; vma; vma = vma->vm_next) {
--#ifdef CONFIG_MMU
- 		unsigned long addr;
--#endif
- 
- 		if (!maydump(vma, cprm->mm_flags))
- 			continue;
- 
--#ifdef CONFIG_MMU
- 		for (addr = vma->vm_start; addr < vma->vm_end;
- 							addr += PAGE_SIZE) {
- 			bool res;
-@@ -1518,11 +1515,6 @@ static bool elf_fdpic_dump_segments(struct coredump_params *cprm)
- 			if (!res)
- 				return false;
- 		}
--#else
--		if (!dump_emit(cprm, (void *) vma->vm_start,
--				vma->vm_end - vma->vm_start))
--			return false;
--#endif
- 	}
- 	return true;
- }
-diff --git a/mm/gup.c b/mm/gup.c
-index 50681f0286ded..76080c4dbff05 100644
---- a/mm/gup.c
-+++ b/mm/gup.c
-@@ -1490,35 +1490,6 @@ int __mm_populate(unsigned long start, unsigned long len, int ignore_errors)
- 		up_read(&mm->mmap_sem);
- 	return ret;	/* 0 or negative error code */
- }
--
--/**
-- * get_dump_page() - pin user page in memory while writing it to core dump
-- * @addr: user address
-- *
-- * Returns struct page pointer of user page pinned for dump,
-- * to be freed afterwards by put_page().
-- *
-- * Returns NULL on any kind of failure - a hole must then be inserted into
-- * the corefile, to preserve alignment with its headers; and also returns
-- * NULL wherever the ZERO_PAGE, or an anonymous pte_none, has been found -
-- * allowing a hole to be left in the corefile to save diskspace.
-- *
-- * Called without mmap_sem, but after all other threads have been killed.
-- */
--#ifdef CONFIG_ELF_CORE
--struct page *get_dump_page(unsigned long addr)
--{
--	struct vm_area_struct *vma;
--	struct page *page;
--
--	if (__get_user_pages(current, current->mm, addr, 1,
--			     FOLL_FORCE | FOLL_DUMP | FOLL_GET, &page, &vma,
--			     NULL) < 1)
--		return NULL;
--	flush_cache_page(vma, addr, page_to_pfn(page));
--	return page;
--}
--#endif /* CONFIG_ELF_CORE */
- #else /* CONFIG_MMU */
- static long __get_user_pages_locked(struct task_struct *tsk,
- 		struct mm_struct *mm, unsigned long start,
-@@ -1565,6 +1536,35 @@ static long __get_user_pages_locked(struct task_struct *tsk,
- }
- #endif /* !CONFIG_MMU */
- 
-+/**
-+ * get_dump_page() - pin user page in memory while writing it to core dump
-+ * @addr: user address
-+ *
-+ * Returns struct page pointer of user page pinned for dump,
-+ * to be freed afterwards by put_page().
-+ *
-+ * Returns NULL on any kind of failure - a hole must then be inserted into
-+ * the corefile, to preserve alignment with its headers; and also returns
-+ * NULL wherever the ZERO_PAGE, or an anonymous pte_none, has been found -
-+ * allowing a hole to be left in the corefile to save diskspace.
-+ *
-+ * Called without mmap_sem, but after all other threads have been killed.
-+ */
-+#ifdef CONFIG_ELF_CORE
-+struct page *get_dump_page(unsigned long addr)
-+{
-+	struct vm_area_struct *vma;
-+	struct page *page;
+diff --git a/fs/coredump.c b/fs/coredump.c
+index 408418e6aa131..d6fcc36a7db1f 100644
+--- a/fs/coredump.c
++++ b/fs/coredump.c
+@@ -823,17 +823,17 @@ int dump_emit(struct coredump_params *cprm, const void *addr, int nr)
+ 	ssize_t n;
+ 	if (cprm->written + nr > cprm->limit)
+ 		return 0;
+-	while (nr) {
+-		if (dump_interrupted())
+-			return 0;
+-		n = __kernel_write(file, addr, nr, &pos);
+-		if (n <= 0)
+-			return 0;
+-		file->f_pos = pos;
+-		cprm->written += n;
+-		cprm->pos += n;
+-		nr -= n;
+-	}
 +
-+	if (__get_user_pages(current, current->mm, addr, 1,
-+			     FOLL_FORCE | FOLL_DUMP | FOLL_GET, &page, &vma,
-+			     NULL) < 1)
-+		return NULL;
-+	flush_cache_page(vma, addr, page_to_pfn(page));
-+	return page;
-+}
-+#endif /* CONFIG_ELF_CORE */
 +
- #if defined(CONFIG_FS_DAX) || defined (CONFIG_CMA)
- static bool check_dax_vmas(struct vm_area_struct **vmas, long nr_pages)
- {
++	if (dump_interrupted())
++		return 0;
++	n = __kernel_write(file, addr, nr, &pos);
++	if (n != nr)
++		return 0;
++	file->f_pos = pos;
++	cprm->written += n;
++	cprm->pos += n;
++
+ 	return 1;
+ }
+ EXPORT_SYMBOL(dump_emit);
 -- 
 2.26.2.526.g744177e7f7-goog
 
