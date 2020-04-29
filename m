@@ -2,60 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42F6E1BD761
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:36:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3026E1BD763
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 10:36:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EaWV1fhLR90XoHkFj2BY2n1wgQO3AmdTKTiAkKJEqqk=; b=dKRd2GqiaH6nJVq9Vzi3NIwMG
-	+iZ5cfmF9LuCuDRZjpA/AGzwsW3ur+YhRsGTQcVHFTv4z7b4F+/5148fNiuKNQPDORyqIHtZuG8ul
-	pBX7FPnTSu0IvGPDiWljaZJ4FXaXeHv3v2aC6PGcgJ4LcsOsbEdjKSO/grpAZ7M6XQzm94dSQShQJ
-	UaML72Dml4eZ6+1ObHdidT3U2rcpn2QBBwpFSNtSg6fgW+dpIU2kLAvnfL+SLvSXR/fYLo06efwyj
-	Ozw85fGGMXCjdEqBvbsAQL9YniNLmJIHmG0DVMD4NStu+k8gjBdb45HnCR4PciSc4D0cHx6H4x5nR
-	8aFzxMKAA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=YUZHf0IB/cGpVsF7febVmw4FD1ACqNdueow4Lv8vsCw=; b=hPm
+	V1V28OatG47Uf+PKAOLoGPMGOFFv4hImCKpf8cH9dG/Q7eWj812g0IXXn055RdqodNVXEz1bYvcwV
+	b2KGsspxZBr4pAv87bekiMUU1A7rvZ4X+JDKpz1U8Z7stAkM2Qe46tkv+O7LGSVXOaLZqWVAVl3/O
+	2zFA5pgmPGAewtjffdQf8tiv2qYNlPc5XvnylvRBPMSV/l6lg5rWmNm5UxpIUIDROoQ7zS/EnD2xH
+	T84RUKTOohgqaRLmr3m/bBDcj6YQ0qJBH+J8S40EGrlzsukGcFAMrOf4csDxLCcZ4bMkasrWdkAvo
+	4M21bfAhxTFdZCLkUTw66heq2GRQUhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTiCa-0003X6-DW; Wed, 29 Apr 2020 08:36:20 +0000
-Received: from mx2.suse.de ([195.135.220.15])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTiCN-0003To-58; Wed, 29 Apr 2020 08:36:08 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id D9C5AABCF;
- Wed, 29 Apr 2020 08:36:01 +0000 (UTC)
-Subject: Re: [PATCH 1/1] dma: actions: Fix lockdep splat for owl-dma
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-References: <7d503c3dcac2b3ef29d4122a74eacfce142a8f98.1588069418.git.cristian.ciocaltea@gmail.com>
- <20200428164921.GC5259@Mani-XPS-13-9360> <20200428181115.GB26885@BV030612LT>
- <20200428181803.GD5259@Mani-XPS-13-9360>
-From: =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>
-Organization: SUSE Software Solutions Germany GmbH
-Message-ID: <a70a2352-7b22-6b85-848b-94d9ee17c022@suse.de>
-Date: Wed, 29 Apr 2020 10:36:01 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200428181803.GD5259@Mani-XPS-13-9360>
-Content-Language: en-US
+	id 1jTiCs-0003p1-8c; Wed, 29 Apr 2020 08:36:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTiCg-0003lE-Qu
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 08:36:28 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6EB94C14;
+ Wed, 29 Apr 2020 01:36:23 -0700 (PDT)
+Received: from a075553-lin.blr.arm.com (a075553-lin.blr.arm.com [10.162.17.24])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id DDE0D3F305;
+ Wed, 29 Apr 2020 01:36:20 -0700 (PDT)
+From: Amit Daniel Kachhap <amit.kachhap@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] arm64: Optimize ptrauth by enabling it for non-leaf
+ functions
+Date: Wed, 29 Apr 2020 14:06:10 +0530
+Message-Id: <1588149371-20310-1-git-send-email-amit.kachhap@arm.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_013607_341034_AC006559 
-X-CRM114-Status: GOOD (  19.20  )
+X-CRM114-CacheID: sfid-20200429_013626_913534_AEA72811 
+X-CRM114-Status: GOOD (  11.02  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,54 +59,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
- Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
+ James Morse <james.morse@arm.com>, Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Daniel Kiss <daniel.kiss@arm.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gMjguMDQuMjAgdW0gMjA6MTggc2NocmllYiBNYW5pdmFubmFuIFNhZGhhc2l2YW06Cj4gT24g
-VHVlLCBBcHIgMjgsIDIwMjAgYXQgMDk6MTE6MTVQTSArMDMwMCwgQ3Jpc3RpYW4gQ2lvY2FsdGVh
-IHdyb3RlOgo+PiBPbiBUdWUsIEFwciAyOCwgMjAyMCBhdCAxMDoxOToyMVBNICswNTMwLCBNYW5p
-dmFubmFuIFNhZGhhc2l2YW0gd3JvdGU6Cj4+PiBPbiBUdWUsIEFwciAyOCwgMjAyMCBhdCAwMTo1
-NjoxMlBNICswMzAwLCBDcmlzdGlhbiBDaW9jYWx0ZWEgd3JvdGU6Cj4+Pj4gV2hlbiB0aGUga2Vy
-bmVsIGlzIGJ1aWxkIHdpdGggbG9ja2RlcCBzdXBwb3J0IGFuZCB0aGUgb3dsLWRtYSBkcml2ZXIg
-aXMKPj4+PiB1c2VkLCB0aGUgZm9sbG93aW5nIG1lc3NhZ2UgaXMgc2hvd246ClsuLi5dCj4+Pj4g
-VGhlIHJlcXVpcmVkIGZpeCBpcyB0byB1c2Ugc3Bpbl9sb2NrX2luaXQoKSBvbiB0aGUgcGNoYW4g
-bG9jayBiZWZvcmUKPj4+PiBhdHRlbXB0aW5nIHRvIGNhbGwgYW55IHNwaW5fbG9ja19pcnFzYXZl
-KCkgaW4gb3dsX2RtYV9nZXRfcGNoYW4oKS4KPj4+Cj4+PiBSaWdodCwgdGhpcyBpcyBhIGJ1Zy4g
-QnV0IHdoaWxlIGxvb2tpbmcgYXQgdGhlIGNvZGUgbm93LCBJIGZlZWwgdGhhdCB3ZSBkb24ndAo+
-Pj4gbmVlZCAncGNoYW4tPmxvY2snLiBUaGUgaWRlYSB3YXMgdG8gcHJvdGVjdCAncGNoYW4tPnZj
-aGFuJywgYnV0IEkgdGhpbmsKPj4+ICdvZC0+bG9jaycgaXMgdGhlIGJldHRlciBjYW5kaWRhdGUg
-Zm9yIHRoYXQgc2luY2UgaXQgYWxyZWFkeSBwcm90ZWN0cyBpdCBpbgo+Pj4gJ293bF9kbWFfdGVy
-bWluYXRlX3BjaGFuJy4KPj4+Cj4+PiBTbyBJJ2QgYmUgaGFwcHkgaWYgeW91IHJlbW92ZSB0aGUg
-bG9jayBmcm9tICdwY2hhbicgYW5kIGp1c3QgZGlyZWN0bHkgdXNlIHRoZQo+Pj4gb25lIGluICdv
-ZCcuCj4+Pgo+Pj4gT3V0IG9mIGN1cmlvc2l0eSwgb24gd2hpY2ggcGxhdGZvcm0geW91J3JlIHRl
-c3RpbmcgdGhpcz8KPj4KPj4gVG90YWxseSBhZ3JlZSwgSSB3aWxsIHNlbmQgYSBuZXcgcGF0Y2gg
-cmV2aXNpb24gYXMgc29vbiBhcyBJIGRvIHNvbWUKPj4gbW9yZSB0ZXN0aW5nLgo+IAo+IENvb1ts
-XSwgdGhhbmtzIQo+IAo+PiBJJ20gY3VycmVudGx5IGV4cGVyaW1lbnRpbmcgb24gYW4gQWN0aW9u
-cyBTNTAwIGJhc2VkIGJvYXJkIChSb3NlYXBwbGUgUGkpCj4+IHRyeWluZyB0byBleHRlbmQsIGlm
-IHBvc3NpYmxlLCB0aGUgZXhpc3RpbmcgbWFpbmxpbmUgc3VwcG9ydCBmb3IgdGhvc2UKPj4gU29D
-cy4KPiAKPiBBd2Vzb21lISBJdCdzIGdyZWF0IHRvIHNlZSB0aGF0IEFjdGlvbnMgcGxhdGZvcm0g
-aXMgc2VlaW5nIHNvbWUgYXR0ZW50aW9uCj4gdGhlc2UgZGF5cyA6KQo+IAo+PiBJIGRvbid0IGhh
-dmUgbXVjaCBwcm9ncmVzcyBzbyBmYXIsIHNpbmNlIEkgc3RhcnRlZCBxdWl0ZSByZWNlbnRseQo+
-PiBhbmQgSSBhbHNvIGxhY2sgZXhwZXJpZW5jZSBpbiB0aGUga2VybmVsIGRldmVsb3BtZW50IGFy
-ZWEsIGJ1dCBJIGRvIG15Cj4+IGJlc3QgdG8gY29tZSBiYWNrIHdpdGggbW9yZSBwYXRjaGVzIG9u
-Y2UgSSBnZXQgYSBjb25zaXN0ZW50IGZ1bmN0aW9uYWxpdHkuCj4gCj4gTm8gd29ycmllcy4gRmVl
-bCBmcmVlIHRvIHJlYWNoIG91dCB0byBtZSBpZiB5b3UgaGF2ZSBhbnkgcXVlc3Rpb25zLiBUaGVy
-ZSBpcwo+IGEgbG90IG9mIHdvcmsgdG8gZG8gYW5kIGZvciBzdXJlIGl0IHdpbGwgYmUgYSBnb29k
-IGxlYXJuaW5nIGN1cnZlLgo+IAo+IFdlIGRvIGhhdmUgYW4gSVJDIGNoYW5uZWwgKCMjbGludXgt
-YWN0aW9ucykgZm9yIHF1aWNrIGRpc2N1c3Npb25zLiBGZWVbbF0gZnJlZQo+IHRvIGpvaW4hCgpQ
-bGVhc2UgYWxzbyBDQyB0aGUgbGludXgtYWN0aW9ucyBtYWlsaW5nIGxpc3Qgb24gYW55IHBhdGNo
-ZXM6CgpodHRwczovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-Y3Rpb25zCgpNYW5pLCBkbyB5b3UgaGF2ZSBhIDUuNy1yYzEgdHJlZSBzZXQgdXAgb3Igc2hvdWxk
-IEkgcXVldWUgcGF0Y2hlcyB0aGlzIApyb3VuZD8gSXQgc3RpbGwgc2VlbXMgbWlzc2luZyBpbiBN
-QUlOVEFJTkVSUywgYW5kIHRoZW4gdGhlcmUncyBNYXRoZXVzJyAKcGF0Y2hlcyBpbiByZXZpZXcu
-CgpUaGFua3MsCkFuZHJlYXMKCi0tIApTVVNFIFNvZnR3YXJlIFNvbHV0aW9ucyBHZXJtYW55IEdt
-YkgKTWF4ZmVsZHN0ci4gNSwgOTA0MDkgTsO8cm5iZXJnLCBHZXJtYW55CkdGOiBGZWxpeCBJbWVu
-ZMO2cmZmZXIKSFJCIDM2ODA5IChBRyBOw7xybmJlcmcpCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Compilers are optimized to not create the frame record for the leaf
+function and hence lr is not signed and stored in the stack. Thus the leaf
+functions cannot be used for ROP gadget attack.
+
+This patch selects pointer authentication only for non-leaf function
+and the compiler option is modified to -mbranch-protection=pac-ret and
+-msign-return-address=non-leaf.
+
+As there are no PAC instructions(PACIASP and AUTIASP) inserted in the leaf
+functions so the kernel code size reduces by ~0.01%.
+
+Note, As PACIASP instruction is also used for Armv8.5 BTI branching so the
+compiler may insert BTI instructions in case of leaf functions which are
+candidate of JOP gadget for the upcoming BTI in-kernel support.
+
+Reported-by: Daniel Kiss <daniel.kiss@arm.com>
+Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+---
+Changes since v1:
+* Updated the commit logs as per the comments from Will and Mark[1].
+
+[1]: https://www.spinics.net/lists/arm-kernel/msg798518.html
+
+
+ arch/arm64/Kconfig  | 4 ++--
+ arch/arm64/Makefile | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 40fb05d..29cfe05 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -1541,11 +1541,11 @@ config ARM64_PTR_AUTH
+ 
+ config CC_HAS_BRANCH_PROT_PAC_RET
+ 	# GCC 9 or later, clang 8 or later
+-	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf)
++	def_bool $(cc-option,-mbranch-protection=pac-ret)
+ 
+ config CC_HAS_SIGN_RETURN_ADDRESS
+ 	# GCC 7, 8
+-	def_bool $(cc-option,-msign-return-address=all)
++	def_bool $(cc-option,-msign-return-address=non-leaf)
+ 
+ config AS_HAS_PAC
+ 	def_bool $(as-option,-Wa$(comma)-march=armv8.3-a)
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 85e4149..895f506 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -70,8 +70,8 @@ endif
+ branch-prot-flags-y += $(call cc-option,-mbranch-protection=none)
+ 
+ ifeq ($(CONFIG_ARM64_PTR_AUTH),y)
+-branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=all
+-branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret+leaf
++branch-prot-flags-$(CONFIG_CC_HAS_SIGN_RETURN_ADDRESS) := -msign-return-address=non-leaf
++branch-prot-flags-$(CONFIG_CC_HAS_BRANCH_PROT_PAC_RET) := -mbranch-protection=pac-ret
+ # -march=armv8.3-a enables the non-nops instructions for PAC, to avoid the
+ # compiler to generate them and consequently to break the single image contract
+ # we pass it only to the assembler. This option is utilized only in case of non
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
