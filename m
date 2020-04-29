@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D547D1BEB6E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 00:05:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E28CB1BEB6F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 00:06:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,26 +11,26 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=K7u3pw2NlZn+eCJ539H32J27B4KTgvGPU7i0perPEns=; b=lvHcR68HmF5sH+LCtLliDwnkKk
-	GoL2csvJEQEB7aKgk4J7EKTcx9TXYlKmDN+cIK0MmcYUWieokLCNdjq1gnjohdnOCpp2LfVQPVVUr
-	3+6ZTzRpw7ifGTNnx9xtLr4T5HBeTaHQRGWXfdhjXjjeJSmun+deuy/kfXrCTPUeByvya0nBx3e3Q
-	uYrozK8OGw5tatCS/iTmdlL/SIPkDKF34SbA2e3K27Vq9p5zrMkMQf/2NQgne3Lf+VcVQ1RaJHewA
-	3AmM1CxIUfQKpROgvq2tYKL0Ug32zUNuzsnRZ8aWDnfLaOlebKVMULdPBpV5cGkQ5thTBVj/d3skR
-	WWFt37Nw==;
+	bh=MLqplJyj+9iGfhaq/b/3qzFWZjGrCV6Q0pRA121urBs=; b=f0oQIYhgeJjfZsD8/COWZKrMYN
+	ZXyn7hD7Hqg3CrsVK0b2KsyIrtBE8vEkr5juKmHpflluWcpu2gJC2GvvcTMbflZmzLhqz63ZwSWDw
+	H45zUpHbUwJTjU60NwWbuY38lZ632qlgWzmnvDcxsNfcUgT6UDnfNG63Tvdpo1Mpq5h2DFducLxmU
+	tGdiqLVMRVS3uzp+YgYYnKmPecDQqJt4r4ZW1GUvCpYxS099p9xKBCDp2IkLMwAB7M1/KDRhl8k1W
+	7h64KehnukqsHFuoSAqwqrD4OwA476eZBXYLe9pBswP7sb7maYDNDDgvbAUgrNjRzi47DFd6rxa9l
+	YSLSCidQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTupm-0001gS-Qv; Wed, 29 Apr 2020 22:05:38 +0000
+	id 1jTuq1-0001ss-HP; Wed, 29 Apr 2020 22:05:53 +0000
 Received: from relmlor2.renesas.com ([210.160.252.172]
  helo=relmlie6.idc.renesas.com)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTujA-0008EI-Mb
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:58:50 +0000
-X-IronPort-AV: E=Sophos;i="5.73,333,1583161200"; d="scan'208";a="45795870"
+ id 1jTujF-0008Hb-OR
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:58:56 +0000
+X-IronPort-AV: E=Sophos;i="5.73,333,1583161200"; d="scan'208";a="45795873"
 Received: from unknown (HELO relmlir6.idc.renesas.com) ([10.200.68.152])
- by relmlie6.idc.renesas.com with ESMTP; 30 Apr 2020 06:58:47 +0900
+ by relmlie6.idc.renesas.com with ESMTP; 30 Apr 2020 06:58:52 +0900
 Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir6.idc.renesas.com (Postfix) with ESMTP id 7CEFE40ECBAC;
- Thu, 30 Apr 2020 06:58:43 +0900 (JST)
+ by relmlir6.idc.renesas.com (Postfix) with ESMTP id 3615140ECBAC;
+ Thu, 30 Apr 2020 06:58:48 +0900 (JST)
 From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 To: Geert Uytterhoeven <geert+renesas@glider.be>,
  Magnus Damm <magnus.damm@gmail.com>, Rob Herring <robh+dt@kernel.org>,
@@ -40,15 +40,15 @@ To: Geert Uytterhoeven <geert+renesas@glider.be>,
  Marc Zyngier <maz@kernel.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Russell King <linux@armlinux.org.uk>
-Subject: [PATCH 14/18] dt-bindings: serial: renesas,
- scifb: Document r8a7742 bindings
-Date: Wed, 29 Apr 2020 22:56:51 +0100
-Message-Id: <1588197415-13747-15-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: [PATCH 15/18] dt-bindings: serial: renesas,
+ hscif: Document r8a7742 bindings
+Date: Wed, 29 Apr 2020 22:56:52 +0100
+Message-Id: <1588197415-13747-16-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_145848_874030_F21DB101 
+X-CRM114-CacheID: sfid-20200429_145853_953079_F5DF69AD 
 X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
@@ -82,27 +82,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RZ/G1H (R8A7742) SoC also has the R-Car gen2 compatible SCIFB ports,
+RZ/G1H (R8A7742) SoC also has the R-Car gen2 compatible HSCIF ports,
 so document the SoC specific bindings.
 
 Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
 ---
- Documentation/devicetree/bindings/serial/renesas,scifb.yaml | 1 +
+ Documentation/devicetree/bindings/serial/renesas,hscif.yaml | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/serial/renesas,scifb.yaml b/Documentation/devicetree/bindings/serial/renesas,scifb.yaml
-index 57205cb..b083970 100644
---- a/Documentation/devicetree/bindings/serial/renesas,scifb.yaml
-+++ b/Documentation/devicetree/bindings/serial/renesas,scifb.yaml
+diff --git a/Documentation/devicetree/bindings/serial/renesas,hscif.yaml b/Documentation/devicetree/bindings/serial/renesas,hscif.yaml
+index 9110152..6b04c04 100644
+--- a/Documentation/devicetree/bindings/serial/renesas,hscif.yaml
++++ b/Documentation/devicetree/bindings/serial/renesas,hscif.yaml
 @@ -24,6 +24,7 @@ properties:
  
        - items:
            - enum:
-+              - renesas,scifb-r8a7742      # RZ/G1H
-               - renesas,scifb-r8a7743      # RZ/G1M
-               - renesas,scifb-r8a7744      # RZ/G1N
-               - renesas,scifb-r8a7745      # RZ/G1E
++              - renesas,hscif-r8a7742      # RZ/G1H
+               - renesas,hscif-r8a7743      # RZ/G1M
+               - renesas,hscif-r8a7744      # RZ/G1N
+               - renesas,hscif-r8a7745      # RZ/G1E
 -- 
 2.7.4
 
