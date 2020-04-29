@@ -2,124 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94B831BE5C9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 20:01:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B39F21BE5D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 20:08:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:References:Message-Id:
-	Date:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xiUVghi+js5aC9sLb+mCWJky51IekgxdOlKR0MLm+iQ=; b=a157B2AuK6cZxa
-	Egld18R9l3058W3nt0Oo0WkZcFr7JIWdpN+DBMuu7EBWgvsanVU7uH4kA7gu1DxdqCl1xGN4iZfPU
-	4sm6lUuIolOewv+aRiNyuJZWGKcj58CMtDB4Rw/BaFWetj18CS1+R08QrNrgBvouxKga7dMYnBwSF
-	4Fn6UI15pk15Pn4GRNq8pX5Cd8L1T6KdF/JLnGp4iItZCrLZgnRC/RFS4U8U1hJFBzr5EH29IyKC+
-	8ebWm1kusBPkX+9t6gXTlX4Zykcu+huqr3OUfjSrM5DSeR6QfoyLDSZacaT04b1SHqKe0dJrvHB0J
-	Zhl8aDg6NGCcSlMR9Yjg==;
+	List-Owner; bh=GtiEb60V1waJX6n7flXBv6TxFknF18mZE1UUhrQLCyg=; b=MLMCIout9mW4cq
+	r04bbZ2uaBqAElQFbRdOpApi23T5pNaYjRysM+H9oWZ4KdD7SNWE2oYQprMEPHyysKcULbRmO+cOg
+	FpLfl58srGPV5/Zpjf96xZfmI8fS9Y8YL3MAemE/xX1HZ4Fe5kehxiFiGaBre8ncTMOGyKMO0R4bc
+	ii465KQ5CnM87qK7LQWhG7skPyV5v344pou6qxKJLS3bUoAkoerlEBQTMhL8PcroRBPlHsogyyOcG
+	PdD7KK73n3EUSGiKCR5ihuRVr9VG6MxKMJC4eLiLBAWUsAcGw/bt1neZiQdpMW6dciLS3J8KWUjQA
+	DQSQnK0vpN/WWnagtjrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTr1T-0005CM-Rk; Wed, 29 Apr 2020 18:01:27 +0000
-Received: from mail-mw2nam12on2126.outbound.protection.outlook.com
- ([40.107.244.126] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1jTr8M-00017y-B8; Wed, 29 Apr 2020 18:08:34 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTr1I-0005AO-Dv
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 18:01:20 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=dIgZtajfAt2hHTaes1i2+HyFqS6FCpuqgXJ/0KJgsKsyj2aCs9S0WD4+b5NMA/GKJXpNaqO6AV9ifTwB3/buHMBByTwFohNCa6fHEnPYLbMiTTNMgb6IwUOTW5VeG7M2426isfFZ9U+WU+2kWF71t+dHR/1oDtd7FS8QSZsz5/EnEVED7I7y1oigf6qAZ/4SqJZLaKU/DKnYEyEq5RTlk+p4/T1X4At/SDJCSk4w6JDcVU4pWPte0He9RT+0tAamelCZrIlpmeyDZAIsZ1GuZJiJCGgFJMV8h19Ff20dAdmahNUEjUMFlPdJ8G7m0u+09ZSvYKLMATv5DyitGAjesw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Pdt44Km1QZkL1UTIrf2ohHsRvp+jgNYQBPmSk46F0Nk=;
- b=GtXh272mljn8/QRiTaexagnSk1Ff+hBvW4PuyC8vmu8D9r4QPrcXuUuxEuyhbiSzYtIa7nSOfnrU+dnIepsiNVAE1RgyGQ01ETfw2ELzqKynbv8EYnd9aAjgs6xtnXTYaZgOir+uwqeFTjp8RzJZAupnQ2Ox79JauKv64JJmnXd7z+X/z0IPZEhpZ1HsTAbk/MMmbrSHYyVQOq3DeoB3j+WPucwpVA5nEv7WQADp/AcsMBbb6sfnBaPxN4HPBziJlyvDWe7nn7S2B8rZQz4nysym0u71jPvFFhCifvnXH7OU0J3LdwSYh74AMGdzhHaTpUqY3py8D/9RPqoecZ83xQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
- header.from=amperemail.onmicrosoft.com; dkim=pass
- header.d=amperemail.onmicrosoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=os.amperecomputing.com; s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Pdt44Km1QZkL1UTIrf2ohHsRvp+jgNYQBPmSk46F0Nk=;
- b=gdj0TbiCOA2RoiHzpWcBoCamUaqyjub3x5gZzxS815zb17xdVlQUWo61OKlMyLJei23ShNBKPo3sqYxK7xSKTMi6m4xxft6Ay6igP9Pv8iXB72AYvSAQ9OKTzlkvE3DTSHLtp7vwxyOQjZt3rwru4wQ+3V5p1vOpNWgQY3XkWSs=
-Authentication-Results: linaro.org; dkim=none (message not signed)
- header.d=none;linaro.org; dmarc=none action=none
- header.from=amperemail.onmicrosoft.com;
-Received: from BYAPR01MB4598.prod.exchangelabs.com (2603:10b6:a03:8a::18) by
- BYAPR01MB4021.prod.exchangelabs.com (2603:10b6:a03:15::21) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2937.22; Wed, 29 Apr 2020 18:01:08 +0000
-Received: from BYAPR01MB4598.prod.exchangelabs.com
- ([fe80::296c:b848:8bf0:6f2c]) by BYAPR01MB4598.prod.exchangelabs.com
- ([fe80::296c:b848:8bf0:6f2c%5]) with mapi id 15.20.2958.019; Wed, 29 Apr 2020
- 18:01:08 +0000
-Subject: Re: [PATCH] perf/smmuv3: Allow sharing MMIO registers with the SMMU
- driver
-From: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
-In-Reply-To: <20200429072104.GA817954@myrica>
-Date: Wed, 29 Apr 2020 11:01:05 -0700
-Message-Id: <D4FCF21C-D514-44F0-82CF-4932C704117B@amperemail.onmicrosoft.com>
-References: <20200421155745.19815-1-jean-philippe@linaro.org>
- <F8C2FB7F-2D21-44AA-B41D-0D4555A63660@amperemail.onmicrosoft.com>
- <20200429072104.GA817954@myrica>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-ClientProxiedBy: CY4PR18CA0040.namprd18.prod.outlook.com
- (2603:10b6:903:9a::26) To BYAPR01MB4598.prod.exchangelabs.com
- (2603:10b6:a03:8a::18)
+ id 1jTr8B-000166-8V
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 18:08:24 +0000
+Received: by mail-pl1-x644.google.com with SMTP id f15so1131997plr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 11:08:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=jgBesrZnxL+kYNZAUBc2q+AIqwIcsT3SbcObjZ7pa0c=;
+ b=BtnKVoGw4kWLf1dY5ZduBxtig5LWR/+sTfMaOBFb7ji6TCHMdWzbkCejWER0S+j3+M
+ 0KbT39v5FI1GqWAqgBt1a5pt8r7kBNANGTYOO0Z9FsNeE7aVu56ZIotcaii0lzzPOkq8
+ fiMwloXlhwUl5/A3l1efDgqVkGIUqbvwKCF4gLAM1J21QirA23ksdEKRDzLeM/ne9HPW
+ muSQY6CkBxeSN/6WR9uSsuK1ZSSW975apfCBU0ez259rvXb+K/NogBQgAFYDoFDFPT5H
+ sMSXN+0EiL1JKooomEb8IMKO3OTVOOT7M/1zWIGSQIhJZBdTixGA3oAj+l2bgC3cpBWE
+ Jx8A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=jgBesrZnxL+kYNZAUBc2q+AIqwIcsT3SbcObjZ7pa0c=;
+ b=sVXodLGdJaBOmzPRljt3HQsI1E3f8n/Whqo2O1ZipsJeUfRoUe6Vl7a/eDN0kD83YP
+ 4SZquj1rq7swFSbwt6P48KJ+2XcoBtnZYTYpmHm+9L6rxE2nfbRTILUC74J13WkEakGm
+ YCq3+lX5aI8tu5UsOYGxJAQmVZTPGn73poEE3jJUZQihq3a09TNMgUnG8XoOhtiTllHA
+ ajXMlVbsKsQWENLipX6tGkf7wSX2/lPAmnsEPvJYIxv3pyvT2empe3PSGbXyQH9sjJig
+ 5qBEbrZxgd5ITEc4xLtnyYH1hk085H61rODbReYZN3Do7DLAlBLWZd9VoH8WVL5cBLqw
+ lBnw==
+X-Gm-Message-State: AGi0PuZ1Ik3KwUihSMdAjBjfdURlRaoi0lMY3CQDjt/5GrmZTp4qt4iO
+ TgYwlIkNEIb1Altvcjq9gCmjUg==
+X-Google-Smtp-Source: APiQypIrICIQc3PhjIH1wr0MALmKG/hxL05bEOwS+tytX4MzkuSmDE71EzBQl9ILXyX0kZP0iWI4Kw==
+X-Received: by 2002:a17:90b:34c:: with SMTP id
+ fh12mr4640772pjb.134.1588183702070; 
+ Wed, 29 Apr 2020 11:08:22 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id 202sm1497020pgf.41.2020.04.29.11.08.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Apr 2020 11:08:21 -0700 (PDT)
+Date: Wed, 29 Apr 2020 12:08:18 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v2 1/2] coresight: Include required headers in C files
+Message-ID: <20200429180818.GA3062@xps15>
+References: <20200428181010.170568-1-swboyd@chromium.org>
+ <20200428181010.170568-2-swboyd@chromium.org>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from [192.168.0.173] (73.151.56.145) by
- CY4PR18CA0040.namprd18.prod.outlook.com (2603:10b6:903:9a::26) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2958.19 via Frontend Transport; Wed, 29 Apr 2020 18:01:07 +0000
-X-Mailer: Apple Mail (2.3608.80.23.2.2)
-X-Originating-IP: [73.151.56.145]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: aee5010f-38c1-4e15-f223-08d7ec674ae7
-X-MS-TrafficTypeDiagnostic: BYAPR01MB4021:
-X-Microsoft-Antispam-PRVS: <BYAPR01MB4021F0A696175151771B60EDE0AD0@BYAPR01MB4021.prod.exchangelabs.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-Forefront-PRVS: 03883BD916
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BYAPR01MB4598.prod.exchangelabs.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(39840400004)(136003)(396003)(366004)(346002)(376002)(33656002)(4326008)(66556008)(66946007)(8936002)(186003)(26005)(6486002)(316002)(8676002)(53546011)(42882007)(66476007)(52116002)(83170400001)(16576012)(16526019)(478600001)(2616005)(956004)(966005)(54906003)(2906002)(6916009)(5660300002);
- DIR:OUT; SFP:1102; 
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: Wfl4GSCGp6/+5SrkeK2vjCmpDWrzeLtOoXtMt82c9Sb5KgGPcWGIjrvSS0VzbrnOQVd8BAhrX79QmW2ZqqrCejYVF47jWDIqVXJQyY2WVToU1uHw07PvqWRn9G4pG1SkhhWjknXwJLNaXf5NpTTkINwNkP8cCDV6PJMXkrpWfg4nOcFd3LysZuqgNEtw5lQawY35pfJ1HuCm/9nkFl8Ph39eMjNNxXR786M3zbVErSsFiYqSMVl+byd3OkYfAaVUWf+X4AAarAU/L5rdITPPiRMfylrzRvHqwt5dHjlHdNbEQNwS/IwaEYO48Fjh4LbR2jqc2kOn9op3FejTVSKU9nOmkrEVyBxVhQ5k/hnHAi/P8Oz5EFw/iMgY6J68vvWQufzhb0l3AAtGSo7fVMDW8Rx1DEEv0sELd2jR0sUDYQ1jZ95IWaq9T2o6n5oTSajTarCv2ZiDstwv/dS4KLr+atldA0EQdpteD8AyDDoa4VzOyWpOAGYHAKQHMB6WaTEPT/JbwZQqIVMOTkIPhHCpOw==
-X-MS-Exchange-AntiSpam-MessageData: m2WAZ1oCHv4i0ZjOZENd+OZMbkXDFxedIZxQRM4mlLRvsoOcfgvMnhubBV+v0VCOKCB3vzAAHL5wSsQneqXVRYfuCisHH6oJKX4VCjO7yCFG/JKWl8KsTRw/u+MthT6MBykQOAWRiOcT3cRWGrJZUa30zINNJzdeJbUJcBz7dWpza8OMr6rHWq/fYBeUbNYAW9w2dg58xK2bs8QqpN1gDO/Xl33m5hHu5IPMR/eTHG6St89aMtHVNq61BTvS8rLQ4RMEnWUGtllxSZHpAnS3qBldwqVY4oqO55Gl+NkMnQ/bWhb/kIL/A0FZnxX5tKsU3i3EqfvragLpyjVfpxQpUaDOmTLJVCiQNmdkAKZSDx8xuaxDCe4zBojnwsEGiMBIEnkfR5prVJZMoQdwsucaPANmgb8FwEz6NnkK/mpzd+9gckNn1hKrBw36rWwBMnlR7A+nld0Rin0gIcxODvcQTIMapL7lN+ImyLDxsdKk4uXnxwQF3FXJTOK4SgcJrer2sdXt2Qsom7SBJyBec7mdqVhvXdbp90ef3iqTOL8hi5nGxX/EKoVxO61DUe1DFtn452NCU5emwOKwpHNWre2HM8FQflAR1h3YYjQy0oFV+8J+0wV78M37mqLe0qeavI9rKYB8bFZEHsFzOWev3LtrJthn+mbpxwPVnx+XELbGhU86zXO6tpYYf+BiLa44MKTXyrk0GkyTKoEDEx/wDFHAXjjt+lYuJUwp5puRwr00CNSpCFwevtRjziAft8A8yLBXSdbxSn2wPPqLQMapVtS9j/45KKp7uMFue68Qg38dZR4=
-X-OriginatorOrg: amperemail.onmicrosoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: aee5010f-38c1-4e15-f223-08d7ec674ae7
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 29 Apr 2020 18:01:08.1524 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: p2pw0RFZF3OdeV4NftWYK/mBvQfNDzt/KdmcN0aV+Ey7FKfnDRo41ZskmMT7NgDBJB1fUiZoY4Qod0TZVzxtEsIjV8hIfxQI3SEiGJaxs7Plmk0+PSVztthI80yNBkml
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB4021
+Content-Disposition: inline
+In-Reply-To: <20200428181010.170568-2-swboyd@chromium.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_110116_537268_5E63FC68 
-X-CRM114-Status: GOOD (  10.97  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200429_110823_334913_ECFF138E 
+X-CRM114-Status: GOOD (  15.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.244.126 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.244.126 listed in wl.mailspike.net]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [tuanphan[at]amperemail.onmicrosoft.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,78 +99,137 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, lorenzo.pieralisi@arm.com,
- Will Deacon <will@kernel.org>, iommu@lists.linux-foundation.org,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mike Leach <mike.leach@linaro.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Douglas Anderson <dianders@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgo+IE9uIEFwciAyOSwgMjAyMCwgYXQgMTI6MjEgQU0sIEplYW4tUGhpbGlwcGUgQnJ1Y2tlciA8
-amVhbi1waGlsaXBwZUBsaW5hcm8ub3JnPiB3cm90ZToKPiAKPiBPbiBUdWUsIEFwciAyOCwgMjAy
-MCBhdCAxMToxMDowOUFNIC0wNzAwLCBUdWFuIFBoYW4gd3JvdGU6Cj4+IEkgdGVzdGVkIHRoaXMg
-cGF0Y2ggb24gSFcsIGhvd2V2ZXIgSSBuZWVkIHRvIGFkZCBvbmUgbW9yZSBmb2xsb3dpbmcgY2hh
-bmdlIHRvIG1ha2UgaXQgd29ya3MKPiAKPiBUaGFua3MgZm9yIHRlc3RpbmcuIEkgZG9uJ3QgdW5k
-ZXJzdGFuZCB3aHkgeW91IG5lZWQgdGhlIGNoYW5nZSBiZWxvdwo+IHRob3VnaCwgZG8geW91IGtu
-b3cgd2hpY2ggb3RoZXIgcmVnaW9uIGlzIGNvbmZsaWN0aW5nIHdpdGggdGhlIFNNTVU/Cj4gSXQg
-c2hvdWxkIGJlIGRpc3BsYXllZCBpbiB0aGUgZXJyb3IgbWVzc2FnZSBhbmQgL3Byb2MvaW9tZW0u
-Cj4gCj4gVGhhbmtzLAo+IEplYW4KClRoZSBlcnJvciBpZiBJIGRvbuKAmXQgYXBwbHkgdGhhdCBw
-YXRjaDoKWyAgICA0Ljk0MzY1NV0gYXJtLXNtbXUtdjMgYXJtLXNtbXUtdjMuMC5hdXRvOiBjYW4n
-dCByZXF1ZXN0IHJlZ2lvbiBmb3IgcmVzb3VyY2UgW21lbSAweDNiZmZlMDAwMDAwMC0weDNiZmZl
-MDAxZmZmZl0KClRoZSBvdXRwdXQgb2YgL3Byb2MvaW9tZW0gZm9yIHRoYXQgcmVnaW9uOgozYmZm
-ZTAwMDAwMDAtM2JmZmUwMDFmZmZmIDogYXJtLXNtbXUtdjMuMC5hdXRvICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogIDNiZmZlMDAwMjAwMC0z
-YmZmZTAwMDJmZmYgOiBhcm0tc21tdS12My1wbWNnLjE3LmF1dG8gICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogIDNiZmZlMDAxMjAwMC0zYmZmZTAwMTJmZmYg
-OiBhcm0tc21tdS12My1wbWNnLjE3LmF1dG8gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgIAozYmZmZTAwNDIwMDAtM2JmZmUwMDQyZmZmIDogYXJtLXNtbXUtdjMt
-cG1jZy4xMS5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIAozYmZmZTAwNTIwMDAtM2JmZmUwMDUyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xMS5hdXRv
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAw
-NjIwMDAtM2JmZmUwMDYyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xMi5hdXRvICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAwNzIwMDAtM2JmZmUw
-MDcyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xMi5hdXRvICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAwYTIwMDAtM2JmZmUwMGEyZmZmIDogYXJt
-LXNtbXUtdjMtcG1jZy4xMy5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIAozYmZmZTAwYjIwMDAtM2JmZmUwMGIyZmZmIDogYXJtLXNtbXUtdjMtcG1j
-Zy4xMy5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-IAozYmZmZTAwZTIwMDAtM2JmZmUwMGUyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xNC5hdXRvICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAwZjIw
-MDAtM2JmZmUwMGYyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xNC5hdXRvICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAxMDIwMDAtM2JmZmUwMTAy
-ZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xNS5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgIAozYmZmZTAxMTIwMDAtM2JmZmUwMTEyZmZmIDogYXJtLXNt
-bXUtdjMtcG1jZy4xNS5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgIAozYmZmZTAxNDIwMDAtM2JmZmUwMTQyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4x
-Ni5hdXRvICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAoz
-YmZmZTAxNTIwMDAtM2JmZmUwMTUyZmZmIDogYXJtLXNtbXUtdjMtcG1jZy4xNi5hdXRvCgo+IAo+
-PiBAQCAtMjg1NCw3ICsyODU0LDcgQEAgc3RhdGljIGludCBhcm1fc21tdV9kZXZpY2VfcHJvYmUo
-c3RydWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPj4gICAgICAgIH0KPj4gICAgICAgIGlvYWRk
-ciA9IHJlcy0+c3RhcnQ7Cj4+IAo+PiAtICAgICAgIHNtbXUtPmJhc2UgPSBkZXZtX2lvcmVtYXBf
-cmVzb3VyY2UoZGV2LCByZXMpOwo+PiArICAgICAgIHNtbXUtPmJhc2UgPSBkZXZtX2lvcmVtYXAo
-ZGV2LCByZXMtPnN0YXJ0LCByZXNvdXJjZV9zaXplKHJlcykpOwo+PiAgICAgICAgaWYgKElTX0VS
-UihzbW11LT5iYXNlKSkKPj4gICAgICAgICAgICAgICAgcmV0dXJuIFBUUl9FUlIoc21tdS0+YmFz
-ZSk7Cj4+IAo+PiAKPj4+IAl9IGVsc2Ugewo+Pj4gCQlzbW11X3BtdS0+cmVsb2NfYmFzZSA9IHNt
-bXVfcG11LT5yZWdfYmFzZTsKPj4+IAl9Cj4+PiAtLSAKPj4+IDIuMjYuMAo+Pj4gCj4+PiAKPj4+
-IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4+PiBsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+Pj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCj4+PiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwKPj4+IAo+PiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Stephen,
+
+On Tue, Apr 28, 2020 at 11:10:09AM -0700, Stephen Boyd wrote:
+> We should include headers that C files use in the C files that use them
+> and avoid relying on implicit includes as much as possible. This helps
+> avoid compiler errors in the future about missing declarations when
+> header files change includes in the future.
+> 
+> Cc: Douglas Anderson <dianders@chromium.org>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: Mike Leach <mike.leach@linaro.org>
+> Signed-off-by: Stephen Boyd <swboyd@chromium.org>
+> ---
+>  .../hwtracing/coresight/coresight-cti-platform.c    |  8 +++++++-
+>  drivers/hwtracing/coresight/coresight-cti-sysfs.c   |  7 +++++++
+>  drivers/hwtracing/coresight/coresight-cti.c         | 13 +++++++++++++
+>  drivers/hwtracing/coresight/coresight-cti.h         |  8 +++++++-
+>  4 files changed, 34 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
+> index c6c0c9b4827e..ab3bd4ed0910 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-platform.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
+> @@ -2,11 +2,17 @@
+>  /*
+>   * Copyright (c) 2019, The Linaro Limited. All rights reserved.
+>   */
+> +#include <linux/coresight.h>
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/of.h>
+> +#include <linux/property.h>
+> +#include <linux/slab.h>
+>  
+>  #include <dt-bindings/arm/coresight-cti-dt.h>
+> -#include <linux/of.h>
+>  
+>  #include "coresight-cti.h"
+> +#include "coresight-priv.h"
+>  
+>  /* Number of CTI signals in the v8 architecturally defined connection */
+>  #define NR_V8PE_IN_SIGS		2
+> diff --git a/drivers/hwtracing/coresight/coresight-cti-sysfs.c b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> index aeea39cbd161..77e14e770806 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti-sysfs.c
+> @@ -4,7 +4,14 @@
+>   * Author: Mike Leach <mike.leach@linaro.org>
+>   */
+>  
+> +#include <linux/atomic.h>
+>  #include <linux/coresight.h>
+> +#include <linux/device.h>
+> +#include <linux/io.h>
+> +#include <linux/kernel.h>
+> +#include <linux/slab.h>
+> +#include <linux/spinlock.h>
+> +#include <linux/sysfs.h>
+
+What is io.h and slab.h used for in coresight-cti-sysfs.c ?
+
+>  
+>  #include "coresight-cti.h"
+>  
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
+> index 7fc1fc8d7738..be61c1705916 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.c
+> +++ b/drivers/hwtracing/coresight/coresight-cti.c
+> @@ -4,7 +4,20 @@
+>   * Author: Mike Leach <mike.leach@linaro.org>
+>   */
+>  
+> +#include <linux/amba/bus.h>
+> +#include <linux/atomic.h>
+> +#include <linux/bits.h>
+> +#include <linux/coresight.h>
+> +#include <linux/device.h>
+> +#include <linux/io.h>
+
+Same comment as above.
+
+No need to send another version if these are mistakes - just let me know and
+I'll do the adjustment.
+
+Thanks,
+Mathieu
+
+> +#include <linux/kernel.h>
+> +#include <linux/list.h>
+> +#include <linux/mutex.h>
+> +#include <linux/pm_runtime.h>
+>  #include <linux/property.h>
+> +#include <linux/spinlock.h>
+> +
+> +#include "coresight-priv.h"
+>  #include "coresight-cti.h"
+>  
+>  /**
+> diff --git a/drivers/hwtracing/coresight/coresight-cti.h b/drivers/hwtracing/coresight/coresight-cti.h
+> index 004df3ab9dd0..acf7b545e6b9 100644
+> --- a/drivers/hwtracing/coresight/coresight-cti.h
+> +++ b/drivers/hwtracing/coresight/coresight-cti.h
+> @@ -7,8 +7,14 @@
+>  #ifndef _CORESIGHT_CORESIGHT_CTI_H
+>  #define _CORESIGHT_CORESIGHT_CTI_H
+>  
+> -#include <asm/local.h>
+> +#include <linux/coresight.h>
+> +#include <linux/device.h>
+> +#include <linux/fwnode.h>
+> +#include <linux/list.h>
+>  #include <linux/spinlock.h>
+> +#include <linux/sysfs.h>
+> +#include <linux/types.h>
+> +
+>  #include "coresight-priv.h"
+>  
+>  /*
+> -- 
+> Sent by a computer, using git, on the internet
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
