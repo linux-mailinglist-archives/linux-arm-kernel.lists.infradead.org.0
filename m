@@ -2,79 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B9491BDFC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:58:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C6871BDFCA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:58:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y4c2jU1wmAvx1Jkh57WUYinViyPczpsmQBS47mzcuzs=; b=qniiliWEdRE19g
-	59iu/sbDwfToxTXHCuNRzx21XEE1eZTxS6qDYlp1kstmd62jCW9t0CmvlPRhX3UHVKTehCw3l365C
-	kblUblGRfUo1M7RLEcikxsGQq0WK/JXV9uNNf9kgoXWwSPJ7zN22509Gd8c3UdSmSQgiI6ce7bUzJ
-	FA0fCDyvi77Kv4r6lPXBVK8zRJQdsm1+/W0u6POpA2wYUhJV7jGQiAcGprlfwz8XPzhHOb5aEIapQ
-	abix/f1A6Ervp0HVs6xmn9tVnVk/k9AqFojn73kHR1JLxRpm9G78FcZ48kw16gUq4otjdmEEHCVTE
-	IeVLMQnXGFkPGeP3Qfmg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4w3fR5A/8dtCERG7qLA7vRRxgAAItBr5bipx2+1OwdA=; b=EojykEf8a7mnKw
+	KUhXgW3rj4SZeChPd/Fhxpb/fHtGhHq3kviQ40oThM65dqrU8FpPFM4VHs9aZWmI3IQl6YDzmeLLc
+	J6oU76u2ceGAe3wWrFFV+NlKrl9yRWHumyauYlpVW22xIEsoNPPjXUfZ3zHhX7c+RfWu3Y5AzWq7T
+	ub/VWkSjDIXL6djGrx/Qq0vBC5PQdihZQRtbx7fQUBni9j/EEke93JCx9mZll8h27PAysEblbd9V6
+	SR/o9T3Gh3bH9J+KcHv5cSbdVXJODrcWk1e72Y40X/qZsbSXGblfolRHIj3JtrEvkEhY+oirqs0mg
+	YTrkXA5JqqGNpulwB/TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTnDy-0001PS-IP; Wed, 29 Apr 2020 13:58:06 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTnCT-00009S-I2; Wed, 29 Apr 2020 13:56:37 +0000
-X-UUID: 029daba1c181478983540cac79f35442-20200429
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=uOKiKTYYqQLiuxh1KEUt52dRf/z8h0HlHCLgLAeY+fU=; 
- b=uexSR17LdXRVO1V/8Fle/i3ZWIbUAdl96AIE9KwcAL3Cn/inTrMTFicvvuZsXH80QZa3FEBkXN7cuSwjMPlWCaroIfnQ8mNtaWvnAHwt5nfz/mZmgDIfFpKepuv16LMop3f37JS9DAhEi4IPz7/FzqtXJl1RE6nHIplHGbvez14=;
-X-UUID: 029daba1c181478983540cac79f35442-20200429
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 15372092; Wed, 29 Apr 2020 05:57:27 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 29 Apr 2020 06:56:23 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 29 Apr 2020 21:56:11 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Wed, 29 Apr 2020 21:56:10 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
- <asutoshd@codeaurora.org>
-Subject: [PATCH v2 5/5] scsi: ufs: cleanup WriteBooster feature
-Date: Wed, 29 Apr 2020 21:56:10 +0800
-Message-ID: <20200429135610.23750-6-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200429135610.23750-1-stanley.chu@mediatek.com>
-References: <20200429135610.23750-1-stanley.chu@mediatek.com>
+	id 1jTnEV-0001tE-Va; Wed, 29 Apr 2020 13:58:40 +0000
+Received: from mail.bugwerft.de ([2a03:6000:1011::59])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTnCn-0000Qm-Cw
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:57:00 +0000
+Received: from [192.168.178.106] (pD95EF83B.dip0.t-ipconnect.de
+ [217.94.248.59])
+ by mail.bugwerft.de (Postfix) with ESMTPSA id 28621401E5C;
+ Wed, 29 Apr 2020 13:54:14 +0000 (UTC)
+From: Daniel Mack <daniel@zonque.org>
+Subject: Re: [PATCH 2/2] gpio: xilinx: Add irq support to the driver
+To: Srinivas Neeli <srinivas.neeli@xilinx.com>, bgolaszewski@baylibre.com,
+ michal.simek@xilinx.com, shubhrajyoti.datta@xilinx.com, sgoud@xilinx.com
+References: <1581937039-12964-1-git-send-email-srinivas.neeli@xilinx.com>
+ <1581937039-12964-2-git-send-email-srinivas.neeli@xilinx.com>
+Message-ID: <0a640ab8-37db-6dea-2909-3eebbb3f2519@zonque.org>
+Date: Wed, 29 Apr 2020 15:56:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <1581937039-12964-2-git-send-email-srinivas.neeli@xilinx.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_065633_790814_754465CA 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_065653_602803_CFCB46BB 
+X-CRM114-Status: GOOD (  24.31  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,118 +61,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: linux-gpio@vger.kernel.org, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ git@xilinx.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Small cleanup as below items,
+Hi Srinivas,
 
-1. Use ufshcd_is_wb_allowed() directly instead of ufshcd_wb_sup()
-   since ufshcd_wb_sup() just returns the result of
-   ufshcd_is_wb_allowed().
+Thanks for these patches. We're using them on a custom board, and I have
+some remarks as they didn't work as intended. See below.
 
-2. In ufshcd_suspend(), "else if (!ufshcd_is_runtime_pm(pm_op))
-   can be simplified to "else" since both have the same meaning.
 
-This patch does not change any functionality.
+On 2/17/20 11:57 AM, Srinivas Neeli wrote:
+> Allocate single chip for both channels.
+> Add irq support to the driver.
+> Supporting rising edge interrupts and in cascade mode supporting
+> first channel for interrupts on 32bit machines.
+> 
+> Signed-off-by: Srinivas Neeli <srinivas.neeli@xilinx.com>
+> ---
+>  drivers/gpio/gpio-xilinx.c | 233 ++++++++++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 232 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/gpio/gpio-xilinx.c b/drivers/gpio/gpio-xilinx.c
+> index 26753ae58295..f6dd316b2c62 100644
+> --- a/drivers/gpio/gpio-xilinx.c
+> +++ b/drivers/gpio/gpio-xilinx.c
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufshcd.c | 20 +++++++-------------
- 1 file changed, 7 insertions(+), 13 deletions(-)
+[...]
 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index b970a422a5ea..883a46f7fcc9 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -253,7 +253,6 @@ static int ufshcd_scale_clks(struct ufs_hba *hba, bool scale_up);
- static irqreturn_t ufshcd_intr(int irq, void *__hba);
- static int ufshcd_change_power_mode(struct ufs_hba *hba,
- 			     struct ufs_pa_layer_attr *pwr_mode);
--static bool ufshcd_wb_sup(struct ufs_hba *hba);
- static int ufshcd_wb_buf_flush_enable(struct ufs_hba *hba);
- static int ufshcd_wb_buf_flush_disable(struct ufs_hba *hba);
- static int ufshcd_wb_ctrl(struct ufs_hba *hba, bool enable);
-@@ -285,7 +284,7 @@ static inline void ufshcd_wb_config(struct ufs_hba *hba)
- {
- 	int ret;
- 
--	if (!ufshcd_wb_sup(hba))
-+	if (!ufshcd_is_wb_allowed(hba))
- 		return;
- 
- 	ret = ufshcd_wb_ctrl(hba, true);
-@@ -5197,11 +5196,6 @@ static void ufshcd_bkops_exception_event_handler(struct ufs_hba *hba)
- 				__func__, err);
- }
- 
--static bool ufshcd_wb_sup(struct ufs_hba *hba)
--{
--	return ufshcd_is_wb_allowed(hba);
--}
--
- static int ufshcd_wb_get_index(struct ufs_hba *hba)
- {
- 	if (hba->dev_info.b_wb_buffer_type == WB_BUF_MODE_LU_DEDICATED)
-@@ -5216,7 +5210,7 @@ static int ufshcd_wb_ctrl(struct ufs_hba *hba, bool enable)
- 	u8 index;
- 	enum query_opcode opcode;
- 
--	if (!ufshcd_wb_sup(hba))
-+	if (!ufshcd_is_wb_allowed(hba))
- 		return 0;
- 
- 	if (!(enable ^ hba->wb_enabled))
-@@ -5272,7 +5266,7 @@ static int ufshcd_wb_buf_flush_enable(struct ufs_hba *hba)
- 	int ret;
- 	u8 index;
- 
--	if (!ufshcd_wb_sup(hba) || hba->wb_buf_flush_enabled)
-+	if (!ufshcd_is_wb_allowed(hba) || hba->wb_buf_flush_enabled)
- 		return 0;
- 
- 	index = ufshcd_wb_get_index(hba);
-@@ -5294,7 +5288,7 @@ static int ufshcd_wb_buf_flush_disable(struct ufs_hba *hba)
- 	int ret;
- 	u8 index;
- 
--	if (!ufshcd_wb_sup(hba) || !hba->wb_buf_flush_enabled)
-+	if (!ufshcd_is_wb_allowed(hba) || !hba->wb_buf_flush_enabled)
- 		return 0;
- 
- 	index = ufshcd_wb_get_index(hba);
-@@ -5344,7 +5338,7 @@ static bool ufshcd_wb_keep_vcc_on(struct ufs_hba *hba)
- 	int ret;
- 	u32 avail_buf;
- 
--	if (!ufshcd_wb_sup(hba))
-+	if (!ufshcd_is_wb_allowed(hba))
- 		return false;
- 	/*
- 	 * The ufs device needs the vcc to be ON to flush.
-@@ -8225,12 +8219,12 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 		 * configured WB type is 70% full, keep vcc ON
- 		 * for the device to flush the wb buffer
- 		 */
--		if ((hba->auto_bkops_enabled && ufshcd_wb_sup(hba)) ||
-+		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
- 		    ufshcd_wb_keep_vcc_on(hba))
- 			hba->dev_info.keep_vcc_on = true;
- 		else
- 			hba->dev_info.keep_vcc_on = false;
--	} else if (!ufshcd_is_runtime_pm(pm_op)) {
-+	} else {
- 		hba->dev_info.keep_vcc_on = false;
- 	}
- 
--- 
-2.18.0
+>  /**
+> + * xgpiops_irq_mask - Write the specified signal of the GPIO device.
+> + * @irq_data: per irq and chip data passed down to chip functions
+> + */
+> +static void xgpio_irq_mask(struct irq_data *irq_data)
+> +{
+> +	unsigned long flags;
+> +	struct xgpio_instance *chip = irq_data_get_irq_chip_data(irq_data);
+> +	u32 offset = irq_data->irq - chip->irq_base;
+> +	u32 temp;
+> +	s32 val;
+> +	int index = xgpio_index(chip, 0);
+> +
+> +	pr_debug("%s: Disable %d irq, irq_enable_mask 0x%x\n",
+> +		 __func__, offset, chip->irq_enable);
+> +
+> +	spin_lock_irqsave(&chip->gpio_lock[index], flags);
+> +
+> +	chip->irq_enable &= ~BIT(offset);
+> +
+> +	if (!chip->irq_enable) {
+> +		/* Enable per channel interrupt */
+> +		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
+> +		val = offset - chip->gpio_width[0] + 1;
+> +		if (val > 0)
+> +			temp &= 1;
+> +		else
+> +			temp &= 2;
+
+
+This is a bit confusing. Why not write
+
+  if (offset <= chip->gpio_width[0])
+	temp &= 1;
+  else
+        temp &= 2;
+
+?
+
+> +		xgpio_writereg(chip->regs + XGPIO_IPIER_OFFSET, temp);
+> +
+> +		/* Disable global interrupt if channel interrupts are unused */
+> +		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
+
+You know that interrupts are unused when you get here, right? Why this
+extra check?
+
+> +		if (!temp)
+> +			xgpio_writereg(chip->regs + XGPIO_GIER_OFFSET,
+> +				       ~XGPIO_GIER_IE);
+> +	}
+> +	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
+> +}
+> +
+> +/**
+> + * xgpio_irq_unmask - Write the specified signal of the GPIO device.
+> + * @irq_data: per irq and chip data passed down to chip functions
+> + */
+> +static void xgpio_irq_unmask(struct irq_data *irq_data)
+> +{
+> +	unsigned long flags;
+> +	struct xgpio_instance *chip = irq_data_get_irq_chip_data(irq_data);
+> +	u32 offset = irq_data->irq - chip->irq_base;
+> +	u32 temp;
+> +	s32 val;
+> +	int index = xgpio_index(chip, 0);
+> +
+> +	pr_debug("%s: Enable %d irq, irq_enable_mask 0x%x\n",
+> +		 __func__, offset, chip->irq_enable);
+> +
+> +	/* Setup pin as input */
+> +	xgpio_dir_in(&chip->gc, offset);
+> +
+> +	spin_lock_irqsave(&chip->gpio_lock[index], flags);
+> +
+> +	chip->irq_enable |= BIT(offset);
+> +
+> +	if (chip->irq_enable) {
+
+As you set a bit in the instruction above, this condition will always be
+true. So I guess the check can be omitted.
+
+> +		/* Enable per channel interrupt */
+> +		temp = xgpio_readreg(chip->regs + XGPIO_IPIER_OFFSET);
+> +		val = offset - (chip->gpio_width[0] - 1);
+
+This is different from the the statement in the mask function, but it
+can be simplified as noted above.
+
+> +		if (val > 0)
+> +			temp |= 2;
+> +		else
+> +			temp |= 1;
+> +		xgpio_writereg(chip->regs + XGPIO_IPIER_OFFSET, temp);
+> +
+> +		/* Enable global interrupts */
+> +		xgpio_writereg(chip->regs + XGPIO_GIER_OFFSET, XGPIO_GIER_IE);
+> +	}
+> +
+> +	spin_unlock_irqrestore(&chip->gpio_lock[index], flags);
+> +}
+
+[...]
+
+> +/**
+> + * xgpio_irqhandler - Gpio interrupt service routine
+> + * @desc: Pointer to interrupt description
+> + */
+> +static void xgpio_irqhandler(struct irq_desc *desc)
+> +{
+> +	unsigned int irq = irq_desc_get_irq(desc);
+> +	struct xgpio_instance *chip = (struct xgpio_instance *)
+> +		irq_get_handler_data(irq);
+> +	struct irq_chip *irqchip = irq_desc_get_chip(desc);
+> +	u32 offset, status, channel = 1;
+> +	unsigned long val;
+> +
+> +	chained_irq_enter(irqchip, desc);
+> +
+> +	val = xgpio_readreg(chip->regs);
+> +	if (!val) {
+> +		channel = 2;
+> +		val = xgpio_readreg(chip->regs + XGPIO_CHANNEL_OFFSET);
+> +		val = val << chip->gpio_width[0];
+> +	}
+> +
+> +	/* Only rising edge is supported */
+> +	val &= chip->irq_enable;
+> +	for_each_set_bit(offset, &val, chip->gc.ngpio) {
+> +		generic_handle_irq(chip->irq_base + offset);
+
+This needs to include irq_find_mapping(chip->irq_domain, gpio).
+
+> +	}
+> +
+> +	status = xgpio_readreg(chip->regs + XGPIO_IPISR_OFFSET);
+
+The value assigned here is not used. Typo?
+
+> +	xgpio_writereg(chip->regs + XGPIO_IPISR_OFFSET, channel);
+
+This function causes issues of general IRQ handling that makes the
+entire system deadlock for reasons I don't fully grok. I changed the
+logic to the following to make it work:
+
+1. Read IPISR
+2. Write the read value back to IPISR
+3. Depending on the value of IPISR, read the state of either channel 1
+   or 2
+4. chained_irq_enter()
+5. Iterate over bits and call generic_handle_irq()
+6. chained_irq_exit()
+
+> +
+> +	chained_irq_exit(irqchip, desc);
+> +}
+> +
+> +static struct lock_class_key gpio_lock_class;
+> +static struct lock_class_key gpio_request_class;
+> +
+> +/**
+> + * xgpio_irq_setup - Allocate irq for gpio and setup appropriate functions
+> + * @np: Device node of the GPIO chip
+> + * @chip: Pointer to private gpio channel structure
+> + *
+> + * Return:
+> + * 0 if success, otherwise -1
+> + */
+> +static int xgpio_irq_setup(struct device_node *np, struct xgpio_instance *chip)
+> +{
+> +	u32 pin_num;
+> +	struct resource res;
+> +	int ret = of_irq_to_resource(np, 0, &res);
+> +
+> +	if (ret <= 0) {
+> +		pr_info("GPIO IRQ not connected\n");
+> +		return 0;
+> +	}
+> +
+> +	chip->gc.to_irq = xgpio_to_irq;
+> +	chip->irq_base = irq_alloc_descs(-1, 0, chip->gc.ngpio, 0);
+
+This should use the devm_ variant to automatically free the resources.
+
+> +	if (chip->irq_base < 0) {
+> +		pr_err("Couldn't allocate IRQ numbers\n");
+> +		return -1;
+> +	}
+> +	chip->irq_domain = irq_domain_add_legacy(np, chip->gc.ngpio,
+> +						 chip->irq_base, 0,
+> +						 &irq_domain_simple_ops, NULL);
+
+This can fail, so the return value should be checked for NULL.
+
+> +	/*
+> +	 * set the irq chip, handler and irq chip data for callbacks for
+> +	 * each pin
+> +	 */
+> +	for (pin_num = 0; pin_num < chip->gc.ngpio; pin_num++) {
+> +		u32 gpio_irq = irq_find_mapping(chip->irq_domain, pin_num);
+> +
+> +		irq_set_lockdep_class(gpio_irq, &gpio_lock_class,
+> +				      &gpio_request_class);
+> +		pr_debug("IRQ Base: %d, Pin %d = IRQ %d\n",
+> +			 chip->irq_base, pin_num, gpio_irq);
+> +		irq_set_chip_and_handler(gpio_irq, &xgpio_irqchip,
+> +					 handle_simple_irq);
+> +		irq_set_chip_data(gpio_irq, (void *)chip);
+> +	}
+> +	irq_set_handler_data(res.start, (void *)chip);
+> +	irq_set_chained_handler(res.start, xgpio_irqhandler);
+
+I guess all this can be achieved by setting chip->gc.irq* and let the
+GPIO core handle the IRQ chip allocation and setup. There are some
+examples in Documentation/driver-api/gpio/driver.rst.
+
+I'm happy to test the next iteration of these patches.
+
+
+Thanks,
+Daniel
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
