@@ -2,86 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2239A1BE723
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 21:16:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B96361BE730
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 21:19:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qXcKw1zy6VepnQ9jYogKHYgzTPvCTgu24LxLkVSXaR0=; b=HltQ+olrqPpUy5
-	VSzNUTMdm0TvzbFbNOgSAgaKYLYjj9V+oRAW35yPiEvqt2nVIeuyEP6m1H3tp08TyGQvAFnT16ydk
-	8Mb+dtN7Ar0kSwULoUSy6bLHo7Wc52QRYjwG4MC4fFRMWyIQSWFYLFP+noxGvN7kYETR7KcXklw/6
-	wof97HBbP6HQOGhTQyiYutiHJq3uorRMSusizfX/ZSrRM1I/AwDXmMeqZvOLNqtXhrOqzhGZhsyKd
-	ke1O3rtljLllpC8NoEizH4zaClTVfyDMIfTgAFUVvquLZK2L3qE5RDEtKV+jpC7tUp/txXhDJXmf9
-	2WTP7QZYFUmc1xvZwXfQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fb9m3LVPiJFHAmU+nOWcaxp9UURYFM0/tKy/OgggcE4=; b=dx4faJGxUagqvD
+	/OuFymWyPm3wEatnMfTTwqvPbICyKpPuROcRfTDXthTMd/+Vf08Fq6le7BHMbkepCf17lSOTCaoPr
+	HURzj+JTw3+epfil8XCfvcHYTA04fOE/oQc55oL4lMs93ZSYYJNDeoeJ2GPm7tku4hmMy+L7IsntF
+	Kr8xP3la4RZGZDEoBvWex+wnUP8Rhy8kuKV9j7+gO3rIMUYgbaUP7tLIzH0E3PyfHEjy9Seul7bD3
+	7kCakUhRx7kXMDdASLQnrr/DlUCrKuHvwRkzknfzOx9sbpG7bJTMc3w4Myllw4oHV7zsRLWAI2YxW
+	U3OFWwGc7qfdPcY1gxAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTsCP-0001at-1Z; Wed, 29 Apr 2020 19:16:49 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jTsF3-0002FE-IW; Wed, 29 Apr 2020 19:19:33 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTsCA-0001Yo-42
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 19:16:35 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 188so3289733wmc.2
+ id 1jTsEt-0002EL-IZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 19:19:24 +0000
+Received: by mail-ot1-f68.google.com with SMTP id m13so2722594otf.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 12:16:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=uTaxYC0jwA+3Mf6QeyL0kxKKg+CdYcd/49GGY7p9esY=;
- b=fvrS0VEE66iO7kf6DfmoKB0rXIEmgiuWit2Fu+SmZkTgV6Cz07n/xX2l0Biwa1hAvY
- 1rEHDzYF+Wb6TaiiZhFSD0G25jsO/9oCpN6WJ4Ofic0d8qZck24SS0b83d80Q2n9lC+3
- vjSpHa8acnnKltv95KH9GXphftHAkW4OfVrBeuHMhJsh5bL/o9sEXRrcQ4PmoeoTOuxh
- oaZK3GiZEZ4cHhxuzNnpKkAiHeBNLqjCNqWK4u0sg/S2vdTywv30jYvWIP2vHJQZCUTv
- NXkpzzCTNxpxeraY4yOZeKvak+SgmC9CpSWq/NTkuLEhMo09VG1wovwqUeGDWA+/+8Nj
- MxPA==
+ Wed, 29 Apr 2020 12:19:23 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=uTaxYC0jwA+3Mf6QeyL0kxKKg+CdYcd/49GGY7p9esY=;
- b=IvEWvjIkBUjM48Iwty3nXhtl+Y4qp+eawCBVjwyroHZfYMNiuGO3zeCCU8fOUV476D
- tGGWOd7ZGbPDAQy9U08dyDsjP2hv1iJHBVOWfqbH2WNynm+drQDR32FdqNMBkAm5C4He
- ujR89EJIYdQ5s3pfBHlIccU2XNCu8NEtDx1sDPh2rI1njXYy+kv0fjH72NdIfAVpnRMO
- I2HhiVFFcD7xQyHJfc2Ww4saKXQ6u7A2ZQskLK9dSivTqNs9TG6n1C8G9Mpp5dXb2iwE
- vDeG8g9RIE0uDLNt/K8CxGoVJIEfJ7LjHYsZyw+U9tcPaL5vWsSKl1l+pOJSnL1lnYd+
- GXGQ==
-X-Gm-Message-State: AGi0PuYsoqUCzlwvZWE31z9ODeJeAUuWk4zIbhV8xtRF5i7mGt7ToAbr
- xfFKnBZ8EF3Qu/5QEwfNkR0Xgg==
-X-Google-Smtp-Source: APiQypLJ0zeDoIhCzi097XAozrXJsq0a0rW6Z3NDWwTzdI9ZLjqD2jG0z5naNye1gwdLaN6JoAuAiA==
-X-Received: by 2002:a1c:2e07:: with SMTP id u7mr4865638wmu.74.1588187792498;
- Wed, 29 Apr 2020 12:16:32 -0700 (PDT)
-Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
- [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id e5sm235982wru.92.2020.04.29.12.16.30
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 29 Apr 2020 12:16:31 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Neil Armstrong <narmstrong@baylibre.com>, lee.jones@linaro.org,
- jdelvare@suse.com, linux@roeck-us.net, srinivas.kandagatla@linaro.org
-Subject: Re: [RFC 0/8] mfd: Add support for Khadas Microcontroller
-In-Reply-To: <20200421080102.22796-1-narmstrong@baylibre.com>
-References: <20200421080102.22796-1-narmstrong@baylibre.com>
-Date: Wed, 29 Apr 2020 12:16:28 -0700
-Message-ID: <7h4kt2ksqb.fsf@baylibre.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Oia0s4NV9DB+iCr1ZEMds2cu5/Yvq5t6UNJtwHocXX8=;
+ b=R7Hgli/oCVINwQlAyLD9xKMxn3jO1Uzre71VHNaase9iWJdX/KvgPo9i5D0xJ9hV3z
+ L1+LwNwEY7/eZRKnDlr02ObP0jp6d38UdYgdvvpKD1cIrMUfLEL412SKm6GKXG/pitxR
+ r9ggSZA0umLu3P1oT1JoR6eLkSHRuJ92AUOalWWnKSR621rkQlDn1ExL17GvfOlbe07/
+ UXMqgVZfcSg690Xic8BeliSZ7xArT+GTGoNg+GuFb5zDNIy2efvhfxbwbh1TYquGlvdP
+ oZC6c/X6jheIF/NNZdIRw+SIDsEcKXoOgBznx7uceaSSVpCMq8livJRfAp88+fpd1JBN
+ 6QUA==
+X-Gm-Message-State: AGi0PuauZ1xC13cjVfI1Fn/jVg6n/I9lIE98JaEVmB4ed+40y/9whDYj
+ GJ6wrMN5ut6wZoCbi0PYzA==
+X-Google-Smtp-Source: APiQypIYsFHqsImFWUG6M7IapnTOnVsT5eW1i/FPjE2Tfp+Fzl7zDQ7L4rm3spD3PQPpBY6QN1oE2w==
+X-Received: by 2002:a9d:aa7:: with SMTP id 36mr26543736otq.142.1588187962250; 
+ Wed, 29 Apr 2020 12:19:22 -0700 (PDT)
+Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.googlemail.com with ESMTPSA id a22sm564309otf.42.2020.04.29.12.19.21
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Apr 2020 12:19:21 -0700 (PDT)
+From: Rob Herring <robh@kernel.org>
+To: Will Deacon <will@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH] arm64: silicon-errata.rst: Sort the Cortex-A55 entries
+Date: Wed, 29 Apr 2020 14:19:21 -0500
+Message-Id: <20200429191921.32484-1-robh@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_121634_177032_4D48D975 
-X-CRM114-Status: GOOD (  11.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200429_121923_611633_455282E5 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.68 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,47 +90,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, Neil Armstrong <narmstrong@baylibre.com>,
- linux-kernel@vger.kernel.org, nick@khadas.com,
- linux-amlogic@lists.infradead.org, art@khadas.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Neil Armstrong <narmstrong@baylibre.com> writes:
+The Arm silicon errata list is mostly sorted by CPU name with the
+exception of Cortex-A55, so let's sort it before adding more entries.
 
-> The new Khadas VIM2, VIM3 and Edge boards embeds an on-board microcontroller
-> connected via I2C.
->
-> This Microcontroller is present on the Khadas VIM1, VIM2, VIM3 and Edge
-> boards.
->
-> It has multiple boot control features like password check, power-on
-> options, power-off control and system FAN control on recent boards.
->
-> Thie serie adds :
-> - the bindings
-> - the MFD driver
-> - the HWMON cell driver
-> - the NVMEM cell driver
-> - updates MAINTAINERS
-> - add support into the Khadas VIM3/VIM3L DT
->
-> Neil Armstrong (8):
->   dt-bindings: mfd: add Khadas Microcontroller bindings
->   mfd: add support for the Khadas System control Microcontroller
->   hwmon: add support for the MCU controlled FAN on Khadas boards
->   nvmem: add support for the Khadas MCU Programmable User Memory
->   MAINTAINERS: add myself as maintainer for Khadas MCU drivers
->   arm64: dts: meson-g12b: move G12B thermal nodes to meson-g12b.dtsi
->   arm64: dts: meson-sm1: add cpu thermal nodes
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Signed-off-by: Rob Herring <robh@kernel.org>
+---
+ Documentation/arm64/silicon-errata.rst | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-These two could/should be sent separately from this RFC series and
-queued for v5.8.
+diff --git a/Documentation/arm64/silicon-errata.rst b/Documentation/arm64/silicon-errata.rst
+index 2c08c628febd..936cf2a59ca4 100644
+--- a/Documentation/arm64/silicon-errata.rst
++++ b/Documentation/arm64/silicon-errata.rst
+@@ -64,6 +64,10 @@ stable kernels.
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A53      | #843419         | ARM64_ERRATUM_843419        |
+ +----------------+-----------------+-----------------+-----------------------------+
++| ARM            | Cortex-A55      | #1024718        | ARM64_ERRATUM_1024718       |
+++----------------+-----------------+-----------------+-----------------------------+
++| ARM            | Cortex-A55      | #1530923        | ARM64_ERRATUM_1530923       |
+++----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A57      | #832075         | ARM64_ERRATUM_832075        |
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A57      | #852523         | N/A                         |
+@@ -78,8 +82,6 @@ stable kernels.
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A73      | #858921         | ARM64_ERRATUM_858921        |
+ +----------------+-----------------+-----------------+-----------------------------+
+-| ARM            | Cortex-A55      | #1024718        | ARM64_ERRATUM_1024718       |
+-+----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A76      | #1188873,1418040| ARM64_ERRATUM_1418040       |
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A76      | #1165522        | ARM64_ERRATUM_1165522       |
+@@ -88,8 +90,6 @@ stable kernels.
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Cortex-A76      | #1463225        | ARM64_ERRATUM_1463225       |
+ +----------------+-----------------+-----------------+-----------------------------+
+-| ARM            | Cortex-A55      | #1530923        | ARM64_ERRATUM_1530923       |
+-+----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Neoverse-N1     | #1188873,1418040| ARM64_ERRATUM_1418040       |
+ +----------------+-----------------+-----------------+-----------------------------+
+ | ARM            | Neoverse-N1     | #1349291        | N/A                         |
+-- 
+2.20.1
 
-Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
