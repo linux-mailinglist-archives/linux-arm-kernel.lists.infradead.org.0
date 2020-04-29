@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 269C11BE9D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2287E1BE9D1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:24:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/SIs/915Zzyp96kF0ATdbU/RJw5IjxhP9STj9zqS2yw=; b=XY7TaWfajWUDy7
-	UulTEMnSwsir6Py2hS666R4ZYoqumnd/sZe1dE5fpzLuPbsSGAmyaAjxblcauiqzj1nttRkWQxnl6
-	YDBj92Aa5H9KAO0cT0gOhzxcSdKuLviucy/jR6evMJFBn9UwraL4usr5UuxmntdvuVQh97wIpaZj2
-	DKvBwgffTZJnLpNBRp493TiJonIfTeCzfwAJjWnVP9ueWUqC+aSuFRKtiK3m7KFE0nl+cUG/TUo+l
-	OabZuHGaxI9wDP+lTqKf6OX/Ifs519/QjpoF4k/AU6pz/md5dI7Qq6syhjUPJbn0c/ROI14jyX8RW
-	9z1CT50fNHdk3p3UAo5A==;
+	List-Owner; bh=dY38brTn5SLt7Lg9sLwqPLbcTLJ6b1SFTbqU7nQ8tLk=; b=ij+d7t3uQxYiKP
+	u4cjXwB7knR0a2CcvaRQKGi9liHE6urIUOiI3IaV80DoUxxOEj7fQbZtyeqC3jAjPya4x8V9cu4AJ
+	7IevpjKRcF2i2L0hOmFckE0zbef2phG1yVnAEiz3kp9jEd5i7hDyZwDKGMIO3MSvV6xxAJwipdZfU
+	uAh3jkyetGduAsLFjjfwpQa3KzNvVwvSOENiNyzNzuei4zbPWxgYLMxILjSlKJvFsXMkGTJd9pH7F
+	vajfwZjstjg8an8LMwBDrJyBxtdyzERIlCfS54kIZnJE2sJ+C7blkSkmR6NbLp8mf0ZfHJjQpjeLp
+	XDYDGHzaYPMlxqD4dopg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTuBD-0002wb-Fg; Wed, 29 Apr 2020 21:23:43 +0000
+	id 1jTuBU-0003BR-T8; Wed, 29 Apr 2020 21:24:00 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTu80-0000KQ-Nh
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:20:27 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CA4EC2076B;
- Wed, 29 Apr 2020 21:20:23 +0000 (UTC)
+ id 1jTu91-000128-3K
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:21:29 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6719120731;
+ Wed, 29 Apr 2020 21:21:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588195224;
- bh=DLC2gp4sDO4SoNspJIRtWioj277xiVHSrzt3kpHm6sU=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yfpBlFzEc6dXYMY+/v46hrJ2Eae1K4XuQf/miFhaR+H9NEXJwantQxuC1F54ZHzJC
- tYe7ZP6OBsVbzxU2txyd3dnjiXVksQY1VckUOCbxD3pGVkG6h2e4sG4zxyIbIiHcWB
- PJ+gNX1LauH5roWMl+uf7T0EwdqaNfLurobI/w7I=
-From: Mark Brown <broonie@kernel.org>
-To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v2 10/10] arm64: vdso: Map the vDSO text with guarded pages
- when built for BTI
-Date: Wed, 29 Apr 2020 22:16:41 +0100
-Message-Id: <20200429211641.9279-11-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200429211641.9279-1-broonie@kernel.org>
-References: <20200429211641.9279-1-broonie@kernel.org>
+ s=default; t=1588195285;
+ bh=olpRxHNgV+oEXgIZZUijb0WZpWYHdPMEI3rNunuiYuY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=D5KOghXV6/UdQ3XHAYPT+KcvuaY4k9tb2WDLfdGEgx5DLxaiV6f4u5xR1bZC0rlZP
+ /tvuyKL8ZB8gdwf6+Jx9wz+BNzTb3W5FRs21IIAC8x0XeO0144V6n9e49CHKb5x9JC
+ YxqyuUG1gI8Pk+YyogxrFdATYaOVoKl81ES1Td8c=
+Date: Wed, 29 Apr 2020 22:21:21 +0100
+From: Will Deacon <will@kernel.org>
+To: Andrew Scull <ascull@google.com>
+Subject: Re: [PATCH v2] arm64: Unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
+Message-ID: <20200429212120.GC8604@willie-the-truck>
+References: <20200422161346.67325-1-ascull@google.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200422161346.67325-1-ascull@google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_142024_811315_47BC601B 
-X-CRM114-Status: GOOD (  11.66  )
+X-CRM114-CacheID: sfid-20200429_142127_517199_A52A633A 
+X-CRM114-Status: GOOD (  13.18  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,57 +76,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, Kees Cook <keescook@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The kernel is responsible for mapping the vDSO into userspace processes,
-including mapping the text section as executable. Handle the mapping of
-the vDSO for BTI similarly, mapping the text section as guarded pages so
-the BTI annotations in the vDSO become effective when they are present.
+Hi Andrew,
 
-This will mean that we can have BTI active for the vDSO in processes that
-do not otherwise support BTI. This should not be an issue for any expected
-use of the vDSO.
+On Wed, Apr 22, 2020 at 05:13:46PM +0100, Andrew Scull wrote:
+> Errata 1165522, 1319367 and 1530923 each allow TLB entries to be
+> allocated as a result of a speculative AT instruction. In order to
+> avoid mandating VHE on certain affected CPUs, apply the workaround to
+> both the nVHE and the VHE case for all affected CPUs.
+> 
+> Signed-off-by: Andrew Scull <ascull@google.com>
+> CC: Marc Zyngier <maz@kernel.org>
+> CC: James Morse <james.morse@arm.com>
+> CC: Suzuki K Poulose <suzuki.poulose@arm.com>
+> CC: Will Deacon <will@kernel.org>
+> CC: Steven Price <steven.price@arm.com>
+> ---
+> * From v1 <20200327143941.195626-1-ascull@google.com>:
+>   - Restored registers in VHE path
 
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/kernel/vdso.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+This largely looks good to me, but I don't understand these bits:
 
-diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
-index 354b11e27c07..9271b7774df0 100644
---- a/arch/arm64/kernel/vdso.c
-+++ b/arch/arm64/kernel/vdso.c
-@@ -142,6 +142,7 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 				    int uses_interp)
- {
- 	unsigned long vdso_base, vdso_text_len, vdso_mapping_len;
-+	unsigned long gp_flags = 0;
- 	void *ret;
- 
- 	vdso_text_len = vdso_lookup[arch_index].vdso_pages << PAGE_SHIFT;
-@@ -160,10 +161,13 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
- 	if (IS_ERR(ret))
- 		goto up_fail;
- 
-+	if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL) && system_supports_bti())
-+		gp_flags = VM_ARM64_BTI;
-+
- 	vdso_base += PAGE_SIZE;
- 	mm->context.vdso = (void *)vdso_base;
- 	ret = _install_special_mapping(mm, vdso_base, vdso_text_len,
--				       VM_READ|VM_EXEC|
-+				       VM_READ|VM_EXEC|gp_flags|
- 				       VM_MAYREAD|VM_MAYWRITE|VM_MAYEXEC,
- 				       vdso_lookup[arch_index].cm);
- 	if (IS_ERR(ret))
--- 
-2.20.1
+> diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
+> index 8a1e81a400e0..651820f537fb 100644
+> --- a/arch/arm64/kvm/hyp/switch.c
+> +++ b/arch/arm64/kvm/hyp/switch.c
+> @@ -138,7 +138,7 @@ static void __hyp_text __activate_traps_nvhe(struct kvm_vcpu *vcpu)
+>  
+>  	write_sysreg(val, cptr_el2);
+>  
+> -	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
+> +	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT)) {
 
+It seems like you consistently replace cpus_have_final_cap() with
+cpus_have_const_cap(), but I can't figure out why that's required.
+
+Cheers,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
