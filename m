@@ -2,87 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CA271BE9DF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:28:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D3521BE9E6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:30:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b5wa/unEI7Cqd3kFFm5keX66jXZcmulvoMtGaiOesWc=; b=XQGCuYJ1oodCTr
-	Y4gy6GSqB6liPXaMUpskCPhIw1svwJept+53xLRXTyX8LaLl2xzJnxv6MkVlRWAl7Rl+9Cy/9o6GQ
-	66HYoy2pKsXh+lj2KI7BoZliqfGajneDktseq5949g/tgasbHF3aYqrDLIO8Ex1PsbJXsIzcVTZnb
-	bUIwW2TOOMaaBr5CBJMRhpCQh567mGBztGDkEpCPIefqPi5UpOg8g10mu/LRhplPETfecPfed6FOJ
-	oM4y8DX2xniOJ7/2dyDrJM7+g4id2rzgsH6inizj6GK52A4aS4poZb8gI2X46qkeC1sY2/U5bwtxU
-	j3/jZqs+2/wbugJ0uBRw==;
+	List-Owner; bh=gNezUUYtwdh4RmiQj0GR1UHA170S3LFGOS0gaOTIN/E=; b=PxLY0OZFlSL8Uv
+	CMt9wmfY6BPR+/fLRC+tmEc29NTv3za0+4+DnUphvzWpLNu1mT6E2qp6mi/IafhJ2/ZZqqDbV2zmV
+	ccotSXKNCdvuIjrZwTF4ZPHl63KmVyAGOHWx+U5FKM2owDxitTnqM0abtX4C/SOhGaG5Ngmzna9WM
+	QuaI5GVUGxWIzA4+dAhDXZHyZ9JKwH4tGGLDNH11wvrfKfOEpi6wHFeeFA7czP5q3EX/mPgDzcv+O
+	g4kjccDS+9g6izkuz5Whv8ImYz2CkL19Tl3icEYIuWUrho2bouzNLroYK5MVfklt9Mmli3Neg7R8S
+	AGimZ5OoNYsJmBIpM/fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTuG6-00076i-Jz; Wed, 29 Apr 2020 21:28:46 +0000
-Received: from mail-oo1-f67.google.com ([209.85.161.67])
+	id 1jTuHF-0007nz-9T; Wed, 29 Apr 2020 21:29:57 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTuFr-00076F-Bn
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:28:32 +0000
-Received: by mail-oo1-f67.google.com with SMTP id e18so776199oot.9
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 14:28:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HTRWOj0KdaKd2TGYE7Fq7HlZd+8gEmeN4MPCIvIIZtM=;
- b=aQi1pf1WzEIQDehYTpKZGS8rJSREIGkJ3kJyBrKjBlmn5NbwyBWEDIOtyJppWW5FGb
- YwQGWx2AJ5Wwyi4b4NnNQBzCxbh+Aq36BHU+H73h2Yuz6qwhlKz04OF0tIatRazQsfZL
- HvgwG8UkNwagPF8CHsts0sfGPVLagesXA2xWEar5wSPm55t15ULFF/hTYFlG3mL8u2aC
- sfmovrRdNpAB6u3NH2U+fVog82NVn7OD6mi7EhvSvLiSxEupyxZ4SJUr/Rkovqhz9FAG
- sG3GYS8fxFKCgqHXtdqsF//SWWcxWKSqGCX5drS6DaRN7xCoB1QMt0Hea20cKPC6YBGF
- s+bQ==
-X-Gm-Message-State: AGi0PuYZUZeG149OmJpFdAT/fku3E3UTPNVmkaaYFyMRJgkOt8Pz6ENN
- aYpEjqgnVXRkX4KmYqDDlg==
-X-Google-Smtp-Source: APiQypJyegtm8yIG1VEh3Jf2qqLfj1DhUVFSbT8aPGwmC9oX3vWOIOoFvfsiT7wmfOLODUTkdJ9lwQ==
-X-Received: by 2002:a4a:7346:: with SMTP id e6mr36162oof.89.1588195710445;
- Wed, 29 Apr 2020 14:28:30 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b6sm678593otp.31.2020.04.29.14.28.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 14:28:29 -0700 (PDT)
-Received: (nullmailer pid 28791 invoked by uid 1000);
- Wed, 29 Apr 2020 21:28:29 -0000
-Date: Wed, 29 Apr 2020 16:28:29 -0500
-From: Rob Herring <robh@kernel.org>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V3 1/5] dt-bindings: clock: Convert i.MX6Q clock to
- json-schema
-Message-ID: <20200429212829.GB23326@bogus>
-References: <1587084091-5941-1-git-send-email-Anson.Huang@nxp.com>
+ id 1jTuH2-0007lX-Vx; Wed, 29 Apr 2020 21:29:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=ehAF5VJKlo6UElUpdCPqKU/hhwZxb3s8IJbl7lMP8jU=; b=gXPH7oCruVVWWeaOWFGwA4pm/n
+ QF4m36glwEcwVh2Bb98/eY9snKBd52heUHGFf8+aXqtVT3WG82JcyjGkWkh77WdwqoUpMgUd0/My9
+ e+cpUxQc/kkL5FJhrsZsuafeuFua40IXiztBYAzYe8OvgYyTbPnfFnu7U+qSNEt7Q9C0=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jTuGr-000KLe-7W; Wed, 29 Apr 2020 23:29:33 +0200
+Date: Wed, 29 Apr 2020 23:29:33 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH RFC v2 00/11] dwmac-meson8b Ethernet RX delay configuration
+Message-ID: <20200429212933.GA76972@lunn.ch>
+References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1587084091-5941-1-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_142831_401744_0EFBA0A4 
-X-CRM114-Status: GOOD (  12.63  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200429_142945_028875_45ECA3B4 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,42 +72,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, sboyd@kernel.org, shawnguo@kernel.org,
- mturquette@baylibre.com, linux-kernel@vger.kernel.org,
- linux-clk@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- festevam@gmail.com, s.hauer@pengutronix.de,
+Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com, jianxin.pan@amlogic.com,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-amlogic@lists.infradead.org, davem@davemloft.net,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 17, 2020 at 08:41:27AM +0800, Anson Huang wrote:
-> Convert the i.MX6Q clock binding to DT schema format using json-schema.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> ---
-> Changes since V2:
-> 	- Force 'interrupts' minItem/maxItem to 2.
-> ---
->  .../devicetree/bindings/clock/imx6q-clock.txt      | 41 -------------
->  .../devicetree/bindings/clock/imx6q-clock.yaml     | 67 ++++++++++++++++++++++
->  2 files changed, 67 insertions(+), 41 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/clock/imx6q-clock.txt
->  create mode 100644 Documentation/devicetree/bindings/clock/imx6q-clock.yaml
+> - Khadas VIM2 seems to have the RX delay built into the PCB trace
+>   length. When I enable the RX delay on the PHY or MAC I can't get any
+>   data through. I expect that we will have the same situation on all
+>   GXBB, GXM, AXG, G12A, G12B and SM1 boards
 
+Hi Martin
 
-> diff --git a/Documentation/devicetree/bindings/clock/imx6q-clock.yaml b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
-> new file mode 100644
-> index 0000000..0daf789
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/clock/imx6q-clock.yaml
-> @@ -0,0 +1,67 @@
-> +# SPDX-License-Identifier: GPL-2.0
+Can you actually see this on the PCB? The other possibility is that
+the bootloader is configuring something, which is not getting
+overridden when linux starts up.
 
-If NXP is the only author on these, please dual license:
-
-(GPL-2.0-only OR BSD-2-Clause)
+	   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
