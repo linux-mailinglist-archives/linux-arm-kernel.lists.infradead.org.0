@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ADF7E1BD99A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1E691BD99C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 12:28:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fYm90FRqL129QC0mAA33ugJrvrJMkGqry8lB4gmLJq0=; b=bkml8siw0/qj5d
-	uAW0iqjYT1zx1HcMlNqlFzq09pgT/OUqOto7lTicuHYKmqJrjweybS+XHyJ9yFzSG3EigWpPeAHcu
-	2t3gBY+ZWStikI7Cc0fMsI9A5AGMOG1X6zrFltWZ785LUaGzbXU5nkAap5blVmRIsnVA9ZpX6dnGb
-	rIzdBW/yT7wj4BHOkvBjU/HZEpJaKd3kLe3Ohl5gWbDuSxYkg1jHEA6lc0wHNL8XiPsD6GPxhsz/N
-	dnpmp5lJQ32AVClCTxJGpeE5MzDLChr6R0BNW9P9q8JbOpx6xCGpLAKr7Ee91zxRCwvQ5cwVTqUqY
-	2U/lz0JodSMEcFH/5dWQ==;
+	List-Owner; bh=mcjzJ0Wp+MKn/J4FN2vjoJsAlMVOsWxhdTuEUlyQ48A=; b=im3N5SzzQbyqXa
+	VCezAXkDfZVg+dxaeOok/oF9JEFouGN83OQzv4SZ64V13KzrwAcnm4twJnqYPkbwAMHPsTI3U4+sm
+	3icfJYcBLiAm4FThT+APOe5cMVhFZQanEhH0faZjRd23zZLP0+QMjj4LFMeekLF6d9TXT5FjMPL7F
+	c57Lgc8UeWQrV/L+Anj1dlLERZO2zzGHgOwJ7Hv3q14Q8LLwqJ49LQf38E8UZKfZpBd5ro1cLWEkZ
+	rlwk95dVIQ918MW+dx2QpYbPgu+G48tmWSqUDvKPNS3WDpWRfdi/5/LV6ivSIT1tNlINda/bHZDzO
+	Aa97fGcOqockmC0KvfaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTjw0-0004AN-8B; Wed, 29 Apr 2020 10:27:20 +0000
+	id 1jTjwc-0004i1-HD; Wed, 29 Apr 2020 10:27:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTjvE-0003uy-7j
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:26:35 +0000
+ id 1jTjvb-0004B1-Se
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 10:27:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ADEBDC14;
- Wed, 29 Apr 2020 03:26:31 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6410C14;
+ Wed, 29 Apr 2020 03:26:54 -0700 (PDT)
 Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 445393F73D;
- Wed, 29 Apr 2020 03:26:30 -0700 (PDT)
-Date: Wed, 29 Apr 2020 11:26:28 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 218AA3F73D;
+ Wed, 29 Apr 2020 03:26:53 -0700 (PDT)
+Date: Wed, 29 Apr 2020 11:26:51 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 10/23] arm64: mte: Handle synchronous and asynchronous
- tag check faults
-Message-ID: <20200429102628.GB30377@arm.com>
+Subject: Re: [PATCH v3 20/23] fs: Allow copy_mount_options() to access
+ user-space in a single pass
+Message-ID: <20200429102650.GC30377@arm.com>
 References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-11-catalin.marinas@arm.com>
- <20200427165822.GE15808@arm.com> <20200428134301.GI3868@gaia>
+ <20200421142603.3894-21-catalin.marinas@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200428134301.GI3868@gaia>
+In-Reply-To: <20200421142603.3894-21-catalin.marinas@arm.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_032632_376584_7EAE2D9C 
-X-CRM114-Status: GOOD (  23.15  )
+X-CRM114-CacheID: sfid-20200429_032656_031977_0C12F338 
+X-CRM114-Status: GOOD (  25.92  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,82 +65,117 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Alexander Viro <viro@zeniv.linux.org.uk>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 02:43:01PM +0100, Catalin Marinas wrote:
-> On Mon, Apr 27, 2020 at 05:58:22PM +0100, Dave P Martin wrote:
-> > On Tue, Apr 21, 2020 at 03:25:50PM +0100, Catalin Marinas wrote:
-> > > From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> > > 
-> > > The Memory Tagging Extension has two modes of notifying a tag check
-> > > fault at EL0, configurable through the SCTLR_EL1.TCF0 field:
-> > > 
-> > > 1. Synchronous raising of a Data Abort exception with DFSC 17.
-> > > 2. Asynchronous setting of a cumulative bit in TFSRE0_EL1.
-> > > 
-> > > Add the exception handler for the synchronous exception and handling of
-> > > the asynchronous TFSRE0_EL1.TF0 bit setting via a new TIF flag in
-> > > do_notify_resume().
-> > > 
-> > > On a tag check failure in user-space, whether synchronous or
-> > > asynchronous, a SIGSEGV will be raised on the faulting thread.
-> > 
-> > Has there been any discussion on whether this should be SIGSEGV or
-> > SIGBUS?
-> > 
-> > Probably neither is much more appropriate than the other.
-> 
-> You could argue either way. I don't recall a firm conclusion on this, so
-> I picked one that follows SPARC ADI.
+On Tue, Apr 21, 2020 at 03:26:00PM +0100, Catalin Marinas wrote:
+> The copy_mount_options() function takes a user pointer argument but not
+> a size. It tries to read up to a PAGE_SIZE. However, copy_from_user() is
+> not guaranteed to return all the accessible bytes if, for example, the
+> access crosses a page boundary and gets a fault on the second page. To
+> work around this, the current copy_mount_options() implementations
+> performs to copy_from_user() passes, first to the end of the current
 
-Agreed, that precedent is good enough for me.  I hadn't refreshed my
-memory of how sparc was using these signals.
+implementation performs two
 
+> page and the second to what's left in the subsequent page.
 > 
-> > > diff --git a/arch/arm64/kernel/signal.c b/arch/arm64/kernel/signal.c
-> > > index 339882db5a91..e377d77c065e 100644
-> > > --- a/arch/arm64/kernel/signal.c
-> > > +++ b/arch/arm64/kernel/signal.c
-> > > @@ -732,6 +732,9 @@ static void setup_return(struct pt_regs *regs, struct k_sigaction *ka,
-> > >  	regs->regs[29] = (unsigned long)&user->next_frame->fp;
-> > >  	regs->pc = (unsigned long)ka->sa.sa_handler;
-> > >  
-> > > +	/* TCO (Tag Check Override) always cleared for signal handlers */
-> > > +	regs->pstate &= ~PSR_TCO_BIT;
-> > > +
-> > >  	if (ka->sa.sa_flags & SA_RESTORER)
-> > >  		sigtramp = ka->sa.sa_restorer;
-> > >  	else
-> > > @@ -923,6 +926,11 @@ asmlinkage void do_notify_resume(struct pt_regs *regs,
-> > >  			if (thread_flags & _TIF_UPROBE)
-> > >  				uprobe_notify_resume(regs);
-> > >  
-> > > +			if (thread_flags & _TIF_MTE_ASYNC_FAULT) {
-> > > +				clear_thread_flag(TIF_MTE_ASYNC_FAULT);
-> > > +				force_signal_inject(SIGSEGV, SEGV_MTEAERR, 0);
-> > > +			}
-> > > +
-> > 
-> > Should this definitely be a force_signal_inject()?
-> > 
-> > SEGV_MTEAERR is not intrinsically fatal: it must be possible to run past
-> > the error, because that's the whole point -- chances are we already did.
-> > 
-> > Compare this with MTESERR where running past the signal would lead to a
-> > spin.
+> Some architectures like arm64 can guarantee an exact copy_from_user()
+> depending on the size (since the arch function performs some alignment
+> on the source register). Introduce an arch_has_exact_copy_from_user()
+> function and allow copy_mount_options() to perform the user access in a
+> single pass.
 > 
-> Good point. This can be a send_sig_fault() (I need to check the right
-> API).
+> While this function is not on a critical path, the single-pass behaviour
+> is required for arm64 MTE (memory tagging) support where a uaccess can
+> trigger intra-page faults (tag not matching). With the current
+> implementation, if this happens during the first page, the function will
+> return -EFAULT.
+> 
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Alexander Viro <viro@zeniv.linux.org.uk>
+> Cc: Will Deacon <will@kernel.org>
+> ---
+> 
+> Notes:
+>     New in v3.
+> 
+>  arch/arm64/include/asm/uaccess.h | 11 +++++++++++
+>  fs/namespace.c                   |  7 +++++--
+>  include/linux/uaccess.h          |  8 ++++++++
+>  3 files changed, 24 insertions(+), 2 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
+> index 32fc8061aa76..566da441eba2 100644
+> --- a/arch/arm64/include/asm/uaccess.h
+> +++ b/arch/arm64/include/asm/uaccess.h
+> @@ -416,6 +416,17 @@ extern unsigned long __must_check __arch_copy_in_user(void __user *to, const voi
+>  #define INLINE_COPY_TO_USER
+>  #define INLINE_COPY_FROM_USER
+>  
+> +static inline bool arch_has_exact_copy_from_user(unsigned long n)
+> +{
+> +	/*
+> +	 * copy_from_user() aligns the source pointer if the size is greater
+> +	 * than 15. Since all the loads are naturally aligned, they can only
+> +	 * fail on the first byte.
+> +	 */
+> +	return n > 15;
+> +}
+> +#define arch_has_exact_copy_from_user
 
-Sounds fair.
+Did you mean:
+
+#define arch_has_exact_copy_from_user arch_has_exact_copy_from_user
+
+Mind you, if this expands to 1 I'd have expected copy_mount_options()
+not to compile, so I may be missing something.
+
+[...]
+
+> diff --git a/fs/namespace.c b/fs/namespace.c
+> index a28e4db075ed..8febc50dfc5d 100644
+> --- a/fs/namespace.c
+> +++ b/fs/namespace.c
+> @@ -3025,13 +3025,16 @@ void *copy_mount_options(const void __user * data)
+
+[ Is this applying a band-aid to duct tape?
+
+The fs presumably knows ahead of time whether it's expecting a string or
+a fixed-size blob for data, so I'd hope we could just DTRT rather than
+playing SEGV roulette here.
+
+This might require more refactoring than makes sense for this series
+though. ]
+
+>  	if (!copy)
+>  		return ERR_PTR(-ENOMEM);
+>  
+> -	size = PAGE_SIZE - offset_in_page(data);
+> +	size = PAGE_SIZE;
+> +	if (!arch_has_exact_copy_from_user(size))
+> +		size -= offset_in_page(data);
+>  
+> -	if (copy_from_user(copy, data, size)) {
+> +	if (copy_from_user(copy, data, size) == size) {
+>  		kfree(copy);
+>  		return ERR_PTR(-EFAULT);
+>  	}
+>  	if (size != PAGE_SIZE) {
+> +		WARN_ON(1);
+>  		if (copy_from_user(copy + size, data + size, PAGE_SIZE - size))
+>  			memset(copy + size, 0, PAGE_SIZE - size);
+>  	}
+
+[...]
 
 Cheers
 ---Dave
