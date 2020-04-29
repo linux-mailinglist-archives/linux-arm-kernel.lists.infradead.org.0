@@ -2,68 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 867A91BE973
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:01:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAD1C1BE976
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:02:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q/Sp6RtYXE51Jx+6iMn6JE52C5I91mkDLApQx5zcldI=; b=Y8R4RWoLYikPCJ
-	BVTPWsWOiMy/SXuwW8WXRX3IPYop7tgQd6huP9dN+P/IgpWaM9FiCNOwY+n9vC2olTUTD6iUeZ9vT
-	VKcEFsVJ2E764Rs8zHfUfHQZ3nwiJN8OBIOBLwwqGX2CfG83ivkq+dEWyWLtwR9fYnwqVxjKfMKXK
-	6tmdnO1UM1uYJXF03vE72kzu9PJqcOrR/PP1/TiKign/bCwBArcoz0LntWfMt932m4xVlq9Czx0RP
-	omOc/6NC2KJd9nnSL/QE/JpDEJ4eEaaWlawoslxv3qsNiVvM9u4ilOLdfDIi5ZnxkLrcfwL5804PU
-	LrQX/fTO+hLYxRQjK98A==;
+	List-Owner; bh=cg4jIVRFEFR+bGnxYo7tZnAunAPtUAYMqBwvUgPXh0g=; b=EP7hqAW5tDGBID
+	5G4TVpc8N1YX2kXzVQ9cWu11NXqrx5bGeSDCZrdg6xtwXCwHZYAs3O54JpOSA91w4K9df6AFEwN5M
+	ZnCOAx8XHGgfg5N+XvqRjqxa66mwXYmMqpnfcrJSAolw9uxKkFiizqsYvdti13Yc6L1lO9xgfl4Bz
+	TqdJyYyl3GE7wPgtv1eVB3yjnxq1Tbua6SxHdcCWcKTmDb6GUqNw2hpnA9Qbkp8qyE1VeRY0re7WO
+	Tolzbe9ya2j42RSxYS+i6JEAtHD8EHF+A9yMwxd1Ixie/4ffrMDbZNVIIyiAUa4aCNZej+5X6hT3B
+	bXA2hoqMaBttktZCf4LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTtq0-0001Fn-TK; Wed, 29 Apr 2020 21:01:48 +0000
+	id 1jTtqE-0001WQ-Ee; Wed, 29 Apr 2020 21:02:02 +0000
 Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTtmy-0005CX-HJ
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:58:41 +0000
-Received: by mail-ot1-f67.google.com with SMTP id g19so2989095otk.5
+ id 1jTtn0-0005Dw-7Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:58:44 +0000
+Received: by mail-ot1-f67.google.com with SMTP id i27so2980852ota.7
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 13:58:40 -0700 (PDT)
+ Wed, 29 Apr 2020 13:58:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=hakhZUZroxvAZ8LX2cygtT4A2MYBSWJTm8hRJv5ywvQ=;
- b=Kobm3nzqejp+8SO6rUI2IBVdFZNOrvW7eY5nKQl/hPwppCVF52x5kI31AoLRu+ocM7
- MG4hGYBOLjcVOPYORrBfEf6Qk9Rzih3rPGsQsOtxqiigMjHTUx6h1GmKGq8C9BLz4X16
- xgk5RJlbndYBJAhqaR+wLwPKGqvw1gPtN0TRsvLshGae0wvImawSR/IY7L6vkbWfZoRK
- 0k0jUFYXR+KImT2mlQKMpkQnHanusRj4k4vj7+HYDlUvNuYm16hzqHfK79nheX+DTsjA
- UcI1afjZI5KK4QsmkdcHhV0zrzUMqAa9xUpF0ByP7XTgzMf/Sdc2DoSEbSogm3QHBgoi
- +Xfg==
-X-Gm-Message-State: AGi0PuaauXjxp2MRE6WEOxu9uxkL5X8vEk/bBvBjsqmM5biBiKdmU+we
- ZyX3LRkGESdIqiTL2XTP4w==
-X-Google-Smtp-Source: APiQypIgNRez4TEHYcezYK5SwxhTnNcYbS+rD9SCdgQFKtZmZsnxMPq9TxJ46RQV5tla7GggKhl6iQ==
-X-Received: by 2002:a05:6830:16d9:: with SMTP id
- l25mr27963192otr.108.1588193919798; 
- Wed, 29 Apr 2020 13:58:39 -0700 (PDT)
+ bh=xStMKk0H1Os/f4XhAPdtzwoAZgabWI5+EIoJOxpP6QU=;
+ b=tFQE2IJz3bpGHWBTiJLO1qqoQi4OXAg5pHDpEfh1rmMGrCsrsF+V1DimkQQ6qSNhq2
+ 9u+Pbsg0TC0ULm088NYPGzm/gGT+WTwNl9bCxcOia4HlWiqWdmD9tUhkCMAl+fJHaa+K
+ ACyxPN13e1gXO3ZfHpU04+76wP13gzW/apm6H3ZXbOJvW+47hR3Dw82Z5P3hHPl56ZjR
+ 5DDWtSbWHmj78CkJ7dyaw0GHi1NjTg3hM5AJJaZcVI4bQ9YzSJzrYTRHcbl4eqqEgu1B
+ vE3TYIjiT3S0B3ffEHKplHGpU5T/GnaNDXVMMuvccnrvnnXXcwND/0aB6w7Hsl6nvJMz
+ g/0A==
+X-Gm-Message-State: AGi0PuatCimThjXvAOVqdyE7BE+4CU5mrQIb4Qk3eMW4QlLRd5XSsJ2c
+ n25fUsGJBb7jKGWfyXTz8A==
+X-Google-Smtp-Source: APiQypK3kk60mycPcQlbrx8lkRNiDbkLmjHejw1+fZgz13WaNX4EQAK5LW9ZdLCUGNgRh1SQc9dLUg==
+X-Received: by 2002:a9d:37c9:: with SMTP id x67mr27294346otb.207.1588193921255; 
+ Wed, 29 Apr 2020 13:58:41 -0700 (PDT)
 Received: from xps15.herring.priv (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.googlemail.com with ESMTPSA id z13sm653162oth.10.2020.04.29.13.58.38
+ by smtp.googlemail.com with ESMTPSA id z13sm653162oth.10.2020.04.29.13.58.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 13:58:39 -0700 (PDT)
+ Wed, 29 Apr 2020 13:58:40 -0700 (PDT)
 From: Rob Herring <robh@kernel.org>
 To: Linus Walleij <linus.walleij@linaro.org>,
  Liviu Dudau <liviu.dudau@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>
-Subject: [PATCH v2 08/16] mfd: vexpress-sysreg: Drop selecting
- CONFIG_CLKSRC_MMIO
-Date: Wed, 29 Apr 2020 15:58:17 -0500
-Message-Id: <20200429205825.10604-9-robh@kernel.org>
+Subject: [PATCH v2 09/16] mfd: vexpress-sysreg: Drop unused syscon child
+ devices
+Date: Wed, 29 Apr 2020 15:58:18 -0500
+Message-Id: <20200429205825.10604-10-robh@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200429205825.10604-1-robh@kernel.org>
 References: <20200429205825.10604-1-robh@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_135840_597554_942EE71E 
-X-CRM114-Status: GOOD (  12.73  )
+X-CRM114-CacheID: sfid-20200429_135842_409998_957A3C83 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -106,40 +105,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Nothing in the VExpress sysregs nor the MFD child drivers use
-CONFIG_CLKSRC_MMIO. There's the 24MHz counter, but that's handled by
-drivers/clocksource/timer-versatile.c which doesn't use
-CONFIG_CLKSRC_MMIO either. So let's just drop CONFIG_CLKSRC_MMIO.
+The "sys_id", "sys_misc" and "sys_procid" devices don't have a user
+anywhere in the tree and do nothing more than create a syscon regmap for
+a single register or 2. That's an overkill for creating child devices.
+Let's just remove them.
 
-As the !ARCH_USES_GETTIMEOFFSET dependency was added for
-CONFIG_CLKSRC_MMIO, that can be dropped, too.
-
+Cc: Liviu Dudau <liviu.dudau@arm.com>
 Cc: Sudeep Holla <sudeep.holla@arm.com>
 Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 Cc: Linus Walleij <linus.walleij@linaro.org>
 Cc: Lee Jones <lee.jones@linaro.org>
-Acked-by: Arnd Bergmann <arnd@arndb.de>
-Acked-by: Liviu Dudau <liviu.dudau@arm.com>
 Signed-off-by: Rob Herring <robh@kernel.org>
 ---
- drivers/mfd/Kconfig | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+Note that the other GPIO child devices could probably be removed and
+added to the bgpio driver. Unfortunately, the model dts files were
+never updated 6 years ago. Not sure if the models really need LEDs...
 
-diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
-index 0a59249198d3..b1311dea2da1 100644
---- a/drivers/mfd/Kconfig
-+++ b/drivers/mfd/Kconfig
-@@ -2029,9 +2029,8 @@ endmenu
+v2:
+ - Add missing commmit message
+---
+ drivers/mfd/vexpress-sysreg.c | 36 -----------------------------------
+ 1 file changed, 36 deletions(-)
+
+diff --git a/drivers/mfd/vexpress-sysreg.c b/drivers/mfd/vexpress-sysreg.c
+index 0b9cc67706c7..90a4eda2ba2b 100644
+--- a/drivers/mfd/vexpress-sysreg.c
++++ b/drivers/mfd/vexpress-sysreg.c
+@@ -43,10 +43,6 @@
  
- config MFD_VEXPRESS_SYSREG
- 	bool "Versatile Express System Registers"
--	depends on VEXPRESS_CONFIG && GPIOLIB && !ARCH_USES_GETTIMEOFFSET
-+	depends on VEXPRESS_CONFIG && GPIOLIB
- 	default y
--	select CLKSRC_MMIO
- 	select GPIO_GENERIC_PLATFORM
- 	select MFD_CORE
- 	select MFD_SYSCON
+ /* The sysreg block is just a random collection of various functions... */
+ 
+-static struct syscon_platform_data vexpress_sysreg_sys_id_pdata = {
+-	.label = "sys_id",
+-};
+-
+ static struct bgpio_pdata vexpress_sysreg_sys_led_pdata = {
+ 	.label = "sys_led",
+ 	.base = -1,
+@@ -65,24 +61,8 @@ static struct bgpio_pdata vexpress_sysreg_sys_flash_pdata = {
+ 	.ngpio = 1,
+ };
+ 
+-static struct syscon_platform_data vexpress_sysreg_sys_misc_pdata = {
+-	.label = "sys_misc",
+-};
+-
+-static struct syscon_platform_data vexpress_sysreg_sys_procid_pdata = {
+-	.label = "sys_procid",
+-};
+-
+ static struct mfd_cell vexpress_sysreg_cells[] = {
+ 	{
+-		.name = "syscon",
+-		.num_resources = 1,
+-		.resources = (struct resource []) {
+-			DEFINE_RES_MEM(SYS_ID, 0x4),
+-		},
+-		.platform_data = &vexpress_sysreg_sys_id_pdata,
+-		.pdata_size = sizeof(vexpress_sysreg_sys_id_pdata),
+-	}, {
+ 		.name = "basic-mmio-gpio",
+ 		.of_compatible = "arm,vexpress-sysreg,sys_led",
+ 		.num_resources = 1,
+@@ -109,22 +89,6 @@ static struct mfd_cell vexpress_sysreg_cells[] = {
+ 		},
+ 		.platform_data = &vexpress_sysreg_sys_flash_pdata,
+ 		.pdata_size = sizeof(vexpress_sysreg_sys_flash_pdata),
+-	}, {
+-		.name = "syscon",
+-		.num_resources = 1,
+-		.resources = (struct resource []) {
+-			DEFINE_RES_MEM(SYS_MISC, 0x4),
+-		},
+-		.platform_data = &vexpress_sysreg_sys_misc_pdata,
+-		.pdata_size = sizeof(vexpress_sysreg_sys_misc_pdata),
+-	}, {
+-		.name = "syscon",
+-		.num_resources = 1,
+-		.resources = (struct resource []) {
+-			DEFINE_RES_MEM(SYS_PROCID0, 0x8),
+-		},
+-		.platform_data = &vexpress_sysreg_sys_procid_pdata,
+-		.pdata_size = sizeof(vexpress_sysreg_sys_procid_pdata),
+ 	}, {
+ 		.name = "vexpress-syscfg",
+ 		.num_resources = 1,
 -- 
 2.20.1
 
