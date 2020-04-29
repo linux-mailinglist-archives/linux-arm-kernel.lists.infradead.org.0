@@ -2,69 +2,143 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 923931BDD85
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9BDA1BDDB4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:33:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kuzUoBoJWQ0bK2KmvR3l27vPVD19iOZm/5hvAVDtZcI=; b=UNOwPcs6s4+h3t
-	gI3scyfa1gaXJr0l7UScOWN05WZBvMbCT5Dq5no284WGGE/wlV8uHDTWlHPxWyNFsgS9iS2BqVCwL
-	NFb5gkPSAnRbSRGE4xTYIQqFVkRop1v0yTISF82k/sIEZFd/r33vEunV9syqaV8u1qbQvq32LQAIA
-	1OHulKIQhaNHjW6MFjeF3y9a8oA2k1/BBDRk+MIemCD5EQiPRxtySJAxqDUCsCDTyb0My94PWI0aS
-	WQCr2gkpR4KQ9MP2dI4XkVsHPUTM5J5DyLBGoOQTFzhFDqmk2zzoH6Ekvc/KW3oFKDEFv5QF1dgjQ
-	BI8IuMEIxtW1fjgi3dzQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0/26vFQtMAx5IVLR4hOe50pBcWQr4p2ONNq3EFS1pfE=; b=NQoSWDdNRmgMuv
+	9kkHppuLB0OaKhrJzxGJl2ePWkvLvfNjeG0luyPYPMEwH6GgzjyTl6XgZV+AcIwnvjEFJZqhLH90Y
+	dNQkFFJCkJL7f0oYjWejrY6wENL6QQ7THufcWkPtl8bJvBqoTrcKtWJM9ZECzxuZjV75Bsv1HFbxX
+	hsn5y+pk98DuTDYWNWdsWZGBt8cg4eC9q96Me2tRw2mlA8Utu1jvrIfZEr2FnyoXk2qq4kKSWY5Ui
+	0xEc3wNROL1gPlIhYm7Lw04vxGYjFoAT1M2k/nK/eEoTB84guLvN3TGdONsp7XgBeemoUK2HNK9bV
+	uK+XOY51ksBw4GUvTd9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTmiB-0003Wb-64; Wed, 29 Apr 2020 13:25:15 +0000
-Received: from mout.kundenserver.de ([212.227.126.130])
+	id 1jTmqL-0002E1-3F; Wed, 29 Apr 2020 13:33:41 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTmhq-0003Vz-1P
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:24:55 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue009 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1MN5W9-1jmHai06Xl-00J200; Wed, 29 Apr 2020 15:24:45 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Sean Wang <sean.wang@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Light Hsieh <light.hsieh@mediatek.com>
-Subject: [PATCH] pinctrl: mediatek: fix mtk_eint link error
-Date: Wed, 29 Apr 2020 15:24:22 +0200
-Message-Id: <20200429132443.1295194-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.26.0
+ id 1jTmq5-0002By-QU
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:33:28 +0000
+Received: by mail-wr1-x444.google.com with SMTP id t14so2524938wrw.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 06:33:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=57KpVyxFiIynSOtLWM5S1qu9oG0E8FFGMRYGzL0PtQs=;
+ b=ABiQRIwnnGgnP7DXwh5VSPW3qFWj2FcDVAgkYap4Sep2VKflFx4N/3UKNVOrNvHK5f
+ XttYZI0S7MqVMonv8SzdRLVL+QgpFNksG1Ov1gH0sBsnm5ZwXkWWcglAUcDoecIgVDKv
+ TA0d/5OOhCjf3aeu0+ukRzQme0Pof1jHr0s9VmSqQOJvxLkVzvgmNqXBhnQsf82RuGh5
+ nGSfyDjdej/n9WKXpFKfkTK6vAHyrSmyZq5RjjElWNgoasSIQINoQRnst/8pUz0RBefl
+ wxUHuhRndYMqGu/IE9TR5h6FOdCU4eI/gcjp+NLfWE4HjmePW2eoEhj4KASneqM8iCPE
+ U6nQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=57KpVyxFiIynSOtLWM5S1qu9oG0E8FFGMRYGzL0PtQs=;
+ b=AUxZ4TC3ccU8OPJibne8yp3rP/t19eOa/r9MBXanpWoyrAQNT3KIX12LbcORe3uCCG
+ T1dyLG9EZRw2ywQfmMlpT4PczTYqwwXdDTp0RFHmEomNBp8jgx/0tfOeUBqi06TepW4E
+ knU80Bp8EO6FOhc0PvF+0d3v4Up/n0QrOiXWLZ9/m4GwPof3GWGLbfRqL0deeex6yHFK
+ lPg3GK3CoQnAfoLiPw/DBq9Q4LJByuKZGTDa2PfvoJ5kifsVKEEaR3mqcCtSufBhpFJw
+ NYY01q7viB+3phgkBww/VAFxV+wYtY4pO9pz+kNfiKoU5S+KPhRB8QKfS2W6Xh69AbNg
+ WB5w==
+X-Gm-Message-State: AGi0PubYrmzOdLPVaTUBf+O0C1zAMqn1FDmnzU5NVkAaWbioR3pzW6Vy
+ llqaUtdQDLRQeKRKKmKHtEti7g==
+X-Google-Smtp-Source: APiQypLeL8JXb5wg6K5NkhgJTycyIPyVnsKkihsopNfL2tb7HT1xgcWccOBeuwpneP2REnFZ67aTSw==
+X-Received: by 2002:a5d:4e02:: with SMTP id p2mr42130290wrt.302.1588167203674; 
+ Wed, 29 Apr 2020 06:33:23 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
+ ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
+ by smtp.gmail.com with ESMTPSA id s17sm7644244wmc.48.2020.04.29.06.33.22
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 29 Apr 2020 06:33:22 -0700 (PDT)
+Subject: Re: [PATCH v2] drm/meson: add mode selection limits against specific
+ SoC revisions
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20200428092147.13698-1-narmstrong@baylibre.com>
+ <CAFBinCBb=FTH6aken5K9zoedBPYBJUCSj0eA+_Eghv+mnU_3vg@mail.gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <f7aadb74-4351-3c55-7d99-afabc34b0712@baylibre.com>
+Date: Wed, 29 Apr 2020 15:33:21 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:b2K8SGt0tNbKweRcNNd5na2gw56bnc7GqSkapPSRkiyRREMbXnV
- mXoroDsDHSuU5UDemW+096Q1oGLBjSb9A8Q0oGheHoi6a2eWYKpL9j2P6FuZgQX7IeczDrW
- dwxi0yxqo0aWJTzwXgrZJ/4d15zI6Rog4TWtotc5l3cB8KfW+IoAMQzurz+hLhsY3jkN6mR
- YdY+2SSUVRM3JY69A4Ilg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:tIEy99GNx+8=:kozTZI20UsvqYUvArP7lrr
- CVSueE5VSluslq5ErNIWyj2CWFhgMtHmXt3v/rGC9X/UHxPaqC6LLL5noG0k4Dq5j41EXHWCb
- PMCNwTdKHUWN7fgmBpIjU4XPqpfHUH7QjTCqCZ5VnwonmySixRq/IaLaahcEMNm+XBu5NVV7h
- ROxryqcjmRKSV1UYN1qIEVJ6hSQEaHnkncCnI/ytOdhIZcz5LzUlvCE4Lir6+xxNkpB344DM7
- ljN/nt5iPRp+jhgNSvTe+zFPC8IURT295IA1JzDCSL9t4ueK+qD3QiuK57tJnHlITjKTqwN96
- F6KAPbHCFr/8pswmCN1jvldq/Z+76YbCHp+O2rSTTgaTTtzyM8IhfOKSW2PnP6iAfU0/qtvUc
- wAn+TTxJsVRKcHwW6DB/WQTbw3uRrJXs8OIUbqzVCq2BFazyT+12LVD2iEiZ0WFMTKEkRfCpX
- FTeFLNHCNkEOZ2V3gyE5XZcK0A8h+hHbjg2CvXmWyqrVDLkyf6ulkl8J3ZaBy8DD7i6iYs1SF
- NLDTEZrh5IRuSqTzXGjHdZ4BAcT+7k4CaiWVYGiLPHAOo5iy0bhN1962tmSTdUKH2f/yl6gUv
- qZxwcFLKnqH1cLBdstIpvMOo98khu7iN5Ae3ffSf12Lfzqq7W5tD72pU12fmGOa3ScgKo++eV
- rlKjKWK9To2C68fLzv0YtoPT190SQ0/2hGz4P5iSl4kVdtqg2lzNtCYAyKKj3GZfqF3QvpKVW
- 7z1cbRxFdgv2pbmIdbkW4gC5TLeHnAkMZ7SbwAsr/FtwiodtzHLJdfMR2m+bkNPRRUsuQv75P
- 0xarjRVA9hEnrsUt/yUbISYhgeHa+OrMmkGh8ORCnQZWR5f9Wg=
+In-Reply-To: <CAFBinCBb=FTH6aken5K9zoedBPYBJUCSj0eA+_Eghv+mnU_3vg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_062454_376122_207E3C62 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20200429_063325_924416_353E75A4 
+X-CRM114-Status: GOOD (  16.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.130 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,111 +150,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-gpio@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>
+Cc: linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In a configuration with CONFIG_PINCTRL_MTK_MOORE=y and CONFIG_PINCTRL_MTK_PARIS=m,
-we end up with the mtk_eint driver as a loadable module that cannot be
-linked from built-in code:
+Hi,
 
-aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.o: in function `mtk_build_eint':
-(.text+0x304): undefined reference to `mtk_eint_do_init'
-aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-moore.o: in function `mtk_gpio_set_config':
-pinctrl-moore.c:(.text+0xf80): undefined reference to `mtk_eint_set_debounce'
-aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-moore.o: in function `mtk_gpio_to_irq':
-pinctrl-moore.c:(.text+0x1028): undefined reference to `mtk_eint_find_irq'
+On 29/04/2020 00:03, Martin Blumenstingl wrote:
+> Hi Neil,
+> 
+> On Tue, Apr 28, 2020 at 11:21 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>>
+>> The Amlogic S805X/Y uses the same die as the S905X, but with more
+>> limited graphics capabilities.
+>>
+>> This adds a soc version detection adding specific limitations on the HDMI
+>> mode selections.
+>>
+>> Here, we limit to HDMI 1.3a max HDMI PHY clock frequency.
+> for my own education: 1.65GHz from the PLL will be divided down to 165MHz
+> isn't this more like the limit of HDMI 1.2a?
 
-Simplify the Kconfig logic to always select EINT_MTK when it is needed, and
-remove the 'default' statements.
+indeed from [1] :
+```
+HDMI 1.3 / 1.3a:
+- Higher speed: HDMI 1.3 increases its single-link bandwidth to 340 MHz (10.2 Gbps) to support the
+demands of future HD display devices, such as higher resolutions, Deep Color and high frame rates.
+In addition, built into the HDMI 1.3 specification is the technical foundations that will let future
+versions of HDMI reach significantly higher speeds.
+```
 
-Fixes: 8174a8512e3e ("pinctrl: mediatek: make MediaTek pinctrl v2 driver ready for buidling loadable module")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/pinctrl/mediatek/Kconfig    |  4 +---
- drivers/pinctrl/mediatek/mtk-eint.h | 28 ----------------------------
- 2 files changed, 1 insertion(+), 31 deletions(-)
+So yes, it must be HDMI 1.2a, I'll fixup while applying.
 
-diff --git a/drivers/pinctrl/mediatek/Kconfig b/drivers/pinctrl/mediatek/Kconfig
-index f32d3644c509..b6a8d91f4885 100644
---- a/drivers/pinctrl/mediatek/Kconfig
-+++ b/drivers/pinctrl/mediatek/Kconfig
-@@ -7,8 +7,6 @@ config EINT_MTK
- 	depends on PINCTRL_MTK || PINCTRL_MTK_MOORE || PINCTRL_MTK_PARIS || COMPILE_TEST
- 	select GPIOLIB
- 	select IRQ_DOMAIN
--	default y if PINCTRL_MTK || PINCTRL_MTK_MOORE
--	default PINCTRL_MTK_PARIS
- 
- config PINCTRL_MTK
- 	bool
-@@ -20,6 +18,7 @@ config PINCTRL_MTK
- 	select OF_GPIO
- 
- config PINCTRL_MTK_V2
-+	select EINT_MTK
- 	tristate
- 
- config PINCTRL_MTK_MOORE
-@@ -38,7 +37,6 @@ config PINCTRL_MTK_PARIS
- 	select PINMUX
- 	select GENERIC_PINCONF
- 	select GPIOLIB
--	select EINT_MTK
- 	select OF_GPIO
- 	select PINCTRL_MTK_V2
- 
-diff --git a/drivers/pinctrl/mediatek/mtk-eint.h b/drivers/pinctrl/mediatek/mtk-eint.h
-index 48468d0fae68..f40dab50a5f3 100644
---- a/drivers/pinctrl/mediatek/mtk-eint.h
-+++ b/drivers/pinctrl/mediatek/mtk-eint.h
-@@ -68,7 +68,6 @@ struct mtk_eint {
- 	const struct mtk_eint_xt *gpio_xlate;
- };
- 
--#if IS_ENABLED(CONFIG_EINT_MTK)
- int mtk_eint_do_init(struct mtk_eint *eint);
- int mtk_eint_do_suspend(struct mtk_eint *eint);
- int mtk_eint_do_resume(struct mtk_eint *eint);
-@@ -76,31 +75,4 @@ int mtk_eint_set_debounce(struct mtk_eint *eint, unsigned long eint_n,
- 			  unsigned int debounce);
- int mtk_eint_find_irq(struct mtk_eint *eint, unsigned long eint_n);
- 
--#else
--static inline int mtk_eint_do_init(struct mtk_eint *eint)
--{
--	return -EOPNOTSUPP;
--}
--
--static inline int mtk_eint_do_suspend(struct mtk_eint *eint)
--{
--	return -EOPNOTSUPP;
--}
--
--static inline int mtk_eint_do_resume(struct mtk_eint *eint)
--{
--	return -EOPNOTSUPP;
--}
--
--static inline int mtk_eint_set_debounce(struct mtk_eint *eint, unsigned long eint_n,
--			  unsigned int debounce)
--{
--	return -EOPNOTSUPP;
--}
--
--static inline int mtk_eint_find_irq(struct mtk_eint *eint, unsigned long eint_n)
--{
--	return -EOPNOTSUPP;
--}
--#endif
- #endif /* __MTK_EINT_H */
--- 
-2.26.0
+> 
+>> Changes sinces v1:
+>> - Moved frequency check in the vclk code, and also checks DMT modes
+>>
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> Acked-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> 
+> This looks good to me based on the current limitations of meson_vclk.c
+> If we switch to CCF based VPU clock rate changes then we should do
+> this in the clock driver by calling clk_hw_set_rate_range(hdmi_pll, 0,
+> 1.65GHz)
+> 
+> The good thing is: we can re-use struct meson_drm_soc_limits even
+> after switching to CCF.
+> We will just need to set the max PHY freq using
+> clk_round_rate(hdmi_pll, ULONG_MAX)
 
+Exact !
+
+Neil
+
+> 
+> 
+> Martin
+> 
+
+[1] https://denon.custhelp.com/app/answers/detail/a_id/192/~/differences-between-hdmi-versions-1.1%2C-1.2%2C-1.3a%2C-1.4-and-2.0%3F
 
 _______________________________________________
 linux-arm-kernel mailing list
