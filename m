@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6BD01BE878
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 22:20:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 137771BE87B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 22:20:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FX9PVhktwkUILKQU/KsOKRfcBXLZThikdmQzkmrqE3I=; b=j4EbvkEe7itFXa
-	vQXgWz9Yvwnoni8F0qKEmOI+Sw9W/p8um3MdxE7Db8eqeu2Ws70Egbyh0VAsDPzB6v1Qdj/DUtu26
-	dFggJkz7eZZzTDFLKPklC3GHhgJFdflJH0JKtA/e8wLLlBYxo2KR5byGNsZA8R/vqBfUs5Ldyk/nx
-	mlqKg0ngDG6LDMDPNyXkL3hwk6MLAny1I6sUul4+T6EejNCKhTICg5c82ywkf7BtAa2PvSjucoAY7
-	hcDGyn1Bo4zEaY4y6vjfndUkmY8+Bo0NUms0nhnkNsfAk5WigE7/4/hzNXwn2fcdps7RV+beERRKv
-	K5z9QRUwrSJ3FSElP7lg==;
+	List-Owner; bh=BWgbhmq4c9nICej4OyNFNzNTYqwyxgNtDLzoydwuIco=; b=RiU/St+Tpeo2hd
+	kVNe5teDXko2prh/uCPB0NldTB63EfYgCSu4Thv78DdwZLRbTFKTcRQ8vE1/s+uJ5ArDSh0dM0V0L
+	7fPlZ4zrpbGkzshn8gJB21JXIobpyujpOCJ3igYXlexHirzMSopVjv0LjDpTcfxN47dGTtVUwTm1x
+	EwF7Cy7ptKEhrrO0l9br8lv+MCWnpmZU5VmxCen458wHdgC810Zr16WmaAyCnGemyBqDTXEOmcqk5
+	N3qAN2klyZz1vnn/tyFKZxAI+tngWNo2IOudzKQFd7UCuaBcqO79knmFIxII6uBK3MgXHzNpeMCSR
+	JvGdmLDvgZivDQYMSx7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTtBt-00022n-6R; Wed, 29 Apr 2020 20:20:21 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jTtCE-0003gX-6W; Wed, 29 Apr 2020 20:20:42 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTt91-00074G-W6; Wed, 29 Apr 2020 20:17:27 +0000
-Received: by mail-wr1-x444.google.com with SMTP id f13so4066451wrm.13;
- Wed, 29 Apr 2020 13:17:23 -0700 (PDT)
+ id 1jTt92-00075O-Uf; Wed, 29 Apr 2020 20:17:27 +0000
+Received: by mail-wr1-x442.google.com with SMTP id x18so4129811wrq.2;
+ Wed, 29 Apr 2020 13:17:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=3VI9HOBgp8G2icbON78rq/SrCIcAl7ixV1OYcVb1+4o=;
- b=t/5HRvviYO4kjJxm01NMptBZjmYlb0VIQ0kDJH0hiQmwRaXgTMo3p2fVl1tLcBwfr+
- zbAW6+qwUqwwc1PutI6qJcHDDj8G2ZUT1T+VIXf05MnH6xPD5AptU0KMcVHmBVvGcqnP
- qoqD4KUdH5rYmhsJQT01Nkmffyc1vduDBr8DYNOIMzJaGmrojaOFWiQSSUO+fOSZ30WO
- Odhkaqj2w0AOeRndDoo7syz0RlT3TnTeTn8VT3E5TtQLAFtV3YCH3sQfdFQj5F/pncb0
- +I9bAodlOX4pu/2PxMdmCol3QZa/4T8I1tLK7mbaA3DoQhZSiF2NWZyXVACaB8aKrlv2
- 1qhA==
+ bh=ML06J9nAXnrGfb8Sw/sNjsFqqfba47oOWTFdhQokhaE=;
+ b=I6xBJ2SgUjpuRy8PYgy88Vghn+35By2xz7BMjry77ASag5aKvIV0Qmf2JES6q8lIqX
+ joPBLtr3A7Ztb/TQSlS0ammJAasQdIgPRAH9n6KVnbv8Dg+5MLX9ei/DI5o+4YgsLvjQ
+ e0l//7Tok7gTPJYBjWFNKCwMX2VAfyYxxsbHmoCF2dWyNperl9l1u2w4O+Rqxi2v21P/
+ vUDnGMSfqpvBfQ37f+oiepTpjsxV47f5ElwXR8L9zEMP2XwFpS4HgevSrzEs/DkOjxZ7
+ 1Q99zESKfDfl/IUuTPxbjD4lipMhJEsIj3HMKV83VbQbSl9DuCSGCXMrJ+SpJ2VeKacU
+ ymSg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=3VI9HOBgp8G2icbON78rq/SrCIcAl7ixV1OYcVb1+4o=;
- b=c0VyiPtL6e1UGzyzG98iIigoBg6rH9U/UfDeEyYtNGWfma0NRu5IRj+2m7eFlM7na2
- zAg6YT8+V2gWvNcrC/ifDyEz/Nz4U5A927XeeTKIJGlihQMAfr+OWiYnJneXIjslKzsl
- 6s3YDs4nLhIbs1zv8/LQqYbUtGb8zeZF8TeGVlnfiX1keSHR3vEh8MTxRK7SzMKsJ/Uf
- CXsW01M85Lvu8ueYsEueZNpmSZNChwwTL3b5rqdCxaB9wsAnCvr5LxvMNdhzKhY1XxzQ
- zTwTknJnpQlR+7SriyrVpdSEM7n0COLPPLGuiBLbgXSlXj4YcSio4YhbbUpT1ABTRKc6
- +rag==
-X-Gm-Message-State: AGi0PubYUse/+zThBnDVeJW9HUMk7Pi0C1NosgiupXPD2ZaclcmuyYrb
- k9/tYb/7b/bWxyqOBjB/17g=
-X-Google-Smtp-Source: APiQypJmysRza8OPeM91P68Zxs+u1pXUMsxPYIl1dIDymhDEUk16xHeb8vxHNwRTwGrxuxfRF/fM9w==
-X-Received: by 2002:a5d:6b86:: with SMTP id n6mr40163691wrx.113.1588191442597; 
- Wed, 29 Apr 2020 13:17:22 -0700 (PDT)
+ bh=ML06J9nAXnrGfb8Sw/sNjsFqqfba47oOWTFdhQokhaE=;
+ b=uWUkGgXq6ZGN+2jYsfKZKXIv783OPGMmpY6h0fcLOwt3p/y/kQeszjDEQqj4HCuGC9
+ 8VeVlC7EP8EhKGvLG/iBuLvaSxUWrW3djtNf6nNedQjvYGUTvmKl9icLn+c/rk215QSA
+ 6NU0glxjCvIPtZF7kNVtUdPidUizFjxOMSBklTcA9tpluSbpo3VPaJU96otRy6DeyhUu
+ OE1P0kORAlCG3VG6sV35xuwvxMyjlJMkryVDQH7jPv7mo7YEHhgIt0uyOW2jWgKWq2Cj
+ IUR/T5+5xH7Kaon6Udh0fOaEJy1Yde1T4ydyMz6mRgdUdHxePgh0iCVCSk6P7MAlIEJ5
+ iYrg==
+X-Gm-Message-State: AGi0Puae0FYF+tG4u/WOibP54fGrDg1V5KtlJCEv2noimw4a3LY7sS8H
+ 5FfjxVe8cf+LyOKJ1kc78ak=
+X-Google-Smtp-Source: APiQypL/Ts+PnYJmzQA093RS5PL9mTk8d7JdiY46vyorm6USMdg0g2olx5OKhnYkn4+1TCd7ozkkOQ==
+X-Received: by 2002:adf:84c1:: with SMTP id 59mr41790968wrg.350.1588191443643; 
+ Wed, 29 Apr 2020 13:17:23 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3714:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id q143sm9923623wme.31.2020.04.29.13.17.21
+ by smtp.googlemail.com with ESMTPSA id q143sm9923623wme.31.2020.04.29.13.17.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 29 Apr 2020 13:17:22 -0700 (PDT)
+ Wed, 29 Apr 2020 13:17:23 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
  linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
-Subject: [PATCH DO NOT MERGE v2 09/11] arm64: dts: amlogic: Add the Ethernet
+Subject: [PATCH DO NOT MERGE v2 10/11] ARM: dts: meson: Add the Ethernet
  "timing-adjustment" clock
-Date: Wed, 29 Apr 2020 22:16:42 +0200
-Message-Id: <20200429201644.1144546-10-martin.blumenstingl@googlemail.com>
+Date: Wed, 29 Apr 2020 22:16:43 +0200
+Message-Id: <20200429201644.1144546-11-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
 References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_131724_258761_3AAA79EA 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20200429_131725_356869_88F0FE6C 
+X-CRM114-Status: GOOD (  10.63  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,78 +116,42 @@ RGMII RX delay no the MAC side (if needed).
 
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-axg.dtsi        | 6 ++++--
- arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi | 6 ++++--
- arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi       | 5 +++--
- arch/arm64/boot/dts/amlogic/meson-gxl.dtsi        | 5 +++--
- 4 files changed, 14 insertions(+), 8 deletions(-)
+ arch/arm/boot/dts/meson8b.dtsi  | 5 +++--
+ arch/arm/boot/dts/meson8m2.dtsi | 5 +++--
+ 2 files changed, 6 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-index aace3d32a3df..b021d802807a 100644
---- a/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-axg.dtsi
-@@ -181,8 +181,10 @@ ethmac: ethernet@ff3f0000 {
- 			interrupt-names = "macirq";
- 			clocks = <&clkc CLKID_ETH>,
- 				 <&clkc CLKID_FCLK_DIV2>,
--				 <&clkc CLKID_MPLL2>;
--			clock-names = "stmmaceth", "clkin0", "clkin1";
-+				 <&clkc CLKID_MPLL2>,
-+				 <&clkc CLKID_FCLK_DIV2>;
-+			clock-names = "stmmaceth", "clkin0", "clkin1",
-+				      "timing-adjustment";
- 			rx-fifo-depth = <4096>;
- 			tx-fifo-depth = <2048>;
- 			status = "disabled";
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-index 0882ea215b88..f800bfc68832 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
-@@ -185,8 +185,10 @@ ethmac: ethernet@ff3f0000 {
- 			interrupt-names = "macirq";
- 			clocks = <&clkc CLKID_ETH>,
- 				 <&clkc CLKID_FCLK_DIV2>,
--				 <&clkc CLKID_MPLL2>;
--			clock-names = "stmmaceth", "clkin0", "clkin1";
-+				 <&clkc CLKID_MPLL2>,
-+				 <&clkc CLKID_FCLK_DIV2>;
-+			clock-names = "stmmaceth", "clkin0", "clkin1",
-+				      "timing-adjustment";
- 			rx-fifo-depth = <4096>;
- 			tx-fifo-depth = <2048>;
- 			status = "disabled";
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-index 0cb40326b0d3..f6efa1cdb72b 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxbb.dtsi
-@@ -310,8 +310,9 @@ &efuse {
- &ethmac {
+diff --git a/arch/arm/boot/dts/meson8b.dtsi b/arch/arm/boot/dts/meson8b.dtsi
+index e34b039b9357..ba36168b9c1b 100644
+--- a/arch/arm/boot/dts/meson8b.dtsi
++++ b/arch/arm/boot/dts/meson8b.dtsi
+@@ -425,8 +425,9 @@ &ethmac {
+ 
  	clocks = <&clkc CLKID_ETH>,
- 		 <&clkc CLKID_FCLK_DIV2>,
+ 		 <&clkc CLKID_MPLL2>,
 -		 <&clkc CLKID_MPLL2>;
 -	clock-names = "stmmaceth", "clkin0", "clkin1";
 +		 <&clkc CLKID_MPLL2>,
 +		 <&clkc CLKID_FCLK_DIV2>;
 +	clock-names = "stmmaceth", "clkin0", "clkin1", "timing-adjustment";
+ 	rx-fifo-depth = <4096>;
+ 	tx-fifo-depth = <2048>;
+ 
+diff --git a/arch/arm/boot/dts/meson8m2.dtsi b/arch/arm/boot/dts/meson8m2.dtsi
+index 5bde7f502007..96b37d5e9afd 100644
+--- a/arch/arm/boot/dts/meson8m2.dtsi
++++ b/arch/arm/boot/dts/meson8m2.dtsi
+@@ -30,8 +30,9 @@ &ethmac {
+ 		0xc1108140 0x8>;
+ 	clocks = <&clkc CLKID_ETH>,
+ 		 <&clkc CLKID_MPLL2>,
+-		 <&clkc CLKID_MPLL2>;
+-	clock-names = "stmmaceth", "clkin0", "clkin1";
++		 <&clkc CLKID_MPLL2>,
++		 <&clkc CLKID_FCLK_DIV2>;
++	clock-names = "stmmaceth", "clkin0", "clkin1", "timing-adjustment";
+ 	resets = <&reset RESET_ETHERNET>;
+ 	reset-names = "stmmaceth";
  };
- 
- &gpio_intc {
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-index 259d86399390..9d173e3c8794 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl.dtsi
-@@ -92,8 +92,9 @@ &efuse {
- &ethmac {
- 	clocks = <&clkc CLKID_ETH>,
- 		 <&clkc CLKID_FCLK_DIV2>,
--		 <&clkc CLKID_MPLL2>;
--	clock-names = "stmmaceth", "clkin0", "clkin1";
-+		 <&clkc CLKID_MPLL2>,
-+		 <&clkc CLKID_FCLK_DIV2>;
-+	clock-names = "stmmaceth", "clkin0", "clkin1", "timing-adjustment";
- 
- 	mdio0: mdio {
- 		#address-cells = <1>;
 -- 
 2.26.2
 
