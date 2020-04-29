@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62F231BEA62
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:54:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2810C1BEA64
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 23:55:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QxDaMc8DS0PeY2Io0L6o2Co6LIsT+8QW1uqPGKRcXuo=; b=N9fmqJa6dXvs2S
-	dt+dah7r5H9anlE/U6V4qPqxpYiMLfOs6TT04WdiWIeeQg7Q0LKR9DgIbkTrrON0hYHw15dEfVHa+
-	n+CQPHrRocZ3O/EkPw7qykHoc92oKulVMZjBCOb5hq3uhJEmg0DnIaQhkdMRrvz0rzu3U+SP/2D5R
-	6DgfasQSSCB0S+WvrKnr0E3Y2Ypfw9SNGC8DTcNGCTkCCG366yDPxYpB34mFZyHZxC/HzlE+xg8Jw
-	V9JXFQPdjn5/0OpZvbBvHvSa4l2YyxuVJjP+3W5JdwEk+HtXbpA2twRQ/jT06eR4/1fT9VDcemuQo
-	5rON6WB5oTZRZTM+JMAg==;
+	List-Owner; bh=z3a2oYf6XbqQT6XUYIkkol+Wvdn7H+QIHvn7sRjTt7U=; b=FeFOfBi1F9fzcG
+	qf3U3/I2bDFYUL/mhvSq1fLnlYPr0r840bpyun4VqDS1zEkeiw/4MpvIJlvNffE0m+DqjWJwkpcE0
+	tQp6M2iOKLMmqV4PylMNpSeDMbAaIaochL+6NZhDD48DNOJAgkkMeISCCmpJ4SC9eSsIHFguqEB9n
+	M8pGJnL+LOc5n/I5+GDe28O4x813K1de0TCQEPjVFCWYOwSFjppdi4LMe1Vb9AYqGFR30mWrZ6Eut
+	IBs6S09SyUSq08LfmxB661WYU9GLkGW4+MZTTb65shSlJR8It8AbB7c/j9VjF/+IcDgwEAPHPK4Kj
+	w9YPn0AYt2VmszvKIU7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTuev-00028R-Rl; Wed, 29 Apr 2020 21:54:25 +0000
+	id 1jTug3-0004EP-Bu; Wed, 29 Apr 2020 21:55:35 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTuef-00027X-OF
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:54:11 +0000
+ id 1jTueh-00028S-PO
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 21:54:13 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id E37B2819C;
- Wed, 29 Apr 2020 21:54:55 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id AC13E81AC;
+ Wed, 29 Apr 2020 21:54:58 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 01/15] clocksource/drivers/timer-ti-32k: Add support for
- initializing directly
-Date: Wed, 29 Apr 2020 14:53:48 -0700
-Message-Id: <20200429215402.18125-2-tony@atomide.com>
+Subject: [PATCH 02/15] dt-bindings: timer: add ti,
+ dmtimer compatible for for system timers
+Date: Wed, 29 Apr 2020 14:53:49 -0700
+Message-Id: <20200429215402.18125-3-tony@atomide.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200429215402.18125-1-tony@atomide.com>
 References: <20200429215402.18125-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_145409_830335_DC6EC8BB 
-X-CRM114-Status: GOOD (  14.18  )
+X-CRM114-CacheID: sfid-20200429_145411_890860_2C707C30 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,12 +62,12 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
- Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
+ Lokesh Vutla <lokeshvutla@ti.com>, "H. Nikolaus Schaller" <hns@goldelico.com>,
  Michael Turquette <mturquette@baylibre.com>,
  Graeme Smecher <gsmecher@threespeedlogic.com>, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, Tero Kristo <t-kristo@ti.com>,
  Stephen Boyd <sboyd@kernel.org>, Andreas Kemnade <andreas@kemnade.info>,
- "H. Nikolaus Schaller" <hns@goldelico.com>, linux-omap@vger.kernel.org,
+ Keerthy <j-keerthy@ti.com>, linux-omap@vger.kernel.org,
  Adam Ford <aford173@gmail.com>, Brian Hutchinson <b.hutchman@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -74,113 +75,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let's allow probing the 32k counter directly based on devicetree data to
-prepare for dropping the related legacy platform code. Let's only do this
-if the parent node is compatible with ti-sysc to make sure we have the
-related devicetree data available.
+The TI dual-mode timer can be used for both clocksource and clockevent
+system timers. We need a way to specify which dual-mode timers are
+reserved for system timers as there are multiple instances available
+that may require a board specific configuration.
 
-Let's also show the 32k counter information before registering the
-clocksource, now we see it after the clocksource information which is a
-bit confusing.
+Let's add a generic compatible "ti,dmtimer" that TIMER_OF_DECLARE can
+use as suggested by Daniel Lezcano <daniel.lezcano@linaro.org>.
 
-Cc: linux-kernel@vger.kernel.org
-Cc: linux-omap@vger.kernel.org
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
-Cc: Keerthy <j-keerthy@ti.com>
-Cc: Lokesh Vutla <lokeshvutla@ti.com>
-Cc: Tero Kristo <t-kristo@ti.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
+Suggested-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/clocksource/timer-ti-32k.c | 48 +++++++++++++++++++++++++++++-
- 1 file changed, 47 insertions(+), 1 deletion(-)
+ Documentation/devicetree/bindings/timer/ti,timer.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/clocksource/timer-ti-32k.c b/drivers/clocksource/timer-ti-32k.c
---- a/drivers/clocksource/timer-ti-32k.c
-+++ b/drivers/clocksource/timer-ti-32k.c
-@@ -24,6 +24,7 @@
-  * Copyright (C) 2015 Texas Instruments Incorporated - http://www.ti.com
-  */
+diff --git a/Documentation/devicetree/bindings/timer/ti,timer.txt b/Documentation/devicetree/bindings/timer/ti,timer.txt
+--- a/Documentation/devicetree/bindings/timer/ti,timer.txt
++++ b/Documentation/devicetree/bindings/timer/ti,timer.txt
+@@ -14,6 +14,7 @@ Required properties:
+ 			ti,omap5430-timer (applicable to OMAP543x devices)
+ 			ti,am335x-timer	(applicable to AM335x devices)
+ 			ti,am335x-timer-1ms (applicable to AM335x devices)
++			ti,dmtimer (applicable to system timers)
  
-+#include <linux/clk.h>
- #include <linux/init.h>
- #include <linux/time.h>
- #include <linux/sched_clock.h>
-@@ -76,6 +77,49 @@ static u64 notrace omap_32k_read_sched_clock(void)
- 	return ti_32k_read_cycles(&ti_32k_timer.cs);
- }
- 
-+static void __init ti_32k_timer_enable_clock(struct device_node *np,
-+					     const char *name)
-+{
-+	struct clk *clock;
-+	int error;
-+
-+	clock = of_clk_get_by_name(np->parent, name);
-+	if (IS_ERR(clock)) {
-+		/* Only some SoCs have a separate interface clock */
-+		if (PTR_ERR(clock) == -EINVAL && !strncmp("ick", name, 3))
-+			return;
-+
-+		pr_warn("%s: could not get clock %s %li\n",
-+			__func__, name, PTR_ERR(clock));
-+		return;
-+	}
-+
-+	error = clk_prepare_enable(clock);
-+	if (error) {
-+		pr_warn("%s: could not enable %s: %i\n",
-+			__func__, name, error);
-+		return;
-+	}
-+}
-+
-+static void __init ti_32k_timer_module_init(struct device_node *np,
-+					    void __iomem *base)
-+{
-+	void __iomem *sysc = base + 4;
-+
-+	if (!of_device_is_compatible(np->parent, "ti,sysc"))
-+		return;
-+
-+	ti_32k_timer_enable_clock(np, "fck");
-+	ti_32k_timer_enable_clock(np, "ick");
-+
-+	/*
-+	 * Force idle module as wkup domain is active with MPU.
-+	 * No need to tag the module disabled for ti-sysc probe.
-+	 */
-+	writel_relaxed(0, sysc);
-+}
-+
- static int __init ti_32k_timer_init(struct device_node *np)
- {
- 	int ret;
-@@ -90,6 +134,7 @@ static int __init ti_32k_timer_init(struct device_node *np)
- 		ti_32k_timer.cs.flags |= CLOCK_SOURCE_SUSPEND_NONSTOP;
- 
- 	ti_32k_timer.counter = ti_32k_timer.base;
-+	ti_32k_timer_module_init(np, ti_32k_timer.base);
- 
- 	/*
- 	 * 32k sync Counter IP register offsets vary between the highlander
-@@ -104,6 +149,8 @@ static int __init ti_32k_timer_init(struct device_node *np)
- 	else
- 		ti_32k_timer.counter += OMAP2_32KSYNCNT_CR_OFF_LOW;
- 
-+	pr_info("OMAP clocksource: 32k_counter at 32768 Hz\n");
-+
- 	ret = clocksource_register_hz(&ti_32k_timer.cs, 32768);
- 	if (ret) {
- 		pr_err("32k_counter: can't register clocksource\n");
-@@ -111,7 +158,6 @@ static int __init ti_32k_timer_init(struct device_node *np)
- 	}
- 
- 	sched_clock_register(omap_32k_read_sched_clock, 32, 32768);
--	pr_info("OMAP clocksource: 32k_counter at 32768 Hz\n");
- 
- 	return 0;
- }
+ - reg:			Contains timer register address range (base address and
+ 			length).
 -- 
 2.26.2
 
