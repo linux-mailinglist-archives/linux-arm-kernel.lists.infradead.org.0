@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD3AF1BE187
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:47:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9E1311BE189
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 16:48:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KFGMYk6IMkE6VORwWZwyrhtDUQT5tDNvD394yJWvND4=; b=IgrTG2LJDFL3rp
-	ONyou1AoH+sFv7rWhIvDesJwuNVBDXn7W1PRT72SU5hebYzdb6lCCFWxUN6s2sw3XqTdHt1c4RPl9
-	TisVzfFJwUMHc8P1ZcscrwTVfyUNKZk0tHJulAhRwAXrik3iCg6mZ8Z+Fbh+/5mfFOxIbNHXQm8s2
-	thWNj3rcfFtx4aapA47WjJqZpql7SeIjMzEuFCM9JfWnq5Fmaqed+NIoOaChuIqFvza+sUUf1ifBo
-	UizfyspLMHg2MWPATDXn4siLh8BY7nkTJ6+CLE/8X+byh9Mn9n+psqVvJc4PtdfuEelfwE9lrU5za
-	t6JaIkXWhVXxLKls6R3g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cwAfWqGAq8CaqDLhkcnFGfyrL8ReBCZobqVqnDfzgnM=; b=kAk+/9Ks4pgiPX
+	XBv3OtbfEVRwM+9rypGzBWOLK8NAE6CBU6jIs9UvGb+7ey3Vgzt+k44QXfVv9Eq490ovAX+TV1+AN
+	Gd/z18OGZd6CsCx87YhCFAYn7A/x6u3R1+g7yzKA8rdUHqhbtWYya8OwI32NoHxnSsBaiZzHnovM0
+	9bcEkt/2+fcZHX24J8omtNq52mwa4LtJ6nGjCVD0CSf6YZ1ViPreBGPr2uYp/kkFNsuclZw1SnJCw
+	OeNKMO+TXl+F12JrlsYaFlc6aYSbBF9WsUMRgqvVsRTdkKZSXrAWL+wlJb5L7r1keii4QYTsvz+JR
+	/iH5ggx9LT5olTrdcy1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTnzv-0001uM-1X; Wed, 29 Apr 2020 14:47:39 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTnzi-0001sF-Lx
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 14:47:28 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03TEkRih027849; Wed, 29 Apr 2020 16:47:22 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=JrIPiTkgDLXSrRQnzVSRty80wJa9TRbjQJelaiwRij0=;
- b=JwUMktf48FF2PsljXEuCR2xkw9mjJjeopDNAzqIeJL97nifniD7adyIsogQB3N1ND0no
- +oynYWeBUAMTnwhqPPRJHeb7OyBwQAhypgu/YsEUYa8w5742NlVpUIwNNL2jhc903xSZ
- cxwUJraOoL5JZ79h+079PzHbMpgKRqOzfoTzouKt6qKEjXLLAh+AEzZ9KGTCUKoMsKYt
- vkTj/cvwlUug+xyunlSIeBd1aRd6F1izLa1EuGFixG1iYGLhr0G+FmRLb9F7NrDO/3WT
- rr7Pg28i1yclIfr3Eu/EIDsnGCAeCtlaRXe5O9tMY5jTJIPdxGPsjLQp6iIxL0Fg56w3 Vg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhcc6yhx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 29 Apr 2020 16:47:22 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 07D5910002A;
- Wed, 29 Apr 2020 16:47:22 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EAFEE2AAF65;
- Wed, 29 Apr 2020 16:47:21 +0200 (CEST)
-Received: from lmecxl0889.tpe.st.com (10.75.127.47) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 29 Apr
- 2020 16:47:20 +0200
-Subject: Re: [PATCH v2 12/12] remoteproc: stm32: Set synchronisation state
- machine if needed
-To: Mathieu Poirier <mathieu.poirier@linaro.org>, <bjorn.andersson@linaro.org>,
- <ohad@wizery.com>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>
-References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <20200424202505.29562-13-mathieu.poirier@linaro.org>
-From: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Message-ID: <defc59b2-4d64-a108-2e5e-ecc579f70a8b@st.com>
-Date: Wed, 29 Apr 2020 16:47:19 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jTo0K-00029x-2h; Wed, 29 Apr 2020 14:48:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jTo04-00027t-7Z; Wed, 29 Apr 2020 14:47:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5CA2F1045;
+ Wed, 29 Apr 2020 07:47:46 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.53])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7E7CD3F68F;
+ Wed, 29 Apr 2020 07:47:44 -0700 (PDT)
+Date: Wed, 29 Apr 2020 15:47:41 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Miquel Raynal <miquel.raynal@bootlin.com>,
+ Richard Weinberger <richard@nod.at>
+Subject: Re: [PATCH] mtd: cfi_cmdset_0001: Support the absence of protection
+ registers
+Message-ID: <20200429144741.GB16356@bogus>
+References: <20200417142325.2931423-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20200424202505.29562-13-mathieu.poirier@linaro.org>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG5NODE3.st.com (10.75.127.15) To SFHDAG3NODE1.st.com
- (10.75.127.7)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-29_07:2020-04-29,
- 2020-04-29 signatures=0
+Content-Disposition: inline
+In-Reply-To: <20200417142325.2931423-1-jean-philippe@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_074727_024330_9DB6943A 
-X-CRM114-Status: GOOD (  19.03  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200429_074748_342873_55F2082E 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,91 +64,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-remoteproc@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, loic.pallardy@st.com,
- linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-mtd@lists.infradead.org, vigneshr@ti.com,
+ linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 4/24/20 10:25 PM, Mathieu Poirier wrote:
-> Set the flags and operations to use if the M4 has been started
-> by another entity than the remoteproc core.
-> 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> ---
->  drivers/remoteproc/stm32_rproc.c | 16 +++++++++++++++-
->  1 file changed, 15 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index dcae6103e3df..02dad3f51c7a 100644
-> --- a/drivers/remoteproc/stm32_rproc.c
-> +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -598,13 +598,20 @@ static struct rproc_ops st_rproc_ops = {
->  	.get_boot_addr	= rproc_elf_get_boot_addr,
->  };
->  
-> -static __maybe_unused struct rproc_ops st_rproc_sync_ops = {
-> +static struct rproc_ops st_rproc_sync_ops = {
->  	.start		= stm32_rproc_sync_start,
->  	.stop		= stm32_rproc_stop,
-> +	.kick		= stm32_rproc_kick,
-
-Seems independent of the path.
-
->  	.parse_fw       = stm32_rproc_sync_parse_fw,
->  	.find_loaded_rsc_table = stm32_rproc_sync_elf_find_loaded_rsc_table,
->  };
->  
-> +static struct rproc_sync_flags st_sync_flags = {
-> +	.on_init = true, /* sync with MCU when the kernel boots */
-> +	.after_stop = false, /* don't resync with MCU if stopped from sysfs */
-> +	.after_crash = false, /* don't resync with MCU after a crash */
-> +};
-> +
-could be const
-
->  static const struct of_device_id stm32_rproc_match[] = {
->  	{ .compatible = "st,stm32mp1-m4" },
->  	{},
-> @@ -803,6 +810,7 @@ static int stm32_rproc_probe(struct platform_device *pdev)
->  	struct stm32_rproc *ddata;
->  	struct device_node *np = dev->of_node;
->  	struct rproc *rproc;
-> +	struct rproc_sync_flags sync_flags = {0};
->  	unsigned int state;
->  	bool auto_boot = false;
->  	int ret;
-> @@ -837,11 +845,17 @@ static int stm32_rproc_probe(struct platform_device *pdev)
->  	}
->  
->  	if (state == M4_STATE_CRUN) {
-> +		auto_boot = true;
-> +		sync_flags = st_sync_flags;
-
-seems an useless copy 
-
-Regards,
-Arnaud
-
->  		ret = stm32_rproc_get_loaded_rsc_table(pdev, ddata);
->  		if (ret)
->  			goto free_rproc;
->  	}
->  
-> +	ret = rproc_set_state_machine(rproc, &st_rproc_sync_ops, sync_flags);
-> +	if (ret)
-> +		goto free_rproc;
-> +
->  	rproc->auto_boot = auto_boot;
->  	rproc->has_iommu = false;
->  	ddata->workqueue = create_workqueue(dev_name(dev));
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBBcHIgMTcsIDIwMjAgYXQgMDQ6MjM6MjZQTSArMDIwMCwgSmVhbi1QaGlsaXBwZSBC
+cnVja2VyIHdyb3RlOgo+IFRoZSBmbGFzaCBjb250cm9sbGVyIGltcGxlbWVudGVkIGJ5IHRoZSBB
+cm0gQmFzZSBwbGF0Zm9ybSBiZWhhdmVzIGxpa2UKPiB0aGUgSW50ZWwgU3RyYXRhRmxhc2ggSjMg
+ZGV2aWNlLCBidXQgb21pdHMgc2V2ZXJhbCBmZWF0dXJlcy4gSW4KPiBwYXJ0aWN1bGFyIGl0IGRv
+ZXNuJ3QgaW1wbGVtZW50IGEgcHJvdGVjdGlvbiByZWdpc3Rlciwgc28gIk51bWJlciBvZgo+IFBy
+b3RlY3Rpb24gcmVnaXN0ZXIgZmllbGRzIiBpbiB0aGUgUHJpbWFyeSBWZW5kb3ItU3BlY2lmaWMg
+RXh0ZW5kZWQKPiBRdWVyeSwgaXMgMC4KPiAKPiBUaGUgSW50ZWwgU3RyYXRhRmxhc2ggSjMgZGF0
+YXNoZWV0IG9ubHkgbGlzdHMgMSBhcyBhIHZhbGlkIHZhbHVlIGZvcgo+IE51bVByb3RlY3Rpb25G
+aWVsZHMuIEl0IGRlc2NyaWJlcyB0aGUgZmllbGQgYXM6Cj4gCj4gCSJOdW1iZXIgb2YgUHJvdGVj
+dGlvbiByZWdpc3RlciBmaWVsZHMgaW4gSkVERUMgSUQgc3BhY2UuCj4gCeKAnDAwaCzigJ0gaW5k
+aWNhdGVzIHRoYXQgMjU2IHByb3RlY3Rpb24gYnl0ZXMgYXJlIGF2YWlsYWJsZSIKPiAKPiBXaGls
+ZSBhIHZhbHVlIG9mIDAgbWF5IGFyZ3VhYmx5IG5vdCBiZSBhcmNoaXRlY3R1cmFsbHkgdmFsaWQs
+IHRoZQo+IGRyaXZlcidzIGN1cnJlbnQgYmVoYXZpb3IgaXMgY2VydGFpbmx5IHdyb25nOiBpZiBO
+dW1Qcm90ZWN0aW9uRmllbGRzIGlzCj4gMCwgcmVhZF9wcmlfaW50ZWxleHQoKSBhZGRzIGEgbmVn
+YXRpdmUgdmFsdWUgdG8gdGhlIHVuc2lnbmVkIGV4dHJhX3NpemUsCj4gYW5kIGVuZHMgdXAgaW4g
+YW4gaW5maW5pdGUgbG9vcC4KPiAKPiBGaXggaXQgYnkgaWdub3JpbmcgYSBOdW1Qcm90ZWN0aW9u
+RmllbGRzIG9mIDAuCj4gCj4gU2lnbmVkLW9mZi1ieTogSmVhbi1QaGlsaXBwZSBCcnVja2VyIDxq
+ZWFuLXBoaWxpcHBlQGxpbmFyby5vcmc+Cj4gLS0tCj4gSSBndWVzcyB0aGlzIGZsYXNoIGRldmlj
+ZSBoYXMgbmV2ZXIgYmVlbiB0ZXN0ZWQgb24gTGludXguIFRoZSBidWcgc2hvd2VkCj4gdXAgd2hl
+biB0cnlpbmcgdG8gYm9vdCB0aGUgbGF0ZXN0IGFybTY0IGRlZmNvbmZpZywgd2hpY2ggZW5hYmxl
+ZAo+IENPTkZJR19NVERfUEhZU01BUF9PRiwgb24gdGhlIFJldkMgRmFzdE1vZGVsLiBXaXRob3V0
+IHRoaXMgY29uZmlnIG9wdGlvbgo+IHRoZSBkZXZpY2UgaXNuJ3QgcHJvYmVkLgoKQW55IHByb2dy
+ZXNzIHdpdGggdGhpcyBwYXRjaCA/CgpGV0lXLCB0aGlzIGZpeGVzIGJvb3Qgb24gZmV3IGFybTY0
+IEFybSBMdGQgRmFzdE1vZGVscyB3ZSB1c2UgZm9yCmRldmVsb3BtZW50IGluY2x1ZGluZyB0aGUg
+YWJvdmUgbWVudGlvbmVkIFJldkMgRmFzdE1vZGVsLiBTbywKClRlc3RlZC1ieTogIFN1ZGVlcCBI
+b2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+CgotLSAKUmVnYXJkcywKU3VkZWVwCgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
