@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36F401BE90B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 22:47:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31C341BE8F7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 22:46:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CrbmgRjjarZWF9wZOfkOAezRU1hs8U1eYwliYbvpzpc=; b=Gd+a/RZKjp7tGF
-	Id5RFUldzxtwV8QGE5H0Et9DzxKWoihJEhgg9u7wn8miIDS3AvjRo3G4Rdd/CS76+KK220AHgE9wJ
-	5/YEQaP/BB4aQEx1LSEij/IhYcfwGnc+KJWIvqqcse5DCmytu0YcxHhPKuvP+5o9nNfd9dW5nUBHU
-	+AYOzQlCLPpO/hZAmZT+q1jdsf8AhWD90wlTkrU125yajHEhcKgdhzbxQ9QQloeUl3j0/uUFH8wuP
-	DnrXkBXxUNl7IY46WVAWYxjIeVUhplVDUlWlQblFWWzk0VD6BV8e+xh0O29kj1xwiKGwhIyYxrguQ
-	4jdQ15BQb6xdRVWAMkeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Tk91amooFRubrqmHvcLukFPYavF6dReGOy9NKtl7SMk=; b=TG2IHjFC89ZD2l
+	pbDysCXVy4u6mrlGjVgw4Vnik83fcj6VsLzHguPMB6WqQ4BrfHjSBh416ea+8Qhl8t7v22Kc77BoK
+	l15gRSnniWg8+Q8I5qKchuYDMNXzR/da3Eog2xL6hActN2y0EGSlk86+Snw14/6zkQqPLZMT4NB6u
+	ky2ogdmlF8NklQ6RQcL17u6fK6KwbbOVcHbetLs8//6D9LbnGftjVCTclCa8PvZIRBmIOr58/yFss
+	WAlL9dGGpB+K45CHOZFOkDr9LgU7KmuGs5HgOwopwvwidzXD/dutF9UGut5kkUvPjKRAOcRCFJgLO
+	Xqdm5aH+b+zhKtRmBvbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTtc3-0005Rx-JH; Wed, 29 Apr 2020 20:47:23 +0000
+	id 1jTtbJ-0004hh-5d; Wed, 29 Apr 2020 20:46:37 +0000
 Received: from plaes.org ([188.166.43.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTtbW-00054U-H0
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:46:52 +0000
+ id 1jTtb8-0004es-8b
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 20:46:27 +0000
 Received: from localhost (unknown [IPv6:2001:1530:1000:d397:940e:6b9e:3deb:3])
- by plaes.org (Postfix) with ESMTPSA id 8259C40020;
- Wed, 29 Apr 2020 20:46:18 +0000 (UTC)
+ by plaes.org (Postfix) with ESMTPSA id 92F91406D2;
+ Wed, 29 Apr 2020 20:46:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=plaes.org; s=mail;
- t=1588193178; bh=Rqs4HjYcziWdoELVeMyrIuXF1YyfE34PXc+elobZQps=;
- h=From:To:Cc:Subject:Date:From;
- b=hk/9t7lgfmJHTxXPfraMm8glNpLJjruhcgVLxCg+WeYERuAqjqsEgY4SBIrC2UgJg
- aMqL3gounEr6LZcNMNSXqtMlkkHoka0CH+yG0F8G7OjCdYB1qMHbSrHIwhE28coN6e
- oskYJmr734Hd7fm+p3ih2cj4TuZLklnnpyRLPrIe6vXifYU0/7n1GWQtQRwLpJnFIj
- BV5pGrKa3BL8TKh10ZjEQO8jqT1gP+oRvbPLDi306XjHb1xgGs8mqHKrkD77ASJ/TC
- idigqFGCLqhCyJVFcsxU+kjR2xD/3H/D0DM4cVbjkQuWGlmmwOqfVO+BRUfT+7JsB8
- aH5uFMc4SarWw==
+ t=1588193180; bh=oXxncios4NGf2aktHiZX8FnCvunPuUkRAB5eO78zbrg=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=IQhJtA3O6U6JCR32OoY0yGZk+wkoR+mazjBOT2uiJTHCusppZ2YPufw/sgfbmANCu
+ UDqRAeOOmk8wz4ILHVCOJkGEH6SEsUfzdkPSadRR/GLi/ataECoiQx7PoN568Zx4nO
+ qFsPMesW6/IxRbvUMYm0cAW83f+vIjQh26akHkO17W31aaLyBgEFdk+gJwacuNMmYO
+ oAh2spSY91Fz6L7j7oENLHG56F3M+Dfp4dhOxE2+tbzQgLvWORrYsbd/DecsKwjBUy
+ 5dYJe+HQQ7ZTEtx80OjzkiXYYqZsgcbCvJ3gAp4PN62a/deQhNVdx0kCUIyomm2yBd
+ frsWFybK4wQNQ==
 From: Priit Laes <plaes@plaes.org>
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
  linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  devicetree@vger.kernel.org, linux-sunxi@googlegroups.com
-Subject: [PATCH v2 0/6] ARM: sunxi: Convert A20/A31 GMAC driver to use CCU
-Date: Wed, 29 Apr 2020 23:46:06 +0300
-Message-Id: <20200429204612.31883-1-plaes@plaes.org>
+Subject: [PATCH v2 1/6] clk: sunxi-ng: a20: Register regmap for sun7i CCU
+Date: Wed, 29 Apr 2020 23:46:07 +0300
+Message-Id: <20200429204612.31883-2-plaes@plaes.org>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200429204612.31883-1-plaes@plaes.org>
+References: <20200429204612.31883-1-plaes@plaes.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_134650_715850_FFBD1FD0 
-X-CRM114-Status: UNSURE (   7.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200429_134626_606646_9EEC8639 
+X-CRM114-Status: GOOD (  14.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,42 +81,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This serie converts Allwinner A20 and A31 GMAC driver to CCU
-while still retaining compatibility with existing devicetrees.
+On sun7i, the gmac clock is handled by the dwmac-sunxi driver, but
+its configuration register is located in the CCU register range,
+requiring proper regmap setup.
 
-This patchset touches 3 areas:
-- sun7i and sun6i CCUs now set up regmap to allow dwmac-sunxi driver
-to properly access the GMAC clock register.
-- dwmac-sunxi can now handle syscon-based clock register to handle
-clock itself.
-- sun7i and sun6i devicetrees are converted to use the new syscon-based
-access.
+In order to do that, we use CLK_OF_DECLARE_DRIVER to initialize
+sun7i ccu, which clears the OF_POPULATED flag, allowing the
+platform device to probe the same resource with proper device node.
 
-Changes since v1:
-* Use CLK_OF_DECLARE_DRIVER to make it possible to probe again and set up
-regmap using platform device probe.
-* Clarify the meaning of "legacy" in dwmac-sunxi driver.
-* Make sure we don't mess with the RX/TX delay settings when updating
-clock registers.
-* Update devicetree bindings
-* Add sun6i-A31 support. (not tested due to lack of hardware)
+Signed-off-by: Priit Laes <plaes@plaes.org>
+---
+ drivers/clk/sunxi-ng/ccu-sun4i-a10.c | 60 +++++++++++++++++++++++++++-
+ 1 file changed, 59 insertions(+), 1 deletion(-)
 
-Priit Laes (6):
-  clk: sunxi-ng: a20: Register regmap for sun7i CCU
-  clk: sunxi-ng: a31: Register regmap for sun6i CCU
-  net: stmmac: dwmac-sunxi: Implement syscon-based clock handling
-  dt-bindings: net: sun7i-gmac: Add syscon support
-  ARM: dts: sun7i: Use syscon-based implementation for gmac
-  ARM: dts: sun6i: Use syscon-based implementation for gmac
-
- .../net/allwinner,sun7i-a20-gmac.yaml         |  15 +-
- arch/arm/boot/dts/sun6i-a31.dtsi              |  35 +----
- arch/arm/boot/dts/sun7i-a20.dtsi              |  36 +----
- drivers/clk/sunxi-ng/ccu-sun4i-a10.c          |  60 +++++++-
- drivers/clk/sunxi-ng/ccu-sun6i-a31.c          |  60 +++++++-
- .../net/ethernet/stmicro/stmmac/dwmac-sunxi.c | 130 ++++++++++++++++--
- 6 files changed, 258 insertions(+), 78 deletions(-)
-
+diff --git a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+index f32366d9336e..fbdf9ecf21b8 100644
+--- a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
++++ b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+@@ -8,6 +8,8 @@
+ #include <linux/clk-provider.h>
+ #include <linux/io.h>
+ #include <linux/of_address.h>
++#include <linux/platform_device.h>
++#include <linux/regmap.h>
+ 
+ #include "ccu_common.h"
+ #include "ccu_reset.h"
+@@ -1478,5 +1480,61 @@ static void __init sun7i_a20_ccu_setup(struct device_node *node)
+ {
+ 	sun4i_ccu_init(node, &sun7i_a20_ccu_desc);
+ }
+-CLK_OF_DECLARE(sun7i_a20_ccu, "allwinner,sun7i-a20-ccu",
++CLK_OF_DECLARE_DRIVER(sun7i_a20_ccu, "allwinner,sun7i-a20-ccu",
+ 	       sun7i_a20_ccu_setup);
++
++/*
++ * Regmap for the GMAC driver (dwmac-sunxi) to allow access to
++ * GMAC configuration register.
++ */
++#define SUN7I_A20_GMAC_CFG_REG 0x164
++static bool sun7i_a20_ccu_regmap_accessible_reg(struct device *dev,
++						unsigned int reg)
++{
++	if (reg == SUN7I_A20_GMAC_CFG_REG)
++		return true;
++	return false;
++}
++
++static struct regmap_config sun7i_a20_ccu_regmap_config = {
++	.reg_bits	= 32,
++	.val_bits	= 32,
++	.reg_stride	= 4,
++	.max_register	= 0x1f4, /* clk_out_b */
++
++	.readable_reg	= sun7i_a20_ccu_regmap_accessible_reg,
++	.writeable_reg	= sun7i_a20_ccu_regmap_accessible_reg,
++};
++
++static int sun7i_a20_ccu_probe_regmap(struct platform_device *pdev)
++{
++	void __iomem *reg;
++	struct resource *res;
++	struct regmap *regmap;
++
++	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
++	reg = devm_ioremap(&pdev->dev, res->start, resource_size(res));
++	if (IS_ERR(reg))
++		return PTR_ERR(reg);
++
++	regmap = devm_regmap_init_mmio(&pdev->dev, reg,
++				       &sun7i_a20_ccu_regmap_config);
++	if (IS_ERR(regmap))
++		return PTR_ERR(regmap);
++
++	return 0;
++}
++
++static const struct of_device_id sun7i_a20_ccu_ids[] = {
++	{ .compatible = "allwinner,sun7i-a20-ccu"},
++	{ }
++};
++
++static struct platform_driver sun7i_a20_ccu_driver = {
++	.probe = sun7i_a20_ccu_probe_regmap,
++	.driver = {
++		.name = "sun7i-a20-ccu",
++		.of_match_table = sun7i_a20_ccu_ids,
++	},
++};
++builtin_platform_driver(sun7i_a20_ccu_driver);
 -- 
 2.26.2
 
