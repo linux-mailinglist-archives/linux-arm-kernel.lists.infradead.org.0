@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B30B01BD3BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 06:31:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09E901BD3BB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 06:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=iZjWVppMsjQdLjicXC3Ue7n+387V7HI1WhpQoaeCgvI=; b=CBG6EtkiJQvOHv
-	KoKhSqJTfft/9jBIRXDAffG7jgFKVr6x3sy8J3mOq4VHxO3j+VBgsVSH1Nt2x8crhJlSX0+nLrj6R
-	PJTVbPGRawHY4UbQmx7hp2+hWjHuhjZwEmcHTDDUE1x4ydbrq8Bot/874G+JA4T4oxy8KFqnnm7oh
-	i9nb99w4LVWzNgACUwTlJXNtGXL9svT00isOJxW4jDyRPnINS9kqeHr5RQKDFqx5t4fXX1DK6Y9V1
-	5FUtxzzj07KmDlL8nq/YqN3sHa32cXi/M7lPzpnPCK8nuSLt9iX9CNEnRlawt6J2KDaFbMfQQ2Y95
-	T/dSjMW06tIWClr8PlQA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wd8f3HY3HGOSk3IWsAG1trRxi+QzuD+erIvFrFhDXkc=; b=CRpf+T/SeSdErh
+	VVUZAH9TNi9xv9uebmQ5aXOZ1JbHqt+DSCvykF/tqE+Vh79/FChbuebHrMTkiwTFewiMeNVxIHUIq
+	9PZMd6JJd0xwLYj5ZgLdD72uxRfI6mphElcXG327RsOY6FHjfw2LjZh8L8Nxb06t5Z+eW/gRwr/tP
+	IDVk8RH6Z6l9UUaa5jkHJlIrN4ZsksoR2El7XP3faknU6j8BaMsVtM1FcWusZdM0woyw+xPq6aa7T
+	JyYEWiZxDdDO0L3vMn7QkOBiGGJDQAHFpqfNgSpWCdb2gmO76uycicfqEwYHsNcavndBGMDdmJK9t
+	09GG6RfThBPSxhFDiJtA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTeNT-0002nz-Ra; Wed, 29 Apr 2020 04:31:19 +0000
+	id 1jTeNC-0002gD-D0; Wed, 29 Apr 2020 04:31:02 +0000
 Received: from guitar.tcltek.co.il ([192.115.133.116] helo=mx.tkos.co.il)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTeN2-0002dx-Nm
+ id 1jTeN3-0002dw-FV
  for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 04:30:54 +0000
 Received: from tarshish.tkos.co.il (unknown [10.0.8.2])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mx.tkos.co.il (Postfix) with ESMTPS id 4E09B440535;
+ by mx.tkos.co.il (Postfix) with ESMTPS id A59EB44061F;
  Wed, 29 Apr 2020 07:30:43 +0300 (IDT)
 From: Baruch Siach <baruch@tkos.co.il>
 To: Jason Cooper <jason@lakedaemon.net>, Andrew Lunn <andrew@lunn.ch>,
  Gregory Clement <gregory.clement@bootlin.com>,
  Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Subject: [PATCH 1/2] ARM: dts: marvell: drop i2c timeout-ms property
-Date: Wed, 29 Apr 2020 07:30:35 +0300
-Message-Id: <21ba4c9abd5e411ba936ead8f043c5a7e490d530.1588134636.git.baruch@tkos.co.il>
+Subject: [PATCH 2/2] arm64: dts: marvell: drop i2c timeout-ms property
+Date: Wed, 29 Apr 2020 07:30:36 +0300
+Message-Id: <26aad6ac18993b78496ea224337d9944878fcc81.1588134636.git.baruch@tkos.co.il>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <21ba4c9abd5e411ba936ead8f043c5a7e490d530.1588134636.git.baruch@tkos.co.il>
+References: <21ba4c9abd5e411ba936ead8f043c5a7e490d530.1588134636.git.baruch@tkos.co.il>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200428_213053_237463_4EAD4CDB 
-X-CRM114-Status: UNSURE (   7.64  )
+X-CRM114-CacheID: sfid-20200428_213053_724820_47FD3491 
+X-CRM114-Status: UNSURE (   8.65  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,120 +74,20 @@ never been supported. Drop it.
 
 Signed-off-by: Baruch Siach <baruch@tkos.co.il>
 ---
- arch/arm/boot/dts/armada-370-xp.dtsi | 2 --
- arch/arm/boot/dts/armada-375.dtsi    | 2 --
- arch/arm/boot/dts/armada-38x.dtsi    | 2 --
- arch/arm/boot/dts/armada-39x.dtsi    | 4 ----
- arch/arm/boot/dts/dove.dtsi          | 1 -
- 5 files changed, 11 deletions(-)
+ arch/arm64/boot/dts/marvell/armada-ap80x.dtsi | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/armada-370-xp.dtsi b/arch/arm/boot/dts/armada-370-xp.dtsi
-index c15f5e92f97f..0b8c2a64b36f 100644
---- a/arch/arm/boot/dts/armada-370-xp.dtsi
-+++ b/arch/arm/boot/dts/armada-370-xp.dtsi
-@@ -114,7 +114,6 @@ i2c0: i2c@11000 {
+diff --git a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+index e7438c21ccee..7f9b9a647717 100644
+--- a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
++++ b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
+@@ -201,7 +201,6 @@ i2c0: i2c@511000 {
  				#address-cells = <1>;
  				#size-cells = <0>;
- 				interrupts = <31>;
+ 				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
 -				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
+ 				clocks = <&ap_clk 3>;
  				status = "disabled";
- 			};
-@@ -124,7 +123,6 @@ i2c1: i2c@11100 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <32>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-diff --git a/arch/arm/boot/dts/armada-375.dtsi b/arch/arm/boot/dts/armada-375.dtsi
-index 2932a29ae272..9805e507c695 100644
---- a/arch/arm/boot/dts/armada-375.dtsi
-+++ b/arch/arm/boot/dts/armada-375.dtsi
-@@ -236,7 +236,6 @@ i2c0: i2c@11000 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-@@ -247,7 +246,6 @@ i2c1: i2c@11100 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-diff --git a/arch/arm/boot/dts/armada-38x.dtsi b/arch/arm/boot/dts/armada-38x.dtsi
-index e038abc0c6b4..348116501aa2 100644
---- a/arch/arm/boot/dts/armada-38x.dtsi
-+++ b/arch/arm/boot/dts/armada-38x.dtsi
-@@ -153,7 +153,6 @@ i2c0: i2c@11000 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-@@ -164,7 +163,6 @@ i2c1: i2c@11100 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-diff --git a/arch/arm/boot/dts/armada-39x.dtsi b/arch/arm/boot/dts/armada-39x.dtsi
-index b1b86934c688..e0b7c2099831 100644
---- a/arch/arm/boot/dts/armada-39x.dtsi
-+++ b/arch/arm/boot/dts/armada-39x.dtsi
-@@ -108,7 +108,6 @@ i2c0: i2c@11000 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 2 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-@@ -119,7 +118,6 @@ i2c1: i2c@11100 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 3 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-@@ -130,7 +128,6 @@ i2c2: i2c@11200 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-@@ -141,7 +138,6 @@ i2c3: i2c@11300 {
- 				#address-cells = <1>;
- 				#size-cells = <0>;
- 				interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
--				timeout-ms = <1000>;
- 				clocks = <&coreclk 0>;
- 				status = "disabled";
- 			};
-diff --git a/arch/arm/boot/dts/dove.dtsi b/arch/arm/boot/dts/dove.dtsi
-index 3081b04e8c08..a551fabae851 100644
---- a/arch/arm/boot/dts/dove.dtsi
-+++ b/arch/arm/boot/dts/dove.dtsi
-@@ -175,7 +175,6 @@ i2c: i2c@11000 {
- 				#size-cells = <0>;
- 				interrupts = <11>;
- 				clock-frequency = <400000>;
--				timeout-ms = <1000>;
- 				clocks = <&core_clk 0>;
- 				status = "okay";
  			};
 -- 
 2.26.2
