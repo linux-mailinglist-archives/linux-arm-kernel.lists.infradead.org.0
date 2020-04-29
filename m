@@ -2,55 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F3A61BDD4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:14:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D45E41BDD74
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 15:23:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=01bKbT4VhkyWc2/GWInsB1+H4th13Me32Mxv6q+zTsA=; b=JUDnYPoBIDiT0LUeJ5/sVXUCm
-	hwwSKOnI/ZbfYH9ot1xm7avPG5lw/P5gvexJPy4xkSAJU94hb+x3YolbCa18AohxaIQix8S9Knz/U
-	DB58KJ/BiTum1dAHgrStH+yMSFWZl3cNLISVzbRNPvIzVGdUkoyx7YaRCQQ/EbUyJMn6n4Cl/n8+V
-	WHgdNhZei7sX2F9JO8lSnH0TFJ2reZHmlUzqtA9p4jKiGpUdMGKaenXns7z8ktJZDovRsEZGayEet
-	tq9oDblSmHsKFXp4H0WsPuHLIZQlQGSig6F9/wr0+CUIybrGGjjAusuYvPDF02pdndqHWFQT6oTqU
-	W7PgnJoqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iDLqSnV7GDsrql2uP4wF/plTMpuZsFrsY1KlHyzV+ik=; b=MAGcwdUByBXm0E
+	R1qIoXc4tkW1SlWMIZ8E2YZoeIjl5jFRtL9hCR+c/1vPy/eT0zrb285gjSOpVW/pewmn+1F2s/S+t
+	gUbEkwlKoRGEhC4pfO29fDwVajuygesxoO2ezrjKxQ5kHV7Ml396MuIWE7HfXth8aXExKhovrSX8Z
+	rLHjp9ctN1t45ka4ZkO7LkDb/W96Us3fgU2rTeohIO+X5VybADOouMfi8lLCVuLoTaP4fEXaahiEe
+	/gAL86D3x8uP05OaY8Pf23DgpQ6PmlfEjC3jCb3chbu4u+Pkc40HIZ6ejahTVqcalhdrKtzSZecYp
+	tveKiPzoyn9ZV0RlRAaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTmXf-0000XA-KJ; Wed, 29 Apr 2020 13:14:23 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1jTmg5-0002fi-I1; Wed, 29 Apr 2020 13:23:05 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTmXU-0000VF-PA
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:14:14 +0000
-X-Originating-IP: 93.29.109.196
-Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
- (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id F36E26000C;
- Wed, 29 Apr 2020 13:13:59 +0000 (UTC)
-Date: Wed, 29 Apr 2020 15:13:59 +0200
-From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] sun6i: dsi: fix gcc-4.8
-Message-ID: <20200429131359.GJ610776@aptenodytes>
-References: <20200428215105.3928459-1-arnd@arndb.de>
+ id 1jTmft-0002dq-Ag
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 13:22:55 +0000
+Received: by mail-pf1-x444.google.com with SMTP id f7so1061088pfa.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 06:22:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=s693fQ+pEhcw75d9miqzRLRmbxwYH2lCZ/LTdUZaWj0=;
+ b=sJNdDpyktRNw47bxpfLtkY9Et/4ZKTb+JLeg+drVntVgN7dSOkQrfGmJlLPzIScKq7
+ plSwcufg3/lrM5wEx0SYwtcSie8T2GOWofxVxRxxxkrqRccybMCtOhgDW7TqRp6D5fag
+ c3x18EHN0ALI714YdESqwazdHpgafcSRP7MWqXUu6tdMc4JqB90/m+ZuITxcIcfdHe9l
+ NEJhflDYl9xYEWufeTeYfARZG0Ur5YFHAo2Fhu4sX7uyXHU1J5zoOIIJP8/YHa3207pZ
+ nuRz+L1h9Off/1CABvRD223xFWh2/yoS+mPERWScTM+7jouR/anNNMo9ccg216tZ4aIX
+ jI3Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=s693fQ+pEhcw75d9miqzRLRmbxwYH2lCZ/LTdUZaWj0=;
+ b=nUINFRSRQAp6sS9J3r4kBKA6x3+9BosLIY/Ccx1P549UXLRLwDXG5lKprPw5hnvyjJ
+ w8kN4uyIMMjBhYw+ap459MoittKszsPnZcD0KXPzLMxIOEessRwCohAs550rRxELN+XO
+ GVHACGjq4GXUkLjfTltbQAxLpaWyDSq3dPGzjQAx1r7B7YIMUyDYFz+aW3uTK/EBBsCZ
+ ykWl0ZlR/k0iTBurVW/QQk1rDWoEn7zxoKCSjUNlVCuWIOGle+LZj/YJBGl+DH8zlD3v
+ A1nUTsqgCX4EYkx5NvuCM+ThtCT4o/3tlVkXFCNwnxtZoXB+/xNBtvKHLTsYyU+NwlVo
+ rIQQ==
+X-Gm-Message-State: AGi0PuYaQr3nPKvPCsw3wp7xPe7ckzmn57aH5BZeAUF/K3qcU5GX+t7P
+ hZjuaBxHhUumZojBS2xIt8e7
+X-Google-Smtp-Source: APiQypJ9ziGSv9fU2yas0f4ThlVIZQiRlRHltCoLAuIF7GVcKTuKVxh+kbT/FSQOdxZzlEIX5CNFKg==
+X-Received: by 2002:a63:1705:: with SMTP id x5mr33600590pgl.12.1588166572335; 
+ Wed, 29 Apr 2020 06:22:52 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:6114:a3cc:cde9:1262:3f57:5dd])
+ by smtp.gmail.com with ESMTPSA id g6sm4606286pjx.48.2020.04.29.06.22.47
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 29 Apr 2020 06:22:51 -0700 (PDT)
+Date: Wed, 29 Apr 2020 18:52:44 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+Subject: Re: [PATCH v2 1/1] dma: actions: Fix lockdep splat for owl-dma
+Message-ID: <20200429132244.GE6443@Mani-XPS-13-9360>
+References: <1d77970a82cf9b7cdf9f4731439b1e58c37ca3fb.1588156137.git.cristian.ciocaltea@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200428215105.3928459-1-arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <1d77970a82cf9b7cdf9f4731439b1e58c37ca3fb.1588156137.git.cristian.ciocaltea@gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_061412_948832_554CE550 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200429_062253_398621_1DD9D9F3 
+X-CRM114-Status: GOOD (  23.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.195 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,114 +97,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Samuel Holland <samuel@sholland.org>, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-kernel@vger.kernel.org,
- Maxime Ripard <mripard@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org,
- Icenowy Zheng <icenowy@aosc.io>
-Content-Type: multipart/mixed; boundary="===============3821731134249398016=="
+Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Vinod Koul <vkoul@kernel.org>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed, Apr 29, 2020 at 02:01:54PM +0300, Cristian Ciocaltea wrote:
+> When the kernel is built with lockdep support and the owl-dma driver is
+> used, the following message is shown:
+> 
+> [    2.496939] INFO: trying to register non-static key.
+> [    2.501889] the code is fine but needs lockdep annotation.
+> [    2.507357] turning off the locking correctness validator.
+> [    2.512834] CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.6.3+ #15
+> [    2.519084] Hardware name: Generic DT based system
+> [    2.523878] Workqueue: events_freezable mmc_rescan
+> [    2.528681] [<801127f0>] (unwind_backtrace) from [<8010da58>] (show_stack+0x10/0x14)
+> [    2.536420] [<8010da58>] (show_stack) from [<8080fbe8>] (dump_stack+0xb4/0xe0)
+> [    2.543645] [<8080fbe8>] (dump_stack) from [<8017efa4>] (register_lock_class+0x6f0/0x718)
+> [    2.551816] [<8017efa4>] (register_lock_class) from [<8017b7d0>] (__lock_acquire+0x78/0x25f0)
+> [    2.560330] [<8017b7d0>] (__lock_acquire) from [<8017e5e4>] (lock_acquire+0xd8/0x1f4)
+> [    2.568159] [<8017e5e4>] (lock_acquire) from [<80831fb0>] (_raw_spin_lock_irqsave+0x3c/0x50)
+> [    2.576589] [<80831fb0>] (_raw_spin_lock_irqsave) from [<8051b5fc>] (owl_dma_issue_pending+0xbc/0x120)
+> [    2.585884] [<8051b5fc>] (owl_dma_issue_pending) from [<80668cbc>] (owl_mmc_request+0x1b0/0x390)
+> [    2.594655] [<80668cbc>] (owl_mmc_request) from [<80650ce0>] (mmc_start_request+0x94/0xbc)
+> [    2.602906] [<80650ce0>] (mmc_start_request) from [<80650ec0>] (mmc_wait_for_req+0x64/0xd0)
+> [    2.611245] [<80650ec0>] (mmc_wait_for_req) from [<8065aa10>] (mmc_app_send_scr+0x10c/0x144)
+> [    2.619669] [<8065aa10>] (mmc_app_send_scr) from [<80659b3c>] (mmc_sd_setup_card+0x4c/0x318)
+> [    2.628092] [<80659b3c>] (mmc_sd_setup_card) from [<80659f0c>] (mmc_sd_init_card+0x104/0x430)
+> [    2.636601] [<80659f0c>] (mmc_sd_init_card) from [<8065a3e0>] (mmc_attach_sd+0xcc/0x16c)
+> [    2.644678] [<8065a3e0>] (mmc_attach_sd) from [<8065301c>] (mmc_rescan+0x3ac/0x40c)
+> [    2.652332] [<8065301c>] (mmc_rescan) from [<80143244>] (process_one_work+0x2d8/0x780)
+> [    2.660239] [<80143244>] (process_one_work) from [<80143730>] (worker_thread+0x44/0x598)
+> [    2.668323] [<80143730>] (worker_thread) from [<8014b5f8>] (kthread+0x148/0x150)
+> [    2.675708] [<8014b5f8>] (kthread) from [<801010b4>] (ret_from_fork+0x14/0x20)
+> [    2.682912] Exception stack(0xee8fdfb0 to 0xee8fdff8)
+> [    2.687954] dfa0:                                     00000000 00000000 00000000 00000000
+> [    2.696118] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> [    2.704277] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> 
+> The obvious fix would be to use 'spin_lock_init()' on 'pchan->lock'
+> before attempting to call 'spin_lock_irqsave()' in 'owl_dma_get_pchan()'.
+> 
+> However, according to Manivannan Sadhasivam, 'pchan->lock' was supposed
+> to only protect 'pchan->vchan' while 'od->lock' does a similar job in
+> 'owl_dma_terminate_pchan'.
+> 
+> Therefore, this patch will simply substitute 'pchan->lock' with 'od->lock'
+> and removes the 'lock' attribute in 'owl_dma_pchan' struct.
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
 
---===============3821731134249398016==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="yr/DzoowOgTDcSCF"
-Content-Disposition: inline
+Just one minor thing below, other than that,
 
+Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
---yr/DzoowOgTDcSCF
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Thanks for doing this!
 
-Hi,
-
-On Tue 28 Apr 20, 23:50, Arnd Bergmann wrote:
-> Older compilers warn about initializers with incorrect curly
-> braces:
->=20
-> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c: In function 'sun6i_dsi_encoder_en=
-able':
-> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: missing braces aroun=
-d initializer [-Werror=3Dmissing-braces]
->   union phy_configure_opts opts =3D { 0 };
->         ^
-> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: (near initialization=
- for 'opts.mipi_dphy') [-Werror=3Dmissing-braces]
->=20
-> Use the GNU empty initializer extension to avoid this.
-
-Looks good to me:
-Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-
-But maybe use the drm/sun4i: dsi: prefix instead (granted, it wasn't used in
-the commit being fixed).
-
-Cheers,
-
-Paul
-
-> Fixes: bb3b6fcb6849 ("sun6i: dsi: Convert to generic phy handling")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
 > ---
->  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
->=20
-> diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun=
-4i/sun6i_mipi_dsi.c
-> index f6c67dd87a05..aa67cb037e9d 100644
-> --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
-> @@ -718,7 +718,7 @@ static void sun6i_dsi_encoder_enable(struct drm_encod=
-er *encoder)
->  	struct drm_display_mode *mode =3D &encoder->crtc->state->adjusted_mode;
->  	struct sun6i_dsi *dsi =3D encoder_to_sun6i_dsi(encoder);
->  	struct mipi_dsi_device *device =3D dsi->device;
-> -	union phy_configure_opts opts =3D { 0 };
-> +	union phy_configure_opts opts =3D { };
->  	struct phy_configure_opts_mipi_dphy *cfg =3D &opts.mipi_dphy;
->  	u16 delay;
->  	int err;
-> --=20
-> 2.26.0
->=20
+> Changes in v2:
+> * Improve the fix as suggested by Manivannan Sadhasivam: substitute 
+>   'pchan->lock' with 'od->lock' and get rid of the 'lock' attribute in
+>   'owl_dma_pchan' struct
+> * Update the commit message to reflect the changes
+> 
+>  drivers/dma/owl-dma.c | 7 +++----
+>  1 file changed, 3 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+> index c683051257fd..5b1c715a56c8 100644
+> --- a/drivers/dma/owl-dma.c
+> +++ b/drivers/dma/owl-dma.c
+> @@ -181,7 +181,6 @@ struct owl_dma_pchan {
+>  	u32			id;
+>  	void __iomem		*base;
+>  	struct owl_dma_vchan	*vchan;
+> -	spinlock_t		lock;
 
---=20
-Paul Kocialkowski, Bootlin
-Embedded Linux and kernel engineering
-https://bootlin.com
+You should also remove the kerneldoc comment for this lock.
 
---yr/DzoowOgTDcSCF
-Content-Type: application/pgp-signature; name="signature.asc"
+Regards,
+Mani
 
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl6pfZcACgkQ3cLmz3+f
-v9EZuwf/c+11FwGVP8LmF3ZNopR32d3cDoA0mLr1vizGfseJVldesiJUy/VuZI7I
-ppIjTfjte/iBHuyGcv8oAc0GQfkJaCvLFlcSkDUGgH5UfPEqxCTGvPLvV0doT77g
-MAUZw1EnVM2zHZ9IvjLmmes2/nvRMs/knC4qf8H8VW2LcFbDqUt+P9SioDHMEOzz
-ZpKNqa7C6Ll/KK7RljKfhk/i1bzakwyEw5Mv31bMBjJ5QeiP+OnLBDBD6ltBfjM7
-f4ODxc85UpxYB9uoRfgQoE2Dk2aN2h2OMTGt7USnEA3HesH1oxRpP7xWpefwHGfY
-oHhO7JHJ8TOwoWS/iIN+wsbHxbDpWw==
-=QQXf
------END PGP SIGNATURE-----
-
---yr/DzoowOgTDcSCF--
-
-
---===============3821731134249398016==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+>  };
+>  
+>  /**
+> @@ -437,14 +436,14 @@ static struct owl_dma_pchan *owl_dma_get_pchan(struct owl_dma *od,
+>  	for (i = 0; i < od->nr_pchans; i++) {
+>  		pchan = &od->pchans[i];
+>  
+> -		spin_lock_irqsave(&pchan->lock, flags);
+> +		spin_lock_irqsave(&od->lock, flags);
+>  		if (!pchan->vchan) {
+>  			pchan->vchan = vchan;
+> -			spin_unlock_irqrestore(&pchan->lock, flags);
+> +			spin_unlock_irqrestore(&od->lock, flags);
+>  			break;
+>  		}
+>  
+> -		spin_unlock_irqrestore(&pchan->lock, flags);
+> +		spin_unlock_irqrestore(&od->lock, flags);
+>  	}
+>  
+>  	return pchan;
+> -- 
+> 2.26.2
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3821731134249398016==--
-
