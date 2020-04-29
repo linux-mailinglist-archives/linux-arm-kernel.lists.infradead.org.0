@@ -2,70 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 682761BE6C1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 20:58:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AA631BE6FF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 21:11:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Qb7zaEwuXlKX2CuQwsmVTcxLCCx0HIMRB2lFoquiH/I=; b=sJqMb6HjhgxUwT
-	l1qAk891oIqb6h9hCW68aBSPf+aUCe6ss3KDvdwf/n9IxpoCKTfR+75cfd719vlHWSEf9PQcg75fO
-	693ael5HTaAnoeKLmbQqeUBaLCk73lxVBTUI+mFCOeO2+GyPjJW1IKiZqcKyOjMehpDq7IYfuS0pr
-	wjsrxV5e83KY3qrkFDrbtWveVSxujPVYjnxu9Xja0xOOvu0Oti7nzYQ+VgGMDLIDoHXnEX0BCgjrn
-	4MgEIGhJ6VLB2e44aKGFhjIbXBVc78arMEk/K47MpqMvDFRbkXYRkvoy5x42F9fc+NBtersvzDqI9
-	Lglf/KYnAeINWNi8L/hA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=axgbIPcyN+iwuvljj2WT1i5bncBDrh8eqeRhK4RQGVY=; b=JaEdQyzQXzQ74fuKMbHFP+iMLL
+	Z6vXIadGi2bemtj0wSLeDBLOiHZaRvUozs0Sk/FYHyy6ytv4v1V6F/UksLeLuY/dOOMqn/ND4oo/L
+	pekgoieWCq7/yQ7qwKHkUsUuvj/+ZIfFdDAZu/nn3WAU79oKAdDBC8BLWfIcYDAzqUTxjsnRUkVsZ
+	J4AN3SIftxP2ZS9QHQyoKgUI0cDysaVJ1pZQeouGmKI3hFVSBIjptXb5q3aV7KN3aSsPSctb4JBOi
+	W9J8eS7FZT7ssiW2B0OHs9TqrGpP2qkb6sBAANfaEV1E4nE+U/37Uo+lU3GuP2ITfSfcrxiatYOHz
+	K7dDUtag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTruk-0003lr-1d; Wed, 29 Apr 2020 18:58:34 +0000
-Received: from mout.kundenserver.de ([212.227.17.24])
+	id 1jTs72-0005uj-J0; Wed, 29 Apr 2020 19:11:16 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTrua-0003l7-35
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 18:58:25 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1Mo73N-1ioFcd47Vz-00pZnh; Wed, 29 Apr 2020 20:57:33 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Marc Zyngier <maz@kernel.org>, Mike Rapoport <rppt@linux.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH] arm64: kvm: fix gcc-10 shift warning
-Date: Wed, 29 Apr 2020 20:56:20 +0200
-Message-Id: <20200429185657.4085975-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.26.0
+ id 1jTs6r-0005sO-51
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 19:11:07 +0000
+Received: by mail-wr1-x441.google.com with SMTP id i10so3885782wrv.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 29 Apr 2020 12:11:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:subject:in-reply-to:date:message-id
+ :mime-version; bh=HwBlAhl9IzjqWMkaY5fyYm/8tsGpWsJDdfPbj+qf/cw=;
+ b=qcTL7rWJWMCsNYOvmkLnkfwL1OYQTFMr1oCDP+/LG+yoZ54Rb09KxnGDEhScoCYRWF
+ H4Q948HySr2ev6c5+yXIJk0A7XgdS9Jt3n5zOvgZKwn5N+n/aQSPjIl4Gf4r4dHVsHSg
+ RvkXVOyk5xjFz/WTsFhLoJro+kI6XofIpdZKh8fLCvAcvWp1ZRbzSB86WvgZ12nBDKN4
+ awslm7Rk+FHcP8VphplAImX5lym/fvkXDhdhz7pvJ9MLmKnFP+K3Suau4ZfAzHeXFHz1
+ iPHQ2IVMe8S4FWhMm2gEO/iyjzisibU4+dyYf1sMXI8acPoXKyG8lI9ahmeW+YAHoovv
+ VOyw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=HwBlAhl9IzjqWMkaY5fyYm/8tsGpWsJDdfPbj+qf/cw=;
+ b=AeuKFvCIiFlGfCvmaHr5RaoLR74k7gKqwwiBm8frUHCipAI0IZGntbB9ucjIdPYj4l
+ MzlWXO6aSoXoeABbss0RSHVfOkpfOk810/EXdGd/oDhOgho3GuHru/IMKYvLYFS969bx
+ DcZyZX9p7nOVLkav1tWJjCO3bxV9F/rl9exUDd0Achemcevp+vMPQk3xI3nTLCe1bBe0
+ ZWR/qn+e3kC5cK88LqMvTtUCnMqjPNKUJtcHQVkiUIDKVBJyyuOXjg39XgMUZMZHlInX
+ gH9eGB9CP4nKeREJj8OfFzj+y+z1S7Ob5O/E4dw/jpTS+CruEsYFpBmmRP/nP0g5HXPu
+ mN5g==
+X-Gm-Message-State: AGi0PuaD//+NqNleBMmTemd6h2G1rn1yxattRnXB3yItsT1KTkHPwtlM
+ dk6YyzykOCfJ5ZA2xM2Mehk/WA==
+X-Google-Smtp-Source: APiQypKJQgl13isxg5O+xfkBHxn3MAO2tiktrpReGj1EhlU4/X2r3NgW/pVCXn/XoI3DnPrTA122NQ==
+X-Received: by 2002:adf:cd84:: with SMTP id q4mr38584918wrj.320.1588187463599; 
+ Wed, 29 Apr 2020 12:11:03 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id m8sm254005wrx.54.2020.04.29.12.11.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 29 Apr 2020 12:11:02 -0700 (PDT)
+References: <20200415102320.4606-1-christianshewitt@gmail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: chewitt <christianshewitt@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, Kevin Hilman <khilman@baylibre.com>,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] arm64: dts: meson: sm1-khadas-vim3l: add audio playback
+ to vim3l
+In-reply-to: <20200415102320.4606-1-christianshewitt@gmail.com>
+Date: Wed, 29 Apr 2020 21:11:02 +0200
+Message-ID: <1jmu6uhzuh.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:8OXL6NQmTkcBiOCkHQGhzeqEoFYUxBw7WVzJaTTnU7kjO2pO0JM
- vohxDpabUNcn7UsoxF5ym+YjgJOchU1884rbX3nuxFYMv4FB/rT8ozIi8VhoHWbj/EF7FPM
- U+oI0IRs8bC/K66ZNFOZU6JTuSag6RdDgHRdqF4yz8H69o2BDgngLCbAmGfAz69x0LP3CWv
- b1VyXnO0UAWk5jmoJob5g==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:pysSrQd7X8s=:tvN+Zry+xKDmdH/BL5InUX
- k1tAFE1WchomAM9UocK6bXNp4JNYt1/e59RDJNa79qv/7xfQwkCWYLJva6UmP/CQJc3SrX5eN
- 1sKBkSQTG70ZBxT4d8/8Lgr1CSw3AugFsu3m/MaeumdXG0l6a8hJbrvmVNjLaGRqALRzw+AV3
- cOg5xDJUksWvc7nAn8UlShJD1V/LG5K8E9JvYYxuJbcIoIJ2/LuPlSiaMv1/q9/nc2dW+NziG
- 5wf3KrVWmlsGw+cc1r++paHuiOApe512vZzjCAzXBpvmpmEEtp8UopOJhritiVk4ZOT6nTLEJ
- sAKdlaPrr9DQkQ/9dd1NFygEVWwYl4ebCaGMLA/3IDEoXmx6YXjU14ysaixwv+DRwDz/T8hrc
- wsyy49yGM0ASNpgvAzrwzGpOI5O+5+BO4C8IPAMK+ge/1w5BIG67Vb4qUyFLAPiRmRXbpV1po
- e75B5che6cb7E7CpKuuQwx5E/WNwLvNQGUJVxefMBvMkqw3CceT9/O9WM3dAPEgjpePkqgWaw
- f61iiu1vckjcT6R83rSm7xATAcRqXXfPj00qadM830cBOkalW8NRr1RxtYaNyKmGwaauEzcG3
- kdPKX135SM/Wygk8rSEKnwezKDRlGU5sKeTLQDl7cTt0RyUATWYkFmvCrsPpePojs0MRq/p90
- n021UC/9bO+o9vsHrol1N5IcG9sKArHnVX5TKUGDD+q1BTn3ew+69VSj/Q2nFEJv/VL9XiIXf
- X6eCzkNl2qWW3Empf+D/+2fsuXMH7eOqX7LTg9Iw/zoGnvsyTZqmB0nV+VfUOlmOJajSxKpQ/
- 5s7JDIXg+yLnWjUaDR/Q/AxlkUK9if7NstvdDBwY25FedD8Vvk=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_115824_425685_86FD241E 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20200429_121105_197059_70D04F87 
+X-CRM114-Status: GOOD (  13.87  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.24 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.24 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,76 +98,150 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Paul Mackerras <paulus@samba.org>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, Jonas Bonn <jonas@southpole.se>,
- Stephen Rothwell <sfr@canb.auug.org.au>, Brian Cain <bcain@codeaurora.org>,
- Michael Ellerman <mpe@ellerman.id.au>, Russell King <linux@armlinux.org.uk>,
- Ley Foon Tan <ley.foon.tan@intel.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Fenghua Yu <fenghua.yu@intel.com>, Arnd Bergmann <arnd@arndb.de>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
- Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-arm-kernel@lists.infradead.org,
- Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Paolo Bonzini <pbonzini@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-gcc-10 warns that the 32-bit zero cannot be shifted more than
-32 bits to the right:
 
-arch/arm64/kvm/../../../virt/kvm/arm/mmu.c: In function 'clear_hyp_p4d_entry':
-arch/arm64/include/asm/pgtable.h:630:35: error: right shift count >= width of type [-Werror=shift-count-overflow]
-  630 | #define pud_index(addr)  (((addr) >> PUD_SHIFT) & (PTRS_PER_PUD - 1))
-      |                                   ^~
-arch/arm64/include/asm/memory.h:271:45: note: in definition of macro '__phys_to_virt'
-  271 | #define __phys_to_virt(x) ((unsigned long)((x) - physvirt_offset))
-      |                                             ^
-arch/arm64/include/asm/pgtable.h:633:42: note: in expansion of macro '__va'
-  633 | #define pud_offset(dir, addr)  ((pud_t *)__va(pud_offset_phys((dir), (addr))))
-      |                                          ^~~~
-arch/arm64/include/asm/pgtable.h:632:73: note: in expansion of macro 'pud_index'
-  632 | #define pud_offset_phys(dir, addr) (p4d_page_paddr(READ_ONCE(*(dir))) + pud_index(addr) * sizeof(pud_t))
-      |                                                                         ^~~~~~~~~
-arch/arm64/include/asm/pgtable.h:633:47: note: in expansion of macro 'pud_offset_phys'
-  633 | #define pud_offset(dir, addr)  ((pud_t *)__va(pud_offset_phys((dir), (addr))))
-      |                                               ^~~~~~~~~~~~~~~
-arch/arm64/kvm/../../../virt/kvm/arm/mmu.c:510:36: note: in expansion of macro 'pud_offset'
-  510 |  pud_t *pud_table __maybe_unused = pud_offset(p4d, 0);
-      |                                    ^~~~~~~~~~
+On Wed 15 Apr 2020 at 12:23, chewitt <christianshewitt@gmail.com> wrote:
 
-This is harmless, and the warning is a little bit silly for
-a zero constant, but it's trivial to fix by making it an
-unsigned long, so do that.
+> From: Christian Hewitt <christianshewitt@gmail.com>
+>
+> Add the sound and related audio nodes to the VIM3L board.
+>
+> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
+> ---
+>  .../dts/amlogic/meson-sm1-khadas-vim3l.dts    | 88 +++++++++++++++++++
+>  1 file changed, 88 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
+> index dbbf29a0dbf6..b900a433ef7a 100644
+> --- a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
+> +++ b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
+> @@ -8,6 +8,7 @@
+>  
+>  #include "meson-sm1.dtsi"
+>  #include "meson-khadas-vim3.dtsi"
+> +#include <dt-bindings/sound/meson-g12a-tohdmitx.h>
+>  
+>  / {
+>  	compatible = "khadas,vim3l", "amlogic,sm1";
+> @@ -31,6 +32,69 @@
+>  		regulator-boot-on;
+>  		regulator-always-on;
+>  	};
+> +
+> +	sound {
+> +		compatible = "amlogic,axg-sound-card";
+> +		model = "SM1-KHADAS-VIM3L";
+> +		audio-aux-devs = <&tdmout_b>;
+> +		audio-routing = "TDMOUT_B IN 0", "FRDDR_A OUT 1",
+> +				"TDMOUT_B IN 1", "FRDDR_B OUT 1",
+> +				"TDMOUT_B IN 2", "FRDDR_C OUT 1",
+> +				"TDM_B Playback", "TDMOUT_B OUT";
+> +
+> +		assigned-clocks = <&clkc CLKID_MPLL2>,
+> +				  <&clkc CLKID_MPLL0>,
+> +				  <&clkc CLKID_MPLL1>;
+> +		assigned-clock-parents = <0>, <0>, <0>;
+> +		assigned-clock-rates = <294912000>,
+> +				       <270950400>,
+> +				       <393216000>;
+> +		status = "okay";
+> +
+> +		dai-link-0 {
+> +			sound-dai = <&frddr_a>;
+> +		};
+> +
+> +		dai-link-1 {
+> +			sound-dai = <&frddr_b>;
+> +		};
+> +
+> +		dai-link-2 {
+> +			sound-dai = <&frddr_c>;
+> +		};
+> +
+> +		/* 8ch hdmi interface */
 
-Fixes: 22998131ab33 ("arm64: add support for folded p4d page tables")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- virt/kvm/arm/mmu.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+VIM3(L) should not use TDMOUT B or C for the HDMI interface
+* B is on the 40pin header
+* C is on the m2 connector
 
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index 48d4288c5f1b..534d9798c3cb 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -507,7 +507,7 @@ static void clear_hyp_pgd_entry(pgd_t *pgd)
- 
- static void clear_hyp_p4d_entry(p4d_t *p4d)
- {
--	pud_t *pud_table __maybe_unused = pud_offset(p4d, 0);
-+	pud_t *pud_table __maybe_unused = pud_offset(p4d, 0UL);
- 	VM_BUG_ON(p4d_huge(*p4d));
- 	p4d_clear(p4d);
- 	pud_free(NULL, pud_table);
--- 
-2.26.0
+A is not routed to the outside world and should prefered for this.
+
+See :
+https://lore.kernel.org/linux-amlogic/20200421141814.639480-1-jbrunet@baylibre.com/
+
+> +		dai-link-3 {
+> +			sound-dai = <&tdmif_b>;
+> +			dai-format = "i2s";
+> +			dai-tdm-slot-tx-mask-0 = <1 1>;
+> +			dai-tdm-slot-tx-mask-1 = <1 1>;
+> +			dai-tdm-slot-tx-mask-2 = <1 1>;
+> +			dai-tdm-slot-tx-mask-3 = <1 1>;
+> +			mclk-fs = <256>;
+> +
+> +			codec {
+> +				sound-dai = <&tohdmitx TOHDMITX_I2S_IN_B>;
+> +			};
+> +		};
+> +
+> +		/* hdmi glue */
+> +		dai-link-4 {
+> +			sound-dai = <&tohdmitx TOHDMITX_I2S_OUT>;
+> +
+> +			codec {
+> +				sound-dai = <&hdmi_tx>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&arb {
+> +	status = "okay";
+> +};
+> +
+> +&clkc_audio {
+> +	status = "okay";
+>  };
+>  
+>  &cpu0 {
+> @@ -61,6 +125,18 @@
+>  	clock-latency = <50000>;
+>  };
+>  
+> +&frddr_a {
+> +	status = "okay";
+> +};
+> +
+> +&frddr_b {
+> +	status = "okay";
+> +};
+> +
+> +&frddr_c {
+> +	status = "okay";
+> +};
+> +
+>  &pwm_AO_cd {
+>  	pinctrl-0 = <&pwm_ao_d_e_pins>;
+>  	pinctrl-names = "default";
+> @@ -93,3 +169,15 @@
+>  	phy-names = "usb2-phy0", "usb2-phy1";
+>  };
+>   */
+> +
+> +&tdmif_b {
+> +	status = "okay";
+> +};
+> +
+> +&tdmout_b {
+> +	status = "okay";
+> +};
+> +
+> +&tohdmitx {
+> +	status = "okay";
+> +};
 
 
 _______________________________________________
