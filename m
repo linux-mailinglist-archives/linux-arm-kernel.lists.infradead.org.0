@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A7561BE498
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:02:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F9151BE4A4
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 19:02:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=68q5lyrXGLFUxieXOaamYFXKtMLDLg31T2D4o/z/Xl0=; b=l3ivmFHZi15Xfv
-	XJ9zbG1FFLtk73kWi7umh+Mo5PeSZL+BlmMxesyDltc/YJbhYrYJBtWZXQulOUZ2VEBOD+fu0/Y/c
-	vH08x609zAukcLri902X0ijwsLHxfqBKg6qM2HRvMLNJnbT8obFr5pZXFb0c+VsZPLxva+PrfFPSB
-	wCZsDN1jYC0G55852cu8DgHzh5zqJysjzGVcjQWGIkGP7LpKXTGXLGwrocP72w4fO4I3Y8IArzJGx
-	L+IDCjxoeqOS3lb9p4U/LO5sW8Qiot4nfFHlFstEViBWqOvRRwcUIbMf4vSK4odiMKW09r/miAfS8
-	XKgK3vDTGS+B1tiaYedg==;
+	List-Owner; bh=RgexjA9wKXPodL/L0mrxDUH1q93KMsKmMsp8qdEsXzs=; b=ms35e7rKXy16E9
+	5dwf5VnteY1Seo0E2B6U1ioT5hn82krvrKB8fkztNcM7FJTXoDlyw5mXIsafWHjdZ3L9AB1VAvEdY
+	KPr/nIypl0Pupp3sLpCZzlUyJtFvzpLLc+FhkCnRmsZThgTl1U1NaMFgtw4KqGCR7XlBzlvdfjL4L
+	oNmJ6uw+m8rMlpYaj9wJIBpA5IDeWbZum9qY5fhKF8tumHMc+k8PpF4WNAizCvFzI7RqwIPymGx3z
+	lCC1RCwnWV9Cskr9gG78nt5y7gIYE85SsdE5dFmqTa2fpQvNKQZ69OqTQPEmu0uo7zWpIr+CbmpEi
+	85VH8tagUZQJ5NjNpQgg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTq65-0002iB-6x; Wed, 29 Apr 2020 17:02:09 +0000
+	id 1jTq6h-0003Hm-C9; Wed, 29 Apr 2020 17:02:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTq59-0002A3-57; Wed, 29 Apr 2020 17:01:13 +0000
+ id 1jTq5D-0002GH-SI; Wed, 29 Apr 2020 17:01:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 351EA106F;
- Wed, 29 Apr 2020 10:01:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2104C11D4;
+ Wed, 29 Apr 2020 10:01:15 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7EC913F73D;
- Wed, 29 Apr 2020 10:01:07 -0700 (PDT)
-Subject: Re: [PATCH v9 04/18] arm64: trans_pgd: pass allocator
- trans_pgd_create_copy
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A5CC93F73D;
+ Wed, 29 Apr 2020 10:01:12 -0700 (PDT)
+Subject: Re: [PATCH v9 05/18] arm64: trans_pgd: pass NULL instead of init_mm
+ to *_populate functions
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
- <20200326032420.27220-5-pasha.tatashin@soleen.com>
+ <20200326032420.27220-6-pasha.tatashin@soleen.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <82db4b88-7e69-9298-f1cb-d3afcd29b1ae@arm.com>
-Date: Wed, 29 Apr 2020 18:01:06 +0100
+Message-ID: <d19f4bc5-ad5b-5dad-0d50-271817b6c9aa@arm.com>
+Date: Wed, 29 Apr 2020 18:01:11 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200326032420.27220-5-pasha.tatashin@soleen.com>
+In-Reply-To: <20200326032420.27220-6-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_100111_256766_7662C059 
-X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-CacheID: sfid-20200429_100115_990005_A9F028BD 
+X-CRM114-Status: UNSURE (   9.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -80,10 +80,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Pavel,
 
 On 26/03/2020 03:24, Pavel Tatashin wrote:
-> Make trans_pgd_create_copy and its subroutines to use allocator that is
-> passed as an argument
+> trans_pgd_* should be independent from mm context because the tables that
+> are created by this code are used when there are no mm context around, as
+> it is between kernels. Simply replace mm_init's with NULL.
 
-Reviewed-by: James Morse <james.morse@arm.com>
+arm64's p?d_populate() helpers don't use the mm parameter, so it doesn't make any
+difference. This was originally done so that if we ever needed anything from the mm, we
+didn't get a NULL dereference or EL0 behaviour due to a future '!= &init_mm'.
+
+If you think it matters,
+Acked-by: James Morse <james.morse@arm.com>
 
 
 Thanks,
