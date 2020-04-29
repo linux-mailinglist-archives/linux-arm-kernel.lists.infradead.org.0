@@ -2,90 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A60731BDAF2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:46:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADCBB1BDAF6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 29 Apr 2020 13:47:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=r0YjGcpH7GjiJh5sdN9OvcMqcufj9YviGKFFRE6huwc=; b=Xm8Xwvqh1Ge+gIL6aY9OfH9Nf
-	CbeXAavrtQxdJ7WqsHDsyfXY3BuPjxPNwd85VdhkXH29mceNlI4haJQXFkkD30sCbr5MMzwI/Qt8d
-	D78wrirkb1jmPItjFit+ESvrOzwP9ShBLkP65vdZs/AelCRBWztZ/vxc663D/9gWbeB/sLvqYi/YZ
-	/DDQNyiIyaMJW3kFDj4Fb5wZ3k0neJmBf5V/q4ZrAgfiz6POqCAkqagU9KHLfmCi5l3SxPnDK4O9E
-	u2i7fxq3mi+6vbvATMz+IMrSf0rp2oNvS1ZXPihy6VLztL1KxEqAFyrRkPAMP6A0GxjcINS8MHHYO
-	QxefN3W+g==;
+	 bh=YHeZrscoREIQ47opjVVVpflCPX8JDqGQmy/lXQrzP/Y=; b=ugdSIIEyBd9R5a6jbe8RgABGL
+	g8H+d2d0++gQbaQq0eQR0s7SYXYdZm8TYa2KT/pOBnfo0q/vAbNvLnVjd29cj6Eoo3D6gcQRO56bz
+	agYHhtkpzRnRB4vJFB9hfGmqY7OahBlM2xH74BEDT+pl8UI8vdI0z1msDy5uj0fqFJnN/zgSM3Cb2
+	N9/e+W8luOPR7EzGPOyzbRQSFf9dwAJfkfY3TrmJLYcls2QvDfilrSzhjlpYIYza3loYbYBR89zqr
+	nm3Wsz7saThKNPAHqiXwrXcyMsPLuK2iiDJ5b22DETwr1v/+bOaB9HJPJfrdFmgSnb9uoDI055e0Z
+	Ah7XrapYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jTlAr-00063U-4T; Wed, 29 Apr 2020 11:46:45 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1jTlBG-0006KS-2w; Wed, 29 Apr 2020 11:47:10 +0000
+Received: from wnew4-smtp.messagingengine.com ([64.147.123.18])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jTlAh-00062H-2k
- for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:46:37 +0000
+ id 1jTlB4-0006JJ-Co
+ for linux-arm-kernel@lists.infradead.org; Wed, 29 Apr 2020 11:47:01 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id B012458030E;
- Wed, 29 Apr 2020 07:46:30 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 29 Apr 2020 07:46:30 -0400
+ by mailnew.west.internal (Postfix) with ESMTP id 4E60771A;
+ Wed, 29 Apr 2020 07:46:56 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Wed, 29 Apr 2020 07:46:57 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
  date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=ZvEbMMVJZDjdYM1QIg1icW+9stZ
- lmLb6CDKcUuaXfzU=; b=nt7DMfvs09Xpfb4vMkdvm05rRcvwWcLUhdETj3btMVA
- A+XvMS92TvDxU9m23JCI4fBEeVRqfxI9CI1X3rqINObTwtwIAStAf+8qn7avVywp
- Yor8GkgXTToRF4fT9+7fT8dt6e0sAQe8GF2XWztEFMD9W+N9WzRanHdpPUgB6McQ
- rmk3+YOr5UBPQG3I+XPjwkTot7fbseok7JzqxVdwlQv69EAYgy1Vdqk9yh/CNcjp
- eMErMhoA36RDL7VQSYH+SkUVbxD9Zlv5CYYVVovrat7bg5JmBSNp+6JY6JeZq/Vy
- MyldqXkcGYFSywKos1Uv7XP+TRwcPdVkVa2fXGNjIyw==
+ :content-type:in-reply-to; s=fm2; bh=GNg8N4MpEqbpY0+HdKjq545IT9a
+ sX3IFSheqvawzyns=; b=mzigDqR66/wPW6d/Bl2C6VS0hPS23t0ag/Vl+wjE8za
+ zjZiu50YzDnQlwZAprMvwgpAHXCdaBOHOn3zDwQWELdd6fPoptIOUHFXivmwP9h3
+ 0rlslxuMoJZG4WWEUzZIHYP7W2XedQ5kpJoRjXP7Z16m3B5tNl4wOMmo5H42uxFf
+ zQIbVxYciIIzeTKTMLDmJ64xmAitW9VZjguBOB7xksDVr9L3Ph684Kl3+rBDir6Y
+ tgHSJ6hvI2MqOf6URFJsy2/RmpfgYS/nYX1OYDJ+99Px3erzP/RfEatYs52t4g8i
+ +t95Xu/YSIZunEzmnlxshZoLjrmfzaMX5o5UXfCIocQ==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-type:date:from:in-reply-to
  :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=ZvEbMM
- VJZDjdYM1QIg1icW+9stZlmLb6CDKcUuaXfzU=; b=rlPz/pkkcy2dWpdUvlv/ir
- vtYrFA3ulb/eg/SUSyojJ43Rke6QNhg6iK1J/aWZQW6f5jXcl9ANPyEYVpeanNOb
- 4OmrlWo2CaMtgNEWZFdkpENTBvRpgSe6dxk05va1kKjj18o63s00Kj7QU6nxJsK+
- lJ4tXcxVJAy2wN2kMw1CgmdW3e9Q+YbCuonb3yc8u1Ld9O7pP+o4d9dGdIq8rOxU
- 2z7ESY2ra6RnQRncBBa3LaUczGZi5xwiDWVpG9vhUTFq9CiSUVRo3z6nOe+ABOml
- iinoH7vsAQDDLnAeH2q6p508IuJJwatYPZRreESJiDJ5l+mMduNrV/kBVc0DcUJg
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=GNg8N4
+ MpEqbpY0+HdKjq545IT9asX3IFSheqvawzyns=; b=LixaC0mQ3xBTYJ9RoIE53l
+ vwV8UAJeauGMHhNsM9t7hC6sdDGMKqidJIaTmQuOIjENWrIellzoEtXhd7g3Rxkc
+ C/f1orJ37Pm486aNRxv+aCuGpVL85Vy1bsNHXE59mVdEkNiJkxeUdF6I9hNeAEPC
+ oLcnPJbcQDvA4L8QUoUoUqIJglmwi19EhbgHteDpMy3e75QwBuhiC3Jctb/O5Qgz
+ RA9hLcTT0ZcPhWsv0tBO4VIHYl1x14/DPhj8UO2+x5lXT/Th1jSVxc+oZpreYjS4
+ fbiySOseihBiuBARr3iFYRZaGR4MLhSY7qk2XLvyjHgF//yXtunHN+IWacnC1VyA
  ==
-X-ME-Sender: <xms:EmmpXuTaL7jyB6NagF09nlADw6Aax82osf7BTuPnrEkualPhNvwnJg>
+X-ME-Sender: <xms:L2mpXuQIjPH0YGUJgRFgQ9YBY0ktkty_6ZnqVh9Vrslei89vaxBXew>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieefgdeggecutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
  ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucfkphepledtrd
  ekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhl
  fhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:EmmpXhoRDmaFEZmMKkZYlTnR41LhUIIaZjImCqFD5DuSuWYwZTJ6Tg>
- <xmx:EmmpXk4YKBMkvssvjHwCf-xmflLWnMlrS6zCCRxPtLo3U6bnw-T0mA>
- <xmx:EmmpXrTK4tSAKnOToVeZoK2zqD-uOFytxzDEFTmJTMUPo4p90Yq_fQ>
- <xmx:FmmpXpm6TPT8FydYLZ2eCifKzK9BEs3u5n3J33Z3y7xJ7NT41Eidaw>
+X-ME-Proxy: <xmx:L2mpXv2pEb4K0JdhRCtn6ByzyreQgAY8ToIyEOwcFgObySG-wEbj3g>
+ <xmx:L2mpXhxpGX4eh3Gs53qud0xc22gNACGUfYjUqX4YTVZqqUQwNdFHRg>
+ <xmx:L2mpXq_2YqkqFCL2Jee6g0fCd7iSwquf4rjXchnq8MsItmqkwslY_w>
+ <xmx:L2mpXnK9Ha19zwGGTCDtRvYCOk4ekKsIT3WEXoE7LjQQjUb3IeDmMKT-bFs>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 914093280063;
- Wed, 29 Apr 2020 07:46:26 -0400 (EDT)
-Date: Wed, 29 Apr 2020 13:46:24 +0200
+ by mail.messagingengine.com (Postfix) with ESMTPA id E96CC3065EEB;
+ Wed, 29 Apr 2020 07:46:54 -0400 (EDT)
+Date: Wed, 29 Apr 2020 13:46:53 +0200
 From: Maxime Ripard <maxime@cerno.tech>
-To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
-Subject: Re: [linux-sunxi] Re: Audio sound card name [was [PATCH 4/7] arm64:
- dts: allwinner: a64: Add HDMI audio]
-Message-ID: <20200429114624.42chsbmnsk36jtqw@gilmour.lan>
-References: <20200426120442.11560-1-peron.clem@gmail.com>
- <20200429081729.qa3gqtl5sof2jhem@gilmour.lan>
- <f9b701d9-0c4e-6e41-1ce8-52adf0f59a2a@arm.com>
- <2545943.S5iK65abk1@jernej-laptop>
+To: Robert Foss <robert.foss@linaro.org>
+Subject: Re: [PATCH v5 v5 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200429114653.ifzi4z2qzpys4i4q@gilmour.lan>
+References: <20200428180718.1609826-1-robert.foss@linaro.org>
+ <20200428180718.1609826-2-robert.foss@linaro.org>
+ <20200429090012.vhhwatojkncjquwd@gilmour.lan>
+ <CAG3jFyvcgqi_rm-Enf3gTyHowbgX6iBe3coDPu91p9EBTxS2XA@mail.gmail.com>
+ <20200429111307.GA867@valkosipuli.retiisi.org.uk>
+ <CAG3jFyvvX6J6TSnXr=KUzu5BuQ351sNbNC2mtY0QWdqBdAz7JA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <2545943.S5iK65abk1@jernej-laptop>
+In-Reply-To: <CAG3jFyvvX6J6TSnXr=KUzu5BuQ351sNbNC2mtY0QWdqBdAz7JA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_044635_488356_C7F4B565 
-X-CRM114-Status: GOOD (  33.79  )
+X-CRM114-CacheID: sfid-20200429_044659_807945_E4A5C46F 
+X-CRM114-Status: GOOD (  31.24  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ low trust [64.147.123.18 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,198 +107,331 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Takashi Iwai <tiwai@suse.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
+ Marco Felsch <m.felsch@pengutronix.de>,
  linux-kernel <linux-kernel@vger.kernel.org>,
- Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Mark Brown <broonie@kernel.org>,
- =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>,
- Jaroslav Kysela <perex@perex.cz>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============8056231184735411169=="
+ Sakari Ailus <sakari.ailus@iki.fi>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: multipart/mixed; boundary="===============1920743208417749558=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============8056231184735411169==
+--===============1920743208417749558==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ksk6gvoylw54ps5r"
+	protocol="application/pgp-signature"; boundary="4e2ce4wi52h6jxye"
 Content-Disposition: inline
 
 
---ksk6gvoylw54ps5r
-Content-Type: text/plain; charset=utf-8
+--4e2ce4wi52h6jxye
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Apr 29, 2020 at 12:53:49PM +0200, Jernej =C5=A0krabec wrote:
-> Dne sreda, 29. april 2020 ob 12:43:06 CEST je Robin Murphy napisal(a):
-> > On 2020-04-29 9:17 am, Maxime Ripard wrote:
-> > > On Wed, Apr 29, 2020 at 02:24:00PM +0800, Chen-Yu Tsai wrote:
-> > >> On Wed, Apr 29, 2020 at 1:11 AM Robin Murphy <robin.murphy@arm.com>=
-=20
-> wrote:
-> > >>> On 2020-04-28 5:49 pm, Cl=C3=A9ment P=C3=A9ron wrote:
-> > >>>> Hi Mark, Rob,
-> > >>>>=20
-> > >>>> On Tue, 28 Apr 2020 at 18:04, Maxime Ripard <maxime@cerno.tech> wr=
-ote:
-> > >>>>> On Tue, Apr 28, 2020 at 10:54:00AM +0200, Cl=C3=A9ment P=C3=A9ron=
- wrote:
-> > >>>>>> Hi Maxime,
-> > >>>>>>=20
-> > >>>>>> On Tue, 28 Apr 2020 at 10:00, Maxime Ripard <maxime@cerno.tech>=
-=20
-> wrote:
-> > >>>>>>> On Sun, Apr 26, 2020 at 02:04:39PM +0200, Cl=C3=A9ment P=C3=A9r=
-on wrote:
-> > >>>>>>>> From: Marcus Cooper <codekipper@gmail.com>
-> > >>>>>>>>=20
-> > >>>>>>>> Add a simple-soundcard to link audio between HDMI and I2S.
-> > >>>>>>>>=20
-> > >>>>>>>> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
-> > >>>>>>>> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-> > >>>>>>>> Signed-off-by: Cl=C3=A9ment P=C3=A9ron <peron.clem@gmail.com>
-> > >>>>>>>> ---
-> > >>>>>>>>=20
-> > >>>>>>>>    arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi | 21
-> > >>>>>>>>    +++++++++++++++++++
-> > >>>>>>>>    1 file changed, 21 insertions(+)
-> > >>>>>>>>=20
-> > >>>>>>>> diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > >>>>>>>> b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi index
-> > >>>>>>>> e56e1e3d4b73..08ab6b5e72a5 100644
-> > >>>>>>>> --- a/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > >>>>>>>> +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi
-> > >>>>>>>> @@ -102,6 +102,25 @@
-> > >>>>>>>>=20
-> > >>>>>>>>                 status =3D "disabled";
-> > >>>>>>>>        =20
-> > >>>>>>>>         };
-> > >>>>>>>>=20
-> > >>>>>>>> +     hdmi_sound: hdmi-sound {
-> > >>>>>>>> +             compatible =3D "simple-audio-card";
-> > >>>>>>>> +             simple-audio-card,format =3D "i2s";
-> > >>>>>>>> +             simple-audio-card,name =3D "allwinner,hdmi";
-> > >>>>>>>=20
-> > >>>>>>> I'm not sure what the usual card name should be like though. I =
-would
-> > >>>>>>> assume that this should be something specific enough so that yo=
-u're
-> > >>>>>>> able to differentiate between boards / SoC so that the userspace
-> > >>>>>>> can choose a different configuration based on it?
-> > >>>>>>=20
-> > >>>>>> I really don't know what we should use here,
-> > >>>>>> I just have a look at other SoC:
-> > >>>>>> rk3328: "HDMI"
-> > >>>>>> rk3399: "hdmi-sound"
-> > >>>>>> r8a774c0-cat874: "CAT874 HDMI sound"
-> > >>>>>>=20
-> > >>>>>> But maybe it's time to introduce proper name:
-> > >>>>>> What about :
-> > >>>>>> pat
-> > >>>>>> sun50i-h6-hdmi
-> > >>>>>=20
-> > >>>>> It's pretty much what we've been using for the other sound cards =
-we
-> > >>>>> have, so it makes sense to me.
-> > >>>>=20
-> > >>>> I have a question regarding the simple-audio-card,name.
-> > >>>> In this patch, I would like to introduce a simple-audio-card for t=
-he
-> > >>>> Allwinner A64 HDMI.
-> > >>>>=20
-> > >>>> What should be the preferred name for this sound card?
-> > >>>> "sun50i-a64-hdmi" ? "allwinner, sun50i-a64-hdmi" ?
-> > >>>=20
-> > >>> I can at least speak for RK3328, and the reasoning there was that a=
-s the
-> > >>> user looking at what `aplay -l` says, I don't give a hoot about wha=
-t the
-> > >>> SoC may be called, I see two cards and I want to know, with the lea=
-st
-> > >>> amount of uncertainty, which one will make the sound come out of the
-> > >>> port that's labelled "HDMI" on the box ;)
-> > >>=20
-> > >> I agree. The user really doesn't care what SoC the system uses. The =
-only
-> > >> real requirement is to be able to tell which output the card is rela=
-ted
-> > >> to, i.e. is it onboard or an external DAC, is it analog or HDMI, etc=
-=2E.
-> > >=20
-> > > Yeah, but it's exactly the point.
-> > >=20
-> > > If we also end up with "HDMI" as our card name, then the userspace ha=
-s no
-> > > way to tell anymore if it's running from an rk3328 or an allwinner So=
-C,
-> > > or something else entirely. And therefore it cannot really configure
-> > > anything to work out of the box anymore.
-> >=20
-> > OK, you're a userspace audio application - enlighten me as to what exact
-> > chip you're running on here, and why you need to know:
-> >=20
-> > card 0: HDMI [HDA ATI HDMI]
-> >=20
-> > or how about here?
-> >=20
-> > card 0: Intel [HDA Intel]
-> >=20
-> >=20
-> > Furthermore, your argument works both ways - if the equivalent (or in
-> > common cases like DesignWare IP blocks, exact same) thing across 3
-> > different SoCs has 3 different names, then it's that much harder for
-> > userspace that wants to present a consistent behaviour. I don't know
-> > exactly why LibreELEC have downstream patches that standardise all the
-> > Rockchip ones to "HDMI", but I can't help noting that they do.
-> >=20
-> > With simple-audio-card we're talking about trivial interfaces that often
-> > don't expose any controls at all, so there's unlikely to be much
-> > 'configuration' for userspace to do beyond choosing which card to outpu=
-t to.
+On Wed, Apr 29, 2020 at 01:39:12PM +0200, Robert Foss wrote:
+> On Wed, 29 Apr 2020 at 13:13, Sakari Ailus <sakari.ailus@iki.fi> wrote:
+> >
+> > Hi Robert, Maxime,
+> >
+> > On Wed, Apr 29, 2020 at 12:19:38PM +0200, Robert Foss wrote:
+> > > On Wed, 29 Apr 2020 at 11:00, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > >
+> > > > Hi,
+> > > >
+> > > > On Tue, Apr 28, 2020 at 08:07:17PM +0200, Robert Foss wrote:
+> > > > > Add match table, enable ov8856_probe() to support
+> > > > > both ACPI and DT modes.
+> > > > >
+> > > > > ACPI and DT modes are primarily distinguished from
+> > > > > each other by relying on devm_XXX_get_optional()
+> > > > > will return NULL instead of a reference for the
+> > > > > desired managed resource.
+> > > > >
+> > > > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> > > > > ---
+> > > > >
+> > > > > - Changes since v4:
+> > > > >   * Maxime & Sakari: Switch to clock-frequency
+> > > > >
+> > > > > - Changes since v3:
+> > > > >   * Remove redundant {}-brackets
+> > > > >   * Compare xvclk_rate to 5% tolerance
+> > > > >   * Andy: Use dev_fwnode()
+> > > > >   * Andy: Use %pe instead of %ld + PTR_ERR()
+> > > > >   * Andy: Invert reset_gpio logic
+> > > > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
+> > > > >   * Andy: Use dev_err for logging for failures
+> > > > >   * Andy: Remove dev_warn from EDEFER/regulator error path
+> > > > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
+> > > > >   * Maxime & Sakari: Verify clock frequency from DT
+> > > > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT =
+devices
+> > > > >   * Sakari: Remove duplicate ov8856->dev assignment
+> > > > >
+> > > > > - Changes since v2:
+> > > > >   * Added "struct device *dev" member to struct ov8856
+> > > > >   * Andy: Switch to optional version of devm_gpiod_get
+> > > > >   * Andy: Switch to optional version of devm_clk_get
+> > > > >   * Fabio: Add reset sleep period
+> > > > >   * Sakari: Unify defines for 19.2Mhz
+> > > > >   * Sakari: Remove 24Mhz clock, since it isn't needed for support=
+ed modes
+> > > > >   * Sakari: Replace dev_info() with dev_dbg()
+> > > > >   * Sakari: Switch induction variable type to unsigned
+> > > > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
+> > > > >   * Sakari: Pull reset GPIO high on power on failure
+> > > > >   * Sakari: Add power on/off to resume/suspend
+> > > > >   * Sakari: Fix indentation
+> > > > >   * Sakari: Power off during ov8856_remove()
+> > > > >   * Sakari: Don't sleep during power-on in ACPI mode
+> > > > >   * Sakari: Switch to getting xvclk from clk_get_rate
+> > > > >
+> > > > > - Changes since v1:
+> > > > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
+> > > > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
+> > > > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTI=
+VE_LOW change
+> > > > >   * Fabio: Remove empty line
+> > > > >   * Fabio: Remove real error from devm_gpiod_get() failures
+> > > > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_S=
+UPPLIES
+> > > > >   * Sakari: Use XVCLK rate as provided by DT
+> > > > >
+> > > > >  drivers/media/i2c/ov8856.c | 139 +++++++++++++++++++++++++++++++=
+++----
+> > > > >  1 file changed, 126 insertions(+), 13 deletions(-)
+> > > > >
+> > > > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov885=
+6.c
+> > > > > index 8655842af275..48b02b8d205f 100644
+> > > > > --- a/drivers/media/i2c/ov8856.c
+> > > > > +++ b/drivers/media/i2c/ov8856.c
+> > > > > @@ -3,10 +3,13 @@
+> > > > >
+> > > > >  #include <asm/unaligned.h>
+> > > > >  #include <linux/acpi.h>
+> > > > > +#include <linux/clk.h>
+> > > > >  #include <linux/delay.h>
+> > > > > +#include <linux/gpio/consumer.h>
+> > > > >  #include <linux/i2c.h>
+> > > > >  #include <linux/module.h>
+> > > > >  #include <linux/pm_runtime.h>
+> > > > > +#include <linux/regulator/consumer.h>
+> > > > >  #include <media/v4l2-ctrls.h>
+> > > > >  #include <media/v4l2-device.h>
+> > > > >  #include <media/v4l2-fwnode.h>
+> > > > > @@ -18,7 +21,7 @@
+> > > > >  #define OV8856_LINK_FREQ_360MHZ              360000000ULL
+> > > > >  #define OV8856_LINK_FREQ_180MHZ              180000000ULL
+> > > > >  #define OV8856_SCLK                  144000000ULL
+> > > > > -#define OV8856_MCLK                  19200000
+> > > > > +#define OV8856_XVCLK_19_2            19200000
+> > > > >  #define OV8856_DATA_LANES            4
+> > > > >  #define OV8856_RGB_DEPTH             10
+> > > > >
+> > > > > @@ -64,6 +67,12 @@
+> > > > >
+> > > > >  #define to_ov8856(_sd)                       container_of(_sd, s=
+truct ov8856, sd)
+> > > > >
+> > > > > +static const char * const ov8856_supply_names[] =3D {
+> > > > > +     "dovdd",        /* Digital I/O power */
+> > > > > +     "avdd",         /* Analog power */
+> > > > > +     "dvdd",         /* Digital core power */
+> > > > > +};
+> > > > > +
+> > > > >  enum {
+> > > > >       OV8856_LINK_FREQ_720MBPS,
+> > > > >       OV8856_LINK_FREQ_360MBPS,
+> > > > > @@ -566,6 +575,11 @@ struct ov8856 {
+> > > > >       struct media_pad pad;
+> > > > >       struct v4l2_ctrl_handler ctrl_handler;
+> > > > >
+> > > > > +     struct device           *dev;
+> > > > > +     struct clk              *xvclk;
+> > > > > +     struct gpio_desc        *reset_gpio;
+> > > > > +     struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_suppl=
+y_names)];
+> > > > > +
+> > > > >       /* V4L2 Controls */
+> > > > >       struct v4l2_ctrl *link_freq;
+> > > > >       struct v4l2_ctrl *pixel_rate;
+> > > > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_sub=
+dev *sd, int enable)
+> > > > >       return ret;
+> > > > >  }
+> > > > >
+> > > > > +static int __ov8856_power_on(struct ov8856 *ov8856)
+> > > > > +{
+> > > > > +     struct i2c_client *client =3D v4l2_get_subdevdata(&ov8856->=
+sd);
+> > > > > +     int ret;
+> > > > > +
+> > > > > +     ret =3D clk_prepare_enable(ov8856->xvclk);
+> > > > > +     if (ret < 0) {
+> > > > > +             dev_err(&client->dev, "failed to enable xvclk\n");
+> > > > > +             return ret;
+> > > > > +     }
+> > > > > +
+> > > > > +     if (is_acpi_node(dev_fwnode(ov8856->dev)))
+> > > > > +             return 0;
+> > > > > +
+> > > > > +     if (ov8856->reset_gpio) {
+> > > > > +             gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > > > +             usleep_range(1000, 2000);
+> > > > > +     }
+> > > > > +
+> > > > > +     ret =3D regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_name=
+s),
+> > > > > +                                 ov8856->supplies);
+> > > > > +     if (ret < 0) {
+> > > > > +             dev_err(&client->dev, "failed to enable regulators\=
+n");
+> > > > > +             goto disable_clk;
+> > > > > +     }
+> > > > > +
+> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
+> > > > > +     usleep_range(1500, 1800);
+> > > > > +
+> > > > > +     return 0;
+> > > > > +
+> > > > > +disable_clk:
+> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > > > +     clk_disable_unprepare(ov8856->xvclk);
+> > > > > +
+> > > > > +     return ret;
+> > > > > +}
+> > > > > +
+> > > > > +static void __ov8856_power_off(struct ov8856 *ov8856)
+> > > > > +{
+> > > > > +     gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > > > > +     regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
+> > > > > +                            ov8856->supplies);
+> > > > > +     clk_disable_unprepare(ov8856->xvclk);
+> > > > > +}
+> > > > > +
+> > > > >  static int __maybe_unused ov8856_suspend(struct device *dev)
+> > > > >  {
+> > > > >       struct i2c_client *client =3D to_i2c_client(dev);
+> > > > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(stru=
+ct device *dev)
+> > > > >       if (ov8856->streaming)
+> > > > >               ov8856_stop_streaming(ov8856);
+> > > > >
+> > > > > +     __ov8856_power_off(ov8856);
+> > > > >       mutex_unlock(&ov8856->mutex);
+> > > > >
+> > > > >       return 0;
+> > > > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struc=
+t device *dev)
+> > > > >       int ret;
+> > > > >
+> > > > >       mutex_lock(&ov8856->mutex);
+> > > > > +
+> > > > > +     __ov8856_power_on(ov8856);
+> > > > >       if (ov8856->streaming) {
+> > > > >               ret =3D ov8856_start_streaming(ov8856);
+> > > > >               if (ret) {
+> > > > > @@ -1092,29 +1155,58 @@ static int ov8856_identify_module(struct =
+ov8856 *ov8856)
+> > > > >       return 0;
+> > > > >  }
+> > > > >
+> > > > > -static int ov8856_check_hwcfg(struct device *dev)
+> > > > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
+> > > > >  {
+> > > > > +     struct device *dev =3D ov8856->dev;
+> > > > >       struct fwnode_handle *ep;
+> > > > >       struct fwnode_handle *fwnode =3D dev_fwnode(dev);
+> > > > >       struct v4l2_fwnode_endpoint bus_cfg =3D {
+> > > > >               .bus_type =3D V4L2_MBUS_CSI2_DPHY
+> > > > >       };
+> > > > > -     u32 mclk;
+> > > > > +     u32 xvclk_rate;
+> > > > >       int ret;
+> > > > >       unsigned int i, j;
+> > > > >
+> > > > >       if (!fwnode)
+> > > > >               return -ENXIO;
+> > > > >
+> > > > > -     ret =3D fwnode_property_read_u32(fwnode, "clock-frequency",=
+ &mclk);
+> > > > > +     ret =3D fwnode_property_read_u32(fwnode, "clock-frequency",
+> > > > > +             &xvclk_rate);
+> > > > >       if (ret)
+> > > > >               return ret;
+> > > > >
+> > > > > -     if (mclk !=3D OV8856_MCLK) {
+> > > > > -             dev_err(dev, "external clock %d is not supported", =
+mclk);
+> > > > > +     if (!is_acpi_node(fwnode)) {
+> > > > > +             ov8856->xvclk =3D devm_clk_get(dev, "xvclk");
+> > > > > +             if (IS_ERR(ov8856->xvclk)) {
+> > > > > +                     dev_err(dev, "could not get xvclk clock (%p=
+e)\n",
+> > > > > +                                     ov8856->xvclk);
+> > > > > +                     return PTR_ERR(ov8856->xvclk);
+> > > > > +             }
+> > > > > +
+> > > > > +             clk_set_rate(ov8856->xvclk, xvclk_rate);
+> > > > > +             xvclk_rate =3D clk_get_rate(ov8856->xvclk);
+> > > > > +     }
+> > > > > +
+> > > > > +     /* external clock must be 19.2MHz, allow 5% tolerance */
+> > > >
+> > > > Where is that 5% tolerance coming from? Experimentations, datasheet=
+s, something
+> > > > that looks good enough? Either way, this should be in the comment.
+> > >
+> > > I don't have access to the full datasheet unfortunately. A 24Mhz rate
+> > > is as far as I understand it supported and required for higher
+> > > bandwidth count modes.
+> > > It was suggested to me that adding a tolerance is the best practice,
+> > > the ov5645 driver uses a 1% tolerance, which may be more appropriate.
+> >
+> > The frequency should really be exact. Sometimes what happens is, howeve=
+r,
+> > that a register list based driver does not have the register lists for a
+> > frequency that is available on a given system. That's why some drivers =
+have
+> > allowed some difference to the intended frequency.
+> >
+> > That 5 % seems like a random value, just like any other number that dif=
+fers
+> > from the exact frequency would be.
+> >
+> > I'd issue a warning if the frequency differs from what was intended, but
+> > still proceed with probe. This way we can make sure the difference is n=
+oted
+> > while boards that cannot provide the exact frequency supported by the
+> > driver can still function.
 >=20
-> Only difference is slightly different version of HDMI controller and diff=
-erent
-> This combination (DesignWare HDMI controller + I2S) is same as on Rockchi=
-p.
-> I2S core.
+> Issuing a warning sounds like a good solution to me. What do you think Ma=
+xime?
 
-Well, that fact only is already information that is not carried on to the
-userspace. Think about it this way: let's say you run Debian, you just inst=
-alled
-it without any configuration, and you don't have any knowledge about the
-hardware, you're just a user. Can the OS know how to configure that output =
-based
-on the card name "HDMI" alone?
-
-HDMI is an easy one compared to the i2s + codec combinations we might have,=
- but
-it already has some interesting differences between hardwares. For example,=
- the
-RPi iirc needs an IEC958 format, while this one works just fine with a stan=
-dard
-PCM format.
-
+Sounds good to me too :)
 Maxime
 
---ksk6gvoylw54ps5r
+--4e2ce4wi52h6jxye
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqlpEAAKCRDj7w1vZxhR
-xceuAQD7ZQuXykpB0izmXzhIHRMLAEuqdSkBj//F5pIRAU3Y9AEAvovq1h0wrKWg
-oGOAHmXqkZsagk6Icg0LvTMvw26v0QA=
-=eKGm
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqlpLQAKCRDj7w1vZxhR
+xfy5AP9WB6qj36xGc19gDUzaiYtAzYINqK4aVmuNMeieKOESdAD/X643GOOZCaKS
++tW21zB5c9ZbIZnEBKZ9vft+BXIJjQw=
+=khOj
 -----END PGP SIGNATURE-----
 
---ksk6gvoylw54ps5r--
+--4e2ce4wi52h6jxye--
 
 
---===============8056231184735411169==
+--===============1920743208417749558==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -308,5 +442,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============8056231184735411169==--
+--===============1920743208417749558==--
 
