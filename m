@@ -2,67 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B2DD1C02FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:46:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DE471C0308
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:48:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UJ5JoEm0G1UJ7/0eqfHhvrWo4/yHL+IbvMKSjbrUkXc=; b=lc9ywkprnMm6zq
-	+3neN3PrtCidKY8hTKDz9yp1tmCmHBQJQ+w0SmoXkIhy+7RpDl8EStA5BoLXysyheYxUnu47OFhYP
-	hH7UZXEWuICK9Gm+HWg4WpNnbcIDOYdTPBLmEWBe6s8SjIkHgW6vpkArXKSH3U1B15WTeFHaNEaQJ
-	+yQJ6skaZ32+k1VN1XDADnw9+xSecGpuLmIzqV+5gA008Pebgt2u6RMCzz1oS5Ui+uBm8GORkfdlc
-	KL5Y/Jtuq0CNXIpwM6hBb53wlUdwqcOqW7OCpKpEwJUlIvNiXrZZQUbNLxGlUkqRhW7ASHyQaR586
-	TE11IGHN4pCKHgZ2wNIA==;
+	List-Owner; bh=iZGh419ffWTaS/cGqQhb8hxZ+aq36Le+uBg5uXyBV7s=; b=iRTKWMPIUkdrQE
+	wjz03Oqq6PW7fB6e6AkZqHJfd630kJsYR7Z5Km89uCnLoTJnp7zPnT+yfJsb+vA9XfBJWRT6+3vIW
+	dd6saeilaOi1mPjhxpWm66WrTL3NvTUB0zcews0WxjiRr5pRwUCEOJZWgnZeRz6/1h3gMZL0vuEwa
+	ss4/uTV6XeULOA9R+1OT0rVXgHauqSPyV+9TuqTtFPJTrvrKfu6RXFyJSoprUSiMqZWYrKkKaWMFr
+	D7bQst4XDxgwelGh0wmlnCJ4DcI/Y6rPTg+VGLKSAigIerove8dxDCJV/H9DmV3SDawhgKaP4+F2g
+	fx8aFwnknOo02tCdQgzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCKh-00033q-65; Thu, 30 Apr 2020 16:46:43 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jUCM9-0003mC-57; Thu, 30 Apr 2020 16:48:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCKV-00032N-B4
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:46:32 +0000
-IronPort-SDR: jCrQD3B/xefLQGSI5yXDZZbiLqTQxrPeZUeDR+JBAgureEQQfP1QBsO3RuoYGCRAl2qoB17GsC
- y9k9q2LViDRA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 30 Apr 2020 09:46:30 -0700
-IronPort-SDR: o/9FP73hLdrecg6plLPSE4BE260RONmdIVJjsa1Po+2BWeMaxxs+vdPEJruOsCeuYxZUbCf/5S
- 4/zhGE4GywRw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,336,1583222400"; d="scan'208";a="368202826"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga001.fm.intel.com with ESMTP; 30 Apr 2020 09:46:27 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jUCKT-003xBR-KK; Thu, 30 Apr 2020 19:46:29 +0300
-Date: Thu, 30 Apr 2020 19:46:29 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Alper Nebi Yasak <alpernebiyasak@gmail.com>
-Subject: Re: [RFC PATCH v2 1/3] printk: Add function to set console to
- preferred console's driver
-Message-ID: <20200430164629.GW185537@smile.fi.intel.com>
-References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
- <20200430161438.17640-2-alpernebiyasak@gmail.com>
+ id 1jUCLx-0003kI-PO
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:48:03 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB7332070B;
+ Thu, 30 Apr 2020 16:47:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588265281;
+ bh=axoYz9ubvidu6Q4qb8tE1iZySwHLJ5aESX8frhVyuiE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ca/g0WoiwN4MNpRo23zI84MuVdc3f57axAaaKLI+X0I8yCH2/jidRQBKHbK8Kj0le
+ p0ifJPTxniAeJNPxdDSQ3sL1FcGdRO8dvdmXF6bViBXQY+Fl9+SUzjn0eh/2hXocYc
+ SNXgDN/8PRduyw3CCDEyv20e7Bjs+BAm0Et0exUw=
+Date: Thu, 30 Apr 2020 17:47:56 +0100
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2 00/16] arm64/cpufeature: Introduce ID_PFR2, ID_DFR1,
+ ID_MMFR5 and other changes
+Message-ID: <20200430164756.GH25258@willie-the-truck>
+References: <1586857710-17154-1-git-send-email-anshuman.khandual@arm.com>
+ <6749304e-8a4d-f4b9-eb40-91f0dd13166e@arm.com>
+ <20200429212614.GD8604@willie-the-truck>
+ <da15c0f0-f8ec-c2bc-bd5b-907a75119dc1@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430161438.17640-2-alpernebiyasak@gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <da15c0f0-f8ec-c2bc-bd5b-907a75119dc1@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_094631_400604_1F979750 
-X-CRM114-Status: GOOD (  18.09  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200430_094801_849424_EDCDF18C 
+X-CRM114-Status: GOOD (  11.93  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,72 +80,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Arvind Sankar <nivedita@alum.mit.edu>, linux-serial@vger.kernel.org,
- Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, suzuki.poulose@arm.com, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ maz@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 07:14:35PM +0300, Alper Nebi Yasak wrote:
-> Currently, add_preferred_console sets a preferred console, but doesn't
-> actually change /dev/console to match it. That part is handled within
-> register_device, where a newly registered console driver will be set as
-> /dev/console if it matches the preferred console.
+On Thu, Apr 30, 2020 at 08:29:44AM +0530, Anshuman Khandual wrote:
+> On 04/30/2020 02:56 AM, Will Deacon wrote:
+> > On Wed, Apr 29, 2020 at 03:07:15PM +0530, Anshuman Khandual wrote:
+> >> On 04/14/2020 03:18 PM, Anshuman Khandual wrote:
+> >>> Changes in V2:
+> >>>
+> >>> - Added Suggested-by tag from Mark Rutland for all changes he had proposed
+> >>> - Added comment for SpecSEI feature on why it is HIGHER_SAFE per Suzuki
+> >>> - Added a patch which makes ID_AA64DFR0_DOUBLELOCK a signed feature per Suzuki
+> >>> - Added ID_DFR1 and ID_MMFR5 system register definitions per Will
+> >>> - Added remaining features bits for relevant 64 bit system registers per Will
+> >>> - Changed commit message on [PATCH 5/7] regarding TraceFilt feature per Suzuki
+> >>> - Changed ID_PFR2.CSV3 (FTR_STRICT -> FTR_NONSTRICT) as 64 bit registers per Will
+> >>> - Changed ID_PFR0.CSV2 (FTR_STRICT -> FTR_NONSTRICT) as 64 bit registers per Will 
+> >>> - Changed some commit messages
+> >>
+> >> Just a gentle ping. I am wondering if you had a chance to glance
+> >> through this updated series.
+> > 
+> > Please can you resend based on for-next/cpufeature?
 > 
-> However, if the relevant driver is already registered, the only way to
-> set it as /dev/console is by un-registering and re-registering it. An
-> example is the xenfb_make_preferred_console() function:
-> 
-> 	console_lock();
-> 	for_each_console(c) {
-> 		if (!strcmp(c->name, "tty") && c->index == 0)
-> 			break;
-> 	}
-> 	console_unlock();
-> 	if (c) {
-> 		unregister_console(c);
-> 		c->flags |= CON_CONSDEV;
-> 		c->flags &= ~CON_PRINTBUFFER; /* don't print again */
-> 		register_console(c);
-> 	}
-> 
-> The code above was introduced in commit 9e124fe16ff2 ("xen: Enable
-> console tty by default in domU if it's not a dummy"). In short, it's aim
-> is to set VT as the preferred console only after a working framebuffer
-> is registered and thus VT is not the dummy device.
-> 
-> This patch introduces an update_console_to_preferred function that
-> handles the necessary /dev/console change. With this change, the example
-> above can be replaced with:
-> 
-> 	console_lock();
-> 	add_preferred_console("tty", 0, NULL);
-> 	update_console_to_preferred();
-> 	console_unlock();
-> 
-> More importantly, these two calls can be moved to vt.c in order to bump
-> its priority when a non-dummy backend for it is introduced, solving that
-> problem in general.
+> Sure, will do.
 
-Even w/o looking into the code I believe it breaks more platforms than fixes
-anything. It was not first time one tries to do something about preferred
-consoles and it appeared to break working configurations.
+Thanks. I'll keep an eye out for them.
 
-I would wait for PRINTK maintainers to tell, but to me it sounds like papering
-over the real issue which you don't understand (yet).
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
