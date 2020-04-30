@@ -2,69 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CB3A1C072D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 21:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79D001C079E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 22:14:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7raUfXlNwt5YU/R/UxgIjZSzM/qf5D/KXM13bXsfXeM=; b=qbLdRyMsZ7Rrf8
-	EMuUtZN8XsggUX+vxypXtk9r0IjdRk838A8LmOzkSwA3q3/7gmlskAZwNtmo+Xbc2zh1j34dxgjyF
-	ld2kktC3YXxBCsFRiNTx7/y1jboyD2dZ9EOCue8+NLY2uY2mJAaMLEgbLz3D85CfkfKtWp/LEANTz
-	AYyuv9lA3W4jE6LIqUMLq7rIvsq/FwZfx1/7xx1PueeMCxcpXcmJUihYwaQHWZwalZvN0dK+3yKTp
-	fdB6Oly4ozs3q3G96Gr+m+7TImN2ElGqGIWXloRHxBu6tvYKBudtB+rVRW/sFv0uxF424CzIk1qEq
-	dtBLyaHFraiPr2UG2M3Q==;
+	List-Owner; bh=2Y1yybOPyPrqa2IyKolSH0kvbRh0SM6IGge6+fjD/QU=; b=Mi4Q7s3vij1zw/
+	dfrVsNidyv7xKb4wFBGhwQSbpuoByS3oLuslQ+Y+HjzykQrVziicJc+49V2+cgJICZSRCkYBovIVv
+	7z0bVMQ5kMEBhLLiUTgWzegcjE9QqdgE9QgN+vVOjjkYQvw1E+LekUnNdhqilYoMUQosRRF2z2naM
+	snEHGJPVZ7LGsTAiksvZmDU1AACm5YCF5HioShbmeIV7qQxzx59ysuDrglKETcL/KkmY2RgPOMsTR
+	9SEMGeBWYPR0UN2uHw+P7me+DILM/jOsihuzm4TbITW5fph9UpoAezlfrUD3guMyYoDc85qRRNR/0
+	5sNU4/y8AydVwxkYYcHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUFL2-0006Wx-Eo; Thu, 30 Apr 2020 19:59:16 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jUFZT-0000Nc-U6; Thu, 30 Apr 2020 20:14:11 +0000
+Received: from relay9-d.mail.gandi.net ([217.70.183.199])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUFKt-0006W6-Rj
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 19:59:09 +0000
-IronPort-SDR: c2nSeHtaP7QyGsipNOmbHNrIE1sDtdsvG+TfuoGHaZ9FzDVkTHcKlLeOpTcC1x2sPZlerp60wy
- nWCx0hubgHbg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga007.fm.intel.com ([10.253.24.52])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 30 Apr 2020 12:59:05 -0700
-IronPort-SDR: s1mjBUu/ajRwjZ3ZpNgANTVYmxk6oLFeP0VXuFISLP9/D38GZlsNzWaTxlfq4vHTzFC9hmPVwR
- WLJx4yNqwbgQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,337,1583222400"; d="scan'208";a="248370687"
-Received: from irsmsx153.ger.corp.intel.com ([163.33.192.75])
- by fmsmga007.fm.intel.com with ESMTP; 30 Apr 2020 12:59:04 -0700
-Received: from irsmsx103.ger.corp.intel.com ([169.254.3.44]) by
- IRSMSX153.ger.corp.intel.com ([169.254.9.216]) with mapi id 14.03.0439.000;
- Thu, 30 Apr 2020 20:49:37 +0100
-From: "Alessandrelli, Daniele" <daniele.alessandrelli@intel.com>
-To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Subject: Re: [PATCH 0/1] Add IMR driver for Keem Bay
-Thread-Topic: [PATCH 0/1] Add IMR driver for Keem Bay
-Thread-Index: AQHWF/bwdmCqRgB2xEunJAxCAmyaOqiSEEGA
-Date: Thu, 30 Apr 2020 19:49:36 +0000
-Message-ID: <d3f045b05c83d0eca1d5498587493ca485e0a1a0.camel@intel.com>
-References: <cover.1587485099.git.daniele.alessandrelli@intel.com>
-In-Reply-To: <cover.1587485099.git.daniele.alessandrelli@intel.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.252.22.135]
-Content-ID: <A6BF041FE16A394DA13BF5020330A280@intel.com>
+ id 1jUFZH-0000JN-DX
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 20:14:01 +0000
+X-Originating-IP: 86.202.105.35
+Received: from localhost (lfbn-lyo-1-9-35.w86-202.abo.wanadoo.fr
+ [86.202.105.35])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay9-d.mail.gandi.net (Postfix) with ESMTPSA id 9F8B7FF80A;
+ Thu, 30 Apr 2020 20:13:45 +0000 (UTC)
+Date: Thu, 30 Apr 2020 22:13:45 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH 0/4] Introduce the Counter character device interface
+Message-ID: <20200430201345.GX51277@piout.net>
+References: <cover.1588176662.git.vilhelm.gray@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <cover.1588176662.git.vilhelm.gray@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_125907_907530_705F3FEF 
-X-CRM114-Status: GOOD (  20.36  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200430_131359_594355_EED5D80B 
+X-CRM114-Status: GOOD (  17.12  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.199 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -78,69 +61,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "robh@kernel.org" <robh@kernel.org>, "Shevchenko,
- Andriy" <andriy.shevchenko@intel.com>, "arnd@arndb.de" <arnd@arndb.de>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>, "Murphy,
- Paul J" <paul.j.murphy@intel.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
+ felipe.balbi@linux.intel.com, linux-iio@vger.kernel.org, syednwaris@gmail.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ mcoquelin.stm32@gmail.com, patrick.havelange@essensium.com,
+ fabrice.gasnier@st.com, fabien.lahoudere@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, jic23@kernel.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2020-04-21 at 17:36 +0100, Daniele Alessandrelli wrote:
-> The following is a patch for a new Intel Movidius SoC, code-named
-> Keem
-> Bay.
+Hi,
+
+On 29/04/2020 14:11:34-0400, William Breathitt Gray wrote:
+> Over the past couple years we have noticed some shortcomings with the
+> Counter sysfs interface. Although useful in the majority of situations,
+> there are certain use-cases where interacting through sysfs attributes
+> can become cumbersome and inefficient. A desire to support more advanced
+> functionality such as timestamps, multi-axis positioning tables, and
+> other such latency-sensitive applications, has motivated a reevaluation
+> of the Counter subsystem. I believe a character device interface will be
+> helpful for this more niche area of counter device use.
 > 
-> Keem Bay needs a driver to disable the Isolated Memory Region (IMR)
-> set up by the SoC bootloader during early boot.
-> 
-> If such an IMR is not disabled and some device tries to access it,
-> the system will reboot.
-> 
-> Since this driver is SoC-specific and Keem Bay is a new SoC, I was
-> unsure of where to put this driver. In the end I decided to create a
-> new 'keembay' directory in 'drivers/soc'. I hope that's reasonable,
-> if
-> not, just let me know.
-> 
-> 
-> Daniele Alessandrelli (1):
->   soc: keembay: Add Keem Bay IMR driver
-> 
->  MAINTAINERS                       |  5 ++++
->  drivers/soc/Kconfig               |  1 +
->  drivers/soc/Makefile              |  1 +
->  drivers/soc/keembay/Kconfig       | 22 +++++++++++++++++
->  drivers/soc/keembay/Makefile      |  5 ++++
->  drivers/soc/keembay/keembay-imr.c | 40
-> +++++++++++++++++++++++++++++++
->  6 files changed, 74 insertions(+)
->  create mode 100644 drivers/soc/keembay/Kconfig
->  create mode 100644 drivers/soc/keembay/Makefile
->  create mode 100644 drivers/soc/keembay/keembay-imr.c
+> To quell any concerns from the offset: this patchset makes no changes to
+> the existing Counter sysfs userspace interface -- existing userspace
+> applications will continue to work with no modifications necessary. I
+> request that driver maintainers please test their applications to verify
+> that this is true, and report any discrepancies if they arise.
 > 
 
-Adding some more people (Arnd and linux-arm-kernel ML) in CC in the
-hope of getting some guidance on how to have this patch merged.
+On that topic, I'm wondering why the counter subsystem uses /sys/bus
+instead of /sys/class that would be more natural for a class of devices.
+I can't see how counters would be considered busses. I think you should
+consider moving it over to /sys/class (even if deprecating
+/sys/bus/counter will be long).
 
-I'm a novice, so I wonder if the lack of feedback is because I'm doing
-something wrong or if I just sent the initial email to the wrong people
-/ ML.
+> Interaction with Counter character devices occurs via ioctl commands.
+> This allows userspace applications to access and set counter data using
+> native C datatypes rather than working through string translations.
+> 
 
-I'd appreciate any help you can provide.
---------------------------------------------------------------
-Intel Research and Development Ireland Limited
-Registered in Ireland
-Registered Office: Collinstown Industrial Park, Leixlip, County Kildare
-Registered Number: 308263
+I agree with David that you should consider using read to retrieve the
+counter data as this will simplify interrupt handling/polling and
+blocking/non-blocking reads can be used by an application. ABI wise,
+this can also be a good move as you could always consider having an
+ioctl requesting a specific format when reading the device so you are
+not stuck with the initial format you are going to choose.
+
+> 2. Should device driver callbacks return int or long? I sometimes see
+>    error values returned as long (e.g. PTR_ERR(), the file_operations
+>    structure's ioctl callbacks, etc.); when is it necessary to return
+>    long as opposed to int?
+> 
+
+You should use a long if you ever have to return a point as it is
+guaranteed to have the correct size. Else, just stick to an int if you
+are not going to overflow it.
+
+> 3. I only implemented the unlocked_ioctl callback. Should I implement a
+>    compat_ioctl callback as well?
+> 
+
+The compat_ioctl is to handle 32bit userspace running on a 64bit kernel.
+If your structures have the same size in both cases, then you don't have
+to implement compat_ioctl.
+
+Have a look at Documentation/driver-api/ioctl.rst
 
 
-This e-mail and any attachments may contain confidential material for the sole
-use of the intended recipient(s). Any review or distribution by others is
-strictly prohibited. If you are not the intended recipient, please contact the
-sender and delete all copies.
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
