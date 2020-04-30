@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42FFF1BFE34
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 010C21BFE3D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:29:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H/pRVtzxrTds66ogcTRsg1ysKpttFNGwgf029lMdxGc=; b=Gr1YY8zXVVemdX
-	WaJgTKj+fzZA9UzP51AQqqiZfVh0Oq/Jr5zk6fhvkn1gST0P9FIHe4L2TVv4sQucj2ggvz2M1NISx
-	07xW0nCSkBASbYogxnEVQ4XVb475oXGscym+NRYJ4BXiVFBxjQKJNOhZ3+cQ6An1LR/OuNeYL1LXr
-	rjkqWI6dbOOte7ev+w+Tl3LT+/DJ1Xmd5B43DK5ELWAIYepmci4yZRtT0Rvqfsde6hvU29xpGyPxY
-	OVraOvqagpAS+/NhDgZHc97fhNEPNShTnzyJNPWStw8fC/ptOf3fU1WjNcrF3GZkf9TW+2JochJNY
-	367cGoMes8oAuE6mMGIw==;
+	List-Owner; bh=w5w6ENp7oxJffVuODcdwhac4eUC94dbAEoK8LqgL/4w=; b=oiT8t9brrJtTdo
+	+cI01VTesH0PajuZ/tzavGkJtaKQpJisOAG0NDChpg3ImVyzAsvv41NlBmoD8A0XLmLvoJBiFhNCW
+	/chZBkhvXYBZWjJIJ5jkl1AGEAXLY0f+WDG2bIswXJHY+zTZfhPviK4EonpfHSYi43BTErOJ8zl36
+	AigNRnv2mGKKfLMMyrLxYQrRoxVRn04OZu7pyGmiNowoailBigfffdkZUxN8mQbslKEmlQ/DjqFvW
+	0eQMeRNlfUhtdvr6pahfCiheAAVupWgIQem68Z/w0f0EE1GeAB8eK/aLX/W3trmRkCS0tYwzhImod
+	+oNdtCAQrcfWdjH/t3vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUAAX-0008CE-3H; Thu, 30 Apr 2020 14:28:05 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
+	id 1jUABV-000087-W0; Thu, 30 Apr 2020 14:29:06 +0000
+Received: from mail-qv1-f65.google.com ([209.85.219.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAAL-0008Bd-Q3
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:27:55 +0000
-Received: by mail-qk1-f193.google.com with SMTP id g74so5807931qke.13
+ id 1jUABK-00006f-Jl
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:28:55 +0000
+Received: by mail-qv1-f65.google.com with SMTP id h6so3058142qvz.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:27:53 -0700 (PDT)
+ Thu, 30 Apr 2020 07:28:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=O/0HPBsHNU1Zz63ikLSaiq1tEsUfgo674JZFS5/Kd2o=;
- b=sWXBzpUA1z3pMnOpwfaO3geIZgXOaCgwYXhRz+cEzD4csCFn6CMXqnmDXUekFDuFdE
- tk7oA9Bnqznnd0t2yXzIwz7lFyY5Aqb1/UX8ivfER0VOtdC8LDrTLKaE/YZo9QygJ0Sg
- +RtiRg9WiEhfXzhEJA357gPAMqzEjUwd6G7qKeXpSTjf5O6uTM8FDzjA3brLyP1a40XG
- yx7tz+OR7BARCr+jjeaa5HvgwRuDeMZZ/LwtP3yUEOASGQTynlaBXOA7hrGLWa8UTco6
- OYeNOC8nQq+bxJk83owqtWV3+vA5tFY4GT6BI6twFw1XAu3vaUq21MM4AcNe4irn9XH6
- u6Tg==
-X-Gm-Message-State: AGi0PuYdPVF9QV5sWHc5BUYAnZ1FVbZeQUPDhn49b6pbiFQlarbDIDXL
- WaKLbPovLH/yT6TLmrbnNRjRbaNJpAbZ7YPpOsk=
-X-Google-Smtp-Source: APiQypJ0wnfqNBtvV5DRJQ7B2RPuH0aK38BLyizTr8I4v1YozRfr0aHWKl2U/Ir3VfckqinVYAjVYSuNmzb4FyxwrlE=
-X-Received: by 2002:a37:a212:: with SMTP id l18mr3494398qke.428.1588256872560; 
- Thu, 30 Apr 2020 07:27:52 -0700 (PDT)
+ bh=vVWzBYKJUQDuVX/btoJY+6LYMrXr1RGguk9M1fRb2Gk=;
+ b=P2yDBr+95x0XPZuZiB3TyoJxDnNTuUBjHqA5UwzAWkS2u0hbfafXptqj8WLF6okB7P
+ wb/DByPHC51H3xf4p3pdOpPBNusRq2rTA72odVXh2x7NO40XZraAQFywVOP8zLksWM+w
+ f1lDgfNJeMA+XT2vz1WN2IaePsNMUxbO7imWMrD/+TuCju+8YNmeJD4uUx8bDDpsgoB3
+ 05Hr+XtSd7diY0eq0f6H/VpveBJKN2vbyMIW4em3sYolPiS0iv23ILqOuTgb3LK2/Gtg
+ mytCgeM1RMLIW+uej17I8Nr1c+1k3j6er1huzI9A9Dptm85ZBi+jycgvS5CBdFRmODaR
+ E08g==
+X-Gm-Message-State: AGi0PuaKiP6T24oHz+j+kNK9tIakWnNJPPpJFQ0iHokV6MvxodvrpvOw
+ nkmUDw/94Q+dS9cmFtUaJgJiOqGApxp8AVA4y0vNhHQ3
+X-Google-Smtp-Source: APiQypJRTf/ui9dNutw4tN535a/lPdlLEOpjjfiChGE7kI685qtINjYPuVWS/8HbqUbbyS9WsJPmByFOcVrXUvlv1Rk=
+X-Received: by 2002:a0c:ec8f:: with SMTP id u15mr3355852qvo.102.1588256932282; 
+ Thu, 30 Apr 2020 07:28:52 -0700 (PDT)
 MIME-Version: 1.0
 References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-17-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1588197415-13747-17-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <1588197415-13747-18-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1588197415-13747-18-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 30 Apr 2020 16:27:40 +0200
-Message-ID: <CAMuHMdX=Y49D+zP4-6oxsu7c1gsMbQC-Wb34uJqrPmxRxZp7JA@mail.gmail.com>
-Subject: Re: [PATCH 16/18] ARM: dts: r8a7742: Add [H]SCIF{A|B} support
+Date: Thu, 30 Apr 2020 16:28:40 +0200
+Message-ID: <CAMuHMdXrX-Crdgjx31LzYpGabfMcZ6GcVQuUFo64Dxd3y3orgg@mail.gmail.com>
+Subject: Re: [PATCH 17/18] dt-bindings: gpio: rcar: Add r8a7742 (RZ/G1H)
+ support
 To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_072753_843530_D7C29648 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20200430_072854_651840_8742E170 
+X-CRM114-Status: GOOD (  10.53  )
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.219.65 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
+ [209.85.219.65 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -100,9 +101,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 11:58 PM Lad Prabhakar
+On Wed, Apr 29, 2020 at 11:59 PM Lad Prabhakar
 <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> Describe [H]SCIF{|A|B} ports in the R8A7742 device tree.
+> Renesas RZ/G1H (R8A7742) SoC GPIO blocks are identical to the R-Car Gen2
+> family. Add support for its GPIO controllers.
 >
 > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
