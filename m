@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 610721C08E4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:12:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDBD71C08E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:12:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pBpNacZrK1lKksCcNJJnQnRBqUvMo2gwzbCnk7kgdKs=; b=qAG8OoRS/iN0pOC31ebitCCEM9
-	QXor2oRvjDm/r3iR1E1GyD+drlvCdX3wzyB4XCIL7OCTX4IPOhFH0rkjOkpePn9maOAwOVxqPxQAt
-	zMsOxm0uEKQRc7e6K6LVkc55e2K2tFapnZjcADkout3IsKYlyxY6I6zuGyCpIWvuYlZqvoE/f639j
-	Ou3rHwVTIEiZslmYHc3ibMRasqc5goPkEF8MNwC8nCXv/GxvNrrmKyqztsuW2r4q8SVN9Z4YVKT/A
-	AKKDv5WYxM/fmW6Luek5htAKUX5a2CEmdpH9FNJU+5CpdbwEgyovCl7daf9CMrMH3VSQUlb6ntHMz
-	rhOhGjuw==;
+	bh=Aa+nxFCrsuRvpz2IkToA4Bew+F6ce6VvebXUWHcWFu0=; b=S6thJ9USwltN0qvFSgLlfsukyq
+	tKHHnZgRuYHXOhbesC48hmhROOlMCMm3St/BIARtRSVdVUPxs8eNJeC9tf84PZfxhEiO5pa9qZooK
+	skSYNV4jXnu3PHn2RjeLza2NDUJdoIT6Iuok+iQsSrerJAdWolkNnGHr7Eyc04WtyfOYOEuxGUIPx
+	7hJmOOyF97RUnnE6CKpZdHe/ZP+Bc8yZy/qgOmNOGSZk/M6+q2SeCtx9ds+V0gpU5Lnj20zmbgQ/V
+	M7fhGBsT6phGUZVQHUWe9uKdibKbRSB24+5jvXHso3k1/nvmZ451HIskDxwdGpmwKSgd8QUomNck+
+	xZje/PMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGTS-0004U7-Rv; Thu, 30 Apr 2020 21:12:02 +0000
+	id 1jUGTm-0004kJ-FR; Thu, 30 Apr 2020 21:12:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGSc-000407-MG
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:12 +0000
+ id 1jUGSe-00041o-Db
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 001E21042;
- Thu, 30 Apr 2020 14:11:10 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 13E851FB;
+ Thu, 30 Apr 2020 14:11:11 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 18DC13F68F;
- Thu, 30 Apr 2020 14:11:08 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 300F93F68F;
+ Thu, 30 Apr 2020 14:11:10 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 3/8] dt-bindings: net: Convert Calxeda Ethernet binding to
+Subject: [PATCH v3 4/8] dt-bindings: phy: Convert Calxeda ComboPHY binding to
  json-schema
-Date: Thu, 30 Apr 2020 22:10:49 +0100
-Message-Id: <20200430211054.30466-4-andre.przywara@arm.com>
+Date: Thu, 30 Apr 2020 22:10:50 +0100
+Message-Id: <20200430211054.30466-5-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430211054.30466-1-andre.przywara@arm.com>
 References: <20200430211054.30466-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_141110_764520_CE5FB94E 
-X-CRM114-Status: GOOD (  14.11  )
+X-CRM114-CacheID: sfid-20200430_141112_521421_82E24903 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,96 +71,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the Calxeda XGMAC Ethernet device binding to DT schema format
-using json-schema.
+Convert the Calxeda ComboPHY binding to DT schema format using
+json-schema.
+There is no driver in the Linux kernel matching the compatible
+string, but the nodes are parsed by the SATA driver, which links to them
+using its port-phys property.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../devicetree/bindings/net/calxeda-xgmac.txt | 18 -------
- .../bindings/net/calxeda-xgmac.yaml           | 49 +++++++++++++++++++
- 2 files changed, 49 insertions(+), 18 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/net/calxeda-xgmac.txt
- create mode 100644 Documentation/devicetree/bindings/net/calxeda-xgmac.yaml
+ .../bindings/phy/calxeda-combophy.txt         | 17 -------
+ .../bindings/phy/calxeda-combophy.yaml        | 51 +++++++++++++++++++
+ 2 files changed, 51 insertions(+), 17 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
 
-diff --git a/Documentation/devicetree/bindings/net/calxeda-xgmac.txt b/Documentation/devicetree/bindings/net/calxeda-xgmac.txt
+diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt b/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
 deleted file mode 100644
-index c8ae996bd8f2..000000000000
---- a/Documentation/devicetree/bindings/net/calxeda-xgmac.txt
+index 6622bdb2e8bc..000000000000
+--- a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
 +++ /dev/null
-@@ -1,18 +0,0 @@
--* Calxeda Highbank 10Gb XGMAC Ethernet
+@@ -1,17 +0,0 @@
+-Calxeda Highbank Combination Phys for SATA
 -
--Required properties:
--- compatible : Should be "calxeda,hb-xgmac"
--- reg : Address and length of the register set for the device
--- interrupts : Should contain 3 xgmac interrupts. The 1st is main interrupt.
--  The 2nd is pwr mgt interrupt. The 3rd is low power state interrupt.
--
--Optional properties:
--- dma-coherent      : Present if dma operations are coherent
+-Properties:
+-- compatible : Should be "calxeda,hb-combophy"
+-- #phy-cells: Should be 1.
+-- reg : Address and size for Combination Phy registers.
+-- phydev: device ID for programming the combophy.
 -
 -Example:
 -
--ethernet@fff50000 {
--        compatible = "calxeda,hb-xgmac";
--        reg = <0xfff50000 0x1000>;
--        interrupts = <0 77 4  0 78 4  0 79 4>;
--};
-diff --git a/Documentation/devicetree/bindings/net/calxeda-xgmac.yaml b/Documentation/devicetree/bindings/net/calxeda-xgmac.yaml
+-	combophy5: combo-phy@fff5d000 {
+-		compatible = "calxeda,hb-combophy";
+-		#phy-cells = <1>;
+-		reg = <0xfff5d000 0x1000>;
+-		phydev = <31>;
+-	};
+-
+diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
 new file mode 100644
-index 000000000000..c3ca26666ede
+index 000000000000..16a8bd7644bf
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/net/calxeda-xgmac.yaml
-@@ -0,0 +1,49 @@
++++ b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+@@ -0,0 +1,51 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/net/calxeda-xgmac.yaml#
++$id: http://devicetree.org/schemas/phy/calxeda-combophy.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Calxeda Highbank 10Gb XGMAC Ethernet controller
++title: Calxeda Highbank Combination PHYs binding for SATA
 +
 +description: |
-+  The Calxeda XGMAC Ethernet controllers are directly connected to the
-+  internal machine "network fabric", which is set up, initialised and
-+  managed by the firmware. So there are no PHY properties in this
-+  binding. Switches in the fabric take care of routing and mapping the
-+  traffic to external network ports.
++  The Calxeda Combination PHYs connect the SoC to the internal fabric
++  and to SATA connectors. The PHYs support multiple protocols (SATA,
++  SGMII, PCIe) and can be assigned to different devices (SATA or XGMAC
++  controller).
++  Programming the PHYs is typically handled by those device drivers,
++  not by a dedicated PHY driver.
 +
 +maintainers:
 +  - Andre Przywara <andre.przywara@arm.com>
 +
 +properties:
 +  compatible:
-+    const: calxeda,hb-xgmac
++    const: calxeda,hb-combophy
++
++  '#phy-cells':
++    const: 1
 +
 +  reg:
 +    maxItems: 1
 +
-+  interrupts:
-+    description: |
-+      Can point to at most 3 xgmac interrupts. The 1st one is the main
-+      interrupt, the 2nd one is used for power management. The optional
-+      3rd one is the low power state interrupt.
-+    minItems: 2
-+    maxItems: 3
-+
-+  dma-coherent: true
++  phydev:
++    description: device ID for programming the ComboPHY.
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++      - maximum: 31
 +
 +required:
 +  - compatible
 +  - reg
-+  - interrupts
++  - phydev
++  - '#phy-cells'
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    ethernet@fff50000 {
-+        compatible = "calxeda,hb-xgmac";
-+        reg = <0xfff50000 0x1000>;
-+        interrupts = <0 77 4>, <0 78 4>, <0 79 4>;
-+    };
++    combophy5: combo-phy@fff5d000 {
++                   compatible = "calxeda,hb-combophy";
++                   #phy-cells = <1>;
++                   reg = <0xfff5d000 0x1000>;
++                   phydev = <31>;
++               };
 -- 
 2.17.1
 
