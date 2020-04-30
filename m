@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5918A1BFAB2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:55:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98B3A1BFAC5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:56:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vhwtXn2vBT19vBRaS9yjpKom4JFSC5Ca0tlU4Gj2CH0=; b=MoqUrg0AGKQ4p6
-	a8LVNHkKkn7qTW0Bkhm9gIJpkHL5CSi9i+J3H9e6EOV3zYPsxVk26JE6C2SkJNayueCKBIGEUbzRz
-	eV5DOHIYjPCAP404zT0/rgH16mFCNP9uUaP0jagf7CSQL4BsqiMJmg0/GTqTJr3oNATctBIEpxxcj
-	KWZGcvw4oiJzHp7echfMzZ/0tv1I5Pr9KojmBEVWxtTW1sPWxM7qKSDllcb8TbHeWdjaazqXgYNdq
-	+vdeq7/F6jop+iQ/6hnIOW0owVeWxqV5qDdzVwIO1zr9un9ZqfsnUPWpLRsCO5X6HrmDzBhtcYlAg
-	Ic2oX1t0qBhZ66rSATmQ==;
+	List-Owner; bh=vXYcZ1XFWsgs1IkdzXsXNOz1wALuyrROYdoOiEmyHCc=; b=kqX/YwPrHDBI5Z
+	9b9OVZyq4XNeJaHJ4Qt8n41TGYpr5K4ahsdsCcjbfdcIYd56jnyUefn7W1CqFUJohEBNpfFk8H3ud
+	+uyM9vnDLIKOKY+j051GTj/Xg0u7a4IlZgUeHLJw9V/u7e23/r7xUxQ25Cm7lQXi63tSr5GZlfgWv
+	ahsUTUVwGauGwTVsao1/G6oC41KtDumqfSN2xVlXp5kan5A2Xkha6zmExtxkPQhQUUHgz1zOiqia2
+	kl5wUESsjMDsT2bRHUVAaM3xP07p7uRDIjBtNsbEBNkX/NDxK+RDBL+S1VkGw7p5D+3n64laO677c
+	kKgVfIVPisQpgNLWF0LQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9f3-00061h-At; Thu, 30 Apr 2020 13:55:33 +0000
+	id 1jU9fL-0006GB-FT; Thu, 30 Apr 2020 13:55:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9cH-0001QO-Vf
+ id 1jU9cJ-0001SB-N0
  for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:52:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 157DA208DB;
- Thu, 30 Apr 2020 13:52:40 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2637A208D5;
+ Thu, 30 Apr 2020 13:52:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588254760;
- bh=YmqlM56F2jJuRWYNTBNA8ew3wBlgerJMSnKaUx6c5AM=;
+ s=default; t=1588254762;
+ bh=IpPVEfvJLI6p3CS+kHD0JvcDAyrdouIX9eEe+XK+FGM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=GO9/M7z0meQXELMnIwhSkE6DyhDe3d419tjuVACuaRCVTIYk2oQwD+OqEdQ7krjui
- dzC0ArJHkDKgGO5gh0mlF+4TIiBAX88cmfhh2hLQeigOeIgy8vacy1H2oLomjwHupb
- CsBw0NNBHDleRBi5fd/Xy3ClAZ9hWQ2u8sGzAJBo=
+ b=ie1DZ49qjCAyYvnuAamTMawdVIo62RDX3PniJPtlugsr1OOOvwzpu4hSHDXEfIK+C
+ t2p8kKxtcW1cA28p6Dk0s3NDuonnOdhlZ814YOukhCA38cKkJ8KMJ99KdRSLyzzW6E
+ w7C4mBpScp/oN4DjLfIyS8Tv5rjIO2dKNdQBxhKQ=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 19/57] ARM: dts: bcm283x: Disable dsi0 node
-Date: Thu, 30 Apr 2020 09:51:40 -0400
-Message-Id: <20200430135218.20372-19-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 21/57] usb: gadget: udc: atmel: Fix vbus
+ disconnect handling
+Date: Thu, 30 Apr 2020 09:51:42 -0400
+Message-Id: <20200430135218.20372-21-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200430135218.20372-1-sashal@kernel.org>
 References: <20200430135218.20372-1-sashal@kernel.org>
@@ -49,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_065242_140877_19209138 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20200430_065243_931845_6ECCA026 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,43 +80,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
- Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Felipe Balbi <balbi@kernel.org>,
+ linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Cristian Birsan <cristian.birsan@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+From: Cristian Birsan <cristian.birsan@microchip.com>
 
-[ Upstream commit 90444b958461a5f8fc299ece0fe17eab15cba1e1 ]
+[ Upstream commit 12b94da411f9c6d950beb067d913024fd5617a61 ]
 
-Since its inception the module was meant to be disabled by default, but
-the original commit failed to add the relevant property.
+A DMA transfer can be in progress while vbus is lost due to a cable
+disconnect. For endpoints that use DMA, this condition can lead to
+peripheral hang. The patch ensures that endpoints are disabled before
+the clocks are stopped to prevent this issue.
 
-Fixes: 4aba4cf82054 ("ARM: dts: bcm2835: Add the DSI module nodes and clocks")
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Reviewed-by: Eric Anholt <eric@anholt.net>
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Fixes: a64ef71ddc13 ("usb: gadget: atmel_usba_udc: condition clocks to vbus state")
+Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
+Signed-off-by: Felipe Balbi <balbi@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/boot/dts/bcm283x.dtsi | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/usb/gadget/udc/atmel_usba_udc.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
-index 90125ce19a1b3..50c64146d4926 100644
---- a/arch/arm/boot/dts/bcm283x.dtsi
-+++ b/arch/arm/boot/dts/bcm283x.dtsi
-@@ -488,6 +488,7 @@
- 					     "dsi0_ddr2",
- 					     "dsi0_ddr";
- 
-+			status = "disabled";
- 		};
- 
- 		thermal: thermal@7e212000 {
+diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
+index 1d0d8952a74bf..58e5b015d40e6 100644
+--- a/drivers/usb/gadget/udc/atmel_usba_udc.c
++++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
+@@ -1950,10 +1950,10 @@ static irqreturn_t usba_vbus_irq_thread(int irq, void *devid)
+ 			usba_start(udc);
+ 		} else {
+ 			udc->suspended = false;
+-			usba_stop(udc);
+-
+ 			if (udc->driver->disconnect)
+ 				udc->driver->disconnect(&udc->gadget);
++
++			usba_stop(udc);
+ 		}
+ 		udc->vbus_prev = vbus;
+ 	}
 -- 
 2.20.1
 
