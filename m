@@ -2,53 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F24B71C03D5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 19:23:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2F2E1C03EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 19:34:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cfVIMkO2K7dnqbxHKF8bp4jLP4ZO0AR7QDsgNVWSY7A=; b=s8Vau3WTKv765/Q+41OLW2LGm
-	oIeXzxUGisqloeGcuC11VSLJZFnyIhw+iSlzFj4CdN5xbaH8zx7hQ74nl7f+3GunDMEiVi4QU22/G
-	WfXmEPYIEuJM31/ZGL9kDy+yoYf7+HIWVr6MsSfCw8MJj16u8XOVmAjUNhTZDDRcDAAOv3NjXLdxD
-	gsKNV3aUZBAqqiTnIhP+pZkRzfrHRf+OYm1EFbo1f0ULSmAESBhtvo15g8vbqFJOfz5cs59R6ycs4
-	TZbCbeNXE/pUVPRVAjlcUW+Ly4XV6itUR6Mtq8ABLIfIQ40ARQ48HBtFJMXK5fOyN60jk2NezHfo/
-	98b7ysokQ==;
+	 bh=dOhFnp/9gvOtfgkQfFyiKKgjeS7LezZuSpML5XWwSzg=; b=Yk9wwuFVwyHztGQjyyBTSP9yh
+	soQAgn+1Pig/icV+pF+QVR/jAUDJkAyFjsCCEH85jA1tnEKGi5cur+vlAjqmIFA3KGHsGi9/y6hZ2
+	+Nt8Hdn9QOK1gbQvqE1V4kMS2E3eLNEJC6tSYUac1jEOo07wMqjH4iU3v+/rrc5268kw8JBVZo5xr
+	8wRtyqoT+p+Sme7D6WHBHAA6tDL+e9OV6YYdMrLc5lmGXC7Ea7MmqvDTop8XhPOSo563gnZ7zP21v
+	BvbSOho7t24IJivZZQQmFitVFP/zILrkj3U6BQCpQ/xCBtf4RNC83nSHCd8NpFw5mlznNgtB1a2hS
+	7zEtf9/Iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCuB-00072o-FE; Thu, 30 Apr 2020 17:23:23 +0000
+	id 1jUD4U-0005I7-2n; Thu, 30 Apr 2020 17:34:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCu1-00071w-Ie
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 17:23:14 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ id 1jUD4I-0005Gx-T6
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 17:33:53 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B20CC20787;
- Thu, 30 Apr 2020 17:23:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5073420731;
+ Thu, 30 Apr 2020 17:33:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588267393;
- bh=cB+rnSreN4Y7+e/GucPEZjqWYPOPdWxjp1+u60xntcE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kmp+lkJ1/HD6PLF7mvfloclXCTRsd2jPdU8AMfwA4d51vTl/rt54Z0muIrTZ5xjUK
- R8m8nuweMcy21wN3MTxNZu32N+vInR/pQE86WannwqZMuv5W/19RYzN8T6N9ORpagI
- yF3xSnIwNm+Ie2xEEtBIcMm2Vitaqq+z4yP2tmis=
-Date: Thu, 30 Apr 2020 18:23:10 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v2 00/10] arm64: BTI kernel and vDSO support
-Message-ID: <20200430172310.GH4633@sirena.org.uk>
-References: <20200429211641.9279-1-broonie@kernel.org>
- <20200430171842.GL2717@gaia>
+ s=default; t=1588268030;
+ bh=7OyWguI2rc8GY3pA0j9peooBQlK7C47Glh0LtwePdIk=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=uZQ0OiesVFY93yX2EfPV0iDC0FtwkI9adRQbqtcv9aFNMXPHmIlaCF/kJGAX1TUIj
+ AFklv3y61RLexW0fOo3TbXxWPuLsoNpc/HsHCj45LEZHK5ssnvfyHEVi/0oWa3vLk1
+ KT29VYG7slez9Z2zJI4CTxEsaC9TugxUPaI135NM=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jUD4G-0088DI-K4; Thu, 30 Apr 2020 18:33:48 +0100
 MIME-Version: 1.0
-In-Reply-To: <20200430171842.GL2717@gaia>
-X-Cookie: Sign here without admitting guilt.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Thu, 30 Apr 2020 18:33:48 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: perf_event: Fix time_offset for arch timer
+In-Reply-To: <20200430161815.GE25258@willie-the-truck>
+References: <20200320093545.28227-1-leo.yan@linaro.org>
+ <20200430145823.GA25258@willie-the-truck>
+ <4d924f705245c797a19d3a73eb0c1ba0@kernel.org>
+ <20200430160436.GC13575@hirez.programming.kicks-ass.net>
+ <20200430161815.GE25258@willie-the-truck>
+User-Agent: Roundcube Webmail/1.4.3
+Message-ID: <79ba3f5f9af951b2de52b8eb9e1bc25f@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: will@kernel.org, peterz@infradead.org, leo.yan@linaro.org,
+ mark.rutland@arm.com, mingo@redhat.com, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, jolsa@redhat.com, namhyung@kernel.org,
+ catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, mathieu.poirier@linaro.org,
+ mike.leach@linaro.org, Al.Grant@arm.com, James.Clark@arm.com,
+ tglx@linutronix.de
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_102313_635778_B6AD831B 
-X-CRM114-Status: GOOD (  12.30  )
+X-CRM114-CacheID: sfid-20200430_103350_968051_03C17DCE 
+X-CRM114-Status: GOOD (  12.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,74 +97,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Will Deacon <will@kernel.org>, Kees Cook <keescook@chromium.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0801327707833591194=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Al Grant <Al.Grant@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, James Clark <James.Clark@arm.com>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ tglx@linutronix.de, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020-04-30 17:18, Will Deacon wrote:
+> On Thu, Apr 30, 2020 at 06:04:36PM +0200, Peter Zijlstra wrote:
+>> On Thu, Apr 30, 2020 at 04:29:23PM +0100, Marc Zyngier wrote:
+>> 
+>> > I wonder if we could/should make __sched_clock_offset available even when
+>> > CONFIG_HAVE_UNSTABLE_SCHED_CLOCK isn't defined. It feels like it would
+>> > help with this particular can or worm...
+>> 
+>> Errrgh. __sched_clock_offset is only needed on x86 because we 
+>> transition
+>> from one clock device to another on boot. It really shouldn't exist on
+>> anything sane.
+> 
+> I think we still transition from jiffies on arm64, because we don't 
+> register
+> with sched_clock until the timer driver probes. Marc, is that right?
 
---===============0801327707833591194==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="bygAmIonOAIqBxQB"
-Content-Disposition: inline
+Indeed. The clocksource is only available relatively late, as we need to
+discover the details of the platform and enable the various workarounds
+(because nobody can get a simple 64bit counter right). So it is only at
+that stage that we transition to it.
 
-
---bygAmIonOAIqBxQB
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Apr 30, 2020 at 06:18:43PM +0100, Catalin Marinas wrote:
-> On Wed, Apr 29, 2020 at 10:16:31PM +0100, Mark Brown wrote:
-
-> > v2:
-> >  - Enable support for building with GCC version 10 and later, a fix
-> >    for BTI code generation is being backported to GCC 9 but is not yet
-> >    available.
-
-> Do you have a link to a GCC commit or bugzilla? (for future reference,
-> no need to update the patch).
-
-I found these:
-
-	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94697
-	https://gcc.gnu.org/pipermail/gcc-patches/2020-April/544429.html
-
-> The series looks fine to me.
-
-> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
-
-Thanks.
-
---bygAmIonOAIqBxQB
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6rCX0ACgkQJNaLcl1U
-h9C3Uwf6Ag5yX8HQWx5TIQTGE8bxyBgGJqz/uMECRQHte9lbDCZy+zVmiXk70C1n
-XUoW4yRGHhcnu4RSm9W0pxw7edjPvA/5skgspNp7mTAet8XZkJUpSrGmc00ubHqI
-tL5+4vixJMARI/KTNEHmvU9ojih9e2rZKAwiA/9rKhVWv9k1Ju9fmbGrP6k/iG5O
-2Ysw+S6EKyKu/JzDVfKOyY0fc6+P4R1I15nT85H+ph51utOaH9kkrzKIRJWE2trf
-17qz5lg2j+tlfkpfvdFayYm1CQ9NREAg+TYAHGMx0ydXPSfmg0VGSNOEjpHAuTfv
-m0/94RUzXOe/5B3Ao0ECCveuFCxJmg==
-=Hocm
------END PGP SIGNATURE-----
-
---bygAmIonOAIqBxQB--
-
-
---===============0801327707833591194==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0801327707833591194==--
-
