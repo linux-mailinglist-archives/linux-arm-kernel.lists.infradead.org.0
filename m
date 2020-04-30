@@ -2,64 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CFDD1BF536
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:20:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A298F1BF53C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:21:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lxHwBgGm86pM8L3z0Ds6f4eStV+Zl9wroil7SS67S68=; b=ermrmI6++iJ6vO
-	DbCFCL/E55jqZ+MBtFqFvs/dXXBxekwH0ousJg7URpTAJZi5TW4T/3fE/YDFz0k38uhlwMUkrljex
-	1P1jVafeeY4rUASOAnNKRwFbvCK7oogsl8ylpK1eJRciJ/rwpp2C7Ir2tr2k+qYCRJTcl6VEvP0mu
-	MWT0uYc4BZggBCjNZFd6j9SoY0a7+Lkrr/3kcthRFhhQTdh0vL2kHDxfjOCb18iFkvbW019Pe6F3B
-	tW0rEDsyStl7GlW+eJ1rTgWPr/UcZxciof/WLnWd2J5Ax1+xELH0X7zWhqymWr7MyjuVhr0bnVGJ+
-	iGzqLOUrPeM3f4POpWZA==;
+	List-Owner; bh=rRAVzhne1HuVF4oZ20muK7uMDwQCP9nVm6lbUfBz6uM=; b=CnWvTI1+t9iZ2f
+	UI8oTFKRDA/A3rxFV0t7TCKdjwGn5wMgJwC5Enm3Grk4RdhlGiz+GdvxKpi2zGzv01ITFY/le2F85
+	Jb/5HeDIuELEC9aTYpHvdh3yIpagjjCJmomj9Hgh2Kyk6eMoS08UTlckr0LFZI/TVi6OUYKi+yGkC
+	PtXm1116dyTguv7De4RsHSkD+0kGK6qam1bFmqJuyRbfgaz4puYM0CXjdv6kYAd6xMGy6QecQiMgB
+	QnEZ/072TqQ4/4I2LEj09oQPk3IP1jLbf1B+0V7eHi/P1crMoEjT8xBCszbA/Ax6vy71nHHpIIkmn
+	AtcaI3qQa7GgKZsTDWFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU6J8-0003aR-MC; Thu, 30 Apr 2020 10:20:42 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU6Ix-0003Zi-81
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:20:32 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 8AD6A634C8F;
- Thu, 30 Apr 2020 13:20:18 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1jU6Ik-0000QX-ER; Thu, 30 Apr 2020 13:20:18 +0300
-Date: Thu, 30 Apr 2020 13:20:18 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v6 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200430102018.GI867@valkosipuli.retiisi.org.uk>
-References: <20200429162437.2025699-1-robert.foss@linaro.org>
- <20200429162437.2025699-3-robert.foss@linaro.org>
- <20200430093524.GB2188@pengutronix.de>
- <20200430094549.GF867@valkosipuli.retiisi.org.uk>
- <20200430095332.GC2188@pengutronix.de>
- <20200430095907.GG867@valkosipuli.retiisi.org.uk>
- <20200430101157.GD2188@pengutronix.de>
+	id 1jU6KC-0003s5-68; Thu, 30 Apr 2020 10:21:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jU6K1-0003rf-Ir
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:21:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2DF71063;
+ Thu, 30 Apr 2020 03:21:36 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6F033F68F;
+ Thu, 30 Apr 2020 03:21:34 -0700 (PDT)
+Date: Thu, 30 Apr 2020 11:21:32 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+Message-ID: <20200430102132.GF2717@gaia>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
+ <20200429164607.GE30377@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430101157.GD2188@pengutronix.de>
+In-Reply-To: <20200429164607.GE30377@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_032031_467827_893AE3F6 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200430_032137_707721_A0CFA54D 
+X-CRM114-Status: GOOD (  26.71  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -72,67 +64,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- linux-kernel@vger.kernel.org, Robert Foss <robert.foss@linaro.org>,
- Tomasz Figa <tfiga@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Luis Machado <luis.machado@linaro.org>, Will Deacon <will@kernel.org>,
+ Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Alan Hayward <Alan.Hayward@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 12:11:57PM +0200, Marco Felsch wrote:
-> On 20-04-30 12:59, Sakari Ailus wrote:
-> > Hi Marco,
+On Wed, Apr 29, 2020 at 05:46:07PM +0100, Dave P Martin wrote:
+> On Tue, Apr 21, 2020 at 03:25:59PM +0100, Catalin Marinas wrote:
+> > Add support for bulk setting/getting of the MTE tags in a tracee's
+> > address space at 'addr' in the ptrace() syscall prototype. 'data' points
+> > to a struct iovec in the tracer's address space with iov_base
+> > representing the address of a tracer's buffer of length iov_len. The
+> > tags to be copied to/from the tracer's buffer are stored as one tag per
+> > byte.
 > > 
-> > On Thu, Apr 30, 2020 at 11:53:32AM +0200, Marco Felsch wrote:
-> > > Hi Sakari,
-> > > 
-> > > On 20-04-30 12:45, Sakari Ailus wrote:
-> > > > Hi Marco,
-> > > > 
-> > > > On Thu, Apr 30, 2020 at 11:35:24AM +0200, Marco Felsch wrote:
-> 
-> ...
-> 
-> > > > > > -	if (mclk != OV8856_MCLK) {
-> > > > > > -		dev_err(dev, "external clock %d is not supported", mclk);
-> > > > > > -		return -EINVAL;
-> > > > > > +	if (!is_acpi_node(fwnode)) {
-> > > > > > +		ov8856->xvclk = devm_clk_get(dev, "xvclk");
-> > > > > > +		if (IS_ERR(ov8856->xvclk)) {
-> > > > > > +			dev_err(dev, "could not get xvclk clock (%pe)\n",
-> > > > > > +					ov8856->xvclk);
-> > > > > > +			return PTR_ERR(ov8856->xvclk);
-> > > > > > +		}
-> > > > > > +
-> > > > > > +		clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > > > > +		xvclk_rate = clk_get_rate(ov8856->xvclk);
-> > > > > >  	}
-> > > > > 
-> > > > > Why do we handle the clock only in DT case? Is there a problem with the
-> > > > > clock handling and ACPI?
-> > > > 
-> > > > Not really, it's just that ACPI does not provide an interface to the clocks
-> > > > as such.
-> > > 
-> > > But you will get a clk by devm_clk_get()?
+> > On successfully copying at least one tag, ptrace() returns 0 and updates
+> > the tracer's iov_len with the number of tags copied. In case of error,
+> > either -EIO or -EFAULT is returned, trying to follow the ptrace() man
+> > page.
 > > 
-> > No, because ACPI does not expose one to drivers. Effectively the entire
-> > power sequences are implemented in ACPI, not in the driver.
-> > 
+> > Note that the tag copying functions are not performance critical,
+> > therefore they lack optimisations found in typical memory copy routines.
 > 
-> Ah okay, thanks for the explanation. I'm really not into the ACPI
-> stuff.. So this means the __power_off / power_on should only be done if
-> we are using DT's?
+> Doesn't quite belong here, but:
+> 
+> Can we dump the tags and possible the faulting mode etc. when dumping
+> core?
 
-Correct. That's why it bails out early. It could be yet earlier though,
-without doing anything.
+Yes, a regset containing GCR_EL1 and SCTLR_EL1.TCF0 bits, maybe
+TFSRE_EL1 could be useful. Discussing with Luis M (cc'ed, working on gdb
+support), he didn't have an immediate need for this but it can be added
+as a new patch.
+
+Also coredump containing the tags may also be useful, I just have to
+figure out how.
+
+> These could probably be added later, though.
+
+Yes, it wouldn't be a (breaking) ABI change if we do them later, just an
+addition.
+
+> > diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
+> > index fa4a4196b248..0cb496ed9bf9 100644
+> > --- a/arch/arm64/kernel/mte.c
+> > +++ b/arch/arm64/kernel/mte.c
+> > @@ -133,3 +138,125 @@ long get_mte_ctrl(void)
+> >  
+> >  	return ret;
+> >  }
+> > +
+> > +/*
+> > + * Access MTE tags in another process' address space as given in mm. Update
+> > + * the number of tags copied. Return 0 if any tags copied, error otherwise.
+> > + * Inspired by __access_remote_vm().
+> > + */
+> > +static int __access_remote_tags(struct task_struct *tsk, struct mm_struct *mm,
+> > +				unsigned long addr, struct iovec *kiov,
+> > +				unsigned int gup_flags)
+> > +{
+> > +	struct vm_area_struct *vma;
+> > +	void __user *buf = kiov->iov_base;
+> > +	size_t len = kiov->iov_len;
+> > +	int ret;
+> > +	int write = gup_flags & FOLL_WRITE;
+> > +
+> > +	if (down_read_killable(&mm->mmap_sem))
+> > +		return -EIO;
+> > +
+> > +	if (!access_ok(buf, len))
+> > +		return -EFAULT;
+> 
+> Leaked down_read()?
+
+Ah, wrongly placed access_ok() check.
+
+> > +int mte_ptrace_copy_tags(struct task_struct *child, long request,
+> > +			 unsigned long addr, unsigned long data)
+> > +{
+> > +	int ret;
+> > +	struct iovec kiov;
+> > +	struct iovec __user *uiov = (void __user *)data;
+> > +	unsigned int gup_flags = FOLL_FORCE;
+> > +
+> > +	if (!system_supports_mte())
+> > +		return -EIO;
+> > +
+> > +	if (get_user(kiov.iov_base, &uiov->iov_base) ||
+> > +	    get_user(kiov.iov_len, &uiov->iov_len))
+> > +		return -EFAULT;
+> > +
+> > +	if (request == PTRACE_POKEMTETAGS)
+> > +		gup_flags |= FOLL_WRITE;
+> > +
+> > +	/* align addr to the MTE tag granule */
+> > +	addr &= MTE_ALLOC_MASK;
+> > +
+> > +	ret = access_remote_tags(child, addr, &kiov, gup_flags);
+> > +	if (!ret)
+> > +		ret = __put_user(kiov.iov_len, &uiov->iov_len);
+> 
+> Should this be put_user()?  We didn't use __get_user() above, and I
+> don't see what guards the access.
+
+It doesn't make any difference on arm64 (it's just put_user) but we had
+get_user() to check the access to &uiov->iov_len already above.
+
+> > +	default:
+> > +		ret = ptrace_request(child, request, addr, data);
+> > +		break;
+> > +	}
+> > +
+> > +	return ret;
+> >  }
+> >  
+> >  enum ptrace_syscall_dir {
+> > diff --git a/arch/arm64/lib/mte.S b/arch/arm64/lib/mte.S
+> > index bd51ea7e2fcb..45be04a8c73c 100644
+> > --- a/arch/arm64/lib/mte.S
+> > +++ b/arch/arm64/lib/mte.S
+> > @@ -5,6 +5,7 @@
+> >  #include <linux/linkage.h>
+> >  
+> >  #include <asm/assembler.h>
+> > +#include <asm/mte.h>
+> >  
+> >  /*
+> >   * Compare tags of two pages
+> > @@ -44,3 +45,52 @@ SYM_FUNC_START(mte_memcmp_pages)
+> >  
+> >  	ret
+> >  SYM_FUNC_END(mte_memcmp_pages)
+> > +
+> > +/*
+> > + * Read tags from a user buffer (one tag per byte) and set the corresponding
+> > + * tags at the given kernel address. Used by PTRACE_POKEMTETAGS.
+> > + *   x0 - kernel address (to)
+> > + *   x1 - user buffer (from)
+> > + *   x2 - number of tags/bytes (n)
+> 
+> Is it worth checking for x2 == 0?  Currently, x2 will underflow and
+> we'll try to loop 2^64 times (until a fault stops us).
+> 
+> I don't think callers currently pass 0 here, but it feels like an
+> accident waiting to happen.  Things like memcpy() usually try to close
+> this loophole.
+
+Good point.
+
+Thanks.
 
 -- 
-Sakari Ailus
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
