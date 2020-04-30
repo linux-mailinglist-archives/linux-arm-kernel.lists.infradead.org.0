@@ -2,93 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A8451BF1D8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:53:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B76D61BF1EA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:57:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ep0YkTF3jAI82ZQxYM56WN2sPS9b0hB5SoUPac7NFSk=; b=A1A0eAbWzxFQTM
-	dMD3buGD+RtFGLcSCCTkKHllFQ8dQguSE0C/rkqRo9wCCK1f1vIUz4R6TLmWCOmYyVrYDnx3xou1/
-	FodPPCzDKtqlI/Q9wIGwu/5JsZ+SYoXJSX+Dk7VCPLtn/4ih3qoz1DVMxTQlW/bbveywR+FOcCzBb
-	/2wCNgMWMOwnxx3vMC1hq6CZ6LuwD9M4ZcZCQw3KmIEqmPHJoOTZmLHHtBJtiK9RoMtPu1mRPGJog
-	qB0ENvpoHoMNBDOaCD9YMEL8QoYzIBTp1bHxCojK4hg66pUwWazdlDT6V7CSNWqbuDkDofzWEpKWU
-	fcT/mf9Vhjxcfq1qnNqw==;
+	List-Owner; bh=IBPrMfiGZxb+9GQ76mnCEg9hps4njO5UEV5EwWR6gwE=; b=X6NP3eJ+Nxu7HK
+	ek/ih1Cbj+CmSBHszXaT05lzEL9rSt3jmONWYR7XICwxtfTOOa9CKlGEYgdyzQj9IiLTa/GTSucfV
+	xzq88ZjEBpXCtYJ4vIdIi+Ld399iFbAp0DQIz17U35gtGnB1QnpSqjMmHxQiV+DHHarVvftqPvfFf
+	CDSB0TJ0jeKovFAtpHoRRyegpY4WEgzVZJ+1rwYo2Ub4BessxMgJ3bnxbuW70Foo2po608ITHbp9J
+	jyKk2Tw1BgL78zP232MvScIAHmbNmBE10j/dK4PpdLcMNbw1eq9u3FwgutXiexmKa4o8WpP/YL3Ra
+	gspZ7p9SqN3e2/diX5GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU40Z-0007Q2-M1; Thu, 30 Apr 2020 07:53:23 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jU444-0002DX-MR; Thu, 30 Apr 2020 07:57:00 +0000
+Received: from esa2.hgst.iphmx.com ([68.232.143.124])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU40O-0007Ob-Ms
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 07:53:14 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03U7qeNP027781; Thu, 30 Apr 2020 09:52:59 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=nNpjPfXaDpTj1MuVss1sEC1CkwsvuNELkclHvxqRjuk=;
- b=mGYUaPC5tsszTgiYAXjw65KfK8FzSp/hg/Kb/mUbkmqRGx6QAnvnXh9gsypDbQ2ODf1M
- bZRxTFR46p8V0vmGwe3FP/W18dQhRxiAKXrdKTpvgiqtKJjgzYKPx620HX0lAiZnOQAh
- qPi+lZslWd68ItaHxvBCmrsobpZWSfzmCuqq2m//xvaRCfgJmxXcvym7NRpzRhVIUzAg
- YrtUNz57ffn6FIi5CD3vzCU+08AiqoKzJzT4yzHzeBGszUIxb0fLaMWu7YKB9vUFVWKK
- b7J7E7rC174mGxqie2A/wE8CPGMjh6uN9nFSYKlxG1dyDlD8X3enjL2SPLGXH0eCbJrS BQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30mhjx2sv8-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 30 Apr 2020 09:52:59 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 5BDA5100034;
- Thu, 30 Apr 2020 09:52:58 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3BE402AAF69;
- Thu, 30 Apr 2020 09:52:58 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Thu, 30 Apr
- 2020 09:52:57 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Thu, 30 Apr 2020 09:52:57 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: Valentin Schneider <valentin.schneider@arm.com>, "Rafael J. Wysocki"
- <rjw@rjwysocki.net>
-Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Topic: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Index: AQHWGi06wBgeAQBseECYOK/U7Qvw76iQJdAAgAACCYCAAAQ3AIABBseA
-Date: Thu, 30 Apr 2020 07:52:57 +0000
-Message-ID: <6b5cde14-58b3-045d-9413-223e66b87bf0@st.com>
-References: <20200424114058.21199-1-benjamin.gaignard@st.com>
- <7657495.QyJl4BcWH5@kreacher> <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
- <70e743cf-b88e-346a-5114-939b8724c83d@arm.com>
-In-Reply-To: <70e743cf-b88e-346a-5114-939b8724c83d@arm.com>
+ id 1jU43p-0002Bd-0L; Thu, 30 Apr 2020 07:56:46 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588233446; x=1619769446;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=AHpPHIdSCuLujDbRlpm1jzx8b1L8Cgq7g9RvAvcpuwc=;
+ b=gIfnrr6f87kA/3vB7EApvNXpWsp8n04gACm7N4dxuaeB6C0KKGOoD/Tw
+ gN5vO9sqTYhXC9RBDrqx+jCWJI2YxQdzluohPmLbGzQrv3vQozv1dRleI
+ yaQaLiUpCRFucJ8Zas6W5x2dpuQBaj0/1kKTTLgXDmDhl4lhxo4b0kdXX
+ oS70dc2AV6g2AFgQjKd45xnbQW1ec6gJ6SXxmfkhMHDbpfwgbBA7phEGG
+ BnWuClOmIhdf+Zo4l0tjFkeJf9vNh6J1itLlLPtIpyCjtiC4OP4+/zPJp
+ ghVDpIIIkkXtXDVmoY+uPivUKSzXW1yYFeFJAybpE21GdCMPY+C7WVDXQ g==;
+IronPort-SDR: 3F5NKtOXOCF0x5VCuKwTzGSrAIB0TbZwCAEDqiSro+5QL0zZ78L687QAsBK0Ui0gHGkRThezYP
+ GsjFFs+SKNGmaPmiS5FE2mNujx+QXZY1OAHOo/OA82udAbRnbt5J65rKlReOE9eoN4nbvQ4vYV
+ wZtgup+okvgSYkkoXMj05fJM0+1S9iRNr5UUR/OkhxRnGAb2eg+xCJDOic59+fY0DbS0yYchsj
+ PGbg1SXnSC7fvmB3imCK5V4jAnaXUncVu8761BSmrlXbiznGVEMSV7dac8LdFb9waPcuZLK1iR
+ UeM=
+X-IronPort-AV: E=Sophos;i="5.73,334,1583164800"; d="scan'208";a="239114168"
+Received: from mail-mw2nam12lp2046.outbound.protection.outlook.com (HELO
+ NAM12-MW2-obe.outbound.protection.outlook.com) ([104.47.66.46])
+ by ob1.hgst.iphmx.com with ESMTP; 30 Apr 2020 15:57:17 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M1HqH13wKTwyRsRTI8HcfBEczLRJzIXgTdlcxfvWDI2uGvHdNPiD65LUNoxOBA5hAATRgDjwNPuCn91bZey4qaOKmL0m+W9RT3w+LkWOAkb9f6PeE3aQELkEPeVoW3Fwf0HwNb0Y+ZWFer6E5AKtt7e/3Y9LpE3CigapnieRyqA/0BkqaeARJY1SNuij0zaFY73tJTzeOvMWHDFTafghld95XlWg/CoRzJACRIHxcIjk/piLyz4QGgCHK07CkBqYDIgDdDIrq0xLs3nJItSfMdZFOriuunGkK64XpFKPmnnQ0DqGe1bKc9P+adNRszOuLIoiO0nfGSCbTOhbZ4/BnA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=D8UElqIP+1Ir7J7JyIb7PNo8qhgPJylq0O8p+oEqkSo=;
+ b=X/cByvFiCIjeyNi7OGAkRESAvLHdYKN99ptYxUJyqDJR97aroRpcDyco1q6fSFcdDpyjI2RKV5NM+4Izl4A0iRzS8uJ7N26tqCF80QgALDdD+cY/iZbQ1i1veTICTI+pOJnbPNWEDmp19XCvIUFPglAZE0cd91UBDtzAE9F2LUYMA8qvCdLwNNxXD/mzZN2VnDf1ZO/LuBMAHn3idNCKxfwCdkTzfDLzIq6m+Vi2s8w6ghZ31dixKVVwlY4fonka6ihp/tg9oGmRjhURoWUVK5NELaHBcHpBBHtpFwwZbrA22VAVm1vrf5oN4ISdpTkhTWUSe9KqTme/jMg8dkYpdA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=D8UElqIP+1Ir7J7JyIb7PNo8qhgPJylq0O8p+oEqkSo=;
+ b=fUvjuy6DBl6rnJuTEa3zLMBL2JS4U1QQ8J0v7mFywJgUTaygVVf6/lW77g4egk/oNxrHk0/TfKyD5sTR/cx3NoPOXyQ6+PyoaF1Fyigy/N29F3K9FApXF30DBEQfXmHGWCPiTGeuBIxMq09CWWjZzfl3gm/1/gmfjDq36S42Ew8=
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com (2603:10b6:a03:14::14)
+ by BYAPR04MB4662.namprd04.prod.outlook.com (2603:10b6:a03:14::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Thu, 30 Apr
+ 2020 07:56:38 +0000
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1]) by BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1%6]) with mapi id 15.20.2958.019; Thu, 30 Apr 2020
+ 07:56:38 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v2 2/5] scsi: ufs: add "index" in parameter list of
+ ufshcd_query_flag()
+Thread-Topic: [PATCH v2 2/5] scsi: ufs: add "index" in parameter list of
+ ufshcd_query_flag()
+Thread-Index: AQHWHi3/YyJYvbtdE0K1lTCqV5rChKiRTEmA
+Date: Thu, 30 Apr 2020 07:56:37 +0000
+Message-ID: <BYAPR04MB46296FE5C0C4AE0CE7B24478FCAA0@BYAPR04MB4629.namprd04.prod.outlook.com>
+References: <20200429135610.23750-1-stanley.chu@mediatek.com>
+ <20200429135610.23750-3-stanley.chu@mediatek.com>
+In-Reply-To: <20200429135610.23750-3-stanley.chu@mediatek.com>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.44]
-Content-ID: <AE1AA8893A6E7D438296C06CD62B8BC8@st.com>
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 494f130f-cf2c-4200-2bcb-08d7ecdc02e5
+x-ms-traffictypediagnostic: BYAPR04MB4662:
+x-microsoft-antispam-prvs: <BYAPR04MB466236CAA33BF86F8D8DC0D2FCAA0@BYAPR04MB4662.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:3513;
+x-forefront-prvs: 0389EDA07F
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR04MB4629.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(366004)(396003)(346002)(376002)(39860400002)(7416002)(5660300002)(66476007)(64756008)(55016002)(66446008)(71200400001)(4326008)(66556008)(26005)(76116006)(9686003)(316002)(4744005)(8936002)(66946007)(54906003)(478600001)(2906002)(33656002)(6506007)(86362001)(110136005)(52536014)(8676002)(186003)(7696005);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Iqq0kXZHFiTy0cTKwArrfJ37mABwagaCB/ATPWYFhUz2wC1m2AGU7i+HSb8WPp9K4kQecXdzPHbDnpVKuEU5zkBnijHd0LtbIGt1OL4xG6lUI8RS7/FnYxZVQVrIOFfOewBkeWUi2P5Vw/GFe1/0mV0rZvqEg+Ys0kOA28a/YbIwEAi6QVf3npIVltjsUpPv4l9cpHWbq89V9Ksacibur+lS5RNFSPixhHD5WmOzWHJditUSdO3UyBqG81C0j1Wx4YDv2Ylb3weyTb3ZJugi6Ub+UwjCTMQGt6hFA4cTlFY/9X+Fm2kKwzwZYYYWRCtUEvs3lOY9EQEse6VlLP/MROAMrF1JvTqYRvsgQpUu2+4hYrU+Sof6pW5Sf4q8on3GAsTGlBn264NWe1wJ56CPDuCk9wTByIIlAKvWlzWZlU2R4UH+e8L3ZmAToJToOYFM
+x-ms-exchange-antispam-messagedata: BDGB7Tv8st4gCOAxIvuBOwea+iI++TnjB6H1IImfuOHXE6Zp7y9qh63oazGiuQy3westxCKNff2EsoefhfjHa22imzGN83y8Ks1W7rO5ULA1yzOMcxvmrMtyaBhJHiw0vjRHcIt6NJE95NQQSoqSOXuOhG1Xt2PnMIv1CxWNd/3ZNxUhQ/0/sbuK5PFZqpMTpawpxvjbTW1IDZcc0V3SDwi4rYB3kpZJ5DpbOG8g9BryV5ZyK3PhNn47O3JnB+SMkbGqGspajQ24yJzSyVmVMmKkaI3jORYDN/nDk9iDRlRhTBn/sCBEgQsqcHMpSlh7iX+cjflMcKKeMCBGcqVMEYzxuMrn3z417HlBULDqeXn6qBtljYoyl9PqJsvO7Z9f99i9l1dJHlInKboHR+SRGRi6+KTIdQW3WcMneLDQpxGX4uu12dtk87LwOA3DV/Kjbq2N2Szq4RveViIqQDbTIV67QMjySKyDpgwCbYr1aeeF2Qvtns0cMMmJ2ni4QwYuW/+7h+6tcAOmIdTN+0/Gka2PPiT3gnR3vT4ZR4nFmH+XaeMQjaCXrIr38wbaK5HlbbCM3/0TTs+pgwnWdmaCY6UmdrutKRH+L9PNhfmIaFk7NRztJu/CfCPnHsxDWmmUtiLYtFX/A9aUOlqfJ+iSjvCYaLVF0zBW2oU3ZVVEsztY7pKedSMTFKGSH0z6e+j69i4UF+dYE3k1yiEA33oN8EESaHgLasa+lr3GxdVk768bVhiDKr4UzO+N7mDvA60g5lhh5Wm2p8CC08uauAjuJDdlxUTY4w8hTWk0v/45Auc=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-30_02:2020-04-30,
- 2020-04-30 signatures=0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 494f130f-cf2c-4200-2bcb-08d7ecdc02e5
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2020 07:56:38.0558 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: c0flrD3Yb0gkolSR6+ug0FXokJIY+mtas+EOkooCHuNfMiZ2OerK/cyvW0jZhuHlz0Z0L74onz7+gUixf8cYlg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB4662
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_005313_033681_83DA5C27 
-X-CRM114-Status: GOOD (  19.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200430_005645_100753_DE065DA2 
+X-CRM114-Status: GOOD (  14.38  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.143.124 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -109,69 +147,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "len.brown@intel.com" <len.brown@intel.com>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>, "pavel@ucw.cz" <pavel@ucw.cz>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+> 
+> For preparation of LU Dedicated buffer mode support on WriteBooster
+> feature, "index" parameter shall be added and allowed to be specified
+> by callers.
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> Reviewed-by: Bean Huo <beanhuo@micron.com>
+> ---
+>  drivers/scsi/ufs/ufs-sysfs.c |  2 +-
+>  drivers/scsi/ufs/ufshcd.c    | 28 +++++++++++++++-------------
+>  drivers/scsi/ufs/ufshcd.h    |  2 +-
+>  3 files changed, 17 insertions(+), 15 deletions(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
+> index 93484408bc40..b86b6a40d7e6 100644
+> --- a/drivers/scsi/ufs/ufs-sysfs.c
+> +++ b/drivers/scsi/ufs/ufs-sysfs.c
+> @@ -631,7 +631,7 @@ static ssize_t _name##_show(struct device *dev,
+> \
+>         struct ufs_hba *hba = dev_get_drvdata(dev);                     \
+>         pm_runtime_get_sync(hba->dev);                                  \
+>         ret = ufshcd_query_flag(hba, UPIU_QUERY_OPCODE_READ_FLAG,       \
+> -               QUERY_FLAG_IDN##_uname, &flag);                         \
+> +               QUERY_FLAG_IDN##_uname, 0, &flag);                      \
+The sysfs entries for flags needs to get an _index argument now
 
-On 4/29/20 6:12 PM, Valentin Schneider wrote:
-> On 29/04/2020 16:57, Benjamin GAIGNARD wrote:
->>
->> On 4/29/20 5:50 PM, Rafael J. Wysocki wrote:
->>> On Friday, April 24, 2020 1:40:55 PM CEST Benjamin Gaignard wrote:
->>>> When start streaming from the sensor the CPU load could remain very low
->>>> because almost all the capture pipeline is done in hardware (i.e. without
->>>> using the CPU) and let believe to cpufreq governor that it could use lower
->>>> frequencies. If the governor decides to use a too low frequency that
->>>> becomes a problem when we need to acknowledge the interrupt during the
->>>> blanking time.
->>>> The delay to ack the interrupt and perform all the other actions before
->>>> the next frame is very short and doesn't allow to the cpufreq governor to
->>>> provide the required burst of power. That led to drop the half of the frames.
->>>>
->>>> To avoid this problem, DCMI driver informs the cpufreq governors by adding
->>>> a cpufreq minimum load QoS resquest.
->>> This seems to be addressing a use case that can be addressed with the help of
->>> utilization clamps with less power overhead.
->> Do mean clamping the policy frequencies ? I may have miss the API to do
->> that...
-> IIUC Rafael is referring to uclamp, i.e. scheduler utilization clamping, see:
->
->    https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html#cpu
->
-> The above describes the cgroup interface, note that you can also set clamps
-> per task (via sched_setattr()).
->
-> One thing that comes to mind however is that schedutil only "sees" the clamps
-> of runnable tasks, and from reading your changelog you may not have moments
-> without any (i.e. gears are grinding in HW). You'd have to try boosting
-> (setting a high uclamp.min) whatever tasks you have on the software side and
-> see how it all behaves.
-Relying on userland side means that various applications need to be aware
-of this specific hardware case and fix it. I was hoping to find a 
-solution in side the kernel
-to not impact the software side.
-
->
->>> Thanks!
->>>
->>>
->>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
