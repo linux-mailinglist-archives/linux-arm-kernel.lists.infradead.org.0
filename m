@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8289E1C03BD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 19:20:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F24B71C03D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 19:23:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eLKNRvubVOr5/zFhXWe1tLNT3usI1PrkDevryQaujJA=; b=ii0E3vj4wOHYHy
-	CGTCwZV9ETSz74M1WYVVXnIjzhB3rrO8ye8WTx2wq+jklbd65GkZTU3+zNMxBv57LL2rwxw0LsQpi
-	CZVAkPNZRM8QH+sK6KIndYuoWf+yYKSv5qhHJ9IASgD7JgUpZiFgobyOgzOeZk2VpsOAw9MpOI4rT
-	5ETJ6pka5W2F6Yr3bobffRw2GiFCfnHH3OkA6SKMwJjLm3tjoLn6esQnqbsnfHa+tPSMP8XhxAxYY
-	DnkwgtnX55fztUl3tnoYkXNJoLE9QloCGxBQg+YVsGiiwqSbpSiVcsdO6re2sAMRuujtlaxSjf3rg
-	odUt5btaBGp0Bx4ObjVQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cfVIMkO2K7dnqbxHKF8bp4jLP4ZO0AR7QDsgNVWSY7A=; b=s8Vau3WTKv765/Q+41OLW2LGm
+	oIeXzxUGisqloeGcuC11VSLJZFnyIhw+iSlzFj4CdN5xbaH8zx7hQ74nl7f+3GunDMEiVi4QU22/G
+	WfXmEPYIEuJM31/ZGL9kDy+yoYf7+HIWVr6MsSfCw8MJj16u8XOVmAjUNhTZDDRcDAAOv3NjXLdxD
+	gsKNV3aUZBAqqiTnIhP+pZkRzfrHRf+OYm1EFbo1f0ULSmAESBhtvo15g8vbqFJOfz5cs59R6ycs4
+	TZbCbeNXE/pUVPRVAjlcUW+Ly4XV6itUR6Mtq8ABLIfIQ40ARQ48HBtFJMXK5fOyN60jk2NezHfo/
+	98b7ysokQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCrl-00064I-8G; Thu, 30 Apr 2020 17:20:53 +0000
+	id 1jUCuB-00072o-FE; Thu, 30 Apr 2020 17:23:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCrc-00063I-AS
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 17:20:45 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 44CF120787;
- Thu, 30 Apr 2020 17:20:43 +0000 (UTC)
+ id 1jUCu1-00071w-Ie
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 17:23:14 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B20CC20787;
+ Thu, 30 Apr 2020 17:23:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588267244;
- bh=dsXBNKPwdOjWJPqWjrwst/wex2YLJsK/QSGfrcpF/U8=;
+ s=default; t=1588267393;
+ bh=cB+rnSreN4Y7+e/GucPEZjqWYPOPdWxjp1+u60xntcE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HOw3MhlxNgUfezDgy35haX9L1GEyrBxVCk7YhJz9FwZKEYHy3bdqm+psDMPudnA7B
- uEoQO1JoN1Fsuo+oBga0g/n/vGh2BG4n2glxNeGui5yGtVOIKfE/pdyRf91EOsPm/d
- e6LeO3nULD0yZ0xR5OJccFiafxF+7aX9w3LFnrc0=
-Date: Thu, 30 Apr 2020 18:20:40 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 3/3] arm64: insn: Report PAC and BTI instructions as
- NOPs
-Message-ID: <20200430172039.GJ25258@willie-the-truck>
-References: <20200428172433.48830-1-broonie@kernel.org>
- <20200428172433.48830-4-broonie@kernel.org>
- <20200430160928.GD25258@willie-the-truck>
- <20200430171645.GG4633@sirena.org.uk>
+ b=kmp+lkJ1/HD6PLF7mvfloclXCTRsd2jPdU8AMfwA4d51vTl/rt54Z0muIrTZ5xjUK
+ R8m8nuweMcy21wN3MTxNZu32N+vInR/pQE86WannwqZMuv5W/19RYzN8T6N9ORpagI
+ yF3xSnIwNm+Ie2xEEtBIcMm2Vitaqq+z4yP2tmis=
+Date: Thu, 30 Apr 2020 18:23:10 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2 00/10] arm64: BTI kernel and vDSO support
+Message-ID: <20200430172310.GH4633@sirena.org.uk>
+References: <20200429211641.9279-1-broonie@kernel.org>
+ <20200430171842.GL2717@gaia>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430171645.GG4633@sirena.org.uk>
+In-Reply-To: <20200430171842.GL2717@gaia>
+X-Cookie: Sign here without admitting guilt.
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_102044_382172_664F0B9D 
-X-CRM114-Status: GOOD (  12.35  )
+X-CRM114-CacheID: sfid-20200430_102313_635778_B6AD831B 
+X-CRM114-Status: GOOD (  12.30  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,36 +77,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
+Cc: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Will Deacon <will@kernel.org>, Kees Cook <keescook@chromium.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============0801327707833591194=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 06:16:45PM +0100, Mark Brown wrote:
-> On Thu, Apr 30, 2020 at 05:09:29PM +0100, Will Deacon wrote:
-> > On Tue, Apr 28, 2020 at 06:24:33PM +0100, Mark Brown wrote:
-> 
-> > > +	/*
-> > > +	 * The PAC and BTI instructons are not strictly NOPs but until
-> > > +	 * better support is added we can treat them as such.
-> > > +	 */
-> > >  	switch (insn & 0xFE0) {
-> 
-> > Are you deliberately omitting XPACLRI? If so, maybe add a comment to say
-> > why, since it looks a bit weird without it.
-> 
-> Not deliberately, no - I'm not sure I'd heard of it before and it's one
-> of those cases where the spec doesn't call out the instruction as being
-> in the hint space.
 
-Hmm, so I only spotted it because of "Decode" pseudocode for HINT on p.929
-of rev F.a of the Arm ARM (the one with the AUTHASP typo).
+--===============0801327707833591194==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="bygAmIonOAIqBxQB"
+Content-Disposition: inline
 
-Will
+
+--bygAmIonOAIqBxQB
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, Apr 30, 2020 at 06:18:43PM +0100, Catalin Marinas wrote:
+> On Wed, Apr 29, 2020 at 10:16:31PM +0100, Mark Brown wrote:
+
+> > v2:
+> >  - Enable support for building with GCC version 10 and later, a fix
+> >    for BTI code generation is being backported to GCC 9 but is not yet
+> >    available.
+
+> Do you have a link to a GCC commit or bugzilla? (for future reference,
+> no need to update the patch).
+
+I found these:
+
+	https://gcc.gnu.org/bugzilla/show_bug.cgi?id=94697
+	https://gcc.gnu.org/pipermail/gcc-patches/2020-April/544429.html
+
+> The series looks fine to me.
+
+> Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
+
+Thanks.
+
+--bygAmIonOAIqBxQB
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6rCX0ACgkQJNaLcl1U
+h9C3Uwf6Ag5yX8HQWx5TIQTGE8bxyBgGJqz/uMECRQHte9lbDCZy+zVmiXk70C1n
+XUoW4yRGHhcnu4RSm9W0pxw7edjPvA/5skgspNp7mTAet8XZkJUpSrGmc00ubHqI
+tL5+4vixJMARI/KTNEHmvU9ojih9e2rZKAwiA/9rKhVWv9k1Ju9fmbGrP6k/iG5O
+2Ysw+S6EKyKu/JzDVfKOyY0fc6+P4R1I15nT85H+ph51utOaH9kkrzKIRJWE2trf
+17qz5lg2j+tlfkpfvdFayYm1CQ9NREAg+TYAHGMx0ydXPSfmg0VGSNOEjpHAuTfv
+m0/94RUzXOe/5B3Ao0ECCveuFCxJmg==
+=Hocm
+-----END PGP SIGNATURE-----
+
+--bygAmIonOAIqBxQB--
+
+
+--===============0801327707833591194==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0801327707833591194==--
+
