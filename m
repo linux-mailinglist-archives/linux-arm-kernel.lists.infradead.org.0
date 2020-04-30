@@ -2,63 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 227931C04E2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:33:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A21FE1C0558
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:56:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rXjldyo7wi/NrQ4INOiv205SGWZeSPJap7d8JHRoFr8=; b=nKIg3Et+8gEZXI
-	McIqiYeVijOr9l+VTdD35hAIvyOMGLhnQMD7UTJFbmDALH9c0C0O2S5Oo/yt8WvnDn76vA4GqSjar
-	AhT4sYNx/KCHMQtsIOnkfH275aSLshdHvqkEtdi7dFiSSzatiA2lrOyjgV/pmTnWXGvqNgq4vL0GX
-	FfMDQhgeLtMv07jh1rRRVDiYutKI6nzuYZ6j3m7MFmVVg+4ksEN87C+gCUCzmBRImlqCqza+WCiuj
-	FrQfb1FjtgkMPFDpLG42gmeoC73QDGdnfjT9GPfv1tSGYkV1jSY8DejZAhL2QQh5gUdbcftVA1iBs
-	hA1EfpInealkYQRLIWDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6d3qeCkvAP6d9iHZqKEhdkjxutyMJaSR+HetkGSt8DA=; b=a7u
+	yc9DL/5tQrqpkgi6BSlJhYnZyLskkSyizwvwuPL7xNcTFD+z2iQuPj/HkJ6wiTn2MJtgdl2VSm/kj
+	4RdHNUSn+aDa2WsXp1qlU1wPAFnLUJMIw6QBoAWHo06soiV5TZJ91TiRxf6EdyY7wWOtyfs5giwql
+	DGJgaDO8l94sswgep8y8+fo16lWllmg7qR/PRRWPLDA82qOFrHDy+1rh/bnIE3tQcbuH4/AQpxPxu
+	2t3aELOO+rGExaA3X5QzAwmR5LTlUM25YLsx/av7HSwj2niEEvRqtsfHqaHmPxkCyaKOsuv/Qo4MS
+	hmaLPY3tNudyoRk6HhQpo/hiIhoGQWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUE0D-0003In-6g; Thu, 30 Apr 2020 18:33:41 +0000
-Received: from mga11.intel.com ([192.55.52.93])
+	id 1jUELd-0003NR-Kq; Thu, 30 Apr 2020 18:55:49 +0000
+Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUE04-0003Gq-RI
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 18:33:34 +0000
-IronPort-SDR: ygBwuaCObsQ5fYvZv3l1RTJfgqlTxpEClFv2/D+t6pkTN7WWpdI4aFFREvhnybeo0L2M/NM3+G
- Mvs3abVsfcrg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 30 Apr 2020 11:33:29 -0700
-IronPort-SDR: J48xY2cKJPAK1NVryygQbF/nagAXDIYz1I6SC3AHIW5UHcqfCG66Luu3iM/N/zRymWaoSl5F24
- 9Hf1OxKC5PKg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,336,1583222400"; d="scan'208";a="433056299"
-Received: from jacob-builder.jf.intel.com (HELO jacob-builder) ([10.7.199.155])
- by orsmga005.jf.intel.com with ESMTP; 30 Apr 2020 11:33:28 -0700
-Date: Thu, 30 Apr 2020 11:39:31 -0700
-From: Jacob Pan <jacob.jun.pan@linux.intel.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v6 02/25] iommu/ioasid: Add ioasid references
-Message-ID: <20200430113931.0fbf7a37@jacob-builder>
-In-Reply-To: <20200430143424.2787566-3-jean-philippe@linaro.org>
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-3-jean-philippe@linaro.org>
-Organization: OTC
-X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.30; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ id 1jUELV-0003Ln-2v; Thu, 30 Apr 2020 18:55:42 +0000
+Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
+ [10.75.242.48])
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id D7E0230C01B;
+ Thu, 30 Apr 2020 11:55:22 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com D7E0230C01B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
+ s=dkimrelay; t=1588272922;
+ bh=qJ6DbvAdbB8hRtzBIqPgVoTKzdZzi99hHG3CuQbq42Q=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Z0SBSCSb/GYviPwqhCoVDb+9n/diKDdsv44OOaHN5JGajTqCrel18Pd/1qbaa8vSX
+ CHKFjQXY6+AwI4hqMHFUayUVMTbEgzI95Shsvebl5guIO+NWCKyuQLWZfQ7oM8Ppj/
+ 5NAP27iJ5siJeb30NNw+p/1to+M7xAIeyMzkBk48=
+Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
+ [10.28.16.211])
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id 72C41140069;
+ Thu, 30 Apr 2020 11:55:29 -0700 (PDT)
+From: Jim Quinlan <james.quinlan@broadcom.com>
+To: james.quinlan@broadcom.com
+Subject: [PATCH 1/5] PCI: brcmstb: don't clk_put() a managed clock
+Date: Thu, 30 Apr 2020 14:55:18 -0400
+Message-Id: <20200430185522.4116-1-james.quinlan@broadcom.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_113333_115817_A6B54611 
-X-CRM114-Status: GOOD (  21.72  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200430_115541_145791_558228EF 
+X-CRM114-Status: UNSURE (   6.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.19.229.170 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,151 +76,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
- joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
- fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
- catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>,
+ Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 30 Apr 2020 16:34:01 +0200
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+From: Jim Quinlan <jquinlan@broadcom.com>
 
-> Let IOASID users take references to existing ioasids with
-> ioasid_get(). ioasid_free() drops a reference and only frees the
-> ioasid when its reference number is zero. It returns whether the
-> ioasid was freed.
-> 
-Looks good to me, I was planning to do the same for VT-d use. Just a
-couple of points for potential extension. I can rebase on top of this.
+clk_put() was being invoked on a clock obtained by
+devm_clk_get_optional().
 
+Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
+---
+ drivers/pci/controller/pcie-brcmstb.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> ---
->  include/linux/ioasid.h | 10 ++++++++--
->  drivers/iommu/ioasid.c | 30 +++++++++++++++++++++++++++++-
->  2 files changed, 37 insertions(+), 3 deletions(-)
-> 
-> diff --git a/include/linux/ioasid.h b/include/linux/ioasid.h
-> index 6f000d7a0ddcd..609ba6f15b9e3 100644
-> --- a/include/linux/ioasid.h
-> +++ b/include/linux/ioasid.h
-> @@ -34,7 +34,8 @@ struct ioasid_allocator_ops {
->  #if IS_ENABLED(CONFIG_IOASID)
->  ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t min, ioasid_t
-> max, void *private);
-> -void ioasid_free(ioasid_t ioasid);
-> +void ioasid_get(ioasid_t ioasid);
-> +bool ioasid_free(ioasid_t ioasid);
->  void *ioasid_find(struct ioasid_set *set, ioasid_t ioasid,
->  		  bool (*getter)(void *));
->  int ioasid_register_allocator(struct ioasid_allocator_ops
-> *allocator); @@ -48,10 +49,15 @@ static inline ioasid_t
-> ioasid_alloc(struct ioasid_set *set, ioasid_t min, return
-> INVALID_IOASID; }
->  
-> -static inline void ioasid_free(ioasid_t ioasid)
-> +static inline void ioasid_get(ioasid_t ioasid)
->  {
->  }
->  
-> +static inline bool ioasid_free(ioasid_t ioasid)
-> +{
-> +	return false;
-> +}
-> +
->  static inline void *ioasid_find(struct ioasid_set *set, ioasid_t
-> ioasid, bool (*getter)(void *))
->  {
-> diff --git a/drivers/iommu/ioasid.c b/drivers/iommu/ioasid.c
-> index 0f8dd377aada3..46511ac53e0c8 100644
-> --- a/drivers/iommu/ioasid.c
-> +++ b/drivers/iommu/ioasid.c
-> @@ -15,6 +15,7 @@ struct ioasid_data {
->  	struct ioasid_set *set;
->  	void *private;
->  	struct rcu_head rcu;
-> +	refcount_t refs;
->  };
->  
->  /*
-> @@ -314,6 +315,7 @@ ioasid_t ioasid_alloc(struct ioasid_set *set,
-> ioasid_t min, ioasid_t max, 
->  	data->set = set;
->  	data->private = private;
-> +	refcount_set(&data->refs, 1);
->  
->  	/*
->  	 * Custom allocator needs allocator data to perform platform
-> specific @@ -345,12 +347,33 @@ ioasid_t ioasid_alloc(struct
-> ioasid_set *set, ioasid_t min, ioasid_t max, }
->  EXPORT_SYMBOL_GPL(ioasid_alloc);
->  
-> +/**
-> + * ioasid_get - obtain a reference to the IOASID
-> + */
-> +void ioasid_get(ioasid_t ioasid)
-why void? what if the ioasid is not valid.
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 6d79d14527a6..454917ee9241 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -899,7 +899,6 @@ static void __brcm_pcie_remove(struct brcm_pcie *pcie)
+ 	brcm_msi_remove(pcie);
+ 	brcm_pcie_turn_off(pcie);
+ 	clk_disable_unprepare(pcie->clk);
+-	clk_put(pcie->clk);
+ }
+ 
+ static int brcm_pcie_remove(struct platform_device *pdev)
+-- 
+2.17.1
 
-> +{
-> +	struct ioasid_data *ioasid_data;
-> +
-> +	spin_lock(&ioasid_allocator_lock);
-> +	ioasid_data = xa_load(&active_allocator->xa, ioasid);
-> +	if (ioasid_data)
-> +		refcount_inc(&ioasid_data->refs);
-> +	spin_unlock(&ioasid_allocator_lock);
-> +}
-> +EXPORT_SYMBOL_GPL(ioasid_get);
-> +
->  /**
->   * ioasid_free - Free an IOASID
->   * @ioasid: the ID to remove
-> + *
-> + * Put a reference to the IOASID, free it when the number of
-> references drops to
-> + * zero.
-> + *
-> + * Return: %true if the IOASID was freed, %false otherwise.
->   */
-> -void ioasid_free(ioasid_t ioasid)
-> +bool ioasid_free(ioasid_t ioasid)
->  {
-> +	bool free = false;
->  	struct ioasid_data *ioasid_data;
->  
->  	spin_lock(&ioasid_allocator_lock);
-> @@ -360,6 +383,10 @@ void ioasid_free(ioasid_t ioasid)
->  		goto exit_unlock;
->  	}
->  
-> +	free = refcount_dec_and_test(&ioasid_data->refs);
-> +	if (!free)
-> +		goto exit_unlock;
-> +
-Just FYI, we may need to add states for the IOASID, i.g. mark the IOASID
-inactive after free. And prohibit ioasid_get() after freed. For VT-d,
-this is useful when KVM queries the IOASID.
-
->  	active_allocator->ops->free(ioasid,
-> active_allocator->ops->pdata); /* Custom allocator needs additional
-> steps to free the xa element */ if (active_allocator->flags &
-> IOASID_ALLOCATOR_CUSTOM) { @@ -369,6 +396,7 @@ void
-> ioasid_free(ioasid_t ioasid) 
->  exit_unlock:
->  	spin_unlock(&ioasid_allocator_lock);
-> +	return free;
->  }
->  EXPORT_SYMBOL_GPL(ioasid_free);
->  
-
-[Jacob Pan]
 
 _______________________________________________
 linux-arm-kernel mailing list
