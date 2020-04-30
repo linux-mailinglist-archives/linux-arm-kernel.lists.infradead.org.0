@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D56EF1C055C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:56:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8397B1C0561
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,45 +11,45 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=HQMZSUZmRdSMoF8CMpQK5WCAdOJHspr+OsgXXqJAFi8=; b=AgM1yZFFnGXK2+oizt9H0Egl37
-	7Euw5ruKykVG587Rf1vPpAzXsZrszkkQed9VJmfUPapuicOBaUziitJtDAIDmfMdCVi7I/rbXhBrF
-	zC7rcGFfV9jKqvCGYwowOYtNgyyhuCBlGQLXLfiCt8bnDTLyrNudSYAeYJSkyUhCftj/FRCMaWu7A
-	IbRRXwNR8si6LhneZB9Aicv3AgSHu2gcdTfcqy5r5iscyFo6QJHmNY//iUDb4C1T0SSEaQ8N1NJ6W
-	Kda251/ywMxb8M8ByPAGZ/P24nE+DtNdOfYaXCr2qqAauz2Yfibcmfp2Ajm4NFd2fYUG8MvnfO4LP
-	Dajre7QQ==;
+	bh=7W7HfYLw0mNsvkKqrar3fwSj7yxPwz01nNu6rJppTYc=; b=VMaY5H0fOax+rZeBataAgK7571
+	lU/HeXetMcrFzbWAtS0fUazleSSEIywHWQI3gSy+uDzFy3RNoqZhIZz7vgi+v08O0Y0QJTWiA3g3X
+	apjYIvqPvWJ7dTBwbfidNJD3KMR8MKTy6PRAKtK+Q/XnkmcyaAVV/ZiR/BwFV7YLfSPg2btPhirIt
+	wKvjIfmerNy8jwfmyA1L1GEELrVc1TDz666OJpktNWECMn85SP/2M0If2AnyjO5bekcRw4JWCfPJt
+	twRtZCoET7QQjSNcK0I+eySaEgj7My+LMG7u86PnpawhyZvc59S/5rlIaoCnRrRb/sHioN80KgxxA
+	WgdOc5fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUEMX-000444-FP; Thu, 30 Apr 2020 18:56:45 +0000
+	id 1jUEMo-0004Jc-Td; Thu, 30 Apr 2020 18:57:02 +0000
 Received: from rnd-relay.smtp.broadcom.com ([192.19.229.170])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUELX-0003N1-9Q; Thu, 30 Apr 2020 18:55:44 +0000
+ id 1jUELa-0003PW-Cr; Thu, 30 Apr 2020 18:55:47 +0000
 Received: from mail-irv-17.broadcom.com (mail-irv-17.lvn.broadcom.net
  [10.75.242.48])
- by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 4E3F730C0CE;
- Thu, 30 Apr 2020 11:55:34 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 4E3F730C0CE
+ by rnd-relay.smtp.broadcom.com (Postfix) with ESMTP id 2CEAF30C0DD;
+ Thu, 30 Apr 2020 11:55:37 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.10.3 rnd-relay.smtp.broadcom.com 2CEAF30C0DD
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=broadcom.com;
- s=dkimrelay; t=1588272934;
- bh=u71I4sWw1v2y+pty1vu/EYKCS2yJyi1NZITvH6WpKXE=;
+ s=dkimrelay; t=1588272937;
+ bh=ylIXocpd50xPvJDeooynJqHkCEpEjQNa8MnFbymEkrw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=j8ZT07291ncyNHTMtsjtrVMN9OntI2+TmIFKNBbbjN0ks5OZPL3oqcPAGqbjaDhMh
- 6Ic2MuypgSzX6zCO6NZGzhHuYwWn+JQONYTlsTEoFH5vmayN/xtj/GH9xSkjdkvb5q
- MvBcWq2vaT6ockbquWU2wR48D719nmg+wzQ0hKfI=
+ b=ILWUrCGny0s+V5Z0R/lKy9Lb9sn7PQRO5a1jKab/t/4PFprIjldWJCmGU27wcZsil
+ Uxah+DtW3KpEVB3bo704Hx5gHImRDtGtLr0P1s6OdmjrJ4PPrrtccd/hwYD1Hh/F9p
+ /m3FlF/N03GONkKPr/UU+mulNUwdw7f2t/BTLYKQ=
 Received: from stbsrv-and-01.and.broadcom.net (stbsrv-and-01.and.broadcom.net
  [10.28.16.211])
- by mail-irv-17.broadcom.com (Postfix) with ESMTP id DCE93140069;
- Thu, 30 Apr 2020 11:55:40 -0700 (PDT)
+ by mail-irv-17.broadcom.com (Postfix) with ESMTP id C626B140069;
+ Thu, 30 Apr 2020 11:55:43 -0700 (PDT)
 From: Jim Quinlan <james.quinlan@broadcom.com>
 To: james.quinlan@broadcom.com
-Subject: [PATCH 4/5] dt-bindings: PCI: brcmstb: New prop 'brcm,aspm-en-l0s'
-Date: Thu, 30 Apr 2020 14:55:21 -0400
-Message-Id: <20200430185522.4116-4-james.quinlan@broadcom.com>
+Subject: [PATCH 5/5] PCI: brcmstb: disable L0s component of ASPM by default
+Date: Thu, 30 Apr 2020 14:55:22 -0400
+Message-Id: <20200430185522.4116-5-james.quinlan@broadcom.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430185522.4116-1-james.quinlan@broadcom.com>
 References: <20200430185522.4116-1-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_115543_341030_A1701B15 
-X-CRM114-Status: UNSURE (   5.53  )
+X-CRM114-CacheID: sfid-20200430_115546_468716_B95906D2 
+X-CRM114-Status: UNSURE (   9.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,18 +79,18 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- "open list:PCI SUBSYSTEM" <linux-pci@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
  <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+ <linux-rpi-kernel@lists.infradead.org>,
+ Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -99,29 +99,58 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jim Quinlan <jquinlan@broadcom.com>
 
-For various reasons, the L0s component of ASPM is intentionally
-disabled.  Specifying the 'brcm,aspm-en-l0s' property enables it.
+Some informal internal experiments has shown that the BrcmSTB ASPM L0s
+savings may introduce an undesirable noise signal on some customers'
+boards.  In addition, L0s was found lacking in realized power savings,
+especially relative to the L1 ASPM component.  This is BrcmSTB's
+experience and may not hold for others.  At any rate, we disable L0s
+savings by default unless the DT node has the 'brcm,aspm-en-l0s'
+property.
 
 Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 ---
- Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ drivers/pci/controller/pcie-brcmstb.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-index 77d3e81a437b..b3e43597b89c 100644
---- a/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-+++ b/Documentation/devicetree/bindings/pci/brcm,stb-pcie.yaml
-@@ -56,6 +56,10 @@ properties:
-     description: Indicates usage of spread-spectrum clocking.
-     type: boolean
+diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+index 2bc913c0262c..bc1d514b19e4 100644
+--- a/drivers/pci/controller/pcie-brcmstb.c
++++ b/drivers/pci/controller/pcie-brcmstb.c
+@@ -44,6 +44,9 @@
+ #define PCIE_RC_CFG_PRIV1_ID_VAL3			0x043c
+ #define  PCIE_RC_CFG_PRIV1_ID_VAL3_CLASS_CODE_MASK	0xffffff
  
-+  brcm,aspm-en-l0s:
-+    description: Enables ASPM L0s savings; off by default.
-+    type: boolean
++#define PCIE_RC_CFG_PRIV1_LINK_CAPABILITY			0x04dc
++#define  PCIE_RC_CFG_PRIV1_LINK_CAPABILITY_ASPM_SUPPORT_MASK	0xc00
 +
- required:
-   - reg
-   - dma-ranges
+ #define PCIE_RC_DL_MDIO_ADDR				0x1100
+ #define PCIE_RC_DL_MDIO_WR_DATA				0x1104
+ #define PCIE_RC_DL_MDIO_RD_DATA				0x1108
+@@ -696,7 +699,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+ 	int num_out_wins = 0;
+ 	u16 nlw, cls, lnksta;
+ 	int i, ret;
+-	u32 tmp;
++	u32 tmp, aspm_support;
+ 
+ 	/* Reset the bridge */
+ 	brcm_pcie_bridge_sw_init_set(pcie, 1);
+@@ -806,6 +809,15 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+ 		num_out_wins++;
+ 	}
+ 
++	/* Only support ASPM L1 unless L0s is explicitly desired */
++	aspm_support = PCIE_LINK_STATE_L1;
++	if (of_property_read_bool(pcie->np, "brcm,aspm-en-l0s"))
++		aspm_support |= PCIE_LINK_STATE_L0S;
++	tmp = readl(base + PCIE_RC_CFG_PRIV1_LINK_CAPABILITY);
++	u32p_replace_bits(&tmp, aspm_support,
++		PCIE_RC_CFG_PRIV1_LINK_CAPABILITY_ASPM_SUPPORT_MASK);
++	writel(tmp, base + PCIE_RC_CFG_PRIV1_LINK_CAPABILITY);
++
+ 	/*
+ 	 * For config space accesses on the RC, show the right class for
+ 	 * a PCIe-PCIe bridge (the default setting is to be EP mode).
 -- 
 2.17.1
 
