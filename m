@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE3A71C0614
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 21:20:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B7E11C0619
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 21:21:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BNVV2gqydJDHsDWjW508oMFfQnI9W93DEeQ5xAn++m0=; b=PhQtZPCJEsfgPr
-	NsXaTy7GkjXIYDb/P83jlG8TPrLu5xgljMtxJA8EhVr77E2MwqN/S/z9h0JYE5Uk4D4hxvhIh9maT
-	JNtmBL5D7FUIKGN3s4gkhGbE+8BGnrYnrLkMFyZdaaPXlvz72vSmuGUd76MXINacoZsXn0G7IAPQO
-	oU0zD+07xIpHPrMzZ/IWJ5/BZlIfmqv+jhFT3Whgltaz3u1v4THZb5Iozjm7u20nPFM5KHwoRHrxo
-	b43p8JEj5oWDa0VEtZr+C9HLnFqaZAsjFhuJMfLZd1Am0S5kiwMw8y0L/OF5UO+nTT1d7MlZAVZxg
-	Z9AuwbJyqhio5xTl1bKg==;
+	List-Owner; bh=AOpq7mAjfzxEq5DyNyDDMFAt2FI+DjU9/q9pnDuroVI=; b=fzKuKHfPqMiQDe
+	3lwiDq0GYcqFZ0px8S8TAdxrhuzihvRDZXXUmsQmMjeCFJnRWIcNaAl1K9MMB/KpvteiBzrMI5t/M
+	4Hb7zHUCMWoLP1MMuebC/Pc7vbYeXPJifskWSSJFY1DMaR0uiP7NV6CcVX/g+RLuc7d/mSbiEBOcf
+	p4h/ISgIufba+ImA2r+S1uxli7vAds0cuV05IHxF9neeKmh7aT0DqyUrqcDQRoZzIyJFyNtVmGmGB
+	68/jqrpni7jtPyfmPV3pDHhFU8YDxqtjsNUj8fzgqcrmK2q49GvQNGMaQv1ofE68/sonEan/tQ8X9
+	d+fRFDpE1qzX+QYV3Yzg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUEjj-0006MX-0b; Thu, 30 Apr 2020 19:20:43 +0000
-Received: from mail-ed1-x530.google.com ([2a00:1450:4864:20::530])
+	id 1jUEkM-0006kU-Fe; Thu, 30 Apr 2020 19:21:22 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUEjT-0006Hq-TQ; Thu, 30 Apr 2020 19:20:29 +0000
-Received: by mail-ed1-x530.google.com with SMTP id t12so5479311edw.3;
- Thu, 30 Apr 2020 12:20:27 -0700 (PDT)
+ id 1jUEkC-0006jY-Gf; Thu, 30 Apr 2020 19:21:13 +0000
+Received: by mail-ej1-x641.google.com with SMTP id rh22so5603134ejb.12;
+ Thu, 30 Apr 2020 12:21:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=qEJ0fzumLjx2+ZvNa/h23SSuI5vWiVend7CFtewZLYM=;
- b=VDjJ5WY2Cev/DwLKRCnL2cmRHdDPWLnmUPQapQyR4Gf35njPmoq3dDvyluR84p4nuC
- bCKD0I4bxxA/K6LHjzEWqA6sHA0M+SLWUn8GF/1y9tkJdoj0WS5zG/xhCcfz+TmGjeG5
- XPG+BnZBvrh0MsF8sqqUWVJSnn/o29ldtxNPK01DHlBSCmGPzKJ5h+/CK3S3bH3j65Jv
- KQjCMEvRiDZL1/CG0zDAl3MVy50bma2Tqd7yZY7eSg7RF5y6zH+w+iOHgctJiBQv63F8
- CdajZq/ukO2ErIdju9l4kqR7Ps8SHinVIFwPl7UIJceeAxetJQN9tn83AjK4Spd6zqIq
- 85YQ==
+ bh=YF+037NDXaAeCOCsqqWl6KyRRdw5bJrzbLZUS7ulUkU=;
+ b=lSAQNzSZfOy4PsR61T3vENHV82PWB2IZqOMGCDSVwqV9nIt3cj/T/YNIbWclM/Aj1G
+ i5Tr3houBdyzueCGuIiQgtzr8Snpo9Vo3/t1P00zTKgWKxW1IYzEfpxEiUZ98Q4K6+W/
+ E1X0ZyHyK9GRs0K83hlXAbQ1JNxLk/Cy5PosSMpTjq+UsjI09w4ljEcT7xksdVUt1mQA
+ FvGbUrGWytZNcneHNo89N/AuqQmftIQbBl7ihZNdZDeQHkWJz0tC2Z9m7SI7Hx5KSTlM
+ SN+627CzVagmBVMGw0l6vKaVnNV98VqA/VcSxWj7FuJoabX8UAL26ggOElO4Bjc+5Htb
+ hJtA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=qEJ0fzumLjx2+ZvNa/h23SSuI5vWiVend7CFtewZLYM=;
- b=X5/N7LapAtfwLtSW+4zTARqG6LGETEL0Q9PN7EpJi6LKgw/HaoqZCy9VPs1ItvYOW8
- LtIV6cc6YMDP1nqM9CSjsBzTMxX1NrdySvVhesQXi5O/xkS9NZV1fuX4VMhIOoNPc4SH
- 4mNRwiVkjemRGGJbAVuBTy+eKrPt2CkwMZD4MlukaPomFoyHhUltkB/T/tTUcSlCX/jS
- aTFDBnb/tTavFNA+ZYRYuw4hYYVshQbK/0TZK0R8Sx4oFxbA8WxTeYGPb6s0tOPnt3dK
- qw0FTpRgDUk8eZsXIiKyEtkrRyzosxMydK4fsMkr2Dw+Iay4d6cffRo+LysLWsMWeuOk
- ljFA==
-X-Gm-Message-State: AGi0Pua9gJjDJuzD/3mRxoYe26QscMU3K6rc4E42HGvGYj7BfqvtD0Qo
- xNFhmAlYf1BtmP99KqGQhfU=
-X-Google-Smtp-Source: APiQypIgnXDINlTMIjV63AQjqDtdZlOpvJePobm6VdwnlztSLUg78Oez4fXuloX8P7GTA53kH16mHg==
-X-Received: by 2002:a05:6402:8c1:: with SMTP id
- d1mr532565edz.236.1588274426176; 
- Thu, 30 Apr 2020 12:20:26 -0700 (PDT)
+ bh=YF+037NDXaAeCOCsqqWl6KyRRdw5bJrzbLZUS7ulUkU=;
+ b=krnBtD3oC02ncKiI4HYxkLdMvhxkxBYL5oB1Jt/bSgqa1+pGbSI1MDjPgCejVwS+lb
+ fqGZn7S6ENq82qELiyKqXq+mCZvsdC785xL64i4gVnOmDcL1/6cmZLKEcIi82ex9cF4v
+ eRBEENpgyrDXyRgdAZLzwtZdf54aEaIhy0v2Cexbn8Vlqbkc6rkuCdxWPNEOu+tGCa3c
+ KnmUM1kDmQIDLxHb6oyGpIHsUZVKsoUP75kPqot4iy+3LqBOdMUPY/k+9+0ghNdblvXm
+ dhewkEU/IfA20mWD0Vp/8Ed7esrE7ohB3ODQi8HkjxqGmOLny8PNoHtXn8GQFFF2ABxF
+ SCmg==
+X-Gm-Message-State: AGi0PuaUap1ycSUU07rFWKRdE/JWIaJt0sXgjfDnrVJjBOBEi1og+Ks7
+ g9XQWac6BzuEcjF18KD2NZypLQLe
+X-Google-Smtp-Source: APiQypKGtZZyIVg+kusXHu4UutBHr1i9zDmmWCF5FvF4UN7GB5FSkHSbFaPDIfjBYdkTGPW20Nr7ww==
+X-Received: by 2002:a17:907:20a2:: with SMTP id
+ pw2mr4373513ejb.252.1588274471223; 
+ Thu, 30 Apr 2020 12:21:11 -0700 (PDT)
 Received: from [10.67.49.116] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id y13sm47774edq.48.2020.04.30.12.20.23
+ by smtp.googlemail.com with ESMTPSA id i16sm70822ejy.64.2020.04.30.12.21.08
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 12:20:25 -0700 (PDT)
-Subject: Re: [PATCH 4/5] dt-bindings: PCI: brcmstb: New prop 'brcm,aspm-en-l0s'
+ Thu, 30 Apr 2020 12:21:10 -0700 (PDT)
+Subject: Re: [PATCH 5/5] PCI: brcmstb: disable L0s component of ASPM by default
 To: Jim Quinlan <james.quinlan@broadcom.com>
 References: <20200430185522.4116-1-james.quinlan@broadcom.com>
- <20200430185522.4116-4-james.quinlan@broadcom.com>
+ <20200430185522.4116-5-james.quinlan@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -115,24 +115,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <11de208b-8da8-5080-061e-5b38a3349bf2@gmail.com>
-Date: Thu, 30 Apr 2020 12:20:21 -0700
+Message-ID: <76b5ed9c-c67b-d565-d0c0-6f2e645657ed@gmail.com>
+Date: Thu, 30 Apr 2020 12:21:06 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200430185522.4116-4-james.quinlan@broadcom.com>
+In-Reply-To: <20200430185522.4116-5-james.quinlan@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_122027_963492_94E88C69 
-X-CRM114-Status: UNSURE (   9.18  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200430_122112_556163_458AB9B4 
+X-CRM114-Status: GOOD (  11.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:530 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -156,18 +155,16 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:PCI SUBSYSTEM" <linux-pci@vger.kernel.org>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
  "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
  <bcm-kernel-feedback-list@broadcom.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Bjorn Helgaas <bhelgaas@google.com>,
- "moderated list:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -176,8 +173,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 4/30/20 11:55 AM, Jim Quinlan wrote:
 > From: Jim Quinlan <jquinlan@broadcom.com>
 > 
-> For various reasons, the L0s component of ASPM is intentionally
-> disabled.  Specifying the 'brcm,aspm-en-l0s' property enables it.
+> Some informal internal experiments has shown that the BrcmSTB ASPM L0s
+> savings may introduce an undesirable noise signal on some customers'
+> boards.  In addition, L0s was found lacking in realized power savings,
+> especially relative to the L1 ASPM component.  This is BrcmSTB's
+> experience and may not hold for others.  At any rate, we disable L0s
+> savings by default unless the DT node has the 'brcm,aspm-en-l0s'
+> property.
 > 
 > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 
