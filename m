@@ -2,89 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C3891BEF46
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 06:35:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D4E4B1BEF75
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 06:55:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3qOvccr0xE/pzLKcZ26VUnURrIT0nONcfxgYE74BWOI=; b=CiXTEPu7B4RrkV
-	kM5q8xLnHxF0Wnmtq2nQlz8puilvrO4bKHKJZvOvo1FXsaKD3g2bwsYTpHguRAq8mPeFHrPkeuSo3
-	rw6BDiXSArQQ8L/YA4NMIt3MwCWOZAbzQJYCqU80xNJk+rxdQZ/hqrnKJDrICAKehrGySICAkuZCo
-	755W8DaLadrcpoeh48hPrJwMi/YiQv9UAiJ8jVrdQ+WUpm9rSjvWAmHCrHvR3jW6GWSMfAg9op7UT
-	Ya6mbF49SQ2z6eiQC7zIxMqtkIMeVMu0lTvDGHyc/FgmBRnX0/5F9q5Abd6MUI/vvPOD1h+JngNYc
-	yN7r7q5YVdmBFfYJ2vzA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IRUCAAVVg4dhR6x8qwRN2wkMv6cIsCBplY3pqfb6ZuM=; b=W0hP80qTVepc8MzLJD2iDAJtx
+	k0piInwgTJUL24yKmGbo/zWBB6VCr4DOH3EBXY7Q8eJW6HgzmC+LRvJ/EHXMbodWuSc+3/lkk59Am
+	tBogXptGmlq163V7ZdLk7sBcB0n5gicIONBCxMcdBRYIbXP+EzgdYieNfKzG25pT5iHK+SbgZ+g77
+	Z20sBN3FQFfM+gqkFdRHiTZyiVU0crVsDI3Ag8UnkqPX/G03uJF1kLVhkMlV57GzQvwzY3oVmPEOw
+	F9c7xCdOtoGjy6QmFOjbI3sS+qe5WtM5RLJVycPpjxOOUgEflW/9w+R648DMo2zF+cfGJJIy1AFSq
+	0zmML06FQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU0vF-0004DH-Kr; Thu, 30 Apr 2020 04:35:41 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jU1Ec-0000q1-Vx; Thu, 30 Apr 2020 04:55:42 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU0v4-0004Ab-Ii
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 04:35:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588221326;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=n5jM63qDWJeyDGYCjjTCU+R9Ek+uHrEl9ULmh5ibqDw=;
- b=hlX4p0HqjFW1cNF1NF2kF5vYM9MdDwq03vyv6lRp9J6/fJMC4JU0i6Gw2GMbwkUIyf3+5v
- Bh2mlO8QUhk1HzBcuLV67Bt1DPMkOnu8rLT7l5Ii6z33Eytv9H3pBokyjWijhYoZdYMKgE
- qiwShHyNbywCxWb6Qe3iP7D27tB0wHY=
-Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
- [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-302-9vm0V9MMOhOo-jLnCXZWgQ-1; Thu, 30 Apr 2020 00:35:22 -0400
-X-MC-Unique: 9vm0V9MMOhOo-jLnCXZWgQ-1
-Received: by mail-qk1-f198.google.com with SMTP id 30so5186501qkp.21
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 29 Apr 2020 21:35:22 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zKtrMfHGu+y4vYE02s1puHzZQ5/jhATWRhrNjWq5a+4=;
- b=QJK4GamxR3V2LAjCgFSxdpb4bgeay8sCpksErISwb7i0vbQqQ2CqWECsDnXZDM1Emj
- /1o00u92OR+rNfb3v/HYuAIYItXO92Q9CMB8N/ogHiReSEFe2ULWFCaTQNbNwb+U04tA
- t/E8V0EdkoVATKGJlUhBymvdMkJyLqEHG1NyEJJ58glrXa7cXbRDmFhrilh4ksKGw13l
- 4WzLesWz/+4n7wsjnavMPrNG8AMgkzLAE6JFL1H4d8amWmO8TWPB56bn38SeQf+0prwN
- RgwQcJAFatEkvC/yhalnizXXFLVPZw/GBwiH6cYsCmkAFDsPCMKWuXgrj1LqdM7Xzmkl
- Y86Q==
-X-Gm-Message-State: AGi0Pub4YreVQvuKvssHirfIW9V4CZZGvsP0Krm31yf+H1a7aVYFQ4m6
- 3MvUYPfvvGSWpXenywFnY8Uy1HJ0AzlqLukqFCKVcK16qw/Hs/dN5aYTdwYjnnerc4+J0XzlgUY
- MBcLKtNGRbaSgxb6igUPaeUfp6cs3vmFNL1SuJ0GNuUA/Zx03G6M=
-X-Received: by 2002:a05:6214:a14:: with SMTP id
- dw20mr1157827qvb.179.1588221321687; 
- Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
-X-Google-Smtp-Source: APiQypJwv05UoqY7fgJ1iBedETm9PSq8uwxu8tgslkEj0MSEDpFQVgedzwdDm+IHqADZkUseufdbjkQYsL2aKni/Lpc=
-X-Received: by 2002:a05:6214:a14:: with SMTP id
- dw20mr1157809qvb.179.1588221321477; 
- Wed, 29 Apr 2020 21:35:21 -0700 (PDT)
+ id 1jU1EV-0000pA-Ex
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 04:55:36 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 03U4tVE8121395;
+ Wed, 29 Apr 2020 23:55:31 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1588222531;
+ bh=/G6Mzbyf9lh0LZ/LmPuHyv+oSnTdGGeYpa0gLdkICyQ=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=TMSdJ49r6Vc+CNj7DA8E4ISYRqM+AId5PRiwb08eUuzJ93B6qXbfg+C6wiHnmNU80
+ yy4HKj6ogClfQ4TGto8aseOAsuGL4cZF57lJ8O+Ki3rqbZmME9ABnJAh4baxW6ndGx
+ sPMHqQeJua7vMrbgbW1mm5mPh+FmnWe8Y2UpkZWI=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 03U4tVUj119890
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 29 Apr 2020 23:55:31 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 29
+ Apr 2020 23:55:31 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 29 Apr 2020 23:55:31 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 03U4tUHp061722;
+ Wed, 29 Apr 2020 23:55:30 -0500
+Subject: Re: [PATCH 1/8] ARM: dts: omap4: fix node names for the l4_cm clkctrl
+ nodes
+To: Tony Lindgren <tony@atomide.com>
+References: <20200429143002.5050-1-t-kristo@ti.com>
+ <20200429143002.5050-2-t-kristo@ti.com> <20200429220714.GV37466@atomide.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <fef91f43-df5f-99e4-7861-05190fcc2040@ti.com>
+Date: Thu, 30 Apr 2020 07:55:29 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
- <20200408104655.GA92698@C02TD0UTHF1T.local>
- <CACi5LpP0WqYGxrJL6BJia-ceSR5XbjytsSY+P74xaDJZTJA8jA@mail.gmail.com>
- <20200428100710.GD3868@gaia>
-In-Reply-To: <20200428100710.GD3868@gaia>
-From: Bhupesh Sharma <bhsharma@redhat.com>
-Date: Thu, 30 Apr 2020 10:05:09 +0530
-Message-ID: <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
-Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
-To: Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+In-Reply-To: <20200429220714.GV37466@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_213531_259582_40D2AFBB 
-X-CRM114-Status: GOOD (  18.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200429_215535_622149_8EA3CBA5 
+X-CRM114-Status: GOOD (  18.13  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -106,63 +93,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- kexec mailing list <kexec@lists.infradead.org>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, arm@kernel.org,
- James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 28, 2020 at 3:37 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
->
-> On Tue, Apr 28, 2020 at 01:55:58PM +0530, Bhupesh Sharma wrote:
-> > On Wed, Apr 8, 2020 at 4:17 PM Mark Rutland <mark.rutland@arm.com> wrote:
-> > > On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
-> > > >  arch/arm64/configs/defconfig | 1 +
-> > > >  1 file changed, 1 insertion(+)
-> > > >
-> > > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> > > > index 24e534d85045..fa122f4341a2 100644
-> > > > --- a/arch/arm64/configs/defconfig
-> > > > +++ b/arch/arm64/configs/defconfig
-> > > > @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
-> > > >  CONFIG_NUMA=y
-> > > >  CONFIG_SECCOMP=y
-> > > >  CONFIG_KEXEC=y
-> > > > +CONFIG_KEXEC_FILE=y
-> > > >  CONFIG_CRASH_DUMP=y
-> > > >  CONFIG_XEN=y
-> > > >  CONFIG_COMPAT=y
-> > > > --
-> > > > 2.7.4
-> >
-> > Thanks a lot  Mark.
-> >
-> > Hi Catalin, Will,
-> >
-> > Can you please help pick this patch in the arm tree. We have an
-> > increasing number of user-cases from distro users
-> > who want to use kexec_file_load() as the default interface for
-> > kexec/kdump on arm64.
->
-> We could pick it up if it doesn't conflict with the arm-soc tree. They
-> tend to pick most of the defconfig changes these days (and could as well
-> pick this one).
+On 30/04/2020 01:07, Tony Lindgren wrote:
+> * Tero Kristo <t-kristo@ti.com> [200429 14:31]:
+>> The node name for these should be clk instead of clock. Otherwise the
+>> clock driver won't be able to map the parent/child relationships
+>> properly, and large number of clocks end up in orphaned state.
+>>
+>> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+>> ---
+>>   arch/arm/boot/dts/omap44xx-clocks.dtsi | 4 ++--
+>>   1 file changed, 2 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/arch/arm/boot/dts/omap44xx-clocks.dtsi b/arch/arm/boot/dts/omap44xx-clocks.dtsi
+>> index 532868591107..b82b1ca0e557 100644
+>> --- a/arch/arm/boot/dts/omap44xx-clocks.dtsi
+>> +++ b/arch/arm/boot/dts/omap44xx-clocks.dtsi
+>> @@ -1279,13 +1279,13 @@
+>>   		#size-cells = <1>;
+>>   		ranges = <0 0x1400 0x200>;
+>>   
+>> -		l4_per_clkctrl: clock@20 {
+>> +		l4_per_clkctrl: clk@20 {
+>>   			compatible = "ti,clkctrl-l4-per", "ti,clkctrl";
+>>   			reg = <0x20 0x144>;
+>>   			#clock-cells = <2>;
+>>   		};
+>>   
+>> -		l4_secure_clkctrl: clock@1a0 {
+>> +		l4_secure_clkctrl: clk@1a0 {
+>>   			compatible = "ti,clkctrl-l4-secure", "ti,clkctrl";
+>>   			reg = <0x1a0 0x3c>;
+>>   			#clock-cells = <2>;
+> 
+> Heh this is no longer needed since commit 6c3090520554
+> ("clk: ti: clkctrl: Fix hidden dependency to node name")
+> that added support for using the compatible name :)
+> 
+> Maybe you are using some older tree? Or else there's
+> still something wrong somewhere.
 
-Thanks Catalin.
-(+Cc Arnd)
+I was using 5.7-rc1 as baseline so can't be that.
 
-Hi Arnd,
+Let me try to check this one again.
 
-Can you please help pick this change via the arm-soc tree?
-
-Thanks,
-Bhupesh
-
+-Tero
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
