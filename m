@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A63581BF385
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:51:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B356B1BF373
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:49:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iaSeEfMvMfpHlVdKkh49pyR4BECcyxO79VTZdI4mbiE=; b=L1+8xehwUFe4J+
-	gGn7EuW/2pea5qsO9oUf6rcDQvlOngXyhHIqWrwR76WTKBQ8V4/sM4/J4TLuh/oKNL70ZObY03S8R
-	RQf9xB/POhW/iuIXAeo1AVYrpo2jJ044JaoOxD0e+9f8BxNMv0tGXU6CKEgjmAm6Yssyq15fLQzeH
-	c316wWqmMyvzouc/mFdkPOQ8KmHStc3U1WasJAUqgVWev5mIJaLGFcNfJPKbDP5To/2wvk3bfGpFg
-	d4vOz/c4n27/MzKVgb8Lo39N5pDIaTxZRFYZAryvbuG/BKvYXLylmtK0AF8wQu4w1gzbC7kgZVKxd
-	GCkLQkwzUKTAzUBAWrmw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ksdgDpf2rwjqfrwWZ+8g9ZzS7pFKKMyRhun/ix3kaUI=; b=PT8
+	6jF/D/Ro2oZIJpAKqXJuB5edB/bz76AFgJN2qQ6X6PAJ9h2gCW+q8QMOp3sOgNR1pTEiMx1CDZCEA
+	m4su4+BX+1FiD6Y6bgTz6cjMJgcFjrGja+hFxAorqLiwU39UYFxbWb9GET2snLh7v6sS8wxQSxVMc
+	NB+AZJ6QpmFgGpXzfplMrpTCjo1tC0daME/NHBxy9iOPjYKZJ1qqP/Icd8i5/J/p5vDz3VI8tl1yf
+	encnbt1Q+W6fZJe40KHNJPjFF0kZOxJsuy6n0Hdp1isYg3tELIpa4dufcwFMDkXvAl4akkS05lHfn
+	+onG1KsD9h08VGbBWpab0d8SsxuXXhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU4v5-0003CE-5B; Thu, 30 Apr 2020 08:51:47 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jU4sX-0006ra-FL; Thu, 30 Apr 2020 08:49:09 +0000
+Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU4tV-0000Ra-3m; Thu, 30 Apr 2020 08:50:11 +0000
-X-UUID: 56bbe1b7c2144b25b49a3942c0b40f8a-20200430
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=qEHPZ0vJ9YaDzRAN0qw3MdQ9byhSepyxaXxCWBvrE5g=; 
- b=gfi1O1nLD0z/k7SSqXn5aLDlASNVa2jqazrXSiMBWSm2XEQeEdl1nmbd/eRtrSKW8kCDgzRlk64tC4QkpcBTyJiyIDu/1D+epSsbdGihsrDXZjExysMK/1tSULoN4dqicEskW9a98ZDMWz9z8uDTrLhlRfcoIIEN7QS2JwW0hH4=;
-X-UUID: 56bbe1b7c2144b25b49a3942c0b40f8a-20200430
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 667662918; Thu, 30 Apr 2020 00:49:59 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 30 Apr 2020 01:48:40 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 30 Apr 2020 16:48:37 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 30 Apr 2020 16:48:36 +0800
-Message-ID: <1588236466.8804.92.camel@mhfsdcap03>
-Subject: Re: [V4, 2/2] media: i2c: Add DW9768 VCM driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-Date: Thu, 30 Apr 2020 16:47:46 +0800
-In-Reply-To: <20200331101456.GG1922688@smile.fi.intel.com>
-References: <20200330123634.363-1-dongchun.zhu@mediatek.com>
- <20200330123634.363-3-dongchun.zhu@mediatek.com>
- <20200330135751.GQ1922688@smile.fi.intel.com>
- <1585620980.5781.80.camel@mhfsdcap03>
- <20200331101456.GG1922688@smile.fi.intel.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: E3566C996091720B35FA9D701A04146A9F434F3E2FE424D79D363A9BF88C6DB62000:8
-X-MTK: N
+ id 1jU4sG-0006oT-Sl
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:48:54 +0000
+Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:182a:142e:a95f:66c2])
+ by laurent.telenet-ops.be with bizsmtp
+ id Ywoc220090w8ZL601wocCu; Thu, 30 Apr 2020 10:48:36 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1jU4s0-0002kK-3M; Thu, 30 Apr 2020 10:48:36 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1jU4s0-0000N3-0t; Thu, 30 Apr 2020 10:48:36 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: arm-soc <arm@kernel.org>,
+	arm-soc <soc@kernel.org>
+Subject: [GIT PULL] Renesas fixes for v5.7
+Date: Thu, 30 Apr 2020 10:48:34 +0200
+Message-Id: <20200430084834.1384-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_015009_244689_898EC6EF 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_014853_075888_D4840183 
+X-CRM114-Status: GOOD (  10.51  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,56 +65,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Andy,
+	Hi arm-soc folks,
 
-Thanks for the review.
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-On Tue, 2020-03-31 at 13:14 +0300, Andy Shevchenko wrote:
-> On Tue, Mar 31, 2020 at 10:16:20AM +0800, Dongchun Zhu wrote:
-> > On Mon, 2020-03-30 at 16:57 +0300, Andy Shevchenko wrote:
-> > > On Mon, Mar 30, 2020 at 08:36:34PM +0800, Dongchun Zhu wrote:
-> > > > This patch adds a V4L2 sub-device driver for DW9768 voice coil moter,
-> > > > providing control to set the desired focus via I2C serial interface.
-> > > 
-> > > ...
-> > > 
-> > > > +static const struct dev_pm_ops dw9768_pm_ops = {
-> > > > +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-> > > > +				pm_runtime_force_resume)
-> > > > +	SET_RUNTIME_PM_OPS(dw9768_runtime_suspend, dw9768_runtime_resume, NULL)
-> > > > +};
-> > > > +
-> > > > +static struct i2c_driver dw9768_i2c_driver = {
-> > > > +	.driver = {
-> > > > +		.name = DW9768_NAME,
-> > > 
-> > > > +		.pm = IS_ENABLED(CONFIG_PM) ? &dw9768_pm_ops : NULL,
-> > > 
-> > > What is this conditional for?
-> > > 
-> > 
-> > For the dw9768_pm_ops, here my idea is to use an IS_ENABLED() check to
-> > avoid defining the structure when CONFIG_PM is not set.
-> 
-> Have you looked at the implementation of SET_SYSTEM_SLEEP_OPS() and another one?
-> 
-> Have you tried to actually compile with !CONFIG_PM? In your case the warning
-> should be issued.
-> 
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
-Understood.
-Follow Sakari's advice, the condition would be dropped in next release.
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-fixes-for-v5.7-tag1
+
+for you to fetch changes up to b704fc1da9b84d7145db550a13e2b7140f6b419b:
+
+  ARM: dts: r7s9210: Remove bogus clock-names from OSTM nodes (2020-04-28 10:15:38 +0200)
+
+----------------------------------------------------------------
+Renesas fixes for v5.7
+
+  - Fix IOMMU support on R-Car V3H,
+  - Minor fixes that are fast-tracked to avoid introducing regressions
+    during conversion of DT bindings to json-schema.
+
+Thanks for pulling!
+----------------------------------------------------------------
+Geert Uytterhoeven (2):
+      ARM: dts: r8a73a4: Add missing CMT1 interrupts
+      ARM: dts: r7s9210: Remove bogus clock-names from OSTM nodes
+
+Yoshihiro Shimoda (1):
+      arm64: dts: renesas: r8a77980: Fix IPMMU VIP[01] nodes
+
+ arch/arm/boot/dts/r7s9210.dtsi            | 3 ---
+ arch/arm/boot/dts/r8a73a4.dtsi            | 9 ++++++++-
+ arch/arm64/boot/dts/renesas/r8a77980.dtsi | 2 ++
+ 3 files changed, 10 insertions(+), 4 deletions(-)
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
