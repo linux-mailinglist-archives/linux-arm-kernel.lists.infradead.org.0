@@ -2,55 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 759081BF66D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 13:20:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FD6A1BF6CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 13:25:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3dcPfW4is9UrvpXMIDMIcu3E0s+gJ8ObPqCqV3/E4OU=; b=CxmTHyqFXvG0xz
-	iVRq6w6ZQsyQpytHtR057hUYXW1FXMotCQTMhxzcQPqF7ptwUkTka0sfannGlbxMENybe1kYqlXUJ
-	3JmM77tfuWDD5VAVqiBv9crrr8Eo8cux1Ur2r2QqSveMBRvAaJy8iEv+47iqUu5ok0MGxYEu4GWwN
-	yPCt8RGS/H7D1LdSkAfOq+72JZ3IEuPCTnQWRw/rbPpwRP1IQtLVG2WDSLVLkxNS7eGvEz8C+qtGx
-	XJ4MD+5tsLoMccLJE1xGsvSn7enlzTzRVoxIvL52B98O1B8T8p5WlmwyF5KxaI+3a+nmWjLqwIdpl
-	nV2z76JtZJHvrvFPmp3w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Q6LvSM44VwKgfocx2BQTi7kVceGaulhTCcYyjXllc14=; b=ZgRT79MWcBGqroVWqmMjiG0gN
+	TPmoFrdjKvbcr5lLsBjoslviPgcHpdKhyWSq8VdeApGAfu4z+p24Vfqy7UajUNGfSaz/cE2kZY7Ti
+	s2ESl7bL6aiGIstRslaKyIcKPvNShCPGX96atG7qCglFHsVh5PlLAjONg7q60Aykse7xWJLgZVVZO
+	9zjyc0nuvGk+ykZPOA/lWh45BXSbpR8hZG0coK3J8GrfR1i3pfS9BRvB2nYk1WsMcAOY8uLGU4laX
+	+H59WDssi3uSwZz3cg+coqQTmkvPkeAkSTPijhPbo3WHjY0WM38PiY3QQsPKaq6/pDClIJi39mlZB
+	d+M2d3XBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU7ES-0002KC-0C; Thu, 30 Apr 2020 11:19:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU7EH-0002JG-0W
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 11:19:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C34AE31B;
- Thu, 30 Apr 2020 04:19:43 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.22.164])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EBCE63F305;
- Thu, 30 Apr 2020 04:19:41 -0700 (PDT)
-Date: Thu, 30 Apr 2020 12:19:39 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: =?utf-8?Q?=C5=81ukasz?= Stelmach <l.stelmach@samsung.com>
-Subject: Re: [PATCH] arm64: kexec_file: print appropriate variable
-Message-ID: <20200430111923.GB40114@C02TD0UTHF1T.local>
-References: <CGME20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203@eucas1p1.samsung.com>
- <20200430105034.17513-1-l.stelmach@samsung.com>
+	id 1jU7Jr-0008J2-5z; Thu, 30 Apr 2020 11:25:31 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jU7Jh-0007WH-T0
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 11:25:23 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id B6CDFD5C09F13723E425;
+ Thu, 30 Apr 2020 19:25:03 +0800 (CST)
+Received: from [127.0.0.1] (10.173.222.27) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.487.0; Thu, 30 Apr 2020
+ 19:24:55 +0800
+Subject: Re: [PATCH] KVM: arm64: vgic-v4: Initialize GICv4.1 even in the
+ absence of a virtual ITS
+To: Marc Zyngier <maz@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <kvm@vger.kernel.org>, <kvmarm@lists.cs.columbia.edu>
+References: <20200425094426.162962-1-maz@kernel.org>
+From: Zenghui Yu <yuzenghui@huawei.com>
+Message-ID: <5b23b938-f71f-5523-6d7e-027bcca98dd4@huawei.com>
+Date: Thu, 30 Apr 2020 19:24:53 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.2.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430105034.17513-1-l.stelmach@samsung.com>
+In-Reply-To: <20200425094426.162962-1-maz@kernel.org>
+Content-Language: en-US
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_041945_095961_2CAD426E 
-X-CRM114-Status: GOOD (  15.54  )
+X-CRM114-CacheID: sfid-20200430_042522_095104_5B03C075 
+X-CRM114-Status: GOOD (  19.21  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,48 +67,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- AKASHI Takahiro <takahiro.akashi@linaro.org>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Eric Auger <eric.auger@redhat.com>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBBcHIgMzAsIDIwMjAgYXQgMTI6NTA6MzRQTSArMDIwMCwgxYF1a2FzeiBTdGVsbWFj
-aCB3cm90ZToKPiBGaXhlczogNDMxMjA1NzY4MTkyOSAoImFybTY0OiBrZXhlY19maWxlOiBsb2Fk
-IGluaXRyZCBhbmQgZGV2aWNlLXRyZWUiKQoKVGhpcyBjb21taXQgSUQgaXMgYm9ndXMgKGRvZXNu
-J3QgZXhpc3QgaW4gbWFpbmxpbmUgb3IgdGhlIGFybTY0IHRyZWUpLgoKVGhlIHVwc3RyZWFtIGNv
-bW1pdCBJRCBzZWVtcyB0byBiZTogNTJiMmE4YWY3NDM2MDQ0Y2ZjYjI3ZTRiMGY3MmMyY2UxZjM4
-OTBkYQoKQXMgd2lsbCBzYWlkLCB0aGlzIG5lZWRzIGEgY29tbWl0IG1lc3NhZ2UuIFBsZWFzZSBl
-eHBsYWluIHdoYXQgeW91IHRoaW5rCmlzIHdyb25nIGhlcmUuCgpBbHNvLCB3aGVuIHNlbmRpbmcg
-YSBmaXgsICpwbGVhc2UqIENjIHRoZSBhdXRob3Igb2YgdGhlIG9yaWdpbmFsIHBhdGNoLgoKSSd2
-ZSBhZGRlZCBwYXJ0aWVzIHJlbGV2YW50IHRvIHRoZSBvcmlnaW5hbCBwYXRjaCAoVGFrYWhpcm8g
-YW5kIEphbWVzKS4KCj4gU2lnbmVkLW9mZi1ieTogxYF1a2FzeiBTdGVsbWFjaCA8bC5zdGVsbWFj
-aEBzYW1zdW5nLmNvbT4KPiAtLS0KPiAgYXJjaC9hcm02NC9rZXJuZWwvbWFjaGluZV9rZXhlY19m
-aWxlLmMgfCAyICstCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlv
-bigtKQo+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tlcm5lbC9tYWNoaW5lX2tleGVjX2Zp
-bGUuYyBiL2FyY2gvYXJtNjQva2VybmVsL21hY2hpbmVfa2V4ZWNfZmlsZS5jCj4gaW5kZXggYjQw
-YzNiMGRlZjkyLi4yNzc2YmRhYTgzYTUgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwv
-bWFjaGluZV9rZXhlY19maWxlLmMKPiArKysgYi9hcmNoL2FybTY0L2tlcm5lbC9tYWNoaW5lX2tl
-eGVjX2ZpbGUuYwo+IEBAIC0zMzIsNyArMzMyLDcgQEAgaW50IGxvYWRfb3RoZXJfc2VnbWVudHMo
-c3RydWN0IGtpbWFnZSAqaW1hZ2UsCj4gIAlpbWFnZS0+YXJjaC5kdGJfbWVtID0ga2J1Zi5tZW07
-Cj4gIAo+ICAJcHJfZGVidWcoIkxvYWRlZCBkdGIgYXQgMHglbHggYnVmc3o9MHglbHggbWVtc3o9
-MHglbHhcbiIsCj4gLQkJCWtidWYubWVtLCBkdGJfbGVuLCBkdGJfbGVuKTsKPiArCQkJa2J1Zi5t
-ZW0sIGR0Yl9sZW4sIGtidWYubWVtc3opOwoKSXQncyB3b3J0aCBub3RpbmcgdGhhdCB3ZSBmb2xs
-b3cgdGhlIHNhbWUgcGF0dGVybiByZXBlYXRlZGx5IGluIHRoaXMKZmlsZSwgc28gaWYgeW91IHRo
-aW5rIHRoaXMgaW5zdGFuY2UgaXMgd3JvbmcgeW91IHNob3VsZCBjb25zaWRlciB3aGV0aGVyCnRo
-ZSBvdGhlcnMgYXJlIGNvcnJlY3QuCgpFYXJsaWVyIGluIHRoaXMgZmlsZSB3ZSBoYXZlOgoKfAlw
-cl9kZWJ1ZygiTG9hZGVkIGVsZiBjb3JlIGhlYWRlciBhdCAweCVseCBidWZzej0weCVseCBtZW1z
-ej0weCVseFxuIiwKfAkJIGltYWdlLT5hcmNoLmVsZl9oZWFkZXJzX21lbSwgaGVhZGVyc19zeiwg
-aGVhZGVyc19zeikKCnwJcHJfZGVidWcoIkxvYWRlZCBpbml0cmQgYXQgMHglbHggYnVmc3o9MHgl
-bHggbWVtc3o9MHglbHhcbiIsCnwJCSBpbml0cmRfbG9hZF9hZGRyLCBpbml0cmRfbGVuLCBpbml0
-cmRfbGVuKTsKCi4uLiBhbmQgaXQgbG9va3MgbGlrZSB4ODYgZG9lcyBzaW1pbGFyIGluIGtleGVj
-LWJ6aW1hZ2U2NC5jLCBmb3Igc29tZQpzb3J0IG9mIGNvbnNpc3RlbmN5IHdpdGggdGhlIG9sZCBr
-ZXhlYyBsb2dnaW5nLgoKSWYgPGZvbz5fbGVuIGFuZCBrYnVmLm1lbXN6IGNhbiBkaWZmZXIsIHdl
-IHNob3VsZCBsb2cgdGhhdCBpbiBhbGwgY2FzZXMuCklmIG5vdCwgd2Ugc2hvdWxkIHJlbW92ZSB0
-aGUgcmVkdW5kYW50IGxvZ2dpbmcuCgpUaGFua3MsCk1hcmsuCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Marc,
+
+On 2020/4/25 17:44, Marc Zyngier wrote:
+> KVM now expects to be able to use HW-accelerated delivery of vSGIs
+> as soon as the guest has enabled thm. Unfortunately, we only
+them
+> initialize the GICv4 context if we have a virtual ITS exposed to
+> the guest.
+> 
+> Fix it by always initializing the GICv4.1 context if it is
+> available on the host.
+> 
+> Fixes: 2291ff2f2a56 ("KVM: arm64: GICv4.1: Plumb SGI implementation selection in the distributor")
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>   virt/kvm/arm/vgic/vgic-init.c    | 9 ++++++++-
+>   virt/kvm/arm/vgic/vgic-mmio-v3.c | 3 ++-
+>   2 files changed, 10 insertions(+), 2 deletions(-)
+> 
+> diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+> index a963b9d766b73..8e6f350c3bcd1 100644
+> --- a/virt/kvm/arm/vgic/vgic-init.c
+> +++ b/virt/kvm/arm/vgic/vgic-init.c
+> @@ -294,8 +294,15 @@ int vgic_init(struct kvm *kvm)
+>   		}
+>   	}
+>   
+> -	if (vgic_has_its(kvm)) {
+> +	if (vgic_has_its(kvm))
+>   		vgic_lpi_translation_cache_init(kvm);
+> +
+> +	/*
+> +	 * If we have GICv4.1 enabled, unconditionnaly request enable the
+> +	 * v4 support so that we get HW-accelerated vSGIs. Otherwise, only
+> +	 * enable it if we present a virtual ITS to the guest.
+> +	 */
+> +	if (vgic_supports_direct_msis(kvm)) {
+>   		ret = vgic_v4_init(kvm);
+>   		if (ret)
+>   			goto out;
+> diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> index e72dcc4542475..26b11dcd45524 100644
+> --- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+> @@ -50,7 +50,8 @@ bool vgic_has_its(struct kvm *kvm)
+>   
+>   bool vgic_supports_direct_msis(struct kvm *kvm)
+>   {
+> -	return kvm_vgic_global_state.has_gicv4 && vgic_has_its(kvm);
+> +	return (kvm_vgic_global_state.has_gicv4_1 ||
+> +		(kvm_vgic_global_state.has_gicv4 && vgic_has_its(kvm)));
+>   }
+
+Not related to this patch, but I think that the function name can be
+improved a bit after this change. It now indicates whether the vGIC
+supports direct MSIs injection *or* direct SGIs injection, not just
+MSIs. And if vgic_has_its() is false, we don't even support MSIs.
+
+The fix itself looks correct to me,
+
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
+
+
+Thanks.
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
