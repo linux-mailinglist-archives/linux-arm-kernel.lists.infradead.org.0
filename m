@@ -2,82 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A277A1C08AF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:01:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A39B1C08D4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:11:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qAyz7p8npvdw9BJjVrf07fIpnu3nu0yY57cgNIVscYI=; b=OI8CxfBTpl47tf
-	BceSapNj+vK1TH98CqXuglB3D/7O4mgXECcq7Y3xC/5a4FlODk8xfnBqLjd8Ef41s9Cg1BatKO9uL
-	JiLlY1GK2TOjM+KwItnGBPusP59uGk0yCoplOwzsAIX0+yOc1lhcgGf2eXbdhSOt1dgUqa3Db96Ei
-	d4JwDkiqqU9LezrMSc1AQz6fpY6+vmPc8WPRqRsscwyoYkmPOy3rz/RKp56O2s9DrGPBPrVE/735Q
-	3cW3aDPNDpXMRqcaNnzGD1eT0m9GbuJsRpnqPZmb32RTzwSsR/V5oh434j8prUpGKPjYOxUKmWBuX
-	ArEIneh1AnU+2grsxKVA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ToStKjpOkkx34UPJEZWETIZV2Wkml/JjB17M6QvtjTE=; b=Zk3
+	3ZErih2ZJ3WqicT86hSPEpsQFKeoWkVAZRX3yuAGNQFJa4my4rPjHLxPjty7CexMSI0Pw5cCoPRKf
+	z3se34BRq+gwrQiQV8yqiANP0AjzQlZY8oRpJqQ4by5qY+RMD8Y9wByzMU8/dh0lp4SRpeLmgnvat
+	SC5JgChXtQ4GNQwHLcDf351u3t6/0hKk/Vmi+kUEW5FU4bjLlsxhgojZgsRS++Iw4aBoZMIWAMaAr
+	ZQZbnwP7nvKyOInVRvd0uUG9vCDmRtdebRuy5yOQ+hBraT/dYEgjmWLJjf0ozj+sa5kpzfLIR+HXl
+	dYbYY/gLycgdrdLZCHWKj5lf5IoRRYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGIx-0004Mr-R1; Thu, 30 Apr 2020 21:01:11 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGIc-0004C6-Fq
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:00:52 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k1so8989708wrx.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 14:00:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=tUATwzpZxjtae1A7cwapMNJ5haJlC5HtdIYeEo2bhyI=;
- b=HdcxtBBTqr/xUzKOPsewGq+KhFdgf5wvseNGI2ZEIOXDWE46bkbjUocRTAcZ2uNLHp
- nForatMzsdPs8+L0IrFQikDJm2msJs+d9Tzz4+5/fMT652hPt+HIxLSJ02HdCHigVrN/
- 9SAhr5CAesG8XtrGURdnaEgujEBNdBceBnfew=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=tUATwzpZxjtae1A7cwapMNJ5haJlC5HtdIYeEo2bhyI=;
- b=Ukx7aQBtShxX56XURUS3WSA2QbIlxb+iSqq90y9m9Gmesl2J6VdOQ2Vjtc634cApWQ
- uLextrxzhgNjm/aHMb/VptOG2VbSXGnOfVy2pzmVjH07XxJPfuFw3/NdQbt6HQtP20/h
- WFlH0rrN6Wv/xzCM6nYx2jSVLY2vLg7GM1KOvvvgoOjf6K8vDM0id1SgbMCBIMrswymo
- gQ+rrThLENUbbm6dnOK/lsPuLnuZVO3RjKPyOpHfucRr08Bz+oTr/pLV5P2Kks0Koi8I
- GmBxp3rJTBxrizTMXyAjEu68aVAtQ42wrcwos9SZuMWyHbMTY68+foWPV02o8ugaimYI
- Axsw==
-X-Gm-Message-State: AGi0PubM/BAZAbE5jS40pHIULmxQXhRBGJUdgZ+xiLjzgVH3PcIVSuWQ
- s9p+y2YOk338HhsOrJ79Bfei2dETqqMQOA4Wy1HHSg==
-X-Google-Smtp-Source: APiQypKv2reBsz0zsRnGDK76QZ4WHS1pIYRkKF7BUdppHJAInOIMuK9/LUue0hxUkkq3QrQxmOz7Y/HtoRhuAgd7rtY=
-X-Received: by 2002:adf:f1c5:: with SMTP id z5mr504368wro.100.1588280448870;
- Thu, 30 Apr 2020 14:00:48 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200430185522.4116-3-james.quinlan@broadcom.com>
- <20200430203252.GA62266@bjorn-Precision-5520>
-In-Reply-To: <20200430203252.GA62266@bjorn-Precision-5520>
-From: Jim Quinlan <james.quinlan@broadcom.com>
-Date: Thu, 30 Apr 2020 17:00:36 -0400
-Message-ID: <CA+-6iNwnMjAYZzYedBqooeJAbot_5A=9C8iFNMc=vdpnzmzVrw@mail.gmail.com>
-Subject: Re: [PATCH 3/5] PCI: brcmstb: enable CRS
-To: Bjorn Helgaas <helgaas@kernel.org>
+	id 1jUGSo-00040R-Kq; Thu, 30 Apr 2020 21:11:22 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUGSb-0003yg-1M
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:10 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5C29E1FB;
+ Thu, 30 Apr 2020 14:11:06 -0700 (PDT)
+Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 76D8F3F68F;
+ Thu, 30 Apr 2020 14:11:05 -0700 (PDT)
+From: Andre Przywara <andre.przywara@arm.com>
+To: Rob Herring <robh@kernel.org>,
+	devicetree@vger.kernel.org
+Subject: [PATCH v3 0/8] dt-bindings: calxeda: Convert bindings to json-schema
+Date: Thu, 30 Apr 2020 22:10:46 +0100
+Message-Id: <20200430211054.30466-1-andre.przywara@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_140050_541924_AC53D5DB 
-X-CRM114-Status: GOOD (  22.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_141109_171565_BCAF0E71 
+X-CRM114-Status: GOOD (  13.64  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,89 +59,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
- <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
- "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
- <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Cc: Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 4:32 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
->
-> On Thu, Apr 30, 2020 at 02:55:20PM -0400, Jim Quinlan wrote:
-> > From: Jim Quinlan <jquinlan@broadcom.com>
-> >
-> > Configuration Retry Request Status is off by default on this
-> > PCIe controller.  Turn it on.
->
-> Are you talking about CRS itself, i.e., the ability of a Root Port to
-> deal with Completions with Configuration Retry Request Status?  That
-> really shouldn't be switchable in the hardware since it's a required
-> feature for all PCIe devices.
->
-> Or are you talking about CRS Software Visibility, which is controlled
-> by a bit in the PCIe Root Control register?  That *should* be managed
-> by the PCI core in pci_enable_crs().  Does that generic method of
-> controlling it not work for this device?
->
-My mistake; the commit will be dropped.
+Hi,
+
+this is the DT schema bindings conversion part of the v2 Calxeda update
+series. The .dts part was already merged, so this tackles what is left.
+
+This series converts the "prose" DT binding documentation for various
+devices used by the Calxeda platform to the json-schema format, so that
+the automatic checking actually does something useful.
+After those patches "make dtbs_check" comes back clean for the two .dts
+files in the kernel, and "dt_validate -m" reports only those three
+not-covered nodes (on Highbank, only the last one on Midway):
+arm,cortex-a9-twd-timer
+arm,cortex-a9-twd-wdt
+calxeda,hb-sdhci
+The first two are generic ARM devices, for which the binding doc just
+does not have been converted yet. The SDHCI controller is actually
+disabled in the DTs, and the SD slot is populated on very few special
+systems only, also there has never been a driver in the kernel for
+this device anyway.
+
+Verified by trying to break every single assumption the bindings make
+(in their example section): the tooling complained correctly.
 
 Thanks,
-Jim
-> It looks like maybe the latter, since the generic:
->
->   #define  PCI_EXP_RTCTL_CRSSVE   0x0010
->
-> matches your new PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK.
->
-> If pci_enable_crs() doesn't work on this device, it sounds like a
-> hardware defect that we need to work around, but I'm not sure that
-> just enabling it unconditionally here is the right thing.
->
-> > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
-> > ---
-> >  drivers/pci/controller/pcie-brcmstb.c | 9 +++++++++
-> >  1 file changed, 9 insertions(+)
-> >
-> > diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> > index 5b0dec5971b8..2bc913c0262c 100644
-> > --- a/drivers/pci/controller/pcie-brcmstb.c
-> > +++ b/drivers/pci/controller/pcie-brcmstb.c
-> > @@ -34,6 +34,9 @@
-> >  #define BRCM_PCIE_CAP_REGS                           0x00ac
-> >
-> >  /* Broadcom STB PCIe Register Offsets */
-> > +#define PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL                    0x00c8
-> > +#define  PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK    0x10
-> > +
-> >  #define PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1                              0x0188
-> >  #define  PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1_ENDIAN_MODE_BAR2_MASK       0xc
-> >  #define  PCIE_RC_CFG_VENDOR_SPCIFIC_REG1_LITTLE_ENDIAN                       0x0
-> > @@ -827,6 +830,12 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
-> >                pci_speed_string(pcie_link_speed[cls]), nlw,
-> >                ssc_good ? "(SSC)" : "(!SSC)");
-> >
-> > +     /* Enable configuration request retry (CRS) */
-> > +     tmp = readl(base + PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL);
-> > +     u32p_replace_bits(&tmp, 1,
-> > +                       PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK);
-> > +     writel(tmp, base + PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL);
-> > +
-> >       /* PCIe->SCB endian mode for BAR */
-> >       tmp = readl(base + PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1);
-> >       u32p_replace_bits(&tmp, PCIE_RC_CFG_VENDOR_SPCIFIC_REG1_LITTLE_ENDIAN,
-> > --
-> > 2.17.1
-> >
+Andre
+
+Changelog:
+v2 ... v3:
+- adjust license to name both BSD and GPL
+- add missing address specifier for clock nodes' names
+- properly group phandle properties in SATA bindings example
+- use itemised interrupt description in l2ecc binding
+- limit reg-shift in the IPMI binding
+- allow device_type property in IPMI binding
+
+v1 ... v2:
+- Remove unneeded property type from clocks and sgpio-gpio
+- add additionalProperties: false to bindings missing it before
+- limit number in "phydev" to the hardware constraint of 5 bits
+- add required: properties to l2ecc binding
+- fix enumeration of compatible strings in calxeda-ddr-ctrlr
+
+Andre Przywara (8):
+  dt-bindings: clock: Convert Calxeda clock bindings to json-schema
+  dt-bindings: sata: Convert Calxeda SATA controller to json-schema
+  dt-bindings: net: Convert Calxeda Ethernet binding to json-schema
+  dt-bindings: phy: Convert Calxeda ComboPHY binding to json-schema
+  dt-bindings: arm: Convert Calxeda L2 cache controller to json-schema
+  dt-bindings: memory-controllers: Convert Calxeda DDR to json-schema
+  dt-bindings: ipmi: Convert IPMI-SMIC bindings to json-schema
+  dt-bindings: arm: Add Calxeda system registers json-schema binding
+
+ .../bindings/arm/calxeda/hb-sregs.yaml        | 49 ++++++++++
+ .../devicetree/bindings/arm/calxeda/l2ecc.txt | 15 ---
+ .../bindings/arm/calxeda/l2ecc.yaml           | 42 ++++++++
+ .../devicetree/bindings/ata/sata_highbank.txt | 44 ---------
+ .../bindings/ata/sata_highbank.yaml           | 95 +++++++++++++++++++
+ .../devicetree/bindings/clock/calxeda.txt     | 17 ----
+ .../devicetree/bindings/clock/calxeda.yaml    | 82 ++++++++++++++++
+ .../devicetree/bindings/ipmi/ipmi-smic.txt    | 25 -----
+ .../devicetree/bindings/ipmi/ipmi-smic.yaml   | 63 ++++++++++++
+ .../memory-controllers/calxeda-ddr-ctrlr.txt  | 16 ----
+ .../memory-controllers/calxeda-ddr-ctrlr.yaml | 42 ++++++++
+ .../devicetree/bindings/net/calxeda-xgmac.txt | 18 ----
+ .../bindings/net/calxeda-xgmac.yaml           | 49 ++++++++++
+ .../bindings/phy/calxeda-combophy.txt         | 17 ----
+ .../bindings/phy/calxeda-combophy.yaml        | 51 ++++++++++
+ 15 files changed, 473 insertions(+), 152 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
+ delete mode 100644 Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/calxeda/l2ecc.yaml
+ delete mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.txt
+ create mode 100644 Documentation/devicetree/bindings/ata/sata_highbank.yaml
+ delete mode 100644 Documentation/devicetree/bindings/clock/calxeda.txt
+ create mode 100644 Documentation/devicetree/bindings/clock/calxeda.yaml
+ delete mode 100644 Documentation/devicetree/bindings/ipmi/ipmi-smic.txt
+ create mode 100644 Documentation/devicetree/bindings/ipmi/ipmi-smic.yaml
+ delete mode 100644 Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.txt
+ create mode 100644 Documentation/devicetree/bindings/memory-controllers/calxeda-ddr-ctrlr.yaml
+ delete mode 100644 Documentation/devicetree/bindings/net/calxeda-xgmac.txt
+ create mode 100644 Documentation/devicetree/bindings/net/calxeda-xgmac.yaml
+ delete mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+ create mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
