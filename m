@@ -2,87 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F7971BF252
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E6EF1BF2F9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:35:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nazjEnuqJHC9dXqFaImE5xWhzi2dI6hkT9Uv9i/SxgE=; b=WQw9rIFPVEh+up
-	x5+j9amw6vfTZpvFybk88r+E8vBR6hvp7mOoeNh9OGpYFxq+v3uxa4OEuZanmT8pjWYhOj9Ukh0Fr
-	PH21dogO+NuQYn9Xftjx7TYhXRHrZM6QxZ9c7Cw5oNi/o1xK8kSSP7P5QZUz9t4zYJbS3tM2g0Avs
-	jYPXZ38wOixrqasVmEvJAo+LX+X+oqNNIKF95K/Sev51vA3u609K35Vl+qgzukjFUJQ/gStxMSCK3
-	7d9CH79ED/QjcL7pAT4Xn1CXwPPw/mSOZdSUWWXO+btfLVEX5/JRy6RpiViKhMU2nSaPZEFmpVe+l
-	P/DIU6kqnCkj1HJb++IQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=adwLCSVCNnwApzsqSmJ5JAZuLV01g8Oy7X3MRi1j0Jc=; b=m+SAT/dn5rU/XF
+	hiKYjgk4ETzXtAUkoYevTmerv0BSrHA5QRLERiW56V0y0846V1DdPUmf4cpETKlEEPVoiz1GX4rVH
+	O/n94qk3SZUUSs+2zfs8kZzOLeXNA8slP8LCFXVQLjH26eTzWM+NrnmfNQ5V1xUxEdG541tPqTR0k
+	8MOZKo/pe1yz/Xb/30joFHymKI2N+Q72zqafBeWz8XJkaczJALS/filaTh+F6TE7Xwh0Z1ge/RpqO
+	70+CUVscIa1YoYFN6f6uLtLmlNG2nSAmEyEoya0jkmmLgq/YoFGpKHbyo0RuUfMRmPu7ik93Fq1K7
+	s2BsfCa8wVsuqUwNUZtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU4IC-0004Dt-H2; Thu, 30 Apr 2020 08:11:36 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jU4fS-0006oW-51; Thu, 30 Apr 2020 08:35:38 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU4I3-0004Cr-51
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:11:28 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x17so5687146wrt.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 01:11:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=monstr-eu.20150623.gappssmtp.com; s=20150623;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=2o2Fztfk5W//D3bO+bVikVHBouyFoiJ2j9CyC6fkXWQ=;
- b=OU5l9pzjK2RQxM/eLRsv2chYFmymKQ5mxvF6GfOCys0Xtnj05P4pcSm6uR6bGUDa5P
- UTBh9te0UCO3ieR/1G4plJHfDbekvivY22NAHTT4GQGdU5yIZg+Qrfr1ZsZ7iwEyzFyI
- bfsPbs+2NFYLl/hgTX7ixpfR5v1314z90YVHVHBwhAIbk+sEaCbCERIuzQGY+7iMlNRL
- wWH+u4FfSBG6j7/NmbmpJni6XO3kmQlTF1c3kE6lnfVAl9WhWfDj0CaVx8+GeL9Hq/O6
- 2owMONvh/MqWiGdeWn/U5Pq+pCVpwFB93zlr3xOg39sX0xVvx8yAAwpeNgMy6x1v/aGv
- MbWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=2o2Fztfk5W//D3bO+bVikVHBouyFoiJ2j9CyC6fkXWQ=;
- b=GqdORZapj22ZZtcxOY/0on7Q9OuoGMeqDtHc1/uKanpxss7OJ2wj74xvHDPsD2g3Wx
- 9whFB/EWfpwC+o5mhUhxe/+D60ugkk2ubU6vB+TZcaq8nzzSfkdebB2BnNnf3dmPncGf
- lNdlD7BouBH2EZUCXY3uowKgISKfgPDYw9Tfad5cyLFVgDfAyKLb0597lq7ZT9u7ng5Y
- pUkc/olsS5TqgD69heggSiQAsucEZyr1GVjvL7EnQBKyi/bAK1pbABwOMn7+RQJ8R080
- 7b83177gpqHqvO7QKfrV/oO0qqB4jaYeYHBeNMDLULYrRPPlJMPKTt0LXEY3CAOAFta2
- 9pjQ==
-X-Gm-Message-State: AGi0PuYbR4C46lynMEFQZ8mnLqSJNG7Rh3Kb9Zl3ZJsjkquxfEQJa8nO
- T2l1cgy85j3sq8f/N0vnin2d2WKAWzZ2gYs6
-X-Google-Smtp-Source: APiQypILYB6i3OfitZOpjN+VgEPWdREhEKMt8Kth4moHZ+k3RT3PZah4rsctCqNQ9LdsMEwFt0izSw==
-X-Received: by 2002:adf:b310:: with SMTP id j16mr2555234wrd.95.1588234282987; 
- Thu, 30 Apr 2020 01:11:22 -0700 (PDT)
-Received: from localhost (nat-35.starnet.cz. [178.255.168.35])
- by smtp.gmail.com with ESMTPSA id 74sm2992078wrk.30.2020.04.30.01.11.22
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 30 Apr 2020 01:11:22 -0700 (PDT)
-From: Michal Simek <michal.simek@xilinx.com>
-To: linux-kernel@vger.kernel.org, monstr@monstr.eu, michal.simek@xilinx.com,
- git@xilinx.com, stable@vger.kernel.org
-Subject: [PATCH] tty: xilinx_uartps: Add the id to the console
-Date: Thu, 30 Apr 2020 10:11:21 +0200
-Message-Id: <06195dc0effe2fb82e264e4faefcfdd6ebc00516.1588234277.git.michal.simek@xilinx.com>
-X-Mailer: git-send-email 2.26.2
+ id 1jU4el-00045Z-Jc
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:34:57 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49CTG52n6mz1rxLc;
+ Thu, 30 Apr 2020 10:34:53 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49CTG5282Qz1qr4R;
+ Thu, 30 Apr 2020 10:34:53 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id rO_cmmhBYBgv; Thu, 30 Apr 2020 10:34:52 +0200 (CEST)
+X-Auth-Info: vfMMi5qkboyo/hM/S+7iw6zVKCTsG9PKMqbDqAskUi8=
+Received: from [127.0.0.1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu, 30 Apr 2020 10:34:52 +0200 (CEST)
+Subject: Re: [PATCH V5 00/20] ARM: dts: stm32: Repair AV96 board
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200422104613.96944-1-marex@denx.de>
+ <e47b72fc-9591-021d-7abc-14a7166a4845@st.com>
+ <9a5d29a4-14ae-1e4f-68fe-21e4f619625d@denx.de>
+ <d1e9c84c-48a1-0eef-9da4-94c184ac179c@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <2f02a4a1-a42a-a9c2-9cea-f6111f877fc3@denx.de>
+Date: Thu, 30 Apr 2020 10:22:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
+In-Reply-To: <d1e9c84c-48a1-0eef-9da4-94c184ac179c@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_011127_248497_FC268EEB 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200430_013456_075786_6E44500F 
+X-CRM114-Status: GOOD (  14.32  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,49 +78,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>,
- linux-serial@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Jiri Slaby <jslaby@suse.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
-
-Update the console index. Once the serial node is found update it to the
-console index.
-
-Fixes: 18cc7ac8a28e ("Revert "serial: uartps: Register own uart console and driver structures"")
-Signed-off-by: Shubhrajyoti Datta <shubhrajyoti.datta@xilinx.com>
-Cc: stable <stable@vger.kernel.org>
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
----
-
-Greg: Would be good if you can take this patch to 5.7 and also to stable
-trees.
----
- drivers/tty/serial/xilinx_uartps.c | 1 +
- 1 file changed, 1 insertion(+)
-
-diff --git a/drivers/tty/serial/xilinx_uartps.c b/drivers/tty/serial/xilinx_uartps.c
-index 672cfa075e28..b9d672af8b65 100644
---- a/drivers/tty/serial/xilinx_uartps.c
-+++ b/drivers/tty/serial/xilinx_uartps.c
-@@ -1465,6 +1465,7 @@ static int cdns_uart_probe(struct platform_device *pdev)
- 		cdns_uart_uart_driver.nr = CDNS_UART_NR_PORTS;
- #ifdef CONFIG_SERIAL_XILINX_PS_UART_CONSOLE
- 		cdns_uart_uart_driver.cons = &cdns_uart_console;
-+		cdns_uart_console.index = id;
- #endif
- 
- 		rc = uart_register_driver(&cdns_uart_uart_driver);
--- 
-2.26.2
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNC8zMC8yMCA5OjM5IEFNLCBBbGV4YW5kcmUgVG9yZ3VlIHdyb3RlOgo+IAo+IAo+IE9uIDQv
+MjkvMjAgNjo0MCBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+IE9uIDQvMjkvMjAgOTo1NiBBTSwg
+QWxleGFuZHJlIFRvcmd1ZSB3cm90ZToKPj4+IEhpIE1hcmVrCj4+Pgo+Pj4gT24gNC8yMi8yMCAx
+Mjo0NSBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+Pj4gVGhlIEFWOTYgYm9hcmQgZGV2aWNlIHRy
+ZWUgaXMgY29tcGxldGVseSBicm9rZW4gYW5kIGRvZXMgbm90IG1hdGNoIHRoZQo+Pj4+IGhhcmR3
+YXJlLiBUaGlzIHNlcmllcyBmaXhlcyBpdCB1cC4KPj4+Pgo+Pj4+IE1hcmVrIFZhc3V0ICgyMCk6
+Cj4+Pj4gwqDCoMKgIEFSTTogZHRzOiBzdG0zMjogUmVwYWlyIFBNSUMgY29uZmlndXJhdGlvbiBv
+biBBVjk2Cj4+Pj4gwqDCoMKgIEFSTTogZHRzOiBzdG0zMjogUmVwYWlyIFBNSUMgaW50ZXJydXB0
+IG9uIEFWOTYKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11
+eCBmb3IgZXRoZXJuZXQgUkdNSUkKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBSZXBhaXIg
+ZXRoZXJuZXQgb3BlcmF0aW9uIG9uIEFWOTYKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBB
+ZGQgbWlzc2luZyBldGhlcm5ldCBQSFkgcmVzZXQgb24gQVY5Ngo+Pj4+IMKgwqDCoCBBUk06IGR0
+czogc3RtMzI6IEFkZCBtaXNzaW5nIGV0aGVybmV0IFBIWSBza2V3cyBvbiBBVjk2Cj4+Pj4gwqDC
+oMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIFNETU1DIHBpbnMK
+Pj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBSZXBhaXIgU0RNTUMxIG9wZXJhdGlvbiBvbiBB
+Vjk2Cj4+Pj4gwqDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIGVNTUMgYXR0YWNoZWQgdG8gU0RN
+TUMyIG9uIEFWOTYKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgUVNQSSBOT1Igb24g
+QVY5Ngo+Pj4+IMKgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBjb25maWd1cmF0aW9uIEVFUFJP
+TSBvbiBBVjk2Cj4+Pj4gwqDCoMKgIEFSTTogZHRzOiBzdG0zMjogRW5hYmxlIFdpRmkgb24gQVY5
+Ngo+Pj4+IMKgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBV
+U0FSVDIgcGlucwo+Pj4+IMKgwqDCoCBBUk06IGR0czogc3RtMzI6IEVuYWJsZSBCbHVldG9vdGgg
+b24gQVY5Ngo+Pj4+IMKgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4
+IGZvciBMVERDIHBpbnMKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgYmluZGluZ3Mg
+Zm9yIEhETUkgdmlkZW8gb24gQVY5Ngo+Pj4+IMKgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBh
+bHRlcm5hdGUgcGlubXV4IGZvciBTQUkyIHBpbnMKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0bTMy
+OiBBZGQgYmluZGluZ3MgZm9yIGF1ZGlvIG9uIEFWOTYKPj4+PiDCoMKgwqAgQVJNOiBkdHM6IHN0
+bTMyOiBBZGQgYmluZGluZ3MgZm9yIFVTQiBvbiBBVjk2Cj4+Pj4gwqDCoMKgIEFSTTogZHRzOiBz
+dG0zMjogUmVuYW1lIExFRHMgdG8gbWF0Y2ggc2lsa3NjcmVlbiBvbiBBVjk2Cj4+Pj4KPj4+PiDC
+oMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNS1waW5jdHJsLmR0c2nCoMKgwqAgfCAyODAg
+KysrKysrKysrKysrKysrKysKPj4+PiDCoMKgIGFyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdh
+LWF2ZW5nZXI5Ni5kdHMgfCAzMjQKPj4+PiArKysrKysrKysrKysrKysrKystLQo+Pj4+IMKgwqAg
+MiBmaWxlcyBjaGFuZ2VkLCA1NzIgaW5zZXJ0aW9ucygrKSwgMzIgZGVsZXRpb25zKC0pCj4+Pj4K
+Pj4+PiBDYzogQWxleGFuZHJlIFRvcmd1ZSA8YWxleGFuZHJlLnRvcmd1ZUBzdC5jb20+Cj4+Pj4g
+Q2M6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5v
+cmc+Cj4+Pj4gQ2M6IE1heGltZSBDb3F1ZWxpbiA8bWNvcXVlbGluLnN0bTMyQGdtYWlsLmNvbT4K
+Pj4+PiBDYzogUGF0cmljZSBDaG90YXJkIDxwYXRyaWNlLmNob3RhcmRAc3QuY29tPgo+Pj4+IENj
+OiBQYXRyaWNrIERlbGF1bmF5IDxwYXRyaWNrLmRlbGF1bmF5QHN0LmNvbT4KPj4+PiBDYzogbGlu
+dXgtc3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbQo+Pj4+IFRvOiBsaW51eC1hcm0t
+a2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKPj4+Pgo+Pj4KPj4+IFNlcmllcyBhcHBsaWVkIG9u
+IHN0bTMyLW5leHQuCj4+Cj4+IFRoYW5rcy4gSSBzZW50IG91dCB0aGUgcmVzdCwgd2hpY2ggc2hv
+dWxkIGJlIHZlcnkgbXVjaCBhbGwgdGhlcmUgaXMgZm9yCj4+IG5vdyA6KSA+Cj4gCj4gSSBob3Bl
+IDopLiBJIGhhZCBhIGxvb2sgb24gaXQgYW5kIGl0IHNvdW5kcyBnb29kLiBJJ2xsIG1lcmdlIGl0
+IG5leHQgd2Vlay4KCk5pY2UsIHRoYW5rcy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
