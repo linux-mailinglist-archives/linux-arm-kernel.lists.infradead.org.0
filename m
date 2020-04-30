@@ -2,83 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22FC81C08A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 22:58:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A277A1C08AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:01:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ALNL5z5bubO3KKQACtv57aNV7E2dZOLfTx0XdbjihVg=; b=gVduoNLOd2ro8F
-	Xy3ejKg2DzBfDPXN1xAw9dCUnYYh1DFXiqaSfZjAL/Dz3oRPx3UTjPC20m/HhYQJyPBrSnnMrYH+x
-	xM9WmzDHvjzsTmgNA0xHw9FMEiLs/qvBA7tSIJtPltwE1vKuRkS4f48sR07utTrso/rO+QVMopDDE
-	oNsoIvc7lFAfQgDNCSo1R7l2WzU5hnQ/ospaU3yfAya2dBWnRYQDm303qpEssDHcesuwIN1nhe6mh
-	C7GLQNPw8586M0LFarka3hRcvZIbeSibZQmoQvZ9Mpq0Qhfq9dthII4EptA/sxlnEFf89nAIyO3oP
-	oOWJdFa6LS6thPrmrWGQ==;
+	List-Owner; bh=qAyz7p8npvdw9BJjVrf07fIpnu3nu0yY57cgNIVscYI=; b=OI8CxfBTpl47tf
+	BceSapNj+vK1TH98CqXuglB3D/7O4mgXECcq7Y3xC/5a4FlODk8xfnBqLjd8Ef41s9Cg1BatKO9uL
+	JiLlY1GK2TOjM+KwItnGBPusP59uGk0yCoplOwzsAIX0+yOc1lhcgGf2eXbdhSOt1dgUqa3Db96Ei
+	d4JwDkiqqU9LezrMSc1AQz6fpY6+vmPc8WPRqRsscwyoYkmPOy3rz/RKp56O2s9DrGPBPrVE/735Q
+	3cW3aDPNDpXMRqcaNnzGD1eT0m9GbuJsRpnqPZmb32RTzwSsR/V5oh434j8prUpGKPjYOxUKmWBuX
+	ArEIneh1AnU+2grsxKVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGGQ-0000Po-8T; Thu, 30 Apr 2020 20:58:34 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jUGIx-0004Mr-R1; Thu, 30 Apr 2020 21:01:11 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGGF-0000PC-2D
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 20:58:24 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id y6so1383060pjc.4
+ id 1jUGIc-0004C6-Fq
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:00:52 +0000
+Received: by mail-wr1-x442.google.com with SMTP id k1so8989708wrx.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 13:58:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=MX/gFKorFD3fJiz0waGi+R3fRw1GVFpupUsSX0SPyJY=;
- b=CsTBErZFaAQkEbs5S+GlwA8kRzgyJRrcYYtemLqJ9WlfIPAhaq6G4rW9gc3uI8mECY
- OMjpu0MqbtnrkkGBFU8c/hoxlzYOAoSNV2BdQCVF8lHP2UPvKSWGeIHDMTYDp8al261g
- lV8Vh0nWV30oVczqakw539UDRjIKSR24bd1HFHrw8Gf7opTt4Vk+SSqj/xO2nokwhZw2
- 1OOJwQdoa+tqNpeiHYjzibN2xdFDXDes6gRUNiPGVnncDZywStP0554NDEfMabSOjeis
- 8vfPXauZSf0IR0nm3IJrCMbGs3o/HsvmL3H0ypxjyka1O616cT1vv/24yQwBFsHDsy91
- 9a3w==
+ Thu, 30 Apr 2020 14:00:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tUATwzpZxjtae1A7cwapMNJ5haJlC5HtdIYeEo2bhyI=;
+ b=HdcxtBBTqr/xUzKOPsewGq+KhFdgf5wvseNGI2ZEIOXDWE46bkbjUocRTAcZ2uNLHp
+ nForatMzsdPs8+L0IrFQikDJm2msJs+d9Tzz4+5/fMT652hPt+HIxLSJ02HdCHigVrN/
+ 9SAhr5CAesG8XtrGURdnaEgujEBNdBceBnfew=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MX/gFKorFD3fJiz0waGi+R3fRw1GVFpupUsSX0SPyJY=;
- b=jj15JarbxLulNI+/Ec5WbaI9xEF3vWDcHYnW8P9iy23yRSrhR2bwo6MR7WaylS81Uy
- 2bm+ECrnObKOY5rLVBWLmM2/zHk9NY8un6XtGMyW65YAh00TzSkCNFJsgXalIYht7OpB
- 5bItsK7ctDzUQ8AH/bJ7ByezQiK+UL0CcYHXT6ek46Cm/P72+13Jm4IysdXaWOHlrJvT
- 6JXpdPeV2BaUNyFxiVaDBrirqNuJhmXhaUYHYfPcPU9XFdh8m4hsnEjYAIxxYqh2J9Ph
- bpBF6RHjYfuA4AkpRw9J91cWEYugQym8IRlNt9QR3r4TL17x5ouhxKK3oQy31B1I9pUc
- cDeA==
-X-Gm-Message-State: AGi0Puay98jvqAp984Waj0yOvaBkupG03kSHXBNEvaj2yUcmwdX5Q+Zh
- l69KTHeR32iqijI9Js3rB7HFLg==
-X-Google-Smtp-Source: APiQypKe3OdI9QEW41vMal8UJb8GDAGm5V7tlJQS0ryzb463ValPrIAGP3jeUyn/S22VakZZUZ9faw==
-X-Received: by 2002:a17:90b:297:: with SMTP id
- az23mr762282pjb.85.1588280301989; 
- Thu, 30 Apr 2020 13:58:21 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id v7sm559509pfm.146.2020.04.30.13.58.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 13:58:21 -0700 (PDT)
-Date: Thu, 30 Apr 2020 14:58:19 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Subject: Re: [PATCH v2 03/12] remoteproc: stm32: Decouple rproc from DT parsing
-Message-ID: <20200430205819.GD18004@xps15>
-References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <20200424202505.29562-4-mathieu.poirier@linaro.org>
- <b68419a6-65a9-08d0-bed8-5f8195ae3d55@st.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tUATwzpZxjtae1A7cwapMNJ5haJlC5HtdIYeEo2bhyI=;
+ b=Ukx7aQBtShxX56XURUS3WSA2QbIlxb+iSqq90y9m9Gmesl2J6VdOQ2Vjtc634cApWQ
+ uLextrxzhgNjm/aHMb/VptOG2VbSXGnOfVy2pzmVjH07XxJPfuFw3/NdQbt6HQtP20/h
+ WFlH0rrN6Wv/xzCM6nYx2jSVLY2vLg7GM1KOvvvgoOjf6K8vDM0id1SgbMCBIMrswymo
+ gQ+rrThLENUbbm6dnOK/lsPuLnuZVO3RjKPyOpHfucRr08Bz+oTr/pLV5P2Kks0Koi8I
+ GmBxp3rJTBxrizTMXyAjEu68aVAtQ42wrcwos9SZuMWyHbMTY68+foWPV02o8ugaimYI
+ Axsw==
+X-Gm-Message-State: AGi0PubM/BAZAbE5jS40pHIULmxQXhRBGJUdgZ+xiLjzgVH3PcIVSuWQ
+ s9p+y2YOk338HhsOrJ79Bfei2dETqqMQOA4Wy1HHSg==
+X-Google-Smtp-Source: APiQypKv2reBsz0zsRnGDK76QZ4WHS1pIYRkKF7BUdppHJAInOIMuK9/LUue0hxUkkq3QrQxmOz7Y/HtoRhuAgd7rtY=
+X-Received: by 2002:adf:f1c5:: with SMTP id z5mr504368wro.100.1588280448870;
+ Thu, 30 Apr 2020 14:00:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b68419a6-65a9-08d0-bed8-5f8195ae3d55@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200430185522.4116-3-james.quinlan@broadcom.com>
+ <20200430203252.GA62266@bjorn-Precision-5520>
+In-Reply-To: <20200430203252.GA62266@bjorn-Precision-5520>
+From: Jim Quinlan <james.quinlan@broadcom.com>
+Date: Thu, 30 Apr 2020 17:00:36 -0400
+Message-ID: <CA+-6iNwnMjAYZzYedBqooeJAbot_5A=9C8iFNMc=vdpnzmzVrw@mail.gmail.com>
+Subject: Re: [PATCH 3/5] PCI: brcmstb: enable CRS
+To: Bjorn Helgaas <helgaas@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_135823_144317_747FC2EA 
-X-CRM114-Status: GOOD (  21.60  )
+X-CRM114-CacheID: sfid-20200430_140050_541924_AC53D5DB 
+X-CRM114-Status: GOOD (  22.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -89,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,131 +89,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, alexandre.torgue@st.com, loic.pallardy@st.com,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
+ <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
+ <bcm-kernel-feedback-list@broadcom.com>,
+ "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
+ <linux-rpi-kernel@lists.infradead.org>, Bjorn Helgaas <bhelgaas@google.com>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:37:58PM +0200, Arnaud POULIQUEN wrote:
-> Hi Mathieu,
-> 
-> On 4/24/20 10:24 PM, Mathieu Poirier wrote:
-> > Remove the remote processor from the process of parsing the device tree
-> > since (1) there is no correlation between them and (2) to use the
-> > information that was gathered to make a decision on whether to
-> > synchronise with the M4 or not.
-> > 
-> > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+On Thu, Apr 30, 2020 at 4:32 PM Bjorn Helgaas <helgaas@kernel.org> wrote:
+>
+> On Thu, Apr 30, 2020 at 02:55:20PM -0400, Jim Quinlan wrote:
+> > From: Jim Quinlan <jquinlan@broadcom.com>
+> >
+> > Configuration Retry Request Status is off by default on this
+> > PCIe controller.  Turn it on.
+>
+> Are you talking about CRS itself, i.e., the ability of a Root Port to
+> deal with Completions with Configuration Retry Request Status?  That
+> really shouldn't be switchable in the hardware since it's a required
+> feature for all PCIe devices.
+>
+> Or are you talking about CRS Software Visibility, which is controlled
+> by a bit in the PCIe Root Control register?  That *should* be managed
+> by the PCI core in pci_enable_crs().  Does that generic method of
+> controlling it not work for this device?
+>
+My mistake; the commit will be dropped.
+
+Thanks,
+Jim
+> It looks like maybe the latter, since the generic:
+>
+>   #define  PCI_EXP_RTCTL_CRSSVE   0x0010
+>
+> matches your new PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK.
+>
+> If pci_enable_crs() doesn't work on this device, it sounds like a
+> hardware defect that we need to work around, but I'm not sure that
+> just enabling it unconditionally here is the right thing.
+>
+> > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 > > ---
-> >  drivers/remoteproc/stm32_rproc.c | 25 ++++++++++++++-----------
-> >  1 file changed, 14 insertions(+), 11 deletions(-)
-> > 
-> > diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> > index 1ac90adba9b1..57a426ea620b 100644
-> > --- a/drivers/remoteproc/stm32_rproc.c
-> > +++ b/drivers/remoteproc/stm32_rproc.c
-> > @@ -538,12 +538,11 @@ static int stm32_rproc_get_syscon(struct device_node *np, const char *prop,
-> >  	return err;
-> >  }
-> >  
-> > -static int stm32_rproc_parse_dt(struct platform_device *pdev)
-> > +static int stm32_rproc_parse_dt(struct platform_device *pdev,
-> > +				struct stm32_rproc *ddata, bool *auto_boot)
-> >  {
-> >  	struct device *dev = &pdev->dev;
-> >  	struct device_node *np = dev->of_node;
-> > -	struct rproc *rproc = platform_get_drvdata(pdev);
-> > -	struct stm32_rproc *ddata = rproc->priv;
-> >  	struct stm32_syscon tz;
-> >  	unsigned int tzen;
-> >  	int err, irq;
-> > @@ -589,7 +588,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev)
-> >  
-> >  	err = regmap_read(tz.map, tz.reg, &tzen);
-> >  	if (err) {
-> > -		dev_err(&rproc->dev, "failed to read tzen\n");
-> > +		dev_err(dev, "failed to read tzen\n");
-> >  		return err;
-> >  	}
-> >  	ddata->secured_soc = tzen & tz.mask;
-> > @@ -605,7 +604,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev)
-> >  	if (err)
-> >  		dev_info(dev, "failed to get pdds\n");
-> >  
-> > -	rproc->auto_boot = of_property_read_bool(np, "st,auto-boot");
-> > +	*auto_boot = of_property_read_bool(np, "st,auto-boot");
-> >  
-> >  	return stm32_rproc_of_memory_translations(pdev, ddata);
-> >  }
-> > @@ -616,6 +615,7 @@ static int stm32_rproc_probe(struct platform_device *pdev)
-> >  	struct stm32_rproc *ddata;
-> >  	struct device_node *np = dev->of_node;
-> >  	struct rproc *rproc;
-> > +	bool auto_boot = false;
-> 
-> Nitpicking: Seems that you don't need to initialize it. 
-
-I think you are correct.
-
-> Perhaps you can simply suppress the local variable and directly use rproc->auto_boot.
-
-... and change the value of rproc->auto_boot if state == M4_STATE_CRUN?  Sure,
-that's possible.
-
-Thanks for all the comments, it really helps to have a different perspective.  I
-am out of time for today but will continue with the rest of your comments
-tomorrow.
-
-Mathieu
-
-> 
-> else LGTM
-> 
-> 
-> Thanks,
-> Arnaud
-> 
-> >  	int ret;
-> >  
-> >  	ret = dma_coerce_mask_and_coherent(dev, DMA_BIT_MASK(32));
-> > @@ -626,9 +626,16 @@ static int stm32_rproc_probe(struct platform_device *pdev)
-> >  	if (!rproc)
-> >  		return -ENOMEM;
-> >  
-> > +	ddata = rproc->priv;
+> >  drivers/pci/controller/pcie-brcmstb.c | 9 +++++++++
+> >  1 file changed, 9 insertions(+)
+> >
+> > diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
+> > index 5b0dec5971b8..2bc913c0262c 100644
+> > --- a/drivers/pci/controller/pcie-brcmstb.c
+> > +++ b/drivers/pci/controller/pcie-brcmstb.c
+> > @@ -34,6 +34,9 @@
+> >  #define BRCM_PCIE_CAP_REGS                           0x00ac
+> >
+> >  /* Broadcom STB PCIe Register Offsets */
+> > +#define PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL                    0x00c8
+> > +#define  PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK    0x10
 > > +
-> >  	rproc_coredump_set_elf_info(rproc, ELFCLASS32, EM_NONE);
+> >  #define PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1                              0x0188
+> >  #define  PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1_ENDIAN_MODE_BAR2_MASK       0xc
+> >  #define  PCIE_RC_CFG_VENDOR_SPCIFIC_REG1_LITTLE_ENDIAN                       0x0
+> > @@ -827,6 +830,12 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
+> >                pci_speed_string(pcie_link_speed[cls]), nlw,
+> >                ssc_good ? "(SSC)" : "(!SSC)");
+> >
+> > +     /* Enable configuration request retry (CRS) */
+> > +     tmp = readl(base + PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL);
+> > +     u32p_replace_bits(&tmp, 1,
+> > +                       PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL_RC_CRS_EN_MASK);
+> > +     writel(tmp, base + PCIE_RC_CFG_PCIE_ROOT_CAP_CONTROL);
 > > +
-> > +	ret = stm32_rproc_parse_dt(pdev, ddata, &auto_boot);
-> > +	if (ret)
-> > +		goto free_rproc;
-> > +
-> > +	rproc->auto_boot = auto_boot;
-> >  	rproc->has_iommu = false;
-> > -	ddata = rproc->priv;
-> >  	ddata->workqueue = create_workqueue(dev_name(dev));
-> >  	if (!ddata->workqueue) {
-> >  		dev_err(dev, "cannot create workqueue\n");
-> > @@ -638,13 +645,9 @@ static int stm32_rproc_probe(struct platform_device *pdev)
-> >  
-> >  	platform_set_drvdata(pdev, rproc);
-> >  
-> > -	ret = stm32_rproc_parse_dt(pdev);
-> > -	if (ret)
-> > -		goto free_wkq;
-> > -
-> >  	ret = stm32_rproc_request_mbox(rproc);
-> >  	if (ret)
-> > -		goto free_rproc;
-> > +		goto free_wkq;
-> >  
-> >  	ret = rproc_add(rproc);
-> >  	if (ret)
-> > 
+> >       /* PCIe->SCB endian mode for BAR */
+> >       tmp = readl(base + PCIE_RC_CFG_VENDOR_VENDOR_SPECIFIC_REG1);
+> >       u32p_replace_bits(&tmp, PCIE_RC_CFG_VENDOR_SPCIFIC_REG1_LITTLE_ENDIAN,
+> > --
+> > 2.17.1
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
