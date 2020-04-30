@@ -2,64 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA4661C05AD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 21:08:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 895311C060E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 21:20:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fPbsbqBtX5YG0Z/Skee/KDEii/xkfXRXTC684u2lhRk=; b=J7G5qmkJLifVKU
-	mg3FSKkfd17anTmaWvfol9V6fdtTVPuZ+FClh4qC4a8nGdI/hIzmfJMBcQHMctrf/hq0vvHERCemm
-	CmMxRHd+ryJT0fLwEhGmuXAUE03DcMxZCcuN6EhoRjyjNUmJ5uCAxx5XWyA+rvYr6pXXYi+r3lVhL
-	DL1D7ddrimXMrU0VQIdrEVTeONcr8U2rRc043uq8JEAK5t6c3gbX0H11vJ4MxwqmcQxlevEy1Zdrc
-	Q3ePioRtPFgAePyrYaoLgc3hDehYri9lH9GbXOWgACANf0xkhIKTv3z1ANGUSLbhVtNbVHhin9Uvo
-	BxH3OHezqJ3vMhZyrUxA==;
+	List-Owner; bh=yEe6KdlTshKUsijy7DnGJGc4MPftpD92XkA/ANRXQaU=; b=rIeXCcr4/badJI
+	HXLWj4mCO8OSb2t673tpsn9vJKcglKIZeHTZSHNwdkcke6KXuqesXyyru7S7mSBamTqhn1Oa7ULQQ
+	8xYDQgqHfOH5Q6HaopbnYgfFkdRBVy7frQ+sRPpAJx4BDYS6WuUmkU/i+vu6Svj9v2mvGqFbJr1Ca
+	Qmgl6YHTqb5psXUa8OhqZSI+uY8go6VtteRZTqtyDvBwiVPZN5Rj+biw3yQ+xjWsA+ya4UFkM3txd
+	1FJib7jppRsMVKmm+DDvLvtrIYS72RiVFHZZpZoiYl9q7YmQubhY89YQ1hLzFlq1qGUN/CyFs/Nvw
+	7fCccpHM2vauB9kAnFAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUEXK-0004E8-Id; Thu, 30 Apr 2020 19:07:54 +0000
-Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
+	id 1jUEjK-0004aE-Ov; Thu, 30 Apr 2020 19:20:18 +0000
+Received: from mail-ej1-x641.google.com ([2a00:1450:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUEX9-0004DS-Av; Thu, 30 Apr 2020 19:07:44 +0000
-Received: by mail-ej1-x642.google.com with SMTP id re23so5600406ejb.4;
- Thu, 30 Apr 2020 12:07:42 -0700 (PDT)
+ id 1jUEj4-0003dq-Qk; Thu, 30 Apr 2020 19:20:04 +0000
+Received: by mail-ej1-x641.google.com with SMTP id n4so5599866ejs.11;
+ Thu, 30 Apr 2020 12:20:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=2I9WSRYJXQAn4kQfh/qmcd3zQeXfMItE/lNnVqUCZLw=;
- b=K0HsiBNEuI+Euy7M1MJcpUOunSvbgAK8XdykmIozN4ERQNtbiy3bt79vmlR0lUHnZY
- ejhnp+Ay9TC/1RNk0/aMyoa6QwmxbHeTqgCB1h1snRsL5gkRmMXYIsbGbV9HjKUtQJ0E
- RgDB3eNRRTPXWqNaHUYuXv4DGxtrNq+q6k+WDStgwa71n5xYgjy4MQ7+vp+JFDU9uZ1L
- mlDtCSvr3Gw4fG3h9MOdApMVLl/pcn/Nb14uJzDwwrtgdB3mCIsCeBKDATjTbKKAmgqx
- 30vVM3XgqlFjZRGd7ydF3jEjSFji/jhgdPjzj2NEqTkSA0AJqLwC1Kuq1W3RBqZzOZkg
- 0iiA==
+ bh=mB03ryO6uBisNhNfAoIx1Xih4BkamMUUKQDURjr15iA=;
+ b=E83amkJ/5nm9gWrLHb4VCuN80kjiC5WrGoytSZtgjeadN4Q9gPK+wkmdze/JVAyDUF
+ Gp1HVBIOjgAOj4kkva1leaprTfQQ6AOcoXci6satswA1SVRPad725OU0h5jQtoaCBzOH
+ k4M8JP1JbI0fSxnsOjil8OPoNSIMM2oIxS9PcBkDeqs8HlYKls9jnq6tjK1ubsll/ZFU
+ rTNwmpBe8I2LDEII8vnLs2imKe1QuEiSCDWqDq+gYeIZLYfROPy3uz3HGVRscnRmJDM3
+ nc0h3p9vWXn+3g/5/Jc7vyO3+dm6zEsaYfCDuai6WLzzN1i7XKseF8vAubL5qj6JN55j
+ oaTw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=2I9WSRYJXQAn4kQfh/qmcd3zQeXfMItE/lNnVqUCZLw=;
- b=M2C+n5Y7eEYiip9pKy3A1Eb7ndlqXvatQpj3hBYIjQQzYMLenOhY4M0U8kLx2LVcB9
- z+ucjT6XHDWO0ctH2Sp2nHWKgEMgNVOTekSn5u+2DDjxgsAEuoxHTBesvdgI8doM2ckq
- DqZPV8ZGqEzCx/0QXZpVlVzdYNf2mt1CfIcDk/Cnlv4kwzW3ZH5Hb/B6Z2ouBu4bj79W
- QCsdfLMA9/kH7RwBgy77sX4SXtHWM6654hVnzmp7SQPtkQf0/2OicVA2ite0UaiB9LV+
- aP992ygspOVjcIxhy7LzrojEoAdbmBjGj2ZlXi5LvPyBoR96OnamW2edFhMrM2MMa5GK
- 8fDQ==
-X-Gm-Message-State: AGi0PuZh5NtAMz+x+lpGHeN9Sr0JuUcWryPeFeXWFK7laXwwNPmx/iSw
- Wb4O/oE0cQbqXC5OhLoUZiQ=
-X-Google-Smtp-Source: APiQypItcrWVBSouAyBL+uF9yO/h41dfWcpOFxTVYDNHCOMGXnTskQOlY4VDL7mvJXJIBYuFs02ylQ==
-X-Received: by 2002:a17:906:7717:: with SMTP id
- q23mr4240012ejm.38.1588273661869; 
- Thu, 30 Apr 2020 12:07:41 -0700 (PDT)
+ bh=mB03ryO6uBisNhNfAoIx1Xih4BkamMUUKQDURjr15iA=;
+ b=Ve/GJx5yUxtygFfUPejcG5q65iq3QKUg30OY2D1XMsfZxv5ro8dVZ8bVlkAMEtquy0
+ 19FY2rEIuWdRcb3RvYCIrJ3lDSIRicSYSl0NtiBc4eraS1wjdxcyfaECZTK5Bq34EuoH
+ tFXf4o+MyilOFNE82LlvKvnyqINCTexxYNUXt5tWPDKYBxYNBrUN9f21rapgB/OtOPfD
+ Mnxlk9KaX9rdisBwtztFXoWKaitQmBUuipK6yM7Q9ORZ4knNtMwfDpclDaVRhrEBHrLO
+ gZ1/CyqXalPQtOYUcNcazfIZQV+eMCofnfrRLQ+WiXrJjfTbbYJRNcT331H/wodF7K1X
+ YUmA==
+X-Gm-Message-State: AGi0PuboLw6jXPAGJ2R8qLhTI2OJqY7jwmtjigjYdsgDqu+uWc7XI/mz
+ mqN+fYOnruIyETG8eZntoNE=
+X-Google-Smtp-Source: APiQypLtoAtXrSlJROO6oq2M504vrUb7eH56iNOMKh/piKkI3mPFRr6dUyOUwWkwfuNjZAYqxz+OqQ==
+X-Received: by 2002:a17:906:841a:: with SMTP id
+ n26mr4418087ejx.43.1588274400847; 
+ Thu, 30 Apr 2020 12:20:00 -0700 (PDT)
 Received: from [10.67.49.116] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id gh8sm69965ejb.32.2020.04.30.12.07.38
+ by smtp.googlemail.com with ESMTPSA id j6sm45000edk.94.2020.04.30.12.19.57
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 12:07:41 -0700 (PDT)
-Subject: Re: [PATCH 2/5] PCI: brcmstb: fix window register offset from 4 to 8
+ Thu, 30 Apr 2020 12:20:00 -0700 (PDT)
+Subject: Re: [PATCH 3/5] PCI: brcmstb: enable CRS
 To: Jim Quinlan <james.quinlan@broadcom.com>
 References: <20200430185522.4116-1-james.quinlan@broadcom.com>
- <20200430185522.4116-2-james.quinlan@broadcom.com>
+ <20200430185522.4116-3-james.quinlan@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  xsDiBEjPuBIRBACW9MxSJU9fvEOCTnRNqG/13rAGsj+vJqontvoDSNxRgmafP8d3nesnqPyR
@@ -115,25 +115,26 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  HvsHIcv4lxCWkFXkwsuWqzEKK6kxVpRDoEQPDj+Oy/ZJ5fYuMbkdHrlegwoQ64LrqdmiVVPC
  TwQYEQIADwIbDAUCVF/S8QUJHlwd3wAKCRBhV5kVtWN2Do+FAJ956xSz2XpDHql+Wg/2qv3b
  G10n8gCguORqNGMsVRxrlLs7/himep7MrCc=
-Message-ID: <4a0459c8-fd61-7ac1-9624-b201c800700d@gmail.com>
-Date: Thu, 30 Apr 2020 12:07:37 -0700
+Message-ID: <293cbdb0-da8a-bcea-2b40-39cefc710c29@gmail.com>
+Date: Thu, 30 Apr 2020 12:19:56 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200430185522.4116-2-james.quinlan@broadcom.com>
+In-Reply-To: <20200430185522.4116-3-james.quinlan@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_120743_372206_E94F7CEF 
-X-CRM114-Status: GOOD (  10.22  )
+X-CRM114-CacheID: sfid-20200430_122002_903090_46073D90 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:642 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -160,7 +161,6 @@ Cc: "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  "open list:PCI NATIVE HOST BRIDGE AND ENDPOINT DRIVERS"
  <linux-pci@vger.kernel.org>, open list <linux-kernel@vger.kernel.org>,
- Florian Fainelli <f.fainelli@gmail.com>,
  "maintainer:BROADCOM BCM7XXX ARM ARCHITECTURE"
  <bcm-kernel-feedback-list@broadcom.com>,
  "moderated list:BROADCOM BCM2711/BCM2835 ARM ARCHITECTURE"
@@ -174,14 +174,10 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On 4/30/20 11:55 AM, Jim Quinlan wrote:
 > From: Jim Quinlan <jquinlan@broadcom.com>
 > 
-> The oubound memory window registers were being referenced
-> with an incorrect offset.  This probably wasn't noticed
-> previously as there was likely only one such outbound window.
+> Configuration Retry Request Status is off by default on this
+> PCIe controller.  Turn it on.
 > 
 > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
-
-Fixes: c0452137034b ("PCI: brcmstb: Add Broadcom STB PCIe host
-controller driver")
 
 Acked-by: Florian Fainelli <f.fainelli@gmail.com>
 -- 
