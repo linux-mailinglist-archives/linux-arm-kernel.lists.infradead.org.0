@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA9281BF820
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 14:19:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB00D1BF83E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 14:31:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Q60wLzyhwq06KyOuIgI+dt4w0nSKpzUz/Hq6u982mEI=; b=F/tDDO5DP7jtY5G7P8+NRFgj7
-	tsjaSpsOZ2BQG1EtJmtVBCIf7jrfgJbIhcWdqKupqfuKmIJe7j5MZUxQDH1waK5pRfczyJmbqjTf+
-	N72jIwEqfQIJdXMhRbS/VKXaaCgW4BewOu9HGeVCakg/WCqIq4NIuDcpNP3ig0haq+GwLlGHvws81
-	wGLay76wMXVutlwUcGE2Gm/txI5+TKBhNoj7YRrt7y+uv19ZSGHmb3p2TZ6CGUy1EbQCzhymwyAru
-	CuOZFWq7O5eOQi4bG3OmJD7nKBM+0aZHP7jhF21PbqGi2n39AkbHOlJGwKr67iEBCBb0ij6aaetDO
-	ydJC9rH4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V42suRMvVb8xa90UIx9iyfAFpNVcZSI4Jxy77FeO5ig=; b=X+DJ/gf5Ll3vj9
+	ug4XSiIEpTRld8RY0Ufc5wAiZOICHL5APfc1n07UfxNpqZqWoYYr3CExTWra9gQNLHdcwq1MfXiUH
+	F9PJjTdazKNnO1nqs+OX3ROBmaP9Yh+zmu1StUCcv9mElRbH6M4/OuvUtsBQExJ3KrIgbtuZ57CWM
+	S8tCAuvCOCpDimOtBDEVWjGgOia5+w18x7x7HKIziMCaq7E65TF3bPIZxAURAYvYkCBbmdXwSNU5M
+	jOy7yJ7xovnUbtwgcMueH60I2gDYLNosEboQqZjJYFveP11t1NL1LKD2F+GaE2AB1df7kcIbuP0VH
+	dJ93Z2ayhpRORPGVfbZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU8AE-0005Z1-CZ; Thu, 30 Apr 2020 12:19:38 +0000
+	id 1jU8LZ-0006mH-16; Thu, 30 Apr 2020 12:31:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU8A6-0005YH-BK; Thu, 30 Apr 2020 12:19:31 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BDAE92076D;
- Thu, 30 Apr 2020 12:19:28 +0000 (UTC)
+ id 1jU8LN-0006kt-Oh
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 12:31:11 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2377F20775;
+ Thu, 30 Apr 2020 12:31:07 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588249169;
- bh=N9rKaTsZFrUvyvsuP9lOc4Wzmprx5voNQJlTVM2rGf4=;
+ s=default; t=1588249869;
+ bh=nm1PyrXDTwqhS6NYKdnWkhnDkQsHQnUWY8q4kZYvSUc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kUAkY5ypXbCmOb1J6dz7spcNrSx8SjCBuT8ha4oxfvY5gTGWEPVdtk14Hpg+O4PBl
- Qj/56KbHndZm/zVKyt3Sn42jlYyvBevEtJJdc2RAZYMcLcdX91zOnVrswvPKexje0u
- 4TPMM4s4MnfBnUOCPqX9zSl5uoEUM+0WfU7etRYE=
-Date: Thu, 30 Apr 2020 13:19:26 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Pratyush Yadav <p.yadav@ti.com>
-Subject: Re: [PATCH v4 02/16] spi: atmel-quadspi: reject DTR ops
-Message-ID: <20200430121926.GC4633@sirena.org.uk>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <20200424184410.8578-3-p.yadav@ti.com>
- <20200430113243.GB4633@sirena.org.uk>
- <20200430121737.37dghomlluzqcxxi@ti.com>
+ b=xkGj2LpEXbs16dMgJa6Vxu/MNyvzkhrjcI1BpImWhwhNCJ18M0FFv8Azk5Dqmk6zr
+ 4WrqcJ+gyfmgRVri2UFb/TN6GGDWqtm6SrfjHYw77bWrPNB+5PgobuEr5UMZG98EUw
+ mhV2tJbIWmbH4fhLyWvdI37enHoWIVq28c4gT8WA=
+Date: Thu, 30 Apr 2020 13:31:05 +0100
+From: Will Deacon <will@kernel.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH] KVM: arm64: Fix 32bit PC wrap-around
+Message-ID: <20200430123104.GB22842@willie-the-truck>
+References: <20200430101513.318541-1-maz@kernel.org>
+ <20200430102556.GE19932@willie-the-truck>
+ <897baec2a3fad776716bccf3027340fa@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200430121737.37dghomlluzqcxxi@ti.com>
-X-Cookie: Sign here without admitting guilt.
+Content-Disposition: inline
+In-Reply-To: <897baec2a3fad776716bccf3027340fa@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_051930_407114_1650FB1F 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20200430_053109_850945_473C1391 
+X-CRM114-Status: GOOD (  26.85  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,86 +78,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Vignesh Raghavendra <vigneshr@ti.com>,
- Tudor Ambarus <tudor.ambarus@microchip.com>,
- Richard Weinberger <richard@nod.at>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-mtd@lists.infradead.org, Miquel Raynal <miquel.raynal@bootlin.com>,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7278950358104921929=="
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Apr 30, 2020 at 11:59:05AM +0100, Marc Zyngier wrote:
+> On 2020-04-30 11:25, Will Deacon wrote:
+> > On Thu, Apr 30, 2020 at 11:15:13AM +0100, Marc Zyngier wrote:
+> > > In the unlikely event that a 32bit vcpu traps into the hypervisor
+> > > on an instruction that is located right at the end of the 32bit
+> > > range, the emulation of that instruction is going to increment
+> > > PC past the 32bit range. This isn't great, as userspace can then
+> > > observe this value and get a bit confused.
+> > > 
+> > > Conversly, userspace can do things like (in the context of a 64bit
+> > > guest that is capable of 32bit EL0) setting PSTATE to AArch64-EL0,
+> > > set PC to a 64bit value, change PSTATE to AArch32-USR, and observe
+> > > that PC hasn't been truncated. More confusion.
+> > > 
+> > > Fix both by:
+> > > - truncating PC increments for 32bit guests
+> > > - sanitize PC every time a core reg is changed by userspace, and
+> > >   that PSTATE indicates a 32bit mode.
+> > 
+> > It's not clear to me whether this needs a cc stable. What do you think?
+> > I
+> > suppose that it really depends on how confused e.g. QEMU gets.
+> 
+> It isn't so much QEMU itself that I'm worried about (the emulation shouldn't
+> really care about the PC), but the likes of GDB. So yes, a cc stable seems
+> to
+> be in order.
 
---===============7278950358104921929==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="nmemrqcdn5VTmUEE"
-Content-Disposition: inline
+Okey doke.
 
+> > > Signed-off-by: Marc Zyngier <maz@kernel.org>
+> > > ---
+> > >  arch/arm64/kvm/guest.c     | 4 ++++
+> > >  virt/kvm/arm/hyp/aarch32.c | 8 ++++++--
+> > >  2 files changed, 10 insertions(+), 2 deletions(-)
+> > > 
+> > > diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> > > index 23ebe51410f0..2a159af82429 100644
+> > > --- a/arch/arm64/kvm/guest.c
+> > > +++ b/arch/arm64/kvm/guest.c
+> > > @@ -200,6 +200,10 @@ static int set_core_reg(struct kvm_vcpu *vcpu,
+> > > const struct kvm_one_reg *reg)
+> > >  	}
+> > > 
+> > >  	memcpy((u32 *)regs + off, valp, KVM_REG_SIZE(reg->id));
+> > > +
+> > > +	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK)
+> > > +		*vcpu_pc(vcpu) = lower_32_bits(*vcpu_pc(vcpu));
+> > 
+> > It seems slightly odd to me that we don't enforce this for *all* the
+> > registers when running as a 32-bit guest. Couldn't userspace be equally
+> > confused by a 64-bit lr or sp?
+> 
+> Fair point. How about this on top, which wipes the upper 32 bits for
+> each and every register in the current mode:
+> 
+> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+> index 2a159af82429..f958c3c7bf65 100644
+> --- a/arch/arm64/kvm/guest.c
+> +++ b/arch/arm64/kvm/guest.c
+> @@ -201,9 +201,12 @@ static int set_core_reg(struct kvm_vcpu *vcpu, const
+> struct kvm_one_reg *reg)
+> 
+>  	memcpy((u32 *)regs + off, valp, KVM_REG_SIZE(reg->id));
+> 
+> -	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK)
+> -		*vcpu_pc(vcpu) = lower_32_bits(*vcpu_pc(vcpu));
+> +	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK) {
+> +		int i;
+> 
+> +		for (i = 0; i < 16; i++)
+> +			*vcpu_reg32(vcpu, i) = (u32)*vcpu_reg32(vcpu, i);
 
---nmemrqcdn5VTmUEE
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I think you're missing all the funny banked registers that live all the way
+up to x30 iirc.
 
-On Thu, Apr 30, 2020 at 05:47:39PM +0530, Pratyush Yadav wrote:
-
-> Most other controllers either don't specify a supports_op function at=20
-> all, in which case spi_mem_default_supports_op() is called, or do their=
-=20
-> custom logic and then call spi_mem_default_supports_op(). In both those=
-=20
-> cases, DTR ops would get rejected because of the call to=20
-> spi_mem_default_supports_op(). So they do not need to add the check=20
-> explicitly there.
-
-> The two exceptions are atmel-quadspi and spi-mtk-nor (which I missed=20
-> updating). They don't call the default supports_op, so they need to be=20
-> updated to explicitly to reject DTR ops.
-
-OK.
-
-> Earlier versions of this series discovered the DTR capability from=20
-> devicetree. In that case, no change would be required at all, but review=
-=20
-> comments suggested I drop those changes. Instead, the controllers should=
-=20
-> accept/reject DTR ops in their supports_op hooks.
-
-It definitely shouldn't be in device tree, this is something that the
-silicon supports so we should already be able to figure out if we can
-use it with just the compatible.
-
---nmemrqcdn5VTmUEE
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6qwk0ACgkQJNaLcl1U
-h9CGPQf/RnFFO+2GEO20wzuUOjiIgXpgOfBnSKgMTXOWAmba2YafGkKYwsymVpGY
-zt5Q9vkcx9dsgudhY892WkRo/l9+xJOkSYbp38ld0QR+YNfXbPUPeuvhK2F39YTJ
-YjMbZw8hbYyMqF+yXbJXJrj7PGbu9ISesfBgC73i3ywZC8S9epUKQZp7HssURy/M
-GJEMzoM40Vam/V48VAPrMHa0Dut9Bum74W9jzW5Fpnxz00AkY47aeMzGSOD+IyHD
-zP97bFTE4NUym4FES9c9efA61FuUJxOK8YRN5Hmfn22BwxxQ6ZT1B+7jRv+Fj32J
-GfvAqmI+mYhLpW/bHI7PCh/eP/eO0g==
-=dS3u
------END PGP SIGNATURE-----
-
---nmemrqcdn5VTmUEE--
-
-
---===============7278950358104921929==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7278950358104921929==--
-
