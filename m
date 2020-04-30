@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB84E1BFAB0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:55:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5918A1BFAB2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:55:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dztJJCVPMb38et/QEvYWcCMQy5iZCEIuk2bLzdn5DTs=; b=Y6XgQNyIQ5lDKL
-	DJjVUQ2dlPDv6hZqZ5fI8+JojAVAwUv7BPehYuN3MpAIbeyh9a9ec62id2gtmiAgU2Z0i/fsOzh7L
-	krQbyJxDrDrsjCVwlmKdBvk+hft9Qs+VaClP7uVf0UW9CtMU0qCs/zR0Va15ejJsvNcV9tXVUzYWH
-	yAK263knZkCk/crmeRexvJ29f9wZK2SbQ/EvCj3StU8GFAnKYsvGdco4Oc9hJhLeCPtXVhgoYmTrC
-	KD1Z6grgC84d5NH1/nD/0vu3ItSniI35PmMQYZTgN7mA50bHP5uY8XNZu8O4VeL0zuwntqjtWNCG6
-	Nt0KaQA8WOEsNi7e5Ilw==;
+	List-Owner; bh=vhwtXn2vBT19vBRaS9yjpKom4JFSC5Ca0tlU4Gj2CH0=; b=MoqUrg0AGKQ4p6
+	a8LVNHkKkn7qTW0Bkhm9gIJpkHL5CSi9i+J3H9e6EOV3zYPsxVk26JE6C2SkJNayueCKBIGEUbzRz
+	eV5DOHIYjPCAP404zT0/rgH16mFCNP9uUaP0jagf7CSQL4BsqiMJmg0/GTqTJr3oNATctBIEpxxcj
+	KWZGcvw4oiJzHp7echfMzZ/0tv1I5Pr9KojmBEVWxtTW1sPWxM7qKSDllcb8TbHeWdjaazqXgYNdq
+	+vdeq7/F6jop+iQ/6hnIOW0owVeWxqV5qDdzVwIO1zr9un9ZqfsnUPWpLRsCO5X6HrmDzBhtcYlAg
+	Ic2oX1t0qBhZ66rSATmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9ep-0003Jo-RR; Thu, 30 Apr 2020 13:55:19 +0000
+	id 1jU9f3-00061h-At; Thu, 30 Apr 2020 13:55:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9c7-0001Jc-PI
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:52:35 +0000
+ id 1jU9cH-0001QO-Vf
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:52:46 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 59377208CA;
- Thu, 30 Apr 2020 13:52:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 157DA208DB;
+ Thu, 30 Apr 2020 13:52:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588254751;
- bh=GGm6SNIpsGc9lTJiZHyTaTJIn5IjKm61sUkgQAWidaA=;
+ s=default; t=1588254760;
+ bh=YmqlM56F2jJuRWYNTBNA8ew3wBlgerJMSnKaUx6c5AM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=auNFZRVAL7iIyGJ2IT4oCwa4wBd7RnHNq46TGqDRg6Jno/j9oXdI0qjR+gg9hsoUp
- 9mBfXeSg58gR/hR3Lv1ibjl1nTuhMaWcA/KklCdWelaioZCg3im8pL1sIQKbUfk34E
- JWLCcwe+iRopSGjZ/+tCwa67Y3+bzCVj7aoIkUTU=
+ b=GO9/M7z0meQXELMnIwhSkE6DyhDe3d419tjuVACuaRCVTIYk2oQwD+OqEdQ7krjui
+ dzC0ArJHkDKgGO5gh0mlF+4TIiBAX88cmfhh2hLQeigOeIgy8vacy1H2oLomjwHupb
+ CsBw0NNBHDleRBi5fd/Xy3ClAZ9hWQ2u8sGzAJBo=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 10/57] drivers: soc: xilinx: fix firmware driver
- Kconfig dependency
-Date: Thu, 30 Apr 2020 09:51:31 -0400
-Message-Id: <20200430135218.20372-10-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 19/57] ARM: dts: bcm283x: Disable dsi0 node
+Date: Thu, 30 Apr 2020 09:51:40 -0400
+Message-Id: <20200430135218.20372-19-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200430135218.20372-1-sashal@kernel.org>
 References: <20200430135218.20372-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_065231_864291_AF64544E 
-X-CRM114-Status: GOOD (  12.14  )
+X-CRM114-CacheID: sfid-20200430_065242_140877_19209138 
+X-CRM114-Status: GOOD (  10.98  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,58 +79,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Florian Fainelli <f.fainelli@gmail.com>, Eric Anholt <eric@anholt.net>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Arnd Bergmann <arnd@arndb.de>
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
 
-[ Upstream commit d0384eedcde21276ac51f57c641f875605024b32 ]
+[ Upstream commit 90444b958461a5f8fc299ece0fe17eab15cba1e1 ]
 
-The firmware driver is optional, but the power driver depends on it,
-which needs to be reflected in Kconfig to avoid link errors:
+Since its inception the module was meant to be disabled by default, but
+the original commit failed to add the relevant property.
 
-aarch64-linux-ld: drivers/soc/xilinx/zynqmp_power.o: in function `zynqmp_pm_isr':
-zynqmp_power.c:(.text+0x284): undefined reference to `zynqmp_pm_invoke_fn'
-
-The firmware driver can probably be allowed for compile-testing as
-well, so it's best to drop the dependency on the ZYNQ platform
-here and allow building as long as the firmware code is built-in.
-
-Fixes: ab272643d723 ("drivers: soc: xilinx: Add ZynqMP PM driver")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-Link: https://lore.kernel.org/r/20200408155224.2070880-1-arnd@arndb.de
-Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+Fixes: 4aba4cf82054 ("ARM: dts: bcm2835: Add the DSI module nodes and clocks")
+Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+Reviewed-by: Eric Anholt <eric@anholt.net>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/soc/xilinx/Kconfig | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/bcm283x.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/soc/xilinx/Kconfig b/drivers/soc/xilinx/Kconfig
-index 01e76b58dd78a..3fa162c1fde73 100644
---- a/drivers/soc/xilinx/Kconfig
-+++ b/drivers/soc/xilinx/Kconfig
-@@ -19,7 +19,7 @@ config XILINX_VCU
+diff --git a/arch/arm/boot/dts/bcm283x.dtsi b/arch/arm/boot/dts/bcm283x.dtsi
+index 90125ce19a1b3..50c64146d4926 100644
+--- a/arch/arm/boot/dts/bcm283x.dtsi
++++ b/arch/arm/boot/dts/bcm283x.dtsi
+@@ -488,6 +488,7 @@
+ 					     "dsi0_ddr2",
+ 					     "dsi0_ddr";
  
- config ZYNQMP_POWER
- 	bool "Enable Xilinx Zynq MPSoC Power Management driver"
--	depends on PM && ARCH_ZYNQMP
-+	depends on PM && ZYNQMP_FIRMWARE
- 	default y
- 	help
- 	  Say yes to enable power management support for ZyqnMP SoC.
-@@ -31,7 +31,7 @@ config ZYNQMP_POWER
- config ZYNQMP_PM_DOMAINS
- 	bool "Enable Zynq MPSoC generic PM domains"
- 	default y
--	depends on PM && ARCH_ZYNQMP && ZYNQMP_FIRMWARE
-+	depends on PM && ZYNQMP_FIRMWARE
- 	select PM_GENERIC_DOMAINS
- 	help
- 	  Say yes to enable device power management through PM domains
++			status = "disabled";
+ 		};
+ 
+ 		thermal: thermal@7e212000 {
 -- 
 2.20.1
 
