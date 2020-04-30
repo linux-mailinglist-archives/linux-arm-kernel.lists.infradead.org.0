@@ -2,76 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 010C21BFE3D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:29:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C3BC1BFE59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:33:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w5w6ENp7oxJffVuODcdwhac4eUC94dbAEoK8LqgL/4w=; b=oiT8t9brrJtTdo
-	+cI01VTesH0PajuZ/tzavGkJtaKQpJisOAG0NDChpg3ImVyzAsvv41NlBmoD8A0XLmLvoJBiFhNCW
-	/chZBkhvXYBZWjJIJ5jkl1AGEAXLY0f+WDG2bIswXJHY+zTZfhPviK4EonpfHSYi43BTErOJ8zl36
-	AigNRnv2mGKKfLMMyrLxYQrRoxVRn04OZu7pyGmiNowoailBigfffdkZUxN8mQbslKEmlQ/DjqFvW
-	0eQMeRNlfUhtdvr6pahfCiheAAVupWgIQem68Z/w0f0EE1GeAB8eK/aLX/W3trmRkCS0tYwzhImod
-	+oNdtCAQrcfWdjH/t3vA==;
+	List-Owner; bh=10052Fiz6eogedHrRj+ZvczAlhkn1JccW/AdEq6L2Po=; b=vBd7l/wc0YpGOk
+	G7rb41+qls4ZOZD9x6Dkf2U6Dx/BWksYitTXZBqZUehhnyTsTtuocUOiUQP3l02ZlrtQ6eUUccpam
+	Z4vD1nSmQhkg7BvN///8VQVvIrrpJd14O5/S0eAD9lAJAb7GeeIjVSLmlmHLcUDTpMf7DuPngQPlA
+	QOvowLJ0ReSZD2mjDjrGWMc2CHpZk1CA8No7V+D8YOnaqB1GqCEjDRd7iVMkgesJLY7c0bacsRepU
+	iNsc58UaK0BssU3aTcWMr8z0h4VRMf1Ac/vRa+yzOHoMb/tZnetV73mB7Yy1cZvfttFG9CLZXwnPV
+	wEdWOGRH3UmIompwyuSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUABV-000087-W0; Thu, 30 Apr 2020 14:29:06 +0000
-Received: from mail-qv1-f65.google.com ([209.85.219.65])
+	id 1jUAFB-0003cE-G0; Thu, 30 Apr 2020 14:32:53 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUABK-00006f-Jl
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:28:55 +0000
-Received: by mail-qv1-f65.google.com with SMTP id h6so3058142qvz.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:28:53 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vVWzBYKJUQDuVX/btoJY+6LYMrXr1RGguk9M1fRb2Gk=;
- b=P2yDBr+95x0XPZuZiB3TyoJxDnNTuUBjHqA5UwzAWkS2u0hbfafXptqj8WLF6okB7P
- wb/DByPHC51H3xf4p3pdOpPBNusRq2rTA72odVXh2x7NO40XZraAQFywVOP8zLksWM+w
- f1lDgfNJeMA+XT2vz1WN2IaePsNMUxbO7imWMrD/+TuCju+8YNmeJD4uUx8bDDpsgoB3
- 05Hr+XtSd7diY0eq0f6H/VpveBJKN2vbyMIW4em3sYolPiS0iv23ILqOuTgb3LK2/Gtg
- mytCgeM1RMLIW+uej17I8Nr1c+1k3j6er1huzI9A9Dptm85ZBi+jycgvS5CBdFRmODaR
- E08g==
-X-Gm-Message-State: AGi0PuaKiP6T24oHz+j+kNK9tIakWnNJPPpJFQ0iHokV6MvxodvrpvOw
- nkmUDw/94Q+dS9cmFtUaJgJiOqGApxp8AVA4y0vNhHQ3
-X-Google-Smtp-Source: APiQypJRTf/ui9dNutw4tN535a/lPdlLEOpjjfiChGE7kI685qtINjYPuVWS/8HbqUbbyS9WsJPmByFOcVrXUvlv1Rk=
-X-Received: by 2002:a0c:ec8f:: with SMTP id u15mr3355852qvo.102.1588256932282; 
- Thu, 30 Apr 2020 07:28:52 -0700 (PDT)
+ id 1jUAF2-0003aH-9V
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:32:45 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=localhost)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1jUAEo-0008MV-Bh; Thu, 30 Apr 2020 16:32:30 +0200
+Message-ID: <5e1f804c4c27927d10b2283747c1cae6606abe7c.camel@pengutronix.de>
+Subject: Re: [RFC PATCH 1/4] drm/etnaviv: Prevent IRQ triggering at probe
+ time on i.MX8MM
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Schrempf Frieder <frieder.schrempf@kontron.de>, Adam Ford
+ <aford173@gmail.com>, Anson Huang <Anson.Huang@nxp.com>, Christian Gmeiner
+ <christian.gmeiner@gmail.com>, Daniel Baluta <daniel.baluta@nxp.com>, Fabio
+ Estevam <festevam@gmail.com>, Leonard Crestez <leonard.crestez@nxp.com>, Li
+ Jun <jun.li@nxp.com>,  NXP Linux Team <linux-imx@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>, 
+ Russell King <linux+etnaviv@armlinux.org.uk>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, "S.j. Wang"
+ <shengjiu.wang@nxp.com>
+Date: Thu, 30 Apr 2020 16:32:27 +0200
+In-Reply-To: <20200430124602.14463-2-frieder.schrempf@kontron.de>
+References: <20200430124602.14463-1-frieder.schrempf@kontron.de>
+ <20200430124602.14463-2-frieder.schrempf@kontron.de>
+User-Agent: Evolution 3.36.1 (3.36.1-1.fc32) 
 MIME-Version: 1.0
-References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-18-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1588197415-13747-18-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 30 Apr 2020 16:28:40 +0200
-Message-ID: <CAMuHMdXrX-Crdgjx31LzYpGabfMcZ6GcVQuUFo64Dxd3y3orgg@mail.gmail.com>
-Subject: Re: [PATCH 17/18] dt-bindings: gpio: rcar: Add r8a7742 (RZ/G1H)
- support
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_072854_651840_8742E170 
-X-CRM114-Status: GOOD (  10.53  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200430_073244_329734_AF5728A9 
+X-CRM114-Status: GOOD (  21.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.219.65 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.219.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,44 +74,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- dmaengine <dmaengine@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "etnaviv@lists.freedesktop.org" <etnaviv@lists.freedesktop.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 11:59 PM Lad Prabhakar
-<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> Renesas RZ/G1H (R8A7742) SoC GPIO blocks are identical to the R-Car Gen2
-> family. Add support for its GPIO controllers.
->
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
+Hi Frieder,
 
-Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+Am Donnerstag, den 30.04.2020, 12:46 +0000 schrieb Schrempf Frieder:
+> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+> 
+> On i.MX8MM there is an interrupt getting triggered immediately after
+> requesting the IRQ, which leads to a stall as the handler accesses
+> the GPU registers whithout the clock being enabled.
+> 
+> Enabling the clocks briefly seems to clear the IRQ state, so we do
+> this before requesting the IRQ.
 
-Gr{oetje,eeting}s,
+This is most likely caused by improper power-up sequencing. Normally
+the GPC will trigger a hardware reset of the modules inside a power
+domain when the domain is powered on. This requires the clocks to be
+running at this point, as those resets are synchronous, so need clock
+pulses to propagate through the hardware.
 
-                        Geert
+From what I see the i.MX8MM is still missing the power domain
+controller integration, but I'm pretty confident that this problem
+should be solved in the power domain code, instead of the GPU driver.
 
--- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Regards,
+Lucas
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> ---
+>  drivers/gpu/drm/etnaviv/etnaviv_gpu.c | 29 ++++++++++++++++++++-----
+> --
+>  1 file changed, 22 insertions(+), 7 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> index a31eeff2b297..23877c1f150a 100644
+> --- a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> +++ b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> @@ -1775,13 +1775,6 @@ static int etnaviv_gpu_platform_probe(struct
+> platform_device *pdev)
+>  		return gpu->irq;
+>  	}
+>  
+> -	err = devm_request_irq(&pdev->dev, gpu->irq, irq_handler, 0,
+> -			       dev_name(gpu->dev), gpu);
+> -	if (err) {
+> -		dev_err(dev, "failed to request IRQ%u: %d\n", gpu->irq, 
+> err);
+> -		return err;
+> -	}
+> -
+>  	/* Get Clocks: */
+>  	gpu->clk_reg = devm_clk_get(&pdev->dev, "reg");
+>  	DBG("clk_reg: %p", gpu->clk_reg);
+> @@ -1805,6 +1798,28 @@ static int etnaviv_gpu_platform_probe(struct
+> platform_device *pdev)
+>  		gpu->clk_shader = NULL;
+>  	gpu->base_rate_shader = clk_get_rate(gpu->clk_shader);
+>  
+> +	/*
+> +	 * On i.MX8MM there is an interrupt getting triggered
+> immediately
+> +	 * after requesting the IRQ, which leads to a stall as the
+> handler
+> +	 * accesses the GPU registers whithout the clock being enabled.
+> +	 * Enabling the clocks briefly seems to clear the IRQ state, so
+> we do
+> +	 * this here before requesting the IRQ.
+> +	 */
+> +	err = etnaviv_gpu_clk_enable(gpu);
+> +	if (err)
+> +		return err;
+> +
+> +	err = etnaviv_gpu_clk_disable(gpu);
+> +	if (err)
+> +		return err;
+> +
+> +	err = devm_request_irq(&pdev->dev, gpu->irq, irq_handler, 0,
+> +			       dev_name(gpu->dev), gpu);
+> +	if (err) {
+> +		dev_err(dev, "failed to request IRQ%u: %d\n", gpu->irq, 
+> err);
+> +		return err;
+> +	}
+> +
+>  	/* TODO: figure out max mapped size */
+>  	dev_set_drvdata(dev, gpu);
+>  
+
 
 _______________________________________________
 linux-arm-kernel mailing list
