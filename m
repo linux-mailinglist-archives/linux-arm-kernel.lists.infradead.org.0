@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 688E01C0277
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:28:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9740D1C027C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:28:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nIIOXUp0pKtUcSKclBDXaGF08986g0LljgdrQ9xutds=; b=t7yo8nao4g6GQg
-	vcer07ydrq4tZ8LnOfJ6Md0ozQk4WmYS7gT2OvP2+IwbHtqkjmnuw7aKQKrTNRHHW9v8LmKqhhPRu
-	P4GNzzIkMe9nb2TPDwwDepX86/vwzeqr1qNhPQ1ui4QySxAabcdrxoh3pVoYke7FY8ny+nnds7HAk
-	6x/mGL64xtPQgIM0A0FiVe2KSqn/5vSp5mn16OSaPDsWPr5rwTi5KpAfX9Y6F+R4ImYP+rUetmoAg
-	DkmUk4h9b+VnBF1jwtXmR5w4QOj1YFsApCn+0rIygwoG2B9lbAIMVK2c/j3tucCy5BIHVSpynsriw
-	9liWv5Oiki9SXa5I0+uA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Z3E7P0ZkjY4wrsr1TtGzKYNq5xZ0h61s4e5GuBN3Lyg=; b=Z7rjyStgK7iXRyxRBun3bN+V9
+	7nBnX4yi/VOGkKxzYOXk/aw3nBtohlNIZDdlUD9zic2lPb3iqDdIgF+4NvKSJqW2TAIBqDcy/r/6L
+	tgN/4pbzhp0AicJSiA9e/f6JYweAOFbBwSHukLSAldwojsduzUcXwV9vvVPyLb+gYntSUH9ZVQ8Zb
+	LnkGESYhnyMlG8m8CxRnojuUM4U4FZZcg03u+W2oB/20Syq3oJiyIQpNHE3vDrZX6tOwDTt4cUXbM
+	g2yInkZkDgM1XlhMW37wHhvhdPDiZD4FvwsAgDYFYxNPjLkaGUDJzIsDAm1pRm4FsHD36TSlE6wZc
+	lI8qZ9Feg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUC2d-000367-KR; Thu, 30 Apr 2020 16:28:03 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1jUC2z-0003Ks-R1; Thu, 30 Apr 2020 16:28:25 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUC2V-00035p-00
- for linux-arm-kernel@bombadil.infradead.org; Thu, 30 Apr 2020 16:27:55 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=1Vw+wahdjvF1L9WwGFComL+FFo9pmOmCPd10LrNq9mc=; b=ZzX7LHCyyRLB8grDlh2YaL6iZX
- YDBbj8zLivla/97BDbCy04qYZQnWj1cmxAEC3C5X9RX0hawZAD1nFHaPqizwf3Cwoq3pC0JDd3SLt
- 5D3pS2RmdrUP55DKtBpPl05B2W31iTk2zcWq2V0FD8vVnlSsosluA0M1X8Xj4+qOydqUvz/Brcq/b
- 5uoPSbIhO/MqXH7xVtjD2Lcr2rmqjxjU9SOAnYAzFardJnARybbMe83TuMaohsOYjO7UkUMBejJ+P
- 2DFITMArkRnJUGx/0qV5FsUxAH0wqLa0GDk/aM5ywB3twmCQk2BdS78P10dCMX8N2WYbtnIGwTRah
- 7KcUMFxA==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUC2S-0005Av-Dh; Thu, 30 Apr 2020 16:27:52 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 960AF30275A;
- Thu, 30 Apr 2020 18:27:50 +0200 (CEST)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id 5C55D203B5613; Thu, 30 Apr 2020 18:27:50 +0200 (CEST)
-Date: Thu, 30 Apr 2020 18:27:50 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: perf_event: Fix time_offset for arch timer
-Message-ID: <20200430162750.GD13575@hirez.programming.kicks-ass.net>
-References: <20200320093545.28227-1-leo.yan@linaro.org>
- <20200430145823.GA25258@willie-the-truck>
+ id 1jUC2b-0003Ar-TE; Thu, 30 Apr 2020 16:28:05 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id 69D85AC92;
+ Thu, 30 Apr 2020 16:27:59 +0000 (UTC)
+Message-ID: <affd68499ff843e8f3e0d18890699e18cde7582e.camel@suse.de>
+Subject: Re: [PATCH v2 04/91] firmware: rpi: Only create clocks device if we
+ don't have a node for it
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Maxime Ripard <maxime@cerno.tech>, Eric Anholt <eric@anholt.net>
+Date: Thu, 30 Apr 2020 18:27:58 +0200
+In-Reply-To: <b181d867cb9523e1877a3dfd258bafde2988024f.1587742492.git-series.maxime@cerno.tech>
+References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
+ <b181d867cb9523e1877a3dfd258bafde2988024f.1587742492.git-series.maxime@cerno.tech>
+User-Agent: Evolution 3.36.2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430145823.GA25258@willie-the-truck>
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200430_092802_100067_900FD5A9 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,63 +63,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, maz@kernel.org,
- Al Grant <Al.Grant@arm.com>, Mathieu Poirier <mathieu.poirier@linaro.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- James Clark <James.Clark@arm.com>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, tglx@linutronix.de,
- Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Tim Gover <tim.gover@raspberrypi.com>,
+ Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-rpi-kernel@lists.infradead.org, Phil Elwell <phil@raspberrypi.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5873830654455529926=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 03:58:24PM +0100, Will Deacon wrote:
-> On Fri, Mar 20, 2020 at 05:35:45PM +0800, Leo Yan wrote:
 
-> > @@ -1164,5 +1165,21 @@ void arch_perf_update_userpage(struct perf_event *event,
-> >  		userpg->time_mult >>= 1;
-> >  	}
-> >  	userpg->time_shift = (u16)shift;
-> > -	userpg->time_offset = -now;
-> > +
-> > +	/*
-> > +	 * Since arch timer is enabled ealier than sched clock registration,
-> > +	 * compuate the delta (in nanosecond unit) between the arch timer
-> > +	 * counter and sched clock, assign the delta to time_offset and
-> > +	 * perf tool can use it for timestamp calculation.
-> > +	 *
-> > +	 * The formula for conversion arch timer cycle to ns is:
-> > +	 *   quot = (cyc >> time_shift);
-> > +	 *   rem  = cyc & ((1 << time_shift) - 1);
-> > +	 *   ns   = quot * time_mult + ((rem * time_mult) >> time_shift);
-> > +	 */
-> > +	count = arch_timer_read_counter();
-> > +	quot = count >> shift;
-> > +	rem = count & ((1 << shift) - 1);
-> > +	ns = quot * userpg->time_mult + ((rem * userpg->time_mult) >> shift);
-> > +	userpg->time_offset = now - ns;
-> 
-> Hmm, reading the counter and calculating the delta feels horribly
-> approximate to me. It would be much better if we could get hold of the
-> initial epoch cycles from the point at which sched_clock was initialised
-> using the counter. This represents the true cycle delta between the counter
-> and what sched_clock uses for 0 ns.
-> 
-> Unfortunately, I can't see a straightforward way to grab that information.
-> It looks like x86 pulls this directly from the TSC driver.
+--===============5873830654455529926==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-8iAI6Ck2SuZD2phx19xp"
 
-Yeah, and I'm thinking you should do the same. IIRC ARM uses this
-kernel/time/sched_clock.c thing, and if I read that right, the struct
-clock_data there has all the bits you need here.
 
-So I'm thinking that you might want to add a helper function here to get
-you the good stuff.
+--=-8iAI6Ck2SuZD2phx19xp
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, 2020-04-24 at 17:33 +0200, Maxime Ripard wrote:
+> The firmware clocks driver was previously probed through a platform_devic=
+e
+> created by the firmware driver.
+>=20
+> Since we will now have a node for that clocks driver, we need to create t=
+he
+> device only in the case where there's no node for it already.
+>=20
+> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+> ---
+>  drivers/firmware/raspberrypi.c | 17 +++++++++++++++--
+>  1 file changed, 15 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/drivers/firmware/raspberrypi.c b/drivers/firmware/raspberryp=
+i.c
+> index da26a584dca0..1874f41b007c 100644
+> --- a/drivers/firmware/raspberrypi.c
+> +++ b/drivers/firmware/raspberrypi.c
+> @@ -210,6 +210,15 @@ rpi_register_hwmon_driver(struct device *dev, struct
+> rpi_firmware *fw)
+> =20
+>  static void rpi_register_clk_driver(struct device *dev)
+>  {
+> +	/*
+> +	 * Earlier DTs don't have a node for the firmware clocks but
+> +	 * rely on us creating a platform device by hand. If we do
+> +	 * have a node for the firmware clocks, just bail out here.
+> +	 */
+> +	if (of_get_compatible_child(dev->of_node,
+> +				    "raspberrypi,firmware-clocks"))
+
+In the case you find a compatible device node you have to decrement the
+refcount of_get_compatible_child() increased before leaving.
+
+Regards,
+Nicolas
+
+
+--=-8iAI6Ck2SuZD2phx19xp
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl6q/I4ACgkQlfZmHno8
+x/7lFAf/ZpNeGVs0IJARqWX4JgGzfAueqaUdKpDNTfmLeklqw80t61otAkXEg88E
+4MPVJnyIQvyPVDN0mgKg34bytiAYby8jadKUe9/H2e6eCkQ4+5XL2OiJBdsDZtrO
+61TiPBWTOLY4c6Kixyx+0zGElXfcvZF+RLN37NqZVKG0JAsebwUWIbCxLKuf9cWj
+KSMYL2iNFNs6RYVctEdLh5pFAnaEtA14Gg9sJlpXO718MS+UBsa5wRmlN973IWUO
+u8PqR317lotzyFeD1U5iuaWSBPsuZKbQYLhLh2/UXoCpBbLZeV/5wp64hxpBh1vF
+XU33W6eYeOM9fRbgMKq74VUDZlf1DA==
+=+5W0
+-----END PGP SIGNATURE-----
+
+--=-8iAI6Ck2SuZD2phx19xp--
+
+
+
+--===============5873830654455529926==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5873830654455529926==--
+
+
