@@ -2,88 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC98C1BF41E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:27:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 884121BF428
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:29:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z1cnmkGge6f8TV5YDJzMk85jGyFthrebhtW8zH6wMJ4=; b=ft6y85yTp+8bO1
-	vby+Wq5BITTSNprMmCRIb6+J0ZS/8kCsEff1MND9qm62WxFH/iUkwJE940HJKxd1esfAFz/zkJfmZ
-	4OJG6QKaWtIF9S7QLSxYL0VQZevRsWLLNF5p4t+GZltfzEnrRce1mREj7YiyoNxsfYpIFTEamFdEh
-	oXuyZkRO4pZf1aJidQbhKH8dlAZtGsdnQkFh9hmIiYnUiD/yuuyxNWMNZu2mk+ZvEB7d46yKDNSK5
-	RGs46z1RgviklDqZi/5emy2XK1Gz+xK0vf+ERQ6rOS0JmuVqe1lXD1t/liiOEbSTP+2DkvRTjp97Z
-	SEMqsF2IG3ZeeeAlQweg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=edhCMML3kj9p3TlRkLiduZmUkSuKnb3KvL/YzbyamKk=; b=GHxQ1ryRjuAmLa
+	zudLzGTcF7zH59675JfiwEWCq+ST4tCkRB5Xouu3fOMnmpNXKgSIfB/dRyUSpeukRRM5pHO69imlr
+	+sXrPD/WZ6sUQRGV/otcjMwcdrfiraUB4anxyy08Dq4iNPTvu03ZS3WMwgwtvdgrNlTiZ7zwBPLW6
+	Kg83P9H/84EOclK3vu+d5H3MgyDx7iVLlnobqiSpbjLaYrMzjrbXocglYIBhBToDr14j0vdQ1OOxJ
+	k4JohKpTxkuPy0PbRvKjJSt4i8DPwbrfdx2DomflqZDSkU2wCBDfrIRQIrCOHhcdIF67c/MlaDSB4
+	hXRcUP90GVPOU6Jzm6dA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU5Td-0003c4-TT; Thu, 30 Apr 2020 09:27:29 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jU5VK-0004Cl-2A; Thu, 30 Apr 2020 09:29:14 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU5TI-0003aW-Dg
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:27:10 +0000
-Received: by mail-wr1-x443.google.com with SMTP id x18so5991390wrq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 02:27:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=USjIGVhWOh7s7FNpGRPObIs3K/tQd5FXhV8J+B/lAQk=;
- b=sev0RdWrDsI1k4SKZ2ClO+eqqDlLSi/X3Hq0Hwm6NuW4/E6/aLIqyMzcZvqhZR+J6c
- eUIxWtZR77N0Pv0Y4R55NsjIra2VIWrslAhrIuH8cj2aH2FILfWnwTBDEmoP6X8xpHGr
- +pMIL/nORGtb23Q7Gqw1TB/rFmceMz+uJjfFgyg1sCEq2z+mKuKq4qZ1Ag1RY1dNnLkW
- Iu9WJ/r57i1hI3vsLD5RojTkpnMVzKno357mok+W7VqLE1DFmANm0WRM7Vbj7N9jd3oV
- yid5orRXgtJKlQQXUA728cybZ6Yb6/ifuOSzoo44eK4HoAM1FYIWrV3cWUh97laqY/wV
- cD6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=USjIGVhWOh7s7FNpGRPObIs3K/tQd5FXhV8J+B/lAQk=;
- b=BOmIFQtxLQ5sx9DBSdQZw8Tvx3S+/qsakQJLNW6vLTpKp9cB536KngTB4MSqolRR+s
- dX2dUwu9joXoSe4JwrGqbheGgHBcewrkdgW/y0tO9AAmaJ6cv/KxACblV0YvkzU2T5Ln
- phLFqg+tDSUjvY7HIMMkitmVcq79rCoTxbgy2xK+I8EtYzB33ya/tCx7cQlQCko1NN1i
- h7SByGJs+f+gTYA1L9Tb0U3pVR6mFc3nDhrPU+/PyioXYpxb129Klqnx12bXnXinqPDu
- vklcTIEPqK3ScdymgBr5q+iWdSVcZCOILDkcckOfxMeOyGy+KP+qw1weCf5M1NHRDKKn
- 8UNw==
-X-Gm-Message-State: AGi0PubG5FX3c9ewATTKgmhwD27dlzDpNwzP8AMg+GR0OND3IT48z6Sr
- FnPtXJfmAntivE1gJ1Rv/0g7VA==
-X-Google-Smtp-Source: APiQypJ/7f3QnMFmCrai7poM2/q9I4XlvyLP2DcEusXJJVO9kgxdMGnvXsEUZaGfBg2W8rHlAmov6A==
-X-Received: by 2002:adf:cc8d:: with SMTP id p13mr3124810wrj.114.1588238823516; 
- Thu, 30 Apr 2020 02:27:03 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:109:355c:447d:ad3d:ac5c])
- by smtp.gmail.com with ESMTPSA id q10sm3158515wrv.95.2020.04.30.02.27.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 02:27:02 -0700 (PDT)
-Date: Thu, 30 Apr 2020 10:26:58 +0100
-From: Andrew Scull <ascull@google.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v2] arm64: Unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
-Message-ID: <20200430092658.GF15669@google.com>
-References: <20200422161346.67325-1-ascull@google.com>
- <20200429212120.GC8604@willie-the-truck>
- <5f391a75142a8ae2263e52d37d73526d@kernel.org>
+ id 1jU5VA-0004BD-LR
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:29:06 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03U9SX9C031500; Thu, 30 Apr 2020 11:28:58 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=qIeBQMBn9avrk9Wk30adQnq2+K+QbudxkM/KMRa/Enw=;
+ b=U7d4vPsmLuiTg2ZcPxstYLGyvd01PVFyI2Ndeaf6jS1f5jq1pIGQ1SyKlnO5NsReGTHa
+ Q7vhdb3vQ3y3BuLJ/8q0cc9IlajfgjrY9VnGJEeFbmT08jWYZhfNdSRUhblOywPST9nH
+ etPQr7v7zaHwnTVuU30ALsOkml37Ah7b+BSYb25cEJEpNc2je+879jx4tsLKq9ucmtlR
+ /QmzwpvilClDy5mQOWkItLUwJHYE+HVfo6JthamAV85zZ7YkcxwYkGiXBCFQVTJitvEu
+ VjgZRzF6VQ7S99PXUTX5i457R7Df9lZ/FY7ftebe7xoVRTs/RXo9XpIObSeZEy17wi8t Eg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30qst08vs1-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 30 Apr 2020 11:28:58 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 3D04D100038;
+ Thu, 30 Apr 2020 11:28:57 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 2CD222B2B2F;
+ Thu, 30 Apr 2020 11:28:57 +0200 (CEST)
+Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
+ with Microsoft SMTP Server (TLS) id 15.0.1473.3;
+ Thu, 30 Apr 2020 11:28:56 +0200
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: stm32-adc: fix device used to request dma
+Date: Thu, 30 Apr 2020 11:28:45 +0200
+Message-ID: <1588238926-23964-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <5f391a75142a8ae2263e52d37d73526d@kernel.org>
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG2NODE2.st.com (10.75.127.5) To SFHDAG5NODE3.st.com
+ (10.75.127.15)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-30_05:2020-04-30,
+ 2020-04-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_022708_489292_F2C1CA13 
-X-CRM114-Status: GOOD (  19.57  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200430_022905_161632_507089F8 
+X-CRM114-Status: GOOD (  14.60  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,8 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,65 +91,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+Cc: olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 10:16:03AM +0100, Marc Zyngier wrote:
-> On 2020-04-29 22:21, Will Deacon wrote:
-> > Hi Andrew,
-> > 
-> > On Wed, Apr 22, 2020 at 05:13:46PM +0100, Andrew Scull wrote:
-> > > Errata 1165522, 1319367 and 1530923 each allow TLB entries to be
-> > > allocated as a result of a speculative AT instruction. In order to
-> > > avoid mandating VHE on certain affected CPUs, apply the workaround to
-> > > both the nVHE and the VHE case for all affected CPUs.
-> > > 
-> > > Signed-off-by: Andrew Scull <ascull@google.com>
-> > > CC: Marc Zyngier <maz@kernel.org>
-> > > CC: James Morse <james.morse@arm.com>
-> > > CC: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > CC: Will Deacon <will@kernel.org>
-> > > CC: Steven Price <steven.price@arm.com>
-> > > ---
-> > > * From v1 <20200327143941.195626-1-ascull@google.com>:
-> > >   - Restored registers in VHE path
-> > 
-> > This largely looks good to me, but I don't understand these bits:
-> > 
-> > > diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-> > > index 8a1e81a400e0..651820f537fb 100644
-> > > --- a/arch/arm64/kvm/hyp/switch.c
-> > > +++ b/arch/arm64/kvm/hyp/switch.c
-> > > @@ -138,7 +138,7 @@ static void __hyp_text
-> > > __activate_traps_nvhe(struct kvm_vcpu *vcpu)
-> > > 
-> > >  	write_sysreg(val, cptr_el2);
-> > > 
-> > > -	if (cpus_have_final_cap(ARM64_WORKAROUND_SPECULATIVE_AT_NVHE)) {
-> > > +	if (cpus_have_const_cap(ARM64_WORKAROUND_SPECULATIVE_AT)) {
-> > 
-> > It seems like you consistently replace cpus_have_final_cap() with
-> > cpus_have_const_cap(), but I can't figure out why that's required.
-> 
-> Seems like a bad conflict resolution. We definitely want to keep the
-> final_cap checks for anything that will run at EL2, and probably
-> everywhere else (if capabilities are not final by the time we hit KVM,
-> we have bigger problems to solve).
-> 
-> Thanks,
-> 
->         M.
-> -- 
-> Jazz is not dead. It just smells funny...
+DMA channel request should use device struct from platform device struct.
+Currently it's using iio device struct. But at this stage when probing,
+device struct isn't yet registered (e.g. device_register is done in
+iio_device_register). Since commit 71723a96b8b1 ("dmaengine: Create
+symlinks between DMA channels and slaves"), a warning message is printed
+as the links in sysfs can't be created, due to device isn't yet registered:
+- Cannot create DMA slave symlink
+- Cannot create DMA dma:rx symlink
 
-Indeed, those weren't the 5 characters my eye was interested in. Looks
-like we'll be having a v3..
+Fix this by using device struct from platform device to request dma chan.
+
+Fixes: 2763ea0585c99 ("iio: adc: stm32: add optional dma support")
+
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/iio/adc/stm32-adc.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+index ae622ee..dfc3a30 100644
+--- a/drivers/iio/adc/stm32-adc.c
++++ b/drivers/iio/adc/stm32-adc.c
+@@ -1812,18 +1812,18 @@ static int stm32_adc_chan_of_init(struct iio_dev *indio_dev)
+ 	return 0;
+ }
+ 
+-static int stm32_adc_dma_request(struct iio_dev *indio_dev)
++static int stm32_adc_dma_request(struct device *dev, struct iio_dev *indio_dev)
+ {
+ 	struct stm32_adc *adc = iio_priv(indio_dev);
+ 	struct dma_slave_config config;
+ 	int ret;
+ 
+-	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
++	adc->dma_chan = dma_request_chan(dev, "rx");
+ 	if (IS_ERR(adc->dma_chan)) {
+ 		ret = PTR_ERR(adc->dma_chan);
+ 		if (ret != -ENODEV) {
+ 			if (ret != -EPROBE_DEFER)
+-				dev_err(&indio_dev->dev,
++				dev_err(dev,
+ 					"DMA channel request failed with %d\n",
+ 					ret);
+ 			return ret;
+@@ -1930,7 +1930,7 @@ static int stm32_adc_probe(struct platform_device *pdev)
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	ret = stm32_adc_dma_request(indio_dev);
++	ret = stm32_adc_dma_request(dev, indio_dev);
+ 	if (ret < 0)
+ 		return ret;
+ 
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
