@@ -2,51 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 607DB1BFF59
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:56:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0159C1BFF5B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:57:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dul5eTASqph19NYXMNKw+6rZT35LXi5JYuayXlsPdt8=; b=JEgGdAo7/jbLQX
-	kA6gXZp0V4s4T0B3DQ5B5Sir7YgExjtDoyqxfKoJ5uv+k86kflXYKqFe3ODmm4s/xRX3r4fjv/hZr
-	6TVJKGCqW7D0G5HUd/s5+a0DXwwA47SGjdG3T+x52dwzELnrWgCIXixD7pgYEEn2K/O9oUq1Tj9y4
-	sj4NjjWp5FVG0z6cAYEV0fayLragTxp9QWyCBdYDvWsgNC4fEVbqos71Hvm3yhHda6Qj3T6Hg7ZEZ
-	tS0HRpImYIIj0SHWdPc1E6sPa7c46EnshYLiSobKOSxe6KGRpDpInIQml1vecoFExOuEaz6qckYB+
-	Dq1WusXSLf+BceDgWfdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1hLYgYlbDzgQw8xCDjLaT13WIj7gsE8ukGBfnvSFv+o=; b=X92ajSsJxDGjqD5gd+pkYVQFz
+	Ixb15yyNjbfcp4g2Vs7Otml2aGbWsyrSYUA2FvCHXaJ8friJLQeQFod/XsgOTOhzwARdIMTH3gVa8
+	BeozL1nBeDvGlQN70kM36NdG6AMzt8xbuZ0OBCbJbwItJ3cP8YD7mUlV279W8lDwi0pFxxFNoY3F9
+	WGPf4ckr5cIezpilUS2JhNJRmGbOhfp5wHXbY/KM1xVC+92dc1wsBaBwVCKG8vwUBRnZnK2Vfu8M3
+	WUrAbDmE4gwcb/KYskB4HdNwHXJ5GvOzTPM5jfs7EvllJC3BFieStPvUHY1WdBAg2TYnXjXKLINap
+	IK3SCOygQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUAby-0005zo-Ad; Thu, 30 Apr 2020 14:56:26 +0000
-Received: from brightrain.aerifal.cx ([216.12.86.13])
+	id 1jUAcK-0006CM-CQ; Thu, 30 Apr 2020 14:56:48 +0000
+Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAXC-0007wK-GO
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:51:40 +0000
-Date: Thu, 30 Apr 2020 10:51:23 -0400
-From: Rich Felker <dalias@libc.org>
-To: Greg Ungerer <gerg@linux-m68k.org>
-Subject: Re: [PATCH v2 0/5] Fix ELF / FDPIC ELF core dumping, and use
- mmap_sem properly in there
-Message-ID: <20200430145123.GE21576@brightrain.aerifal.cx>
-References: <20200429214954.44866-1-jannh@google.com>
- <20200429215620.GM1551@shell.armlinux.org.uk>
- <CAHk-=wgpoEr33NJwQ+hqK1dz3Rs9jSw+BGotsSdt2Kb3HqLV7A@mail.gmail.com>
- <31196268-2ff4-7a1d-e9df-6116e92d2190@linux-m68k.org>
+ id 1jUAXR-00089D-QE
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:51:55 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id 68D578D5;
+ Thu, 30 Apr 2020 10:51:41 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Thu, 30 Apr 2020 10:51:41 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=yUFL1mVF52h7LuiXHr0MmqdXpjr
+ /Do5cG5S9578N9FU=; b=flwRloM80e1YKWVVE0uunwO/B6bCRv7woEQil7ikD9o
+ lRF+leVNAjXiol85Xt4jS877ZBUxSMM3zaL2LZr0D4nAgLlH8gwiAoyRpzeMBPMC
+ y7AGp8KIby+tP6CvL0PIYlsSjgYBNBN0EtP8UMWN+YlDE3Hpo9LwNeo0sSP+/t5b
+ 4uSsoJCA53uaSg2kMg9YDTNpCny2GCupw5Finjs4GBm7U5J3xrpfnnCIuPNqZh+x
+ IbPrpHpAm9Zp6JuzGpnsBsoDJGLDNmlXvojSWQLHkD600YhzRo2be5q8sThkMXid
+ iEUW/Xy5bkZSnYjPnrO0wSnA0yyO6hZ4/706pr7pZbQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=yUFL1m
+ VF52h7LuiXHr0MmqdXpjr/Do5cG5S9578N9FU=; b=FsNBbitKk8eDiMhklBBZAA
+ 6uWhPPb932nl40fozzT8kBomeJztqBJC7UpGWUmlFC8P0ZQ3KW7tyiWkVG/G9cxz
+ YdzozPlEJxs3k6aFZmN3qzHdmeEdrMgmHhIFrJc5muXHiinPNuszNuw7OePxHZud
+ vlwUmfXkbP82FgyaE+XPuywLzW5LZRD5CwWnJ1JtpvL/f/leKCDBZ26FMMLfqfuA
+ DrmCbW5AYo0ilj2TIpRtLI5AbhAZTJwaDLjXehDKn4O161uOMFNiNMQEOPdpf9wz
+ m0hQ/Hn3BNbg4gAzWONhTVlhhAn1UnvAvC+O7zRAqlImA0xrW8fOqUZW90MYdPPQ
+ ==
+X-ME-Sender: <xms:_OWqXh7woC7d2ZzhGmFeRqlJoaykGikxCVc8txyuKlZunkFe5WJT6w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieehgdekudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
+ udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
+ grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:_OWqXjImDnPUO9JQ9Nq1R0mGG-HKXJhWsULspBLza0TtxaYpagh9Uw>
+ <xmx:_OWqXjccGgel4Ura7pdRYyl0qZFftTKLhnAWG2WemJTscNhF-xLx_Q>
+ <xmx:_OWqXud2Kj-TNx84bvJnejQUzHxi7ofXVM4ilJkrFgoJ-ZV-CIzYXw>
+ <xmx:_eWqXkps6obGyXVibV8oFaG8LyJp1XAJ4f64IXNV6fion-SIRtZv0g>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 4EE0D3280064;
+ Thu, 30 Apr 2020 10:51:40 -0400 (EDT)
+Date: Thu, 30 Apr 2020 16:51:38 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Priit Laes <plaes@plaes.org>
+Subject: Re: [PATCH v3 1/6] clk: sunxi-ng: a20: Register regmap for sun7i CCU
+Message-ID: <20200430145138.lhj4y5kjfz7bwamu@gilmour.lan>
+References: <20200430115702.5768-1-plaes@plaes.org>
+ <20200430115702.5768-2-plaes@plaes.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <31196268-2ff4-7a1d-e9df-6116e92d2190@linux-m68k.org>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+In-Reply-To: <20200430115702.5768-2-plaes@plaes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_075130_949853_400C20D6 
-X-CRM114-Status: GOOD (  19.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200430_075146_141897_36C0D67F 
+X-CRM114-Status: GOOD (  19.92  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,78 +104,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Salter <msalter@redhat.com>, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, Nicolas Pitre <nico@fluxnic.net>,
- Linux-sh list <linux-sh@vger.kernel.org>, Jann Horn <jannh@google.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Oleg Nesterov <oleg@redhat.com>, linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "Eric W . Biederman" <ebiederm@xmission.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1116055915276822292=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 01, 2020 at 12:10:05AM +1000, Greg Ungerer wrote:
-> 
-> 
-> On 30/4/20 9:03 am, Linus Torvalds wrote:
-> >On Wed, Apr 29, 2020 at 2:57 PM Russell King - ARM Linux admin
-> ><linux@armlinux.org.uk> wrote:
-> >>
-> >>I've never had any reason to use FDPIC, and I don't have any binaries
-> >>that would use it.  Nicolas Pitre added ARM support, so I guess he
-> >>would be the one to talk to about it.  (Added Nicolas.)
-> >
-> >While we're at it, is there anybody who knows binfmt_flat?
-> >
-> >It might be Nicolas too.
-> >
-> >binfmt_flat doesn't do core-dumping, but it has some other oddities.
-> >In particular, I'd like to bring sanity to the installation of the new
-> >creds, and all the _normal_ binfmt cases do it largely close together
-> >with setup_new_exec().
-> >
-> >binfmt_flat is doing odd things. It's doing this:
-> >
-> >         /* Flush all traces of the currently running executable */
-> >         if (id == 0) {
-> >                 ret = flush_old_exec(bprm);
-> >                 if (ret)
-> >                         goto err;
-> >
-> >                 /* OK, This is the point of no return */
-> >                 set_personality(PER_LINUX_32BIT);
-> >                 setup_new_exec(bprm);
-> >         }
-> >
-> >in load_flat_file() - which is also used to loading _libraries_. Where
-> >it makes no sense at all.
-> 
-> I haven't looked at the shared lib support in there for a long time,
-> but I thought that "id" is only 0 for the actual final program.
-> Libraries have a slot or id number associated with them.
 
-This sounds correct. My understanding of FLAT shared library support
-is that it's really bad and based on having preassigned slot indices
-for each library on the system, and a global array per-process to give
-to data base address for each library. Libraries are compiled to know
-their own slot numbers so that they just load from fixed_reg[slot_id]
-to get what's effectively their GOT pointer.
+--===============1116055915276822292==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="veryw4obx5pow3r5"
+Content-Disposition: inline
 
-I'm not sure if anybody has actually used this in over a decade. Last
-time I looked the tooling appeared broken, but in this domain lots of
-users have forked private tooling that's not publicly available or at
-least not publicly indexed, so it's hard to say for sure.
 
-Rich
+--veryw4obx5pow3r5
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Apr 30, 2020 at 02:56:57PM +0300, Priit Laes wrote:
+> On sun7i, the gmac clock is handled by the dwmac-sunxi driver, but
+> its configuration register is located in the CCU register range,
+> requiring proper regmap setup.
+>=20
+> In order to do that, we use CLK_OF_DECLARE_DRIVER to initialize
+> sun7i ccu, which clears the OF_POPULATED flag, allowing the
+> platform device to probe the same resource with proper device node.
+>=20
+> Signed-off-by: Priit Laes <plaes@plaes.org>
+> ---
+>  drivers/clk/sunxi-ng/ccu-sun4i-a10.c | 62 +++++++++++++++++++++++++++-
+>  1 file changed, 60 insertions(+), 2 deletions(-)
+>=20
+> diff --git a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c b/drivers/clk/sunxi-ng/=
+ccu-sun4i-a10.c
+> index f32366d9336e..fa147b8ce705 100644
+> --- a/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+> +++ b/drivers/clk/sunxi-ng/ccu-sun4i-a10.c
+> @@ -8,6 +8,8 @@
+>  #include <linux/clk-provider.h>
+>  #include <linux/io.h>
+>  #include <linux/of_address.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> =20
+>  #include "ccu_common.h"
+>  #include "ccu_reset.h"
+> @@ -1478,5 +1480,61 @@ static void __init sun7i_a20_ccu_setup(struct devi=
+ce_node *node)
+>  {
+>  	sun4i_ccu_init(node, &sun7i_a20_ccu_desc);
+>  }
+> -CLK_OF_DECLARE(sun7i_a20_ccu, "allwinner,sun7i-a20-ccu",
+> -	       sun7i_a20_ccu_setup);
+> +CLK_OF_DECLARE_DRIVER(sun7i_a20_ccu, "allwinner,sun7i-a20-ccu",
+> +		      sun7i_a20_ccu_setup);
+> +
+> +/*
+> + * Regmap for the GMAC driver (dwmac-sunxi) to allow access to
+> + * GMAC configuration register.
+> + */
+> +#define SUN7I_A20_GMAC_CFG_REG 0x164
+> +static bool sun7i_a20_ccu_regmap_accessible_reg(struct device *dev,
+> +						unsigned int reg)
+> +{
+> +	if (reg =3D=3D SUN7I_A20_GMAC_CFG_REG)
+> +		return true;
+> +	return false;
+> +}
+> +
+> +static struct regmap_config sun7i_a20_ccu_regmap_config =3D {
+> +	.reg_bits	=3D 32,
+> +	.val_bits	=3D 32,
+> +	.reg_stride	=3D 4,
+> +	.max_register	=3D 0x1f4, /* clk_out_b */
+> +
+> +	.readable_reg	=3D sun7i_a20_ccu_regmap_accessible_reg,
+> +	.writeable_reg	=3D sun7i_a20_ccu_regmap_accessible_reg,
+> +};
+> +
+> +static int sun7i_a20_ccu_probe_regmap(struct platform_device *pdev)
+> +{
+> +	void __iomem *reg;
+> +	struct resource *res;
+> +	struct regmap *regmap;
+> +
+> +	res =3D platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	reg =3D devm_ioremap(&pdev->dev, res->start, resource_size(res));
+> +	if (IS_ERR(reg))
+> +		return PTR_ERR(reg);
+
+You shouldn't really create a second mapping here but reuse the one you got=
+ in
+sun7i_a20_ccu_setup, since that code expect to be the sole user of it.
+
+Storing the virtual address in a global variable should work fine since we =
+only
+ever have a single instance of the controller
+
+Maxime
+
+--veryw4obx5pow3r5
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqrl+gAKCRDj7w1vZxhR
+xQHUAP43Ux7dIPWHzi8KIXHGURaaWzG5Si7pOOXp//+7NhsoJAD+MAMasUWFEicr
+LRkb9qgrRZxckPPqU9fMC5kg2QdCTwg=
+=k6DC
+-----END PGP SIGNATURE-----
+
+--veryw4obx5pow3r5--
+
+
+--===============1116055915276822292==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1116055915276822292==--
+
