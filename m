@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 579A31C08F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB07C1C08FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:16:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0CxCV+XAO16iBN/ZTWmlPxdkbF1hXy7h+SWwuRTABdE=; b=Ol5q0ECsZz2k7t
-	rIPp4nFaX+ONsLeCB0WLgQhnJfTtFXfNPJKaFRH4FRsMTr+85dda2kthL1v35/6t5XkUOebt1eYiG
-	pBSNQ1/STUEWaaeznzBkBdJp8jT+7N2PjORqFXGs0DF2Ad2qPW3gMcO6sNXwWCgh2fNCV8N7u0yoT
-	tU50GNypN7udBh2kC3ukKMcHr1dOPoyAW3A+mprTr/IzMWZLDXUJOUZ101UYgs6iFHfrt1ehBTit9
-	EKPAaQlmjM9FjRtbEa3EJypEKI+Susck3QQWN/xUJJBOn5or/+L53NF8uadYZ+NzVu/LUZTyyrth4
-	/oV/jKGwyD1j5/r0Vf7A==;
+	List-Owner; bh=xK2okZJZpT9tQnYXPz9ctB3QbvvjFJGkyYYW3tN0kus=; b=S7Ytc/f9t4RbyT
+	wB9dUgUBxW67NyQFSNH0aee4qByOgJ0+5csatao60n/VULM5Fyn7r9uyG58wxQYYznuB2E6wazhSv
+	mV8ItqHF+ko4ne5dfGoywYJCPRl3j99zIQBXAhZ3h7SLPZY1XHOa1nZjDGCWyxikBciS4NdGYax18
+	lEZlID/ZVo5pn6KAAqUez/ZSIjqh68WjiNeR/G5Y4mVJ05w53XH2/S/ktnHUZp7G/kOpL4JDtvyAy
+	U/0PeNBr1rE42A/p6wAqEq1ZR40reGNP5TdcsMpzAC8WggljdNqI0IIzedTH/BH7GMHvgNzf9phHk
+	iGWXIPsSHDuQOLG4J6Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGWQ-0006xt-KO; Thu, 30 Apr 2020 21:15:06 +0000
+	id 1jUGXE-0001Ue-3t; Thu, 30 Apr 2020 21:15:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGU8-0005Il-Cn
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:12:46 +0000
+ id 1jUGUA-0005KX-D4
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:12:48 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2F12721582;
- Thu, 30 Apr 2020 21:12:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B8077208D6;
+ Thu, 30 Apr 2020 21:12:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588281163;
- bh=4N+XVeWe5iq04Af3epw8kMsGp1IN/CYN912qwCpTA+s=;
+ s=default; t=1588281164;
+ bh=BY3Hgo5t4BTs38VcTzig7+9uhGShsbCQBADRcW8MfS8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=G4TMXZERpTTWLYGfiFF4kOPedHTqdRmFawNiSLOe7so1vvLn+x+o19bMQ2FYZSrCa
- bet803u2jgYcax7efa5uXbVq9owjsehp1vSmheGnZJJEgTzZMwy4D5oBu+l0naC3Uj
- fdYNL+IXBVDztIrZvJ9fn28omeJLKgBw8Yo1PwXk=
+ b=BzGmNngEM9g0/HwISElCO250AL+9P/5KZvtcVwjFIitnPlFlPOZX0Tz239VASq2k5
+ LfaBZfkUMeFGlvMhbk1vGNY+7P6Pixmjc3OCL037Cm1vb+mF+X9zS+U8FqncNJlEq3
+ LiySUpgQjPhWCwD7p23SqUFXZ8vhTrD18b4kJ9Zs=
 From: Will Deacon <will@kernel.org>
-To: Tang Bin <tangbin@cmss.chinamobile.com>,
-	mark.rutland@arm.com
-Subject: Re: [PATCH] perf:arm_spe:Avoid duplicate printouts
-Date: Thu, 30 Apr 2020 22:12:26 +0100
-Message-Id: <158827977305.123274.1505711753559195244.b4-ty@kernel.org>
+To: mark.rutland@arm.com,
+	Tang Bin <tangbin@cmss.chinamobile.com>
+Subject: Re: [PATCH] perf:Avoid duplicate printouts
+Date: Thu, 30 Apr 2020 22:12:27 +0100
+Message-Id: <158827969499.122898.13692306035235615025.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200402120330.19468-1-tangbin@cmss.chinamobile.com>
-References: <20200402120330.19468-1-tangbin@cmss.chinamobile.com>
+In-Reply-To: <20200402115940.4928-1-tangbin@cmss.chinamobile.com>
+References: <20200402115940.4928-1-tangbin@cmss.chinamobile.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_141244_568337_B08A43C4 
+X-CRM114-CacheID: sfid-20200430_141246_596954_8C3BCECE 
 X-CRM114-Status: UNSURE (   6.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -85,14 +85,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2 Apr 2020 20:03:30 +0800, Tang Bin wrote:
+On Thu, 2 Apr 2020 19:59:40 +0800, Tang Bin wrote:
 > Because platform_get_irq() has dev_err(),so this place
 > should be removed.
 
 Applied to arm64 (for-next/perf), thanks!
 
-[1/1] drivers/perf: arm_spe_pmu: Avoid duplicate printouts
-      https://git.kernel.org/arm64/c/1f0d97bb7082
+[1/1] drivers/perf: arm_dsu_pmu: Avoid duplicate printouts
+      https://git.kernel.org/arm64/c/5810f00ade49
 
 Cheers,
 -- 
