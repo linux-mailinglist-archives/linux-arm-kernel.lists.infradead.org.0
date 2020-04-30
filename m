@@ -2,62 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E8691BF057
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 08:32:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AEC571BF06B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 08:42:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:From:MIME-Version:In-Reply-To:
-	Subject:To:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=dciWobxaVTpL/SHsBt4c1WcQAUgB6wTOMXgUBLATjaA=; b=LMYt8tDnlJTINP
-	n60A2V+jXcjDapLDnPa0ROE9hr5d8B0UewlpwysdBkKzjMPbbhW1lRhuQJoD6GUD+b+2/gwj9FZgY
-	JLpLGpWmatJ3mRiaaI32r6qlsBtyS8kIjxSTOyUw9PhNhnuS9zQhViTR6KuBi4g9HovxubnrCvHXn
-	Gy29xqwxz3+eJAMgBkiXiqkMEsHH3KLp2qiO5Y50liuFU7HCQ9KXGDNL3XTkLRJ3iprC1j8Z+vFu3
-	itl/uXi0rY7TuNzYXJlXKafvFbXNiBKxV1FAU+dZU729SRRVT5ldyPerDP6neiuM9eSCa0i1oFYDo
-	nNjEvElrlZFV/lldOmYA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CH4T2QDmfMnAqFPFgMrp+Oiu1OLX0IKm2DZkqttW/8c=; b=NP2XNOh3PWjb+w
+	y8hSB8JoHIBXvCzVCdqFPwpHzo1TitbP8iENoiVh3v3f3Nqm8FVtBcShCw6e9U24jhJumnrCsA2iY
+	GZjEApH4wOlqao+JJm+LvotsgpU1AsgT8GKyvxb5hoU3v7y/tv7NC3AMQd6vlb+pdMsJPWE86wiSj
+	1QSDJ69cq7FCVaBZET7yHoqZb6+W+8Q+/sTl305kl1z4VcwBOaGT3bkz7nH+ZKx0QWpZ1sg4trV+Y
+	Jl5QPS6VFw2PR4SYuqzMDMAvdk9s3VdnVLjLlxW0Ak/LXBtt8+cOc5azc3+1+/0KTG1m3O/PiVygu
+	8hDCCB6SPqECwKkDSa4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU2k8-0001t5-Lx; Thu, 30 Apr 2020 06:32:20 +0000
-Received: from m176148.mail.qiye.163.com ([59.111.176.148])
+	id 1jU2th-00008N-28; Thu, 30 Apr 2020 06:42:13 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU2jw-0001qy-SL
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 06:32:10 +0000
-Received: from vivo.com (wm-8.qy.internal [127.0.0.1])
- by m176148.mail.qiye.163.com (Hmail) with ESMTP id 25F291A4030;
- Thu, 30 Apr 2020 14:31:31 +0800 (CST)
-Message-ID: <AOsApgASCAa7imxfuvZwXqq0.3.1588228291133.Hmail.bernard@vivo.com>
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Subject: =?UTF-8?B?UmU6UmU6IFtQQVRDSF0gZHJtL21lZGlhdGVrOiBjbGVhbnVwIGNvZGluZyBzdHlsZSBpbiBtZWRpYXRlayBhIGJpdA==?=
-X-Priority: 3
-X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com
-X-Originating-IP: 157.0.31.122
-In-Reply-To: <CAAOTY_86d-UryKQrLy8-zjTbrTRrHL4k3x=bx1KqvWxPL5jj2Q@mail.gmail.com>
+ id 1jU2tW-00007b-3F
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 06:42:03 +0000
+X-UUID: 6279d88d8cb648b1bacdf9ba09074d3e-20200429
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=s2dkEOMGbr8zmnRl4873RwL4QHEhugqZDl7HL1k+ZTg=; 
+ b=mHGWABDsM1tx4gU6tNElmsxKjMk5PfejytxRcMxEuSG1XUJiQG116Nkb9RlcG+ngwTpbqik2rI192R0qqdTEUuOwQfOyMlbKu0BKlSwPMjZ3rxzYKVOF+DsmK1wrsx3W2I8R5wPkouWlwa4psDcvr0uIQ7PmWL7GItcI7UladqY=;
+X-UUID: 6279d88d8cb648b1bacdf9ba09074d3e-20200429
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <light.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1448646041; Wed, 29 Apr 2020 22:41:51 -0800
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 29 Apr 2020 23:41:52 -0700
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 30 Apr 2020 14:41:53 +0800
+Message-ID: <1588228913.3817.6.camel@mtkswgap22>
+Subject: Re: [PATCH] pinctrl: mediatek: fix mtk_eint link error
+From: Light Hsieh <light.hsieh@mediatek.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 30 Apr 2020 14:41:53 +0800
+In-Reply-To: <20200429132443.1295194-1-arnd@arndb.de>
+References: <20200429132443.1295194-1-arnd@arndb.de>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Received: from bernard@vivo.com( [157.0.31.122) ] by ajax-webmail (
- [127.0.0.1] ) ; Thu, 30 Apr 2020 14:31:31 +0800 (GMT+08:00)
-From: Bernard <bernard@vivo.com>
-Date: Thu, 30 Apr 2020 14:31:31 +0800 (GMT+08:00)
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVDTUlCQkJCSk1LTE1NTVlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kJHlYWEh9ZQUhMTklOQ0JJTUJIN1dZDB4ZWUEPCQ4eV1kSHx4VD1lB
- WUc6NAg6Cxw6KDg6GkwSFgMdDg0hDCMKCktVSFVKTkNDSUlDSUJNSUhPVTMWGhIXVRkeCRUaCR87
- DRINFFUYFBZFWVdZEgtZQVlKTkxVS1VISlVKSUlZV1kIAVlBTEJKSDcG
-X-HM-Tid: 0a71c9c87a5b9394kuws25f291a4030
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200429_233209_252927_60958A90 
-X-CRM114-Status: GOOD (  10.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200429_234202_145685_95ABA2EF 
+X-CRM114-Status: GOOD (  16.32  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.148 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,88 +80,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, opensource.kernel@vivo.com,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sean Wang <sean.wang@mediatek.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cgrlj5Hku7bkurrvvJpDaHVuLUt1YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4K5Y+R
-6YCB5pel5pyf77yaMjAyMC0wNC0yOSAyMjoyMjo1MArmlLbku7bkurrvvJpCZXJuYXJkIFpoYW8g
-PGJlcm5hcmRAdml2by5jb20+CuaKhOmAgeS6uu+8mkNodW4tS3VhbmcgSHUgPGNodW5rdWFuZy5o
-dUBrZXJuZWwub3JnPixQaGlsaXBwIFphYmVsIDxwLnphYmVsQHBlbmd1dHJvbml4LmRlPixEYXZp
-ZCBBaXJsaWUgPGFpcmxpZWRAbGludXguaWU+LERhbmllbCBWZXR0ZXIgPGRhbmllbEBmZndsbC5j
-aD4sTWF0dGhpYXMgQnJ1Z2dlciA8bWF0dGhpYXMuYmdnQGdtYWlsLmNvbT4sRFJJIERldmVsb3Bt
-ZW50IDxkcmktZGV2ZWxAbGlzdHMuZnJlZWRlc2t0b3Aub3JnPixMaW51eCBBUk0gPGxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZz4sIm1vZGVyYXRlZCBsaXN0OkFSTS9NZWRpYXRl
-ayBTb0Mgc3VwcG9ydCIgPGxpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVhZC5vcmc+LGxpbnV4
-LWtlcm5lbCA8bGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZz4sb3BlbnNvdXJjZS5rZXJuZWxA
-dml2by5jb20K5Li76aKY77yaUmU6IFtQQVRDSF0gZHJtL21lZGlhdGVrOiBjbGVhbnVwIGNvZGlu
-ZyBzdHlsZSBpbiBtZWRpYXRlayBhIGJpdD5IaSwgQmVybmFyZDoKPgo+QmVybmFyZCBaaGFvIDxi
-ZXJuYXJkQHZpdm8uY29tPiDmlrwgMjAyMOW5tDTmnIgyN+aXpSDpgLHkuIAg5LiL5Y2IMzo1M+Wv
-q+mBk++8mgo+Pgo+PiBUaGlzIGNvZGUgY2hhbmdlIGlzIHRvIG1ha2UgY29kZSBiaXQgbW9yZSBy
-ZWFkYWJsZS4KPj4gT3B0aW1pc2UgYXJyYXkgc2l6ZSBhbGlnbiB0byBIRE1JIG1hY3JvIGRlZmlu
-ZS4KPj4gQWRkIGNoZWNrIGlmIGxlbiBpcyBvdmVyYW5nZS4KPgo+T25lIHBhdGNoIHNob3VsZCBq
-dXN0IGRvIG9uZSB0aGluZywgYnV0IHRoaXMgZG8gdGhyZWUgdGhpbmdzLgo+U28gYnJlYWsgdGhp
-cyBpbnRvIHRocmVlIHBhdGNoZXMuCj4KPlJlZ2FyZHMsCj5DaHVuLUt1YW5nLgoKSGkKVGhpcyBv
-cHRpbWl6YXRpb24gaXMgbWFpbmx5IHRvIG1ha2UgdGhlIGNvZGUgYSBiaXQgcmVhZGFibGUuClRo
-ZXNlIG1vZGlmaWNhdGlvbnMgYXJlIHJlbGF0ZWQsIG1haW4gaW4gc2V2ZXJhbCByZWxhdGVkIGZ1
-bmN0aW9uIGNhbGxzIGluIHRoZSBzYW1lIGZpbGUuCkkgd2FzIGEgYml0IGNvbmZ1c2VkIHRoYXQg
-aWYgaXQgaXMgcmVhbGx5IG5lY2Vzc2FyeSB0byBjaGFuZ2UgdG8gdGhyZWUgc2VwYXJhdGUgcGF0
-Y2ggc3VibWlzc2lvbnM/CgpSZWdhcmRzCkJlcm5hcmQKCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEJl
-cm5hcmQgWmhhbyA8YmVybmFyZEB2aXZvLmNvbT4KPj4gLS0tCj4+ICBkcml2ZXJzL2dwdS9kcm0v
-bWVkaWF0ZWsvbXRrX2hkbWkuYyB8IDIyICsrKysrKysrKysrLS0tLS0tLS0tLS0KPj4gIDEgZmls
-ZSBjaGFuZ2VkLCAxMSBpbnNlcnRpb25zKCspLCAxMSBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jIGIvZHJpdmVycy9ncHUv
-ZHJtL21lZGlhdGVrL210a19oZG1pLmMKPj4gaW5kZXggZmY0M2EzZDgwNDEwLi40MGZiNTE1NGVk
-NWQgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jCj4+
-ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfaGRtaS5jCj4+IEBAIC0zMTEsMTUg
-KzMxMSwxNSBAQCBzdGF0aWMgdm9pZCBtdGtfaGRtaV9od19zZW5kX2luZm9fZnJhbWUoc3RydWN0
-IG10a19oZG1pICpoZG1pLCB1OCAqYnVmZmVyLAo+PiAgICAgICAgIHU4IGNoZWNrc3VtOwo+PiAg
-ICAgICAgIGludCBjdHJsX2ZyYW1lX2VuID0gMDsKPj4KPj4gLSAgICAgICBmcmFtZV90eXBlID0g
-KmJ1ZmZlcjsKPj4gLSAgICAgICBidWZmZXIgKz0gMTsKPj4gLSAgICAgICBmcmFtZV92ZXIgPSAq
-YnVmZmVyOwo+PiAtICAgICAgIGJ1ZmZlciArPSAxOwo+PiAtICAgICAgIGZyYW1lX2xlbiA9ICpi
-dWZmZXI7Cj4+IC0gICAgICAgYnVmZmVyICs9IDE7Cj4+IC0gICAgICAgY2hlY2tzdW0gPSAqYnVm
-ZmVyOwo+PiAtICAgICAgIGJ1ZmZlciArPSAxOwo+PiArICAgICAgIGZyYW1lX3R5cGUgPSAqYnVm
-ZmVyKys7Cj4+ICsgICAgICAgZnJhbWVfdmVyID0gKmJ1ZmZlcisrOwo+PiArICAgICAgIGZyYW1l
-X2xlbiA9ICpidWZmZXIrKzsKPj4gKyAgICAgICBjaGVja3N1bSA9ICpidWZmZXIrKzsKPj4gICAg
-ICAgICBmcmFtZV9kYXRhID0gYnVmZmVyOwo+PiArICAgICAgIGlmICgoZnJhbWVfbGVuICsgSERN
-SV9JTkZPRlJBTUVfSEVBREVSX1NJWkUpID4gbGVuKSB7Cj4+ICsgICAgICAgICAgICAgICBkZXZf
-ZXJyKGhkbWktPmRldiwgIldyb25nIGZyYW1lIGxlbjogJWRcbiIsIGZyYW1lX2xlbjsKPj4gKyAg
-ICAgICAgICAgICAgIHJldHVybjsKPj4gKyAgICAgICB9Cj4+Cj4+ICAgICAgICAgZGV2X2RiZyho
-ZG1pLT5kZXYsCj4+ICAgICAgICAgICAgICAgICAiZnJhbWVfdHlwZToweCV4LGZyYW1lX3Zlcjow
-eCV4LGZyYW1lX2xlbjoweCV4LGNoZWNrc3VtOjB4JXhcbiIsCj4+IEBAIC05ODIsNyArOTgyLDcg
-QEAgc3RhdGljIGludCBtdGtfaGRtaV9zZXR1cF9hdmlfaW5mb2ZyYW1lKHN0cnVjdCBtdGtfaGRt
-aSAqaGRtaSwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0cnVj
-dCBkcm1fZGlzcGxheV9tb2RlICptb2RlKQo+PiAgewo+PiAgICAgICAgIHN0cnVjdCBoZG1pX2F2
-aV9pbmZvZnJhbWUgZnJhbWU7Cj4+IC0gICAgICAgdTggYnVmZmVyWzE3XTsKPj4gKyAgICAgICB1
-OCBidWZmZXJbSERNSV9JTkZPRlJBTUVfSEVBREVSX1NJWkUgKyBIRE1JX0FWSV9JTkZPRlJBTUVf
-U0laRV07Cj4+ICAgICAgICAgc3NpemVfdCBlcnI7Cj4+Cj4+ICAgICAgICAgZXJyID0gZHJtX2hk
-bWlfYXZpX2luZm9mcmFtZV9mcm9tX2Rpc3BsYXlfbW9kZSgmZnJhbWUsCj4+IEBAIC0xMDA4LDcg
-KzEwMDgsNyBAQCBzdGF0aWMgaW50IG10a19oZG1pX3NldHVwX3NwZF9pbmZvZnJhbWUoc3RydWN0
-IG10a19oZG1pICpoZG1pLAo+PiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgY29uc3QgY2hhciAqcHJvZHVjdCkKPj4gIHsKPj4gICAgICAgICBzdHJ1Y3QgaGRtaV9zcGRf
-aW5mb2ZyYW1lIGZyYW1lOwo+PiAtICAgICAgIHU4IGJ1ZmZlclsyOV07Cj4+ICsgICAgICAgdTgg
-YnVmZmVyW0hETUlfSU5GT0ZSQU1FX0hFQURFUl9TSVpFICsgSERNSV9TUERfSU5GT0ZSQU1FX1NJ
-WkVdOwo+PiAgICAgICAgIHNzaXplX3QgZXJyOwo+Pgo+PiAgICAgICAgIGVyciA9IGhkbWlfc3Bk
-X2luZm9mcmFtZV9pbml0KCZmcmFtZSwgdmVuZG9yLCBwcm9kdWN0KTsKPj4gQEAgLTEwMzEsNyAr
-MTAzMSw3IEBAIHN0YXRpYyBpbnQgbXRrX2hkbWlfc2V0dXBfc3BkX2luZm9mcmFtZShzdHJ1Y3Qg
-bXRrX2hkbWkgKmhkbWksCj4+ICBzdGF0aWMgaW50IG10a19oZG1pX3NldHVwX2F1ZGlvX2luZm9m
-cmFtZShzdHJ1Y3QgbXRrX2hkbWkgKmhkbWkpCj4+ICB7Cj4+ICAgICAgICAgc3RydWN0IGhkbWlf
-YXVkaW9faW5mb2ZyYW1lIGZyYW1lOwo+PiAtICAgICAgIHU4IGJ1ZmZlclsxNF07Cj4+ICsgICAg
-ICAgdTggYnVmZmVyW0hETUlfSU5GT0ZSQU1FX0hFQURFUl9TSVpFICsgSERNSV9BVURJT19JTkZP
-RlJBTUVfU0laRV07Cj4+ICAgICAgICAgc3NpemVfdCBlcnI7Cj4+Cj4+ICAgICAgICAgZXJyID0g
-aGRtaV9hdWRpb19pbmZvZnJhbWVfaW5pdCgmZnJhbWUpOwo+PiAtLQo+PiAyLjI2LjIKPj4KPj4K
-Pj4gX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPj4gTGlu
-dXgtbWVkaWF0ZWsgbWFpbGluZyBsaXN0Cj4+IExpbnV4LW1lZGlhdGVrQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKPj4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
-eC1tZWRpYXRlawoNCg0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0
-cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGlu
-Zm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, 2020-04-29 at 15:24 +0200, Arnd Bergmann wrote:
+> In a configuration with CONFIG_PINCTRL_MTK_MOORE=y and CONFIG_PINCTRL_MTK_PARIS=m,
+> we end up with the mtk_eint driver as a loadable module that cannot be
+> linked from built-in code:
+
+How did you set all MTK-related PINCTRL configs?
+and what is the generated result of .config?
+
+
+
+> aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-mtk-common-v2.o: in function `mtk_build_eint':
+> (.text+0x304): undefined reference to `mtk_eint_do_init'
+> aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-moore.o: in function `mtk_gpio_set_config':
+> pinctrl-moore.c:(.text+0xf80): undefined reference to `mtk_eint_set_debounce'
+> aarch64-linux-ld: drivers/pinctrl/mediatek/pinctrl-moore.o: in function `mtk_gpio_to_irq':
+> pinctrl-moore.c:(.text+0x1028): undefined reference to `mtk_eint_find_irq'
+> 
+> Simplify the Kconfig logic to always select EINT_MTK when it is needed, and
+> remove the 'default' statements.
+> 
+> Fixes: 8174a8512e3e ("pinctrl: mediatek: make MediaTek pinctrl v2 driver ready for buidling loadable module")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> ---
+>  drivers/pinctrl/mediatek/Kconfig    |  4 +---
+>  drivers/pinctrl/mediatek/mtk-eint.h | 28 ----------------------------
+>  2 files changed, 1 insertion(+), 31 deletions(-)
+> 
+> diff --git a/drivers/pinctrl/mediatek/Kconfig b/drivers/pinctrl/mediatek/Kconfig
+> index f32d3644c509..b6a8d91f4885 100644
+> --- a/drivers/pinctrl/mediatek/Kconfig
+> +++ b/drivers/pinctrl/mediatek/Kconfig
+> @@ -7,8 +7,6 @@ config EINT_MTK
+>  	depends on PINCTRL_MTK || PINCTRL_MTK_MOORE || PINCTRL_MTK_PARIS || COMPILE_TEST
+>  	select GPIOLIB
+>  	select IRQ_DOMAIN
+> -	default y if PINCTRL_MTK || PINCTRL_MTK_MOORE
+> -	default PINCTRL_MTK_PARIS
+>  
+>  config PINCTRL_MTK
+>  	bool
+> @@ -20,6 +18,7 @@ config PINCTRL_MTK
+>  	select OF_GPIO
+>  
+>  config PINCTRL_MTK_V2
+> +	select EINT_MTK
+>  	tristate
+>  
+>  config PINCTRL_MTK_MOORE
+> @@ -38,7 +37,6 @@ config PINCTRL_MTK_PARIS
+>  	select PINMUX
+>  	select GENERIC_PINCONF
+>  	select GPIOLIB
+> -	select EINT_MTK
+>  	select OF_GPIO
+>  	select PINCTRL_MTK_V2
+
+With this modification,PINCTRK_MTK_MOORE always select EINT_MTK
+(indirectly via select PINCTRL_MTK_V2).
+However, in previous review, Sean Wang said that PINCTRL_MTK_MOORE does
+not always use EINT_MTK so PINCTRL_MTK_MOORE shall not select EINT_MTK
+un-conditionally.
+
+
+>  
+> diff --git a/drivers/pinctrl/mediatek/mtk-eint.h b/drivers/pinctrl/mediatek/mtk-eint.h
+> index 48468d0fae68..f40dab50a5f3 100644
+> --- a/drivers/pinctrl/mediatek/mtk-eint.h
+> +++ b/drivers/pinctrl/mediatek/mtk-eint.h
+> @@ -68,7 +68,6 @@ struct mtk_eint {
+>  	const struct mtk_eint_xt *gpio_xlate;
+>  };
+>  
+> -#if IS_ENABLED(CONFIG_EINT_MTK)
+>  int mtk_eint_do_init(struct mtk_eint *eint);
+>  int mtk_eint_do_suspend(struct mtk_eint *eint);
+>  int mtk_eint_do_resume(struct mtk_eint *eint);
+> @@ -76,31 +75,4 @@ int mtk_eint_set_debounce(struct mtk_eint *eint, unsigned long eint_n,
+>  			  unsigned int debounce);
+>  int mtk_eint_find_irq(struct mtk_eint *eint, unsigned long eint_n);
+>  
+> -#else
+> -static inline int mtk_eint_do_init(struct mtk_eint *eint)
+> -{
+> -	return -EOPNOTSUPP;
+> -}
+> -
+> -static inline int mtk_eint_do_suspend(struct mtk_eint *eint)
+> -{
+> -	return -EOPNOTSUPP;
+> -}
+> -
+> -static inline int mtk_eint_do_resume(struct mtk_eint *eint)
+> -{
+> -	return -EOPNOTSUPP;
+> -}
+> -
+> -static inline int mtk_eint_set_debounce(struct mtk_eint *eint, unsigned long eint_n,
+> -			  unsigned int debounce)
+> -{
+> -	return -EOPNOTSUPP;
+> -}
+> -
+> -static inline int mtk_eint_find_irq(struct mtk_eint *eint, unsigned long eint_n)
+> -{
+> -	return -EOPNOTSUPP;
+> -}
+> -#endif
+>  #endif /* __MTK_EINT_H */
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
