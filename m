@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED1731C01FC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:17:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 745AB1C01FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:17:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lC/+rsUbM2+sUOIirPBytShJsGIZjCR59tpSpD/9CpM=; b=IO1epTC79M/DTU
-	d/KAIDA7OPnX1jeQ4X3iBa3F9CuvUFlgtkYTCEEa+T9EhoZhe6yY2gdeQtXlDUEhCz5Sf7MdrRhxn
-	OE1TZjvTLeJ1eF6RQoVTLy5iw9IjNZNViFp+GHGmKBlgkMRlWIlz17XqV6igGyC4pT7lxVCSKrHi+
-	7uAzlm1xcTzw60mttZ9TaVbR9/cVIYFrh9uoQSErv9WHXiYsD5QGJqz46pFSZeoY+z8gW8Soi9B7E
-	xMFdLCg85lFn+BCXltxGyigrub9vIB7IrkfBZ66oUzhq+4XOt2NN7lKqoqWJ+DMrEgMGsMO5gDx1R
-	ta8/9bqoYElSrfesJSSQ==;
+	List-Owner; bh=Vwu0bYIuFYjS1nF5/tjpdjsRZdDv9BQVCrr8756q0tY=; b=Z8ie9TX95rdDuy
+	nrAEX+oGtCgONmuyZsbURw0RLsEWySZJFzxIM6NK4gOQwpUoTmyV4K/1qZ7FJBK/uIRZlgCeaigfk
+	4I8igXbSSYndiDEwdTot1+YLht1A+bXbcy+r86Mbn0tnju5DM9MV5h6DGOZF9oPfZFOxRJzSMhhY/
+	eqTIkLYPb7UOv5F6r8gaCR+PGJZFJID+hLOxNY/AaMUMTL+9sr8J/fjTEhG741S4uj+Ga7NtCWbs1
+	AYCJPHfo3inQS65wI074TXplZVj4FKy/9AuB17CSQRKZa0wrGWzOnYnV9PMO/Puc3E5z17EoS6QtH
+	3snIYCQ0SQXQsrhP92nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUBrz-0002KY-PS; Thu, 30 Apr 2020 16:17:03 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jUBsH-0002i1-AF; Thu, 30 Apr 2020 16:17:21 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUBrV-0002F3-NM
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:16:35 +0000
-Received: by mail-lj1-x242.google.com with SMTP id a21so7070493ljj.11
+ id 1jUBrc-0002Lh-Se
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:16:42 +0000
+Received: by mail-lf1-x141.google.com with SMTP id l11so1713743lfc.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 09:16:32 -0700 (PDT)
+ Thu, 30 Apr 2020 09:16:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=dcawBkXikPYOd9gFykEVGPuWXUWfQrJeZCwUFjbXlT4=;
- b=sosUSrAuUHwXK5OEpDrkqaJHrO0GGy0Ln5+fNdN+gN6s5xxybYMfk62DTRz82hFfDW
- 3WsUtL5mZtTtjasdrGDXuLX2ENo0nhL8CRdGd74HWHwz3Y/lLcmgVn8w01cgM9gIYSWy
- 1ClW/qZfGqJQKSpQZiLtz7DccWTt1sbgjnej1CuSydRY/DBLa+BQdaaVd4SgxYuTZAc+
- 2YgxHtxvdynliAeIBWW300Rq2M7JTEnyXdt/G4CdzegQM8ORS3/eBubBGzy2nENr9s66
- tMOSZY6mY7hx0HwZufKzxtYA8dCj2iV167701I6iC3ADwXddcvMiFgS2X52N8DC6+Luj
- 21rA==
+ bh=f4TIH8T2iwoy55Ek+4uzhpC1K3VxmoO9RghZLrsLIIU=;
+ b=f+ltUI3klX7y7558UAfiJcLaATEoefw+BMqDr8OH8fF8pzj+J2m70msHpKH57IMN/G
+ CeFOpjAq9DVo8HCD85cPTH1DNF/I1uGD2I4dSPwfDg9FZVFOF8CPw3PQqKYM4RLjavnU
+ SVeUbxBJiXKOKzdIkvmfdLeFLEjE4UjMRoyzzP8nAMdD0St8Ge5acgahuYKIAgNnXqxG
+ u1Wyrl/CU7E7J0lgVSfiGGxSNsvA7RncjakrnyQEoaaVu9xIDTem5xeJj/cZcH+cDABx
+ VIMA2YSzihLF6GVMffFXG8Tkq+EJfXpesZnUK/avHiN/rXxGlskNz86CVExnyw27nXPX
+ Cmgg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=dcawBkXikPYOd9gFykEVGPuWXUWfQrJeZCwUFjbXlT4=;
- b=ePkh2lu8poDcyFCtbpxlqqxR9yqkczf6q0jTppF3Hde1Vn9WCLzslmzs8NiDQBkNMy
- bPzzRY1oVRuJdqSHHab/7bZf02eYCkWz+wwPjpEbMB8zeVY2xdd2WXO53xjeWwXEQ5AP
- C4TvFg6R+e7G+imSILlBFn5+0NJe4fGM/hAF6a/r1A5qlJpLJOVPgqu2MJOZMCh1n593
- aN/QS+EBWiN1EJ5cYKjVt3XcNdQBnltU+122OruYkmgxwCIfMVRKPAepicRvCrXn/sQO
- 1oQgu7VqKKO6gIgr0oBLp9+blR9lKeMgEpPJgZXZIRZKM52r17DcJ+1XYc1OuN8mH0Rf
- 9MJA==
-X-Gm-Message-State: AGi0PuY2asijGS/iK6rUtgUGsj5JDD4DyCTKOOVBHYs+gkueQoC+OIZj
- QcF5/EHaEifkHRIq6xY5gf4=
-X-Google-Smtp-Source: APiQypJlHPjg7i2J2gTNDSPTCeeNvzQBhsBhfepNh86Pej0Lou55gA4cVl+9dZI3HWGt3Ys5ggHMhQ==
-X-Received: by 2002:a2e:b012:: with SMTP id y18mr44709ljk.238.1588263391301;
- Thu, 30 Apr 2020 09:16:31 -0700 (PDT)
+ bh=f4TIH8T2iwoy55Ek+4uzhpC1K3VxmoO9RghZLrsLIIU=;
+ b=YNB+tt72dbSu+5kOUY+NAjutZNa0AhrNCtBcoRzqAG7MuChekzNMPzvKG6PZF60KWh
+ SA5LcUUKIZKCkl27hYKmxa0tks6qN/Iv47mNlbWOmUESO1zxRbFsJB3mKdHFkvgptCrL
+ wdIC5moU8AH5vpOrMk9+C55ckWYXI6NJv9UIo/Y0JuvSRABA6qnFxiD7TDhAs8SwjANz
+ Tx4W0rHN0i9x5EilPAbB+vwv752v+4B53O0+jdxhN043+rjnZ+Ewul7QSF4y9KuyG74y
+ pHKvPzACwy+Y9y4OIM3COGA0329oRXfo1v3DclRxu8PtOD7jxYxkBW8p2CZcLwMajbWM
+ kLAQ==
+X-Gm-Message-State: AGi0PuYCi1/s+JYCp2wvGoiaOsmFRCRPSjHY+AxAdJ/luAaPXSgU69TI
+ njJ6lZlI3CE8LxEcMkNO7ns=
+X-Google-Smtp-Source: APiQypKW0OOMGsBaRso8KpIF88W8pneAiyKgyjSDkdDS+lc6s6+VB6QTd8CG5k93j4XxhkCbFMDS7g==
+X-Received: by 2002:ac2:4105:: with SMTP id b5mr2763461lfi.94.1588263397052;
+ Thu, 30 Apr 2020 09:16:37 -0700 (PDT)
 Received: from localhost.localdomain ([178.233.178.9])
- by smtp.gmail.com with ESMTPSA id k6sm60638lfm.91.2020.04.30.09.16.28
+ by smtp.gmail.com with ESMTPSA id k6sm60638lfm.91.2020.04.30.09.16.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 09:16:30 -0700 (PDT)
+ Thu, 30 Apr 2020 09:16:36 -0700 (PDT)
 From: Alper Nebi Yasak <alpernebiyasak@gmail.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Jiri Slaby <jslaby@suse.com>, Petr Mladek <pmladek@suse.com>,
  Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
-Subject: [RFC PATCH v2 1/3] printk: Add function to set console to preferred
- console's driver
-Date: Thu, 30 Apr 2020 19:14:35 +0300
-Message-Id: <20200430161438.17640-2-alpernebiyasak@gmail.com>
+Subject: [RFC PATCH v2 2/3] vt: Set as preferred console when a non-dummy
+ backend is bound
+Date: Thu, 30 Apr 2020 19:14:36 +0300
+Message-Id: <20200430161438.17640-3-alpernebiyasak@gmail.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200430161438.17640-1-alpernebiyasak@gmail.com>
 References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_091633_837619_8EED5D92 
-X-CRM114-Status: GOOD (  20.85  )
+X-CRM114-CacheID: sfid-20200430_091640_938282_BC16E221 
+X-CRM114-Status: GOOD (  17.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -101,155 +101,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arvind Sankar <nivedita@alum.mit.edu>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- Alper Nebi Yasak <alpernebiyasak@gmail.com>, linux-serial@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Feng Tang <feng.tang@intel.com>, "David S. Miller" <davem@davemloft.net>,
+Cc: Eric Biggers <ebiggers@google.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Nicolas Pitre <nico@fluxnic.net>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Alper Nebi Yasak <alpernebiyasak@gmail.com>,
+ Grzegorz Halat <ghalat@redhat.com>, linux-serial@vger.kernel.org,
+ Lukas Wunner <lukas@wunner.de>, Sam Ravnborg <sam@ravnborg.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently, add_preferred_console sets a preferred console, but doesn't
-actually change /dev/console to match it. That part is handled within
-register_device, where a newly registered console driver will be set as
-/dev/console if it matches the preferred console.
+When a machine's device-tree has a "chosen" node with a "stdout-path"
+property that specified console is added as the preferred console by
+of_console_check via an add_preferred_console call. The property is
+quite common in kernel device-tree definitions. As far as I can tell, it
+is set to provide a reasonable default value for earlycon, and the
+(usually serial) console is set as preferred to avoid output going to
+VT's dummy backend instead of a working console.
 
-However, if the relevant driver is already registered, the only way to
-set it as /dev/console is by un-registering and re-registering it. An
-example is the xenfb_make_preferred_console() function:
+However, a chosen stdout-path property is included even in device-trees
+of systems that are designed to be used with a built-in display, e.g.
+several ARM Chromebooks. In these cases where CONFIG_VT_CONSOLE is
+enabled and no console argument is given on the kernel commandline, tty0
+is still registered (presumably based on the order of of_console_check
+and vt's register_console calls) but ends up not being the preferred
+console.
 
-	console_lock();
-	for_each_console(c) {
-		if (!strcmp(c->name, "tty") && c->index == 0)
-			break;
-	}
-	console_unlock();
-	if (c) {
-		unregister_console(c);
-		c->flags |= CON_CONSDEV;
-		c->flags &= ~CON_PRINTBUFFER; /* don't print again */
-		register_console(c);
-	}
+As a result, it is possible for early userspace prompts (encryption
+passphrase requests, emergency shells) to end up in a console that the
+user doesn't expect or even have access to.
 
-The code above was introduced in commit 9e124fe16ff2 ("xen: Enable
-console tty by default in domU if it's not a dummy"). In short, it's aim
-is to set VT as the preferred console only after a working framebuffer
-is registered and thus VT is not the dummy device.
+This patch tries to set tty0 as the /dev/console whenever a non-dummy
+backend tries to register as its default, unless the preferred console
+was set from the kernel commandline arguments.
 
-This patch introduces an update_console_to_preferred function that
-handles the necessary /dev/console change. With this change, the example
-above can be replaced with:
+On a Samsung Chromebook Plus (Google Kevin, rk3399-gru-kevin.dts), boot
+messages are still visible on the framebuffer without this patch, but it
+isn't the preferred console due to the device-tree having a stdout-path
+property (from rk3399-gru.dtsi):
 
-	console_lock();
-	add_preferred_console("tty", 0, NULL);
-	update_console_to_preferred();
-	console_unlock();
+	# Without earlycon:
+	$ sudo dmesg | grep -i "console\|printk\|tty[0-9a-z]" | grep -v systemd
+	[    0.001447] Console: colour dummy device 80x25
+	[    0.001820] printk: console [tty0] enabled
+	[    3.012303] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 39, base_baud = 1500000) is a 16550A
+	[    4.326549] printk: console [ttyS2] enabled
+	[    5.521780] dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+	[    6.359706] Console: switching to colour frame buffer device 300x100
 
-More importantly, these two calls can be moved to vt.c in order to bump
-its priority when a non-dummy backend for it is introduced, solving that
-problem in general.
+	$ cat /proc/consoles
+	ttyS2                -W- (EC p a)    4:66
+	tty0                 -WU (E  p  )    4:7
+
+	# With earlycon:
+	$ sudo dmesg | grep -i "console\|printk\|tty[0-9a-z]" | grep -v systemd
+	[    0.000000] printk: bootconsole [uart0] enabled
+	[    0.010257] Console: colour dummy device 80x25
+	[    0.015131] printk: console [tty0] enabled
+	[    0.019625] printk: bootconsole [uart0] disabled
+	[    3.034305] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 39, base_baud = 1500000) is a 16550A
+	[    4.367601] printk: console [ttyS2] enabled
+	[    5.576519] dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+	[    6.435612] Console: switching to colour frame buffer device 300x100
+
+	$ cat /proc/consoles
+	ttyS2                -W- (EC p a)    4:66
+	tty0                 -WU (E     )    4:7
+
+And on the same machine, with this patch:
+
+	# Without earlycon:
+	$ sudo dmesg | grep -i "console\|printk\|tty[0-9a-z]" | grep -v systemd
+	[    0.001451] Console: colour dummy device 80x25
+	[    0.001821] printk: console [tty0] enabled
+	[    3.013821] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 39, base_baud = 1500000) is a 16550A
+	[    4.328053] printk: console [ttyS2] enabled
+	[    5.509658] dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+	[    6.309330] Console: switching to colour frame buffer device 300x100
+	[    6.378862] printk: switching to console [tty0]
+
+	$ cat /proc/consoles
+	tty0                 -WU (EC p  )    4:7
+	ttyS2                -W- (E  p a)    4:66
+
+	# With earlycon:
+	$ sudo dmesg | grep -i "console\|printk\|tty[0-9a-z]" | grep -v systemd
+	[    0.000000] printk: bootconsole [uart0] enabled
+	[    0.010259] Console: colour dummy device 80x25
+	[    0.015135] printk: console [tty0] enabled
+	[    0.019628] printk: bootconsole [uart0] disabled
+	[    3.037677] ff1a0000.serial: ttyS2 at MMIO 0xff1a0000 (irq = 39, base_baud = 1500000) is a 16550A
+	[    4.370985] printk: console [ttyS2] enabled
+	[    5.549226] dw-apb-uart ff1a0000.serial: forbid DMA for kernel console
+	[    6.364818] Console: switching to colour frame buffer device 300x100
+	[    6.417589] printk: switching to console [tty0]
+
+	$ cat /proc/consoles
+	tty0                 -WU (EC    )    4:7
+	ttyS2                -W- (E  p a)    4:66
 
 Signed-off-by: Alper Nebi Yasak <alpernebiyasak@gmail.com>
 
 ---
 
 Changes in v2:
-- Use the correct format when referencing a commit
+- Refresh dmesg outputs with/without earlycon for next-20200430
 
- include/linux/console.h |  1 +
- kernel/printk/printk.c  | 56 +++++++++++++++++++++++++++++++++++++++++
- 2 files changed, 57 insertions(+)
+ drivers/tty/vt/vt.c | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/include/linux/console.h b/include/linux/console.h
-index 75dd20650fbe..4b3fa34be245 100644
---- a/include/linux/console.h
-+++ b/include/linux/console.h
-@@ -172,6 +172,7 @@ enum con_flush_mode {
- };
+diff --git a/drivers/tty/vt/vt.c b/drivers/tty/vt/vt.c
+index e5ffed795e4c..218171dca711 100644
+--- a/drivers/tty/vt/vt.c
++++ b/drivers/tty/vt/vt.c
+@@ -3588,6 +3588,13 @@ static int do_bind_con_driver(const struct consw *csw, int first, int last,
+ 		pr_cont("to %s\n", desc);
+ 	}
  
- extern int add_preferred_console(char *name, int idx, char *options);
-+extern int update_console_to_preferred(void);
- extern void register_console(struct console *);
- extern int unregister_console(struct console *);
- extern struct console *console_drivers;
-diff --git a/kernel/printk/printk.c b/kernel/printk/printk.c
-index 6ede4a7222e6..efda422203e4 100644
---- a/kernel/printk/printk.c
-+++ b/kernel/printk/printk.c
-@@ -2240,12 +2240,68 @@ __setup("console=", console_setup);
-  * be used by arch-specific code either to override the user or more
-  * commonly to provide a default console (ie from PROM variables) when
-  * the user has not supplied one.
-+ *
-+ * Preferences set by this function don't take effect until the next
-+ * time a matching driver for the preferred console is registered. If a
-+ * matching driver was already registered, @update_console_to_preferred
-+ * function can be used to set that as the preferred console driver.
-  */
- int add_preferred_console(char *name, int idx, char *options)
- {
- 	return __add_preferred_console(name, idx, options, NULL, false);
- }
- 
-+/**
-+ * update_console_to_preferred - set console to the preferred console's driver.
-+ *
-+ * Updates console_drivers and CON_CONSDEV flags so that an already
-+ * registered and enabled console driver matching the preferred console
-+ * is used as /dev/console.
-+ *
-+ * Must be called within console_lock();.
-+ */
-+int update_console_to_preferred(void)
-+{
-+	struct console_cmdline *c = NULL;
-+	struct console *con = NULL;
-+	struct console *tmp = NULL;
-+
-+	if (preferred_console >= 0)
-+		c = &console_cmdline[preferred_console];
-+
-+	if (!c || !c->name[0])
-+		return 0;
-+
-+	for_each_console(con) {
-+		if (!con->next || !(con->next->flags & CON_ENABLED))
-+			continue;
-+		if (strcmp(c->name, con->next->name) != 0)
-+			continue;
-+		if (con->next->index >= 0 &&
-+		    con->next->index != c->index)
-+			continue;
-+		break;
++#ifdef CONFIG_VT_CONSOLE
++	if (!console_set_on_cmdline && deflt && conswitchp != &dummy_con) {
++		add_preferred_console("tty", 0, NULL);
++		update_console_to_preferred();
 +	}
++#endif
 +
-+	if (!con)
-+		return -ENODEV;
-+
-+	pr_info("switching to console [%s%d]\n",
-+		con->next->name, con->next->index);
-+
-+	tmp = con->next;
-+	con->next = con->next->next;
-+	tmp->next = console_drivers;
-+	console_drivers = tmp;
-+
-+	if (console_drivers->next)
-+		console_drivers->next->flags &= ~CON_CONSDEV;
-+	console_drivers->flags |= CON_CONSDEV;
-+	has_preferred_console = true;
-+
-+	return 0;
-+}
-+
- bool console_suspend_enabled = true;
- EXPORT_SYMBOL(console_suspend_enabled);
- 
+ 	retval = 0;
+ err:
+ 	module_put(owner);
 -- 
 2.26.2
 
