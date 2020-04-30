@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F3AB1C02DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:43:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A1E11C02E9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:44:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=I6rpP9iCC8ZoT6+hM7EGgUCpvS/FkJF6Qbv15rOPQc0=; b=F1UNTE7xAFRCdt
-	U4f1Rfk73X69zlAvFwM7qxgV2Z/2HydX7CC2uW/kphSd3Z9Hn3ZwGSNkSbHBh1AcG2q6Z5AMBOMzh
-	DMZRfYtiGQ4KbkXMeoTzP0oldTRIroq4gN12fuorrBBiSHvMyQHHA58x0WLFlwbsXBn8dKogJtiq1
-	f6o5DJxgGEmaiAziR70wLju9HHfKWxQGEnzPNSUFLpbOjqvESwBgxFsDS1OMqoNag2C31R1GGrxS0
-	GbFuYbzoaMbdTKXCbJ0f/97aaGz9XEOY2i6DlR3KZvVWUHsaS6kl3EK3atPu6OdW0B8nD9d7/b+my
-	Wc0irrNwAt1dEAFBZOJA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=B1iYr8h8/9R/x09BkDRTHIifL3ylug+f5oVL7D4RZ1w=; b=ObNXwwjmPnXxKR
+	FwtTIPtGyyD5KvqX32tORGQuoBZoL5sNiAShD9zl3kCsemdt80+duMtsKRttWRoZBgG7FPclZUuJp
+	3PTyr7KmZtZuObCCtxw5s5B1cm8HwHOAiap5mzqGZxsjcc/4p4QwGEUJqkPC8HtFAxtQ7FEzdTUsA
+	gDXCKHwq/KkJz7qse1qBpMMtIz/pH4Vn2W2o/GkAUIDZOQzxWezJZfjn4LeUsVbOldFlT9U64+kVs
+	HDccbG9CdYTV8zPdtuevuIinTZs5SMPPb4U2QqL4zG3srD49K411it9FpIRoRHmRVC8BRzC0dtSi/
+	J4DFkGleWXaAXbw9arDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCHd-0006MA-Ss; Thu, 30 Apr 2020 16:43:33 +0000
+	id 1jUCIW-0007DW-B1; Thu, 30 Apr 2020 16:44:28 +0000
 Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCH9-00067h-Pm; Thu, 30 Apr 2020 16:43:05 +0000
+ id 1jUCHA-00067o-Hj; Thu, 30 Apr 2020 16:43:07 +0000
 X-Originating-IP: 93.29.109.196
 Received: from localhost.localdomain (196.109.29.93.rev.sfr.net
  [93.29.109.196])
  (Authenticated sender: paul.kocialkowski@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 790D61C000B;
- Thu, 30 Apr 2020 16:42:57 +0000 (UTC)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id 42A571C0004;
+ Thu, 30 Apr 2020 16:42:59 +0000 (UTC)
 From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 To: linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH v3 0/4] media: rockchip: rga: PX30 support and YUV2YUV fix
-Date: Thu, 30 Apr 2020 18:42:41 +0200
-Message-Id: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
+Subject: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
+Date: Thu, 30 Apr 2020 18:42:42 +0200
+Message-Id: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
 X-Mailer: git-send-email 2.26.0
+In-Reply-To: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
+References: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_094303_970095_D7DCA0A9 
-X-CRM114-Status: GOOD (  10.36  )
+X-CRM114-CacheID: sfid-20200430_094304_726873_40C77652 
+X-CRM114-Status: UNSURE (   9.96  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -71,37 +74,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Add a new compatible for the PX30 Rockchip SoC, which also features
+a RGA block. It is compatible with the RK3288 RGA block.
 
-This series adds support for the Rockchip PX30 SoC in the V4L2 M2M RGA driver.
-It also contains a fix for the YUV2YUV case that was not properly handled.
+Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+---
+ Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-Changes since v2:
-- Used RK3288 compatible in PX30 dts, removed PX30 compatible from driver;
-- Added cleanup patch with format macros;
-- Added comment about CSC mode fix.
-
-Changes since v1:
-- Rebased on media tree master (changed dt binding to yaml);
-- Removed spurious line removal.
-
-Cheers,
-
-Paul
-
-Paul Kocialkowski (4):
-  dt-bindings: rockchip-rga: Add PX30 compatible
-  arm64: dts: rockchip: Add RGA support to the PX30
-  media: rockchip: rga: Introduce color fmt macros and refactor CSC mode
-    logic
-  media: rockchip: rga: Only set output CSC mode for RGB input
-
- .../bindings/media/rockchip-rga.yaml          |  3 ++
- arch/arm64/boot/dts/rockchip/px30.dtsi        | 11 +++++++
- drivers/media/platform/rockchip/rga/rga-hw.c  | 29 ++++++++++---------
- drivers/media/platform/rockchip/rga/rga-hw.h  |  5 ++++
- 4 files changed, 35 insertions(+), 13 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+index dd645ddccb07..740586299da9 100644
+--- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
++++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+@@ -23,6 +23,9 @@ properties:
+       - items:
+           - const: rockchip,rk3228-rga
+           - const: rockchip,rk3288-rga
++      - items:
++          - const: rockchip,px30-rga
++          - const: rockchip,rk3288-rga
+ 
+   reg:
+     maxItems: 1
 -- 
 2.26.0
 
