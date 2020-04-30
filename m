@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 800271C0210
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:19:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4D1D1C0205
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:18:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=j/oRvLiHCjtQ3TDmNK68WXQvEEvFAEb6trOtNMhotdo=; b=bQbV8j0BxkCrux
-	BdyMbPF7KYA4CHo4FGrEnldbZfhdHOlXljzW+y0n//RVers7vKQZlL/uZIpZcmFBWPPh5p9PLtMse
-	ZA3puXQGVsvYhwJ7TkebUoX9RvFCN9Dj+6JlzI92KM1TfRR1B6SWtzsXIs5pI6PE1oqClzFEwWdNT
-	xDcPi4o93moz6mC4fMuL+0fGsmCRwEKQKMijzrTDbsBoWqtrStURxOwPuzgmqlcvF2tlAgfZCpbLK
-	1851f0dDobKnB5G5w3Em+LdXAdvzmVWyc5LOaogyV31oII3rcvB4uKv+W18PqHIVosd87swd6itDB
-	L6f8LzxFtcqH9mg1EhIg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ArtLQpcpxmutLkXcFkKd/mfdpTCiM3BDdOomCTaMXdk=; b=llxRALtuZBNEVJ
+	be/22JbnS+w8NiCZ79jJRDgIDc9KQpehWrAViOxYorxjzx0A0Bgr6B7qQ863asZB4EOtJmCFBSrHh
+	nNXZkCA9KW8zHnJiXWp1J/u2nJPIKlkM7XOHadGH1PUSo6Xh27mYvt6hEXlY3oEbNZ4bY1AYUt7Tb
+	+Dx8QPcl4AG+YflwD0q785ZCFqF2SWaP38YAt3wG1g7gyNL8zXbvKo84Fg2/HjP908qd39syP5gDd
+	tm4atzfIIpTs45nYeDR0aRhSiHSH9s3hkiaerBJ6XCVnQwI/77N8m06Ra+xj3tiNo9ipgjxd7MRX5
+	64qcGXBTDXcqLwH3CLig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUBu2-0003yZ-3I; Thu, 30 Apr 2020 16:19:10 +0000
+	id 1jUBtQ-0003TG-H2; Thu, 30 Apr 2020 16:18:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUBtW-0003hh-8V
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:18:41 +0000
-Received: from mail.kernel.org (ip5f5ad5c5.dynamic.kabel-deutschland.de
- [95.90.213.197])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A7673208D5;
- Thu, 30 Apr 2020 16:18:37 +0000 (UTC)
+ id 1jUBtG-0003Sd-27
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:18:23 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id EE94220873;
+ Thu, 30 Apr 2020 16:18:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588263517;
- bh=ugCY3y9aPneko9xp0OW8Y5PqnnRdwIA6ZnhjiQw0pbg=;
- h=From:To:Cc:Subject:Date:From;
- b=jkbiKuotKQWoJifXoYaYKWd4u1OUCkFJTCeaJ2hFfc8Mmzm6hL99xXi+5i8oLaR6e
- GJ1b6u5OLXCuKZdQPYYbqcEoGl4qcjUVxJHvEaPOc1nGKIjtw42GlkxhXUFJCRfzBO
- IWB28xT442895dIcuie8By96F883CyyppOigyJ4o=
-Received: from mchehab by mail.kernel.org with local (Exim 4.92.3)
- (envelope-from <mchehab@kernel.org>)
- id 1jUBtT-00Axgb-Pl; Thu, 30 Apr 2020 18:18:35 +0200
-From: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-To: Linux Doc Mailing List <linux-doc@vger.kernel.org>
-Subject: [PATCH v4 00/19] Manually convert  thermal,
- crypto and misc devices to ReST
-Date: Thu, 30 Apr 2020 18:18:14 +0200
-Message-Id: <cover.1588263270.git.mchehab+huawei@kernel.org>
-X-Mailer: git-send-email 2.25.4
+ s=default; t=1588263501;
+ bh=5R1P59XWFriRjxe5e4BwtfyFc/8B5tCSKlTVbm120WY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FWbHYicdfPDjjYeJPc0wx5uyaSBePyMtYHG2jq9/y3Rlj3rPkum04ZiSQO0BYAPhV
+ G23qhA6RGP/lsaiuQobgqfndHcI8FOhOFgn7t8uKNyIQHmNPGohnUTGMARV8YBFbd6
+ Cvzu10wcz3BXUOIM4uUTYofcgbV5A4wsexskA3rI=
+Date: Thu, 30 Apr 2020 17:18:15 +0100
+From: Will Deacon <will@kernel.org>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH] arm64: perf_event: Fix time_offset for arch timer
+Message-ID: <20200430161815.GE25258@willie-the-truck>
+References: <20200320093545.28227-1-leo.yan@linaro.org>
+ <20200430145823.GA25258@willie-the-truck>
+ <4d924f705245c797a19d3a73eb0c1ba0@kernel.org>
+ <20200430160436.GC13575@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200430160436.GC13575@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_091838_344849_50832175 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20200430_091822_127589_2D5DCF07 
+X-CRM114-Status: GOOD (  11.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,140 +79,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-pm@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>, linux-pci@vger.kernel.org,
- Jonathan Corbet <corbet@lwn.net>, linux-kernel@vger.kernel.org,
- keyrings@vger.kernel.org, linux-crypto@vger.kernel.org,
- linux-sh@vger.kernel.org, dmaengine@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ James Clark <James.Clark@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>, Ingo Molnar <mingo@redhat.com>,
+ Al Grant <Al.Grant@arm.com>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, tglx@linutronix.de,
+ Jiri Olsa <jolsa@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Manually convert some files from thermal, crypto and misc-devices
-to ReST format.
+On Thu, Apr 30, 2020 at 06:04:36PM +0200, Peter Zijlstra wrote:
+> On Thu, Apr 30, 2020 at 04:29:23PM +0100, Marc Zyngier wrote:
+> 
+> > I wonder if we could/should make __sched_clock_offset available even when
+> > CONFIG_HAVE_UNSTABLE_SCHED_CLOCK isn't defined. It feels like it would
+> > help with this particular can or worm...
+> 
+> Errrgh. __sched_clock_offset is only needed on x86 because we transition
+> from one clock device to another on boot. It really shouldn't exist on
+> anything sane.
 
-This series is against linux-next 20200430 tag (as I rebased it, in order
-to check if some patch were already merged via some other tree),
-but it should very likely merge fine against docs-next.
+I think we still transition from jiffies on arm64, because we don't register
+with sched_clock until the timer driver probes. Marc, is that right?
 
-The full series (including those ones) are at:
+> Let me try and understand your particular problem better.
 
-	https://git.linuxtv.org/mchehab/experimental.git/log/?h=misc-docs
+I think the long and short of it is that userspace needs a way to convert
+the raw counter cycles into a ns value that can be compared against values
+coming out of sched_clock. To do this accurately, I think it needs the
+cycles value at the point when sched_clock was initialised.
 
-The documents touched on this patch, converted to HTML via the 
-building system are at (together with patches from other series):
-
-	https://www.infradead.org/~mchehab/kernel_docs/
-
-
-v4:
-
-- added some acks.
-
-v3:
-
-- removed the cpu-freq patches from this series, as Rafael should
-  be applying it on his tree.
-
-v2: 
-
-- a small change at patch 2 to avoid uneeded whitespace changes;
-- added 13 new patches at the end
-
-
-Mauro Carvalho Chehab (19):
-  docs: thermal: convert cpu-idle-cooling.rst to ReST
-  docs: crypto: convert asymmetric-keys.txt to ReST
-  docs: crypto: convert api-intro.txt to ReST format
-  docs: crypto: convert async-tx-api.txt to ReST format
-  docs: crypto: descore-readme.txt: convert to ReST format
-  docs: misc-devices/spear-pcie-gadget.txt: convert to ReST
-  docs: misc-devices/pci-endpoint-test.txt: convert to ReST
-  docs: misc-devices/pci-endpoint-test.txt: convert to ReST
-  docs: misc-devices/c2port.txt: convert to ReST format
-  docs: misc-devices/bh1770glc.txt: convert to ReST
-  docs: misc-devices/apds990x.txt: convert to ReST format
-  docs: pci: endpoint/function/binding/pci-test.txt convert to ReST
-  docs: arm64: convert perf.txt to ReST format
-  docs: powerpc: convert vcpudispatch_stats.txt to ReST
-  docs: sh: convert new-machine.txt to ReST
-  docs: sh: convert register-banks.txt to ReST
-  docs: trace: ring-buffer-design.txt: convert to ReST format
-  docs: kvm: get read of devices/README
-  docs: misc-devices: add uacce to the index.rst
-
- .../endpoint/function/binding/pci-test.rst    |  26 +
- .../endpoint/function/binding/pci-test.txt    |  19 -
- Documentation/PCI/endpoint/index.rst          |   2 +
- Documentation/arm64/index.rst                 |   1 +
- Documentation/arm64/{perf.txt => perf.rst}    |   7 +-
- .../crypto/{api-intro.txt => api-intro.rst}   | 186 ++--
- ...symmetric-keys.txt => asymmetric-keys.rst} |  91 +-
- .../{async-tx-api.txt => async-tx-api.rst}    | 253 +++---
- ...{descore-readme.txt => descore-readme.rst} | 152 +++-
- Documentation/crypto/index.rst                |   5 +
- Documentation/driver-api/dmaengine/client.rst |   2 +-
- .../driver-api/dmaengine/provider.rst         |   2 +-
- .../driver-api/thermal/cpu-idle-cooling.rst   |  18 +-
- Documentation/driver-api/thermal/index.rst    |   1 +
- .../{ad525x_dpot.txt => ad525x_dpot.rst}      |  24 +-
- .../{apds990x.txt => apds990x.rst}            |  31 +-
- .../{bh1770glc.txt => bh1770glc.rst}          |  45 +-
- .../misc-devices/{c2port.txt => c2port.rst}   |  58 +-
- Documentation/misc-devices/index.rst          |   7 +
- .../misc-devices/pci-endpoint-test.rst        |  56 ++
- .../misc-devices/pci-endpoint-test.txt        |  41 -
- .../misc-devices/spear-pcie-gadget.rst        | 170 ++++
- .../misc-devices/spear-pcie-gadget.txt        | 130 ---
- Documentation/powerpc/index.rst               |   1 +
- ...patch_stats.txt => vcpudispatch_stats.rst} |  17 +-
- Documentation/security/keys/core.rst          |   2 +-
- Documentation/sh/index.rst                    |   6 +
- .../sh/{new-machine.txt => new-machine.rst}   | 195 +++--
- ...{register-banks.txt => register-banks.rst} |  13 +-
- Documentation/trace/index.rst                 |   1 +
- ...ffer-design.txt => ring-buffer-design.rst} | 802 ++++++++++--------
- Documentation/virt/kvm/devices/README         |   1 -
- Documentation/virt/kvm/devices/index.rst      |   3 +
- MAINTAINERS                                   |   4 +-
- arch/sh/Kconfig.cpu                           |   2 +-
- crypto/asymmetric_keys/asymmetric_type.c      |   2 +-
- crypto/asymmetric_keys/public_key.c           |   2 +-
- crypto/asymmetric_keys/signature.c            |   2 +-
- drivers/misc/Kconfig                          |   2 +-
- drivers/misc/ad525x_dpot.c                    |   2 +-
- include/crypto/public_key.h                   |   2 +-
- include/keys/asymmetric-parser.h              |   2 +-
- include/keys/asymmetric-subtype.h             |   2 +-
- include/keys/asymmetric-type.h                |   2 +-
- 44 files changed, 1358 insertions(+), 1034 deletions(-)
- create mode 100644 Documentation/PCI/endpoint/function/binding/pci-test.rst
- delete mode 100644 Documentation/PCI/endpoint/function/binding/pci-test.txt
- rename Documentation/arm64/{perf.txt => perf.rst} (95%)
- rename Documentation/crypto/{api-intro.txt => api-intro.rst} (70%)
- rename Documentation/crypto/{asymmetric-keys.txt => asymmetric-keys.rst} (91%)
- rename Documentation/crypto/{async-tx-api.txt => async-tx-api.rst} (55%)
- rename Documentation/crypto/{descore-readme.txt => descore-readme.rst} (81%)
- rename Documentation/misc-devices/{ad525x_dpot.txt => ad525x_dpot.rst} (85%)
- rename Documentation/misc-devices/{apds990x.txt => apds990x.rst} (86%)
- rename Documentation/misc-devices/{bh1770glc.txt => bh1770glc.rst} (83%)
- rename Documentation/misc-devices/{c2port.txt => c2port.rst} (59%)
- create mode 100644 Documentation/misc-devices/pci-endpoint-test.rst
- delete mode 100644 Documentation/misc-devices/pci-endpoint-test.txt
- create mode 100644 Documentation/misc-devices/spear-pcie-gadget.rst
- delete mode 100644 Documentation/misc-devices/spear-pcie-gadget.txt
- rename Documentation/powerpc/{vcpudispatch_stats.txt => vcpudispatch_stats.rst} (94%)
- rename Documentation/sh/{new-machine.txt => new-machine.rst} (73%)
- rename Documentation/sh/{register-banks.txt => register-banks.rst} (88%)
- rename Documentation/trace/{ring-buffer-design.txt => ring-buffer-design.rst} (55%)
- delete mode 100644 Documentation/virt/kvm/devices/README
-
--- 
-2.25.4
-
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
