@@ -2,82 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D92161BF5F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:57:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DD821BF5FE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:59:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EmZHoOlJln8gfwORiIDJRIfxoFaZKmS3vzObKYGzZn4=; b=L3HvtlR2atEg8j
-	yfvU1UvVAOZtNQMGOkUxNkv3p/A5u2O7TeUtergz0ZLChKKRs0xHBYGTTsIhQXN9FayC2nk6w9z58
-	nf+H4VgF1SuUXvzSkQc10o1YXSvR5DiB+UAF4mnYpZLG7ubm6Yn/k99Um3gzIS+4LDljusxOBhO5G
-	3apcbWJbg22PK7JtCSqlbY6wKagOWnLwy/iI3uSnIoNRYtPnQiokFFtuinsHHgSBfWvmp17TyJk9Y
-	49ysiFe3ZYWitkSWgH0t2rOHFD4N+FzHee7bm7XuaTZPFmoTUI1l+Ls1A4dIAABFaWEYLuvnTJuWq
-	1O2f839GkxK8ny192Fxw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=r89jQ9uSh9/b2S4lPIa7YjVIdD6HqVFZLMKS/Ido9As=; b=pCxGodKOGQ9UYLBJQJdY8zikK
+	U1W9tyNxfeTaZM2Fq4x0EsIsBmyEGi7EAulpyYWx8xGbDmfnZtgs6TZjmTMPWbeahZTgjBVxfAP0o
+	GTmA/mgJyjWqEMcdybiTZOTdoM0Y6iJvWfMumieN0ruZ1GKb80YsH6m6ec9FlDcqc21Ab4DrpK0Vl
+	UX5TitJt1Ut/F54HRu8UW0CD03tm9A7YolUb2B3aKlTZbxrBF5GEkiwstPwMu9VETAwDRINUtk4pL
+	EO1Vk9idZQbBtc26GEet7DKRCC8zvQsGFQe4Ac69KSAO09+17YvM+r6nOmxzpzx7HREaccEBQ1lim
+	RzIRbRspg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU6sW-000489-4a; Thu, 30 Apr 2020 10:57:16 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jU6uT-0004fA-OY; Thu, 30 Apr 2020 10:59:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU6sL-00040y-VC
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:57:07 +0000
-Received: by mail-wm1-x343.google.com with SMTP id h4so1329644wmb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 03:57:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=jj6p2YpGSox3F15VSPbCYzWaJapP8E+/lKOnhUtxGBg=;
- b=LUMFbITFgmqAo0AtnoUs45u4+OcNpVql+lKmRWk2CFIWLFQ6T3xwgRclZrxrLTdJ8z
- jynNNktDayZJy4oKN4h4lkRpNkTS3Ll67lqKW4o2cmSXxaVKUACOD6SIjoaIcszARLbB
- yJgck2Ak1LdV1IMcMLqusVbaZUpgJgue2Bulwz9xnbID+sgCT7+exnyBzYUk9oQbQoZS
- rdxwAofZ/dbalQm51Lr8AUFEW1QX/jukCxiHaRGt4jhkiY/kw9C+968eXUcx+9KRT27m
- xT7Z1T8x0HM+WpZ04VIZvw4fy5Jt97BCgvso14FXWpwoP3LnwEfNv6CxpT05BW2YSjpm
- Tyxw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=jj6p2YpGSox3F15VSPbCYzWaJapP8E+/lKOnhUtxGBg=;
- b=p+HYDwd/rOK+kDscuMpjSQU1A2whh6DLgV6IaNex6g2Jyla+ivv4gMQkJUKbscMmeR
- wbthIhEn15TsYVP+KALWhYWT0n/NyFK5x5L7uQev3QgNY4beAwCHQom6nB7aaUO/h4Kb
- pVD6dQVGb8f6SwD2KnqmenXnJlRfqM+ImL59c29Q/My47EWpR36iuJ0Bm4fYzdxpcqNw
- XqddRLdNioybd/c6XJWVf/SQ5c27PwtjqAANOoIXeJ7VvkWJuH+kaPZwyPw+DUsgS2eX
- d3SSxfbDQs6qESNqw2AsgRFACGI0RbxmZ9KpzvesB8hQ46r2JxsXIVA1BLnQJiAvTGT0
- 9Q3g==
-X-Gm-Message-State: AGi0PuZ4mj9TEVayMoavnPKxFL11qfy25wMCG4wWKYnzEhLetFPGGJp4
- r466Ez9XhneeBYj5gmzYZjM=
-X-Google-Smtp-Source: APiQypKo3oFe1Z9aVVCTHSaI/PaiQaBTQuve9rAqMg95GfgHRhWtxPBWxkavkHBuzpNxXqbKDzc+NA==
-X-Received: by 2002:a1c:8049:: with SMTP id b70mr2365240wmd.162.1588244222709; 
- Thu, 30 Apr 2020 03:57:02 -0700 (PDT)
-Received: from localhost (p2E5BEDBA.dip0.t-ipconnect.de. [46.91.237.186])
- by smtp.gmail.com with ESMTPSA id c1sm3563459wrc.4.2020.04.30.03.57.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 03:57:01 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: arm@kernel.org,
-	soc@kernel.org
-Subject: [GIT PULL] arm64: tegra: Default configuration fixes for v5.7-rc4
-Date: Thu, 30 Apr 2020 12:57:00 +0200
-Message-Id: <20200430105700.167199-1-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.24.1
+ id 1jU6uK-0004eb-8O
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:59:09 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C00E020784;
+ Thu, 30 Apr 2020 10:59:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588244347;
+ bh=XdmvD3Q8v1cVOjovGFmT69sCbDPOc3huwohLmrMo6aQ=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=LRDP7EhDi2XJ8/Y4BDNiUv0rMndR1qZec3TsYLk7z/Ujv4RPCejiqk103Qoxyx0P8
+ eRTj5qEqmYG1Dnf0qLKUP44Xj1w22cvWXI4/77S4iGghNXnP7yK6uttQGo2EkGVY43
+ PbWiUJKCvbMKaWQoRDSEJwzNzZVj02UZlJu8+eB0=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jU6uH-0080A8-UU; Thu, 30 Apr 2020 11:59:06 +0100
 MIME-Version: 1.0
+Date: Thu, 30 Apr 2020 11:59:05 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] KVM: arm64: Fix 32bit PC wrap-around
+In-Reply-To: <20200430102556.GE19932@willie-the-truck>
+References: <20200430101513.318541-1-maz@kernel.org>
+ <20200430102556.GE19932@willie-the-truck>
+User-Agent: Roundcube Webmail/1.4.3
+Message-ID: <897baec2a3fad776716bccf3027340fa@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: will@kernel.org, linux-arm-kernel@lists.infradead.org,
+ kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_035706_024151_A3616106 
-X-CRM114-Status: GOOD (  11.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_035908_339750_92499DCC 
+X-CRM114-Status: GOOD (  20.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thierry.reding[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,43 +90,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
- linux-arm-kernel@lists.infradead.org, Jon Hunter <jonathanh@nvidia.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC maintainers,
+On 2020-04-30 11:25, Will Deacon wrote:
+> On Thu, Apr 30, 2020 at 11:15:13AM +0100, Marc Zyngier wrote:
+>> In the unlikely event that a 32bit vcpu traps into the hypervisor
+>> on an instruction that is located right at the end of the 32bit
+>> range, the emulation of that instruction is going to increment
+>> PC past the 32bit range. This isn't great, as userspace can then
+>> observe this value and get a bit confused.
+>> 
+>> Conversly, userspace can do things like (in the context of a 64bit
+>> guest that is capable of 32bit EL0) setting PSTATE to AArch64-EL0,
+>> set PC to a 64bit value, change PSTATE to AArch32-USR, and observe
+>> that PC hasn't been truncated. More confusion.
+>> 
+>> Fix both by:
+>> - truncating PC increments for 32bit guests
+>> - sanitize PC every time a core reg is changed by userspace, and
+>>   that PSTATE indicates a 32bit mode.
+> 
+> It's not clear to me whether this needs a cc stable. What do you think? 
+> I
+> suppose that it really depends on how confused e.g. QEMU gets.
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+It isn't so much QEMU itself that I'm worried about (the emulation 
+shouldn't
+really care about the PC), but the likes of GDB. So yes, a cc stable 
+seems to
+be in order.
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+> 
+>> Signed-off-by: Marc Zyngier <maz@kernel.org>
+>> ---
+>>  arch/arm64/kvm/guest.c     | 4 ++++
+>>  virt/kvm/arm/hyp/aarch32.c | 8 ++++++--
+>>  2 files changed, 10 insertions(+), 2 deletions(-)
+>> 
+>> diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+>> index 23ebe51410f0..2a159af82429 100644
+>> --- a/arch/arm64/kvm/guest.c
+>> +++ b/arch/arm64/kvm/guest.c
+>> @@ -200,6 +200,10 @@ static int set_core_reg(struct kvm_vcpu *vcpu, 
+>> const struct kvm_one_reg *reg)
+>>  	}
+>> 
+>>  	memcpy((u32 *)regs + off, valp, KVM_REG_SIZE(reg->id));
+>> +
+>> +	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK)
+>> +		*vcpu_pc(vcpu) = lower_32_bits(*vcpu_pc(vcpu));
+> 
+> It seems slightly odd to me that we don't enforce this for *all* the
+> registers when running as a 32-bit guest. Couldn't userspace be equally
+> confused by a 64-bit lr or sp?
 
-are available in the Git repository at:
+Fair point. How about this on top, which wipes the upper 32 bits for
+each and every register in the current mode:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.7-arm64-defconfig-fixes
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index 2a159af82429..f958c3c7bf65 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -201,9 +201,12 @@ static int set_core_reg(struct kvm_vcpu *vcpu, 
+const struct kvm_one_reg *reg)
 
-for you to fetch changes up to 90670f0ef690f9c8712f236e8cf14c156c9a6365:
+  	memcpy((u32 *)regs + off, valp, KVM_REG_SIZE(reg->id));
 
-  arm64: defconfig: Re-enable Tegra PCIe host driver (2020-04-14 16:15:00 +0200)
+-	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK)
+-		*vcpu_pc(vcpu) = lower_32_bits(*vcpu_pc(vcpu));
++	if (*vcpu_cpsr(vcpu) & PSR_AA32_MODE_MASK) {
++		int i;
+
++		for (i = 0; i < 16; i++)
++			*vcpu_reg32(vcpu, i) = (u32)*vcpu_reg32(vcpu, i);
++	}
+  out:
+  	return err;
+  }
+
+I'm tempted to make the whole SET_REG hunk a separate patch though.
 
 Thanks,
-Thierry
 
-----------------------------------------------------------------
-arm64: tegra: Default configuration fixes
-
-This contains a single fix to reenable the Tegra194 PCIe host support by
-default that was inadvertently dropped as a result of the host/endpoint
-mode support that was added in v5.7-rc1.
-
-----------------------------------------------------------------
-Jon Hunter (1):
-      arm64: defconfig: Re-enable Tegra PCIe host driver
-
- arch/arm64/configs/defconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
