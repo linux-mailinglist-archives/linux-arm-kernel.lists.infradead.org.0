@@ -2,92 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B16A1BFB84
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:00:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F26E1BFBA1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:01:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+CtoYs/eLJuqrzB8DxIssx75i478o5dQ+h7TriFeykQ=; b=YwNRxO3XmID1ec
-	dxZ6ikqIejsTwfJB/LwKe7S6vhSMBgmpPXuy3CCvZmqfxHBY6sqFBrqKtKHpRMlY8HEVpEJw+hWzp
-	8oAiDJOuPdCFrIGp1ZTyuqcYpHusAqS2vl6FsN21a+4W1YLspM9v31CRDs/96weigGF19wLN2y2xn
-	ncrs0GlVUW4yAyAE3PeVuOXuljxBzKZyZSWLC97d0fVUu9sSjm82xZ2Z3R0VoKrTGBOo9tNcj/FF/
-	dQnVOY5rDreizkSPSJmuoPOczzQsSc2evFKhYvs0o4PqLINa0dxldaVQC+P1u+7p6dSfKW4P5h1Bh
-	lpthUTIlGa68R4vscp0A==;
+	List-Owner; bh=ORP4WbWquYrF2+muGlq1Bg/oXcm8cml1B6o3Beo9GGM=; b=JqauQb9Wbac2gk
+	I4DZ14UwMbPsolHsB9kfmQcGzo5DRYW8kkJzJ5vc3FM5lc30JPV2ZRJQc0lmL5BFNr4uVJ/T3C0MJ
+	4GyH2DhJTNRg5z4cUag37352Sw9kpJ5NhnJ045ECAJFn7CQ0B7b1k00LWYUBjh36HZAM7FnAl2Ld4
+	BbzrkuDWNO3+WUcaLs4tOgEj6x6G5GkArS0hKYPXDfR7508Ielb7+BXPPI0oaW2OsUVMIvi3QQj6E
+	y8AjtOSyTCB7Qv3h6iojapdgSZwuSiKQWanHbK4M0057C1PNZ7BG48WmM7WstMokxOZktWLePgMr/
+	xxkmf76f7hRKtRqNqJdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9k3-0003Lx-Ui; Thu, 30 Apr 2020 14:00:43 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1jU9kM-0003bq-63; Thu, 30 Apr 2020 14:01:02 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9jo-0003Js-HM
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:00:29 +0000
-Received: by mail-io1-xd43.google.com with SMTP id k23so1554036ios.5
+ id 1jU9k3-0003Ws-KP
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:00:46 +0000
+Received: by mail-oi1-f195.google.com with SMTP id j16so5266023oih.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:00:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=nz4EYudAGnRAka2sLpxAUHkI/tIzbc4FpKMb2iD2HGI=;
- b=WxsmkjonITcLJ97YhEvjgmBobJxYhdcS0FMYbI0ha9eAYIbOvVa++0B/N61OFuA+vq
- TZYJoOOK1ZCNtDRuUb0+F6GjgICAVNM5rw4vEuVnM80xd3VkxSFGCpu0bX2tf4mdswgH
- D8T/Hct4kccVa1z5uGmKgC3cbV8W5/BGPIlISHzo6yjyI6Yd84kp1sl1eFHyPTD6GGmH
- 0Q1F1IZODwzZhcHFUAcQpScBz+tK/gV6IwRa2pAu8aiuKxSgJ9XM9CrOeEgOUpJR6Mg0
- 6oYATFOQutPCYugnCrV+5/HZ8KiRd7lgTda3lkj13rjmdcAeGR16UBPZIBdRZZnJts6f
- Vuww==
+ Thu, 30 Apr 2020 07:00:43 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=nz4EYudAGnRAka2sLpxAUHkI/tIzbc4FpKMb2iD2HGI=;
- b=Fac4QjUNDh2CUJ2Pqhs+PjCnIPXZo9ZZMYIkjtNqB1uUT7fBtkc3REvd/ri9iRQ5s1
- xYg/vAPNS12U1Sph6n1oKpLAY49nSV17c9RBYB37MnUddAAlU+Pi+GEHJ0PDw7BOkelV
- tasj2p0n5dYKgJlWOl5typ8p8N7rqWXtpXTvXtdCWSJQYfxAie5tv9a3fXpyEgKhwvBP
- 7GoVuuEp3c49aQxgsZrnnK/BiPbswUwNU4ABjKJ6banf2kVWV1QsXi3ePDY41b6DspPJ
- SD+4Lgnvzhfr43BcaDls0DCzDJfwvvq3RmP2XRkLiOMJNLXrTxvZHjChMh0vQ+I6YMjB
- /V1w==
-X-Gm-Message-State: AGi0PuYklj5czimkdPnfEByWUncmRzJXIu1k/EsK6Gh2Dop3XEQAR7RZ
- 9rvnHZhz9YC8Hn3RVWk9DIWnETl+lwNXLoBwXzjPC2hQnPM=
-X-Google-Smtp-Source: APiQypL/hGXbUxNw4AVM3ITxY+bWgZQNGgI8BdvnXtQMrcBmjvMtXdgrG7Lhm8mMQi0TVyWgoYz+zdbaXKGpRu9prEA=
-X-Received: by 2002:a6b:b8d6:: with SMTP id i205mr2058871iof.123.1588255225316; 
- Thu, 30 Apr 2020 07:00:25 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=4SqKDcgFBHx1L7Er/7o6lUHlh3wWzthDwvJZwo5hrJU=;
+ b=cngkAM4JZWP1XnAhF0K/omRFReM+Zxv7SEUi1ZlzX3ETg/evkryrLX/qd8k5ftaNds
+ HxiUHtHyxO9ZmiAyplqKGxdno6kMkXHP7t+Ly+YRSGmRf96cwvU+/B5xJLcdup9OOyvc
+ /96A99F+WnRqHCFNdv53T/hmnD71JeEvMoHMw+gFhLvdLtRwIlXCcCWlYnKISUVC+ZUL
+ rO62s4F0Yg15O6l09gLcWBocITZUdZKg+vushgrFEzYEz+WFeOMphGgSfJbXAw01gu+7
+ HJqSC2DczPu9PLNP4PMlevYgorfwbqMda3018FPvMyl8I5+B19DyQR9xU/A1ZUANA3+K
+ RoRw==
+X-Gm-Message-State: AGi0Pua4+33PuT5Wv4x6RrEhGK8nNp/qR+4vv8h1gz5bYDJlrOTrG+Uo
+ oAA/rCIAWaVL2/IMr9VbEhFfv0I=
+X-Google-Smtp-Source: APiQypK+NEro6nmq5Ju0kr11u0dYdZk562OwLmfEc6Rdsg37blDy9Pox4kBxZ7K1FWgojRgFDGj0HA==
+X-Received: by 2002:aca:d684:: with SMTP id n126mr1810974oig.173.1588255242401; 
+ Thu, 30 Apr 2020 07:00:42 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id h137sm2698oib.33.2020.04.30.07.00.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 30 Apr 2020 07:00:41 -0700 (PDT)
+Received: (nullmailer pid 20979 invoked by uid 1000);
+ Thu, 30 Apr 2020 14:00:40 -0000
+Date: Thu, 30 Apr 2020 09:00:40 -0500
+From: Rob Herring <robh@kernel.org>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH 02/14] clocksource/drivers/timer-ti-dm: Add clockevent
+ and clocksource support
+Message-ID: <20200430140040.GA8363@bogus>
+References: <20200417165519.4979-1-tony@atomide.com>
+ <20200417165519.4979-3-tony@atomide.com>
+ <62be90e2-7dbe-410d-4171-c0ad0cddc7a3@linaro.org>
+ <20200427143144.GQ37466@atomide.com>
+ <29f39839-b3ed-cac3-1dea-c137286320b1@linaro.org>
+ <20200427152329.GR37466@atomide.com>
 MIME-Version: 1.0
-References: <20200426104115.22630-1-peron.clem@gmail.com>
- <20200426104115.22630-4-peron.clem@gmail.com>
- <20200428081321.ht3el26yqhsnyfm4@gilmour.lan>
- <CAJiuCcdVs_drs40Q6537BYfz24F7NmC6B8S5-Lt4V4ggs-FXWA@mail.gmail.com>
- <20200429123529.y24dpy63wxq7uvkt@gilmour.lan>
- <CAJiuCcfXqizcq_JuXRCsqEqM2562cr1SGJ0pmy07jcJxAXojOw@mail.gmail.com>
- <20200430084600.samghw4zxb5zdbez@gilmour.lan>
-In-Reply-To: <20200430084600.samghw4zxb5zdbez@gilmour.lan>
-From: =?UTF-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
-Date: Thu, 30 Apr 2020 16:00:14 +0200
-Message-ID: <CAJiuCcf_LHrJ6QdZgH8HyN6TRiT+GiD+t4UggFCrz-VwVHXV6w@mail.gmail.com>
-Subject: Re: [PATCH v3 3/7] ASoC: sun4i-i2s: Add support for H6 I2S
-To: Maxime Ripard <maxime@cerno.tech>
+Content-Disposition: inline
+In-Reply-To: <20200427152329.GR37466@atomide.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_070028_596388_D453CC6E 
-X-CRM114-Status: GOOD (  23.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_070043_667074_9125BE0C 
+X-CRM114-Status: GOOD (  19.98  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [peron.clem[at]gmail.com]
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,57 +98,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Jernej Skrabec <jernej.skrabec@siol.net>, Takashi Iwai <tiwai@suse.com>,
- Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>, Stephen Boyd <sboyd@kernel.org>,
+ Andreas Kemnade <andreas@kemnade.info>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-omap@vger.kernel.org,
+ Adam Ford <aford173@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWF4aW1lLAoKT24gVGh1LCAzMCBBcHIgMjAyMCBhdCAxMDo0NiwgTWF4aW1lIFJpcGFyZCA8
-bWF4aW1lQGNlcm5vLnRlY2g+IHdyb3RlOgo+Cj4gSGksCj4KPiBPbiBXZWQsIEFwciAyOSwgMjAy
-MCBhdCAwNjozMzowMFBNICswMjAwLCBDbMOpbWVudCBQw6lyb24gd3JvdGU6Cj4gPiBPbiBXZWQs
-IDI5IEFwciAyMDIwIGF0IDE0OjM1LCBNYXhpbWUgUmlwYXJkIDxtYXhpbWVAY2Vybm8udGVjaD4g
-d3JvdGU6Cj4gPiA+Cj4gPiA+IE9uIFR1ZSwgQXByIDI4LCAyMDIwIGF0IDEwOjU1OjQ3QU0gKzAy
-MDAsIENsw6ltZW50IFDDqXJvbiB3cm90ZToKPiA+ID4gPiA+ID4gK3N0YXRpYyBpbnQgc3VuNTBp
-X2kyc19zZXRfc29jX2ZtdChjb25zdCBzdHJ1Y3Qgc3VuNGlfaTJzICppMnMsCj4gPiA+ID4gPiA+
-ICsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB1bnNpZ25lZCBpbnQgZm10KQo+ID4gPiA+
-ID4KPiA+ID4gPiA+IFRoZSBhbGlnbm1lbnQgaXMgb2ZmIGhlcmUKPiA+ID4gPiA+Cj4gPiA+ID4g
-PiA+ICt7Cj4gPiA+ID4gPiA+ICsgICAgIHUzMiBtb2RlLCB2YWw7Cj4gPiA+ID4gPiA+ICsgICAg
-IHU4IG9mZnNldDsKPiA+ID4gPiA+ID4gKwo+ID4gPiA+ID4gPiArICAgICAvKgo+ID4gPiA+ID4g
-PiArICAgICAgKiBEQUkgY2xvY2sgcG9sYXJpdHkKPiA+ID4gPiA+ID4gKyAgICAgICoKPiA+ID4g
-PiA+ID4gKyAgICAgICogVGhlIHNldHVwIGZvciBMUkNLIGNvbnRyYWRpY3RzIHRoZSBkYXRhc2hl
-ZXQsIGJ1dCB1bmRlciBhCj4gPiA+ID4gPiA+ICsgICAgICAqIHNjb3BlIGl0J3MgY2xlYXIgdGhh
-dCB0aGUgTFJDSyBwb2xhcml0eSBpcyByZXZlcnNlZAo+ID4gPiA+ID4gPiArICAgICAgKiBjb21w
-YXJlZCB0byB0aGUgZXhwZWN0ZWQgcG9sYXJpdHkgb24gdGhlIGJ1cy4KPiA+ID4gPiA+ID4gKyAg
-ICAgICovCj4gPiA+ID4gPgo+ID4gPiA+ID4gRGlkIHlvdSBjaGVjayB0aGlzIG9yIGhhcyBpdCBi
-ZWVuIGNvcHktcGFzdGVkPwo+ID4gPiA+Cj4gPiA+ID4gY29weS1wYXN0ZWQsIEkgd2lsbCBjaGVj
-ayB0aGlzLgo+ID4gPgo+ID4gPiBJdCdzIG5vdCBnb2luZyB0byBiZSBlYXN5IHRvIGRvIHRoaXMg
-aWYgeW91IG9ubHkgaGF2ZSBhIGJvYXJkIHdpdGggSERNSS4gSWYgeW91Cj4gPiA+IGNhbid0IHRl
-c3QgdGhhdCBlYXNpbHksIGp1c3QgcmVtb3ZlIHRoZSBjb21tZW50IChvciBtYWtlIGl0IGV4cGxp
-Y2l0IHRoYXQgeW91Cj4gPiA+IGNvcHkgcGFzdGVkIGl0PyksIG5vIGNvbW1lbnQgaXMgYmV0dGVy
-IHRoYW4gYSB3cm9uZyBvbmUuCj4gPgo+ID4gSSBoYXZlIHRhbGtlZCB3aXRoIE1hcmN1cyBDb29w
-ZXIgaXQgbWF5IGJlIGFibGUgdG8gdGVzdCB0aGlzIHRoaXMgd2Vlay1lbmQuCj4gPiBBbHNvIHRo
-aXMgY2FuIGV4cGxhaW4gd2h5IHdlIG5lZWQgdGhlICIKPiA+IHNpbXBsZS1hdWRpby1jYXJkLGZy
-YW1lLWludmVyc2lvbjsiIGluIHRoZSBkZXZpY2UtdHJlZS4KPiA+Cj4gPiBJZiB0aGluayB0aGlz
-IGZpeCBoYXMgYmVlbiBpbnRyb2R1Y2VkIGJ5IHlvdSwgY29ycmVjdD8gQ291bGQgeW91IHNheQo+
-ID4gb24gd2hpY2ggU29DIGRpZCB5b3Ugc2VlIHRoaXMgaXNzdWU/Cj4KPiBUaGlzIHdhcyBzZWVu
-IG9uIGFuIEgzCgpKdXN0IHR3byBtb3JlIHF1ZXN0aW9uczoKLSBEaWQgeW91IG9ic2VydmUgdGhp
-cyBpc3N1ZSBvbiBib3RoIFRETSBhbmQgSTJTIG1vZGU/Ci0gT24gd2hpY2ggREFJIG5vZGU/CgpT
-aW5jZSByZWNlbnQgY2hhbmdlIGluIHN1bjRpLWkycy5jLCB3ZSBoYWQgdG8gaW50cm9kdWNlIHRo
-ZQoic2ltcGxlLWF1ZGlvLWNhcmQsZnJhbWUtaW52ZXJzaW9uIiBpbiBMaWJyZUVsZWMgdHJlZS4K
-SDMgYm9hcmRzIGFyZSBxdWl0ZSBjb21tb24gaW4gTGlicmVFbGVjIGNvbW11bml0eSBzbyBJIHRo
-aW5rOgogLSBUaGlzIGZpeCBpcyBvbmx5IG5lZWRlZCBpbiBURE0gbW9kZQogLSBPciB0aGlzIGZp
-eCBpcyBub3QgcmVxdWlyZWQgZm9yIHRoZSBIRE1JIERBSSBub2RlIChIRE1JIERBSSBpcyBhCmxp
-dHRsZSBiaXQgZGlmZmVyZW50IGNvbXBhcmUgdG8gb3RoZXIgREFJIGJ1dCBJIHRoaW5rIHRoZSBm
-aXJzdCBndWVzcwppcyBtb3JlIGxpa2VseSkKClJlZ2FyZHMsCkNsZW1lbnQKCj4KPiBNYXhpbWUK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+On Mon, Apr 27, 2020 at 08:23:29AM -0700, Tony Lindgren wrote:
+> * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 15:03]:
+> > On 27/04/2020 16:31, Tony Lindgren wrote:
+> > > Hi,
+> > > 
+> > > * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 09:19]:
+> > >> On 17/04/2020 18:55, Tony Lindgren wrote:
+> > >>> --- a/Documentation/devicetree/bindings/timer/ti,timer.txt
+> > >>> +++ b/Documentation/devicetree/bindings/timer/ti,timer.txt
+> > >>> @@ -14,6 +14,8 @@ Required properties:
+> > >>>  			ti,omap5430-timer (applicable to OMAP543x devices)
+> > >>>  			ti,am335x-timer	(applicable to AM335x devices)
+> > >>>  			ti,am335x-timer-1ms (applicable to AM335x devices)
+> > >>> +			ti,dmtimer-clockevent (when used as for clockevent)
+> > >>> +			ti,dmtimer-clocksource (when used as for clocksource)
+> > >>
+> > >> Please, submit a separate patch for this.
+> > >>
+> > >> Before you resend as is, this will be nacked as clocksource / clockevent
+> > >> is not a hardware description but a Linux thing.
+> > >>
+> > >> Finding a way to characterize that from the DT is an endless discussion
+> > >> since years, so I suggest to use a single property for the timer eg
+> > >> <ti,dmtimer> and initialize the clocksource and the clockevent in the
+> > >> driver.
+> > > 
+> > > Hmm good point. We still need to specify which timer is a clocksource
+> > > and which one a clockevent somehow.
+> > > 
+> > > Maybe we could have a generic properties like the clock framework such as:
+> > > 
+> > > assigned-system-clocksource
+> > > assigned-system-clockevent
+> > 
+> > I think that will be the same problem :/
+> 
+> Seems like other SoCs have the same issue too with multiple timers
+> to configure.
+> 
+> > Is it possible to check the interrupt for the clockevent ? A timer node
+> > with the interrrupt is the clockevent, without it is a clocksource.
+> 
+> OK let's try that. So the configuration would become then:
+> 
+> compatible = "ti,dmtimer;	/* reserved for system timers */
+> /delete-property/interrupts;	/* ok so it's a clocksource */
+> /delete-property/interrupts-extended;
+
+That's not really what was meant.
+
+Let's say you have N timers. Either every timer is exactly the same and 
+the OS can just assign them however it wants or there is some difference 
+in the h/w making certain timer better for certain functions. Describe 
+that difference. It could be clock rate, number of counter bits, always 
+on, secure mode access only, has or doesn't have output compare or input 
+capture, etc.
+
+Rob
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
