@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5345B1BFA66
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:53:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 44A451BFA6B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:54:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ot+AUgtWOEyDxf3WQqaKD7W9V6ePrW5NeUK4qz5vW+Y=; b=fLYzdOAHYPJJsM
-	fsFuh3Iz08aErjIQ5zGZv86rMipfGRD/jdaIFWu21klo22Wu8Fr8WjzHmVrN9GwTgEr0MZZkOtTjc
-	IaMtVOw9fw8Vlu5lfoxgba/oWQTX6jGS78uIeBXEg40M9LZ/kQEmq7Zwk/KeN2DH3XMq3dNqfSejN
-	ChPXeC20oE97fb/mv74n9Y9wvO3Y7tJn0fOZBLwJzDAXAS8mSJMK3y16wceJmdj+B8vtBZ8z9ILyw
-	J3wYU03tomnS995L3C+iPrE7VojlTvgji0IadlLq5KBU6nt7obivQbwdfUJdSISc5z/sIzkNWnIh6
-	nc26gRdcV85kPG/FBrpA==;
+	List-Owner; bh=5Eo2DaC5lmSUgPEKlli2mBrwhuDdANmcSTszQDbgHrg=; b=lCGi6sI8CFCnoL
+	Q1XadJ3vnTE7aWE0HXmtQsB3oRetkV08GRCDS7pmYl/J2DkePUFiKrMCrCNehK1SoKV6wWczWf/bs
+	gYWQS5kJtC9MxMChxjlVeegMaf9BHS8moESCTISt0HVTN6lpnud00stgSzQyHkbM3wK7YoMTHMrJA
+	wfzmMsmbWWBL9Jk9H/dpqKBlXqOMxlPpPxRJHtwSp20jP9WReVowwZieKs78/n23Lw9UkkmDJSiHf
+	WsMjenUwO/beQAca0hoshxvbUOPCvamNPDMzj2V7DAePcc+WYQ+5XDPuiLyZiKASSaB/BofiiU8kA
+	rBIyVtiNRnS6siavF6EQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9d6-0001pg-8E; Thu, 30 Apr 2020 13:53:32 +0000
+	id 1jU9dU-00027E-EN; Thu, 30 Apr 2020 13:53:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9b2-0000O7-Ly
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:51:26 +0000
+ id 1jU9b4-0000Pk-0d
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:51:27 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 62BEC2137B;
- Thu, 30 Apr 2020 13:51:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 851EF2082E;
+ Thu, 30 Apr 2020 13:51:24 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588254683;
- bh=GSDdMgKvKAegsAAYwcuRTGDxeY5MwNfhBUBJ4xW6S8k=;
+ s=default; t=1588254685;
+ bh=yVDzDf7BPjN8V3Q1sj6RasbrxByVjWam1uXEnqFNqCI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=UHHhSXW5JAqIjUOIA9pAj6G+0PRTC1pB1t140YdaMer85wTzpL2On56X3AtrChxW7
- 0RizoaZMjZY4JVwUKYQw59T7d01WZ0gt2KRbxMwk053wUKkN6/l7QPwTKPYDa3NPds
- urnbScHKNETK3Al2EwGdGm9HdHR6m1dHbtg0usM0=
+ b=w4OHDPD8gFHxVnTbmLEhBYaQIzF0wza76jwZWX9dq28S7y70bfndBx8nq/D0LWHMM
+ spnvQoAvAOZqQGWpEem3NqgpJRqU2gso/B8CHMtlUI7q7dRXRbTy9y/HpdTfOFhLC1
+ BRmdIBt+nDT8wnVK8XedN+3hp2EePIk61VoILnWU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 34/79] usb: gadget: udc: atmel: Fix vbus
- disconnect handling
-Date: Thu, 30 Apr 2020 09:49:58 -0400
-Message-Id: <20200430135043.19851-34-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 36/79] ASoC: stm32: sai: fix sai probe
+Date: Thu, 30 Apr 2020 09:50:00 -0400
+Message-Id: <20200430135043.19851-36-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200430135043.19851-1-sashal@kernel.org>
 References: <20200430135043.19851-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_065124_893816_0F17A5F2 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20200430_065126_297188_AA4EB614 
+X-CRM114-Status: GOOD (  11.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,48 +79,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Felipe Balbi <balbi@kernel.org>,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Cristian Birsan <cristian.birsan@microchip.com>
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ Mark Brown <broonie@kernel.org>, Olivier Moysan <olivier.moysan@st.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Cristian Birsan <cristian.birsan@microchip.com>
+From: Olivier Moysan <olivier.moysan@st.com>
 
-[ Upstream commit 12b94da411f9c6d950beb067d913024fd5617a61 ]
+[ Upstream commit e2bcb65782f91390952e849e21b82ed7cb05697f ]
 
-A DMA transfer can be in progress while vbus is lost due to a cable
-disconnect. For endpoints that use DMA, this condition can lead to
-peripheral hang. The patch ensures that endpoints are disabled before
-the clocks are stopped to prevent this issue.
+pcm config must be set before snd_dmaengine_pcm_register() call.
 
-Fixes: a64ef71ddc13 ("usb: gadget: atmel_usba_udc: condition clocks to vbus state")
-Signed-off-by: Cristian Birsan <cristian.birsan@microchip.com>
-Signed-off-by: Felipe Balbi <balbi@kernel.org>
+Fixes: 0d6defc7e0e4 ("ASoC: stm32: sai: manage rebind issue")
+
+Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
+Link: https://lore.kernel.org/r/20200417142122.10212-1-olivier.moysan@st.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/usb/gadget/udc/atmel_usba_udc.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ sound/soc/stm/stm32_sai_sub.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/usb/gadget/udc/atmel_usba_udc.c b/drivers/usb/gadget/udc/atmel_usba_udc.c
-index 6e0432141c409..22200341c8ec3 100644
---- a/drivers/usb/gadget/udc/atmel_usba_udc.c
-+++ b/drivers/usb/gadget/udc/atmel_usba_udc.c
-@@ -1951,10 +1951,10 @@ static irqreturn_t usba_vbus_irq_thread(int irq, void *devid)
- 			usba_start(udc);
- 		} else {
- 			udc->suspended = false;
--			usba_stop(udc);
--
- 			if (udc->driver->disconnect)
- 				udc->driver->disconnect(&udc->gadget);
-+
-+			usba_stop(udc);
- 		}
- 		udc->vbus_prev = vbus;
+diff --git a/sound/soc/stm/stm32_sai_sub.c b/sound/soc/stm/stm32_sai_sub.c
+index d3259de43712b..7e965848796c3 100644
+--- a/sound/soc/stm/stm32_sai_sub.c
++++ b/sound/soc/stm/stm32_sai_sub.c
+@@ -1543,6 +1543,9 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
+ 		return ret;
  	}
+ 
++	if (STM_SAI_PROTOCOL_IS_SPDIF(sai))
++		conf = &stm32_sai_pcm_config_spdif;
++
+ 	ret = snd_dmaengine_pcm_register(&pdev->dev, conf, 0);
+ 	if (ret) {
+ 		dev_err(&pdev->dev, "Could not register pcm dma\n");
+@@ -1551,15 +1554,10 @@ static int stm32_sai_sub_probe(struct platform_device *pdev)
+ 
+ 	ret = snd_soc_register_component(&pdev->dev, &stm32_component,
+ 					 &sai->cpu_dai_drv, 1);
+-	if (ret) {
++	if (ret)
+ 		snd_dmaengine_pcm_unregister(&pdev->dev);
+-		return ret;
+-	}
+-
+-	if (STM_SAI_PROTOCOL_IS_SPDIF(sai))
+-		conf = &stm32_sai_pcm_config_spdif;
+ 
+-	return 0;
++	return ret;
+ }
+ 
+ static int stm32_sai_sub_remove(struct platform_device *pdev)
 -- 
 2.20.1
 
