@@ -2,72 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B8E61C0465
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 227931C04E2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 20:33:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/14gyxUOsmVj/+1gog9l3IMMhs8QdSBlzhH99JHRp4Q=; b=fQ+GP5kpBH9zT+MojhYpxeCeM
-	Bk/kokhicmYcQaHhEXwGIou73Ykhm6j8k3IDAEMO5oTjA5xzZsyRcu92lsFvQPGNUU1yrvAk4kHJx
-	xkDWME8asNNqMhLxOPkvN9LX43js8a7WTfMnYJEgmFDNa8iZcsf95kGAxKDCD11JU3ZdwPWi4Us9Z
-	084p74ypM7yWYcdEy91ymLnYlJLFNi9ihuSlOJ8WZqEZXlHFF4rq1CaAx++TFppEQdQEiAzIlh1GW
-	8vN1A4ybDqrC4VA72m7GTtoiunQOrKu5/4TfJoqVu0qoufdaCnBIgYUGy+U3gJ/ZNBpyWZCWwZpcj
-	lS3IJacQQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rXjldyo7wi/NrQ4INOiv205SGWZeSPJap7d8JHRoFr8=; b=nKIg3Et+8gEZXI
+	McIqiYeVijOr9l+VTdD35hAIvyOMGLhnQMD7UTJFbmDALH9c0C0O2S5Oo/yt8WvnDn76vA4GqSjar
+	AhT4sYNx/KCHMQtsIOnkfH275aSLshdHvqkEtdi7dFiSSzatiA2lrOyjgV/pmTnWXGvqNgq4vL0GX
+	FfMDQhgeLtMv07jh1rRRVDiYutKI6nzuYZ6j3m7MFmVVg+4ksEN87C+gCUCzmBRImlqCqza+WCiuj
+	FrQfb1FjtgkMPFDpLG42gmeoC73QDGdnfjT9GPfv1tSGYkV1jSY8DejZAhL2QQh5gUdbcftVA1iBs
+	hA1EfpInealkYQRLIWDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUDfW-0005wj-Kt; Thu, 30 Apr 2020 18:12:18 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUE0D-0003In-6g; Thu, 30 Apr 2020 18:33:41 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUDfO-0005wG-Cb
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 18:12:12 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 504A22073E;
- Thu, 30 Apr 2020 18:12:09 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588270330;
- bh=uZzbisc8ZrbgvrWcinRIkDr/7MqbjQAc/dl6CHyH8rQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Vpn5cEYRdXnlx70upnq1Z0EAQBUntihdDMhHEXJvsHpqh9Fj/4xERZzG9QeTFd+pa
- eXzZhtwyaOkyCpbkMGKaXCL3hFMUeH+SO8krJ/wRs7ipeYcPGdR6VE6TnysDjcVnFL
- Ro0G+3R34M36RoocU+PrHhWoqc/bn6BNyKg0OC3k=
-Date: Thu, 30 Apr 2020 19:12:07 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 1/2] arm64: kernel: Convert to modern annotations for
- assembly functions
-Message-ID: <20200430181207.GJ4633@sirena.org.uk>
-References: <20200428164331.27289-1-broonie@kernel.org>
- <20200428164331.27289-2-broonie@kernel.org>
- <20200430171825.GI25258@willie-the-truck>
+ id 1jUE04-0003Gq-RI
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 18:33:34 +0000
+IronPort-SDR: ygBwuaCObsQ5fYvZv3l1RTJfgqlTxpEClFv2/D+t6pkTN7WWpdI4aFFREvhnybeo0L2M/NM3+G
+ Mvs3abVsfcrg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 30 Apr 2020 11:33:29 -0700
+IronPort-SDR: J48xY2cKJPAK1NVryygQbF/nagAXDIYz1I6SC3AHIW5UHcqfCG66Luu3iM/N/zRymWaoSl5F24
+ 9Hf1OxKC5PKg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,336,1583222400"; d="scan'208";a="433056299"
+Received: from jacob-builder.jf.intel.com (HELO jacob-builder) ([10.7.199.155])
+ by orsmga005.jf.intel.com with ESMTP; 30 Apr 2020 11:33:28 -0700
+Date: Thu, 30 Apr 2020 11:39:31 -0700
+From: Jacob Pan <jacob.jun.pan@linux.intel.com>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH v6 02/25] iommu/ioasid: Add ioasid references
+Message-ID: <20200430113931.0fbf7a37@jacob-builder>
+In-Reply-To: <20200430143424.2787566-3-jean-philippe@linaro.org>
+References: <20200430143424.2787566-1-jean-philippe@linaro.org>
+ <20200430143424.2787566-3-jean-philippe@linaro.org>
+Organization: OTC
+X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.30; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-In-Reply-To: <20200430171825.GI25258@willie-the-truck>
-X-Cookie: Sign here without admitting guilt.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_111210_466241_43A77EB7 
-X-CRM114-Status: GOOD (  17.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200430_113333_115817_A6B54611 
+X-CRM114-Status: GOOD (  21.72  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ high trust [192.55.52.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,135 +70,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0201030461213907970=="
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
+ joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
+ fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
+ catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 30 Apr 2020 16:34:01 +0200
+Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
 
---===============0201030461213907970==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gBdJBemW82xJqIAr"
-Content-Disposition: inline
-
-
---gBdJBemW82xJqIAr
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Apr 30, 2020 at 06:18:25PM +0100, Will Deacon wrote:
-> On Tue, Apr 28, 2020 at 05:43:30PM +0100, Mark Brown wrote:
-
-> > -work_pending:
-> > +SYM_CODE_START_LOCAL(work_pending)
-> >  	mov	x0, sp				// 'regs'
-> >  	bl	do_notify_resume
-> >  #ifdef CONFIG_TRACE_IRQFLAGS
-> > @@ -738,10 +738,11 @@ work_pending:
-> >  #endif
-> >  	ldr	x1, [tsk, #TSK_TI_FLAGS]	// re-check for single-step
-> >  	b	finish_ret_to_user
-> > +SYM_CODE_END(work_pending)
-> >  /*
-> >   * "slow" syscall return path.
-> >   */
-> > -ret_to_user:
-> > +SYM_CODE_START_LOCAL(ret_to_user)
-
-> Would this be better off as a SYM_INNER_LABEL inside work_pending? Given
-> that ret_to_user and work_pending both branch into each other, separating
-> them doesn't feel quite right.
-
-I remember looking at these when doing the conversion and thinking that
-nothing looked quite right due to the cross calls :/  The number of
-things that branch to ret_to_user made me think it should really be it's
-own thing rather than just a label in the middle of another block but
-then work_pending is really a subroutine of ret_to_user that uses a
-branch rather than a call so how do you annotate that?
-
-Possibly we could move work_pending after the kernel_exit in ret_to_user
-and make work_pending the SYM_INNER_LABEL, doing things the opposite way
-around to what you suggest?  I think that's more the intent.
-
-> > +SYM_CODE_START_LOCAL(\label)
-> >  	b \label
-> > -ENDPROC(\label)
-> > +SYM_CODE_END(\label)
-> >  .endm
-
-> Huh, this is the exact same macro as the one from the hibernate code. Maybe
-> we should stick it in asm/asembler.h alongside ventry? Obviously a separate
-> patch, though.
-
-I agree.
-
-> > -ENTRY(absolute_data64)
-> > +SYM_CODE_START(absolute_data64)
-> >  	ldr	x0, 0f
-> >  	ret
-> >  0:	.quad	sym64_abs
-> > -ENDPROC(absolute_data64)
-> > +SYM_CODE_END(absolute_data64)
-
-> Hmm, but all the functions in here *are* actually just called from the C
-> code in reloc_test_core.c afaict, so they should probably be using
-> SYM_FUNC_*.
-
-You're right I think - I remember thinking as I was going through that
-since they were explicitly designed to test relocations it might be
-important that they emit exactly the instructions that are written but
-now I look again the functions are actually called rather than just
-linked so we need to emit landing pads for them.
-
-> > -ENTRY(cpu_resume)
-> > +SYM_FUNC_START(cpu_resume)
-> >  	bl	el2_setup		// if in EL2 drop to EL1 cleanly
-> >  	mov	x0, #ARM64_CPU_RUNTIME
-> >  	bl	__cpu_setup
-> > @@ -107,11 +107,11 @@ ENTRY(cpu_resume)
-> >  	bl	__enable_mmu
-> >  	ldr	x8, =_cpu_resume
-> >  	br	x8
-> > -ENDPROC(cpu_resume)
-> > +SYM_FUNC_END(cpu_resume)
-
-> SYM_CODE_* here, as this is I think this is the entry point from the resume
-> path?
-
-It has a C prototype in asm/suspend.h and swsup_arch_suspend_exit in
-hibernate-asm.S runs earlier but now I look again it jumps here by
-issuing a ret rather than via a call so it's definitely not a normal C
-function.
-
---gBdJBemW82xJqIAr
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6rFPYACgkQJNaLcl1U
-h9BrSAf8CFe45JsUDVu/UCwECpwrN/daLRwP7sYkaostBqKKP/Zi3+Vn0TVQQAJo
-rBtue7qQ1OtI+O1CS3RoP6Cg2wgXsBVM4JDTLsfxYguDiW0EF6QN7sbPTfH8xiD6
-sQlT2ReFTN4GxHdN683/f3lo0MrriLC60tVP33J076GjGDYoxE8fEnPkFPdsribY
-MmKOOyIt+lbe8plAptBwp2miOXlxhSqdRgUJQPaQ1NVRNHL8VML5kkAv7utFfxCJ
-t/a9nvlRv4NQoMqIcQS8uY5bJvpUf5J1HkWzv+rgIFRa6TUhUzTStHrhfVAi/OH0
-JRzCS4nE1nroyqfwl3rVh+AtQJsKYQ==
-=Fwk1
------END PGP SIGNATURE-----
-
---gBdJBemW82xJqIAr--
+> Let IOASID users take references to existing ioasids with
+> ioasid_get(). ioasid_free() drops a reference and only frees the
+> ioasid when its reference number is zero. It returns whether the
+> ioasid was freed.
+> 
+Looks good to me, I was planning to do the same for VT-d use. Just a
+couple of points for potential extension. I can rebase on top of this.
 
 
---===============0201030461213907970==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  include/linux/ioasid.h | 10 ++++++++--
+>  drivers/iommu/ioasid.c | 30 +++++++++++++++++++++++++++++-
+>  2 files changed, 37 insertions(+), 3 deletions(-)
+> 
+> diff --git a/include/linux/ioasid.h b/include/linux/ioasid.h
+> index 6f000d7a0ddcd..609ba6f15b9e3 100644
+> --- a/include/linux/ioasid.h
+> +++ b/include/linux/ioasid.h
+> @@ -34,7 +34,8 @@ struct ioasid_allocator_ops {
+>  #if IS_ENABLED(CONFIG_IOASID)
+>  ioasid_t ioasid_alloc(struct ioasid_set *set, ioasid_t min, ioasid_t
+> max, void *private);
+> -void ioasid_free(ioasid_t ioasid);
+> +void ioasid_get(ioasid_t ioasid);
+> +bool ioasid_free(ioasid_t ioasid);
+>  void *ioasid_find(struct ioasid_set *set, ioasid_t ioasid,
+>  		  bool (*getter)(void *));
+>  int ioasid_register_allocator(struct ioasid_allocator_ops
+> *allocator); @@ -48,10 +49,15 @@ static inline ioasid_t
+> ioasid_alloc(struct ioasid_set *set, ioasid_t min, return
+> INVALID_IOASID; }
+>  
+> -static inline void ioasid_free(ioasid_t ioasid)
+> +static inline void ioasid_get(ioasid_t ioasid)
+>  {
+>  }
+>  
+> +static inline bool ioasid_free(ioasid_t ioasid)
+> +{
+> +	return false;
+> +}
+> +
+>  static inline void *ioasid_find(struct ioasid_set *set, ioasid_t
+> ioasid, bool (*getter)(void *))
+>  {
+> diff --git a/drivers/iommu/ioasid.c b/drivers/iommu/ioasid.c
+> index 0f8dd377aada3..46511ac53e0c8 100644
+> --- a/drivers/iommu/ioasid.c
+> +++ b/drivers/iommu/ioasid.c
+> @@ -15,6 +15,7 @@ struct ioasid_data {
+>  	struct ioasid_set *set;
+>  	void *private;
+>  	struct rcu_head rcu;
+> +	refcount_t refs;
+>  };
+>  
+>  /*
+> @@ -314,6 +315,7 @@ ioasid_t ioasid_alloc(struct ioasid_set *set,
+> ioasid_t min, ioasid_t max, 
+>  	data->set = set;
+>  	data->private = private;
+> +	refcount_set(&data->refs, 1);
+>  
+>  	/*
+>  	 * Custom allocator needs allocator data to perform platform
+> specific @@ -345,12 +347,33 @@ ioasid_t ioasid_alloc(struct
+> ioasid_set *set, ioasid_t min, ioasid_t max, }
+>  EXPORT_SYMBOL_GPL(ioasid_alloc);
+>  
+> +/**
+> + * ioasid_get - obtain a reference to the IOASID
+> + */
+> +void ioasid_get(ioasid_t ioasid)
+why void? what if the ioasid is not valid.
+
+> +{
+> +	struct ioasid_data *ioasid_data;
+> +
+> +	spin_lock(&ioasid_allocator_lock);
+> +	ioasid_data = xa_load(&active_allocator->xa, ioasid);
+> +	if (ioasid_data)
+> +		refcount_inc(&ioasid_data->refs);
+> +	spin_unlock(&ioasid_allocator_lock);
+> +}
+> +EXPORT_SYMBOL_GPL(ioasid_get);
+> +
+>  /**
+>   * ioasid_free - Free an IOASID
+>   * @ioasid: the ID to remove
+> + *
+> + * Put a reference to the IOASID, free it when the number of
+> references drops to
+> + * zero.
+> + *
+> + * Return: %true if the IOASID was freed, %false otherwise.
+>   */
+> -void ioasid_free(ioasid_t ioasid)
+> +bool ioasid_free(ioasid_t ioasid)
+>  {
+> +	bool free = false;
+>  	struct ioasid_data *ioasid_data;
+>  
+>  	spin_lock(&ioasid_allocator_lock);
+> @@ -360,6 +383,10 @@ void ioasid_free(ioasid_t ioasid)
+>  		goto exit_unlock;
+>  	}
+>  
+> +	free = refcount_dec_and_test(&ioasid_data->refs);
+> +	if (!free)
+> +		goto exit_unlock;
+> +
+Just FYI, we may need to add states for the IOASID, i.g. mark the IOASID
+inactive after free. And prohibit ioasid_get() after freed. For VT-d,
+this is useful when KVM queries the IOASID.
+
+>  	active_allocator->ops->free(ioasid,
+> active_allocator->ops->pdata); /* Custom allocator needs additional
+> steps to free the xa element */ if (active_allocator->flags &
+> IOASID_ALLOCATOR_CUSTOM) { @@ -369,6 +396,7 @@ void
+> ioasid_free(ioasid_t ioasid) 
+>  exit_unlock:
+>  	spin_unlock(&ioasid_allocator_lock);
+> +	return free;
+>  }
+>  EXPORT_SYMBOL_GPL(ioasid_free);
+>  
+
+[Jacob Pan]
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0201030461213907970==--
-
