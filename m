@@ -2,82 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D0EB1BF1A5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:39:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86D2E1BF1BF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:45:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4SE8osVoRDXetyHC9kxOVCd3+yyqLM+FDy8zRKoJYPM=; b=ZxorDe7aY/cBW2jW3kInBKYgB
-	3yYq7uSIYJ6sGFf2MRFPArGJbjvCRY6qBlszDO9zTxYWnd0FI77fFQESVsJgpsCpTanhcQHJaaoRd
-	gDhvvr+yaoMAkPR+tYnlzyxXbabZSpl3hAXbWKyslHgNfrHsFDZLQKlK6VKxmy1fKi/Ldgz+pdQpH
-	pSB76IgKYGaR9w8v6/vf5XNAUz4ujK91KVowm+I4XsOuRDxsr2y5PKz24wLPuVMqlrRWxvOy0JyNp
-	l9xOHZlEZ3IJ8v4rmwbw0yBga7ic6HNiswSpOIk1c9bZakBBw+AwB++4m/ab7WZ4zJcMzmbht+FOP
-	pCnpsCWdw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S4+9kWrGfZ7D3jEiA81AJB1R/me9ntNOLz5bTZieiHk=; b=VLlrQCKRWRYHEM
+	xzUuBL2kmVLWDGg/GkrrQ92BuGfiQjQ39sJKf50+pcfG1lpeVubi/4JbzxIASYd4IoPW7WdsoFs6Y
+	R8110V8lSyUjWWWeAVH1OW5TDPag2uoqgratJ/CKSN0wsOVMssfQSIzcDGJN03e+gHte3+mYHrN4f
+	PPCoXc+wpvmuWnjgZL3rzJXmYxn+Ke1gwtXfsiEDac93VWSimGJAhiNenM0rQEoA02N4yz2HNWwJN
+	N1NJMVaiTvcvtanQQNg0xaU+NRt11UzLw0cyAHzalITb8tjbvJW6ACnV6mPeUVT1SAj4P4TFPK2To
+	pM5C7O3PEErkBvHmM6vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU3nA-0005bE-Sc; Thu, 30 Apr 2020 07:39:32 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jU3sS-0000iI-EA; Thu, 30 Apr 2020 07:45:00 +0000
+Received: from esa1.hgst.iphmx.com ([68.232.141.245])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU3n2-0005aZ-9S
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 07:39:26 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 03U7cQa1008219; Thu, 30 Apr 2020 09:39:17 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=hLXLo+GSEynKmmIDnjzImPRmCzlZcqmqhBlXoeTOsZ4=;
- b=hMfFXYiclvNFJ2xCJbg/Vi4jOz2iF1+kT6oNIN2pSyOdvaSWT7znwYymsY/EniTvNxvO
- 3hLP2g93w4SDNd6EdwJCezJDPVI5WtByhm44VH5dXgJTHiOa3KytGKtiXg+THNx7lz/4
- jpDq2c+FVQGDgkVwJP9kR6QSi6buf/IuNMIu+M7sDNQ4eev36xN4IE6lb+1CkXgVqBvP
- tIi0BQ019yMuYNrW4v71tmhOX45ZGxDNPuP8Fy1c0540sjLM6IoGa4VhuSMy3xUm9Wzk
- 7mqx5Vbf0UI8sW+8ih6Iojtk75DDIL1WQGzbeFx0kFf/iTjG2pvHVimIPHlq9owtkHUy xg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30n4j66vap-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 30 Apr 2020 09:39:16 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8D8EE10002A;
- Thu, 30 Apr 2020 09:39:16 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 75D5F2A4D92;
- Thu, 30 Apr 2020 09:39:16 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 30 Apr
- 2020 09:39:12 +0200
-Subject: Re: [PATCH V5 00/20] ARM: dts: stm32: Repair AV96 board
-To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
-References: <20200422104613.96944-1-marex@denx.de>
- <e47b72fc-9591-021d-7abc-14a7166a4845@st.com>
- <9a5d29a4-14ae-1e4f-68fe-21e4f619625d@denx.de>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <d1e9c84c-48a1-0eef-9da4-94c184ac179c@st.com>
-Date: Thu, 30 Apr 2020 09:39:05 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <9a5d29a4-14ae-1e4f-68fe-21e4f619625d@denx.de>
+ id 1jU3sH-0000gP-9x; Thu, 30 Apr 2020 07:44:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588232689; x=1619768689;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=G062Cwk5QU0GnDIYwWhXQ1/tjyK4hwlKsoaWJILACDA=;
+ b=ZeASR1OAR7unBFrZwRFytUCRIVlPtHESRpIvwHh7L7t70+fPBrPzuVQp
+ H3TDxa0TABp9/gXXmKCKrnsY4+lEZ2cTDcAztS0QOLSle99kYmu6+wsUV
+ Ii2yyBNaNcONWZbxno4ESxNCJ2JqTriU9doUTPKFOLMvyGz0nYDqdYfna
+ rxfme7EfZP9+PEUz92L8SzSrAZdXIK7vlc0TUfwMsETuCvZvHQmyJy5Ee
+ nOrsugCGLBF2r+x40cuX3IGtCeyqe6uQNXff3vSjEoEB6x6Rlegakae7w
+ EHSheH+Jyt9V3FnLfUS2wvLQhCq/vTc2BNyezxRpbBL55naNJDvvvmpFv g==;
+IronPort-SDR: qZlwLocpel+zYdEI7DQLv+dj8rFj2fvuU3OwkKdq5I86jQeZK8kn6AHilpUN6w8+Gy5RsIJRLV
+ QDhKAJBruzshUs8+bLk77r6V5nbUzdtSLbxmnvVHLhmT+IoKLQIY8lrdP7kkw8OsD7ysbbya0r
+ 08ru6loI9YKgYDKxrgesJ+kbtlId+WAh9izCx3vFWLlt9aaFAqFdQGRATaydA9/XBjM68e++R0
+ 2gzRs+U6qQ3XCHaMAcQg3i1s5XHtjbrONb20/qmwIVTBBnGtAlwuJyLsMrN2JApcyzHXs4yso5
+ XWo=
+X-IronPort-AV: E=Sophos;i="5.73,334,1583164800"; d="scan'208";a="245342953"
+Received: from mail-co1nam11lp2173.outbound.protection.outlook.com (HELO
+ NAM11-CO1-obe.outbound.protection.outlook.com) ([104.47.56.173])
+ by ob1.hgst.iphmx.com with ESMTP; 30 Apr 2020 15:44:46 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=X5WT1xSjPuHiRJOc9dp7M3yHE5nD9d7LGK5OgkmWkmhPpWPwOCUVLORG+TTVGrYx7CY0QOYFvX7yB8Aexrto7W+9wrHFJFM3q2ERklK9cATWIW8539lWdJkRpqa1zOLZMUpmmwoFNRK1hZ9aXcEGQMRYtbCZ4Dsrv8GgvNNg0m4ya+jvZkhsDDHxVyJeB3DH2kJcq2ucner89mLkYVy9dJQPmT5DTxVN/TYmVGqMB4rrcodTHiDac2Zct2OlB1z7tiHOkXu0prC2KokboPuqph+XOIdKjntAlQ308OS/lV+scf7zH/PSBegFxsHw7ul1x7WqTzQmX6/Q/b2dFYvnbQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=G062Cwk5QU0GnDIYwWhXQ1/tjyK4hwlKsoaWJILACDA=;
+ b=M2rEpIg1S9o/cJbqwbXVYgjzQnfQ8SJBRW21+aJhccDsrj8mfltKEaTB/vZtoKoF+4rllk1EVela0C8ZYoEXgSD0ZD8GkVxlMvWOcaEWRNW/hxwKVeWuexRWi7t6qGz5WoDGuOkj2g+pwt79efkrWNEUvecXlP8Xm9UN05L77WtZ4t+yubW2VKvMw//uUSG8ngyf/ju6zyz9hsxhz8bZgb/gg8xmA3U3UnSxr6vDg6k7yDJWUd58oeClkfIzR+5ZDg/g0VJ6z+rqyV3/6LrrbYt1VvMr8THo7YcXpd+c3YjXc5QH1s6FJV/7oJxOCRLjJarOJzPupzJgLzRWfoALzg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=G062Cwk5QU0GnDIYwWhXQ1/tjyK4hwlKsoaWJILACDA=;
+ b=h+RiG8srO7JZRnO1K0Kkogt2nw+45MUv6ZD/d0mNKrj8oxPPyytHUG7VQKAAe6skYlBYAHGN9OGfv8EJRgHTBtEHrXG0YWIxfmDbCxxIgn5Scm1pBVTNHkSVRMWRK9lKzLgrsgyFK7LrvfMBSNPRpBC+MVP4D4/9GKLbK0sqvxA=
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com (2603:10b6:a03:14::14)
+ by BYAPR04MB5400.namprd04.prod.outlook.com (2603:10b6:a03:cb::28)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Thu, 30 Apr
+ 2020 07:44:44 +0000
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1]) by BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1%6]) with mapi id 15.20.2958.019; Thu, 30 Apr 2020
+ 07:44:44 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v2 1/5] scsi: ufs: allow legacy UFS devices to enable
+ WriteBooster
+Thread-Topic: [PATCH v2 1/5] scsi: ufs: allow legacy UFS devices to enable
+ WriteBooster
+Thread-Index: AQHWHi34Hoh3MU907kyUtpkKOgDgW6iRSO9Q
+Date: Thu, 30 Apr 2020 07:44:44 +0000
+Message-ID: <BYAPR04MB4629B87143D7BD7693141D39FCAA0@BYAPR04MB4629.namprd04.prod.outlook.com>
+References: <20200429135610.23750-1-stanley.chu@mediatek.com>
+ <20200429135610.23750-2-stanley.chu@mediatek.com>
+In-Reply-To: <20200429135610.23750-2-stanley.chu@mediatek.com>
+Accept-Language: en-US
 Content-Language: en-US
-X-Originating-IP: [10.75.127.45]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-04-30_02:2020-04-30,
- 2020-04-30 signatures=0
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: fb71eb94-5929-40ab-d267-08d7ecda59bc
+x-ms-traffictypediagnostic: BYAPR04MB5400:
+x-microsoft-antispam-prvs: <BYAPR04MB540039BE08BE8AC42D4829E4FCAA0@BYAPR04MB5400.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0389EDA07F
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR04MB4629.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39860400002)(376002)(346002)(136003)(366004)(396003)(66556008)(7696005)(478600001)(9686003)(55016002)(186003)(8936002)(316002)(6506007)(110136005)(7416002)(26005)(54906003)(4744005)(86362001)(33656002)(64756008)(66446008)(2906002)(8676002)(66946007)(5660300002)(76116006)(4326008)(66476007)(52536014)(71200400001);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: u/xhfbRD/0jajxKw7N1aVpTe7RJ0Lpr+HueiojA0mHja12h/18ks/yFq3HDg1fJ4vo0UKn7IQkqMGSE8dBwvgk5HYiAIKlOqIxV9jxLunS2Y31LVvYnYt7HX3Pd9fbL7fFACtVZ/CROd/Ar7HiF81eQw6RrtPILKUm6/uoxSkAlO8bCfEl4O7QZB9eeRDRsaZiBYj1BznzXQ56uVpPn8dxgT3DJfZTmAqvvI3Mis26XtR30N5l2uxsOAyUs1nsMeAkL3C7jl2G+hW88o1W3mArNHS4eiRbtXwnnYpJsKumdkGfJIECYDdqkQbl6A+fqno3WO5+qjtWuHTOjb2Y+TLtrhD5NkhW0btHbWolOMt5caSXpoaGl2dTtaN8vSw5h2TslLZTjn91Am6hEoTZtrzvlCn4ddmUnA932S3Dn6VSksYW7uBVxva4ZN6z3Q72xr
+x-ms-exchange-antispam-messagedata: xRXZbVt2/C+BZhg7RPNxGd9gsphyyQwU/W0b0objQj3sfrniwidZBODF7MwpO9rHCIZEBtHc8iSjhaNi3eL7vVyDQNNZU5ZYEcd9AQgqJ5wgW8Oo9qOruXsvymKh/XcgoG2eIqd7VuEPqOi29h48r8TcUni9GJX5mbkhDyOyQhcw/pmNDBXKlUUEL/BL1yXaZCEwHbO+v0cmu4hRCUE2RsapxeENXU+ArQZu5xvMxWY5ZcYjXIPz9C5OXY1rmVKIif1ylq3+3kRN3pct/Dmf9eoLs7ZbW/mM0D4AIcffJWYD8mHmAkDuW0I2Dr8ESbaP5oecVc3A4UN1fW5ZtlNE5tYpkHVahj9WmXxVPZOVOmF91kOZX0h4eCuuqWadz5m/MQI/23Qaiax4jDcc2H4UT3OewSyxOawKjBGWucro2TFbR+sfdlcQH7cONcT+wFUlStzI3ZVrM/VfqHLyjRpoSQaYGUqn69jVqYGpwijvyELUKsOWkq/g5emP/uerF896I3cUqpXwTWo+ldDA/9aW/CzxlaJNjEvdkMe357wgx3Prg35gvJXro02TkjEET4pErqho/innqT3R89gwLr5jG2ko+KIzepefIEaizYxw5OG3fCLepOXAI1FVfuIPFwWNBSo8ng0dp+qbQEoLTNbRy2e6x9ExYzBPuAPgRmDhbzeKcfpZ2XstsRULdw/8huThAt6BcepLfJ5Po3653DBnS/xS/eD7MXpji5V0Wq+TZSXiLiCKATImjiHTQk1IFqPn4RnwHa+SdSxhGpHV/vnYmy74Kry10La9wSXY6uL5WNI=
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fb71eb94-5929-40ab-d267-08d7ecda59bc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Apr 2020 07:44:44.7727 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 8I7C21HjbXvoA5J4J4JMZzc6lxZ2mp1sRwXRFAVcNXOAXKGkZ7FnyUX33n1NWIhcMsJ9VcTxkumOcq+IIyCZBw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB5400
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_003924_782797_68206583 
-X-CRM114-Status: GOOD (  15.68  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200430_004449_358524_6F6B3B42 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.141.245 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,57 +147,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Patrick Delaunay <patrick.delaunay@st.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- Patrice Chotard <patrice.chotard@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA0LzI5LzIwIDY6NDAgUE0sIE1hcmVrIFZhc3V0IHdyb3RlOgo+IE9uIDQvMjkvMjAgOTo1
-NiBBTSwgQWxleGFuZHJlIFRvcmd1ZSB3cm90ZToKPj4gSGkgTWFyZWsKPj4KPj4gT24gNC8yMi8y
-MCAxMjo0NSBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+PiBUaGUgQVY5NiBib2FyZCBkZXZpY2Ug
-dHJlZSBpcyBjb21wbGV0ZWx5IGJyb2tlbiBhbmQgZG9lcyBub3QgbWF0Y2ggdGhlCj4+PiBoYXJk
-d2FyZS4gVGhpcyBzZXJpZXMgZml4ZXMgaXQgdXAuCj4+Pgo+Pj4gTWFyZWsgVmFzdXQgKDIwKToK
-Pj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogUmVwYWlyIFBNSUMgY29uZmlndXJhdGlvbiBvbiBB
-Vjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3RtMzI6IFJlcGFpciBQTUlDIGludGVycnVwdCBvbiBB
-Vjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBl
-dGhlcm5ldCBSR01JSQo+Pj4gIMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBSZXBhaXIgZXRoZXJuZXQg
-b3BlcmF0aW9uIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIG1pc3Npbmcg
-ZXRoZXJuZXQgUEhZIHJlc2V0IG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRk
-IG1pc3NpbmcgZXRoZXJuZXQgUEhZIHNrZXdzIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBz
-dG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIFNETU1DIHBpbnMKPj4+ICDCoMKgIEFSTTog
-ZHRzOiBzdG0zMjogUmVwYWlyIFNETU1DMSBvcGVyYXRpb24gb24gQVY5Ngo+Pj4gIMKgwqAgQVJN
-OiBkdHM6IHN0bTMyOiBBZGQgZU1NQyBhdHRhY2hlZCB0byBTRE1NQzIgb24gQVY5Ngo+Pj4gIMKg
-wqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgUVNQSSBOT1Igb24gQVY5Ngo+Pj4gIMKgwqAgQVJNOiBk
-dHM6IHN0bTMyOiBBZGQgY29uZmlndXJhdGlvbiBFRVBST00gb24gQVY5Ngo+Pj4gIMKgwqAgQVJN
-OiBkdHM6IHN0bTMyOiBFbmFibGUgV2lGaSBvbiBBVjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3Rt
-MzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBVU0FSVDIgcGlucwo+Pj4gIMKgwqAgQVJNOiBk
-dHM6IHN0bTMyOiBFbmFibGUgQmx1ZXRvb3RoIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBz
-dG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIExUREMgcGlucwo+Pj4gIMKgwqAgQVJNOiBk
-dHM6IHN0bTMyOiBBZGQgYmluZGluZ3MgZm9yIEhETUkgdmlkZW8gb24gQVY5Ngo+Pj4gIMKgwqAg
-QVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11eCBmb3IgU0FJMiBwaW5zCj4+PiAg
-wqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBiaW5kaW5ncyBmb3IgYXVkaW8gb24gQVY5Ngo+Pj4g
-IMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgYmluZGluZ3MgZm9yIFVTQiBvbiBBVjk2Cj4+PiAg
-wqDCoCBBUk06IGR0czogc3RtMzI6IFJlbmFtZSBMRURzIHRvIG1hdGNoIHNpbGtzY3JlZW4gb24g
-QVY5Ngo+Pj4KPj4+ICDCoCBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTUtcGluY3RybC5kdHNp
-wqDCoMKgIHwgMjgwICsrKysrKysrKysrKysrKysrCj4+PiAgwqAgYXJjaC9hcm0vYm9vdC9kdHMv
-c3RtMzJtcDE1N2EtYXZlbmdlcjk2LmR0cyB8IDMyNCArKysrKysrKysrKysrKysrKystLQo+Pj4g
-IMKgIDIgZmlsZXMgY2hhbmdlZCwgNTcyIGluc2VydGlvbnMoKyksIDMyIGRlbGV0aW9ucygtKQo+
-Pj4KPj4+IENjOiBBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbT4KPj4+
-IENjOiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5hcm8u
-b3JnPgo+Pj4gQ2M6IE1heGltZSBDb3F1ZWxpbiA8bWNvcXVlbGluLnN0bTMyQGdtYWlsLmNvbT4K
-Pj4+IENjOiBQYXRyaWNlIENob3RhcmQgPHBhdHJpY2UuY2hvdGFyZEBzdC5jb20+Cj4+PiBDYzog
-UGF0cmljayBEZWxhdW5heSA8cGF0cmljay5kZWxhdW5heUBzdC5jb20+Cj4+PiBDYzogbGludXgt
-c3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbQo+Pj4gVG86IGxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+Pj4KPj4KPj4gU2VyaWVzIGFwcGxpZWQgb24gc3RtMzIt
-bmV4dC4KPiAKPiBUaGFua3MuIEkgc2VudCBvdXQgdGhlIHJlc3QsIHdoaWNoIHNob3VsZCBiZSB2
-ZXJ5IG11Y2ggYWxsIHRoZXJlIGlzIGZvcgo+IG5vdyA6KSA+CgpJIGhvcGUgOikuIEkgaGFkIGEg
-bG9vayBvbiBpdCBhbmQgaXQgc291bmRzIGdvb2QuIEknbGwgbWVyZ2UgaXQgbmV4dCB3ZWVrLgoK
-cmVnYXJkcwphbGV4CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+Hi Stanley,
+ 
+> 
+> WriteBooster feature may be supported by some legacy UFS devices
+> (i.e., < 3.1) by upgrading firmware.
+> 
+> To enable WriteBooster feature in such devices, relax the entrance
+> condition of ufshcd_wb_probe() to allow host driver to check those
+> devices' WriteBooster capability.
+> 
+> WriteBooster feature can be available if below both conditions are
+> satisfied,
+> 
+> 1. Device descriptor has dExtendedUFSFeaturesSupport field.
+> 2. WriteBooster support is specified in above field.
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> Reviewed-by: Bean Huo <beanhuo@micron.com>
+WB was first introduced as part of UFS3.1, and lately as part of UFS2.2.
+Any non-standard behavior should be classified as a quirk.
+
+Thanks,
+Avri
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
