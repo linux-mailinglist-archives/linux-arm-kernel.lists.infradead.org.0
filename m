@@ -2,128 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E04C11BF5DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:51:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A4A01BF5E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:53:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=e6WhIBB+u1PH6xU0TXg/JSYNgSsUKfYeKtladnZr6FU=; b=N+HQomCrysaSe0
-	sYH+DhcYql8umgSbVxOTBIktdbMIdQGh9zVvUG/ncYvNj4PckH70FOF/u5iK8HxImU3LZKPwV1xrL
-	ZPwoJ2OyPPJ42UJtbH4u5Nn7EMk3luKfnyp5QOQYNo89PLZh5AV/zixq1sdtOyj6uK0Xvpnr1YrxA
-	Vr537CYXVmN1Hm/rRnzUI/JczSyZ/wPrLVxud4sF52zNQ97dBWR7oH0gD6VXbhDefsdVyDRIkIzsV
-	4sz2K4MziYEDE3+itrsX0tBzxb3N+OqlliLm75Llmz0aV6IwtmGsVeIPO5CofOCrRbIGM37Uxei8g
-	eDl90wbDCDSUVnEcfXzQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SVNVqelXfm4taDDl3dSLyw0di8twwac2b2uIUMVuvbw=; b=Qo/BrfWV0OwlIb
+	TN1LgEtbRXFFARaWMUkuxo4aO9QB1EXiBObDAEtajvZFgAIAuY5tcchSfOo/niskkH6TXtHtHhV7z
+	BTRhQQTNaDHz83DPI55ttBiAgqhw7WOf70YXNNE8OPchgw9rszOcyNF+4lDy55cUBY2ixYQTNgBhO
+	VtMCfgD4w1/zA+vLAB28zodDwLdEVmq24G64w8zu0akWSh5bnlyXUXZCQC8c1KEE9/Uy8BcDWO0Fc
+	/NkpqTuXoGFrllCw2ymPzLsKfcQdUl9on0MzzQpOXWls1A3UyOtAyi21EUBSHhGFBY8QZrbs6+vDC
+	3pl1ucqOWi5cN/4Vq0qA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU6mS-0008Ni-6P; Thu, 30 Apr 2020 10:51:00 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1jU6p7-0000Ws-J8; Thu, 30 Apr 2020 10:53:45 +0000
+Received: from kernel.crashing.org ([76.164.61.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU6mI-0008NC-Vk
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:50:52 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200430105048euoutp02b3b24bed1527b6f2b1fba103c12b4e4e~Kk12WgOtD1172111721euoutp02r
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 10:50:48 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20200430105048euoutp02b3b24bed1527b6f2b1fba103c12b4e4e~Kk12WgOtD1172111721euoutp02r
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1588243848;
- bh=veBGnH7xgInKo9nRc/IuDX3Fs+zFRVjRLtRoRyzy6II=;
- h=From:To:Cc:Subject:Date:References:From;
- b=A8RjApn9R7em9FqaWPbaMMP3dF0E3xVyI2rQpIIO8BfBrQia0y4v8raXjeS1dijPD
- ZbLKaf5/t52POrvVplGh5cCLc5pBhN9Ka1lyfQ0unx40VH/Li+xuzr0fQrGl3C3O7N
- zyOX0NqbAm3NMJ5Sv03q6cRS3O84yhZrXZuWIpws=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200430105048eucas1p1daf75c97dab178dd9e3aa46b483783f0~Kk12JRnhf2501225012eucas1p14;
- Thu, 30 Apr 2020 10:50:48 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 8C.D9.60698.88DAAAE5; Thu, 30
- Apr 2020 11:50:48 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203~Kk110v5C80536305363eucas1p1s;
- Thu, 30 Apr 2020 10:50:48 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200430105048eusmtrp21306ce46205c837f07da8a3b9b5f96e6~Kk110Ld3e2294322943eusmtrp28;
- Thu, 30 Apr 2020 10:50:48 +0000 (GMT)
-X-AuditID: cbfec7f5-a0fff7000001ed1a-01-5eaaad8864d0
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id F7.D0.08375.88DAAAE5; Thu, 30
- Apr 2020 11:50:48 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200430105048eusmtip1b55b2459d9da86b9448bfb269235bd91~Kk11q5cyB0912709127eusmtip1D;
- Thu, 30 Apr 2020 10:50:48 +0000 (GMT)
-From: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon
- <will.deacon@arm.com>, linux-arm-kernel@lists.infradead.org,
+ id 1jU6ov-0000VU-8M
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 10:53:34 +0000
+Received: from localhost (gate.crashing.org [63.228.1.57])
+ (authenticated bits=0)
+ by kernel.crashing.org (8.14.7/8.14.7) with ESMTP id 03UAqvDf025142
+ (version=TLSv1/SSLv3 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
+ Thu, 30 Apr 2020 05:53:01 -0500
+Message-ID: <9b5fbaf29adccc5abb66c3d39ecc92a2d5f10d10.camel@kernel.crashing.org>
+Subject: Re: [PATCH v0 linux master] i2c/busses: Avoid i2c interrupt status
+ clear race condition.
+From: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+To: ryan_chen <ryan_chen@aspeedtech.com>, Brendan Higgins
+ <brendanhiggins@google.com>, Joel Stanley <joel@jms.id.au>, Andrew Jeffery
+ <andrew@aj.id.au>, linux-i2c@vger.kernel.org, openbmc@lists.ozlabs.org,
+ linux-arm-kernel@lists.infradead.org, linux-aspeed@lists.ozlabs.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: kexec_file: print appropriate variable
-Date: Thu, 30 Apr 2020 12:50:34 +0200
-Message-Id: <20200430105034.17513-1-l.stelmach@samsung.com>
-X-Mailer: git-send-email 2.25.0
-MIME-Version: 1.0
-Organization: Samsung R&D Institute Poland
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFuplleLIzCtJLcpLzFFi42LZduznOd2OtaviDObvlLd4v6yH0eLmoRWM
- FpseX2O1uLxrDpvFy48nWBxYPdbMW8PosXlJvUffllWMHp83yQWwRHHZpKTmZJalFunbJXBl
- 7Ljwmr3gDmtF27Q3jA2MH1m6GDk5JARMJOZe2wZkc3EICaxglDj/7QWU84VR4vHtG+wgVUIC
- nxklVm81g+nonXyPFaJoOaNE28VdzBDOc0aJrVNmMoFUsQk4SvQvPQFWJSIwg1Fi2sKJYKOY
- BewlJs76zwZiCwvYSezo7AOzWQRUJa6vfg7WzCtgLTH/xB1miHXyErMbT7NBxAUlTs58AnY4
- v4CWxJqm6ywQM+UlmrfOBrtCQuA3m8S1VbvZIJpdJLbMa2KEsIUlXh3fwg5hy0j83zkfaBkH
- kF0vMXmSGURvD6PEtjk/oCFjLXHn3C82kBpmAU2J9bv0IcKOEif71rNAtPJJ3HgrCHECn8Sk
- bdOZIcK8Eh1tQhDVKhLr+vdADZSS6H21ghGixEPi3NLqCYyKs5D8NQvJL7MQ1i5gZF7FKJ5a
- WpybnlpsnJdarlecmFtcmpeul5yfu4kRmEhO/zv+dQfjvj9JhxgFOBiVeHgnpK+ME2JNLCuu
- zD3EKMHBrCTC+zB2VZwQb0piZVVqUX58UWlOavEhRmkOFiVxXuNFL2OFBNITS1KzU1MLUotg
- skwcnFINjNP6H/EV8Tg2TYyZlJmk1qy0wGzJvIa5H6efv7g8NHX+jok1v0SNVdeIrHYvXv4g
- q2SG1UWLHvfSkuVbV4r4a+c4TGX9cvzXq/eB12on/1uVo6hupF5YMuVW1i/ZiyZ3PNl3FZ53
- 3cxQtU0rbk/p3CUPlrY6xq111Itbtk4/+W8sk9pWvk62E0osxRmJhlrMRcWJAI+rcG0gAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpnkeLIzCtJLcpLzFFi42I5/e/4Xd2OtaviDBYv4rR4v6yH0eLmoRWM
- FpseX2O1uLxrDpvFy48nWBxYPdbMW8PosXlJvUffllWMHp83yQWwROnZFOWXlqQqZOQXl9gq
- RRtaGOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehl7Ljwmr3gDmtF27Q3jA2MH1m6
- GDk5JARMJHon32PtYuTiEBJYyihxtGMyUIIDKCElsXJuOkSNsMSfa11sEDVPGSVuHFnFBpJg
- E3CU6F96AqxZRGAWo8ScnbeZQBLMAvYSE2f9BysSFrCT2NHZB2azCKhKXF/9HKyGV8BaYv6J
- O8wQG+QlZjeeZoOIC0qcnPkE7AhmAXWJ9fOEQML8AloSa5qus0CMl5do3jqbeQIj0FKEjlkI
- HbOQVC1gZF7FKJJaWpybnltsqFecmFtcmpeul5yfu4kRGAnbjv3cvIPx0sbgQ4wCHIxKPLwW
- qSvjhFgTy4orcw8xSnAwK4nwPoxdFSfEm5JYWZValB9fVJqTWnyI0RTonYnMUqLJ+cAozSuJ
- NzQ1NLewNDQ3Njc2s1AS5+0QOBgjJJCeWJKanZpakFoE08fEwSnVwKii7fRjqdSlSbU/lUTU
- nVq5eWxevv2Z4XphgtnqfumUJcJ/Px9Pc9QSfr3SaWZhipoP648nm7q0Ir/pM9yfZWPg4L39
- /dzXO8QDSu+uyYow1xFybWCYrfnJ83uNdO7rY3FPTjo+iNvwNKWEOa9P/JD2x8UaWRe2CEab
- Ojjdeqyxfet/p9rvr5RYijMSDbWYi4oTAbUcTMiaAgAA
-X-CMS-MailID: 20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203
-X-Msg-Generator: CA
-X-RootMTR: 20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203
-References: <CGME20200430105048eucas1p129975fe3fd84c4fd2b14117e3474b203@eucas1p1.samsung.com>
+Date: Thu, 30 Apr 2020 20:52:56 +1000
+In-Reply-To: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
+References: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.2 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_035051_224034_1316B160 
-X-CRM114-Status: GOOD (  12.85  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200430_035333_485734_DD468618 
+X-CRM114-Status: GOOD (  13.03  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.12 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_SPF_HELO_PERMERROR   SPF: test of HELO record failed (permerror)
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -135,25 +63,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rml4ZXM6IDQzMTIwNTc2ODE5MjkgKCJhcm02NDoga2V4ZWNfZmlsZTogbG9hZCBpbml0cmQgYW5k
-IGRldmljZS10cmVlIikKU2lnbmVkLW9mZi1ieTogxYF1a2FzeiBTdGVsbWFjaCA8bC5zdGVsbWFj
-aEBzYW1zdW5nLmNvbT4KLS0tCiBhcmNoL2FybTY0L2tlcm5lbC9tYWNoaW5lX2tleGVjX2ZpbGUu
-YyB8IDIgKy0KIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQoK
-ZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva2VybmVsL21hY2hpbmVfa2V4ZWNfZmlsZS5jIGIvYXJj
-aC9hcm02NC9rZXJuZWwvbWFjaGluZV9rZXhlY19maWxlLmMKaW5kZXggYjQwYzNiMGRlZjkyLi4y
-Nzc2YmRhYTgzYTUgMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQva2VybmVsL21hY2hpbmVfa2V4ZWNf
-ZmlsZS5jCisrKyBiL2FyY2gvYXJtNjQva2VybmVsL21hY2hpbmVfa2V4ZWNfZmlsZS5jCkBAIC0z
-MzIsNyArMzMyLDcgQEAgaW50IGxvYWRfb3RoZXJfc2VnbWVudHMoc3RydWN0IGtpbWFnZSAqaW1h
-Z2UsCiAJaW1hZ2UtPmFyY2guZHRiX21lbSA9IGtidWYubWVtOwogCiAJcHJfZGVidWcoIkxvYWRl
-ZCBkdGIgYXQgMHglbHggYnVmc3o9MHglbHggbWVtc3o9MHglbHhcbiIsCi0JCQlrYnVmLm1lbSwg
-ZHRiX2xlbiwgZHRiX2xlbik7CisJCQlrYnVmLm1lbSwgZHRiX2xlbiwga2J1Zi5tZW1zeik7CiAK
-IAlyZXR1cm4gMDsKIAotLSAKMi4yNS4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Wed, 2020-04-29 at 11:37 +0800, ryan_chen wrote:
+> In AST2600 there have a slow peripheral bus between CPU
+>  and i2c controller.
+> Therefore GIC i2c interrupt status clear have delay timing,
+> when CPU issue write clear i2c controller interrupt status.
+> To avoid this issue, the driver need have read after write
+>  clear at i2c ISR.
+> 
+> Signed-off-by: ryan_chen <ryan_chen@aspeedtech.com>
+
+Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+--
+
+
+> ---
+>  drivers/i2c/busses/i2c-aspeed.c | 5 ++++-
+>  1 file changed, 4 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-aspeed.c
+> b/drivers/i2c/busses/i2c-aspeed.c
+> index 07c1993274c5..f51702d86a90 100644
+> --- a/drivers/i2c/busses/i2c-aspeed.c
+> +++ b/drivers/i2c/busses/i2c-aspeed.c
+> @@ -603,6 +603,7 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq,
+> void *dev_id)
+>  	/* Ack all interrupts except for Rx done */
+>  	writel(irq_received & ~ASPEED_I2CD_INTR_RX_DONE,
+>  	       bus->base + ASPEED_I2C_INTR_STS_REG);
+> +	readl(bus->base + ASPEED_I2C_INTR_STS_REG);
+>  	irq_remaining = irq_received;
+>  
+>  #if IS_ENABLED(CONFIG_I2C_SLAVE)
+> @@ -645,9 +646,11 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq,
+> void *dev_id)
+>  			irq_received, irq_handled);
+>  
+>  	/* Ack Rx done */
+> -	if (irq_received & ASPEED_I2CD_INTR_RX_DONE)
+> +	if (irq_received & ASPEED_I2CD_INTR_RX_DONE) {
+>  		writel(ASPEED_I2CD_INTR_RX_DONE,
+>  		       bus->base + ASPEED_I2C_INTR_STS_REG);
+> +		readl(bus->base + ASPEED_I2C_INTR_STS_REG);
+> +	}
+>  	spin_unlock(&bus->lock);
+>  	return irq_remaining ? IRQ_NONE : IRQ_HANDLED;
+>  }
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
