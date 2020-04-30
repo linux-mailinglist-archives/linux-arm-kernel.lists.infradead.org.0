@@ -2,86 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A4F61BFD2D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:11:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C31A1BFDB0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:17:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KjH7C6mUdmWlXdqsGq/NGmcNiVzqbESFkFVnbV7FzuQ=; b=OuJTuyC7D+h1/0
-	4UQYzmDOGnJRRdZchnXc32zPmQ/LjIvd6EDoG+ZhD5Buyq9zH1r4DhOBA0E8JkN8cCRYU5z/e06y3
-	YvqrDY2J9xmumzZrtDQpyU58nQziZ3ZX2GjuyzT2/fs6nwRnDY8waLk1AjcUM4Cw6ylPKBOKp14Mk
-	mA7JQyUpc7YnuRADRGOHEURQ1IB3n4QYWFLpotdPoZnf9l9gksmhUud/z/LFEfgvIeIRQkT4nX/RJ
-	GdGz+4ju7xufiNVOh0Jlo3bFmexMnhM4wOQkUEEykvV+hs83QCNqtusglpEZUb4kbC+VbIfsG7GKO
-	iW3YRLVluSgxRICPaehA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=zed0cU3qiljCYkBu2yuikmALL6DhTVvsfR4ItFb7Oek=; b=ddabVdkx4vmpZrVq7ArKhwL62
+	7SHowP/EUlauuRAtQwL2SuX7j+rWUXIsvuOmlRTvGNy3viY9dAOsxJZKaJFua0vG9RJwlK1j2H36F
+	zPQckuuzDpqQWSH7DuT5u0bOxT5G/aBLmX0Dt9p0W5P0vOLmRLOLePtTQavYl4+AxuIUf23pxguLu
+	rvEnFuFGKIDPmzHCDauwtODPW2pGcNitDceVuGz9XRC0ulH20FEMv9PftIEUTSMhPm4HaBhBl7Sn2
+	yoCg+YRfbNL3/070gl5DGBtPmBQpVdxqJBgvtYHy/sPQpeJ0hzJ3wFSkXiWgTHax2R+N7QFc+brNM
+	zJls5W1GQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9tt-0004V8-Rc; Thu, 30 Apr 2020 14:10:53 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9tc-0004T7-2z; Thu, 30 Apr 2020 14:10:38 +0000
-Received: by mail-oi1-f194.google.com with SMTP id t199so5319612oif.7;
- Thu, 30 Apr 2020 07:10:36 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=UgTzeSieOrk7bgrXOEEKGS4vqDfJdjTM5De/Mq9VpvA=;
- b=aGZR5mcut/baWDjEh6S/x4WJD23SJDT83E2bP4iv/kJ50XsO7PoAJ14MZOv3zgo5xG
- KtBg2G+GDE6QRJoEIbhOr9iHjLd7kI9M1A6fZ+DdOqOrEKsGXvDk08Sy78/l6/zs4HQP
- iAKSCRHPfKu84HBLPG2P7HyS86ZnQIrlXXzaazpt8z0+/1+Ay6j4mR7lse6++UmCuM4Y
- /ZCZswVHH/sSzfhpOEhb6zG1GHVZBxngY2aV9/q/bZLilDV8ngvj6VGmstYyl2ON05aL
- gKClUiwQSnEbSE7RB3uh88Si1e/3nA3PSFmVBpb53avXLg7M8J/lMibUIZThKvqsNXSO
- oG+Q==
-X-Gm-Message-State: AGi0PuZKgSabpOmgWuWwOlzSGq2yM+kaKkZStxdUOIVDvSYeGsMMG6zw
- 4TXCrnZi8xorqrFvkQyRIw==
-X-Google-Smtp-Source: APiQypLd3ij132amZqmzb1pb6Pu49V28sjYMfyg7bc6xj1bapelOBMaB7UdhZBZ0xlBAKCAGhjm7Iw==
-X-Received: by 2002:aca:6546:: with SMTP id j6mr29159oiw.155.1588255835409;
- Thu, 30 Apr 2020 07:10:35 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w24sm1346250oor.47.2020.04.30.07.10.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 07:10:34 -0700 (PDT)
-Received: (nullmailer pid 5452 invoked by uid 1000);
- Thu, 30 Apr 2020 14:10:33 -0000
-Date: Thu, 30 Apr 2020 09:10:33 -0500
-From: Rob Herring <robh@kernel.org>
-To: Christian Hewitt <christianshewitt@gmail.com>
-Subject: Re: [PATCH 3/4] dt-bindings: arm: amlogic: add support for the
- Beelink GT-King Pro
-Message-ID: <20200430141033.GA5382@bogus>
-References: <20200419055322.16138-1-christianshewitt@gmail.com>
- <20200419055322.16138-4-christianshewitt@gmail.com>
+	id 1jUA0C-0000To-0T; Thu, 30 Apr 2020 14:17:24 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jU9zu-0000ON-CH
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:17:08 +0000
+Received: from localhost (p5486CDDB.dip0.t-ipconnect.de [84.134.205.219])
+ by pokefinder.org (Postfix) with ESMTPSA id 865B62C08FC;
+ Thu, 30 Apr 2020 16:17:01 +0200 (CEST)
+Date: Thu, 30 Apr 2020 16:17:01 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: ryan_chen <ryan_chen@aspeedtech.com>
+Subject: Re: [PATCH v0 linux master] i2c/busses: Avoid i2c interrupt status
+ clear race condition.
+Message-ID: <20200430141701.GC3355@ninjato>
+References: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200419055322.16138-4-christianshewitt@gmail.com>
+In-Reply-To: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_071036_125664_556591B3 
-X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-CacheID: sfid-20200430_071706_582485_D5405CEA 
+X-CRM114-Status: UNSURE (   7.48  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,28 +58,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Kevin Hilman <khilman@baylibre.com>,
- Christian Hewitt <christianshewitt@gmail.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
+ Brendan Higgins <brendanhiggins@google.com>, linux-kernel@vger.kernel.org,
+ Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org,
+ linux-i2c@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============0300273201972299178=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 19 Apr 2020 05:53:21 +0000, Christian Hewitt wrote:
-> The Shenzen AZW (Beelink) GT-King Pro is based on the Amlogic W400 reference
-> board with an S922X chip.
-> 
-> Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
-> ---
->  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
->  1 file changed, 1 insertion(+)
-> 
 
-Acked-by: Rob Herring <robh@kernel.org>
+--===============0300273201972299178==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="1SQmhf2mF2YjsYvc"
+Content-Disposition: inline
+
+
+--1SQmhf2mF2YjsYvc
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, Apr 29, 2020 at 11:37:37AM +0800, ryan_chen wrote:
+> In AST2600 there have a slow peripheral bus between CPU
+>  and i2c controller.
+> Therefore GIC i2c interrupt status clear have delay timing,
+> when CPU issue write clear i2c controller interrupt status.
+> To avoid this issue, the driver need have read after write
+>  clear at i2c ISR.
+>=20
+> Signed-off-by: ryan_chen <ryan_chen@aspeedtech.com>
+
+Applied to for-current with a Fixes tag, thanks! Please, try to add one
+next time and please also check how the subsystem formats the $subject
+line.
+
+
+--1SQmhf2mF2YjsYvc
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6q3d0ACgkQFA3kzBSg
+KbaoUQ//QVc//2TXd44pz2LgsMx+qUkEgZNrrJKgAGlXr1KGtLR1Km4XWzGzEutz
+cQCYsZtGWucGPt93oJeSXYx9FWagTYPrR47XbX0U5gCQyVY7XtQc4Wj9LXFOgfi4
+c/QQVEAtO38HiNGcWumxxc8Td57nbEuvDfMQltBqsuNXeo4BDLl39xvbzFIWHVDE
+9D4Re0pWNf4Y4sYFB4kR8hHdaQkYfki1jE0j99sXskuC6pMcVzSMKUIzrISs4BAe
+LUCDcrSFokr1W0eqBT6uFvHk4SErXjY0OH+jWxugBXgVliAvSER22FBg2kwqvHC3
+fH9CGDi7Ns3RdOoW7d9bTLiHgeaRLBbmTUyuzzKOgXrBJqBnT0AucMfa+X6Is7vC
+DS4ojD5tVuP3cMQb+sqVxufPIDPVGRXd7Ee2upMtkNNrd9U6W1cun8jPto6hg5Zu
+G/llTNEsGQaYXrSNXJ6mO3p8BL2EhhvSyaOCItGWKvzGudpNCIR47bMiobK1mZwM
+F/tkz9xTiXnNipwRMmoQwcon/XoDdVcMs6VoVRIdKk0llGks5kfuZA+zTqc2Kv+h
+UvuYl+dTFHH9QEbVN/guogoINdM+Fn0+NMaZWcg7D09tUxRFbbRB/eoyD5q8ms7n
+O/NsT911s4Uw1axbcH/+iF4Ys1dnQlRuDglr/xiqogiibdbkfTY=
+=f9co
+-----END PGP SIGNATURE-----
+
+--1SQmhf2mF2YjsYvc--
+
+
+--===============0300273201972299178==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0300273201972299178==--
+
