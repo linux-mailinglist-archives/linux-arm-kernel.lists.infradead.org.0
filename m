@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C07BD1C0870
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 22:44:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20E7F1C0875
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 22:45:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
 	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=KQiu+GjclSVVJwmTyY0A+bbkn1E75ajjV03qwDAHH+Y=; b=G0siLZvIrpu3CE
-	B1oxgYp426V68rx7wFTlh+kwW/6FSwku6UhG/tebp4eBsm/Hm6HWizgQ9D6GwpBdQanhFv9hJyFXf
-	tnc07t30/MZPB3vmzJdczrw9AsG+q4a/nYI4zkXvWnBt5JHLPfOyHObiWuWM//mB+css683NZ3Aep
-	FGgpzNVvFXW2r+gvrXLBkvMxBXMzTltoQuEgjS9SZSRrB4xSUpSnzFjE6lGEHBcaqutpAdDnKT2DW
-	HAaI59cc5iYm2n4B4+UtJtfcriPPTRdrtiUTBVmXp/zpnV741mqbM4r8am//M12Spsq2zz3/XbbQh
-	vk0WM/sLYi6rTfaYfTJQ==;
+	List-Owner; bh=SATWQKS5KbPe0Jd8t7dB8HuTvDnhibufoLra2e0po6w=; b=kAktpRSll8Qtbw
+	6wZl9BxQuEwWUpJsOWq0ALY0MtztaduYRPCvXQhzgFzK915eVYBOB0KxSXS6tT4KC5rUl6RGsbvkt
+	DxkcPC3XOBJkuvHIwP1N/npjyRO2qRNp1wHV3MGprSCT/lya73HanOsNb9aRhkvPqE6L8YxGMgvSG
+	DyMO9e/53owUnBNJxjUKnnKKxC5Sj3z8FIlZJDiG9lkszH0vU8TJZwYQ+qoHpaMOAVZZhYoJAc1hv
+	gpnAxd5i2nOuSTxgwP45A+mAQUomuSNpgLC2vfLUiBQfDmrdox7EeiYag9q/mX5kf1uOapc+Kfvsb
+	B1Z78ehlHNzsAzBAOc7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUG2n-00068v-AC; Thu, 30 Apr 2020 20:44:29 +0000
+	id 1jUG3S-0006fo-Dl; Thu, 30 Apr 2020 20:45:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUFyn-0003Ve-1e; Thu, 30 Apr 2020 20:40:24 +0000
+ id 1jUG1P-0005T4-6O; Thu, 30 Apr 2020 20:43:10 +0000
 Received: from localhost (mobile-166-175-184-168.mycingular.net
  [166.175.184.168])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7BFEF206C0;
- Thu, 30 Apr 2020 20:40:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B5150206C0;
+ Thu, 30 Apr 2020 20:43:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588279219;
- bh=5Snw5Ucaj8rYXrTv7rmk42pJX+ytZh64Y19B+5t8ZUU=;
+ s=default; t=1588279382;
+ bh=u75tJYVYqVgwKuxyvKak/ZmBpHgmj5uCJfAwjytROXk=;
  h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=QQEcW57aBZptdf4jpOft/n3IKmo0zDugFzHwKTWq/Y2GcQ7r1C23c5kd2fISfvG+M
- HkGzyX5fzulrTCYiTUXYSwvpM/24r4Sq7SBY9lt0Atc1ZQSDUtNVdk1hQnUJbwkYPK
- ND3uH56xSkxeZT0Bch/NYTzZtMkCULqOh0dOlS4I=
-Date: Thu, 30 Apr 2020 15:40:17 -0500
+ b=Lo/oqZaXh7vcHQFfdXlnjaGTon80H4R9d/gJ3gIDroMAlE999ZPhFGt2CAgEd0l/+
+ RhvqHzdgIGpb0FfKhafe0UqCs5Chv22vRnKMSnwtUjSdupAg1L8EyzHVSOJJt44VJt
+ KJI7OV0aIbDtt8gAcJ0q0cgaWxNy4RlP1imVGnYU=
+Date: Thu, 30 Apr 2020 15:43:00 -0500
 From: Bjorn Helgaas <helgaas@kernel.org>
 To: Jim Quinlan <james.quinlan@broadcom.com>
-Subject: Re: [PATCH 5/5] PCI: brcmstb: disable L0s component of ASPM by default
-Message-ID: <20200430204017.GA62947@bjorn-Precision-5520>
+Subject: Re: [PATCH 2/5] PCI: brcmstb: fix window register offset from 4 to 8
+Message-ID: <20200430204300.GA63206@bjorn-Precision-5520>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430185522.4116-5-james.quinlan@broadcom.com>
+In-Reply-To: <20200430185522.4116-2-james.quinlan@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_134021_280731_31AA682B 
-X-CRM114-Status: GOOD (  18.82  )
+X-CRM114-CacheID: sfid-20200430_134303_331466_2E7A8481 
+X-CRM114-Status: GOOD (  12.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -90,69 +90,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 02:55:22PM -0400, Jim Quinlan wrote:
+On Thu, Apr 30, 2020 at 02:55:19PM -0400, Jim Quinlan wrote:
 > From: Jim Quinlan <jquinlan@broadcom.com>
 > 
-> Some informal internal experiments has shown that the BrcmSTB ASPM L0s
-> savings may introduce an undesirable noise signal on some customers'
-> boards.  In addition, L0s was found lacking in realized power savings,
-> especially relative to the L1 ASPM component.  This is BrcmSTB's
-> experience and may not hold for others.  At any rate, we disable L0s
-> savings by default unless the DT node has the 'brcm,aspm-en-l0s'
-> property.
+> The oubound memory window registers were being referenced
+> with an incorrect offset.  This probably wasn't noticed
+> previously as there was likely only one such outbound window.
 
-I assume this works by writing the PCIe Link Capabilities register,
-which is read-only via the config space path used by the generic ASPM
-code, so that code thinks the device doesn't support L0s at all.
+If you repost these for any other reason:
 
-Documentation/devicetree/bindings/pci/rockchip-pcie-host.txt includes
-an "aspm-no-l0s" property.  It'd be nice if this could use the same
-property.
+Capitalize the first word of all the subject lines to match history.
+s/oubound/outbound/
 
 > Signed-off-by: Jim Quinlan <jquinlan@broadcom.com>
 > ---
->  drivers/pci/controller/pcie-brcmstb.c | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
+>  drivers/pci/controller/pcie-brcmstb.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
 > diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> index 2bc913c0262c..bc1d514b19e4 100644
+> index 454917ee9241..5b0dec5971b8 100644
 > --- a/drivers/pci/controller/pcie-brcmstb.c
 > +++ b/drivers/pci/controller/pcie-brcmstb.c
-> @@ -44,6 +44,9 @@
->  #define PCIE_RC_CFG_PRIV1_ID_VAL3			0x043c
->  #define  PCIE_RC_CFG_PRIV1_ID_VAL3_CLASS_CODE_MASK	0xffffff
+> @@ -54,11 +54,11 @@
 >  
-> +#define PCIE_RC_CFG_PRIV1_LINK_CAPABILITY			0x04dc
-> +#define  PCIE_RC_CFG_PRIV1_LINK_CAPABILITY_ASPM_SUPPORT_MASK	0xc00
-> +
->  #define PCIE_RC_DL_MDIO_ADDR				0x1100
->  #define PCIE_RC_DL_MDIO_WR_DATA				0x1104
->  #define PCIE_RC_DL_MDIO_RD_DATA				0x1108
-> @@ -696,7 +699,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
->  	int num_out_wins = 0;
->  	u16 nlw, cls, lnksta;
->  	int i, ret;
-> -	u32 tmp;
-> +	u32 tmp, aspm_support;
+>  #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO		0x400c
+>  #define PCIE_MEM_WIN0_LO(win)	\
+> -		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + ((win) * 4)
+> +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_LO + ((win) * 8)
 >  
->  	/* Reset the bridge */
->  	brcm_pcie_bridge_sw_init_set(pcie, 1);
-> @@ -806,6 +809,15 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
->  		num_out_wins++;
->  	}
+>  #define PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI		0x4010
+>  #define PCIE_MEM_WIN0_HI(win)	\
+> -		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + ((win) * 4)
+> +		PCIE_MISC_CPU_2_PCIE_MEM_WIN0_HI + ((win) * 8)
 >  
-> +	/* Only support ASPM L1 unless L0s is explicitly desired */
-> +	aspm_support = PCIE_LINK_STATE_L1;
-> +	if (of_property_read_bool(pcie->np, "brcm,aspm-en-l0s"))
-> +		aspm_support |= PCIE_LINK_STATE_L0S;
-> +	tmp = readl(base + PCIE_RC_CFG_PRIV1_LINK_CAPABILITY);
-> +	u32p_replace_bits(&tmp, aspm_support,
-> +		PCIE_RC_CFG_PRIV1_LINK_CAPABILITY_ASPM_SUPPORT_MASK);
-> +	writel(tmp, base + PCIE_RC_CFG_PRIV1_LINK_CAPABILITY);
-> +
->  	/*
->  	 * For config space accesses on the RC, show the right class for
->  	 * a PCIe-PCIe bridge (the default setting is to be EP mode).
+>  #define PCIE_MISC_RC_BAR1_CONFIG_LO			0x402c
+>  #define  PCIE_MISC_RC_BAR1_CONFIG_LO_SIZE_MASK		0x1f
 > -- 
 > 2.17.1
 > 
