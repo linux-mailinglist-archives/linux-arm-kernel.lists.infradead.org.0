@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E6001BF37D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8CF41BF37C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:50:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nVcCHO9suaz24ImqvsgytkOh/LxB09q/4MSp6FzlNAE=; b=gmWWalJunFgPfThANiKo+2zJVp
-	NisTciMtE/YL1mEjoa7S0bzrfMww//aR6wP/FW8Fv8ObXSD9XJl053YhhZZOVHlNpONb14IuVMCPf
-	Qs7ocMMugGIy8jf8t3ONkcV9H6fzUIN4Dq6r3zF8Iy5V1tCKkFnb7eIOEa4KgKbQmaqDWDxYR8/+s
-	oSz5iNLOO8cE2L9kFMcJQ8exdc080j7XSyiYZPXTbJ0HKP7S+NiwmstRcvzXnli4lkAFXIKPw70yA
-	W56GfX9ILg/sKcH/0DIg7FUESNV+Y/gBwVBLQ6B478OtPcF/GTjTQPPVx21nL0/Dh+h+ahmPGL23Q
-	qeTrCW5g==;
+	bh=o7WTNw30CiWNBHwF+ydPMBbTICffhTIOVmvRONzDoDw=; b=lGMgRMzOt7OGbk3wXcrfOiZ7Lm
+	UhPZqMIo8T+5ctyOGeE8B8R/fzb3tztpsJZPSG2lLkyQJ3dIXzrKCWHTNZDajxFMOpwv4IHNtY9kW
+	0vlGqoIkEpGw9VDgA+AdplgNvQUqLltS069ZVTqSobuf80cbWrCwHogHWCkl/+HdBgW80uQCbovz/
+	aI5xUttkd70hdchYkMZxbyC3GBxMSN2KtDYJgq9VpTqeb7oCbOj/1CdLWAc4HCtNQ2k3iI/LRjHJ2
+	WSIwEPTBYSnPVoP0z+3EcbmNGKfB0gkZcIY7tQ90+hX5MSw1dhqCJHw2UnPY4WAoFnL2R0H5SXF5p
+	IqDlexJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU4ts-0001yd-Lr; Thu, 30 Apr 2020 08:50:32 +0000
+	id 1jU4tc-0007fQ-NU; Thu, 30 Apr 2020 08:50:16 +0000
 Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU4sP-0006t5-0P
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:49:05 +0000
+ id 1jU4sP-0006t6-0T
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:49:04 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:182a:142e:a95f:66c2])
  by albert.telenet-ops.be with bizsmtp
- id Ywor2200Y0w8ZL606worP7; Thu, 30 Apr 2020 10:48:52 +0200
+ id Ywor2200a0w8ZL606worP8; Thu, 30 Apr 2020 10:48:52 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jU4sF-0002l9-IR; Thu, 30 Apr 2020 10:48:51 +0200
+ id 1jU4sF-0002lC-JY; Thu, 30 Apr 2020 10:48:51 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jU4sF-0000OS-H9; Thu, 30 Apr 2020 10:48:51 +0200
+ id 1jU4sF-0000OW-IA; Thu, 30 Apr 2020 10:48:51 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 3/5] Renesas ARM SoC updates for v5.8
-Date: Thu, 30 Apr 2020 10:48:47 +0200
-Message-Id: <20200430084849.1457-4-geert+renesas@glider.be>
+Subject: [GIT PULL 4/5] Renesas driver updates for v5.8
+Date: Thu, 30 Apr 2020 10:48:48 +0200
+Message-Id: <20200430084849.1457-5-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430084849.1457-1-geert+renesas@glider.be>
 References: <20200430084849.1457-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_014901_273203_197CC3B1 
-X-CRM114-Status: UNSURE (   7.84  )
+X-CRM114-CacheID: sfid-20200430_014901_250195_3E624D30 
+X-CRM114-Status: UNSURE (   9.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -84,23 +84,40 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.8-tag1
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-drivers-for-v5.8-tag1
 
-for you to fetch changes up to 135e7a156ae2c1a7a1f0c1d44bf2b3daece04bbf:
+for you to fetch changes up to 2f71832755a9422f5a62a13ea3e805df7b173837:
 
-  ARM: shmobile: r8a7742: Basic SoC support (2020-04-28 10:13:58 +0200)
-
-----------------------------------------------------------------
-Renesas ARM SoC updates for v5.8
-
-  - Add Basic support for the new RZ/G1H SoC.
+  soc: renesas: rcar-rst: Add support for RZ/G1H (2020-04-30 10:01:39 +0200)
 
 ----------------------------------------------------------------
-Lad Prabhakar (1):
-      ARM: shmobile: r8a7742: Basic SoC support
+Renesas driver updates for v5.8
 
- arch/arm/mach-shmobile/setup-rcar-gen2.c | 2 ++
- 1 file changed, 2 insertions(+)
+  - Add System Controller (SYSC) and Reset (RST) support for the new
+    RZ/G1H (R8A7742) SoC.
+
+----------------------------------------------------------------
+Geert Uytterhoeven (1):
+      Merge tag 'renesas-r8a7742-dt-binding-defs-tag' into renesas-drivers-for-v5.8
+
+Lad Prabhakar (4):
+      dt-bindings: power: rcar-sysc: Add r8a7742 power domain index macros
+      clk: renesas: Add r8a7742 CPG Core Clock Definitions
+      soc: renesas: rcar-sysc: Add R8A7742 support
+      soc: renesas: rcar-rst: Add support for RZ/G1H
+
+ drivers/soc/renesas/Kconfig                  |  4 +++
+ drivers/soc/renesas/Makefile                 |  1 +
+ drivers/soc/renesas/r8a7742-sysc.c           | 42 ++++++++++++++++++++++++++++
+ drivers/soc/renesas/rcar-rst.c               |  1 +
+ drivers/soc/renesas/rcar-sysc.c              |  3 ++
+ drivers/soc/renesas/rcar-sysc.h              |  1 +
+ include/dt-bindings/clock/r8a7742-cpg-mssr.h | 42 ++++++++++++++++++++++++++++
+ include/dt-bindings/power/r8a7742-sysc.h     | 29 +++++++++++++++++++
+ 8 files changed, 123 insertions(+)
+ create mode 100644 drivers/soc/renesas/r8a7742-sysc.c
+ create mode 100644 include/dt-bindings/clock/r8a7742-cpg-mssr.h
+ create mode 100644 include/dt-bindings/power/r8a7742-sysc.h
 
 _______________________________________________
 linux-arm-kernel mailing list
