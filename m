@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B66D01BFEE5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:42:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 688181BFEE7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:43:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fISrDQTY9p2CFjmGacmnB3n5YbCWjzg1HUKQszscTWo=; b=soSPhjAp09DfMU
-	6ulcmrFeHoviYsq3a8gQkGkgc2oU8LLn8OcZNWm01vJi4MFjz0Nzo4cW5XXHSsBw8WfmXYPJ0xavq
-	+DTzt94IaBeqCeu097j0sDrMjMsQJ99puDKEdHlG0dvJhBYbPND2G5n1vYXlVibHXcfh6I5BDBxcb
-	yeVt+AHypgHUzYymx0XBdHFhoxVBniITKTpUqFljk1pz+AYkcC/Z09JEkpVWyvNke1MvlyC/su0rR
-	C7Xkc9zkxVPdTWCbptVyiiFpgOjEesI1AodPo24fNkiRlAj1dYYWUFFZUVvLzknxOYv/8ED7EsmKu
-	t/gDaRSYfe061a9f1sWw==;
+	List-Owner; bh=iumy9/dk74gqZiRcEEOI0pQmTXc2bSLTFYYwFd7/KzM=; b=NrxnJHMbqW88gR
+	CGzbampvqxHbh51LEO22VHL2bufxlN3+0NfAaXAkvgR000fFKPDpiJeqJCt31lYzCXK78NLntctbL
+	llK+zDVjKxSWib/P1OBOPn7Y64zXG/eWEsuVAhajAKbTvc+li0G0g/9uRsBc4/X1Z0kLM/jRYvGiY
+	wOmyH3liCaPfoEB4RdR7jW37bMcTURDyiIca0V9hUfUm/6jM7A69dyj49qX1TnaO37u5WqZEvfJY/
+	1jMfJpFtP4N03Oilo89WXHRys+6shXoHZH1ge+nKixNENzAN3b3DpM0DRuFXJRuhvX+H0xab3dNPz
+	I1ipH2WmD9PQvS/wZIlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUAOa-00048e-6l; Thu, 30 Apr 2020 14:42:36 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jUAPE-0004do-KC; Thu, 30 Apr 2020 14:43:16 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAMT-0002M9-OO
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:40:27 +0000
-Received: by mail-wr1-x443.google.com with SMTP id i10so7208926wrv.10
+ id 1jUAMV-0002NT-Mc
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:40:31 +0000
+Received: by mail-wm1-x342.google.com with SMTP id 188so2155011wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:40:25 -0700 (PDT)
+ Thu, 30 Apr 2020 07:40:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=iB79dQWmb3AvvVXZjQ0zsRWqvSDeK4D4Xz99psG6JTA=;
- b=kqqBCMB8wIC1y8Rio6R5IHwLudVi7bFHNMpl4mEWV+Y0muWKmz6UZdqzNbGIyv5bpm
- ftjPpJIsHT6qnfm1WBiwXzW0T9u+mx+BLucZZwSt+n6HlLu3OSGZht29vm6F8Fq8duSi
- 0TYRzwrsU8ORGEfBJC7KXIFiwOnmGJYql/QapNaZMjA07wOmNmtpjrTa1KxyQZxnN62Z
- meBoHmfPL1kKNc3YQBwMO5g0U/lUxxsuQYzgsH2pPZ1Ihf9zgWxIu2o1K0uh+IY+I4GC
- l8gVonWj4kZ5mCvht3R6nzU1dVk4MyhI6+2z+1XxRDDZELQYysBCbFL9Ocg1hZBxd3G7
- mkow==
+ bh=oH09lE6EyF+7ddnT7acJ3k+jJHyiqaDtNA7hzb2+sc4=;
+ b=DcrvGlQp3aypCcqoN+dkF/d0nkxcpxpMBKeHygdxhq6pA3zd8XZM4QH4aGcjJ/4Tht
+ 9Tqg6MvR7s2TeMD2dsMqnAePywvLPYenkSK2kqY1aeQ5SP9/rKss1+vPSjAOTqdrBVzC
+ 3Hk3sNXrPCV4FacRXsy5+JDyySaQuCd99SZEr2yUC/DEQ+NMzYMOHy2AFCct+xzP/4sC
+ h8tNesK9eh+4jAyMW+Myo5oIfE7BWYBL5NXT4aV3gr63yJiHIm1CQMdWqcy+2LlMGvC5
+ 0q2zH9+Bx3SJDZIJOYsGForK5bwlhaFFDJLuGWuknwxC3tkJTHPS6KG3KsC4W4x0HmYe
+ /uDw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=iB79dQWmb3AvvVXZjQ0zsRWqvSDeK4D4Xz99psG6JTA=;
- b=GrUDOdxxz0yNz1DDBtiy2g44LCdmoxoyDhfUFRj0Q2x/B2xdtus27p/Lu3dSS4CULH
- NknWSxfLWXNamqSxFtty/kLPq/2D6Zc2MkDzayTwTQVhwQoxbpTn2E6jaJXvGeoR3krL
- koMHbAYq7d22bXQwLD71RFR4zKdUmYR7ERB7j75GmMNtEdCq1GuqOpcVxd1w92GKN/ri
- 4wKymmvJOELsGiv1gvolvH4GOi/IB4FeVvddgRjVxtGJIUwE/fOrQc3T20Xze6DYw6NG
- rAkD//FT43qgkSw0LnM4aQl5xGnHEUvZOY9iams7yCQ9RxkiLdQgz0Eemejbg6sk7Pzg
- DBww==
-X-Gm-Message-State: AGi0Pubcteky/s2Vl4H9HrZo7v3e6a/5tC56e37mRqS1DuAb4/eGgt1C
- NNFiD3nUmvllagazoUAbQsulmg==
-X-Google-Smtp-Source: APiQypKo5YoV4AJzsHf9kucHEPOc1ER//OsvvC5CHY6aaljoQYE5sAtc1uK8eedAg1itVao5PaJXJA==
-X-Received: by 2002:adf:82f5:: with SMTP id 108mr4154957wrc.43.1588257623760; 
- Thu, 30 Apr 2020 07:40:23 -0700 (PDT)
+ bh=oH09lE6EyF+7ddnT7acJ3k+jJHyiqaDtNA7hzb2+sc4=;
+ b=BXRXipixBWCjZ5whjo1LqKTo6ewdWmHbArpYejXpY2Dg34zfbniaFftjK5LtfJ/J75
+ ZroRGHJhcHKqto5zTLW+FQqlU/BfVGm3Am9fB3L40JOb4SyAwJjhnbzLDptCuJe5QQ94
+ br3klQT+z+h7HrDjv3kmSxH8wiKdmfgNyHbRUVAQuZ3hhVX1GfJUZDUvsS6reXAiGDHB
+ 8P4/G9LhWxTAAYUhGgiLgtXA2FLYgkGl6fIabYTAvjBbUL8xbc5DWn2lj9qtPttARjzC
+ imiYPmKT3tEVrbNzziCoNKJbf6XyY9js1YEyqmDQ6OIRkPLV7NvMQ+WhO2QO/M54Mpd3
+ RhqQ==
+X-Gm-Message-State: AGi0PuZiaccdiHVQzkHsdLwDtrQMzF2UZFyD2DF32DZtZNn9s/39AUCU
+ mcFNc8IBTOTPC15jO8xZgoWYcQ==
+X-Google-Smtp-Source: APiQypK39c6e8iviTZ8YwC7ivNBAH/kpcwBHJCtUr7sjyJdgvl1DlUReTsvBACR1UGiEnN8Ql6GmcA==
+X-Received: by 2002:a1c:e302:: with SMTP id a2mr3256603wmh.96.1588257625192;
+ Thu, 30 Apr 2020 07:40:25 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id n2sm4153286wrt.33.2020.04.30.07.40.22
+ by smtp.gmail.com with ESMTPSA id n2sm4153286wrt.33.2020.04.30.07.40.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 07:40:22 -0700 (PDT)
+ Thu, 30 Apr 2020 07:40:24 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v6 05/25] iommu/iopf: Handle mm faults
-Date: Thu, 30 Apr 2020 16:34:04 +0200
-Message-Id: <20200430143424.2787566-6-jean-philippe@linaro.org>
+Subject: [PATCH v6 06/25] arm64: mm: Add asid_gen_match() helper
+Date: Thu, 30 Apr 2020 16:34:05 +0200
+Message-Id: <20200430143424.2787566-7-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200430143424.2787566-1-jean-philippe@linaro.org>
 References: <20200430143424.2787566-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_074026_386900_D3A4BDF0 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20200430_074027_833583_9B44822F 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,136 +110,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When a recoverable page fault is handled by the fault workqueue, find the
-associated mm and call handle_mm_fault.
+Add a macro to check if an ASID is from the current generation, since a
+subsequent patch will introduce a third user for this test.
 
 Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
 ---
-v5->v6: select CONFIG_IOMMU_SVA
----
- drivers/iommu/Kconfig      |  1 +
- drivers/iommu/io-pgfault.c | 79 +++++++++++++++++++++++++++++++++++++-
- 2 files changed, 78 insertions(+), 2 deletions(-)
+ arch/arm64/mm/context.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-index 4f33e489f0726..1e64ee6592e16 100644
---- a/drivers/iommu/Kconfig
-+++ b/drivers/iommu/Kconfig
-@@ -109,6 +109,7 @@ config IOMMU_SVA
- 
- config IOMMU_PAGE_FAULT
- 	bool
-+	select IOMMU_SVA
- 
- config FSL_PAMU
- 	bool "Freescale IOMMU support"
-diff --git a/drivers/iommu/io-pgfault.c b/drivers/iommu/io-pgfault.c
-index 38732e97faac1..09a71dc4de20a 100644
---- a/drivers/iommu/io-pgfault.c
-+++ b/drivers/iommu/io-pgfault.c
-@@ -7,9 +7,12 @@
- 
- #include <linux/iommu.h>
- #include <linux/list.h>
-+#include <linux/sched/mm.h>
- #include <linux/slab.h>
- #include <linux/workqueue.h>
- 
-+#include "iommu-sva.h"
-+
- /**
-  * struct iopf_queue - IO Page Fault queue
-  * @wq: the fault workqueue
-@@ -68,8 +71,57 @@ static int iopf_complete_group(struct device *dev, struct iopf_fault *iopf,
- static enum iommu_page_response_code
- iopf_handle_single(struct iopf_fault *iopf)
- {
--	/* TODO */
--	return -ENODEV;
-+	vm_fault_t ret;
-+	struct mm_struct *mm;
-+	struct vm_area_struct *vma;
-+	unsigned int access_flags = 0;
-+	unsigned int fault_flags = FAULT_FLAG_REMOTE;
-+	struct iommu_fault_page_request *prm = &iopf->fault.prm;
-+	enum iommu_page_response_code status = IOMMU_PAGE_RESP_INVALID;
-+
-+	if (!(prm->flags & IOMMU_FAULT_PAGE_REQUEST_PASID_VALID))
-+		return status;
-+
-+	mm = iommu_sva_find(prm->pasid);
-+	if (IS_ERR_OR_NULL(mm))
-+		return status;
-+
-+	down_read(&mm->mmap_sem);
-+
-+	vma = find_extend_vma(mm, prm->addr);
-+	if (!vma)
-+		/* Unmapped area */
-+		goto out_put_mm;
-+
-+	if (prm->perm & IOMMU_FAULT_PERM_READ)
-+		access_flags |= VM_READ;
-+
-+	if (prm->perm & IOMMU_FAULT_PERM_WRITE) {
-+		access_flags |= VM_WRITE;
-+		fault_flags |= FAULT_FLAG_WRITE;
-+	}
-+
-+	if (prm->perm & IOMMU_FAULT_PERM_EXEC) {
-+		access_flags |= VM_EXEC;
-+		fault_flags |= FAULT_FLAG_INSTRUCTION;
-+	}
-+
-+	if (!(prm->perm & IOMMU_FAULT_PERM_PRIV))
-+		fault_flags |= FAULT_FLAG_USER;
-+
-+	if (access_flags & ~vma->vm_flags)
-+		/* Access fault */
-+		goto out_put_mm;
-+
-+	ret = handle_mm_fault(vma, prm->addr, fault_flags);
-+	status = ret & VM_FAULT_ERROR ? IOMMU_PAGE_RESP_INVALID :
-+		IOMMU_PAGE_RESP_SUCCESS;
-+
-+out_put_mm:
-+	up_read(&mm->mmap_sem);
-+	mmput(mm);
-+
-+	return status;
+diff --git a/arch/arm64/mm/context.c b/arch/arm64/mm/context.c
+index 9b26f9a88724f..d702d60e64dab 100644
+--- a/arch/arm64/mm/context.c
++++ b/arch/arm64/mm/context.c
+@@ -92,6 +92,9 @@ static void set_reserved_asid_bits(void)
+ 		bitmap_clear(asid_map, 0, NUM_USER_ASIDS);
  }
  
- static void iopf_handle_group(struct work_struct *work)
-@@ -104,6 +156,29 @@ static void iopf_handle_group(struct work_struct *work)
-  *
-  * Add a fault to the device workqueue, to be handled by mm.
-  *
-+ * This module doesn't handle PCI PASID Stop Marker; IOMMU drivers must discard
-+ * them before reporting faults. A PASID Stop Marker (LRW = 0b100) doesn't
-+ * expect a response. It may be generated when disabling a PASID (issuing a
-+ * PASID stop request) by some PCI devices.
-+ *
-+ * The PASID stop request is issued by the device driver before unbind(). Once
-+ * it completes, no page request is generated for this PASID anymore and
-+ * outstanding ones have been pushed to the IOMMU (as per PCIe 4.0r1.0 - 6.20.1
-+ * and 10.4.1.2 - Managing PASID TLP Prefix Usage). Some PCI devices will wait
-+ * for all outstanding page requests to come back with a response before
-+ * completing the PASID stop request. Others do not wait for page responses, and
-+ * instead issue this Stop Marker that tells us when the PASID can be
-+ * reallocated.
-+ *
-+ * It is safe to discard the Stop Marker because it is an optimization.
-+ * a. Page requests, which are posted requests, have been flushed to the IOMMU
-+ *    when the stop request completes.
-+ * b. We flush all fault queues on unbind() before freeing the PASID.
-+ *
-+ * So even though the Stop Marker might be issued by the device *after* the stop
-+ * request completes, outstanding faults will have been dealt with by the time
-+ * we free the PASID.
-+ *
-  * Return: 0 on success and <0 on error.
-  */
- int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
++#define asid_gen_match(asid) \
++	(!(((asid) ^ atomic64_read(&asid_generation)) >> asid_bits))
++
+ static void flush_context(void)
+ {
+ 	int i;
+@@ -220,8 +223,7 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+ 	 *   because atomic RmWs are totally ordered for a given location.
+ 	 */
+ 	old_active_asid = atomic64_read(&per_cpu(active_asids, cpu));
+-	if (old_active_asid &&
+-	    !((asid ^ atomic64_read(&asid_generation)) >> asid_bits) &&
++	if (old_active_asid && asid_gen_match(asid) &&
+ 	    atomic64_cmpxchg_relaxed(&per_cpu(active_asids, cpu),
+ 				     old_active_asid, asid))
+ 		goto switch_mm_fastpath;
+@@ -229,7 +231,7 @@ void check_and_switch_context(struct mm_struct *mm, unsigned int cpu)
+ 	raw_spin_lock_irqsave(&cpu_asid_lock, flags);
+ 	/* Check that our ASID belongs to the current generation. */
+ 	asid = atomic64_read(&mm->context.id);
+-	if ((asid ^ atomic64_read(&asid_generation)) >> asid_bits) {
++	if (!asid_gen_match(asid)) {
+ 		asid = new_context(mm);
+ 		atomic64_set(&mm->context.id, asid);
+ 	}
 -- 
 2.26.2
 
