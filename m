@@ -2,78 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EDB41BF973
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:25:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 278201BF976
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:25:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:Message-Id:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C+LcShjENKFaZfV62QMYrch3QGR5/OtMMSyI2dS4vGQ=; b=ce7/Oda2mARtVm
-	zV85v4Xe4uoZOm1IXzivg9pnTUmV1Gy++YmKplkjPCQCwT/l+W/SpK5mijrsSTfLEg7rqpyru2aaV
-	4sqIf/k0MWD1FXlUWnjhWfwmScZgPSgSNwSOkB0N/p/Fqpz+bIwQjtIF1UXvSjY9/XWGOvYcHmY61
-	dazq3Z+HyKniMEDIXyPm1joxEAPlIFBZ30SirXT1+ajiZPq4bUnUJT2I8E9+CE5/YqNjiXJ8enRm/
-	PZAWmJa1xTdKOvjnE8WY90o9aWzpZQY3UcWdfkQFF6Qb53hsPgnGBvdgHHTMF2BE7yoCVzMX9eNGy
-	MpjBQhKfnswJbXVwF0mg==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=W2twurivrsZ6A01trc9CaSwqtgxf04WJXGl70Y4xfys=; b=Pinmbl+yQDvwzO
+	lHT9HiLU4DNB3wtMfqs81ta1dMg8QOjLklzfdfyRiFaGG3FS74ExNQNI1XPLQjI1AgbzmVqPbVThT
+	lRtOrfhZNEyXzZanr9sY9J2yjrRb0q5JLUfYKHBSSSz/6An3thSNWJcJ35ycqiH+D8SL2BMmlfYf1
+	UNsERM88hL/LV1khJnfpzIO1E5CLELCq7lVF72uypM4N1aRCJvPd+3qpjzYYztZgNq35UcuU23mZf
+	YTInfwZsReAU+S7xXKfCd8NVkdcx2XMg7CMKWxbgMzzSx42INlSKx91VWEghRsP2NjQXKOZhDFO8/
+	j+lawcQ1gwOsHhRo+KGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9BT-0003iU-Ed; Thu, 30 Apr 2020 13:24:59 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jU9C5-0006OI-Cu; Thu, 30 Apr 2020 13:25:37 +0000
+Received: from mail-pj1-x1034.google.com ([2607:f8b0:4864:20::1034])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9BG-0003hl-Qs
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:24:48 +0000
-Received: by mail-pf1-x441.google.com with SMTP id x15so2878838pfa.1
+ id 1jU9Bk-00067p-0L
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:25:17 +0000
+Received: by mail-pj1-x1034.google.com with SMTP id y6so683615pjc.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 06:24:46 -0700 (PDT)
+ Thu, 30 Apr 2020 06:25:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version
- :content-transfer-encoding;
- bh=qEBt0vXjbk5Q4ltgNSW+NS8nyELrH+5nfBRUIqyA6is=;
- b=zMWYkcDmT4hqTCH/QaWiUDvaJmDtfNpCMuXp7fMQTUjj5/ObGmnANccRMz2ukYZM4r
- VdaGCFCp4GSIkaMxu0EK1g7XnpMRebRLE23G5Gmoli9sYmZd4qHE2ty74bnAygVOg+s8
- BN1fmMqDugOHXQwg7GD7dzVCZSS1cBxYGlx8AiT7FZ5ZDTIbjh6qeX1+HoueSmuPkio/
- lcX5j72CsYg5J+ZXocME3MQPHiwqNJpKR7XH6pqmok5bqA8AEsrUc/JOaSim5O6BzWfL
- 8KdtgjxwQpe+j2flqiPrfsORlb0wXFGqQsTPF5tuNhMxWuQrCZFqsFcT9ZEKtXsZM1v/
- Tm6g==
+ h=date:from:to:cc:subject:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=BnAC1hbVK6lZpRP0Ydha1Gljhb6wHC7kfdrL2QnVe3Y=;
+ b=H+Yik8dur/zMWlkhhhAZ/p0JRWaIhASGJgvuag9nSCNSjcwYXzm879vZ7bfluRWADf
+ bZ5JshFMKBW/U5TDr8mkNdbmJZxwNSpe+0vLYPl2JftqVrb2g0jLrdYE+zJfRVNT4i0J
+ l+t75wePe6LVyhYikGF1RsXYbARDri71Mi/jnOzZIko3kp3vREGXeOy9FQrXVgyV0BXM
+ T34AVV29o1og4uA9tzroiez44NbRH0h6TkKOTLTa4rz2VHrp7iiW9TYjLIoWu7UlDnQa
+ JRp8Se7lm4EdK+mtF3KaCGCBt04ZiO9obRxTArYZRTxBF7B+dCO7Q8ZaDHvJge3msRAT
+ nbXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-transfer-encoding;
- bh=qEBt0vXjbk5Q4ltgNSW+NS8nyELrH+5nfBRUIqyA6is=;
- b=pWddFJ8osOV9a9tbV5hvfBVg9UH12hZdExzwREvnilLml28sEpk2n0x/j89lXobGVk
- x/fGkIStPG3nDR38vbuBcWwcaZJAVWNse7bXrShiF9onoTtpmJbVG7qqPm2QDnHfkhi9
- Jsuh+HJI7kTb2c8Mv/b/MeRdGcx3fRtJyC+woJkGdz3YSALTo8jFQutMkBAjixvzkBFu
- G1t0rCmAK1qq7yvartZ1x8EIx0eEL0I+cUxH/IMnsCYplnX86zUf6e9hMC5YJdS/YQwy
- hmk8UhCLa5iRrlNy3+cDcOQ/B9g5QbIsIuyDg+gL1QhT/7CxR71TdSw9tocDyyK4FyP/
- LTjg==
-X-Gm-Message-State: AGi0PubJ0rwHaXFUYFI1E4LlHyYFWHQhe1OD1vRSqGskrXRjh7U8EWfU
- tGTcLA/BDz8bcRyttd74TQ3SlA==
-X-Google-Smtp-Source: APiQypLwsWQKfyfm0gdb6TRYobt1/StUc+eLmspBqFN9dK8quZw55tE3HuNkq5Cx5ZL7JpR0ypIpXw==
-X-Received: by 2002:a63:f960:: with SMTP id q32mr3102166pgk.357.1588253085753; 
- Thu, 30 Apr 2020 06:24:45 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=BnAC1hbVK6lZpRP0Ydha1Gljhb6wHC7kfdrL2QnVe3Y=;
+ b=gefcVbiDGYe/xxks0yH9sUCWAhi5rHTGDHZWyGfS/T09pdKEGH0tAbx7vmn1I4r1OV
+ WAvlSZqETLjWDDSQnLmHVWHCeAec0X3dUMDoTCq76FYzl2iagIOXsBFuegOnfXMqMP14
+ 3jaNrRd77dV0OfRtfCccofAaXPcSDlkNRVTtC6lLHRejHGS8FyRDQRL36JTBo0y2aIUl
+ K9GahjBZaRDJ6yDtTL3CT1JDgr1WsNzNxhFscifSwcGojwEi7JkfOXiHTIkb4fbaho7f
+ d6JrmJWo3Z5Z07Jml8tB/0J18kOd/deIHu08xFH/hhlo4+xI4xPKQILf+0xbdzrenJK7
+ hJdQ==
+X-Gm-Message-State: AGi0PubfyMpSHsc0LPCV0xCyn6n1Zpy9uO+POr3J2PH+ivbLOhZW9Rbn
+ MnD6PdYqYL3gKwTm6MhIdtkLJQ==
+X-Google-Smtp-Source: APiQypKTuuXpbq3lvIBZDBjmrimHR8+C7q0E8e5x+YC8XooF9fgbNjEhRu9FOfq2SpdDuFxJ99E2Ew==
+X-Received: by 2002:a17:90a:f418:: with SMTP id
+ ch24mr2988645pjb.68.1588253113474; 
+ Thu, 30 Apr 2020 06:25:13 -0700 (PDT)
 Received: from devnote (NE2965lan1.rev.em-net.ne.jp. [210.141.244.193])
- by smtp.gmail.com with ESMTPSA id u15sm1712135pjm.47.2020.04.30.06.24.43
+ by smtp.gmail.com with ESMTPSA id e11sm3541893pfl.85.2020.04.30.06.25.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 06:24:45 -0700 (PDT)
-Date: Thu, 30 Apr 2020 22:24:39 +0900
+ Thu, 30 Apr 2020 06:25:13 -0700 (PDT)
+Date: Thu, 30 Apr 2020 22:25:09 +0900
 From: Masami Hiramatsu <masami.hiramatsu@linaro.org>
 To: Masahiro Yamada <yamada.masahiro@socionext.com>, Rob Herring
  <robh@kernel.org>
-Subject: [PATCH v5 0/2] dts: uniphier: Add Akebi96 Board support
-Message-Id: <20200430222439.0ae1c4fa9572c8487fca96b6@linaro.org>
+Subject: [PATCH v5 1/2] dt-bindings: arm: Add Akebi96 board support
+Message-Id: <20200430222509.c0c3699e42b3e2e3c290ceae@linaro.org>
+In-Reply-To: <158824887998.2799.1402930732677315138.stgit@localhost>
+References: <158824887998.2799.1402930732677315138.stgit@localhost>
 X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_062446_900810_B91221A1 
-X-CRM114-Status: GOOD (  12.45  )
+X-CRM114-CacheID: sfid-20200430_062516_053386_A4C5640F 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1034 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,45 +108,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Add uniphier-ld20-akebi96 compatible string for
+Akebi96 board support.
 
-Here is the 5th version of the patches to add a devicetree for 
-Akebi96 board.
-
-This version removes redundant setting of RGMII, fixes some
-parameters for max3420-udc node and add the address to
-framebuffer node name.
-
-The Akebi96 is a certified 96boards which is based on Socionext
-UniPhier LD20 SoC. Most of the part is similar to LD20 reference
-board, but there are some changes.
-
-  - MAX3421 USB-SPI chip on SPI port3 (for USB gadget port.)
-  - Simple frame buffer with 1080p fixed resolution.
-  - I2S port which is connected to aout1b instead of aout1.
-  - 3 serial ports, only serial3 has CTS/RTS.
-  - No NAND, only eMMC on the board.
-  - OP-TEE installed firmware.
-
-See https://www.96boards.org/product/akebi96/ for details.
-
-Thank you,
-
+Signed-off-by: Masami Hiramatsu <masami.hiramatsu@linaro.org>
 ---
+ .../bindings/arm/socionext/uniphier.yaml           |    1 +
+ 1 file changed, 1 insertion(+)
 
-Masami Hiramatsu (2):
-      dt-bindings: arm: Add Akebi96 board support
-      arm64: dts: uniphier: Add support for Akebi96
-
-
- .../bindings/arm/socionext/uniphier.yaml           |    1 
- arch/arm64/boot/dts/socionext/Makefile             |    1 
- .../boot/dts/socionext/uniphier-ld20-akebi96.dts   |  189 ++++++++++++++++++++
- 3 files changed, 191 insertions(+)
- create mode 100644 arch/arm64/boot/dts/socionext/uniphier-ld20-akebi96.dts
-
---
-Masami Hiramatsu <masami.hiramatsu@linaro.org>
+diff --git a/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+index 65ad6d8a3c99..10a7f0752281 100644
+--- a/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
++++ b/Documentation/devicetree/bindings/arm/socionext/uniphier.yaml
+@@ -51,6 +51,7 @@ properties:
+       - description: LD20 SoC boards
+         items:
+           - enum:
++            - socionext,uniphier-ld20-akebi96
+             - socionext,uniphier-ld20-global
+             - socionext,uniphier-ld20-ref
+           - const: socionext,uniphier-ld20
 
 
 _______________________________________________
