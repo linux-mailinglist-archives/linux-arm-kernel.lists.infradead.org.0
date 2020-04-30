@@ -2,63 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76D251BF4BF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:00:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 006A81BF4C2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 12:01:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wRBt3FSPr54w+7k7LPLe4dcwYEnX4E6tPSrB95HJ4Sk=; b=bC20CHWloATgR8
-	n4g9YZqxGU2ANzVVKmAkdXdj7nnIFqIhylhaRYzLBHl2rXA4miXeQQ8F3NHTjrlCMNMFQGtiw5GtR
-	/voJbEovL5MAZUSTg/jUu52PoBsW2ez6p2cfsPwH4T4fy32pf+SM7z4iKFxIAiLSosMG3j+l+QYbD
-	8UiEz++0zZ+XqvN2PieP6NQ3GaZz4bjxQToIroI6V/LmsBxW2xQvIO2NkcLHSgjxKemzsxGv4L7p2
-	vmrOm6QNA8JKZIhneGU5Tmbx0j3S83JObo6bHMqH47doyh9jGUMOGQMWh/xH7PlV58VBrQfqY/o6I
-	KFZxwWTPxlPF6sAo3cPw==;
+	List-Owner; bh=ZrPMuoPTbDMLjacLLWoWq9f7CFP5Rrcolyw5U1frKVc=; b=bBRc4HwW7T5wbv
+	3/VgV75SMBh6suqJyfDSNpK7ntt/cdwT/VVRD2YtpU8GVbDjWCJBO2eefzTpHd81z60qg6g+gbbEO
+	0NDdB9xWQt2dMm9V39NpksBSXdF9y/xaTVxu/RxRy4YH/BkDhsMVg+MfCEVzmZuPHpvqzynCmyiWs
+	7Vj4wZCW0NR/kkS20zUJcqAXqQrBrCbLK6kjapUkZ4tvngdYqk/G6bZ0jMc1Q3mZPThOQ9ZxdwdoB
+	l/GCiV4n6xuQZCYKMwC8vDcexBpYa8Z4XonjLv71e1Kor6HE3cna5LMEgejNGg0JV8B7cB8Q9OjXO
+	JTy5CpUDUuklRPXTZw1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU5zd-0003gG-5i; Thu, 30 Apr 2020 10:00:33 +0000
-Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
+	id 1jU5zv-0004zA-5q; Thu, 30 Apr 2020 10:00:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU5yS-0001JJ-9u
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:59:22 +0000
-Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
- [IPv6:2a01:4f9:c010:4572::80:2])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id EBA90634C8F;
- Thu, 30 Apr 2020 12:59:07 +0300 (EEST)
-Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
- (envelope-from <sakari.ailus@retiisi.org.uk>)
- id 1jU5yF-0000QG-Pc; Thu, 30 Apr 2020 12:59:07 +0300
-Date: Thu, 30 Apr 2020 12:59:07 +0300
-From: Sakari Ailus <sakari.ailus@iki.fi>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v6 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200430095907.GG867@valkosipuli.retiisi.org.uk>
-References: <20200429162437.2025699-1-robert.foss@linaro.org>
- <20200429162437.2025699-3-robert.foss@linaro.org>
- <20200430093524.GB2188@pengutronix.de>
- <20200430094549.GF867@valkosipuli.retiisi.org.uk>
- <20200430095332.GC2188@pengutronix.de>
+ id 1jU5yX-0001OC-BQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:59:27 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 260ED20838;
+ Thu, 30 Apr 2020 09:59:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588240764;
+ bh=+d0x7/Dedap3bk9l2YUJn9f9X8Sozz13oCN/vIjR4OY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=tML6CM5+ZyrjnuA8RuV81AGv10cezjoAIzc5m2rTzx9xMcm0x0FPUcnyzdibDdxHl
+ z+di/RH/qi/2FIfylU14Q2NIgd+fbjgbPK6Owgy564tHktl9WwPSTJ7iGx+z/l6+wA
+ RwJ3yXkPjcP22escnnVxYDgxt9Ab/1UHdYRqEVzI=
+Date: Thu, 30 Apr 2020 10:59:19 +0100
+From: Will Deacon <will@kernel.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
+Message-ID: <20200430095919.GB19932@willie-the-truck>
+References: <20200325174001.234803-1-pcc@google.com>
+ <20200327191915.257116-1-pcc@google.com>
+ <20200429210826.GA8604@willie-the-truck>
+ <20200430095001.GD2717@gaia>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430095332.GC2188@pengutronix.de>
+In-Reply-To: <20200430095001.GD2717@gaia>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_025920_706539_1185B52C 
-X-CRM114-Status: GOOD (  31.90  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200430_025925_440184_0AFF1D89 
+X-CRM114-Status: GOOD (  20.53  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,291 +79,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- linux-kernel@vger.kernel.org, Robert Foss <robert.foss@linaro.org>,
- Tomasz Figa <tfiga@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Evgenii Stepanov <eugenis@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marco,
-
-On Thu, Apr 30, 2020 at 11:53:32AM +0200, Marco Felsch wrote:
-> Hi Sakari,
-> 
-> On 20-04-30 12:45, Sakari Ailus wrote:
-> > Hi Marco,
+On Thu, Apr 30, 2020 at 10:50:01AM +0100, Catalin Marinas wrote:
+> On Wed, Apr 29, 2020 at 10:08:26PM +0100, Will Deacon wrote:
+> > On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
+> > > The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+> > > address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+> > > the tag bits may be needed by tools in order to accurately diagnose
+> > > memory errors, such as HWASan [1] or future tools based on the Memory
+> > > Tagging Extension (MTE).
+> > > 
+> > > We should not stop clearing these bits in the existing fault address
+> > > fields, because there may be existing userspace applications that are
+> > > expecting the tag bits to be cleared. Instead, create a far_context in
+> > > sigcontext (similar to the existing esr_context), and store the original
+> > > value of FAR_EL1 (including the tag bits) there.
+> > > 
+> > > [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+> > > 
+> > > Signed-off-by: Peter Collingbourne <pcc@google.com>
+> > > ---
+> > > v3:
+> > > - add documentation to tagged-pointers.rst
+> > > - update comments in sigcontext.h
 > > 
-> > On Thu, Apr 30, 2020 at 11:35:24AM +0200, Marco Felsch wrote:
-> > > Hi Robert,
-> > > 
-> > > thnakf for the patch but pls keep in mind to do one thing per patch.
-> > > IMHO this patch do a lot more. Anyway below are my comment :)
-> > > 
-> > > On 20-04-29 18:24, Robert Foss wrote:
-> > > > Add match table, enable ov8856_probe() to support
-> > > > both ACPI and DT modes.
-> > > 
-> > > You are also adding the support for reset-gpios and regualtors. IMHO the
-> > > commit message don't belong to the changes you made anymore.
-> > > 
-> > > > ACPI and DT modes are primarily distinguished from
-> > > > each other by relying on devm_XXX_get_optional()
-> > > > will return NULL instead of a reference for the
-> > > > desired managed resource.
-> > > > 
-> > > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > > ---
-> > > > 
-> > > > - Changes since v5:
-> > > >   * Maxime & Sakari: Replaced clock tolerance check with warning
-> > > > 
-> > > > - Changes since v4:
-> > > >   * Maxime & Sakari: Switch to clock-frequency
-> > > > 
-> > > > - Changes since v3:
-> > > >   * Remove redundant {}-brackets
-> > > >   * Compare xvclk_rate to 5% tolerance
-> > > >   * Andy: Use dev_fwnode()
-> > > >   * Andy: Use %pe instead of %ld + PTR_ERR()
-> > > >   * Andy: Invert reset_gpio logic
-> > > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
-> > > >   * Andy: Use dev_err for logging for failures
-> > > >   * Andy: Remove dev_warn from EDEFER/regulator error path
-> > > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
-> > > >   * Maxime & Sakari: Verify clock frequency from DT
-> > > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT devices
-> > > >   * Sakari: Remove duplicate ov8856->dev assignment
-> > > > 
-> > > > - Changes since v2:
-> > > >   * Added "struct device *dev" member to struct ov8856
-> > > >   * Andy: Switch to optional version of devm_gpiod_get
-> > > >   * Andy: Switch to optional version of devm_clk_get
-> > > >   * Fabio: Add reset sleep period
-> > > >   * Sakari: Unify defines for 19.2Mhz
-> > > >   * Sakari: Remove 24Mhz clock, since it isn't needed for supported modes
-> > > >   * Sakari: Replace dev_info() with dev_dbg()
-> > > >   * Sakari: Switch induction variable type to unsigned
-> > > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
-> > > >   * Sakari: Pull reset GPIO high on power on failure
-> > > >   * Sakari: Add power on/off to resume/suspend
-> > > >   * Sakari: Fix indentation
-> > > >   * Sakari: Power off during ov8856_remove()
-> > > >   * Sakari: Don't sleep during power-on in ACPI mode
-> > > >   * Sakari: Switch to getting xvclk from clk_get_rate
-> > > > 
-> > > > - Changes since v1:
-> > > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
-> > > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
-> > > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
-> > > >   * Fabio: Remove empty line
-> > > >   * Fabio: Remove real error from devm_gpiod_get() failures
-> > > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
-> > > >   * Sakari: Use XVCLK rate as provided by DT
-> > > > 
-> > > >  drivers/media/i2c/ov8856.c | 137 +++++++++++++++++++++++++++++++++----
-> > > >  1 file changed, 123 insertions(+), 14 deletions(-)
-> > > > 
-> > > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-> > > > index 8655842af275..4749dc74d5ad 100644
-> > > > --- a/drivers/media/i2c/ov8856.c
-> > > > +++ b/drivers/media/i2c/ov8856.c
-> > > > @@ -3,10 +3,13 @@
-> > > >  
-> > > >  #include <asm/unaligned.h>
-> > > >  #include <linux/acpi.h>
-> > > > +#include <linux/clk.h>
-> > > >  #include <linux/delay.h>
-> > > > +#include <linux/gpio/consumer.h>
-> > > >  #include <linux/i2c.h>
-> > > >  #include <linux/module.h>
-> > > >  #include <linux/pm_runtime.h>
-> > > > +#include <linux/regulator/consumer.h>
-> > > >  #include <media/v4l2-ctrls.h>
-> > > >  #include <media/v4l2-device.h>
-> > > >  #include <media/v4l2-fwnode.h>
-> > > > @@ -18,7 +21,7 @@
-> > > >  #define OV8856_LINK_FREQ_360MHZ		360000000ULL
-> > > >  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
-> > > >  #define OV8856_SCLK			144000000ULL
-> > > > -#define OV8856_MCLK			19200000
-> > > > +#define OV8856_XVCLK_19_2		19200000
-> > > >  #define OV8856_DATA_LANES		4
-> > > >  #define OV8856_RGB_DEPTH		10
-> > > >  
-> > > > @@ -64,6 +67,12 @@
-> > > >  
-> > > >  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
-> > > >  
-> > > > +static const char * const ov8856_supply_names[] = {
-> > > > +	"dovdd",	/* Digital I/O power */
-> > > > +	"avdd",		/* Analog power */
-> > > > +	"dvdd",		/* Digital core power */
-> > > > +};
-> > > > +
-> > > >  enum {
-> > > >  	OV8856_LINK_FREQ_720MBPS,
-> > > >  	OV8856_LINK_FREQ_360MBPS,
-> > > > @@ -566,6 +575,11 @@ struct ov8856 {
-> > > >  	struct media_pad pad;
-> > > >  	struct v4l2_ctrl_handler ctrl_handler;
-> > > >  
-> > > > +	struct device		*dev;
-> > > > +	struct clk		*xvclk;
-> > > > +	struct gpio_desc	*reset_gpio;
-> > > > +	struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
-> > > > +
-> > > >  	/* V4L2 Controls */
-> > > >  	struct v4l2_ctrl *link_freq;
-> > > >  	struct v4l2_ctrl *pixel_rate;
-> > > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> > > >  	return ret;
-> > > >  }
-> > > >  
-> > > > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > > > +{
-> > > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > > > +	int ret;
-> > > > +
-> > > > +	ret = clk_prepare_enable(ov8856->xvclk);
-> > > 
-> > > You're request the clk only in DT case or do I miss something? If so you
-> > > have to check if the clk is available.
-> > > 
-> > > > +	if (ret < 0) {
-> > > > +		dev_err(&client->dev, "failed to enable xvclk\n");
-> > > > +		return ret;
-> > > > +	}
-> > > > +
-> > > > +	if (is_acpi_node(dev_fwnode(ov8856->dev)))
-> > > > +		return 0;
-> > > > +
-> > > > +	if (ov8856->reset_gpio) {
-> > > > +		gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > > +		usleep_range(1000, 2000);
-> > > > +	}
-> > > > +
-> > > > +	ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
-> > > > +				    ov8856->supplies);
-> > > > +	if (ret < 0) {
-> > > > +		dev_err(&client->dev, "failed to enable regulators\n");
-> > > > +		goto disable_clk;
-> > > > +	}
-> > > > +
-> > > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-> > > 
-> > > You need to check the existance of the gpio here too.
-> > 
-> > No need to; the GPIO framework can handle this internally.
+> > Hmm, although the code looks fine, why don't we just expose the tag in the
+> > new field, rather than duplicate the address information? I'm nervous about
+> > exposing privileged registers directly to userspace.
 > 
-> Ahh, I said nothing :) so all my comments about that can be dropped. 
+> That's for consistency with ESR_EL1 which we expose in a similar way,
+> though with bits of it not relevant to user masked out. For FAR_EL1, all
+> the bits are relevant, even if some of them are duplicated in the
+> si_addr field.
+
+It may be consistent, but I would argue that exposing ESR_EL1 was a mistake,
+as illustrated by cc19846079a7 ("arm64: fault: Don't leak data in ESR
+context for user fault on kernel VA"). We have to live with that, but we
+should try to do better for new fields in the sigcontext.
+
+> > Also, Catalin, could you elaborate on the MTE use-case please? The
+> > architecture says that FAR_EL1[63:60] are UNKNOWN on a synchronous tag
+> > check fault, so we'd have to *avoid* exposing them in that case!
 > 
-> > > > +	usleep_range(1500, 1800);
-> > > > +
-> > > > +	return 0;
-> > > > +
-> > > > +disable_clk:
-> > > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > 
-> > > And here.. pls check the whole patch.
-> > > 
-> > > > +	clk_disable_unprepare(ov8856->xvclk);
-> > > > +
-> > > > +	return ret;
-> > > > +}
-> > > > +
-> > > > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > > > +{
-> > > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > > +	regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
-> > > > +			       ov8856->supplies);
-> > > > +	clk_disable_unprepare(ov8856->xvclk);
-> > > 
-> > > Clk is only availabel in DT use-case.
-> > > 
-> > > > +}
-> > > > +
-> > > >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> > > >  {
-> > > >  	struct i2c_client *client = to_i2c_client(dev);
-> > > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
-> > > >  	if (ov8856->streaming)
-> > > >  		ov8856_stop_streaming(ov8856);
-> > > >  
-> > > > +	__ov8856_power_off(ov8856);
-> > > >  	mutex_unlock(&ov8856->mutex);
-> > > >  
-> > > >  	return 0;
-> > > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struct device *dev)
-> > > >  	int ret;
-> > > >  
-> > > >  	mutex_lock(&ov8856->mutex);
-> > > > +
-> > > > +	__ov8856_power_on(ov8856);
-> > > >  	if (ov8856->streaming) {
-> > > >  		ret = ov8856_start_streaming(ov8856);
-> > > >  		if (ret) {
-> > > > @@ -1092,29 +1155,54 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
-> > > >  	return 0;
-> > > >  }
-> > > >  
-> > > > -static int ov8856_check_hwcfg(struct device *dev)
-> > > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
-> > > >  {
-> > > > +	struct device *dev = ov8856->dev;
-> > > >  	struct fwnode_handle *ep;
-> > > >  	struct fwnode_handle *fwnode = dev_fwnode(dev);
-> > > >  	struct v4l2_fwnode_endpoint bus_cfg = {
-> > > >  		.bus_type = V4L2_MBUS_CSI2_DPHY
-> > > >  	};
-> > > > -	u32 mclk;
-> > > > +	u32 xvclk_rate;
-> > > >  	int ret;
-> > > >  	unsigned int i, j;
-> > > >  
-> > > >  	if (!fwnode)
-> > > >  		return -ENXIO;
-> > > >  
-> > > > -	ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
-> > > > +	ret = fwnode_property_read_u32(fwnode, "clock-frequency",
-> > > > +		&xvclk_rate);
-> > > >  	if (ret)
-> > > >  		return ret;
-> > > >  
-> > > > -	if (mclk != OV8856_MCLK) {
-> > > > -		dev_err(dev, "external clock %d is not supported", mclk);
-> > > > -		return -EINVAL;
-> > > > +	if (!is_acpi_node(fwnode)) {
-> > > > +		ov8856->xvclk = devm_clk_get(dev, "xvclk");
-> > > > +		if (IS_ERR(ov8856->xvclk)) {
-> > > > +			dev_err(dev, "could not get xvclk clock (%pe)\n",
-> > > > +					ov8856->xvclk);
-> > > > +			return PTR_ERR(ov8856->xvclk);
-> > > > +		}
-> > > > +
-> > > > +		clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > > +		xvclk_rate = clk_get_rate(ov8856->xvclk);
-> > > >  	}
-> > > 
-> > > Why do we handle the clock only in DT case? Is there a problem with the
-> > > clock handling and ACPI?
-> > 
-> > Not really, it's just that ACPI does not provide an interface to the clocks
-> > as such.
-> 
-> But you will get a clk by devm_clk_get()?
+> With MTE, FAR_EL1[63:60] will be cleared on sync tag check faults (not
+> currently done as I don't have this patch in my MTE series).
 
-No, because ACPI does not expose one to drivers. Effectively the entire
-power sequences are implemented in ACPI, not in the driver.
+Ok, but in [1] you said "I'm fine with this change for consistency and
+may help with the fault information printed by the kernel with khwasan
+or (later) MTE."
 
--- 
-Regards,
+But I don't think consistency is necessarily a good thing here and I don't
+see how it helps with MTE if we zap the bits to 0! We'd be better off not
+exposing the information at all in this situation.
 
-Sakari Ailus
+Will
+
+[1] https://lore.kernel.org/r/20200325131023.GN3901@mbp
 
 _______________________________________________
 linux-arm-kernel mailing list
