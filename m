@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 633801BFEDF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:41:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD0C41BFEDB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qKOGmyZQjCSnPXPktnrUwqP+PqvWSNIZi18YqEgCp9Y=; b=HkXXvu2yIjoF4Y
-	Kd4AFfK5fShSjd4kj+CUaobUjtUQ7z4EaPjCNaf4Z7Oaofc+2INSNG4xBSP/zmZk1QECmRdD8lm2G
-	XVxvTd7cgB2OHe5bfByitUhygkGnReujTH3db9dFQfUI8stEqpWPo6UWgKSuG8QNkWE9Z2SI2hilk
-	A8rPG3DSL0peqPBnJ7lf8CXO8O1lrbB5tPrTCBJODkA9AP+TrQQN6mLUy2N3Gn1KK3cGS2OUXrSxI
-	UvqvJaVrAPTNasgSqWQ7Bz1EX263MnbGFfhbGcJrSltcUZTF/oQldQ8yLbCfZu2m2sVsAgfjXqGhd
-	ysB7QwYHkBn3JoEU3BaA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ybMDW1diKN174C+lpIk+o5co9O6oLKQ3VrThI2NyLx4=; b=Jyf+DASi/hr9AS
+	Y3ZdIuU/iOMZczAL8oVGV7JVjHD0V18jqPs4tpjaxHIOQriUiq3Y0SqoLmmMlaDFa3zwkw99f7xtm
+	YwSYFuVPqPgyLQ6xGhrhYNBgcDrLQ4Nnf8HFONjFrhAuSHLSJOuVuD3XSgAP8nE3LvCSq/q2iyOzI
+	pOW9u5nL+usUMRoFQp/vXB5sYkFuq20DZewGqp6LYqsUTdnWlhzWTq7az6vwhEErY+m+NItTADPjf
+	2WpeQQM9fZq9h/hHGOdWfW9vPf4Xt/j9lrQxMzxrMeIQ+tuOLfFX8wTio/6rxC+sdsSfO1Va72F0E
+	NcNqW5jKfFyOzF+gcwcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUANE-0002qi-9v; Thu, 30 Apr 2020 14:41:12 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jUAMq-0002H2-Qp; Thu, 30 Apr 2020 14:40:48 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAML-0002G8-Bg
+ id 1jUAML-0002GA-Uq
  for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:40:19 +0000
-Received: by mail-wm1-x343.google.com with SMTP id r26so2209387wmh.0
+Received: by mail-wm1-x344.google.com with SMTP id e26so2149065wmk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:40:16 -0700 (PDT)
+ Thu, 30 Apr 2020 07:40:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YYiLFVngM44g0Fy16RMemZHwiB7tGW2h6urXa5JNeA4=;
- b=ZUmjnGJdMThCLpgu6Fn1QVEDSUT+cukEkGuOgFSAHraBV5UE619qvE7lxXPXau+0K9
- ZSHcJOrhjdN8cdq50v47XtlJcbrqef2j4U5/gGNSYSQpruy3HxooSXHs6zM0a7FPLyrf
- N1aYxP7FmR+YZG+U5qEkc7Ou5kN0muT/Fyj74HePtg+qHnxZ/OCxIli3Yg9YjITjQFh/
- 9H6GKkTWgkWazMIGgQe+XWGtK1TcSG6alWleOABobFRAn+J2t7Zmt/cdYdpkh/pEJmMD
- jBY9RCioflr2sxajJ38Um+7P1crKRDbyOCc3eBs00MuEh0TbHUtzAb/LNYTvyI9xBJZf
- 9UNQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=JE1ADcc++3Vo3M85Nsq6iA6oMNESnLaCpD2Oim3Sh4w=;
+ b=To4rDTgBB0L+90TpdlToDyTHhOTZj6qgWdXHCq8rL1YycyE+18LW7Zf89m+U1MgVk8
+ +89saYtKLC3GQTyPik+jhwX+aQBQqrNZ4WAaBc81x5L7V2vIZ7XFNEV/ge8dD5ZI3D5c
+ Ky1IsNUlR6HCYrPrzPKso3RM3HEViU0cFo2w3w0DZL/QuZLpSZOx9atlH5Jsmi0Ms8Vr
+ u2AWoTd5OM4H1HJBzbAVpKLc8NupQiOKgBHwOjQ95DBXB8CytUigHuiBI45tM4iuk42Y
+ bxPd271XeYNTljj1NAR5ciuWUHZ4qD6eBIS0O6tVRLdGsDXU0GOH+yzvHKWV4kkY+zxV
+ HwWA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YYiLFVngM44g0Fy16RMemZHwiB7tGW2h6urXa5JNeA4=;
- b=sWrRVfLsVcGmxUzhKs6hoEaqdMufPhClyNA7bFUEBxeS06ZIFFXmI/XNnTQ0JTER8D
- GVyuv2bf7bbqVUxtGvENiCXLjnuLhE7wAh7vS/7g+BuyZDk34sjKVIfFr6LVYAypRLDz
- hK9LWjyX0r1VEwDH0bSzZ6/u1m7UMRx340V30xAvz0Yhv8IJra1MxD4+2incTa4nRO2D
- FueVLrgz6hDYPz8kesHoPbfeufxtpj8j7KhHiCSCV6TxUaOSbisM3rIMBpIEF/iYJq3h
- rfQydFjTapntWxcnNURJPUEPPd/cyvQ5GKL2kHvH3jmKmLHFCKq2uI7ipQqT4yh7un9K
- I83g==
-X-Gm-Message-State: AGi0PuatcWBH8+tJyLIqeDnkpAQPxwuiCWUWiVqAxtT9hv/E5heIAp3X
- AWzissbjsQPkuPgNeF86UCP8TQ==
-X-Google-Smtp-Source: APiQypIMxbfi2gR+oRZoSzUml7oOF8uYXg/WO7r1FPuma7Uj6M8X8kh92jUG0IVhIXNkP7USztJjJQ==
-X-Received: by 2002:a7b:cfc9:: with SMTP id f9mr3419281wmm.61.1588257614425;
- Thu, 30 Apr 2020 07:40:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=JE1ADcc++3Vo3M85Nsq6iA6oMNESnLaCpD2Oim3Sh4w=;
+ b=HeNfPY5qQx1jTnephQESl1ejvtUSIt4NRAEXgcMeQ2IJdAngQX9HGwxgdKI07I5tWB
+ iMbkIxr6EL1f33WYAAqmwJVigpNSvnlW6fdFl8hK3kymXZ0AUJnS+9cZxFcOM/B43Y/8
+ GeZujrKzFHcdNrlKe8sQ2Dt8ASo/fuM1Bgv0Pc2JGEXc6UwEZfZikzApztak1Zhjj3h6
+ Xwc9h7eHotCn7i23k/hKuTXbr66+U5j/2+m+zx/fr/hm+Y9f7SkQCjNoj2w1iSUmC94L
+ Cyic/U4aHJQgBpjdUMd4QIwq1CtnzgzGkm1vPood7Bqoqkpq3kPu6mxarGgIv+IuQCLd
+ SjSg==
+X-Gm-Message-State: AGi0PubZGbTKOokb+NUSiVOoXoC/Mo91haqfAXDu/M6M7vap79e8HqBD
+ u2hPeaC11vg5VPqIRNMsZYs/oQ==
+X-Google-Smtp-Source: APiQypLUKpU9EiJvK1iecbIeHBOlrvMyuNzM5Gu2fzf4ff9woYknhWdO7VYVk5snGgyndqBMx/wwdg==
+X-Received: by 2002:a1c:7d15:: with SMTP id y21mr3195383wmc.57.1588257616098; 
+ Thu, 30 Apr 2020 07:40:16 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id n2sm4153286wrt.33.2020.04.30.07.40.11
+ by smtp.gmail.com with ESMTPSA id n2sm4153286wrt.33.2020.04.30.07.40.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 07:40:12 -0700 (PDT)
+ Thu, 30 Apr 2020 07:40:15 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
  linux-mm@kvack.org
-Subject: [PATCH v6 00/25] iommu: Shared Virtual Addressing for SMMUv3
-Date: Thu, 30 Apr 2020 16:33:59 +0200
-Message-Id: <20200430143424.2787566-1-jean-philippe@linaro.org>
+Subject: [PATCH v6 01/25] mm: Add a PASID field to mm_struct
+Date: Thu, 30 Apr 2020 16:34:00 +0200
+Message-Id: <20200430143424.2787566-2-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200430143424.2787566-1-jean-philippe@linaro.org>
+References: <20200430143424.2787566-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_074017_435651_F0F8DD12 
-X-CRM114-Status: GOOD (  14.08  )
+X-CRM114-CacheID: sfid-20200430_074017_990082_CD53BCCA 
+X-CRM114-Status: GOOD (  10.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -108,98 +110,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Shared Virtual Addressing (SVA) allows to share process page tables with
-devices using the IOMMU, PASIDs and I/O page faults. Add SVA support to
-the Arm SMMUv3 driver.
+Some devices can tag their DMA requests with a 20-bit Process Address
+Space ID (PASID), allowing them to access multiple address spaces. In
+combination with recoverable I/O page faults (for example PCIe PRI),
+PASID allows the IOMMU to share page tables with the MMU.
 
-Since v5 [1]:
+To make sure that a single PASID is allocated for each address space, as
+required by Intel ENQCMD, store the PASID in the mm_struct. The IOMMU
+driver is in charge of serializing modifications to the PASID field.
 
-* Added patches 1-3. Patch 1 adds a PASID field to mm_struct as
-  discussed in [1] and [2]. This is also needed for Intel ENQCMD. Patch
-  2 adds refcounts to IOASID and patch 3 adds a couple of helpers to
-  allocate the PASID.
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+For the field's validity I'm thinking invalid PASID = 0. In ioasid.h we
+define INVALID_IOASID as ~0U, but I think we can now change it to 0,
+since Intel is now also reserving PASID #0 for Transactions without
+PASID and AMD IOMMU uses GIoV for this too.
+---
+ include/linux/mm_types.h | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-* Dropped most of iommu-sva.c. After getting rid of io_mm following
-  review of v5, there wasn't enough generic code left to justify the
-  indirect branch overhead of io_mm_ops in the MMU notifiers. I ended up
-  with more glue than useful code, and couldn't find an easy way to deal
-  with domains in the SMMU driver (we keep PASID tables per domain,
-  while x86 keeps them per device). The direct approach in patch 17 is
-  nicer and a little easier to read. The SMMU driver only gained 160
-  lines, while iommu-sva lost 470 lines.
-
-  As a result I dropped the MMU notifier patch.
-
-  Jacob, one upside of this rework is that we now free ioasids in
-  blocking context, which might help with your addition of notifiers to
-  ioasid.c
-
-* Simplified io-pgfault a bit, since flush() isn't called from mm exit
-  path anymore.
-
-* Fixed a bug in patch 17 (don't clear the stall bit when stall is
-  forced).
-
-You can find the latest version on https://jpbrucker.net/git/linux
-branch sva/current, and sva/zip-devel for the Hisilicon zip accelerator.
-
-[1] https://lore.kernel.org/linux-iommu/20200414170252.714402-1-jean-philippe@linaro.org/
-[2] https://lore.kernel.org/linux-iommu/1585596788-193989-6-git-send-email-fenghua.yu@intel.com/
-
-Jean-Philippe Brucker (25):
-  mm: Add a PASID field to mm_struct
-  iommu/ioasid: Add ioasid references
-  iommu/sva: Add PASID helpers
-  iommu: Add a page fault handler
-  iommu/iopf: Handle mm faults
-  arm64: mm: Add asid_gen_match() helper
-  arm64: mm: Pin down ASIDs for sharing mm with devices
-  iommu/io-pgtable-arm: Move some definitions to a header
-  iommu/arm-smmu-v3: Manage ASIDs with xarray
-  arm64: cpufeature: Export symbol read_sanitised_ftr_reg()
-  iommu/arm-smmu-v3: Share process page tables
-  iommu/arm-smmu-v3: Seize private ASID
-  iommu/arm-smmu-v3: Add support for VHE
-  iommu/arm-smmu-v3: Enable broadcast TLB maintenance
-  iommu/arm-smmu-v3: Add SVA feature checking
-  iommu/arm-smmu-v3: Add SVA device feature
-  iommu/arm-smmu-v3: Implement iommu_sva_bind/unbind()
-  iommu/arm-smmu-v3: Hook up ATC invalidation to mm ops
-  iommu/arm-smmu-v3: Add support for Hardware Translation Table Update
-  iommu/arm-smmu-v3: Maintain a SID->device structure
-  dt-bindings: document stall property for IOMMU masters
-  iommu/arm-smmu-v3: Add stall support for platform devices
-  PCI/ATS: Add PRI stubs
-  PCI/ATS: Export PRI functions
-  iommu/arm-smmu-v3: Add support for PRI
-
- drivers/iommu/Kconfig                         |   11 +
- drivers/iommu/Makefile                        |    2 +
- .../devicetree/bindings/iommu/iommu.txt       |   18 +
- arch/arm64/include/asm/mmu.h                  |    1 +
- arch/arm64/include/asm/mmu_context.h          |   11 +-
- drivers/iommu/io-pgtable-arm.h                |   30 +
- drivers/iommu/iommu-sva.h                     |   15 +
- include/linux/ioasid.h                        |   10 +-
- include/linux/iommu.h                         |   53 +
- include/linux/mm_types.h                      |    4 +
- include/linux/pci-ats.h                       |    8 +
- arch/arm64/kernel/cpufeature.c                |    1 +
- arch/arm64/mm/context.c                       |  103 +-
- drivers/iommu/arm-smmu-v3.c                   | 1554 +++++++++++++++--
- drivers/iommu/io-pgfault.c                    |  458 +++++
- drivers/iommu/io-pgtable-arm.c                |   27 +-
- drivers/iommu/ioasid.c                        |   30 +-
- drivers/iommu/iommu-sva.c                     |   85 +
- drivers/iommu/of_iommu.c                      |    5 +-
- drivers/pci/ats.c                             |    4 +
- MAINTAINERS                                   |    3 +-
- 21 files changed, 2275 insertions(+), 158 deletions(-)
- create mode 100644 drivers/iommu/io-pgtable-arm.h
- create mode 100644 drivers/iommu/iommu-sva.h
- create mode 100644 drivers/iommu/io-pgfault.c
- create mode 100644 drivers/iommu/iommu-sva.c
-
+diff --git a/include/linux/mm_types.h b/include/linux/mm_types.h
+index 4aba6c0c2ba80..8db6472758175 100644
+--- a/include/linux/mm_types.h
++++ b/include/linux/mm_types.h
+@@ -534,6 +534,10 @@ struct mm_struct {
+ 		atomic_long_t hugetlb_usage;
+ #endif
+ 		struct work_struct async_put_work;
++#ifdef CONFIG_IOMMU_SUPPORT
++		/* Address space ID used by device DMA */
++		unsigned int pasid;
++#endif
+ 	} __randomize_layout;
+ 
+ 	/*
 -- 
 2.26.2
 
