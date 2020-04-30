@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB4991BF374
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:49:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E6001BF37D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 10:50:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=w29C03mAUmaLrJ2/H2l6KMby4DELTCeIjHZJTlmsKwQ=; b=sw6kV38GJHYZmIOeFVdq8aTCfm
-	tRmcBTsgNJYyvkyzj6k8wy4HziMSYlgJ+Xw61agRKzbAgrHfA9Of9/uefkWlzyo8jh0Qu5QAnNBFE
-	SIYJZ+b7nPQ8xTERr2qcPruC/u3c821aLdSl4C3DzzpjMtswuqgI91UOlPM9uwyKD8AeEskTyuwg6
-	YLfoEA0kYSD7TriQB/j/Ws6zxZVoctbicDRmBkj4X9OdvYV2MvbnXqd9NIZD/fkkMq0F6U3OiluP+
-	HlW9punaPCj/LVwS2Hky/fV42O4ufYf8tspr0xxka572KJnlbSTIako0UTzTAjC66tq1MXMO3jAud
-	gJW/8dsw==;
+	bh=nVcCHO9suaz24ImqvsgytkOh/LxB09q/4MSp6FzlNAE=; b=gmWWalJunFgPfThANiKo+2zJVp
+	NisTciMtE/YL1mEjoa7S0bzrfMww//aR6wP/FW8Fv8ObXSD9XJl053YhhZZOVHlNpONb14IuVMCPf
+	Qs7ocMMugGIy8jf8t3ONkcV9H6fzUIN4Dq6r3zF8Iy5V1tCKkFnb7eIOEa4KgKbQmaqDWDxYR8/+s
+	oSz5iNLOO8cE2L9kFMcJQ8exdc080j7XSyiYZPXTbJ0HKP7S+NiwmstRcvzXnli4lkAFXIKPw70yA
+	W56GfX9ILg/sKcH/0DIg7FUESNV+Y/gBwVBLQ6B478OtPcF/GTjTQPPVx21nL0/Dh+h+ahmPGL23Q
+	qeTrCW5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU4ss-00074q-9x; Thu, 30 Apr 2020 08:49:30 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1jU4ts-0001yd-Lr; Thu, 30 Apr 2020 08:50:32 +0000
+Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU4sH-0006q6-74
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:48:56 +0000
+ id 1jU4sP-0006t5-0P
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 08:49:05 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:182a:142e:a95f:66c2])
- by laurent.telenet-ops.be with bizsmtp
- id Ywor2200e0w8ZL601worGe; Thu, 30 Apr 2020 10:48:51 +0200
+ by albert.telenet-ops.be with bizsmtp
+ id Ywor2200Y0w8ZL606worP7; Thu, 30 Apr 2020 10:48:52 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jU4sF-0002l6-HP; Thu, 30 Apr 2020 10:48:51 +0200
+ id 1jU4sF-0002l9-IR; Thu, 30 Apr 2020 10:48:51 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jU4sF-0000OP-Fb; Thu, 30 Apr 2020 10:48:51 +0200
+ id 1jU4sF-0000OS-H9; Thu, 30 Apr 2020 10:48:51 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 2/5] Renesas ARM DT updates for v5.8
-Date: Thu, 30 Apr 2020 10:48:46 +0200
-Message-Id: <20200430084849.1457-3-geert+renesas@glider.be>
+Subject: [GIT PULL 3/5] Renesas ARM SoC updates for v5.8
+Date: Thu, 30 Apr 2020 10:48:47 +0200
+Message-Id: <20200430084849.1457-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430084849.1457-1-geert+renesas@glider.be>
 References: <20200430084849.1457-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_014853_402716_FAC3A672 
-X-CRM114-Status: UNSURE (   8.96  )
+X-CRM114-CacheID: sfid-20200430_014901_273203_197CC3B1 
+X-CRM114-Status: UNSURE (   7.84  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -52,7 +52,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:1a listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -84,56 +84,23 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-dt-for-v5.8-tag1
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.8-tag1
 
-for you to fetch changes up to cf8ae446bbcbf5c48214eb7ddaa6ac6e12f4633d:
+for you to fetch changes up to 135e7a156ae2c1a7a1f0c1d44bf2b3daece04bbf:
 
-  arm64: dts: renesas: Fix IOMMU device node names (2020-04-27 12:02:56 +0200)
-
-----------------------------------------------------------------
-Renesas ARM DT updates for v5.8
-
-  - USB, UART, PWM, and PCIe support for R-Car M3-W+,
-  - PWM (16-bit Timer Pulse Unit and PWM Timers) support for R-Car M2-W,
-  - Minor fixes and cleanups.
+  ARM: shmobile: r8a7742: Basic SoC support (2020-04-28 10:13:58 +0200)
 
 ----------------------------------------------------------------
-Geert Uytterhoeven (4):
-      arm64: dts: renesas: r8a77961: Add SCIF and HSCIF nodes
-      ARM: dts: r8a7791: Add TPU device node
-      ARM: dts: r8a7791: Add PWM device nodes
-      ARM: dts: shmobile: Update CMT1 compatible values
+Renesas ARM SoC updates for v5.8
 
-Yoshihiro Shimoda (6):
-      arm64: dts: renesas: r8a77961: Add USB2.0 device nodes
-      arm64: dts: renesas: r8a77961: Add USB3.0 device nodes
-      arm64: dts: renesas: r8a77961: Add PWM device nodes
-      arm64: dts: renesas: r8a77961: Add PCIe device nodes
-      ARM: dts: renesas: Fix IOMMU device node names
-      arm64: dts: renesas: Fix IOMMU device node names
+  - Add Basic support for the new RZ/G1H SoC.
 
- arch/arm/boot/dts/r8a7740.dtsi            |   2 +-
- arch/arm/boot/dts/r8a7743.dtsi            |  12 +-
- arch/arm/boot/dts/r8a7744.dtsi            |  12 +-
- arch/arm/boot/dts/r8a7745.dtsi            |  12 +-
- arch/arm/boot/dts/r8a7790.dtsi            |  12 +-
- arch/arm/boot/dts/r8a7791.dtsi            |  95 ++++++-
- arch/arm/boot/dts/r8a7793.dtsi            |  14 +-
- arch/arm/boot/dts/r8a7794.dtsi            |  12 +-
- arch/arm/boot/dts/sh73a0.dtsi             |   2 +-
- arch/arm64/boot/dts/renesas/r8a774a1.dtsi |  18 +-
- arch/arm64/boot/dts/renesas/r8a774b1.dtsi |  18 +-
- arch/arm64/boot/dts/renesas/r8a774c0.dtsi |  18 +-
- arch/arm64/boot/dts/renesas/r8a77950.dtsi |  14 +-
- arch/arm64/boot/dts/renesas/r8a77951.dtsi |  34 +--
- arch/arm64/boot/dts/renesas/r8a77960.dtsi |  22 +-
- arch/arm64/boot/dts/renesas/r8a77961.dtsi | 403 ++++++++++++++++++++++++++++--
- arch/arm64/boot/dts/renesas/r8a77965.dtsi |  20 +-
- arch/arm64/boot/dts/renesas/r8a77970.dtsi |  10 +-
- arch/arm64/boot/dts/renesas/r8a77980.dtsi |  16 +-
- arch/arm64/boot/dts/renesas/r8a77990.dtsi |  20 +-
- arch/arm64/boot/dts/renesas/r8a77995.dtsi |  20 +-
- 21 files changed, 620 insertions(+), 166 deletions(-)
+----------------------------------------------------------------
+Lad Prabhakar (1):
+      ARM: shmobile: r8a7742: Basic SoC support
+
+ arch/arm/mach-shmobile/setup-rcar-gen2.c | 2 ++
+ 1 file changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
