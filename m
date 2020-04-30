@@ -2,75 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A7AA1BF9F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:49:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD5F41BF9FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:51:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2mRAjKrrm3KnG02IErdpFM94erJ5t7CV4ZGlX8/F4b0=; b=mleFCWyGLLv3ib
-	2E7De09ml7SvPO4x+i4Zkol/JFThq7g3l8ELV6Mv0oqbGW0eUQFDW4tgogoBe+dy/JuiQ3liqR+yh
-	BonYEHC9BAiwFAwlrLaoCeOeYNxl2OFAKxUjamnZ1Wn8VLC6Vn3YbToapmIqqZsmaVcCVO3IBFoLi
-	J9Zj/YwSlOIicGvYEOI4FSntRfJhXtPndzIso+bRMQoD37wQn1PAIE/xF7qbHPkCB/IOGP27C89IH
-	MagTyagyNjf641uCufbIRDttOFmif2x/Z0gkmvSF/ClkXbSfaQ96e+ynh37Etg9ocBcS7KsQgauZa
-	ozajJSrixa5UoUn60aeA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5YQSwSbMNFckdFgJdmFUd9ecFTf/7cza2TBiVT3fUTA=; b=EuaVCu/s9Wj/rm
+	gHeUG/Msff3NOvsaLm8CsLfNayOjFGsQiHWCsk6W2u4RQKG/S0q+XDw980fFjIgvKJ3Zm4AzjFRmx
+	gQqM9r4ZiGUYMlM9KUJhML1qRjVYWtIl2opKGgCGXpa1P1xHkgElpY7TkHgAX2/docdnoE1TePZ/A
+	fvtvF/agpvmrFMF4c58ziJii2IlnDAOcZNmvPL8NWQVpbBorVryaURQuWJKLEewgcxDFCh5FlnWdg
+	wgGD0DdkPBDXJE8kgRFp6aQZNZVImDrMf5VXy/Qrmj7D+a6cVHpOfWkJHKfOyIKsr3dYo2Mgm5TF8
+	MT3cxumcR0F3TOs7DOwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9ZR-0005M4-JI; Thu, 30 Apr 2020 13:49:45 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jU9ah-0008Nk-Gx; Thu, 30 Apr 2020 13:51:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9ZC-0005Jk-9X
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:49:31 +0000
-Received: by mail-oi1-f194.google.com with SMTP id j16so5233315oih.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 06:49:29 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rjrzO+MFhCxKv5bAtNJEkkZ3+0bygxPZ8Xsyxb6NgPo=;
- b=GpdcYUT/ueM6FxeKLnHsZPXkicpceqszn6rTY/yJWD6Ls/D2flAb3bUJ/UhthXRz3K
- 0etBN8UKsDgYmo4fUTCQ3UrQS5L3ZZ/MaZR07CWeXhniwEAlobTOhdUUxHhMhr9g2q4z
- +qr0zK7OLl1axXONs9MLpPcGIlxZYwstGVVk0ljnUUAGyO//PCyCnDtGn6/kOPensGST
- 3cZQt4cPYYe0Suv4yqRBICVV/lhgNZYKF4CJgR5JWWk6r8iox8MjtAfSnmFr0z0F4Nif
- cEFF/emnDEingDdt8aFnBVuQbvv4pT3yNjKARBy1Mha3vYQBhMf9PonNVdDWUozout99
- tAYA==
-X-Gm-Message-State: AGi0PuYBWI07wRSQqqMqa39EVpWGXxqfL0JD4uBCJAmU73IGiu3rGMZy
- rWugusbVCDUcCWldI8co/G37DfMwrnCaWAhYSJw=
-X-Google-Smtp-Source: APiQypLKYEdDONP0TBzThQv78/9Ygy1b6alSM4Yc0B+LRdJxCQZdxj0F0voJal5X/EWZDKQ3nzYUXD+H8+a8j7LvATM=
-X-Received: by 2002:aca:d50f:: with SMTP id m15mr1837989oig.54.1588254569157; 
- Thu, 30 Apr 2020 06:49:29 -0700 (PDT)
+ id 1jU9aQ-0008MB-JI
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:50:47 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 195B920774;
+ Thu, 30 Apr 2020 13:50:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588254646;
+ bh=2S1FFwLlLxdFqit01Fd6EhlCpN6yg+s+wXPuB7KRNn4=;
+ h=From:To:Cc:Subject:Date:From;
+ b=kLhbRl26lw1Z/P+DYHCiDnSDJrSETSE+1xlBtTuhMPFMUcPsUttJSyjNp4zvO3Dng
+ oY1M20VK1P5RyPWWT7970wzG6X6fMfp0Us+Op47Cc0VpDzp0ZbLPHB8bVRiVNsTA0W
+ CNqA78hjG+XazcT9ZAFg/8ilgQv9h1JDvcvYawBk=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.6 01/79] ARM: dts: OMAP3: disable RNG on N950/N9
+Date: Thu, 30 Apr 2020 09:49:25 -0400
+Message-Id: <20200430135043.19851-1-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1588197415-13747-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Thu, 30 Apr 2020 15:49:17 +0200
-Message-ID: <CAMuHMdU90pqCVd=jombH-JMomoCDe1tA8Lq=m0urACK67ZNYuw@mail.gmail.com>
-Subject: Re: [PATCH 07/18] ARM: dts: r8a7742: Initial SoC device tree
-To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_064930_336971_8D640C80 
-X-CRM114-Status: GOOD (  19.76  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200430_065046_656873_7C350B6D 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,154 +78,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Magnus Damm <magnus.damm@gmail.com>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Lad Prabhakar <prabhakar.csengg@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- dmaengine <dmaengine@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>, devicetree@vger.kernel.org,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Prabhakar,
+From: Aaro Koskinen <aaro.koskinen@iki.fi>
 
-Thanks for your patch!
+[ Upstream commit 07bdc492cff6f555538df95e9812fe72e16d154a ]
 
-On Wed, Apr 29, 2020 at 11:58 PM Lad Prabhakar
-<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> Basic support for the RZ/G1H (R8A7742) SoC. Added placeholders
-> for the peripherals supported by the SoC which will be filled up
-> by incremental patches.
+Like on N900, we cannot access RNG directly on N950/N9. Mark it disabled in
+the DTS to allow kernel to boot.
 
-Please remove the placeholders, as there is nothing that depends on their
-presence.
+Fixes: 308607e5545f ("ARM: dts: Configure omap3 rng")
+Signed-off-by: Aaro Koskinen <aaro.koskinen@iki.fi>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ arch/arm/boot/dts/omap3-n950-n9.dtsi | 5 +++++
+ 1 file changed, 5 insertions(+)
 
-> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-> Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
-
-> --- /dev/null
-> +++ b/arch/arm/boot/dts/r8a7742.dtsi
-> @@ -0,0 +1,715 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Device Tree Source for the r8a7742 SoC
-> + *
-> + * Copyright (C) 2020 Renesas Electronics Corp.
-> + */
-> +
-> +#include <dt-bindings/interrupt-controller/irq.h>
-> +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> +#include <dt-bindings/clock/r8a7742-cpg-mssr.h>
-> +#include <dt-bindings/power/r8a7742-sysc.h>
-> +
-> +/ {
-> +       compatible = "renesas,r8a7742";
-> +       #address-cells = <2>;
-> +       #size-cells = <2>;
-> +
-> +       /*
-> +        * The external audio clocks are configured as 0 Hz fixed frequency
-> +        * clocks by default.
-> +        * Boards that provide audio clocks should override them.
-> +        */
-> +       audio_clk_a: audio_clk_a {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               clock-frequency = <0>;
-> +       };
-> +
-> +       audio_clk_b: audio_clk_b {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               clock-frequency = <0>;
-> +       };
-> +
-> +       audio_clk_c: audio_clk_c {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               clock-frequency = <0>;
-> +       };
-> +
-> +       /* External CAN clock */
-> +       can_clk: can {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               /* This value must be overridden by the board. */
-> +               clock-frequency = <0>;
-> +       };
-
-Please drop the audio and CAN clocks for now, as they are not used.
-
-> +       /* External root clock */
-> +       extal_clk: extal {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               /* This value must be overridden by the board. */
-> +               clock-frequency = <0>;
-> +       };
-> +
-> +       /* External PCIe clock - can be overridden by the board */
-> +       pcie_bus_clk: pcie_bus {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               clock-frequency = <0>;
-> +       };
-
-Please drop the PCI clock for now, as it is not used.
-
-> +
-> +       /* External SCIF clock */
-> +       scif_clk: scif {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               /* This value must be overridden by the board. */
-> +               clock-frequency = <0>;
-> +       };
-
-This should be used (see below).
-
-> +
-> +       /* External USB clock - can be overridden by the board */
-> +       usb_extal_clk: usb_extal {
-> +               compatible = "fixed-clock";
-> +               #clock-cells = <0>;
-> +               clock-frequency = <48000000>;
-> +       };
-> +
-> +       cpus {
-
-Please sort nodes by unit-address (if present) per type, or alphabetically.
-
-> +       soc {
-
-> +               scifa2: serial@e6c60000 {
-> +                       reg = <0 0xe6c60000 0 0x40>;
-> +                       /* placeholder */
-> +               };
-
-I prefer to see a real node for the serial console, so the system can at
-least be boot tested to a console prompt.
-Note that this requires adding a minimal board DTS, too.
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+diff --git a/arch/arm/boot/dts/omap3-n950-n9.dtsi b/arch/arm/boot/dts/omap3-n950-n9.dtsi
+index a075b63f3087d..11d41e86f814d 100644
+--- a/arch/arm/boot/dts/omap3-n950-n9.dtsi
++++ b/arch/arm/boot/dts/omap3-n950-n9.dtsi
+@@ -341,6 +341,11 @@
+ 	status = "disabled";
+ };
+ 
++/* RNG not directly accessible on N950/N9. */
++&rng_target {
++	status = "disabled";
++};
++
+ &usb_otg_hs {
+ 	interface-type = <0>;
+ 	usb-phy = <&usb2_phy>;
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.20.1
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
