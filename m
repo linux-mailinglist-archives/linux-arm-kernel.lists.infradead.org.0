@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B04F01C0920
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:24:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8612E1C0930
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:26:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:Subject:References:To:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U9s2ZegiKpMs72Us6LcTgOA3UgD13nKC43FKEtkc6Wo=; b=ntC2wr8JguFxTj
-	8ZUHjftNWI8pvDQRPzUAOnVglLUQhmzMMEBEe5+ShRO/3UlmkdwFlhjs97jtaOwaDz4o7rY1MOgYp
-	OQEU3jtcWYjgUcjWfgTqFx4spGK1SZvexXd1tAkxLNv6QQCMtiVb7KGsOpWj8gNfAwPmS8RcdF9et
-	6wnLV5na+piTqRFmvOUSfTH6QCZgnXPO3jJhSqwhXtpxs8yKiojloRi2kKOvDrxFuI50scXUGLXH/
-	LDNOkyQxAa/n0Lz48c98fFbam36X6Fwqr+euwvrqWhXrShbWLf7fadI3kxCtlyrITcXNdZZ84NrQa
-	qKuveBjAud7j6lSVWwyA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8j+LVLfncV9nDlT59UeaUxJG8FpgrpbfhQfnvie818c=; b=PDmtZKGGlXSwUR
+	fBaWOpmrMBd9kKW22miwqNDifdp/3PWc9S5TRFnwuEMEsaY3Ci2o0FA344nfAhNPYYdc8HVKa02q0
+	6fE4D9MXRadM8r5dZN9UYC6XpvKrW1Chan2L2HmSTUDMOcNj4bfPutfAqDPJs4QE/rfTKuTK0mGjV
+	0QPy6NC+Z71TE/OMiHwznPhVVJU/8w7YPyfl4IoYfGm9ooHincVMMitwRdjSrrNsdrv09HfzxBACa
+	drm79QG+JUpWHKXXgS/tv6mmfVb2Gnc0eF9aHeSzMYS4s8j8ybSebV8T3gfbxKAtbaRcZvthm4Jsy
+	3S5v5qwEgSgbmtn/gXGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGfZ-0006Da-BI; Thu, 30 Apr 2020 21:24:33 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jUGhe-0000t5-LS; Thu, 30 Apr 2020 21:26:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGfN-0006CG-IV; Thu, 30 Apr 2020 21:24:22 +0000
-Received: by mail-wr1-x443.google.com with SMTP id k1so9084285wrx.4;
- Thu, 30 Apr 2020 14:24:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=to:cc:references:subject:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=PyH2w2vQ2/ttTCu1gA9N4CJ/i81Ue6gR/CAS7sMwVvo=;
- b=IoQmpO3GmJlAH/aoZ8tWtIO9clTTbyYXCHpE2M77/yadwdU0QcXochTT58EyZDHPfo
- 6Ky3UClDTBEDZlamB61fgp8qZ8OCa76ZhRK7PCf1ZYSRN8zSKzqPhG8h0VPaGqZTXUL2
- yje20nDGT3vNOE0lzNFrLnkDlkIS/Lxep7a8e+fkTXlTHDWUjttPDuIgBnL7f3PWCqp9
- avT6HHDbqVptfl4xXRqNLgAk6IcykEH///zA92BxQTXvxA7iRPE7W92qEzXE0sOvvLvp
- 0jXXGlrGL1ihnwZ2ONmbCaOgoV2X5rbGStpJWh0J+zX62jGXhLc2ZMzx9VtOUdIoz0VQ
- g4Sw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:to:cc:references:subject:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=PyH2w2vQ2/ttTCu1gA9N4CJ/i81Ue6gR/CAS7sMwVvo=;
- b=kUxLfWJkRPg8eEmX2oZiwvzvqR//SjUrQz79/yn/j7uum4LB+IhmbKBYnvWv7znTEP
- 53DQ2vbmBC3UN4vGDe9WcxcQ5KtiZ6xnpRm5s9SdQ9QFfvmyoZqauDul5ZZj9N41qTbG
- EXyWUL0hQ8drk423p4YPC83CAjj9EYyxGXSNjXc3VtQ9Oe4jO2evKu96DEl8Jaqac+wv
- hUNKVprZ1oR39h1JcLCIsX2fXDUpyZUhLPB3KtYmb9UtvE6SbdXuN8xycSTSpfu9ZHhL
- K+WEX6XRFLj72kcSwppvuf2TWYhrn77LxruRE/Cl3XRMcMAzklak9GWwtFj1agHvJEcQ
- RPLQ==
-X-Gm-Message-State: AGi0PubG2bjlR5br8YMVEeMeY2ff8SWBdDml+M2gTeR1kvPu60LMOiit
- VhJ7+sM2JjVxt/qW2qsgwQo=
-X-Google-Smtp-Source: APiQypJ38a1LjrxqECLlYtfvpgXWAwQDQASib0V5TWlj0xUr7UPGEVPRcz1A/vXoxpgrmLk5qeo7cA==
-X-Received: by 2002:adf:ec09:: with SMTP id x9mr560156wrn.364.1588281860038;
- Thu, 30 Apr 2020 14:24:20 -0700 (PDT)
-Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id z22sm1237653wma.20.2020.04.30.14.24.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 14:24:19 -0700 (PDT)
-To: paul.kocialkowski@bootlin.com
-References: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
-Subject: Re: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
-From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
-Date: Thu, 30 Apr 2020 23:24:17 +0200
-User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jUGhT-0000sU-Vo
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:26:33 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C0E112166E;
+ Thu, 30 Apr 2020 21:26:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588281991;
+ bh=uWky6TNBymUqSLkL11ZzartRuKqUlPuvanXrysasMkM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Uerb66Arhg5vhl7hcybSXvksTonsCmKFdJefGcHkKMVr/lMrnQV3W1SU6xQoz+pI0
+ RE39P+64BgmzRvjs0ZSjXa8yV5+5WfUx7KSDiyjU+TsaTP7CBSjQ5f3B4Np6V13L2B
+ OaGgWhEyi+eZlWVYMSp1aRYwZqusI1Vbyq7Sa8fI=
+Date: Thu, 30 Apr 2020 22:26:24 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v10 00/13] arm64: Branch Target Identification support
+Message-ID: <20200430212623.GA802@willie-the-truck>
+References: <20200316165055.31179-1-broonie@kernel.org>
+ <20200422154436.GJ4898@sirena.org.uk> <20200422162954.GF3585@gaia>
+ <20200428132804.GF6791@willie-the-truck>
+ <20200428151205.GH5677@sirena.org.uk>
+ <20200428151815.GB12697@willie-the-truck>
+ <20200428155808.GJ5677@sirena.org.uk>
+ <20200428160141.GD12697@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200428160141.GD12697@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_142421_645220_E982FE40 
-X-CRM114-Status: GOOD (  14.46  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200430_142632_042429_A7C876EA 
+X-CRM114-Status: GOOD (  17.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,6 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,54 +82,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
- hansverk@cisco.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- thomas.petazzoni@bootlin.com, mchehab@kernel.org, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Paul Elliott <paul.elliott@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Andrew Jones <drjones@redhat.com>,
+ Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-arch@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Eugene Syromiatnikov <esyr@redhat.com>,
+ Szabolcs Nagy <szabolcs.nagy@arm.com>, "H . J . Lu " <hjl.tools@gmail.com>,
+ Yu-cheng Yu <yu-cheng.yu@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Richard Henderson <richard.henderson@linaro.org>,
+ Kristina =?utf-8?Q?Mart=C5=A1enko?= <kristina.martsenko@arm.com>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Florian Weimer <fweimer@redhat.com>,
+ linux-kernel@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Sudakshina Das <sudi.das@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Paul,
-
+On Tue, Apr 28, 2020 at 05:01:43PM +0100, Will Deacon wrote:
+> On Tue, Apr 28, 2020 at 04:58:12PM +0100, Mark Brown wrote:
+> > On Tue, Apr 28, 2020 at 04:18:16PM +0100, Will Deacon wrote:
+> > > On Tue, Apr 28, 2020 at 04:12:05PM +0100, Mark Brown wrote:
+> > 
+> > > > It's probably easier for me if you just use the existing branch, I've
+> > > > already got a branch based on a merge down.
+> > 
+> > > Okey doke, I'll funnel that in the direction of linux-next then. It does
+> > > mean that any subsequent patches for 5.8 that depend on BTI will need to
+> > > be based on this branch, so as long as you're ok with that then it's fine
+> > > by me (since I won't be able to apply patches if they refer to changes
+> > > introduced in the recent merge window).
+> > 
+> > That's not a problem, that's what I've got already and if I try to send
+> > everything based off -rc3 directly the series would get unmanagably
+> > large.  Actually unless you think it's a bad idea I think what I'll do
+> > is go and send out a couple of the preparatory changes (the insn updates
+> > and the last bit of annotation conversions) separately for that branch
+> > while I finalize the revisions of the main BTI kernel bit, hopefully
+> > that'll make the review a bit more approachable.
 > 
-> Add a new compatible for the PX30 Rockchip SoC, which also features
-> a RGA block. It is compatible with the RK3288 RGA block.
-> 
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-> ---
->  Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
->  1 file changed, 3 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> index dd645ddccb07..740586299da9 100644
-> --- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
-> @@ -23,6 +23,9 @@ properties:
+> Okey doke, sounds good to me. I'm queuing stuff atm, so as long you tell
+> me what I need to apply things against then we should be good.
 
+Just a heads up: I've renamed for-next/bti to for-next/bti-user, so it
+doesn't get confusing with the pending in-kernel BTI patches. All the commit
+SHAs remain unchanged.
 
->        - items:
->            - const: rockchip,rk3228-rga
->            - const: rockchip,rk3288-rga
-> +      - items:
-> +          - const: rockchip,px30-rga
-> +          - const: rockchip,rk3288-rga
-
-Use enum.
-
-      - items:
-          - enum:
-            - rockchip,px30-rga
-            - rockchip,rk3228-rga
-          - const: rockchip,rk3288-rga
-
->  
->    reg:
->      maxItems: 1
-> -- 
-> 2.26.0
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
