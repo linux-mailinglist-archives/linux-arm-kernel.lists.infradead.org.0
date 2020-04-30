@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DA5F1C08F1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:13:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 808FD1C08F3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:14:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=AQwuZlTmb5M5kChccgHKx7H+a2jE3wkYmjkS9T3iIVs=; b=fmmygcPOSYCngGv6BAppyYwLSe
-	UyzAxweueMTIW5oINjJVCnuu7XVa9xzyty7St9baqkA2LaWvEU4M72DpDgXWN9OuImoAXPJX3iQ7J
-	hTlcBPh0BuBKq7kj3Bw4IwUflJr0gtdFqTzFmH2ufpuPCmsLMCF3w0sReD9JJDVsDj03UBgISH7yF
-	UReH38mKSB8QqXmaWsXfHQiD9pLcFxicQPRFuTpGp+P+ohOVYE9SzQm7R3lpUtrww5bhQCBC406XN
-	n3SwPMtqzPgsOO77ARSsk21EdT7fYOpFTYB0iXMfB50wiPnOTkvxUwWv8xJoCU49MrEwhNRO22Uz8
-	OjdexkEA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4AKVuVEdI4t21E7xZoOKYin3O2mtxAWXymFqJ5t9aac=; b=lVJoKlUVLXCwd1
+	FvZRjoUO4xoT3q+a3hYCku08ZKDrK2uoxJX+Oy+o0CL5bj4t5vVzMqFJm0IoCJvEw6Kjn2ZVV7ckd
+	J/wXAmFvkoAI4iJ6GDBHqWrHGbqOMuwqSABkaqtEcp0Ix4gg9UDDm5bAXkLVx8GSrug8I4wuIvCqg
+	K6v2hSxxX8+shs+72AN8edxEDHI8xeh4n3QCSajw0PUY/qaaU7GrHBglS44vK28y5b2BTnAztyQhs
+	ojls9HBhOFzRLI3vqYeDVfuebZWCCfbmjmcgfR7xbSDi45/056QNpA67BbraBNGTIVqdt5K+3XCKQ
+	fgb4caRKiFsyUk/oBpZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGV9-000603-4z; Thu, 30 Apr 2020 21:13:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGSi-00045s-Ho
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A659B1FB;
- Thu, 30 Apr 2020 14:11:15 -0700 (PDT)
-Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C20333F68F;
- Thu, 30 Apr 2020 14:11:14 -0700 (PDT)
-From: Andre Przywara <andre.przywara@arm.com>
-To: Rob Herring <robh@kernel.org>,
-	devicetree@vger.kernel.org
-Subject: [PATCH v3 8/8] dt-bindings: arm: Add Calxeda system registers
- json-schema binding
-Date: Thu, 30 Apr 2020 22:10:54 +0100
-Message-Id: <20200430211054.30466-9-andre.przywara@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200430211054.30466-1-andre.przywara@arm.com>
-References: <20200430211054.30466-1-andre.przywara@arm.com>
+	id 1jUGVz-0006cv-3K; Thu, 30 Apr 2020 21:14:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUGU3-0005EW-DY
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:12:41 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BAA492070B;
+ Thu, 30 Apr 2020 21:12:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588281158;
+ bh=v9Lf0rrVZo5rNgO4FTMUCWiZC44pRfkJihz7+RCKImY=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=cAUG6+W30h45pEb8N67PLRnG1u47+QtFHjY6eVBWzxwBmg/RqAYUr7mcYceljXtNV
+ qIwuGqVJOQkCHRLrvw/SZNNsmzfdI7ByqbyxhVD+gWZhXJjGEdNDUsiddx2N48DYNn
+ QCR7MSYSHVcEZ4VjMjDeTSRhG+rWW9VbBfswoA64=
+From: Will Deacon <will@kernel.org>
+To: Guixiong Wei <guixiongwei@gmail.com>,
+	catalin.marinas@arm.com
+Subject: Re: [PATCH v2] arm: mm: use __pfn_to_section() to get mem_section
+Date: Thu, 30 Apr 2020 22:12:24 +0100
+Message-Id: <158827763886.6823.16995736264888732732.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200430161858.11379-1-guixiongwei@gmail.com>
+References: <20200430161858.11379-1-guixiongwei@gmail.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_141116_666013_F648513C 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200430_141239_502220_D3550B02 
+X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,85 +78,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: akpm@linux-foundation.org, steve.capper@arm.com,
+ linux-kernel@vger.kernel.org, rppt@linux.ibm.com,
+ linux-arm-kernel@lists.infradead.org, tglx@linutronix.de,
+ Will Deacon <will@kernel.org>, guro@fb.com, nsaenzjulienne@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Calxeda system registers are a collection of MMIO register
-controlling several more general aspects of the SoC.
-Beside for some power management tasks this node is also somewhat
-abused as the container for the clock nodes.
+On Fri, 1 May 2020 06:18:58 +1400, Guixiong Wei wrote:
+> __pfn_to_section() helper which already wraps around
+> __nr_to_section(pfn_to_section_nr(pfn)), should be used
+> directly instead.
 
-Add a binding in DT schema format using json-schema.
+Applied to arm64 (for-next/misc), thanks!
 
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
----
- .../bindings/arm/calxeda/hb-sregs.yaml        | 49 +++++++++++++++++++
- 1 file changed, 49 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
+[1/1] arm: mm: use __pfn_to_section() to get mem_section
+      https://git.kernel.org/arm64/c/037d9303a7e7
 
-diff --git a/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml b/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
-new file mode 100644
-index 000000000000..dfdc97083efb
---- /dev/null
-+++ b/Documentation/devicetree/bindings/arm/calxeda/hb-sregs.yaml
-@@ -0,0 +1,49 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/arm/calxeda/hb-sregs.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Calxeda Highbank system registers
-+
-+description: |
-+  The Calxeda Highbank system has a block of MMIO registers controlling
-+  several generic system aspects. Those can be used to control some power
-+  management, they also contain some gate and PLL clocks.
-+
-+maintainers:
-+  - Andre Przywara <andre.przywara@arm.com>
-+
-+properties:
-+  compatible:
-+    const: calxeda,hb-sregs
-+
-+  reg:
-+    maxItems: 1
-+
-+  clocks:
-+    type: object
-+
-+required:
-+  - compatible
-+  - reg
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    sregs@fff3c000 {
-+        compatible = "calxeda,hb-sregs";
-+        reg = <0xfff3c000 0x1000>;
-+
-+        clocks {
-+            #address-cells = <1>;
-+            #size-cells = <0>;
-+
-+            osc: oscillator {
-+                #clock-cells = <0>;
-+                compatible = "fixed-clock";
-+                clock-frequency = <33333000>;
-+            };
-+        };
-+    };
+Cheers,
 -- 
-2.17.1
+Will
 
+https://fixes.arm64.dev
+https://next.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
