@@ -2,100 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2AC31BFF53
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:55:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 607DB1BFF59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 16:56:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YgsOdgn4BOqE2S1GM5AZ6oUem2azLyoC4j+NUtSrQfs=; b=rYzaKRDp0QuJm+
-	8N1gKhlTV+a2h1mZ9M64pBQqRIgv4QRnLDi+f3pPlgei5h0bHUnJ9ab51dM7Xx+nYQXrfexDaAlKn
-	7i4YAULltRx3gWH22ya4WUq6OJNFw3S7toT/PW5rq05Qo8sihXZHqLgYmTBlJDQfrqTQkyoyxPINc
-	g3rgOHXRk+y8B0F4V2sHOItU8OdP9MLx9GVtCnriM68+e6G1zQUarXt90NnPMVJ47RTGj54T1gC0f
-	zsgeF8ucVM8/+UnachC4bRTY82RqTB1XYeY+dGVHpbYEzG6SS/rfQi6Cn5g7JRVg0hIixgLfDLkiy
-	cFX5nerZ6lrXSoywvkAA==;
+	List-Owner; bh=Dul5eTASqph19NYXMNKw+6rZT35LXi5JYuayXlsPdt8=; b=JEgGdAo7/jbLQX
+	kA6gXZp0V4s4T0B3DQ5B5Sir7YgExjtDoyqxfKoJ5uv+k86kflXYKqFe3ODmm4s/xRX3r4fjv/hZr
+	6TVJKGCqW7D0G5HUd/s5+a0DXwwA47SGjdG3T+x52dwzELnrWgCIXixD7pgYEEn2K/O9oUq1Tj9y4
+	sj4NjjWp5FVG0z6cAYEV0fayLragTxp9QWyCBdYDvWsgNC4fEVbqos71Hvm3yhHda6Qj3T6Hg7ZEZ
+	tS0HRpImYIIj0SHWdPc1E6sPa7c46EnshYLiSobKOSxe6KGRpDpInIQml1vecoFExOuEaz6qckYB+
+	Dq1WusXSLf+BceDgWfdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUAar-0002M8-Lr; Thu, 30 Apr 2020 14:55:17 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jUAby-0005zo-Ad; Thu, 30 Apr 2020 14:56:26 +0000
+Received: from brightrain.aerifal.cx ([216.12.86.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAV0-00046R-Ey
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:49:24 +0000
-Received: by mail-wm1-x344.google.com with SMTP id x25so2194742wmc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 07:49:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=g7eYSMAp+jVN9aeMCPrBnn3TIBRQFFZukfwsZjZglmQ=;
- b=OA5l7aPTjb+/faLVms3XE72y8w1jxluq6N84GtC94alO2aDBpgsSDm1VINExf6U31K
- 9tqr3waTe0vuItea2ZK+4FQY33rrwYVdlFm66/zz3Cbebio6W/zJw+cuzPwy6n+iuVO1
- Qv5Txcaf0FBe7wgFuL7AbtE7IOV5EsWHhF+AbyMKfvo6KM8oDXgrOneyRlflh3kUpYDW
- E4uoX+Djh2ULGNXS229plrMBCBOviGp/3ySosN9wHOowtX6bdb+p566EJDb6/lYWICXS
- WRk4yWH7ivHkDHxhIfzZpbxIlPohMJP1LV+ksBsadHK0LHqwXShd8qhbrbm5BovWgXrw
- ++DQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=g7eYSMAp+jVN9aeMCPrBnn3TIBRQFFZukfwsZjZglmQ=;
- b=R87V7ma1a2aeWV/URXUDkFnJKhguzhrJAONeK2TDVEfqLrDyQ2/dBtD9L6j/5M+Ybt
- hT39d4Q3+AvGOllOdswka5Dn6HPME4zOVJEStv3DlRBJ3aeaIbkbhkW31fpyrwwRdyOY
- N9o5a+HL1Z4zU228IXHOIC7PbHD65Scn1wxrri22nCn7Wm/JzivTix3OC6Qo3MNmsVem
- p6l923o5nGGfQXYPiwsVEV7f4zqGPA9bHva/f2DFrJUdTr1cGUFXVwaLO1bCCCSZksaq
- MV8RQE+NQp98FBbWQZLdoNuil8g+0p5KxPXCbbZ3rLE2qeB3y6aKhx67BDXmU2ssl8Ch
- ANFw==
-X-Gm-Message-State: AGi0PuYPVuYv06uYX/f//Md3aZu0P/nhW4ZLEP7xYkIDlBKAVOPTlB6W
- 57phowd9Lv7RebIE9KXH+Gotdg==
-X-Google-Smtp-Source: APiQypITD1jhHlRSJgCpCChsFN8ZYowBb0ctI7WS8xvFw5N4p+kZxrBFEWIMXyQBlBl3+nKP5Z4Cvw==
-X-Received: by 2002:a7b:c306:: with SMTP id k6mr3287632wmj.40.1588258152859;
- Thu, 30 Apr 2020 07:49:12 -0700 (PDT)
-Received: from localhost ([2a01:4b00:8523:2d03:d4b6:9828:8bd2:ce6f])
- by smtp.gmail.com with ESMTPSA id f2sm4557427wro.59.2020.04.30.07.49.11
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 30 Apr 2020 07:49:12 -0700 (PDT)
-From: David Brazdil <dbrazdil@google.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Marc Zyngier <maz@kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Will Deacon <will@kernel.org>
-Subject: [PATCH 15/15] arm64: kvm: Lift instrumentation restrictions on VHE
-Date: Thu, 30 Apr 2020 15:48:31 +0100
-Message-Id: <20200430144831.59194-16-dbrazdil@google.com>
-X-Mailer: git-send-email 2.26.1
-In-Reply-To: <20200430144831.59194-1-dbrazdil@google.com>
-References: <20200430144831.59194-1-dbrazdil@google.com>
+ id 1jUAXC-0007wK-GO
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 14:51:40 +0000
+Date: Thu, 30 Apr 2020 10:51:23 -0400
+From: Rich Felker <dalias@libc.org>
+To: Greg Ungerer <gerg@linux-m68k.org>
+Subject: Re: [PATCH v2 0/5] Fix ELF / FDPIC ELF core dumping, and use
+ mmap_sem properly in there
+Message-ID: <20200430145123.GE21576@brightrain.aerifal.cx>
+References: <20200429214954.44866-1-jannh@google.com>
+ <20200429215620.GM1551@shell.armlinux.org.uk>
+ <CAHk-=wgpoEr33NJwQ+hqK1dz3Rs9jSw+BGotsSdt2Kb3HqLV7A@mail.gmail.com>
+ <31196268-2ff4-7a1d-e9df-6116e92d2190@linux-m68k.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <31196268-2ff4-7a1d-e9df-6116e92d2190@linux-m68k.org>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_074914_607377_7D607966 
-X-CRM114-Status: UNSURE (   9.83  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200430_075130_949853_400C20D6 
+X-CRM114-Status: GOOD (  19.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,43 +58,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Brazdil <dbrazdil@google.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Salter <msalter@redhat.com>, linux-c6x-dev@linux-c6x.org,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, Nicolas Pitre <nico@fluxnic.net>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Jann Horn <jannh@google.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-MM <linux-mm@kvack.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
+ Oleg Nesterov <oleg@redhat.com>, linux-fsdevel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
+ Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "Eric W . Biederman" <ebiederm@xmission.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With VHE and nVHE executable code completely separated, remove build config
-that disabled GCOV/KASAN/UBSAN/KCOV instrumentation for VHE as these now
-execute under the same memory mappings as the rest of the kernel.
+On Fri, May 01, 2020 at 12:10:05AM +1000, Greg Ungerer wrote:
+> 
+> 
+> On 30/4/20 9:03 am, Linus Torvalds wrote:
+> >On Wed, Apr 29, 2020 at 2:57 PM Russell King - ARM Linux admin
+> ><linux@armlinux.org.uk> wrote:
+> >>
+> >>I've never had any reason to use FDPIC, and I don't have any binaries
+> >>that would use it.  Nicolas Pitre added ARM support, so I guess he
+> >>would be the one to talk to about it.  (Added Nicolas.)
+> >
+> >While we're at it, is there anybody who knows binfmt_flat?
+> >
+> >It might be Nicolas too.
+> >
+> >binfmt_flat doesn't do core-dumping, but it has some other oddities.
+> >In particular, I'd like to bring sanity to the installation of the new
+> >creds, and all the _normal_ binfmt cases do it largely close together
+> >with setup_new_exec().
+> >
+> >binfmt_flat is doing odd things. It's doing this:
+> >
+> >         /* Flush all traces of the currently running executable */
+> >         if (id == 0) {
+> >                 ret = flush_old_exec(bprm);
+> >                 if (ret)
+> >                         goto err;
+> >
+> >                 /* OK, This is the point of no return */
+> >                 set_personality(PER_LINUX_32BIT);
+> >                 setup_new_exec(bprm);
+> >         }
+> >
+> >in load_flat_file() - which is also used to loading _libraries_. Where
+> >it makes no sense at all.
+> 
+> I haven't looked at the shared lib support in there for a long time,
+> but I thought that "id" is only 0 for the actual final program.
+> Libraries have a slot or id number associated with them.
 
-No violations are currently being reported by either KASAN or UBSAN.
+This sounds correct. My understanding of FLAT shared library support
+is that it's really bad and based on having preassigned slot indices
+for each library on the system, and a global array per-process to give
+to data base address for each library. Libraries are compiled to know
+their own slot numbers so that they just load from fixed_reg[slot_id]
+to get what's effectively their GOT pointer.
 
-Signed-off-by: David Brazdil <dbrazdil@google.com>
----
- arch/arm64/kvm/hyp/Makefile | 8 --------
- 1 file changed, 8 deletions(-)
+I'm not sure if anybody has actually used this in over a decade. Last
+time I looked the tooling appeared broken, but in this domain lots of
+users have forked private tooling that's not publicly available or at
+least not publicly indexed, so it's hard to say for sure.
 
-diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
-index a6883f4fed9e..f877ac404b46 100644
---- a/arch/arm64/kvm/hyp/Makefile
-+++ b/arch/arm64/kvm/hyp/Makefile
-@@ -10,11 +10,3 @@ obj-$(CONFIG_KVM) += vhe.o nvhe/
- 
- vhe-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
- 	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
--
--# KVM code is run at a different exception code with a different map, so
--# compiler instrumentation that inserts callbacks or checks into the code may
--# cause crashes. Just disable it.
--GCOV_PROFILE	:= n
--KASAN_SANITIZE	:= n
--UBSAN_SANITIZE	:= n
--KCOV_INSTRUMENT	:= n
--- 
-2.26.1
-
+Rich
 
 _______________________________________________
 linux-arm-kernel mailing list
