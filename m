@@ -2,57 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DBD81C005C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 17:31:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6DB61C005F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 17:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6Bmt2k5n3qZyIB7NlToYXkFI/fSzTzDHcYmWqu0XENo=; b=P0iI4ibDiytIU9
-	UuqOWUhpHI8OUBQmQhvPIZCqLiyVAEqpUMSxebv/gImdRBUb8Oh8B1v6wa1SDOrg1E1zeIn+XjlgC
-	vrIhwNyIy2TBOD/ZPOekMMoSGO4FHd9qQkyvHiYtARNykdyWVRYJXLAm+ARj9WXu8iXlI5JLNyEDM
-	em2evVuyP5nZKjuYievZkt+msbtsBI7Q+W6H8UViAAJaGaiegFETZUndLKMjLXyGtlcS7kG/3rEWo
-	YKoAvxn9epwrq60m9x9OUgS4gzcMZl5Y/cd2T3wQFD1R7X8nKunOg21NtFPPexfMyIiEwYg4r/pgr
-	csoOWDUOFFPSLr0pbvog==;
+	List-Owner; bh=2Gc/R9KS2Px/vx+m/uRf4+ZlY6YViT9QjJqgK/ncqVc=; b=jFPOmEur23xHxM
+	DwnSwoJPD+T/TmOX3vePA7rs/T1V3f0knnTNdcP+D00bCczuNJMpJ/sllidWOKTPXh0gTdToCnZ52
+	e1QGpZAwZZN1F7QEApdStouftBJhI4BoRsZ0PFdtOaSuVw+Kcc0D9dzvMOsbe8TLJNC5on1SyXfTl
+	YhdHppdlsI72xmtdevXenS8d8zrrvV5XkcVtKu/rNbhXJqKSn6pH0477DsUnYa917dAZbP+DO/8j2
+	1EheCgDOD4w84cNzuJCbeO4MkPr4MIeFx/pVyogzv09DcmWYDchkiWcb12MbpKiSMKSGxb50SqsYG
+	nJC0HzAP90JmeDGx2NXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUB9x-0001Bp-95; Thu, 30 Apr 2020 15:31:33 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUB9o-0001BI-0K
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 15:31:25 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 3B5B18123;
- Thu, 30 Apr 2020 15:32:10 +0000 (UTC)
-Date: Thu, 30 Apr 2020 08:31:19 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH 02/14] clocksource/drivers/timer-ti-dm: Add clockevent
- and clocksource support
-Message-ID: <20200430153119.GX37466@atomide.com>
-References: <20200417165519.4979-1-tony@atomide.com>
- <20200417165519.4979-3-tony@atomide.com>
- <62be90e2-7dbe-410d-4171-c0ad0cddc7a3@linaro.org>
- <20200427143144.GQ37466@atomide.com>
- <29f39839-b3ed-cac3-1dea-c137286320b1@linaro.org>
- <20200427152329.GR37466@atomide.com> <20200430140040.GA8363@bogus>
+	id 1jUBAJ-0001Qn-5X; Thu, 30 Apr 2020 15:31:55 +0000
+Received: from skedge03.snt-world.com ([91.208.41.68])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUBA4-0001OW-9c
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 15:31:43 +0000
+Received: from sntmail10s.snt-is.com (unknown [10.203.32.183])
+ by skedge03.snt-world.com (Postfix) with ESMTP id 2B4B167A90D;
+ Thu, 30 Apr 2020 17:31:38 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail10s.snt-is.com
+ (10.203.32.183) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Thu, 30 Apr
+ 2020 17:31:37 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1913.007; Thu, 30 Apr 2020 17:31:37 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Lucas Stach <l.stach@pengutronix.de>, Adam Ford <aford173@gmail.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Christian Gmeiner
+ <christian.gmeiner@gmail.com>, Daniel Baluta <daniel.baluta@nxp.com>, "Fabio
+ Estevam" <festevam@gmail.com>, Leonard Crestez <leonard.crestez@nxp.com>, "Li
+ Jun" <jun.li@nxp.com>, NXP Linux Team <linux-imx@nxp.com>, Peng Fan
+ <peng.fan@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>, "Russell
+ King" <linux+etnaviv@armlinux.org.uk>, Sascha Hauer <s.hauer@pengutronix.de>, 
+ Shawn Guo <shawnguo@kernel.org>, "S.j. Wang" <shengjiu.wang@nxp.com>
+Subject: Re: [RFC PATCH 1/4] drm/etnaviv: Prevent IRQ triggering at probe time
+ on i.MX8MM
+Thread-Topic: [RFC PATCH 1/4] drm/etnaviv: Prevent IRQ triggering at probe
+ time on i.MX8MM
+Thread-Index: AQHWHu1RaS/QCZFEh0aIMChy0QTuwqiRmPWAgAAQiIA=
+Date: Thu, 30 Apr 2020 15:31:37 +0000
+Message-ID: <6a5fbb8a-bf28-9c8e-53c7-7a3e5f338a2c@kontron.de>
+References: <20200430124602.14463-1-frieder.schrempf@kontron.de>
+ <20200430124602.14463-2-frieder.schrempf@kontron.de>
+ <5e1f804c4c27927d10b2283747c1cae6606abe7c.camel@pengutronix.de>
+In-Reply-To: <5e1f804c4c27927d10b2283747c1cae6606abe7c.camel@pengutronix.de>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <BA4382012F57B34A874DFB7B14B0BD99@snt-world.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430140040.GA8363@bogus>
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 2B4B167A90D.A1282
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: aford173@gmail.com, anson.huang@nxp.com,
+ christian.gmeiner@gmail.com, daniel.baluta@nxp.com,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ etnaviv@lists.freedesktop.org, festevam@gmail.com, jun.li@nxp.com,
+ kernel@pengutronix.de, l.stach@pengutronix.de,
+ leonard.crestez@nxp.com, linux+etnaviv@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, peng.fan@nxp.com,
+ s.hauer@pengutronix.de, shawnguo@kernel.org, shengjiu.wang@nxp.com
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_083124_083204_EFE8F7E4 
-X-CRM114-Status: GOOD (  24.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200430_083140_653836_5D234523 
+X-CRM114-Status: GOOD (  20.96  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.208.41.68 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,122 +100,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
- Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Tero Kristo <t-kristo@ti.com>, Stephen Boyd <sboyd@kernel.org>,
- Andreas Kemnade <andreas@kemnade.info>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap@vger.kernel.org,
- Adam Ford <aford173@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "etnaviv@lists.freedesktop.org" <etnaviv@lists.freedesktop.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Rob Herring <robh@kernel.org> [200430 14:01]:
-> On Mon, Apr 27, 2020 at 08:23:29AM -0700, Tony Lindgren wrote:
-> > * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 15:03]:
-> > > On 27/04/2020 16:31, Tony Lindgren wrote:
-> > > > Hi,
-> > > > 
-> > > > * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 09:19]:
-> > > >> On 17/04/2020 18:55, Tony Lindgren wrote:
-> > > >>> --- a/Documentation/devicetree/bindings/timer/ti,timer.txt
-> > > >>> +++ b/Documentation/devicetree/bindings/timer/ti,timer.txt
-> > > >>> @@ -14,6 +14,8 @@ Required properties:
-> > > >>>  			ti,omap5430-timer (applicable to OMAP543x devices)
-> > > >>>  			ti,am335x-timer	(applicable to AM335x devices)
-> > > >>>  			ti,am335x-timer-1ms (applicable to AM335x devices)
-> > > >>> +			ti,dmtimer-clockevent (when used as for clockevent)
-> > > >>> +			ti,dmtimer-clocksource (when used as for clocksource)
-> > > >>
-> > > >> Please, submit a separate patch for this.
-> > > >>
-> > > >> Before you resend as is, this will be nacked as clocksource / clockevent
-> > > >> is not a hardware description but a Linux thing.
-> > > >>
-> > > >> Finding a way to characterize that from the DT is an endless discussion
-> > > >> since years, so I suggest to use a single property for the timer eg
-> > > >> <ti,dmtimer> and initialize the clocksource and the clockevent in the
-> > > >> driver.
-> > > > 
-> > > > Hmm good point. We still need to specify which timer is a clocksource
-> > > > and which one a clockevent somehow.
-> > > > 
-> > > > Maybe we could have a generic properties like the clock framework such as:
-> > > > 
-> > > > assigned-system-clocksource
-> > > > assigned-system-clockevent
-> > > 
-> > > I think that will be the same problem :/
-> > 
-> > Seems like other SoCs have the same issue too with multiple timers
-> > to configure.
-> > 
-> > > Is it possible to check the interrupt for the clockevent ? A timer node
-> > > with the interrrupt is the clockevent, without it is a clocksource.
-> > 
-> > OK let's try that. So the configuration would become then:
-> > 
-> > compatible = "ti,dmtimer;	/* reserved for system timers */
-> > /delete-property/interrupts;	/* ok so it's a clocksource */
-> > /delete-property/interrupts-extended;
+Hi Lucas,
+
+On 30.04.20 16:32, Lucas Stach wrote:
+> Hi Frieder,
 > 
-> That's not really what was meant.
+> Am Donnerstag, den 30.04.2020, 12:46 +0000 schrieb Schrempf Frieder:
+>> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+>>
+>> On i.MX8MM there is an interrupt getting triggered immediately after
+>> requesting the IRQ, which leads to a stall as the handler accesses
+>> the GPU registers whithout the clock being enabled.
+>>
+>> Enabling the clocks briefly seems to clear the IRQ state, so we do
+>> this before requesting the IRQ.
+> 
+> This is most likely caused by improper power-up sequencing. Normally
+> the GPC will trigger a hardware reset of the modules inside a power
+> domain when the domain is powered on. This requires the clocks to be
+> running at this point, as those resets are synchronous, so need clock
+> pulses to propagate through the hardware.
 
-OK, so let's figure out something better then.
+Ok, I was suspecting something like that and your explanation makes 
+total sense to me.
 
-> Let's say you have N timers. Either every timer is exactly the same and 
-> the OS can just assign them however it wants or there is some difference 
-> in the h/w making certain timer better for certain functions. Describe 
-> that difference. It could be clock rate, number of counter bits, always 
-> on, secure mode access only, has or doesn't have output compare or input 
-> capture, etc.
+> 
+>  From what I see the i.MX8MM is still missing the power domain
+> controller integration, but I'm pretty confident that this problem
+> should be solved in the power domain code, instead of the GPU driver.
 
-Hmm. Trying to detect this automatically will get messy. For example,
-we have few omap3 boards with the following options that also need to
-consider if the separate 32KiHz counter is available:
+Ok. I was hoping that GPU support could be added without power domain 
+control, but I now see that this is probably not reasonable at all.
+So I will keep on hoping that NXP comes up with an upstreamable solution 
+for the power domain handling.
 
-1. The best case scenario
+Thanks,
+Frieder
 
-ti,omap-counter32k clocksource
-ti,sysc-omap2-timer ti,timer-alwon clockevent (timer1)
-
-2. Boards relying on internal clock with unusable 32k counter
-
-ti,sysc-omap2-timer ti,timer-alwon clocksource (timer12)
-ti,sysc-omap2-timer clockevent (typically gpt2)
-
-In the second case, the 32k counter is unusable, and timer1
-is unusable with the external 32k always on clock. But timer1
-can be used with the system clock just fine for other purposes.
-So ideally we would not tag timer1 as disabled :)
-
-For the second case, we could remove ti,timer-alwon property
-for timer1, and tag the 32k counter as disabled as the source
-clock is unreliable. Then somewhere in the code we would need
-to check if ti,omap-counter32k is availabe, then check if
-timer1 is always-on, then use timer12 if not a secure device
-like n900.
-
-If the board wants to use the system clock as the source for
-a higher resolution with assigned-clock-parents, then we'd need
-to ignore the always-on property and not use the 32k counter as
-the clocksource. Basically to somehow figure out that a higher
-resolution configuration is preferred over a
-low-power configuration.
-
-So what's your take on just adding the generic properties for
-assigned-system-clocksource and clockevent?
-
-Regards,
-
-Tony
-
-
+> 
+> Regards,
+> Lucas
+> 
+>> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+>> ---
+>>   drivers/gpu/drm/etnaviv/etnaviv_gpu.c | 29 ++++++++++++++++++++-----
+>> --
+>>   1 file changed, 22 insertions(+), 7 deletions(-)
+>>
+>> diff --git a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>> b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>> index a31eeff2b297..23877c1f150a 100644
+>> --- a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>> +++ b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>> @@ -1775,13 +1775,6 @@ static int etnaviv_gpu_platform_probe(struct
+>> platform_device *pdev)
+>>   		return gpu->irq;
+>>   	}
+>>   
+>> -	err = devm_request_irq(&pdev->dev, gpu->irq, irq_handler, 0,
+>> -			       dev_name(gpu->dev), gpu);
+>> -	if (err) {
+>> -		dev_err(dev, "failed to request IRQ%u: %d\n", gpu->irq,
+>> err);
+>> -		return err;
+>> -	}
+>> -
+>>   	/* Get Clocks: */
+>>   	gpu->clk_reg = devm_clk_get(&pdev->dev, "reg");
+>>   	DBG("clk_reg: %p", gpu->clk_reg);
+>> @@ -1805,6 +1798,28 @@ static int etnaviv_gpu_platform_probe(struct
+>> platform_device *pdev)
+>>   		gpu->clk_shader = NULL;
+>>   	gpu->base_rate_shader = clk_get_rate(gpu->clk_shader);
+>>   
+>> +	/*
+>> +	 * On i.MX8MM there is an interrupt getting triggered
+>> immediately
+>> +	 * after requesting the IRQ, which leads to a stall as the
+>> handler
+>> +	 * accesses the GPU registers whithout the clock being enabled.
+>> +	 * Enabling the clocks briefly seems to clear the IRQ state, so
+>> we do
+>> +	 * this here before requesting the IRQ.
+>> +	 */
+>> +	err = etnaviv_gpu_clk_enable(gpu);
+>> +	if (err)
+>> +		return err;
+>> +
+>> +	err = etnaviv_gpu_clk_disable(gpu);
+>> +	if (err)
+>> +		return err;
+>> +
+>> +	err = devm_request_irq(&pdev->dev, gpu->irq, irq_handler, 0,
+>> +			       dev_name(gpu->dev), gpu);
+>> +	if (err) {
+>> +		dev_err(dev, "failed to request IRQ%u: %d\n", gpu->irq,
+>> err);
+>> +		return err;
+>> +	}
+>> +
+>>   	/* TODO: figure out max mapped size */
+>>   	dev_set_drvdata(dev, gpu);
+>>   
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
