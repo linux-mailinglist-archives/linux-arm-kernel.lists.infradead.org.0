@@ -2,83 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE4B61BFF88
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 17:03:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1E231BFF99
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 17:06:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mah0S3I4zhHM2i1gnUOyopA6KcJrgJkzeQVLdJsLm+U=; b=A0sHbuHwRm80qx
-	ppq8qt9os2Su9lHHWnKjDHxQuNh130n5t9DFLLalAvOguWsBj1nifRQGWN/qvDrXjBIpORnEh4iIA
-	mIu6OpE1BKGkzCRigMn7mrkaN+MZm8NrNxgezpNN8rHtb+jyE0RmEa9fSP/8+9D+nd5jPEOOX+edE
-	TvoYqvxuDRcqOXcu33FJJZymTTFGOdh3IR6XpZV9jyVyvyBzC/xkhwt2FYkieWroLsyqIkEV/0c0D
-	o3QaBr7nGDdRf3EgEQi08bzeGpFeo6fe9OTV6ttG1UfiLY94Ou0HcYCUdRHQbVi9rFPgIDSzE9sn9
-	TnRYeWz/HW4uGowsBQFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=urEHTZaJ8IKTi/kSdGi1qtt/74SWoQUCehQfxVEtDDw=; b=W8n08CSfBWArrFbhIsJ/auLT1
+	qmlSlZEp+6HDs556rKLp+szb5y20E/Y9zrETLNMzrWzIO3CE4OhauvfnBuw4LV58DN96S24rhONgr
+	eayXc0kgpnl1hHCvDlLqyIKyV3hOtWnv5nDhGfr09YxLLaek81eD/pJLuPLgC6mTzt5C4YEYJ3+yV
+	g42e2Lg6OwgizKgfqb8NnkIElzYdGud7G1QxcXrhER88sMg+syNmKmHyLbTMTmJWBYqhjT0gICNFn
+	rWmZtdeYWXMzXKrTclTl5ZTdgYblLAsdhfWLfeBXrDt89V5vyWtjozbwvCHEzaBqOfACPiKa5iX7u
+	Sxg3VRDsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUAiS-00041B-AB; Thu, 30 Apr 2020 15:03:08 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jUAl7-0007TB-Op; Thu, 30 Apr 2020 15:05:53 +0000
+Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUAiI-0003zc-65
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 15:02:59 +0000
-Received: by mail-lj1-x242.google.com with SMTP id b2so6856858ljp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 08:02:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=XdAVXL5gtubsjMr9Ir1cqftbkn+HwRdpaJZuRZ8bhH4=;
- b=dnfu4V4ESdC2kBEl/SbDCDvEMsQ+fK7dGQyNA8DqA7NwN7clEkfhA3nzSwCtAZfwcI
- 5i3IwRbI+RAPzUUmKqY5h5NZ9Rg1H5m1F8aUZk7SPCoN21Ux6mjLl0VTlN5rJKNKpBSY
- gyWSSWstINUDfedvRWf9JeMvdwEZm/x9r9fp6WAlKMC6xNAE5+RxuP/Luuws3Fm+y6FQ
- Y2u0ScwaVxBemLcA2GKejw5j7THlNSl++E454jN3o7bHVYey0/iuveJxLGmkADKHDft7
- 1s+ls0xkxYMi+2BYOqD0TlLGDATvACpFgp/GxZaqaXTWM68ll48BMhF+E08rsQI9n2zX
- BGag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=XdAVXL5gtubsjMr9Ir1cqftbkn+HwRdpaJZuRZ8bhH4=;
- b=ouVygsW9cwpDGLLScgzN9ZJseOnYC7JrteUtEj9MPyZvNQo/XxccaqvnODou7gpeKb
- euYFvsxI9Zzc1Zzg7b0X14aR8PorzxLNUIRtgY6yNolMfXtvoMgbsnjEOiQFC1ERs5rZ
- +hkiae04A+8bRUk/Jc6tGTPvrrcZLq6TWId+fW4NxcMC7tYnIp5nC7nP6aT77eAl7mtZ
- 4jTHPVmu07DmPDjL490md8Wdr2eOiHh7AezTrsETRfXK4sI+K5MEmztB7JnUXED14fqs
- 81usCrFd9c4rqTmVDu/xco7wKxNCsqBIunPd5XTcBk22jfQ6bVFr4tl8HY5VvP7AbT/2
- k5Ag==
-X-Gm-Message-State: AGi0PuZ4tDpk7BUxW4h1XBigMQgeUvA3lvRzyPybX85v369RMgt77mv4
- IajmwL6cM/NR8YohXeoVat6+JTq2jqk=
-X-Google-Smtp-Source: APiQypLzKhJx4X6ryFSFK51GkkMtke9Qng53LIPyKOnMmnB2NCX9dGtb8+wnJyMbSnUUXsFl7E3mBg==
-X-Received: by 2002:a2e:8199:: with SMTP id e25mr2542886ljg.87.1588258974761; 
- Thu, 30 Apr 2020 08:02:54 -0700 (PDT)
-Received: from localhost.bredbandsbolaget
- (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
- by smtp.gmail.com with ESMTPSA id j22sm5305537lfg.96.2020.04.30.08.02.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 08:02:51 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/2] ARM: dts: ux500: samsung-skomer: Add magnetometer
-Date: Thu, 30 Apr 2020 17:02:45 +0200
-Message-Id: <20200430150245.7935-2-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200430150245.7935-1-linus.walleij@linaro.org>
-References: <20200430150245.7935-1-linus.walleij@linaro.org>
+ id 1jUAku-0007SX-AB
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 15:05:41 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id CF8FC879;
+ Thu, 30 Apr 2020 11:05:36 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Thu, 30 Apr 2020 11:05:37 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=Tru7PrTS/cEk2EWUwEOeWCgUn+R
+ +ZwTSYNBWM33YLjg=; b=G7S/aEAwT1c+33nJT6fsdEVxgPaaVZxI2PD7wiBF+NE
+ sDsj9yoIQe4Bg5Zqu/32cYJ1/o9g75vS4KP+bGdYXRQFCceRiLHsjJMa4H3JXYPx
+ nMJE0/wU8/rnFD2ex84lI/Jtl6fBqL4hJbQej0O22CkiU3ABV3EsPRr4cpkQcG8E
+ txEZ1QVrFc19vK/8zrzQfhNVVWEH5Q+U4e9rDh3OyqHLtARCpuG0mF/8Tg5WY7qx
+ GduxhLWi8KsRQd7aUQtzNARLVbrCuXuytOEB+IBUSgkG4lTQ6MYJa0NcXHKTe/P2
+ AK0eR2BYJmgAuE6UFhXiNysabyDUbC7bfRNg8fo4qTQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Tru7Pr
+ TS/cEk2EWUwEOeWCgUn+R+ZwTSYNBWM33YLjg=; b=T32wf1Yx7SUErYgLK+Q0AI
+ To4RLQELHNIbU91kwfidK/p1D217384Ddxg2L+2cYf9Gc8QwhU6TmNz5OrZ8Yjqu
+ e42G5DkiwxciQCVTVmhv3Lc3eBI7NKdySbDhXrDp+nZzL3D6OL3M+tSpyO+v5eK8
+ wJtlsIxyW19v5BZNjSRUEft6hB90QfUyguiyAbZ9Drz21W28SinmWlci88C4F4X/
+ DoVZuxXaAZOSuERifUont6kLyf4DaADe74yPAnhMMkzve6ZK4IYEYem3sR+j5pxA
+ ySI1+1RynC6JkP36hkIwD34+xpgxyQfPjTm4JZzMzXvDKg1G1RXwZ23c3RyP3tUg
+ ==
+X-ME-Sender: <xms:P-mqXlJggu2Qj1_nrorI-QgX36-_oYqmih1diXjqc6YH_T7Z23bnfQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieehgdekgecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
+ udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
+ grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:P-mqXp38E52BRc5Hv_-Yj2EeIpsRoK6ysoe7bM_7O6YV5ryJNOIc8g>
+ <xmx:P-mqXtoxudCj3bZiBYPZvyV5_vN88d_f9yunvG9v7lLCc-yIfx8VxA>
+ <xmx:P-mqXi4O_g9WBashtNSp7S6_YfSr2V5jQhtK3-PCOR8V9BZTzrh4Pw>
+ <xmx:QOmqXqlt0MmCqTlV7I5P-q5IgoxeIENuJNQkCZY8xEdpSCJEaQINiw>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A4BA43280060;
+ Thu, 30 Apr 2020 11:05:35 -0400 (EDT)
+Date: Thu, 30 Apr 2020 17:05:34 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Priit Laes <plaes@plaes.org>
+Subject: Re: [PATCH 1/4] clk: sunxi-ng: a10/a20: rewrite init code to a
+ platform driver
+Message-ID: <20200430150534.kbzfb7utpc7kswlv@gilmour.lan>
+References: <20200417221730.555954-1-plaes@plaes.org>
+ <20200417221730.555954-2-plaes@plaes.org>
+ <20200420124935.asfbgv7envb2af55@gilmour.lan>
+ <20200420203228.GA4734@plaes.org>
+ <20200429143510.ksi27lok2udtmfas@gilmour.lan>
+ <20200430062137.GA32281@plaes.org>
 MIME-Version: 1.0
+In-Reply-To: <20200430062137.GA32281@plaes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_080258_226353_CDB6D4D6 
-X-CRM114-Status: GOOD (  11.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_080540_390540_469B0EBE 
+X-CRM114-Status: GOOD (  20.24  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,46 +109,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Nick Reitemeyer <nick.reitemeyer@web.de>,
- Stephan Gerhold <stephan@gerhold.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7263296556440107905=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the ALPS magnetometer to the Skomer phone.
 
-Cc: Stephan Gerhold <stephan@gerhold.net>
-Cc: Nick Reitemeyer <nick.reitemeyer@web.de>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
- arch/arm/boot/dts/ste-ux500-samsung-skomer.dts | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+--===============7263296556440107905==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="xtai2ger2274pycp"
+Content-Disposition: inline
 
-diff --git a/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts b/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-index 5da3e21e5388..e2c6259d2f1d 100644
---- a/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-+++ b/arch/arm/boot/dts/ste-ux500-samsung-skomer.dts
-@@ -147,7 +147,12 @@ i2c-gpio-1 {
- 		pinctrl-0 = <&i2c_gpio_1_default>;
- 		#address-cells = <1>;
- 		#size-cells = <0>;
--		/* TODO: this should be used by the ALPS HSCDTD008A compass sensor */
-+		magnetometer@c {
-+			compatible = "alps,hscdtd008a";
-+			reg = <0x0c>;
-+			avdd-supply = <&ab8500_ldo_aux1_reg>;
-+			dvdd-supply = <&ab8500_ldo_aux8_reg>;
-+		};
- 	};
- 
- 	soc {
--- 
-2.26.2
 
+--xtai2ger2274pycp
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Apr 30, 2020 at 06:21:37AM +0000, Priit Laes wrote:
+> On Wed, Apr 29, 2020 at 04:35:10PM +0200, Maxime Ripard wrote:
+> > On Mon, Apr 20, 2020 at 08:32:28PM +0000, Priit Laes wrote:
+> > > On Mon, Apr 20, 2020 at 02:49:35PM +0200, Maxime Ripard wrote:
+> > > > On Sat, Apr 18, 2020 at 01:17:27AM +0300, Priit Laes wrote:
+> > > > > In order to register regmap for sun7i CCU, there needs to be
+> > > > > a device structure already bound to the CCU device node.
+> > > > >=20
+> > > > > Convert the sun4i/sun7i CCU setup to platform driver to use
+> > > > > it later as platform device.
+> > > > >=20
+> > > > > Signed-off-by: Priit Laes <plaes@plaes.org>
+> > > >=20
+> > > > You can't relly do that though. We have timers that need those cloc=
+ks before the
+> > > > device model is initialized.
+> > >=20
+> > > Ok, I'm somewhat lost now... are these the affected timers on sun7i f=
+ollowing:
+> > > - allwinner,sun4i-a10-timer (timer@1c20c00)
+> > > - allwinner,sun7i-a20-hstimer (hstimer@1c60000)
+> >=20
+> > Yep
+> >=20
+> > > Any ideas on what approach I could actually use?
+> >=20
+> > I guess you could keep the CLK_OF_DECLARE registration, and then have a
+> > platform_driver probe and register the regmap?
+> >=20
+>=20
+> Thanks this did the trick.
+>=20
+> > > Also, similar timer dependency would affect then sun6i-a31 and sun9i-=
+a80
+> > > platforms too...
+>=20
+> I didn't check this before, but sun9i-a80 CCU is initialized currently via
+> platform device. Should it be converted first to clock driver (CLK_OF_DEC=
+LARE)?
+
+I guess we could just remove the timer node on the A80. It has never been t=
+ested
+and never worked if the clock driver is probed through a platform device.
+
+Maxime
+
+--xtai2ger2274pycp
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXqrpPgAKCRDj7w1vZxhR
+xZyFAQCqSDmhn4yTFm8ud90F6phEUSQWgV3icAt09/kyc3T/TQEAmigbqqP2h2Ds
+T2DQvJTkIn+f7Aa8y8JYzfr9iLPhsAA=
+=Rpgl
+-----END PGP SIGNATURE-----
+
+--xtai2ger2274pycp--
+
+
+--===============7263296556440107905==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7263296556440107905==--
+
