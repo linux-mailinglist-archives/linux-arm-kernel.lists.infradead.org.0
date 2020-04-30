@@ -2,72 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 441BE1C02F8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:46:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B2DD1C02FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 18:46:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bWmLBRvtlcHTHhrL7JBMPzdCuHOmrhU76yWLlv2PMc8=; b=mc5ds55weJYnws3HN7ozBS6Sp
-	UsEHvAg840UFFZt2eAN8vVhlUXFeMZFnaU57dOVFLQ8zBfXXNl5yrt43SZJi7+y54DH7YDn0RMfYZ
-	zlvFcMfGeNJz6DD4beXv6fK/qZQUfial65Jz+urcF/PLvel5Wj+PN8c/vh9C7qpH4ZHcaXdyCWPRn
-	mmbJ1QsYLMTqQN2fHaeBnO2EvrCp5scZOIo3i6X5EK0jOSw6NynI2c6uk4OqI051OoP821UZWt1eb
-	Pgk5DgPBuVH6CVkj6rY/rubgBVFGRxt2O440OfpaWkHAUHMOWebFCRHNIkk/yjE2iz2Zn/Hso3UO1
-	SucF2mtWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=UJ5JoEm0G1UJ7/0eqfHhvrWo4/yHL+IbvMKSjbrUkXc=; b=lc9ywkprnMm6zq
+	+3neN3PrtCidKY8hTKDz9yp1tmCmHBQJQ+w0SmoXkIhy+7RpDl8EStA5BoLXysyheYxUnu47OFhYP
+	hH7UZXEWuICK9Gm+HWg4WpNnbcIDOYdTPBLmEWBe6s8SjIkHgW6vpkArXKSH3U1B15WTeFHaNEaQJ
+	+yQJ6skaZ32+k1VN1XDADnw9+xSecGpuLmIzqV+5gA008Pebgt2u6RMCzz1oS5Ui+uBm8GORkfdlc
+	KL5Y/Jtuq0CNXIpwM6hBb53wlUdwqcOqW7OCpKpEwJUlIvNiXrZZQUbNLxGlUkqRhW7ASHyQaR586
+	TE11IGHN4pCKHgZ2wNIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUCJy-0002db-R8; Thu, 30 Apr 2020 16:45:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUCKh-00033q-65; Thu, 30 Apr 2020 16:46:43 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUCJj-0002bb-7p
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:45:44 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 11ECC2070B;
- Thu, 30 Apr 2020 16:45:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588265142;
- bh=UUkfeKBzGCgK6h1FM/c9NEdb/kQA7jfSSh8tYnz014s=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=NjyIwPqESsip8A9XPgzUPaPNSbfp/ASjhyC0VI+sGoZ2GBdUP6D9Ii53HOSNO4avr
- zJp8ZpbWJLaKFJz2ZoIlojvaMzHQGkk0fFAT8speMGw6S/0kPa1zI90lMRxIMS46py
- AwRgVvNIPnLCIbLP/YPqIQAW29w4kBuw4qrG3ves=
-Date: Thu, 30 Apr 2020 17:45:39 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2 2/3] arm64: insn: Add constants for PAC and BTI
- instruction decode
-Message-ID: <20200430164539.GF4633@sirena.org.uk>
-References: <20200428172433.48830-1-broonie@kernel.org>
- <20200428172433.48830-3-broonie@kernel.org>
- <20200430160729.GB25258@willie-the-truck>
+ id 1jUCKV-00032N-B4
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 16:46:32 +0000
+IronPort-SDR: jCrQD3B/xefLQGSI5yXDZZbiLqTQxrPeZUeDR+JBAgureEQQfP1QBsO3RuoYGCRAl2qoB17GsC
+ y9k9q2LViDRA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 30 Apr 2020 09:46:30 -0700
+IronPort-SDR: o/9FP73hLdrecg6plLPSE4BE260RONmdIVJjsa1Po+2BWeMaxxs+vdPEJruOsCeuYxZUbCf/5S
+ 4/zhGE4GywRw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,336,1583222400"; d="scan'208";a="368202826"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga001.fm.intel.com with ESMTP; 30 Apr 2020 09:46:27 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jUCKT-003xBR-KK; Thu, 30 Apr 2020 19:46:29 +0300
+Date: Thu, 30 Apr 2020 19:46:29 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Alper Nebi Yasak <alpernebiyasak@gmail.com>
+Subject: Re: [RFC PATCH v2 1/3] printk: Add function to set console to
+ preferred console's driver
+Message-ID: <20200430164629.GW185537@smile.fi.intel.com>
+References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
+ <20200430161438.17640-2-alpernebiyasak@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200430160729.GB25258@willie-the-truck>
-X-Cookie: Sign here without admitting guilt.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200430161438.17640-2-alpernebiyasak@gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_094543_303393_FB2B7DF3 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200430_094631_400604_1F979750 
+X-CRM114-Status: GOOD (  18.09  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ high trust [192.55.52.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,87 +74,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1294808772926289787=="
+Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Arvind Sankar <nivedita@alum.mit.edu>, linux-serial@vger.kernel.org,
+ Jiri Slaby <jslaby@suse.com>, Andrew Morton <akpm@linux-foundation.org>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Apr 30, 2020 at 07:14:35PM +0300, Alper Nebi Yasak wrote:
+> Currently, add_preferred_console sets a preferred console, but doesn't
+> actually change /dev/console to match it. That part is handled within
+> register_device, where a newly registered console driver will be set as
+> /dev/console if it matches the preferred console.
+> 
+> However, if the relevant driver is already registered, the only way to
+> set it as /dev/console is by un-registering and re-registering it. An
+> example is the xenfb_make_preferred_console() function:
+> 
+> 	console_lock();
+> 	for_each_console(c) {
+> 		if (!strcmp(c->name, "tty") && c->index == 0)
+> 			break;
+> 	}
+> 	console_unlock();
+> 	if (c) {
+> 		unregister_console(c);
+> 		c->flags |= CON_CONSDEV;
+> 		c->flags &= ~CON_PRINTBUFFER; /* don't print again */
+> 		register_console(c);
+> 	}
+> 
+> The code above was introduced in commit 9e124fe16ff2 ("xen: Enable
+> console tty by default in domU if it's not a dummy"). In short, it's aim
+> is to set VT as the preferred console only after a working framebuffer
+> is registered and thus VT is not the dummy device.
+> 
+> This patch introduces an update_console_to_preferred function that
+> handles the necessary /dev/console change. With this change, the example
+> above can be replaced with:
+> 
+> 	console_lock();
+> 	add_preferred_console("tty", 0, NULL);
+> 	update_console_to_preferred();
+> 	console_unlock();
+> 
+> More importantly, these two calls can be moved to vt.c in order to bump
+> its priority when a non-dummy backend for it is introduced, solving that
+> problem in general.
 
---===============1294808772926289787==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Zs/RYxT/hKAHzkfQ"
-Content-Disposition: inline
+Even w/o looking into the code I believe it breaks more platforms than fixes
+anything. It was not first time one tries to do something about preferred
+consoles and it appeared to break working configurations.
 
+I would wait for PRINTK maintainers to tell, but to me it sounds like papering
+over the real issue which you don't understand (yet).
 
---Zs/RYxT/hKAHzkfQ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, Apr 30, 2020 at 05:07:30PM +0100, Will Deacon wrote:
-> On Tue, Apr 28, 2020 at 06:24:32PM +0100, Mark Brown wrote:
-
-> > +	AARCH64_INSN_HINT_PACIA_1716 = 0x08 << 5,
-> > +	AARCH64_INSN_HINT_PACIB_1716 = 0x0A << 5,
-> > +	AARCH64_INSN_HINT_AUTIA_1716 = 0x0B << 5,
-> > +	AARCH64_INSN_HINT_AUTIB_1716 = 0x0C << 5,
-
-> These still look wrong to me.
-
-Ack, I think I must've glazed over after checking PACIA which is right
-or missed stuff when cut'n'pasting to verify.
-
-> > +	AARCH64_INSN_HINT_PACIAZ     = 0x18 << 5,
-> > +	AARCH64_INSN_HINT_PACIASP    = 0x19 << 5,
-> > +	AARCH64_INSN_HINT_PACIBZ     = 0x1A << 5,
-> > +	AARCH64_INSN_HINT_PACIBSP    = 0x1B << 5,
-> > +	AARCH64_INSN_HINT_AUTIAZ     = 0x1C << 5,
-> > +	AARCH64_INSN_HINT_AUTIASP    = 0x1D << 5,
-
-> This one is typo'd in the Arm ARM as AUTHASP. Seems nobody can get this
-> stuff right!
-
-It seems to have been fixed in the current revision - or at least
-AUTIASP is there and text search isn't finding any instances of
-AUTHASP.
-
-> > +	AARCH64_INSN_HINT_BTI   = 0x20 << 5,
-> > +	AARCH64_INSN_HINT_BTIC  = 0x22 << 5,
-> > +	AARCH64_INSN_HINT_BTIJ  = 0x24 << 5,
-> > +	AARCH64_INSN_HINT_BTIJC = 0x2C << 5,
-
-> This looks wrong as well.
-
-_JC is wrong, yes.
-
---Zs/RYxT/hKAHzkfQ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6rALMACgkQJNaLcl1U
-h9BYewf/QGrznzvji9Vlj/TXDSyLTO3+Trevzusjq7p3lBuV19NfqrnLczIua2Y1
-gU+O8vTcLoYhe+DS/Sez525UGpUkT/lT91d87g9Ht5uss/vDMnzYE4FOgu3uWwty
-drULe2bo4tNWYASEEFPPfLCwi4rITCWb1Y5yGSe2z8TEt81bvbKc7PT0DMp1O7pA
-+cwI+IP0JQoO94EBUX1dGgeQ7vCroIVdHCRTEOVIKUVrS6+sLpIc19kzcUu3Fsg6
-jjHRPb0kvKu8c53nJIriGT4X7S2wJ7C6YvV29iGXv+/owMCK5uuvu8pw2uPRISp2
-FeW7zB2Rx4OjmKxO+3cpmwi7uGaL/g==
-=eoA2
------END PGP SIGNATURE-----
-
---Zs/RYxT/hKAHzkfQ--
+-- 
+With Best Regards,
+Andy Shevchenko
 
 
---===============1294808772926289787==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1294808772926289787==--
-
