@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9E3C1BFA30
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:52:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 117801BFA4B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 15:53:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4KBpj7u+kucS6Z4Ka8+D5DXZmKain2qdayM87cPLB+Q=; b=oUCg/oWP3C1DBC
-	Epl87Bw9hNc20d3RG8HZMH/vkFBzxgY1fR1N//4d0IJk5xjmoaB9CnhW5ggTjKdC42p9hv7YtgFD0
-	7jBqh0KDrfTnzzX+Q2Cour/eRqcfIAYiXnAmSPMGCX73X+PC9sLpXwmtaLgNgQmqvbP2pJczS1bOh
-	Lgm/RfhK8FpjSQWFo/a4ZxdfB37kSzu3ihmat6YpMkhKQsSkZdIlIEiCkLxHgydarJXJFpoGtDd22
-	QgOZ7dc7Y9Y5SYDwlbeKICiCVYWzWM9cNMvGGS0EWutf4EQTgxw9Po27xD8a+0W8uqucOlPub2RcP
-	PzJSuhV7Y+5wKlhFnNnA==;
+	List-Owner; bh=0i/4vNfkPibfOKVh9Yw3iYC9hVfszfFN5O/eCpFhQIY=; b=AtKW/61w5YJl8n
+	JMvt10dZfHxGajCtpWiUbPqbd144eS56oARlA4JIPssNuQLjna1sB4tsEmmMaDHBK64x6fmUddqWx
+	TeTnyg+K6VtFFt265LRfgNyzlgKd/UladZCaM1uTTVCoWT4MI5sboh1i6PYHa3dTZX1xl73tEFVfC
+	Pn3J1jsq+ug79++axZ7PWsImYuhMqRu+dID2Zh9fEODvHlkVPrLWhqlAEe6T0Nnv3H4JJ/HQ9wGmJ
+	wF7Ham8Jtj8Lyz+mk9truaQTm98XGzlhDMGHSpoqeqn4KQsR+NynbU5mpHp6IbK+jm6ZcCvmyMxuz
+	UAPabl+dOzucM6HToyaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU9bw-0000v2-8Y; Thu, 30 Apr 2020 13:52:20 +0000
+	id 1jU9cV-0001Gc-Hc; Thu, 30 Apr 2020 13:52:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU9aj-00009J-Fk
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:51:07 +0000
+ id 1jU9ao-0000EB-Mm
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 13:51:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE44120873;
- Thu, 30 Apr 2020 13:51:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 474BE20873;
+ Thu, 30 Apr 2020 13:51:09 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588254664;
- bh=j7EesqpJdFMIiohM4Zu86JeArWKo8byoEHxcvBmIFJs=;
+ s=default; t=1588254669;
+ bh=RrOjOmwlFZRTd7KGEyHN6f9S1J4hCIihGGuUoP738dw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HRBWvn2SU5htasFxi1UM7LtEFOkn8Wa2dca9nph9ekjzsLKnACh/JSgog1kP2qsAO
- DPN0tXGA8wNV5OZ6bs5ZJTs+ky59j5YrizkZdENcviIjidXbyvhb3cuAZXoD8tlC74
- 6yFsxExFP0oX0+mxx+EZqXRn1aOKagxTsDd5MTsY=
+ b=LUtZ5uhQ9u062uddtNRZAQbxnLHbQlr45+bnsy2lcMNBi5EZses057QrjcUrrmfD1
+ oNXhPxahMIhHBwXbMcD45M/WvfnH7yO+x53yb4QTzN3mpUIPhbOQI4LCiM5cy4RsIV
+ JPTkYSM/rLmfD6Q3zcl9Sb3KuDTRXtzrS3s8S+Mk=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 17/79] ASoC: samsung: s3c24xx-i2s: Fix build after
- removal of DAI suspend/resume
-Date: Thu, 30 Apr 2020 09:49:41 -0400
-Message-Id: <20200430135043.19851-17-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 22/79] drivers: soc: xilinx: fix firmware driver
+ Kconfig dependency
+Date: Thu, 30 Apr 2020 09:49:46 -0400
+Message-Id: <20200430135043.19851-22-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200430135043.19851-1-sashal@kernel.org>
 References: <20200430135043.19851-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_065105_595716_89B8337D 
-X-CRM114-Status: GOOD (  14.94  )
+X-CRM114-CacheID: sfid-20200430_065110_779133_7DE3A2F0 
+X-CRM114-Status: GOOD (  11.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,118 +80,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- linux-samsung-soc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Krzysztof Kozlowski <krzk@kernel.org>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Sasha Levin <sashal@kernel.org>, Michal Simek <michal.simek@xilinx.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgoKWyBVcHN0cmVhbSBj
-b21taXQgZWMyMWJkYzZkZDE2ZDc0YjM2NzRlZjFmZDEyYWU4ZTRlNzQxODYwMyBdCgpDb21taXQg
-NDUwMzEyYjY0MGY5ICgiQVNvQzogc29jLWNvcmU6IHJlbW92ZSBEQUkgc3VzcGVuZC9yZXN1bWUi
-KQpyZW1vdmVkIHRoZSBEQUkgc2lkZSBzdXNwZW5kL3Jlc3VtZSBob29rcyBhbmQgc3dpdGNoZWQg
-ZW50aXJlbHkgdG8KY29tcG9uZW50IHN1c3BlbmQvcmVzdW1lLiAgSG93ZXZlciB0aGUgU2Ftc3Vu
-ZyBTb0MgczNjLWkycy12MiBkcml2ZXIgd2FzCm5vdCB1cGRhdGVkLgoKTW92ZSB0aGUgc3VzcGVu
-ZC9yZXN1bWUgaG9va3MgZnJvbSBzM2MtaTJzLXYyLmMgdG8gczNjMjQxMi1pMnMuYyB3aGlsZQpj
-aGFuZ2luZyBkYWkgdG8gY29tcG9uZW50IHdoaWNoIGFsbG93cyB0byBrZWVwIHRoZSBzdHJ1Y3QK
-c25kX3NvY19jb21wb25lbnRfZHJpdmVyIGNvbnN0LgoKVGhpcyBmaXhlcyBidWlsZCBlcnJvcnM6
-CgogICAgc291bmQvc29jL3NhbXN1bmcvczNjLWkycy12Mi5jOiBJbiBmdW5jdGlvbiDigJhzM2Nf
-aTJzdjJfcmVnaXN0ZXJfY29tcG9uZW504oCZOgogICAgc291bmQvc29jL3NhbXN1bmcvczNjLWky
-cy12Mi5jOjczMDo5OiBlcnJvcjog4oCYc3RydWN0IHNuZF9zb2NfZGFpX2RyaXZlcuKAmSBoYXMg
-bm8gbWVtYmVyIG5hbWVkIOKAmHN1c3BlbmTigJkKICAgICAgZGFpX2Rydi0+c3VzcGVuZCA9IHMz
-YzI0MTJfaTJzX3N1c3BlbmQ7CgpSZXBvcnRlZC1ieTogQXJuZCBCZXJnbWFubiA8YXJuZEBhcm5k
-Yi5kZT4KRml4ZXM6IDQ1MDMxMmI2NDBmOSAoIkFTb0M6IHNvYy1jb3JlOiByZW1vdmUgREFJIHN1
-c3BlbmQvcmVzdW1lIikKU2lnbmVkLW9mZi1ieTogS3J6eXN6dG9mIEtvemxvd3NraSA8a3J6a0Br
-ZXJuZWwub3JnPgoKTGluazogaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvci8yMDIwMDQxMzEyNDU0
-OC4yODE5Ny0xLWtyemtAa2VybmVsLm9yZwpTaWduZWQtb2ZmLWJ5OiBNYXJrIEJyb3duIDxicm9v
-bmllQGtlcm5lbC5vcmc+ClNpZ25lZC1vZmYtYnk6IFNhc2hhIExldmluIDxzYXNoYWxAa2VybmVs
-Lm9yZz4KLS0tCiBzb3VuZC9zb2Mvc2Ftc3VuZy9zM2MtaTJzLXYyLmMgIHwgNTcgLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiBzb3VuZC9zb2Mvc2Ftc3VuZy9zM2MyNDEyLWkycy5j
-IHwgNTYgKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKIDIgZmlsZXMgY2hhbmdlZCwg
-NTYgaW5zZXJ0aW9ucygrKSwgNTcgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvc291bmQvc29j
-L3NhbXN1bmcvczNjLWkycy12Mi5jIGIvc291bmQvc29jL3NhbXN1bmcvczNjLWkycy12Mi5jCmlu
-ZGV4IDU5M2JlMWI2NjhkNjQuLmIzZTEyZDZhNzhhMTkgMTAwNjQ0Ci0tLSBhL3NvdW5kL3NvYy9z
-YW1zdW5nL3MzYy1pMnMtdjIuYworKysgYi9zb3VuZC9zb2Mvc2Ftc3VuZy9zM2MtaTJzLXYyLmMK
-QEAgLTY1Niw2MCArNjU2LDYgQEAgdm9pZCBzM2NfaTJzdjJfY2xlYW51cChzdHJ1Y3Qgc25kX3Nv
-Y19kYWkgKmRhaSwKIH0KIEVYUE9SVF9TWU1CT0xfR1BMKHMzY19pMnN2Ml9jbGVhbnVwKTsKIAot
-I2lmZGVmIENPTkZJR19QTQotc3RhdGljIGludCBzM2MyNDEyX2kyc19zdXNwZW5kKHN0cnVjdCBz
-bmRfc29jX2RhaSAqZGFpKQotewotCXN0cnVjdCBzM2NfaTJzdjJfaW5mbyAqaTJzID0gdG9faW5m
-byhkYWkpOwotCXUzMiBpaXNtb2Q7Ci0KLQlpZiAoZGFpLT5hY3RpdmUpIHsKLQkJaTJzLT5zdXNw
-ZW5kX2lpc21vZCA9IHJlYWRsKGkycy0+cmVncyArIFMzQzI0MTJfSUlTTU9EKTsKLQkJaTJzLT5z
-dXNwZW5kX2lpc2NvbiA9IHJlYWRsKGkycy0+cmVncyArIFMzQzI0MTJfSUlTQ09OKTsKLQkJaTJz
-LT5zdXNwZW5kX2lpc3BzciA9IHJlYWRsKGkycy0+cmVncyArIFMzQzI0MTJfSUlTUFNSKTsKLQot
-CQkvKiBzb21lIGJhc2ljIHN1c3BlbmQgY2hlY2tzICovCi0KLQkJaWlzbW9kID0gcmVhZGwoaTJz
-LT5yZWdzICsgUzNDMjQxMl9JSVNNT0QpOwotCi0JCWlmIChpaXNtb2QgJiBTM0MyNDEyX0lJU0NP
-Tl9SWERNQV9BQ1RJVkUpCi0JCQlwcl93YXJuKCIlczogUlhETUEgYWN0aXZlP1xuIiwgX19mdW5j
-X18pOwotCi0JCWlmIChpaXNtb2QgJiBTM0MyNDEyX0lJU0NPTl9UWERNQV9BQ1RJVkUpCi0JCQlw
-cl93YXJuKCIlczogVFhETUEgYWN0aXZlP1xuIiwgX19mdW5jX18pOwotCi0JCWlmIChpaXNtb2Qg
-JiBTM0MyNDEyX0lJU0NPTl9JSVNfQUNUSVZFKQotCQkJcHJfd2FybigiJXM6IElJUyBhY3RpdmVc
-biIsIF9fZnVuY19fKTsKLQl9Ci0KLQlyZXR1cm4gMDsKLX0KLQotc3RhdGljIGludCBzM2MyNDEy
-X2kyc19yZXN1bWUoc3RydWN0IHNuZF9zb2NfZGFpICpkYWkpCi17Ci0Jc3RydWN0IHMzY19pMnN2
-Ml9pbmZvICppMnMgPSB0b19pbmZvKGRhaSk7Ci0KLQlwcl9pbmZvKCJkYWlfYWN0aXZlICVkLCBJ
-SVNNT0QgJTA4eCwgSUlTQ09OICUwOHhcbiIsCi0JCWRhaS0+YWN0aXZlLCBpMnMtPnN1c3BlbmRf
-aWlzbW9kLCBpMnMtPnN1c3BlbmRfaWlzY29uKTsKLQotCWlmIChkYWktPmFjdGl2ZSkgewotCQl3
-cml0ZWwoaTJzLT5zdXNwZW5kX2lpc2NvbiwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNDT04pOwot
-CQl3cml0ZWwoaTJzLT5zdXNwZW5kX2lpc21vZCwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNNT0Qp
-OwotCQl3cml0ZWwoaTJzLT5zdXNwZW5kX2lpc3BzciwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNQ
-U1IpOwotCi0JCXdyaXRlbChTM0MyNDEyX0lJU0ZJQ19SWEZMVVNIIHwgUzNDMjQxMl9JSVNGSUNf
-VFhGTFVTSCwKLQkJICAgICAgIGkycy0+cmVncyArIFMzQzI0MTJfSUlTRklDKTsKLQotCQluZGVs
-YXkoMjUwKTsKLQkJd3JpdGVsKDB4MCwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNGSUMpOwotCX0K
-LQotCXJldHVybiAwOwotfQotI2Vsc2UKLSNkZWZpbmUgczNjMjQxMl9pMnNfc3VzcGVuZCBOVUxM
-Ci0jZGVmaW5lIHMzYzI0MTJfaTJzX3Jlc3VtZSAgTlVMTAotI2VuZGlmCi0KIGludCBzM2NfaTJz
-djJfcmVnaXN0ZXJfY29tcG9uZW50KHN0cnVjdCBkZXZpY2UgKmRldiwgaW50IGlkLAogCQkJICAg
-Y29uc3Qgc3RydWN0IHNuZF9zb2NfY29tcG9uZW50X2RyaXZlciAqY21wX2RydiwKIAkJCSAgIHN0
-cnVjdCBzbmRfc29jX2RhaV9kcml2ZXIgKmRhaV9kcnYpCkBAIC03MjcsOSArNjczLDYgQEAgaW50
-IHMzY19pMnN2Ml9yZWdpc3Rlcl9jb21wb25lbnQoc3RydWN0IGRldmljZSAqZGV2LCBpbnQgaWQs
-CiAJaWYgKCFvcHMtPmRlbGF5KQogCQlvcHMtPmRlbGF5ID0gczNjMjQxMl9pMnNfZGVsYXk7CiAK
-LQlkYWlfZHJ2LT5zdXNwZW5kID0gczNjMjQxMl9pMnNfc3VzcGVuZDsKLQlkYWlfZHJ2LT5yZXN1
-bWUgPSBzM2MyNDEyX2kyc19yZXN1bWU7Ci0KIAlyZXR1cm4gZGV2bV9zbmRfc29jX3JlZ2lzdGVy
-X2NvbXBvbmVudChkZXYsIGNtcF9kcnYsIGRhaV9kcnYsIDEpOwogfQogRVhQT1JUX1NZTUJPTF9H
-UEwoczNjX2kyc3YyX3JlZ2lzdGVyX2NvbXBvbmVudCk7CmRpZmYgLS1naXQgYS9zb3VuZC9zb2Mv
-c2Ftc3VuZy9zM2MyNDEyLWkycy5jIGIvc291bmQvc29jL3NhbXN1bmcvczNjMjQxMi1pMnMuYwpp
-bmRleCA3ODdhM2Y2ZTlmMjQyLi5iMzVkODI4YzFjZmU5IDEwMDY0NAotLS0gYS9zb3VuZC9zb2Mv
-c2Ftc3VuZy9zM2MyNDEyLWkycy5jCisrKyBiL3NvdW5kL3NvYy9zYW1zdW5nL3MzYzI0MTItaTJz
-LmMKQEAgLTExNyw2ICsxMTcsNjAgQEAgc3RhdGljIGludCBzM2MyNDEyX2kyc19od19wYXJhbXMo
-c3RydWN0IHNuZF9wY21fc3Vic3RyZWFtICpzdWJzdHJlYW0sCiAJcmV0dXJuIDA7CiB9CiAKKyNp
-ZmRlZiBDT05GSUdfUE0KK3N0YXRpYyBpbnQgczNjMjQxMl9pMnNfc3VzcGVuZChzdHJ1Y3Qgc25k
-X3NvY19jb21wb25lbnQgKmNvbXBvbmVudCkKK3sKKwlzdHJ1Y3QgczNjX2kyc3YyX2luZm8gKmky
-cyA9IHNuZF9zb2NfY29tcG9uZW50X2dldF9kcnZkYXRhKGNvbXBvbmVudCk7CisJdTMyIGlpc21v
-ZDsKKworCWlmIChjb21wb25lbnQtPmFjdGl2ZSkgeworCQlpMnMtPnN1c3BlbmRfaWlzbW9kID0g
-cmVhZGwoaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNNT0QpOworCQlpMnMtPnN1c3BlbmRfaWlzY29u
-ID0gcmVhZGwoaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNDT04pOworCQlpMnMtPnN1c3BlbmRfaWlz
-cHNyID0gcmVhZGwoaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNQU1IpOworCisJCS8qIHNvbWUgYmFz
-aWMgc3VzcGVuZCBjaGVja3MgKi8KKworCQlpaXNtb2QgPSByZWFkbChpMnMtPnJlZ3MgKyBTM0My
-NDEyX0lJU01PRCk7CisKKwkJaWYgKGlpc21vZCAmIFMzQzI0MTJfSUlTQ09OX1JYRE1BX0FDVElW
-RSkKKwkJCXByX3dhcm4oIiVzOiBSWERNQSBhY3RpdmU/XG4iLCBfX2Z1bmNfXyk7CisKKwkJaWYg
-KGlpc21vZCAmIFMzQzI0MTJfSUlTQ09OX1RYRE1BX0FDVElWRSkKKwkJCXByX3dhcm4oIiVzOiBU
-WERNQSBhY3RpdmU/XG4iLCBfX2Z1bmNfXyk7CisKKwkJaWYgKGlpc21vZCAmIFMzQzI0MTJfSUlT
-Q09OX0lJU19BQ1RJVkUpCisJCQlwcl93YXJuKCIlczogSUlTIGFjdGl2ZVxuIiwgX19mdW5jX18p
-OworCX0KKworCXJldHVybiAwOworfQorCitzdGF0aWMgaW50IHMzYzI0MTJfaTJzX3Jlc3VtZShz
-dHJ1Y3Qgc25kX3NvY19jb21wb25lbnQgKmNvbXBvbmVudCkKK3sKKwlzdHJ1Y3QgczNjX2kyc3Yy
-X2luZm8gKmkycyA9IHNuZF9zb2NfY29tcG9uZW50X2dldF9kcnZkYXRhKGNvbXBvbmVudCk7CisK
-Kwlwcl9pbmZvKCJjb21wb25lbnRfYWN0aXZlICVkLCBJSVNNT0QgJTA4eCwgSUlTQ09OICUwOHhc
-biIsCisJCWNvbXBvbmVudC0+YWN0aXZlLCBpMnMtPnN1c3BlbmRfaWlzbW9kLCBpMnMtPnN1c3Bl
-bmRfaWlzY29uKTsKKworCWlmIChjb21wb25lbnQtPmFjdGl2ZSkgeworCQl3cml0ZWwoaTJzLT5z
-dXNwZW5kX2lpc2NvbiwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNDT04pOworCQl3cml0ZWwoaTJz
-LT5zdXNwZW5kX2lpc21vZCwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNNT0QpOworCQl3cml0ZWwo
-aTJzLT5zdXNwZW5kX2lpc3BzciwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNQU1IpOworCisJCXdy
-aXRlbChTM0MyNDEyX0lJU0ZJQ19SWEZMVVNIIHwgUzNDMjQxMl9JSVNGSUNfVFhGTFVTSCwKKwkJ
-ICAgICAgIGkycy0+cmVncyArIFMzQzI0MTJfSUlTRklDKTsKKworCQluZGVsYXkoMjUwKTsKKwkJ
-d3JpdGVsKDB4MCwgaTJzLT5yZWdzICsgUzNDMjQxMl9JSVNGSUMpOworCX0KKworCXJldHVybiAw
-OworfQorI2Vsc2UKKyNkZWZpbmUgczNjMjQxMl9pMnNfc3VzcGVuZCBOVUxMCisjZGVmaW5lIHMz
-YzI0MTJfaTJzX3Jlc3VtZSAgTlVMTAorI2VuZGlmCisKICNkZWZpbmUgUzNDMjQxMl9JMlNfUkFU
-RVMgXAogCShTTkRSVl9QQ01fUkFURV84MDAwIHwgU05EUlZfUENNX1JBVEVfMTEwMjUgfCBTTkRS
-Vl9QQ01fUkFURV8xNjAwMCB8IFwKIAlTTkRSVl9QQ01fUkFURV8yMjA1MCB8IFNORFJWX1BDTV9S
-QVRFXzMyMDAwIHwgU05EUlZfUENNX1JBVEVfNDQxMDAgfCBcCkBAIC0xNDYsNiArMjAwLDggQEAg
-c3RhdGljIHN0cnVjdCBzbmRfc29jX2RhaV9kcml2ZXIgczNjMjQxMl9pMnNfZGFpID0gewogCiBz
-dGF0aWMgY29uc3Qgc3RydWN0IHNuZF9zb2NfY29tcG9uZW50X2RyaXZlciBzM2MyNDEyX2kyc19j
-b21wb25lbnQgPSB7CiAJLm5hbWUJCT0gInMzYzI0MTItaTJzIiwKKwkuc3VzcGVuZAk9IHMzYzI0
-MTJfaTJzX3N1c3BlbmQsCisJLnJlc3VtZQkJPSBzM2MyNDEyX2kyc19yZXN1bWUsCiB9OwogCiBz
-dGF0aWMgaW50IHMzYzI0MTJfaWlzX2Rldl9wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpw
-ZGV2KQotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+From: Arnd Bergmann <arnd@arndb.de>
+
+[ Upstream commit d0384eedcde21276ac51f57c641f875605024b32 ]
+
+The firmware driver is optional, but the power driver depends on it,
+which needs to be reflected in Kconfig to avoid link errors:
+
+aarch64-linux-ld: drivers/soc/xilinx/zynqmp_power.o: in function `zynqmp_pm_isr':
+zynqmp_power.c:(.text+0x284): undefined reference to `zynqmp_pm_invoke_fn'
+
+The firmware driver can probably be allowed for compile-testing as
+well, so it's best to drop the dependency on the ZYNQ platform
+here and allow building as long as the firmware code is built-in.
+
+Fixes: ab272643d723 ("drivers: soc: xilinx: Add ZynqMP PM driver")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Link: https://lore.kernel.org/r/20200408155224.2070880-1-arnd@arndb.de
+Signed-off-by: Michal Simek <michal.simek@xilinx.com>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/soc/xilinx/Kconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/soc/xilinx/Kconfig b/drivers/soc/xilinx/Kconfig
+index 223f1f9d0922f..646512d7276f4 100644
+--- a/drivers/soc/xilinx/Kconfig
++++ b/drivers/soc/xilinx/Kconfig
+@@ -19,7 +19,7 @@ config XILINX_VCU
+ 
+ config ZYNQMP_POWER
+ 	bool "Enable Xilinx Zynq MPSoC Power Management driver"
+-	depends on PM && ARCH_ZYNQMP
++	depends on PM && ZYNQMP_FIRMWARE
+ 	default y
+ 	select MAILBOX
+ 	select ZYNQMP_IPI_MBOX
+@@ -35,7 +35,7 @@ config ZYNQMP_POWER
+ config ZYNQMP_PM_DOMAINS
+ 	bool "Enable Zynq MPSoC generic PM domains"
+ 	default y
+-	depends on PM && ARCH_ZYNQMP && ZYNQMP_FIRMWARE
++	depends on PM && ZYNQMP_FIRMWARE
+ 	select PM_GENERIC_DOMAINS
+ 	help
+ 	  Say yes to enable device power management through PM domains
+-- 
+2.20.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
