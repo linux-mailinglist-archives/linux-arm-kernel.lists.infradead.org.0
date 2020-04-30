@@ -2,57 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9D1B1BF481
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:50:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 893601BF485
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:51:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bjn6WsLrHSlUL+NhIGNC5uJVr38ibcQhrpxUyc/rUuE=; b=rZ3b33keSGEGr1
-	xohkwJSpPCRwPPu72U3KcGFqftEH7atr/NgP//na42BtnkGKITmgE777/P16u/m8jhT+qQmimUiny
-	syIGCztuiKJocVGsr/X88xTgyTgY2n02B6SdiDfus9Ki7/0ASew1TpRAVB6lsHQDZnqrMj8zRuJtc
-	xj9d8OiOVKT6VS0hQyAH2az2qwDgRYktHNdizCK/1VeDCk5h64FqwS3Et4S3aeIp/XIBxIEkkNjVt
-	tIuJto1SMQsCedISRpWxYElQBX7CcXb/TKfgxuCr1zoBogs7FYAjjzUXiPd4urb5PB8hupClbvOa6
-	pK+oh2NMJ9HftvU8zLFg==;
+	List-Owner; bh=2XiuFRYDHaep8ivUVgBKQs/VkcnDHyiJQsfJEN37/zI=; b=GLmCSmJLA3Q6oL
+	gNUWjHDaUgnKu3PGr4+frjKRznkQHqo8CS6HKdyZwcVqmYKyA+UGV975tYRSPGU/a0hAa5VZ3/vRA
+	eHdYFEgV/ClWM9eW3WVUqbbTlUNzr1oMHbLx3nMS7svmYuKRQaI8lcOjV+zRwbfFvst2D+FSjUBp0
+	stTMJK/SmUT6EeBu/ISNSWSzOe8KVoiWCY2/I91HmcrZLKF3Al2Gw1x7XZS8TDe+Aedm6aD2D7ALZ
+	ezd9Zz5PJmNeYA1Mpr0rb1hin517KpAGjbaFmeol3MEyM6F63yLrR4NE9UEod2yXUx4yr6qReW0oM
+	9duE28mu2+jHiMELhg3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU5ps-0004Hp-3B; Thu, 30 Apr 2020 09:50:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU5pW-0003S1-TX
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:50:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5B4051063;
- Thu, 30 Apr 2020 02:50:05 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 127583F68F;
- Thu, 30 Apr 2020 02:50:03 -0700 (PDT)
-Date: Thu, 30 Apr 2020 10:50:01 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
-Message-ID: <20200430095001.GD2717@gaia>
-References: <20200325174001.234803-1-pcc@google.com>
- <20200327191915.257116-1-pcc@google.com>
- <20200429210826.GA8604@willie-the-truck>
+	id 1jU5qN-00059v-Ji; Thu, 30 Apr 2020 09:50:59 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jU5qB-000594-30
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:50:48 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2E8842082E;
+ Thu, 30 Apr 2020 09:50:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588240245;
+ bh=2m/uMwubJU0+KIoLz1IiF/eJGyPbsWV2OVU8vrOQqBo=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=2NRs0g5xV7M8d3FZI52+oAVxuGVFjMu5w2Mtg08swn4HAuP9oO90gxHDaPWncU2UL
+ LHZJg7J1RhAMhIQhXIHKyOLmHY9dQlwhRuRCVLx4RQskm5Pe4dqAJsLx2cEZ4Q1UHw
+ DI8NdPhL4/nhgDpGR/qDoTIRy7rNQwpQDiXhw35A=
+Date: Thu, 30 Apr 2020 10:50:37 +0100
+From: Will Deacon <will@kernel.org>
+To: Stephen Rothwell <sfr@canb.auug.org.au>
+Subject: Re: [PATCH] arm64: kvm: fix gcc-10 shift warning
+Message-ID: <20200430095037.GA19932@willie-the-truck>
+References: <20200429185657.4085975-1-arnd@arndb.de>
+ <20200430090251.715f6bf0@why>
+ <20200430082927.GA18615@willie-the-truck>
+ <20200430193910.294842c4@canb.auug.org.au>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429210826.GA8604@willie-the-truck>
+In-Reply-To: <20200430193910.294842c4@canb.auug.org.au>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_025007_022463_DFAA2F79 
-X-CRM114-Status: GOOD (  17.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200430_025047_148194_ADB7D042 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,58 +79,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Evgenii Stepanov <eugenis@google.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
+Cc: Rich Felker <dalias@libc.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paul Mackerras <paulus@samba.org>,
+ kvmarm@lists.cs.columbia.edu, Jonas Bonn <jonas@southpole.se>,
+ Brian Cain <bcain@codeaurora.org>, Marc Zyngier <maz@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Fenghua Yu <fenghua.yu@intel.com>, Arnd Bergmann <arnd@arndb.de>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ Stafford Horne <shorne@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Michael Ellerman <mpe@ellerman.id.au>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 10:08:26PM +0100, Will Deacon wrote:
-> On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
-> > The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-> > address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-> > the tag bits may be needed by tools in order to accurately diagnose
-> > memory errors, such as HWASan [1] or future tools based on the Memory
-> > Tagging Extension (MTE).
+On Thu, Apr 30, 2020 at 07:39:10PM +1000, Stephen Rothwell wrote:
+> On Thu, 30 Apr 2020 09:29:28 +0100 Will Deacon <will@kernel.org> wrote:
+> > On Thu, Apr 30, 2020 at 09:02:51AM +0100, Marc Zyngier wrote:
+> > > On Wed, 29 Apr 2020 20:56:20 +0200
+> > > Arnd Bergmann <arnd@arndb.de> wrote:
+> > >   
+> > > > Fixes: 22998131ab33 ("arm64: add support for folded p4d page tables")
 > > 
-> > We should not stop clearing these bits in the existing fault address
-> > fields, because there may be existing userspace applications that are
-> > expecting the tag bits to be cleared. Instead, create a far_context in
-> > sigcontext (similar to the existing esr_context), and store the original
-> > value of FAR_EL1 (including the tag bits) there.
-> > 
-> > [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
-> > 
-> > Signed-off-by: Peter Collingbourne <pcc@google.com>
-> > ---
-> > v3:
-> > - add documentation to tagged-pointers.rst
-> > - update comments in sigcontext.h
+> > Happy to queue via arm64 for 5.8. Does that work for you, Arnd, or were you
+> > planning to get this in sooner than that?
 > 
-> Hmm, although the code looks fine, why don't we just expose the tag in the
-> new field, rather than duplicate the address information? I'm nervous about
-> exposing privileged registers directly to userspace.
+> The commit that this fixes is in Andrew's patch series in linux-next,
+> so it should just go in there.
 
-That's for consistency with ESR_EL1 which we expose in a similar way,
-though with bits of it not relevant to user masked out. For FAR_EL1, all
-the bits are relevant, even if some of them are duplicated in the
-si_addr field.
+Yes, you're right. Sorry for the noise.
 
-> Also, Catalin, could you elaborate on the MTE use-case please? The
-> architecture says that FAR_EL1[63:60] are UNKNOWN on a synchronous tag
-> check fault, so we'd have to *avoid* exposing them in that case!
-
-With MTE, FAR_EL1[63:60] will be cleared on sync tag check faults (not
-currently done as I don't have this patch in my MTE series).
-
--- 
-Catalin
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
