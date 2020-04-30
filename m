@@ -2,63 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DFC31BF464
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:44:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E303A1BF46A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:46:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1p2dvVf2724VbRcbmhhd2B8CXxBzrZgtwjeZyCYdVvc=; b=nNN31gSWhZ4RC0
-	eoumYk14SAPlFSDqqKl6jhWxtgejLc6BuzpMV00LYQ3s2dLvkM0KCFF309F+gsKVZTJhjt4nZLmfT
-	YyDT97sJK/7/gMPyIOTyTRmHovIUtbHgdPia220JYVwduiec4d0SbSUUGwpnDh7XffeVP6sGVMrw6
-	BE4JttR+kakNBkn7r33VPXTwjUrR2p4Pnv77hqOFdvWiH6+r3ssqIyTtjvL9j8PJT9G4ZZxqzYC+h
-	EadkA14lFas1J5A32OvoU0fFoBygQXCki+DB8P9MtyK3ctzY4SKYGE5JFm0sCw9baj6vptb3sNIEh
-	u/o0yRr1awi0NgDKBlOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oEy3nCtjCrPa9xX8g+nKYlbVpl9e9C0R6r1Y2uWsj/E=; b=k6o7aABHawyru/
+	pvqzlUc5z8+zABVJj6TeuegL3jCDVhaW+OimgGZxhb5odfA2agF/Ql01WtAtEJrNKsL3SPo5XbkeX
+	NB+d8zl3TkB9ydCJNUFImxbZorWZpIIJaTJQiAD0iJHtgq5PEp1u1UAdybFnp8HFad21FgjIBOYBh
+	qSPEvYTgkUyBZkxhqdB/0I233SAI8tSTdlOpA4xks7EfMzG8QyhWFljqFDPX94e9RlTo7JNdN3fPG
+	TeLAMB7jMlPXVu7xUPVwOFaSqv8dAgnLPKJ9I+jfkNeLi1yXTabT4/m3d6uzOmzc71NbMbYBOWTFz
+	CSosWDGJBgSjJKAO27BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU5kK-0006il-KZ; Thu, 30 Apr 2020 09:44:44 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jU5lm-0001L3-A4; Thu, 30 Apr 2020 09:46:14 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU5jw-0006ZI-Fu
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:44:22 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 4B94FCD1098734C8882D;
- Thu, 30 Apr 2020 17:44:09 +0800 (CST)
-Received: from [127.0.0.1] (10.166.215.120) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0;
- Thu, 30 Apr 2020 17:44:02 +0800
-Subject: Re: [PATCH] arm64: panic on synchronous external abort in kernel
- context
-To: James Morse <james.morse@arm.com>
-References: <20200410015245.23230-1-xiexiuqi@huawei.com>
- <20200414105923.GA2486@C02TD0UTHF1T.local>
- <adc93578-5cfc-09c3-0b88-b265e310ef97@arm.com>
- <21997719-c521-c39a-f521-54feae16fc45@huawei.com>
- <60131aba-4e09-7824-17b2-a6fc711c150b@arm.com>
-From: Xie XiuQi <xiexiuqi@huawei.com>
-Message-ID: <483792fd-5b01-8cf7-7687-abe513cd3474@huawei.com>
-Date: Thu, 30 Apr 2020 17:44:00 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jU5lZ-0001Ju-JO
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:46:03 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id A5A35634C8F;
+ Thu, 30 Apr 2020 12:45:49 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1jU5lN-0000Q8-FT; Thu, 30 Apr 2020 12:45:49 +0300
+Date: Thu, 30 Apr 2020 12:45:49 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Marco Felsch <m.felsch@pengutronix.de>
+Subject: Re: [PATCH v6 2/3] media: ov8856: Add devicetree support
+Message-ID: <20200430094549.GF867@valkosipuli.retiisi.org.uk>
+References: <20200429162437.2025699-1-robert.foss@linaro.org>
+ <20200429162437.2025699-3-robert.foss@linaro.org>
+ <20200430093524.GB2188@pengutronix.de>
 MIME-Version: 1.0
-In-Reply-To: <60131aba-4e09-7824-17b2-a6fc711c150b@arm.com>
-Content-Language: en-US
-X-Originating-IP: [10.166.215.120]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200430093524.GB2188@pengutronix.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_024420_770658_01E2BF7D 
-X-CRM114-Status: GOOD (  30.96  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200430_024602_010784_A155BE09 
+X-CRM114-Status: GOOD (  30.69  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,164 +68,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- linux-kernel@vger.kernel.org, tanxiaofei@huawei.com, tglx@linutronix.de,
- will@kernel.org, wangxiongfeng2@huawei.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ linux-kernel@vger.kernel.org, Robert Foss <robert.foss@linaro.org>,
+ Tomasz Figa <tfiga@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
+Hi Marco,
 
-Sorry for reply late.
+On Thu, Apr 30, 2020 at 11:35:24AM +0200, Marco Felsch wrote:
+> Hi Robert,
+> 
+> thnakf for the patch but pls keep in mind to do one thing per patch.
+> IMHO this patch do a lot more. Anyway below are my comment :)
+> 
+> On 20-04-29 18:24, Robert Foss wrote:
+> > Add match table, enable ov8856_probe() to support
+> > both ACPI and DT modes.
+> 
+> You are also adding the support for reset-gpios and regualtors. IMHO the
+> commit message don't belong to the changes you made anymore.
+> 
+> > ACPI and DT modes are primarily distinguished from
+> > each other by relying on devm_XXX_get_optional()
+> > will return NULL instead of a reference for the
+> > desired managed resource.
+> > 
+> > Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> > ---
+> > 
+> > - Changes since v5:
+> >   * Maxime & Sakari: Replaced clock tolerance check with warning
+> > 
+> > - Changes since v4:
+> >   * Maxime & Sakari: Switch to clock-frequency
+> > 
+> > - Changes since v3:
+> >   * Remove redundant {}-brackets
+> >   * Compare xvclk_rate to 5% tolerance
+> >   * Andy: Use dev_fwnode()
+> >   * Andy: Use %pe instead of %ld + PTR_ERR()
+> >   * Andy: Invert reset_gpio logic
+> >   * Andy: Remove dev_dbg() from failing reset_gpio setup
+> >   * Andy: Use dev_err for logging for failures
+> >   * Andy: Remove dev_warn from EDEFER/regulator error path
+> >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
+> >   * Maxime & Sakari: Verify clock frequency from DT
+> >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT devices
+> >   * Sakari: Remove duplicate ov8856->dev assignment
+> > 
+> > - Changes since v2:
+> >   * Added "struct device *dev" member to struct ov8856
+> >   * Andy: Switch to optional version of devm_gpiod_get
+> >   * Andy: Switch to optional version of devm_clk_get
+> >   * Fabio: Add reset sleep period
+> >   * Sakari: Unify defines for 19.2Mhz
+> >   * Sakari: Remove 24Mhz clock, since it isn't needed for supported modes
+> >   * Sakari: Replace dev_info() with dev_dbg()
+> >   * Sakari: Switch induction variable type to unsigned
+> >   * Sakari: Don't wait for reset_gpio when in ACPI mode
+> >   * Sakari: Pull reset GPIO high on power on failure
+> >   * Sakari: Add power on/off to resume/suspend
+> >   * Sakari: Fix indentation
+> >   * Sakari: Power off during ov8856_remove()
+> >   * Sakari: Don't sleep during power-on in ACPI mode
+> >   * Sakari: Switch to getting xvclk from clk_get_rate
+> > 
+> > - Changes since v1:
+> >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
+> >   * Fabio: Change n_shutdown_gpio name to reset_gpio
+> >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
+> >   * Fabio: Remove empty line
+> >   * Fabio: Remove real error from devm_gpiod_get() failures
+> >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
+> >   * Sakari: Use XVCLK rate as provided by DT
+> > 
+> >  drivers/media/i2c/ov8856.c | 137 +++++++++++++++++++++++++++++++++----
+> >  1 file changed, 123 insertions(+), 14 deletions(-)
+> > 
+> > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
+> > index 8655842af275..4749dc74d5ad 100644
+> > --- a/drivers/media/i2c/ov8856.c
+> > +++ b/drivers/media/i2c/ov8856.c
+> > @@ -3,10 +3,13 @@
+> >  
+> >  #include <asm/unaligned.h>
+> >  #include <linux/acpi.h>
+> > +#include <linux/clk.h>
+> >  #include <linux/delay.h>
+> > +#include <linux/gpio/consumer.h>
+> >  #include <linux/i2c.h>
+> >  #include <linux/module.h>
+> >  #include <linux/pm_runtime.h>
+> > +#include <linux/regulator/consumer.h>
+> >  #include <media/v4l2-ctrls.h>
+> >  #include <media/v4l2-device.h>
+> >  #include <media/v4l2-fwnode.h>
+> > @@ -18,7 +21,7 @@
+> >  #define OV8856_LINK_FREQ_360MHZ		360000000ULL
+> >  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
+> >  #define OV8856_SCLK			144000000ULL
+> > -#define OV8856_MCLK			19200000
+> > +#define OV8856_XVCLK_19_2		19200000
+> >  #define OV8856_DATA_LANES		4
+> >  #define OV8856_RGB_DEPTH		10
+> >  
+> > @@ -64,6 +67,12 @@
+> >  
+> >  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
+> >  
+> > +static const char * const ov8856_supply_names[] = {
+> > +	"dovdd",	/* Digital I/O power */
+> > +	"avdd",		/* Analog power */
+> > +	"dvdd",		/* Digital core power */
+> > +};
+> > +
+> >  enum {
+> >  	OV8856_LINK_FREQ_720MBPS,
+> >  	OV8856_LINK_FREQ_360MBPS,
+> > @@ -566,6 +575,11 @@ struct ov8856 {
+> >  	struct media_pad pad;
+> >  	struct v4l2_ctrl_handler ctrl_handler;
+> >  
+> > +	struct device		*dev;
+> > +	struct clk		*xvclk;
+> > +	struct gpio_desc	*reset_gpio;
+> > +	struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
+> > +
+> >  	/* V4L2 Controls */
+> >  	struct v4l2_ctrl *link_freq;
+> >  	struct v4l2_ctrl *pixel_rate;
+> > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
+> >  	return ret;
+> >  }
+> >  
+> > +static int __ov8856_power_on(struct ov8856 *ov8856)
+> > +{
+> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
+> > +	int ret;
+> > +
+> > +	ret = clk_prepare_enable(ov8856->xvclk);
+> 
+> You're request the clk only in DT case or do I miss something? If so you
+> have to check if the clk is available.
+> 
+> > +	if (ret < 0) {
+> > +		dev_err(&client->dev, "failed to enable xvclk\n");
+> > +		return ret;
+> > +	}
+> > +
+> > +	if (is_acpi_node(dev_fwnode(ov8856->dev)))
+> > +		return 0;
+> > +
+> > +	if (ov8856->reset_gpio) {
+> > +		gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > +		usleep_range(1000, 2000);
+> > +	}
+> > +
+> > +	ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
+> > +				    ov8856->supplies);
+> > +	if (ret < 0) {
+> > +		dev_err(&client->dev, "failed to enable regulators\n");
+> > +		goto disable_clk;
+> > +	}
+> > +
+> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
+> 
+> You need to check the existance of the gpio here too.
 
-On 2020/4/14 22:53, James Morse wrote:
-> Hi Xie,
-> 
-> On 14/04/2020 13:39, Xie XiuQi wrote:
->> On 2020/4/14 20:16, James Morse wrote:
->>> On 14/04/2020 11:59, Mark Rutland wrote:
->>>> On Fri, Apr 10, 2020 at 09:52:45AM +0800, Xie XiuQi wrote:
->>>>> We should panic even panic_on_oops is not set, when we can't recover
->>>>> from synchronous external abort in kernel context.
->>>
->>> Hmm, fault-from-kernel-context doesn't mean the fault affects the kernel. If the kernel is
->>> reading or writing from user-space memory for a syscall, its the user-space memory that is
->>> affected. This thread can't make progress, so we kill it.
->>> If its a kernel thread or we were in irq context, we panic().
->>>
->>> I don't think you really want all faults that happen as a result of a kernel access to be
->>> fatal!
-> 
->> Yes, you're right. I just want to fix a hung up when ras error inject testing.
->>
->> panic_on_oops is not set in the kernel image for testing. When receiving a sea in kernel
->> context, the PE trap in do_exit(), and can't return any more.
-> 
-> trap? gets trapped, (or gets stuck, to prevent confusion with the architectures use of the
-> word 'trap'!)
-> 
-> 
->> I analyze the source code, the call trace might like this:
->>    do_mem_abort
->>      -> arm64_notify_die
->>         -> die                    # kernel context, call die() directly;
->>            -> do_exit             # kernel process context, call do_exit(SIGSEGV);
->>               -> do_task_dead()   # call do_task_dead(), and hung up this core;
-> 
-> Thanks for the trace. This describes a corrected error in your I-cache, that occurred
-> while the kernel was executing a kernel thread. These shouldn't be fatal, because it was
-> corrected ... but the kernel doesn't know that because it doesn't know how to parse those
-> records.
-> 
-> There are two things wrong here:
-> 1. it locks up while trying to kill the thread.
-> 2. it tried to kill the thread in the first place!
-> 
-> For 1, does your l1l2_inject module take any spinlocks or tinker with the pre-empt counter?
-> 
-> I suspect this is some rarely-tested path in do_task_dead() that sleeps, but can't from
-> your l1l2_inject module because the pre-empt counter has been raised.
-> 
-> CONFIG_DEBUG_ATOMIC_SLEEP may point at the function to blame.
-> 
-> It may be accessing some thread data that kthreads don't have, taking a second exception
-> and blocking on the die_lock. LOCKDEP should catch this one.
-> 
-> We should fix this one first.
-> 
-
-I analyze the l1l2_inject module, there is a kworker thread used to inject error.
-do_sea() try to kill the kworker thread, so the work(s) queued on this kworker
-is blocked.
-
-panic_on_oops option is usually set on production environment, so if someone
-unset this option for testing, he should take his own risk. Is it right?
+No need to; the GPIO framework can handle this internally.
 
 > 
-> 2 is a bit more complicated. Today, this is fatal because the arch code assumes this was
-> probably a memory error, and if it returns to user-space it can't avoid getting stuck in a
-> loop until the scheduled memory_failure() work runs. Instead it unconditionally signals
-> the process.
+> > +	usleep_range(1500, 1800);
+> > +
+> > +	return 0;
+> > +
+> > +disable_clk:
+> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
 > 
-> [0] fixes this up for memory errors. But in this case it will assume all the work has been
-> done by APEI, (or will be before we get back to user-space). APEI ignored the processor
-> error you fed it, because it doesn't know what they are, they are just printed out.
+> And here.. pls check the whole patch.
 > 
-> This is fine for corrected errors, but were are reliant on your firmware describing
-> uncorrected errors with a 'fatal' severity... which might be too heavy a hammer. (Ideally
-> that would mean 'uncontained', and the kernel should handle, or detect it can't, any other
-> errror...)
+> > +	clk_disable_unprepare(ov8856->xvclk);
+> > +
+> > +	return ret;
+> > +}
+> > +
+> > +static void __ov8856_power_off(struct ov8856 *ov8856)
+> > +{
+> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
+> > +	regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
+> > +			       ov8856->supplies);
+> > +	clk_disable_unprepare(ov8856->xvclk);
 > 
-> We can discuss the right thing to do here when support for parsing these 'arm processor
-> errors' is posted.
-> (If you think I need to do something different in [0] because of this, please shout!)
+> Clk is only availabel in DT use-case.
+> 
+> > +}
+> > +
+> >  static int __maybe_unused ov8856_suspend(struct device *dev)
+> >  {
+> >  	struct i2c_client *client = to_i2c_client(dev);
+> > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
+> >  	if (ov8856->streaming)
+> >  		ov8856_stop_streaming(ov8856);
+> >  
+> > +	__ov8856_power_off(ov8856);
+> >  	mutex_unlock(&ov8856->mutex);
+> >  
+> >  	return 0;
+> > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struct device *dev)
+> >  	int ret;
+> >  
+> >  	mutex_lock(&ov8856->mutex);
+> > +
+> > +	__ov8856_power_on(ov8856);
+> >  	if (ov8856->streaming) {
+> >  		ret = ov8856_start_streaming(ov8856);
+> >  		if (ret) {
+> > @@ -1092,29 +1155,54 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
+> >  	return 0;
+> >  }
+> >  
+> > -static int ov8856_check_hwcfg(struct device *dev)
+> > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
+> >  {
+> > +	struct device *dev = ov8856->dev;
+> >  	struct fwnode_handle *ep;
+> >  	struct fwnode_handle *fwnode = dev_fwnode(dev);
+> >  	struct v4l2_fwnode_endpoint bus_cfg = {
+> >  		.bus_type = V4L2_MBUS_CSI2_DPHY
+> >  	};
+> > -	u32 mclk;
+> > +	u32 xvclk_rate;
+> >  	int ret;
+> >  	unsigned int i, j;
+> >  
+> >  	if (!fwnode)
+> >  		return -ENXIO;
+> >  
+> > -	ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
+> > +	ret = fwnode_property_read_u32(fwnode, "clock-frequency",
+> > +		&xvclk_rate);
+> >  	if (ret)
+> >  		return ret;
+> >  
+> > -	if (mclk != OV8856_MCLK) {
+> > -		dev_err(dev, "external clock %d is not supported", mclk);
+> > -		return -EINVAL;
+> > +	if (!is_acpi_node(fwnode)) {
+> > +		ov8856->xvclk = devm_clk_get(dev, "xvclk");
+> > +		if (IS_ERR(ov8856->xvclk)) {
+> > +			dev_err(dev, "could not get xvclk clock (%pe)\n",
+> > +					ov8856->xvclk);
+> > +			return PTR_ERR(ov8856->xvclk);
+> > +		}
+> > +
+> > +		clk_set_rate(ov8856->xvclk, xvclk_rate);
+> > +		xvclk_rate = clk_get_rate(ov8856->xvclk);
+> >  	}
+> 
+> Why do we handle the clock only in DT case? Is there a problem with the
+> clock handling and ACPI?
 
-For some errors which could be recoverable or corrected, do_sea() should not kill process
-or die() unconditionally. It's better detect this situation.
+Not really, it's just that ACPI does not provide an interface to the clocks
+as such.
 
-> 
-> 
->> [  387.740609] {1}[Hardware Error]: Hardware error from APEI Generic Hardware Error Source: 9
->> [  387.748837] {1}[Hardware Error]: event severity: recoverable
->> [  387.754470] {1}[Hardware Error]:  Error 0, type: recoverable
-> 
->> [  387.760103] {1}[Hardware Error]:   section_type: ARM processor error
-> 
-> et voila! Case 2. Linux doesn't handle these 'ARM processor error' things, because it
-> doesn't know what they are. It just prints them out.
-> 
-> 
->> [  387.766425] {1}[Hardware Error]:   MIDR: 0x00000000481fd010
->> [  387.771972] {1}[Hardware Error]:   Multiprocessor Affinity Register (MPIDR): 0x0000000081080000
->> [  387.780628] {1}[Hardware Error]:   error affinity level: 0
->> [  387.786088] {1}[Hardware Error]:   running state: 0x1
->> [  387.791115] {1}[Hardware Error]:   Power State Coordination Interface state: 0
->> [  387.798301] {1}[Hardware Error]:   Error info structure 0:
->> [  387.803761] {1}[Hardware Error]:   num errors: 1
->> [  387.808356] {1}[Hardware Error]:    error_type: 0, cache error
->> [  387.814160] {1}[Hardware Error]:    error_info: 0x0000000024400017
->> [  387.820311] {1}[Hardware Error]:     transaction type: Instruction
->> [  387.826461] {1}[Hardware Error]:     operation type: Generic error (type cannot be determined)
->> [  387.835031] {1}[Hardware Error]:     cache level: 1
-> 
->> [  387.839878] {1}[Hardware Error]:     the error has been corrected
-> 
-> As this is corrected, I think the bug is a deadlock somewhere in do_task_dead().
-> 
-> 
->> [  387.845942] {1}[Hardware Error]:    physical fault address: 0x00000027caf50770
-> 
-> (and your firmware gives you the physical address, excellent, the kernel can do something
-> with this!)
-> 
-> 
->> [  388.021037] Call trace:
->> [  388.023475]  lsu_inj_ue+0x58/0x70 [l1l2_inject]
->> [  388.029019]  error_inject+0x64/0xb0 [l1l2_inject]
->> [  388.033707]  process_one_work+0x158/0x4b8
->> [  388.037699]  worker_thread+0x50/0x498
->> [  388.041348]  kthread+0xfc/0x128
->> [  388.044480]  ret_from_fork+0x10/0x1c
->> [  388.048042] Code: b2790000 d519f780 f9800020 d5033f9f (58001001)
->> [  388.054109] ---[ end trace 39d51c21b0e42ba6 ]---
->>
->> core 0 hung up at here.
-> 
-> DEBUG_ATOMIC_SLEEP and maybe LOCKDEP should help you pin down where the kernel is getting
-> stuck. It looks like a bug in the core code.
-> 
-> 
-> Thanks,
-> 
-> James
-> 
-> [0] https://lore.kernel.org/linux-acpi/20200228174817.74278-4-james.morse@arm.com/
-> .
-> 
+-- 
+Regards,
 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
