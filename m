@@ -2,71 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B61791BF493
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59D381BF4A3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 11:58:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gyXBEuPailYIC6dc/mpaEPZFdcFYr8jOvxvxrI3Qt+g=; b=NAuo+p9vIJVLiH
-	ht3axqBxCQKoJnChggTCuOj96g3NepBNOHKJyMPOOK+1VzQxMZeSpNnIBz6S9X/G3465x1HmhCoPp
-	ggRW4S0df53XwHwEMpejJAvHRsuQL88vteSlTc2VUBtq30U+NCNs3U/tfU7P1lSOBAFuRP5eJplZI
-	19YV489GB/CyWsifo1+RjuRlNJlPLUdFT8hTXdDgu1XbQxIFPV/AgqWOIx3qMbgpWNEqsM2fRtgNX
-	YMgjJFgB63c8UCqToqRxX2tyZccE1zZQowNi5dVZmCK29nQ4JjfNqWBfKhYKce/eJgt8KL18g2g53
-	in9VeEx479pKeacvYnQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rO4SQREosUI5xLvBo2fEeHNCCQl5wQDiKM0OzI8Ed50=; b=LCpbr04jU6o7+ereMXVxpbFV5
+	A0j4RQ9WJaB3tZWca464gEpUEINhrniBd2MRgvtgeqhFSJD499MBYoFX+ZaEU7+7JWfihCE06Ucx3
+	fqA2XfYbJLgFOlUVSqqaCu14M+H96U1HoGxeKbbed5m8RD2FB7nCp4I0nmF/WMZnzDHXrZtkM3UWy
+	njTH5dhJprBBanA0knPL2Ai2S4k+KaRbGTqjDmh17ZuqdDfpGDkqilSyfo+WMIfPDgnEM5tZlNV/n
+	PxHTYEzHrhfh3WYwlWeT3IwXypb33XA14hnvj/37g1JlwqqpKKUJ8Vuscy+zj8IiiCRVnHM9SHf5J
+	0EpG65Egw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU5t8-00061F-OJ; Thu, 30 Apr 2020 09:53:50 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jU5xT-0000wc-5m; Thu, 30 Apr 2020 09:58:19 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU5sz-0005zf-A8
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:53:43 +0000
-Received: from dude02.hi.pengutronix.de ([2001:67c:670:100:1d::28]
- helo=dude02.lab.pengutronix.de)
- by metis.ext.pengutronix.de with esmtps
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jU5ss-0005Ec-9R; Thu, 30 Apr 2020 11:53:34 +0200
-Received: from mfe by dude02.lab.pengutronix.de with local (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jU5sq-0006tx-Rv; Thu, 30 Apr 2020 11:53:32 +0200
-Date: Thu, 30 Apr 2020 11:53:32 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Sakari Ailus <sakari.ailus@iki.fi>
-Subject: Re: [PATCH v6 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200430095332.GC2188@pengutronix.de>
-References: <20200429162437.2025699-1-robert.foss@linaro.org>
- <20200429162437.2025699-3-robert.foss@linaro.org>
- <20200430093524.GB2188@pengutronix.de>
- <20200430094549.GF867@valkosipuli.retiisi.org.uk>
+ id 1jU5xI-0000w8-QD
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 09:58:11 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03U9qeKs000841; Thu, 30 Apr 2020 11:57:54 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=KI2AtPyJLvrsFvH8h/qo1asrr1uW5LJxQpJkGaRznVE=;
+ b=GaOlqtsELyMr/+7rGu414BfW6XhtkUr2Y1ImtOwm0WNi5hRk4ERUs61pdsp8bf2FPeyU
+ yOnOKmvq/63F8lZLFFZZNr1XJy1MdA4rwwGZT3Q9q/0te3ukYFBKp57EXupvhe4bLSvf
+ 7fSFgXrWMfZa23dUJ5bMPDlq5JuAa7W97PV0iIsh2m1YzQiZSTqM+3505GuoiGUlw7ly
+ yiNRlED4+rXqSJwz57Ea4YSu4PBhHbP68u3SDnhRtMo4RpERd3dyhRh9zaworeJEXPSN
+ XoSO0mpF4FmiYasNUf71JbUB1nGekHvc4XbnftoiNdFLkauiU5heHekMuYflwJ8SwcAw oQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30mhjx3grd-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 30 Apr 2020 11:57:54 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 28DE410002A;
+ Thu, 30 Apr 2020 11:57:54 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 126CA2B3BB8;
+ Thu, 30 Apr 2020 11:57:54 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 30 Apr
+ 2020 11:57:47 +0200
+Subject: Re: [PATCH 1/4] add dts node for drm panel driver ili9341 add dts
+ i2c3 for stmpe touch add dts spi5 for gyro & ili9341
+To: <dillon.minfei@gmail.com>
+References: <1588239802-11442-1-git-send-email-dillon.minfei@gmail.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <33f928e7-3fde-99a2-b84d-d74a2d3f1186@st.com>
+Date: Thu, 30 Apr 2020 11:57:39 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430094549.GF867@valkosipuli.retiisi.org.uk>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 11:50:15 up 68 days, 21:07, 160 users,  load average: 7.64, 3.60,
- 2.62
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::28
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <1588239802-11442-1-git-send-email-dillon.minfei@gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG8NODE2.st.com (10.75.127.23) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-30_05:2020-04-30,
+ 2020-04-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_025341_519926_86C55A3D 
-X-CRM114-Status: GOOD (  31.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200430_025809_203171_FCA4F4EE 
+X-CRM114-Status: GOOD (  24.49  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,286 +98,319 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- linux-kernel@vger.kernel.org, Robert Foss <robert.foss@linaro.org>,
- Tomasz Figa <tfiga@chromium.org>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, mcoquelin.stm32@gmail.com, airlied@linux.ie,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ robh+dt@kernel.org, thierry.reding@gmail.com, daniel@ffwll.ch,
+ sam@ravnborg.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari,
+Hi
 
-On 20-04-30 12:45, Sakari Ailus wrote:
-> Hi Marco,
+On 4/30/20 11:43 AM, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
 > 
-> On Thu, Apr 30, 2020 at 11:35:24AM +0200, Marco Felsch wrote:
-> > Hi Robert,
-> > 
-> > thnakf for the patch but pls keep in mind to do one thing per patch.
-> > IMHO this patch do a lot more. Anyway below are my comment :)
-> > 
-> > On 20-04-29 18:24, Robert Foss wrote:
-> > > Add match table, enable ov8856_probe() to support
-> > > both ACPI and DT modes.
-> > 
-> > You are also adding the support for reset-gpios and regualtors. IMHO the
-> > commit message don't belong to the changes you made anymore.
-> > 
-> > > ACPI and DT modes are primarily distinguished from
-> > > each other by relying on devm_XXX_get_optional()
-> > > will return NULL instead of a reference for the
-> > > desired managed resource.
-> > > 
-> > > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > > ---
-> > > 
-> > > - Changes since v5:
-> > >   * Maxime & Sakari: Replaced clock tolerance check with warning
-> > > 
-> > > - Changes since v4:
-> > >   * Maxime & Sakari: Switch to clock-frequency
-> > > 
-> > > - Changes since v3:
-> > >   * Remove redundant {}-brackets
-> > >   * Compare xvclk_rate to 5% tolerance
-> > >   * Andy: Use dev_fwnode()
-> > >   * Andy: Use %pe instead of %ld + PTR_ERR()
-> > >   * Andy: Invert reset_gpio logic
-> > >   * Andy: Remove dev_dbg() from failing reset_gpio setup
-> > >   * Andy: Use dev_err for logging for failures
-> > >   * Andy: Remove dev_warn from EDEFER/regulator error path
-> > >   * Andy & Sakari: Replaced GPIOD_OUT_XXX with 0/1
-> > >   * Maxime & Sakari: Verify clock frequency from DT
-> > >   * Sakari: Verify the 'xvclk_rate' is set correctly for ACPI/DT devices
-> > >   * Sakari: Remove duplicate ov8856->dev assignment
-> > > 
-> > > - Changes since v2:
-> > >   * Added "struct device *dev" member to struct ov8856
-> > >   * Andy: Switch to optional version of devm_gpiod_get
-> > >   * Andy: Switch to optional version of devm_clk_get
-> > >   * Fabio: Add reset sleep period
-> > >   * Sakari: Unify defines for 19.2Mhz
-> > >   * Sakari: Remove 24Mhz clock, since it isn't needed for supported modes
-> > >   * Sakari: Replace dev_info() with dev_dbg()
-> > >   * Sakari: Switch induction variable type to unsigned
-> > >   * Sakari: Don't wait for reset_gpio when in ACPI mode
-> > >   * Sakari: Pull reset GPIO high on power on failure
-> > >   * Sakari: Add power on/off to resume/suspend
-> > >   * Sakari: Fix indentation
-> > >   * Sakari: Power off during ov8856_remove()
-> > >   * Sakari: Don't sleep during power-on in ACPI mode
-> > >   * Sakari: Switch to getting xvclk from clk_get_rate
-> > > 
-> > > - Changes since v1:
-> > >   * Andy & Sakari: Make XVCLK optional since to not break ACPI
-> > >   * Fabio: Change n_shutdown_gpio name to reset_gpio
-> > >   * Fabio: Invert reset_gpio due to GPIO_ACTIVE_HIGH -> GPIO_ACTIVE_LOW change
-> > >   * Fabio: Remove empty line
-> > >   * Fabio: Remove real error from devm_gpiod_get() failures
-> > >   * Sakari: ARRAY_SIZE() directly instead of through OV8856_NUM_SUPPLIES
-> > >   * Sakari: Use XVCLK rate as provided by DT
-> > > 
-> > >  drivers/media/i2c/ov8856.c | 137 +++++++++++++++++++++++++++++++++----
-> > >  1 file changed, 123 insertions(+), 14 deletions(-)
-> > > 
-> > > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-> > > index 8655842af275..4749dc74d5ad 100644
-> > > --- a/drivers/media/i2c/ov8856.c
-> > > +++ b/drivers/media/i2c/ov8856.c
-> > > @@ -3,10 +3,13 @@
-> > >  
-> > >  #include <asm/unaligned.h>
-> > >  #include <linux/acpi.h>
-> > > +#include <linux/clk.h>
-> > >  #include <linux/delay.h>
-> > > +#include <linux/gpio/consumer.h>
-> > >  #include <linux/i2c.h>
-> > >  #include <linux/module.h>
-> > >  #include <linux/pm_runtime.h>
-> > > +#include <linux/regulator/consumer.h>
-> > >  #include <media/v4l2-ctrls.h>
-> > >  #include <media/v4l2-device.h>
-> > >  #include <media/v4l2-fwnode.h>
-> > > @@ -18,7 +21,7 @@
-> > >  #define OV8856_LINK_FREQ_360MHZ		360000000ULL
-> > >  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
-> > >  #define OV8856_SCLK			144000000ULL
-> > > -#define OV8856_MCLK			19200000
-> > > +#define OV8856_XVCLK_19_2		19200000
-> > >  #define OV8856_DATA_LANES		4
-> > >  #define OV8856_RGB_DEPTH		10
-> > >  
-> > > @@ -64,6 +67,12 @@
-> > >  
-> > >  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
-> > >  
-> > > +static const char * const ov8856_supply_names[] = {
-> > > +	"dovdd",	/* Digital I/O power */
-> > > +	"avdd",		/* Analog power */
-> > > +	"dvdd",		/* Digital core power */
-> > > +};
-> > > +
-> > >  enum {
-> > >  	OV8856_LINK_FREQ_720MBPS,
-> > >  	OV8856_LINK_FREQ_360MBPS,
-> > > @@ -566,6 +575,11 @@ struct ov8856 {
-> > >  	struct media_pad pad;
-> > >  	struct v4l2_ctrl_handler ctrl_handler;
-> > >  
-> > > +	struct device		*dev;
-> > > +	struct clk		*xvclk;
-> > > +	struct gpio_desc	*reset_gpio;
-> > > +	struct regulator_bulk_data supplies[ARRAY_SIZE(ov8856_supply_names)];
-> > > +
-> > >  	/* V4L2 Controls */
-> > >  	struct v4l2_ctrl *link_freq;
-> > >  	struct v4l2_ctrl *pixel_rate;
-> > > @@ -908,6 +922,52 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> > >  	return ret;
-> > >  }
-> > >  
-> > > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > > +{
-> > > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > > +	int ret;
-> > > +
-> > > +	ret = clk_prepare_enable(ov8856->xvclk);
-> > 
-> > You're request the clk only in DT case or do I miss something? If so you
-> > have to check if the clk is available.
-> > 
-> > > +	if (ret < 0) {
-> > > +		dev_err(&client->dev, "failed to enable xvclk\n");
-> > > +		return ret;
-> > > +	}
-> > > +
-> > > +	if (is_acpi_node(dev_fwnode(ov8856->dev)))
-> > > +		return 0;
-> > > +
-> > > +	if (ov8856->reset_gpio) {
-> > > +		gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > +		usleep_range(1000, 2000);
-> > > +	}
-> > > +
-> > > +	ret = regulator_bulk_enable(ARRAY_SIZE(ov8856_supply_names),
-> > > +				    ov8856->supplies);
-> > > +	if (ret < 0) {
-> > > +		dev_err(&client->dev, "failed to enable regulators\n");
-> > > +		goto disable_clk;
-> > > +	}
-> > > +
-> > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-> > 
-> > You need to check the existance of the gpio here too.
-> 
-> No need to; the GPIO framework can handle this internally.
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
 
-Ahh, I said nothing :) so all my comments about that can be dropped. 
+Commit title should be ARM: dts: stm32: bla bla on stm32f429 and please 
+a commit message.
 
-> > > +	usleep_range(1500, 1800);
-> > > +
-> > > +	return 0;
-> > > +
-> > > +disable_clk:
-> > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > 
-> > And here.. pls check the whole patch.
-> > 
-> > > +	clk_disable_unprepare(ov8856->xvclk);
-> > > +
-> > > +	return ret;
-> > > +}
-> > > +
-> > > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > > +{
-> > > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > > +	regulator_bulk_disable(ARRAY_SIZE(ov8856_supply_names),
-> > > +			       ov8856->supplies);
-> > > +	clk_disable_unprepare(ov8856->xvclk);
-> > 
-> > Clk is only availabel in DT use-case.
-> > 
-> > > +}
-> > > +
-> > >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> > >  {
-> > >  	struct i2c_client *client = to_i2c_client(dev);
-> > > @@ -918,6 +978,7 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
-> > >  	if (ov8856->streaming)
-> > >  		ov8856_stop_streaming(ov8856);
-> > >  
-> > > +	__ov8856_power_off(ov8856);
-> > >  	mutex_unlock(&ov8856->mutex);
-> > >  
-> > >  	return 0;
-> > > @@ -931,6 +992,8 @@ static int __maybe_unused ov8856_resume(struct device *dev)
-> > >  	int ret;
-> > >  
-> > >  	mutex_lock(&ov8856->mutex);
-> > > +
-> > > +	__ov8856_power_on(ov8856);
-> > >  	if (ov8856->streaming) {
-> > >  		ret = ov8856_start_streaming(ov8856);
-> > >  		if (ret) {
-> > > @@ -1092,29 +1155,54 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
-> > >  	return 0;
-> > >  }
-> > >  
-> > > -static int ov8856_check_hwcfg(struct device *dev)
-> > > +static int ov8856_get_hwcfg(struct ov8856 *ov8856)
-> > >  {
-> > > +	struct device *dev = ov8856->dev;
-> > >  	struct fwnode_handle *ep;
-> > >  	struct fwnode_handle *fwnode = dev_fwnode(dev);
-> > >  	struct v4l2_fwnode_endpoint bus_cfg = {
-> > >  		.bus_type = V4L2_MBUS_CSI2_DPHY
-> > >  	};
-> > > -	u32 mclk;
-> > > +	u32 xvclk_rate;
-> > >  	int ret;
-> > >  	unsigned int i, j;
-> > >  
-> > >  	if (!fwnode)
-> > >  		return -ENXIO;
-> > >  
-> > > -	ret = fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
-> > > +	ret = fwnode_property_read_u32(fwnode, "clock-frequency",
-> > > +		&xvclk_rate);
-> > >  	if (ret)
-> > >  		return ret;
-> > >  
-> > > -	if (mclk != OV8856_MCLK) {
-> > > -		dev_err(dev, "external clock %d is not supported", mclk);
-> > > -		return -EINVAL;
-> > > +	if (!is_acpi_node(fwnode)) {
-> > > +		ov8856->xvclk = devm_clk_get(dev, "xvclk");
-> > > +		if (IS_ERR(ov8856->xvclk)) {
-> > > +			dev_err(dev, "could not get xvclk clock (%pe)\n",
-> > > +					ov8856->xvclk);
-> > > +			return PTR_ERR(ov8856->xvclk);
-> > > +		}
-> > > +
-> > > +		clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > +		xvclk_rate = clk_get_rate(ov8856->xvclk);
-> > >  	}
-> > 
-> > Why do we handle the clock only in DT case? Is there a problem with the
-> > clock handling and ACPI?
+> ---
+>   .../bindings/display/panel/ilitek,ili9341.txt      | 42 +++++++++++
+>   arch/arm/boot/dts/stm32f4-pinctrl.dtsi             | 79 +++++++++++++++++++
+>   arch/arm/boot/dts/stm32f429-disco.dts              | 88 ++++++++++++++++++++++
+>   arch/arm/boot/dts/stm32f429.dtsi                   | 12 +++
+>   4 files changed, 221 insertions(+)
+>   create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.txt
 > 
-> Not really, it's just that ACPI does not provide an interface to the clocks
-> as such.
+> diff --git a/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.txt b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.txt
 
-But you will get a clk by devm_clk_get()?
+This binding description should be in a separate patch and you have to 
+write in YAML format.
 
-> 
-> -- 
-> Regards,
-> 
-> Sakari Ailus
+
+> new file mode 100644
+> index 0000000..f5a4e55
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.txt
+> @@ -0,0 +1,42 @@
+> +Ilitek ILI9341 TFT panel driver with SPI control bus
+> +
+> +This is a driver for 240x320 TFT panels, accepting a rgb input
+> +streams that get adapted and scaled to the panel.
+> +
+> +Required properties:
+> +  - compatible: "stm32f429-disco,ltdc-panel", "ilitek,ili9341"
+> +    (full system-specific compatible is always required to look up configuration)
+> +  - reg: address of the panel on the SPI bus
+> +
+> +Optional properties:
+> +  - reset-gpios: a GPIO spec for the reset pin, see gpio/gpio.txt
+> +  - dc-gpios: a GPIO spec for the dc pin, see gpio/gpio.txt
+> +
+> +  The following optional properties only apply to RGB input mode:
+> +
+> +  - pixelclk-active: see display/panel/display-timing.txt
+> +  - de-active: see display/panel/display-timing.txt
+> +  - hsync-active: see display/panel/display-timing.txt
+> +  - vsync-active: see display/panel/display-timing.txt
+> +
+> +The panel must obey the rules for a SPI slave device as specified in
+> +spi/spi-bus.txt
+> +
+> +The device node can contain one 'port' child node with one child
+> +'endpoint' node, according to the bindings defined in
+> +media/video-interfaces.txt. This node should describe panel's video bus.
+> +
+> +Example:
+> +
+> +panel: display@0 {
+> +	compatible = "stm32f429-disco,ltdc-panel", "ilitek,ili9341";
+> +	reg = <0>;
+> +	spi-3wire;
+> +	spi-max-frequency = <10000000>;
+> +	dc-gpios = <&gpiod 13 0>;
+> +	port {
+> +		panel_in: endpoint {
+> +			remote-endpoint = <&display_out>;
+> +		};
+> +	};
+> +};
+> diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> index 392fa14..45b68f4 100644
+> --- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+> @@ -316,6 +316,85 @@
+>   				};
+>   			};
+>   
+> +			ltdc_pins_f429_disco: ltdc-1 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
+> +						/* LCD_HSYNC */
+> +						 <STM32_PINMUX('A', 4,  AF14)>,
+> +						 /* LCD_VSYNC */
+> +						 <STM32_PINMUX('G', 7,  AF14)>,
+> +						 /* LCD_CLK */
+> +						 <STM32_PINMUX('C', 10, AF14)>,
+> +						 /* LCD_R2 */
+> +						 <STM32_PINMUX('B', 0,  AF9)>,
+> +						 /* LCD_R3 */
+> +						 <STM32_PINMUX('A', 11, AF14)>,
+> +						 /* LCD_R4 */
+> +						 <STM32_PINMUX('A', 12, AF14)>,
+> +						 /* LCD_R5 */
+> +						 <STM32_PINMUX('B', 1,  AF9)>,
+> +						 /* LCD_R6*/
+> +						 <STM32_PINMUX('G', 6,  AF14)>,
+> +						 /* LCD_R7 */
+> +						 <STM32_PINMUX('A', 6,  AF14)>,
+> +						 /* LCD_G2 */
+> +						 <STM32_PINMUX('G', 10, AF9)>,
+> +						 /* LCD_G3 */
+> +						 <STM32_PINMUX('B', 10, AF14)>,
+> +						 /* LCD_G4 */
+> +						 <STM32_PINMUX('D', 6,  AF14)>,
+> +						 /* LCD_B2 */
+> +						 <STM32_PINMUX('G', 11, AF14)>,
+> +						 /* LCD_B3*/
+> +						 <STM32_PINMUX('B', 11, AF14)>,
+> +						 /* LCD_G5 */
+> +						 <STM32_PINMUX('C', 7,  AF14)>,
+> +						 /* LCD_G6 */
+> +						 <STM32_PINMUX('D', 3,  AF14)>,
+> +						 /* LCD_G7 */
+> +						 <STM32_PINMUX('G', 12, AF9)>,
+> +						 /* LCD_B4 */
+> +						 <STM32_PINMUX('A', 3,  AF14)>,
+> +						 /* LCD_B5 */
+> +						 <STM32_PINMUX('B', 8,  AF14)>,
+> +						 /* LCD_B6 */
+> +						 <STM32_PINMUX('B', 9,  AF14)>,
+> +						 /* LCD_B7 */
+> +						 <STM32_PINMUX('F', 10, AF14)>;
+> +						 /* LCD_DE */
+> +					slew-rate = <2>;
+> +				};
+> +			};
+> +
+> +			i2c3_pins: i2c3-0 {
+> +				pins {
+> +					pinmux = <STM32_PINMUX('C', 9, AF4)>,
+> +						/* I2C3_SDA */
+> +						 <STM32_PINMUX('A', 8, AF4)>;
+> +						/* I2C3_SCL */
+> +					bias-disable;
+> +					drive-open-drain;
+> +					slew-rate = <3>;
+> +				};
+> +			};
+> +
+> +			spi5_pins: spi5-0 {
+> +				pins1 {
+> +					pinmux = <STM32_PINMUX('F', 7, AF5)>,
+> +						/* SPI5_CLK */
+> +						 <STM32_PINMUX('F', 9, AF5)>;
+> +						/* SPI5_MOSI */
+> +					bias-disable;
+> +					drive-push-pull;
+> +					slew-rate = <0>;
+> +				};
+> +				pins2 {
+> +					pinmux = <STM32_PINMUX('F', 8, AF5)>;
+> +						/* SPI5_MISO */
+> +					bias-disable;
+> +				};
+> +			};
+> +
+>   			dcmi_pins: dcmi-0 {
+>   				pins {
+>   					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
+> diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+> index 30c0f67..55eed05 100644
+> --- a/arch/arm/boot/dts/stm32f429-disco.dts
+> +++ b/arch/arm/boot/dts/stm32f429-disco.dts
+> @@ -49,6 +49,8 @@
+>   #include "stm32f429.dtsi"
+>   #include "stm32f429-pinctrl.dtsi"
+>   #include <dt-bindings/input/input.h>
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/gpio/gpio.h>
+>   
+>   / {
+>   	model = "STMicroelectronics STM32F429i-DISCO board";
+> @@ -98,6 +100,14 @@
+>   		regulator-name = "vcc5_host1";
+>   		regulator-always-on;
+>   	};
+> +
+> +	reg_3p3v: regulator-3p3v {
+
+3p3 ?
+
+> +		compatible = "regulator-fixed";
+> +		regulator-name = "3P3V";
+> +		regulator-min-microvolt = <3300000>;
+> +		regulator-max-microvolt = <3300000>;
+> +		regulator-always-on;
+> +	};
+>   };
+>   
+>   &clk_hse {
+> @@ -127,3 +137,81 @@
+>   	pinctrl-names = "default";
+>   	status = "okay";
+>   };
+> +
+> +&ltdc {
+> +	status = "okay";
+> +	pinctrl-0 = <&ltdc_pins_f429_disco>;
+> +	pinctrl-names = "default";
+> +
+> +	port {
+> +		ltdc_out_rgb: endpoint {
+> +			remote-endpoint = <&panel_in_rgb>;
+> +		};
+> +	};
+> +};
+> +
+> +&spi5 {
+> +	status = "okay";
+> +	pinctrl-0 = <&spi5_pins>;
+> +	pinctrl-names = "default";
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	cs-gpios = <&gpioc 1 GPIO_ACTIVE_LOW>,<&gpioc 2 GPIO_ACTIVE_LOW>;
+> +	dmas = <&dma2 3 2 0x400 0x0>,
+> +	       <&dma2 4 2 0x400 0x0>;
+> +	dma-names = "rx", "tx";
+> +	l3gd20: l3gd20@0 {
+> +		compatible = "st,l3gd20-gyro";
+> +		spi-max-frequency = <10000000>;
+> +		st,drdy-int-pin = <2>;
+> +		interrupt-parent = <&gpioa>;
+> +		interrupts = <1 IRQ_TYPE_EDGE_RISING>,
+> +				<2 IRQ_TYPE_EDGE_RISING>;
+> +		reg = <0>;
+> +		vddio = <&reg_3p3v>;
+> +		vdd = <&reg_3p3v>;
+> +		status = "okay";
+> +	};
+> +	display: display@1{
+> +		/* Connect panel-ilitek-9341 to ltdc */
+> +		compatible = "stm32f429-disco,ltdc-panel", "ilitek,ili9341";
+> +		reg = <1>;
+> +		spi-3wire;
+> +		spi-max-frequency = <10000000>;
+> +		dc-gpios = <&gpiod 13 0>;
+> +		port {
+> +			panel_in_rgb: endpoint {
+> +			remote-endpoint = <&ltdc_out_rgb>;
+> +			};
+> +		};
+> +	};
+> +};
+> +
+> +&i2c3 {
+
+Nodes are have to be ordered
+
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&i2c3_pins>;
+> +	status = "okay";
+> +
+> +	touch: stmpe811@41 {
+> +		compatible = "st,stmpe811";
+> +		reg = <0x41>;
+> +		interrupts = <15 IRQ_TYPE_EDGE_FALLING>;
+> +		interrupt-parent = <&gpioa>;
+> +		vio = <&reg_3p3v>;
+> +		vcc = <&reg_3p3v>;
+> +		status = "okay";
+> +
+> +		stmpe_touchscreen {
+> +			compatible = "st,stmpe-ts";
+> +			st,sample-time = <4>;
+> +			st,mod-12b = <1>;
+> +			st,ref-sel = <0>;
+> +			st,adc-freq = <1>;
+> +			st,ave-ctrl = <1>;
+> +			st,touch-det-delay = <2>;
+> +			st,settling = <2>;
+> +			st,fraction-z = <7>;
+> +			st,i-drive = <1>;
+> +		};
+> +	};
+> +};
+> diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
+> index d777069..257b843 100644
+> --- a/arch/arm/boot/dts/stm32f429.dtsi
+> +++ b/arch/arm/boot/dts/stm32f429.dtsi
+> @@ -402,6 +402,18 @@
+
+Split Soc updates in a separate patch
+
+>   			status = "disabled";
+>   		};
+>   
+> +		i2c3: i2c@40005c00 {
+> +			compatible = "st,stm32f4-i2c";
+> +			reg = <0x40005c00 0x400>;
+> +			interrupts = <72>,
+> +				     <73>;
+> +			resets = <&rcc STM32F4_APB1_RESET(I2C3)>;
+> +			clocks = <&rcc 0 STM32F4_APB1_CLOCK(I2C3)>;
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			status = "disabled";
+> +		};
+> +
+>   		dac: dac@40007400 {
+>   			compatible = "st,stm32f4-dac-core";
+>   			reg = <0x40007400 0x400>;
 > 
 
 _______________________________________________
