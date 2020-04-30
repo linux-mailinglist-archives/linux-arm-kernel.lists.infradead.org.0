@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61D4A1BF13C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:21:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0EB1BF1A5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 09:39:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HFv5Wd4ByMaJ1kU24+ZphIT3nnnYKDEGT/yKeV6DsXs=; b=qwXLH6SIPVKOZK
-	k4hDCppWNrXSbo+/pWgdZ9H4sZIfeY2N4hVuIJ1zp3T1G//cjoWX6F5N/ultXOFPE3CFOmCM+Le75
-	pMpJ455EdbiwKCGet9KdBmU0DlBp/DE3Ia5Y9qfyw6msfKCCteAtDTlEYW0HdwNgWZow+ywez5ciG
-	Np7Ef+DZ9gzOcFyV/QzVl5Sz5fwjBldUpu/MIt6uH116p9S1f7n39xOMU9OZj5nT5AsbP71sk2I+Q
-	pi22C9gk4MTQFqKfw2uFtvTMhbPCtM8NcoG3HHRsqmL3iS8gZmUDFLA0Zh0rUw41iNP746Y67qzib
-	FfEXcOCsQnKAIZgDUyQA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=4SE8osVoRDXetyHC9kxOVCd3+yyqLM+FDy8zRKoJYPM=; b=ZxorDe7aY/cBW2jW3kInBKYgB
+	3yYq7uSIYJ6sGFf2MRFPArGJbjvCRY6qBlszDO9zTxYWnd0FI77fFQESVsJgpsCpTanhcQHJaaoRd
+	gDhvvr+yaoMAkPR+tYnlzyxXbabZSpl3hAXbWKyslHgNfrHsFDZLQKlK6VKxmy1fKi/Ldgz+pdQpH
+	pSB76IgKYGaR9w8v6/vf5XNAUz4ujK91KVowm+I4XsOuRDxsr2y5PKz24wLPuVMqlrRWxvOy0JyNp
+	l9xOHZlEZ3IJ8v4rmwbw0yBga7ic6HNiswSpOIk1c9bZakBBw+AwB++4m/ab7WZ4zJcMzmbht+FOP
+	pCnpsCWdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jU3VB-0002Rv-7L; Thu, 30 Apr 2020 07:20:57 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jU3nA-0005bE-Sc; Thu, 30 Apr 2020 07:39:32 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jU3Uy-0002QY-Nt
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 07:20:46 +0000
-Received: by mail-lj1-x243.google.com with SMTP id h4so5308694ljg.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 00:20:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=sZr1+3vRqE2FhkSDX5CtrXLEsRTbr/eXU3dnq5Mc93U=;
- b=VfgVR9kKpczFIeN8+LnvP75Wr/OHUdd2lCZEgYm3svO+8+riMTwzBRxO3Cq9J/TmLy
- ChH42dOaLXAXEjr5NC5/1e8eDGNWYtF6C0jm+iiDKuZkbZQPWzgw7D3QEc//FdP1Jsf6
- 4666lNVgzk7UM9nzTjLN0iJ+ibaKAS3FF48QAuNBMS7GvyxtQqRiGa42vUoO1TIWK4gT
- iQkBiiMKb0BIJStddAjAiqa0Z/KOZSANm/AiLNWfKVkVCqHX9I5BMPlA6jCtli3TGAkr
- brC3qTzapu8AcZ/0uZv78PL84nfqYZkh7DV5N5duQi/Y91l4Mxab5cIqLrjZh7Z4JuFw
- +0sQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=sZr1+3vRqE2FhkSDX5CtrXLEsRTbr/eXU3dnq5Mc93U=;
- b=AuxkvnmInLVRkNVLu1Cnu37o+Ipkk/e1+F97RfZH+He1KuTaIYVmPqycqU1iy0PrAo
- 2nknz5wCLVJDdHTE4vJtbs22zfLeAIcS7fe7QF91Jc1iiVMJaGD1zFnU0Zmfa5HZNIez
- oxi43ZmYjzW2diS7lrlmOPivK3CKfKlNs26pLznDYtbcyGRzWUYuXpSlig/Sjx1E3/ec
- 0z6tq2gN1ekRPuFFTrQIp94EDfo2DZWR0sPJvJJCsvvIvvjXjXlgCOVXSFGXIT+1h1uI
- hoRZLszuyP8lhTcKbAKXCf7UkAwtWvq+zRoCxAazHsE8kWb6Xm10O2mh6IOJV8ziv1Yd
- efxg==
-X-Gm-Message-State: AGi0PuZzY9eqkvd6tpyta03DLvXOMuTi1MhoRAiG9nmRuIdhFEVOC6f6
- BsRiaKHKZGWv8uRRiUfCqlNt6XNmDxN5q6SyS5sfpQ==
-X-Google-Smtp-Source: APiQypK4Y04DV3XhNEdb66Dsm96rNOrnM5vyzC6FyLQ9pLxPdGP3mKpGyotMazaX8TgXg6B+lWsEIipHmTHJXN1XPRQ=
-X-Received: by 2002:a2e:a365:: with SMTP id i5mr1242958ljn.293.1588231241153; 
- Thu, 30 Apr 2020 00:20:41 -0700 (PDT)
+ id 1jU3n2-0005aZ-9S
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 07:39:26 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 03U7cQa1008219; Thu, 30 Apr 2020 09:39:17 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=hLXLo+GSEynKmmIDnjzImPRmCzlZcqmqhBlXoeTOsZ4=;
+ b=hMfFXYiclvNFJ2xCJbg/Vi4jOz2iF1+kT6oNIN2pSyOdvaSWT7znwYymsY/EniTvNxvO
+ 3hLP2g93w4SDNd6EdwJCezJDPVI5WtByhm44VH5dXgJTHiOa3KytGKtiXg+THNx7lz/4
+ jpDq2c+FVQGDgkVwJP9kR6QSi6buf/IuNMIu+M7sDNQ4eev36xN4IE6lb+1CkXgVqBvP
+ tIi0BQ019yMuYNrW4v71tmhOX45ZGxDNPuP8Fy1c0540sjLM6IoGa4VhuSMy3xUm9Wzk
+ 7mqx5Vbf0UI8sW+8ih6Iojtk75DDIL1WQGzbeFx0kFf/iTjG2pvHVimIPHlq9owtkHUy xg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30n4j66vap-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 30 Apr 2020 09:39:16 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 8D8EE10002A;
+ Thu, 30 Apr 2020 09:39:16 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 75D5F2A4D92;
+ Thu, 30 Apr 2020 09:39:16 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.45) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 30 Apr
+ 2020 09:39:12 +0200
+Subject: Re: [PATCH V5 00/20] ARM: dts: stm32: Repair AV96 board
+To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
+References: <20200422104613.96944-1-marex@denx.de>
+ <e47b72fc-9591-021d-7abc-14a7166a4845@st.com>
+ <9a5d29a4-14ae-1e4f-68fe-21e4f619625d@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <d1e9c84c-48a1-0eef-9da4-94c184ac179c@st.com>
+Date: Thu, 30 Apr 2020 09:39:05 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
- <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
- <20200425112950.3a4815b6@why>
- <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
- <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
- <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
-In-Reply-To: <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Thu, 30 Apr 2020 12:50:28 +0530
-Message-ID: <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
-Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
- pseudo NMI
-To: Marc Zyngier <maz@kernel.org>
+In-Reply-To: <9a5d29a4-14ae-1e4f-68fe-21e4f619625d@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-04-30_02:2020-04-30,
+ 2020-04-30 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_002044_819252_FABCA512 
-X-CRM114-Status: GOOD (  44.31  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200430_003924_782797_68206583 
+X-CRM114-Status: GOOD (  15.68  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,211 +98,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Thompson <daniel.thompson@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
- Jason Wessel <jason.wessel@windriver.com>,
- kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On Wed, 29 Apr 2020 at 13:53, Marc Zyngier <maz@kernel.org> wrote:
->
-> Hi Sumit,
->
-> On 2020-04-28 15:11, Sumit Garg wrote:
-> > Hi Marc,
-> >
-> > Thanks for your comments and apologies for my delayed response as I
-> > was exploring ideas that you have shared.
-> >
-> > On Sat, 25 Apr 2020 at 20:02, Marc Zyngier <maz@kernel.org> wrote:
-> >>
-> >> On 2020-04-25 11:29, Marc Zyngier wrote:
-> >> > On Fri, 24 Apr 2020 16:39:12 +0530
-> >> > Sumit Garg <sumit.garg@linaro.org> wrote:
-> >> >
-> >> > Hi Sumit,
-> >> >
-> >> >> With pseudo NMIs enabled, interrupt controller can be configured to
-> >> >> deliver SGI as a pseudo NMI. So add corresponding handling for SGIs.
-> >> >>
-> >> >> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
-> >> >> ---
-> >> >>  drivers/irqchip/irq-gic-v3.c | 22 +++++++++++++++++-----
-> >> >>  1 file changed, 17 insertions(+), 5 deletions(-)
-> >> >>
-> >> >> diff --git a/drivers/irqchip/irq-gic-v3.c
-> >> >> b/drivers/irqchip/irq-gic-v3.c
-> >> >> index d7006ef..be361bf 100644
-> >> >> --- a/drivers/irqchip/irq-gic-v3.c
-> >> >> +++ b/drivers/irqchip/irq-gic-v3.c
-> >> >> @@ -609,17 +609,29 @@ static inline void gic_handle_nmi(u32 irqnr,
-> >> >> struct pt_regs *regs)
-> >> >>      if (irqs_enabled)
-> >> >>              nmi_enter();
-> >> >>
-> >> >> -    if (static_branch_likely(&supports_deactivate_key))
-> >> >> -            gic_write_eoir(irqnr);
-> >> >>      /*
-> >> >>       * Leave the PSR.I bit set to prevent other NMIs to be
-> >> >>       * received while handling this one.
-> >> >>       * PSR.I will be restored when we ERET to the
-> >> >>       * interrupted context.
-> >> >>       */
-> >> >> -    err = handle_domain_nmi(gic_data.domain, irqnr, regs);
-> >> >> -    if (err)
-> >> >> -            gic_deactivate_unhandled(irqnr);
-> >> >> +    if (likely(irqnr > 15)) {
-> >> >> +            if (static_branch_likely(&supports_deactivate_key))
-> >> >> +                    gic_write_eoir(irqnr);
-> >> >> +
-> >> >> +            err = handle_domain_nmi(gic_data.domain, irqnr, regs);
-> >> >> +            if (err)
-> >> >> +                    gic_deactivate_unhandled(irqnr);
-> >> >> +    } else {
-> >> >> +            gic_write_eoir(irqnr);
-> >> >> +            if (static_branch_likely(&supports_deactivate_key))
-> >> >> +                    gic_write_dir(irqnr);
-> >> >> +#ifdef CONFIG_SMP
-> >> >> +            handle_IPI(irqnr, regs);
-> >> >> +#else
-> >> >> +            WARN_ONCE(true, "Unexpected SGI received!\n");
-> >> >> +#endif
-> >> >> +    }
-> >> >>
-> >> >>      if (irqs_enabled)
-> >> >>              nmi_exit();
-> >> >
-> >> > If there is one thing I would like to avoid, it is to add more ugly
-> >> > hacks to the way we handle SGIs. There is very little reason why SGIs
-> >> > should be handled differently from all other interrupts. They have the
-> >> > same properties, and it is only because of the 32bit legacy that we
-> >> > deal
-> >> > with them in such a cumbersome way. Nothing that we cannot fix though.
-> >> >
-> >> > What I would really like to see is first a conversion of the SGIs to
-> >> > normal, full fat interrupts. These interrupts can then be configured as
-> >> > NMI using the normal API.
-> >> >
-> >> > I think Julien had something along these lines (or was that limited to
-> >> > the PMU?). Otherwise, I'll happily help you with that.
-> >>
-> >> OK, to give you an idea of what I am after, here's a small series[1]
-> >> that
-> >> can be used as a base (it has been booted exactly *once* on a model,
-> >> and
-> >> is thus absolutely perfect ;-).
-> >
-> > Thanks for this series. I have re-based my patch-set on top of this
-> > series [1] and just dropped this patch #2. It works fine for me.
->
-> I just had a look.
->
-> "irqchip/gic-v3: Enable arch specific IPI as pseudo NMI" is still done
-> the wrong way, I'm afraid. You directly poke into the GIC configuration,
-> which isn't acceptable, as you leave the rest of the kernel completely
-> unaware that this is a NMI. You should make the interrupt a NMI as it
-> is being configured in gic_smp_init(), calling request_nmi() at this
-> stage.
-
-Sure, I will try to follow your suggestion. But I think it's better to
-first generalize the base IPI allocation scheme.
-
->
-> >>
-> >> There is still a bit of work to be able to actually request a SGI
-> >> (they
-> >> are hard-wired as chained interrupts so far, as this otherwise changes
-> >> the output of /proc/interrupts, among other things), but you will
-> >> hopefully see what I'm aiming for.
-> >
-> > I was exploring this idea: "request a SGI". I guess here you meant to
-> > request a new SGI as a normal NMI/IRQ via common APIs such as
-> > request_percpu_nmi() or request_percpu_irq() rather than statically
-> > adding a new IPI as per this patch [2], correct? If yes, then I have
-> > following follow up queries:
-> >
-> > 1. Do you envision any drivers to use SGIs in a similar manner as they
-> > use SPIs or PPIs?
->
-> No. SGIs are already pretty much all allocated for the kernel's internal
-> needs and once we allocate an additional one for this KGDB feature,
-> we're out of non-secure SGIs. We could start a multiplexing scheme to
-> overcome this, but the kernel already has plenty of other mechanisms
-> for internal communication. After all, why would you need anything more
-> than smp_call_function()?
->
-> The single use case I can imagine is that you'd want to signal a CPU
-> that isn't running Linux. This would require a lot more work than
-> just an interrupt, and is out of scope for the time being.
-
-Thanks for the clarification.
-
->
-> > 2. How do you envision allocation of SGIs as currently they are
-> > hardcoded in an arch specific file (like arch/arm64/kernel/smp.c
-> > +794)?
->
-> What I would like is for the arch code to request these interrupts as
-> normal interrupts, for which there is one problem to solve: how do you
-> find out about the Linux IRQ number for a given IPI. Or rather, how
-> do you get rid of the requirement to have IPI numbers at all and just
-> say "give me a per-cpu interrupt that I can use as an IPI, and by the
-> way here's the handler you can call".
-
-I think what you are looking for here is something that could be
-sufficed via enabling "CONFIG_GENERIC_IRQ_IPI" framework for arm64/arm
-architectures. It's currently used for mips architecture. Looking at
-its implementation, I think it should be possible to hook up SGIs
-under new IPI irq_domain for GICv2/v3.
-
-So with this framework we should be able to dynamically allocate IPIs
-and use common APIs such as request_irq()/request_nmi() to tell IPI
-specific handlers.
-
-If this approach looks sane to you then I can start working on a PoC
-implementation for arm64.
-
->
-> And I insist: this is only for the arch code. Nothing else.
->
-
-Makes sense.
-
-> > 3. AFAIK, the major difference among SGIs and SPIs or PPIs is the
-> > trigger method where SGIs are software triggered and SPIs or PPIs are
-> > hardware triggered. And I couldn't find a generalized method across
-> > architectures to invoke SGIs. So how do you envision drivers to invoke
-> > SGIs in an architecture agnostic manner?
->
-> Well, SGIs are not architecture agnostic. They are fundamentally part of
-> the GIC architecture, which only exists for the two ARM architectures.
->
-> SGIs are not a general purpose mechanism. IPIs are, and we have services
-> on top of IPIs, such as invoking a function on a remote CPU. What else
-> do you need?
-
-Yeah that was mine understanding as well. But I was just clarifying if
-you have any further use-cases in mind for IPIs.
-
--Sunit
-
->
-> Thanks,
->
->           M.
-> --
-> Jazz is not dead. It just smells funny...
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiA0LzI5LzIwIDY6NDAgUE0sIE1hcmVrIFZhc3V0IHdyb3RlOgo+IE9uIDQvMjkvMjAgOTo1
+NiBBTSwgQWxleGFuZHJlIFRvcmd1ZSB3cm90ZToKPj4gSGkgTWFyZWsKPj4KPj4gT24gNC8yMi8y
+MCAxMjo0NSBQTSwgTWFyZWsgVmFzdXQgd3JvdGU6Cj4+PiBUaGUgQVY5NiBib2FyZCBkZXZpY2Ug
+dHJlZSBpcyBjb21wbGV0ZWx5IGJyb2tlbiBhbmQgZG9lcyBub3QgbWF0Y2ggdGhlCj4+PiBoYXJk
+d2FyZS4gVGhpcyBzZXJpZXMgZml4ZXMgaXQgdXAuCj4+Pgo+Pj4gTWFyZWsgVmFzdXQgKDIwKToK
+Pj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogUmVwYWlyIFBNSUMgY29uZmlndXJhdGlvbiBvbiBB
+Vjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3RtMzI6IFJlcGFpciBQTUlDIGludGVycnVwdCBvbiBB
+Vjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBl
+dGhlcm5ldCBSR01JSQo+Pj4gIMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBSZXBhaXIgZXRoZXJuZXQg
+b3BlcmF0aW9uIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRkIG1pc3Npbmcg
+ZXRoZXJuZXQgUEhZIHJlc2V0IG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBzdG0zMjogQWRk
+IG1pc3NpbmcgZXRoZXJuZXQgUEhZIHNrZXdzIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBz
+dG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIFNETU1DIHBpbnMKPj4+ICDCoMKgIEFSTTog
+ZHRzOiBzdG0zMjogUmVwYWlyIFNETU1DMSBvcGVyYXRpb24gb24gQVY5Ngo+Pj4gIMKgwqAgQVJN
+OiBkdHM6IHN0bTMyOiBBZGQgZU1NQyBhdHRhY2hlZCB0byBTRE1NQzIgb24gQVY5Ngo+Pj4gIMKg
+wqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgUVNQSSBOT1Igb24gQVY5Ngo+Pj4gIMKgwqAgQVJNOiBk
+dHM6IHN0bTMyOiBBZGQgY29uZmlndXJhdGlvbiBFRVBST00gb24gQVY5Ngo+Pj4gIMKgwqAgQVJN
+OiBkdHM6IHN0bTMyOiBFbmFibGUgV2lGaSBvbiBBVjk2Cj4+PiAgwqDCoCBBUk06IGR0czogc3Rt
+MzI6IEFkZCBhbHRlcm5hdGUgcGlubXV4IGZvciBVU0FSVDIgcGlucwo+Pj4gIMKgwqAgQVJNOiBk
+dHM6IHN0bTMyOiBFbmFibGUgQmx1ZXRvb3RoIG9uIEFWOTYKPj4+ICDCoMKgIEFSTTogZHRzOiBz
+dG0zMjogQWRkIGFsdGVybmF0ZSBwaW5tdXggZm9yIExUREMgcGlucwo+Pj4gIMKgwqAgQVJNOiBk
+dHM6IHN0bTMyOiBBZGQgYmluZGluZ3MgZm9yIEhETUkgdmlkZW8gb24gQVY5Ngo+Pj4gIMKgwqAg
+QVJNOiBkdHM6IHN0bTMyOiBBZGQgYWx0ZXJuYXRlIHBpbm11eCBmb3IgU0FJMiBwaW5zCj4+PiAg
+wqDCoCBBUk06IGR0czogc3RtMzI6IEFkZCBiaW5kaW5ncyBmb3IgYXVkaW8gb24gQVY5Ngo+Pj4g
+IMKgwqAgQVJNOiBkdHM6IHN0bTMyOiBBZGQgYmluZGluZ3MgZm9yIFVTQiBvbiBBVjk2Cj4+PiAg
+wqDCoCBBUk06IGR0czogc3RtMzI6IFJlbmFtZSBMRURzIHRvIG1hdGNoIHNpbGtzY3JlZW4gb24g
+QVY5Ngo+Pj4KPj4+ICDCoCBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTUtcGluY3RybC5kdHNp
+wqDCoMKgIHwgMjgwICsrKysrKysrKysrKysrKysrCj4+PiAgwqAgYXJjaC9hcm0vYm9vdC9kdHMv
+c3RtMzJtcDE1N2EtYXZlbmdlcjk2LmR0cyB8IDMyNCArKysrKysrKysrKysrKysrKystLQo+Pj4g
+IMKgIDIgZmlsZXMgY2hhbmdlZCwgNTcyIGluc2VydGlvbnMoKyksIDMyIGRlbGV0aW9ucygtKQo+
+Pj4KPj4+IENjOiBBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbT4KPj4+
+IENjOiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5hcm8u
+b3JnPgo+Pj4gQ2M6IE1heGltZSBDb3F1ZWxpbiA8bWNvcXVlbGluLnN0bTMyQGdtYWlsLmNvbT4K
+Pj4+IENjOiBQYXRyaWNlIENob3RhcmQgPHBhdHJpY2UuY2hvdGFyZEBzdC5jb20+Cj4+PiBDYzog
+UGF0cmljayBEZWxhdW5heSA8cGF0cmljay5kZWxhdW5heUBzdC5jb20+Cj4+PiBDYzogbGludXgt
+c3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbQo+Pj4gVG86IGxpbnV4LWFybS1rZXJu
+ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+Pj4KPj4KPj4gU2VyaWVzIGFwcGxpZWQgb24gc3RtMzIt
+bmV4dC4KPiAKPiBUaGFua3MuIEkgc2VudCBvdXQgdGhlIHJlc3QsIHdoaWNoIHNob3VsZCBiZSB2
+ZXJ5IG11Y2ggYWxsIHRoZXJlIGlzIGZvcgo+IG5vdyA6KSA+CgpJIGhvcGUgOikuIEkgaGFkIGEg
+bG9vayBvbiBpdCBhbmQgaXQgc291bmRzIGdvb2QuIEknbGwgbWVyZ2UgaXQgbmV4dCB3ZWVrLgoK
+cmVnYXJkcwphbGV4CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
