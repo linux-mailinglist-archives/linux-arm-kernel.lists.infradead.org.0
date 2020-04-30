@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDBD71C08E8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:12:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD5921C08EE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 30 Apr 2020 23:13:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Aa+nxFCrsuRvpz2IkToA4Bew+F6ce6VvebXUWHcWFu0=; b=S6thJ9USwltN0qvFSgLlfsukyq
-	tKHHnZgRuYHXOhbesC48hmhROOlMCMm3St/BIARtRSVdVUPxs8eNJeC9tf84PZfxhEiO5pa9qZooK
-	skSYNV4jXnu3PHn2RjeLza2NDUJdoIT6Iuok+iQsSrerJAdWolkNnGHr7Eyc04WtyfOYOEuxGUIPx
-	7hJmOOyF97RUnnE6CKpZdHe/ZP+Bc8yZy/qgOmNOGSZk/M6+q2SeCtx9ds+V0gpU5Lnj20zmbgQ/V
-	M7fhGBsT6phGUZVQHUWe9uKdibKbRSB24+5jvXHso3k1/nvmZ451HIskDxwdGpmwKSgd8QUomNck+
-	xZje/PMA==;
+	bh=Tld9nxw0MPAfn9y4C6OyrecDLuaF7WphZTY7lDlKPOc=; b=Urk2sXe/Gz3SVDj39tzH/wJYla
+	tBjNfzR1VF/HJsFHRF2DoUoGpMryOVAlzlEyRY2GjyPYiP9c4WikGhfAAMxx9/AaxcZ8PthgLgwx7
+	E86TOc8hb4F8GE2fbmXq9R4YT5c5so2lHAKgYXeZxCEhlKHzDniPtIec1XoPUD265L/h3SoowrNpf
+	YJHIegS44DnAVz9BtA6xO9m+YcfjG7vHey+MqFs7PhdvcxwVrYUMu0zdnbFF4brXkxFRkcLv4WbRV
+	MJ6BFiqK50zNHluH8XjdTKZsFbzCdBzFeXX5sX4+Xwy0QYK8gwb8wrEq/QW2P3+eC9JB9eWFYTAUv
+	R28sbCUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUGTm-0004kJ-FR; Thu, 30 Apr 2020 21:12:22 +0000
+	id 1jUGUN-0005Ev-48; Thu, 30 Apr 2020 21:12:59 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUGSe-00041o-Db
- for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:14 +0000
+ id 1jUGSf-00042T-2P
+ for linux-arm-kernel@lists.infradead.org; Thu, 30 Apr 2020 21:11:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 13E851FB;
- Thu, 30 Apr 2020 14:11:11 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AFCE31B;
+ Thu, 30 Apr 2020 14:11:12 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 300F93F68F;
- Thu, 30 Apr 2020 14:11:10 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 471AA3F68F;
+ Thu, 30 Apr 2020 14:11:11 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>,
 	devicetree@vger.kernel.org
-Subject: [PATCH v3 4/8] dt-bindings: phy: Convert Calxeda ComboPHY binding to
- json-schema
-Date: Thu, 30 Apr 2020 22:10:50 +0100
-Message-Id: <20200430211054.30466-5-andre.przywara@arm.com>
+Subject: [PATCH v3 5/8] dt-bindings: arm: Convert Calxeda L2 cache controller
+ to json-schema
+Date: Thu, 30 Apr 2020 22:10:51 +0100
+Message-Id: <20200430211054.30466-6-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200430211054.30466-1-andre.przywara@arm.com>
 References: <20200430211054.30466-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_141112_521421_82E24903 
-X-CRM114-Status: GOOD (  12.66  )
+X-CRM114-CacheID: sfid-20200430_141113_158326_FD48C667 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,100 +71,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert the Calxeda ComboPHY binding to DT schema format using
+Convert the L2-ECC controller binding to DT schema format using
 json-schema.
-There is no driver in the Linux kernel matching the compatible
-string, but the nodes are parsed by the SATA driver, which links to them
-using its port-phys property.
+This is indented to be just used for error reporting.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../bindings/phy/calxeda-combophy.txt         | 17 -------
- .../bindings/phy/calxeda-combophy.yaml        | 51 +++++++++++++++++++
- 2 files changed, 51 insertions(+), 17 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.txt
- create mode 100644 Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+ .../devicetree/bindings/arm/calxeda/l2ecc.txt | 15 -------
+ .../bindings/arm/calxeda/l2ecc.yaml           | 42 +++++++++++++++++++
+ 2 files changed, 42 insertions(+), 15 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt
+ create mode 100644 Documentation/devicetree/bindings/arm/calxeda/l2ecc.yaml
 
-diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt b/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+diff --git a/Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt b/Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt
 deleted file mode 100644
-index 6622bdb2e8bc..000000000000
---- a/Documentation/devicetree/bindings/phy/calxeda-combophy.txt
+index 94e642a33db0..000000000000
+--- a/Documentation/devicetree/bindings/arm/calxeda/l2ecc.txt
 +++ /dev/null
-@@ -1,17 +0,0 @@
--Calxeda Highbank Combination Phys for SATA
+@@ -1,15 +0,0 @@
+-Calxeda Highbank L2 cache ECC
 -
 -Properties:
--- compatible : Should be "calxeda,hb-combophy"
--- #phy-cells: Should be 1.
--- reg : Address and size for Combination Phy registers.
--- phydev: device ID for programming the combophy.
+-- compatible : Should be "calxeda,hb-sregs-l2-ecc"
+-- reg : Address and size for ECC error interrupt clear registers.
+-- interrupts : Should be single bit error interrupt, then double bit error
+-	interrupt.
 -
 -Example:
 -
--	combophy5: combo-phy@fff5d000 {
--		compatible = "calxeda,hb-combophy";
--		#phy-cells = <1>;
--		reg = <0xfff5d000 0x1000>;
--		phydev = <31>;
+-	sregs@fff3c200 {
+-		compatible = "calxeda,hb-sregs-l2-ecc";
+-		reg = <0xfff3c200 0x100>;
+-		interrupts = <0 71 4  0 72 4>;
 -	};
--
-diff --git a/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
+diff --git a/Documentation/devicetree/bindings/arm/calxeda/l2ecc.yaml b/Documentation/devicetree/bindings/arm/calxeda/l2ecc.yaml
 new file mode 100644
-index 000000000000..16a8bd7644bf
+index 000000000000..a9fe01238a88
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/phy/calxeda-combophy.yaml
-@@ -0,0 +1,51 @@
++++ b/Documentation/devicetree/bindings/arm/calxeda/l2ecc.yaml
+@@ -0,0 +1,42 @@
 +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/phy/calxeda-combophy.yaml#
++$id: http://devicetree.org/schemas/arm/calxeda/l2ecc.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Calxeda Highbank Combination PHYs binding for SATA
++title: Calxeda Highbank L2 cache ECC
 +
 +description: |
-+  The Calxeda Combination PHYs connect the SoC to the internal fabric
-+  and to SATA connectors. The PHYs support multiple protocols (SATA,
-+  SGMII, PCIe) and can be assigned to different devices (SATA or XGMAC
-+  controller).
-+  Programming the PHYs is typically handled by those device drivers,
-+  not by a dedicated PHY driver.
++  Binding for the Calxeda Highbank L2 cache controller ECC device.
++  This does not cover the actual L2 cache controller control registers,
++  but just the error reporting functionality.
 +
 +maintainers:
 +  - Andre Przywara <andre.przywara@arm.com>
 +
 +properties:
 +  compatible:
-+    const: calxeda,hb-combophy
-+
-+  '#phy-cells':
-+    const: 1
++    const: "calxeda,hb-sregs-l2-ecc"
 +
 +  reg:
 +    maxItems: 1
 +
-+  phydev:
-+    description: device ID for programming the ComboPHY.
-+    allOf:
-+      - $ref: /schemas/types.yaml#/definitions/uint32
-+      - maximum: 31
++  interrupts:
++    items:
++      - description: single bit error interrupt
++      - description: double bit error interrupt
 +
 +required:
 +  - compatible
 +  - reg
-+  - phydev
-+  - '#phy-cells'
++  - interrupts
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    combophy5: combo-phy@fff5d000 {
-+                   compatible = "calxeda,hb-combophy";
-+                   #phy-cells = <1>;
-+                   reg = <0xfff5d000 0x1000>;
-+                   phydev = <31>;
-+               };
++    sregs@fff3c200 {
++        compatible = "calxeda,hb-sregs-l2-ecc";
++        reg = <0xfff3c200 0x100>;
++        interrupts = <0 71 4>, <0 72 4>;
++    };
 -- 
 2.17.1
 
