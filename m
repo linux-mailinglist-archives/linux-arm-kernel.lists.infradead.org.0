@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 497531C21B0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 01:54:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 651901C21B2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 01:55:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ajhU0EwDNqAAz7jdB5BUer2wmAW0R4qbqwzDo0V0XyU=; b=LrsgvEzpySCwTr
-	BIYlr5BKrv/mcVykphwyFHQzlXlZthK68bIBXqHWCVHB/B7iVGHLhHGM8uAyiozIfiZJ9bTosYOxG
-	/kbW3IEzMVhVR0HPq6bgJ53D45VzQYzdHqzGP53yzYRg+RRL51UHZzRUr4DfAVugqZ6n9Y/8kwrdF
-	E8p59DT4Jw+ys3XemxPvRZv8SZFd/o2HOf5GthU1mmZ46Bx0Hr+XkBFYCVWNexMFu4qEBnG8lnwCO
-	D9mcLtTMDWbb4QMjlgzWmVFHpznHBsEgLQNPZL0rTYfGz66/QQe1VKWl7zRoOuCfKWg+uT2Fqdpml
-	TCYU6Kx2YT4tjoTBtyNw==;
+	List-Owner; bh=Ied4Hz68PxQv10KtpY9yXGH3z1ONsRvw7EWnJZo6bIY=; b=inE6YOtm6asNgL
+	Xrs7g53FlasKvXDxMKbal6jpUYoJMbdWvNc9TFIDOJIDjJ8FRa2qKRSk2YZ2Lfl72cSY4lIIdjjca
+	jbE2ObU9zPTyQFt4EVOt1YiT2ojUfEr4fw6z4Ej0Blto5WaILLNoI11zMdkmWPOpqZ7nh/v+xXtFi
+	d1tYLfEUbL7cVeuQxyIbqpuTtQN8M3Q7eoXN8u2lxFJbLIYcPt3gRUYFLNWYABTOnT5mGWy2fdaHK
+	aX9ZGruLj6444/tp1PjCZUwWeaFh7ELtWGyA8PUklayoib3stzzp47Fm3fzFdhs0qt0/mub1veTKk
+	BkwDjjxz0BG8qBU/6OLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUfUW-0001ww-JH; Fri, 01 May 2020 23:54:48 +0000
-Received: from mail-dm6nam12olkn2048.outbound.protection.outlook.com
- ([40.92.22.48] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jUfVG-0004sR-3O; Fri, 01 May 2020 23:55:34 +0000
+Received: from mail-dm6nam12olkn2018.outbound.protection.outlook.com
+ ([40.92.22.18] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUfRN-0007Vh-3d
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 23:51:36 +0000
+ id 1jUfRP-0007Xi-AX
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 23:51:38 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=l+7mpwR3Dz9XZqPOeyNF8sj9Fx8TV9O+CQsmJH6gfUKmNwYUCbs5eFKq3uP+avb8ygqwyGhb2sdxEOqTposAeqc29+30DP0TAtlx+1HReBAw+7s+TaGJ+eddkMo4rW2OsBk1LiMZ19dK77zWswOZ0wM7M+bCIQ5SsPu1B81LFebf0nMDfVtjahCsQiOhEu/aMDGJwiISr9yoXzC6pZJF5Xv9W176oXrrBGuLf5/BKX5zSBeF5VlTkeL+yzCKUbHVreoFHZtsXgmBsU+vqjL794hWUZgFD1iRFz68/G7cdmYQc24Ms8tcuq2ipKnKvbe9lwuIiVa1/5X2g+A3+U/x/Q==
+ b=XTGa7nCeIG4/JlaGq1Tl6ctoem0OryOj/gWYSZfV4Ooslz8E1/8gPYForOW+tAHLZnjsRp00NxaRYlPqUPCJ+inXZGiJUoQMXQ2bttAANHVvR23hp6YkoaN4mYT8kDk6okJwQQVzzSEL07KRQ8tG0+n/C0XDc+WJDH9gnMtHCsbrvxDAb66eOK7XEdXc/xC9jGlD0C4SUwnSyULw+VIE5L96g71tQKUxXl7axHOOFL59DCp+v9Bk+SWRvUFr7b1OjvV2EKCL/Cip6l9fRObvTXpJNndZYbazPSB+2qFEp9s3ZBEXT6wJkIEXxAPFmxLuuEe7SS73lkwFkS59oTzn0g==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HHr/7WE+ogxMYf6hOleP7yRxnD2ewDqzINWt5DLoNN0=;
- b=jagqkHRoZS/a4VMt3gthgzlgScaqe0b7IxcgPav1/Am32XTEZzEC1zc6BRPVBzkAKmo5T/YI9WVz3v7UBXeA3rgXSHUhnJCv3jWdmgZGuqE211+6+TpTatiVd86FmJ9vZo991OUAVFbYyGmhcDPvC1Hi/A8hb8NjGca9iKS2ckBLVly54eCUR+jTUzNnVEnS9REqsJRS7wlnwbRV0MucDCtHhNJPM17C+7wMZMh2GbGODHGskI7I7v8Vd+sjsu2Bzem1XYNGYF5Swxre901esXvF4GC3+Fwt+NX/LlDcCeMBaV/oQLlWjyx8QxmiTEqeh+jyFdufFZBuCfKOflxpow==
+ bh=cgdsQHvzkLGsRuhYROf4sTojFixwdNIsWagrfzfwR7E=;
+ b=D3UAwg9Cmx65wCx17KbDz5Ck1pXDdK+GHiCK2gdFRePaq0e7N7TgKtB8KJ/cNiUPanWIZOvQD6f8YoPOafKgaiw5VMZI9uVaYwC5pvqv7irJuX+93XjO4g16BFiTUUFAQjWZjvi0i807mmC3PnYDESt3RdkfRB0Q5aGARtIML3wsVPjr4nop1Q+3A0vX1n1wvneIZC1J6i9iovQ02oX70UUh+1cDWkTNMp7L3+yd9vLgIMzzwF+jZsl053Th2NblOEPGJmfporIde5VNe+fzJD79ye0GWp5QVghxpUQEmW3fZD0QAvCuYtwHg59nbsVjhEKcf0VhsMCsjF/pTvIXOQ==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
  header.d=live.ca; arc=none
 Received: from DM6NAM12FT056.eop-nam12.prod.protection.outlook.com
- (2a01:111:e400:fc64::4a) by
- DM6NAM12HT116.eop-nam12.prod.protection.outlook.com (2a01:111:e400:fc64::100)
+ (2a01:111:e400:fc64::4d) by
+ DM6NAM12HT118.eop-nam12.prod.protection.outlook.com (2a01:111:e400:fc64::126)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.12; Fri, 1 May
- 2020 23:51:31 +0000
+ 2020 23:51:33 +0000
 Received: from BN6PR04MB0660.namprd04.prod.outlook.com
  (2a01:111:e400:fc64::46) by DM6NAM12FT056.mail.protection.outlook.com
  (2a01:111:e400:fc64::460) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.12 via Frontend
- Transport; Fri, 1 May 2020 23:51:31 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:BB0B0C1DB8AEBFAA843D4AE8F07C9D8C7461EECAAA9752D14FDEFECCE4E0E420;
- UpperCasedChecksum:C954E615F3E602F33734112D3921A2CAA2C0D90BD761C2D7962D51EF442691F9;
- SizeAsReceived:7870; Count:50
+ Transport; Fri, 1 May 2020 23:51:33 +0000
+X-IncomingTopHeaderMarker: OriginalChecksum:C66D8254CD5D15C498F8638EB97EF85EA76AC070D9FBD59916DEC013149543E9;
+ UpperCasedChecksum:0D38F596013E77A39B35A53E0ECFDAA96FFABA7A163E7C4BE89BF2E8C5DDDC99;
+ SizeAsReceived:7842; Count:50
 Received: from BN6PR04MB0660.namprd04.prod.outlook.com
  ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
  ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2958.027; Fri, 1 May 2020
- 23:51:31 +0000
+ 23:51:33 +0000
 From: Jonathan Bakker <xc-racer2@live.ca>
 To: kgene@kernel.org, krzk@kernel.org, robh+dt@kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v2 12/18] ARM: dts: s5pv210: Disable pull for vibrator ena
- GPIO on aries
-Date: Fri,  1 May 2020 16:50:13 -0700
-Message-ID: <BN6PR04MB0660C61E15452E1BC3B717EFA3AB0@BN6PR04MB0660.namprd04.prod.outlook.com>
+Subject: [PATCH v2 13/18] ARM: dts: s5pv210: Add an ADC node
+Date: Fri,  1 May 2020 16:50:14 -0700
+Message-ID: <BN6PR04MB06609B8C5A80A74F25A73710A3AB0@BN6PR04MB0660.namprd04.prod.outlook.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200501235019.24022-1-xc-racer2@live.ca>
 References: <20200426183604.28494-1-xc-racer2@live.ca>
@@ -67,38 +66,38 @@ References: <20200426183604.28494-1-xc-racer2@live.ca>
 X-ClientProxiedBy: MWHPR17CA0058.namprd17.prod.outlook.com
  (2603:10b6:300:93::20) To BN6PR04MB0660.namprd04.prod.outlook.com
  (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200501235019.24022-13-xc-racer2@live.ca>
+X-Microsoft-Original-Message-ID: <20200501235019.24022-14-xc-racer2@live.ca>
 MIME-Version: 1.0
 X-MS-Exchange-MessageSentRepresentingType: 1
 Received: from jon-hp-6570b.telus (2001:569:fb68:9c00:8067:f823:1e15:7520) by
  MWHPR17CA0058.namprd17.prod.outlook.com (2603:10b6:300:93::20) with Microsoft
  SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2958.20 via Frontend Transport; Fri, 1 May 2020 23:51:29 +0000
+ 15.20.2958.20 via Frontend Transport; Fri, 1 May 2020 23:51:31 +0000
 X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200501235019.24022-13-xc-racer2@live.ca>
-X-TMN: [Ap+UONHn8F2u6LkEOl2UEuF5QkdNG0obwAG7GIzp5WYfAubwZIxWGHB3AwAKV9ek]
+X-Microsoft-Original-Message-ID: <20200501235019.24022-14-xc-racer2@live.ca>
+X-TMN: [4gIaQpeN+CxbKgL4N4l7flQZSh2PZJWC/edP+PY3K7njFD82l1NcQNvFXeGGFOAq]
 X-MS-PublicTrafficType: Email
 X-IncomingHeaderCount: 50
 X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: e447f098-a8e0-42b1-5bc1-08d7ee2a926b
-X-MS-TrafficTypeDiagnostic: DM6NAM12HT116:
+X-MS-Office365-Filtering-Correlation-Id: 891b1a9a-4511-4c83-83ab-08d7ee2a9399
+X-MS-TrafficTypeDiagnostic: DM6NAM12HT118:
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 2P3mp3BGD5+VhNwXH5G4HGb7mTqCzW5KJY8iuVXhzFG6eKItaRG24rQFV1q6cAdJSB348nPYdJCUpYlQGQemEDQlprIvicX7lPiPUPD4Hck8OdFZLnXqNg+PFF0bkNX1J1ofPwr6CBNtFnnxg4HcjaLV45cmz9g45amJYai9WZGOWJr9VJ9Am0cNLZYWr7c8a+Cy7dH3c1MPu9Q8zhwA1Q==
+X-Microsoft-Antispam-Message-Info: K2P+9ZIo0Zd6gFlTOFraIGmRgpZIQM1R2ZorIp1wqx01hJLulXgv4kn30rr0NtlzxXkPKiP32RGc2NebnSfv+IxK5XvCvQe6vHYm0tIHdIXTmqd8FXWbf8U30bmxyflDms4az8cFNXxUbQ55PcjUUi6MwLYrNlXgvMrDU3dZr1A5SRqDgnTh1jrRmBNE909Z1vB9FDw1TNElxERm0DxWZA==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
  IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: wipelDvCqo7yGVKpRfaHAAKklbQr7d5WLvr63GrkOgyfvFE15E5msnAk1eFUEotq2oslgspyhxju2YityBFndXpCWoGWRITgcgHFV77M+o01SS6n0WRIXALrNjBFBT//fv9s5r1Yfivdnknt+xLL9mIah5a03OreqPW2e9cumx5uOADbbjZnBAhWGzfnRQRMlG+s9JyXzdqBpdU4DbhiqA==
+X-MS-Exchange-AntiSpam-MessageData: 9jZvuYHhfaax6iM5gdPpiz1E09rg85wAHqs+9zNR+cYYcC2XVXJhbqxTWhPIYBoTJw0DCxOjDFWl6vN7JZL31T6ghq7JA5OAnSVBP1UyDZwYohCBZbVzstdwlwjuHiAl1JHf4FkT0dDcxZIcelwv6yXto5e+LeSuOIFez6PgSIeu6UED0k49kPJbxitsPPk5MM1C8dRl+ralKU1RUcTlXw==
 X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: e447f098-a8e0-42b1-5bc1-08d7ee2a926b
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 May 2020 23:51:31.3799 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 891b1a9a-4511-4c83-83ab-08d7ee2a9399
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 May 2020 23:51:33.3721 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
 X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
 X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6NAM12HT116
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6NAM12HT118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_165133_170717_426219E5 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20200501_165135_491106_EB6F0A4C 
+X-CRM114-Status: UNSURE (   9.41  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -106,9 +105,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.22.48 listed in list.dnswl.org]
+ no trust [40.92.22.18 listed in list.dnswl.org]
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.22.48 listed in wl.mailspike.net]
+ [40.92.22.18 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [xc-racer2[at]live.ca]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
@@ -133,41 +132,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The enable GPIO for the fixed vibrator regulator shouldn't be
-pulled in one direction or the other.
+The exynos-adc driver now supports the S5PV210, so add the DT
+node so that devices can use it.
 
 Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
----
- arch/arm/boot/dts/s5pv210-aries.dtsi | 9 +++++++++
- 1 file changed, 9 insertions(+)
 
-diff --git a/arch/arm/boot/dts/s5pv210-aries.dtsi b/arch/arm/boot/dts/s5pv210-aries.dtsi
-index 0fa3de3c985d..945259aa5d55 100644
---- a/arch/arm/boot/dts/s5pv210-aries.dtsi
-+++ b/arch/arm/boot/dts/s5pv210-aries.dtsi
-@@ -52,6 +52,9 @@
- 		regulator-name = "vibrator-en";
- 		enable-active-high;
- 		gpio = <&gpj1 1 GPIO_ACTIVE_HIGH>;
-+
-+		pinctrl-names = "default";
-+		pinctr-0 = <&vibrator_ena>;
- 	};
+---
+Changes from v1
+- Adjust node name to match reg address
+---
+ arch/arm/boot/dts/s5pv210.dtsi | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/arch/arm/boot/dts/s5pv210.dtsi b/arch/arm/boot/dts/s5pv210.dtsi
+index 2ad642f51fd9..30a0c39a310f 100644
+--- a/arch/arm/boot/dts/s5pv210.dtsi
++++ b/arch/arm/boot/dts/s5pv210.dtsi
+@@ -159,6 +159,18 @@
+ 			};
+ 		};
  
- 	touchkey_vdd: regulator-fixed-1 {
-@@ -656,6 +659,12 @@
- 		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
- 	};
- 
-+	vibrator_ena: vibrator-ena {
-+		samsung,pins = "gpj1-1";
-+		samsung,pin-pud = <S3C64XX_PIN_PULL_NONE>;
-+		samsung,pin-drv = <EXYNOS4_PIN_DRV_LV1>;
-+	};
++		adc: adc@e1700000 {
++			compatible = "samsung,s5pv210-adc";
++			reg = <0xe1700000 0x1000>;
++			interrupt-parent = <&vic2>;
++			interrupts = <23>, <24>;
++			clocks = <&clocks CLK_TSADC>;
++			clock-names = "adc";
++			#io-channel-cells = <1>;
++			io-channel-ranges;
++			status = "disabled";
++		};
 +
- 	touchkey_i2c_pins: touchkey-i2c-pins {
- 		samsung,pins = "gpj3-0", "gpj3-1";
- 		samsung,pin-pud = <S3C64XX_PIN_PULL_NONE>;
+ 		spi0: spi@e1300000 {
+ 			compatible = "samsung,s5pv210-spi";
+ 			reg = <0xe1300000 0x1000>;
 -- 
 2.20.1
 
