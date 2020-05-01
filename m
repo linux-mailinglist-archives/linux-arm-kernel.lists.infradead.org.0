@@ -2,57 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C7641C1AAF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:37:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 928F61C1ABA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:41:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dqsNwuqAdaXCnxPZxhEfG+pCpsLLkRTnLuCPaDQ7JVA=; b=oZ7SOcIxc3JMi/
-	nCWvw9DgaaE62Eijitjz/hLMLCfhgQf+MRC7t8nn6SqxXHSeAKshjxnBvwdO5/BSP3iq5rGrmUuKQ
-	54CP5D1wPQNMjDhMLx5z42YVdmnlYDaAcKeivIoo0cPBo2dB+QI2Y+FesBW5vAW0Q4kqSvJgEtzlL
-	GqW+8XstLZ6AlfchLU1jGO1NSMG+zYQmyPk6kKGyXiLR0eNGwKrblDE5GIb/Y4/vYPwsCQY/QKFtb
-	5G5cIJIhj60CQtKbdl9wj5nW0xXVMYd52Eo/MBnz8VEWoFQMpRRA4sT4lFV/g81AD3gGJDSOANmpf
-	zLjJMhSik5O9oIARFGjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Xul+vorcDBbTQ2TaOSTtfZwxtd8rUvdoS60c9GmebRU=; b=ZmepQzHUFVBcHsU8X3UaPFn4W
+	un0FaVrbUV7yfAwc5C2EkKOTww3Y114vuPO860eGOLvgF61GutCNYuGg3qP7sgZXkRBrHObPTgSJg
+	PdBdxEH91p8OTLFTyMeKqokhESyi38FZgRqWueTttXblFwqo5P4Vmeo0HMBE4hrD/VZDAgmig9RbR
+	loAPTueiLQoPvlLzTQ9CqKctpfxGlqzAvzpB6w0i8wyg9RQrrVet5won34y48vzY1LlBROic4e7fO
+	Z5Rqd9IhnSDIAsyllaQMs9m6ZEcG1FCuy52AmyG/RNloXLCxJ7Ljj6qsSOmUM7FYbJ3j57ug69vBk
+	1i+INrjVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYfc-00054m-NE; Fri, 01 May 2020 16:37:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYfW-00053a-EM
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:37:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DACCB30E;
- Fri,  1 May 2020 09:37:41 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.80])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7AC453F68F;
- Fri,  1 May 2020 09:37:38 -0700 (PDT)
-Date: Fri, 1 May 2020 17:37:35 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 08/16] mfd: vexpress-sysreg: Drop selecting
- CONFIG_CLKSRC_MMIO
-Message-ID: <20200501163735.GD14018@bogus>
-References: <20200429205825.10604-1-robh@kernel.org>
- <20200429205825.10604-9-robh@kernel.org>
+	id 1jUYim-0008OY-32; Fri, 01 May 2020 16:41:04 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUYif-0008NP-Nr
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:40:59 +0000
+Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
+ by Forcepoint Email with ESMTP id C1CF8C4B4B34BF9888AE;
+ Fri,  1 May 2020 17:40:51 +0100 (IST)
+Received: from [127.0.0.1] (10.47.3.165) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Fri, 1 May 2020
+ 17:40:50 +0100
+Subject: Re: [PATCH 5/5] arm/arm64: smccc: Add ARCH_SOC_ID support
+To: Sudeep Holla <sudeep.holla@arm.com>
+References: <20200430114814.14116-1-sudeep.holla@arm.com>
+ <20200430114814.14116-6-sudeep.holla@arm.com>
+ <426ff8ab-9c13-4301-a91e-989c19c4ff58@huawei.com>
+ <20200501160521.GB24840@bogus>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <b5657cc3-a162-742f-f1cb-02c2d80631c9@huawei.com>
+Date: Fri, 1 May 2020 17:40:08 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-9-robh@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200501160521.GB24840@bogus>
+Content-Language: en-US
+X-Originating-IP: [10.47.3.165]
+X-ClientProxiedBy: lhreml727-chm.china.huawei.com (10.201.108.78) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_093742_525849_15D6A35B 
-X-CRM114-Status: UNSURE (   9.40  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200501_094057_922865_7F36ACD7 
+X-CRM114-Status: GOOD (  16.91  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -65,36 +71,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Sebastian Reichel <sre@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Will Deacon <will@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Steven Price <steven.price@arm.com>,
+ "harb@amperecomputing.com" <harb@amperecomputing.com>,
+ Will Deacon <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:58:17PM -0500, Rob Herring wrote:
-> Nothing in the VExpress sysregs nor the MFD child drivers use
-> CONFIG_CLKSRC_MMIO. There's the 24MHz counter, but that's handled by
-> drivers/clocksource/timer-versatile.c which doesn't use
-> CONFIG_CLKSRC_MMIO either. So let's just drop CONFIG_CLKSRC_MMIO.
+On 01/05/2020 17:05, Sudeep Holla wrote:
+> On Fri, May 01, 2020 at 04:25:27PM +0100, John Garry wrote:
+>> On 30/04/2020 12:48, Sudeep Holla wrote:
+>>> +static int __init smccc_soc_init(void)
+>>> +{
+>>> +	struct device *dev;
+>>> +	int ret, soc_id_rev;
+>>> +	struct arm_smccc_res res;
+>>> +	static char soc_id_str[8], soc_id_rev_str[12];
+>>> +
+>>> +	if (arm_smccc_get_version() < ARM_SMCCC_VERSION_1_2)
+>>> +		return 0;
+>>> +
+>>> +	ret = smccc_soc_id_support_check();
+>>> +	if (ret)
+>>> +		return ret;
+>>> +
+>>> +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 0, &res);
+>>> +
+>>> +	ret = smccc_map_error_codes(res.a0);
+>>> +	if (ret)
+>>> +		return ret;
+>>> +
+>>> +	soc_id_version = res.a0;
+>>> +
+>>> +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 1, &res);
+>>> +
+>>> +	ret = smccc_map_error_codes(res.a0);
+>>> +	if (ret)
+>>> +		return ret;
+>>> +
+>>> +	soc_id_rev = res.a0;
+>>> +
+>>> +	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
+>>> +	if (!soc_dev_attr)
+>>> +		return -ENOMEM;
+>>> +
+>>> +	sprintf(soc_id_str, "0x%04x", IMP_DEF_SOC_ID(soc_id_version));
+>>> +	sprintf(soc_id_rev_str, "0x%08x", soc_id_rev);
+>>> +
+>>> +	soc_dev_attr->soc_id = soc_id_str;
+>>> +	soc_dev_attr->revision = soc_id_rev_str;
+>>> +
+>>> +	soc_dev = soc_device_register(soc_dev_attr);
+>>> +	if (IS_ERR(soc_dev)) {
+>>> +		ret = PTR_ERR(soc_dev);
+>>> +		goto free_soc;
+>>> +	}
+>>> +
+>>> +	dev = soc_device_to_device(soc_dev);
+>>> +
+>>
+>> Just wondering, what about if the platform already had a SoC driver - now it
+>> could have another one, such that we may have multiple sysfs soc devices,
+>> right?
+>>
 > 
-> As the !ARCH_USES_GETTIMEOFFSET dependency was added for
-> CONFIG_CLKSRC_MMIO, that can be dropped, too.
+> Yes I had a quick look at that.
 > 
-> Cc: Sudeep Holla <sudeep.holla@arm.com>
+> 1. Such platform has option not to implement this SOC_ID if it doesn't
+>     really require it.
 
-Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+True
 
--- 
-Regards,
-Sudeep
+> 
+> 2. If the firmware starts implementing it on some variants, then we can
+>     distinguish them with compatibles and blacklist them from the other
+>     SoC driver if having both is an issue
+> 
+> 3. SoC bus layer supports adding multiple SoC ID driver and it may show
+>     up as /sys/devices/soc<n> which may or may not be fine.
+
+Yeah, it's this scenario which I'm concerned about, where some userspace 
+expects, for example, soc0 to have a soc id from a known, expected list, 
+and now may get something else. However it could be argued then that 
+userspace is just too fragile then and there is no read problem here.
+
+  But this
+>     happens only if neither [1] nor [2] is done. I am happy to see if there's
+>     any solution for this. Any suggestions ?
+
+Not sure, but taking a slight deviation, maybe a way could be found to 
+supplement this dev attribute info to other ARM soc drivers.
+
+Cheers,
+John
 
 _______________________________________________
 linux-arm-kernel mailing list
