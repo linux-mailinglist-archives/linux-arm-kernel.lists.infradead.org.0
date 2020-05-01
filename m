@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7766F1C0F2A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:09:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 234B31C0F45
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:15:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9F7RMeOwRDxJNyN1gdyjYOO7i8KEWBrPzHQwUKDFIgo=; b=uak4/21XiAnjLm
-	A/eWph0TrvkotBnllUI7An6fbvlM2ajpKUZ3iWNgQXrBbiFb7dlIw/LsjyHff7CWdKE2sTT7xgO6B
-	qgGmdrxcLVUXh+aK8yZd9sVEzak9UW5bDTEENhYAjqNO8tX1P8G7NGxsGypsRRszkk8jKcBM+L+e4
-	NACW1bdxpClhUO+gnriK5zQp/RNYHcmOxilyHh4BXZLA0hoc2g+mVWu/c1XiAMniA5WAY+e5C/Pb2
-	jlpa541pbcVvftiS6A0CJrUwFfxUjmC8hnyrVu2WC1RmtW6uEua4LyKh1WePxc/ErD7wbJc4IfZiR
-	CcrwNljSxUQYDRRtbZOA==;
+	List-Owner; bh=A0V0aMdNmbqnr9v14Qi747/bjeIZH87yZJGMHueTdAw=; b=aj7aGiQdoaBMOo
+	vpcrSvUF4n05dWjxzm0SNzeyCfBl4PX02iyeZrFQH1ShCEvSMgOhpTJ/fiFZrsU4t9esFEKRyfI91
+	t2MNcJGZZOLrvEyYCH68s9ywqUJ3n7n18Bcwm8JFnTd0jDr+APifuZpMHHTIE1dMfxJaZ4ghEqOpE
+	MSxV5FISup0N1klNSWcSgkrx+zNaXvyVuAODhtiCl216jwQ4/qxJvqxwv1oDeTtxZyCrSe0ozhYTq
+	tBYR1ouGmTMyKrPhbQU3XELupFGgfGs6j3ERWcdPtO7lHAeVA4sFNBawvRC0Ba2GpLwWyQ3ROpZpR
+	XAvX9D6kxnNNQm1URPrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUQjQ-00089f-0d; Fri, 01 May 2020 08:09:12 +0000
-Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+	id 1jUQpk-0005QJ-3C; Fri, 01 May 2020 08:15:44 +0000
+Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUQjI-00088T-RE
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:09:06 +0000
-Received: by mail-oi1-x241.google.com with SMTP id c124so2068377oib.13
+ id 1jUQpc-0005OZ-F8
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:15:37 +0000
+Received: by mail-oi1-x242.google.com with SMTP id o24so2162112oic.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 01:09:03 -0700 (PDT)
+ Fri, 01 May 2020 01:15:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0pg+1ScPrEODM3uAFA9zTWu/I1ZfaUw4KVmoBAKoheA=;
- b=YhXnbMYvvL2NERhKKxsDO4eX9F2iF5QES+58BPMPdkDa7+HWnKRPXBtihaQRlx5jhJ
- ZJ+u6PNVJetL8DPyXrHPuRXEcd5/bi3d1s+fxldrozxvCiSxYrfbkwMuRZOHt7so1kAn
- aiEHVbhCFKQAXa1VhD+k4dfmV7tkNmjJFq0NAXNXDGY0lueDa1Gg4pPmbic0IFrkPRlN
- MIr4KPcfXB2XLJFMMuVotJ6iBWmim1etULPjiMGfMuxcGrgUBWdsfJIZUHIjejVd2NMD
- zLRXjnFO6JT8OhAo0LD0S9lYl11vXLyJc2xc2LLFyC1GgYs46wc1cH263vVfeZ8MTfER
- CRtg==
+ :cc; bh=67PD+4N6OTeLQfdVEtLP8JgZsz239nlSbqS4Vkr8Dyw=;
+ b=kLDxDqPs9e69GaVMoTLIbt5TvwRXfennTnwhak3ZePa6Iw3AisJOdncZZtD5a3g+Iz
+ YF/82TokyreEFFn60NinKIGrC0hy0MwKvtZHCwyFrC85V4U2jf51couuP4yBrXn/TQAF
+ BLDeJG+s/qPBOdTUrh7x2jcV6xVGy1+FRUZAegp4jwA+7qmCYzGGJ8QUhZmEy9zXIWNo
+ 4ih3ouFd+mP1Pnx96vHgtEw/r/WzELYEDu6LsgVwa5zBqJ8pQ7R2iM4deN5x8o+RZIB7
+ SHmgCDIJ9rKhPh32VzsySTwtLpGAnFTGMg9KICJnlJ2oJyqVxCkOIRyzEPpya8Ja6m5g
+ TOMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0pg+1ScPrEODM3uAFA9zTWu/I1ZfaUw4KVmoBAKoheA=;
- b=WBSgK12rC+AoTfu4UibFhMByy6KZvzOmlsGUsXzq70mdGCkuITh03jZz7p98SSR0dO
- smvPMp7/pqbC3ejRzlsYFmt82qf0sJofRKp0SoxHd0bLahxVRrVM8hcvSVh8vokSsQA2
- wB6l1vw3wMbRdL9cTwjxlZXGlWQZTdVfY8O2UESeICnq4mwc64G+dK13hmh6RnihbEGo
- +G7STzvIeu81BF8e9a1hcC1ySD0UTqVxtbGj0DA0B47f2YnCrd5Ak29J2HRs7Xs9Naju
- O3df8sovSwY0e0QXI6uvLBoIFhys2f9sVPZ3LtPi4Vt/k9qF2rEOGw6oXFJ4yrAJLEQr
- GuIg==
-X-Gm-Message-State: AGi0PuaJykri3CiAFJ2nw39w/mOXfZXx/c6TSu2XyT7lbpCGAnt4CwXO
- YljrGz/1hFszRLuH4CmMZqCNBa4MsiEbDQ4cI84=
-X-Google-Smtp-Source: APiQypL4tkkgblP6s79WD1Ii4byJ0FZw7ndmwSXmo65KLcrLpTxyQBgTjG8TlCh5OP8wJ/Y3Cf7Oky6dSkWu7P5a6UQ=
-X-Received: by 2002:aca:b18b:: with SMTP id a133mr2294802oif.142.1588320542697; 
- Fri, 01 May 2020 01:09:02 -0700 (PDT)
+ bh=67PD+4N6OTeLQfdVEtLP8JgZsz239nlSbqS4Vkr8Dyw=;
+ b=T4OoHYhT19qqbBUAKpjYgFXg6i47qR9Gtl+F73+5gk2M3TY2gv+1LM+2EKaoD+qI0c
+ +Re6lU942p34og1xmNcpmRK3RB73G7JWaZ1UztasEhovE9JS6TRWDoaDFr29dTUE4r3p
+ Tq8qAaUtZ/ecC8gCQw9QDsYcXZlwASLV3AR35qUIdsIcEz3Pae1HF+TeXGOZqZPbYqjN
+ dFFFQHWMCnaML+cFv/Xb+0X+iYAfEdmo+JxgdhsfArPrPCzSxAokXL7R2Arq6kCuoLGi
+ ehKUaw4LaPfWAp2Tg9GPtMnCvi3HRncbGXG0rVf1J6lKIHxJN/uaX0InVs7Uom7n4CIC
+ J6AQ==
+X-Gm-Message-State: AGi0PuawgIAmq3Bogtys0rYDLMTL1nty678+bxIhqTTHKbA/bLZrx/SV
+ U4s7e/m96JGZf5PKQs3WBvLJLtQwcc6yK1Zd1zM=
+X-Google-Smtp-Source: APiQypIgr6pyF8u5FiRXk8vY7iTPFETvjGXZfjd03HJ7Sse1ymzPq5v9ms+GEMVAq9d2o2xjZGdRdTbFSnFcUHZk+Yk=
+X-Received: by 2002:aca:b783:: with SMTP id h125mr2296549oif.62.1588320931075; 
+ Fri, 01 May 2020 01:15:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-7-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAMuHMdWNSgqfCd4ZGR4Y-9M_-nKH7nO9aNcQ9z-E97CB4E5Zbw@mail.gmail.com>
-In-Reply-To: <CAMuHMdWNSgqfCd4ZGR4Y-9M_-nKH7nO9aNcQ9z-E97CB4E5Zbw@mail.gmail.com>
+ <1588197415-13747-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdU90pqCVd=jombH-JMomoCDe1tA8Lq=m0urACK67ZNYuw@mail.gmail.com>
+In-Reply-To: <CAMuHMdU90pqCVd=jombH-JMomoCDe1tA8Lq=m0urACK67ZNYuw@mail.gmail.com>
 From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Fri, 1 May 2020 09:08:36 +0100
-Message-ID: <CA+V-a8s7s7=kxOp9ohrMp+o6KDuO-Vn6P7YX2L6fC1=_A9kVwg@mail.gmail.com>
-Subject: Re: [PATCH 06/18] pinctrl: sh-pfc: r8a7790: Add r8a7742 PFC support
+Date: Fri, 1 May 2020 09:15:04 +0100
+Message-ID: <CA+V-a8sMKWD_FMcEhm-gAOPx2Xdr-4wRdgaiumWLA4vRBUkMMg@mail.gmail.com>
+Subject: Re: [PATCH 07/18] ARM: dts: r8a7742: Initial SoC device tree
 To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_010904_880074_6960F131 
-X-CRM114-Status: GOOD (  16.80  )
+X-CRM114-CacheID: sfid-20200501_011536_509304_6A4D1F24 
+X-CRM114-Status: GOOD (  25.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [prabhakar.csengg[at]gmail.com]
@@ -96,7 +96,6 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
  Magnus Damm <magnus.damm@gmail.com>,
@@ -119,7 +118,7 @@ Hi Geert,
 
 Thank you for the review.
 
-On Thu, Apr 30, 2020 at 2:17 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+On Thu, Apr 30, 2020 at 2:49 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
 > Hi Prabhakar,
 >
@@ -127,24 +126,133 @@ On Thu, Apr 30, 2020 at 2:17 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
 > On Wed, Apr 29, 2020 at 11:58 PM Lad Prabhakar
 > <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> > Renesas RZ/G1H (R8A7742) is pin compatible with R-Car H2 (R8A7790).
+> > Basic support for the RZ/G1H (R8A7742) SoC. Added placeholders
+> > for the peripherals supported by the SoC which will be filled up
+> > by incremental patches.
 >
-> but lacks several automotive-specific peripherals.
-> So please split the pinmux groups and functions in common and automotive
-> parts.  From a quick look, for now the latter is limited to MLB
-> groups/functions.
+> Please remove the placeholders, as there is nothing that depends on their
+> presence.
 >
-Yes I can confirm its just limited to MLBP, Ill split up into common
-and automotive parts and send v2.
-
-Cheers,
---Prabhakar
+Sure will drop that.
 
 > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
 >
-> The rest looks good to me.
+> > --- /dev/null
+> > +++ b/arch/arm/boot/dts/r8a7742.dtsi
+> > @@ -0,0 +1,715 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Device Tree Source for the r8a7742 SoC
+> > + *
+> > + * Copyright (C) 2020 Renesas Electronics Corp.
+> > + */
+> > +
+> > +#include <dt-bindings/interrupt-controller/irq.h>
+> > +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> > +#include <dt-bindings/clock/r8a7742-cpg-mssr.h>
+> > +#include <dt-bindings/power/r8a7742-sysc.h>
+> > +
+> > +/ {
+> > +       compatible = "renesas,r8a7742";
+> > +       #address-cells = <2>;
+> > +       #size-cells = <2>;
+> > +
+> > +       /*
+> > +        * The external audio clocks are configured as 0 Hz fixed frequency
+> > +        * clocks by default.
+> > +        * Boards that provide audio clocks should override them.
+> > +        */
+> > +       audio_clk_a: audio_clk_a {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               clock-frequency = <0>;
+> > +       };
+> > +
+> > +       audio_clk_b: audio_clk_b {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               clock-frequency = <0>;
+> > +       };
+> > +
+> > +       audio_clk_c: audio_clk_c {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               clock-frequency = <0>;
+> > +       };
+> > +
+> > +       /* External CAN clock */
+> > +       can_clk: can {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               /* This value must be overridden by the board. */
+> > +               clock-frequency = <0>;
+> > +       };
 >
+> Please drop the audio and CAN clocks for now, as they are not used.
+>
+OK.
+
+> > +       /* External root clock */
+> > +       extal_clk: extal {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               /* This value must be overridden by the board. */
+> > +               clock-frequency = <0>;
+> > +       };
+> > +
+> > +       /* External PCIe clock - can be overridden by the board */
+> > +       pcie_bus_clk: pcie_bus {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               clock-frequency = <0>;
+> > +       };
+>
+> Please drop the PCI clock for now, as it is not used.
+>
+OK
+
+> > +
+> > +       /* External SCIF clock */
+> > +       scif_clk: scif {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               /* This value must be overridden by the board. */
+> > +               clock-frequency = <0>;
+> > +       };
+>
+> This should be used (see below).
+>
+> > +
+> > +       /* External USB clock - can be overridden by the board */
+> > +       usb_extal_clk: usb_extal {
+> > +               compatible = "fixed-clock";
+> > +               #clock-cells = <0>;
+> > +               clock-frequency = <48000000>;
+> > +       };
+> > +
+> > +       cpus {
+>
+> Please sort nodes by unit-address (if present) per type, or alphabetically.
+>
+Sure will take care of it.
+
+> > +       soc {
+>
+> > +               scifa2: serial@e6c60000 {
+> > +                       reg = <0 0xe6c60000 0 0x40>;
+> > +                       /* placeholder */
+> > +               };
+>
+> I prefer to see a real node for the serial console, so the system can at
+> least be boot tested to a console prompt.
+> Note that this requires adding a minimal board DTS, too.
+>
+OK so in that case Ill enable scifa2 and SDHI interface so it can be bootable.
+
+Cheers,
+--Prabhakar
+
 > Gr{oetje,eeting}s,
 >
 >                         Geert
