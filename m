@@ -2,70 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B6FD1C0C1E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 04:29:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F3B41C0C31
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 04:38:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iBL3FlCDWzRVBEXf8/iBaEAPDxMnGfg0ZMviZDgZhm4=; b=eTkBn2JNwyh16A
-	3m6LQGndDrlb6Ekxuazm6nlDlbWEwHxpe7l7CV8iPMy5klRBTivsAKfQbKGuebBOMth7Cx2PAGmeD
-	XrIAXCUipB3yEoePfHBjOIMBxYyCDjLG6mBTdkTEH78/U5PMKahN8Fy4GZCnW3C86muS5C5Zkp6Vm
-	U56ZwUxA+rZ6lvFmirww/IfBugIuqNSfbudPlqkYC44yx9AkUXgoATfZreH8gBvpw4H4GkAfz+ned
-	YrdbTm36Vvz6T7tBHCQzum0lEiSYYjgQ3bDRZqTHbjCgP/QOG6FVaVxXclsUo1ExXCNRaeHSl5K0K
-	gajYsRsbeMXPMDC2726Q==;
+	List-Owner; bh=8TNpkYaH7pug3WvjEuPQ/8TCMYYpwAMctXj4hrVqBBQ=; b=PVDQ1yd9cT+G/n
+	91fb/8JSDh+HZMew3aiiVgB0JjcffHPq+g9c+m5J3ls7halb80pjseaOmyOzJcFX0e/k9bzcWkBWI
+	84bO1knetkByfE2ZLsxme/MVsDXMFA5P7imuiFxwiTbABGVJl6kfBz+YTeYpv5r8WPQFnRq2sqAJI
+	23vwperRHjWEZ3zOZqGPJBDalvoHX5MRCV/yYLemNWpP9q8ihID5F9PO3Motq/Af5KiokeR+zZaG6
+	1Cb3w3PPbvX32DVSrm7yTavz+luIKyft3sbwncuApg0zlGgWq5qVXl00bzgQkkobmU+gwXYDXVWp8
+	6znWTFt91KfVZ9B0ODcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jULQL-0004vF-TH; Fri, 01 May 2020 02:29:09 +0000
-Received: from bilbo.ozlabs.org ([2401:3900:2:1::2] helo=ozlabs.org)
+	id 1jULZ4-0002dX-0U; Fri, 01 May 2020 02:38:10 +0000
+Received: from [2002:c35c:fd02::1] (helo=ZenIV.linux.org.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jULQB-0004uT-3H; Fri, 01 May 2020 02:29:00 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 49Cx5B5W4lz9sTP;
- Fri,  1 May 2020 12:28:46 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ellerman.id.au;
- s=201909; t=1588300133;
- bh=+bqrLgcGFCf99Uu0U3dlp7gViTjK7ah+NjB2S1m2Aik=;
- h=From:To:Cc:Subject:In-Reply-To:References:Date:From;
- b=C40FoaSbb6Q7wxAomTtdxarjIzmNFst3ymTI/G0w+2Kk4NeklpK6MsprW4aeFuOL/
- TkwCTTk/7ic3XMxxS6CK/X3oa/bQeVyESN7G+SaFXOX7im9fHNKTrHsMKV+kWikDkZ
- F4EQg/axXQnDydjHMY8YK4m1w7/g6KQLwOau55AA3fV9h56VfUn56xpldCbghHJ2Ak
- 2N9znvLw+oscvvZuzcfTam9qWHZe31okh0MKjz+kAwW42XWB85OVqyucfXymD7ELvU
- m5F7EwikPo5WIhIxh6Mz3Olzdcc/jvC1qxexqP0q2olewhZMqGmdXIZmIE3aXRiBqJ
- 5a8C0skKdBJKw==
-From: Michael Ellerman <mpe@ellerman.id.au>
-To: ira.weiny@intel.com, linux-kernel@vger.kernel.org,
- Andrew Morton <akpm@linux-foundation.org>,
- Christian Koenig <christian.koenig@amd.com>, Huang Rui <ray.huang@amd.com>
-Subject: Re: [PATCH V1 00/10] Remove duplicated kmap code
-In-Reply-To: <20200430203845.582900-1-ira.weiny@intel.com>
+ id 1jULYt-0002cv-5C; Fri, 01 May 2020 02:38:00 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jULYU-00FXQg-6F; Fri, 01 May 2020 02:37:34 +0000
+Date: Fri, 1 May 2020 03:37:34 +0100
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: ira.weiny@intel.com
+Subject: Re: [PATCH V1 09/10] arch/kmap: Define kmap_atomic_prot() for all
+ arch's
+Message-ID: <20200501023734.GF23230@ZenIV.linux.org.uk>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
-Date: Fri, 01 May 2020 12:29:00 +1000
-Message-ID: <87imhge6c3.fsf@mpe.ellerman.id.au>
+ <20200430203845.582900-10-ira.weiny@intel.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200430203845.582900-10-ira.weiny@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_192859_300130_01D47A80 
-X-CRM114-Status: UNSURE (   8.42  )
+X-CRM114-CacheID: sfid-20200430_193759_199145_FB15ADB4 
+X-CRM114-Status: UNSURE (   7.96  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [2002:c35c:fd02:0:0:0:0:1 listed in] [wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,41 +64,41 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Peter Zijlstra <peterz@infradead.org>,
  Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Huang Rui <ray.huang@amd.com>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
  Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
  Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
  linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
  linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ira.weiny@intel.com writes:
-> From: Ira Weiny <ira.weiny@intel.com>
->
-> The kmap infrastructure has been copied almost verbatim to every architecture.
-> This series consolidates obvious duplicated code by defining core functions
-> which call into the architectures only when needed.
->
-> Some of the k[un]map_atomic() implementations have some similarities but the
-> similarities were not sufficient to warrant further changes.
->
-> In addition we remove a duplicate implementation of kmap() in DRM.
->
-> Testing was done by 0day to cover all the architectures I can't readily
-> build/test.
+On Thu, Apr 30, 2020 at 01:38:44PM -0700, ira.weiny@intel.com wrote:
 
-I threw some powerpc builds at it and they all passed, so LGTM.
+> -static inline void *kmap_atomic(struct page *page)
+> +static inline void *kmap_atomic_prot(struct page *page, pgprot_t prot)
+>  {
+>  	preempt_disable();
+>  	pagefault_disable();
+>  	if (!PageHighMem(page))
+>  		return page_address(page);
+> -	return kmap_atomic_high(page);
+> +	return kmap_atomic_high_prot(page, prot);
+>  }
+> +#define kmap_atomic(page)	kmap_atomic_prot(page, kmap_prot)
 
-cheers
+OK, so it *was* just a bisect hazard - you return to original semantics
+wrt preempt_disable()...
 
 _______________________________________________
 linux-arm-kernel mailing list
