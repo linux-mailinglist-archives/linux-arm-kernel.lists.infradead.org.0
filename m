@@ -2,56 +2,127 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D2721C1238
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 14:34:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7034B1C123F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 14:37:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ppwr2Vz/hTqenf+Wai97mYFRU4t18T7MvSU3dRYbRPA=; b=hz1bOap+R16Ece
-	+6+J4eS15RO2UHq1wqs8I8hv0NhZ15awP88marF/WK2pDeD+Soqz2jKKT7ZKHvVDL9JBBu17pNs3U
-	Zah5Ab1TT6D+SbKo0GfutpUhThVR9gbhEt3cjD7dfJiIzc+xA96zuCXjohDDehQGtHdKikC9m//pn
-	b+hOC1N2haDeZMWKodRVXjDHDDs9a1RWTWjDD2Uvxj62v7eL0zw35RiH5MhyqcRVpC9xDtivsXIZs
-	4g/mFrFVMBnBC4/a4FD+WitrX1QU6i6jHkTq88C/7NTPt4Xy/4mGuw58Gf3rWhj2pJP86FWv/EiWj
-	lpM28EQNFjkkcVsEVE4Q==;
+	List-Owner; bh=EeqntmSe/CSeFcj8DT1HcerW0xMg5LGOczQiRLPdMwM=; b=uGHoJJJ0F9bcQX
+	R2Zt1qrAb/cvJ+ChURtlvGMeSX67R9C3D1FhbRg+VFhDgMUSJ19XYawtXfiUG91FLAwthq/ao4LN1
+	sruR2MWSKkaBcERwi1dm0RvfJefk1ZlEbWtaTBqgeEXmFgMmP/ZoFHyYGI3IMsT5LgQAwyDBQ4mYC
+	A3yKtKlh0TrnMr1ZpiW+rXgOTsAopq93KP2d+QbeVsnAydfBbTTI1tRR+Z1iovSB88aTufWrOjyba
+	hZsuMPrsBPKmK1p1sFyTPXFCru3zZEwYIbfmD0LeXenWK5bJXJpU5v42idPwFCRYSHH6kX8DfYmG4
+	35eWQ5R9o1ppTWIPMn7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUUrj-0007XX-0T; Fri, 01 May 2020 12:34:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUUrZ-0007X6-Br
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 12:33:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3B96D1FB;
- Fri,  1 May 2020 05:33:52 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.7.8])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 16F0A3F305;
- Fri,  1 May 2020 05:33:50 -0700 (PDT)
-Date: Fri, 1 May 2020 13:33:42 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 1/3] arm64: entry: Refactor and modernise annotation
- for ret_to_user
-Message-ID: <20200501123342.GA53528@C02TD0UTHF1T.local>
-References: <20200501115430.37315-1-broonie@kernel.org>
- <20200501115430.37315-2-broonie@kernel.org>
+	id 1jUUuU-0001uy-Fg; Fri, 01 May 2020 12:36:54 +0000
+Received: from mail-eopbgr60059.outbound.protection.outlook.com ([40.107.6.59]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUUuM-0001u9-SS
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 12:36:48 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BcAj1lURYVN53UTVOTcAwkucNrxGr7w3Q69AZRiKUbzXN7Ql7CP6rTffPLQ2QgzuJ3bsGBd30W+lWMoAIPjwXHNgz3qKGrN5GYnuOLAP2avr6xRLTwKv9yvU+kUyCzb/nf1oQ6oZazXUWWdG+6FXzyiVsJUndsh+wM/Mlyvsq1H29eAWUXVcZZ7ifPb5KBUTTjjHgrzBbpQF9S73SliXyPEQIlfWdfoVDoGN42OLEKqDhBX9YllqSKwelioakyrmYNbdsuOsWZPReWmHdPZgzdXEZ/Fw+E/XnHY/5h7yhzMp08UCHcuU0MTrR7KfDfsQ4y1ojNbHUvq/ynEEOhQ1MQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FNtXGdz1Qd1ZPEX3P0mHUeuOUjRtckIEAVXzk5jJ6To=;
+ b=f2ZWeDmYSrWd6xFcnj8fIdWxeYKe2PF13wxo2HTuc1a5owthDzv6OF0L+5R5hjaA6CNhTtfGFcI/acbp/IGZ5YG2KgaSIvxUrO0LHMvXDmZ+cpVZe307goWz3qp7ufbMZHIqOngFHKFFuK6u06zeHYwoPO159pDhrTG84EZsoB8AimrdnURPwjU+ntHxsNylkM3mXiADjLdbBnq8pnlgZ9my5uXK5KxelE0ZTRIHWpTbQzgJCTHj62dt/ryPEX56lyjrxumpf91TOLRPcB7zZoZ6cnfGOemsEQzkWFGzARyDIB/EaiOBDOnRCzLlUULoOwk3KzS6jtG30v3sjb2hlQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FNtXGdz1Qd1ZPEX3P0mHUeuOUjRtckIEAVXzk5jJ6To=;
+ b=j9kriS3wKS2oF3VUtlYkA9X7/o5EjdXVSmZBb4BdZfdeEbfyTmBTvpgBjGOJ64OGCYpgDUhtozC3NG+AWRWwDSexzQkyyO819Zme191LqNiK3EKkUx83DqAMmLmjqOKbPpgFnsad7k2P2FfeEIzVm12rlxo8CLWWX2stGW9Pa1A=
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
+ by DB6PR0402MB2693.eurprd04.prod.outlook.com (2603:10a6:4:96::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.21; Fri, 1 May
+ 2020 12:36:43 +0000
+Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
+ ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2937.028; Fri, 1 May 2020
+ 12:36:43 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Schrempf Frieder <frieder.schrempf@kontron.de>, Lucas Stach
+ <l.stach@pengutronix.de>, Adam Ford <aford173@gmail.com>, Anson Huang
+ <anson.huang@nxp.com>, Christian Gmeiner <christian.gmeiner@gmail.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Jun Li <jun.li@nxp.com>,
+ dl-linux-imx <linux-imx@nxp.com>, Pengutronix Kernel Team
+ <kernel@pengutronix.de>, Russell King <linux+etnaviv@armlinux.org.uk>, Sascha
+ Hauer <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, "S.j. Wang"
+ <shengjiu.wang@nxp.com>
+Subject: RE: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+ fix boot on i.MX8MM
+Thread-Topic: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+ fix boot on i.MX8MM
+Thread-Index: AQHWHu1XXaOrH0g5LUa6iTgqgfKJiaiRuzoAgAAQ8wCAAWANAA==
+Date: Fri, 1 May 2020 12:36:43 +0000
+Message-ID: <DB6PR0402MB276059A8D612ECBA8812379988AB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+References: <20200430124602.14463-1-frieder.schrempf@kontron.de>
+ <20200430124602.14463-4-frieder.schrempf@kontron.de>
+ <3895f202cf5919e41a56878a62f6d5259dea12d3.camel@pengutronix.de>
+ <72e8618b-856e-de42-9282-958cd03b239f@kontron.de>
+In-Reply-To: <72e8618b-856e-de42-9282-958cd03b239f@kontron.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kontron.de; dkim=none (message not signed)
+ header.d=none;kontron.de; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [117.80.211.246]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: dd022fd0-19ef-4527-b0c5-08d7edcc4e2a
+x-ms-traffictypediagnostic: DB6PR0402MB2693:|DB6PR0402MB2693:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB6PR0402MB26933799CE920046023BB5BE88AB0@DB6PR0402MB2693.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 0390DB4BDA
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 5bTqiyBAY++NeG4ZDnd/YIrMCzypL2vWIRKVuetw89LQHOe3nlg3edVVAij2kAJQkS66lg0MrG22rFYX6YqHvAkPSsyAFz989QWErfmMAs40tAQ7PQNYZnsRzAli+68OWNdnZjnIfE7eW3+8h8/19cHpR6OrNjfRe+wB3OrD6NPdrj7HxPPMCY5I0Qm2fjAq5grCfRcJ0xV2MxEAMbc7Z6paJVLz1rnv9Qaw52Rvy5A0mb9kXHCyp9DCZzPnaYDxqehJyp/T708m59jIThATdHCQzF0rn8NN0lCQn8jKi5VD+FmpYhm+qWDT3131MabqY5rIno/Izy5ThdiiCi1dwb3Yy4Uie/6oQckJKBexL78Xg+HCMVtXg58O4sB0HzxE5d/N+vlKiHf3IKfdDIK9b0+7HgQg8M1suBqT153CEdJ4DgIyWzIjaL1nFAAiZUa5Vqfc6bcDEQfqdKMMM7h76+GN4+tZ5CDWR5cutzOQWSSJTfBcJnmRcitkEuUY19Rut2pGkLDz4bNMkV4WTuapdJZp71urnmVc6RhV3nFClW9Y5v9Hf3AE1ktAstbS+IC0X52W9sRhv/GjOsNKzBorKw==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(39860400002)(376002)(346002)(136003)(396003)(8676002)(5660300002)(44832011)(54906003)(8936002)(26005)(7696005)(186003)(86362001)(33656002)(966005)(9686003)(316002)(6506007)(53546011)(7416002)(4326008)(45080400002)(110136005)(52536014)(6636002)(71200400001)(55016002)(76116006)(66556008)(66476007)(83080400001)(66946007)(66446008)(64756008)(478600001)(2906002)(154233001)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: tSx1ffESOpM+8v4nMGrR5uUZ4Bc/vH0VQA30JHgvS0/TEo95o1lv804bcQo2PwoVnT91AFWhcDbAJ9c5cFdJFs2An7ZpDsEuw3URVL7039kDrSK0S3LMnzUO6kjZkVfRegM5LVVZo9rggDnvQo3X5+dpnJ3R5NbYPIEfts/CYErzkD32Ir6B8KovLHkUWomvMo/RgDff/Z2vKxkYNTaybW8tpVkJYarF1oL+XPjdo0P95Geo6ulU3+zgDCE8DIgTaQe/wXKToGL42Jjp/QC5PeD438IjIo82OcJyFc+Wx+i5xAoJswt0F0p6H73KaqGH+xNuE1XbJWzLRocudrDoygLYGMhSjLPOgWZICA4doSvxibg4PHVJsQVnEO8hMEfBycIC2+7OsJo4JeE0QSsNaEOOdzvPUePWff1YUTTuZOiPnHCE2f4qIRm7e4xmDJRzFUH+xi644EUC8cqsS2i3us9xjXdGSSpo20lhmLqUKzfBEvVb6dkV2MSVC9P817L7EV4belXmGod5+FpddOTPqomrgdga2XnYeHmtePq7Yx0XaaIj7SJGu+9ztN+7ksuMvz6YRB2nVkp3hQqJKeaAfSZXlj/WqTWbwGrGCdbXpseW7O8P6nu12nezm3aQc+t0RTZV9OHued6f/ylB2htIxtK+ErtWil68InJsnIytTau8tru2MEndO0GVqAdH/B3UICXYsVv7MSfmQjBvpXV3Lw1HUm7gz7GVZBo3TRJV7QT7Pttj/vcwKiiUmh5v2VqoC3J0rehPwYEcQEOiuqypvN6GNGTaWcv4ATTs3oMkhJI=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200501115430.37315-2-broonie@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: dd022fd0-19ef-4527-b0c5-08d7edcc4e2a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 01 May 2020 12:36:43.5277 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: V66WV62PPen+FylOLq1CNkM4+tZdOb029lAvStzDa7wmKQo37B1HCXlKjYGTpp4hngxw+Zxa+oHRMPfSYQsN7w==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2693
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_053353_449373_B6B03279 
-X-CRM114-Status: GOOD (  19.31  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200501_053647_041089_3F393CEF 
+X-CRM114-Status: GOOD (  23.02  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.59 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.59 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,94 +134,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "etnaviv@lists.freedesktop.org" <etnaviv@lists.freedesktop.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 01, 2020 at 12:54:28PM +0100, Mark Brown wrote:
-> As part of an effort to clarify and clean up the assembler annotations
-> new macros have been introduced which annotate the start and end of blocks
-> of code in assembler files. Currently ret_to_user has an out of line slow
-> path work_pending placed above the main function which makes annotating the
-> start and end of these blocks of code awkward.
+> Subject: Re: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+> fix boot on i.MX8MM
 > 
-> Since work_pending is only referenced from within ret_to_user try to make
-> things a bit clearer by moving it after the current ret_to_user and then
-> marking both ret_to_user and work_pending as part of a single ret_to_user
-> code block.
+> On 30.04.20 16:35, Lucas Stach wrote:
+> > Am Donnerstag, den 30.04.2020, 12:46 +0000 schrieb Schrempf Frieder:
+> >> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+> >>
+> >> On some i.MX8MM devices the boot hangs when enabling the GPU clocks.
+> >> Changing the order of clock initalization to
+> >>
+> >> core -> shader -> bus -> reg
+> >>
+> >> fixes the issue. This is the same order used in the imx platform code
+> >> of the downstream GPU driver in the NXP kernel [1]. For the sake of
+> >> consistency we also adjust the order of disabling the clocks to the
+> >> reverse.
+> >>
+> >> [1]
+> >> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsou
+> >>
+> rce.codeaurora.org%2Fexternal%2Fimx%2Flinux-imx%2Ftree%2Fdrivers%2F
+> mx
+> >>
+> c%2Fgpu-viv%2Fhal%2Fos%2Flinux%2Fkernel%2Fplatform%2Ffreescale%2Fgc
+> _h
+> >>
+> al_kernel_platform_imx.c%3Fh%3Dimx_5.4.3_2.0.0%23n1538&amp;data=02
+> %7C
+> >>
+> 01%7Cpeng.fan%40nxp.com%7Cdc7da53f665e4f567e3008d7ed1c27e0%7C6
+> 86ea1d3
+> >>
+> bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637238577497969787&amp;sda
+> ta=QRHzu
+> >> C6gSKy%2F6y2FTRvlNF5t7DmJIvTgBESYKchI%2FDw%3D&amp;reserved=0
+> >
+> > I don't see why the order of the clocks is important. Is this really a
+> > GPU issue? As in: does a GPU access hang when enabling the clocks in
+> > the wrong order? Or is this a clock driver issue with a clock access
+> > hanging due to an upstream clock still being disabled?
 > 
-> Signed-off-by: Mark Brown <broonie@kernel.org>
-
-Makes sense to me, and the change looks sound, so:
-
-Acked-by: Mark Rutland <mark.rutland@arm.com>
-
-Mark.
-
-> ---
->  arch/arm64/kernel/entry.S | 27 ++++++++++++++-------------
->  1 file changed, 14 insertions(+), 13 deletions(-)
+> Actually you might be right with this being a clock driver issue. The hanging
+> happens while enabling the clocks (unrelated to any GPU register access). The
+> strange thing is that most of the devices we have don't care and work as is
+> and some devices reliably fail each time when enabling the clocks in the
+> "wrong" order.
 > 
-> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-> index ddcde093c433..73e2c8f5b728 100644
-> --- a/arch/arm64/kernel/entry.S
-> +++ b/arch/arm64/kernel/entry.S
-> @@ -727,21 +727,10 @@ el0_error_naked:
->  	b	ret_to_user
->  SYM_CODE_END(el0_error)
->  
-> -/*
-> - * Ok, we need to do extra processing, enter the slow path.
-> - */
-> -work_pending:
-> -	mov	x0, sp				// 'regs'
-> -	bl	do_notify_resume
-> -#ifdef CONFIG_TRACE_IRQFLAGS
-> -	bl	trace_hardirqs_on		// enabled while in userspace
-> -#endif
-> -	ldr	x1, [tsk, #TSK_TI_FLAGS]	// re-check for single-step
-> -	b	finish_ret_to_user
->  /*
->   * "slow" syscall return path.
->   */
-> -ret_to_user:
-> +SYM_CODE_START_LOCAL(ret_to_user)
->  	disable_daif
->  	gic_prio_kentry_setup tmp=x3
->  	ldr	x1, [tsk, #TSK_TI_FLAGS]
-> @@ -753,7 +742,19 @@ finish_ret_to_user:
->  	bl	stackleak_erase
->  #endif
->  	kernel_exit 0
-> -ENDPROC(ret_to_user)
-> +
-> +/*
-> + * Ok, we need to do extra processing, enter the slow path.
-> + */
-> +work_pending:
-> +	mov	x0, sp				// 'regs'
-> +	bl	do_notify_resume
-> +#ifdef CONFIG_TRACE_IRQFLAGS
-> +	bl	trace_hardirqs_on		// enabled while in userspace
-> +#endif
-> +	ldr	x1, [tsk, #TSK_TI_FLAGS]	// re-check for single-step
-> +	b	finish_ret_to_user
-> +SYM_CODE_END(ret_to_user)
->  
->  	.popsection				// .entry.text
->  
-> -- 
-> 2.20.1
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> So I guess this could indeed be some clock being enabled with an upstream
+> PLL not having locked yet or something.
 
+https://patchwork.kernel.org/cover/11433775/
+
+Will this pachset help?
+
+The i.MX8M CCM root mux code in Linux needs a fix.
+
+Regards,
+Peng.
+
+> 
+> >
+> > Regards,
+> > Lucas
+> >
+> >> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+> >> ---
+> >>   drivers/gpu/drm/etnaviv/etnaviv_gpu.c | 42
+> +++++++++++++--------------
+> >>   1 file changed, 21 insertions(+), 21 deletions(-)
+> >>
+> >> diff --git a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> >> b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> >> index 7b138d4dd068..424b2e5951f0 100644
+> >> --- a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> >> +++ b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+> >> @@ -1487,55 +1487,55 @@ static int etnaviv_gpu_clk_enable(struct
+> etnaviv_gpu *gpu)
+> >>   {
+> >>   	int ret;
+> >>
+> >> -	if (gpu->clk_reg) {
+> >> -		ret = clk_prepare_enable(gpu->clk_reg);
+> >> +	if (gpu->clk_core) {
+> >> +		ret = clk_prepare_enable(gpu->clk_core);
+> >>   		if (ret)
+> >>   			return ret;
+> >>   	}
+> >>
+> >> -	if (gpu->clk_bus) {
+> >> -		ret = clk_prepare_enable(gpu->clk_bus);
+> >> +	if (gpu->clk_shader) {
+> >> +		ret = clk_prepare_enable(gpu->clk_shader);
+> >>   		if (ret)
+> >> -			goto disable_clk_reg;
+> >> +			goto disable_clk_core;
+> >>   	}
+> >>
+> >> -	if (gpu->clk_core) {
+> >> -		ret = clk_prepare_enable(gpu->clk_core);
+> >> +	if (gpu->clk_bus) {
+> >> +		ret = clk_prepare_enable(gpu->clk_bus);
+> >>   		if (ret)
+> >> -			goto disable_clk_bus;
+> >> +			goto disable_clk_shader;
+> >>   	}
+> >>
+> >> -	if (gpu->clk_shader) {
+> >> -		ret = clk_prepare_enable(gpu->clk_shader);
+> >> +	if (gpu->clk_reg) {
+> >> +		ret = clk_prepare_enable(gpu->clk_reg);
+> >>   		if (ret)
+> >> -			goto disable_clk_core;
+> >> +			goto disable_clk_bus;
+> >>   	}
+> >>
+> >>   	return 0;
+> >>
+> >> -disable_clk_core:
+> >> -	if (gpu->clk_core)
+> >> -		clk_disable_unprepare(gpu->clk_core);
+> >>   disable_clk_bus:
+> >>   	if (gpu->clk_bus)
+> >>   		clk_disable_unprepare(gpu->clk_bus);
+> >> -disable_clk_reg:
+> >> -	if (gpu->clk_reg)
+> >> -		clk_disable_unprepare(gpu->clk_reg);
+> >> +disable_clk_shader:
+> >> +	if (gpu->clk_shader)
+> >> +		clk_disable_unprepare(gpu->clk_shader);
+> >> +disable_clk_core:
+> >> +	if (gpu->clk_core)
+> >> +		clk_disable_unprepare(gpu->clk_core);
+> >>
+> >>   	return ret;
+> >>   }
+> >>
+> >>   static int etnaviv_gpu_clk_disable(struct etnaviv_gpu *gpu)
+> >>   {
+> >> +	if (gpu->clk_reg)
+> >> +		clk_disable_unprepare(gpu->clk_reg);
+> >> +	if (gpu->clk_bus)
+> >> +		clk_disable_unprepare(gpu->clk_bus);
+> >>   	if (gpu->clk_shader)
+> >>   		clk_disable_unprepare(gpu->clk_shader);
+> >>   	if (gpu->clk_core)
+> >>   		clk_disable_unprepare(gpu->clk_core);
+> >> -	if (gpu->clk_bus)
+> >> -		clk_disable_unprepare(gpu->clk_bus);
+> >> -	if (gpu->clk_reg)
+> >> -		clk_disable_unprepare(gpu->clk_reg);
+> >>
+> >>   	return 0;
+> >>   }
+> >
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
