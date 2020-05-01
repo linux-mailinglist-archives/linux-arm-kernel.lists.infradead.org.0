@@ -2,50 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D37B1C10B1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 12:13:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 791F71C10B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 12:13:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jrPeT7KrMwMVCATjcw6h2tWALNIbXPsER5XndR0U5CM=; b=MS+ryWrSQRhWUu
-	8WcBml0IKAdSSn2RhL9N+q4bWG06h5d0WXuina1OxSvuj3JHDUi0n4alKbCl2fQv39m2kv/KlEe6k
-	XlekOhxdeCajBDkr2cDR8xKlOE0dbDArUSAv7UjuHhef2i28zsVsTzGJ7EMcqI1xaF+QwE0YbqA4m
-	I1brZVkbUAHA+JKaqNr0Am6UWJOSeYD1jYfNcITRxjSX6qesGMuFBhQkXjIQvwrMCYzy4Gem8Fpl3
-	PtTzHx9vkcQlwCizFWnbadoikOwovzNzqTxaZ1sXdg+7Pt91yRF+ZR8cH6yltFHLUvH5pwWc18fRI
-	UFiRNOMa2nJi4d/r+2Eg==;
+	List-Owner; bh=RE1dUNXXPTwdIK69gk06Lu8hwBdBr98aB+DiXmjEZsg=; b=SE2vpAQ7ZuDoUV
+	nHdeE6iX9npVjFde/pD9IqUsepmd/GhpByaU4yGoCXPk+gSVN3Wji8rzjq9kkri/osBAbAnprbUNd
+	8ENQnJmuvt7z8NriXi0HJ4ESiAILKhbyiObvGzoqsjprkd6cnHwVcEom2A+DIMtPrXtkfabSTaVgd
+	q6vfkTwixwfa1qvP2ecQJQ9Qyde3aLHuptsaTBdQeTX2K/i/4Mmjf5cFN/AzNIg2lA8aPiGajIqQg
+	A2E1BSwmzixyZ24QZP5L9CtBysIN3eod3TTKxyk8j9IFxTN4i2tNip2s2rm9wBblay6Qq92fhanhT
+	kEzWE3va7q5lTgQm1Rpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUSf8-0004kE-GZ; Fri, 01 May 2020 10:12:54 +0000
+	id 1jUSfO-0004yS-Jv; Fri, 01 May 2020 10:13:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUSeU-0004IQ-Kh
+ id 1jUSeV-0004Ih-Aj
  for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 10:12:16 +0000
 Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
  [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 32ABD21924;
+ by mail.kernel.org (Postfix) with ESMTPSA id DCE572184D;
  Fri,  1 May 2020 10:12:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588327934;
- bh=bMx2EriYCSvyW828LVPGOGydmJwee1SlnxC1Ul02RRc=;
+ s=default; t=1588327935;
+ bh=DXoc8fkRuhN56RJPXouMh3r3Jq2M8pkSWeb8MvQZd7o=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=bj2MkX64zIsStOtpD/LM/xxpTRkoVcIpx9SNKt9ROtXwFWYowgwrhuz+PDJZZGLoH
- cc4teTU7u676lbGCjnOKhWFKrsxYL8t7U89r9h7NYuEgf87MxFrX3cgMvrl4N+wA2D
- euuZQp7L2Q2hZJVf1TG0nUZMgP56E3rYVOgEqZYg=
+ b=HM6DlHJaYydMaes0Hrr8/v55H2t1DVSXT9z0wfNLQtf4mqHdHUf8mmmpDXhom50Xu
+ RQ+2hC4dz9WnUn/2D87w/guPS13/cpoyNbldtZ8TY4W3bS79uz/rphJeV6XyU6Ze1o
+ iu1JsUFV40zkXk7ysD4XQwj6KOOCQSqT46PkokC4=
 Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
  helo=why.lan) by disco-boy.misterjones.org with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <maz@kernel.org>)
- id 1jUSeS-008J3K-Ju; Fri, 01 May 2020 11:12:12 +0100
+ id 1jUSeT-008J3K-Ae; Fri, 01 May 2020 11:12:13 +0100
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>
-Subject: [PATCH 2/4] KVM: arm64: Save/restore sp_el0 as part of __guest_enter
-Date: Fri,  1 May 2020 11:12:02 +0100
-Message-Id: <20200501101204.364798-3-maz@kernel.org>
+Subject: [PATCH 3/4] KVM: arm64: vgic-v4: Initialize GICv4.1 even in the
+ absence of a virtual ITS
+Date: Fri,  1 May 2020 11:12:03 +0100
+Message-Id: <20200501101204.364798-4-maz@kernel.org>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200501101204.364798-1-maz@kernel.org>
 References: <20200501101204.364798-1-maz@kernel.org>
@@ -60,8 +61,8 @@ X-SA-Exim-Mail-From: maz@kernel.org
 X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
  SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_031214_711926_BA974649 
-X-CRM114-Status: GOOD (  15.07  )
+X-CRM114-CacheID: sfid-20200501_031215_402706_F9CA418D 
+X-CRM114-Status: GOOD (  16.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,135 +103,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We currently save/restore sp_el0 in C code. This is a bit unsafe,
-as a lot of the C code expects 'current' to be accessible from
-there (and the opportunity to run kernel code in HYP is specially
-great with VHE).
+KVM now expects to be able to use HW-accelerated delivery of vSGIs
+as soon as the guest has enabled thm. Unfortunately, we only
+initialize the GICv4 context if we have a virtual ITS exposed to
+the guest.
 
-Instead, let's move the save/restore of sp_el0 to the assembly
-code (in __guest_enter), making sure that sp_el0 is correct
-very early on when we exit the guest, and is preserved as long
-as possible to its host value when we enter the guest.
+Fix it by always initializing the GICv4.1 context if it is
+available on the host.
 
-Reviewed-by: Andrew Jones <drjones@redhat.com>
-Acked-by: Mark Rutland <mark.rutland@arm.com>
+Fixes: 2291ff2f2a56 ("KVM: arm64: GICv4.1: Plumb SGI implementation selection in the distributor")
+Reviewed-by: Zenghui Yu <yuzenghui@huawei.com>
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/entry.S     | 23 +++++++++++++++++++++++
- arch/arm64/kvm/hyp/sysreg-sr.c | 17 +++--------------
- 2 files changed, 26 insertions(+), 14 deletions(-)
+ virt/kvm/arm/vgic/vgic-init.c    | 9 ++++++++-
+ virt/kvm/arm/vgic/vgic-mmio-v3.c | 3 ++-
+ 2 files changed, 10 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/entry.S b/arch/arm64/kvm/hyp/entry.S
-index d22d0534dd60..90186cf6473e 100644
---- a/arch/arm64/kvm/hyp/entry.S
-+++ b/arch/arm64/kvm/hyp/entry.S
-@@ -18,6 +18,7 @@
+diff --git a/virt/kvm/arm/vgic/vgic-init.c b/virt/kvm/arm/vgic/vgic-init.c
+index 30dbec9fe0b4..32e32d67a127 100644
+--- a/virt/kvm/arm/vgic/vgic-init.c
++++ b/virt/kvm/arm/vgic/vgic-init.c
+@@ -294,8 +294,15 @@ int vgic_init(struct kvm *kvm)
+ 		}
+ 	}
  
- #define CPU_GP_REG_OFFSET(x)	(CPU_GP_REGS + x)
- #define CPU_XREG_OFFSET(x)	CPU_GP_REG_OFFSET(CPU_USER_PT_REGS + 8*x)
-+#define CPU_SP_EL0_OFFSET	(CPU_XREG_OFFSET(30) + 8)
- 
- 	.text
- 	.pushsection	.hyp.text, "ax"
-@@ -47,6 +48,16 @@
- 	ldp	x29, lr,  [\ctxt, #CPU_XREG_OFFSET(29)]
- .endm
- 
-+.macro save_sp_el0 ctxt, tmp
-+	mrs	\tmp,	sp_el0
-+	str	\tmp,	[\ctxt, #CPU_SP_EL0_OFFSET]
-+.endm
+-	if (vgic_has_its(kvm)) {
++	if (vgic_has_its(kvm))
+ 		vgic_lpi_translation_cache_init(kvm);
 +
-+.macro restore_sp_el0 ctxt, tmp
-+	ldr	\tmp,	  [\ctxt, #CPU_SP_EL0_OFFSET]
-+	msr	sp_el0, \tmp
-+.endm
-+
- /*
-  * u64 __guest_enter(struct kvm_vcpu *vcpu,
-  *		     struct kvm_cpu_context *host_ctxt);
-@@ -60,6 +71,9 @@ SYM_FUNC_START(__guest_enter)
- 	// Store the host regs
- 	save_callee_saved_regs x1
++	/*
++	 * If we have GICv4.1 enabled, unconditionnaly request enable the
++	 * v4 support so that we get HW-accelerated vSGIs. Otherwise, only
++	 * enable it if we present a virtual ITS to the guest.
++	 */
++	if (vgic_supports_direct_msis(kvm)) {
+ 		ret = vgic_v4_init(kvm);
+ 		if (ret)
+ 			goto out;
+diff --git a/virt/kvm/arm/vgic/vgic-mmio-v3.c b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+index 416613f2400c..89a14ec8b33b 100644
+--- a/virt/kvm/arm/vgic/vgic-mmio-v3.c
++++ b/virt/kvm/arm/vgic/vgic-mmio-v3.c
+@@ -50,7 +50,8 @@ bool vgic_has_its(struct kvm *kvm)
  
-+	// Save the host's sp_el0
-+	save_sp_el0	x1, x2
-+
- 	// Now the host state is stored if we have a pending RAS SError it must
- 	// affect the host. If any asynchronous exception is pending we defer
- 	// the guest entry. The DSB isn't necessary before v8.2 as any SError
-@@ -83,6 +97,9 @@ alternative_else_nop_endif
- 	// when this feature is enabled for kernel code.
- 	ptrauth_switch_to_guest x29, x0, x1, x2
- 
-+	// Restore the guest's sp_el0
-+	restore_sp_el0 x29, x0
-+
- 	// Restore guest regs x0-x17
- 	ldp	x0, x1,   [x29, #CPU_XREG_OFFSET(0)]
- 	ldp	x2, x3,   [x29, #CPU_XREG_OFFSET(2)]
-@@ -130,6 +147,9 @@ SYM_INNER_LABEL(__guest_exit, SYM_L_GLOBAL)
- 	// Store the guest regs x18-x29, lr
- 	save_callee_saved_regs x1
- 
-+	// Store the guest's sp_el0
-+	save_sp_el0	x1, x2
-+
- 	get_host_ctxt	x2, x3
- 
- 	// Macro ptrauth_switch_to_guest format:
-@@ -139,6 +159,9 @@ SYM_INNER_LABEL(__guest_exit, SYM_L_GLOBAL)
- 	// when this feature is enabled for kernel code.
- 	ptrauth_switch_to_host x1, x2, x3, x4, x5
- 
-+	// Restore the hosts's sp_el0
-+	restore_sp_el0 x2, x3
-+
- 	// Now restore the host regs
- 	restore_callee_saved_regs x2
- 
-diff --git a/arch/arm64/kvm/hyp/sysreg-sr.c b/arch/arm64/kvm/hyp/sysreg-sr.c
-index 75b1925763f1..6d2df9fe0b5d 100644
---- a/arch/arm64/kvm/hyp/sysreg-sr.c
-+++ b/arch/arm64/kvm/hyp/sysreg-sr.c
-@@ -15,8 +15,9 @@
- /*
-  * Non-VHE: Both host and guest must save everything.
-  *
-- * VHE: Host and guest must save mdscr_el1 and sp_el0 (and the PC and pstate,
-- * which are handled as part of the el2 return state) on every switch.
-+ * VHE: Host and guest must save mdscr_el1 and sp_el0 (and the PC and
-+ * pstate, which are handled as part of the el2 return state) on every
-+ * switch (sp_el0 is being dealt with in the assembly code).
-  * tpidr_el0 and tpidrro_el0 only need to be switched when going
-  * to host userspace or a different VCPU.  EL1 registers only need to be
-  * switched when potentially going to run a different VCPU.  The latter two
-@@ -26,12 +27,6 @@
- static void __hyp_text __sysreg_save_common_state(struct kvm_cpu_context *ctxt)
+ bool vgic_supports_direct_msis(struct kvm *kvm)
  {
- 	ctxt->sys_regs[MDSCR_EL1]	= read_sysreg(mdscr_el1);
--
--	/*
--	 * The host arm64 Linux uses sp_el0 to point to 'current' and it must
--	 * therefore be saved/restored on every entry/exit to/from the guest.
--	 */
--	ctxt->gp_regs.regs.sp		= read_sysreg(sp_el0);
+-	return kvm_vgic_global_state.has_gicv4 && vgic_has_its(kvm);
++	return (kvm_vgic_global_state.has_gicv4_1 ||
++		(kvm_vgic_global_state.has_gicv4 && vgic_has_its(kvm)));
  }
  
- static void __hyp_text __sysreg_save_user_state(struct kvm_cpu_context *ctxt)
-@@ -99,12 +94,6 @@ NOKPROBE_SYMBOL(sysreg_save_guest_state_vhe);
- static void __hyp_text __sysreg_restore_common_state(struct kvm_cpu_context *ctxt)
- {
- 	write_sysreg(ctxt->sys_regs[MDSCR_EL1],	  mdscr_el1);
--
--	/*
--	 * The host arm64 Linux uses sp_el0 to point to 'current' and it must
--	 * therefore be saved/restored on every entry/exit to/from the guest.
--	 */
--	write_sysreg(ctxt->gp_regs.regs.sp,	  sp_el0);
- }
- 
- static void __hyp_text __sysreg_restore_user_state(struct kvm_cpu_context *ctxt)
+ /*
 -- 
 2.26.2
 
