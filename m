@@ -2,86 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9167F1C1875
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:49:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D85BB1C18CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:58:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JuXVVg+XWnhV7SPs9MDqnb2XOXbNVIZd7DZjgh3123M=; b=tVIxB336VsZAZC
-	GUyyBH+cgyRCWzOIH4BUXYGudpm7KevF7iqBVwRygPsAkotmQnAkccwACzwp0idBAGS7aAQ3ZDVm5
-	3tB3o4ieNwLfU5NcqqAM4TdS5VctkGk043146rD4iDGCEMwzswpSkHHpYezVlwMfrw1blDtD32oGQ
-	rNkAopsvpQNxbv0mazEW2vkr3yJS4AhxbaEiYyVJ4Ki2rHuLNObN2kRB9nN1JvJ5Km1d2QSJBP7rk
-	WFtY5aGWAa9XK8DIU+Xvh1YutygszBdGDo8UMGyArIb4PiCVXoW4gnPge/votNb7GiA00VbmRWvi9
-	NZCRM1erLBeoV8PuEboQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Cgsu3qiy5wePMBZmmTGkyLWmkLL0uSyNqL3FBsFSpiw=; b=HksZL59CCchgjJ6ImOdrCZRPd
+	Gp49WIm7SQ9kUzrPJ+tADV0fzgxr3RT4szZtG8ofJwKMLxjZ+2cH3ZsYWwP0Ga9M2wf2J1uVrVUuy
+	HRchKeWxIP0UHQPgmmMhFwduZ7/lB0qgrwKqyEBuHCQ+wlLomTWo/Hcycm2Detizw0xGdv/2YG8kr
+	AxTTC5+fetcXuHvL+lNiLeqVnsPKPC4APsJkvCPsrW+tWeMtllGo3pOizHSXIRBC4cl55Ir1IWGUO
+	zzJ5faJmOdJxQgaDRfHarZxJydmL8k+cVxorPHx9hFc9JWcvCtjvWfKwMU87u3jLJqYXljflblCey
+	G64gau+4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUWyo-0005IW-2U; Fri, 01 May 2020 14:49:30 +0000
-Received: from mail-ej1-x642.google.com ([2a00:1450:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUWyZ-0005CG-Pk; Fri, 01 May 2020 14:49:18 +0000
-Received: by mail-ej1-x642.google.com with SMTP id a2so7659399ejx.5;
- Fri, 01 May 2020 07:49:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=fxPFkW3QxOmRfYj2h3nMtAxuro0T/xEXMFbcE0LTrVU=;
- b=W3eBxkRVCUkRmVjaeZxdY0eWXI1WeV14Y3GZ6cGG6qX2rTNYODG/BhL8vEpRBcwaX8
- 5zyBVQI+Panp/tiEK/dymKhhil24IaILyAaTbA3+8a3McJf9tacA3Zc7rwjq5i0wWM3R
- kNZhVSx8yndKHndGwo7LMgJt+4oODm4bGQ7Xu4rUIJQYPUR40Ev/Jg4FjzSM5/gEV5+x
- oQPS5n4+5GFiF2LMJceZVHlRYcpEj/Q9OldY0p8kPupcGJLxLMkoKGeFEXfmjNy1T8g+
- 5HfzjwGCytspb5OaBLFNKMcAUGG9Oz5jmvrc5BifLpcq/oGghD/DAsv+kcGzitsc9hJ8
- 702w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=fxPFkW3QxOmRfYj2h3nMtAxuro0T/xEXMFbcE0LTrVU=;
- b=NQxAy8WK28qWnrA5yu509vr/lbCTvuJCTq9CEcKzeiJaROnyD8bE/cPlr7no8fpEY+
- ja5XidlUHrApssZOekzzk0MRBqwjrnKEQkPHMQElAWIEflMBJfjSjTyyScN/2yHtTo6r
- h1Ke+r0JDccXx95Xdn/uJ6Ee2MEzDwpSLWCfzWxjjn9rSb/I8pZCFRX+E4xRHPeHDvTm
- y2xyvEO2pW1DlolBaf0INxedz/v+kp+nQPivEyBozkn920++aSgRwWfewz6XcLu6xMkd
- 7ZPWh9v224p/XLUhxrizfzcSsGiFGT/iM/w2dlSOIZxE6Z0Hu3flRYjdbuSU/ynCaQoc
- DgRg==
-X-Gm-Message-State: AGi0PuaMmOWRkQg+g9t9TsE7mM+NdxFRHJ1mJV2gWXDf1Biw82tR2CF/
- mp1Irw81dxOH2dOdhuxfC90hoRYh/k1xpyFdWMU=
-X-Google-Smtp-Source: APiQypI+1+VQOUh4IFgtlgbygkJrSop4NKMEXZUd+7VOMUopczAN+iZLGHuyibbdAMVPCjuSWytmI5hAyJGDHqrKplU=
-X-Received: by 2002:a17:906:4048:: with SMTP id
- y8mr3549075ejj.258.1588344553010; 
- Fri, 01 May 2020 07:49:13 -0700 (PDT)
+	id 1jUX78-0007A1-W4; Fri, 01 May 2020 14:58:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUX72-000797-3S
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:58:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E5EB30E;
+ Fri,  1 May 2020 07:57:59 -0700 (PDT)
+Received: from [10.57.39.240] (unknown [10.57.39.240])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B62C83F68F;
+ Fri,  1 May 2020 07:57:57 -0700 (PDT)
+Subject: Re: [PATCH RFC 2/2] ACPI/IORT: work around num_ids ambiguity
+To: Ard Biesheuvel <ardb@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <20200501095843.25401-1-ardb@kernel.org>
+ <20200501095843.25401-3-ardb@kernel.org>
+ <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
+ <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
+ <18e01ac7-974e-8308-c18c-67aa3fd7ad4e@arm.com>
+ <CAMj1kXHsXEmaLuVBo7cgdzHju22WKksu7s3B3-hBE4mYhnuJ=Q@mail.gmail.com>
+ <20200501134956.GA7240@e121166-lin.cambridge.arm.com>
+ <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <7800f454-d630-e718-b187-d36f21a14ee9@arm.com>
+Date: Fri, 1 May 2020 15:57:55 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
- <20200429212933.GA76972@lunn.ch>
-In-Reply-To: <20200429212933.GA76972@lunn.ch>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Fri, 1 May 2020 16:49:02 +0200
-Message-ID: <CAFBinCDAz48BKjvLHOmuHk6nME+vpCueFW14UWP1b8Ae_D1j5w@mail.gmail.com>
-Subject: Re: [PATCH RFC v2 00/11] dwmac-meson8b Ethernet RX delay configuration
-To: Andrew Lunn <andrew@lunn.ch>
+In-Reply-To: <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_074915_838538_F32F47E5 
-X-CRM114-Status: GOOD (  16.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200501_075800_234404_3D43412A 
+X-CRM114-Status: GOOD (  27.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,59 +71,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com, jianxin.pan@amlogic.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
+On 2020-05-01 3:35 pm, Ard Biesheuvel wrote:
+> On Fri, 1 May 2020 at 15:50, Lorenzo Pieralisi
+> <lorenzo.pieralisi@arm.com> wrote:
+>>
+>> On Fri, May 01, 2020 at 03:10:59PM +0200, Ard Biesheuvel wrote:
+>>
+>> [...]
+>>
+>>>>>> If we silently fix things up, then people will continue to write broken
+>>>>>> tables without even realising, new OSes will have to implement the same
+>>>>>> mechanism because vendors will have little interest in changing things
+>>>>>> that have worked "correctly" with Linux for years, and we've effectively
+>>>>>> achieved a de-facto redefinition of the spec. Making our end of the
+>>>>>> interface robust is obviously desirable, but there still needs to be
+>>>>>> *some* incentive for the folks on the other end to get it right.
+>>>>>>
+>>>>>
+>>>>> Agreed. But at least we'll be able to detect it and flag it in the
+>>>>> general case, rather than having a special case for D05/06 only
+>>>>> (although I suppose splitting the output ranges like those platforms
+>>>>> do is rather unusual)
+>>>>
+>>>> Yup, in principle the fixed quirk list gives a nice reassuring sense of
+>>>> "we'll work around these early platforms and everyone from now on will
+>>>> get it right", but whether reality plays out that way is another matter
+>>>> entirely...
+>>>
+>>> The reason I am looking into this is that I think the fix should go to
+>>> stable, given that the current situation makes it impossible to write
+>>> firmware that works with older and newer kernels.
+>>
+>> Yes. If we do remove the quirk the sooner we do it the better to
+>> reduce the stable patches.
+>>
+>>> Lorenzo said he wouldn't mind taking the current version with ACPI OEM
+>>> ID matching back to -stable, but it's another quirk list to manage,
+>>> which I would prefer to avoid.
+>>>
+>>> But I don't care deeply either way, to be honest, as long as we can
+>>> get something backported so compliant firmware is not being penalized
+>>> anymore.
+>>
+>> Question: if we remove the iort_workaround_oem_info stuff but we *do*
+>> keep the existing apply_id_count_workaround flag and we set it by going
+>> through all the mappings at boot time and detect if any of these
+>> off-by-one conditions apply - would the resulting code be any simpler ?
+>>
+>> The global flag would apply (as it does now) to _all_ mappings but it is
+>> very likely that if the off-by-one firmware bug is present it applies to
+>> the IORT table as a whole rather than a single mapping entry.
+>>
+> 
+> This particular issue is based on a misinterpretation, so I agree that
+> it makes sense to have a global flag, as long as we only set it if the
+> mappings are fully consistent in every other respect, or we'll run the
+> risk of hitting issues like the one Robin describes, where things
+> happen to work, but will fail once we apply the heuristic. Such an
+> issue could exist on one end of the table, while we could spot the
+> off-by-one issue somewhere else.
+> 
+> Which brings us back to a point I made earlier: do we really want to
+> validate the table and ensure that it is fully internally consistent?
+> Or do we want to be robust in the face of a single known issue that we
+> helped create?
+> 
+> So in my opinion, just fixing it up when we run into it is fine. I can
+> add the extra sanity check to reduce the potential fallout for other
+> broken systems, but beyond that, I think we shouldn't do too much.
 
-On Wed, Apr 29, 2020 at 11:29 PM Andrew Lunn <andrew@lunn.ch> wrote:
->
-> > - Khadas VIM2 seems to have the RX delay built into the PCB trace
-> >   length. When I enable the RX delay on the PHY or MAC I can't get any
-> >   data through. I expect that we will have the same situation on all
-> >   GXBB, GXM, AXG, G12A, G12B and SM1 boards
->
-> Hi Martin
->
-> Can you actually see this on the PCB? The other possibility is that
-> the bootloader is configuring something, which is not getting
-> overridden when linux starts up.
-at least it doesn't jump straight into my eye.
-I checked in u-boot and Linux, and for both the RX delay is disabled
-in the PHY as well as in the MAC.
+Agreed - AFAICS the extra robustness I'm asking for should only amount 
+to a handful more lines on top of the proposed patch (maybe a couple of 
+positive return values for "by the way this came from the start/end of a 
+mapping range" instead of -EAGAIN). I think a separate scanning pass is 
+likely to add up to more complexity and similar-but-not-quite-reusable 
+code than simply detecting and handling potential off-by-one edges in-line.
 
-The schematics of the Khadas VIM2 also show the the RX delay in the
-PHY is turned off by pin-strapping, see page 7 on the right: [0]
-It's the same for the Khadas VIM3 schematics, also on page 7: [1]
-There are also high resolution images of the Khadas VIM3 online so you
-can look at it yourself (I couldn't find any for the Khadas VIM2 which
-is what I have): [2]
-
-I agree that we need to get an answer to the RX delay question on the
-arm64 SoCs.
-If there's no way to find out from the existing resources then I can
-contact Khadas and ask them about the PCB trace length on VIM2, VIM3
-and VIM3L (these are the ones with RGMII PHYs).
-
-For the older SoCs the RX delay has to be provided by either the MAC
-or the PHY and right now we're not configuring it.
-We cannot simply enable the RX delay at the PHY level because the
-bootloader enables it in the MAC (so we have to turn it off there).
-So it would be great if you could still review this series.
-
-
-Martin
-
-
-[0] https://dl.khadas.com/Hardware/VIM2/Schematic/VIM2_V12_Sch.pdf
-[1] https://dl.khadas.com/Hardware/VIM3/Schematic/VIM3_V12_Sch.pdf
-[2] https://forum.khadas.com/t/khadas-vim3-is-launching-on-24-june/4103
+Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
