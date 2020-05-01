@@ -2,81 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 470FD1C0F85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61EEF1C0F91
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:33:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/D8BdGXf9jrmKqrRwNjVcnbfjq7TEqptG5z5aFv01Fw=; b=GOSnIUYSewxYfU
-	KzQdkFnX0yAW2qSZTEKx577ANtmaFHwBlaMtPldpPSzua+YX40CwKg9NxAw8EWgiSUfPKmXQoC5QS
-	i7dy8odITsdwQFByA7bYXtD6tfhK6K+XJhsi+Aq8XuP1rRXRrEp6PcQboF4NGkAx6khAruiPR46Wb
-	j1SC4yDd81F6Jq6Jy3HtY+mlYPDIBAQGhj8pFUxQOqULGdd4lf/hKp66vUdZ90yrfCCbyRZ3wfPEh
-	8Dz4CdIOKS6cU6TufrqR3vTYi/n5ovE18XnEFb974BDeXDwbQnFJk3n+RSIhH60eIjlo//7RJUVZf
-	9UnwutGY2sg2CjAnTgog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ckf7mkSt7drfpoV4kvU/O0PbyMLoyKbuAEXSqznACDw=; b=H8+/JPB5JqDVvR
+	r4WKIIw1ve1M/p11OnMofzUGO8Fzmz4sUZnkGTUhCaN7htMgzeGCZ6l/k3PEcanU0UlZdWf6pIgZ+
+	wrfTG1v+ziFxs3T2jCYVuafdeo4HrhM5MNb3Q0JhufqKyLcJZrFj4N3S7X0D86JanJiNV2YESMLcB
+	sOhzAfF5c+Y38tSxUA1ZY0m+/kbxzs34gD+jdcb5ugBhVhTO1eAzIsXiimH5jLUxmgsRNvqTAHS5G
+	tmdgenUIk5okkZ7XnwgWcdQDtrpT5lxQ1AWKyQLTMGr5weEsU46vrx32GMX1VsjYEskL4gQxDBiM3
+	N0pIFpE8/ZY93dhFZFsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUR44-0006qk-Fq; Fri, 01 May 2020 08:30:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUR6s-0007bd-5h; Fri, 01 May 2020 08:33:26 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUR3w-0006pz-Sy
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:30:26 +0000
-Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
- [209.85.221.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0A90724955
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  1 May 2020 08:30:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588321824;
- bh=CJNhGsCpd6AQPVX8P6NqaBV7vRnnyDedFup5oxfD/YY=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WpyOlVfibyZ1/AhCZU+5fcBkGQm6h4egfZDk5SBIz96/bbRK9slzNF67UkfXbTAic
- p7rGsw7jhm//qUYUqtA/7cKw1edRziN/oVxDSv1lPjIK23LJovBL9JNkyauWIQh/Os
- QLra+uEpVfPHrae/LIoUGme0lI68QklkUHLePACI=
-Received: by mail-wr1-f47.google.com with SMTP id f13so10661489wrm.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 01:30:23 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZ7j5yK0rgZysoZ5dAN//9xvUnZWiCMzaf/6KO0hyPxeAOSJKTz
- lA7wIn0Sfjw8Bd2/bFTfJbcmSzjau6dvHH99eqgt+w==
-X-Google-Smtp-Source: APiQypIEoE7lZmfaNRjexQvHHOulSLBq541VjjKRzYkC8E/9BVk2V6iByn/+BWZm6DjWOdlaBwt4QwywVIC2Z0PmYQk=
-X-Received: by 2002:a5d:6145:: with SMTP id y5mr2947927wrt.126.1588321822377; 
- Fri, 01 May 2020 01:30:22 -0700 (PDT)
+ id 1jUR6k-0007a6-E7
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:33:19 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
+ with ESMTPSA id 0D90E2A2C9F
+From: =?UTF-8?q?Ricardo=20Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
+To: laurent.pinchart@ideasonboard.com
+Subject: [RFT PATCH 0/5] Convert adi,adv7511.txt DT bindings to yaml
+Date: Fri,  1 May 2020 10:32:22 +0200
+Message-Id: <20200501083227.10886-1-ricardo.canuelo@collabora.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-References: <1579004051-48797-1-git-send-email-guohanjun@huawei.com>
- <20200117121448.GA8199@willie-the-truck>
- <20200117123226.GA9918@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20200117123226.GA9918@e121166-lin.cambridge.arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Fri, 1 May 2020 10:30:11 +0200
-X-Gmail-Original-Message-ID: <CAKv+Gu-24EzfM+d7wBKUK7BC3gy+kQ2-T7CvemqtJsdQay7EjQ@mail.gmail.com>
-Message-ID: <CAKv+Gu-24EzfM+d7wBKUK7BC3gy+kQ2-T7CvemqtJsdQay7EjQ@mail.gmail.com>
-Subject: Re: [PATCH v2] ACPI/IORT: Fix 'Number of IDs' handling in
- iort_id_map()
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_013024_981998_7E9AC066 
-X-CRM114-Status: GOOD (  29.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200501_013318_603511_02B65AD0 
+X-CRM114-Status: GOOD (  11.37  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,122 +55,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: John Garry <john.garry@huawei.com>,
- Ganapatrao Kulkarni <gkulkarni@marvell.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- Linuxarm <linuxarm@huawei.com>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Tyler Baicar <baicar@os.amperecomputing.com>,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, geert+renesas@glider.be, xuwei5@hisilicon.com,
+ robh+dt@kernel.org, kernel@collabora.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 17 Jan 2020 at 13:32, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Fri, Jan 17, 2020 at 12:14:49PM +0000, Will Deacon wrote:
-> > On Tue, Jan 14, 2020 at 08:14:11PM +0800, Hanjun Guo wrote:
-> > > The IORT specification [0] (Section 3, table 4, page 9) defines the
-> > > 'Number of IDs' as 'The number of IDs in the range minus one'.
-> > >
-> > > However, the IORT ID mapping function iort_id_map() treats the 'Number
-> > > of IDs' field as if it were the full IDs mapping count, with the
-> > > following check in place to detect out of boundary input IDs:
-> > >
-> > > InputID >= Input base + Number of IDs
-> > >
-> > > This check is flawed in that it considers the 'Number of IDs' field as
-> > > the full number of IDs mapping and disregards the 'minus one' from
-> > > the IDs count.
-> > >
-> > > The correct check in iort_id_map() should be implemented as:
-> > >
-> > > InputID > Input base + Number of IDs
-> > >
-> > > this implements the specification correctly but unfortunately it breaks
-> > > existing firmwares that erroneously set the 'Number of IDs' as the full
-> > > IDs mapping count rather than IDs mapping count minus one.
-> > >
-> > > e.g.
-> > >
-> > > PCI hostbridge mapping entry 1:
-> > > Input base:  0x1000
-> > > ID Count:    0x100
-> > > Output base: 0x1000
-> > > Output reference: 0xC4  //ITS reference
-> > >
-> > > PCI hostbridge mapping entry 2:
-> > > Input base:  0x1100
-> > > ID Count:    0x100
-> > > Output base: 0x2000
-> > > Output reference: 0xD4  //ITS reference
-> > >
-> > > Two mapping entries which the second entry's Input base = the first
-> > > entry's Input base + ID count, so for InputID 0x1100 and with the
-> > > correct InputID check in place in iort_id_map() the kernel would map
-> > > the InputID to ITS 0xC4 not 0xD4 as it would be expected.
-> > >
-> > > Therefore, to keep supporting existing flawed firmwares, introduce a
-> > > workaround that instructs the kernel to use the old InputID range check
-> > > logic in iort_id_map(), so that we can support both firmwares written
-> > > with the flawed 'Number of IDs' logic and the correct one as defined in
-> > > the specifications.
-> > >
-> > > [0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
-> > >
-> > > Reported-by: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > > Link: https://lore.kernel.org/linux-acpi/20191215203303.29811-1-pankaj.bansal@nxp.com/
-> > > Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
-> > > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-> > > Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Robin Murphy <robin.murphy@arm.com>
-> > > ---
-> >
-> > I'm a bit confused about the SoB chain here and which tree this is
-> > targetting.
-> >
-> > Lorenzo?
->
-> Hi Will,
->
-> sorry about that. It targets arm64 - previously wasn't addressed
-> to you and Catalin:
->
-> https://lore.kernel.org/linux-arm-kernel/1577708824-4873-1-git-send-email-guohanjun@huawei.com/
->
-> I rewrote the commit log and asked Hanjun to repost it to target an arm64
-> merge.
->
-> Having said that, this patch makes me nervous, it can break on platforms
-> that have non-compliant firmware, I wonder whether it is best to leave
-> it in -next for a whole cycle (I can send it to -next) to catch any
-> fall-out rather than targeting v5.6 given that technically is _not_ a
-> fix (we may even have to revert it - it requires coverage on all ARM64
-> ACPI systems).
->
-> What do you think ?
->
-
-I just ran into this while playing with the LX2160 I received this week.
-
-I wonder if it would be better to detect the failure case dynamically,
-rather than having these hardcoded quirks. It should be rather
-straightforward to detect overlaps at the edges of these multi-range
-mappings, in which case we could just let the spurious one (living at
-the end of the region) be superseded by the correct one (living at the
-start of the next region).
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgpUaGlzIHNlcmllcyBjb252ZXJ0IHRoZSBhZGksYWR2NzUxMS50eHQgRFQgYmluZGluZ3Mg
+dG8ganNvbi1zY2hlbWEuIEFzIGEKcmVzdWx0IG9mIHRoZSBjb252ZXJzaW9uIHNvbWUgZHRzIGZp
+bGVzIG5lZWRlZCB0byBiZSB1cGRhdGVkLgoKVGhlIGNoYW5nZXMgdG8gdGhlIGR0cyBmaWxlcyBh
+cmUgb2YgdHdvIHR5cGVzOgoKICAtIFJlb3JkZXJpbmcgb2YgdGhlIEkyQyBzbGF2ZSBhZGRyZXNz
+ZXMgbGlzdCBvZiB0aGUgQURWNzV4eCBub2RlLiBUaGUKICAgIGFkZHJlc3NlcyBpbiB0aGUgJ3Jl
+ZycgcHJvcGVydHkgYW5kIHRoZSBtYXRjaGluZyBuYW1lcyBpbgogICAgJ3JlZy1uYW1lcycgZm9y
+IGFuIEkyQyBzbGF2ZSBkb24ndCBuZWVkIHRvIGJlIGluIGFueSBwYXJ0aWN1bGFyCiAgICBvcmRl
+ciwgYnV0IHRoZSBEVCBzY2hlbWEgZGVmaW5lcyB0aGVzZSBwcm9wZXJ0aWVzIGFzIGEgY2VsbCBh
+cnJheQogICAgYW5kIGEgc3RyaW5nIGFycmF5IHJlc3BlY3RpdmVseSwgd2hpY2ggYXJlIG9yZGVy
+ZWQsIHNvIHRoZQogICAgZGVmaW5pdGlvbnMgaW4gdGhlIGR0cyBmaWxlcyBtdXN0IG1hdGNoIHRo
+ZSBvcmRlciBpbiB0aGUgYmluZGluZy4KCiAgLSBGaWxsaW5nIHRoZSBtaW5pbXVtIGJpbmRpbmcg
+cmVxdWlyZW1lbnRzLiBNb3N0IG9mIHRoZSB0aW1lIHRoaXMKICAgIG1lYW5zIGNyZWF0aW5nIGEg
+J3BvcnRzJyBub2RlIGluIHRoZSBib2FyZHMgdGhhdCBkb24ndCBkZWZpbmUKICAgIHRoZW0uIE5v
+dGUsIGhvd2V2ZXIsIHRoYXQgdGhlIHB1cnBvc2Ugb2YgdGhpcyBpcyBzaW1wbHkgdG8gbWFrZSB0
+aGUKICAgIGRlZmluaXRpb24gY29tcGxpYW50IHdpdGggdGhlIGJpbmRpbmcuIEkgZGlkbid0IGRl
+ZmluZSBhbnkgZW5kcG9pbnRzCiAgICBmb3IgdGhlIHBvcnRzLgoKQWJvdXQgdGhlIGJpbmRpbmcg
+Y29udmVyc2lvbjoKCiAgLSBUaGUgZGVwZW5kZW5jaWVzIGJldHdlZW4gcHJvcGVydGllcyBhcmUg
+cHJvcGVybHkgbW9kZWxsZWQgYnV0IHRoZQogICAgcmVzdWx0IG1pZ2h0IGxvb2sgY2x1dHRlcmVk
+LiBJZiB5b3UgZmluZCBpdCBoYXJkIHRvIHJlYWQgb3IKICAgIG1haW50YWluLCBhbm90aGVyIG9w
+dGlvbiBpcyB0byBzcGxpdCB0aGUgYmluZGluZyBpbiB0d286IG9uZSBmb3IgdGhlCiAgICBBRFY3
+NTExLzExdy8xMyBhbmQgYW5vdGhlciBvbmUgZm9yIHRoZSBBRFY3NTMzLzM1LgoKUGF0Y2hlcyAx
+LzUgdG8gNC81IGNvbnRhaW4gdGhlIGR0cyBjaGFuZ2VzLiBQYXRjaCA1LzUgY29udGFpbnMgdGhl
+CmJpbmRpbmcgY29udmVyc2lvbi4KCk5PVEU6IHRoZSBiaW5kaW5ncyBoYXZlIGJlZW4gdGVzdGVk
+IHdpdGg6CgogIG1ha2UgZHRfYmluZGluZ19jaGVjayBBUkNIPTxhcmNoPiBEVF9TQ0hFTUFfRklM
+RVM9PC4uLmFkaSxhZHY3NTExLnlhbWw+CiAgbWFrZSBkdGJzX2NoZWNrIEFSQ0g9PGFyY2g+IERU
+X1NDSEVNQV9GSUxFUz08Li4uYWRpLGFkdjc1MTEueWFtbD4KCmZvciA8YXJjaD4gPSBhcm0gYW5k
+IGFybTY0LiBkdHMgY2hhbmdlcyBoYXZlbid0IGJlZW4gdGVzdGVkIGluIGhhcmR3YXJlLgoKS2lu
+ZCByZWdhcmRzLApSaWNhcmRvCgpSaWNhcmRvIENhw7F1ZWxvICg1KToKICBhcm02NDogZHRzOiBk
+cmFhazogUmVvcmRlciBoZG1pLWVuY29kZXJAMzkgcmVnIGFuZCByZWctbmFtZXMKICAgIHByb3Bl
+cnRpZXMKICBBUk06IGR0czogd2hlYXQ6IHJlb3JkZXIgcmVnIGFuZCByZWctbmFtZXMgcHJvcGVy
+dGllcyBpbiBoZG1pIGJyaWRnZXMKICBBUk06IGR0czogenlucTogYWRkIHBvcnQgZGVmaW5pdGlv
+bnMgdG8gaGRtaS10eEAzOQogIGFybTY0OiBkdHM6IGhpc2lsaWNvbjogaGlrZXk5NjA6IGFkZCBt
+aXNzaW5nIGhkbWkgYnJpZGdlIHByb3BlcnRpZXMKICBkdC1iaW5kaW5nczogZHJtOiBicmlkZ2U6
+IGFkaSxhZHY3NTExLnR4dDogY29udmVydCB0byB5YW1sCgogLi4uL2JpbmRpbmdzL2Rpc3BsYXkv
+YnJpZGdlL2FkaSxhZHY3NTExLnR4dCAgIHwgMTQzIC0tLS0tLS0tLQogLi4uL2JpbmRpbmdzL2Rp
+c3BsYXkvYnJpZGdlL2FkaSxhZHY3NTExLnlhbWwgIHwgMjk1ICsrKysrKysrKysrKysrKysrKwog
+YXJjaC9hcm0vYm9vdC9kdHMvcjhhNzc5Mi13aGVhdC5kdHMgICAgICAgICAgIHwgICA4ICstCiBh
+cmNoL2FybS9ib290L2R0cy96eW5xLXpjNzAyLmR0cyAgICAgICAgICAgICAgfCAgMTAgKwogYXJj
+aC9hcm0vYm9vdC9kdHMvenlucS16YzcwNi5kdHMgICAgICAgICAgICAgIHwgIDEwICsKIC4uLi9i
+b290L2R0cy9oaXNpbGljb24vaGkzNjYwLWhpa2V5OTYwLmR0cyAgICB8ICAxMSArCiAuLi4vYXJt
+NjQvYm9vdC9kdHMvcmVuZXNhcy9yOGE3Nzk5NS1kcmFhay5kdHMgfCAgIDQgKy0KIDcgZmlsZXMg
+Y2hhbmdlZCwgMzMyIGluc2VydGlvbnMoKyksIDE0OSBkZWxldGlvbnMoLSkKIGRlbGV0ZSBtb2Rl
+IDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2Uv
+YWRpLGFkdjc1MTEudHh0CiBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRhdGlvbi9kZXZpY2V0
+cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTExLnlhbWwKCi0tIAoyLjE4LjAK
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
