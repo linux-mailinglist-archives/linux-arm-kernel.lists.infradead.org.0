@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0418A1C1A8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:27:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0835B1C1AA0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:33:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p3A34f7bdn6m1QC1iTR+8JVL2M/ZKtDIBXPx0td3+/E=; b=N8NUa3HFauum4f
-	fyQT/HM7Y7J318w7BGC/Kujb7yYUZzdeDPTSPXBwafDo67a+5F8DwPzDK0rW6SoDDCYeEPJWwiO9V
-	COqoh+6p+BYLA16wwJbhmq2Idnay+9ijIxh37A0Xb7HJdDsrB4a/sty49lVJlrNXhqrZkzUK7xxbg
-	SrzMi/h/6UNM1mlq/1CsTYeSlZw4MJESJiBzwAFGffRMae/vUuvM89FQ4VHsEc8dP/ECCHccFUgHl
-	0I1hOPPoEABfSvThVx7WIdfpQ/STxSU617ZhvGK7qoSnoMJK4Yo+vCAmi/REdMzq9xwMWuUrltcQV
-	dUyZxdI/ExQjNn9rG4JQ==;
+	List-Owner; bh=jGJn/OL5n+rBApYB/bVwgb72HHgoigdEO2lJncPnBLI=; b=C4952DXo+abCcL
+	1ezE53mTx0pGFFqCcZcv0T01Ux/W79stPL6/C1BSB2GiB9xXgJ8ZEcEm3S+dhOTuUkHFoE7Cd+Adv
+	WNkIU7VqAqYoKtc2AV2pz8xsFJ8uOQm+QrhAhSoxa4iXOMMUDl7OqllOXYHfApevVoMR3Jb0ZU6LP
+	7A4dHSnE6hm1FHqfJfdfWR8cgkrhV7SUedJjjZ40s6V/8TnMhN6fOj4vgtIRkBpznO3tioN9pWCSE
+	b5Q/YUiruMXPhiNcPbRPuhi2UVt7iLgl4OOvQOUGz2pYGUM6U/A+MT4tHdHa+KieS7tr+gSoYKBSE
+	sgz9MTq0YfVnYNECYvnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYV7-0004J1-0x; Fri, 01 May 2020 16:26:57 +0000
+	id 1jUYau-0000bF-2e; Fri, 01 May 2020 16:32:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYV0-0004Hh-N7
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:26:52 +0000
+ id 1jUYal-0000Zl-NL
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:32:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 086DD30E;
- Fri,  1 May 2020 09:26:50 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8FFE930E;
+ Fri,  1 May 2020 09:32:46 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.80])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 02DB43F68F;
- Fri,  1 May 2020 09:26:45 -0700 (PDT)
-Date: Fri, 1 May 2020 17:26:30 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D52B43F68F;
+ Fri,  1 May 2020 09:32:42 -0700 (PDT)
+Date: Fri, 1 May 2020 17:32:39 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 04/16] clk: versatile: Rework kconfig structure
-Message-ID: <20200501162605.GA14018@bogus>
+Subject: Re: [PATCH v2 05/16] clk: versatile: Only enable SP810 on 32-bit by
+ default
+Message-ID: <20200501163239.GB14018@bogus>
 References: <20200429205825.10604-1-robh@kernel.org>
- <20200429205825.10604-5-robh@kernel.org>
+ <20200429205825.10604-6-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-5-robh@kernel.org>
+In-Reply-To: <20200429205825.10604-6-robh@kernel.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_092650_794150_AD18072D 
-X-CRM114-Status: GOOD (  11.60  )
+X-CRM114-CacheID: sfid-20200501_093247_807437_D289CAC6 
+X-CRM114-Status: GOOD (  15.67  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -68,8 +69,8 @@ Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
  Linus Walleij <linus.walleij@linaro.org>,
  Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
- Sebastian Reichel <sre@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Will Deacon <will@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sebastian Reichel <sre@kernel.org>, Will Deacon <will@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -77,27 +78,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:58:13PM -0500, Rob Herring wrote:
-> CONFIG_COMMON_CLK_VERSATILE doesn't really do anything other than hiding
-> Arm Ltd reference platform clock drivers. It is both selected by the
-> platforms that need it and has a 'depends on' for those platforms. Let's
-> drop the selects and convert CONFIG_COMMON_CLK_VERSATILE into a
-> menuconfig entry. With this make CONFIG_ICST visible.
-> 
-> Move the 'select REGMAP_MMIO' to the drivers that require it (SP810 did
-> not).
-> 
-> This also has the side effect of enabling CONFIG_ICST for COMPILE_TEST
-> as it was not visible before.
+On Wed, Apr 29, 2020 at 03:58:14PM -0500, Rob Herring wrote:
+> While 64-bit Arm reference platforms have SP810 for clocks for SP804
+> timers, they are not needed since the arch timers are used instead.
 > 
 > Cc: Catalin Marinas <catalin.marinas@arm.com>
 > Cc: Will Deacon <will@kernel.org>
-> Cc: Liviu Dudau <liviu.dudau@arm.com>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
 
-FWIW,
+With a note below for sake of information,
 
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
+
+> Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> Cc: Linus Walleij <linus.walleij@linaro.org>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: linux-clk@vger.kernel.org
+> Acked-by: Arnd Bergmann <arnd@arndb.de>
+> Acked-by: Liviu Dudau <liviu.dudau@arm.com>
+> Signed-off-by: Rob Herring <robh@kernel.org>
+> ---
+>  drivers/clk/versatile/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
+> index df0d50bb846c..a47dd6c86d2e 100644
+> --- a/drivers/clk/versatile/Kconfig
+> +++ b/drivers/clk/versatile/Kconfig
+> @@ -17,7 +17,7 @@ config ICST
+>  
+>  config CLK_SP810
+>  	bool "Clock driver for ARM SP810 System Controller"
+> -	default y if ARCH_VEXPRESS
+> +	default y if (ARCH_VEXPRESS && ARM)
+
+Just note that SP804 is selected by ARCH_HISILICON and ARCH_BRCM or
+something for Raspberry Pi. So, this will result in the warnings on
+Juno like:
+
+sp804: timer clock not found: -517
+sp804: arm,sp804 clock not found: -2
+sp804: timer clock not found: -517
+sp804: arm,sp804 clock not found: -2
+
+This can be ignored as we rely on arch-timers and they are just there
+in DT for completion. We can disable them in DT if that's fine ?
 
 -- 
 Regards,
