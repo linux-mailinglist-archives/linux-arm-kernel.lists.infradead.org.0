@@ -2,76 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 464E81C0F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:28:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 470FD1C0F85
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:30:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1Lh2VjJ+9NhtWO2wjPtR+vV39MSlHnQjhWwFcldf+3s=; b=C79AXGMzlekJ5T
-	TslAcr03hhrhi6xTgcHGj1jeUFUxHAPsi8uWnD2+5QkQDxSAqg9QXSmYJrO/ia1mn5ITQylqTmR+i
-	nCdZDbO9J5FTYsR4ZRIjDbKO4GxPzvCDRZC9Dp7WcGeTXh8TaLD0sUg5rsepjB1r/kjAuHgQvVQH0
-	LM4ZERNk2oB9QZ43rhnXpwIXNqRUHzhMzUeZBHjJuUXNIbtC7tzm6cxPOjRlFlhDfJ01ZBxil/vzl
-	7yaGjxKoTV3SGyZtSDSjVWDyfSwnbRC7643YGFn8tzO5QQvaO2cA2Vq0gP98dSZxGxiwh557cXU4n
-	MSVnPW1cuAQopDy121VQ==;
+	List-Owner; bh=/D8BdGXf9jrmKqrRwNjVcnbfjq7TEqptG5z5aFv01Fw=; b=GOSnIUYSewxYfU
+	KzQdkFnX0yAW2qSZTEKx577ANtmaFHwBlaMtPldpPSzua+YX40CwKg9NxAw8EWgiSUfPKmXQoC5QS
+	i7dy8odITsdwQFByA7bYXtD6tfhK6K+XJhsi+Aq8XuP1rRXRrEp6PcQboF4NGkAx6khAruiPR46Wb
+	j1SC4yDd81F6Jq6Jy3HtY+mlYPDIBAQGhj8pFUxQOqULGdd4lf/hKp66vUdZ90yrfCCbyRZ3wfPEh
+	8Dz4CdIOKS6cU6TufrqR3vTYi/n5ovE18XnEFb974BDeXDwbQnFJk3n+RSIhH60eIjlo//7RJUVZf
+	9UnwutGY2sg2CjAnTgog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUR1n-000416-D9; Fri, 01 May 2020 08:28:11 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1jUR44-0006qk-Fq; Fri, 01 May 2020 08:30:32 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUR1g-00040O-Tk
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:28:06 +0000
-Received: by mail-oi1-x243.google.com with SMTP id j16so2124868oih.10
+ id 1jUR3w-0006pz-Sy
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:30:26 +0000
+Received: from mail-wr1-f47.google.com (mail-wr1-f47.google.com
+ [209.85.221.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A90724955
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 01:28:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=iIaRGYpAPupU8ap77mm0+hl9zSz1kLjaWyzfce1Qs3Y=;
- b=kitVDdx/L3DP0PkMGe4nbAT/OeUb9rxLisr3H1naWl4uvidfeWv+LsXSQEgmmyc0X/
- iLi76W4bs3UsILqhkHUgncUHqEUqeBZ807rF4XZtjj2UQ67sZ4mxfq8Rz5lTBq2RNN+v
- 9/S7EJEZh7aqpKGRbqGY8MNKVZ1kFzS8Qyhlb5ZJs4YPTpvsgZQEVgDc8FP/aj/kr24B
- mD/lDEQb5IO+ZfE5flM5Fs50UniK7R/Y60Rs+7W7iMXftdnv38rWWXkWJdLnEIk81P8R
- YBN1wqcVZHOU0FJbuDxdB/nALwtchR1n48YTjEaft/fGl60RWwSo7g9wzWS58jpzwAKS
- vXIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=iIaRGYpAPupU8ap77mm0+hl9zSz1kLjaWyzfce1Qs3Y=;
- b=P/FQbnA0L/9gcIwPg4zPXcGeRkFAtEWdtfioxRXGizvstRUgj//Q1ot79zdd7VFGXd
- ZfZJjfnhTwwvLS23jm4qW6HVauoeDe77Xp1dJRIBXrVJdVLt3rGKSTmNw8BkCeo9nhMa
- /oJUM0sw+vRjTn91k4R5AziDJnrc/nQhN1eMdp9NM2p4TxFa94uMbNu+y0FfeOyZM62N
- QOlUCyFXky7gazNXerZSHH9sxhJ2lq3y75V06uKpM9JmKIb/1sX+uNS2fbOc7qhIOVKw
- QhwxiOmcUFnzjRR2BAxGxjAMOeW+XlzzGKjrZblFvoB4knB2/BlepP0vhvnc2hb+Wx6D
- KECw==
-X-Gm-Message-State: AGi0PuZRHcc35SeRp8jS9EpA5MueaF/ncp00TNSk3j7dv2cTQHaWuGr/
- Ee8wavRvOomP85CapmnesoB0D/hsp85kQmp2+/k=
-X-Google-Smtp-Source: APiQypK7F/qXasasin7MAQYiif3YYm7Zv+A3AA59LZg9zaayKtl+Wh4ZN+37kvvRqqUEkgvPlkOR6eZ2Unj/057MAYA=
-X-Received: by 2002:a05:6808:5c5:: with SMTP id d5mr2347754oij.8.1588321684000; 
- Fri, 01 May 2020 01:28:04 -0700 (PDT)
+ Fri,  1 May 2020 08:30:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588321824;
+ bh=CJNhGsCpd6AQPVX8P6NqaBV7vRnnyDedFup5oxfD/YY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=WpyOlVfibyZ1/AhCZU+5fcBkGQm6h4egfZDk5SBIz96/bbRK9slzNF67UkfXbTAic
+ p7rGsw7jhm//qUYUqtA/7cKw1edRziN/oVxDSv1lPjIK23LJovBL9JNkyauWIQh/Os
+ QLra+uEpVfPHrae/LIoUGme0lI68QklkUHLePACI=
+Received: by mail-wr1-f47.google.com with SMTP id f13so10661489wrm.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 01:30:23 -0700 (PDT)
+X-Gm-Message-State: AGi0PuZ7j5yK0rgZysoZ5dAN//9xvUnZWiCMzaf/6KO0hyPxeAOSJKTz
+ lA7wIn0Sfjw8Bd2/bFTfJbcmSzjau6dvHH99eqgt+w==
+X-Google-Smtp-Source: APiQypIEoE7lZmfaNRjexQvHHOulSLBq541VjjKRzYkC8E/9BVk2V6iByn/+BWZm6DjWOdlaBwt4QwywVIC2Z0PmYQk=
+X-Received: by 2002:a5d:6145:: with SMTP id y5mr2947927wrt.126.1588321822377; 
+ Fri, 01 May 2020 01:30:22 -0700 (PDT)
 MIME-Version: 1.0
-References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-In-Reply-To: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Fri, 1 May 2020 09:27:37 +0100
-Message-ID: <CA+V-a8sudn9kNs0QKQP9L_GL2wo1mifjRLcbA6sYjryD9cfZMw@mail.gmail.com>
-Subject: Re: [PATCH 00/18] Add R8A7742/RZG1H board support
-To: Geert Uytterhoeven <geert+renesas@glider.be>
+References: <1579004051-48797-1-git-send-email-guohanjun@huawei.com>
+ <20200117121448.GA8199@willie-the-truck>
+ <20200117123226.GA9918@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20200117123226.GA9918@e121166-lin.cambridge.arm.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 1 May 2020 10:30:11 +0200
+X-Gmail-Original-Message-ID: <CAKv+Gu-24EzfM+d7wBKUK7BC3gy+kQ2-T7CvemqtJsdQay7EjQ@mail.gmail.com>
+Message-ID: <CAKv+Gu-24EzfM+d7wBKUK7BC3gy+kQ2-T7CvemqtJsdQay7EjQ@mail.gmail.com>
+Subject: Re: [PATCH v2] ACPI/IORT: Fix 'Number of IDs' handling in
+ iort_id_map()
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_012804_982601_F85B466D 
-X-CRM114-Status: GOOD (  18.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200501_013024_981998_7E9AC066 
+X-CRM114-Status: GOOD (  29.60  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.csengg[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -81,6 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,90 +88,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
- Magnus Damm <magnus.damm@gmail.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, Vinod Koul <vkoul@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, LAK <linux-arm-kernel@lists.infradead.org>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- dmaengine <dmaengine@vger.kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- LKML <linux-kernel@vger.kernel.org>
+Cc: John Garry <john.garry@huawei.com>,
+ Ganapatrao Kulkarni <gkulkarni@marvell.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
+ Linuxarm <linuxarm@huawei.com>,
+ Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Tyler Baicar <baicar@os.amperecomputing.com>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Geert,
+On Fri, 17 Jan 2020 at 13:32, Lorenzo Pieralisi
+<lorenzo.pieralisi@arm.com> wrote:
+>
+> On Fri, Jan 17, 2020 at 12:14:49PM +0000, Will Deacon wrote:
+> > On Tue, Jan 14, 2020 at 08:14:11PM +0800, Hanjun Guo wrote:
+> > > The IORT specification [0] (Section 3, table 4, page 9) defines the
+> > > 'Number of IDs' as 'The number of IDs in the range minus one'.
+> > >
+> > > However, the IORT ID mapping function iort_id_map() treats the 'Number
+> > > of IDs' field as if it were the full IDs mapping count, with the
+> > > following check in place to detect out of boundary input IDs:
+> > >
+> > > InputID >= Input base + Number of IDs
+> > >
+> > > This check is flawed in that it considers the 'Number of IDs' field as
+> > > the full number of IDs mapping and disregards the 'minus one' from
+> > > the IDs count.
+> > >
+> > > The correct check in iort_id_map() should be implemented as:
+> > >
+> > > InputID > Input base + Number of IDs
+> > >
+> > > this implements the specification correctly but unfortunately it breaks
+> > > existing firmwares that erroneously set the 'Number of IDs' as the full
+> > > IDs mapping count rather than IDs mapping count minus one.
+> > >
+> > > e.g.
+> > >
+> > > PCI hostbridge mapping entry 1:
+> > > Input base:  0x1000
+> > > ID Count:    0x100
+> > > Output base: 0x1000
+> > > Output reference: 0xC4  //ITS reference
+> > >
+> > > PCI hostbridge mapping entry 2:
+> > > Input base:  0x1100
+> > > ID Count:    0x100
+> > > Output base: 0x2000
+> > > Output reference: 0xD4  //ITS reference
+> > >
+> > > Two mapping entries which the second entry's Input base = the first
+> > > entry's Input base + ID count, so for InputID 0x1100 and with the
+> > > correct InputID check in place in iort_id_map() the kernel would map
+> > > the InputID to ITS 0xC4 not 0xD4 as it would be expected.
+> > >
+> > > Therefore, to keep supporting existing flawed firmwares, introduce a
+> > > workaround that instructs the kernel to use the old InputID range check
+> > > logic in iort_id_map(), so that we can support both firmwares written
+> > > with the flawed 'Number of IDs' logic and the correct one as defined in
+> > > the specifications.
+> > >
+> > > [0]: http://infocenter.arm.com/help/topic/com.arm.doc.den0049d/DEN0049D_IO_Remapping_Table.pdf
+> > >
+> > > Reported-by: Pankaj Bansal <pankaj.bansal@nxp.com>
+> > > Link: https://lore.kernel.org/linux-acpi/20191215203303.29811-1-pankaj.bansal@nxp.com/
+> > > Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
+> > > Signed-off-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> > > Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
+> > > Cc: Will Deacon <will@kernel.org>
+> > > Cc: Sudeep Holla <sudeep.holla@arm.com>
+> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > Cc: Robin Murphy <robin.murphy@arm.com>
+> > > ---
+> >
+> > I'm a bit confused about the SoB chain here and which tree this is
+> > targetting.
+> >
+> > Lorenzo?
+>
+> Hi Will,
+>
+> sorry about that. It targets arm64 - previously wasn't addressed
+> to you and Catalin:
+>
+> https://lore.kernel.org/linux-arm-kernel/1577708824-4873-1-git-send-email-guohanjun@huawei.com/
+>
+> I rewrote the commit log and asked Hanjun to repost it to target an arm64
+> merge.
+>
+> Having said that, this patch makes me nervous, it can break on platforms
+> that have non-compliant firmware, I wonder whether it is best to leave
+> it in -next for a whole cycle (I can send it to -next) to catch any
+> fall-out rather than targeting v5.6 given that technically is _not_ a
+> fix (we may even have to revert it - it requires coverage on all ARM64
+> ACPI systems).
+>
+> What do you think ?
+>
 
-On Wed, Apr 29, 2020 at 10:57 PM Lad Prabhakar
-<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
->
-> Hi All,
->
-> This patch set adds initial board support for R8A7742 SoC,
-> enabling R8A7742 arch in defconfigs with initial dtsi.
->
-> Cheers,
-> --Prabhakar
->
-> Lad Prabhakar (18):
->   soc: renesas: Add Renesas R8A7742 config option
->   ARM: shmobile: defconfig: Enable r8a7742 SoC
->   ARM: multi_v7_defconfig: Enable r8a7742 SoC
->   ARM: debug-ll: Add support for r8a7742
->   dt-bindings: pinctrl: sh-pfc: Document r8a7742 PFC support
->   pinctrl: sh-pfc: r8a7790: Add r8a7742 PFC support
->   ARM: dts: r8a7742: Initial SoC device tree
->   dt-bindings: irqchip: renesas-irqc: Document r8a7742 bindings
->   ARM: dts: r8a7742: Add IRQC support
->   dt-bindings: rcar-dmac: Document r8a7742 support
->   ARM: dts: r8a7742: Add SYS-DMAC support
->   dt-bindings: serial: renesas,scif: Document r8a7742 bindings
->   dt-bindings: serial: renesas,scifa: Document r8a7742 bindings
->   dt-bindings: serial: renesas,scifb: Document r8a7742 bindings
->   dt-bindings: serial: renesas,hscif: Document r8a7742 bindings
->   ARM: dts: r8a7742: Add [H]SCIF{A|B} support
->   dt-bindings: gpio: rcar: Add r8a7742 (RZ/G1H) support
->   ARM: dts: r8a7742: Add GPIO support
->
-Thank you for the review.
+I just ran into this while playing with the LX2160 I received this week.
 
-For v2 ill post patches from 6-18 fixing your review comments and
-including the Acks, as patches 1-5 have been queued.
-
-Cheers,
---Prabhakar
-
->  .../devicetree/bindings/dma/renesas,rcar-dmac.txt  |   1 +
->  .../devicetree/bindings/gpio/renesas,gpio-rcar.txt |   1 +
->  .../interrupt-controller/renesas,irqc.yaml         |   1 +
->  .../bindings/pinctrl/renesas,pfc-pinctrl.txt       |   1 +
->  .../devicetree/bindings/serial/renesas,hscif.yaml  |   1 +
->  .../devicetree/bindings/serial/renesas,scif.yaml   |   1 +
->  .../devicetree/bindings/serial/renesas,scifa.yaml  |   1 +
->  .../devicetree/bindings/serial/renesas,scifb.yaml  |   1 +
->  arch/arm/Kconfig.debug                             |  10 +
->  arch/arm/boot/dts/r8a7742.dtsi                     | 939 +++++++++++++++++++++
->  arch/arm/configs/multi_v7_defconfig                |   1 +
->  arch/arm/configs/shmobile_defconfig                |   1 +
->  drivers/pinctrl/sh-pfc/Kconfig                     |   4 +
->  drivers/pinctrl/sh-pfc/Makefile                    |   1 +
->  drivers/pinctrl/sh-pfc/core.c                      |   6 +
->  drivers/pinctrl/sh-pfc/pfc-r8a7790.c               |  24 +
->  drivers/pinctrl/sh-pfc/sh_pfc.h                    |   1 +
->  drivers/soc/renesas/Kconfig                        |   7 +
->  18 files changed, 1002 insertions(+)
->  create mode 100644 arch/arm/boot/dts/r8a7742.dtsi
->
-> --
-> 2.7.4
->
+I wonder if it would be better to detect the failure case dynamically,
+rather than having these hardcoded quirks. It should be rather
+straightforward to detect overlaps at the edges of these multi-range
+mappings, in which case we could just let the spurious one (living at
+the end of the region) be superseded by the correct one (living at the
+start of the next region).
 
 _______________________________________________
 linux-arm-kernel mailing list
