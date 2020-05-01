@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF4041C1AFD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EF571C1B04
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:59:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4kpHQoNdS5EItEeYpAtfBaPmtw4iCCRARGl37VYwB+w=; b=C8DquCb7T0dgVF
-	wZ3t3KOdpZQB2bA8fgcsC1HV02XsXD3GbX4M+j4bZULopVRTYKHSl2LoKfnSEV+LF3eBGAKXU6ZlL
-	VCqUY9fTUubMJouezzFSJdpGFxmAUBRgdWos5Bh2nMN0J4CBN+Uf+WUMZvqA6Ztog6+d8eit7Tlyb
-	rkLee0zKXHMjiJgyyHlXEJoq5U3dyipF+U20nQ499Fqcl4Mrk2/ufdIMZ/NURA7NmXJC68FOpFFaJ
-	UJIKqQwdlR3bVaTKvV0CTpGW72JSoezznf10pVlteRbvzV1FR48xTgpc2mGof48zyfrcU3iIjJzjF
-	A/LaYT0swvt7nRKLAOjw==;
+	List-Owner; bh=cKKMKThcQVqhUNWXfHh6m3qRPHqUNb9i0WirbnZpQUQ=; b=PCZ7XTMmIC4yD2
+	Rn5v73trLoCczbIYegvvtKy9zA8m0rDn8soogmS2eVt8P96Zu4vrNMWbE02tJeHSSVWj5xiVh1Ua1
+	bCYeemRYVA/g2WYD1p38x9i1tUJB0HLR+Oo2OYnikUvbJB+BxtTDnHGn6frbWjCOPQM0b9KmO9UK1
+	QaUAxsGFZN/Ix6y8SAxfGwzb4AiqieKeNtzMaqp2N4AmVBheL4nJDhBzAsNjcmrEORx3PZBTEGCNP
+	/fk0517NduWIHYbMnfWSEYoZzVMiTYibh60d17A9ocJpUE+YJBkEg6HNU+fGrZ43Ub/0MADQqrP2S
+	w0aMqnlz/e1xvvYAWXBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYzZ-0003bc-Fa; Fri, 01 May 2020 16:58:25 +0000
+	id 1jUZ0M-00040m-1b; Fri, 01 May 2020 16:59:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYzN-0003aW-S9
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:58:16 +0000
+ id 1jUZ0F-0003zx-28
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:59:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BFE730E;
- Fri,  1 May 2020 09:58:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3655C30E;
+ Fri,  1 May 2020 09:59:06 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.80])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24A363F305;
- Fri,  1 May 2020 09:58:08 -0700 (PDT)
-Date: Fri, 1 May 2020 17:58:06 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8605D3F305;
+ Fri,  1 May 2020 09:59:02 -0700 (PDT)
+Date: Fri, 1 May 2020 17:58:59 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 11/16] mfd: vexpress-sysreg: Support building as a
- module
-Message-ID: <20200501165806.GH14018@bogus>
+Subject: Re: [PATCH v2 15/16] bus: vexpress-config: Support building as module
+Message-ID: <20200501165859.GI14018@bogus>
 References: <20200429205825.10604-1-robh@kernel.org>
- <20200429205825.10604-12-robh@kernel.org>
+ <20200429205825.10604-16-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-12-robh@kernel.org>
+In-Reply-To: <20200429205825.10604-16-robh@kernel.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_095813_963544_B4B08CC9 
-X-CRM114-Status: UNSURE (   8.98  )
+X-CRM114-CacheID: sfid-20200501_095907_152687_52AFC3D8 
+X-CRM114-Status: UNSURE (   8.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,13 +78,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:58:20PM -0500, Rob Herring wrote:
-> Enable building the vexpress-sysreg driver as a module.
+On Wed, Apr 29, 2020 at 03:58:24PM -0500, Rob Herring wrote:
+> Enable building vexpress-config driver as a module.
 > 
-> As deferred probe between the vexpress components works now, we don't
-> need to create struct devices early with of_platform_device_create().
-> 
-> Cc: Liviu Dudau <liviu.dudau@arm.com>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
 
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
