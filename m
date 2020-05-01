@@ -2,88 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A965F1C11A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:49:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 303031C11B1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:55:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LNvCTmydGOxF/Jokb14Flput/D6IMkxGxoC8FfhZ7k8=; b=GmdNRlF7sB3m2C
-	g5yz7RumZSnPKF5hHBYxBeUT+BxvSLcMYQj+yJ+ukf/mSAvi2oLxV2+r5GiFgizQz9dQLIQNCftm/
-	k1Z2npkIEfkZZssksykpZFCB/IifBr3bR+vfoc+5W0wUwlXAwOdMGjQAVa5KCLKtj2JDMzjnPx4Wz
-	01+sKkKPBqozpXA27u/FpYd+zh7Iyjb1rs1Mqec93nx0AZ1vWg4xy0FGgavMBJejY9NET7tPY/F16
-	VnuOOrryyXibhhbuJbRB7Sds0nDa4YyOFlrRyIdSn9hXuWB7DNJ13KV6G2pIYQ0zmlwvLJc2kSkgj
-	HxLAhmiH2bTRy6kXR+gw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xfUrsEFYDHjnYvugTYGuJiAsHiTsfg77xIfmjEguG6M=; b=VjDQsDVUYOCrfg
+	Wi9nSihjPC+CXih7eLO0tD1khdLYq7H3aHneWTiayZWtLEMU4Yfs5s2dI1hYA7diFOToeAX9mEJ6Y
+	/3I2xdfV9v1T8Lp24cIEjc/P3NXfzvLGqtDBgyNJ1W4xHRiPQjauEDh1gHWtN4/XkWsaxzplyxx91
+	bTzq4FCZ1/qWnvrTEFlk88xJQq3TSDfe6k7ADhL4UQ7AgFwoYNLPAIMTtbJXwTyfGXwEeAe+ZTdgQ
+	yPMAYTZBZK5c15NgM4USJap8MbfnBWI3+uheSysc7H98ERWnkx28EQsmU0J74icJqClKQtoP3HdSg
+	wxNzg3oCq0q43zrqfSoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUUA0-0002cJ-Rl; Fri, 01 May 2020 11:48:52 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1jUUGD-00063E-95; Fri, 01 May 2020 11:55:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUU9t-0002bC-Lx
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:48:46 +0000
-Received: by mail-lj1-x243.google.com with SMTP id l19so2346852lje.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 04:48:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=dig23RuRs189LdUum62TrNfBwCZg16Ct3kOkDao4T0s=;
- b=Sf4z3HGyNgtaUDgQdmV4w7ppiVAD2yApc+2f9DshZTgeeHrXWs3GIl5v2JZMMdTneJ
- UkKGKv1uBzbPWEaua/VyDRgfiQl0hhxx6pJzgtDZRCiEj+3rnr/mFTogG+IxuGaXR0xs
- NS1w+5UJuaUac65Ie6qFs6oJIQ0S55SK+UKiHt+p0RLrSZjmmmeit7ALgu+Mbv/5/PAl
- 6cGNtly/IIRJmpAyArs4juRFZom/0mUfUYpG+LPIpJh0qndu1yY5NgtBhEyAmp90LR4E
- PQgGli3fJrzDqpVHL3sc8vM+tGrVA6X7qk1Sq0dLWPEcN7/MO4aDBelvs5sIflmIWKcT
- ZVIQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=dig23RuRs189LdUum62TrNfBwCZg16Ct3kOkDao4T0s=;
- b=nAnm0C65PmYQherPIWEZ7Sn3RZYLs5kR+6W6cma6UuUaeObHtbbk/YTTkh8sj3vAao
- VlyTiXG/W5VUddEhPXkbYlIAMAD87Jw/Vijex3gSGUdi9y6T6rVouooBQ2bUDa3Kd4Nq
- bPjaeqgtJPCrSS0/jgtN1iV2XpZrb07RrjVgROrvb6XsbJiTqTNhBdK3OgUL5aGwNlbd
- MXA2/kFzgJtMMH5uQ1DdoVACA4R2ZkcNB+bqybG0s1PqQVcRLoLsBUUxZxwvOLxs5pZq
- RslmX9/dR+9tLZmAvoN2fh4NoDpxMtGSv23gaND0JrCSSuOPAZk3if6DCfuXI5ClGQnH
- nN0Q==
-X-Gm-Message-State: AGi0Pua2/3/iykkdzp87N1ympu4rgckSh/R5zIasC2do+wwRhtiwdCFc
- 3h3iyCu/HIvkQp0PWJR4Yog=
-X-Google-Smtp-Source: APiQypIWbdKP3x5oc5BQj1xS00WNTozEO+AuxkfFnYcJu3dZqHObbFTxNVNKA+3oP/IeUHNQRjeSwQ==
-X-Received: by 2002:a2e:95d2:: with SMTP id y18mr2259265ljh.65.1588333722221; 
- Fri, 01 May 2020 04:48:42 -0700 (PDT)
-Received: from [192.168.0.74] ([178.233.178.9])
- by smtp.gmail.com with ESMTPSA id g19sm2023579lfb.30.2020.05.01.04.48.38
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 01 May 2020 04:48:41 -0700 (PDT)
-Subject: Re: [RFC PATCH v2 1/3] printk: Add function to set console to
- preferred console's driver
-To: Sergey Senozhatsky <sergey.senozhatsky@gmail.com>
-References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
- <20200430161438.17640-2-alpernebiyasak@gmail.com>
- <20200501014454.GB288759@jagdpanzerIV.localdomain>
-From: Alper Nebi Yasak <alpernebiyasak@gmail.com>
-Message-ID: <b1b5514e-936e-a5e4-3dd6-3e640a819ffc@gmail.com>
-Date: Fri, 1 May 2020 14:48:36 +0300
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jUUFr-00062o-Bs
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:54:56 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 69FC8208C3;
+ Fri,  1 May 2020 11:54:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588334095;
+ bh=M4QjCcDYEsfjEYlAdQ6WzNoV9SSKM/Yhzv3VgtSYz3M=;
+ h=From:To:Cc:Subject:Date:From;
+ b=rejoYQmzT9kr5iINJ5pMnDw3oGyGSJ+Y+NhVt/fMrwA1Ohu621arWN59NCppXxL4Z
+ SG8S4UDMETqmijnCL+wmgSUJzApt0cmMNkQ1b4En2gnQy+KoLGtBKQNIddTlKNLQTQ
+ S8EvZzS5Zf1DOPM6rqTp9OTktm3Un+bVwSan5mTE=
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>,
+	Catalin Marinas <catalin.marinas@arm.com>
+Subject: [PATCH v2 0/3] arm64: Finish up assembler annotation modernisation
+Date: Fri,  1 May 2020 12:54:27 +0100
+Message-Id: <20200501115430.37315-1-broonie@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <20200501014454.GB288759@jagdpanzerIV.localdomain>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_044845_722265_4D7B015F 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200501_045455_425219_DF0846BE 
+X-CRM114-Status: GOOD (  10.44  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [alpernebiyasak[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -93,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,41 +74,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Arvind Sankar <nivedita@alum.mit.edu>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01/05/2020 04:44, Sergey Senozhatsky wrote:
-> Hmm. Preferred console selection is very fragile, there are too many
-> setups and workarounds that even minor tweaks introduce regressions
-> oftentimes.
+This series finishes up the conversion of arm64 to use modern assembler
+annotations.  The second patch selects a symbol added by
+2ce0d7f9766f0e49b (x86/asm: Provide a Kconfig symbol for disabling old
+assembly annotations) in -next to ensure that we don't regress and start
+using old annotations again.
 
-All this would only execute on #ifdef VT_CONSOLE right now and I think
-they can be gated further by a new Kconfig like VT_CONSOLE_PREFERRED, if
-that'd make it better.
+This will be needed for BTI kernel support so it'd be good if they could
+end up on that branch, either through merging a topic branch or
+otherwise.  The patches are generated against a merge of v5.7-rc3 and
+for-next/bti-user in the arm64 tree.
 
-> We have, by the way, a pending patchset which changes the same
-> are - preferred console selection.
->
-> git://git.kernel.org/pub/scm/linux/kernel/git/pmladek/printk.git for-5.7-preferred-console
+v2:
+ - Split out ret_to_user conversion and annotate ret_to_user and
+   work_pending as a single code block.
+ - Swap a number of annotations between CODE and FUNC as suggested by
+   Will.
 
-I was working on next-20200430 where that patchset is already included,
-can confirm it doesn't solve this problem. I hope I've correctly avoided
-breaking it by setting its "has_preferred_console" variable (thus this
-patchset somewhat depends on that).
+Mark Brown (3):
+  arm64: entry: Refactor and modernise annotation for ret_to_user
+  arm64: kernel: Convert to modern annotations for assembly functions
+  arm64: Disable old style assembly annotations
 
-> Let me take a look over the weekend.
+ arch/arm64/Kconfig                            |  1 +
+ arch/arm64/kernel/cpu-reset.S                 |  4 +-
+ arch/arm64/kernel/efi-rt-wrapper.S            |  4 +-
+ arch/arm64/kernel/entry-fpsimd.S              | 20 ++++-----
+ arch/arm64/kernel/entry.S                     | 27 ++++++------
+ arch/arm64/kernel/hibernate-asm.S             | 16 +++----
+ arch/arm64/kernel/hyp-stub.S                  | 20 ++++-----
+ arch/arm64/kernel/probes/kprobes_trampoline.S |  4 +-
+ arch/arm64/kernel/reloc_test_syms.S           | 44 +++++++++----------
+ arch/arm64/kernel/relocate_kernel.S           |  4 +-
+ arch/arm64/kernel/sleep.S                     | 12 ++---
+ arch/arm64/kernel/smccc-call.S                |  8 ++--
+ 12 files changed, 83 insertions(+), 81 deletions(-)
 
-Thanks in advance.
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
