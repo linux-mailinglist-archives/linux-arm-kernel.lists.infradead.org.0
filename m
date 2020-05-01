@@ -2,62 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CBD91C1A6A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B25C1C1A7C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:20:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=OLV7p54DQQeQO19RGXay3BH1OF9TA/Yaa36grfcWhM0=; b=brIT+3UFFdUlUiAnOYJIumtfl
-	iEjuZ/xp7kgpUAXcaStwhcxYnJIEW9wDS3j1MEbwFTVF+TWuc38IqzwIxLM9suZC8GNGTkl4l2+38
-	nznY5pGYs5UeQ7Xu8jVfHZzRyYJckGWAVuJBe+8/Fj8dp5k8E1pt8tu5YIqkjgh6BDL5buUl3/Z+k
-	9+SSNAln03HQdWpXf72G+GG7IkdjMprh++ru9HpJ6dGxjSkTgXCNdrQRzFZESaH5tLf3wVd2GQizS
-	D/LgzAFfG0c6gd3ntwwylQAUrr5nXmVVa1bUSMAyQih5AikhHUJ2H4Rk2u2nQiq3pAzlVYAp01xtc
-	k/P2wldfQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Sj8ZaLkYmkENDX7j9ELL0CyuRYddv/3c9YQo9fU+cAI=; b=LwVZHYWihTm5+d
+	GO+gumXkpAcaraLPqK1A7rG/GBMPj1UeKB8ot+Jq8t14MziaSdAt3UKAizxwFugqXD6Wo6UQJz3Fh
+	WwJuVYu4QdxOXLPF2V5prVpfE/PXkenzusyUBR098qnYaXUA/Af7Zxh3IUnNBP7OmKlN2EjTD8iGE
+	faUlF3V109TiODYa0meLAAwwMKcho8z6jSV7CX4aGCikEMWIO4o2RIIEf2eb330PIX12fSU6blvYl
+	n0uu2zizmHwt8ZpdowF9ePQRdrc44MU3/2/6VMGWp+ocT+afH7+YErJ0jrHbD5GoyVuDj+0IQ17nb
+	FbOqC0BfTdeNOW1fr9sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYH1-0008J6-FO; Fri, 01 May 2020 16:12:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUYOj-0006jq-OD; Fri, 01 May 2020 16:20:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYGr-0008H1-L3
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:12:16 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C24D5208DB;
- Fri,  1 May 2020 16:12:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588349533;
- bh=jx9V8VylGK+Rl73d98WTgzFbkAd3ccom+KHXU+FRXyM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WMfRkTytTUPcNFRyOmrmIOU/FMw1vmAFcQOHLvTgIfFQfMCDW4PTzBe7rzDe/u260
- iGSuc4tFenFztVOxxMLcVQnGnakoHJNUHQPe2g6OmD99Av2oaS5/7nf206KcsH2Hxz
- QnppvHqji3l1It8dY57FX6QB8t4b2D6Rm/giCHmQ=
-Date: Fri, 1 May 2020 17:12:10 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v3 3/3] arm64: insn: Report PAC and BTI instructions as
- NOPs
-Message-ID: <20200501161210.GF5276@sirena.org.uk>
-References: <20200501123709.6640-1-broonie@kernel.org>
- <20200501123709.6640-4-broonie@kernel.org>
- <20200501125734.GD53528@C02TD0UTHF1T.local>
+ id 1jUYOP-0005hC-Cw
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:20:03 +0000
+Received: by mail-wr1-x442.google.com with SMTP id k1so12073038wrx.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 09:19:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Xq8gwi8GSwXFvqdFVywCJSsl3feyfQ65SGiht+YKk6g=;
+ b=zPXHbASQoqBg1Npt8Xzk7yRKEqfpEuY7QvZ+IoFuU4VN/odUmoWdUy5Cz+U0MfOaUE
+ 57aux5SMXGvxyPCXn3FSARElWT+5U9lNI1PMOCJX0oo4LSTISVLw2MZRMW4jBqWHv0Sx
+ dhW/SEMp6ZuFzgQylGhx130zFM6abaEh8V1S4P6yRYVSF+hZ+ISSsIQ2RMBq2Y52OKoS
+ 3+RDkp8idiO+IIly+5sfufjOAbwnEws+Yi7YnShsQnspUoqTJPyue8zgSFlnL3SZWYhO
+ 0Qajiy6bhRZWH8taWBHjSmvNkavetqo2dN1E33rugXfXENcPkXkYW8jaJaIacQagbf/g
+ etPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Xq8gwi8GSwXFvqdFVywCJSsl3feyfQ65SGiht+YKk6g=;
+ b=qNDXdesuwfUqymY+FRafnXCm6dnQwZZr3Z6BLqkiWYDB5J/przaJtjJp8Hb2wq90vq
+ cN6z6EFjR6EPG4X4v60RXyU8ljtTQAodLSvh9x3vSbUjgxcC+4GUxSW15YpU28DUfXGa
+ dnwsEaRGMwkyWEYi6Bf5WvKVokiA7R4j5UQh2sVSqXy9INOVunvGhxbwa8/jLHMos682
+ hAjSZTz66d5zSBKA1Jl8k9ptzt7nXYIysh4sIzlCpKIQMnlBJRpap3kUGGLoU6cxsgR6
+ xlO9cqOy/YAQN5B+GE8Zipl5QZKzcVgzNTbHzs8wSqFEpNH8Ns7FVqqpURJHG8yRhtfR
+ EgBQ==
+X-Gm-Message-State: AGi0PubDstQECSBXU1jCFYZp/tj2OulbRDAtlG3prZ3uK6geZ7PvBcpm
+ 6leaDjuIMRTeBZ/OWdAH9wLCcw==
+X-Google-Smtp-Source: APiQypJdqqAmA5NZRljQci8YaPRabwage+tSbfJLtETNB78EkLvJaFcS7Q763kbrV3j/xjoej9nRRg==
+X-Received: by 2002:a5d:60ca:: with SMTP id x10mr4812672wrt.407.1588349998229; 
+ Fri, 01 May 2020 09:19:58 -0700 (PDT)
+Received: from wychelm.lan
+ (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net. [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id h2sm5644313wro.9.2020.05.01.09.19.57
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 01 May 2020 09:19:57 -0700 (PDT)
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>,
+	Will Deacon <will@kernel.org>
+Subject: [PATCH] arm64: cacheflush: Fix KGDB trap detection
+Date: Fri,  1 May 2020 17:19:38 +0100
+Message-Id: <20200501161938.2949443-1-daniel.thompson@linaro.org>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <20200501125734.GD53528@C02TD0UTHF1T.local>
-X-Cookie: Think honk if you're a telepath.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_091213_719748_1047C727 
-X-CRM114-Status: GOOD (  11.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200501_092001_470579_75324F37 
+X-CRM114-Status: GOOD (  12.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,67 +96,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Daniel Thompson <daniel.thompson@linaro.org>, patches@linaro.org,
+ linux-kernel@vger.kernel.org, Douglas Anderson <dianders@chromium.org>,
+ Jason Wessel <jason.wessel@windriver.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============5349783683982836215=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+flush_icache_range() contains a bodge to avoid issuing IPIs when the kgdb
+trap handler is running because issuing IPIs is unsafe (and unnecessary)
+in this exection context. However the current test is flawed: it both
+over-matches (could skip the IPI when the kgdb trap is not running) and
+under-matches (does not skip the IPI for all kgdb cache operations).
 
---===============5349783683982836215==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Km1U/tdNT/EmXiR1"
-Content-Disposition: inline
+Fix by replacing the ad-hoc check with the proper kgdb macro. This also
+allows us to drop the #ifdef wrapper.
 
+Fixes: 3b8c9f1cdfc5 ("arm64: IPI each CPU after invalidating the I-cache for kernel mappings")
+Signed-off-by: Daniel Thompson <daniel.thompson@linaro.org>
+---
+ arch/arm64/include/asm/cacheflush.h | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
---Km1U/tdNT/EmXiR1
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Fri, May 01, 2020 at 01:57:34PM +0100, Mark Rutland wrote:
-
-> I appreciate the desire to not change this code too much, but could we
-> please rename this to aarch64_insn_is_steppable_hint() to avoid the
-> misleading name?
-
-That's definitely clearer.  I've got this change locally but looking at
-the new function name I can see that having done the rename people might
-want to go through and also make sure that the list of HINTs we mark as
-steppable is up to date which is probably a good idea but would hold
-things up further, some of the barriers look like they might need a bit
-of thought.
-
-Will, what would you prefer - should I send out a version with the
-just rename, do that incrementally or some other thing?
-
---Km1U/tdNT/EmXiR1
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6sSlkACgkQJNaLcl1U
-h9Bfkgf/Wy0LOdc6QyJVsa9lJZw8sE1M1GcBKsYwsC0LS44n7ioyAqXuh98B6zHy
-pKlG3R09LK4v6lVCRFBf244WsItYsHXAZJEIkHrRarpe3NJbqBDOmM+V+X8mGAO2
-TVzlPHrEq9rrzFGGW4XyJkJ29BOicCKNsWkQX4J6MsDPKuHIiay3QMRiTFS6ulXp
-/8XGdGGUjy09UdYD+61gXYsQr0Suia2JzAX+2feDigRa2YpMmZ7sgrjEzG6Oq0W6
-NTJV4Sp22Ydc7rfCU2EOo8ReePRmDr05LfROXUB4fPwDO8t6agHuBdSRcdXRR0UW
-RP16od+HcnvIJNQ/GwNlA+lcGtu+XA==
-=M8Sh
------END PGP SIGNATURE-----
-
---Km1U/tdNT/EmXiR1--
+diff --git a/arch/arm64/include/asm/cacheflush.h b/arch/arm64/include/asm/cacheflush.h
+index e6cca3d4acf7..ce50c1f1f1ea 100644
+--- a/arch/arm64/include/asm/cacheflush.h
++++ b/arch/arm64/include/asm/cacheflush.h
+@@ -79,7 +79,7 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
+ 	 * IPI all online CPUs so that they undergo a context synchronization
+ 	 * event and are forced to refetch the new instructions.
+ 	 */
+-#ifdef CONFIG_KGDB
++
+ 	/*
+ 	 * KGDB performs cache maintenance with interrupts disabled, so we
+ 	 * will deadlock trying to IPI the secondary CPUs. In theory, we can
+@@ -89,9 +89,9 @@ static inline void flush_icache_range(unsigned long start, unsigned long end)
+ 	 * the patching operation, so we don't need extra IPIs here anyway.
+ 	 * In which case, add a KGDB-specific bodge and return early.
+ 	 */
+-	if (kgdb_connected && irqs_disabled())
++	if (in_dbg_master())
+ 		return;
+-#endif
++
+ 	kick_all_cpus_sync();
+ }
 
 
---===============5349783683982836215==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: 6a8b55ed4056ea5559ebe4f6a4b247f627870d4c
+--
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5349783683982836215==--
-
