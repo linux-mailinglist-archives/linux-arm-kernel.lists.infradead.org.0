@@ -2,76 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2CD21C0BB9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 03:39:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DDE891C0BBE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 03:40:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=UQHBv1gMlT5a2HZcTc8fkDnN8MICNBGsPQpXNwATIqs=; b=C1F
-	JktweoOHZE6/KvCQyE78mdrphTWuCNVvhC6MK9deyI45TxV3bCo6ZLSY9ldesQ0nOxTpV3wA64omG
-	V1BikRe/Rd83EA0YK0BKpNmwZsePVxCmYzPzNfmDSDB6kzN3bTY27xxdD7GRPLLXwPoknJqzSVbZb
-	40osUKD+KE1sy20zGDdAq6fmjZhsUIzYdVK5d6Pxp2iV1w3rHNPvX7fLnLONUaNTXROt2Ythy7goR
-	pZDVo6NC9C1zjwAZe/i2QBVy05x/o1f9miXZhHzWn4Zmlgwg1WaSE7VUT5EMZGPX7APiJh9qRW4i/
-	mRw4XMPSX4ClNFsCfTKVjnkO1c6jkIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+UGDVoAgMdyJjgM8vaN4kJitfBt9hzLKmHzX+a7vECY=; b=cMW32uHQ5JNDRm
+	teNT/JYkppDO72xDY/D2RUpBmtUYXpRhzL5DJ1b1HqHrZyE8z3mJkCnOwUGlaLY5IF5jarpKvEz0w
+	kBE/uaIpdLSQ5hmJFK8LOac6KjDOa0uMNROxRNlb7ppkw/FiLwicpMo3yahmMAJzk1zKiJcp650VQ
+	FN6Dlu25YiSZPQhkZQez/nJKSyNI5gPBfkv0WUcqO11BHnYgfYCmoRUjdRp/vzxJPnWDCa5l3svtK
+	VB8P0bTll7+sAggqmbDOCweAYDUsN1DC0KlfAs+RKJzaXVaUM+/4awm0z4tHlIubxdLWaqLaqDsVw
+	Zad3sTWtTGzE3jSgbeCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUKeL-0005dr-Ok; Fri, 01 May 2020 01:39:33 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jUKfP-0008Ug-9D; Fri, 01 May 2020 01:40:39 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUKeA-0005dN-Su
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 01:39:24 +0000
-Received: by mail-pg1-x543.google.com with SMTP id s8so3906436pgq.1
+ id 1jUKfD-0008Tw-NR
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 01:40:29 +0000
+Received: by mail-pf1-x441.google.com with SMTP id d184so937751pfd.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 30 Apr 2020 18:39:22 -0700 (PDT)
+ Thu, 30 Apr 2020 18:40:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=JPiPW3RsEi9O9rZXYt6ktq8vAB0cHXP2ySdxLOyO2kU=;
- b=nv1QPz0V0Avjg8hbiC+MrN8KAVAL3B/mLx/JR8uOQzu3vqTWvkr3dzarnOH6sNnlV9
- TM3H44n3O39Mh0SHL+tGqHf+rnZN9g1EfNP5L6OXJI3MA2y8OJQPfWY5BvSsVIyVAnX9
- z1SCozgjnb+FkTy2IoVHXPN23/WeGVNyG1Mai1n68WkRw/NZV9gHRSUaxl2BShu3EL0J
- 3lt4+iHIj6ZEpYLOVMLtN5E2Tl0r11pxxOovD8D7NT1G2Hsk9saNYIWw9RBkBeemZm07
- X6wryxVQokoatew78lbtWHVHTPBv4ts6huzZ6Afg5Igtco3oIhv6P9x7jVJFSS7wJhJF
- v78g==
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=mQqYrPQYFIDRJNtN/SAJy2t+xhyEUoAd2W8p48g17wQ=;
+ b=qOsxv6vEvbD4wGxk4LHlqwR83qbl5dodfHnuXOGhvA4bduTWwFKJL2ZL+Qy5brd1TH
+ LUjSN4TQgb2a1HhOCErAV6sbo+5OK5dTL25GYXh1RrCdrQmomW36pW9jlhh7dmVYb4Rb
+ Xuq2uqKfq71qhtgKEjCjqTdZAJPbCPWf9m946U6eOmBjDggUu4h+yIjI8Egg+K5ycJ3A
+ oOs5Lwqy19kTJohvRjttP13COYBFrMX4Fu5KVcTINGR4W5JKH88g3m7m9pU+eieV7yY5
+ YkeOu0vci/6NUb9qkD2f4Lvb8blVGeMkZY2c7NW6INSurKZZDuZeJAEpn3o47E3uYWVw
+ 6m9w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=JPiPW3RsEi9O9rZXYt6ktq8vAB0cHXP2ySdxLOyO2kU=;
- b=H9WcWlXTphUVwE2WsU8ohg6uM3fSC+US/AOjEiBgTNckwk2F946EnJsVP8c9WOH2No
- xc5NRmtYycy/Kcmrgl88Q2Asd04LO0WYCqNs4mQZOHUbYN5o2BgIviWiMP0WBN2bnmBP
- Bq1js+UmdWBjsAso0rOR75UO7tgQAGVGqwL9mKWO6Amb8qWtIPG0TVuyKAAZXWWs6Nzd
- pbn3ubkAMr9whJjmlNYN9uljgy4MsMKBjVEkhBDKCPaFeNiUNDdPvbwDop9PBY7FRW9l
- AaDjhm+h402U7vZ6DpWtBbVkoIAmHtBdlccFKaZSOM2u0hgL3KJNNqtAYe7tzaY7VBiH
- K4FA==
-X-Gm-Message-State: AGi0PuZvQPNHMKpx21dC3RwafyYFv2jfNLxqJTLDN48H8gUrzcpsEbKS
- Hv91jmfL0V1AJklHQHoUiec=
-X-Google-Smtp-Source: APiQypKaM2jRqDAUG7t5M2NNnM6fZh8ysX9uDUDBnpsP9Q2FDhmbjRBvl82TXDrN/H8023/V2EyCcw==
-X-Received: by 2002:a62:3812:: with SMTP id f18mr1705997pfa.173.1588297161564; 
- Thu, 30 Apr 2020 18:39:21 -0700 (PDT)
-Received: from localhost.localdomain (ip68-111-84-250.oc.oc.cox.net.
- [68.111.84.250])
- by smtp.gmail.com with ESMTPSA id y8sm876836pfg.216.2020.04.30.18.39.19
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 30 Apr 2020 18:39:20 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=mQqYrPQYFIDRJNtN/SAJy2t+xhyEUoAd2W8p48g17wQ=;
+ b=JJXKPdEJ725/h/5PwP3G7HXLcPtFk50kF7CzoRC1ncyhFwhyacTMcsB/gTIV6dh/A5
+ ASSavsZmG4Oqr1loWs+ulMgcBcdI2iG8ORkuGwCkZjv8P0U1D+rhdqOv4hH23D19lK0b
+ 2RKI//r11wV9At/sYaQhzAb/nZdKRaPcy6+asgWXR69Gc/FwmUEd3JbxmTIvQ2kQ8z7P
+ cr3DGK8Kry4KgIWjiAw67dtwSuueqHi8OaRrt66rnrsWqv7UrTJPxz9WK4aca+jRKUlR
+ ucD2L8QdpRg9P4/Q1UCrcwqIlRE3X2iPwXmkSMZN5ZC3bxNFmUQ9iVZT+aUJLUkroOXs
+ pg6Q==
+X-Gm-Message-State: AGi0PuZKJi9gpPCuC2TkyneJT31i6ZAspbDFUbw0GQrB8xs/glzDgw0P
+ ivZPHptyEajco6blLbuXlEA=
+X-Google-Smtp-Source: APiQypJz7l4igwtJb1meMfrQsLaxqn5KYdCbRys7N0lK7x/6DU1RlFfxq8c0rVr+R8v+8Msb3+0V9A==
+X-Received: by 2002:a63:1d46:: with SMTP id d6mr1982542pgm.236.1588297227198; 
+ Thu, 30 Apr 2020 18:40:27 -0700 (PDT)
+Received: from [192.168.1.3] (ip68-111-84-250.oc.oc.cox.net. [68.111.84.250])
+ by smtp.gmail.com with ESMTPSA id
+ f74sm2027363pje.3.2020.04.30.18.40.25
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 30 Apr 2020 18:40:26 -0700 (PDT)
+Subject: Re: [PATCH -next] tty: serial: bcm63xx: fix missing clk_put() in
+ bcm63xx_uart
+To: Greg KH <gregkh@linuxfoundation.org>,
+ Florian Fainelli <f.fainelli@gmail.com>
+References: <1587472306-105155-1-git-send-email-zou_wei@huawei.com>
+ <4cd8f963-9292-faef-1e24-df90821274d6@suse.cz>
+ <73c4cebb-467b-e5d5-89bf-8a6fe29cf858@gmail.com>
+ <20200428111842.GA1159152@kroah.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] Revert "tty: serial: bcm63xx: fix missing clk_put() in
- bcm63xx_uart"
-Date: Thu, 30 Apr 2020 18:39:04 -0700
-Message-Id: <20200501013904.1394-1-f.fainelli@gmail.com>
-X-Mailer: git-send-email 2.17.1
+Message-ID: <589eda5a-296b-daa1-f40c-fd27056ac4b8@gmail.com>
+Date: Thu, 30 Apr 2020 18:40:24 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <20200428111842.GA1159152@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200430_183922_957292_43F68845 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20200430_184027_771799_2BDBD72B 
+X-CRM114-Status: GOOD (  14.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -95,50 +107,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "maintainer:BROADCOM BCM63XX ARM ARCHITECTURE"
- <bcm-kernel-feedback-list@broadcom.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jiri Slaby <jslaby@suse.com>, zou_wei@huawei.com,
- "moderated list:BROADCOM BCM63XX ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-MIME-Version: 1.0
+Cc: linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-serial@vger.kernel.org, Zou Wei <zou_wei@huawei.com>,
+ Jiri Slaby <jslaby@suse.cz>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This reverts commit 580d952e44de5509c69c8f9346180ecaa78ebeec ("tty:
-serial: bcm63xx: fix missing clk_put() in bcm63xx_uart") because we
-should not be doing a clk_put() if we were not successful in getting a
-valid clock reference via clk_get() in the first place.
 
-Fixes: 580d952e44de ("tty: serial: bcm63xx: fix missing clk_put() in bcm63xx_uart")
-Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
----
- drivers/tty/serial/bcm63xx_uart.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/tty/serial/bcm63xx_uart.c b/drivers/tty/serial/bcm63xx_uart.c
-index ed0aa5c0d9b7..5674da2b76f0 100644
---- a/drivers/tty/serial/bcm63xx_uart.c
-+++ b/drivers/tty/serial/bcm63xx_uart.c
-@@ -843,10 +843,8 @@ static int bcm_uart_probe(struct platform_device *pdev)
- 	if (IS_ERR(clk) && pdev->dev.of_node)
- 		clk = of_clk_get(pdev->dev.of_node, 0);
- 
--	if (IS_ERR(clk)) {
--		clk_put(clk);
-+	if (IS_ERR(clk))
- 		return -ENODEV;
--	}
- 
- 	port->iotype = UPIO_MEM;
- 	port->irq = res_irq->start;
+On 4/28/2020 4:18 AM, Greg KH wrote:
+> On Mon, Apr 27, 2020 at 10:29:58AM -0700, Florian Fainelli wrote:
+>>
+>>
+>> On 4/26/2020 11:19 PM, Jiri Slaby wrote:
+>>> On 21. 04. 20, 14:31, Zou Wei wrote:
+>>>> This patch fixes below error reported by coccicheck
+>>>>
+>>>> drivers/tty/serial/bcm63xx_uart.c:848:2-8: ERROR: missing clk_put;
+>>>> clk_get on line 842 and execution via conditional on line 846
+>>>>
+>>>> Fixes: ab4382d27412 ("tty: move drivers/serial/ to drivers/tty/serial/")
+>>>> Reported-by: Hulk Robot <hulkci@huawei.com>
+>>>> Signed-off-by: Zou Wei <zou_wei@huawei.com>
+>>>> ---
+>>>>  drivers/tty/serial/bcm63xx_uart.c | 4 +++-
+>>>>  1 file changed, 3 insertions(+), 1 deletion(-)
+>>>>
+>>>> diff --git a/drivers/tty/serial/bcm63xx_uart.c b/drivers/tty/serial/bcm63xx_uart.c
+>>>> index 5674da2..ed0aa5c 100644
+>>>> --- a/drivers/tty/serial/bcm63xx_uart.c
+>>>> +++ b/drivers/tty/serial/bcm63xx_uart.c
+>>>> @@ -843,8 +843,10 @@ static int bcm_uart_probe(struct platform_device *pdev)
+>>>>  	if (IS_ERR(clk) && pdev->dev.of_node)
+>>>>  		clk = of_clk_get(pdev->dev.of_node, 0);
+>>>>  
+>>>> -	if (IS_ERR(clk))
+>>>> +	if (IS_ERR(clk)) {
+>>>> +		clk_put(clk);
+>>>
+>>> Why would you want to put an erroneous clk?
+>>
+>> Doh, somehow I completely missed, you are right this does not look legit.
+> 
+> Ugh, can you send a revert for this please?
+
+Yes, now done:
+
+https://lore.kernel.org/linux-arm-kernel/20200501013904.1394-1-f.fainelli@gmail.com/
 -- 
-2.17.1
-
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
