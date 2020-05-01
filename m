@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D3A91C1C6C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 19:59:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 862731C1CB5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 20:16:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SX8V4GaIGG/7a3WLV6VY/IvaK3/3dpIXf3ZtAEiKHlk=; b=e8nHRB32dp3vW5
-	UH9qybUncN5belkPiFaLwMSflVbn4HiMbeHqb8DbclPbXdlnGuWvNh9m4zKBWGA3LgGFt6u3UtitI
-	zdzvQx/XAyhsCKGjvHFR5AElmJS9RfQpE05jdUu0zD4qj2FPpjK59GvasL+u9glZ88wppsjSWIXOY
-	HGefODihS1QvjrT8D6IL32QdFPP6fMgUqh7Nd+IsrEsqDvZj6VRHjvBNKLyonByQmoywXI0WYPvLo
-	zkwaGaQKnLIT2x0SpdAPLz3XzhhjyeA7z+yKLqASVVSLrxQzI+eZiYOEWT9EW5pU7vU9vWhJ34S+Q
-	1FeAXjffyfITj9M8gh3A==;
+	List-Owner; bh=N8zqk2PqytjePMR/JEfSwFFhq0A/i7SIT3nWDTzQbl4=; b=oc8EH7EGUVta5e
+	BVD53g/YCyV7z5ayg9DjhlqW1IeW+jENiXjvq4JB0Hbxk6HgZnQmwTbjSPae0ApUUq3qnEJRsaSVT
+	wxHFltSZDaj9F87sWnK/b4rkciavGN+USZOp27IeVPoSmObK67EkcpI5LSoY/eogN8K1U7n5fRnn+
+	tBI/0C2VRd1f8Q/TdnicMHQpyHzGysjtnuoOVW8bvmPVJl2/uOkJdM0SyF9zRmy1XZTse44ToFEz6
+	36OCU9Q5T6wgswKO5coNyPkQDxe1mvEvippnmX6ys6iPJSp0JZKBY4Jn0uW1U50LuxYbRnCgNI5kb
+	B1cw9gG+j+BmHd6+c7dQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUZx0-0004mz-4h; Fri, 01 May 2020 17:59:50 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jUaCb-0003y9-0e; Fri, 01 May 2020 18:15:57 +0000
+Received: from mail-ua1-x942.google.com ([2607:f8b0:4864:20::942])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUZwt-0004ku-6M
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 17:59:44 +0000
-Received: by mail-pg1-x542.google.com with SMTP id s18so4851000pgl.12
+ id 1jUaCU-0003ud-60
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 18:15:51 +0000
+Received: by mail-ua1-x942.google.com with SMTP id a7so4048652uak.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 10:59:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=SrJ+suZtBWr1oaesi/k2ktaEJnaAc56s/fpYYwm6YkQ=;
- b=rtUe86ofD35Jm4kswBmEsEiDvYps/sFLvc+ucRqtIMN6Wg3XEGcRYzZyWhpnEWffql
- I3cAVYkpNiJg9tmvu7bXzxraGLxCbRGRO4ZxtZkJohoMaBUoJdbTCyYKximei2dOynJ3
- hxG6dZLTt74LX5VnwHPk1A1McsjT/SzfbUN1AkGAUJMPYcY8CHlx5nZ5z7wEiqkT4tU6
- ArTfBHszH1/lrdfolV+z/4bLsFO7PgN+KXYar26fPiH2TFLda7soTzqU5Ks1iXxpQ7Xl
- lhRMVyBkTCHNR9RhjR++rAN8EYAFapQFr+yPZ2+hm8nhAtuoAAUy1pE5YWIx7KXTNgj1
- Q2bQ==
+ Fri, 01 May 2020 11:15:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jQmYU3E4gYOODd95gkjzTcf5jbM8W800pOSwBE+R0wA=;
+ b=oaC0AEEo2NvhOsI+1htozQVv14ZztEttOuywn9a8klUXRc5SUM2IDsg94nxs5EsrKe
+ SBeXoZmhWdtBBTpV2fC5XtFyDrbFXDGWf8BuXn8eIBYw3W3S0QYdFU3xlfQfYC6YRXKb
+ kC50qTkxWFaj/9fexujt3n9HeaLcXZSicokEc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SrJ+suZtBWr1oaesi/k2ktaEJnaAc56s/fpYYwm6YkQ=;
- b=AYgHHuEaUBaaMAf19lE0fsawpcdFqG3YFFYsjMHEAzXv8kMfDc/zQ4NKmcn30fNc5Z
- Y5VXAueMBYQlnfuq8S0noPFTQl0IRcj8yFqLynv1rdycoTH4v6oVM718uCK4ynxkFtrb
- w5bcIr/oP+tdwSfxhKe22KsoGSlmSVz+mz9G0rfVgqYh/IEfhfBfAjOI3skfKJAqASjV
- oRuFsSvbP6KHQjivLEuu26sMq8zw1Vc7QX/N9kZCnwZ20lSMDkX3SBfQw8G67VQ/hB9N
- 0Ykq8UegWRKDZLbHZtLAcDTcpxwiOVqOOPZ/syusG1ogNDs/+ZAjMRT2wfy0THN8SzcE
- jk5g==
-X-Gm-Message-State: AGi0PubU40VNUSLAWihNM4u8jPiR8w29cLkVfYrzkaDC0hJr3Ldh/RML
- pfsNTXwxIYAEYMpxjruC/2Y/uA==
-X-Google-Smtp-Source: APiQypKSvb3juH8yufYz3pZtYJr5I7jYwQqi+KNzHP8QMg+pl6CzWIz0QI5ety/mLdAJyEKbW8lq+w==
-X-Received: by 2002:a65:62ce:: with SMTP id m14mr5189526pgv.174.1588355980303; 
- Fri, 01 May 2020 10:59:40 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id e16sm2510386pgg.8.2020.05.01.10.59.39
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 May 2020 10:59:39 -0700 (PDT)
-Date: Fri, 1 May 2020 11:59:37 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Arnaud POULIQUEN <arnaud.pouliquen@st.com>
-Subject: Re: [PATCH v2 00/12] remoteproc: stm32: Add support for
- synchronising with M4
-Message-ID: <20200501175937.GG18004@xps15>
-References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <219771d3-b0a5-0ec7-7f20-d2055bcb0217@st.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jQmYU3E4gYOODd95gkjzTcf5jbM8W800pOSwBE+R0wA=;
+ b=W2AnOkTj8dwF0tx1BHeRWK9jNvSrN7gzSityhMcTsYEadBAh2TbqBM4+9cYYWREU1K
+ hYH4l+oXFifZLJVhR8Z/3FKfyKcHSUnym7dHHabUED2ZU9mJHRvJALbnqBlgqvAWAo/V
+ uDF7A0UcR7J078XecvDkLUjcRXEdlM2c+xkLLFCpzDHakUYOspiZmUD3EisQUGucjswg
+ 9hqV7Vw2f6kzmIZZaest/vk0LyP6QPDyxuT2mtz1Y0cA+HYR2EMdy14MyuLqWydQoO9f
+ wCMlvjTTpD3sikQeV5tc2Qx2WGE7ts0pLRR+owrwmjyVUt5GciewSqKbhr5m5Y5bgTPZ
+ 1cHw==
+X-Gm-Message-State: AGi0PuYi7utilbTZ5OOD+CWHoDihnWQfrbFEMvhZIHLlLbqpDIRNh+5d
+ IgRAuPwTdqiIRLNGGJq/nXtPHkzYuqM=
+X-Google-Smtp-Source: APiQypJBvo4AbmBSav8cJtCDhTUxL4d47OQBPwciq1ZSxRS/T7AXDqK8ciow+FxAcAt0W4yCWQvhTg==
+X-Received: by 2002:ab0:72cb:: with SMTP id g11mr3954862uap.65.1588356946292; 
+ Fri, 01 May 2020 11:15:46 -0700 (PDT)
+Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com.
+ [209.85.221.174])
+ by smtp.gmail.com with ESMTPSA id k184sm973450vke.42.2020.05.01.11.15.45
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 01 May 2020 11:15:45 -0700 (PDT)
+Received: by mail-vk1-f174.google.com with SMTP id w188so2909124vkf.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 11:15:45 -0700 (PDT)
+X-Received: by 2002:a1f:5fc3:: with SMTP id t186mr3772515vkb.92.1588356945201; 
+ Fri, 01 May 2020 11:15:45 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <219771d3-b0a5-0ec7-7f20-d2055bcb0217@st.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200501161938.2949443-1-daniel.thompson@linaro.org>
+In-Reply-To: <20200501161938.2949443-1-daniel.thompson@linaro.org>
+From: Doug Anderson <dianders@chromium.org>
+Date: Fri, 1 May 2020 11:15:33 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=WrdKRfM5ExJnhJBCn1ZBTAviuOSq+judda8YSiwbkREw@mail.gmail.com>
+Message-ID: <CAD=FV=WrdKRfM5ExJnhJBCn1ZBTAviuOSq+judda8YSiwbkREw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: cacheflush: Fix KGDB trap detection
+To: Daniel Thompson <daniel.thompson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_105943_240771_77F8B939 
-X-CRM114-Status: GOOD (  21.98  )
+X-CRM114-CacheID: sfid-20200501_111550_249975_A6FE633A 
+X-CRM114-Status: GOOD (  15.86  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:942 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -88,6 +88,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,83 +100,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, alexandre.torgue@st.com, loic.pallardy@st.com,
- linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Patch Tracking <patches@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
+ Jason Wessel <jason.wessel@windriver.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 05:08:32PM +0200, Arnaud POULIQUEN wrote:
-> Hi Mathieu,
-> 
-> On 4/24/20 10:24 PM, Mathieu Poirier wrote:
-> > This patchset needs to be applied on top of this one [1].
-> > 
-> > It refactors the STM32 platform code in order to introduce support for
-> > synchronising with the M4 remote processor that would have been started by
-> > the boot loader or another entity.
-> > 
-> > It carries the same functionatlity as the previeous revision but account
-> > for changes in the remoteproc core to support synchronisation scenarios.
-> > Some RB tags have been removed when the content of the patch has strayed 
-> > too far from the original version. See patch 3, 8, 9 and 12 for more
-> > details.
-> 
-> I reviewed the series, and made some tests on my side.
-> FYI, I do not answer to patches when tagged "Reviewed-by: Loic Pallardy" 
-> and with no extra remark. So consider them as Reviewed-by me but not
-> necessary to add the tag in commit, Reviewed-by: loic in commit is sufficient. 
+Hi,
 
-Well, if you spent all this time reviewing the code might as well get credit for
-it...  And it also helps maintainers get a feel for how many eyes have looked
-at the code.
+On Fri, May 1, 2020 at 9:20 AM Daniel Thompson
+<daniel.thompson@linaro.org> wrote:
+>
+> flush_icache_range() contains a bodge to avoid issuing IPIs when the kgdb
+> trap handler is running because issuing IPIs is unsafe (and unnecessary)
+> in this exection context. However the current test is flawed: it both
 
-> 
-> Concerning tests, it works find except the crash recovery from a sync start.
-> But i suppose that you know the limitation, waiting Loic patches[1] update :)
+s/exection/execution/
 
-As I commented in the patch itself, I'll fix this so that the condition leading
-to the recovery limbo can't happen.
+> over-matches (could skip the IPI when the kgdb trap is not running) and
+> under-matches (does not skip the IPI for all kgdb cache operations).
 
-Thanks,
-Mathieu
+Maybe explain why?  I believe this is because "kgdb_connected"
+signifies that a host "gdb" is connected.
 
-> 
-> [1]: https://lkml.org/lkml/2020/3/11/403
-> 
-> Thanks a lot for your work!
-> Arnaud
->  
-> 
-> > 
-> > Tested on ST's mp157c board.
-> > 
-> > Thanks,
-> > Mathieu
-> > 
-> > [1]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=277049
-> > [2]. https://patchwork.kernel.org/project/linux-remoteproc/list/?series=239877
-> > 
-> > Mathieu Poirier (12):
-> >   remoteproc: stm32: Decouple rproc from memory translation
-> >   remoteproc: stm32: Request IRQ with platform device
-> >   remoteproc: stm32: Decouple rproc from DT parsing
-> >   remoteproc: stm32: Remove memory translation from DT parsing
-> >   remoteproc: stm32: Parse syscon that will manage M4 synchronisation
-> >   remoteproc: stm32: Get coprocessor state
-> >   remoteproc: stm32: Get loaded resource table for synchronisation
-> >   remoteproc: stm32: Introduce new start ops for synchronisation
-> >   remoteproc: stm32: Update M4 state in stm32_rproc_stop()
-> >   remoteproc: stm32: Introduce new parse fw ops for synchronisation
-> >   remoteproc: stm32: Introduce new loaded rsc ops for synchronisation
-> >   remoteproc: stm32: Set synchronisation state machine if needed
-> > 
-> >  drivers/remoteproc/stm32_rproc.c | 262 ++++++++++++++++++++++++++++---
-> >  1 file changed, 244 insertions(+), 18 deletions(-)
-> > 
+* If we're sitting at the kdb prompt "kgdb_connected" won't be set but
+we might still try to do something with a breakpoint with interrupts
+off.
+
+* If we are currently _not_ stopped in the debugger but the host "gdb"
+is connected then "kgdb_connected" will continue to be set.  In this
+context we will exit early if any other callers happen to try to cache
+flush with interrupts disabled.
+
+
+> Fix by replacing the ad-hoc check with the proper kgdb macro. This also
+> allows us to drop the #ifdef wrapper.
+>
+> Fixes: 3b8c9f1cdfc5 ("arm64: IPI each CPU after invalidating the I-cache for kernel mappings")
+> Signed-off-by: Daniel Thompson <daniel.thompson@linaro.org>
+> ---
+>  arch/arm64/include/asm/cacheflush.h | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+
+Other than the suggestions to the commit message:
+
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
