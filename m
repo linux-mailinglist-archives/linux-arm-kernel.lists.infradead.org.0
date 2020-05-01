@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C61A61C1F44
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 23:10:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B0381C1F60
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 23:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kY3vxYtQgnzapIwWgPDwX5wp66FMHG3xhIVGL5DEmEY=; b=cdI7jG/yVXOmcr
-	3GIaZHX7vv2hTGBR/iFqkNhU5JJSuVix6IOxWRv58I5vnLSgVgiXoNV0orCW8QpQ9uFkC3tooEeV0
-	AMvqOQK9psC7oLQJq3u/X/skGPXbjOouAL9PI0U8KC27FAFtwg/+CHVvBxU3KeQCMXxDKe7RmpNOF
-	9ktCdu0pF2GgPSpu/ipGx8+8G7jlR/yG+45pIt4NKBw43YWz1gXevfUXNbt6ti9peFjXM9guQtd/g
-	2iy20oPfzVVHucmm5iFFcwooR4PAbgcoCAv/tbIWxdhBT1ppPM3MZJ6n0mQm95Cujz8sbg/4YMOE6
-	JAghrjCZ6mlPUVsKgDxw==;
+	List-Owner; bh=xexONLERDVHqBpkIdmPb7qqrp76EyZbBDH16FcFT1D8=; b=nbDAEs78wWB63f
+	6+q+lWzJSYgeWQhKHIKfXJxacqS6pB2SWVW0corpEtvXSwjBKkRnZWGz39rAzJA2uV992xeWkl4YP
+	GaUEQnt6toRj+hSDYzn1Qh99vLxNJF02Gfjyi6t5ACgOH49P0rkMXav5DSmz1CIMsUJKBFWGbyaDh
+	s61/swRNF1VmHXB2WhksYLxr5Mi9iVL0hny8Rdv7z59DzTP2rVekXc7d5IK3mZdi+W+ZYtNLT65X6
+	3EPdj2iizfr0RddRW2p0HQah1zRMwtQwOHHpNOU/v8EJsFp7I9AIa7xAyaWj+0UW0rZNqrSyLbFYf
+	TRsxU57yXBo/58SlwNLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUcv1-0006tt-IX; Fri, 01 May 2020 21:09:59 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jUcxV-0001VW-9W; Fri, 01 May 2020 21:12:33 +0000
+Received: from mail-oo1-f68.google.com ([209.85.161.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUcun-0006rV-KB; Fri, 01 May 2020 21:09:49 +0000
-Received: by mail-ot1-f65.google.com with SMTP id z25so3571591otq.13;
- Fri, 01 May 2020 14:09:45 -0700 (PDT)
+ id 1jUcxO-0001UV-Nf
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 21:12:28 +0000
+Received: by mail-oo1-f68.google.com with SMTP id 190so995249ooa.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 14:12:26 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=azaNq8gnek7T+A7rdK17PV/xQfKmjBVg34Ma1l/t8qw=;
- b=I9MHl3/PqK1G7wIzCtedAKRtVrHR3HnhPyWvBe9HQ1UCr8ioyr3VTuE00mXs8nLKor
- VQfZJHc5VUFnDeyc61hVYm6rMOzpjT3IAfAp6k/3hR4Ge4QAsaM0u1As1g/1e0S7/n0i
- ERMEoYGaALk+q0VouFZs893V/SLsxqWFzSQVbmBAl4u+yw13z0iJlZs6jG+Uvdm4E9C6
- k3WZeX2A+UzR5kTFHl8EaOmUrHS9il+ZcSREwtWe5J86cfccGjCTiBojZkkK8NgBtvuO
- v7z8V7sbF/Eex63yRyQbcl95MRBxXkS/Uq9HCE3Gi6Hb+icHGPgy8gCd6Jx8OZCQh1/F
- +rgQ==
-X-Gm-Message-State: AGi0PuY9mshzXTTR6OlhyMf3ZBjr8arZ2c0FVC1KIvFSCNVg0YbBL5W2
- 1icBVXeyrJGmEzF9yC7AXg==
-X-Google-Smtp-Source: APiQypLECOBaRa68pLT9OXVtC6bUt86y91nQBnNKSvn0KMAG/61MoBxyIwqFEkO/eNcHjZD1+jP0MQ==
-X-Received: by 2002:a05:6830:20d8:: with SMTP id
- z24mr5338741otq.74.1588367384402; 
- Fri, 01 May 2020 14:09:44 -0700 (PDT)
+ bh=neD/3SOtF63yPlH47C0TH4isewUnsErPWNSdocH1b/Y=;
+ b=JZ/zyePET2KuWfBDBIW5fJwmnspVANbm4SCLG8xI1ybcs3I3sfrzM4ZDd30jLE4sIy
+ d2i/hb0oDequ6zJ13jOy92G25hcQWmDGPcXOBsjhaDXfR8skSTV4ojuqfcCYO07h3o44
+ +r78Aqf9tluo3Ij04NNyDNpgGmzrppg32EYSDoo/EOmhYZr3czaWPSgBZRtYKkluPQ7k
+ tXYNdihB1Q7NeDQDHOyJEFCjpICWfVdiAprjvruGAAPz7Hn910tuE7ypmlUqBtqrjgQL
+ kcySRBh+f2s9Wq9CHapArBzd/DV+KVb2h6xqtzSAN+ANSv3SSLS2+Z9WJOzd1H4Z4dz+
+ JR5w==
+X-Gm-Message-State: AGi0PuZdrNxaHrI0XjaG97VXdb8FEcN8edL4w/0IEMZrZ7+vnD/w/W2p
+ eG7BrhMEfR0MeKWd/DWLXQ==
+X-Google-Smtp-Source: APiQypKGhKxUyl+qsvUosFPfbz8Np364y+bmPabAQjUDSrdYJ8AgozNEzaWPIVO80Fd7yqrgs2bFCw==
+X-Received: by 2002:a4a:e60d:: with SMTP id f13mr5467792oot.6.1588367545541;
+ Fri, 01 May 2020 14:12:25 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id h24sm1105171otj.25.2020.05.01.14.09.43
+ by smtp.gmail.com with ESMTPSA id k24sm1118263otn.32.2020.05.01.14.12.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 May 2020 14:09:43 -0700 (PDT)
-Received: (nullmailer pid 30822 invoked by uid 1000);
- Fri, 01 May 2020 21:09:42 -0000
-Date: Fri, 1 May 2020 16:09:42 -0500
+ Fri, 01 May 2020 14:12:24 -0700 (PDT)
+Received: (nullmailer pid 3449 invoked by uid 1000);
+ Fri, 01 May 2020 21:12:24 -0000
+Date: Fri, 1 May 2020 16:12:24 -0500
 From: Rob Herring <robh@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH RFC v2 02/11] dt-bindings: net: dwmac-meson: Document the
- "timing-adjustment" clock
-Message-ID: <20200501210942.GA27082@bogus>
-References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
- <20200429201644.1144546-3-martin.blumenstingl@googlemail.com>
+To: Priit Laes <plaes@plaes.org>
+Subject: Re: [PATCH v3 4/6] dt-bindings: net: sun7i-gmac: Add syscon support
+Message-ID: <20200501211224.GA2673@bogus>
+References: <20200430115702.5768-1-plaes@plaes.org>
+ <20200430115702.5768-5-plaes@plaes.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429201644.1144546-3-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200430115702.5768-5-plaes@plaes.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_140945_660938_79C35620 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200501_141226_769242_F731DFAA 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
+ no trust [209.85.161.68 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -80,7 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ [209.85.161.68 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -95,37 +94,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, f.fainelli@gmail.com, jianxin.pan@amlogic.com,
- devicetree@vger.kernel.org,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Priit Laes <plaes@plaes.org>,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Apr 2020 22:16:35 +0200, Martin Blumenstingl wrote:
-> The PRG_ETHERNET registers can add an RX delay in RGMII mode. This
-> requires an internal re-timing circuit whose input clock is called
-> "timing adjustment clock". Document this clock input so the clock can be
-> enabled as needed.
+On Thu, 30 Apr 2020 14:57:00 +0300, Priit Laes wrote:
+> Now that driver supports syscon-based regmap access, document also the
+> devicetree binding.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Priit Laes <plaes@plaes.org>
 > ---
->  .../devicetree/bindings/net/amlogic,meson-dwmac.yaml   | 10 +++++++---
->  1 file changed, 7 insertions(+), 3 deletions(-)
+>  .../bindings/net/allwinner,sun7i-a20-gmac.yaml    | 15 +++++++++++++--
+>  1 file changed, 13 insertions(+), 2 deletions(-)
 > 
 
 My bot found errors running 'make dt_binding_check' on your patch:
 
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: Additional items are not allowed ([4294967295] was unexpected)
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: [[4294967295], [4294967295], [4294967295], [4294967295]] is too long
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: Additional items are not allowed ([4294967295] was unexpected)
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: [[4294967295], [4294967295], [4294967295], [4294967295]] is too long
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.example.dt.yaml: ethernet@1c50000: clock-names: ['stmmaceth'] is too short
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/allwinner,sun7i-a20-gmac.example.dt.yaml: ethernet@1c50000: clocks: [[4294967295, 49]] is too short
 
-See https://patchwork.ozlabs.org/patch/1279646
+See https://patchwork.ozlabs.org/patch/1280292
 
 If you already ran 'make dt_binding_check' and didn't see the above
 error(s), then make sure dt-schema is up to date:
