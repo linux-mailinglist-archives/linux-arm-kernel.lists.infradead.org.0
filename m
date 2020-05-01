@@ -2,49 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 811751C1B83
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 19:19:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B51EB1C1B89
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 19:20:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gEyprrcezWs6h5RXnlB6hyJh+TtK2/WVsykOVmWjZzg=; b=Sxvvr7KkSqayOi
-	CXeO/maUgmtEIehAV5Hb7A5GK2jRSdiUAbrb8Ci8QW0BDww4bG6uWNt6PJz+cFceNHcKh6fXCLoBF
-	2dHF/RCDjSSf8UU7VdmgXnha0R9tD4yK7nmjycAH5aw1q/EAH0zYqICHqLYAqtYNgdOd0DjHP8J/j
-	nyhU8akxJf3EmZF7yIhs+xBYR+3RZ/7FdijV+5DLHx4+tzgioS9c8sHvpMm38z9vQt+BSbYejHcOG
-	QGSOJ0iSst7EVAa7Ax6o/DFPfFaqw9SOFE1wKdFmDtX8Sem25KztID+18dYC4N9y59c2thwrcWmPR
-	KBAJQXSW4flCX52cS+9g==;
+	List-Owner; bh=vZ7e5DoScHBfVSQa0B1le4w13gszhUCSEhm7v2YddgQ=; b=Tu+lTIkzDCjnpE
+	dSID3OQgHuRuj7i5EmaiCfDOsZUfxh4VtFoe6l/rr/thsGP1gEjzVjipcLZ/aXbxpZS6yr71jUW/I
+	1UJg/fkPghbUZ3y6PPNZ5dxOHwk6c6d1RJOCXYCnbqVw9KwqDhddY+yb7ZA2jnwBwURxP/qaPJPkW
+	DMvmva51pS5QsrNJ9/6jGWSaqXnIR5wtwy/4FU/Ejy1ChidI7Ibil063xkcXtXdHuT7wXIveZlOxv
+	c+HtAXC5JDuCxHuIiASxoJ3adZF5mT7XUXRH0jmxDxHzrGF4HbCJ7OAnmztga0xODtl+XCCZ8vO3e
+	bjfjdIjh2iGrRTvLnSww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUZJb-00013n-19; Fri, 01 May 2020 17:19:07 +0000
+	id 1jUZLB-0004B2-KG; Fri, 01 May 2020 17:20:45 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUZJC-0000uJ-Re
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 17:18:44 +0000
+ id 1jUZL2-0004A0-QP
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 17:20:38 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D0F130E;
- Fri,  1 May 2020 10:18:42 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0B2D930E;
+ Fri,  1 May 2020 10:20:36 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.80])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D60D43F305;
- Fri,  1 May 2020 10:18:38 -0700 (PDT)
-Date: Fri, 1 May 2020 18:18:35 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 764B23F305;
+ Fri,  1 May 2020 10:20:32 -0700 (PDT)
+Date: Fri, 1 May 2020 18:20:29 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 14/16] vexpress: Move setting master site to
- vexpress-config bus
-Message-ID: <20200501171835.GL14018@bogus>
+Subject: Re: [PATCH v2 00/17] Modularizing Versatile Express
+Message-ID: <20200501172029.GM14018@bogus>
 References: <20200429205825.10604-1-robh@kernel.org>
- <20200429205825.10604-15-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-15-robh@kernel.org>
+In-Reply-To: <20200429205825.10604-1-robh@kernel.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_101842_951205_8064DA51 
-X-CRM114-Status: UNSURE (   8.73  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200501_102036_899453_57E6EF4E 
+X-CRM114-Status: GOOD (  14.28  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -74,22 +71,42 @@ Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Will Deacon <will@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
  Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBBcHIgMjksIDIwMjAgYXQgMDM6NTg6MjNQTSAtMDUwMCwgUm9iIEhlcnJpbmcgd3Jv
-dGU6Cj4gVGhlcmUncyBvbmx5IGEgc2luZ2xlIGNhbGxlciBvZiB2ZXhwcmVzc19jb25maWdfc2V0
-X21hc3RlcigpIGZyb20KPiB2ZXhwcmVzcy1zeXNyZWcuYy4gTGV0J3MganVzdCBtYWtlIHRoZSBy
-ZWdpc3RlcnMgbmVlZGVkIGF2YWlsYWJsZSB0bwo+IHZleHByZXNzLWNvbmZpZyBhbmQgbW92ZSBh
-bGwgdGhlIGNvZGUgdGhlcmUuIFRoZSByZWdpc3RlcnMgbmVlZGVkIGFyZW4ndAo+IHVzZWQgYW55
-d2hlcmUgZWxzZSBlaXRoZXIuIFdpdGggdGhpcywgd2UgY2FuIGdldCByaWQgb2YgdGhlIHByaXZh
-dGUgQVBJCj4gYmV0d2VlbiB0aGVzZSAyIGRyaXZlcnMuCj4KPiBDYzogU3VkZWVwIEhvbGxhIDxz
-dWRlZXAuaG9sbGFAYXJtLmNvbT4KClNvbWUgb2YgdGhlIG1hY3JvIGNoYW5nZXMgYmVsb3cgYXJl
-IG5vdCBzbyBlYXN5IHRvIGZvbGxvdy9yZXZpZXcuClNpbmNlIG5vdGhpbmcgaXMgYnJva2VuLAoK
-QWNrZWQtYnk6IFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+Cgpmb3IgdGhpcyBh
-bG9uZSDwn5iBLgoKLS0KUmVnYXJkcywKU3VkZWVwCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Wed, Apr 29, 2020 at 03:58:09PM -0500, Rob Herring wrote:
+> This series enables building various Versatile Express platform drivers
+> as modules. The primary target is the Fast Model FVP which is supported
+> in Android. As Android is moving towards their GKI, or generic kernel,
+> the hardware support has to be in modules. Currently ARCH_VEXPRESS
+> enables several built-in only drivers. Some of these are needed, but
+> some are only needed for older 32-bit VExpress platforms and can just
+> be disabled. For FVP, the pl111 display driver is needed. The pl111
+> driver depends on vexpress-osc clocks which had a dependency chain of
+> vexpress-config --> vexpress-syscfg --> vexpress-sysreg. These
+> components relied on fixed initcall ordering and didn't support deferred
+> probe which would have complicated making them modules. All these levels
+> of abstraction are needlessly complicated, so this series simplifies
+> things a bit by merging the vexpress-config and vexpress-syscfg
+> functionality.
+>
+> There's a couple of other pieces to this which I've sent out separately
+> as they don't have dependencies with this series. The cross subsystem
+> dependencies in this series are mainly the ordering of enabling drivers
+> as modules.
+>
+> A complete git branch is here[1]. Tested on Fast Model FVP Rev C.
+
+I am assuming you will send pull request to ARM SoC guys directly. Let
+me know what's the plan if that's not the case.
+
+--
+Regards,
+Sudeep
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
