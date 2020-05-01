@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF2C51C1AE6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:55:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 154E41C1AF2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:57:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=piECwtiAeAKrKJdnLIKl7KQDNx/fjlrPnpxtoBM+JWo=; b=hjRrCztWNwN1yM
-	zrC1EtHxtG/SWE6ZV8o4AUpIW7WAjnv2wO48A3Io0mxQpew95OY04kIBwDAUf7dDtumjvCq2MLTq3
-	Y3V4jL3ebH2ofjPNd3XvN0yZ+M+5xaOsskRRZhFyy9YADAWaRAaHC78T+eZ4WgkAeXgkclQbOzd84
-	XOCanaC9vHVK/MFDNWNBKNslWBIWNaa/T3kPqybo0QCnDq77ToDKYcalhGH4k0svIU7dGwtxWCkjt
-	hA9hYHPY4VaZmD3PLVcnUfX87lgEAR2C7pREa7YUVcItkSFSR7XcI2/OmXctgE2qa/xsSyHRfsmLl
-	oK/KVAkfGIC6a00P7BxQ==;
+	List-Owner; bh=lbDZTNsOVDtZAeT4Iq+0g04ufN/CgToYIm3vUBjs+Fg=; b=NLMl/vKfGzButY
+	jaZaYrpLIaYn+lVq3kB6hTC1tulHcNRyQdQKgKbzknYVS0/TTZhLdoPmGFdLCGoMuTz082y6OZ7/A
+	Mn22bGHEQjUurC+7swQM5tVjcHvgmD1QhTwOqgqJqyrfIxKy5ynEmtCazXSsTiV+QyLylNNiJLSQC
+	RUkqubzjrHx0xdX5ISWkqVeWQazIiJnIxEkuVbF2zGrpKqZyliQjEMTDJTmfhOjD4omNKg2pPPOwt
+	o/Nmq0zZuDD+AiZWm2dbpAst3kbqfVsL8ZRhAFf8tBE4XxtDl6TCQev1wHl6dN9fJVg3zTgB2NFcq
+	4ez4OyeFKzDKEpc1anig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYwq-0002Dl-P4; Fri, 01 May 2020 16:55:36 +0000
+	id 1jUYyL-0002yY-R4; Fri, 01 May 2020 16:57:09 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYwk-0002Cm-85
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:55:31 +0000
+ id 1jUYyD-0002xo-Fu
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:57:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62D5830E;
- Fri,  1 May 2020 09:55:28 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 11ADA30E;
+ Fri,  1 May 2020 09:57:01 -0700 (PDT)
 Received: from bogus (unknown [10.37.12.80])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0B6803F305;
- Fri,  1 May 2020 09:55:24 -0700 (PDT)
-Date: Fri, 1 May 2020 17:55:21 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 855B13F305;
+ Fri,  1 May 2020 09:56:57 -0700 (PDT)
+Date: Fri, 1 May 2020 17:56:54 +0100
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v2 16/16] ARM: vexpress: Don't select VEXPRESS_CONFIG
-Message-ID: <20200501165521.GF14018@bogus>
+Subject: Re: [PATCH v2 10/16] mfd: vexpress-sysreg: Use devres API variants
+Message-ID: <20200501165654.GG14018@bogus>
 References: <20200429205825.10604-1-robh@kernel.org>
- <20200429205825.10604-17-robh@kernel.org>
+ <20200429205825.10604-11-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429205825.10604-17-robh@kernel.org>
+In-Reply-To: <20200429205825.10604-11-robh@kernel.org>
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_095530_336296_EFCAA2AA 
-X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-CacheID: sfid-20200501_095701_569389_4B3DE8A5 
+X-CRM114-Status: UNSURE (   8.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,11 +78,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:58:25PM -0500, Rob Herring wrote:
-> CONFIG_VEXPRESS_CONFIG has 'default y if ARCH_VEXPRESS', so selecting is
-> unnecessary. Selecting it also prevents setting CONFIG_VEXPRESS_CONFIG
-> to a module.
+On Wed, Apr 29, 2020 at 03:58:19PM -0500, Rob Herring wrote:
+> Use the managed devm_gpiochip_add_data() and devm_mfd_add_devices()
+> instead of their unmanaged counterparts. With this, no .remove() hook is
+> needed for driver unbind.
 > 
+> Cc: Liviu Dudau <liviu.dudau@arm.com>
 > Cc: Sudeep Holla <sudeep.holla@arm.com>
 
 Reviewed-by: Sudeep Holla <sudeep.holla@arm.com>
