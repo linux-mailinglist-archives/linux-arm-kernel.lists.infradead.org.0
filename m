@@ -2,69 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 045971C12BE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 15:18:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 177961C12C7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 15:22:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eCHRy2ITS4dLU1gdvJRKOUrh+hKJb6f6C4F4R2U8+SM=; b=VAWwtDPXbd3Bpp
-	1cKL2d6g0usMX6yyHXFUBKqQi9TrRbL1v1gB/XSpfED2/YMvC7WZThovH2yQWIN2OJHNM1ar6KHuT
-	GreyNdlqNtjlG12a6BBzsPPorkNNkMRXJh+tENuY6rNMHQqiim60G3F6qt2KaVJXQYvBa0YuF4HqG
-	OpxMyhQgp2HuuneqT0DRtNqV9CJEs7UpehkytnpUKN0ZT2SjfbI4yojEDD0+zRQjO/3b/zJRs+dAo
-	GcLzpxaMwZ0CnIhe6p3bYnDwws6q1zgcJghwYrF+v3lq0aKFFFNg9HPYkCoVIK8OPB8+Ur+B+lyYT
-	hD+wn4tkYvwnf5FwSUWw==;
+	List-Owner; bh=boou3g1rivlrLc+IBONP6HuibIX5WeAoEFw8vX5kcmw=; b=YAysxyfK1Mz71V
+	DhpR4AGyNjjD6lYRgludu4C/xZvbyiHuSgiIFpixIEp+h18TJ4CWnyXdPuWO60TUA/SHQdNLSBcH/
+	05bY+Ow5cSOnnZ9SGoX+rfsF9BzeBqCHy2EWrSN/E7997BzSPfYqn6YHz12sGbAdbdyyHqEjcExCN
+	+x5eX7XhozFspHQ2+mxhPT5Gn0lrRYllWuMjUATbvNfupJ3HaAUhO1Uh0XaZKdDiIyTqjaxb6Uj26
+	4ijjPotlFT1i35Pey7RUHnCCQ2ypgltyX9FwvEHPEEVtE+sLgLa41POQndjBQjYNRGXVNGE5sKERb
+	nLsEnhoCOxNHLwh2Mv/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUVZ5-0005dZ-Q0; Fri, 01 May 2020 13:18:51 +0000
+	id 1jUVcL-00012z-QF; Fri, 01 May 2020 13:22:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUVYy-0005d9-9M
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 13:18:45 +0000
-Received: from mail-oi1-f172.google.com (mail-oi1-f172.google.com
- [209.85.167.172])
+ id 1jUVcC-00011g-M7; Fri, 01 May 2020 13:22:06 +0000
+Received: from mail-ej1-f43.google.com (mail-ej1-f43.google.com
+ [209.85.218.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 92D74208D6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  1 May 2020 13:18:43 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 07BFB24954;
+ Fri,  1 May 2020 13:22:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588339123;
- bh=J0kG6Z5B+5vJ4yJTDzvDaFXRmJr/dRrJSSeRvMvltRY=;
+ s=default; t=1588339324;
+ bh=FiimbkqFnjmC2xnhT8xRMf1+qKdE7XRvufOkGvNa1FY=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=CCC1NvG06y+cp5Ef4bDAo0TGr7/wKVfHCYsbNi6phG34DeG7zHEH8n9cUhx89gV7p
- xs/wTiWcKEkFMpRqHpvur/SWssP111UJiom0RO4dL7Aq92MluXx+OSVYeywH+J7CMy
- jSZtmz6eupHTAUExYeqa9bBVMcPQuvvA9RpFd+do=
-Received: by mail-oi1-f172.google.com with SMTP id k133so2595182oih.12
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 06:18:43 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaTrulSptiIU6wJUlZ0PfI7YWOmtaktAkvgkeu3KtOTtI8r+ZDK
- jU2FY5Ii+VeVIu40NIU491NTC4DEdg0+HgFYDg==
-X-Google-Smtp-Source: APiQypKJRTSvBINORuAGd9rJ+1Od8gsw+57/nIuNYUtVMWxRmUA03OTpX3lvdJrg6eQMtcKjF7yl4OwXe6mhJ2HgSzY=
-X-Received: by 2002:a05:6808:24f:: with SMTP id
- m15mr3083301oie.152.1588339122764; 
- Fri, 01 May 2020 06:18:42 -0700 (PDT)
+ b=HvnO9yna5TWnLYTjDylC0X8aGKnLwQPuRBiXUfPqDgqolRE08Nyu2wdfMX0fvd8+t
+ iG8YOhLdwzEm2ZMdW9ikhZn0jKNPYekjFTM7Rnd4vE913OfOTczNjFwXLfaQeXqyxM
+ D0YwAicXXdDuWsV+9R67UUwKJC1krNgbC11iO+oE=
+Received: by mail-ej1-f43.google.com with SMTP id x1so7444879ejd.8;
+ Fri, 01 May 2020 06:22:03 -0700 (PDT)
+X-Gm-Message-State: AGi0PubS35YuOxVwZLJiWqyiQjodiu+qf6Yq+AUXfIyPLO4WkpiDOtEF
+ xiERML2q6+rDgEbwiFcbN1bj+DzLM25c0kLNeA==
+X-Google-Smtp-Source: APiQypIl3gBr7lZocFLW1gar0arYtJWjboax4hKeSZ4BY9SY75ypgsnZSc5nuRVr1dbcjoOLhiO2F/63abGFRjTVv/U=
+X-Received: by 2002:a17:906:eb90:: with SMTP id
+ mh16mr3169239ejb.201.1588339322257; 
+ Fri, 01 May 2020 06:22:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200417165519.4979-1-tony@atomide.com>
- <20200417165519.4979-3-tony@atomide.com>
- <62be90e2-7dbe-410d-4171-c0ad0cddc7a3@linaro.org>
- <20200427143144.GQ37466@atomide.com>
- <29f39839-b3ed-cac3-1dea-c137286320b1@linaro.org>
- <20200427152329.GR37466@atomide.com>
- <20200430140040.GA8363@bogus> <20200430153119.GX37466@atomide.com>
-In-Reply-To: <20200430153119.GX37466@atomide.com>
-From: Rob Herring <robh@kernel.org>
-Date: Fri, 1 May 2020 08:18:31 -0500
-X-Gmail-Original-Message-ID: <CAL_Jsq+Xqv0JByAK-tYj8aHDhuB5rYrn0NXQxkm97j0P1zqGPg@mail.gmail.com>
-Message-ID: <CAL_Jsq+Xqv0JByAK-tYj8aHDhuB5rYrn0NXQxkm97j0P1zqGPg@mail.gmail.com>
-Subject: Re: [PATCH 02/14] clocksource/drivers/timer-ti-dm: Add clockevent and
- clocksource support
-To: Tony Lindgren <tony@atomide.com>
+References: <20200417150614.2631786-1-enric.balletbo@collabora.com>
+ <20200417150614.2631786-5-enric.balletbo@collabora.com>
+In-Reply-To: <20200417150614.2631786-5-enric.balletbo@collabora.com>
+From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+Date: Fri, 1 May 2020 21:21:48 +0800
+X-Gmail-Original-Message-ID: <CAAOTY_-nzdS-jg2pgpM1ksrsQVewB2AEB8TihHcCB-MJd+qFfw@mail.gmail.com>
+Message-ID: <CAAOTY_-nzdS-jg2pgpM1ksrsQVewB2AEB8TihHcCB-MJd+qFfw@mail.gmail.com>
+Subject: Re: [PATCH v3 4/7] drm/mediatek: mtk_dsi: Convert to bridge driver
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_061844_369954_50F75468 
-X-CRM114-Status: GOOD (  30.89  )
+X-CRM114-CacheID: sfid-20200501_062204_762041_49BE51CF 
+X-CRM114-Status: GOOD (  21.29  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,137 +84,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Aaro Koskinen <aaro.koskinen@iki.fi>,
- Lokesh Vutla <lokeshvutla@ti.com>, Keerthy <j-keerthy@ti.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Stephen Boyd <sboyd@kernel.org>,
- Andreas Kemnade <andreas@kemnade.info>,
- "H. Nikolaus Schaller" <hns@goldelico.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap <linux-omap@vger.kernel.org>,
- Adam Ford <aford173@gmail.com>, linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 10:31 AM Tony Lindgren <tony@atomide.com> wrote:
->
-> * Rob Herring <robh@kernel.org> [200430 14:01]:
-> > On Mon, Apr 27, 2020 at 08:23:29AM -0700, Tony Lindgren wrote:
-> > > * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 15:03]:
-> > > > On 27/04/2020 16:31, Tony Lindgren wrote:
-> > > > > Hi,
-> > > > >
-> > > > > * Daniel Lezcano <daniel.lezcano@linaro.org> [200427 09:19]:
-> > > > >> On 17/04/2020 18:55, Tony Lindgren wrote:
-> > > > >>> --- a/Documentation/devicetree/bindings/timer/ti,timer.txt
-> > > > >>> +++ b/Documentation/devicetree/bindings/timer/ti,timer.txt
-> > > > >>> @@ -14,6 +14,8 @@ Required properties:
-> > > > >>>                       ti,omap5430-timer (applicable to OMAP543x devices)
-> > > > >>>                       ti,am335x-timer (applicable to AM335x devices)
-> > > > >>>                       ti,am335x-timer-1ms (applicable to AM335x devices)
-> > > > >>> +                     ti,dmtimer-clockevent (when used as for clockevent)
-> > > > >>> +                     ti,dmtimer-clocksource (when used as for clocksource)
-> > > > >>
-> > > > >> Please, submit a separate patch for this.
-> > > > >>
-> > > > >> Before you resend as is, this will be nacked as clocksource / clockevent
-> > > > >> is not a hardware description but a Linux thing.
-> > > > >>
-> > > > >> Finding a way to characterize that from the DT is an endless discussion
-> > > > >> since years, so I suggest to use a single property for the timer eg
-> > > > >> <ti,dmtimer> and initialize the clocksource and the clockevent in the
-> > > > >> driver.
-> > > > >
-> > > > > Hmm good point. We still need to specify which timer is a clocksource
-> > > > > and which one a clockevent somehow.
-> > > > >
-> > > > > Maybe we could have a generic properties like the clock framework such as:
-> > > > >
-> > > > > assigned-system-clocksource
-> > > > > assigned-system-clockevent
-> > > >
-> > > > I think that will be the same problem :/
-> > >
-> > > Seems like other SoCs have the same issue too with multiple timers
-> > > to configure.
-> > >
-> > > > Is it possible to check the interrupt for the clockevent ? A timer node
-> > > > with the interrrupt is the clockevent, without it is a clocksource.
-> > >
-> > > OK let's try that. So the configuration would become then:
-> > >
-> > > compatible = "ti,dmtimer;   /* reserved for system timers */
-> > > /delete-property/interrupts;        /* ok so it's a clocksource */
-> > > /delete-property/interrupts-extended;
-> >
-> > That's not really what was meant.
->
-> OK, so let's figure out something better then.
->
-> > Let's say you have N timers. Either every timer is exactly the same and
-> > the OS can just assign them however it wants or there is some difference
-> > in the h/w making certain timer better for certain functions. Describe
-> > that difference. It could be clock rate, number of counter bits, always
-> > on, secure mode access only, has or doesn't have output compare or input
-> > capture, etc.
->
-> Hmm. Trying to detect this automatically will get messy. For example,
-> we have few omap3 boards with the following options that also need to
-> consider if the separate 32KiHz counter is available:
->
-> 1. The best case scenario
->
-> ti,omap-counter32k clocksource
-> ti,sysc-omap2-timer ti,timer-alwon clockevent (timer1)
->
-> 2. Boards relying on internal clock with unusable 32k counter
->
-> ti,sysc-omap2-timer ti,timer-alwon clocksource (timer12)
-> ti,sysc-omap2-timer clockevent (typically gpt2)
->
-> In the second case, the 32k counter is unusable, and timer1
-> is unusable with the external 32k always on clock. But timer1
-> can be used with the system clock just fine for other purposes.
-> So ideally we would not tag timer1 as disabled :)
-
-I'm perfectly fine with a 'broken 32k clk' type property.
-
-Though I think the compatibility story is not good changing DT for
-stuff needed to boot and needed early in boot. It's one thing to break
-something not required to get a system booted.
-
-> For the second case, we could remove ti,timer-alwon property
-> for timer1, and tag the 32k counter as disabled as the source
-> clock is unreliable. Then somewhere in the code we would need
-> to check if ti,omap-counter32k is availabe, then check if
-> timer1 is always-on, then use timer12 if not a secure device
-> like n900.
-
-IIRC, there's some OMAP timer properties for secure vs. non-secure.
-(It's not the first time we've had this discussion on TI timers.)
-
-> If the board wants to use the system clock as the source for
-> a higher resolution with assigned-clock-parents, then we'd need
-> to ignore the always-on property and not use the 32k counter as
-> the clocksource. Basically to somehow figure out that a higher
-> resolution configuration is preferred over a
-> low-power configuration.
-
-That could be something you want to pick at run-time.
-
-> So what's your take on just adding the generic properties for
-> assigned-system-clocksource and clockevent?
-
-I'm tired of discussing this for 10 years...
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksIEVucmljOgoKRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFi
+b3JhLmNvbT4g5pa8IDIwMjDlubQ05pyIMTfml6Ug6YCx5LqUIOS4i+WNiDExOjA25a+r6YGT77ya
+Cj4KPiBDb252ZXJ0IG10a19kc2kgdG8gYSBicmlkZ2UgZHJpdmVyIHdpdGggYnVpbHQtaW4gZW5j
+b2RlciBzdXBwb3J0IGZvcgo+IGNvbXBhdGliaWxpdHkgd2l0aCBleGlzdGluZyBjb21wb25lbnQg
+ZHJpdmVycy4KPgo+IFNpZ25lZC1vZmYtYnk6IEVucmljIEJhbGxldGJvIGkgU2VycmEgPGVucmlj
+LmJhbGxldGJvQGNvbGxhYm9yYS5jb20+Cj4gLS0tCj4KPiBDaGFuZ2VzIGluIHYzOgo+IC0gQWRk
+IHRoZSBicmlkZ2UudHlwZS4gKExhdXJlbnQgUGluY2hhcnQpCj4KPiBDaGFuZ2VzIGluIHYyOiBO
+b25lCj4KPiAgZHJpdmVycy9ncHUvZHJtL21lZGlhdGVrL210a19kc2kuYyB8IDkzICsrKysrKysr
+KysrKysrKysrKysrKystLS0tLS0tLQo+ICAxIGZpbGUgY2hhbmdlZCwgNjkgaW5zZXJ0aW9ucygr
+KSwgMjQgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL21lZGlh
+dGVrL210a19kc2kuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHNpLmMKPiBpbmRl
+eCAzN2I4ZDdmZmQ4MzUuLjg2OWFlMGEyZTlmOCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9k
+cm0vbWVkaWF0ZWsvbXRrX2RzaS5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL21lZGlhdGVrL210
+a19kc2kuYwo+IEBAIC0xODAsNiArMTgwLDcgQEAgc3RydWN0IG10a19kc2kgewo+ICAgICAgICAg
+c3RydWN0IGRldmljZSAqZGV2Owo+ICAgICAgICAgc3RydWN0IG1pcGlfZHNpX2hvc3QgaG9zdDsK
+PiAgICAgICAgIHN0cnVjdCBkcm1fZW5jb2RlciBlbmNvZGVyOwo+ICsgICAgICAgc3RydWN0IGRy
+bV9icmlkZ2UgYnJpZGdlOwo+ICAgICAgICAgc3RydWN0IGRybV9jb25uZWN0b3IgY29ubjsKPiAg
+ICAgICAgIHN0cnVjdCBkcm1fcGFuZWwgKnBhbmVsOwo+ICAgICAgICAgc3RydWN0IGRybV9icmlk
+Z2UgKm5leHRfYnJpZGdlOwo+IEBAIC0yMDUsOSArMjA2LDkgQEAgc3RydWN0IG10a19kc2kgewo+
+ICAgICAgICAgY29uc3Qgc3RydWN0IG10a19kc2lfZHJpdmVyX2RhdGEgKmRyaXZlcl9kYXRhOwo+
+ICB9Owo+Cj4gLXN0YXRpYyBpbmxpbmUgc3RydWN0IG10a19kc2kgKmVuY29kZXJfdG9fZHNpKHN0
+cnVjdCBkcm1fZW5jb2RlciAqZSkKPiArc3RhdGljIGlubGluZSBzdHJ1Y3QgbXRrX2RzaSAqYnJp
+ZGdlX3RvX2RzaShzdHJ1Y3QgZHJtX2JyaWRnZSAqYikKPiAgewo+IC0gICAgICAgcmV0dXJuIGNv
+bnRhaW5lcl9vZihlLCBzdHJ1Y3QgbXRrX2RzaSwgZW5jb2Rlcik7Cj4gKyAgICAgICByZXR1cm4g
+Y29udGFpbmVyX29mKGIsIHN0cnVjdCBtdGtfZHNpLCBicmlkZ2UpOwo+ICB9Cj4KPiAgc3RhdGlj
+IGlubGluZSBzdHJ1Y3QgbXRrX2RzaSAqY29ubmVjdG9yX3RvX2RzaShzdHJ1Y3QgZHJtX2Nvbm5l
+Y3RvciAqYykKPiBAQCAtNzk2LDMyICs3OTcsNDMgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1f
+ZW5jb2Rlcl9mdW5jcyBtdGtfZHNpX2VuY29kZXJfZnVuY3MgPSB7Cj4gICAgICAgICAuZGVzdHJv
+eSA9IG10a19kc2lfZW5jb2Rlcl9kZXN0cm95LAo+ICB9Owo+Cj4gLXN0YXRpYyBib29sIG10a19k
+c2lfZW5jb2Rlcl9tb2RlX2ZpeHVwKHN0cnVjdCBkcm1fZW5jb2RlciAqZW5jb2RlciwKPiAtICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb25zdCBzdHJ1Y3QgZHJtX2Rpc3Bs
+YXlfbW9kZSAqbW9kZSwKPiAtICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBz
+dHJ1Y3QgZHJtX2Rpc3BsYXlfbW9kZSAqYWRqdXN0ZWRfbW9kZSkKPiArc3RhdGljIGludCBtdGtf
+ZHNpX2NyZWF0ZV9jb25uX2VuYyhzdHJ1Y3QgZHJtX2RldmljZSAqZHJtLCBzdHJ1Y3QgbXRrX2Rz
+aSAqZHNpKTsKPiArc3RhdGljIHZvaWQgbXRrX2RzaV9kZXN0cm95X2Nvbm5fZW5jKHN0cnVjdCBt
+dGtfZHNpICpkc2kpOwo+ICsKPiArc3RhdGljIGludCBtdGtfZHNpX2JyaWRnZV9hdHRhY2goc3Ry
+dWN0IGRybV9icmlkZ2UgKmJyaWRnZSwKPiArICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICBlbnVtIGRybV9icmlkZ2VfYXR0YWNoX2ZsYWdzIGZsYWdzKQo+ICt7Cj4gKyAgICAgICBzdHJ1
+Y3QgbXRrX2RzaSAqZHNpID0gYnJpZGdlX3RvX2RzaShicmlkZ2UpOwo+ICsKPiArICAgICAgIHJl
+dHVybiBtdGtfZHNpX2NyZWF0ZV9jb25uX2VuYyhicmlkZ2UtPmRldiwgZHNpKTsKPiArfQo+ICsK
+PiArc3RhdGljIHZvaWQgbXRrX2RzaV9icmlkZ2VfZGV0YWNoKHN0cnVjdCBkcm1fYnJpZGdlICpi
+cmlkZ2UpCj4gIHsKPiAtICAgICAgIHJldHVybiB0cnVlOwo+ICsgICAgICAgc3RydWN0IG10a19k
+c2kgKmRzaSA9IGJyaWRnZV90b19kc2koYnJpZGdlKTsKPiArCj4gKyAgICAgICBtdGtfZHNpX2Rl
+c3Ryb3lfY29ubl9lbmMoZHNpKTsKPiAgfQo+Cj4gLXN0YXRpYyB2b2lkIG10a19kc2lfZW5jb2Rl
+cl9tb2RlX3NldChzdHJ1Y3QgZHJtX2VuY29kZXIgKmVuY29kZXIsCj4gLSAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgIHN0cnVjdCBkcm1fZGlzcGxheV9tb2RlICptb2RlLAo+IC0g
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgZHJtX2Rpc3BsYXlfbW9k
+ZSAqYWRqdXN0ZWQpCj4gK3N0YXRpYyB2b2lkIG10a19kc2lfYnJpZGdlX21vZGVfc2V0KHN0cnVj
+dCBkcm1fYnJpZGdlICpicmlkZ2UsCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgY29uc3Qgc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKm1vZGUsCj4gKyAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgY29uc3Qgc3RydWN0IGRybV9kaXNwbGF5X21vZGUgKmFkanVz
+dGVkKQo+ICB7Cj4gLSAgICAgICBzdHJ1Y3QgbXRrX2RzaSAqZHNpID0gZW5jb2Rlcl90b19kc2ko
+ZW5jb2Rlcik7Cj4gKyAgICAgICBzdHJ1Y3QgbXRrX2RzaSAqZHNpID0gYnJpZGdlX3RvX2RzaShi
+cmlkZ2UpOwo+Cj4gICAgICAgICBkcm1fZGlzcGxheV9tb2RlX3RvX3ZpZGVvbW9kZShhZGp1c3Rl
+ZCwgJmRzaS0+dm0pOwo+ICB9Cj4KPiAtc3RhdGljIHZvaWQgbXRrX2RzaV9lbmNvZGVyX2Rpc2Fi
+bGUoc3RydWN0IGRybV9lbmNvZGVyICplbmNvZGVyKQo+ICtzdGF0aWMgdm9pZCBtdGtfZHNpX2Jy
+aWRnZV9kaXNhYmxlKHN0cnVjdCBkcm1fYnJpZGdlICpicmlkZ2UpCj4gIHsKPiAtICAgICAgIHN0
+cnVjdCBtdGtfZHNpICpkc2kgPSBlbmNvZGVyX3RvX2RzaShlbmNvZGVyKTsKPiArICAgICAgIHN0
+cnVjdCBtdGtfZHNpICpkc2kgPSBicmlkZ2VfdG9fZHNpKGJyaWRnZSk7Cj4KPiAgICAgICAgIG10
+a19vdXRwdXRfZHNpX2Rpc2FibGUoZHNpKTsKPiAgfQo+Cj4gLXN0YXRpYyB2b2lkIG10a19kc2lf
+ZW5jb2Rlcl9lbmFibGUoc3RydWN0IGRybV9lbmNvZGVyICplbmNvZGVyKQo+ICtzdGF0aWMgdm9p
+ZCBtdGtfZHNpX2JyaWRnZV9lbmFibGUoc3RydWN0IGRybV9icmlkZ2UgKmJyaWRnZSkKPiAgewo+
+IC0gICAgICAgc3RydWN0IG10a19kc2kgKmRzaSA9IGVuY29kZXJfdG9fZHNpKGVuY29kZXIpOwo+
+ICsgICAgICAgc3RydWN0IG10a19kc2kgKmRzaSA9IGJyaWRnZV90b19kc2koYnJpZGdlKTsKPgo+
+ICAgICAgICAgbXRrX291dHB1dF9kc2lfZW5hYmxlKGRzaSk7Cj4gIH0KPiBAQCAtODMzLDExICs4
+NDUsMTIgQEAgc3RhdGljIGludCBtdGtfZHNpX2Nvbm5lY3Rvcl9nZXRfbW9kZXMoc3RydWN0IGRy
+bV9jb25uZWN0b3IgKmNvbm5lY3RvcikKPiAgICAgICAgIHJldHVybiBkcm1fcGFuZWxfZ2V0X21v
+ZGVzKGRzaS0+cGFuZWwsIGNvbm5lY3Rvcik7Cj4gIH0KPgo+IC1zdGF0aWMgY29uc3Qgc3RydWN0
+IGRybV9lbmNvZGVyX2hlbHBlcl9mdW5jcyBtdGtfZHNpX2VuY29kZXJfaGVscGVyX2Z1bmNzID0g
+ewo+IC0gICAgICAgLm1vZGVfZml4dXAgPSBtdGtfZHNpX2VuY29kZXJfbW9kZV9maXh1cCwKPiAt
+ICAgICAgIC5tb2RlX3NldCA9IG10a19kc2lfZW5jb2Rlcl9tb2RlX3NldCwKPiAtICAgICAgIC5k
+aXNhYmxlID0gbXRrX2RzaV9lbmNvZGVyX2Rpc2FibGUsCj4gLSAgICAgICAuZW5hYmxlID0gbXRr
+X2RzaV9lbmNvZGVyX2VuYWJsZSwKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1fYnJpZGdlX2Z1
+bmNzIG10a19kc2lfYnJpZGdlX2Z1bmNzID0gewo+ICsgICAgICAgLmF0dGFjaCA9IG10a19kc2lf
+YnJpZGdlX2F0dGFjaCwKPiArICAgICAgIC5kZXRhY2ggPSBtdGtfZHNpX2JyaWRnZV9kZXRhY2gs
+Cj4gKyAgICAgICAuZGlzYWJsZSA9IG10a19kc2lfYnJpZGdlX2Rpc2FibGUsCj4gKyAgICAgICAu
+ZW5hYmxlID0gbXRrX2RzaV9icmlkZ2VfZW5hYmxlLAo+ICsgICAgICAgLm1vZGVfc2V0ID0gbXRr
+X2RzaV9icmlkZ2VfbW9kZV9zZXQsCj4gIH07Cj4KPiAgc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1f
+Y29ubmVjdG9yX2Z1bmNzIG10a19kc2lfY29ubmVjdG9yX2Z1bmNzID0gewo+IEBAIC0xMTIzLDYg
+KzExMzYsMzQgQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBtaXBpX2RzaV9ob3N0X29wcyBtdGtfZHNp
+X29wcyA9IHsKPiAgICAgICAgIC50cmFuc2ZlciA9IG10a19kc2lfaG9zdF90cmFuc2ZlciwKPiAg
+fTsKPgo+ICtzdGF0aWMgaW50IG10a19kc2lfZW5jb2Rlcl9pbml0KHN0cnVjdCBkcm1fZGV2aWNl
+ICpkcm0sIHN0cnVjdCBtdGtfZHNpICpkc2kpCj4gK3sKPiArICAgICAgIGludCByZXQ7Cj4gKwo+
+ICsgICAgICAgcmV0ID0gZHJtX2VuY29kZXJfaW5pdChkcm0sICZkc2ktPmVuY29kZXIsICZtdGtf
+ZHNpX2VuY29kZXJfZnVuY3MsCj4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERSTV9N
+T0RFX0VOQ09ERVJfRFNJLCBOVUxMKTsKCkknbSBhIGJpdCBjb25mdXNlZCBoZXJlLiBkcm1fZW5j
+b2Rlcl9pbml0KCkgZXhpc3QgaGVyZSBhbmQgaW4KbXRrX2RzaV9jcmVhdGVfY29ubl9lbmMoKS4g
+RG8geW91IHBsYW4gdG8gaW5pdCBlbmNvZHIgdHdpY2U/Cgo+ICsgICAgICAgaWYgKHJldCkgewo+
+ICsgICAgICAgICAgICAgICBEUk1fRVJST1IoIkZhaWxlZCB0byBlbmNvZGVyIGluaXQgdG8gZHJt
+XG4iKTsKPiArICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiArICAgICAgIH0KPiArCj4gKyAg
+ICAgICAvKgo+ICsgICAgICAgICogQ3VycmVudGx5IGRpc3BsYXkgZGF0YSBwYXRocyBhcmUgc3Rh
+dGljYWxseSBhc3NpZ25lZCB0byBhIGNydGMgZWFjaC4KPiArICAgICAgICAqIGNydGMgMCBpcyBP
+VkwwIC0+IENPTE9SMCAtPiBBQUwgLT4gT0QgLT4gUkRNQTAgLT4gVUZPRSAtPiBEU0kwCj4gKyAg
+ICAgICAgKi8KPiArICAgICAgIGRzaS0+ZW5jb2Rlci5wb3NzaWJsZV9jcnRjcyA9IDE7Cj4gKwo+
+ICsgICAgICAgcmV0ID0gZHJtX2JyaWRnZV9hdHRhY2goJmRzaS0+ZW5jb2RlciwgJmRzaS0+YnJp
+ZGdlLCBOVUxMLCAwKTsKPiArICAgICAgIGlmIChyZXQpCj4gKyAgICAgICAgICAgICAgIGdvdG8g
+ZXJyX2NsZWFudXBfZW5jb2RlcjsKPiArCj4gKyAgICAgICByZXR1cm4gMDsKPiArCj4gK2Vycl9j
+bGVhbnVwX2VuY29kZXI6Cj4gKyAgICAgICBkcm1fZW5jb2Rlcl9jbGVhbnVwKCZkc2ktPmVuY29k
+ZXIpOwo+ICsgICAgICAgcmV0dXJuIHJldDsKPiArfQo+ICsKPiAgc3RhdGljIGludCBtdGtfZHNp
+X2JpbmQoc3RydWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgZGV2aWNlICptYXN0ZXIsIHZvaWQgKmRh
+dGEpCj4gIHsKPiAgICAgICAgIGludCByZXQ7Cj4gQEAgLTExMzYsMTEgKzExNzcsOSBAQCBzdGF0
+aWMgaW50IG10a19kc2lfYmluZChzdHJ1Y3QgZGV2aWNlICpkZXYsIHN0cnVjdCBkZXZpY2UgKm1h
+c3Rlciwgdm9pZCAqZGF0YSkKPiAgICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiAgICAgICAg
+IH0KPgo+IC0gICAgICAgcmV0ID0gbXRrX2RzaV9jcmVhdGVfY29ubl9lbmMoZHJtLCBkc2kpOwo+
+IC0gICAgICAgaWYgKHJldCkgewo+IC0gICAgICAgICAgICAgICBEUk1fRVJST1IoIkVuY29kZXIg
+Y3JlYXRlIGZhaWxlZCB3aXRoICVkXG4iLCByZXQpOwo+ICsgICAgICAgcmV0ID0gbXRrX2RzaV9l
+bmNvZGVyX2luaXQoZHJtLCBkc2kpOwo+ICsgICAgICAgaWYgKHJldCkKPiAgICAgICAgICAgICAg
+ICAgZ290byBlcnJfdW5yZWdpc3RlcjsKPiAtICAgICAgIH0KPgo+ICAgICAgICAgcmV0dXJuIDA7
+Cj4KPiBAQCAtMTE1NSw3ICsxMTk0LDYgQEAgc3RhdGljIHZvaWQgbXRrX2RzaV91bmJpbmQoc3Ry
+dWN0IGRldmljZSAqZGV2LCBzdHJ1Y3QgZGV2aWNlICptYXN0ZXIsCj4gICAgICAgICBzdHJ1Y3Qg
+ZHJtX2RldmljZSAqZHJtID0gZGF0YTsKPiAgICAgICAgIHN0cnVjdCBtdGtfZHNpICpkc2kgPSBk
+ZXZfZ2V0X2RydmRhdGEoZGV2KTsKPgo+IC0gICAgICAgbXRrX2RzaV9kZXN0cm95X2Nvbm5fZW5j
+KGRzaSk7CgpUaGVyZSBpcyBtdGtfZHNpX2VuY29kZXJfaW5pdCgpIGluIGJpbmQoKSwgd2h5IG5v
+IG10a19kc2lfZW5jb2Rlcl91bmluaXQoKSBoZXJlPwoKUmVnYXJkcywKQ2h1bi1LdWFuZy4KCj4g
+ICAgICAgICBtdGtfZGRwX2NvbXBfdW5yZWdpc3Rlcihkcm0sICZkc2ktPmRkcF9jb21wKTsKPiAg
+fQo+Cj4gQEAgLTEyNjUsNiArMTMwMywxMiBAQCBzdGF0aWMgaW50IG10a19kc2lfcHJvYmUoc3Ry
+dWN0IHBsYXRmb3JtX2RldmljZSAqcGRldikKPgo+ICAgICAgICAgcGxhdGZvcm1fc2V0X2RydmRh
+dGEocGRldiwgZHNpKTsKPgo+ICsgICAgICAgZHNpLT5icmlkZ2UuZnVuY3MgPSAmbXRrX2RzaV9i
+cmlkZ2VfZnVuY3M7Cj4gKyAgICAgICBkc2ktPmJyaWRnZS5vZl9ub2RlID0gZGV2LT5vZl9ub2Rl
+Owo+ICsgICAgICAgZHNpLT5icmlkZ2UudHlwZSA9IERSTV9NT0RFX0NPTk5FQ1RPUl9EU0k7Cj4g
+Kwo+ICsgICAgICAgZHJtX2JyaWRnZV9hZGQoJmRzaS0+YnJpZGdlKTsKPiArCj4gICAgICAgICBy
+ZXQgPSBjb21wb25lbnRfYWRkKCZwZGV2LT5kZXYsICZtdGtfZHNpX2NvbXBvbmVudF9vcHMpOwo+
+ICAgICAgICAgaWYgKHJldCkgewo+ICAgICAgICAgICAgICAgICBkZXZfZXJyKCZwZGV2LT5kZXYs
+ICJmYWlsZWQgdG8gYWRkIGNvbXBvbmVudDogJWRcbiIsIHJldCk7Cj4gQEAgLTEyODMsNiArMTMy
+Nyw3IEBAIHN0YXRpYyBpbnQgbXRrX2RzaV9yZW1vdmUoc3RydWN0IHBsYXRmb3JtX2RldmljZSAq
+cGRldikKPiAgICAgICAgIHN0cnVjdCBtdGtfZHNpICpkc2kgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0
+YShwZGV2KTsKPgo+ICAgICAgICAgbXRrX291dHB1dF9kc2lfZGlzYWJsZShkc2kpOwo+ICsgICAg
+ICAgZHJtX2JyaWRnZV9yZW1vdmUoJmRzaS0+YnJpZGdlKTsKPiAgICAgICAgIGNvbXBvbmVudF9k
+ZWwoJnBkZXYtPmRldiwgJm10a19kc2lfY29tcG9uZW50X29wcyk7Cj4gICAgICAgICBtaXBpX2Rz
+aV9ob3N0X3VucmVnaXN0ZXIoJmRzaS0+aG9zdCk7Cj4KPiAtLQo+IDIuMjUuMQo+CgpfX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVs
+IG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDov
+L2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
