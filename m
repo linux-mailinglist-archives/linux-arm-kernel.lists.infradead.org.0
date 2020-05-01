@@ -2,68 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7F4D1C181E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:46:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A9C711C1876
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:50:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=XSeRsQA36nADA+sTweR4ZT+x1xXuQPBgMvrnctDFaE8=; b=DfGBYwdO2n11Zq
-	WZDFc0SWOooPJRc8nB2DI2rVaBhgOc/8zPpFIDduNKbhvCSP/F+dsD14u2NaizqUf0HrxpTDpWcWx
-	1gc7IGeZx2jjkjahLf2I2YITsIbzpZhoggEKovRPdoY9c/xekh/QWbzYISHlrhZhtlfLatJl9lKfr
-	0JQai/ijSl24mszA0i/sY5lEyPmdujvmoFNmuK+lM330pnFoggjqKI3mi8JqP7qkKv1bcwZNcXzKs
-	H2oMXTB3NTnFDFi9bUidUYlDwTFspj9Z0qhPCnc4F5rMpjf5UbiH8ynK4XrRebGULN7uAU14NN+VE
-	DQ1COiYZZXIb3DlSmRqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=dXHY9KdFWBWSLQKB+11nc+MyMCSkIEn33kP87owj6lY=; b=bKY6pb/EJJe0L6Rtn2eqek2WO
+	0xkP1xI1V+0o7+sRF9UUDqC0Vq3cJvnDQMdql917rQA6EmyMqDI/icoOl0LNvo1DY35YF3fK6yCuB
+	y+cZEmdt3UhReYpQ/9gn7gSHJK4NcBWtMsSJa7PeaKf1sYrPWDqbNmekbDjx08CFkCfeeTeGBrWfl
+	hWGUBtQ/DEmCQQnD9N7GkCmIg0sVI6QBkVGW4DZfGt1CKGX4kNUWi1IFy9DVz5NfuGXimguPiOa42
+	VIKwoxBcjqRCELahiMrv5WBDATSCHt7Hgq4spliWIju6lt0DYVVZcH9aYEoQ2uqBQC2t4la5tx3GG
+	e6Pvm5HpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUWvh-0002jo-Qa; Fri, 01 May 2020 14:46:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUWvW-0002hC-NL
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:46:08 +0000
-Received: from localhost (mobile-166-175-184-168.mycingular.net
- [166.175.184.168])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1019020857;
- Fri,  1 May 2020 14:46:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588344366;
- bh=v2w4/6U0YomoqMu9R0xWF2AIpjpBELByx2/SoReXrgM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=cKaEafwIZEj3qeHZPBR4aUAeYkFReJVPxAiqe+ALOPwcbbuT1UfNmMqGPBgbOzAJB
- 1es+t74JKbObhCqW7OIK1+M8u3q5pXmozFcYVTWNghyYoYCPThIjsaBWa/Wv9FxtnE
- gAuhmuGwhokE2MD/OBT7K9+NSH2EY6ogt8ttjAKc=
-Date: Fri, 1 May 2020 09:46:04 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH 0/3] PCI: Modularize host-generic
-Message-ID: <20200501144604.GA108647@bjorn-Precision-5520>
+	id 1jUWz6-0005Xy-SC; Fri, 01 May 2020 14:49:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUWyl-0005Lz-5I
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:49:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E98881FB;
+ Fri,  1 May 2020 07:49:23 -0700 (PDT)
+Received: from [192.168.1.84] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D67B03F68F;
+ Fri,  1 May 2020 07:49:22 -0700 (PDT)
+Subject: Re: [PATCH 1/5] arm/arm64: smccc: Update link to latest SMCCC
+ specification
+To: Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+References: <20200430114814.14116-1-sudeep.holla@arm.com>
+ <20200430114814.14116-2-sudeep.holla@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <563cade1-5790-3b4f-4942-adc1ff90eb0f@arm.com>
+Date: Fri, 1 May 2020 15:46:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200501141626.GA7398@e121166-lin.cambridge.arm.com>
+In-Reply-To: <20200430114814.14116-2-sudeep.holla@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_074607_394897_C00E1784 
-X-CRM114-Status: GOOD (  18.40  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200501_074927_257295_8293D981 
+X-CRM114-Status: GOOD (  18.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,69 +65,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Mans Rullgard <mans@mansr.com>,
- Marc Gonzalez <marc.w.gonzalez@free.fr>, linux-pci@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
- Zhou Wang <wangzhou1@hisilicon.com>, Robert Richter <rrichter@marvell.com>,
- Jonathan Chocron <jonnyc@amazon.com>, Bjorn Helgaas <bhelgaas@google.com>,
- Toan Le <toan@os.amperecomputing.com>, Len Brown <lenb@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ harb@amperecomputing.com, Will Deacon <will@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 01, 2020 at 03:16:26PM +0100, Lorenzo Pieralisi wrote:
-> On Thu, Apr 09, 2020 at 05:49:20PM -0600, Rob Herring wrote:
-> > This is part of a larger effort to modularize ARCH_VEXPRESS. In
-> > particular, the Arm FVP platforms use the host-generic driver. This
-> > conversion was straight-forward. I didn't convert the other ECAM drivers
-> > using host-common to modules, but am happy to do so if there's a strong
-> > desire to do so.
-> > 
-> > In the process, I noticed that 'const' was being dropped from the match
-> > table .data pointer, so the first patch constifies struct pci_ecam_ops.
-> > I started trying to constify pci_ops too, but that became a never ending
-> > treewide rabbit hole. So I ended up with a cast when we assign pci_ops
-> > from pci_ecam_ops.
-> > 
-> > Rob
+On 30/04/2020 12:48, Sudeep Holla wrote:
+> The current link gets redirected to the revision B published in November
+> 2016 though it actually points to the original revision A published in
+> June 2013.
 > 
-> Hi Bjorn,
+> Let us update the link to point to the latest version, so that it
+> doesn't get stal anytime soon. Currently it points to v1.2 published in
+
+s/stal/stale/
+
+otherwise:
+
+Reviewed-by: Steven Price <steven.price@arm.com>
+
+> March 2020.
 > 
-> if you don't have any objections I'd need your ACK to take this
-> series.
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>   include/linux/arm-smccc.h | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+> index 59494df0f55b..6c1d1eda3be4 100644
+> --- a/include/linux/arm-smccc.h
+> +++ b/include/linux/arm-smccc.h
+> @@ -10,7 +10,7 @@
+>   /*
+>    * This file provides common defines for ARM SMC Calling Convention as
+>    * specified in
+> - * http://infocenter.arm.com/help/topic/com.arm.doc.den0028a/index.html
+> + * https://developer.arm.com/docs/den0028/latest
+>    */
+>   
+>   #define ARM_SMCCC_STD_CALL	        _AC(0,U)
+> 
 
-Oh, sorry, I didn't notice:
-
-Acked-by: Bjorn Helgaas <bhelgaas@google.com>
-
-> > Rob Herring (3):
-> >   PCI: Constify struct pci_ecam_ops
-> >   PCI: host-generic: Support building as modules
-> >   PCI: host-generic: Eliminate pci_host_common_probe wrappers
-> > 
-> >  arch/arm64/kernel/pci.c                   |  4 ++--
-> >  drivers/acpi/pci_mcfg.c                   |  8 +++----
-> >  drivers/pci/controller/Kconfig            |  4 ++--
-> >  drivers/pci/controller/dwc/pcie-al.c      |  2 +-
-> >  drivers/pci/controller/dwc/pcie-hisi.c    | 19 +++++------------
-> >  drivers/pci/controller/pci-host-common.c  | 18 ++++++++++++----
-> >  drivers/pci/controller/pci-host-generic.c | 26 +++++++----------------
-> >  drivers/pci/controller/pci-thunder-ecam.c | 14 ++++++------
-> >  drivers/pci/controller/pci-thunder-pem.c  | 16 ++++++--------
-> >  drivers/pci/controller/pci-xgene.c        |  4 ++--
-> >  drivers/pci/controller/pcie-tango.c       |  9 +++++---
-> >  drivers/pci/ecam.c                        | 10 ++++++---
-> >  drivers/pci/setup-bus.c                   |  1 +
-> >  include/linux/pci-acpi.h                  |  2 +-
-> >  include/linux/pci-ecam.h                  | 25 +++++++++++-----------
-> >  15 files changed, 78 insertions(+), 84 deletions(-)
-> > 
-> > --
-> > 2.20.1
 
 _______________________________________________
 linux-arm-kernel mailing list
