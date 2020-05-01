@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F4EE1C17DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:35:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F9F81C17DC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:36:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cc31CHerjay+53tPSFp5BZFqqtruMpNHK5lLtZ37Afo=; b=kP1JZfSBqdsmKK
-	gt8UJ/5t2CmatvLQJJjfmtTz+igd98OtmmWD+TOSjWgxPP7y0tuo9Dl2e6CKQRmAXG+WQOvWakbxz
-	aPKRA+CiiDtZhtQc7EQ0X/d95b/Udwfm9mhg+uQ3wXwhbYaCaIy4dgFffCOl63FgjwIPViIuCGpwg
-	ny2HATg54W6fsQl1OxlqFPbT7hEuk7WIyiERBJA/08jpAA0xUEqKdJBV/X6YLd+5wDg04ZuyQVREu
-	ZPDj7h6LH4jFd4hl9Q+LcBK0PGeZQ17H90jsjsF4Odk5X/64xAa6akDqASpEUoA6/Q3ADvC8cRIjR
-	X5Idq+BAJz+s+CjOKrFg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=BTQRr1KRBLucCw2nkKQWogLhs/2I2eX+QZSUT713wAY=; b=MUE
+	BlrMtKGh0QEpey5yc2xa72mK3P4p/xVkEMHZeieW9brnqq9/1Qpkh0013kD0Y2R+bonU2fbuWyd8I
+	Ou/U/5oNeWTmTwFMzihlafP2fyGldcA19x5kPscvDu6YnEVdiC0eOj28buPP0qTUxK6vkSmnqkXBt
+	3lTKTMFzBJp4A79wSmuwQcOJtyYbuR7YE1H5X5b7Fnd6859jmDAOn2G+KeAnmaqekFSAh/JfKrZ0D
+	M18EWmJK6XvHX21sMC21DCQ4ZhKnUYNIKa7pVA2Qmpjdr39FLkKRQKEmefB18GU8TTUUPr9t4iYFo
+	zXfJWmZ16Bz4NGPhBQ1wFr2UzGeMH3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUWlZ-0006vV-7X; Fri, 01 May 2020 14:35:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUWmF-0007MK-OW; Fri, 01 May 2020 14:36:31 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUWlR-0006th-Pq
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:35:43 +0000
-Received: from mail-io1-f43.google.com (mail-io1-f43.google.com
- [209.85.166.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6C3262137B
+ id 1jUWm5-0007Fr-L2
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:36:23 +0000
+Received: by mail-wr1-x441.google.com with SMTP id k1so11748305wrx.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  1 May 2020 14:35:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588343741;
- bh=6NUvGuaTDSMVj4qz+KBxnE+JAksZFk4f6Iv9jSnlUZs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=TlDdEKxxlD8jm4XUhfjKoUh2mceH5p2OcQJzY49/D0HtRUhSsGZMV85QBDPYhWvjE
- qqJVf0PQk7IV+wf7PIBWcydPBOBdFyoV1l1VLfizlP7rjRxuSwu23tsSvBo5Lu1R8M
- 5w2I4O1lJlvVksPQJvIYC9FXeyazaZZchCmd4DK0=
-Received: by mail-io1-f43.google.com with SMTP id f3so5058261ioj.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 07:35:41 -0700 (PDT)
-X-Gm-Message-State: AGi0PubdT2Isao2bo0fy0+dsL7J8f5sjJE6ESvHPAIZfaCd4lJJtRJ5x
- JWGUCudWUGnSEjjWr4H1W06xaywfFwnFCCNkJBE=
-X-Google-Smtp-Source: APiQypLwhBDEmnaMcXebnspgXs7BXbv7TduzzmXypCOd0BLkDs+9E9QeSlW3gfYhkiPvIZWsbTJNJ+l+urnlvWQtt10=
-X-Received: by 2002:a5d:8045:: with SMTP id b5mr4065467ior.16.1588343740813;
- Fri, 01 May 2020 07:35:40 -0700 (PDT)
-MIME-Version: 1.0
-References: <20200501095843.25401-1-ardb@kernel.org>
- <20200501095843.25401-3-ardb@kernel.org>
- <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
- <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
- <18e01ac7-974e-8308-c18c-67aa3fd7ad4e@arm.com>
- <CAMj1kXHsXEmaLuVBo7cgdzHju22WKksu7s3B3-hBE4mYhnuJ=Q@mail.gmail.com>
- <20200501134956.GA7240@e121166-lin.cambridge.arm.com>
-In-Reply-To: <20200501134956.GA7240@e121166-lin.cambridge.arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Fri, 1 May 2020 16:35:29 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
-Message-ID: <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
-Subject: Re: [PATCH RFC 2/2] ACPI/IORT: work around num_ids ambiguity
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+ Fri, 01 May 2020 07:36:20 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=qezlbEs26gOrWFMyWMZpjZ8xghXGSjIgdcezc4CI8eY=;
+ b=NZ1zpulfQHxcBjCRJz+dbH9uUgkQbKPQ4ynbioMg3EyOYoyttoozmzd4rVucZG+QwM
+ lG+HGJa4UBSLSeXGDS/JXQrES1ICu5e8IjsMnRuPYIoD3wDFNZHX4A8ieVie6dygnVJM
+ Rmio6BxmYlbncELdKHsRCE+Ll6Yj/MlpimGsfRFvI4gXcIF8F/GrGQpWT0i742jfnSMv
+ TyCdf/OqiR+NiixAYfE+sOSNZZ0/ldTAO2Fi3nD6Wdi43vFwoWihvWvWYQu/qH00pR7I
+ vrRVR5/76W3XUVR7dLKkR+ATp2F4JEepMXV2bQP4+/nPoJpfRq7y5GD509/dk+GV7CKO
+ in6w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=qezlbEs26gOrWFMyWMZpjZ8xghXGSjIgdcezc4CI8eY=;
+ b=gQ7yZ8zRblVMAI8/5Pmy7kx/vYnwlDTOcygRMSjsVYUmk4zA39kd8uY+JHuGXzTnqu
+ U8LQQdslm4bfyeH7il8gtFc24aLZnfuJ0wLAhKJwx9ons5WUqfKIxiseTvj1qOB+tav1
+ agUhFLsAQOUBZw09Yxq2OtpZ5sQY9knnf5RIF0fE811OHus//YCpT8n1nARj7HjBakcQ
+ b615q73hYHUesbNU4gAQ+VxetpsSFQmZi4SsJyMQcv3gbQ+Pk8iVJ3VnEXqGRGPB7RD6
+ ZXcCTezaF12GmAoyJ1H7rqJkx0Y309V10Oy7VJb5xXPUV5SNNwF/sB/pkFL5QULL+Pg2
+ af3w==
+X-Gm-Message-State: AGi0PuYtEoNdtUg1LcpQYo0Mb1AkQeMSr9b6XEnJr9Qq5GJ9L4EkOUSf
+ jNmO567KbXr5W7vi7IPy7SbilPG3YHk=
+X-Google-Smtp-Source: APiQypImSe8yuivKOHKCNp93T5FkysYQ8r2xtCVoVj1NQvb8wNUiHJE5THy5jkxXcbBhPCjFB1Of8w==
+X-Received: by 2002:adf:82ac:: with SMTP id 41mr2436039wrc.110.1588343779109; 
+ Fri, 01 May 2020 07:36:19 -0700 (PDT)
+Received: from linaro.org ([2a00:23c5:6801:1801:8bee:312:6092:58f2])
+ by smtp.gmail.com with ESMTPSA id z22sm4204992wma.20.2020.05.01.07.36.17
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 01 May 2020 07:36:18 -0700 (PDT)
+From: Mike Leach <mike.leach@linaro.org>
+To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
+ mathieu.poirier@linaro.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v2] perf: cs-etm: Update to build with latest opencsd version.
+Date: Fri,  1 May 2020 15:36:15 +0100
+Message-Id: <20200501143615.1180-1-mike.leach@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_073541_878569_BAC5C004 
-X-CRM114-Status: GOOD (  29.86  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200501_073621_694747_3233844F 
+X-CRM114-Status: GOOD (  11.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -79,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,84 +92,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Robin Murphy <robin.murphy@arm.com>, Pankaj Bansal <pankaj.bansal@nxp.com>,
- Sudeep Holla <sudeep.holla@arm.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Hanjun Guo <guohanjun@huawei.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: peterz@infradead.org, mingo@redhat.com, Mike Leach <mike.leach@linaro.org>,
+ acme@kernel.org, suzuki.poulose@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 1 May 2020 at 15:50, Lorenzo Pieralisi
-<lorenzo.pieralisi@arm.com> wrote:
->
-> On Fri, May 01, 2020 at 03:10:59PM +0200, Ard Biesheuvel wrote:
->
-> [...]
->
-> > > >> If we silently fix things up, then people will continue to write broken
-> > > >> tables without even realising, new OSes will have to implement the same
-> > > >> mechanism because vendors will have little interest in changing things
-> > > >> that have worked "correctly" with Linux for years, and we've effectively
-> > > >> achieved a de-facto redefinition of the spec. Making our end of the
-> > > >> interface robust is obviously desirable, but there still needs to be
-> > > >> *some* incentive for the folks on the other end to get it right.
-> > > >>
-> > > >
-> > > > Agreed. But at least we'll be able to detect it and flag it in the
-> > > > general case, rather than having a special case for D05/06 only
-> > > > (although I suppose splitting the output ranges like those platforms
-> > > > do is rather unusual)
-> > >
-> > > Yup, in principle the fixed quirk list gives a nice reassuring sense of
-> > > "we'll work around these early platforms and everyone from now on will
-> > > get it right", but whether reality plays out that way is another matter
-> > > entirely...
-> >
-> > The reason I am looking into this is that I think the fix should go to
-> > stable, given that the current situation makes it impossible to write
-> > firmware that works with older and newer kernels.
->
-> Yes. If we do remove the quirk the sooner we do it the better to
-> reduce the stable patches.
->
-> > Lorenzo said he wouldn't mind taking the current version with ACPI OEM
-> > ID matching back to -stable, but it's another quirk list to manage,
-> > which I would prefer to avoid.
-> >
-> > But I don't care deeply either way, to be honest, as long as we can
-> > get something backported so compliant firmware is not being penalized
-> > anymore.
->
-> Question: if we remove the iort_workaround_oem_info stuff but we *do*
-> keep the existing apply_id_count_workaround flag and we set it by going
-> through all the mappings at boot time and detect if any of these
-> off-by-one conditions apply - would the resulting code be any simpler ?
->
-> The global flag would apply (as it does now) to _all_ mappings but it is
-> very likely that if the off-by-one firmware bug is present it applies to
-> the IORT table as a whole rather than a single mapping entry.
->
+OpenCSD version v0.14.0 adds in a new output element. This is represented
+by a new value in the generic element type enum, which must be added to
+the handling code in perf cs-etm-decoder to prevent build errors due to
+build options on the perf project.
 
-This particular issue is based on a misinterpretation, so I agree that
-it makes sense to have a global flag, as long as we only set it if the
-mappings are fully consistent in every other respect, or we'll run the
-risk of hitting issues like the one Robin describes, where things
-happen to work, but will fail once we apply the heuristic. Such an
-issue could exist on one end of the table, while we could spot the
-off-by-one issue somewhere else.
+This element is not currently used by the perf decoder.
 
-Which brings us back to a point I made earlier: do we really want to
-validate the table and ensure that it is fully internally consistent?
-Or do we want to be robust in the face of a single known issue that we
-helped create?
+Perf build feature test updated to require a minimum of 0.14.0
 
-So in my opinion, just fixing it up when we run into it is fine. I can
-add the extra sanity check to reduce the potential fallout for other
-broken systems, but beyond that, I think we shouldn't do too much.
+Tested on Linux 5.7-rc3.
+
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+---
+ tools/build/feature/test-libopencsd.c           | 4 ++--
+ tools/perf/util/cs-etm-decoder/cs-etm-decoder.c | 2 ++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/tools/build/feature/test-libopencsd.c b/tools/build/feature/test-libopencsd.c
+index 2b0e02c38870..1547bc2c0950 100644
+--- a/tools/build/feature/test-libopencsd.c
++++ b/tools/build/feature/test-libopencsd.c
+@@ -4,9 +4,9 @@
+ /*
+  * Check OpenCSD library version is sufficient to provide required features
+  */
+-#define OCSD_MIN_VER ((0 << 16) | (11 << 8) | (0))
++#define OCSD_MIN_VER ((0 << 16) | (14 << 8) | (0))
+ #if !defined(OCSD_VER_NUM) || (OCSD_VER_NUM < OCSD_MIN_VER)
+-#error "OpenCSD >= 0.11.0 is required"
++#error "OpenCSD >= 0.14.0 is required"
+ #endif
+ 
+ int main(void)
+diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+index cd92a99eb89d..cd007cc9c283 100644
+--- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
++++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+@@ -564,6 +564,8 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
+ 		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
+ 					       elem, trace_chan_id);
+ 		break;
++	/* Unused packet types */
++	case OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH:
+ 	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
+ 	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
+ 	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
