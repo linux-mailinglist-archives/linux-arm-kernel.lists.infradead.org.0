@@ -2,86 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77FA91C1F11
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 22:55:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C61A61C1F44
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 23:10:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=qTgQTK8w5+h8htTqd9qTkiyBUFTAHMIH4w5if+xIq0I=; b=pDlAfEZXA4gnYPEw1CVf/i/0K
-	1+5+RtTVgfFKBMy0i+qgPCNPOjaY+V3LElf6c6dOw6qvKRuLbnnZE82HWE1mAUL8l9PuS4QtSGy+A
-	cVcG5xBld0tBAkyghHsYPW45hfMvIGTaNa5X5CpHDDaWQo+2e7H35PILQ2vB8XRfq30jj87b2215O
-	yeaYHalGUykOkhSPulNjhRLR+8P3MoaSAS719/dv79m+BFhNbBwV44SpH+2c1ICU70NAVeOD8fOx8
-	tcd1WjD/mIuHF8eEYonU7xwt4lrROfbsZde/ukBRgBPrugC9d8gMDZcGuwWpZvpri72+kptT+bZMd
-	AaLRS5tVQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kY3vxYtQgnzapIwWgPDwX5wp66FMHG3xhIVGL5DEmEY=; b=cdI7jG/yVXOmcr
+	3GIaZHX7vv2hTGBR/iFqkNhU5JJSuVix6IOxWRv58I5vnLSgVgiXoNV0orCW8QpQ9uFkC3tooEeV0
+	AMvqOQK9psC7oLQJq3u/X/skGPXbjOouAL9PI0U8KC27FAFtwg/+CHVvBxU3KeQCMXxDKe7RmpNOF
+	9ktCdu0pF2GgPSpu/ipGx8+8G7jlR/yG+45pIt4NKBw43YWz1gXevfUXNbt6ti9peFjXM9guQtd/g
+	2iy20oPfzVVHucmm5iFFcwooR4PAbgcoCAv/tbIWxdhBT1ppPM3MZJ6n0mQm95Cujz8sbg/4YMOE6
+	JAghrjCZ6mlPUVsKgDxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUcgx-0005zi-Qu; Fri, 01 May 2020 20:55:27 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jUcv1-0006tt-IX; Fri, 01 May 2020 21:09:59 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUcgp-0005yv-Sz
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 20:55:21 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 041KtFB4009464;
- Fri, 1 May 2020 15:55:15 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588366515;
- bh=L1otyNvruxzYrays8d+Dfy2TZg5TRkz5w0VMaUbYdso=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=a68RxpDSolAOn89K69XTAVB5g9tknN9PPhB0ImXXY1eMcBgifQPh5p1UIAy9ZXmZb
- p9Nj/Lr0wFnZ9jSHO8wWZPxLDx7KDcjtIQKMk72SQf801FzXdQvRVlVVnYHdb7ej0f
- sBJuj7aGTar7izvHWDe2rGZtZOeqyNdSQf3w++h4=
-Received: from DLEE107.ent.ti.com (dlee107.ent.ti.com [157.170.170.37])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 041KtFxE015659;
- Fri, 1 May 2020 15:55:15 -0500
-Received: from DLEE104.ent.ti.com (157.170.170.34) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 1 May
- 2020 15:55:14 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE104.ent.ti.com
- (157.170.170.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 1 May 2020 15:55:14 -0500
-Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 041KtB78036400;
- Fri, 1 May 2020 15:55:11 -0500
-Subject: Re: [PATCH 0/5] soc: ti: add k3 platforms chipid module driver
-To: Dave Gerlach <d-gerlach@ti.com>, Santosh Shilimkar <ssantosh@kernel.org>, 
- Tero Kristo <t-kristo@ti.com>, Nishanth Menon <nm@ti.com>, Rob Herring
- <robh+dt@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>, Lokesh Vutla <lokeshvutla@ti.com>
-References: <20200423180545.13707-1-grygorii.strashko@ti.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <23b3b069-426e-a113-a8bf-816b30f10490@ti.com>
-Date: Fri, 1 May 2020 23:55:11 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jUcun-0006rV-KB; Fri, 01 May 2020 21:09:49 +0000
+Received: by mail-ot1-f65.google.com with SMTP id z25so3571591otq.13;
+ Fri, 01 May 2020 14:09:45 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=azaNq8gnek7T+A7rdK17PV/xQfKmjBVg34Ma1l/t8qw=;
+ b=I9MHl3/PqK1G7wIzCtedAKRtVrHR3HnhPyWvBe9HQ1UCr8ioyr3VTuE00mXs8nLKor
+ VQfZJHc5VUFnDeyc61hVYm6rMOzpjT3IAfAp6k/3hR4Ge4QAsaM0u1As1g/1e0S7/n0i
+ ERMEoYGaALk+q0VouFZs893V/SLsxqWFzSQVbmBAl4u+yw13z0iJlZs6jG+Uvdm4E9C6
+ k3WZeX2A+UzR5kTFHl8EaOmUrHS9il+ZcSREwtWe5J86cfccGjCTiBojZkkK8NgBtvuO
+ v7z8V7sbF/Eex63yRyQbcl95MRBxXkS/Uq9HCE3Gi6Hb+icHGPgy8gCd6Jx8OZCQh1/F
+ +rgQ==
+X-Gm-Message-State: AGi0PuY9mshzXTTR6OlhyMf3ZBjr8arZ2c0FVC1KIvFSCNVg0YbBL5W2
+ 1icBVXeyrJGmEzF9yC7AXg==
+X-Google-Smtp-Source: APiQypLECOBaRa68pLT9OXVtC6bUt86y91nQBnNKSvn0KMAG/61MoBxyIwqFEkO/eNcHjZD1+jP0MQ==
+X-Received: by 2002:a05:6830:20d8:: with SMTP id
+ z24mr5338741otq.74.1588367384402; 
+ Fri, 01 May 2020 14:09:44 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id h24sm1105171otj.25.2020.05.01.14.09.43
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 01 May 2020 14:09:43 -0700 (PDT)
+Received: (nullmailer pid 30822 invoked by uid 1000);
+ Fri, 01 May 2020 21:09:42 -0000
+Date: Fri, 1 May 2020 16:09:42 -0500
+From: Rob Herring <robh@kernel.org>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH RFC v2 02/11] dt-bindings: net: dwmac-meson: Document the
+ "timing-adjustment" clock
+Message-ID: <20200501210942.GA27082@bogus>
+References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
+ <20200429201644.1144546-3-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200423180545.13707-1-grygorii.strashko@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20200429201644.1144546-3-martin.blumenstingl@googlemail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_135520_019128_0748A9E6 
-X-CRM114-Status: GOOD (  15.65  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200501_140945_660938_79C35620 
+X-CRM114-Status: UNSURE (   9.13  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,63 +95,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: andrew@lunn.ch, f.fainelli@gmail.com, jianxin.pan@amlogic.com,
+ devicetree@vger.kernel.org,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ linux-amlogic@lists.infradead.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Santosh, Tero
-
-On 23/04/2020 21:05, Grygorii Strashko wrote:
-> Hi All,
+On Wed, 29 Apr 2020 22:16:35 +0200, Martin Blumenstingl wrote:
+> The PRG_ETHERNET registers can add an RX delay in RGMII mode. This
+> requires an internal re-timing circuit whose input clock is called
+> "timing adjustment clock". Document this clock input so the clock can be
+> enabled as needed.
 > 
-> This series introduces TI K3 Multicore SoC platforms chipid module driver
-> which provides identification support of the TI K3 SoCs (family, revision)
-> and register this information with the SoC bus. It is available under
-> /sys/devices/soc0/ for user space, and can be checked, where needed,
-> in Kernel using soc_device_match().
-> It is also required for introducing support for new revisions of
-> K3 AM65x/J721E SoCs.
-> 
-> Example J721E:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments K3 J721E SoC
->    J721E
->    SR1.0
-> 
-> Example AM65x:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments AM654 Base Board
->    AM65X
->    SR1.0
-> 
-> Grygorii Strashko (5):
->    dt-bindings: soc: ti: add binding for k3 platforms chipid module
->    soc: ti: add k3 platforms chipid module driver
->    arm64: arch_k3: enable chipid driver
->    arm64: dts: ti: k3-am65-wakeup: add k3 platforms chipid module node
->    arm64: dts: ti: k3-j721e-mcu-wakeup: add k3 platforms chipid module
->      node
-> 
->   .../bindings/soc/ti/k3-socinfo.yaml           |  40 ++++++
->   arch/arm64/Kconfig.platforms                  |   1 +
->   arch/arm64/boot/dts/ti/k3-am65-wakeup.dtsi    |   5 +
->   .../boot/dts/ti/k3-j721e-mcu-wakeup.dtsi      |   5 +
->   drivers/soc/ti/Kconfig                        |  10 ++
->   drivers/soc/ti/Makefile                       |   1 +
->   drivers/soc/ti/k3-socinfo.c                   | 135 ++++++++++++++++++
->   7 files changed, 197 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
->   create mode 100644 drivers/soc/ti/k3-socinfo.c
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  .../devicetree/bindings/net/amlogic,meson-dwmac.yaml   | 10 +++++++---
+>  1 file changed, 7 insertions(+), 3 deletions(-)
 > 
 
-Any more comments? I'm going resend it.
+My bot found errors running 'make dt_binding_check' on your patch:
 
--- 
-Best regards,
-grygorii
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: Additional items are not allowed ([4294967295] was unexpected)
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: [[4294967295], [4294967295], [4294967295], [4294967295]] is too long
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: Additional items are not allowed ([4294967295] was unexpected)
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.example.dt.yaml: ethernet@c9410000: clocks: [[4294967295], [4294967295], [4294967295], [4294967295]] is too long
+
+See https://patchwork.ozlabs.org/patch/1279646
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
+
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
 
 _______________________________________________
 linux-arm-kernel mailing list
