@@ -2,92 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DA161C1196
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:41:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13B971C1199
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:42:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rDRhoWQsgSLm75XxhgBl93Bm3GERuh86pjKezULGmsg=; b=pPkZdxQ72CpWmy/GFGraoD/WH
-	GffKVyR62FydTDq13kLX0LR0OH7WLpDOIyITzVHIwDcRY4FOy4tD1hjccQhoDaJ+2TqD7+ZYd5CdS
-	tQT5SLIu3eTuX85FDgqUceK2iP3MqQkbPIEeZaQuhyhjTVVAS5Qe4LfQi2362eDhmKub2c0Ufnb55
-	tSfxdo+X2XbOx40G0EopORBvuf4rNlXa1R503wwuGCK0fnEqwHQUL5FaDiKmFaFcqlp8+DVQw3vrl
-	wma+nsVjGTsWJdMyAs+Xr02KTWPifqKFSBzGAOkLj7OYBm3qz14Z6V57YcwezQMcnZVRr9cWcjos3
-	f1Aw5pIpw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6/6/qR4HnF5KaTM0vI1k/R4zJa2x0uOgvC/kc6FnhvI=; b=AraQIxUFrQNPeZ
+	s03j83oakuKTSSeVJcQDtYQHoqEPju8MO+lxVu/dfQz/UyCiHf/6ddA2UgtQr359FI03iFUYchqCS
+	ZrCKesX2JTvnXQc/l58rE9OcFfuVuBiZBVMWrgQtnFfCIImesAmQkzn+eK0vDSx67Df+wpHb2ZnvX
+	Y43mFIy61nUiZpHbR15jDHeDYpazd9JO3LMW0zfga4QnB24chbYM9ec3lQUK3xWEIAHrKjG0I106D
+	gdbeuLzma1abA1ly96iM0kc2geqFD+iAeAgzXP9fTL0M6/3mFseS0PO6aoQIot2IvgEydR6PBkAPC
+	IIdoZG03W7FVPGdhrwsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUU2T-0006o2-6C; Fri, 01 May 2020 11:41:05 +0000
-Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
+	id 1jUU3P-00073s-RZ; Fri, 01 May 2020 11:42:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUU2O-0006ml-1v
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:41:01 +0000
-Received: from compute7.internal (compute7.nyi.internal [10.202.2.47])
- by mailout.west.internal (Postfix) with ESMTP id 7401A702;
- Fri,  1 May 2020 07:40:52 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute7.internal (MEProxy); Fri, 01 May 2020 07:40:53 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=stwcx.xyz; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm1; bh=Sb3goio2fiGntHYbz+m2AsCFkNQ
- rFG+Kg4TJuY9VPSk=; b=U8JPy01FEaCgmL0/x3Wq6/hHhS3ABZ9Ze/zBRZ21P/D
- eApxU4+pXkv9R/OYMs7iYojHqJXSmRxCAq/D4DZ1H2j15x7dG9lxDFfIhXErm6R6
- JMwbJP9pR1yvU6ZPG1dWNOfPTySU68jj0v4JGXX2SLrsY5No9go8Z6ix57E0Ss+H
- 4oRr+8XvY+SB2/tiIObU3Fa9+WiAc8gb8EPUyeoRD73KJp+Q7SUXDZW7U/SPRSK+
- r1atLU5zpmCTLfaAhqOJEz+jIr8u6vKwq1b2UUtsMdzsQU/Wg49HMpJ3sYtBLCUq
- WskJGp8jlpK52s/9vT9MgCRtCLHt2yjjGo9UMChSxXg==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Sb3goi
- o2fiGntHYbz+m2AsCFkNQrFG+Kg4TJuY9VPSk=; b=rWKq35srI3fHGJXnJg7ToM
- gz/1MfC2xoaLKwSlcoHy0VTRxE3sTpppHIPxXUIjSbKwoi9L3ZUsCc9WwBKlE133
- 2w2lyN3EzEMn/ajuvdC8ZKBOzsCJ2U30SxdsHBV+Ytt8MWWURhPEV4FjpP8ttYQo
- PSZs+AP6/21pPMnjjMFfk1f1A8CWm9s7DyK+eXVIqTYfHepCmNkHziKXQU689jZA
- OJczTLIw1557vDOzJav57ZYhaYMHf+Dk7f4ww88/CSMoWOQ9e9R5LlmH41ikUeB/
- HCnTCjhC5havGJz1/yvVot0TUJ5l5nbtVFHh/lAP9/PitkJGJuoZjEC2mGFgo6zQ
- ==
-X-ME-Sender: <xms:wQqsXhH-jhFVf4-4_6mcgDu94tNfRt_S4UZwJlvk9BhK-8-7MFKdCQ>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieejgdegudcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenfg
- hrlhcuvffnffculdefhedmnecujfgurhepfffhvffukfhfgggtuggjsehgtderredttddv
- necuhfhrohhmpefrrghtrhhitghkucghihhllhhirghmshcuoehprghtrhhitghksehsth
- iftgigrdighiiiqeenucggtffrrghtthgvrhhnpeegheehfeffgeekveehtdfhgfduhfeg
- fefgtdehhfektdelffevkefgueffhedtieenucfkphepjeeirddvhedtrdekgedrvdefie
- enucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehprght
- rhhitghksehsthiftgigrdighiii
-X-ME-Proxy: <xmx:wQqsXgkmkfTAS42UxYD2Zpr15FMTaDn8g_JBwQOm-SFrLb2RXoSXOA>
- <xmx:wQqsXonjbQUZkEH46KBo1deDxN6Wo-C37USh7n8DkXZgXDyjWPa2NA>
- <xmx:wQqsXtUWIuUa3A2zcdUx5JYnCfH-ExAABPBoR4cmnddYvMi1t3rZEg>
- <xmx:xAqsXik-JS_8sIz5rPEFXTYf3vw7Mw1lhQLqJI48GgV5y4gxfsb0hA>
-Received: from localhost (76-250-84-236.lightspeed.austtx.sbcglobal.net
- [76.250.84.236])
- by mail.messagingengine.com (Postfix) with ESMTPA id C9B693065F66;
- Fri,  1 May 2020 07:40:48 -0400 (EDT)
-Date: Fri, 1 May 2020 06:40:47 -0500
-From: Patrick Williams <patrick@stwcx.xyz>
-To: Alexander Filippov <a.filippov@yadro.com>
-Subject: Re: [PATCH v7] ARM: DTS: Aspeed: Add YADRO Nicole BMC
-Message-ID: <20200501114047.GC5268@heinlein.lan.stwcx.xyz>
-References: <20200429113711.13183-1-a.filippov@yadro.com>
+ id 1jUU3H-00073W-1w
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:41:56 +0000
+Received: from mail-il1-f171.google.com (mail-il1-f171.google.com
+ [209.85.166.171])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8D0BE208CA
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  1 May 2020 11:41:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588333314;
+ bh=iyLwoYzqmoKLuEytZE1afP8dkuOh3XFkCBz6I0dOsMI=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=FB7eqTmnke6VgcfaR9T4TBEDImOEy9LnaWkX3YVc2FLoO8Hi4JNfQ/J/Sx84NbXNP
+ 2P641zPNDRuRHB7YdkZK7sEPk15mlENrcv9MWtKfJiq8uwVSo7E2mtgKP1ns8j80/3
+ Z1of9BFke7EJg4yJU27LMrDfKLvzF5PSGzVaZny8=
+Received: by mail-il1-f171.google.com with SMTP id t12so4198919ile.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 04:41:54 -0700 (PDT)
+X-Gm-Message-State: AGi0PubYMEELu9CjHuO2NlMkuU+al3yQ5c7M/2iRuOt4bMsHyh7leJMe
+ HhGhBB9efnjhK3lGoZRylSuhI0rSHqJs8vOrpyY=
+X-Google-Smtp-Source: APiQypKG0QW/F6jnGvP1ldxrRV/5E4ksJZa7kuC9HAnyfRg7KpQCPAmg3NPoYThwdogYXMGTbc6Yl9Ur0mrJ23KNfqU=
+X-Received: by 2002:a92:39dd:: with SMTP id h90mr3184152ilf.80.1588333313911; 
+ Fri, 01 May 2020 04:41:53 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200429113711.13183-1-a.filippov@yadro.com>
+References: <20200501095843.25401-1-ardb@kernel.org>
+ <20200501095843.25401-3-ardb@kernel.org>
+ <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
+In-Reply-To: <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 1 May 2020 13:41:42 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
+Message-ID: <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
+Subject: Re: [PATCH RFC 2/2] ACPI/IORT: work around num_ids ambiguity
+To: Robin Murphy <robin.murphy@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_044100_135624_F54A54D4 
-X-CRM114-Status: UNSURE (   8.75  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.6 (+)
+X-CRM114-CacheID: sfid-20200501_044155_153485_1151D800 
+X-CRM114-Status: GOOD (  29.74  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.6 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.24 listed in list.dnswl.org]
- 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
- [URI: stwcx.xyz (xyz)]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,7 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,76 +87,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Andrew Geissler <geissonator@yahoo.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============8129413563620029046=="
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Hanjun Guo <guohanjun@huawei.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 1 May 2020 at 12:55, Robin Murphy <robin.murphy@arm.com> wrote:
+>
+> On 2020-05-01 10:58 am, Ard Biesheuvel wrote:
+> > The ID mapping table structure of the IORT table describes the size of
+> > a range using a num_ids field carrying the number of IDs in the region
+> > minus one. This has been misinterpreted in the past in the parsing code,
+> > and firmware is known to have shipped where this results in an ambiguity,
+> > where regions that should be adjacent have an overlap of one value.
+> >
+> > So let's work around this by detecting this case specifically: when
+> > resolving an ID translation, allow one that matches right at the end of
+> > a multi-ID region to be superseded by a subsequent one.
+> >
+> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+> > ---
+> >   drivers/acpi/arm64/iort.c | 23 +++++++++++++++-----
+> >   1 file changed, 18 insertions(+), 5 deletions(-)
+> >
+> > diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+> > index 98be18266a73..d826dd9dc4c5 100644
+> > --- a/drivers/acpi/arm64/iort.c
+> > +++ b/drivers/acpi/arm64/iort.c
+> > @@ -316,10 +316,19 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+> >       }
+> >
+> >       if (rid_in < map->input_base ||
+> > -         (rid_in >= map->input_base + map->id_count))
+> > +         (rid_in > map->input_base + map->id_count))
+> >               return -ENXIO;
+> >
+> >       *rid_out = map->output_base + (rid_in - map->input_base);
+> > +
+> > +     /*
+> > +      * Due to confusion regarding the meaning of the id_count field (which
+> > +      * carries the number of IDs *minus 1*), we may have to disregard this
+> > +      * match if it is at the end of the range, and overlaps with the start
+> > +      * of another one.
+> > +      */
+> > +     if (map->id_count > 0 && rid_in == map->input_base + map->id_count)
+> > +             return -EAGAIN;
+> >       return 0;
+> >   }
+> >
+> > @@ -404,7 +413,8 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
+> >       /* Parse the ID mapping tree to find specified node type */
+> >       while (node) {
+> >               struct acpi_iort_id_mapping *map;
+> > -             int i, index;
+> > +             int i, index, rc = 0;
+> > +             u32 out_ref = 0, map_id = id;
+> >
+> >               if (IORT_TYPE_MASK(node->type) & type_mask) {
+> >                       if (id_out)
+> > @@ -438,15 +448,18 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
+> >                       if (i == index)
+> >                               continue;
+> >
+> > -                     if (!iort_id_map(map, node->type, id, &id))
+> > +                     rc = iort_id_map(map, node->type, map_id, &id);
+> > +                     if (!rc)
+> >                               break;
+>
+> This needs a big FW_BUG splat in the case where it did find an overlap.
 
---===============8129413563620029046==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="UFHRwCdBEJvubb2X"
-Content-Disposition: inline
+Sure, although we did help create the problem in the first place.
 
+> Ideally we'd also enforce that the other half of must be the first entry
+> of another range, but perhaps we're into diminishing returns by that point.
+>
 
---UFHRwCdBEJvubb2X
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+That would mean the regions overlap regardless of whether you
+interpret num_ids correctly or not, which means we'll be doing
+validation of general well-formedness of the table rather than
+providing a workaround for this particular issue.
 
-On Wed, Apr 29, 2020 at 02:37:11PM +0300, Alexander Filippov wrote:
-> Nicole is an OpenPower machine with an Aspeed 2500 BMC SoC manufactured
-> by YADRO.
->=20
-> Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
-> ---
->  arch/arm/boot/dts/Makefile                  |   1 +
->  arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts | 326 ++++++++++++++++++++
->  2 files changed, 327 insertions(+)
->  create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
->=20
+I think the fact that we got it wrong initially justifies treating the
+off-by-one case specially, but beyond that, we should make it robust
+without being pedantic imo.
 
-Reviewed-by: Patrick Williams <patrick@stwcx.xyz>
+> If we silently fix things up, then people will continue to write broken
+> tables without even realising, new OSes will have to implement the same
+> mechanism because vendors will have little interest in changing things
+> that have worked "correctly" with Linux for years, and we've effectively
+> achieved a de-facto redefinition of the spec. Making our end of the
+> interface robust is obviously desirable, but there still needs to be
+> *some* incentive for the folks on the other end to get it right.
+>
 
---=20
-Patrick Williams
-
---UFHRwCdBEJvubb2X
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEBGD9ii4LE9cNbqJBqwNHzC0AwRkFAl6sCr0ACgkQqwNHzC0A
-wRkYyQ/+Ia0bM1fVefwj8qDw02722tG9QTWwgkAr/0ln2lYPm6WeBmhNWiQlcq73
-siHVSVZmAIxGeqAj/fo0WRA6XgemmlMNylICZj2JMlJs/RaqfdzkzMxjXDPF3jir
-kniXIA/naEnakX9e9IyzP1zeEHUeCfIBD8YdWhBXSaz8yTXw6fV4gFDCXGqjSOhc
-HSlVA3Tj9B0810DoMdGGRXU1Y90Q6H5xdZ7gdROvuZDa04jusuqFDZ9LDw47OIDp
-W+0zEW2eqhwFLp6QSDZXhBDOiB1kHdc2tEMfW0uzzqpT2JoBoGzc6PMrjPCBaIrP
-Aj23HE8zM1uuMzFZCCQ2vPUxxSroAxdhN2H1/8Cc9ekvGiAHX5e73g2hT8DOXIJD
-TLkkn9nVnKra0P+N0JhQQKXDRnSGGdoc0tsIlq7AMi6lsjzPIoV4tRqeGYZgGSBC
-henTkYrFFsmjTVnh9mTq0UdXDVZscW3oWnrK3tuzphX+tFJxlRo8QgrTLVBU52cj
-k5AL7gk/FuK+y0zYd3weLXRAEzU8u0OFDROQLsEb6jJH+2GqIcz7qPm4XkjPENDa
-5rkOxMovA+01t13eShDsWJ7vCLQPbGpDtwj7nnFtWo/uZ+pU7eqNnxVFH7iyMo4P
-obUf/pikY7qzZSVgYmi52h2c8pRRdgExNa67EOcP/SPr59zXlKQ=
-=cOmO
------END PGP SIGNATURE-----
-
---UFHRwCdBEJvubb2X--
-
-
---===============8129413563620029046==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Agreed. But at least we'll be able to detect it and flag it in the
+general case, rather than having a special case for D05/06 only
+(although I suppose splitting the output ranges like those platforms
+do is rather unusual)
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8129413563620029046==--
-
