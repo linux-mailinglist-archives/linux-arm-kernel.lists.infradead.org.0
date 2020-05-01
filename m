@@ -2,36 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E28051C0FE3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:45:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D98A1C0FEF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:47:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z7WXlvFIN8M0bHP/DQ6Zna5lOmx9xV7gr1Y0PpDSm4Y=; b=IvuKHe+oRe2RDS
-	/Som655KpQ2SckR1JezyBzmXAUTyTcVAf9VPc/PwwThj6R4wk9gkMlHKiIkyQ2K0R8OYREff+DW9A
-	BpujlKn2Sxlq0uSleFuZdLIV3EI3dvohTJOO5tgHq4nHnrmRlkV9qVp5yUOJnc2B5gM70cT094Epj
-	FH7XncMezxy6CyWgMsFKCM6E9oSN/3D1xljyoN4DF18G4ZQJmy8IMvmXMEzijuaj3LAwIuPIQQk6N
-	XJ1vlNeV9bn1ddm0aw5ba6jJSQRhwuR/nV5BVz0sN6ZxqZnoWq7YOeoJL5bmFMxYccREsyj29Rj/c
-	FF/0+9XtI4SFzL9FJNcg==;
+	List-Owner; bh=wapyq/NLqTOoo3MpxVwN/rm/e7SJe9Nl0X+6hZLYmQY=; b=KwNOgQxVe36tnh
+	1ZAJDrgpzRhz8dtiM4tnVVRgzTR+PBvib4JWK/d9+zGqN1niwlkBCLfg5PvLLQOazRmurzH6s1trN
+	TaTKZLX8EanKYDHLs48xGVyLPLC/uz3YYmXc7IAtUviL4ZbxQkPobQ67ZCkvwm7i6NcqLNrfTCRXR
+	N8NX/pFvLRg7bG3aIxKZ1otjFQasrmkIOBVOuU8I1UYjPqTMue11gZHct9XjQQaM7GbNX64tX8U7n
+	9c8xmT03D85WEUPxVspsfpbYr/+rjmwqsMPJtgA8leVk0PGTY9gZjEwYi/daht79eUnJC0zBj+tjE
+	dpgoS9oc8HQGGIBBO9Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURHy-00009a-DF; Fri, 01 May 2020 08:44:54 +0000
+	id 1jURKS-00036e-Vo; Fri, 01 May 2020 08:47:28 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURHq-00008h-NO; Fri, 01 May 2020 08:44:46 +0000
-Date: Fri, 1 May 2020 01:44:46 -0700
+ Hat Linux)) id 1jURKJ-00035y-Uv; Fri, 01 May 2020 08:47:19 +0000
+Date: Fri, 1 May 2020 01:47:19 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: sparc-related comment, to Re: [PATCH V1 07/10] arch/kmap: Ensure
- kmap_prot visibility
-Message-ID: <20200501084446.GG27858@infradead.org>
+Subject: Re: [PATCH V1 08/10] arch/kmap: Don't hard code kmap_prot values
+Message-ID: <20200501084719.GI27858@infradead.org>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200430203845.582900-8-ira.weiny@intel.com>
+ <20200430203845.582900-9-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-8-ira.weiny@intel.com>
+In-Reply-To: <20200430203845.582900-9-ira.weiny@intel.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,20 +63,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> --- a/arch/sparc/mm/highmem.c
-> +++ b/arch/sparc/mm/highmem.c
-> @@ -33,6 +33,7 @@
->  #include <asm/vaddrs.h>
->  
->  pgprot_t kmap_prot;
-> +EXPORT_SYMBOL(kmap_prot);
+On Thu, Apr 30, 2020 at 01:38:43PM -0700, ira.weiny@intel.com wrote:
+> From: Ira Weiny <ira.weiny@intel.com>
+> 
+> To support kmap_atomic_prot() on all architectures each arch must
+> support protections passed in to them.
+> 
+> Change csky, mips, nds32 and xtensa to use their global kmap_prot value
+> rather than a hard coded value which was equal.
 
-Btw, I don't see why sparc needs this as a variable, as there is just
-a single assignment to it.
+Looks good,
 
-If sparc is sorted out we can always make it a define, and use a define
-for kmap_prot that defaults to PAGE_KERNEL, avoiding a little
-more duplication.
+Reviewed-by: Christoph Hellwig <hch@lst.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
