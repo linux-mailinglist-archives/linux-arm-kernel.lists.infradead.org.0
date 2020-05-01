@@ -2,78 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9F81C17DC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:36:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A2991C17F0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:39:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=BTQRr1KRBLucCw2nkKQWogLhs/2I2eX+QZSUT713wAY=; b=MUE
-	BlrMtKGh0QEpey5yc2xa72mK3P4p/xVkEMHZeieW9brnqq9/1Qpkh0013kD0Y2R+bonU2fbuWyd8I
-	Ou/U/5oNeWTmTwFMzihlafP2fyGldcA19x5kPscvDu6YnEVdiC0eOj28buPP0qTUxK6vkSmnqkXBt
-	3lTKTMFzBJp4A79wSmuwQcOJtyYbuR7YE1H5X5b7Fnd6859jmDAOn2G+KeAnmaqekFSAh/JfKrZ0D
-	M18EWmJK6XvHX21sMC21DCQ4ZhKnUYNIKa7pVA2Qmpjdr39FLkKRQKEmefB18GU8TTUUPr9t4iYFo
-	zXfJWmZ16Bz4NGPhBQ1wFr2UzGeMH3Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dR9YbqHAMYnaoT7pIejmmnuqDxLH3ZDU2HdX7UIcvHI=; b=LVTEkaRvlIwl2v
+	wZCb0Z5JWvPt2Ag0fWAxBEQX36k7b6IeYaXhFeSGCHrlIl+jvoAIOKn0WMZvNAG4pK7v/IWC90P6z
+	isLyEQY8zTfRGMP9UdtxKGwf25tEEXiBkOedZt2cwzkxrN5EqE7Yp93d8zNJRGzUiQ64fzDazQV9L
+	Q/aj5lBmSzhA3PuQFoY3U5roaepqj3OCNnNnaU+UlKDf8bJO0FIKzz+dMScFEcQk3uIL/g9W56yfR
+	Ea/1qMcshvLP66fu9p61XKBJktUY9zJ7ZIfJTwV5gbkB5VslbzgEG15SQVZjrIs7P3ZWumB8Wot1W
+	1cV3iJOfC7nASJlxrHjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUWmF-0007MK-OW; Fri, 01 May 2020 14:36:31 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jUWp1-0000Ty-PC; Fri, 01 May 2020 14:39:23 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUWm5-0007Fr-L2
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:36:23 +0000
-Received: by mail-wr1-x441.google.com with SMTP id k1so11748305wrx.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 07:36:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=qezlbEs26gOrWFMyWMZpjZ8xghXGSjIgdcezc4CI8eY=;
- b=NZ1zpulfQHxcBjCRJz+dbH9uUgkQbKPQ4ynbioMg3EyOYoyttoozmzd4rVucZG+QwM
- lG+HGJa4UBSLSeXGDS/JXQrES1ICu5e8IjsMnRuPYIoD3wDFNZHX4A8ieVie6dygnVJM
- Rmio6BxmYlbncELdKHsRCE+Ll6Yj/MlpimGsfRFvI4gXcIF8F/GrGQpWT0i742jfnSMv
- TyCdf/OqiR+NiixAYfE+sOSNZZ0/ldTAO2Fi3nD6Wdi43vFwoWihvWvWYQu/qH00pR7I
- vrRVR5/76W3XUVR7dLKkR+ATp2F4JEepMXV2bQP4+/nPoJpfRq7y5GD509/dk+GV7CKO
- in6w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=qezlbEs26gOrWFMyWMZpjZ8xghXGSjIgdcezc4CI8eY=;
- b=gQ7yZ8zRblVMAI8/5Pmy7kx/vYnwlDTOcygRMSjsVYUmk4zA39kd8uY+JHuGXzTnqu
- U8LQQdslm4bfyeH7il8gtFc24aLZnfuJ0wLAhKJwx9ons5WUqfKIxiseTvj1qOB+tav1
- agUhFLsAQOUBZw09Yxq2OtpZ5sQY9knnf5RIF0fE811OHus//YCpT8n1nARj7HjBakcQ
- b615q73hYHUesbNU4gAQ+VxetpsSFQmZi4SsJyMQcv3gbQ+Pk8iVJ3VnEXqGRGPB7RD6
- ZXcCTezaF12GmAoyJ1H7rqJkx0Y309V10Oy7VJb5xXPUV5SNNwF/sB/pkFL5QULL+Pg2
- af3w==
-X-Gm-Message-State: AGi0PuYtEoNdtUg1LcpQYo0Mb1AkQeMSr9b6XEnJr9Qq5GJ9L4EkOUSf
- jNmO567KbXr5W7vi7IPy7SbilPG3YHk=
-X-Google-Smtp-Source: APiQypImSe8yuivKOHKCNp93T5FkysYQ8r2xtCVoVj1NQvb8wNUiHJE5THy5jkxXcbBhPCjFB1Of8w==
-X-Received: by 2002:adf:82ac:: with SMTP id 41mr2436039wrc.110.1588343779109; 
- Fri, 01 May 2020 07:36:19 -0700 (PDT)
-Received: from linaro.org ([2a00:23c5:6801:1801:8bee:312:6092:58f2])
- by smtp.gmail.com with ESMTPSA id z22sm4204992wma.20.2020.05.01.07.36.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 May 2020 07:36:18 -0700 (PDT)
-From: Mike Leach <mike.leach@linaro.org>
-To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
- mathieu.poirier@linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v2] perf: cs-etm: Update to build with latest opencsd version.
-Date: Fri,  1 May 2020 15:36:15 +0100
-Message-Id: <20200501143615.1180-1-mike.leach@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ id 1jUWoU-0000DE-0f; Fri, 01 May 2020 14:38:51 +0000
+X-UUID: b3fa2ccd07f34682a06f46604b1fd4c9-20200501
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=76OLCwfX6Gu9wxMlwzFdygqKRZ9AvkGO+i5uev8RfB0=; 
+ b=oYTqZP5ogRhcen8vD/zje7xCWAjRNo/j7nsSNUDGSMUCvQYXJ4erAb6yqZD3+lHQMsEKrTtbDJvsrcleSozmtpkJExeCw/J5glPFHyMnqmNyq7moOUqfC+2YQbA9TGN6qHsde+v8rSxVm9WwT8bxZs3Ro1wpyXJSor1pm2jTfhY=;
+X-UUID: b3fa2ccd07f34682a06f46604b1fd4c9-20200501
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 518298180; Fri, 01 May 2020 06:38:32 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 1 May 2020 07:38:36 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 1 May 2020 22:38:34 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Fri, 1 May 2020 22:38:33 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <asutoshd@codeaurora.org>
+Subject: [PATCH v3 0/5] scsi: ufs: support LU Dedicated buffer type for
+ WriteBooster
+Date: Fri, 1 May 2020 22:38:30 +0800
+Message-ID: <20200501143835.26032-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: 75152929AB62C60A90DD79E3896054B044F54FEB05576F22D2B5529405A9B3A82000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_073621_694747_3233844F 
-X-CRM114-Status: GOOD (  11.85  )
+X-CRM114-CacheID: sfid-20200501_073850_068804_1EC73397 
+X-CRM114-Status: UNSURE (   6.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -81,6 +74,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,64 +87,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: peterz@infradead.org, mingo@redhat.com, Mike Leach <mike.leach@linaro.org>,
- acme@kernel.org, suzuki.poulose@arm.com
-MIME-Version: 1.0
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-OpenCSD version v0.14.0 adds in a new output element. This is represented
-by a new value in the generic element type enum, which must be added to
-the handling code in perf cs-etm-decoder to prevent build errors due to
-build options on the perf project.
+Hi,
 
-This element is not currently used by the perf decoder.
+This patchset adds LU dedicated buffer mode support for WriteBooster.
 
-Perf build feature test updated to require a minimum of 0.14.0
+In the meanwhile, enable WriteBooster capability on MediaTek UFS platforms.
 
-Tested on Linux 5.7-rc3.
+v2 -> v3:
+  - Introduce a device quirk to support WriteBooster in pre-3.1 UFS devices (Avri Altman)
+  - Fix WriteBooster related sysfs nodes. Now all WriteBooster related sysfs nodes are specifically mapped to the LUN with WriteBooster enabled in LU Dedicated buffer mode (Avri Altman)
 
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
----
- tools/build/feature/test-libopencsd.c           | 4 ++--
- tools/perf/util/cs-etm-decoder/cs-etm-decoder.c | 2 ++
- 2 files changed, 4 insertions(+), 2 deletions(-)
+v1 -> v2:
+  - Change the definition name of WriteBooster buffer mode to correspond to specification (Bean Huo)
+  - Add patch #5: "scsi: ufs: cleanup WriteBooster feature"
 
-diff --git a/tools/build/feature/test-libopencsd.c b/tools/build/feature/test-libopencsd.c
-index 2b0e02c38870..1547bc2c0950 100644
---- a/tools/build/feature/test-libopencsd.c
-+++ b/tools/build/feature/test-libopencsd.c
-@@ -4,9 +4,9 @@
- /*
-  * Check OpenCSD library version is sufficient to provide required features
-  */
--#define OCSD_MIN_VER ((0 << 16) | (11 << 8) | (0))
-+#define OCSD_MIN_VER ((0 << 16) | (14 << 8) | (0))
- #if !defined(OCSD_VER_NUM) || (OCSD_VER_NUM < OCSD_MIN_VER)
--#error "OpenCSD >= 0.11.0 is required"
-+#error "OpenCSD >= 0.14.0 is required"
- #endif
- 
- int main(void)
-diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-index cd92a99eb89d..cd007cc9c283 100644
---- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-+++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-@@ -564,6 +564,8 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
- 		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
- 					       elem, trace_chan_id);
- 		break;
-+	/* Unused packet types */
-+	case OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH:
- 	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
- 	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
- 	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
+Stanley Chu (5):
+  scsi: ufs: enable WriteBooster on some pre-3.1 UFS devices
+  scsi: ufs: add "index" in parameter list of ufshcd_query_flag()
+  scsi: ufs: add LU Dedicated buffer mode support for WriteBooster
+  scsi: ufs-mediatek: enable WriteBooster capability
+  scsi: ufs: cleanup WriteBooster feature
+
+ drivers/scsi/ufs/ufs-mediatek.c |   3 +
+ drivers/scsi/ufs/ufs-sysfs.c    |  14 ++-
+ drivers/scsi/ufs/ufs.h          |   7 ++
+ drivers/scsi/ufs/ufs_quirks.h   |   7 ++
+ drivers/scsi/ufs/ufshcd.c       | 156 +++++++++++++++++++++-----------
+ drivers/scsi/ufs/ufshcd.h       |   3 +-
+ 6 files changed, 135 insertions(+), 55 deletions(-)
+
 -- 
-2.17.1
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
