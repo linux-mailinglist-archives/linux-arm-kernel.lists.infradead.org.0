@@ -2,72 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AD711C12A3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 15:11:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B3131C12B8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 15:16:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lw/8uwF1QHtr9Qi3a6+paaQnCDxsGqgg9UlTGeMrhPo=; b=tKBNwPrtNSv8zy
-	dcW2Z27WfSrqvdc0HKxlb/XubPIOM/PF+RNMtNxRELMj2gEdsEMKZU+URTdxqPJDp3oQX1h3ksUUl
-	vKyis3FnRpkCLVbYTFA71OtG9Ov4rjUgH2G/k1OZ8AGME7UDmImaflRNvrwBWs6/pO6ABqisZkLA2
-	x9FowH1LzAdVssvEjGdR4N4+Dvi1LdYpQgzRr0YnFKmVP6y3sqLfWEWo4wBU2frGZwk7UL/9zifyn
-	RCZYybvMhsRU4w1PHZK6CMxCEfHxtHZnQUpFvCe3dK/jf5K0o06hs83R1IB81L6KL751wJDG5JYb7
-	eRF8gXASeOpy7gXXikwA==;
+	List-Owner; bh=TCbPK1PuoUSZrPwXnb1f2Eb3QyY82EgHvUwiCXYH1lo=; b=Woko10WN65opq9
+	AlgUyj//s42VFgaXU6XuaUrx50/bE5+eQNuVH+Fr8yB+0kTBNHYXXpIDDaqzo/CWQd8CbZZsh3VC6
+	k1ryaxnNqMWn/Dj01H0pzCPzJQk+rUljuCtA+GglvULSppCYbGeoPdAaypce5nFx1sWGZXPQzv49o
+	u424GKQ0S46ZLhI5TtRA2RMIxF/dUPPYxrn7oExLK0HigLI0DpbSp1m9aR89QAwKrhaxOjrAMOZHq
+	ME/NNkY5trfI2duG9sxpsJ+X4/xn//aNyyrFsSFciJOucj2E6CA6xWtKsdn8TMR7a494oe+5TvvYu
+	3JQMs/qk4OenIk3illZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUVRn-0001YZ-9u; Fri, 01 May 2020 13:11:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUVXA-000542-8Y; Fri, 01 May 2020 13:16:52 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUVRg-0001Y8-5A
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 13:11:13 +0000
-Received: from mail-io1-f45.google.com (mail-io1-f45.google.com
- [209.85.166.45])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7426E2166E
+ id 1jUVX4-00053Y-8T
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 13:16:47 +0000
+Received: by mail-pg1-x543.google.com with SMTP id r4so4554464pgg.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  1 May 2020 13:11:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588338671;
- bh=b3tQcd8Yq0ftAgc0rDhPFa6ynGleLes13N9ftbLQhXk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=eK1Tsyduvv4rT6xH5SBsC9+8FxfNMW609PhiAfclV3D5LZ/o1vGmHPFaZzGxvv+RL
- WFM2vlKRmOC2ePxf0SsWdi2lu4okDSJyc6ZWXEuwQuHm9zslfSlVgzkSjK9/IumFZ/
- SErJ17ST8xH0ogHpFqRk3l3hyLmAoyJftYeAERVc=
-Received: by mail-io1-f45.google.com with SMTP id y26so4831027ioj.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 06:11:11 -0700 (PDT)
-X-Gm-Message-State: AGi0PuamOu1fYXKosu/T4sJin/+oGOgmOBsDfhzfzEZm1Mv0SgzQkBU9
- RLOgXIi2xwHc9OuHE0N7NPn2n9GsLtdrTCXqa48=
-X-Google-Smtp-Source: APiQypK3rxCjfL8TPcuz/WQvZAqAlEAiikwycwu/C6Qi6KOo8ImoF6d4IfACWGj2JJoNDG02sfGVORvKlhwA1Y7LDvc=
-X-Received: by 2002:a5d:9b8a:: with SMTP id r10mr3665941iom.171.1588338670673; 
- Fri, 01 May 2020 06:11:10 -0700 (PDT)
+ Fri, 01 May 2020 06:16:45 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=b2+/9XXY8Y1RxQllaPBwEstw2gB8BpLP9hF+BFGMRto=;
+ b=GCmm1wMVqYxnGfNpvKp1cw9fbv2U2gMWk1CMbTh48Hm7wPNMne/GbW31xoR7mD00S6
+ +uYXr4iDO7nSP6i6NtmbZ50/3IbLNNl4H21oYebEd34ccm62tuScRjfDRf1UWetYkb65
+ odnWO7yMmFF0syGwu/kMQNNJLwLW9Ij93HzkYPKmRli9xqzyC1VZ3EEehyJPysb8KWdz
+ T+7Umkferm/ayeT9tP5ghbICCAKDJv7XaRspMAl82ljUL/xT1Jwb2cPlduJ7JsQ0OhsH
+ Ld0vBtmY9g6MuytPotItD3U+UU2gcrdRAg8rKiiJr6QVPNe7h5eDislLZN2nuhtD84Cl
+ FNAg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=b2+/9XXY8Y1RxQllaPBwEstw2gB8BpLP9hF+BFGMRto=;
+ b=iapxugj2HuMaM95mNkFtbTXWpV5l9GvkA3wodgzm1W+FmsfAvNQyscjS5tw4WboIAN
+ /CgERZ8qDroh1VJbKZ/F+1sdT6DI/lUKSDYr3yLFmDWl+Wb+MYy0/Y0TUBA9dgH1H2T5
+ IGudrFsjGK7WPnB3l/JkYwdljq3odwouUEMZtV+rjr/uy+RrNpqQbBVnQKSlEgqet2Ce
+ CJUJjn7ZhMEJo2sbfjbVWHwvRvr7N3CBAtvoDRPbQePuDv3Zzr3aGBuT2UnoxudxheVm
+ pzZPNZ/dXeW3u0qlbIdcPxGTq4yHnetNDbrfPAYO8ho+WZ20B+85HMtfhZUF1BwQuwxL
+ Xyxg==
+X-Gm-Message-State: AGi0PuYaMNUvKae3Zc/Nd19zfHpiVfHj5VithvbzTIQe2An21pWnO/LH
+ AvivJ0y3zPEr4wp9yo27qgQV8VlOGb+OWhqvges=
+X-Google-Smtp-Source: APiQypKHDrDQjerRe+W1cA8mxnGSdNgtk0He587ZvD8AdxHMslTtV5DWvxC7LaTDqCSIrv6W6qI497cIXQBPbgQab8o=
+X-Received: by 2002:a62:f908:: with SMTP id o8mr4034258pfh.170.1588339005327; 
+ Fri, 01 May 2020 06:16:45 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200501095843.25401-1-ardb@kernel.org>
- <20200501095843.25401-3-ardb@kernel.org>
- <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
- <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
- <18e01ac7-974e-8308-c18c-67aa3fd7ad4e@arm.com>
-In-Reply-To: <18e01ac7-974e-8308-c18c-67aa3fd7ad4e@arm.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Fri, 1 May 2020 15:10:59 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXHsXEmaLuVBo7cgdzHju22WKksu7s3B3-hBE4mYhnuJ=Q@mail.gmail.com>
-Message-ID: <CAMj1kXHsXEmaLuVBo7cgdzHju22WKksu7s3B3-hBE4mYhnuJ=Q@mail.gmail.com>
-Subject: Re: [PATCH RFC 2/2] ACPI/IORT: work around num_ids ambiguity
-To: Robin Murphy <robin.murphy@arm.com>
+References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
+ <20200501013044.GA288759@jagdpanzerIV.localdomain>
+ <818ba356-ba35-68de-b7bf-f145a89280f1@gmail.com>
+In-Reply-To: <818ba356-ba35-68de-b7bf-f145a89280f1@gmail.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 1 May 2020 16:16:33 +0300
+Message-ID: <CAHp75VeZRwUp+CpOct4dCAQAfyJZBAY7=qSKwRQh935KEMWw+g@mail.gmail.com>
+Subject: Re: [RFC PATCH v2 0/3] Prefer working VT console over SPCR and
+ device-tree chosen stdout-path
+To: Alper Nebi Yasak <alpernebiyasak@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_061112_237866_CCC16A0D 
-X-CRM114-Status: GOOD (  38.26  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200501_061646_304128_94173B92 
+X-CRM114-Status: GOOD (  16.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,146 +95,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, Sudeep Holla <sudeep.holla@arm.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Hanjun Guo <guohanjun@huawei.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Petr Mladek <pmladek@suse.com>, Feng Tang <feng.tang@intel.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Eric Biggers <ebiggers@google.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Nicolas Pitre <nico@fluxnic.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
+ Arvind Sankar <nivedita@alum.mit.edu>, Grzegorz Halat <ghalat@redhat.com>,
+ "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
+ Jiri Slaby <jslaby@suse.com>, Lukas Wunner <lukas@wunner.de>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Sam Ravnborg <sam@ravnborg.org>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 1 May 2020 at 14:31, Robin Murphy <robin.murphy@arm.com> wrote:
+On Fri, May 1, 2020 at 2:11 PM Alper Nebi Yasak
+<alpernebiyasak@gmail.com> wrote:
+> On 01/05/2020 04:30, Sergey Senozhatsky wrote:
+
+> I'm assuming "by default" here means "without console arguments"
+> regardless of firmware requests. This paragraph (with small changes) is
+> repeated on many other Kconfig descriptions (drivers/tty/serial/Kconfig,
+> drivers/tty/serial/8250/Kconfig, arch/sparc/Kconfig from grepping for
+> '/dev/tty0' on **/Kconfig).
 >
-> On 2020-05-01 12:41 pm, Ard Biesheuvel wrote:
-> > On Fri, 1 May 2020 at 12:55, Robin Murphy <robin.murphy@arm.com> wrote:
-> >>
-> >> On 2020-05-01 10:58 am, Ard Biesheuvel wrote:
-> >>> The ID mapping table structure of the IORT table describes the size of
-> >>> a range using a num_ids field carrying the number of IDs in the region
-> >>> minus one. This has been misinterpreted in the past in the parsing code,
-> >>> and firmware is known to have shipped where this results in an ambiguity,
-> >>> where regions that should be adjacent have an overlap of one value.
-> >>>
-> >>> So let's work around this by detecting this case specifically: when
-> >>> resolving an ID translation, allow one that matches right at the end of
-> >>> a multi-ID region to be superseded by a subsequent one.
-> >>>
-> >>> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> >>> ---
-> >>>    drivers/acpi/arm64/iort.c | 23 +++++++++++++++-----
-> >>>    1 file changed, 18 insertions(+), 5 deletions(-)
-> >>>
-> >>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> >>> index 98be18266a73..d826dd9dc4c5 100644
-> >>> --- a/drivers/acpi/arm64/iort.c
-> >>> +++ b/drivers/acpi/arm64/iort.c
-> >>> @@ -316,10 +316,19 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
-> >>>        }
-> >>>
-> >>>        if (rid_in < map->input_base ||
-> >>> -         (rid_in >= map->input_base + map->id_count))
-> >>> +         (rid_in > map->input_base + map->id_count))
-> >>>                return -ENXIO;
-> >>>
-> >>>        *rid_out = map->output_base + (rid_in - map->input_base);
-> >>> +
-> >>> +     /*
-> >>> +      * Due to confusion regarding the meaning of the id_count field (which
-> >>> +      * carries the number of IDs *minus 1*), we may have to disregard this
-> >>> +      * match if it is at the end of the range, and overlaps with the start
-> >>> +      * of another one.
-> >>> +      */
-> >>> +     if (map->id_count > 0 && rid_in == map->input_base + map->id_count)
-> >>> +             return -EAGAIN;
-> >>>        return 0;
-> >>>    }
-> >>>
-> >>> @@ -404,7 +413,8 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
-> >>>        /* Parse the ID mapping tree to find specified node type */
-> >>>        while (node) {
-> >>>                struct acpi_iort_id_mapping *map;
-> >>> -             int i, index;
-> >>> +             int i, index, rc = 0;
-> >>> +             u32 out_ref = 0, map_id = id;
-> >>>
-> >>>                if (IORT_TYPE_MASK(node->type) & type_mask) {
-> >>>                        if (id_out)
-> >>> @@ -438,15 +448,18 @@ static struct acpi_iort_node *iort_node_map_id(struct acpi_iort_node *node,
-> >>>                        if (i == index)
-> >>>                                continue;
-> >>>
-> >>> -                     if (!iort_id_map(map, node->type, id, &id))
-> >>> +                     rc = iort_id_map(map, node->type, map_id, &id);
-> >>> +                     if (!rc)
-> >>>                                break;
-> >>
-> >> This needs a big FW_BUG splat in the case where it did find an overlap.
+> From Documentation/admin-guide/serial-console.rst:
+>
+> > You can specify multiple console= options on the kernel command line.
+> > [...]
+> > Note that you can only define one console per device type (serial, video).
 > >
-> > Sure, although we did help create the problem in the first place.
-> >
-> >> Ideally we'd also enforce that the other half of must be the first entry
-> >> of another range, but perhaps we're into diminishing returns by that point.
-> >>
-> >
-> > That would mean the regions overlap regardless of whether you
-> > interpret num_ids correctly or not, which means we'll be doing
-> > validation of general well-formedness of the table rather than
-> > providing a workaround for this particular issue.
+> > If no console device is specified, the first device found capable of
+> > acting as a system console will be used. At this time, the system
+> > first looks for a VGA card and then for a serial port. So if you don't
+> > have a VGA card in your system the first serial port will automatically
+> > become the console.
 >
-> The point was to limit any change in behaviour to the specific case that
-> we need to work around. Otherwise a table that was entirely malformed
-> rather than just off-by-one on the sizes might go from happening-to-work
-> to not working, or vice versa; the diminishing return is in how much we
-> care about that.
+> and later on:
 >
+> > Note that if you boot without a ``console=`` option (or with
+> > ``console=/dev/tty0``), ``/dev/console`` is the same as ``/dev/tty0``.
+> > In that case everything will still work.
 
-I see. I think it is quite unlikely that a working system with
-overlapping ID ranges would work, and suddenly fail horribly when the
-exact point of overlap is shifted by 1. But yeah, I see your point.
+I'm wondering if behaviour is changed if you put console=tty1 instead
+of console=tty0.
 
-> > I think the fact that we got it wrong initially justifies treating the
-> > off-by-one case specially, but beyond that, we should make it robust
-> > without being pedantic imo.
->
-> As the #1 search engine hit for "Linux is not a firmware validation
-> suite", I can reassure you that we're on the same page in that regard ;)
->
-
-Good :-)
-
-> >> If we silently fix things up, then people will continue to write broken
-> >> tables without even realising, new OSes will have to implement the same
-> >> mechanism because vendors will have little interest in changing things
-> >> that have worked "correctly" with Linux for years, and we've effectively
-> >> achieved a de-facto redefinition of the spec. Making our end of the
-> >> interface robust is obviously desirable, but there still needs to be
-> >> *some* incentive for the folks on the other end to get it right.
-> >>
-> >
-> > Agreed. But at least we'll be able to detect it and flag it in the
-> > general case, rather than having a special case for D05/06 only
-> > (although I suppose splitting the output ranges like those platforms
-> > do is rather unusual)
->
-> Yup, in principle the fixed quirk list gives a nice reassuring sense of
-> "we'll work around these early platforms and everyone from now on will
-> get it right", but whether reality plays out that way is another matter
-> entirely...
-
-The reason I am looking into this is that I think the fix should go to
-stable, given that the current situation makes it impossible to write
-firmware that works with older and newer kernels.
-
-Lorenzo said he wouldn't mind taking the current version with ACPI OEM
-ID matching back to -stable, but it's another quirk list to manage,
-which I would prefer to avoid.
-
-But I don't care deeply either way, to be honest, as long as we can
-get something backported so compliant firmware is not being penalized
-anymore.
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
