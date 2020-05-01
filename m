@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 234B31C0F45
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:15:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3BA931C0F57
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:20:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A0V0aMdNmbqnr9v14Qi747/bjeIZH87yZJGMHueTdAw=; b=aj7aGiQdoaBMOo
-	vpcrSvUF4n05dWjxzm0SNzeyCfBl4PX02iyeZrFQH1ShCEvSMgOhpTJ/fiFZrsU4t9esFEKRyfI91
-	t2MNcJGZZOLrvEyYCH68s9ywqUJ3n7n18Bcwm8JFnTd0jDr+APifuZpMHHTIE1dMfxJaZ4ghEqOpE
-	MSxV5FISup0N1klNSWcSgkrx+zNaXvyVuAODhtiCl216jwQ4/qxJvqxwv1oDeTtxZyCrSe0ozhYTq
-	tBYR1ouGmTMyKrPhbQU3XELupFGgfGs6j3ERWcdPtO7lHAeVA4sFNBawvRC0Ba2GpLwWyQ3ROpZpR
-	XAvX9D6kxnNNQm1URPrw==;
+	List-Owner; bh=ALJwa2NKoD05zHjk/rpqgpfd81kuJRegaNzSfEwJNrA=; b=U/AgvRXhH6ABNm
+	qw3d4lKHMdmxtvuhZVUCvKIj4hOqKQ+sdrGlgIhpeYGVibF2VisadCyJxuz65LOLOusEc66pt+ZRZ
+	gRCF75fHLkgbP7pqvVVPWrjCHuIScQ/+2dGZTwGCPmTQ1Tp51fPaAXdkXhScMTBZ+gbveXC2RmyxK
+	Uc/O+i/NhFTDNCgg12Wkv9Zw/6d0+jheOXY6nHjAc/ijhaPwvXTCOIVwJSBWdmi63FezuUnjh0X16
+	zjnGsRJWlRuLrZ/rX9oy7RnyOnN0qwPPdFcdbCESMaUT0XKmx+FYGOoYFX4/1PpRz+pKXQYd/ZGBr
+	oQ+CiassG5JCE/giVx6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUQpk-0005QJ-3C; Fri, 01 May 2020 08:15:44 +0000
-Received: from mail-oi1-x242.google.com ([2607:f8b0:4864:20::242])
+	id 1jUQuK-0000PR-U5; Fri, 01 May 2020 08:20:28 +0000
+Received: from mail-oo1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUQpc-0005OZ-F8
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:15:37 +0000
-Received: by mail-oi1-x242.google.com with SMTP id o24so2162112oic.0
+ id 1jUQuE-0000Ot-0T
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 08:20:23 +0000
+Received: by mail-oo1-xc41.google.com with SMTP id u190so569651ooa.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 01:15:31 -0700 (PDT)
+ Fri, 01 May 2020 01:20:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=67PD+4N6OTeLQfdVEtLP8JgZsz239nlSbqS4Vkr8Dyw=;
- b=kLDxDqPs9e69GaVMoTLIbt5TvwRXfennTnwhak3ZePa6Iw3AisJOdncZZtD5a3g+Iz
- YF/82TokyreEFFn60NinKIGrC0hy0MwKvtZHCwyFrC85V4U2jf51couuP4yBrXn/TQAF
- BLDeJG+s/qPBOdTUrh7x2jcV6xVGy1+FRUZAegp4jwA+7qmCYzGGJ8QUhZmEy9zXIWNo
- 4ih3ouFd+mP1Pnx96vHgtEw/r/WzELYEDu6LsgVwa5zBqJ8pQ7R2iM4deN5x8o+RZIB7
- SHmgCDIJ9rKhPh32VzsySTwtLpGAnFTGMg9KICJnlJ2oJyqVxCkOIRyzEPpya8Ja6m5g
- TOMw==
+ :cc; bh=4xmDrknoIK7bXjgHNUmPbIHsbFNrCtpw+rgXposQwms=;
+ b=O5Bdg7qQzAnlPhD7xVJhnqshnj7xNmXBKRGbWbhp2T9vzzM1MpFW+E+RYCzOknKpj8
+ ky8+dFqN4sKrq5u57LLjx7VY+/3/WsZskllAALIAtybnzNJR5vjiggO1UpC+6aDbbu9t
+ kydHSvKLXU7sGWkz9y9RVKviHgYZWyYOdg2x61aI7Ws5OUMZX6mszoJOTXjCYgE1kCG3
+ YxX1fPKMUR1N/tfPH7XlGmuqZdaT3kJbh6CaQQU6+twLEmxTOFlPMFYj1ocjQyMHVXpF
+ B5EvjhnHPr8btv+Tyz5UgmMlUf682frU/Xa8+Ff2S6K0/HOvwKzJmdLj2aYf5auUrllc
+ 1zXw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=67PD+4N6OTeLQfdVEtLP8JgZsz239nlSbqS4Vkr8Dyw=;
- b=T4OoHYhT19qqbBUAKpjYgFXg6i47qR9Gtl+F73+5gk2M3TY2gv+1LM+2EKaoD+qI0c
- +Re6lU942p34og1xmNcpmRK3RB73G7JWaZ1UztasEhovE9JS6TRWDoaDFr29dTUE4r3p
- Tq8qAaUtZ/ecC8gCQw9QDsYcXZlwASLV3AR35qUIdsIcEz3Pae1HF+TeXGOZqZPbYqjN
- dFFFQHWMCnaML+cFv/Xb+0X+iYAfEdmo+JxgdhsfArPrPCzSxAokXL7R2Arq6kCuoLGi
- ehKUaw4LaPfWAp2Tg9GPtMnCvi3HRncbGXG0rVf1J6lKIHxJN/uaX0InVs7Uom7n4CIC
- J6AQ==
-X-Gm-Message-State: AGi0PuawgIAmq3Bogtys0rYDLMTL1nty678+bxIhqTTHKbA/bLZrx/SV
- U4s7e/m96JGZf5PKQs3WBvLJLtQwcc6yK1Zd1zM=
-X-Google-Smtp-Source: APiQypIgr6pyF8u5FiRXk8vY7iTPFETvjGXZfjd03HJ7Sse1ymzPq5v9ms+GEMVAq9d2o2xjZGdRdTbFSnFcUHZk+Yk=
-X-Received: by 2002:aca:b783:: with SMTP id h125mr2296549oif.62.1588320931075; 
- Fri, 01 May 2020 01:15:31 -0700 (PDT)
+ bh=4xmDrknoIK7bXjgHNUmPbIHsbFNrCtpw+rgXposQwms=;
+ b=hNa43Epi4V6nYfTTQdxkFNM8u7TsAa5yE5AIABd3GJnssYkMON1m/PFMs72CJvuySb
+ 97PcDSNyke7vg+BEhHjqNNLSDJiOSkWKhoJJgOpJaBuOZN7ktiwebUOBPVgJ/xJfcAZv
+ jnoDztRaaJLVxehNdvgrm935UkG4Gayi1zYLfn4P11Wpkbsb2hIkDh2RE1mlle94JtMA
+ GlhWmLAV9VquzDz44+D9JWNDefMBtjF7maPD+hJW1UF309OkKs7XcopETumIWq+2xb17
+ woeaBjb4xAEtQ/CFkubTo8c0SWmDNrA5IbvJLgCpVXSChagJy7aj0neCbSUkt3ZgKeKA
+ RRyQ==
+X-Gm-Message-State: AGi0PuYrPlyaBr8Xyh+Vz91iiwWCi7kN43+1NZMYsAFR55mu5QuLpPMq
+ uAMeE1Qhxebe5SeEB2F92MxmcEy/yzF1fzhPKUw=
+X-Google-Smtp-Source: APiQypKWRZyPptVG5tDacv48mYRSDp6n8y852TNesK+NocS5PxHwyt2eSwaWJhO2Yzy3GzH7tq6UeX5cCu+1f17mElg=
+X-Received: by 2002:a4a:a209:: with SMTP id m9mr2850194ool.62.1588321221043;
+ Fri, 01 May 2020 01:20:21 -0700 (PDT)
 MIME-Version: 1.0
 References: <1588197415-13747-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <1588197415-13747-8-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
- <CAMuHMdU90pqCVd=jombH-JMomoCDe1tA8Lq=m0urACK67ZNYuw@mail.gmail.com>
-In-Reply-To: <CAMuHMdU90pqCVd=jombH-JMomoCDe1tA8Lq=m0urACK67ZNYuw@mail.gmail.com>
+ <1588197415-13747-5-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+ <CAMuHMdXEu0i8APM+g3TWbkfkLbYtCzi7uJABvMscS0a_j030tg@mail.gmail.com>
+In-Reply-To: <CAMuHMdXEu0i8APM+g3TWbkfkLbYtCzi7uJABvMscS0a_j030tg@mail.gmail.com>
 From: "Lad, Prabhakar" <prabhakar.csengg@gmail.com>
-Date: Fri, 1 May 2020 09:15:04 +0100
-Message-ID: <CA+V-a8sMKWD_FMcEhm-gAOPx2Xdr-4wRdgaiumWLA4vRBUkMMg@mail.gmail.com>
-Subject: Re: [PATCH 07/18] ARM: dts: r8a7742: Initial SoC device tree
+Date: Fri, 1 May 2020 09:19:54 +0100
+Message-ID: <CA+V-a8u8r+zT-HSHqPQdRfCKOmx=-a_GrTTM1ZQueOwnvT8xeg@mail.gmail.com>
+Subject: Re: [PATCH 04/18] ARM: debug-ll: Add support for r8a7742
 To: Geert Uytterhoeven <geert@linux-m68k.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_011536_509304_6A4D1F24 
-X-CRM114-Status: GOOD (  25.93  )
+X-CRM114-CacheID: sfid-20200501_012022_074046_8DBD6E2C 
+X-CRM114-Status: GOOD (  18.95  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:242 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [prabhakar.csengg[at]gmail.com]
@@ -96,6 +96,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
  <devicetree@vger.kernel.org>, Jason Cooper <jason@lakedaemon.net>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
  "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  Marc Zyngier <maz@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
  Magnus Damm <magnus.damm@gmail.com>,
@@ -116,139 +117,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Geert,
 
-Thank you for the review.
-
-On Thu, Apr 30, 2020 at 2:49 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
+On Thu, Apr 30, 2020 at 2:03 PM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
 >
 > Hi Prabhakar,
 >
-> Thanks for your patch!
->
 > On Wed, Apr 29, 2020 at 11:58 PM Lad Prabhakar
 > <prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
-> > Basic support for the RZ/G1H (R8A7742) SoC. Added placeholders
-> > for the peripherals supported by the SoC which will be filled up
-> > by incremental patches.
->
-> Please remove the placeholders, as there is nothing that depends on their
-> presence.
->
-Sure will drop that.
-
+> > Enable low-level debugging support for RZ/G1H (R8A7742). RZ/G1H uses
+> > SCIFA2 for the debug console.
+> >
 > > Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 > > Reviewed-by: Marian-Cristian Rotariu <marian-cristian.rotariu.rb@bp.renesas.com>
 >
-> > --- /dev/null
-> > +++ b/arch/arm/boot/dts/r8a7742.dtsi
-> > @@ -0,0 +1,715 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Device Tree Source for the r8a7742 SoC
-> > + *
-> > + * Copyright (C) 2020 Renesas Electronics Corp.
-> > + */
-> > +
-> > +#include <dt-bindings/interrupt-controller/irq.h>
-> > +#include <dt-bindings/interrupt-controller/arm-gic.h>
-> > +#include <dt-bindings/clock/r8a7742-cpg-mssr.h>
-> > +#include <dt-bindings/power/r8a7742-sysc.h>
-> > +
-> > +/ {
-> > +       compatible = "renesas,r8a7742";
-> > +       #address-cells = <2>;
-> > +       #size-cells = <2>;
-> > +
-> > +       /*
-> > +        * The external audio clocks are configured as 0 Hz fixed frequency
-> > +        * clocks by default.
-> > +        * Boards that provide audio clocks should override them.
-> > +        */
-> > +       audio_clk_a: audio_clk_a {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               clock-frequency = <0>;
-> > +       };
-> > +
-> > +       audio_clk_b: audio_clk_b {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               clock-frequency = <0>;
-> > +       };
-> > +
-> > +       audio_clk_c: audio_clk_c {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               clock-frequency = <0>;
-> > +       };
-> > +
-> > +       /* External CAN clock */
-> > +       can_clk: can {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               /* This value must be overridden by the board. */
-> > +               clock-frequency = <0>;
-> > +       };
+> Thanks for your patch!
 >
-> Please drop the audio and CAN clocks for now, as they are not used.
+> > --- a/arch/arm/Kconfig.debug
+> > +++ b/arch/arm/Kconfig.debug
+> > @@ -976,6 +976,13 @@ choice
+> >                   Say Y here if you want kernel low-level debugging support
+> >                   via SCIF4 on Renesas RZ/G1E (R8A7745).
+> >
+> > +       config DEBUG_RCAR_GEN2_SCIFA2
+> > +               bool "Kernel low-level debugging messages via SCIFA2 on ARCH_R8A7742"
 >
-OK.
-
-> > +       /* External root clock */
-> > +       extal_clk: extal {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               /* This value must be overridden by the board. */
-> > +               clock-frequency = <0>;
-> > +       };
-> > +
-> > +       /* External PCIe clock - can be overridden by the board */
-> > +       pcie_bus_clk: pcie_bus {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               clock-frequency = <0>;
-> > +       };
+> R8A7742 (without "ARCH_"-prefix)
 >
-> Please drop the PCI clock for now, as it is not used.
+> I can fix that (and the sorting issue) while applying, so
+> Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> i.e. will queue in renesas-devel for v5.8.
 >
-OK
-
-> > +
-> > +       /* External SCIF clock */
-> > +       scif_clk: scif {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               /* This value must be overridden by the board. */
-> > +               clock-frequency = <0>;
-> > +       };
->
-> This should be used (see below).
->
-> > +
-> > +       /* External USB clock - can be overridden by the board */
-> > +       usb_extal_clk: usb_extal {
-> > +               compatible = "fixed-clock";
-> > +               #clock-cells = <0>;
-> > +               clock-frequency = <48000000>;
-> > +       };
-> > +
-> > +       cpus {
->
-> Please sort nodes by unit-address (if present) per type, or alphabetically.
->
-Sure will take care of it.
-
-> > +       soc {
->
-> > +               scifa2: serial@e6c60000 {
-> > +                       reg = <0 0xe6c60000 0 0x40>;
-> > +                       /* placeholder */
-> > +               };
->
-> I prefer to see a real node for the serial console, so the system can at
-> least be boot tested to a console prompt.
-> Note that this requires adding a minimal board DTS, too.
->
-OK so in that case Ill enable scifa2 and SDHI interface so it can be bootable.
+Thank you for taking care of that.
 
 Cheers,
 --Prabhakar
