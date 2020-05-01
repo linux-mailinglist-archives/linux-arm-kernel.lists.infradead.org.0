@@ -2,66 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 310F11C19B6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 17:37:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C7131C19CA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 17:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8oqoqQsnF2w27FNl1ITAk5PHN55tq4m5v4rtIbcgJpA=; b=mstnMGl1DkdSDD
-	67UFWV4+t9ztFqdYPPu8xO6DV/6uknLtnjVM9U2g4nkFju1R9EaR/erd2IXQGSfh8PwnpmO0PLUAG
-	wXh9aBnk8H7jzmYrR9IlEmCezwz20GE53KTkPxBNG0wPgHHiI+smqMkdU7g5zndWNCIpCdWN7i5cY
-	TMEQtPf1/bXlGCOMA33X7WcLT/TbCFMAKwMu4QYgw7iPQW2TcOvWQjkB8ElQfDH5oTV4h+aPsIssb
-	r3hS6CuLNdnJh2b96BhjUSTSIKyd+oM+ZTDjJBbt+WQJHDAdVgySWhznxmZu8yW8l9AThjEGYlDrZ
-	Wnu+vIG4scIPAve9gWPA==;
+	List-Owner; bh=+vSOgINWut2kAGm33GYhYB1VX6MJXH0nCAdcJjZMVh8=; b=Fis/svCVWC6sbe
+	S30APv9OoqCbH9yNcxD39l5+p/n0wKgeRytbdQ2t52XD6y1jGzhXEUx0lzd5t93ChUdotS5MqMRnL
+	42TOFFKqQ/8gpf6sKxBECOirSzEAypX3XeMiiHs4uo9C8DOHr0b8HjSatB/kvHh7J84fdljqtxTZa
+	dBXrVOmXHYg8Gs+8stOR4TyPUjENws8MjqFMzp+NQggmzOSDiurmCUFbeWyj/5Ev6bu/Z59xt/z6s
+	txo8ka/Cf/UPCzMawcXxEXLWMwLBVSs3GGbucPgW1+rK2mJTIAW1FIZCeKeTBnqjO35/HH1ar2zjs
+	O7KmhA3O0gc70lbmWlIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUXjQ-0007Qa-OO; Fri, 01 May 2020 15:37:40 +0000
-Received: from vps0.lunn.ch ([185.16.172.187])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUXjH-0007P8-SZ; Fri, 01 May 2020 15:37:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
- s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
- List-Post:List-Owner:List-Archive;
- bh=CCW9t2Lcf3ESlVkJ4RGqmi6BmFZgD63tWCVuekoIumU=; b=TtzgkSzrEtfblR+H1wVwLbiwig
- C8qarQ6oBZtfxDOULpsjFye+/KFqIcIkpqUOeMILNA//s3bR50E1daGGhbT5ptwh1DDApdNwbcOo5
- sBLN/MpQUJSTzfYQgIEc4qimo/sF9UbZcCWJ9oL3Pg0y09HfCU4f0DqqOiHsHPtyZEJU=;
-Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
- (envelope-from <andrew@lunn.ch>)
- id 1jUXjB-000YJL-8M; Fri, 01 May 2020 17:37:25 +0200
-Date: Fri, 1 May 2020 17:37:25 +0200
-From: Andrew Lunn <andrew@lunn.ch>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH RFC v2 07/11] net: stmmac: dwmac-meson8b: Make the clock
- enabling code re-usable
-Message-ID: <20200501153725.GG128733@lunn.ch>
-References: <20200429201644.1144546-1-martin.blumenstingl@googlemail.com>
- <20200429201644.1144546-8-martin.blumenstingl@googlemail.com>
+	id 1jUXkS-0007ui-Bs; Fri, 01 May 2020 15:38:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUXkJ-0007sm-Nv
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 15:38:37 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0FD7A30E;
+ Fri,  1 May 2020 08:38:35 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 140BF3F68F;
+ Fri,  1 May 2020 08:38:32 -0700 (PDT)
+Date: Fri, 1 May 2020 16:38:30 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH 0/3] PCI: Modularize host-generic
+Message-ID: <20200501153830.GD7398@e121166-lin.cambridge.arm.com>
+References: <20200409234923.21598-1-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429201644.1144546-8-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200409234923.21598-1-robh@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_083731_922629_43B5026C 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200501_083835_824335_3852E8D6 
+X-CRM114-Status: GOOD (  15.30  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,56 +63,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, f.fainelli@gmail.com, jianxin.pan@amlogic.com,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
- linux-amlogic@lists.infradead.org, davem@davemloft.net,
- linux-arm-kernel@lists.infradead.org
+Cc: Mans Rullgard <mans@mansr.com>, Marc Gonzalez <marc.w.gonzalez@free.fr>,
+ linux-pci@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-acpi@vger.kernel.org,
+ Zhou Wang <wangzhou1@hisilicon.com>, Robert Richter <rrichter@marvell.com>,
+ Jonathan Chocron <jonnyc@amazon.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ Toan Le <toan@os.amperecomputing.com>, Len Brown <lenb@kernel.org>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Andrew Murray <amurray@thegoodpenguin.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 10:16:40PM +0200, Martin Blumenstingl wrote:
-> The timing adjustment clock will need similar logic as the RGMII clock:
-> It has to be enabled in the driver conditionally and when the driver is
-> unloaded it should be disabled again. Extract the existing code for the
-> RGMII clock into a new function so it can be re-used.
+On Thu, Apr 09, 2020 at 05:49:20PM -0600, Rob Herring wrote:
+> This is part of a larger effort to modularize ARCH_VEXPRESS. In
+> particular, the Arm FVP platforms use the host-generic driver. This
+> conversion was straight-forward. I didn't convert the other ECAM drivers
+> using host-common to modules, but am happy to do so if there's a strong
+> desire to do so.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
->  .../ethernet/stmicro/stmmac/dwmac-meson8b.c   | 23 +++++++++++++++----
->  1 file changed, 18 insertions(+), 5 deletions(-)
+> In the process, I noticed that 'const' was being dropped from the match
+> table .data pointer, so the first patch constifies struct pci_ecam_ops.
+> I started trying to constify pci_ops too, but that became a never ending
+> treewide rabbit hole. So I ended up with a cast when we assign pci_ops
+> from pci_ecam_ops.
 > 
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-> index 41f3ef6bea66..d31f79c455de 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-> @@ -266,6 +266,22 @@ static int meson_axg_set_phy_mode(struct meson8b_dwmac *dwmac)
->  	return 0;
->  }
->  
-> +static int meson8b_devm_clk_prepare_enable(struct meson8b_dwmac *dwmac,
-> +					   struct clk *clk)
-> +{
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	devm_add_action_or_reset(dwmac->dev,
-> +				 (void(*)(void *))clk_disable_unprepare,
-> +				 dwmac->rgmii_tx_clk);
-> +
-> +	return 0;
-> +}
+> Rob
+> 
+> 
+> Rob Herring (3):
+>   PCI: Constify struct pci_ecam_ops
+>   PCI: host-generic: Support building as modules
+>   PCI: host-generic: Eliminate pci_host_common_probe wrappers
+> 
+>  arch/arm64/kernel/pci.c                   |  4 ++--
+>  drivers/acpi/pci_mcfg.c                   |  8 +++----
+>  drivers/pci/controller/Kconfig            |  4 ++--
+>  drivers/pci/controller/dwc/pcie-al.c      |  2 +-
+>  drivers/pci/controller/dwc/pcie-hisi.c    | 19 +++++------------
+>  drivers/pci/controller/pci-host-common.c  | 18 ++++++++++++----
+>  drivers/pci/controller/pci-host-generic.c | 26 +++++++----------------
+>  drivers/pci/controller/pci-thunder-ecam.c | 14 ++++++------
+>  drivers/pci/controller/pci-thunder-pem.c  | 16 ++++++--------
+>  drivers/pci/controller/pci-xgene.c        |  4 ++--
+>  drivers/pci/controller/pcie-tango.c       |  9 +++++---
+>  drivers/pci/ecam.c                        | 10 ++++++---
+>  drivers/pci/setup-bus.c                   |  1 +
+>  include/linux/pci-acpi.h                  |  2 +-
+>  include/linux/pci-ecam.h                  | 25 +++++++++++-----------
+>  15 files changed, 78 insertions(+), 84 deletions(-)
 
-I'm surprised this does not exist in the core. It looks like there was
-some discussion about this, but nothing merged.
+Applied to pci/host-generic for v5.8, thanks !
 
-Reviewed-by: Andrew Lunn <andrew@lunn.ch>
-
-    Andrew
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
