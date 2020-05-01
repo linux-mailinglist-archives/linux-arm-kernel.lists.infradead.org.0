@@ -2,60 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E47761C1B82
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 19:18:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811751C1B83
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 19:19:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P3kOremN5I+Q2kRfAjPc8li2LvkZWZgJCHut0R4tf+c=; b=YxAzJ1a3THC71/
-	O7mxhzBBLI3e5rRlVXHJmCTGmPFnRcrp5ofUkmP0mkUEl0hNL73wY0Iu5URBu1rx3Vv5YMiKohScw
-	fSM7Z8lG2lcQ9t5ay8XYn8XMP5/Zwa8Kr6iG9NMV50oW9TLrJOl4PuOwpqE3I71hcjbT/McSo98Jc
-	F3DBULj8SeCD6p7ZXTqFOLgWOZhuJmVRflgocYIkqW/VFUTJdZVD0/VJoyXY3sb6iDe3pWR9aAwEy
-	a+JpKWjgEUdqfSp1ruQYT/gocodoEJdBKbH9iflIRMKkhpCsg3GyYEa/H+UaI74aKsTXiIt1uLOM9
-	z+8wbAaduIjt0wRn4o4A==;
+	List-Owner; bh=gEyprrcezWs6h5RXnlB6hyJh+TtK2/WVsykOVmWjZzg=; b=Sxvvr7KkSqayOi
+	CXeO/maUgmtEIehAV5Hb7A5GK2jRSdiUAbrb8Ci8QW0BDww4bG6uWNt6PJz+cFceNHcKh6fXCLoBF
+	2dHF/RCDjSSf8UU7VdmgXnha0R9tD4yK7nmjycAH5aw1q/EAH0zYqICHqLYAqtYNgdOd0DjHP8J/j
+	nyhU8akxJf3EmZF7yIhs+xBYR+3RZ/7FdijV+5DLHx4+tzgioS9c8sHvpMm38z9vQt+BSbYejHcOG
+	QGSOJ0iSst7EVAa7Ax6o/DFPfFaqw9SOFE1wKdFmDtX8Sem25KztID+18dYC4N9y59c2thwrcWmPR
+	KBAJQXSW4flCX52cS+9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUZJE-0000ql-7r; Fri, 01 May 2020 17:18:44 +0000
-Received: from mga05.intel.com ([192.55.52.43])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUZJ7-0000of-Lb; Fri, 01 May 2020 17:18:38 +0000
-IronPort-SDR: aNuWQTq7K/mYheI/uMXM0TzLg5mDRPcNjhl7BlE9lnpcBkQIRdp6eYClPlC7ypncVGedaXSxnE
- 33Yp9WRcpKVQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga105.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 01 May 2020 10:18:29 -0700
-IronPort-SDR: R2OHZlJ5m4ujiSXIVvaGSStL0azGkDVM04Moca/qctbpNzEmR/lPEzkfc2x5+KowINCeguMIHy
- 4dEJuDVXUKuw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,340,1583222400"; d="scan'208";a="405797056"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
- by orsmga004.jf.intel.com with ESMTP; 01 May 2020 10:18:28 -0700
-Date: Fri, 1 May 2020 10:18:28 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: Christoph Hellwig <hch@infradead.org>
-Subject: Re: [PATCH V1 00/10] Remove duplicated kmap code
-Message-ID: <20200501171828.GA673260@iweiny-DESK2.sc.intel.com>
-References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200501085456.GL27858@infradead.org>
+	id 1jUZJb-00013n-19; Fri, 01 May 2020 17:19:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUZJC-0000uJ-Re
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 17:18:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D0F130E;
+ Fri,  1 May 2020 10:18:42 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.80])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D60D43F305;
+ Fri,  1 May 2020 10:18:38 -0700 (PDT)
+Date: Fri, 1 May 2020 18:18:35 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 14/16] vexpress: Move setting master site to
+ vexpress-config bus
+Message-ID: <20200501171835.GL14018@bogus>
+References: <20200429205825.10604-1-robh@kernel.org>
+ <20200429205825.10604-15-robh@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200501085456.GL27858@infradead.org>
-User-Agent: Mutt/1.11.1 (2018-12-01)
+In-Reply-To: <20200429205825.10604-15-robh@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_101837_774843_92E52D0C 
-X-CRM114-Status: GOOD (  14.78  )
+X-CRM114-CacheID: sfid-20200501_101842_951205_8064DA51 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.43 listed in list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,57 +65,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Huang Rui <ray.huang@amd.com>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Christian Koenig <christian.koenig@amd.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, linux-pm@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Kevin Brodsky <Kevin.Brodsky@arm.com>, Liviu Dudau <liviu.dudau@arm.com>,
+ Sebastian Reichel <sre@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Lee Jones <lee.jones@linaro.org>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 01, 2020 at 01:54:56AM -0700, Christoph Hellwig wrote:
-> In addition to the work already it the series, it seems like
-> LAST_PKMAP_MASK, PKMAP_ADDR and PKMAP_NR can also be consolidated
-> to common code.
-
-Agreed, I mentioned in the cover letter there are similarities...
-
-> 
-> Also kmap_atomic_high_prot / kmap_atomic_pfn could move into common
-> code, maybe keyed off a symbol selected by the actual users that
-> need it.  It also seems like it doesn't actually ever need to be
-> exported.
-
-...  but these are not as readily obvious, at least to me.  I do see a pattern
-but the differences seemed subtle enough that it would take a while to ensure
-correctness.  So I'd like to see this series go in and build on it.
-
-> 
-> This in turn would lead to being able to allow io_mapping_map_atomic_wc
-> on all architectures, which might make nouveau and qxl happy, but maybe
-> that can be left for another series.
-
-I agree, that this should be follow on patches.  I still need to fix the
-bisect-ability and I don't want to bog down 0-day with a longer series.
-
-Thanks for the review!
-Ira
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBBcHIgMjksIDIwMjAgYXQgMDM6NTg6MjNQTSAtMDUwMCwgUm9iIEhlcnJpbmcgd3Jv
+dGU6Cj4gVGhlcmUncyBvbmx5IGEgc2luZ2xlIGNhbGxlciBvZiB2ZXhwcmVzc19jb25maWdfc2V0
+X21hc3RlcigpIGZyb20KPiB2ZXhwcmVzcy1zeXNyZWcuYy4gTGV0J3MganVzdCBtYWtlIHRoZSBy
+ZWdpc3RlcnMgbmVlZGVkIGF2YWlsYWJsZSB0bwo+IHZleHByZXNzLWNvbmZpZyBhbmQgbW92ZSBh
+bGwgdGhlIGNvZGUgdGhlcmUuIFRoZSByZWdpc3RlcnMgbmVlZGVkIGFyZW4ndAo+IHVzZWQgYW55
+d2hlcmUgZWxzZSBlaXRoZXIuIFdpdGggdGhpcywgd2UgY2FuIGdldCByaWQgb2YgdGhlIHByaXZh
+dGUgQVBJCj4gYmV0d2VlbiB0aGVzZSAyIGRyaXZlcnMuCj4KPiBDYzogU3VkZWVwIEhvbGxhIDxz
+dWRlZXAuaG9sbGFAYXJtLmNvbT4KClNvbWUgb2YgdGhlIG1hY3JvIGNoYW5nZXMgYmVsb3cgYXJl
+IG5vdCBzbyBlYXN5IHRvIGZvbGxvdy9yZXZpZXcuClNpbmNlIG5vdGhpbmcgaXMgYnJva2VuLAoK
+QWNrZWQtYnk6IFN1ZGVlcCBIb2xsYSA8c3VkZWVwLmhvbGxhQGFybS5jb20+Cgpmb3IgdGhpcyBh
+bG9uZSDwn5iBLgoKLS0KUmVnYXJkcywKU3VkZWVwCgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
