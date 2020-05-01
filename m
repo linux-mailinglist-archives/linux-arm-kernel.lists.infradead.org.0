@@ -2,64 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D85BB1C18CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 16:58:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A47021C18D7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 17:00:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cgsu3qiy5wePMBZmmTGkyLWmkLL0uSyNqL3FBsFSpiw=; b=HksZL59CCchgjJ6ImOdrCZRPd
-	Gp49WIm7SQ9kUzrPJ+tADV0fzgxr3RT4szZtG8ofJwKMLxjZ+2cH3ZsYWwP0Ga9M2wf2J1uVrVUuy
-	HRchKeWxIP0UHQPgmmMhFwduZ7/lB0qgrwKqyEBuHCQ+wlLomTWo/Hcycm2Detizw0xGdv/2YG8kr
-	AxTTC5+fetcXuHvL+lNiLeqVnsPKPC4APsJkvCPsrW+tWeMtllGo3pOizHSXIRBC4cl55Ir1IWGUO
-	zzJ5faJmOdJxQgaDRfHarZxJydmL8k+cVxorPHx9hFc9JWcvCtjvWfKwMU87u3jLJqYXljflblCey
-	G64gau+4g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9FjmDRohaYC3fLcRwe4+fzR4PHdrbvv7DjuYXz5wdr8=; b=Ri3zI/tqqEJMmK
+	GooEVKYWwbZy0efM8nGkZfifatBSl2X0GJchhSGPHRFECi5JtwAvuK5ZOayXcBZ+GKsXZsvpm5GtW
+	v6KXf3jrUUSq928t2hk1as4SOQXgQjdSN7Dg9nJL0HzSYcUWdxr1jeJ5tFEEujrL2jc0kJQ6PgcOs
+	Z+1Tm4oWRmpDf8i5EmcWMz0oI06f0ta4uU6xpv6ii/wPZnzEvqvYzoPHw21MKKVcSYi73694tXogu
+	ByBXzk5e2uM2h1GZm8csEFl4l0wxT/md4DKQJ1cqOS4Ox9zIpmvIAutalB742fOyw71EUZ9Iort+m
+	jIO4oTKVHqsbCl4ZBoWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUX78-0007A1-W4; Fri, 01 May 2020 14:58:07 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUX72-000797-3S
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 14:58:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E5EB30E;
- Fri,  1 May 2020 07:57:59 -0700 (PDT)
-Received: from [10.57.39.240] (unknown [10.57.39.240])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B62C83F68F;
- Fri,  1 May 2020 07:57:57 -0700 (PDT)
-Subject: Re: [PATCH RFC 2/2] ACPI/IORT: work around num_ids ambiguity
-To: Ard Biesheuvel <ardb@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200501095843.25401-1-ardb@kernel.org>
- <20200501095843.25401-3-ardb@kernel.org>
- <e3c7bdab-a2b0-d7c9-5c7b-eee680509338@arm.com>
- <CAMj1kXH0mcK3N94=uOuiL2_iy=eWhsnoXhvfiXv_kQ_j=F2a_Q@mail.gmail.com>
- <18e01ac7-974e-8308-c18c-67aa3fd7ad4e@arm.com>
- <CAMj1kXHsXEmaLuVBo7cgdzHju22WKksu7s3B3-hBE4mYhnuJ=Q@mail.gmail.com>
- <20200501134956.GA7240@e121166-lin.cambridge.arm.com>
- <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <7800f454-d630-e718-b187-d36f21a14ee9@arm.com>
-Date: Fri, 1 May 2020 15:57:55 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+	id 1jUX8u-0008Ef-Aq; Fri, 01 May 2020 14:59:56 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jUX8l-0008C3-K4; Fri, 01 May 2020 14:59:50 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 3C1082A30D9
+Subject: Re: [PATCH v3 7/7] drm/mediatek: mtk_dsi: Create connector for bridges
+To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+References: <20200417150614.2631786-1-enric.balletbo@collabora.com>
+ <20200417150614.2631786-8-enric.balletbo@collabora.com>
+ <CAAOTY_8uWP80ZMO5ZQGLJ5YLFZcmGjZwc33Hi_oXsCPj5Yr89A@mail.gmail.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <0584a198-02f2-a8a3-676e-74365a697bd4@collabora.com>
+Date: Fri, 1 May 2020 16:59:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <CAMj1kXGL-P_jNprTZSpLyEMMmHCcPq5-LcZeaRj5NtCeUKaJUA@mail.gmail.com>
-Content-Language: en-GB
+In-Reply-To: <CAAOTY_8uWP80ZMO5ZQGLJ5YLFZcmGjZwc33Hi_oXsCPj5Yr89A@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_075800_234404_3D43412A 
-X-CRM114-Status: GOOD (  27.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200501_075947_791159_3C5FF97A 
+X-CRM114-Status: GOOD (  18.12  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,95 +60,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, Hanjun Guo <guohanjun@huawei.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-01 3:35 pm, Ard Biesheuvel wrote:
-> On Fri, 1 May 2020 at 15:50, Lorenzo Pieralisi
-> <lorenzo.pieralisi@arm.com> wrote:
->>
->> On Fri, May 01, 2020 at 03:10:59PM +0200, Ard Biesheuvel wrote:
->>
->> [...]
->>
->>>>>> If we silently fix things up, then people will continue to write broken
->>>>>> tables without even realising, new OSes will have to implement the same
->>>>>> mechanism because vendors will have little interest in changing things
->>>>>> that have worked "correctly" with Linux for years, and we've effectively
->>>>>> achieved a de-facto redefinition of the spec. Making our end of the
->>>>>> interface robust is obviously desirable, but there still needs to be
->>>>>> *some* incentive for the folks on the other end to get it right.
->>>>>>
->>>>>
->>>>> Agreed. But at least we'll be able to detect it and flag it in the
->>>>> general case, rather than having a special case for D05/06 only
->>>>> (although I suppose splitting the output ranges like those platforms
->>>>> do is rather unusual)
->>>>
->>>> Yup, in principle the fixed quirk list gives a nice reassuring sense of
->>>> "we'll work around these early platforms and everyone from now on will
->>>> get it right", but whether reality plays out that way is another matter
->>>> entirely...
->>>
->>> The reason I am looking into this is that I think the fix should go to
->>> stable, given that the current situation makes it impossible to write
->>> firmware that works with older and newer kernels.
->>
->> Yes. If we do remove the quirk the sooner we do it the better to
->> reduce the stable patches.
->>
->>> Lorenzo said he wouldn't mind taking the current version with ACPI OEM
->>> ID matching back to -stable, but it's another quirk list to manage,
->>> which I would prefer to avoid.
->>>
->>> But I don't care deeply either way, to be honest, as long as we can
->>> get something backported so compliant firmware is not being penalized
->>> anymore.
->>
->> Question: if we remove the iort_workaround_oem_info stuff but we *do*
->> keep the existing apply_id_count_workaround flag and we set it by going
->> through all the mappings at boot time and detect if any of these
->> off-by-one conditions apply - would the resulting code be any simpler ?
->>
->> The global flag would apply (as it does now) to _all_ mappings but it is
->> very likely that if the off-by-one firmware bug is present it applies to
->> the IORT table as a whole rather than a single mapping entry.
->>
-> 
-> This particular issue is based on a misinterpretation, so I agree that
-> it makes sense to have a global flag, as long as we only set it if the
-> mappings are fully consistent in every other respect, or we'll run the
-> risk of hitting issues like the one Robin describes, where things
-> happen to work, but will fail once we apply the heuristic. Such an
-> issue could exist on one end of the table, while we could spot the
-> off-by-one issue somewhere else.
-> 
-> Which brings us back to a point I made earlier: do we really want to
-> validate the table and ensure that it is fully internally consistent?
-> Or do we want to be robust in the face of a single known issue that we
-> helped create?
-> 
-> So in my opinion, just fixing it up when we run into it is fine. I can
-> add the extra sanity check to reduce the potential fallout for other
-> broken systems, but beyond that, I think we shouldn't do too much.
-
-Agreed - AFAICS the extra robustness I'm asking for should only amount 
-to a handful more lines on top of the proposed patch (maybe a couple of 
-positive return values for "by the way this came from the start/end of a 
-mapping range" instead of -EAGAIN). I think a separate scanning pass is 
-likely to add up to more complexity and similar-but-not-quite-reusable 
-code than simply detecting and handling potential off-by-one edges in-line.
-
-Robin.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQ2h1bi1LdWFuZywKClRoYW5rIHlvdSBmb3IgeW91ciByZXZpZXcuCgpPbiAxLzUvMjAgMTY6
+MjYsIENodW4tS3VhbmcgSHUgd3JvdGU6Cj4gSGksIEVucmljOgo+IAo+IEVucmljIEJhbGxldGJv
+IGkgU2VycmEgPGVucmljLmJhbGxldGJvQGNvbGxhYm9yYS5jb20+IOaWvCAyMDIw5bm0NOaciDE3
+5pelIOmAseS6lCDkuIvljYgxMTowNuWvq+mBk++8mgo+Pgo+PiBVc2UgdGhlIGRybV9icmlkZ2Vf
+Y29ubmVjdG9yIGhlbHBlciB0byBjcmVhdGUgYSBjb25uZWN0b3IgZm9yIHBpcGVsaW5lcwo+PiB0
+aGF0IHVzZSBkcm1fYnJpZGdlLiBUaGlzIGFsbG93cyBzcGxpdHRpbmcgY29ubmVjdG9yIG9wZXJh
+dGlvbnMgYWNyb3NzCj4+IG11bHRpcGxlIGJyaWRnZXMgd2hlbiBuZWNlc3NhcnksIGluc3RlYWQg
+b2YgaGF2aW5nIHRoZSBsYXN0IGJyaWRnZSBpbgo+PiB0aGUgY2hhaW4gY3JlYXRpbmcgdGhlIGNv
+bm5lY3RvciBhbmQgaGFuZGxpbmcgYWxsIGNvbm5lY3RvciBvcGVyYXRpb25zCj4+IGludGVybmFs
+bHkuCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEVucmljIEJhbGxldGJvIGkgU2VycmEgPGVucmljLmJh
+bGxldGJvQGNvbGxhYm9yYS5jb20+Cj4+IC0tLQo+Pgo+PiBDaGFuZ2VzIGluIHYzOgo+PiAtIE1v
+dmUgdGhlIGJyaWRnZS50eXBlIGxpbmUgdG8gdGhlIHBhdGNoIHRoYXQgYWRkcyBkcm1fYnJpZGdl
+IHN1cHBvcnQuIChMYXVyZW50IFBpbmNoYXJ0KQo+Pgo+PiBDaGFuZ2VzIGluIHYyOiBOb25lCj4+
+Cj4+ICBkcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RzaS5jIHwgMTMgKysrKysrKysrKysr
+LQo+PiAgMSBmaWxlIGNoYW5nZWQsIDEyIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPj4K
+Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHNpLmMgYi9kcml2
+ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RzaS5jCj4+IGluZGV4IDE1NzA5N2M2M2IyMy4uODVm
+NzZiMDFhZTRkIDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2Rz
+aS5jCj4+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHNpLmMKPj4gQEAgLTE3
+LDYgKzE3LDcgQEAKPj4KPj4gICNpbmNsdWRlIDxkcm0vZHJtX2F0b21pY19oZWxwZXIuaD4KPj4g
+ICNpbmNsdWRlIDxkcm0vZHJtX2JyaWRnZS5oPgo+PiArI2luY2x1ZGUgPGRybS9kcm1fYnJpZGdl
+X2Nvbm5lY3Rvci5oPgo+PiAgI2luY2x1ZGUgPGRybS9kcm1fbWlwaV9kc2kuaD4KPj4gICNpbmNs
+dWRlIDxkcm0vZHJtX29mLmg+Cj4+ICAjaW5jbHVkZSA8ZHJtL2RybV9wYW5lbC5oPgo+PiBAQCAt
+MTgzLDYgKzE4NCw3IEBAIHN0cnVjdCBtdGtfZHNpIHsKPj4gICAgICAgICBzdHJ1Y3QgZHJtX2Vu
+Y29kZXIgZW5jb2RlcjsKPj4gICAgICAgICBzdHJ1Y3QgZHJtX2JyaWRnZSBicmlkZ2U7Cj4+ICAg
+ICAgICAgc3RydWN0IGRybV9icmlkZ2UgKm5leHRfYnJpZGdlOwo+PiArICAgICAgIHN0cnVjdCBk
+cm1fY29ubmVjdG9yICpjb25uZWN0b3I7Cj4+ICAgICAgICAgc3RydWN0IHBoeSAqcGh5Owo+Pgo+
+PiAgICAgICAgIHZvaWQgX19pb21lbSAqcmVnczsKPj4gQEAgLTk3NywxMCArOTc5LDE5IEBAIHN0
+YXRpYyBpbnQgbXRrX2RzaV9lbmNvZGVyX2luaXQoc3RydWN0IGRybV9kZXZpY2UgKmRybSwgc3Ry
+dWN0IG10a19kc2kgKmRzaSkKPj4gICAgICAgICAgKi8KPj4gICAgICAgICBkc2ktPmVuY29kZXIu
+cG9zc2libGVfY3J0Y3MgPSAxOwo+Pgo+PiAtICAgICAgIHJldCA9IGRybV9icmlkZ2VfYXR0YWNo
+KCZkc2ktPmVuY29kZXIsICZkc2ktPmJyaWRnZSwgTlVMTCwgMCk7Cj4+ICsgICAgICAgcmV0ID0g
+ZHJtX2JyaWRnZV9hdHRhY2goJmRzaS0+ZW5jb2RlciwgJmRzaS0+YnJpZGdlLCBOVUxMLAo+PiAr
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERSTV9CUklER0VfQVRUQUNIX05PX0NPTk5F
+Q1RPUik7Cj4+ICAgICAgICAgaWYgKHJldCkKPj4gICAgICAgICAgICAgICAgIGdvdG8gZXJyX2Ns
+ZWFudXBfZW5jb2RlcjsKPj4KPj4gKyAgICAgICBkc2ktPmNvbm5lY3RvciA9IGRybV9icmlkZ2Vf
+Y29ubmVjdG9yX2luaXQoZHJtLCAmZHNpLT5lbmNvZGVyKTsKPj4gKyAgICAgICBpZiAoSVNfRVJS
+KGRzaS0+Y29ubmVjdG9yKSkgewo+PiArICAgICAgICAgICAgICAgRFJNX0VSUk9SKCJVbmFibGUg
+dG8gY3JlYXRlIGJyaWRnZSBjb25uZWN0b3JcbiIpOwo+PiArICAgICAgICAgICAgICAgcmV0ID0g
+UFRSX0VSUihkc2ktPmNvbm5lY3Rvcik7Cj4+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9jbGVh
+bnVwX2VuY29kZXI7Cj4+ICsgICAgICAgfQo+PiArICAgICAgIGRybV9jb25uZWN0b3JfYXR0YWNo
+X2VuY29kZXIoZHNpLT5jb25uZWN0b3IsICZkc2ktPmVuY29kZXIpOwo+PiArCj4gCj4gSSdtIG5v
+dCB2ZXJ5IGNsZWFyIGFib3V0IGhvdyBicmlnZS1jb25uZWN0b3Igd29ya3MsIGJ1dCB3aHkgY29u
+bmVjdG9yCj4gZG9lcyBub3QgYXR0YWNoIHRvIHBhbmVsPwo+IAoKTGF1cmVudCBvciBvdGhlciBk
+cm0gbWFpbnRhaW5lcnMgbWlnaHQgaGF2ZSBtb3JlIGRldGFpbHMgdGhhbiBtZSwgYnV0LCBBRkFJ
+SyB0aGUKZHJtX2JyaWRnZV9jb25uZWN0b3JfaW5pdCBpbml0aWFsaXplcyBhIGNvbm5lY3RvciBm
+b3IgYSBjaGFpbiBvZiBicmlkZ2VzIHRoYXQKc3RhcnRzIGF0IHRoZSBAZW5jb2Rlci4gQXQgdGhp
+cyBwb2ludCB5b3UgZG9uJ3Qga25vdyB3aGljaCBicmlkZ2UgaXMgY29ubmVjdGVkCnRvIHRoZSBw
+YW5lbCBwaHlzaWNhbGx5IGJ1dCBkb2Vzbid0IHJlYWxseSBtYXR0ZXIgYXMgd2hhdCB5b3Uga25v
+dyBpcyB0aGF0IHdpbGwKYmUgb25seSBvbmUgY29ubmVjdG9yIGluIHRoZSAgY2hhaW4uCgpUaGFu
+a3MsCiBFbnJpYwoKPiBSZWdhcmRzLAo+IENodW4tS3VhbmcuCj4gCj4+ICAgICAgICAgcmV0dXJu
+IDA7Cj4+Cj4+ICBlcnJfY2xlYW51cF9lbmNvZGVyOgo+PiAtLQo+PiAyLjI1LjEKPj4KCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
