@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 091AC1C0FCA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:39:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3DC41C0FD0
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 10:39:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HtJ3dVCtnCAHe7ydoE/6rei6Kz0YVav1xt4fDaUzrrg=; b=uZfadXXOP2lq75
-	RSMWqFKgGQ3nomFPnLVF2Xx2G3fl0k41KnAfmToLqJL6JybB6Gwws1PIVm3+9R7CxS1Jfngoizrl8
-	wKMCDqcXVKUpZ4NcwOyFPWgOLtT/wVfgTp2XSsdW1pxljqKTUqNc3WJ2pr0w4zd20E1IZVskSCpVh
-	bceJBdHrUX+/AltGCXY5lXpRwzHiPSIeG3/1YRgNGKUaZxykgf9gNGCp7goq83dyN8op0ysxZRvO4
-	fTpe+lNLmqXsXYEySDC3MF3Pj99B3p38zSPwLp60f9q+Y4jMfPZdYKOfZU9ULmVCYjMP6TI6AuO6L
-	0lL4ye0AnCSIeJR4S6TQ==;
+	List-Owner; bh=5dswKqrJD3a5eoIIOKzUQ3A6+n//wSsKtRpTpvyBra0=; b=ZkE1WPEJCdWWyA
+	Ys5v14qr2CwXtyz6pBNRYDzpgjDtnJlXquX4Tu69NTHLbXBpVjvu1hm/cxVHddm8XwoAFFUnoKRGF
+	Dl27f5aaB1bvlGXnvmaEoZWiKWyAhquA1Suz17mXtfjxr3An3YkuLltrYgKpgy5Hb3WLr79froxsB
+	5lkAXLEfSwGqundYzyuDB0ZfT0QJgdNBxFWcJwUTkF15otiMxrBf1Z/mVi6Eth++MzMSxtBpG368/
+	JuBCOPHIAkSYVaMwEhu+Wu7q3Bi3pyEiVJ9xfLSlwWhNonRiU0sTmfIlB2VKr/bXKq19qFgblOCLq
+	7i9fDXzarcHo6s6BEPZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jURCj-00055x-OD; Fri, 01 May 2020 08:39:29 +0000
+	id 1jURD6-0005P6-5L; Fri, 01 May 2020 08:39:52 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jURCc-000555-Ra; Fri, 01 May 2020 08:39:22 +0000
-Date: Fri, 1 May 2020 01:39:22 -0700
+ Hat Linux)) id 1jURCz-0005OZ-MM; Fri, 01 May 2020 08:39:45 +0000
+Date: Fri, 1 May 2020 01:39:45 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V1 05/10] arch/kmap_atomic: Consolidate duplicate code
-Message-ID: <20200501083922.GE27858@infradead.org>
+Subject: Re: [PATCH V1 06/10] arch/kunmap_atomic: Consolidate duplicate code
+Message-ID: <20200501083945.GF27858@infradead.org>
 References: <20200430203845.582900-1-ira.weiny@intel.com>
- <20200430203845.582900-6-ira.weiny@intel.com>
+ <20200430203845.582900-7-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430203845.582900-6-ira.weiny@intel.com>
+In-Reply-To: <20200430203845.582900-7-ira.weiny@intel.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,18 +63,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 01:38:40PM -0700, ira.weiny@intel.com wrote:
+On Thu, Apr 30, 2020 at 01:38:41PM -0700, ira.weiny@intel.com wrote:
 > From: Ira Weiny <ira.weiny@intel.com>
 > 
-> Every arch has the same code to ensure atomic operations and a check for
-> !HIGHMEM page.
+> Every single architecture (including !CONFIG_HIGHMEM) calls...
 > 
-> Remove the duplicate code by defining a core kmap_atomic() which only
-> calls the arch specific kmap_atomic_high() when the page is high memory.
+> 	pagefault_enable();
+> 	preempt_enable();
+> 
+> ... before returning from __kunmap_atomic().  Lift this code into the
+> kunmap_atomic() macro.
+> 
+> While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
+> be consistent.
 > 
 > Signed-off-by: Ira Weiny <ira.weiny@intel.com>
 
-Looks good:
+Looks good,
 
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 
