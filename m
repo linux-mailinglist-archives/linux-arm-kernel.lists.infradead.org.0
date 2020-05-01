@@ -2,49 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EFA51C1A5F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:10:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76CA01C1A61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 18:11:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=18GsUzlCIHq/rB5UOwqD+X8Peu3eWxN+J9YkNazGn/c=; b=AOH
-	7RQ4giPglCERwm7psfKk9k47K8IKNxV7AJ6kALYJpxhibkZT06bcJUBxj5Zkty1pWyoZS3Ho9hSKz
-	OteIRo3H/UUTvptc8373XQoEcehLlh3JhG8ahqNNod4ySG1uSjpN6/0kefZXe6AbyfIjH51jzV7s/
-	1Gt0on5nv9p6ZZg7pSI0nF37zpxo2fLsW1v1KTUWLBYIiATkwem5LNhZSWGl8R7JrNu3IQdPnE+OO
-	37mDRPU1g5x6msE0WjMNV7h39Iu/wDcl1/nSphq4BlhKcLOSnacWObU0oDQmVywwlR5Pifqrp1+AS
-	lAc03lMaOMirO3HfYlD0qDs2dFRLF7A==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=hGgnkFrTZGpCO7qkFWA4fXylwo+NMI0F75l1W4PSSts=; b=Hiyg4st1xe/r+0EU/ufm6Mdf+M
+	qhNYEKlKteHlowUmkZ1MPt1ROwKMmz10Dq7DCVgZp0UMlud1kOn1CCh/YLzwqWO8/sWNDbEcmQzBu
+	T0jrRgvulugkx+NrT2NAL0/SbVGihQFpgrVQpjx+NaWgFAY/70rcyOxftVpCpeXVQxalgJ7KbMTi2
+	ZAvNzKl0Id2BQw2/nPXQfh5gjh2iGf697KpHhbpKK5TO1oISABVauwjlw1FodWKabQUCEJy9WXgSA
+	iZuGYJKQfr0YtLRYThXETcVXAvv2LpiJfcpzMvKk24pWNaXqTLmMsJaXv5AGYEdivjiudDg/MtCYd
+	fUWLyIhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUYFQ-0006jb-S7; Fri, 01 May 2020 16:10:44 +0000
+	id 1jUYFi-00074N-0b; Fri, 01 May 2020 16:11:02 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUYF9-0006ap-Q8
+ id 1jUYFA-0006cC-3A
  for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 16:10:29 +0000
 Received: from e123331-lin.home
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3DA7B208DB;
- Fri,  1 May 2020 16:10:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 958DD24956;
+ Fri,  1 May 2020 16:10:25 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588349425;
- bh=WdDDo0kFFFObg+/uRnNWj+161scQaRmsJMatdV7pV5U=;
- h=From:To:Cc:Subject:Date:From;
- b=MA3fRVpgbAwk4MbkZocX2oK8yNI5ti+nmUYRwldUlDMHT8FS7vzyfXKBySKSJw6Sv
- j2ONn/PcdhgJQky4VdZfA4hNPog25MFejK61c769W9psABCI0DJ6M02r6MCTWDuTep
- mJd1gZUoZpGNGP3YejCeuN7NBeptjthM0XnXMM7c=
+ s=default; t=1588349427;
+ bh=yqjxjNbvDvgpGXMyUQLw+kBshy3NV1WeyfDFrv6omJc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=M4G3H5kE3wbd7qeK9qeWE4ExCS/FA0+Oih5v8KD+XXbnujGMyca+tDEv5zDanbUOI
+ ENBgmXzLDHOeoQsXuFSnMoJlbgBmjtVdlxdvmVoneg4lLSz6sGCZInryzzPECBk+I1
+ EKhRonUKzOKt2jh9/WPj65yjwx+rea7awSxkiPdQ=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/2] ACPI/IORT: rework num_ids off-by-one quirk
-Date: Fri,  1 May 2020 18:10:12 +0200
-Message-Id: <20200501161014.5935-1-ardb@kernel.org>
+Subject: [PATCH v2 1/2] Revert "ACPI/IORT: Fix 'Number of IDs' handling in
+ iort_id_map()"
+Date: Fri,  1 May 2020 18:10:13 +0200
+Message-Id: <20200501161014.5935-2-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200501161014.5935-1-ardb@kernel.org>
+References: <20200501161014.5935-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_091027_877595_2E6FF575 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200501_091028_171452_0FC514A2 
+X-CRM114-Status: GOOD (  12.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,38 +89,94 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Replace the ACPI OEM ID matching based IORT quirk for the ID region size
-ambiguity with runtime handling of this condition.
+This reverts commit 3c23b83a88d00383e1d498cfa515249aa2fe0238.
 
-This is based on the observation that we only care about this when it
-causes ambiguity regarding the output reference, which means that we
-will have more than one match for the input ID. In this case, we can
-just disregard the one at the end of a multi-ID region: if we hit it
-first, we record it tentatively but allow a subsequent match to
-supersede it. If we hit the correct match first, there is nothing we
-need to do.
+Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+---
+ drivers/acpi/arm64/iort.c | 57 +-------------------
+ 1 file changed, 2 insertions(+), 55 deletions(-)
 
-Changes since v1:
-- print FW_BUG error to the kernel log when a duplicate match is found
-- ignore duplicate matches unless they occur at the start of a region
-  (for compatibility with broken systems that might exist that happen to
-  work today because the first match is always chosen)
-
-Cc: Hanjun Guo <guohanjun@huawei.com>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Cc: Pankaj Bansal <pankaj.bansal@nxp.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Sudeep Holla <sudeep.holla@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Robin Murphy <robin.murphy@arm.com>
-
-Ard Biesheuvel (2):
-  Revert "ACPI/IORT: Fix 'Number of IDs' handling in iort_id_map()"
-  ACPI/IORT: work around num_ids ambiguity
-
- drivers/acpi/arm64/iort.c | 95 ++++++++------------
- 1 file changed, 35 insertions(+), 60 deletions(-)
-
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 7d04424189df..98be18266a73 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -299,59 +299,6 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
+ 	return status;
+ }
+ 
+-struct iort_workaround_oem_info {
+-	char oem_id[ACPI_OEM_ID_SIZE + 1];
+-	char oem_table_id[ACPI_OEM_TABLE_ID_SIZE + 1];
+-	u32 oem_revision;
+-};
+-
+-static bool apply_id_count_workaround;
+-
+-static struct iort_workaround_oem_info wa_info[] __initdata = {
+-	{
+-		.oem_id		= "HISI  ",
+-		.oem_table_id	= "HIP07   ",
+-		.oem_revision	= 0,
+-	}, {
+-		.oem_id		= "HISI  ",
+-		.oem_table_id	= "HIP08   ",
+-		.oem_revision	= 0,
+-	}
+-};
+-
+-static void __init
+-iort_check_id_count_workaround(struct acpi_table_header *tbl)
+-{
+-	int i;
+-
+-	for (i = 0; i < ARRAY_SIZE(wa_info); i++) {
+-		if (!memcmp(wa_info[i].oem_id, tbl->oem_id, ACPI_OEM_ID_SIZE) &&
+-		    !memcmp(wa_info[i].oem_table_id, tbl->oem_table_id, ACPI_OEM_TABLE_ID_SIZE) &&
+-		    wa_info[i].oem_revision == tbl->oem_revision) {
+-			apply_id_count_workaround = true;
+-			pr_warn(FW_BUG "ID count for ID mapping entry is wrong, applying workaround\n");
+-			break;
+-		}
+-	}
+-}
+-
+-static inline u32 iort_get_map_max(struct acpi_iort_id_mapping *map)
+-{
+-	u32 map_max = map->input_base + map->id_count;
+-
+-	/*
+-	 * The IORT specification revision D (Section 3, table 4, page 9) says
+-	 * Number of IDs = The number of IDs in the range minus one, but the
+-	 * IORT code ignored the "minus one", and some firmware did that too,
+-	 * so apply a workaround here to keep compatible with both the spec
+-	 * compliant and non-spec compliant firmwares.
+-	 */
+-	if (apply_id_count_workaround)
+-		map_max--;
+-
+-	return map_max;
+-}
+-
+ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		       u32 *rid_out)
+ {
+@@ -368,7 +315,8 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+ 		return -ENXIO;
+ 	}
+ 
+-	if (rid_in < map->input_base || rid_in > iort_get_map_max(map))
++	if (rid_in < map->input_base ||
++	    (rid_in >= map->input_base + map->id_count))
+ 		return -ENXIO;
+ 
+ 	*rid_out = map->output_base + (rid_in - map->input_base);
+@@ -1703,6 +1651,5 @@ void __init acpi_iort_init(void)
+ 		return;
+ 	}
+ 
+-	iort_check_id_count_workaround(iort_table);
+ 	iort_init_platform_devices();
+ }
 -- 
 2.17.1
 
