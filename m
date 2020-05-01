@@ -2,101 +2,100 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 67A971C1165
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:17:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DA161C1196
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  1 May 2020 13:41:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=geErVAO9BjYYeIQjhdYqvo7LJZAzelUxDfSSXf93XF4=; b=c4+JMSO3tXOoZV
-	ofnV16ePnpFOmZESkXjM2qxY2DSjczyGis4aBSbrEYBiFxKpQf2XEJPQyCRuCDXbc8CGrrDgT+8al
-	LRaPBdbiP+7SGzi5jYoYm0WuQnurXbcSauwGUpk/8WcElLlaz7kY1yn2/gSYuOwq3RAuqApixwhvP
-	PpYhH6UrwIPZ1bIzQOfKoWpmZVFSlGT53ERydLeyB8sskEo1PSu9OdR3TTYrMyZmcRtqgEBVaxIGz
-	SyLfG0sE+KeOjjbEJShJXhsi2akPOisNXoUID2A8OmKrf4CMgzuy6+c0BnWn65yUBUZPjaoB+v7HL
-	uH6nyuuw2Qg9yP6vcFdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=rDRhoWQsgSLm75XxhgBl93Bm3GERuh86pjKezULGmsg=; b=pPkZdxQ72CpWmy/GFGraoD/WH
+	GffKVyR62FydTDq13kLX0LR0OH7WLpDOIyITzVHIwDcRY4FOy4tD1hjccQhoDaJ+2TqD7+ZYd5CdS
+	tQT5SLIu3eTuX85FDgqUceK2iP3MqQkbPIEeZaQuhyhjTVVAS5Qe4LfQi2362eDhmKub2c0Ufnb55
+	tSfxdo+X2XbOx40G0EopORBvuf4rNlXa1R503wwuGCK0fnEqwHQUL5FaDiKmFaFcqlp8+DVQw3vrl
+	wma+nsVjGTsWJdMyAs+Xr02KTWPifqKFSBzGAOkLj7OYBm3qz14Z6V57YcwezQMcnZVRr9cWcjos3
+	f1Aw5pIpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUTf6-0008Qx-QM; Fri, 01 May 2020 11:16:56 +0000
-Received: from out03.mta.xmission.com ([166.70.13.233])
+	id 1jUU2T-0006o2-6C; Fri, 01 May 2020 11:41:05 +0000
+Received: from wout1-smtp.messagingengine.com ([64.147.123.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUTez-0008Pg-Nu
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:16:51 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out03.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jUTeu-0007G0-HZ; Fri, 01 May 2020 05:16:44 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jUTet-0006Wp-Mr; Fri, 01 May 2020 05:16:44 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Greg Ungerer <gerg@linux-m68k.org>
-References: <20200429214954.44866-1-jannh@google.com>
- <20200429215620.GM1551@shell.armlinux.org.uk>
- <CAHk-=wgpoEr33NJwQ+hqK1dz3Rs9jSw+BGotsSdt2Kb3HqLV7A@mail.gmail.com>
- <31196268-2ff4-7a1d-e9df-6116e92d2190@linux-m68k.org>
- <CAHk-=wjau_zmdLaFDLcY3xnqiFaC7VZDXnnzFG9QDHL4kqStYQ@mail.gmail.com>
- <87imhgyeqt.fsf@x220.int.ebiederm.org>
- <9dd76936-0009-31e4-d869-f64d01886642@linux-m68k.org>
-Date: Fri, 01 May 2020 06:13:24 -0500
-In-Reply-To: <9dd76936-0009-31e4-d869-f64d01886642@linux-m68k.org> (Greg
- Ungerer's message of "Fri, 1 May 2020 15:44:03 +1000")
-Message-ID: <87wo5vx60b.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jUU2O-0006ml-1v
+ for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 11:41:01 +0000
+Received: from compute7.internal (compute7.nyi.internal [10.202.2.47])
+ by mailout.west.internal (Postfix) with ESMTP id 7401A702;
+ Fri,  1 May 2020 07:40:52 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute7.internal (MEProxy); Fri, 01 May 2020 07:40:53 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=stwcx.xyz; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm1; bh=Sb3goio2fiGntHYbz+m2AsCFkNQ
+ rFG+Kg4TJuY9VPSk=; b=U8JPy01FEaCgmL0/x3Wq6/hHhS3ABZ9Ze/zBRZ21P/D
+ eApxU4+pXkv9R/OYMs7iYojHqJXSmRxCAq/D4DZ1H2j15x7dG9lxDFfIhXErm6R6
+ JMwbJP9pR1yvU6ZPG1dWNOfPTySU68jj0v4JGXX2SLrsY5No9go8Z6ix57E0Ss+H
+ 4oRr+8XvY+SB2/tiIObU3Fa9+WiAc8gb8EPUyeoRD73KJp+Q7SUXDZW7U/SPRSK+
+ r1atLU5zpmCTLfaAhqOJEz+jIr8u6vKwq1b2UUtsMdzsQU/Wg49HMpJ3sYtBLCUq
+ WskJGp8jlpK52s/9vT9MgCRtCLHt2yjjGo9UMChSxXg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=Sb3goi
+ o2fiGntHYbz+m2AsCFkNQrFG+Kg4TJuY9VPSk=; b=rWKq35srI3fHGJXnJg7ToM
+ gz/1MfC2xoaLKwSlcoHy0VTRxE3sTpppHIPxXUIjSbKwoi9L3ZUsCc9WwBKlE133
+ 2w2lyN3EzEMn/ajuvdC8ZKBOzsCJ2U30SxdsHBV+Ytt8MWWURhPEV4FjpP8ttYQo
+ PSZs+AP6/21pPMnjjMFfk1f1A8CWm9s7DyK+eXVIqTYfHepCmNkHziKXQU689jZA
+ OJczTLIw1557vDOzJav57ZYhaYMHf+Dk7f4ww88/CSMoWOQ9e9R5LlmH41ikUeB/
+ HCnTCjhC5havGJz1/yvVot0TUJ5l5nbtVFHh/lAP9/PitkJGJuoZjEC2mGFgo6zQ
+ ==
+X-ME-Sender: <xms:wQqsXhH-jhFVf4-4_6mcgDu94tNfRt_S4UZwJlvk9BhK-8-7MFKdCQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrieejgdegudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenfg
+ hrlhcuvffnffculdefhedmnecujfgurhepfffhvffukfhfgggtuggjsehgtderredttddv
+ necuhfhrohhmpefrrghtrhhitghkucghihhllhhirghmshcuoehprghtrhhitghksehsth
+ iftgigrdighiiiqeenucggtffrrghtthgvrhhnpeegheehfeffgeekveehtdfhgfduhfeg
+ fefgtdehhfektdelffevkefgueffhedtieenucfkphepjeeirddvhedtrdekgedrvdefie
+ enucevlhhushhtvghrufhiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehprght
+ rhhitghksehsthiftgigrdighiii
+X-ME-Proxy: <xmx:wQqsXgkmkfTAS42UxYD2Zpr15FMTaDn8g_JBwQOm-SFrLb2RXoSXOA>
+ <xmx:wQqsXonjbQUZkEH46KBo1deDxN6Wo-C37USh7n8DkXZgXDyjWPa2NA>
+ <xmx:wQqsXtUWIuUa3A2zcdUx5JYnCfH-ExAABPBoR4cmnddYvMi1t3rZEg>
+ <xmx:xAqsXik-JS_8sIz5rPEFXTYf3vw7Mw1lhQLqJI48GgV5y4gxfsb0hA>
+Received: from localhost (76-250-84-236.lightspeed.austtx.sbcglobal.net
+ [76.250.84.236])
+ by mail.messagingengine.com (Postfix) with ESMTPA id C9B693065F66;
+ Fri,  1 May 2020 07:40:48 -0400 (EDT)
+Date: Fri, 1 May 2020 06:40:47 -0500
+From: Patrick Williams <patrick@stwcx.xyz>
+To: Alexander Filippov <a.filippov@yadro.com>
+Subject: Re: [PATCH v7] ARM: DTS: Aspeed: Add YADRO Nicole BMC
+Message-ID: <20200501114047.GC5268@heinlein.lan.stwcx.xyz>
+References: <20200429113711.13183-1-a.filippov@yadro.com>
 MIME-Version: 1.0
-X-XM-SPF: eid=1jUTet-0006Wp-Mr; ; ; mid=<87wo5vx60b.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX18Ja6ZhJX6gmVl5+uqwyRJT9MkgBLIzECc=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa04.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=0.5 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,T_TooManySym_01,
- T_TooManySym_02,XMSubLong autolearn=disabled version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.4972] *  0.7 XMSubLong Long Subject
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa04 1397; Body=1 Fuz1=1 Fuz2=1]
- *  0.0 T_TooManySym_02 5+ unique symbols in subject
- *  0.0 T_TooManySym_01 4+ unique symbols in subject
-X-Spam-DCC: XMission; sa04 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Greg Ungerer <gerg@linux-m68k.org>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 439 ms - load_scoreonly_sql: 0.06 (0.0%),
- signal_user_changed: 11 (2.6%), b_tie_ro: 10 (2.2%), parse: 1.55
- (0.4%), extract_message_metadata: 23 (5.3%), get_uri_detail_list: 2.5
- (0.6%), tests_pri_-1000: 22 (5.1%), tests_pri_-950: 1.67 (0.4%),
- tests_pri_-900: 1.32 (0.3%), tests_pri_-90: 68 (15.6%), check_bayes:
- 67 (15.2%), b_tokenize: 11 (2.4%), b_tok_get_all: 8 (1.9%),
- b_comp_prob: 2.8 (0.6%), b_tok_touch_all: 41 (9.4%), b_finish: 0.93
- (0.2%), tests_pri_0: 291 (66.2%), check_dkim_signature: 0.83 (0.2%),
- check_dkim_adsp: 3.1 (0.7%), poll_dns_idle: 0.81 (0.2%), tests_pri_10:
- 3.9 (0.9%), tests_pri_500: 10 (2.3%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH v2 0/5] Fix ELF / FDPIC ELF core dumping,
- and use mmap_sem properly in there
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+In-Reply-To: <20200429113711.13183-1-a.filippov@yadro.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_041649_779955_E1A48075 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200501_044100_135624_F54A54D4 
+X-CRM114-Status: UNSURE (   8.75  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.233 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ low trust [64.147.123.24 listed in list.dnswl.org]
+ 2.0 PDS_OTHER_BAD_TLD      Untrustworthy TLDs
+ [URI: stwcx.xyz (xyz)]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.5 FROM_SUSPICIOUS_NTLD   From abused NTLD
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,83 +107,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Salter <msalter@redhat.com>, Rich Felker <dalias@libc.org>,
- linux-c6x-dev@linux-c6x.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Nicolas Pitre <nico@fluxnic.net>, Linux-sh list <linux-sh@vger.kernel.org>,
- Jann Horn <jannh@google.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-MM <linux-mm@kvack.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Oleg Nesterov <oleg@redhat.com>, linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ Andrew Geissler <geissonator@yahoo.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8129413563620029046=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Greg Ungerer <gerg@linux-m68k.org> writes:
 
-> On 1/5/20 5:07 am, Eric W. Biederman wrote:
->> Linus Torvalds <torvalds@linux-foundation.org> writes:
->>
->>> On Thu, Apr 30, 2020 at 7:10 AM Greg Ungerer <gerg@linux-m68k.org> wrote:
->>
->>>>> Most of that file goes back to pre-git days. And most of the commits
->>>>> since are not so much about binfmt_flat, as they are about cleanups or
->>>>> changes elsewhere where binfmt_flat was just a victim.
->>>>
->>>> I'll have a look at this.
->>>
->>> Thanks.
->>>
->>>> Quick hack test shows moving setup_new_exec(bprm) to be just before
->>>> install_exec_creds(bprm) works fine for the static binaries case.
->>>> Doing the flush_old_exec(bprm) there too crashed out - I'll need to
->>>> dig into that to see why.
->>>
->>> Just moving setup_new_exec() would at least allow us to then join the
->>> two together, and just say "setup_new_exec() does the credential
->>> installation too".
->>
->> But it is only half a help if we allow failure points between
->> flush_old_exec and install_exec_creds.
->>
->> Greg do things work acceptably if install_exec_creds is moved to right
->> after setup_new_exec? (patch below)
->
-> Yes, confirmed. Worked fine with that patch applied.
+--===============8129413563620029046==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="UFHRwCdBEJvubb2X"
+Content-Disposition: inline
 
-Good.  Thank you.
 
-That is what we need for other cleanups.  All three of those together.
+--UFHRwCdBEJvubb2X
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->> This is what I was thinking about applying.
->>
->> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
->> index 831a2b25ba79..1a1d1fcb893f 100644
->> --- a/fs/binfmt_flat.c
->> +++ b/fs/binfmt_flat.c
->> @@ -541,6 +541,7 @@ static int load_flat_file(struct linux_binprm *bprm,
->>   		/* OK, This is the point of no return */
->>   		set_personality(PER_LINUX_32BIT);
->>   		setup_new_exec(bprm);
->> +		install_exec_creds(bprm);
->>   	}
->>     	/*
->> @@ -963,8 +964,6 @@ static int load_flat_binary(struct linux_binprm *bprm)
->>   		}
->>   	}
->>   -	install_exec_creds(bprm);
->> -
->>   	set_binfmt(&flat_format);
->>     #ifdef CONFIG_MMU
+On Wed, Apr 29, 2020 at 02:37:11PM +0300, Alexander Filippov wrote:
+> Nicole is an OpenPower machine with an Aspeed 2500 BMC SoC manufactured
+> by YADRO.
+>=20
+> Signed-off-by: Alexander Filippov <a.filippov@yadro.com>
+> ---
+>  arch/arm/boot/dts/Makefile                  |   1 +
+>  arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts | 326 ++++++++++++++++++++
+>  2 files changed, 327 insertions(+)
+>  create mode 100644 arch/arm/boot/dts/aspeed-bmc-opp-nicole.dts
+>=20
 
-Eric
+Reviewed-by: Patrick Williams <patrick@stwcx.xyz>
+
+--=20
+Patrick Williams
+
+--UFHRwCdBEJvubb2X
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCAAdFiEEBGD9ii4LE9cNbqJBqwNHzC0AwRkFAl6sCr0ACgkQqwNHzC0A
+wRkYyQ/+Ia0bM1fVefwj8qDw02722tG9QTWwgkAr/0ln2lYPm6WeBmhNWiQlcq73
+siHVSVZmAIxGeqAj/fo0WRA6XgemmlMNylICZj2JMlJs/RaqfdzkzMxjXDPF3jir
+kniXIA/naEnakX9e9IyzP1zeEHUeCfIBD8YdWhBXSaz8yTXw6fV4gFDCXGqjSOhc
+HSlVA3Tj9B0810DoMdGGRXU1Y90Q6H5xdZ7gdROvuZDa04jusuqFDZ9LDw47OIDp
+W+0zEW2eqhwFLp6QSDZXhBDOiB1kHdc2tEMfW0uzzqpT2JoBoGzc6PMrjPCBaIrP
+Aj23HE8zM1uuMzFZCCQ2vPUxxSroAxdhN2H1/8Cc9ekvGiAHX5e73g2hT8DOXIJD
+TLkkn9nVnKra0P+N0JhQQKXDRnSGGdoc0tsIlq7AMi6lsjzPIoV4tRqeGYZgGSBC
+henTkYrFFsmjTVnh9mTq0UdXDVZscW3oWnrK3tuzphX+tFJxlRo8QgrTLVBU52cj
+k5AL7gk/FuK+y0zYd3weLXRAEzU8u0OFDROQLsEb6jJH+2GqIcz7qPm4XkjPENDa
+5rkOxMovA+01t13eShDsWJ7vCLQPbGpDtwj7nnFtWo/uZ+pU7eqNnxVFH7iyMo4P
+obUf/pikY7qzZSVgYmi52h2c8pRRdgExNa67EOcP/SPr59zXlKQ=
+=cOmO
+-----END PGP SIGNATURE-----
+
+--UFHRwCdBEJvubb2X--
+
+
+--===============8129413563620029046==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8129413563620029046==--
+
