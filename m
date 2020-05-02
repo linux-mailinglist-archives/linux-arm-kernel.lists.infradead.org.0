@@ -2,71 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4FE391C2835
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 22:27:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B98401C28C7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 01:09:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kpGSQvLhhbjrDuWtUe8s4etkg5urybBFzr+GtbczEsQ=; b=Th/ZFHjGeCCYp3
-	A3P8DMiHFMtKf8+2u4vBBYObBrKTeRHBBgRCBedhjERTP5DI/tEsYtORwnG3N2RpUHAaKgxk9FuTb
-	m9w15jTUt51fxzQnbetQO8JbSK82lD5xKQrKX5SXaSDczppjD7CKE3axKWT+a26sgggwfG3+6Baun
-	uZNB6XajTgDF6+S47DcyaRVPecg9EW5lNpXT6zC53sLDruBa1fDugBFXuWy3chLRmVEJAW7UUleyD
-	FSuJ8o7ufLi8FJtS07FsSiAIp8x1yPkTfcyD5LNJ+GHBJr77y9pZQWkztdUGX2dGo6QldjjDRvZJ8
-	rr6BpApR/1364MbxIDOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5+vSgzn9a5v0Up7SW/GIaKoPt6FBmM6ElcSvYuB0LDc=; b=RwNqamZFT5rGzW
+	WUhik27wlLKj3PikMmdhn60RWoNiQu3baf3P6smHC9cAJmztmBP9+A8UHeLzgFITLInUPZcbYNYJG
+	T5j85f3r3pIsOpIS8LIDxNp6QvXBuIiRz9EA/g7kpW8d8LTUYxEwF1yq3ubNCsrQpVCSwVC8T0ipD
+	d2XxK1yONMWdSEiVwQ37Oil1OgildaUFTexPpkun42Jc3/lWi2atAl9yTGUuqJ/zBPcAKBuG2l/QI
+	153vhjra3quE+SOzNTtgbFGH+5uH274xwjMEpleapuRjRPsHcuHLj7ge7oykzGScC7+SqTPMveNFu
+	Q0+pYGj6OkKJeZeddnIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUyj1-00071o-5f; Sat, 02 May 2020 20:27:03 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
+	id 1jV1G1-0007VC-4d; Sat, 02 May 2020 23:09:17 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUyit-0006z3-HA
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 20:26:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1588451201;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=aFutSXBhxdQGsI0cADyst3RpMgduPhgX/DjMd6AXC1k=;
- b=eK/Ovkbqzy5BVMn6tifuopT8p+CKtPIZUs08VSTFF6CHf9vMSfiLUJ5RK+bAWI/q1Q
- kmk4sSLJW8lW2sL/yVFac56W2ag8UI9eeT88NdV67G14MjHbsb2SBv3fWc6qbhtEZpmb
- 4qDZAjkeVEioYjzeVSgiRB3FtkqepxhSRSJgXT6HktZmfygaTJhczr11fwgtV0Kdj970
- NU8yM9bzHPlhyChwoflJP/dLx2w9aT1Dkm9mw0qFeDxmBA+QQdGbGkEdt7NSSHiSDp/v
- G5jhtSMuE3MxxkGHS25dWe1up+96EKkLA4fSOyKuwtfWbl6B4OtHjRybrucNk/LX5oIv
- do0w==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlSVXA4OCWU="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw42KQTesh
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Sat, 2 May 2020 22:26:29 +0200 (CEST)
-Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
- pvrsgx.yaml for Imagination GPUs
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <NMCE9Q.LWG45P20NBVJ@crapouillou.net>
-Date: Sat, 2 May 2020 22:26:29 +0200
-Message-Id: <28138EC0-0FA5-4F97-B528-3442BF087C7A@goldelico.com>
-References: <cover.1587760454.git.hns@goldelico.com>
- <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
- <NMCE9Q.LWG45P20NBVJ@crapouillou.net>
-To: Paul Cercueil <paul@crapouillou.net>
-X-Mailer: Apple Mail (2.3124)
+ id 1jV1Fv-0007TF-6j
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 23:09:12 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id ms17so1892079pjb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 02 May 2020 16:09:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=9HGRfmdbolsK8FW/rRUJBbEwzBIM8H1aNpaH6mf7vLs=;
+ b=V7hdM+S8rZrtxf+JIRZBszVljiLbHSKvA1QH3j0vh38UkbwzxTnXJKNlXYKe0oMmNS
+ 3JgJmFMz+Anp1JagyLyeHQ5MQtYD9BdjMUftSdD12aev/v2AA3vR93l22g/P966SiL+6
+ BLIKmaaeF2NmUu9bprtmsfvfOqb9G2QWYzxQSLzAIS6nFMsoTn/hCE4CkP36+NyO0MGR
+ dBalJEfhxF3z0QvDOSoOi8EAkBumM2B55jwbIVRHHs3yDBq8sG/LNfbBgUFzQNJEigjM
+ 6cUfp7oqJJROL3rMsbOCmqGRlfUMxtt/bxkPHR3lWjZjHMt0iTHKmpCgsLLb/gXdgBKR
+ hzGg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=9HGRfmdbolsK8FW/rRUJBbEwzBIM8H1aNpaH6mf7vLs=;
+ b=UHATeA2ULfncmLuvacio74EFX1FzjlH48TiVBhJgFk9kqNyXaw1vMzdd3jNMzdZara
+ PHsXroLE2LV7L8qnlj3Hyn7JxZxQNItkhNxgcdvnYGLMewTP+wzISlFcmTxicns8DtsC
+ HbCnAfR4w69WJb4j8+HZ/0gBgqYf1t9Thmb08O/V3058DWFIB8udwcgGiCj8HtR5fs6K
+ dklcXdBIVDCOGUNhrETVP0SLb2n/hEQPEK4TaWgbSLa2vZgshOGkKHexY8n1Rp+LihEx
+ AZaAbC63BTP4/05QZuoisN5GRhaIeru4TOxQe3mznAvXMY1ye4K+CfSI6HyeFM9muPdN
+ G/qQ==
+X-Gm-Message-State: AGi0PuZuRZ5U2zRaO27+fCUyFb7rlLt7ej6GLj51/wfUzNSuDiFjuM2B
+ fU7vpjwld0a20n2MJXo8xWs=
+X-Google-Smtp-Source: APiQypIN5+SVCW99E6j+XZC9WfzEZeWu/gxLuJQbVw326/PJOwNHBcC3kCJQL9Nf8yd1jztU2V2Rlw==
+X-Received: by 2002:a17:902:6b05:: with SMTP id
+ o5mr10398102plk.274.1588460948488; 
+ Sat, 02 May 2020 16:09:08 -0700 (PDT)
+Received: from syed ([106.210.101.167])
+ by smtp.gmail.com with ESMTPSA id y29sm5397526pfq.162.2020.05.02.16.08.55
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 02 May 2020 16:09:08 -0700 (PDT)
+Date: Sun, 3 May 2020 04:38:36 +0530
+From: Syed Nayyar Waris <syednwaris@gmail.com>
+To: akpm@linux-foundation.org
+Subject: [PATCH v5 0/4] Introduce the for_each_set_clump macro
+Message-ID: <cover.1588460322.git.syednwaris@gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_132656_162711_41D60E3E 
-X-CRM114-Status: GOOD (  23.34  )
+X-CRM114-CacheID: sfid-20200502_160911_269716_D6F4B6D7 
+X-CRM114-Status: GOOD (  13.80  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:6 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [syednwaris[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,279 +97,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, letux-kernel@openphoenux.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- =?iso-8859-1?Q?Beno=EEt_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: linux-arch@vger.kernel.org, amit.kucheria@verdurent.com, arnd@arndb.de,
+ yamada.masahiro@socionext.com, linux-kernel@vger.kernel.org,
+ linus.walleij@linaro.org, daniel.lezcano@linaro.org, vilhelm.gray@gmail.com,
+ michal.simek@xilinx.com, bgolaszewski@baylibre.com, rrichter@marvell.com,
+ linux-gpio@vger.kernel.org, linux-pm@vger.kernel.org, rui.zhang@intel.com,
+ andriy.shevchenko@linux.intel.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Paul,
+This patchset introduces a new generic version of for_each_set_clump. 
+The previous version of for_each_set_clump8 used a fixed size 8-bit
+clump, but the new generic version can work with clump of any size but
+less than or equal to BITS_PER_LONG. The patchset utilizes the new macro 
+in several GPIO drivers.
 
-> Am 26.04.2020 um 15:11 schrieb Paul Cercueil <paul@crapouillou.net>:
-> =
+The earlier 8-bit for_each_set_clump8 facilitated a
+for-loop syntax that iterates over a memory region entire groups of set
+bits at a time.
 
-> Hi Nikolaus,
-> =
+For example, suppose you would like to iterate over a 32-bit integer 8
+bits at a time, skipping over 8-bit groups with no set bit, where
+XXXXXXXX represents the current 8-bit group:
 
-> Le ven. 24 avril 2020 =E0 22:34, H. Nikolaus Schaller <hns@goldelico.com>=
- a =E9crit :
->> The Imagination PVR/SGX GPU is part of several SoC from
->> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
->> Allwinner A83 and others.
->> With this binding, we describe how the SGX processor is
->> interfaced to the SoC (registers and interrupt).
->> The interface also consists of clocks, reset, power but
->> information from data sheets is vague and some SoC integrators
->> (TI) deciced to use a PRCM wrapper (ti,sysc) which does
->> all clock, reset and power-management through registers
->> outside of the sgx register block.
->> Therefore all these properties are optional.
->> Tested by make dt_binding_check
->> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
->> ---
->> .../devicetree/bindings/gpu/img,pvrsgx.yaml   | 150 ++++++++++++++++++
->> 1 file changed, 150 insertions(+)
->> create mode 100644 Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
->> diff --git a/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml b/Doc=
-umentation/devicetree/bindings/gpu/img,pvrsgx.yaml
->> new file mode 100644
->> index 000000000000..33a9c4c6e784
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/gpu/img,pvrsgx.yaml
->> @@ -0,0 +1,150 @@
->> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
->> +%YAML 1.2
->> +---
->> +$id: http://devicetree.org/schemas/gpu/img,pvrsgx.yaml#
->> +$schema: http://devicetree.org/meta-schemas/core.yaml#
->> +
->> +title: Imagination PVR/SGX GPU
->> +
->> +maintainers:
->> +  - H. Nikolaus Schaller <hns@goldelico.com>
->> +
->> +description: |+
->> +  This binding describes the Imagination SGX5 series of 3D accelerators=
- which
->> +  are found in several different SoC like TI OMAP, Sitara, Ingenic JZ47=
-80,
->> +  Allwinner A83, and Intel Poulsbo and CedarView and more.
->> +
->> +  For an extensive list see: https://en.wikipedia.org/wiki/PowerVR#Impl=
-ementations
->> +
->> +  The SGX node is usually a child node of some DT node belonging to the=
- SoC
->> +  which handles clocks, reset and general address space mapping of the =
-SGX
->> +  register area. If not, an optional clock can be specified here.
->> +
->> +properties:
->> +  $nodename:
->> +    pattern: '^gpu@[a-f0-9]+$'
->> +  compatible:
->> +    oneOf:
->> +      - description: SGX530-121 based SoC
->> +        items:
->> +          - enum:
->> +            - ti,omap3-sgx530-121 # BeagleBoard A/B/C, OpenPandora 600M=
-Hz and similar
->> +          - const: img,sgx530-121
->> +          - const: img,sgx530
->> +
->> +      - description: SGX530-125 based SoC
->> +        items:
->> +          - enum:
->> +            - ti,am3352-sgx530-125 # BeagleBone Black
->> +            - ti,am3517-sgx530-125
->> +            - ti,am4-sgx530-125
->> +            - ti,omap3-sgx530-125 # BeagleBoard XM, GTA04, OpenPandora =
-1GHz and similar
->> +            - ti,ti81xx-sgx530-125
->> +          - const: ti,omap3-sgx530-125
->> +          - const: img,sgx530-125
->> +          - const: img,sgx530
->> +
->> +      - description: SGX535-116 based SoC
->> +        items:
->> +          - const: intel,poulsbo-gma500-sgx535 # Atom Z5xx
->> +          - const: img,sgx535-116
->> +          - const: img,sgx535
->> +
->> +      - description: SGX540-116 based SoC
->> +        items:
->> +          - const: intel,medfield-gma-sgx540 # Atom Z24xx
->> +          - const: img,sgx540-116
->> +          - const: img,sgx540
->> +
->> +      - description: SGX540-120 based SoC
->> +        items:
->> +          - enum:
->> +            - samsung,s5pv210-sgx540-120
->> +            - ti,omap4-sgx540-120 # Pandaboard, Pandaboard ES and simil=
-ar
->> +          - const: img,sgx540-120
->> +          - const: img,sgx540
->> +
->> +      - description: SGX540-130 based SoC
->> +        items:
->> +          - enum:
->> +            - ingenic,jz4780-sgx540-130 # CI20
->> +          - const: img,sgx540-130
->> +          - const: img,sgx540
->> +
->> +      - description: SGX544-112 based SoC
->> +        items:
->> +          - const: ti,omap4470-sgx544-112
->> +          - const: img,sgx544-112
->> +          - const: img,sgx544
->> +
->> +      - description: SGX544-115 based SoC
->> +        items:
->> +          - enum:
->> +            - allwinner,sun8i-a31-sgx544-115
->> +            - allwinner,sun8i-a31s-sgx544-115
->> +            - allwinner,sun8i-a83t-sgx544-115 # Banana-Pi-M3 (Allwinner=
- A83T) and similar
->> +          - const: img,sgx544-115
->> +          - const: img,sgx544
->> +
->> +      - description: SGX544-116 based SoC
->> +        items:
->> +          - enum:
->> +            - ti,dra7-sgx544-116 # DRA7
->> +            - ti,omap5-sgx544-116 # OMAP5 UEVM, Pyra Handheld and simil=
-ar
->> +          - const: img,sgx544-116
->> +          - const: img,sgx544
->> +
->> +      - description: SGX545 based SoC
->> +        items:
->> +          - const: intel,cedarview-gma3600-sgx545 # Atom N2600, D2500
->> +          - const: img,sgx545-116
->> +          - const: img,sgx545
->> +
->> +  reg:
->> +    maxItems: 1
->> +
->> +  interrupts:
->> +    maxItems: 1
->> +
->> +  interrupt-names:
->> +    maxItems: 1
->> +    items:
->> +      - const: sgx
->> +
->> +  clocks:
->> +    maxItems: 4
->> +
->> +  clock-names:
->> +    maxItems: 4
->> +    items:
->> +      - const: core
->> +      - const: sys
->> +      - const: mem
->> +      - const: hyd
->> +
->> +  sgx-supply: true
->> +
->> +  power-domains:
->> +    maxItems: 1
->> +
->> +  resets:
->> +    maxItems: 1
->> +
->> +required:
->> +  - compatible
->> +  - reg
->> +  - interrupts
-> =
+    Example:        10111110 00000000 11111111 00110011
+    First loop:     10111110 00000000 11111111 XXXXXXXX
+    Second loop:    10111110 00000000 XXXXXXXX 00110011
+    Third loop:     XXXXXXXX 00000000 11111111 00110011
 
-> By not making 'clocks' required you make it possible to create broken bin=
-dings; according to your schema, a GPU node without a 'clocks' for the JZ47=
-80 would be perfectly valid.
+Each iteration of the loop returns the next 8-bit group that has at
+least one set bit.
 
-Yes. But it will never pass a test with real hardware. So it can't be omitt=
-ed anyways.
+But with the new for_each_set_clump the clump size can be different from 8 bits.
+Moreover, the clump can be split at word boundary in situations where word 
+size is not multiple of clump size. Following are examples showing the working 
+of new macro for clump sizes of 24 bits and 6 bits.
 
-On a more general thought, this argument holds for any optional property. S=
-o it is not specific to clocks. Since the reg address values are also never=
- specified you can still create broken bindings. Or by connecting the wrong=
- clock. So the ways to create broken bindings are numerous.
+Example 1:
+clump size: 24 bits, Number of clumps (or ports): 10
+bitmap stores the bit information from where successive clumps are retrieved.
 
-I also assume that SGX integrators are not beginners and do you think they =
-need to find out through a make dt_binding_check dtbs_check that they shoul=
-d define a clock? based on *assumptions* we do without having access to all=
- systems?
+     /* bitmap memory region */
+        0x00aa0000ff000000;  /* Most significant bits */
+        0xaaaaaa0000ff0000;
+        0x000000aa000000aa;
+        0xbbbbabcdeffedcba;  /* Least significant bits */
 
-IMHO the bindings documentation is a documentation. So it needs to be helpf=
-ul but not perfect. Formalizing all corner cases in a bindings document (ju=
-st because we can since .yaml was introduced) is IMHO overkill.
+Different iterations of for_each_set_clump:-
+'offset' is the bit position and 'clump' is the 24 bit clump from the
+above bitmap.
+Iteration first:        offset: 0 clump: 0xfedcba
+Iteration second:       offset: 24 clump: 0xabcdef
+Iteration third:        offset: 48 clump: 0xaabbbb
+Iteration fourth:       offset: 96 clump: 0xaa
+Iteration fifth:        offset: 144 clump: 0xff
+Iteration sixth:        offset: 168 clump: 0xaaaaaa
+Iteration seventh:      offset: 216 clump: 0xff
+Loop breaks because in the end the remaining bits (0x00aa) size was less
+than clump size of 24 bits.
 
-In times before the introduction of more formal .yaml I think we would not =
-even have considered this for a comment in the bindings.txt.
+In above example it can be seen that in iteration third, the 24 bit clump
+that was retrieved was split between bitmap[0] and bitmap[1]. This example 
+also shows that 24 bit zeroes if present in between, were skipped (preserving
+the previous for_each_set_macro8 behaviour). 
 
-> It's possible to forbid the presence of the 'clocks' property on some imp=
-lementations, and require it on others.
+Example 2:
+clump size = 6 bits, Number of clumps (or ports) = 3.
 
-To be precise we have to specify the exact number of clocks (between 0 and =
-4) for every architecture.
+     /* bitmap memory region */
+        0x00aa0000ff000000;  /* Most significant bits */
+        0xaaaaaa0000ff0000;
+        0x0f00000000000000;
+        0x0000000000000ac0;  /* Least significant bits */
 
-This also contradicts my dream to get rid of the architecture specific comp=
-onents in the long run. My dream (because I can't tell how it can be done) =
-is that we can one day develop something which just needs compatible =3D im=
-g,530 or imp,540 or img,544. Then we can't make the number clocks depend on=
- the implementation any more.
+Different iterations of for_each_set_clump:
+'offset' is the bit position and 'clump' is the 6 bit clump from the
+above bitmap.
+Iteration first:        offset: 6 clump: 0x2b
+Loop breaks because 6 * 3 = 18 bits traversed in bitmap.
+Here 6 * 3 is clump size * no. of clumps.
 
-> See how it's done for instance on Documentation/devicetree/bindings/seria=
-l/samsung_uart.yaml.
+Changes in v5:
+ - [Patch 4/4]: Minor change: Hardcode value for better code readability.
 
-Yes I know the design pattern, but I wonder if such a move makes the whole =
-thing even less maintainable.
+Changes in v4:
+ - [Patch 2/4]: Use 'for' loop in test function of for_each_set_clump.
+ - [Patch 3/4]: Minor change: Hardcode value for better code readability.
+ - [Patch 4/4]: Minor change: Hardcode value for better code readability.
 
-Assume we have finished DTS for some SoC. Then these DTS have been tested o=
-n real hardware and are working. Clocks are there where needed and missing =
-where not. We may now forbid or not forbid them for some implementations in=
- the bindings.yaml but the result of dtbs_check won't change! Because they =
-are tested and working and the bindings.yaml has been adapted to the result=
-. So we have just duplicated something for no practical benefit.
+Changes in v3:
+ - [Patch 3/4]: Change datatype of some variables from u64 to unsigned long
+   in function thunderx_gpio_set_multiple.
 
-Next, assume there is coming support for more and more new SoC. Then, devel=
-opers not only have to figure out which clocks they need in the DTS but the=
-y also have to add a patch to the implementation specific part of the bindi=
-ngs.yaml to clearly define exactly the same what they already have written =
-into their .dts (the clocks are either there for the of_node or they are no=
-t). So again the rules are for no benefit, since a new SoC is introduced ex=
-actly once. And tested if it works. And if it is there, it will stay as it =
-is. It is just work for maintainers to review that patch as well.
+CHanges in v2:
+ - [Patch 2/4]: Unify different tests for 'for_each_set_clump'. Pass test data as
+   function parameters.
+ - [Patch 2/4]: Remove unnecessary bitmap_zero calls.
 
-It boils down to the question if we need to formalize the rule how a workin=
-g DTS was derived. Or just have a working DTS and not formalize everything.
+Syed Nayyar Waris (4):
+  bitops: Introduce the the for_each_set_clump macro
+  lib/test_bitmap.c: Add for_each_set_clump test cases
+  gpio: thunderx: Utilize for_each_set_clump macro
+  gpio: xilinx: Utilize for_each_set_clump macro
 
-So IMHO carrying along such a detail (forbid clocks on some architectures) =
-is nice to have (and fun to learn the .yaml thing) but not of benefit for a=
-nyone. Not for the DTS developer nor for the maintainers nor for the users =
-of a Linux kernel. "Keep it simple" is always a good rule for maintainabili=
-ty.
+ drivers/gpio/gpio-thunderx.c      |  11 ++-
+ drivers/gpio/gpio-xilinx.c        |  62 ++++++-------
+ include/asm-generic/bitops/find.h |  19 ++++
+ include/linux/bitmap.h            |  61 +++++++++++++
+ include/linux/bitops.h            |  13 +++
+ lib/find_bit.c                    |  14 +++
+ lib/test_bitmap.c                 | 141 ++++++++++++++++++++++++++++++
+ 7 files changed, 287 insertions(+), 34 deletions(-)
 
-In summary I don't see a good reason to follow this in v8. But you could ad=
-d it by a separate patch later if the DTS have been reviewed and agreed.
 
-BR and thanks,
-Nikolaus
+base-commit: 25c04a75f14fdc074d7dd1d6d40b49eddd0e66e7
+-- 
+2.26.2
 
 
 _______________________________________________
