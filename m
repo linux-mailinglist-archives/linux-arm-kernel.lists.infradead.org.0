@@ -2,133 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F38951C26C0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 18:06:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A94C01C26E0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 18:18:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pEVBluFv2+lRHLzrutq6XLPqU3K8T8dMLx47cDd6ce0=; b=qEQwpAl8QyCdtT
-	TWd7QTVwYHe0E0Pw0LLT0ta2cYVuwIHe8QIUQw6JBDJGzEvsbI1mliFuHEiQ9bwtbj7cwfxLRyJE4
-	R+/XN/r4uesZpz8aaRdXql1xER9m0WrvjrRO/i3DyKYG/u3gzRBfAyZg9xUszUYQ5mdc0HgdPdUK8
-	xfE+WsOxlO3h3OzjMjot6Y43V5S9AbpfaxoF+MXPtvxPpiRJcuM28OoZHgi3SMMWtMT8tjDzt05LS
-	2EVl56VP+nYX8yK5qvDttcaL23Opg3zvpJK/iiVA3UC7j/DLWpYM37GHYEXZu8A6poGnMBqd1tJdR
-	7SNK9jDtP+OMRPHcjoCw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1bop2TgmoLyk2/WFKOT+KYnHkGixODssZ9vB/PweNXA=; b=ScIbqTGcJ3YHqZ
+	Hto0Bc3HAhQgTofXSM9Hv4+MDvMP3Ld7dtqfxHXpaTZ/PvZi4gJ5mO+pvGZvrpC9eTLQessUoWim7
+	mrW0KwJGotMGA0O63gjn4Ao5H7vjjHeiraHXVPIwsK0Px4GHANfMMyvMz+ZqjicxPtWvZti9ypR+v
+	ixXr66ulfB0Awu+qXzzcauEzpBfQ4X2wAGdJz+K9Fas3qeCPe/C+g+BdxgD5M2c1LVOHu1hTIa/Rw
+	iWX+EPhuO8zfr87tIEkQjt6fVjMxlO1agmQ7whAIRaGuvOaKdU3RGrXFRxpt3WHCckwOf9/O3l4Sz
+	/pLMm7RTHHtAWOpDNX+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUueT-0000Ak-Mp; Sat, 02 May 2020 16:06:05 +0000
-Received: from esa3.hgst.iphmx.com ([216.71.153.141])
+	id 1jUuqp-0006g6-PM; Sat, 02 May 2020 16:18:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUueM-00008z-NA; Sat, 02 May 2020 16:06:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1588435558; x=1619971558;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=xNBcR2//G22j27sRwbubyERAith4zF/J0pnVDuKecDU=;
- b=EL8q6TSIpW/Us+ekyc99jxlpD4ZBHVdNgpp3XudVnGLZS5zOPjzuSViY
- bueoMKmZyj+fgwI5Klg9A9izejE/lwP6PyA5Lhn++BjDGtpyPRQvQTf0z
- RrZ5JwhpbO4C/vPf/hcPrXePgNF2A+3wtDijg56Nu43GSaQBfekH70BkM
- wPtcTiypfmQWepl5Z+s5ag3HJAZcXitfVqvwcb5NwuznPPOYm0F1UNFah
- +f2SDApcVr0QzshgxtaHxfzUT7KkdymcMms613WAvicZxgdbqeWnAm9Vo
- 8MIFUFJbhQXIAKGedwPIt71MZkyCBMFI7cwa/oUAdxUC0eiAVRZTz+opQ Q==;
-IronPort-SDR: Il1spfjlUzFQRv3PvbJvlFyFAek2yhTbtdKwsw35YYQ2R65Le6Ds8Cx7KZbbUD4Z57BLWj62/x
- K1bkhKFx1VO19dAe5TtWK8Quk+Ajgz0RpWSLCFyK/3BKTW/B/6z2+sGSC3QwiA0hlkQemxgcmb
- KvcfXKuV8BT9Oetx3EmJBwauusI8gkl1NCQjMpUN8t1z2Ds5HB622pSKEeaZDWg768yMsh0his
- Cyd6zVLlEkqdSBD377uKYibFHhASnS008XJQBa/OaqRZoVZsZ+L6hPZ/eH3+MgzyW+UTiq84Hx
- CGI=
-X-IronPort-AV: E=Sophos;i="5.73,343,1583164800"; d="scan'208";a="141084371"
-Received: from mail-bn8nam12lp2173.outbound.protection.outlook.com (HELO
- NAM12-BN8-obe.outbound.protection.outlook.com) ([104.47.55.173])
- by ob1.hgst.iphmx.com with ESMTP; 03 May 2020 00:05:52 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=DfMuTCXGAmfOnyIhSM0uHB/CaZ354f0lxHBXwVhvUjzrOzOeSAjyiK7qW9c6Az8p5cPKHQ/wRZ4NEBRj+A3G9zsyZhef0yFhbRNmZ9/oDD2C9ypXihXxE9aK+g6oZXNq0Qtrd85hb1dua7WaqzdrG7aq1m/s6rzP+Y5sXcWWudxHE2B7CZI0d2cClhIQEHNW3kdOnz0Bb5rtBcF41+0IN3q1FgZO5oX63spFtUM0TnXlCZE1a/PKOCz3vJAQXL2qKgwCeMSie1hG8kaJ5WhbE3x0UxvyofPnMOE07R7V8XgPxIfl71j+RV++yiVGE/aNh9iGb0btxRXFDZUNruE3bw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4zXmMO5Zpy02Ngq/eYIfJrkGb1pQt3gpzUPnWy/MHSA=;
- b=UnUz6nPKtFaPKHuXva/sLNLJzxjuT122JbKwGLydoqRx/kovzJWGL5BxABtqk+1Wui2r9pNPcVBxC41wHy6Lq3DIfRdSwdJFn72hLzppep3QrVNRjy+N1wzqCyZbuCzKeQG9ooyZjjzM0dOnF0LqG4Ygejrqo3gCGCc2KDaKqLY4JLj/itLcXVlFw6KUfceLMPDGLodHGsJv7UxLbWFH7Vy221RhX4H8Z6BjVc/joUZpcOXGHXumTtRu1UjY7AhFXrOqiMZJsQSAjLZKpiOXA2Xik52x1LQPNbEN4dZNXAVeWr/TAYas0iHcjHgDkVssM05HVwX4nAbydDIzqiAU+g==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=4zXmMO5Zpy02Ngq/eYIfJrkGb1pQt3gpzUPnWy/MHSA=;
- b=ibDlQrYvU4/PN2Khj//dro7uKdvOQGXU8UvyE9f0UEx6yfyFdTjQdISR9/q4XK9BfRaK22KpOWXoNRkMRXJcxgPlcHatrD5OHDydqLc9VGJov/lmsRuIdNaK8pAChFLNb+epj9fllRimx1sxfCDzPt1YrEo32ma5OgM9pd+RrPM=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB5293.namprd04.prod.outlook.com (2603:10b6:805:f9::23)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20; Sat, 2 May
- 2020 16:05:49 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.2958.027; Sat, 2 May 2020
- 16:05:49 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
-Subject: RE: [PATCH v3 5/5] scsi: ufs: cleanup WriteBooster feature
-Thread-Topic: [PATCH v3 5/5] scsi: ufs: cleanup WriteBooster feature
-Thread-Index: AQHWH8Y8HwH/XjgDN0+LaZXQUAIptKiU9sHw
-Date: Sat, 2 May 2020 16:05:49 +0000
-Message-ID: <SN6PR04MB4640099431C815833394022FFCA80@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200501143835.26032-1-stanley.chu@mediatek.com>
- <20200501143835.26032-6-stanley.chu@mediatek.com>
-In-Reply-To: <20200501143835.26032-6-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: mediatek.com; dkim=none (message not signed)
- header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
-x-originating-ip: [2a00:a040:188:8f6c:c15d:86e6:9e1d:ec73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: ebccf45d-1abc-4e64-43db-08d7eeb2ae6e
-x-ms-traffictypediagnostic: SN6PR04MB5293:
-x-microsoft-antispam-prvs: <SN6PR04MB529374AA43FADC02B6B01F42FCA80@SN6PR04MB5293.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:4125;
-x-forefront-prvs: 039178EF4A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 01LXZStgbLGol2C6TkPSCIzNVJS/mVzWxsguvTwbept5BShp88hCYLKBMM0L/zP1wnh2CCVu7DgKxiqQwvZdIZ/O4b/heaMjqY5+tM5roo8889IgrhNUf9Xvv6ONOZErU9Vf+TdYBhmEDrOi7hv1ei4tL7MFseylBp5dlJBa0R4QjMw4of6wGzeRlfsv/yXV0JGqgwvHluwoabVfQbBHDu/WI23Hm5gx+f9FUkXKGG8nDUDFeQI0hYYh2SyfrDm9aIH6mlcLVMTeK2lQ0q82baPvqZFtDQUFIIuQN+oYLfD61OERvSlY5hxmQJoAM47utwQqSr4rzvqz/FjLJ0DDBTgDaK/dJBu584GXGZfdaD+7pHEYNABSnqQdXby77KT7i1NQO2wK33BlCF4KxnP4NoKOTjGVdl+Ww3qrhVoCsO2nOwPvIlHyavqYSrG4q+o+
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(346002)(136003)(376002)(396003)(366004)(39860400002)(4326008)(86362001)(478600001)(7416002)(5660300002)(6506007)(2906002)(186003)(7696005)(9686003)(55016002)(52536014)(4744005)(64756008)(66556008)(66476007)(66946007)(66446008)(76116006)(8676002)(54906003)(33656002)(110136005)(71200400001)(316002)(8936002);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: f8KZye80L3A+i3CYpc/WhHWDfQadBo32Ofuc0KAqjhT9HzFwK3mze8txrKT8w/FCtNpkl02F1EglHIvqpsJ4vFU6LC7zj6JLMZIRgzgWFM0EYiWLBcDJX8KPQMeo/uSafhuuCVZkf2HriizNdxbiTx1LgpVYSn2xJOGjUJK9TqJoTjSHfmDksNeXd1VEn+1/2bhoxm1mY9v60T0T0MYhAL7gbnTH3MXtT/i2uUFLTshtzeTdXZDdT0voTCIpIulhnuPM+SYAUWt1EXF4ki68c3JqKMvUouxkIA12UahJr74ZebK50fpVjJoefNZ562wmdb6yB7oyxOz9WwdBwSsKK4ZUTLO4Yr50DJUewd6bBejL+VUUDpf7UhrejsvNOTraJ1gPPnlmbXW1PQ1FQ0TQCyksbDFiDKk1DHs9JwDKsfCdCJLyVv7Pcxob9OFPZHx7YYsZHFhWfyA6wpsrlKRoo57TWb/0gmPDli7Dg3G7l9siiUA6pqHmhJl2qMzovVfePlE815UBsMV0OMNTs73jvPb3I9vTakXFynmRVM8i0dazXd0LHP5IDdswo6EBuCPkPSblB6ZVjP5R2cqPSbC6dV0doTxHS3ynKd3nFOJ6UVJSxVbPIk/Ek6TB+PLYACg8Y4xrQT9dGKy/5RCfLreNbhteHfBEOcFXbXTR/RIPylHRlasUculnAyCv3KaxYc44W1t1+hZpPj4FGcA/HEGbppbX/uus18HYFsWx/hklJ6FTWw9t8KaOjxEtfTCdld+uFD7moLSt5CSQpvzB1jRYMlEwuQ6BszrQenR3c769Hhz5HGG4g+w4u2U8J/54JlOx8rPdQXd5lR8VS5OrW3YCRLnjIv6ldMdRkv/dF6Q0rXM=
-x-ms-exchange-transport-forked: True
+ id 1jUuqg-0006dy-1z; Sat, 02 May 2020 16:18:44 +0000
+X-UUID: 68e7af6281e24763beb6a8b7b20b5463-20200502
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=EAAh30Bef+oW9eX3BIR+Eagl/ceAkjF9T1b8MCX4U/s=; 
+ b=gteqzQ8YkMYcJB1FRKXZfdwyUoGdEgzj11pVC45ifZLdzJyvW6/t5zeAT9Joyv4ezFWVa80Y22BlYEA6buj0tPQ6WO45gOkYeg/v+5uzFq8bOCD+AzucxHjWUTZkqqTxRDuBeCHLO3Hf4Zei7fJfD5gx6yHvCekZ7Qc9r6l9y2o=;
+X-UUID: 68e7af6281e24763beb6a8b7b20b5463-20200502
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1455470834; Sat, 02 May 2020 08:18:30 -0800
+Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 2 May 2020 09:18:25 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 3 May 2020 00:18:23 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Sun, 3 May 2020 00:18:24 +0800
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: <linus.walleij@linaro.org>, <bgolaszewski@baylibre.com>,
+ <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
+ <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
+ <bingbu.cao@intel.com>
+Subject: [V5, 0/2] media: i2c: Add support for DW9768 VCM driver
+Date: Sun, 3 May 2020 00:17:25 +0800
+Message-ID: <20200502161727.30463-1-dongchun.zhu@mediatek.com>
+X-Mailer: git-send-email 2.9.2
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: ebccf45d-1abc-4e64-43db-08d7eeb2ae6e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2020 16:05:49.2416 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: CHPQ3hpYm5SlKD7DAyzk4pdJoQFW42JkCCJzUkYFrGyR8AIbVp7hDDiH/mEhIBhZUIbO/PmNxHVCr+yaxzMgRw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB5293
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_090558_796190_41BC1C97 
-X-CRM114-Status: GOOD (  10.15  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200502_091842_105672_3A53FC45 
+X-CRM114-Status: GOOD (  10.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.153.141 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [216.71.153.141 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -136,6 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -147,38 +86,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ shengnan.wang@mediatek.com, sj.huang@mediatek.com,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- 
-> 
-> Small cleanup as below items,
-> 
-> 1. Use ufshcd_is_wb_allowed() directly instead of ufshcd_wb_sup()
->    since ufshcd_wb_sup() just returns the result of
->    ufshcd_is_wb_allowed().
-> 
-> 2. In ufshcd_suspend(), "else if (!ufshcd_is_runtime_pm(pm_op))
->    can be simplified to "else" since both have the same meaning.
-> 
-> This patch does not change any functionality.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
+Hello,
 
+This series adds DT bindings in YAML and V4L2 sub-device driver for DW9768
+lens voice coil motor, which is a 10-bit DAC with 100mA output current
+sink capability from Dongwoon.
+
+The driver is designed for linear control of voice coil motor,
+and controlled via IIC serial interface to set the desired focus.
+It controls the position with 10-bit DAC data D[9:0] and seperates
+two 8-bit registers to control the VCM position as belows.
+DAC_MSB: D[9:8](ADDR: 0x03):
+     +---+---+---+---+---+---+---+---+
+     |---|---|---|---|---|---|D09|D08|
+     +---+---+---+---+---+---+---+---+
+DAC_LSB: D[7:0](ADDR: 0x04):
+     +---+---+---+---+---+---+---+---+
+     |D07|D06|D05|D04|D03|D02|D01|D00|
+     +---+---+---+---+---+---+---+---+
+
+This driver supports:
+ - set DW9768 to standby mode once suspend and turn it back to active if resume
+ - set the desired focus via V4L2_CID_FOCUS_ABSOLUTE ctrl
+
+Previous versions of this patch-set can be found here:
+ v4: https://lore.kernel.org/linux-media/20200330123634.363-1-dongchun.zhu@mediatek.com/
+ v3: https://lore.kernel.org/linux-media/20200228155958.20657-1-dongchun.zhu@mediatek.com/
+ v2: https://lore.kernel.org/linux-media/20190905072142.14606-1-dongchun.zhu@mediatek.com/
+ v1: https://lore.kernel.org/linux-media/20190708100641.2702-1-dongchun.zhu@mediatek.com/
+
+Changes of v5 are addressing comments from Rob, Andy, Sakari, including:
+ - Rebase onto 5.7-rc1
+ - Refine DT bindings in YAML
+ - Remove the condition of IS_ENABLED(CONFIG_PM) as the driver depends on PM
+ - Reverse the order of enabling RPM and registering the async subdev
+
+Please review.
+Thanks.
+
+Dongchun Zhu (2):
+  media: dt-bindings: media: i2c: Document DW9768 bindings
+  media: i2c: dw9768: Add DW9768 VCM driver
+
+ .../bindings/media/i2c/dongwoon,dw9768.yaml        |  60 +++
+ MAINTAINERS                                        |   8 +
+ drivers/media/i2c/Kconfig                          |  11 +
+ drivers/media/i2c/Makefile                         |   1 +
+ drivers/media/i2c/dw9768.c                         | 440 +++++++++++++++++++++
+ 5 files changed, 520 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+ create mode 100644 drivers/media/i2c/dw9768.c
+
+-- 
+2.9.2
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
