@@ -2,85 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98FC11C24F0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 13:50:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7C2D1C2540
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 14:24:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PQqXQwnzaMxYT93PYi5agIYGcgNUXtdF+a5v/FzTEK8=; b=ebK3wbFtth8nca
-	GbMIzNHbo9SBkjaKfOs//OnD9hOo9KmauL3KM4TuXpepGyjBtyRCkwWuiKHIp+7U/1UUGA51rLXxK
-	hrtTsswmS6P3TZZ+pUGp6u3qeAzVNx4mAUlUonYKCqu/SugWlpgty4zBTCMmrXCtVk98ZeuDpqu/Q
-	GkCzfEVCgiu9yLXg/ux7k1RRrYRgqd2uT9H+oGUxnnQKNkgIsPh+C9wsf6Sl26QOhWdZ/QTyrIAQ3
-	w+62x83sp/GypnV1xBqANI/PIfCqLwsrEfm95hHldvcnh5CfxNTbSV/ygWhMlwXi5z+3Lwn/eRAUo
-	fpd80GIzZ0piu3pkvsKw==;
+	List-Owner; bh=HLKyKnLJSHtl7BzuIOiWWfBxH/UrRqnaUkcdvT6v8l4=; b=fbL20co4DKIM+d
+	ys0u++lgGFqG8XXNRnOBiRd4y23cPt2caGHA7FVoXGsjSgyynV/xFtdiigLXz0F7zAwXJGVCvWuR4
+	jFFPq0eFc4W+60D9HDj8/3OBFJR1EhNJK4DBZqnzTIH/6GQJs4CxI/CybUNriFCTMMYO2q+EUxzIS
+	xsazalaLph/BFeqDCb1f+aAuQ8qP4yxhGfpUmcK2XRdkHZgITAuXt6T+yAfBgFSFJtvVma6Hym+md
+	VwAxO6U1Qxa+eQ1Va0O2HnJuyX+M8+nZRDBy2Xf1hQATOxjfLXKFnsJYfsO3947NH0BvdvQbJJmFc
+	tD8Ot4t8RL6TWkNwoupQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUqf2-0001Gu-85; Sat, 02 May 2020 11:50:24 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jUrBT-0006fO-5A; Sat, 02 May 2020 12:23:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUqdH-0007gD-6I; Sat, 02 May 2020 11:48:36 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k1so14985637wrx.4;
- Sat, 02 May 2020 04:48:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=n8Y8vyWaKjvq+2hEsWpjb9Kq65ykf9NzPsAFh4Ba51Q=;
- b=Qg8zpCQ1u60k5Adv5X4albNsxBd5cOJphyEaRw668QCuIQAcUO80mitHI84Wf+ezHu
- DCSUe4xWXO32INPx76D/UA3aaZXV+ZirOTfKbTwEuXsrVLwcaogx1MVqZCzOQTNuoGXm
- UJcGDkbipMc5NqcrzYpoJvCGS+c4HAOL6UhNNlq/jfpwMr10ukz+mVBfs5LsW83clJw7
- ZWocN0itCyqLfmUwCTZpHIJ79A80gIXZC/89GUaEHC//JvImGNYmlpI+UpgPvb9yvnzP
- 8yO6fn9Tn06ISbl9VtWDLMx+yUK5ea3u5g9DuY1+BcnbLiyuGp4mc0QjNlOb1d2Ehza9
- fbsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=n8Y8vyWaKjvq+2hEsWpjb9Kq65ykf9NzPsAFh4Ba51Q=;
- b=jJqnJvgDW5RNyY4p/aO/DiSo/lc1gqPMOBR7G4Gdm3s3WNQ85C1FIhVKV16yO37Uq0
- SwgQ6TRinRDkGScCE//v6IwWFfkwXgWk+ejFTdRZNprFIzeo/c1kMEh61cV4mzzPEEt1
- Cyh+8A7fwlhCmqo2yhICaBhRi/dK8jGJT2586AvOaYQW/P4Bmt3FjRFvROu90RJVfA2o
- NHt3mYDuhfBbgkhoFq7pv0otmjEyLWp1jLERjd0czqKoHkJy5fWlOAKsxBSrXnTj9Tes
- o9zYMMxwix5jtciWcZI8oR+MsWn5yEuMwpJOhRm+8H8NNJxGyfJvmdcsNiqlrL5Tjntp
- kyJA==
-X-Gm-Message-State: AGi0PuYObNCmles2px2SY7PRGD59en8S1d8nToGiZznZWCfAs0meFtFa
- IceQTgUqheXSlDObc820FYo=
-X-Google-Smtp-Source: APiQypJEGjjn2WBJ7BnD+n22PPH7FqjwGuI1I7UOjHzYKUERFtnsyH7o9OB5m4xWhzPPveuM14uX1g==
-X-Received: by 2002:adf:e8c4:: with SMTP id k4mr8656076wrn.209.1588420113272; 
- Sat, 02 May 2020 04:48:33 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:3714:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id s17sm3801599wmc.48.2020.05.02.04.48.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 May 2020 04:48:32 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: kishon@ti.com, robh+dt@kernel.org, vkoul@kernel.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
-Subject: [PATCH 6/6] phy: amlogic: meson8b-usb2: Add a compatible string for
- Meson8m2
-Date: Sat,  2 May 2020 13:47:52 +0200
-Message-Id: <20200502114752.1048500-7-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
-References: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
+ id 1jUrBM-0006dK-K0; Sat, 02 May 2020 12:23:50 +0000
+Received: from localhost (unknown [117.99.89.89])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 84B612072E;
+ Sat,  2 May 2020 12:23:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588422225;
+ bh=VFZRfbxaSvB4UZ1zviOZTlVRbHiO20UoTo/B+qSaaG4=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=JpJkJ9V2yIOYst2+CnADV6vZYbBSsji5p95E18XUDniryQPcpKFxZB5djNDn5HRTZ
+ Q8T87KG0xlmNwr+jnKYaX+rWSjBxosCZnJVea4ZTG0FVprle9Ef/q0v+aarIWkqcuf
+ aqSex9O5rdCoke0a5TWf4vvQkTreuuttfb06KRh0=
+Date: Sat, 2 May 2020 17:53:33 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+Subject: Re: [PATCH v3 1/1] dma: actions: Fix lockdep splat for owl-dma
+Message-ID: <20200502122333.GA1375924@vkoul-mobl>
+References: <2f3e665270b8d170ea19cc66c6f0c68bf8fe97ff.1588173497.git.cristian.ciocaltea@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <2f3e665270b8d170ea19cc66c6f0c68bf8fe97ff.1588173497.git.cristian.ciocaltea@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_044835_250657_DB00859F 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200502_052348_706704_A9F97183 
+X-CRM114-Status: GOOD (  25.00  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,6 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,63 +74,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- hexdump0815@googlemail.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
+Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 3.10 vendor kernel sets the ACA_ENABLE bit on Meson8b, Meson8m2 and
-GXBB, but not on Meson8. Add a compatible string for Meson8m2 which also
-sets that bit.
-While here, also update the Kconfig text and MODULE_DESCRIPTION.
+Hi Cristian,
 
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/phy/amlogic/Kconfig            | 2 +-
- drivers/phy/amlogic/phy-meson8b-usb2.c | 6 +++++-
- 2 files changed, 6 insertions(+), 2 deletions(-)
+On 29-04-20, 18:28, Cristian Ciocaltea wrote:
+> When the kernel is built with lockdep support and the owl-dma driver is
+> used, the following message is shown:
 
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index 3495b23af797..5ec53874d1ea 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -3,7 +3,7 @@
- # Phy drivers for Amlogic platforms
- #
- config PHY_MESON8B_USB2
--	tristate "Meson8, Meson8b and GXBB USB2 PHY driver"
-+	tristate "Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver"
- 	default ARCH_MESON
- 	depends on OF && (ARCH_MESON || COMPILE_TEST)
- 	depends on USB_SUPPORT
-diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-index 436dfa1a8a04..03c061dd5f0d 100644
---- a/drivers/phy/amlogic/phy-meson8b-usb2.c
-+++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-@@ -302,6 +302,10 @@ static const struct of_device_id phy_meson8b_usb2_of_match[] = {
- 		.compatible = "amlogic,meson8b-usb2-phy",
- 		.data = &phy_meson8b_usb2_match_data
- 	},
-+	{
-+		.compatible = "amlogic,meson8m2-usb2-phy",
-+		.data = &phy_meson8b_usb2_match_data
-+	},
- 	{
- 		.compatible = "amlogic,meson-gxbb-usb2-phy",
- 		.data = &phy_meson8b_usb2_match_data
-@@ -320,5 +324,5 @@ static struct platform_driver phy_meson8b_usb2_driver = {
- module_platform_driver(phy_meson8b_usb2_driver);
- 
- MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
--MODULE_DESCRIPTION("Meson8, Meson8b and GXBB USB2 PHY driver");
-+MODULE_DESCRIPTION("Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver");
- MODULE_LICENSE("GPL");
+First the patch title needs upate, we describe the patch in the title
+and not the cause. So use correct lock, or use od lock might be better
+titles, pls revise.
+
+Second, the susbsystem is named dmaengine:... not dma:.. You can always
+check that by using git log on the respective file
+
+Pls do add fixes and further acks received on next iteration.
+
+> 
+> [    2.496939] INFO: trying to register non-static key.
+> [    2.501889] the code is fine but needs lockdep annotation.
+> [    2.507357] turning off the locking correctness validator.
+> [    2.512834] CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.6.3+ #15
+> [    2.519084] Hardware name: Generic DT based system
+> [    2.523878] Workqueue: events_freezable mmc_rescan
+> [    2.528681] [<801127f0>] (unwind_backtrace) from [<8010da58>] (show_stack+0x10/0x14)
+> [    2.536420] [<8010da58>] (show_stack) from [<8080fbe8>] (dump_stack+0xb4/0xe0)
+> [    2.543645] [<8080fbe8>] (dump_stack) from [<8017efa4>] (register_lock_class+0x6f0/0x718)
+> [    2.551816] [<8017efa4>] (register_lock_class) from [<8017b7d0>] (__lock_acquire+0x78/0x25f0)
+> [    2.560330] [<8017b7d0>] (__lock_acquire) from [<8017e5e4>] (lock_acquire+0xd8/0x1f4)
+> [    2.568159] [<8017e5e4>] (lock_acquire) from [<80831fb0>] (_raw_spin_lock_irqsave+0x3c/0x50)
+> [    2.576589] [<80831fb0>] (_raw_spin_lock_irqsave) from [<8051b5fc>] (owl_dma_issue_pending+0xbc/0x120)
+> [    2.585884] [<8051b5fc>] (owl_dma_issue_pending) from [<80668cbc>] (owl_mmc_request+0x1b0/0x390)
+> [    2.594655] [<80668cbc>] (owl_mmc_request) from [<80650ce0>] (mmc_start_request+0x94/0xbc)
+> [    2.602906] [<80650ce0>] (mmc_start_request) from [<80650ec0>] (mmc_wait_for_req+0x64/0xd0)
+> [    2.611245] [<80650ec0>] (mmc_wait_for_req) from [<8065aa10>] (mmc_app_send_scr+0x10c/0x144)
+> [    2.619669] [<8065aa10>] (mmc_app_send_scr) from [<80659b3c>] (mmc_sd_setup_card+0x4c/0x318)
+> [    2.628092] [<80659b3c>] (mmc_sd_setup_card) from [<80659f0c>] (mmc_sd_init_card+0x104/0x430)
+> [    2.636601] [<80659f0c>] (mmc_sd_init_card) from [<8065a3e0>] (mmc_attach_sd+0xcc/0x16c)
+> [    2.644678] [<8065a3e0>] (mmc_attach_sd) from [<8065301c>] (mmc_rescan+0x3ac/0x40c)
+> [    2.652332] [<8065301c>] (mmc_rescan) from [<80143244>] (process_one_work+0x2d8/0x780)
+> [    2.660239] [<80143244>] (process_one_work) from [<80143730>] (worker_thread+0x44/0x598)
+> [    2.668323] [<80143730>] (worker_thread) from [<8014b5f8>] (kthread+0x148/0x150)
+> [    2.675708] [<8014b5f8>] (kthread) from [<801010b4>] (ret_from_fork+0x14/0x20)
+> [    2.682912] Exception stack(0xee8fdfb0 to 0xee8fdff8)
+> [    2.687954] dfa0:                                     00000000 00000000 00000000 00000000
+> [    2.696118] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> [    2.704277] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> 
+> The obvious fix would be to use 'spin_lock_init()' on 'pchan->lock'
+> before attempting to call 'spin_lock_irqsave()' in 'owl_dma_get_pchan()'.
+> 
+> However, according to Manivannan Sadhasivam, 'pchan->lock' was supposed
+> to only protect 'pchan->vchan' while 'od->lock' does a similar job in
+> 'owl_dma_terminate_pchan'.
+> 
+> Therefore, this patch will simply substitute 'pchan->lock' with 'od->lock'
+> and removes the 'lock' attribute in 'owl_dma_pchan' struct.
+> 
+> Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+> Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+> Changes in v3:
+> * Get rid of the kerneldoc comment for the removed struct attribute
+> * Add the Reviewed-by tag in the commit message
+> 
+> Changes in v2:
+> * Improve the fix as suggested by Manivannan Sadhasivam: substitute
+>   'pchan->lock' with 'od->lock' and get rid of the 'lock' attribute in
+>   'owl_dma_pchan' struct
+> * Update the commit message to reflect the changes
+> 
+>  drivers/dma/owl-dma.c | 8 +++-----
+>  1 file changed, 3 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+> index c683051257fd..66ef70b00ec0 100644
+> --- a/drivers/dma/owl-dma.c
+> +++ b/drivers/dma/owl-dma.c
+> @@ -175,13 +175,11 @@ struct owl_dma_txd {
+>   * @id: physical index to this channel
+>   * @base: virtual memory base for the dma channel
+>   * @vchan: the virtual channel currently being served by this physical channel
+> - * @lock: a lock to use when altering an instance of this struct
+>   */
+>  struct owl_dma_pchan {
+>  	u32			id;
+>  	void __iomem		*base;
+>  	struct owl_dma_vchan	*vchan;
+> -	spinlock_t		lock;
+>  };
+>  
+>  /**
+> @@ -437,14 +435,14 @@ static struct owl_dma_pchan *owl_dma_get_pchan(struct owl_dma *od,
+>  	for (i = 0; i < od->nr_pchans; i++) {
+>  		pchan = &od->pchans[i];
+>  
+> -		spin_lock_irqsave(&pchan->lock, flags);
+> +		spin_lock_irqsave(&od->lock, flags);
+>  		if (!pchan->vchan) {
+>  			pchan->vchan = vchan;
+> -			spin_unlock_irqrestore(&pchan->lock, flags);
+> +			spin_unlock_irqrestore(&od->lock, flags);
+>  			break;
+>  		}
+>  
+> -		spin_unlock_irqrestore(&pchan->lock, flags);
+> +		spin_unlock_irqrestore(&od->lock, flags);
+>  	}
+>  
+>  	return pchan;
+> -- 
+> 2.26.2
+
 -- 
-2.26.2
-
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
