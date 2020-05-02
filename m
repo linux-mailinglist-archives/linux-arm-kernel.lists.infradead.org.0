@@ -2,93 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 271AF1C2650
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 16:52:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01AB41C2660
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 16:57:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=VCV875oafJF3GpJ+iEaAsr3oo1p75lVStzxxwNQ5Szg=; b=bKZQ8mkF+Yx3AFeMlIT2XoxpKx
-	e1aylAw6G6xvGqenSC0wZo13T4Vj0uLf/rxWcnhwHNs6j+opy68i7pCX57Z3Kv5sBKMkwEJXYvaO7
-	/SGz9l4vlcCMkUj14psSdBphEE4PFe/cKnKq+DGwagMr1GzuX68+vnvYfCBd+fkPTG9/DxgVqRbai
-	pN6QyXjgl/08EhgToEvgto3bxPNmTavUw6OF6E80XiA+7+Sc+JwCLjZLfEP/Xwn2JvtCumT36n6xg
-	UPHGhcXU1T7YaVs/SFtYNQb9untterdib2zq4mgttBAhi3tXKVG4DjGwc+48+KCk03QPzyYorKgIP
-	u2ZunLqA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CqhrIHtqnodOvKBJtKrC8i0jmTIEoxPjeRNqAO7JWv8=; b=NIfVhmXp6UAE7t
+	62IYA+RqYhLWjtZIvOkZMt6SB5PW1sVBBlCq1TU1OMs+eYfBwcx5dg6PObWRnbwdbCwrMoJT9seqf
+	hs6ACmqG7JnUcTDxHbZ547+4T09KnGNP9ig8rH+xw/QEkT3CLQwYiz7e3ys+TdZPLhlEjqNU1PZvT
+	ng/6tJvrY/hAZLAL4JvjTqplLy7uJGwDb3iXUeiN+zlDpS9jNMgbBT/62NNYVrJzRKK0kHD/6u5+f
+	pZWIW5Z++Kv4k3d3zKuU5KNRrKomDm31fyRdyw4kvKy2gmdzywrke2CgFy4rizjbr7Cv730JDUeHL
+	Z3I1iiKy9OjgoEMsrAJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUtV9-0001bK-P3; Sat, 02 May 2020 14:52:23 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jUtaC-000513-Dg; Sat, 02 May 2020 14:57:36 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUtV3-0001Zm-MR
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 14:52:19 +0000
-Received: by mail-wm1-x341.google.com with SMTP id x25so3250769wmc.0
+ id 1jUta6-00050g-4F
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 14:57:31 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id hi11so1331471pjb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 May 2020 07:52:17 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=eUmO9lFyYnSEUotvSkDdW7nX84l9YUGsDR7MyoCN3CU=;
- b=YJr5Y8afBHWlluBWUgx/5EYN6hyE6dcLw2z1n9vRkLHzQbpSGBhpcOfqygIy3U0gu3
- ZU0X0/T6IEfb9apK8ibAiOkQJB8QlmXhpHVMRe9jOCvalPLCRrcDaDdUz7BHVGmDsBdG
- u0quqzJnaF5I8H1s35iZ55qzUq6QYCjn4YnQcYk32wqe6fgKXVJnpcLkiex+yTPHan9n
- mVgx3/aJ99LjjauFWmgwTQallkMJgpWyd89bUQVy+MrLy5YJ3z9ta+ZgPG+Kt5yzEzD+
- h/CVwqzTMwVfGsIiYzVW3V/WuilTmu0Zdf20RW+WSqc2FJpiUV/KjciIkYOVE8Y0RaLJ
- nMPw==
+ Sat, 02 May 2020 07:57:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=QrYGAubEqwzwquEx2Edm3lavoI+/qX4M+pQUcvGXV3k=;
+ b=rwUbEm8fJxYa7XPiUO1hiUeffwIxNZeLcFogdB3FKp/ZKfQi4oj2O30BKaysbmJlIS
+ JGYhw6tErSrCNfF48haZ3cdJZogupZ0zVdACzUYz2zN8aLVz0ApDi8furMwpLbcl3kPh
+ 6m74rJ9q/KuF7SoAQH2Y8fI3pjjfzMgy5FENDASYtX9tmW6XUGrDZfpgWciAfcSuNP7F
+ fLBMsGoAoN3lfS6C5UeERbXsDeobfrBaxjqSRq17Xc2K54yBSCDXkO9dSb5lQFkFDKsl
+ PMFlVzK21TkFszxatPdOZT4Y3JfTTEWCRGsBb3zkR3cS7F/FLKAxk/GU1UNiNnMCKnM5
+ t22A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=eUmO9lFyYnSEUotvSkDdW7nX84l9YUGsDR7MyoCN3CU=;
- b=fZyzk5R5xNWEzXzlgmetc3rUgjs/k5grqTEeUK2YbvUnonh+tTMYfjTsFC5s+a5XKw
- F30BSOq0BasBHHs0X32RdP77pZ2gDiOD+FXg+p1v3iYYG2KqRsEFFbuCw+rNAZDqgsba
- 0kh/zVG6pRdInNlc+3fjfnTRmBL713c6Po0ygybxC7+/8ZjrkSlFYRtN9P/oaQZOpss1
- iwM7z42Ya9vCFd/eU7B1pBIbwbqHuMlTsE7d9G4AFcvJwuBL3nArrA1F0AWN04sDOxTh
- owRoBbmFjZZ+9tQ8ZYW0ZOo1+pOM1pZCVmjZuAk5WoRW7h4DnJfUdMJ3+S5fIZTBj+Ta
- RtYA==
-X-Gm-Message-State: AGi0PuYWU6j+D3vP4xwTv9YF7EX00MJUvj/AP5u/l/a84Nzn9m4TUKRy
- icxBQR6L3hjW/JnaKC+IYSaB/A==
-X-Google-Smtp-Source: APiQypLQZrhbbLoB4l9/FVLUeKO9DpS30JZtXUoebbOs+GhYQzJCdHKM8cIDEnbn665XnkBqaQKeSA==
-X-Received: by 2002:a1c:6389:: with SMTP id x131mr5212531wmb.155.1588431136061; 
- Sat, 02 May 2020 07:52:16 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id 92sm10023040wrm.71.2020.05.02.07.52.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 May 2020 07:52:15 -0700 (PDT)
-References: <5eabecbf.1c69fb81.2c617.628f@mx.google.com>
- <cc10812b-19bd-6bd1-75da-32082241640a@collabora.com>
- <20200501122536.GA38314@sirena.org.uk> <20200502134721.GH13035@sasha-vm>
- <20200502140908.GA10998@kroah.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sasha Levin <sashal@kernel.org>
-Subject: Re: stable-rc/linux-5.4.y bisection: baseline.dmesg.alert on
- meson-g12a-x96-max
-In-reply-to: <20200502140908.GA10998@kroah.com>
-Date: Sat, 02 May 2020 16:52:14 +0200
-Message-ID: <1jd07mie3l.fsf@starbuckisacylon.baylibre.com>
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QrYGAubEqwzwquEx2Edm3lavoI+/qX4M+pQUcvGXV3k=;
+ b=b/U2DI3WZ4gKYL2Yt7fZ7VxYnoiMtzOInrCuggwLjHA5c7xjSrQnCNVn1O5zZTu3Ma
+ aDHkETXC9K8iJpzyrUsb72PhPI92l+Mi4q5V3zHYlVqSo/CnDlg3Pc2SVwz8oArhEmp8
+ IUVYY4iIvSnCtxuxd9AkYZOwVAMG3q1eFx4LcUhPih0MSYH0/2O5TcKRGoL09xXOM/iE
+ UHOSJa+kUQhMhTsliCANUIWQt7irTukehZphaG/mFw3BDt/8seuUqhU3ZrevVCTWG40s
+ 5EDGVPxgBTTTSWk02fuNnrEINAENvdGxxYWzMAOsN/UvXAbOHwD965ckWRLZ+IwAaIAB
+ PRTA==
+X-Gm-Message-State: AGi0PuZuPjtqxPAPxg8HYcjTmtu2dGVXexc7rbmy5YMji8Rwlh2wyEti
+ 67F9KtQjSsLu7Vkyrn7+YpR7KXOR
+X-Google-Smtp-Source: APiQypJRcYlpEamSKIPjDruICLkC9LSfCv1GeaaAxuLu2XII+vnw7iOyL6HjBPzp3bDfruTknAyqdQ==
+X-Received: by 2002:a17:902:8643:: with SMTP id
+ y3mr9469004plt.149.1588431448743; 
+ Sat, 02 May 2020 07:57:28 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id u3sm4693033pfb.105.2020.05.02.07.57.28
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 02 May 2020 07:57:28 -0700 (PDT)
+Date: Sat, 2 May 2020 07:57:27 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Wolfram Sang <wsa@kernel.org>
+Subject: Re: [PATCH] watchdog: imx2_wdt: update contact email
+Message-ID: <20200502145727.GE189389@roeck-us.net>
+References: <20200502142653.19144-1-wsa@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200502142653.19144-1-wsa@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_075217_785262_4A9DA5EF 
-X-CRM114-Status: GOOD (  18.64  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200502_075730_169959_3EE84C8E 
+X-CRM114-Status: GOOD (  15.25  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [groeck7[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [groeck7[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,67 +104,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- Guillaume Tucker <guillaume.tucker@collabora.com>,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- stable@vger.kernel.org, kernelci@groups.io, Mark Brown <broonie@kernel.org>,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org
+Cc: linux-watchdog@vger.kernel.org, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>, kernel@pengutronix.de,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Fabio Estevam <festevam@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sat, May 02, 2020 at 04:26:53PM +0200, Wolfram Sang wrote:
+> The 'pengutronix' address is defunct for years. Use the proper contact
+> address.
+> 
+> Signed-off-by: Wolfram Sang <wsa@kernel.org>
 
-On Sat 02 May 2020 at 16:09, Greg Kroah-Hartman <gregkh@linuxfoundation.org> wrote:
+Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
-> On Sat, May 02, 2020 at 09:47:21AM -0400, Sasha Levin wrote:
->> On Fri, May 01, 2020 at 01:25:36PM +0100, Mark Brown wrote:
->> > On Fri, May 01, 2020 at 12:57:27PM +0100, Guillaume Tucker wrote:
->> > 
->> > > The call stack is not the same as in the commit message found by
->> > > the bisection, so maybe it only fixed part of the problem:
->> > 
->> > No, it is a backport which was fixing an issue that wasn't present in
->> > v5.4.
->> > 
->> > > >   Result:     09f4294793bd3 ASoC: meson: axg-card: fix codec-to-codec link setup
->> > 
->> > As I said in reply to the AUTOSEL mail:
->> > 
->> > | > Since the addition of commit 9b5db059366a ("ASoC: soc-pcm: dpcm: Only allow
->> > | > playback/capture if supported"), meson-axg cards which have codec-to-codec
->> > | > links fail to init and Oops:
->> > 
->> > | This clearly describes the issue as only being present after the above
->> > | commit which is not in v5.6.
->> > 
->> > Probably best that this not be backported.
->> 
->> Hrm... But I never queued that commit... I wonder what's up.
->
-> I saw the Fixes: tag, but missed the changelog text.  My fault.
->
-> I'll go drop it from everywhere, sorry about that.
->
-> greg k-h
-
-Hi everyone,
-
-Sorry for the mess this seems to have triggered.
-
-Indeed, with the Fixes tag, I understand why the patch has been picked
-up. Even I thought that a backport would be OK, since the mistake was
-quite old.
-
-If I had wrote it correctly from the start, I would have found the
-problem that was waiting for us in ASoC ... but the 2 errors cancelled
-each other out.
-
-It is only now that ASoC has been fixed that we found my mistake.
-
-Again, sorry for the mess.
-Thanks a lot for your time and effort on this
+> ---
+>  drivers/watchdog/imx2_wdt.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/drivers/watchdog/imx2_wdt.c b/drivers/watchdog/imx2_wdt.c
+> index 1fe472f56cb3..b84f80f7d342 100644
+> --- a/drivers/watchdog/imx2_wdt.c
+> +++ b/drivers/watchdog/imx2_wdt.c
+> @@ -2,7 +2,7 @@
+>  /*
+>   * Watchdog driver for IMX2 and later processors
+>   *
+> - *  Copyright (C) 2010 Wolfram Sang, Pengutronix e.K. <w.sang@pengutronix.de>
+> + *  Copyright (C) 2010 Wolfram Sang, Pengutronix e.K. <kernel@pengutronix.de>
+>   *  Copyright (C) 2014 Freescale Semiconductor, Inc.
+>   *
+>   * some parts adapted by similar drivers from Darius Augulis and Vladimir
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
