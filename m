@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F27B1C2588
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 15:00:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C655C1C2589
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 15:00:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=GXDBZ2aw8qxXE5TCZmDIaR3FkxBoiMKipqyz3mG8csI=; b=ArupRL+uMT1bqt
-	k/aGqu5+9xWdEXE7rhLuSVTfWfO6MSpP+bbTUVtHYKdFZ6GvrSrXEjoUfbBg9sUEOLmOlr7zwWV0n
-	cbA/noBY8g07ofskhreW4hEq3SLrRXCoKWceXytL/Vcv1+ovpYlRU46LLbCFqJE5hkQ5hzHXOfRRY
-	xuUKU+WCWrHq9Hg1siJMHKbm+lI0h5fnoiksQBdgbJjZoQAvsr4qyZQQ85Ablh+ly4A/nikJFNz12
-	Z4fbU5eqdvyecYTXHW5jPshYacVbsal2ukO4CvGQ2tahHQDn87fLH0SCEhJgkCrnRVV2uVMVs7oxo
-	Aa9XVbon3fciOu0hqBYw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YlX5dJ6QbO32v7fKBHYbJfs3bhlYgMjC+fxxeuv4LyI=; b=dC5phouQN2k0qt
+	7gckSVGvlRp5OxPXqFSt1jiYrIbxK+ndxX0ZV5wwaPlmIyKaSqRLu64jj4dX++l/36BdkWSTTn0GJ
+	JRDvnxXJ5uNyQa2iID7JuObJ6jyyBBJjQdZYlimKI0iy/iwzhTSiX+/iAXSBuWYssXStt3oHahyE3
+	N7SdL7+P/GrbqUynlKNfzRip5eIobWVUk8VSfU8GfgcnBZpnRzA+lOHy+ADAnSUNBcVHqCJS2W80R
+	1TGsUNI01/0tDhrhZlM+3Z0iBVzr6fAsS3h5+IigSeBw0fVBiyQHM61uJdBq3yygIvIfz3gs76ryV
+	6p3CscFauJ8xFLf1gWGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUrku-0006lC-36; Sat, 02 May 2020 13:00:32 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1jUrl9-0006qc-5S; Sat, 02 May 2020 13:00:47 +0000
+Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUrkn-0006ir-Oy
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 13:00:27 +0000
-Received: by mail-qt1-x844.google.com with SMTP id w29so10124363qtv.3
+ id 1jUrkp-0006jP-JO
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 13:00:29 +0000
+Received: by mail-qv1-xf41.google.com with SMTP id h6so6044893qvz.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 May 2020 06:00:22 -0700 (PDT)
+ Sat, 02 May 2020 06:00:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vp9pFOaNAK/bZV4TMm15vSAV9KoRuRCBgnB4GbG7eV8=;
- b=AtRW2QBQjVZqK4pu80aXjEqAkuT5MVq+zFiE6w7FSMt0EUlfKfYXquyiZYb5tfk1rf
- I/4ao3SQbD6713xSca+TcVym9yryLZchj7tk8of/e7FLMc1MQPG2wzPMR5tt8MznBrYt
- Cn//hT9jPNw5R1ijqSSRIojZBVN4oCf3v++vvh2wqMDTPANaH46iNEpe5xlg6VTC7hJp
- 4VDRiOeUs1N3mdfPFC848qrejNltWvlCfWQ/IumE4pCBWCAM3FmAkJorhY3ac88e8Guc
- EoO83lTB5FfhDtHdSeD7Dpkmtb0hNyJaXobvjFIUzfYCf9rvNL/90ShhorZPvP+zoPnK
- uBZw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=4kwbMlfQSR1Pqoy/79RUUNFt2eixa1c08qMSZ+873Tc=;
+ b=DaInghGAsXiWWEbtudR3PREl/QYaGVlhziolqAO1iy/gQ6mSCCVWm4MJ9ScAojhPjd
+ Yy7j3lphdH2oXJWz7aoSX107Ijs27xU/021K48++GJM83VWePR4ZcYIK1M/Z/YZaQQgG
+ hLNhgUcIVTz/3BeT8v5Djfm3XBBJlASWAYbY1znowQWVvyroLJTR/F/pAmeRV7yOmPXT
+ yydMj3JuOToRL5JqXM8o+wUCgoVUjPsleK2pTpgHxfnXDmAmuT22S7nwPtkUG9lpq5rD
+ 3XCYKtNtExYX0zp+AwfgKPV6zFp2dB5h+XP+fTiB/qPGdu1Qfpfuw6229c8+t44fcj8b
+ osnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=vp9pFOaNAK/bZV4TMm15vSAV9KoRuRCBgnB4GbG7eV8=;
- b=uCpds0EUzpcSLNu63ajJuZaUic+xiciG/SGOxhJIJQcMOvmz69Y1UHn0YPwsDpdyo9
- BO31kWT9fdB12SzgX18y4nqhjnNnpWOUr4MlkBEoSD8RtWkMxbZ0Id9Z0TWZrPYSeZf8
- /voqUBuaGqybfj8yVznOpcqcVKLubuP61zjOAchElNC+YXtWqSOQWPQ7lU7CLyfPEP3D
- yM1mk1nJ0Pt2GLFIiOHlG/2FzhTQvlJGat/4qVFhZlARpD0KFLwwTDdrFVGMm/4XcqNC
- 9svIHEUcXUg9hCy+LPE06ds90HFq5Y6YHvCXi8b8XP2rUeGsrrWOefHiNBMCGx1ENkQ4
- M59g==
-X-Gm-Message-State: AGi0PubnhsfGMSTQ7YecLZqblhnlciWXlwp4EigfH8BqR/UDHQaP9NQF
- m19bNcXJ5Jk405AQlLRO/Dzzb5xklis=
-X-Google-Smtp-Source: APiQypKm5d8ePdZUSklGoPtSOJFY7y2SdZZOsOKx6ignPtFrthW7vx97HLGQX5+5ikbY5bql7RBiwQ==
-X-Received: by 2002:ac8:3713:: with SMTP id o19mr8049899qtb.371.1588424421301; 
- Sat, 02 May 2020 06:00:21 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=4kwbMlfQSR1Pqoy/79RUUNFt2eixa1c08qMSZ+873Tc=;
+ b=NsprA4ul6BTQCap2GmzAl+MlxMG+G456UdwKuC3ehRMiequenkb/2wuTAveZ50AHU9
+ D0gPdF7E3jkWvXHxu1ied2cEBUAv2jRZzqRvvYs8iaugsm3jVJbeiihaDo47k3lyanPq
+ t1bP5BlwBzMEnkQBL6GaykvjkFQ4Ls2Ogmv+TTp/0/6/X0uvsa2ecL58f3IOWxC0Ov7G
+ bIHi6z4iXtPBy3ll1669YrWMwxe55u/MJ+rxpljgaxpe4tY9BGT2GytIxHWG4jH+NyTt
+ sBqkbAC0aa1J11UNYuzAMQKBpzULyjnroe6Dz7uSmykiC9OwjD1PAOdJfLnqKqdjDTSU
+ lFYg==
+X-Gm-Message-State: AGi0PuYNMtCNK+LAtmRs9YDscuiNfQxzrCNiU+PTbSWAyV9z4OkBuy47
+ qHN+2RHsUdThFfKefyCn7djuXw/N5Mk=
+X-Google-Smtp-Source: APiQypL4ud5AXEGsm2wV1m5m08s8m7db7FSm5j+s/gbf4l05ArLHzm0zLuQ6R/RKitsjmOrjCivCgg==
+X-Received: by 2002:a0c:9002:: with SMTP id o2mr6012949qvo.3.1588424423450;
+ Sat, 02 May 2020 06:00:23 -0700 (PDT)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id l24sm5067668qtp.8.2020.05.02.06.00.19
+ by smtp.gmail.com with ESMTPSA id l24sm5067668qtp.8.2020.05.02.06.00.21
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 May 2020 06:00:20 -0700 (PDT)
+ Sat, 02 May 2020 06:00:22 -0700 (PDT)
 From: Adam Ford <aford173@gmail.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: defconfig: Enable some audio drivers on i.MX8M Mini
-Date: Sat,  2 May 2020 07:59:47 -0500
-Message-Id: <20200502125949.194032-1-aford173@gmail.com>
+Subject: [PATCH] arm64: dts: imx8mm: Add support for micfil
+Date: Sat,  2 May 2020 07:59:48 -0500
+Message-Id: <20200502125949.194032-2-aford173@gmail.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200502125949.194032-1-aford173@gmail.com>
+References: <20200502125949.194032-1-aford173@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_060025_811090_D5D2EFC7 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200502_060027_639934_DFC3F066 
+X-CRM114-Status: GOOD (  12.05  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
+ [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [aford173[at]gmail.com]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
- [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,28 +113,44 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The i.MX8M Mini has SAI and micfil support but the drivers
-are not being loaded.
+The i.MX8M Mini has supports the MICFIL digital interface.
+It's a 16-bit audio signal from a PDM microphone bitstream.
+The driver is already in the kernel, but the node is missing.
 
-This patch updates the defconfig to add support
-CONFIG_SND_SOC_FSL_SAI and CONFIG_SND_SOC_FSL_MICFIL to support
-these drivers.
+This patch adds the micfil node.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 366857dfa9de..4e60e8a98b83 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -638,6 +638,8 @@ CONFIG_SND_HDA_TEGRA=m
- CONFIG_SND_HDA_CODEC_HDMI=m
- CONFIG_SND_SOC=y
- CONFIG_SND_BCM2835_SOC_I2S=m
-+CONFIG_SND_SOC_FSL_SAI=y
-+CONFIG_SND_SOC_FSL_MICFIL=y
- CONFIG_SND_MESON_AXG_SOUND_CARD=m
- CONFIG_SND_SOC_SDM845=m
- CONFIG_SND_SOC_ROCKCHIP=m
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index c63685ae80ee..d46e727fc362 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -339,6 +339,25 @@ sai6: sai@30060000 {
+ 				status = "disabled";
+ 			};
+ 
++			micfil: micfil@30080000 {
++				compatible = "fsl,imx8mm-micfil";
++				reg = <0x30080000 0x10000>;
++				interrupts = <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>,
++					     <GIC_SPI 45 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&clk IMX8MM_CLK_PDM_IPG>,
++					 <&clk IMX8MM_CLK_PDM_ROOT>,
++					 <&clk IMX8MM_AUDIO_PLL1_OUT>,
++					 <&clk IMX8MM_AUDIO_PLL2_OUT>,
++					 <&clk IMX8MM_CLK_EXT3>;
++				clock-names = "ipg_clk", "ipg_clk_app",
++					      "pll8k", "pll11k", "clkext3";
++				dmas = <&sdma2 24 25 0x80000000>;
++				dma-names = "rx";
++				status = "disabled";
++			};
++
+ 			gpio1: gpio@30200000 {
+ 				compatible = "fsl,imx8mm-gpio", "fsl,imx35-gpio";
+ 				reg = <0x30200000 0x10000>;
 -- 
 2.25.1
 
