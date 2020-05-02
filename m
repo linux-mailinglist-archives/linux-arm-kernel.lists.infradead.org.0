@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A94C01C26E0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 18:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D83F21C26FD
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 18:29:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1bop2TgmoLyk2/WFKOT+KYnHkGixODssZ9vB/PweNXA=; b=ScIbqTGcJ3YHqZ
-	Hto0Bc3HAhQgTofXSM9Hv4+MDvMP3Ld7dtqfxHXpaTZ/PvZi4gJ5mO+pvGZvrpC9eTLQessUoWim7
-	mrW0KwJGotMGA0O63gjn4Ao5H7vjjHeiraHXVPIwsK0Px4GHANfMMyvMz+ZqjicxPtWvZti9ypR+v
-	ixXr66ulfB0Awu+qXzzcauEzpBfQ4X2wAGdJz+K9Fas3qeCPe/C+g+BdxgD5M2c1LVOHu1hTIa/Rw
-	iWX+EPhuO8zfr87tIEkQjt6fVjMxlO1agmQ7whAIRaGuvOaKdU3RGrXFRxpt3WHCckwOf9/O3l4Sz
-	/pLMm7RTHHtAWOpDNX+g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8oOcnBQeahYpMHVexSajEOz+g9866k1CYPrdmNzRXiA=; b=hP3Sz0hKZO4H5S
+	DUlLrf9Aej//98o33JpqmFeHu7YYn9/SYPmDbWYEILaSMucHY5VtK5+lq9TGe/LQNVl1TaW3ZfIOS
+	Ylnhy7tASL9KtefRxo7G45Ke/RBaKkKTflJoI0kwa3FHm07L5JOjwvyIgqLNHFOWJUUJINOe3RD+W
+	ElzHNIgA+IvnkhKcvLMoHusjSUlwgSQ/AV8KeZtIHfcTHK40RCB4v04wdzkY6EQwQPx2VeJBreFvL
+	S04AmYBqxZNlwNshz9XYE7iu052Q7tBcUzP8WidZI5LLqMUv2FFnnPsCkIelm297IWMlFzGTCKUUt
+	f1rDqfFG6+gjE4WMWQjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUuqp-0006g6-PM; Sat, 02 May 2020 16:18:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jUv0S-0005Zz-8G; Sat, 02 May 2020 16:28:48 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUuqg-0006dy-1z; Sat, 02 May 2020 16:18:44 +0000
-X-UUID: 68e7af6281e24763beb6a8b7b20b5463-20200502
+ id 1jUv0G-0005Xy-Vt; Sat, 02 May 2020 16:28:38 +0000
+X-UUID: d1d8161eaaa64840b4697801da47a9cd-20200502
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=EAAh30Bef+oW9eX3BIR+Eagl/ceAkjF9T1b8MCX4U/s=; 
- b=gteqzQ8YkMYcJB1FRKXZfdwyUoGdEgzj11pVC45ifZLdzJyvW6/t5zeAT9Joyv4ezFWVa80Y22BlYEA6buj0tPQ6WO45gOkYeg/v+5uzFq8bOCD+AzucxHjWUTZkqqTxRDuBeCHLO3Hf4Zei7fJfD5gx6yHvCekZ7Qc9r6l9y2o=;
-X-UUID: 68e7af6281e24763beb6a8b7b20b5463-20200502
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=fchvuHLghoAhuDb1n3lVC1u/DWcrET0Dm/xjW9sen3o=; 
+ b=sE9fQZ02O56qMR5sEZufs6ahJicIjx9Z86/a4Wn1Wc5uzuI7UYPWZm9UuMYS1nPoPWnycBSFvjfurJno0EVMDojRZAcrvoyxAJp/fNEFQibJub2bW/lAdh2xRAV5nQwjzcC2BkyIpfX3BXhKmnctH24iqHZ4Iih6yIf9vPeLqsU=;
+X-UUID: d1d8161eaaa64840b4697801da47a9cd-20200502
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <dongchun.zhu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1455470834; Sat, 02 May 2020 08:18:30 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 1054471724; Sat, 02 May 2020 08:28:32 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 2 May 2020 09:18:25 -0700
+ 15.0.1497.2; Sat, 2 May 2020 09:18:27 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sun, 3 May 2020 00:18:23 +0800
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 3 May 2020 00:18:24 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sun, 3 May 2020 00:18:24 +0800
+ Transport; Sun, 3 May 2020 00:18:25 +0800
 From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 To: <linus.walleij@linaro.org>, <bgolaszewski@baylibre.com>,
  <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
  <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
  <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
  <bingbu.cao@intel.com>
-Subject: [V5, 0/2] media: i2c: Add support for DW9768 VCM driver
-Date: Sun, 3 May 2020 00:17:25 +0800
-Message-ID: <20200502161727.30463-1-dongchun.zhu@mediatek.com>
+Subject: [V5, 1/2] media: dt-bindings: media: i2c: Document DW9768 bindings
+Date: Sun, 3 May 2020 00:17:26 +0800
+Message-ID: <20200502161727.30463-2-dongchun.zhu@mediatek.com>
 X-Mailer: git-send-email 2.9.2
+In-Reply-To: <20200502161727.30463-1-dongchun.zhu@mediatek.com>
+References: <20200502161727.30463-1-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_091842_105672_3A53FC45 
-X-CRM114-Status: GOOD (  10.19  )
+X-CRM114-CacheID: sfid-20200502_092837_035791_4E60A689 
+X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,57 +99,100 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+Add DeviceTree binding documentation for Dongwoon Anatech DW9768 voice
+coil actuator.
 
-This series adds DT bindings in YAML and V4L2 sub-device driver for DW9768
-lens voice coil motor, which is a 10-bit DAC with 100mA output current
-sink capability from Dongwoon.
-
-The driver is designed for linear control of voice coil motor,
-and controlled via IIC serial interface to set the desired focus.
-It controls the position with 10-bit DAC data D[9:0] and seperates
-two 8-bit registers to control the VCM position as belows.
-DAC_MSB: D[9:8](ADDR: 0x03):
-     +---+---+---+---+---+---+---+---+
-     |---|---|---|---|---|---|D09|D08|
-     +---+---+---+---+---+---+---+---+
-DAC_LSB: D[7:0](ADDR: 0x04):
-     +---+---+---+---+---+---+---+---+
-     |D07|D06|D05|D04|D03|D02|D01|D00|
-     +---+---+---+---+---+---+---+---+
-
-This driver supports:
- - set DW9768 to standby mode once suspend and turn it back to active if resume
- - set the desired focus via V4L2_CID_FOCUS_ABSOLUTE ctrl
-
-Previous versions of this patch-set can be found here:
- v4: https://lore.kernel.org/linux-media/20200330123634.363-1-dongchun.zhu@mediatek.com/
- v3: https://lore.kernel.org/linux-media/20200228155958.20657-1-dongchun.zhu@mediatek.com/
- v2: https://lore.kernel.org/linux-media/20190905072142.14606-1-dongchun.zhu@mediatek.com/
- v1: https://lore.kernel.org/linux-media/20190708100641.2702-1-dongchun.zhu@mediatek.com/
-
-Changes of v5 are addressing comments from Rob, Andy, Sakari, including:
- - Rebase onto 5.7-rc1
- - Refine DT bindings in YAML
- - Remove the condition of IS_ENABLED(CONFIG_PM) as the driver depends on PM
- - Reverse the order of enabling RPM and registering the async subdev
-
-Please review.
-Thanks.
-
-Dongchun Zhu (2):
-  media: dt-bindings: media: i2c: Document DW9768 bindings
-  media: i2c: dw9768: Add DW9768 VCM driver
-
- .../bindings/media/i2c/dongwoon,dw9768.yaml        |  60 +++
- MAINTAINERS                                        |   8 +
- drivers/media/i2c/Kconfig                          |  11 +
- drivers/media/i2c/Makefile                         |   1 +
- drivers/media/i2c/dw9768.c                         | 440 +++++++++++++++++++++
- 5 files changed, 520 insertions(+)
+Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+---
+ .../bindings/media/i2c/dongwoon,dw9768.yaml        | 60 ++++++++++++++++++++++
+ MAINTAINERS                                        |  7 +++
+ 2 files changed, 67 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
- create mode 100644 drivers/media/i2c/dw9768.c
 
+diff --git a/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+new file mode 100644
+index 0000000..8dec22d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+@@ -0,0 +1,60 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++# Copyright (c) 2020 MediaTek Inc.
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/media/i2c/dongwoon,dw9768.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Dongwoon Anatech DW9768 Voice Coil Motor (VCM) Lens Device Tree Bindings
++
++maintainers:
++  - Dongchun Zhu <dongchun.zhu@mediatek.com>
++
++description: |-
++  The Dongwoon DW9768 is a single 10-bit digital-to-analog (DAC) converter
++  with 100 mA output current sink capability. VCM current is controlled with
++  a linear mode driver. The DAC is controlled via a 2-wire (I2C-compatible)
++  serial interface that operates at clock rates up to 1MHz. This chip
++  integrates Advanced Actuator Control (AAC) technology and is intended for
++  driving voice coil lenses in camera modules.
++
++properties:
++  compatible:
++    const: dongwoon,dw9768
++
++  reg:
++    maxItems: 1
++
++  vin-supply:
++    description:
++      Definition of the regulator used as I2C I/O interface power supply.
++
++  vdd-supply:
++    description:
++      Definition of the regulator used as VCM chip power supply.
++
++required:
++  - compatible
++  - reg
++  - vin-supply
++  - vdd-supply
++
++additionalProperties: false
++
++examples:
++  - |
++    i2c {
++        clock-frequency = <400000>;
++        #address-cells = <1>;
++        #size-cells = <0>;
++
++        dw9768: camera-lens@c {
++            compatible = "dongwoon,dw9768";
++            reg = <0x0c>;
++
++            vin-supply = <&mt6358_vcamio_reg>;
++            vdd-supply = <&mt6358_vcama2_reg>;
++        };
++    };
++
++...
+diff --git a/MAINTAINERS b/MAINTAINERS
+index e64e5db..8d72c41 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -5151,6 +5151,13 @@ T:	git git://linuxtv.org/media_tree.git
+ F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9714.txt
+ F:	drivers/media/i2c/dw9714.c
+ 
++DONGWOON DW9768 LENS VOICE COIL DRIVER
++M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
++L:	linux-media@vger.kernel.org
++S:	Maintained
++T:	git git://linuxtv.org/media_tree.git
++F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
++
+ DONGWOON DW9807 LENS VOICE COIL DRIVER
+ M:	Sakari Ailus <sakari.ailus@linux.intel.com>
+ L:	linux-media@vger.kernel.org
 -- 
 2.9.2
 _______________________________________________
