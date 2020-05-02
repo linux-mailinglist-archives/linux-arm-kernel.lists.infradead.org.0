@@ -2,73 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0825D1C254A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 14:30:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2FFC1C254C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 14:31:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7yk3vxkzyi+DffFqkjJhhlVHFkuZMiRIDotLiBTyUVc=; b=W4RaoR5+gyDB3z
-	LE12XbLICVcZZHLbqtD0ivHjWxHTdqGAfnjiXKqQUPiDTTfhFo0Ao4XLlPLbm6FOt60vyq4/CEPgT
-	s4hyZgrj5py8ygwbnSU9YbeTl1HCuIRDfNptqil9X20uVe6dkQpIMi1IwA5LBlGiPZ3UBY2BgQ8BL
-	T31nGEwuue4Tncd0uRx9lVsOTD17HNRUD5mdAKxwlpnJCBC+nY02MPcBkd0SzqErSF+/XVu88hzui
-	1+A1JoS/ukjEDEEWAmadNVLpVbWmtBnRKalMWk5YwAnWLqFAYvpSHvmV1/QP98BM2lUUrBl09Ka7h
-	Ao3ijDykn6e46Disa9Ng==;
+	List-Owner; bh=fqWBMEfc1wZKYYSow0WnPqRPMOEFGn2HtZybrBbjG2Q=; b=iyLR26KkowGiVM
+	2X6BCqzIQuPzizTTpyW7touPrM4YvxfNIjUz3/OgNloVeazLM5+Mdaf1MwdNJQNXuF87sW/6s6cpe
+	H2DHlExs8PPoWL/UYPjNejNjwXrF6fGNETDC1a+jIxeZ2Cv4I1m8RkPQpWbf+2aUG9gVOKLFmvNwc
+	Et4apvgU7ems+bCeRRqAG62s/1spd6hd5/poLhahDZ6tF4iuWBHF+l/kLmtyT+7vTl/PSihj3Z5Hb
+	kTekr+Etwwik6sf42+EZBfF2WcSKTbysayNKWW4k076R17z30MNFmpu+CsgYVhcCKyDSxPj1U8sWy
+	osjM7c+6xmDJSLD9oAJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUrHt-0004Jc-I2; Sat, 02 May 2020 12:30:33 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1jUrIZ-0004ed-Ge; Sat, 02 May 2020 12:31:15 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUrHm-0004HH-CC
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 12:30:27 +0000
-Received: by mail-io1-xd41.google.com with SMTP id f3so7442566ioj.1
+ id 1jUrIT-0004dp-7V
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 12:31:10 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z2so7432199iol.11
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 02 May 2020 05:30:25 -0700 (PDT)
+ Sat, 02 May 2020 05:31:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3uQvbmBtPfau0c36fVvnAuHUvWsyQdwrd424BAs7J+Y=;
- b=UXBFXl71pOYoRRRS+69JMI7kA/Bv6mS1Yx+8Xjs48McZ4AtgCisNneooKsURx+qMF7
- Z+Ip8/VkFZrYl9mSllXS27y8/l7stxnKMnQIkg3V+0at2HAPkOAn0ubBy0qTwQcfNWmq
- c1rTKavWivbWGyjxRL7erEIvFW8NNEoL8VipSxHt8aBnhoMrFVpNWndaMbuaSUJDEDnx
- 4EryewuRfShz3kyrMYL/8f8DLxsPShSc0ikmbJi2zNTZXhAB2q4/zWbFr9SRr12T1CfD
- vjbm49l37Dea5S76BW66SYUWH6UpWFanaAL3lff4eM7zokC/NDBCy0iT4t+J9tHcBklB
- o/Dw==
+ :cc; bh=Sqj5OwuLQEiWexB38E560Tjsw1EblC4/Va2EqzU4zWU=;
+ b=TDQZRCub/ffrM2W4i8QJOuhIY+QH+daszsb1JtU2K1qx68balRapnI/NPBGF3rx+0k
+ 9+fT7x5KhGLiXSZlABWZAN8+G7oPLjRIS6o+sGKU5g6dDcLc1XbSGaZtOy/kwXWWDdgi
+ EA+Qr24M2AWf8vtQrYUIITqUhyYcUdON3jdrg3YIlgiDChIKAuKIYBONAajUi5Y3eMkG
+ IqvHBs/bCOi3d67GUs7y81AzXERtMJ5v5QlOrn4uwJqxzEAPBGIrOKcIIKq1orflrxNg
+ dA5rMjh6CQec4qmjX6sO9PExSF9TZzgYDWxUrX/UqFalmZGdgN2BjMe2YEOIVfEJxCNA
+ EW3g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=3uQvbmBtPfau0c36fVvnAuHUvWsyQdwrd424BAs7J+Y=;
- b=DOXwBV0lArLZ240IbRcTA9k901r+5sHHjFY9ajuvgsGtVURBKnhpQ6VgNprUM0fvAo
- cb8XIZoxv5YzrnIeKM2QnWRReQisfX+X9S84PIEU6Hn7Hp4ut7HEpSY6ABQvk5uvy6pm
- R7GHieYUqJB/FNVoG9hnlnpFiWDgWyy0fGz9TJ5YWI8pkBPCYnOnjiFrib9DTEYJ8K+M
- /XdRsKSEThL8TB8Wd4q9LzQW4NUOlJbQ3TNcR2ezuCVtqYCEcrL6cRj/qGMqXO84VaeG
- ylxZKc0Vg0elgVeN+YFX4yM+irr37Co2E2cLx08+1wRpykoWCQtt4v9nBP2TWAZ/gsMX
- YCsw==
-X-Gm-Message-State: AGi0PuaYqnn9m7z7ZLSBJ5Z/GX8OkjwZYvomU3Jo5IWX4psJA5gkVSA7
- kGCWi+nuOJmg0nQcgdgHr7UvI9YF6HpmS3zVbPxAl5nI
-X-Google-Smtp-Source: APiQypKjQEJr50SSD+wZTKC4UtIKG9oBaPBilJhbM81K49d+oej84dCFNh0SFdsE2H8POwnSgGZvyGv9VRtL6QGheUo=
-X-Received: by 2002:a5e:8203:: with SMTP id l3mr4649643iom.35.1588422624364;
- Sat, 02 May 2020 05:30:24 -0700 (PDT)
+ bh=Sqj5OwuLQEiWexB38E560Tjsw1EblC4/Va2EqzU4zWU=;
+ b=Zl99cTQfY5dwlM41DVyCPan4U+l911IzSh7KjPvmwschVw9IVLAJLdqdQNrrPCuZHg
+ EJgtrOTX4srqV1r0TdYCb3n6TiThO4p/4M2yXMlmLZsEy+PDmvxeUYNF+FeQgyJ/YFV7
+ HEg4iyZ4FRwVxPrztoMKSb75382YTieDF1cRJTLV1lIxFFgy9vlIBIkqGWrsb82CNrIR
+ DFCrSqJax7KagBF02fw1efuzulx2IcSFGoVEGB9GDE1ZIm6IGnCtvHEvjgXtW2u1XoNp
+ GEDx2QAm791pAnM8pb1T0jpKv0UtUDr7ks691uH6YsyGO1G6+7F7FLoY98Xhgu6MPyYV
+ rHWA==
+X-Gm-Message-State: AGi0Pub+CpXR84IzdJhclkzAe8OEtEviTvsVrUs8zfw0mfr7OdbsGMO+
+ hQI9UcBWln7VrvzlJEEcmQ6zhhff54/9SVj5yBwM9ZgfUSQ=
+X-Google-Smtp-Source: APiQypLCKDX6+VT+B8oaq1wJy/OgIWsAdpELwqgIIb/i0Sgf4Zq30t2c9jYp25yvXVW+C9OZQ58ht4N448yyjimkCWo=
+X-Received: by 2002:a02:a60b:: with SMTP id c11mr6944237jam.45.1588422667696; 
+ Sat, 02 May 2020 05:31:07 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200306103839.1231057-1-aford173@gmail.com>
-In-Reply-To: <20200306103839.1231057-1-aford173@gmail.com>
+ <20200306103839.1231057-2-aford173@gmail.com>
+In-Reply-To: <20200306103839.1231057-2-aford173@gmail.com>
 From: Adam Ford <aford173@gmail.com>
-Date: Sat, 2 May 2020 07:30:13 -0500
-Message-ID: <CAHCN7xJ+3kvkt2TGe3j2JC6YVbxgsOzrSrDN6jaae2TZskOu4Q@mail.gmail.com>
-Subject: Re: [PATCH] arm64: defconfig: Enable IMX27 PWM controller
+Date: Sat, 2 May 2020 07:30:56 -0500
+Message-ID: <CAHCN7x+cG873bhDkGPjq9u2bn=b0QRpdYgh_yvWkfyLBde_mxw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: defconfig: Enable IMX/FSL Audio Support for WM8962
 To: arm-soc <linux-arm-kernel@lists.infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_053026_443667_44CD6CB5 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20200502_053109_270803_D3988471 
+X-CRM114-Status: GOOD (  12.62  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [aford173[at]gmail.com]
@@ -104,27 +105,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Mar 6, 2020 at 4:38 AM Adam Ford <aford173@gmail.com> wrote:
 >
-> The i.MX8M Mini and others use the i.MX27 PWM controller.
-> This patch enables it as a module so various boards can use it.
+> The Beacon EmbeddedWorks i.MX8M Mini kit has a WM8962 audio codec.
+> This patch enables the required drivers as modules to enable sound.
 >
 > Signed-off-by: Adam Ford <aford173@gmail.com>
-
-I don't know who the right person is to ping for this, but it's still
-awaiting approval.
-
 >
+
+Gentle ping.  I don't know who the right person is to ask for this.
+
+adam
 > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-> index a8de3d327d03..d19ca82b3c40 100644
+> index d19ca82b3c40..ab71a407288f 100644
 > --- a/arch/arm64/configs/defconfig
 > +++ b/arch/arm64/configs/defconfig
-> @@ -830,6 +830,7 @@ CONFIG_MPL3115=m
->  CONFIG_PWM=y
->  CONFIG_PWM_BCM2835=m
->  CONFIG_PWM_CROS_EC=m
-> +CONFIG_PWM_IMX27=m
->  CONFIG_PWM_MESON=m
->  CONFIG_PWM_RCAR=m
->  CONFIG_PWM_ROCKCHIP=y
+> @@ -601,6 +601,9 @@ CONFIG_SND_HDA_TEGRA=m
+>  CONFIG_SND_HDA_CODEC_HDMI=m
+>  CONFIG_SND_SOC=y
+>  CONFIG_SND_BCM2835_SOC_I2S=m
+> +CONFIG_SND_IMX_SOC=m
+> +CONFIG_SND_SOC_FSL_ASOC_CARD=m
+> +CONFIG_SND_SOC_IMX_AUDMIX=m
+>  CONFIG_SND_MESON_AXG_SOUND_CARD=m
+>  CONFIG_SND_SOC_ROCKCHIP=m
+>  CONFIG_SND_SOC_ROCKCHIP_SPDIF=m
+> @@ -614,6 +617,7 @@ CONFIG_SND_SOC_ES7134=m
+>  CONFIG_SND_SOC_ES7241=m
+>  CONFIG_SND_SOC_PCM3168A_I2C=m
+>  CONFIG_SND_SOC_TAS571X=m
+> +CONFIG_SND_SOC_WM8962=m
+>  CONFIG_SND_SIMPLE_CARD=m
+>  CONFIG_SND_AUDIO_GRAPH_CARD=m
+>  CONFIG_I2C_HID=m
 > --
 > 2.25.0
 >
