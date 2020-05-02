@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 789901C21EB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 02:25:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF7531C21EF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 02:26:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Hwx3Nlq+/SeWKfyywBEoWhkc2i1oW1K2ZnokxihO6OM=; b=TI1mDM9oJjqXph
-	uYExxQi4UP+VPh0VSDzchi2M4/w6BcWzWru0pzGV+JERYxN+oyNbM4w5v6oolvoIkUOXZnMc2drqJ
-	IhjwzynDg1K1CVQtqDszQPV2ZJH7znJ3VEqo11AaLRfjhuiTE1B9JvgnCycyGMQOOEzPQdxvHhdLG
-	UOiNzCu3gyc8extZuFG1X/oIL4Sg1kTDSQ2jP3QMXJePJwUVAL+SrSV4lRC1Ueroh0i84sQgNXMx/
-	3blhsvoTvdLOSJl5TFNYb66CxSafAqiwnngu96M6UkWffE6/E9JAS/iG8MirfPPR5t83goREyx8gY
-	sfEfNK/V3znOKtxKEduQ==;
+	List-Owner; bh=Yb0hbCY02+bXIy23r3sS/OpmAZgtY4jMOTqaB4CMT2Y=; b=Z1XRdPUDN6kf+x
+	d3/haIychlqVQSsmfKPmfSGBmb3kqNPhAjAkQSJj6kH1kbW9Mj5YRtxxfs08Qr+J+nGUGBo+IzF2Z
+	YHtGUvXaWOKm5p3liG4uK5JvZ+UubOFIb8T+LVcM2p3u5o30p1xQqCGayiXQefwSHvE+xxuFkHjim
+	ufbdfySMEjUfpAnJLYyq8dle3rjfOGrfjUQ2wifc9etOs5PG2jDsNrtgmgl7QwoiO+CZbXsmFeLwT
+	bPn/XVGckPWSSk2fNAbQ6pVhEuk7hck/1zL015q/ulC7MMoWKwQjHkQ9korog45/+WV6ToXXecpQd
+	TxS5Z7SC3UK2GpLOqWjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUfyO-00011c-7o; Sat, 02 May 2020 00:25:40 +0000
-Received: from mail-dm6nam10on2077.outbound.protection.outlook.com
- ([40.107.93.77] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
+	id 1jUfyo-0001Pv-Ov; Sat, 02 May 2020 00:26:06 +0000
+Received: from mail-dm6nam10on2048.outbound.protection.outlook.com
+ ([40.107.93.48] helo=NAM10-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUfyD-0000zk-VE
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 00:25:32 +0000
+ id 1jUfyD-0000zh-VH
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 00:25:33 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mMnGop6OdwN4Y0DPc9SDhpV1VmNWR/BaCOMG7ngV8Iy1SQaQhiw4/qBZnQ6y3AjGrrpFK5ivEVkqGCH3VP5+A7JAyTjiunQ2OI6lWoUCfIh9tBYGWGFKoil6/oliYRG6xLFfbJJTPgmbDTyrlftSje8Lj7X6O6C/dYsxYCBHdOsnENG5qPKeReJo/9bktTGIdX4AOnFyGg0L/NOoVslfuO8KiMiN338N9bN3xsTljvcNbYlQPRYgujdDUTiKppfQ1kXj60e9CWLQnKnm4a2U9iInw2Fg0gcPZlM3kd8BonVTFdmIQJw2v3spI4F9+HcJXngxUEp4rcoBZJGbtZBzWQ==
+ b=P7gSR5f8RfnSFCVDniIuzd9gq5XpfODMuMWBZ+KiYIgTZk8+PlA9femqJOK468iOHpPgjJYPIZX38w1NKz5tlasCBDOrc8YuUXQRf3pJo45qami7anHnbsYe3LJ1x23Nb1ER93mh92B9mwSE0SaZZ3xMI6XkLNrSRZAjGXUko6cMk5v6P0k+QC1aWMXABiemLJIaTiufgxEgOOnkAq7N3ZHiIzQ2J/4IaVsbogWJoVMx7J7I7mZUrjdfbE5pOV7zbgtyp4qMSHJ40QpuCQaSWi/Ol6iT7d9r7R9HnLYQeJBPrUEzAJXYcp1EvVj37pwwTm7NbFz/8gnJ7voGFjCyeg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vZ+0Yya6Zh3QNFdgQ32NxswT2FmGYZJlfGAnmOhYjC0=;
- b=Q4M/ZcEIsRvnFSHB8if8B2sJxT5cJGS4+yMAkHZqru8Y9I9RLQ9Jju+e5EHAlW7q/UKv2jSXz3ZFfAaDJdDdRD6YtQusdjjpmU7mhzHQ4uT86MNuCbjMxxeTLeL9evJosQSe9mjXAsf6yXj0GYRyRIc6HDrqtyt7MyB3I26AqPvXqhq33egYPtfgPKJIo+kSc5YWMKJrHXCNxWQWl9ESlJpnCE6DmPr/DfsGDybmuSYP5HQ16XXaJwN/Iyn1N9nwkmexnA/gB6kOSNFH8SVv68UzR43v1rEScJZwo+0w5ZEoLrDOOCUm+TFlRqIppVnPdT3YqY57n5sfXkSU5yurBg==
+ bh=9PC7PliTX3bo/m9tPyJRBqcDTrRdVemB+XWNYr9hFhQ=;
+ b=JkeUPqyqq9VrRT5YTegT+g73kiqFwz5OpmHIPGdXV/CWVzo1I15iGMbkZTK6rqwV/TebPoJYa3Xy1E5Svas3udcctVtAGjMDM6ONUSJGVRmzG95EUIu+e/iOSiwYf/WQHowApmDNzF/3uclsMLXJtD4zrGbVbFDg9o2+AVaUoDZ0FSgEC7HKbu4FQVgTJUpVcVzgMkDi1fLg8X8f9oX0jXi9yfmQRy7jbZd++Lw+XVY9FBL8n59ZiXpkxlUwNYkTk6BkI0Qvdutq27tVhSfGpCPk50KqKb+5laDSsscG6XOPo7y0d0qLdLS0/rP3SmnkWwRpDqJ2H+LaOmokMtHgtg==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
  149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
  dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
@@ -38,16 +38,16 @@ ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=vZ+0Yya6Zh3QNFdgQ32NxswT2FmGYZJlfGAnmOhYjC0=;
- b=fWeXntUR9N1Ha3wE+oQz0xeZonAbolycOt8FfQHy6KOjoVTFEJvxNZ45BdNV5S2M2VKb+rCWqYLUkg3DKqXp5PDyoMdHQZ6QWrant0/0zG0CaXk8JqY3AQipg3UCVb+7ETcxzDqn4Lo+zCBUjg5PKbn23YMpvfDlJHjHEVOaObw=
-Received: from MN2PR15CA0018.namprd15.prod.outlook.com (2603:10b6:208:1b4::31)
- by SN6PR02MB4176.namprd02.prod.outlook.com (2603:10b6:805:2e::19)
+ bh=9PC7PliTX3bo/m9tPyJRBqcDTrRdVemB+XWNYr9hFhQ=;
+ b=M7dryyk50bezlJIfVK01vDsnv3zhvGSMKHuvt7LRifMP3FN4WaSFs95p9WPMu/C98VqV/2esJH4g67BSILVvuWqZjQYLIIJPTsMYKNLe4JDqJ6rqdvyb0Wjwt3nQH4TlZfv+ArnLgjFwH0wcqqMjjYF7MjeofCKUuKeEl7x8xyQ=
+Received: from MN2PR14CA0028.namprd14.prod.outlook.com (2603:10b6:208:23e::33)
+ by CY4PR02MB2742.namprd02.prod.outlook.com (2603:10b6:903:11a::8)
  with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.13; Sat, 2 May
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Sat, 2 May
  2020 00:25:26 +0000
-Received: from BL2NAM02FT057.eop-nam02.prod.protection.outlook.com
- (2603:10b6:208:1b4:cafe::1) by MN2PR15CA0018.outlook.office365.com
- (2603:10b6:208:1b4::31) with Microsoft SMTP Server (version=TLS1_2,
+Received: from BL2NAM02FT030.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:208:23e:cafe::13) by MN2PR14CA0028.outlook.office365.com
+ (2603:10b6:208:23e::33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20 via Frontend
  Transport; Sat, 2 May 2020 00:25:26 +0000
 Authentication-Results: spf=pass (sender IP is 149.199.60.83)
@@ -58,31 +58,32 @@ Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
  149.199.60.83 as permitted sender) receiver=protection.outlook.com;
  client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
 Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- BL2NAM02FT057.mail.protection.outlook.com (10.152.77.36) with Microsoft SMTP
+ BL2NAM02FT030.mail.protection.outlook.com (10.152.77.172) with Microsoft SMTP
  Server id 15.20.2958.27 via Frontend Transport; Sat, 2 May 2020 00:25:26
  +0000
-Received: from [149.199.38.66] (port=38220 helo=xsj-pvapsmtp01)
+Received: from [149.199.38.66] (port=38225 helo=xsj-pvapsmtp01)
  by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
  (envelope-from <amit.sunil.dhamne@xilinx.com>)
- id 1jUfy7-0006Qj-C1; Fri, 01 May 2020 17:25:23 -0700
+ id 1jUfy7-0006Qm-F6; Fri, 01 May 2020 17:25:23 -0700
 Received: from [127.0.0.1] (helo=localhost)
  by xsj-pvapsmtp01 with smtp (Exim 4.63)
  (envelope-from <amit.sunil.dhamne@xilinx.com>)
- id 1jUfy9-0004NS-Ka; Fri, 01 May 2020 17:25:25 -0700
-Received: from xsj-pvapsmtp01 (smtp2.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 0420PI69027415; 
+ id 1jUfy9-0004NS-Nx; Fri, 01 May 2020 17:25:25 -0700
+Received: from xsj-pvapsmtp01 (smtp-fallback.xilinx.com [149.199.38.66] (may
+ be forged))
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 0420PI8g027419; 
  Fri, 1 May 2020 17:25:18 -0700
 Received: from [172.19.3.8] (helo=xsjamitsuni50.xilinx.com)
  by xsj-pvapsmtp01 with esmtp (Exim 4.63)
  (envelope-from <amit.sunil.dhamne@xilinx.com>)
- id 1jUfy2-0004Mq-2A; Fri, 01 May 2020 17:25:18 -0700
+ id 1jUfy2-0004Mq-3y; Fri, 01 May 2020 17:25:18 -0700
 From: Amit Sunil Dhamne <amit.sunil.dhamne@xilinx.com>
 To: mturquette@baylibre.com, sboyd@kernel.org, michal.simek@xilinx.com,
  mark.rutland@arm.com, linux-clk@vger.kernel.org
-Subject: [RESEND PATCH v2 1/2] drivers: clk: zynqmp: Add support for custom
- type flags
-Date: Fri,  1 May 2020 17:25:16 -0700
-Message-Id: <1588379117-254190-2-git-send-email-amit.sunil.dhamne@xilinx.com>
+Subject: [RESEND PATCH v2 2/2] drivers: clk: zynqmp: Update fraction clock
+ check from custom type flags
+Date: Fri,  1 May 2020 17:25:17 -0700
+Message-Id: <1588379117-254190-3-git-send-email-amit.sunil.dhamne@xilinx.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1588379117-254190-1-git-send-email-amit.sunil.dhamne@xilinx.com>
 References: <1588379117-254190-1-git-send-email-amit.sunil.dhamne@xilinx.com>
@@ -94,42 +95,41 @@ X-MS-Office365-Filtering-HT: Tenant
 X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
  SFTY:;
- SFS:(4636009)(346002)(376002)(136003)(396003)(39860400002)(46966005)(9786002)(4326008)(107886003)(81166007)(316002)(7696005)(426003)(26005)(54906003)(336012)(2906002)(356005)(70586007)(82310400002)(70206006)(8676002)(47076004)(5660300002)(186003)(82740400003)(478600001)(36756003)(8936002)(2616005);
+ SFS:(4636009)(346002)(376002)(396003)(136003)(39860400002)(46966005)(186003)(7696005)(36756003)(8676002)(2906002)(336012)(2616005)(15650500001)(426003)(316002)(82740400003)(478600001)(47076004)(70206006)(107886003)(5660300002)(70586007)(82310400002)(356005)(81166007)(26005)(8936002)(54906003)(9786002)(4326008)(42866002);
  DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
 X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 2ad18674-00bd-4545-3687-08d7ee2f4f79
-X-MS-TrafficTypeDiagnostic: SN6PR02MB4176:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB41768D6F0B8B5433BE547901A7A80@SN6PR02MB4176.namprd02.prod.outlook.com>
+X-MS-Office365-Filtering-Correlation-Id: a072d374-5adc-4fe1-cbc7-08d7ee2f4f85
+X-MS-TrafficTypeDiagnostic: CY4PR02MB2742:
+X-Microsoft-Antispam-PRVS: <CY4PR02MB274218081A6C7BB5EAA5C46AA7A80@CY4PR02MB2742.namprd02.prod.outlook.com>
 X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:172;
+X-MS-Oob-TLC-OOBClassifiers: OLM:7691;
 X-Forefront-PRVS: 039178EF4A
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: fj3XhqG1ClH9Sk9MaWHQ354FjwFpSxIiBaISvrR+XODVxk117JPLrDExfz4KtGw0z5wFhC3W1tPXHHO7ke41zMUN62BXMgX3BXA6sgbShogYXcPFn7FQ7QgtRy7Xdm81plLBdZddy3B5lWGEI1hJw63aJy1aJDbM93xijw+6y8qQbQl5DxnoIiJDg7Ou1yIFouQ08o5qnfVYE6+NAQUpHdg2qKWIMtMCG50uTb1AeGYAI8TDIXKSJ2bM2SVUizMVH0Tpt1WzZZw+g2ZzVuL08NQmLo704VnpupeeePQkE+GG4VM1PjaSQw507q3BEBbsoV0KKklXJJetUm/NpzCHxTkC3iR5GQ/K6M9hl2H0h9rNcZwmtUJzElRaX5CvjpgQT3vfTUUU33KXHLyFaMBdyxLePSJ/Egu6mBNSyY0uf6UQ0ZKw0ie+Mq9L7fYGPldtbAEWVD0obgUtuKTqpTIs0hE4CeebE3U8OtIx4L8BRxoUQt5JhqgIjQvOly0wV6jKU8aKZdxZuiRj6xuCXZrYgA==
+X-Microsoft-Antispam-Message-Info: IDob+WFtFz5yZmQrvlILNCTF886rY4jBADn3U5/FkyjiTN+QJpoBoRxntPsPKno+2SgmgYLfet77RWqyJPxGkmicAahhkSQ4C0UE+HvW5sYBTLlXHKExZqldAopHlrDVf7pObxIo4X00D29Rp9OyTc/+sr0ikZN+ojuFQM1Mx+WvKIJz7MFNzIT0Mcx1PTGDGa2EokfjbLPY+i43WuPfReyeVRJclkW2ndd2vDiq2NT9zdc/OxGPxEiEVW39Rc3v2o+duisU8/L/yHzNyxeZeUzLd5rUujGAflll4k0eg6rqRJ8DCl1jCK6MKU/mxQDYifbTXaNEa4OQrHGFcMw4R5wh8nhySU4gq5nVNHjotQ7MiQf5wqxvl/vfOeVdgs4XtwLYzSEf1TbL+LPCHX+vpseq/WO4KUHE2m/HVgdQk1lu/N79hNIAxscND6mHJmDogt3PJ9zE3wAiF+qfZa75ku0n3Ts0d98Gc2AxgHf615pbqlombVPGclk0AGE+QM3rojsK7U4ryw1hLt4QKfSuXWvu5bPN4gpGkDGZu4Q8wUs=
 X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 May 2020 00:25:26.0342 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2ad18674-00bd-4545-3687-08d7ee2f4f79
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 May 2020 00:25:26.1036 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: a072d374-5adc-4fe1-cbc7-08d7ee2f4f85
 X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
 X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
  Helo=[xsj-pvapsmtpgw01]
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB4176
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR02MB2742
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_172530_018675_9791B5F5 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200501_172530_019987_5B596FA8 
+X-CRM114-Status: GOOD (  10.44  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.93.77 listed in list.dnswl.org]
+ no trust [40.107.93.48 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.93.77 listed in wl.mailspike.net]
+ [40.107.93.48 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -154,53 +154,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rajan Vaja <rajan.vaja@xilinx.com>
+From: Tejas Patel <tejas.patel@xilinx.com>
 
-Store extra custom type flags received from firmware.
+Older firmware version sets BIT(13) in clkflag to mark a
+divider as fractional divider. Updated firmware version sets BIT(4)
+in type flags to mark a divider as fractional divider since
+BIT(13) is defined as CLK_DUTY_CYCLE_PARENT in the common clk
+framework flags.
 
-Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
+To support both old and new firmware version, consider BIT(13) from
+clkflag and BIT(4) from type_flag to check if divider is fractional
+or not.
+
+To maintain compatibility BIT(13) of clkflag in firmware will not be
+used in future for any purpose and will be marked as unused.
+
 Signed-off-by: Tejas Patel <tejas.patel@xilinx.com>
+Signed-off-by: Rajan Vaja <rajan.vaja@xilinx.com>
 Signed-off-by: Jolly Shah <jolly.shah@xilinx.com>
 Signed-off-by: Amit Sunil Dhamne <amit.sunil.dhamne@xilinx.com>
 ---
- drivers/clk/zynqmp/clk-zynqmp.h | 1 +
- drivers/clk/zynqmp/clkc.c       | 4 ++++
- 2 files changed, 5 insertions(+)
+ drivers/clk/zynqmp/divider.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/zynqmp/clk-zynqmp.h b/drivers/clk/zynqmp/clk-zynqmp.h
-index fec9a15..5beeb41 100644
---- a/drivers/clk/zynqmp/clk-zynqmp.h
-+++ b/drivers/clk/zynqmp/clk-zynqmp.h
-@@ -30,6 +30,7 @@ struct clock_topology {
-        u32 type;
-        u32 flag;
-        u32 type_flag;
-+       u8 custom_type_flag;
- };
+diff --git a/drivers/clk/zynqmp/divider.c b/drivers/clk/zynqmp/divider.c
+index 4be2cc7..d43c9dd 100644
+--- a/drivers/clk/zynqmp/divider.c
++++ b/drivers/clk/zynqmp/divider.c
+@@ -25,7 +25,8 @@
+ #define to_zynqmp_clk_divider(_hw)             \
+        container_of(_hw, struct zynqmp_clk_divider, hw)
 
- struct clk_hw *zynqmp_clk_register_pll(const char *name, u32 clk_id,
-diff --git a/drivers/clk/zynqmp/clkc.c b/drivers/clk/zynqmp/clkc.c
-index 10e89f2..4dd8413 100644
---- a/drivers/clk/zynqmp/clkc.c
-+++ b/drivers/clk/zynqmp/clkc.c
-@@ -84,6 +84,7 @@ struct name_resp {
+-#define CLK_FRAC       BIT(13) /* has a fractional parent */
++#define CLK_FRAC               BIT(13) /* has a fractional parent */
++#define CUSTOM_FLAG_CLK_FRAC   BIT(0) /* has a fractional parent in custom type flag */
 
- struct topology_resp {
- #define CLK_TOPOLOGY_TYPE              GENMASK(3, 0)
-+#define CLK_TOPOLOGY_CUSTOM_TYPE_FLAGS GENMASK(7, 4)
- #define CLK_TOPOLOGY_FLAGS             GENMASK(23, 8)
- #define CLK_TOPOLOGY_TYPE_FLAGS                GENMASK(31, 24)
-        u32 topology[CLK_GET_TOPOLOGY_RESP_WORDS];
-@@ -396,6 +397,9 @@ static int __zynqmp_clock_get_topology(struct clock_topology *topology,
-                topology[*nnodes].type_flag =
-                                FIELD_GET(CLK_TOPOLOGY_TYPE_FLAGS,
-                                          response->topology[i]);
-+               topology[*nnodes].custom_type_flag =
-+                       FIELD_GET(CLK_TOPOLOGY_CUSTOM_TYPE_FLAGS,
-+                                 response->topology[i]);
-                (*nnodes)++;
-        }
+ /**
+  * struct zynqmp_clk_divider - adjustable divider clock
+@@ -311,7 +312,8 @@ struct clk_hw *zynqmp_clk_register_divider(const char *name,
+        init.num_parents = 1;
 
+        /* struct clk_divider assignments */
+-       div->is_frac = !!(nodes->flag & CLK_FRAC);
++       div->is_frac = !!((nodes->flag & CLK_FRAC) |
++                         (nodes->custom_type_flag & CUSTOM_FLAG_CLK_FRAC));
+        div->flags = nodes->type_flag;
+        div->hw.init = &init;
+        div->clk_id = clk_id;
 --
 2.7.4
 
