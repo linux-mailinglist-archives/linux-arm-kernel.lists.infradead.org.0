@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C976D1C2731
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 19:16:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8513A1C2748
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 19:35:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=eG0TxmptyCwImdGg5sgrK3qfRiMoqTzMyG1NlZm/mKA=; b=BYLGYmedPKcpSK
-	2/7yddU4ZfU1i9lugBPxp8cLEKjIpxKrWjO2FDKMCb46P+nAsSVTL8fImIyQxS+1OiBw9CMPA3JSh
-	Y+O72ZXG5LOD21lebjn+QQxFtc2CqO0X5fibjUK9502WXd2XDgwwN7sQ6+1AUGZair1Q74l4Twxx7
-	swPj7wJztQkJBJsfgA56T/J+h39QgprGeAo5K0alUKeQK/TV0ujTE3J41YlWnveMzPMwr8nkFTzOu
-	kksl6ktb8bK3faHMbhOnWbwxVivIhJ0fN0Ifa4lyobdeAHBets63eZUwzelQ/+uKTZ0HMmzU0oxGa
-	MVNKUtCvQBdtolB4gmDA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TlRdu/5y3b+WNVD3d19q2CT29ryQYBxMjNpEs2je99A=; b=cFRpec7B4ZH9eq
+	o0OOLsIQEzzx0M/1SJkoFVdjhYF0w9e7K+nrEvyeT4pLNma8ryFQtJm0On5oNkzh/Hi+0zB16DHf+
+	r6T4IcJz0YxUcYhJP3LAHO4iOErLYx+ZoWNI8nSgad57w0RJMNW2ZSiEVBT7u+ehawxIo4H6O++Xu
+	HQk2vUjKAJld5QmYNsT4zI8yoWzDyUYiD8pedexsxK/R2il86SN8DlD+2LEy65dQiX3qrmYR0GCro
+	Rs24a2DCgPYyc66DeipmP2rbpCHourNAPvl+scxFdOjy9L1oWNs1X47toEfv5og9KEcZKAcpZVH5w
+	PKUJ0IlE5SbCx6AgFjDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUvkI-0003DM-Sg; Sat, 02 May 2020 17:16:10 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jUw2m-00070u-Fs; Sat, 02 May 2020 17:35:16 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUvkC-0003C4-I2; Sat, 02 May 2020 17:16:06 +0000
-Received: by mail-wr1-x443.google.com with SMTP id e16so10563562wra.7;
- Sat, 02 May 2020 10:16:03 -0700 (PDT)
+ id 1jUw2b-0005iU-Hh; Sat, 02 May 2020 17:35:07 +0000
+Received: by mail-wr1-x444.google.com with SMTP id i10so15696868wrv.10;
+ Sat, 02 May 2020 10:35:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3PIv3g2HbrGzdAz/fXXsONdZmu8F6RevQt0D1oDmLho=;
- b=gV2H5xW2mTm8uTHZxOra8ob6JuAmi+h8HkRMipd8wXZ39Cl03adTXtuChzdjwVBSqF
- T7DTCpK499L13ogQPCODo8zyTDIWQ76Tz5oqsTfbpYK6PG9lo7kHlb2q9swyz2N8HdXU
- I/91hszWw5NKt63LjSaIHT+1bKVHdthB2Gh+gAJKYd8BaDK5sVG32omy1ajV5qdQu1jR
- pSOTekjzBaOHFNJJGxQgRiP2Kv7YSXmGmDNTZ0XouvsoW9j755qByUUsKtTm82DtFs3+
- WJGEXXPvnnhguH+LqS0Lk/X7kFXITvV9HJMXY11u/TvpixyqRllu2AnH4NxUpFNqt8HN
- F/sQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=gKb7iyknzWu1WCRpWVs4myLLU2HoGPdepjCNgtl1lVk=;
+ b=kyxzkjJXONeJir9EunNEAivfkNjtnLOFCyryMDDzRWMUY/pelv1VrTrtDvFuxYLhw2
+ +pbWXofrgXJ5fJescMyKPQVAZOcoCJBS7MS5ygdXStp9EqOFE4GpSlWZhZfzW4psVYXp
+ a2ODxt8YzvlGDY2IxFzZbvQyUkRF0X4dPcMZ0BbUO/TrhcqNUuo3K3/2E/nQMmiVW81Q
+ REdm4ZuwcUHag89eJlQMuCGlLSzDbakWomGU3AoGiF1Zwx7Qh8+8XqKTtUMYtUk9/q4+
+ zhyCfdRRHUBxor/3PEMjDnqUMtNsQD3y3ygYvMkIB8dWrKWqdgui2U54HJszlhOlcjcj
+ qmpg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=3PIv3g2HbrGzdAz/fXXsONdZmu8F6RevQt0D1oDmLho=;
- b=QnZFpBhFjAaqL6zvCosv+p3qqKYp2r5+jXVvcW7i39dPED+ftQhcgK9P45lAEyThGo
- DudEGVIBX5/BLLQMhfx7L/4nFpNnYl3MDsydFQMNwpVavI4XxMPQqYGXqYIzk34ZkaYj
- QHvaSElSRSqlkajL2qH2cJzHyYg+q+2aVz3MW8uYrFh5Wnl7jHOHDnoyAcEYVkedSXnD
- A9sH9LJGe7iVXH+Vw5V7AdfJoKxEWu+/GrT+UeQ3OwKCmATSLv6TXd4QuWEC21mBOZce
- eDffVqQo+iZsg+huZZhGmat5CcKDCTaak5jc28WIMAsafJlrIOQ0sd75U09cvdoVC3mV
- hKbg==
-X-Gm-Message-State: AGi0PubYWrq5rqQm+oyy/inXzd7COUEMANX7XBk9Cl3kHkBkJcq08N4Y
- XEYr/gNBbIuww/q6k0zKdbQ=
-X-Google-Smtp-Source: APiQypJbj1yl/89EsQl/nrkDrS2TuUaoAtTtpOQQOr9z/uF7PiIxOkiRtxQr8HtZ77MS6EtBt2jRAA==
-X-Received: by 2002:a5d:6a8b:: with SMTP id s11mr9916966wru.258.1588439753785; 
- Sat, 02 May 2020 10:15:53 -0700 (PDT)
-Received: from localhost.localdomain ([188.24.130.199])
- by smtp.gmail.com with ESMTPSA id k14sm10142090wrp.53.2020.05.02.10.15.52
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 May 2020 10:15:53 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=gKb7iyknzWu1WCRpWVs4myLLU2HoGPdepjCNgtl1lVk=;
+ b=Dnusr4qBIwxcr2R3QXgfxLcWBTIwTK/r0p8YrU0LySP0vTzBclmJiSaUUkVR60TGx4
+ 1G/KLbKda2vkgiLW2M69IOh3iKzmF0k7nGXY6FdHBmwSKEnSyzLRAUWVJzNrL0Y3JsIi
+ /l33woeqQDULT0+H0rFfBMIvIEfXnccRcCkxtf22YmzIGj/9OwfkyDspqAe1Axh19JA/
+ NIwmdZgPW75eKuSOEYgXvDNFMrt5yoYN3Ut6bQIceKu3wse08N8ZQohGQ7cCfUro1ZQa
+ gBo9bE1eBD7dwy3idB/GjAUWmqM9Tb4KKRVIMomml9O3GESeJPNm0bekF1rhh4bHa+Pe
+ Dutw==
+X-Gm-Message-State: AGi0PuYXy/PjKvwyY+i2qUZxWMJHuHdfcGqds/M4YwsZzzrVOn8jLpdK
+ ThZzFJQFXwrIeN8iam1ipZE=
+X-Google-Smtp-Source: APiQypLRaFs3MmL+TMU7Ef0N2tOYOr02tMqqYzHwApC/hpx/j/Kj+pLIpsyCgAZpTETm+K2fB77IZQ==
+X-Received: by 2002:a5d:6305:: with SMTP id i5mr11440815wru.60.1588440903631; 
+ Sat, 02 May 2020 10:35:03 -0700 (PDT)
+Received: from BV030612LT ([188.24.130.199])
+ by smtp.gmail.com with ESMTPSA id y31sm2175991wrd.83.2020.05.02.10.35.02
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Sat, 02 May 2020 10:35:03 -0700 (PDT)
+Date: Sat, 2 May 2020 20:35:00 +0300
 From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
- =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
- Vinod Koul <vkoul@kernel.org>
-Subject: [PATCH v4 1/1] dmaengine: owl: Use correct lock in owl_dma_get_pchan()
-Date: Sat,  2 May 2020 20:15:51 +0300
-Message-Id: <c6e6cdaca252b5364bd294093673951036488cf0.1588439073.git.cristian.ciocaltea@gmail.com>
-X-Mailer: git-send-email 2.26.2
+To: Vinod Koul <vkoul@kernel.org>
+Subject: Re: [PATCH v3 1/1] dma: actions: Fix lockdep splat for owl-dma
+Message-ID: <20200502173500.GA7621@BV030612LT>
+References: <2f3e665270b8d170ea19cc66c6f0c68bf8fe97ff.1588173497.git.cristian.ciocaltea@gmail.com>
+ <20200502122333.GA1375924@vkoul-mobl>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200502122333.GA1375924@vkoul-mobl>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_101604_621864_65003056 
-X-CRM114-Status: GOOD (  15.39  )
+X-CRM114-CacheID: sfid-20200502_103505_662019_1A9AB0A2 
+X-CRM114-Status: GOOD (  28.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [cristian.ciocaltea[at]gmail.com]
@@ -96,102 +98,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+Cc: linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-V2hlbiB0aGUga2VybmVsIGlzIGJ1aWx0IHdpdGggbG9ja2RlcCBzdXBwb3J0IGFuZCB0aGUgb3ds
-LWRtYSBkcml2ZXIgaXMKdXNlZCwgdGhlIGZvbGxvd2luZyBtZXNzYWdlIGlzIHNob3duOgoKWyAg
-ICAyLjQ5NjkzOV0gSU5GTzogdHJ5aW5nIHRvIHJlZ2lzdGVyIG5vbi1zdGF0aWMga2V5LgpbICAg
-IDIuNTAxODg5XSB0aGUgY29kZSBpcyBmaW5lIGJ1dCBuZWVkcyBsb2NrZGVwIGFubm90YXRpb24u
-ClsgICAgMi41MDczNTddIHR1cm5pbmcgb2ZmIHRoZSBsb2NraW5nIGNvcnJlY3RuZXNzIHZhbGlk
-YXRvci4KWyAgICAyLjUxMjgzNF0gQ1BVOiAwIFBJRDogMTIgQ29tbToga3dvcmtlci8wOjEgTm90
-IHRhaW50ZWQgNS42LjMrICMxNQpbICAgIDIuNTE5MDg0XSBIYXJkd2FyZSBuYW1lOiBHZW5lcmlj
-IERUIGJhc2VkIHN5c3RlbQpbICAgIDIuNTIzODc4XSBXb3JrcXVldWU6IGV2ZW50c19mcmVlemFi
-bGUgbW1jX3Jlc2NhbgpbICAgIDIuNTI4NjgxXSBbPDgwMTEyN2YwPl0gKHVud2luZF9iYWNrdHJh
-Y2UpIGZyb20gWzw4MDEwZGE1OD5dIChzaG93X3N0YWNrKzB4MTAvMHgxNCkKWyAgICAyLjUzNjQy
-MF0gWzw4MDEwZGE1OD5dIChzaG93X3N0YWNrKSBmcm9tIFs8ODA4MGZiZTg+XSAoZHVtcF9zdGFj
-aysweGI0LzB4ZTApClsgICAgMi41NDM2NDVdIFs8ODA4MGZiZTg+XSAoZHVtcF9zdGFjaykgZnJv
-bSBbPDgwMTdlZmE0Pl0gKHJlZ2lzdGVyX2xvY2tfY2xhc3MrMHg2ZjAvMHg3MTgpClsgICAgMi41
-NTE4MTZdIFs8ODAxN2VmYTQ+XSAocmVnaXN0ZXJfbG9ja19jbGFzcykgZnJvbSBbPDgwMTdiN2Qw
-Pl0gKF9fbG9ja19hY3F1aXJlKzB4NzgvMHgyNWYwKQpbICAgIDIuNTYwMzMwXSBbPDgwMTdiN2Qw
-Pl0gKF9fbG9ja19hY3F1aXJlKSBmcm9tIFs8ODAxN2U1ZTQ+XSAobG9ja19hY3F1aXJlKzB4ZDgv
-MHgxZjQpClsgICAgMi41NjgxNTldIFs8ODAxN2U1ZTQ+XSAobG9ja19hY3F1aXJlKSBmcm9tIFs8
-ODA4MzFmYjA+XSAoX3Jhd19zcGluX2xvY2tfaXJxc2F2ZSsweDNjLzB4NTApClsgICAgMi41NzY1
-ODldIFs8ODA4MzFmYjA+XSAoX3Jhd19zcGluX2xvY2tfaXJxc2F2ZSkgZnJvbSBbPDgwNTFiNWZj
-Pl0gKG93bF9kbWFfaXNzdWVfcGVuZGluZysweGJjLzB4MTIwKQpbICAgIDIuNTg1ODg0XSBbPDgw
-NTFiNWZjPl0gKG93bF9kbWFfaXNzdWVfcGVuZGluZykgZnJvbSBbPDgwNjY4Y2JjPl0gKG93bF9t
-bWNfcmVxdWVzdCsweDFiMC8weDM5MCkKWyAgICAyLjU5NDY1NV0gWzw4MDY2OGNiYz5dIChvd2xf
-bW1jX3JlcXVlc3QpIGZyb20gWzw4MDY1MGNlMD5dIChtbWNfc3RhcnRfcmVxdWVzdCsweDk0LzB4
-YmMpClsgICAgMi42MDI5MDZdIFs8ODA2NTBjZTA+XSAobW1jX3N0YXJ0X3JlcXVlc3QpIGZyb20g
-Wzw4MDY1MGVjMD5dIChtbWNfd2FpdF9mb3JfcmVxKzB4NjQvMHhkMCkKWyAgICAyLjYxMTI0NV0g
-Wzw4MDY1MGVjMD5dIChtbWNfd2FpdF9mb3JfcmVxKSBmcm9tIFs8ODA2NWFhMTA+XSAobW1jX2Fw
-cF9zZW5kX3NjcisweDEwYy8weDE0NCkKWyAgICAyLjYxOTY2OV0gWzw4MDY1YWExMD5dIChtbWNf
-YXBwX3NlbmRfc2NyKSBmcm9tIFs8ODA2NTliM2M+XSAobW1jX3NkX3NldHVwX2NhcmQrMHg0Yy8w
-eDMxOCkKWyAgICAyLjYyODA5Ml0gWzw4MDY1OWIzYz5dIChtbWNfc2Rfc2V0dXBfY2FyZCkgZnJv
-bSBbPDgwNjU5ZjBjPl0gKG1tY19zZF9pbml0X2NhcmQrMHgxMDQvMHg0MzApClsgICAgMi42MzY2
-MDFdIFs8ODA2NTlmMGM+XSAobW1jX3NkX2luaXRfY2FyZCkgZnJvbSBbPDgwNjVhM2UwPl0gKG1t
-Y19hdHRhY2hfc2QrMHhjYy8weDE2YykKWyAgICAyLjY0NDY3OF0gWzw4MDY1YTNlMD5dIChtbWNf
-YXR0YWNoX3NkKSBmcm9tIFs8ODA2NTMwMWM+XSAobW1jX3Jlc2NhbisweDNhYy8weDQwYykKWyAg
-ICAyLjY1MjMzMl0gWzw4MDY1MzAxYz5dIChtbWNfcmVzY2FuKSBmcm9tIFs8ODAxNDMyNDQ+XSAo
-cHJvY2Vzc19vbmVfd29yaysweDJkOC8weDc4MCkKWyAgICAyLjY2MDIzOV0gWzw4MDE0MzI0ND5d
-IChwcm9jZXNzX29uZV93b3JrKSBmcm9tIFs8ODAxNDM3MzA+XSAod29ya2VyX3RocmVhZCsweDQ0
-LzB4NTk4KQpbICAgIDIuNjY4MzIzXSBbPDgwMTQzNzMwPl0gKHdvcmtlcl90aHJlYWQpIGZyb20g
-Wzw4MDE0YjVmOD5dIChrdGhyZWFkKzB4MTQ4LzB4MTUwKQpbICAgIDIuNjc1NzA4XSBbPDgwMTRi
-NWY4Pl0gKGt0aHJlYWQpIGZyb20gWzw4MDEwMTBiND5dIChyZXRfZnJvbV9mb3JrKzB4MTQvMHgy
-MCkKWyAgICAyLjY4MjkxMl0gRXhjZXB0aW9uIHN0YWNrKDB4ZWU4ZmRmYjAgdG8gMHhlZThmZGZm
-OCkKWyAgICAyLjY4Nzk1NF0gZGZhMDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKWyAgICAyLjY5NjExOF0gZGZj
-MDogMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAg
-MDAwMDAwMDAgMDAwMDAwMDAKWyAgICAyLjcwNDI3N10gZGZlMDogMDAwMDAwMDAgMDAwMDAwMDAg
-MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMTMgMDAwMDAwMDAKClRoZSBvYnZpb3VzIGZpeCB3b3Vs
-ZCBiZSB0byB1c2UgJ3NwaW5fbG9ja19pbml0KCknIG9uICdwY2hhbi0+bG9jaycKYmVmb3JlIGF0
-dGVtcHRpbmcgdG8gY2FsbCAnc3Bpbl9sb2NrX2lycXNhdmUoKScgaW4gJ293bF9kbWFfZ2V0X3Bj
-aGFuKCknLgoKSG93ZXZlciwgYWNjb3JkaW5nIHRvIE1hbml2YW5uYW4gU2FkaGFzaXZhbSwgJ3Bj
-aGFuLT5sb2NrJyB3YXMgc3VwcG9zZWQKdG8gb25seSBwcm90ZWN0ICdwY2hhbi0+dmNoYW4nIHdo
-aWxlICdvZC0+bG9jaycgZG9lcyBhIHNpbWlsYXIgam9iIGluCidvd2xfZG1hX3Rlcm1pbmF0ZV9w
-Y2hhbigpJy4KClRoZXJlZm9yZSwgdGhpcyBwYXRjaCBzdWJzdGl0dXRlcyAncGNoYW4tPmxvY2sn
-IHdpdGggJ29kLT5sb2NrJyBhbmQKcmVtb3ZlcyB0aGUgJ2xvY2snIGF0dHJpYnV0ZSBpbiAnb3ds
-X2RtYV9wY2hhbicgc3RydWN0LgoKRml4ZXM6IDQ3ZTIwNTc3YzI0ZCAoImRtYWVuZ2luZTogQWRk
-IEFjdGlvbnMgU2VtaSBPd2wgZmFtaWx5IFM5MDAgRE1BCmRyaXZlciIpCgpTaWduZWQtb2ZmLWJ5
-OiBDcmlzdGlhbiBDaW9jYWx0ZWEgPGNyaXN0aWFuLmNpb2NhbHRlYUBnbWFpbC5jb20+ClJldmll
-d2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5h
-cm8ub3JnPgpBY2tlZC1ieTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgotLS0K
-Q2hhbmdlcyBpbiB2NDoKKiBDaGFuZ2UgcGF0Y2ggdGl0bGUgZnJvbSAnZG1hOiBhY3Rpb25zOiBG
-aXggbG9ja2RlcCBzcGxhdCBmb3Igb3dsLWRtYScKICB0byAnZG1hZW5naW5lOiBvd2w6IFVzZSBj
-b3JyZWN0IGxvY2sgaW4gb3dsX2RtYV9nZXRfcGNoYW4oKScKKiBBZGQgRml4ZXMgYW5kIEFja2Vk
-LWJ5IHRhZ3MgaW4gdGhlIGNvbW1pdCBtZXNzYWdlCgpDaGFuZ2VzIGluIHYzOgoqIEdldCByaWQg
-b2YgdGhlIGtlcm5lbGRvYyBjb21tZW50IGZvciB0aGUgcmVtb3ZlZCBzdHJ1Y3QgYXR0cmlidXRl
-CiogQWRkIHRoZSBSZXZpZXdlZC1ieSB0YWcgaW4gdGhlIGNvbW1pdCBtZXNzYWdlCgpDaGFuZ2Vz
-IGluIHYyOgoqIEltcHJvdmUgdGhlIGZpeCBhcyBzdWdnZXN0ZWQgYnkgTWFuaXZhbm5hbiBTYWRo
-YXNpdmFtOiBzdWJzdGl0dXRlCiAgJ3BjaGFuLT5sb2NrJyB3aXRoICdvZC0+bG9jaycgYW5kIGdl
-dCByaWQgb2YgdGhlICdsb2NrJyBhdHRyaWJ1dGUgaW4KICAnb3dsX2RtYV9wY2hhbicgc3RydWN0
-CiogVXBkYXRlIHRoZSBjb21taXQgbWVzc2FnZSB0byByZWZsZWN0IHRoZSBjaGFuZ2VzCgogZHJp
-dmVycy9kbWEvb3dsLWRtYS5jIHwgOCArKystLS0tLQogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0
-aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2RtYS9vd2wtZG1h
-LmMgYi9kcml2ZXJzL2RtYS9vd2wtZG1hLmMKaW5kZXggYzY4MzA1MTI1N2ZkLi42NmVmNzBiMDBl
-YzAgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZG1hL293bC1kbWEuYworKysgYi9kcml2ZXJzL2RtYS9v
-d2wtZG1hLmMKQEAgLTE3NSwxMyArMTc1LDExIEBAIHN0cnVjdCBvd2xfZG1hX3R4ZCB7CiAgKiBA
-aWQ6IHBoeXNpY2FsIGluZGV4IHRvIHRoaXMgY2hhbm5lbAogICogQGJhc2U6IHZpcnR1YWwgbWVt
-b3J5IGJhc2UgZm9yIHRoZSBkbWEgY2hhbm5lbAogICogQHZjaGFuOiB0aGUgdmlydHVhbCBjaGFu
-bmVsIGN1cnJlbnRseSBiZWluZyBzZXJ2ZWQgYnkgdGhpcyBwaHlzaWNhbCBjaGFubmVsCi0gKiBA
-bG9jazogYSBsb2NrIHRvIHVzZSB3aGVuIGFsdGVyaW5nIGFuIGluc3RhbmNlIG9mIHRoaXMgc3Ry
-dWN0CiAgKi8KIHN0cnVjdCBvd2xfZG1hX3BjaGFuIHsKIAl1MzIJCQlpZDsKIAl2b2lkIF9faW9t
-ZW0JCSpiYXNlOwogCXN0cnVjdCBvd2xfZG1hX3ZjaGFuCSp2Y2hhbjsKLQlzcGlubG9ja190CQls
-b2NrOwogfTsKIAogLyoqCkBAIC00MzcsMTQgKzQzNSwxNCBAQCBzdGF0aWMgc3RydWN0IG93bF9k
-bWFfcGNoYW4gKm93bF9kbWFfZ2V0X3BjaGFuKHN0cnVjdCBvd2xfZG1hICpvZCwKIAlmb3IgKGkg
-PSAwOyBpIDwgb2QtPm5yX3BjaGFuczsgaSsrKSB7CiAJCXBjaGFuID0gJm9kLT5wY2hhbnNbaV07
-CiAKLQkJc3Bpbl9sb2NrX2lycXNhdmUoJnBjaGFuLT5sb2NrLCBmbGFncyk7CisJCXNwaW5fbG9j
-a19pcnFzYXZlKCZvZC0+bG9jaywgZmxhZ3MpOwogCQlpZiAoIXBjaGFuLT52Y2hhbikgewogCQkJ
-cGNoYW4tPnZjaGFuID0gdmNoYW47Ci0JCQlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZwY2hhbi0+
-bG9jaywgZmxhZ3MpOworCQkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmb2QtPmxvY2ssIGZsYWdz
-KTsKIAkJCWJyZWFrOwogCQl9CiAKLQkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmcGNoYW4tPmxv
-Y2ssIGZsYWdzKTsKKwkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmb2QtPmxvY2ssIGZsYWdzKTsK
-IAl9CiAKIAlyZXR1cm4gcGNoYW47Ci0tIAoyLjI2LjIKCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Sat, May 02, 2020 at 05:53:33PM +0530, Vinod Koul wrote:
+> Hi Cristian,
+> 
+> On 29-04-20, 18:28, Cristian Ciocaltea wrote:
+> > When the kernel is built with lockdep support and the owl-dma driver is
+> > used, the following message is shown:
+> 
+> First the patch title needs upate, we describe the patch in the title
+> and not the cause. So use correct lock, or use od lock might be better
+> titles, pls revise.
+> 
+> Second, the susbsystem is named dmaengine:... not dma:.. You can always
+> check that by using git log on the respective file
+> 
+> Pls do add fixes and further acks received on next iteration.
+>
+
+Hi Vinod,
+
+Thank you for reviewing and sorry for the mistakes! I'll be more careful
+next time with all those details.
+
+I've submitted the updated patch: [PATCH v4 1/1] dmaengine: owl: Use
+correct lock in owl_dma_get_pchan()
+
+Kind regards,
+Cristi
+
+> > 
+> > [    2.496939] INFO: trying to register non-static key.
+> > [    2.501889] the code is fine but needs lockdep annotation.
+> > [    2.507357] turning off the locking correctness validator.
+> > [    2.512834] CPU: 0 PID: 12 Comm: kworker/0:1 Not tainted 5.6.3+ #15
+> > [    2.519084] Hardware name: Generic DT based system
+> > [    2.523878] Workqueue: events_freezable mmc_rescan
+> > [    2.528681] [<801127f0>] (unwind_backtrace) from [<8010da58>] (show_stack+0x10/0x14)
+> > [    2.536420] [<8010da58>] (show_stack) from [<8080fbe8>] (dump_stack+0xb4/0xe0)
+> > [    2.543645] [<8080fbe8>] (dump_stack) from [<8017efa4>] (register_lock_class+0x6f0/0x718)
+> > [    2.551816] [<8017efa4>] (register_lock_class) from [<8017b7d0>] (__lock_acquire+0x78/0x25f0)
+> > [    2.560330] [<8017b7d0>] (__lock_acquire) from [<8017e5e4>] (lock_acquire+0xd8/0x1f4)
+> > [    2.568159] [<8017e5e4>] (lock_acquire) from [<80831fb0>] (_raw_spin_lock_irqsave+0x3c/0x50)
+> > [    2.576589] [<80831fb0>] (_raw_spin_lock_irqsave) from [<8051b5fc>] (owl_dma_issue_pending+0xbc/0x120)
+> > [    2.585884] [<8051b5fc>] (owl_dma_issue_pending) from [<80668cbc>] (owl_mmc_request+0x1b0/0x390)
+> > [    2.594655] [<80668cbc>] (owl_mmc_request) from [<80650ce0>] (mmc_start_request+0x94/0xbc)
+> > [    2.602906] [<80650ce0>] (mmc_start_request) from [<80650ec0>] (mmc_wait_for_req+0x64/0xd0)
+> > [    2.611245] [<80650ec0>] (mmc_wait_for_req) from [<8065aa10>] (mmc_app_send_scr+0x10c/0x144)
+> > [    2.619669] [<8065aa10>] (mmc_app_send_scr) from [<80659b3c>] (mmc_sd_setup_card+0x4c/0x318)
+> > [    2.628092] [<80659b3c>] (mmc_sd_setup_card) from [<80659f0c>] (mmc_sd_init_card+0x104/0x430)
+> > [    2.636601] [<80659f0c>] (mmc_sd_init_card) from [<8065a3e0>] (mmc_attach_sd+0xcc/0x16c)
+> > [    2.644678] [<8065a3e0>] (mmc_attach_sd) from [<8065301c>] (mmc_rescan+0x3ac/0x40c)
+> > [    2.652332] [<8065301c>] (mmc_rescan) from [<80143244>] (process_one_work+0x2d8/0x780)
+> > [    2.660239] [<80143244>] (process_one_work) from [<80143730>] (worker_thread+0x44/0x598)
+> > [    2.668323] [<80143730>] (worker_thread) from [<8014b5f8>] (kthread+0x148/0x150)
+> > [    2.675708] [<8014b5f8>] (kthread) from [<801010b4>] (ret_from_fork+0x14/0x20)
+> > [    2.682912] Exception stack(0xee8fdfb0 to 0xee8fdff8)
+> > [    2.687954] dfa0:                                     00000000 00000000 00000000 00000000
+> > [    2.696118] dfc0: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+> > [    2.704277] dfe0: 00000000 00000000 00000000 00000000 00000013 00000000
+> > 
+> > The obvious fix would be to use 'spin_lock_init()' on 'pchan->lock'
+> > before attempting to call 'spin_lock_irqsave()' in 'owl_dma_get_pchan()'.
+> > 
+> > However, according to Manivannan Sadhasivam, 'pchan->lock' was supposed
+> > to only protect 'pchan->vchan' while 'od->lock' does a similar job in
+> > 'owl_dma_terminate_pchan'.
+> > 
+> > Therefore, this patch will simply substitute 'pchan->lock' with 'od->lock'
+> > and removes the 'lock' attribute in 'owl_dma_pchan' struct.
+> > 
+> > Signed-off-by: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+> > Reviewed-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> > ---
+> > Changes in v3:
+> > * Get rid of the kerneldoc comment for the removed struct attribute
+> > * Add the Reviewed-by tag in the commit message
+> > 
+> > Changes in v2:
+> > * Improve the fix as suggested by Manivannan Sadhasivam: substitute
+> >   'pchan->lock' with 'od->lock' and get rid of the 'lock' attribute in
+> >   'owl_dma_pchan' struct
+> > * Update the commit message to reflect the changes
+> > 
+> >  drivers/dma/owl-dma.c | 8 +++-----
+> >  1 file changed, 3 insertions(+), 5 deletions(-)
+> > 
+> > diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+> > index c683051257fd..66ef70b00ec0 100644
+> > --- a/drivers/dma/owl-dma.c
+> > +++ b/drivers/dma/owl-dma.c
+> > @@ -175,13 +175,11 @@ struct owl_dma_txd {
+> >   * @id: physical index to this channel
+> >   * @base: virtual memory base for the dma channel
+> >   * @vchan: the virtual channel currently being served by this physical channel
+> > - * @lock: a lock to use when altering an instance of this struct
+> >   */
+> >  struct owl_dma_pchan {
+> >  	u32			id;
+> >  	void __iomem		*base;
+> >  	struct owl_dma_vchan	*vchan;
+> > -	spinlock_t		lock;
+> >  };
+> >  
+> >  /**
+> > @@ -437,14 +435,14 @@ static struct owl_dma_pchan *owl_dma_get_pchan(struct owl_dma *od,
+> >  	for (i = 0; i < od->nr_pchans; i++) {
+> >  		pchan = &od->pchans[i];
+> >  
+> > -		spin_lock_irqsave(&pchan->lock, flags);
+> > +		spin_lock_irqsave(&od->lock, flags);
+> >  		if (!pchan->vchan) {
+> >  			pchan->vchan = vchan;
+> > -			spin_unlock_irqrestore(&pchan->lock, flags);
+> > +			spin_unlock_irqrestore(&od->lock, flags);
+> >  			break;
+> >  		}
+> >  
+> > -		spin_unlock_irqrestore(&pchan->lock, flags);
+> > +		spin_unlock_irqrestore(&od->lock, flags);
+> >  	}
+> >  
+> >  	return pchan;
+> > -- 
+> > 2.26.2
+> 
+> -- 
+> ~Vinod
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
