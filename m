@@ -2,131 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 760811C2692
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 17:32:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 880FD1C2699
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 17:39:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=l2QbzUdh0jFFXs+dnMaMGSis8OIuxhTSnjYW11cnuFs=; b=R0FMj9IkZFlYFV
-	RfBjdNMM4v41xb0PkW71LY8xV7ageWnwf87Vs7WOrexFgOl68+aV8kW7k+5mFSyv35JFRkx97nYAA
-	2h3KmOxZFjb8E4Q3umAwSit3hFu1KPuD+K4su0+8XXfv2YP7+yU9R+ouZ1vRlVt8i2Yw0L1K1H1/e
-	q6THj6lr2nAH1PYgshE1mk1c/HEOvxVwI9JZfiZt69OvpWS37AEx6aEKiBp4ehsz7F8Ucm63KJkV5
-	8tWdZ6R9gjgNEUEP9Cabec+ugf3soq77eoVmx1HVGoa8f+4ii0i4p7poYlSO4uOinElFFQQDbe+6s
-	pfNpGX3jmZyzfsS2s3Gg==;
+	List-Owner; bh=R6r41NMy5AHznPQiqI+GjL0u1znqh8TpSHTDDMG1lZk=; b=sTvUJ3sdq4NlJV
+	XscvhrlOyo0QEQOVcyPE/Oq04qXhQL39KUR+uUiUDOIKoAMwczsL6/YbcZ665S1XFxJROYcryMexo
+	IMiLHEeN3KL5dcfDWDzITJpV0AmYXa2rHbsNwO5kw2qyzTGdP6Hlma+nsrD6Q5jThRFYmMbRt2e+y
+	0cvGQvsD9LFhm0OTRzeju+Ve8E4uGqfK+MubzUt6ADJEY21NSWmyuo/2W1Pdg12CNZFlcoqi8gaKR
+	dWDD1skTZUWF8kWLn+AYuH4Rs4jw/rYAyF0j2BTXNfNft4GGA+NczQGzeX7HcjhUuPiBOS+XYQD2a
+	oeXh4mihh+DPdMchBMnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUu8B-0002Fb-Is; Sat, 02 May 2020 15:32:43 +0000
-Received: from esa4.hgst.iphmx.com ([216.71.154.42])
+	id 1jUuEC-00060Q-7W; Sat, 02 May 2020 15:38:56 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUu7z-0002Cf-Ak; Sat, 02 May 2020 15:32:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
- t=1588433551; x=1619969551;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-transfer-encoding:mime-version;
- bh=04E+l5kWK4GkVHwVhbdQBMiNlor+7v66LC6zWJWB2dk=;
- b=GcmDYNnMTO69LUCVaIbZfBD61vKRGsX+NRVFr2m6P3Qf7+6P1JKMKP5T
- W3YZRDKDJWTh4Dm80SQvlhCyQCGEKDZC4eIxtrCq6GZIKeXGxxSDT0gNT
- UhQAVEs4EeURyx7q5RmZbcgWZKKVTphfVLKOl7ehTpvyhapJBDmd/mUcs
- sVAriOZkgW+59IX6ffRiClJtaWWumTSb39Bb+n+LujvRDkAGi+ecRFfCW
- hHjnYe5cXJQ67LUjPjdqj9XEcMfQF0DU6A5+clvOMiXNB0IqUnbwAgd2D
- 9Y7GMtDU4NOkIGyuqTFVpAJMFgo5ApVe6Dp9+zUjUHwKClhhtdJ11bhoF A==;
-IronPort-SDR: kEkk8QVHflhMfH30NyjoKOD9CrnaLt5hCSUEgbOZnJUuQof68IaSXF0Yi33fIFVahcKuX+s92h
- UmbaOrvdRRimGMLyExYI35OAZrRU4ZENmE6NdOp1HUKPm13tpxkTeva/usPH8g/O/97Zl20P5z
- uPuTDlU7Z/iBvq8/jTl8qJ4labsbQPURLWFaNXBQEMKv+VPemsfOnj1yX7BQaW7SWae9x1CikO
- wwtYR8aTZf1Bv90vQ3SWHOYOyJKg48apb3tl9sx6Ps2bZVArF+2aXhQUChd3uTnE3mPtzftxqZ
- 4cU=
-X-IronPort-AV: E=Sophos;i="5.73,343,1583164800"; d="scan'208";a="136748102"
-Received: from mail-dm6nam11lp2176.outbound.protection.outlook.com (HELO
- NAM11-DM6-obe.outbound.protection.outlook.com) ([104.47.57.176])
- by ob1.hgst.iphmx.com with ESMTP; 02 May 2020 23:32:29 +0800
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=X3bum2u8aosVERSZioXwB3PzsGx8TZ6oEG6qwRFUzHYkbcLvosRwzBdExgbPcYFbUYHjZfKonIglXYPq35vBG+ZadLTA0S0ELTo/kmP5yulBDpLsDZidu7OlbYh4KjOIzQXh3AxqVWBbjnsxcmOZIwbBvGMm6Nf8De3rkewq1o1LB4sB4lJwHF+61o1Faa4IDf7PhUM0gUcLlXs8u5d52JP3aPqhIQ1/vk8HKyaBGQdW/sBOThOlFObz+TBIMvZg6MFZ27w4SW/l5C2PUvABLbf1kibR3HxtNimhpA6a4eLSm42147KuuCmyi6jYY2fBImbhQkPATfd7qdLhozP5sQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OwStFu/X5ULPg/f/dpLqjNW2z539iJpOz7g5RJbT6PE=;
- b=ePXalTKbWmxECxO3v/EUheIXF5UCFVW627Ee1tBuA45SxGw7cJIpfdG2PQIdPam+LFni7GtXzO7hKsIp916lI/mW9Fm6yfiL+TrDCP21k/BskBQgMp+8SwgFvf2w409W1dfMBAnBCjxszaVoxOMbf+zn41aAnOHadwo4hXwMdc714mz+ay3v2tRiXhTTI0hxvTk7dxNzoBF4hjCzo5HJyS10iC9nN5WRwC+SGLmxGNru+MuCRFK3kgQjesZS0J9z+MZj8+w/HjrAd0DmUR29h6tWDU962OTjOw8UX81u10YvFeNEs++/qwPTG/dWCVSdPVyvrsgM1DDYes9Cw+i57Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
- header.d=wdc.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=OwStFu/X5ULPg/f/dpLqjNW2z539iJpOz7g5RJbT6PE=;
- b=O4QUbBDR55bpVomdTHrs1r6rGpfY2h9dtdFC96ne2CjebkhBum6zHAopCEFt05XgvW82+Z7bTZ3UEzghB1secBmPJqnd+H5X7aNFD8I/+XPxYg1vLkFeDJNDU/wwj6bPUW7sttGeKTdsjlo1IUBAwovzrRG6eHOuKqzuT2Dj6cc=
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
- by SN6PR04MB4991.namprd04.prod.outlook.com (2603:10b6:805:97::16)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.19; Sat, 2 May
- 2020 15:32:28 +0000
-Received: from SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
- ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.2958.027; Sat, 2 May 2020
- 15:32:28 +0000
-From: Avri Altman <Avri.Altman@wdc.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
- <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
-Subject: RE: [PATCH v3 3/5] scsi: ufs: add LU Dedicated buffer mode support
- for WriteBooster
-Thread-Topic: [PATCH v3 3/5] scsi: ufs: add LU Dedicated buffer mode support
- for WriteBooster
-Thread-Index: AQHWH8ZIhJa0kw+eXUm7uWPkstnlKaiU68jw
-Date: Sat, 2 May 2020 15:32:27 +0000
-Message-ID: <SN6PR04MB4640A20146AFE35717580149FCA80@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200501143835.26032-1-stanley.chu@mediatek.com>
- <20200501143835.26032-4-stanley.chu@mediatek.com>
-In-Reply-To: <20200501143835.26032-4-stanley.chu@mediatek.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: mediatek.com; dkim=none (message not signed)
- header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
-x-originating-ip: [77.138.4.172]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 934e1fa2-609c-4ebb-a80d-08d7eeae0596
-x-ms-traffictypediagnostic: SN6PR04MB4991:
-x-microsoft-antispam-prvs: <SN6PR04MB4991F84DC71D463B8ADEE385FCA80@SN6PR04MB4991.namprd04.prod.outlook.com>
-wdcipoutbound: EOP-TRUE
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 039178EF4A
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: J+hO5pWi9ABZoPVaFNbVMdWByy9PLkXGnUKe5gG8NXiecP98sDdZEsxJjVDks3+m0kzp8S8kTpeWSory1ubw6oxNJdvqfAbqKvJH152l3hY6fMxNmT2KCvZtcXW6228nlpxDvhxJteVHCXoQ96PU2puDb8VLEBRXHmm/EQXnnRjPEA4BXpPIu8D0OG6io2LD3iD+1PuZPcyOVX1nLNyJygQCDH/OcGy750U2FXvIAribmNIAn5CBNX/B7NallqCKPnEXUwxsFmBPtoX4IDTJeHU5qzaJIySdUK3m5dL5Q4B4MFrwu8vT/brFOAYNjh6C+mbJhONjzBPxfVZI96n4k38T5hASEYGhbUiHS4EMuYC3SnwfJKd+uXQYmuABhrmLa3AGJ64T+wWNMx7F6aQLEQuEUNWlZhZlJKOooZXnt20td6d+xXhHoMpAZ6VykKNe
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(376002)(136003)(39860400002)(366004)(346002)(54906003)(110136005)(6506007)(316002)(4326008)(2906002)(186003)(71200400001)(26005)(66556008)(66946007)(76116006)(64756008)(66476007)(86362001)(66446008)(52536014)(55016002)(478600001)(8936002)(9686003)(7696005)(5660300002)(33656002)(7416002)(8676002);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: MFtsjXgm8o7qi2FGlcTkbw+1Fq7a2Nf1YF9Tfq9lJbg/8FHpz7lUwFZC7fCUu6GeJzhN6AGbLqSbnNxeOzIXU1Gz3qLaiXaDxBtd9LiKKLLeBtQ9wzukLcHJ00gdDsssEHs1hpVR2gJ+2TtB2oXrK47WG2dPZZI07Ze73g63U0PdbYiIVl/Lt4R/uG9g35WPWnJEqG2d+Ut3zAJre8zXFQG1p3RNSF4b0x517VacmC8YVBxsJsfjWjPoJ4G2gFec9lt9l1vM3iOxW16XAOX9Eu1PCOxsSQPeAADk1Bul0xoU17pOaXtX7v2tEYLtnqTAQBq2ndD1dgDsqzMSUnwtuVSkqdxvrw0v+aA5Z4KZZbTKzQ23+CEPuPMPEab4Ybt9GI/uWr6Be+EGFfFMmU6VUih9kQv4/38QtOfLif1Z8keTO1OegfZX9vbBQnrewYCfNk2ydITzm+YcsYToNJL5m3gMp7RFqUCQTdQgUlDe3qEJ+TQm3EPSbDAF/FgPl1PVaI2tBXAVGkeDQ9jHKgQ1TXPCnu7WbvKiuh1S0U8e4Xdr8PbJ7+aSXSsQZjGyssxN6jVIcoq7TM378IbLIT/sU/HQBSRcXj/g63Z9IxW59bsfF6cTOM/1RDhcibAo5sglkbURkVjrcutt6Rv3MpqoullGqJunYbvXVzw9JU3GyKqOBxgs0Q/w9eitu5gSWL8xInwJ1E/fQ/Tg6tIlQIW/tp7d4EktATYzMvVcmJkTw1NdDRhb9oyTRJGuMPWQMiCHfzw/Cp6CTCSZfJdR4qmEvWm+90jSOvAbjwXVW52jNlc=
-x-ms-exchange-transport-forked: True
+ id 1jUuE3-0005zb-Ol
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 15:38:50 +0000
+Received: by mail-io1-xd42.google.com with SMTP id f3so7761060ioj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sat, 02 May 2020 08:38:46 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=K33IZXSJWswi8Ds/yD6+rsycl91MHbpswBRBz+U2Io0=;
+ b=vMfGTWVakGonubzG51584RZk9klh2RfB0NyV/0y7seVhQ2cSPJdo2g4cHCv5MBU40I
+ XhxxSzEIrSOy8fz07CXR4aRbVT1lNZcjrf9ZSgsgGZYUYg/bOCOEqsvVEho4kM+HElEm
+ G28Y5pANZxE+RsWFKyhYQu6CVfJwNbsRmHzGEi2+yKfR5XUhEa8Ys1SW+Tg1GsnpEZ4I
+ h8pLMxSvKwwPZh6facSImuc1Vns1RMjhOQtrZAIymAInecVd8q0wPQ6uH+Ls9a0ziiIb
+ bRFBi9blqVWv4AYkQlVSNpzZtSnBlHPRXFTbunKkTVz6Wy7hAjec6bJ3KMHgrervti89
+ 6hDQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=K33IZXSJWswi8Ds/yD6+rsycl91MHbpswBRBz+U2Io0=;
+ b=s2CzjmmdFN/D6YSGORh6LaW019f9LN26X0ERieZZ//lAR8yohC2m1T1xogtn0i3FgD
+ zgAJOpsOXyRjqwFF1Qc3PrJcoPRq3WyNJh3Sxd6Fl/AXWBqxdV/bTuCQTy7ertQ6uK9K
+ Sa6JjFZjggMTL2/aR38htIQ6TAys+ZTotwEd+PMqcl3gNOyz/A6acAiI1T9aER0/8NHT
+ kY/ZNmrnJtSrO5xbxR5SSz2z4jhqtGHKJ+LvaU8KOW7YVfG/6jDQLS4j/RUpHbb6/8ph
+ 0STaBkRnwyBDGU+/9j/z6SB0rsVfgTfyFtAA1zzi+6YqNbxtqfqwp/ynHg/UYPoRmoEk
+ EHUQ==
+X-Gm-Message-State: AGi0PuYxjHAGXCRQ0fLOlamwcyQY6fBrniR0acBcAx+7lSE9JV6txlhL
+ PvbJCCNLL3plVZvoMnvVHEswH0HtUTpcQFqJoSs=
+X-Google-Smtp-Source: APiQypJX/eV7kJ+cJd9BMGToUWat2Jr7juiA0cI3LusNucxqRxA1D+4j+xMbYiCeAweKAx2PUfZo4cEXhVS7Y2LO0+o=
+X-Received: by 2002:a02:6243:: with SMTP id d64mr7653133jac.135.1588433925217; 
+ Sat, 02 May 2020 08:38:45 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: wdc.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 934e1fa2-609c-4ebb-a80d-08d7eeae0596
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 May 2020 15:32:28.0145 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 8i+BFtxoCKBros1RhpY6pTct2X611QYv2hhJ3Ag5v511rGcsUf2HN2eYADI+vMzRuo3UyRsno9HW77+AAU98NA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4991
+References: <20200429215402.18125-1-tony@atomide.com>
+ <20200429215402.18125-12-tony@atomide.com>
+In-Reply-To: <20200429215402.18125-12-tony@atomide.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Sat, 2 May 2020 10:38:33 -0500
+Message-ID: <CAHCN7x+GU+X7UsWqz53sBjMUxH8XEFkymdLdD-2EJ5RRyR7EJQ@mail.gmail.com>
+Subject: Re: [PATCH 11/15] ARM: dts: Configure system timers for omap3
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_083231_468002_A0430DE6 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200502_083847_838632_264A7059 
+X-CRM114-Status: GOOD (  21.30  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.154.42 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [aford173[at]gmail.com]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [aford173[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -147,95 +95,636 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Lokesh Vutla <lokeshvutla@ti.com>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Graeme Smecher <gsmecher@threespeedlogic.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>, Tero Kristo <t-kristo@ti.com>,
+ Stephen Boyd <sboyd@kernel.org>, Andreas Kemnade <andreas@kemnade.info>,
+ Keerthy <j-keerthy@ti.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux-OMAP <linux-omap@vger.kernel.org>,
+ Brian Hutchinson <b.hutchman@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
- Hi Stanley,
-Few more nits.
-Thanks,
-Avri
-
-> 
-> According to UFS specification, there are two WriteBooster mode of
-> operations: "LU dedicated buffer" mode and "shared buffer" mode.
-> In the "LU dedicated buffer" mode, the WriteBooster Buffer is
-> dedicated to a logical unit.
-> 
-> If the device supports the "LU dedicated buffer" mode, this mode is
-> configured by setting bWriteBoosterBufferType to 00h. The logical
-> unit WriteBooster Buffer size is configured by setting the
-> dLUNumWriteBoosterBufferAllocUnits field of the related Unit
-> Descriptor. Only a value greater than zero enables the WriteBooster
-> feature in the logical unit.
-> 
-> Modify ufshcd_wb_probe() as above description to support LU Dedicated
-> buffer mode.
-> 
-> Note that according to UFS 3.1 specification, the valid value of
-> bDeviceMaxWriteBoosterLUs parameter in Geometry Descriptor is 1,
-> which means at most one LUN can have WriteBooster buffer in "LU
-> dedicated buffer mode". Therefore this patch supports only one
-> LUN with WriteBooster enabled. All WriteBooster related sysfs nodes
-> are specifically mapped to the LUN with WriteBooster enabled in
-> LU Dedicated buffer mode.
-> 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+On Wed, Apr 29, 2020 at 4:54 PM Tony Lindgren <tony@atomide.com> wrote:
+>
+> We can now init system timers using the dmtimer and 32k counter
+> based on only devicetree data and drivers/clocksource timers.
+> Let's configure the clocksource and clockevent, and drop the old
+> unused platform data.
+>
+> As we're just dropping platform data, and the early platform data
+> init is based on the custom ti,hwmods property, we want to drop
+> both the platform data and ti,hwmods property in a single patch.
+>
+> Since the dmtimer can use both 32k clock and system clock as the
+> source, let's also configure the SoC specific default values. The
+> board specific dts files can reconfigure these with assigned-clocks
+> and assigned-clock-parents as needed.
+>
+> Let's also update the dts file to use #include while at it.
+>
+> Cc: devicetree@vger.kernel.org
+> Cc: Adam Ford <aford173@gmail.com>
+> Cc: Andreas Kemnade <andreas@kemnade.info>
+> Cc: "H. Nikolaus Schaller" <hns@goldelico.com>
+> Cc: Keerthy <j-keerthy@ti.com>
+> Cc: Lokesh Vutla <lokeshvutla@ti.com>
+> Cc: Tero Kristo <t-kristo@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
 > ---
->  drivers/scsi/ufs/ufs-sysfs.c | 14 ++++++++-
->  drivers/scsi/ufs/ufs.h       |  7 +++++
->  drivers/scsi/ufs/ufshcd.c    | 60 +++++++++++++++++++++++++++++-------
->  drivers/scsi/ufs/ufshcd.h    |  1 +
->  4 files changed, 70 insertions(+), 12 deletions(-)
-> 
-> diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
-> index b86b6a40d7e6..a162f63098e5 100644
-> --- a/drivers/scsi/ufs/ufs-sysfs.c
-> +++ b/drivers/scsi/ufs/ufs-sysfs.c
-> @@ -622,16 +622,28 @@ static const struct attribute_group
-> ufs_sysfs_string_descriptors_group = {
->         .attrs = ufs_sysfs_string_descriptors,
+>  arch/arm/boot/dts/am3517.dtsi              |  28 +++-
+
+For the series on the am3517-evm,
+
+Tested-by: Adam Ford <aford173@gmail.com>
+
+>  arch/arm/boot/dts/omap3-beagle.dts         |  33 +++++
+>  arch/arm/boot/dts/omap3-devkit8000.dts     |  33 +++++
+>  arch/arm/boot/dts/omap3.dtsi               | 135 +++++++++++++++----
+>  arch/arm/mach-omap2/board-generic.c        |  10 +-
+>  arch/arm/mach-omap2/omap_hwmod_3xxx_data.c | 146 +--------------------
+>  6 files changed, 210 insertions(+), 175 deletions(-)
+>
+> diff --git a/arch/arm/boot/dts/am3517.dtsi b/arch/arm/boot/dts/am3517.dtsi
+> --- a/arch/arm/boot/dts/am3517.dtsi
+> +++ b/arch/arm/boot/dts/am3517.dtsi
+> @@ -169,5 +169,29 @@ &mmu_isp {
+>         status = "disabled";
 >  };
-> 
-> +static bool ufshcd_is_wb_flags(enum flag_idn idn)
-Inline?
-And just return (idn >= QUERY_FLAG_IDN_WB_EN &&  idn <= QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8)
-
-> +{
-> +       if (idn >= QUERY_FLAG_IDN_WB_EN &&
-> +           idn <= QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8)
-> +               return true;
-> +       else
-> +               return false;
-> +}
+>
+> -/include/ "am35xx-clocks.dtsi"
+> -/include/ "omap36xx-am35xx-omap3430es2plus-clocks.dtsi"
+> +#include "am35xx-clocks.dtsi"
+> +#include "omap36xx-am35xx-omap3430es2plus-clocks.dtsi"
 > +
-
-
-> 
-> +int ufshcd_wb_get_flag_index(struct ufs_hba *hba)
-> +{
-> +       if (hba->dev_info.b_wb_buffer_type ==
-> WB_BUF_MODE_LU_DEDICATED)
-> +               return hba->dev_info.wb_dedicated_lu;
-> +       else
-No need for else.
-Maybe make this static inline in ufshcd.h?
-
-> +               return 0;
-> +}
+> +/* Timer for clocksource, configured without interrupts */
+> +&timer1_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               /delete-property/interrupts;
+> +               /delete-property/interrupts-extended;
+> +               assigned-clocks = <&gpt1_fck>;
+> +               assigned-clock-parents = <&sys_ck>;
+> +       };
+> +};
 > +
+> +/* Timer for clockevent */
+> +&timer2_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               assigned-clocks = <&gpt2_fck>;
+> +               assigned-clock-parents = <&sys_ck>;
+> +       };
+> +};
+> diff --git a/arch/arm/boot/dts/omap3-beagle.dts b/arch/arm/boot/dts/omap3-beagle.dts
+> --- a/arch/arm/boot/dts/omap3-beagle.dts
+> +++ b/arch/arm/boot/dts/omap3-beagle.dts
+> @@ -304,6 +304,39 @@ &usbhsehci {
+>         phys = <0 &hsusb2_phy>;
+>  };
+>
+> +/* Unusable as clockevent, allow to idle */
+> +&timer1_target {
+> +       /delete-property/ti,no-reset-on-init;
+> +       /delete-property/ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,omap3430-timer";
+> +               interrupts = <37>;
+> +       };
+> +};
+> +
+> +/* Timer for clocksource, configured without interrupts */
+> +&timer12_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               /delete-property/interrupts;
+> +               /delete-property/interrupts-extended;
+> +               /* Always clocked by secure_32k_fck */
+> +       };
+> +};
+> +
+> +/* Timer for clockevent */
+> +&timer2_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               assigned-clocks = <&gpt2_fck>;
+> +               assigned-clock-parents = <&sys_ck>;
+> +       };
+> +};
+> +
+>  &twl_gpio {
+>         ti,use-leds;
+>         /* pullups: BIT(1) */
+> diff --git a/arch/arm/boot/dts/omap3-devkit8000.dts b/arch/arm/boot/dts/omap3-devkit8000.dts
+> --- a/arch/arm/boot/dts/omap3-devkit8000.dts
+> +++ b/arch/arm/boot/dts/omap3-devkit8000.dts
+> @@ -14,3 +14,36 @@ aliases {
+>                 display2 = &tv0;
+>         };
+>  };
+> +
+> +/* Unusable as clockevent, allow to idle */
+> +&timer1_target {
+> +       /delete-property/ti,no-reset-on-init;
+> +       /delete-property/ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,omap3430-timer";
+> +               interrupts = <37>;
+> +       };
+> +};
+> +
+> +/* Timer for clocksource, configured without interrupts */
+> +&timer12_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               /delete-property/interrupts;
+> +               /delete-property/interrupts-extended;
+> +               /* Always clocked by secure_32k_fck */
+> +       };
+> +};
+> +
+> +/* Timer for clockevent */
+> +&timer2_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               assigned-clocks = <&gpt2_fck>;
+> +               assigned-clock-parents = <&sys_ck>;
+> +       };
+> +};
+> diff --git a/arch/arm/boot/dts/omap3.dtsi b/arch/arm/boot/dts/omap3.dtsi
+> --- a/arch/arm/boot/dts/omap3.dtsi
+> +++ b/arch/arm/boot/dts/omap3.dtsi
+> @@ -193,10 +193,23 @@ cm_clockdomains: clockdomains {
+>                         };
+>                 };
+>
+> -               counter32k: counter@48320000 {
+> -                       compatible = "ti,omap-counter32k";
+> -                       reg = <0x48320000 0x20>;
+> -                       ti,hwmods = "counter_32k";
+> +               target-module@48320000 {
+> +                       compatible = "ti,sysc-omap2", "ti,sysc";
+> +                       reg = <0x48320000 0x4>,
+> +                             <0x48320004 0x4>;
+> +                       reg-names = "rev", "sysc";
+> +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> +                                       <SYSC_IDLE_NO>;
+> +                       clocks = <&wkup_32k_fck>, <&omap_32ksync_ick>;
+> +                       clock-names = "fck", "ick";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges = <0x0 0x48320000 0x1000>;
+> +
+> +                       counter32k: counter@0 {
+> +                               compatible = "ti,omap-counter32k";
+> +                               reg = <0x0 0x20>;
+> +                       };
+>                 };
+>
+>                 intc: interrupt-controller@48200000 {
+> @@ -637,19 +650,63 @@ sham: sham@480c3000 {
+>                         dma-names = "rx";
+>                 };
+>
+> -               timer1: timer@48318000 {
+> -                       compatible = "ti,omap3430-timer";
+> -                       reg = <0x48318000 0x400>;
+> -                       interrupts = <37>;
+> -                       ti,hwmods = "timer1";
+> -                       ti,timer-alwon;
+> +               timer1_target: target-module@48318000 {
+> +                       compatible = "ti,sysc-omap2-timer", "ti,sysc";
+> +                       reg = <0x48318000 0x4>,
+> +                             <0x48318010 0x4>,
+> +                             <0x48318014 0x4>;
+> +                       reg-names = "rev", "sysc", "syss";
+> +                       ti,sysc-mask = <(SYSC_OMAP2_CLOCKACTIVITY |
+> +                                        SYSC_OMAP2_EMUFREE |
+> +                                        SYSC_OMAP2_ENAWAKEUP |
+> +                                        SYSC_OMAP2_SOFTRESET |
+> +                                        SYSC_OMAP2_AUTOIDLE)>;
+> +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> +                                       <SYSC_IDLE_NO>,
+> +                                       <SYSC_IDLE_SMART>;
+> +                       ti,syss-mask = <1>;
+> +                       clocks = <&gpt1_fck>, <&gpt1_ick>;
+> +                       clock-names = "fck", "ick";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges = <0x0 0x48318000 0x1000>;
+> +
+> +                       timer1: timer@0 {
+> +                               compatible = "ti,omap3430-timer";
+> +                               reg = <0x0 0x80>;
+> +                               clocks = <&gpt1_fck>;
+> +                               clock-names = "fck";
+> +                               interrupts = <37>;
+> +                               ti,timer-alwon;
+> +                       };
+>                 };
+>
+> -               timer2: timer@49032000 {
+> -                       compatible = "ti,omap3430-timer";
+> -                       reg = <0x49032000 0x400>;
+> -                       interrupts = <38>;
+> -                       ti,hwmods = "timer2";
+> +               timer2_target: target-module@49032000 {
+> +                       compatible = "ti,sysc-omap2-timer", "ti,sysc";
+> +                       reg = <0x49032000 0x4>,
+> +                             <0x49032010 0x4>,
+> +                             <0x49032014 0x4>;
+> +                       reg-names = "rev", "sysc", "syss";
+> +                       ti,sysc-mask = <(SYSC_OMAP2_CLOCKACTIVITY |
+> +                                        SYSC_OMAP2_EMUFREE |
+> +                                        SYSC_OMAP2_ENAWAKEUP |
+> +                                        SYSC_OMAP2_SOFTRESET |
+> +                                        SYSC_OMAP2_AUTOIDLE)>;
+> +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> +                                       <SYSC_IDLE_NO>,
+> +                                       <SYSC_IDLE_SMART>;
+> +                       ti,syss-mask = <1>;
+> +                       clocks = <&gpt2_fck>, <&gpt2_ick>;
+> +                       clock-names = "fck", "ick";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges = <0x0 0x49032000 0x1000>;
+> +
+> +                       timer2: timer@0 {
+> +                               compatible = "ti,omap3430-timer";
+> +                               reg = <0 0x400>;
+> +                               interrupts = <38>;
+> +                       };
+>                 };
+>
+>                 timer3: timer@49034000 {
+> @@ -723,13 +780,34 @@ timer11: timer@48088000 {
+>                         ti,timer-pwm;
+>                 };
+>
+> -               timer12: timer@48304000 {
+> -                       compatible = "ti,omap3430-timer";
+> -                       reg = <0x48304000 0x400>;
+> -                       interrupts = <95>;
+> -                       ti,hwmods = "timer12";
+> -                       ti,timer-alwon;
+> -                       ti,timer-secure;
+> +               timer12_target: target-module@48304000 {
+> +                       compatible = "ti,sysc-omap2-timer", "ti,sysc";
+> +                       reg = <0x48304000 0x4>,
+> +                             <0x48304010 0x4>,
+> +                             <0x48304014 0x4>;
+> +                       reg-names = "rev", "sysc", "syss";
+> +                       ti,sysc-mask = <(SYSC_OMAP2_CLOCKACTIVITY |
+> +                                        SYSC_OMAP2_EMUFREE |
+> +                                        SYSC_OMAP2_ENAWAKEUP |
+> +                                        SYSC_OMAP2_SOFTRESET |
+> +                                        SYSC_OMAP2_AUTOIDLE)>;
+> +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> +                                       <SYSC_IDLE_NO>,
+> +                                       <SYSC_IDLE_SMART>;
+> +                       ti,syss-mask = <1>;
+> +                       clocks = <&gpt12_fck>, <&gpt12_ick>;
+> +                       clock-names = "fck", "ick";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges = <0x0 0x48304000 0x1000>;
+> +
+> +                       timer12: timer@0 {
+> +                               compatible = "ti,omap3430-timer";
+> +                               reg = <0 0x400>;
+> +                               interrupts = <95>;
+> +                               ti,timer-alwon;
+> +                               ti,timer-secure;
+> +                       };
+>                 };
+>
+>                 usbhstll: usbhstll@48062000 {
+> @@ -886,4 +964,15 @@ ssi_port2: ssi-port@4805b000 {
+>         };
+>  };
+>
+> -/include/ "omap3xxx-clocks.dtsi"
+> +#include "omap3xxx-clocks.dtsi"
+> +
+> +/* Timer for clockevent */
+> +&timer1_target {
+> +       ti,no-reset-on-init;
+> +       ti,no-idle;
+> +       timer@0 {
+> +               compatible = "ti,dmtimer";
+> +               assigned-clocks = <&gpt1_fck>;
+> +               assigned-clock-parents = <&omap_32k_fck>;
+> +       };
+> +};
+> diff --git a/arch/arm/mach-omap2/board-generic.c b/arch/arm/mach-omap2/board-generic.c
+> --- a/arch/arm/mach-omap2/board-generic.c
+> +++ b/arch/arm/mach-omap2/board-generic.c
+> @@ -114,7 +114,7 @@ DT_MACHINE_START(OMAP3_N900_DT, "Nokia RX-51 board")
+>         .init_early     = omap3430_init_early,
+>         .init_machine   = omap_generic_init,
+>         .init_late      = omap3_init_late,
+> -       .init_time      = omap_init_time,
+> +       .init_time      = omap_init_time_of,
+>         .dt_compat      = n900_boards_compat,
+>         .restart        = omap3xxx_restart,
+>  MACHINE_END
+> @@ -132,7 +132,7 @@ DT_MACHINE_START(OMAP3_DT, "Generic OMAP3 (Flattened Device Tree)")
+>         .init_early     = omap3430_init_early,
+>         .init_machine   = omap_generic_init,
+>         .init_late      = omap3_init_late,
+> -       .init_time      = omap_init_time,
+> +       .init_time      = omap_init_time_of,
+>         .dt_compat      = omap3_boards_compat,
+>         .restart        = omap3xxx_restart,
+>  MACHINE_END
+> @@ -149,7 +149,7 @@ DT_MACHINE_START(OMAP36XX_DT, "Generic OMAP36xx (Flattened Device Tree)")
+>         .init_early     = omap3630_init_early,
+>         .init_machine   = omap_generic_init,
+>         .init_late      = omap3_init_late,
+> -       .init_time      = omap_init_time,
+> +       .init_time      = omap_init_time_of,
+>         .dt_compat      = omap36xx_boards_compat,
+>         .restart        = omap3xxx_restart,
+>  MACHINE_END
+> @@ -166,7 +166,7 @@ DT_MACHINE_START(OMAP3_GP_DT, "Generic OMAP3-GP (Flattened Device Tree)")
+>         .init_early     = omap3430_init_early,
+>         .init_machine   = omap_generic_init,
+>         .init_late      = omap3_init_late,
+> -       .init_time      = omap3_secure_sync32k_timer_init,
+> +       .init_time      = omap_init_time_of,
+>         .dt_compat      = omap3_gp_boards_compat,
+>         .restart        = omap3xxx_restart,
+>  MACHINE_END
+> @@ -182,7 +182,7 @@ DT_MACHINE_START(AM3517_DT, "Generic AM3517 (Flattened Device Tree)")
+>         .init_early     = am35xx_init_early,
+>         .init_machine   = omap_generic_init,
+>         .init_late      = omap3_init_late,
+> -       .init_time      = omap3_gptimer_timer_init,
+> +       .init_time      = omap_init_time_of,
+>         .dt_compat      = am3517_boards_compat,
+>         .restart        = omap3xxx_restart,
+>  MACHINE_END
+> diff --git a/arch/arm/mach-omap2/omap_hwmod_3xxx_data.c b/arch/arm/mach-omap2/omap_hwmod_3xxx_data.c
+> --- a/arch/arm/mach-omap2/omap_hwmod_3xxx_data.c
+> +++ b/arch/arm/mach-omap2/omap_hwmod_3xxx_data.c
+> @@ -147,36 +147,6 @@ static struct omap_hwmod_class omap3xxx_timer_hwmod_class = {
+>         .sysc = &omap3xxx_timer_sysc,
+>  };
+>
+> -/* timer1 */
+> -static struct omap_hwmod omap3xxx_timer1_hwmod = {
+> -       .name           = "timer1",
+> -       .main_clk       = "gpt1_fck",
+> -       .prcm           = {
+> -               .omap2 = {
+> -                       .module_offs = WKUP_MOD,
+> -                       .idlest_reg_id = 1,
+> -                       .idlest_idle_bit = OMAP3430_ST_GPT1_SHIFT,
+> -               },
+> -       },
+> -       .class          = &omap3xxx_timer_hwmod_class,
+> -       .flags          = HWMOD_SET_DEFAULT_CLOCKACT,
+> -};
+> -
+> -/* timer2 */
+> -static struct omap_hwmod omap3xxx_timer2_hwmod = {
+> -       .name           = "timer2",
+> -       .main_clk       = "gpt2_fck",
+> -       .prcm           = {
+> -               .omap2 = {
+> -                       .module_offs = OMAP3430_PER_MOD,
+> -                       .idlest_reg_id = 1,
+> -                       .idlest_idle_bit = OMAP3430_ST_GPT2_SHIFT,
+> -               },
+> -       },
+> -       .class          = &omap3xxx_timer_hwmod_class,
+> -       .flags          = HWMOD_SET_DEFAULT_CLOCKACT,
+> -};
+> -
+>  /* timer3 */
+>  static struct omap_hwmod omap3xxx_timer3_hwmod = {
+>         .name           = "timer3",
+> @@ -312,21 +282,6 @@ static struct omap_hwmod omap3xxx_timer11_hwmod = {
+>         .flags          = HWMOD_SET_DEFAULT_CLOCKACT,
+>  };
+>
+> -/* timer12 */
+> -static struct omap_hwmod omap3xxx_timer12_hwmod = {
+> -       .name           = "timer12",
+> -       .main_clk       = "gpt12_fck",
+> -       .prcm           = {
+> -               .omap2 = {
+> -                       .module_offs = WKUP_MOD,
+> -                       .idlest_reg_id = 1,
+> -                       .idlest_idle_bit = OMAP3430_ST_GPT12_SHIFT,
+> -               },
+> -       },
+> -       .class          = &omap3xxx_timer_hwmod_class,
+> -       .flags          = HWMOD_SET_DEFAULT_CLOCKACT,
+> -};
+> -
+>  /*
+>   * 'wd_timer' class
+>   * 32-bit watchdog upward counter that generates a pulse on the reset pin on
+> @@ -1524,38 +1479,6 @@ static struct omap_hwmod omap3xxx_sad2d_hwmod = {
+>         .class          = &omap3xxx_sad2d_class,
+>  };
+>
+> -/*
+> - * '32K sync counter' class
+> - * 32-bit ordinary counter, clocked by the falling edge of the 32 khz clock
+> - */
+> -static struct omap_hwmod_class_sysconfig omap3xxx_counter_sysc = {
+> -       .rev_offs       = 0x0000,
+> -       .sysc_offs      = 0x0004,
+> -       .sysc_flags     = SYSC_HAS_SIDLEMODE,
+> -       .idlemodes      = (SIDLE_FORCE | SIDLE_NO),
+> -       .sysc_fields    = &omap_hwmod_sysc_type1,
+> -};
+> -
+> -static struct omap_hwmod_class omap3xxx_counter_hwmod_class = {
+> -       .name   = "counter",
+> -       .sysc   = &omap3xxx_counter_sysc,
+> -};
+> -
+> -static struct omap_hwmod omap3xxx_counter_32k_hwmod = {
+> -       .name           = "counter_32k",
+> -       .class          = &omap3xxx_counter_hwmod_class,
+> -       .clkdm_name     = "wkup_clkdm",
+> -       .flags          = HWMOD_SWSUP_SIDLE,
+> -       .main_clk       = "wkup_32k_fck",
+> -       .prcm           = {
+> -               .omap2  = {
+> -                       .module_offs = WKUP_MOD,
+> -                       .idlest_reg_id = 1,
+> -                       .idlest_idle_bit = OMAP3430_ST_32KSYNC_SHIFT,
+> -               },
+> -       },
+> -};
+> -
+>  /*
+>   * 'gpmc' class
+>   * general purpose memory controller
+> @@ -1868,25 +1791,6 @@ static struct omap_hwmod_ocp_if omap3xxx_l3__iva = {
+>         .user           = OCP_USER_MPU | OCP_USER_SDMA,
+>  };
+>
+> -
+> -/* l4_wkup -> timer1 */
+> -static struct omap_hwmod_ocp_if omap3xxx_l4_wkup__timer1 = {
+> -       .master         = &omap3xxx_l4_wkup_hwmod,
+> -       .slave          = &omap3xxx_timer1_hwmod,
+> -       .clk            = "gpt1_ick",
+> -       .user           = OCP_USER_MPU | OCP_USER_SDMA,
+> -};
+> -
+> -
+> -/* l4_per -> timer2 */
+> -static struct omap_hwmod_ocp_if omap3xxx_l4_per__timer2 = {
+> -       .master         = &omap3xxx_l4_per_hwmod,
+> -       .slave          = &omap3xxx_timer2_hwmod,
+> -       .clk            = "gpt2_ick",
+> -       .user           = OCP_USER_MPU | OCP_USER_SDMA,
+> -};
+> -
+> -
+>  /* l4_per -> timer3 */
+>  static struct omap_hwmod_ocp_if omap3xxx_l4_per__timer3 = {
+>         .master         = &omap3xxx_l4_per_hwmod,
+> @@ -1965,15 +1869,6 @@ static struct omap_hwmod_ocp_if omap3xxx_l4_core__timer11 = {
+>         .user           = OCP_USER_MPU | OCP_USER_SDMA,
+>  };
+>
+> -
+> -/* l4_core -> timer12 */
+> -static struct omap_hwmod_ocp_if omap3xxx_l4_sec__timer12 = {
+> -       .master         = &omap3xxx_l4_sec_hwmod,
+> -       .slave          = &omap3xxx_timer12_hwmod,
+> -       .clk            = "gpt12_ick",
+> -       .user           = OCP_USER_MPU | OCP_USER_SDMA,
+> -};
+> -
+>  /* l4_wkup -> wd_timer2 */
+>
+>  static struct omap_hwmod_ocp_if omap3xxx_l4_wkup__wd_timer2 = {
+> @@ -2325,16 +2220,6 @@ static struct omap_hwmod_ocp_if omap3xxx_l4_core__hdq1w = {
+>         .flags          = OMAP_FIREWALL_L4 | OCPIF_SWSUP_IDLE,
+>  };
+>
+> -/* l4_wkup -> 32ksync_counter */
+> -
+> -
+> -static struct omap_hwmod_ocp_if omap3xxx_l4_wkup__counter_32k = {
+> -       .master         = &omap3xxx_l4_wkup_hwmod,
+> -       .slave          = &omap3xxx_counter_32k_hwmod,
+> -       .clk            = "omap_32ksync_ick",
+> -       .user           = OCP_USER_MPU | OCP_USER_SDMA,
+> -};
+> -
+>  /* am35xx has Davinci MDIO & EMAC */
+>  static struct omap_hwmod_class am35xx_mdio_class = {
+>         .name = "davinci_mdio",
+> @@ -2551,8 +2436,6 @@ static struct omap_hwmod_ocp_if *omap3xxx_hwmod_ocp_ifs[] __initdata = {
+>         &omap3_l4_core__i2c2,
+>         &omap3_l4_core__i2c3,
+>         &omap3xxx_l4_wkup__l4_sec,
+> -       &omap3xxx_l4_wkup__timer1,
+> -       &omap3xxx_l4_per__timer2,
+>         &omap3xxx_l4_per__timer3,
+>         &omap3xxx_l4_per__timer4,
+>         &omap3xxx_l4_per__timer5,
+> @@ -2580,27 +2463,10 @@ static struct omap_hwmod_ocp_if *omap3xxx_hwmod_ocp_ifs[] __initdata = {
+>         &omap34xx_l4_core__mcspi2,
+>         &omap34xx_l4_core__mcspi3,
+>         &omap34xx_l4_core__mcspi4,
+> -       &omap3xxx_l4_wkup__counter_32k,
+>         &omap3xxx_l3_main__gpmc,
+>         NULL,
+>  };
+>
+> -/* GP-only hwmod links */
+> -static struct omap_hwmod_ocp_if *omap34xx_gp_hwmod_ocp_ifs[] __initdata = {
+> -       &omap3xxx_l4_sec__timer12,
+> -       NULL,
+> -};
+> -
+> -static struct omap_hwmod_ocp_if *omap36xx_gp_hwmod_ocp_ifs[] __initdata = {
+> -       &omap3xxx_l4_sec__timer12,
+> -       NULL,
+> -};
+> -
+> -static struct omap_hwmod_ocp_if *am35xx_gp_hwmod_ocp_ifs[] __initdata = {
+> -       &omap3xxx_l4_sec__timer12,
+> -       NULL,
+> -};
+> -
+>  /* crypto hwmod links */
+>  static struct omap_hwmod_ocp_if *omap34xx_sham_hwmod_ocp_ifs[] __initdata = {
+>         &omap3xxx_l4_core__sham,
+> @@ -2774,7 +2640,7 @@ static bool __init omap3xxx_hwmod_is_hs_ip_block_usable(struct device_node *bus,
+>  int __init omap3xxx_hwmod_init(void)
+>  {
+>         int r;
+> -       struct omap_hwmod_ocp_if **h = NULL, **h_gp = NULL, **h_sham = NULL;
+> +       struct omap_hwmod_ocp_if **h = NULL, **h_sham = NULL;
+>         struct omap_hwmod_ocp_if **h_aes = NULL;
+>         struct device_node *bus;
+>         unsigned int rev;
+> @@ -2797,18 +2663,15 @@ int __init omap3xxx_hwmod_init(void)
+>             rev == OMAP3430_REV_ES2_1 || rev == OMAP3430_REV_ES3_0 ||
+>             rev == OMAP3430_REV_ES3_1 || rev == OMAP3430_REV_ES3_1_2) {
+>                 h = omap34xx_hwmod_ocp_ifs;
+> -               h_gp = omap34xx_gp_hwmod_ocp_ifs;
+>                 h_sham = omap34xx_sham_hwmod_ocp_ifs;
+>                 h_aes = omap34xx_aes_hwmod_ocp_ifs;
+>         } else if (rev == AM35XX_REV_ES1_0 || rev == AM35XX_REV_ES1_1) {
+>                 h = am35xx_hwmod_ocp_ifs;
+> -               h_gp = am35xx_gp_hwmod_ocp_ifs;
+>                 h_sham = am35xx_sham_hwmod_ocp_ifs;
+>                 h_aes = am35xx_aes_hwmod_ocp_ifs;
+>         } else if (rev == OMAP3630_REV_ES1_0 || rev == OMAP3630_REV_ES1_1 ||
+>                    rev == OMAP3630_REV_ES1_2) {
+>                 h = omap36xx_hwmod_ocp_ifs;
+> -               h_gp = omap36xx_gp_hwmod_ocp_ifs;
+>                 h_sham = omap36xx_sham_hwmod_ocp_ifs;
+>                 h_aes = omap36xx_aes_hwmod_ocp_ifs;
+>         } else {
+> @@ -2820,13 +2683,6 @@ int __init omap3xxx_hwmod_init(void)
+>         if (r < 0)
+>                 return r;
+>
+> -       /* Register GP-only hwmod links. */
+> -       if (h_gp && omap_type() == OMAP2_DEVICE_TYPE_GP) {
+> -               r = omap_hwmod_register_links(h_gp);
+> -               if (r < 0)
+> -                       return r;
+> -       }
+> -
+>         /*
+>          * Register crypto hwmod links only if they are not disabled in DT.
+>          * If DT information is missing, enable them only for GP devices.
+> --
+> 2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
