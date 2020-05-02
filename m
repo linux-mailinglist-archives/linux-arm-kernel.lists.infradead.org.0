@@ -2,119 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D36831C21B6
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 01:57:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3CA71C21C2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 02:02:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9qihk56LGxCIytUQ+3KknUNhf8waWKcwLZWcG/yUY6o=; b=J6RjsX65eAzcbd
-	XvfbxKzx+6E0N3p5fq1QKe4ziSMCBvbWhUaQgOnerPDoDAx/7fU9D7KSl6W8CkS/HYz2t3aI3HmTT
-	50R4DF+PrCrsb6dKWrH2jzeAjlpraJ0vhJxkBKkbBILxEC+la8tzcNN3E4iT7hxVFZ/U2BrqJR+BK
-	ecYVD55a8h4nyfju6FkrDkEoNhVINtbmXXG+6kv+xvy887HsAgjHg2t/HFD2LSVj+mFy9HoQ0ku8g
-	2pKQOwd/CD8DHNosotSBQCXKO5IuuVD6OxTOUrckF/mzTXRwQuDw6/A0VV32GK/1rAC9F9Jxrwt9S
-	WVwZc1Wk+GQ+ujuh1bjg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Z7sJfe0tuJ2IpfahHuSJm4qsfuXcgOOfcukhOzfDE6s=; b=OS/SitO9JWBisBlSJ53qRhfafK
+	U48ofgvMB+Prqvj/q6BWpd3B5OdmNTGkmJdPyKTYXflTzvl7hvxWwr9l2HVtJyQBoViX29x1J5B6N
+	fzOg3Pt+k4VjccnUxozviECc0LA5vQy8juC5UHg7/WJI7yh+JAONTPCt4Gsor2AsllTEspC9F6nec
+	ToQAGNGQrUgaplAiffYzCiUdGmzNn+ZuQS7kTqclrdy5J93i20TdOe5LG2pzme1BbYMyHCtPL4tOT
+	e2NyOmKI/3B6nZra5NlSEdzEZ/de3FGHh/qHKIUOJvAWc30HPNhSENu/YfIJmXs8MkiaredUteqya
+	KEsLP2ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUfWV-0005vG-Nz; Fri, 01 May 2020 23:56:51 +0000
-Received: from mail-dm6nam12olkn2051.outbound.protection.outlook.com
- ([40.92.22.51] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+	id 1jUfbZ-0001og-D5; Sat, 02 May 2020 00:02:05 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUfRW-0007fB-M7
- for linux-arm-kernel@lists.infradead.org; Fri, 01 May 2020 23:51:44 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ciS1YIFugGx1qIUtnhugOatGoeNjxEIJmvzcSR+oDVUbHgmKODMesngg7M+3nVZ096ihOUtcNF7RsBbF+ZfrwzeU6nylHKKS/0ptSLkAAYRlitYjr+VdqUywBXqjAe0wd6PD89t3cITIkmrR2HJqQuB1QkXgbFN7IY1JLhIrdlBMgAWNlr7P7GucUHUCH32JCFWtKZiRfOvne5Zsj6f/NemVhToSBrZLpYmbS3EoQOG1NRFwXn/hpzG/mZ5CPVChdeXEiz14AYBSbpchcvJyBiff+eBpwxKNucdqMVaxhgtxnBmkMFhOr+MEGkFYwlLo08XHNysnHtLjk/LvmSrM1Q==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=P5O1LOzz2sPZQKkPD2FEZaAIqrK1URX6n2USXrOZGY4=;
- b=MY1Btq/5Ka/dhqJLd2bPu7ygE+vrT3bVzTeK5LQ8i1uvNcRK6YqMtfEtcgUOfEwMj9HOQuqhbhxx0QiaPigcJeHtdrdT0v6jElS99k62HN2y8tjlKUDeJpLCey45zI4V+KTK8Em5qQs36zcgOYnggBM2QB2WTZCaq8zsBVIffsFR6FJ9VWQY80ShGUyWXrD52xbJvZ5pSBs79p12izbaUHAqc3jGepQin6a6fmD975VnmONBy8j8FYAmisRqPaYC4HJEj/DVQHl/e8WDmrxcso1XnfXS6gHGqO3onPjBBwPDcZLqt68S+c+hJ/kZaHcErzKhEgfx2w8iJfLooOjfTw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
- header.d=live.ca; arc=none
-Received: from DM6NAM12FT056.eop-nam12.prod.protection.outlook.com
- (2a01:111:e400:fc64::4d) by
- DM6NAM12HT118.eop-nam12.prod.protection.outlook.com (2a01:111:e400:fc64::126)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.12; Fri, 1 May
- 2020 23:51:41 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:fc64::46) by DM6NAM12FT056.mail.protection.outlook.com
- (2a01:111:e400:fc64::460) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2921.12 via Frontend
- Transport; Fri, 1 May 2020 23:51:41 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:500BD4FFDDA152933E5711F27EDDA5554E11B0EFC217C2C5FA8EF22AFA9B37A2;
- UpperCasedChecksum:376F5A11BF33F2485363DB9171BA7F4E04697A33EF32E87F25E6AA8627C9E564;
- SizeAsReceived:7853; Count:50
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2958.027; Fri, 1 May 2020
- 23:51:41 +0000
-From: Jonathan Bakker <xc-racer2@live.ca>
-To: kgene@kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v2 18/18] ARM: dts: s5pv210: Correct gpi gpio node name
-Date: Fri,  1 May 2020 16:50:19 -0700
-Message-ID: <BN6PR04MB06608BAC9303ECB0F6118AE3A3AB0@BN6PR04MB0660.namprd04.prod.outlook.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200501235019.24022-1-xc-racer2@live.ca>
-References: <20200426183604.28494-1-xc-racer2@live.ca>
- <20200501235019.24022-1-xc-racer2@live.ca>
-X-ClientProxiedBy: MWHPR17CA0058.namprd17.prod.outlook.com
- (2603:10b6:300:93::20) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200501235019.24022-19-xc-racer2@live.ca>
+ id 1jUfbR-0001mf-Oe
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 00:01:59 +0000
+Received: by mail-wr1-x442.google.com with SMTP id d15so13750287wrx.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 01 May 2020 17:01:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=mnpsimwuy1HsCYdnivLxUTPWGJ+CV1JI9EBiJoWcRMA=;
+ b=TLRUgGZlzXDwbdGjCQKtFdsgwYIYywxs6IL2aaocBIxiHaukVw6K6LresyCp6t4BIr
+ FTTqJD0TWaAqQ2cKqNfZCrGdiVU2fCHPQMSCdmbAEe0y4PHtHyhEWhvURKhanRCb1hVR
+ kLuKs6W7wbYYvOLdaGsw24wZJs61iX329BFV267Vdr8wcbvzrQFRC/+J428L9qnwZi1T
+ oPEz5vYKrQR6JTs4y3wBPMagXasiimuMJ6TsOukYAb75lv58yhPH5QSXAaxWsB3WmNrk
+ vJjh89QVZWYh3QkCxQn2vVvnhG5PoD9c3EF/g4L8f4HsuNYe2dpvatNA2XZyCPqoUgTE
+ 2aoA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=mnpsimwuy1HsCYdnivLxUTPWGJ+CV1JI9EBiJoWcRMA=;
+ b=tU7T2zm6gQb4gtyfAoJjd3uoPQml734PD13Ts6itbUdbjWKOXlwhfAHuX1knO3As1A
+ Gl95IHmZrxs836fdX5nUl/hUzdP0FtUI3t1un8l30CA9HaK33irK3FMzMkT4ViWpXYaT
+ 3Jtvl4qix14DZrkd6Q6ahzabIRY0I5ILvnkoBOfls7RauV8PBdzXvBo4oT+sFk6WZg5C
+ A6XR/QsNvZ9TZ9+f8FQtHDQAvkyyIilZrXMj1PLC4ZODtmutaI+cMACLcEg3oXGiTiG+
+ QIVhfwy4GEbpACpz1dctZpXf69yI5juWwpckCy2CtiJ8OjC/NpgOn729oSp2+BddX2Y/
+ QvqQ==
+X-Gm-Message-State: AGi0PuZBcbVroUkU7Jdv+NvP6AV5oamt/loQUnZvgNpV9C47Odli0FsG
+ GP5tLfmBjAsY+ipsN4T4Ejqc8A==
+X-Google-Smtp-Source: APiQypIC1GGFwHeCAXP+xnmsMVu4bX6+mXS0f6uQUk++cUTQ7edzDBG/oInezxMVoP8L2WvMnSlbPQ==
+X-Received: by 2002:a5d:498b:: with SMTP id r11mr6556110wrq.368.1588377713218; 
+ Fri, 01 May 2020 17:01:53 -0700 (PDT)
+Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
+ [82.243.161.21])
+ by smtp.gmail.com with ESMTPSA id s9sm7330900wrg.27.2020.05.01.17.01.51
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 01 May 2020 17:01:52 -0700 (PDT)
+References: <20200501215717.735393-1-martin.blumenstingl@googlemail.com>
+User-agent: mu4e 1.3.3; emacs 26.3
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH] clk: meson: meson8b: Don't rely on u-boot to init all
+ GP_PLL registers
+In-reply-to: <20200501215717.735393-1-martin.blumenstingl@googlemail.com>
+Date: Sat, 02 May 2020 02:01:50 +0200
+Message-ID: <1jees3i4r5.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from jon-hp-6570b.telus (2001:569:fb68:9c00:8067:f823:1e15:7520) by
- MWHPR17CA0058.namprd17.prod.outlook.com (2603:10b6:300:93::20) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2958.20 via Frontend Transport; Fri, 1 May 2020 23:51:39 +0000
-X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200501235019.24022-19-xc-racer2@live.ca>
-X-TMN: [0ZkQ7nAcwNP61UKo6jm5CT6RYSlM87jxE50gKlmG/iNiAVPEIlo/p2aAykdGkuxA]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 50
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 45c080d4-55e4-471f-7ec0-08d7ee2a983a
-X-MS-TrafficTypeDiagnostic: DM6NAM12HT118:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: JepEKslIU/Pr/uwfG2+Y0K/uV9au7rZl+8ShLP7x0rdEdbVKiDnj1hYWWVOE76srjlFlIfKFzUaX5TDTD/zFAOjUS42FxqbYMclrVbz2fNwRYa154VEz9OjI999YCM1zbbqJLqjY6sXQiVE28Iy4MaXzkFzi5sdXVCTtyopAe56zc3sYoOkqLQN8OPcIXt79fT/hYoigJyjsZNR2YsQkIg==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: XQuTixmKn6b9MsRaBkt/+ezCRX3fnvFFTqeUwoKzBMasII7EW0kVOBjuksND2SeTj2J5ErRigCcnxRKMgLK1X1zo60EBpDzuEZtZgMMkNrVNsP7Jron9hiCoYkkBsmzACHQ1YI5jpQoY6QszecM8pb20o6gM4V/Q9eiAjqJeKFVExoqr+pSPrEdStDsuPrjWYlalEF7mizBq3x+88ySUAQ==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 45c080d4-55e4-471f-7ec0-08d7ee2a983a
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 01 May 2020 23:51:41.1629 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6NAM12HT118
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_165143_340206_DCF796BF 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200501_170157_829280_13D7A2A4 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.22.51 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.22.51 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -126,37 +97,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Bakker <xc-racer2@live.ca>
+Cc: linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The node name was gpgi, but the pinctrl driver was registering the pins
-as just gpi and the "samsung,pins" i2s0 pinctrl entries refer to gpi.
-The public s5pc110 datasheet also refers to these pins as just gpi,
-so let's make sure everything is in sync and rename the node to gpi.
 
-Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
----
- arch/arm/boot/dts/s5pv210-pinctrl.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Fri 01 May 2020 at 23:57, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
 
-diff --git a/arch/arm/boot/dts/s5pv210-pinctrl.dtsi b/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-index 609f323d0805..5e8b66281f01 100644
---- a/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-+++ b/arch/arm/boot/dts/s5pv210-pinctrl.dtsi
-@@ -202,7 +202,7 @@
- 		#interrupt-cells = <2>;
- 	};
- 
--	gpgi: gpgi {
-+	gpi: gpi {
- 		gpio-controller;
- 		#gpio-cells = <2>;
- 	};
--- 
-2.20.1
+> Not all u-boot versions initialize the HHI_GP_PLL_CNTL[2-5] registers.
+> In that case all HHI_GPLL_PLL_CNTL[1-5] registers are 0x0 and when
+> booting Linux the PLL fails to lock.
+> The initialization sequence from u-boot is:
+> - put the PLL into reset
+> - write 0x59C88000 to HHI_GP_PLL_CNTL2
+> - write 0xCA463823 to HHI_GP_PLL_CNTL3
+> - write 0x0286A027 to HHI_GP_PLL_CNTL4
+> - write 0x00003000 to HHI_GP_PLL_CNTL5
+> - set M, N, OD and the enable bit
+> - take the PLL out of reset
+> - check if it has locked
+> - disable the PLL
+>
+> In Linux we already initialize M, N, OD, the enable and the reset bits.
+> Also the HHI_GP_PLL_CNTL[2-5] registers with these magic values (the
+> exact meaning is unknown) so the PLL can lock when the vendor u-boot did
+> not initialize these registers yet.
+>
+> Fixes: b882964b376f21 ("clk: meson: meson8b: add support for the GP_PLL clock on Meson8m2")
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+> Jerome, this one is also not critical because we don't enable the VPU
+> yet. So I based this on commit 16afd70af5b21b ("clk: meson: meson8b:
+> Make the CCF use the glitch-free VPU mux").
+>
+>
+>  drivers/clk/meson/meson8b.c | 9 +++++++++
+>  drivers/clk/meson/meson8b.h | 4 ++++
+>  2 files changed, 13 insertions(+)
+
+Applied, Thx
+
+>
+> diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
+> index 811af1c11456..edc09d050ecf 100644
+> --- a/drivers/clk/meson/meson8b.c
+> +++ b/drivers/clk/meson/meson8b.c
+> @@ -1918,6 +1918,13 @@ static struct clk_regmap meson8b_mali = {
+>  	},
+>  };
+>  
+> +static const struct reg_sequence meson8m2_gp_pll_init_regs[] = {
+> +	{ .reg = HHI_GP_PLL_CNTL2,	.def = 0x59c88000 },
+> +	{ .reg = HHI_GP_PLL_CNTL3,	.def = 0xca463823 },
+> +	{ .reg = HHI_GP_PLL_CNTL4,	.def = 0x0286a027 },
+> +	{ .reg = HHI_GP_PLL_CNTL5,	.def = 0x00003000 },
+> +};
+> +
+>  static const struct pll_params_table meson8m2_gp_pll_params_table[] = {
+>  	PLL_PARAMS(182, 3),
+>  	{ /* sentinel */ },
+> @@ -1951,6 +1958,8 @@ static struct clk_regmap meson8m2_gp_pll_dco = {
+>  			.width   = 1,
+>  		},
+>  		.table = meson8m2_gp_pll_params_table,
+> +		.init_regs = meson8m2_gp_pll_init_regs,
+> +		.init_count = ARRAY_SIZE(meson8m2_gp_pll_init_regs),
+>  	},
+>  	.hw.init = &(struct clk_init_data){
+>  		.name = "gp_pll_dco",
+> diff --git a/drivers/clk/meson/meson8b.h b/drivers/clk/meson/meson8b.h
+> index 94ce3ef0c1d5..cd38ae2a9cb5 100644
+> --- a/drivers/clk/meson/meson8b.h
+> +++ b/drivers/clk/meson/meson8b.h
+> @@ -20,6 +20,10 @@
+>   * [0] http://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
+>   */
+>  #define HHI_GP_PLL_CNTL			0x40  /* 0x10 offset in data sheet */
+> +#define HHI_GP_PLL_CNTL2		0x44  /* 0x11 offset in data sheet */
+> +#define HHI_GP_PLL_CNTL3		0x48  /* 0x12 offset in data sheet */
+> +#define HHI_GP_PLL_CNTL4		0x4C  /* 0x13 offset in data sheet */
+> +#define HHI_GP_PLL_CNTL5		0x50  /* 0x14 offset in data sheet */
+>  #define HHI_VIID_CLK_DIV		0x128 /* 0x4a offset in data sheet */
+>  #define HHI_VIID_CLK_CNTL		0x12c /* 0x4b offset in data sheet */
+>  #define HHI_GCLK_MPEG0			0x140 /* 0x50 offset in data sheet */
 
 
 _______________________________________________
