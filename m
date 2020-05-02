@@ -2,60 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85C891C2719
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 18:55:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C976D1C2731
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 19:16:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bfHC9cRFv/YVNbG+ArKpEOBRg60c8ploOLW9weoJ5Zk=; b=Fs2/Xglee+U799
-	mFleO/qFL0CwtFzVibxr2iLW5S7xl76y18MJjCHHQN02vR4QQpDyIM2rapYktvqmeydY9JYHH/iQO
-	FGZOgkWPrgpO5XJj+RhZ/muNI7bb9tw8WSsH98N953kB2byyMVSptmI1ZU2cX8gqMKncPgZ9gHfoE
-	vSfZ4MbvZBi86yRbCmpChMcG+pe/umfrJ4Oh48nYHIRV2TKN4s7FsnOP9oYTffDepWFeh3pvGyrgq
-	qDKNPBbF5EqXNEsMaQaVciniUIte5ywQJrBxJb3CVJkHFmSnEdQEKRto5EDoKkhuahxdX0HDUe2M7
-	6gYi+K8KmzfcimEbrn8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eG0TxmptyCwImdGg5sgrK3qfRiMoqTzMyG1NlZm/mKA=; b=BYLGYmedPKcpSK
+	2/7yddU4ZfU1i9lugBPxp8cLEKjIpxKrWjO2FDKMCb46P+nAsSVTL8fImIyQxS+1OiBw9CMPA3JSh
+	Y+O72ZXG5LOD21lebjn+QQxFtc2CqO0X5fibjUK9502WXd2XDgwwN7sQ6+1AUGZair1Q74l4Twxx7
+	swPj7wJztQkJBJsfgA56T/J+h39QgprGeAo5K0alUKeQK/TV0ujTE3J41YlWnveMzPMwr8nkFTzOu
+	kksl6ktb8bK3faHMbhOnWbwxVivIhJ0fN0Ifa4lyobdeAHBets63eZUwzelQ/+uKTZ0HMmzU0oxGa
+	MVNKUtCvQBdtolB4gmDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUvQb-0007zC-7R; Sat, 02 May 2020 16:55:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jUvkI-0003DM-Sg; Sat, 02 May 2020 17:16:10 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUvQV-0007yA-69
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 16:55:44 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A8C26206B8;
- Sat,  2 May 2020 16:55:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588438542;
- bh=EN0jC8jtMpvS3MIG3TGZ6/L5gRNmXrVn1U3RMM0Hd6o=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=K219v3P1Or+rBvMErrWH54Sa9dn/94QgsBGtbnvOq/l6WQL6DSKVVVPH4UYy5+Nfh
- oUK/mAgInHqqjSZ8LQWpRCt121xKo+Ab+/Rgxgri5xr8mT2uMH4pCl3wP6cS6kFbht
- 6z95s2UWcvSXBSY/KTkyFYClUSNHbg43q60dddFs=
-Date: Sat, 2 May 2020 17:55:36 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: William Breathitt Gray <vilhelm.gray@gmail.com>
-Subject: Re: [PATCH 0/4] Introduce the Counter character device interface
-Message-ID: <20200502175536.1e9ac944@archlinux>
-In-Reply-To: <20200501154519.GA4581@icarus>
-References: <cover.1588176662.git.vilhelm.gray@gmail.com>
- <20200430201345.GX51277@piout.net> <20200501154519.GA4581@icarus>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1jUvkC-0003C4-I2; Sat, 02 May 2020 17:16:06 +0000
+Received: by mail-wr1-x443.google.com with SMTP id e16so10563562wra.7;
+ Sat, 02 May 2020 10:16:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3PIv3g2HbrGzdAz/fXXsONdZmu8F6RevQt0D1oDmLho=;
+ b=gV2H5xW2mTm8uTHZxOra8ob6JuAmi+h8HkRMipd8wXZ39Cl03adTXtuChzdjwVBSqF
+ T7DTCpK499L13ogQPCODo8zyTDIWQ76Tz5oqsTfbpYK6PG9lo7kHlb2q9swyz2N8HdXU
+ I/91hszWw5NKt63LjSaIHT+1bKVHdthB2Gh+gAJKYd8BaDK5sVG32omy1ajV5qdQu1jR
+ pSOTekjzBaOHFNJJGxQgRiP2Kv7YSXmGmDNTZ0XouvsoW9j755qByUUsKtTm82DtFs3+
+ WJGEXXPvnnhguH+LqS0Lk/X7kFXITvV9HJMXY11u/TvpixyqRllu2AnH4NxUpFNqt8HN
+ F/sQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=3PIv3g2HbrGzdAz/fXXsONdZmu8F6RevQt0D1oDmLho=;
+ b=QnZFpBhFjAaqL6zvCosv+p3qqKYp2r5+jXVvcW7i39dPED+ftQhcgK9P45lAEyThGo
+ DudEGVIBX5/BLLQMhfx7L/4nFpNnYl3MDsydFQMNwpVavI4XxMPQqYGXqYIzk34ZkaYj
+ QHvaSElSRSqlkajL2qH2cJzHyYg+q+2aVz3MW8uYrFh5Wnl7jHOHDnoyAcEYVkedSXnD
+ A9sH9LJGe7iVXH+Vw5V7AdfJoKxEWu+/GrT+UeQ3OwKCmATSLv6TXd4QuWEC21mBOZce
+ eDffVqQo+iZsg+huZZhGmat5CcKDCTaak5jc28WIMAsafJlrIOQ0sd75U09cvdoVC3mV
+ hKbg==
+X-Gm-Message-State: AGi0PubYWrq5rqQm+oyy/inXzd7COUEMANX7XBk9Cl3kHkBkJcq08N4Y
+ XEYr/gNBbIuww/q6k0zKdbQ=
+X-Google-Smtp-Source: APiQypJbj1yl/89EsQl/nrkDrS2TuUaoAtTtpOQQOr9z/uF7PiIxOkiRtxQr8HtZ77MS6EtBt2jRAA==
+X-Received: by 2002:a5d:6a8b:: with SMTP id s11mr9916966wru.258.1588439753785; 
+ Sat, 02 May 2020 10:15:53 -0700 (PDT)
+Received: from localhost.localdomain ([188.24.130.199])
+ by smtp.gmail.com with ESMTPSA id k14sm10142090wrp.53.2020.05.02.10.15.52
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sat, 02 May 2020 10:15:53 -0700 (PDT)
+From: Cristian Ciocaltea <cristian.ciocaltea@gmail.com>
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
+ Vinod Koul <vkoul@kernel.org>
+Subject: [PATCH v4 1/1] dmaengine: owl: Use correct lock in owl_dma_get_pchan()
+Date: Sat,  2 May 2020 20:15:51 +0300
+Message-Id: <c6e6cdaca252b5364bd294093673951036488cf0.1588439073.git.cristian.ciocaltea@gmail.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_095543_267148_82F48467 
-X-CRM114-Status: GOOD (  37.79  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200502_101604_621864_65003056 
+X-CRM114-Status: GOOD (  15.39  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [cristian.ciocaltea[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -65,7 +85,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,137 +96,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kamel.bouhara@bootlin.com,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, david@lechnology.com,
- felipe.balbi@linux.intel.com, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-iio@vger.kernel.org, syednwaris@gmail.com, gwendal@chromium.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- patrick.havelange@essensium.com, fabrice.gasnier@st.com,
- fabien.lahoudere@collabora.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org, alexandre.torgue@st.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ linux-actions@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 1 May 2020 11:46:10 -0400
-William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
-
-> On Thu, Apr 30, 2020 at 10:13:45PM +0200, Alexandre Belloni wrote:
-> > Hi,
-> > 
-> > On 29/04/2020 14:11:34-0400, William Breathitt Gray wrote:  
-> > > Over the past couple years we have noticed some shortcomings with the
-> > > Counter sysfs interface. Although useful in the majority of situations,
-> > > there are certain use-cases where interacting through sysfs attributes
-> > > can become cumbersome and inefficient. A desire to support more advanced
-> > > functionality such as timestamps, multi-axis positioning tables, and
-> > > other such latency-sensitive applications, has motivated a reevaluation
-> > > of the Counter subsystem. I believe a character device interface will be
-> > > helpful for this more niche area of counter device use.
-> > > 
-> > > To quell any concerns from the offset: this patchset makes no changes to
-> > > the existing Counter sysfs userspace interface -- existing userspace
-> > > applications will continue to work with no modifications necessary. I
-> > > request that driver maintainers please test their applications to verify
-> > > that this is true, and report any discrepancies if they arise.
-> > >   
-> > 
-> > On that topic, I'm wondering why the counter subsystem uses /sys/bus
-> > instead of /sys/class that would be more natural for a class of devices.
-> > I can't see how counters would be considered busses. I think you should
-> > consider moving it over to /sys/class (even if deprecating
-> > /sys/bus/counter will be long).  
-> 
-> At the time I wasn't quite familiar with sysfs development so I was
-> following the iio sysfs code rather closely. However, I see now that
-> you're probably right: this isn't really a bus but rather a collection
-> of various types of counters -- i.e. a class of devices.
-> 
-> Perhaps I should migrate this then to /sys/class/counter. Of course, the
-> /sys/bus/counter location will have to remain for compatibility with
-> existing applications, but I think a simple symlink to the new
-> /sys/class/counter location should suffice for that.
-> 
-> If anyone sees an issue with this give me a heads up.
-To just address this point as I've not read the rest of the thread yet...
-
-I would resist moving it.  This one is an old argument. 
-
-Some info in https://lwn.net/Articles/645810/
-As that puts it a "bus" is better known as a "subsystem".
-
-When we originally considered class vs bus for IIO, the view expressed
-at the times was that the whole separation of the two didn't mean anything
-and for non trivial cases bus was always preferred.  It's nothing to do
-with with whether the thing is a bus or not.  Now I suppose it's possible
-opinion has moved on this topic...    However, I'd say there
-is really 0 advantage in moving an existing subsystem even if opinion
-has changed.
-
-+CC Greg in case he wants to add anything.
-
-> 
-> > > Interaction with Counter character devices occurs via ioctl commands.
-> > > This allows userspace applications to access and set counter data using
-> > > native C datatypes rather than working through string translations.
-> > >   
-> > 
-> > I agree with David that you should consider using read to retrieve the
-> > counter data as this will simplify interrupt handling/polling and
-> > blocking/non-blocking reads can be used by an application. ABI wise,
-> > this can also be a good move as you could always consider having an
-> > ioctl requesting a specific format when reading the device so you are
-> > not stuck with the initial format you are going to choose.  
-> 
-> My hesitation to implement support for read/write calls is due to a
-> concern that we will end up with various incompatible formats between
-> counter drivers (thus requiring users to have intimate knowledge of the
-> drivers and therefore defeating the purpose of a subsystem). However, if
-> we can standardize on a format that is flexible enough to work for all
-> counter drivers, then read/write calls should not be a problem.
-> 
-> I think a general format could be possible. For example, the counter
-> character device can return a standard header data at the start which
-> provides general information about the counter device: number of
-> counters, number or signals, number of extensions, etc. From this
-> information, offsets can be computed (or perhaps provided by the device)
-> to where the binary data for the count, extension, etc., can be read or
-> written. Interrupts can then be handled as blocking reads, as could
-> other types of events we implement.
-> 
-> Would something like this work well?
-> 
-> William Breathitt Gray
-> 
-> > > 2. Should device driver callbacks return int or long? I sometimes see
-> > >    error values returned as long (e.g. PTR_ERR(), the file_operations
-> > >    structure's ioctl callbacks, etc.); when is it necessary to return
-> > >    long as opposed to int?
-> > >   
-> > 
-> > You should use a long if you ever have to return a point as it is
-> > guaranteed to have the correct size. Else, just stick to an int if you
-> > are not going to overflow it.
-> >   
-> > > 3. I only implemented the unlocked_ioctl callback. Should I implement a
-> > >    compat_ioctl callback as well?
-> > >   
-> > 
-> > The compat_ioctl is to handle 32bit userspace running on a 64bit kernel.
-> > If your structures have the same size in both cases, then you don't have
-> > to implement compat_ioctl.
-> > 
-> > Have a look at Documentation/driver-api/ioctl.rst
-> > 
-> > 
-> > -- 
-> > Alexandre Belloni, Bootlin
-> > Embedded Linux and Kernel engineering
-> > https://bootlin.com  
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+V2hlbiB0aGUga2VybmVsIGlzIGJ1aWx0IHdpdGggbG9ja2RlcCBzdXBwb3J0IGFuZCB0aGUgb3ds
+LWRtYSBkcml2ZXIgaXMKdXNlZCwgdGhlIGZvbGxvd2luZyBtZXNzYWdlIGlzIHNob3duOgoKWyAg
+ICAyLjQ5NjkzOV0gSU5GTzogdHJ5aW5nIHRvIHJlZ2lzdGVyIG5vbi1zdGF0aWMga2V5LgpbICAg
+IDIuNTAxODg5XSB0aGUgY29kZSBpcyBmaW5lIGJ1dCBuZWVkcyBsb2NrZGVwIGFubm90YXRpb24u
+ClsgICAgMi41MDczNTddIHR1cm5pbmcgb2ZmIHRoZSBsb2NraW5nIGNvcnJlY3RuZXNzIHZhbGlk
+YXRvci4KWyAgICAyLjUxMjgzNF0gQ1BVOiAwIFBJRDogMTIgQ29tbToga3dvcmtlci8wOjEgTm90
+IHRhaW50ZWQgNS42LjMrICMxNQpbICAgIDIuNTE5MDg0XSBIYXJkd2FyZSBuYW1lOiBHZW5lcmlj
+IERUIGJhc2VkIHN5c3RlbQpbICAgIDIuNTIzODc4XSBXb3JrcXVldWU6IGV2ZW50c19mcmVlemFi
+bGUgbW1jX3Jlc2NhbgpbICAgIDIuNTI4NjgxXSBbPDgwMTEyN2YwPl0gKHVud2luZF9iYWNrdHJh
+Y2UpIGZyb20gWzw4MDEwZGE1OD5dIChzaG93X3N0YWNrKzB4MTAvMHgxNCkKWyAgICAyLjUzNjQy
+MF0gWzw4MDEwZGE1OD5dIChzaG93X3N0YWNrKSBmcm9tIFs8ODA4MGZiZTg+XSAoZHVtcF9zdGFj
+aysweGI0LzB4ZTApClsgICAgMi41NDM2NDVdIFs8ODA4MGZiZTg+XSAoZHVtcF9zdGFjaykgZnJv
+bSBbPDgwMTdlZmE0Pl0gKHJlZ2lzdGVyX2xvY2tfY2xhc3MrMHg2ZjAvMHg3MTgpClsgICAgMi41
+NTE4MTZdIFs8ODAxN2VmYTQ+XSAocmVnaXN0ZXJfbG9ja19jbGFzcykgZnJvbSBbPDgwMTdiN2Qw
+Pl0gKF9fbG9ja19hY3F1aXJlKzB4NzgvMHgyNWYwKQpbICAgIDIuNTYwMzMwXSBbPDgwMTdiN2Qw
+Pl0gKF9fbG9ja19hY3F1aXJlKSBmcm9tIFs8ODAxN2U1ZTQ+XSAobG9ja19hY3F1aXJlKzB4ZDgv
+MHgxZjQpClsgICAgMi41NjgxNTldIFs8ODAxN2U1ZTQ+XSAobG9ja19hY3F1aXJlKSBmcm9tIFs8
+ODA4MzFmYjA+XSAoX3Jhd19zcGluX2xvY2tfaXJxc2F2ZSsweDNjLzB4NTApClsgICAgMi41NzY1
+ODldIFs8ODA4MzFmYjA+XSAoX3Jhd19zcGluX2xvY2tfaXJxc2F2ZSkgZnJvbSBbPDgwNTFiNWZj
+Pl0gKG93bF9kbWFfaXNzdWVfcGVuZGluZysweGJjLzB4MTIwKQpbICAgIDIuNTg1ODg0XSBbPDgw
+NTFiNWZjPl0gKG93bF9kbWFfaXNzdWVfcGVuZGluZykgZnJvbSBbPDgwNjY4Y2JjPl0gKG93bF9t
+bWNfcmVxdWVzdCsweDFiMC8weDM5MCkKWyAgICAyLjU5NDY1NV0gWzw4MDY2OGNiYz5dIChvd2xf
+bW1jX3JlcXVlc3QpIGZyb20gWzw4MDY1MGNlMD5dIChtbWNfc3RhcnRfcmVxdWVzdCsweDk0LzB4
+YmMpClsgICAgMi42MDI5MDZdIFs8ODA2NTBjZTA+XSAobW1jX3N0YXJ0X3JlcXVlc3QpIGZyb20g
+Wzw4MDY1MGVjMD5dIChtbWNfd2FpdF9mb3JfcmVxKzB4NjQvMHhkMCkKWyAgICAyLjYxMTI0NV0g
+Wzw4MDY1MGVjMD5dIChtbWNfd2FpdF9mb3JfcmVxKSBmcm9tIFs8ODA2NWFhMTA+XSAobW1jX2Fw
+cF9zZW5kX3NjcisweDEwYy8weDE0NCkKWyAgICAyLjYxOTY2OV0gWzw4MDY1YWExMD5dIChtbWNf
+YXBwX3NlbmRfc2NyKSBmcm9tIFs8ODA2NTliM2M+XSAobW1jX3NkX3NldHVwX2NhcmQrMHg0Yy8w
+eDMxOCkKWyAgICAyLjYyODA5Ml0gWzw4MDY1OWIzYz5dIChtbWNfc2Rfc2V0dXBfY2FyZCkgZnJv
+bSBbPDgwNjU5ZjBjPl0gKG1tY19zZF9pbml0X2NhcmQrMHgxMDQvMHg0MzApClsgICAgMi42MzY2
+MDFdIFs8ODA2NTlmMGM+XSAobW1jX3NkX2luaXRfY2FyZCkgZnJvbSBbPDgwNjVhM2UwPl0gKG1t
+Y19hdHRhY2hfc2QrMHhjYy8weDE2YykKWyAgICAyLjY0NDY3OF0gWzw4MDY1YTNlMD5dIChtbWNf
+YXR0YWNoX3NkKSBmcm9tIFs8ODA2NTMwMWM+XSAobW1jX3Jlc2NhbisweDNhYy8weDQwYykKWyAg
+ICAyLjY1MjMzMl0gWzw4MDY1MzAxYz5dIChtbWNfcmVzY2FuKSBmcm9tIFs8ODAxNDMyNDQ+XSAo
+cHJvY2Vzc19vbmVfd29yaysweDJkOC8weDc4MCkKWyAgICAyLjY2MDIzOV0gWzw4MDE0MzI0ND5d
+IChwcm9jZXNzX29uZV93b3JrKSBmcm9tIFs8ODAxNDM3MzA+XSAod29ya2VyX3RocmVhZCsweDQ0
+LzB4NTk4KQpbICAgIDIuNjY4MzIzXSBbPDgwMTQzNzMwPl0gKHdvcmtlcl90aHJlYWQpIGZyb20g
+Wzw4MDE0YjVmOD5dIChrdGhyZWFkKzB4MTQ4LzB4MTUwKQpbICAgIDIuNjc1NzA4XSBbPDgwMTRi
+NWY4Pl0gKGt0aHJlYWQpIGZyb20gWzw4MDEwMTBiND5dIChyZXRfZnJvbV9mb3JrKzB4MTQvMHgy
+MCkKWyAgICAyLjY4MjkxMl0gRXhjZXB0aW9uIHN0YWNrKDB4ZWU4ZmRmYjAgdG8gMHhlZThmZGZm
+OCkKWyAgICAyLjY4Nzk1NF0gZGZhMDogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKWyAgICAyLjY5NjExOF0gZGZj
+MDogMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAg
+MDAwMDAwMDAgMDAwMDAwMDAKWyAgICAyLjcwNDI3N10gZGZlMDogMDAwMDAwMDAgMDAwMDAwMDAg
+MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMTMgMDAwMDAwMDAKClRoZSBvYnZpb3VzIGZpeCB3b3Vs
+ZCBiZSB0byB1c2UgJ3NwaW5fbG9ja19pbml0KCknIG9uICdwY2hhbi0+bG9jaycKYmVmb3JlIGF0
+dGVtcHRpbmcgdG8gY2FsbCAnc3Bpbl9sb2NrX2lycXNhdmUoKScgaW4gJ293bF9kbWFfZ2V0X3Bj
+aGFuKCknLgoKSG93ZXZlciwgYWNjb3JkaW5nIHRvIE1hbml2YW5uYW4gU2FkaGFzaXZhbSwgJ3Bj
+aGFuLT5sb2NrJyB3YXMgc3VwcG9zZWQKdG8gb25seSBwcm90ZWN0ICdwY2hhbi0+dmNoYW4nIHdo
+aWxlICdvZC0+bG9jaycgZG9lcyBhIHNpbWlsYXIgam9iIGluCidvd2xfZG1hX3Rlcm1pbmF0ZV9w
+Y2hhbigpJy4KClRoZXJlZm9yZSwgdGhpcyBwYXRjaCBzdWJzdGl0dXRlcyAncGNoYW4tPmxvY2sn
+IHdpdGggJ29kLT5sb2NrJyBhbmQKcmVtb3ZlcyB0aGUgJ2xvY2snIGF0dHJpYnV0ZSBpbiAnb3ds
+X2RtYV9wY2hhbicgc3RydWN0LgoKRml4ZXM6IDQ3ZTIwNTc3YzI0ZCAoImRtYWVuZ2luZTogQWRk
+IEFjdGlvbnMgU2VtaSBPd2wgZmFtaWx5IFM5MDAgRE1BCmRyaXZlciIpCgpTaWduZWQtb2ZmLWJ5
+OiBDcmlzdGlhbiBDaW9jYWx0ZWEgPGNyaXN0aWFuLmNpb2NhbHRlYUBnbWFpbC5jb20+ClJldmll
+d2VkLWJ5OiBNYW5pdmFubmFuIFNhZGhhc2l2YW0gPG1hbml2YW5uYW4uc2FkaGFzaXZhbUBsaW5h
+cm8ub3JnPgpBY2tlZC1ieTogQW5kcmVhcyBGw6RyYmVyIDxhZmFlcmJlckBzdXNlLmRlPgotLS0K
+Q2hhbmdlcyBpbiB2NDoKKiBDaGFuZ2UgcGF0Y2ggdGl0bGUgZnJvbSAnZG1hOiBhY3Rpb25zOiBG
+aXggbG9ja2RlcCBzcGxhdCBmb3Igb3dsLWRtYScKICB0byAnZG1hZW5naW5lOiBvd2w6IFVzZSBj
+b3JyZWN0IGxvY2sgaW4gb3dsX2RtYV9nZXRfcGNoYW4oKScKKiBBZGQgRml4ZXMgYW5kIEFja2Vk
+LWJ5IHRhZ3MgaW4gdGhlIGNvbW1pdCBtZXNzYWdlCgpDaGFuZ2VzIGluIHYzOgoqIEdldCByaWQg
+b2YgdGhlIGtlcm5lbGRvYyBjb21tZW50IGZvciB0aGUgcmVtb3ZlZCBzdHJ1Y3QgYXR0cmlidXRl
+CiogQWRkIHRoZSBSZXZpZXdlZC1ieSB0YWcgaW4gdGhlIGNvbW1pdCBtZXNzYWdlCgpDaGFuZ2Vz
+IGluIHYyOgoqIEltcHJvdmUgdGhlIGZpeCBhcyBzdWdnZXN0ZWQgYnkgTWFuaXZhbm5hbiBTYWRo
+YXNpdmFtOiBzdWJzdGl0dXRlCiAgJ3BjaGFuLT5sb2NrJyB3aXRoICdvZC0+bG9jaycgYW5kIGdl
+dCByaWQgb2YgdGhlICdsb2NrJyBhdHRyaWJ1dGUgaW4KICAnb3dsX2RtYV9wY2hhbicgc3RydWN0
+CiogVXBkYXRlIHRoZSBjb21taXQgbWVzc2FnZSB0byByZWZsZWN0IHRoZSBjaGFuZ2VzCgogZHJp
+dmVycy9kbWEvb3dsLWRtYS5jIHwgOCArKystLS0tLQogMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0
+aW9ucygrKSwgNSBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2RtYS9vd2wtZG1h
+LmMgYi9kcml2ZXJzL2RtYS9vd2wtZG1hLmMKaW5kZXggYzY4MzA1MTI1N2ZkLi42NmVmNzBiMDBl
+YzAgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZG1hL293bC1kbWEuYworKysgYi9kcml2ZXJzL2RtYS9v
+d2wtZG1hLmMKQEAgLTE3NSwxMyArMTc1LDExIEBAIHN0cnVjdCBvd2xfZG1hX3R4ZCB7CiAgKiBA
+aWQ6IHBoeXNpY2FsIGluZGV4IHRvIHRoaXMgY2hhbm5lbAogICogQGJhc2U6IHZpcnR1YWwgbWVt
+b3J5IGJhc2UgZm9yIHRoZSBkbWEgY2hhbm5lbAogICogQHZjaGFuOiB0aGUgdmlydHVhbCBjaGFu
+bmVsIGN1cnJlbnRseSBiZWluZyBzZXJ2ZWQgYnkgdGhpcyBwaHlzaWNhbCBjaGFubmVsCi0gKiBA
+bG9jazogYSBsb2NrIHRvIHVzZSB3aGVuIGFsdGVyaW5nIGFuIGluc3RhbmNlIG9mIHRoaXMgc3Ry
+dWN0CiAgKi8KIHN0cnVjdCBvd2xfZG1hX3BjaGFuIHsKIAl1MzIJCQlpZDsKIAl2b2lkIF9faW9t
+ZW0JCSpiYXNlOwogCXN0cnVjdCBvd2xfZG1hX3ZjaGFuCSp2Y2hhbjsKLQlzcGlubG9ja190CQls
+b2NrOwogfTsKIAogLyoqCkBAIC00MzcsMTQgKzQzNSwxNCBAQCBzdGF0aWMgc3RydWN0IG93bF9k
+bWFfcGNoYW4gKm93bF9kbWFfZ2V0X3BjaGFuKHN0cnVjdCBvd2xfZG1hICpvZCwKIAlmb3IgKGkg
+PSAwOyBpIDwgb2QtPm5yX3BjaGFuczsgaSsrKSB7CiAJCXBjaGFuID0gJm9kLT5wY2hhbnNbaV07
+CiAKLQkJc3Bpbl9sb2NrX2lycXNhdmUoJnBjaGFuLT5sb2NrLCBmbGFncyk7CisJCXNwaW5fbG9j
+a19pcnFzYXZlKCZvZC0+bG9jaywgZmxhZ3MpOwogCQlpZiAoIXBjaGFuLT52Y2hhbikgewogCQkJ
+cGNoYW4tPnZjaGFuID0gdmNoYW47Ci0JCQlzcGluX3VubG9ja19pcnFyZXN0b3JlKCZwY2hhbi0+
+bG9jaywgZmxhZ3MpOworCQkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmb2QtPmxvY2ssIGZsYWdz
+KTsKIAkJCWJyZWFrOwogCQl9CiAKLQkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmcGNoYW4tPmxv
+Y2ssIGZsYWdzKTsKKwkJc3Bpbl91bmxvY2tfaXJxcmVzdG9yZSgmb2QtPmxvY2ssIGZsYWdzKTsK
+IAl9CiAKIAlyZXR1cm4gcGNoYW47Ci0tIAoyLjI2LjIKCgpfX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
+aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
+ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
