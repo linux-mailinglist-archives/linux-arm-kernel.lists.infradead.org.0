@@ -2,90 +2,136 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3CA71C21C2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 02:02:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7D8E1C21EE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  2 May 2020 02:25:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Z7sJfe0tuJ2IpfahHuSJm4qsfuXcgOOfcukhOzfDE6s=; b=OS/SitO9JWBisBlSJ53qRhfafK
-	U48ofgvMB+Prqvj/q6BWpd3B5OdmNTGkmJdPyKTYXflTzvl7hvxWwr9l2HVtJyQBoViX29x1J5B6N
-	fzOg3Pt+k4VjccnUxozviECc0LA5vQy8juC5UHg7/WJI7yh+JAONTPCt4Gsor2AsllTEspC9F6nec
-	ToQAGNGQrUgaplAiffYzCiUdGmzNn+ZuQS7kTqclrdy5J93i20TdOe5LG2pzme1BbYMyHCtPL4tOT
-	e2NyOmKI/3B6nZra5NlSEdzEZ/de3FGHh/qHKIUOJvAWc30HPNhSENu/YfIJmXs8MkiaredUteqya
-	KEsLP2ZA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+OxsiLPUkjfy95usWH2YfIlW+3tGqwP3wv+Zk2lUhmI=; b=oDANXNb7V0tQxs
+	iZRicJXjDWG/4eNIsTDLgQCYCk9gumwrj8FW4CB14T0vKuMWGfkZuh47xoQTBCeRdzIOG5vdHQFGK
+	3RSHrxyed/Qz3awv9I2nB2fJKWMxgv8SwdV2peSL46znB0z+1+ab4p7sCFwOw40vaGa4AulxAUDAI
+	teYC/0fAjPFRa1l2c4wtBpFn/3EKjt/gQA6O6m6tQk9k05z0p+KwHMyTZbbkJcAduYxxq0O45KupR
+	uIBU0RS2HyRAT2YORAyohR1W9vgl9HL17ONyhXbxzT6SaWVVSUSf5lgF95cS+XukLuZ85Rx72Wasu
+	An7g5YAsjT0YSXjtz7Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jUfbZ-0001og-D5; Sat, 02 May 2020 00:02:05 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jUfyZ-00019S-M0; Sat, 02 May 2020 00:25:51 +0000
+Received: from mail-bn8nam12on2041.outbound.protection.outlook.com
+ ([40.107.237.41] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jUfbR-0001mf-Oe
- for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 00:01:59 +0000
-Received: by mail-wr1-x442.google.com with SMTP id d15so13750287wrx.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 01 May 2020 17:01:56 -0700 (PDT)
+ id 1jUfyE-0000zi-0E
+ for linux-arm-kernel@lists.infradead.org; Sat, 02 May 2020 00:25:32 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nN/a/Ix1ayoDZxFp5dhwOaoVIUdi2RluIAMX9UM18USYP8l3pjSXc32Z08FsyFgaSftjsPlpUYLG6PXd9jIUzaGaJZ2QEvsA6n3+y4f/nKFvMmnnu8Roo1NIKaHjfrpp+3ioV5oHqK/YRnQBhxVYZahmFHnjIQFCWxXRw+jo4MpjBxyq5ErUyZtTuVUPhiXt4FEDDXxsa2HDk0olQ6UCUWxSqZObUjx0Rqth81hyN6ULVfatoewDbFXIMWHH24bhH0DGj0OPdhoL2t9YEyKyz2C/M2alQbhnaZKazhEPRd2vOZon7uO9LSoiBAKuyZ6rwqa/AFpsw3wdplWfQg/IGw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JlwoRETXK8dK1LUyYeUzMX/A0nSc1vZw3PgFadZZ4hQ=;
+ b=kIzYe9M4hVn5nsHCbnVRwMfGRu3Pp8uT53Iz5hNTSLib2YGfwkrvwYzTASaaiGDRlyeYe9L+Uks0KQ0NsZyefjJz4lq6XwhdEW6hQ4SudpfXCY04mLhxl54+hB+oun2tGQC2uvLj8u/9xjAabzD59gAZs3wZwDQwyqic07xUVgMIrLBvPiXaqUSbWU3Szau7DHqKeijfavm7XyI0ENbfKOLwhKxEz5yXCXHiZ2duMDo0k4c3Cl4pZpBI1JGnivUSUBZxntZTlfNHz9vtmPksU/AamLupUjrRGjCE40NRPW0TsBVBkJBXmKRHr89fL6fvoeetbUdiUYXdf5k3+Vhwww==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=references:user-agent:from:to:cc:subject:in-reply-to:date
- :message-id:mime-version;
- bh=mnpsimwuy1HsCYdnivLxUTPWGJ+CV1JI9EBiJoWcRMA=;
- b=TLRUgGZlzXDwbdGjCQKtFdsgwYIYywxs6IL2aaocBIxiHaukVw6K6LresyCp6t4BIr
- FTTqJD0TWaAqQ2cKqNfZCrGdiVU2fCHPQMSCdmbAEe0y4PHtHyhEWhvURKhanRCb1hVR
- kLuKs6W7wbYYvOLdaGsw24wZJs61iX329BFV267Vdr8wcbvzrQFRC/+J428L9qnwZi1T
- oPEz5vYKrQR6JTs4y3wBPMagXasiimuMJ6TsOukYAb75lv58yhPH5QSXAaxWsB3WmNrk
- vJjh89QVZWYh3QkCxQn2vVvnhG5PoD9c3EF/g4L8f4HsuNYe2dpvatNA2XZyCPqoUgTE
- 2aoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:references:user-agent:from:to:cc:subject
- :in-reply-to:date:message-id:mime-version;
- bh=mnpsimwuy1HsCYdnivLxUTPWGJ+CV1JI9EBiJoWcRMA=;
- b=tU7T2zm6gQb4gtyfAoJjd3uoPQml734PD13Ts6itbUdbjWKOXlwhfAHuX1knO3As1A
- Gl95IHmZrxs836fdX5nUl/hUzdP0FtUI3t1un8l30CA9HaK33irK3FMzMkT4ViWpXYaT
- 3Jtvl4qix14DZrkd6Q6ahzabIRY0I5ILvnkoBOfls7RauV8PBdzXvBo4oT+sFk6WZg5C
- A6XR/QsNvZ9TZ9+f8FQtHDQAvkyyIilZrXMj1PLC4ZODtmutaI+cMACLcEg3oXGiTiG+
- QIVhfwy4GEbpACpz1dctZpXf69yI5juWwpckCy2CtiJ8OjC/NpgOn729oSp2+BddX2Y/
- QvqQ==
-X-Gm-Message-State: AGi0PuZBcbVroUkU7Jdv+NvP6AV5oamt/loQUnZvgNpV9C47Odli0FsG
- GP5tLfmBjAsY+ipsN4T4Ejqc8A==
-X-Google-Smtp-Source: APiQypIC1GGFwHeCAXP+xnmsMVu4bX6+mXS0f6uQUk++cUTQ7edzDBG/oInezxMVoP8L2WvMnSlbPQ==
-X-Received: by 2002:a5d:498b:: with SMTP id r11mr6556110wrq.368.1588377713218; 
- Fri, 01 May 2020 17:01:53 -0700 (PDT)
-Received: from localhost (cag06-3-82-243-161-21.fbx.proxad.net.
- [82.243.161.21])
- by smtp.gmail.com with ESMTPSA id s9sm7330900wrg.27.2020.05.01.17.01.51
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 01 May 2020 17:01:52 -0700 (PDT)
-References: <20200501215717.735393-1-martin.blumenstingl@googlemail.com>
-User-agent: mu4e 1.3.3; emacs 26.3
-From: Jerome Brunet <jbrunet@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-amlogic@lists.infradead.org
-Subject: Re: [PATCH] clk: meson: meson8b: Don't rely on u-boot to init all
- GP_PLL registers
-In-reply-to: <20200501215717.735393-1-martin.blumenstingl@googlemail.com>
-Date: Sat, 02 May 2020 02:01:50 +0200
-Message-ID: <1jees3i4r5.fsf@starbuckisacylon.baylibre.com>
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=JlwoRETXK8dK1LUyYeUzMX/A0nSc1vZw3PgFadZZ4hQ=;
+ b=KVwSffcWiyu0XuPeeo9cwsJxKqRUaYcf51CfliZgcLkmDVMesduono3/RSC4DFFr4ZdkZvWLDOqHHCPuXr/5JQYUMnOqw73Oy9U067lFD2msUFR6w+VBcyw7JeqOrubIdU0JCbguYHkibmVngOn0rG1tE1uqns5rMj1yUvyE/Pg=
+Received: from MN2PR11CA0001.namprd11.prod.outlook.com (2603:10b6:208:23b::6)
+ by CY4PR0201MB3539.namprd02.prod.outlook.com (2603:10b6:910:94::33)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2937.22; Sat, 2 May
+ 2020 00:25:26 +0000
+Received: from BL2NAM02FT021.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:208:23b:cafe::22) by MN2PR11CA0001.outlook.office365.com
+ (2603:10b6:208:23b::6) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20 via Frontend
+ Transport; Sat, 2 May 2020 00:25:26 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
+ header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT021.mail.protection.outlook.com (10.152.77.158) with Microsoft SMTP
+ Server id 15.20.2958.27 via Frontend Transport; Sat, 2 May 2020 00:25:25
+ +0000
+Received: from [149.199.38.66] (port=38216 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <amit.sunil.dhamne@xilinx.com>)
+ id 1jUfy7-0006Qg-A3; Fri, 01 May 2020 17:25:23 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <amit.sunil.dhamne@xilinx.com>)
+ id 1jUfy9-0004NS-J1; Fri, 01 May 2020 17:25:25 -0700
+Received: from xsj-pvapsmtp01 (xsj-smtp1.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 0420PIOr027413; 
+ Fri, 1 May 2020 17:25:18 -0700
+Received: from [172.19.3.8] (helo=xsjamitsuni50.xilinx.com)
+ by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <amit.sunil.dhamne@xilinx.com>)
+ id 1jUfy2-0004Mq-0I; Fri, 01 May 2020 17:25:18 -0700
+From: Amit Sunil Dhamne <amit.sunil.dhamne@xilinx.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, michal.simek@xilinx.com,
+ mark.rutland@arm.com, linux-clk@vger.kernel.org
+Subject: [RESEND PATCH v2 0/2] drivers: clk: zynqmp: Update fraction clock
+ check from custom type flags
+Date: Fri,  1 May 2020 17:25:15 -0700
+Message-Id: <1588379117-254190-1-git-send-email-amit.sunil.dhamne@xilinx.com>
+X-Mailer: git-send-email 2.7.4
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39860400002)(346002)(136003)(396003)(376002)(46966005)(70586007)(47076004)(81166007)(2906002)(36756003)(7696005)(70206006)(8936002)(8676002)(9786002)(5660300002)(26005)(478600001)(15650500001)(186003)(6666004)(966005)(426003)(82740400003)(356005)(4326008)(316002)(2616005)(107886003)(336012)(82310400002);
+ DIR:OUT; SFP:1101; 
 MIME-Version: 1.0
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 85bdb782-49d2-41bb-5d2d-08d7ee2f4f6d
+X-MS-TrafficTypeDiagnostic: CY4PR0201MB3539:
+X-Microsoft-Antispam-PRVS: <CY4PR0201MB353982497261AAFE3330278EA7A80@CY4PR0201MB3539.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:6790;
+X-Forefront-PRVS: 039178EF4A
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: WOT2aaUJTDWvKTJmOm9SD42qcNZ+ySoyRBjQgELIcr1SaT93P7QbOTP4SKEIakGU/FFG2N1xD4GcrQ1/jWIuqyS94f9E/J+EALgoJKnWdQgzfxiAk732XISra+6lhKXG/5Fk68BOvr6/x9z5l9evexbX0mngR28hvlj8j11AsZIdaky5R7n2ze3Rk/I4HHRKOThvv6kd16FIizlpGxTUbAgfB9IjJe+aq6OxjJxWKsZrGU8JUGjxjmzcjKToJhLNrhJLr795Fd5K1iOKCheLbrLxoFDt4XeD4RfYJUc/4qzUTTTzZd+ckOdmHMa7M4aJXlJu/TfQb+0OcDZc+jYGFtig5C3nnHFkHOXnAJE0rtgbS5TWKtvYBZ53THId40KKfU0a1UYzjtCPlge0Xxk/WwCCL2es9AOrtSeUa7QMtqG7biPBpeXM8ycbXvwIN3VM0wS9cpx3M4SXU2iVsN4DIejqgkIY65mDC/xGY71BFJ1H5SfUYOByCeT/3CiG4lqmek99g1VeZnvxs46/yT6oKISS1NFojTCKqLbSXqwa3R15RrTbw6S9RfwzdjVpYjsWrkbWwvzha1HXuo6nCo7A5g==
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 02 May 2020 00:25:25.9555 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 85bdb782-49d2-41bb-5d2d-08d7ee2f4f6d
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR0201MB3539
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200501_170157_829280_13D7A2A4 
-X-CRM114-Status: GOOD (  16.59  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200501_172530_042878_21124065 
+X-CRM114-Status: UNSURE (   8.91  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.237.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.237.41 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ 0.0 AC_FROM_MANY_DOTS      Multiple periods in From user name
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,93 +143,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
+Cc: jollys@xilinx.com, rajanv@xilinx.com,
+ Amit Sunil Dhamne <amit.sunil.dhamne@xilinx.com>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patch series adds support for custom type flags passed from
+firmware. It also update  fraction clock check from custom type
+flags since new firmware pass CLK_FRAC flag as a part of custom flags
+instead of clkflags as CLK_FRAC is not common clock framework flag.
 
-On Fri 01 May 2020 at 23:57, Martin Blumenstingl <martin.blumenstingl@googlemail.com> wrote:
+This patch series maintains backward compatibility with older version
+of firmware.
+v2:
+ -PATCH[2/2] Correct BIT index of CLK_FRAC in custom_type_flag
+Resend v2:
+ -We have tried to ping Stephen several times over email. Link:
+  https://lore.kernel.org/lkml/70D64AAE-668B-4699-8BDB-41CFC755C373@xilinx.com/
+  and also we tried to pinged him over IRC this week without no reaction
+  that's why we are sending that patches again
 
-> Not all u-boot versions initialize the HHI_GP_PLL_CNTL[2-5] registers.
-> In that case all HHI_GPLL_PLL_CNTL[1-5] registers are 0x0 and when
-> booting Linux the PLL fails to lock.
-> The initialization sequence from u-boot is:
-> - put the PLL into reset
-> - write 0x59C88000 to HHI_GP_PLL_CNTL2
-> - write 0xCA463823 to HHI_GP_PLL_CNTL3
-> - write 0x0286A027 to HHI_GP_PLL_CNTL4
-> - write 0x00003000 to HHI_GP_PLL_CNTL5
-> - set M, N, OD and the enable bit
-> - take the PLL out of reset
-> - check if it has locked
-> - disable the PLL
->
-> In Linux we already initialize M, N, OD, the enable and the reset bits.
-> Also the HHI_GP_PLL_CNTL[2-5] registers with these magic values (the
-> exact meaning is unknown) so the PLL can lock when the vendor u-boot did
-> not initialize these registers yet.
->
-> Fixes: b882964b376f21 ("clk: meson: meson8b: add support for the GP_PLL clock on Meson8m2")
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> ---
-> Jerome, this one is also not critical because we don't enable the VPU
-> yet. So I based this on commit 16afd70af5b21b ("clk: meson: meson8b:
-> Make the CCF use the glitch-free VPU mux").
->
->
->  drivers/clk/meson/meson8b.c | 9 +++++++++
->  drivers/clk/meson/meson8b.h | 4 ++++
->  2 files changed, 13 insertions(+)
 
-Applied, Thx
+Rajan Vaja (1):
+  drivers: clk: zynqmp: Add support for custom type flags
 
->
-> diff --git a/drivers/clk/meson/meson8b.c b/drivers/clk/meson/meson8b.c
-> index 811af1c11456..edc09d050ecf 100644
-> --- a/drivers/clk/meson/meson8b.c
-> +++ b/drivers/clk/meson/meson8b.c
-> @@ -1918,6 +1918,13 @@ static struct clk_regmap meson8b_mali = {
->  	},
->  };
->  
-> +static const struct reg_sequence meson8m2_gp_pll_init_regs[] = {
-> +	{ .reg = HHI_GP_PLL_CNTL2,	.def = 0x59c88000 },
-> +	{ .reg = HHI_GP_PLL_CNTL3,	.def = 0xca463823 },
-> +	{ .reg = HHI_GP_PLL_CNTL4,	.def = 0x0286a027 },
-> +	{ .reg = HHI_GP_PLL_CNTL5,	.def = 0x00003000 },
-> +};
-> +
->  static const struct pll_params_table meson8m2_gp_pll_params_table[] = {
->  	PLL_PARAMS(182, 3),
->  	{ /* sentinel */ },
-> @@ -1951,6 +1958,8 @@ static struct clk_regmap meson8m2_gp_pll_dco = {
->  			.width   = 1,
->  		},
->  		.table = meson8m2_gp_pll_params_table,
-> +		.init_regs = meson8m2_gp_pll_init_regs,
-> +		.init_count = ARRAY_SIZE(meson8m2_gp_pll_init_regs),
->  	},
->  	.hw.init = &(struct clk_init_data){
->  		.name = "gp_pll_dco",
-> diff --git a/drivers/clk/meson/meson8b.h b/drivers/clk/meson/meson8b.h
-> index 94ce3ef0c1d5..cd38ae2a9cb5 100644
-> --- a/drivers/clk/meson/meson8b.h
-> +++ b/drivers/clk/meson/meson8b.h
-> @@ -20,6 +20,10 @@
->   * [0] http://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
->   */
->  #define HHI_GP_PLL_CNTL			0x40  /* 0x10 offset in data sheet */
-> +#define HHI_GP_PLL_CNTL2		0x44  /* 0x11 offset in data sheet */
-> +#define HHI_GP_PLL_CNTL3		0x48  /* 0x12 offset in data sheet */
-> +#define HHI_GP_PLL_CNTL4		0x4C  /* 0x13 offset in data sheet */
-> +#define HHI_GP_PLL_CNTL5		0x50  /* 0x14 offset in data sheet */
->  #define HHI_VIID_CLK_DIV		0x128 /* 0x4a offset in data sheet */
->  #define HHI_VIID_CLK_CNTL		0x12c /* 0x4b offset in data sheet */
->  #define HHI_GCLK_MPEG0			0x140 /* 0x50 offset in data sheet */
+Tejas Patel (1):
+  drivers: clk: zynqmp: Update fraction clock check from custom type
+    flags
 
+ drivers/clk/zynqmp/clk-zynqmp.h | 1 +
+ drivers/clk/zynqmp/clkc.c       | 4 ++++
+ drivers/clk/zynqmp/divider.c    | 6 ++++--
+ 3 files changed, 9 insertions(+), 2 deletions(-)
+
+--
+2.7.4
+
+This email and any attachments are intended for the sole use of the named recipient(s) and contain(s) confidential information that may be proprietary, privileged or copyrighted under applicable law. If you are not the intended recipient, do not read, copy, or forward this email message or any attachments. Delete this email message and any attachments immediately.
 
 _______________________________________________
 linux-arm-kernel mailing list
