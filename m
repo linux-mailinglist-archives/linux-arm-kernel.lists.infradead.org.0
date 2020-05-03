@@ -2,70 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE8F91C2DA2
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 17:44:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F2E71C2DC0
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 17:57:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZqYICPNucgawEdXuiFWuvuo1CM6xTioavttIG3tsPlE=; b=gVN6krrYFuXwCZ1zEBG4fVI2eu
-	5PXbXug0UF4lZArZ4QOkHiGbbXWNjZxCvjusPQ3lDLHq6iqsLwMnSKE5/EirdPMR4uw55Lj0l4qWr
-	a/mAd/kZ1mHvUQb9u6V9otVHYxBuFd2p3o3BbfBIaOFBgMznLi5HSBDEDIzBKE+Ogi8/UlG1CkWIh
-	vhyv4ZLHJ5yOOCXAimxcFuIUcDPnz8vTNIu4/YP5daipkdzbKBRd4COhSp65DwCw6P6zEsfLwgH5N
-	CQjDRzGv5QozfDhiLG06KjJNG6lsveiXGS/WyARi4HVB/SHLXcKQEFH7uuaQ6IhkL+5hOSxPliVnK
-	jM3RYCcw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rYuz8nOaouqwRprIx13Z5AXQV3zKVHM7b5I1tZv6WIs=; b=EML7QLMTLA/7JA
+	qJTqsBnjHOKasTw2IFZFsMz2v7yyh7ezLsjfnQLi0p6ZQJoGfyj3ZIW0DrN4cujyvPAajSrUbZYK+
+	KLGtmjYDUJunprnlEbKGsvilreR55IIxasLRO2d/bxENc4ZoXDYd+2eQl4gKs29yuaZYECoyWjUgv
+	e5mcLo/R8bqdo9Nsl3ESDsLywAARfrv7bRFivlRIA0f+NFG0ta7SDTutPLFsHm8+a1FyCvM7vygVI
+	vn4u3Pyl+o1AVfJT+bdiPcV39PFlE99F9dTZyX7OHMrzFSP9IAoKmHhIhxeiRLFKhMPi1dga5K45H
+	oRzGgNUFOf3Lo4RprEgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVGmq-0003hP-L1; Sun, 03 May 2020 15:44:12 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVGz1-0007Pp-Oh; Sun, 03 May 2020 15:56:47 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVGlf-0002jc-MD
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 15:43:02 +0000
-Received: from localhost.localdomain (unknown [157.51.190.160])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DFD1A20836;
- Sun,  3 May 2020 15:42:53 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588520578;
- bh=OXq9FMct3mDZL6PvVE4nWjIKjobcNyfHQcSwBAqBwVc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=g5WnNTF+PpnXSAALCoeR5nGgbygm1L8Fk1PZV4vXBXwWNTMEayAVswXAZZFhPx/wR
- MpaRoJy9H9TrM3zRapq/fgk2yLXbSp4O0/iJnkhcLfgGGyLbWDqEpHEebakySG/3Zb
- Zo72aUdzp27OtlT14UJMhR4qWJCKA6we/I03GIJw=
-From: mani@kernel.org
-To: robh+dt@kernel.org,
-	mcoquelin.stm32@gmail.com,
-	alexandre.torgue@st.com
-Subject: [PATCH v2 6/6] ARM: dts: stm32: Add IoT Box board support
-Date: Sun,  3 May 2020 21:12:15 +0530
-Message-Id: <20200503154215.23654-7-mani@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200503154215.23654-1-mani@kernel.org>
-References: <20200503154215.23654-1-mani@kernel.org>
+ id 1jVGxO-0003yA-8V
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 15:55:09 +0000
+Received: by mail-ot1-f66.google.com with SMTP id e20so6724716otk.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 03 May 2020 08:55:04 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=1SJl+Zf+PXhgsQbG0N6jArE/8YWiS3AQ+7VS1y+nDYs=;
+ b=U+UuhEKSasKnMf1DyDliqYOvkAi5Sjem3H+TcZHEM1qzbwtyA0tMsaehyJAMncCgoW
+ /YK+PnIoMoU6B2ceZ32l3fQgTpsaaMhCOuhRQoW67f9wSKwZC2S9b71bnuDWr1qrBl/K
+ 9xevoJxWj0Rs2BVVDyLolyMCJWlD/YOyGD7kt6BhpkvB6OprwOX/KOSV2pQborFWhRSq
+ dIOJ8Z0SYqC9GgBoIYGOZaLbvnm/Tlm8GO2cZwdzTfrYcLszubv+fCrkrpMTqNpeLhsC
+ IeRD/GGzvmHJDRxnUksdwujp6AIkSvA3rFacjplZmk1yCWphJSK6re2RdCCroUQkVZp3
+ Yg9A==
+X-Gm-Message-State: AGi0Pua6XPyyVZcmdNCWQGFU2Y/3sQAddwYz8LiSEKvp0AYNp4/I/nK3
+ ZbsVyUnMgqHoiuHFstdFF9GxvVY=
+X-Google-Smtp-Source: APiQypLt0OsGOy7bdAk4eX8ZfJHsyORJIwBTySAb9tpBQpijaTQl/DOvjAzwB99sHAw0bd0niLZoUA==
+X-Received: by 2002:a9d:400d:: with SMTP id m13mr11156744ote.347.1588521303624; 
+ Sun, 03 May 2020 08:55:03 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id q19sm2489210otf.6.2020.05.03.08.55.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 03 May 2020 08:55:02 -0700 (PDT)
+Received: (nullmailer pid 19190 invoked by uid 1000);
+ Sun, 03 May 2020 15:55:01 -0000
+Date: Sun, 3 May 2020 10:55:01 -0500
+From: Rob Herring <robh@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v3 1/8] dt-bindings: clock: Convert Calxeda clock
+ bindings to json-schema
+Message-ID: <20200503155501.GA19073@bogus>
+References: <20200430211054.30466-1-andre.przywara@arm.com>
+ <20200430211054.30466-2-andre.przywara@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200430211054.30466-2-andre.przywara@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_084259_796848_5ED6C173 
-X-CRM114-Status: GOOD (  13.73  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200503_085506_511049_2A312672 
+X-CRM114-Status: GOOD (  12.59  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,134 +95,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Manivannan Sadhasivam <mani@kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Manivannan Sadhasivam <mani@kernel.org>
+On Thu, 30 Apr 2020 22:10:47 +0100, Andre Przywara wrote:
+> Convert the Calxeda clock bindings to DT schema format using json-schema.
+> 
+> This just covers the actual PLL and divider clock nodes. In the actual
+> DTs they are somewhat unconnected (no ranges or bus compatible) children
+> of the sregs node, but for the actual clock bindings this is not
+> relevant.
+> 
+> One oddity is that the addresses are relative to the parent node,
+> without that being pronounced using a ranges property.
+> But this is too late to fix now.
+> 
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> Acked-by: Stephen Boyd <sboyd@kernel.org>
+> ---
+>  .../devicetree/bindings/clock/calxeda.txt     | 17 ----
+>  .../devicetree/bindings/clock/calxeda.yaml    | 82 +++++++++++++++++++
+>  2 files changed, 82 insertions(+), 17 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/clock/calxeda.txt
+>  create mode 100644 Documentation/devicetree/bindings/clock/calxeda.yaml
+> 
 
-IoT Box is an IoT gateway device based on Stinger96 board powered by
-STM32MP1 SoC, designed and manufactured by Shiratech Solutions. This
-device makes use of Stinger96 board by having it as a base board with
-one additional mezzanine on top.
+Applied, thanks.
 
-Following are the features exposed by this device in addition to the
-Stinger96 board:
-
-* WiFi/BT
-* CCS811 VOC sensor
-* 2x Digital microphones IM69D130
-* 12x WS2812B LEDs
-
-Following peripherals are tested and known to work:
-
-* WiFi/BT
-* CCS811
-
-More information about this device can be found in Shiratech website:
-https://www.shiratech-solutions.com/products/iot-box/
-
-Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
----
- arch/arm/boot/dts/Makefile                |  1 +
- arch/arm/boot/dts/stm32mp157a-iot-box.dts | 68 +++++++++++++++++++++++
- 2 files changed, 69 insertions(+)
- create mode 100644 arch/arm/boot/dts/stm32mp157a-iot-box.dts
-
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 966b81dfffd6..455ec6eb6303 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1030,6 +1030,7 @@ dtb-$(CONFIG_ARCH_STM32) += \
- 	stm32h743i-disco.dtb \
- 	stm32mp157a-avenger96.dtb \
- 	stm32mp157a-dk1.dtb \
-+	stm32mp157a-iot-box.dtb \
- 	stm32mp157a-stinger96.dtb \
- 	stm32mp157c-dhcom-pdk2.dtb \
- 	stm32mp157c-dk2.dtb \
-diff --git a/arch/arm/boot/dts/stm32mp157a-iot-box.dts b/arch/arm/boot/dts/stm32mp157a-iot-box.dts
-new file mode 100644
-index 000000000000..70f394b4d3c0
---- /dev/null
-+++ b/arch/arm/boot/dts/stm32mp157a-iot-box.dts
-@@ -0,0 +1,68 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (C) 2020 Manivannan Sadhasivam
-+ */
-+
-+/dts-v1/;
-+#include "stm32mp157a-stinger96.dtsi"
-+
-+/ {
-+	model = "Shiratech STM32MP157A IoT Box";
-+	compatible = "shiratech,stm32mp157a-iot-box", "st,stm32mp157";
-+
-+	wlan_pwr: regulator-wlan {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "wl-reg";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		gpios = <&gpiog 3 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+	};
-+};
-+
-+&i2c2 {
-+	ccs811@5b {
-+		compatible = "ams,ccs811";
-+		reg = <0x5b>;
-+		wakeup-gpios = <&gpioa 12 GPIO_ACTIVE_LOW>;
-+		reset-gpios = <&gpioa 11 GPIO_ACTIVE_LOW>;
-+	};
-+};
-+
-+/* WiFi */
-+&sdmmc2 {
-+	pinctrl-names = "default", "opendrain", "sleep";
-+	pinctrl-0 = <&sdmmc2_b4_pins_a>;
-+	pinctrl-1 = <&sdmmc2_b4_od_pins_b>;
-+	pinctrl-2 = <&sdmmc2_b4_sleep_pins_a>;
-+	broken-cd;
-+	non-removable;
-+	st,neg-edge;
-+	bus-width = <1>;
-+	vmmc-supply = <&wlan_pwr>;
-+	status = "okay";
-+
-+	#address-cells = <1>;
-+	#size-cells = <0>;
-+	brcmf: bcrmf@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+	};
-+};
-+
-+/* Bluetooth */
-+&uart4 {
-+	/* Note: HW flow control is broken, hence using custom CTS/RTS gpios */
-+	/delete-property/st,hw-flow-ctrl;
-+	cts-gpios = <&gpioa 15 GPIO_ACTIVE_LOW>;
-+	rts-gpios = <&gpiob 0 GPIO_ACTIVE_LOW>;
-+	status = "okay";
-+
-+	bluetooth {
-+		shutdown-gpios = <&gpiog 2 GPIO_ACTIVE_HIGH>;
-+		compatible = "brcm,bcm43438-bt";
-+		max-speed = <115200>;
-+	};
-+};
--- 
-2.17.1
-
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
