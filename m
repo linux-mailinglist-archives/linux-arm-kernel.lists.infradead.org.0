@@ -2,85 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C45F61C2E75
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 20:05:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6AF11C2EFA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 22:01:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SmcZLsXaVWokVIqd+Hoh/vbwQh8Gk0dKRqNuJffG/2g=; b=paUjTVSf/1/nNB
-	UAgaAmTC+0k5yx8gXcUmPKJKr9rW0iJVvP7DXk1ufOVBCmdPDIuuNYVmcwPNu1Q7Rx7du5jI322of
-	BKHAJzvgkz124386bj9PIg3wgUboAX167BFqL9nDRsYEbZ3Y6pT7sYIneDHWed5fCjBC2Bf6bbB5c
-	zPUnMAA8MGFOMbC7+hUpYQwBelI5lUtvxg2kGlIyT8RvXtobZL41oCc9O/ngwXYS7rLq8k0sMFay5
-	sw11qaN0JM9cfmfi/twFtnpYKwbZ1iNbY0jhshwA2bTWeQAjnOi9JOL+CirH+IXXqCvLCttpxhkaA
-	iI0kq50X4nNcteBYlo3w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=IPOjxa4PCk8ePasziUcf2tcWodzwvhQtaREuUnzmNwY=; b=Y54fVhEGzaG3s/
+	sbHobWFno7RVk+s4yEIHxJax2MgtNKpuuKaf3WNeTLSgX+cm1N5GAt5kdLyDv1kwR9OQ0jGTn9Bb3
+	lZBT53kXK+4vOR4O32hM7SNZdKUDBLS63848Bm43ew4ZRP712+D+XBd8eGCujuv9MhJ4nuYzMNBbG
+	UWcmOlE1t82TGe9w6iGXlDyvMihSmWSrE37DVVBLz0ew+Ife7GAl97ZuHOotgTi5mnP9Rgtj1IgrR
+	bvcaym3+/9RZC7qPYa2Fj7wcJQSe9MeOcSQ3FBslCreQG16VbSpXOsbT+2wMqL+8qF2+94TOLriVZ
+	6ScDoBcLFmo3be7kJ6xg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVIyx-0005TA-AC; Sun, 03 May 2020 18:04:51 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jVKnS-0003QI-08; Sun, 03 May 2020 20:01:06 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVIyr-0005S5-O6
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 18:04:46 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t7so5888790plr.0
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 03 May 2020 11:04:39 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:content-transfer-encoding:in-reply-to:references
- :subject:from:cc:to:date:message-id:user-agent;
- bh=M1DEISu9MYGPZYesmfl21tqYzrqxGvDQQ/p1wwOg6xI=;
- b=ekta0op2sREg6d8RHUkBhI176t9mMJmbCpsFiWaY2hl47DUtOP+N7HirULms78rK+U
- o4vlI5EYt6kDWBtoPHm6D+3ygxh/TR3RcTKbuCnCsVvBSOm//VjOAz6+uMMPjBw15JKz
- txm33J/efjkpOocmLtRM1WCwOMkFGxR2NNY8k=
+ id 1jVKnJ-0003P0-F5; Sun, 03 May 2020 20:00:58 +0000
+Received: by mail-wr1-x444.google.com with SMTP id i10so18393292wrv.10;
+ Sun, 03 May 2020 13:00:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:mime-version:content-disposition;
+ bh=QqRdtHtAi8l/8c9aZkszbUa8kmMqeeh3ZFLZmpwUXmw=;
+ b=rsR9nTkgNRQ+kOj8RXQMdPcb5bI+0UB8BKi8B9ep9Fqf9BS/e8KvpLxdg1mVz4ugaU
+ 4APvVLy9nGW/n6+rSDItFmATfsqLJLl/9LICi9eMNdXubXIXs57PsYy93bHAlhPj4mp5
+ d1S6ahLhalEtMEIv1t3YNmwqb55REwYOa3Im+f6Daq5d+8T0T0CSmzfFQSXALCv0EeZP
+ 0KaPRpqYq+BPrpvJP8L1mE/H7707aUlh2To2vNkqES7iOLcW17IKBq6fBR45BHcFRLlp
+ 0F9RrnhzOnUxXvegK2atG9ikLrHzK5Piz/vCm5cAmlrT58VOwNEDZTGp0vd6RX2PwKCL
+ 79dQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:content-transfer-encoding
- :in-reply-to:references:subject:from:cc:to:date:message-id
- :user-agent;
- bh=M1DEISu9MYGPZYesmfl21tqYzrqxGvDQQ/p1wwOg6xI=;
- b=Prd7InbAuIBST0M94iLCvfx/oTBw97AEbvFBnmSRUKtsnjSvJhUVUGsE0QMOrsqLlh
- MHPmLL/mo1Eh9vZKKywXixfZFZJJwSuJY20q1HmGsN5sXKhrgOP6PIhzy/jTu+raq02d
- lT4AfKrMwto70VXKf/gx7xK/MqFCrZc65ty8FUUh2LPlMQgv6gkH9Cbxcwa78mXdmTiY
- FhkMo7RB4PvhZHbU8YuKta1E2khjp8HxpGQRA1t7+U+qZFkOTBwYnFWk2kMC5Y58UMXS
- SF90Sf+LfqpTeQ45MyDdW7enSqRM2RO3WltatyqYbdTtm/efabqRqClbi0JX7VgNSvpA
- +ZHg==
-X-Gm-Message-State: AGi0PuZ3TDlliAAToBByRd8b+ZNF58+8II6cpimhUO/cWyJfOxKQtIxt
- xnn3A7hzeyp7a1Eo2Lm17gkQSQ==
-X-Google-Smtp-Source: APiQypK5TBe+UxWnIJGFGcL3mcTwKmQTxYKm07FhCeO3z6x6ax9DhvQKX826bQQm+UZPzX5r9J38sg==
-X-Received: by 2002:a17:90a:3767:: with SMTP id
- u94mr13084184pjb.23.1588529079415; 
- Sun, 03 May 2020 11:04:39 -0700 (PDT)
-Received: from chromium.org ([2620:15c:202:1:fa53:7765:582b:82b9])
- by smtp.gmail.com with ESMTPSA id o190sm6903190pfb.178.2020.05.03.11.04.38
+ h=x-gm-message-state:date:from:to:subject:message-id:mime-version
+ :content-disposition;
+ bh=QqRdtHtAi8l/8c9aZkszbUa8kmMqeeh3ZFLZmpwUXmw=;
+ b=bPawxF+4kU/BxREulXMAxtIXlhQkRxPhcoG8MtlSebSmsvUBa8nyQQVzfabFnfs0ka
+ RkHqi0PRqxJiuXPVMw2E0qY6VN/TRy2rYYbK651WpN6nVp3aU+n/clVD3RBS50b8Ts45
+ oG1RD0Enm7OKQ6Ua+NkFsxnEDEfBcQhbgHwkG2PE+wGQvjQvuV4PUHB1jjGi6jRAfh0P
+ n7RdMaY+WijEfy849pTrQDjBMFKWJFdGnnA02BWscq+oJHEwlyppsHJ5JoPHOvAaIVzM
+ qoXtp2ZqqTAATzc/ZOwlDV06100Y2v9CE9zHfM/7Bgw3UcIipQYtj7Uba21Ga2iyaw7y
+ Jegw==
+X-Gm-Message-State: AGi0PuYs6xpIif+EGBWwIyCIPGk2RKBJDW8KeWH99t+JicGs/QN+wA4E
+ 6akuN0ivExzEYaNsSunR2C0=
+X-Google-Smtp-Source: APiQypJ644QIvHgh2YqgFFZPR//UNfvakJMh9tvgXPWNy87mnUXcL1Kt5Wzc5PopV/ZAmqfmph3Ypg==
+X-Received: by 2002:adf:9264:: with SMTP id 91mr2600213wrj.362.1588536055673; 
+ Sun, 03 May 2020 13:00:55 -0700 (PDT)
+Received: from vasteMachine (s559503e2.adsl.online.nl. [85.149.3.226])
+ by smtp.gmail.com with ESMTPSA id q4sm9080597wrx.9.2020.05.03.13.00.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 03 May 2020 11:04:38 -0700 (PDT)
+ Sun, 03 May 2020 13:00:55 -0700 (PDT)
+Date: Sun, 3 May 2020 22:00:33 +0200
+From: Jacko Dirks <jdirks.linuxdev@gmail.com>
+To: Mark Brown <broonie@kernel.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-spi@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Subject: [PATCH] spi: bcm2835: Fixes bare use of unsigned
+Message-ID: <20200503200033.GA3256@vasteMachine>
 MIME-Version: 1.0
-In-Reply-To: <CANLsYkzkq=EuKx_=W2jv2TeWpM3P=Pd9NYS18VfG9KCey=2--g@mail.gmail.com>
-References: <20200428181010.170568-1-swboyd@chromium.org>
- <20200428181010.170568-2-swboyd@chromium.org> <20200429180818.GA3062@xps15>
- <158818506575.117437.11635372928426076937@swboyd.mtv.corp.google.com>
- <CANLsYkzkq=EuKx_=W2jv2TeWpM3P=Pd9NYS18VfG9KCey=2--g@mail.gmail.com>
-Subject: Re: [PATCH v2 1/2] coresight: Include required headers in C files
-From: Stephen Boyd <swboyd@chromium.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Sun, 03 May 2020 11:04:37 -0700
-Message-ID: <158852907765.11125.7786353455300506998@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_110445_806032_570B90B5 
-X-CRM114-Status: UNSURE (   7.38  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200503_130057_506245_26E40FDA 
+X-CRM114-Status: GOOD (  10.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [jdirks.linuxdev[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,27 +99,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mike Leach <mike.leach@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Douglas Anderson <dianders@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Mathieu Poirier (2020-04-29 12:24:42)
-> 
-> >
-> > So please remove slab.h from the two files (but not the other one) when
-> > applying. Thanks.
-> 
-> You got it.
+Signed-off-by: Jacko Dirks <jdirks.linuxdev@gmail.com>
+---
+ drivers/spi/spi-bcm2835.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-I looked in next but coresight-cti-platform.c is missing slab.h even
-though I included it in my patch. There's a bare kcalloc() call in that
-file, so slab.h is required.
+diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
+index 11c235879bb7..e10b8f3b4bab 100644
+--- a/drivers/spi/spi-bcm2835.c
++++ b/drivers/spi/spi-bcm2835.c
+@@ -191,12 +191,12 @@ static void bcm2835_debugfs_remove(struct bcm2835_spi *bs)
+ }
+ #endif /* CONFIG_DEBUG_FS */
+ 
+-static inline u32 bcm2835_rd(struct bcm2835_spi *bs, unsigned reg)
++static inline u32 bcm2835_rd(struct bcm2835_spi *bs, unsigned int reg)
+ {
+ 	return readl(bs->regs + reg);
+ }
+ 
+-static inline void bcm2835_wr(struct bcm2835_spi *bs, unsigned reg, u32 val)
++static inline void bcm2835_wr(struct bcm2835_spi *bs, unsigned int reg, u32 val)
+ {
+ 	writel(val, bs->regs + reg);
+ }
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
