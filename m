@@ -2,67 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F00221C2C20
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 14:19:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 002371C2C1B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 14:18:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=FBvgGREDEUAkPMs6Hbi0Bmrn1W0TTWkZ7pGOFvwQeD4=; b=EvasnwZZTDel+i
-	ea9mSx+eD7776BcNNmepjNFrkmbZ4bLN2WE6rYcZnKDeU6IYNB1Xd+QxYkb1X+6DExoXvuTcmYL6m
-	vWQv0Onb8BVS6swSQfbTseDtBdkeGU8raL5BmN7ZZ4XYqT5lUUgixH++O2JQDN06bTmZMwQjseM3U
-	TeZQpONI/I4Hxk/cwkBXwtzi3YJ9dctzVpqs3l0AqqSADTioJMwMjcgV7BQVeX4lEITAqEaopafL2
-	cK0Kia/veVF/OV/0wq3NRf58HwJNhQji6AF2qnN8PTm3yp9ULkVaeF/mCZK4B+JPFeSYiinoaDXZS
-	Ass/RkeboXMsORnnKGqw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4S6jIlgZXmh/SpuTbzBnszBimZmIwquBztLsfmiSz0A=; b=Nifb32jNCNsqoA
+	zYaKEFJtNxOKWyaEuE+VgKkMi0LjigJvRIPVZRBUUKnqB2rey2YOwNmx86uLylQ9JkTXEIbM7dLrL
+	gUFIe7NAYlE8jPvYQ909+ieipZCvkmmY/YT2WPg8x3pbadTcxumYkTSjDdqbGRgxluDg/tLz7vO1J
+	wGQ7+DJs5OLFuHBGg2TAzG0qGUt44Xc58NkcVUD8wjYY14NC5FoUVHyLOUCcZ5aCz+9uxslQ5nxNS
+	yQXbWdSGgNCEArCM5qNd1lPUeyz1QzqqvVgaKHvLd+EiAlhoM4cCU6rvjb9csPLkAh5719Trjv88k
+	3oSiLc+MfjsnKivdWMnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVDa6-0004TH-DY; Sun, 03 May 2020 12:18:50 +0000
+	id 1jVDZq-0004Lp-U2; Sun, 03 May 2020 12:18:34 +0000
 Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVDZk-0004LA-6j
+ id 1jVDZk-0004LO-BK
  for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 12:18:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1588508307; x=1620044307;
- h=from:to:cc:subject:date:message-id:mime-version;
- bh=c8lDNy1DN1+fUi3A0w27OVt8zaff8+LO9O5hnm7DgNM=;
- b=Xeuci3jqeko+BCUK7wD1EhvYUwjheCDzyOh6ODZeRNGohP+i3yMoXXK6
- +bMBK2vR78bifd/JPnt/9JyJRJ8gDYl1qeBc3yP7FFnyyD8P7ayfsipgH
- EXYkdWwjh/ec+1m0bUatoe+IxZpY11ptjR4zZ1PtG3nHtJhWzKW2/3nsO
- xXnW9hfp9BNBCfVi6mbkh2JRU7HhbgyDGszKlrLPu47+GHbPSvXdSYJvx
- 0q+Zl4yJt5BPceL2Rs6rCv95lPpLvtws5Y8G1or+s38D9dqgbHoufxEZn
- 4lo7Eo1HLcQ7az5vXGwWjlhYt3TnezSw/rj/+csEQ7EiDpVKtKSQoVXYN A==;
-IronPort-SDR: DkyR9cKBfknKhzowufnIcNtdsXbkIo7Iw8szQVfEcCM6y7J9LyfIU7HWyWMdbwHkAmQgyaN78N
- nVTl6/txRq/dfCJpC7RiDdY6hbkpgFh0KirZG6acY6/5YSrIuuChre6Us8MP+zN13HWoNM8vkL
- V41yH53FxZpMIPNFtn7DN+6eSOg7gtzlJc/FtPUqOolbVXVtyO5ELDzRSRsyLa5ddHag0iLJ0i
- XzM7IlL878CRd2y8+r5Nfi83n6Dh8HjjI57a4aCSLhV1i0EM3OLga3ZA0dzo2oiCZjjbo7QTif
- jnQ=
-X-IronPort-AV: E=Sophos;i="5.73,347,1583218800"; d="scan'208";a="75334447"
+ t=1588508308; x=1620044308;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version;
+ bh=pi9dyMRbnlcW2sUMQWe9DzJs+ld1yk+KsP1Dq8HADTE=;
+ b=SQmh7B9GIhF7XjK9gwiuVcZWckYfUBTn4c/1Emye3CPvMNdhb+7pWD7u
+ kojAVpYIJXaIFoJ0O8EStJlwjcWCKQq4pq7rV17I4KwlTtZHRkOZUIj/U
+ dmjS0oqU7iNiuXJc3uaScr6KEefXxir1pL9DVPSiPq48OMITkQAQc4tAz
+ 74iv655MoR+80fpP/T20IZEAuoZuzrEyTY50V7n9yMjOP1zmVN8NH8gI2
+ tmE+AIKfi9MB9/Ovj3ZrfBqh66gP7XcDDnXvTPhgoxhi9slVnocdwPYDo
+ 29tLLgBXT8H1zv556jTKmec5xYs5CXzD041EGPObQCQzmOU3l5sOJagjB g==;
+IronPort-SDR: hhyLO3xXo8v+nj+BQPxEGwUpzUViMS5cR3raVxwSLXFAcxKSOx0+FI0BfmcwDmDZXut84EZY9d
+ ILtQfc5HUaH1VxeN4W8e2r93wPRqwf0ablLihWTJwsgQU3r3H60KnIubWT9qJ9zb1RpXV7S+OM
+ biwsoYp0ixKAehhcU3FeoXgOmD9PdoqZT+AQ3jAou4sWtlAviAnIu2LUNwHSTAYz0NrbdUa2ZW
+ W7YX2eqmNkaVIPni3tPQsDNpkF1xh5JW6ztBGVrpZd0mXtacOuSHd9W3yM+nNLUJFHSVrmPIdx
+ yHk=
+X-IronPort-AV: E=Sophos;i="5.73,347,1583218800"; d="scan'208";a="75334452"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 03 May 2020 05:18:22 -0700
+ 03 May 2020 05:18:27 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
  chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Sun, 3 May 2020 05:18:23 -0700
+ 15.1.1713.5; Sun, 3 May 2020 05:18:28 -0700
 Received: from m18063-ThinkPad-T460p.microchip.com (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Sun, 3 May 2020 05:18:18 -0700
+ 15.1.1713.5 via Frontend Transport; Sun, 3 May 2020 05:18:23 -0700
 From: Claudiu Beznea <claudiu.beznea@microchip.com>
 To: <mturquette@baylibre.com>, <sboyd@kernel.org>,
  <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
  <ludovic.desroches@microchip.com>
-Subject: [PATCH 1/2] clk: at91: pmc: do not continue if compatible not located
-Date: Sun, 3 May 2020 15:18:08 +0300
-Message-ID: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
+Subject: [PATCH 2/2] clk: at91: pmc: decrement node's refcount
+Date: Sun, 3 May 2020 15:18:09 +0300
+Message-ID: <1588508289-10140-2-git-send-email-claudiu.beznea@microchip.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
+References: <1588508289-10140-1-git-send-email-claudiu.beznea@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_051828_273460_686D0456 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20200503_051828_398301_7DC529F1 
+X-CRM114-Status: UNSURE (   8.37  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -98,27 +101,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-pmc_register_ops() is called for all AT91 devices. Return
--ENODEV in case of_find_matching_node() returns NULL.
+of_find_matching_node() increment node's refcount. Call
+of_node_put() to decrement it after it was used.
 
 Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
 ---
- drivers/clk/at91/pmc.c | 2 ++
- 1 file changed, 2 insertions(+)
+ drivers/clk/at91/pmc.c | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/drivers/clk/at91/pmc.c b/drivers/clk/at91/pmc.c
-index b71515acdec1..bf0570e66fc1 100644
+index bf0570e66fc1..e164069c81bd 100644
 --- a/drivers/clk/at91/pmc.c
 +++ b/drivers/clk/at91/pmc.c
-@@ -274,6 +274,8 @@ static int __init pmc_register_ops(void)
- 	struct device_node *np;
- 
- 	np = of_find_matching_node(NULL, sama5d2_pmc_dt_ids);
-+	if (!np)
-+		return -ENODEV;
+@@ -278,6 +278,7 @@ static int __init pmc_register_ops(void)
+ 		return -ENODEV;
  
  	pmcreg = device_node_to_regmap(np);
++	of_node_put(np);
  	if (IS_ERR(pmcreg))
+ 		return PTR_ERR(pmcreg);
+ 
 -- 
 2.7.4
 
