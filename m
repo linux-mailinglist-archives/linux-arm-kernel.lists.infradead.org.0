@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB3441C2CB4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 15:17:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40FCE1C2CBA
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 15:29:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c0rkyPgbD1ZS5Vo6il/pqaOuscagPWRXJz8kUvqZYMs=; b=Ou4yNKAFIL2/LS
-	rBIBS/Gw48BQCk05Xu4R0Xc0drziWOqzOgrxuXATn9+AWde1bQcpgT7q7wvTNNrA09f9FJmPQPIKw
-	DFg6zt1AIDKMF4lxfJm3C5h6UTcJhKJby4CQTJHEk/Enw/bRuWzIF8+7l9q6pBXLtMM99Ux2Scpv8
-	ntuVAvAHKZ3KUFrBPWKnSrk/Sw+oCiazOiDxL9nUp/+JA6NGxdrTmP65yk3M3Vl9fYehIkxmRswJ5
-	b/C7A1pKrfa42ztrfFgGV3IETuu+JZdLR8/hB/7xFXM2fNmBHCy0y7AUsLaOM0g8CbGiF5uANoP8G
-	uaBkUbG6jQvO+J2Ki5Lg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DnRAKXQYCUG8dcno2AmmqlBi0Fb16qsvrZaiSO0c4m4=; b=NlsJlcRQgFMBDOgxBHSoaPYRH
+	xDNw4wMDb+uwWEltAgqcmcSA1qnsGs7vKD5l6+PrDfWLKj4anvEXWq7oBMWwOqaowwMRuDY+PPERq
+	/kjOKVN5WfmqjTRVQ8NCCCa+be8t48gHbsLudqH3PBom+/6CplgRVpQsx8TieSDt8WqScfouUB6AY
+	jXHQmtFaG0N9dLP7ZeJxIw28Qv3dq4ccPqGNykVnn4S+FkuKikSHzcnoP1RejIOER83xPHWNuHM21
+	546SQrlglt+8s4E8rVrF5szKfzUwfHwjR4PASVSJ/NjG6DUaRGv+veHT8Ukg2Its67HVNWOOvK5Jd
+	qU1NhJ77Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVEV2-0000eq-02; Sun, 03 May 2020 13:17:40 +0000
+	id 1jVEgK-0006xw-0l; Sun, 03 May 2020 13:29:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVEUt-0000dy-TG
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 13:17:33 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
+ id 1jVEgE-0006xd-1M
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 13:29:15 +0000
+Received: from localhost (p54B33FBF.dip0.t-ipconnect.de [84.179.63.191])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2CB112084D;
- Sun,  3 May 2020 13:17:30 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B538020752;
+ Sun,  3 May 2020 13:29:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588511851;
- bh=c41wwaPkMaPx/AbXYXAvHUbp8vk80alaoAI0zA7NCnc=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Lp9ZTBlCE+wgj799vIc0GTuXkNxuIRSOL5IdIK2d+0gt4Ekgk7z8vrOWCIlxqyPSG
- QwOxMYR+YGl0Fg1MuRgRFvGjmf45V982vxk/Ye96NHuz2VsDn3iQjCmRKWIaHioSKN
- ZPhyr1ub+1OSTRFeiQEIcEcutXxUSqdLEQqSLE0c=
-Date: Sun, 3 May 2020 14:17:27 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Fabrice Gasnier <fabrice.gasnier@st.com>
-Subject: Re: [PATCH] iio: adc: stm32-dfsdm: fix device used to request dma
-Message-ID: <20200503141727.13269ac2@archlinux>
-In-Reply-To: <1588238926-23964-2-git-send-email-fabrice.gasnier@st.com>
-References: <1588238926-23964-1-git-send-email-fabrice.gasnier@st.com>
- <1588238926-23964-2-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1588512552;
+ bh=4JWSkq2cpw2BiP+K3FyaxSJGQXjScmAftWrqg7rnk0U=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ncI0ibVX7g2+5ycsBniA1qkCTQNyqh8iKYA5g9e/xNfr4HnaUpBD099vKdhn7pGME
+ 6IdSJSIQegG79efK+SFITq4Defjn+ABBATGj37/P8H7mxcUIfUtydEI4OxLXP31CRP
+ uCvDzwn2TkjePdkmMFF9UPEogPrdtgZj9te6QmPE=
+Date: Sun, 3 May 2020 15:29:06 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+Subject: Re: [PATCH] i2c: uniphier: Remove superfluous error message in
+ uniphier_i2c_probe()
+Message-ID: <20200503132906.GA32207@ninjato>
+References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <20200503120847.13528-1-aishwaryarj100@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_061731_985224_F9D6611E 
-X-CRM114-Status: GOOD (  18.67  )
+X-CRM114-CacheID: sfid-20200503_062914_098802_3E87847B 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,125 +77,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============1490888877645369115=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 30 Apr 2020 11:28:46 +0200
-Fabrice Gasnier <fabrice.gasnier@st.com> wrote:
 
-> DMA channel request should use device struct from platform device struct.
-> Currently it's using iio device struct. But at this stage when probing,
-> device struct isn't yet registered (e.g. device_register is done in
-> iio_device_register). Since commit 71723a96b8b1 ("dmaengine: Create
-> symlinks between DMA channels and slaves"), a warning message is printed
-> as the links in sysfs can't be created, due to device isn't yet registered:
-> - Cannot create DMA slave symlink
-> - Cannot create DMA dma:rx symlink
-> 
-> Fix this by using device struct from platform device to request dma chan.
-> 
-> Fixes: eca949800d2d ("IIO: ADC: add stm32 DFSDM support for PDM microphone")
-> 
-> Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+--===============1490888877645369115==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="zhXaljGHf11kAtnf"
+Content-Disposition: inline
 
-Both applied to the fixes-togreg branch of iio.git and marked for stable.
 
-THanks,
+--zhXaljGHf11kAtnf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Jonathan
+On Sun, May 03, 2020 at 05:38:47PM +0530, Aishwarya Ramakrishnan wrote:
+> The function platform_get_irq can log an error by itself.
+> This omit a redundant message for exception handling in the
+> calling function.
+>=20
+> Suggested by Coccinelle.
+>=20
+> Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
 
-> ---
->  drivers/iio/adc/stm32-dfsdm-adc.c | 21 +++++++++++----------
->  1 file changed, 11 insertions(+), 10 deletions(-)
-> 
-> diff --git a/drivers/iio/adc/stm32-dfsdm-adc.c b/drivers/iio/adc/stm32-dfsdm-adc.c
-> index 76a60d9..506bf51 100644
-> --- a/drivers/iio/adc/stm32-dfsdm-adc.c
-> +++ b/drivers/iio/adc/stm32-dfsdm-adc.c
-> @@ -62,7 +62,7 @@ enum sd_converter_type {
->  
->  struct stm32_dfsdm_dev_data {
->  	int type;
-> -	int (*init)(struct iio_dev *indio_dev);
-> +	int (*init)(struct device *dev, struct iio_dev *indio_dev);
->  	unsigned int num_channels;
->  	const struct regmap_config *regmap_cfg;
->  };
-> @@ -1365,11 +1365,12 @@ static void stm32_dfsdm_dma_release(struct iio_dev *indio_dev)
->  	}
->  }
->  
-> -static int stm32_dfsdm_dma_request(struct iio_dev *indio_dev)
-> +static int stm32_dfsdm_dma_request(struct device *dev,
-> +				   struct iio_dev *indio_dev)
->  {
->  	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
->  
-> -	adc->dma_chan = dma_request_chan(&indio_dev->dev, "rx");
-> +	adc->dma_chan = dma_request_chan(dev, "rx");
->  	if (IS_ERR(adc->dma_chan)) {
->  		int ret = PTR_ERR(adc->dma_chan);
->  
-> @@ -1425,7 +1426,7 @@ static int stm32_dfsdm_adc_chan_init_one(struct iio_dev *indio_dev,
->  					  &adc->dfsdm->ch_list[ch->channel]);
->  }
->  
-> -static int stm32_dfsdm_audio_init(struct iio_dev *indio_dev)
-> +static int stm32_dfsdm_audio_init(struct device *dev, struct iio_dev *indio_dev)
->  {
->  	struct iio_chan_spec *ch;
->  	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
-> @@ -1452,10 +1453,10 @@ static int stm32_dfsdm_audio_init(struct iio_dev *indio_dev)
->  	indio_dev->num_channels = 1;
->  	indio_dev->channels = ch;
->  
-> -	return stm32_dfsdm_dma_request(indio_dev);
-> +	return stm32_dfsdm_dma_request(dev, indio_dev);
->  }
->  
-> -static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
-> +static int stm32_dfsdm_adc_init(struct device *dev, struct iio_dev *indio_dev)
->  {
->  	struct iio_chan_spec *ch;
->  	struct stm32_dfsdm_adc *adc = iio_priv(indio_dev);
-> @@ -1499,17 +1500,17 @@ static int stm32_dfsdm_adc_init(struct iio_dev *indio_dev)
->  	init_completion(&adc->completion);
->  
->  	/* Optionally request DMA */
-> -	ret = stm32_dfsdm_dma_request(indio_dev);
-> +	ret = stm32_dfsdm_dma_request(dev, indio_dev);
->  	if (ret) {
->  		if (ret != -ENODEV) {
->  			if (ret != -EPROBE_DEFER)
-> -				dev_err(&indio_dev->dev,
-> +				dev_err(dev,
->  					"DMA channel request failed with %d\n",
->  					ret);
->  			return ret;
->  		}
->  
-> -		dev_dbg(&indio_dev->dev, "No DMA support\n");
-> +		dev_dbg(dev, "No DMA support\n");
->  		return 0;
->  	}
->  
-> @@ -1622,7 +1623,7 @@ static int stm32_dfsdm_adc_probe(struct platform_device *pdev)
->  		adc->dfsdm->fl_list[adc->fl_id].sync_mode = val;
->  
->  	adc->dev_data = dev_data;
-> -	ret = dev_data->init(iio);
-> +	ret = dev_data->init(dev, iio);
->  	if (ret < 0)
->  		return ret;
->  
+Please send only one patch for the whole I2C subsystem.
 
+
+--zhXaljGHf11kAtnf
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6uxx4ACgkQFA3kzBSg
+KbZdtA//Y6lCK360CUvB9MxuvS/hhnxeaVtnqwL+5QEFQjabnOTw1EFXji4ihhAX
+IBvWE6pLYag6SHHC3GN224jR6b5AS+8wLBGmy052fFCn5/DrphXupF7+wCgjZZVG
+q5/i1XUlJeqwxLBGfQ8JuyBkfQhmSp1K0xUpcPZfT7eso/mE0L3ZJ3TskesoubWi
+VKpelcUTuCJ3QgP9llXlwhMnbn4GQARDzThv4mdogCbfkh8t+YKUVMy9t9vo/BZ0
+X7xRjBlFq7slq4Ua+Y/QWeTmyo7sj6IgG4KB23fUvouGqYzPXJnD/pAl/IOf8Q8b
+/YLQSKD3lEs1V0zn/WaI1q+H+bd5qwJSk0wOVeL3UoCPJACVtWzJhTM8PJrm5i1+
+Gt6YFZ9KFdRDB8rCR6J0bcuGYw85QZ+egAnrRz/0jy1dbx3NcYSlrEpgt9+jC5uN
+reJTbrCKoG1EeWGqY6klbE67C8Fg+4uHLf4ipAMc/74BV3+YD4fXu/hYjERdjhWp
+jADtF4tpkFw8mKQdv+r8auhVR8Gu2mcR6MFkZDbwStXpTAlvKZkfPUU6Ue/n//De
+aASsTid88R9o5INCqIHNyisKSOwdlJlnX/WU5wTXYbvAeIoGa/Ay4ZETy2eBcFMM
+9Fi81whNJNI6g9w1hgcT0MquELnDHiY3tiizj1yHeOn7o5MYQkA=
+=gWoi
+-----END PGP SIGNATURE-----
+
+--zhXaljGHf11kAtnf--
+
+
+--===============1490888877645369115==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1490888877645369115==--
+
