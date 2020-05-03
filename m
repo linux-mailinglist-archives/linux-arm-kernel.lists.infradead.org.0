@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B6291C2A59
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 08:07:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CFE41C2A52
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 08:06:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ROTjL8mBWQVzo2RXbdd3yySAj4tOCu0XcMlZX7yb9es=; b=aazGjgx8pGlAZ8
-	N4AvmI7uWaYH4YY3Yh25bKLq0eAwaauPNN/mXitBIP6ZTltfmv+wCJERKcIx3U3thNrD/bb/rJXTs
-	vTdVpuphLchACrly0/5lP8jp15TJSsX2HKy36MI3dxMoQ7Bsbbze982BAB2CIH+7sGeTYovYmalvq
-	mnf0UD/mlTkbZbZ+kXy9P9E46qGwaWG7TtQc4eSjLbo8WdL2TpTA7u7P07ISDGYeOnG9lTUMKmO1b
-	UN1xQ3aWp6CdkUMWnC65kg0J2W7vjy0B1iLUpdFf3xgxfntqqOiuBes5cjjQglgJGGZ8FikjMziOu
-	F641Sa5I1Lg6KMd18Ywg==;
+	List-Owner; bh=pI6eLpwDIMvvNTcVpwgw87ZScRlsqUry1DD9Unf+S+Y=; b=LwAT1NWZkZpNhx
+	DBgpGwHJLSs/TlFv3a4asT+f2dXWbkkQMdTXdpQV+Kz/Ki4wyi0eWL+SRgnD2VLdBvcMxO1V5uPyO
+	MW+Luqdm+6mSmY5mU6q41eeiWvf3H3fK3+pv6WDxs507bEC0uFc9xEfp6iYYNPxiVvZFNvRaxQVjp
+	9iFTP7oZbjm7UIANN3c9/RA3LyC8HVjmcSfEafHiMWdF/RNQDtHUP2FqpIMDJMpuCcZQDbGfZsdh4
+	xRp3EWuznR0bvB/6XRcKoJJh//cH8L4x2qeUSC95+AEhOSoEjhkxd48/aNTAf4D113yM7WTbZPJ0G
+	TjLS2OzgkzORgajdiYFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jV7mH-0006oK-DS; Sun, 03 May 2020 06:07:01 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jV7lO-00060X-NP; Sun, 03 May 2020 06:06:06 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jV7jc-00027b-C9; Sun, 03 May 2020 06:04:18 +0000
-X-UUID: d1217e06b50a4684a07af5808d49821c-20200502
+ id 1jV7ja-000262-4Y; Sun, 03 May 2020 06:04:16 +0000
+X-UUID: 21baa64f29eb49a7945179ef7514b7fb-20200502
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=lvTox59cW7leiqB4qAxOe8+RTfYQVWs09Dx8wQB1BQk=; 
- b=OkA6td7VcRog0oaLwxLii552tbuHDrk7Xr8wmXbxeo20KTVmXNEonHXNFyK+VBr3b88kNGs7kHP9GEtl21lYEQ0/QYg0TxtcILW2eMAmQ29VEdB/iDPbeMgGreiRD4KPp+odj9/bMSfDSCnqVyf36dvTvUkTpUVWIEryp7tmfa0=;
-X-UUID: d1217e06b50a4684a07af5808d49821c-20200502
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ bh=FXgchehaCaQllpaErKyBEQaIrlgeFD/FE8iUAnQT1NM=; 
+ b=nmJ/5mOayT+xEqnbq6x0qz181VGh1PYeDk1QRs+EiCHh915LA+5UjJw8Dc8/YqIJG8PGndtiIQUG/5EUmXYuhnbCSqUSo+UbbYxAibbx04MoaEi+THyfWjwneTzjSWbx1r82LhtkBthPHqee+JJW1qK4w3+ZdhBYsXi9BCgbZpI=;
+X-UUID: 21baa64f29eb49a7945179ef7514b7fb-20200502
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1460049672; Sat, 02 May 2020 22:04:13 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ with ESMTP id 1031149362; Sat, 02 May 2020 22:04:12 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 2 May 2020 23:04:11 -0700
+ 15.0.1497.2; Sat, 2 May 2020 23:04:10 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Sun, 3 May 2020 14:03:55 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -46,19 +46,18 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v4 4/8] scsi: ufs-mediatek: add fixup_dev_quirks vops
-Date: Sun, 3 May 2020 14:03:47 +0800
-Message-ID: <20200503060351.10572-5-stanley.chu@mediatek.com>
+Subject: [PATCH v4 5/8] scsi: ufs: add "index" in parameter list of
+ ufshcd_query_flag()
+Date: Sun, 3 May 2020 14:03:48 +0800
+Message-ID: <20200503060351.10572-6-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200503060351.10572-1-stanley.chu@mediatek.com>
 References: <20200503060351.10572-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: E0035863AB47457224CD7CB1922709E8B7DC8A3D362EDA397C102489C0B91FE72000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_230416_460431_B8566D3B 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200502_230414_211011_31401EF2 
+X-CRM114-Status: GOOD (  12.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,69 +97,168 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add fixup_dev_quirk vops in MediaTek UFS platforms and provide
-an initial vendor-specific device quirk table.
+For preparation of LU Dedicated buffer mode support on WriteBooster
+feature, "index" parameter shall be added and allowed to be specified
+by callers.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
+Reviewed-by: Can Guo <cang@codeaurora.org>
 ---
- drivers/scsi/ufs/ufs-mediatek.c | 22 +++++++++++++++++++---
- 1 file changed, 19 insertions(+), 3 deletions(-)
+ drivers/scsi/ufs/ufs-sysfs.c |  2 +-
+ drivers/scsi/ufs/ufshcd.c    | 28 +++++++++++++++-------------
+ drivers/scsi/ufs/ufshcd.h    |  2 +-
+ 3 files changed, 17 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 673c16596fb2..ce7ba529e613 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -30,6 +30,12 @@
- #define ufs_mtk_device_reset_ctrl(high, res) \
- 	ufs_mtk_smc(UFS_MTK_SIP_DEVICE_RESET, high, res)
- 
-+static struct ufs_dev_fix ufs_mtk_dev_fixups[] = {
-+	UFS_FIX(UFS_VENDOR_SKHYNIX, "H9HQ21AFAMZDAR",
-+		UFS_DEVICE_QUIRK_SUPPORT_EXTENDED_FEATURES),
-+	END_FIX
-+};
-+
- static void ufs_mtk_cfg_unipro_cg(struct ufs_hba *hba, bool enable)
- {
- 	u32 tmp;
-@@ -555,10 +561,8 @@ static int ufs_mtk_apply_dev_quirks(struct ufs_hba *hba)
- 	struct ufs_dev_info *dev_info = &hba->dev_info;
- 	u16 mid = dev_info->wmanufacturerid;
- 
--	if (mid == UFS_VENDOR_SAMSUNG) {
--		hba->dev_quirks &= ~UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE;
-+	if (mid == UFS_VENDOR_SAMSUNG)
- 		ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TACTIVATE), 6);
--	}
- 
- 	/*
- 	 * Decide waiting time before gating reference clock and
-@@ -575,6 +579,17 @@ static int ufs_mtk_apply_dev_quirks(struct ufs_hba *hba)
- 	return 0;
+diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
+index 93484408bc40..b86b6a40d7e6 100644
+--- a/drivers/scsi/ufs/ufs-sysfs.c
++++ b/drivers/scsi/ufs/ufs-sysfs.c
+@@ -631,7 +631,7 @@ static ssize_t _name##_show(struct device *dev,				\
+ 	struct ufs_hba *hba = dev_get_drvdata(dev);			\
+ 	pm_runtime_get_sync(hba->dev);					\
+ 	ret = ufshcd_query_flag(hba, UPIU_QUERY_OPCODE_READ_FLAG,	\
+-		QUERY_FLAG_IDN##_uname, &flag);				\
++		QUERY_FLAG_IDN##_uname, 0, &flag);			\
+ 	pm_runtime_put_sync(hba->dev);					\
+ 	if (ret)							\
+ 		return -EINVAL;						\
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 6d5b49c07a69..d4a9c479294c 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -2782,13 +2782,13 @@ static inline void ufshcd_init_query(struct ufs_hba *hba,
  }
  
-+void ufs_mtk_fixup_dev_quirks(struct ufs_hba *hba)
-+{
-+	struct ufs_dev_info *dev_info = &hba->dev_info;
-+	u16 mid = dev_info->wmanufacturerid;
-+
-+	ufshcd_fixup_device_setup(hba, ufs_mtk_dev_fixups);
-+
-+	if (mid == UFS_VENDOR_SAMSUNG)
-+		hba->dev_quirks &= ~UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE;
-+}
-+
- /**
-  * struct ufs_hba_mtk_vops - UFS MTK specific variant operations
+ static int ufshcd_query_flag_retry(struct ufs_hba *hba,
+-	enum query_opcode opcode, enum flag_idn idn, bool *flag_res)
++	enum query_opcode opcode, enum flag_idn idn, u8 index, bool *flag_res)
+ {
+ 	int ret;
+ 	int retries;
+ 
+ 	for (retries = 0; retries < QUERY_REQ_RETRIES; retries++) {
+-		ret = ufshcd_query_flag(hba, opcode, idn, flag_res);
++		ret = ufshcd_query_flag(hba, opcode, idn, index, flag_res);
+ 		if (ret)
+ 			dev_dbg(hba->dev,
+ 				"%s: failed with error %d, retries %d\n",
+@@ -2809,16 +2809,17 @@ static int ufshcd_query_flag_retry(struct ufs_hba *hba,
+  * @hba: per-adapter instance
+  * @opcode: flag query to perform
+  * @idn: flag idn to access
++ * @index: flag index to access
+  * @flag_res: the flag value after the query request completes
   *
-@@ -589,6 +604,7 @@ static struct ufs_hba_variant_ops ufs_hba_mtk_vops = {
- 	.link_startup_notify = ufs_mtk_link_startup_notify,
- 	.pwr_change_notify   = ufs_mtk_pwr_change_notify,
- 	.apply_dev_quirks    = ufs_mtk_apply_dev_quirks,
-+	.fixup_dev_quirks    = ufs_mtk_fixup_dev_quirks,
- 	.suspend             = ufs_mtk_suspend,
- 	.resume              = ufs_mtk_resume,
- 	.dbg_register_dump   = ufs_mtk_dbg_register_dump,
+  * Returns 0 for success, non-zero in case of failure
+  */
+ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+-			enum flag_idn idn, bool *flag_res)
++			enum flag_idn idn, u8 index, bool *flag_res)
+ {
+ 	struct ufs_query_req *request = NULL;
+ 	struct ufs_query_res *response = NULL;
+-	int err, index = 0, selector = 0;
++	int err, selector = 0;
+ 	int timeout = QUERY_REQ_TIMEOUT;
+ 
+ 	BUG_ON(!hba);
+@@ -4175,7 +4176,7 @@ static int ufshcd_complete_dev_init(struct ufs_hba *hba)
+ 	bool flag_res = true;
+ 
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-		QUERY_FLAG_IDN_FDEVICEINIT, NULL);
++		QUERY_FLAG_IDN_FDEVICEINIT, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev,
+ 			"%s setting fDeviceInit flag failed with error %d\n",
+@@ -4186,7 +4187,7 @@ static int ufshcd_complete_dev_init(struct ufs_hba *hba)
+ 	/* poll for max. 1000 iterations for fDeviceInit flag to clear */
+ 	for (i = 0; i < 1000 && !err && flag_res; i++)
+ 		err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_READ_FLAG,
+-			QUERY_FLAG_IDN_FDEVICEINIT, &flag_res);
++			QUERY_FLAG_IDN_FDEVICEINIT, 0, &flag_res);
+ 
+ 	if (err)
+ 		dev_err(hba->dev,
+@@ -5001,7 +5002,7 @@ static int ufshcd_enable_auto_bkops(struct ufs_hba *hba)
+ 		goto out;
+ 
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-			QUERY_FLAG_IDN_BKOPS_EN, NULL);
++			QUERY_FLAG_IDN_BKOPS_EN, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev, "%s: failed to enable bkops %d\n",
+ 				__func__, err);
+@@ -5051,7 +5052,7 @@ static int ufshcd_disable_auto_bkops(struct ufs_hba *hba)
+ 	}
+ 
+ 	err = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_CLEAR_FLAG,
+-			QUERY_FLAG_IDN_BKOPS_EN, NULL);
++			QUERY_FLAG_IDN_BKOPS_EN, 0, NULL);
+ 	if (err) {
+ 		dev_err(hba->dev, "%s: failed to disable bkops %d\n",
+ 				__func__, err);
+@@ -5217,7 +5218,7 @@ static int ufshcd_wb_ctrl(struct ufs_hba *hba, bool enable)
+ 		opcode = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, opcode,
+-				      QUERY_FLAG_IDN_WB_EN, NULL);
++				      QUERY_FLAG_IDN_WB_EN, 0, NULL);
+ 	if (ret) {
+ 		dev_err(hba->dev, "%s write booster %s failed %d\n",
+ 			__func__, enable ? "enable" : "disable", ret);
+@@ -5241,7 +5242,7 @@ static int ufshcd_wb_toggle_flush_during_h8(struct ufs_hba *hba, bool set)
+ 		val = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+ 
+ 	return ufshcd_query_flag_retry(hba, val,
+-			       QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8,
++			       QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8, 0,
+ 				       NULL);
+ }
+ 
+@@ -5262,7 +5263,8 @@ static int ufshcd_wb_buf_flush_enable(struct ufs_hba *hba)
+ 		return 0;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
+-				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, NULL);
++				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN,
++				      0, NULL);
+ 	if (ret)
+ 		dev_err(hba->dev, "%s WB - buf flush enable failed %d\n",
+ 			__func__, ret);
+@@ -5281,7 +5283,7 @@ static int ufshcd_wb_buf_flush_disable(struct ufs_hba *hba)
+ 		return 0;
+ 
+ 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_CLEAR_FLAG,
+-				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, NULL);
++				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN, 0, NULL);
+ 	if (ret) {
+ 		dev_warn(hba->dev, "%s: WB - buf flush disable failed %d\n",
+ 			 __func__, ret);
+@@ -7266,7 +7268,7 @@ static int ufshcd_device_params_init(struct ufs_hba *hba)
+ 	ufshcd_get_ref_clk_gating_wait(hba);
+ 
+ 	if (!ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_READ_FLAG,
+-			QUERY_FLAG_IDN_PWR_ON_WPE, &flag))
++			QUERY_FLAG_IDN_PWR_ON_WPE, 0, &flag))
+ 		hba->dev_info.f_power_on_wp_en = flag;
+ 
+ 	/* Probe maximum power mode co-supported by both UFS host and device */
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index f34601121880..898883058e3a 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -948,7 +948,7 @@ int ufshcd_read_desc_param(struct ufs_hba *hba,
+ int ufshcd_query_attr(struct ufs_hba *hba, enum query_opcode opcode,
+ 		      enum attr_idn idn, u8 index, u8 selector, u32 *attr_val);
+ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+-	enum flag_idn idn, bool *flag_res);
++	enum flag_idn idn, u8 index, bool *flag_res);
+ 
+ void ufshcd_auto_hibern8_enable(struct ufs_hba *hba);
+ void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit);
 -- 
 2.18.0
 _______________________________________________
