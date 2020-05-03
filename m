@@ -2,50 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AC2E1C2D8E
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 17:42:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 529B61C2D92
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 17:43:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Uj6LR4Ihw/YnxE76Snvcf2DSMQgMsYshdhkRfSO4+6I=; b=b5c
-	Esp+BjCFkST76ULqJhJ4B8sAtIkzwBtF9QYcop6dJkVczbw4jEfP373gwGn4LdwWHer7HTf33O7tA
-	jhTcI+0dshmmyy5coVy6b7wbPFILOseeEdM7q8e47aWV9fwX8WIPKvuXv8KtbzG3DTvbeMJMAi65V
-	IhpOUYHGttNfLsoZngkiD0ppARsWiqnlYC0IrR1FvMqkemuOI7L+lk0sgrJ4YSfXQLglrrxckBNFv
-	aGZ0rAOnPs5Mv1zwTDG58IswYVoJRaNZVbCtEpCH8dXWfhxWSe9YDbL4GEq/IMzTQ1pDRKGrioqbt
-	GbHg/lX07xPssNi+yXgpRHy0gVwCYDA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=g450/U1urdL6E72Zxz7efkhAuTVrNdzDcHJvJaPABjA=; b=jDi7XkLjhdm1GfP/KrAsBWy4J3
+	HYzCbR7mVvaEIUy6w09RsQFwBBaQ+aIc7kO32QZmqeo7yMavZDtYrFXa6SDjmb2Wo/qnK5pwfRSR+
+	qgs9viWHeZ+LEHm+zb6R5ZpUKj3oajEfr9JCL3DoA4lMy/2l1++wm7Q1crVT1Y+Lq8HSKx5rqBCnl
+	ZjRYK5zegvMJkTWRVOunKXgBNvvjBsuHTufxLZ6OsJ4gv177EFfwNA57fYvFlnloENTqjC9dNJRnR
+	+64Bol8Rn0+MYpQCG6iV9uIe5Nqt8hyztTvJUNd+jTfUWA7KPec/8Lu3qOoBzF6B9wEoU4nsUZ3Ij
+	YqK5VRQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVGlH-0002Dy-4w; Sun, 03 May 2020 15:42:35 +0000
+	id 1jVGla-0002MQ-BG; Sun, 03 May 2020 15:42:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVGlA-0002DD-So
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 15:42:30 +0000
+ id 1jVGlF-0002H8-8M
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 15:42:34 +0000
 Received: from localhost.localdomain (unknown [157.51.190.160])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7612220757;
- Sun,  3 May 2020 15:42:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 276C3207DD;
+ Sun,  3 May 2020 15:42:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588520548;
- bh=0CnMSeTOMkqPLyIXlkMMbKd1x1o/uhBytgUHSI2Q8IM=;
- h=From:To:Cc:Subject:Date:From;
- b=IULHFamipQH5bSodpv0GV3Nx9+FVZaxVXUfnbSU21fv2/JywgTGME+8mLNzI126jP
- oPCbHEba/noEgcFuYPnbljJjxzF/zy7wYT/X4EgfHUHzUMBE6IFUvzRPg1pcd2XoQk
- Z7E5fpcjD+GlJFhjRB92VRRgkAVutW4AZGCddY9M=
+ s=default; t=1588520552;
+ bh=o8sRhaHgWPSPd3P6mFJsQFZFuiL8sjkixOve0V/XQ7Y=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=ATJoA/U+2a4/VWsRvwZfgHEx0Yo+tJVM8MJ/kgIWWd2rtd6dt/bvLaIn15YJ1WS9i
+ nVJC7tvOyD+ie19Rx3PGAUzHdON/esi4xr0/d9Szg8VDacW4HCKkvVu5gQC0WaOjoE
+ CFi96PoNLl6iKI2QJJFoxbld+Li54c74ZBNHgce8=
 From: mani@kernel.org
 To: robh+dt@kernel.org,
 	mcoquelin.stm32@gmail.com,
 	alexandre.torgue@st.com
-Subject: [PATCH v2 0/6] Add Stinger96 and IoT Box board support
-Date: Sun,  3 May 2020 21:12:09 +0530
-Message-Id: <20200503154215.23654-1-mani@kernel.org>
+Subject: [PATCH v2 1/6] dt-bindings: Add vendor prefix for Shiratech Solutions
+Date: Sun,  3 May 2020 21:12:10 +0530
+Message-Id: <20200503154215.23654-2-mani@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200503154215.23654-1-mani@kernel.org>
+References: <20200503154215.23654-1-mani@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_084228_951345_9A8F8148 
-X-CRM114-Status: GOOD (  10.46  )
+X-CRM114-CacheID: sfid-20200503_084233_330070_E388334B 
+X-CRM114-Status: UNSURE (   8.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,54 +89,29 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Manivannan Sadhasivam <mani@kernel.org>
 
-Hello,
+This commit adds devicetree vendor prefix for Shiratech solutions,
+a SOM/embedded board manufacturing company.
 
-This series adds Stinger96 and IoT Box board support. These boards are
-based on STM32MP157A SoC, designed and manufactured by Shiratech solutions.
+https://www.shiratech-solutions.com/
 
-The Stinger96 is a base board (96Boards IoT Extended edition) while IoT Box
-adds one mezzanine on top of it and sold as a gateway device.
+Signed-off-by: Manivannan Sadhasivam <mani@kernel.org>
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-This series depends on below patchsets already submitted and gone through
-reviews:
-
-[PATCH v3 0/3] Add Reset and Wakeup support for CCS811
-[PATCH v3 0/2] Add CTS/RTS gpio support to STM32 UART
-
-More information about these boards can be found in below links:
-
-https://www.shiratech-solutions.com/products/stinger96/
-https://www.shiratech-solutions.com/products/iot-box/
-
-Thanks,
-Mani
-
-Changes in v2:
-
-* Used "stm32" prefix for all DT commits
-* Dropped custom sdmmc2 pinctrl node since existing node itself has pullup
-  enabled and works fine.
-
-Manivannan Sadhasivam (6):
-  dt-bindings: Add vendor prefix for Shiratech Solutions
-  ARM: dts: stm32: Add missing pinctrl entries for STM32MP15
-  dt-bindings: arm: stm32: Document Stinger96 compatible
-  ARM: dts: stm32: Add Stinger96 board support
-  dt-bindings: arm: stm32: Document IoT Box compatible
-  ARM: dts: stm32: Add IoT Box board support
-
- .../devicetree/bindings/arm/stm32/stm32.yaml  |   2 +
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- arch/arm/boot/dts/Makefile                    |   2 +
- arch/arm/boot/dts/stm32mp15-pinctrl.dtsi      |  64 ++++
- arch/arm/boot/dts/stm32mp157a-iot-box.dts     |  68 ++++
- arch/arm/boot/dts/stm32mp157a-stinger96.dts   |  12 +
- arch/arm/boot/dts/stm32mp157a-stinger96.dtsi  | 342 ++++++++++++++++++
- 7 files changed, 492 insertions(+)
- create mode 100644 arch/arm/boot/dts/stm32mp157a-iot-box.dts
- create mode 100644 arch/arm/boot/dts/stm32mp157a-stinger96.dts
- create mode 100644 arch/arm/boot/dts/stm32mp157a-stinger96.dtsi
-
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index e3f1b06d12ae..48ad8f954f33 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -902,6 +902,8 @@ patternProperties:
+     description: Sharp Corporation
+   "^shimafuji,.*":
+     description: Shimafuji Electric, Inc.
++  "^shiratech,.*":
++    description: Shiratech Solutions
+   "^si-en,.*":
+     description: Si-En Technology Ltd.
+   "^si-linux,.*":
 -- 
 2.17.1
 
