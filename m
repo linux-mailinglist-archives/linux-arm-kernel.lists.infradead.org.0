@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6AF11C2EFA
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 22:01:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8039E1C2F7C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 23:31:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=IPOjxa4PCk8ePasziUcf2tcWodzwvhQtaREuUnzmNwY=; b=Y54fVhEGzaG3s/
-	sbHobWFno7RVk+s4yEIHxJax2MgtNKpuuKaf3WNeTLSgX+cm1N5GAt5kdLyDv1kwR9OQ0jGTn9Bb3
-	lZBT53kXK+4vOR4O32hM7SNZdKUDBLS63848Bm43ew4ZRP712+D+XBd8eGCujuv9MhJ4nuYzMNBbG
-	UWcmOlE1t82TGe9w6iGXlDyvMihSmWSrE37DVVBLz0ew+Ife7GAl97ZuHOotgTi5mnP9Rgtj1IgrR
-	bvcaym3+/9RZC7qPYa2Fj7wcJQSe9MeOcSQ3FBslCreQG16VbSpXOsbT+2wMqL+8qF2+94TOLriVZ
-	6ScDoBcLFmo3be7kJ6xg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=S7QWWm+OKsrEQwd0TVjV+cJv/OKZnV15ahaplEHhZmI=; b=F433UVmXlgZ3PkY8iEkbAxRgW
+	WQL5qdmGS/rIlNLLyKEnkqOeGNVc29OL3iyCAbU9UzNvu43QfWsy7/0pBfVWoD1vpWPaAj8ZII3au
+	Vs/t3JdRW55RknGR+EhBgMZ8lnRrnSUASWneY34sr5Qs73S+AuKJOfEYDLSuaydVEz+WD6Y4Mn4fP
+	wosV0fHrmg1lbOsbgi40R6ryS7OvOTfIxF9geQKAibXkYyZmCCnI4ozI7EfjLQbat+Z9Pk5G19GvV
+	81DYlZUX5IrGhavg6drm3myXGUIEplctjiO2xqswVdIUoaqNetfOBJvVff0BeJ2wclQLOrSw10dav
+	AT9CrwOUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVKnS-0003QI-08; Sun, 03 May 2020 20:01:06 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVKnJ-0003P0-F5; Sun, 03 May 2020 20:00:58 +0000
-Received: by mail-wr1-x444.google.com with SMTP id i10so18393292wrv.10;
- Sun, 03 May 2020 13:00:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:subject:message-id:mime-version:content-disposition;
- bh=QqRdtHtAi8l/8c9aZkszbUa8kmMqeeh3ZFLZmpwUXmw=;
- b=rsR9nTkgNRQ+kOj8RXQMdPcb5bI+0UB8BKi8B9ep9Fqf9BS/e8KvpLxdg1mVz4ugaU
- 4APvVLy9nGW/n6+rSDItFmATfsqLJLl/9LICi9eMNdXubXIXs57PsYy93bHAlhPj4mp5
- d1S6ahLhalEtMEIv1t3YNmwqb55REwYOa3Im+f6Daq5d+8T0T0CSmzfFQSXALCv0EeZP
- 0KaPRpqYq+BPrpvJP8L1mE/H7707aUlh2To2vNkqES7iOLcW17IKBq6fBR45BHcFRLlp
- 0F9RrnhzOnUxXvegK2atG9ikLrHzK5Piz/vCm5cAmlrT58VOwNEDZTGp0vd6RX2PwKCL
- 79dQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:mime-version
- :content-disposition;
- bh=QqRdtHtAi8l/8c9aZkszbUa8kmMqeeh3ZFLZmpwUXmw=;
- b=bPawxF+4kU/BxREulXMAxtIXlhQkRxPhcoG8MtlSebSmsvUBa8nyQQVzfabFnfs0ka
- RkHqi0PRqxJiuXPVMw2E0qY6VN/TRy2rYYbK651WpN6nVp3aU+n/clVD3RBS50b8Ts45
- oG1RD0Enm7OKQ6Ua+NkFsxnEDEfBcQhbgHwkG2PE+wGQvjQvuV4PUHB1jjGi6jRAfh0P
- n7RdMaY+WijEfy849pTrQDjBMFKWJFdGnnA02BWscq+oJHEwlyppsHJ5JoPHOvAaIVzM
- qoXtp2ZqqTAATzc/ZOwlDV06100Y2v9CE9zHfM/7Bgw3UcIipQYtj7Uba21Ga2iyaw7y
- Jegw==
-X-Gm-Message-State: AGi0PuYs6xpIif+EGBWwIyCIPGk2RKBJDW8KeWH99t+JicGs/QN+wA4E
- 6akuN0ivExzEYaNsSunR2C0=
-X-Google-Smtp-Source: APiQypJ644QIvHgh2YqgFFZPR//UNfvakJMh9tvgXPWNy87mnUXcL1Kt5Wzc5PopV/ZAmqfmph3Ypg==
-X-Received: by 2002:adf:9264:: with SMTP id 91mr2600213wrj.362.1588536055673; 
- Sun, 03 May 2020 13:00:55 -0700 (PDT)
-Received: from vasteMachine (s559503e2.adsl.online.nl. [85.149.3.226])
- by smtp.gmail.com with ESMTPSA id q4sm9080597wrx.9.2020.05.03.13.00.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 03 May 2020 13:00:55 -0700 (PDT)
-Date: Sun, 3 May 2020 22:00:33 +0200
-From: Jacko Dirks <jdirks.linuxdev@gmail.com>
-To: Mark Brown <broonie@kernel.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-spi@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] spi: bcm2835: Fixes bare use of unsigned
-Message-ID: <20200503200033.GA3256@vasteMachine>
+	id 1jVMCM-0008PI-Ks; Sun, 03 May 2020 21:30:54 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVMCF-0008D1-Ow
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 21:30:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B82A31FB;
+ Sun,  3 May 2020 14:30:43 -0700 (PDT)
+Received: from [10.37.12.17] (unknown [10.37.12.17])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C33E73F68F;
+ Sun,  3 May 2020 14:30:41 -0700 (PDT)
+Subject: Re: [PATCH V3 05/16] arm64/cpufeature: Introduce ID_DFR1 CPU register
+To: anshuman.khandual@arm.com, linux-arm-kernel@lists.infradead.org
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-6-git-send-email-anshuman.khandual@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <baaccab1-4f54-bc86-4244-2dc981b2dc90@arm.com>
+Date: Sun, 3 May 2020 22:35:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
+In-Reply-To: <1588426445-24344-6-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_130057_506245_26E40FDA 
-X-CRM114-Status: GOOD (  10.05  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200503_143047_900649_23C01ACD 
+X-CRM114-Status: GOOD (  19.42  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jdirks.linuxdev[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,38 +64,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, maz@kernel.org, will@kernel.org,
+ kvmarm@lists.cs.columbia.edu
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Jacko Dirks <jdirks.linuxdev@gmail.com>
----
- drivers/spi/spi-bcm2835.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+On 05/02/2020 02:33 PM, Anshuman Khandual wrote:
+> This adds basic building blocks required for ID_DFR1 CPU register which
+> provides top level information about the debug system in AArch32 state.
+> This is added per ARM DDI 0487F.a specification.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: kvmarm@lists.cs.columbia.edu
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Suggested-by: Will Deacon <will@kernel.org>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>   arch/arm64/include/asm/cpu.h    |  1 +
+>   arch/arm64/include/asm/sysreg.h |  3 +++
+>   arch/arm64/kernel/cpufeature.c  | 10 ++++++++++
+>   arch/arm64/kernel/cpuinfo.c     |  1 +
+>   arch/arm64/kvm/sys_regs.c       |  2 +-
+>   5 files changed, 16 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
+> index 464e828a994d..d9a78bdec409 100644
+> --- a/arch/arm64/include/asm/cpu.h
+> +++ b/arch/arm64/include/asm/cpu.h
+> @@ -33,6 +33,7 @@ struct cpuinfo_arm64 {
+>   	u64		reg_id_aa64zfr0;
+>   
+>   	u32		reg_id_dfr0;
+> +	u32		reg_id_dfr1;
+>   	u32		reg_id_isar0;
+>   	u32		reg_id_isar1;
+>   	u32		reg_id_isar2;
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index c977449e02db..2e1e922e1409 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -154,6 +154,7 @@
+>   #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
+>   #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
+>   #define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
+> +#define SYS_ID_DFR1_EL1			sys_reg(3, 0, 0, 3, 5)
+>   
+>   #define SYS_ID_AA64PFR0_EL1		sys_reg(3, 0, 0, 4, 0)
+>   #define SYS_ID_AA64PFR1_EL1		sys_reg(3, 0, 0, 4, 1)
+> @@ -763,6 +764,8 @@
+>   #define ID_ISAR4_WITHSHIFTS_SHIFT	4
+>   #define ID_ISAR4_UNPRIV_SHIFT		0
+>   
+> +#define ID_DFR1_MTPMU_SHIFT		0
+> +
+>   #define ID_ISAR0_DIVIDE_SHIFT		24
+>   #define ID_ISAR0_DEBUG_SHIFT		20
+>   #define ID_ISAR0_COPROC_SHIFT		16
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index a8247bf92959..2ce952d9668d 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -451,6 +451,11 @@ static const struct arm64_ftr_bits ftr_id_dfr0[] = {
+>   	ARM64_FTR_END,
+>   };
+>   
+> +static const struct arm64_ftr_bits ftr_id_dfr1[] = {
+> +	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_DFR1_MTPMU_SHIFT, 4, 0),
 
-diff --git a/drivers/spi/spi-bcm2835.c b/drivers/spi/spi-bcm2835.c
-index 11c235879bb7..e10b8f3b4bab 100644
---- a/drivers/spi/spi-bcm2835.c
-+++ b/drivers/spi/spi-bcm2835.c
-@@ -191,12 +191,12 @@ static void bcm2835_debugfs_remove(struct bcm2835_spi *bs)
- }
- #endif /* CONFIG_DEBUG_FS */
- 
--static inline u32 bcm2835_rd(struct bcm2835_spi *bs, unsigned reg)
-+static inline u32 bcm2835_rd(struct bcm2835_spi *bs, unsigned int reg)
- {
- 	return readl(bs->regs + reg);
- }
- 
--static inline void bcm2835_wr(struct bcm2835_spi *bs, unsigned reg, u32 val)
-+static inline void bcm2835_wr(struct bcm2835_spi *bs, unsigned int reg, u32 val)
- {
- 	writel(val, bs->regs + reg);
- }
--- 
-2.26.2
 
+> -	ID_UNALLOCATED(3,5),
+> +	ID_SANITISED(ID_DFR1_EL1),
+>   	ID_UNALLOCATED(3,6),
+>   	ID_UNALLOCATED(3,7),
+>   
+
+IIUC, we should not expose the MTPMU to the KVM guests. Either we could 
+drop this entire patch, or we should emulate the MTPMU to 0 in KVM.
+
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
