@@ -2,68 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 711641C2A34
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 07:54:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DFC091C2A55
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 08:06:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sXSmRwEoTBcYY0SYHP52oWSVlot3jxUBDnVdm4hu8QQ=; b=I9bphdApb/JCiW+xhgo1HUdoc
-	RjbxnJU685KYzFEW6j73l1pLDjkpBrb0KfjLEdq2DRY/hV3yGQNJtnZ8eVKfDY0vinrb/hF5ddXzj
-	9dvda5e+PafljKZ6op/n4VAoGbOo5t8ZupsvCh4l34lQPbAreb9LzH8EBUOpmuf3QSZoCDhyq3hyC
-	JvsUP20+I3lpujgST4Ei5s2KXDuDjTdKsj/RmDwVP3qjSJGQUktdL2mTT0bC+djM9S8PBz7ui7Quo
-	k3+KdWFTrbnE0GjVWU2wxg+i0CUWqFOrsbtDs6JMPwx4NLv/Hof3BvD8uTfsmLfZ2BbklX6zZPdze
-	8VvcaMlQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WwS7AjghMNcMRTp3OSSm7Y6/tivk5D6u0GVF7qMCcYg=; b=S8uPMfPNOutTGB
+	Ey2qPTyT/USWzh8EzbzdZE3w1HHcDEOJHdZhNOhmhXTq59nxULhCtNaiXOprRChoeKM7bQv4ZHlwx
+	fyJe6Dzj+Mn2yiSJJD3rGAG5BbVD+sl0GQ7eAy9id/E8PDQGX8YF5NaDkJOVVjZEn7F0MS4z1kfxt
+	hIT5+GIkS5zV1S8TzxusW4ZEKDRg0HrMDl8geNrmj/Tk0fR6An3Qbix59DinHtQAOOr9ga8B6ROHy
+	zLYtWjHxFC48O2tyPuQxem3Hd5XMfNh5I561awl5dAcoTUHxoys5cKCp+/pVfkd6g30nOxmZY7HbE
+	B/5mulhAw/rKxjcwE/Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jV7aU-00043G-A5; Sun, 03 May 2020 05:54:50 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jV7ly-0006Z3-Sy; Sun, 03 May 2020 06:06:42 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jV7aN-00042s-FU
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 05:54:44 +0000
-IronPort-SDR: ayyoPqai6a2L2EIlQaqEBJ7Yg6HvRmCYsJ/IPvG3VD1ekF6R/8MIDwmH9vchYcW8whymOZroIe
- 61Skh2jzAirA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga008.fm.intel.com ([10.253.24.58])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 02 May 2020 22:54:42 -0700
-IronPort-SDR: +m3RPXc/Y0Y2CJLTk7XvK3Pu9JreO+a4GkC6jhpJ8BxzkiBUrrsa0mDhQLO4R2+ooT2MnggdJ9
- /V775V/cq/pg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,346,1583222400"; d="scan'208";a="250352199"
-Received: from blu2-mobl3.ccr.corp.intel.com (HELO [10.255.29.41])
- ([10.255.29.41])
- by fmsmga008.fm.intel.com with ESMTP; 02 May 2020 22:54:37 -0700
-Subject: Re: [PATCH v6 05/25] iommu/iopf: Handle mm faults
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- iommu@lists.linux-foundation.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pci@vger.kernel.org,
- linux-mm@kvack.org
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-6-jean-philippe@linaro.org>
-From: Lu Baolu <baolu.lu@linux.intel.com>
-Message-ID: <9fc0e4cc-1242-bf96-5328-cc9039dcc9b6@linux.intel.com>
-Date: Sun, 3 May 2020 13:54:36 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jV7jc-00028u-9G; Sun, 03 May 2020 06:04:17 +0000
+X-UUID: 106147b8b8234804a3bdfa7e8a416976-20200502
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=+UgP8mNJK+2wPFsgGDjT2uhkCKhqUXeF45Q0cZIp0PQ=; 
+ b=q3B9n2gA4ue8kz+8SjnntvdqdKeiqxurMX2aGWZcT+aW75YQ3xt3SzYyv5utv3Zb6eFgDzRfiDaZW8e8z9GdvZv98YsuBzjQjhMVDq8zriKFqBCr8cxiFGZDKm+IC+fmyKazyB3j7ns8yWcwuLv18J6TLS6x41XvXPkZvGZAC9Y=;
+X-UUID: 106147b8b8234804a3bdfa7e8a416976-20200502
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 954935603; Sat, 02 May 2020 22:04:11 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 2 May 2020 23:04:09 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 3 May 2020 14:03:54 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Sun, 3 May 2020 14:03:54 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <asutoshd@codeaurora.org>
+Subject: [PATCH v4 0/8] scsi: ufs: support LU Dedicated buffer mode for
+ WriteBooster
+Date: Sun, 3 May 2020 14:03:43 +0800
+Message-ID: <20200503060351.10572-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <20200430143424.2787566-6-jean-philippe@linaro.org>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200502_225443_529470_350387E3 
-X-CRM114-Status: GOOD (  25.38  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200502_230416_356679_EFF86CB9 
+X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,157 +86,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fenghua.yu@intel.com, kevin.tian@intel.com, jacob.jun.pan@linux.intel.com,
- jgg@ziepe.ca, catalin.marinas@arm.com, joro@8bytes.org, robin.murphy@arm.com,
- hch@infradead.org, zhangfei.gao@linaro.org, Jonathan.Cameron@huawei.com,
- felix.kuehling@amd.com, xuzaibo@huawei.com, will@kernel.org,
- christian.koenig@amd.com, baolu.lu@linux.intel.com
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/4/30 22:34, Jean-Philippe Brucker wrote:
-> When a recoverable page fault is handled by the fault workqueue, find the
-> associated mm and call handle_mm_fault.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> ---
-> v5->v6: select CONFIG_IOMMU_SVA
-> ---
->   drivers/iommu/Kconfig      |  1 +
->   drivers/iommu/io-pgfault.c | 79 +++++++++++++++++++++++++++++++++++++-
->   2 files changed, 78 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/iommu/Kconfig b/drivers/iommu/Kconfig
-> index 4f33e489f0726..1e64ee6592e16 100644
-> --- a/drivers/iommu/Kconfig
-> +++ b/drivers/iommu/Kconfig
-> @@ -109,6 +109,7 @@ config IOMMU_SVA
->   
->   config IOMMU_PAGE_FAULT
->   	bool
-> +	select IOMMU_SVA
+Hi,
+This patchset adds LU dedicated buffer mode support for WriteBooster.
+In the meanwhile, enable WriteBooster capability on MediaTek UFS platforms.
 
-It would be better to move this to the previous patch.
+v3 -> v4:
+  - Introduce "fixup_dev_quirks" vops to allow vendors to fix and modify device quirks, and provide an initial vendor-specific device quirk table on MediaTek UFS platforms
+  - Avoid relying on common device quirk table for pre-3.1 UFS device with non-standard WriteBooster support (Can Guo)
+  - Fix comments for ufshcd_wb_probe() (Can Guo)
+  - Make ufshcd_wb_get_flag_index() inline and fix ufshcd_is_wb_flags() (Avri Altman)
 
->   
->   config FSL_PAMU
->   	bool "Freescale IOMMU support"
-> diff --git a/drivers/iommu/io-pgfault.c b/drivers/iommu/io-pgfault.c
-> index 38732e97faac1..09a71dc4de20a 100644
-> --- a/drivers/iommu/io-pgfault.c
-> +++ b/drivers/iommu/io-pgfault.c
-> @@ -7,9 +7,12 @@
->   
->   #include <linux/iommu.h>
->   #include <linux/list.h>
-> +#include <linux/sched/mm.h>
->   #include <linux/slab.h>
->   #include <linux/workqueue.h>
->   
-> +#include "iommu-sva.h"
-> +
->   /**
->    * struct iopf_queue - IO Page Fault queue
->    * @wq: the fault workqueue
-> @@ -68,8 +71,57 @@ static int iopf_complete_group(struct device *dev, struct iopf_fault *iopf,
->   static enum iommu_page_response_code
->   iopf_handle_single(struct iopf_fault *iopf)
->   {
-> -	/* TODO */
-> -	return -ENODEV;
-> +	vm_fault_t ret;
-> +	struct mm_struct *mm;
-> +	struct vm_area_struct *vma;
-> +	unsigned int access_flags = 0;
-> +	unsigned int fault_flags = FAULT_FLAG_REMOTE;
-> +	struct iommu_fault_page_request *prm = &iopf->fault.prm;
-> +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_INVALID;
-> +
-> +	if (!(prm->flags & IOMMU_FAULT_PAGE_REQUEST_PASID_VALID))
-> +		return status;
-> +
-> +	mm = iommu_sva_find(prm->pasid);
-> +	if (IS_ERR_OR_NULL(mm))
-> +		return status;
-> +
-> +	down_read(&mm->mmap_sem);
-> +
-> +	vma = find_extend_vma(mm, prm->addr);
-> +	if (!vma)
-> +		/* Unmapped area */
-> +		goto out_put_mm;
-> +
-> +	if (prm->perm & IOMMU_FAULT_PERM_READ)
-> +		access_flags |= VM_READ;
-> +
-> +	if (prm->perm & IOMMU_FAULT_PERM_WRITE) {
-> +		access_flags |= VM_WRITE;
-> +		fault_flags |= FAULT_FLAG_WRITE;
-> +	}
-> +
-> +	if (prm->perm & IOMMU_FAULT_PERM_EXEC) {
-> +		access_flags |= VM_EXEC;
-> +		fault_flags |= FAULT_FLAG_INSTRUCTION;
-> +	}
-> +
-> +	if (!(prm->perm & IOMMU_FAULT_PERM_PRIV))
-> +		fault_flags |= FAULT_FLAG_USER;
-> +
-> +	if (access_flags & ~vma->vm_flags)
-> +		/* Access fault */
-> +		goto out_put_mm;
-> +
-> +	ret = handle_mm_fault(vma, prm->addr, fault_flags);
-> +	status = ret & VM_FAULT_ERROR ? IOMMU_PAGE_RESP_INVALID :
-> +		IOMMU_PAGE_RESP_SUCCESS;
-> +
-> +out_put_mm:
-> +	up_read(&mm->mmap_sem);
-> +	mmput(mm);
-> +
-> +	return status;
->   }
->   
->   static void iopf_handle_group(struct work_struct *work)
-> @@ -104,6 +156,29 @@ static void iopf_handle_group(struct work_struct *work)
->    *
->    * Add a fault to the device workqueue, to be handled by mm.
->    *
-> + * This module doesn't handle PCI PASID Stop Marker; IOMMU drivers must discard
-> + * them before reporting faults. A PASID Stop Marker (LRW = 0b100) doesn't
-> + * expect a response. It may be generated when disabling a PASID (issuing a
-> + * PASID stop request) by some PCI devices.
-> + *
-> + * The PASID stop request is issued by the device driver before unbind(). Once
-> + * it completes, no page request is generated for this PASID anymore and
-> + * outstanding ones have been pushed to the IOMMU (as per PCIe 4.0r1.0 - 6.20.1
-> + * and 10.4.1.2 - Managing PASID TLP Prefix Usage). Some PCI devices will wait
-> + * for all outstanding page requests to come back with a response before
-> + * completing the PASID stop request. Others do not wait for page responses, and
-> + * instead issue this Stop Marker that tells us when the PASID can be
-> + * reallocated.
-> + *
-> + * It is safe to discard the Stop Marker because it is an optimization.
-> + * a. Page requests, which are posted requests, have been flushed to the IOMMU
-> + *    when the stop request completes.
-> + * b. We flush all fault queues on unbind() before freeing the PASID.
-> + *
-> + * So even though the Stop Marker might be issued by the device *after* the stop
-> + * request completes, outstanding faults will have been dealt with by the time
-> + * we free the PASID.
-> + *
->    * Return: 0 on success and <0 on error.
->    */
->   int iommu_queue_iopf(struct iommu_fault *fault, void *cookie)
-> 
+v2 -> v3:
+  - Introduce a device quirk to support WriteBooster in pre-3.1 UFS devices (Avri Altman)
+  - Fix WriteBooster related sysfs nodes. Now all WriteBooster related sysfs nodes are specifically mapped to the LUN with WriteBooster enabled in LU Dedicated buffer mode (Avri Altman)
 
-The same for the comments.
+v1 -> v2:
+  - Change the definition name of WriteBooster buffer mode to correspond to specification (Bean Huo)
+  - Add patch #5: "scsi: ufs: cleanup WriteBooster feature"
 
-Best regards,
-baolu
+Stanley Chu (8):
+  scsi: ufs: enable WriteBooster on some pre-3.1 UFS devices
+  scsi: ufs: introduce fixup_dev_quirks vops
+  scsi: ufs: export ufs_fixup_device_setup() function
+  scsi: ufs-mediatek: add fixup_dev_quirks vops
+  scsi: ufs: add "index" in parameter list of ufshcd_query_flag()
+  scsi: ufs: add LU Dedicated buffer mode support for WriteBooster
+  scsi: ufs-mediatek: enable WriteBooster capability
+  scsi: ufs: cleanup WriteBooster feature
 
+ drivers/scsi/ufs/ufs-mediatek.c |  25 ++++-
+ drivers/scsi/ufs/ufs-sysfs.c    |  11 ++-
+ drivers/scsi/ufs/ufs.h          |   7 ++
+ drivers/scsi/ufs/ufs_quirks.h   |   7 ++
+ drivers/scsi/ufs/ufshcd.c       | 157 ++++++++++++++++++++------------
+ drivers/scsi/ufs/ufshcd.h       |  20 +++-
+ 6 files changed, 165 insertions(+), 62 deletions(-)
+
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
