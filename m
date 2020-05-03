@@ -2,73 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E41561C2CCD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 15:32:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 085D91C2CF1
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  3 May 2020 16:13:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=anFp0LZxUbwXskyCcHapD56uUrqVwwEDnaEZ9wCESuI=; b=OuWnx1VYYjdouk
-	MHzM9xQ4kG0iPel5v+VHCDs1IuH++cw6MaDlG6/A5be6Jy8Y2gyN+Lewoce9GrVg8buRbWApx3Ys+
-	5W4jSQHqVwMRK6APVwbSw2LR1GxBZAO0CIBZz2nsw98ID7lm+yI1LMDRgCcn1t60vdXj2OzzA2YWF
-	Yzjvwpl9BJfjcj+soXlRMOm9pvkT/FkCCwnp7ehU9xoFSeTJDyd8qjyM1ps8WaIxfU1UHtUllEHFq
-	Q4sB6YRbYjuzA4H/ToGdoBOjQLv0TyJ6yAxcAPx3TsIVXI0IrU70qlJHEWFMeu3AtAHDIFYAPab7A
-	uo/Vqftnm9i3bAM3xMQw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3GL7+csgOBxD3TNUQ5ae694XNL30B+cIcBv/KyGh6Qg=; b=uGysLx24d8rgXs
+	1Vr+J/s0Qn0TmNDhSGsNsKkt8t5W6LuvKCv9VtJUVwiCyuCJKpDy+2pAeGf1eLUcFc47Veor8Au0c
+	7bL7lZrB9f3oGOZ/cJgKwTJfGkIugaS/oAbB9Lnnty4NxcAbSd42rnEujXI4VLbFr4jK2y9VpfS7L
+	px7Pu+G6kJCwfvmYPqHvAkVuLrqpt2lUDLTzjJuKrz3L48+4yYVYZlSJ4Pt+yWyh2e44L2QP9abVO
+	tM9HIVr2GUe7+158UwMrR96ngCT3igqNUJzIh4V153uJNikKM/Gbl1Go36ANozo8nvOa/TQY7BmWq
+	Ey33C15OUpH7rywom60A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVEiy-0001Th-Iw; Sun, 03 May 2020 13:32:04 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::10])
+	id 1jVFN3-00010i-IC; Sun, 03 May 2020 14:13:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVEip-0001St-Rk
- for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 13:31:58 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1588512713;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=P2n1VxAj51ovTRVckIsPeyqg24p7NzEQivx7HgyjYQo=;
- b=naDRUHxA8BH9Oehq6Z9A3GLQFyWztYCw+Mb/S2R3qv0OWToGTNeF8gv23NDKN78c/m
- iKd2uv4uyp/jztwals5iM5Ubo1+r1nSvM8FW9UNVOKT2Z9HprubjuEal8PsGoP7Dc5xZ
- xNe5tYeZpUoMG+lPhU862xWllshg+Q9isYR9g+AqvOldNHH0wacBMHq8gfhzLWUiJh3D
- OI+mrk8VdSNvdSra8ME71/Jx09YnZI/7fMeYig4Rm6Vfey/oGzo3y4GyW/fHAZqNnf6r
- c5on1qCgpeaySCa870XF7W4kKy0owznNmN29xyvd8CEsGNJ0yuGWp4c+duVT9XX9uBX2
- ZXWg==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj5Qpw97WFDlaZXA4J2Ms="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw43DVhfoF
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Sun, 3 May 2020 15:31:43 +0200 (CEST)
-Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
- pvrsgx.yaml for Imagination GPUs
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <TEAR9Q.6HI5DFRO5U0I3@crapouillou.net>
-Date: Sun, 3 May 2020 15:31:42 +0200
-Message-Id: <3D8B59D6-83E3-4FE6-9C99-E2E5616A8139@goldelico.com>
-References: <cover.1587760454.git.hns@goldelico.com>
- <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
- <NMCE9Q.LWG45P20NBVJ@crapouillou.net>
- <28138EC0-0FA5-4F97-B528-3442BF087C7A@goldelico.com>
- <TEAR9Q.6HI5DFRO5U0I3@crapouillou.net>
-To: Paul Cercueil <paul@crapouillou.net>
-X-Mailer: Apple Mail (2.3124)
+ id 1jVFMw-0000zF-Np
+ for linux-arm-kernel@lists.infradead.org; Sun, 03 May 2020 14:13:24 +0000
+Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
+ [82.4.196.95])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BFB512075B;
+ Sun,  3 May 2020 14:13:17 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588515200;
+ bh=VwFDi18uItpdaTttUtjRkKgBhmoR+CTBkU21YkTrWEQ=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=Mom6aQXebEJMjo6moLHFErcGMYoEWb9EKBGiehFK98UmKFn71rYa0akF8nSXe1bwt
+ 7zPAubNRfR9ZC2FAgv8CDsXwW8yKsRl8FMqoByL3BfrzYkLvCbj5ZtV6kcsGwmERPt
+ cD+qW8PTdMcvcQsm8gS9uQlo6o5gFbLo9uOxJzW0=
+Date: Sun, 3 May 2020 15:13:14 +0100
+From: Jonathan Cameron <jic23@kernel.org>
+To: William Breathitt Gray <vilhelm.gray@gmail.com>
+Subject: Re: [PATCH 0/4] Introduce the Counter character device interface
+Message-ID: <20200503151314.2ac1fc2e@archlinux>
+In-Reply-To: <cover.1588176662.git.vilhelm.gray@gmail.com>
+References: <cover.1588176662.git.vilhelm.gray@gmail.com>
+X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_063156_493843_6D848FFB 
-X-CRM114-Status: GOOD (  23.28  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200503_071322_821782_42447436 
+X-CRM114-Status: GOOD (  36.95  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:10 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -76,6 +64,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,76 +76,262 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, letux-kernel@openphoenux.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- =?iso-8859-1?Q?Beno=EEt_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
+Cc: kamel.bouhara@bootlin.com, gwendal@chromium.org, david@lechnology.com,
+ felipe.balbi@linux.intel.com, linux-iio@vger.kernel.org, syednwaris@gmail.com,
+ alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ mcoquelin.stm32@gmail.com, patrick.havelange@essensium.com,
+ fabrice.gasnier@st.com, fabien.lahoudere@collabora.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Paul,
+On Wed, 29 Apr 2020 14:11:34 -0400
+William Breathitt Gray <vilhelm.gray@gmail.com> wrote:
 
-> Am 03.05.2020 um 14:52 schrieb Paul Cercueil <paul@crapouillou.net>:
+> Over the past couple years we have noticed some shortcomings with the
+> Counter sysfs interface. Although useful in the majority of situations,
+> there are certain use-cases where interacting through sysfs attributes
+> can become cumbersome and inefficient. A desire to support more advanced
+> functionality such as timestamps, multi-axis positioning tables, and
+> other such latency-sensitive applications, has motivated a reevaluation
+> of the Counter subsystem. I believe a character device interface will be
+> helpful for this more niche area of counter device use.
 > 
->>> It's possible to forbid the presence of the 'clocks' property on some implementations, and require it on others.
->> To be precise we have to specify the exact number of clocks (between 0 and 4) for every architecture.
->> This also contradicts my dream to get rid of the architecture specific components in the long run. My dream (because I can't tell how it can be done) is that we can one day develop something which just needs compatible = img,530 or imp,540 or img,544. Then we can't make the number clocks depend on the implementation any more.
+> To quell any concerns from the offset: this patchset makes no changes to
+> the existing Counter sysfs userspace interface -- existing userspace
+> applications will continue to work with no modifications necessary. I
+> request that driver maintainers please test their applications to verify
+> that this is true, and report any discrepancies if they arise.
 > 
-> As we said before, the number of clocks is a property of the GPU and *not* its integration into the SoC.
+> However, this patchset does contain a major reimplementation of the
+> Counter subsystem core and driver API. A reimplementation was necessary
+> in order to separate the sysfs code from the counter device drivers and
+> internalize it as a dedicated component of the core Counter subsystem
+> module. A minor benefit from all of this is that the sysfs interface is
+> now ensured a certain amount of consistency because the translation is
+> performed outside of individual counter device drivers.
+> 
+> Essentially, the reimplementation has enabled counter device drivers to
+> pass and handle data as native C datatypes now rather than the sysfs
+> strings from before. A high-level view of how a count value is passed
+> down from a counter device driver can be exemplified by the following:
+> 
+>                  ----------------------
+>                 / Counter device       \
+>                 +----------------------+
+>                 | Count register: 0x28 |
+>                 +----------------------+
+>                         |
+>                  -----------------
+>                 / raw count data /
+>                 -----------------
+>                         |
+>                         V
+>                 +----------------------------+
+>                 | Counter device driver      |----------+
+>                 +----------------------------+          |
+>                 | Processes data from device |   -------------------
+>                 |----------------------------|  / driver callbacks /
+>                 | Type: unsigned long        |  -------------------
+>                 | Value: 42                  |          |
+>                 +----------------------------+          |
+>                         |                               |
+>                  ----------------                       |
+>                 / unsigned long /                       |
+>                 ----------------                        |
+>                         |                               |
+>                         |                               V
+>                         |               +----------------------+
+>                         |               | Counter core         |
+>                         |               +----------------------+
+>                         |               | Routes device driver |
+>                         |               | callbacks to the     |
+>                         |               | userspace interfaces |
+>                         |               +----------------------+
+>                         |                       |
+>                         |                -------------------
+>                         |               / driver callbacks /
+>                         |               -------------------
+>                         |                       |
+>                 +-------+---------------+       |
+>                 |                       |       |
+>                 |               +-------|-------+
+>                 |               |       |
+>                 V               |       V
+>         +--------------------+  |  +---------------------+
+>         | Counter sysfs      |<-+->| Counter chrdev      |
+>         +--------------------+     +---------------------+
+>         | Translates to the  |     | Translates to the   |
+>         | standard Counter   |     | standard Counter    |
+>         | sysfs output       |     | character device    |
+>         |--------------------|     |---------------------+
+>         | Type: const char * |     | Type: unsigned long |
+>         | Value: "42"        |     | Value: 42           |
+>         +--------------------+     +---------------------+
+>                 |                               |
+>          ---------------                 ----------------
+>         / const char * /                / unsigned long /
+>         ---------------                 ----------------
+>                 |                               |
+>                 |                               V
+>                 |                       +-----------+
+>                 |                       | ioctl     |
+>                 |                       +-----------+
+>                 |                       \ Count: 42 /
+>                 |                        -----------
+>                 |
+>                 V
+>         +--------------------------------------------------+
+>         | `/sys/bus/counter/devices/counterX/countY/count` |
+>         +--------------------------------------------------+
+>         \ Count: "42"                                      /
+>          --------------------------------------------------
+> 
+> I am aware that an in-kernel API can simplify the data transfer between
+> counter device drivers and the userspace interfaces, but I want to
+> postpone that development until after the new Counter character device
+> ioctl commands are solidified. A userspace ABI is effectively immutable
+> so I want to make sure we get that right before working on an in-kernel
+> API that is more flexible to change. However, when we do develop an
+> in-kernel API, it will likely be housed as part of the Counter core
+> component, through which the userspace interfaces will then communicate.
+> 
+> Interaction with Counter character devices occurs via ioctl commands.
+> This allows userspace applications to access and set counter data using
+> native C datatypes rather than working through string translations.
+> 
+> Regarding the organization of this patchset, I have combined the counter
+> device driver changes with the first patch because the changes must all
+> be taken together in order to avoid compilation errors. I can see how
+> this can end up making it difficult to review so many changes at once,
+> so alternatively I can separate out the counter device driver changes
+> into their own dedicated patches -- with the understanding that the
+> patches must all be taken together.
+> 
+> In addition, I anticipate the Microchip TCB capture counter driver to
+> break with this patchset. I'm not sure how that driver will be picked
+> up yet so I have avoided adding it to this patchset right now. But the
+> changes to support that driver are simple to make so I can add them in a
+> later revision of this patchset.
+> 
+> The following are some questions I have about this patchset:
+> 
+> 1. Should enums be used to represent standard counter component states
+>    (e.g. COUNTER_SIGNAL_LOW), or would these be better defined as int?
+> 
+>    These standard counter component states are defined in the
+>    counter-types.h file and serve as constants used by counter device
+>    drivers and Counter subsystem components in order to ensure a
+>    consistent interface.
+> 
+>    My concern is whether enum constants will cause problems when passed
+>    to userspace via the Counter character device ioctl calls. Along the
+>    same lines is whether the C bool datatype is safe to pass as well,
+>    given that it is a more modern C datatype.
 
-Well, it is a not very well documented property of the GPU. We have no data sheet of the standalone GPU. Only several SoC data sheets which give some indications.
+For enums, I'd pass them as integers.
 
-It appears as if some sgx5xx versions have 3 clocks and some have 4. So you are right, the number of clocks depends on the sgx5xx version and that could be made dependent in the bindings (if necessary).
+Bool is probably fine either way.
 
 > 
-> So you would *not* have a number of clocks between 0 and 4. You get either 0, or 4, depending on whether or not you have a wrapper.
+> 2. Should device driver callbacks return int or long? I sometimes see
+>    error values returned as long (e.g. PTR_ERR(), the file_operations
+>    structure's ioctl callbacks, etc.); when is it necessary to return
+>    long as opposed to int?
 
-I think this is contradicting your previous sentence. If the number of clocks is a property of the GPU and not the integration it must also not depend on whether there is a wrapper. I.e. it must be a constant for any type of integration.
+In my view it doesn't really matter that much.  For PTR_ERR it has to be
+a long because a long is always the same length as a pointer, but an int
+'might' not be.  However PTR_ERR returns a value that always fits in an
+integer anyway.
 
-The really correct variant would be to always make the SoC integration (wrapper) a separate subsystem (because it is never part of the SGX core but some interface bus) and clock provider and connect it explicitly to the clock inputs.
+https://www.oreilly.com/library/view/linux-device-drivers/0596005903/ch11.html
 
-To be clear: I am not at all against describing the clocks. I just doubt that the time we invest into discussing on this level of detail and adding conditional clock requirements is worth the result. IMHO the bindings and .dts do not become better by describing them in more detail than just "optional". It just takes our time from contributing to other subsystems.
+Coding style in linux mostly use int for return values that might indicate
+an error.
 
 > 
+> 3. I only implemented the unlocked_ioctl callback. Should I implement a
+>    compat_ioctl callback as well?
+
+Depends if you need to deal with the 32bit userspace on 64 bit kernel corner
+cases.  Looks like you only pass a pointer, in which case I think you
+can just use the ioctl_compat_ptr callback to handle it for you.
+
 > 
->>> See how it's done for instance on Documentation/devicetree/bindings/serial/samsung_uart.yaml.
->> Yes I know the design pattern, but I wonder if such a move makes the whole thing even less maintainable.
->> Assume we have finished DTS for some SoC. Then these DTS have been tested on real hardware and are working. Clocks are there where needed and missing where not. We may now forbid or not forbid them for some implementations in the bindings.yaml but the result of dtbs_check won't change! Because they are tested and working and the bindings.yaml has been adapted to the result. So we have just duplicated something for no practical benefit.
->> Next, assume there is coming support for more and more new SoC. Then, developers not only have to figure out which clocks they need in the DTS but they also have to add a patch to the implementation specific part of the bindings.yaml to clearly define exactly the same what they already have written into their .dts (the clocks are either there for the of_node or they are not). So again the rules are for no benefit, since a new SoC is introduced exactly once. And tested if it works. And if it is there, it will stay as it is. It is just work for maintainers to review that patch as well.
+> 4. How much space should allot for name strings? Name strings hold the
+>    names of components (ideally as they appear on datasheets), so I've
+>    arbitrarily chosen a size of 32 for the character device interface.
 > 
-> If you add support for a new SoC, you'd still need to modify the binding to add the compatible string. So the argument of "more work" is moot.
-
-Agreed, I forgot this aspect. Nevertheless, it is easier to review a new compatible string than a new clock number rule (question: how do you practically review this? By looking if it does match the DTS?).
-
-We have to add the compatible string as long as we need to have the SoC name in the compatible string (which as said is my dream to get rid of in far future). If we could get rid of it, there won't be a change any more. By just taking "img,sgx544" into a new SoC. The change would be moved into SoC specific wrappers. In such an ideal world, we would explicitly describe the wrappers as separate DT nodes. Even if they have no explicit driver (e.g. by some simple-pm-bus).
-
-                   PRCM,bus,
-Processor <<---->> Wrapper <<----->> SGX
-ti,...             ti,sysc           img,sgx530
-img,...            simple-bus        img,sgx540
-samsung,...        ...               img,sgx544
-other,             other,gpu-wrapper img,...
-
-But this IMHO correct proposal was already rejected.
-
-So at the moment we are circling around several proposals because none can fulfill all requirements.
-
-Therefore my attempt to solve the gordian knot is to make clocks generally optional. This keeps the bindings simple but not generally wrong. And since the DTS are not only tested against bindings.yaml but on real hardware, the omission to enforce a specific number of clocks doesn't harm anyone. As said it is impossible to get the SGX running without defining the correct clocks (whether they are enforced by bindings.yaml or not).
-
-BR and thanks,
-Nikolaus
+> 5. Should the owning component of an extension be determined by the
+>    device driver or Counter subsystem?
+> 
+>    A lot of the complexity in the counters-function-types.h file and the
+>    sysfs-callbacks.c file is due to the function pointer casts required
+>    in order to support three different ownership scenarios: the owning
+>    component is the device, the owning component is a Count, the owning
+>    component is a Signal.
+> 
+>    Because the Counter subsystem doesn't not know which scenario is
+>    valid, it must manually check and provide for all three ownership
+>    cases. On the other hand, device drivers do know exactly which case
+>    applies because they are the ones providing the callbacks.
+> 
+>    The complexity in the Counter subsystem code can be eliminated if the
+>    owning component is simply passed down to the callbacks as a void
+>    pointer. The device drivers will then be responsible for casting to
+>    the appropriate component type, but this should in theory not be a
+>    problem since the device driver assigned the callback to the owning
+>    component in the first place.
+> 
+> William Breathitt Gray (4):
+>   counter: Internalize sysfs interface code
+>   docs: counter: Update to reflect sysfs internalization
+>   counter: Add character device interface
+>   docs: counter: Document character device interface
+> 
+>  Documentation/driver-api/generic-counter.rst  |  259 ++-
+>  .../userspace-api/ioctl/ioctl-number.rst      |    1 +
+>  MAINTAINERS                                   |    3 +-
+>  drivers/counter/104-quad-8.c                  |  437 +++--
+>  drivers/counter/Makefile                      |    2 +
+>  drivers/counter/counter-chrdev.c              | 1134 +++++++++++++
+>  drivers/counter/counter-chrdev.h              |   16 +
+>  drivers/counter/counter-core.c                |  220 +++
+>  drivers/counter/counter-function-types.h      |   81 +
+>  drivers/counter/counter-strings.h             |   46 +
+>  drivers/counter/counter-sysfs-callbacks.c     |  566 +++++++
+>  drivers/counter/counter-sysfs-callbacks.h     |   28 +
+>  drivers/counter/counter-sysfs.c               |  524 ++++++
+>  drivers/counter/counter-sysfs.h               |   14 +
+>  drivers/counter/counter.c                     | 1496 -----------------
+>  drivers/counter/ftm-quaddec.c                 |   46 +-
+>  drivers/counter/stm32-lptimer-cnt.c           |  159 +-
+>  drivers/counter/stm32-timer-cnt.c             |  132 +-
+>  drivers/counter/ti-eqep.c                     |  170 +-
+>  include/linux/counter.h                       |  547 +++---
+>  include/linux/counter_enum.h                  |   45 -
+>  include/uapi/linux/counter-types.h            |   67 +
+>  include/uapi/linux/counter.h                  |  313 ++++
+>  23 files changed, 3816 insertions(+), 2490 deletions(-)
+>  create mode 100644 drivers/counter/counter-chrdev.c
+>  create mode 100644 drivers/counter/counter-chrdev.h
+>  create mode 100644 drivers/counter/counter-core.c
+>  create mode 100644 drivers/counter/counter-function-types.h
+>  create mode 100644 drivers/counter/counter-strings.h
+>  create mode 100644 drivers/counter/counter-sysfs-callbacks.c
+>  create mode 100644 drivers/counter/counter-sysfs-callbacks.h
+>  create mode 100644 drivers/counter/counter-sysfs.c
+>  create mode 100644 drivers/counter/counter-sysfs.h
+>  delete mode 100644 drivers/counter/counter.c
+>  delete mode 100644 include/linux/counter_enum.h
+>  create mode 100644 include/uapi/linux/counter-types.h
+>  create mode 100644 include/uapi/linux/counter.h
+> 
+> 
+> base-commit: 00edef1ac058b3c754d29bcfd35ea998d9e7a339
 
 
 _______________________________________________
