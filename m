@@ -2,76 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B1E51C32B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 08:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E53371C330D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 08:36:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CHb4LLW9O1P1MudK/OovT3lBaB2+PWv2p2I1QW7/nBU=; b=FeRHUX2+cH29bO
-	JvCnAyjJxzGA8dopUtD0CHIRwecokWE2r62sRJeePaLjwd45+H5Ty+YykD2CBa91Abg0vURdG08UZ
-	G8SG7uLDmNbUfZmlqq7qWh8nz2Nyh6UzigxJ6l0w9YB4TvLP8TssMSXQ5b2cfV9kbA4JwrL3t+rue
-	qJtskQloUl2frWg901FyDKFBMnCA7i4zOFxBxEvu4WvsOgDYq84nNdTs77skyX6MZE21jKfhVX6RB
-	qCiNG3410DKZmwy7bcExLf0j9zACP/UORE2dutbo41JqxCf5MRUnG4MAujBXFBH3VQ4S2RyyZOVEL
-	zsKnf1UPcKSeF3xA4ncg==;
+	List-Owner; bh=uRrgPjAGcPDkDv9q1KJTm/m1jUJEVqp4kHJbIxzWx54=; b=Ewer6Bd32wqfJs
+	Ku7B2YuNShSetVWSVpBBqZ2GCEBL7ewt1dEbiQUf/mj4HZYw/jWCiAxVpqnZ/v6JqjRoQtPtO/4Fs
+	h9C8zyFq2lKpKapjou5lrfaFvXPtHSKe0WS26LFSWSXbRWDACD/gnJ1ql5VaHIGRAjXfSk/uHw2JK
+	0ndOKbIltF/iJkzU7QAVQ2mo8XBSHcGDSXu3/cjfz7xWRz2ZutDn1ks2R+SDC+ZR5MAvWtZX++QQ8
+	EUt0+IuI1qmzkaGUNOymfuGNCKw9hn1byZFKxrfkHInaVTuaXw2vnql0E8m/4Dqx18ldPsJhujo6/
+	5SfxgPvtCYhZucAQOe4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVUXT-0002r8-Tj; Mon, 04 May 2020 06:25:15 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1jVUi0-00027D-2g; Mon, 04 May 2020 06:36:08 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVUXG-0001ns-Lm
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 06:25:04 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1jVUX7-0004OA-T3; Mon, 04 May 2020 08:24:53 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1jVUWx-0000TK-96; Mon, 04 May 2020 08:24:43 +0200
-Date: Mon, 4 May 2020 08:24:43 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Robert Foss <robert.foss@linaro.org>
-Subject: Re: [PATCH v6 2/3] media: ov8856: Add devicetree support
-Message-ID: <20200504062443.qgme3pnhzugqeqhk@pengutronix.de>
-References: <20200429162437.2025699-1-robert.foss@linaro.org>
- <20200429162437.2025699-3-robert.foss@linaro.org>
- <20200430093524.GB2188@pengutronix.de>
- <20200430094549.GF867@valkosipuli.retiisi.org.uk>
- <20200430095332.GC2188@pengutronix.de>
- <20200430095907.GG867@valkosipuli.retiisi.org.uk>
- <20200430101157.GD2188@pengutronix.de>
- <20200430102018.GI867@valkosipuli.retiisi.org.uk>
- <20200430120740.GG2188@pengutronix.de>
- <CAG3jFytP9=pL=9Qh64BKqQchs7J7E45USfirK_SnGn3NMeCdcg@mail.gmail.com>
+ id 1jVUhs-00025r-He
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 06:36:02 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id s11so10455105vsm.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 03 May 2020 23:35:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=endlessm-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=5sFJYLc/0VUdiszQsskqwyzqT4X+yBo4BGoRsgAELP8=;
+ b=w0XGA768oHIzv2ggftjQOGlT6jWI8cD7B/hFDXHnLiHdftXRdssuj+DM4uSXaAgTpI
+ 5eIRxvoNBR8MEvD36bWKlbPvLEDKwUaPPeTE7oEtxH9uWFLOVHeWFq9iaT09woZiUbxX
+ gOw+c2Ar5IMdSlobe97mK788mPLoWO8d9s6FwRa9XSNKkaRWZPOiFPcNlRH4P5Zdjafm
+ qqbpoJ9LX9jm5/aYTAShd4JXVlfZ46AZyX9VBNiDjTcx4j/wrfDuGnaXfnRPVoM8nMbm
+ Kx+ofGOiNwHx2Q+ryv2D60qNRiv1rSS4a/IsD/R9d37W89kor/isaYMqwaQurXpzcBKe
+ Jl+A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=5sFJYLc/0VUdiszQsskqwyzqT4X+yBo4BGoRsgAELP8=;
+ b=rWarUJGi8sf+Xbgpvry9VWtOzDFWJDA+kYAks0CQ+lKe4AQlsCR4MR9+gAxuPzaRRo
+ ovrJGhc18zzV1Wpq4LtfXb8cq1pP1jKe214oXAJyS1fAw8oKUO2icRCyFxia0+cj/8DD
+ /rdLy6qFyy1/qIaRvZjkS+AJuEG3yaN0Sx6GZU1GCYUJE1qDd4NaQdeSec7Z7/bdoj6Q
+ B941HZV3GA3aVhOoRKk2+qeWfvCz3/mjzCwCSggaYToJZf7dRISTvG3mLVXLUDXVjITp
+ n2D2CwazUFVWsxs8enHbvh7p8YThkslp0WKouwj8K/mflcxtBjL3146AXASRa3P8qQ1o
+ VIpQ==
+X-Gm-Message-State: AGi0PuYpsk7KdYxZ4I23hY4O3LaeJwUq2mfbRLCn6Uod+xBPad8ucDcI
+ DCidnh3w8n8dFniaYAkyQeBnlb31CaOCuQCnhXd5rQ==
+X-Google-Smtp-Source: APiQypKTJI0Xlt9dGE+0uJMLYsCNcQkeRzkxYMbdYpJXByDZ7vhKcQaxHvTj/nEv+e1qF1f+EkvX1YRc9YSoLnOdaBo=
+X-Received: by 2002:a67:bd07:: with SMTP id y7mr11154865vsq.109.1588574157839; 
+ Sun, 03 May 2020 23:35:57 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAG3jFytP9=pL=9Qh64BKqQchs7J7E45USfirK_SnGn3NMeCdcg@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 08:13:17 up 170 days, 21:31, 171 users,  load average: 0.06, 0.04,
- 0.05
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
+ <20200427072342.5499-1-jian-hong@endlessm.com>
+ <20200428162152.ztsqp7nxqbwqrm6r@gilmour.lan>
+In-Reply-To: <20200428162152.ztsqp7nxqbwqrm6r@gilmour.lan>
+From: Jian-Hong Pan <jian-hong@endlessm.com>
+Date: Mon, 4 May 2020 14:35:08 +0800
+Message-ID: <CAPpJ_efvtVzb_hvoVOeaePh7UdE13wOiiGaDBH38cToB-yhkUg@mail.gmail.com>
+Subject: Re: [PATCH v2 00/91] drm/vc4: Support BCM2711 Display Pipelin
+To: Maxime Ripard <maxime@cerno.tech>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_232502_732021_6773D2FE 
-X-CRM114-Status: GOOD (  29.94  )
+X-CRM114-CacheID: sfid-20200503_233600_642257_CEC43DBF 
+X-CRM114-Status: GOOD (  16.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,126 +90,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
- linux-kernel <linux-kernel@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- Sakari Ailus <sakari.ailus@iki.fi>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Linux Kernel <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, linux-i2c@vger.kernel.org,
+ Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Linux Upstreaming Team <linux@endlessm.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
-
-On 20-04-30 18:11, Robert Foss wrote:
-> Hey Marco,
-> 
-> On Thu, 30 Apr 2020 at 14:07, Marco Felsch <m.felsch@pengutronix.de> wrote:
-> >
-> > On 20-04-30 13:20, Sakari Ailus wrote:
-> > > On Thu, Apr 30, 2020 at 12:11:57PM +0200, Marco Felsch wrote:
-> > > > On 20-04-30 12:59, Sakari Ailus wrote:
-> > > > > Hi Marco,
-> > > > >
-> > > > > On Thu, Apr 30, 2020 at 11:53:32AM +0200, Marco Felsch wrote:
-> > > > > > Hi Sakari,
-> > > > > >
-> > > > > > On 20-04-30 12:45, Sakari Ailus wrote:
-> > > > > > > Hi Marco,
-> > > > > > >
-> > > > > > > On Thu, Apr 30, 2020 at 11:35:24AM +0200, Marco Felsch wrote:
-> > > >
-> > > > ...
-> > > >
-> > > > > > > > > - if (mclk != OV8856_MCLK) {
-> > > > > > > > > -         dev_err(dev, "external clock %d is not supported", mclk);
-> > > > > > > > > -         return -EINVAL;
-> > > > > > > > > + if (!is_acpi_node(fwnode)) {
-> > > > > > > > > +         ov8856->xvclk = devm_clk_get(dev, "xvclk");
-> > > > > > > > > +         if (IS_ERR(ov8856->xvclk)) {
-> > > > > > > > > +                 dev_err(dev, "could not get xvclk clock (%pe)\n",
-> > > > > > > > > +                                 ov8856->xvclk);
-> > > > > > > > > +                 return PTR_ERR(ov8856->xvclk);
-> > > > > > > > > +         }
-> > > > > > > > > +
-> > > > > > > > > +         clk_set_rate(ov8856->xvclk, xvclk_rate);
-> > > > > > > > > +         xvclk_rate = clk_get_rate(ov8856->xvclk);
-> > > > > > > > >   }
-> > > > > > > >
-> > > > > > > > Why do we handle the clock only in DT case? Is there a problem with the
-> > > > > > > > clock handling and ACPI?
-> > > > > > >
-> > > > > > > Not really, it's just that ACPI does not provide an interface to the clocks
-> > > > > > > as such.
-> > > > > >
-> > > > > > But you will get a clk by devm_clk_get()?
-> > > > >
-> > > > > No, because ACPI does not expose one to drivers. Effectively the entire
-> > > > > power sequences are implemented in ACPI, not in the driver.
-> > > > >
-> > > >
-> > > > Ah okay, thanks for the explanation. I'm really not into the ACPI
-> > > > stuff.. So this means the __power_off / power_on should only be done if
-> > > > we are using DT's?
-> > >
-> > > Correct. That's why it bails out early. It could be yet earlier though,
-> > > without doing anything.
-> >
-> > Yes I see. For easier and error less prone handling I would prefer:
-> >
-> > if (is_acpi_node())
-> >         return 0;
-> >
-> > as first instruction for __power_off/on().
-> 
-> __ov8856_power_on() does make a check like that, albeit only after
-> having run clk_prepare_enable() which won't do anything due to
-> ov8856->xvclk==NULL. So this should be fixed and be moved to after the
-> ACPI check.
-
-Yep, I saw that. I didn't checked the clk_prepare_enable() function and
-just saw that we don't request the clk for the acpi case and enable it
-in both cases. This doesn't sound right to me.
-
-> __ov8856_power_off() has no ACPI check, but all of the calls it makes
-> are going to do nothing due to v8856->reset_gpio / v8856->reset_gpio /
-> ov8856->xvclk all being NULL or dummies. For the sake of clarity an
-> early ACPI check+return could be added, but if clarity is the goal a
-> comment would work too.
-
-Thanks god that most of the library functions taking NULL into account
-=) But I think we have to take the regulator count into account. Again I
-don't know how the ACPI part is working. What happens if we request
-regulators which aren't listed within the ACPI table? In case of DT
-there will be added dummy-regulator. If this is the case for ACPI too we
-are ending in an unbalanced regulator enable/disable count since you
-enable it for the DT case and disable it in both cases.
-
-> >
-> > Also I would refactor the ov8856_check_hwcfg() so the common part can be
-> > used by this function and by a ov8856_parse_of() function. But thats
-> > only my opinion.
-> 
-> I'm trying to grok the above paragraph. You'd like to see something in
-> the style of tc358743_probe_of()?
-
-You don't have to if Saki is fine with the current patch. Just saying
-that it would be a bit easier for the patch review.
-
-Regards,
-  Marco
-
-> >
-> > Regards,
-> >   Marco
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TWF4aW1lIFJpcGFyZCA8bWF4aW1lQGNlcm5vLnRlY2g+IOaWvCAyMDIw5bm0NOaciDI55pelIOmA
+seS4iSDkuIrljYgxMjoyMeWvq+mBk++8mgo+Cj4gSGksCj4KPiBPbiBNb24sIEFwciAyNywgMjAy
+MCBhdCAwMzoyMzo0MlBNICswODAwLCBKaWFuLUhvbmcgUGFuIHdyb3RlOgo+ID4gSGkgTWF4aW1l
+LAo+ID4KPiA+IFRoYW5rcyBmb3IgeW91ciBWMiBwYXRjaCBzZXJpZXMhICBJJ20gdGVzdGluZyBp
+dC4KPiA+Cj4gPiBUaGlzIHBhdGNoIHNlcmllcyBpcyBhcHBsaWVkIHVwb24gbWFpbmxpbmUga2Vy
+bmVsIDUuNy1yYzIgY2xlYW5seSBhbmQgYnVpbHQuCj4gPiBTeXN0ZW0gY2FuIGJvb3QgaW50byBj
+b25zb2xlIHRleHQgbW9kZSwgYnV0IG5vIGdyYXBoaWMgVUkuCj4gPgo+ID4gR2V0IHRoZSBlcnJv
+ciBpbiB2YzVfaGRtaV9waHlfaW5pdCgpLCBhbmQgZnVsbCBkbWVzZyBpcyBhdCBbMV06Cj4gPgo+
+ID4gWyAgICA1LjU4NzU0M10gdmM0X2hkbWkgZmVmMDA3MDAuaGRtaTogVW5rbm93biByZWdpc3Rl
+ciBJRCA0Ngo+ID4gWyAgICA1LjU4NzcwMF0gZGVidWdmczogRGlyZWN0b3J5ICdmZWYwMDcwMC5o
+ZG1pJyB3aXRoIHBhcmVudCAndmM0LWhkbWknIGFscmVhZHkgcHJlc2VudCEKPiA+IFsgICAgNS41
+ODgwNzBdIHZjNF9oZG1pIGZlZjAwNzAwLmhkbWk6IHZjNC1oZG1pLWhpZmkgPC0+IGZlZjAwNzAw
+LmhkbWkgbWFwcGluZyBvawo+ID4gWyAgICA1LjU4ODA3Nl0gdmM0X2hkbWkgZmVmMDA3MDAuaGRt
+aTogQVNvQzogbm8gRE1JIHZlbmRvciBuYW1lIQo+ID4gWyAgICA1LjU4ODI2M10gdmM0LWRybSBn
+cHU6IGJvdW5kIGZlZjAwNzAwLmhkbWkgKG9wcyB2YzRfaGRtaV9vcHMpCj4gPiBbICAgIDUuNTg4
+Mjk5XSB2YzRfaGRtaSBmZWYwNTcwMC5oZG1pOiBVbmtub3duIHJlZ2lzdGVyIElEIDQ2Cj4gPiBb
+ICAgIDUuNTg4MzczXSBkZWJ1Z2ZzOiBEaXJlY3RvcnkgJ3ZjNC1oZG1pJyB3aXRoIHBhcmVudCAn
+YXNvYycgYWxyZWFkeSBwcmVzZW50IQo+ID4gWyAgICA1LjU4ODY3M10gdmM0X2hkbWkgZmVmMDU3
+MDAuaGRtaTogdmM0LWhkbWktaGlmaSA8LT4gZmVmMDU3MDAuaGRtaSBtYXBwaW5nIG9rCj4gPiBb
+ICAgIDUuNTg4Njc3XSB2YzRfaGRtaSBmZWYwNTcwMC5oZG1pOiBBU29DOiBubyBETUkgdmVuZG9y
+IG5hbWUhCj4gPiBbICAgIDUuNTg4ODA5XSB2YzQtZHJtIGdwdTogYm91bmQgZmVmMDU3MDAuaGRt
+aSAob3BzIHZjNF9oZG1pX29wcykKPiA+IFsgICAgNS41ODg4NTRdIHZjNC1kcm0gZ3B1OiBib3Vu
+ZCBmZTgwNjAwMC52ZWMgKG9wcyB2YzRfdmVjX29wcykKPiA+IFsgICAgNS41ODg4OTddIHZjNC1k
+cm0gZ3B1OiBib3VuZCBmZTAwNDAwMC50eHAgKG9wcyB2YzRfdHhwX29wcykKPiA+IFsgICAgNS41
+ODg5MzRdIHZjNC1kcm0gZ3B1OiBib3VuZCBmZTQwMDAwMC5odnMgKG9wcyB2YzRfaHZzX29wcykK
+PiA+IFsgICAgNS41ODg5OTBdIHZjNC1kcm0gZ3B1OiBib3VuZCBmZTIwNjAwMC5waXhlbHZhbHZl
+IChvcHMgdmM0X2NydGNfb3BzKQo+ID4gWyAgICA1LjU4OTAzMF0gdmM0LWRybSBncHU6IGJvdW5k
+IGZlMjA3MDAwLnBpeGVsdmFsdmUgKG9wcyB2YzRfY3J0Y19vcHMpCj4gPiBbICAgIDUuNTg5MDc0
+XSB2YzQtZHJtIGdwdTogYm91bmQgZmUyMGEwMDAucGl4ZWx2YWx2ZSAob3BzIHZjNF9jcnRjX29w
+cykKPiA+IFsgICAgNS41ODkxMDZdIHZjNC1kcm0gZ3B1OiBib3VuZCBmZTIxNjAwMC5waXhlbHZh
+bHZlIChvcHMgdmM0X2NydGNfb3BzKQo+ID4gWyAgICA1LjU4OTE0NV0gdmM0LWRybSBncHU6IGJv
+dW5kIGZlYzEyMDAwLnBpeGVsdmFsdmUgKG9wcyB2YzRfY3J0Y19vcHMpCj4gPiBbICAgIDUuNTg5
+Mjk0XSBjaGVja2luZyBnZW5lcmljICgzZTUxMzAwMCA2ZDhjMDApIHZzIGh3ICgwIGZmZmZmZmZm
+ZmZmZmZmZmYpCj4gPiBbICAgIDUuNTg5Mjk3XSBmYjA6IHN3aXRjaGluZyB0byB2YzRkcm1mYiBm
+cm9tIHNpbXBsZQo+ID4gWyAgICA1LjU4OTQzM10gQ29uc29sZTogc3dpdGNoaW5nIHRvIGNvbG91
+ciBkdW1teSBkZXZpY2UgODB4MjUKPiA+IFsgICAgNS41ODk0ODFdIFtkcm1dIFN1cHBvcnRzIHZi
+bGFuayB0aW1lc3RhbXAgY2FjaGluZyBSZXYgMiAoMjEuMTAuMjAxMykuCj4gPiBbICAgIDUuNTg5
+ODE2XSBbZHJtXSBJbml0aWFsaXplZCB2YzQgMC4wLjAgMjAxNDA2MTYgZm9yIGdwdSBvbiBtaW5v
+ciAwCj4gPiBbICAgIDUuNjAxMDc5XSAtLS0tLS0tLS0tLS1bIGN1dCBoZXJlIF0tLS0tLS0tLS0t
+LS0KPiA+IFsgICAgNS42MDEwOTVdIFdBUk5JTkc6IENQVTogMiBQSUQ6IDEyNyBhdCBkcml2ZXJz
+L2dwdS9kcm0vdmM0L3ZjNF9oZG1pX3BoeS5jOjQxMyB2YzVfaGRtaV9waHlfaW5pdCsweDdhYy8w
+eDIwNzgKPiA+IFsgICAgNS42MDEwOTddIE1vZHVsZXMgbGlua2VkIGluOgo+ID4gWyAgICA1LjYw
+MTEwM10gQ1BVOiAyIFBJRDogMTI3IENvbW06IGt3b3JrZXIvMjoxIE5vdCB0YWludGVkIDUuNy4w
+LXJjMi0wMDA5MS1nYTE4MWRmNTlhOTMwICM3Cj4gPiBbICAgIDUuNjAxMTA1XSBIYXJkd2FyZSBu
+YW1lOiBSYXNwYmVycnkgUGkgNCBNb2RlbCBCIChEVCkKPiA+IFsgICAgNS42MDExMTJdIFdvcmtx
+dWV1ZTogZXZlbnRzIGRlZmVycmVkX3Byb2JlX3dvcmtfZnVuYwo+ID4gWyAgICA1LjYwMTExNl0g
+cHN0YXRlOiAyMDAwMDAwNSAobnpDdiBkYWlmIC1QQU4gLVVBTykKPiA+IFsgICAgNS42MDExMTld
+IHBjIDogdmM1X2hkbWlfcGh5X2luaXQrMHg3YWMvMHgyMDc4Cj4gPiBbICAgIDUuNjAxMTIzXSBs
+ciA6IHZjNF9oZG1pX2VuY29kZXJfZW5hYmxlKzB4MWI4LzB4MWFjMAo+ID4gWyAgICA1LjYwMTEy
+NF0gc3AgOiBmZmZmODAwMDEyMTdiNDEwCj4gPiBbICAgIDUuNjAxMTI2XSB4Mjk6IGZmZmY4MDAw
+MTIxN2I0MTAgeDI4OiBmZmZmMDAwMGVjNjM3MGYwCj4gPiBbICAgIDUuNjAxMTI5XSB4Mjc6IGZm
+ZmYwMDAwZjY1MGQ0MDAgeDI2OiAwMDAwMDAwMDhhNTAwMDAwCj4gPiBbICAgIDUuNjAxMTMyXSB4
+MjU6IGZmZmY4MDAwMTEzYjRhYzAgeDI0OiAwMDAwMDAwMDAwMDAyMDYwCj4gPiBbICAgIDUuNjAx
+MTM1XSB4MjM6IDAwMDAwMDAwMGE1MDAwMDAgeDIyOiAwMDAwMDAwMDAwMDAwMzAwCj4gPiBbICAg
+IDUuNjAxMTM3XSB4MjE6IDAwMDAwMDAwMDhkOWVlMjAgeDIwOiBmZmZmMDAwMGVjNTM1MDgwCj4g
+PiBbICAgIDUuNjAxMTQwXSB4MTk6IDAwMDAwMDAxMDk4OWU3YzAgeDE4OiAwMDAwMDAwMDAwMDAw
+MDAwCj4gPiBbICAgIDUuNjAxMTQyXSB4MTc6IDAwMDAwMDAwMDAwMDAwMDEgeDE2OiAwMDAwMDAw
+MDAwMDA1MjA3Cj4gPiBbICAgIDUuNjAxMTQ1XSB4MTU6IDAwMDA0OTMyYWQyOTNjOTIgeDE0OiAw
+MDAwMDAwMDAwMDAwMTM3Cj4gPiBbICAgIDUuNjAxMTQ3XSB4MTM6IGZmZmY4MDAwMTAwMTUwMDAg
+eDEyOiAwMDAwMDAwMDAwMDAwMDAxCj4gPiBbICAgIDUuNjAxMTUwXSB4MTE6IDAwMDAwMDAwMDAw
+MDAwMDEgeDEwOiAwMDAwMDAwMDAwMDAwMDAwCj4gPiBbICAgIDUuNjAxMTUyXSB4OSA6IDAwMDAw
+MDAwMDAwMDAwMDAgeDggOiBmZmZmODAwMDEwMDE1MDM4Cj4gPiBbICAgIDUuNjAxMTU0XSB4NyA6
+IDAwMDAwMDAwMDAwMDAwMDEgeDYgOiBmZmZmODAwMDEyMTdiMzY4Cj4gPiBbICAgIDUuNjAxMTU3
+XSB4NSA6IDAwMDAwMDAwMDAwMDAwMDAgeDQgOiAwMDAwMDAwMDAwMDAwMDRjCj4gPiBbICAgIDUu
+NjAxMTU5XSB4MyA6IDAwMDAwMDAwMDAwMDAwMDAgeDIgOiBmZmZmODAwMDExM2I0YWMwCj4gPiBb
+ICAgIDUuNjAxMTYyXSB4MSA6IGZmZmY4MDAwMTIwYzVmNDQgeDAgOiAwMDAwMDAwMGRjODk4NGZm
+Cj4gPiBbICAgIDUuNjAxMTY0XSBDYWxsIHRyYWNlOgo+ID4gWyAgICA1LjYwMTE2OV0gIHZjNV9o
+ZG1pX3BoeV9pbml0KzB4N2FjLzB4MjA3OAo+ID4gWyAgICA1LjYwMTE3Ml0gIHZjNF9oZG1pX2Vu
+Y29kZXJfZW5hYmxlKzB4MWI4LzB4MWFjMAo+ID4gWyAgICA1LjYwMTE3Nl0gIGRybV9hdG9taWNf
+aGVscGVyX2NvbW1pdF9tb2Rlc2V0X2VuYWJsZXMrMHgyMjQvMHgyNDgKPiA+IFsgICAgNS42MDEx
+NzldICB2YzRfYXRvbWljX2NvbXBsZXRlX2NvbW1pdCsweDQwMC8weDU1OAo+ID4gWyAgICA1LjYw
+MTE4Ml0gIHZjNF9hdG9taWNfY29tbWl0KzB4MWUwLzB4MjAwCj4gPiBbICAgIDUuNjAxMTg1XSAg
+ZHJtX2F0b21pY19jb21taXQrMHg0Yy8weDYwCj4gPiBbICAgIDUuNjAxMTkwXSAgZHJtX2NsaWVu
+dF9tb2Rlc2V0X2NvbW1pdF9hdG9taWMuaXNyYS4wKzB4MTdjLzB4MjM4Cj4gPiBbICAgIDUuNjAx
+MTkyXSAgZHJtX2NsaWVudF9tb2Rlc2V0X2NvbW1pdF9sb2NrZWQrMHg1Yy8weDE5OAo+ID4gWyAg
+ICA1LjYwMTE5NV0gIGRybV9jbGllbnRfbW9kZXNldF9jb21taXQrMHgzMC8weDU4Cj4gPiBbICAg
+IDUuNjAxMjAxXSAgZHJtX2ZiX2hlbHBlcl9yZXN0b3JlX2ZiZGV2X21vZGVfdW5sb2NrZWQrMHg3
+OC8weGUwCj4gPiBbICAgIDUuNjAxMjA0XSAgZHJtX2ZiX2hlbHBlcl9zZXRfcGFyKzB4MzAvMHg2
+OAo+ID4gWyAgICA1LjYwMTIwOF0gIGZiY29uX2luaXQrMHgzZDQvMHg1OTgKPiA+IFsgICAgNS42
+MDEyMTJdICB2aXN1YWxfaW5pdCsweGIwLzB4MTA4Cj4gPiBbICAgIDUuNjAxMjE0XSAgZG9fYmlu
+ZF9jb25fZHJpdmVyKzB4MWQwLzB4M2E4Cj4gPiBbICAgIDUuNjAxMjE3XSAgZG9fdGFrZV9vdmVy
+X2NvbnNvbGUrMHgxNDQvMHgyMDgKPiA+IFsgICAgNS42MDEyMTldICBkb19mYmNvbl90YWtlb3Zl
+cisweDY4LzB4ZDgKPiA+IFsgICAgNS42MDEyMjJdICBmYmNvbl9mYl9yZWdpc3RlcmVkKzB4MTAw
+LzB4MTE4Cj4gPiBbICAgIDUuNjAxMjI2XSAgcmVnaXN0ZXJfZnJhbWVidWZmZXIrMHgxZjQvMHgz
+MzgKPiA+IFsgICAgNS42MDEyMjldICBfX2RybV9mYl9oZWxwZXJfaW5pdGlhbF9jb25maWdfYW5k
+X3VubG9jaysweDJmOC8weDRhMAo+ID4gWyAgICA1LjYwMTIzMl0gIGRybV9mYmRldl9jbGllbnRf
+aG90cGx1ZysweGQ0LzB4MWIwCj4gPiBbICAgIDUuNjAxMjM1XSAgZHJtX2ZiZGV2X2dlbmVyaWNf
+c2V0dXArMHhiMC8weDEzMAo+ID4gWyAgICA1LjYwMTIzOF0gIHZjNF9kcm1fYmluZCsweDE4NC8w
+eDFhMAo+ID4gWyAgICA1LjYwMTI0MV0gIHRyeV90b19icmluZ191cF9tYXN0ZXIrMHgxNjgvMHgx
+YzgKPiA+IFsgICAgNS42MDEyNDRdICBfX2NvbXBvbmVudF9hZGQrMHhhNC8weDE3MAo+ID4gWyAg
+ICA1LjYwMTI0Nl0gIGNvbXBvbmVudF9hZGQrMHgxNC8weDIwCj4gPiBbICAgIDUuNjAxMjQ4XSAg
+dmM0X3ZlY19kZXZfcHJvYmUrMHgyMC8weDMwCj4gPiBbICAgIDUuNjAxMjUyXSAgcGxhdGZvcm1f
+ZHJ2X3Byb2JlKzB4NTQvMHhhOAo+ID4gWyAgICA1LjYwMTI1NF0gIHJlYWxseV9wcm9iZSsweGQ4
+LzB4MzIwCj4gPiBbICAgIDUuNjAxMjU2XSAgZHJpdmVyX3Byb2JlX2RldmljZSsweDU4LzB4ZjAK
+PiA+IFsgICAgNS42MDEyNThdICBfX2RldmljZV9hdHRhY2hfZHJpdmVyKzB4ODQvMHhjOAo+ID4g
+WyAgICA1LjYwMTI2M10gIGJ1c19mb3JfZWFjaF9kcnYrMHg3OC8weGM4Cj4gPiBbICAgIDUuNjAx
+MjY1XSAgX19kZXZpY2VfYXR0YWNoKzB4ZTQvMHgxNDAKPiA+IFsgICAgNS42MDEyNjddICBkZXZp
+Y2VfaW5pdGlhbF9wcm9iZSsweDE0LzB4MjAKPiA+IFsgICAgNS42MDEyNjldICBidXNfcHJvYmVf
+ZGV2aWNlKzB4OWMvMHhhOAo+ID4gWyAgICA1LjYwMTI3MV0gIGRlZmVycmVkX3Byb2JlX3dvcmtf
+ZnVuYysweDc0LzB4YjAKPiA+IFsgICAgNS42MDEyNzZdICBwcm9jZXNzX29uZV93b3JrKzB4MWJj
+LzB4MzM4Cj4gPiBbICAgIDUuNjAxMjc5XSAgd29ya2VyX3RocmVhZCsweDFmOC8weDQyOAo+ID4g
+WyAgICA1LjYwMTI4Ml0gIGt0aHJlYWQrMHgxMzgvMHgxNTgKPiA+IFsgICAgNS42MDEyODZdICBy
+ZXRfZnJvbV9mb3JrKzB4MTAvMHgxYwo+ID4gWyAgICA1LjYwMTI4OF0gLS0tWyBlbmQgdHJhY2Ug
+Y2ZiYTA5OTYyMThjM2YzZCBdLS0tCj4KPiBUaGFua3MgZm9yIHRlc3RpbmchCj4KPiBEbyB5b3Ug
+aGF2ZSBhIGJpdCBtb3JlIGRldGFpbHMgcmVnYXJkaW5nIHlvdXIgc2V0dXA/IFdhcyBpdCBjb25u
+ZWN0ZWQgdG8gYW4KPiBleHRlcm5hbCBkaXNwbGF5PwoKWWVzLCB0aGUgSERNSSBjYWJsZSBpcyBj
+b25uZWN0ZWQgdG8gSERNSTAgcG9ydCBvbiBSUGkgNC4KCj4gSWYgc28sIGRvIHlvdSBrbm93IHRo
+ZSByZXNvbHV0aW9uIGl0IHdhcyB0cnlpbmcgdG8gc2V0dXA/CgpBY2NvcmRpbmcgdG8gdGhlIGxv
+ZywgSSB0aGluayBpdCBpcyAxOTIweDEwODA6CkFwciAyNyAxNTozNzoyNSBlbmRsZXNzIGdkbS1Y
+b3JnLTowWzE5NjBdOiAoSUkpIG1vZGVzZXQoMCk6IE91dHB1dApIRE1JLTEgY29ubmVjdGVkCkFw
+ciAyNyAxNTozNzoyNSBlbmRsZXNzIGdkbS1Yb3JnLTowWzE5NjBdOiAoSUkpIG1vZGVzZXQoMCk6
+IE91dHB1dApIRE1JLTIgZGlzY29ubmVjdGVkCkFwciAyNyAxNTozNzoyNSBlbmRsZXNzIGdkbS1Y
+b3JnLTowWzE5NjBdOiAoSUkpIG1vZGVzZXQoMCk6IE91dHB1dApDb21wb3NpdGUtMSBkaXNjb25u
+ZWN0ZWQKQXByIDI3IDE1OjM3OjI1IGVuZGxlc3MgZ2RtLVhvcmctOjBbMTk2MF06IChJSSkgbW9k
+ZXNldCgwKTogVXNpbmcKZXhhY3Qgc2l6ZXMgZm9yIGluaXRpYWwgbW9kZXMKQXByIDI3IDE1OjM3
+OjI1IGVuZGxlc3MgZ2RtLVhvcmctOjBbMTk2MF06IChJSSkgbW9kZXNldCgwKTogT3V0cHV0CkhE
+TUktMSB1c2luZyBpbml0aWFsIG1vZGUgMTkyMHgxMDgwICswKzAKCmh0dHBzOi8vZ2lzdC5naXRo
+dWIuY29tL3N0YXJuaWdodC80NWUxNDY4YmZhMDQyNmE1NGQyZmI0YTkyNjljZmI5NAoKUmVnYXJk
+cywKSmlhbi1Ib25nIFBhbgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
