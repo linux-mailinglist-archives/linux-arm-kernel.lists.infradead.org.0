@@ -2,90 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EB3E1C354B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:10:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 438D41C3566
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:18:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gacncG1yRLvA+QPkbX9Xn9+/87rSPuSGZbHFiTWcopQ=; b=mOz39bXEj8FFqe
-	nsbbdK84UAoaGbHWfftwNoXMdkxofPQcKaSvA8eg9QNNqvwzT7UhAN5VcikxMV5i44oV/jZu61VZi
-	342TtG0PcoGa434MEBkmHa7hW70qiVzCsAqCz+ceYg++6oHv0VHuyRhusT9yQNnnS4W+dqM/mKmKA
-	SzIvMqmEyle4JAJc+BPV8HXGU3CSVxARhwJFWw3EJhfJMQvHJbXx/hNeSGt9xDsf8alB0UzIOpeVe
-	NXQL9GtzI9D/57axecEM2mvoXUfkD1r+9aiSVKIJYnMa23S+JNIvPY1lqXG96LYtT0+XwnumUj+l9
-	0z4e31SU9zHG3kM8y+VA==;
+	List-Owner; bh=asOHCXwynP6RA1j+/N8YT1l3CVNwmTqRVJq+M0y7wgM=; b=SAO84fdlLq0OKI
+	s7KvQ/wdPCAJwyv2um8O4nLo/rAE3st1HD3niG7j1KSvK+1EuvxjXJrAz5/LecxjUb2xLiC4Q0aNn
+	RPGlvoR2TGCdAsmr4kU5KW7dzGlHODVAZ5cag4lojivPTcTF1yMbMyAQhIJnkNZYTtln39eDdc6A9
+	sXSJftRCqpsV7SMxw5hw4+np69oGy350HnA4ZHYRjCn5X4NLp8NMLEOWZrx6IwmSrZL35JADR7gXF
+	MLD3BzKP6GnCgr/1xbn708JbJ06y7Fovrd5pkHnFIDdbhi2Ft1YGDM6Haux8A4FmPhmOYNggwRR3F
+	b0Md7LIRh+etBR3DI3jA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVX7V-0007wu-Gf; Mon, 04 May 2020 09:10:38 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jVXEk-0003UH-0g; Mon, 04 May 2020 09:18:06 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVX7F-0007uw-FB; Mon, 04 May 2020 09:10:22 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x2so5229859pfx.7;
- Mon, 04 May 2020 02:10:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=uIbF5zxX6Dw0nqWjJ2TagrefdsSTjGZ8h/iE+ii+4b4=;
- b=cH+LYADnJpxdzvW2+5Q1jFzZ9L9OyZncRQgoZJsu0phKyHmo/b1tb6JE/KAVmXislx
- 576Ap7opHZUSUi70vyPGcMe0C9p7leyk8cASBIWKAwGsK8Y00lThuiFS3aNw65PsYLTm
- szhQMtXIBmQ2tAAcHVWgTijiqY0HV7xQgK5xZyE/QR599vulSPnvVwVtjGkKmy/Dtck5
- oIznVkUPaNZ0LtGj6iS59qmm9P3OHQSvVr5i8oQIHTb7kJ5GJncJ11cB4kee+KdWXypI
- BLlZ0XKGbYY2XjNxgkp917C15tyTspqX3/ZW8nK4NnjT3ll8+dlQFg8POxb8ZU3v61ad
- l8Yw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uIbF5zxX6Dw0nqWjJ2TagrefdsSTjGZ8h/iE+ii+4b4=;
- b=dmAkO6hqba1UuVC+hkPHqyJULSIc8f0NUSxiyk0LrK8ES1IsWFYqN8r3KiPhqoFnts
- UfAGW0uCR9pbuXbZaodLYs/mm+IsFyVZr3wu9cQgo8dpCkdzcL0wh2ANGztB3cPLTN8A
- qR0rIQGK2pDUCNjk/AJs+9MGQE4US8Qfel9OjATkTCwti8R7z30ItKH0AQ6fvYLClraL
- 1VPshL2Vag/pkg3ehYrpjM0SPSVY6t7M0H3gRoyDDzEjNeNm1L8btWdGKricZUeJybBk
- O4Av6LpTxGkD2TE51xACgfDOvlQ49L0ojWcTS28bPG0EUm7qsCc6WXLFWsERiwBr2wuD
- GuQg==
-X-Gm-Message-State: AGi0PuZ0LApx02jfRMRfp/81avHqKHxpgGkyZ7sl2udVT6RdA/CoOdvj
- QUBJ0cvodSVE9M+vRCJrGQQ=
-X-Google-Smtp-Source: APiQypJG/fsOYbUSEQYZkHIQLG4hFpTXov1SCNDc2K85TTECtJawhDDWFsEna1ULkqdmyHpan3Z+ag==
-X-Received: by 2002:aa7:97b2:: with SMTP id d18mr16995522pfq.89.1588583420829; 
- Mon, 04 May 2020 02:10:20 -0700 (PDT)
-Received: from localhost ([49.207.53.0])
- by smtp.gmail.com with ESMTPSA id gd17sm1461493pjb.21.2020.05.04.02.10.19
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 04 May 2020 02:10:19 -0700 (PDT)
-Date: Mon, 4 May 2020 14:40:18 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH 0/3] Highmem support for 32-bit RISC-V
-Message-ID: <20200504091018.GA24897@afzalpc>
-References: <20200331093241.3728-1-tesheng@andestech.com>
- <CAK8P3a3LokurC0n9XiwtPQh9ZgQcswMKY4b+TEsQh1VgYDNeWA@mail.gmail.com>
- <20200408035118.GA1451@andestech.com>
- <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
- <20200414151748.GA5624@afzalpc>
- <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
- <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
- <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ id 1jVXEd-0003TH-Am
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 09:18:01 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 044978Ts004044; Mon, 4 May 2020 11:17:45 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=t8yE9JoGl4flloHQYJEWfkrlpSIqoEFqyExGxmwsMx8=;
+ b=SKVrCXff3h/xL4m3odmOVBOJUf2qGJNoKtavF7W6Rz0kENh4xvZMCpxwYDsfw58rWIxe
+ uHRuHlXRWPeptG3pU39cL8A4BE1d0BtwMYevfaQHB/x2JNqzO9+rv8pP8e/Bm++04prk
+ NdRdpi514nAwSf9qy1Vh0haZNOCXBmidZqBMY04DfYc6MFpEo1X2u3FXlifIRn7rEtbt
+ SHgnlyxsUf/vuXjEWSG7CZZ98MkRvZu5Ey0Me0w2BRr4wkDbaVHNUqljBSysarYiAjBl
+ atBmEB2Osx42GsTLk8y13PzfkW51ioujPXV2+37zvew1lZHY8NySEcot5hhcDaqikLV2 xg== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30rx089j7y-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Mon, 04 May 2020 11:17:45 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1E65710002A;
+ Mon,  4 May 2020 11:17:41 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D3AA22BBAA5;
+ Mon,  4 May 2020 11:17:41 +0200 (CEST)
+Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE3.st.com
+ (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 4 May
+ 2020 11:17:41 +0200
+Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
+ SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
+ 15.00.1347.000; Mon, 4 May 2020 11:17:41 +0200
+From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+To: Valentin Schneider <valentin.schneider@arm.com>
+Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
+Thread-Topic: [RFC 0/3] Introduce cpufreq minimum load QoS
+Thread-Index: AQHWGi06wBgeAQBseECYOK/U7Qvw76iQJdAAgAACCYCAAAQ3AIABBseAgAAT0wCAAE7QgIAADU2AgAARzICAAAO9AIAF2zaA
+Date: Mon, 4 May 2020 09:17:41 +0000
+Message-ID: <b8757472-c973-a32d-d5c9-a584d7d703f8@st.com>
+References: <20200424114058.21199-1-benjamin.gaignard@st.com>
+ <7657495.QyJl4BcWH5@kreacher> <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
+ <70e743cf-b88e-346a-5114-939b8724c83d@arm.com>
+ <6b5cde14-58b3-045d-9413-223e66b87bf0@st.com>
+ <CAJZ5v0h6t6perZiibCWhEh1_V0pSXqFe-z22TFqH7KTFXYmqpQ@mail.gmail.com>
+ <a234e123-6c15-8e58-8921-614b58ca24ca@st.com> <jhjtv11cabk.mognet@arm.com>
+ <a20c5214-211b-1f70-1162-57b32e60549b@st.com> <jhjmu6tc6rz.mognet@arm.com>
+In-Reply-To: <jhjmu6tc6rz.mognet@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.44]
+Content-ID: <F04BFBC11629A34FAC8C983CAC60E3EF@st.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-05-04_05:2020-05-01,
+ 2020-05-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_021021_509982_C59D4C2E 
-X-CRM114-Status: GOOD (  13.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_021759_822026_47B7CD4B 
+X-CRM114-Status: GOOD (  20.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -104,87 +112,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: zong.li@sifive.com, Alan Kao <alankao@andestech.com>, atish.patra@wdc.com,
- Albert Ou <aou@eecs.berkeley.edu>, Gary Guo <gary@garyguo.net>,
- linux-riscv@lists.infradead.org, Steven Price <steven.price@arm.com>,
- alex@ghiti.fr, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Borislav Petkov <bp@suse.de>,
- Eric Lin <tesheng@andestech.com>, Greentime Hu <green.hu@gmail.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org,
- David Abdurachmanov <david.abdurachmanov@gmail.com>,
- Anup Patel <Anup.Patel@wdc.com>,
+Cc: "len.brown@intel.com" <len.brown@intel.com>,
+ Alexandre TORGUE <alexandre.torgue@st.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>,
+ "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
+ "pavel@ucw.cz" <pavel@ucw.cz>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- yash.shah@sifive.com, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Logan Gunthorpe <logang@deltatee.com>
+ Patrick Bellasi <patrick.bellasi@arm.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Hugues FRUCHET <hugues.fruchet@st.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[ +linux-arm-kernel
 
-  Context: This is regarding VMSPLIT_4G_4G support for 32-bit ARM as a
-  possible replacement to highmem. For that, initially, it is being
-  attempted to move static kernel mapping from lowmem to vmalloc space.
 
-  in next reply, i will remove everyone/list !ARM related ]
+On 4/30/20 5:50 PM, Valentin Schneider wrote:
+> On 30/04/20 16:37, Benjamin GAIGNARD wrote:
+>> On 4/30/20 4:33 PM, Valentin Schneider wrote:
+>>> On 30/04/20 14:46, Benjamin GAIGNARD wrote:
+>>>>> That's not what I meant.
+>>>>>
+>>>>> I suppose that the interrupt processing in question takes place in
+>>>>> process context and so you may set the lower clamp on the utilization
+>>>>> of the task carrying that out.
+>>>> I have try to add this code when starting streaming (before the first
+>>>> interrupt) the frames from the sensor:
+>>>> const struct sched_attr sched_attr = {
+>>>>      .sched_util_min = 10000, /* 100% of usage */
+>>> Unless you play with SCHED_CAPACITY_SHIFT, the max should be 1024 -
+>>> i.e. SCHED_CAPACITY_SCALE. That's a really big boost, but that's for you to
+>>> benchmark.
+>>>
+>>>>      .sched_flags = SCHED_FLAG_UTIL_CLAMP_MIN,
+>>>>     };
+>>>>
+>>>> sched_setattr(current, &sched_attr);
+>>>>
+>>>> I don't see any benefices maybe there is some configuration flags to set.
+>>>>
+>>>> How changing sched_util_min could impact cpufreq ondemand governor ?
+>>>> Does it change the value returned when the governor check the idle time ?
+>>>>
+>>> You'll have to use the schedutil governor for uclamp to have an effect. And
+>>> arguably that's what you should be using, unless something explicitly
+>>> prevents you from doing that.
+>> Even with schedutil and SCHED_CAPACITY_SCALE that it doesn't work.
+>> cpufreq/cpuinfo_cur_freq values are always on the max value even if the
+>> stats show transitions between the available frequencies.
+>>
+>> I see two possibles reasons to explain that:
+>> - sched_setattr() is called in userland process context, but the
+>> threaded irq handler is running in another process.
+> Ah yes, this only works if the task you boost is the one that will handle
+> whatever work you care about (in this case handling the irq). That said, if
+> you do use threaded IRQs, that should give you a SCHED_FIFO thread, which
+> should drive the frequency to its max when using schedutil (unrelated to
+> uclamp).
+Can I conclude that sched_setattr() isn't the good way to solve this 
+problem ?
+Does my patches make sense in this case ?
 
-Hi,
-
-On Sun, May 03, 2020 at 10:20:39PM +0200, Arnd Bergmann wrote:
-
-> Which SoC platform are you running this on? Just making
-> sure that this won't conflict with static mappings later.
-
-Versatile Express V2P-CA15 on qemu, qemu options include --smp 2 &
-2GB memory.
-
-BTW, i could not convince myself why, except for DEBUG_LL, static io
-mappings are used.
-
-> 
-> One problem I see immediately in arm_memblock_init()
-
-Earlier it went past arm_memblock_init(), issue was clearing the page
-tables from VMALLOC_START in devicemaps_init() thr' paging_init(),
-which was like cutting the sitting branch of the tree.
-
-Now it is crashing at debug_ll_io_init() of devicemap_init(), and
-printascii/earlycon was & is being used to debug :). Things are going
-wrong when it tries to create mapping for debug_ll. It looks like a
-conflict with static mapping, which you mentioned above, at the same
-time i am not seeing kernel static mapping in the same virtual
-address, need to dig deeper.
-
-Also tried removing DEBUG_LL, there is a deafening silence in the
-console ;)
-
-> is that it uses
-> __pa() to convert from virtual address in the linear map to physical,
-> but now you actually pass an address that is in vmalloc rather than
-> the linear map.
-
-__virt_to_phys_nodebug() which does the actual work on __pa() invocation
-has been modifed to handle that case (ideas lifted from ARM64's
-implementation), though currently it is a hack as below (and applicable
-only for ARM_PATCH_PHYS_VIRT disabled case), other hacks being
-VMALLOC_OFFSET set to 0 and adjusting vmalloc size.
-
-        static inline phys_addr_t __virt_to_phys_nodebug(unsigned long x)
-        {
-	        phys_addr_t __x = (phys_addr_t)x;
-
-        	if (__x >= 0xf0000000)
-	        	return __x - KIMAGE_OFFSET + PHYS_OFFSET;
-        	else
-	        	return __x - PAGE_OFFSET + PHYS_OFFSET;
-        }
-
-Regards
-afzal
-
+>> - because this use case is almost running all in hardware the process
+>> isn't doing anything so the scheduler doesn't take care of it.
+>>
+>>>>> Alternatively, that task may be a deadline one.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
