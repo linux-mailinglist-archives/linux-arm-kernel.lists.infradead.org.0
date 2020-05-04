@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E352B1C3B62
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:37:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62A3E1C3B5C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:35:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
 	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=M4Cpq4FslUAQFDIo0yoptNAAN608FpwjIW1InVPUAiI=; b=RN6IRvPftGlQ0g
-	gNMicUujRwNRJdMrCoSP3r5UYWecHLrKD9grEWYWyXfPae25Xatd8LflLiGVnKOOTi35I1uZj6rbF
-	W2bIv8dcxch53CQY84B3FlT1mJ81ZTz/ZlHExpvc9dIksnfhpA4xpvqZm6vhccHfjmJ35bgCldYYg
-	UjxVzizAuc4VfKvfgG35dYXfO9JcM4acnvI8horaXWKc6RrAFKprAE9YIcIcZ/JuvWVM4exlvxE9p
-	liC03aMhFM5ZnIszfFN3IL5UwyiTC60UIZZCjf9jW6t0ZJyEJdxpGANjObUAd/5wmn7hGzU369LwV
-	M+K0zHinK/xB7k8GswCw==;
+	List-Owner; bh=bVa2LAAbD3U8WPaKSwjfFEe9N5ajC15M3Du4jZAL6f8=; b=Z6H+Z757nyG+Dp
+	xWfbQcNuAgKY+G60jA8+lJMS64TWmuabYmWwA+i9ygnz/ku5aDy3ks26VuX/5R5oKG2tQG8JnvYH0
+	udKgz7cgHwsZlJimvkfIQfnmt9sOjlg3HUiHr4izAjPJloJ/hXdsnOuwTfrLON/ZqF5QjL73r4kq5
+	BSkk50708oIaSclakM4fr/UCKcONQUAgje2pmDIYAhLLqqbRrXZu7ME6TrjSojlskviJ/hGeOX5qH
+	hTk53dJRpaLm0sDaKht//3Hb962xuHal2CqmTcjpvnMgzS30HHfRHGDp2rm55s6cQ2fiU9LsXqFjZ
+	hrVElOidUSkbYdH5BEyw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVbHr-0007kB-S3; Mon, 04 May 2020 13:37:35 +0000
+	id 1jVbFv-0006rn-09; Mon, 04 May 2020 13:35:35 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVbHf-0006r8-LN
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:37:27 +0000
+ id 1jVbFl-0006r9-2Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:35:29 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
  Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
  In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
  Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
  List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BCkMI4D5tUF6D9H97GM4sn9xrWmEM0GP1zsegISGX0s=; b=BTXKB37Pu8JQ4ZhTpcRywqUysR
- M2T8WftHZevDylftdZr1cpra2j5YNHUnQOMsKDKWdnNXR9ayDScewT+HN66PPnpMOmBxWW9Y8ItjD
- qRDWCi8bQh8xaaGDDFsk0RVlBOxrKmsi1VMYENOVBnFRlj3paS28RLACLd3gOc5vBT2JkjvIGaHTN
- zOE4tqFSUfG6KOg0rPYJRiWDqr6tVZvRiLlZGI3my7XjqSyOloCsASTpUEQiHIMPLxk5y6MnxkyOx
- tg1Ww1Tax9o9y42fkg4ub7KTs3jDBgcqQUI6GRUx5qyn6va/YWJhyXmVP4OiSpucUbA7ALyd/gKq6
- om3TQ4vA==;
+ bh=CEK6soI9hOzDXxMeYoZIwnw8wq+iCrPVuXY+g63CMwQ=; b=RDwMCNVz1O3E7+C7okcVIbn3c2
+ QwWxKqh0WtNaBrjLJ3VXq2wDQ+/4DJdA5wVt4DNpfYv6Zev2yVBBL3TzPpcUpRgHQNhX5enRU8m9C
+ 97iTTCK3hWbPyTk2NvC5KZlrrh8K7CBdX+JsKyBpgJBTm7HfBm7U2s8AfWTYj7DByEjjNEMqhxd9J
+ 7GGRy8SluWPhgKCmyvr2mQhjpuwVb1OnlWbri4NDokPYJOhtoW0D0FnKzN6bSpUorST6mcwkojtuC
+ 8nBs8Pe4pi2LIEmne6tykr/cNE6OB2GjzZf9OM/QswndwAdb9qeLW+CP1vZ9hulWoKfW6itxAtRVM
+ UzRobN/Q==;
 Received: from e0022681537dd.dyn.armlinux.org.uk
- ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:56548 helo=rmk-PC.armlinux.org.uk)
+ ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:56550 helo=rmk-PC.armlinux.org.uk)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1jVbFT-0004tg-6D; Mon, 04 May 2020 14:35:07 +0100
+ id 1jVbFX-0004tl-MP; Mon, 04 May 2020 14:35:11 +0100
 Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <rmk@armlinux.org.uk>)
- id 1jVbFR-00076Y-42; Mon, 04 May 2020 14:35:05 +0100
+ id 1jVbFW-00076k-84; Mon, 04 May 2020 14:35:10 +0100
 In-Reply-To: <20200504133435.GD1551@shell.armlinux.org.uk>
 References: <20200504133435.GD1551@shell.armlinux.org.uk>
 From: Russell King <rmk+kernel@armlinux.org.uk>
 To: linux-arm-kernel@lists.infradead.org,
  Tomas Paukrt <tomas.paukrt@advantech.cz>
-Subject: [PATCH 2/3] ARM: uaccess: integrate uaccess_save and uaccess_restore
+Subject: [PATCH 3/3] ARM: uaccess: fix DACR mismatch with nested exceptions
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1jVbFR-00076Y-42@rmk-PC.armlinux.org.uk>
-Date: Mon, 04 May 2020 14:35:05 +0100
+Message-Id: <E1jVbFW-00076k-84@rmk-PC.armlinux.org.uk>
+Date: Mon, 04 May 2020 14:35:10 +0100
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_063723_725455_90D54F47 
-X-CRM114-Status: UNSURE (   7.76  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200504_063525_462738_6CB9CDDC 
+X-CRM114-Status: GOOD (  14.02  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -93,71 +92,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Integrate uaccess_save / uaccess_restore macros into the new
-uaccess_entry / uaccess_exit macros respectively.
+Tomas Paukrt reports that his SAM9X60 based system (ARM926, ARMv5TJ)
+fails to fix up alignment faults, eventually resulting in a kernel
+oops.
 
+The problem occurs when using CONFIG_CPU_USE_DOMAINS with commit
+e6978e4bf181 ("ARM: save and reset the address limit when entering an
+exception").  This is because the address limit is set back to
+TASK_SIZE on exception entry, and, although it is restored on exception
+exit, the domain register is not.
+
+Hence, this sequence can occur:
+
+  interrupt
+    pt_regs->addr_limit = addr_limit		// USER_DS
+    addr_limit = USER_DS
+    alignment exception
+    __probe_kernel_read()
+      old_fs = get_fs()				// USER_DS
+      set_fs(KERNEL_DS)
+        addr_limit = KERNEL_DS
+        dacr.kernel = DOMAIN_MANAGER
+        interrupt
+          pt_regs->addr_limit = addr_limit	// KERNEL_DS
+          addr_limit = USER_DS
+          alignment exception
+          __probe_kernel_read()
+            old_fs = get_fs()			// USER_DS
+            set_fs(KERNEL_DS)
+              addr_limit = KERNEL_DS
+              dacr.kernel = DOMAIN_MANAGER
+            ...
+            set_fs(old_fs)
+              addr_limit = USER_DS
+              dacr.kernel = DOMAIN_CLIENT
+          ...
+          addr_limit = pt_regs->addr_limit	// KERNEL_DS
+        interrupt returns
+
+At this point, addr_limit is correctly restored to KERNEL_DS for
+__probe_kernel_read() to continue execution, but dacr.kernel is not,
+it has been reset by the set_fs(old_fs) to DOMAIN_CLIENT.
+
+This would not have happened prior to the mentioned commit, because
+addr_limit would remain KERNEL_DS, so get_fs() would have returned
+KERNEL_DS, and so would correctly nest.
+
+This commit fixes the problem by also saving the DACR on exception
+entry if either CONFIG_CPU_SW_DOMAIN_PAN or CONFIG_CPU_USE_DOMAINS are
+enabled, and resetting the DACR appropriately on exception entry to
+match addr_limit and PAN settings.
+
+Fixes: e6978e4bf181 ("ARM: save and reset the address limit when entering an exception")
+Reported-by: Tomas Paukrt <tomas.paukrt@advantech.cz>
 Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
 ---
- arch/arm/include/asm/uaccess-asm.h | 30 +++++++++++++-----------------
- 1 file changed, 13 insertions(+), 17 deletions(-)
+ arch/arm/include/asm/uaccess-asm.h | 25 ++++++++++++++++++++-----
+ 1 file changed, 20 insertions(+), 5 deletions(-)
 
 diff --git a/arch/arm/include/asm/uaccess-asm.h b/arch/arm/include/asm/uaccess-asm.h
-index d475e3e8145d..e46468b91eaa 100644
+index e46468b91eaa..907571fd05c6 100644
 --- a/arch/arm/include/asm/uaccess-asm.h
 +++ b/arch/arm/include/asm/uaccess-asm.h
-@@ -67,30 +67,23 @@
+@@ -67,15 +67,21 @@
  #endif
  	.endm
  
--	.macro	uaccess_save, tmp
- #ifdef CONFIG_CPU_SW_DOMAIN_PAN
--	mrc	p15, 0, \tmp, c3, c0, 0
--	str	\tmp, [sp, #SVC_DACR]
--#endif
--	.endm
--
--	.macro	uaccess_restore
 -#ifdef CONFIG_CPU_SW_DOMAIN_PAN
--	ldr	r0, [sp, #SVC_DACR]
--	mcr	p15, 0, r0, c3, c0, 0
-+#define DACR(x...)	x
-+#else
-+#define DACR(x...)
++#if defined(CONFIG_CPU_SW_DOMAIN_PAN) || defined(CONFIG_CPU_USE_DOMAINS)
+ #define DACR(x...)	x
+ #else
+ #define DACR(x...)
  #endif
--	.endm
  
  	/*
- 	 * Save the address limit on entry to a privileged exception and
- 	 * if using PAN, save and disable usermode access.
+-	 * Save the address limit on entry to a privileged exception and
+-	 * if using PAN, save and disable usermode access.
++	 * Save the address limit on entry to a privileged exception.
++	 *
++	 * If we are using the DACR for kernel access by the user accessors
++	 * (CONFIG_CPU_USE_DOMAINS=y), always reset the DACR kernel domain
++	 * back to client mode, whether or not \disable is set.
++	 *
++	 * If we are using SW PAN, set the DACR user domain to no access
++	 * if \disable is set.
  	 */
  	.macro	uaccess_entry, tsk, tmp0, tmp1, tmp2, disable
--	ldr	\tmp0, [\tsk, #TI_ADDR_LIMIT]
--	mov	\tmp1, #TASK_SIZE
--	str	\tmp1, [\tsk, #TI_ADDR_LIMIT]
--	str	\tmp0, [sp, #SVC_ADDR_LIMIT]
--	uaccess_save \tmp0
-+	ldr	\tmp1, [\tsk, #TI_ADDR_LIMIT]
-+	mov	\tmp2, #TASK_SIZE
-+	str	\tmp2, [\tsk, #TI_ADDR_LIMIT]
-+ DACR(	mrc	p15, 0, \tmp0, c3, c0, 0)
-+ DACR(	str	\tmp0, [sp, #SVC_DACR])
-+	str	\tmp1, [sp, #SVC_ADDR_LIMIT]
- 	.if \disable
- 	uaccess_disable \tmp0
+ 	ldr	\tmp1, [\tsk, #TI_ADDR_LIMIT]
+@@ -84,8 +90,17 @@
+  DACR(	mrc	p15, 0, \tmp0, c3, c0, 0)
+  DACR(	str	\tmp0, [sp, #SVC_DACR])
+ 	str	\tmp1, [sp, #SVC_ADDR_LIMIT]
+-	.if \disable
+-	uaccess_disable \tmp0
++	.if \disable && IS_ENABLED(CONFIG_CPU_SW_DOMAIN_PAN)
++	/* kernel=client, user=no access */
++	mov	\tmp2, #DACR_UACCESS_DISABLE
++	mcr	p15, 0, \tmp2, c3, c0, 0
++	instr_sync
++	.elseif IS_ENABLED(CONFIG_CPU_USE_DOMAINS)
++	/* kernel=client */
++	bic	\tmp2, \tmp0, #domain_mask(DOMAIN_KERNEL)
++	orr	\tmp2, \tmp2, #domain_val(DOMAIN_KERNEL, DOMAIN_CLIENT)
++	mcr	p15, 0, \tmp2, c3, c0, 0
++	instr_sync
  	.endif
-@@ -99,8 +92,11 @@
- 	/* Restore the user access state previously saved by uaccess_entry */
- 	.macro	uaccess_exit, tsk, tmp0, tmp1
- 	ldr	\tmp1, [sp, #SVC_ADDR_LIMIT]
--	uaccess_restore
-+ DACR(	ldr	\tmp0, [sp, #SVC_DACR])
- 	str	\tmp1, [\tsk, #TI_ADDR_LIMIT]
-+ DACR(	mcr	p15, 0, \tmp0, c3, c0, 0)
  	.endm
  
-+#undef DACR
-+
- #endif /* __ASM_UACCESS_ASM_H__ */
 -- 
 2.20.1
 
