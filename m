@@ -2,70 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDCD51C47BB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 22:12:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FCE21C47BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 22:14:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZfhSjI+FoZjJ0u2TDiAhUgg8fMBIcFsSv5FSpRKM1To=; b=LrYjRnWLQQvH3i
-	KMa4KZ5uPckdpVB1bc27OThT+vYxxvrR70IypSQUSFRHvCIgBPk9vig4UYdtMMgdy5c1epBlpEMva
-	MCxk2LfiVPwPDbij4W7hBO+Cb4L6WZk2CsoCartWFxHgY2HM64SvFI5FYHkPFaSUSjWxKfrW91yX6
-	430QdVC5fuY7ZxjAXPdTI3vrpgio7hLKlIzC87/SegVxllxhFY0ecCqvvZU4IdXIuCj9gVv+d9ow0
-	pxlRiRfryyEKShL4HIQzqsJAqQWDR5F8TxqCU3yg7rMeRD5LvEVUfPrdw/vGkNyww6K4r4bDqx16+
-	i/BPNeAHRe/ce8CNBxAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=J/mqzygMb9sKtIQGf7h6HvcxGD22U6ZaQkncaRV3RWA=; b=ji+RpxuovBdmG/
+	CDK+S/UL6JB6p3yp6zdOSq5GK7mMHgsJkw4BAscLYhibK3WdCo4vkSNV2xoSRLl+EXFNrDtloWO71
+	/vu2DNAThQM1e8abYSB9SOHfgs6YJRAAOpGmowLfCB0n1td8JUU4ZzAAFL1PvihmCloL/l3FvycCC
+	G+v1AVk9DgL/7Dl8Cys5NzwaaeiIwFMNwDfeR6jD/5hzlBa4MIAAtWvT4kwlG5zumWgn7MgLo+30B
+	Yo7YEIDnr89Yk2LWk8wKf36H1ePidBWe7Y8iX10sV0AiQi0vEK1zDmqwM6ZBBFlawMXA9wrXWmYe4
+	4WbAv56H2Hy84SIvagRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVhS5-0003YK-2u; Mon, 04 May 2020 20:12:33 +0000
-Received: from rere.qmqm.pl ([91.227.64.183])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVhRv-0003W5-Px
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 20:12:25 +0000
-Received: from remote.user (localhost [127.0.0.1])
- by rere.qmqm.pl (Postfix) with ESMTPSA id 49GDY21b4jzGl;
- Mon,  4 May 2020 22:12:22 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
- t=1588623142; bh=lVLIC8hMj/0zr6xzzWxKI8HUujqMOA03DhHUsoA3EK8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sSELaenvGR2loMssEW9C2IPbeJJDiP07QoXDXmPDjeihpa36xngv/yqhlQnNLiciW
- aK97Q6unTc7OHBBaPpQMSEU9ECI+m8Z0UiEHl0Ggzx8UVLhlK9x2p3X+KS8W9mDtM1
- yRXlP50WBSyvLl5z3+6WFxIhWb5LL+HXrCHs3rifrGZb2Xz2M1tV9BKkHrVvVHnbkZ
- Ki+0igizq16vYtHxr2Hieb36mugVEbhSHuXmW7swTURL14uA4/6MThhNOkHqHVkUsc
- uoY3tdjDDx3ir3X19XKEiPvdI2x3PpOlTHbTgjS0SDVcw6pLHxOzcLLq/lDAR774RN
- BRYmABHPNDlpQ==
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.102.2 at mail
-Date: Mon, 4 May 2020 22:12:21 +0200
-From: =?iso-8859-2?Q?Micha=B3_Miros=B3aw?= <mirq-linux@rere.qmqm.pl>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Subject: Re: [PATCH v4 3/3] clk: at91: allow setting all PMC clock parents
- via DT
-Message-ID: <20200504201220.GA21544@qmqm.qmqm.pl>
-References: <cover.1588526049.git.mirq-linux@rere.qmqm.pl>
- <ae0c612ce6bc53ea726ddcb25eb36bca78055e33.1588526049.git.mirq-linux@rere.qmqm.pl>
- <20200504200431.GI34497@piout.net>
+	id 1jVhTd-000468-7v; Mon, 04 May 2020 20:14:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVhTV-00044n-Ne
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 20:14:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BD30101E;
+ Mon,  4 May 2020 13:14:00 -0700 (PDT)
+Received: from mammon-tx2.austin.arm.com (mammon-tx2.austin.arm.com
+ [10.118.28.62])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 52CCC3F71F;
+ Mon,  4 May 2020 13:14:00 -0700 (PDT)
+From: Jeremy Linton <jeremy.linton@arm.com>
+To: linux-usb@vger.kernel.org
+Subject: [PATCH v2] usb: usbfs: correct kernel->user page attribute mismatch
+Date: Mon,  4 May 2020 15:13:48 -0500
+Message-Id: <20200504201348.1183246-1-jeremy.linton@arm.com>
+X-Mailer: git-send-email 2.24.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504200431.GI34497@piout.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_131224_037480_C6AF5029 
-X-CRM114-Status: UNSURE (   7.86  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200504_131401_812049_81F8B659 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,40 +60,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-2"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, git@thegavinli.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, jarkko.sakkinen@linux.intel.com,
+ stern@rowland.harvard.edu, Jeremy Linton <jeremy.linton@arm.com>,
+ maz@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 10:04:31PM +0200, Alexandre Belloni wrote:
-> Hi,
-> =
+On some architectures (e.g. arm64) requests for
+IO coherent memory may use non-cachable attributes if
+the relevant device isn't cache coherent. If these
+pages are then remapped into userspace as cacheable,
+they may not be coherent with the non-cacheable mappings.
 
-> On 03/05/2020 19:19:26+0200, Micha=B3 Miros=B3aw wrote:
-> > diff --git a/include/dt-bindings/clock/at91.h b/include/dt-bindings/clo=
-ck/at91.h
-> > index c3f4aa6a2d29..adcf608b41fa 100644
-> > --- a/include/dt-bindings/clock/at91.h
-> > +++ b/include/dt-bindings/clock/at91.h
-> > @@ -21,6 +21,9 @@
-> >  #define PMC_MCK2		4
-> >  #define PMC_I2S0_MUX		5
-> >  #define PMC_I2S1_MUX		6
-> > +#define PMC_PLLACK		7
-> > +#define PMC_PLLBCK		8
-> > +#define PMC_AUDIOPLLCK		8		/* SAMA5D2-only, no PLLB there */
-> Just use 9 here because we can't know for sure that a future SoC won't
-> have both a PLLB and audio PLL.
+In particular this happens with libusb, when it attempts
+to create zero-copy buffers for use by rtl-sdr
+(https://github.com/osmocom/rtl-sdr/). On low end arm
+devices with non-coherent USB ports, the application will
+be unexpectedly killed, while continuing to work fine on
+arm machines with coherent USB controllers.
 
-Ok. I assumed that PLLB is only in old generations. Fix coming shortly.
+This bug has been discovered/reported a few times over
+the last few years. In the case of rtl-sdr a compile time
+option to enable/disable zero copy was implemented to
+work around it.
 
-Best Regrads,
-Micha=B3 Miros=B3aw
+Rather than relaying on application specific workarounds,
+dma_mmap_coherent() can be used instead of remap_pfn_range().
+The page cache/etc attributes will then be correctly set in
+userspace to match the kernel mapping.
+
+Signed-off-by: Jeremy Linton <jeremy.linton@arm.com>
+---
+v1->v2:
+	Update commit message and change to dma_mmap_coherent()
+	from dma_mmap_attr(,,,0) which are the same.
+
+ drivers/usb/core/devio.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/usb/core/devio.c b/drivers/usb/core/devio.c
+index 6833c918abce..b9db9812d6c5 100644
+--- a/drivers/usb/core/devio.c
++++ b/drivers/usb/core/devio.c
+@@ -217,6 +217,7 @@ static int usbdev_mmap(struct file *file, struct vm_area_struct *vma)
+ {
+ 	struct usb_memory *usbm = NULL;
+ 	struct usb_dev_state *ps = file->private_data;
++	struct usb_hcd *hcd = bus_to_hcd(ps->dev->bus);
+ 	size_t size = vma->vm_end - vma->vm_start;
+ 	void *mem;
+ 	unsigned long flags;
+@@ -250,9 +251,7 @@ static int usbdev_mmap(struct file *file, struct vm_area_struct *vma)
+ 	usbm->vma_use_count = 1;
+ 	INIT_LIST_HEAD(&usbm->memlist);
+ 
+-	if (remap_pfn_range(vma, vma->vm_start,
+-			virt_to_phys(usbm->mem) >> PAGE_SHIFT,
+-			size, vma->vm_page_prot) < 0) {
++	if (dma_mmap_coherent(hcd->self.sysdev, vma, mem, dma_handle, size)) {
+ 		dec_usb_memory_use_count(usbm, &usbm->vma_use_count);
+ 		return -EAGAIN;
+ 	}
+-- 
+2.24.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
