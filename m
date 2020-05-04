@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 573A31C38B2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:57:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07C6D1C38B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:57:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,51 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=8lZe/0cHw/x/NiI/fjIrc4TmZUupZIn3gvLLOMRoh/Y=; b=WxwiP2jTwqkkP4aY5xC2xUDkkv
-	JORQ4QjKIcriD7uRfVbY+48y0qPnABU665BjYiZ2z14Siuil9JG/FTAIHaBoj7iySx99e4RE6b+B5
-	dr0MSun/bJO2ERx/G3H1d0zcFZMPpKRavgkKEFE7eC50lkuACLwOurAPt+CEN9VsL2dBHWqr9PR9o
-	91XIixj2rEhJGZ6iewEp032mLClcznOm085CoeHmRz2v/2w8RgB4HvA5dDb2Kz7yhaqMyKsYGPRWF
-	/SOvy9frAHxEbHsBc2qumucNsmbHdo2LWMqeE9XsM6slf9aKWh+mma1PXAjOP4gTC/k1iSZmQtyLC
-	UvdVnKRw==;
+	bh=lBRCq4qT3ZPBIcPt8smcwXs00izjRpdRU98JgufFa5Y=; b=OYcXWESwM8dFA+NXHsW5GZPRt4
+	UEuV2SUCo3ucssTgL1r0eXqj+2RMaI88GDQfaHPtCPVu57Mj8mO5zuQl4p9P9bKcwFFuD3jtPLjne
+	QJZWQTrw/mu+c8m3CW7U9tlzogP1lLcJ7StV7b4PzTuYmZUmF37kFjTcJr4jQgSXzdTZGn/F4dBur
+	9GQ7ux3iXahxO1w4suiMUtkNTCqDMmoqtHmbm/kulBe0TkahebuxN3HXU1HM+Uh6laQcmK2eZkACo
+	qdqa/lLjGibQES/KRfg1O83/rzxaXHQjOlmc03R9HCIsGJn8JVkTVM7m0Um/mpbVaKMnO8/bOzRmJ
+	1vmeZlaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZib-00035F-Be; Mon, 04 May 2020 11:57:05 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jVZiq-0003MO-N4; Mon, 04 May 2020 11:57:20 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZiK-0002yV-S8
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:56:50 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id t9so3667878pjw.0
+ id 1jVZiT-0003Bw-Rs
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:56:59 +0000
+Received: by mail-pg1-x542.google.com with SMTP id a4so1756555pgc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 04:56:48 -0700 (PDT)
+ Mon, 04 May 2020 04:56:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=VjxC6yar2pkOPDjFHi+N3zsczn/g58x93twk4LhJqJY=;
- b=yNlSGZ2hjNuslp0mc3MIjz3ht1xvPrJSZ6G/6CHlsizSc+Hp9R6kh6jNzcbaqrXLgt
- Af3cFoLPjTm/bHZri3/t2L+n47cslLjI6sG5ezJGpW7j5jMgb5cIGPS95OrI1t8BAq5j
- JPrQJt9MNYm3+h6bqMbYNUjPmz5R5LqXNWv1KMtHDLaJxHwUXkqaBcZpY0wo9qg/xvuj
- JKPC0Q4sJe7gUYBLHZCxkabQYMl0HxtfMkizoBBYmEcDWvhwFzpmJ3Bq2gEu/OHKW19Q
- xaWk8yvFG71MTEdKkE9AkUB6nt0jsWY3Dc8cBiyZWpZQir1OyALnMlmYNhuoY6q1stEf
- yotg==
+ bh=GCkhMjfnwBk0DNtUvJnARIqnihIjNoY60OBXaVN6s44=;
+ b=md07E1CuUsuUSQQMN/4IJ4nZT8WijPeiNCpSFsuRpPwN4y3/HZvfMyKcJe1lSXq0SQ
+ bmlt7w6z2PiQOMlZdWIj9HAXDPKK1h1aYT/joqcDRfwlLT6oDfFgeotmNBII2lRJ0GDb
+ 7npJtXt3OLyZS8T+eZTqWfF68z4yYTMGfmA2nsFKqK+MZ6uOPswX9AFCGtzfH68ikDT5
+ kn3ML0MBh+BIxsKw67MLOVmlhAkj6qOLpQRBSrWla+TO4HGTngoq6T/ubGHt0HdBMVF9
+ d6j8JmVw1QPOiAzkvbw8+jgOxEAulb4yC424vph/EQsJqRtgGu3tBrH4ABP3UQTthd85
+ rqHA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=VjxC6yar2pkOPDjFHi+N3zsczn/g58x93twk4LhJqJY=;
- b=nGUpLDLUM1tFoTeyMygUXzP0P5hL7qCq3zLdva8+8YekDEOSXZLBrLIfZUsjj/Artx
- KT3CUHo3rfQuAQEln+5jLIDx46i/dqpa970WC7qRYXY5WL4LuHecAosN8xjJAp79jTle
- 5qcWPy4fn43puyxncKWhA0nLmxyDmbk7b6A9w7dgs5a6SX2lDkQuIV4xF3fe2OMOrlSC
- tAW8uZKRnZHQbcLj79dP70aD7TXfColk+/5h0Dx43HtI2j0FvdVHdv/m/k30sl/ueCLE
- Gls6EqZCiPlpVIGErnTZFTxhNNaJkpiDM0XtOWrKaKQxVQL5HdX4NsXmn6vHhPZo9cTR
- 28zw==
-X-Gm-Message-State: AGi0PuYxQ7HXf6CdclwwXZsRSHbma1WMlDGtiWrKaxoqA+cH60DvZiG5
- dyjskN0pAChvlV9XnCvzKk7YZg==
-X-Google-Smtp-Source: APiQypIvcDK+NL5FERdEoAlT+n/SbuYUlWoJTlo3xaAi8kbBrMP/Vm6C+hhqPqKPa3ytgy9nUEuNwg==
-X-Received: by 2002:a17:902:b186:: with SMTP id
- s6mr18538615plr.16.1588593407935; 
- Mon, 04 May 2020 04:56:47 -0700 (PDT)
+ bh=GCkhMjfnwBk0DNtUvJnARIqnihIjNoY60OBXaVN6s44=;
+ b=mcwbWyIe0rXtokBR/jsqeByA1pmWURWtCveaGJ6bw/njjou0g473dU0gGEqJaa+Y2d
+ nBi0LiHswjl1Dbr0Vf8qlhW6G21ix767UipEajf4paURU329Faixe0ACGk6dh8FmkBC+
+ O/gkii9xKtsWmFc0H5XphUIJWUAoNHQ+wvIla80mY+YcUG0DEFW6NzJDUKgiNqSwFJ86
+ iW4UuaghGVEqkfodrmoEHoaezZ5+6nSRw9w8qRWNmUfVYP6wzVhJjVUA0NJ4aNgtFmqV
+ 5D7zOa02o6RNosLsOSf+IHQbMF8sI/loeXPHd72afiuRI5ZL0l5EhEZplJutEhJNWAhV
+ g8hA==
+X-Gm-Message-State: AGi0PubgeElOABOBGc9uQyqhXV4AQFZNKX5gucMq7IwCAXbPZwVaTMB3
+ w3dLjZevYiWnIoFkz8v27kWpGQ==
+X-Google-Smtp-Source: APiQypLKu/ejHfK8I6XBtbu5HYNXbBwOtfDFEt4290Z9II+sB0mpmFr0y8OYJrwU8ylZ9X8J9/Bi9Q==
+X-Received: by 2002:a63:9216:: with SMTP id o22mr15980158pgd.304.1588593416518; 
+ Mon, 04 May 2020 04:56:56 -0700 (PDT)
 Received: from localhost ([2400:8904::f03c:91ff:fe8a:bbe4])
- by smtp.gmail.com with ESMTPSA id y24sm8693921pfn.211.2020.05.04.04.56.46
+ by smtp.gmail.com with ESMTPSA id n23sm6777105pjq.18.2020.05.04.04.56.55
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 04 May 2020 04:56:47 -0700 (PDT)
+ Mon, 04 May 2020 04:56:56 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
  Will Deacon <will@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -67,15 +66,15 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
  Mike Leach <mike.leach@linaro.org>
-Subject: [PATCH v7 1/3] perf tools: Move arm-spe-pkt-decoder.h/c to the new dir
-Date: Mon,  4 May 2020 19:56:23 +0800
-Message-Id: <20200504115625.12589-2-leo.yan@linaro.org>
+Subject: [PATCH v7 2/3] perf auxtrace: Add four itrace options
+Date: Mon,  4 May 2020 19:56:24 +0800
+Message-Id: <20200504115625.12589-3-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200504115625.12589-1-leo.yan@linaro.org>
 References: <20200504115625.12589-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_045648_930924_190D29F8 
-X-CRM114-Status: GOOD (  14.34  )
+X-CRM114-CacheID: sfid-20200504_045657_925019_C48C234C 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
@@ -84,7 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [2400:8904:0:0:f03c:91ff:fe8a:bbe4 listed in] [zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,65 +114,136 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tan Xiaojun <tanxiaojun@huawei.com>
 
-Create a new arm-spe-decoder directory for subsequent extensions and
-move arm-spe-pkt-decoder.h/c to this directory. No code changes.
+This patch is to add four options to synthesize events which are
+described as below:
+
+ 'f': synthesize first level cache events
+ 'm': synthesize last level cache events
+ 't': synthesize TLB events
+ 'a': synthesize remote access events
+
+This four options will be used by ARM SPE as their first consumer.
 
 Signed-off-by: Tan Xiaojun <tanxiaojun@huawei.com>
-Tested-by: Qi Liu <liuqi115@hisilicon.com>
 Signed-off-by: James Clark <james.clark@arm.com>
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- tools/perf/util/Build                                       | 2 +-
- tools/perf/util/arm-spe-decoder/Build                       | 1 +
- tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c | 0
- tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h | 0
- tools/perf/util/arm-spe.c                                   | 2 +-
- 5 files changed, 3 insertions(+), 2 deletions(-)
- create mode 100644 tools/perf/util/arm-spe-decoder/Build
- rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.c (100%)
- rename tools/perf/util/{ => arm-spe-decoder}/arm-spe-pkt-decoder.h (100%)
+ tools/perf/Documentation/itrace.txt |  6 +++++-
+ tools/perf/util/auxtrace.c          | 17 +++++++++++++++++
+ tools/perf/util/auxtrace.h          | 15 ++++++++++++++-
+ 3 files changed, 36 insertions(+), 2 deletions(-)
 
-diff --git a/tools/perf/util/Build b/tools/perf/util/Build
-index c0cf8dff694e..cfda4204bb51 100644
---- a/tools/perf/util/Build
-+++ b/tools/perf/util/Build
-@@ -104,7 +104,7 @@ perf-$(CONFIG_AUXTRACE) += intel-pt-decoder/
- perf-$(CONFIG_AUXTRACE) += intel-pt.o
- perf-$(CONFIG_AUXTRACE) += intel-bts.o
- perf-$(CONFIG_AUXTRACE) += arm-spe.o
--perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
-+perf-$(CONFIG_AUXTRACE) += arm-spe-decoder/
- perf-$(CONFIG_AUXTRACE) += s390-cpumsf.o
+diff --git a/tools/perf/Documentation/itrace.txt b/tools/perf/Documentation/itrace.txt
+index 271484754fee..e817179c5027 100644
+--- a/tools/perf/Documentation/itrace.txt
++++ b/tools/perf/Documentation/itrace.txt
+@@ -1,5 +1,5 @@
+ 		i	synthesize instructions events
+-		b	synthesize branches events
++		b	synthesize branches events (branch misses for Arm SPE)
+ 		c	synthesize branches events (calls only)
+ 		r	synthesize branches events (returns only)
+ 		x	synthesize transactions events
+@@ -9,6 +9,10 @@
+ 			of aux-output (refer to perf record)
+ 		e	synthesize error events
+ 		d	create a debug log
++		f	synthesize first level cache events
++		m	synthesize last level cache events
++		t	synthesize TLB events
++		a	synthesize remote access events
+ 		g	synthesize a call chain (use with i or x)
+ 		G	synthesize a call chain on existing event records
+ 		l	synthesize last branch entries (use with i or x)
+diff --git a/tools/perf/util/auxtrace.c b/tools/perf/util/auxtrace.c
+index 850113ab3e19..9d614071a267 100644
+--- a/tools/perf/util/auxtrace.c
++++ b/tools/perf/util/auxtrace.c
+@@ -1330,6 +1330,11 @@ void itrace_synth_opts__set_default(struct itrace_synth_opts *synth_opts,
+ 	synth_opts->pwr_events = true;
+ 	synth_opts->other_events = true;
+ 	synth_opts->errors = true;
++	synth_opts->flc = true;
++	synth_opts->llc = true;
++	synth_opts->tlb = true;
++	synth_opts->remote_access = true;
++
+ 	if (no_sample) {
+ 		synth_opts->period_type = PERF_ITRACE_PERIOD_INSTRUCTIONS;
+ 		synth_opts->period = 1;
+@@ -1490,6 +1495,18 @@ int itrace_parse_synth_opts(const struct option *opt, const char *str,
+ 				goto out_err;
+ 			p = endptr;
+ 			break;
++		case 'f':
++			synth_opts->flc = true;
++			break;
++		case 'm':
++			synth_opts->llc = true;
++			break;
++		case 't':
++			synth_opts->tlb = true;
++			break;
++		case 'a':
++			synth_opts->remote_access = true;
++			break;
+ 		case ' ':
+ 		case ',':
+ 			break;
+diff --git a/tools/perf/util/auxtrace.h b/tools/perf/util/auxtrace.h
+index 0220a2e86c16..142ccf7d34df 100644
+--- a/tools/perf/util/auxtrace.h
++++ b/tools/perf/util/auxtrace.h
+@@ -63,6 +63,7 @@ enum itrace_period_type {
+  *          because 'perf inject' will write it out
+  * @instructions: whether to synthesize 'instructions' events
+  * @branches: whether to synthesize 'branches' events
++ *            (branch misses only for Arm SPE)
+  * @transactions: whether to synthesize events for transactions
+  * @ptwrites: whether to synthesize events for ptwrites
+  * @pwr_events: whether to synthesize power events
+@@ -78,6 +79,10 @@ enum itrace_period_type {
+  * @thread_stack: feed branches to the thread_stack
+  * @last_branch: add branch context to 'instruction' events
+  * @add_last_branch: add branch context to existing event records
++ * @flc: whether to synthesize first level cache events
++ * @llc: whether to synthesize last level cache events
++ * @tlb: whether to synthesize TLB events
++ * @remote_access: whether to synthesize remote access events
+  * @callchain_sz: maximum callchain size
+  * @last_branch_sz: branch context size
+  * @period: 'instructions' events period
+@@ -107,6 +112,10 @@ struct itrace_synth_opts {
+ 	bool			thread_stack;
+ 	bool			last_branch;
+ 	bool			add_last_branch;
++	bool			flc;
++	bool			llc;
++	bool			tlb;
++	bool			remote_access;
+ 	unsigned int		callchain_sz;
+ 	unsigned int		last_branch_sz;
+ 	unsigned long long	period;
+@@ -596,7 +605,7 @@ bool auxtrace__evsel_is_auxtrace(struct perf_session *session,
  
- ifdef CONFIG_LIBOPENCSD
-diff --git a/tools/perf/util/arm-spe-decoder/Build b/tools/perf/util/arm-spe-decoder/Build
-new file mode 100644
-index 000000000000..16efbc245028
---- /dev/null
-+++ b/tools/perf/util/arm-spe-decoder/Build
-@@ -0,0 +1 @@
-+perf-$(CONFIG_AUXTRACE) += arm-spe-pkt-decoder.o
-diff --git a/tools/perf/util/arm-spe-pkt-decoder.c b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
-similarity index 100%
-rename from tools/perf/util/arm-spe-pkt-decoder.c
-rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.c
-diff --git a/tools/perf/util/arm-spe-pkt-decoder.h b/tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
-similarity index 100%
-rename from tools/perf/util/arm-spe-pkt-decoder.h
-rename to tools/perf/util/arm-spe-decoder/arm-spe-pkt-decoder.h
-diff --git a/tools/perf/util/arm-spe.c b/tools/perf/util/arm-spe.c
-index 875a0dd540e5..235de3d0b062 100644
---- a/tools/perf/util/arm-spe.c
-+++ b/tools/perf/util/arm-spe.c
-@@ -23,7 +23,7 @@
- #include "debug.h"
- #include "auxtrace.h"
- #include "arm-spe.h"
--#include "arm-spe-pkt-decoder.h"
-+#include "arm-spe-decoder/arm-spe-pkt-decoder.h"
- 
- struct arm_spe {
- 	struct auxtrace			auxtrace;
+ #define ITRACE_HELP \
+ "				i:	    		synthesize instructions events\n"		\
+-"				b:	    		synthesize branches events\n"		\
++"				b:	    		synthesize branches events (branch misses for Arm SPE)\n" \
+ "				c:	    		synthesize branches events (calls only)\n"	\
+ "				r:	    		synthesize branches events (returns only)\n" \
+ "				x:	    		synthesize transactions events\n"		\
+@@ -604,6 +613,10 @@ bool auxtrace__evsel_is_auxtrace(struct perf_session *session,
+ "				p:	    		synthesize power events\n"			\
+ "				e:	    		synthesize error events\n"			\
+ "				d:	    		create a debug log\n"			\
++"				f:	    		synthesize first level cache events\n" \
++"				m:	    		synthesize last level cache events\n" \
++"				t:	    		synthesize TLB events\n" \
++"				a:	    		synthesize remote access events\n" \
+ "				g[len]:     		synthesize a call chain (use with i or x)\n" \
+ "				l[len]:     		synthesize last branch entries (use with i or x)\n" \
+ "				sNUMBER:    		skip initial number of events\n"		\
 -- 
 2.17.1
 
