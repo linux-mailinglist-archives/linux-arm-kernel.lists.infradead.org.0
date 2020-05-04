@@ -2,71 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7D651C334B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 09:06:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41D431C3359
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 09:11:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EnzateZnP/8iNjtX7aWw3vi09IiYaxUoj1Z8Ct1uhK8=; b=ecy2Sh8wHuNJ26
-	qe5AXoc9+enKSKYqQQ9BKau03YT8YhCdzxtfuEiEPHiwHGB5E7aBRT+nmXy94zkv/m50AeJMzmX8m
-	pG1wYSM+OCDXmB0Zs7TnCp+Vc/BnSrL43WBZB/XW8INDgtLro1t+QwFTnTaZgs4XXx5YVfc7XdziS
-	CvSSdz4DOoV0wJSqfDUTkB8nCPCVPulhsRsB7Q10DKLcVNXQxgIEKxiAU75rYbgVw8wnco/XUAHU3
-	T8SWIB48rnPJlFcwja6ISW0RrSkSDBpAqybt0pVo8CkZeqMk/5cIbKPaT+bJ5HRYSKuJtUY0LVvOI
-	DXRd8YssQ7ibG8qJaagg==;
+	List-Owner; bh=yI4+r0MX49TcPUsQ1p6E0ZB3IeglXHayl3/wOVGWxHs=; b=Kbnqn9tgUzSuEj
+	F+BLO6LVr2ibcdeuo4xaG7WUjUX7XiEIwK69DCXmTn+2/XGT1kdKWcbe38gwOfSwEEFrPxDOLomm8
+	pxwDSMAYVEkzRZu+QJK0eCPmiINCcExpQdhPuPctQ79DoS7dBfjqUDaLg2B1AFfwZ45fxYTvKiAeU
+	VRKucVFgWwdMRtizGQa5aTHfE8SpO+OVu+zml/qkyusOfeF26zLuiqh0L/CyYaa2r2augfU+ACPIG
+	Fd+9doxoNVf+Nj1XGI28ytHt55AjgDp8i3oF/IORAu1j55AKKJUC+oTmeNs71olzSH8+qCaTZycuc
+	ojzyNhKh7agNx2ay2dNw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVVBV-0007D4-0w; Mon, 04 May 2020 07:06:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVVGH-0002SI-5p; Mon, 04 May 2020 07:11:33 +0000
+Received: from mail-ot1-f66.google.com ([209.85.210.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVVBN-0007CE-UT
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 07:06:31 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4BAE920757;
- Mon,  4 May 2020 07:06:28 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588575989;
- bh=GgTeLwA5Gd1K4zgUZfkDshwOzQjQUPTqCCCMLBw7V9g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sgtwM838xnEUDyT27spf4f+v7P2a8KiHduXQYmysZiL5N5dgSfzCF/FBg96u3S+jc
- WvUB5v5g7vXhdz/Hu2RDayrYDi/H4oQeU0Z+D19YSWhThb1wlJmpFq2gNyaoqkjjCl
- ELIxzA1PtlNsvkcr7J1fmsy63ZSHm5vX/nEEsQEs=
-Date: Mon, 4 May 2020 08:06:25 +0100
-From: Will Deacon <will@kernel.org>
-To: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Subject: Re: [PATCH] arm64: perf: Expose some new events via sysfs
-Message-ID: <20200504070624.GB2183@willie-the-truck>
-References: <1587450713-18048-1-git-send-email-zhangshaokun@hisilicon.com>
- <20200501171237.GA19048@willie-the-truck>
- <970b8ae4-fd9a-d5d1-0066-92152ff07fd5@hisilicon.com>
+ id 1jVVG8-0002RB-KK
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 07:11:26 +0000
+Received: by mail-ot1-f66.google.com with SMTP id k110so3556367otc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 May 2020 00:11:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=rfkxILgR6gYq3zL8Nxb8d3GiP3wwKG2LbudzQQF7WbU=;
+ b=adjDIu9RhJBywpiEnQTzUBa5nOx5nJadVK0Y3LRLm3ukPKqp50UD72hh1MgRdGIvHh
+ Gmk+anlsXJ5iw87cBv2J7z74IiXK5oi6Jxk76Ps/Uu8jSOuswAt3KS9j7gSrATVrD3qu
+ T5aqKsHM+T2rJXhSpRRoswmK70UhGEckD9FjfnqmXygZ3GB9HHarNNAgE43/VeLc3C5B
+ /bK+zYiQoGwBariZXihxLhvI5rWwaOjCdjc+DnHbTdI0ql4yUboM1HI+i7aDEhjqzxC4
+ 2zDQ8Cl8ssNIvHOOw/dACcqofvmGfyPR+BR+SKb4cFZpTYbWnGIYqL8wTaKccb/2EVhP
+ RVtg==
+X-Gm-Message-State: AGi0PuaRDBVoKFvpHXzna41mnexKLk0plA59HLIQdEs4mjqIBZGfPkus
+ CQK/glirOKV983XaWx5W7zsFeoJAUg8UTatbMVw=
+X-Google-Smtp-Source: APiQypJPMgeWBRUiVyeVnkIiZGgJNdYK9YfY571As0RfWeLMVNq4WlAgY4mBZ80+C3ouKbzMSZ5KFVm7VZsG8Eqtf1M=
+X-Received: by 2002:a9d:7d85:: with SMTP id j5mr12499692otn.107.1588576283223; 
+ Mon, 04 May 2020 00:11:23 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <970b8ae4-fd9a-d5d1-0066-92152ff07fd5@hisilicon.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+In-Reply-To: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 4 May 2020 09:11:12 +0200
+Message-ID: <CAMuHMdWxTtFxgpabeK3L4Ev4zgZ6r=_c+5MBVYd7ZAHbNYxm=Q@mail.gmail.com>
+Subject: Re: [PATCH v2 1/2] init/kconfig: Add LD_VERSION Kconfig
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_000630_003096_BE6DE227 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_001124_668450_20C3893C 
+X-CRM114-Status: GOOD (  13.38  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.66 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,57 +82,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 11:46:14AM +0800, Shaokun Zhang wrote:
-> Hi Will,
-> 
-> One more question;-)
-> 
-> On 2020/5/2 1:12, Will Deacon wrote:
-> > On Tue, Apr 21, 2020 at 02:31:53PM +0800, Shaokun Zhang wrote:
-> >> Some new PMU events can been detected by PMCEID1_EL0, but it can't
-> >> be listed, Let's expose these through sysfs.
-> >>
-> >> Cc: Will Deacon <will@kernel.org>
-> >> Cc: Mark Rutland <mark.rutland@arm.com>
-> >> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
-> >> ---
-> >>  arch/arm64/include/asm/perf_event.h | 19 +++++++++++++++++++
-> >>  arch/arm64/kernel/perf_event.c      | 19 +++++++++++++++++++
-> >>  2 files changed, 38 insertions(+)
-> >>
-> >> diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
-> >> index e7765b62c712..f1b93d7c4260 100644
-> >> --- a/arch/arm64/include/asm/perf_event.h
-> >> +++ b/arch/arm64/include/asm/perf_event.h
-> >> @@ -72,12 +72,31 @@
-> >>  #define ARMV8_PMUV3_PERFCTR_LL_CACHE_RD				0x36
-> >>  #define ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD			0x37
-> >>  #define ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD			0x38
-> >> +#define ARMV8_PMUV3_PERFCTR_L1D_CACHE_LMISS_RD			0x39
-> >> +#define ARMV8_PMUV3_PERFCTR_OP_RETIRED				0x3A
-> >> +#define ARMV8_PMUV3_PERFCTR_OP_SPEC				0x3B
-> >> +#define ARMV8_PMUV3_PERFCTR_STALL				0x3C
-> >> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_BACKEND			0x3D
-> >> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_FRONTEND			0x3E
-> >> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT				0x3F
-> > 
-> > Hmm, looks like the presence of this event implies the presence of the
-> > PMMIR_EL1 register. Should we be exposing the "SLOTS" field from that in
-> > sysfs? (obviously as a separate patch)
-> > 
-> 
-> Shall I expose it in /sys/devices/system/cpu/cpuX/regs/, right?
+Hi Amit,
 
-No; if we need to expose it (do we?) then it should be alongside the other
-PMU files. e.g. /sys/bus/event_source/$pmu_name/caps/slots
+On Mon, Mar 30, 2020 at 1:42 PM Amit Daniel Kachhap
+<amit.kachhap@arm.com> wrote:
+> This option can be used in Kconfig files to compare the ld version
+> and enable/disable incompatible config options if required.
+>
+> This option is used in the subsequent patch along with GCC_VERSION to
+> filter out an incompatible feature.
+>
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
 
-Will
+> --- a/init/Kconfig
+> +++ b/init/Kconfig
+> @@ -17,6 +17,10 @@ config GCC_VERSION
+>         default $(shell,$(srctree)/scripts/gcc-version.sh $(CC)) if CC_IS_GCC
+>         default 0
+>
+> +config LD_VERSION
+> +       int
+> +       default $(shell,$(LD) --version | $(srctree)/scripts/ld-version.sh)
+> +
+>  config CC_IS_CLANG
+>         def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
+
+.config: warning: symbol value '2.01827e+11' invalid for LD_VERSION
+
+Seen with the or32 compiler on kisskb, e.g.
+http://kisskb.ellerman.id.au/kisskb/buildresult/14226173/
+
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
