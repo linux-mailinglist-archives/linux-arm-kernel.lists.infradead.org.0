@@ -2,76 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E39C1C3D0F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:31:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D6351C3D21
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:34:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tvjtuad46Nih0Rz1379wXBG5mfmmoU2RopIcGxjKeo8=; b=sCD73AAq8k7PEY
-	jmfs3ofw7KHh6Sf5qiRC8sckk4c1ry2jN5wpkpuxBpl5chqsJy2CcprPagzualSjiwXiRPmKRFW59
-	YMCP1m2Xh1baULKZRxlK9jVRAZ32y6gqyNQShCc5jux/aESzUS2AngjcZ7xLX6bjlWQtDseEgNMLg
-	wUmOMKIj2KZv53vqrgepYkrVz+adyVIDIXkFPSCt2Bqsq5uIbj6a3DrfB9igjUdGbP1p7dqhwP19e
-	f3oOkFbd1ggMazpMfAqLwEUAwlRwRQNE+R+rgkFgspbHP10gIyvLHu6+RGSlljK7T3UIFfs0rsU6o
-	b7WA44U4Y0z53vdRc1+A==;
+	List-Owner; bh=szO5dV6I2COHu1qq4EAebqUrvFdNiMiFUXrSJ9ZXxV0=; b=F+/U0O5cnoK5FH
+	ICMAlcoDH5tX31W+1DPq2fa/43eGV0B6tZsHMPSb/z2ZWkRLd/RYYyJXjMSWwQrX6W1G4M8P1rjRP
+	TwH2hxLwpBZWQWPUHhh69HwaV6GlApWRtyd04viLo0qUsd0a+boT2A7ttvXP/16Dx3/0l+9etyzra
+	Qsefwilvz+rGyQ/80T3ci1IySs7RWVCx+O6rF0yNjjGiXn94R7cmS/EUaH11jHEM3Urv3qjbnVb/I
+	quLp1ckEDgrz8jQInDGIlxfqc67T1Sdlht09r0JHzKRIwIgT0lwla7UjvO1m2FLkt2dg0erX5dSSZ
+	wd3YcpkS9kidocEhf8uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVc7g-0007Qe-6K; Mon, 04 May 2020 14:31:08 +0000
-Received: from conssluserg-03.nifty.com ([210.131.2.82])
+	id 1jVcAh-0008Uv-6I; Mon, 04 May 2020 14:34:15 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVc7T-0007PG-5L
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:30:57 +0000
-Received: from mail-ua1-f53.google.com (mail-ua1-f53.google.com
- [209.85.222.53]) (authenticated)
- by conssluserg-03.nifty.com with ESMTP id 044EUdoM011564
- for <linux-arm-kernel@lists.infradead.org>; Mon, 4 May 2020 23:30:40 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com 044EUdoM011564
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1588602641;
- bh=0JMCbgyAmGlhpQ7hxiz18kOsUjzg30bD8HcBbpAb5x0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=xnHCGavbwzTQU3nFBS+aEywmgpXVZHERVycqC2B75XLhFDFjtlCz4p0JW6snmrm43
- Q4GtxBpDzjPQFz4e1f885OVqX/nGVJs8Rbor/qdXPj6F0QG65DLJxmHNCsd3IMgMH4
- /HUn0WaucWZzTf1Upa4BCBjKteHulp8VYcH1M6jUth53WrqUD57JX92H/ykJ8PXhMt
- nPpgGNdZ7yDdD0VFXS4Bl8OVWy8ayz7eoy7UkBEFKNDhPv72uRGzHpw6kyjqobEezT
- XhThB/Mw/W8HU6CuT10sGkYibIyHQOGDuEierYcshXgS5apt4zOH6TgJh/zYyoUCbH
- 7LnBx0w8XgRdA==
-X-Nifty-SrcIP: [209.85.222.53]
-Received: by mail-ua1-f53.google.com with SMTP id t8so6649172uap.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 07:30:40 -0700 (PDT)
-X-Gm-Message-State: AGi0PubS9/8WDut8J+4VVlgfPlCaD/93sBcpWMIbNKS0dNNamP5C+OW4
- 4CBAy2LJjWgdr+UqUCEbed9ZqY5ytZLcMaWUP58=
-X-Google-Smtp-Source: APiQypKoRtxT5WUefMCSz+nDLJ7ma5aTrMA6HlGAiXM9vGi0yv8JY3GHqUc1DdU+MwHJn6k8kWjKX9XTaakvqPONu6Y=
-X-Received: by 2002:a9f:28c5:: with SMTP id d63mr11730734uad.25.1588602638948; 
- Mon, 04 May 2020 07:30:38 -0700 (PDT)
+ id 1jVcAZ-0008TA-MV; Mon, 04 May 2020 14:34:09 +0000
+X-UUID: f8743e098d974d4687569879d2b6a7da-20200504
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=LkDTTU5vitAXtQ17b+YTzyueCYv6Vy7Wfw0Qkwja9cQ=; 
+ b=cLhv8/f7/SkFxZRm614AfJi4VBv1yee51l0ZCDslm/zP9biTJWtGwuLcw2zSlAnJ04r/R5IE62FSVlsWQqHfQkQuSjdlJ/TSyR4Ni8EzsQsXnmZ1otHkEJWjMHMqJmD1C7WjXMzLWko7pBt12R4nznZGIJm0oO9Fhssmila7IiU=;
+X-UUID: f8743e098d974d4687569879d2b6a7da-20200504
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 538638120; Mon, 04 May 2020 06:33:54 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 4 May 2020 07:33:57 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 4 May 2020 22:33:54 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 4 May 2020 22:33:54 +0800
+Message-ID: <1588602837.3197.32.camel@mtkswgap22>
+Subject: RE: [PATCH v5 1/8] scsi: ufs: enable WriteBooster on some pre-3.1
+ UFS devices
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Avri Altman <Avri.Altman@wdc.com>
+Date: Mon, 4 May 2020 22:33:57 +0800
+In-Reply-To: <BYAPR04MB4629F2C00ABAB512DB833232FCA60@BYAPR04MB4629.namprd04.prod.outlook.com>
+References: <20200503113415.21034-1-stanley.chu@mediatek.com>
+ <20200503113415.21034-2-stanley.chu@mediatek.com>
+ <BYAPR04MB4629F2C00ABAB512DB833232FCA60@BYAPR04MB4629.namprd04.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
- <20200504114408.9128-1-aishwaryarj100@gmail.com>
-In-Reply-To: <20200504114408.9128-1-aishwaryarj100@gmail.com>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Mon, 4 May 2020 23:30:02 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASuDxyvfh+cw1TEq_tTpQmdx+d99yMfnQ34wRSiTmJeLA@mail.gmail.com>
-Message-ID: <CAK7LNASuDxyvfh+cw1TEq_tTpQmdx+d99yMfnQ34wRSiTmJeLA@mail.gmail.com>
-Subject: Re: [PATCH] i2c: drivers: Remove superfluous error message
-To: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_073055_455443_A61EF68F 
-X-CRM114-Status: GOOD (  16.88  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200504_073407_741349_53CAC9E1 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.82 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,140 +85,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Thor Thayer <thor.thayer@linux.intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Baruch Siach <baruch@tkos.co.il>,
- Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
- Vladimir Zapolskiy <vz@mleia.com>, Hans de Goede <hdegoede@redhat.com>,
- linux-i2c@vger.kernel.org, Dmitry Osipenko <digetx@gmail.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "beanhuo@micron.com" <beanhuo@micron.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 4, 2020 at 8:44 PM Aishwarya Ramakrishnan
-<aishwaryarj100@gmail.com> wrote:
->
-> The function platform_get_irq can log an error by itself.
-> This omit a redundant message for exception handling in the
-> calling function.
->
-> Suggested by Coccinelle.
->
-> Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-> ---
->  drivers/i2c/busses/i2c-altera.c   | 4 +---
->  drivers/i2c/busses/i2c-cht-wc.c   | 4 +---
->  drivers/i2c/busses/i2c-img-scb.c  | 4 +---
->  drivers/i2c/busses/i2c-lpc2k.c    | 4 +---
->  drivers/i2c/busses/i2c-uniphier.c | 4 +---
+Hi Avri,
 
+On Mon, 2020-05-04 at 10:37 +0000, Avri Altman wrote:
+> > 
+> >  static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
+> >  {
+> > +       if (!ufshcd_is_wb_allowed(hba))
+> > +               return;
+> > +
+> > +       if (hba->desc_size.dev_desc <=
+> > DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP)
+> Should be 
+> DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP + 4 
 
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+I think this description length check is redundant because the device
+quirk shall be added only after WriteBooster supportat is confirmed in
+attached UFS device. So I will remove this in next version.
 
+> 
+> > +               goto wb_disabled;
+> > +
+> >         hba->dev_info.d_ext_ufs_feature_sup =
+> >                 get_unaligned_be32(desc_buf +
+> >                                    DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP);
+> 
+> 
+> > 
+> >  static int ufs_get_device_desc(struct ufs_hba *hba)
+> > @@ -6862,10 +6890,6 @@ static int ufs_get_device_desc(struct ufs_hba
+> > *hba)
+> > 
+> >         model_index = desc_buf[DEVICE_DESC_PARAM_PRDCT_NAME];
+> > 
+> > -       /* Enable WB only for UFS-3.1 */
+> > -       if (dev_info->wspecversion >= 0x310)
+> > -               ufshcd_wb_probe(hba, desc_buf);
+> > -
+> >         err = ufshcd_read_string_desc(hba, model_index,
+> >                                       &dev_info->model, SD_ASCII_STD);
+> >         if (err < 0) {
+> > @@ -6874,6 +6898,16 @@ static int ufs_get_device_desc(struct ufs_hba
+> > *hba)
+> >                 goto out;
+> >         }
+> > 
+> > +       ufs_fixup_device_setup(hba);
+> I don't think you should "hide" ufs_fixup_device_setup inside ufs_get_device_desc.
 
-I see more drivers with the similar pattern, though.
+The reason is as below,
 
+ufshcd_wb_probe() needs the contents of Device Descriptor for
+initialization. To avoid double reading the Device Descriptor, I keep
+ufshcd_wb_probe() inside ufs_get_device_desc() to use its "desc_buf".
 
+And ufshcd_wb_probe() needs well-configured device quirk for entrance
+check, thus ufs_fixup_device_setup() shall be moved before
+ufshcd_wb_probe().
 
+This change does not affect the behavior and functionality of
+ufs_fixup_device_setup() since it is still executed once only during
+ufshcd_init() flow and not be executed again in the future.
 
+Thanks,
+Stanley Chu
 
-
->  5 files changed, 5 insertions(+), 15 deletions(-)
->
-> diff --git a/drivers/i2c/busses/i2c-altera.c b/drivers/i2c/busses/i2c-altera.c
-> index f5c00f903df3..af6985f0ae63 100644
-> --- a/drivers/i2c/busses/i2c-altera.c
-> +++ b/drivers/i2c/busses/i2c-altera.c
-> @@ -395,10 +395,8 @@ static int altr_i2c_probe(struct platform_device *pdev)
->                 return PTR_ERR(idev->base);
->
->         irq = platform_get_irq(pdev, 0);
-> -       if (irq < 0) {
-> -               dev_err(&pdev->dev, "missing interrupt resource\n");
-> +       if (irq < 0)
->                 return irq;
-> -       }
->
->         idev->i2c_clk = devm_clk_get(&pdev->dev, NULL);
->         if (IS_ERR(idev->i2c_clk)) {
-> diff --git a/drivers/i2c/busses/i2c-cht-wc.c b/drivers/i2c/busses/i2c-cht-wc.c
-> index 35e55feda763..343ae5754e6e 100644
-> --- a/drivers/i2c/busses/i2c-cht-wc.c
-> +++ b/drivers/i2c/busses/i2c-cht-wc.c
-> @@ -314,10 +314,8 @@ static int cht_wc_i2c_adap_i2c_probe(struct platform_device *pdev)
->         int ret, reg, irq;
->
->         irq = platform_get_irq(pdev, 0);
-> -       if (irq < 0) {
-> -               dev_err(&pdev->dev, "Error missing irq resource\n");
-> +       if (irq < 0)
->                 return -EINVAL;
-> -       }
->
->         adap = devm_kzalloc(&pdev->dev, sizeof(*adap), GFP_KERNEL);
->         if (!adap)
-> diff --git a/drivers/i2c/busses/i2c-img-scb.c b/drivers/i2c/busses/i2c-img-scb.c
-> index 422097a31c95..2f6de763816a 100644
-> --- a/drivers/i2c/busses/i2c-img-scb.c
-> +++ b/drivers/i2c/busses/i2c-img-scb.c
-> @@ -1344,10 +1344,8 @@ static int img_i2c_probe(struct platform_device *pdev)
->                 return PTR_ERR(i2c->base);
->
->         irq = platform_get_irq(pdev, 0);
-> -       if (irq < 0) {
-> -               dev_err(&pdev->dev, "can't get irq number\n");
-> +       if (irq < 0)
->                 return irq;
-> -       }
->
->         i2c->sys_clk = devm_clk_get(&pdev->dev, "sys");
->         if (IS_ERR(i2c->sys_clk)) {
-> diff --git a/drivers/i2c/busses/i2c-lpc2k.c b/drivers/i2c/busses/i2c-lpc2k.c
-> index 13b0c12e2dba..43dc9b7043e4 100644
-> --- a/drivers/i2c/busses/i2c-lpc2k.c
-> +++ b/drivers/i2c/busses/i2c-lpc2k.c
-> @@ -362,10 +362,8 @@ static int i2c_lpc2k_probe(struct platform_device *pdev)
->                 return PTR_ERR(i2c->base);
->
->         i2c->irq = platform_get_irq(pdev, 0);
-> -       if (i2c->irq < 0) {
-> -               dev_err(&pdev->dev, "can't get interrupt resource\n");
-> +       if (i2c->irq < 0)
->                 return i2c->irq;
-> -       }
->
->         init_waitqueue_head(&i2c->wait);
->
-> diff --git a/drivers/i2c/busses/i2c-uniphier.c b/drivers/i2c/busses/i2c-uniphier.c
-> index 668b1fa2b0ef..ee00a44bf4c7 100644
-> --- a/drivers/i2c/busses/i2c-uniphier.c
-> +++ b/drivers/i2c/busses/i2c-uniphier.c
-> @@ -324,10 +324,8 @@ static int uniphier_i2c_probe(struct platform_device *pdev)
->                 return PTR_ERR(priv->membase);
->
->         irq = platform_get_irq(pdev, 0);
-> -       if (irq < 0) {
-> -               dev_err(dev, "failed to get IRQ number\n");
-> +       if (irq < 0)
->                 return irq;
-> -       }
->
->         if (of_property_read_u32(dev->of_node, "clock-frequency", &bus_speed))
->                 bus_speed = I2C_MAX_STANDARD_MODE_FREQ;
-> --
-> 2.17.1
->
-
-
--- 
-Best Regards
-Masahiro Yamada
+> 
+> Thanks,
+> Avri
+> 
+> _______________________________________________
+> Linux-mediatek mailing list
+> Linux-mediatek@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
