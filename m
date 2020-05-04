@@ -2,79 +2,131 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0AEC51C3751
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:56:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B24F11C3755
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:56:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gpRzJorluG82EQcliGWGt8dgJMlBFMYfQcUYEStJKEs=; b=sbTS0CPYLHcA26
-	4eukz0UMONW9Qv9KCnyi9zBYO9385BfckIP3nf1yDN5OZXtXfGhCKY5IZtjGBDNbqdQgxQ3YVtjVu
-	fuzKi1frUI4FUoOf0H2ZBS3AM0BvakCQUFfAR58wQ6DR4fA8VwjpsaADP12vsASpPMHZpW9j/t29r
-	uJluywsIyHLPFINHrpXg/u9pZZD8gJTOpnJ8aMA4JnCYiCK/aeXrCp/ZfI47UsnCNa8RBUCq8rFLX
-	ViiOLKZe09HlQqMP6UzV45aaDBR1S0FG0oqDWQC7vJeQHf0aimi0Fe8OSDZiY9IGjsheoyLI0m79L
-	nEc8+zPN5s7N3PDoxQcQ==;
+	List-Owner; bh=m8gOaMYXSmgRL1MfBRa3jBMfv87nR620mrHsBLj5soE=; b=A32loFV/OiXHAb
+	kqQsccuNjCHl9wm7BP2ZLP3oAiGuztarZoAh6Tha1koWR/GiWhQc3NcsjVS663vE2E24Jon/8vou6
+	2GV5JAjinD4vJ+uxonFyFnEd11SRtz02Eqed36XAyY+bjNKORjUt0oZthJ9IIBbL445Oq0VubyHab
+	D9q2T1NB1aOoV3bpFY87lFCmgT3YALBaGJG0HJqZsowGlXfTMovWc0YHgGFopvbgLI8+JgIzHtJBz
+	H0XS2/yjae6kTj7FDGaa//9WWDQNMsPvIcgqP2bQHBcUNHwJohJ12yn2stflnKqRthJNKj25chqnU
+	emIUGfM8ugM3lHWBkA1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVYlS-0008WH-7k; Mon, 04 May 2020 10:55:58 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jVYli-0000JE-Sx; Mon, 04 May 2020 10:56:14 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVYlG-0008Uj-QM; Mon, 04 May 2020 10:55:48 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v4so15234790wme.1;
- Mon, 04 May 2020 03:55:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=MQzZFCIobcGRmD/3+2nuvnxHv+aNaXAHRF5s3/10ij8=;
- b=m/PZmuLtPqcrVYqQd8qj0jK+TnpKJK5MX7Eozj10EZs/2HHL50KGQbVzu8gMp02gQJ
- 6F9pbqJxSIP5cyRweFxpWJmvEjHRO8iYRZ7uJtUkgDOuGJdz6ddKmppLGZR3e5PZRy8p
- lscDnAenUEC22uEp+XgYw32aZ+HkLVSqsvC75MSuht8EuPG6ScVjIjvMEFV9pdkEkkcf
- OArBZA9Q1sjFRuzpgxMJe/LVC99w/wnQt0E3X/QvpCR24OL4Clof6mIPLcYdTz1iOWT0
- IgmiGmXOguP6TDTfqbTQZvpTCTiMEWCPmXlM5UOvtimIP+GKpRwOyklM3Lsq6jw5VEvG
- JW4A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=MQzZFCIobcGRmD/3+2nuvnxHv+aNaXAHRF5s3/10ij8=;
- b=I8Fr7WFGX54ttDuzIX+mtbn2UERGj3LhvRib9q/YDEUIsw655gBkJGdFBxJgvu/pQa
- +pbNDIsIiLlLz8pIJjksjzgyhvY2M6RIEEjm2zxxKPS6YVMUJYoSMlbqN3RWDs2IZKQ5
- pgexBM91myK3o+OvZKhUdR5TeTJ+fmVAM22MtzGVm0jRGfFPR8lJAEQgLTPbRCQVOu0i
- Lu3Gn+DDaoXjvPTs7KglD5dUur0ywNRNsZ1n969cLdzphNdDGrwcF25OJcc0Xx+2JV+F
- FdDESzrTCDw6bYDB7kITsZ+kAmgHxJlbxY+0/s4YVnoSJI+Mb3vu1rqSigVP7M/A0b9J
- YvCg==
-X-Gm-Message-State: AGi0Pualh9mzDei2I8hoTcrxy6SIgQ3udXhWIYcAl8xWEp1EHs9A0cw+
- eXfdkm2XruLl4UyflNHE7jifiU/ST9WP75DX+GY=
-X-Google-Smtp-Source: APiQypIYRxd9Jarg4XaVun2QaTdEW4Ftk+7SlWd5NIBX1wOKIWiArNVS6La7qmbqT0diARP8mRcyXHfJL2xmf4cg4Io=
-X-Received: by 2002:a7b:c0c5:: with SMTP id s5mr13769191wmh.134.1588589744849; 
- Mon, 04 May 2020 03:55:44 -0700 (PDT)
+ id 1jVYlM-00005o-5N; Mon, 04 May 2020 10:55:53 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588589752; x=1620125752;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=Oh4h2+4WZfPbgFoCzN2W2S5zx5A2o0hiWxokVRUC5Q4=;
+ b=BTrVySscfblW9cXI8QVmM3y30QhI5fun5eWaejwbPuXCh3du5AG2CGhN
+ aiNwkdIMF4ltGf91ldpU+uRsj+c70iKcC3SLu7Vt/3W7YIzSAUUSQGfmB
+ Xg+ErluUyxC52r1PWOv8A9F8FUH99TazedNSnKIfnQ0OWwLrqOlAOdCUT
+ 5pEUTE6uDKhpAqp6c2T9lkgZ8xW94YIiMNrFMQEOv16dNdyfk+I+zh3B2
+ af4X+RW/GJM2jE3QwLWztXz2NUQ0thGN+qyb1uVTeK/jkEbeASnnfzzUq
+ rah5njpSz98mbFxjyBIeTqWM9F/R+kyWMVgu3LSzio4ftZvb2K4AaEMHM Q==;
+IronPort-SDR: Ln/eydCr9O3sDbfek55OFSjYHtspaSrNBCJZQD3ttPDoxTfh7PdeGhaucQFz3Kym1ulu8j1Gkv
+ Kni3t9JI1swq4oac9SYFcjMfd3v8/h4TivPbnxSzt3FDJ42Nf8vTFl5TyyHPYyptI6Tm0Hy3Zr
+ VdpNfHmQrdbChZnN37YQxodXcYbHyJo2lfSD4P4KkkLVm881+0DJgW9kBIFarviTEFe5qvhwbd
+ zyPI/dGD4nPZEg1KMc57whwVq1t7HqlczaAGUKV5yS0pzVu1cNoQrlI1ICIXqoSkbSoirWXgXO
+ 7oM=
+X-IronPort-AV: E=Sophos;i="5.73,351,1583164800"; d="scan'208";a="138292890"
+Received: from mail-co1nam04lp2051.outbound.protection.outlook.com (HELO
+ NAM04-CO1-obe.outbound.protection.outlook.com) ([104.47.45.51])
+ by ob1.hgst.iphmx.com with ESMTP; 04 May 2020 18:55:47 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=n0mZpg5CVrBCxtpsGhiqBSrDs6U2zO5k+xY9y2v2Au5LFMn1LEMUqKaUB2e7srUQMlWz9VKiNJFiGmJHdWVtMZPT8DS9OSNOBDvmM9xY4uUzr+xBSEFpnoZRuDVWM6a1rP+xgQ7xN6i3iwJyxmqUbuwFJtAJUePEq1GoElhsFp8VbSrC9/kzBL+HzS5eRHmisj5qi0qPj1BgKUGqKzoxz4/r8jf3/W9svOenK+AYAb0/5gs4KK/REZjZQBP7ATvIlvAjmqJ3hj9TRLF1uH9IgvyN3g9JXcHzdmMbVkHKhQyTkWY0cvC6qq49PTgUZyoIjz9+VnELgtKhkbJcERhYCA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=R1IHuRbl5+OWrYQQMS7uZLA68oV+zHatijsoxTF/oz8=;
+ b=WDbP2q+SZSXVnyJ59gKzyvQyGRT0KNiZs6xbbD0O+1371UZJqKHLzhAnqOuhiOGTGK+BdNESlUDzjhaLx5bczR4KSy5/47ZB/80Dm2qSabJn3NahEikTg8sMpqsXuNQEiAIsfrZtEeV6RHKhLY1N1HttIfcU2PIxahHOddGJb2PJwynO9bLYApAm+MBBWZY9rsux2lx+JC9MTY7OLTpOEuPfqhipg0p5dZIONm24+2b8rWeAxyojjRRTGifGlfxN6kxS0Chw1iJZctlGFriC1NNUQ/KRIDebhSgbEghXuXV2zv6SW2azokcG3jxzzfTjzgq7ttV9LIsQzkw+DWAcug==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=R1IHuRbl5+OWrYQQMS7uZLA68oV+zHatijsoxTF/oz8=;
+ b=hcomA+Z5JrNQ0d3N/n/ceo8YVXPxOop6acjK0aarsg7JgW5vptGlY/xs6GjMfA8DEXp1AQBjTlM5850IypI3ZFy+GlNIGGsa/wFMOzG+OlUQJSKWII6BSXeAIzAwplfN81YzcEArqrmXBp/xK3XV8mYqCJKTLoiuyIOj0wrbR04=
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
+ by SN6PR04MB4464.namprd04.prod.outlook.com (2603:10b6:805:b2::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.27; Mon, 4 May
+ 2020 10:55:45 +0000
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.2958.030; Mon, 4 May 2020
+ 10:55:45 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v5 4/8] scsi: ufs-mediatek: add fixup_dev_quirks vops
+Thread-Topic: [PATCH v5 4/8] scsi: ufs-mediatek: add fixup_dev_quirks vops
+Thread-Index: AQHWIT7UcNDlRrxlf0S0WlJUL1qmaqiXwh9Q
+Date: Mon, 4 May 2020 10:55:44 +0000
+Message-ID: <SN6PR04MB46408BF365ADE7F226275BC0FCA60@SN6PR04MB4640.namprd04.prod.outlook.com>
+References: <20200503113415.21034-1-stanley.chu@mediatek.com>
+ <20200503113415.21034-5-stanley.chu@mediatek.com>
+In-Reply-To: <20200503113415.21034-5-stanley.chu@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 0bb70594-c25b-46a9-ef8a-08d7f019b23a
+x-ms-traffictypediagnostic: SN6PR04MB4464:
+x-microsoft-antispam-prvs: <SN6PR04MB446415C053937DE91B2ADDE7FCA60@SN6PR04MB4464.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:2399;
+x-forefront-prvs: 03932714EB
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: sVYxk6HOTY93j7bP2XvIhFvJyuiiEW6zb8SfCIRgsHwNbctaOK6bVwUrAUvkASId4+2cRSmf8w8Mz/NmT4yIaueS5exwKDNQJlN+TJMz7/pHWum5lpbdM74QylDOKGdXc9/oU9RJHHBhGlnXczHf0Wxf2s5f3Ghd5RtnebZT/pdUHTR4Kb1orCwSdPDHD10zzOdAegbHERW/7u7yp1sMIGvYKSzJuK4RF29EIbtVT01oaUhikLd2fD7032ZtmuQguJ3tMIk/PgptZINqFLEj8Ja7slp8CpovLQsegvXmJYFP+/kPmeXBskyaK43h5Z6aM0BQoNn3E2NpIm2I+nwunILEeiMLyaUP/pbJDVQIwo9UqjFX5R5vVnqeJGW/KsDVL/ltfy7AcQseSfD5WiWDwKO9QPhlsNvEIOJuylPeB69ZA1GCaQR7tr/YQGS5qwcl
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(376002)(39860400002)(346002)(396003)(136003)(66476007)(8676002)(26005)(2906002)(52536014)(6506007)(71200400001)(478600001)(33656002)(5660300002)(86362001)(64756008)(4744005)(55016002)(9686003)(7696005)(66946007)(54906003)(66446008)(76116006)(4326008)(66556008)(186003)(8936002)(316002)(7416002)(110136005);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: 2CsDIQPmF5JMeflgoh85wQDoymLbvdkNNtDd+oxAXWdFACswnFcRhbTCWS1GBjZGcsjSmLZ2NJWmg40Ls5MuHExkVR6rR1PvSbyrHm52BNYBUSFWxg3jRWu1yZWgbikykOz/pN3JW3sk00XBeVLl26t6TSLc94DWl3zf8w0UW1Uy6bZbEyVx2iR4aZaWph7hQt+hqF+PzpyBUwxXalSfku5+lNObAdMzdF8rtx1fIg1RJ3tth9dO9KuOF1O0mxZ5O6G4rqIU1LgLFmpUQSmxa5w3N12jnLZBI0cMWSsLgnTdKAoYhnN8gwPyXrovSsHDRUxBywuwa5o6Ykx0ATfjnYMHL+U/MMvfCzvdfuXUXejjZKv4zJ3MNlRYrO6TeJrR7lx7ZXeUfDeZonFoM+mN1HJqrPsnmNEE3ocl7ogube9RuJ3BuRqsAp/5njggbJHvEDa8I3UuSECQJD/qma1LdGdpx9oZQSptviS1skdQ5Yti1Ds3Q6YetQ50bPqfzsKwMfAl93SbkcVKoBIAA6Po5dNkR6A9YhaFHEgHkjGRgM4Oqw4x4oaDs+cyQDZssL5NPWbBdhoAnZ8aNaIggQtBb7NngQVo6gBOdf4AMRWymVs4w3XUpkn0Z9J4sP6eNv7kDXwQOB+F3k4jR8xMdgvEKcFxdfINka2gUYvOQnaEklRIZNMfptMRjjs+zIugYqtKsXPGAiirZ/BiZV67HYtsJwO44SzbzI68YUrTPsGIdgWyopMhW84KAHgD1brVTecMR4V8M9TSyM4zPiXM/2Ej2Wzzk2UXApA/aWKooCpcC70=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
- <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-From: hex dump <hexdump0815@gmail.com>
-Date: Mon, 4 May 2020 12:55:30 +0200
-Message-ID: <CAKTihDVy6oSuQe4eP87hWO17tBu3=XZ-PM41YOqLVOtXJ8+YeQ@mail.gmail.com>
-Subject: Re: [PATCH 1/6] dt-bindings: phy: meson8b-usb2: Convert to json-schema
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 0bb70594-c25b-46a9-ef8a-08d7f019b23a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 May 2020 10:55:44.8071 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: tJmRo7UenTzlfHlb4Y+70c2Wr2cHIyCbnVYAhRXmm3C9+mgFoi2VAbyyCW5gcU0oMzRyMLIQQNsjteoqac5HRA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4464
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_035546_880670_AEE0AD52 
-X-CRM114-Status: GOOD (  18.22  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200504_035552_319269_4C89885D 
+X-CRM114-Status: GOOD (  12.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [hexdump0815[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hexdump0815[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -93,141 +145,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, narmstrong@baylibre.com,
- linux-kernel@vger.kernel.org, kishon@ti.com, vkoul@kernel.org,
- robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 2, 2020 at 1:48 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> Now that we have the DT validation in place, let's convert the device
-> tree bindings for the Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2
-> PHY over to a YAML schema.
->
-> While here, also add the fallback compatible string
-> "amlogic,meson-gxbb-usb2-phy" which is already used in
-> arch/arm/boot/dts/meson{,8,8b}.dtsi.
->
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> @@ -555,10 +561,8 @@ static int ufs_mtk_apply_dev_quirks(struct ufs_hba
+> *hba)
+>         struct ufs_dev_info *dev_info = &hba->dev_info;
+>         u16 mid = dev_info->wmanufacturerid;
+> 
+> -       if (mid == UFS_VENDOR_SAMSUNG) {
+> -               hba->dev_quirks &= ~UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE;
+> +       if (mid == UFS_VENDOR_SAMSUNG)
+>                 ufshcd_dme_set(hba, UIC_ARG_MIB(PA_TACTIVATE), 6);
+> -       }
+> 
+>         /*
+>          * Decide waiting time before gating reference clock and
+> @@ -575,6 +579,17 @@ static int ufs_mtk_apply_dev_quirks(struct ufs_hba
+> *hba)
+>         return 0;
+>  }
+> 
+> +void ufs_mtk_fixup_dev_quirks(struct ufs_hba *hba)
+> +{
+> +       struct ufs_dev_info *dev_info = &hba->dev_info;
+> +       u16 mid = dev_info->wmanufacturerid;
+> +
+> +       ufshcd_fixup_device_setup(hba, ufs_mtk_dev_fixups);
+> +
+> +       if (mid == UFS_VENDOR_SAMSUNG)
+> +               hba->dev_quirks &= ~UFS_DEVICE_QUIRK_HOST_PA_TACTIVATE;
+Why move it? It is a unipro/hci param.
 
-Tested-by: hexdump <hexdump0815@googlemail.com>
-
-> ---
->  .../phy/amlogic,meson8b-usb2-phy.yaml         | 61 +++++++++++++++++++
->  .../bindings/phy/meson8b-usb2-phy.txt         | 28 ---------
->  2 files changed, 61 insertions(+), 28 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
->
-> diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> new file mode 100644
-> index 000000000000..c2fe8c08d99e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> @@ -0,0 +1,61 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/amlogic,meson8b-usb2-phy.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY
-> +
-> +maintainers:
-> +  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +            - amlogic,meson8-usb2-phy
-> +            - amlogic,meson8b-usb2-phy
-> +          - const: amlogic,meson-mx-usb2-phy
-> +      - const: amlogic,meson-gxbb-usb2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: usb_general
-> +      - const: usb
-> +
-> +  resets:
-> +    minItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  phy-supply:
-> +     description:
-> +       Phandle to a regulator that provides power to the PHY. This
-> +       regulator will be managed during the PHY power on/off sequence.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - "#phy-cells"
-> +
-> +examples:
-> +  - |
-> +    usb-phy@c0000000 {
-> +      compatible = "amlogic,meson-gxbb-usb2-phy";
-> +      reg = <0xc0000000 0x20>;
-> +      resets = <&reset_usb_phy>;
-> +      clocks = <&clk_usb_general>, <&reset_usb>;
-> +      clock-names = "usb_general", "usb";
-> +      phy-supply = <&usb_vbus>;
-> +      #phy-cells = <0>;
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt b/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
-> deleted file mode 100644
-> index d81d73aea608..000000000000
-> --- a/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
-> +++ /dev/null
-> @@ -1,28 +0,0 @@
-> -* Amlogic Meson8, Meson8b and GXBB USB2 PHY
-> -
-> -Required properties:
-> -- compatible:  Depending on the platform this should be one of:
-> -       "amlogic,meson8-usb2-phy"
-> -       "amlogic,meson8b-usb2-phy"
-> -       "amlogic,meson-gxbb-usb2-phy"
-> -- reg:         The base address and length of the registers
-> -- #phys-cells: should be 0 (see phy-bindings.txt in this directory)
-> -- clocks:      phandle and clock identifier for the phy clocks
-> -- clock-names: "usb_general" and "usb"
-> -
-> -Optional properties:
-> -- resets:      reference to the reset controller
-> -- phy-supply:  see phy-bindings.txt in this directory
-> -
-> -
-> -Example:
-> -
-> -usb0_phy: usb-phy@c0000000 {
-> -       compatible = "amlogic,meson-gxbb-usb2-phy";
-> -       #phy-cells = <0>;
-> -       reg = <0x0 0xc0000000 0x0 0x20>;
-> -       resets = <&reset RESET_USB_OTG>;
-> -       clocks = <&clkc CLKID_USB>, <&clkc CLKID_USB0>;
-> -       clock-names = "usb_general", "usb";
-> -       phy-supply = <&usb_vbus>;
-> -};
-> --
-> 2.26.2
->
 
 _______________________________________________
 linux-arm-kernel mailing list
