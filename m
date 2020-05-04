@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC91D1C3F94
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:16:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C8D11C3FBD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=r5XLXRkHyT22K/MioBSVZgkvI3EOoMJLLQMI55hKWHU=; b=IVIuVYKypPBwuRcrc1CxqhnMjZ
-	XWwEu2xWUrZLq05m2hEgDjVL4zgRxoMe8AksrvossopoZfuD3crbwUN878N4q6SX51wH767NXY5B9
-	2YfV4T77kZiDqIdrhsXsrKmJsKvR1++rMSLJADApPwFPk1hSc5YkZR4/LRc+SY0Kuxnyn+P42UJTF
-	MNm18h1uB6+rLuRHYiaAsyNVzmUZ6f3XOe1/l3Y14eM0czg++dcaFgvATfLE/E1VDIKWt7+v2JaF5
-	IZa5Cm5YSPXO0dBHj5jwy5uwVDZUj1g+BBpnXaAAh9x2oRXgRKvir8+nYgwPz2i0u0nx34Tbcbvhn
-	mzGZZ6Sg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cFjyg7TReAZvkSIvNuXXRDW2WSmm+zX/hEbcRmYQwrg=; b=fxIiGHdZo7otTI
+	hWf5OgeKfsw32ayuA4HeCnfgJ4ZLBIxbzXrkdYZmkOzVgpOBouL/Z2XOtPHwL1n8uLX9BWfv5P1o8
+	k6KE4VvGVb/McSQxVn1n0m9ZeSnIwQFIiB2yjLw1/901svRrk4/r1r4NwEVRRN0oaCb2laBPgCdgB
+	+Mw1BzrwmM+pfQPZeTKkiQZmvjXr9YJPUZSePT/2R8EHDT2FH/Ziwf174jjWHGbjOPBkMCbuTnzV6
+	XAYVbXcd4/Pvj2d0VkKSe0AhtGDDmrVWtDxt+a01xcOS97vr4IPTP0lGqhNjX/pZ9pOFBzLTX+TTt
+	hJN7dVHZFJb7DgJoSJVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVdlT-0001Ha-I6; Mon, 04 May 2020 16:16:19 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jVdry-00051A-CB; Mon, 04 May 2020 16:23:02 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVdkq-0000n6-5C
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:15:41 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 188so127973wmc.2
+ id 1jVdrq-00050S-RX
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:22:56 +0000
+Received: by mail-wm1-x343.google.com with SMTP id e26so131906wmk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 09:15:40 -0700 (PDT)
+ Mon, 04 May 2020 09:22:54 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=kmQ9Fl48Rq8fFbBnLUeHmzhD5g9BXt07MmpxGvo8jek=;
- b=BOtN27UJhcQOKqUsvUROp8R22CN9Zzki2z05JfMwhoJ9YQP1Rc3newUeuP7mr2HmeT
- l9Sus6Wef6RihYw3jUslKbU6IjTlI6vcUjLr9AmlXcBL9fCx025JuD5i1aPU26Rg7/wd
- HsG5QdlrGLCAXBjjiGcxDeQcw10M6PQvvU8K4qDGAvoo80VnmCw9lZKZ42gpyF+EGPJA
- vTia7HprFBxXeV7ROjXYiqnMVZPQPnDDOjKR2BCLbKJoLIvePKcz+pvxHIf/YSDCbS+V
- WyrSaOJZXxKgXmSfHslQuDSTwFxZikIkfJFlWYhE6cG6Uk7b/xESWm1+bFnDKi6xNdkE
- 38rQ==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=MCHVg2/8+pArsDEcibsWYzrGnqgIsL6O2tKqGg2boGQ=;
+ b=iSM+uzVb/Wm9o2OFV1sl72Hl6D+zeT7joT4vOaOlq68PXnFwe/TAk2ttWj8v9dU1dp
+ pnF/omBOpYMJB4/th5D32NG9HLmrLVMes4cCMc8VMzYdg2qLFT6vSgmCDp0Aw1nUm0uZ
+ zskO35wWlL+RbvHkboG5mUQ/L/n+3y61s2o0w7CQDO57+OpdcBSazwAbkdt1PSVLTLBo
+ UV1pf09sh92pKqxAH7nSVA1ZYxhO3wvKQTlkwY+OI6YzOkNriXNcGNotaZCNb5aVlTZL
+ xKffUZeH5WhVXFHQFh1APhUCIeRsfiN64kn4VSmarUHBvmY+F0QmpO3mbkXMwkZKQxvG
+ rmfA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=kmQ9Fl48Rq8fFbBnLUeHmzhD5g9BXt07MmpxGvo8jek=;
- b=IUs5F8OKgO7g/m4vbdvtgfgrAXPg3nP15Z0jEbVayGS0mC8qHf8/PxBxUyNFtmbkzu
- G/8+/GTBt2MvFVpGns6sMmh4O8CIwKKNi6V8GCn+/C+27n69agCujPP8u/fYL9hG0VAN
- 49wWQvtEJh+Aoh9fxr0iZF9UYtucjuqHhIqmgBvyQKVgFhKaE+LnlngUNPxcDtD/wASL
- BJ7SEvmFaleouJdyP8vCVptvnQH1wPYXvZI4sHBo+byNrStrfkAVYZnHXGT68DVxWEVY
- ZfWhPn3UnmMf+QI8YIWYuBY1xAVIDLE4srr2JowuTxfmSKgHz1IuAbNRLreDFerWbbXi
- HFfQ==
-X-Gm-Message-State: AGi0PuZh+GOND8b/Mucdou1ma4QnUFcJexxY4wLQ2sdxlSfp3shnG04p
- 9MorPnU+ZTZNLJphWgwjSLbxdbYnhjU=
-X-Google-Smtp-Source: APiQypLE/9mShXijUTGSNuwdsoqCy1IDlsukyo+VcoHPTrrotHHwJbpHSrVV2pV5piug3VyMHbtyGw==
-X-Received: by 2002:a1c:bc09:: with SMTP id m9mr14923473wmf.145.1588608935594; 
- Mon, 04 May 2020 09:15:35 -0700 (PDT)
-Received: from linaro.org ([2a00:23c5:6801:1801:bc12:b74:297d:dafc])
- by smtp.gmail.com with ESMTPSA id k6sm14623756wma.19.2020.05.04.09.15.34
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=MCHVg2/8+pArsDEcibsWYzrGnqgIsL6O2tKqGg2boGQ=;
+ b=kuwgtwbUce7tlocxV9CSNs4vcKfObSk+/T42nZrO3j0FhwF1N/8ojNwvmbVDSzFlOl
+ R5Iq6e21pd6XgI0kILPhWEuhwL3tbZWVzb6lF+pfLqnhwP5Jab9YJj1OAHRMQPZjVTPc
+ qT0u8ogQdHAFaYSkn0FLLhJXIJixpzxqwo0T6Us6omdYwTLPVzwzBP474Z93ZL77paH/
+ DKEQqcTpNM0S5iA+YoLVRANjJildB5oK4q6qyzi2ay1WtjCVbjcDgdllR6Ybvj5aXivi
+ EGH1FKM0ORgifmNWW63ETlvKDA8Dq6aVUexklNdTi6/tC6xSCba3x3gTULGdko2TL5RI
+ Mn6A==
+X-Gm-Message-State: AGi0PuY4xGMTNKdPsHkAxeU+7mN0c3TksLv1HwqXjNsrqF4ZAYP1+BcJ
+ odloC062Oj3RVlpePStQ7Jp2Tw==
+X-Google-Smtp-Source: APiQypIIfd6fa9/u+aeLTQxZQ97zHXvpxVqHN8qn939cucwqFuaXUhEBZSvGLYaIJPT3wr7V8s6L9Q==
+X-Received: by 2002:a7b:c14b:: with SMTP id z11mr15041535wmi.44.1588609373077; 
+ Mon, 04 May 2020 09:22:53 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id s8sm16208905wrt.69.2020.05.04.09.22.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 May 2020 09:15:34 -0700 (PDT)
-From: Mike Leach <mike.leach@linaro.org>
-To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
- mathieu.poirier@linaro.org
-Subject: [PATCH v2 2/2] coresight: cti: Add CPU idle pm notifer to CTI devices.
-Date: Mon,  4 May 2020 17:15:30 +0100
-Message-Id: <20200504161530.9284-3-mike.leach@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200504161530.9284-1-mike.leach@linaro.org>
-References: <20200504161530.9284-1-mike.leach@linaro.org>
+ Mon, 04 May 2020 09:22:52 -0700 (PDT)
+Date: Mon, 4 May 2020 18:22:42 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Lu Baolu <baolu.lu@linux.intel.com>
+Subject: Re: [PATCH v6 04/25] iommu: Add a page fault handler
+Message-ID: <20200504162242.GF170104@myrica>
+References: <20200430143424.2787566-1-jean-philippe@linaro.org>
+ <20200430143424.2787566-5-jean-philippe@linaro.org>
+ <9a8ec004-0a9c-d772-8e7a-f839002a40b5@linux.intel.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <9a8ec004-0a9c-d772-8e7a-f839002a40b5@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_091540_199022_9A0ABF14 
-X-CRM114-Status: GOOD (  15.18  )
+X-CRM114-CacheID: sfid-20200504_092254_947352_91923D24 
+X-CRM114-Status: GOOD (  24.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -96,138 +98,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mike Leach <mike.leach@linaro.org>, suzuki.poulose@arm.com
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
+ joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
+ fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
+ catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds a notify callback for CPU PM events to the CTI driver - for
-CPU bound CTI devices.
+On Sun, May 03, 2020 at 01:49:01PM +0800, Lu Baolu wrote:
+> > +static void iopf_handle_group(struct work_struct *work)
+> > +{
+> > +	struct iopf_group *group;
+> > +	struct iopf_fault *iopf, *next;
+> > +	enum iommu_page_response_code status = IOMMU_PAGE_RESP_SUCCESS;
+> > +
+> > +	group = container_of(work, struct iopf_group, work);
+> > +
+> > +	list_for_each_entry_safe(iopf, next, &group->faults, head) {
+> > +		/*
+> > +		 * For the moment, errors are sticky: don't handle subsequent
+> > +		 * faults in the group if there is an error.
+> > +		 */
+> > +		if (status == IOMMU_PAGE_RESP_SUCCESS)
+> > +			status = iopf_handle_single(iopf);
+> > +
+> > +		if (!(iopf->fault.prm.flags &
+> > +		      IOMMU_FAULT_PAGE_REQUEST_LAST_PAGE))
+> > +			kfree(iopf);
+> 
+> The iopf is freed,but not removed from the list. This will cause wild
+> pointer in code.
 
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
----
- drivers/hwtracing/coresight/coresight-cti.c | 82 +++++++++++++++++++++
- 1 file changed, 82 insertions(+)
+We free the list with the group below, so this one is fine.
 
-diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-index 9af66719ae5b..0f0c14528701 100644
---- a/drivers/hwtracing/coresight/coresight-cti.c
-+++ b/drivers/hwtracing/coresight/coresight-cti.c
-@@ -8,6 +8,7 @@
- #include <linux/atomic.h>
- #include <linux/bits.h>
- #include <linux/coresight.h>
-+#include <linux/cpu_pm.h>
- #include <linux/device.h>
- #include <linux/io.h>
- #include <linux/kernel.h>
-@@ -655,6 +656,84 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
- 	}
- }
- 
-+/** cti PM callbacks **/
-+static int cti_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
-+			     void *v)
-+{
-+	struct cti_drvdata *drvdata;
-+	unsigned int cpu = smp_processor_id();
-+	int notify_res = NOTIFY_OK;
-+
-+	if (!cti_cpu_drvdata[cpu])
-+		return NOTIFY_OK;
-+
-+	drvdata = cti_cpu_drvdata[cpu];
-+
-+	if (WARN_ON_ONCE(drvdata->ctidev.cpu != cpu))
-+		return NOTIFY_BAD;
-+
-+	spin_lock(&drvdata->spinlock);
-+
-+	switch (cmd) {
-+	case CPU_PM_ENTER:
-+		/* CTI regs all static - we have a copy & nothing to save */
-+		drvdata->config.hw_powered = false;
-+		if (drvdata->config.hw_enabled)
-+			coresight_disclaim_device(drvdata->base);
-+		break;
-+
-+	case CPU_PM_ENTER_FAILED:
-+		drvdata->config.hw_powered = true;
-+		if (drvdata->config.hw_enabled) {
-+			if (coresight_claim_device(drvdata->base))
-+				drvdata->config.hw_enabled = false;
-+		}
-+		break;
-+
-+	case CPU_PM_EXIT:
-+		/* write hardware registers to re-enable. */
-+		drvdata->config.hw_powered = true;
-+		drvdata->config.hw_enabled = false;
-+
-+		/* check enable reference count to enable HW */
-+		if (atomic_read(&drvdata->config.enable_req_count)) {
-+			/* check we can claim the device as we re-power */
-+			if (coresight_claim_device(drvdata->base))
-+				goto cti_notify_exit;
-+
-+			drvdata->config.hw_enabled = true;
-+			cti_write_all_hw_regs(drvdata);
-+		}
-+		break;
-+
-+	default:
-+		notify_res = NOTIFY_DONE;
-+		break;
-+	}
-+
-+cti_notify_exit:
-+	spin_unlock(&drvdata->spinlock);
-+	return notify_res;
-+}
-+
-+static struct notifier_block cti_cpu_pm_nb = {
-+	.notifier_call = cti_cpu_pm_notify,
-+};
-+
-+static int cti_cpu_pm_register(void)
-+{
-+	if (IS_ENABLED(CONFIG_CPU_PM))
-+		return cpu_pm_register_notifier(&cti_cpu_pm_nb);
-+
-+	return 0;
-+}
-+
-+static void cti_cpu_pm_unregister(void)
-+{
-+	if (IS_ENABLED(CONFIG_CPU_PM))
-+		cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
-+}
-+
- /* CPU HP handlers */
- static int cti_starting_cpu(unsigned int cpu)
- {
-@@ -686,6 +765,8 @@ static void cti_pm_release(struct cti_drvdata *drvdata)
- {
- 	if (drvdata->ctidev.cpu >= 0) {
- 		if (--nr_cti_cpu == 0) {
-+			cti_cpu_pm_unregister();
-+
- 			cpuhp_remove_state_nocalls(
- 				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
- 		}
-@@ -814,6 +895,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
- 				"arm/coresight_cti:starting",
- 				cti_starting_cpu, cti_dying_cpu);
- 
-+			ret = cti_cpu_pm_register();
- 			cpus_read_unlock();
- 			if (ret)
- 				goto err_out;
--- 
-2.17.1
+> 
+> > +	}
+> > +
+> > +	iopf_complete_group(group->dev, &group->last_fault, status);
+> > +	kfree(group);
+> > +}
+> > +
+> 
+> [...]
+> 
+> > +/**
+> > + * iopf_queue_flush_dev - Ensure that all queued faults have been processed
+> > + * @dev: the endpoint whose faults need to be flushed.
+> > + * @pasid: the PASID affected by this flush
+> > + *
+> > + * The IOMMU driver calls this before releasing a PASID, to ensure that all
+> > + * pending faults for this PASID have been handled, and won't hit the address
+> > + * space of the next process that uses this PASID. The driver must make sure
+> > + * that no new fault is added to the queue. In particular it must flush its
+> > + * low-level queue before calling this function.
+> > + *
+> > + * Return: 0 on success and <0 on error.
+> > + */
+> > +int iopf_queue_flush_dev(struct device *dev, int pasid)
+> > +{
+> > +	int ret = 0;
+> > +	struct iopf_device_param *iopf_param;
+> > +	struct dev_iommu *param = dev->iommu;
+> > +
+> > +	if (!param)
+> > +		return -ENODEV;
+> > +
+> > +	mutex_lock(&param->lock);
+> > +	iopf_param = param->iopf_param;
+> > +	if (iopf_param)
+> > +		flush_workqueue(iopf_param->queue->wq);
+> 
+> There may be other pasid iopf in the workqueue. Flush all tasks in
+> the workqueue will hurt other pasids. I might lose any context.
 
+Granted this isn't optimal because we don't take the PASID argument into
+account (I think I'll remove it, don't know how to use it). But I don't
+think it affects other PASIDs, because all flush_workqueue() does is wait
+until all faults currently in the worqueue are processed. So it only
+blocks the current thread, but nothing is lost.
+
+> 
+> > +	else
+> > +		ret = -ENODEV;
+> > +	mutex_unlock(&param->lock);
+> > +
+> > +	return ret;
+> > +}
+> > +EXPORT_SYMBOL_GPL(iopf_queue_flush_dev);
+> > +
+> > +/**
+> > + * iopf_queue_discard_partial - Remove all pending partial fault
+> > + * @queue: the queue whose partial faults need to be discarded
+> > + *
+> > + * When the hardware queue overflows, last page faults in a group may have been
+> > + * lost and the IOMMU driver calls this to discard all partial faults. The
+> > + * driver shouldn't be adding new faults to this queue concurrently.
+> > + *
+> > + * Return: 0 on success and <0 on error.
+> > + */
+> > +int iopf_queue_discard_partial(struct iopf_queue *queue)
+> > +{
+> > +	struct iopf_fault *iopf, *next;
+> > +	struct iopf_device_param *iopf_param;
+> > +
+> > +	if (!queue)
+> > +		return -EINVAL;
+> > +
+> > +	mutex_lock(&queue->lock);
+> > +	list_for_each_entry(iopf_param, &queue->devices, queue_list) {
+> > +		list_for_each_entry_safe(iopf, next, &iopf_param->partial, head)
+> > +			kfree(iopf);
+> 
+> iopf is freed but not removed from the list.
+
+Ouch yes this is wrong, will fix.
+
+> 
+> > +	}
+> > +	mutex_unlock(&queue->lock);
+> > +	return 0;
+> > +}
+> > +EXPORT_SYMBOL_GPL(iopf_queue_discard_partial);
+> > +
+> > +/**
+> > + * iopf_queue_add_device - Add producer to the fault queue
+> > + * @queue: IOPF queue
+> > + * @dev: device to add
+> > + *
+> > + * Return: 0 on success and <0 on error.
+> > + */
+> > +int iopf_queue_add_device(struct iopf_queue *queue, struct device *dev)
+> > +{
+> > +	int ret = -EBUSY;
+> > +	struct iopf_device_param *iopf_param;
+> > +	struct dev_iommu *param = dev->iommu;
+> > +
+> > +	if (!param)
+> > +		return -ENODEV;
+> > +
+> > +	iopf_param = kzalloc(sizeof(*iopf_param), GFP_KERNEL);
+> > +	if (!iopf_param)
+> > +		return -ENOMEM;
+> > +
+> > +	INIT_LIST_HEAD(&iopf_param->partial);
+> > +	iopf_param->queue = queue;
+> > +	iopf_param->dev = dev;
+> > +
+> > +	mutex_lock(&queue->lock);
+> > +	mutex_lock(&param->lock);
+> > +	if (!param->iopf_param) {
+> > +		list_add(&iopf_param->queue_list, &queue->devices);
+> > +		param->iopf_param = iopf_param;
+> > +		ret = 0;
+> > +	}
+> > +	mutex_unlock(&param->lock);
+> > +	mutex_unlock(&queue->lock);
+> > +
+> > +	if (ret)
+> > +		kfree(iopf_param);
+> > +
+> > +	return ret;
+> > +}
+> > +EXPORT_SYMBOL_GPL(iopf_queue_add_device);
+> > +
+> > +/**
+> > + * iopf_queue_remove_device - Remove producer from fault queue
+> > + * @queue: IOPF queue
+> > + * @dev: device to remove
+> > + *
+> > + * Caller makes sure that no more faults are reported for this device.
+> > + *
+> > + * Return: 0 on success and <0 on error.
+> > + */
+> > +int iopf_queue_remove_device(struct iopf_queue *queue, struct device *dev)
+> > +{
+> > +	int ret = 0;
+> > +	struct iopf_fault *iopf, *next;
+> > +	struct iopf_device_param *iopf_param;
+> > +	struct dev_iommu *param = dev->iommu;
+> > +
+> > +	if (!param || !queue)
+> > +		return -EINVAL;
+> > +
+> > +	mutex_lock(&queue->lock);
+> > +	mutex_lock(&param->lock);
+> > +	iopf_param = param->iopf_param;
+> > +	if (iopf_param && iopf_param->queue == queue) {
+> > +		list_del(&iopf_param->queue_list);
+> > +		param->iopf_param = NULL;
+> > +	} else {
+> > +		ret = -EINVAL;
+> > +	}
+> > +	mutex_unlock(&param->lock);
+> > +	mutex_unlock(&queue->lock);
+> > +	if (ret)
+> > +		return ret;
+> > +
+> > +	/* Just in case some faults are still stuck */
+> > +	list_for_each_entry_safe(iopf, next, &iopf_param->partial, head)
+> > +		kfree(iopf);
+> 
+> The same here.
+
+Here is fine, we free the iopf_param below
+
+Thanks,
+Jean
+
+> 
+> > +
+> > +	kfree(iopf_param);
+> > +
+> > +	return 0;
+> > +}
+> > +EXPORT_SYMBOL_GPL(iopf_queue_remove_device);
 
 _______________________________________________
 linux-arm-kernel mailing list
