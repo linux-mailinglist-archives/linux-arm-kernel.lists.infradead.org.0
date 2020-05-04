@@ -2,55 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C9BC1C48BD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 23:03:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D44741C48C5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 23:04:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1xrWNbC0bmkGy/JJvN9m46emso8cs6UB5UFoig9M3o0=; b=pGhrQHBalKzKRZ
-	toLsICV2t/FLx/UhbqPsKVLXuXzlgOHi2h4jiOFA0qSsvtv0KJNLNneUl9P2lHhnlIzIdkdsZuQxz
-	AV07Eo4IHmkxU843IvKg5H9UmEoo/4LXoObrKE27GvsdCb4XtDKAVEbYpfZwgmNl4UKDnzmKofJSF
-	8qY5gLsYu7fiJUaiGUQ6LOpFACu4u1CKA4S47rBv88t9MSH86Sth5Uk0NrgFgPyktE7eQxaisDGf0
-	4H+5o58HbWP9IwUJvbHgWvZBdkIFW512EPueyEMrDy4R8LJzV5ohFhebngA9Nm9U8xiHegocKAI78
-	zHfptWBcRnpyJJXEdSBg==;
+	List-Owner; bh=ZJWRpdP5vqZrfyxGSwkNgisLeSsM+0/rLfpmn0vyavU=; b=fstfnqF07dKok9
+	BRNtVe1eN9D+Y50G86H/Q1cKH77wi8+MoyxbJoYt/zJXTGF47g4LuB0haoI4C/UJfd2x5cTfvFIcg
+	rqm8G1+hHmPlZ/w2pKcROK9Lvtbn7kYU2VvF+qYVrrhMF4qMZdlcyM8/CJsjlwyug3lq03JoY2nNX
+	+CU+XZbcIYWWt8mNcC3K7mFCvevK7VnBpABNGh6yiwlfoIou9Ihi1dc6uxhJWkT4OaW+G3FLg9DjR
+	DBbm1jderdkP5v+AIzVv/ozRyoHbpEwlimv0uTwxMBEYTSTKW6OQE5ljZ1mWHdAuAcTEyZKYKMeCk
+	qqSQAgCUE/mT0yf+bydA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jViF6-0001r7-Gy; Mon, 04 May 2020 21:03:12 +0000
-Received: from [2002:c35c:fd02::1] (helo=ZenIV.linux.org.uk)
+	id 1jViGH-0002QN-SC; Mon, 04 May 2020 21:04:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jViEz-0001pe-Kp; Mon, 04 May 2020 21:03:07 +0000
-Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
- Linux)) id 1jViEL-0010Kx-57; Mon, 04 May 2020 21:02:25 +0000
-Date: Mon, 4 May 2020 22:02:25 +0100
-From: Al Viro <viro@zeniv.linux.org.uk>
-To: Ira Weiny <ira.weiny@intel.com>
-Subject: Re: [PATCH V2 00/11] Subject: Remove duplicated kmap code
-Message-ID: <20200504210225.GW23230@ZenIV.linux.org.uk>
-References: <20200504010912.982044-1-ira.weiny@intel.com>
- <20200504013509.GU23230@ZenIV.linux.org.uk>
- <20200504050447.GA979899@iweiny-DESK2.sc.intel.com>
- <20200504053357.GV23230@ZenIV.linux.org.uk>
- <20200504201740.GA985739@iweiny-DESK2.sc.intel.com>
+ id 1jViG9-0002Ox-Mj
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 21:04:19 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 716EB206A5;
+ Mon,  4 May 2020 21:04:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588626256;
+ bh=GInPiyiEF5930d8AKtyiPGs+zeaUkY2HSw0WrjCjsbc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=hjw826Kkg27NT5/RM0n98j6Vqmw1pzxK2JSbwyPVVQrNO/X/oC4fqRat/o8vOy9qA
+ kBzsV7FyhF2a7WJ90gktpF6/tWbh2GLvtbuHvsM6wMQj8+EMn5aiPgEyqC8MLQONke
+ G/SiqfkP2hQZm+2wpgadcKvGEG9zJ7UZSWl69qlg=
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] arm64/cpuinfo: Move device_initcall() near
+ cpuinfo_regs_init()
+Date: Mon,  4 May 2020 22:04:09 +0100
+Message-Id: <158861212065.39196.5531503127956521107.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <1588595377-4503-1-git-send-email-anshuman.khandual@arm.com>
+References: <1588595377-4503-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504201740.GA985739@iweiny-DESK2.sc.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_140305_683252_9829C1C4 
-X-CRM114-Status: GOOD (  10.39  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20200504_140417_784630_03B70014 
+X-CRM114-Status: UNSURE (   8.81  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [2002:c35c:fd02:0:0:0:0:1 listed in] [wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,80 +79,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Huang Rui <ray.huang@amd.com>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki Poulose <suzuki.poulose@arm.com>, catalin.marinas@arm.com,
+ linux-kernel@vger.kernel.org, Mark Brown <broonie@kernel.org>,
+ Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 01:17:41PM -0700, Ira Weiny wrote:
-
-> > || * arm: much, much worse.  We have several files that pull linux/highmem.h:
-> > || arch/arm/mm/cache-feroceon-l2.c, arch/arm/mm/cache-xsc3l2.c,
-> > || arch/arm/mm/copypage-*.c, arch/arm/mm/dma-mapping.c, arch/arm/mm/flush.c,
-> > || arch/arm/mm/highmem.c, arch/arm/probes/uprobes/core.c,
-> > || arch/arm/include/asm/kvm_mmu.h (kmap_atomic_pfn()).
-> > || Those are fine, but we also have this:
-> > || arch/arm/include/asm/pgtable.h:200:#define __pte_map(pmd)               (pte_t *)kmap_atomic(pmd_page(*(pmd)))
-> > || arch/arm/include/asm/pgtable.h:208:#define pte_offset_map(pmd,addr)     (__pte_map(pmd) + pte_index(addr))
-> > || and sure as hell, asm/pgtable.h does *NOT* pull linux/highmem.h.
+On Mon, 4 May 2020 17:59:37 +0530, Anshuman Khandual wrote:
+> This moves device_initcall() near cpuinfo_regs_init() making the calling
+> sequence clear. Besides it is a standard practice to have device_initcall()
+> (any __initcall for that matter) just after the function it actually calls.
 > 
-> It does not pull asm/highmem.h either...
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
 
-No, but the users of those macros need to be considered.
+Applied to arm64 (for-next/misc), thanks!
 
-> > || #define pte_offset_map(dir, addr)               \
-> > ||         ((pte_t *) kmap_atomic(pmd_page(*(dir))) + pte_index(addr))
-> > ||         One pte_offset_map user in arch/microblaze:
-> > || arch/microblaze/kernel/signal.c:207:    ptep = pte_offset_map(pmdp, address);
-> > || Messy, but doesn't require any changes (we have asm/pgalloc.h included
-> > || there, and that pull linux/highmem.h).
-> 
-> AFAICS asm/pgtable.h does not include asm/highmem.h here...
-> 
-> So looks like arch/microblaze/kernel/signal.c will need linux/highmem.h
+[1/1] arm64/cpuinfo: Move device_initcall() near cpuinfo_regs_init()
+      https://git.kernel.org/arm64/c/da7bad98eebb
 
-See above - line 39 in there is
-#include <asm/pgalloc.h>
-and line 14 in arch/microblaze/include/asm/pgalloc.h is
-#include <linux/highmem.h>
-It's conditional upon CONFIG_MMU in there, but so's the use of
-pte_offset_map() in arch/microblaze/kernel/signal.c 
+Cheers,
+-- 
+Will
 
-So it shouldn't be a problem.
-
-> > || * xtensa: users in arch/xtensa/kernel/pci-dma.c, arch/xtensa/mm/highmem.c,
-> > || arch/xtensa/mm/cache.c and arch/xtensa/platforms/iss/simdisk.c (all pull
-> > || linux/highmem.h).
-> 
-> Actually
-> 
-> arch/xtensa/mm/cache.c gets linux/highmem.h from linux/pagemap.h
-> 
-> arch/xtensa/platforms/iss/simdisk.c may have an issue?
-> 	linux/blkdev.h -> CONFIG_BLOCK -> linux/pagemap.h -> linux/highmem.h
-> 	But simdisk.c requires BLK_DEV_SIMDISK -> CONFIG_BLOCK...
-> 	<sigh>
-
-Yep - see above re major chain of indirect includes conditional upon CONFIG_BLOCK
-and its uses in places that only build with such configs.  There's a plenty of
-similar considerations outside of arch/*, unfortunately...
+https://fixes.arm64.dev
+https://next.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
