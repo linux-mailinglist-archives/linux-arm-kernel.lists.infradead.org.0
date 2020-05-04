@@ -2,77 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C33921C3BAF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:48:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D878D1C3B9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:46:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p1wc57h7DI42+tLvcTS1ECxWwSQ7GR0TBLsVz+fvgPg=; b=UebuiEKCkKxl8A
-	X9MkmKJ7j7DVnCbSSPx0jZYoG65UlcGDkgM/7TtuHMS6Etsf/IADSIHPyOi6mP5GqeRrpXGBGnPQP
-	H17yvzx2Ni89JgJAFyUY2nj7HDOnMLUnzDExSmo4qrrfaYNZzMlf7WUCpCWSdYcrYVBGKYJRxozjt
-	sSIEAYxbRGmu3o8Kf7lhTmPfOQPyTVZa9KtH5Cr7KTrGUgKZLJDV6FCryPNVPsQZhdeqzsd1EJCQT
-	Fe8o4wFqpZXE8hIkba5x9UdvpjLUBjMU0xQ4y1aaziGMuipNH+U8Tv6xg72mLJ8K5DUEr0DUVn+rq
-	88Tss+0i1bm57AvkZj2A==;
+	List-Owner; bh=5V77d7UX7CzA5UgoEUCtcZKJPu4LUwpHMplkQwjJyhM=; b=frQUNxtrKbCLEz
+	FVOZcCkVj90uXodOGrzA8AXwtpvq+oo9huzFGfrVjQlodIe2N4pG2G+vAr/8mM+tqbe5UbOr0736l
+	DC8rE90AXDWeOHRzdQw18eq0/p3S5DIdoiTWFdctedwRYYbw+WW+KMM5vQ0yqaOaExDUDSwH1PoLt
+	Fo52M6+3fov5FtV3Uh+kNIBD4Y9iiC/PcYOt/+0E4o4R2c3WqMTypC8yY2Kr9ZsfA7l1IGz78fE2P
+	fWIHv0pPAp57b0KqF+ISAupLD/PXBpGTyzWPZ/RPRfmPK+u5BgRTfXSYFpYAmWJX3WI15Yf/zCoMW
+	8jjimrvXaaOOD8JW+/2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVbSE-0008D5-6p; Mon, 04 May 2020 13:48:18 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1jVbQq-0006vO-9Z; Mon, 04 May 2020 13:46:52 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVbR7-0007HX-H5
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:47:10 +0000
+ id 1jVbQe-0006tz-UA
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:46:43 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1588600029; x=1620136029;
+ t=1588600000; x=1620136000;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=tE91w861pxg0ps3UOR5O7pcA0Vt5sQbNgdVLyXzR7B0=;
- b=aTuYKR9nM4LzuHmvsisDfpISudcILZi78YDMP9YsGyaZcRcCzzUxfEUF
- wv2xu2g7c/4HsRZIOWbrSQbJ+RsMY7X3Uch+E8mNfgKfJ+Pb0Gsd9Jcsz
- KFENzw0sbJghHjiC36OEmyKD8YgFFU8653BnWZP2N+173DD3yzsvX6SZX
- DU86HJXJQl05k70CsCoHHG2dy4/8aF72/9jt8to9fslRJLnvg1t+B3Qxo
- P37ryOBdAUuT5OBbwzyZoQO75fSqfidDR+6Y9qZ9uiQ0EzxZGGjYABEJ7
- KCRhWGToiYowQKQpAN1kAcildjO69GqRwGsIie9xZZyq3y6Y6tskFSUiI Q==;
-IronPort-SDR: +xPiIMwaLvNJjMlB6h11BC5RYHbjuL+WHgjVAB8fBLQ4obJ7YVwoNMs/BCNYNygc/WnXieRiwB
- uZQcvgxafDKeofruOtThliYyd48KHyWwYUN3vkZYJPpmqfBbRv8FU8oWUvr6E1GjkfcTHn2oso
- Tw2eK1Gcn+F6b2tFx8SLZZGMX1+jC4RshTUJ/ki/ZhY/n4l7Pmi8E1IImzUsRJMTVgPIgW6bcE
- kmxVFIwQWskwhqVxEb2/X199I8CxZOQgghJhoiEpRTjb0z6YXpLfDzQajhYeQWrfgYoNXORi/A
- ngc=
-X-IronPort-AV: E=Sophos;i="5.73,352,1583218800"; d="scan'208";a="74135752"
+ bh=e+zzAJaYzelyzPPipowOqC3N1EqhQqggcsRkXu8EpRs=;
+ b=wnWJ1YxjNSx3wih87dIF6LQ/DI6UAn06Ol/95GCZZUkPVM0JDRXD3FPp
+ Jxc7HjZ+lW3/a5FBRJqDZpMjrw7/khbquMnu2weQ+zT58mcyBpkhllqO+
+ tM6wxWROapuKsJ4DSFzhQSUcJJeJjMmShMMWNSbJTodsUtGQEskORfI1x
+ Dr/KaUf/ZHzffeD9wXTksX6YgLVWaJ1OuCqRwjqHmpZ4zunVIfQS35Ps/
+ kY06cxeDFVD5AwWL003mHLeicKdwcy6ik9wXoPN/0ffXqYxq6Oohd3C4z
+ zOUtVT4A2Orb3n/qg83JVOCi+aAEjzxo8tmNha87k9orFxYn9jTS0Xm9C w==;
+IronPort-SDR: U6f2ndBh/Q51eX2UgthWQWst6qY/Mk/cR/vjfXibcc/+4vMKA3Lj3eHJeqfE51iHIYkBuvboB1
+ i/nTOLBXyfNcMEnsJqpU8fWlqigFxqlffWA5eNErVFkh76NqI/uzFLMxpyh0dBQEgrtx120ul2
+ w3mfduBGe2Rkb8M4DliDpQsPwuuBK7q44RjfllkpfQ+rP1wkLuPkYFGhMHxyKKmJvrzN0MNV0K
+ wZ55eXoIL+TTB+GO8HeNmGCYc1TBhjpZ5EM4bUvBYFfa2etvDAF6KWX7rx2Uk3YYcxY5Pyi9Ge
+ Sj0=
+X-IronPort-AV: E=Sophos;i="5.73,352,1583218800"; d="scan'208";a="75424641"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 04 May 2020 06:46:33 -0700
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 04 May 2020 06:46:36 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 4 May 2020 06:46:33 -0700
+ 15.1.1713.5; Mon, 4 May 2020 06:46:40 -0700
 Received: from localhost.localdomain (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Mon, 4 May 2020 06:46:30 -0700
+ 15.1.1713.5 via Frontend Transport; Mon, 4 May 2020 06:46:33 -0700
 From: <nicolas.ferre@microchip.com>
 To: <linux-arm-kernel@lists.infradead.org>, <netdev@vger.kernel.org>, "Claudiu
  Beznea" <claudiu.beznea@microchip.com>, <harini.katakam@xilinx.com>
-Subject: [PATCH v3 1/7] net: macb: fix wakeup test in runtime suspend/resume
- routines
-Date: Mon, 4 May 2020 15:44:16 +0200
-Message-ID: <760ececd082c834c1ab4b1b410c605cc10bb6224.1588597759.git.nicolas.ferre@microchip.com>
+Subject: [PATCH v3 2/7] net: macb: mark device wake capable when
+ "magic-packet" property present
+Date: Mon, 4 May 2020 15:44:17 +0200
+Message-ID: <b01c5d9e5e112c8620e28e538109efa70d566509.1588597759.git.nicolas.ferre@microchip.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <cover.1588597759.git.nicolas.ferre@microchip.com>
 References: <cover.1588597759.git.nicolas.ferre@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_064709_624482_942F49B4 
-X-CRM114-Status: GOOD (  10.04  )
+X-CRM114-CacheID: sfid-20200504_064641_003331_0066E443 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -96,6 +96,7 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: andrew@lunn.ch, Alexandre Belloni <alexandre.belloni@bootlin.com>,
  f.fainelli@gmail.com, michal.simek@xilinx.com, antoine.tenart@bootlin.com,
  linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ Sergio Prado <sergio.prado@e-labworks.com>,
  "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -104,45 +105,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Nicolas Ferre <nicolas.ferre@microchip.com>
 
-Use the proper struct device pointer to check if the wakeup flag
-and wakeup source are positioned.
-Use the one passed by function call which is equivalent to
-&bp->dev->dev.parent.
+Change the way the "magic-packet" DT property is handled in the
+macb_probe() function, matching DT binding documentation.
+Now we mark the device as "wakeup capable" instead of calling the
+device_init_wakeup() function that would enable the wakeup source.
 
-It's preventing the trigger of a spurious interrupt in case the
-Wake-on-Lan feature is used.
+For Ethernet WoL, enabling the wakeup_source is done by
+using ethtool and associated macb_set_wol() function that
+already calls device_set_wakeup_enable() for this purpose.
 
-Fixes: bc1109d04c39 ("net: macb: Add pm runtime support")
+That would reduce power consumption by cutting more clocks if
+"magic-packet" property is set but WoL is not configured by ethtool.
+
+Fixes: 3e2a5e153906 ("net: macb: add wake-on-lan support via magic packet")
 Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
 Cc: Harini Katakam <harini.katakam@xilinx.com>
+Cc: Sergio Prado <sergio.prado@e-labworks.com>
 Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
 Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
 ---
- drivers/net/ethernet/cadence/macb_main.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ drivers/net/ethernet/cadence/macb_main.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
-index a0e8c5bbabc0..d1b4d6b6d7c8 100644
+index d1b4d6b6d7c8..629660d9f17e 100644
 --- a/drivers/net/ethernet/cadence/macb_main.c
 +++ b/drivers/net/ethernet/cadence/macb_main.c
-@@ -4616,7 +4616,7 @@ static int __maybe_unused macb_runtime_suspend(struct device *dev)
- 	struct net_device *netdev = dev_get_drvdata(dev);
- 	struct macb *bp = netdev_priv(netdev);
+@@ -4384,7 +4384,7 @@ static int macb_probe(struct platform_device *pdev)
+ 	bp->wol = 0;
+ 	if (of_get_property(np, "magic-packet", NULL))
+ 		bp->wol |= MACB_WOL_HAS_MAGIC_PACKET;
+-	device_init_wakeup(&pdev->dev, bp->wol & MACB_WOL_HAS_MAGIC_PACKET);
++	device_set_wakeup_capable(&pdev->dev, bp->wol & MACB_WOL_HAS_MAGIC_PACKET);
  
--	if (!(device_may_wakeup(&bp->dev->dev))) {
-+	if (!(device_may_wakeup(dev))) {
- 		clk_disable_unprepare(bp->tx_clk);
- 		clk_disable_unprepare(bp->hclk);
- 		clk_disable_unprepare(bp->pclk);
-@@ -4632,7 +4632,7 @@ static int __maybe_unused macb_runtime_resume(struct device *dev)
- 	struct net_device *netdev = dev_get_drvdata(dev);
- 	struct macb *bp = netdev_priv(netdev);
+ 	spin_lock_init(&bp->lock);
  
--	if (!(device_may_wakeup(&bp->dev->dev))) {
-+	if (!(device_may_wakeup(dev))) {
- 		clk_prepare_enable(bp->pclk);
- 		clk_prepare_enable(bp->hclk);
- 		clk_prepare_enable(bp->tx_clk);
 -- 
 2.26.2
 
