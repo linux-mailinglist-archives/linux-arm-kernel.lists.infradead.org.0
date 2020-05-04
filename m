@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E50D1C395E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:30:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFD531C3962
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:30:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=30+8dk8ZQy+geIkFWf+m1aUOqfCt2xbDSxFanxep/8Y=; b=iGA
-	FNBo9nIpjeH1Ij5lJY/fi/D12bUI5CySfystbPf/PK7SDysPu4erPhvfjCPomxpTfQT2wgxlH2XC6
-	gzA7QOqvkhzCfLnJwcmEs7pbZkR/UllPdBjVLPl4MRmOLoaa2OoY7dBGggV65h5oDGzvth19e5to/
-	cOCJGnNhrLu8+5M0nyOZQuSDk+kieL4hZGHyKJpiQCSjkjAA6CuU5jLq3ea+0ai5qhRwuPv9tYBsR
-	xEp5xDi30BDTxHro0vaJ+EyUCboezTTaLyQG5b5JpbpWT5k7WvRKZnwNwk3xLBQ+p6zsmJ41TvWkx
-	+eOzL7Kss1idLMOOI498JipYDJSjtKg==;
+	References:List-Owner; bh=GiE+8SFRUfoATveUXCZh/5fI4qQf1s59L/QWOY0nf4M=; b=hOC
+	BKXWH944Hfe71yiI5bxRa8XfEQ8aPbkHbrvqym5urYKudp9aTOM/tNBc6AsazhBBWHd3rgYa4P71Q
+	RQLh9F/zifPE/bW1O4L54QzvwPQ8mnHzYWQ4UTxyJvcwkA6LrqQpSavWTaN19ao6UZzTZ2QbEstZI
+	fTMd0LT8h8UVTN+6tYvSVKTrdHUlylgA4IvP2mxZZrrc5CU8dD805H/jVsTFL+0Vh8JyK433E33uL
+	ddPy4HFP1V4SLJTDlhVmb7KHIxRlUTjY+X7sBcLhoAqv18D6Kzzv1c66HP6T0L2Yuy+mNN4l+guHX
+	pkm+9v9OLO6ib/ju9fDP9gsSAZQGi2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVaEt-00032Z-Td; Mon, 04 May 2020 12:30:27 +0000
+	id 1jVaFH-0003J5-T9; Mon, 04 May 2020 12:30:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVaEn-000319-30
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:30:22 +0000
+ id 1jVaF6-0003I9-Uo
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:30:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56C611FB;
- Mon,  4 May 2020 05:30:19 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D84F31FB;
+ Mon,  4 May 2020 05:30:39 -0700 (PDT)
 Received: from p8cg001049571a15.arm.com (unknown [10.163.71.79])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 66F253F71F;
- Mon,  4 May 2020 05:30:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 02DE73F71F;
+ Mon,  4 May 2020 05:30:36 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/cpuinfo: Move device_initcall() near cpuinfo_regs_init()
-Date: Mon,  4 May 2020 17:59:37 +0530
-Message-Id: <1588595377-4503-1-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH] arm64/cpuinfo: Drop boot_cpu_data
+Date: Mon,  4 May 2020 18:00:00 +0530
+Message-Id: <1588595400-4560-1-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_053021_177626_69E9AD8A 
-X-CRM114-Status: GOOD (  10.83  )
+X-CRM114-CacheID: sfid-20200504_053041_036322_FEAF7526 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,9 +69,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This moves device_initcall() near cpuinfo_regs_init() making the calling
-sequence clear. Besides it is a standard practice to have device_initcall()
-(any __initcall for that matter) just after the function it actually calls.
+A global boot_cpu_data is not really required. Lets drop this. While
+here, rename the local variable as boot_cpu_info when it is fetched
+for the boot cpu.
 
 Cc: Catalin Marinas <catalin.marinas@arm.com>
 Cc: Will Deacon <will@kernel.org>
@@ -85,28 +85,43 @@ Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
 Based on 5.7-rc4
 
- arch/arm64/kernel/cpuinfo.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/cpuinfo.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-index 86136075ae41..a515d8f3639e 100644
+index a515d8f3639e..dabcdc132e56 100644
 --- a/arch/arm64/kernel/cpuinfo.c
 +++ b/arch/arm64/kernel/cpuinfo.c
-@@ -311,6 +311,8 @@ static int __init cpuinfo_regs_init(void)
- 	}
- 	return 0;
- }
-+device_initcall(cpuinfo_regs_init);
-+
- static void cpuinfo_detect_icache_policy(struct cpuinfo_arm64 *info)
+@@ -31,7 +31,6 @@
+  * values depending on configuration at or after reset.
+  */
+ DEFINE_PER_CPU(struct cpuinfo_arm64, cpu_data);
+-static struct cpuinfo_arm64 boot_cpu_data;
+ 
+ static const char *icache_policy_str[] = {
+ 	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN",
+@@ -393,15 +392,16 @@ static void __cpuinfo_store_cpu(struct cpuinfo_arm64 *info)
+ void cpuinfo_store_cpu(void)
  {
- 	unsigned int cpu = smp_processor_id();
-@@ -403,5 +405,3 @@ void __init cpuinfo_store_boot_cpu(void)
- 	boot_cpu_data = *info;
- 	init_cpu_features(&boot_cpu_data);
+ 	struct cpuinfo_arm64 *info = this_cpu_ptr(&cpu_data);
++	struct cpuinfo_arm64 *boot_cpu_info = &per_cpu(cpu_data, 0);
++
+ 	__cpuinfo_store_cpu(info);
+-	update_cpu_features(smp_processor_id(), info, &boot_cpu_data);
++	update_cpu_features(smp_processor_id(), info, boot_cpu_info);
  }
--
--device_initcall(cpuinfo_regs_init);
+ 
+ void __init cpuinfo_store_boot_cpu(void)
+ {
+-	struct cpuinfo_arm64 *info = &per_cpu(cpu_data, 0);
+-	__cpuinfo_store_cpu(info);
++	struct cpuinfo_arm64 *boot_cpu_info = &per_cpu(cpu_data, 0);
+ 
+-	boot_cpu_data = *info;
+-	init_cpu_features(&boot_cpu_data);
++	__cpuinfo_store_cpu(boot_cpu_info);
++	init_cpu_features(boot_cpu_info);
+ }
 -- 
 2.20.1
 
