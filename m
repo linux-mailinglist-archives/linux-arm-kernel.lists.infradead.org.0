@@ -2,79 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62A3E1C3B5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:35:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65AE11C3B6D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:41:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:MIME-Version:Subject:To
-	:From:References:In-Reply-To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bVa2LAAbD3U8WPaKSwjfFEe9N5ajC15M3Du4jZAL6f8=; b=Z6H+Z757nyG+Dp
-	xWfbQcNuAgKY+G60jA8+lJMS64TWmuabYmWwA+i9ygnz/ku5aDy3ks26VuX/5R5oKG2tQG8JnvYH0
-	udKgz7cgHwsZlJimvkfIQfnmt9sOjlg3HUiHr4izAjPJloJ/hXdsnOuwTfrLON/ZqF5QjL73r4kq5
-	BSkk50708oIaSclakM4fr/UCKcONQUAgje2pmDIYAhLLqqbRrXZu7ME6TrjSojlskviJ/hGeOX5qH
-	hTk53dJRpaLm0sDaKht//3Hb962xuHal2CqmTcjpvnMgzS30HHfRHGDp2rm55s6cQ2fiU9LsXqFjZ
-	hrVElOidUSkbYdH5BEyw==;
+	List-Owner; bh=TJ4hkr+G0z8Wbk6ROk+zNMONtY0Jc2eak75LlTBJMLw=; b=ZtfqiVjfC8numV
+	Y3QStJ9n1WK2fp9W1ZKGnsmCCgvLeNZuXmtO4EW8F2kRnua8Sh2iH8QWrofwK8CysHQdeGLmctsfq
+	8qAifPqyajKRjxMFRSojHg22Ep6eR+lVxxuqd3bpHsw5mU3lETBeT/h2i4c+1YlOFue5FE0BgPhTa
+	1npPCxTg1mnmX0lPFFX8V++GJyQwF5s/Sf8egPzzR3Sujcc9Ssnzdir+LWTimO4jK5wORzRXEPB68
+	DB+8XDDmWdACI8Qltlo7Bru1phbpuVq5gchM9sLF/8d4q9Ft1VezjwkRaCcBi1f3Up/NsfbM5UK0o
+	P4W+bmGCrEyPRnSk31/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVbFv-0006rn-09; Mon, 04 May 2020 13:35:35 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVbFl-0006r9-2Z
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:35:29 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Date:Sender:Message-Id:Content-Type:
- Content-Transfer-Encoding:MIME-Version:Subject:Cc:To:From:References:
- In-Reply-To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
- Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
- List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CEK6soI9hOzDXxMeYoZIwnw8wq+iCrPVuXY+g63CMwQ=; b=RDwMCNVz1O3E7+C7okcVIbn3c2
- QwWxKqh0WtNaBrjLJ3VXq2wDQ+/4DJdA5wVt4DNpfYv6Zev2yVBBL3TzPpcUpRgHQNhX5enRU8m9C
- 97iTTCK3hWbPyTk2NvC5KZlrrh8K7CBdX+JsKyBpgJBTm7HfBm7U2s8AfWTYj7DByEjjNEMqhxd9J
- 7GGRy8SluWPhgKCmyvr2mQhjpuwVb1OnlWbri4NDokPYJOhtoW0D0FnKzN6bSpUorST6mcwkojtuC
- 8nBs8Pe4pi2LIEmne6tykr/cNE6OB2GjzZf9OM/QswndwAdb9qeLW+CP1vZ9hulWoKfW6itxAtRVM
- UzRobN/Q==;
-Received: from e0022681537dd.dyn.armlinux.org.uk
- ([fd8f:7570:feb6:1:222:68ff:fe15:37dd]:56550 helo=rmk-PC.armlinux.org.uk)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1jVbFX-0004tl-MP; Mon, 04 May 2020 14:35:11 +0100
-Received: from rmk by rmk-PC.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <rmk@armlinux.org.uk>)
- id 1jVbFW-00076k-84; Mon, 04 May 2020 14:35:10 +0100
-In-Reply-To: <20200504133435.GD1551@shell.armlinux.org.uk>
-References: <20200504133435.GD1551@shell.armlinux.org.uk>
-From: Russell King <rmk+kernel@armlinux.org.uk>
-To: linux-arm-kernel@lists.infradead.org,
- Tomas Paukrt <tomas.paukrt@advantech.cz>
-Subject: [PATCH 3/3] ARM: uaccess: fix DACR mismatch with nested exceptions
+	id 1jVbL1-0002TV-4v; Mon, 04 May 2020 13:40:51 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVbKq-0002Se-Me
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:40:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id ACE041FB;
+ Mon,  4 May 2020 06:40:39 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.4.172])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7270E3F71F;
+ Mon,  4 May 2020 06:40:38 -0700 (PDT)
+Date: Mon, 4 May 2020 14:40:35 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v4 2/4] arm64: insn: Provide a better name for
+ aarch64_insn_is_nop()
+Message-ID: <20200504134035.GC73375@C02TD0UTHF1T.local>
+References: <20200504131326.18290-1-broonie@kernel.org>
+ <20200504131326.18290-3-broonie@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-Message-Id: <E1jVbFW-00076k-84@rmk-PC.armlinux.org.uk>
-Date: Mon, 04 May 2020 14:35:10 +0100
+In-Reply-To: <20200504131326.18290-3-broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_063525_462738_6CB9CDDC 
-X-CRM114-Status: GOOD (  14.02  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200504_064040_785533_BC78DB09 
+X-CRM114-Status: GOOD (  18.27  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,122 +63,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tomas Paukrt reports that his SAM9X60 based system (ARM926, ARMv5TJ)
-fails to fix up alignment faults, eventually resulting in a kernel
-oops.
+On Mon, May 04, 2020 at 02:13:24PM +0100, Mark Brown wrote:
+> The current aarch64_insn_is_nop() has exactly one caller which uses it
+> solely to identify if the instruction is a HINT that can safely be stepped,
+> requiring us to list things that aren't NOPs and make things more confusing
+> than they need to be. Rename the function to reflect the actual usage and
+> make things more clear.
+> 
+> Suggested-by: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 
-The problem occurs when using CONFIG_CPU_USE_DOMAINS with commit
-e6978e4bf181 ("ARM: save and reset the address limit when entering an
-exception").  This is because the address limit is set back to
-TASK_SIZE on exception entry, and, although it is restored on exception
-exit, the domain register is not.
+Thanks for this!
 
-Hence, this sequence can occur:
+Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-  interrupt
-    pt_regs->addr_limit = addr_limit		// USER_DS
-    addr_limit = USER_DS
-    alignment exception
-    __probe_kernel_read()
-      old_fs = get_fs()				// USER_DS
-      set_fs(KERNEL_DS)
-        addr_limit = KERNEL_DS
-        dacr.kernel = DOMAIN_MANAGER
-        interrupt
-          pt_regs->addr_limit = addr_limit	// KERNEL_DS
-          addr_limit = USER_DS
-          alignment exception
-          __probe_kernel_read()
-            old_fs = get_fs()			// USER_DS
-            set_fs(KERNEL_DS)
-              addr_limit = KERNEL_DS
-              dacr.kernel = DOMAIN_MANAGER
-            ...
-            set_fs(old_fs)
-              addr_limit = USER_DS
-              dacr.kernel = DOMAIN_CLIENT
-          ...
-          addr_limit = pt_regs->addr_limit	// KERNEL_DS
-        interrupt returns
+Mark.
 
-At this point, addr_limit is correctly restored to KERNEL_DS for
-__probe_kernel_read() to continue execution, but dacr.kernel is not,
-it has been reset by the set_fs(old_fs) to DOMAIN_CLIENT.
-
-This would not have happened prior to the mentioned commit, because
-addr_limit would remain KERNEL_DS, so get_fs() would have returned
-KERNEL_DS, and so would correctly nest.
-
-This commit fixes the problem by also saving the DACR on exception
-entry if either CONFIG_CPU_SW_DOMAIN_PAN or CONFIG_CPU_USE_DOMAINS are
-enabled, and resetting the DACR appropriately on exception entry to
-match addr_limit and PAN settings.
-
-Fixes: e6978e4bf181 ("ARM: save and reset the address limit when entering an exception")
-Reported-by: Tomas Paukrt <tomas.paukrt@advantech.cz>
-Signed-off-by: Russell King <rmk+kernel@armlinux.org.uk>
----
- arch/arm/include/asm/uaccess-asm.h | 25 ++++++++++++++++++++-----
- 1 file changed, 20 insertions(+), 5 deletions(-)
-
-diff --git a/arch/arm/include/asm/uaccess-asm.h b/arch/arm/include/asm/uaccess-asm.h
-index e46468b91eaa..907571fd05c6 100644
---- a/arch/arm/include/asm/uaccess-asm.h
-+++ b/arch/arm/include/asm/uaccess-asm.h
-@@ -67,15 +67,21 @@
- #endif
- 	.endm
- 
--#ifdef CONFIG_CPU_SW_DOMAIN_PAN
-+#if defined(CONFIG_CPU_SW_DOMAIN_PAN) || defined(CONFIG_CPU_USE_DOMAINS)
- #define DACR(x...)	x
- #else
- #define DACR(x...)
- #endif
- 
- 	/*
--	 * Save the address limit on entry to a privileged exception and
--	 * if using PAN, save and disable usermode access.
-+	 * Save the address limit on entry to a privileged exception.
-+	 *
-+	 * If we are using the DACR for kernel access by the user accessors
-+	 * (CONFIG_CPU_USE_DOMAINS=y), always reset the DACR kernel domain
-+	 * back to client mode, whether or not \disable is set.
-+	 *
-+	 * If we are using SW PAN, set the DACR user domain to no access
-+	 * if \disable is set.
- 	 */
- 	.macro	uaccess_entry, tsk, tmp0, tmp1, tmp2, disable
- 	ldr	\tmp1, [\tsk, #TI_ADDR_LIMIT]
-@@ -84,8 +90,17 @@
-  DACR(	mrc	p15, 0, \tmp0, c3, c0, 0)
-  DACR(	str	\tmp0, [sp, #SVC_DACR])
- 	str	\tmp1, [sp, #SVC_ADDR_LIMIT]
--	.if \disable
--	uaccess_disable \tmp0
-+	.if \disable && IS_ENABLED(CONFIG_CPU_SW_DOMAIN_PAN)
-+	/* kernel=client, user=no access */
-+	mov	\tmp2, #DACR_UACCESS_DISABLE
-+	mcr	p15, 0, \tmp2, c3, c0, 0
-+	instr_sync
-+	.elseif IS_ENABLED(CONFIG_CPU_USE_DOMAINS)
-+	/* kernel=client */
-+	bic	\tmp2, \tmp0, #domain_mask(DOMAIN_KERNEL)
-+	orr	\tmp2, \tmp2, #domain_val(DOMAIN_KERNEL, DOMAIN_CLIENT)
-+	mcr	p15, 0, \tmp2, c3, c0, 0
-+	instr_sync
- 	.endif
- 	.endm
- 
--- 
-2.20.1
-
+> ---
+>  arch/arm64/include/asm/insn.h          | 2 +-
+>  arch/arm64/kernel/insn.c               | 3 +--
+>  arch/arm64/kernel/probes/decode-insn.c | 2 +-
+>  3 files changed, 3 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/insn.h b/arch/arm64/include/asm/insn.h
+> index 575675145fe2..0bc46149e491 100644
+> --- a/arch/arm64/include/asm/insn.h
+> +++ b/arch/arm64/include/asm/insn.h
+> @@ -368,7 +368,7 @@ __AARCH64_INSN_FUNCS(msr_reg,	0xFFF00000, 0xD5100000)
+>  
+>  #undef	__AARCH64_INSN_FUNCS
+>  
+> -bool aarch64_insn_is_nop(u32 insn);
+> +bool aarch64_insn_is_steppable_hint(u32 insn);
+>  bool aarch64_insn_is_branch_imm(u32 insn);
+>  
+>  static inline bool aarch64_insn_is_adr_adrp(u32 insn)
+> diff --git a/arch/arm64/kernel/insn.c b/arch/arm64/kernel/insn.c
+> index d63d9cd8b4a2..0829bb5b45ec 100644
+> --- a/arch/arm64/kernel/insn.c
+> +++ b/arch/arm64/kernel/insn.c
+> @@ -51,8 +51,7 @@ enum aarch64_insn_encoding_class __kprobes aarch64_get_insn_class(u32 insn)
+>  	return aarch64_insn_encoding_class[(insn >> 25) & 0xf];
+>  }
+>  
+> -/* NOP is an alias of HINT */
+> -bool __kprobes aarch64_insn_is_nop(u32 insn)
+> +bool __kprobes aarch64_insn_is_steppable_hint(u32 insn)
+>  {
+>  	if (!aarch64_insn_is_hint(insn))
+>  		return false;
+> diff --git a/arch/arm64/kernel/probes/decode-insn.c b/arch/arm64/kernel/probes/decode-insn.c
+> index b78fac9e546c..263d5fba4c8a 100644
+> --- a/arch/arm64/kernel/probes/decode-insn.c
+> +++ b/arch/arm64/kernel/probes/decode-insn.c
+> @@ -46,7 +46,7 @@ static bool __kprobes aarch64_insn_is_steppable(u32 insn)
+>  		 * except for the NOP case.
+>  		 */
+>  		if (aarch64_insn_is_hint(insn))
+> -			return aarch64_insn_is_nop(insn);
+> +			return aarch64_insn_is_steppable_hint(insn);
+>  
+>  		return true;
+>  	}
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
