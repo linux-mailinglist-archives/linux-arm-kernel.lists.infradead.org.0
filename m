@@ -2,90 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41FA11C4086
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:53:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ACCB1C4094
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:56:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yeN8Zx4wYCLA48YES6xUyc3dp3sYpAAEMMGNRIadodE=; b=J/Ntxfu/T4OuVk
-	12zPcqHrFBQDtinA6+e+9e9K/WrXUOv7Y7oWcpCQe5UAD4LOVfuEUuoPk1FNeV6LqMWxOJWa3y+UM
-	8yjlGgHlAqtCOS5FBqppXj6VG135rk0jR/iY2vPokkVMkI3vzgZVn+X1EWSb+kpgk1YDajAwfkL13
-	VinKYD+sH8uH0qCYa/5eckGUB1sPnEwv//Rv046YWd52UNoLLeUaFWK7pp0s++BmfoJN/ZtCqem39
-	CMpmVqzbYoLEuL3iPFpG2XCSHjDuPr3g45ijFBDjl1mnNxqA6JTZphFNsLOC4kyj+Hs1LSEyyjb17
-	R3NrSCoH82GkfNhXBe7g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+prhTxTTHz7qdpKqT0FxIhprdfIF703lBfen1yHr+co=; b=UhM
+	SdAHNa7ufK0WMa6JptWnscVmHrIaKVOz1lOt4bcgeonLzsSUEG3zv2Gjx0zs94Nf9J8kmcbobHQx7
+	L7y3sokNjqleqwDgD6lpt/No1IHYjHqoyOfPhVodDP+NUCO/qjtBq88+Eq0y8tEgO/+n/oUkO0HPB
+	hBZIsA5C8A0wYr3SIn6dg19wumhK/n0k6VZnRJcVkHAQZ96ofQPns+7Vnn3U+SBot55iYUNlvHvG6
+	ago65j0f7w25knhj2/LYVUl/8yl/hPLQk4vpdqqFd2o0azu6rFKTllRPMHKHVTjgYPxRSCMIBzIid
+	TV+yoF0w3ichdx46vtkw6ER1ErNI/og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVeL7-0006ek-Vo; Mon, 04 May 2020 16:53:09 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVeKx-0006Xs-9p
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:53:04 +0000
-Received: from apollo.fritz.box (unknown
- [IPv6:2a02:810c:c200:2e91:6257:18ff:fec4:ca34])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-384) server-signature RSA-PSS (2048 bits) server-digest
- SHA256) (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id 190E822FF5;
- Mon,  4 May 2020 18:52:45 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1588611169;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=s3MJel5dUV3iL+D3nK/MzZnYREoru8RurZpnEykOVsQ=;
- b=t9zuEan8+Y5jKryk55vfcPI5vOFxLGri2s2STZlooSNGGkQqD/3NuI4nMpimzXixTW0zlu
- 8oIX9gF/JCn5vb2Ww1SDCUEq0HP98Pe7rGQyHQo0QgmmFx6DOUB7RvIhfwXlFBCqdQiGu4
- H/PN+kTxkxOReVCPH8UZFx7FloB72i4=
-From: Michael Walle <michael@walle.cc>
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org
-Subject: [PATCH RESEND net-next] net: dsa: felix: allow the device to be
- disabled
-Date: Mon,  4 May 2020 18:52:28 +0200
-Message-Id: <20200504165228.12787-1-michael@walle.cc>
-X-Mailer: git-send-email 2.20.1
-MIME-Version: 1.0
-X-Spamd-Bar: ++++++
-X-Spam-Level: ******
-X-Rspamd-Server: web
-X-Spam-Status: Yes, score=6.40
-X-Spam-Score: 6.40
-X-Rspamd-Queue-Id: 190E822FF5
-X-Spamd-Result: default: False [6.40 / 15.00]; FROM_HAS_DN(0.00)[];
- TO_DN_SOME(0.00)[]; R_MISSING_CHARSET(2.50)[];
- FREEMAIL_ENVRCPT(0.00)[gmail.com]; TAGGED_RCPT(0.00)[];
- MIME_GOOD(-0.10)[text/plain]; BROKEN_CONTENT_TYPE(1.50)[];
- TO_MATCH_ENVRCPT_ALL(0.00)[]; NEURAL_SPAM(0.00)[0.858];
- DKIM_SIGNED(0.00)[]; RCPT_COUNT_SEVEN(0.00)[11];
- MID_CONTAINS_FROM(1.00)[]; RCVD_COUNT_ZERO(0.00)[0];
- FROM_EQ_ENVFROM(0.00)[]; MIME_TRACE(0.00)[0:+];
- ASN(0.00)[asn:31334, ipnet:2a02:810c:8000::/33, country:DE];
- FREEMAIL_CC(0.00)[davemloft.net,gmail.com,lunn.ch,nxp.com,kernel.org,walle.cc];
- SUSPICIOUS_RECIPS(1.50)[]
-X-Spam: Yes
+	id 1jVeOJ-0001UA-0o; Mon, 04 May 2020 16:56:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVeO6-0001Rb-9b
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:56:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EDCC6101E;
+ Mon,  4 May 2020 09:56:10 -0700 (PDT)
+Received: from e120937-lin.home (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D2EAF3F68F;
+ Mon,  4 May 2020 09:56:09 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/3] SCMI System Power Support
+Date: Mon,  4 May 2020 17:55:37 +0100
+Message-Id: <20200504165540.37188-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_095259_501376_E11C5463 
-X-CRM114-Status: GOOD (  14.88  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200504_095614_385936_7F7636E9 
+X-CRM114-Status: GOOD (  11.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
- [list.dnswl.org]
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,60 +59,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Vladimir Oltean <vladimir.oltean@nxp.com>, Michael Walle <michael@walle.cc>,
- Vivien Didelot <vivien.didelot@gmail.com>,
- Claudiu Manoil <claudiu.manoil@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "David S . Miller" <davem@davemloft.net>
+Cc: Jonathan.Cameron@Huawei.com, cristian.marussi@arm.com,
+ james.quinlan@broadcom.com, lukasz.luba@arm.com, sudeep.holla@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If there is no specific configuration of the felix switch in the device
-tree, but only the default configuration (ie. given by the SoCs dtsi
-file), the probe fails because no CPU port has been set. On the other
-hand you cannot set a default CPU port because that depends on the
-actual board using the switch.
+Hi all,
 
-[    2.701300] DSA: tree 0 has no CPU port
-[    2.705167] mscc_felix 0000:00:00.5: Failed to register DSA switch: -22
-[    2.711844] mscc_felix: probe of 0000:00:00.5 failed with error -22
+this series wants to add the core SCMI System Power support and related
+events' handling logic: the protocol support itself is trivial and boils
+down to some bare initializations and supporting one SCMI System Power
+notification event meant to carry platform-originated System transition
+requests. This is patch [1/3].
 
-Thus let the device tree disable this device entirely, like it is also
-done with the enetc driver of the same SoC.
+On top of this a new SCMI driver has been developed which registers for
+such System Power notification and acts accordingly to satisfy such
+plaform system-state transition requests that can be of forceful or
+graceful kind.
 
-Signed-off-by: Michael Walle <michael@walle.cc>
----
-This was part of a two patch series. The second patch is already merged.
-This patch was never picked up, although it was Acked-by: David Miller,
-see:
-https://lore.kernel.org/netdev/20200314.205335.907987569817755804.davem@davemloft.net/
+In order to comply with such graceful requests, and co-operate with
+userspace entities to drive a clean shutdown/reboot, the logic of the
+driver relies on the same orderly_* API methods used by ACPI when handling
+ACPI Shutdown bus events.
+As an alternative method to tunnel graceful requests to userspace it is
+possible to configure, via available module parameters, a specific signal
+to be sent to CAD pid. This is patch [2/3].
 
-Since there is no more dependency, this patch could go through the
-net-next queue.
+Patch [3/3] is a mere JUNO example of the minimal DT bindings needed to
+enable the protocol at the DT level and is NOT meant to be upstream as of
+now.
 
- drivers/net/dsa/ocelot/felix.c | 5 +++++
- 1 file changed, 5 insertions(+)
+The series is based on SCMI Notifications Core V7 [1] (only posted not
+merged) which in turn is based on top of scmi-for-next-5.7.
 
-diff --git a/drivers/net/dsa/ocelot/felix.c b/drivers/net/dsa/ocelot/felix.c
-index 69546383a382..531c7710063f 100644
---- a/drivers/net/dsa/ocelot/felix.c
-+++ b/drivers/net/dsa/ocelot/felix.c
-@@ -699,6 +699,11 @@ static int felix_pci_probe(struct pci_dev *pdev,
- 	struct felix *felix;
- 	int err;
- 
-+	if (pdev->dev.of_node && !of_device_is_available(pdev->dev.of_node)) {
-+		dev_info(&pdev->dev, "device is disabled, skipping\n");
-+		return -ENODEV;
-+	}
-+
- 	err = pci_enable_device(pdev);
- 	if (err) {
- 		dev_err(&pdev->dev, "device enable failed\n");
+Thanks
+
+Cristian
+
+----
+
+[1] https://lore.kernel.org/linux-arm-kernel/20200504163855.54548-1-cristian.marussi@arm.com/
+
+Cristian Marussi (3):
+  firmware: arm_scmi: Add System Power Protocol support
+  firmware: arm_scmi: Add SCMI System Power Control driver
+  arm64: dts: juno: add SCMI SystemPower Protocol support
+
+ arch/arm64/boot/dts/arm/juno-base.dtsi        |   4 +
+ drivers/firmware/Kconfig                      |  12 +
+ drivers/firmware/arm_scmi/Makefile            |   3 +-
+ drivers/firmware/arm_scmi/driver.c            |   1 +
+ .../firmware/arm_scmi/scmi_power_control.c    | 389 ++++++++++++++++++
+ drivers/firmware/arm_scmi/system.c            | 145 +++++++
+ include/linux/scmi_protocol.h                 |  18 +
+ 7 files changed, 571 insertions(+), 1 deletion(-)
+ create mode 100644 drivers/firmware/arm_scmi/scmi_power_control.c
+ create mode 100644 drivers/firmware/arm_scmi/system.c
+
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
