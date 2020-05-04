@@ -2,81 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 011711C3772
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:00:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46D861C3775
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:01:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fDRWPq/TgZDHz3rlf+y+uGtCwttkpF2uThYavzWTbm4=; b=Nvo2jP9cxM1McT
-	8EPzW55XFFk/t+hOn3Z9IBkxl/TMvwtPXsXD/jMoXe7pR5SisXM9hAVl69RCele3unUTMv0Vz4LYW
-	HlqUY7fB6gUnyX400S250/Fa29hfQcMuZ+QzpfpP13FkHVmJnkrrJPUCsGEvVbWsoVvp+Xb5NcIxC
-	Lm077QdX+8/rlpqVulPY7f6mX3CSFBluNE5iM9xtwsC81dUWkBk1B+BcUInVlediWDkANNeq9th1x
-	u7kgMIXv9ldXfX1DgEDJ2tyEVarc/+dJIlk3C30nBwy8M8PVyPMTWEdHV2BBNWRxRa8rx9MWii8m6
-	n9Z38DBTbpuLWelYPnxQ==;
+	List-Owner; bh=tVpJ/1gIuH67wTvgS6FYGfZT0cAb5hOU7LZ/hKp8Otk=; b=vELrJLYYAo2ouH
+	gaNRHnhs5RZzY2L3uafhiXun3AdhPfLzcPfbqZtG45MxDSfptQFEJTLtpdNdcAKw7VEPl9yH9gU+s
+	PuZf0Ys3tHH00Yct87Xty/0oOiIGpfYOtpFEnF2vIWrQ3iI/aIXLDzovmsq7ykcf73/9urt9Aevux
+	z/gF6eJ6iNnkCebCuxUv8U6bp3Ci0SPJ4ODIK4gshzR6ZzVAT+iHizPzufvKDkJlYNWgKHcAy6f1K
+	RF4wzpxgutv6aVyB5pXVnktZgf5kHiU255k4XsKRFgjI4wzyTdpmUP+WFMcu5k+Dk6WxtSsSusNCa
+	AfAjb+OxULm0NjYHuE+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVYpw-00056n-LX; Mon, 04 May 2020 11:00:36 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jVYqG-0005Ms-8F; Mon, 04 May 2020 11:00:56 +0000
+Received: from esa6.hgst.iphmx.com ([216.71.154.45])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVYpm-000550-EX; Mon, 04 May 2020 11:00:27 +0000
-Received: by mail-wm1-x343.google.com with SMTP id k12so7880484wmj.3;
- Mon, 04 May 2020 04:00:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=j78pwgAoPIBXpzCPQa9obI1dS/AtoekTWfi/Z9wgTpE=;
- b=FMqEVASMwd4jsKWMbAfOMx/EXRykuKYV/52Xl+u4cPeVIB+mJWcN7ENXhsbR7M4YJc
- INi2krmc920kV+fanUnf0LILJH2Vmh/gmmgk4A7BXBQAfzTu+Zm58kFeDWvGGfM5dAHJ
- 7R9XZXqsajrXS7/zCRbwZQGQrHHzAvouV68ESanU82QXWL2QQyIVUeA7sdBOosriWGXE
- SRtWN7QSzU6D579adzQtB5mdv/NeBhdlq+ZidnENn7rHNGyscMVcKK0DoRAVJBDpCrq+
- XeKGgCNTrGfGaVKG9C1tN6Isl3gKQkdvJTBKgL6n9rwYTdKQ7ijEgpd+WTIW3CmHcxI0
- y8GA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=j78pwgAoPIBXpzCPQa9obI1dS/AtoekTWfi/Z9wgTpE=;
- b=gaiFJQ7OGRvzopDvmaK9lU6j0gG+TObHFDh8cejlydctIKr1QlRv2EuDJVZ06islyE
- qiYBT8IvC2ab7egGWmA4PIECjYSXS/qR7erdv7gkoa1+TJGUI3FKmMM+gT1nDVRsxbn8
- Iz3bfBUX3TjL6LSMZibj2eCSPSEoA6rF1ZngrpHNGT21iNLy9x3bmWwX48XAeu0VYqJ7
- tVo207aY3cguBzDIPeYeXIRvXNiRdBd63zHn2/e3XvbLJA8A7m0Stgmfs6sHpRH7CtAN
- cCVv8fivUGyLxzbpmUlFqT/j1yOvTiLuvgTDDvS2rqvfhM/60aMWAPmZ9qm2sVX1LRLB
- 9iXQ==
-X-Gm-Message-State: AGi0PuZtBpg5fk9eWuNp/3JYnxIiB3/eRebJ8+qMHKdOY+n2mCSEbaio
- 5TqUXlA96jqNKHSaFNE155AXCdMEEgRnzx9cPmJ8m0V3EHA=
-X-Google-Smtp-Source: APiQypLU0iLwcBk2HNdVaMBVWBe/1k0yjxd5T16MVENu1G8k0t+p0w9Rby7rjQjjzKlds5iHe4qWJXWBe1wvpqtxMAg=
-X-Received: by 2002:a05:600c:c9:: with SMTP id
- u9mr13753067wmm.15.1588590025222; 
- Mon, 04 May 2020 04:00:25 -0700 (PDT)
+ id 1jVYpn-00055R-Ov; Mon, 04 May 2020 11:00:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588590027; x=1620126027;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=wGerDWJsAgrSdERHqxwXp1LKQqtnnZ0kriiexny7f3M=;
+ b=EpqFnwjrbyN1dC8ha7NUfWxiSKQnnN/Bm1zCoEOeS0EmCULs+c8IYeg8
+ sYQWrpUnpUr0DjLK0YeHdyq3h3SyCkIgqpiLZw2+7kjM+YX5HdY3XGK3s
+ rcB6e+gz7YL9XVokdiNBn8j6S/J4RptHnm5pwZiA9eu0n6HE/xtO4xLkq
+ yLFFaUuNTNIVQsFY2F4dvxEu77UuJDDLBMPdwDJ3rdmT2i3J0A7kaF90F
+ NKD6mqlQVVAnr/BSvunhfXwgt+HEVr6UiBNJ6USOEjjNicS217ypzxU3K
+ Cz6sB86HR3HcYxR1nTKj7DDwCGpt1pySFr20jdMixqcg7LznE4d1HY8dD Q==;
+IronPort-SDR: MOaj86Nr9VAaN9cLcnswPwFpjKo6FdKgusvjqV1WAjxvHfH70LHZbUgs89R+NKkiNo262xqpvx
+ YwqxSwy1lUG3Nn5/UCtcX+1B94/iZvS4Melf7mK7i50+U73WjYDP8FDNl8IgOve64OXTEOugnv
+ g/Ow0XHP2/sphR+ndxMFYMcHCCkUXmHF4Qwng89tf9nj8ep4BsjnDPiLJzlkjlxFvZzjww4430
+ h9v+PEItsfxWUlD+l1cyafa40qTuS7Vp9jS78NZxz/4SHzdfI4ompDIV9fwDvUS3R+f5F9CUJa
+ RiI=
+X-IronPort-AV: E=Sophos;i="5.73,351,1583164800"; d="scan'208";a="138293079"
+Received: from mail-bn7nam10lp2101.outbound.protection.outlook.com (HELO
+ NAM10-BN7-obe.outbound.protection.outlook.com) ([104.47.70.101])
+ by ob1.hgst.iphmx.com with ESMTP; 04 May 2020 19:00:25 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=crmOjTpAVKK2Lm2II1wNHfG+ne1JG3uOYkcp6rgo5qfsSgXCQylr3u8//CYfkOj+T2cn79Wj1MMCOrx5OQUbBS5QN2AxheCBdUS6O9k/8Far1NlfGZkJgWuJBCPlPqJ04+GT5Ns0d2DqxGVrCCrbZ6ZJhfbQJD95rby2q33+snmoHE2tEviywDZ/fa/wwuyt+QaZDDQ1oFRTTIYEsvj1I6VVwTHMcZFtZT9zO1SP+rfbx8bQa4MBGb9kMSp+IMHAu/mNLqgYo8JIsZC8AnVbURaWqPw8FXiHiQ3Mtn9JzAkH9ULT/+4VNsIke7q4IQbw42hTtSUUZ+yZI+Engu1I+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wGerDWJsAgrSdERHqxwXp1LKQqtnnZ0kriiexny7f3M=;
+ b=jJb+h9g97EfNAxFQ9/g4b4l+LgTkTdICL6ByOkJ8lUpnyKkMlo8CcDOAA57Kd2m7t5ZLzOcCSpkNFXK2hO2awAtg6G66gsS2fAC7gPWXkBPGIXicW3Q7qDPbk6yEQIHJZ11UboXnSjs7CRq7NRUFM0FQWfmIQykT4X1tSTGTaWJJajtxAy4vqzMmDoJHcJiFQjVEIrMaRWSRykUBA270/wJYDmtfSLyjlYZaHN2ZG67Jvpxwxv2W6n57YiEB1+jAeeahv7MDsGo1u8yIx5Pgku57puIxx5zME7w6DApOpYSCY6GUrFXoQad4ygM5fGHHcfErO+4OfmuQgD5SQ2jnIw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wGerDWJsAgrSdERHqxwXp1LKQqtnnZ0kriiexny7f3M=;
+ b=E3SIeft6UhJMdoe7v3fL5NDwbcHx6itgy+4z7rcsbFQFipUsKthMm3ehRvqunk2TJHnAhpJPikueui3zt2eVyeTHGqL/9KMWRxSz3lMaIUhS8m3NN4O+F51EIbb4LtImllUsWxPy8WzWoF7c9nlG8btNuk0pqY5RYO9K4edNN+o=
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
+ by SN6PR04MB4464.namprd04.prod.outlook.com (2603:10b6:805:b2::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.27; Mon, 4 May
+ 2020 11:00:24 +0000
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.2958.030; Mon, 4 May 2020
+ 11:00:24 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v5 3/8] scsi: ufs: export ufs_fixup_device_setup() function
+Thread-Topic: [PATCH v5 3/8] scsi: ufs: export ufs_fixup_device_setup()
+ function
+Thread-Index: AQHWIT7NaY1WAMy1NUS3UysZJe+haKiXwsAg
+Date: Mon, 4 May 2020 11:00:24 +0000
+Message-ID: <SN6PR04MB4640D03DC58950900D90823EFCA60@SN6PR04MB4640.namprd04.prod.outlook.com>
+References: <20200503113415.21034-1-stanley.chu@mediatek.com>
+ <20200503113415.21034-4-stanley.chu@mediatek.com>
+In-Reply-To: <20200503113415.21034-4-stanley.chu@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 4419d74d-7bc3-407e-ef91-08d7f01a58a1
+x-ms-traffictypediagnostic: SN6PR04MB4464:
+x-microsoft-antispam-prvs: <SN6PR04MB4464D7E06A75A49519C21948FCA60@SN6PR04MB4464.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:3276;
+x-forefront-prvs: 03932714EB
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: 2zUomWtTQ5j+gwLdDPUhEqEF0bAkfTYmHf8rdWModnE8ie3yBRLRH4RJ0h0PUG1G4sdBsotLE+8GVK00skfm8BjJP2qawrDlTNcqPobZXhD7kdAe4Yo6XxIpZyaabH6XVG6Qh1zaThD6nOfPbcUtiQ1YaUzvBYNndLRMCZCJ6T00Yrze17buigaw02KartXS6np8+GqYvbCEVS59zKpTNALNmfeuktCvEdhLbJJoLgvaMK9EgcM05/iM37yfluWi1dLUVSlffsxCbpR/3HKN0l2edYNiC07enOrNzWvqPTHRNIczssDAqg5HlutY9L2Vu6rWQoOcXzldJV7BJalmCHJwy3gSAv0MedYCKovH5ZmGM6P5d/0uNAIsV2zQ7Q+RLyT2rNEQyNx6njubXMBK9sH3eHTV5tiOU86uCFw49obRT3TdTZpqd+HBWNgeWZ5p
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(376002)(39860400002)(346002)(396003)(136003)(66476007)(8676002)(26005)(2906002)(52536014)(6506007)(71200400001)(478600001)(33656002)(5660300002)(86362001)(64756008)(55016002)(9686003)(7696005)(66946007)(54906003)(66446008)(76116006)(4326008)(66556008)(558084003)(186003)(8936002)(316002)(7416002)(110136005);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: W5GqLAP+OlILEFU9pLNkdLq7e4QKdITObCubHumCT8aOnIKD4itrobaoZRgrL6u9FWwcgqn2/4cRwa8Rxhx0gLUpmFpLpO/TABYy4cZMWfVy5vlNF269v2HwUNh0R97hXaevg1ChMlNVWOCqjfzmL/YGKX8dVWac1je6aSrMCAWnrnc0c8l38oWJ2AhpZaXTU30Y0rwiklMCWa2NR2bn4HzcOkJXCdWx7w6VRGviv3rrFyInUpwpSs30SPbQkhA6bQwo95Bnn6RvukUq+/qu36EoOIsIG3f2hZYI/qHJdm5DIAC/AAQq9+TjELDSr+ZMZgBHbVGxLZs43rqUWOdn6uB0uQLL8h3mwtEsURLnhfQqdScuR5Uw1AjWi2LnfMBleWe8xNgj9WV9kpvuI/Jb0hiNc2D+kvmwdGbpt7lc9zCXZFQqzkoGtY5YuRzrA7qctI2qcHrpM73vntmQoaXdWTxANzrtGDJJ3/+5/Xi/rY3vChbiufzZAMRMjnFdY6elgOna/ePT3yyYmmEPTccbzQN9N3GFjbgXT65Fsl75VSIM9h0YTLm5580OBpmHTOrBkfvLQtTf+uw/q/UEd2f2NxHc35OX9BDyPR+c0uLombYh3VK7ahefLksUkbte74knzR79mS02Czi6N+1OeTmi280PWI8WkzisxZwQtMAAEaQM0aGDk2iutN7AVmPqLqnfAF4up3oWUBm39+oft1ZvxTceF3H+hyHStjaPycv+iByyaxi4steziYfFnvNERSwqYD2dLM9iT91qjuAJLdtUHlkdgPyJ5l3DXmXsOPzmJj0=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-References: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
- <20200502114752.1048500-6-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20200502114752.1048500-6-martin.blumenstingl@googlemail.com>
-From: hex dump <hexdump0815@gmail.com>
-Date: Mon, 4 May 2020 13:00:10 +0200
-Message-ID: <CAKTihDXSmqzBxndCRncpBRdqKCtrujpzWUJ_-3k7JvXpNKSQKQ@mail.gmail.com>
-Subject: Re: [PATCH 5/6] phy: amlogic: meson8b-usb2: unset the IDDQ bit during
- PHY power-on
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4419d74d-7bc3-407e-ef91-08d7f01a58a1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 May 2020 11:00:24.1658 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: v9fGiIYPUu4/oNBSBHNzBW7hegQ+vf7jxsWcoc2pO48q1yQWrI5TPKDYvzOx3FiIs08fGogACyAYoXMFbgBpYA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4464
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_040026_492477_F3B478B6 
-X-CRM114-Status: GOOD (  15.75  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200504_040027_902613_A1849F8A 
+X-CRM114-Status: UNSURE (   9.33  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.154.45 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [hexdump0815[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [hexdump0815[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,106 +147,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, narmstrong@baylibre.com,
- linux-kernel@vger.kernel.org, kishon@ti.com, vkoul@kernel.org,
- robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 2, 2020 at 1:48 PM Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> The vendor driver unsets the set_iddig bit during power-on as well and
-> sets it when suspending the PHY. I did not notice this in the vendor
-> driver first, because it's part of the dwc_otg driver there (instead of
-> their PHY code). While here, also add all other REG_DBG_UART register
-> bit definitions.
->
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+ 
+> 
+> Export ufs_fixup_device_setup() to allow vendors to re-use it for
+> fixing device quriks on specified UFS hosts.
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
 
-Tested-by: hexdump <hexdump0815@googlemail.com>
-
-> ---
->  drivers/phy/amlogic/phy-meson8b-usb2.c | 44 +++++++++++++++++++-------
->  1 file changed, 32 insertions(+), 12 deletions(-)
->
-> diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> index 7236b8885f07..436dfa1a8a04 100644
-> --- a/drivers/phy/amlogic/phy-meson8b-usb2.c
-> +++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-> @@ -78,6 +78,17 @@
->         #define REG_ADP_BC_ACA_PIN_FLOAT                BIT(26)
->
->  #define REG_DBG_UART                                   0x10
-> +       #define REG_DBG_UART_BYPASS_SEL                 BIT(0)
-> +       #define REG_DBG_UART_BYPASS_DM_EN               BIT(1)
-> +       #define REG_DBG_UART_BYPASS_DP_EN               BIT(2)
-> +       #define REG_DBG_UART_BYPASS_DM_DATA             BIT(3)
-> +       #define REG_DBG_UART_BYPASS_DP_DATA             BIT(4)
-> +       #define REG_DBG_UART_FSV_MINUS                  BIT(5)
-> +       #define REG_DBG_UART_FSV_PLUS                   BIT(6)
-> +       #define REG_DBG_UART_FSV_BURN_IN_TEST           BIT(7)
-> +       #define REG_DBG_UART_LOOPBACK_EN_B              BIT(8)
-> +       #define REG_DBG_UART_SET_IDDQ                   BIT(9)
-> +       #define REG_DBG_UART_ATE_RESET                  BIT(10)
->
->  #define REG_TEST                                       0x14
->         #define REG_TEST_DATA_IN_MASK                   GENMASK(3, 0)
-> @@ -172,20 +183,24 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
->         regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT,
->                            REG_CTRL_SOF_TOGGLE_OUT);
->
-> -       if (priv->dr_mode == USB_DR_MODE_HOST &&
-> -           priv->match->host_enable_aca) {
-> -               regmap_update_bits(priv->regmap, REG_ADP_BC,
-> -                                  REG_ADP_BC_ACA_ENABLE,
-> -                                  REG_ADP_BC_ACA_ENABLE);
-> +       if (priv->dr_mode == USB_DR_MODE_HOST) {
-> +               regmap_update_bits(priv->regmap, REG_DBG_UART,
-> +                                  REG_DBG_UART_SET_IDDQ, 0);
->
-> -               udelay(ACA_ENABLE_COMPLETE_TIME);
-> +               if (priv->match->host_enable_aca) {
-> +                       regmap_update_bits(priv->regmap, REG_ADP_BC,
-> +                                          REG_ADP_BC_ACA_ENABLE,
-> +                                          REG_ADP_BC_ACA_ENABLE);
->
-> -               regmap_read(priv->regmap, REG_ADP_BC, &reg);
-> -               if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
-> -                       dev_warn(&phy->dev, "USB ID detect failed!\n");
-> -                       clk_disable_unprepare(priv->clk_usb);
-> -                       clk_disable_unprepare(priv->clk_usb_general);
-> -                       return -EINVAL;
-> +                       udelay(ACA_ENABLE_COMPLETE_TIME);
-> +
-> +                       regmap_read(priv->regmap, REG_ADP_BC, &reg);
-> +                       if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
-> +                               dev_warn(&phy->dev, "USB ID detect failed!\n");
-> +                               clk_disable_unprepare(priv->clk_usb);
-> +                               clk_disable_unprepare(priv->clk_usb_general);
-> +                               return -EINVAL;
-> +                       }
->                 }
->         }
->
-> @@ -196,6 +211,11 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
->  {
->         struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
->
-> +       if (priv->dr_mode == USB_DR_MODE_HOST)
-> +               regmap_update_bits(priv->regmap, REG_DBG_UART,
-> +                                  REG_DBG_UART_SET_IDDQ,
-> +                                  REG_DBG_UART_SET_IDDQ);
-> +
->         clk_disable_unprepare(priv->clk_usb);
->         clk_disable_unprepare(priv->clk_usb_general);
->
-> --
-> 2.26.2
->
 
 _______________________________________________
 linux-arm-kernel mailing list
