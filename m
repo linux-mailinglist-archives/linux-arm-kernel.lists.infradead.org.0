@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9257F1C48C6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 23:04:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F05E91C48CB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 23:08:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y7tMwHzhT8D5l9RyvYG4Wpm88ZMF1aKOyjd9HPqL0UM=; b=Ht3mslgmFcV+8x
-	T7MDK/rdcregQIq/aldGcKIz4+u8G3MgUrlo5FQITvD+s0NWajLRxG8WNH5XA5o6dS6cI4kbF2521
-	lYDnx8+bA9DmoSBoDUf+/moaBxW5+lt6YHRvez0mb3R+sVVaq95PkaJ7FkcdeGu4Ds8oPZZs6GJ3Y
-	reylCC/myyIjgcAbqDpeNs99PXpjjGd8wylqEqGnmXOVaCwUbDys2F+r5Wh2LQ4OkX8iCldEqdrzF
-	yWOJkEvIvmKztpMffKpNlqymuFxUkA/6uqf9xSqK5juIjfO4aVTrY2wfSeOJax1x1weL17sML4Yb3
-	iqCT4A08BTARoaxl76vA==;
+	List-Owner; bh=nn8ctUYd6r527+bESpbOUGmcQaJIvvgmY8kZ841WBj4=; b=mMTeSADYR7uDEb
+	rpTIsF1Ey7I6SI761ABWuYgwSZueKUoyYfc/GY0EOym7BOfJJIcffA9JkbqbTMOyFCp7JclccIDkt
+	8XL4etmE5jFDULeX5Y+H7ZbuCJeBgHcnqDP5YM5GH1+UGXsnBEBT/IBaI/RfDkR2HUTl0cMldVSZa
+	S0zO5yZOzq+OVMkdfsWSD97pqqK7rLrYBQGLWojv9rylOVV7L5zKo35IEA6+bw2bTyfYbDfnXFsZC
+	5V/idHtzhG2pPCFMEQDg8xHRBfPS8IfXqm60s9na/Zv026C6zv1kkQJyYVjubHGmhC9MC2bnjIHhD
+	BjX6B7vHRLAPV40Nri5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jViGU-0002Yu-01; Mon, 04 May 2020 21:04:38 +0000
+	id 1jViJp-00068i-4Z; Mon, 04 May 2020 21:08:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jViGA-0002PH-Oa
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 21:04:20 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4BDC520721;
- Mon,  4 May 2020 21:04:17 +0000 (UTC)
+ id 1jViJh-00067b-Su
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 21:07:59 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B7B8D206C0;
+ Mon,  4 May 2020 21:07:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588626258;
- bh=uzln4Pud3znUaVLrXJ/2VBLassqd467HHBti1c0w4sc=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Z1D64umVPdKGTDrHCEl6UPZw+rkmnm7Wuv5L2nsENzpGvbO7Wql2rFPJk5bunNM9c
- NXgnaWayAG3aru9r7nPrB5S5O2+EzvX2rDdNNZ7ImJ8kZR4RzeMo5mEbjEGgGhKQG6
- u8SemSfFpY9zRYwL7RXKK2Dn9MiLfroD3YUXO3Oc=
+ s=default; t=1588626477;
+ bh=mbSUYr1bv29MdF7Avy5q5ETeCqyA2kQf/M7Q7otHGuY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=s04jy66nnxuguUQY+kI8TfPWfWL/MDxIX+vMbkhAsrtlSSQuzMfdU0/g/XooJbA05
+ aUV0HgBF1aCe4Of6QBveEXKowhlVtUBDs2WRpwQnqnbTG3FiqHRtFlXWx2QM0nh3FY
+ hLXkWgRivnKQuyAGnOkkpWjE69zgk3iQOi8RbWjM=
+Date: Mon, 4 May 2020 22:07:53 +0100
 From: Will Deacon <will@kernel.org>
-To: James Morse <james.morse@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] firmware: arm_sdei: Drop check for /firmware/ node and
- always register driver
-Date: Mon,  4 May 2020 22:04:10 +0100
-Message-Id: <158861396805.45075.3995796630639381619.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200422122823.1390-1-sudeep.holla@arm.com>
-References: <20200422122823.1390-1-sudeep.holla@arm.com>
+To: George Spelvin <lkml@sdf.org>
+Subject: Re: [PATCH v2] arm64: ptr auth: Use get_random_u64 instead of _bytes
+Message-ID: <20200504210752.GB5657@willie-the-truck>
+References: <202003311544.02VFiClP011630@sdf.org>
+ <20200428125812.GD6791@willie-the-truck>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200428125812.GD6791@willie-the-truck>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_140418_816374_0EE3D746 
-X-CRM114-Status: UNSURE (   9.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200504_140757_952607_3CDD267D 
+X-CRM114-Status: GOOD (  15.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,35 +77,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 22 Apr 2020 13:28:23 +0100, Sudeep Holla wrote:
-> As with most of the drivers, let us register this driver unconditionally
-> by dropping the checks for presence of firmware nodes(DT) or entries(ACPI).
+On Tue, Apr 28, 2020 at 01:58:12PM +0100, Will Deacon wrote:
+> On Tue, Mar 31, 2020 at 03:44:12PM +0000, George Spelvin wrote:
+> > get_random_bytes() is approximately 4x the cost of two
+> > get_random_u64() calls, because the former implements
+> > anti-backtracking.
+> > 
+> > Because these are authentication keys, useless to an attacker
+> > as soon as the kernel stops using them, there is no security
+> > benefit from anti-backtracking.
+> > 
+> > Signed-off-by: George Spelvin <lkml@sdf.org>
+> > Cc: Mark Rutland <mark.rutland@arm.com>
+> > Cc: Will Deacon <will@kernel.org>
+> > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > Cc: linux-arm-kernel@lists.infradead.org
+> > ---
+> > v2: Took out all the clever bitmap-based stuff and made a simple
+> >     boring helper function to replace get_random_bytes(&key, 16).
+> > 
+> >  arch/arm64/include/asm/pointer_auth.h | 16 +++++++++++-----
+> >  arch/arm64/kernel/pointer_auth.c      | 10 +++++-----
+> >  2 files changed, 16 insertions(+), 10 deletions(-)
 > 
-> Further, as mentioned in the commit acafce48b07b ("firmware: arm_sdei:
-> Fix DT platform device creation"), the core takes care of creation of
-> platform device when the appropriate device node is found and probe
-> is called accordingly.
-> 
-> [...]
+> Please can you resend this against the arm64 for-next/ptr-auth branch [1]?
+> I can't apply it as-is.
 
-Applied to arm64 (for-next/sdei), thanks!
-
-[1/1] firmware: arm_sdei: Drop check for /firmware/ node and always register driver
-      https://git.kernel.org/arm64/c/caf2cd610dbb
+Any update on this one?
 
 Cheers,
--- 
+
 Will
 
-https://fixes.arm64.dev
-https://next.arm64.dev
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/ptr-auth
 
 _______________________________________________
 linux-arm-kernel mailing list
