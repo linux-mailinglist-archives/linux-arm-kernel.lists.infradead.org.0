@@ -2,123 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0CC41C3AB6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:01:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E2BD1C3AC3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:02:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=FflJ4OMy+1Ga/NuswPA7TPZuHSbMIdtdmppXgOSczSk=; b=W+t6VoDueTtlnuMF2wCck4O257
-	V7QuVHAjtixbHZ5bIOKM4hCaQetxXUd20+n/9Ixi4MOiHY4KSX2e6dp1r/AGo1kM3oqkoohex569u
-	n35sKzUQcVrrFzi59fl+cFxKbTFKIj6/6s8YUssrzXCSGZX7UqaTJoDyMrBGReGdRD7GCKZX/uP03
-	Y7EU6QIspRi6EPBC1PnGJRfPqFPgYFKyfsLFsANjJegDQ8d2mWDoZHWup9BK4qy/PsISH40sOgNek
-	fytUe+3FkJkxDxtgYN6AGL0wCP9BqoLK2UBe2UX5s3eAiR2Agaa4itbh/n42tSs9EuVPgHe1edUy0
-	cXR0TKIw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hUPbgAdvc9dVXMhUerKD+AGvPmSAELpw4lCU8PzUJs0=; b=oP+5YnyuRIBMuD
+	aagBuetXMXi88RTHKgfYyEdZF6gd9XxCv4yXizxDbagGN4YrzB6iT5FBY1eiaR2gWlPNCipHoTqcp
+	H33MBQt6npqqrLLS1wbvKmeK862yfeVo6KQbTRzbsSVrDTeZEuaVM7nyLo2kYweELIrLUc3MEimnU
+	bQ4L6pfXMrg5mtWuWGbay+nRnGhsvr/ShN3V76eo4MbQHfxZxm1da/MCdCDm47ZOETMtWVjLkbuhn
+	BMgPioDx+F4vmt11zNx1Al1xZbOEpy4BpD0g8kEXvuviUrr3zmdnei3ci345naUnTZCIloCBHo9vx
+	8IWg106doQJk69Xjpkaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVaie-0005ok-Qt; Mon, 04 May 2020 13:01:12 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jVajf-0006pd-FP; Mon, 04 May 2020 13:02:15 +0000
+Received: from mail-eopbgr60040.outbound.protection.outlook.com ([40.107.6.40]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVac7-0002l6-C9
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:54:32 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200504125425euoutp01081f08e3da7e99dcd7c99f1e4918c340~L1G63hgGM2809928099euoutp01X
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  4 May 2020 12:54:25 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200504125425euoutp01081f08e3da7e99dcd7c99f1e4918c340~L1G63hgGM2809928099euoutp01X
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1588596865;
- bh=nL6s2qmhXVj8ojZqxdlRyULSFgOINvfslVF6oVYkjYo=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=BI3SS6WgGwHE6z6hb8H2c3rnXkhkt7VLJTt0LS0pGoNowiCWFFnG2ql+QKz4aVIG0
- HeTD9424iZz7JBQObzI4cdFbEUO2GRQqSFI65na/9OWtkwAJX4vgpVhtiq+hPkHN5J
- o3ApZuT2se/h5vL6bEMG2R1V/FFj6Z6e1KB/wh+8=
-Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200504125425eucas1p18f24436a94facbca4aad0c4973fc3bb1~L1G6Z0i_m1058810588eucas1p1l;
- Mon,  4 May 2020 12:54:25 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges2new.samsung.com (EUCPMTA) with SMTP id 93.E2.60679.08010BE5; Mon,  4
- May 2020 13:54:25 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200504125424eucas1p2a654aa95d553e10422dcb5125f960a49~L1G6KQaoN0599205992eucas1p2E;
- Mon,  4 May 2020 12:54:24 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200504125424eusmtrp1f37551067796b55c518d1f9421bfaf01~L1G6JlmPT2497724977eusmtrp1i;
- Mon,  4 May 2020 12:54:24 +0000 (GMT)
-X-AuditID: cbfec7f4-0e5ff7000001ed07-bd-5eb01080de42
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 2F.06.07950.08010BE5; Mon,  4
- May 2020 13:54:24 +0100 (BST)
-Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200504125424eusmtip27a30e28a337f5989f1eb1fc1e87c59b2~L1G5df-nc0241002410eusmtip2K;
- Mon,  4 May 2020 12:54:24 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v2 21/21] staging: ion: fix sg_table nents vs. orig_nents
- misuse
-Date: Mon,  4 May 2020 14:53:59 +0200
-Message-Id: <20200504125359.5678-21-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200504125359.5678-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA0VSaUwTYRDNt9tul6aFpZDwiURiIxI0nPpjBc8Ek03wh1GJN1plAwRaSJc7
- MSKoaAHlMIpIEJWEoyAITUXkBimXUKUQRG4kBiKHoQIlSm1ZxH9v3rw3bzIZHBW1cu3xEFkk
- LZdJwsQYn6NuM/S63iIqAjyMFQiZ1tOBkG+yy7mkUZ2BkrXdazxS92sBI4uVHxAyv8GHLK5d
- RUi9bgIhK6cGuGRfTS5GlrWO8MimxW9csnNkiXfUkirNKwXUaH0Lh6pbzudQwwO1GPV2eZxL
- jaVoEKqq4Cb1dX0KpbIGCwH1/ksCRi3U92PUA1UJoJYqd5wUXuAfDKTDQqJpufvhq/zgZ9N+
- EWrnWOP4RyQB5O5UAByHxH7YmHJCAfi4iCgCULcywGULPYDzhgIeWywBOJpeaupYbDiSNYub
- qkIAc5KVYMuirP+EmlUY4QkVcwrMjG2JOwC2pwnMIpRIQqHWmALMDRviFGzXT2+IOIQTNDxe
- 2TALiUNQVTaCsHGOUFnRiJqXtTDxT9OczXMgMcSDkxnsHEj4wg7V9831bOCsRsVjsQPsykrl
- sIYkACd6ynhskQpgX2L2ptsHDvesYeYElHCB5TXuLH0M5mn7EfZKlnBwztpMoyaYqX6CsrQQ
- 3rsrYtW7YY7m9VZsk/YzymIKZk9WbZ6xxXSt+WkkHTjm/A/LB6AE2NFRjDSIZrxkdIwbI5Ey
- UbIgt+vh0kpg+q2udY2+GtT8vtYMCByIBcJzS+UBIq4kmomTNgOIo2JbYfVtEyUMlMTF0/Lw
- K/KoMJppBttxjthOuO/lzGURESSJpENpOoKW/+siuIV9AmDKt+1djcc98tz+nBW86B0bcg01
- WN3Pj1s1yEfHUH9Hv4uR74yZz2P1ZxyGHef8yg60Wbmo3PWFw+fnH3rLThe/uhG46xHmHTUT
- 4D1SqF5AYqyVTOLEkRSvnlin4/wfFr4l2llF2kKDi65bM4421fl3zhVXTxYlrQkv/XSwFjiJ
- OUywxHMPKmckfwFtt0aZVwMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrKIsWRmVeSWpSXmKPExsVy+t/xe7oNAhviDCZN0LPoPXeSyWLjjPWs
- Fv+3TWS22HPmF7vFla/v2SxWrj7KZLFgv7XFyj0/mCy+XHnIZLHp8TVWi8u75rBZrD1yl93i
- 4IcnrBan7n5md+DzWDNvDaPHvX2HWTz2flvA4nHn2h42j+3fHrB63O8+zuSxeUm9x+1/j5k9
- Jt9Yzuix+2YDm8f7fVfZPPq2rGL0+LxJLoA3Ss+mKL+0JFUhI7+4xFYp2tDCSM/Q0kLPyMRS
- z9DYPNbKyFRJ384mJTUnsyy1SN8uQS9j9lPvgm3qFf8fnGVqYJyj2MXIySEhYCLRfvwDaxcj
- F4eQwFJGiRPPzzFBJGQkTk5rYIWwhSX+XOtigyj6xCjR178SrIhNwFCi6y1EQkSgk1FiWvdH
- dhCHWaCbWeL6omlA7RwcwgIBEru2S4I0sAioSvyc9p0ZxOYVsJXYsvYu1DZ5idUbDjCDlHMC
- xWf2qoOEhQTyJe4+/ccygZFvASPDKkaR1NLi3PTcYiO94sTc4tK8dL3k/NxNjMAo2nbs55Yd
- jF3vgg8xCnAwKvHwbvi6Pk6INbGsuDL3EKMEB7OSCO+OFqAQb0piZVVqUX58UWlOavEhRlOg
- myYyS4km5wMjPK8k3tDU0NzC0tDc2NzYzEJJnLdD4GCMkEB6YklqdmpqQWoRTB8TB6dUA+Ol
- zzJNPgUTDhRLFj/fem7xsZO/7iqurD0vylZdeUA/YJkCxza7V/2fc59kOprOdJa87mpb+5Vx
- ton7sopHNRN8XKbc23PAKKfLNdj26wsRnvXvwtg3u51289exT/7JWH1k0n82mdQdQVp/GBev
- 2DzJ4cdC9S6mJ4VLp/2J/HKHX6Q53FNmlYsSS3FGoqEWc1FxIgAuM6M4uAIAAA==
-X-CMS-MailID: 20200504125424eucas1p2a654aa95d553e10422dcb5125f960a49
-X-Msg-Generator: CA
-X-RootMTR: 20200504125424eucas1p2a654aa95d553e10422dcb5125f960a49
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200504125424eucas1p2a654aa95d553e10422dcb5125f960a49
-References: <20200504125017.5494-1-m.szyprowski@samsung.com>
- <20200504125359.5678-1-m.szyprowski@samsung.com>
- <CGME20200504125424eucas1p2a654aa95d553e10422dcb5125f960a49@eucas1p2.samsung.com>
+ id 1jVagR-0000xG-45
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:58:58 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=akGPjmMl5LkEV2Q/zH5Nh3SxesSuJN1gZLOEiTM04ueg6HTAShRRoG/j/gengug2STO5NdkhYBgT2eoVWRWCYYpVbUvgdd+1sCTDfZwAMIXO739WycnhOplgd69EyDxVOo4Kv/p5Gt6+OF/6EuGc9Zy4L4bmz3Rn7QGejxuK6pU1S9y3Qa8P5AWYyJuLOkn8W/bG+/4Oqwu1G4SJfl6SsiSdM/e/2iY9bNH+tmiomNRsOBIlVcYNiXe0WfigMICV1mJUfCpiIvq8oEzjjr0LiX4GfDDMkukC3bv3iiNv1OKtbhmgaKRQc5VnVPkoyswhcUBILJGfXmXd1POkJRL/cg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aiwF0qMP3FMNLm9skR2NsH55fIdWBNn20IkfGW83JKo=;
+ b=R+tJ2/6owm2cLHqLF/NkYNezpGfUnraty2nnGdRNV3xG9n8VeSHgdrfK4Xabnc0qEe1+IjBi2xYn0AfZyE3zLe75ILQYqY1A+odJ9c28J7EZQds/j4xtfGhicDSvpCytxNajMWvzOmmAw/10cMvIy/T/reCSkMVi3NhnC0zkXbLCgGHLEuCVCjfWdfF9NrLlV+UdqxrmjGlva9r2RMDKso4R0odB8eh4FA3xmUGtdQ1ZDT1lDlogP9a4JS12I6kcpbnfQmHCzXZBUeqOpGfo5lgTnCMGTHQTVHgzIYk6X2rhisISZBJPlAd0f6sDnhh80BD91oMcnnoo8Qg7dlTJVQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=vaisala.com; dmarc=pass action=none header.from=vaisala.com;
+ dkim=pass header.d=vaisala.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vaisala.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=aiwF0qMP3FMNLm9skR2NsH55fIdWBNn20IkfGW83JKo=;
+ b=XQrQ+2K0LAIiJRL3oCRsNGJ1Tsozn/Nfyj1GicqnDBmarKxF00TIJEyffT6Hr/CtuT2qivP7RqsNW6D2ASI+u/6ukYg2zKrekTK5PLzOmBlWa1UkXc49DfdN0/X/n+8RdFxg33OFF6yLfEIssfYD0WgnLqReyk6jtS20MLPKgi0=
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com (2603:10a6:208:107::25)
+ by AM0PR06MB4420.eurprd06.prod.outlook.com (2603:10a6:208:bf::29)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.29; Mon, 4 May
+ 2020 12:58:48 +0000
+Received: from AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd]) by AM0PR06MB5185.eurprd06.prod.outlook.com
+ ([fe80::3c0c:c6e8:c7b6:cabd%5]) with mapi id 15.20.2958.029; Mon, 4 May 2020
+ 12:58:48 +0000
+From: Laine Jaakko EXT <ext-jaakko.laine@vaisala.com>
+To: Wolfram Sang <wsa@the-dreams.de>, Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Topic: [PATCH] i2c: xiic: Support disabling multi-master in DT
+Thread-Index: AQHV5mNyTIn2+pYf+Eu7yiopaV9KGKhOcmGAgAAnv5CAFgB+gIAA/BRAgAA+l4CAMnEssA==
+Date: Mon, 4 May 2020 12:58:48 +0000
+Message-ID: <AM0PR06MB51857F4CDC7AE643CE160F9ED4A60@AM0PR06MB5185.eurprd06.prod.outlook.com>
+References: <20200218135627.24739-1-ext-jaakko.laine@vaisala.com>
+ <CAKfKVtFf+VpinkOGsBFZ2-_PKvx-C1L7G7_uhY2RCvV5dy6L_w@mail.gmail.com>
+ <AM0PR06MB5185E501349E06428093B62FD4F70@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200401143254.GA2409@ninjato>
+ <AM0PR06MB5185F8F51316FCD5213F0ABED4C60@AM0PR06MB5185.eurprd06.prod.outlook.com>
+ <20200402092813.GA986@ninjato>
+In-Reply-To: <20200402092813.GA986@ninjato>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+msip_labels: MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Enabled=True;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_SetDate=2020-05-04T12:58:46.5802889Z;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Name=Restricted;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_ActionId=0b51210f-13d4-484d-b397-ffb4db30a687;
+ MSIP_Label_d5842b46-9b7a-431a-b662-8cc44ff92a4e_Extended_MSFT_Method=Automatic;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Enabled=True;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SiteId=6d7393e0-41f5-4c2e-9b12-4c2be5da5c57;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Owner=ext-jaakko.laine@vaisala.com;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_SetDate=2020-05-04T12:58:46.5802889Z;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Name=No Label;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Application=Microsoft Azure
+ Information Protection;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_ActionId=0b51210f-13d4-484d-b397-ffb4db30a687;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Parent=d5842b46-9b7a-431a-b662-8cc44ff92a4e;
+ MSIP_Label_7246d30e-a6af-4059-9b44-a42233242e28_Extended_MSFT_Method=Automatic
+authentication-results: the-dreams.de; dkim=none (message not signed)
+ header.d=none;the-dreams.de; dmarc=none action=none header.from=vaisala.com;
+x-originating-ip: [193.143.230.131]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: c0c1f6e8-367b-4d21-211c-08d7f02ae313
+x-ms-traffictypediagnostic: AM0PR06MB4420:
+x-microsoft-antispam-prvs: <AM0PR06MB4420116136803AF9DF460032D4A60@AM0PR06MB4420.eurprd06.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 03932714EB
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: UwY4aY3CVZmLXsQB+Z7qdQ0HPL33BoUlIfIVu2HZDUY2CsPFbCHSFtqQjY/DbXuYU/3Qe8ssG116f/roNnbkQg5VodkHfOvBsi5WVcD93BXXWZYH8ZS+NkOmzGPU1txrJzcNClx3GfgRqUTOljwqxFeqAu6/gyNkg/LGkUqzZ9+WI6vKMJjunmyqMSi0LZYYJfHJvzDejRzedMiqTJ0Obgcc1RcBkamms90jyrTdKNUPE87ubydSOBDYpqTOXqX+VuL8s2euNEHACSwsyeo7ivAcigYD8fjDrIrGZQiU4QzhWLy0ZMPlR0XIxEuPz4Xf3K4KzG6T1hDo+4XvHB5REpbllQgMHYehpR/gCMwSpMtezW2k+5FUmmggXAVVreqqHyRIxGRfSOb4kET3TDRjFFmC8zYP7nOBhYXlh+8EwLUV2dhz8Mj4JeTGUsWeb/WK
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM0PR06MB5185.eurprd06.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(136003)(396003)(376002)(346002)(39850400004)(8936002)(54906003)(478600001)(52536014)(110136005)(66946007)(8676002)(76116006)(7696005)(5660300002)(4326008)(33656002)(6506007)(2906002)(55016002)(86362001)(316002)(186003)(66446008)(71200400001)(26005)(64756008)(66556008)(9686003)(66476007);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: TH35eitRUBoXgoVYzUwlXVNj1b/CVh9yG9vLZ6I/6YTMbLcTYfV4iEWfoSFBK3hZxysCGPWaygd+ZMAaC/kWRQS9gBwVt+BhC856o8WIDYfFYbuIU86Zp7eUD4BC6Z5AJtOwo2f0QXgjxnYR3J759IPx3hNt8PZbAL1apb7pHvAdfu57OWpqvEOQEUl0gclmlSUV49JGIZvGgZrckTZ0Rmm2nmjUSrYitmH0eN5LUeflEFFqTNQRPTAOq2TS7Ai8J8DBHHPFNMubv3BD4DITWToJ6QdqvAaByQuBrKvhVydbIug8ZHD3jCYhhyDzW2NCwWB6LmMDD8wn4Zbrm4IB1g5n3Rd4WSimsWJtNsmJUxZaT2qqHr6eVe82f4HUE7DoMlfAq0W1OQbAVtkABTBYPPjwE+cVevYYHY9KauiLty5oWZU82gsp1MkdH95gynrY95lF2oL2FmiptGY1X34LlrXtpjV/3zY/fvYlUK/A9antrhoUPF6X9PaYJ5mnLef3oNotK9B6UoTVoNmlnH3wSQGRr4dyAlEW0O+R3lP0o/jBoMQKfM0gFmcbTMilz348sDxE8G4ut25CQTrgM9nnuci+9OcGyNd3HIdgRf9/Mov+5g5ZEgXluXKtE7OsonojLnEoYCvWYCaiepEINh3kIIHEoPPQkDUletRC8Ay2k59Aoum2PNMRnwFYEuC43MYlXULOaKByXRGunmcXs3DMOA3ajC0kdRwEXw7MRkKplPq5riyNGah8qgsnFicdTMxpG+GvaN0ZYPA2xTxukVHVURQKxai6C1NPVsMMjuUijrO+oge/lCRoNWKarOzlYh40
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: vaisala.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: c0c1f6e8-367b-4d21-211c-08d7f02ae313
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 May 2020 12:58:48.3579 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 6d7393e0-41f5-4c2e-9b12-4c2be5da5c57
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: MAEFxY0aKp+i3zjdKcHi6Ma2bJINAq2JvNURwBam/Z/JRWRTwb4Q9Ly0E4JWDY27ZczYRCryB98pBOIZG9UtfFAjfl2hz4QsLSCL6w3Y+iA=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR06MB4420
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_055427_607649_0F92C630 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_055855_401872_DDC698F9 
+X-CRM114-Status: GOOD (  13.43  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.40 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.40 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -128,8 +134,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -141,145 +145,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Sumit Semwal <sumit.semwal@linaro.org>,
- Daniel Vetter <daniel@ffwll.ch>, Laura Abbott <labbott@redhat.com>,
- Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "michal.simek@xilinx.com" <michal.simek@xilinx.com>,
+ Shubhrajyoti Datta <shubhrajyoti.datta@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
-numer of the created entries in the DMA address space. However the
-subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
-called with the original number of entries passed to dma_map_sg. The
-sg_table->nents in turn holds the result of the dma_map_sg call as stated
-in include/linux/scatterlist.h. Adapt the code to obey those rules.
+> > How would both bindings existing simultaneously be interpreted? Maybe
+> > both existing simultaneously should be considered as an invalid
+> > configuration, so that it would be enough to just check the one you
+> > need? The other option would be to treat both existing similarly to
+> > neither existing, which would require the driver to always check both
+> > if checking one.
+>
+> I am clearly for saying that this is an illegal combination. I'd hope
+> this can be expressed in a YAML binding. Yet, my research didn't give me
+> an answer. Adding Rob and DT list to CC. Question is:
+>
+> Can we check if the boolean bindings "multi-master" and "single-master"
+> are not applied at the same time? Any other combination is okay, i.e.
+> just one of them or none of them.
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
----
-For more information, see '[PATCH v2 00/21] DRM: fix struct sg_table nents
-vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/4/373
----
- drivers/staging/android/ion/ion.c             | 17 +++++++++--------
- drivers/staging/android/ion/ion_heap.c        |  6 +++---
- drivers/staging/android/ion/ion_system_heap.c |  2 +-
- 3 files changed, 13 insertions(+), 12 deletions(-)
+It seems we have not had any replies by now, but it would be nice to get this thing moving forward,
+even though we have this current version of patch already applied and working in our kernel branch
+and are not therefore really in hurry in that regard.
 
-diff --git a/drivers/staging/android/ion/ion.c b/drivers/staging/android/ion/ion.c
-index 38b51ea..b14170c 100644
---- a/drivers/staging/android/ion/ion.c
-+++ b/drivers/staging/android/ion/ion.c
-@@ -147,14 +147,14 @@ static struct sg_table *dup_sg_table(struct sg_table *table)
- 	if (!new_table)
- 		return ERR_PTR(-ENOMEM);
- 
--	ret = sg_alloc_table(new_table, table->nents, GFP_KERNEL);
-+	ret = sg_alloc_table(new_table, table->orig_nents, GFP_KERNEL);
- 	if (ret) {
- 		kfree(new_table);
- 		return ERR_PTR(-ENOMEM);
- 	}
- 
- 	new_sg = new_table->sgl;
--	for_each_sg(table->sgl, sg, table->nents, i) {
-+	for_each_sg(table->sgl, sg, table->orig_nents, i) {
- 		memcpy(new_sg, sg, sizeof(*sg));
- 		new_sg->dma_address = 0;
- 		new_sg = sg_next(new_sg);
-@@ -227,8 +227,9 @@ static struct sg_table *ion_map_dma_buf(struct dma_buf_attachment *attachment,
- 
- 	table = a->table;
- 
--	if (!dma_map_sg(attachment->dev, table->sgl, table->nents,
--			direction))
-+	table->nents = dma_map_sg(attachment->dev, table->sgl,
-+				  table->orig_nents, direction);
-+	if (!table->nents)
- 		return ERR_PTR(-ENOMEM);
- 
- 	return table;
-@@ -238,7 +239,7 @@ static void ion_unmap_dma_buf(struct dma_buf_attachment *attachment,
- 			      struct sg_table *table,
- 			      enum dma_data_direction direction)
- {
--	dma_unmap_sg(attachment->dev, table->sgl, table->nents, direction);
-+	dma_unmap_sg(attachment->dev, table->sgl, table->orig_nents, direction);
- }
- 
- static int ion_mmap(struct dma_buf *dmabuf, struct vm_area_struct *vma)
-@@ -297,7 +298,7 @@ static int ion_dma_buf_begin_cpu_access(struct dma_buf *dmabuf,
- 
- 	mutex_lock(&buffer->lock);
- 	list_for_each_entry(a, &buffer->attachments, list) {
--		dma_sync_sg_for_cpu(a->dev, a->table->sgl, a->table->nents,
-+		dma_sync_sg_for_cpu(a->dev, a->table->sgl, a->table->orig_nents,
- 				    direction);
- 	}
- 
-@@ -320,8 +321,8 @@ static int ion_dma_buf_end_cpu_access(struct dma_buf *dmabuf,
- 
- 	mutex_lock(&buffer->lock);
- 	list_for_each_entry(a, &buffer->attachments, list) {
--		dma_sync_sg_for_device(a->dev, a->table->sgl, a->table->nents,
--				       direction);
-+		dma_sync_sg_for_device(a->dev, a->table->sgl,
-+				       a->table->orig_nents, direction);
- 	}
- 	mutex_unlock(&buffer->lock);
- 
-diff --git a/drivers/staging/android/ion/ion_heap.c b/drivers/staging/android/ion/ion_heap.c
-index 0755b11..f2f7ca7 100644
---- a/drivers/staging/android/ion/ion_heap.c
-+++ b/drivers/staging/android/ion/ion_heap.c
-@@ -38,7 +38,7 @@ void *ion_heap_map_kernel(struct ion_heap *heap,
- 	else
- 		pgprot = pgprot_writecombine(PAGE_KERNEL);
- 
--	for_each_sg(table->sgl, sg, table->nents, i) {
-+	for_each_sg(table->sgl, sg, table->orig_nents, i) {
- 		int npages_this_entry = PAGE_ALIGN(sg->length) / PAGE_SIZE;
- 		struct page *page = sg_page(sg);
- 
-@@ -71,7 +71,7 @@ int ion_heap_map_user(struct ion_heap *heap, struct ion_buffer *buffer,
- 	int i;
- 	int ret;
- 
--	for_each_sg(table->sgl, sg, table->nents, i) {
-+	for_each_sg(table->sgl, sg, table->orig_nents, i) {
- 		struct page *page = sg_page(sg);
- 		unsigned long remainder = vma->vm_end - addr;
- 		unsigned long len = sg->length;
-@@ -142,7 +142,7 @@ int ion_heap_buffer_zero(struct ion_buffer *buffer)
- 	else
- 		pgprot = pgprot_writecombine(PAGE_KERNEL);
- 
--	return ion_heap_sglist_zero(table->sgl, table->nents, pgprot);
-+	return ion_heap_sglist_zero(table->sgl, table->orig_nents, pgprot);
- }
- 
- int ion_heap_pages_zero(struct page *page, size_t size, pgprot_t pgprot)
-diff --git a/drivers/staging/android/ion/ion_system_heap.c b/drivers/staging/android/ion/ion_system_heap.c
-index b83a1d1..34f6e81 100644
---- a/drivers/staging/android/ion/ion_system_heap.c
-+++ b/drivers/staging/android/ion/ion_system_heap.c
-@@ -162,7 +162,7 @@ static void ion_system_heap_free(struct ion_buffer *buffer)
- 	if (!(buffer->private_flags & ION_PRIV_FLAG_SHRINKER_FREE))
- 		ion_heap_buffer_zero(buffer);
- 
--	for_each_sg(table->sgl, sg, table->nents, i)
-+	for_each_sg(table->sgl, sg, table->orig_nents, i)
- 		free_buffer_page(sys_heap, buffer, sg_page(sg));
- 	sg_free_table(table);
- 	kfree(table);
--- 
-1.9.1
+The changes required to this patch at XIIC driver from suggested DT changes are pretty minor.
+Basically only checking a different property, reversing logic and some naming changes.
+I can make these changes already for the driver if this solution is what will be chosen,
+or would you prefer to still think about this?
 
+Regarding the device tree changes:
+I am not very familiar with the needed documentation changes, YAML bindings or what needs to be done for new bindings in general.
+Would you prefer to still consider them and/or get these subsystem level bindings done by someone more familiar with them?
+Another option would be for me to try find time to do the suggested bindings changes anyway, but it will likely require some effort
+from me to familiarize with device tree bindings changes and schedule the time for it.
+
+Best regards,
+Jaakko
 
 _______________________________________________
 linux-arm-kernel mailing list
