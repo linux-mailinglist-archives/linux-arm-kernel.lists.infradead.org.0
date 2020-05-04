@@ -2,95 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F289E1C40B0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 19:02:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4F661C40B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 19:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ygKPxuAwsHcOpnYw27jWXPZlZv7TtFQ+wiJqjsqgjUo=; b=jSFm7PnMNO9JH9
-	WiYPixx64bCjShliZs6xLErpoTJnJq1lJwynWTUfBG2xrMDiLm3CUqwB1wHO6801kohqg2Jv/PvN2
-	yXk3SPt4fV+I2bCHSMZ8DB/9cbuSiAvnXwSwnfvlnxZSwhWDcCG97FKue8onwrbQ6LHJc0arT1kvv
-	4pZADDuicTwqIvHLIA3dYHs9mlrpROfa5o9m+6FWDKBQxGbNZE6jNoZDSeebrWdj73Sl4wY7pyI8W
-	FAgLIUf0AtLp4H4JTnYfDYuUH58nnGT7tUhWRgiunogzisosWBCrmWzfaL/FoY1W+J7ti9jMuWPLL
-	3WXYcEyioWUPnMQiBejw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=uRjCEQTOrGMtKkeQnbuzHTvm7KWVCJDwyxnbEvxxHVk=; b=ugHuaGSOTHWjub
+	ecO5HYG6mPk4bLa5PE0uTdnkCtMIoiI8XyhSAaT0sNHkeNLHuhyTJ3fDWuxdde/0O+dHvd/qEShfk
+	SMBcANlc6l5WOVzzdttAGiK0HGjzEMZ43xCzMyouUjf0uAJGI8wlBlce12qeAqVirux3hdgbQtAe0
+	qQHTCQcNY41O1oRsyDH3QJ9Zq0qPNgDKOxO5+FRnR/rvPSPC8mXG9/cyjvA6wNAxu4cWXAssxqlKl
+	laQWHftWjfM2ZpuQSt85QvrXqzFLC7+JYW39QSZKkomF/ky5NborjfxYrWDBB0n2FrT74K3M4hVUG
+	m2zVRKH+Puk6bRugGJLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVeUM-0006mQ-Hj; Mon, 04 May 2020 17:02:42 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jVeVB-00076c-V9; Mon, 04 May 2020 17:03:33 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVeUE-0006lg-SJ
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 17:02:36 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588611753;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=DsuiJ3Bl4DYlwcJ0OMVfbSTOPgPDHtHw1erBIpHZk74=;
- b=ZmA84onEXF1RVLzshkZF8wEUEU5PxO4BoTZkqC1K2YEzBD/9Nn+T8291vqPOyOxQuQRQrA
- QtcqBolgfCzG+JENkqvtwdtmRgBl2dVyz1VcxNiF+pV1p5G+YobkFRGF2aBYgLYpWeEB4e
- IZw5mz6ZivI1ie8TsPLXD8tmQpNOpxk=
-Received: from mail-wm1-f72.google.com (mail-wm1-f72.google.com
- [209.85.128.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-184-079ZMsYXM2-daQH-Qz-zDg-1; Mon, 04 May 2020 13:02:32 -0400
-X-MC-Unique: 079ZMsYXM2-daQH-Qz-zDg-1
-Received: by mail-wm1-f72.google.com with SMTP id n127so124836wme.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 10:02:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=DsuiJ3Bl4DYlwcJ0OMVfbSTOPgPDHtHw1erBIpHZk74=;
- b=BENZszey0Ix5cbjpzN7Rcw+/MDgkuLPAb7MycJCAAvfvGq5l5iNIuzC2QGjPnA5cF7
- VacxZp0rEs+FfGl50QLpL6Gg/olqZzUr3+aRmAAxEn1I0IzgHmtONYISU3XK3pQqMVbA
- GqY136fR1BUiIg9xhbdwGPJiouQmLJeWE6aUvCCcf/YetVfP6lNzlekVTzcK/0Ab/xnt
- 1/KiY1nToaib1tLe+SB9nhIOjhAMfc5QeiKdSYRFDYedxsekKL1TZqEkmHj8tMo3QY41
- 2KpWD/+2jRDMTgGhY7/Ub0rmdBK403N2/LtXeZTMvrGyPoFOLVHfkT5TY0Bvwts8b7ED
- z3iQ==
-X-Gm-Message-State: AGi0PubFN2Cvue493F7JLQBr0Hxos7Z8qa8smjigRU6zfW8Q6dcuAUAe
- RsyLsXH0QoIUAnrEY9ibz8HlCEbwz/QrVm831fPFm4TQb+6fBm4VGtC2IJiAQpe3O25hL1qi6LA
- WNWfXK47nrv71LzIWExHcrDD/uMWlmo/LAHA=
-X-Received: by 2002:a5d:628e:: with SMTP id k14mr270959wru.390.1588611750793; 
- Mon, 04 May 2020 10:02:30 -0700 (PDT)
-X-Google-Smtp-Source: APiQypJ/Yx8kOwELdCr6LNcodfCIoQBcpJd3XJQs7+YRpB/STWPwshDBcVODsO4ViVUHu2CMySHdIQ==
-X-Received: by 2002:a5d:628e:: with SMTP id k14mr270926wru.390.1588611750534; 
- Mon, 04 May 2020 10:02:30 -0700 (PDT)
-Received: from [192.168.178.58] ([151.20.132.175])
- by smtp.gmail.com with ESMTPSA id h137sm1233255wme.0.2020.05.04.10.02.29
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 04 May 2020 10:02:30 -0700 (PDT)
-Subject: Re: [GIT PULL] KVM/arm fixes for 5.7, take #2
-To: Will Deacon <will@kernel.org>
-References: <20200501101204.364798-1-maz@kernel.org>
- <20200504113051.GB1326@willie-the-truck>
- <df78d984-6ce3-f887-52a9-a3e9164a6dee@redhat.com>
- <20200504165132.GA1833@willie-the-truck>
-From: Paolo Bonzini <pbonzini@redhat.com>
-Message-ID: <7e715659-112d-febd-91c8-385e272d2425@redhat.com>
-Date: Mon, 4 May 2020 19:02:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jVeV4-00075l-MP
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 17:03:28 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A46D8206D7;
+ Mon,  4 May 2020 17:03:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588611806;
+ bh=9tTj22KeXXNy+Pxbwwax2L1FDq1F5u2WKlSPld/o7ug=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mxP6h5LVA5K0vlpO9F/T9qh1mMYOmFIcBdnnPlf9OSLhUyYihlx1c6R5/EiJqSjce
+ s37jTncHdY+7uJQEoA9A+WdZlCbYF3sj6YDHhNNHFOu2jRZc4bYPf/DnnTbp71TX+B
+ Af8TheWZp+1X27mXtE9UPQn0yHEH65ELvxPAfkM0=
+Date: Mon, 4 May 2020 18:03:21 +0100
+From: Will Deacon <will@kernel.org>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
+Message-ID: <20200504170320.GC1833@willie-the-truck>
+References: <20200325174001.234803-1-pcc@google.com>
+ <20200327191915.257116-1-pcc@google.com>
+ <20200429210826.GA8604@willie-the-truck>
+ <CAMn1gO7Xh2nnZhcjpwA3Y-8C5ePPOwHS2ORMASuQA4UaJgrFfg@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200504165132.GA1833@willie-the-truck>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <CAMn1gO7Xh2nnZhcjpwA3Y-8C5ePPOwHS2ORMASuQA4UaJgrFfg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_100234_991149_A4D6028B 
-X-CRM114-Status: GOOD (  10.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_100326_751962_1CCFF946 
+X-CRM114-Status: GOOD (  17.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -100,8 +67,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.120 listed in wl.mailspike.net]
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -114,31 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
- kvm@vger.kernel.org, Fangrui Song <maskray@google.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- Nick Desaulniers <ndesaulniers@google.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Zenghui Yu <yuzenghui@huawei.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Evgenii Stepanov <eugenis@google.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Richard Henderson <rth@twiddle.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/05/20 18:51, Will Deacon wrote:
->> 10 days is one week during which I could hardly work and the two
->> adjacent weekends.  So this is basically really bad timing in Marc's
->> first pull request, that he couldn't have anticipated.
+Hi Peter,
+
+On Wed, Apr 29, 2020 at 02:42:01PM -0700, Peter Collingbourne wrote:
+> On Wed, Apr 29, 2020 at 2:08 PM Will Deacon <will@kernel.org> wrote:
+> > On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
+> > > The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+> > > address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+> > > the tag bits may be needed by tools in order to accurately diagnose
+> > > memory errors, such as HWASan [1] or future tools based on the Memory
+> > > Tagging Extension (MTE).
+> > >
+> > > We should not stop clearing these bits in the existing fault address
+> > > fields, because there may be existing userspace applications that are
+> > > expecting the tag bits to be cleared. Instead, create a far_context in
+> > > sigcontext (similar to the existing esr_context), and store the original
+> > > value of FAR_EL1 (including the tag bits) there.
+> > >
+> > > [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+> > >
+> > > Signed-off-by: Peter Collingbourne <pcc@google.com>
+> > > ---
+> > > v3:
+> > > - add documentation to tagged-pointers.rst
+> > > - update comments in sigcontext.h
+> >
+> > Hmm, although the code looks fine, why don't we just expose the tag in the
+> > new field, rather than duplicate the address information? I'm nervous about
+> > exposing privileged registers directly to userspace.
 > 
-> Understood, and thanks for the quick reply. If possible, please just let us
-> know in future as we can probably figure something out rather than having
-> things sit in limbo.
+> I have no strong opinion on whether this should just contain the tag or not.
 
-Indeed, it was my fault.  I got stuck in a "1: tomorrow should be
-better" / "no it was actually worse" / "goto 1b" loop.
+A few of us chatted about this today. Please could you spin a v4 where only
+the top byte is exposed in the new sigcontext record as a __u8? You'll need
+to think of a better name than "FAR"; perhaps something like 'si_addr_top_byte',
+'si_addr_63_56' or whatever you fancy. Naming is hard.
 
-Paolo
+For MTE we can add a separate record later on, so as not to overload this
+(e.g. si_addr_mte_tag).
 
+Ta,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
