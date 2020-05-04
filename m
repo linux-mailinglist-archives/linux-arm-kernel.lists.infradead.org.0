@@ -2,55 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B0E61C38DC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1DD1C38EF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:10:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=s83+bF9bDBgKkQEuyWqXbGl9QjoBNDO6MHAwK3E3HdE=; b=E0H93Z6FCk96LY4f49T9RoDj+
-	Wn0f/HPZQrO1KklU3x9ABCxw6SNnLLJUa0RBEvWKAoq1X6pB/LPmWU+jtGIPkPAHukRl4v1SwlCRM
-	xzP00+sQ1bJZM+yP9NlaI1KgsvqH/ePuCHRYtH4hhflL2g6L+MtXfcKqdp+20h/fixhTibJ2CnB2s
-	KPxc70GUS2o1DzXWx6wVUsHj39irwABQdLx10CunZSBVBvjOncDheupucoUkd30Pf3QFFawtixHFA
-	UXIZjQyaZC5xt1aZpikUQjKAbYKYa1LyyGGkkj9cjnEj4yJBx8sOJFTufP5uJX57SnGZWH9ul4qqj
-	SnKSu2Z7Q==;
+	 bh=iT7BD7vYOkNG422CEuS+iswlOH2hM954NIj7c7Y4eTE=; b=pPo5TYInrDoXDx2w6jtPKPGGX
+	LwbCzosu8/BFF7+HfvagA50HqlJpJ5hOQaGM0ly9EHd+pw71wcIcQ4XtS3tR0rx7k6Kdeq8p+grHs
+	vlMCIv/MjfrqN/7xtrDXCQeoGMSbI34HM+6Q6LZWLoCg0cRWc6gQo7eqZ7CAMN6xU+DHr+WCEjHhT
+	fqvSZeVXNws3qwgITdzorGJRIDjYlP3nSa4SM8L0ZEpZ6zSWSr8JNfb3UwlMyyxchWKlUemeYPQtS
+	eIjwM07FuVdWdpnU878U2tfh2gzFWgnEjbvCZCET/+39N5yx0TxyYoaRJ2I8KbDUdAmtQHJ1kuBVM
+	4RktF167w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZrE-0002qc-8t; Mon, 04 May 2020 12:06:00 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jVZv2-0003qM-IH; Mon, 04 May 2020 12:09:56 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZr5-0002pl-Tl; Mon, 04 May 2020 12:05:53 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 83554ADD3;
- Mon,  4 May 2020 12:05:51 +0000 (UTC)
-Message-ID: <c9a7e50f88022179ef913fc6dfd066ec44b27988.camel@suse.de>
-Subject: Re: [PATCH v2 20/91] clk: bcm: rpi: Discover the firmware clocks
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Maxime Ripard <maxime@cerno.tech>, Eric Anholt <eric@anholt.net>
-Date: Mon, 04 May 2020 14:05:47 +0200
-In-Reply-To: <1a25b4f079dcdc669d4b29d3658ef0b72be2651e.1587742492.git-series.maxime@cerno.tech>
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <1a25b4f079dcdc669d4b29d3658ef0b72be2651e.1587742492.git-series.maxime@cerno.tech>
-User-Agent: Evolution 3.36.2 
+ id 1jVZuv-0003pi-9D
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:09:51 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.west.internal (Postfix) with ESMTP id 8B7A64FE;
+ Mon,  4 May 2020 08:09:47 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 04 May 2020 08:09:48 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=oIv7cAOaUdM7aBwNjylFjp/ACiL
+ s4UI3J+tfLDmHYdY=; b=J+utQvjNQnsvwqzGAhL4HuZL6/tUBeLevzWMkpvOb3F
+ /x/oGFPIAzF9G5oTMnpoh4E55Titshs3p1X4IDefQlVo634I8OzmhJ3OKVXZ4o+l
+ fp5oO5kcwGbl2kZ9nanR0zA3MRVwyNwvpHqUW2rqwlehidEj5lNJ4lUbphUCzI5F
+ y2O3FN/lepFcaaf9Rr3SjlQyVh01NRnhZREvrqgmHqyCIhfdgk18PgsxBgs5b/e/
+ le3YczrRmE0H72QJFIrlrRuQWsJtCD1whQUtpHYmzuCvk86msFVusnaNL3i/5JOP
+ RG9criY3nTwsprI9FAijlScLa8Nrfeuer2Ug2/NwEsw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=oIv7cA
+ OaUdM7aBwNjylFjp/ACiLs4UI3J+tfLDmHYdY=; b=2k6ruSzKSFiqGFUIu0QbTd
+ if6kMGa4t1N2y05XOVFlw1KczfXrL9iwtj8Bfu1duoQME8A8QgHQet7gCXbyyofV
+ rqwrAqmJbl5/cC07D0UAQU5cP+Czp20tsUH7Ee3YAzu96E1SHZhsHndA7xVd6XXK
+ 60Yy+wW4vcbaVSCH7d7+7K0HWnxjWv7VjO7CfVrXMcUa+8XczyTARKVRytnmEj8x
+ h26USvVAu9IiQX9kqPm21ddO1cTEb0NZ1gkvr2Qsu2/r+qL8c3q2hAifduxwLR/q
+ d1vR3LWUisjKlKkvlC1PfRtpjzbHSmM+cdCkDxNfmlPEj0xEKv9ZBK5B0UEC2eqA
+ ==
+X-ME-Sender: <xms:CQawXtgD5d5PhPKljuGQbAyOPEHoyzH9-V_dYB9mUwE2tpw_XLtG7A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrjeeggdeggecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeejkeekffdtfffhhfevvddutefgtdeljeevffevvddvteegledtgfeghfehvdei
+ ffenucffohhmrghinhepkhgvrhhnvghlrdhorhhgnecukfhppeeltddrkeelrdeikedrje
+ einecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehmrghilhhfrhhomhepmhgr
+ gihimhgvsegtvghrnhhordhtvggthh
+X-ME-Proxy: <xmx:CQawXkffn_XVfNAFXPD2qly5eqXTbdN4TaHzu0GQDTIWaNheYzOcrw>
+ <xmx:CQawXqy8VKzehlReDzsMvrHa90NNBKOoKcc7BwiEg1i3zsH2diABLw>
+ <xmx:CQawXhbODQ8XgO5ckRhoK83tcTDTYBQv8QeO0Yq_tPvluT09RIbi9Q>
+ <xmx:CwawXgaTkrHaU8N4VzGnFawxJQBCAP7nNs_XVxN8SJ8XAf7eh7rzcU81KYs>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 391CC3280065;
+ Mon,  4 May 2020 08:09:45 -0400 (EDT)
+Date: Mon, 4 May 2020 14:09:42 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: =?utf-8?B?Q2zDqW1lbnQgUMOpcm9u?= <peron.clem@gmail.com>
+Subject: Re: [PATCH v3 3/7] ASoC: sun4i-i2s: Add support for H6 I2S
+Message-ID: <20200504120942.lnrxnnmykqnvw3fb@gilmour.lan>
+References: <20200426104115.22630-1-peron.clem@gmail.com>
+ <20200426104115.22630-4-peron.clem@gmail.com>
+ <20200428081321.ht3el26yqhsnyfm4@gilmour.lan>
+ <CAJiuCcdVs_drs40Q6537BYfz24F7NmC6B8S5-Lt4V4ggs-FXWA@mail.gmail.com>
+ <20200429123529.y24dpy63wxq7uvkt@gilmour.lan>
+ <CAJiuCcfXqizcq_JuXRCsqEqM2562cr1SGJ0pmy07jcJxAXojOw@mail.gmail.com>
+ <20200430084600.samghw4zxb5zdbez@gilmour.lan>
+ <CAJiuCcf_LHrJ6QdZgH8HyN6TRiT+GiD+t4UggFCrz-VwVHXV6w@mail.gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <CAJiuCcf_LHrJ6QdZgH8HyN6TRiT+GiD+t4UggFCrz-VwVHXV6w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_050552_253990_D0125E4A 
-X-CRM114-Status: GOOD (  23.41  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_050949_615962_BE6BC9EE 
+X-CRM114-Status: GOOD (  26.69  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.17 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,216 +111,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>,
- Stephen Boyd <sboyd@kernel.org>, Michael Turquette <mturquette@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Phil Elwell <phil@raspberrypi.com>, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3226291678224728218=="
+Cc: devicetree <devicetree@vger.kernel.org>,
+ Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>, Takashi Iwai <tiwai@suse.com>,
+ Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Marcus Cooper <codekipper@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
+ Mark Brown <broonie@kernel.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============3179878356431296660=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============3226291678224728218==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-ieEAbJrdTr7tzv3p9LmQ"
+--===============3179878356431296660==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="m7fwqhxu5jri276t"
+Content-Disposition: inline
 
 
---=-ieEAbJrdTr7tzv3p9LmQ
-Content-Type: text/plain; charset="UTF-8"
+--m7fwqhxu5jri276t
+Content-Type: text/plain; charset=iso-8859-1
+Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi Maxime, as always, thanks for the series!
-Some extra context, and comments below.
+Hi Clement,
 
-On Fri, 2020-04-24 at 17:34 +0200, Maxime Ripard wrote:
-> The RaspberryPi4 firmware actually exposes more clocks than are currently
-> handled by the driver and we will need to change some of them directly
-> based on the pixel rate for the display related clocks, or the load for t=
-he
-> GPU.
+On Thu, Apr 30, 2020 at 04:00:14PM +0200, Cl=E9ment P=E9ron wrote:
+> On Thu, 30 Apr 2020 at 10:46, Maxime Ripard <maxime@cerno.tech> wrote:
+> > On Wed, Apr 29, 2020 at 06:33:00PM +0200, Cl=E9ment P=E9ron wrote:
+> > > On Wed, 29 Apr 2020 at 14:35, Maxime Ripard <maxime@cerno.tech> wrote:
+> > > >
+> > > > On Tue, Apr 28, 2020 at 10:55:47AM +0200, Cl=E9ment P=E9ron wrote:
+> > > > > > > +static int sun50i_i2s_set_soc_fmt(const struct sun4i_i2s *i2=
+s,
+> > > > > > > +                              unsigned int fmt)
+> > > > > >
+> > > > > > The alignment is off here
+> > > > > >
+> > > > > > > +{
+> > > > > > > +     u32 mode, val;
+> > > > > > > +     u8 offset;
+> > > > > > > +
+> > > > > > > +     /*
+> > > > > > > +      * DAI clock polarity
+> > > > > > > +      *
+> > > > > > > +      * The setup for LRCK contradicts the datasheet, but un=
+der a
+> > > > > > > +      * scope it's clear that the LRCK polarity is reversed
+> > > > > > > +      * compared to the expected polarity on the bus.
+> > > > > > > +      */
+> > > > > >
+> > > > > > Did you check this or has it been copy-pasted?
+> > > > >
+> > > > > copy-pasted, I will check this.
+> > > >
+> > > > It's not going to be easy to do this if you only have a board with =
+HDMI. If you
+> > > > can't test that easily, just remove the comment (or make it explici=
+t that you
+> > > > copy pasted it?), no comment is better than a wrong one.
+> > >
+> > > I have talked with Marcus Cooper it may be able to test this this wee=
+k-end.
+> > > Also this can explain why we need the "
+> > > simple-audio-card,frame-inversion;" in the device-tree.
+> > >
+> > > If think this fix has been introduced by you, correct? Could you say
+> > > on which SoC did you see this issue?
+> >
+> > This was seen on an H3
 >=20
-> This rate change can have a number of side-effects, including adjusting t=
-he
-> various PLL voltages or the PLL parents. The firmware will also update
-> those clocks by itself for example if the SoC runs too hot.
+> Just two more questions:
+> - Did you observe this issue on both TDM and I2S mode?
+> - On which DAI node?
 
-To complete this:
+This is fairly fuzzy now and I don't remember if I tested it in I2S. Let's
+assume I didn't. And similarly, I'm not sure what the exact controller was,=
+ but
+it was one of the regular controllers (so not either connected to the codec=
+ or
+the HDMI, one that goes out of the SoC).
 
-RPi4's firmware implements DVFS. Clock frequency and SoC voltage are
-correlated, if you can determine all clocks are running below a maximum the=
-n it
-should be safe to lower the voltage. Currently, firmware actively monitors =
-arm,
-core, h264, v3d, isp and hevc to determine what voltage can be reduced to, =
-and
-if arm increases any of those clocks behind the firmware's back, when it ha=
-s a
-lowered voltage, a crash is highly likely.
+We had pretty much the same issue on the A33 in I2S for the codec though:
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/s=
+ound/soc/sunxi/sun8i-codec.c?id=3D18c1bf35c1c09bca05cf70bc984a4764e0b0372b
 
-As pointed out to me by RPi foundation engineers hsm/pixel aren't currently
-being monitored, as driving a high resolution display also requires a high =
-core
-clock, which already sets an acceptable min voltage threshold. But that mig=
-ht
-change if needed.
+I didn't think of it that way then, but it might very well have been the i2s
+controller suffering the same issue.
 
-Ultimately, from the DVFS, the safe way to change clocks from arm would be =
-to
-always use the firmware interface, which we're far from doing right now. On=
- the
-other hand, AFAIK not all clocks have a firmware counterpart.
+> Since recent change in sun4i-i2s.c, we had to introduce the
+> "simple-audio-card,frame-inversion" in LibreElec tree.
 
-Note that we could also have a word with the RPi foundation and see if
-disabling DVFS is possible (AFAIK it's not an option right now). Although I
-personally prefer to support this upstream, aside from the obvious benefits=
- to
-battery powered use cases, not consuming power unnecessarily is always big
-plus.
+Do you have a link to that commit ? I couldn't find anything on libreelec's
+github repo.
 
-> In order to make Linux play as nice as possible with those constraints, i=
-t
-> makes sense to rely on the firmware clocks as much as possible.
+> H3 boards are quite common in LibreElec community so I think:
+>  - This fix is only needed in TDM mode
+>  - Or this fix is not required for the HDMI DAI node (HDMI DAI is a
+> little bit different compare to other DAI but I think the first guess
+> is more likely)
 
-As I comment above, not as simple as it seems. I suggest, for now, we only
-register the clocks we're going to use and that are likely to be affected b=
-y
-DVFS. hsm being a contender here.
+Given what we know about the A33, I'd be inclined to say the latter. I'd do=
+n't
+have the tools to check anymore, but if you have even a cheap logical analy=
+zer,
+i2s being pretty slow you can definitely see it.
 
-As we'd be settling on a hybrid solution here, which isn't ideal to say the
-least, I'd like to gather some opinions on whether pushing towards a fully
-firmware based solution is something you'd like to see.
+Maxime
 
-> Fortunately,t he firmware has an interface to discover the clocks it
-> exposes.
-
-nit: wrongly placed space
-
-> Let's use it to discover, register the clocks in the clocks framework and
-> then expose them through the device tree for consumers to use them.
->
-> Cc: Michael Turquette <mturquette@baylibre.com>
-> Cc: Stephen Boyd <sboyd@kernel.org>
-> Cc: linux-clk@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  drivers/clk/bcm/clk-raspberrypi.c          | 104 +++++++++++++++++++---
-
-[...]
-
-> +static struct clk_hw *raspberrypi_clk_register(struct raspberrypi_clk *r=
-pi,
-> +					       unsigned int parent,
-> +					       unsigned int id)
-> +{
-> +	struct raspberrypi_clk_data *data;
-> +	struct clk_init_data init =3D {};
-> +	int ret;
-> +
-> +	if (id =3D=3D RPI_FIRMWARE_ARM_CLK_ID) {
-> +		struct clk_hw *hw;
-> +
-> +		hw =3D raspberrypi_register_pllb(rpi);
-> +		if (IS_ERR(hw)) {
-> +			dev_err(rpi->dev, "Failed to initialize pllb, %ld\n",
-> +				PTR_ERR(hw));
-> +			return hw;
-> +		}
-> +
-> +		return raspberrypi_register_pllb_arm(rpi);
-> +	}
-
-We shouldn't create a special case for pllb. My suggestion here is that we
-revert the commit that removed pllb from the mmio driver, in order to maint=
-ain a
-nice view of the clock tree, and register this as a regular fw-clk.
-
-The only user to this is RPi's the cpufreq driver, which shouldn't mind the
-change as long as you maintain the clk lookup creation.
-
-On that topic, now that the clocks are available in DT we could even move
-raspberrypi-cpufreq's registration there. But that's out of the scope of th=
-is
-series.
-
-> +
-> +	data =3D devm_kzalloc(rpi->dev, sizeof(*data), GFP_KERNEL);
-> +	if (!data)
-> +		return ERR_PTR(-ENOMEM);
-> +	data->rpi =3D rpi;
-> +	data->id =3D id;
-> +
-> +	init.name =3D devm_kasprintf(rpi->dev, GFP_KERNEL, "fw-clk-%u", id);
-
-I'd really like more descriptive names here, sadly the firmware interface
-doesn't provide them, but they are set in stone nonetheless. Something like
-'fw-clk-arm' and 'fw-clk-hsm' comes to mind (SCMI does provide naming BTW).
-
-See here for a list of all clocks:
-https://github.com/raspberrypi/firmware/wiki/Mailbox-property-interface#clo=
-cks
-
-> +	init.ops =3D &raspberrypi_firmware_clk_ops;
-> +	init.flags =3D CLK_GET_RATE_NOCACHE;
-> +
-> +	data->hw.init =3D &init;
-> +
-> +	ret =3D devm_clk_hw_register(rpi->dev, &data->hw);
-> +	if (ret)
-> +		return ERR_PTR(ret);
-> +
-> +	return &data->hw;
-> +}
-> +
-> +static int raspberrypi_discover_clocks(struct raspberrypi_clk *rpi,
-> +				       struct clk_hw_onecell_data *data)
-> +{
-> +	struct rpi_firmware_get_clocks_response *clks;
-> +	int ret;
-> +
-> +	clks =3D devm_kcalloc(rpi->dev, sizeof(*clks), NUM_FW_CLKS, GFP_KERNEL)=
-;
-> +	if (!clks)
-> +		return -ENOMEM;
-> +
-> +	ret =3D rpi_firmware_property(rpi->firmware, RPI_FIRMWARE_GET_CLOCKS,
-> +				    clks, sizeof(*clks) * NUM_FW_CLKS);
-> +	if (ret)
-> +		return ret;
-> +
-> +	while (clks->id) {
-> +		struct clk_hw *hw;
-
-Se my comment above WRT registering all clocks.
-
-Regards,
-Nicolas
-
-
---=-ieEAbJrdTr7tzv3p9LmQ
+--m7fwqhxu5jri276t
 Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl6wBRsACgkQlfZmHno8
-x/5lKAgAgSuCdpTozRnwf4eTgqPosSqclq9h93uvCBl/X/FWDZBuR2OYX9/VaboG
-q1eVupIjj6gF8WUDTSnfnn2fhhBY2szQ48N5QV5mB/D4Ib82BFUr99ku/d6eD7+L
-v4nqt2x/hVobt83ZRYcqpuRfstmQdWvAwV6Jbh/21ccLtFQHZwKRFRo1SMUOZ7S4
-gja02Ew3CiFtgagsL1uJcKw7xkygIDmXTeGP4tGRxWWdVZq/2PaJlXpWpF0HPx9d
-V5S/1nwtMSsUJvO7qE4e+x9JtpALlGv+KrDGOb/5PusNly5AfIoRErwji16DxIB6
-Ax1abz8s7nfALwDZSdaxNVVJyF3Org==
-=R00X
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXrAGBgAKCRDj7w1vZxhR
+xSkHAP4v8wD7S9lG0CmZac6gP5WY97N+CaOtPYTZiajfe48fqQEAy+VK7JRCf5OU
+L+GaaCtSkSV6kzT4EKtLSbT6ROmKZQ4=
+=xwQn
 -----END PGP SIGNATURE-----
 
---=-ieEAbJrdTr7tzv3p9LmQ--
+--m7fwqhxu5jri276t--
 
 
-
---===============3226291678224728218==
+--===============3179878356431296660==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -282,6 +245,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============3226291678224728218==--
-
+--===============3179878356431296660==--
 
