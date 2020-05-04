@@ -2,50 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24B061C3D79
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:48:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B33AA1C3D8D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:50:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S/VNBTdRGEvbNLXbZjvLCMQ68vFyuR9zif1T5pg8FyE=; b=rC/8lQl2sFnOir
-	5HTSAj6mu3/RCARXWul9zhG7JR/VH+LmtC2ch9Ht5nldH+b+QrtcXJCP0qlIaFcJb6uH+Ncl/cRiJ
-	LIIlIINq5+3bHhPEPYseuVSxH5tepln/bh1heAYCiBCgWzS4+3la4n9V3jPL/dPe7vcmV/OhyurzG
-	A19izqdsEH7VT1Pk6X6iS565+bDsxUGJRohoZZLhdf734Anlx1q1D8trnA7bejmOP7nJC4Fe4kcMJ
-	as9Bl7sq818KSFUUa1F46zoge/Kn6+lcjLJSFYKXwyq3I/ysfWamDo7gCMn/OEjDa9O5QJAbCIIAw
-	ZCc2x0Vqf7jClULwdPCw==;
+	List-Owner; bh=vOpUEU4mSjFLUs3GPIlV9BmBCC5UOD8YPDp4/FG0J4Q=; b=nnPp2cUWGk1E/Y
+	dICURllE10+eBWnZskCdqKcisoDexcTPCXL2w9+IuYr5TK+8S7IzU5NFc3CDtnldrC77QQMLkVjLx
+	HjjI12oq8GL7m0TUqkTOgyF4UkqHBwYcivACCbug7CO+h2P6lX6IYf9QiTU0pGqJz9yytnGxRKjcv
+	bjioRGHbv8YQeB5LYfNIqmTv64tzQlCyBu3NBZwjGp4kxD/tGfMlDDSQCBBwYtAcP3QlU8CPdlAZZ
+	bGqncBYJYCLC3WV/nvE96CwtcpSnO31RKF97Yk2cAtW3RBSFhK/zxo1MZwrO7Dvsxkca/UqCGvRGW
+	/B+GQ7wP/MJC5GAiCKag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVcO0-00032H-Bm; Mon, 04 May 2020 14:48:00 +0000
+	id 1jVcQO-0006iA-M7; Mon, 04 May 2020 14:50:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVcNu-00030u-Gr
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:47:55 +0000
+ id 1jVcQ8-0006Mg-0F
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:50:14 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 881211FB;
- Mon,  4 May 2020 07:47:52 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 018C53F305;
- Mon,  4 May 2020 07:47:50 -0700 (PDT)
-Date: Mon, 4 May 2020 15:47:44 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v3 01/23] arm64: alternative: Allow alternative_insn to
- always issue the first instruction
-Message-ID: <20200504144743.GB2884@gaia>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-2-catalin.marinas@arm.com>
- <20200427165737.GD15808@arm.com> <20200428114354.GE3868@gaia>
- <20200429102600.GA30377@arm.com> <20200429140425.GC10651@gaia>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4DC891FB;
+ Mon,  4 May 2020 07:50:10 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.47])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B626A3F305;
+ Mon,  4 May 2020 07:50:07 -0700 (PDT)
+Date: Mon, 4 May 2020 15:49:59 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v2 5/5] arm/arm64: smccc: Add ARCH_SOC_ID support
+Message-ID: <20200504144949.GA29926@bogus>
+References: <20200504092905.10580-1-sudeep.holla@arm.com>
+ <20200504092905.10580-6-sudeep.holla@arm.com>
+ <18382286-2aa8-54f3-e7f3-25992e908102@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429140425.GC10651@gaia>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <18382286-2aa8-54f3-e7f3-25992e908102@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_074754_605602_9D822E3E 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20200504_075012_157629_3B7A3416 
+X-CRM114-Status: GOOD (  27.13  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,43 +64,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ harb@amperecomputing.com, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 03:04:25PM +0100, Catalin Marinas wrote:
-> From 73f3869cb68fab1505d7b400ae8a39a19c5fc9e9 Mon Sep 17 00:00:00 2001
-> From: Catalin Marinas <catalin.marinas@arm.com>
-> Date: Wed, 27 Nov 2019 09:07:30 +0000
-> Subject: [PATCH] arm64: alternative: Always emit the first instruction in
->  ALTERNATIVE blocks
+On Mon, May 04, 2020 at 03:10:23PM +0100, Steven Price wrote:
+> On 04/05/2020 10:29, Sudeep Holla wrote:
+> > SMCCC v1.2 adds a new optional function SMCCC_ARCH_SOC_ID to obtain a
+> > SiP defined SoC identification value. Add support for the same.
+> > 
+> > Also using the SoC bus infrastructure, let us expose the platform
+> > specific SoC atrributes under sysfs. We also provide custom sysfs for
+> > the vendor ID as JEP-106 bank and identification code.
+> > 
+> > Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 > 
-> Currently with the ALTERNATIVE macro or alternative_insn, the cfg (or
-> enable) arguments disable the entire asm block. Change the macros to
-> only omit the alternative block on !IS_ENABLED(cfg). In addition, remove
-> the cfg arguments to to ALTERNATIVE in those few calls where it is still
-> passed. There is no change to the resulting kernel image with defconfig.
+> Some minor things below, but with those fixed:
 > 
-> alternative_insn's enable argument will be used in a subsequent patch
-> and we are keeping the ALTERNATIVE C macro arguments in line with the
-> asm version.
+> Reviewed-by: Steven Price <steven.price@arm.com>
 > 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
+> > ---
+> >   drivers/firmware/psci/Kconfig  |   9 ++
+> >   drivers/firmware/psci/Makefile |   1 +
+> >   drivers/firmware/psci/soc_id.c | 165 +++++++++++++++++++++++++++++++++
+> >   include/linux/arm-smccc.h      |   5 +
+> >   4 files changed, 180 insertions(+)
+> >   create mode 100644 drivers/firmware/psci/soc_id.c
+> > 
+> > diff --git a/drivers/firmware/psci/Kconfig b/drivers/firmware/psci/Kconfig
+> > index 97944168b5e6..831399338289 100644
+> > --- a/drivers/firmware/psci/Kconfig
+> > +++ b/drivers/firmware/psci/Kconfig
+> > @@ -12,3 +12,12 @@ config ARM_PSCI_CHECKER
+> >   	  The torture tests may interfere with the PSCI checker by turning CPUs
+> >   	  on and off through hotplug, so for now torture tests and PSCI checker
+> >   	  are mutually exclusive.
+> > +
+> > +config ARM_SMCCC_SOC_ID
+> > +	bool "SoC bus device for the ARM SMCCC SOC_ID"
+> > +	depends on ARM_PSCI_FW
+> > +	default y if ARM_PSCI_FW
+> 
+> Since it depends on ARM_PSCI_FW this "if" part is not needed.
+> 
 
-I no longer need this patch as I moved the page tag zeroing from
-clear_page to the actual mte.S file (called via set_pte_at()). So don't
-bother reviewing this.
+Indeed, I was experimenting something and forgot to remove it.
+
+> > +	select SOC_BUS
+> > +	help
+> > +	  Include support for the SoC bus on the ARM SMCCC firmware based
+> > +	  platforms providing some sysfs information about the SoC variant.
+> > diff --git a/drivers/firmware/psci/Makefile b/drivers/firmware/psci/Makefile
+> > index 1956b882470f..55596698d1ad 100644
+> > --- a/drivers/firmware/psci/Makefile
+> > +++ b/drivers/firmware/psci/Makefile
+> > @@ -2,3 +2,4 @@
+> >   #
+> >   obj-$(CONFIG_ARM_PSCI_FW)	+= psci.o
+> >   obj-$(CONFIG_ARM_PSCI_CHECKER)	+= psci_checker.o
+> > +obj-$(CONFIG_ARM_SMCCC_SOC_ID)	+= soc_id.o
+> > diff --git a/drivers/firmware/psci/soc_id.c b/drivers/firmware/psci/soc_id.c
+> > new file mode 100644
+> > index 000000000000..b45f2d78e12e
+> > --- /dev/null
+> > +++ b/drivers/firmware/psci/soc_id.c
+> > @@ -0,0 +1,165 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright 2020 Arm Limited
+> > + */
+> > +
+> > +#include <linux/arm-smccc.h>
+> > +#include <linux/bitfield.h>
+> > +#include <linux/device.h>
+> > +#include <linux/module.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/slab.h>
+> > +#include <linux/sys_soc.h>
+> > +
+> > +#define SMCCC_SOC_ID_JEP106_BANK_IDX_MASK	GENMASK(30, 24)
+> > +/*
+> > + * As per the spec bits[23:16] are JEP-106 identification code with parity bit
+> > + * for the SiP. We can drop the parity bit.
+> > + */
+> > +#define SMCCC_SOC_ID_JEP106_ID_CODE_MASK	GENMASK(22, 16)
+> > +#define SMCCC_SOC_ID_IMP_DEF_SOC_ID_MASK	GENMASK(15, 0)
+> > +
+> > +/* The bank index is equal to the for continuation code bank number - 1 */
+> > +#define JEP106_BANK_CONT_CODE(x)	\
+> > +	(u8)(FIELD_GET(SMCCC_SOC_ID_JEP106_BANK_IDX_MASK, (x)) + 1)
+> > +#define JEP106_ID_CODE(x)	\
+> > +	(u8)(FIELD_GET(SMCCC_SOC_ID_JEP106_ID_CODE_MASK, (x)))
+> > +#define IMP_DEF_SOC_ID(x)	\
+> > +	(u16)(FIELD_GET(SMCCC_SOC_ID_IMP_DEF_SOC_ID_MASK, (x)))
+> > +
+> > +static int soc_id_version;
+> > +static struct soc_device *soc_dev;
+> > +static struct soc_device_attribute *soc_dev_attr;
+> > +
+> > +static int smccc_map_error_codes(unsigned long a0)
+> > +{
+> > +	if (a0 >= SMCCC_RET_SUCCESS)
+> > +		return 0;
+> > +	else if (a0 == SMCCC_RET_INVALID_PARAMETER)
+> > +		return -EINVAL;
+> > +	else if (a0 == SMCCC_RET_NOT_SUPPORTED)
+> > +		return -EOPNOTSUPP;
+> > +	return -EINVAL;
+> > +}
+> > +
+> > +static int smccc_soc_id_support_check(void)
+> > +{
+> > +	struct arm_smccc_res res;
+> > +
+> > +	if (arm_smccc_1_1_get_conduit() == SMCCC_CONDUIT_NONE) {
+> > +		pr_err("%s: invalid SMCCC conduit\n", __func__);
+> > +		return -EOPNOTSUPP;
+> > +	}
+> > +
+> > +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
+> > +			     ARM_SMCCC_ARCH_SOC_ID, &res);
+> > +
+> > +	return smccc_map_error_codes(res.a0);
+> > +}
+> > +
+> > +static ssize_t
+> > +jep106_cont_bank_code_show(struct device *dev, struct device_attribute *attr,
+> > +			   char *buf)
+> > +{
+> > +	return sprintf(buf, "%02x\n", JEP106_BANK_CONT_CODE(soc_id_version));
+> > +}
+> > +
+> > +static DEVICE_ATTR_RO(jep106_cont_bank_code);
+> > +
+> > +static ssize_t
+> > +jep106_identification_code_show(struct device *dev,
+> > +				struct device_attribute *attr, char *buf)
+> > +{
+> > +	return sprintf(buf, "%02x\n", JEP106_ID_CODE(soc_id_version));
+> > +}
+> > +
+> > +static DEVICE_ATTR_RO(jep106_identification_code);
+> > +
+> > +static struct attribute *jep106_id_attrs[] = {
+> > +	&dev_attr_jep106_cont_bank_code.attr,
+> > +	&dev_attr_jep106_identification_code.attr,
+> > +	NULL
+> > +};
+> > +
+> > +ATTRIBUTE_GROUPS(jep106_id);
+> > +
+> > +static int __init smccc_soc_init(void)
+> > +{
+> > +	struct device *dev;
+> > +	int ret, soc_id_rev;
+> > +	struct arm_smccc_res res;
+> > +	static char soc_id_str[8], soc_id_rev_str[12];
+> > +
+> > +	if (arm_smccc_get_version() < ARM_SMCCC_VERSION_1_2)
+> > +		return 0;
+> > +
+> > +	ret = smccc_soc_id_support_check();
+> > +	if (ret) {
+> > +		pr_info("SMCCC SOC_ID not implemented, skipping ....\n");
+> > +		return 0;
+> > +	}
+> > +
+> > +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 0, &res);
+> > +
+> > +	ret = smccc_map_error_codes(res.a0);
+> > +	if (ret) {
+> > +		pr_info("SMCCC SOC_ID: failed to version, Err = %d\n", ret);
+>                                                 ^ get/fetch
+> > +		return ret;
+> > +	}
+> > +
+> > +	soc_id_version = res.a0;
+> > +
+> > +	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_SOC_ID, 1, &res);
+> > +
+> > +	ret = smccc_map_error_codes(res.a0);
+> > +	if (ret) {
+> > +		pr_info("SMCCC SOC_ID: failed to revision, Err = %d\n", ret);
+>                                                 ^ get/fetch
+
+Will fix it.
+
+> > +		return ret;
+> > +	}
+> > +
+> > +	soc_id_rev = res.a0;
+> > +
+> > +	soc_dev_attr = kzalloc(sizeof(*soc_dev_attr), GFP_KERNEL);
+> > +	if (!soc_dev_attr)
+> > +		return -ENOMEM;
+> > +
+> > +	sprintf(soc_id_str, "0x%04x", IMP_DEF_SOC_ID(soc_id_version));
+> > +	sprintf(soc_id_rev_str, "0x%08x", soc_id_rev);
+> > +
+> > +	soc_dev_attr->soc_id = soc_id_str;
+> > +	soc_dev_attr->revision = soc_id_rev_str;
+> > +
+> > +	soc_dev = soc_device_register(soc_dev_attr);
+> > +	if (IS_ERR(soc_dev)) {
+> > +		ret = PTR_ERR(soc_dev);
+> > +		goto free_soc;
+> > +	}
+> > +
+> > +	dev = soc_device_to_device(soc_dev);
+> > +
+> > +	ret = devm_device_add_groups(dev, jep106_id_groups);
+> > +	if (ret) {
+> > +		dev_err(dev, "sysfs create failed: %d\n", ret);
+> > +		goto unregister_soc;
+> > +	}
+> > +
+> > +	pr_info("SMCCC SoC ID: %s Revision %s\n", soc_dev_attr->soc_id,
+> > +		soc_dev_attr->revision);
+> 
+> All these pr_info()s have (almost) the same initial string, it might be
+> worth defining pr_fmt() and dropping it from the individual calls.
+> 
+
+Makes sense, will do that. Thanks again for the review.
 
 -- 
-Catalin
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
