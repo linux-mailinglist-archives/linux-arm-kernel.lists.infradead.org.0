@@ -2,78 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 295E51C3D5A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:41:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13FE11C3D3F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:37:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=A9ky4hFBcjdc9tNbjKpRMttx4Gj4f7SYkiHCVdtmkdw=; b=EYDato/C+ds7Jc
-	+b4knYjKqJkRdXDtIUrxxM/iudg42Wo1rf5Fd/n0BMOnxIq5xjmx9OQQZdbHY/Hgmk4ZklI8qJtIO
-	qCvC2sTVybxdCbXMvgAf81jHO2xJ+wn3nzVkT6m7D6HFrSTtyHfnGSN3Ec3GrW5bdMrX7oF6zAJ2q
-	qq8WuoGuIUER3SKzRy9Vd2Uu52oHfSm/+j+TVLpQiHsw+ZriJ+2ynG2mTpvVz0CKHYCQNad6oHEA/
-	hQ7bEMVvn9q7+FIzng+jxDk+jarpgrGV9oJkf7FSLm72WzTsJhe6ayFJY0klLQx8FDOgMVg/2oN6U
-	5ZokdR+fVB3SggzouE1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Uzvgmy6QJ24xbSUjaB35G6oa5U1BME3NOy7HopT10tE=; b=sVlaJb+u4c698U5+RhraSZj3A
+	Lld6AtpyrgVWfnjCdXTEJqnvwrl1ztcPFbd30Q8eRUYU6fKcrbSbq2WdVRgapHzalg31Dm2iG09Tl
+	wAN8gBObMLpwWTYeMzjhnfOveot9lUw3DRnBLMeXeKjFbu651AcIpqyxBMg3SvFB3mvYHqRf4W1lF
+	EHmr94blxoAz76Hlcau1Hju7s/7DNhXO8yrbA4d7mVJ8o3JUbo3bDlfS4HQrN3Yx7i30/mlM9Reu+
+	jQHSSHXelJslUhdu+AK59Fl29IvmJAyubqS9TgRa93at+47vTZnspNY+by3n6XUm2uao2Ji1Kgb3h
+	6He/CWLMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVcHt-00076B-JC; Mon, 04 May 2020 14:41:41 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVcHl-00074p-UQ; Mon, 04 May 2020 14:41:35 +0000
-X-UUID: 3afdf3d68eb84ad483611909e9434527-20200504
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=2aGaMzA1GyuNZEh0UpXEsA4e6TZN2Eh4ifHdYI0/czs=; 
- b=pzIKIZrOlown6uXwCx89LyMh2ATxN/bO2iYQOSf+nJwzTpkgu9ikqcwpxLe9uShFmorDbw1nae2ACxCUZPgH8WTQRMQ1adRUg5k2dqr29zA7TP5wUHSrPUAi1iwk9xjVTOmJEHmGaCHIibbuV/Ud4efUUJ5EX/mfGdkhLY5ZmB4=;
-X-UUID: 3afdf3d68eb84ad483611909e9434527-20200504
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1881611110; Mon, 04 May 2020 06:41:24 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 4 May 2020 07:41:27 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 4 May 2020 22:41:24 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 4 May 2020 22:41:24 +0800
-Message-ID: <1588603287.3197.35.camel@mtkswgap22>
-Subject: RE: [PATCH v5 2/8] scsi: ufs: introduce fixup_dev_quirks vops
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Mon, 4 May 2020 22:41:27 +0800
-In-Reply-To: <BYAPR04MB46294C86DB9BD1A91256F39BFCA60@BYAPR04MB4629.namprd04.prod.outlook.com>
-References: <20200503113415.21034-1-stanley.chu@mediatek.com>
- <20200503113415.21034-3-stanley.chu@mediatek.com>
- <BYAPR04MB46294C86DB9BD1A91256F39BFCA60@BYAPR04MB4629.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+	id 1jVcDm-0003TO-D6; Mon, 04 May 2020 14:37:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVcDe-0003SE-BQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:37:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D6461FB;
+ Mon,  4 May 2020 07:37:17 -0700 (PDT)
+Received: from [10.37.12.17] (unknown [10.37.12.17])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 543783F305;
+ Mon,  4 May 2020 07:37:04 -0700 (PDT)
+Subject: Re: [PATCH v6 11/25] iommu/arm-smmu-v3: Share process page tables
+To: jean-philippe@linaro.org
+References: <20200430143424.2787566-1-jean-philippe@linaro.org>
+ <20200430143424.2787566-12-jean-philippe@linaro.org>
+ <580a915f-f8bf-3b3e-c77d-6d0c2ea4bd02@arm.com>
+ <20200504141137.GA170104@myrica>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <82f54362-34f1-2378-49c2-2d87e065e385@arm.com>
+Date: Mon, 4 May 2020 15:42:04 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200504141137.GA170104@myrica>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_074133_988494_390B1B28 
-X-CRM114-Status: UNSURE (   6.45  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_073718_438763_DCD1B046 
+X-CRM114-Status: GOOD (  16.50  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,47 +66,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
+ jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
+ joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
+ fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
+ catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
-
-On Mon, 2020-05-04 at 10:38 +0000, Avri Altman wrote:
-> > 
-> >         ufs_fixup_device_setup(hba);
-> > +       ufshcd_vops_fixup_dev_quirks(hba);
-> Maybe call your new ufshcd_vops_fixup_dev_quirks as part of ufs_fixup_device_setup
-
-The latter patch exports ufs_fixup_device_setup() for vendors to re-use
-it to parse vendor-specific device quirk table during the call of
-ufshcd_vops_fixup_dev_quirks(), thus ufshcd_vops_fixup_dev_quirks()
-cannot be as part of ufs_fixup_device_setup().
-
-Thanks,
-Stanley Chu
-
-> .
+On 05/04/2020 03:11 PM, Jean-Philippe Brucker wrote:
+> On Thu, Apr 30, 2020 at 04:39:53PM +0100, Suzuki K Poulose wrote:
+>> On 04/30/2020 03:34 PM, Jean-Philippe Brucker wrote:
+>>> With Shared Virtual Addressing (SVA), we need to mirror CPU TTBR, TCR,
+>>> MAIR and ASIDs in SMMU contexts. Each SMMU has a single ASID space split
+>>> into two sets, shared and private. Shared ASIDs correspond to those
+>>> obtained from the arch ASID allocator, and private ASIDs are used for
+>>> "classic" map/unmap DMA.
+>>>
+>>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+>>> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+>>> ---
+>>
+>>> +
+>>> +	tcr = FIELD_PREP(CTXDESC_CD_0_TCR_T0SZ, 64ULL - VA_BITS) |
+>>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_IRGN0, ARM_LPAE_TCR_RGN_WBWA) |
+>>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_ORGN0, ARM_LPAE_TCR_RGN_WBWA) |
+>>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_SH0, ARM_LPAE_TCR_SH_IS) |
+>>> +	      CTXDESC_CD_0_TCR_EPD1 | CTXDESC_CD_0_AA64;
+>>> +
+>>> +	switch (PAGE_SIZE) {
+>>> +	case SZ_4K:
+>>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_4K);
+>>> +		break;
+>>> +	case SZ_16K:
+>>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_16K);
+>>> +		break;
+>>> +	case SZ_64K:
+>>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_64K);
+>>> +		break;
+>>> +	default:
+>>> +		WARN_ON(1);
+>>> +		ret = -EINVAL;
+>>> +		goto err_free_asid;
+>>> +	}
+>>> +
+>>> +	reg = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1);
+>>> +	par = cpuid_feature_extract_unsigned_field(reg, ID_AA64MMFR0_PARANGE_SHIFT);
+>>> +	tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_IPS, par);
+>>> +
+>>> +	cd->ttbr = virt_to_phys(mm->pgd);
+>>
+>> Does the TTBR follow the same layout as TTBR_ELx for 52bit IPA ? i.e,
+>> TTBR[5:2] = BADDR[51:48] ? Are you covered for that ?
 > 
-> Thanks,
-> Avri
+> Good point, I don't remember checking this. The SMMU TTBR doesn't have the
+> same layout as the CPU's, and we don't need to swizzle the bits. For the
+> lower bits, the alignment requirements on the pgd are identical to the
+> MMU.
+
+Ok, if that is the case:
+
+Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
