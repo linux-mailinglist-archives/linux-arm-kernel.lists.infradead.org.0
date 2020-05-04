@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37ABF1C3EF0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 17:50:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B30AE1C3F55
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:05:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KNuhHn2ESO7a4sp0dGKGR9Pl7hs5N4FdM1DkWFdXXks=; b=flYYuxxwdxk5x0
-	GYrcDtDlRbeR+lDGAiqq88Cv72FNsjVEXeCXaP3IzB8IfSpJHUkY7/17E3H0ST8NZG399CLNCFXkc
-	rS7ghr8Dn/fdRnY99JprFYar3JQ11Fo1+qbzYdLEafldrLOKDAKKApUAzzgyAdHnvKeZcRivC37Jj
-	FvBZ8W2z1WacEsKFSq4u1l2q7oL9tB3yAwiN7i8HbyMQmG0DiXnEgdEj2dIjVVYdej8u+GQ2mU2PA
-	GkGVLGGdouk2YqLojtyWrems61xUuoqWjwSSgivoA5yNZY3Nwhkb01I/y2tF1s5oPP0mG+pU1BH47
-	9RC+0rfQd1JScpS2aSLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=s8+Wc6o1MAzxvRgeVDIt4GJXyJdf8//iPUZ8Ys5A3wE=; b=KzuZER6kkpx0IF0OJ3wJL7x8D
+	sUyMWWngDHHfmIXMj/pn0a2bGXFpF85A6PzKolGEP9yIDfYrrHsfRjtIbFYKTdoGn8AZ53OTESDRa
+	TJ39sCP0ZMZVtRBRKHCtB2+HFAJc3O4GfHkxKZ/pgxWb4hf3cMtotPJwBeR8bRwfOZ7+bd2Jvchl9
+	lOHNuhGTGRUpq4EEgkQyNzFMK8cQeFA5aTBzaNZj9Mk8sNiZuXFeX+oSpaJQYvtP/m+/GfHlBZi/r
+	rPcgfzT67E2erGXn3i5VAOpGKt/QDz0MIHZRpWE4VEsw4ThR+xeS5EcOTCpE5j170n4XXkvOcGKXY
+	LzpvxTcoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVdMQ-0004mJ-3Z; Mon, 04 May 2020 15:50:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVdMJ-0004kQ-QW
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 15:50:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 880281FB;
- Mon,  4 May 2020 08:50:18 -0700 (PDT)
-Received: from C02TD0UTHF1T.local (unknown [10.57.4.172])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B41913F68F;
- Mon,  4 May 2020 08:50:16 -0700 (PDT)
-Date: Mon, 4 May 2020 16:50:13 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH] arm64/cpuinfo: Drop boot_cpu_data
-Message-ID: <20200504155013.GG73375@C02TD0UTHF1T.local>
-References: <1588595400-4560-1-git-send-email-anshuman.khandual@arm.com>
- <20200504124321.GA73375@C02TD0UTHF1T.local>
- <224296d1-086a-5516-95a8-8f4ad5c533d9@arm.com>
+	id 1jVdb6-00021Y-1Y; Mon, 04 May 2020 16:05:36 +0000
+Received: from www62.your-server.de ([213.133.104.62])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVday-0001wQ-ER
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:05:30 +0000
+Received: from sslproxy03.your-server.de ([88.198.220.132])
+ by www62.your-server.de with esmtpsa (TLSv1.2:DHE-RSA-AES256-GCM-SHA384:256)
+ (Exim 4.89_1) (envelope-from <daniel@iogearbox.net>)
+ id 1jVdaZ-0004zi-1W; Mon, 04 May 2020 18:05:03 +0200
+Received: from [178.195.186.98] (helo=pc-9.home)
+ by sslproxy03.your-server.de with esmtpsa (TLSv1.3:TLS_AES_256_GCM_SHA384:256)
+ (Exim 4.92) (envelope-from <daniel@iogearbox.net>)
+ id 1jVdaY-000HF6-Hv; Mon, 04 May 2020 18:05:02 +0200
+Subject: Re: [PATCH bpf 0/2] bpf, arm: Small JIT optimizations
+To: Luke Nelson <lukenels@cs.washington.edu>, bpf@vger.kernel.org
+References: <20200501020210.32294-1-luke.r.nels@gmail.com>
+From: Daniel Borkmann <daniel@iogearbox.net>
+Message-ID: <c59f4067-6334-2dc4-a37b-b1e953663897@iogearbox.net>
+Date: Mon, 4 May 2020 18:05:01 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <224296d1-086a-5516-95a8-8f4ad5c533d9@arm.com>
+In-Reply-To: <20200501020210.32294-1-luke.r.nels@gmail.com>
+Content-Language: en-US
+X-Authenticated-Sender: daniel@iogearbox.net
+X-Virus-Scanned: Clear (ClamAV 0.102.2/25802/Mon May  4 14:12:31 2020)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_085019_902317_310758F3 
-X-CRM114-Status: GOOD (  18.46  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_090528_483549_07C3C062 
+X-CRM114-Status: GOOD (  11.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.133.104.62 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,71 +67,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
+Cc: Song Liu <songliubraving@fb.com>, linux-kernel@vger.kernel.org,
+ Luke Nelson <luke.r.nels@gmail.com>, netdev@vger.kernel.org,
+ John Fastabend <john.fastabend@gmail.com>, Alexei Starovoitov <ast@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Yonghong Song <yhs@fb.com>,
+ KP Singh <kpsingh@chromium.org>, Shubham Bansal <illusionist.neo@gmail.com>,
+ Andrii Nakryiko <andriin@fb.com>, Martin KaFai Lau <kafai@fb.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 08:23:08PM +0530, Anshuman Khandual wrote:
+On 5/1/20 4:02 AM, Luke Nelson wrote:
+> As Daniel suggested to us, we ran our formal verification tool, Serval,
+> over the arm JIT. The bugs we found have been patched and applied to the
+> bpf tree [1, 2]. This patch series introduces two small optimizations
+> that simplify the JIT and use fewer instructions.
 > 
+> [1] https://lore.kernel.org/bpf/20200408181229.10909-1-luke.r.nels@gmail.com/
+> [2] https://lore.kernel.org/bpf/20200409221752.28448-1-luke.r.nels@gmail.com/
 > 
-> On 05/04/2020 06:13 PM, Mark Rutland wrote:
-> > On Mon, May 04, 2020 at 06:00:00PM +0530, Anshuman Khandual wrote:
-> >> A global boot_cpu_data is not really required. Lets drop this.
-> > 
-> > I don't think it's true that this isn't required today.
-> > 
-> > One reason that we have both boot_cpu_data and a cpu_data variable for
-> > CPU0 is that CPU0 itself can be hotplugged out then back in, and this
-> > allows us to detect if CPU0's features have changed (e.g. due to FW
-> > failing to configure it appropriately, or real physical hotplug
-> > occurring).
+> Luke Nelson (2):
+>    bpf, arm: Optimize emit_a32_arsh_r64 using conditional instruction
+>    bpf, arm: Optimize ALU ARSH K using asr immediate instruction
 > 
-> Understood. After hotplug, CPU0 will come back via secondary_start_kernel()
-> where it's current register values will be checked against earlier captured
-> values i.e boot_cpu_data.
+>   arch/arm/net/bpf_jit_32.c | 14 +++++++++-----
+>   arch/arm/net/bpf_jit_32.h |  2 ++
+>   2 files changed, 11 insertions(+), 5 deletions(-)
 > 
-> But wondering why should CPU0 be treated like any other secondary CPU. IOW
-> in case the fresh boot CPU register values dont match with boot_cpu_data,
-> should not the online process just be declined ? AFAICS, current approach
-> will let the kernel run with taint in case of a mismatch.
 
-I don't follow. When CPU0 is hotplguged back in it'll follow the
-secondary boot path, so it can be rejected as with any other secondary
-CPU.
-
-If I'm missing a case, could you please point that out more
-specifically?
-
-> > So NAK to the patch as it stands. If we're certain we capture all of
-> > those details even without boot_cpu_data, then we should make other
-> > changes to make that clear (e.g. removing it as an argument to
-> > update_cpu_features()).
-> 
-> There might not be another way, unless we can override CPU0's cpu_data
-> variable when the boot CPU comes back in after vetting against existing
-> values. Is there any particular reason to store the very first boot CPU0
-> info for ever ?
-
-The reason is so that we can log the values for comparison. Otherwise
-we'll have to choose some arbitrary CPU's value in order to do so.
-
-> Passing on CPU0's cpu_data variable in update_cpu_features() for secondary
-> CPUs during boot still make sense. It helps in finalizing register values.
-> Re-entering CPU0's test against boot_cpu_data seems different.
-
-I think that practically this means we should leave this as-is. If we
-need to keep it around for CPU, then we may as well keep it around and
-use it consitently for all secondary CPUs.
-
-I'd prefer to leave this as-is given it's simple to reason about.
-
-Thanks,
-Mark.
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
