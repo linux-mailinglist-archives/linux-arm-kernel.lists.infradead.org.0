@@ -2,95 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2281C1C3886
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:44:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 30D7B1C3897
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:50:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HhSzWOg7cGDkDae3NAgGNO081leWTuhL55E+3kW2bx0=; b=NMM5Qko27UuXiA
-	2wEyPMHHDB71TTCMWY9yprbqhUUxAR+lAfRe5tjz/8l8ALg4gLW/6p5cXrVLZk3fJ9LmMzl6ZNaQB
-	T+/jZCywdRK30KhO5FcMCYqmH+OGm9CgQxapm+lv2O58pS6PGDCYwI642GwEqTIXVVCe1WumwLZPn
-	KcmgbsvJltOHIXhdxKUuhy7uvE+wn6ml63Mio3MaiLowHNY2oletV7yDizBaUHFy9bRiP0wbdSxbB
-	i+XvKShpN03jUUof2BSGI1VtYWFg34pJoyYe9PwufwyYh3I7YFrDp/pR3blrNzty/+DazGiP9Hwr6
-	yBX8CbZ5wYpjFoonZG9A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/weQTCVbMCg4qSpxbse4VWW+u9cD1zd4fZUfchwnQ2M=; b=g0Bc0dgqDLog4T1aLJsu5EWKH
+	GzPh8XWJ3Lueisq+yPaRvjPyvVeLZoXTHaIMdxjerkhO5rqUK5+nIGXNQTd+VtGV3922KDCcnvyg3
+	TAqjIbfUr3l4B+40Oly8H2tVYoHeyCauPoglFQG1y5bZyfNxlJzKdyztY8oNG+eoQXtFiAQLH5wos
+	D0pzXDwZMF0P3U+9F2Ph5Yisv57UKEMMy9N6Toe7g6SKM3AQRbwYJdcmyAU4J9cAZjTSRnquiDZqZ
+	Rbie46b/S346OFQ8KzKkROhvWBWef1AOh045Gj8ZX5mzDlauhYnPaiKUDnhvb0Y417p4enIXQi5rU
+	m8OWuH40g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZWW-0001Jt-Cv; Mon, 04 May 2020 11:44:36 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jVZbj-0004sT-6Y; Mon, 04 May 2020 11:49:59 +0000
+Received: from wnew3-smtp.messagingengine.com ([64.147.123.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZWM-0001JB-TB
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:44:28 +0000
-Received: by mail-pg1-x542.google.com with SMTP id d22so3142909pgk.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 04:44:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:subject:date:message-id:in-reply-to:references;
- bh=KE1E6Qa3R2pfEpOWk7MxtXJqUgD9w91BRweLgLc6m/I=;
- b=DoLS6r/Y/Yq6S/rgQycBopx94B6CehgYivKU/+UXsQu2n+Uc9RJCBf7ol4yyYHbq8l
- eRoI1QVG4NX6LNePy+OFPSHt6VKWjZ5y2n/pYcEZ40Zd1IfXpaJf51sjo0kgzaOYeOwE
- KPrxp7VlGPXk7fyFzfsBg+zEO9HOgdHJSk7DfWrj1FUN4s1hEYODkk5yeDBV4SWH9g7M
- bsuIEBwLFuILx130410g3bk8j381PnOoletAhT7YvmGTJp57ce5JMBPZ5R4mv+3GNYdS
- Tfd5ksb26j28n6oOQW2VtoXlmb0VudzdbkwG1Qm8P376KjSDXrV4JPlaRqRqEh/t9aI/
- 4FXg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:subject:date:message-id:in-reply-to
- :references;
- bh=KE1E6Qa3R2pfEpOWk7MxtXJqUgD9w91BRweLgLc6m/I=;
- b=opEIVnCGVcqSzgsVaqdnVvBVAb+dZotzHW9hxw3xs6djjcDbqcv6f12OwFNOTxwZs5
- wTqmfeXjjIsU3ZqkmWH2k0REn12l/AMhJCFn183r+bz+AZ28AKNRYEwM31e6HUyXeREZ
- upo5xAp75mALANzOR35ls56WRa8dwBQQNotxN8aBesL9kcbxcNVndliorISDRlIxUpmT
- wVuHeYzcJFu+M0ac2rs+9DlJWHupfEJmaDatwgwZsUIExeKEtI4R2k1gq6nD0i5Joxph
- wWFb6/XizYntIzChsyiKfc5Jacn9wT0kjZBjTfOU9CeRa/akyPc24CkX/mBHRtbpgV2n
- nJkA==
-X-Gm-Message-State: AGi0PubHrQ5zvrKxv/8SP/GFWByL56iEQ9OMUPpBtKfV4EdqSc0bVYXd
- E/WI6fL2lg0yp9vkFusLQgQ=
-X-Google-Smtp-Source: APiQypK6Y0ETyZi/tK8Fo012jOB3XHEpY8XYWd7UJbcUvZpongTD58JgYc0v6ieSgnN+Z4hU8KnDxQ==
-X-Received: by 2002:a63:7b42:: with SMTP id k2mr10622412pgn.299.1588592666223; 
- Mon, 04 May 2020 04:44:26 -0700 (PDT)
-Received: from localhost.localdomain ([2409:4072:20a:c836:7c28:bcca:10e4:5523])
- by smtp.gmail.com with ESMTPSA id w30sm8646930pfj.25.2020.05.04.04.44.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 May 2020 04:44:25 -0700 (PDT)
-From: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-To: Thor Thayer <thor.thayer@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>, Vladimir Zapolskiy <vz@mleia.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Baruch Siach <baruch@tkos.co.il>, Dmitry Osipenko <digetx@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>,
- linux-i2c@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] i2c: drivers: Remove superfluous error message
-Date: Mon,  4 May 2020 17:14:06 +0530
-Message-Id: <20200504114408.9128-1-aishwaryarj100@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200503120847.13528-1-aishwaryarj100@gmail.com>
-References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
+ id 1jVZbX-0004rY-J9
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:49:48 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.west.internal (Postfix) with ESMTP id 3981A4CF;
+ Mon,  4 May 2020 07:49:42 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 04 May 2020 07:49:43 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=aOCT64fzRTmG4hyK09D049RH30r
+ n+qDts7It4/KOpcw=; b=Xop4FSffBO5zPQWboSBJoIVL99fcew62F8kVEboByJb
+ ih8r1bYUKw7YiD64gZsWfkkMNsDGXTLIGvLn95lzicdDrC3RO4kBy83Ndt8oIeQI
+ HM10Jzb+G2a+8IbAE5M9ASkcLW4w1x6YdJXZy0qSiTAE8hhXv4U5yKA378qLX1Mg
+ duDR2jphm8e6a/VkviGze5E54NibDT6xrrHCucD8ocSDlsgYAANgymJB++H8NAY0
+ 11qBzivJG74Hv8m2dfSxNEH6oum5Tgs4eDPW7tozrNJls3HLz/4JeuAV5Cl6aMyD
+ r22Ctofw7ZUQb3uDEXLnb4/QIyRnWOdXIFVy+IgerrA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=aOCT64
+ fzRTmG4hyK09D049RH30rn+qDts7It4/KOpcw=; b=MgAol9a9iOT6/SQVVl2s6D
+ YknxToOieqpigwcA5LkzShBpmVUe1CN3Ui5kYYkURW1XOagweviNczltlJVwqH4X
+ 7agWVf5rRY907nDHYoplL1QrA25L08e0ZliRdCuhYHFva4ZmgukLxrSqnDofl3iu
+ 9+j6g5LxCiljuil2apQqr2Hx3e/1kcZm4bSpmYymXTMvhxK7mGorwt0tBELAkKEk
+ Gnvq3IaIHMbuL2r3YdZsSBHZanSqceiwPWdKW8asFzHd+SmtX8zjI8CRt+F9xy+/
+ wQVkWiK7D1L7jD1edc6GfWW5JnIGnSe3raDjoDO83ORBONHD+oRzejBCMURf5E3Q
+ ==
+X-ME-Sender: <xms:UAGwXnVO2uNlwtwakKb3U_PiozgjurcVPSwxcYqwBVIp35VxxGX52Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrjeeggdegudcutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
+ udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
+ grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:UAGwXnPWp-rZzUergCxnLRMkziO5ajExGkJwWx8c4_bibVGbJNqmpQ>
+ <xmx:UAGwXqyvgHDjoEGtvJYcaNnZ9YPBY195Ex7i60ZS45PdeCWV9IPOMQ>
+ <xmx:UAGwXs1BVi9I8EH6c_8sMMaRlweb8W7n3LyCijpN74pePj5amw_Gpg>
+ <xmx:VQGwXnDK4M4__YVgPiyuuxi__3yCtYPF-bsAYJo9j9Qmb2UQXSqXWDequDo>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 786A13280065;
+ Mon,  4 May 2020 07:49:36 -0400 (EDT)
+Date: Mon, 4 May 2020 13:49:34 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] sun6i: dsi: fix gcc-4.8
+Message-ID: <20200504114934.4at4qymeinzhntia@gilmour.lan>
+References: <20200428215105.3928459-1-arnd@arndb.de>
+MIME-Version: 1.0
+In-Reply-To: <20200428215105.3928459-1-arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_044426_944568_44B5B760 
-X-CRM114-Status: GOOD (  12.12  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200504_044947_682318_BBFEDE00 
+X-CRM114-Status: UNSURE (   8.72  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [aishwaryarj100[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.17 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [aishwaryarj100[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -109,112 +104,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Samuel Holland <samuel@sholland.org>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
+ Jagan Teki <jagan@amarulasolutions.com>, Daniel Vetter <daniel@ffwll.ch>,
+ linux-arm-kernel@lists.infradead.org, Icenowy Zheng <icenowy@aosc.io>
+Content-Type: multipart/mixed; boundary="===============1388722877505508697=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The function platform_get_irq can log an error by itself.
-This omit a redundant message for exception handling in the
-calling function.
 
-Suggested by Coccinelle.
+--===============1388722877505508697==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="36sp7fcv334ahfch"
+Content-Disposition: inline
 
-Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
----
- drivers/i2c/busses/i2c-altera.c   | 4 +---
- drivers/i2c/busses/i2c-cht-wc.c   | 4 +---
- drivers/i2c/busses/i2c-img-scb.c  | 4 +---
- drivers/i2c/busses/i2c-lpc2k.c    | 4 +---
- drivers/i2c/busses/i2c-uniphier.c | 4 +---
- 5 files changed, 5 insertions(+), 15 deletions(-)
 
-diff --git a/drivers/i2c/busses/i2c-altera.c b/drivers/i2c/busses/i2c-altera.c
-index f5c00f903df3..af6985f0ae63 100644
---- a/drivers/i2c/busses/i2c-altera.c
-+++ b/drivers/i2c/busses/i2c-altera.c
-@@ -395,10 +395,8 @@ static int altr_i2c_probe(struct platform_device *pdev)
- 		return PTR_ERR(idev->base);
- 
- 	irq = platform_get_irq(pdev, 0);
--	if (irq < 0) {
--		dev_err(&pdev->dev, "missing interrupt resource\n");
-+	if (irq < 0)
- 		return irq;
--	}
- 
- 	idev->i2c_clk = devm_clk_get(&pdev->dev, NULL);
- 	if (IS_ERR(idev->i2c_clk)) {
-diff --git a/drivers/i2c/busses/i2c-cht-wc.c b/drivers/i2c/busses/i2c-cht-wc.c
-index 35e55feda763..343ae5754e6e 100644
---- a/drivers/i2c/busses/i2c-cht-wc.c
-+++ b/drivers/i2c/busses/i2c-cht-wc.c
-@@ -314,10 +314,8 @@ static int cht_wc_i2c_adap_i2c_probe(struct platform_device *pdev)
- 	int ret, reg, irq;
- 
- 	irq = platform_get_irq(pdev, 0);
--	if (irq < 0) {
--		dev_err(&pdev->dev, "Error missing irq resource\n");
-+	if (irq < 0)
- 		return -EINVAL;
--	}
- 
- 	adap = devm_kzalloc(&pdev->dev, sizeof(*adap), GFP_KERNEL);
- 	if (!adap)
-diff --git a/drivers/i2c/busses/i2c-img-scb.c b/drivers/i2c/busses/i2c-img-scb.c
-index 422097a31c95..2f6de763816a 100644
---- a/drivers/i2c/busses/i2c-img-scb.c
-+++ b/drivers/i2c/busses/i2c-img-scb.c
-@@ -1344,10 +1344,8 @@ static int img_i2c_probe(struct platform_device *pdev)
- 		return PTR_ERR(i2c->base);
- 
- 	irq = platform_get_irq(pdev, 0);
--	if (irq < 0) {
--		dev_err(&pdev->dev, "can't get irq number\n");
-+	if (irq < 0)
- 		return irq;
--	}
- 
- 	i2c->sys_clk = devm_clk_get(&pdev->dev, "sys");
- 	if (IS_ERR(i2c->sys_clk)) {
-diff --git a/drivers/i2c/busses/i2c-lpc2k.c b/drivers/i2c/busses/i2c-lpc2k.c
-index 13b0c12e2dba..43dc9b7043e4 100644
---- a/drivers/i2c/busses/i2c-lpc2k.c
-+++ b/drivers/i2c/busses/i2c-lpc2k.c
-@@ -362,10 +362,8 @@ static int i2c_lpc2k_probe(struct platform_device *pdev)
- 		return PTR_ERR(i2c->base);
- 
- 	i2c->irq = platform_get_irq(pdev, 0);
--	if (i2c->irq < 0) {
--		dev_err(&pdev->dev, "can't get interrupt resource\n");
-+	if (i2c->irq < 0)
- 		return i2c->irq;
--	}
- 
- 	init_waitqueue_head(&i2c->wait);
- 
-diff --git a/drivers/i2c/busses/i2c-uniphier.c b/drivers/i2c/busses/i2c-uniphier.c
-index 668b1fa2b0ef..ee00a44bf4c7 100644
---- a/drivers/i2c/busses/i2c-uniphier.c
-+++ b/drivers/i2c/busses/i2c-uniphier.c
-@@ -324,10 +324,8 @@ static int uniphier_i2c_probe(struct platform_device *pdev)
- 		return PTR_ERR(priv->membase);
- 
- 	irq = platform_get_irq(pdev, 0);
--	if (irq < 0) {
--		dev_err(dev, "failed to get IRQ number\n");
-+	if (irq < 0)
- 		return irq;
--	}
- 
- 	if (of_property_read_u32(dev->of_node, "clock-frequency", &bus_speed))
- 		bus_speed = I2C_MAX_STANDARD_MODE_FREQ;
--- 
-2.17.1
+--36sp7fcv334ahfch
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+On Tue, Apr 28, 2020 at 11:50:51PM +0200, Arnd Bergmann wrote:
+> Older compilers warn about initializers with incorrect curly
+> braces:
+>=20
+> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c: In function 'sun6i_dsi_encoder_en=
+able':
+> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: missing braces aroun=
+d initializer [-Werror=3Dmissing-braces]
+>   union phy_configure_opts opts =3D { 0 };
+>         ^
+> drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: (near initialization=
+ for 'opts.mipi_dphy') [-Werror=3Dmissing-braces]
+>=20
+> Use the GNU empty initializer extension to avoid this.
+>=20
+> Fixes: bb3b6fcb6849 ("sun6i: dsi: Convert to generic phy handling")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+Applied, thanks!
+Maxime
+
+--36sp7fcv334ahfch
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXrABTgAKCRDj7w1vZxhR
+xZceAQDWqA1wYrHG+lfIkDwv2IQjgIb1xdlrOwmPCXTqeewZ4QD/RSluDlNXx9Qq
+blYGsMP6amEH5VFu2RqHB3ZCV33Kbw0=
+=M2L1
+-----END PGP SIGNATURE-----
+
+--36sp7fcv334ahfch--
+
+
+--===============1388722877505508697==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1388722877505508697==--
+
