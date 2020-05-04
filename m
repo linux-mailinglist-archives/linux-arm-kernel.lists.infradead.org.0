@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC8971C41F9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 19:15:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF26C1C424B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 19:18:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BlwM/Bdw0ezkKNOD55LKf+5Rv/ID5UThLU1UZE/werk=; b=TSC7npP1NJwakW
-	0JXE70DaEYIWY135MRgdIqOxJj0P5Ag5eCaMiixUk6oCrF9asORGSk0XnSEYB+ftSSYsB/9891wpS
-	L/C54Xnjzxiap1wtO/At1UyrUVMxRjOu8YpAdkqU40hdPbbFQJReThdyicNO0khlhhdRl7KTT50jm
-	CTsGtb70LdhFJwPusoVyRFHd1wErnsxVOYsBZUrT/Nj9W05kBPXDqJl+Px+EI/AeVbQmQDF7crnqr
-	YySy6g5mbdkaNZACdypUATx9BBVkgKmBai4i2MB+2QRnAKOzy33JRooWM96ZMPtO1rYRukwEYqIxV
-	oDPy2zIiFBwP2QGkjkVw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xke7azYaBVhPymx2g/sueolCxmrakUBqFphiedjXmAM=; b=ieTBZWmqnvlu4l
+	QeAa+eo99bW8j/nA6wtIzmFmTCkctFV9w7urtaxnViHhAAutKt+56nyTrybcVYsuC2uyaA7OsH4zC
+	PmIjfqlbHr3RTQ+tMEpFYYdUWRl7bsGX7KsbtEt0ikHezmBHidQ8InKlNZMvqYpBgdog8HECB+2go
+	PI5vZ3oleI5gGeYy7dyMFF7PS6cQeVeaVkXft7Kgi6iYwB7DyNTO1wRi4a+K6VrqS2RSgrNczovib
+	qY+R31jpLx57P0K4Oztm3dAba3rVejwlGmMkUPjiFqpxa4SVKeP6lu4hGvkGRO9OBtqyxHQmdtdEO
+	hVxo2r8SQqjnA7nrtgNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVegg-0007nQ-1S; Mon, 04 May 2020 17:15:26 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVefz-0007V8-Nq
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 17:14:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 34D0D1045;
- Mon,  4 May 2020 10:14:43 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7A5753F68F;
- Mon,  4 May 2020 10:14:42 -0700 (PDT)
-Subject: Re: [PATCH] firmware: arm_sdei: Drop check for /firmware/ node and
- always register driver
-To: Sudeep Holla <sudeep.holla@arm.com>
-References: <20200422122823.1390-1-sudeep.holla@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <bcadd00b-cd76-8321-e1c9-0a076fe64deb@arm.com>
-Date: Mon, 4 May 2020 18:14:41 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jVej6-0003XT-RA; Mon, 04 May 2020 17:17:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVeix-0003W1-Kr; Mon, 04 May 2020 17:17:49 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id CAC9D24965;
+ Mon,  4 May 2020 17:17:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588612667;
+ bh=dCSwoURg/C8WuYz953nT1u1P7ci5+Iuywwfdq+8bQsw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jYVlkD3ky0vhySQ+he8eMrpB+9oRA0f7K691tEJQupuZthAvJ8Zf3avLOWd395wAG
+ nzQgQKVBg6zolaNUp9QQHR2ZiuBG0enaXitVX3UwKT8Kijgua5bz2MUTXPQ/rPhqWD
+ hTWVxPtsWyRqrrmGHWCr7fQSRMpwX4v3Bogk3asg=
+Date: Mon, 4 May 2020 18:17:42 +0100
+From: Will Deacon <will@kernel.org>
+To: Amit Daniel Kachhap <amit.kachhap@arm.com>
+Subject: Re: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in
+ vmcoreinfo
+Message-ID: <20200504171741.GD1833@willie-the-truck>
+References: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20200422122823.1390-1-sudeep.holla@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_101443_812721_E362A71C 
-X-CRM114-Status: GOOD (  11.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_101747_724124_A130CD48 
+X-CRM114-Status: GOOD (  20.84  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,42 +76,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- "will@kernel.org" <will@kernel.org>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sudeep,
-
-(CC: +Will and +Catalin)
-
-On 22/04/2020 13:28, Sudeep Holla wrote:
-> As with most of the drivers, let us register this driver unconditionally
-> by dropping the checks for presence of firmware nodes(DT) or entries(ACPI).
+On Mon, Apr 27, 2020 at 11:55:01AM +0530, Amit Daniel Kachhap wrote:
+> Recently arm64 linux kernel added support for Armv8.3-A Pointer
+> Authentication feature. If this feature is enabled in the kernel and the
+> hardware supports address authentication then the return addresses are
+> signed and stored in the stack to prevent ROP kind of attack. Kdump tool
+> will now dump the kernel with signed lr values in the stack.
 > 
-> Further, as mentioned in the commit acafce48b07b ("firmware: arm_sdei:
-> Fix DT platform device creation"), the core takes care of creation of
-> platform device when the appropriate device node is found and probe
-> is called accordingly.
+> Any user analysis tool for this kernel dump may need the kernel pac mask
+> information in vmcoreinfo to generate the correct return address for
+> stacktrace purpose as well as to resolve the symbol name.
 > 
-> Let us check only for the presence of ACPI firmware entry before creating
-> the platform device and flag warning if we fail.
+> This patch is similar to commit ec6e822d1a22d0eef ("arm64: expose user PAC
+> bit positions via ptrace") which exposes pac mask information via ptrace
+> interfaces.
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> ---
+> Changes since v1:
+> * Rebased to kernel 5.7-rc3.
+> * commit log change.
+> 
+> An implementation of this new KERNELPACMASK vmcoreinfo field used by crash
+> tool can be found here[1]. This change is accepted by crash utility
+> maintainer [2].
+> 
+> [1]: https://www.redhat.com/archives/crash-utility/2020-April/msg00095.html
+> [2]: https://www.redhat.com/archives/crash-utility/2020-April/msg00099.html
+> 
+>  arch/arm64/include/asm/compiler.h | 3 +++
+>  arch/arm64/kernel/crash_core.c    | 4 ++++
+>  2 files changed, 7 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+> index eece20d..32d5900 100644
+> --- a/arch/arm64/include/asm/compiler.h
+> +++ b/arch/arm64/include/asm/compiler.h
+> @@ -19,6 +19,9 @@
+>  #define __builtin_return_address(val)					\
+>  	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+>  
+> +#else  /* !CONFIG_ARM64_PTR_AUTH */
+> +#define	ptrauth_user_pac_mask()		0ULL
+> +#define	ptrauth_kernel_pac_mask()	0ULL
 
-Reviewed-by: James Morse <james.morse@arm.com>
+This doesn't look quite right to me, since you still have to take into
+account the case where CONFIG_ARM64_PTR_AUTH=y but the feature is not
+available at runtime:
 
+> @@ -16,4 +17,7 @@ void arch_crash_save_vmcoreinfo(void)
+>  	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
+>  						PHYS_OFFSET);
+>  	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
+> +	vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
+> +						system_supports_address_auth() ?
+> +						ptrauth_kernel_pac_mask() : 0);
 
-Will/Catalin, any chance you could pick this up for v5.8?
+In which case, would it make more sense to define
+ptrauth_{kernel,user}_pac_mask() unconditionally? In fact, I'd probably
+just remove the guards completely from asm/compiler.h because I think
+they're misleading.
 
-Original message:
-https://lore.kernel.org/linux-arm-kernel/20200422122823.1390-1-sudeep.holla@arm.com/
+Will
 
+--->8
 
-Thanks!
-
-James
+diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
+index eece20d2c55f..51a7ce87cdfe 100644
+--- a/arch/arm64/include/asm/compiler.h
++++ b/arch/arm64/include/asm/compiler.h
+@@ -2,8 +2,6 @@
+ #ifndef __ASM_COMPILER_H
+ #define __ASM_COMPILER_H
+ 
+-#if defined(CONFIG_ARM64_PTR_AUTH)
+-
+ /*
+  * The EL0/EL1 pointer bits used by a pointer authentication code.
+  * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
+@@ -19,6 +17,4 @@
+ #define __builtin_return_address(val)					\
+ 	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
+ 
+-#endif /* CONFIG_ARM64_PTR_AUTH */
+-
+ #endif /* __ASM_COMPILER_H */
 
 _______________________________________________
 linux-arm-kernel mailing list
