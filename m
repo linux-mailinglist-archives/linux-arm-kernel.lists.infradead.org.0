@@ -2,64 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACAB11C30F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 03:12:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD7A91C3101
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 03:22:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3sK0Wpp8QZn9DpQM2wi95UjF1n1akEanE0UrYXWhYYc=; b=N0TxjsQZkrlWBT
-	VzdcJzUesEl5dkeI1VLXN+PZWFDT5Ov4psQ2Ic3WKK68VjiiF0X6g8HTp+8LHYfSAlIA29nl0qIk5
-	zagdZhEJRfNS66LAlwlUQaGywS2HgQJcq8zd+V+Pyt+B9UIGlFVNYdicDbHbRgKkp9hjmFOw7LlnI
-	sUNV5Ugtq9/43LVEeHnBASt8xOgypkU5Zc1wcCgNIiNz7w5dGF7gTiY9vaIrTy6wJIkc+mMJN5mP4
-	WSnKArDtCxWGDphpg623pG+79YR30PAJ/yPDkECi8kGXIllqavxJJvT/76wZLQEF3whOcFL85OMMJ
-	RcTrbXxw98WGn8BW1vKg==;
+	List-Owner; bh=/3kUuk5tvTI5lSd/O0rMD0O2gj0u6HFkyVsMe/x872Y=; b=T0sxQKsh+kB9IJ
+	eZUXXlzKc4DJkDHQC988PDStwuvCgacEiBn/xNDV7WjWLgd+Py0RFrXwMftq/HxRfCe8bJMpuSvZT
+	uBsYd2/2cpZTQMQW3yUK4Kcd77Up/5VXuKD5Xjwvslv6m7WGF2Q+ZvLREqHUthLVjWsUGWDLf/Ffd
+	3xanUkVS2wzc10GdLl+RkgwiLWiqZWvsTqYg+tbifcqrJjU/Ih8kWrohRR7qx64g9VM+qNmKalFTN
+	tDwGN0GDxcyDumeYs1YZbvOy6krEwEu/JGwVFtwxDkhBDB32VtFYc63/XMn1e8AguIvOhxNXZSL6B
+	0fkXZ7gBJ9Amc/W280DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVPen-0000uS-Nq; Mon, 04 May 2020 01:12:29 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jVPnu-0007fE-G6; Mon, 04 May 2020 01:21:54 +0000
+Received: from conssluserg-01.nifty.com ([210.131.2.80])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVPbu-00047O-4G; Mon, 04 May 2020 01:09:32 +0000
-IronPort-SDR: l67wuNPNofzvy0k0dL6XwmTCzY8MxhBzDrYCJZ1lBZhwQ8Yeas86KzAuHVJBz4NkoRbKgiZd91
- BN6z1BLvWmBA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 03 May 2020 18:09:29 -0700
-IronPort-SDR: yIWbpyNnJK23O38ot1zP6qnkQwoJpxscFho/IBZq1ORSeIXkL2daLFySWpbNKHcGiinXSlxc8a
- TqbJxPtSi8Rg==
-X-IronPort-AV: E=Sophos;i="5.73,350,1583222400"; d="scan'208";a="283749975"
-Received: from iweiny-desk2.sc.intel.com (HELO localhost) ([10.3.52.147])
- by fmsmga004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 03 May 2020 18:09:29 -0700
-From: ira.weiny@intel.com
-To: linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Christian Koenig <christian.koenig@amd.com>, Huang Rui <ray.huang@amd.com>
-Subject: [PATCH V2 11/11] drm: Remove drm specific kmap_atomic code
-Date: Sun,  3 May 2020 18:09:12 -0700
-Message-Id: <20200504010912.982044-12-ira.weiny@intel.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200504010912.982044-1-ira.weiny@intel.com>
-References: <20200504010912.982044-1-ira.weiny@intel.com>
+ id 1jVPno-0007eU-7h
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 01:21:49 +0000
+Received: from mail-vk1-f179.google.com (mail-vk1-f179.google.com
+ [209.85.221.179]) (authenticated)
+ by conssluserg-01.nifty.com with ESMTP id 0441LNkY015944
+ for <linux-arm-kernel@lists.infradead.org>; Mon, 4 May 2020 10:21:24 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com 0441LNkY015944
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1588555284;
+ bh=jEtAs9O7CmSkCUr9JGM4aFvI0GTrsU70SWfup1ULHCY=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=0MW5hOw6oQfy1tSmTDfMhhzPm4PRXm34oTOM5b5JOncMhIK+QOK1Ato0vA6kguG/Q
+ y34GLUejRhh9h/H4uSskWAeK6NuTUuUkFdgj5BMu6RfT0X/Ir1ige73fjOuPPuC3Fy
+ onP+pkiaPF75Cgz5BPMfDUXQnUosY6aBZac9XOLzyvuMqYfLkfMK+EbxVvhBkIprgb
+ sT12uZ1L3phpwwhy8A94DkmKR86GFC8MqxHw4CC9SQ+WO2FjtM4Hy8/VQ49bSVn9zE
+ 4Oc/B39E/kGRjNov/V7867E5w+akCIU2rzPOvhcxR0Gjrwh6XpgNg10yWsdCcYfYPv
+ y3eq5IQAysTaw==
+X-Nifty-SrcIP: [209.85.221.179]
+Received: by mail-vk1-f179.google.com with SMTP id q200so4218143vka.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 03 May 2020 18:21:24 -0700 (PDT)
+X-Gm-Message-State: AGi0PuY1zUIqOrpZmBFUAYDaAi0pmReek8A25bO42aks6CN3Nzpy9CGv
+ yjam5yFzV+MjMWSi2D/AERKDhvwbIzPcPOStraA=
+X-Google-Smtp-Source: APiQypJH8KPh7CLSrpYvv1LKW7i4PPU1ROFc8mTCpBhmgvf8qd26fclC7UZdTXqHU5Gw3s9HLM7vnkzJcyOntmBEtTU=
+X-Received: by 2002:a1f:5381:: with SMTP id h123mr9028736vkb.66.1588555283173; 
+ Sun, 03 May 2020 18:21:23 -0700 (PDT)
 MIME-Version: 1.0
+References: <1585878187-8131-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1585878187-8131-4-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <1585878187-8131-4-git-send-email-hayashi.kunihiko@socionext.com>
+From: Masahiro Yamada <masahiroy@kernel.org>
+Date: Mon, 4 May 2020 10:20:47 +0900
+X-Gmail-Original-Message-ID: <CAK7LNATSHYG7UgLoVAXwdi6y8mH+Rbq-y9jT1e6FmaBWYUWUBg@mail.gmail.com>
+Message-ID: <CAK7LNATSHYG7UgLoVAXwdi6y8mH+Rbq-y9jT1e6FmaBWYUWUBg@mail.gmail.com>
+Subject: Re: [PATCH v4 3/5] ARM: dts: uniphier: Add ethernet aliases
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_180930_247234_7F027DD8 
-X-CRM114-Status: GOOD (  14.97  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200503_182148_600301_5EE263F3 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.80 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,122 +83,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, Ingo Molnar <mingo@redhat.com>,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Andy Lutomirski <luto@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: DTML <devicetree@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Jassi Brar <jaswinder.singh@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogSXJhIFdlaW55IDxpcmEud2VpbnlAaW50ZWwuY29tPgoKa21hcF9hdG9taWNfcHJvdCgp
-IGlzIG5vdyBleHBvcnRlZCBieSBhbGwgYXJjaGl0ZWN0dXJlcy4gIFVzZSB0aGlzCmZ1bmN0aW9u
-IHJhdGhlciB0aGFuIG9wZW4gY29kaW5nIGEgZHJpdmVyIHNwZWNpZmljIGttYXBfYXRvbWljLgoK
-UmV2aWV3ZWQtYnk6IENocmlzdGlhbiBLw7ZuaWcgPGNocmlzdGlhbi5rb2VuaWdAYW1kLmNvbT4K
-UmV2aWV3ZWQtYnk6IENocmlzdG9waCBIZWxsd2lnIDxoY2hAbHN0LmRlPgpTaWduZWQtb2ZmLWJ5
-OiBJcmEgV2VpbnkgPGlyYS53ZWlueUBpbnRlbC5jb20+Ci0tLQogZHJpdmVycy9ncHUvZHJtL3R0
-bS90dG1fYm9fdXRpbC5jICAgIHwgNTYgKystLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogZHJp
-dmVycy9ncHUvZHJtL3Ztd2dmeC92bXdnZnhfYmxpdC5jIHwgMTYgKysrKy0tLS0KIGluY2x1ZGUv
-ZHJtL3R0bS90dG1fYm9fYXBpLmggICAgICAgICB8ICA0IC0tCiAzIGZpbGVzIGNoYW5nZWQsIDEy
-IGluc2VydGlvbnMoKyksIDY0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1
-L2RybS90dG0vdHRtX2JvX3V0aWwuYyBiL2RyaXZlcnMvZ3B1L2RybS90dG0vdHRtX2JvX3V0aWwu
-YwppbmRleCA1MmQyYjcxZjE1ODguLmYwOWIwOTZiYTRmZCAxMDA2NDQKLS0tIGEvZHJpdmVycy9n
-cHUvZHJtL3R0bS90dG1fYm9fdXRpbC5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS90dG0vdHRtX2Jv
-X3V0aWwuYwpAQCAtMjU3LDU0ICsyNTcsNiBAQCBzdGF0aWMgaW50IHR0bV9jb3B5X2lvX3BhZ2Uo
-dm9pZCAqZHN0LCB2b2lkICpzcmMsIHVuc2lnbmVkIGxvbmcgcGFnZSkKIAlyZXR1cm4gMDsKIH0K
-IAotI2lmZGVmIENPTkZJR19YODYKLSNkZWZpbmUgX190dG1fa21hcF9hdG9taWNfcHJvdChfX3Bh
-Z2UsIF9fcHJvdCkga21hcF9hdG9taWNfcHJvdChfX3BhZ2UsIF9fcHJvdCkKLSNkZWZpbmUgX190
-dG1fa3VubWFwX2F0b21pYyhfX2FkZHIpIGt1bm1hcF9hdG9taWMoX19hZGRyKQotI2Vsc2UKLSNk
-ZWZpbmUgX190dG1fa21hcF9hdG9taWNfcHJvdChfX3BhZ2UsIF9fcHJvdCkgdm1hcCgmX19wYWdl
-LCAxLCAwLCAgX19wcm90KQotI2RlZmluZSBfX3R0bV9rdW5tYXBfYXRvbWljKF9fYWRkcikgdnVu
-bWFwKF9fYWRkcikKLSNlbmRpZgotCi0KLS8qKgotICogdHRtX2ttYXBfYXRvbWljX3Byb3QgLSBF
-ZmZpY2llbnQga2VybmVsIG1hcCBvZiBhIHNpbmdsZSBwYWdlIHdpdGgKLSAqIHNwZWNpZmllZCBw
-YWdlIHByb3RlY3Rpb24uCi0gKgotICogQHBhZ2U6IFRoZSBwYWdlIHRvIG1hcC4KLSAqIEBwcm90
-OiBUaGUgcGFnZSBwcm90ZWN0aW9uLgotICoKLSAqIFRoaXMgZnVuY3Rpb24gbWFwcyBhIFRUTSBw
-YWdlIHVzaW5nIHRoZSBrbWFwX2F0b21pYyBhcGkgaWYgYXZhaWxhYmxlLAotICogb3RoZXJ3aXNl
-IGZhbGxzIGJhY2sgdG8gdm1hcC4gVGhlIHVzZXIgbXVzdCBtYWtlIHN1cmUgdGhhdCB0aGUKLSAq
-IHNwZWNpZmllZCBwYWdlIGRvZXMgbm90IGhhdmUgYW4gYWxpYXNlZCBtYXBwaW5nIHdpdGggYSBk
-aWZmZXJlbnQgY2FjaGluZwotICogcG9saWN5IHVubGVzcyB0aGUgYXJjaGl0ZWN0dXJlIGV4cGxp
-Y2l0bHkgYWxsb3dzIGl0LiBBbHNvIG1hcHBpbmcgYW5kCi0gKiB1bm1hcHBpbmcgdXNpbmcgdGhp
-cyBhcGkgbXVzdCBiZSBjb3JyZWN0bHkgbmVzdGVkLiBVbm1hcHBpbmcgc2hvdWxkCi0gKiBvY2N1
-ciBpbiB0aGUgcmV2ZXJzZSBvcmRlciBvZiBtYXBwaW5nLgotICovCi12b2lkICp0dG1fa21hcF9h
-dG9taWNfcHJvdChzdHJ1Y3QgcGFnZSAqcGFnZSwgcGdwcm90X3QgcHJvdCkKLXsKLQlpZiAocGdw
-cm90X3ZhbChwcm90KSA9PSBwZ3Byb3RfdmFsKFBBR0VfS0VSTkVMKSkKLQkJcmV0dXJuIGttYXBf
-YXRvbWljKHBhZ2UpOwotCWVsc2UKLQkJcmV0dXJuIF9fdHRtX2ttYXBfYXRvbWljX3Byb3QocGFn
-ZSwgcHJvdCk7Ci19Ci1FWFBPUlRfU1lNQk9MKHR0bV9rbWFwX2F0b21pY19wcm90KTsKLQotLyoq
-Ci0gKiB0dG1fa3VubWFwX2F0b21pY19wcm90IC0gVW5tYXAgYSBwYWdlIHRoYXQgd2FzIG1hcHBl
-ZCB1c2luZwotICogdHRtX2ttYXBfYXRvbWljX3Byb3QuCi0gKgotICogQGFkZHI6IFRoZSB2aXJ0
-dWFsIGFkZHJlc3MgZnJvbSB0aGUgbWFwLgotICogQHByb3Q6IFRoZSBwYWdlIHByb3RlY3Rpb24u
-Ci0gKi8KLXZvaWQgdHRtX2t1bm1hcF9hdG9taWNfcHJvdCh2b2lkICphZGRyLCBwZ3Byb3RfdCBw
-cm90KQotewotCWlmIChwZ3Byb3RfdmFsKHByb3QpID09IHBncHJvdF92YWwoUEFHRV9LRVJORUwp
-KQotCQlrdW5tYXBfYXRvbWljKGFkZHIpOwotCWVsc2UKLQkJX190dG1fa3VubWFwX2F0b21pYyhh
-ZGRyKTsKLX0KLUVYUE9SVF9TWU1CT0wodHRtX2t1bm1hcF9hdG9taWNfcHJvdCk7Ci0KIHN0YXRp
-YyBpbnQgdHRtX2NvcHlfaW9fdHRtX3BhZ2Uoc3RydWN0IHR0bV90dCAqdHRtLCB2b2lkICpzcmMs
-CiAJCQkJdW5zaWduZWQgbG9uZyBwYWdlLAogCQkJCXBncHJvdF90IHByb3QpCkBAIC0zMTYsMTMg
-KzI2OCwxMyBAQCBzdGF0aWMgaW50IHR0bV9jb3B5X2lvX3R0bV9wYWdlKHN0cnVjdCB0dG1fdHQg
-KnR0bSwgdm9pZCAqc3JjLAogCQlyZXR1cm4gLUVOT01FTTsKIAogCXNyYyA9ICh2b2lkICopKCh1
-bnNpZ25lZCBsb25nKXNyYyArIChwYWdlIDw8IFBBR0VfU0hJRlQpKTsKLQlkc3QgPSB0dG1fa21h
-cF9hdG9taWNfcHJvdChkLCBwcm90KTsKKwlkc3QgPSBrbWFwX2F0b21pY19wcm90KGQsIHByb3Qp
-OwogCWlmICghZHN0KQogCQlyZXR1cm4gLUVOT01FTTsKIAogCW1lbWNweV9mcm9taW8oZHN0LCBz
-cmMsIFBBR0VfU0laRSk7CiAKLQl0dG1fa3VubWFwX2F0b21pY19wcm90KGRzdCwgcHJvdCk7CisJ
-a3VubWFwX2F0b21pYyhkc3QpOwogCiAJcmV0dXJuIDA7CiB9CkBAIC0zMzgsMTMgKzI5MCwxMyBA
-QCBzdGF0aWMgaW50IHR0bV9jb3B5X3R0bV9pb19wYWdlKHN0cnVjdCB0dG1fdHQgKnR0bSwgdm9p
-ZCAqZHN0LAogCQlyZXR1cm4gLUVOT01FTTsKIAogCWRzdCA9ICh2b2lkICopKCh1bnNpZ25lZCBs
-b25nKWRzdCArIChwYWdlIDw8IFBBR0VfU0hJRlQpKTsKLQlzcmMgPSB0dG1fa21hcF9hdG9taWNf
-cHJvdChzLCBwcm90KTsKKwlzcmMgPSBrbWFwX2F0b21pY19wcm90KHMsIHByb3QpOwogCWlmICgh
-c3JjKQogCQlyZXR1cm4gLUVOT01FTTsKIAogCW1lbWNweV90b2lvKGRzdCwgc3JjLCBQQUdFX1NJ
-WkUpOwogCi0JdHRtX2t1bm1hcF9hdG9taWNfcHJvdChzcmMsIHByb3QpOworCWt1bm1hcF9hdG9t
-aWMoc3JjKTsKIAogCXJldHVybiAwOwogfQpkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJtL3Zt
-d2dmeC92bXdnZnhfYmxpdC5jIGIvZHJpdmVycy9ncHUvZHJtL3Ztd2dmeC92bXdnZnhfYmxpdC5j
-CmluZGV4IGJiNDZjYTBjNDU4Zi4uOTRkNDU2YTFkMWE5IDEwMDY0NAotLS0gYS9kcml2ZXJzL2dw
-dS9kcm0vdm13Z2Z4L3Ztd2dmeF9ibGl0LmMKKysrIGIvZHJpdmVycy9ncHUvZHJtL3Ztd2dmeC92
-bXdnZnhfYmxpdC5jCkBAIC0zNzQsMTIgKzM3NCwxMiBAQCBzdGF0aWMgaW50IHZtd19ib19jcHVf
-YmxpdF9saW5lKHN0cnVjdCB2bXdfYm9fYmxpdF9saW5lX2RhdGEgKmQsCiAJCWNvcHlfc2l6ZSA9
-IG1pbl90KHUzMiwgY29weV9zaXplLCBQQUdFX1NJWkUgLSBzcmNfcGFnZV9vZmZzZXQpOwogCiAJ
-CWlmICh1bm1hcF9zcmMpIHsKLQkJCXR0bV9rdW5tYXBfYXRvbWljX3Byb3QoZC0+c3JjX2FkZHIs
-IGQtPnNyY19wcm90KTsKKwkJCWt1bm1hcF9hdG9taWMoZC0+c3JjX2FkZHIpOwogCQkJZC0+c3Jj
-X2FkZHIgPSBOVUxMOwogCQl9CiAKIAkJaWYgKHVubWFwX2RzdCkgewotCQkJdHRtX2t1bm1hcF9h
-dG9taWNfcHJvdChkLT5kc3RfYWRkciwgZC0+ZHN0X3Byb3QpOworCQkJa3VubWFwX2F0b21pYyhk
-LT5kc3RfYWRkcik7CiAJCQlkLT5kc3RfYWRkciA9IE5VTEw7CiAJCX0KIApAQCAtMzg4LDggKzM4
-OCw4IEBAIHN0YXRpYyBpbnQgdm13X2JvX2NwdV9ibGl0X2xpbmUoc3RydWN0IHZtd19ib19ibGl0
-X2xpbmVfZGF0YSAqZCwKIAkJCQlyZXR1cm4gLUVJTlZBTDsKIAogCQkJZC0+ZHN0X2FkZHIgPQot
-CQkJCXR0bV9rbWFwX2F0b21pY19wcm90KGQtPmRzdF9wYWdlc1tkc3RfcGFnZV0sCi0JCQkJCQkg
-ICAgIGQtPmRzdF9wcm90KTsKKwkJCQlrbWFwX2F0b21pY19wcm90KGQtPmRzdF9wYWdlc1tkc3Rf
-cGFnZV0sCisJCQkJCQkgZC0+ZHN0X3Byb3QpOwogCQkJaWYgKCFkLT5kc3RfYWRkcikKIAkJCQly
-ZXR1cm4gLUVOT01FTTsKIApAQCAtNDAxLDggKzQwMSw4IEBAIHN0YXRpYyBpbnQgdm13X2JvX2Nw
-dV9ibGl0X2xpbmUoc3RydWN0IHZtd19ib19ibGl0X2xpbmVfZGF0YSAqZCwKIAkJCQlyZXR1cm4g
-LUVJTlZBTDsKIAogCQkJZC0+c3JjX2FkZHIgPQotCQkJCXR0bV9rbWFwX2F0b21pY19wcm90KGQt
-PnNyY19wYWdlc1tzcmNfcGFnZV0sCi0JCQkJCQkgICAgIGQtPnNyY19wcm90KTsKKwkJCQlrbWFw
-X2F0b21pY19wcm90KGQtPnNyY19wYWdlc1tzcmNfcGFnZV0sCisJCQkJCQkgZC0+c3JjX3Byb3Qp
-OwogCQkJaWYgKCFkLT5zcmNfYWRkcikKIAkJCQlyZXR1cm4gLUVOT01FTTsKIApAQCAtNDk5LDkg
-KzQ5OSw5IEBAIGludCB2bXdfYm9fY3B1X2JsaXQoc3RydWN0IHR0bV9idWZmZXJfb2JqZWN0ICpk
-c3QsCiAJfQogb3V0OgogCWlmIChkLnNyY19hZGRyKQotCQl0dG1fa3VubWFwX2F0b21pY19wcm90
-KGQuc3JjX2FkZHIsIGQuc3JjX3Byb3QpOworCQlrdW5tYXBfYXRvbWljKGQuc3JjX2FkZHIpOwog
-CWlmIChkLmRzdF9hZGRyKQotCQl0dG1fa3VubWFwX2F0b21pY19wcm90KGQuZHN0X2FkZHIsIGQu
-ZHN0X3Byb3QpOworCQlrdW5tYXBfYXRvbWljKGQuZHN0X2FkZHIpOwogCiAJcmV0dXJuIHJldDsK
-IH0KZGlmZiAtLWdpdCBhL2luY2x1ZGUvZHJtL3R0bS90dG1fYm9fYXBpLmggYi9pbmNsdWRlL2Ry
-bS90dG0vdHRtX2JvX2FwaS5oCmluZGV4IDBhOWQwNDJlMDc1YS4uZGUxY2NkY2Q1NzAzIDEwMDY0
-NAotLS0gYS9pbmNsdWRlL2RybS90dG0vdHRtX2JvX2FwaS5oCisrKyBiL2luY2x1ZGUvZHJtL3R0
-bS90dG1fYm9fYXBpLmgKQEAgLTY2OCwxMCArNjY4LDYgQEAgaW50IHR0bV9ib19tbWFwX29iaihz
-dHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSwgc3RydWN0IHR0bV9idWZmZXJfb2JqZWN0ICpibyk7
-CiBpbnQgdHRtX2JvX21tYXAoc3RydWN0IGZpbGUgKmZpbHAsIHN0cnVjdCB2bV9hcmVhX3N0cnVj
-dCAqdm1hLAogCQlzdHJ1Y3QgdHRtX2JvX2RldmljZSAqYmRldik7CiAKLXZvaWQgKnR0bV9rbWFw
-X2F0b21pY19wcm90KHN0cnVjdCBwYWdlICpwYWdlLCBwZ3Byb3RfdCBwcm90KTsKLQotdm9pZCB0
-dG1fa3VubWFwX2F0b21pY19wcm90KHZvaWQgKmFkZHIsIHBncHJvdF90IHByb3QpOwotCiAvKioK
-ICAqIHR0bV9ib19pbwogICoKLS0gCjIuMjUuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Apr 3, 2020 at 10:43 AM Kunihiko Hayashi
+<hayashi.kunihiko@socionext.com> wrote:
+>
+> Add an 'aliases' property for ethernet device.
+>
+> U-boot performs a fix-up of the MAC address and will overwrite the values
+
+U-boot -> U-Boot
+
+> from the Linux devicetree for aliased ethernet device. The MAC address can
+> be inherited from u-boot by adding aliases of ethernet devices.
+
+u-boot -> U-Boot
+
+I fixed up those, applied the series.
+
+
+>
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
+>  arch/arm/boot/dts/uniphier-ld6b-ref.dts    | 1 +
+>  arch/arm/boot/dts/uniphier-pro4-ace.dts    | 1 +
+>  arch/arm/boot/dts/uniphier-pro4-ref.dts    | 1 +
+>  arch/arm/boot/dts/uniphier-pro4-sanji.dts  | 1 +
+>  arch/arm/boot/dts/uniphier-pxs2-gentil.dts | 1 +
+>  arch/arm/boot/dts/uniphier-pxs2-vodka.dts  | 1 +
+>  6 files changed, 6 insertions(+)
+>
+> diff --git a/arch/arm/boot/dts/uniphier-ld6b-ref.dts b/arch/arm/boot/dts/uniphier-ld6b-ref.dts
+> index 60994b6..079cadc 100644
+> --- a/arch/arm/boot/dts/uniphier-ld6b-ref.dts
+> +++ b/arch/arm/boot/dts/uniphier-ld6b-ref.dts
+> @@ -29,6 +29,7 @@
+>                 i2c4 = &i2c4;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> diff --git a/arch/arm/boot/dts/uniphier-pro4-ace.dts b/arch/arm/boot/dts/uniphier-pro4-ace.dts
+> index 92cc48d..64246fa 100644
+> --- a/arch/arm/boot/dts/uniphier-pro4-ace.dts
+> +++ b/arch/arm/boot/dts/uniphier-pro4-ace.dts
+> @@ -26,6 +26,7 @@
+>                 i2c3 = &i2c3;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> diff --git a/arch/arm/boot/dts/uniphier-pro4-ref.dts b/arch/arm/boot/dts/uniphier-pro4-ref.dts
+> index 854f2eb..181442c 100644
+> --- a/arch/arm/boot/dts/uniphier-pro4-ref.dts
+> +++ b/arch/arm/boot/dts/uniphier-pro4-ref.dts
+> @@ -29,6 +29,7 @@
+>                 i2c3 = &i2c3;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> diff --git a/arch/arm/boot/dts/uniphier-pro4-sanji.dts b/arch/arm/boot/dts/uniphier-pro4-sanji.dts
+> index dda1a2f..5396556 100644
+> --- a/arch/arm/boot/dts/uniphier-pro4-sanji.dts
+> +++ b/arch/arm/boot/dts/uniphier-pro4-sanji.dts
+> @@ -25,6 +25,7 @@
+>                 i2c3 = &i2c3;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> diff --git a/arch/arm/boot/dts/uniphier-pxs2-gentil.dts b/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
+> index e27fd4f..8e9ac57 100644
+> --- a/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
+> +++ b/arch/arm/boot/dts/uniphier-pxs2-gentil.dts
+> @@ -26,6 +26,7 @@
+>                 i2c4 = &i2c4;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> diff --git a/arch/arm/boot/dts/uniphier-pxs2-vodka.dts b/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
+> index 23fe42b..8eacc7b 100644
+> --- a/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
+> +++ b/arch/arm/boot/dts/uniphier-pxs2-vodka.dts
+> @@ -24,6 +24,7 @@
+>                 i2c4 = &i2c4;
+>                 i2c5 = &i2c5;
+>                 i2c6 = &i2c6;
+> +               ethernet0 = &eth;
+>         };
+>
+>         memory@80000000 {
+> --
+> 2.7.4
+>
+
+
+-- 
+Best Regards
+Masahiro Yamada
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
