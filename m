@@ -2,69 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96F971C39A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:43:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B56111C39A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 14:43:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B6vB4AgSmwr0tag2sqTAIXqlGSFDle31KHTDzN+pr/8=; b=EJA05zWLOWY+qj
-	DIc+1RSv24mvdDc10TwZnPdq6YOeo0QaZay/gbZlh4z36nNQvbBOvfka5cFQPWpsRJJgxLO1951ET
-	zsblnww1ssjM5f9G7H3owepdhFVoTc2y6dv23k9yyBTlBdKH7j3jaFdKOk9plVtBh5rzLkWyDZBS7
-	BHjTzr6Q6bEUhNkgKhHmytw+wOgfGgC4GW8b3eLqBQQcU6JYrZ+/Txh/FRT8+jr23Re1y3wODFt5u
-	9cp9bqMn60O3LGsQCu737nqLfPqal5De8HXS0CmuWBt0LVVtehLUnvyzqkyFLu5eZz7iIbdKec1NX
-	I6+v+qC00FwCzAC/SQfw==;
+	List-Owner; bh=G3gQkRqBf+K1lDNbojMhp6nJnIGjLGzsvkPXtKGJRBA=; b=ubi8sBbNM2/4Lw
+	ZIAPjqT/tEbACf+NX3iqC0kGNSX5/ekNofZMTmoGo4adxvMYnFzMp3ZYr23FCt+Pr7wyug9yw7/CR
+	gkgRXma86rVC8B3V8WjCu0ObjPAlYwgZnaFd1xJW3BfyWFBHm3AvcO2X111v5tVxO1FvXQtLvBZ0e
+	8v2E9p0wtAiW0m6kR2i/ixzoEPfdAmVQX4JRP+xwh43O7ChRmzjNaX5j9moqB+IwAXex3OoaiBoS7
+	g2Du+fDQ80UrvkGxFuTlROplZKUEzEAgoZYYKR1XdGQet7TKPytCG/ozg11btP6DGPvGen7h/RJZt
+	1olElRHz3cWNPxbOpujA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVaR6-0001uz-7M; Mon, 04 May 2020 12:43:04 +0000
-Received: from mga01.intel.com ([192.55.52.88])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVaR0-0001uR-Bo
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:42:59 +0000
-IronPort-SDR: 7rZUWScetOHbYtwB7bV7bJF83tSi0pWvywgtXm1nFM2rJ8CTt+PZ5WGQ8fN1CkhHjOLhTnn9bW
- cU3FZw3PtMww==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga001.jf.intel.com ([10.7.209.18])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 04 May 2020 05:42:57 -0700
-IronPort-SDR: GZ5CLlJqOXi5gp7wS+11Ftok3l7QEB8bkkbjg3l7se4ElhXZSXh++4QMLGzklhBtp32cu/PIvn
- OvjiMVJc5Dfg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,352,1583222400"; d="scan'208";a="338307544"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga001.jf.intel.com with ESMTP; 04 May 2020 05:42:54 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jVaQy-004cHK-N9; Mon, 04 May 2020 15:42:56 +0300
-Date: Mon, 4 May 2020 15:42:56 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
-Subject: Re: [PATCH] i2c: drivers: Remove superfluous error message
-Message-ID: <20200504124256.GF185537@smile.fi.intel.com>
-References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
- <20200504114408.9128-1-aishwaryarj100@gmail.com>
+	id 1jVaRg-0002C0-PN; Mon, 04 May 2020 12:43:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVaRX-0002Aq-KF
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 12:43:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61B061FB;
+ Mon,  4 May 2020 05:43:28 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.4.172])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2C3803F71F;
+ Mon,  4 May 2020 05:43:27 -0700 (PDT)
+Date: Mon, 4 May 2020 13:43:21 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] arm64/cpuinfo: Drop boot_cpu_data
+Message-ID: <20200504124321.GA73375@C02TD0UTHF1T.local>
+References: <1588595400-4560-1-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200504114408.9128-1-aishwaryarj100@gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <1588595400-4560-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_054258_415457_39400EA9 
-X-CRM114-Status: GOOD (  16.34  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200504_054331_784194_7E6175EB 
+X-CRM114-Status: GOOD (  17.59  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,133 +61,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org,
- Thor Thayer <thor.thayer@linux.intel.com>, Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Gregory CLEMENT <gregory.clement@bootlin.com>,
- Baruch Siach <baruch@tkos.co.il>,
- Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
- Vladimir Zapolskiy <vz@mleia.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-i2c@vger.kernel.org,
- Dmitry Osipenko <digetx@gmail.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-kernel@vger.kernel.org
+Cc: Suzuki Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 05:14:06PM +0530, Aishwarya Ramakrishnan wrote:
-> The function platform_get_irq can log an error by itself.
-> This omit a redundant message for exception handling in the
-> calling function.
+On Mon, May 04, 2020 at 06:00:00PM +0530, Anshuman Khandual wrote:
+> A global boot_cpu_data is not really required. Lets drop this.
 
-FWIW,
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+I don't think it's true that this isn't required today.
 
+One reason that we have both boot_cpu_data and a cpu_data variable for
+CPU0 is that CPU0 itself can be hotplugged out then back in, and this
+allows us to detect if CPU0's features have changed (e.g. due to FW
+failing to configure it appropriately, or real physical hotplug
+occurring).
 
-> Suggested by Coccinelle.
+So NAK to the patch as it stands. If we're certain we capture all of
+those details even without boot_cpu_data, then we should make other
+changes to make that clear (e.g. removing it as an argument to
+update_cpu_features()).
 
-Compile tested only, right?
+Thanks,
+Mark.
 
+> While here, rename the local variable as boot_cpu_info when it is
+> fetched for the boot cpu.
 > 
-> Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Brown <broonie@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Suzuki Poulose <suzuki.poulose@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 > ---
->  drivers/i2c/busses/i2c-altera.c   | 4 +---
->  drivers/i2c/busses/i2c-cht-wc.c   | 4 +---
->  drivers/i2c/busses/i2c-img-scb.c  | 4 +---
->  drivers/i2c/busses/i2c-lpc2k.c    | 4 +---
->  drivers/i2c/busses/i2c-uniphier.c | 4 +---
->  5 files changed, 5 insertions(+), 15 deletions(-)
+> Based on 5.7-rc4
 > 
-> diff --git a/drivers/i2c/busses/i2c-altera.c b/drivers/i2c/busses/i2c-altera.c
-> index f5c00f903df3..af6985f0ae63 100644
-> --- a/drivers/i2c/busses/i2c-altera.c
-> +++ b/drivers/i2c/busses/i2c-altera.c
-> @@ -395,10 +395,8 @@ static int altr_i2c_probe(struct platform_device *pdev)
->  		return PTR_ERR(idev->base);
+>  arch/arm64/kernel/cpuinfo.c | 12 ++++++------
+>  1 file changed, 6 insertions(+), 6 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
+> index a515d8f3639e..dabcdc132e56 100644
+> --- a/arch/arm64/kernel/cpuinfo.c
+> +++ b/arch/arm64/kernel/cpuinfo.c
+> @@ -31,7 +31,6 @@
+>   * values depending on configuration at or after reset.
+>   */
+>  DEFINE_PER_CPU(struct cpuinfo_arm64, cpu_data);
+> -static struct cpuinfo_arm64 boot_cpu_data;
 >  
->  	irq = platform_get_irq(pdev, 0);
-> -	if (irq < 0) {
-> -		dev_err(&pdev->dev, "missing interrupt resource\n");
-> +	if (irq < 0)
->  		return irq;
-> -	}
+>  static const char *icache_policy_str[] = {
+>  	[0 ... ICACHE_POLICY_PIPT]	= "RESERVED/UNKNOWN",
+> @@ -393,15 +392,16 @@ static void __cpuinfo_store_cpu(struct cpuinfo_arm64 *info)
+>  void cpuinfo_store_cpu(void)
+>  {
+>  	struct cpuinfo_arm64 *info = this_cpu_ptr(&cpu_data);
+> +	struct cpuinfo_arm64 *boot_cpu_info = &per_cpu(cpu_data, 0);
+> +
+>  	__cpuinfo_store_cpu(info);
+> -	update_cpu_features(smp_processor_id(), info, &boot_cpu_data);
+> +	update_cpu_features(smp_processor_id(), info, boot_cpu_info);
+>  }
 >  
->  	idev->i2c_clk = devm_clk_get(&pdev->dev, NULL);
->  	if (IS_ERR(idev->i2c_clk)) {
-> diff --git a/drivers/i2c/busses/i2c-cht-wc.c b/drivers/i2c/busses/i2c-cht-wc.c
-> index 35e55feda763..343ae5754e6e 100644
-> --- a/drivers/i2c/busses/i2c-cht-wc.c
-> +++ b/drivers/i2c/busses/i2c-cht-wc.c
-> @@ -314,10 +314,8 @@ static int cht_wc_i2c_adap_i2c_probe(struct platform_device *pdev)
->  	int ret, reg, irq;
+>  void __init cpuinfo_store_boot_cpu(void)
+>  {
+> -	struct cpuinfo_arm64 *info = &per_cpu(cpu_data, 0);
+> -	__cpuinfo_store_cpu(info);
+> +	struct cpuinfo_arm64 *boot_cpu_info = &per_cpu(cpu_data, 0);
 >  
->  	irq = platform_get_irq(pdev, 0);
-> -	if (irq < 0) {
-> -		dev_err(&pdev->dev, "Error missing irq resource\n");
-> +	if (irq < 0)
->  		return -EINVAL;
-> -	}
->  
->  	adap = devm_kzalloc(&pdev->dev, sizeof(*adap), GFP_KERNEL);
->  	if (!adap)
-> diff --git a/drivers/i2c/busses/i2c-img-scb.c b/drivers/i2c/busses/i2c-img-scb.c
-> index 422097a31c95..2f6de763816a 100644
-> --- a/drivers/i2c/busses/i2c-img-scb.c
-> +++ b/drivers/i2c/busses/i2c-img-scb.c
-> @@ -1344,10 +1344,8 @@ static int img_i2c_probe(struct platform_device *pdev)
->  		return PTR_ERR(i2c->base);
->  
->  	irq = platform_get_irq(pdev, 0);
-> -	if (irq < 0) {
-> -		dev_err(&pdev->dev, "can't get irq number\n");
-> +	if (irq < 0)
->  		return irq;
-> -	}
->  
->  	i2c->sys_clk = devm_clk_get(&pdev->dev, "sys");
->  	if (IS_ERR(i2c->sys_clk)) {
-> diff --git a/drivers/i2c/busses/i2c-lpc2k.c b/drivers/i2c/busses/i2c-lpc2k.c
-> index 13b0c12e2dba..43dc9b7043e4 100644
-> --- a/drivers/i2c/busses/i2c-lpc2k.c
-> +++ b/drivers/i2c/busses/i2c-lpc2k.c
-> @@ -362,10 +362,8 @@ static int i2c_lpc2k_probe(struct platform_device *pdev)
->  		return PTR_ERR(i2c->base);
->  
->  	i2c->irq = platform_get_irq(pdev, 0);
-> -	if (i2c->irq < 0) {
-> -		dev_err(&pdev->dev, "can't get interrupt resource\n");
-> +	if (i2c->irq < 0)
->  		return i2c->irq;
-> -	}
->  
->  	init_waitqueue_head(&i2c->wait);
->  
-> diff --git a/drivers/i2c/busses/i2c-uniphier.c b/drivers/i2c/busses/i2c-uniphier.c
-> index 668b1fa2b0ef..ee00a44bf4c7 100644
-> --- a/drivers/i2c/busses/i2c-uniphier.c
-> +++ b/drivers/i2c/busses/i2c-uniphier.c
-> @@ -324,10 +324,8 @@ static int uniphier_i2c_probe(struct platform_device *pdev)
->  		return PTR_ERR(priv->membase);
->  
->  	irq = platform_get_irq(pdev, 0);
-> -	if (irq < 0) {
-> -		dev_err(dev, "failed to get IRQ number\n");
-> +	if (irq < 0)
->  		return irq;
-> -	}
->  
->  	if (of_property_read_u32(dev->of_node, "clock-frequency", &bus_speed))
->  		bus_speed = I2C_MAX_STANDARD_MODE_FREQ;
+> -	boot_cpu_data = *info;
+> -	init_cpu_features(&boot_cpu_data);
+> +	__cpuinfo_store_cpu(boot_cpu_info);
+> +	init_cpu_features(boot_cpu_info);
+>  }
 > -- 
-> 2.17.1
+> 2.20.1
 > 
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
 
 _______________________________________________
 linux-arm-kernel mailing list
