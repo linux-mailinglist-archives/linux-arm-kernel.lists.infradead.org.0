@@ -2,70 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 091B01C485A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 22:33:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CC911C4864
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 22:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZYY+HuFgePYEe3K/p2FGISgf3vJjWfROUNd+Wj7VA5s=; b=DtCyRVzWLhCIpH
-	cLYlGd70TfaiB9P7NBm8Ip09JcVmnXLR2U6vkxr/r0w3gwG/LnnTvV5db/EP0W8UP8nG2/VkTBS1U
-	Ej5iuIKtYmUFYu4C3yZNbSA75Pcj7UIra8t9NeCdgZ0UUGDID91eFdbVahWzWvQUd5NU0w88Y4QqD
-	9A92kVWEUM2Mph8prG1Q9FRkXM4NV09DJeYOC1pJp4T1dahdU8YQReZiM+4WTVfvvwPJfo4HJw5P/
-	+e4NU3oO+GlVnl2CdYcBgHFgt/HL6Ss8gQVHT/8bcgQXeBKswxuPqQP/odDwVnoPI54XCiXMR/arU
-	xw/p/RoH+bUoroAWWU8w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RH0cX8pmVvDswzv0Q0p0ce4wV36XqupBKo9c83/WOc8=; b=rGX9m1KdDcWxZk
+	A1qZ5ZkQJZPNKPzKjR5+wpoFM2qQ1xEXnoemW7diFPUNJSo3oNTgYU8I2xVgKx/hL3+f7hoG75Mbh
+	B2imU7Y6NhTnxHSAjPT70vvOJLReUmWU79ZBsHoKvDqLrI/la9yaPXGkJFcleduME9IVb2kVHWtIX
+	xakLiN9uhDWa9Synli4Pyz1aFvwj74sy7DOVBJ8AusEQPqZx7bpmlosa0MFOHtXJnB9EHeuyC0j4q
+	vjdvRJ6C1UV/avR+lwpNDfPcNbO3h1QH5IIX9mSJqJbzZQSO2iKWF8R0TdKmLAaa2MQRPqTcDrehi
+	w/zYYPqFjKtdWDVUKXdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVhmI-0003IF-Hl; Mon, 04 May 2020 20:33:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVhmB-0003HY-03
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 20:33:20 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 21780205ED;
- Mon,  4 May 2020 20:33:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588624398;
- bh=y/D+iOhgi2sMFoWPB1GzgRf58kmCHVuTDHDgbVFDhNI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AyqtyYzDK69vjUVWyvIZlQskZX19mjt4mvMwmR6SG0JcVNPF3SxxGs64Epwy/d48v
- fztftrs+wf5WQVulePPVv4LLuB+GiXU0+MwBdzbW+SVT8OqjOfJ6pvUgQoRqZQLKMX
- ZKHzTV4abCsJUbyIGwOSWCG40Poh7mtvdVhkBOLY=
-Date: Mon, 4 May 2020 21:33:14 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 06/16] arm64/cpufeature: Introduce ID_MMFR5 CPU register
-Message-ID: <20200504203313.GB5012@willie-the-truck>
-References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
- <1588426445-24344-7-git-send-email-anshuman.khandual@arm.com>
+	id 1jVhrS-0007Mr-U0; Mon, 04 May 2020 20:38:46 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVhrL-0007Lq-CE
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 20:38:40 +0000
+Received: from prsriva-linux.hsd1.wa.comcast.net
+ (c-24-19-135-168.hsd1.wa.comcast.net [24.19.135.168])
+ by linux.microsoft.com (Postfix) with ESMTPSA id 6895820B717B;
+ Mon,  4 May 2020 13:38:37 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 6895820B717B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linux.microsoft.com;
+ s=default; t=1588624718;
+ bh=6P2paN9NO0FWx6B7UbSmB/LcZk3eOjU9tLNhjVjgu2E=;
+ h=From:To:Cc:Subject:Date:From;
+ b=K3BUKLXFPzHk5/vc18E2X2yGYsVoVrEVR3Bjxnk0kkNoK1RyGJF07VpR4jNjPdswq
+ PTdElXCTeIvlEoVsKZH0Tk/UjQ3124JQLUs2fMp9IFj0dQ3idwPz+efdmEETdAO+dm
+ kf7mZQNd1GyWhA36D3uKZsPysbTHSk1ty11ir9Jk=
+From: Prakhar Srivastava <prsriva@linux.microsoft.com>
+To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, devicetree@vger.kernel.org,
+ linux-integrity@vger.kernel.org, linux-security-module@vger.kernel.org
+Subject: [RFC][PATCH 0/2] Add support for using reserved memory for ima buffer
+ pass
+Date: Mon,  4 May 2020 13:38:27 -0700
+Message-Id: <20200504203829.6330-1-prsriva@linux.microsoft.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1588426445-24344-7-git-send-email-anshuman.khandual@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_133319_076782_11734219 
-X-CRM114-Status: GOOD (  16.25  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_133839_468013_58567E50 
+X-CRM114-Status: GOOD (  11.50  )
+X-Spam-Score: -17.9 (-----------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-17.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [13.77.154.182 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,87 +79,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com, catalin.marinas@arm.com,
+ bhsharma@redhat.com, tao.li@vivo.com, zohar@linux.ibm.com, paulus@samba.org,
+ vincenzo.frascino@arm.com, frowand.list@gmail.com, nramas@linux.microsoft.com,
+ mpe@ellerman.id.au, masahiroy@kernel.org, jmorris@namei.org,
+ takahiro.akashi@linaro.org, benh@kernel.crashing.org, serge@hallyn.com,
+ pasha.tatashin@soleen.com, will@kernel.org, prsriva@linux.microsoft.com,
+ robh+dt@kernel.org, hsinyi@chromium.org, tusharsu@linux.microsoft.com,
+ tglx@linutronix.de, allison@lohutok.net, christophe.leroy@c-s.fr,
+ mbrugger@suse.com, balajib@linux.microsoft.com, dmitry.kasatkin@gmail.com,
+ james.morse@arm.com, gregkh@linuxfoundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 02, 2020 at 07:03:55PM +0530, Anshuman Khandual wrote:
-> This adds basic building blocks required for ID_MMFR5 CPU register which
-> provides information about the implemented memory model and memory
-> management support in AArch32 state. This is added per ARM DDI 0487F.a
-> specification.
-> 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Marc Zyngier <maz@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com>
-> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: kvmarm@lists.cs.columbia.edu
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Suggested-by: Will Deacon <will@kernel.org>
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  arch/arm64/include/asm/cpu.h    |  1 +
->  arch/arm64/include/asm/sysreg.h |  3 +++
->  arch/arm64/kernel/cpufeature.c  | 10 ++++++++++
->  arch/arm64/kernel/cpuinfo.c     |  1 +
->  arch/arm64/kvm/sys_regs.c       |  2 +-
->  5 files changed, 16 insertions(+), 1 deletion(-)
+IMA during kexec(kexec file load) verifies the kernel signature and measures
+the signature of the kernel. The signature in the logs can be used to verfiy the 
+authenticity of the kernel. The logs don not get carried over kexec and thus
+remote attesation cannot verify the signature of the running kernel.
 
-[...]
+Introduce an ABI to carry forward the ima logs over kexec.
+Memory reserved via device tree reservation can be used to store and read
+via the of_* functions.
 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 2ce952d9668d..c790cc200bb1 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -403,6 +403,11 @@ static const struct arm64_ftr_bits ftr_id_isar4[] = {
->  	ARM64_FTR_END,
->  };
->  
-> +static const struct arm64_ftr_bits ftr_id_mmfr5[] = {
-> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_MMFR5_ETS_SHIFT, 4, 0),
-> +	ARM64_FTR_END,
-> +};
-> +
->  static const struct arm64_ftr_bits ftr_id_isar6[] = {
->  	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_ISAR6_I8MM_SHIFT, 4, 0),
->  	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, ID_ISAR6_BF16_SHIFT, 4, 0),
-> @@ -527,6 +532,7 @@ static const struct __ftr_reg_entry {
->  	ARM64_FTR_REG(SYS_MVFR2_EL1, ftr_mvfr2),
->  	ARM64_FTR_REG(SYS_ID_PFR2_EL1, ftr_id_pfr2),
->  	ARM64_FTR_REG(SYS_ID_DFR1_EL1, ftr_id_dfr1),
-> +	ARM64_FTR_REG(SYS_ID_MMFR5_EL1, ftr_id_mmfr5),
->  
->  	/* Op1 = 0, CRn = 0, CRm = 4 */
->  	ARM64_FTR_REG(SYS_ID_AA64PFR0_EL1, ftr_id_aa64pfr0),
-> @@ -732,6 +738,7 @@ void __init init_cpu_features(struct cpuinfo_arm64 *info)
->  		init_cpu_ftr_reg(SYS_ID_MMFR1_EL1, info->reg_id_mmfr1);
->  		init_cpu_ftr_reg(SYS_ID_MMFR2_EL1, info->reg_id_mmfr2);
->  		init_cpu_ftr_reg(SYS_ID_MMFR3_EL1, info->reg_id_mmfr3);
-> +		init_cpu_ftr_reg(SYS_ID_MMFR5_EL1, info->reg_id_mmfr5);
->  		init_cpu_ftr_reg(SYS_ID_PFR0_EL1, info->reg_id_pfr0);
->  		init_cpu_ftr_reg(SYS_ID_PFR1_EL1, info->reg_id_pfr1);
->  		init_cpu_ftr_reg(SYS_ID_PFR2_EL1, info->reg_id_pfr2);
-> @@ -866,6 +873,8 @@ static int update_32bit_cpu_features(int cpu, struct cpuinfo_arm64 *info,
->  				      info->reg_id_mmfr2, boot->reg_id_mmfr2);
->  	taint |= check_update_ftr_reg(SYS_ID_MMFR3_EL1, cpu,
->  				      info->reg_id_mmfr3, boot->reg_id_mmfr3);
+Reserved memory stores the size(sizeof(size_t)) of the buffer in the starting
+address, followed by the IMA log contents.
 
-Looks like MMFR4 is missing here?
+Tested on:
+  arm64 with Uboot
 
-> +	taint |= check_update_ftr_reg(SYS_ID_MMFR5_EL1, cpu,
-> +				      info->reg_id_mmfr5, boot->reg_id_mmfr5);
+Prakhar Srivastava (2):
+  Add a layer of abstraction to use the memory reserved by device tree
+    for ima buffer pass.
+  Add support for ima buffer pass using reserved memory for arm64 kexec.
+    Update the arch sepcific code path in kexec file load to store the
+    ima buffer in the reserved memory. The same reserved memory is read
+    on kexec or cold boot.
 
-Will
+ arch/arm64/Kconfig                     |   1 +
+ arch/arm64/include/asm/ima.h           |  22 ++++
+ arch/arm64/include/asm/kexec.h         |   5 +
+ arch/arm64/kernel/Makefile             |   1 +
+ arch/arm64/kernel/ima_kexec.c          |  64 ++++++++++
+ arch/arm64/kernel/machine_kexec_file.c |   1 +
+ arch/powerpc/include/asm/ima.h         |   3 +-
+ arch/powerpc/kexec/ima.c               |  14 ++-
+ drivers/of/Kconfig                     |   6 +
+ drivers/of/Makefile                    |   1 +
+ drivers/of/of_ima.c                    | 165 +++++++++++++++++++++++++
+ include/linux/of.h                     |  34 +++++
+ security/integrity/ima/ima_kexec.c     |  15 ++-
+ 13 files changed, 325 insertions(+), 7 deletions(-)
+ create mode 100644 arch/arm64/include/asm/ima.h
+ create mode 100644 arch/arm64/kernel/ima_kexec.c
+ create mode 100644 drivers/of/of_ima.c
+
+-- 
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
