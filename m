@@ -2,42 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 415B01C35B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:29:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 566841C35B5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:29:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=mFhOplXnfWmbTHZWIkPKonVVscVHFxZvqNXhCTVG1wE=; b=Wn0
-	rZWO+MxbASzAt1CvRDKJhr/6eAXj/alN6bIN73uxPZP0884lsZMHUkWsCKS2FV1fbYrWOOXAMKWd7
-	ko7pS8WunxQvYAgbPgO2GxiDtJQjIw+kdXhwUQc47FVchXylAJrz0HRxNoO2QPw4wEr6R57AAT2y8
-	h/ctHHb9P3l3RF/LTHuFWnmHZS00ZSnENTgl9n9unedutoGsj1YdIKCrlj8iApWCXLcXL/EwHeOSt
-	4Wz4bCcuJtQNvMKCnbm2R7IAGxbje8Di38513lP6ut/5R3ODuWVIRtDiBUcCXY4oCYCdQl+rPqrcJ
-	DZlrgwQhJAXw4UkZXtv6zshli3g95MA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=lFvSy8uK0vrIhsSQtB2k3NExVisxkjOBAaWplVaXXQQ=; b=aAB4afaK3ioO7oFwO+c9q6nO/p
+	4yJIm+lI4vTAeS8RQQ5SyOX1wSe2LirDVcey3zoNobAhgA7CohJLkMq8HLS6URQLLmPvUjIoLbpHC
+	/KUknIzref9KWbT5A6IvzM670zY4TRCTZQXpWxoKC97LWbQas8skdZYjy0mAuk4KHl6rI+fcQ0YtF
+	3JyF2L9AaDSLsAhNE4AkigxTZObzUE9grRzX0oRmq5CXwpnP3fuK3MvhLrYSLDehWLRaTHGJjc0GB
+	Y5/B+AKfKgXaeKQvZzUwTJB/Ts3pWSlD8LLVAWz0c5klF5gNi/IuICUVbXHXBqilkWDTLoG300PFc
+	sTjQdFkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVXPi-0001w8-U3; Mon, 04 May 2020 09:29:26 +0000
+	id 1jVXQ3-00023k-NN; Mon, 04 May 2020 09:29:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVXPY-0001sh-NI
+ id 1jVXPZ-0001sk-Kb
  for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 09:29:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F86D101E;
- Mon,  4 May 2020 02:29:12 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1DBFB1045;
+ Mon,  4 May 2020 02:29:14 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6A2253F305;
- Mon,  4 May 2020 02:29:11 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D2C0E3F305;
+ Mon,  4 May 2020 02:29:12 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 0/5] arm/arm64: smccc: Add ARCH_SOC_ID support
-Date: Mon,  4 May 2020 10:29:00 +0100
-Message-Id: <20200504092905.10580-1-sudeep.holla@arm.com>
+Subject: [PATCH v2 1/5] arm/arm64: smccc: Update link to latest SMCCC
+ specification
+Date: Mon,  4 May 2020 10:29:01 +0100
+Message-Id: <20200504092905.10580-2-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200504092905.10580-1-sudeep.holla@arm.com>
+References: <20200504092905.10580-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_022917_856217_07B37F0B 
-X-CRM114-Status: GOOD (  10.88  )
+X-CRM114-CacheID: sfid-20200504_022917_856547_37760A3F 
+X-CRM114-Status: GOOD (  12.67  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,45 +73,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+The current link gets redirected to the revision B published in November
+2016 though it actually points to the original revision A published in
+June 2013.
 
-This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
-This doesn't add other changes added in SMCCC v1.2 yet. They will
-follow these soon along with its first user SPCI/PSA-FF.
+Let us update the link to point to the latest version, so that it
+doesn't get stale anytime soon. Currently it points to v1.2 published in
+March 2020.
 
-This is tested using upstream TF-A + the patch[1] fixing the original
-implementation there.
+Reviewed-by: Steven Price <steven.price@arm.com>
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ include/linux/arm-smccc.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-
-v1[0]->v2:
-	- Incorporated comments from Steven Price in patch 5/5
-	- Fixed build for CONFIG_PSCI_FW=n on some arm32 platforms
-	- Added Steven Price's review tags
-
-Regards,
-Sudeep
-
-[0] https://lore.kernel.org/r/20200430114814.14116-1-sudeep.holla@arm.com/
-[1] https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/4001
-
-Sudeep Holla (5):
-  arm/arm64: smccc: Update link to latest SMCCC specification
-  arm/arm64: smccc: Add the definition for SMCCCv1.2 version/error codes
-  arm/arm64: smccc: Drop smccc_version enum and use ARM_SMCCC_VERSION_1_x instead
-  firmware: psci: Add function to fetch SMCCC version
-  arm/arm64: smccc: Add ARCH_SOC_ID support
-
- arch/arm64/kernel/paravirt.c   |   2 +-
- drivers/firmware/psci/Kconfig  |   9 ++
- drivers/firmware/psci/Makefile |   1 +
- drivers/firmware/psci/psci.c   |  13 ++-
- drivers/firmware/psci/soc_id.c | 165 +++++++++++++++++++++++++++++++++
- include/linux/arm-smccc.h      |  23 ++++-
- include/linux/psci.h           |   7 +-
- 7 files changed, 207 insertions(+), 13 deletions(-)
- create mode 100644 drivers/firmware/psci/soc_id.c
-
---
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 59494df0f55b..6c1d1eda3be4 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -10,7 +10,7 @@
+ /*
+  * This file provides common defines for ARM SMC Calling Convention as
+  * specified in
+- * http://infocenter.arm.com/help/topic/com.arm.doc.den0028a/index.html
++ * https://developer.arm.com/docs/den0028/latest
+  */
+ 
+ #define ARM_SMCCC_STD_CALL	        _AC(0,U)
+-- 
 2.17.1
 
 
