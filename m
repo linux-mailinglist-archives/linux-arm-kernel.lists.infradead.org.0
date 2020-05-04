@@ -2,58 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30B401C4066
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:46:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38FEE1C406D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:49:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hdyybxwDczFG7fZIt2qz+KDNVDqUIuxtXN7AVSiYj9g=; b=pdFV4piPDnikAF
-	r7HOXG6mJ7qAhootQjENgY3kEIOykvIzsl4APA3Lcr+ZHHdLfQ3lyGERNwiCGErN9oyjIpPHauAXN
-	t6tR1E2CbKYezs9wKJoQPB9PZ3u5arzxNIcauOSapk3UXACD2lW5Bl8E5aH3Fr66uVcKaYSBX9frS
-	NvN6Tpt+LqAUDVsQ7yyyctR7v2l95eL2YwBwl+evh/e+eIkOU0eTy2dcz5tv7uCdnhHkIFZgmghjx
-	VdViHVHfwYr5NZLzWxFjz86sRS8Ld0GUP+pYBhycVPacyE+TOGPg2mv3IAoZZreKqngj/u2Gvcfi9
-	dX80iHw616fL1NCLm/lQ==;
+	List-Owner; bh=bIrh1LMQE4Wj8Ep0SKl+eJl0rN1jwIgxD27fOAfmZnc=; b=uU3cVFqIgPAbyc
+	RQUb1dyQyTtfWdV/5SjOZX4iqBndtkZ7F+Q17BTTf/8IQqAn9XmUGjh9QOVcOjxKxuNtAWXd7drBQ
+	+9xWcLqamQBcFayVq9AhdIWx0HfGQhSMac5YaDNnH7TCCjQgfNIzB7fTnE3j/R+iVZnu2azS08Uqb
+	NF34xkJlNMaxtWUAojwnXiBqjrseTP+f7Iz6sRbuXo9yrMRRuyg9KKCgS35/aCXbj5Ydy62roVyKo
+	/GRk6NqZfslZvP+yEwTHk/7XnuzFFjZmoYNsslNC48obKuNZf+4vOw1eTuqvEXrg/ZiuhqrMLEYwr
+	5A8Sk5w/w9wjNAaHDBbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVeEi-0001sx-Lk; Mon, 04 May 2020 16:46:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVeEY-0001s9-K2
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:46:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 69197101E;
- Mon,  4 May 2020 09:46:21 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABF2F3F68F;
- Mon,  4 May 2020 09:46:19 -0700 (PDT)
-Date: Mon, 4 May 2020 17:46:17 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
- documentation
-Message-ID: <20200504164617.GK30377@arm.com>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-24-catalin.marinas@arm.com>
- <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
+	id 1jVeHk-0002tq-MP; Mon, 04 May 2020 16:49:40 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVeHd-0002sB-Ex
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:49:34 +0000
+Received: by mail-pg1-x544.google.com with SMTP id a4so70833pgc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 May 2020 09:49:33 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=N98hzrvavUDmiZvqjRc8Y+NamEOGTTXQ9QYdiVbRQUI=;
+ b=VwTnWyDAqzkDtnfnRgQ+QgRKkew37qUbEFsl/e0olaTckk9POdNzFiORuokPHsU7cr
+ 4+b3dqe/qJU/NBud1lZT3+CcNb91dNtjmBBneGSvFIy/k04EuQlHwdi0+/LGIoyrHg8C
+ VA9O9YNxP+kpn0ADakess8vbaTVtsneJ6CJNw1Xvy1DyjCv2xrFuQZQfKTn/u/q6QcjQ
+ QYTMpzlCno59ssPhfcoOU6vB/zaxSGVsF44ZuZeu8OonrkIW7BAyCkWUyqynEdE5oqtQ
+ tQD+7mlEdV048vuEWVlWORiIte+CqOOQcv9ssYtGSS3UUOnqPIlwdUP5lotDLCuiOe/j
+ E3qg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=N98hzrvavUDmiZvqjRc8Y+NamEOGTTXQ9QYdiVbRQUI=;
+ b=Nut+deyjH5Mg8QGC5I4C/4U1fBsY+MRoILRZ5xnOZErqj5DPl5Max0CC3foLy1fsQt
+ ce16RN4x2oesK9zclpxVFX0ZfD3Sl+7rnUfpOmXoP8jCAlxbREdYR08Lgxc5aU98M44C
+ V1fDXu16uI0O/6u3Kth40yyJEI7ojw4Vbe4eu8Ibk9m58qzIoP2Dn+yz9Hk7gjLWyxQn
+ 4bFbNEMSvxA/sB4R+oKwyKcU+iJqPZgmKQADLDyXzS+A8RceDBPkQnobRZhzjYiRzRuS
+ 6jkfuelDQ5o9k58GSIlW/suheWkJpha+jbhuoMQSTTx+9O5wIPoDli4vareGXfLvzb5P
+ wBuQ==
+X-Gm-Message-State: AGi0PubCeg8EjhD9PhlKDVaCDs2yFEjWHYg1Eawg+3BO9PXjWpNwzhtZ
+ 4AFmonzDrNYArpON2zguYYBeZA==
+X-Google-Smtp-Source: APiQypJ0UtE+FqSr0S/8CiLbts6PMUhrSDn8+4Okd3e/IXqVStp2R/N4PLwqQWR32HncAgCP22VImQ==
+X-Received: by 2002:a62:6341:: with SMTP id x62mr19109043pfb.289.1588610972562; 
+ Mon, 04 May 2020 09:49:32 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id t20sm11014pjo.13.2020.05.04.09.49.31
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 May 2020 09:49:31 -0700 (PDT)
+Date: Mon, 4 May 2020 10:49:30 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v2 1/2] coresight: Include required headers in C files
+Message-ID: <20200504164930.GA755@xps15>
+References: <20200428181010.170568-1-swboyd@chromium.org>
+ <20200428181010.170568-2-swboyd@chromium.org>
+ <20200429180818.GA3062@xps15>
+ <158818506575.117437.11635372928426076937@swboyd.mtv.corp.google.com>
+ <CANLsYkzkq=EuKx_=W2jv2TeWpM3P=Pd9NYS18VfG9KCey=2--g@mail.gmail.com>
+ <158852907765.11125.7786353455300506998@swboyd.mtv.corp.google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200430162316.GJ2717@gaia>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <158852907765.11125.7786353455300506998@swboyd.mtv.corp.google.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_094622_814063_19510548 
-X-CRM114-Status: GOOD (  57.12  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_094933_503455_C7B9397C 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,441 +102,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Mike Leach <mike.leach@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Douglas Anderson <dianders@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 30, 2020 at 05:23:17PM +0100, Catalin Marinas wrote:
-> On Wed, Apr 29, 2020 at 05:47:05PM +0100, Dave P Martin wrote:
-> > On Tue, Apr 21, 2020 at 03:26:03PM +0100, Catalin Marinas wrote:
-> > > +Userspace Support
-> > > +=================
-> > > +
-> > > +When ``CONFIG_ARM64_MTE`` is selected and Memory Tagging Extension is
-> > > +supported by the hardware, the kernel advertises the feature to
-> > > +userspace via ``HWCAP2_MTE``.
-> > > +
-> > > +PROT_MTE
-> > > +--------
-> > > +
-> > > +To access the allocation tags, a user process must enable the Tagged
-> > > +memory attribute on an address range using a new ``prot`` flag for
-> > > +``mmap()`` and ``mprotect()``:
-> > > +
-> > > +``PROT_MTE`` - Pages allow access to the MTE allocation tags.
-> > > +
-> > > +The allocation tag is set to 0 when such pages are first mapped in the
-> > > +user address space and preserved on copy-on-write. ``MAP_SHARED`` is
-> > > +supported and the allocation tags can be shared between processes.
-> > > +
-> > > +**Note**: ``PROT_MTE`` is only supported on ``MAP_ANONYMOUS`` and
-> > > +RAM-based file mappings (``tmpfs``, ``memfd``). Passing it to other
-> > > +types of mapping will result in ``-EINVAL`` returned by these system
-> > > +calls.
-> > > +
-> > > +**Note**: The ``PROT_MTE`` flag (and corresponding memory type) cannot
-> > > +be cleared by ``mprotect()``.
+On Sun, May 03, 2020 at 11:04:37AM -0700, Stephen Boyd wrote:
+> Quoting Mathieu Poirier (2020-04-29 12:24:42)
 > > 
-> > What enforces this?  I don't have my head fully around the code yet.
+> > >
+> > > So please remove slab.h from the two files (but not the other one) when
+> > > applying. Thanks.
 > > 
-> > I'm wondering whether attempting to clear PROT_MTE should be reported as
-> > an error.  Is there any rationale for not doing so?
+> > You got it.
 > 
-> A use-case is a JIT compiler where the memory is allocated by some
-> malloc() code with PROT_MTE set and passed down to a code generator
-> library which may not be MTE aware (and doesn't need to be, only tagged
-> ptr aware). Such library, once it generated the code, may do an
-> mprotect(PROT_READ|PROT_EXEC) without PROT_MTE. We didn't want to
-> inadvertently clear PROT_MTE, especially if the memory will be given
-> back to the original allocator (free) at some point.
-> 
-> Basically mprotect() may be done outside the heap allocator but it
-> should not interfere with allocator's decision to use MTE. For this
-> reason, I wouldn't report an error but silently ignore the lack of
-> PROT_MTE.
-> 
-> The way we handle this is by not including VM_MTE in VM_ARCH_CLEAR
-> (VM_MPX isn't either, though VM_SPARC_ADI is but when they added it, the
-> syscall ABI didn't even accept tagged pointers).
+> I looked in next but coresight-cti-platform.c is missing slab.h even
+> though I included it in my patch. There's a bare kcalloc() call in that
+> file, so slab.h is required.
 
-OK, I think this makes sense.
+I know what happened.  The above comment mentions removing slab.h in two and
+leaving the "other" one in place.  But looking at the original file only
+coresight-cti-platform.c and coresight-cti-sysfs.c had an slab.h.
 
-For BTI, I think mprotect() will clear PROT_BTI unless it's included in
-prot, but that's a bit different: PROT_BTI relates to the memory
-contents (i.e., it's BTI-aware code), where PROT_MTE is a property of
-the memory itself.
+I have made the correction.
 
-> > > +Tag Check Faults
-> > > +----------------
-> > > +
-> > > +When ``PROT_MTE`` is enabled on an address range and a mismatch between
-> > > +the logical and allocation tags occurs on access, there are three
-> > > +configurable behaviours:
-> > > +
-> > > +- *Ignore* - This is the default mode. The CPU (and kernel) ignores the
-> > > +  tag check fault.
-> > > +
-> > > +- *Synchronous* - The kernel raises a ``SIGSEGV`` synchronously, with
-> > > +  ``.si_code = SEGV_MTESERR`` and ``.si_addr = <fault-address>``. The
-> > > +  memory access is not performed.
-> > 
-> > Also say that if in this case, if SIGSEGV is ignored or blocked by the
-> > offending thread then containing processes is terminated with a coredump
-> > (at least, that's what ought to happen).
-> 
-> Makes sense.
-> 
-> > > +
-> > > +- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
-> > > +  thread, asynchronously following one or multiple tag check faults,
-> > > +  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
-> > 
-> > For "current thread": that's a kernel concept.  For user-facing
-> > documentation, can we say "the offending thread" or similar?
-> > 
-> > For clarity, it's worth saying that the faulting address is not
-> > reported.  Or, we could be optimistic that someday this information will
-> > be available and say that si_addr is the faulting address if available,
-> > with 0 meaning the address is not available.
-> > 
-> > Maybe (void *)-1 would be better duff address, but I can't see it
-> > mattering much.  If there's already precedent for si_addr==0 elsewhere,
-> > it makes sense to follow it.
-> 
-> At a quick grep, I can see a few instances on other architectures where
-> si_addr==0. I'll add a comment here.
-
-OK, cool
-
-Except: what if we're in PR_MTE_TCF_ASYNC mode.  If the SIGSEGV handler
-triggers an asynchronous MTE fault itself, we could then get into a
-spin.  Hmm.
-
-I take it we drain any pending MTE faults when crossing EL boundaries?
-In that case, an asynchronous MTE fault pending at sigreturn must have
-been caused by the signal handler.  We could make that particular case
-of MTE_AERR a force_sig.
-
-> If the hardware gives us something in the future, it will likely be in a
-> separate register and we can present it as a new sigcontext structure.
-> In the meantime I'll add a some text that the faulting address is
-> unknown.
-
-I guess we can decide that later.  I think that if we can put something
-sensible in si_addr we should do so, but that doesn't stop us also
-putting more detailed info somewhere else.
-
-> 
-> > > +**Note**: There are no *match-all* logical tags available for user
-> > > +applications.
-> > 
-> > This note seems misplaced.
-> 
-> This was in the context of tag checking. I'll move it further down when
-> talking about PSTATE.TCO.
-
-OK
-
-> > > +
-> > > +The user can select the above modes, per thread, using the
-> > > +``prctl(PR_SET_TAGGED_ADDR_CTRL, flags, 0, 0, 0)`` system call where
-> > 
-> > PR_GET_TAGGED_ADDR_CTRL seems to be missing here.
-> 
-> Added.
-> 
-> > > +``flags`` contain one of the following values in the ``PR_MTE_TCF_MASK``
-> > > +bit-field:
-> > > +
-> > > +- ``PR_MTE_TCF_NONE``  - *Ignore* tag check faults
-> > > +- ``PR_MTE_TCF_SYNC``  - *Synchronous* tag check fault mode
-> > > +- ``PR_MTE_TCF_ASYNC`` - *Asynchronous* tag check fault mode
-> > 
-> > Done naively, this will destroy the PR_MTE_TAG_MASK field.  Is there a
-> > preferred way to change only parts of this control word?  If the answer
-> > is "cache the value in userspace if you care about performance, or
-> > otherwise use PR_GET_TAGGED_ADDR_CTRL as part of a read-modify-write,"
-> > so be it.
-> > 
-> > If we think this might be an issue for software, it might be worth
-> > splitting out separate prctls for each field.)
-> 
-> We lack some feedback from user space people on how this prctl is going
-> to be used. I worked on the assumption that it is a one-off event during
-> libc setup, potentially driven by some environment variable (but that's
-> user's problem).
-> 
-> There were some suggestions that on an async SIGSEGV, the handler may
-> switch to synchronous mode. Since that's a rare event, a get/set
-> approach would be fine.
-> 
-> Anyway, with an additional argument to prctl (we have 3 spare), we could
-> do a set/clear mask approach. The current behaviour could be emulated
-> as:
-> 
->   prctl(PR_SET_TAGGED_ADDR_CTRL, PR_MTE_bits, -1UL, 0, 0);
-> 
-> where -1 is the clear mask. The mask can be 0 for the initial prctl() or
-> we can say that if the mask is non-zero, only the bits in the mask will
-> be set.
-> 
-> If you want to only set the TCF bits:
-> 
->   prctl(PR_SET_TAGGED_ADDR_CTRL, PR_MTE_TCF_SYNC, PR_MTE_TCF_MASK, 0, 0);
-
-If this isn't critical path, I guess it's not a big deal either way.
-
-If we make that mask argument an mask of bits _not_ to change than we
-can add it as a backwards compatible extension later on without having
-to define it now.  As you suggest, it may never matter.
-
-So, I don't object to this staying as-is.
-
-> > > +Tag checking can also be disabled for a user thread by setting the
-> > > +``PSTATE.TCO`` bit with ``MSR TCO, #1``.
-> > 
-> > Users should probably not touch this unless they know what they're
-> > doing -- should this flag ever be left set across function boundaries
-> > etc.?
-> 
-> We can't control function boundaries from the kernel anyway.
-> 
-> > What's it for?  Temporarily masking MTE faults in critical sections?
-> > Is this self-synchronising... what happens to pending asynchronous
-> > faults?  Are faults occurring while the flag is set pended or discarded?
-> 
-> Something like a garbage collector scanning the memory. Since we do not
-> allow tag 0 as a match-all, it needs a cheaper option than prctl().
-> 
-> > > +**Note**: Signal handlers are always invoked with ``PSTATE.TCO = 0``,
-> > > +irrespective of the interrupted context.
-> > 
-> > Rationale?  Do we have advice on what signal handlers should do?
-> 
-> Well, that's the default mode - tag check override = 0, it means that
-> tag checking takes place.
-
-Sort of implies that a SIGSEGV handler must be careful not to trigger
-any more faults.  But I guess that's nothing new.
-
-> 
-> > Is PSTATE.TC0 restored by sigreturn?
-> 
-> s/TC0/TCO/
-> 
-> Yes, it is restored on sigreturn.
-
-OK.  I think it's worth mentioning (does no harm, anyway).
-
-> 
-> > > +**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
-> > > +are only checked if the current thread tag checking mode is
-> > > +PR_MTE_TCF_SYNC.
-> > 
-> > Vague?  Can we make a precise statement about when the kernel will and
-> > won't check such accesses?  And aren't there limitations (like use of
-> > get_user_pages() etc.)?
-> 
-> We could make it slightly clearer by say "kernel accesses to the user
-> address space".
-
-That's not the ambiguity.
-
-My question is
-
-1) Does the kernel guarantee not to check tags on kernel accesses to user memory without PR_MTE_TCF_SYNC?
-
-2) Does the kernel guarantee to check tags on kernel accesses to user memory with PR_MTE_TCF_SYNC?
-
-
-In practice, this note sounds to be more like a kernel implementation
-detail rather than advice to userspace.
-
-Would it make sense to say something like:
-
- * PR_MTE_TCF_NONE: the kernel does not check tags for kernel accesses
-   to use memory done by syscalls in the thread.
-
- * PR_MTE_TCF_ASYNC: the kernel may check some tags for kernel accesses
-   to user memory done by syscalls.  (Should we guarantee that such
-   faults are reported synchronously on syscall exit?  In practice I
-   think they are.  Should we use SEGV_MTESERR in this case?  Perhaps
-   it's not worth making this a special case.)
-   
- * PR_MTE_TCF_SYNC: the kernel makes best efforts to check tags for
-   kernel accesses to user memory done by the syscalls, but does not
-   guarantee to check everything (or does it?  I thought we can't really
-   do that for some odd cases...)
-
-> > > +Excluding Tags in the ``IRG``, ``ADDG`` and ``SUBG`` instructions
-> > > +-----------------------------------------------------------------
-> > > +
-> > > +The architecture allows excluding certain tags to be randomly generated
-> > > +via the ``GCR_EL1.Exclude`` register bit-field. By default, Linux
-> > 
-> > Can we have a separate section on what execve() and fork()/clone() do
-> > to the MTE controls and PSTATE.TCO?  "By default" could mean a variety
-> > of things, and I'm not sure we cover everything.
-> 
-> Good point. I'll add a note on initial state for processes and threads.
-> 
-> > Is PROT_MTE ever set on the initial pages mapped by execve()?
-> 
-> No. There were discussions about mapping the initial stack with PROT_MTE
-> based on some ELF note but it can also be done in userspace with
-> mprotect(). I think we concluded that the .data/.bss sections will be
-> untagged.
-
-Yes, I recall.  Sounds fine: probably worth mentioning here that
-PROT_MTE is never set on the exec mappings for now.
-
-> > > +excludes all tags other than 0. A user thread can enable specific tags
-> > > +in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
-> > > +flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
-> > > +in the ``PR_MTE_TAG_MASK`` bit-field.
-> > > +
-> > > +**Note**: The hardware uses an exclude mask but the ``prctl()``
-> > > +interface provides an include mask. An include mask of ``0`` (exclusion
-> > > +mask ``0xffff``) results in the CPU always generating tag ``0``.
-> > 
-> > Is there no way to make this default to 1 rather than having a magic
-> > meaning for 0?
-> 
-> We follow the hardware behaviour where 0xffff and 0xfffe give the same
-> result.
-
-Exposing this through a purely software interface seems a bit odd:
-because the exclude mask is privileged-access-only, the architecture
-could amend it to assign a different meaning to 0xffff, providing this
-was an opt-in change.  Then we'd have to make a mess here.
-
-Can't we just forbid the nonsense value 0 here, or are there other
-reasons why that's problematic?
-
-I presume the architecture defines a meaning for 0 to avoid making
-it UNPREDICTABLE etc., not because this is deemed useful.
-
-> > > +The ``ptrace()`` interface
-> > > +--------------------------
-> > > +
-> > > +``PTRACE_PEEKMTETAGS`` and ``PTRACE_POKEMTETAGS`` allow a tracer to read
-> > > +the tags from or set the tags to a tracee's address space. The
-> > > +``ptrace()`` syscall is invoked as ``ptrace(request, pid, addr, data)``
-> > > +where:
-> > > +
-> > > +- ``request`` - one of ``PTRACE_PEEKMTETAGS`` or ``PTRACE_PEEKMTETAGS``.
-> > > +- ``pid`` - the tracee's PID.
-> > > +- ``addr`` - address in the tracee's address space.
-> > 
-> > What if addr is not 16-byte aligned?  Is this considered valid use?
-> 
-> Yes, I don't think we should impose a restriction here. Each address in
-> a 16-byte range has the same (shared) tag.
-
-OK.  We might want to clarify what this means when addr is misaligned:
-we do not colour the 16 bytes starting at addr, but the reader might
-assume that's what happens.
-
-> > > +- ``data`` - pointer to a ``struct iovec`` where ``iov_base`` points to
-> > > +  a buffer of ``iov_len`` length in the tracer's address space.
-> > 
-> > What's the data format for the copied tags?
-> 
-> I could state that the tag are placed in the lower 4-bit of the byte
-> with the upper 4-bit set to 0.
-
-What if it's not?  I didn't find this in the architecture spec, but I
-didn't look very hard so far...
-
-> > > +The tags in the tracer's ``iov_base`` buffer are represented as one tag
-> > > +per byte and correspond to a 16-byte MTE tag granule in the tracee's
-> > > +address space.
-> > 
-> > We could say that the whole operation accesses the tags for 16 * iov_len
-> > bytes of the tracee's address space.  Maybe superfluous though.
-> > 
-> > > +
-> > > +``ptrace()`` return value:
-> > > +
-> > > +- 0 - success, the tracer's ``iov_len`` was updated to the number of
-> > > +  tags copied (it may be smaller than the requested ``iov_len`` if the
-> > > +  requested address range in the tracee's or the tracer's space cannot
-> > > +  be fully accessed).
-> > 
-> > I'd replace "success" with something like "some tags were copied:
-> > ``iov_len`` is updated to indicate the actual number of tags
-> > transferred.  This may be fewer than requested: [...]"
-> > 
-> > Can we get a short PEEKTAGS/POKETAGS for transient reasons (like minor
-> > page faults)?  i.e., should the caller attempt to retry, or is that a
-> > a stupid thing to do?
-> 
-> I initially thought it should retry but managed to get the interface so
-> that no retries are needed. If fewer tags were transferred, it's for a
-> good reason (e.g. permission fault).
-
-OK, we should mention that here then.  Software that retries things that
-can't make progress can get stuck in a loop (or at least waste cycles).
-
-> > > +            a = mmap(0, page_sz, PROT_READ | PROT_WRITE,
-> > > +                     MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-> > 
-> > Is this a vaild assignment?
-> > 
-> > I can't remember whether C's "pointer values must be correctly aligned"
-> > rule applies only to dereferences, or whether it applies to conversions
-> > too.  From memory I have a feeling that it does.
-> > 
-> > If so, the compiler could legimitately optimise the failure check away,
-> > since MAP_FAILED is not correctly aligned for unsigned long.
-> 
-> I'm not going to dig into standards ;). I can change this to an unsigned
-> char *.
-
-Sure, I guess that solves the problem.
-
-Something like
-
-	void *p;
-	unsigned long *a;
-
-	p = mmap( ... );
-	if (p == MAP_FAILED) {
-		/* barf */
-	}
-
-	a = p;
-
-might provide a clue that care is needed, but it's not essential.
-
-> 
-> > > +            printf("Expecting SIGSEGV...\n");
-> > > +            a[2] = 0xdead;
-> > > +
-> > > +            /* this should not be printed in the PR_MTE_TCF_SYNC mode */
-> > > +            printf("...done\n");
-> > > +
-> > > +            return 0;
-> > > +    }
-> > 
-> > Since this shouldn't happen, can we print an error and return nonzero?
-> 
-> Fair enough. I also agree with the other points you raised but to which
-> I haven't explicitly commented.
-> 
-> Thanks for the review, really useful.
-
-Np
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
