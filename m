@@ -2,96 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D994B1C3F5B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:06:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7ECA31C3F62
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:07:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y3SunMCTScn2VpCVuItEH+FLOpeFi8RmTqiXudynFx4=; b=JsYdLrCcko8R1O
-	YPtH8OddhJ1GNHyn9hf+7ne6OpMRSMW6LIl48c9XHoSZy7He+5Pf26AfefFBvEUImbu7mQ/90JT0R
-	8PAwsV3M1Pne+E1Njuw6+n6mpoUwKcNeERXk1fuqnTHXa9Xnsl6UcWfnnNH19alt0j5j1mB+x4F/9
-	qa+mAeg/+9A1j4oirz761CZpUMTFtueCOtBUvPI961pRWyf72fxM3aD4j+SNqNqPN7a08zxpKc06e
-	/kB0zMCGNgSmQ2Z6Hrnci6gMBL8c3pMiWGw+V/ilCd0TcvdXEptsGGYdg3X2WLOfF4TJaoGZLnxEw
-	NZ2E1jTJzGpR0xqIuurg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lFChnvlsyq2YkWE186fiqEIRHeOV+FLeXBA4mFnCrD0=; b=ojaEqEAxAmDwXo
+	E+oU1AHDcKA9pQBvKqzPYm4NF0KnQ5y5x6YFDnZ0qDoIRNBkUiS2FGGEBGauAX0RZNbd03+XzLJq6
+	bLyUhjg57jNegKBJvUci6q1zwzFJwhOPtyRZus1aosyu+JgU1JCeMZT8LazmfffAiWyYtTV8tFuKg
+	6ycnsQEAKI5MorD3zFWJisoMtBCOnMVQ+hGmkIalqvxLB9gGHeoqtanuFiSmx/7seE1E7PEolMEer
+	Yu+kdrLk9OuPcxRBsw/RXy1Xz/IysgL/yBmDWxgoDdkCXuv5gFMJhA/GSNtCWZYajXb1foglMGUbH
+	aYS0pok/SWoQCAYVojlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVdba-0002MB-Az; Mon, 04 May 2020 16:06:06 +0000
-Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
- helo=us-smtp-1.mimecast.com)
+	id 1jVdcS-0002gz-DU; Mon, 04 May 2020 16:07:00 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVdbS-0002LC-M3
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:06:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588608356;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=/JVeck58huMvFA8/TA03p+8Qjm09cOK85lDBTKzlyGU=;
- b=agB51x/fADpyzZBsaGRIpLggkwpd0EaL4wJW6JzJsQqbVexuKI9rWysHnZSe3V82Mew9EV
- r/fQetHiZZL6JYFW4djS9CjmrSOZeadXWF41APO2wuD4IfoZ47NGUpdevH6ZdKEtDplTnK
- 3XmX4ITxCGjw/UQBPH5XZkiBa9ok6hY=
-Received: from mail-wr1-f72.google.com (mail-wr1-f72.google.com
- [209.85.221.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-122-rUp7ILTUNy2vKG_D0_f7eg-1; Mon, 04 May 2020 12:05:54 -0400
-X-MC-Unique: rUp7ILTUNy2vKG_D0_f7eg-1
-Received: by mail-wr1-f72.google.com with SMTP id a3so11038081wro.1
+ id 1jVdcK-0002fl-SQ
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:06:54 +0000
+Received: by mail-wm1-x343.google.com with SMTP id 188so90089wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 09:05:54 -0700 (PDT)
+ Mon, 04 May 2020 09:06:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=bp4AZOmEDFlGnUKxwTpEGrX9Ywb+/ercU9RXG60YpkA=;
+ b=Dw8xcNvj2qmOKxxn59CPRrnhgYrQ5x4sBPM8qK0pmcxzWd1aH/YyCVxlXW3TIWT8Fw
+ tx++cxMdi9+OTPqOJQ0MUb+cNtf6m3SYTI32z98924olcf+4nnXYi+IsldgCldMoIM07
+ 4h4F+MxzAqq6y91AHErfmlevgojJiWj+WryxD4tS6DchG+1L3m2rsTys97s7V6H+LEdC
+ LCsZJU4jP6ekqf6cSccjS9Se5DU1Jiz5dlTN66yFFKaWMHEZyAdh3cs63tmpeqdXo7uR
+ T2cb+IBgx5aIR71N/OxSIdsY99sFfZqoNjBPUH6CNGyQrSLxrlGkp1kmGkSQF8YKLWZh
+ DMTg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=/JVeck58huMvFA8/TA03p+8Qjm09cOK85lDBTKzlyGU=;
- b=ktfH003dlL6crxSDEOtr5U9C+qraSdVm+xKezt1+aQA0FyAUJI+TKGm8FRHdaut3qt
- jp+p3de7IlbT0R4kM1SZjcJCVNBfa7Wr0cPhLcoDYfDM/7drXhO4ehB+84cLCSwhxG8b
- W/cc8kWTSOICGnwGFg+WQCQjc3jNxLF1whbusbAVeVFAkdPTuDKTx/qTXoCPvQc7023Z
- WuSnXHAPkl+vqAfh59T5r1weJbPzFkJzX2zGWwkhS4G/jEDAFmZD02ItjksBuN2IZKEJ
- b+1UuRaD1ZrR4UjjenyihyDQUyjol58zfLCY1zBPoZzVoloVj26Y6xqvGZQG7BtwInBQ
- 8N6w==
-X-Gm-Message-State: AGi0PuZWWIVr9+O3GHh+aEs/P6h85+IKMAG9WzSUxkXHQHjFOWIXANBb
- jmyIg69lE7w4879K10uwe72TsSb3hCKy8WuGXRPEV2cs++oOsffYyWDoYNBwSofv5rCo0j8brpJ
- v7eQxZuHS5M2JBuagfrTFqLQn4o0BsC9KeIU=
-X-Received: by 2002:a1c:4e16:: with SMTP id g22mr14716566wmh.157.1588608353311; 
- Mon, 04 May 2020 09:05:53 -0700 (PDT)
-X-Google-Smtp-Source: APiQypLl+FvW2SgRJan9DFKftDDZJg4qPN8I25yOxi5TFHxm89GNl7rDCkuf9ca4ZxOYRM+JtKXkfg==
-X-Received: by 2002:a1c:4e16:: with SMTP id g22mr14716532wmh.157.1588608353041; 
- Mon, 04 May 2020 09:05:53 -0700 (PDT)
-Received: from [192.168.178.58] ([151.20.132.175])
- by smtp.gmail.com with ESMTPSA id n7sm1072795wrm.86.2020.05.04.09.05.51
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 04 May 2020 09:05:52 -0700 (PDT)
-Subject: Re: [GIT PULL] KVM/arm fixes for 5.7, take #2
-To: Will Deacon <will@kernel.org>, Marc Zyngier <maz@kernel.org>
-References: <20200501101204.364798-1-maz@kernel.org>
- <20200504113051.GB1326@willie-the-truck>
-From: Paolo Bonzini <pbonzini@redhat.com>
-Message-ID: <df78d984-6ce3-f887-52a9-a3e9164a6dee@redhat.com>
-Date: Mon, 4 May 2020 18:05:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=bp4AZOmEDFlGnUKxwTpEGrX9Ywb+/ercU9RXG60YpkA=;
+ b=o55TfALKJxaKTdYPzffBJKpNOSpDFrgNY2+gvAvsjHp79mEN/8Y+ZEN8FR+jZ3pMa3
+ eKLCO13WIHso+bcs2ca/2T3CmBSlMFeoikDwuNW5bKEhpfIRkqpiOzC6ErwONRVTDlzP
+ YYNE+d6N8Jn8zfVz4fcrk0g/Qgu9nh4cMbrD1dPDH3dLPR0CbzbNhLRgdNNilJZpOmTA
+ l65OwB9rRTvem8zeETyhS0t94bJZacg1tDjF074OnHiUNLgoxftzUYTXocWRZWJREgty
+ yJJhJ31W9xxqcQgu23WppDvZZ+Ur4L2IXliwPqV2FTfWabr5RQeE9Gu4+kVQGzys0bhW
+ 9UyA==
+X-Gm-Message-State: AGi0PuZSHfeHqMAXXRBGC/Aa7U6IVvbkpZKVpiUPPqU/hPvabwXEkLCL
+ s5c3E0+bnNgXwDM8YrK4QLP7lA==
+X-Google-Smtp-Source: APiQypKPyLr9D3x5aJJfh1E5/6u+cb8JP6Qo0I2a/ao2kDBpvQii1AZTwUzgtbi+yEe+qplCF2lrWg==
+X-Received: by 2002:a1c:3182:: with SMTP id x124mr16738870wmx.54.1588608410123; 
+ Mon, 04 May 2020 09:06:50 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id b66sm15224708wmh.12.2020.05.04.09.06.48
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 May 2020 09:06:48 -0700 (PDT)
+Date: Mon, 4 May 2020 18:06:39 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Christoph Hellwig <hch@infradead.org>
+Subject: Re: [PATCH v6 17/25] iommu/arm-smmu-v3: Implement
+ iommu_sva_bind/unbind()
+Message-ID: <20200504160639.GD170104@myrica>
+References: <20200430143424.2787566-1-jean-philippe@linaro.org>
+ <20200430143424.2787566-18-jean-philippe@linaro.org>
+ <20200501121552.GA6012@infradead.org>
 MIME-Version: 1.0
-In-Reply-To: <20200504113051.GB1326@willie-the-truck>
-Content-Language: en-US
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+Content-Disposition: inline
+In-Reply-To: <20200501121552.GA6012@infradead.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_090558_796774_CBC3A67B 
-X-CRM114-Status: GOOD (  12.93  )
+X-CRM114-CacheID: sfid-20200504_090653_084749_4EA7C3C4 
+X-CRM114-Status: GOOD (  15.93  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.120 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -100,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,35 +99,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
- kvm@vger.kernel.org, Fangrui Song <maskray@google.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Nick Desaulniers <ndesaulniers@google.com>, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org, Zenghui Yu <yuzenghui@huawei.com>,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com, will@kernel.org,
+ fenghua.yu@intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
+ felix.kuehling@amd.com, linux-mm@kvack.org, iommu@lists.linux-foundation.org,
+ catalin.marinas@arm.com, zhangfei.gao@linaro.org, robin.murphy@arm.com,
+ christian.koenig@amd.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/05/20 13:30, Will Deacon wrote:
-> I don't see this queued up in the kvm tree, which appears to have been
-> sitting dormant for 10 days. Consequently, there are fixes sitting in
-> limbo and we /still/ don't have a sensible base for arm64/kvm patches
-> targetting 5.8.
+On Fri, May 01, 2020 at 05:15:52AM -0700, Christoph Hellwig wrote:
+> > @@ -432,6 +432,7 @@ config ARM_SMMU_V3
+> >  	tristate "ARM Ltd. System MMU Version 3 (SMMUv3) Support"
+> >  	depends on ARM64
+> >  	select IOMMU_API
+> > +	select IOMMU_SVA
+> >  	select IOMMU_IO_PGTABLE_LPAE
+> >  	select GENERIC_MSI_IRQ_DOMAIN
 > 
-> Paolo -- how can I help get this stuff moving again? I'm more than happy
-> to send this lot up to Linus via arm64 if you're busy atm. Please just
-> let me know.
+> Doesn't this need to select MMU_NOTIFIER now?
 
-10 days is one week during which I could hardly work and the two
-adjacent weekends.  So this is basically really bad timing in Marc's
-first pull request, that he couldn't have anticipated.
+Yes, will fix
 
-I have pulled both trees now, so you can base 5.8 development on
-kvm/master.  It will get to Linus in a couple days.
+> > +	struct mmu_notifier_ops		mn_ops;
+> 
+> Note: not a pointer.
+> 
+> > +	/* If bind() was already called for this (dev, mm) pair, reuse it. */
+> > +	list_for_each_entry(bond, &master->bonds, list) {
+> > +		if (bond->mm == mm) {
+> > +			refcount_inc(&bond->refs);
+> > +			return &bond->sva;
+> > +		}
+> > +	}
+> > +
+> > +	mn = mmu_notifier_get(&smmu_domain->mn_ops, mm);
+> > +	if (IS_ERR(mn))
+> > +		return ERR_CAST(mn);
+> 
+> Which seems to be to avoid mmu_notifier_get reusing notifiers registered
+> by other arm_smmu_master instance right?
 
-Paolo
+Yes, although I'm registering a single mmu notifier per (domain, mm) pair,
+not (master, mm), because the SMMU driver keeps one set of PASID tables
+per IOMMU domain.
+
+> Either you could just use plain old mmu_notifier_register to avoid
+> the reuse.  Or we could enhance the mmu_notifier_get to pass a private
+> oaque instance ID pointer, which is checked in addition to the ops,
+> and you could probably kill off the bonds list and lookup.
+
+Going back to mmu_notifier_register() seems better for now. I don't want
+to change the core APIs just for this driver, because it's likely to
+change again when more hardware starts appearing and we optimize it.
+
+Thanks,
+Jean
 
 
 _______________________________________________
