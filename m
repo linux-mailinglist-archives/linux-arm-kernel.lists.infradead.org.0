@@ -2,56 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B194E1C369D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:19:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E4B51C370C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:38:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8x+Rd0vJSfBB1k1zdbc0itGG3DXf+FPwcV0/S9Hz81g=; b=Fhi3gLvtQebXlr
-	VTXVqE38AB0YuudK7sgo+2JSvOwOzjI6iDFKS7D/bk02NGtJ48x2MlGDejrNon3ONISGryBsozoiO
-	BGLw7foHhSik4Oax97xl/I7Y8gv6HPP8RmwxY5Z6YUxuvnCnQtyo3BtJ9HRImuLhCFwIu8mJ+LACR
-	rnvk0KH/CXGWQeWScyVcCjAbQonpnDri++D7xqY8gO5rXxlI7qlsXVqXnrbUMw7YAZh6WnuiJrrsz
-	TeNOIVmeu15xDTgei9TgJbS1mny7lKp5u4N77GhMOPogrg6uZSBXjhu1rNmSXUe8TP4Xe55eSOGP+
-	T3rWg0bz+Dxu/FdadMJA==;
+	List-Owner; bh=VJcHi8/Ibum6zrwMrsEP+0PVU1OTQwt4SLWqk7uqd3Q=; b=M4cef6hoo8z/vC
+	QN2DzBfOESdfZ6NoBr/vjcFyS58U7HAdA4X6jBWpMLys36qrRHFfaIlx4M8k2wv7kqZirNfOquh+a
+	WywmKyfmVQ3xIZO2cNPIsSih2UmyUVNQFfh2Eb3C/TZkwF1g/puncbP+vn9AvUB8YrJR7vdnfAwSW
+	4ART22OPMEM5Fq8hZJwf5DCYeA4n9JlKbQW8qlmaw/T5a2a+2k2RZ+5WBkFABZaBTjEGPUQJQ+zd2
+	RuNEwsXxzcemSB+FbykL/g951xRjQb08uFkzIpeesEHTIGFVBTrSSBeFaIH0l9V6OeNV7diPRRtcf
+	EpNp3Qml4nYZx+EV1ZHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVYCP-000625-4U; Mon, 04 May 2020 10:19:45 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVYCG-000611-Tg
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 10:19:40 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33251101E;
- Mon,  4 May 2020 03:19:34 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D70113F71F;
- Mon,  4 May 2020 03:19:32 -0700 (PDT)
-Date: Mon, 4 May 2020 11:19:30 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Peter Collingbourne <pcc@google.com>
-Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
-Message-ID: <20200504101930.GG30377@arm.com>
-References: <20200325174001.234803-1-pcc@google.com>
- <20200327191915.257116-1-pcc@google.com>
+	id 1jVYUJ-0003hx-JH; Mon, 04 May 2020 10:38:15 +0000
+Received: from esa3.hgst.iphmx.com ([216.71.153.141])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVYU2-0003Yn-CQ; Mon, 04 May 2020 10:37:59 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588588679; x=1620124679;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=YtcvFyIT0huslY20lGsT4TivCHLd2S4XYfuuCCT+mqI=;
+ b=HXTBcEELi+LLnAwJw9Qb0tAAiWrTTnO468CZENS126odrHXF1EsM/tK+
+ Zjsz8rE4upk4LiBi0pe+bxLeTmETP4Ttej4VI4S9KdqWqYE6qB9+3wwqV
+ 9BsSi+qLCRNFT/CSqFBQut/dxQlkNJMjg7/qJQ0lC2Jdlnc+D5TlwHIBb
+ /wohBri6kKFVpdMPH81cDXf1SUlZ3olcBl54N1m10r24cjZ+6cA2rRUun
+ DOb3DrEB10TjsWjdT3v24zuO7zbSuOpelyJrXY8B7fmNObCaT099Ixr8s
+ hFK16VPH3ANaSTLU6iuRCgwpAff2a6iKubvQidBVd/fOoSsENYormURss g==;
+IronPort-SDR: bEwr/AM4EbxKbCf4E537pWyhn5pegHvYCqSYYHRaYcCMIQOt990L9Hca+wQ/i2AnvJpUlUBvdU
+ y/neGob+Q+EF1jPAJCGBRic+YetAoBUIUA3gc5Yeh2MRsbI1Ngfcl/4AaSsuk4jGzmfOr5yvVI
+ nsQDP1AtPT1VYt14XidS/7rkmVo7fMZI10OEckwwq7xRfAF+3FMKgNO1RqmsYxnbiIa1xyvxYo
+ mHz1gKbAcsPkAt+i1ePgwYYBecnuymiKSsnIKi8cKU7CpvDRtcHKlmFuw0xM6TCp+/iKlyk2NE
+ aqM=
+X-IronPort-AV: E=Sophos;i="5.73,351,1583164800"; d="scan'208";a="141207765"
+Received: from mail-co1nam11lp2174.outbound.protection.outlook.com (HELO
+ NAM11-CO1-obe.outbound.protection.outlook.com) ([104.47.56.174])
+ by ob1.hgst.iphmx.com with ESMTP; 04 May 2020 18:37:55 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jm8QkHeBkMgpGQTOM+MolKuBZYl0sWERNh4RBEJWbVwd18TXokkxauTaxYszWaBVRD7FyrWZXPV3q4JUHFhYRDL4qt3g1kskJR0eBeWXZV6nWcPlaQXUOjtRTqojvcJiVd93Ki4nfdwU/H4jx7SfQQYRL5cNOwx3lb+4GtIbVE7QGQQhzZC8nBLcP7ihKE83t8q2UzHO/xN/qCyAIWuBXAaDZG7PadyIOpPq2/5CaxXsySXGNu4nDAWOXBwZaFPfN9zDoUWVoPDBQjxIWM/nFlqtP53N9dkqm+D+se4vwk0OYhSav5UqQmz7vovv4AFSRcshGSXAEH1G3KZmasL7rg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hkycn9leYbJdoMtVOEJrpHFImJC1uBicN9TjNATUKfw=;
+ b=P1JqGLQkFnsVt7sdpLiZkvdu+2oYXqFEz1cVbJXKqgHMnxVN8FbB1ueBvtnVe4dBwRBqnRoOF0CdyQf/UbMIRdDI9Kwttn6gdzS39rO4acbshWAfDRGZABYhpqZsLIy/+yxmiYxKF4hejmXnUS165R0+eofJ6E3KwYV8Y+1xUkt8aA4k8f6/jBFszCGvpyLf8bM/kMvQY1/v1nVg/7AS6Zyx/yCgg3ijtRZH49Oi9zetUXLldQAKnVVE46TrfD+lfPA4CKO1VhFt29ZcS50spvAIeZgTAqNGMDBtH7zs9cNl/o4idefH1livsMAgsscs+OX7wCnVZPZZYyr0X5LJIg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hkycn9leYbJdoMtVOEJrpHFImJC1uBicN9TjNATUKfw=;
+ b=EaFmLF4dXkpDxmBdq4EkRhb9Coi5273PujgS6MCtZzV6NrDhNXTyTnugo36gJNRq1lqRqcD2dHKTDYE7R4iRy1V8mKplG4Sh+GIHh/nHBQSOKmmKsx859E1wHtCDL9kpG0z4q8NraQDKPsVd8SiR3MWFhjqTAvmul2HugX2zfWI=
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com (2603:10b6:a03:14::14)
+ by BYAPR04MB5815.namprd04.prod.outlook.com (2603:10b6:a03:105::21)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.20; Mon, 4 May
+ 2020 10:37:52 +0000
+Received: from BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1]) by BYAPR04MB4629.namprd04.prod.outlook.com
+ ([fe80::75ba:5d7d:364c:5ae1%6]) with mapi id 15.20.2958.029; Mon, 4 May 2020
+ 10:37:52 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v5 1/8] scsi: ufs: enable WriteBooster on some pre-3.1 UFS
+ devices
+Thread-Topic: [PATCH v5 1/8] scsi: ufs: enable WriteBooster on some pre-3.1
+ UFS devices
+Thread-Index: AQHWIT7Rzk4bO01K2UKDHMRnVyvfCKiXtsRw
+Date: Mon, 4 May 2020 10:37:52 +0000
+Message-ID: <BYAPR04MB4629F2C00ABAB512DB833232FCA60@BYAPR04MB4629.namprd04.prod.outlook.com>
+References: <20200503113415.21034-1-stanley.chu@mediatek.com>
+ <20200503113415.21034-2-stanley.chu@mediatek.com>
+In-Reply-To: <20200503113415.21034-2-stanley.chu@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [212.25.79.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: ee7ea914-50f8-428a-c6a3-08d7f0173303
+x-ms-traffictypediagnostic: BYAPR04MB5815:
+x-microsoft-antispam-prvs: <BYAPR04MB581506B1E998CB38F1B9268BFCA60@BYAPR04MB5815.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:3826;
+x-forefront-prvs: 03932714EB
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: xSye2/D+b21x9goO8VXasZUT0l8HvasbcLSBPHMlTge0FrH/CFERqZl852QweiNsOkSG8ONA0gUC3+xrP8bIft+S+Yp6Tv/S8VhwVJFwb43sSS1R1xhBbcTRRIopavBsAOUwPfWHwUZohdunq2upU7GWTiFLYwpe6a5t+0lgskVpc2ZEiFiLdZvrGX5mWSBcoZApNO1n+03L3atKGr4qfbi3KzVpMjRjpOTJl5nANVj0khCncigSlj2c+x3hZSLVVP8f2fSdXXqkrjpDkRbSX5pg+ccFjkA4m9tWiGGsDbchpbh0RbbksrTGH5mS9fvNs+kdsewa6NghMlzJmTRdUzFWuxWYjNKPBMX12LoOGJQgpJmBbSIgkAtmjE/scVT6y/spjJugrt1Etk5wjKEkBTJzKvJR7ovaq5CayxUN+lresUUg7QkZ7UpXPxHNI/kd
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR04MB4629.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(39860400002)(136003)(366004)(396003)(346002)(64756008)(71200400001)(186003)(66946007)(9686003)(76116006)(26005)(52536014)(55016002)(8936002)(54906003)(110136005)(4326008)(316002)(478600001)(33656002)(6506007)(7696005)(66556008)(66446008)(66476007)(2906002)(5660300002)(8676002)(7416002)(86362001);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: //paPGaqyNUB8uO3eDL4MW8SmTw510WMt11D0YFdn+Er1s1fcw2yPjB5s8vQZLXY67LKjg+pP4sBl9xxsyC4j5W7lh8ov6hx8iKOc3mFWtMOLtpe8BcHVTkODiG3hq25BsunjIG/2OxSJasYw5iGtoZBwNlwTvbvUs/Sk+ukIq+PCgFbZTUT6MlG1CrDh3i6hf+Y/ls45M1c/YQa3dNleL9dWnVWje+AG8zUv+U/oJu0KO7/kHzts5kp5u79AcbYYUWgIz6sULKmqUGSrpXWKjjIeQavFx8AWVHxLpsN+V2Vi8r78gWYsoRd42Tev2bCd01iPl+Gmv9Gs76B2xcWokeZdn8AHnGHVWdBy0m7P9cNIWmx+rk86ukQX27T+prX505tQcTXeqsIE7XjhHFA0DaQ8ELRJNLa9I5sJrW9IdixsPyhfS+R10TfYQcqr1WXoNGAYQGFjxx7lTVG7XGp59bblunPZAMqMlMAHejxFkXzQZWUVtkwV5QsKIgUJ6t1Wxb1q4jEg5UyAz5pprwSKBRUumGcH/Ma7kAi7ZTtWYpSaw+K7MAzPLTLDMSM8tr8eSTDGns7ymrO3jVYp3JLgEhpB5EbTNdXT0BlYU0N9JC3aTq+CbNb5f2DjjxUNwJ8bMbDjuAJHdpTmFt/PAQWTOXZWcc2H2m9Axw6u9K2pxlDWRC36XhupnYGLnQ270S7zse1kQep8NLcZBGNVzXyydU9TCUpCnA82UYWI3hbw3qAz+OZIlTcomRx9nDlAKqsEHIbPtJZBy7J5BJv8JfFnqcLk3cKQwXYvCGyQyxJTu0=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200327191915.257116-1-pcc@google.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ee7ea914-50f8-428a-c6a3-08d7f0173303
+X-MS-Exchange-CrossTenant-originalarrivaltime: 04 May 2020 10:37:52.5554 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 0azwE3QTOIOHDw9GsFQ5SYRtlRFQqTuZtUtMCpJhNR02QmTZdrzBSvWL0eFX0Q9zUC0/fRqf0lwaY9BoP61NXA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR04MB5815
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_031937_061483_4D01AC59 
-X-CRM114-Status: GOOD (  26.42  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_033758_451815_C0B8632B 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [216.71.153.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,131 +147,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Evgenii Stepanov <eugenis@google.com>, Richard Henderson <rth@twiddle.net>
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
-> The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-> address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-> the tag bits may be needed by tools in order to accurately diagnose
-> memory errors, such as HWASan [1] or future tools based on the Memory
-> Tagging Extension (MTE).
 > 
-> We should not stop clearing these bits in the existing fault address
-> fields, because there may be existing userspace applications that are
-> expecting the tag bits to be cleared. Instead, create a far_context in
-> sigcontext (similar to the existing esr_context), and store the original
-> value of FAR_EL1 (including the tag bits) there.
-> 
-> [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
-> 
-> Signed-off-by: Peter Collingbourne <pcc@google.com>
-> ---
-> v3:
-> - add documentation to tagged-pointers.rst
-> - update comments in sigcontext.h
-> 
-> v2:
-> - revert changes to hw_breakpoint.c
-> - rename set_thread_esr to set_thread_far_esr
-> 
->  Documentation/arm64/tagged-pointers.rst  | 17 +++++----
->  arch/arm64/include/asm/exception.h       |  2 +-
->  arch/arm64/include/asm/processor.h       |  2 +-
->  arch/arm64/include/uapi/asm/sigcontext.h | 21 +++++++----
->  arch/arm64/kernel/entry-common.c         |  2 --
->  arch/arm64/kernel/signal.c               | 20 ++++++++++-
->  arch/arm64/mm/fault.c                    | 45 ++++++++++++++----------
->  7 files changed, 74 insertions(+), 35 deletions(-)
-
-[...]
-
-> diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
-> index 8b0ebce92427..6782394633cb 100644
-> --- a/arch/arm64/include/uapi/asm/sigcontext.h
-> +++ b/arch/arm64/include/uapi/asm/sigcontext.h
-> @@ -44,11 +44,12 @@ struct sigcontext {
->   *
->   *	0x210		fpsimd_context
->   *	 0x10		esr_context
-> + *	 0x10		far_context
->   *	0x8a0		sve_context (vl <= 64) (optional)
->   *	 0x20		extra_context (optional)
->   *	 0x10		terminator (null _aarch64_ctx)
->   *
-> - *	0x510		(reserved for future allocation)
-> + *	0x500		(reserved for future allocation)
->   *
->   * New records that can exceed this space need to be opt-in for userspace, so
->   * that an expanded signal frame is not generated unexpectedly.  The mechanism
-> @@ -94,17 +95,25 @@ struct esr_context {
->  	__u64 esr;
->  };
->  
-> +/* FAR_EL1 context */
-> +#define FAR_MAGIC	0x46415201
+>  static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
+>  {
+> +       if (!ufshcd_is_wb_allowed(hba))
+> +               return;
 > +
-> +struct far_context {
-> +	struct _aarch64_ctx head;
-> +	__u64 far;
-> +};
+> +       if (hba->desc_size.dev_desc <=
+> DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP)
+Should be 
+DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP + 4 
+
+> +               goto wb_disabled;
 > +
->  /*
->   * extra_context: describes extra space in the signal frame for
->   * additional structures that don't fit in sigcontext.__reserved[].
->   *
->   * Note:
->   *
-> - * 1) fpsimd_context, esr_context and extra_context must be placed in
-> - * sigcontext.__reserved[] if present.  They cannot be placed in the
-> - * extra space.  Any other record can be placed either in the extra
-> - * space or in sigcontext.__reserved[], unless otherwise specified in
-> - * this file.
-> + * 1) fpsimd_context, esr_context, far_context and extra_context must be
-> + * placed in sigcontext.__reserved[] if present.  They cannot be placed
-> + * in the extra space.  Any other record can be placed either in the
-> + * extra space or in sigcontext.__reserved[], unless otherwise specified
-> + * in this file.
-
-This is for backwards compatibility only.  We don't need this constraint
-for any new field, so you can probably leave the paragraph as-is.
-
-Removing this would mean constraint would mean that userspace must be
-prepared to traverse extra_context when looking for far_context.  But
-really we want modern userspace to do this anyway, since it reduces
-backwards compatibilty worries when adding more new records in the
-future.
+>         hba->dev_info.d_ext_ufs_feature_sup =
+>                 get_unaligned_be32(desc_buf +
+>                                    DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP);
 
 
-The nasty loop in parse_user_sigframe() allows some flexibility
-regarding the order of records, but prior to this patch there is no
-record that can be actually be moved, due to other backwards
-compatibility constraints -- so the flexibility isn't used today.  I'd
-like to avoid reorderability creeping in, so that we can get rid of the
-loop.
+> 
+>  static int ufs_get_device_desc(struct ufs_hba *hba)
+> @@ -6862,10 +6890,6 @@ static int ufs_get_device_desc(struct ufs_hba
+> *hba)
+> 
+>         model_index = desc_buf[DEVICE_DESC_PARAM_PRDCT_NAME];
+> 
+> -       /* Enable WB only for UFS-3.1 */
+> -       if (dev_info->wspecversion >= 0x310)
+> -               ufshcd_wb_probe(hba, desc_buf);
+> -
+>         err = ufshcd_read_string_desc(hba, model_index,
+>                                       &dev_info->model, SD_ASCII_STD);
+>         if (err < 0) {
+> @@ -6874,6 +6898,16 @@ static int ufs_get_device_desc(struct ufs_hba
+> *hba)
+>                 goto out;
+>         }
+> 
+> +       ufs_fixup_device_setup(hba);
+I don't think you should "hide" ufs_fixup_device_setup inside ufs_get_device_desc.
 
-So, mandating that records must be in a consistent order to sigcontext.h
-could be helpful.  inserting new records in the middle should be fine,
-so long as there is no shuffling.
-
-I'm not sure this patch needs to do anything extra for that: perhaps we
-can leave this no-shuffling rule implicit for now (?)
-
-People already get shouted at for needslessly noisy diffs, so there is a
-strong disincentive to shuffle existing headers in any case...
-
-[...]
-
-Cheers
----Dave
+Thanks,
+Avri
 
 _______________________________________________
 linux-arm-kernel mailing list
