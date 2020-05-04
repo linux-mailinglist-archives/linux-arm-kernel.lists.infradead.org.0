@@ -2,105 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 438D41C3566
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:18:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 73CDF1C3569
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 11:19:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=asOHCXwynP6RA1j+/N8YT1l3CVNwmTqRVJq+M0y7wgM=; b=SAO84fdlLq0OKI
-	s7KvQ/wdPCAJwyv2um8O4nLo/rAE3st1HD3niG7j1KSvK+1EuvxjXJrAz5/LecxjUb2xLiC4Q0aNn
-	RPGlvoR2TGCdAsmr4kU5KW7dzGlHODVAZ5cag4lojivPTcTF1yMbMyAQhIJnkNZYTtln39eDdc6A9
-	sXSJftRCqpsV7SMxw5hw4+np69oGy350HnA4ZHYRjCn5X4NLp8NMLEOWZrx6IwmSrZL35JADR7gXF
-	MLD3BzKP6GnCgr/1xbn708JbJ06y7Fovrd5pkHnFIDdbhi2Ft1YGDM6Haux8A4FmPhmOYNggwRR3F
-	b0Md7LIRh+etBR3DI3jA==;
+	List-Owner; bh=9tSImXHAvKt1UBL99Qs4YYuyOsKZxu+UqJ2KOXUwZ/c=; b=Fm/LMeoNZGlvhL
+	bYD4YItDfW/qvP7cQOgO9GKb2Gi/oXcV2a6i+PvoUP+eByzYFx+gAn/4WTEGPIVs5D6UuKJJOqsJu
+	qWlfMbleVaE1BObh4CNh1lAinnvj/Ei7y+gJyO18jnOWABhQj0Qxs6wt54vsTywSoDjxkhTIinG3w
+	sV4gtQpheKndVS4cbFzBIjNJo0Yu/uT2cIIMwwBFgxhxE7g9YFYNYdK+6pqa1uPUHXbeod3A1dskP
+	HC4Q1QmrilSzzTtS6kIJeWK5GeiuETZ3rD2jAYsVFk8zJwYCCPEsY2/xkRKC/N8ABHSzh5/jKg57u
+	xJ/OqlynXQR+uioeFrnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVXEk-0003UH-0g; Mon, 04 May 2020 09:18:06 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jVXFz-0003xw-Da; Mon, 04 May 2020 09:19:23 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVXEd-0003TH-Am
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 09:18:01 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 044978Ts004044; Mon, 4 May 2020 11:17:45 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=t8yE9JoGl4flloHQYJEWfkrlpSIqoEFqyExGxmwsMx8=;
- b=SKVrCXff3h/xL4m3odmOVBOJUf2qGJNoKtavF7W6Rz0kENh4xvZMCpxwYDsfw58rWIxe
- uHRuHlXRWPeptG3pU39cL8A4BE1d0BtwMYevfaQHB/x2JNqzO9+rv8pP8e/Bm++04prk
- NdRdpi514nAwSf9qy1Vh0haZNOCXBmidZqBMY04DfYc6MFpEo1X2u3FXlifIRn7rEtbt
- SHgnlyxsUf/vuXjEWSG7CZZ98MkRvZu5Ey0Me0w2BRr4wkDbaVHNUqljBSysarYiAjBl
- atBmEB2Osx42GsTLk8y13PzfkW51ioujPXV2+37zvew1lZHY8NySEcot5hhcDaqikLV2 xg== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30rx089j7y-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 04 May 2020 11:17:45 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1E65710002A;
- Mon,  4 May 2020 11:17:41 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D3AA22BBAA5;
- Mon,  4 May 2020 11:17:41 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 4 May
- 2020 11:17:41 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Mon, 4 May 2020 11:17:41 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Topic: [RFC 0/3] Introduce cpufreq minimum load QoS
-Thread-Index: AQHWGi06wBgeAQBseECYOK/U7Qvw76iQJdAAgAACCYCAAAQ3AIABBseAgAAT0wCAAE7QgIAADU2AgAARzICAAAO9AIAF2zaA
-Date: Mon, 4 May 2020 09:17:41 +0000
-Message-ID: <b8757472-c973-a32d-d5c9-a584d7d703f8@st.com>
-References: <20200424114058.21199-1-benjamin.gaignard@st.com>
- <7657495.QyJl4BcWH5@kreacher> <30cdecf9-703a-eb2b-7c2b-f1e21c805add@st.com>
- <70e743cf-b88e-346a-5114-939b8724c83d@arm.com>
- <6b5cde14-58b3-045d-9413-223e66b87bf0@st.com>
- <CAJZ5v0h6t6perZiibCWhEh1_V0pSXqFe-z22TFqH7KTFXYmqpQ@mail.gmail.com>
- <a234e123-6c15-8e58-8921-614b58ca24ca@st.com> <jhjtv11cabk.mognet@arm.com>
- <a20c5214-211b-1f70-1162-57b32e60549b@st.com> <jhjmu6tc6rz.mognet@arm.com>
-In-Reply-To: <jhjmu6tc6rz.mognet@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.44]
-Content-ID: <F04BFBC11629A34FAC8C983CAC60E3EF@st.com>
+ id 1jVXFs-0003wp-4H
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 09:19:17 +0000
+Received: from gallifrey.ext.pengutronix.de
+ ([2001:67c:670:201:5054:ff:fe8d:eefb] helo=localhost)
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <l.stach@pengutronix.de>)
+ id 1jVXFl-0000mc-RS; Mon, 04 May 2020 11:19:09 +0200
+Message-ID: <97aa62e8aaf8fa1c462c7db117fca9b6ea9bfec0.camel@pengutronix.de>
+Subject: Re: [PATCH] soc: imx: Add power domain driver support for i.mx8m
+ family
+From: Lucas Stach <l.stach@pengutronix.de>
+To: Jacky Bai <ping.bai@nxp.com>, Abel Vesa <abel.vesa@nxp.com>, Shawn Guo
+ <shawnguo@kernel.org>, Sascha Hauer <kernel@pengutronix.de>, Liam Girdwood
+ <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>
+Date: Mon, 04 May 2020 11:19:08 +0200
+In-Reply-To: <AM6PR04MB504745F6EB1FB17F6DBDD9A387AF0@AM6PR04MB5047.eurprd04.prod.outlook.com>
+References: <1587999532-30006-1-git-send-email-abel.vesa@nxp.com>
+ <0d301ed303faea4895d30b682133ec5c9d44bd8b.camel@pengutronix.de>
+ <AM6PR04MB504745F6EB1FB17F6DBDD9A387AF0@AM6PR04MB5047.eurprd04.prod.outlook.com>
+User-Agent: Evolution 3.36.1 (3.36.1-1.fc32) 
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-05-04_05:2020-05-01,
- 2020-05-04 signatures=0
+X-SA-Exim-Connect-IP: 2001:67c:670:201:5054:ff:fe8d:eefb
+X-SA-Exim-Mail-From: l.stach@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_021759_822026_47B7CD4B 
-X-CRM114-Status: GOOD (  20.43  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200504_021916_169589_94DFEAA4 
+X-CRM114-Status: GOOD (  25.38  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,80 +69,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "len.brown@intel.com" <len.brown@intel.com>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "Rafael J. Wysocki" <rafael@kernel.org>,
- "viresh.kumar@linaro.org" <viresh.kumar@linaro.org>,
- "pavel@ucw.cz" <pavel@ucw.cz>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Patrick Bellasi <patrick.bellasi@arm.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- Hugues FRUCHET <hugues.fruchet@st.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 4/30/20 5:50 PM, Valentin Schneider wrote:
-> On 30/04/20 16:37, Benjamin GAIGNARD wrote:
->> On 4/30/20 4:33 PM, Valentin Schneider wrote:
->>> On 30/04/20 14:46, Benjamin GAIGNARD wrote:
->>>>> That's not what I meant.
->>>>>
->>>>> I suppose that the interrupt processing in question takes place in
->>>>> process context and so you may set the lower clamp on the utilization
->>>>> of the task carrying that out.
->>>> I have try to add this code when starting streaming (before the first
->>>> interrupt) the frames from the sensor:
->>>> const struct sched_attr sched_attr = {
->>>>      .sched_util_min = 10000, /* 100% of usage */
->>> Unless you play with SCHED_CAPACITY_SHIFT, the max should be 1024 -
->>> i.e. SCHED_CAPACITY_SCALE. That's a really big boost, but that's for you to
->>> benchmark.
->>>
->>>>      .sched_flags = SCHED_FLAG_UTIL_CLAMP_MIN,
->>>>     };
->>>>
->>>> sched_setattr(current, &sched_attr);
->>>>
->>>> I don't see any benefices maybe there is some configuration flags to set.
->>>>
->>>> How changing sched_util_min could impact cpufreq ondemand governor ?
->>>> Does it change the value returned when the governor check the idle time ?
->>>>
->>> You'll have to use the schedutil governor for uclamp to have an effect. And
->>> arguably that's what you should be using, unless something explicitly
->>> prevents you from doing that.
->> Even with schedutil and SCHED_CAPACITY_SCALE that it doesn't work.
->> cpufreq/cpuinfo_cur_freq values are always on the max value even if the
->> stats show transitions between the available frequencies.
->>
->> I see two possibles reasons to explain that:
->> - sched_setattr() is called in userland process context, but the
->> threaded irq handler is running in another process.
-> Ah yes, this only works if the task you boost is the one that will handle
-> whatever work you care about (in this case handling the irq). That said, if
-> you do use threaded IRQs, that should give you a SCHED_FIFO thread, which
-> should drive the frequency to its max when using schedutil (unrelated to
-> uclamp).
-Can I conclude that sched_setattr() isn't the good way to solve this 
-problem ?
-Does my patches make sense in this case ?
-
->> - because this use case is almost running all in hardware the process
->> isn't doing anything so the scheduler doesn't take care of it.
->>
->>>>> Alternatively, that task may be a deadline one.
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+QW0gTW9udGFnLCBkZW4gMjcuMDQuMjAyMCwgMTU6MzcgKzAwMDAgc2NocmllYiBKYWNreSBCYWk6
+Cj4gPiAtLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLQo+ID4gRnJvbTogTHVjYXMgU3RhY2ggPGwu
+c3RhY2hAcGVuZ3V0cm9uaXguZGU+Cj4gPiBTZW50OiBNb25kYXksIEFwcmlsIDI3LCAyMDIwIDEx
+OjExIFBNCj4gPiBUbzogQWJlbCBWZXNhIDxhYmVsLnZlc2FAbnhwLmNvbT47IEphY2t5IEJhaSA8
+cGluZy5iYWlAbnhwLmNvbT47IFNoYXduCj4gPiBHdW8gPHNoYXduZ3VvQGtlcm5lbC5vcmc+OyBT
+YXNjaGEgSGF1ZXIgPGtlcm5lbEBwZW5ndXRyb25peC5kZT47IExpYW0KPiA+IEdpcmR3b29kIDxs
+Z2lyZHdvb2RAZ21haWwuY29tPjsgTWFyayBCcm93biA8YnJvb25pZUBrZXJuZWwub3JnPgo+ID4g
+Q2M6IEFpc2hlbmcgRG9uZyA8YWlzaGVuZy5kb25nQG54cC5jb20+OyBkbC1saW51eC1pbXgKPiA+
+IDxsaW51eC1pbXhAbnhwLmNvbT47IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZzsgTGludXggS2VybmVsCj4gPiBNYWlsaW5nIExpc3QgPGxpbnV4LWtlcm5lbEB2Z2VyLmtlcm5l
+bC5vcmc+Cj4gPiBTdWJqZWN0OiBSZTogW1BBVENIXSBzb2M6IGlteDogQWRkIHBvd2VyIGRvbWFp
+biBkcml2ZXIgc3VwcG9ydCBmb3IgaS5teDhtCj4gPiBmYW1pbHkKPiA+IAo+ID4gQW0gTW9udGFn
+LCBkZW4gMjcuMDQuMjAyMCwgMTc6NTggKzAzMDAgc2NocmllYiBBYmVsIFZlc2E6Cj4gPiA+IEZy
+b206IEphY2t5IEJhaSA8cGluZy5iYWlAbnhwLmNvbT4KPiA+ID4gCj4gPiA+IFRoZSBpLk1YOE0g
+ZmFtaWx5IGlzIGEgc2V0IG9mIE5YUCBwcm9kdWN0IGZvY3VzIG9uIGRlbGl2ZXJpbmcgdGhlCj4g
+PiA+IGxhdGVzdCBhbmQgZ3JlYXRlc3QgdmlkZW8gYW5kIGF1ZGlvIGV4cGVyaWVuY2UgY29tYmlu
+aW5nCj4gPiA+IHN0YXRlLW9mLXRoZS1hcnQgbWVkaWEtc3BlY2lmaWMgZmVhdHVyZXMgd2l0aCBo
+aWdoLXBlcmZvcm1hbmNlCj4gPiA+IHByb2Nlc3Npbmcgd2hpbGUgb3B0aW1pemVkIGZvciBsb3dl
+c3QgcG93ZXIgY29uc3VtcHRpb24uCj4gPiA+IAo+ID4gPiBpLk1YOE1RLCBpLk1YOE1NLCBpLk1Y
+OE1OLCBldmVuIHRoZSBmdXJ0dXJlIGkuTVg4TVAgYXJlIGFsbCBiZWxvbmcgdG8KPiA+ID4gdGhp
+cyBmYW1pbHkuIEEgR1BDIG1vZHVsZSBpcyB1c2VkIHRvIG1hbmFnZSBhbGwgdGhlIFBVIHBvd2Vy
+IGRvbWFpbgo+ID4gPiBvbi9vZmYuIEJ1dCB0aGUgc2l0dWF0aW9uIGlzIHRoYXQgdGhlIG51bWJl
+ciBvZiBwb3dlciBkb21haW5zICYgdGhlCj4gPiA+IHBvd2VyIHVwIHNlcXVlbmNlIGhhcyBzaWdu
+aWZpY2F0ZSBkaWZmZXJlbmNlIG9uIHRob3NlIFNvQ3MuIEV2ZW4gb24KPiA+ID4gdGhlIHNhbWUg
+U29DLiBUaGUgcG93ZXIgdXAgc2VxdWVuY2Ugc3RpbGwgaGFzIGJpZyBkaWZmZXJlbmNlLiBJdCBt
+YWtlcwo+ID4gPiB1cyBoYXJkIHRvIHJldXNlIHRoZSBHUEN2MiBkcml2ZXIgdG8gY292ZXIgdGhl
+IHdob2xlIGkuTVg4TSBmYW1pbHkuCj4gPiA+IEVhY2ggdGltZSBhIG5ldyBTb0MgaXMgc3VwcG9y
+dGVkIGluIHRoZSBtYWlubGluZSBrZXJuZWwsIHdlIG5lZWQgdG8KPiA+ID4gbW9kaWZ5IHRoZSBH
+UEN2MiBkcml2ZXIgdG8gc3VwcG9ydCBpdC4gV2UgbmVlZCB0byBhZGQgb3IgbW9kaWZ5Cj4gPiA+
+IGh1bmRyZWQgbGluZXMgb2YgY29kZSBpbiB3b3JzdCBjYXNlLgo+ID4gPiBJdCBpcyBhIGJhZCBw
+cmFjdGljZSBmb3IgdGhlIGRyaXZlciBtYWludGFpbmFiaWxpdHkuCj4gPiA+IAo+ID4gPiBUaGlz
+IGRyaXZlciBhZGQgYSBtb3JlIGdlbmVyaWMgcG93ZXIgZG9tYWluIGRyaXZlciB0aGF0IHRoZSBh
+Y3R1YWwKPiA+ID4gcG93ZXIgb24vb2ZmIGlzIGRvbmUgYnkgVEYtQSBjb2RlLiB0aGUgYWJzdHJh
+Y3Rpb24gZ2l2ZSB1cyB0aGUKPiA+ID4gcG9zc2liaWxpdHkgdGhhdCB1c2luZyBvbmUgZHJpdmVy
+IHRvIGNvdmVyIHRoZSB3aG9sZSBpLk1YOE0gZmFtaWx5IGluCj4gPiA+IGtlcm5lbCBzaWRlLgo+
+ID4gPiAKPiA+IAo+ID4gQWdhaW46IHdoYXQgZG9lcyB0aGlzIGRyaXZlciBicmluZyB0byB0aGUg
+dGFibGUsIG90aGVyIHRoYW4gbW92aW5nIGEgZnJhY3Rpb24gb2YKPiA+IHRoZSBwb3dlciBkb21h
+aW4gZnVuY3Rpb25hbGl0eSBpbnRvIHRoZSBmaXJtd2FyZT8KPiA+IAo+ID4gVGhlIGRpc2N1c3Np
+b25zIG9uIHRoZSBsYXN0IHN1Ym1pc3Npb25zIG9mIHRoaXMgZHJpdmVyIGFscmVhZHkgZXN0YWJs
+aXNoZWQgdGhhdAo+ID4gd2UgY2FuJ3QgbW92ZSBhbGwgZnVuY3Rpb25hbGl0eSBmb3IgdGhlIHBv
+d2VyIGRvbWFpbnMgaW50byB0aGUgZmlybXdhcmUsIGFzCj4gPiBjb250cm9sbGluZyByZWd1bGF0
+b3JzIGlzIHByb2JhYmx5IG5vdCBlYXN5IHRvIGRvIGZyb20gdGhpcyBjb250ZXh0LiBBbHNvIHRo
+ZQo+ID4gVEYtQSBzaWRlIGltcGxlbWVudGF0aW9uIG9mIHRoaXMgZHJpdmVyIGlzICJpbnRlcmVz
+dGluZyIgSU1ITywgaXQgZG9lcyBzdHVmZiBsaWtlCj4gPiBhY2Nlc3NpbmcgdGhlIGNsb2NrIGNv
+bnRyb2xsZXIgcmVnaXN0ZXJzIHdpdGhvdXQgYW55IGxvY2tpbmcgb3Igb3RoZXIgbWVhbnMgb2YK
+PiA+IG11dHVhbCBleGNsdXNpb24gd2l0aCB0aGUgTGludXgga2VybmVsIGNsb2NrIGNvbnRyb2xs
+ZXIgZHJpdmVyLgo+ID4gCj4gCj4gVGhlIGNsb2NrIGhhbmRsaW5nIGlzIGluIGtlcm5lbCBzaWRl
+IHRocm91Z2ggQ0NGLCBub3QgaW4gQVRGLiBTZWUgdGhlIHBhdGNoIGJlbG93Lgo+IAo+ID4gV2h5
+IGNhbid0IHdlIGp1c3QgZXh0ZW5kIHRoZSBleGlzdGluZyBHUEN2MiBkcml2ZXIgd2l0aCBzdXBw
+b3J0IGZvciB0aGUgb3RoZXIKPiA+IGkuTVg4TSBmYW1pbHkgbWVtYmVycz8KPiA+IAo+IAo+IFRo
+ZSByZWFzb24gdGhhdCB3aHkgSSBkb27igJl0IGxpa2UgdG8gZXh0ZW5kIHRoZSBHUEN2MiBpcyB0
+aGF0IHdoZW4gZG9pbmcgZG9tYWluIG9uL29mZiwKPiBXZSBuZWVkIHRvIGFjY2VzcyBzb21lIHNw
+ZWNpYWwgY29udHJvbCByZWdpc3RlciBpbiBlYWNoIGRvbWFpbiAmIGRvIHNvbWUgc3BlY2lhbCBm
+bG93LAo+IFRoZXNlIGNvbnRyb2wgcmVnaXN0ZXIobWVkaWFtaXggYmxvY2sgY29udHJvbCwgdnB1
+bWl4IGJsb2NrIGNvbnRyb2wpIGlzIG5vdCBpbiBHUEMKPiBtb2R1bGUncyBhZGRyZXNzIHJhbmdl
+LiBObyBiZW5lZml0IHRvIHJldXNlIHRoZSBHUEN2Mi4gT25seSBicmluZyBjb21wbGV4aXR5IHRv
+IHRoZQo+IEdQQ3YyIGRyaXZlciBlYWNoIHRpbWUgYSBuZXcgU29DIGlzIGFkZGVkLgo+IAo+IFll
+cywgdGhlIGkuTVg4TSBwb3dlciBkb21haW4gc3VwcG9ydCBoYXMgYmVlbiBwZW5kaW5nIGZvciBh
+IHdoaWxlLiBBUk0gZ3V5cyByZWplY3RlZCB0aGlzIHBhdGNoc2V0Cj4gYmVjYXVzZSB0aGV5IHN1
+Z2dlc3QgdXMgdG8gdXNlIFNDTUkgcmF0aGVyIHRoYW4gU2lQLiBCdXQgU0NNSSBpcyBvbmx5IHBh
+cnRpYWwgc3VpdGFibGUgZm9yIG91cgo+IGNhc2UuCgpDYW4geW91IHBsZWFzZSBwb2ludCBtZSB0
+byB0aGUgbW9zdCByZXNlbnQgdmVyc2lvbiBvZiB0aGUgVEYtQSBzaWRlCmltcGxlbWVudGF0aW9u
+IG9mIHRoaXM/IFRoZSBpLk1YOE1NIGltcGxlbWVudGF0aW9uIGluIHRoZQppbXhfNS40LjNfMi4w
+LjAgYnJhbmNoIGluIHRoZSBjb2RlYXVyb3JhIGlteC1hdGYgcmVwbyBzdGlsbCBjb250YWlucwp3
+cml0ZXMgdG8gdGhlIGNsb2NrIGNvbnRyb2xsZXIgcmVnaXN0ZXIgcmFuZ2UuCgpBbHNvIEkgd291
+bGQgbG92ZSB0byBsZWFybiB3aHkgdGhlIEdQQyBuZWVkcyB0byBhY2Nlc3MgTWVkaWFtaXggYW5k
+ClZQVW1peCBkb21haW4gcmVnaXN0ZXJzLiBJZiB5b3UgYXJlIHRhbGtpbmcgYWJvdXQgdGhlIE5P
+QyBjb25maWd1cmF0aW9uCkkgd291bGQgc3Ryb25nbHkgc3VnZ2VzdCB0aGF0IHRob3NlIHNob3Vs
+ZCBiZSBoYW5kbGVkIGJ5IGEgTGludXggc2lkZQppbnRlcmNvbm5lY3QgZHJpdmVyLCB0aGlzIGhh
+cyBub3RoaW5nIHRvIGRvIHdpdGggdGhlIHBvd2VyIGRvbWFpbgpzZXF1ZW5jaW5nLCBpdCBqdXN0
+IGhhcHBlbnMgdG8gbG9zZSBzdGF0ZSBvdmVyIHRoZSBwb3dlciBkb3duIGFuZCBuZWVkcwp0byBi
+ZSByZXByb2dyYW1tZWQgYWZ0ZXIgcG93ZXIgb24uIFRoZSBOT0MgY29uZmlndXJhdGlvbiB0aG91
+Z2ggaXMgdXNlLQpjYXNlIGRlcGVuZGVudCwgc28gdGhpcyBzaG91bGQgYmUgcHJvcGVybHkgaGFu
+ZGxlZCBpbiBhIHJpY2ggT1MgZHJpdmVyLgoKU3VyZSB3ZSBuZWVkcyB0byBleHRlbmQgdGhlIExp
+bnV4IHNpZGUgR1BDIGRyaXZlciBmb3IgZWFjaCBuZXcgU29DCmdlbmVyYXRpb24sIGJ1dCB0aGF0
+J3Mgbm8gZGlmZmVyZW50IGZyb20gYW55IG90aGVyIGhhcmR3YXJlIGRyaXZlciBpbgpMaW51eC4g
+RHJpdmVycyBhcmUgdGhlIGFic3RyYWN0aW9uIGFyb3VuZCB0aGUgaGFyZHdhcmUsIHRoZXJlIGlz
+IG5vCm5lZWQgdG8gaW52ZW50IGFub3RoZXIgb25lIGlmIHRoZXJlIGFyZSBubyBjbGVhciBiZW5l
+Zml0cy4KClJlZ2FyZHMsCkx1Y2FzCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxt
+YW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
