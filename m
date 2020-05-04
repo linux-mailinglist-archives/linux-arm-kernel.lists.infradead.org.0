@@ -2,63 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FC601C33BA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 09:37:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 883E11C3408
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 10:07:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=picUB28g3Oi9neJEt40nf4pnHB1i9vVcfDbgxS9I2XA=; b=VsRrOEvnBvXF6v
-	Vao06SKJpb5lbsfdS2MipTL9W/qbiKXnBvcR2Y9p0fYeE7Bv968DHCMmHf6K4UHNranOx8i6IUMFj
-	h12+VwGJCnTpwgZSD720pPmyxCzFfhgBTOEJBaC4uA5tjdfByfFD1UPgAc0aCp+wYxCZQT2tdJsDg
-	JSPYxtLPpjPAL6gokU5Vm/b7Yx4B6GeE+sTbxYJzaUSKVj77fwu8fMLuX7yxc9fr8iLTyO8DNwsX5
-	Eow1MlQr2GHtZMyWJ+duyZbtHcwWtWqi7W2kIWhdqOdGOxdsMayhEUboTStRo57+9plR+HFM/Gosn
-	D0eMykA/SI5stG1A+pMA==;
+	List-Owner; bh=r4cYE0eueMvtNc8QpajjDN4ZGaFSNwiJtYeI6+mCk4A=; b=PUFBYOHRiOhhLP
+	MD/+kDyCPsxb6ZOV5N4Brf2UssDpgDlFgSsBAKH4U2u6taEFxHiE8mlz79yoUi9P06KrHvdVSvr0y
+	CQmJQYyPZXfBTWFUGntpvOQZvOWIpD1GXhhc0MiLcINKp9NlDb9IqpWFrSIEwYxsxUiY6Tx7DZvh+
+	5sluSJTABdc10MUylGD7jYdKhaPvKqkHhRLAtsNfC5FPF8ToTG4FVZ29mFOmHcbgBd+I1VV2HnSAK
+	N4z5d11s+CdWG9H3EpiovlJTty1L65JcIbKm8THPaYnT0/4et4eXqPH+y6/RiIqeA08aHFp1/FScH
+	+H9BeyuH5gnWu7bm5yJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVVf7-0002w3-7a; Mon, 04 May 2020 07:37:13 +0000
+	id 1jVW7z-0005te-6K; Mon, 04 May 2020 08:07:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVVf1-0002vM-AA
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 07:37:08 +0000
-Received: from mail-il1-f180.google.com (mail-il1-f180.google.com
- [209.85.166.180])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D93B521582
- for <linux-arm-kernel@lists.infradead.org>;
- Mon,  4 May 2020 07:37:06 +0000 (UTC)
+ id 1jVW7t-0005sr-Cu
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 08:06:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D2C820643;
+ Mon,  4 May 2020 08:06:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588577826;
- bh=t8IlpBfd5v4b7aMW8w5EYYQ13kNx8+iPpKqLXfYgEX0=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=j1fsmYsyS8FUh6fcX3i0ckiBHNiKkiejJKb8CyPmiOxio1UtyE8lXeNqeBua1NgTM
- mywBBEW1UuAcZzm/G1IuPs8Skfd7zi0wzjaiAoI61niSH+4CPWPhyANyDdQTHWjNJi
- ALzdm2sMfMxGG/6LwMy56ifmdEz+2NtOUPVI9TOQ=
-Received: by mail-il1-f180.google.com with SMTP id s10so10309305iln.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 00:37:06 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZZvfgRhRPJbqhNsqtxNRGIdoTIakWNfPWcLLgvw6vcjzsR3pvT
- +oZSLJ+QrRoZDILhu8DoFlAWgydOfIiaB1om5yU=
-X-Google-Smtp-Source: APiQypKNPYX7ad+kctS/AbY8KuKLDocsFDox+qQJT05gRIgyhoBoUx71Nx7bevStf4WtJv25L/UBUkyl2JKmOvnuE44=
-X-Received: by 2002:a92:3c55:: with SMTP id j82mr15500599ila.258.1588577826285; 
- Mon, 04 May 2020 00:37:06 -0700 (PDT)
+ s=default; t=1588579616;
+ bh=KgviiHqJtQABngYsmhCiq91FZpqHvsAXcKF9Kb/EwCM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jb1at5d1Qv8MMYWePegEsCXL7rZtgdRj05fhGJtZaZmRZYIIspbjIMPHtedVpdygU
+ HQQ1kD02SGdgoVMXAEmzPqc7U07gVYZs+t7JIYVm8iQmz9kD7yUwn+cSfFRCcKR8at
+ JkElzRrlbPloa/HIxhpbkzKevFMpvXXi3UNuVsX4=
+Date: Mon, 4 May 2020 09:06:51 +0100
+From: Will Deacon <will@kernel.org>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [PATCH v2 1/2] init/kconfig: Add LD_VERSION Kconfig
+Message-ID: <20200504080651.GA2621@willie-the-truck>
+References: <1585568499-21585-1-git-send-email-amit.kachhap@arm.com>
+ <CAMuHMdWxTtFxgpabeK3L4Ev4zgZ6r=_c+5MBVYd7ZAHbNYxm=Q@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200501161014.5935-1-ardb@kernel.org>
- <20200501161014.5935-3-ardb@kernel.org>
- <bbd56b89-643a-2f86-79af-f65ef46822ef@huawei.com>
-In-Reply-To: <bbd56b89-643a-2f86-79af-f65ef46822ef@huawei.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Mon, 4 May 2020 09:36:55 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXEuV_Lmhu-2zZhD-YgL-zu+o0v+vooQTK30cemJW5dfNg@mail.gmail.com>
-Message-ID: <CAMj1kXEuV_Lmhu-2zZhD-YgL-zu+o0v+vooQTK30cemJW5dfNg@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] ACPI/IORT: work around num_ids ambiguity
-To: Hanjun Guo <guohanjun@huawei.com>
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdWxTtFxgpabeK3L4Ev4zgZ6r=_c+5MBVYd7ZAHbNYxm=Q@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_003707_391897_B0F2E073 
-X-CRM114-Status: GOOD (  24.94  )
+X-CRM114-CacheID: sfid-20200504_010657_454584_8223815D 
+X-CRM114-Status: GOOD (  16.29  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,87 +77,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>, Robin Murphy <robin.murphy@arm.com>,
- Linuxarm <linuxarm@huawei.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Michael Ellerman <mpe@ellerman.id.au>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 4 May 2020 at 06:32, Hanjun Guo <guohanjun@huawei.com> wrote:
->
-> On 2020/5/2 0:10, Ard Biesheuvel wrote:
-> > The ID mapping table structure of the IORT table describes the size of
-> > a range using a num_ids field carrying the number of IDs in the region
-> > minus one. This has been misinterpreted in the past in the parsing code,
-> > and firmware is known to have shipped where this results in an ambiguity,
-> > where regions that should be adjacent have an overlap of one value.
+On Mon, May 04, 2020 at 09:11:12AM +0200, Geert Uytterhoeven wrote:
+> On Mon, Mar 30, 2020 at 1:42 PM Amit Daniel Kachhap
+> <amit.kachhap@arm.com> wrote:
+> > This option can be used in Kconfig files to compare the ld version
+> > and enable/disable incompatible config options if required.
 > >
-> > So let's work around this by detecting this case specifically: when
-> > resolving an ID translation, allow one that matches right at the end of
-> > a multi-ID region to be superseded by a subsequent one.
+> > This option is used in the subsequent patch along with GCC_VERSION to
+> > filter out an incompatible feature.
 > >
-> > To prevent potential regressions on broken firmware that happened to
-> > work before, only take the subsequent match into account if it occurs
-> > at the start of a mapping region.
+> > Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+> 
+> > --- a/init/Kconfig
+> > +++ b/init/Kconfig
+> > @@ -17,6 +17,10 @@ config GCC_VERSION
+> >         default $(shell,$(srctree)/scripts/gcc-version.sh $(CC)) if CC_IS_GCC
+> >         default 0
 > >
-> > Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-> > ---
-> >   drivers/acpi/arm64/iort.c | 40 +++++++++++++++++---
-> >   1 file changed, 34 insertions(+), 6 deletions(-)
-> >
-> > diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> > index 98be18266a73..9f139a94a1d3 100644
-> > --- a/drivers/acpi/arm64/iort.c
-> > +++ b/drivers/acpi/arm64/iort.c
-> > @@ -300,7 +300,7 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
-> >   }
-> >
-> >   static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
-> > -                    u32 *rid_out)
-> > +                    u32 *rid_out, bool check_overlap)
-> >   {
-> >       /* Single mapping does not care for input id */
-> >       if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
-> > @@ -316,10 +316,34 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
-> >       }
-> >
-> >       if (rid_in < map->input_base ||
-> > -         (rid_in >= map->input_base + map->id_count))
-> > +         (rid_in > map->input_base + map->id_count))
-> >               return -ENXIO;
-> >
-> > +     if (check_overlap) {
-> > +             /*
-> > +              * We already found a mapping for this input ID at the end of
-> > +              * another region. If it coincides with the start of this
-> > +              * region, we assume the prior match was due to the off-by-1
-> > +              * issue mentioned below, and allow it to be superseded.
-> > +              * Otherwise, things are *really* broken, and we just disregard
-> > +              * duplicate matches entirely to retain compatibility.
-> > +              */
-> > +             pr_err(FW_BUG "[map %p] conflicting mapping for input ID 0x%x\n",
-> > +                    map, rid_in);
->
-> As we already applied a workaround here, can we add "applying
-> workaround" in the error message? This will make the customers
-> less uneasy to see such message in the boot log. Once the product
-> was deliveried to customers, it's not that easy to update all the
-> firmwares entirely.
->
+> > +config LD_VERSION
+> > +       int
+> > +       default $(shell,$(LD) --version | $(srctree)/scripts/ld-version.sh)
+> > +
+> >  config CC_IS_CLANG
+> >         def_bool $(success,$(CC) --version | head -n 1 | grep -q clang)
+> 
+> .config: warning: symbol value '2.01827e+11' invalid for LD_VERSION
+> 
+> Seen with the or32 compiler on kisskb, e.g.
+> http://kisskb.ellerman.id.au/kisskb/buildresult/14226173/
 
-Sure.
+Hmm. The binutils version there is '2.26.20160125', but I think
+scripts/ld-version.sh is expecting that to be '2.26.0.20160125' as it would
+then ignore the date suffix as of commit 0d61ed17dd30 ("ld-version: Drop
+the 4th and 5th version components"). On a 32-bit host architecture, the
+awk expression ends up printing the version using exponential notation,
+but even on a 64-bit arch the number would still be bogus.
 
-> I'm out of reach for D05/D06 hardware as it's holidays in China,
-> please allow me to test this patch set in Wednesday this week.
->
-
-Yes please
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
