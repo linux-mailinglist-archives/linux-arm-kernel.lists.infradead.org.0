@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38FEE1C406D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:49:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A7DB1C4076
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:51:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bIrh1LMQE4Wj8Ep0SKl+eJl0rN1jwIgxD27fOAfmZnc=; b=uU3cVFqIgPAbyc
-	RQUb1dyQyTtfWdV/5SjOZX4iqBndtkZ7F+Q17BTTf/8IQqAn9XmUGjh9QOVcOjxKxuNtAWXd7drBQ
-	+9xWcLqamQBcFayVq9AhdIWx0HfGQhSMac5YaDNnH7TCCjQgfNIzB7fTnE3j/R+iVZnu2azS08Uqb
-	NF34xkJlNMaxtWUAojwnXiBqjrseTP+f7Iz6sRbuXo9yrMRRuyg9KKCgS35/aCXbj5Ydy62roVyKo
-	/GRk6NqZfslZvP+yEwTHk/7XnuzFFjZmoYNsslNC48obKuNZf+4vOw1eTuqvEXrg/ZiuhqrMLEYwr
-	5A8Sk5w/w9wjNAaHDBbQ==;
+	List-Owner; bh=RWb88pyFakP2+gTf10cE4rvI9n5uSv6jjfrnUM3so60=; b=bWJNE+vS1Xs7kh
+	yr+2hn+I3+TiQXf/M12NWUffEq90+QiuR55cjVI01vBwoECuvwNQmGZviDcHtO47n1OSSMgfXCvMX
+	MoMH2QejMTGrfXfa0accz7Z3GK2OjJkOH2MOf9NBi/gkSx2hLgYTYVLz3Tg97oC+UUeaHXVN+Ow07
+	VDLWfk/tOUOhndPMJ3byONjmtpx7A7TgDips+47QjE1rru87hFDri6B/RPEB5L21paBcHpAghLzIP
+	BKSNl1HARP1Wf8d/NBqyH17ogIohVGRgH6MglcYY1q5qS9IA5CJ+8260QsMy6Zi7BFoE25/flN1jS
+	YAjTZX+HX2o+CgwHOpLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVeHk-0002tq-MP; Mon, 04 May 2020 16:49:40 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jVeJm-0005vD-Sm; Mon, 04 May 2020 16:51:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVeHd-0002sB-Ex
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:49:34 +0000
-Received: by mail-pg1-x544.google.com with SMTP id a4so70833pgc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 09:49:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=N98hzrvavUDmiZvqjRc8Y+NamEOGTTXQ9QYdiVbRQUI=;
- b=VwTnWyDAqzkDtnfnRgQ+QgRKkew37qUbEFsl/e0olaTckk9POdNzFiORuokPHsU7cr
- 4+b3dqe/qJU/NBud1lZT3+CcNb91dNtjmBBneGSvFIy/k04EuQlHwdi0+/LGIoyrHg8C
- VA9O9YNxP+kpn0ADakess8vbaTVtsneJ6CJNw1Xvy1DyjCv2xrFuQZQfKTn/u/q6QcjQ
- QYTMpzlCno59ssPhfcoOU6vB/zaxSGVsF44ZuZeu8OonrkIW7BAyCkWUyqynEdE5oqtQ
- tQD+7mlEdV048vuEWVlWORiIte+CqOOQcv9ssYtGSS3UUOnqPIlwdUP5lotDLCuiOe/j
- E3qg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=N98hzrvavUDmiZvqjRc8Y+NamEOGTTXQ9QYdiVbRQUI=;
- b=Nut+deyjH5Mg8QGC5I4C/4U1fBsY+MRoILRZ5xnOZErqj5DPl5Max0CC3foLy1fsQt
- ce16RN4x2oesK9zclpxVFX0ZfD3Sl+7rnUfpOmXoP8jCAlxbREdYR08Lgxc5aU98M44C
- V1fDXu16uI0O/6u3Kth40yyJEI7ojw4Vbe4eu8Ibk9m58qzIoP2Dn+yz9Hk7gjLWyxQn
- 4bFbNEMSvxA/sB4R+oKwyKcU+iJqPZgmKQADLDyXzS+A8RceDBPkQnobRZhzjYiRzRuS
- 6jkfuelDQ5o9k58GSIlW/suheWkJpha+jbhuoMQSTTx+9O5wIPoDli4vareGXfLvzb5P
- wBuQ==
-X-Gm-Message-State: AGi0PubCeg8EjhD9PhlKDVaCDs2yFEjWHYg1Eawg+3BO9PXjWpNwzhtZ
- 4AFmonzDrNYArpON2zguYYBeZA==
-X-Google-Smtp-Source: APiQypJ0UtE+FqSr0S/8CiLbts6PMUhrSDn8+4Okd3e/IXqVStp2R/N4PLwqQWR32HncAgCP22VImQ==
-X-Received: by 2002:a62:6341:: with SMTP id x62mr19109043pfb.289.1588610972562; 
- Mon, 04 May 2020 09:49:32 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id t20sm11014pjo.13.2020.05.04.09.49.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 May 2020 09:49:31 -0700 (PDT)
-Date: Mon, 4 May 2020 10:49:30 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Stephen Boyd <swboyd@chromium.org>
-Subject: Re: [PATCH v2 1/2] coresight: Include required headers in C files
-Message-ID: <20200504164930.GA755@xps15>
-References: <20200428181010.170568-1-swboyd@chromium.org>
- <20200428181010.170568-2-swboyd@chromium.org>
- <20200429180818.GA3062@xps15>
- <158818506575.117437.11635372928426076937@swboyd.mtv.corp.google.com>
- <CANLsYkzkq=EuKx_=W2jv2TeWpM3P=Pd9NYS18VfG9KCey=2--g@mail.gmail.com>
- <158852907765.11125.7786353455300506998@swboyd.mtv.corp.google.com>
+ id 1jVeJf-0005tW-TP
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:51:41 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9CA80206D9;
+ Mon,  4 May 2020 16:51:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588611098;
+ bh=vNjcj7BiW7fsrp1PHDFOxUtfyekks+fuqVJ5fa+MBVU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=F+xJ6rUn2jyOJhjTTP4RDpIU9PMA0E4wiN0tBoAsaa01z99VfvRWlchg0ha7hBAtZ
+ D4LGUXdjQ2cM6CbLAuhdcWlaT6Waym4whpQThp95vDGN1kAIoigsCu7mQ9r9jikuGr
+ RstFdo9WOMEId9nXKZkHbsRmA3PK4kDvnNFbz9Sk=
+Date: Mon, 4 May 2020 17:51:33 +0100
+From: Will Deacon <will@kernel.org>
+To: Paolo Bonzini <pbonzini@redhat.com>
+Subject: Re: [GIT PULL] KVM/arm fixes for 5.7, take #2
+Message-ID: <20200504165132.GA1833@willie-the-truck>
+References: <20200501101204.364798-1-maz@kernel.org>
+ <20200504113051.GB1326@willie-the-truck>
+ <df78d984-6ce3-f887-52a9-a3e9164a6dee@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <158852907765.11125.7786353455300506998@swboyd.mtv.corp.google.com>
+In-Reply-To: <df78d984-6ce3-f887-52a9-a3e9164a6dee@redhat.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_094933_503455_C7B9397C 
-X-CRM114-Status: GOOD (  11.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_095139_988886_429CF825 
+X-CRM114-Status: GOOD (  13.90  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,35 +78,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Mike Leach <mike.leach@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Douglas Anderson <dianders@chromium.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
+ kvm@vger.kernel.org, Fangrui Song <maskray@google.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Zenghui Yu <yuzenghui@huawei.com>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 11:04:37AM -0700, Stephen Boyd wrote:
-> Quoting Mathieu Poirier (2020-04-29 12:24:42)
+On Mon, May 04, 2020 at 06:05:51PM +0200, Paolo Bonzini wrote:
+> On 04/05/20 13:30, Will Deacon wrote:
+> > I don't see this queued up in the kvm tree, which appears to have been
+> > sitting dormant for 10 days. Consequently, there are fixes sitting in
+> > limbo and we /still/ don't have a sensible base for arm64/kvm patches
+> > targetting 5.8.
 > > 
-> > >
-> > > So please remove slab.h from the two files (but not the other one) when
-> > > applying. Thanks.
-> > 
-> > You got it.
+> > Paolo -- how can I help get this stuff moving again? I'm more than happy
+> > to send this lot up to Linus via arm64 if you're busy atm. Please just
+> > let me know.
 > 
-> I looked in next but coresight-cti-platform.c is missing slab.h even
-> though I included it in my patch. There's a bare kcalloc() call in that
-> file, so slab.h is required.
+> 10 days is one week during which I could hardly work and the two
+> adjacent weekends.  So this is basically really bad timing in Marc's
+> first pull request, that he couldn't have anticipated.
 
-I know what happened.  The above comment mentions removing slab.h in two and
-leaving the "other" one in place.  But looking at the original file only
-coresight-cti-platform.c and coresight-cti-sysfs.c had an slab.h.
+Understood, and thanks for the quick reply. If possible, please just let us
+know in future as we can probably figure something out rather than having
+things sit in limbo.
 
-I have made the correction.
+> I have pulled both trees now, so you can base 5.8 development on
+> kvm/master.  It will get to Linus in a couple days.
 
+Thanks, Paolo!
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
