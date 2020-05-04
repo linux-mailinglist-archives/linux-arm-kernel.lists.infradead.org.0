@@ -2,80 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 102D71C3CE6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:24:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 522501C3CEF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:26:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SR8tLC9xy+bWjDgMQLZ1/+qHdF5/wbbpCDCerbowsc4=; b=WS/TU8rk24dAmz
-	ka9akqjwU4TcyOGJDx2LAikaWeI++R8KZ1it5a2u4Hfgbd2Wou5d2oUNwmnAnvA5sCtZnjrR56bDw
-	HZP+xnyLEKiyGIvxEiw3M6NGjWx/IU/7pQgiCqV0qUkjsp6Vc8g7FngVYMNOFi057Zrd9QKXf/Oea
-	f1DgGWrNx8RTWKCcl6namiw4TS26yAXDArPMUYLaNoR3MaRV2mWUICrOvaI9SWMWtHHql6ecaUJty
-	8qjCJtFqb4CsYSRgmOzqegR5NWjGJTKiCdBUzMUYtaQO7KB0Gh8bYkh3/n75Z79dy7cYV+Yq4qRzA
-	w0X0nXjsmg8PNmyvVrOQ==;
+	List-Owner; bh=9/wUen1r4oSuz+psVXIs81E7fzkE0jXYB2v/bEkFnHY=; b=dcgysNCaSiPj4D
+	8+cO+qM74lAIy8kxiUFX61Em51dcRqQNxzBWEDdsDVfYIW2t3+YxcdAuiK8sua8zRs3bBxedsatrR
+	s8zUrALruLtRBq+0pK6lJCf2qsZmb9bUC6Ebxq1qwKhTiP1W4zEs0WVh9C0VPoeD67EFeE4cIYxkE
+	8ExpH0IViWCJ/1ap+7sWJZhPsJGWcKmqkjRBvIU/0ZD/wAF4r9BERqcKTvI62uP1ThGnj/3MT75B2
+	wIaAiDS2S1JzuYj2cNisGj5svGp5EG3zPXQV0swGMqFw/czj6WyhqSE+oGs/qDlUS3lWp1Y0dnFiA
+	22Pr//XUWDlqdVMLnw+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVc1Y-0000YD-SW; Mon, 04 May 2020 14:24:48 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jVc33-0003k4-8n; Mon, 04 May 2020 14:26:21 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVc1S-0000X6-Kn
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:24:43 +0000
-Received: by mail-wr1-x443.google.com with SMTP id l18so10438418wrn.6
+ id 1jVc2m-0003ft-0Z
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:26:08 +0000
+Received: by mail-wr1-x442.google.com with SMTP id s8so10880003wrt.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 07:24:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=oDFjMogrrxgfBvAbW5sQ85zZf2koPdX/flvpXuarsJs=;
- b=C2+pDEOsEWMWEhK5jJihq+nZJsN3eyEZTYqrjm8F+NX2U4UWxWT4bq3TAe4s6ccpAF
- +4sas0ALldd+rEORJx5lpswwArDb/7j7znthws10FOtWqFllviOYtjS1sgR01+uhjhSg
- UTcE7cHgEzLdbISPHhOxFiqWLpJzCQ1DRIUt4NlbeOv0R8e703LNhYb26kTHr9YaAaOc
- proIbDywAmUaxtjcMFXJUCVdUFnCQGQjanr6hd0+FW3YkN2pevahT++dZrNrh8UlKt8/
- Zpd1vSYA8JKyL8SjQQTI8NGfT8GjDltQ3FbhARNC21VzGwv16zunILQ502YxBkFLEGBu
- UDDw==
+ Mon, 04 May 2020 07:26:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=F/z0V3mcBGUp+syXehq8FDmPP6eWJmRKpReZL7dY1ho=;
+ b=z1iuPCF+taVGKa11c2yjWNjOpHuDo1RB1E7mbiG1WoVCEMCNh5P8g+itjpP3FUb4gs
+ mCE66WIAwk3XxYtzkPIlMa2cgsSYqPT/sHmkzg7ZxXM+z96IIV31FcsFHFSq4qIafaMB
+ 24lM1ATRxsNNtieYoZwGa57aXFJ3ATXi47XR5U3U8SyqHQfieuZVpCa6NuqP10uVhaer
+ GlXWtziftzxxoED82b0x2bP5555Q3FS+QQfHvURtC/EZAjTaNVZME8nZQsu/VQSLGBQV
+ 3URfU7Lb1juS31WTwwRasil1iZl8t0N/SPOSiqBJE6kdXsxH3add7ofJV2qxRW9qCi7T
+ V46g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=oDFjMogrrxgfBvAbW5sQ85zZf2koPdX/flvpXuarsJs=;
- b=kuS+AFz18rtJ6sn8zQ2uz8xuqrv96VZ8xZSkg9dUwjfAKbpWsh/q2jTZD0JqvnPBnA
- bxXrYFqpxlbSkIKAUROKyTnl4roB5xveysAsqMSRABXKP9O7A3s8yA7qu0N5e5eUB4W/
- FxqhcIbxG7vMwdfrH1mXgbuNI941MjxVTadx5GvYPtaFDc9luit9GbfTjG4BAdIDMthh
- Cx+MCNop6lUI1cTOOb4q3M0YuLq+ZMtEAB5A3wYhccETwjPakpqZsyLegswzhGRYGzDV
- EZHPhnFqnHS02vJXcMaVcHI5pH0WzqG5Rijb+Ro+4m/xPJjHsMbN7A5cTdzdMaXuaGgk
- k5xQ==
-X-Gm-Message-State: AGi0PuYfm7hqz0NAKsezM+48gVk+GBhCqBgFGHvGJEUvLpSfg8f5SRji
- ikM8H9j6nX3h8plH6IWcCCFnHfalG51Il6sAjl0=
-X-Google-Smtp-Source: APiQypLGjILvGQo1LHKs+cUl/os48PmLVkMiBpNAewY+5+4GJJUXgPIlfOPn4hI9IzydhWXXgPlj9fp5HqE+FI7JLCY=
-X-Received: by 2002:adf:ed82:: with SMTP id c2mr8123328wro.255.1588602280048; 
- Mon, 04 May 2020 07:24:40 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=F/z0V3mcBGUp+syXehq8FDmPP6eWJmRKpReZL7dY1ho=;
+ b=PHIyv9S7BbtgbQ991QZIqoyAQgHQf//agv3/URhyfTtEK9swhCGz8KTorQpTGqM27O
+ 0H0HsEsaAALKG5RnjbioBm9Lcpxu2Fnjz8qhbvgE+X1Y1lfcSXZivf4vHW7MfHjWd+pJ
+ CQzxqyDiYXsTivOpv+qqFpQusVMnXwKHv31cPcksLH3igmtEwNxu+NiRLGKUb70QRLa+
+ 7hXdbAg9i9kYet8Wm/Zr9SW3mGj0oN9gHB/k8xXbOmyY8EwEVyHsN2O67vvTj5Csrxfx
+ P2fcbaexmZwEe8QunMZVogBZiucDwpI5BitzwuDR5mEFChCcNuBhQLlb6icMWg3B6gB/
+ 2PvQ==
+X-Gm-Message-State: AGi0PuawgWvCv/nM/rn3BtVe9qpOB/xDUfCRetZAjLw5I+TzN8pmWyWx
+ H/UdJh+YJfwLc/v3DkX0JuZZNxAiY7I=
+X-Google-Smtp-Source: APiQypJvR/uVsrLrYsoae/U5bNYqj69oeGktdTlceIG72vmnH3x2R6717uW94oIHTrpwNOfPUuH1bw==
+X-Received: by 2002:adf:e745:: with SMTP id c5mr9977426wrn.263.1588602361937; 
+ Mon, 04 May 2020 07:26:01 -0700 (PDT)
+Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id a205sm14484714wmh.29.2020.05.04.07.25.59
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 04 May 2020 07:26:01 -0700 (PDT)
+Date: Mon, 4 May 2020 16:25:48 +0200
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: Jacob Pan <jacob.jun.pan@linux.intel.com>
+Subject: Re: [PATCH v6 02/25] iommu/ioasid: Add ioasid references
+Message-ID: <20200504142548.GB170104@myrica>
 References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-20-jean-philippe@linaro.org>
-In-Reply-To: <20200430143424.2787566-20-jean-philippe@linaro.org>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Mon, 4 May 2020 19:54:03 +0530
-Message-ID: <CAJ2QiJLUxiJRnxQmO3O_48ZcTtNwziCWT6i2SJdAruDi+KGEFw@mail.gmail.com>
-Subject: Re: [PATCH v6 19/25] iommu/arm-smmu-v3: Add support for Hardware
- Translation Table Update
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+ <20200430143424.2787566-3-jean-philippe@linaro.org>
+ <20200430113931.0fbf7a37@jacob-builder>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200430113931.0fbf7a37@jacob-builder>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_072442_684443_3C6444D2 
-X-CRM114-Status: GOOD (  10.59  )
+X-CRM114-CacheID: sfid-20200504_072604_072671_DF32F158 
+X-CRM114-Status: GOOD (  17.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -94,44 +98,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fenghua.yu@intel.com, linux-pci@vger.kernel.org, xuzaibo@huawei.com,
- linux-mm@kvack.org, Will Deacon <will@kernel.org>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>, joro@8bytes.org,
- hch@infradead.org, jgg@ziepe.ca, tanmay@marvell.com,
- Catalin Marinas <catalin.marinas@arm.com>, zhangfei.gao@linaro.org,
- devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, Jonathan.Cameron@huawei.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- felix.kuehling@amd.com, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, christian.koenig@amd.com,
- baolu.lu@linux.intel.com
+Cc: devicetree@vger.kernel.org, kevin.tian@intel.com, jgg@ziepe.ca,
+ linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
+ robin.murphy@arm.com, fenghua.yu@intel.com, hch@infradead.org,
+ linux-mm@kvack.org, iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
+ catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
+ will@kernel.org, christian.koenig@amd.com,
+ linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dear Jean,
+On Thu, Apr 30, 2020 at 11:39:31AM -0700, Jacob Pan wrote:
+> > +/**
+> > + * ioasid_get - obtain a reference to the IOASID
+> > + */
+> > +void ioasid_get(ioasid_t ioasid)
+> why void? what if the ioasid is not valid.
 
-On Thu, Apr 30, 2020 at 8:11 PM Jean-Philippe Brucker
-<jean-philippe@linaro.org> wrote:
->
-> If the SMMU supports it and the kernel was built with HTTU support, enable
+My intended use was for the caller to get an additional reference when
+they're already holding one. So this should always succeed and I'd prefer
+a WARN_ON if the ioasid isn't valid rather than returning an error. But if
+you intend to add a state to ioasids between dropping refcount and free,
+then a return value makes sense.
 
-is there any framework/config for HTTU which must be enabled to use this patch?
+Thanks,
+Jean
 
-
-> We can enable HTTU even if CPUs don't support it, because the kernel
-> always checks for HW dirty bit and updates the PTE flags atomically.
->
-I believe, this statement is valid in context of this patch-set only.
-
-One cannot use code snipped to test HTTU because exiting
-io-pgtable-arm.c driver doesn't have framework to leverage HTTU
-benfits. It by-default sets AF=1 and does not set DBM.
-
-Thanks
-
---pk
+> 
+> > +{
+> > +	struct ioasid_data *ioasid_data;
+> > +
+> > +	spin_lock(&ioasid_allocator_lock);
+> > +	ioasid_data = xa_load(&active_allocator->xa, ioasid);
+> > +	if (ioasid_data)
+> > +		refcount_inc(&ioasid_data->refs);
+> > +	spin_unlock(&ioasid_allocator_lock);
+> > +}
+> > +EXPORT_SYMBOL_GPL(ioasid_get);
+> > +
+> >  /**
+> >   * ioasid_free - Free an IOASID
+> >   * @ioasid: the ID to remove
+> > + *
+> > + * Put a reference to the IOASID, free it when the number of
+> > references drops to
+> > + * zero.
+> > + *
+> > + * Return: %true if the IOASID was freed, %false otherwise.
+> >   */
+> > -void ioasid_free(ioasid_t ioasid)
+> > +bool ioasid_free(ioasid_t ioasid)
+> >  {
+> > +	bool free = false;
+> >  	struct ioasid_data *ioasid_data;
+> >  
+> >  	spin_lock(&ioasid_allocator_lock);
+> > @@ -360,6 +383,10 @@ void ioasid_free(ioasid_t ioasid)
+> >  		goto exit_unlock;
+> >  	}
+> >  
+> > +	free = refcount_dec_and_test(&ioasid_data->refs);
+> > +	if (!free)
+> > +		goto exit_unlock;
+> > +
+> Just FYI, we may need to add states for the IOASID, i.g. mark the IOASID
+> inactive after free. And prohibit ioasid_get() after freed. For VT-d,
+> this is useful when KVM queries the IOASID.
+> 
+> >  	active_allocator->ops->free(ioasid,
+> > active_allocator->ops->pdata); /* Custom allocator needs additional
+> > steps to free the xa element */ if (active_allocator->flags &
+> > IOASID_ALLOCATOR_CUSTOM) { @@ -369,6 +396,7 @@ void
+> > ioasid_free(ioasid_t ioasid) 
+> >  exit_unlock:
+> >  	spin_unlock(&ioasid_allocator_lock);
+> > +	return free;
+> >  }
+> >  EXPORT_SYMBOL_GPL(ioasid_free);
+> >  
+> 
+> [Jacob Pan]
 
 _______________________________________________
 linux-arm-kernel mailing list
