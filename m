@@ -2,87 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 287041C380E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:28:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 090701C3813
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:28:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xJ+l9nTX6s6Onm1W+GvtaftRy+PAx/t5Jmk7u/X5md4=; b=OXTpldofpYXLmP
-	Zs3AjjNDBiWggzHsVYkv0wrUjKyME/cbHhUJcYlWgym7Vzesk/9AZQtEUsUT2KhGgHheLPJkAWFn/
-	05csRWvjTPBLzOp6fBAG12ntqAQ7YuL4CTVML5Ja2+BuVOHkHnfhkofcJU0fnUTi1Ay6i8/sxGWPZ
-	uHcESoLsOJZRrP6Fokr5NeW1uM0WNofbt5vAUbAcDePUqdAUtNW8OQ5Z5q4iofrts2VKybUK5RIfg
-	XgjanCz0Sz+YLabG9yNQDi2ZJPFuUFh7THsGomx809dVxDZKBgtmL83If5F6tInNog7q0q9IwLAoh
-	F6lcngH2dhX8hIuLxPGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=cwoEZSe04YIINRP1bbdansVF1oqJkY9i9ne7Cqez+yc=; b=D1AA8Y156VtHaU+USEl19AT8u
+	y4ghRJcHRbUUkbp4WF9rdgGSaCj38Lke6RLnsqrKIyIdWI9t5Pq6k7yeZChXX3/F6BPG5G9CafGbh
+	iunLIpV9AEuKgODs4CfcM7Z84DcDWtZqxLs0fsPOxflzh6N2w5uDU/V/gClChBBmA6lZ3gCBzbAh5
+	pfHT9LfGXpvSwEX0G05zZFbTgjsRz1Sw04ppVk/GtckMDz0T0zzFvnta99RuK766UvT4CFU2jmUtY
+	GS/kjv59y0B3Xak6t9hQOsWwhW3w4mwUbMg397kBqhlPcDJEMzH2AoVORBwMNZ8q56tR8IRxdKEhU
+	/nZ7m/dAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZGX-0007KA-Mz; Mon, 04 May 2020 11:28:05 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jVZHI-0007eE-Ba; Mon, 04 May 2020 11:28:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZGJ-0007IC-8D; Mon, 04 May 2020 11:27:52 +0000
-Received: from mail-qk1-f179.google.com ([209.85.222.179]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1McpW6-1ivgXu291m-00a0nZ; Mon, 04 May 2020 13:27:48 +0200
-Received: by mail-qk1-f179.google.com with SMTP id g185so2547754qke.7;
- Mon, 04 May 2020 04:27:48 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaUC+2HrxCUgN2IesRCGbfrHx8QPc4184NIyVwewWTUYmjSf+v1
- 8chruImgNXFDnUqPoskjcIESomSEWbR6fcwOA0k=
-X-Google-Smtp-Source: APiQypIIHoujLODItegRRgCsMaNglRK7LNUpimxq01cun2hB/w8fYeIm4nZCEGen6hYmmyMPRHB0gBdjFi2URrtAcZQ=
-X-Received: by 2002:a37:a492:: with SMTP id
- n140mr16289220qke.352.1588591667069; 
- Mon, 04 May 2020 04:27:47 -0700 (PDT)
+ id 1jVZH6-0007cU-Qm; Mon, 04 May 2020 11:28:42 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F190A20721;
+ Mon,  4 May 2020 11:28:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588591720;
+ bh=8dnHAlveF8oSzyRI/bshOeUXvAOZ3zOI0uKOwMIafSU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=V5QRijKOE29Jo+EKAdkh+ewKNtgdqP49U526Q2Sfxi2stgSeoXwYEeo4vzFwII7Nb
+ JAqhvbWO3/mpTHvBOlkjefENX/UF/jjBUXzuHtCj1Zw4IYC4e3oA8UZbPwN0f569Yx
+ 3hRVp5IdHkMViNHlTTIoUmfezAB+MvoUejMxdi6w=
+Date: Mon, 4 May 2020 12:28:37 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Subject: Re: stable-rc/linux-5.4.y bisection: baseline.dmesg.alert on
+ meson-g12a-x96-max
+Message-ID: <20200504112837.GD5491@sirena.org.uk>
+References: <5eabecbf.1c69fb81.2c617.628f@mx.google.com>
+ <cc10812b-19bd-6bd1-75da-32082241640a@collabora.com>
+ <20200501122536.GA38314@sirena.org.uk>
+ <20200502134721.GH13035@sasha-vm>
+ <20200502140908.GA10998@kroah.com>
 MIME-Version: 1.0
-References: <20200331093241.3728-1-tesheng@andestech.com>
- <CAK8P3a3LokurC0n9XiwtPQh9ZgQcswMKY4b+TEsQh1VgYDNeWA@mail.gmail.com>
- <20200408035118.GA1451@andestech.com>
- <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
- <20200414151748.GA5624@afzalpc>
- <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
- <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
- <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
- <20200504091018.GA24897@afzalpc>
-In-Reply-To: <20200504091018.GA24897@afzalpc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 4 May 2020 13:27:31 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
-Message-ID: <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
-Subject: Re: [PATCH 0/3] Highmem support for 32-bit RISC-V
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-X-Provags-ID: V03:K1:/i9t9qRKXOiKxyqXA6m/MK1Dt9wZmarX1euFn6iZiLiRMY1dmMs
- 5gRsCO2AVEnZiWpuU85IphtVlTrWoTUYyxfUnfSgMVc8Td7fDHIYdZVPsFFZjQqapv4d8yj
- u8l0CqQOUU6BuOJLp7bIcmy9EHMkO3iTxKTA8uK0z3044eT4hK37756rS/Z37GNASNLzx/V
- ow/SqdlHxJYCk0aMz9Vrw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:uoER3ETRvKQ=:szTyIVw5GpnxpP1S+y/L7J
- PJzUI53uNk2B+Ml8oMXHdOzudq/Lokn2OEuepcxoBiVh//xtctDrNZCsm1Ux90HoZRXaqESHe
- kO8UQiG0Wz8QKBknpMVrJt+5MYdMckT1gQUcZlvA88L2SkeIMyslH/Z17aBujaj4eYfvZ5Hma
- KfFww/qukA9Mfl/DEHdXt7iogVeAoRwVSrCVjgt0bMgqOlp2nF9Har1qxdFZ4pTikFpWeea5B
- IEoz7K/TWfwQ/rjuSBxQzmS/Cc/V8445Ewx01MDH2DfPSv83ideW7QLALmuJ2SWSsHNX4PWgI
- Ma8uM9PG3arKw5427wrcqz+Ja8U0fSPz9uz1ZJD1+yCJB2EwNQBaqLDxxjf8DlyhFHoAQFHye
- zf3e6plf9qGr13yZoyOeBovfZxhdLMS2tkIBaMFbx7lWcwURxtPeFMJ/5LDWURwy2xLRbsBSV
- N7RgVfG6J1xx3xzJwuTA4l+p/LJBGJw6RU83PDjjnUvI/yg+NDLKIKEcXPrD1topzQzTqPIwP
- R29ilskpHNMqNNuzMVh/Mf3/CtFuXunTLBbPegr74v/AUGeaVabWqorsUvfRZGVIF/fgjTM6T
- KqlvoNZkLu/TbvA/jLpBOd8p/FgE/imKK3RnXvnzm/Mtm5Ke6ENbnaQDGwuPP+s0BCzCP8Oqt
- 609DiBLZLCbUesdK7RXHLiH+Qf77bRZEBFRbX41sGJllwJ1uyi1qr3T5kB9jUM46ZcKrpcI6O
- BY+izBPW6T681wKE1py+HOxnnw/xmt0eO5klV2NYLhg+vjFANlju/oq3oVYfj3SzgTy/Onl65
- GvU1d02swley3SKbR9x1IJZxojcFiJKmfk/j7DTzEny7TS9mTw=
+In-Reply-To: <20200502140908.GA10998@kroah.com>
+X-Cookie: My life is a patio of fun!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_042751_597832_F6AE1FE9 
-X-CRM114-Status: GOOD (  22.17  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200504_042840_888901_245970CB 
+X-CRM114-Status: GOOD (  11.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [212.227.126.134 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,101 +80,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: zong.li@sifive.com, Alan Kao <alankao@andestech.com>, atish.patra@wdc.com,
- Albert Ou <aou@eecs.berkeley.edu>, Gary Guo <gary@garyguo.net>,
- linux-riscv@lists.infradead.org, Steven Price <steven.price@arm.com>,
- alex@ghiti.fr, Russell King <linux@armlinux.org.uk>,
- Mike Rapoport <rppt@linux.ibm.com>, Borislav Petkov <bp@suse.de>,
- Eric Lin <tesheng@andestech.com>, Greentime Hu <green.hu@gmail.com>,
- Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- David Abdurachmanov <david.abdurachmanov@gmail.com>,
- Anup Patel <Anup.Patel@wdc.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- yash.shah@sifive.com, Palmer Dabbelt <palmer@dabbelt.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Logan Gunthorpe <logang@deltatee.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
+ linux-kernel@vger.kernel.org,
+ Guillaume Tucker <guillaume.tucker@collabora.com>,
+ Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ stable@vger.kernel.org, kernelci@groups.io,
+ Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
+ Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
+Content-Type: multipart/mixed; boundary="===============1366063810322483116=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 4, 2020 at 11:10 AM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
->
-> [ +linux-arm-kernel
->
->   Context: This is regarding VMSPLIT_4G_4G support for 32-bit ARM as a
->   possible replacement to highmem. For that, initially, it is being
->   attempted to move static kernel mapping from lowmem to vmalloc space.
->
->   in next reply, i will remove everyone/list !ARM related ]
->
-> Hi,
->
-> On Sun, May 03, 2020 at 10:20:39PM +0200, Arnd Bergmann wrote:
->
-> > Which SoC platform are you running this on? Just making
-> > sure that this won't conflict with static mappings later.
->
-> Versatile Express V2P-CA15 on qemu, qemu options include --smp 2 &
-> 2GB memory.
 
-Ok
+--===============1366063810322483116==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="HWvPVVuAAfuRc6SZ"
+Content-Disposition: inline
 
-> BTW, i could not convince myself why, except for DEBUG_LL, static io
-> mappings are used.
 
-I don't think vexpress uses it, but others have some 'struct map_desc'
-instances mostly for historic reasons, e.g. to map some registers that
-are needed at very early boot time, or from assembler files.
+--HWvPVVuAAfuRc6SZ
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> > One problem I see immediately in arm_memblock_init()
->
-> Earlier it went past arm_memblock_init(), issue was clearing the page
-> tables from VMALLOC_START in devicemaps_init() thr' paging_init(),
-> which was like cutting the sitting branch of the tree.
->
-> Now it is crashing at debug_ll_io_init() of devicemap_init(), and
-> printascii/earlycon was & is being used to debug :). Things are going
-> wrong when it tries to create mapping for debug_ll. It looks like a
-> conflict with static mapping, which you mentioned above, at the same
-> time i am not seeing kernel static mapping in the same virtual
-> address, need to dig deeper.
->
-> Also tried removing DEBUG_LL, there is a deafening silence in the
-> console ;)
+On Sat, May 02, 2020 at 04:09:08PM +0200, Greg Kroah-Hartman wrote:
+> On Sat, May 02, 2020 at 09:47:21AM -0400, Sasha Levin wrote:
 
-I don't think there is any other mapping that would conflict with the
-DEBUG_LL one, but you may be in a hole where the existing one
-is not mapped. IIRC it first gets mapped in __create_page_tables()
-in arch/arm/kernel/head.S, and later in debug_ll_io_init(), but if the
-old page tables were just discarded, it won't work for a bit.
+> > > > >   Result:     09f4294793bd3 ASoC: meson: axg-card: fix codec-to-codec link setup
 
-Using gdb to step through the code in qemu is often more reliable
-than printing to the console, at least until you get to the point
-when you have registered the real console.
+> > > | This clearly describes the issue as only being present after the above
+> > > | commit which is not in v5.6.
 
-> __virt_to_phys_nodebug() which does the actual work on __pa() invocation
-> has been modifed to handle that case (ideas lifted from ARM64's
-> implementation), though currently it is a hack as below (and applicable
-> only for ARM_PATCH_PHYS_VIRT disabled case), other hacks being
-> VMALLOC_OFFSET set to 0 and adjusting vmalloc size.
->
->         static inline phys_addr_t __virt_to_phys_nodebug(unsigned long x)
->         {
->                 phys_addr_t __x = (phys_addr_t)x;
->
->                 if (__x >= 0xf0000000)
->                         return __x - KIMAGE_OFFSET + PHYS_OFFSET;
->                 else
->                         return __x - PAGE_OFFSET + PHYS_OFFSET;
->         }
+> > > Probably best that this not be backported.
 
-Ok, makes sense.
+> > Hrm... But I never queued that commit... I wonder what's up.
 
-     Arnd
+> I saw the Fixes: tag, but missed the changelog text.  My fault.
+
+> I'll go drop it from everywhere, sorry about that.
+
+Ah, that explains it - thanks for sorting this out.
+
+--HWvPVVuAAfuRc6SZ
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6v/GUACgkQJNaLcl1U
+h9DTqQf+J1WhHhwnr86jT/LtdmuYxn4YhdfaaW+RFSBKmakNZhXZ9BKok8utln+p
+PkdIEGrfr8QfsSuhz4WYKDcN6K72tM+U3j0c4UFrYlm9kEfpuDr5AqJrdAclL76T
+Ns2oaZFZEnIpHnkajK6KCa1Ss4Ka7AvQNuVJfZ+/d4DdAVDSUl3H9TM+1yJyR4Cz
+FjMXYnlw+kp4LGSLCUy2yMEZ6YR1dzgDi7PIae1IYwwourTFOVjsox1CQPmE2bYv
+32U+RLyE6qxAlFRwVqmhMqBWYr/ZUEmV8W026fEQWprg7jCq2oPCQxALfanL9f/X
+rKflgftgFph+o3Rxz/MB0jHdsT/FbQ==
+=KlPi
+-----END PGP SIGNATURE-----
+
+--HWvPVVuAAfuRc6SZ--
+
+
+--===============1366063810322483116==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1366063810322483116==--
+
