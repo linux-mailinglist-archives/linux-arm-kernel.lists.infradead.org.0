@@ -2,65 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1A6A1C3E60
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 17:21:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10FB21C3E8E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 17:32:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n6n/PaS5A1WtShf540Dnb3eoHmvD2PCC+BN3R5uznEI=; b=cmJGjJVRtPjOfq
-	lE4u01CsDnMvfxgAkYXjpi8p7Dbn7ko78pou2ht+5IWwXPCgQCABEnkMLOqpOVU5cv63DIbhSOpPQ
-	pqZoYapCadfHYVH5h2Y1aJTp8MPdxsqceGCMQ349/sbb5IcKkmuMW0PWRDO+IL7G7aZjVUz6Wc5EG
-	kvrwXqVSf5qa6PPC12xhGDdxGfbnmPk+mA52nWIUjvs7NQuZSK5i8+qOZ9ic+7kBURKmtdF7RdXwt
-	78OxLWYM7m2NLRol/QCDnxMogBlpfkwY93Cr3MfIwLOLzsU5lHP6lhmvjImBMEC1f1OVIJyrWtzwu
-	9B53FTCyPLidYtQ4MXxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hsCVvlL7D5YqN9EnK3coaVSwrspDfGEZfzvIFsE9Zl0=; b=qLqKwBK2mmiv0s
+	UT9uSMnnrHQ9tKwse49L1BRfm+saDLcopPbiy10ovx5G4AMF6VsWw2AoDwd+FJ82L4KlO+60hqRwH
+	8RBaue7+db03wvrBRarAneVwQ5TVOLaflCNLC+8cLzuDZOEJdj16xdZ139u9g8Y2qQC3O1KAF/Cp5
+	dS1zl4I7/Qn/+VkzSaVqAt+TNa3ZHfneawYk1Ag6VK92GR3JLV+QuY2A4SYr65f7Igff0y7rxrpEU
+	SSMZo1IIQZSxV2Y1ToXDHsphoXNRNn6PfXj3gTOM4Bu4+wvaBoee6/HEvQBfWoOsfW8UjiTcSyWik
+	WLGXfKum/1Na6ruiWl+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVcuB-0000JO-1d; Mon, 04 May 2020 15:21:15 +0000
-Received: from mga11.intel.com ([192.55.52.93])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVctw-0000BE-R1
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 15:21:02 +0000
-IronPort-SDR: AI4vFMDrLFcB9KTXiUyvS/rCIrzoG82LVFr+k9agSeRtaQEabeE+muhe0l01Eyxcgu6fV6njgj
- rzMyES4yWFlA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga005.fm.intel.com ([10.253.24.32])
- by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 04 May 2020 08:20:59 -0700
-IronPort-SDR: DhyAxpzPRY/Tebzamw5nV/OXd83VAZRNIf4QKSKn9BLW4Q4E1kjVLjHW+nXqmurbxOZK0rot2h
- utpob8xZoQVQ==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,352,1583222400"; d="scan'208";a="460700180"
-Received: from jacob-builder.jf.intel.com (HELO jacob-builder) ([10.7.199.155])
- by fmsmga005.fm.intel.com with ESMTP; 04 May 2020 08:20:58 -0700
-Date: Mon, 4 May 2020 08:27:03 -0700
-From: Jacob Pan <jacob.jun.pan@linux.intel.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH v6 02/25] iommu/ioasid: Add ioasid references
-Message-ID: <20200504082703.2ecc03c1@jacob-builder>
-In-Reply-To: <20200504142548.GB170104@myrica>
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-3-jean-philippe@linaro.org>
- <20200430113931.0fbf7a37@jacob-builder>
- <20200504142548.GB170104@myrica>
-Organization: OTC
-X-Mailer: Claws Mail 3.13.2 (GTK+ 2.24.30; x86_64-pc-linux-gnu)
+	id 1jVd5K-0007BY-KZ; Mon, 04 May 2020 15:32:46 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVd5E-0007AN-0j
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 15:32:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 85E241FB;
+ Mon,  4 May 2020 08:32:38 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 69D2C3F68F;
+ Mon,  4 May 2020 08:32:37 -0700 (PDT)
+Date: Mon, 4 May 2020 16:32:35 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Michael Kerrisk <mtk.manpages@gmail.com>
+Subject: RFC: Adding arch-specific user ABI documentation in linux-man
+Message-ID: <20200504153214.GH30377@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_082100_907726_6C91A014 
-X-CRM114-Status: GOOD (  18.65  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200504_083240_101176_6B0F88E5 
+X-CRM114-Status: GOOD (  11.14  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.93 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,96 +60,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
- joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
- fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
- catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 4 May 2020 16:25:48 +0200
-Jean-Philippe Brucker <jean-philippe@linaro.org> wrote:
+Hi all,
 
-> On Thu, Apr 30, 2020 at 11:39:31AM -0700, Jacob Pan wrote:
-> > > +/**
-> > > + * ioasid_get - obtain a reference to the IOASID
-> > > + */
-> > > +void ioasid_get(ioasid_t ioasid)  
-> > why void? what if the ioasid is not valid.  
-> 
-> My intended use was for the caller to get an additional reference when
-> they're already holding one. So this should always succeed and I'd
-> prefer a WARN_ON if the ioasid isn't valid rather than returning an
-> error. But if you intend to add a state to ioasids between dropping
-> refcount and free, then a return value makes sense.
-> 
-Yes, a WARN_ON will do. No need for return value for now.
+I considering trying to plug some gaps in the arch-specific ABI
+documentation in the linux man-pages, specifically for arm64 (and
+possibly arm, where compat means we have some overlap).
 
-> Thanks,
-> Jean
-> 
-> >   
-> > > +{
-> > > +	struct ioasid_data *ioasid_data;
-> > > +
-> > > +	spin_lock(&ioasid_allocator_lock);
-> > > +	ioasid_data = xa_load(&active_allocator->xa, ioasid);
-> > > +	if (ioasid_data)
-> > > +		refcount_inc(&ioasid_data->refs);
-> > > +	spin_unlock(&ioasid_allocator_lock);
-> > > +}
-> > > +EXPORT_SYMBOL_GPL(ioasid_get);
-> > > +
-> > >  /**
-> > >   * ioasid_free - Free an IOASID
-> > >   * @ioasid: the ID to remove
-> > > + *
-> > > + * Put a reference to the IOASID, free it when the number of
-> > > references drops to
-> > > + * zero.
-> > > + *
-> > > + * Return: %true if the IOASID was freed, %false otherwise.
-> > >   */
-> > > -void ioasid_free(ioasid_t ioasid)
-> > > +bool ioasid_free(ioasid_t ioasid)
-> > >  {
-> > > +	bool free = false;
-> > >  	struct ioasid_data *ioasid_data;
-> > >  
-> > >  	spin_lock(&ioasid_allocator_lock);
-> > > @@ -360,6 +383,10 @@ void ioasid_free(ioasid_t ioasid)
-> > >  		goto exit_unlock;
-> > >  	}
-> > >  
-> > > +	free = refcount_dec_and_test(&ioasid_data->refs);
-> > > +	if (!free)
-> > > +		goto exit_unlock;
-> > > +  
-> > Just FYI, we may need to add states for the IOASID, i.g. mark the
-> > IOASID inactive after free. And prohibit ioasid_get() after freed.
-> > For VT-d, this is useful when KVM queries the IOASID.
-> >   
-> > >  	active_allocator->ops->free(ioasid,
-> > > active_allocator->ops->pdata); /* Custom allocator needs
-> > > additional steps to free the xa element */ if
-> > > (active_allocator->flags & IOASID_ALLOCATOR_CUSTOM) { @@ -369,6
-> > > +396,7 @@ void ioasid_free(ioasid_t ioasid) 
-> > >  exit_unlock:
-> > >  	spin_unlock(&ioasid_allocator_lock);
-> > > +	return free;
-> > >  }
-> > >  EXPORT_SYMBOL_GPL(ioasid_free);
-> > >    
-> > 
-> > [Jacob Pan]  
+For arm64, there are now significant new extensions (Pointer
+authentication, SVE, MTE etc.)  Currently there is some user-facing
+documentation mixed in with the kernel-facing documentation in the
+kernel tree, but this situation isn't ideal.
 
-[Jacob Pan]
+Do you have an opinion on where in the man-pages documentation should be
+added, and how to structure it?
+
+
+Affected areas include:
+
+ * exec interface
+ * aux vector, hwcaps
+ * arch-specific signals
+ * signal frame
+ * mmap/mprotect extensions
+ * prctl calls
+ * ptrace quirks and extensions
+ * coredump contents
+
+
+Not everything has an obvious home in an existing page, and adding
+specifics for every architecture could make some existing manpages very
+unwieldy.
+
+I think for some arch features, we really need some "overview" pages
+too: just documenting the low-level details is of limited value
+without some guide as to how to use them together.
+
+
+Does the following sketch look reasonable?
+
+ * man7/arm64.7: new page: overview of arm64-specific ABI extensions
+
+ * man7/sve.7 (or man7/arm64-sve.7 or man7/sve.7arm64): new page:
+   overview of arm64 SVE ABI
+
+ * man2/arm64-ptrace.2 (or man2/ptrace.2arm64): new page:
+   arm64 ptrace extensions
+
+ * man2/mmap.2: extend with arm64-specific flags (only two flags, so we
+   add them to the existing man page rather than creating a new one).
+
+etc.
+
+
+Ideally, I'd like to adopt a pattern that other arches can follow.
+
+Thoughts?
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
