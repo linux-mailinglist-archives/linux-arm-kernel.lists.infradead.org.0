@@ -2,93 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AD251C4006
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:36:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB6131C4022
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:39:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V0zynXiiFey+o/PanVcohi1nWETkyYkta9VwakDQQHk=; b=jV+g/jRr6QOmfn
-	sgZ3f5KGxSvznAQ1+NvNaiBTS+VFvC2NciC31NCeSvZUHR2cOBerDsjeUrmVkafUx2j6OQfJo+hBT
-	14kroON0nLY2w+7L0PZl5Eg40KXsTU6eJchp2TPTMdF6QA3Rq1u9KzmvJU/JYUU9PMeQQk9bdkeW6
-	H+Cga5P1kmUqwnWfWtNH+Rcbn9TKuOGdyKD3nCd7ItR42XHZ2iyxoK3oygkmNZofgA1T0vgX5IXxA
-	61PC5/VQWgilq3Wi386Vn8d44jTfuysqKVOSbPhXS7A4iaKFznw/81D9seu5ZElyWVJpYHjtIRglO
-	A02DCaGkDBfZbYp8UKyA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=lI8JfSBvqJXCv4/VmEQ0c6Y4MPcwZWKzaxNC3SvHLsk=; b=qWL
+	oGaq87w/7J322Yew0Rhp17zoIiD7tgQpGCVyvTOoY1uY3S2S8D4E/Hrwt8SG8/dqTftKpJcuJYhvg
+	GzJcbigSvTLiPjOUSrUdapkwn9um+PnwPeGvXPZUWlGHxp30C1cRxJbxmuTFgAdUYl0cYu4cdeiXx
+	zkxAF/b0GfLzZ36boPl3ftWrciDk1XBz/JTzocA7jnkAG3z3Kk/MrOUQt35v4DwWcG8qtxXn1WBZP
+	Y9zuIMpcZazaMSZMCTF+/Jx1p6wUUsy2kcwKqqK1UxPD/GyA1RSNWEFZIVQjfpXoPSFj9aLteko/h
+	Raq/79aezZb8jmKlumo83xD35It+jbg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVe4i-0008D4-FC; Mon, 04 May 2020 16:36:12 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVe4b-0008By-VM
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:36:07 +0000
-Received: by mail-wr1-x444.google.com with SMTP id x18so21769967wrq.2
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 09:36:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=Kl5xt2RTiHls+O1+Q0mo8BGBZHrI/nlz87XckVdCL1g=;
- b=ie+B2GQn0xE9JMPS6WF8xSO2Nb3Bq/Z6k2tntw6DutFeL6B9N4DPWVklfbNH4FnjaN
- t/FdSJpizjKhO8r7qWYTVIfj5tsh0Pyre46+FgQl/czQpS77eCKBAx7l0fXzqe5oMoJN
- srD+3dXDSZ1b8gDIeuMqWa8VuGSbuKmcgrBbHkW2D7hnwsTKJTes6Tw8OLdAyIdx9DsB
- hoEzpcXksJ2R6iwRnxlq1Hy4FZn4zTesCpGIx+6colQIPrKfNOCzGL8j1llscgSmy5B/
- 5cauF3xMhaLP0b+LA+EjuCFSF43vHxSqLu21aoJ22r7LNEmYy0ZayKBxq3kGlHDl94a6
- bpsg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=Kl5xt2RTiHls+O1+Q0mo8BGBZHrI/nlz87XckVdCL1g=;
- b=tAnzY0rKY3tYJ+AQoaVGyQbLYoJz9jsFNehFuXCipf1CeGMlHgVoPwzzZ3HEaYgxIS
- Qjr20dtFRLuBKx5p9BnT8qV1QL0BVGm1PosKpG0ZhPovjPcCEqs/1ZOrtgbIy+S6eGFJ
- 17b0C5aCfce7GNG8BVx+263MyDCVnP6NcgozoJWynun/Kg2wnJUkA+RogclH6YQo1Kfy
- tv5ckP0fJaWLFEJj627aIDhceDiDeInw1UGxGBL0bJb9UWSkrNRmd+j4+aMCr5VUCS0x
- AGhTkVRsrzLnfpd8Ta8LoVGb3P1X7DDGYhSlZyy7ogv02XVMQU3/iG1eT3RQyXAm/oyF
- m7mQ==
-X-Gm-Message-State: AGi0PuaMQQ0vfEWkH52z03szNQVXU2q1mxjwDgpiLD4y7xLyMYQHmqTH
- yNALI/iR0nKTJI67J4EYUPMjUQ==
-X-Google-Smtp-Source: APiQypLd6vuo0MczRTSEBPfkSN84zUGhA14hWPmpa6tAN+ckf2g+Pmwwtmh//IwEutIpZVdWAHOW4g==
-X-Received: by 2002:a05:6000:10c4:: with SMTP id
- b4mr20516301wrx.203.1588610164479; 
- Mon, 04 May 2020 09:36:04 -0700 (PDT)
-Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id z1sm13717417wmf.15.2020.05.04.09.36.03
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 04 May 2020 09:36:03 -0700 (PDT)
-Date: Mon, 4 May 2020 18:35:53 +0200
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Subject: Re: [PATCH v6 19/25] iommu/arm-smmu-v3: Add support for Hardware
- Translation Table Update
-Message-ID: <20200504163553.GI170104@myrica>
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-20-jean-philippe@linaro.org>
- <CAJ2QiJLUxiJRnxQmO3O_48ZcTtNwziCWT6i2SJdAruDi+KGEFw@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJ2QiJLUxiJRnxQmO3O_48ZcTtNwziCWT6i2SJdAruDi+KGEFw@mail.gmail.com>
+	id 1jVe85-0000nJ-OD; Mon, 04 May 2020 16:39:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVe7m-0000je-J4
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:39:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56C5B101E;
+ Mon,  4 May 2020 09:39:20 -0700 (PDT)
+Received: from e120937-lin.home (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 436F63F68F;
+ Mon,  4 May 2020 09:39:19 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v7 0/9] SCMI Notifications Core Support
+Date: Mon,  4 May 2020 17:38:46 +0100
+Message-Id: <20200504163855.54548-1-cristian.marussi@arm.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_093606_009252_86E243FB 
-X-CRM114-Status: GOOD (  15.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200504_093922_720881_C5EC9AB7 
+X-CRM114-Status: GOOD (  15.75  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,52 +59,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: fenghua.yu@intel.com, linux-pci@vger.kernel.org, xuzaibo@huawei.com,
- linux-mm@kvack.org, Will Deacon <will@kernel.org>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>, joro@8bytes.org,
- hch@infradead.org, jgg@ziepe.ca, tanmay@marvell.com,
- Catalin Marinas <catalin.marinas@arm.com>, zhangfei.gao@linaro.org,
- devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, Jonathan.Cameron@huawei.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- felix.kuehling@amd.com, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, christian.koenig@amd.com,
- baolu.lu@linux.intel.com
+Cc: Jonathan.Cameron@Huawei.com, cristian.marussi@arm.com,
+ james.quinlan@broadcom.com, lukasz.luba@arm.com, sudeep.holla@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi all,
 
-On Mon, May 04, 2020 at 07:54:03PM +0530, Prabhakar Kushwaha wrote:
-> Dear Jean,
-> 
-> On Thu, Apr 30, 2020 at 8:11 PM Jean-Philippe Brucker
-> <jean-philippe@linaro.org> wrote:
-> >
-> > If the SMMU supports it and the kernel was built with HTTU support, enable
-> 
-> is there any framework/config for HTTU which must be enabled to use this patch?
-> 
-> 
-> > We can enable HTTU even if CPUs don't support it, because the kernel
-> > always checks for HW dirty bit and updates the PTE flags atomically.
-> >
-> I believe, this statement is valid in context of this patch-set only.
-> 
-> One cannot use code snipped to test HTTU because exiting
-> io-pgtable-arm.c driver doesn't have framework to leverage HTTU
-> benfits. It by-default sets AF=1 and does not set DBM.
+this series wants to introduce SCMI Notification Support, built on top of
+the standard Kernel notification chain subsystem.
 
-Right, this patch only sets the hardware access and dirty flags for SVA
-(page tables shared with the CPU through iommu_bind*()), it doesn't enable
-anything for iommu_map/unmap(). Although I remember discussing it for VM
-migration, I don't know of any effort to use hardware access/dirty bits
-outside of SVA.
+At initialization time each SCMI Protocol takes care to register with the
+new SCMI notification core the set of its own events which it intends to
+support.
 
-Thanks,
-Jean
+Using the API exposed via scmi_handle.notify_ops a Kernel user can register
+its own notifier_t callback (via a notifier_block as usual) against any
+registered event as identified by the tuple:
+
+		(proto_id, event_id, src_id)
+
+where src_id represents a generic source identifier which is protocol
+dependent like domain_id, performance_id, sensor_id and so forth.
+(users can anyway do NOT provide any src_id, and subscribe instead to ALL
+ the existing (if any) src_id sources for that proto_id/evt_id combination)
+
+Each of the above tuple-specified eventis will be served on its own
+dedicated blocking notification chain, dynamically allocated on-demand when
+at least one user has shown interest on that event.
+
+Upon a notification delivery all the users' registered notifier_t callbacks
+will be in turn invoked and fed with the event_id as @action param and a
+generated custom per-event struct _report as @data param.
+(as in include/linux/scmi_protocol.h)
+
+The final step of notification delivery via users' callback invocation is
+instead delegated to a pool of deferred workers (Kernel cmwq): each
+SCMI protocol has its own dedicated worker and dedicated queue to push
+events from the rx ISR to the worker.
+
+Based on scmi-next/for-next/scmi 5.7 [1], on top of:
+
+commit f7199cf48902 ("firmware: arm_scmi: Fix return error code in
+		     smc_send_message")
+
+This series has been tested on JUNO with an experimental firmware only
+supporting Perf Notifications.
+
+
+Thanks
+
+Cristian
+
+----
+v6 --> v7:
+- rebased on top of scmi-next 5.7, dropped the initial 4 patches
+  since now already queued on base scmi-next [1]
+- fixed some events' proto initialization
+- removed some notify_enabled explicit methods exposed in some protocol_ops
+  since not supposed to be used directly when using this notification
+  framework (and of no other known use)
+- exposing SCMI_EVENT_ enums in scmi_protocol.h
+- added agent_id field in RESET_ISSUED payload as per reviewed SCMI spec
+- removed POWER_STATE_CHANGE_REQUESTED pre-notification definition and
+  handling as per reviewedSCMI spec
+- fixed report.timestamp field type
+
+v5 --> v6:
+- added handle argument to fill_custom_report() helper
+
+v4 --> v5:
+- fixed kernel-doc
+- added proper barriers around registered protocols and events
+  initialization
+- reviewed queues allocation using devm_add_action_or_reset
+- reviewed REVT_NOTIFY_ENABLE macro
+
+v3 --> v4:
+- dropped RFC tag
+- avoid one unneeded evt payload memcpy on the ISR RC code path by
+  redesigning dispatcher to handle partial queue-reads (in_flight events,
+  only header)
+- fixed the initialization issue exposed by late SCMI modules loading by
+  reviewing the init process to support possible late events registrations
+  by protocols and early callbacks registrations by users (pending)
+- cleanup/simplification of exit path: SCMI protocols are generally never
+  de-initialized after the initial device creation, so do not deinit
+  notification core either (we do halt the delivery, stop the wq and empty
+  the queues though)
+- reduced contention on regustered_events_handler to the minimum during
+  delivery by splitting the common registered_events_handlers hashtable
+  into a number of per-protocol tables
+- converted registered_protocols and registered_events hastable to
+  fixed size arrays: simpler and lockless in our usage scenario
+
+v2 --> v3:
+- added platform instance awareness to the notification core: a
+  notification instance is created for each known handle
+- reviewed notification core initialization and shutdown process
+- removed generic non-handle-rooted registration API
+- added WQ_SYSFS flag to workqueue instance
+
+v1 --> v2:
+- dropped anti-tampering patch
+- rebased on top of scmi-for-next-5.6, which includes Viresh series that
+  make SCMI core independent of transport (5c8a47a5a91d)
+- add a few new SCMI transport methods on top of Viresh patch to address
+  needs of SCMI Notifications
+- reviewed/renamed scmi_handle_xfer_delayed_resp()
+- split main SCMI Notification core patch (~1k lines) into three chunks:
+  protocol-registration / callbacks-registration / dispatch-and-delivery
+- removed awkward usage of IDR maps in favour of pure hashtables
+- added enable/disable refcounting in notification core (was broken in v1)
+- removed per-protocol candidate API: a single generic API is now proposed
+  instead of scmi_register_<proto>_event_notifier(evt_id, *src_id, *nb)
+- added handle->notify_ops as an alternative notification API
+  for scmi_driver
+- moved ALL_SRCIDs enabled handling from protocol code to core code
+- reviewed protocol registration/unregistration logic to use devres
+- reviewed cleanup phase on shutdown
+- fixed  ERROR: reference preceded by free as reported by kbuild test robot
+
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git
+
+
+Cristian Marussi (9):
+  firmware: arm_scmi: Add notification protocol-registration
+  firmware: arm_scmi: Add notification callbacks-registration
+  firmware: arm_scmi: Add notification dispatch and delivery
+  firmware: arm_scmi: Enable notification core
+  firmware: arm_scmi: Add Power notifications support
+  firmware: arm_scmi: Add Perf notifications support
+  firmware: arm_scmi: Add Sensor notifications support
+  firmware: arm_scmi: Add Reset notifications support
+  firmware: arm_scmi: Add Base notifications support
+
+ drivers/firmware/arm_scmi/Makefile  |    2 +-
+ drivers/firmware/arm_scmi/base.c    |  118 ++-
+ drivers/firmware/arm_scmi/common.h  |    4 +
+ drivers/firmware/arm_scmi/driver.c  |   10 +
+ drivers/firmware/arm_scmi/notify.c  | 1461 +++++++++++++++++++++++++++
+ drivers/firmware/arm_scmi/notify.h  |   78 ++
+ drivers/firmware/arm_scmi/perf.c    |  137 ++-
+ drivers/firmware/arm_scmi/power.c   |  101 +-
+ drivers/firmware/arm_scmi/reset.c   |  105 +-
+ drivers/firmware/arm_scmi/sensors.c |   77 +-
+ include/linux/scmi_protocol.h       |  108 +-
+ 11 files changed, 2171 insertions(+), 30 deletions(-)
+ create mode 100644 drivers/firmware/arm_scmi/notify.c
+ create mode 100644 drivers/firmware/arm_scmi/notify.h
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
