@@ -2,64 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8BC7A1C3B3B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:28:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 552FE1C3B5F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 15:37:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1ypYkA4Bq9u1v8EjAW7XKIeXL24RPq9zjPHuXlpgRq0=; b=rwjZNefX7vpBrWGOx9WmnsHsl
-	bshLKGoeGWDbOn+rnwDAuIZd+NAAgdyd6A/rSoI8jTQ5byZYRc8sChON+5jj8Ch4gqky6IVh2YBvK
-	qZlMlvnkAw98cvMxdWqHnudtHyc67EBQ3O5nvqamFC00rlfAlNWM4ri8YZnboJQXJwIESi+S553Jw
-	a9KOJzZLjZV1aKUKPujf8HAIbRIiQD6U9VLXVf+TPi/otgnA7GgMQMAmFuHGE626BYC9h3HvDLt0X
-	tdlv4TpwTwlrDBqtdO8eH0nJCTTcbHeNUg6dO518j+4qpGUiIUIK9XXCZbUZiB8xT0Z/Z49x9a/fx
-	iOiQ2SkeA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dAXfz1BPPCZKWdL8fzfAAlfsXP8IbRTVc+wIEqlRaSE=; b=XNIPkK9Hdp0HUw
+	vzQ7pnfXPwbsUo4JZhYQJmrkKjHsE34Og3kqsDCS/NTfdQwbNqB4jKLg4HWNf29kIx2SNKwwseRSu
+	jQ/NOvoA9M8y8cfVJ/LysxWvqS+En+/TgjQ3FUNrqQLB+BnOZ8e1ld8v/hp++gRGNb1RCT7rknR9k
+	toIscG2Y6s18uLpM0AhmxPgJo+Hc45ko7gl5eda2Fpnnv2k7nETEv8xMk0PtPQ98XbLuv43PnCGNO
+	PNpxWdXHNMzqzlyiY5p0TXPdjknvcQvpZ/EW/rLhH9FP1OiiqCr/m9TCO8msoEJe22EI8j00q2cGV
+	xEzgPzGqxNQ8KMCcACEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVb8j-0000Ve-PG; Mon, 04 May 2020 13:28:09 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVb8b-0000Ul-HD
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:28:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C61241FB;
- Mon,  4 May 2020 06:28:00 -0700 (PDT)
-Received: from [192.168.1.84] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D88F43F71F;
- Mon,  4 May 2020 06:27:57 -0700 (PDT)
-Subject: Re: [PATCH v2 09/21] drm: panfrost: fix sg_table nents vs. orig_nents
- misuse
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "linaro-mm-sig@lists.linaro.org" <linaro-mm-sig@lists.linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-References: <20200504125017.5494-1-m.szyprowski@samsung.com>
- <20200504125359.5678-1-m.szyprowski@samsung.com>
- <CGME20200504125415eucas1p1eea125ce87eec4e7c2e2dcc75f965896@eucas1p1.samsung.com>
- <20200504125359.5678-9-m.szyprowski@samsung.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <607fc87f-eb1c-6362-d8ff-3ac6ccf31bdf@arm.com>
-Date: Mon, 4 May 2020 14:27:56 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jVbHE-0007DZ-3z; Mon, 04 May 2020 13:36:56 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVbH6-0004SI-UA
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 13:36:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
+ Message-ID:Subject:Cc:To:From:Date:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=SzjxIqW2peLnUR0XEi6Nu0WuMEtAymQepnCQFPPHy2k=; b=MFsfPZ/ETb4lJ4HP2BQoyXSuf
+ 9JbaxT1ySghoe+bg8dvz+v8lHgu11dkTSLF3A27NkSWoRwBoLGRT9+H4dkTtRVEQq2YHTDonT+g4f
+ /R5d6VtN2Q0kc26F6d1yEMIF0sGWparOhAkORReUaP/CN6UsIxw6IZPGA0+PVsdi4Y2daDOuzhXE7
+ Ee6nncuD6JRb8To4nzlZJT05RlKH18VXqTF7BGSzeKTk+Sib8xiRluseyeITXQMVa8ZizAcP/8bes
+ OMynzEVG51Z+cv3bjmnrP5O55/bieL1hH1Anlm/OMJbrsK7609+wtaedJEdFaBN5RcVIYGOBK/kXl
+ /8DstwOQg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:53626)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jVbEz-0004tK-I7; Mon, 04 May 2020 14:34:37 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jVbEx-0006An-UD; Mon, 04 May 2020 14:34:35 +0100
+Date: Mon, 4 May 2020 14:34:35 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: linux-arm-kernel@lists.infradead.org,
+ Tomas Paukrt <tomas.paukrt@advantech.cz>
+Subject: [PATCH 0/3] Fix uaccess kernel protection on ARMv5 and earlier
+Message-ID: <20200504133435.GD1551@shell.armlinux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20200504125359.5678-9-m.szyprowski@samsung.com>
-Content-Language: en-GB
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_062801_660856_18AC0E54 
-X-CRM114-Status: GOOD (  23.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_063648_977584_D3331173 
+X-CRM114-Status: GOOD (  12.99  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,82 +85,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <Robin.Murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Will Deacon <will@kernel.org>, Alexander Viro <viro@zeniv.linux.org.uk>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/05/2020 13:53, Marek Szyprowski wrote:
-> The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
-> numer of the created entries in the DMA address space. However the
-> subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
-> called with the original number of entries passed to dma_map_sg. The
-> sg_table->nents in turn holds the result of the dma_map_sg call as stated
-> in include/linux/scatterlist.h. Adapt the code to obey those rules.
+Hi,
 
-I find this commit message a bit confusing, but AFAICT the problem with 
-the Panfrost code is really in mmu_map_sg() where we don't have the 
-return value from dma_map_sg() and the for_each_sg() loop could (in 
-theory) run off the end of the list.
+This series fixes a problem with the ability for the user accessors to
+access kernel space in a very specific circumstance.  I'm greatful to
+Tomas Paukrt for having the patience to track down the problem.
 
-The fix seems correct - store the return where it's meant to be (nents) 
-and make sure when unmapping we use the original (orig_nents). So you 
-might also consider adding:
+This only happens when the following conditions are met:
 
-Fixes: f3ba91228e8e ("drm/panfrost: Add initial panfrost driver")
+- ARMv5 or earlier CPU
+- Software PAN is disabled
+- Nested exceptions that want to use user accessors to touch kernel
+  space (implying use of the set_fs() function.)
 
-Even better would be the wrappers you mention in the cover letter! ;)
+The result is that the domain register is not preserved across the
+nested exception, but instead is reset to prevent kernel accesses
+while we are inside a region that should be permitting them.
 
-Reviewed-by: Steven Price <steven.price@arm.com>
+Further technical details can be found in patch 3.
 
-> 
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
-> For more information, see '[PATCH v2 00/21] DRM: fix struct sg_table nents
-> vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/4/373
-> ---
->   drivers/gpu/drm/panfrost/panfrost_gem.c | 3 ++-
->   drivers/gpu/drm/panfrost/panfrost_mmu.c | 4 +++-
->   2 files changed, 5 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/panfrost/panfrost_gem.c b/drivers/gpu/drm/panfrost/panfrost_gem.c
-> index 17b654e..22fec7c 100644
-> --- a/drivers/gpu/drm/panfrost/panfrost_gem.c
-> +++ b/drivers/gpu/drm/panfrost/panfrost_gem.c
-> @@ -42,7 +42,8 @@ static void panfrost_gem_free_object(struct drm_gem_object *obj)
->   		for (i = 0; i < n_sgt; i++) {
->   			if (bo->sgts[i].sgl) {
->   				dma_unmap_sg(pfdev->dev, bo->sgts[i].sgl,
-> -					     bo->sgts[i].nents, DMA_BIDIRECTIONAL);
-> +					     bo->sgts[i].orig_nents,
-> +					     DMA_BIDIRECTIONAL);
->   				sg_free_table(&bo->sgts[i]);
->   			}
->   		}
-> diff --git a/drivers/gpu/drm/panfrost/panfrost_mmu.c b/drivers/gpu/drm/panfrost/panfrost_mmu.c
-> index ed28aeb..2d9b1f9 100644
-> --- a/drivers/gpu/drm/panfrost/panfrost_mmu.c
-> +++ b/drivers/gpu/drm/panfrost/panfrost_mmu.c
-> @@ -517,7 +517,9 @@ static int panfrost_mmu_map_fault_addr(struct panfrost_device *pfdev, int as,
->   	if (ret)
->   		goto err_pages;
->   
-> -	if (!dma_map_sg(pfdev->dev, sgt->sgl, sgt->nents, DMA_BIDIRECTIONAL)) {
-> +	sgt->nents = dma_map_sg(pfdev->dev, sgt->sgl, sgt->orig_nents,
-> +				DMA_BIDIRECTIONAL);
-> +	if (!sgt->nents) {
->   		ret = -EINVAL;
->   		goto err_map;
->   	}
-> 
+Patch 1 consolidates the uaccess macros into a new include file.
+Patch 2 integrates the address limit save/reset/restore into this
+ file, moving it from entry-armv.S, since we need to integrate this
+ with the domain register manipulations.
+Patch 3 ensures that the domain register is always saved and restored
+ not only if we are using software PAN, but if we're using CPU domains
+ for kernel memory protection.
 
+ arch/arm/include/asm/assembler.h   |  75 +-----------------------
+ arch/arm/include/asm/uaccess-asm.h | 117 +++++++++++++++++++++++++++++++++++++
+ arch/arm/kernel/entry-armv.S       |  11 +---
+ arch/arm/kernel/entry-header.S     |   9 +--
+ 4 files changed, 123 insertions(+), 89 deletions(-)
+ create mode 100644 arch/arm/include/asm/uaccess-asm.h
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
