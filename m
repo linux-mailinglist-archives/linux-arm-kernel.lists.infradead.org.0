@@ -2,69 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3783F1C3673
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:08:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B194E1C369D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 12:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/m9QsNvw42hN1/7N1t78sw05zSp76L1r2DtDbihHI2g=; b=W2/9Z/W8PP0uHkiytyuW9DuMY
-	riyG9EZbKn7e8aV23pM12pRCFwfNkx6M6UK7QK1ioAvpEla8Im6iu09lRYFVV1mfHgFuc6ClQ4OKj
-	XXOhfsL1yoSsZxx4qXVyuUFgBovqbrVpqkD5P1QL6O1mZl6+qOCAXCMo6yNvp/oO2f2VkXjAy/2i2
-	2JAkc1uKoMFrv45zefT4ffW3MsDHBJ+fnGUg664g+WNFj4K4Tv/c4IGH3Ki/oWU/xAnsBr4QKL/nk
-	vfT1FCxFi4T5DQ7Stx41NscEZQa32QaGrUhlShVydoMyQtG9hwgp9zR6UcZMZcRzd3rm4axq0zl08
-	akviEIG7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8x+Rd0vJSfBB1k1zdbc0itGG3DXf+FPwcV0/S9Hz81g=; b=Fhi3gLvtQebXlr
+	VTXVqE38AB0YuudK7sgo+2JSvOwOzjI6iDFKS7D/bk02NGtJ48x2MlGDejrNon3ONISGryBsozoiO
+	BGLw7foHhSik4Oax97xl/I7Y8gv6HPP8RmwxY5Z6YUxuvnCnQtyo3BtJ9HRImuLhCFwIu8mJ+LACR
+	rnvk0KH/CXGWQeWScyVcCjAbQonpnDri++D7xqY8gO5rXxlI7qlsXVqXnrbUMw7YAZh6WnuiJrrsz
+	TeNOIVmeu15xDTgei9TgJbS1mny7lKp5u4N77GhMOPogrg6uZSBXjhu1rNmSXUe8TP4Xe55eSOGP+
+	T3rWg0bz+Dxu/FdadMJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVY1Y-0006tt-5b; Mon, 04 May 2020 10:08:32 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVY1S-0006tA-72; Mon, 04 May 2020 10:08:27 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A4A0320721;
- Mon,  4 May 2020 10:08:24 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588586905;
- bh=SEUEOqsjoer4k2pCLVUZGnBWrdTnfIZTUHr1uR6kYbQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=s8qWgABDlen8Jac9q20c1YllmktbBgQLwXvc8TBGFNLZ2MO1yY4Ec1y361P0/V74B
- I1neWkTKuG7sNhzZqWsXbJ6hnkIKSKwGvLVKRk8tXi/nQ5Jmadvr9Uiykfd916GshI
- PbRZU1DH16iq28zmb1/RCo2z6rsKEhwjbInxx6VU=
-Date: Mon, 4 May 2020 11:08:22 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
-Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
-Message-ID: <20200504100822.GA5491@sirena.org.uk>
-References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+	id 1jVYCP-000625-4U; Mon, 04 May 2020 10:19:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVYCG-000611-Tg
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 10:19:40 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 33251101E;
+ Mon,  4 May 2020 03:19:34 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D70113F71F;
+ Mon,  4 May 2020 03:19:32 -0700 (PDT)
+Date: Mon, 4 May 2020 11:19:30 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Peter Collingbourne <pcc@google.com>
+Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
+Message-ID: <20200504101930.GG30377@arm.com>
+References: <20200325174001.234803-1-pcc@google.com>
+ <20200327191915.257116-1-pcc@google.com>
 MIME-Version: 1.0
-In-Reply-To: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
-X-Cookie: My life is a patio of fun!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20200327191915.257116-1-pcc@google.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_030826_278654_39D11272 
-X-CRM114-Status: UNSURE (   8.98  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_031937_061483_4D01AC59 
+X-CRM114-Status: GOOD (  26.42  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,73 +63,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
- Heiko =?iso-8859-1?Q?St=FCbner?= <heiko@sntech.de>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- linux-kernel@vger.kernel.org, Andrzej Hajda <a.hajda@samsung.com>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Jonathan Corbet <corbet@lwn.net>, linux-rockchip@lists.infradead.org,
- Sandy Huang <hjc@rock-chips.com>, linux-mips@vger.kernel.org,
- devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Jyri Sarha <jsarha@ti.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-bluetooth@vger.kernel.org,
- Daniel Vetter <daniel@ffwll.ch>, netdev@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: multipart/mixed; boundary="===============3994112901157914650=="
+Cc: Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Evgenii Stepanov <eugenis@google.com>, Richard Henderson <rth@twiddle.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
+> The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
+> address exposed via siginfo.si_addr and sigcontext.fault_address. However,
+> the tag bits may be needed by tools in order to accurately diagnose
+> memory errors, such as HWASan [1] or future tools based on the Memory
+> Tagging Extension (MTE).
+> 
+> We should not stop clearing these bits in the existing fault address
+> fields, because there may be existing userspace applications that are
+> expecting the tag bits to be cleared. Instead, create a far_context in
+> sigcontext (similar to the existing esr_context), and store the original
+> value of FAR_EL1 (including the tag bits) there.
+> 
+> [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
+> 
+> Signed-off-by: Peter Collingbourne <pcc@google.com>
+> ---
+> v3:
+> - add documentation to tagged-pointers.rst
+> - update comments in sigcontext.h
+> 
+> v2:
+> - revert changes to hw_breakpoint.c
+> - rename set_thread_esr to set_thread_far_esr
+> 
+>  Documentation/arm64/tagged-pointers.rst  | 17 +++++----
+>  arch/arm64/include/asm/exception.h       |  2 +-
+>  arch/arm64/include/asm/processor.h       |  2 +-
+>  arch/arm64/include/uapi/asm/sigcontext.h | 21 +++++++----
+>  arch/arm64/kernel/entry-common.c         |  2 --
+>  arch/arm64/kernel/signal.c               | 20 ++++++++++-
+>  arch/arm64/mm/fault.c                    | 45 ++++++++++++++----------
+>  7 files changed, 74 insertions(+), 35 deletions(-)
 
---===============3994112901157914650==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="6TrnltStXW4iwmi0"
-Content-Disposition: inline
+[...]
+
+> diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
+> index 8b0ebce92427..6782394633cb 100644
+> --- a/arch/arm64/include/uapi/asm/sigcontext.h
+> +++ b/arch/arm64/include/uapi/asm/sigcontext.h
+> @@ -44,11 +44,12 @@ struct sigcontext {
+>   *
+>   *	0x210		fpsimd_context
+>   *	 0x10		esr_context
+> + *	 0x10		far_context
+>   *	0x8a0		sve_context (vl <= 64) (optional)
+>   *	 0x20		extra_context (optional)
+>   *	 0x10		terminator (null _aarch64_ctx)
+>   *
+> - *	0x510		(reserved for future allocation)
+> + *	0x500		(reserved for future allocation)
+>   *
+>   * New records that can exceed this space need to be opt-in for userspace, so
+>   * that an expanded signal frame is not generated unexpectedly.  The mechanism
+> @@ -94,17 +95,25 @@ struct esr_context {
+>  	__u64 esr;
+>  };
+>  
+> +/* FAR_EL1 context */
+> +#define FAR_MAGIC	0x46415201
+> +
+> +struct far_context {
+> +	struct _aarch64_ctx head;
+> +	__u64 far;
+> +};
+> +
+>  /*
+>   * extra_context: describes extra space in the signal frame for
+>   * additional structures that don't fit in sigcontext.__reserved[].
+>   *
+>   * Note:
+>   *
+> - * 1) fpsimd_context, esr_context and extra_context must be placed in
+> - * sigcontext.__reserved[] if present.  They cannot be placed in the
+> - * extra space.  Any other record can be placed either in the extra
+> - * space or in sigcontext.__reserved[], unless otherwise specified in
+> - * this file.
+> + * 1) fpsimd_context, esr_context, far_context and extra_context must be
+> + * placed in sigcontext.__reserved[] if present.  They cannot be placed
+> + * in the extra space.  Any other record can be placed either in the
+> + * extra space or in sigcontext.__reserved[], unless otherwise specified
+> + * in this file.
+
+This is for backwards compatibility only.  We don't need this constraint
+for any new field, so you can probably leave the paragraph as-is.
+
+Removing this would mean constraint would mean that userspace must be
+prepared to traverse extra_context when looking for far_context.  But
+really we want modern userspace to do this anyway, since it reduces
+backwards compatibilty worries when adding more new records in the
+future.
 
 
---6TrnltStXW4iwmi0
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+The nasty loop in parse_user_sigframe() allows some flexibility
+regarding the order of records, but prior to this patch there is no
+record that can be actually be moved, due to other backwards
+compatibility constraints -- so the flexibility isn't used today.  I'd
+like to avoid reorderability creeping in, so that we can get rid of the
+loop.
 
-On Mon, May 04, 2020 at 11:30:20AM +0200, Mauro Carvalho Chehab wrote:
-> There are some new broken doc links due to yaml renames
-> at DT. Developers should really run:
+So, mandating that records must be in a consistent order to sigcontext.h
+could be helpful.  inserting new records in the middle should be fine,
+so long as there is no shuffling.
 
-Acked-by: Mark Brown <broonie@kernel.org>
+I'm not sure this patch needs to do anything extra for that: perhaps we
+can leave this no-shuffling rule implicit for now (?)
 
---6TrnltStXW4iwmi0
-Content-Type: application/pgp-signature; name="signature.asc"
+People already get shouted at for needslessly noisy diffs, so there is a
+strong disincentive to shuffle existing headers in any case...
 
------BEGIN PGP SIGNATURE-----
+[...]
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6v6ZIACgkQJNaLcl1U
-h9Aaywf9G/ypPAVhxAZkzN0IYu6e43sydvSull/M+q3UIdY9VmDdIhUXVgXoOCOh
-ltmOBr9lM8MTLi7nYRlTCsC7mmSE9EMyF3AlPAwCzT9Y9gffa33run0/3I2SDvJZ
-pUXeobj10+FRhp4iWUSpCkUrMEO8SzGHVXCbLZBLUYkvPWdsaMchNpj2iuy/IIMg
-TW9jzMHLeZGsGR/6OgEBbyKegSqC8r3BHT6xfLGtEzoji30kwnPAHvx2D75DBbHH
-dMN+lrHBjpgpaLZWPYHVf5yVjqrH77LcpGqpvTdoP4ckdZZfHyu2ZmFZiyl5yXJV
-56POKfO+q6cm0wiAfAZyg41Om6tanA==
-=2+iq
------END PGP SIGNATURE-----
-
---6TrnltStXW4iwmi0--
-
-
---===============3994112901157914650==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3994112901157914650==--
-
