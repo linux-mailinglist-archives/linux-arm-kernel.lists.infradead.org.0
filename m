@@ -2,71 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DEB01C3808
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:26:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 287041C380E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:28:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/OcJAAOAjv21+mtfu31UFKUkyc49jh92YmdbJB8NqvI=; b=DMAHhjWoxYIeME
-	QqaydilUWh1Ku0OBPKpCI3GBGKVfebdPRILLXxZSKYXmVasTNqmE4B1KuyuqkABzQNQNAOZNTaGGA
-	GvSPwALp2iNRjRBWPxt8nukjGmNcbEsRuvcAjeT1s2fnGCvCl92WZsnfRYd0Lcb6l6ieAcogFb3Cj
-	jCo0ztqGUZFg1ycJJRqskpEtd5T3SSQ0TRCdelSkqpohPedRghmkiG+sUgsK8xhaRVhX7pRHHglC7
-	z/PrpQhWi6c2J3uw4/m7gfr5Lc5b3TIT7fzC0Yd9N1Sj4tovssXoPXeGzCIIDlgbGNfQwlnCot+ov
-	u3+0ea95Ca7v/5U9WS+w==;
+	List-Owner; bh=xJ+l9nTX6s6Onm1W+GvtaftRy+PAx/t5Jmk7u/X5md4=; b=OXTpldofpYXLmP
+	Zs3AjjNDBiWggzHsVYkv0wrUjKyME/cbHhUJcYlWgym7Vzesk/9AZQtEUsUT2KhGgHheLPJkAWFn/
+	05csRWvjTPBLzOp6fBAG12ntqAQ7YuL4CTVML5Ja2+BuVOHkHnfhkofcJU0fnUTi1Ay6i8/sxGWPZ
+	uHcESoLsOJZRrP6Fokr5NeW1uM0WNofbt5vAUbAcDePUqdAUtNW8OQ5Z5q4iofrts2VKybUK5RIfg
+	XgjanCz0Sz+YLabG9yNQDi2ZJPFuUFh7THsGomx809dVxDZKBgtmL83If5F6tInNog7q0q9IwLAoh
+	F6lcngH2dhX8hIuLxPGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZF6-0006yK-MM; Mon, 04 May 2020 11:26:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVZGX-0007KA-Mz; Mon, 04 May 2020 11:28:05 +0000
+Received: from mout.kundenserver.de ([212.227.126.134])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZF0-0006xt-6T
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:26:31 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE1F520721;
- Mon,  4 May 2020 11:26:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588591589;
- bh=bbiZPVfmFqYVL/wAzhRV8cgjhVbnfg17BIGvQfSh0nQ=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=MPL/S/eG4Q240qsKgogVhDaxe7bXcVOEZZ1eoUWmwg4D456a5QdiHxHN5TC9E8y+V
- cuPbf4aTEWSbPf2KO2NuVDuTpf6r5S5ZfSsM861OKx4cmvTXcOpzh3O0lddznL2K+d
- ygmVZUTM2rNDkjG9hpzw/Bz32OsC3TGPngbCFxI0=
-Date: Mon, 4 May 2020 12:26:24 +0100
-From: Will Deacon <will@kernel.org>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH v3] arm64: Unify WORKAROUND_SPECULATIVE_AT_{NVHE,VHE}
-Message-ID: <20200504112624.GA1326@willie-the-truck>
-References: <20200504094858.108917-1-ascull@google.com>
- <20200504105539.GA4879@willie-the-truck>
- <7b3cc0b0a3fa6d08d8c8413e4498d485@kernel.org>
+ id 1jVZGJ-0007IC-8D; Mon, 04 May 2020 11:27:52 +0000
+Received: from mail-qk1-f179.google.com ([209.85.222.179]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1McpW6-1ivgXu291m-00a0nZ; Mon, 04 May 2020 13:27:48 +0200
+Received: by mail-qk1-f179.google.com with SMTP id g185so2547754qke.7;
+ Mon, 04 May 2020 04:27:48 -0700 (PDT)
+X-Gm-Message-State: AGi0PuaUC+2HrxCUgN2IesRCGbfrHx8QPc4184NIyVwewWTUYmjSf+v1
+ 8chruImgNXFDnUqPoskjcIESomSEWbR6fcwOA0k=
+X-Google-Smtp-Source: APiQypIIHoujLODItegRRgCsMaNglRK7LNUpimxq01cun2hB/w8fYeIm4nZCEGen6hYmmyMPRHB0gBdjFi2URrtAcZQ=
+X-Received: by 2002:a37:a492:: with SMTP id
+ n140mr16289220qke.352.1588591667069; 
+ Mon, 04 May 2020 04:27:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <7b3cc0b0a3fa6d08d8c8413e4498d485@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200331093241.3728-1-tesheng@andestech.com>
+ <CAK8P3a3LokurC0n9XiwtPQh9ZgQcswMKY4b+TEsQh1VgYDNeWA@mail.gmail.com>
+ <20200408035118.GA1451@andestech.com>
+ <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
+ <20200414151748.GA5624@afzalpc>
+ <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
+ <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
+ <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ <20200504091018.GA24897@afzalpc>
+In-Reply-To: <20200504091018.GA24897@afzalpc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 4 May 2020 13:27:31 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+Message-ID: <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+Subject: Re: [PATCH 0/3] Highmem support for 32-bit RISC-V
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+X-Provags-ID: V03:K1:/i9t9qRKXOiKxyqXA6m/MK1Dt9wZmarX1euFn6iZiLiRMY1dmMs
+ 5gRsCO2AVEnZiWpuU85IphtVlTrWoTUYyxfUnfSgMVc8Td7fDHIYdZVPsFFZjQqapv4d8yj
+ u8l0CqQOUU6BuOJLp7bIcmy9EHMkO3iTxKTA8uK0z3044eT4hK37756rS/Z37GNASNLzx/V
+ ow/SqdlHxJYCk0aMz9Vrw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:uoER3ETRvKQ=:szTyIVw5GpnxpP1S+y/L7J
+ PJzUI53uNk2B+Ml8oMXHdOzudq/Lokn2OEuepcxoBiVh//xtctDrNZCsm1Ux90HoZRXaqESHe
+ kO8UQiG0Wz8QKBknpMVrJt+5MYdMckT1gQUcZlvA88L2SkeIMyslH/Z17aBujaj4eYfvZ5Hma
+ KfFww/qukA9Mfl/DEHdXt7iogVeAoRwVSrCVjgt0bMgqOlp2nF9Har1qxdFZ4pTikFpWeea5B
+ IEoz7K/TWfwQ/rjuSBxQzmS/Cc/V8445Ewx01MDH2DfPSv83ideW7QLALmuJ2SWSsHNX4PWgI
+ Ma8uM9PG3arKw5427wrcqz+Ja8U0fSPz9uz1ZJD1+yCJB2EwNQBaqLDxxjf8DlyhFHoAQFHye
+ zf3e6plf9qGr13yZoyOeBovfZxhdLMS2tkIBaMFbx7lWcwURxtPeFMJ/5LDWURwy2xLRbsBSV
+ N7RgVfG6J1xx3xzJwuTA4l+p/LJBGJw6RU83PDjjnUvI/yg+NDLKIKEcXPrD1topzQzTqPIwP
+ R29ilskpHNMqNNuzMVh/Mf3/CtFuXunTLBbPegr74v/AUGeaVabWqorsUvfRZGVIF/fgjTM6T
+ KqlvoNZkLu/TbvA/jLpBOd8p/FgE/imKK3RnXvnzm/Mtm5Ke6ENbnaQDGwuPP+s0BCzCP8Oqt
+ 609DiBLZLCbUesdK7RXHLiH+Qf77bRZEBFRbX41sGJllwJ1uyi1qr3T5kB9jUM46ZcKrpcI6O
+ BY+izBPW6T681wKE1py+HOxnnw/xmt0eO5klV2NYLhg+vjFANlju/oq3oVYfj3SzgTy/Onl65
+ GvU1d02swley3SKbR9x1IJZxojcFiJKmfk/j7DTzEny7TS9mTw=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_042630_260400_652F4733 
-X-CRM114-Status: GOOD (  18.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_042751_597832_F6AE1FE9 
+X-CRM114-Status: GOOD (  22.17  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.134 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [212.227.126.134 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,67 +94,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Steven Price <steven.price@arm.com>, James Morse <james.morse@arm.com>,
- Andrew Scull <ascull@google.com>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: zong.li@sifive.com, Alan Kao <alankao@andestech.com>, atish.patra@wdc.com,
+ Albert Ou <aou@eecs.berkeley.edu>, Gary Guo <gary@garyguo.net>,
+ linux-riscv@lists.infradead.org, Steven Price <steven.price@arm.com>,
+ alex@ghiti.fr, Russell King <linux@armlinux.org.uk>,
+ Mike Rapoport <rppt@linux.ibm.com>, Borislav Petkov <bp@suse.de>,
+ Eric Lin <tesheng@andestech.com>, Greentime Hu <green.hu@gmail.com>,
+ Paul Walmsley <paul.walmsley@sifive.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ David Abdurachmanov <david.abdurachmanov@gmail.com>,
+ Anup Patel <Anup.Patel@wdc.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ yash.shah@sifive.com, Palmer Dabbelt <palmer@dabbelt.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Logan Gunthorpe <logang@deltatee.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 12:13:02PM +0100, Marc Zyngier wrote:
-> On 2020-05-04 11:55, Will Deacon wrote:
-> > On Mon, May 04, 2020 at 10:48:58AM +0100, Andrew Scull wrote:
-> > > Errata 1165522, 1319367 and 1530923 each allow TLB entries to be
-> > > allocated as a result of a speculative AT instruction. In order to
-> > > avoid mandating VHE on certain affected CPUs, apply the workaround to
-> > > both the nVHE and the VHE case for all affected CPUs.
-> > > 
-> > > Signed-off-by: Andrew Scull <ascull@google.com>
-> > > CC: Marc Zyngier <maz@kernel.org>
-> > > CC: James Morse <james.morse@arm.com>
-> > > CC: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > CC: Will Deacon <will@kernel.org>
-> > > CC: Steven Price <steven.price@arm.com>
-> > > ---
-> > > From v2 <20200422161346.67325-1-ascull@google.com>:
-> > >  - const_cap -> final_cap merge correction
-> > >  - based on 5.7 rc4
-> > > ---
-> > >  arch/arm64/Kconfig                | 39
-> > > ++++++++++++++-----------------
-> > >  arch/arm64/include/asm/cpucaps.h  | 15 ++++++------
-> > >  arch/arm64/include/asm/kvm_host.h |  4 ----
-> > >  arch/arm64/include/asm/kvm_hyp.h  |  2 +-
-> > >  arch/arm64/kernel/cpu_errata.c    | 25 +++++++++-----------
-> > >  arch/arm64/kvm/hyp/switch.c       |  6 ++---
-> > >  arch/arm64/kvm/hyp/sysreg-sr.c    |  6 +++--
-> > >  arch/arm64/kvm/hyp/tlb.c          | 11 +++++----
-> > >  8 files changed, 50 insertions(+), 58 deletions(-)
-> > 
-> > Acked-by: Will Deacon <will@kernel.org>
-> > 
-> > We'll probably run into some trivial conflicts with the arm64 tree, but
-> > I'm happy to put this on a branch if it helps. Marc?
-> 
-> I'd rather we avoid the conflicts by not repainting all the capabilities
-> and just leave a capability unused until the next one fills in the slot.
+On Mon, May 4, 2020 at 11:10 AM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+>
+> [ +linux-arm-kernel
+>
+>   Context: This is regarding VMSPLIT_4G_4G support for 32-bit ARM as a
+>   possible replacement to highmem. For that, initially, it is being
+>   attempted to move static kernel mapping from lowmem to vmalloc space.
+>
+>   in next reply, i will remove everyone/list !ARM related ]
+>
+> Hi,
+>
+> On Sun, May 03, 2020 at 10:20:39PM +0200, Arnd Bergmann wrote:
+>
+> > Which SoC platform are you running this on? Just making
+> > sure that this won't conflict with static mappings later.
+>
+> Versatile Express V2P-CA15 on qemu, qemu options include --smp 2 &
+> 2GB memory.
 
-I think we'll run into conflicts whatever we do, so I'd say the patch is
-alright like it is.
+Ok
 
-> But otherwise, I'll take a stable branch.
+> BTW, i could not convince myself why, except for DEBUG_LL, static io
+> mappings are used.
 
-Ok, let me cook that today.
+I don't think vexpress uses it, but others have some 'struct map_desc'
+instances mostly for historic reasons, e.g. to map some registers that
+are needed at very early boot time, or from assembler files.
 
-> Also the current state of the KVM/arm tree is a bit crap as none of the
-> fixes have made it into Linus' tree yet, and I don't have a good base
-> for the current queue (the welcome-home branch could create havoc).
+> > One problem I see immediately in arm_memblock_init()
+>
+> Earlier it went past arm_memblock_init(), issue was clearing the page
+> tables from VMALLOC_START in devicemaps_init() thr' paging_init(),
+> which was like cutting the sitting branch of the tree.
+>
+> Now it is crashing at debug_ll_io_init() of devicemap_init(), and
+> printascii/earlycon was & is being used to debug :). Things are going
+> wrong when it tries to create mapping for debug_ll. It looks like a
+> conflict with static mapping, which you mentioned above, at the same
+> time i am not seeing kernel static mapping in the same virtual
+> address, need to dig deeper.
+>
+> Also tried removing DEBUG_LL, there is a deafening silence in the
+> console ;)
 
-Seriously? I'll reply on your pull to see if I can help.
+I don't think there is any other mapping that would conflict with the
+DEBUG_LL one, but you may be in a hole where the existing one
+is not mapped. IIRC it first gets mapped in __create_page_tables()
+in arch/arm/kernel/head.S, and later in debug_ll_io_init(), but if the
+old page tables were just discarded, it won't work for a bit.
 
-Will
+Using gdb to step through the code in qemu is often more reliable
+than printing to the console, at least until you get to the point
+when you have registered the real console.
+
+> __virt_to_phys_nodebug() which does the actual work on __pa() invocation
+> has been modifed to handle that case (ideas lifted from ARM64's
+> implementation), though currently it is a hack as below (and applicable
+> only for ARM_PATCH_PHYS_VIRT disabled case), other hacks being
+> VMALLOC_OFFSET set to 0 and adjusting vmalloc size.
+>
+>         static inline phys_addr_t __virt_to_phys_nodebug(unsigned long x)
+>         {
+>                 phys_addr_t __x = (phys_addr_t)x;
+>
+>                 if (__x >= 0xf0000000)
+>                         return __x - KIMAGE_OFFSET + PHYS_OFFSET;
+>                 else
+>                         return __x - PAGE_OFFSET + PHYS_OFFSET;
+>         }
+
+Ok, makes sense.
+
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
