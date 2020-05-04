@@ -2,58 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7A041C3114
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 03:32:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6321C3124
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 03:36:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9gYSgCIS0C+Idefs/wiVJSpvFXoBqeTpTB8TWHaicyw=; b=XmeGVm9NqVVE7g
-	uNKn3FvJ9Zu6SRSjKqF0dMmCWda7+3aDbMMcy5rDjwilH5d43ta10QvhBmSHGCARcukNbCU0IuFxo
-	cK0s9PkjizRdD8Q+9T4a6K+kOp0nAsa8F4olRbWO5aOudst0CbBYRlH+pE/VkydJaQfxwG3QZf/b4
-	a2eO+n7QYHHp2Ehg6Fa6gFQ5KKB029bzCjDffPErhP+57m/o3F824ZoEv7HAAoz5EWgnvBJk9Jkr0
-	uml1BA7Z1h7UZVQ8oj0PpXoUTR3jodF/bHg9zMams3Nthqxxl26vpDpzV2n4AUldtKaElm3fp0zhN
-	L7qPO4H15fKkrU7zhJNg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/5KhjaaQp8DguZx9jqtFnLFxKsswhAUETAIkJOUN7nY=; b=fgzebOeaIczMea
+	HdznTicT82D/N270be0pBmo3+Kua8MJYjilaM8jkUvo5PIlb5j31uxI1/xcM6XAxIUdQNgd+C4X7L
+	cgwAMNPc7enfKcwptGXnYCXaBGPfdPmt98ZGC6rJZJqth8giLQrnYQGS4Tupsvh9V4BsjAHCv306B
+	bRoK/OLAR0sxfxMlbu7zPPzG3buZy6b91aleFl+YuTpw1iPIMlfEqExvTQ/jvzFfxxa0OgIV6Z5MS
+	yAjLgyuRmoZwqCtSvwYHrNm1Ieyevw6q7C0pBvx78qMaj5MGXSIthL24Ag8s5qPWrV7xvbCZP83Cg
+	0bgr1fAh+nZY5qdwoq5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVPy3-00068r-1J; Mon, 04 May 2020 01:32:23 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jVQ1b-0000n6-PE; Mon, 04 May 2020 01:36:03 +0000
+Received: from [2002:c35c:fd02::1] (helo=ZenIV.linux.org.uk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVPxv-00067A-Qn
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 01:32:17 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 5B5679E67C9A7EDDE2C1;
- Mon,  4 May 2020 09:32:01 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.487.0; Mon, 4 May 2020
- 09:31:58 +0800
-Subject: Re: [PATCH] arm64: perf: Expose some new events via sysfs
-To: Will Deacon <will@kernel.org>
-References: <1587450713-18048-1-git-send-email-zhangshaokun@hisilicon.com>
- <20200501171237.GA19048@willie-the-truck>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <b8c9189f-baf1-fe40-49be-1f74fb3ceb0c@hisilicon.com>
-Date: Mon, 4 May 2020 09:31:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1jVQ1R-0000lr-Ix; Mon, 04 May 2020 01:35:56 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.3 #3 (Red Hat
+ Linux)) id 1jVQ0j-000SR4-3a; Mon, 04 May 2020 01:35:09 +0000
+Date: Mon, 4 May 2020 02:35:09 +0100
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: ira.weiny@intel.com
+Subject: Re: [PATCH V2 00/11] Subject: Remove duplicated kmap code
+Message-ID: <20200504013509.GU23230@ZenIV.linux.org.uk>
+References: <20200504010912.982044-1-ira.weiny@intel.com>
 MIME-Version: 1.0
-In-Reply-To: <20200501171237.GA19048@willie-the-truck>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200504010912.982044-1-ira.weiny@intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_183216_034230_4DC3BCAE 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200503_183553_622329_4D363A26 
+X-CRM114-Status: GOOD (  10.85  )
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [2002:c35c:fd02:0:0:0:0:1 listed in] [wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ -0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,85 +58,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Huang Rui <ray.huang@amd.com>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
+ Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-On 2020/5/2 1:12, Will Deacon wrote:
-> On Tue, Apr 21, 2020 at 02:31:53PM +0800, Shaokun Zhang wrote:
->> Some new PMU events can been detected by PMCEID1_EL0, but it can't
->> be listed, Let's expose these through sysfs.
->>
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
->> ---
->>  arch/arm64/include/asm/perf_event.h | 19 +++++++++++++++++++
->>  arch/arm64/kernel/perf_event.c      | 19 +++++++++++++++++++
->>  2 files changed, 38 insertions(+)
->>
->> diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
->> index e7765b62c712..f1b93d7c4260 100644
->> --- a/arch/arm64/include/asm/perf_event.h
->> +++ b/arch/arm64/include/asm/perf_event.h
->> @@ -72,12 +72,31 @@
->>  #define ARMV8_PMUV3_PERFCTR_LL_CACHE_RD				0x36
->>  #define ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD			0x37
->>  #define ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD			0x38
->> +#define ARMV8_PMUV3_PERFCTR_L1D_CACHE_LMISS_RD			0x39
->> +#define ARMV8_PMUV3_PERFCTR_OP_RETIRED				0x3A
->> +#define ARMV8_PMUV3_PERFCTR_OP_SPEC				0x3B
->> +#define ARMV8_PMUV3_PERFCTR_STALL				0x3C
->> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_BACKEND			0x3D
->> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_FRONTEND			0x3E
->> +#define ARMV8_PMUV3_PERFCTR_STALL_SLOT				0x3F
+On Sun, May 03, 2020 at 06:09:01PM -0700, ira.weiny@intel.com wrote:
+> From: Ira Weiny <ira.weiny@intel.com>
 > 
-> Hmm, looks like the presence of this event implies the presence of the
-> PMMIR_EL1 register. Should we be exposing the "SLOTS" field from that in
-> sysfs? (obviously as a separate patch)
+> The kmap infrastructure has been copied almost verbatim to every architecture.
+> This series consolidates obvious duplicated code by defining core functions
+> which call into the architectures only when needed.
 > 
-
-Yes, Before doing this patch, I have considered the PMMIR_EL1 register, but
-not sure what to do about it :-) . I will expose it in next version.
-
->>  
->>  /* Statistical profiling extension microarchitectural events */
->>  #define	ARMV8_SPE_PERFCTR_SAMPLE_POP				0x4000
->>  #define	ARMV8_SPE_PERFCTR_SAMPLE_FEED				0x4001
->>  #define	ARMV8_SPE_PERFCTR_SAMPLE_FILTRATE			0x4002
->>  #define	ARMV8_SPE_PERFCTR_SAMPLE_COLLISION			0x4003
->> +#define	ARMV8_SPE_PERFCTR_CNT_CYCLES				0x4004
->> +#define	ARMV8_SPE_PERFCTR_STALL_BACKEND_MEM			0x4005
->> +#define	ARMV8_SPE_PERFCTR_L1I_CACHE_LMISS			0x4006
->> +#define	ARMV8_SPE_PERFCTR_L2D_CACHE_LMISS_RD			0x4009
->> +#define	ARMV8_SPE_PERFCTR_L2I_CACHE_LMISS			0x400A
->> +#define	ARMV8_SPE_PERFCTR_L3D_CACHE_LMISS_RD			0x400B
->> +#define	ARMV8_SPE_PERFCTR_LDST_ALIGN_LAT			0x4020
->> +#define	ARMV8_SPE_PERFCTR_LD_ALIGN_LAT				0x4021
->> +#define	ARMV8_SPE_PERFCTR_ST_ALIGN_LAT				0x4022
->> +#define	ARMV8_SPE_PERFCTR_MEM_ACCESS_CHECKED			0x4024
->> +#define	ARMV8_SPE_PERFCTR_MEM_ACCESS_CHECKED_RD			0x4025
->> +#define	ARMV8_SPE_PERFCTR_MEM_ACCESS_CHECKED_WR			0x4026
+> Some of the k[un]map_atomic() implementations have some similarities but the
+> similarities were not sufficient to warrant further changes.
 > 
-> I think the naming is off here, as these don't seem to have anything to do
-> with SPE afaict.
+> In addition we remove a duplicate implementation of kmap() in DRM.
 > 
+> Testing was done by 0day to cover all the architectures I can't readily
+> build/test.
 
-Right, some are about AMUv1 events and Memory Tagging Extensions, I will comment
-them correspondingly in v2.
+OK...  Looking through my old notes on kmap unification (this winter, never
+went anywhere),
 
-Thanks,
-Shaokun
+* arch/mips/mm/cache.c ought to use linux/highmem.h, not asm/highmem.h
+I suspect that your series doesn't build on some configs there.  Hadn't
+verified that, though.
 
-> Will
-> 
-> .
-> 
+* kmap_atomic_to_page() is dead, but not quite gone - csky and nds32 brought
+the damn thing back (nds32 - only an extern).  It needs killin'...
 
+* parisc is (arguably) abusing kunmap()/kunmap_atomic() for cache flushing.
+Replace the bulk of its highmem.h with
+#define ARCH_HAS_FLUSH_ON_KUNMAP
+#define arch_before_kunmap flush_kernel_dcache_page_addr
+and have default kunmap()/kunmap_atomic() do
+#ifdef ARCH_HAS_FLUSH_ON_KUNMAP
+	arch_before_kunmap(page_address(page));
+#endif
+and
+#ifdef ARCH_HAS_FLUSH_ON_KUNMAP
+	arch_before_kunmap(addr);
+#endif
+resp.  Kills ARCH_HAS_KMAP along with ifdefs on it, makes parisc use somewhat
+less hacky.
+
+I'd suggest checking various configs on mips - that's likely to cause headache.
+Said that, my analysis of include chains back then is pretty much worthless
+by now - I really hate the amount of indirect include chains leading to that
+sucker on some, but not all configs ;-/  IIRC, the proof that everything
+using kmap*/kunmap* would pull linux/highmem.h regardless of config took several
+hours of digging, ran for several pages and had been hopelessly brittle.
+arch/mips/mm/cache.c was the only exception caught by it, but these days
+there might be more.
 
 _______________________________________________
 linux-arm-kernel mailing list
