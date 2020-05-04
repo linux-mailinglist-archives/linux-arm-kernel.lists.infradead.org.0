@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13FE11C3D3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:37:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24B061C3D79
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 16:48:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Uzvgmy6QJ24xbSUjaB35G6oa5U1BME3NOy7HopT10tE=; b=sVlaJb+u4c698U5+RhraSZj3A
-	Lld6AtpyrgVWfnjCdXTEJqnvwrl1ztcPFbd30Q8eRUYU6fKcrbSbq2WdVRgapHzalg31Dm2iG09Tl
-	wAN8gBObMLpwWTYeMzjhnfOveot9lUw3DRnBLMeXeKjFbu651AcIpqyxBMg3SvFB3mvYHqRf4W1lF
-	EHmr94blxoAz76Hlcau1Hju7s/7DNhXO8yrbA4d7mVJ8o3JUbo3bDlfS4HQrN3Yx7i30/mlM9Reu+
-	jQHSSHXelJslUhdu+AK59Fl29IvmJAyubqS9TgRa93at+47vTZnspNY+by3n6XUm2uao2Ji1Kgb3h
-	6He/CWLMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=S/VNBTdRGEvbNLXbZjvLCMQ68vFyuR9zif1T5pg8FyE=; b=rC/8lQl2sFnOir
+	5HTSAj6mu3/RCARXWul9zhG7JR/VH+LmtC2ch9Ht5nldH+b+QrtcXJCP0qlIaFcJb6uH+Ncl/cRiJ
+	LIIlIINq5+3bHhPEPYseuVSxH5tepln/bh1heAYCiBCgWzS4+3la4n9V3jPL/dPe7vcmV/OhyurzG
+	A19izqdsEH7VT1Pk6X6iS565+bDsxUGJRohoZZLhdf734Anlx1q1D8trnA7bejmOP7nJC4Fe4kcMJ
+	as9Bl7sq818KSFUUa1F46zoge/Kn6+lcjLJSFYKXwyq3I/ysfWamDo7gCMn/OEjDa9O5QJAbCIIAw
+	ZCc2x0Vqf7jClULwdPCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVcDm-0003TO-D6; Mon, 04 May 2020 14:37:26 +0000
+	id 1jVcO0-00032H-Bm; Mon, 04 May 2020 14:48:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVcDe-0003SE-BQ
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:37:20 +0000
+ id 1jVcNu-00030u-Gr
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 14:47:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9D6461FB;
- Mon,  4 May 2020 07:37:17 -0700 (PDT)
-Received: from [10.37.12.17] (unknown [10.37.12.17])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 543783F305;
- Mon,  4 May 2020 07:37:04 -0700 (PDT)
-Subject: Re: [PATCH v6 11/25] iommu/arm-smmu-v3: Share process page tables
-To: jean-philippe@linaro.org
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-12-jean-philippe@linaro.org>
- <580a915f-f8bf-3b3e-c77d-6d0c2ea4bd02@arm.com>
- <20200504141137.GA170104@myrica>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <82f54362-34f1-2378-49c2-2d87e065e385@arm.com>
-Date: Mon, 4 May 2020 15:42:04 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 881211FB;
+ Mon,  4 May 2020 07:47:52 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 018C53F305;
+ Mon,  4 May 2020 07:47:50 -0700 (PDT)
+Date: Mon, 4 May 2020 15:47:44 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v3 01/23] arm64: alternative: Allow alternative_insn to
+ always issue the first instruction
+Message-ID: <20200504144743.GB2884@gaia>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-2-catalin.marinas@arm.com>
+ <20200427165737.GD15808@arm.com> <20200428114354.GE3868@gaia>
+ <20200429102600.GA30377@arm.com> <20200429140425.GC10651@gaia>
 MIME-Version: 1.0
-In-Reply-To: <20200504141137.GA170104@myrica>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200429140425.GC10651@gaia>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_073718_438763_DCD1B046 
-X-CRM114-Status: GOOD (  16.50  )
+X-CRM114-CacheID: sfid-20200504_074754_605602_9D822E3E 
+X-CRM114-Status: GOOD (  14.35  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,72 +66,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com,
- jacob.jun.pan@linux.intel.com, jgg@ziepe.ca, linux-pci@vger.kernel.org,
- joro@8bytes.org, Jonathan.Cameron@huawei.com, robin.murphy@arm.com,
- fenghua.yu@intel.com, hch@infradead.org, linux-mm@kvack.org,
- iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
- catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/04/2020 03:11 PM, Jean-Philippe Brucker wrote:
-> On Thu, Apr 30, 2020 at 04:39:53PM +0100, Suzuki K Poulose wrote:
->> On 04/30/2020 03:34 PM, Jean-Philippe Brucker wrote:
->>> With Shared Virtual Addressing (SVA), we need to mirror CPU TTBR, TCR,
->>> MAIR and ASIDs in SMMU contexts. Each SMMU has a single ASID space split
->>> into two sets, shared and private. Shared ASIDs correspond to those
->>> obtained from the arch ASID allocator, and private ASIDs are used for
->>> "classic" map/unmap DMA.
->>>
->>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->>> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
->>> ---
->>
->>> +
->>> +	tcr = FIELD_PREP(CTXDESC_CD_0_TCR_T0SZ, 64ULL - VA_BITS) |
->>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_IRGN0, ARM_LPAE_TCR_RGN_WBWA) |
->>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_ORGN0, ARM_LPAE_TCR_RGN_WBWA) |
->>> +	      FIELD_PREP(CTXDESC_CD_0_TCR_SH0, ARM_LPAE_TCR_SH_IS) |
->>> +	      CTXDESC_CD_0_TCR_EPD1 | CTXDESC_CD_0_AA64;
->>> +
->>> +	switch (PAGE_SIZE) {
->>> +	case SZ_4K:
->>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_4K);
->>> +		break;
->>> +	case SZ_16K:
->>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_16K);
->>> +		break;
->>> +	case SZ_64K:
->>> +		tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_TG0, ARM_LPAE_TCR_TG0_64K);
->>> +		break;
->>> +	default:
->>> +		WARN_ON(1);
->>> +		ret = -EINVAL;
->>> +		goto err_free_asid;
->>> +	}
->>> +
->>> +	reg = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1);
->>> +	par = cpuid_feature_extract_unsigned_field(reg, ID_AA64MMFR0_PARANGE_SHIFT);
->>> +	tcr |= FIELD_PREP(CTXDESC_CD_0_TCR_IPS, par);
->>> +
->>> +	cd->ttbr = virt_to_phys(mm->pgd);
->>
->> Does the TTBR follow the same layout as TTBR_ELx for 52bit IPA ? i.e,
->> TTBR[5:2] = BADDR[51:48] ? Are you covered for that ?
+On Wed, Apr 29, 2020 at 03:04:25PM +0100, Catalin Marinas wrote:
+> From 73f3869cb68fab1505d7b400ae8a39a19c5fc9e9 Mon Sep 17 00:00:00 2001
+> From: Catalin Marinas <catalin.marinas@arm.com>
+> Date: Wed, 27 Nov 2019 09:07:30 +0000
+> Subject: [PATCH] arm64: alternative: Always emit the first instruction in
+>  ALTERNATIVE blocks
 > 
-> Good point, I don't remember checking this. The SMMU TTBR doesn't have the
-> same layout as the CPU's, and we don't need to swizzle the bits. For the
-> lower bits, the alignment requirements on the pgd are identical to the
-> MMU.
+> Currently with the ALTERNATIVE macro or alternative_insn, the cfg (or
+> enable) arguments disable the entire asm block. Change the macros to
+> only omit the alternative block on !IS_ENABLED(cfg). In addition, remove
+> the cfg arguments to to ALTERNATIVE in those few calls where it is still
+> passed. There is no change to the resulting kernel image with defconfig.
+> 
+> alternative_insn's enable argument will be used in a subsequent patch
+> and we are keeping the ALTERNATIVE C macro arguments in line with the
+> asm version.
+> 
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
 
-Ok, if that is the case:
+I no longer need this patch as I moved the page tag zeroing from
+clear_page to the actual mte.S file (called via set_pte_at()). So don't
+bother reviewing this.
 
-Acked-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
