@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C82D51C3F8A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC91D1C3F94
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 18:16:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZWWQGnwhvx1j+bUPKl+Tlh89Zuk5NvRWfH/BAEZaegU=; b=fdO98CmUZ3DGo5BE8W8PqrA9cb
-	hAyAE61nYBIhqttu8At94tOi+Qya2Dm29e3uCDG85RQ6545gQOUXN1hwQXXsTbC0+FEQik8zQNcPQ
-	4EqUMWbTAoh3uEfkNwFL2JsQM0jKRplcy2hyQXTEstlCbH9vbTF3mAfwiTkfJ3xrimZAJZUdK8rLr
-	2vugWsH84GbDdyYM7ZpJheQg672j5iuCqtUbGwJQVyM0lkrgWGslwlN8/oXiY4couuRAajha0Sd2M
-	m89yRVr+m0EfVIu22xa40J/siT+Mcom0LAQ1/s91QFpEfVwtpfAyah8X7ArxWrKR4LAc1DY4uYWCc
-	pLMfvDXQ==;
+	bh=r5XLXRkHyT22K/MioBSVZgkvI3EOoMJLLQMI55hKWHU=; b=IVIuVYKypPBwuRcrc1CxqhnMjZ
+	XWwEu2xWUrZLq05m2hEgDjVL4zgRxoMe8AksrvossopoZfuD3crbwUN878N4q6SX51wH767NXY5B9
+	2YfV4T77kZiDqIdrhsXsrKmJsKvR1++rMSLJADApPwFPk1hSc5YkZR4/LRc+SY0Kuxnyn+P42UJTF
+	MNm18h1uB6+rLuRHYiaAsyNVzmUZ6f3XOe1/l3Y14eM0czg++dcaFgvATfLE/E1VDIKWt7+v2JaF5
+	IZa5Cm5YSPXO0dBHj5jwy5uwVDZUj1g+BBpnXaAAh9x2oRXgRKvir8+nYgwPz2i0u0nx34Tbcbvhn
+	mzGZZ6Sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVdku-0000nC-6W; Mon, 04 May 2020 16:15:44 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jVdlT-0001Ha-I6; Mon, 04 May 2020 16:16:19 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVdkn-0000kt-1w
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:15:38 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x17so21661638wrt.5
+ id 1jVdkq-0000n6-5C
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 16:15:41 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 188so127973wmc.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 09:15:36 -0700 (PDT)
+ Mon, 04 May 2020 09:15:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=QYuxyo+P/FDXBlWswgDMGcydsZxKqwcbScuDHGuVFFA=;
- b=cgb+So6bHGApjDA5+I8Lfo7O3ZspyQFAs8VprG67L22RhTsX5IWz16fVipQ5O9wtf1
- xCliOCMlDl3tXYf+NsOeIAFXslH2IMHwKTkmu+uIKW41h7PyZKMY1+cCATLBZbEipjs6
- 2cxNEU8WfN887nYrQMK3wMsIPUgLMP6KdENezLhm7W8SZ0NV2a1wxXGvDwF4TrWsRZtY
- sZmS1Ku5JglZZTEKN+2bhXDOdrgHEVxgCjjz0vGLV3TPUXK6PIzhzSeJbnyeFeQALDvz
- +9nez3FxFxW8kzw8ZEKidz+AJnvf2Jqf+NqfGBiSLfuL9l9XFeKG0J3wZfQIZwgSNhZ5
- qB7A==
+ bh=kmQ9Fl48Rq8fFbBnLUeHmzhD5g9BXt07MmpxGvo8jek=;
+ b=BOtN27UJhcQOKqUsvUROp8R22CN9Zzki2z05JfMwhoJ9YQP1Rc3newUeuP7mr2HmeT
+ l9Sus6Wef6RihYw3jUslKbU6IjTlI6vcUjLr9AmlXcBL9fCx025JuD5i1aPU26Rg7/wd
+ HsG5QdlrGLCAXBjjiGcxDeQcw10M6PQvvU8K4qDGAvoo80VnmCw9lZKZ42gpyF+EGPJA
+ vTia7HprFBxXeV7ROjXYiqnMVZPQPnDDOjKR2BCLbKJoLIvePKcz+pvxHIf/YSDCbS+V
+ WyrSaOJZXxKgXmSfHslQuDSTwFxZikIkfJFlWYhE6cG6Uk7b/xESWm1+bFnDKi6xNdkE
+ 38rQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=QYuxyo+P/FDXBlWswgDMGcydsZxKqwcbScuDHGuVFFA=;
- b=dwlPGteKDc90X6gfz21LLA8Z52SHpsoroZCXgbPCIUHeymkNqwNtXKZeqmN4eKwpvt
- QZzeb7Ngky33xmtiGSblXuxg6ZtWj2r11HmxNtBdb34Y/0paamm94PrSAGSKK7GzozdE
- SMVHaJDA5jZBfEe2NCsL1fnGGH9ZQ3qPAt8mnSrJxVsQfV35gfjaE1x5PG4+CdaOAH+l
- PwItnGrOHjFZFaeQT25QcLMbSWJ5srb2G/K6+sxtJWVlbB5Imj9wR780YAB9hI6yPw9R
- /FEaEAXuOxwqQxAxPqsjh4xPXfCtD+g+47U6vnWcw9AAmKREoGKi/iXUfZSvIzDuaImC
- kIFA==
-X-Gm-Message-State: AGi0PuaNDcaIzG/XjjQA/wIlvf6eH+F3mdlCCNLX+DnjZiCt66SoJLoZ
- i2RcrZLue2pkDVzjyW008SFKs65+7tU=
-X-Google-Smtp-Source: APiQypJ+OpYnlK5EQ9JdYdAOjglW9zOf9gMeUslPL5xlErD+UobqBX9/Wu1beSX9cJvbdtlgXQjiZQ==
-X-Received: by 2002:adf:e74a:: with SMTP id c10mr29882wrn.109.1588608934609;
- Mon, 04 May 2020 09:15:34 -0700 (PDT)
+ bh=kmQ9Fl48Rq8fFbBnLUeHmzhD5g9BXt07MmpxGvo8jek=;
+ b=IUs5F8OKgO7g/m4vbdvtgfgrAXPg3nP15Z0jEbVayGS0mC8qHf8/PxBxUyNFtmbkzu
+ G/8+/GTBt2MvFVpGns6sMmh4O8CIwKKNi6V8GCn+/C+27n69agCujPP8u/fYL9hG0VAN
+ 49wWQvtEJh+Aoh9fxr0iZF9UYtucjuqHhIqmgBvyQKVgFhKaE+LnlngUNPxcDtD/wASL
+ BJ7SEvmFaleouJdyP8vCVptvnQH1wPYXvZI4sHBo+byNrStrfkAVYZnHXGT68DVxWEVY
+ ZfWhPn3UnmMf+QI8YIWYuBY1xAVIDLE4srr2JowuTxfmSKgHz1IuAbNRLreDFerWbbXi
+ HFfQ==
+X-Gm-Message-State: AGi0PuZh+GOND8b/Mucdou1ma4QnUFcJexxY4wLQ2sdxlSfp3shnG04p
+ 9MorPnU+ZTZNLJphWgwjSLbxdbYnhjU=
+X-Google-Smtp-Source: APiQypLE/9mShXijUTGSNuwdsoqCy1IDlsukyo+VcoHPTrrotHHwJbpHSrVV2pV5piug3VyMHbtyGw==
+X-Received: by 2002:a1c:bc09:: with SMTP id m9mr14923473wmf.145.1588608935594; 
+ Mon, 04 May 2020 09:15:35 -0700 (PDT)
 Received: from linaro.org ([2a00:23c5:6801:1801:bc12:b74:297d:dafc])
- by smtp.gmail.com with ESMTPSA id k6sm14623756wma.19.2020.05.04.09.15.33
+ by smtp.gmail.com with ESMTPSA id k6sm14623756wma.19.2020.05.04.09.15.34
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Mon, 04 May 2020 09:15:34 -0700 (PDT)
 From: Mike Leach <mike.leach@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, coresight@lists.linaro.org,
  mathieu.poirier@linaro.org
-Subject: [PATCH v2 1/2] coresight: cti: Add CPU Hotplug handling to CTI driver.
-Date: Mon,  4 May 2020 17:15:29 +0100
-Message-Id: <20200504161530.9284-2-mike.leach@linaro.org>
+Subject: [PATCH v2 2/2] coresight: cti: Add CPU idle pm notifer to CTI devices.
+Date: Mon,  4 May 2020 17:15:30 +0100
+Message-Id: <20200504161530.9284-3-mike.leach@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200504161530.9284-1-mike.leach@linaro.org>
 References: <20200504161530.9284-1-mike.leach@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_091537_100831_D436A615 
-X-CRM114-Status: GOOD (  18.30  )
+X-CRM114-CacheID: sfid-20200504_091540_199022_9A0ABF14 
+X-CRM114-Status: GOOD (  15.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,167 +103,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds registration of CPU start and stop functions to CPU hotplug
-mechanisms - for any CPU bound CTI.
-
-Sets CTI powered flag according to state.
-Will enable CTI on CPU start if there are existing enable requests.
+Adds a notify callback for CPU PM events to the CTI driver - for
+CPU bound CTI devices.
 
 Signed-off-by: Mike Leach <mike.leach@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-cti.c | 91 +++++++++++++++++++++
- include/linux/cpuhotplug.h                  |  1 +
- 2 files changed, 92 insertions(+)
+ drivers/hwtracing/coresight/coresight-cti.c | 82 +++++++++++++++++++++
+ 1 file changed, 82 insertions(+)
 
 diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-index be61c1705916..9af66719ae5b 100644
+index 9af66719ae5b..0f0c14528701 100644
 --- a/drivers/hwtracing/coresight/coresight-cti.c
 +++ b/drivers/hwtracing/coresight/coresight-cti.c
-@@ -40,6 +40,12 @@ static DEFINE_MUTEX(ect_mutex);
- #define csdev_to_cti_drvdata(csdev)	\
- 	dev_get_drvdata(csdev->dev.parent)
- 
-+/* power management handling */
-+static int nr_cti_cpu;
-+
-+/* quick lookup list for CPU bound CTIs when power handling */
-+static struct cti_drvdata *cti_cpu_drvdata[NR_CPUS];
-+
- /*
-  * CTI naming. CTI bound to cores will have the name cti_cpu<N> where
-  * N is the CPU ID. System CTIs will have the name cti_sys<I> where I
-@@ -129,6 +135,35 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
- 	return rc;
- }
- 
-+/* re-enable CTI on CPU when using CPU hotplug */
-+static void cti_cpuhp_enable_hw(struct cti_drvdata *drvdata)
-+{
-+	struct cti_config *config = &drvdata->config;
-+	struct device *dev = &drvdata->csdev->dev;
-+
-+	pm_runtime_get_sync(dev->parent);
-+	spin_lock(&drvdata->spinlock);
-+	config->hw_powered = true;
-+
-+	/* no need to do anything if no enable request */
-+	if (!atomic_read(&drvdata->config.enable_req_count))
-+		goto cti_hp_not_enabled;
-+
-+	/* try to claim the device */
-+	if (coresight_claim_device(drvdata->base))
-+		goto cti_hp_not_enabled;
-+
-+	cti_write_all_hw_regs(drvdata);
-+	config->hw_enabled = true;
-+	spin_unlock(&drvdata->spinlock);
-+	return;
-+
-+	/* did not re-enable due to no claim / no request */
-+cti_hp_not_enabled:
-+	spin_unlock(&drvdata->spinlock);
-+	pm_runtime_put(dev->parent);
-+}
-+
- /* disable hardware */
- static int cti_disable_hw(struct cti_drvdata *drvdata)
- {
-@@ -620,6 +655,44 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
+@@ -8,6 +8,7 @@
+ #include <linux/atomic.h>
+ #include <linux/bits.h>
+ #include <linux/coresight.h>
++#include <linux/cpu_pm.h>
+ #include <linux/device.h>
+ #include <linux/io.h>
+ #include <linux/kernel.h>
+@@ -655,6 +656,84 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
  	}
  }
  
-+/* CPU HP handlers */
-+static int cti_starting_cpu(unsigned int cpu)
++/** cti PM callbacks **/
++static int cti_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
++			     void *v)
 +{
-+	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
++	struct cti_drvdata *drvdata;
++	unsigned int cpu = smp_processor_id();
++	int notify_res = NOTIFY_OK;
 +
-+	if (!drvdata)
-+		return 0;
++	if (!cti_cpu_drvdata[cpu])
++		return NOTIFY_OK;
 +
-+	cti_cpuhp_enable_hw(drvdata);
-+	return 0;
-+}
++	drvdata = cti_cpu_drvdata[cpu];
 +
-+static int cti_dying_cpu(unsigned int cpu)
-+{
-+	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
-+
-+	if (!drvdata)
-+		return 0;
++	if (WARN_ON_ONCE(drvdata->ctidev.cpu != cpu))
++		return NOTIFY_BAD;
 +
 +	spin_lock(&drvdata->spinlock);
-+	drvdata->config.hw_powered = false;
-+	coresight_disclaim_device(drvdata->base);
++
++	switch (cmd) {
++	case CPU_PM_ENTER:
++		/* CTI regs all static - we have a copy & nothing to save */
++		drvdata->config.hw_powered = false;
++		if (drvdata->config.hw_enabled)
++			coresight_disclaim_device(drvdata->base);
++		break;
++
++	case CPU_PM_ENTER_FAILED:
++		drvdata->config.hw_powered = true;
++		if (drvdata->config.hw_enabled) {
++			if (coresight_claim_device(drvdata->base))
++				drvdata->config.hw_enabled = false;
++		}
++		break;
++
++	case CPU_PM_EXIT:
++		/* write hardware registers to re-enable. */
++		drvdata->config.hw_powered = true;
++		drvdata->config.hw_enabled = false;
++
++		/* check enable reference count to enable HW */
++		if (atomic_read(&drvdata->config.enable_req_count)) {
++			/* check we can claim the device as we re-power */
++			if (coresight_claim_device(drvdata->base))
++				goto cti_notify_exit;
++
++			drvdata->config.hw_enabled = true;
++			cti_write_all_hw_regs(drvdata);
++		}
++		break;
++
++	default:
++		notify_res = NOTIFY_DONE;
++		break;
++	}
++
++cti_notify_exit:
 +	spin_unlock(&drvdata->spinlock);
++	return notify_res;
++}
++
++static struct notifier_block cti_cpu_pm_nb = {
++	.notifier_call = cti_cpu_pm_notify,
++};
++
++static int cti_cpu_pm_register(void)
++{
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		return cpu_pm_register_notifier(&cti_cpu_pm_nb);
++
 +	return 0;
 +}
 +
-+/* release PM registrations */
-+static void cti_pm_release(struct cti_drvdata *drvdata)
++static void cti_cpu_pm_unregister(void)
 +{
-+	if (drvdata->ctidev.cpu >= 0) {
-+		if (--nr_cti_cpu == 0) {
-+			cpuhp_remove_state_nocalls(
-+				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
-+		}
-+		cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
-+	}
++	if (IS_ENABLED(CONFIG_CPU_PM))
++		cpu_pm_unregister_notifier(&cti_cpu_pm_nb);
 +}
 +
- /** cti ect operations **/
- int cti_enable(struct coresight_device *csdev)
+ /* CPU HP handlers */
+ static int cti_starting_cpu(unsigned int cpu)
  {
-@@ -655,6 +728,7 @@ static void cti_device_release(struct device *dev)
- 
- 	mutex_lock(&ect_mutex);
- 	cti_remove_conn_xrefs(drvdata);
-+	cti_pm_release(drvdata);
- 
- 	/* remove from the list */
- 	list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
-@@ -730,6 +804,22 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
- 		goto err_out;
- 	}
- 
-+	/* setup CPU power management handling for CPU bound CTI devices. */
-+	if (drvdata->ctidev.cpu >= 0) {
-+		cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
-+		if (!nr_cti_cpu++) {
-+			cpus_read_lock();
-+			cpuhp_setup_state_nocalls_cpuslocked(
-+				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
-+				"arm/coresight_cti:starting",
-+				cti_starting_cpu, cti_dying_cpu);
+@@ -686,6 +765,8 @@ static void cti_pm_release(struct cti_drvdata *drvdata)
+ {
+ 	if (drvdata->ctidev.cpu >= 0) {
+ 		if (--nr_cti_cpu == 0) {
++			cti_cpu_pm_unregister();
 +
-+			cpus_read_unlock();
-+			if (ret)
-+				goto err_out;
-+		}
-+	}
-+
- 	/* create dynamic attributes for connections */
- 	ret = cti_create_cons_sysfs(dev, drvdata);
- 	if (ret) {
-@@ -768,6 +858,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
- 	return 0;
+ 			cpuhp_remove_state_nocalls(
+ 				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
+ 		}
+@@ -814,6 +895,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
+ 				"arm/coresight_cti:starting",
+ 				cti_starting_cpu, cti_dying_cpu);
  
- err_out:
-+	cti_pm_release(drvdata);
- 	return ret;
- }
- 
-diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
-index 77d70b633531..6dc7332307ca 100644
---- a/include/linux/cpuhotplug.h
-+++ b/include/linux/cpuhotplug.h
-@@ -142,6 +142,7 @@ enum cpuhp_state {
- 	CPUHP_AP_ARM_XEN_STARTING,
- 	CPUHP_AP_ARM_KVMPV_STARTING,
- 	CPUHP_AP_ARM_CORESIGHT_STARTING,
-+	CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
- 	CPUHP_AP_ARM64_ISNDEP_STARTING,
- 	CPUHP_AP_SMPCFD_DYING,
- 	CPUHP_AP_X86_TBOOT_DYING,
++			ret = cti_cpu_pm_register();
+ 			cpus_read_unlock();
+ 			if (ret)
+ 				goto err_out;
 -- 
 2.17.1
 
