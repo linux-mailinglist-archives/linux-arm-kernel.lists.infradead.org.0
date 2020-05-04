@@ -2,77 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D1601C3066
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 02:16:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 303F51C30E3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 03:10:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RZFfFO/aOaKE8sRhmpGy0BlRQFIgl3SicFmT03VAVUA=; b=X1mx0OrI4iHq94
-	k8xQidWj8JDeeeCJxG/35Jhy5XlBP1/zDU0xOxeUluTVXnU5x+smp9fPhdQUwE3jpokuBJcwqNR82
-	ClKVCMSrhttD4YCtH9yHIN1ksm5Zff2bjqi4BE1qtf9si3vCf0vl1P0RX3mAJhs+k/nH22C5YTjXY
-	aQY2ADgY3mHlDT8FWWv5h+H9YaFd6mVIn4uA3xiTdX6xsYQKWpU7YYls4XUNDoFTFHM3xxGHLD0qo
-	FP6gNPGT5Ib+hw7/UDV8jU1e/EWtGgAI0fI/0C+azb4NVbR5T/u5AATZXWTmXoOmMdFLIeRXYVkJC
-	L/bXJHDNDrYagBHJ0Z9w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YLTmvvZTVJVfynSX5vWq/r/E9MC9a6KwJKiua/P0jrM=; b=BQ0744R2CRpNVV
+	1mOHWrrThD+eBIavWuGIUWCXyd6d0HHrjhQ9vFvgo/Jw14J04MXlDq11WK3ABo6uEc+AdQ5tanPki
+	m69bc067jAqvZ+wvFSZv7sWNEF+BsVZrceGyqToaWNSoeHsT3RGzu89HJZ/jo2yA+itojHntRvaVB
+	h6z8D3iL7bwDXgUYNY92a3zivIihUGos+DtMYlAadgkqJSQ7eCpR4hNS0lW6ujmSCNPauSF+WgcXa
+	+f+Ps487u2gMLAeHgS73u8qRgdTSuNqGTbLdemhzLp+Aqe60fC/NdvWP9PPvPubGW6Bd3G1ZHHSw/
+	4wnadYLK+bPO4W2OBqpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVOmP-0007Gv-F7; Mon, 04 May 2020 00:16:17 +0000
-Received: from conssluserg-02.nifty.com ([210.131.2.81])
+	id 1jVPcf-0004dC-Cr; Mon, 04 May 2020 01:10:17 +0000
+Received: from mga12.intel.com ([192.55.52.136])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVOmI-00075W-0R
- for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 00:16:11 +0000
-Received: from mail-vs1-f54.google.com (mail-vs1-f54.google.com
- [209.85.217.54]) (authenticated)
- by conssluserg-02.nifty.com with ESMTP id 0440FoEI021730
- for <linux-arm-kernel@lists.infradead.org>; Mon, 4 May 2020 09:15:51 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com 0440FoEI021730
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1588551351;
- bh=lq9Uzj7pb5PQFw+VXMD0iM6sIqPMlYMT850vnF71eIo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HsBDug0cOUu+9rxknFugrSdSxYyIwJWW+s7GijIMgAsUFtnpSIoyJrCDiye8j/kPj
- scqMRUqeJSqFN68aD2vEzf6d6n1Ue6VPpBQaWbCxXrXc4JAICS1nlR4h0brVGviO3Q
- Um+tGVfkYN2958pvKXwzR8tfx0Ym7BsZebBqyuGvoFFH62xgqv30hVb/KC8qlaRXn/
- 7Sjf0dNVy8Ov6IVcN+Rf3In46YOinVAtXp3APTbL98oo8HNkv5oeYhjbVZ/bBpgcP8
- v9dbfRvLJB8cy/+S/72yjVB/d678m9ebiBlYDXkKYh4TAshvcuSxQCLS4P9a9zIn9M
- M9v+0sXHqm50w==
-X-Nifty-SrcIP: [209.85.217.54]
-Received: by mail-vs1-f54.google.com with SMTP id a5so10090104vsm.7
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 03 May 2020 17:15:51 -0700 (PDT)
-X-Gm-Message-State: AGi0PuY1HA5ZoFSaZa+ti9sOTjRyFigtbHmfRQcVoywWCU/sVd+/3YX/
- Ri6FG/OvAP8dLnGBxznmCq/4e3fsRT4eBnoebuI=
-X-Google-Smtp-Source: APiQypJF8ynSDKYMiOHyG945XHqTJ6m0pJp8ZtLPkrwqgVAa+C06wpn4TeCNBGXLAEEkRYNonO/ieONdJXKxdJY3GoI=
-X-Received: by 2002:a67:e94d:: with SMTP id p13mr9916129vso.215.1588551349876; 
- Sun, 03 May 2020 17:15:49 -0700 (PDT)
+ id 1jVPbo-00042K-OQ; Mon, 04 May 2020 01:09:26 +0000
+IronPort-SDR: y3fu0p+b6bb7wVRJTr423zdS0XiATtUnpnV31Yg5bNHuya0y8J5OJ/aQZIdVdHf0vbR9YtsC9t
+ AoAAbXkijjQA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 May 2020 18:09:20 -0700
+IronPort-SDR: fHucA4RWhttBOWYdNcVbZcLe92djrCMA36BhMr8sTNTq9uR1pF6GcVTIexdnyZrcSkJFrWzqIJ
+ LnPtCLKlHAVA==
+X-IronPort-AV: E=Sophos;i="5.73,350,1583222400"; d="scan'208";a="248071661"
+Received: from iweiny-desk2.sc.intel.com (HELO localhost) ([10.3.52.147])
+ by orsmga007-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 03 May 2020 18:09:19 -0700
+From: ira.weiny@intel.com
+To: linux-kernel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Christian Koenig <christian.koenig@amd.com>, Huang Rui <ray.huang@amd.com>
+Subject: [PATCH V2 00/11] Subject: Remove duplicated kmap code
+Date: Sun,  3 May 2020 18:09:01 -0700
+Message-Id: <20200504010912.982044-1-ira.weiny@intel.com>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
- <20200503132906.GA32207@ninjato>
-In-Reply-To: <20200503132906.GA32207@ninjato>
-From: Masahiro Yamada <masahiroy@kernel.org>
-Date: Mon, 4 May 2020 09:15:14 +0900
-X-Gmail-Original-Message-ID: <CAK7LNASXgD7Y2SToycCLYX2zVN-L5uWRoCzQ3N7MjoT+j0KfkQ@mail.gmail.com>
-Message-ID: <CAK7LNASXgD7Y2SToycCLYX2zVN-L5uWRoCzQ3N7MjoT+j0KfkQ@mail.gmail.com>
-Subject: Re: [PATCH] i2c: uniphier: Remove superfluous error message in
- uniphier_i2c_probe()
-To: Wolfram Sang <wsa@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200503_171610_381837_9E94C529 
-X-CRM114-Status: GOOD (  10.58  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20200503_180924_800197_03500D2A 
+X-CRM114-Status: UNSURE (   9.56  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.81 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.136 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,37 +67,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-i2c@vger.kernel.org
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Ira Weiny <ira.weiny@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Andy Lutomirski <luto@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
+ linux-mips@vger.kernel.org, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 3, 2020 at 10:29 PM Wolfram Sang <wsa@kernel.org> wrote:
->
-> On Sun, May 03, 2020 at 05:38:47PM +0530, Aishwarya Ramakrishnan wrote:
-> > The function platform_get_irq can log an error by itself.
-> > This omit a redundant message for exception handling in the
-> > calling function.
-> >
-> > Suggested by Coccinelle.
-> >
-> > Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
->
-> Please send only one patch for the whole I2C subsystem.
->
+From: Ira Weiny <ira.weiny@intel.com>
 
-Yeah, and then please add my ack to v2.
+The kmap infrastructure has been copied almost verbatim to every architecture.
+This series consolidates obvious duplicated code by defining core functions
+which call into the architectures only when needed.
 
-Acked-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Some of the k[un]map_atomic() implementations have some similarities but the
+similarities were not sufficient to warrant further changes.
 
+In addition we remove a duplicate implementation of kmap() in DRM.
+
+Testing was done by 0day to cover all the architectures I can't readily
+build/test.
+
+---
+Changes from V1:
+	Fix bisect-ability
+	Update commit message and fix line lengths
+	Remove unneded kunmap_atomic_high() declarations
+	Remove unneded kmap_atomic_high() declarations
+	collect reviews
+	rebase to 5.7-rc4
+
+Changes from V0:
+	Define kmap_flush_tlb() and make kmap() truely arch independent.
+	Redefine the k[un]map_atomic_* code to call into the architectures for
+		high mem pages
+	Ensure all architectures define kmap_prot, use it appropriately, and
+		define kmap_atomic_prot()
+	Remove drm implementation of kmap_atomic()
+
+Ira Weiny (11):
+  arch/kmap: Remove BUG_ON()
+  arch/xtensa: Move kmap build bug out of the way
+  arch/kmap: Remove redundant arch specific kmaps
+  arch/kunmap: Remove duplicate kunmap implementations
+  {x86,powerpc,microblaze}/kmap: Move preempt disable
+  arch/kmap_atomic: Consolidate duplicate code
+  arch/kunmap_atomic: Consolidate duplicate code
+  arch/kmap: Ensure kmap_prot visibility
+  arch/kmap: Don't hard code kmap_prot values
+  arch/kmap: Define kmap_atomic_prot() for all arch's
+  drm: Remove drm specific kmap_atomic code
+
+ arch/arc/include/asm/highmem.h        | 15 -------
+ arch/arc/mm/highmem.c                 | 28 +++---------
+ arch/arm/include/asm/highmem.h        |  7 ---
+ arch/arm/mm/highmem.c                 | 35 +++------------
+ arch/csky/include/asm/highmem.h       |  9 +---
+ arch/csky/mm/highmem.c                | 43 +++++--------------
+ arch/microblaze/include/asm/highmem.h | 28 +-----------
+ arch/microblaze/mm/highmem.c          | 16 ++-----
+ arch/microblaze/mm/init.c             |  3 --
+ arch/mips/include/asm/highmem.h       |  9 +---
+ arch/mips/mm/cache.c                  |  6 +--
+ arch/mips/mm/highmem.c                | 49 ++++-----------------
+ arch/nds32/include/asm/highmem.h      |  7 ---
+ arch/nds32/mm/highmem.c               | 39 +++--------------
+ arch/parisc/include/asm/cacheflush.h  |  4 +-
+ arch/powerpc/include/asm/highmem.h    | 29 +------------
+ arch/powerpc/mm/highmem.c             | 21 ++-------
+ arch/powerpc/mm/mem.c                 |  3 --
+ arch/sparc/include/asm/highmem.h      | 22 ----------
+ arch/sparc/mm/highmem.c               | 18 +++-----
+ arch/x86/include/asm/highmem.h        |  9 ----
+ arch/x86/mm/highmem_32.c              | 50 ++-------------------
+ arch/xtensa/include/asm/highmem.h     | 27 ------------
+ arch/xtensa/mm/highmem.c              | 22 ++++------
+ drivers/gpu/drm/ttm/ttm_bo_util.c     | 56 ++----------------------
+ drivers/gpu/drm/vmwgfx/vmwgfx_blit.c  | 16 +++----
+ include/drm/ttm/ttm_bo_api.h          |  4 --
+ include/linux/highmem.h               | 62 +++++++++++++++++++++++++--
+ 28 files changed, 140 insertions(+), 497 deletions(-)
 
 -- 
-Best Regards
-Masahiro Yamada
+2.25.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
