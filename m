@@ -2,56 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 090701C3813
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:28:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC7D01C381D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  4 May 2020 13:31:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=cwoEZSe04YIINRP1bbdansVF1oqJkY9i9ne7Cqez+yc=; b=D1AA8Y156VtHaU+USEl19AT8u
-	y4ghRJcHRbUUkbp4WF9rdgGSaCj38Lke6RLnsqrKIyIdWI9t5Pq6k7yeZChXX3/F6BPG5G9CafGbh
-	iunLIpV9AEuKgODs4CfcM7Z84DcDWtZqxLs0fsPOxflzh6N2w5uDU/V/gClChBBmA6lZ3gCBzbAh5
-	pfHT9LfGXpvSwEX0G05zZFbTgjsRz1Sw04ppVk/GtckMDz0T0zzFvnta99RuK766UvT4CFU2jmUtY
-	GS/kjv59y0B3Xak6t9hQOsWwhW3w4mwUbMg397kBqhlPcDJEMzH2AoVORBwMNZ8q56tR8IRxdKEhU
-	/nZ7m/dAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=IwqIZQpnVMwVrw08xYAZ2cQUq2cIwuZWEC2OS90iFHo=; b=OO2CVUho25Z5G+
+	PfX1/XswQuYo5XKCaNdeHaPkQEUc3sZ98zG4DhbXm8xhnC729/6vIH0g4rrZD69E7Jw8GUexrqZ86
+	QuGbsGoNFchfY9cAnDVf16ZAOTMB7HyR7Zit4ybN64RxmgmV7GN0jW+QTkcBijVidUP8UI33N1kM4
+	xiWAEWE6dxDY7kJcTZdMU9hi3VJ580AGmAVaoLz5mUo/E7Ri3Z0dwwQ9j+o0+ajBx93KiK8/kTl5t
+	9p+VeCxIa+eVw0rcirRP4KSfhqAvmAi62Hsw4jtonF1WFyNcAPiimrqFz6fICJ57og4LGS3bwGNCT
+	Fh9NQHdrE4Ke1pwWAXAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVZHI-0007eE-Ba; Mon, 04 May 2020 11:28:52 +0000
+	id 1jVZJR-0002CA-9Q; Mon, 04 May 2020 11:31:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVZH6-0007cU-Qm; Mon, 04 May 2020 11:28:42 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id F190A20721;
- Mon,  4 May 2020 11:28:39 +0000 (UTC)
+ id 1jVZJJ-0002Bi-M1
+ for linux-arm-kernel@lists.infradead.org; Mon, 04 May 2020 11:30:58 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 44F3D2073E;
+ Mon,  4 May 2020 11:30:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588591720;
- bh=8dnHAlveF8oSzyRI/bshOeUXvAOZ3zOI0uKOwMIafSU=;
+ s=default; t=1588591857;
+ bh=VZLtzlcQTt1eJsb0z5+z2NjKOOqUX3h5X2JO4zv9pDo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=V5QRijKOE29Jo+EKAdkh+ewKNtgdqP49U526Q2Sfxi2stgSeoXwYEeo4vzFwII7Nb
- JAqhvbWO3/mpTHvBOlkjefENX/UF/jjBUXzuHtCj1Zw4IYC4e3oA8UZbPwN0f569Yx
- 3hRVp5IdHkMViNHlTTIoUmfezAB+MvoUejMxdi6w=
-Date: Mon, 4 May 2020 12:28:37 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Subject: Re: stable-rc/linux-5.4.y bisection: baseline.dmesg.alert on
- meson-g12a-x96-max
-Message-ID: <20200504112837.GD5491@sirena.org.uk>
-References: <5eabecbf.1c69fb81.2c617.628f@mx.google.com>
- <cc10812b-19bd-6bd1-75da-32082241640a@collabora.com>
- <20200501122536.GA38314@sirena.org.uk>
- <20200502134721.GH13035@sasha-vm>
- <20200502140908.GA10998@kroah.com>
+ b=2OhI4xd+rijq0aBcmEM/iBxzF5t4ZID7LjsEROOxJ3U+rl8zzzZODfvwMGpGOIVOU
+ hyTIJfu0kwTZZqy5wn/cm2xQcjZSwI8zFeAX/Cml8tlVeHtrwun8MrVVhu0ozgFYpj
+ OhL5v6lGFQghRa1mpUK69u+KkaktGLi9EQgJ7HiM=
+Date: Mon, 4 May 2020 12:30:52 +0100
+From: Will Deacon <will@kernel.org>
+To: Marc Zyngier <maz@kernel.org>, pbonzini@redhat.com
+Subject: Re: [GIT PULL] KVM/arm fixes for 5.7, take #2
+Message-ID: <20200504113051.GB1326@willie-the-truck>
+References: <20200501101204.364798-1-maz@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20200502140908.GA10998@kroah.com>
-X-Cookie: My life is a patio of fun!
+Content-Disposition: inline
+In-Reply-To: <20200501101204.364798-1-maz@kernel.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_042840_888901_245970CB 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200504_043057_741134_385EFEEB 
+X-CRM114-Status: GOOD (  12.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,75 +76,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, alsa-devel@alsa-project.org,
- linux-kernel@vger.kernel.org,
- Guillaume Tucker <guillaume.tucker@collabora.com>,
- Takashi Iwai <tiwai@suse.com>, Liam Girdwood <lgirdwood@gmail.com>,
- stable@vger.kernel.org, kernelci@groups.io,
- Kevin Hilman <khilman@baylibre.com>, linux-amlogic@lists.infradead.org,
- Jaroslav Kysela <perex@perex.cz>, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: multipart/mixed; boundary="===============1366063810322483116=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Jones <drjones@redhat.com>,
+ kvm@vger.kernel.org, Fangrui Song <maskray@google.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Nick Desaulniers <ndesaulniers@google.com>, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Zenghui Yu <yuzenghui@huawei.com>,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Marc, Paolo,
 
---===============1366063810322483116==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="HWvPVVuAAfuRc6SZ"
-Content-Disposition: inline
+On Fri, May 01, 2020 at 11:12:00AM +0100, Marc Zyngier wrote:
+> This is the second batch of KVM/arm fixes for 5.7. A compilation fix,
+> a GICv4.1 fix, plus a couple of sanity checks (SP_EL0 save/restore,
+> and the sanitising of AArch32 registers).
+> 
+> Note that the pull request I sent a week ago[1] is still valid, and
+> that this new series is built on top of the previous one.
+> 
+> Please pull,
 
+I don't see this queued up in the kvm tree, which appears to have been
+sitting dormant for 10 days. Consequently, there are fixes sitting in
+limbo and we /still/ don't have a sensible base for arm64/kvm patches
+targetting 5.8.
 
---HWvPVVuAAfuRc6SZ
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Paolo -- how can I help get this stuff moving again? I'm more than happy
+to send this lot up to Linus via arm64 if you're busy atm. Please just
+let me know.
 
-On Sat, May 02, 2020 at 04:09:08PM +0200, Greg Kroah-Hartman wrote:
-> On Sat, May 02, 2020 at 09:47:21AM -0400, Sasha Levin wrote:
+Cheers,
 
-> > > > >   Result:     09f4294793bd3 ASoC: meson: axg-card: fix codec-to-codec link setup
-
-> > > | This clearly describes the issue as only being present after the above
-> > > | commit which is not in v5.6.
-
-> > > Probably best that this not be backported.
-
-> > Hrm... But I never queued that commit... I wonder what's up.
-
-> I saw the Fixes: tag, but missed the changelog text.  My fault.
-
-> I'll go drop it from everywhere, sorry about that.
-
-Ah, that explains it - thanks for sorting this out.
-
---HWvPVVuAAfuRc6SZ
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6v/GUACgkQJNaLcl1U
-h9DTqQf+J1WhHhwnr86jT/LtdmuYxn4YhdfaaW+RFSBKmakNZhXZ9BKok8utln+p
-PkdIEGrfr8QfsSuhz4WYKDcN6K72tM+U3j0c4UFrYlm9kEfpuDr5AqJrdAclL76T
-Ns2oaZFZEnIpHnkajK6KCa1Ss4Ka7AvQNuVJfZ+/d4DdAVDSUl3H9TM+1yJyR4Cz
-FjMXYnlw+kp4LGSLCUy2yMEZ6YR1dzgDi7PIae1IYwwourTFOVjsox1CQPmE2bYv
-32U+RLyE6qxAlFRwVqmhMqBWYr/ZUEmV8W026fEQWprg7jCq2oPCQxALfanL9f/X
-rKflgftgFph+o3Rxz/MB0jHdsT/FbQ==
-=KlPi
------END PGP SIGNATURE-----
-
---HWvPVVuAAfuRc6SZ--
-
-
---===============1366063810322483116==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1366063810322483116==--
-
