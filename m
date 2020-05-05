@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3538B1C59DC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:42:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 597C11C59E6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HlpLX9E18cnb5um50/u5/sMhCbAZwO0rHmZMDd5kvck=; b=dJsJ1H5gNvcHfo
-	R0vZi3crev/fuBVw8eirO+gc+tbO1Qu7vxkB5xxF89/k1bf6E1c0tNigyuweLFh9MpaHMfh7zKotS
-	l+9u10P5bMk1RRptpfagmWKXRtn+QPhNkhaH7eT2X7QTw4sTnZRbPoZDayjTJS41Gb/4s0hlt1lMt
-	dDq8snifzwseruUE4Mq1po7C2kXWpOW8MxfSq4aIUJt+X7vpKjRxRuPNzxQxvFi8hhl0DqFDLHRhd
-	jNbql1Z8ZSkqUAsrv+8+0dAXFb02u377pLBmg0TSyTBRWGaDlsAsjkCrs1fcJ9YB+pRHby+NxNbbe
-	t0s0TkM9uvBRm13NNfvQ==;
+	List-Owner; bh=+xo0ZQQcmnYpIAgZpj0LJ/Yd6mWnqhjP4zxq87j60rs=; b=ELoSvzP/m5jG8t
+	d3SymtCMjTGalcdI5V7EAfhe5Kl+dWw5JCWqE4wVNMb+S/P3QUQaDK3LnfmwDwFxQWvTG3iELvKFp
+	Udv3tK8Yy86obFSnTkcMX9dXLmDvhiqOZY3/7qBebxXw9BKFxC/aCpsABDczF+qccLv/nxf6ZlGbA
+	IsXG4y9EigOXd6VnJrujVONdYRWEjXmpSQGk1aQT66N0KvK9GAdAf2BTdi7oWnHySMt33KbQVKJ4J
+	6TjkgmB8NsVnwUPcmxsd45ZBNkdyt//GbVAzuTxstn2HqPV35od4kB1kaQUYoaBcuVg1VGx7aj+Os
+	8PXyQF9o85E6/hZeTaew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVymW-0004Xz-Ic; Tue, 05 May 2020 14:42:48 +0000
-Received: from mout.kundenserver.de ([212.227.126.135])
+	id 1jVypH-0007VN-2R; Tue, 05 May 2020 14:45:39 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVymP-0004X7-EH
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:42:43 +0000
-Received: from mail-qt1-f175.google.com ([209.85.160.175]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1Mt7Ll-1jGMfX2Scr-00tUiS for <linux-arm-kernel@lists.infradead.org>; Tue,
- 05 May 2020 16:42:38 +0200
-Received: by mail-qt1-f175.google.com with SMTP id g26so2059064qtv.13
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 07:42:38 -0700 (PDT)
-X-Gm-Message-State: AGi0Pubni8zl6B3u410Je+0wRRn2YTf9YfEie+l8LC+AvfjWOucrJ1ev
- 662DWzl+CoSOWQ3Vs+ad9+HNjhC46nWtdc8Tmqc=
-X-Google-Smtp-Source: APiQypLlhYQf7fq/1v0dm90zwWA86A9C8KA52UCtn36b/qe56zBKDZqiifbmYW+Cab0gFL/AUmEbJBOD9oHp5/E1lrQ=
-X-Received: by 2002:ac8:12c2:: with SMTP id b2mr3012949qtj.7.1588689757275;
- Tue, 05 May 2020 07:42:37 -0700 (PDT)
+ id 1jVyp7-0007SW-Qd
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:45:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=bce39cuhX+v1hhfYsPnYxLnuYR5lP/z3GapCTjD03hM=; b=b2Jt5T0jNdoZl3RJSWosMCfhx
+ kgLFhgINbBWKyjtBOcxA48/fC1ckaCPZjO8j937EwIiBU4erqDB7D6RmWvm8RHrOqtENm7l8eHZ+C
+ f+YnQvZk6yGKlVtaXZAhBkEuJPKAa4fA/+tCo2SJgGVFLrHiMw5b0aA/webhWeJX1A9tmjuzfpMMQ
+ EiOLtC5g8TLkvnMlRURyYhWvzpC9ddO9H52wFyZmELgmCDazwji3PP3ueKlVEUEmJyQzS45eFLsci
+ AQQd2bWz7zT+OGSLFNkNYkd/lkL8nV3EZKre9zaUHj8OX/lu/HbIGwE8iBgAHEbT5LLfJR4IuBDFP
+ ucLMiqVAw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36340)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jVyod-00030V-EZ; Tue, 05 May 2020 15:44:59 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jVyoc-0007F0-7K; Tue, 05 May 2020 15:44:58 +0100
+Date: Tue, 5 May 2020 15:44:58 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
+Subject: Re: [net-next PATCH v3 1/5] net: phy: Introduce phy related fwnode
+ functions
+Message-ID: <20200505144458.GK1551@shell.armlinux.org.uk>
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-2-calvin.johnson@oss.nxp.com>
 MIME-Version: 1.0
-References: <20200505141218.684079-1-arnd@arndb.de>
- <20200505141908.GH1551@shell.armlinux.org.uk>
-In-Reply-To: <20200505141908.GH1551@shell.armlinux.org.uk>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 5 May 2020 16:42:20 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1c1+7GyAzocpWqUMo7=oN48WAdDfPZtnEBHQXpmd7pOw@mail.gmail.com>
-Message-ID: <CAK8P3a1c1+7GyAzocpWqUMo7=oN48WAdDfPZtnEBHQXpmd7pOw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: use ARM unwinder for gcov
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-X-Provags-ID: V03:K1:bkhsWnVXPdo+4ii9s/+zbMnPL7wPtZYmxbZIc8gsTDjYzgL0xMS
- e++g+1GJc/7bVpR2GeD+GPZP3hgA4UajajGvQkysT7T6zbj6l8Npc1Tve2+LDwS3wIjhekg
- sUZNR9XDs5UP4MaPhGaTPVz2rDrnd4aVRwJqZS6FojWi7Ku1IaOG8iLcYfFSCBriMpg0NqK
- fI7No5IwLlTY2Qnquiw3Q==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:91kjf2BYzlQ=:gJbBMAhvZOkMqwRt9krSUM
- tWNnLyw0Qb+R4kN8PtB1ISORSWLceqsK/AwSN2Mzsw1bN1KFTbv+Lklr0t5HGs4TgHPtL2Zik
- V9RGdE3zink0aWRdWn1mTGRp5C0N6Z+T0p0OZdXvi6wbRC4O0B33iS/gEEBGrcRKyNIQrftB0
- PJfVy9PWLuj+fehlbRvqWbq0SqlpBIY/V4F/SqKnoV6IR+kHk912kFWtODya+8dXbR4+uutBw
- nSdNtqaf3l1MfiqX2+sWVvSI/MPsdXOOjzlPeQIBp0WOgAweOYjzlO0BEsVowvuSkCqq6oWNT
- yTsbIvFDYX9KxIiTOhRd0/R321cT6TK3i7IN7fIdVXccNVqjjO09Snb8spBdt0g73h1Vb2YRA
- lfb8Gp16wJhlVGNPDsH/PeaqnkFAKXIuCmqLvExzhnp61Z58x4tBLBP6HkbE7Ho8+tUD3rdyn
- CtfIO70QZLWV7ypYdMOGneiu0uUXRdPNceB9tFT38LZFQM4Sdh+j80pclx/DgpE8j7e/PQX9d
- ESeX6yK+PNcG42AzY6yerOp+gDWlrC9CnnDQFe9iu+UD2txPHCLwNkmP24p+KQrQ8e7GYdE6V
- BqBvmzC/5w4yq7KeRH9CkQ+NvuYa7G15e6FA/59TNIvrzEzw71hZ+XCsTHybPWDmIJTHDC5jd
- CfIHtI0WavVjnUdyAfuRB1YtjBheizSqG89QIwJFMuy613wL+M4gP/v43C5BmpAslYiM8eBSH
- VIarQc8Gzw8/2xsIFgj7idavJoN9w2nUKnrJRl4aDimtZIcZp7oJ+cRemaVTFfuNTXad+DCkF
- kJZehhIaaNL5d4ra2UJ1b5FMWG3wPTkMSpI+6Efxqt6Bjz5Nno=
+Content-Disposition: inline
+In-Reply-To: <20200505132905.10276-2-calvin.johnson@oss.nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_074241_775022_C59FA6CF 
-X-CRM114-Status: GOOD (  15.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_074530_186090_E57AAFF4 
+X-CRM114-Status: GOOD (  22.87  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.135 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.135 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,41 +88,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nathan Huckleberry <nhuck15@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "Rafael J . Wysocki" <rafael@kernel.org>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>, linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 5, 2020 at 4:19 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Tue, May 05, 2020 at 04:11:56PM +0200, Arnd Bergmann wrote:
-> > Using gcov on ARM fails when the frame pointer unwinder is used:
-> >
-> > arm-linux-gnueabi-ld: kernel/softirq.o:(.ARM.exidx+0x120): undefined reference to `__aeabi_unwind_cpp_pr0'
-> > arm-linux-gnueabi-ld: init/main.o:(.ARM.exidx+0x98): undefined reference to `__aeabi_unwind_cpp_pr0'
-> > arm-linux-gnueabi-ld: init/version.o:(.ARM.exidx+0x0): undefined reference to `__aeabi_unwind_cpp_pr0'
-> > arm-linux-gnueabi-ld: init/do_mounts.o:(.ARM.exidx+0x28): undefined reference to `__aeabi_unwind_cpp_pr0'
-> > arm-linux-gnueabi-ld: init/do_mounts_initrd.o:(.ARM.exidx+0x0): undefined reference to `__aeabi_unwind_cpp_pr0'
-> > arm-linux-gnueabi-ld: init/initramfs.o:(.ARM.exidx+0x8): more undefined references to `__aeabi_unwind_cpp_pr0' follow
-> >
-> > This is likely a bug in clang that should be fixed in the compiler.
-> > Forcing the use of the ARM unwinder in this configuration however
-> > works around the problem.
->
-> Or should the stub functions in arch/arm/kernel/unwind.c be moved out?
+On Tue, May 05, 2020 at 06:59:01PM +0530, Calvin Johnson wrote:
+> Define fwnode_phy_find_device() to iterate an mdiobus and find the
+> phy device of the provided phy fwnode. Additionally define
+> device_phy_find_device() to find phy device of provided device.
+> 
+> Define fwnode_get_phy_node() to get phy_node using named reference.
+> 
+> Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
+> ---
+> 
+> Changes in v3:
+>   move fwnode APIs to appropriate place
+>   stubs fwnode APIs for !CONFIG_PHYLIB
+>   improve comment on function return condition.
+> 
+> Changes in v2:
+>   move phy code from base/property.c to net/phy/phy_device.c
+>   replace acpi & of code to get phy-handle with fwnode_find_reference
+> 
+>  drivers/net/phy/phy_device.c | 53 ++++++++++++++++++++++++++++++++++++
+>  include/linux/phy.h          | 19 +++++++++++++
+>  2 files changed, 72 insertions(+)
+> 
+> diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
+> index 7e1ddd5745d2..3e8224132218 100644
+> --- a/drivers/net/phy/phy_device.c
+> +++ b/drivers/net/phy/phy_device.c
+> @@ -31,6 +31,7 @@
+>  #include <linux/mdio.h>
+>  #include <linux/io.h>
+>  #include <linux/uaccess.h>
+> +#include <linux/property.h>
+>  
+>  MODULE_DESCRIPTION("PHY library");
+>  MODULE_AUTHOR("Andy Fleming");
+> @@ -2436,6 +2437,58 @@ static bool phy_drv_supports_irq(struct phy_driver *phydrv)
+>  	return phydrv->config_intr && phydrv->ack_interrupt;
+>  }
+>  
+> +/**
+> + * fwnode_phy_find_device - Find phy_device on the mdiobus for the provided
+> + * phy_fwnode.
+> + * @phy_fwnode: Pointer to the phy's fwnode.
+> + *
+> + * If successful, returns a pointer to the phy_device with the embedded
+> + * struct device refcount incremented by one, or NULL on failure.
+> + */
+> +struct phy_device *fwnode_phy_find_device(struct fwnode_handle *phy_fwnode)
+> +{
+> +	struct device *d;
+> +	struct mdio_device *mdiodev;
+> +
+> +	if (!phy_fwnode)
+> +		return NULL;
+> +
+> +	d = bus_find_device_by_fwnode(&mdio_bus_type, phy_fwnode);
+> +	if (d) {
+> +		mdiodev = to_mdio_device(d);
+> +		if (mdiodev->flags & MDIO_DEVICE_FLAG_PHY)
+> +			return to_phy_device(d);
+> +		put_device(d);
+> +	}
+> +
+> +	return NULL;
+> +}
+> +EXPORT_SYMBOL(fwnode_phy_find_device);
 
-I had not realized this is only a stub. Moving them out should fix the
-link failure, I can
-send a patch after testing if we are sure that calling them is not a
-bug in clang
-that would lead to runtime failures.
+This is basically functionally equivalent to of_phy_find_device().  If
+we replaced of_mdio_find_device() with a fwnode equivalent and used that
+above, we could have both of_mdio_find_device() and of_phy_find_device()
+be wrappers around their fwnode equivalents.
 
-       Arnd
+That also means less lines of code to maintain, and means that we're
+unlikely to have two implementations that may drift apart functionally
+over time because their separated in two different parts of the kernel.
+That is an especially important point given that fwnodes can be DT
+nodes, so one may call fwnode APIs on a DT platform.
+
+> +
+> +/**
+> + * device_phy_find_device - For the given device, get the phy_device
+> + * @dev: Pointer to the given device
+> + *
+> + * Refer return conditions of fwnode_phy_find_device().
+> + */
+> +struct phy_device *device_phy_find_device(struct device *dev)
+> +{
+> +	return fwnode_phy_find_device(dev_fwnode(dev));
+> +}
+> +EXPORT_SYMBOL_GPL(device_phy_find_device);
+> +
+> +/**
+> + * fwnode_get_phy_node - Get the phy_node using the named reference.
+> + * @fwnode: Pointer to fwnode from which phy_node has to be obtained.
+> + *
+> + * Refer return conditions of fwnode_find_reference().
+> + */
+> +struct fwnode_handle *fwnode_get_phy_node(struct fwnode_handle *fwnode)
+> +{
+> +	return fwnode_find_reference(fwnode, "phy-handle", 0);
+> +}
+> +EXPORT_SYMBOL_GPL(fwnode_get_phy_node);
+
+What if the fwnode is a DT device handle?  Shouldn't this also check for
+the legacy properties as well, so we can transition code over to this
+new interface?
+
+> +
+>  /**
+>   * phy_probe - probe and init a PHY device
+>   * @dev: device to probe and init
+> diff --git a/include/linux/phy.h b/include/linux/phy.h
+> index e2bfb9240587..f2664730a331 100644
+> --- a/include/linux/phy.h
+> +++ b/include/linux/phy.h
+> @@ -1141,10 +1141,29 @@ struct phy_device *phy_device_create(struct mii_bus *bus, int addr, u32 phy_id,
+>  				     bool is_c45,
+>  				     struct phy_c45_device_ids *c45_ids);
+>  #if IS_ENABLED(CONFIG_PHYLIB)
+> +struct phy_device *fwnode_phy_find_device(struct fwnode_handle *phy_fwnode);
+> +struct phy_device *device_phy_find_device(struct device *dev);
+> +struct fwnode_handle *fwnode_get_phy_node(struct fwnode_handle *fwnode);
+>  struct phy_device *get_phy_device(struct mii_bus *bus, int addr, bool is_c45);
+>  int phy_device_register(struct phy_device *phy);
+>  void phy_device_free(struct phy_device *phydev);
+>  #else
+> +static inline
+> +struct phy_device *fwnode_phy_find_device(struct fwnode_handle *phy_fwnode)
+> +{
+> +	return NULL;
+> +}
+> +
+> +static inline struct phy_device *device_phy_find_device(struct device *dev)
+> +{
+> +	return NULL;
+> +}
+> +
+> +struct fwnode_handle *fwnode_get_phy_node(struct fwnode_handle *fwnode)
+> +{
+> +	return NULL;
+> +}
+> +
+>  static inline
+>  struct phy_device *get_phy_device(struct mii_bus *bus, int addr, bool is_c45)
+>  {
+> -- 
+> 2.17.1
+> 
+> 
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
