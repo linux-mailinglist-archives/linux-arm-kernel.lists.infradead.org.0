@@ -2,77 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 11B241C56C9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:26:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F08EE1C56DB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:29:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NUyuynhNw+2JZRKfrxqSSdpc5qX8mX40e5JqCyeTsJA=; b=SQTyc73z26Y4GC
-	+FRhcgK/13EwO6FgD/v1uUIN5YDsjRzbKURJ1TUnvCiH20TAAA1TB7h3yCO3E4HvYopUQNTq/UPbP
-	tv6swfVZUU9jCTNkbgqWRiwdzDdiWIP/wZY+UYjhVoCSV5nyE1y4WZx6wqA7lNiV0VQ6X7FIQ7SXL
-	TrhmJTr8MMjz9rIx4uSJMf+8Vka6suUVZvB08d4y8BE8HXFjpuWW1hfV+JdHQ06/ise6d0g1xFGtf
-	eBJXmzkXdkLH/8qNwhndHsr5mn8ZRtXJOE1kSZowddAKJX38oFOxnjO/qbmF44/ZZV3aVL+0DukZG
-	rVhtXtk6VlnR+cujp3/w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=STkgqOcI4IVDCuqHCliT3n4KFYy3JOPlqLDbdi0w/pk=; b=egGM0/g1Tj2e2T
+	s2UDtCmK8e7GZ9FPE6IVk6tr2cbZ7aiolG1ORLVNnSGA09duhhOVTiDrhybmCALDwxbK54dcFj/vW
+	yMNKrZ6InLEi82zkZDay81suVtJDB3yHix+T/F/oFWalchXv0nBWj7hgVt/1x3pSurHR/5zcPD1bm
+	iwCG0cvnApuS5r1+RjuNdV1E2TQmILMBwRyS07ueZx1QlQZfwEm91DSYEiJ4DI0HSuapXl/dV3/8Q
+	wqfRBmq0fvv6qOA4OjaFxZKm1L/sgO10icJ+gSAohHu5BOzra0k8aLqe6J+2K8rN1lxKxmOLal/WR
+	nvLrE6fzZC/4JaxkhdlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVxab-00087o-Tw; Tue, 05 May 2020 13:26:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVxdi-0000Q3-6j; Tue, 05 May 2020 13:29:38 +0000
+Received: from mail-eopbgr60075.outbound.protection.outlook.com ([40.107.6.75]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVxaV-00086h-Bn; Tue, 05 May 2020 13:26:20 +0000
-Received: from mail-ej1-f50.google.com (mail-ej1-f50.google.com
- [209.85.218.50])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C52392083B;
- Tue,  5 May 2020 13:26:18 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588685179;
- bh=Cg3Aww/DWiRcPHXAAcy63wB+BBaJMxE4W5SjVqI52xM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Jl6xMq65m2X3WEe5EWx7+ejjvCPFF50UyIRkX3tbpEfiDyIj1915/uLUMrzdtJfaw
- 6iqUX04UY73+GzpazFnWSkIkB5sok0LeDe9adoCvV8vdgJ9jAbOWhaT/RPnEuGXDM0
- FaX+THGQl4IkBFpR2xkMR512gckbveC1akdYSSOE=
-Received: by mail-ej1-f50.google.com with SMTP id n17so1638182ejh.7;
- Tue, 05 May 2020 06:26:18 -0700 (PDT)
-X-Gm-Message-State: AGi0PubPb/lCWZWe4becTGmiNvfbUaVLpbJ9XSsHjrqE1k5RVxuGsJdy
- coWekjNaPyOflFEZrUTM989kBf4qdW8FD4HPsg==
-X-Google-Smtp-Source: APiQypJhGBe4KM2v2+R7Tdau70M9ldxuxhIcdizZA6GeTupSyTsy4bkN4GwbSWQLG63deM2MBxQgW+u07ypp/LcOr8Q=
-X-Received: by 2002:a17:906:2ad4:: with SMTP id
- m20mr2786571eje.324.1588685177209; 
- Tue, 05 May 2020 06:26:17 -0700 (PDT)
+ id 1jVxdb-0000Ns-Hd
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 13:29:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RoYpEallwnYK20q/LlFCfS2RCiN027gazszsTyTD/+gx+qkUvhYBtpHcZ5w+9VchNrkF2ui4cV9D3gnYSwEiEPpyqr+rWToabqMnfkZjdObynz7On0lxh78Pg7pP6dcGF/VU60CafwzTbaeT+OELGlofG5P+KDR4PYA/96bbDxak25eieicivOXvAeFIKajiY7ESTbkm5Gk5XEhakzBOfNaDZA63lnoEn6Aci0NcFTAK4mWIRhV1j8oReXR9jbQSC4gTIdrSRU/Q3Yel9Xj3f2WETFMsfjYn2nxs+/2rUXywljosnRN2I+TsyD8+5iRFHXSWeVdLEn46EUwYDLeM1Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1KqjGLIfGNH02rGgVlsn83th9wg7Goa8/vAgQ1OESI0=;
+ b=G6SJcjcXmBfI1dQN4IF6W3uEnLwNtmuGhXTzesJDYCG/lbGEy7YQMPQGrjB4ka1pKOa1nuQ2F++vNvzWYtIsKGqa7pyHAaL49/cNWeltlXqeswxjz4PN6Zo2QoyvS5ttCOCmBo/GvnRBQfUHVzY6h4Ih2gcJ1av/VCB57KAmlfzNhGWamMMph2ZYXMvB5FDe3uUExFKhLWcGpCUOK8e6W9mbLhTOHCpmkWtTaAk1IN+cjLbg/17FTx+dYO4mGE3yvZ4ObI2kjPAkXIU2uZBbtwmfupSaXmCUsm8o6LqNW4Gri+hhAYexqYM6ApACfkpIHEZIB1TmandFnf/BO+Y6+Q==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
+ dkim=pass header.d=oss.nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
+ s=selector2-NXP1-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=1KqjGLIfGNH02rGgVlsn83th9wg7Goa8/vAgQ1OESI0=;
+ b=B3yJOG62ozG+BNe1QvxBDcvUlmxw9eSQJFvDqwq6fBp7rH8aOMSjjGHGd0uDlDYvettlKqgA1oBKw7c9H+KY5MxhjbLNbvDofuec1HDZGAMe+0T1WyVKNGbQSMRfPG3MjiEHPuBq81xgdW1VzSfpqYVNo+QYHSVPd5WRDtmSx+Q=
+Authentication-Results: spf=none (sender IP is )
+ smtp.mailfrom=calvin.johnson@oss.nxp.com; 
+Received: from DB8PR04MB5643.eurprd04.prod.outlook.com (2603:10a6:10:aa::25)
+ by DB8PR04MB5596.eurprd04.prod.outlook.com (2603:10a6:10:a2::13) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.26; Tue, 5 May
+ 2020 13:29:26 +0000
+Received: from DB8PR04MB5643.eurprd04.prod.outlook.com
+ ([fe80::4031:5fb3:b908:40e9]) by DB8PR04MB5643.eurprd04.prod.outlook.com
+ ([fe80::4031:5fb3:b908:40e9%7]) with mapi id 15.20.2958.030; Tue, 5 May 2020
+ 13:29:26 +0000
+From: Calvin Johnson <calvin.johnson@oss.nxp.com>
+To: "Rafael J . Wysocki" <rafael@kernel.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux.cj@gmail.com,
+ Jeremy Linton <jeremy.linton@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>
+Subject: [net-next PATCH v3 0/5] Introduce new fwnode based APIs to support
+ phylink and phy layers
+Date: Tue,  5 May 2020 18:59:00 +0530
+Message-Id: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-ClientProxiedBy: SG2PR03CA0096.apcprd03.prod.outlook.com
+ (2603:1096:4:7c::24) To DB8PR04MB5643.eurprd04.prod.outlook.com
+ (2603:10a6:10:aa::25)
 MIME-Version: 1.0
-References: <20200504141408.60877-1-enric.balletbo@collabora.com>
- <20200504141408.60877-4-enric.balletbo@collabora.com>
-In-Reply-To: <20200504141408.60877-4-enric.balletbo@collabora.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Tue, 5 May 2020 21:26:03 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_9pFfrKjg6qD5fF0gnuj0aLG7DZh1k0htg=YZGaJE9Hww@mail.gmail.com>
-Message-ID: <CAAOTY_9pFfrKjg6qD5fF0gnuj0aLG7DZh1k0htg=YZGaJE9Hww@mail.gmail.com>
-Subject: Re: [PATCH 3/3] drm/mediatek: mtk_dpi: Use simple encoder
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
+ SG2PR03CA0096.apcprd03.prod.outlook.com (2603:1096:4:7c::24) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2979.14 via Frontend Transport; Tue, 5 May 2020 13:29:20 +0000
+X-Mailer: git-send-email 2.17.1
+X-Originating-IP: [14.142.151.118]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-HT: Tenant
+X-MS-Office365-Filtering-Correlation-Id: 5d39be49-08a9-4376-3e3c-08d7f0f854e5
+X-MS-TrafficTypeDiagnostic: DB8PR04MB5596:|DB8PR04MB5596:
+X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <DB8PR04MB5596E5653AD9F35A3DBB5608D2A70@DB8PR04MB5596.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
+X-Forefront-PRVS: 0394259C80
+Received-SPF: None (protection.outlook.com: oss.nxp.com does not designate
+ permitted sender hosts)
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: GCyFamQlcHktj4UaEgGWpMG81e33T/QAOlhLRoi+x3pvH3P760BPTpHbSY+qblqEwcXPmODs802FQTMvDbPRJyPwNOi2KzFu4QeWpmnHmlGducnk2juUj6imMN95RPE+rNxsd3dj5NwZpzSUHBPo2vbkZmy9pOlaIuI+9ZujDYMV2WlxxHZhQRiEQQ02ZW47QmT3m8cHTcek3/niyuL+yDX6INKmlKZ4MeS53lT+fH58JT4ldq2ZCJIGV0VkiKjsBr8NRA4TGrE4izv+CYEmE8pQDQ5CdqiWRGF7rz/3oUE+CZ0bD2YJYnlrr+/EJNvnzu0M3E71CVvSnsrWaF7tnGrrGID9+24c7a68eKgghDk999rXdN956jAwDYjQ/73H5yA/IRVkARxljfKlccQGmkEmF3Kxg6wlpHfhTn7wOSLzmoLJ0l4qrU/Svg8gh85TjLSjcyAhqrU5Z1P3IlqG3YUsTWZMJ5TyBK0Odts62OsC9prP9hNNaXoN3ZTjcaHiRMsIyu53P1mB4ePm1ENBZRQLze14B6/GxPgQfoz5Oqs=
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB8PR04MB5643.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(366004)(6486002)(5660300002)(44832011)(26005)(55236004)(66556008)(66946007)(66476007)(498600001)(6506007)(52116002)(4326008)(956004)(2616005)(2906002)(186003)(1076003)(16526019)(7416002)(6512007)(86362001)(110136005)(54906003)(6666004)(8936002)(1006002)(8676002)(110426005)(921003)(1121003);
+ DIR:OUT; SFP:1101; 
+X-MS-Exchange-AntiSpam-MessageData: q3Imx/o0XQXqP40+msoWrO8aIGStXRDU5IoUBYwK4rnlBFese5iprXYjtIoTYCMbd92n2+EVLxAg4wUV0OCkIXb689smv+HvcxRrEYyexB+IKLe6aS60bQlJWWyY4wIm6OHtGLE73f5KcjEn+si6truYn06I2C6HbJJfBPFCmWq7IVPcVDch8ghY1HY0EFYPVWG3oVOmkCFzkL9ZRLYifu+lWzumIJILCS7QWqH5zG0zxIIdkH/ZX/cnspa0PwbAyzp/OSObT8AbQ/uOSh2dD+HH0hg5CZJw+z6ebG3ALzKOvu/FoXvskBg+MUdKeB1M/QST/zv2QtCGqgTdaWulEiA/tQtYII21PfSiNIMH5Lpw1fqD1qKraRTi0XT1BzQd2iwjNYlhFA5ohOPEAIq+oGADEQUDaK/2pFmMqrnraH3xnGeaCKm5Vf39W7HtUFAoyD+WNY70bTVlX21/SjFQOKO6BEXkhrnmezSJthkLfzaf5xw58VBF58U2NdGpCBlcb2gi/t00C724tUUVMy1wGJhxKTDfnbc14ZrNlGFChNMGj8D1fanwdJHu9ty9jpqZuasHgt15XN9naLtSEpShRhUNvU2FmIobu0B0TFwIwm5CqWtUYpz7ngc1k4psrjffWNy42SegMoA0GnE2Sl9DlHTB174Zl/qctAEEbPdagmz0LiOcqRa1eoR2On2m4Aj478rjU1XulFv3Lm/KGJk/qKE6szc5WUrYpaP5qwq5NqLSTf/IKczWQKMUtJNH2829qP8gPvw28LvWmxxSGzUtx0PaDlAVGm/hZsuSYCkc4Q4=
+X-OriginatorOrg: oss.nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5d39be49-08a9-4376-3e3c-08d7f0f854e5
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 May 2020 13:29:26.5578 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: uAeFHhzGDcqrUCyQt/ekW1Qw1PYn9h68a17jXP9PoZryX6ez4vsJXBBTTeiHqLh/WCZ6T6RaeqLpZpmMaBAOvg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR04MB5596
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_062619_441116_8F7D52C0 
-X-CRM114-Status: GOOD (  15.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_062931_685019_7C6E978A 
+X-CRM114-Status: UNSURE (   7.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.6.75 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.6.75 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ valid 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,57 +135,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- DRI Development <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Daniel Vetter <daniel@ffwll.ch>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>, netdev@vger.kernel.org,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
+ Calvin Johnson <calvin.johnson@oss.nxp.com>,
+ Heiner Kallweit <hkallweit1@gmail.com>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEVucmljOgoKRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFsbGV0Ym9AY29sbGFi
-b3JhLmNvbT4g5pa8IDIwMjDlubQ15pyINOaXpSDpgLHkuIAg5LiL5Y2IMTA6MTTlr6vpgZPvvJoK
-Pgo+IFRoZSBtdGtfZHBpIGRyaXZlciB1c2VzIGFuIGVtcHR5IGltcGxlbWVudGF0aW9uIGZvciBp
-dHMgZW5jb2Rlci4gUmVwbGFjZQo+IHRoZSBjb2RlIHdpdGggdGhlIGdlbmVyaWMgc2ltcGxlIGVu
-Y29kZXIuCgpSZXZpZXdlZC1ieTogQ2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1QGtlcm5lbC5v
-cmc+Cgo+Cj4gU2lnbmVkLW9mZi1ieTogRW5yaWMgQmFsbGV0Ym8gaSBTZXJyYSA8ZW5yaWMuYmFs
-bGV0Ym9AY29sbGFib3JhLmNvbT4KPiAtLS0KPgo+ICBkcml2ZXJzL2dwdS9kcm0vbWVkaWF0ZWsv
-bXRrX2RwaS5jIHwgMTQgKysrLS0tLS0tLS0tLS0KPiAgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0
-aW9ucygrKSwgMTEgZGVsZXRpb25zKC0pCj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9ncHUvZHJt
-L21lZGlhdGVrL210a19kcGkuYyBiL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHBpLmMK
-PiBpbmRleCBiYWFkMTk4YzY5ZWIuLjgwNzc4YjJhYWMyYSAxMDA2NDQKPiAtLS0gYS9kcml2ZXJz
-L2dwdS9kcm0vbWVkaWF0ZWsvbXRrX2RwaS5jCj4gKysrIGIvZHJpdmVycy9ncHUvZHJtL21lZGlh
-dGVrL210a19kcGkuYwo+IEBAIC0yMCw2ICsyMCw3IEBACj4gICNpbmNsdWRlIDxkcm0vZHJtX2Jy
-aWRnZS5oPgo+ICAjaW5jbHVkZSA8ZHJtL2RybV9jcnRjLmg+Cj4gICNpbmNsdWRlIDxkcm0vZHJt
-X29mLmg+Cj4gKyNpbmNsdWRlIDxkcm0vZHJtX3NpbXBsZV9rbXNfaGVscGVyLmg+Cj4KPiAgI2lu
-Y2x1ZGUgIm10a19kcGlfcmVncy5oIgo+ICAjaW5jbHVkZSAibXRrX2RybV9kZHBfY29tcC5oIgo+
-IEBAIC01MTAsMTUgKzUxMSw2IEBAIHN0YXRpYyBpbnQgbXRrX2RwaV9zZXRfZGlzcGxheV9tb2Rl
-KHN0cnVjdCBtdGtfZHBpICpkcGksCj4gICAgICAgICByZXR1cm4gMDsKPiAgfQo+Cj4gLXN0YXRp
-YyB2b2lkIG10a19kcGlfZW5jb2Rlcl9kZXN0cm95KHN0cnVjdCBkcm1fZW5jb2RlciAqZW5jb2Rl
-cikKPiAtewo+IC0gICAgICAgZHJtX2VuY29kZXJfY2xlYW51cChlbmNvZGVyKTsKPiAtfQo+IC0K
-PiAtc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1fZW5jb2Rlcl9mdW5jcyBtdGtfZHBpX2VuY29kZXJf
-ZnVuY3MgPSB7Cj4gLSAgICAgICAuZGVzdHJveSA9IG10a19kcGlfZW5jb2Rlcl9kZXN0cm95LAo+
-IC19Owo+IC0KPiAgc3RhdGljIGludCBtdGtfZHBpX2JyaWRnZV9hdHRhY2goc3RydWN0IGRybV9i
-cmlkZ2UgKmJyaWRnZSwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBlbnVtIGRy
-bV9icmlkZ2VfYXR0YWNoX2ZsYWdzIGZsYWdzKQo+ICB7Cj4gQEAgLTU5MSw4ICs1ODMsOCBAQCBz
-dGF0aWMgaW50IG10a19kcGlfYmluZChzdHJ1Y3QgZGV2aWNlICpkZXYsIHN0cnVjdCBkZXZpY2Ug
-Km1hc3Rlciwgdm9pZCAqZGF0YSkKPiAgICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPiAgICAg
-ICAgIH0KPgo+IC0gICAgICAgcmV0ID0gZHJtX2VuY29kZXJfaW5pdChkcm1fZGV2LCAmZHBpLT5l
-bmNvZGVyLCAmbXRrX2RwaV9lbmNvZGVyX2Z1bmNzLAo+IC0gICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICBEUk1fTU9ERV9FTkNPREVSX1RNRFMsIE5VTEwpOwo+ICsgICAgICAgcmV0ID0gZHJt
-X3NpbXBsZV9lbmNvZGVyX2luaXQoZHJtX2RldiwgJmRwaS0+ZW5jb2RlciwKPiArICAgICAgICAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICAgIERSTV9NT0RFX0VOQ09ERVJfVE1EUyk7Cj4gICAg
-ICAgICBpZiAocmV0KSB7Cj4gICAgICAgICAgICAgICAgIGRldl9lcnIoZGV2LCAiRmFpbGVkIHRv
-IGluaXRpYWxpemUgZGVjb2RlcjogJWRcbiIsIHJldCk7Cj4gICAgICAgICAgICAgICAgIGdvdG8g
-ZXJyX3VucmVnaXN0ZXI7Cj4gLS0KPiAyLjI2LjIKPgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Following functions are defined:
+  phylink_fwnode_phy_connect()
+  fwnode_phy_find_device()
+  device_phy_find_device()
+  fwnode_get_phy_node()
+  fwnode_mdiobus_register_phy()
+  fwnode_get_phy_id()
+
+First one helps in connecting phy to phylink instance.
+Next two help in finding a phy on a mdiobus.
+Next one helps in getting phy_node from a fwnode.
+Last two help in getting phy_id and registering phy to mdiobus
+
+Changes in v3:
+  move fwnode APIs to appropriate place
+  stubs fwnode APIs for !CONFIG_PHYLIB
+  improve comment on function return condition.
+  remove NULL return check as it is invalid
+  remove unused phylink_device_phy_connect()
+  Introduce two functions to register phy to mdiobus using fwnode
+
+Changes in v2:
+  move phy code from base/property.c to net/phy/phy_device.c
+  replace acpi & of code to get phy-handle with fwnode_find_reference
+  replace of_ and acpi_ code with generic fwnode to get phy-handle.
+
+Calvin Johnson (5):
+  net: phy: Introduce phy related fwnode functions
+  net: phy: alphabetically sort header includes
+  phylink: Introduce phylink_fwnode_phy_connect()
+  net: phy: Introduce fwnode_get_phy_id()
+  net: mdiobus: Introduce fwnode_mdiobus_register_phy()
+
+ drivers/net/phy/mdio_bus.c   |  41 ++++++++++++++
+ drivers/net/phy/phy_device.c | 102 ++++++++++++++++++++++++++++++-----
+ drivers/net/phy/phylink.c    |  48 +++++++++++++++++
+ include/linux/mdio.h         |   2 +
+ include/linux/phy.h          |  24 +++++++++
+ include/linux/phylink.h      |   3 ++
+ 6 files changed, 206 insertions(+), 14 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
