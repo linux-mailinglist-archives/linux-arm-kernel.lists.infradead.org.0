@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78ACB1C53C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:55:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB48C1C53CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:58:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tzZTG0AKXf/PdbMcyF3NDP1qdmwGy4zFlbYNuR3d0PU=; b=I8QNuKcOBFt0SR
-	U0O46vO01x12sWamvDKmKIKUG9QGgKztO8gPlezBSY0EQZ1MEYfMdP02tqufRnYehtRO280CZQwK8
-	d07XYP1Itf5h0t/d6GwATveWXhWqRMUYyHsIIVrHPRVji3SZ01X4RvzK5PTdBqFRiFLPDl7m6Zrm2
-	FRfgLn6Mp2eC1jLcIU/9BSM2Ut9T/xe+6Ht/8++gA+X19Rnz0y2epDkTNlxFTtAMIxB/rjbcAnHHx
-	DlT6NQF3A4QkTHjfNGOeNWPeI3wa7/gXk06KplstzGDmeeWZGqZT+u7ETg8s39U+gy5GeYzS8jK/f
-	nKLSGIWdxI1YxdvE3HMQ==;
+	List-Owner; bh=3DEwyv41Zg+SiJVCSZbn4NCGtD+ukF3S1hUsOfMlo7I=; b=TY08vS14JaMXqr
+	cn5KVPg01i6mdfG1WDOGFFrInqV7hRijRZu2Bff5FJ8J0eKa/tt83L47h5y/QsJrO9TMZ/u/19MhR
+	sQUH30lFAOMyO53WZKB0FHeOZ/l+D3fhON7H51kNeqwFn2bOZ95bkoRmLDy+A3iT7uuP7T1dCUjm+
+	eANWbDFu3SMi3oylUPLVO62KS+1Iif8oStar9D6eZlK+2FAAlvoQnxkgcVgBANrMM42eF3DWUoNM5
+	fHTLijADuNwYcBu3JpgL7SwgvzlwRPfdc7BorE5tsfvh0Uv4wiaBjlXqNOs+MXiBIkLE3EGVB44/Q
+	aA+pUFLvyWlSvBB4uexA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvEg-0001hz-2y; Tue, 05 May 2020 10:55:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvEY-0001hK-Fe
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:55:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A7EAC30E;
- Tue,  5 May 2020 03:55:27 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8E4183F305;
- Tue,  5 May 2020 03:55:26 -0700 (PDT)
-Date: Tue, 5 May 2020 11:55:24 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Walter Harms <wharms@bfs.de>
-Subject: Re: Adding arch-specific user ABI documentation in linux-man
-Message-ID: <20200505105522.GL30377@arm.com>
-References: <20200504153214.GH30377@arm.com>
- <32259f3763344500a058a8ca8a3a33d8@bfs.de>
+	id 1jVvHN-0002Jy-TW; Tue, 05 May 2020 10:58:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVvHG-0002Ie-Tw
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:58:20 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AEDCC206A5;
+ Tue,  5 May 2020 10:58:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588676298;
+ bh=kGKEaMOGdWDAoVnU3rzjWdKoL2we/jTZgg/mglaLMyE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=io0hVQK3c32p7zo87nJ8WEyOmN8PemqN6FZgT184MWEXddcmIC016k5WG8coHZygZ
+ HnNb/gQoffmsmIVjR3DtHjQK10llOSRu3CQIKj00o0vKxbgaZlsMibJ2jN2sDRJP4s
+ Uug8qmab9BvwkBuiO1MKuzZaxwfIlnN4BeguisBs=
+Date: Tue, 5 May 2020 11:58:13 +0100
+From: Will Deacon <will@kernel.org>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH 1/2] arm64: Sort vendor-specific errata
+Message-ID: <20200505105811.GD19710@willie-the-truck>
+References: <20200416115658.20406-1-geert+renesas@glider.be>
+ <20200416115658.20406-2-geert+renesas@glider.be>
+ <CAK8P3a14Vk1JKRYZkkAhC9fAV4CMQzvux_FWdNkn39OwsYn4mA@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <32259f3763344500a058a8ca8a3a33d8@bfs.de>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <CAK8P3a14Vk1JKRYZkkAhC9fAV4CMQzvux_FWdNkn39OwsYn4mA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_035530_568677_8D72F36C 
-X-CRM114-Status: GOOD (  14.30  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_035819_013474_881B02F9 
+X-CRM114-Status: GOOD (  12.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,44 +78,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
- "linux-man@vger.kernel.org" <linux-man@vger.kernel.org>,
+Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Michael Kerrisk <mtk.manpages@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Wei Xu <xuwei5@hisilicon.com>, Robert Richter <rrichter@marvell.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Andy Gross <agross@kernel.org>, linux-arm-msm <linux-arm-msm@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 07:45:32AM +0000, Walter Harms wrote:
-> Hi Dave,
-> you are pointing to an (IMHO) interesting question.
-> How to document different CPUs ?
-> Given that an operating system should hide the different CPU's using
-> CPU specific features should be used sparsely at best.
+On Thu, Apr 16, 2020 at 03:06:55PM +0200, Arnd Bergmann wrote:
+> On Thu, Apr 16, 2020 at 1:57 PM Geert Uytterhoeven
+> <geert+renesas@glider.be> wrote:
+> >
+> > Sort configuration options for vendor-specific errata by vendor, to
+> > increase uniformity.
+> > Move ARM64_WORKAROUND_REPEAT_TLBI up, as it is also selected by
+> > ARM64_ERRATUM_1286807.
+> >
+> > Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+> 
+> Looks fine to me, though I wonder if we should move the errata
+> menu to a separate Kconfig file, given that it's already longer than the
+> Kconfig.platforms and Kconfig.debug files at 500 lines.
+> 
+> Maybe a Kconfig.cpu with both the "ARMv8.x architectural features" and
+> errata menus?
+> 
+> Either way,
+> 
+> Acked-by: Arnd Bergmann <arnd@arndb.de
 
-Agreed!  But there are real situations where cpu specifics can't be
-avoided, and having documentation will help people to use those features
-correctly.
+I've queued this patch as-is on for-next/kconfig [1]. Happy to take a
+follow-up moving things out into Kconfig.cpu.
 
-> the easy part are adds-on like flags for prctrl etc. simply add it to the page.
+Will
 
-For prctl, that makes sense (it's a jumble of arch specifics already).
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/kconfig
 
-But would it be considered a problem if the ptrace page, say, becomes
-80% arch-specific stuff?  That page is cumbersome enough already...
-
-> Other things should go to a cpu specific pages (can of worms). The problem will
-> be to keep that small but informative. I have no idea about the level of detail
-> (and i have worked with a range of CPUs) that could be interesting for a programmer.
-> An of cause every other CPU now needs also a page.
-
-Fair enough.
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
