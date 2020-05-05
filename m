@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C4FB51C5799
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:56:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E1EDC1C579E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:56:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,52 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YXsJWFqpeeYuoFpz4OKFJrAir3OAhcxoayRMA+VqqvA=; b=N6D+zHuffVI22xgkErBD5C9tR2
-	cRlh+n9VGabtjElLKWwXLVUWkIydw1I5oXUEjmspmMWv+EPm/iwvRmD2TYZJsht8MZZCrCeGrcYmf
-	0qS38uVxG67FsUsjQhMOF4q15X+S+JFFMGCqGNgrZJddy765A3d6WndEegUGhYfv8pwY9faDk+PRM
-	Tl3VZ69dZS/j8M9umZC6uDUlN/O9oM+vLqi75McX7ZgXq1marhgJzcKfumoHmTFPHnL3Bjk6oideB
-	s/vGxkXrF4LYZkHvoO+iwfymb9pk6x3PCRH36mcsnTn/DbHxc2pvTYtbeKpltBEAdtGG26xPTUb7o
-	26YQwOiA==;
+	bh=zXCFjSBy++3q4Cv8CZFW8N6h1Luck4mh67FczluJxN8=; b=qGz1LVjBA1/NrThR9ixjUJ9UbI
+	/2p6Hyrl6rxsEeblgnXqmdV3ZO8HJ9o8qc4wBIbXFYlgvhIn4C4LqcZrRQnK1KeAwQeE6VYKwvz3L
+	jBAJGpDUPS2w7941u1Q8u+otqDdD2Rqo2erQgKIFm+dvRcZfE5nKAXUOzx0FtQXY50sQho3mlb5R4
+	dmyLgVzG/TqUqleh24BRh4eqs+Pf0I5kzHTyo5gsJb3kJLroUyJXXcoJ9aCmErq0deXNNb5wj1yil
+	H+YdSnbnftIZyJF/ZFSK8mpj9msi/JQqxt8mkfga1wkbnJru2c75hsCfvfByA6VudcjJqn5jh8N2A
+	gGd6PnCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVy3b-0005kG-Qd; Tue, 05 May 2020 13:56:23 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jVy3r-000641-Eg; Tue, 05 May 2020 13:56:39 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVy3M-0005hC-8n
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 13:56:09 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id a5so1155679pjh.2
+ id 1jVy3V-0005rC-Dn
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 13:56:22 +0000
+Received: by mail-pl1-x643.google.com with SMTP id f8so854385plt.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 06:56:08 -0700 (PDT)
+ Tue, 05 May 2020 06:56:17 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=tNBFhF/ggXZPZwGUiqxzSB760pgCcUxpJ37blThJNEI=;
- b=wutoE5vzHDt141cP+zqKw13AsxyZDmqimG3VCe2kulHk/dcLheB3goxZFqDEPpqLtx
- +2y45IsDhYVBFgtvCZRq43rFlnLr8Hz3ZUgo+chXAJd85QkXjRaAT/LGdcVAqYMt+01C
- Gg14jvUlpkcH2tJqBJFxDROu7sCUcugNbVqJ3Dh9w4Lgz76F5ThR2mnQR8EIceAmkRg8
- ZBA53qVz8Vipf4SyUiJnQTr0b2FT+DlIe7G48uqUT2FrSpNucBisrhkzT2fY9/tH4UAY
- v6cplZvE0huOpeElysBBMsZe3RVlLeYSU0sClPfO5mRug51Hlba9zGAUkDrzW4WBOyGf
- Kowg==
+ bh=SUqpwl4dX7jj+lLGJIm4d2JPI0kCLiGuhtY6NV9FT/c=;
+ b=L7XU/uh6V5tz6vktKYXmi/XwxORUtcF15+kxdkEn3S/K3YhYvAAdOTqTsOeyZl8P6o
+ uVoCOooPY44m+si/AOD7EZ9wT6f/v6Gs9mZEHBRRmoGIkmLfdfv3zBoayQTR9iKM6AeC
+ QcGboVdr61cK16ErRdrDxEWVSnLxHjr/F5B7VFxBmqja6YhoNOamBbs0e4LzVZ2B7u6m
+ zl3YsK1Y36SLblwFRbESgqhZO/LEBiW+pmsXtyOfQ62dUjG7DbUJM8F92HrwgAjXXapS
+ 5PWzixm65+OyB4KkY4A3V2DYUSVRzgmb/VuJBfSdrj+3ktlPHT7scxVu7z15M2kxfueW
+ 5R4g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=tNBFhF/ggXZPZwGUiqxzSB760pgCcUxpJ37blThJNEI=;
- b=jlBfc1qqEe3FW2GWyj+CmTCBy9dNYEMNw9AtXSa6QwFNlWhwiG1XR9t695qdUW4Z/I
- HoMCfOtSgajlfWNh9AQoXbs1NafHBIjyTjE4aKnT1t1KgYl0YUaUGnvEO59hfjKdl4/8
- AIfVVT0jYKxl5pywcXf88EXNOvToT7sYusFlvagEAIS96zFccCih2nnEgTO5HSQ+XxdC
- vea9JaNevli2b1kF5lxAKmAF67P+VgY7yKwftX8WvuyFMIhQo3RXh+XQJjA+HXXNVotl
- 8XV4qVFs++qV2RVkf4aATmN1sVgktLurvvxyFACXbLMaecoaMRFp5uwrZlever0d5G3Y
- g1WQ==
-X-Gm-Message-State: AGi0PuYRuXLMEjPwujqIAo71DUZMF9CieY9JSAhejF4wkGSB245ToV8b
- ove2vVwHhClRNDXidzjpmtKiKw==
-X-Google-Smtp-Source: APiQypKwZbjoFvZHFkTi/sqRdibF0HSyFnmyfTDs/xFUevEDLWaZ7rJkx5mSRCyfkXmk4NQvg0TvpQ==
-X-Received: by 2002:a17:902:d70f:: with SMTP id
- w15mr3387846ply.55.1588686967626; 
- Tue, 05 May 2020 06:56:07 -0700 (PDT)
+ bh=SUqpwl4dX7jj+lLGJIm4d2JPI0kCLiGuhtY6NV9FT/c=;
+ b=pgoWSjO/sCoNyM72QnIo2JR31uJrzau5UMWcePc4gDq1jZ+cbTgV9lsFLslFHa8DRF
+ xZ0H65CuMdDRWvue24gS3anV1524/4j2b30q3E8x18RSAD9Mv12ICeq7yKlyf+4+hccS
+ b3bH3C4uJxYjfowxU+oIm4UMNFm8bZIrqf8b19vxc3EpNjixCuw8XE5DMKyZxOVapyk5
+ xFIOI/dByKT2z0D2LhnxCBeDCruCQv7oVVyzWOAThT4vOEFlQe8C5k0bZfDoYBqyCEU/
+ KpEpNa0KgaDKqwnPeKG66sFb8XrYh63TZeQwdV9U7CRt3AywKl8Y87WmruIMNrZ7lBrl
+ 6bDA==
+X-Gm-Message-State: AGi0PuaCdoc+3KEqoPmO+iBaATWkrZ3RRumQG4hFONLAUf5ndiPZtsc/
+ /e7GVepoWB/wD5TjsjDwHtmduA==
+X-Google-Smtp-Source: APiQypIQVZ59e8r8wEOVk5i2Y1mP2Z7kLyRUi51y3D4HDuLkwu7L/BYWmpDbtRn1Eg1F2AdjGnnhWA==
+X-Received: by 2002:a17:902:b682:: with SMTP id
+ c2mr3331870pls.144.1588686976387; 
+ Tue, 05 May 2020 06:56:16 -0700 (PDT)
 Received: from localhost ([2400:8904::f03c:91ff:fe8a:bbe4])
- by smtp.gmail.com with ESMTPSA id w2sm2068101pfc.194.2020.05.05.06.56.06
+ by smtp.gmail.com with ESMTPSA id z60sm2226453pjj.14.2020.05.05.06.56.15
  (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 05 May 2020 06:56:07 -0700 (PDT)
+ Tue, 05 May 2020 06:56:15 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
  Marc Zyngier <maz@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
@@ -74,16 +74,16 @@ To: Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
  Paul Cercueil <paul@crapouillou.net>,
  "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 1/3] time/sched_clock: Add new variant
- sched_clock_register_epoch()
-Date: Tue,  5 May 2020 21:55:42 +0800
-Message-Id: <20200505135544.6003-2-leo.yan@linaro.org>
+Subject: [PATCH v2 2/3] clocksource/drivers/arm_arch_timer: Handle time offset
+ prior to epoch
+Date: Tue,  5 May 2020 21:55:43 +0800
+Message-Id: <20200505135544.6003-3-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200505135544.6003-1-leo.yan@linaro.org>
 References: <20200505135544.6003-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_065608_324263_8B926032 
-X-CRM114-Status: GOOD (  15.65  )
+X-CRM114-CacheID: sfid-20200505_065617_484462_BE5C8BB4 
+X-CRM114-Status: GOOD (  15.78  )
 X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (3.4 points)
@@ -92,7 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [2400:8904:0:0:f03c:91ff:fe8a:bbe4 listed in] [zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -121,93 +121,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Except the sched clock's raw counter is used by sched clock itself, it
-also can be used by other purposes in the same system, e.g. the raw
-counter can be injected into hardware tracing data (like Arm's SPE) and
-Perf tool can capture trace data and extract the raw counter from it
-which finally can be used to generate timestamp.
+Since arch timer can be enabled at any time during boot, this patch
+changes to invoke variant sched_clock_register_epoch() so it can
+retrieve time offset prior to epoch (in nanosecond).
 
-Perf tool needs a way to convert sched clock's raw counter cycles into a
-nanosecond that can be compared against values coming out of sched_clock.
-
-To do this accurately, this patch adds a new variant API
-sched_clock_register_epoch() with introducing an extra argument
-'epoch_offset', as its naming indicates, this argument contains the
-offset time (in nanosecond) for the clock source has been enabled prior
-to epoch.
+Arch timer driver doesn't directly use this time offset, but it needs to
+pass this value to Perf framework to allow Perf tool to use it for
+timestamp calibration.  For this purpose, this patch introduces an API
+arch_timer_get_epoch_offset() which returns the time offset for arch
+timer's counter.
 
 Signed-off-by: Leo Yan <leo.yan@linaro.org>
 ---
- include/linux/sched_clock.h | 10 ++++++++++
- kernel/time/sched_clock.c   | 13 ++++++++++++-
- 2 files changed, 22 insertions(+), 1 deletion(-)
+ drivers/clocksource/arm_arch_timer.c | 10 +++++++++-
+ include/clocksource/arm_arch_timer.h |  6 ++++++
+ 2 files changed, 15 insertions(+), 1 deletion(-)
 
-diff --git a/include/linux/sched_clock.h b/include/linux/sched_clock.h
-index 0bb04a96a6d4..98965c0c7cd4 100644
---- a/include/linux/sched_clock.h
-+++ b/include/linux/sched_clock.h
-@@ -10,6 +10,10 @@ extern void generic_sched_clock_init(void);
+diff --git a/drivers/clocksource/arm_arch_timer.c b/drivers/clocksource/arm_arch_timer.c
+index 2204a444e801..10d0b15a7674 100644
+--- a/drivers/clocksource/arm_arch_timer.c
++++ b/drivers/clocksource/arm_arch_timer.c
+@@ -78,6 +78,8 @@ static enum vdso_clock_mode vdso_default = VDSO_CLOCKMODE_NONE;
+ static cpumask_t evtstrm_available = CPU_MASK_NONE;
+ static bool evtstrm_enable = IS_ENABLED(CONFIG_ARM_ARCH_TIMER_EVTSTREAM);
  
- extern void sched_clock_register(u64 (*read)(void), int bits,
- 				 unsigned long rate);
++static u64 epoch_offset;
 +
-+extern void sched_clock_register_epoch(u64 (*read)(void), int bits,
-+				       unsigned long rate,
-+				       u64 *epoch_offset);
- #else
- static inline void generic_sched_clock_init(void) { }
- 
-@@ -17,6 +21,12 @@ static inline void sched_clock_register(u64 (*read)(void), int bits,
- 					unsigned long rate)
+ static int __init early_evtstrm_cfg(char *buf)
  {
+ 	return strtobool(buf, &evtstrm_enable);
+@@ -942,6 +944,11 @@ u32 arch_timer_get_rate(void)
+ 	return arch_timer_rate;
  }
-+
-+static inline void sched_clock_register_epoch(u64 (*read)(void), int bits,
-+					      unsigned long rate,
-+					      u64 *epoch_offset)
+ 
++u64 arch_timer_get_epoch_offset(void)
 +{
-+}
- #endif
- 
- #endif
-diff --git a/kernel/time/sched_clock.c b/kernel/time/sched_clock.c
-index fa3f800d7d76..b402196afc3f 100644
---- a/kernel/time/sched_clock.c
-+++ b/kernel/time/sched_clock.c
-@@ -165,7 +165,8 @@ static enum hrtimer_restart sched_clock_poll(struct hrtimer *hrt)
- }
- 
- void __init
--sched_clock_register(u64 (*read)(void), int bits, unsigned long rate)
-+sched_clock_register_epoch(u64 (*read)(void), int bits, unsigned long rate,
-+			   u64 *epoch_offset)
- {
- 	u64 res, wrap, new_mask, new_epoch, cyc, ns;
- 	u32 new_mult, new_shift;
-@@ -204,6 +205,10 @@ sched_clock_register(u64 (*read)(void), int bits, unsigned long rate)
- 	rd.epoch_cyc		= new_epoch;
- 	rd.epoch_ns		= ns;
- 
-+	/* Output epoch offset (ns) to clock event driver */
-+	if (epoch_offset)
-+		*epoch_offset = cyc_to_ns(new_epoch & new_mask, new_mult, new_shift) - ns;
-+
- 	update_clock_read_data(&rd);
- 
- 	if (sched_clock_timer.function != NULL) {
-@@ -240,6 +245,12 @@ sched_clock_register(u64 (*read)(void), int bits, unsigned long rate)
- 	pr_debug("Registered %pS as sched_clock source\n", read);
- }
- 
-+void __init
-+sched_clock_register(u64 (*read)(void), int bits, unsigned long rate)
-+{
-+	sched_clock_register_epoch(read, bits, rate, NULL);
++	return epoch_offset;
 +}
 +
- void __init generic_sched_clock_init(void)
+ bool arch_timer_evtstrm_available(void)
  {
  	/*
+@@ -1009,7 +1016,8 @@ static void __init arch_counter_register(unsigned type)
+ 			 &cyclecounter, start_count);
+ 
+ 	/* 56 bits minimum, so we assume worst case rollover */
+-	sched_clock_register(arch_timer_read_counter, 56, arch_timer_rate);
++	sched_clock_register_epoch(arch_timer_read_counter, 56,
++				   arch_timer_rate, &epoch_offset);
+ }
+ 
+ static void arch_timer_stop(struct clock_event_device *clk)
+diff --git a/include/clocksource/arm_arch_timer.h b/include/clocksource/arm_arch_timer.h
+index 1d68d5613dae..a566e82a40ba 100644
+--- a/include/clocksource/arm_arch_timer.h
++++ b/include/clocksource/arm_arch_timer.h
+@@ -83,6 +83,7 @@ struct arch_timer_mem {
+ #ifdef CONFIG_ARM_ARCH_TIMER
+ 
+ extern u32 arch_timer_get_rate(void);
++extern u64 arch_timer_get_epoch_offset(void);
+ extern u64 (*arch_timer_read_counter)(void);
+ extern struct arch_timer_kvm_info *arch_timer_get_kvm_info(void);
+ extern bool arch_timer_evtstrm_available(void);
+@@ -94,6 +95,11 @@ static inline u32 arch_timer_get_rate(void)
+ 	return 0;
+ }
+ 
++static inline u64 arch_timer_get_epoch_offset(void)
++{
++	return 0;
++}
++
+ static inline u64 arch_timer_read_counter(void)
+ {
+ 	return 0;
 -- 
 2.17.1
 
