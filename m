@@ -2,56 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12D5D1C5376
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:43:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06A541C5384
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CT/pmjgWB91FOkvTVspJfTsJhvqzB3lfJD2Ps+WTwMo=; b=Zi0H2v1OyIHwDx
-	L97BMU2LMmuvU6i9dwiVfhDW0lHcpAMQgeCzp2VE7faW6giGFXASjlFqohGC/Qh7g0rRmTYcdodrl
-	nRzG9NZTuuMC183D3TrO9vJf2I6CmNnx1a3UsYnq0lehfzEC5blaWzyaGig2+N72O7vEAKmWJhifp
-	BcLgDApFawz4LjLEjQI5Jdd+TTitkcxxzmccJRcwoDgugeszCJh8NXZOYqs2oZjLCbxPpWppIqiPE
-	hgWLPFnQpPTnXUfVYXhQA1fHuMtNo3msSnQ+eV4VPVNwi4wUKnuGwn9u4q4CthrwtCNdemJcUcI1P
-	Hpv205/oMGVvPs2oCIQw==;
+	List-Owner; bh=U+LeMCwly+yOGwqPc9bU+7Q+WvDJesKXKuzx9M0P7U8=; b=GhcgRn4ra20d6o
+	lpH6zRkbiQauuBICJo4sdM/mmOVecq9pGOB0W7BdCHBh/3NBCYX7eQvUoQfsIEe1oKboLKq9yj5Z0
+	3z7MFwUzYkPsyPTS/g3tbQxATI7ci/wYkU2Vnupf9Q5hInN0QmqbVMtM1MwdTI6looSrf8wcDnOa8
+	yBp1iaPS7AHwBlOUI2QRk75BhemUF58s2GIKiCOZuntQkOZebcZ8UxApLv/3lp7zkZMj6KXsD+Amx
+	5b9e+gakbAaWlxq7TYhtyzXLhmGjv0MqUVS25XBJC4PDsrdGa8jxKcXrSQRTvkjPnMb4db6s6NUTO
+	lp6gbVSqQzo/MLfRXJnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVv2X-0006yJ-BP; Tue, 05 May 2020 10:43:05 +0000
+	id 1jVv3g-0007Lu-4T; Tue, 05 May 2020 10:44:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVv2O-0006xh-La
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:42:58 +0000
+ id 1jVv3a-0007LS-6U
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:44:11 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C1FFD206A5;
- Tue,  5 May 2020 10:42:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E5E07206A5;
+ Tue,  5 May 2020 10:44:08 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588675376;
- bh=NLCbmdO5jXwPTRJmev5nd5sqfYdfydo3KQgdzeupCVw=;
+ s=default; t=1588675449;
+ bh=GEhF2tEU4XkWefXPE5udcRA2Y0YzSMAJ2YekTBmZRN8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=2Jo+b3eyoAVOg/5340CGqyTb2jUUFWj37ojZOsHWNQHkvvtQZjiUq62H2OVcZpHI8
- LNS3z8WXpoQpIIY5GRyImbq8O3W8Ogr1KK3IQrKm19FzqGdfXNkkrLP5pfBeMviVoF
- Fud8qYMJPVqmMU28sgyb2quRfLYtIq3//48fkSKA=
-Date: Tue, 5 May 2020 11:42:51 +0100
+ b=umfSfVmAzQRn1jZ3bKYhL7bz38WXiQuVIirVZy0mTX6WcttQ58u31IvMAtuwooHlI
+ zAg67Rt+mmAcMu69MDpIYRff/zJipCTQzdMaBVWDy4jcVv2gFlg5jJGS3SGHf7E1rl
+ 7ZzUXD/6ZKX4GNHL37htRHoduxFXkj5zNfDqSsKA=
+Date: Tue, 5 May 2020 11:44:06 +0100
 From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 02/16] arm64/cpufeature: Drop TraceFilt feature
- exposure from ID_DFR0 register
-Message-ID: <20200505104250.GA19710@willie-the-truck>
-References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
- <1588426445-24344-3-git-send-email-anshuman.khandual@arm.com>
- <20200504202453.GA5012@willie-the-truck>
- <56cd3062-a0c2-6cdf-b7c6-c2b7bf56d23b@arm.com>
+To: Ard Biesheuvel <ardb@kernel.org>
+Subject: Re: [RFC PATCH] arm64: remove CONFIG_DEBUG_ALIGN_RODATA feature
+Message-ID: <20200505104404.GB19710@willie-the-truck>
+References: <20200329141258.31172-1-ardb@kernel.org>
+ <20200330135121.GD10633@willie-the-truck>
+ <CAMj1kXEZARZ1FYZFt4CZ33b-A64zj1JswR0OAHw-eZdzkxiEOQ@mail.gmail.com>
+ <20200330140441.GE10633@willie-the-truck>
+ <CAMj1kXHJ5n-EZMgGSYm+ekO-e7XTp7fv-FZ2NJ1EttJ=-kc8fw@mail.gmail.com>
+ <20200330142805.GA11312@willie-the-truck>
+ <CAMj1kXFcvHcU2kzP=N4bHgSkw_eE7wvbPJ=7w1pNeCWHbcPvTQ@mail.gmail.com>
+ <20200402113033.GD21087@mbp>
+ <CAMj1kXGLMWqTHbWftoAq=WdVqyf+i=6SvsMogzWHh6SL3b=4sQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <56cd3062-a0c2-6cdf-b7c6-c2b7bf56d23b@arm.com>
+In-Reply-To: <CAMj1kXGLMWqTHbWftoAq=WdVqyf+i=6SvsMogzWHh6SL3b=4sQ@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_034256_748734_5B854A8F 
-X-CRM114-Status: GOOD (  22.79  )
+X-CRM114-CacheID: sfid-20200505_034410_256670_7A286D0B 
+X-CRM114-Status: GOOD (  16.63  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,100 +85,49 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ kernel-hardening@lists.openwall.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 12:20:41PM +0530, Anshuman Khandual wrote:
-> On 05/05/2020 01:54 AM, Will Deacon wrote:
-> > On Sat, May 02, 2020 at 07:03:51PM +0530, Anshuman Khandual wrote:
-> >> ID_DFR0 based TraceFilt feature should not be exposed to guests. Hence lets
-> >> drop it.
-> >>
-> >> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> >> Cc: Will Deacon <will@kernel.org>
-> >> Cc: Marc Zyngier <maz@kernel.org>
-> >> Cc: Mark Rutland <mark.rutland@arm.com>
-> >> Cc: James Morse <james.morse@arm.com>
-> >> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> >> Cc: linux-arm-kernel@lists.infradead.org
-> >> Cc: linux-kernel@vger.kernel.org
-> >>
-> >> Suggested-by: Mark Rutland <mark.rutland@arm.com>
-> >> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> >> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> >> ---
-> >>  arch/arm64/kernel/cpufeature.c | 1 -
-> >>  1 file changed, 1 deletion(-)
-> >>
-> >> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> >> index 6d032fbe416f..51386dade423 100644
-> >> --- a/arch/arm64/kernel/cpufeature.c
-> >> +++ b/arch/arm64/kernel/cpufeature.c
-> >> @@ -435,7 +435,6 @@ static const struct arm64_ftr_bits ftr_id_pfr1[] = {
-> >>  };
-> >>  
-> >>  static const struct arm64_ftr_bits ftr_id_dfr0[] = {
-> >> -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
-> > 
-> > Hmm, this still confuses me. Is this not now FTR_NONSTRICT? Why is that ok?
+On Fri, Apr 03, 2020 at 10:58:51AM +0200, Ard Biesheuvel wrote:
+> On Thu, 2 Apr 2020 at 13:30, Catalin Marinas <catalin.marinas@arm.com> wrote:
+> > On Mon, Mar 30, 2020 at 04:32:31PM +0200, Ard Biesheuvel wrote:
+> > > On Mon, 30 Mar 2020 at 16:28, Will Deacon <will@kernel.org> wrote:
+> > > > Fair enough, but I'd still like to see some numbers. If they're compelling,
+> > > > then we could explore something like CONFIG_OF_DMA_DEFAULT_COHERENT, but
+> > > > that doesn't really help the kconfig maze :(
+> >
+> > I'd prefer not to have a config option, we could easily break single
+> > Image at some point.
+> >
+> > > Could we make this a runtime thing? E.g., remap the entire linear
+> > > region down to pages under stop_machine() the first time we probe a
+> > > device that uses non-coherent DMA?
+> >
+> > That could be pretty expensive at run-time. With the ARMv8.4-TTRem
+> > feature, I wonder whether we could do this lazily when allocating
+> > non-coherent DMA buffers.
+> >
+> > (I still hope there isn't a problem at all with this mismatch ;)).
+> >
 > 
-> Mark had mentioned about it earlier (https://patchwork.kernel.org/patch/11287805/)
-> Did I misinterpret the first part ? Could not figure "capping the emulated debug
-> features" part. Probably, Mark could give some more details.
-> 
-> From the earlier discussion:
-> 
-> * ID_DFR0 fields need more thought; we should limit what we expose here.
->   I don't think it's valid for us to expose TraceFilt, and I suspect we
->   need to add capping for debug features we currently emulate.
+> Now that we have the pieces to easily remap the linear region down to
+> pages, and [apparently] some generic infrastructure to manage the
+> linear aliases, the only downside is the alleged performance hit
+> resulting from increased TLB pressure. This is obviously highly
+> micro-architecture dependent, but with Xgene1 and ThunderX1 out of the
+> picture, I wonder if the tradeoffs are different now. Maybe by now, we
+> should just suck it up (Note that we had no complaints afaik regarding
+> the fact that we map the linear map down to pages by default now)
 
-Sorry, I for confused (again) by the cpufeature code :) I'm going to add
-the following to my comment:
+I'd be in favour of that fwiw.
 
-
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index c1d44d127baa..9b05843d67af 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -53,6 +53,11 @@
-  *   arbitrary physical CPUs, but some features not present on the host are
-  *   also advertised and emulated. Look at sys_reg_descs[] for the gory
-  *   details.
-+ *
-+ * - If the arm64_ftr_bits[] for a register has a missing field, then this
-+ *   field is treated as STRICT RES0, including for read_sanitised_ftr_reg().
-+ *   This is stronger than FTR_HIDDEN and can be used to hide features from
-+ *   KVM guests.
-  */
- 
- #define pr_fmt(fmt) "CPU features: " fmt
-
-
-However, I think we really want to get rid of ftr_generic_32bits[] entirely
-and spell out all of the register fields, even just using comments for the
-fields we're omitting:
-
-
-@@ -425,7 +430,7 @@ static const struct arm64_ftr_bits ftr_id_pfr1[] = {
- };
- 
- static const struct arm64_ftr_bits ftr_id_dfr0[] = {
--	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
-+	/* 31:28	TraceFilt */
- 	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 24, 4, 0xf),	/* PerfMon */
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 20, 4, 0),
- 	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 16, 4, 0),
-
-
-Longer term, I think we'll probably want to handle these within
-ARM64_FTR_BITS, as we may end up with features that we want to hide from
-KVM guests but not from the host kernel.
+Catalin -- did you get anything back from the architects about the cache
+hit behaviour?
 
 Will
 
