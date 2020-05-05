@@ -2,89 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A2BD21C4FA8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 09:52:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 07D471C5016
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 10:18:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fdhQFIruyQL9JKqMMdajnTJQQhbmeTQtQnhS6T6J8c8=; b=TrFQxBprT/Nw5i
-	zkCqm2nGt2LoO0NjIISSUjL/eeckbiqRivjfuNiFYLw86uKKh9C28nWGoeMmALXFbdHWFbB74eIpG
-	+3yJ90a30rGnO9gNLfhZD6YsKZLW2it2hzAN36fKUKtl58Uf9drF+LLZSfWvRT+Bsz7tStY3DA5bA
-	xgNzQ5M2RWXmTLuzNUvPkhig+1nZO901Fp5Sf2psYCXiMwr4wao5s/Jo9StEtnowqQCTkxXpwJLKb
-	odZuBhnj01fEDPNwd9QUofPRgZ8kESD1+VaBQZBMRmzD9wWcKHiAZB3UvBCEYbDAOKn3iHjAh6DA3
-	bDXJdYq11k3cLDDOE81g==;
+	List-Owner; bh=mSafn7+DAFAL7sToJ/efxwe9H2uE6CfnmOuJh91HU7Q=; b=Lc4xDFzZgHNUed
+	6gQM0bfawOlXwo4QQ7JJBWGTDKUhj8EacV5uUb1oFr7iJaEzGhZC4BRDDuIvRx0BPxkSvuMXbPYts
+	tVtFVGB6gc7ZDIw6OXRTmNpg/IyYk4m8YR7rXMC0Zm9aFLIAjg8gNeLk0iWpkkvYukTTgPaupXqwu
+	CADFT88Gx4fm4QQYRstfpTet78Rg8Vg+I4SpTu9Z+GEo7ZHWgIZWOdgM6R6WDQWvGDi2paGop9r9d
+	BaiFZPV6w3icO7RpMpQCuaAwlTH17uaghXdSrbOI5nQaKoO2gP31RtjEQhUYrsVFP+oEGiG0J7l0J
+	d/OiqXSNTsU92hOyTWVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVsNk-0002Ro-JS; Tue, 05 May 2020 07:52:48 +0000
-Received: from mail-lj1-f194.google.com ([209.85.208.194])
+	id 1jVsmB-0003sX-L7; Tue, 05 May 2020 08:18:03 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVsNd-0002R0-8R
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 07:52:42 +0000
-Received: by mail-lj1-f194.google.com with SMTP id f11so611589ljp.1
+ id 1jVsm1-0003oK-Bi
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 08:17:56 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id i185so263931vki.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 00:52:40 -0700 (PDT)
+ Tue, 05 May 2020 01:17:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=TbQ/NUsTl64Wiv4a1ipzIuD3CBdf0yc6n6AHT0AzX6s=;
+ b=lizeE8913OsCMHce51oPvAyEnSr00jzla8Wj9ZJX8Yj4J1Psb7aJ12HDbUuxzEASuV
+ CJOcUf/1RPpJ18db073V2gTXAgZrhjOiqKsFQTtxkRjpOYi7p+8iPI6IgM2MLiGzaKLy
+ cLIvq0bhk4yEFz1lkPgzduKThkyI9/FNNBUECjt00MMWx/SmSy1QyuQ90mKXKVovzmJ9
+ 4fKGh0hJnh1TGnDmYd/ZhNdLxC+6X+tPCtAfmgDvTlLfG9iZKYS2tw377gR8NwBlvma+
+ N8uaPL/HAJq4slF/CQIAr93/bDUWK4Xy5o9CeYh1dInheigK6z+mx2xsFNL4I2ItVIiH
+ Sw4w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0Y7Rnj17ii//R53Od+I3NriqOZPosXNwE7MSov+XlfY=;
- b=oz/5NvSUg7cL+uyyM7gpOR34h5qInGaOpipLOTEdGAP09GkqqfeN5s4wIrKklxMLpu
- D0ZsXgC8ajS9c/Zda1CKpS+hnBFFtZ357pqe5q2XjB/4PTpokDkDuPyYhUpGUSX3XC8f
- 18b+cNd2i4RvOKbk+iwqgHwfdMftdIq2+66hEMwYB60BNML7mVwbElPjxVACuGFsS4vv
- l/GWSRw+0Drp3M/OokgC2tXn9uxLCf2xekxfdiel1PQMBXvuobXzroh9OZ0teEICbtq8
- HVYaseMvdQ/x8UCqXIuuKWlqKYyvWmik2KOBtBStENVVViPqTGYTX0Q3A8p18HJAQDjz
- 49wg==
-X-Gm-Message-State: AGi0PuZZP9ANUVVYlTKR9I4j26EpGQzpi3AePAnrgHBTNm4yYGYWc+jY
- mWiD43qpc4DcA1V9itpNS9eaFD8BWuY=
-X-Google-Smtp-Source: APiQypKcj24GtO7hF+3+XVInTi9oI+FeUYZ1XhmsSd0UtYS4IuDkkG22FcwJDarGyT9sqKlcftM6OA==
-X-Received: by 2002:a2e:8949:: with SMTP id b9mr1060686ljk.108.1588665159036; 
- Tue, 05 May 2020 00:52:39 -0700 (PDT)
-Received: from mail-lf1-f42.google.com (mail-lf1-f42.google.com.
- [209.85.167.42])
- by smtp.gmail.com with ESMTPSA id s8sm1259038lfd.61.2020.05.05.00.52.38
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 05 May 2020 00:52:38 -0700 (PDT)
-Received: by mail-lf1-f42.google.com with SMTP id a9so564884lfb.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 00:52:38 -0700 (PDT)
-X-Received: by 2002:ac2:5290:: with SMTP id q16mr830193lfm.108.1588665158225; 
- Tue, 05 May 2020 00:52:38 -0700 (PDT)
+ bh=TbQ/NUsTl64Wiv4a1ipzIuD3CBdf0yc6n6AHT0AzX6s=;
+ b=ZPFA9ws5TmuY+WT3M0cB0yyol2zLb+gg17hSo6eYVWbPRlz+z0BEcos9ec9zvSdqfW
+ XLDiZnJaZ9znMYf6QEioaMaAG3/jjG52xMvbWcyekNpD0DP94COi3kvbPEmxbwaCq7BX
+ PJjPzJfIA2IcWplsVJGYQrfNAtVw9xiSPyXEWTU9/2BlnRcbJht47AwhManXjurEdq37
+ 5x2zBq+L4dETe4RgAR9ZJvXws6+ZEsE6Tmcwrrr+p4mZHAUQ8uRxlFc02wbaHGAEpveS
+ Is4ij1AIFRmeuunGAQ2dbRyxhDyVnY+NCZHP7ewyZAMTg0Wsl4IgfwlyPxLt40XiwfeK
+ iONw==
+X-Gm-Message-State: AGi0PubqvTnPw9x1a63/acFbq7aNkzxHv+6FyL0vhztPX4zVHuUL8ZKF
+ FULoysDTdIr0BnJSDNwGdytj23keAA22vBNsqUtYRw==
+X-Google-Smtp-Source: APiQypJn4YPdoD6blL7gFwU0ijM52tdeLzBf7tlSaUAOwu8rfRRQ9Nd8hu+SfYhQA6qyrUO32C4i1Xcp+YT+RFkLY84=
+X-Received: by 2002:a1f:a60b:: with SMTP id p11mr1325157vke.43.1588666671822; 
+ Tue, 05 May 2020 01:17:51 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200505075034.168296-1-christophe.jaillet@wanadoo.fr>
-In-Reply-To: <20200505075034.168296-1-christophe.jaillet@wanadoo.fr>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 5 May 2020 15:52:25 +0800
-X-Gmail-Original-Message-ID: <CAGb2v65PhkepV=1RzKr7bmF_iyjOEM3iu2a772uYPYhy+7Db=Q@mail.gmail.com>
-Message-ID: <CAGb2v65PhkepV=1RzKr7bmF_iyjOEM3iu2a772uYPYhy+7Db=Q@mail.gmail.com>
-Subject: Re: [PATCH] media: sun8i: Fix an error handling path in
- 'deinterlace_runtime_resume()'
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+References: <20200428210229.703309-1-martin.blumenstingl@googlemail.com>
+ <20200428210229.703309-3-martin.blumenstingl@googlemail.com>
+ <1jlfmdi9uw.fsf@starbuckisacylon.baylibre.com>
+ <CAPDyKFoEh8qKYFONo1SHnvwhDwjUa5bMnnT1Kbu8=4rd=T-8Kg@mail.gmail.com>
+ <1jh7x1i3hj.fsf@starbuckisacylon.baylibre.com>
+In-Reply-To: <1jh7x1i3hj.fsf@starbuckisacylon.baylibre.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 5 May 2020 10:17:15 +0200
+Message-ID: <CAPDyKFq_USCNNps3s4+C_1hriycrxtRMKJvnPFcP59CZmLXbGw@mail.gmail.com>
+Subject: Re: [PATCH v6 2/2] mmc: host: meson-mx-sdhc: new driver for the
+ Amlogic Meson SDHC host
+To: Jerome Brunet <jbrunet@baylibre.com>, 
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_005241_301306_45EE23C9 
-X-CRM114-Status: GOOD (  12.39  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200505_011753_403029_214BFEE8 
+X-CRM114-Status: GOOD (  18.98  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.194 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [wens213[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [wens213[at]gmail.com]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,28 +96,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>, kernel-janitors@vger.kernel.org,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: DTML <devicetree@vger.kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Stephen Boyd <sboyd@kernel.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ yinxin_1989@aliyun.com, Anand Moon <linux.amoon@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, lnykww@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 5, 2020 at 3:50 PM Christophe JAILLET
-<christophe.jaillet@wanadoo.fr> wrote:
->
-> It is spurious to call 'clk_disable_unprepare()' when
-> 'clk_prepare_enable()' has not been called yet.
-> Re-order the error handling path to avoid it.
->
-> Fixes: a4260ea49547 ("media: sun4i: Add H3 deinterlace driver")
-> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+[...]
 
-Acked-by: Chen-Yu Tsai <wens@csie.org>
+> >> > +
+> >> > +     return devm_of_clk_add_hw_provider(dev, of_clk_hw_onecell_get,
+> >> > +                                        onecell_data);
+> >>
+> >> I think registering a provider for a module that does not provide clocks
+> >> to any other device is a bit overkill.
+> >>
+> >> I understand the matter is getting the per-user clk* pointer.
+> >> Since this is the module registering the clock, you can use clk_hw->clk
+> >> to get it.
+> >>
+> >> Once you have the clk* of the leaf clocks, you don't even need to keep
+> >> track of the clk_hw* since you are using devm_
+> >>
+> >> Afterward, we should propably discuss with Stephen if something should
+> >> be added in CCF to get a struct clk* from struct clk_hw*.
+> >>
+> >
+> > [...]
+> >
+> > Hmm.
+> >
+> > I am not sure the above is a good idea, at all. Unless, I am
+> > misunderstanding your point, which may be the case.
+> >
+> > I think above "shortcuts" could lead to abuse of the clock framework
+> > and its internal data structures. When going forward, this could make
+> > it unnecessary harder to maintain the clock framework.
+> >
+> > I know, it's not my responsibility, but from my experience with MMC
+> > and SDIO interfaces, is that those have been too easy abuse - since
+> > most of the data structures and interfaces have been exported. Now,
+> > it's hard to roll back that, if you see what I mean.
+>
+> Indeed, it worth clarifying this first.
+>
+> With clk_register deprecated in favor of clk_hw_register, we are likely
+> to see that case rise elsewhere.
+>
+
+So, according to the separate discussion [1], I think we can let
+Martin decide what option to implement at this point.
+
+1. Implement the "clk_hw_get_clk()" approach. The preferred option,
+but requires wider changes of the clock subsystem as well.
+
+2. Keep the existing approach, with devm_clk_get(). I am fine with
+this as well, we can always switch to 1) later on.
+
+[...]
+
+Kind regards
+Uffe
+
+[1]
+https://www.spinics.net/lists/linux-clk/msg48373.html
 
 _______________________________________________
 linux-arm-kernel mailing list
