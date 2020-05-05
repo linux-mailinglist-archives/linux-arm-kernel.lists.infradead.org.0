@@ -2,48 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97FC61C4D17
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:18:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 107A31C4D14
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JT9r7xl2YZkxYaBhq4AjodJKK4wZMD1LfJEapXBbUwI=; b=OweOrQNoHpAL4M
-	+0JdWWveS4jFKO51UMvLn8dAal1GDcRhS6sMx7YnHFYGJAfnXqV6Y7VxeuW2HnbUYG9Zior4fu5hY
-	jrrnuLdPKwjdO+Aq5AdPQ9TXme2eO/l4zYyQ1Jc8R5St9SBq6MGUiRpZqCwZ5IxNbAAfH01SBIHmY
-	fhtnli/zm5MHPDFWkfAqGxucsM3xVfrgP6QHfiD+ac5ybUdMdewAdQUII8TpkdU4zWTk32mshNFlw
-	l7zU+qWTRV4U2QhwZMWYCqbwSVRKwVOmlLyNfzOSAgjiMrWEdN46WDXa8i+hvdeXxZR7q7soRp+3j
-	qurHYGVKs14y9gThcptw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nERT6e37eVk5f06Bj7gB9L22q8AwxXwSXzIDK/uW3eM=; b=KJJz/14Dj6a2zm
+	fWIb5Sn5noRrdJEZtZdVSQlTpZkSj7SLzJLZZ4F7+WURsU1nHgbwYajIGiUhKnyl1PJUvDUBmz03x
+	Bp4RaO9TcTNK9N+BMthp+aQj2TnthHPj7GZqGXsgRPKWXiGkaut9UDwyKvtFy432Upov9v+J7BMIP
+	oIiONbEk6E+K5InJYAvg8QK87YAuHDpXeG4jyZE416GATWoMZvuUWIJOHxxadEfEFvHn77lqhlVe9
+	vn+RGavZbCCZJV2S05MR+/Gzf6aPBYEDTcpzWl1OGVZ2srMulvb98Zz5O3oU4e0QpRlBBK9m6rX8y
+	3krT8s+OHmCXskmCqn1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVp2g-0000C4-7G; Tue, 05 May 2020 04:18:50 +0000
+	id 1jVp2O-0008Ux-Gp; Tue, 05 May 2020 04:18:32 +0000
 Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVp2G-0008Sh-3M
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:18:26 +0000
+ id 1jVp2F-0008Sg-Pd
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:18:25 +0000
 Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 8279A9394D9CBB3283FD;
+ by Forcepoint Email with ESMTP id 7DE924903A2CE4AF74CE;
  Tue,  5 May 2020 12:18:15 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.56) by
  DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
  14.3.487.0; Tue, 5 May 2020 12:18:06 +0800
 From: Shaokun Zhang <zhangshaokun@hisilicon.com>
 To: <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v2 1/3] arm64: perf: Add support caps in sysfs
-Date: Tue, 5 May 2020 12:16:38 +0800
-Message-ID: <1588652200-12341-1-git-send-email-zhangshaokun@hisilicon.com>
+Subject: [PATCH v2 2/3] arm64: perf: Expose some new events via sysfs
+Date: Tue, 5 May 2020 12:16:39 +0800
+Message-ID: <1588652200-12341-2-git-send-email-zhangshaokun@hisilicon.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1588652200-12341-1-git-send-email-zhangshaokun@hisilicon.com>
+References: <1588652200-12341-1-git-send-email-zhangshaokun@hisilicon.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.69.192.56]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_211824_488767_FA638488 
-X-CRM114-Status: GOOD (  15.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200504_211824_402860_D133D7D3 
+X-CRM114-Status: UNSURE (   9.07  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -1.5 (-)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
@@ -53,6 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,267 +69,100 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Mark Rutland <mark.rutland@arm.com>,
- Will Deacon <will@kernel.org>
+ Mark Rutland <mark.rutland@arm.com>, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARMv8.4-PMU introduces the PMMIR_EL1 registers and some new PMU events,
-like STALL_SLOT etc, are related to it. Let's add a caps directory to
-/sys/bus/event_source/devices/armv8_pmuv3_0/ and support slots from
-PMMIR_EL1 registers in this entry. The user programs can get the slots
-from sysfs directly.
+Some new PMU events can been detected by PMCEID1_EL0, but it can't
+be listed, Let's expose these through sysfs.
 
-Cc: Catalin Marinas <catalin.marinas@arm.com> 
 Cc: Will Deacon <will@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
 ---
-Hi Will,
+ arch/arm64/include/asm/perf_event.h | 27 +++++++++++++++++++++++++++
+ arch/arm64/kernel/perf_event.c      | 19 +++++++++++++++++++
+ 2 files changed, 46 insertions(+)
 
-I send another patch[3/3] arm64: perf: Correct the event index in sysfs
-meanwhile because it is dependent on patch2.
-
-ChangeLog in v2:
-    * Add caps entry in sysfs
-    * Fix the PMU events typos
-    * Add one new patch to correct event ID in sysfs
-
- arch/arm64/include/asm/sysreg.h |  2 +
- arch/arm64/kernel/perf_event.c  | 87 +++++++++++++++++++++++++++++++----------
- include/linux/perf/arm_pmu.h    |  1 +
- 3 files changed, 69 insertions(+), 21 deletions(-)
-
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index c4ac0ac25a00..aa14083de466 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -314,6 +314,8 @@
- #define SYS_PMINTENSET_EL1		sys_reg(3, 0, 9, 14, 1)
- #define SYS_PMINTENCLR_EL1		sys_reg(3, 0, 9, 14, 2)
+diff --git a/arch/arm64/include/asm/perf_event.h b/arch/arm64/include/asm/perf_event.h
+index e7765b62c712..2c2d7dbe8a02 100644
+--- a/arch/arm64/include/asm/perf_event.h
++++ b/arch/arm64/include/asm/perf_event.h
+@@ -72,6 +72,13 @@
+ #define ARMV8_PMUV3_PERFCTR_LL_CACHE_RD				0x36
+ #define ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD			0x37
+ #define ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD			0x38
++#define ARMV8_PMUV3_PERFCTR_L1D_CACHE_LMISS_RD			0x39
++#define ARMV8_PMUV3_PERFCTR_OP_RETIRED				0x3A
++#define ARMV8_PMUV3_PERFCTR_OP_SPEC				0x3B
++#define ARMV8_PMUV3_PERFCTR_STALL				0x3C
++#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_BACKEND			0x3D
++#define ARMV8_PMUV3_PERFCTR_STALL_SLOT_FRONTEND			0x3E
++#define ARMV8_PMUV3_PERFCTR_STALL_SLOT				0x3F
  
-+#define SYS_PMMIR_EL1			sys_reg(3, 0, 9, 14, 6)
+ /* Statistical profiling extension microarchitectural events */
+ #define	ARMV8_SPE_PERFCTR_SAMPLE_POP				0x4000
+@@ -79,6 +86,26 @@
+ #define	ARMV8_SPE_PERFCTR_SAMPLE_FILTRATE			0x4002
+ #define	ARMV8_SPE_PERFCTR_SAMPLE_COLLISION			0x4003
+ 
++/* AMUv1 architecture events */
++#define	ARMV8_AMU_PERFCTR_CNT_CYCLES				0x4004
++#define	ARMV8_AMU_PERFCTR_STALL_BACKEND_MEM			0x4005
 +
- #define SYS_MAIR_EL1			sys_reg(3, 0, 10, 2, 0)
- #define SYS_AMAIR_EL1			sys_reg(3, 0, 10, 3, 0)
- 
++/* long-latency read miss events */
++#define	ARMV8_PMUV3_PERFCTR_L1I_CACHE_LMISS			0x4006
++#define	ARMV8_PMUV3_PERFCTR_L2D_CACHE_LMISS_RD			0x4009
++#define	ARMV8_PMUV3_PERFCTR_L2I_CACHE_LMISS			0x400A
++#define	ARMV8_PMUV3_PERFCTR_L3D_CACHE_LMISS_RD			0x400B
++
++/* additional latency from alignment events */
++#define	ARMV8_PMUV3_PERFCTR_LDST_ALIGN_LAT			0x4020
++#define	ARMV8_PMUV3_PERFCTR_LD_ALIGN_LAT			0x4021
++#define	ARMV8_PMUV3_PERFCTR_ST_ALIGN_LAT			0x4022
++
++/* Armv8.5 Memory Tagging Extension events */
++#define	ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED			0x4024
++#define	ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED_RD			0x4025
++#define	ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED_WR			0x4026
++
+ /* ARMv8 recommended implementation defined event types */
+ #define ARMV8_IMPDEF_PERFCTR_L1D_CACHE_RD			0x40
+ #define ARMV8_IMPDEF_PERFCTR_L1D_CACHE_WR			0x41
 diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
-index 4d7879484cec..5f2ac87e4b91 100644
+index 5f2ac87e4b91..32c87cd48cbe 100644
 --- a/arch/arm64/kernel/perf_event.c
 +++ b/arch/arm64/kernel/perf_event.c
-@@ -277,6 +277,51 @@ static struct attribute_group armv8_pmuv3_format_attr_group = {
- 	.attrs = armv8_pmuv3_format_attrs,
- };
- 
-+static inline int armv8pmu_get_pmu_version(void)
-+{
-+	int pmuver;
-+	u64 dfr0;
-+
-+	dfr0 = read_sysreg(id_aa64dfr0_el1);
-+	pmuver = cpuid_feature_extract_unsigned_field(dfr0,
-+			ID_AA64DFR0_PMUVER_SHIFT);
-+
-+	return pmuver;
-+}
-+
-+static umode_t
-+armv8pmu_caps_attr_is_visible(struct kobject *kobj, struct attribute *attr,
-+			      int unused)
-+{
-+	int pmuver = armv8pmu_get_pmu_version();
-+
-+	if (pmuver >= ID_AA64DFR0_PMUVER_8_4)
-+		return attr->mode;
-+
-+	return 0;
-+}
-+
-+static ssize_t slots_show(struct device *dev, struct device_attribute *attr,
-+			  char *buf)
-+{
-+	int slots = read_sysreg_s(SYS_PMMIR_EL1) & 0xFF;
-+
-+	return snprintf(buf, PAGE_SIZE, "%d\n", slots);
-+}
-+
-+static DEVICE_ATTR_RO(slots);
-+
-+static struct attribute *armv8_pmuv3_caps_attrs[] = {
-+	&dev_attr_slots.attr,
-+	NULL,
-+};
-+
-+static struct attribute_group armv8_pmuv3_caps_attr_group = {
-+	.name = "caps",
-+	.attrs = armv8_pmuv3_caps_attrs,
-+	.is_visible = armv8pmu_caps_attr_is_visible,
-+};
-+
- /*
-  * Perf Events' indices
-  */
-@@ -940,14 +985,11 @@ static void __armv8pmu_probe_pmu(void *info)
- {
- 	struct armv8pmu_probe_info *probe = info;
- 	struct arm_pmu *cpu_pmu = probe->pmu;
--	u64 dfr0;
- 	u64 pmceid_raw[2];
- 	u32 pmceid[2];
- 	int pmuver;
- 
--	dfr0 = read_sysreg(id_aa64dfr0_el1);
--	pmuver = cpuid_feature_extract_unsigned_field(dfr0,
--			ID_AA64DFR0_PMUVER_SHIFT);
-+	pmuver = armv8pmu_get_pmu_version();
- 	if (pmuver == 0xf || pmuver == 0)
- 		return;
- 
-@@ -994,7 +1036,8 @@ static int armv8pmu_probe_pmu(struct arm_pmu *cpu_pmu)
- static int armv8_pmu_init(struct arm_pmu *cpu_pmu, char *name,
- 			  int (*map_event)(struct perf_event *event),
- 			  const struct attribute_group *events,
--			  const struct attribute_group *format)
-+			  const struct attribute_group *format,
-+			  const struct attribute_group *caps)
- {
- 	int ret = armv8pmu_probe_pmu(cpu_pmu);
- 	if (ret)
-@@ -1019,6 +1062,8 @@ static int armv8_pmu_init(struct arm_pmu *cpu_pmu, char *name,
- 			events : &armv8_pmuv3_events_attr_group;
- 	cpu_pmu->attr_groups[ARMPMU_ATTR_GROUP_FORMATS] = format ?
- 			format : &armv8_pmuv3_format_attr_group;
-+	cpu_pmu->attr_groups[ARMPMU_ATTR_GROUP_CAPS] = caps ?
-+			caps : &armv8_pmuv3_caps_attr_group;
- 
- 	return 0;
- }
-@@ -1026,97 +1071,97 @@ static int armv8_pmu_init(struct arm_pmu *cpu_pmu, char *name,
- static int armv8_pmuv3_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_pmuv3",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a34_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a34",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a35_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a35",
--			      armv8_a53_map_event, NULL, NULL);
-+			      armv8_a53_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a53_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a53",
--			      armv8_a53_map_event, NULL, NULL);
-+			      armv8_a53_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a55_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a55",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a57_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a57",
--			      armv8_a57_map_event, NULL, NULL);
-+			      armv8_a57_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a65_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a65",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a72_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a72",
--			      armv8_a57_map_event, NULL, NULL);
-+			      armv8_a57_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a73_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a73",
--			      armv8_a73_map_event, NULL, NULL);
-+			      armv8_a73_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a75_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a75",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a76_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a76",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_a77_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cortex_a77",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_e1_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_neoverse_e1",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_n1_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_neoverse_n1",
--			      armv8_pmuv3_map_event, NULL, NULL);
-+			      armv8_pmuv3_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_thunder_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_cavium_thunder",
--			      armv8_thunder_map_event, NULL, NULL);
-+			      armv8_thunder_map_event, NULL, NULL, NULL);
- }
- 
- static int armv8_vulcan_pmu_init(struct arm_pmu *cpu_pmu)
- {
- 	return armv8_pmu_init(cpu_pmu, "armv8_brcm_vulcan",
--			      armv8_vulcan_map_event, NULL, NULL);
-+			      armv8_vulcan_map_event, NULL, NULL, NULL);
- }
- 
- static const struct of_device_id armv8_pmu_of_device_ids[] = {
-diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
-index 5b616dde9a4c..1e129b57d51a 100644
---- a/include/linux/perf/arm_pmu.h
-+++ b/include/linux/perf/arm_pmu.h
-@@ -73,6 +73,7 @@ enum armpmu_attr_groups {
- 	ARMPMU_ATTR_GROUP_COMMON,
- 	ARMPMU_ATTR_GROUP_EVENTS,
- 	ARMPMU_ATTR_GROUP_FORMATS,
-+	ARMPMU_ATTR_GROUP_CAPS,
- 	ARMPMU_NR_ATTR_GROUPS
+@@ -222,10 +222,29 @@ static struct attribute *armv8_pmuv3_event_attrs[] = {
+ 	ARMV8_EVENT_ATTR(ll_cache_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_RD),
+ 	ARMV8_EVENT_ATTR(ll_cache_miss_rd, ARMV8_PMUV3_PERFCTR_LL_CACHE_MISS_RD),
+ 	ARMV8_EVENT_ATTR(remote_access_rd, ARMV8_PMUV3_PERFCTR_REMOTE_ACCESS_RD),
++	ARMV8_EVENT_ATTR(l1d_cache_lmiss_rd, ARMV8_PMUV3_PERFCTR_L1D_CACHE_LMISS_RD),
++	ARMV8_EVENT_ATTR(op_retired, ARMV8_PMUV3_PERFCTR_OP_RETIRED),
++	ARMV8_EVENT_ATTR(op_SPEC, ARMV8_PMUV3_PERFCTR_OP_SPEC),
++	ARMV8_EVENT_ATTR(stall, ARMV8_PMUV3_PERFCTR_STALL),
++	ARMV8_EVENT_ATTR(stall_slot_backend, ARMV8_PMUV3_PERFCTR_STALL_SLOT_BACKEND),
++	ARMV8_EVENT_ATTR(stall_slot_frontend, ARMV8_PMUV3_PERFCTR_STALL_SLOT_FRONTEND),
++	ARMV8_EVENT_ATTR(stall_slot, ARMV8_PMUV3_PERFCTR_STALL_SLOT),
+ 	ARMV8_EVENT_ATTR(sample_pop, ARMV8_SPE_PERFCTR_SAMPLE_POP),
+ 	ARMV8_EVENT_ATTR(sample_feed, ARMV8_SPE_PERFCTR_SAMPLE_FEED),
+ 	ARMV8_EVENT_ATTR(sample_filtrate, ARMV8_SPE_PERFCTR_SAMPLE_FILTRATE),
+ 	ARMV8_EVENT_ATTR(sample_collision, ARMV8_SPE_PERFCTR_SAMPLE_COLLISION),
++	ARMV8_EVENT_ATTR(cnt_cycles, ARMV8_AMU_PERFCTR_CNT_CYCLES),
++	ARMV8_EVENT_ATTR(stall_backend_mem, ARMV8_AMU_PERFCTR_STALL_BACKEND_MEM),
++	ARMV8_EVENT_ATTR(l1i_cache_lmiss, ARMV8_PMUV3_PERFCTR_L1I_CACHE_LMISS),
++	ARMV8_EVENT_ATTR(l2d_cache_lmiss_rd, ARMV8_PMUV3_PERFCTR_L2D_CACHE_LMISS_RD),
++	ARMV8_EVENT_ATTR(l2i_cache_lmiss, ARMV8_PMUV3_PERFCTR_L2I_CACHE_LMISS),
++	ARMV8_EVENT_ATTR(l3d_cache_lmiss_rd, ARMV8_PMUV3_PERFCTR_L3D_CACHE_LMISS_RD),
++	ARMV8_EVENT_ATTR(ldst_align_lat, ARMV8_PMUV3_PERFCTR_LDST_ALIGN_LAT),
++	ARMV8_EVENT_ATTR(ld_align_lat, ARMV8_PMUV3_PERFCTR_LD_ALIGN_LAT),
++	ARMV8_EVENT_ATTR(st_align_lat, ARMV8_PMUV3_PERFCTR_ST_ALIGN_LAT),
++	ARMV8_EVENT_ATTR(mem_access_checked, ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED),
++	ARMV8_EVENT_ATTR(mem_access_checked_rd, ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED_RD),
++	ARMV8_EVENT_ATTR(mem_access_checked_wr, ARMV8_MTE_PERFCTR_MEM_ACCESS_CHECKED_WR),
+ 	NULL,
  };
  
 -- 
