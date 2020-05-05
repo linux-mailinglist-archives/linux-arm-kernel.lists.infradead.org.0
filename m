@@ -2,85 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C3581C54C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:52:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58A071C54ED
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:59:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NbSuQeoiCljCtx2wFKuaaAf3F61WPdikTCf86+3AUaE=; b=mOSITng3BNTSPq8HLBXjnWEcy
-	VgISb5QRSlRCe2lt27oKps7Hz0ykGdI2B2ReG1Csjayqc7sOJXCA65szUB8IeLIykfHd/AgUGsyi+
-	Wlk/gr+kFnXXgby9hSQC/CPd2DYicTMTg8wyxVtPqS02oM5cFnoWvUXZ6CMA5lGDoAKB3lMXgLnvc
-	gfvdjYVgKq/K2n0siGJIA0p/GpyFUT3/FN8Ebwa5lm2Lu1n8tdNRUjsHaQmONj7bcm8oXa80i22L9
-	037TDzIvmkrnbNea+C2jYKsT85I0Zj6gQO1SUX8xBzuKfd3CrWH3VhNyOFu137MmwB09QIoLOoH1y
-	u3EWEu3ZA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=HmsZlKpgZPu92b9YyX0ViKKL5kk0OyZftDguc6hfk0A=; b=i3GbfzeKQIUvcf
+	zheFVO858XMUskv4Ucm7yHUrJl74Jsy22v0WzdSQD7IVuVJNJ9jmqME9ga5pvBUPRoom0hKZP+PUu
+	VtcHg6oZQ4ghP8I3SvmktMO9cvPFTDSE0Wmg4+W+jQDKLkz8uVf5mwSsKd4a3PQYziYyI1mLnVcqc
+	H4/7C98b7xvb0eSpGNmeFutRh4KR8W597lLVrtAtL7qobjVvB9UjARoNBOoxqH3Dn/aR7Q7UrqubK
+	cglGr+qVH6h3Ehw+Pa6swWtNTGOhkF39KvIXaOIpcqwUk3LiBMReEnhZiI6eqC4P4d/uApGj8IimF
+	HPqiIVK7x4usDd9x37ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVw7r-0000yt-Uh; Tue, 05 May 2020 11:52:39 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jVwET-0004W8-A9; Tue, 05 May 2020 11:59:29 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVw7j-0000xD-Rm
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:52:33 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 045BnN8o019017; Tue, 5 May 2020 13:52:26 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : references
- : from : message-id : date : mime-version : in-reply-to : content-type :
- content-transfer-encoding; s=STMicroelectronics;
- bh=3SOp8PhNdW4IrWYxqJrQCRdEteG7eOQ26e42CGGjuAA=;
- b=xJnwGeMBKd93uRpJLbpprI7VkgCllwAGNZ81JG8prq/cV4mA+UX6aNb/YRrT0Or53xgj
- uAFYinEeYsQilCi6R/IcWGXhdLjgLqpmqiKG/CZhC7LiZLa4ufizmVUtUeGaLNMB2xSq
- 4rvNbn0ZjfPZWu2ctwjI5kIldQ4GyCa0r1sFg8rITCzBNf7SHaam7goJ5OTWx2ut1ZDT
- 5CD6T7z8JvFCWpV7y7pwH4Su8aoU1N+SmXfhcdbOSBk4KVdAuatBkEbXBlSHc7l4hy4g
- KY2kcpfrHnvrrUZUPxAFK+vz/9lXG3GPIfUuVkOYB/I4UddIi10YGkB2dbei0rGDhwVt 5g== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30rxmvfse6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 05 May 2020 13:52:26 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 44ABF10002A;
- Tue,  5 May 2020 13:52:26 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 160F22B8A14;
- Tue,  5 May 2020 13:52:26 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.48) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 5 May
- 2020 13:52:21 +0200
-Subject: Re: [PATCH] ARM: dts: stm32: Enable thermal sensor support on
- stm32mp15xx-dkx
-To: Pascal Paillet <p.paillet@st.com>, Maxime Coquelin
- <mcoquelin.stm32@gmail.com>, Rob Herring <robh+dt@kernel.org>, Mark Rutland
- <mark.rutland@arm.com>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <devicetree@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>
-References: <20200430130235.23979-1-p.paillet@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <264b0346-736e-91a0-c9c2-4f1a53627363@st.com>
-Date: Tue, 5 May 2020 13:52:13 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jVwEM-0004Vm-9E
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:59:23 +0000
+Received: by mail-lf1-x144.google.com with SMTP id a9so1116169lfb.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 04:59:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=uvyOYLDN9I6G44mzBr+eJp9UfWHxSSZYkeApkR1DRBs=;
+ b=hHN3cpNowtbVxjqPXfJfjcZuJmb+J5Kee+wNPfV9hQkfN6yoyfeyUucbR++axL8aVO
+ fpMlI4YRF0nBgFxj0vf15GhO5Tu6ZjZhlnzuV7hw2ZRQQlbMzyng/Z8bKQscC6Oaufq8
+ l1GmOUQksiW11jYhrFJ4wBF5dsH0k9uAhQH7d8UQF4PlFwcA3sCFOfkX/xyTMNnoIWOF
+ qytR5uXEloKnzfJ+g5FAPbCMc/nIfqmt+qIm3f1NMUgRG9dwDyRuYHU5O9nE8S85orQx
+ hNBEhK7Z/1qq73yW5LxMcV/YZUA6QH8SQO/N9TvmN4GiDfJHntWV+shP19bozbSAO+Xp
+ rBkQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uvyOYLDN9I6G44mzBr+eJp9UfWHxSSZYkeApkR1DRBs=;
+ b=Dr6ivWrpQOhoEpaBi8xi1CAYSgZ9G7i4jKNSxGWqnzYC4W7EYZ5gwPnPp5mNOsB83u
+ VQVbmGA2OwEzRlqrVIMRVoWyxWa4Urg5Gmg9XByqBOsggXMRNzxCXZdXAnXAelyStYhu
+ 0ezlcI6JTjQUPk6E51qot8+di37Ik+4r+e7fsGMFeeQzZMV0RQjwwA3b3rdu4QdQRxwe
+ LV+LkE0t+Nw6s6qXfZUoqEXOghNCYChdLB+LgwBNRWYSqR/egOE0sdyyTr4PluMXzKLd
+ W5Bu7If88tG4flC1Sik3mP/K67z+24cL1WZAiXNDy4QEIAaZ1eCKtrFfE5D4Kqk7HStM
+ ExYg==
+X-Gm-Message-State: AGi0Pubw2ECqH6/H8eKZzFYh+XNrtkf0MadTGzfzOqMyPgtBD6TowJ0u
+ cXeXFHmBOHDw1JnfE6iio2r/wDnhaFxXK6Xd5MagRQ==
+X-Google-Smtp-Source: APiQypIOI/I3XWJ7qttW55NOmWj7VnuraK3AIGYXqHuHAPnirsq/4IwWVzOkmHsLKcQv2q+P2ChRK+/WFoZed5VuL3Y=
+X-Received: by 2002:a05:6512:1109:: with SMTP id
+ l9mr1543834lfg.12.1588679960671; 
+ Tue, 05 May 2020 04:59:20 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200430130235.23979-1-p.paillet@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.48]
-X-ClientProxiedBy: SFHDAG6NODE1.st.com (10.75.127.16) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-05-05_06:2020-05-04,
- 2020-05-05 signatures=0
+References: <20200501205011.14899-1-grygorii.strashko@ti.com>
+ <20200501205011.14899-4-grygorii.strashko@ti.com>
+ <CADYN=9L+RtruRYKah0Bomh7UaPGQ==N9trd0ZoVQ3GTc-VY8Dg@mail.gmail.com>
+ <1bf51157-9fee-1948-f9ff-116799d12731@ti.com>
+ <CADYN=9LfqLLmKNHPfXEiQbaX8ELF78BL-vWUcX-VP3aQ86csNg@mail.gmail.com>
+In-Reply-To: <CADYN=9LfqLLmKNHPfXEiQbaX8ELF78BL-vWUcX-VP3aQ86csNg@mail.gmail.com>
+From: Anders Roxell <anders.roxell@linaro.org>
+Date: Tue, 5 May 2020 13:59:09 +0200
+Message-ID: <CADYN=9LDCE2sQca12D4ow3BkaxXi1_bnc4Apu7pP4vnA=5AOKA@mail.gmail.com>
+Subject: Re: [PATCH net-next 3/7] net: ethernet: ti: am65-cpsw-nuss: enable
+ packet timestamping support
+To: Grygorii Strashko <grygorii.strashko@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_045232_190185_FD6B30CF 
-X-CRM114-Status: GOOD (  17.07  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200505_045922_326322_D3EC4915 
+X-CRM114-Status: GOOD (  20.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -101,42 +96,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
+ Lokesh Vutla <lokeshvutla@ti.com>, Networking <netdev@vger.kernel.org>,
+ Richard Cochran <richardcochran@gmail.com>, Sekhar Nori <nsekhar@ti.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Tero Kristo <t-kristo@ti.com>,
+ Murali Karicheri <m-karicheri2@ti.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pascal
+On Tue, 5 May 2020 at 13:16, Anders Roxell <anders.roxell@linaro.org> wrote:
+>
+> On Tue, 5 May 2020 at 13:05, Grygorii Strashko <grygorii.strashko@ti.com> wrote:
+> >
+> > hi Anders,
+>
+> Hi Grygorii,
 
-On 4/30/20 3:02 PM, Pascal Paillet wrote:
-> Enable STM32 Digital Thermal Sensor driver for stm32mp15xx-dkx boards.
-> 
-> Signed-off-by: Pascal Paillet <p.paillet@st.com>
-> ---
->   arch/arm/boot/dts/stm32mp15xx-dkx.dtsi | 4 ++++
->   1 file changed, 4 insertions(+)
-> 
-> diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-> index f6672e87aef3..203f7742e054 100644
-> --- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-> +++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-> @@ -116,6 +116,10 @@
->   	status = "okay";
->   };
->   
-> +&dts {
-> +	status = "okay";
-> +};
-> +
->   &ethernet0 {
->   	status = "okay";
->   	pinctrl-0 = <&ethernet0_rgmii_pins_a>;
-> 
+Hi again,
 
-Applied on stm32-next.
+>
+> >
+> > On 05/05/2020 13:17, Anders Roxell wrote:
+> > > On Fri, 1 May 2020 at 22:50, Grygorii Strashko <grygorii.strashko@ti.com> wrote:
+> > >>
+> > >> The MCU CPSW Common Platform Time Sync (CPTS) provides possibility to
+> > >> timestamp TX PTP packets and all RX packets.
+> > >>
+> > >> This enables corresponding support in TI AM65x/J721E MCU CPSW driver.
+> > >>
+> > >> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+> > >> ---
+> > >>   drivers/net/ethernet/ti/Kconfig             |   1 +
+> > >>   drivers/net/ethernet/ti/am65-cpsw-ethtool.c |  24 ++-
+> > >>   drivers/net/ethernet/ti/am65-cpsw-nuss.c    | 172 ++++++++++++++++++++
+> > >>   drivers/net/ethernet/ti/am65-cpsw-nuss.h    |   6 +-
+> > >>   4 files changed, 201 insertions(+), 2 deletions(-)
+> > >>
+> > >> diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
+> > >> index 1f4e5b6dc686..2c7bd1ccaaec 100644
+> > >> --- a/drivers/net/ethernet/ti/Kconfig
+> > >> +++ b/drivers/net/ethernet/ti/Kconfig
+> > >> @@ -100,6 +100,7 @@ config TI_K3_AM65_CPSW_NUSS
+> > >>          depends on ARCH_K3 && OF && TI_K3_UDMA_GLUE_LAYER
+> > >>          select TI_DAVINCI_MDIO
+> > >>          imply PHY_TI_GMII_SEL
+> > >> +       imply TI_AM65_CPTS
+> > >
+> > > Should this be TI_K3_AM65_CPTS ?
 
-Thanks.
-Alex
+instead of 'imply TI_K3_AM65_CPTS' don't you want to do this:
+'depends on TI_K3_AM65_CPTS || !TI_K3_AM65_CPTS'
+
+
+Cheers,
+Anders
+
+> > >
+> > > I did an arm64 allmodconfig build on todays next tag: next-20200505
+> > > and got this undefined symbol:
+> > >
+> > > aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> > > function `am65_cpsw_init_cpts':
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685:
+> > > undefined reference to `am65_cpts_create'
+> > > aarch64-linux-gnu-ld:
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685:(.text+0x2e20):
+> > > relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> > > `am65_cpts_create'
+> > > aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> > > function `am65_cpsw_nuss_tx_compl_packets':
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:923:
+> > > undefined reference to `am65_cpts_tx_timestamp'
+> > > aarch64-linux-gnu-ld:
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:923:(.text+0x4cf0):
+> > > relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> > > `am65_cpts_tx_timestamp'
+> > > aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> > > function `am65_cpsw_nuss_ndo_slave_xmit':
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1018:
+> > > undefined reference to `am65_cpts_prep_tx_timestamp'
+> > > aarch64-linux-gnu-ld:
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1018:(.text+0x58fc):
+> > > relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> > > `am65_cpts_prep_tx_timestamp'
+> > > aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> > > function `am65_cpsw_nuss_hwtstamp_set':
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1265:
+> > > undefined reference to `am65_cpts_rx_enable'
+> > > aarch64-linux-gnu-ld:
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1265:(.text+0x7564):
+> > > relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> > > `am65_cpts_rx_enable'
+> > > aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-ethtool.o: in
+> > > function `am65_cpsw_get_ethtool_ts_info':
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-ethtool.c:713:
+> > > undefined reference to `am65_cpts_phc_index'
+> > > aarch64-linux-gnu-ld:
+> > > /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-ethtool.c:713:(.text+0xbe8):
+> > > relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> > > `am65_cpts_phc_index'
+> > > make[1]: *** [/srv/src/kernel/next/Makefile:1114: vmlinux] Error 1
+> > > make[1]: Target 'Image' not remade because of errors.
+> > > make: *** [Makefile:180: sub-make] Error 2
+> > > make: Target 'Image' not remade because of errors.
+> >
+> > Sry, I can't reproduce it net-next.
+>
+> Oh I forgot to try net-next, sorry.
+>
+> > trying next...
+>
+> Thank you.
+>
+> > What's your config?
+>
+> This is the config [1] I used.
+>
+> Cheers,
+> Anders
+> [1] https://people.linaro.org/~anders.roxell/kernel-next-20200505.config
+>
+> >
+> > --
+> > Best regards,
+> > grygorii
 
 _______________________________________________
 linux-arm-kernel mailing list
