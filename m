@@ -2,50 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 385251C5F57
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:52:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 767DE1C5F73
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:59:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nFDgnZVlgF09/lk8esX2W905YWLtjn2HOBfFu5KGaQc=; b=bVdasKItweh7qpURX4fzYR9Bh
-	komKs3Sh7rATdizDgP2PYDKaK27080MPv14IqYgYzHr1Ey0WZwdg3pZ1cQMDrucAL3GixVmeWAc3A
-	2MNGfdVsfPA3SrgwPUoLXhxfYVpyEFeOdwEVfD9fKFQGe3Cbnei0K4ItCBFL8Y0PZKPulDV0TdHe8
-	D/znWV0osGgkmrV/QdXN6yOA69jFKFntIxFVd8PQas1MHJ8GPqmroT+ZEmmFQ8drQaiVp6N3lPFVQ
-	G7HYcpDAOznbYzggaRXg2xBbcdkatKPD2JTaoP9ZaCljo6yWQg3Q6Q8Tt8yVV5MsDMayU7CK6DVJZ
-	qxdx850eQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U5JsVEdMsrpvglIVMb3c+caHv4meAilpBx3A3kxJ9aA=; b=D75TyZufTGGB+R
+	J8I8QVaScIPIUreH+fH56Mz7Cfw2HmcJWPDaS/w5TAz3fmAb1Zn3DG/aEnh1iDThvb9eikVnjj2Xo
+	Vv47qDdy+UQTK8q15PN8jWKPxbji0neO1wM5W7+PPtA4eCRcG4un0G+d0g+t+5FgVHhUqH1lnJ+Rl
+	KAmfeN4hGQ5cC+oQVS9xs91ahk8uH35ccHRG7ipxw6o2f+8oAPDXpHC2c9K0ZpDItGPkIS7S+p4rG
+	PdJa9/72UHt95cJphXLanx8CkYurcFedMClADBA59sN8sXLcu7vdKLcEZPG6AjE007QWlqvg2snIK
+	RgK4POXVwQ4xA2RAG/ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1jm-0002Yn-TO; Tue, 05 May 2020 17:52:10 +0000
+	id 1jW1qf-0006EP-Cp; Tue, 05 May 2020 17:59:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1jf-0002Xq-I4
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:52:04 +0000
+ id 1jW1qY-0006DQ-7F
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:59:11 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F08A91FB;
- Tue,  5 May 2020 10:52:02 -0700 (PDT)
-Received: from [10.57.39.240] (unknown [10.57.39.240])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E3E373F305;
- Tue,  5 May 2020 10:52:00 -0700 (PDT)
-Subject: Re: [PATCH 00/16] dts/dt-bindings: Fix Arm Ltd. ARMv8 "boards"
-To: Andre Przywara <andre.przywara@arm.com>, Rob Herring <robh@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-4-andre.przywara@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <eee99db5-4100-5064-97c0-abf54d2eec15@arm.com>
-Date: Tue, 5 May 2020 18:51:58 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8B031FB;
+ Tue,  5 May 2020 10:59:07 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.47])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 118F83F305;
+ Tue,  5 May 2020 10:59:04 -0700 (PDT)
+Date: Tue, 5 May 2020 18:59:01 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 5/5] arm/arm64: smccc: Add ARCH_SOC_ID support
+Message-ID: <20200505175901.GD23612@bogus>
+References: <20200504092905.10580-1-sudeep.holla@arm.com>
+ <20200504092905.10580-6-sudeep.holla@arm.com>
+ <20200505162049.GG24239@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200505165212.76466-4-andre.przywara@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200505162049.GG24239@willie-the-truck>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_105203_649748_CBFB9857 
-X-CRM114-Status: GOOD (  16.07  )
+X-CRM114-CacheID: sfid-20200505_105910_312291_45A133DF 
+X-CRM114-Status: GOOD (  13.48  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -66,67 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-05 5:51 pm, Andre Przywara wrote:
-> Date: Mon, 4 May 2020 12:43:18 +0100
-> Subject: [PATCH 03/16] dt-bindings: ehci/ohci: Allow iommus property
+On Tue, May 05, 2020 at 05:20:50PM +0100, Will Deacon wrote:
+> On Mon, May 04, 2020 at 10:29:05AM +0100, Sudeep Holla wrote:
+> > diff --git a/drivers/firmware/psci/soc_id.c b/drivers/firmware/psci/soc_id.c
+> > new file mode 100644
+> > index 000000000000..b45f2d78e12e
+> > --- /dev/null
+> > +++ b/drivers/firmware/psci/soc_id.c
+> > @@ -0,0 +1,165 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +/*
+> > + * Copyright 2020 Arm Limited
+> > + */
+> > +
+> > +#include <linux/arm-smccc.h>
+> > +#include <linux/bitfield.h>
+> > +#include <linux/device.h>
+> > +#include <linux/module.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/slab.h>
+> > +#include <linux/sys_soc.h>
+> > +
+> > +#define SMCCC_SOC_ID_JEP106_BANK_IDX_MASK	GENMASK(30, 24)
+> > +/*
+> > + * As per the spec bits[23:16] are JEP-106 identification code with parity bit
+> > + * for the SiP. We can drop the parity bit.
+> > + */
 > 
-> A OHCI/EHCI controller could be behind an IOMMU, in which case an iommus
-> property assigns the stream ID for this device.
+> Which spec? Could you link to the doc and section here, please?
+> 
 
-Hmm, pretty much any DMA master device could be behind an IOMMU, and in 
-a way that's basically entirely irrelevant to the device itself (and 
-thus the consumer of its binding). Is there a better way we can handle 
-this than repeating such "semi-standard" properties in individual 
-bindings for ever more?
+Sure, sorry since I updated the link in 1/5, I forgot all of it and just
+started referring it here.
 
-Robin.
-
-> Allow that property in the DT bindings to fix a complaint about the Arm Juno
-> board's DTS file.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->   Documentation/devicetree/bindings/usb/generic-ehci.yaml | 3 +++
->   Documentation/devicetree/bindings/usb/generic-ohci.yaml | 3 +++
->   2 files changed, 6 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/usb/generic-ehci.yaml b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-> index 10edd05872ea..20664c28bfb2 100644
-> --- a/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-> +++ b/Documentation/devicetree/bindings/usb/generic-ehci.yaml
-> @@ -74,6 +74,9 @@ properties:
->     phy-names:
->       const: usb
->   
-> +  iommus:
-> +    maxItems: 1
-> +
->   required:
->     - compatible
->     - reg
-> diff --git a/Documentation/devicetree/bindings/usb/generic-ohci.yaml b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-> index bcffec1f1341..ff6c04cde695 100644
-> --- a/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-> +++ b/Documentation/devicetree/bindings/usb/generic-ohci.yaml
-> @@ -73,6 +73,9 @@ properties:
->     phy-names:
->       const: usb
->   
-> +  iommus:
-> +    maxItems: 1
-> +
->   required:
->     - compatible
->     - reg
-> 
+-- 
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
