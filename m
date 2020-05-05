@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AE4DE1C5E05
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:55:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 332FF1C5E02
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:55:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2+D3pC+R9VuCX6yEItVwKajYi43LxIgEJy+3qz/v+vA=; b=TngWygljZXkCZrHYGXVAzOMXwa
-	ttbwsnNOchI/71zikZnIDpJ3VTkx6iG8D1QL0EDXhmj2uP+E5ifgKe9ma7m5T4s4gRMimkTb8JqBu
-	q5oHux6zTvwEj4dxWj2XyaffQuW4fzuQA6aYLmqBtkhPt65vHn3rR5d2NdyTMNY7b6Vb/BPaazlYl
-	IS6eEwOMZDIVHYXey4J9Jk2SK+aGmeu8PNx8BO3gSM9nKXhr318iGplW3gmkaQdUQ8XQXhjCCNMmp
-	/UUvx0BWYbXnTkFeVDekfl/5RMKf8cSumYb6m83EqcSUIZaonEdPnbjZ/ZwUBOhEm+mk9T7rjQDMf
-	IOIhSzIg==;
+	bh=Qdyt2Zw+6XtpcGEXpIRBeaZZNpy+EnmE1i5qiTNv1t8=; b=XurkRmWnS9SdWI+TfgqZSFmr7P
+	P5mjMA4nxjThTBAC5SzgS2b0DzJvOLVPq/ijzYGOsVj1S2UbzgTs4IGxqq9Ue6SmAe9ddqd/z/3nL
+	vK2mrO4hDhD8XBtn2yaWLQXQNVJV7Eb3PBwBRnA1g2Kr3mKMauoNW0iBt97Ol3NACdu4Q6nAF05nb
+	pksQIyE5R1t7nNVTUU6SVFVvwiVHs85mFbbv02pJ7cAmSbfq/aZz3jpVuryYIzzQgEzE6HSfRua6A
+	l5e8AnmwsngxHmAidiU2OL8I0GYCWmz0ANUFj8PjoSwhWAvxoVw4EhSfCjyW5pv4e+H7OOv1KL9fh
+	wWzNnGMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0r4-0006T7-0Q; Tue, 05 May 2020 16:55:38 +0000
+	id 1jW0qP-0003Zt-4J; Tue, 05 May 2020 16:54:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0o9-0001IL-CD
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:52:39 +0000
+ id 1jW0oA-0001GW-I2
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:52:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F09F831B;
- Tue,  5 May 2020 09:52:36 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65419D6E;
+ Tue,  5 May 2020 09:52:38 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BC7573F305;
- Tue,  5 May 2020 09:52:35 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 300BF3F305;
+ Tue,  5 May 2020 09:52:37 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH 08/16] arm64: dts: arm: Fix GIC child nodes
-Date: Tue,  5 May 2020 17:52:04 +0100
-Message-Id: <20200505165212.76466-9-andre.przywara@arm.com>
+Subject: [PATCH 09/16] arm64: dts: arm: Fix ITS node names and #msi-cells
+Date: Tue,  5 May 2020 17:52:05 +0100
+Message-Id: <20200505165212.76466-10-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200505165212.76466-1-andre.przywara@arm.com>
 References: <20200505165212.76466-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_095237_469924_4C06119B 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20200505_095238_666811_A5BF226A 
+X-CRM114-Status: GOOD (  11.08  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,79 +71,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GIC DT nodes for the Arm Ltd. boards were not fully compliant with
-the DT binding, which has certain expectations about child nodes and
-their size and address cells values.
+The GIC ITS nodes in the fastmodel DTS files were not fully binding
+compliant.
 
-Use smaller #address-cells and #size-cells values, as the binding
-requests, and adjust the reg properties accordingly.
+Use one of the allowed node names, also add the required #msi-cells
+property for the older model.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi |  2 +-
- arch/arm64/boot/dts/arm/juno-base.dtsi           | 14 +++++++-------
- 2 files changed, 8 insertions(+), 8 deletions(-)
+ arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi | 3 ++-
+ arch/arm64/boot/dts/arm/fvp-base-revc.dts        | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-index 61a1750fcdd6..c8ebffca12a7 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
-@@ -8,7 +8,7 @@
- 	gic: interrupt-controller@2c001000 {
- 		compatible = "arm,cortex-a15-gic";
- 		#interrupt-cells = <3>;
--		#address-cells = <2>;
-+		#address-cells = <0>;
- 		interrupt-controller;
- 		reg = <0x0 0x2c001000 0 0x1000>,
- 		      <0x0 0x2c002000 0 0x2000>,
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index 62392ab1f880..65b6176f76a5 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -74,35 +74,35 @@
- 		      <0x0 0x2c02f000 0 0x2000>,
- 		      <0x0 0x2c04f000 0 0x2000>,
- 		      <0x0 0x2c06f000 0 0x2000>;
--		#address-cells = <2>;
-+		#address-cells = <1>;
- 		#interrupt-cells = <3>;
--		#size-cells = <2>;
-+		#size-cells = <1>;
- 		interrupt-controller;
- 		interrupts = <GIC_PPI 9 (GIC_CPU_MASK_SIMPLE(6) | IRQ_TYPE_LEVEL_HIGH)>;
--		ranges = <0 0 0 0x2c1c0000 0 0x40000>;
-+		ranges = <0 0 0x2c1c0000 0x40000>;
+diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
+index f2c75c756039..c668162ee3bf 100644
+--- a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
++++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
+@@ -19,9 +19,10 @@
+ 			<0x0 0x2c02f000 0x0 0x2000>;
+ 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
  
- 		v2m_0: v2m@0 {
- 			compatible = "arm,gic-v2m-frame";
+-		its: its@2f020000 {
++		its: msi-controller@2f020000 {
+ 			compatible = "arm,gic-v3-its";
  			msi-controller;
--			reg = <0 0 0 0x10000>;
-+			reg = <0 0x10000>;
- 		};
- 
- 		v2m@10000 {
- 			compatible = "arm,gic-v2m-frame";
- 			msi-controller;
--			reg = <0 0x10000 0 0x10000>;
-+			reg = <0x10000 0x10000>;
- 		};
- 
- 		v2m@20000 {
- 			compatible = "arm,gic-v2m-frame";
- 			msi-controller;
--			reg = <0 0x20000 0 0x10000>;
-+			reg = <0x20000 0x10000>;
- 		};
- 
- 		v2m@30000 {
- 			compatible = "arm,gic-v2m-frame";
- 			msi-controller;
--			reg = <0 0x30000 0 0x10000>;
-+			reg = <0x30000 0x10000>;
++			#msi-cells = <1>;
+ 			reg = <0x0 0x2f020000 0x0 0x20000>;
  		};
  	};
+diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+index 66381d89c1ce..0cf96ceff431 100644
+--- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
++++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+@@ -126,7 +126,7 @@
+ 		      <0x0 0x2c02f000 0 0x2000>;	// GICV
+ 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
  
+-		its: its@2f020000 {
++		its: msi-controller@2f020000 {
+ 			#msi-cells = <1>;
+ 			compatible = "arm,gic-v3-its";
+ 			reg = <0x0 0x2f020000 0x0 0x20000>; // GITS
 -- 
 2.17.1
 
