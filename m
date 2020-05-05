@@ -2,63 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFA571C5457
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14FA31C5465
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:33:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tWHfys8he0WLFhaC89fDTrRUibJ/+r3h7t1OuAawGqU=; b=nPxifgbdvXP0tI
-	C7IrbG1GBBjKq1KTk5RWBVInprp/b33JeerHZ1xEcB3ytc0WxmFBdwmYj5ysM8pVXFXpQcjqcwk5F
-	HVL2wEHMEUiAPc62kHu/2hDdrsRk/wOgdWRVoS59bi5jl8+4o1cahmUAGbEIHLuFdvttlkuCeHnbZ
-	UGRuN0qdg5akhh0bcDqGjUYXEiCWHXF89K/uAiZOJhRiG+UV+PE4YwwXNA2VUKhEOyi65YjUuG/Ze
-	B2IcUbttsXU/TNCaT+5m0HK7yY2AzWJA9+9wCWKksVqJu/e5DuSpR4eel/jKDETv5k280FK4GSvyC
-	jUohglw1joQp5Zn9HQZQ==;
+	List-Owner; bh=XiVM4ojTL5mfNHIzaQjR8j48Tm8X25HvBpi8hDsRxJ0=; b=TYTQjFwRLSPMmw
+	uv1ansVI6S1qGBnOHXyHj1hxsxS2ENFBLPf1Jnt8Gp+V90BN4GdCUdvuN9K2zmreYdVD8PSvfWsyD
+	DjyOqBht9fGMt4kK6RuWpZHkCtAcLPfTklcybAWlJ2GAU/oVQuzfI/Si7H9aX77D8GKQnpFXeMfSk
+	A5Omvjtx/JlbVU4Xm0fTSFa6OL+6DUWC+32RCibtRZXmpMle6fZHXa95yTGyROsOdtwbMVo6hf6yh
+	wNjfE6bczvgjoWI1TzVHnMCJu11eiJBa7sneoHzPKAu1UVJ+U8StQSeg0Vv7UxcD/RlICsEKzPtXn
+	KU9KFaMSu16b9XLc1fwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvjX-0007Xk-0V; Tue, 05 May 2020 11:27:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVvol-0002l6-0L; Tue, 05 May 2020 11:32:55 +0000
+Received: from mail-eopbgr50085.outbound.protection.outlook.com ([40.107.5.85]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvjQ-0007XL-AG
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:27:25 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5A50C206B9;
- Tue,  5 May 2020 11:27:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588678043;
- bh=2qyj23dngg47wERUJsWyKoEE8tvAolSujJUARVwGSHg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ry4CXumTr926r/3eV5UJeAhNwO1TOsjR0/iUKFfDQs0pnRlplC1QQgY4b8yHoVDeE
- ZWc7fsttR0CsX+C6KAHnnDKepfun1WdhSXv+DbkYPXKMbwagSOvMICauAM/k6EaVpl
- TOTH3JYKfwu7YgDF/Xai67unQr9go1BONb32bfik=
-Date: Tue, 5 May 2020 12:27:19 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH V3 04/16] arm64/cpufeature: Introduce ID_PFR2 CPU register
-Message-ID: <20200505112718.GH19710@willie-the-truck>
-References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
- <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
- <20200505111241.GF19710@willie-the-truck>
- <20200505111607.GA82823@C02TD0UTHF1T.local>
+ id 1jVvoe-0002jr-BI
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:32:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KviMX5bmFBkiBH8s7z3eXwrWLD5DZh8BOJgTmFw2Blvtv+O2+ZDtIyAz0onQQCxrWkKo0g3+OIWAo0zQ8s5WwyRGaL23K25U5CEL/sLC8itGmBosx/idvHKDIvyUxVG80JIDXrm41SMmFp28d5hHm0w1jacQ35X4jxRQZowO9P0M2DyEyk8XqQ8o7Z389vH81dgjGBj60/3HBVSBXpcDyTpqsVEhphBa5MSGQaVnXkE36lMbTh31PI+Rvl25BMLVjzCuJ7GB1LYjo15Mz3K6AMR1lCh7tt1BJW2QTgFWXjj2QNu1MUtlM1zc4eYnT8xu49+V5X98oZOuMBhQLAKqMw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bH+p4EeLybo1TW2G/iwQloEp+gNAd8uCYBwKq96wfB4=;
+ b=elhQufH1jEXOpwzP01rpEXaI7+T3H1dvZSnrIhOPrZSmfoR3dqDprja1lx/OVM426kzx/9AaD5FhQTvxh65ptiIeWWDAB6hrp8uLRknt/7Ygx9cllTrTPKurrDHubaQzS459Qwr5uRBSSzFA2T6M+qRNFMwz4TES6h5a0NCZo6hOld8Q4grjqn9Y67fMucl1z8n+vUFgyCgyGHN/Bn/hz7jMpJN97D2Y9Rr/UsLJLovKg08KZSbTbNsrBpVJ+UZA/uIWIX19w/8DAVsOgn+bA84mFjUP1yoL//zetC3A9kjzMRTtMCZlLmr4FzFIDoeSe2DxzkyIfH/jFmrrrEJqxQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bH+p4EeLybo1TW2G/iwQloEp+gNAd8uCYBwKq96wfB4=;
+ b=CFwr0VrFGgBcSfHlbQaJgf/YRd871XAvLdBHH9HVw2Qy5KpYQUesERbkFJ3TwiHkPRD2VXX6ss21kocRx9mYKLIDSPFJ9WjXz3oHJGjqScwgSRaR0ndvhHq2//0+k+/jfAUkyAp/WJ8NVB2SN7Ai3qezE4TZAS6aP1YiOXu9m20=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3897.eurprd04.prod.outlook.com (2603:10a6:8:12::11)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.29; Tue, 5 May
+ 2020 11:32:42 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::3143:c46:62e4:8a8b%7]) with mapi id 15.20.2958.030; Tue, 5 May 2020
+ 11:32:42 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "festevam@gmail.com" <festevam@gmail.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-clk@vger.kernel.org"
+ <linux-clk@vger.kernel.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "mturquette@baylibre.com"
+ <mturquette@baylibre.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>
+Subject: RE: [PATCH V4 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Topic: [PATCH V4 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+ json-schema
+Thread-Index: AQHWHorNsczHs2v1kkSu1x5jB6P3faiZCGeAgABbxrA=
+Date: Tue, 5 May 2020 11:32:42 +0000
+Message-ID: <DB3PR0402MB39164125CABC889C5DEE5D8AF5A70@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1588207921-20604-1-git-send-email-Anson.Huang@nxp.com>
+ <158865854354.11125.10611865219975766594@swboyd.mtv.corp.google.com>
+In-Reply-To: <158865854354.11125.10611865219975766594@swboyd.mtv.corp.google.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [92.121.68.129]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: af35e3ed-88dc-4553-7b73-08d7f0e80664
+x-ms-traffictypediagnostic: DB3PR0402MB3897:|DB3PR0402MB3897:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3897F5551EF3C23B5CE81174F5A70@DB3PR0402MB3897.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4714;
+x-forefront-prvs: 0394259C80
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: k6XvereRedC7NJ4naamQEjcRa9eABLsPWsUiHqb5EZsBY6lZepVmnSuKa8C5kg+javP9ibJoXP3JKmPzdjJ+RzoEAJG9BlHAgQ5zASHnoPlNPGyF0fffhTZKg/dqZV3X8fk9GEZzVpTzHJl/2vnVcTSj5a59DkIExIjjFZ5kwOgvFQtomnDr7a2ZOUkNcSdV/yAFXBcg9I7jHWlqkpnMkEU0HQjRqtbtZnC6Z1Dzpx3RTVK/uIyOQVunFId1Torb7OxSQq+rNKoM1vmOo9Nsz9/+JcpY9ISKN46TqW0E3dPp6/GFv9sQjI05nk3dZXN+GHuwlBnOiFLGyGyQcUX4RLw4fXP0N+FK6mrd+jKiRgcO8HTTiczvzFMv3iaBBCURw7uAK7gGvY/90fDpSU5RM3v0N/U14CownfZLIwttpJWtM7hUBZAUS7pp8/RF/PQK0ihJrnVy5FvHWVoi/nrZ5GjHH5+nXHQSpR0PELFHyvengYw5SCziDRcUuifmCK8v8hWLyy0vm7hXBBu1GpmngGTioLDbvc3mlU8mdJstpd8=
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(396003)(136003)(346002)(366004)(39860400002)(33430700001)(478600001)(4326008)(6506007)(66556008)(186003)(55016002)(86362001)(26005)(71200400001)(9686003)(7416002)(33656002)(110136005)(66446008)(64756008)(66476007)(7696005)(66946007)(2906002)(76116006)(8676002)(5660300002)(52536014)(8936002)(316002)(33440700001)(4744005)(44832011)(921003);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: uA8DCwt7Gc/UPoEPy+n6JH4YNYojKMbUupp7gF4a9Pl+9raj3DfSsbDQAm9RhabU/3Dvh2fIu2QD5UPLkS3kbiQ9gAmQhhOrW3kJ/66Hx4DcZrpP7pHq08VistZc3us7b6LfcLO5OKHGu/VoUYd7Ag0pg54ymCr8ySM+bCQYRCI2srVyqlbTJSKkwCn3/mHcu7pqfmMw1gVk8ijHWQju1lMw2GmBakKDgmwKNj77LVTu3R5DugCejTTJAywAkSCRRt3SwbwDZgRmf8duJsul+KBZxucVbS8nOj8J7L7jixFfDEa/+Y+6XI+fDnoecJG65MfO5F/h8Lb0St7t1XdrgBF4npJvl7DI7OmBlu5t4n4VJq78pBp/E8Yump3qatyq4JJckbu5z6WUPybDYnxXThuS9b+l3rbNa4yE7LSv+PLk7uKtam1N6NVE9ZOF3ZDvg1cE8VcctSa4UZChXH9BDGE22EplqSQTdFbcNYDz3wu4SrsTRUsh46PAlaZMIq5lkqHzJOmADPJ0F5LyFAbDU3BJpG4+TXh19QTAWUV/eN2sojdZbyzvIbNroYIYR+NmKVeklq2jfezzvDMGsvhWfVCd90if3+tOB6xbol5DoT2hyafqCSTYZu5QNGMGXiIbxoLiH3f5E9vdS3gC9yQJejIDBCbFcjWAyH97EOzONpyeW/hiyH7BbKr2wj+MwEEVd3mExMpD+nuTwS16kW9bv7jzKLeUHfZlo5vAjhJrrld91BW1RoPcQRHmb/TB4xfUJxbbno8uj3+t2ThW9feoD0pDUK/k4GrZFtEfNa/7Mc8=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505111607.GA82823@C02TD0UTHF1T.local>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: af35e3ed-88dc-4553-7b73-08d7f0e80664
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 May 2020 11:32:42.5992 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 7kYBciS7V/cv5hif0FxyuWylVR7/g/dXJdsgKgdTYuUI/16bA9i5HY5/w74VTrHFOxeQSclLl2CTbt7DCAsndQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3897
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_042724_395719_FAFCCDB5 
-X-CRM114-Status: GOOD (  18.30  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_043248_485162_51171CB9 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.5.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.5.85 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -67,7 +123,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,103 +134,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 12:16:07PM +0100, Mark Rutland wrote:
-> On Tue, May 05, 2020 at 12:12:41PM +0100, Will Deacon wrote:
-> > On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
-> > > This adds basic building blocks required for ID_PFR2 CPU register which
-> > > provides information about the AArch32 programmers model which must be
-> > > interpreted along with ID_PFR0 and ID_PFR1 CPU registers. This is added
-> > > per ARM DDI 0487F.a specification.
-> > > 
-> > > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > > Cc: Will Deacon <will@kernel.org>
-> > > Cc: Marc Zyngier <maz@kernel.org>
-> > > Cc: Mark Rutland <mark.rutland@arm.com>
-> > > Cc: James Morse <james.morse@arm.com>
-> > > Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > Cc: kvmarm@lists.cs.columbia.edu
-> > > Cc: linux-arm-kernel@lists.infradead.org
-> > > Cc: linux-kernel@vger.kernel.org
-> > > 
-> > > Suggested-by: Mark Rutland <mark.rutland@arm.com>
-> > > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-> > > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> > > ---
-> > >  arch/arm64/include/asm/cpu.h    |  1 +
-> > >  arch/arm64/include/asm/sysreg.h |  4 ++++
-> > >  arch/arm64/kernel/cpufeature.c  | 11 +++++++++++
-> > >  arch/arm64/kernel/cpuinfo.c     |  1 +
-> > >  arch/arm64/kvm/sys_regs.c       |  2 +-
-> > >  5 files changed, 18 insertions(+), 1 deletion(-)
-> > > 
-> > > diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
-> > > index b4a40535a3d8..464e828a994d 100644
-> > > --- a/arch/arm64/include/asm/cpu.h
-> > > +++ b/arch/arm64/include/asm/cpu.h
-> > > @@ -46,6 +46,7 @@ struct cpuinfo_arm64 {
-> > >  	u32		reg_id_mmfr3;
-> > >  	u32		reg_id_pfr0;
-> > >  	u32		reg_id_pfr1;
-> > > +	u32		reg_id_pfr2;
-> > >  
-> > >  	u32		reg_mvfr0;
-> > >  	u32		reg_mvfr1;
-> > > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> > > index e5317a6367b6..c977449e02db 100644
-> > > --- a/arch/arm64/include/asm/sysreg.h
-> > > +++ b/arch/arm64/include/asm/sysreg.h
-> > > @@ -153,6 +153,7 @@
-> > >  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
-> > >  #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
-> > >  #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
-> > > +#define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
-> > 
-> > nit: but please group these defines by name rather than encoding.
+Hi, Stephen
+
+
+> Subject: Re: [PATCH V4 1/5] dt-bindings: clock: Convert i.MX6Q clock to
+> json-schema
 > 
-> So far we've *always* grouped these by encoding in this file, so can we
-> keep things that way for now? Otherwise we're inconsistent with both
-> schemes.
+> Quoting Anson Huang (2020-04-29 17:51:57)
+> > Convert the i.MX6Q clock binding to DT schema format using json-schema.
+> >
+> > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > ---
+> 
+> Please send a cover letter next time. Who is going to apply these patches? I
+> hope Rob? If you need an acked-by feel free to have mine!
 
-Hmm, but it's really hard to read sorted that way and we'll end up with
-duplicate definitions like we had for some of the field offsets already.
-The only ID register that seems to be out of place atm is MMFR4, which I
-can move (see below)
+OK, will have a cover letter next time for patch series.
 
-Will
+Hi, Rob
+	Are you going to apply this patch series? If no, can you advise who can apply it, thanks.
 
---->8
+> 
+> Acked-by: Stephen Boyd <sboyd@kernel.org>
 
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 2dd3f4ca9780..137201ea383b 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -140,6 +140,7 @@
- #define SYS_ID_MMFR1_EL1		sys_reg(3, 0, 0, 1, 5)
- #define SYS_ID_MMFR2_EL1		sys_reg(3, 0, 0, 1, 6)
- #define SYS_ID_MMFR3_EL1		sys_reg(3, 0, 0, 1, 7)
-+#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
- 
- #define SYS_ID_ISAR0_EL1		sys_reg(3, 0, 0, 2, 0)
- #define SYS_ID_ISAR1_EL1		sys_reg(3, 0, 0, 2, 1)
-@@ -147,7 +148,6 @@
- #define SYS_ID_ISAR3_EL1		sys_reg(3, 0, 0, 2, 3)
- #define SYS_ID_ISAR4_EL1		sys_reg(3, 0, 0, 2, 4)
- #define SYS_ID_ISAR5_EL1		sys_reg(3, 0, 0, 2, 5)
--#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
- #define SYS_ID_ISAR6_EL1		sys_reg(3, 0, 0, 2, 7)
- 
- #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
-
+Thanks,
+Anson
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
