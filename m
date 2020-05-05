@@ -2,53 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3EB01C53DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:04:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51AD41C53E8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:05:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aLy7MJpfLtA1LxaYnNg2wb+voyTjVa+RfAzy4rDpiSo=; b=B0f64s3+dhMTLD
-	OPhVJnZRUlQ5thWnD6HLdTCKzRI2t5lSwWen8WWtCh1pO/C303SeUmDdBTAFp+WIXaeIDF3ztEiVh
-	mvcoNzfds76GxyCH+osiHEcrLaq3c89iIuippeypzR+xRvnn6F7rQp3unnSwSPleCakXAhQgpTTGi
-	yjf0tgn1+TkMW/Bu3nU5RLslQgr3C+19Eyz1m7mx/UbMYt5EVl/pQ1sFt/rwPoMeuSh1XSSwNSxB7
-	p5c2RdfsECOyMk6S9wCKYobzfLsPXpQXnQ4pVYRG7ISlhvgkJoGPj7+SudYjmAo82JJJFC3BpHl3m
-	zyNr+PIhj/hlL7u2Isrw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NUtOhnSvfDPAXqTqO5N4xKhFvQXNmt3ggASzYgk6bLg=; b=PEql2NCJulXXqR07UIcT8BcGW
+	2k9GAGha1/stjk0EIFpMqsNM2ArbID5xuU+sqooCWiBhgvMvP0ye4SzUZXfE44gADIFhcbNUtJNm2
+	c7GVZ44rIeoQXA9tmX/mNpFZAXmkrwzOIkWJBn9fmHjTEck6oyMWLrB8n79b64nMKeAZSXfsDbRMA
+	akk6ekJxhqB1ZN1ZSbbTv/4QVUrkxRDDds3PF0K5rpdigaED6u2dp9OhPazAFUbi9q+YBgxfVKP5o
+	6K45cuYbdcHP/KsrmkJzwByhU9t7eEALLz2rm1Z3olsHCCZP3ICRYQQpQFzucTYv7s67JKsB1BksL
+	Uw1/QtmmA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvMx-0005jw-8B; Tue, 05 May 2020 11:04:11 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1jVvOU-0000X2-30; Tue, 05 May 2020 11:05:46 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvMo-0005jA-MJ
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:04:04 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 11E5F68C4E; Tue,  5 May 2020 13:03:59 +0200 (CEST)
-Date: Tue, 5 May 2020 13:03:58 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Jann Horn <jannh@google.com>
-Subject: Re: [PATCH v2 4/5] binfmt_elf, binfmt_elf_fdpic: Use a VMA list
- snapshot
-Message-ID: <20200505110358.GC17400@lst.de>
-References: <20200429214954.44866-1-jannh@google.com>
- <20200429214954.44866-5-jannh@google.com>
+ id 1jVvO8-0000Kv-E8
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:05:26 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 045B5Ffc037803;
+ Tue, 5 May 2020 06:05:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1588676715;
+ bh=umV3B0I90WivROOQuE1mue7ZnlXEBWCYNsNS60PidxE=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=v2PIMyT/xLLLP77mLPoVDXUtJLvKbrHUxN72YgrIJCb8VvZoHp1l8WTXEz0FQQ14o
+ MHYEFMKOH6e3H/joIN/Vnddo7zlh1vIm1cGIOFU1C/cVCl73qbhfdmmwJUzUKtgRrf
+ K8AuRIPQulJ9XLRky3VX1rI5rt5PQVHU6eSzAenA=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 045B5FjQ073523;
+ Tue, 5 May 2020 06:05:15 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 5 May
+ 2020 06:05:15 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Tue, 5 May 2020 06:05:14 -0500
+Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 045B5BKn127153;
+ Tue, 5 May 2020 06:05:12 -0500
+Subject: Re: [PATCH net-next 3/7] net: ethernet: ti: am65-cpsw-nuss: enable
+ packet timestamping support
+To: Anders Roxell <anders.roxell@linaro.org>
+References: <20200501205011.14899-1-grygorii.strashko@ti.com>
+ <20200501205011.14899-4-grygorii.strashko@ti.com>
+ <CADYN=9L+RtruRYKah0Bomh7UaPGQ==N9trd0ZoVQ3GTc-VY8Dg@mail.gmail.com>
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+Message-ID: <1bf51157-9fee-1948-f9ff-116799d12731@ti.com>
+Date: Tue, 5 May 2020 14:05:11 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200429214954.44866-5-jannh@google.com>
-User-Agent: Mutt/1.5.17 (2007-11-01)
+In-Reply-To: <CADYN=9L+RtruRYKah0Bomh7UaPGQ==N9trd0ZoVQ3GTc-VY8Dg@mail.gmail.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_040403_026621_18E92AB5 
-X-CRM114-Status: GOOD (  28.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_040524_551215_B592B707 
+X-CRM114-Status: GOOD (  18.82  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,184 +93,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>, linux-sh@vger.kernel.org,
- linux-kernel@vger.kernel.org, Oleg Nesterov <oleg@redhat.com>,
- linux-mm@kvack.org, Alexander Viro <viro@zeniv.linux.org.uk>,
- Mark Salter <msalter@redhat.com>, linux-fsdevel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Andrew Morton <akpm@linux-foundation.org>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel@lists.infradead.org,
- "Eric W . Biederman" <ebiederm@xmission.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, devicetree@vger.kernel.org,
+ Lokesh Vutla <lokeshvutla@ti.com>, Networking <netdev@vger.kernel.org>,
+ Richard Cochran <richardcochran@gmail.com>, Sekhar Nori <nsekhar@ti.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Tero Kristo <t-kristo@ti.com>,
+ Murali Karicheri <m-karicheri2@ti.com>,
+ "David S. Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 11:49:53PM +0200, Jann Horn wrote:
-> In both binfmt_elf and binfmt_elf_fdpic, use a new helper
-> dump_vma_snapshot() to take a snapshot of the VMA list (including the gate
-> VMA, if we have one) while protected by the mmap_sem, and then use that
-> snapshot instead of walking the VMA list without locking.
+hi Anders,
+
+On 05/05/2020 13:17, Anders Roxell wrote:
+> On Fri, 1 May 2020 at 22:50, Grygorii Strashko <grygorii.strashko@ti.com> wrote:
+>>
+>> The MCU CPSW Common Platform Time Sync (CPTS) provides possibility to
+>> timestamp TX PTP packets and all RX packets.
+>>
+>> This enables corresponding support in TI AM65x/J721E MCU CPSW driver.
+>>
+>> Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+>> ---
+>>   drivers/net/ethernet/ti/Kconfig             |   1 +
+>>   drivers/net/ethernet/ti/am65-cpsw-ethtool.c |  24 ++-
+>>   drivers/net/ethernet/ti/am65-cpsw-nuss.c    | 172 ++++++++++++++++++++
+>>   drivers/net/ethernet/ti/am65-cpsw-nuss.h    |   6 +-
+>>   4 files changed, 201 insertions(+), 2 deletions(-)
+>>
+>> diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
+>> index 1f4e5b6dc686..2c7bd1ccaaec 100644
+>> --- a/drivers/net/ethernet/ti/Kconfig
+>> +++ b/drivers/net/ethernet/ti/Kconfig
+>> @@ -100,6 +100,7 @@ config TI_K3_AM65_CPSW_NUSS
+>>          depends on ARCH_K3 && OF && TI_K3_UDMA_GLUE_LAYER
+>>          select TI_DAVINCI_MDIO
+>>          imply PHY_TI_GMII_SEL
+>> +       imply TI_AM65_CPTS
 > 
-> An alternative approach would be to keep the mmap_sem held across the
-> entire core dumping operation; however, keeping the mmap_sem locked while
-> we may be blocked for an unbounded amount of time (e.g. because we're
-> dumping to a FUSE filesystem or so) isn't really optimal; the mmap_sem
-> blocks things like the ->release handler of userfaultfd, and we don't
-> really want critical system daemons to grind to a halt just because someone
-> "gifted" them SCM_RIGHTS to an eternally-locked userfaultfd, or something
-> like that.
+> Should this be TI_K3_AM65_CPTS ?
 > 
-> Since both the normal ELF code and the FDPIC ELF code need this
-> functionality (and if any other binfmt wants to add coredump support in the
-> future, they'd probably need it, too), implement this with a common helper
-> in fs/coredump.c.
+> I did an arm64 allmodconfig build on todays next tag: next-20200505
+> and got this undefined symbol:
 > 
-> A downside of this approach is that we now need a bigger amount of kernel
-> memory per userspace VMA in the normal ELF case, and that we need O(n)
-> kernel memory in the FDPIC ELF case at all; but 40 bytes per VMA shouldn't
-> be terribly bad.
-> 
-> Signed-off-by: Jann Horn <jannh@google.com>
-> ---
->  fs/binfmt_elf.c          | 152 +++++++++++++--------------------------
->  fs/binfmt_elf_fdpic.c    |  86 ++++++++++------------
->  fs/coredump.c            |  68 ++++++++++++++++++
->  include/linux/coredump.h |  10 +++
->  4 files changed, 168 insertions(+), 148 deletions(-)
-> 
-> diff --git a/fs/binfmt_elf.c b/fs/binfmt_elf.c
-> index fb36469848323..dffe9dc8497ca 100644
-> --- a/fs/binfmt_elf.c
-> +++ b/fs/binfmt_elf.c
-> @@ -1292,8 +1292,12 @@ static bool always_dump_vma(struct vm_area_struct *vma)
->  	return false;
->  }
->  
-> +#define DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER 1
-> +
->  /*
->   * Decide what to dump of a segment, part, all or none.
-> + * The result must be fixed up via vma_dump_size_fixup() once we're in a context
-> + * that's allowed to sleep arbitrarily long.
->   */
->  static unsigned long vma_dump_size(struct vm_area_struct *vma,
->  				   unsigned long mm_flags)
-> @@ -1348,30 +1352,15 @@ static unsigned long vma_dump_size(struct vm_area_struct *vma,
->  
->  	/*
->  	 * If this looks like the beginning of a DSO or executable mapping,
-> -	 * check for an ELF header.  If we find one, dump the first page to
-> -	 * aid in determining what was mapped here.
-> +	 * we'll check for an ELF header. If we find one, we'll dump the first
-> +	 * page to aid in determining what was mapped here.
-> +	 * However, we shouldn't sleep on userspace reads while holding the
-> +	 * mmap_sem, so we just return a placeholder for now that will be fixed
-> +	 * up later in vma_dump_size_fixup().
->  	 */
->  	if (FILTER(ELF_HEADERS) &&
-> -	    vma->vm_pgoff == 0 && (vma->vm_flags & VM_READ)) {
-> -		u32 __user *header = (u32 __user *) vma->vm_start;
-> -		u32 word;
-> -		/*
-> -		 * Doing it this way gets the constant folded by GCC.
-> -		 */
-> -		union {
-> -			u32 cmp;
-> -			char elfmag[SELFMAG];
-> -		} magic;
-> -		BUILD_BUG_ON(SELFMAG != sizeof word);
-> -		magic.elfmag[EI_MAG0] = ELFMAG0;
-> -		magic.elfmag[EI_MAG1] = ELFMAG1;
-> -		magic.elfmag[EI_MAG2] = ELFMAG2;
-> -		magic.elfmag[EI_MAG3] = ELFMAG3;
-> -		if (unlikely(get_user(word, header)))
-> -			word = 0;
-> -		if (word == magic.cmp)
-> -			return PAGE_SIZE;
-> -	}
-> +	    vma->vm_pgoff == 0 && (vma->vm_flags & VM_READ))
-> +		return DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER;
->  
->  #undef	FILTER
->  
-> @@ -1381,6 +1370,22 @@ static unsigned long vma_dump_size(struct vm_area_struct *vma,
->  	return vma->vm_end - vma->vm_start;
->  }
->  
-> +/* Fix up the result from vma_dump_size(), now that we're allowed to sleep. */
-> +static void vma_dump_size_fixup(struct core_vma_metadata *meta)
-> +{
-> +	char elfmag[SELFMAG];
-> +
-> +	if (meta->dump_size != DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER)
-> +		return;
-> +
-> +	if (copy_from_user(elfmag, (void __user *)meta->start, SELFMAG)) {
-> +		meta->dump_size = 0;
-> +		return;
-> +	}
-> +	meta->dump_size =
-> +		(memcmp(elfmag, ELFMAG, SELFMAG) == 0) ? PAGE_SIZE : 0;
-> +}
+> aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> function `am65_cpsw_init_cpts':
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685:
+> undefined reference to `am65_cpts_create'
+> aarch64-linux-gnu-ld:
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685:(.text+0x2e20):
+> relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> `am65_cpts_create'
+> aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> function `am65_cpsw_nuss_tx_compl_packets':
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:923:
+> undefined reference to `am65_cpts_tx_timestamp'
+> aarch64-linux-gnu-ld:
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:923:(.text+0x4cf0):
+> relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> `am65_cpts_tx_timestamp'
+> aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> function `am65_cpsw_nuss_ndo_slave_xmit':
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1018:
+> undefined reference to `am65_cpts_prep_tx_timestamp'
+> aarch64-linux-gnu-ld:
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1018:(.text+0x58fc):
+> relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> `am65_cpts_prep_tx_timestamp'
+> aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-nuss.o: in
+> function `am65_cpsw_nuss_hwtstamp_set':
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1265:
+> undefined reference to `am65_cpts_rx_enable'
+> aarch64-linux-gnu-ld:
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1265:(.text+0x7564):
+> relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> `am65_cpts_rx_enable'
+> aarch64-linux-gnu-ld: drivers/net/ethernet/ti/am65-cpsw-ethtool.o: in
+> function `am65_cpsw_get_ethtool_ts_info':
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-ethtool.c:713:
+> undefined reference to `am65_cpts_phc_index'
+> aarch64-linux-gnu-ld:
+> /srv/src/kernel/next/obj-arm64-next-20200505/../drivers/net/ethernet/ti/am65-cpsw-ethtool.c:713:(.text+0xbe8):
+> relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol
+> `am65_cpts_phc_index'
+> make[1]: *** [/srv/src/kernel/next/Makefile:1114: vmlinux] Error 1
+> make[1]: Target 'Image' not remade because of errors.
+> make: *** [Makefile:180: sub-make] Error 2
+> make: Target 'Image' not remade because of errors.
 
-While this code looks entirely correct, it took me way too long to
-follow.  I'd take te DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER into the caller,
-and then have a simple function like this:
+Sry, I can't reproduce it net-next. trying next...
+What's your config?
 
-static void vma_dump_size_fixup(struct core_vma_metadata *meta)
-{
-	char elfmag[SELFMAG];
-
-	if (copy_from_user(elfmag, (void __user *)meta->start, SELFMAG) ||
-	    memcmp(elfmag, ELFMAG, sizeof(elfmag)) != 0)
-		meta->dump_size = 0;
-	else
-		meta->dump_size = PAGE_SIZE;
-}
-
-Also a few comments explaining why we do this fixup would help readers
-of the code.
-
-> -		if (vma->vm_flags & VM_WRITE)
-> -			phdr.p_flags |= PF_W;
-> -		if (vma->vm_flags & VM_EXEC)
-> -			phdr.p_flags |= PF_X;
-> +		phdr.p_flags = meta->flags & VM_READ ? PF_R : 0;
-> +		phdr.p_flags |= meta->flags & VM_WRITE ? PF_W : 0;
-> +		phdr.p_flags |= meta->flags & VM_EXEC ? PF_X : 0;
-
-Sorry for another nitpick, but I find the spelled out version with the
-if a lot easier to read.
-
-> +int dump_vma_snapshot(struct coredump_params *cprm, int *vma_count,
-> +	struct core_vma_metadata **vma_meta,
-> +	unsigned long (*dump_size_cb)(struct vm_area_struct *, unsigned long))
-
-Plase don't use single tabs for indentating parameter continuations
-(we actually have two styles - either two tabs or aligned after the
-opening brace, pick your poison :))
-
-> +	*vma_meta = kvmalloc_array(*vma_count, sizeof(**vma_meta), GFP_KERNEL);
-> +	if (!*vma_meta) {
-> +		up_read(&mm->mmap_sem);
-> +		return -ENOMEM;
-> +	}
-> +
-> +	for (i = 0, vma = first_vma(current, gate_vma); vma != NULL;
-> +			vma = next_vma(vma, gate_vma)) {
-> +		(*vma_meta)[i++] = (struct core_vma_metadata) {
-> +			.start = vma->vm_start,
-> +			.end = vma->vm_end,
-> +			.flags = vma->vm_flags,
-> +			.dump_size = dump_size_cb(vma, cprm->mm_flags)
-> +		};
-
-This looks a little weird.  Why not kcalloc + just initialize the four
-fields we actually fill out here?
+-- 
+Best regards,
+grygorii
 
 _______________________________________________
 linux-arm-kernel mailing list
