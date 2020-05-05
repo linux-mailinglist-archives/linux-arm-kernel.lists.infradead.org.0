@@ -2,72 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 257701C5E5B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:07:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED99D1C5E98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:15:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q+wpdYFvcOz5jvjO2RrT34whQy1VOpuSEX46xvnAur4=; b=A6Jrr86KEzCsQ5cMaGrg/Fppg
-	mH/A87PivKAgXqxnHid1yJtnNRhi+ENvyb95gt/8cd7rq5wqKiwReFEd2pmxZMtjnTD2VKKPMl8dD
-	KzNAboX4mId4EhFKwxPtXS4708sKAQf2IVQWDZr7Ft8LlD187cwqs6GjHUaV0V3kbUdgwEQBReFv/
-	F+6oEKrSPdoiB827tllDKVwr4dGzgOs0CLxGgyC18FpzhQeDEtCskR9MOTRrPECkuHozOYAqUGK8V
-	na+oiojCzonKDlTrZPpVzx3aX8YGzGUptbWBB8+RfwqTrJvmmUYkrtx2rmacbY/zMkI8xvirN1NfC
-	OarY/HoRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nxDt22UIXRsfijVnwsptV4NSXqswAehwksrj1lycM50=; b=Qp7aVRccY3pPJj
+	CiwUmduWThH1mBV4tyN05YVCimi5ZfDo0sCO8KXxync4L9lB7mdKIPjmOFhlOVsI9fHP/9zQ3bueG
+	37udTMEnaxi/s+2l0eKPHA1lh4RPAQOqcSWC4rQiWJpmVXx6BazAjgFITD/3Trr25n13+0z16XbVU
+	TZM7zFVeBODWymatEzxLdK+cjTUkdY8qG39s7jowWRf05KIT3Jdrwm7ExrzwUXp0okj0e5gPk9t0b
+	SI0PXJzH3yi9CoC9MbXeDv5VIqIVGtmyVJQxbsrlFJGhZcezz1vpyN79bLglgIw0wQ8oK3iH+PFwX
+	mO8uPnd6D519rsyFZTBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW11y-0007QE-5o; Tue, 05 May 2020 17:06:54 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW11c-0007ID-Gs
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:06:33 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B776206CC;
- Tue,  5 May 2020 17:06:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588698391;
- bh=kfjKcuHKi230Zi2QK5YEzeWg4yyPWrPiZGqbtVrm3Uo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=gBbazDRzxTBnm6IKZjfAjGt5pL7PjTPh7IW4Xk9gn/bZ4XRwRUy+hE2d6KWqWBnh1
- bY9EasYu4PmOpo1M4X82/VMWrg1ymhKl2vqVD9dJVakjCAd/sfDiP6O0YafydCYRyy
- Yj/UYaJWxaibIxqdOIRcsdaQp3byYDz8so4vxGjw=
-Date: Tue, 5 May 2020 18:06:29 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2 07/10] arm64: asm: Provide a mechanism for generating
- ELF note for BTI
-Message-ID: <20200505170629.GH5377@sirena.org.uk>
-References: <20200429211641.9279-1-broonie@kernel.org>
- <20200429211641.9279-8-broonie@kernel.org>
- <20200505145858.GB24239@willie-the-truck>
+	id 1jW1AD-0005Q9-Hw; Tue, 05 May 2020 17:15:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW18p-0003Ns-Mr
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:14:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F208031B;
+ Tue,  5 May 2020 10:13:58 -0700 (PDT)
+Received: from [192.168.2.22] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 881A83F305;
+ Tue,  5 May 2020 10:13:52 -0700 (PDT)
+Subject: Re: [PATCH 00/16] dts/dt-bindings: Fix Arm Ltd. ARMv8 "boards"
+To: Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+References: <20200505165212.76466-1-andre.przywara@arm.com>
+ <20200505165212.76466-3-andre.przywara@arm.com>
+ <468a97b2-ed4d-382b-262b-6c0cd3025696@arm.com>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Organization: ARM Ltd.
+Message-ID: <071f00e4-0658-d007-f70c-d2b9e4e3e5c6@arm.com>
+Date: Tue, 5 May 2020 18:13:05 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200505145858.GB24239@willie-the-truck>
-X-Cookie: Poverty begins at home.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <468a97b2-ed4d-382b-262b-6c0cd3025696@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_100632_603365_4A722399 
-X-CRM114-Status: GOOD (  15.71  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_101359_826827_2AA8E0C0 
+X-CRM114-Status: GOOD (  15.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,97 +68,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
-Content-Type: multipart/mixed; boundary="===============9139372326219239417=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============9139372326219239417==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="VbfcI4OLZ4XW0yH2"
-Content-Disposition: inline
-
-
---VbfcI4OLZ4XW0yH2
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, May 05, 2020 at 03:58:59PM +0100, Will Deacon wrote:
-> On Wed, Apr 29, 2020 at 10:16:38PM +0100, Mark Brown wrote:
-
-> > +#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI      (1U << 0)
-> > +#define GNU_PROPERTY_AARCH64_FEATURE_1_PAC      (1U << 1)
-
-> > +.macro emit_aarch64_feature_1_and
-
-> Might be useful to take the features as a macro argument, so we can
-> re-use this when extra features get added in the future.
-
-I was unsure about that - it'd be a bit annoying to have to have all the
-callers of the macro list things like BTI where=20
-
-> > +3:      .long   GNU_PROPERTY_AARCH64_FEATURE_1_AND
-> > +	.long   5f - 4f
-> > +4:
-> > +	.long   GNU_PROPERTY_AARCH64_FEATURE_1_PAC | \
-> > +		GNU_PROPERTY_AARCH64_FEATURE_1_BTI
-
-> Hmm. The Linux ABI doc [1] says this field is:
-
-> 	unsigned char pr_data[PR_DATASZ];
-
-> but the AArch64 PCS [2] says:
-
-> 	"It has a single 32-bit value for the pr_data field."
-
-> What does this mean for endianness?
-
-It's not entirely clear is it?  What we're doing here means that we're
-emitting as a long rather than a character array so the endianness
-matters.  The ABI doc does have language about the elements being "an
-array of X-byte integers in the format of the target processor" which
-seems to align with that as well, my impression is that the intention of
-the ABI doc is that there should be a Processor_Word type corresponding
-to the Elf_Word type but there isn't so the char arrays are used to
-handle the word size difference between AArch32 and AArch64.
-
-Unless I'm missing something this at least appears to agree with what
-the compilers (both GCC and clang) are emitting for both big and little
-endian and what a readelf that understands these is decoding so I think
-at this point it's de facto the way things are interpreted.
-
---VbfcI4OLZ4XW0yH2
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6xnRQACgkQJNaLcl1U
-h9DkhAf+OFrGWXzHePkWXjJbXHQ+xQsYzZMwEc7oai0jFUocznO08W5L+F24lB18
-2SsLxQiZ9MC6d9HbaBQuCZiNva8w5oQptRvw7c/4G2wfSayE7nLvxIU05zAW21dz
-C+7Cr3KvQfDg8oU+CAMYpjbgeJ4lgjaiTUul1NewMRwBRcOWsT1C6dQE91WwiWfe
-hEYDFTmGL7Qs17tggn+FOjuoz3XPQh950kDJ5CRshKkAQtRkFicf12WmHNjaL+hG
-xggTfu4dP6ADv96OzFPvDTfgIl1yjq1/vRDbjjWGydNhs1JCc89j7BKBvku1ltQw
-NQAAj87vm6L+UPh7wnxg0WeE+SgP0Q==
-=JHaz
------END PGP SIGNATURE-----
-
---VbfcI4OLZ4XW0yH2--
-
-
---===============9139372326219239417==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============9139372326219239417==--
-
+T24gMDUvMDUvMjAyMCAxODowNiwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMjAtMDUtMDUg
+NTo1MSBwbSwgQW5kcmUgUHJ6eXdhcmEgd3JvdGU6Cj4+IERhdGU6IE1vbiwgNCBNYXkgMjAyMCAx
+Mjo0Mjo0OSArMDEwMAo+PiBTdWJqZWN0OiBbUEFUQ0ggMDIvMTZdIGR0LWJpbmRpbmdzOiBhcm0t
+c21tdTogQWxsb3cgbW11LTQwMCxzbW11LXYxCj4+IGNvbXBhdGlibGUKPiAKPiBeXiBub3Qgc3Vy
+ZSBob3cgeW91IG1hbmFnZWQgdGhhdC4uLgoKSW1wcmVzc2l2ZSwgaHVoPyA7LSkKQWN0dWFsbHkg
+anVzdCBhbiBhY2NpZGVudGFsIGVtcHR5IGxpbmUgd2hlbiBhZGRpbmcgQ2M6IGxpbmVzIHRvIHRo
+ZQpoZWFkZXIgKGNvcHkgJiBwYXN0ZSB3aXRoIEVPTCkuIFVzaW5nIHRoZSBwcmV2aW91cyBzdWJq
+ZWN0IGxpbmUgaXMKcHJvYmFibHkgYW4gYXJ0ZWZhY3Qgb2YgaG93IGdpdCBzZW5kLWVtYWlsIHdv
+cmtzLgoKU29ycnkgZm9yIHRoYXQhCkkgZmlndXJlZCB0aGF0IHJlcGx5aW5nIHdvdWxkIGNyZWF0
+ZSBtb3JlIGNodXJuLCBhcyB0aGUgYWN0dWFsIHN1YmplY3QKbGluZSBpcyBzdGlsbCBpbiB0aGUg
+ZW1haWwuCgo+IAo+PiBUaGUgQXJtIFNNTVV2MSBEVCBiaW5kaW5nIG9ubHkgYWxsb3dzIGNvbWJp
+bmluZyBhcm0sbW11LTQwMSB3aXRoCj4+IGFybSxzbW11LXYxLCBldmVuIHRob3VnaCB0aGUgTU1V
+LTQwMCBpcyBjb21wYXRpYmxlIGFzIHdlbGwuCj4+Cj4+IEFsbG93IHRoaXMgY29tYmluYXRpb24g
+YXMgd2VsbCB0byBsZXQgdGhlIEFybSBKdW5vIGJvYXJkIHBhc3MgdGhlIHRlc3QuCj4gCj4gQWNr
+ZWQtYnk6IFJvYmluIE11cnBoeSA8cm9iaW4ubXVycGh5QGFybS5jb20+CgpUaGFua3MhCgpDaGVl
+cnMsCkFuZHJlCgo+IAo+PiBTaWduZWQtb2ZmLWJ5OiBBbmRyZSBQcnp5d2FyYSA8YW5kcmUucHJ6
+eXdhcmFAYXJtLmNvbT4KPj4gLS0tCj4+IMKgIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9pb21tdS9hcm0sc21tdS55YW1sIHwgNCArKystCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCAz
+IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPj4KPj4gZGlmZiAtLWdpdCBhL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pb21tdS9hcm0sc21tdS55YW1sCj4+IGIvRG9jdW1l
+bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2lvbW11L2FybSxzbW11LnlhbWwKPj4gaW5kZXgg
+NjUxNWRiZTQ3NTA4Li5lM2VmMWM2OWQxMzIgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9pb21tdS9hcm0sc21tdS55YW1sCj4+ICsrKyBiL0RvY3VtZW50
+YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pb21tdS9hcm0sc21tdS55YW1sCj4+IEBAIC00MSw3
+ICs0MSw5IEBAIHByb3BlcnRpZXM6Cj4+IMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgLSBjb25zdDog
+YXJtLG1tdS01MDAKPj4gwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAtIGNvbnN0OiBhcm0sc21tdS12
+Mgo+PiDCoMKgwqDCoMKgwqDCoCAtIGl0ZW1zOgo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29u
+c3Q6IGFybSxtbXUtNDAxCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqAgLSBlbnVtOgo+PiArwqDCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgwqAgLSBhcm0sbW11LTQwMAo+PiArwqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoMKgwqAgLSBhcm0sbW11LTQwMQo+PiDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIC0gY29uc3Q6
+IGFybSxzbW11LXYxCj4+IMKgwqDCoMKgwqDCoMKgIC0gZW51bToKPj4gwqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAtIGFybSxzbW11LXYxCj4+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
+LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
+aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
