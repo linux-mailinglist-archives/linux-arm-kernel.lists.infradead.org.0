@@ -2,60 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2DF01C5F1B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:43:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD42E1C5F32
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:47:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wItEUC5ZcdUzcV17eUU7o08L5x1OsHOCyHE2mCko8aA=; b=OAVrYzwxL8ofqf
-	SC8n0OuuqxquguLPA37haBwEpeC4Y5IABLJEVOTmKnsALDeHWdwL0p6g6ucv5a5bVTxsegEWLLzuB
-	gKk6tjPYcfbRZnTOGVjqRjxXt/VjUQ+hVCNpUBt+Z93HNykAJ4dn3bzbO2HLQIQODG85JjmQ5UPpN
-	p2T+4IUGThzWOd20FFJ68fkPAm5k5OM/L8cjKhuAmn8Zz7wUU1d2hCv/xwvh9pK9hrVizvdOFQDMz
-	3SvCi77ERdk7pdBBJuntxgdDlwFoJwuiLTlcW0tVzRCt62axRaJCzqxNNOfct4ZlrfgpDVwYOgcBh
-	bkt3WdkhUEIj3wqr6Llg==;
+	List-Owner; bh=bTFd/VlP8TXUCFKuYijmtocRgc94rkkUT9u5t5+fdik=; b=fDiZX1TeMBMo8c
+	f+gQcF9CidUtl7JtuIOvpQVMHmU+Q8cfn9YCmV6Cy0bFWZmhq8W/j8YxqBQCZpbRXMp+qT7r+Ajxh
+	Rx3pe177P+OnouPSbAxHeswXooHcp1xE6L8yx3zxNnfR88FgK3ZljyvR/euaykB04OpLBO8inMDlV
+	5gF3uelZnB9ddZ5xHLz9OZzrVdpQ328uql16jJjunRdXYy6gEBuRW7vS2p9mi/c/DERTQJ5fV77Ia
+	cLrJymq8Ae8cBIZ5YbPxltGmEFqoB+b1JZj5Qa0jSjVb8XEiHbM9Ul/w7n1K2nIxqS8sHrxgHr5a5
+	f0YeydUPoLtELL1fVxwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1bJ-0004CI-8J; Tue, 05 May 2020 17:43:25 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1jW1fL-0007Wj-KP; Tue, 05 May 2020 17:47:35 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1bB-0004Ae-Fb
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:43:19 +0000
-Received: by verein.lst.de (Postfix, from userid 107)
- id 51CB368C65; Tue,  5 May 2020 19:43:13 +0200 (CEST)
-X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on verein.lst.de
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=5.0 tests=ALL_TRUSTED,BAYES_50
- autolearn=disabled version=3.3.1
-Received: from blackhole (p5B0D8880.dip0.t-ipconnect.de [91.13.136.128])
- by verein.lst.de (Postfix) with ESMTPSA id 4B6E268BFE;
- Tue,  5 May 2020 19:42:48 +0200 (CEST)
-Date: Tue, 5 May 2020 19:42:43 +0200
-From: Torsten Duwe <duwe@lst.de>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: disable patchable function entry on big-endian
- clang builds
-Message-ID: <20200505194243.5bfc6ec6@blackhole>
-In-Reply-To: <20200505142556.GF82823@C02TD0UTHF1T.local>
-References: <20200505141257.707945-1-arnd@arndb.de>
- <20200505142556.GF82823@C02TD0UTHF1T.local>
-Organization: LST e.V.
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-suse-linux-gnu)
+ id 1jW1f9-0007UK-3P; Tue, 05 May 2020 17:47:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=+R73Z4jVWXCfBPkWr/ITaVNISegdk9AM0hchGPNJ8Sc=; b=qQ2MvF5uTgTfl+Fohrz1RdJXhA
+ jbKJkUtbz4bOmvpVN6BZvX4xrqBf8368xqyVXN9pj3mu5y6CHTKEBzV8hYeZQXFyuM0lhfILWQiWn
+ 7tQckNZ3aDVY5LOkHKjulgNx5/2306VdzhHpCgzN29KlMn4zb+v52g8MZafJrHKY0UOw=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jW1ev-000y9n-Ug; Tue, 05 May 2020 19:47:09 +0200
+Date: Tue, 5 May 2020 19:47:09 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Subject: Re: [PATCH 06/11] net: ethernet: mtk-eth-mac: new driver
+Message-ID: <20200505174709.GD224913@lunn.ch>
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-7-brgl@bgdev.pl>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200505140231.16600-7-brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_104317_818583_CB9E6EFA 
-X-CRM114-Status: GOOD (  22.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_104723_150632_857414D5 
+X-CRM114-Status: GOOD (  13.04  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,90 +72,177 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Ionela Voinescu <ionela.voinescu@arm.com>,
- Julien Thierry <jthierry@redhat.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Torsten Duwe <duwe@suse.de>,
- Steve Capper <steve.capper@arm.com>, linux-kernel@vger.kernel.org,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, Alexandre Ghiti <alex@ghiti.fr>,
- clang-built-linux@googlegroups.com, Josh Poimboeuf <jpoimboe@redhat.com>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>,
- Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Kees Cook <keescook@chromium.org>
+Cc: devicetree@vger.kernel.org, Felix Fietkau <nbd@openwrt.org>,
+ Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Jakub Kicinski <kuba@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd, Mark and others,
+> +static struct net_device *mtk_mac_get_netdev(struct mtk_mac_priv *priv)
+> +{
+> +	char *ptr = (char *)priv;
+> +
+> +	return (struct net_device *)(ptr - ALIGN(sizeof(struct net_device),
+> +						 NETDEV_ALIGN));
+> +}
 
-this may not be worth arguing but I'm currently fighting excessive
-workarounds in another area and so this triggers me, so I have to make
-a remark ;-)
+Bit of an odd way to do it. It is much more normal to just have
 
-On Tue, 5 May 2020 15:25:56 +0100
-Mark Rutland <mark.rutland@arm.com> wrote:
+    return priv->netdev;
 
-> On Tue, May 05, 2020 at 04:12:36PM +0200, Arnd Bergmann wrote:
-> > Clang only supports the patchable_function_entry attribute on
-> > little-endian arm64 builds, but not on big-endian:
-> > 
-> > include/linux/kasan-checks.h:16:8: error: unknown attribute
-> > 'patchable_function_entry' ignored [-Werror,-Wunknown-attributes]
-> > 
-> > Disable that configuration with another dependency. Unfortunately
-> > the existing check is not enough, as $(cc-option) at this point does
-> > not pass the -mbig-endian flag.
-> 
-> Well that's unfortunate. :(
-> 
-> Do we know if this is deliberate and/or likely to change in future?
-> This practically rules out a BE distro kernel with things like PAC,
-> which isn't ideal.
+> +static struct sk_buff *mtk_mac_alloc_skb(struct net_device *ndev)
+> +{
+> +	uintptr_t tail, offset;
+> +	struct sk_buff *skb;
+> +
+> +	skb = dev_alloc_skb(MTK_MAC_MAX_FRAME_SIZE);
+> +	if (!skb)
+> +		return NULL;
+> +
+> +	/* Align to 16 bytes. */
+> +	tail = (uintptr_t)skb_tail_pointer(skb);
+> +	if (tail & (MTK_MAC_SKB_ALIGNMENT - 1)) {
+> +		offset = tail & (MTK_MAC_SKB_ALIGNMENT - 1);
+> +		skb_reserve(skb, MTK_MAC_SKB_ALIGNMENT - offset);
+> +	}
+> +
+> +	/* Ensure 16-byte alignment of the skb pointer: eth_type_trans() will
+> +	 * extract the Ethernet header (14 bytes) so we need two more bytes.
+> +	 */
+> +	skb_reserve(skb, 2);
 
-But still better than cumulating workarounds. If clang's flags aren't
-orthogonal then that's a bug in clang. If I get a vote here I'm against
-it.
+NET_IP_ALIGN
 
-> > Fixes: 3b23e4991fb6 ("arm64: implement ftrace with regs")
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> 
-> This looks fine for now, and we can add a version check in future, so:
-                                      ^^^^^^^^^^^^^^^^^^^
-see what I mean? And in the end another line of code you'll never again
-get rid of.
+There might also be something in skbuf.h which will do your 16 byte
+alignment for you.
 
-I suggest to get a quote from clang folks first about their schedule and
-regarded importance of patchable-function-entries on BE, and leave it as
-is: broken on certain clang configurations. It's not the kernel's fault.
+> +static int mtk_mac_enable(struct net_device *ndev)
+> +{
+> +	struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +	unsigned int val;
+> +	int ret;
+> +
+> +	mtk_mac_nic_disable_pd(priv);
+> +	mtk_mac_intr_mask_all(priv);
+> +	mtk_mac_dma_stop(priv);
+> +	netif_carrier_off(ndev);
 
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-> 
-> Mark.
-> 
-> > ---
-> >  arch/arm64/Kconfig | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > 
-> > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-> > index 4b256fa6db7a..a33d6402b934 100644
-> > --- a/arch/arm64/Kconfig
-> > +++ b/arch/arm64/Kconfig
-> > @@ -151,7 +151,7 @@ config ARM64
-> >  	select HAVE_DMA_CONTIGUOUS
-> >  	select HAVE_DYNAMIC_FTRACE
-> >  	select HAVE_DYNAMIC_FTRACE_WITH_REGS \
-> > -		if $(cc-option,-fies on y=2)
-> > +		if $(cc-option,-fpatchable-function-entry=2) &&
-> > !(CC_IS_CLANG && CPU_BIG_ENDIAN) select
-> > HAVE_EFFICIENT_UNALIGNED_ACCESS select HAVE_FAST_GUP
-> >  	select HAVE_FTRACE_MCOUNT_RECORD
-> > -- 
-> > 2.26.0
-> > 
+Attaching the PHY will turn the carrier off.  If you are using phylib
+correctly, you should not have to touch the carrier status, phylib
+will do it for you.
 
+> +	/* Configure flow control */
+> +	val = MTK_MAC_VAL_FC_CFG_SEND_PAUSE_TH_2K;
+> +	val <<= MTK_MAC_OFF_FC_CFG_SEND_PAUSE_TH;
+> +	val |= MTK_MAC_BIT_FC_CFG_BP_EN;
+> +	val |= MTK_MAC_BIT_FC_CFG_UC_PAUSE_DIR;
+> +	regmap_write(priv->regs, MTK_MAC_REG_FC_CFG, val);
+> +
+> +	/* Set SEND_PAUSE_RLS to 1K */
+> +	val = MTK_MAC_VAL_EXT_CFG_SND_PAUSE_RLS_1K;
+> +	val <<= MTK_MAC_OFF_EXT_CFG_SND_PAUSE_RLS;
+> +	regmap_write(priv->regs, MTK_MAC_REG_EXT_CFG, val);
+
+Pause is something this is auto-negotiated. You should be setting this
+in your link change notifier which phylib will call when the link goes
+up.
+
+> +static int mtk_mac_mdio_rwok_wait(struct mtk_mac_priv *priv)
+> +{
+> +	unsigned long start = jiffies;
+> +	unsigned int val;
+> +
+> +	for (;;) {
+> +		regmap_read(priv->regs, MTK_MAC_REG_PHY_CTRL0, &val);
+> +		if (val & MTK_MAC_BIT_PHY_CTRL0_RWOK)
+> +			break;
+> +
+> +		udelay(10);
+> +		if (time_after(jiffies, start + MTK_MAC_WAIT_TIMEOUT))
+> +			return -ETIMEDOUT;
+> +	}
+
+regmap_read_poll_timeout() ?
+
+> +static int mtk_mac_mdio_read(struct mii_bus *mii, int phy_id, int regnum)
+> +{
+> +	struct mtk_mac_priv *priv = mii->priv;
+> +	unsigned int val, data;
+> +	int ret;
+
+It would be good if here and in _write() you check for C45 addresses
+and return -EOPNOTSUP.
+
+> +
+> +	mtk_mac_mdio_rwok_clear(priv);
+> +
+> +	val = (regnum << MTK_MAC_OFF_PHY_CTRL0_PREG);
+> +	val &= MTK_MAC_MSK_PHY_CTRL0_PREG;
+> +	val |= MTK_MAC_BIT_PHY_CTRL0_RDCMD;
+> +
+> +	regmap_write(priv->regs, MTK_MAC_REG_PHY_CTRL0, val);
+> +
+> +	ret = mtk_mac_mdio_rwok_wait(priv);
+> +	if (ret)
+> +		return ret;
+> +
+> +	regmap_read(priv->regs, MTK_MAC_REG_PHY_CTRL0, &data);
+> +
+> +	data &= MTK_MAC_MSK_PHY_CTRL0_RWDATA;
+> +	data >>= MTK_MAC_OFF_PHY_CTRL0_RWDATA;
+> +
+> +	return data;
+> +}
+
+> +static int mtk_mac_mdio_init(struct net_device *ndev)
+> +{
+> +	struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +	struct device *dev = mtk_mac_get_dev(priv);
+> +	struct device_node *of_node, *mdio_node;
+> +	int ret;
+> +
+> +	of_node = dev->of_node;
+> +
+> +	mdio_node = of_get_child_by_name(of_node, "mdio");
+> +	if (!mdio_node)
+> +		return -ENODEV;
+> +
+> +	if (!of_device_is_available(mdio_node)) {
+> +		ret = -ENODEV;
+> +		goto out_put_node;
+> +	}
+> +
+> +	priv->mii = devm_mdiobus_alloc(dev);
+> +	if (!priv->mii) {
+> +		ret = -ENOMEM;
+> +		goto out_put_node;
+> +	}
+> +
+> +	snprintf(priv->mii->id, MII_BUS_ID_SIZE, "%s", dev_name(dev));
+> +	priv->mii->name = "mdio";
+
+It is normal to include something like 'MTK' in the name.
+
+> +	priv->mii->parent = dev;
+> +	priv->mii->read = mtk_mac_mdio_read;
+> +	priv->mii->write = mtk_mac_mdio_write;
+> +	priv->mii->priv = priv;
+> +
+> +	ret = of_mdiobus_register(priv->mii, mdio_node);
+> +
+> +out_put_node:
+> +	of_node_put(mdio_node);
+> +	return ret;
+> +}
+
+  Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
