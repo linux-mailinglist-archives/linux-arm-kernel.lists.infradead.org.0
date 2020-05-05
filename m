@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AF971C4D81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:58:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7A511C4D75
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:54:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BZMX4HTvHDknDpP8QOB5X5cxKmztkFU5rRUQ+HKBn0Q=; b=dc6MsIB/fu5tID
-	LkH87FK0NxIu3JIbTgO31K1otyGhpU08ibEalunAJt9lL1GmUJ9+6inQijZyD+EqP7WPlFWoqCqP/
-	zAp8ek3313po5hL0Ij5o5Kdbllv8b5KEwdQyN6bM3rxJuC8Rkg/o/SpHh99x/fbn3M7CfaB1OtPcy
-	krtzcHewpe0wRCr7iZOZzQuTpSzGPe9vAmo74zP1WbNIDgpFMBxlRhpWlb4Pq1dEJ+AY+JoKGxtdb
-	tos5tDjNWOwM+GWKjGH0WrmegObfNWj1S5JxjU/ZPyuljazkL/OvGhmAnPN/JrsBtRbtHA1UmA6RD
-	EY3ls2TZ0VZCRaOfq47A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jEOX9Iik+gczMvwdhP0tARY9Jk7Wc3Wdg1Oc3aiOOBk=; b=n6i/IsoiUYtJlMW1KtioTu1cR
+	5x+pzZvMYAM6WP2/0yeGZtq2IS1kHCUOXjBOMKVLBygqmcs9Mgb6S1G3an8NN4xmRknVQNSLNSJ3r
+	Z7cYm6/JahLOBXI2tTTlso81wLPwakvStV7VWsy2QausrLsuVwmSGpSbCivSkK/6XdJFDjWs7AsJj
+	GPJJNFWxX5LL8UfknBsd7tZqZgvnkXoa2ME9Ff1lIs7PDYm/pqhJKQHWzm/RUngSTGXV25pzL+AaP
+	/6k+fBFJ8ig921mukupxaGuEIhFTdAM9eDy7lxa13DZ4BqSLxVa0NlpaxQGkWrDgCNNijme+Y6PqJ
+	UiQ+ztv6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVpf2-0002VJ-58; Tue, 05 May 2020 04:58:28 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVpev-0002Uk-MJ
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:58:22 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AB8E206B9;
- Tue,  5 May 2020 04:58:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588654701;
- bh=LcQ344sjr6nEiwgADkb7OZQNqpBsHsLRt3hhUHNyb5s=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=BpHQHFGvoS422p27Z7O9MMXB/4z1bDRjgVsznR/1Suj3xgTlf10qxhqpdbLycslDQ
- Fy/qPOnC3q69ovPHCI7IZSlhxz9tdV8WSZ38tleBPUHYct3UmlWgIIRuBdUHSg6qgM
- c5EgZDPFbeBetXlPUPcequXXhwFyCI18RQgt/qr4=
+	id 1jVpb8-0007a8-7g; Tue, 05 May 2020 04:54:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVpb1-0007Zh-Ey
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:54:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0FD730E;
+ Mon,  4 May 2020 21:54:18 -0700 (PDT)
+Received: from [10.37.12.10] (unknown [10.37.12.10])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B6EE03F68F;
+ Mon,  4 May 2020 21:54:11 -0700 (PDT)
+Subject: Re: [PATCH V3 10/16] arm64/cpufeature: Add remaining feature bits in
+ ID_AA64PFR0 register
+To: anshuman.khandual@arm.com, linux-arm-kernel@lists.infradead.org
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-11-git-send-email-anshuman.khandual@arm.com>
+From: Suzuki K Poulose <suzuki.poulose@arm.com>
+Message-ID: <f5e8b407-c731-7ff9-df47-fc54182f2d25@arm.com>
+Date: Tue, 5 May 2020 05:59:10 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.7.0
 MIME-Version: 1.0
-In-Reply-To: <1584279836-29825-10-git-send-email-aisheng.dong@nxp.com>
-References: <1584279836-29825-1-git-send-email-aisheng.dong@nxp.com>
- <1584279836-29825-10-git-send-email-aisheng.dong@nxp.com>
-Subject: Re: [PATCH V6 09/12] clk: imx: lpcg: allow lpcg clk to take device
- pointer
-From: Stephen Boyd <sboyd@kernel.org>
-To: Dong Aisheng <aisheng.dong@nxp.com>, linux-clk@vger.kernel.org
-Date: Mon, 04 May 2020 21:58:20 -0700
-Message-ID: <158865470060.11125.1108363157880978181@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+In-Reply-To: <1588426445-24344-11-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_215821_748484_3D618DE6 
-X-CRM114-Status: UNSURE (   5.24  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_215419_543827_0347BFB4 
+X-CRM114-Status: GOOD (  16.00  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,21 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, mturquette@baylibre.com,
- linux-imx@nxp.com, kernel@pengutronix.de, fabio.estevam@nxp.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Dong Aisheng (2020-03-15 06:43:53)
-> Used to support runtime pm.
+On 05/02/2020 02:33 PM, Anshuman Khandual wrote:
+> Enable MPAM and SEL2 features bits in ID_AA64PFR0 register as per ARM DDI
+> 0487F.a specification.
 > 
-> Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> 
+> Suggested-by: Will Deacon <will@kernel.org>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 > ---
+>   arch/arm64/include/asm/sysreg.h | 2 ++
+>   arch/arm64/kernel/cpufeature.c  | 2 ++
+>   2 files changed, 4 insertions(+)
+> 
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index 40eaf89f1032..c93ea6613f51 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -641,6 +641,8 @@
+>   #define ID_AA64PFR0_CSV2_SHIFT		56
+>   #define ID_AA64PFR0_DIT_SHIFT		48
+>   #define ID_AA64PFR0_AMU_SHIFT		44
+> +#define ID_AA64PFR0_MPAM_SHIFT		40
+> +#define ID_AA64PFR0_SEL2_SHIFT		36
+>   #define ID_AA64PFR0_SVE_SHIFT		32
+>   #define ID_AA64PFR0_RAS_SHIFT		28
+>   #define ID_AA64PFR0_GIC_SHIFT		24
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index dbedcae28061..f5a39e040804 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -217,6 +217,8 @@ static const struct arm64_ftr_bits ftr_id_aa64pfr0[] = {
+>   	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_CSV2_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_DIT_SHIFT, 4, 0),
+>   	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_LOWER_SAFE, ID_AA64PFR0_AMU_SHIFT, 4, 0),
+> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_MPAM_SHIFT, 4, 0),
+> +	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64PFR0_SEL2_SHIFT, 4, 0),
 
-Reviewed-by: Stephen Boyd <sboyd@kernel.org>
+Both of them must be hidden. And also need to check the impact of 
+exposing this to the guests, especially MPAM.
+
+Suzuki
 
 _______________________________________________
 linux-arm-kernel mailing list
