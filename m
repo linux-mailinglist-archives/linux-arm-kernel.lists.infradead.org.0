@@ -2,73 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A5E91C5D0A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:09:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A312A1C5D26
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ifjf8HIzCchu3GPrKx8CwXbwVdX0TQDQmo7P88pc9Oc=; b=QgRbJKwkVNnSuM
-	53PabxT31rnQh3I94a8wrFKbbvGX9L1kToJS1WGesT5CLlb9uejEXpF17hUwBxi1Ql/8f7sjlfBja
-	+uOqBPU7BZEkhHmwfG3rtG3mKvmKnJ8sfcURgj3yAFYc6P0Mvl71EmgK02yFSRuVDZz0kVfckAiXN
-	el8YFowjsk1bBuKHlnaIC+xuZfyvl8JpV8H//HuCONWewpxqkzXai7s4OyRP9x3WeeDIpjFOazPGQ
-	zjgzbEi6PlcFsWR89zlDPRKmUKtCiTaN3dE9qk2SPLZUzMhw9U4kczl9yQAfx4gNWHX4aTGm5u6WG
-	zdJeLI3JQNGHzC7x6ytQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CVk3sovpLS0jrYCOsxFTwz3miZp2yaGod2vqBqkrP84=; b=WHn/zYjPj0vWL5
+	h1y8K/NXulAjkk/dJIx4F13V5ocM0svaKR54AR0ICpPQ4fqhbEK0buKx+4isX5eujylhYp7INBkm7
+	r1V2CZPk8GT4CkwpY/E/iyeCaWPv8J2T2H2rkbS38qLUn+kaxFgg+WbKU/AmGPqk/G3T0sF4vqo45
+	sCyG8vIQjt9DLh4M/9rD7vf6DmjrKVmWp2wJWsrBQzkSgqwNFEMzeSfthtehz3FFbB6z4tjhqNFiP
+	VTWO6AyeXUL+r2bRGA3wvgrjFX9oYh4o4VnABvH4uOocOsfwMvhkN1awVuGLFHZubDo1f+6XvRcet
+	Wd8vE0JRIBxk1EPFdkIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW083-0007sx-7F; Tue, 05 May 2020 16:09:07 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jW0CT-0002sz-Dg; Tue, 05 May 2020 16:13:41 +0000
+Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW07u-0007sH-EE
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:08:59 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BDAC6206B9;
- Tue,  5 May 2020 16:08:56 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588694937;
- bh=F59id0G0m99O8tp4MEKXifyCEQUtPEYauH+UoGyh24A=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u03NNzA/DY25HLT4fsFpXTK6V2AwWdwqmx/7hwuzbaIj6r4iDmUecWuF+E6RW7vm4
- /G8UFKhkLZrLJXKmAGUmIv8o1ppyIEQsdJWM7/uTJn/gM50F29U6sLSa8yN7nAL7u1
- HpPKARvtomuj6n5nGJtCizfqKRR4cAwE+gL8rQ/w=
-Date: Tue, 5 May 2020 17:08:53 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when
- building the kernel with BTI
-Message-ID: <20200505160852.GF24239@willie-the-truck>
-References: <20200429211641.9279-1-broonie@kernel.org>
- <20200429211641.9279-3-broonie@kernel.org>
- <20200505145642.GA24239@willie-the-truck>
- <20200505151806.GG5377@sirena.org.uk>
+ id 1jW0CD-0002rJ-V8; Tue, 05 May 2020 16:13:27 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx2.suse.de (Postfix) with ESMTP id C1738AF55;
+ Tue,  5 May 2020 16:13:26 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
+ helgaas@kernel.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v8 0/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
+Date: Tue,  5 May 2020 18:13:13 +0200
+Message-Id: <20200505161318.26200-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505151806.GG5377@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_090858_500305_6564B886 
-X-CRM114-Status: GOOD (  15.84  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_091326_511895_5CF2C0BF 
+X-CRM114-Status: GOOD (  14.41  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [195.135.220.15 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,53 +60,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, tim.gover@raspberrypi.org,
+ linux-pci@vger.kernel.org, linux-usb@vger.kernel.org,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 04:18:06PM +0100, Mark Brown wrote:
-> On Tue, May 05, 2020 at 03:56:42PM +0100, Will Deacon wrote:
-> > On Wed, Apr 29, 2020 at 10:16:33PM +0100, Mark Brown wrote:
-> 
-> > > +#define SYM_INNER_LABEL(name, linkage)			\
-> > > +	.type name SYM_T_NONE ASM_NL			\
-> > > +	SYM_ENTRY(name, linkage, SYM_A_NONE)		\
-> > > +	BTI_J
-> 
-> > This break building the compat vDSO:
-> 
-> Right, fixed locally.
+On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
+loaded directly from an EEPROM or, if not present, by the SoC's
+co-processor, VideoCore. This series adds support for the later.
 
-Thanks!
+Note that there are a set of constraints we have to consider:
+ - We need to make sure the VideoCore firmware interface is up and
+   running before running the VL805 firmware load call.
 
-> > I also see a scary linker warning about the native VDSO:
-> 
-> > aarch64-none-linux-gnu-ld: arch/arm64/kernel/vdso/vgettimeofday.o: warning: BTI turned on by -z force-bti when all inputs do not have BTI in NOTE section.
-> 
-> I can't reproduce this, I am using clang-10 as well...  can you share
-> your exact command line and config?  I'm using
-> 
->     make -j56 ARCH=arm64 CROSS_COMPILE=aarch64-none-linux-gnu- CC=clang-10
-> 
-> which is the same clang version as you, not that I'd expect that to make
-> a difference.  This looks like the C code isn't being built with BTI
-> enabled but I can't see how you're managing to do that and I'm not -
-> this is the warning that "arm64: vdso: Force the VDSO to be linked as
-> BTI when built for BTI" is intended to trigger if something goes wrong
-> so I guess it's a good job I enabled that :/
+ - There is no way to discern RPi4's VL805 chip from other platforms',
+   so we need the firmware load to happen *before* running
+   quirk_usb_handoff_xhci(). Failure to do so results in an unwarranted
+   5 second wait while the fixup code polls xHC's non-existing state.
 
-Just been debugging this, and it seems that not all clangs are created
-equal. Updating mine from 10.0.2 to 11.0.1 means I now get the
-'.note.gnu.property' sections emitted for C files compiled using
-'-mbranch-protection=pac-ret+leaf+bti', whereas I didn't before.
+By Florian's suggestion I've been spending some time exploring the device
+link[1] API in order to see if that could save us from explicitly creating
+probe dependencies between pcie-brcmstb and firmware/raspberrypi (patch #3).
+Technically these dependencies could be inferred from DT. It turns out Saravana
+Kannan has been looking at this already. A new boot mechanism, activated with
+fw_devlink=on takes care of the device probe ordering on devices with
+consumer/supplier relationships. For now this relationship is created based on
+the usage of generic DT properties, but has no support for vendor-specifc DT
+properties, which we'd be forced to use in order to create a relationship
+between our two devices since our setup is highly non generic. There will
+probably be at some point support for such properties, and we will then be able
+to revisit some of this code.
 
-Cheers,
+All this is based on the work by Tim Gover in RPi's downstream
+kernel[2].
 
-Will
+[1] https://www.kernel.org/doc/html/v4.13/driver-api/device_link.html
+[2] https://github.com/raspberrypi/linux/commit/9935b4c7e360b4494b4cb6e3ce797238a1ab78bd
+
+---
+
+Changes since v7:
+ - Address Stefan's comments
+
+Changes since v6:
+ - Make rpi_firmware_init_vl805() more robust
+ - Rewrite comments and patch descriptions to be more accessible to non RPi
+   fluent people
+ - Removed Florian's Reviewed-by in patch #2 as function changed
+   substantially
+ - Tested with/witout u-boot
+
+Changes since v5:
+ - Fix issues reported by Kbuild test robot
+
+Changes since v4:
+ - Addressed Sergei's comments
+ - Fix potential warning in patch #2
+
+Changes since v3:
+ - Addressed Greg's comments
+
+There was no v2, my bad.
+
+Changes since v1:
+ - Addressed Floarians comments
+
+Nicolas Saenz Julienne (4):
+  soc: bcm2835: Add notify xHCI reset property
+  firmware: raspberrypi: Introduce vl805 init routine
+  PCI: brcmstb: Wait for Raspberry Pi's firmware when present
+  USB: pci-quirks: Add Raspberry Pi 4 quirk
+
+ drivers/firmware/Kconfig                   |  3 +-
+ drivers/firmware/raspberrypi.c             | 61 ++++++++++++++++++++++
+ drivers/pci/controller/pcie-brcmstb.c      | 17 ++++++
+ drivers/usb/host/pci-quirks.c              | 16 ++++++
+ include/soc/bcm2835/raspberrypi-firmware.h |  9 +++-
+ 5 files changed, 104 insertions(+), 2 deletions(-)
+
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
