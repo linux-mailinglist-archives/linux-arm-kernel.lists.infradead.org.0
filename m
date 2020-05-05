@@ -2,85 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B4E11C5298
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:08:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EA061C52AC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:10:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dS2BKvFvfQGUmAEtAcTKR8PaOHOwr8pnS2QMDr2l0Ag=; b=iEd6cJkhyh6r6SxAmSZUKdeT/
-	CrWhXYRfYGrVrFAcs0GhxrmU6eu1Fb0yJ9HNLT99cQuzfAyG0wkUcOSaFd2oLhJGlGsfCEHx4EED3
-	ZxT51PUya+CAPiYYzMdZhMRGtSWZiS++UwCorOrnQUbdAro3FG4V5Fmt94Hpmt9bSKP5adae1arYz
-	8tS1+HWdaPRJ9/aSQWXrlTazRJwgkK/vclxtycfnucWl9JQIbaHLxTn2S0lMhIqGMN4PcvOLnaxMi
-	97Kwq3pfPhjD14wwvtW8E7JikwMbe9RZS3VmwTURMVaBK4UzNogTB2Zyee9aBAlDyAu+Gh8dgnWqg
-	FAvMiFXYA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Mpxvqif6RsqufRdzbUhQBW8jp6umlP6Ib/HnxE2L0vo=; b=nNTH8hJCZDWkif
+	htBU8w4R5C0w5Hr6uMbAh/+j4ofnHVUHWgss7gTYNKqtU0rYD/PBWEu2BeHiiEykyBWpHs4qbIrsS
+	r4bpVhnqPXsITIsr8Ppk4VJHOx51uEMpnV/UCk3NPhUo/dZAe7hL5NkKktqUVKOOzU20X61dw+Qdo
+	NBZkhPNN0Spjn0TkHGUdYXWaeu9KkRJ1H8J0MrpPoEEQAB/AyhbPwlpXzZ1k3L7e95zS+tpYErFOn
+	ccyh7nkEsdpEYsPH53fELRPPZPHKziafG2Jkxj0VQS77yn3iu4a7A34yo3NpMCrGV8Lgd7Or4e7Jo
+	OHD1LppPARPfqQ/zowFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVuV7-0002Hj-75; Tue, 05 May 2020 10:08:33 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVuXF-0005pf-MY; Tue, 05 May 2020 10:10:45 +0000
+Received: from out3-smtp.messagingengine.com ([66.111.4.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVuUu-0002FX-A4
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:08:21 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 57C5E206B9;
- Tue,  5 May 2020 10:08:19 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588673299;
- bh=S4OvD3THrqAQKuLduHlxBJEKdVeJl7/rqkq6RJ2Vb14=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=nrCuaVmZqjpy20leR1WT4PjlQ9kE8WDRu7+fFr4RhuykskZYI0e55I4MXJdRZxeco
- 6jWWb7nSu8p69wN7eCcB4Z4nOm3CIWG2zeHsOi0ocA44IkIM1y0tngbpcz4Ktjc6g+
- XAq6Kx1sgFMYvYaol/e1lFJ++q/nnXLlTQACm0EA=
-Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
- by disco-boy.misterjones.org with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jVuUr-009N59-OW; Tue, 05 May 2020 11:08:17 +0100
+ id 1jVuWF-0002mw-KM
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:09:46 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 403235C00F0;
+ Tue,  5 May 2020 06:09:40 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Tue, 05 May 2020 06:09:40 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=sqWvtyC3J90S0Z1L+sUBcl2FyI
+ lVrX1gjpJJsojN7CU=; b=ZZGh5MnHyAsBjrATihvWyiXuatnkx9Q902qebeCMWj
+ bPagP6ViNmSSEpjVyDl4dqe9wCCuhJX77M4GrtfLVj3CSYSquSI/wu09DNq2l+6Y
+ EW1NdnFMwv4L5XO1RNdl08/Ydrb+CLnWqb4vTwUP1oGK6Crn5a0DWrnBI5d7LwBi
+ VQ2vce+MaqACpRlhufoX9adMXRdbP897DldFXk9K4cO/yH194TkTU+XR67RXiMi9
+ gh7dlsK66G7kkhM+zoraTEjvqJ0QCAohGuZhjlOFusQCGOgeabEvKszyDk3lshNc
+ Vz3YOPw3gjEbNoAj4yxbHBUhyKZRv294A5cK4m/Fh/hA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=sqWvtyC3J90S0Z1L+
+ sUBcl2FyIlVrX1gjpJJsojN7CU=; b=pubwQPmFoNTcmqtrJbtlTb7F3nRAPi96D
+ 7JPhrrJ2iRuXb0600Hu63p20VWjR9kVZDoZkwJYC26EqRfk4X7982gXZw0xqaT7N
+ tTo+tnndUcEWwpZVvaZmSbP3IxdXlhC6YjzMf6I8NAnoRZuMHsQBuLbL9dEYWzcs
+ /beCe4LYII50pyJfiGWqsNf3SQMq2zj2iG2pYiObKMJBKt5+2buiUckSajIPR69o
+ P2NZWFdvDm6eG/Wep9rkDDZiT6flA2Gu50i4a0HnMrFFWUfrAgZ1dzG7jE+Onv+J
+ rj4JwM/H0llDbFBTO6imhAdWFTwjW3hKAEgXjK6iKSZtWgLBWlnag==
+X-ME-Sender: <xms:YjuxXjqxVM0XsIc9M9cv_wPdSK4IhFiQKd47o-It_yUvaDKubKK47Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrjeeigddvfecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucft
+ ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrh
+ hnpeejffehuddvvddvlefhgeelleffgfeijedvhefgieejtdeiueetjeetfeeukeejgeen
+ ucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:YjuxXsb2pIVHiw2esUC5gL_zyfsgb-PMys3ZuBhKST-bmwlrGldw5w>
+ <xmx:YjuxXkzt-qV_SE8upgRfbQowVyaWF1SFBJd3MHSxtOR8ByU7pynpkA>
+ <xmx:YjuxXi9G-5s7Hb6X2JTLljlM3bBSRSo_0QpKR6n36YXBtTXTNzHURw>
+ <xmx:ZDuxXmP_pEJyNXtprJ13xRM1SmcjOOAqq9RLfgj0-9Is_LdsogKshg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 5CB84328005D;
+ Tue,  5 May 2020 06:09:38 -0400 (EDT)
+From: Maxime Ripard <maxime@cerno.tech>
+To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v3 0/5] iommu: Add Allwinner H6 IOMMU driver
+Date: Tue,  5 May 2020 12:09:29 +0200
+Message-Id: <cover.70f96f9afd2e04161ebece593ae6cd7e17eca41b.1588673353.git-series.maxime@cerno.tech>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Date: Tue, 05 May 2020 11:08:17 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: Sumit Garg <sumit.garg@linaro.org>
-Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
- pseudo NMI
-In-Reply-To: <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
-References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
- <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
- <20200425112950.3a4815b6@why> <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
- <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
- <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
- <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
- <20200430101322.420e4052@why>
- <CAFA6WYO+NGLfNkOah4YzXx5XuaDh=QtWHgnMBwwMFY1zRt15GQ@mail.gmail.com>
- <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
- <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
-User-Agent: Roundcube Webmail/1.4.3
-Message-ID: <306aecc560a9503e500fbf1f512c6d30@kernel.org>
-X-Sender: maz@kernel.org
-X-SA-Exim-Connect-IP: 51.254.78.96
-X-SA-Exim-Rcpt-To: sumit.garg@linaro.org, daniel.thompson@linaro.org,
- jason@lakedaemon.net, catalin.marinas@arm.com, dianders@chromium.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- jason.wessel@windriver.com, kgdb-bugreport@lists.sourceforge.net,
- tglx@linutronix.de, will@kernel.org, julien.thierry.kdev@gmail.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_030820_380641_E995542F 
-X-CRM114-Status: GOOD (  10.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_030944_132289_FE9CAA59 
+X-CRM114-Status: GOOD (  13.47  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.27 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -89,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,39 +103,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Thompson <daniel.thompson@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
- Jason Wessel <jason.wessel@windriver.com>,
- kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-05 05:09, Sumit Garg wrote:
-> On Fri, 1 May 2020 at 18:33, Sumit Garg <sumit.garg@linaro.org> wrote:
+Hi,
 
-[...]
+Here's a series adding support for the IOMMU introduced in the Allwinner
+H6. The driver from Allwinner hints at more SoCs using it in the future
+(with more masters), so we can bet on that IOMMU becoming pretty much
+standard in new SoCs from Allwinner.
 
-> In case there are no major objections to this approach, I will post
-> complete v2 patch-set (alongwith Marc's patches) for detailed review.
+One thing I wasn't really sure about was how to expose the statistics
+reported by the IOMMU PMU (TLB hit rates, latencies, and so on). The
+Allwinner driver exposes them through custom sysfs files, while they would
+be best represented through perf I guess? Anyway, I'm planning to support
+them later on.
 
-As this is still a work in progress (I'm currently wrestling with
-the stupid RPi driver), whatever you have is unlikely to apply on
-top of the final series.
+Let me know what you think,
+Maxime
 
-I'm not going to stop you from posting the patches, it is just that
-they will be obsolete by the end of the week...
+Changes from v2:
+  - Rebased on 5.7
+  - Add dt bindings patch
+  - Allow the identity domain to be allocated
+  - Add an unlikely to the check on whether a PTE already exists in map
+  - Remove locking and adjust the PT installation to use an atomic
+    operation instead
+  - Switch to iotlb_sync / flush_iotlb_all callback instead of flushing by
+    ourselves.
 
-Thanks,
+Changes from v1:
+  - Add a patch to configure the IOMMU on the virtual DRM device
+  - Rework the domain allocation / freeing
+  - Remove the runtime_pm handling to power up the device and rely on
+    refcounting
+  - use map gfp argument for kmem cache allocation
+  - Removed unused macros
+  - Switched from BIT(0) to 1 for the page table entry valid flag to make
+    it more obvious that it's over multiple bits.
+  - Switch to module_initcall
+  - Make accesses to the fwspec more consistant
+  - Removed dev_info logs
+  - Reworked invalidation / flushing
+  - Allow for compilation with COMPILE_TEST
 
-         M.
+Maxime Ripard (5):
+  dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
+  dt-bindings: display: sun8i-mixer: Allow for an iommu property
+  iommu: Add Allwinner H6 IOMMU driver
+  arm64: dts: allwinner: h6: Add IOMMU
+  drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
+
+ Documentation/devicetree/bindings/display/allwinner,sun8i-a83t-de2-mixer.yaml |    3 +-
+ Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml        |   61 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi                                  |   10 +-
+ drivers/gpu/drm/sun4i/sun8i_mixer.c                                           |   13 +-
+ drivers/iommu/Kconfig                                                         |    9 +-
+ drivers/iommu/Makefile                                                        |    1 +-
+ drivers/iommu/sun50i-iommu.c                                                  | 1065 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 7 files changed, 1162 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
+ create mode 100644 drivers/iommu/sun50i-iommu.c
+
+base-commit: 8f3d9f354286745c751374f5f1fcafee6b3f3136
 -- 
-Jazz is not dead. It just smells funny...
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
