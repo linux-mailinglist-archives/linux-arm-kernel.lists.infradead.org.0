@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0FCC1C5D35
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:14:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 737061C5D36
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:14:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/GYWkYF77JxYJ9PRLu3wczjjHT+GnXqD2IyzZ0uR8KY=; b=pXZpPhrTtgd1O0
-	sy/khBh4MMWq9sIqFwH9HgDbPFDzQ5eCkfiS/YZoDGJPFFwsUcitnTfFX9VGMnYzLf7eCCLfm1hta
-	f3X7UNpk1SvaeJKc59x7OvHTLVAwByuEPTqm4bmcqw+aRWdaYShUiv+105SG6JShQF5gjuBpEn3w0
-	vzQNYGEl4BeHnlREFZU+Wi1qQ8sa1BwpU6Rx/NmGk8qLv1GOO4+UNf/ABycGTH6jZU101ck7/nvKL
-	Da7jehxCo1CCUiqM69fvoKabrfI76uVP4OdJcCihqzOWzmkiVwhQAWB0qFa9LR2h4CObuPthIqmW7
-	oaRbCgJg+N26f/dtw1mg==;
+	List-Owner; bh=oTNPNLcKC6nvI2shO3mkEG5pTI7sZeT77gVNY/59jjs=; b=REOKF+NdA8mtg+
+	ObRaxB/Lc5L9ZrbE8shh9o9KOnJC9/7OvxuIXUSFo/yCiKPKvR+DtIT7e79IubN/LG97q2cDeJe/6
+	Qso1kSGF/XlyCmepIjPjtHHpnCpuC5VSktl35w/ARKKgIu8pho/qC0xHaiefO6Szfg3TgNxOt3t9l
+	ARyG6b/rpzvCdOjoJ3OIBcYA7sZ7MWkRcRplrgf/XZInlpXTJFGJ9LmLhQ8cqgB2uLL9ndMjebTVL
+	s5MJiL0mN3sIDV+iQxkJUchUcvDMxjZ2uBK0TFPlQzYtdD/Av1I3egffR4d4aK1ELNNpqvjkLmkId
+	eM+XIXgsGCofYapZnzLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0DJ-0003ov-Dp; Tue, 05 May 2020 16:14:33 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jW0Db-0004BD-35; Tue, 05 May 2020 16:14:51 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0CJ-0002ui-S6; Tue, 05 May 2020 16:13:33 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 80D21AF4F;
- Tue,  5 May 2020 16:13:32 +0000 (UTC)
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: f.fainelli@gmail.com, gregkh@linuxfoundation.org, wahrenst@gmx.net,
- helgaas@kernel.org, linux-kernel@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>
-Subject: [PATCH v8 4/4] USB: pci-quirks: Add Raspberry Pi 4 quirk
-Date: Tue,  5 May 2020 18:13:17 +0200
-Message-Id: <20200505161318.26200-5-nsaenzjulienne@suse.de>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200505161318.26200-1-nsaenzjulienne@suse.de>
-References: <20200505161318.26200-1-nsaenzjulienne@suse.de>
+ id 1jW0Cd-0003HJ-In
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:13:53 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 75F6D206A4;
+ Tue,  5 May 2020 16:13:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588695230;
+ bh=dpXPFwKuVMrPa7413QY+1yJ7/pkzBpNiSnMEv+1die4=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=YMruXtbwRLDiFtaSuq49ZBOGAUPM520/Z9wz5f24Zvyj55NVRs57wCT7bIIr9epPJ
+ MN6iiyCoC+MWBt+bCoJImrZ5O06KJ9UN5+NBbB+5xYeQ0a2RtMSXZUCXHXGNrYM+Im
+ QUSZiMN0CryEfhf6eFAFwD5DGN046UE6m+oBJFlI=
+From: Will Deacon <will@kernel.org>
+To: Daniel Thompson <daniel.thompson@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2] arm64: cacheflush: Fix KGDB trap detection
+Date: Tue,  5 May 2020 17:13:45 +0100
+Message-Id: <158869137087.244424.4260224460496540281.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200504170518.2959478-1-daniel.thompson@linaro.org>
+References: <20200504170518.2959478-1-daniel.thompson@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_091332_068613_1A981780 
-X-CRM114-Status: GOOD (  16.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_091351_690933_8C48CD53 
+X-CRM114-Status: UNSURE (   9.48  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,100 +78,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tim.gover@raspberrypi.org, linux-pci@vger.kernel.org,
- linux-usb@vger.kernel.org, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: patches@linaro.org, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, Jason Wessel <jason.wessel@windriver.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On the Raspberry Pi 4, after a PCI reset, VL805's firmware may either be
-loaded directly from an EEPROM or, if not present, by the SoC's
-VideoCore. Inform VideoCore that VL805 was just reset.
+On Mon, 4 May 2020 18:05:18 +0100, Daniel Thompson wrote:
+> flush_icache_range() contains a bodge to avoid issuing IPIs when the kgdb
+> trap handler is running because issuing IPIs is unsafe (and not needed)
+> in this execution context. However the current test, based on
+> kgdb_connected is flawed: it both over-matches and under-matches.
+> 
+> The over match occurs because kgdb_connected is set when gdb attaches
+> to the stub and remains set during normal running. This is relatively
+> harmelss because in almost all cases irq_disabled() will be false.
+> 
+> [...]
 
-Also, as this creates a dependency between USB_PCI and VideoCore's
-firmware interface, and since USB_PCI can't be set as a module neither
-this can. Reflect that on the firmware interface Kconfg.
+Applied to arm64 (for-next/misc), thanks!
 
-Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
----
+[1/1] arm64: cacheflush: Fix KGDB trap detection
+      https://git.kernel.org/arm64/c/ab8ad279ceac
 
-Changes since v5:
- - Fix Kconfig issue with allmodconfig
-
-Changes since v4:
- - Do not split up error message
-
-Changes since v3:
- - Add more complete error message
-
-Changes since v1:
- - Make RASPBERRYPI_FIRMWARE dependent on this quirk to make sure it
-   gets compiled when needed.
-
- drivers/firmware/Kconfig      |  3 ++-
- drivers/usb/host/pci-quirks.c | 16 ++++++++++++++++
- 2 files changed, 18 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
-index 8007d4aa76dc..b42140cff8ac 100644
---- a/drivers/firmware/Kconfig
-+++ b/drivers/firmware/Kconfig
-@@ -178,8 +178,9 @@ config ISCSI_IBFT
- 	  Otherwise, say N.
- 
- config RASPBERRYPI_FIRMWARE
--	tristate "Raspberry Pi Firmware Driver"
-+	bool "Raspberry Pi Firmware Driver"
- 	depends on BCM2835_MBOX
-+	default USB_PCI
- 	help
- 	  This option enables support for communicating with the firmware on the
- 	  Raspberry Pi.
-diff --git a/drivers/usb/host/pci-quirks.c b/drivers/usb/host/pci-quirks.c
-index 92150ecdb036..0b949acfa258 100644
---- a/drivers/usb/host/pci-quirks.c
-+++ b/drivers/usb/host/pci-quirks.c
-@@ -16,6 +16,9 @@
- #include <linux/export.h>
- #include <linux/acpi.h>
- #include <linux/dmi.h>
-+
-+#include <soc/bcm2835/raspberrypi-firmware.h>
-+
- #include "pci-quirks.h"
- #include "xhci-ext-caps.h"
- 
-@@ -1243,11 +1246,24 @@ static void quirk_usb_handoff_xhci(struct pci_dev *pdev)
- 
- static void quirk_usb_early_handoff(struct pci_dev *pdev)
- {
-+	int ret;
-+
- 	/* Skip Netlogic mips SoC's internal PCI USB controller.
- 	 * This device does not need/support EHCI/OHCI handoff
- 	 */
- 	if (pdev->vendor == 0x184e)	/* vendor Netlogic */
- 		return;
-+
-+	if (pdev->vendor == PCI_VENDOR_ID_VIA && pdev->device == 0x3483) {
-+		ret = rpi_firmware_init_vl805(pdev);
-+		if (ret) {
-+			/* Firmware might be outdated, or something failed */
-+			dev_warn(&pdev->dev,
-+				 "Failed to load VL805's firmware: %d. Will continue to attempt to work, but bad things might happen. You should fix this...\n",
-+				 ret);
-+		}
-+	}
-+
- 	if (pdev->class != PCI_CLASS_SERIAL_USB_UHCI &&
- 			pdev->class != PCI_CLASS_SERIAL_USB_OHCI &&
- 			pdev->class != PCI_CLASS_SERIAL_USB_EHCI &&
+Cheers,
 -- 
-2.26.2
+Will
 
+https://fixes.arm64.dev
+https://next.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
