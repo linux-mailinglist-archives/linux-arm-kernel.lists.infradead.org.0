@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7ADED1C53E7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C38691C53FC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:10:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zVqrGrhq24CwD5Bf/JMoWZBJ9q3lFRzZzXQFfenWjs=; b=iGQqdU5sXp1FEc
-	CIoIqOOJImi9M6fOjjPFtPfRRezbWRjLtkr7x+2fTG0414Sv3xzer/X2Zn114Q06x38k9ZfYKvV8m
-	QwHyBLRFJn+p4mS4l0USob0VPmnzYLTsa8dgI6LGaKy+7kMV4jaZ995FeONT2OpWD1eAi6ed/N0+U
-	k8J7BGT78KnJn9MYwF/fnCfyZiYyn1eniJqA6Zt2ln+UoAGt89fZixd8MNqCzBikPqmoW9bTcgyCb
-	EMcnPB0rXmQsnH8nKCO3+sTejl2pr9wExGV6eyZuvDI84S44sLG/AxvktHRUiyDAELGxOFcFDZkXb
-	L7eNzDkv0NJa2IIdT2hg==;
+	List-Owner; bh=bVsaRBp1oG3N5RCMcl9bKV3Oa6A4WDmnrsB2U1c5viQ=; b=l3seJP+rsSTGP1
+	UkjwD2JyzELulyo6pEN9PvspDq8ZALbGlWjA+RxT3HHgPlf09AUffKfkN82wq/3QwYbKG8JFpgLIC
+	Z0jc2Bba4WXvyMIANyhDBgQ8MTMpBNqCxY0EJqkqzu0ZH74AdZoeEpxkVms2ygFMoG6BkY6X5Ipo1
+	V2e9tr/jbVI4wABgifxYm+ta/Sm9tXvjIWCXWK9xeeB5/0l5A/Y024zZ3929OR63og1VYZ8GhA9cR
+	6NSzqGXTRihiK1LyCdB83bBcWSRXp8HtFQCPPiZ1ZsxPEZDq/zVdjGG4Zk74PmzNfQjpvTIDuzx3/
+	jruRQlsDQhr1U16aHuWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvOH-0000N4-VF; Tue, 05 May 2020 11:05:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvO7-0000LE-EA
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:05:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AD1CD30E;
- Tue,  5 May 2020 04:05:22 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABBB23F305;
- Tue,  5 May 2020 04:05:21 -0700 (PDT)
-Date: Tue, 5 May 2020 12:05:19 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: RFC: Adding arch-specific user ABI documentation in linux-man
-Message-ID: <20200505110519.GM30377@arm.com>
-References: <20200504153214.GH30377@arm.com>
- <20200505104454.GC19710@willie-the-truck>
+	id 1jVvSa-0001eb-9r; Tue, 05 May 2020 11:10:00 +0000
+Received: from verein.lst.de ([213.95.11.211])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVvST-0001ct-8t
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:09:54 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 4A89768C4E; Tue,  5 May 2020 13:09:50 +0200 (CEST)
+Date: Tue, 5 May 2020 13:09:50 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH v3 02/25] drm: core: fix common struct sg_table related
+ issues
+Message-ID: <20200505110950.GA19067@lst.de>
+References: <20200505083926.28503-1-m.szyprowski@samsung.com>
+ <20200505084614.30424-1-m.szyprowski@samsung.com>
+ <CGME20200505084625eucas1p1a3c25fd171f360e0aab2f76700699454@eucas1p1.samsung.com>
+ <20200505084614.30424-2-m.szyprowski@samsung.com>
+ <20200505101508.GA14860@lst.de>
+ <5dd1cb55-accb-0dc6-4ca5-90c57cd19527@samsung.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200505104454.GC19710@willie-the-truck>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <5dd1cb55-accb-0dc6-4ca5-90c57cd19527@samsung.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_040523_517858_12F91E7C 
-X-CRM114-Status: GOOD (  22.43  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_040953_458842_AA207CBE 
+X-CRM114-Status: GOOD (  12.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +64,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Michael Kerrisk <mtk.manpages@gmail.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
+Cc: Thomas Zimmermann <tzimmermann@suse.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linaro-mm-sig@lists.linaro.org, iommu@lists.linux-foundation.org,
+ Maxime Ripard <mripard@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 11:44:55AM +0100, Will Deacon wrote:
-> Hi Dave,
+On Tue, May 05, 2020 at 12:51:58PM +0200, Marek Szyprowski wrote:
+> Hi Christoph,
 > 
-> On Mon, May 04, 2020 at 04:32:35PM +0100, Dave Martin wrote:
-> > I considering trying to plug some gaps in the arch-specific ABI
-> > documentation in the linux man-pages, specifically for arm64 (and
-> > possibly arm, where compat means we have some overlap).
-> > 
-> > For arm64, there are now significant new extensions (Pointer
-> > authentication, SVE, MTE etc.)  Currently there is some user-facing
-> > documentation mixed in with the kernel-facing documentation in the
-> > kernel tree, but this situation isn't ideal.
-> > 
-> > Do you have an opinion on where in the man-pages documentation should be
-> > added, and how to structure it?
-> > 
-> > 
-> > Affected areas include:
-> > 
-> >  * exec interface
-> >  * aux vector, hwcaps
-> >  * arch-specific signals
-> >  * signal frame
-> >  * mmap/mprotect extensions
-> >  * prctl calls
-> >  * ptrace quirks and extensions
-> >  * coredump contents
-> > 
-> > 
-> > Not everything has an obvious home in an existing page, and adding
-> > specifics for every architecture could make some existing manpages very
-> > unwieldy.
-> > 
-> > I think for some arch features, we really need some "overview" pages
-> > too: just documenting the low-level details is of limited value
-> > without some guide as to how to use them together.
-> > 
-> > 
-> > Does the following sketch look reasonable?
-> > 
-> >  * man7/arm64.7: new page: overview of arm64-specific ABI extensions
-> > 
-> >  * man7/sve.7 (or man7/arm64-sve.7 or man7/sve.7arm64): new page:
-> >    overview of arm64 SVE ABI
-> > 
-> >  * man2/arm64-ptrace.2 (or man2/ptrace.2arm64): new page:
-> >    arm64 ptrace extensions
+> On 05.05.2020 12:15, Christoph Hellwig wrote:
+> >> -		for_each_sg_page(st->sgl, &sg_iter, st->nents, 0)
+> >> +		for_each_sg_page(st->sgl, &sg_iter, st->orig_nents, 0)
+> > Would it make sense to also add a for_each_sgtable_page helper that
+> > hides the use of orig_nents?  To be used like:
+> >
+> > 		for_each_sgtable_page(st, &sg_iter, 0) {
 > 
-> Michael has been nagging me on and off about that for, what, 10 years now?
-> I would therefore be very much in favour of having our ptrace extensions
-> documented!
+> We would need two helpers:
 > 
-> We could even put this stuff under Documentation/arm64/man/ if it's deemed
-> too CPU-specific for the man-pages project, but my preference would still
-> be for it to be hosted there alongside all the other man pages.
+> for_each_sgtable_cpu_page() and for_each_sgtable_dma_page().
+> 
+> I considered them, but then I found that there are already 
+> for_each_sg_page(), for_each_sg_dma_page() and various special iterators 
+> like sg_page_iter, sg_dma_page_iter and sg_mapping_iter. Too bad that 
+> they are almost not used, at least in the DRM subsystem. I wonder if it 
+> make sense to apply them or simply provide the two above mentioned 
+> wrappers?
 
-Heh, perhaps we could build that into the kernel and mount it somewhere.
-
-
-Seriously though,
-
-I guess I can start off with straightforward small things for which the
-documentation has an obvious home (like prctls[*]) and then move on to
-the bigger stuff like ptrace.
-
-If people start shouting about a page getting too big or messy I can try
-to split it up.
-
-Make sense?
-
-Cheers
----Dave
-
-
-[*] "straightforward" was a joke, obviously
+None of the helpers helps with passing the right parameters from the
+sg_table.  So in doube we'd need wrappers for all of the above, or
+none..
 
 _______________________________________________
 linux-arm-kernel mailing list
