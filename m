@@ -2,79 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BEF751C4CDB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:01:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15C151C4CDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:02:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=x2fydbB6pjQ0CijaajfAnB9gWSB6BtInqsRI5fXGYJE=; b=HhRmDQ1E+WoSJL
-	KLfcE3I+H1Cf06y3kQwU/nA+D4ZzBLZNgVboL3hn5I+8kinQeLKuqvp+RMeqaMoZjny530itEeYoW
-	R0SqLM1jU4BTq4guWGfhhCJc5M6qoVkj7SbkN4cxN15iQGT/8d7pLjxBK4nFoWqdQR/ZbfwburJE+
-	kmpspDa+h2f8IkbODBvqpLLXrqg8yiiXwMApMtka2uQtU2s5+7sHYWR+KW9rN9sI9jzmjjICon645
-	wlwpx35esqbTBS7nWQU1wGKi2IGeQ2ZNBvdYQuiAyQviBrwEJ5AQE0M7q4YkcRkCj5L7eJETGKq4f
-	gxDBIefkZzAWrRlgoKLw==;
+	List-Owner; bh=c3ibY82bT4+7CiVIlESF3kCcI+MndaczKJ4ZqO0Dr1s=; b=JIaeQ7fRM2CEdb
+	a66EiXO5kHdWp/aM/hxycnzE5cF9JxgfSH8x8DGUR6ygj0xIPoBkL++AzI0dm3ZxKiU7s3g4eHHJg
+	KmPHSMVuyar6pkIu8NweDqJUJNlzcUH8lHBockVV4ueJ8jMHkYxjx/Q7SfdPUMjiTUGti5pkncKrU
+	kmYl4DLzJV2AeUy1Y6cvHHkRiHci79Xrjvlnejx7SgQbVkjvc2lkijxCmWgUv3ynkCFJ7LCCGUXFm
+	v7vhCYH4jdwZETTgT9UcZlZIxiqxYp2oz57FoWFqoUzNsPRDcVTARYmGxaVAl9xukm70zhI080BdM
+	cyfitm6xf2Q5CFrtykjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVomA-0003XQ-QD; Tue, 05 May 2020 04:01:46 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jVomT-0003ow-Be; Tue, 05 May 2020 04:02:05 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVolo-0003Mh-VG
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:01:27 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id 7so671475pjo.0
+ id 1jVolv-0003U9-RP
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:01:33 +0000
+Received: by mail-pg1-x542.google.com with SMTP id a4so510559pgc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 04 May 2020 21:01:24 -0700 (PDT)
+ Mon, 04 May 2020 21:01:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=ctoh4fSKKdbnfncF1YOVBJD74K9A/+MRfOMQ6EjpdWU=;
- b=Ii8+KtILgS8kUQw30kWi/g6X8rQQSL7btnKUADBZbiGPsB7xgLrjW/n8WdNDKbgQWN
- tD0CyhvsndPuo5olMQnHe7XkJqOToYWcqesKzfNx4Cr9zVrfqs44PzQD1F0/aSptMOBL
- eUsczSXbwqFmnb3O1kmfFjGdB5/HS/Xh7TVSI=
+ bh=fX+wHjDnbtvEkbbVe2K/ppkZQlF0JTMhhwiYwZiHruM=;
+ b=doZmY9XxEuZl1yzo+blKvEuGksayzqeE2OAKNN0mF76DL6R0CrL75vtszNR4kDzPyW
+ 4GEREd5uYoerxfbJSi4kbGiHtp9dKhMwE3I7zjjEorWnm8Dj/vrkXc1V8tlEWlX3YY9P
+ Qb6DJuLF66dcjaD/xB/cOn7IqyTVNpGm/HaVM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=ctoh4fSKKdbnfncF1YOVBJD74K9A/+MRfOMQ6EjpdWU=;
- b=F/XskPUjEDk4ENbhUVKDqvHyD03UKJFfL+EhQ3l/qVyKIoSmRbQvMAefWUJoeXFD9m
- sh4ueSxBI3s1CFGnz6I1KxiFQltCvyt8NJGvBbiTS0MbrYBJP170hA46GnPyLlLf9reL
- f9aOBl4nY0yC1Z1NTZVOTozeBWhG0uwl5LjCxtQn1BeZCD0PzXB0l4mabwpHiROdBAO6
- qP1LQPnN1H5yEz1a8q5PGtAcQo2UEWeZB6YFv3UNbqhG8LE0j6mxhF1nobCtBkKAkMWx
- YNOPfLc07Sdlihh1dmfZTNSqP7z1jNhhlMqaHDff5s2SgcR9VKYXNsJw6wihz7MK6FSK
- 7Q/A==
-X-Gm-Message-State: AGi0PubtbdadeCVPJybA4fQ707GWgoDVqChVYaAWrgciCNkMgdEJeRiy
- RhuCqUPdqe8vOp5ZJLlg27mgxg==
-X-Google-Smtp-Source: APiQypIIEru/mWi8soSg13FgeYsWH8bdQu/U7isUmQMJNW8Y7jDjPHye4EUxOyOGu5+scYfufol+BQ==
-X-Received: by 2002:a17:90a:7f83:: with SMTP id
- m3mr525112pjl.147.1588651283555; 
- Mon, 04 May 2020 21:01:23 -0700 (PDT)
+ bh=fX+wHjDnbtvEkbbVe2K/ppkZQlF0JTMhhwiYwZiHruM=;
+ b=YSpEhUxbcdkUK+x52z+TlK5aelkms0a/Jet+Z4aC1YkUQy67cZktIUYRHZVnv/GSSD
+ 6NGVwpKy6xq2C4zdBWwX+DWSeuD3NAsKnA/hoV+zO7QdyEd/ORVnpBzQ6hK/m1hT4pgl
+ biwjog5NrRHS1+uEf8wLTJy0ZTy9jJ+DntLNfvxVipjXPir94Z/mW3E2Oqs23zZbBZ9P
+ NsElwGAXkeGXaILnvpUOlY8J6glc6qDvYimNROCI4ERqRjNGxGOfgvxqlQNa11bL8o4l
+ E0xbDX2M1e0hMyG/vd2l4A1YB9TmFda4mK3UVWD7Z7N+FFHOXOU8td9mZ3aqzaSAQCT7
+ o+Kg==
+X-Gm-Message-State: AGi0PuaP2sKAApFVJQ/ONL9Rk+9uFmbNCYTTFaYAhX1z9BMYmvQEcSBq
+ C6E+E4fIiKIFVO9eFuKR0uoQ1w==
+X-Google-Smtp-Source: APiQypKM9NF4PxwZF3k6P93G5Qq80LCDj9yb7AloapK0ymyBsN163/1s0pe5MmUpsS7vgZq1MO+WEw==
+X-Received: by 2002:aa7:9683:: with SMTP id f3mr1280844pfk.278.1588651291099; 
+ Mon, 04 May 2020 21:01:31 -0700 (PDT)
 Received: from localhost ([2401:fa00:9:14:a92f:c47d:76a8:b09e])
- by smtp.gmail.com with ESMTPSA id w2sm565152pfc.194.2020.05.04.21.01.19
+ by smtp.gmail.com with ESMTPSA id s44sm481696pjc.28.2020.05.04.21.01.27
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 04 May 2020 21:01:23 -0700 (PDT)
+ Mon, 04 May 2020 21:01:30 -0700 (PDT)
 From: Eizan Miyamoto <eizan@chromium.org>
 X-Google-Original-From: Eizan Miyamoto <eizan@google.com>
 To: LKML <linux-kernel@vger.kernel.org>
-Subject: [PATCH v1 2/5] [media] mtk-mdp: handle
- vb2_dma_contig_set_max_seg_size errors during probe
-Date: Tue,  5 May 2020 14:00:45 +1000
-Message-Id: <20200505125042.v1.2.Ie596e59e0a18935f0b7321ff45e5c5f2ce8082b1@changeid>
+Subject: [PATCH v1 3/5] [media] mtk-mdp: handle vpu_wdt_reg_handler() errors
+ during probe
+Date: Tue,  5 May 2020 14:00:46 +1000
+Message-Id: <20200505125042.v1.3.Ieebc5dcb6dcc116119a570f14786ba47c9007ec8@changeid>
 X-Mailer: git-send-email 2.26.2.526.g744177e7f7-goog
 In-Reply-To: <20200505040048.132493-1-eizan@google.com>
 References: <20200505040048.132493-1-eizan@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_210125_010144_F236D3D0 
-X-CRM114-Status: GOOD (  10.98  )
+X-CRM114-CacheID: sfid-20200504_210131_914769_2F190CC5 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -115,30 +114,33 @@ Signed-off-by: eizan@chromium.org
 Signed-off-by: Eizan Miyamoto <eizan@google.com>
 ---
 
- drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-index aeaed2cf4458..c20ac7681c6f 100644
+index c20ac7681c6f..f974242663dc 100644
 --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
 +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-@@ -193,13 +193,19 @@ static int mtk_mdp_probe(struct platform_device *pdev)
+@@ -188,8 +188,12 @@ static int mtk_mdp_probe(struct platform_device *pdev)
+ 	}
+ 
+ 	mdp->vpu_dev = vpu_get_plat_device(pdev);
+-	vpu_wdt_reg_handler(mdp->vpu_dev, mtk_mdp_reset_handler, mdp,
+-			    VPU_RST_MDP);
++	ret = vpu_wdt_reg_handler(mdp->vpu_dev, mtk_mdp_reset_handler, mdp,
++				  VPU_RST_MDP);
++	if (ret) {
++		dev_err(&pdev->dev, "Failed to register reset handler\n");
++		goto err_wdt_reg;
++	}
  
  	platform_set_drvdata(pdev, mdp);
  
--	vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
-+	ret = vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
-+	if (ret) {
-+		dev_err(&pdev->dev, "Failed to set vb2 dma mag seg size\n");
-+		goto err_set_max_seg_size;
-+	}
+@@ -206,6 +210,8 @@ static int mtk_mdp_probe(struct platform_device *pdev)
  
- 	pm_runtime_enable(dev);
- 	dev_dbg(dev, "mdp-%d registered successfully\n", mdp->id);
+ err_set_max_seg_size:
  
- 	return 0;
- 
-+err_set_max_seg_size:
++err_wdt_reg:
 +
  err_m2m_register:
  	v4l2_device_unregister(&mdp->v4l2_dev);
