@@ -2,57 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 767DE1C5F73
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:59:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7A251C5F7F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:00:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5JsVEdMsrpvglIVMb3c+caHv4meAilpBx3A3kxJ9aA=; b=D75TyZufTGGB+R
-	J8I8QVaScIPIUreH+fH56Mz7Cfw2HmcJWPDaS/w5TAz3fmAb1Zn3DG/aEnh1iDThvb9eikVnjj2Xo
-	Vv47qDdy+UQTK8q15PN8jWKPxbji0neO1wM5W7+PPtA4eCRcG4un0G+d0g+t+5FgVHhUqH1lnJ+Rl
-	KAmfeN4hGQ5cC+oQVS9xs91ahk8uH35ccHRG7ipxw6o2f+8oAPDXpHC2c9K0ZpDItGPkIS7S+p4rG
-	PdJa9/72UHt95cJphXLanx8CkYurcFedMClADBA59sN8sXLcu7vdKLcEZPG6AjE007QWlqvg2snIK
-	RgK4POXVwQ4xA2RAG/ug==;
+	List-Owner; bh=p04eRxkvao0CWulibCww+l4PJuR+AUXS2OIgyi92w/4=; b=qTr7MGxa/G/8zv
+	fPpAph71ggmzejkEoPkulzSnM0fd9sFyqr7bL2/baN4o4SHYTX/RQFKEGdXgrH63Vs7jpggVdREr5
+	h7nJX0vVEZa7tqOVjHSOwBchefxNyTZMVTFtc3PeGY0JQ03vbkDnw4eTL+EJRId0oeYaCo1UlQ94L
+	+ZEBIQDAajcnnB0I96t9PDZVGXNQnVMfhd4xNmzDtHnCOkjArleZyd6VxLj5lkhjYD0uB1bmKLfRB
+	8fZhUZvAbzz0dmDDeLjqycbYVjvDQvN4ZVyfdojUkirn9tMhctiaPIKCKT0HI3ozxwitkGqLiAAQ/
+	+FTZ2DauQZI+gVtFtedQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1qf-0006EP-Cp; Tue, 05 May 2020 17:59:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1qY-0006DQ-7F
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:59:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8B031FB;
- Tue,  5 May 2020 10:59:07 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.47])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 118F83F305;
- Tue,  5 May 2020 10:59:04 -0700 (PDT)
-Date: Tue, 5 May 2020 18:59:01 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2 5/5] arm/arm64: smccc: Add ARCH_SOC_ID support
-Message-ID: <20200505175901.GD23612@bogus>
-References: <20200504092905.10580-1-sudeep.holla@arm.com>
- <20200504092905.10580-6-sudeep.holla@arm.com>
- <20200505162049.GG24239@willie-the-truck>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505162049.GG24239@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1jW1rj-0007JQ-L4; Tue, 05 May 2020 18:00:23 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW1rO-0006Z0-9S
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:00:04 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 948072075A;
+ Tue,  5 May 2020 18:00:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588701601;
+ bh=yhuu/o3EzoH1HmkCKzTB+u/7msrEd4fTYFMNJZelWl4=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=rpE0djmo3gOuHHXAwnJbfW+5wjchpdP9pNPQAcOSe31UDyhNdFk0BxmL11ktwyRyw
+ VOj80xtEX0kCByhcLsDolv1tWCDDRazIm9XiMEjuMO4QR5Rt33Jfn4J8lkv7+q6w2I
+ xTcaDYNIyYHmrfKINQonq2b8C6r2A3ki9iF5uOjM=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jW1rL-009bAi-C8; Tue, 05 May 2020 19:00:00 +0100
+Date: Tue, 05 May 2020 18:59:56 +0100
+Message-ID: <86o8r2tg83.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
+ struct kvm
+In-Reply-To: <660a6638-5ee0-54c5-4a9d-d0d9235553ad@arm.com>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-4-maz@kernel.org>
+ <660a6638-5ee0-54c5-4a9d-d0d9235553ad@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: james.morse@arm.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, andre.przywara@arm.com,
+ christoffer.dall@arm.com, Dave.Martin@arm.com, jintack@cs.columbia.edu,
+ alexandru.elisei@arm.com, gcherian@marvell.com, prime.zeng@hisilicon.com,
+ will@kernel.org, catalin.marinas@arm.com, mark.rutland@arm.com,
+ julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_105910_312291_45A133DF 
-X-CRM114-Status: GOOD (  13.48  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_110002_384567_BDE16F09 
+X-CRM114-Status: GOOD (  35.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,52 +97,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
- Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Will Deacon <will@kernel.org>, George Cherian <gcherian@marvell.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 05:20:50PM +0100, Will Deacon wrote:
-> On Mon, May 04, 2020 at 10:29:05AM +0100, Sudeep Holla wrote:
-> > diff --git a/drivers/firmware/psci/soc_id.c b/drivers/firmware/psci/soc_id.c
-> > new file mode 100644
-> > index 000000000000..b45f2d78e12e
-> > --- /dev/null
-> > +++ b/drivers/firmware/psci/soc_id.c
-> > @@ -0,0 +1,165 @@
-> > +// SPDX-License-Identifier: GPL-2.0
-> > +/*
-> > + * Copyright 2020 Arm Limited
-> > + */
-> > +
-> > +#include <linux/arm-smccc.h>
-> > +#include <linux/bitfield.h>
-> > +#include <linux/device.h>
-> > +#include <linux/module.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/slab.h>
-> > +#include <linux/sys_soc.h>
-> > +
-> > +#define SMCCC_SOC_ID_JEP106_BANK_IDX_MASK	GENMASK(30, 24)
-> > +/*
-> > + * As per the spec bits[23:16] are JEP-106 identification code with parity bit
-> > + * for the SiP. We can drop the parity bit.
-> > + */
-> 
-> Which spec? Could you link to the doc and section here, please?
-> 
+Hi James,
 
-Sure, sorry since I updated the link in 1/5, I forgot all of it and just
-started referring it here.
+On Tue, 05 May 2020 17:03:15 +0100,
+James Morse <james.morse@arm.com> wrote:
+> 
+> Hi Marc,
+> 
+> On 22/04/2020 13:00, Marc Zyngier wrote:
+> > From: Christoffer Dall <christoffer.dall@arm.com>
+> > 
+> > As we are about to reuse our stage 2 page table manipulation code for
+> > shadow stage 2 page tables in the context of nested virtualization, we
+> > are going to manage multiple stage 2 page tables for a single VM.
+> > 
+> > This requires some pretty invasive changes to our data structures,
+> > which moves the vmid and pgd pointers into a separate structure and
+> > change pretty much all of our mmu code to operate on this structure
+> > instead.
+> > 
+> > The new structure is called struct kvm_s2_mmu.
+> > 
+> > There is no intended functional change by this patch alone.
+> 
+> It's not obvious to me that VTCR_EL2.T0SZ is a per-vm thing, today
+> the size of the IPA space comes from the VMM, its not a
+> hardware/compile-time property. Where does the vEL2's T0SZ go?
+> ... but using this for nested guests would 'only' cause a
+> translation fault, it would still need handling in the emulation
+> code. So making it per-vm should be simpler.
+
+My reasoning is that this VTCR defines the virtual HW, and the guest's
+own VTCR_EL2 is just another guest system register. It is the role of
+the NV code to compose the two in a way that makes sense (delivering
+translation faults if the NV guest's S2 output range doesn't fit in
+the host's view of the VM IPA range).
+
+> But accessing VTCR is why the stage2_dissolve_p?d() stuff still
+> needs the kvm pointer, hence the backreference... it might be neater
+> to push the vtcr properties into kvm_s2_mmu that way you could drop
+> the kvm backref, and only things that take vm-wide locks would need
+> the kvm pointer. But I don't think it matters.
+
+That's an interesting consideration. I'll have a look.
+
+> I think I get it. I can't see anything that should be the other
+> vm/vcpu pointer.
+> 
+> Reviewed-by: James Morse <james.morse@arm.com>
+
+Thanks!
+
+> Some boring fiddly stuff:
+> 
+> [...]
+> 
+> > @@ -125,24 +123,24 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+> >  	}
+> >  }
+> >  
+> > -static void __hyp_text __tlb_switch_to_host(struct kvm *kvm,
+> > +static void __hyp_text __tlb_switch_to_host(struct kvm_s2_mmu *mmu,
+> >  					    struct tlb_inv_context *cxt)
+> >  {
+> >  	if (has_vhe())
+> > -		__tlb_switch_to_host_vhe(kvm, cxt);
+> > +		__tlb_switch_to_host_vhe(cxt);
+> >  	else
+> > -		__tlb_switch_to_host_nvhe(kvm, cxt);
+> > +		__tlb_switch_to_host_nvhe(cxt);
+> >  }
+> 
+> What does __tlb_switch_to_host() need the kvm_s2_mmu for?
+
+Not much. Obviously mechanical conversion of kvm->kvm_s2_mmu, and not
+finishing the job. I'll fix that.
+
+> 
+> [...]
+> 
+> 
+> >  void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu)
+> >  {
+> > -	struct kvm *kvm = kern_hyp_va(kern_hyp_va(vcpu)->kvm);
+> > +	struct kvm_s2_mmu *mmu = kern_hyp_va(kern_hyp_va(vcpu)->arch.hw_mmu);
+> >  	struct tlb_inv_context cxt;
+> >
+> >  	/* Switch to requested VMID */
+> > -	__tlb_switch_to_guest(kvm, &cxt);
+> > +	__tlb_switch_to_guest(mmu, &cxt);
+> >
+> >  	__tlbi(vmalle1);
+> >  	dsb(nsh);
+> >  	isb();
+> >
+> > -	__tlb_switch_to_host(kvm, &cxt);
+> > +	__tlb_switch_to_host(mmu, &cxt);
+> >  }
+> 
+> Does this need the vcpu in the future?
+> Its the odd one out, the other tlb functions here take the s2_mmu, or nothing.
+> We only use the s2_mmu here.
+
+I think this was done as a way not impact the 32bit code (rest in
+peace). Definitely a candidate for immediate cleanup.
+
+> 
+> [...]
+> 
+> 
+> > diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> > index e3b9ee268823b..2f99749048285 100644
+> > --- a/virt/kvm/arm/mmu.c
+> > +++ b/virt/kvm/arm/mmu.c
+> 
+> > @@ -96,31 +96,33 @@ static bool kvm_is_device_pfn(unsigned long pfn)
+> >   *
+> >   * Function clears a PMD entry, flushes addr 1st and 2nd stage TLBs.
+> >   */
+> > -static void stage2_dissolve_pmd(struct kvm *kvm, phys_addr_t addr, pmd_t *pmd)
+> > +static void stage2_dissolve_pmd(struct kvm_s2_mmu *mmu, phys_addr_t addr, pmd_t *pmd)
+> 
+> The comment above this function still has '@kvm:	pointer to kvm structure.'
+> 
+> [...]
+> 
+> 
+> > @@ -331,8 +339,9 @@ static void unmap_stage2_puds(struct kvm *kvm, pgd_t *pgd,
+> >   * destroying the VM), otherwise another faulting VCPU may come in and mess
+> >   * with things behind our backs.
+> >   */
+> > -static void unmap_stage2_range(struct kvm *kvm, phys_addr_t start, u64 size)
+> > +static void unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size)
+> 
+> The comment above this function still has '@kvm:   The VM pointer'
+> 
+> [...]
+> 
+> > -static void stage2_flush_memslot(struct kvm *kvm,
+> > +static void stage2_flush_memslot(struct kvm_s2_mmu *mmu,
+> >  				 struct kvm_memory_slot *memslot)
+> >  {
+> 
+> Wouldn't something manipulating a memslot have to mess with a set of
+> kvm_s2_mmu once this is all assembled?  stage2_unmap_memslot() takes
+> struct kvm, it seems odd to pass one kvm_s2_mmu here.
+
+Indeed, that doesn't make sense. I guess this was done to match
+kvm_stage2_flush_range, which does need to take a kvm_s2_mmu (it is
+directly called from the nesting code).
+
+stage2_flush_memslot() only affects the "main" S2 PTs, so passing kvm
+here should be the right thing to do.
+
+> 
+> [...]
+> 
+> > @@ -886,21 +898,23 @@ int create_hyp_exec_mappings(phys_addr_t phys_addr, size_t size,
+> 
+> > -int kvm_alloc_stage2_pgd(struct kvm *kvm)
+> > +int kvm_init_stage2_mmu(struct kvm *kvm, struct kvm_s2_mmu *mmu)
+> >  {
+> >  	phys_addr_t pgd_phys;
+> >  	pgd_t *pgd;
+> > +	int cpu;
+> >  
+> > -	if (kvm->arch.pgd != NULL) {
+> > +	if (mmu->pgd != NULL) {
+> >  		kvm_err("kvm_arch already initialized?\n");
+> 
+> Does this error message still make sense?
+
+Probably not anymore. I'll revisit that shortly.
+
+> 
+> 
+> >  		return -EINVAL;
+> >  	}
+> 
+> [...]
+> 
+> > @@ -1439,9 +1467,10 @@ static void stage2_wp_ptes(pmd_t *pmd, phys_addr_t addr, phys_addr_t end)
+> >   * @addr:	range start address
+> >   * @end:	range end address
+> >   */
+> > -static void stage2_wp_pmds(struct kvm *kvm, pud_t *pud,
+> > +static void stage2_wp_pmds(struct kvm_s2_mmu *mmu, pud_t *pud,
+> >  			   phys_addr_t addr, phys_addr_t end)
+> 
+> The comment above this function still has 'kvm:		kvm instance for the VM'.
+> 
+> 
+> >  {
+> > +	struct kvm *kvm = mmu->kvm;
+> >  	pmd_t *pmd;
+> >  	phys_addr_t next;
+> >  
+> > @@ -1461,14 +1490,15 @@ static void stage2_wp_pmds(struct kvm *kvm, pud_t *pud,
+> >  }
+> >  
+> >  /**
+> > - * stage2_wp_puds - write protect PGD range
+> > - * @pgd:	pointer to pgd entry
+> > - * @addr:	range start address
+> > - * @end:	range end address
+> > - */
+> > -static void  stage2_wp_puds(struct kvm *kvm, pgd_t *pgd,
+> > +  * stage2_wp_puds - write protect PGD range
+> > +  * @pgd:	pointer to pgd entry
+> > +  * @addr:	range start address
+> > +  * @end:	range end address
+> > +  */
+> > +static void  stage2_wp_puds(struct kvm_s2_mmu *mmu, pgd_t *pgd,
+> >  			    phys_addr_t addr, phys_addr_t end)
+> 
+> Comment was missing @kvm, now its missing @mmu....
+> 
+> 
+> >  {
+> > +	struct kvm *kvm __maybe_unused = mmu->kvm;
+> >  	pud_t *pud;
+> >  	phys_addr_t next;
+> >  
+> 
+> > @@ -1492,12 +1522,13 @@ static void  stage2_wp_puds(struct kvm *kvm, pgd_t *pgd,
+> >   * @addr:	Start address of range
+> >   * @end:	End address of range
+> >   */
+> > -static void stage2_wp_range(struct kvm *kvm, phys_addr_t addr, phys_addr_t end)
+> > +static void stage2_wp_range(struct kvm_s2_mmu *mmu, phys_addr_t addr, phys_addr_t end)
+> 
+> The comment above this function still ... you get the picture.
+
+Thanks a lot for the careful review. I'll respin this shortly, as this
+is one of the patch I'd like to get in early.
+
+	M.
 
 -- 
-Regards,
-Sudeep
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
