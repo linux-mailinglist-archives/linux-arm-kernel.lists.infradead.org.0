@@ -2,81 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B40FE1C5774
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:52:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8139F1C5794
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 15:56:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z3r/4xYc+t7/t2s/p8UtlH9yfWJZUxq+b99gcJOtTuc=; b=Mt6d+22HG6IRXn
-	D7wtNg4V+ZxxrmJIos/GSaG0BhepmMm8/sv/klEKSQR0ibIMqsGLPfnbF4Qa+wzQ5lyfqiyzk21rS
-	N+NWsKE4KTNEF427+AM/67HYvxdHHNrciV9DcsfOYyfzk20g0NmO4eo338uAkSqHpw8ZLDaLoN/Da
-	mxd7sDa9rghMQxgKHeiacsgc1pLqjJwW+2ILTgyg+z4mggGcV7fR6m+88xc/UuLZzA8w1ZPivBEIJ
-	rCFJK/VIBwnLDYrUuPnHxTYOEISg47tiAVDTepVOZtURkmuluqeSkNmw/6QIJmicnMHMTMOThfuYK
-	aJKtw+eTShYC9GrRtF7Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=mdZLQ5KlJ1eMVAhrpFmuGFmxsV7xiVxfPGzxCyC9dXw=; b=ijG
+	FFOjfhrD0RO8FyiXOTo9BxI2SwSaGR4kSN7H7sVp1orGkOEUvkEE9WdbK++0TiF1aBbYMbA4m7Y42
+	JwxBqT6E4f0KAAXY8blY/tzGkcFPj5GI7DMrTshLV1VR3E2BxlyOJZXwjgaNJDMhUU/EtlaXmWi8I
+	0dVeXwgbsO7v6LMilf/wH4kkLS6FmpnktxJtUo/0KB1LSNJtoU+j/Qlrt9bcPyY1x2ALjQxjskXXb
+	phbT9u+9aB4L4EKeAe4E8iaNs4Ejk5CmNo0yz+YOnvVQDY92O5Ezv8D2wF2fzdNuk5JzjSFo4kWQD
+	4hPBqBzSzAvbtke5PlC3jBg3U8eUs5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVxzX-00022G-67; Tue, 05 May 2020 13:52:11 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1jVy3J-0005Yo-NJ; Tue, 05 May 2020 13:56:05 +0000
+Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVxzP-00021h-Oo
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 13:52:04 +0000
-Received: by mail-pl1-x641.google.com with SMTP id m7so665771plt.5
+ id 1jVy3D-0005YG-Q3
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 13:56:01 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id t40so1103132pjb.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 06:52:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=zSUqQDWC8kjEfI7Zwy/W0Ml7p1PvgRlntpeykuMm0bw=;
- b=hl68Rx6+hwqgjCDnRBIJ4ghqd/Mbjw3qnNO117CIrop6ybuvdvRuSN03pEe7LfHEPI
- DEpOBZgu6KgRtAIgWgd9EZ6+ZSZpdmdrcUwE4xCJSRrgUf6ZClZVqGvF71hyrA1fE0CG
- 5XBjSIhRA4+6zJ8uXyhuPujWQz6cVK4l21vd5YazoEAGPJUkjCT72SOFXQTriCqkd2pk
- uSYVpm7onCs3V/dcpk87Lc0IyMldYKecnD5gtwshAbJHKmuG7rbftbJtgtq4Hf5Eu4Dp
- pPA8M/GBhnv2uvwEAgQAizkTBjG2gVDkDo7CwZbbHIjISSjFrMXB3MnYmb9f6aJ5H9kM
- v4jw==
+ Tue, 05 May 2020 06:55:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=DYoV4g+eBtUMQiWGeiHqcByOOgkJemjo7RNmxRSrxEU=;
+ b=RXHFNjbEfNN2/RlW1Hul1jwbxxG2m59QspzJlL0uZadHZCe7vTBfRFMqgL28fkluis
+ 4HNC/CsUdbtnzQfr5FTpjcvJJ+rv6WYK+lUGRIUeT4nf/6K+hIExT9LqIIroo8ZJLwvO
+ ARnvblBicwU+0VfADtPkEF9RwlVm0Jq5qVa0aHKGs5JZrsrUaRACs3+CJ6ea/BDtrVIP
+ cjG9rmEYTcUQjM0Ui/CCl/pEuFG6l7xDSTpcKDTBfjirK6OVzKS+lvrqiCt8Rzw0HiNA
+ rgVmx6HMgEHnu7e9qRFlgI+zJqT49/usJD/ZKlIMA2YF99X/Yz3KVltk9MBNnTtZPPos
+ 5GOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=zSUqQDWC8kjEfI7Zwy/W0Ml7p1PvgRlntpeykuMm0bw=;
- b=DGkCz9I+zoaIkhZkvZV3kYd6X1nZs+YW1zkDlBpwk/3sHWnOpmj8tUpMJrDM4mA1Tx
- U3NQ9fmgD8VaUU9/o9XzF9yzLqgP8qnRywwacpvDUR7wk9/zgBcUNzHkHo6CwXa/68XP
- rtMwROARHHgvfXCo1ARmfHuh0VMQ3KH9X15mEL/cGGlNJJU0MNwXKTYuSkPosDAWVveL
- i/chMjQjgcTuz69y+WGdpniixnHx2SKTvRdcIdadWA0YK92JIrG2wWZKeBJy6sD63FTN
- RnF5LgckpPgjS9MdIm6rVKeNwTlTXu8iEuUzC1Yp0gbBGsBC4fy2i62ZaB1nmyi/JwAj
- Hp2g==
-X-Gm-Message-State: AGi0PubyfoAYMHFqJ7hXWjbeUvIHEteYacGH9N1c4gb0Lc9fNumQA3RC
- 9ONXLYZ1Xt1ADTbvSiYSOnR9yM+cYBwzUPQighE=
-X-Google-Smtp-Source: APiQypJNEHsSL0GExSztmK2I6nxQUgw+68Y8I+I3LffAVV8E4crlumGaO3BAzZEfzHPrp79Ypgd2ypo3cV1x0ObIE9w=
-X-Received: by 2002:a17:90a:fa81:: with SMTP id
- cu1mr3234534pjb.25.1588686722930; 
- Tue, 05 May 2020 06:52:02 -0700 (PDT)
-MIME-Version: 1.0
-References: <cover.1588460322.git.syednwaris@gmail.com>
- <20200504114109.GE185537@smile.fi.intel.com>
- <20200504143638.GA4635@shinobu>
-In-Reply-To: <20200504143638.GA4635@shinobu>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Tue, 5 May 2020 16:51:56 +0300
-Message-ID: <CAHp75Vf_vP1qM9x81dErPeaJ4-cK-GOMnmEkxkhPY2gCvtmVbA@mail.gmail.com>
-Subject: Re: [PATCH v5 0/4] Introduce the for_each_set_clump macro
-To: William Breathitt Gray <vilhelm.gray@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=DYoV4g+eBtUMQiWGeiHqcByOOgkJemjo7RNmxRSrxEU=;
+ b=eatxY1kMBz0lfYcja6Xp+63vzP133geOPe9Hjb0B3/5NQdXcKgWzOSIOxO8KzOfHns
+ lJSm/ES0sVXLgYwZsaraeKJjsNBptKRcqOTqSts4lPT7S5iUxCfhWK7tgWw3+PJs0Dfy
+ c/doFp+h1T34QYB8ozHv0iANXH3MLsGe+MhfQF8EH835o5KO2eRxnrgjLaOkm2W4Dig1
+ r14DAaHGnJwx/VTLJ7K/ixGM70WfYNoG8pG7V3NVT63eagqfdwhpqOTIiOu6aYnzZqwW
+ vWzOzNYXA0VQtgaCqcMRxngF6hXjY5u3vBh/QXv6YsQC03a888yj758MkEa4frHkAweK
+ 0maQ==
+X-Gm-Message-State: AGi0PuYKCD44T7/pNZzATm6V/R0WQkKPPP1bC0Jera8sUzTUBY1m3VTp
+ lPR4DEhd60e6cVZ/yLR0qAsH2Q==
+X-Google-Smtp-Source: APiQypK8A+s0fLvlIkTj9fiCvSROntMoJtckKK/YWvVvyq1ctUdfysHnkou/Uk3gNoYgVsDCI5hF2g==
+X-Received: by 2002:a17:902:a706:: with SMTP id
+ w6mr2987753plq.173.1588686958545; 
+ Tue, 05 May 2020 06:55:58 -0700 (PDT)
+Received: from localhost ([2400:8904::f03c:91ff:fe8a:bbe4])
+ by smtp.gmail.com with ESMTPSA id ie17sm2136120pjb.19.2020.05.05.06.55.57
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 05 May 2020 06:55:58 -0700 (PDT)
+From: Leo Yan <leo.yan@linaro.org>
+To: Peter Zijlstra <peterz@infradead.org>, Will Deacon <will@kernel.org>,
+ Marc Zyngier <maz@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Ingo Molnar <mingo@redhat.com>, Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Jiri Olsa <jolsa@redhat.com>, Namhyung Kim <namhyung@kernel.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Allison Randal <allison@lohutok.net>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Kate Stewart <kstewart@linuxfoundation.org>,
+ Enrico Weigelt <info@metux.net>,
+ "Ahmed S. Darwish" <a.darwish@linutronix.de>,
+ Paul Cercueil <paul@crapouillou.net>,
+ "Ben Dooks (Codethink)" <ben.dooks@codethink.co.uk>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2 0/3] arm64: perf_event: Fix time offset prior to epoch
+Date: Tue,  5 May 2020 21:55:41 +0800
+Message-Id: <20200505135544.6003-1-leo.yan@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_065203_802842_2F67B878 
-X-CRM114-Status: GOOD (  13.43  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_065559_875387_60605716 
+X-CRM114-Status: GOOD (  11.95  )
+X-Spam-Score: 3.4 (+++)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (3.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [2400:8904:0:0:f03c:91ff:fe8a:bbe4 listed in] [zen.spamhaus.org]
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -95,62 +109,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Arch <linux-arch@vger.kernel.org>,
- Amit Kucheria <amit.kucheria@verdurent.com>, Arnd Bergmann <arnd@arndb.de>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Michal Simek <michal.simek@xilinx.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, rrichter@marvell.com,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Linux PM <linux-pm@vger.kernel.org>, Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Syed Nayyar Waris <syednwaris@gmail.com>, "Zhang, Rui" <rui.zhang@intel.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: Leo Yan <leo.yan@linaro.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 4, 2020 at 5:41 PM William Breathitt Gray
-<vilhelm.gray@gmail.com> wrote:
-> On Mon, May 04, 2020 at 02:41:09PM +0300, Andy Shevchenko wrote:
-> > On Sun, May 03, 2020 at 04:38:36AM +0530, Syed Nayyar Waris wrote:
+This patch set is to fix time offset prior to epoch for Arm arch timer.
+This series is mainly following on suggestions on LKML [1].
 
-...
+To acheive the accurate time offset for a clock source prior to epoch,
+patch 01 adds a new variant sched_clock_register_epoch() which allows to
+output an extra argument for time offset prior to sched clock's
+registration.
 
-> > Looking into the last patches where we have examples I still do not see a
-> > benefit of variadic clump sizes. power of 2 sizes would make sense (and be
-> > optimized accordingly (64-bit, 32-bit).
-> >
-> > --
-> > With Best Regards,
-> > Andy Shevchenko
->
-> There is of course benefit in defining for_each_set_clump with clump
-> sizes of powers of 2 (we can optimize for 32 and 64 bit sizes and avoid
-> boundary checks that we know will not occur), but at the very least the
-> variable size bitmap_set_value and bitmap_get_value provide significant
-> benefit for the readability of the gpio-xilinx code:
->
->         bitmap_set_value(old, state[0], 0, width[0]);
->         bitmap_set_value(old, state[1], width[0], width[1]);
->         ...
->         state[0] = bitmap_get_value(new, 0, width[0]);
->         state[1] = bitmap_get_value(new, width[0], width[1]);
->
-> These lines are simple and clear to read: we know immediately what they
-> do. But if we did not have bitmap_set_value/bitmap_get_value, we'd have
-> to use several bitwise operations for each line; the obfuscation of the
-> code would be an obvious hinderance here.
+Patch 02 is to add handling for time offset in Arm arch timer driver, As
+Will Deacon suggested to "disable the perf userpage if sched_clock
+changes clocksource too" [2], after thinking about this suggestion, the
+race condition doesn't exist between sched_clock's registration and perf
+userpage.  The reason is sched_clock's registration is finished in
+system's initialisation phase and at this point it has no chance to use
+any userpage by Perf tool.  For this reason let's keep the code simple
+and don't acquire all Perf events' seqlock during sched_clock's
+registration.
 
-Do I understand correctly that width[0] and width[1] may not be power
-of two and it's actually the case?
+Patch 03 is simply to pass time offset from arch timer driver
+(clocksource driver) to perf event.
+
+[1] https://lkml.org/lkml/2020/3/20/199
+[2] https://lkml.org/lkml/2020/5/1/906
+
+Changes from v1:
+- Added patch 01 to retrieve more accurate offset when sched clock
+  registration;
+- Added patch 02 to handle time offset in arch timer driver.
+
+Leo Yan (3):
+  time/sched_clock: Add new variant sched_clock_register_epoch()
+  clocksource/drivers/arm_arch_timer: Handle time offset prior to epoch
+  arm64: perf_event: Fix time_offset for arch timer
+
+ arch/arm64/kernel/perf_event.c       |  8 ++++++--
+ drivers/clocksource/arm_arch_timer.c | 10 +++++++++-
+ include/clocksource/arm_arch_timer.h |  6 ++++++
+ include/linux/sched_clock.h          | 10 ++++++++++
+ kernel/time/sched_clock.c            | 13 ++++++++++++-
+ 5 files changed, 43 insertions(+), 4 deletions(-)
 
 -- 
-With Best Regards,
-Andy Shevchenko
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
