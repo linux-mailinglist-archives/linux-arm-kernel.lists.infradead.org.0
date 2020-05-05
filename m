@@ -2,81 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 791181C5CC6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:00:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F9FA1C5CE1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:03:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qCbk4KWgjbgzbZzrOfbkpqfh6iZwedbmJxxXYsmLHdU=; b=uQ4VuuTOBlP4+C
-	8aNgpmyS16UrNswpI2y88W/9QcxSQpNfZx8dTJS1ho553mw+3j++JYaCThT2CwIO0bpjn7B1TZaMy
-	RxbdmDaj/Vlh7n6CdgnAIx0hg3E96pVzv2ARcppSxkD8uN1gEiL4HYUVlL2r0qNLbR+yyFFQ1Xjph
-	mpl1qflEwK/yKoOhQWfXJu//WKgMeqUGKT8pATkC/cHBFyAmMyoHjeNWNr/+2xmurlc7g+FTNX1k5
-	XFYjLr2F0JYKkK9mzLGRQJnoFxAUKB9U/HziGvtZq9hwFGp3O60Yps5JJUzZKNJ7y+NGST9j02ZDA
-	Zq4YuvvMEU85na7LyFTA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MMAB3y+JVERScdent7aqlXypeAKnxFkhHov/JJmSvQ4=; b=IyfL3LAsMbroTw
+	qjpOjrRYM96BAiplOEYbfAGCWOFD6kt0C5e8vLNg3eZJ0n1R58oIciSe5prsy05F1FsrGCnNj8gRT
+	HLK1uAUJIbWJJjkDN9pvQ8gALoQt/dVtrop0afWGAiXZ+Krl6KBQR72lJdFbO2B0yodXgYzs5ouIb
+	6PESaVVHpFaq/1gWh9XTrOjPtgCndaMPdgCQNHZjablFdawCEN0OORVj0a+t4qKrZBxpaarmQ8sFZ
+	qaeCcuyDWMzySs2ptcu4rWuAZb95oX0cRlD057F2iAgJq/b/qPy8BRQLsDvQ9lhBxUoNTO3Cm01sH
+	/FqTCvDk/eclNDGwssng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzz4-0000RG-As; Tue, 05 May 2020 15:59:50 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzym-0000Ir-H3; Tue, 05 May 2020 15:59:34 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 045FsjSY017971; Tue, 5 May 2020 08:59:26 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : mime-version : content-type; s=pfpt0818;
- bh=Ywyq3VHirJCwJgNWe8ZAywSyXIQThiMgYDfg3TjDlkU=;
- b=sDi8SAoNNCwE7vJUzySvXcyKX6zyHkyBFbu/GS5A7BYQm6pSBxlPaN+xfPdmDohqTfjl
- 9qfNL0lUnDRYXVUqZbQw7n6NjK9vEH5bDRna6Nm9E2M4X8S7JTcyi+CrRHp74K4cdLg1
- QYhLbG54eDg0vxqb1uT5HFMYccAuxReDO/AKx8xQRAxsQjsF66zaAFw2w7t7CSPaY3Bi
- dJnOxVicUiW4Weg5K5VYxagd513zrgmVjj8re3y7ImZ+XS7srF8wfdq4WOVlGS9eyAi0
- n3ArcFkfi3jrE9/oN1E9Dy3Z8Pzkn+ThoQQDBMxIs0XvHYQRvdpZBWxNqsb10s0JV9Jk NQ== 
-Received: from sc-exch02.marvell.com ([199.233.58.182])
- by mx0b-0016f401.pphosted.com with ESMTP id 30uaugg476-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Tue, 05 May 2020 08:59:26 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by SC-EXCH02.marvell.com
- (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 5 May 2020 08:59:24 -0700
-Received: from DC5-EXCH02.marvell.com (10.69.176.39) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 5 May 2020 08:59:23 -0700
-Received: from maili.marvell.com (10.69.176.80) by DC5-EXCH02.marvell.com
- (10.69.176.39) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 5 May 2020 08:59:23 -0700
-Received: from dc5-eodlnx05.marvell.com (dc5-eodlnx05.marvell.com
- [10.69.113.147])
- by maili.marvell.com (Postfix) with ESMTP id 226773F703F;
- Tue,  5 May 2020 08:59:23 -0700 (PDT)
-From: Prabhakar Kushwaha <pkushwaha@marvell.com>
-To: <linux-arm-kernel@lists.infradead.org>, <kexec@lists.infradead.org>,
- <robin.murphy@arm.com>, <maz@kernel.org>, <will.deacon@arm.com>
-Subject: [PATCH] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-Date: Tue, 5 May 2020 08:59:20 -0700
-Message-ID: <1588694360-11114-1-git-send-email-pkushwaha@marvell.com>
-X-Mailer: git-send-email 1.8.3.1
+	id 1jW02h-0003tG-Pc; Tue, 05 May 2020 16:03:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW02Y-0003qh-Cu
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:03:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 720841FB;
+ Tue,  5 May 2020 09:03:25 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8076D3F71F;
+ Tue,  5 May 2020 09:03:23 -0700 (PDT)
+From: James Morse <james.morse@arm.com>
+Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
+ struct kvm
+To: Marc Zyngier <maz@kernel.org>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-4-maz@kernel.org>
+Message-ID: <660a6638-5ee0-54c5-4a9d-d0d9235553ad@arm.com>
+Date: Tue, 5 May 2020 17:03:15 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
- definitions=2020-05-05_09:2020-05-04,
- 2020-05-05 signatures=0
+In-Reply-To: <20200422120050.3693593-4-maz@kernel.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_085932_692499_FB451C76 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200505_090326_521991_70651D1D 
+X-CRM114-Status: GOOD (  26.90  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,160 +65,223 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bhsharma@redhat.com, Prabhakar Kushwaha <pkushwaha@marvell.com>,
- helgaas@kernel.org, gkulkarni@marvell.com, prabhakar.pkin@gmail.com
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu,
+ Will Deacon <will@kernel.org>, George Cherian <gcherian@marvell.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Alexandru Elisei <alexandru.elisei@arm.com>, Dave Martin <Dave.Martin@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-An SMMU Stream table is created by the primary kernel. This table is
-used by the SMMU to perform address translations for device-originated
-transactions. Any crash (if happened) launches the kdump kernel which
-re-creates the SMMU Stream table. New transactions will be translated
-via this new table.
+Hi Marc,
 
-There are scenarios, where devices are still having old pending
-transactions (configured in the primary kernel). These transactions
-come in-between Stream table creation and device-driver probe.
-As new stream table does not have entry for older transactions,
-it will be aborted by SMMU.
+On 22/04/2020 13:00, Marc Zyngier wrote:
+> From: Christoffer Dall <christoffer.dall@arm.com>
+> 
+> As we are about to reuse our stage 2 page table manipulation code for
+> shadow stage 2 page tables in the context of nested virtualization, we
+> are going to manage multiple stage 2 page tables for a single VM.
+> 
+> This requires some pretty invasive changes to our data structures,
+> which moves the vmid and pgd pointers into a separate structure and
+> change pretty much all of our mmu code to operate on this structure
+> instead.
+> 
+> The new structure is called struct kvm_s2_mmu.
+> 
+> There is no intended functional change by this patch alone.
 
-Similar observations were found with PCIe-Intel 82576 Gigabit
-Network card. It sends old Memory Read transaction in kdump kernel.
-Transactions configured for older Stream table entries, that do not
-exist any longer in the new table, will cause a PCIe Completion Abort.
-Returned PCIe completion abort further leads to AER Errors from APEI
-Generic Hardware Error Source (GHES) with completion timeout.
-A network device hang is observed even after continuous
-reset/recovery from driver, Hence device is no more usable.
+It's not obvious to me that VTCR_EL2.T0SZ is a per-vm thing, today the size of the IPA
+space comes from the VMM, its not a hardware/compile-time property. Where does the vEL2's
+T0SZ go? ... but using this for nested guests would 'only' cause a translation fault, it
+would still need handling in the emulation code. So making it per-vm should be simpler.
 
-So, If we are in a kdump kernel try to copy SMMU Stream table from
-primary/old kernel to preserve the mappings until the device driver
-takes over.
+But accessing VTCR is why the stage2_dissolve_p?d() stuff still needs the kvm pointer,
+hence the backreference... it might be neater to push the vtcr properties into kvm_s2_mmu
+that way you could drop the kvm backref, and only things that take vm-wide locks would
+need the kvm pointer. But I don't think it matters.
 
-Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
----
-This patch has been tested with
-A) PCIe-Intel 82576 Gigabit Network card in following
-configurations with "no AER error". Each iteration has
-been tested on both Suse kdump rfs And default Centos distro rfs.
 
- 1)  with 2 level stream table 
-       ----------------------------------------------------
-       SMMU               |  Normal Ping   | Flood Ping
-       -----------------------------------------------------
-       Default Operation  |  100 times     | 10 times
-       -----------------------------------------------------
-       IOMMU bypass       |  41 times      | 10 times
-       -----------------------------------------------------
+I think I get it. I can't see anything that should be the other vm/vcpu pointer.
 
- 2)  with Linear stream table. 
-       -----------------------------------------------------
-       SMMU               |  Normal Ping   | Flood Ping
-       ------------------------------------------------------
-       Default Operation  |  100 times     | 10 times
-       ------------------------------------------------------
-       IOMMU bypass       |  55 times      | 10 times
-       -------------------------------------------------------
+Reviewed-by: James Morse <james.morse@arm.com>
 
-B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-SSD card with 2 level stream table using "fio" in mixed read/write and
-only read configurations. It is tested for both Default Operation and
-IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-default Centos ditstro rfs.
 
-This patch is not full proof solution. Issue can still come
-from the point device is discovered and driver probe called. 
-This patch has reduced window of scenario from "SMMU Stream table 
-creation - device-driver" to "device discovery - device-driver".
-Usually, device discovery to device-driver is very small time. So
-the probability is very low. 
+Some boring fiddly stuff:
 
-Note: device-discovery will overwrite existing stream table entries 
-with both SMMU stage as by-pass.
+[...]
 
- drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 35 insertions(+), 1 deletion(-)
+> @@ -125,24 +123,24 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+>  	}
+>  }
+>  
+> -static void __hyp_text __tlb_switch_to_host(struct kvm *kvm,
+> +static void __hyp_text __tlb_switch_to_host(struct kvm_s2_mmu *mmu,
+>  					    struct tlb_inv_context *cxt)
+>  {
+>  	if (has_vhe())
+> -		__tlb_switch_to_host_vhe(kvm, cxt);
+> +		__tlb_switch_to_host_vhe(cxt);
+>  	else
+> -		__tlb_switch_to_host_nvhe(kvm, cxt);
+> +		__tlb_switch_to_host_nvhe(cxt);
+>  }
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 82508730feb7..64d1b925932d 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
- 			break;
- 		case STRTAB_STE_0_CFG_S1_TRANS:
- 		case STRTAB_STE_0_CFG_S2_TRANS:
--			ste_live = true;
-+			/*
-+			 * As kdump kernel copy STE table from previous
-+			 * kernel. It still may have valid stream table entries.
-+			 * Forcing entry as false to allow overwrite.
-+			 */
-+			if (!is_kdump_kernel())
-+				ste_live = true;
- 			break;
- 		case STRTAB_STE_0_CFG_ABORT:
- 			BUG_ON(!disable_bypass);
-@@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
- 		return -ENOMEM;
- 	}
- 
-+	if (is_kdump_kernel())
-+		return 0;
-+
- 	for (i = 0; i < cfg->num_l1_ents; ++i) {
- 		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
- 		strtab += STRTAB_L1_DESC_DWORDS << 3;
-@@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
- 	return 0;
- }
- 
-+static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-+			       struct arm_smmu_strtab_cfg *cfg, u32 size)
-+{
-+	struct arm_smmu_strtab_cfg rdcfg;
-+
-+	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-+	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-+					      + ARM_SMMU_STRTAB_BASE_CFG);
-+
-+	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-+	rdcfg.strtab = ioremap(rdcfg.strtab_dma, size);
-+
-+	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-+
-+	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-+}
-+
- static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
- {
- 	void *strtab;
-@@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
- 	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
- 	cfg->strtab_base_cfg = reg;
- 
-+	if (is_kdump_kernel())
-+		arm_smmu_copy_table(smmu, cfg, l1size);
-+
- 	return arm_smmu_init_l1_strtab(smmu);
- }
- 
-@@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
- 	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
- 	cfg->strtab_base_cfg = reg;
- 
-+	if (is_kdump_kernel()) {
-+		arm_smmu_copy_table(smmu, cfg, size);
-+		return 0;
-+	}
-+
- 	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
- 	return 0;
- }
--- 
-2.18.2
+What does __tlb_switch_to_host() need the kvm_s2_mmu for?
 
+[...]
+
+
+>  void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu)
+>  {
+> -	struct kvm *kvm = kern_hyp_va(kern_hyp_va(vcpu)->kvm);
+> +	struct kvm_s2_mmu *mmu = kern_hyp_va(kern_hyp_va(vcpu)->arch.hw_mmu);
+>  	struct tlb_inv_context cxt;
+>
+>  	/* Switch to requested VMID */
+> -	__tlb_switch_to_guest(kvm, &cxt);
+> +	__tlb_switch_to_guest(mmu, &cxt);
+>
+>  	__tlbi(vmalle1);
+>  	dsb(nsh);
+>  	isb();
+>
+> -	__tlb_switch_to_host(kvm, &cxt);
+> +	__tlb_switch_to_host(mmu, &cxt);
+>  }
+
+Does this need the vcpu in the future?
+Its the odd one out, the other tlb functions here take the s2_mmu, or nothing.
+We only use the s2_mmu here.
+
+[...]
+
+
+> diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
+> index e3b9ee268823b..2f99749048285 100644
+> --- a/virt/kvm/arm/mmu.c
+> +++ b/virt/kvm/arm/mmu.c
+
+> @@ -96,31 +96,33 @@ static bool kvm_is_device_pfn(unsigned long pfn)
+>   *
+>   * Function clears a PMD entry, flushes addr 1st and 2nd stage TLBs.
+>   */
+> -static void stage2_dissolve_pmd(struct kvm *kvm, phys_addr_t addr, pmd_t *pmd)
+> +static void stage2_dissolve_pmd(struct kvm_s2_mmu *mmu, phys_addr_t addr, pmd_t *pmd)
+
+The comment above this function still has '@kvm:	pointer to kvm structure.'
+
+[...]
+
+
+> @@ -331,8 +339,9 @@ static void unmap_stage2_puds(struct kvm *kvm, pgd_t *pgd,
+>   * destroying the VM), otherwise another faulting VCPU may come in and mess
+>   * with things behind our backs.
+>   */
+> -static void unmap_stage2_range(struct kvm *kvm, phys_addr_t start, u64 size)
+> +static void unmap_stage2_range(struct kvm_s2_mmu *mmu, phys_addr_t start, u64 size)
+
+The comment above this function still has '@kvm:   The VM pointer'
+
+[...]
+
+> -static void stage2_flush_memslot(struct kvm *kvm,
+> +static void stage2_flush_memslot(struct kvm_s2_mmu *mmu,
+>  				 struct kvm_memory_slot *memslot)
+>  {
+
+Wouldn't something manipulating a memslot have to mess with a set of kvm_s2_mmu once this
+is all assembled?
+stage2_unmap_memslot() takes struct kvm, it seems odd to pass one kvm_s2_mmu here.
+
+[...]
+
+> @@ -886,21 +898,23 @@ int create_hyp_exec_mappings(phys_addr_t phys_addr, size_t size,
+
+> -int kvm_alloc_stage2_pgd(struct kvm *kvm)
+> +int kvm_init_stage2_mmu(struct kvm *kvm, struct kvm_s2_mmu *mmu)
+>  {
+>  	phys_addr_t pgd_phys;
+>  	pgd_t *pgd;
+> +	int cpu;
+>  
+> -	if (kvm->arch.pgd != NULL) {
+> +	if (mmu->pgd != NULL) {
+>  		kvm_err("kvm_arch already initialized?\n");
+
+Does this error message still make sense?
+
+
+>  		return -EINVAL;
+>  	}
+
+[...]
+
+> @@ -1439,9 +1467,10 @@ static void stage2_wp_ptes(pmd_t *pmd, phys_addr_t addr, phys_addr_t end)
+>   * @addr:	range start address
+>   * @end:	range end address
+>   */
+> -static void stage2_wp_pmds(struct kvm *kvm, pud_t *pud,
+> +static void stage2_wp_pmds(struct kvm_s2_mmu *mmu, pud_t *pud,
+>  			   phys_addr_t addr, phys_addr_t end)
+
+The comment above this function still has 'kvm:		kvm instance for the VM'.
+
+
+>  {
+> +	struct kvm *kvm = mmu->kvm;
+>  	pmd_t *pmd;
+>  	phys_addr_t next;
+>  
+> @@ -1461,14 +1490,15 @@ static void stage2_wp_pmds(struct kvm *kvm, pud_t *pud,
+>  }
+>  
+>  /**
+> - * stage2_wp_puds - write protect PGD range
+> - * @pgd:	pointer to pgd entry
+> - * @addr:	range start address
+> - * @end:	range end address
+> - */
+> -static void  stage2_wp_puds(struct kvm *kvm, pgd_t *pgd,
+> +  * stage2_wp_puds - write protect PGD range
+> +  * @pgd:	pointer to pgd entry
+> +  * @addr:	range start address
+> +  * @end:	range end address
+> +  */
+> +static void  stage2_wp_puds(struct kvm_s2_mmu *mmu, pgd_t *pgd,
+>  			    phys_addr_t addr, phys_addr_t end)
+
+Comment was missing @kvm, now its missing @mmu....
+
+
+>  {
+> +	struct kvm *kvm __maybe_unused = mmu->kvm;
+>  	pud_t *pud;
+>  	phys_addr_t next;
+>  
+
+> @@ -1492,12 +1522,13 @@ static void  stage2_wp_puds(struct kvm *kvm, pgd_t *pgd,
+>   * @addr:	Start address of range
+>   * @end:	End address of range
+>   */
+> -static void stage2_wp_range(struct kvm *kvm, phys_addr_t addr, phys_addr_t end)
+> +static void stage2_wp_range(struct kvm_s2_mmu *mmu, phys_addr_t addr, phys_addr_t end)
+
+The comment above this function still ... you get the picture.
+
+[...]
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
