@@ -2,94 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06BB81C51AC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 11:15:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C9171C51D8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 11:25:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fx6ealHRbk07IwVaOp8hY1x1jFas+QHoaRFN14DOovA=; b=uYgkneVszwkqBH
-	6UMPj5DAKqXXDHLc6SmZKK9eb9ofxg3CIkozelebS6WO6XlQyD5SCm3gWeMSSSz7DpID3XAxX6wET
-	Eq7MlP+V93Gc3TMcWlR2M0jux/FsFpurJHCpXCNbk2kproWT+Njttaw2xz7XDa4HiPb/I2DdQKbH9
-	a1expGZuYkN3Bz1Rx2jP/CESdQC8CpOSKK5tUZR+bTcYBhipyBmMrMPHqpLvYzG+D3cuRqJh5Y2/w
-	SJQ9z9k31EVTaxHV5swL9KtSMcgu3YvBiB46XUDfVMEeZr+NIYqxOWWbB1WEmmqak519sOzfTRRU8
-	jEK569ru9WCRWKqcTYpQ==;
+	List-Owner; bh=47jdHZorR+dD7tolkaW9JWxJ4wnvI8vC/MFJRdn4AAA=; b=WlfS+Qk91CBdiV
+	d7dRmbwA3R7OFQCrfe7O8oKsfg2aYQKzNbM2EtCA3jfMv4dAZAoyQNvDgNNHGKI9kKvxbwPyPCIev
+	WGyvylsDXLaVssd7ehUqBJHtMrj+ezxgoe986CfuUufKLbu1bQwm3097rA5VP8ctpMlD2okdKse93
+	3p7fgRqepPU/WP2TBjsZJmX4ZFo6rUz7a80OK3PS1w+WpNAf5IfzpY37MUafsLjU++btFzmYob4gT
+	ZPouhK30uM4DByNhgMv9HOosP+LR3AIh1ygSbsI8SjdRsHLCNxfivmdN2LXW1tv2dAdeRjeSn6WV0
+	eNqCe6SaJHIv79v+ILsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVtg7-0001aj-Jo; Tue, 05 May 2020 09:15:51 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jVtoy-0005lP-GV; Tue, 05 May 2020 09:25:00 +0000
+Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVtfy-0001Z4-SF
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 09:15:44 +0000
-Received: by mail-wr1-x442.google.com with SMTP id h9so1852971wrt.0
+ id 1jVtoo-0005jv-9h
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 09:24:54 +0000
+Received: by mail-oi1-f193.google.com with SMTP id o24so1419496oic.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 02:15:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=sU7U3FhjLtetQ4yGftkHmkBqFM+M9ZWPk430QlcmjSw=;
- b=QXWA/MYxeBeYOjAoqaNN2WaAGPU0Tv3zhPwTqxa96+5wzt9CdxYYAAOCUz6pWhuzUl
- 933MuJKNFPVD3w9C/QvD/C0e6iA+FZPTltexAp+raUdXk9hamFndUJbWV2K4iPOJiiz7
- mqMyTD/SmVD6T8yeuC7kKEIaQK7SAcsO3TOplzzSgBS/tPHNt0Is/ZMyXCEdT7r2D46z
- FIOLqY+T6XzzhHEgdFXwAFjHT0v74ZucOnNkxFTOaVA8+6OV7MLwC5bHsfh2sv+sT888
- szyzUg2wNsB84mYvmwLGhiEl0EZfJEPVQVC4y7fppcLdtB5gerYO6mRdLiS7XmYwmwZ0
- XEWA==
+ Tue, 05 May 2020 02:24:48 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=sU7U3FhjLtetQ4yGftkHmkBqFM+M9ZWPk430QlcmjSw=;
- b=N4XKELY011fH5odvlgELSOx6nZDJ5NVJYqHWjpe4FtMiVVXbF8VrBvg57BejSWIa1S
- JnZSMlxZ9FQXUHO5/IgjXqGA7Dd/TutNQ72UC8O71ygdtxsnMxYTpCBxnM0qQkQ7q43w
- AAlBuKYIqNu59AYSFdwAIg4TbTXk8TK+oocxy9xXjwV8djehqvwmk/lepzGcz31P13C1
- dj5V/9NtFm1gjboKtGcyFj7WHTxJZYB5MXEiJ3e5J3X8hR657XKBlhFKFItyUD062dhI
- mnYKmLDpKPuBsUDX3NP5R/MEBxGdIKGQo5U9gay0uZqRLIPRzYSzczyhqhmpzG9BWTWi
- vS+Q==
-X-Gm-Message-State: AGi0PubwUMuq7ZIHnR+jYebohaZpSw1YHVboTsHQqOXdD2IRbRW+vaQl
- davIM8lyT0bb2Q50X4MAI2BIW7oR0NE=
-X-Google-Smtp-Source: APiQypLUdwS9EMNq1wqY/xPjJM+u52dIVylq937W1BwIZPG2UftDefGXQhpqhk5pltip4j2URFGphQ==
-X-Received: by 2002:a5d:4652:: with SMTP id j18mr2063792wrs.19.1588670141301; 
- Tue, 05 May 2020 02:15:41 -0700 (PDT)
-Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id c190sm2856893wme.4.2020.05.05.02.15.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 May 2020 02:15:40 -0700 (PDT)
-Date: Tue, 5 May 2020 11:15:31 +0200
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Jacob Pan <jacob.jun.pan@linux.intel.com>
-Subject: Re: [PATCH v6 17/25] iommu/arm-smmu-v3: Implement
- iommu_sva_bind/unbind()
-Message-ID: <20200505091531.GA203922@myrica>
-References: <20200430143424.2787566-1-jean-philippe@linaro.org>
- <20200430143424.2787566-18-jean-philippe@linaro.org>
- <20200430141617.6ad4be4c@jacob-builder>
- <20200504164351.GJ170104@myrica>
- <20200504134723.54e2ebcd@jacob-builder>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=fA6tjdmApvG0BpsjkTdWv9/ZTQZ9vjPp82obp9l863E=;
+ b=X7XNrFsEX6EtUt9Qfkn+TMW6MZ51KaQeReZhP4+NU2OxAhW2kxEVRu7yekd1KD4/h0
+ zM2/iU5+DF3sHN9ZWjtgtULXNQYHqfzj3ISsLaaxPIqqfLqDKapFQ9ly+T8NZ/k4MMDF
+ VZtn+yB7X5uyIW2elC1P8d9nzPhzHEV+iYpuvIpy3Kgmydd9od0Lq4KzQfwSM8CapLbd
+ pv9Njaa2QcdkO4kOVQ/kCpJbqmLCn3Nrru7OTtSxGozn3YVsSziwFen7ZgEaA2HNzhH0
+ UyM++lTnWFAwm9q4QYsjvIPsAlxz7TtzNVTJhLdkPL6Hk7xsW5nnTwlacPsRme0k9vVd
+ /iFA==
+X-Gm-Message-State: AGi0PuZdGhcSzvUBhw59zC+ONih9aogb+Tze0kQdC0+NTHGMCsR98cfp
+ wGSxf6CUmQAiOy706GcIOF30G9sDXgh6l5KEYek=
+X-Google-Smtp-Source: APiQypKOjAo7caYTLLrvaP2LfYH11Xj01QYaa+uBtqm/9mZJ41Mdkz0F6pXJ47B38HgwsYDHPLvoSnLN/Mh8S4elUzU=
+X-Received: by 2002:aca:f541:: with SMTP id t62mr1674694oih.148.1588670688206; 
+ Tue, 05 May 2020 02:24:48 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504134723.54e2ebcd@jacob-builder>
+References: <20200505083926.28503-1-m.szyprowski@samsung.com>
+ <CGME20200505084634eucas1p1e0ea160dd77afbf6d2f7e6154ded40d0@eucas1p1.samsung.com>
+ <20200505084614.30424-1-m.szyprowski@samsung.com>
+ <20200505084614.30424-18-m.szyprowski@samsung.com>
+In-Reply-To: <20200505084614.30424-18-m.szyprowski@samsung.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Tue, 5 May 2020 11:24:37 +0200
+Message-ID: <CAMuHMdVisnijasoxazj+6kUFM3UrTYkVo6kC1dxZv5zK0yD7TQ@mail.gmail.com>
+Subject: Re: [PATCH v3 18/25] drm: rcar-du: fix common struct sg_table related
+ issues
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_021542_952333_7134DDD8 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_022453_116756_7726B068 
+X-CRM114-Status: GOOD (  12.71  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.193 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,68 +85,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kevin.tian@intel.com, jgg@ziepe.ca,
- linux-pci@vger.kernel.org, joro@8bytes.org, Jonathan.Cameron@huawei.com,
- robin.murphy@arm.com, fenghua.yu@intel.com, hch@infradead.org,
- linux-mm@kvack.org, iommu@lists.linux-foundation.org, zhangfei.gao@linaro.org,
- catalin.marinas@arm.com, felix.kuehling@amd.com, xuzaibo@huawei.com,
- will@kernel.org, christian.koenig@amd.com,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ DRI Development <dri-devel@lists.freedesktop.org>,
+ linaro-mm-sig@lists.linaro.org, Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Kieran Bingham <kieran.bingham+renesas@ideasonboard.com>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 01:47:23PM -0700, Jacob Pan wrote:
-> > > > +	arm_smmu_write_ctx_desc(smmu_domain, mm->pasid,
-> > > > &invalid_cd); +
-> > > > +	arm_smmu_tlb_inv_asid(smmu_domain->smmu,
-> > > > smmu_mn->cd->asid);
-> > > > +	/* TODO: invalidate ATS */
-> > > > +  
-> > > If mm release is called after tlb invalidate range, is it still
-> > > necessary to invalidate again?  
-> > 
-> > No, provided all mappings from the address space are unmapped and
-> > invalidated. I'll double check, but in my tests invalidate range
-> > didn't seem to be called for all mappings on mm exit, so I believe we
-> > do need this.
-> > 
-> I think it is safe to invalidate again. There was a concern that mm
-> release may delete IOMMU driver from the notification list and miss tlb
-> invalidate range. I had a hard time to confirm that with ftrace while
-> killing a process, many lost events.
-> 
+Hi Marek,
 
-If it helps, I have a test that generates small DMA transactions on a SMMU
-model. This is the trace for a job on a 8kB mmap'd buffer:
+On Tue, May 5, 2020 at 10:48 AM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
+> The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
+> numer of the created entries in the DMA address space. However the
+> subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
+> called with the original number of the entries passed to dma_map_sg. The
+> sg_table->nents in turn holds the result of the dma_map_sg call as stated
+> in include/linux/scatterlist.h. A common mistake was to ignore a result
+> of the dma_map_sg function and don't use the sg_table->orig_nents at all.
+>
+> To avoid such issues, lets use common dma-mapping wrappers operating
+> directly on the struct sg_table objects and adjust references to the
+> nents and orig_nents respectively.
+>
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> ---
+> For more information, see '[PATCH v3 00/25] DRM: fix struct sg_table nents
+> vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/5/187
 
-  smmu_bind_alloc: dev=0000:00:03.0 pasid=1
-  dev_fault: IOMMU:0000:00:03.0 type=2 reason=0 addr=0x0000ffff860e6000 pasid=1 group=74 flags=3 prot=2
-  dev_page_response: IOMMU:0000:00:03.0 code=0 pasid=1 group=74
-  dev_fault: IOMMU:0000:00:03.0 type=2 reason=0 addr=0x0000ffff860e7000 pasid=1 group=143 flags=3 prot=2
-  dev_page_response: IOMMU:0000:00:03.0 code=0 pasid=1 group=143
-  smmu_mm_invalidate: pasid=1 start=0xffff860e6000 end=0xffff860e8000
-  smmu_mm_invalidate: pasid=1 start=0xffff860e6000 end=0xffff860e8000
-  smmu_mm_invalidate: pasid=1 start=0xffff860e8000 end=0xffff860ea000
-  smmu_mm_invalidate: pasid=1 start=0xffff860e8000 end=0xffff860ea000
-  smmu_unbind_free: dev=0000:00:03.0 pasid=1
+For the modern lore-users:
+https://lore.kernel.org/r/20200505083926.28503-1-m.szyprowski@samsung.com/
 
-And this is the same job, but the process immediately kills itself after
-launching it.
+Gr{oetje,eeting}s,
 
-  smmu_bind_alloc: dev=0000:00:03.0 pasid=1
-  dev_fault: IOMMU:0000:00:03.0 type=2 reason=0 addr=0x0000ffffb9d15000 pasid=1 group=259 flags=3 prot=2
-  smmu_mm_release: pasid=1
-  dev_page_response: IOMMU:0000:00:03.0 code=0 pasid=1 group=259
-  dev_fault: IOMMU:0000:00:03.0 type=2 reason=0 addr=0x0000ffffb9d15000 pasid=1 group=383 flags=3 prot=2
-  dev_page_response: IOMMU:0000:00:03.0 code=1 pasid=1 group=383
-  smmu_unbind_free: dev=0000:00:03.0 pasid=1
+                        Geert
 
-We don't get any invalidate_range notification in this case.
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-Thanks,
-Jean
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
