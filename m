@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BFED1C5E0F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:57:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 478EC1C5E11
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:57:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6AeqxhuaCMQSJYvzeANxZV88LpiGc2+ub2/z+kRxofE=; b=pGapYptJ3s/Jh+pQT8lIwM++7p
-	SEQyRsPJqrQveR99WtF6AdY/MUnTAcFwePZ267yGglb8EetULfqY0hwRsfqNzrZyQYCiMkoEq1jVk
-	Bk3zsWMIMwsQUFw2FW1RUEku39I8ZS5DeEHMkq1zcuAeu9tSjjEAnrxUj/lVmSGd4A6n/zFC8tU4K
-	Wrg/Z1S6F+SU1B9GJ5jM32TsXRkCTCwnHXyE5t5S70QJckmpWSNNuGIcCNJ2BfFutxd4tamYG3V2o
-	uOjhEBkW4RIluvOqjVHnChZhAqOvXZF5f1+WT4fsRKsKjbz11qb0XafJCYOuejBPbg3Mc/VRSyzCP
-	R8qPOEzw==;
+	bh=Muhmv5TooGJX+s7YMwTAVinP6P2gtvC9qFyltHyAVF0=; b=FWJWdRTnCThNB0vhBXXfzi+ZBP
+	+XMiuqhhddbb6yUMfZdZcQehvUvUK6/Fz3QR97j/QQkadYtmH+++xt17pqhuSyGAn6zNblnp+BjRY
+	Jvsm2G72Kk63XUaHfBVsfFRSE3wssxzOKIDR6SHeDWbkbOvkEJFpRIfjHBmGSoFWp7XlZEUpdQAXM
+	GKK5r0vNxYnN0nsPDCODMjj5D9xSuQDNMXjfIQs7xo3iOrKZLlGY2huGuFS9zV8Dk2QUR8tJdqw8b
+	RCMwZb7Ja3ax0t3aN4gcajeZL4+wMuicGqbwCZZ5YhLlx6vFMLlPBZTmALqvXXxZNOQ343mairXTT
+	apqNcRjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0sF-0007fE-Ch; Tue, 05 May 2020 16:56:51 +0000
+	id 1jW0sZ-0007sf-Fx; Tue, 05 May 2020 16:57:11 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0oI-0001Yj-Ta
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:52:48 +0000
+ id 1jW0oL-0001az-I3
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:52:51 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48997101E;
- Tue,  5 May 2020 09:52:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 954A731B;
+ Tue,  5 May 2020 09:52:47 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F7053F305;
- Tue,  5 May 2020 09:52:45 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7C1303F305;
+ Tue,  5 May 2020 09:52:46 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH 15/16] arm64: dts: arm: Fix VExpress LED names
-Date: Tue,  5 May 2020 17:52:11 +0100
-Message-Id: <20200505165212.76466-16-andre.przywara@arm.com>
+Subject: [PATCH 16/16] arm64: dts: juno: Fix SCPI shared mem node name
+Date: Tue,  5 May 2020 17:52:12 +0100
+Message-Id: <20200505165212.76466-17-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200505165212.76466-1-andre.przywara@arm.com>
 References: <20200505165212.76466-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_095247_111894_7B05FCE3 
-X-CRM114-Status: GOOD (  10.48  )
+X-CRM114-CacheID: sfid-20200505_095249_727849_C3781949 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,81 +72,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The common LED binding wants the LED node names to start with led- and
-then have just a single number.
+The SRAM DT binding requires child nodes to use a certain node name
+scheme.
 
-Changing the naming for the 8 user LEDs from using user<x> to led-<x>.
-Also there is no default-trigger named "mmc0" in the kernel, so use the
-more generic "disk-activity".
+Change the naming from scp-shmem to scp-sram to comply with that.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm/boot/dts/vexpress-v2m-rs1.dtsi | 18 +++++++++---------
- 1 file changed, 9 insertions(+), 9 deletions(-)
+ arch/arm64/boot/dts/arm/juno-base.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-index 4aaae848f370..1681e046b855 100644
---- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-+++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-@@ -315,49 +315,49 @@
- 			leds {
- 				compatible = "gpio-leds";
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index 9a2a8d23fd1e..547db919ccc3 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -521,12 +521,12 @@
+ 		#size-cells = <1>;
+ 		ranges = <0 0x0 0x2e000000 0x8000>;
  
--				user1 {
-+				led-1 {
- 					label = "v2m:green:user1";
- 					gpios = <&v2m_led_gpios 0 0>;
- 					linux,default-trigger = "heartbeat";
- 				};
+-		cpu_scp_lpri: scp-shmem@0 {
++		cpu_scp_lpri: scp-sram@0 {
+ 			compatible = "arm,juno-scp-shmem";
+ 			reg = <0x0 0x200>;
+ 		};
  
--				user2 {
-+				led-2 {
- 					label = "v2m:green:user2";
- 					gpios = <&v2m_led_gpios 1 0>;
--					linux,default-trigger = "mmc0";
-+					linux,default-trigger = "disk-activity";
- 				};
- 
--				user3 {
-+				led-3 {
- 					label = "v2m:green:user3";
- 					gpios = <&v2m_led_gpios 2 0>;
- 					linux,default-trigger = "cpu0";
- 				};
- 
--				user4 {
-+				led-4 {
- 					label = "v2m:green:user4";
- 					gpios = <&v2m_led_gpios 3 0>;
- 					linux,default-trigger = "cpu1";
- 				};
- 
--				user5 {
-+				led-5 {
- 					label = "v2m:green:user5";
- 					gpios = <&v2m_led_gpios 4 0>;
- 					linux,default-trigger = "cpu2";
- 				};
- 
--				user6 {
-+				led-6 {
- 					label = "v2m:green:user6";
- 					gpios = <&v2m_led_gpios 5 0>;
- 					linux,default-trigger = "cpu3";
- 				};
- 
--				user7 {
-+				led-7 {
- 					label = "v2m:green:user7";
- 					gpios = <&v2m_led_gpios 6 0>;
- 					linux,default-trigger = "cpu4";
- 				};
- 
--				user8 {
-+				led-8 {
- 					label = "v2m:green:user8";
- 					gpios = <&v2m_led_gpios 7 0>;
- 					linux,default-trigger = "cpu5";
+-		cpu_scp_hpri: scp-shmem@200 {
++		cpu_scp_hpri: scp-sram@200 {
+ 			compatible = "arm,juno-scp-shmem";
+ 			reg = <0x200 0x200>;
+ 		};
 -- 
 2.17.1
 
