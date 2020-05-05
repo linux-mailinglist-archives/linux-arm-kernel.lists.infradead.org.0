@@ -2,75 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB2801C4BA1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 03:52:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED2261C4BB9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 04:07:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kRCQ7f5U9VdtIrpGxDH/bKp9GVqtgzUlK+DfurkHEbA=; b=Gbqwa0sZlfyA84
-	XIeX+xVDi/7nnTLZWboWFqDxv78eEN0kG/77gyhrLu9RkqX6zgsKWM8vZw6GENUlU8yz8zHlkm3BR
-	yMGp3IDFpigH9wHwQfjKFJDB/ymXSdFTy4swJgKHCEUOB2ZMogi7ICVVkssUneRa9U2eT6EIKPIlI
-	jTsby7QuaMq/5by56F3c2onjhzqrygm1Ok47bTu6k9tMten2V8pKDMeXELSUaaZXZ6Z7Ka38lvm3K
-	zqTXwVcOWUCpFRHhSsIOMfLs5yS0ZlXe4VwrFZMcihVmUWEp77y2fYn8V/RPKuxNr/q4omsuM22S2
-	JyfN4FAf/ewksLaRxEvw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=27Sp4I2RXgi5R/TdDKqITgh9CeWmuEPDk43xDbkEABA=; b=hNs1Gf+NDM5Q3q
+	fF9cst965Ohvrl4Rbt0BgWrQwxP7UiAeDT4PcpMNuYFwEurvXpHE15otfkXYKRI+cX6BFqIxsN9Bs
+	3xZWxOIP4/lOIBuMHl1XskDrXnyfU24ziWwluA9dwHgUqj+R5AEtct5oTZbgk6x67rHsKzVZv1Ez+
+	IFsV9OfEOdDZOnWwYS6uzA6gXRFG3Fg+t0QDI9rfCHRIorpb/k5hKyvo9iMEssqRZXLcQHRgiMGqn
+	803Ud1CMRV/hi1i4rq6APZACT59Vh7D3AN/5IFGfG6sMsIzdTM44IEu6vNqyLdi1uwqJ0o7AA6kvs
+	T+b9PQD4uAdITFNAchAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVml0-0000Cp-AE; Tue, 05 May 2020 01:52:26 +0000
-Received: from twspam01.aspeedtech.com ([211.20.114.71])
+	id 1jVmze-0001c8-8S; Tue, 05 May 2020 02:07:34 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVmko-0000BH-6g
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 01:52:16 +0000
-Received: from mail.aspeedtech.com (twmbx02.aspeed.com [192.168.0.24])
- by twspam01.aspeedtech.com with ESMTP id 0451fnFT030573;
- Tue, 5 May 2020 09:41:49 +0800 (GMT-8)
- (envelope-from ryan_chen@aspeedtech.com)
-Received: from TWMBX01.aspeed.com (192.168.0.23) by TWMBX02.aspeed.com
- (192.168.0.24) with Microsoft SMTP Server (TLS) id 15.0.620.29; Tue, 5 May
- 2020 09:52:04 +0800
-Received: from TWMBX02.aspeed.com (192.168.0.24) by TWMBX01.aspeed.com
- (192.168.0.23) with Microsoft SMTP Server (TLS) id 15.0.620.29; Tue, 5 May
- 2020 09:52:02 +0800
-Received: from TWMBX02.aspeed.com ([fe80::997d:c0a7:f01f:e1a7]) by
- TWMBX02.aspeed.com ([fe80::997d:c0a7:f01f:e1a7%12]) with mapi id
- 15.00.0620.020; Tue, 5 May 2020 09:52:02 +0800
-From: Ryan Chen <ryan_chen@aspeedtech.com>
-To: Benjamin Herrenschmidt <benh@kernel.crashing.org>, Wolfram Sang
- <wsa@the-dreams.de>
-Subject: RE: [PATCH v0 linux master] i2c/busses: Avoid i2c interrupt status
- clear race condition.
-Thread-Topic: [PATCH v0 linux master] i2c/busses: Avoid i2c interrupt status
- clear race condition.
-Thread-Index: AQHWHdeQ1mqTBOPAdE+n+yVhmYVsFKiPNOCAgACLErD//4h6gIABsZgAgAfJrwA=
-Date: Tue, 5 May 2020 01:52:01 +0000
-Message-ID: <fc8bc729af844e658fd1ac1f86480f00@TWMBX02.aspeed.com>
-References: <20200429033737.2781-1-ryan_chen@aspeedtech.com>
- <20200429075357.GA1957@kunai>
- <56add9c6e6b5410986325a1360466e4b@TWMBX02.aspeed.com>
- <20200429090355.GA2891@kunai>
- <232b9fac588beb4d024ab496b118c51af2b0ecba.camel@kernel.crashing.org>
-In-Reply-To: <232b9fac588beb4d024ab496b118c51af2b0ecba.camel@kernel.crashing.org>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [192.168.2.87]
+ id 1jVmzW-0001ZV-BU
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 02:07:28 +0000
+Received: by mail-pl1-x642.google.com with SMTP id z6so176767plk.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 May 2020 19:07:24 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZPosvbquSRPM2qokONJTC41jB9sKVgsjvzmGgfAPG8U=;
+ b=c/TWMLnqo5Dm80uDR9KPOfCKWZ+dggeudxOuSXVusW70ZtxQ9rjhGVoOvgX4pr+Q/G
+ Ew71YhnoA5+0KPMoV5orhzarX7mr1IVyjgEmVcC8zS8KEJ5E9zaVo9w4BV/AZq34VCjq
+ CstdcVYSIb68dcB2YZc351VfilFeOB/TceziM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ZPosvbquSRPM2qokONJTC41jB9sKVgsjvzmGgfAPG8U=;
+ b=AqJjz6t04vgL4Bgr1tba72R8Ix9s2m9nSWfCTi9IU1Tfj5J7/TCU4ARAR8JWClNS6A
+ 9NBstEjrt+nqv5HtVuecy8CWL/vF0Df/TyVM5w9mbhE64WFFZlUv7LAtzVy4X/8yNzw2
+ DTvOqUgfdFI+k6G4NdAbNhE1d1h2zQteF/u8zTC0vi8cb6mYgy2FL6qsl89taJhV62RB
+ yVZcP+PNtO/CocIkVPUOi2exzaWj1loTq7tj15yWyQkaZ4IAoCjSosb63e+HOgnJ3g9F
+ MHlIz0OVOKyvpv+S9dFGqXkuPSQ5r/TTl3KR1byJ2piavJT/IAf8ZqdRAggveN5tOZhj
+ 4p5Q==
+X-Gm-Message-State: AGi0PuZmWt2gJgB1MWzypaQ/o4K7KOCc2p5XRQ6zACsljRKOANaxiIMa
+ DI4zzShrn6ZfioA0ZanR8u83xw==
+X-Google-Smtp-Source: APiQypLiH1c6WnP3fPEUMjWHIWyHNFaHdWtb/Dsnac1aifbf7291ALSCyDTGRaolWA1kGk1whE8TEw==
+X-Received: by 2002:a17:90a:d0c3:: with SMTP id y3mr45161pjw.133.1588644444435; 
+ Mon, 04 May 2020 19:07:24 -0700 (PDT)
+Received: from localhost ([2401:fa00:9:14:a92f:c47d:76a8:b09e])
+ by smtp.gmail.com with ESMTPSA id s4sm287692pgv.78.2020.05.04.19.07.20
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 04 May 2020 19:07:23 -0700 (PDT)
+From: Eizan Miyamoto <eizan@chromium.org>
+X-Google-Original-From: Eizan Miyamoto <eizan@google.com>
+To: LKML <linux-kernel@vger.kernel.org>
+Subject: [PATCH v1] [media] mtk-mdp: Remove states for format checks
+Date: Tue,  5 May 2020 12:06:58 +1000
+Message-Id: <20200505113410.v1.1.I30f6c1f7d6001931439d5950f31b1b0f8ca9b6e8@changeid>
+X-Mailer: git-send-email 2.26.2.526.g744177e7f7-goog
 MIME-Version: 1.0
-X-DNSRBL: 
-X-MAIL: twspam01.aspeedtech.com 0451fnFT030573
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_185214_493649_C37F9E30 
-X-CRM114-Status: UNSURE (   8.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200504_190726_387223_834251C7 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,30 +93,217 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>,
- Andrew Jeffery <andrew@aj.id.au>,
- "openbmc@lists.ozlabs.org" <openbmc@lists.ozlabs.org>,
- Brendan Higgins <brendanhiggins@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>
+Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
+ Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
+ Francois Buergisser <fbuergisser@chromium.org>,
+ Houlong Wei <houlong.wei@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
+ Eizan Miyamoto <eizan@chromium.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > And is there maybe a Fixes: tag for it?
-> > [Ryan Chen] Yes it is a fix patch.
-> 
-> I meant this (from submitting-patches.rst):
+From: Francois Buergisser <fbuergisser@chromium.org>
 
->It fixes the original implementation of the driver basically. It's just a classic posted-write fix. The write to clear the pending interrupt is asynchronous, so you can get spurrious ones if you return from the handler before it has percolated to the HW.
+The mtk-mdp driver uses states to check if the formats have been set
+on the capture and output when turning the streaming on, setting
+controls or setting the selection rectangles.
+Those states are reset when 0 buffers are requested like when checking
+capabilities.
+This patch removes all format checks and set one by default as queues in
+V4L2 are expected to always have a format set.
 
->I assume it's just more visible on the 2600 because of the cores are significantly faster but the IO bus is still as dumb.
+https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/vidioc-streamon.html
+https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/vidioc-g-ctrl.html
+https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/vidioc-g-selection.html
 
->Ryan: You could always add a Fixed-by: tag that specifies the commit that added the initial driver...
-[Ryan Chen] Thanks Ben.
+Signed-off-by: Francois Buergisser <fbuergisser@chromium.org>
+Reviewed-by: Tomasz Figa <tfiga@chromium.org>
+(cherry picked from commit 1887bb3924d030352df179347c8962248cdb903e)
+Signed-off-by: Eizan Miyamoto <eizan@chromium.org>
+---
+
+ drivers/media/platform/mtk-mdp/mtk_mdp_core.h |  2 -
+ drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c  | 90 +++++++------------
+ 2 files changed, 34 insertions(+), 58 deletions(-)
+
+diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.h b/drivers/media/platform/mtk-mdp/mtk_mdp_core.h
+index bafcccd71f31..dd130cc218c9 100644
+--- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.h
++++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.h
+@@ -28,8 +28,6 @@
+ #define MTK_MDP_FMT_FLAG_CAPTURE	BIT(1)
+ 
+ #define MTK_MDP_VPU_INIT		BIT(0)
+-#define MTK_MDP_SRC_FMT			BIT(1)
+-#define MTK_MDP_DST_FMT			BIT(2)
+ #define MTK_MDP_CTX_ERROR		BIT(5)
+ 
+ /**
+diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c b/drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c
+index 821f2cf325f0..bb9caaf513bc 100644
+--- a/drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c
++++ b/drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c
+@@ -369,13 +369,6 @@ void mtk_mdp_ctx_state_lock_set(struct mtk_mdp_ctx *ctx, u32 state)
+ 	mutex_unlock(&ctx->slock);
+ }
+ 
+-static void mtk_mdp_ctx_state_lock_clear(struct mtk_mdp_ctx *ctx, u32 state)
+-{
+-	mutex_lock(&ctx->slock);
+-	ctx->state &= ~state;
+-	mutex_unlock(&ctx->slock);
+-}
+-
+ static bool mtk_mdp_ctx_state_is_set(struct mtk_mdp_ctx *ctx, u32 mask)
+ {
+ 	bool ret;
+@@ -726,11 +719,6 @@ static int mtk_mdp_m2m_s_fmt_mplane(struct file *file, void *fh,
+ 		ctx->quant = pix_mp->quantization;
+ 	}
+ 
+-	if (V4L2_TYPE_IS_OUTPUT(f->type))
+-		mtk_mdp_ctx_state_lock_set(ctx, MTK_MDP_SRC_FMT);
+-	else
+-		mtk_mdp_ctx_state_lock_set(ctx, MTK_MDP_DST_FMT);
+-
+ 	mtk_mdp_dbg(2, "[%d] type:%d, frame:%dx%d", ctx->id, f->type,
+ 		    frame->width, frame->height);
+ 
+@@ -742,13 +730,6 @@ static int mtk_mdp_m2m_reqbufs(struct file *file, void *fh,
+ {
+ 	struct mtk_mdp_ctx *ctx = fh_to_ctx(fh);
+ 
+-	if (reqbufs->count == 0) {
+-		if (reqbufs->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+-			mtk_mdp_ctx_state_lock_clear(ctx, MTK_MDP_SRC_FMT);
+-		else
+-			mtk_mdp_ctx_state_lock_clear(ctx, MTK_MDP_DST_FMT);
+-	}
+-
+ 	return v4l2_m2m_reqbufs(file, ctx->m2m_ctx, reqbufs);
+ }
+ 
+@@ -758,14 +739,6 @@ static int mtk_mdp_m2m_streamon(struct file *file, void *fh,
+ 	struct mtk_mdp_ctx *ctx = fh_to_ctx(fh);
+ 	int ret;
+ 
+-	/* The source and target color format need to be set */
+-	if (V4L2_TYPE_IS_OUTPUT(type)) {
+-		if (!mtk_mdp_ctx_state_is_set(ctx, MTK_MDP_SRC_FMT))
+-			return -EINVAL;
+-	} else if (!mtk_mdp_ctx_state_is_set(ctx, MTK_MDP_DST_FMT)) {
+-		return -EINVAL;
+-	}
+-
+ 	if (!mtk_mdp_ctx_state_is_set(ctx, MTK_MDP_VPU_INIT)) {
+ 		ret = mtk_mdp_vpu_init(&ctx->vpu);
+ 		if (ret < 0) {
+@@ -899,24 +872,21 @@ static int mtk_mdp_m2m_s_selection(struct file *file, void *fh,
+ 		frame = &ctx->d_frame;
+ 
+ 	/* Check to see if scaling ratio is within supported range */
+-	if (mtk_mdp_ctx_state_is_set(ctx, MTK_MDP_DST_FMT | MTK_MDP_SRC_FMT)) {
+-		if (V4L2_TYPE_IS_OUTPUT(s->type)) {
+-			ret = mtk_mdp_check_scaler_ratio(variant, new_r.width,
+-				new_r.height, ctx->d_frame.crop.width,
+-				ctx->d_frame.crop.height,
+-				ctx->ctrls.rotate->val);
+-		} else {
+-			ret = mtk_mdp_check_scaler_ratio(variant,
+-				ctx->s_frame.crop.width,
+-				ctx->s_frame.crop.height, new_r.width,
+-				new_r.height, ctx->ctrls.rotate->val);
+-		}
++	if (V4L2_TYPE_IS_OUTPUT(s->type))
++		ret = mtk_mdp_check_scaler_ratio(variant, new_r.width,
++			new_r.height, ctx->d_frame.crop.width,
++			ctx->d_frame.crop.height,
++			ctx->ctrls.rotate->val);
++	else
++		ret = mtk_mdp_check_scaler_ratio(variant,
++			ctx->s_frame.crop.width,
++			ctx->s_frame.crop.height, new_r.width,
++			new_r.height, ctx->ctrls.rotate->val);
+ 
+-		if (ret) {
+-			dev_info(&ctx->mdp_dev->pdev->dev,
+-				"Out of scaler range");
+-			return -EINVAL;
+-		}
++	if (ret) {
++		dev_info(&ctx->mdp_dev->pdev->dev,
++			"Out of scaler range");
++		return -EINVAL;
+ 	}
+ 
+ 	s->r = new_r;
+@@ -989,7 +959,6 @@ static int mtk_mdp_s_ctrl(struct v4l2_ctrl *ctrl)
+ 	struct mtk_mdp_ctx *ctx = ctrl_to_ctx(ctrl);
+ 	struct mtk_mdp_dev *mdp = ctx->mdp_dev;
+ 	struct mtk_mdp_variant *variant = mdp->variant;
+-	u32 state = MTK_MDP_DST_FMT | MTK_MDP_SRC_FMT;
+ 	int ret = 0;
+ 
+ 	if (ctrl->flags & V4L2_CTRL_FLAG_INACTIVE)
+@@ -1003,17 +972,15 @@ static int mtk_mdp_s_ctrl(struct v4l2_ctrl *ctrl)
+ 		ctx->vflip = ctrl->val;
+ 		break;
+ 	case V4L2_CID_ROTATE:
+-		if (mtk_mdp_ctx_state_is_set(ctx, state)) {
+-			ret = mtk_mdp_check_scaler_ratio(variant,
+-					ctx->s_frame.crop.width,
+-					ctx->s_frame.crop.height,
+-					ctx->d_frame.crop.width,
+-					ctx->d_frame.crop.height,
+-					ctx->ctrls.rotate->val);
+-
+-			if (ret)
+-				return -EINVAL;
+-		}
++		ret = mtk_mdp_check_scaler_ratio(variant,
++				ctx->s_frame.crop.width,
++				ctx->s_frame.crop.height,
++				ctx->d_frame.crop.width,
++				ctx->d_frame.crop.height,
++				ctx->ctrls.rotate->val);
++
++		if (ret)
++			return -EINVAL;
+ 
+ 		ctx->rotation = ctrl->val;
+ 		break;
+@@ -1090,6 +1057,7 @@ static int mtk_mdp_m2m_open(struct file *file)
+ 	struct video_device *vfd = video_devdata(file);
+ 	struct mtk_mdp_ctx *ctx = NULL;
+ 	int ret;
++	struct v4l2_format default_format;
+ 
+ 	ctx = kzalloc(sizeof(*ctx), GFP_KERNEL);
+ 	if (!ctx)
+@@ -1144,6 +1112,16 @@ static int mtk_mdp_m2m_open(struct file *file)
+ 	list_add(&ctx->list, &mdp->ctx_list);
+ 	mutex_unlock(&mdp->lock);
+ 
++	/* Default format */
++	memset(&default_format, 0, sizeof(default_format));
++	default_format.type = V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE;
++	default_format.fmt.pix_mp.width = 32;
++	default_format.fmt.pix_mp.height = 32;
++	default_format.fmt.pix_mp.pixelformat = V4L2_PIX_FMT_YUV420M;
++	mtk_mdp_m2m_s_fmt_mplane(file, &ctx->fh, &default_format);
++	default_format.type = V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE;
++	mtk_mdp_m2m_s_fmt_mplane(file, &ctx->fh, &default_format);
++
+ 	mtk_mdp_dbg(0, "%s [%d]", dev_name(&mdp->pdev->dev), ctx->id);
+ 
+ 	return 0;
+-- 
+2.26.2.526.g744177e7f7-goog
+
 
 _______________________________________________
 linux-arm-kernel mailing list
