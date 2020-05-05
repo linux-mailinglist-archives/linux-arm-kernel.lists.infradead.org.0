@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 394DB1C5F96
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:03:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2A601C5F9B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:05:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=nPYbF5EIafr2L7trAi9Pias1Ak4hm5l3e4hnD1P2D24=; b=X1ffjYlIDeV7W7DiYO25ShgjY
-	JVEg48i9wqQUDQjyiHlfuNlykHbimtgGwOqdH9PCGCZqyOQFLWjGipCGgxzfXscnT90ZnR+o0ZMGS
-	kQcsAmuy+wY2ltAfTmGkgBKyKFASy1nWV/q1zN8LI/tF7/msJLDjduATjW7oi/5eiOMV2WOXw8Jfu
-	x8LdjJMVboAf4X77/qrLuPsGiKuKghPY01UF1yeS037nx4ldmVg8cZY5ImROI29ifycziMGoo6LKr
-	i1/QALk523BrNh8r3urDeeDKEUMat0FF2csyNTUE8iNkBMbCLMspW2HVGC+PRRcpwn+6weYlqia61
-	+Uho5lY4Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kkkExPSWpo6IG1QY2h/uMiv5FvZjccmILeQme5HlaAg=; b=P/mJXOG0RFe2rd
+	9I30dg8WErYjUbm+1arEmKmW4KAjGDjtYyy/O5mlu0caqqKt/m0fJIz0HocdnqIUox27rI8+tWi6I
+	Mu/7LalUiqtgJ5JhupRTRmaKkpi2B2+LnxAZejjOOOqVdLaOmpa6Q7nXMwlMZNjLUm2OM71ZTv3+u
+	ZLl7actSrSls+b2h7hrgJJXzqxRMuYq4g9Mt4N0PjIl/ex2IcgKhj9JsiaN8TatbvdPA+jts/RD6u
+	3WIVvWp1qH8eSoVC51Na+ed4V25eAnhGfHiYGOVRcUFzpRCsfiVlEedPjlbBH0mr2LBoaWEqFAnfN
+	35IVbChq5NIrNWrH3Y6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1v2-0001ko-81; Tue, 05 May 2020 18:03:48 +0000
-Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+	id 1jW1wC-000290-Ld; Tue, 05 May 2020 18:05:00 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1us-0001iq-J0
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:03:42 +0000
-Received: by mail-qv1-xf43.google.com with SMTP id v10so1488730qvr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 11:03:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Cle1DWcPgPwaZVS6K0GMi0byjOYCQs6ur6FJmvddoLs=;
- b=J1uhBg+3MkuM1j9tvj0WGa7CGjzz9eGSspQTqVRSKqIdeC3wyzadBR3U7aKzH5oULK
- 1NBjfx6a+kMXoR0J517DVHPn0CVf6YL9au+1tCE8PnDcWU90F52qXsF3oy6DnBiG/fm4
- dMGFzOJORy0Gxy5s+E3q2lJ01+5YkrzdLkpM6mgb058B182LFtrBfwEJoJZZaCLaXOf6
- ZV6IWTrmh7mUs0GBUEpPi+H/OVLR8nI5+T8OWbGeCrvk1S3TCuFPycFL2XDyiZXO8act
- npVP+w7T+3cyPoxbYqwTrIn+nJsCzBsEpe5mjtm5s3MW73yagI+0b9NjLgfUbh4YmcaO
- gVhg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Cle1DWcPgPwaZVS6K0GMi0byjOYCQs6ur6FJmvddoLs=;
- b=imC0V8ejjFpvq0hqOnfQJv+vlzsSHqS8eJmsq/h93sx8gHC50z3UKBvmk+KvaMj0Yv
- SWGcPytxCzFkhSvsK42lUSPdSLdn3LOB5Jp/cNUIt/ZTmYiQUlXtl3aoarEWNGkyeS8T
- I6bToMMv9KmKoxfWM5qFpkW67GuFVnofUK9F7mSgGsQgs5nUXjybfu9dKmuqLNeBdmsH
- tlf717li/+4ZAeeVmWL3SEKVh0LPW0YWxbRQ1U4HAbrnvlujr+NQHxbwy0QoVxsrV9KR
- ip4KwsYDmX4IfEeu85RukZ5UMARB8dLwKFSya8pH94LbwHX+Xmckkihl/LaOC90CODe0
- afBw==
-X-Gm-Message-State: AGi0PuanOkJhRlSyoCQM2IBf6lIlQJjzN0G/6UShvNH1cDNW1tOXNe31
- eHW1SYE8+vOQgBqjjqjABZBCfQ==
-X-Google-Smtp-Source: APiQypJa6N5F6cPRll3YQL8uaSBvMyiPNIl4PgWRh95sWBVd9KkFeg2UCfAEuV2oheS/qEcgVKCSDw==
-X-Received: by 2002:a0c:8262:: with SMTP id h89mr3848628qva.173.1588701816621; 
- Tue, 05 May 2020 11:03:36 -0700 (PDT)
-Received: from [192.168.0.185] ([191.249.236.107])
- by smtp.gmail.com with ESMTPSA id c26sm2326833qkm.98.2020.05.05.11.03.31
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 05 May 2020 11:03:35 -0700 (PDT)
-Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
-To: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-20-catalin.marinas@arm.com>
-From: Luis Machado <luis.machado@linaro.org>
-Message-ID: <b78fe0c4-f89e-9347-7d7d-a68085f70b1d@linaro.org>
-Date: Tue, 5 May 2020 15:03:29 -0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jW1w2-00027x-P8; Tue, 05 May 2020 18:04:52 +0000
+Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown
+ [163.114.132.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D052C206FA;
+ Tue,  5 May 2020 18:04:49 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588701890;
+ bh=gxQ9X4QqLM4ifn43Epi1xaqmsSAjK08ljpO1RMYITFA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=xMhGv+FIQKSRyxGwUiJ/AsRgse+wPElZYeTjqa7uJjSd6RYitHwXt7qkr1Lty6+TN
+ /lSppEHghJ7X8pJhajXeQR+bP6XEDHSOGnolzpfBR3Sz8lqKXTOL1eQqY3pAdjxmLj
+ DY3NaZqP2B5dpznzKE/mwncbic5KUnoURX5rWoKY=
+Date: Tue, 5 May 2020 11:04:47 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Bartosz Golaszewski <brgl@bgdev.pl>
+Subject: Re: [PATCH 06/11] net: ethernet: mtk-eth-mac: new driver
+Message-ID: <20200505110447.2404985c@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <20200505140231.16600-7-brgl@bgdev.pl>
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-7-brgl@bgdev.pl>
 MIME-Version: 1.0
-In-Reply-To: <20200421142603.3894-20-catalin.marinas@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_110338_652893_05A637BB 
-X-CRM114-Status: GOOD (  17.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_110450_858305_34342DE0 
+X-CRM114-Status: GOOD (  20.66  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f43 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -90,6 +63,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,51 +75,395 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Alan Hayward <Alan.Hayward@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, Felix Fietkau <nbd@openwrt.org>,
+ Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-kernel@vger.kernel.org, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 4/21/20 11:25 AM, Catalin Marinas wrote:
-> Add support for bulk setting/getting of the MTE tags in a tracee's
-> address space at 'addr' in the ptrace() syscall prototype. 'data' points
-> to a struct iovec in the tracer's address space with iov_base
-> representing the address of a tracer's buffer of length iov_len. The
-> tags to be copied to/from the tracer's buffer are stored as one tag per
-> byte.
+On Tue,  5 May 2020 16:02:26 +0200 Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 > 
-> On successfully copying at least one tag, ptrace() returns 0 and updates
-> the tracer's iov_len with the number of tags copied. In case of error,
-> either -EIO or -EFAULT is returned, trying to follow the ptrace() man
-> page.
+> This adds the driver for the MediaTek Ethernet MAC used on the MT8* SoC
+> family. For now we only support full-duplex.
 > 
-> Note that the tag copying functions are not performance critical,
-> therefore they lack optimisations found in typical memory copy routines.
-> 
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Alan Hayward <Alan.Hayward@arm.com>
-> Cc: Luis Machado <luis.machado@linaro.org>
-> Cc: Omair Javaid <omair.javaid@linaro.org>
-> ---
-> 
-> Notes:
->      New in v3.
-> 
->   arch/arm64/include/asm/mte.h         |  17 ++++
->   arch/arm64/include/uapi/asm/ptrace.h |   3 +
->   arch/arm64/kernel/mte.c              | 127 +++++++++++++++++++++++++++
->   arch/arm64/kernel/ptrace.c           |  15 +++-
->   arch/arm64/lib/mte.S                 |  50 +++++++++++
->   5 files changed, 211 insertions(+), 1 deletion(-)
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-I'll try to exercise the new ptrace requests with QEMU and GDB.
+> +#define MTK_MAC_VERSION				"1.0"
+
+Please don't add driver versions, we're removing those from networking
+drivers.
+
+> +/* Represents the actual structure of descriptors used by the MAC. We can
+> + * reuse the same structure for both TX and RX - the layout is the same, only
+> + * the flags differ slightly.
+> + */
+> +struct mtk_mac_ring_desc {
+> +	/* Contains both the status flags as well as packet length. */
+> +	u32 status;
+> +	u32 data_ptr;
+> +	u32 vtag;
+> +	u32 reserved;
+> +} __aligned(4) __packed;
+
+It will be aligned to 4, because the members are all 4B. And there is
+no possibility of holes. You can safely remove those attrs.
+
+> +static int mtk_mac_ring_pop_tail(struct mtk_mac_ring *ring,
+> +				 struct mtk_mac_ring_desc_data *desc_data)
+> +{
+> +	struct mtk_mac_ring_desc *desc = &ring->descs[ring->tail];
+> +	unsigned int status;
+> +
+> +	dma_rmb();
+
+This should be after desc->status read, probably.
+
+> +	status = desc->status;
+> +
+> +	if (!(status & MTK_MAC_DESC_BIT_COWN))
+> +		return -1;
+> +
+> +	desc_data->len = status & MTK_MAC_DESC_MSK_LEN;
+> +	desc_data->flags = status & ~MTK_MAC_DESC_MSK_LEN;
+> +	desc_data->dma_addr = desc->data_ptr;
+> +	desc_data->skb = ring->skbs[ring->tail];
+> +
+> +	desc->data_ptr = 0;
+> +	desc->status = MTK_MAC_DESC_BIT_COWN;
+> +	if (status & MTK_MAC_DESC_BIT_EOR)
+> +		desc->status |= MTK_MAC_DESC_BIT_EOR;
+> +
+> +	dma_wmb();
+
+What is this separating?
+
+> +	ring->tail = (ring->tail + 1) % MTK_MAC_RING_NUM_DESCS;
+> +	ring->count--;
+> +
+> +	return 0;
+> +}
+> +
+> +static void mtk_mac_ring_push_head(struct mtk_mac_ring *ring,
+> +				   struct mtk_mac_ring_desc_data *desc_data,
+> +				   unsigned int flags)
+> +{
+> +	struct mtk_mac_ring_desc *desc = &ring->descs[ring->head];
+> +	unsigned int status;
+> +
+> +	dma_rmb();
+
+What's this barrier separating?
+
+> +	status = desc->status;
+> +
+> +	ring->skbs[ring->head] = desc_data->skb;
+> +	desc->data_ptr = desc_data->dma_addr;
+> +
+> +	status |= desc_data->len;
+> +	if (flags)
+> +		status |= flags;
+> +	desc->status = status;
+> +
+> +	dma_wmb();
+> +	desc->status &= ~MTK_MAC_DESC_BIT_COWN;
+> +
+> +	ring->head = (ring->head + 1) % MTK_MAC_RING_NUM_DESCS;
+> +	ring->count++;
+> +}
+
+> +/* All processing for TX and RX happens in the napi poll callback. */
+> +static irqreturn_t mtk_mac_handle_irq(int irq, void *data)
+> +{
+> +	struct mtk_mac_priv *priv;
+> +	struct net_device *ndev;
+> +	unsigned int status;
+> +
+> +	ndev = data;
+> +	priv = netdev_priv(ndev);
+> +
+> +	if (netif_running(ndev)) {
+> +		mtk_mac_intr_mask_all(priv);
+> +		status = mtk_mac_intr_read_and_clear(priv);
+> +
+> +		/* RX Complete */
+> +		if (status & MTK_MAC_BIT_INT_STS_FNRC)
+> +			napi_schedule(&priv->napi);
+> +
+> +		/* TX Complete */
+> +		if (status & MTK_MAC_BIT_INT_STS_TNTC)
+> +			schedule_work(&priv->tx_work);
+> +
+> +		/* One of the counter reached 0x8000000 */
+> +		if (status & MTK_MAC_REG_INT_STS_MIB_CNT_TH) {
+> +			mtk_mac_update_stats(priv);
+> +			mtk_mac_reset_counters(priv);
+> +		}
+> +
+> +		mtk_mac_intr_unmask_all(priv);
+
+Why do you unmask all IRQs here? The usual way to operate is to leave
+TX and RX IRQs masked until NAPI finishes.
+
+> +	}
+> +
+> +	return IRQ_HANDLED;
+> +}
+
+> +static int mtk_mac_enable(struct net_device *ndev)
+> +{
+> +	/* Reset all counters */
+> +	mtk_mac_reset_counters(priv);
+
+This doesn't reset the counters to zero, right?
+
+> +	/* Enable Hash Table BIST and reset it */
+> +	regmap_update_bits(priv->regs, MTK_MAC_REG_HASH_CTRL,
+> +			   MTK_MAC_BIT_HASH_CTRL_BIST_EN,
+> +			   MTK_MAC_BIT_HASH_CTRL_BIST_EN);
+
+> +}
+> +
+> +static void mtk_mac_disable(struct net_device *ndev)
+> +{
+> +	struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +
+> +	netif_stop_queue(ndev);
+> +	napi_disable(&priv->napi);
+> +	mtk_mac_intr_mask_all(priv);
+> +	mtk_mac_dma_disable(priv);
+> +	mtk_mac_intr_read_and_clear(priv);
+> +	phy_stop(priv->phydev);
+> +	phy_disconnect(priv->phydev);
+> +	free_irq(ndev->irq, ndev);
+> +	mtk_mac_free_rx_skbs(ndev);
+> +	mtk_mac_free_tx_skbs(ndev);
+> +}
+
+> +static int mtk_mac_netdev_start_xmit(struct sk_buff *skb,
+> +				     struct net_device *ndev)
+> +{
+> +	struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +	struct mtk_mac_ring *ring = &priv->tx_ring;
+> +	struct device *dev = mtk_mac_get_dev(priv);
+> +	struct mtk_mac_ring_desc_data desc_data;
+> +
+> +	if (skb->len > MTK_MAC_MAX_FRAME_SIZE)
+> +		goto err_drop_packet;
+
+This should never happen if you set mtu right, you can drop it.
+
+> +	desc_data.dma_addr = mtk_mac_dma_map_tx(priv, skb);
+> +	if (dma_mapping_error(dev, desc_data.dma_addr))
+> +		goto err_drop_packet;
+> +
+> +	desc_data.skb = skb;
+> +	desc_data.len = skb->len;
+> +
+> +	mtk_mac_lock(priv);
+> +	mtk_mac_ring_push_head_tx(ring, &desc_data);
+> +
+> +	if (mtk_mac_ring_full(ring))
+> +		netif_stop_queue(ndev);
+> +	mtk_mac_unlock(priv);
+> +
+> +	mtk_mac_dma_resume_tx(priv);
+> +
+> +	return NETDEV_TX_OK;
+> +
+> +err_drop_packet:
+> +	dev_kfree_skb(skb);
+> +	ndev->stats.tx_dropped++;
+> +	return NETDEV_TX_BUSY;
+> +}
+
+> +static void mtk_mac_tx_work(struct work_struct *work)
+> +{
+> +	struct mtk_mac_priv *priv;
+> +	struct mtk_mac_ring *ring;
+> +	struct net_device *ndev;
+> +	bool wake = false;
+> +	int ret;
+> +
+> +	priv = container_of(work, struct mtk_mac_priv, tx_work);
+> +	ndev = mtk_mac_get_netdev(priv);
+> +	ring = &priv->tx_ring;
+> +
+> +	for (;;) {
+> +		mtk_mac_lock(priv);
+> +
+> +		if (!mtk_mac_ring_descs_available(ring)) {
+> +			mtk_mac_unlock(priv);
+> +			break;
+> +		}
+> +
+> +		ret = mtk_mac_tx_complete(priv);
+> +		mtk_mac_unlock(priv);
+> +		if (ret)
+> +			break;
+> +
+> +		wake = true;
+> +	}
+> +
+> +	if (wake)
+> +		netif_wake_queue(ndev);
+
+This looks racy, if the TX path runs in parallel the queue may have
+already been filled up at the point you wake it up.
+
+> +}
+
+Why do you clean the TX ring from a work rather than from the NAPI
+context?
+
+> +static void mtk_mac_set_rx_mode(struct net_device *ndev)
+> +{
+> +	struct mtk_mac_priv *priv = netdev_priv(ndev);
+> +	struct netdev_hw_addr *hw_addr;
+> +	unsigned int hash_addr, i;
+> +
+> +	if (ndev->flags & IFF_PROMISC) {
+> +		regmap_update_bits(priv->regs, MTK_MAC_REG_ARL_CFG,
+> +				   MTK_MAC_BIT_ARL_CFG_MISC_MODE,
+> +				   MTK_MAC_BIT_ARL_CFG_MISC_MODE);
+> +	} else if (netdev_mc_count(ndev) > MTK_MAC_HASHTABLE_MC_LIMIT ||
+> +		   ndev->flags & IFF_ALLMULTI) {
+> +		for (i = 0; i < MTK_MAC_HASHTABLE_SIZE_MAX; i++)
+> +			mtk_mac_set_hashbit(priv, i);
+> +	} else {
+> +		netdev_for_each_mc_addr(hw_addr, ndev) {
+> +			hash_addr = (hw_addr->addr[0] & 0x01) << 8;
+> +			hash_addr += hw_addr->addr[5];
+> +			mtk_mac_set_hashbit(priv, hash_addr);
+
+Hm, are the hash bits cleared when address is removed?
+
+> +		}
+> +	}
+> +}
+
+> +static int mtk_mac_receive_packet(struct mtk_mac_priv *priv)
+> +{
+> +	struct net_device *ndev = mtk_mac_get_netdev(priv);
+> +	struct mtk_mac_ring *ring = &priv->rx_ring;
+> +	struct device *dev = mtk_mac_get_dev(priv);
+> +	struct mtk_mac_ring_desc_data desc_data;
+> +	struct sk_buff *new_skb;
+> +	int ret;
+> +
+> +	mtk_mac_lock(priv);
+> +	ret = mtk_mac_ring_pop_tail(ring, &desc_data);
+> +	mtk_mac_unlock(priv);
+> +	if (ret)
+> +		return -1;
+> +
+> +	mtk_mac_dma_unmap_rx(priv, &desc_data);
+> +
+> +	if ((desc_data.flags & MTK_MAC_DESC_BIT_RX_CRCE) ||
+> +	    (desc_data.flags & MTK_MAC_DESC_BIT_RX_OSIZE)) {
+> +		/* Error packet -> drop and reuse skb. */
+> +		new_skb = desc_data.skb;
+> +		goto map_skb;
+> +	}
+> +
+> +	new_skb = mtk_mac_alloc_skb(ndev);
+> +	if (!new_skb) {
+> +		netdev_err(ndev, "out of memory for skb\n");
+
+No need for printing, kernel will complain loudly about oom.
+
+> +		ndev->stats.rx_dropped++;
+> +		new_skb = desc_data.skb;
+> +		goto map_skb;
+> +	}
+> +
+> +	skb_put(desc_data.skb, desc_data.len);
+> +	desc_data.skb->ip_summed = CHECKSUM_NONE;
+> +	desc_data.skb->protocol = eth_type_trans(desc_data.skb, ndev);
+> +	desc_data.skb->dev = ndev;
+> +	netif_receive_skb(desc_data.skb);
+> +
+> +map_skb:
+> +	desc_data.dma_addr = mtk_mac_dma_map_rx(priv, new_skb);
+> +	if (dma_mapping_error(dev, desc_data.dma_addr)) {
+> +		dev_kfree_skb(new_skb);
+> +		netdev_err(ndev, "DMA mapping error of RX descriptor\n");
+> +		return -ENOMEM;
+
+In this case nothing will ever replenish the RX ring right? If we hit
+this condition 128 times the ring will be empty?
+
+> +	}
+> +
+> +	desc_data.len = skb_tailroom(new_skb);
+> +	desc_data.skb = new_skb;
+> +
+> +	mtk_mac_lock(priv);
+> +	mtk_mac_ring_push_head_rx(ring, &desc_data);
+> +	mtk_mac_unlock(priv);
+> +
+> +	return 0;
+> +}
+> +
+> +static int mtk_mac_process_rx(struct mtk_mac_priv *priv, int budget)
+> +{
+> +	int received, ret;
+> +
+> +	for (received = 0, ret = 0; received < budget && ret == 0; received++)
+> +		ret = mtk_mac_receive_packet(priv);
+> +
+> +	mtk_mac_dma_resume_rx(priv);
+> +
+> +	return received;
+> +}
+
+> +static int mtk_mac_probe(struct platform_device *pdev)
+> +{
+
+> +	mtk_mac_set_mode_rmii(priv);
+> +
+> +	dev->coherent_dma_mask = DMA_BIT_MASK(32);
+> +	dev->dma_mask = &dev->coherent_dma_mask;
+
+Why set this manually and no thru dma_set_mask_and_coherent()?
+
+> +	priv->ring_base = dmam_alloc_coherent(dev, MTK_MAC_DMA_SIZE,
+> +					      &priv->dma_addr,
+> +					      GFP_KERNEL | GFP_DMA);
+> +	if (!priv->ring_base)
+> +		return -ENOMEM;
+> +
+> +	mtk_mac_nic_disable_pd(priv);
+> +	mtk_mac_init_config(priv);
+> +
+> +	ret = mtk_mac_mdio_init(ndev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = eth_platform_get_mac_address(dev, ndev->dev_addr);
+> +	if (ret || !is_valid_ether_addr(ndev->dev_addr)) {
+> +		random_ether_addr(ndev->dev_addr);
+> +		ndev->addr_assign_type = NET_ADDR_RANDOM;
+
+eth_hw_addr_random()
+
+> +	}
+> +
+> +	ndev->netdev_ops = &mtk_mac_netdev_ops;
+> +	ndev->ethtool_ops = &mtk_mac_ethtool_ops;
+> +
+> +	netif_napi_add(ndev, &priv->napi, mtk_mac_poll, MTK_MAC_NAPI_WEIGHT);
+> +
+> +	return devm_register_netdev(ndev);
+> +}
+
 
 _______________________________________________
 linux-arm-kernel mailing list
