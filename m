@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81D601C5414
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A74E1C5428
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:14:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0lpwzAyt9lVn3P3CKUMzoofphMZszJdEUIrh1bx7XOk=; b=TpTtbRLcc018mH
-	JLbYlJZZB3nD/tffpSD/QEpHWfEcbqn5RT5nS3QYLm2xfgIqwHw6Lms7Q7CU9noMcgwAI8SAFgKb6
-	EjBRWUVa/pND+sL9RbuwbS24EqhLr4tsG1ZxKZ46hHrBwX4KBEyZyLty2UskV3giG82wmm9V5lcax
-	tWeo0Aqx7bOrKK9JnAAPk0SaBwZdJLpq41NUD+H2EdBpftwDTbH5Nb/AgEE74wjW1I8NzQk9yUiMr
-	YCIQzljp0M9ZZKQUU9nIFCorGT9rTdP5QTk3A0+vcpz508T/BXAAou0U/MC8bvvI9wbXCNvMu3u7S
-	jkslrZvSpMMw+MNVgcGg==;
+	List-Owner; bh=qcRZwlzQA+GPBv05pI6P+z1zwJSAS0I2YCP29KF4cuM=; b=htDwfKPcMsCowV
+	JGd5gdwCTxrF0ssYCsCp29mKNDfoPHBkKGJdtUoBVtg+HuCLho+KEOJXLdFiejcQrUTjTwrC1WSHD
+	X+SaVBAZXY8bLZur+B6uXsxAkmEberhMAZuG/4y8EKFHuHCLdmkjAMzU/2+/k724HcNha8UKXxApJ
+	vgPOoBfFe+XsMoj4Y4nsfqQ0ALG2MEtvZe406LKihIwQgpuZmxbogeLE2BOA50Wh+R7h+4Xp4kGMY
+	dZU9aQmRKRdE2qC6oFQe6S+zfV7JI5nMH/yvd5elM5c1VnVBRiYVdqTkbsNTxnK6gqcF5sUn9oGzj
+	Xz4KiTP2dZToNk5H8t/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvVN-00056w-Dv; Tue, 05 May 2020 11:12:53 +0000
+	id 1jVvWv-0005Xf-Io; Tue, 05 May 2020 11:14:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvVG-00056K-EG
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:12:47 +0000
+ id 1jVvWo-0005Wt-Fe
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:14:23 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9A88C20735;
- Tue,  5 May 2020 11:12:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F267C206B9;
+ Tue,  5 May 2020 11:14:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588677166;
- bh=aqQGzN9qYZSgDY+zbPTiKpLxyYu05CkwvJktzlbaFXc=;
+ s=default; t=1588677262;
+ bh=0K2DpxSvS3/qR26Gr3apwXgTBLAzGZEQ2x9wJfhnTxs=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=UcmzyUy+7wAHnwGGrAinJ1tPmzRK3XYBBi4NFpI0imGA0Xq1Y+a5vct9u00Zv4svr
- /pzdcE9N4IojYNwxNmXeNFDqjLMc2V6q+ZurACaX8wqfEoBOcaWQsQ+oKJES57ND36
- /d/JJ8/3P33x8kHDfvcYUyIF5hT2X14UJCQ0N0hA=
-Date: Tue, 5 May 2020 12:12:41 +0100
+ b=PQ0hNzy9lxbvL4cILbgFbeZ/9NRJSCI9Rbt0kC9oprAvlHm2yBVvqjud3RbtPKAtC
+ xZAccWb+uKtskmlWSPhSyWJZ7S/fPiZxJ8SI3C+POiOvAOBDZ82GH9nJeE1fhSJW6+
+ mHAXafyh7JbkC3s7kT6femZL1bDttkNKfZmtYBmA=
+Date: Tue, 5 May 2020 12:14:17 +0100
 From: Will Deacon <will@kernel.org>
 To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V3 04/16] arm64/cpufeature: Introduce ID_PFR2 CPU register
-Message-ID: <20200505111241.GF19710@willie-the-truck>
+Subject: Re: [PATCH V3 08/16] arm64/cpufeature: Add remaining feature bits in
+ ID_MMFR4 register
+Message-ID: <20200505111417.GG19710@willie-the-truck>
 References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
- <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-9-git-send-email-anshuman.khandual@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
+In-Reply-To: <1588426445-24344-9-git-send-email-anshuman.khandual@arm.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_041246_497267_930AADE5 
-X-CRM114-Status: GOOD (  14.35  )
+X-CRM114-CacheID: sfid-20200505_041422_543020_16B7BC19 
+X-CRM114-Status: GOOD (  11.99  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,28 +79,22 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+ linux-arm-kernel@lists.infradead.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
-> This adds basic building blocks required for ID_PFR2 CPU register which
-> provides information about the AArch32 programmers model which must be
-> interpreted along with ID_PFR0 and ID_PFR1 CPU registers. This is added
-> per ARM DDI 0487F.a specification.
+On Sat, May 02, 2020 at 07:03:57PM +0530, Anshuman Khandual wrote:
+> Enable all remaining feature bits like EVT, CCIDX, LSM, HPDS, CnP, XNX,
+> SpecSEI in ID_MMFR4 register per ARM DDI 0487F.a.
 > 
 > Cc: Catalin Marinas <catalin.marinas@arm.com>
 > Cc: Will Deacon <will@kernel.org>
-> Cc: Marc Zyngier <maz@kernel.org>
 > Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: James Morse <james.morse@arm.com>
 > Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-> Cc: kvmarm@lists.cs.columbia.edu
 > Cc: linux-arm-kernel@lists.infradead.org
 > Cc: linux-kernel@vger.kernel.org
 > 
@@ -107,36 +102,26 @@ On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
 > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 > ---
->  arch/arm64/include/asm/cpu.h    |  1 +
->  arch/arm64/include/asm/sysreg.h |  4 ++++
->  arch/arm64/kernel/cpufeature.c  | 11 +++++++++++
->  arch/arm64/kernel/cpuinfo.c     |  1 +
->  arch/arm64/kvm/sys_regs.c       |  2 +-
->  5 files changed, 18 insertions(+), 1 deletion(-)
+>  arch/arm64/include/asm/sysreg.h |  8 ++++++++
+>  arch/arm64/kernel/cpufeature.c  | 13 +++++++++++++
+>  2 files changed, 21 insertions(+)
 > 
-> diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
-> index b4a40535a3d8..464e828a994d 100644
-> --- a/arch/arm64/include/asm/cpu.h
-> +++ b/arch/arm64/include/asm/cpu.h
-> @@ -46,6 +46,7 @@ struct cpuinfo_arm64 {
->  	u32		reg_id_mmfr3;
->  	u32		reg_id_pfr0;
->  	u32		reg_id_pfr1;
-> +	u32		reg_id_pfr2;
->  
->  	u32		reg_mvfr0;
->  	u32		reg_mvfr1;
 > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> index e5317a6367b6..c977449e02db 100644
+> index f9e3b9350540..0f34927f52b9 100644
 > --- a/arch/arm64/include/asm/sysreg.h
 > +++ b/arch/arm64/include/asm/sysreg.h
-> @@ -153,6 +153,7 @@
->  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
->  #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
->  #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
-> +#define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
+> @@ -790,6 +790,14 @@
+>  #define ID_ISAR6_DP_SHIFT		4
+>  #define ID_ISAR6_JSCVT_SHIFT		0
+>  
+> +#define ID_MMFR4_EVT_SHIFT		28
+> +#define ID_MMFR4_CCIDX_SHIFT		24
+> +#define ID_MMFR4_LSM_SHIFT		20
+> +#define ID_MMFR4_HPDS_SHIFT		16
+> +#define ID_MMFR4_CNP_SHIFT		12
+> +#define ID_MMFR4_XNX_SHIFT		8
 
-nit: but please group these defines by name rather than encoding.
+Why didn't you add ID_MMFR4_AC2_SHIFT as well?
 
 Will
 
