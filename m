@@ -2,93 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 686BA1C5992
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:30:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A14461C599C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:32:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jAoexy00yCfmPhzdORigm+fVmRSH7iTKFu0p5PcODxs=; b=dV9rLQXp5V3moa
-	3INkD5eumVUAE8NnJeE3hMN6apjtkCzDiu9iFnNgt/+V9qm0k97CpTQHW1DMI2fy22zycHwdt4rvs
-	Vj11Ap9Sk8ZyPMsVvjPyeQUO84UC1hFy13nvr/D+CyVWOqJkcQMiHNg9+6WfdMKtYOdLauuvbsCSJ
-	dWf6U71l7N1QDoYQZ7TRtuzsceuTSwAu57MX5G7sGtUZfAHedoKllGui9DlFEMqiQ3AwfvvEkPgjO
-	TPPWW3dPwxjkSDFEd7qyKCBbO7R0wbWqznczRyx3EbqXwDp3yJhGOEbtv1A1+cyn/wtAbx/HknS+s
-	MZclFhRZHZfkILTx++qg==;
+	List-Owner; bh=ZRWSus4k/JvPEaRqPugHIm4L+ZsWFt2QonHm0jSPkLk=; b=jLxIxhD6+9GEVu
+	kT1X28VnXeQBm6yjnj7PJ7UDlztSVmKGzhlEoeUVzbtQPA7eHNTTN0K7NWmvAgRi5nveOVSb2oJjs
+	n+eUcMVpz07De3a7xCHGmP1jyfDk+qyrGDD3rxadBgE6/i8N5CCRlA7foIKmHSmBB8GwcC1seV5ZP
+	75cpMK8WywiLGiRJgC+4rzdj2Lw5gB0UngrHA/2QgUxouXwcuUMz6qXwAz03H7e8lboyQyoiIkxLl
+	sJnK487Su06r/68TAdnPhikWJ4QlaTqScM2XMRIpDrHsOlAmKBMbvNgyV7vtyhTwIGWodWBasOBrI
+	JJOoQjqmH0/YeTMDuexw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVyad-0004ZW-15; Tue, 05 May 2020 14:30:31 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVyaV-0004Yx-AA
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:30:25 +0000
-Received: by mail-pf1-x443.google.com with SMTP id w65so938849pfc.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 07:30:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=/8ydx1OQ+D7IiH04ZB0o6wh3QFLRJGOF1BFo03aMjE0=;
- b=Vz5o8n1cIrMmoGP44Q46Zmp0HCKTGVL6iSF8j/jpP+jsAwG2FzRJOfqClcI3JFfmIL
- VVD5IleJMQZXj13SdtF2r6cI0s13BqDa5RMBeC/I162mPJrW54BKbV9HSfCLMcDexZij
- LeTo1mFhwp6asz6sKuuLUX8UP5WPTN6N6PkU3EFJkGN98n0Gi+xTTKLopwxSdxr+vOKE
- HxBhiq8nV6SAvixOSrpMVtSDIaWDat6asa/2G7DxMbBy745Rv0Ccvfvgg8BbrPhKOLh7
- OpPX+31VkVkC/LVUqL+18lYlS13egiSbwNvHYLzf6mYkRTlATOOT4keTyrvbgMmIQaDc
- zHFQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/8ydx1OQ+D7IiH04ZB0o6wh3QFLRJGOF1BFo03aMjE0=;
- b=RtLjA14JADGjd/MOHZacNSSWoHJdDN7ArXBqCu6/CeuTebvAMp8HCb6hQAEg9Xk60G
- 5rneAE40GlPJEJDLD6qqYst/CSyabDppbelEPfToVt1MMkQKQoKpX+VWz6iiQ1zoEzL4
- Tg0AYcgP6qbYb45RBscU2j/c7pexTiydq/66TRYhfTaRm8ASKkj/Siekwtw9xU32qVho
- 1CkMTXuIduRggjbsRzBIj6fBb5F077KOdmw5PuTUbuQCqeqHbXL+2Em1QWFDXLqnkvhq
- ndj7Ap7i01F7dnu9vEDjR0SzDbNCxLNnKqkwF91oK0JKd6kU/ASAw19kDcSnfHDtHaUr
- 2WIA==
-X-Gm-Message-State: AGi0PuZBM0RDC1wianMB7llF0F5IFavdYuGIn15pAIXQ/Fan9yfVAOtG
- 2BKGAZUDIQ7kDAwXs6gCfBuJyabp
-X-Google-Smtp-Source: APiQypJ9VDBm38O+rpfRbbRf4g5lKVbtUGdAU5GjiMUuycn6ou/4sv+IOjnuV2xTcLQTRwBKy1xcWQ==
-X-Received: by 2002:a62:6385:: with SMTP id x127mr3582714pfb.276.1588689022537; 
- Tue, 05 May 2020 07:30:22 -0700 (PDT)
-Received: from localhost ([49.207.51.154])
- by smtp.gmail.com with ESMTPSA id j2sm2304373pfb.73.2020.05.05.07.30.18
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 05 May 2020 07:30:19 -0700 (PDT)
-Date: Tue, 5 May 2020 20:00:17 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] ARM: omap1: fix irq setup
-Message-ID: <20200505143017.GA5263@afzalpc>
-References: <20200505141400.767312-1-arnd@arndb.de>
+	id 1jVyc6-0005CY-01; Tue, 05 May 2020 14:32:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVyby-0005C1-Uh
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:31:56 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E1E2A1FB;
+ Tue,  5 May 2020 07:31:53 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.25.241])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9293E3F68F;
+ Tue,  5 May 2020 07:31:52 -0700 (PDT)
+Date: Tue, 5 May 2020 15:31:49 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Itaru Kitayama <itaru.kitayama@gmail.com>
+Subject: Re: [PATCH] arm64: hugetlb: avoid potential NULL dereference
+Message-ID: <20200505143149.GG82823@C02TD0UTHF1T.local>
+References: <20200505125930.26901-1-mark.rutland@arm.com>
+ <CANW9uyt4LorH7cZ+qj51T+yiHwLB+V8d=GjR=yae4APUwyQo+w@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200505141400.767312-1-arnd@arndb.de>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <CANW9uyt4LorH7cZ+qj51T+yiHwLB+V8d=GjR=yae4APUwyQo+w@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_073024_391285_BABC6CFF 
-X-CRM114-Status: UNSURE (   9.97  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_073155_075439_84D48D62 
+X-CRM114-Status: GOOD (  22.26  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,34 +62,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Kevin Hilman <khilman@kernel.org>, linux-kernel@vger.kernel.org,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Tue, May 05, 2020 at 04:13:48PM +0200, Arnd Bergmann wrote:
-
-> A recent cleanup introduced a bug on any omap1 machine that has
-> no wakeup IRQ, i.e. omap15xx:
-
-> Move this code into a separate function to deal with it cleanly.
-> 
-> Fixes: b75ca5217743 ("ARM: OMAP: replace setup_irq() by request_irq()")
-> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-
-Sorry for the mistake and thanks for the fix,
-
-Acked-by: afzal mohammed <afzal.mohd.ma@gmail.com>
-
-Regards
-afzal
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlLCBNYXkgMDUsIDIwMjAgYXQgMTA6MTI6MDJQTSArMDkwMCwgSXRhcnUgS2l0YXlhbWEg
+d3JvdGU6Cj4gVGhlIG92ZXJoZWFkIGlzIGp1c3QgbmVnbGlnaWJsZSBpbiB0aGUgcGF0aHM/CgpT
+b3JyeSwgSSdtIG5vdCBzdXJlIEkgdW5kZXJzdGFuZCB5b3VyIHF1ZXN0aW9uLiBBcmUgeW91IGFz
+a2luZyBpZiB0aGlzCmlzIGxpa2VseSB0byBhZmZlY3QgcGVyZm9ybWFuY2U/CgpJIGRvbid0IGV4
+cGVjdCB0aGVyZSB0byBiZSBhbnkgbWVhc3VyZWFibGUgb3ZlcmhlYWQgaGVyZS4gUHJhY3RpY2Fs
+bHkKc3BlYWtpbmcgdGhlIGRpZmZlcmVuY2UgaXMgYSBDQlogKyBSRVQsIGFuZCBvdGhlciBmYWN0
+b3JzIHdpbGwgZG9taW5hdGUKaGVyZS4KClJlZ2FyZGxlc3MsIHRoaXMgaXMgdHJpdmlhbCBlcnJv
+ciBoYW5kbGluZyB0aGF0IHdhcyBtaXNzaW5nIGZyb20gdGhlCm9yaWdpbmFsIHBhdGNoLgoKVGhh
+bmtzLApNYXJrLgoKPiBPbiBUdWUsIE1heSA1LCAyMDIwIGF0IDIxOjU5IE1hcmsgUnV0bGFuZCA8
+bWFyay5ydXRsYW5kQGFybS5jb20+IHdyb3RlOgo+IAo+ID4gVGhlIHN0YXRpYyBhbmFseXplciBp
+biBHQ0MgMTAgc3BvdHRlZCB0aGF0IGluIGh1Z2VfcHRlX2FsbG9jKCkgd2UgbWF5Cj4gPiBwYXNz
+IGEgTlVMTCBwbWRwIGludG8gcHRlX2FsbG9jX21hcCgpIHdoZW4gcG1kX2FsbG9jKCkgcmV0dXJu
+cyBOVUxMOgo+ID4KPiA+IHwgICBDQyAgICAgIGFyY2gvYXJtNjQvbW0vcGFnZWF0dHIubwo+ID4g
+fCAgIENDICAgICAgYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5vCj4gPiB8ICAgICAgICAgICAg
+ICAgICAgZnJvbSBhcmNoL2FybTY0L21tL2h1Z2V0bGJwYWdlLmM6MTA6Cj4gPiB8IGFyY2gvYXJt
+NjQvbW0vaHVnZXRsYnBhZ2UuYzogSW4gZnVuY3Rpb24g4oCYaHVnZV9wdGVfYWxsb2PigJk6Cj4g
+PiB8IC4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6Mjg6MjQ6IHdhcm5p
+bmc6IGRlcmVmZXJlbmNlIG9mCj4gPiBOVUxMIOKAmHBtZHDigJkgW0NXRS02OTBdIFstV2FuYWx5
+emVyLW51bGwtZGVyZWZlcmVuY2VdCj4gPiB8IC4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3Rh
+YmxlLmg6NDM2OjI2OiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8KPiA+IOKAmHBtZF92YWzi
+gJkKPiA+IHwgYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5jOjI0MjoxMDogbm90ZTogaW4gZXhw
+YW5zaW9uIG9mIG1hY3JvCj4gPiDigJhwdGVfYWxsb2NfbWFw4oCZCj4gPiB8ICAgICB8YXJjaC9h
+cm02NC9tbS9odWdldGxicGFnZS5jOjIzMjoxMDoKPiA+IHwgICAgIHwuL2FyY2gvYXJtNjQvaW5j
+bHVkZS9hc20vcGd0YWJsZS10eXBlcy5oOjI4OjI0Ogo+ID4gfCAuL2FyY2gvYXJtNjQvaW5jbHVk
+ZS9hc20vcGd0YWJsZS5oOjQzNjoyNjogbm90ZTogaW4gZXhwYW5zaW9uIG9mIG1hY3JvCj4gPiDi
+gJhwbWRfdmFs4oCZCj4gPiB8IGFyY2gvYXJtNjQvbW0vaHVnZXRsYnBhZ2UuYzoyNDI6MTA6IG5v
+dGU6IGluIGV4cGFuc2lvbiBvZiBtYWNybwo+ID4g4oCYcHRlX2FsbG9jX21hcOKAmQo+ID4KPiA+
+IFRoaXMgY2FuIG9ubHkgb2NjdXIgd2hlbiB0aGUga2VybmVsIGNhbm5vdCBhbGxvY2F0ZSBhIHBh
+Z2UsIGFuZCBzbyBpcwo+ID4gdW5saWtlbHkgdG8gaGFwcGVuIGluIHByYWN0aWNlIGJlZm9yZSBv
+dGhlciBzeXN0ZW1zIHN0YXJ0IGZhaWxpbmcuCj4gPgo+ID4gV2UgY2FuIGF2b2lkIHRoaXMgYnkg
+YmFpbGluZyBvdXQgaWYgcG1kX2FsbG9jKCkgZmFpbHMsIGFzIHdlIGRvIGVhcmxpZXIKPiA+IGlu
+IHRoZSBmdW5jdGlvbiBpZiBwdWRfYWxsb2MoKSBmYWlscy4KPiA+Cj4gPiBGaXhlczogNjZiMzky
+M2ExYTBmNzdhNSAoImFybTY0OiBodWdldGxiOiBhZGQgc3VwcG9ydCBmb3IgUFRFIGNvbnRpZ3Vv
+dXMKPiA+IGJpdCkiCj4gPiBTaWduZWQtb2ZmLWJ5OiBNYXJrIFJ1dGxhbmQgPG1hcmsucnV0bGFu
+ZEBhcm0uY29tPgo+ID4gUmVwb3J0ZWQtYnk6IEt5cmlsbCBUa2FjaG92IDxreXJ5bG8udGthY2hv
+dkBhcm0uY29tPgo+ID4gQ2M6IENhdGFsaW4gTWFyaW5hcyA8Y2F0YWxpbi5tYXJpbmFzQGFybS5j
+b20+Cj4gPiBDYzogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4KPiA+IC0tLQo+ID4gIGFy
+Y2gvYXJtNjQvbW0vaHVnZXRsYnBhZ2UuYyB8IDIgKysKPiA+ICAxIGZpbGUgY2hhbmdlZCwgMiBp
+bnNlcnRpb25zKCspCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvbW0vaHVnZXRsYnBh
+Z2UuYyBiL2FyY2gvYXJtNjQvbW0vaHVnZXRsYnBhZ2UuYwo+ID4gaW5kZXggYmJlYjZhNWE2YmE2
+Li4wYmUzMzU1ZTM0OTkgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybTY0L21tL2h1Z2V0bGJwYWdl
+LmMKPiA+ICsrKyBiL2FyY2gvYXJtNjQvbW0vaHVnZXRsYnBhZ2UuYwo+ID4gQEAgLTIzMCw2ICsy
+MzAsOCBAQCBwdGVfdCAqaHVnZV9wdGVfYWxsb2Moc3RydWN0IG1tX3N0cnVjdCAqbW0sCj4gPiAg
+ICAgICAgICAgICAgICAgcHRlcCA9IChwdGVfdCAqKXB1ZHA7Cj4gPiAgICAgICAgIH0gZWxzZSBp
+ZiAoc3ogPT0gKENPTlRfUFRFX1NJWkUpKSB7Cj4gPiAgICAgICAgICAgICAgICAgcG1kcCA9IHBt
+ZF9hbGxvYyhtbSwgcHVkcCwgYWRkcik7Cj4gPiArICAgICAgICAgICAgICAgaWYgKCFwbWRwKQo+
+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIE5VTEw7Cj4gPgo+ID4gICAgICAgICAg
+ICAgICAgIFdBUk5fT04oYWRkciAmIChzeiAtIDEpKTsKPiA+ICAgICAgICAgICAgICAgICAvKgo+
+ID4gLS0KPiA+IDIuMTEuMAo+ID4KPiA+Cj4gPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fXwo+ID4gbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKPiA+
+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+ID4gaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCj4gPgoKX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
+bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
+Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
