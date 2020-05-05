@@ -2,57 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C2121C5FF9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:21:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E94C1C6007
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:26:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VlRgCssYhzjuE+nn09hnrcUaICPYVYgqTQFaRMY8VU0=; b=Zd2q0JM1GbYpQl
-	XInZDOq10IEGJPAF/qLj6uAxViucxIEkpb7l7op+2V//ue0eCWGvAQq/OHlFvNHJhhUaoHuzz4L/8
-	qQMGFQu4e+0ozPH7ZuIudCbV9dB/uc20tzpxuqg7z7KNdVbP7NO+mPyAdIQ1ejAqi/NNIZM5OmaaN
-	/Ii7fB/oTX7z2YvxeUnF5s7bXe5p84FVCEmfEmEjA5CfZMO0sv02ZmewrfI445Q97AidkhoKcwT9x
-	ZzKmhQbbAHdepZWVTh/3F9TvdBJCkTQGzC9TSv5U4JEbVUoz18g2AE50Jx0ZMX5XzjTjwe2Sjk6Vs
-	4iNGXOKk4frfEAQYUUHw==;
+	List-Owner; bh=k44R2dLPrnODN5KQUze3CoFLbMR5YbP+KZSNrAB/5E4=; b=rRCNei/UhAaQ0k
+	OXU79WQekG7HqKB5sg4aedz6xjDaPm6YnUh0QxQElO0B7Oo6p3veKFl16GPqa8exo1XGl/eAA3QSo
+	uvYwHKNRhf/JygOCTjqMdks2RWd4HwcUA8p13m2REbpkKN3Ym2VIR/DlMStmXy3wdnyKdP1aHK1qj
+	/nBcdR8+2iVXHlF2t8lMVFX8sop1w+nT3KGfP0Euhl798rEpOjg2Bbn42sacAFva9JKtLwXTOod/E
+	aFZvqedHUXriPiqpdkCaR0iCIOHVbW+LgaOK0gGz5trJPxWi2UBPNfvCKZ5qyAlV6Jz0hExcR+RIZ
+	Tf8y5H/ZoXL+F0MdKw9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW2Bv-0007V9-Er; Tue, 05 May 2020 18:21:15 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW2Bp-0007UN-6x
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:21:10 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id A47D580A5;
- Tue,  5 May 2020 18:21:57 +0000 (UTC)
-Date: Tue, 5 May 2020 11:21:06 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Tero Kristo <t-kristo@ti.com>
-Subject: Re: [PATCH 1/8] ARM: dts: omap4: fix node names for the l4_cm
- clkctrl nodes
-Message-ID: <20200505182106.GP37466@atomide.com>
-References: <20200429143002.5050-1-t-kristo@ti.com>
- <20200429143002.5050-2-t-kristo@ti.com>
- <20200429220714.GV37466@atomide.com>
- <fef91f43-df5f-99e4-7861-05190fcc2040@ti.com>
- <cb563fb2-4909-a11a-d167-a5e982f38968@ti.com>
- <20200430202538.GZ37466@atomide.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430202538.GZ37466@atomide.com>
+	id 1jW2GQ-0002Qf-VW; Tue, 05 May 2020 18:25:54 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW2GF-0002Py-81
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:25:50 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8F77D20663;
+ Tue,  5 May 2020 18:25:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588703141;
+ bh=jzIUsSLxN9/RqRoiWQZZrzjBGLn9x2XEbfuMss1MUYg=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=vttHBMHHF6Y3uQLnQ6fIYJtl8ebDcYYt3ObBGn5wTjdl0Y1VStUTA3MZauO+EJKJe
+ qM3N0g1HMq1wHzaemj80+Ei8WhHJi65BwgUiwoq/n2/74uklztDpK2C+lokjGoYXQ2
+ VQ2C29FgyAt1rIYqsiqRsUnX3fspdm/3elUS07zs=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jW2GB-009bx4-Te; Tue, 05 May 2020 19:25:40 +0100
+Date: Tue, 05 May 2020 19:25:32 +0100
+Message-ID: <86lfm6tf1f.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH 07/16] arm64: dts: arm: Fix GIC compatible names
+In-Reply-To: <20200505165212.76466-8-andre.przywara@arm.com>
+References: <20200505165212.76466-1-andre.przywara@arm.com>
+ <20200505165212.76466-8-andre.przywara@arm.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: andre.przywara@arm.com, robh@kernel.org, liviu.dudau@arm.com,
+ sudeep.holla@arm.com, lorenzo.pieralisi@arm.com, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, mark.rutland@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_112109_286405_399154F9 
-X-CRM114-Status: GOOD (  14.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_112549_117889_EE8FDA31 
+X-CRM114-Status: GOOD (  18.35  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,37 +92,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* Tony Lindgren <tony@atomide.com> [200430 20:26]:
-> * Tero Kristo <t-kristo@ti.com> [200430 08:35]:
-> > On 30/04/2020 07:55, Tero Kristo wrote:
-> > > On 30/04/2020 01:07, Tony Lindgren wrote:
-> > > > Heh this is no longer needed since commit 6c3090520554
-> > > > ("clk: ti: clkctrl: Fix hidden dependency to node name")
-> > > > that added support for using the compatible name :)
-> > > > 
-> > > > Maybe you are using some older tree? Or else there's
-> > > > still something wrong somewhere.
-> > > 
-> > > I was using 5.7-rc1 as baseline so can't be that.
-> > > 
-> > > Let me try to check this one again.
-> > 
-> > Ok you can ignore this and patch #2 for omap5 for similar case. It seems
-> > like the patch 6c3090520554 actually forgot to fix the subclock names, and
-> > it causes issues in mixed clock node setup. Will post a fix against the
-> > clock driver shortly.
+On Tue, 05 May 2020 17:52:03 +0100,
+Andre Przywara <andre.przywara@arm.com> wrote:
 > 
-> OK good to hear.
+> The GIC DT binding only allows a certain combination of DT compatible
+> strings, mostly just consisting of one name.
+> 
+> Drop the combination of multiple names and go with the
+> "arm,cortex-a15-gic" name for GICv2, as this seems to be the most widely
+> accepted string. "arm,gic-400" would be more correct, but was introduced
+> much later into the kernel's GIC driver.
+>
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi | 2 +-
+>  arch/arm64/boot/dts/arm/juno-base.dtsi           | 2 +-
+>  arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts       | 2 +-
+>  3 files changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
+> index 15fe81738e94..61a1750fcdd6 100644
+> --- a/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
+> +++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv2.dtsi
+> @@ -6,7 +6,7 @@
+>  
+>  / {
+>  	gic: interrupt-controller@2c001000 {
+> -		compatible = "arm,cortex-a15-gic", "arm,cortex-a9-gic";
+> +		compatible = "arm,cortex-a15-gic";
+>  		#interrupt-cells = <3>;
+>  		#address-cells = <2>;
+>  		interrupt-controller;
+> diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+> index 3feefd61eb76..62392ab1f880 100644
+> --- a/arch/arm64/boot/dts/arm/juno-base.dtsi
+> +++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+> @@ -69,7 +69,7 @@
+>  	};
+>  
+>  	gic: interrupt-controller@2c010000 {
+> -		compatible = "arm,gic-400", "arm,cortex-a15-gic";
+> +		compatible = "arm,cortex-a15-gic";
 
-Applying all but the first two patches into omap-for-v5.8/dt thanks.
+Why? GIC-400 is definitely the most correct compatible string. I'd
+rather see this compatible being generalised to the models rather than
+only referencing the A15 GIC.
 
-Tony
+>  		reg = <0x0 0x2c010000 0 0x1000>,
+>  		      <0x0 0x2c02f000 0 0x2000>,
+>  		      <0x0 0x2c04f000 0 0x2000>,
+> diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts b/arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts
+> index c5d15cbd8cf6..f86f6451411f 100644
+> --- a/arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts
+> +++ b/arch/arm64/boot/dts/arm/rtsm_ve-aemv8a.dts
+> @@ -95,7 +95,7 @@
+>  	};
+>  
+>  	gic: interrupt-controller@2c001000 {
+> -		compatible = "arm,cortex-a15-gic", "arm,cortex-a9-gic";
+> +		compatible = "arm,cortex-a15-gic";
+>  		#interrupt-cells = <3>;
+>  		#address-cells = <0>;
+>  		interrupt-controller;
+> -- 
+> 2.17.1
+> 
+> 
+
+Thanks,
+
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
