@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF5D31C539E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:48:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 512B41C53A5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 12:50:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1fQwGrbdquaGYLKJTqXG6PX3oA6D0qblV2zM4rlHhjs=; b=k5B111P0ojipDo
-	B71LyHSMmX969LFPdL9tAPpe54b3Ei6XDdjmKnBiN4SGWbtACIIYGbmonvw97FiOLimwq4zOl8c0u
-	EENQJpFkieGXQ+oANltm8siHFgduJKnAFnfbvAIj7ozlB/BzhGtt1EGGd1iGbEv8PwvMwaaTMIBnF
-	47udu0tseL8JsptqSJ5zHdnyXBGF55iFmLA02+ZLPanGGZ9NWJWuljpyB6AxdjzN4uzlmlV/aaxi5
-	+u/+BnC0fhPaWmWiKrwVtpgUFWZLcbIpAm1IF9MBCxk1ZuZnzB+wbijciJKOtOTg/M8lb1hPk+evq
-	5KFfcOS/ZNR7nxvFp7Wg==;
+	List-Owner; bh=GHmte5aEcz06Vgy/zkuvAUpD5kgNNCfCUqErCN9qBJI=; b=iaFRadlcV67Z/G
+	9e/tsDlt4vzyvbZGJUzFqiDSKpuYOgWPw3CJdAt5Y9rho42Ojw192N0CLOFykzsI5Z9M+Ya0G6g1m
+	5ov7o4Hf3SKNZJeO7Y6yvXJUJ4rfKr9WGlngGLpOYJZxoN7qeO/sN1LHQj0BmzltZ+FOJgK2gQMtZ
+	gJ5lIqX81fbL8vEtlKiVGMUmOQoljlDbKSkISyxEY/Lm9FRXJciMD6ldyIuvfnnJcXkqaZgxZsRGU
+	uc5C+MA+PQ3C867oOzQ54pfAypWWdCRq3K0qH+DQs2VAMOQLoqSZ2J8PjzHhDs5xHYQ9J+75DN6sV
+	AOay9oUpdUS/ABOodnYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVv7Z-0003Sy-2X; Tue, 05 May 2020 10:48:17 +0000
+	id 1jVv9m-0006Qf-Sr; Tue, 05 May 2020 10:50:34 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVv7S-0003SR-8c
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:48:11 +0000
+ id 1jVv9d-0006QL-Vp
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 10:50:27 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id CCFFE68C4E; Tue,  5 May 2020 12:48:05 +0200 (CEST)
-Date: Tue, 5 May 2020 12:48:05 +0200
+ id 64EB968C4E; Tue,  5 May 2020 12:50:23 +0200 (CEST)
+Date: Tue, 5 May 2020 12:50:23 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: Jann Horn <jannh@google.com>
-Subject: Re: [PATCH v2 1/5] binfmt_elf_fdpic: Stop using dump_emit() on
- user pointers on !MMU
-Message-ID: <20200505104805.GA17400@lst.de>
+Subject: Re: [PATCH v2 3/5] coredump: Refactor page range dumping into
+ common helper
+Message-ID: <20200505105023.GB17400@lst.de>
 References: <20200429214954.44866-1-jannh@google.com>
- <20200429214954.44866-2-jannh@google.com>
+ <20200429214954.44866-4-jannh@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429214954.44866-2-jannh@google.com>
+In-Reply-To: <20200429214954.44866-4-jannh@google.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_034810_450468_EE83D49F 
-X-CRM114-Status: UNSURE (   9.45  )
+X-CRM114-CacheID: sfid-20200505_035026_174660_5E3656C3 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,14 +77,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 11:49:50PM +0200, Jann Horn wrote:
-> dump_emit() is for kernel pointers, and VMAs describe userspace memory.
-> Let's be tidy here and avoid accessing userspace pointers under KERNEL_DS,
-> even if it probably doesn't matter much on !MMU systems - especially given
-> that it looks like we can just use the same get_dump_page() as on MMU if
-> we move it out of the CONFIG_MMU block.
+On Wed, Apr 29, 2020 at 11:49:52PM +0200, Jann Horn wrote:
+> Both fs/binfmt_elf.c and fs/binfmt_elf_fdpic.c need to dump ranges of pages
+> into the coredump file. Extract that logic into a common helper.
+> 
+> Any other binfmt that actually wants to create coredumps will probably need
+> the same function; so stop making get_dump_page() depend on
+> CONFIG_ELF_CORE.
 
-Looks sensible.  Did you get a chance to test this with a nommu setup?
+Why is the #ifdef CONFIG_ELF_CORE in gup.c removed when the only
+remaining caller is under the same ifdef?
+
+Otherwise this looks fine to me.
 
 _______________________________________________
 linux-arm-kernel mailing list
