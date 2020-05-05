@@ -2,74 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 245391C5854
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:13:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2D801C585A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KfS+/6zAPjb9142n9IrkRYC5rJPGhKSZ3snicZ17618=; b=fSGgn0v0EYRAvc
-	GQQza5qw/JD1ovtP7ngLVVSbcCJAGeQXXKQTdmeeT2St5AdUhn5LX53rOryhmgE6Bl3eYnF09kqXy
-	oVU/dWmgjUgdhsyS5V9Qa2wSctICOziGFQ4lpN5hIIMUMIMpIYvDSU1YhTAmlqksKwaJ/uJqyksTC
-	rBb2akpTg4p035bbSWukheGHWrQhqRn1qdnwsnjOays0vEGpPcnwIqHdrEI4xs62tDwsgskg/169O
-	7VxylTuZaho0DD+Dh9yXvHQ5Ufbx/ua9zKk3EPo41cTu+YM5BGtHoPDLRUWc8sYcUIwp4MlV5I9Cy
-	iPptYfSjjl7rcqU2oaMQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=7wEHD1PhOGrtnaI+ctj1zA4Jumze4Jy2c10bXsRtgWg=; b=dy3A65tjznx2u63mrppZilK13
+	gn0HYofT7IBC4inLlhF5BBIO9iG7eWLg1teMDKoDaJegdAhvhSf6WdXs7CjNBfdRzj02ydvK6Qd2L
+	d814dcyVR+Xsnu6Fr6PA1OqagE5NJ4Cbw7C/WMtm2C5uXA1ckhA2/C+2nfQAwcDffHJiWzjbFhJM8
+	GaU/6/l4jZq/JbW4H+unpvEu1wYNkugGekJPfhp6rLU2RMEs0EVRNZMNQmfJ31/MGQonBj9frtLpC
+	rRUgheO/VjkNw4cny0RwcoY+4ARvoVfLD5ax5jF2NkRIJV7r7iMpw0Z4aHh5qyK5D84VTPo+4i4Cm
+	JlsfZ9wMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVyJx-0003w4-4j; Tue, 05 May 2020 14:13:17 +0000
-Received: from mout.kundenserver.de ([212.227.126.134])
+	id 1jVyKM-0004Do-9y; Tue, 05 May 2020 14:13:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVyJo-0003vU-Hj
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:13:09 +0000
-Received: from localhost.localdomain ([149.172.19.189]) by
- mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPA (Nemesis) id
- 1Mrwnt-1ikU0n0FhF-00nxqr; Tue, 05 May 2020 16:13:00 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Torsten Duwe <duwe@lst.de>, Mark Rutland <mark.rutland@arm.com>,
- Ard Biesheuvel <ardb@kernel.org>,
- Amit Daniel Kachhap <amit.kachhap@arm.com>
-Subject: [PATCH] arm64: disable patchable function entry on big-endian clang
- builds
-Date: Tue,  5 May 2020 16:12:36 +0200
-Message-Id: <20200505141257.707945-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.26.0
+ id 1jVyK1-00047u-UL
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:13:23 +0000
+Received: from localhost (p54B335A1.dip0.t-ipconnect.de [84.179.53.161])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5D8D420735;
+ Tue,  5 May 2020 14:13:19 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588688000;
+ bh=R+70PJ9vucGn241Y2Cqa7rgwicdjK9Vs/+6SMmkQ9rA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=FLcOyPVXax4walL2ONgDDGm3H9TAh64RPOsmQNypepd9HqsoSBONz+ZzlsIDQ5vD5
+ YHgBECF+mKdfrretnacbW9YNrIHo84HsBZXGZITataDIOYcqrhrgueLdEdcIRKvjT6
+ Bgo9XVwRjgwp7Tv78kNCktWKQfVJYUTzZCZbKjmw=
+Date: Tue, 5 May 2020 16:13:16 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
+Subject: Re: [PATCH] i2c: drivers: Remove superfluous error message
+Message-ID: <20200505141316.GB2468@ninjato>
+References: <20200503120847.13528-1-aishwaryarj100@gmail.com>
+ <20200504114408.9128-1-aishwaryarj100@gmail.com>
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:rkN2hFA/4F6NEnM1J64C8Aoib8T4jOG+siBiFVT9WROwOdH7x9t
- 4WH888TrHbFW/FHpjxq3U7UIYxkq42gZJvGVmzWSKCE/CP5xLY+4t0fiBxQKzBPqACB4Rxu
- Ppew9ALCOA7Zl3kFJwrRLZlpqi3jMRixTt0nmQPz31Umnk3BLwwh/1zbLQKb3mod0qsnKR/
- rNXzfBEB11Ep2dBi8d6QQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cdva0oxEiZM=:FQRtrzAr9rWx5IUwkwoKVU
- 4+edO8zLchzG0t3lP2T3zLl0VcO/vDceZ7U8gqo0szcf3UGrnp8cqm3RsThr2qeuZDCnoxmJO
- veqZajiQ7CWyp2xDqmSubJR9bg6if5TOtLgEJ48h50YQHo2owT1RleKCLy76qLfmwy4xRXVkR
- XKLca5YQpwBnghGgN/jyJE2KrT/TKk+TsK/QDz2CRA77IiqjaVSB2akJo9+zH0ilrj/1TUj2D
- beLTyKsIsE1xxTZGlLlp66kd5pROyDWGCL1CJIrsmQdcqPBJv0vfcntLO68w61O8bNp6iWhCh
- ANwWYVWBfMwiIl2qwGJw3ZgjIySZ8wCqK5wU1YqOl26ial/nrVdcbrkixCFkG6atDKTbdZv5o
- lM6FuDHZ2WAl5ilc09yi8pu+sn3P1/m+UcpcsxxEpqJQxNKYQsIzCTZ3uyuC3Uz9PD7HjK32B
- 0Bx+Tcgsyya3G5pIone2mmBYxaClBltnbMnWQZJtTIlVpk3MIxLlrORfTCXPpOiqfOTzqNz3J
- D9zb8xppaQvpQHwp81dh1mJh7SVz99Du3S+zZy35Syk9ovW1Te6tM60nT1aUZa9TYRgScSyJ6
- fTfaB8IpMAB8iJV/RjgmGLPR9q4/q9fWr7cd7f+JQwWvmp3H9ACLTum5FFlc6OKxiAo+S0W6V
- Qe2JeJswxsdeh+GNiwZBcsq5GwonmV950Wpccx0cOX/zGJEK3kzxhV6CFJaN+pV9Ae2jku1w2
- 9INoLYGGsrvr8JLgpirpXlAifwJgXoorZG035wf4Nt+ZqQ7+8lCCAdPFhzkSnTRkqZ59sCG5x
- v/JSrNAdWm8DfWvw+w/viI7QyCBKfg1VXkZ7O+ztIiSTuzh++8=
+In-Reply-To: <20200504114408.9128-1-aishwaryarj100@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_071308_879957_5639A21D 
-X-CRM114-Status: GOOD (  12.60  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_071322_068638_52A4A299 
+X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.134 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [212.227.126.134 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,53 +77,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <jthierry@redhat.com>, Arnd Bergmann <arnd@arndb.de>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Marc Zyngier <maz@kernel.org>,
- Torsten Duwe <duwe@suse.de>, Steve Capper <steve.capper@arm.com>,
- linux-kernel@vger.kernel.org, Kristina Martsenko <kristina.martsenko@arm.com>,
- AKASHI Takahiro <takahiro.akashi@linaro.org>, Alexandre Ghiti <alex@ghiti.fr>,
- clang-built-linux@googlegroups.com, Josh Poimboeuf <jpoimboe@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Ionela Voinescu <ionela.voinescu@arm.com>,
- linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org,
+ Thor Thayer <thor.thayer@linux.intel.com>, Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Gregory CLEMENT <gregory.clement@bootlin.com>,
+ Baruch Siach <baruch@tkos.co.il>,
+ Pierre-Yves MORDRET <pierre-yves.mordret@st.com>,
+ Vladimir Zapolskiy <vz@mleia.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>, linux-i2c@vger.kernel.org,
+ Dmitry Osipenko <digetx@gmail.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-kernel@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============6832026551139533483=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Clang only supports the patchable_function_entry attribute on
-little-endian arm64 builds, but not on big-endian:
 
-include/linux/kasan-checks.h:16:8: error: unknown attribute 'patchable_function_entry' ignored [-Werror,-Wunknown-attributes]
+--===============6832026551139533483==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="jq0ap7NbKX2Kqbes"
+Content-Disposition: inline
 
-Disable that configuration with another dependency. Unfortunately
-the existing check is not enough, as $(cc-option) at this point does
-not pass the -mbig-endian flag.
 
-Fixes: 3b23e4991fb6 ("arm64: implement ftrace with regs")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- arch/arm64/Kconfig | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+--jq0ap7NbKX2Kqbes
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 4b256fa6db7a..a33d6402b934 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -151,7 +151,7 @@ config ARM64
- 	select HAVE_DMA_CONTIGUOUS
- 	select HAVE_DYNAMIC_FTRACE
- 	select HAVE_DYNAMIC_FTRACE_WITH_REGS \
--		if $(cc-option,-fpatchable-function-entry=2)
-+		if $(cc-option,-fpatchable-function-entry=2) && !(CC_IS_CLANG && CPU_BIG_ENDIAN)
- 	select HAVE_EFFICIENT_UNALIGNED_ACCESS
- 	select HAVE_FAST_GUP
- 	select HAVE_FTRACE_MCOUNT_RECORD
--- 
-2.26.0
+On Mon, May 04, 2020 at 05:14:06PM +0530, Aishwarya Ramakrishnan wrote:
+> The function platform_get_irq can log an error by itself.
+> This omit a redundant message for exception handling in the
+> calling function.
+>=20
+> Suggested by Coccinelle.
+>=20
+> Signed-off-by: Aishwarya Ramakrishnan <aishwaryarj100@gmail.com>
 
+Sorry, I forgot that these are already fixed with
+e42688ed5cf5936fb55c78cc365dbe0944af7c63 in i2c/for-next.
+
+
+--jq0ap7NbKX2Kqbes
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6xdHgACgkQFA3kzBSg
+KbbwRA/+LGyt1I9I1ywJp0ulKpglf4waJU/2Fay5kC0dKFkixtjarMsChvsIcpJJ
+eJlTxUY6krLo7eUh223GmX5Y313bXl5uFIvEC4HCEbcxSVLOL81jvdVkDZcVG9u3
+CMBCXMCchPdGZnbPL7Yzvpshuj87+UtHNnS/a293LwO3exDR5eVZEGi/aICrRum/
+uf273Fx8g0pzh5h7J5erA4dgbrxP20PNt4BYUlfe9sdWft7yW1OS/kd3gaGxBnQp
+LCTk0q9f85vYTzrUX1bk2jvpls0n1kAnD5F1+73kvFq+DsnZD0t1C3FDv/GpRcc3
+TuC+rl4mcAVIoOtErmfT38xRW4PIAu0qzWJDNbnZrd12fZKH/kw20L7Yq5nmIjvi
+mXSpg+JKua+e69VuEsxSTuoDxxEVyWTo/yKc1rbDJNWKwngiR8bldUZDQDtOoSqA
+aWskPYf2kqarsWXYGeaXB8n4CXjD6fyufGjr+SsOD7tcd9ULOOzhfN6GUENw1t9L
+tI03I7owU1+hShjx/pBDpFlqzJQExHLFjMgoMD9aB5XxA7nY82ny4bcpjdy34qqW
+GF88XiojrHftpqtvEfq/qc22l89lvm9Yts8sNg0Axc+jp2/jiKLgY2rgfnZJ+e0r
+MdN0pEl1GRcD3e4WK+16qHy0BViPHmBqCreipeNddURCEXYezmo=
+=Q1Hw
+-----END PGP SIGNATURE-----
+
+--jq0ap7NbKX2Kqbes--
+
+
+--===============6832026551139533483==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6832026551139533483==--
+
