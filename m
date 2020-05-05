@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4175A1C5A82
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:07:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93F571C5AA0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:09:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Ca7XKHndGnCojJU2YBF03CrKlCklfzEHMrp4Io7SRTw=; b=qgOhB5ggEnK6wBHhNjHbQXH2ZH
-	mGjYpf3OXmQUQL78rbQtLWdFgC2tHT9YS6P/BXvva8kMztXwWJ3A7EDj6xIV0YQYEN/UpJNjJB7P5
-	N0rqDSD28aDfs21tr74oimFfxccMtr7XLNRyVKiSFqEWR+W3lFRqcjjeLO2HLvDt7v9SWgNlmcr+v
-	vQlyQVWwCdeQFkVxTYvi3SqqeDWVQw0CUkGDYW8ZGz23eTSHWLhXqzLbgjB9Cka/ZyKMngLgcSGMO
-	xeVQrhRVhxgyvZMGiI+j/lsRGmo63d0+5cLhxpSJeFhboIEgVAZGxUv/I9jiBKhvat5F6Dq598y5L
-	2Q5By39g==;
+	bh=o88WTzBcvnoUYnEZb2x95o/Ac50sJeLLsahEYSuC3g8=; b=UZhIzwuhHOgwaZRXgx4iIXgruN
+	KrM4h5KFwkXuHppT/rqpTu4H8LCjKZSBXGml0q5dL6LpUEISzVPqB09ey75yMO+jhCckk5do+bm+H
+	2UxPnbbf6NbLjZ2ITeG0wpwV3iyAIme5flb3gdzEFR8TJlbRtUGVA6O+GSrqvQtYq2afl4la+TJ9H
+	t/Lf+nXB3vQ1S/O2vDekijRzTD/aVNzk7G0wUgUiZZLvPKRzlFyLfLgkhsGswUudbWEtL7PRiuTow
+	F02Kt/HlCiBTo0GnG0WJid8wkuKOCJLG8aEmfBbBwq5seB8WEMrXwu4aLcuGgbppuQUvJPIWOV1Qc
+	jqDBnInA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzAj-0006n5-1z; Tue, 05 May 2020 15:07:49 +0000
+	id 1jVzCf-0000Qw-CW; Tue, 05 May 2020 15:09:49 +0000
 Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzAW-0006jF-Ju
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:07:38 +0000
+ id 1jVzAY-0006jD-7j
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:07:42 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:bd97:8453:3b10:1832])
  by xavier.telenet-ops.be with bizsmtp
- id b37T2200U3VwRR30137TZP; Tue, 05 May 2020 17:07:28 +0200
+ id b37T2200V3VwRR30137TZR; Tue, 05 May 2020 17:07:28 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jVzAN-00028F-QG; Tue, 05 May 2020 17:07:27 +0200
+ id 1jVzAN-00028H-R1; Tue, 05 May 2020 17:07:27 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jVzAN-0000Qf-OP; Tue, 05 May 2020 17:07:27 +0200
+ id 1jVzAN-0000Qj-Pc; Tue, 05 May 2020 17:07:27 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: soc@kernel.org
-Subject: [PATCH v2 06/15] ARM: berlin: Drop unneeded select of HAVE_SMP
-Date: Tue,  5 May 2020 17:07:13 +0200
-Message-Id: <20200505150722.1575-7-geert+renesas@glider.be>
+Subject: [PATCH v2 07/15] ARM: clps711x: Drop unneeded select of
+ multi-platform selected options
+Date: Tue,  5 May 2020 17:07:14 +0200
+Message-Id: <20200505150722.1575-8-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200505150722.1575-1-geert+renesas@glider.be>
 References: <20200505150722.1575-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_080736_801246_FBD214C0 
-X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-CacheID: sfid-20200505_080738_421393_7C343698 
+X-CRM114-Status: UNSURE (   7.98  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,42 +71,50 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
  Kevin Hilman <khilman@kernel.org>, linux-kernel@vger.kernel.org,
- Jisheng Zhang <Jisheng.Zhang@synaptics.com>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+ Alexander Shiyan <shc_work@mail.ru>, Olof Johansson <olof@lixom.net>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support for Marvell Berlin SoCs depends on ARCH_MULTI_V7.
-As the latter selects HAVE_SMP, there is no need for MACH_BERLIN_BG2 to
-select HAVE_SMP.
+Support for Cirrus Logic EP721x/EP731x-based SoCs depends on
+ARCH_MULTI_V7, and thus on ARCH_MULTIPLATFORM.
+As the latter selects AUTO_ZRELADDR, TIMER_OF, COMMON_CLK,
+GENERIC_CLOCKEVENTS, and USE_OF, there is no need for ARCH_CLPS711X to
+select any of them.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Cc: Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: Alexander Shiyan <shc_work@mail.ru>
 Acked-by: Arnd Bergmann <arnd@arndb.de>
 ---
 v2:
   - Add Acked-by.
 ---
- arch/arm/mach-berlin/Kconfig | 1 -
- 1 file changed, 1 deletion(-)
+ arch/arm/mach-clps711x/Kconfig | 5 -----
+ 1 file changed, 5 deletions(-)
 
-diff --git a/arch/arm/mach-berlin/Kconfig b/arch/arm/mach-berlin/Kconfig
-index 5b1f61fd78780300..01861fa72c9714b7 100644
---- a/arch/arm/mach-berlin/Kconfig
-+++ b/arch/arm/mach-berlin/Kconfig
-@@ -19,7 +19,6 @@ config MACH_BERLIN_BG2
- 	select CPU_PJ4B
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_ARM_TWD if SMP
--	select HAVE_SMP
- 	select PINCTRL_BERLIN_BG2
- 
- config MACH_BERLIN_BG2CD
+diff --git a/arch/arm/mach-clps711x/Kconfig b/arch/arm/mach-clps711x/Kconfig
+index fc9188b54dd66a74..314de9477b84989e 100644
+--- a/arch/arm/mach-clps711x/Kconfig
++++ b/arch/arm/mach-clps711x/Kconfig
+@@ -2,15 +2,10 @@
+ menuconfig ARCH_CLPS711X
+ 	bool "Cirrus Logic EP721x/EP731x-based"
+ 	depends on ARCH_MULTI_V4T
+-	select AUTO_ZRELADDR
+-	select TIMER_OF
+ 	select CLPS711X_TIMER
+-	select COMMON_CLK
+ 	select CPU_ARM720T
+-	select GENERIC_CLOCKEVENTS
+ 	select GPIOLIB
+ 	select MFD_SYSCON
+ 	select OF_IRQ
+-	select USE_OF
+ 	help
+ 	  Select this if you use ARMv4T Cirrus Logic chips.
 -- 
 2.17.1
 
