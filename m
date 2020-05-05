@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93F571C5AA0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:09:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88F2E1C5A8F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:08:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=o88WTzBcvnoUYnEZb2x95o/Ac50sJeLLsahEYSuC3g8=; b=UZhIzwuhHOgwaZRXgx4iIXgruN
-	KrM4h5KFwkXuHppT/rqpTu4H8LCjKZSBXGml0q5dL6LpUEISzVPqB09ey75yMO+jhCckk5do+bm+H
-	2UxPnbbf6NbLjZ2ITeG0wpwV3iyAIme5flb3gdzEFR8TJlbRtUGVA6O+GSrqvQtYq2afl4la+TJ9H
-	t/Lf+nXB3vQ1S/O2vDekijRzTD/aVNzk7G0wUgUiZZLvPKRzlFyLfLgkhsGswUudbWEtL7PRiuTow
-	F02Kt/HlCiBTo0GnG0WJid8wkuKOCJLG8aEmfBbBwq5seB8WEMrXwu4aLcuGgbppuQUvJPIWOV1Qc
-	jqDBnInA==;
+	bh=Es9+FNSXaAPqzz7jnRanqgC4aTSXJSgaY3Ax61Y7S6E=; b=c+eQUIPzqmARw5o4b6hZ+AG7hX
+	0vXxbytRE9tSby/FiQP3YMwgrjUyFaj6EJMVURAlNdBT7ghetfOR2IRB+7+cZpAq2XH9F2QFNRWGs
+	9/6pnZtCEFGpQErinhdmY5h5Hp/qua/6oPlGeIJIdF4bP+23op8EyJX9wd3Esv9Ppwd3RSBo/wks4
+	4n+LGbxFs9nsXKzlKPM7tJQtSuQAR2lQy1eXaQVKNu6S0D0fOcP6bgeDlIR2UTk49wuOMT5cGkeS/
+	aYnedf32oy2P98ifH48Gs/DCtxpNcdoQiQ4jEmfcCtaCtY6WjFNlXtiAKKcf2VZM1wSLUfM2I33e5
+	ormUKNrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzCf-0000Qw-CW; Tue, 05 May 2020 15:09:49 +0000
+	id 1jVzB9-0007D5-MA; Tue, 05 May 2020 15:08:15 +0000
 Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzAY-0006jD-7j
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:07:42 +0000
+ id 1jVzAW-0006jE-KD
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:07:40 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:bd97:8453:3b10:1832])
  by xavier.telenet-ops.be with bizsmtp
- id b37T2200V3VwRR30137TZR; Tue, 05 May 2020 17:07:28 +0200
+ id b37T2200X3VwRR30137TZS; Tue, 05 May 2020 17:07:28 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jVzAN-00028H-R1; Tue, 05 May 2020 17:07:27 +0200
+ id 1jVzAN-00028K-SI; Tue, 05 May 2020 17:07:27 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jVzAN-0000Qj-Pc; Tue, 05 May 2020 17:07:27 +0200
+ id 1jVzAN-0000Qm-Qi; Tue, 05 May 2020 17:07:27 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: soc@kernel.org
-Subject: [PATCH v2 07/15] ARM: clps711x: Drop unneeded select of
- multi-platform selected options
-Date: Tue,  5 May 2020 17:07:14 +0200
-Message-Id: <20200505150722.1575-8-geert+renesas@glider.be>
+Subject: [PATCH v2 08/15] ARM: davinci: Drop unneeded select of TIMER_OF
+Date: Tue,  5 May 2020 17:07:15 +0200
+Message-Id: <20200505150722.1575-9-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200505150722.1575-1-geert+renesas@glider.be>
 References: <20200505150722.1575-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_080738_421393_7C343698 
-X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-CacheID: sfid-20200505_080736_805965_ACCC5E8B 
+X-CRM114-Status: UNSURE (   8.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,51 +69,44 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Arnd Bergmann <arnd@arndb.de>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Kevin Hilman <khilman@kernel.org>, linux-kernel@vger.kernel.org,
- Alexander Shiyan <shc_work@mail.ru>, Olof Johansson <olof@lixom.net>,
- linux-arm-kernel@lists.infradead.org
+ Kevin Hilman <khilman@kernel.org>, Sekhar Nori <nsekhar@ti.com>,
+ linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Olof Johansson <olof@lixom.net>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Support for Cirrus Logic EP721x/EP731x-based SoCs depends on
-ARCH_MULTI_V7, and thus on ARCH_MULTIPLATFORM.
-As the latter selects AUTO_ZRELADDR, TIMER_OF, COMMON_CLK,
-GENERIC_CLOCKEVENTS, and USE_OF, there is no need for ARCH_CLPS711X to
-select any of them.
+Support for TI DaVinci SoCs depends on ARCH_MULTI_V5, and thus on
+ARCH_MULTIPLATFORM.
+As the latter selects TIMER_OF, there is no need for MACH_DA8XX_DT to
+select TIMER_OF.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
-Cc: Alexander Shiyan <shc_work@mail.ru>
+Cc: Sekhar Nori <nsekhar@ti.com>
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 Acked-by: Arnd Bergmann <arnd@arndb.de>
+Acked-by: Sekhar Nori <nsekhar@ti.com>
 ---
 v2:
   - Add Acked-by.
 ---
- arch/arm/mach-clps711x/Kconfig | 5 -----
- 1 file changed, 5 deletions(-)
+ arch/arm/mach-davinci/Kconfig | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/arch/arm/mach-clps711x/Kconfig b/arch/arm/mach-clps711x/Kconfig
-index fc9188b54dd66a74..314de9477b84989e 100644
---- a/arch/arm/mach-clps711x/Kconfig
-+++ b/arch/arm/mach-clps711x/Kconfig
-@@ -2,15 +2,10 @@
- menuconfig ARCH_CLPS711X
- 	bool "Cirrus Logic EP721x/EP731x-based"
- 	depends on ARCH_MULTI_V4T
--	select AUTO_ZRELADDR
+diff --git a/arch/arm/mach-davinci/Kconfig b/arch/arm/mach-davinci/Kconfig
+index 02b180ad724540c0..d028d38a44bfedba 100644
+--- a/arch/arm/mach-davinci/Kconfig
++++ b/arch/arm/mach-davinci/Kconfig
+@@ -64,7 +64,6 @@ config MACH_DA8XX_DT
+ 	default y
+ 	depends on ARCH_DAVINCI_DA850
+ 	select PINCTRL
 -	select TIMER_OF
- 	select CLPS711X_TIMER
--	select COMMON_CLK
- 	select CPU_ARM720T
--	select GENERIC_CLOCKEVENTS
- 	select GPIOLIB
- 	select MFD_SYSCON
- 	select OF_IRQ
--	select USE_OF
  	help
- 	  Select this if you use ARMv4T Cirrus Logic chips.
+ 	  Say y here to include support for TI DaVinci DA850 based using
+ 	  Flattened Device Tree. More information at Documentation/devicetree
 -- 
 2.17.1
 
