@@ -2,73 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 78D8E1C547D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:34:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C2431C5479
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:33:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pZ/JYYasAfS/WShZ98LcpgZvEmWtP+lmlK+NIGyW8QI=; b=Cz6+1ehAT57lQC
-	BBOKfc+f904euhd0S5nDCOhEy2l6FB1zO0uGupDZrQQzJIsaFb7nYux2nfosR2+6NB8XkDp9CkMh/
-	ZsnfXPrjWy+rKGZNAFxt/cE9uSeTg/WgtQzguYhsv8RFXRfkDE5tQZZsd0sQtpnI0NkbjMlxBvEDi
-	MtEJ5zCoMSaG19GHH442LHNqmHEZHGggE66BsQJJFPLWIHm+SzIPral6nM+9p6lyZUdDVWy/y305x
-	gxpazTpApYpkyIQk45LAD5Po9qLFFVZNbv548XPR6XfdmN0erYtn0ThNagO5pXf2lgKdkB/Fu6Igl
-	5DbAESMpMQg+I6N2B1eA==;
+	List-Owner; bh=/OGk/Dy98B+3FwWTXN9k5FKUWwgGJGj9EhJxROTpG6U=; b=ihhj+VOipJt2Y3
+	Wpzo+2LefEVcfaLVM2nmy0D7zljnwxNDZG8AZa3I62PTWpZyXkrY29+awB15W/4ymsPtQ6gC4uPwH
+	71XMvgRSDwIAiFTF2JxSCgtPwRzUxk8mmn1fj/hWdUgO2/HigkWGL4/8KdMx+H60TVwoxI81X2MJr
+	ZGn4qO6qSgDO/MQnWceGjGdtuhl7sLN1iZCa8dGzVR2aULeh24ivXYaJVv9UAwlq7NLbacbUbJ9fQ
+	YjaiScPtPIzZSw5LH3G26dK53GoFXrp4b5Ag/Msrsoz6tnWjuS5xm7LC0oQo4ek7Askr9vFdjASTY
+	QvSvB9CtT4N6v0VQf4ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVvpo-0003HZ-L6; Tue, 05 May 2020 11:34:00 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1jVvpb-00037u-MQ; Tue, 05 May 2020 11:33:47 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVvpX-00039C-6y
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:33:44 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id z1so988720vsn.11
+ id 1jVvpR-00035J-Sq
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:33:39 +0000
+Received: by mail-lf1-x144.google.com with SMTP id x73so1072597lfa.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 04:33:42 -0700 (PDT)
+ Tue, 05 May 2020 04:33:37 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=osnN+k7TRx1CxNSurAK8vOShk1LyMQb2x8AnE6QzWks=;
- b=oZ94coJsUHPB+yZjtmsoTEBVsGcjaStmgTIKwayDc+QAfqUHeJ1sTaV/T3k6EeMTZ4
- HV7Mpkil3Si743wW129jyYptj8WEJ+CJj6iv5sMvm4iwAcnVkWKrXIeis11TASfWj6Lf
- DeZ93pzzR6dXI+LGbkFgK33doL4KxxaKuhiZi/1SBZ16/iCt32twy9oZPIbr77JK56ww
- i6mL6VNikqgPVJgJ1xOUQ00ZCjnkPOLiALYZI96YuKWxnLYAhmFOeRu3MPn4Cypxs/EW
- KlzDQ4T3zF/WsiFcTuJBPMyWbktb2FM19Zt1bL+6W7i4PlqIzTiiAlN05kFi9IpW682z
- A2yQ==
+ :cc; bh=hupIsa73mYi5wqryxe4Qi42JysQkQpBvcd0iG3bDTIg=;
+ b=VH3NB1RZHEvs5K7gdOjwynz0XSk4hklChAwSnf9CBV0dqOMKufdJjyxgi+kZvX5uNZ
+ +oynGrV0QHSRGalM8tgG/rbkxVYT8F0cBFML/4yh0b8obwpoV2EwRk7T1x5Czne4EXu5
+ l5uw/K26uHeZS6VWJsGc7f5OjmRrmPWwevTr+TnDoyD2fSHoASkUOKfFhaclL3Oi3rfB
+ RBoM5NzMZSJtkRMwsAYIPgcAf6di6MPGj3PtIXwHnOQ0X3xLs1KYjdDogTLFWE5X/KBm
+ +m6A6Xe+SN8BnlU1uKncJpvfWoeRLE476mXu8gCUiXNZ4q+V+iA/qf7Mn3GUSl3H7h58
+ FI8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=osnN+k7TRx1CxNSurAK8vOShk1LyMQb2x8AnE6QzWks=;
- b=DcNeLYKrZT0qWdwXUdPQG+oEq/LF3GN5Q+HskBtEGOeSzWkfyj1oTniAHIAQBt6udM
- lD8Tr4mEetqw78MrRp8KUPLh2APgnrY5B3lSkUlKurPe0tFZ/abh76dBStRSnSMlckSF
- /3E6GPT3lewVZcjIOJ7R7QH6njx3zvrbGXosr2ZdLwUNALWDUXs6/DxPClwXr7e3VHQD
- caoTVFw0CC9ud8DQTgXeuxjPvecchFv0ONdzwpBfPo/1dZaDYfU8RUgcrGD1ACVViHaz
- 4WkxjQAGVcT/oPWvAOvIOdCtjQmV+KE6rlDWRzR51znrT6FycsulMRBxCaXRvbsRuszB
- 3Cxw==
-X-Gm-Message-State: AGi0PuagH7+UAQgmZZI2zpulQWBhvEMAdItP9uUf+EDpS4oS4KurFhz5
- aX6WFzp/UwR0hTeWHoU0ZTDNApgJzupWB18cjlb6aA==
-X-Google-Smtp-Source: APiQypLY8nKD4DfZcnCRiLiUDvntUoeR/uDMv3OvvZWGA22jovAi64KJ1DFoGEwu2WgpKh3ipBPvYkzCgsaD0NcKFKg=
-X-Received: by 2002:a67:302:: with SMTP id 2mr2119733vsd.165.1588678422073;
- Tue, 05 May 2020 04:33:42 -0700 (PDT)
+ bh=hupIsa73mYi5wqryxe4Qi42JysQkQpBvcd0iG3bDTIg=;
+ b=i9hiAyxWpei4VqNo2JcAuBMcHngunp62AxLTV2ZWo/CpWWjqq1PNbpwTrUEAxErRUl
+ DucDvfNY90dSpH/qMz6pM48z9tPCMW0sgFM+Dzpocr6eZP2XeOOVfYu3eih1U9gojjB+
+ KnFxZxX8kqtMXBHRIH3Ta22XkDMsgtMKQrhmCoG2I+PN2DcBLVi3/33vh2ZjZ9nygabR
+ l52Q43wEfSvbL/koaHz1eh9TosWicXYWQGYc+TfVs7MzLeib5gm3rUmAF9cpn/uLCuHi
+ 8zUXdDAnG/0Y18Mj73QGaHOHuezFDQ1Dh704QApfJ9L4/443RLdGmdGHT2QUJ0NogkrE
+ XqSA==
+X-Gm-Message-State: AGi0Pubo1oSZDXE3ZUssqbDhjkmUvMYosgAGWVlSt+FHP5dEwkFze+0y
+ svEcdfhPwOONaQqm0FvBwcWovcVuclC+ntqS0Q+G5g==
+X-Google-Smtp-Source: APiQypLU2m/D7oJWk9It8mtjKBIlV1BpWKwlq9Nc3PajJn78yBAiMiIjgK7Faej/USSOYk2Wxlaz7fdud7Qz/+U/Wfg=
+X-Received: by 2002:a19:7418:: with SMTP id v24mr1403778lfe.15.1588678415695; 
+ Tue, 05 May 2020 04:33:35 -0700 (PDT)
 MIME-Version: 1.0
-References: <1588031768-23677-1-git-send-email-chun-hung.wu@mediatek.com>
-In-Reply-To: <1588031768-23677-1-git-send-email-chun-hung.wu@mediatek.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 5 May 2020 13:33:05 +0200
-Message-ID: <CAPDyKFrE_0Cm3PzmZ9qAzKHmhWobYovNRjrs5zk2YL5CQac=XA@mail.gmail.com>
-Subject: Re: [PATCH v5 0/5] mmc: mediatek: add mmc cqhci support
-To: Chun-Hung Wu <chun-hung.wu@mediatek.com>
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+ <20200425112950.3a4815b6@why>
+ <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
+ <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
+ <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
+ <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
+ <20200430101322.420e4052@why>
+ <CAFA6WYO+NGLfNkOah4YzXx5XuaDh=QtWHgnMBwwMFY1zRt15GQ@mail.gmail.com>
+ <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
+ <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
+ <306aecc560a9503e500fbf1f512c6d30@kernel.org>
+In-Reply-To: <306aecc560a9503e500fbf1f512c6d30@kernel.org>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Tue, 5 May 2020 17:03:24 +0530
+Message-ID: <CAFA6WYPHWP46TY_XdxVVrTr6AChU_1ATXu+p32vXCjkaXWPWOQ@mail.gmail.com>
+Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
+ pseudo NMI
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_043343_296842_C816DDA1 
-X-CRM114-Status: GOOD (  12.78  )
+X-CRM114-CacheID: sfid-20200505_043337_935348_890F0B3B 
+X-CRM114-Status: GOOD (  15.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -90,68 +102,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Kuohong Wang <kuohong.wang@mediatek.com>,
- Adrian Hunter <adrian.hunter@intel.com>, Yong Mao <yong.mao@mediatek.com>,
+Cc: Daniel Thompson <daniel.thompson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Stanley Chu <stanley.chu@mediatek.com>,
- Chaotian Jing <chaotian.jing@mediatek.com>
+ Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
+ Jason Wessel <jason.wessel@windriver.com>,
+ kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-- trimmed cc-list (Please do so also for you next submission)
+On Tue, 5 May 2020 at 15:38, Marc Zyngier <maz@kernel.org> wrote:
+>
+> On 2020-05-05 05:09, Sumit Garg wrote:
+> > On Fri, 1 May 2020 at 18:33, Sumit Garg <sumit.garg@linaro.org> wrote:
+>
+> [...]
+>
+> > In case there are no major objections to this approach, I will post
+> > complete v2 patch-set (alongwith Marc's patches) for detailed review.
+>
+> As this is still a work in progress (I'm currently wrestling with
+> the stupid RPi driver), whatever you have is unlikely to apply on
+> top of the final series.
+>
+> I'm not going to stop you from posting the patches, it is just that
+> they will be obsolete by the end of the week...
 
-On Tue, 28 Apr 2020 at 01:57, Chun-Hung Wu <chun-hung.wu@mediatek.com> wrote:
+Thanks for the heads up. Will wait for your final series.
+
+But while working on an NMI request, I noticed a hack in common gic
+code [1] which basically enables all SGIs for every CPU by default.
+This hack is quite similar to mine initial hack to set priority for a
+particular SGI by default to act as pseudo NMI.
+
+Due to this hack I got following error message while configuring SGI as NMI:
+
+[    0.000000] GICv3: Cannot set NMI property of enabled IRQ 8
+[    0.000000] genirq: Failed to setup NMI delivery: irq 8
+
+I think chained IRQs worked for you due to this hack only as it
+doesn't seem to enable SGIs per CPU.
+
+IMO, as we shift to SGIs being standard interrupts, we should also
+rely on standard interrupt framework to enable SGIs. So it seems the
+correct way would be to use "request_percpu_irq()" and
+"enable_percpu_irq()" for configuring SGIs as demonstrated in updated
+commit here [2].
+
+Also, we should get rid of this hack as demonstrated via commit [3].
+
+Apart from above changes, there was a minor update needed for commit
+"irqchip/gic-v3: Describe the SGI range" [4].
+
+I hope these updates are useful for you while preparing the final series.
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/irqchip/irq-gic-common.c#n155
+[2] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=e208979b5165d753d144db57e0cb8646fdedc495
+[3] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=cd6d0d7cea14ac16156f0dbd297940df382f8cea
+[4] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=1180e9c54547ec05d96cc6b36c26005059c90d9a
+
+-Sumit
+
 >
-> This series provides MediaTek cqhci implementations as below:
->   - Extend mmc_of_parse() to parse CQE bindings
->   - Remove redundant host CQE bindings
->   - Refine msdc timeout api to reduce redundant code
->   - MediaTek command queue support
->   - dt-bindings for mt6779
+> Thanks,
 >
-> v1 -> v2:
->   - Add more patch details in commit message
->   - Separate msdc timeout api refine to individual patch
->
-> v2 -> v3:
->   - Remove CR-Id, Change-Id and Feature in patches
->   - Add Signed-off-by in patches
->
-> v3 -> v4:
->   - Refine CQE bindings in mmc_of_parse (Ulf Hansson)
->   - Remove redundant host CQE bindings (Linux Walleij)
->
-> v4 -> v5:
->   - Add Acked-by and more maintainers
->
-> Chun-Hung Wu (5):
->   [1/5] mmc: core: Extend mmc_of_parse() to parse CQE bindings
->   [2/5] mmc: host: Remove redundant CQE bindings
->   [3/5] mmc: mediatek: refine msdc timeout api
->   [4/5] mmc: mediatek: command queue support
->   [5/5] dt-bindings: mmc: mediatek: Add document for mt6779
->
->  Documentation/devicetree/bindings/mmc/mtk-sd.txt |   1 +
->  drivers/mmc/core/host.c                          |   5 +
->  drivers/mmc/host/mtk-sd.c                        | 151 +++++++++++++++++++++--
->  drivers/mmc/host/sdhci-brcmstb.c                 |  11 +-
->  drivers/mmc/host/sdhci-msm.c                     |   3 +-
->  drivers/mmc/host/sdhci-of-arasan.c               |   3 -
->  drivers/mmc/host/sdhci-tegra.c                   |   2 +-
->  7 files changed, 155 insertions(+), 21 deletions(-)
->
+>          M.
 > --
-> 2.6.4
-
-While awaiting a respin of patch4, due to comments from Yong, I
-decided to apply the other patches on my next branch. Thanks!
-
-Kind regards
-Uffe
+> Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
