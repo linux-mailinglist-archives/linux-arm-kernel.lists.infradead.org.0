@@ -2,88 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A5581C5B11
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:27:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76C9F1C5B13
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:27:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HsuKEYcNoURvm7Mfl2whOIut/RkIn8pDIavWKGUd5Lw=; b=X2OYcMJe2j6pKN
-	YdSY4eFSn2DaBO9+KMPU5rrj4whQKzfaurPJD6Rq+ADXh/7KmbTstVWYlVhQPovmK+arD0u8sQw9j
-	DPmzc90HrjG9LtqGqT8NPyFLY2tfwHNzPxinS2DOzrQXmVxlWJL3ViTB49cmZndY609doanyvtBKp
-	JE40BrSkiR7gP9SMD9wcS2D0mI5sCX0tD3f5FczSgye52auF7JZpOzImAqYDgOrk22UMuLJEwUPad
-	epBIv15XXK42lRg1jgWS25hzFH+fcYBxVJOj9OV0SiTOksiuTYstgFW0KRK0qsdmXFFHJZetGNH52
-	pZtCi7SC2V/WbalxJlYA==;
+	List-Owner; bh=6d5HT1SUc2pzXvtb1LFaIWriw54tCjAP02sPuHzaM8I=; b=k0s+0WtFS6VGs9
+	qoUdZb8fOIPFz9xVtsY8JJneS/whplfMbEwyQNEesOUcD/GLUBTtScEn/ZZbPlorHnMPCNKEHncLy
+	mWJmta4Rj72qmK+5YRcyLbZuPsVh9GWp/zXwpAgyP+u/SIiigSIOXmRso2RSsC+G3zDuuhuB6Jt7k
+	iC6t94jirnIuzXl6IWIWSms/8SydW4xt0PUg0ZB0ekvr1Mz3TboYeWztIaPDF8bH0ia3IszX8GlbJ
+	t/fUt2C2TnjKDD81R8J0Wr3yyTKD6JA5S9vVTEusvy7GoFcaQSD8U8DrJzSSxfYEmyZ3uM/VbinG3
+	EpouT5uQ8b+olg2vf1rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzTQ-0008JS-T6; Tue, 05 May 2020 15:27:08 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jVzTh-000062-16; Tue, 05 May 2020 15:27:25 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzTG-0008Ib-PR
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:27:00 +0000
-Received: by mail-wr1-x443.google.com with SMTP id e16so3248693wra.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 08:26:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=zXzR1aUk2ZPbhK+lz+Dt3JwzZZ+Iz4WfBlkdVh6bKZ4=;
- b=D5EdbvAamPv1DrL3nw+DFrCk7yJ0oA0Pk0KLYgu30csT1pr6SXwD2SFPhq9b16Ree2
- ++nyPqcQTRhY6O4Ye2ZkZKT+PA8UYEWVNv+b5qGz096S1/6vAu7jppfCqUeBXoXr8RWO
- 7tT1K1i1KFaSNwEvHVV4zEVWWxTxTC6RU4M0UrpLdzS9mv1Ck3AD1JaFPaB6R96xWoUo
- 7vbzFotV8dB2owsQUB3g107Y3UnKh3b+dNwJi2k5zB7wZ4dZtkbsPmJXAjeEXX3qKG7C
- qMjHiL1zRDXFin/CH1nE4zNhx93UIfsgjKsB3VPBYiSt0+6KZCaoets0e7sCsJDWqVcP
- LYaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=zXzR1aUk2ZPbhK+lz+Dt3JwzZZ+Iz4WfBlkdVh6bKZ4=;
- b=YwFPCecErXxOaLEr2xFn/mDXlrU68Todz1saaYAv67PD8XvTtXc5i7NfhT6SMZwnZa
- 4udDJlzZiD3svWrnY8Vuab/eMpjDlwP+/8E3GiZ/TkuVUzmTwe4GnQ1WcNpVJ9G2otpK
- 6HFcM+iZ4CCh/D+u644M+jMYvOqSU4DYhoUtGtzBsqh3sI1voKnCcEgB6vHRncu82Ru9
- vttmreHlaqdVnvCSWOIoXyuA4FdoDzQS/m1A5y//vJDVvuLWwR8HOn1wAxF75Rh5Vc0l
- uxTcuxH0eiqkSU2dSnUgyLRH6SbTB4IZ/7pOfSxkeWiXastyVXWKaQMjp3ydaK9Pb616
- ORtg==
-X-Gm-Message-State: AGi0PubVNrVEeNuxn7F7p1UwTN+V49qfFk3Mn6EHBsCPuAbTtVQq+vDO
- NbqlBoW267v/IFCnW/KZvA0Ehg==
-X-Google-Smtp-Source: APiQypI8heCYBzq/jyvWYkJRjjg6bf3eXOCslINaHp7aVsym9o41pg4+cPoZ+kh2dtXuR1lVzqzCkg==
-X-Received: by 2002:a5d:51c9:: with SMTP id n9mr4216171wrv.84.1588692414526;
- Tue, 05 May 2020 08:26:54 -0700 (PDT)
-Received: from google.com ([2a00:79e0:d:109:355c:447d:ad3d:ac5c])
- by smtp.gmail.com with ESMTPSA id a13sm3733889wrv.67.2020.05.05.08.26.53
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 May 2020 08:26:53 -0700 (PDT)
-Date: Tue, 5 May 2020 16:26:48 +0100
-From: Andrew Scull <ascull@google.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data
- from struct kvm
-Message-ID: <20200505152648.GA237572@google.com>
-References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-4-maz@kernel.org>
+ id 1jVzTU-0008SZ-2V
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:27:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=yd8yNvRGtLxIKAp9JfvKsxk3BYc2M2YC3lEfdJ6s0PE=; b=YizWGAa0BvfwCGp8+JpBZZHMY
+ H6cN5kJ7d5yqw2o7nK/j4UtqtFqmtjiJ/MYygG+yMnHgFaTSCSzdAYz5Cf5Uf2yqqssQzyWg82rpz
+ Ew4Iy0z96EZw3ogEKueBxct7k92lL7Wt37fuH9/lKH9zptp8jG3aYOAgH4bhOzEwFsJZUEgX22fnY
+ hFPKN/xWUxgmoyA/u7DFvVIRuMpE+tL18BjCvuXrjGDg6vAeKBn5iiyRDxZ0pxLR0U8DtmKHabyMC
+ MqG8m3FREghRIOA4iaAKHHdfuKHv2SZXWSAVzzvLCSoA0BtGRmG/5FQ34Rcvft2+PSc6wzXn19HDz
+ yonYWctOw==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36350)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jVzTI-0003FB-Ql; Tue, 05 May 2020 16:27:00 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jVzTH-0007GE-0J; Tue, 05 May 2020 16:26:59 +0100
+Date: Tue, 5 May 2020 16:26:58 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH 1/2] syscall.2: arm: Use real register names for arm/OABI
+Message-ID: <20200505152658.GL1551@shell.armlinux.org.uk>
+References: <1588692280-15878-1-git-send-email-Dave.Martin@arm.com>
+ <1588692280-15878-2-git-send-email-Dave.Martin@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200422120050.3693593-4-maz@kernel.org>
+In-Reply-To: <1588692280-15878-2-git-send-email-Dave.Martin@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_082658_831955_BCB91742 
-X-CRM114-Status: GOOD (  14.40  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200505_082712_137735_537BC1FA 
+X-CRM114-Status: GOOD (  16.01  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -91,8 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,73 +87,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
- kvmarm@lists.cs.columbia.edu, George Cherian <gcherian@marvell.com>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Michael Kerrisk <mtk.manpages@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ linux-man@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Having a go at reviewing. Might turn out to be more useful as a learning
-exercise for me rather than useful feedback but we've got to start
-somewhere..
+On Tue, May 05, 2020 at 04:24:39PM +0100, Dave Martin wrote:
+> The arm OABI syscall interface is currently documented in terms of
+> register name aliases defined by the ARM Procedure Call Standard
+> (APCS).  However, these don't make sense in the context of a binary
+> interface that doesn't comply (or need to comply) with APCS.
+> 
+> Use the real architectural register names instead.
+> 
+> The names a1-a4, v1... are just aliases for r0-r3, r4... anyway, so
+> the interface is just the same regardless of which set of names is
+> used.
+> 
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 
-> -struct kvm_arch {
-> +struct kvm_s2_mmu {
->  	struct kvm_vmid vmid;
->  
-> -	/* stage2 entry level table */
-> -	pgd_t *pgd;
-> -	phys_addr_t pgd_phys;
-> -
-> -	/* VTCR_EL2 value for this VM */
-> -	u64    vtcr;
-> +	/*
-> +	 * stage2 entry level table
-> +	 *
-> +	 * Two kvm_s2_mmu structures in the same VM can point to the same pgd
-> +	 * here.  This happens when running a non-VHE guest hypervisor which
-> +	 * uses the canonical stage 2 page table for both vEL2 and for vEL1/0
-> +	 * with vHCR_EL2.VM == 0.
-> +	 */
-> +	pgd_t		*pgd;
-> +	phys_addr_t	pgd_phys;
->  
->  	/* The last vcpu id that ran on each physical CPU */
->  	int __percpu *last_vcpu_ran;
->  
-> +	struct kvm *kvm;
-> +};
-> +
-> +struct kvm_arch {
-> +	struct kvm_s2_mmu mmu;
-> +
-> +	/* VTCR_EL2 value for this VM */
-> +	u64    vtcr;
+Thanks Dave,
 
-VTCR seems quite strongly tied to the MMU config. Is it not controlled
-independently for the nested MMUs and so remains in this struct?
+Acked-by: Russell King <rmk+kernel@armlinux.org.uk>
 
-> -static void stage2_dissolve_pmd(struct kvm *kvm, phys_addr_t addr, pmd_t *pmd)
-> +static void stage2_dissolve_pmd(struct kvm_s2_mmu *mmu, phys_addr_t addr, pmd_t *pmd)
+> ---
+>  man2/syscall.2 | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/man2/syscall.2 b/man2/syscall.2
+> index f2b277b..53ab40e 100644
+> --- a/man2/syscall.2
+> +++ b/man2/syscall.2
+> @@ -201,7 +201,7 @@ Arch/ABI	Instruction	System	Ret	Ret	Error	Notes
+>  _
+>  alpha	callsys	v0	v0	a4	a3	1, 6
+>  arc	trap0	r8	r0	-	-
+> -arm/OABI	swi NR	-	a1	-	-	2
+> +arm/OABI	swi NR	-	r0	-	-	2
+>  arm/EABI	swi 0x0	r7	r0	r1	-
+>  arm64	svc #0	x8	x0	x1	-
+>  blackfin	excpt 0x0	P0	R0	-	-
+> @@ -332,7 +332,7 @@ Arch/ABI	arg1	arg2	arg3	arg4	arg5	arg6	arg7	Notes
+>  _
+>  alpha	a0	a1	a2	a3	a4	a5	-
+>  arc	r0	r1	r2	r3	r4	r5	-
+> -arm/OABI	a1	a2	a3	a4	v1	v2	v3
+> +arm/OABI	r0	r1	r2	r3	r4	r5	r6
+>  arm/EABI	r0	r1	r2	r3	r4	r5	r6
+>  arm64	x0	x1	x2	x3	x4	x5	-
+>  blackfin	R0	R1	R2	R3	R4	R5	-
+> -- 
+> 2.1.4
+> 
+> 
 
-How strictly is the long line style rule enforced? checkpatch has 16
-such warnings on this patch.
-
-> -static void stage2_dissolve_pud(struct kvm *kvm, phys_addr_t addr, pud_t *pudp)
-> +static void stage2_dissolve_pud(struct kvm_s2_mmu *mmu, phys_addr_t addr, pud_t *pudp)
->  {
-> +	struct kvm *kvm __maybe_unused = mmu->kvm;
-> +
->  	if (!stage2_pud_huge(kvm, *pudp))
->  		return;
-
-There're a couple places with `__maybe_unused` on variables that are
-then used soon after. Can they be dropped in these cases so as not to
-hide legitimate warning?
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
