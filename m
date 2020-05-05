@@ -2,68 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E23F31C4CFE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:08:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E6AA1C4D04
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:10:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oI1eOfnfXRJC9tAaMqem4BK8jC7Gmbs4eVNcJx1Piq0=; b=Rj+O+rzjQfXYJw
-	i3hwlRxF6Ks+ANtSbVd5COy5t6WlXD8wiNYxxBrXDNSirXGqZJO4V4SDMAmpbxqyEUIbqJwqhmJjH
-	b2ghKyBm5NlFgN05za9Y0JE5X/TLjw3oZynGrgXoHnmU/1fT/XHOQzKgBd2IXZ5fO6dTx4DYryxiy
-	hOueMARUtwNlUEhUowu7Nr56kAoEUT3WCbPd3vtBUxRcRNM/emQn1fIDGlcO2l26p1M8ap9G9huVD
-	GCS50ASF8y57zrD/tPl9wR59w+MCyIJ4D1uC81AJ5esukTvfIUiNpJ9cEs1Ow24Cv00eyDzJEb7zB
-	4NeK9LExCPy5pr8D00aQ==;
+	List-Owner; bh=32bPECu4UP6Y0gG4hyBE4C233t3/o0OzHKB+NCd5TBE=; b=lediXKXJ3H4x9T
+	wyTO1XgMzFFrAT8ihfe7tbPp6fYegNUzLr1B/gD/z9WO0EUWN0aQUyJyv0Yt82ee3uSzvh+cA+DKr
+	LDk2N6q1di6nOmPZLbKimg92D4BbfHGB0WDOly/Qc0OPsSKW4Q7rhxTPPw8x4GjC7VnCtDA41sPqz
+	Rd3hXY6sHPQZ6lnxFdscXv/SFEwTyRlXVUAtD2Yj3A9GyX8FoRgsAib02sJm2bFe5CED+kOfFFob1
+	fxJieh1BuJ00yC6LmQ0muNu9+mcMUvTdBlImKboZ8ERcxPZf4crPLvB7FDncsZ5yFhle9T1swVCgC
+	FcSmtoVPi5Zh833PUqDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVosZ-0000Kn-Sm; Tue, 05 May 2020 04:08:23 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jVouQ-0003Kd-PR; Tue, 05 May 2020 04:10:18 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVosO-0000JY-Lt; Tue, 05 May 2020 04:08:13 +0000
-Received: from mail-ot1-f53.google.com (mail-ot1-f53.google.com
- [209.85.210.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2E8CE2075E;
- Tue,  5 May 2020 04:08:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588651690;
- bh=uzzMCgqE/O5IIYjUlJGPkxkNrxePxpFGbx62v87B1yk=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=BN6Cy/3HpCwbAGqGdvC+qqnnmWcpBeTMOV+avy7c5MqADF8o2RkgcRkJzIQXdsCsk
- 1Afk3jIt/KQM3TnQcStiKfqzuLsewX65wxQohWJds/+9oXyCCJshgXhqgUpXBb3dvp
- Pj9E/11iNOGPIQykmHB/KEKg0M4b5I2GMOZkNt/o=
-Received: by mail-ot1-f53.google.com with SMTP id g19so573527otk.5;
- Mon, 04 May 2020 21:08:10 -0700 (PDT)
-X-Gm-Message-State: AGi0PubU+SP5SF8IO2yFaAdilkn5SRvXTWArqDfvJIGY+ELZxAch16C/
- G+3Fd5z/9KfSmcVFkTYCDP9wZ3GnlNQ04AIhaA==
-X-Google-Smtp-Source: APiQypKr0Hhrl0+e44U31hazXs0o4bScaIuGYf4nCgkUWwDdJ4zYt2nRLPemlwjIE7S1TGeNHXWRAj+I7RpOjlh+8dk=
-X-Received: by 2002:a9d:7d85:: with SMTP id j5mr690540otn.107.1588651689440;
- Mon, 04 May 2020 21:08:09 -0700 (PDT)
+ id 1jVouF-0001oi-1T
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:10:09 +0000
+Received: by mail-lf1-x141.google.com with SMTP id u4so190240lfm.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 04 May 2020 21:10:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jz2cSoqOGbsKqpbrYNnHYMttjY/bXQpYhBr6USfoRbY=;
+ b=slCE0T5Gb03QdASe6JmzYMEexr63wsm23L+sdIHGtpinXdhAZFyVxcQHTeYtBQp4yD
+ y71qhKRv4heGuf2Wqxq+0+VlHrEBSaFB4Ye93hueiw+f7ytT0SkRwhxoE9XAV+jRpvZm
+ faQkCdyyjm3agluH/OCbAwqdc/gQ9IKPzCHrcyoX5K08xveCw2VZtYKLKyzhqUggdJNP
+ PPw9y1OcCESn9/cOfa/VlntjB98n9YahFhvKIxSA4Ye2AOVEKdByRcA6KsYKXcb54819
+ j1NEIrMrm6iOgGR6QN/l5yOjWNtfkYbN4Tdiwc0fvFelvgA/CSnblcMrW4hOnXz9V5qr
+ qskQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jz2cSoqOGbsKqpbrYNnHYMttjY/bXQpYhBr6USfoRbY=;
+ b=Lajpr3Cl9Z3aTH2ip1cSEmGctuYeRPefgADzGIPNVsUil5gWUpjLd1Fxg+AFmPOLuc
+ +123Ri3O10OymzCq6UWusih4c2gbYpYlTM4PuyRwB9JMcwOB5GpUzJPPY4uafScnNph8
+ U8lySm0PO/0Uz1Vp+8sx82JdTIThG3GV3EbFbaDeDn/0DXjyqzRQU0HbjCycD9zbRo4H
+ hT/BZeL5aqujah26+Argtbs4qOehlp0GaCXFAKHjpyOlDRVDz9fW7wDVeKgnWExo28SP
+ J/UM8b0d43sGZ0JpIrfoUnxlO5v8vRadxrr9Miooh9mrs85ZORL0IACcobzHiUExyuzu
+ Kikg==
+X-Gm-Message-State: AGi0PubrTumndmGPb5UjEXaS+nj2YeRYwotYF2WCbbWBNqFAKf2FtsTg
+ TUPqHI0b7jTg0URcq1VLGSUZM+jyXC8MPI8+uz/49Q==
+X-Google-Smtp-Source: APiQypKwcPjJPBwPDyzfifsJ9SA8+fSBAfu1r/Lymm9Q4ODuue79UHwVFwqFxAtVSoJpSw4ipsyt3LIML681Ciwsf/c=
+X-Received: by 2002:a19:7418:: with SMTP id v24mr263376lfe.15.1588651803162;
+ Mon, 04 May 2020 21:10:03 -0700 (PDT)
 MIME-Version: 1.0
-References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
- <20200504174522.GA3383@ravnborg.org>
- <20200504175553.jdm7a7aabloevxba@pengutronix.de>
-In-Reply-To: <20200504175553.jdm7a7aabloevxba@pengutronix.de>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 4 May 2020 23:07:57 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJuRrhEtt5uxaQ=7WvDKiF_2v025GiYUvrrFE5jxBr-Xg@mail.gmail.com>
-Message-ID: <CAL_JsqJuRrhEtt5uxaQ=7WvDKiF_2v025GiYUvrrFE5jxBr-Xg@mail.gmail.com>
-Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>, 
- Sam Ravnborg <sam@ravnborg.org>
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+ <20200425112950.3a4815b6@why>
+ <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
+ <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
+ <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
+ <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
+ <20200430101322.420e4052@why>
+ <CAFA6WYO+NGLfNkOah4YzXx5XuaDh=QtWHgnMBwwMFY1zRt15GQ@mail.gmail.com>
+ <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
+In-Reply-To: <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Tue, 5 May 2020 09:39:50 +0530
+Message-ID: <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
+Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
+ pseudo NMI
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_210812_759554_D5688D5A 
-X-CRM114-Status: GOOD (  14.27  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200504_211007_156021_12E1A217 
+X-CRM114-Status: GOOD (  35.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -73,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,51 +100,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- Olivier Moysan <olivier.moysan@st.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- David Airlie <airlied@linux.ie>, dri-devel <dri-devel@lists.freedesktop.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Andrzej Hajda <a.hajda@samsung.com>,
- Jonathan Corbet <corbet@lwn.net>,
- Mauro Carvalho Chehab <mchehab+huawei@kernel.org>,
- "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
- Sandy Huang <hjc@rock-chips.com>, devicetree@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, Jyri Sarha <jsarha@ti.com>,
- Mark Brown <broonie@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Arnaud Pouliquen <arnaud.pouliquen@st.com>,
- "open list:MIPS" <linux-mips@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:BLUETOOTH DRIVERS" <linux-bluetooth@vger.kernel.org>,
- netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Daniel Thompson <daniel.thompson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
+ Jason Wessel <jason.wessel@windriver.com>,
+ kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBNYXkgNCwgMjAyMCBhdCAxMjo1NiBQTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
-bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKPgo+IEhpIFNhbSwKPgo+IE9uIE1vbiwg
-TWF5IDA0LCAyMDIwIGF0IDA3OjQ1OjIyUE0gKzAyMDAsIFNhbSBSYXZuYm9yZyB3cm90ZToKPiA+
-IE9uIE1vbiwgTWF5IDA0LCAyMDIwIGF0IDExOjMwOjIwQU0gKzAyMDAsIE1hdXJvIENhcnZhbGhv
-IENoZWhhYiB3cm90ZToKPiA+ID4gVGhlcmUgYXJlIHNvbWUgbmV3IGJyb2tlbiBkb2MgbGlua3Mg
-ZHVlIHRvIHlhbWwgcmVuYW1lcwo+ID4gPiBhdCBEVC4gRGV2ZWxvcGVycyBzaG91bGQgcmVhbGx5
-IHJ1bjoKPiA+ID4KPiA+ID4gICAgIC4vc2NyaXB0cy9kb2N1bWVudGF0aW9uLWZpbGUtcmVmLWNo
-ZWNrCj4gPiA+Cj4gPiA+IGluIG9yZGVyIHRvIHNvbHZlIHRob3NlIGlzc3VlcyB3aGlsZSBzdWJt
-aXR0aW5nIHBhdGNoZXMuCj4gPiBXb3VsZCBsb3ZlIGlmIHNvbWUgYm90IGNvdWxkIGRvIHRoaXMg
-Zm9yIG1lIG9uIGFueSBwYXRjaGVzIHRoYXQgY3JlYXRlcwo+ID4gLnlhbWwgZmlsZXMgb3Igc28u
-Cj4gPiBJIGtub3cgSSB3aWxsIGZvcmdldCB0aGlzIGFuZCBpdCBjYW4gYmUgYXV0b21hdGVkLgo+
-ID4gSWYgSSBnZXQgYSBib3QgbWFpbCB0aGF0IG15IHBhdGNoIHdvdWxkIGJyb2tlIGEgbGluayBJ
-IHdvdWxkCj4gPiBoYXZlIGl0IGZpeGVkIGJlZm9yZSBpdCBoaXRzIGFueSB0cmVlLgoKSSBjYW4g
-cHJvYmFibHkgYWRkIHRoaXMgdG8gd2hhdCBJJ20gYWxyZWFkeSBjaGVja2luZy4gTm90IGNvbXBs
-ZXRlbHkKYXV0b21hdGVkIHRob3VnaCBhcyBpdCBkZXBlbmRzIG9uIG1lIHRvIHJldmlldyBiZWZv
-cmUgc2VuZGluZy4KCj4gV2hhdCBhYm91dCBhZGRpbmcgYSBjaGVjayB0byBjaGVja19wYXRjaD8K
-ClRoYXQgd291bGQgYmUgdGhlIGJlc3Qgd2F5IHRvIGdldCBzdWJtaXR0ZXJzIHRvIGRvIHRoaXMu
-CgpSb2IKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
-bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
-LWFybS1rZXJuZWwK
+On Fri, 1 May 2020 at 18:33, Sumit Garg <sumit.garg@linaro.org> wrote:
+>
+> Hi Marc,
+>
+> On Thu, 30 Apr 2020 at 17:43, Sumit Garg <sumit.garg@linaro.org> wrote:
+> >
+> > On Thu, 30 Apr 2020 at 14:43, Marc Zyngier <maz@kernel.org> wrote:
+> > >
+> > > On Thu, 30 Apr 2020 12:50:28 +0530
+> > > Sumit Garg <sumit.garg@linaro.org> wrote:
+> > >
+> > > > Hi Marc,
+> > > >
+> > > > On Wed, 29 Apr 2020 at 13:53, Marc Zyngier <maz@kernel.org> wrote:
+> > >
+> > > [...]
+> > >
+> > > > > What I would like is for the arch code to request these interrupts as
+> > > > > normal interrupts, for which there is one problem to solve: how do you
+> > > > > find out about the Linux IRQ number for a given IPI. Or rather, how
+> > > > > do you get rid of the requirement to have IPI numbers at all and just
+> > > > > say "give me a per-cpu interrupt that I can use as an IPI, and by the
+> > > > > way here's the handler you can call".
+> > > >
+> > > > I think what you are looking for here is something that could be
+> > > > sufficed via enabling "CONFIG_GENERIC_IRQ_IPI" framework for arm64/arm
+> > > > architectures. It's currently used for mips architecture. Looking at
+> > > > its implementation, I think it should be possible to hook up SGIs
+> > > > under new IPI irq_domain for GICv2/v3.
+> > > >
+> > > > So with this framework we should be able to dynamically allocate IPIs
+> > > > and use common APIs such as request_irq()/request_nmi() to tell IPI
+> > > > specific handlers.
+> > > >
+> > > > If this approach looks sane to you then I can start working on a PoC
+> > > > implementation for arm64.
+> > >
+> > > I can't say I'm keen. This IPI framework doesn't really work for the
+> > > GIC:
+> > >
+> > > - it requires a separate irqdomain to be able to guarantee that you
+> > >   allocate the hwirq in the SGI range. What is the point?
+> > > - it creates yet another level of indirection on IPI injection
+> > >
+> > > This framework was created to deal with two cases:
+> > > - systems that can't represent their IPI with a single hwirq spanning
+> > >   all the CPUs
+> > > - "accelerator cores" that don't run Linux
+> > >
+> > > The GIC architecture avoids the first point, and I don't even want to
+> > > think of the second one.
+> > >
+> > > Also, it doesn't solve the initial problem, which is to bootstrap the
+> > > whole thing. The IPI framework relies on an irqdomain to be created the
+> > > first place. This would mean teaching the arch code about the
+> > > intricacies of irqdomains, FW nodes and other terrible things. All
+> > > things which are better hidden in the GIC drivers (not to mention the
+> > > other horror stories that are the RPi-2/3 irqchip and the Huawei GIC
+> > > knock-off).
+> > >
+> > > What I have in mind is to replace the set_smp_cross_call() with
+> > > something that passes the required set of information (interrupt range,
+> > > at the very least). The only thing that I plan to reuse from the IPI
+> > > framework is the chip->ipi_send_mask() callback.
+> > >
+> >
+> > Fair enough, I will just pass the allocated interrupt range base
+> > instead of set_smp_cross_call() and use __ipi_send_mask() to invoke a
+> > particular IPI.
+>
+> Thinking more about this, there seems to be multiple irqchip drivers
+> registering softirq API via set_smp_cross_call(). So we need to
+> introduce a new API instead of replacing set_smp_cross_call() under
+> "CONFIG_GENERIC_IRQ_IPI" macro until all drivers switch to IPIs as
+> full interrupts.
+>
+> BTW, could we take up this generalization as follow-up work as it
+> seems to be independent of current IPI NMI work?
+>
+> >
+> > And to request an arch specific IPI as NMI, will use
+> > arch_get_ipinr_nmi() and in turn use request_percpu_nmi() to turn that
+> > particular IPI as NMI.
+>
+> I have updated the second patch [1] in my tree to incorporate these
+> changes. The updated commit log is as follows:
+>
+> commit 25c96663126264ec758c49a4a01a9c285f4ccc61
+> Author: Sumit Garg <sumit.garg@linaro.org>
+> Date:   Wed Apr 22 16:29:59 2020 +0530
+>
+>     irqchip/gic-v3: Setup arch specific IPI as pseudo NMI
+>
+>     Add support to mark arch specific IPI as pseudo NMI. Currently its used
+>     to allow arm64 specific IPI_CALL_NMI_FUNC to be marked as pseudo NMI.
+>
+>     Brief description of changes:
+>     - Update NMI setup/teardown routines for SGIs.
+>     - Enable NMI support prior to gic_smp_init().
+>     - Setup custom flow handler for SGI setup as NMI.
+>     - Request, prepare and enable arch specific IPI as per CPU NMI using
+>       common APIs.
+>
+>     Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+>
+> Please have a look and let me know if this is something you were looking for.
+>
+
+In case there are no major objections to this approach, I will post
+complete v2 patch-set (alongwith Marc's patches) for detailed review.
+
+-Sumit
+
+> [1] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=25c96663126264ec758c49a4a01a9c285f4ccc61
+>
+> -Sumit
+>
+> > > Thanks,
+> > >
+> > >         M.
+> > > --
+> > > Jazz is not dead. It just smells funny...
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
