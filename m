@@ -2,82 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E6B21C5526
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 14:12:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74CF71C5531
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 14:13:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ErWVdk78EhbyMVXzvOqGXes3dCMlzAMiJmz1H12DDZg=; b=dWjrVzvtv+sIcZ
-	U+IQuHdUFzMiTgD7pJxt1ipnk/rB2Iwa/gYs+2vMciXukq1DGNgr8mnJbWCmzkan2H8N9RSiujYI8
-	mZPBIMrgTCuKd8f3L244t+ggNlBYyoqLPSyaqWXdvPgG/vYq1O5xiB4NswhQPfri9XOjEQss6cABB
-	aCVIZp6XMV0a8JycKntmvg7xiomlE42x10miEmMQ4TN6o0KrSlYknISav1fvQvdLQbOKkGd1MPEJg
-	vItUeKWwZxKiWtGh6hduLd9B4eQGDt04fNgP7Yu0+R7dJITsmRLKn9sBOtiguvCSV8H7BxkcjxkZX
-	HuNe0uHr5uwjWQNDzZbA==;
+	List-Owner; bh=4aQwUB9XZ6N/XRZaCJ2RpERBKjVxgZYrnkTvkvniA24=; b=hzuF47jFejQLF6
+	hjmLcQKl9f42mlEbagEMaDpHcSG6IFit/MuZP137pwdLebKgCaw/xCNPPbWISXWNreAKStdmSkvqc
+	vjWK/7rcoQoHjnTSLy9jPSs+yMWYC0NXjWOqLXa06KzEBnLoHXBIhetbvQliAcD1KwnASMHXHdO8H
+	mdB6Qa9ZPPiidaJB4BvCxVvkmeFdnEXcIxZl/3V2HNggotQPryifHdQQAXL+k75DmPfeKQ1P34Lv7
+	lO9QSslJtMPyNPYIFKOmKQNnTgPwP70bsRDtCwt9MSRLwVC8Cz5/TZDrgsAJbmcRrfXvye5a/krG8
+	yhPYTEk4iPxrF+TDzLhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVwR1-000537-12; Tue, 05 May 2020 12:12:27 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jVwRR-0005KA-M5; Tue, 05 May 2020 12:12:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVwQt-000523-P5
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 12:12:21 +0000
-Received: by mail-lj1-x242.google.com with SMTP id h4so1326748ljg.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 05:12:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=HMlQVlmeGXEReM1yut17rciX4AB+fLsrubK71t43Crw=;
- b=by3szt0lWsRCqGRiMrxe/DgyNqYcEB22A1vW7AGwPkpIAuTE8oTuowy/tHPlyU+7Hr
- zYnWeZRfy5tq+4ogzarERxS6xYJVm19GSgbX8tCVHhxBJ+SXzTKDp6UOEj+g8ZYD6maI
- 5zC94pX1b6XXgSs+iK/KYtRP0lrbaJNqa+b17nx/Jh2t8Bj2w4nwY0gznMIe3O85N/5L
- ZWkvbqczD9hQBD0yFVF+8CZnAG0B3c4Ufu9iJA61VnJGsVPAdILBJOy7VoA9Bza4pCOC
- k8EAwrX3zVhivffKg6X3aIVE2IrZjmKTacUz1hFTq5dnfV/aj9L1vZXyRf0GMC//S2I2
- VqYA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=HMlQVlmeGXEReM1yut17rciX4AB+fLsrubK71t43Crw=;
- b=st8FrczNzLjInG27xlA7dnKSXS88SztJFEGGv0rs6QyJdqO5q675lyBDiOwz1+1xK/
- RuNT666hm4NkffP1/awDMb6C9f3PKEG6XbNYc7ov1QRqqxPybZMNxjzoUd+nZiiOFuAh
- hjR3TYfbj5tKe3+pBHPP/PfPyWE/jYGQUx7ArCP8G5sT/e4G04Jd1+3mMLUdhRnrPVWL
- 1j6HXgq7CZpUBrDDRQD8vzBYoqj7MmM34Eg624i4hIyiAkKeBx9QKivk/eWLbr7TfeTS
- tXEowmN9DW3VRu8r98h2e6Pswjp+Bx5DWn74kaYtQJ+elbYIIWV1FwkcA9HcY7wZZlAq
- qXOQ==
-X-Gm-Message-State: AGi0PuYQQseV6GN1H4HNpkuhnmFxplnqebOrED7DZt+PtLTbiE3p05em
- L+qSZwoU7MWoxsH46/nI0oMRKeGmoeRfYv2A8QrDsg==
-X-Google-Smtp-Source: APiQypLhmclSpArV92q+mWNGffd3SX7sCUvNNXrXo90M3AxZAquw+B5r6LXmh3LnQqWsMYsSt2nT6Jp1IGBXxoz1qPY=
-X-Received: by 2002:a2e:b249:: with SMTP id n9mr1688630ljm.221.1588680737938; 
- Tue, 05 May 2020 05:12:17 -0700 (PDT)
+ id 1jVwRJ-0005JJ-By
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 12:12:46 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3463E206A4;
+ Tue,  5 May 2020 12:12:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588680764;
+ bh=lRSSmIip0z2BoR+RQ+3hQQVFRY5K07HxlK441PUvO4w=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Vvd6pPIdmUOLnPSSOEbgshPimjHlXn8Jb0pT005eaNVQM/O1gReGl7Hz3fjulp0N9
+ 2HhwCwhWBvnLs/L1MlRsx2W3CcZZ2qWetwd9To2K5swDT65NzY4tKUWS8kpBYA19l4
+ +ZuM12CP6wKprD2xtAJnC4YlWJo3Av3GWnxT/Gmo=
+Date: Tue, 5 May 2020 13:12:39 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH V3 04/16] arm64/cpufeature: Introduce ID_PFR2 CPU register
+Message-ID: <20200505121239.GI19710@willie-the-truck>
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
+ <20200505111241.GF19710@willie-the-truck>
+ <20200505111607.GA82823@C02TD0UTHF1T.local>
+ <20200505112718.GH19710@willie-the-truck>
+ <20200505115054.GC82823@C02TD0UTHF1T.local>
 MIME-Version: 1.0
-References: <20200429214954.44866-1-jannh@google.com>
- <20200429214954.44866-5-jannh@google.com>
- <20200505110358.GC17400@lst.de>
-In-Reply-To: <20200505110358.GC17400@lst.de>
-From: Jann Horn <jannh@google.com>
-Date: Tue, 5 May 2020 14:11:51 +0200
-Message-ID: <CAG48ez0QFYGXfp3x2T2_8sxsidJs5oQA3muaeJ61=EMEwdRnYQ@mail.gmail.com>
-Subject: Re: [PATCH v2 4/5] binfmt_elf,
- binfmt_elf_fdpic: Use a VMA list snapshot
-To: Christoph Hellwig <hch@lst.de>
+Content-Disposition: inline
+In-Reply-To: <20200505115054.GC82823@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_051219_816735_85F49998 
-X-CRM114-Status: GOOD (  34.86  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200505_051245_448172_FCC27FA7 
+X-CRM114-Status: GOOD (  18.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -86,8 +69,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,198 +81,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-c6x-dev@linux-c6x.org,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Linux-sh list <linux-sh@vger.kernel.org>,
- kernel list <linux-kernel@vger.kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Linux-MM <linux-mm@kvack.org>, Alexander Viro <viro@zeniv.linux.org.uk>,
- Mark Salter <msalter@redhat.com>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Andrew Morton <akpm@linux-foundation.org>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "Eric W . Biederman" <ebiederm@xmission.com>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 5, 2020 at 1:04 PM Christoph Hellwig <hch@lst.de> wrote:
-> On Wed, Apr 29, 2020 at 11:49:53PM +0200, Jann Horn wrote:
-> > In both binfmt_elf and binfmt_elf_fdpic, use a new helper
-> > dump_vma_snapshot() to take a snapshot of the VMA list (including the gate
-> > VMA, if we have one) while protected by the mmap_sem, and then use that
-> > snapshot instead of walking the VMA list without locking.
-[...]
-> > diff --git a/fs/binfmt_elf.c b/fs/binfmt_elf.c
-> > index fb36469848323..dffe9dc8497ca 100644
-> > --- a/fs/binfmt_elf.c
-> > +++ b/fs/binfmt_elf.c
-> > @@ -1292,8 +1292,12 @@ static bool always_dump_vma(struct vm_area_struct *vma)
-> >       return false;
-> >  }
-> >
-> > +#define DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER 1
-> > +
-> >  /*
-> >   * Decide what to dump of a segment, part, all or none.
-> > + * The result must be fixed up via vma_dump_size_fixup() once we're in a context
-> > + * that's allowed to sleep arbitrarily long.
-> >   */
-> >  static unsigned long vma_dump_size(struct vm_area_struct *vma,
-> >                                  unsigned long mm_flags)
-> > @@ -1348,30 +1352,15 @@ static unsigned long vma_dump_size(struct vm_area_struct *vma,
-> >
-> >       /*
-> >        * If this looks like the beginning of a DSO or executable mapping,
-> > -      * check for an ELF header.  If we find one, dump the first page to
-> > -      * aid in determining what was mapped here.
-> > +      * we'll check for an ELF header. If we find one, we'll dump the first
-> > +      * page to aid in determining what was mapped here.
-> > +      * However, we shouldn't sleep on userspace reads while holding the
-> > +      * mmap_sem, so we just return a placeholder for now that will be fixed
-> > +      * up later in vma_dump_size_fixup().
-> >        */
-> >       if (FILTER(ELF_HEADERS) &&
-> > -         vma->vm_pgoff == 0 && (vma->vm_flags & VM_READ)) {
-> > -             u32 __user *header = (u32 __user *) vma->vm_start;
-> > -             u32 word;
-> > -             /*
-> > -              * Doing it this way gets the constant folded by GCC.
-> > -              */
-> > -             union {
-> > -                     u32 cmp;
-> > -                     char elfmag[SELFMAG];
-> > -             } magic;
-> > -             BUILD_BUG_ON(SELFMAG != sizeof word);
-> > -             magic.elfmag[EI_MAG0] = ELFMAG0;
-> > -             magic.elfmag[EI_MAG1] = ELFMAG1;
-> > -             magic.elfmag[EI_MAG2] = ELFMAG2;
-> > -             magic.elfmag[EI_MAG3] = ELFMAG3;
-> > -             if (unlikely(get_user(word, header)))
-> > -                     word = 0;
-> > -             if (word == magic.cmp)
-> > -                     return PAGE_SIZE;
-> > -     }
-> > +         vma->vm_pgoff == 0 && (vma->vm_flags & VM_READ))
-> > +             return DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER;
-> >
-> >  #undef       FILTER
-> >
-> > @@ -1381,6 +1370,22 @@ static unsigned long vma_dump_size(struct vm_area_struct *vma,
-> >       return vma->vm_end - vma->vm_start;
-> >  }
-> >
-> > +/* Fix up the result from vma_dump_size(), now that we're allowed to sleep. */
-> > +static void vma_dump_size_fixup(struct core_vma_metadata *meta)
-> > +{
-> > +     char elfmag[SELFMAG];
-> > +
-> > +     if (meta->dump_size != DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER)
-> > +             return;
-> > +
-> > +     if (copy_from_user(elfmag, (void __user *)meta->start, SELFMAG)) {
-> > +             meta->dump_size = 0;
-> > +             return;
-> > +     }
-> > +     meta->dump_size =
-> > +             (memcmp(elfmag, ELFMAG, SELFMAG) == 0) ? PAGE_SIZE : 0;
-> > +}
->
-> While this code looks entirely correct, it took me way too long to
-> follow.  I'd take te DUMP_SIZE_MAYBE_ELFHDR_PLACEHOLDER into the caller,
-> and then have a simple function like this:
->
-> static void vma_dump_size_fixup(struct core_vma_metadata *meta)
-> {
->         char elfmag[SELFMAG];
->
->         if (copy_from_user(elfmag, (void __user *)meta->start, SELFMAG) ||
->             memcmp(elfmag, ELFMAG, sizeof(elfmag)) != 0)
->                 meta->dump_size = 0;
->         else
->                 meta->dump_size = PAGE_SIZE;
-> }
+On Tue, May 05, 2020 at 12:50:54PM +0100, Mark Rutland wrote:
+> On Tue, May 05, 2020 at 12:27:19PM +0100, Will Deacon wrote:
+> > On Tue, May 05, 2020 at 12:16:07PM +0100, Mark Rutland wrote:
+> > > On Tue, May 05, 2020 at 12:12:41PM +0100, Will Deacon wrote:
+> > > > On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
+> > > > > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> > > > > index e5317a6367b6..c977449e02db 100644
+> > > > > --- a/arch/arm64/include/asm/sysreg.h
+> > > > > +++ b/arch/arm64/include/asm/sysreg.h
+> > > > > @@ -153,6 +153,7 @@
+> > > > >  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
+> > > > >  #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
+> > > > >  #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
+> > > > > +#define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
+> > > > 
+> > > > nit: but please group these defines by name rather than encoding.
+> > > 
+> > > So far we've *always* grouped these by encoding in this file, so can we
+> > > keep things that way for now? Otherwise we're inconsistent with both
+> > > schemes.
+> > 
+> > Hmm, but it's really hard to read sorted that way and we'll end up with
+> > duplicate definitions like we had for some of the field offsets already.
+> 
+> I appreciate that, and don't disagree that the current scheme is not
+> obvious.
+> 
+> I just want to ensure that we don't make things less consistent, and if
+> we're going to change the scheme in order to make that easier, it should
+> be a separate patch. There'll be other changes like MMFR4_EL1, and we
+> should probably add a comment as to what the policy is either way (e.g.
+> if we're just grouping at the top level, or if that should be sorted
+> too).
 
-I guess I can make that change, even if I personally think it's less
-clear if parts of the fixup logic spill over into the caller instead
-of being handled locally here. :P
+Ok, I added a comment below.
 
-> Also a few comments explaining why we do this fixup would help readers
-> of the code.
->
-> > -             if (vma->vm_flags & VM_WRITE)
-> > -                     phdr.p_flags |= PF_W;
-> > -             if (vma->vm_flags & VM_EXEC)
-> > -                     phdr.p_flags |= PF_X;
-> > +             phdr.p_flags = meta->flags & VM_READ ? PF_R : 0;
-> > +             phdr.p_flags |= meta->flags & VM_WRITE ? PF_W : 0;
-> > +             phdr.p_flags |= meta->flags & VM_EXEC ? PF_X : 0;
->
-> Sorry for another nitpick, but I find the spelled out version with the
-> if a lot easier to read.
+Will
 
-Huh... I find it easier to scan if it is three lines with the same
-pattern, but I'm not too attached to it.
+--->8
 
-In that case, I guess I should change it like this? The old code had a
-ternary for VM_READ and branches for the other two, which didn't seem
-very pretty to me.
+commit be7ab6a6cdb0a6d7b10883094c2adf96f5d4e1e8
+Author: Will Deacon <will@kernel.org>
+Date:   Tue May 5 13:08:02 2020 +0100
 
-phdr.p_flags = 0;
-if (meta->flags & VM_READ)
-        phdr.p_flags |= PF_R;
-if (meta->flags & VM_WRITE)
-        phdr.p_flags |= PF_W;
-if (meta->flags & VM_EXEC)
-        phdr.p_flags |= PF_X;
+    arm64: cpufeature: Group indexed system register definitions by name
+    
+    Some system registers contain an index in the name (e.g. ID_MMFR<n>_EL1)
+    and, while this index often follows the register encoding, newer additions
+    to the architecture are necessarily tacked on the end. Sorting these
+    registers by encoding therefore becomes a bit of a mess.
+    
+    Group the indexed system register definitions by name so that it's easier to
+    read and will hopefully reduce the chance of us accidentally introducing
+    duplicate definitions in the future.
+    
+    Signed-off-by: Will Deacon <will@kernel.org>
 
-> > +int dump_vma_snapshot(struct coredump_params *cprm, int *vma_count,
-> > +     struct core_vma_metadata **vma_meta,
-> > +     unsigned long (*dump_size_cb)(struct vm_area_struct *, unsigned long))
->
-> Plase don't use single tabs for indentating parameter continuations
-> (we actually have two styles - either two tabs or aligned after the
-> opening brace, pick your poison :))
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 2dd3f4ca9780..194684301df0 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -105,6 +105,10 @@
+ #define SYS_DC_CSW			sys_insn(1, 0, 7, 10, 2)
+ #define SYS_DC_CISW			sys_insn(1, 0, 7, 14, 2)
+ 
++/*
++ * System registers, organised loosely by encoding but grouped together
++ * where the architected name contains an index. e.g. ID_MMFR<n>_EL1.
++ */
+ #define SYS_OSDTRRX_EL1			sys_reg(2, 0, 0, 0, 2)
+ #define SYS_MDCCINT_EL1			sys_reg(2, 0, 0, 2, 0)
+ #define SYS_MDSCR_EL1			sys_reg(2, 0, 0, 2, 2)
+@@ -140,6 +144,7 @@
+ #define SYS_ID_MMFR1_EL1		sys_reg(3, 0, 0, 1, 5)
+ #define SYS_ID_MMFR2_EL1		sys_reg(3, 0, 0, 1, 6)
+ #define SYS_ID_MMFR3_EL1		sys_reg(3, 0, 0, 1, 7)
++#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
+ 
+ #define SYS_ID_ISAR0_EL1		sys_reg(3, 0, 0, 2, 0)
+ #define SYS_ID_ISAR1_EL1		sys_reg(3, 0, 0, 2, 1)
+@@ -147,7 +152,6 @@
+ #define SYS_ID_ISAR3_EL1		sys_reg(3, 0, 0, 2, 3)
+ #define SYS_ID_ISAR4_EL1		sys_reg(3, 0, 0, 2, 4)
+ #define SYS_ID_ISAR5_EL1		sys_reg(3, 0, 0, 2, 5)
+-#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
+ #define SYS_ID_ISAR6_EL1		sys_reg(3, 0, 0, 2, 7)
+ 
+ #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
 
-I did that because if I use either one of those styles, I'll have to
-either move the callback type into a typedef or add line breaks in the
-parameters of the callback type. I guess I can write it like this...
-
-int dump_vma_snapshot(struct coredump_params *cprm, int *vma_count,
-                      struct core_vma_metadata **vma_meta,
-                      unsigned long (*dump_size_cb)(struct vm_area_struct *,
-                                                    unsigned long));
-
-but if you also dislike that, let me know and I'll add a typedef instead. :P
-
-> > +     *vma_meta = kvmalloc_array(*vma_count, sizeof(**vma_meta), GFP_KERNEL);
-> > +     if (!*vma_meta) {
-> > +             up_read(&mm->mmap_sem);
-> > +             return -ENOMEM;
-> > +     }
-> > +
-> > +     for (i = 0, vma = first_vma(current, gate_vma); vma != NULL;
-> > +                     vma = next_vma(vma, gate_vma)) {
-> > +             (*vma_meta)[i++] = (struct core_vma_metadata) {
-> > +                     .start = vma->vm_start,
-> > +                     .end = vma->vm_end,
-> > +                     .flags = vma->vm_flags,
-> > +                     .dump_size = dump_size_cb(vma, cprm->mm_flags)
-> > +             };
->
-> This looks a little weird.  Why not kcalloc + just initialize the four
-> fields we actually fill out here?
-
-Yeah, I can just change the syntax here to normal member writes if you
-want. I just thought C99-style initialization looked nicer, but I
-guess that's unusual in the kernel...
-
-(And I just noticed that that "filesize" member of that struct
-core_vma_metadata I'm defining is entirely unused... I'll have to
-remove that in the next iteration.)
 
 _______________________________________________
 linux-arm-kernel mailing list
