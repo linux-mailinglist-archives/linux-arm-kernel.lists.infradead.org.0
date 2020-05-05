@@ -2,60 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC8B41C5D59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:21:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A08311C5D5D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:21:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gnB3Bapo4fpg747HsBkzOc5JFB8IbjHB2ylHnAFY5CI=; b=TxdC5LBjhEXq/E
-	IA86KE3WilLH4qpl02VHgRJrSOYDT0+FwnSOL6c2DvKHPWt/GDCOHJHmSVuMfipIbmoJI6dCxJzOH
-	nLYItP4est/uV1Eij3k4JlqDd2YPUywlxnUnQWA1MAXJHZbzrD1DX0aWSe8e8evrghLa8GWEH7YpF
-	/OXB0KVE68SuaxOTjT6CbUJlmrTF16bRKcfLIctpurZPgNvKoJlgcl+0ejCajQHP1zz2IcFSA2/4P
-	Qg8hECVY63arcel+V0tXwQtvYyses5ez9N4HNacPZtUZJHSS9FuiS0JRKYJC6q7jXlRvCwlzVCga9
-	62PERRLaW0bA5eAw9fnA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=dzplxGC+4yJBJ/bJ3qMLVTLqGKl2g/H/sWsbk+6T8ck=; b=updr0FxH7D7ywe
+	jgZtu0B1d1hNIvIS0e5CT1LQoheRyk0HN0L+dKqC07rpSYnzH30iDKprwNNfL9F1Z51QTY0iJsCH4
+	r3QRLNjvGz/XDcPBZxZZo9MAiTuH359xLxImGO1G/o9eZs0g0tZYtfs1E+GPxoL8r3TPb24eGjrgY
+	pe9AMur3hVDGYZXii3HowT+/bTcFJsZAnoqlBQXnfeOOvNTk4jnkM3ZPJUucu+jfOu1G3j867lMsc
+	NLlvHULfpItmU8mH7VNILcHP9dpOO30EHj832XTz5Sd41QeN1+6kXCEsG9cV3LiSKSlroTjJUn8Cu
+	hR09lES0/EcY3UD5ECig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0Jc-0002xn-8c; Tue, 05 May 2020 16:21:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jW0KE-0003Kx-Gm; Tue, 05 May 2020 16:21:42 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0JS-0002wb-UV
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:20:56 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1F2E5206B9;
- Tue,  5 May 2020 16:20:52 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588695654;
- bh=0cAfX6WAuzHeQRYxpczQiT++Fzbit2iwi8QK7XTC5TU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=u9CCkizEL0lBpe1KWV+w47OsscV8cueE55ygq0Ywj2NxIph5+eabCVMEQk836jWCL
- ZStezxZkpcSlEcUnp/g7sQ/SyNn8N8+5dGnOa2CvCxK9ecpr9ieyZnbnsPK8oSG9OX
- b5ER6U+oRcelUpsKYP9XXAobt9R49asLpvM0zrSI=
-Date: Tue, 5 May 2020 17:20:50 +0100
-From: Will Deacon <will@kernel.org>
-To: Sudeep Holla <sudeep.holla@arm.com>
-Subject: Re: [PATCH v2 5/5] arm/arm64: smccc: Add ARCH_SOC_ID support
-Message-ID: <20200505162049.GG24239@willie-the-truck>
-References: <20200504092905.10580-1-sudeep.holla@arm.com>
- <20200504092905.10580-6-sudeep.holla@arm.com>
+ id 1jW0K7-0003Jw-Bb
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:21:36 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 045GLVnj022356;
+ Tue, 5 May 2020 11:21:31 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1588695691;
+ bh=OxUyjvjTpC4dkBUPPz1IUnY359iQO02H2M1zKF1GPlc=;
+ h=From:To:CC:Subject:Date;
+ b=RbzphmRfOpEU1RoFFZjjFWb0wr6p1BzWmY3ZnlTL9AQT3O0gTHH4Xr7copS1vrCeu
+ quUAd71JiKxoQTk9o7HDQCbCu23xb3OXLWrUD/oKWp9QR67+RhJs8pFR7i65K7kC2o
+ kvWBkrD5XX8CX4PH3nwZwUs5DEhf9Z/GMfYGnUAk=
+Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 045GLV6Y087775
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 5 May 2020 11:21:31 -0500
+Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE114.ent.ti.com
+ (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 5 May
+ 2020 11:21:31 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE104.ent.ti.com
+ (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Tue, 5 May 2020 11:21:31 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 045GLUkF026653;
+ Tue, 5 May 2020 11:21:30 -0500
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+To: "David S. Miller" <davem@davemloft.net>, Anders Roxell
+ <anders.roxell@linaro.org>
+Subject: [PATCH net-next] net: ethernet: ti: am65-cpts: fix build
+Date: Tue, 5 May 2020 19:21:23 +0300
+Message-ID: <20200505162123.13366-1-grygorii.strashko@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504092905.10580-6-sudeep.holla@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_092055_006902_FBF23312 
-X-CRM114-Status: GOOD (  11.54  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200505_092135_477879_523FDC37 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -77,45 +88,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, harb@amperecomputing.com,
+Cc: netdev@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 10:29:05AM +0100, Sudeep Holla wrote:
-> diff --git a/drivers/firmware/psci/soc_id.c b/drivers/firmware/psci/soc_id.c
-> new file mode 100644
-> index 000000000000..b45f2d78e12e
-> --- /dev/null
-> +++ b/drivers/firmware/psci/soc_id.c
-> @@ -0,0 +1,165 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2020 Arm Limited
-> + */
-> +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/bitfield.h>
-> +#include <linux/device.h>
-> +#include <linux/module.h>
-> +#include <linux/kernel.h>
-> +#include <linux/slab.h>
-> +#include <linux/sys_soc.h>
-> +
-> +#define SMCCC_SOC_ID_JEP106_BANK_IDX_MASK	GENMASK(30, 24)
-> +/*
-> + * As per the spec bits[23:16] are JEP-106 identification code with parity bit
-> + * for the SiP. We can drop the parity bit.
-> + */
+It's possible to have build configuration which will force PTP_1588_CLOCK=m
+and so TI_K3_AM65_CPTS=m while still have TI_K3_AM65_CPSW_NUSS=y. This will
+cause build failures:
 
-Which spec? Could you link to the doc and section here, please?
+aarch64-linux-gnu-ld: ../drivers/net/ethernet/ti/am65-cpsw-nuss.o: in function `am65_cpsw_init_cpts':
+../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685: undefined reference to `am65_cpts_create'
+aarch64-linux-gnu-ld: ../drivers/net/ethernet/ti/am65-cpsw-nuss.c:1685:(.text+0x2e20):
+relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol `am65_cpts_create'
 
-Will
+Fix it by adding dependencies from CPTS in TI_K3_AM65_CPSW_NUSS as below:
+   config TI_K3_AM65_CPSW_NUSS
+   ...
+     depends on TI_K3_AM65_CPTS || !TI_K3_AM65_CPTS
+
+Note. This will create below dependencies and for NFS boot + CPTS all of them
+have to be built-in.
+  PTP_1588_CLOCK -> TI_K3_AM65_CPTS -> TI_K3_AM65_CPSW_NUSS
+
+While here, clean up TI_K3_AM65_CPTS definition.
+
+Fixes: b1f66a5bee07 ("net: ethernet: ti: am65-cpsw-nuss: enable packet timestamping support")
+Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
+Reported-by: Anders Roxell <anders.roxell@linaro.org>
+---
+ drivers/net/ethernet/ti/Kconfig | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+
+diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
+index 4ab35ce7b451..988e907e3322 100644
+--- a/drivers/net/ethernet/ti/Kconfig
++++ b/drivers/net/ethernet/ti/Kconfig
+@@ -99,7 +99,7 @@ config TI_K3_AM65_CPSW_NUSS
+ 	depends on ARCH_K3 && OF && TI_K3_UDMA_GLUE_LAYER
+ 	select TI_DAVINCI_MDIO
+ 	imply PHY_TI_GMII_SEL
+-	imply TI_AM65_CPTS
++	depends on TI_K3_AM65_CPTS || !TI_K3_AM65_CPTS
+ 	help
+ 	  This driver supports TI K3 AM654/J721E CPSW2G Ethernet SubSystem.
+ 	  The two-port Gigabit Ethernet MAC (MCU_CPSW0) subsystem provides
+@@ -112,9 +112,8 @@ config TI_K3_AM65_CPSW_NUSS
+ 
+ config TI_K3_AM65_CPTS
+ 	tristate "TI K3 AM65x CPTS"
+-	depends on ARCH_K3 && OF && PTP_1588_CLOCK
++	depends on ARCH_K3 && OF
+ 	depends on PTP_1588_CLOCK
+-	select NET_PTP_CLASSIFY
+ 	help
+ 	  Say y here to support the TI K3 AM65x CPTS with 1588 features such as
+ 	  PTP hardware clock for each CPTS device and network packets
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
