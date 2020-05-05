@@ -2,68 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4F761C593F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:23:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B1651C5966
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:26:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbBcbvqleJiLBva1tOTC6WtySJy/jpwFEQQjVpKg8aE=; b=XWazhCa1CEi8Tq
-	bpCN9Tjq2MX8n+lwbF5W9maSXCz0bDLD8DqYgJxoO5Cs2BGs4ri3BnJcQvMHOh1oAkeHV5zhtoy5n
-	tvxJ4l5w0QI1ub13nC1pIv4P4rNSdZil5173FEvWQX2uNaZOKJ2KfgifM9kg7ZGHafXesQDmqOyNs
-	cH7Paax1lpxBec1Np6Apcq8KSqEdwKnES7g29iVBdyG1GfeJ+HEpKfbtj8oYOZRPY3V3igA0J/zYt
-	qmQh2lR52FAwFagAMXKua/MU96eOdRdxJg+EXKWqzgVq4BbqfODrLN2bPYhXQXvjqkeUkPihVZLAM
-	m1S/cYHdf2Ix6DOTuguw==;
+	List-Owner; bh=1HjCT+oe/GhwjRSQWe6Py2kHjN2uhxfIuqmouQK0NAc=; b=ilFA6/ILUPii+1
+	sEHEI+twNEZ9fAsIJGXcEnVMldYcxvhfn3ndoqOvJ2/rPyUWviqmERnhH9kxZGS8JQTZ12mwaiV6G
+	Cbcn0lYveJFJoJR+RgLcUI2TJVOTkNeEhGoVEC/xDSFXYbMxs2++6G/kJKtxotieZ2RVuVWsUKP/X
+	SSxpzD+kMvdBC70/xSIpsnBXEaFnNYquwUF4iWNLKQhYaihT7lsWkeOWrZtNL0d0WtYp9FAY6Edhi
+	SSS/OOvndgdCLjkDpyrwO11DsMepnArULueDlhsBNfaRA0xag47jlhaxt9QBps7/nLZtrltZqRKPt
+	syXY3odYceBU8ef+t3Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVyU0-0005ap-Qh; Tue, 05 May 2020 14:23:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVyTn-0005aE-Oj
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:23:28 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DF38520675;
- Tue,  5 May 2020 14:23:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588688607;
- bh=btspPBgx+wVDD4t0Y6wDO3EI1PcWVHUnacBogaW1ocA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KoX6cbhl9KFl5qC+HaUXcuwpnBxYaKxiIaJZTANX5bGE2IngJcYpuvWr1QlhxXGlh
- 1R5dHIp1+d3GYw4NsCiD6U1UUsrifGaWTC1XxwmX2cWkQvoDoAWDQSCJh0IjO5NVXd
- auv9NPi8x7CcnXfkAd456dhu0aKZLe2Is1LKPZnI=
-Date: Tue, 5 May 2020 16:23:25 +0200
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Hyunki Koo <hyunki00.koo@samsung.com>
-Subject: Re: [PATCH v8 1/3] serial: samsung: Replace rd_regb/wr_regb with
- rd_reg/wr_reg
-Message-ID: <20200505142325.GA816056@kroah.com>
-References: <CGME20200420013322epcas2p263e72997dd4ebdaf00b095a83a6b6651@epcas2p2.samsung.com>
- <20200420013300.17249-1-hyunki00.koo@samsung.com>
+	id 1jVyWT-0000Xi-Eu; Tue, 05 May 2020 14:26:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVyWL-0000Wn-CG
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:26:06 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAEE01FB;
+ Tue,  5 May 2020 07:26:03 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.25.241])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 456BF3F68F;
+ Tue,  5 May 2020 07:25:59 -0700 (PDT)
+Date: Tue, 5 May 2020 15:25:56 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] arm64: disable patchable function entry on big-endian
+ clang builds
+Message-ID: <20200505142556.GF82823@C02TD0UTHF1T.local>
+References: <20200505141257.707945-1-arnd@arndb.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200420013300.17249-1-hyunki00.koo@samsung.com>
+In-Reply-To: <20200505141257.707945-1-arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_072327_817806_9188D691 
-X-CRM114-Status: UNSURE (   8.41  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200505_072605_463389_CEBC62A1 
+X-CRM114-Status: GOOD (  18.24  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,27 +62,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Marc Zyngier <maz@kernel.org>, Ionela Voinescu <ionela.voinescu@arm.com>,
+ Julien Thierry <jthierry@redhat.com>, Alexandre Ghiti <alex@ghiti.fr>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Torsten Duwe <duwe@suse.de>,
+ Steve Capper <steve.capper@arm.com>, linux-kernel@vger.kernel.org,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>, Torsten Duwe <duwe@lst.de>,
+ clang-built-linux@googlegroups.com, Josh Poimboeuf <jpoimboe@redhat.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBBcHIgMjAsIDIwMjAgYXQgMTA6MzI6NTZBTSArMDkwMCwgSHl1bmtpIEtvbyB3cm90
-ZToKPiBUaGlzIHBhdGNoIGNoYW5nZSB0aGUgbmFtZSBvZiBtYWNybyBmb3IgZ2VuZXJhbCB1c2Fn
-ZS4KPiAKPiBTaWduZWQtb2ZmLWJ5OiBIeXVua2kgS29vIDxoeXVua2kwMC5rb29Ac2Ftc3VuZy5j
-b20+CgpUaGlzIHBhdGNoIHNlcmllcyBjcmVhdGVzIHRoZSBmb2xsb3dpbmcgYnVpbGQgZXJyb3Is
-IHdoaWNoIGlzIG5vdAphbGxvd2VkOgoKICBDQyBbTV0gIGRyaXZlcnMvdHR5L3NlcmlhbC9zYW1z
-dW5nX3R0eS5vCmRyaXZlcnMvdHR5L3NlcmlhbC9zYW1zdW5nX3R0eS5jOjE4NjoxMzogd2Fybmlu
-Zzog4oCYd3JfcmVnX2JhcnJpZXLigJkgZGVmaW5lZCBidXQgbm90IHVzZWQgWy1XdW51c2VkLWZ1
-bmN0aW9uXQogIDE4NiB8IHN0YXRpYyB2b2lkIHdyX3JlZ19iYXJyaWVyKHN0cnVjdCB1YXJ0X3Bv
-cnQgKnBvcnQsIHUzMiByZWcsIHUzMiB2YWwpCiAgICAgIHwgICAgICAgICAgICAgXn5+fn5+fn5+
-fn5+fn4KClBsZWFzZSBmaXggdXAgYW5kIHJlc2VuZC4gIEFsd2F5cyBtYWtlIHN1cmUgeW91IGtl
-ZXAgdGhlIHJldmlld2VkLWJ5CnRhZ3MgZnJvbSBvdGhlcnMgYXMgd2VsbC4KCmdyZWcgay1oCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Tue, May 05, 2020 at 04:12:36PM +0200, Arnd Bergmann wrote:
+> Clang only supports the patchable_function_entry attribute on
+> little-endian arm64 builds, but not on big-endian:
+> 
+> include/linux/kasan-checks.h:16:8: error: unknown attribute 'patchable_function_entry' ignored [-Werror,-Wunknown-attributes]
+> 
+> Disable that configuration with another dependency. Unfortunately
+> the existing check is not enough, as $(cc-option) at this point does
+> not pass the -mbig-endian flag.
+
+Well that's unfortunate. :(
+
+Do we know if this is deliberate and/or likely to change in future? This
+practically rules out a BE distro kernel with things like PAC, which
+isn't ideal.
+
+> Fixes: 3b23e4991fb6 ("arm64: implement ftrace with regs")
+> Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+This looks fine for now, and we can add a version check in future, so:
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Mark.
+
+> ---
+>  arch/arm64/Kconfig | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 4b256fa6db7a..a33d6402b934 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -151,7 +151,7 @@ config ARM64
+>  	select HAVE_DMA_CONTIGUOUS
+>  	select HAVE_DYNAMIC_FTRACE
+>  	select HAVE_DYNAMIC_FTRACE_WITH_REGS \
+> -		if $(cc-option,-fpatchable-function-entry=2)
+> +		if $(cc-option,-fpatchable-function-entry=2) && !(CC_IS_CLANG && CPU_BIG_ENDIAN)
+>  	select HAVE_EFFICIENT_UNALIGNED_ACCESS
+>  	select HAVE_FAST_GUP
+>  	select HAVE_FTRACE_MCOUNT_RECORD
+> -- 
+> 2.26.0
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
