@@ -2,59 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D18B91C5FB8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:10:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 464251C5FBD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:11:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TilHKncflgV7WpTr7q2OK2zAczgi29YpvStE3XselWc=; b=QUfMT0y9ZqP1+jA3Lg+75XhX8
-	PojKVfBBxu7V8EmaSqzsR8rE+XT5bpSDplDxY8y/j+memN1HDXMtZ/aPx3d9ZQqQlx/ycQzIp7QZ5
-	AyT11bYthguv/dqvMjnW4k35Lv+0WIeZ7tZCtFkyqORk+kNLwhSzt8JtqJ/nFQ/plaDQEXmpZkVOf
-	6LWi981g0nklhGnxeSgTwWtJ8kIoaMC99fmlULCZX8bZJBFkcxzR+4gBQ45HxL1rNEkokcVmoofXx
-	Re2n/rAc7adHPMSZYAzofSEY4z3W1XF3tiGzzj1IUCZ/iGx/1dluSiQ/M8a9WnIe9q6cZuN/BWK5b
-	Vq++NsnBw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JRDn+NdizgQx2BTyoa2duUZPTjlhzdrgC9VP9pKPPbA=; b=i619mp3VOLAYoq
+	bjXORpsGWdRKmpuXeMqo+8MNUay+88TN1xJ/wuwVFvEQq56zPIi9TsPZnAhEU5QmTw59+TBh6m9kE
+	FQxfj+egnlmdmDDS+f17Hw3Mlbi6YQbAmeEURtSyDTeAv8lHE+D51p8bpdwgB/0hp/Ibav7RPJimx
+	7iOadx5O+wL4xEXEjzCkyt6j0elwLfjuID6adjl0FvTfj9mprE63SHjGqTm+CR0yrfA5uKByKMO8U
+	FR1dZDxVb9ILbH4qWPgARSUo8HFUN1KIXrHvEdIoPMXOeLk9hJw2IJJCsAJkOnDWT6voFIidFKIbb
+	DHxtgO5m4ozoWNBkZ/NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW21c-0008Qy-3D; Tue, 05 May 2020 18:10:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW21T-0008PX-R1
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:10:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 727811FB;
- Tue,  5 May 2020 11:10:26 -0700 (PDT)
-Received: from [10.57.39.240] (unknown [10.57.39.240])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A450F3F305;
- Tue,  5 May 2020 11:10:24 -0700 (PDT)
-Subject: Re: [PATCH 00/16] dts/dt-bindings: Fix Arm Ltd. ARMv8 "boards"
-To: Andre Przywara <andre.przywara@arm.com>, Rob Herring <robh@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-2-andre.przywara@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <a96c83b3-dc58-e1da-de52-d36bdfc0533f@arm.com>
-Date: Tue, 5 May 2020 19:10:23 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200505165212.76466-2-andre.przywara@arm.com>
-Content-Language: en-GB
+	id 1jW223-0000H5-4n; Tue, 05 May 2020 18:11:03 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW21u-0000Gg-Pk
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:10:56 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 12B5E206B8;
+ Tue,  5 May 2020 18:10:54 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588702254;
+ bh=WdYkPZE/293zR7WzWCJ4+neg7BG9vBaeaHBO/vgMctM=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=sHyv4DFdRAGLwvbTYAEY4V1bXwK+vPKh9sipsbL84Y4hMGam/3M8YtASvMiCl0AVl
+ wHZ1re5z2AUaFNJ/VaoF3BOBDMvuJLyL3rRhkPxzCyAlksTiTTL2q+VQgQsOiNKyy2
+ Dk/cTgxeuUDvN6C2yp568EEUlruh8txqehJem42Q=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jW21s-009bV3-3P; Tue, 05 May 2020 19:10:52 +0100
+Date: Tue, 05 May 2020 19:10:50 +0100
+Message-ID: <86mu6mtfpx.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Scull <ascull@google.com>
+Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
+ struct kvm
+In-Reply-To: <20200505172351.GD237572@google.com>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-4-maz@kernel.org>
+ <20200505152648.GA237572@google.com> <86pnbitka5.wl-maz@kernel.org>
+ <20200505172351.GD237572@google.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: ascull@google.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, will@kernel.org,
+ andre.przywara@arm.com, Dave.Martin@arm.com, gcherian@marvell.com,
+ prime.zeng@hisilicon.com, catalin.marinas@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_111027_923174_9B45000C 
-X-CRM114-Status: GOOD (  16.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_111054_875585_02FEFDAE 
+X-CRM114-Status: GOOD (  19.70  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,50 +96,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ kvmarm@lists.cs.columbia.edu, George Cherian <gcherian@marvell.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-05 5:51 pm, Andre Przywara wrote:
-> Date: Mon, 4 May 2020 12:41:55 +0100
-> Subject: [PATCH 01/16] dt-bindings: mali-midgard: Allow dma-coherent
+On Tue, 05 May 2020 18:23:51 +0100,
+Andrew Scull <ascull@google.com> wrote:
 > 
-> Add the boolean dma-coherent property to the list of allowed properties,
-> since some boards (Arm Juno) integrate the GPU this way.
-
-The same comment as for "iommus" applies to some degree here too. 
-There's a bit more likelihood that the device itself does want to know 
-whether it's integrated coherently, so that it can choose what memory 
-attributes to use (as is the case here), but with protocols like 
-ACE-lite it's possible to hard-wire any old dumb device to behave 
-coherently without even realising. Thus this is another property that 
-could legitimately turn up more or less anywhere.
-
-Robin.
-
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->   Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml | 2 ++
->   1 file changed, 2 insertions(+)
+> > > > +	/* VTCR_EL2 value for this VM */
+> > > > +	u64    vtcr;
+> > > 
+> > > VTCR seems quite strongly tied to the MMU config. Is it not controlled
+> > > independently for the nested MMUs and so remains in this struct?
+> > 
+> > This particular instance of VTCR_EL2 is the host's version. Which
+> > means it describes the virtual HW for the EL1 guest. It constraints,
+> > among other things, the number of IPA bits for the guest, for example,
+> > and is configured by the VMM.
+> > 
+> > Once you start nesting, each vcpu has its own VTCR_EL2 which is still
+> > constrained by the main one (no nested guest can have a T0SZ bigger
+> > than the value imposed by userspace for this guest as a whole).
+> > 
+> > Does it make sense?
 > 
-> diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-> index 0407e45eb8c4..5d7165385e1f 100644
-> --- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-> +++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-> @@ -87,6 +87,8 @@ properties:
->     "#cooling-cells":
->       const: 2
->   
-> +  dma-coherent: true
-> +
->   required:
->     - compatible
->     - reg
+> It does up to my ignorance of the spec in this regard.
 > 
+> Simliar to James's question, should `vtcr` live inside the mmu struct
+> with the top level `kvm::mmu` field containing the host's version and
+> the nested mmus containing the nested version of vtcr to be applied to
+> the vCPU? I didn't noticed there being a vtcr for the nested version in
+> the ~90-patch series so maybe that just isn't something that needs
+> thinking about?
+
+They serve two very different purposes. One defines the virtual HW,
+the other one is the view that a guest hypervisor gives to its own
+guests. The latter is also per-vcpu, and not per VM (yes, NV implies
+the "de-facto CnP", for those who remember an intense whiteboard
+session).  It thus lives in the system register file (being private to
+each vcpu). Another reason is that the HW can directly access the
+in-memory version of VTCR_EL2 when ARMv8.4-NV is present.
+
+Thanks,
+
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
