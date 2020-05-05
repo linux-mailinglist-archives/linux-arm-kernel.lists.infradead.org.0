@@ -2,78 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFBEF1C54B8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:49:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CC0E1C54BD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 13:51:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bT7+lF7nqL8yxclZ4kd2fERTj3wb3X5SQEjbUqv3EBI=; b=E0QLbflmlf/L8v
-	Ri7a4BV6cyoyO7d9FMgU5v09pJapo+C1yRvIBg3CmK4tYGy6HrfL98hwO2HRuemdq8DW7v/MCdY33
-	6t92EOAKNJdrH6sitrlg0FyifiFfGE1ug54bBIpiRJpMywVnx/HOrYcoUMnJb+67+b81NEgvObg2K
-	c/TzO7/QT8+07f18JW5lOKLEDY7+SBdP69ljLs9ypxU7Yn33xA082vINL26J2Kqq0ZfPjcGqYGrpZ
-	HK4/Zt5/IXaeFp09IW94LUpDeeDt9xzfGfr6mh5LwsKuEqu4sya2L2QeLOm0uROOQAIUV790wj6mP
-	7E1MfFzm8X3Fnyj/4qSA==;
+	List-Owner; bh=jHgFcGmBT/0FVvYjASubXEh8j8j/Qorsez8RCWa9E70=; b=BD18BF8syIr9D5
+	MkEcgD+2o78cLCaMmWfNI12ElbqpirE/5evXmASx37fS91FNHQXVxAa3KnNkSB6jhOD3/3lbzM/9T
+	CNIXL/IjZ6bwZNJL/+IJRHB6OCOlXVnURoRxGYHMbR840nLhhW9bUDQrGu/ZLbyliehjqUIdxcAM9
+	2HNGRGdLnnP1DWDvqXyNUx1Lni18zw29eC7JFJSgNgwBWQxukkGoR4NlvO3GjNVlRNSwwoh3DWIyB
+	WGodrGc0wLvbdI1Zv0k45agSmHIL2a4qjU0IPtSmbVptwYyyGwcBGkqZac1id2fHZmA9YgCSUUkdU
+	6onF2yRlIYxcX3MRtimg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVw4h-0005a4-DQ; Tue, 05 May 2020 11:49:23 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVw4Z-0005XC-Ss
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:49:17 +0000
-X-UUID: 049a1c47e2f840d5b71190a049554c22-20200505
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=pPCw/hSKdiOkecOhojlmReD8aZk/qsyj+9+P5fF9LYA=; 
- b=HvPZq82ywqxJE5RlOFXEeyzPJah9VOMzrT5fEEt5MUXvHBm/UgriO6dPs+Bei3oqYB8cxtuOHWIFE+OnuaCtJ59zzulSMza6B4U40bqEqbV/h2zEQQYTa5fgFkFhWnVotmojvMC3uvtSaz4H1PoAZ3oIqqwSk++2MtXojvLOv10=;
-X-UUID: 049a1c47e2f840d5b71190a049554c22-20200505
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 669339013; Tue, 05 May 2020 03:48:43 -0800
-Received: from MTKMBS33N1.mediatek.inc (172.27.4.75) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 5 May 2020 04:49:03 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS33N1.mediatek.inc
- (172.27.4.75) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Tue, 5 May 2020 19:49:00 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Tue, 5 May 2020 19:48:59 +0800
-Message-ID: <1588679279.8804.133.camel@mhfsdcap03>
-Subject: Re: [PATCH v10 1/3] media: dt-bindings: ov8856: Document YAML bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Robert Foss <robert.foss@linaro.org>, Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 5 May 2020 19:47:59 +0800
-In-Reply-To: <20200505100129.104673-2-robert.foss@linaro.org>
-References: <20200505100129.104673-1-robert.foss@linaro.org>
- <20200505100129.104673-2-robert.foss@linaro.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+	id 1jVw6O-00007U-Fu; Tue, 05 May 2020 11:51:08 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jVw6F-00006F-VM
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 11:51:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4380230E;
+ Tue,  5 May 2020 04:50:59 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.25.241])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3D3673F68F;
+ Tue,  5 May 2020 04:50:57 -0700 (PDT)
+Date: Tue, 5 May 2020 12:50:54 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH V3 04/16] arm64/cpufeature: Introduce ID_PFR2 CPU register
+Message-ID: <20200505115054.GC82823@C02TD0UTHF1T.local>
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
+ <20200505111241.GF19710@willie-the-truck>
+ <20200505111607.GA82823@C02TD0UTHF1T.local>
+ <20200505112718.GH19710@willie-the-truck>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 13630F7D312406468B28054E50195F55DADBD634018715057684F8B50EA5600E2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200505112718.GH19710@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_044915_941780_5F32DB7B 
-X-CRM114-Status: GOOD (  23.40  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_045100_095103_4B9AD4A0 
+X-CRM114-Status: GOOD (  22.31  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,259 +65,117 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tomasz Figa <tfiga@chromium.org>,
- Marco Felsch <m.felsch@pengutronix.de>, Maxime
- Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- Ben Kao <ben.kao@intel.com>, Sakari Ailus <sakari.ailus@iki.fi>, Maxime
- Ripard <maxime@cerno.tech>, Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robert,
+On Tue, May 05, 2020 at 12:27:19PM +0100, Will Deacon wrote:
+> On Tue, May 05, 2020 at 12:16:07PM +0100, Mark Rutland wrote:
+> > On Tue, May 05, 2020 at 12:12:41PM +0100, Will Deacon wrote:
+> > > On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
+> > > > This adds basic building blocks required for ID_PFR2 CPU register which
+> > > > provides information about the AArch32 programmers model which must be
+> > > > interpreted along with ID_PFR0 and ID_PFR1 CPU registers. This is added
+> > > > per ARM DDI 0487F.a specification.
+> > > > 
+> > > > Cc: Catalin Marinas <catalin.marinas@arm.com>
+> > > > Cc: Will Deacon <will@kernel.org>
+> > > > Cc: Marc Zyngier <maz@kernel.org>
+> > > > Cc: Mark Rutland <mark.rutland@arm.com>
+> > > > Cc: James Morse <james.morse@arm.com>
+> > > > Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > > > Cc: kvmarm@lists.cs.columbia.edu
+> > > > Cc: linux-arm-kernel@lists.infradead.org
+> > > > Cc: linux-kernel@vger.kernel.org
+> > > > 
+> > > > Suggested-by: Mark Rutland <mark.rutland@arm.com>
+> > > > Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+> > > > Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> > > > ---
+> > > >  arch/arm64/include/asm/cpu.h    |  1 +
+> > > >  arch/arm64/include/asm/sysreg.h |  4 ++++
+> > > >  arch/arm64/kernel/cpufeature.c  | 11 +++++++++++
+> > > >  arch/arm64/kernel/cpuinfo.c     |  1 +
+> > > >  arch/arm64/kvm/sys_regs.c       |  2 +-
+> > > >  5 files changed, 18 insertions(+), 1 deletion(-)
+> > > > 
+> > > > diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
+> > > > index b4a40535a3d8..464e828a994d 100644
+> > > > --- a/arch/arm64/include/asm/cpu.h
+> > > > +++ b/arch/arm64/include/asm/cpu.h
+> > > > @@ -46,6 +46,7 @@ struct cpuinfo_arm64 {
+> > > >  	u32		reg_id_mmfr3;
+> > > >  	u32		reg_id_pfr0;
+> > > >  	u32		reg_id_pfr1;
+> > > > +	u32		reg_id_pfr2;
+> > > >  
+> > > >  	u32		reg_mvfr0;
+> > > >  	u32		reg_mvfr1;
+> > > > diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> > > > index e5317a6367b6..c977449e02db 100644
+> > > > --- a/arch/arm64/include/asm/sysreg.h
+> > > > +++ b/arch/arm64/include/asm/sysreg.h
+> > > > @@ -153,6 +153,7 @@
+> > > >  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
+> > > >  #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
+> > > >  #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
+> > > > +#define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
+> > > 
+> > > nit: but please group these defines by name rather than encoding.
+> > 
+> > So far we've *always* grouped these by encoding in this file, so can we
+> > keep things that way for now? Otherwise we're inconsistent with both
+> > schemes.
+> 
+> Hmm, but it's really hard to read sorted that way and we'll end up with
+> duplicate definitions like we had for some of the field offsets already.
 
-Thanks for the update.
+I appreciate that, and don't disagree that the current scheme is not
+obvious.
 
-On Tue, 2020-05-05 at 12:01 +0200, Robert Foss wrote:
-> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> 
-> This patch adds documentation of device tree in YAML schema for the
-> OV8856 CMOS image sensor.
-> 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> Reviewed-by: Maxime Ripard <mripard@kernel.org>
-> ---
-> 
-> - Changes since v9:
->   * Remove remote-endpoint property
->   * Marco: Make port property required again
->   * Sakari: Remove Ben as a maintainer
->   * Sakari: Replace data-lanes with const items
->   * Sakari: Remove clock-lanes property
->   * Sakari & Rob Herring: Change type of link-frequency
->     work around dt-schema bug
-> 
-> - Changes since v8:
->   * Maxime: Added r-b
-> 
-> - Changes since v7:
->   * Marco: Make 'port' property optional
->   * Maxime & Sakari: Add 'link-frequencies' property to dt binding
->   * robher: Improve description for 'port' property
-> 
-> - Changes since v6:
->   * Marco: remove qcom specifics from DT example
->    
-> - Changes since v5:
->   * Add assigned-clocks and assigned-clock-rates
->   * robher: dt-schema errors
-> 
-> - Changes since v4:
->   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
->   * Add clock-lanes property to example
->   * robher: Fix syntax error in devicetree example
-> 
-> - Changes since v3:
->   * robher: Fix syntax error
->   * robher: Removed maxItems
->   * Fixes yaml 'make dt-binding-check' errors
-> 
-> - Changes since v2:
-> 
-> - Changes since v1:
->   Fixes comments from Sakari, Tomasz
->   * Add clock-frequency and link-frequencies in DT
-> 
->  .../devicetree/bindings/media/i2c/ov8856.yaml | 142 ++++++++++++++++++
->  MAINTAINERS                                   |   1 +
->  2 files changed, 143 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/i2c/ov8856.yaml b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> new file mode 100644
-> index 000000000000..d6af685ad3ca
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> @@ -0,0 +1,142 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +# Copyright (c) 2019 MediaTek Inc.
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/i2c/ov8856.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Omnivision OV8856 CMOS Sensor Device Tree Bindings
-> +
-> +maintainers:
-> +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> +
-> +description: |-
-> +  The Omnivision OV8856 is a high performance, 1/4-inch, 8 megapixel, CMOS
-> +  image sensor that delivers 3264x2448 at 30fps. It provides full-frame,
-> +  sub-sampled, and windowed 10-bit MIPI images in various formats via the
-> +  Serial Camera Control Bus (SCCB) interface. This chip is programmable
-> +  through I2C and two-wire SCCB. The sensor output is available via CSI-2
-> +  serial data output (up to 4-lane).
-> +
-> +properties:
-> +  compatible:
-> +    const: ovti,ov8856
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    maxItems: 1
-> +
-> +  clock-names:
-> +    description:
-> +      Input clock for the sensor.
-> +    items:
-> +      - const: xvclk
-> +
-> +  clock-frequency:
-> +    description:
-> +      Frequency of the xvclk clock in Hertz.
-> +
-> +  dovdd-supply:
-> +    description:
-> +      Definition of the regulator used as interface power supply.
-> +
-> +  avdd-supply:
-> +    description:
-> +      Definition of the regulator used as analog power supply.
-> +
-> +  dvdd-supply:
-> +    description:
-> +      Definition of the regulator used as digital power supply.
-> +
-> +  reset-gpios:
-> +    description:
-> +      The phandle and specifier for the GPIO that controls sensor reset.
-> +      This corresponds to the hardware pin XSHUTDOWN which is physically
-> +      active low.
-> +
-> +  port:
-> +    type: object
-> +    additionalProperties: false
-> +    description:
-> +      A node containing an output port node with an endpoint definition
-> +      as documented in
-> +      Documentation/devicetree/bindings/media/video-interfaces.txt
-> +
-> +    properties:
-> +      endpoint:
-> +        type: object
-> +
-> +        properties:
-> +          data-lanes:
-> +            description: |-
-> +              The driver only supports four-lane operation.
-> +            items:
-> +              - const: 1
-> +              - const: 2
-> +              - const: 3
-> +              - const: 4
-> +
-> +          link-frequencies:
-> +            allOf:
-> +              - $ref: /schemas/types.yaml#/definitions/uint64-array
-> +            description:
-> +              Allowed data bus frequencies. 360000000, 180000000 Hz or both
-> +              are supported by the driver.
-> +
-> +
-> +        required:
-> +          - link-frequencies
-> +
-> +    required:
-> +      - endpoint
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - clock-frequency
-> +  - dovdd-supply
-> +  - avdd-supply
-> +  - dvdd-supply
-> +  - reset-gpios
-> +  - port
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/gpio/gpio.h>
-> +
-> +    i2c {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +
-> +        ov8856: camera@10 {
-> +            compatible = "ovti,ov8856";
-> +            reg = <0x10>;
-> +
-> +            reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
+I just want to ensure that we don't make things less consistent, and if
+we're going to change the scheme in order to make that easier, it should
+be a separate patch. There'll be other changes like MMFR4_EL1, and we
+should probably add a comment as to what the policy is either way (e.g.
+if we're just grouping at the top level, or if that should be sorted
+too).
 
-Apologies for missing to follow the earlier discussion related to this.
-I noticed the GPIO flag para and __ov8856_power_on() are aligned using
-ACTIVE_LOW.
+Thanks,
+Mark.
 
-But from the datasheet, XSHUTDN pin is active-high for OV8856.
-It means devm_gpiod_get API (in probe func) should use GPIOD_OUT_LOW to
-initialize the GPIO as output with a value of 0.
-Otherwise it should use GPIOD_OUT_HIGH.
-
-There is one case for GPIO_ACTIVE_LOW setting:
-https://patchwork.linuxtv.org/patch/63460/
-https://patchwork.linuxtv.org/patch/63461/
-
-Sakari, Tomasz, am I right?
-
-> +            pinctrl-names = "default";
-> +            pinctrl-0 = <&clk_24m_cam>;
-> +
-> +            clocks = <&cam_osc>;
-> +            clock-names = "xvclk";
-> +            clock-frequency = <19200000>;
-> +
-> +            avdd-supply = <&mt6358_vcama2_reg>;
-> +            dvdd-supply = <&mt6358_vcamd_reg>;
-> +            dovdd-supply = <&mt6358_vcamio_reg>;
-> +
-> +            port {
-> +                wcam_out: endpoint {
-> +                    remote-endpoint = <&mipi_in_wcam>;
-> +                    data-lanes = <1 2 3 4>;
-> +                    link-frequencies = /bits/ 64 <360000000>;
-> +                };
-> +            };
-> +        };
-> +    };
-> +...
-> \ No newline at end of file
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 26f281d9f32a..84b262afd13d 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -12489,6 +12489,7 @@ L:	linux-media@vger.kernel.org
->  S:	Maintained
->  T:	git git://linuxtv.org/media_tree.git
->  F:	drivers/media/i2c/ov8856.c
-> +F:	Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+> The only ID register that seems to be out of place atm is MMFR4, which I
+> can move (see below)
+> 
+> Will
+> 
+> --->8
+> 
+> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+> index 2dd3f4ca9780..137201ea383b 100644
+> --- a/arch/arm64/include/asm/sysreg.h
+> +++ b/arch/arm64/include/asm/sysreg.h
+> @@ -140,6 +140,7 @@
+>  #define SYS_ID_MMFR1_EL1		sys_reg(3, 0, 0, 1, 5)
+>  #define SYS_ID_MMFR2_EL1		sys_reg(3, 0, 0, 1, 6)
+>  #define SYS_ID_MMFR3_EL1		sys_reg(3, 0, 0, 1, 7)
+> +#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
 >  
-
-Had you run parse-maintainers.pl?
-The new item is supposed to be arranged in alphabetical order.
-
->  OMNIVISION OV9640 SENSOR DRIVER
->  M:	Petr Cvek <petrcvekcz@gmail.com>
+>  #define SYS_ID_ISAR0_EL1		sys_reg(3, 0, 0, 2, 0)
+>  #define SYS_ID_ISAR1_EL1		sys_reg(3, 0, 0, 2, 1)
+> @@ -147,7 +148,6 @@
+>  #define SYS_ID_ISAR3_EL1		sys_reg(3, 0, 0, 2, 3)
+>  #define SYS_ID_ISAR4_EL1		sys_reg(3, 0, 0, 2, 4)
+>  #define SYS_ID_ISAR5_EL1		sys_reg(3, 0, 0, 2, 5)
+> -#define SYS_ID_MMFR4_EL1		sys_reg(3, 0, 0, 2, 6)
+>  #define SYS_ID_ISAR6_EL1		sys_reg(3, 0, 0, 2, 7)
+>  
+>  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
 
 _______________________________________________
 linux-arm-kernel mailing list
