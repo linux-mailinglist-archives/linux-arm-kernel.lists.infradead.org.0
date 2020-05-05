@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 570C41C4D77
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:56:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AF971C4D81
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 06:58:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ExZ06NCKFzO2UvrXiuyKPdd9kLqERJ7AvUAFninbvRY=; b=gfkNr7NJtWjeeb
-	ndtxLcV+xlBJl9PLO4qOKMigwB2BdxApgA7oUbdnfL3I3PV47hhhXVeSuXKt5X5qRomYUFI21mFvm
-	2tqmaB7soCVwoFtLIG6NqKS2ith/yE7guiEn0kAoxo/mgoRa3g1HFnSdKZFmQyYVzQ3NszndWY8kl
-	9IeY/F3raQMH4Iyx8Ahq/N4Pg2X1Q6yp3HGtuvlemv6RUEXpRS8iViRbV/f7Pd8/FhaDAzsvPW1g4
-	ZvtEh/sqyIAHdYW7hB4IHHq+OEifFY0io48EUzrXCciydxve1ydypmazETiI/Vg0lOpMZP95cloVc
-	XH1ZdPKr3xnzri4fc42w==;
+	List-Owner; bh=BZMX4HTvHDknDpP8QOB5X5cxKmztkFU5rRUQ+HKBn0Q=; b=dc6MsIB/fu5tID
+	LkH87FK0NxIu3JIbTgO31K1otyGhpU08ibEalunAJt9lL1GmUJ9+6inQijZyD+EqP7WPlFWoqCqP/
+	zAp8ek3313po5hL0Ij5o5Kdbllv8b5KEwdQyN6bM3rxJuC8Rkg/o/SpHh99x/fbn3M7CfaB1OtPcy
+	krtzcHewpe0wRCr7iZOZzQuTpSzGPe9vAmo74zP1WbNIDgpFMBxlRhpWlb4Pq1dEJ+AY+JoKGxtdb
+	tos5tDjNWOwM+GWKjGH0WrmegObfNWj1S5JxjU/ZPyuljazkL/OvGhmAnPN/JrsBtRbtHA1UmA6RD
+	EY3ls2TZ0VZCRaOfq47A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVpcf-00020u-IN; Tue, 05 May 2020 04:56:01 +0000
+	id 1jVpf2-0002VJ-58; Tue, 05 May 2020 04:58:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVpcY-00020W-QJ
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:55:56 +0000
+ id 1jVpev-0002Uk-MJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 04:58:22 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5F1E2206B9;
- Tue,  5 May 2020 04:55:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4AB8E206B9;
+ Tue,  5 May 2020 04:58:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588654554;
- bh=OZB+5isnyy69m59BrCmuj7ms/vJuDmzLuMDFPKnl9qA=;
+ s=default; t=1588654701;
+ bh=LcQ344sjr6nEiwgADkb7OZQNqpBsHsLRt3hhUHNyb5s=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=dQolMy+wBS73ZC6AuNO6c0NUs6EYQvxPuVXPUDD8HKyG5LmIfqyDsXb4tK18bH1q+
- lO4lS+vhPUVQ0/tg4/kHNtehxP62Fu8jccpA9Uosww5wVQFZmS9zIjxL+yQRyaAgJ2
- LOq9kmbr5jJRA7/D0RVVv4uB6q98y239nM9g5hEM=
+ b=BpHQHFGvoS422p27Z7O9MMXB/4z1bDRjgVsznR/1Suj3xgTlf10qxhqpdbLycslDQ
+ Fy/qPOnC3q69ovPHCI7IZSlhxz9tdV8WSZ38tleBPUHYct3UmlWgIIRuBdUHSg6qgM
+ c5EgZDPFbeBetXlPUPcequXXhwFyCI18RQgt/qr4=
 MIME-Version: 1.0
-In-Reply-To: <1584279836-29825-13-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1584279836-29825-10-git-send-email-aisheng.dong@nxp.com>
 References: <1584279836-29825-1-git-send-email-aisheng.dong@nxp.com>
- <1584279836-29825-13-git-send-email-aisheng.dong@nxp.com>
-Subject: Re: [PATCH V6 12/12] clk: imx: scu: unregister clocks if add provider
- failed
+ <1584279836-29825-10-git-send-email-aisheng.dong@nxp.com>
+Subject: Re: [PATCH V6 09/12] clk: imx: lpcg: allow lpcg clk to take device
+ pointer
 From: Stephen Boyd <sboyd@kernel.org>
 To: Dong Aisheng <aisheng.dong@nxp.com>, linux-clk@vger.kernel.org
-Date: Mon, 04 May 2020 21:55:53 -0700
-Message-ID: <158865455360.11125.17297772155388824388@swboyd.mtv.corp.google.com>
+Date: Mon, 04 May 2020 21:58:20 -0700
+Message-ID: <158865470060.11125.1108363157880978181@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200504_215554_870648_A42EC300 
-X-CRM114-Status: GOOD (  14.10  )
+X-CRM114-CacheID: sfid-20200504_215821_748484_3D618DE6 
+X-CRM114-Status: UNSURE (   5.24  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,51 +86,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Dong Aisheng (2020-03-15 06:43:56)
-> Unregister clocks if add provider failed
+Quoting Dong Aisheng (2020-03-15 06:43:53)
+> Used to support runtime pm.
 > 
 > Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
-> 
 > ---
 
-Why isn't this squashed in to where it's needed?
-
-> ChangeLog:
-> v6: new patch
-> ---
->  drivers/clk/imx/clk-imx8qxp.c | 11 +++++++++--
->  drivers/clk/imx/clk-scu.c     | 13 +++++++++++++
->  drivers/clk/imx/clk-scu.h     |  2 ++
->  3 files changed, 24 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
-> index 2ec3e0c4749d..e615214495c0 100644
-> --- a/drivers/clk/imx/clk-imx8qxp.c
-> +++ b/drivers/clk/imx/clk-imx8qxp.c
-> @@ -138,10 +138,17 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
->                                 i, PTR_ERR(clks[i]));
->         }
->  
-> -       if (clk_cells == 2)
-> +       if (clk_cells == 2) {
->                 ret = of_clk_add_hw_provider(ccm_node, imx_scu_of_clk_src_get, imx_scu_clks);
-> -       else
-> +               if (ret)
-> +                       imx_clk_scu_unregister();
-> +       } else {
-> +               /*
-> +                * NOTE: we did not unregister clocks for the legacy way cause
-> +                * it will be removed later.
-
-I got confused what 'it' was. I think it's the legacy way entirely.
-Maybe say "legacy binding code path doesn't unregister here because..."
-
-> +                */
->                 ret = of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
-> +       }
->  
->         return ret;
->  }
+Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
