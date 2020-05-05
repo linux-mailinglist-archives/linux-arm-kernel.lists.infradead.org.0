@@ -2,70 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFC9C1C5D9F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:31:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 160031C5DA2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 18:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d63sIW4U+eqNj+PG2Eucoyse1AHNV8XaWojRAewxj5s=; b=O3ZKbLfyxLBBSS
-	gAfdzPYzepa55B/3h9+FdlKYTvi2KDnxY15lH0scC2DUPZKCy51/PSqKIeEcGXxhsfpZFNz+WqkNV
-	Nlefl4byEg4WwtzM0WX/zJYrfv364PGgrbOkO+a4OcF7C2bXH8rOqfcKEkOP93zyHTm212aYeKsBy
-	W0tZkJIzqvyz9n1rs/J/PaoFevUkYoX1XRSGhZvQN57BDoKpuG2gJHqWEahnbJESsQemiHYsGAxMG
-	Kf8DyieEJCG1BAQ/G9+ZMYLK+QbP8+fvHg3H/67WIEYcd0m3TRJnJGxacMsRvw2uD5qF6us4mBoEe
-	5U4HV3FSAy89Yv8LHkMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MpiLQqiY8pyou/u5b8OS95wlBlUfT41AQRO+g5xT2CM=; b=R9eWztrqiIh0CY
+	c6lOpyHuBJ8kv/pm0ovp9mx8ESgz8tdwOCsyJqhcUtC14/em4sH43gn92ybUisWLHF6Z8AtetIqiO
+	krtDobMkzszCDeIZADLzAxCSXZM3E6XipcBW7boxHyjs1aJ5Kv+JpgzpkwSN0ThtfptaAC8uV07ij
+	+Lbu72ozWs7IENQsJTxaOULsz7NisPMThJC+1hJJ/E2ZHO6oCpMn3UhrYaGZyCxAy2Mj2zfxT8gb/
+	BQtsYMajf4EkYphAiyKM9CsvT30OC4PuPV4SNPETQab3P23kY32RC36EleiJZCUdr026XlkSx4hTN
+	2H+mOOT3zXeLsw7YaF4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW0Tr-0002HL-BR; Tue, 05 May 2020 16:31:39 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jW0Uf-0002fv-Tn; Tue, 05 May 2020 16:32:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW0Tk-0002GS-51
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:31:33 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 045GVTWB119652;
- Tue, 5 May 2020 11:31:29 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588696289;
- bh=taYNfOw1PERNYYRNSf6RpqbmydDX/ba8q0uroLuaJ+A=;
- h=From:To:CC:Subject:Date;
- b=ACdEEFfLuoAHZtJh1cM1BSIgKLA4wfntKTjCv8fjI981M1UVDFnq7Jd3xPxJaUJbO
- /1HomyBWx+8qMr/AWy6mX4CuhHmQcbf3+PFGG/xG8yP+3mRTHLP7+IiGIve870t3I1
- GPZZI1tdE/va7R9+D8/23qGvKKIT+S5JH5+T98Ig=
-Received: from DLEE114.ent.ti.com (dlee114.ent.ti.com [157.170.170.25])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 045GVTDq045409
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 5 May 2020 11:31:29 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE114.ent.ti.com
- (157.170.170.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 5 May
- 2020 11:31:29 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Tue, 5 May 2020 11:31:29 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 045GVRfw048550;
- Tue, 5 May 2020 11:31:28 -0500
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-To: "David S. Miller" <davem@davemloft.net>
-Subject: [PATCH] net: ethernet: ti: am65-cpsw-nuss: fix irqs type
-Date: Tue, 5 May 2020 19:31:26 +0300
-Message-ID: <20200505163126.13942-1-grygorii.strashko@ti.com>
-X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1jW0UX-0002f8-L1
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 16:32:23 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DAA4F206FA;
+ Tue,  5 May 2020 16:32:20 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588696341;
+ bh=f2FnSNmx6/YrdynY8bpg6PqkifLdRaIEMjTJ5/Vhq2A=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=aZc6+em+RB8cGHTqR6utzVkDZb6DwmmOJ2EeN3C1k//1ijmEfPb59pPJZniZs2f4b
+ A9mmrdC5P+EHe6udAD6oi6DnjSiSaoCq3iyiOPKuMX8zo3F2HGzbgSdTGeZia6JU6B
+ m5mbAIdcW15XG24xkqXJ1Ttk21rS/E+WdS77an7g=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=big-swifty.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jW0UV-009YO4-5e; Tue, 05 May 2020 17:32:19 +0100
+Date: Tue, 05 May 2020 17:32:18 +0100
+Message-ID: <86pnbitka5.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Andrew Scull <ascull@google.com>
+Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
+ struct kvm
+In-Reply-To: <20200505152648.GA237572@google.com>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-4-maz@kernel.org>
+ <20200505152648.GA237572@google.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: ascull@google.com, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org, will@kernel.org,
+ andre.przywara@arm.com, Dave.Martin@arm.com, gcherian@marvell.com,
+ prime.zeng@hisilicon.com, catalin.marinas@arm.com
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_093132_270228_30A10605 
-X-CRM114-Status: GOOD (  11.08  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200505_093221_730834_3C42D81F 
+X-CRM114-Status: GOOD (  21.99  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -87,55 +95,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Grygorii Strashko <grygorii.strashko@ti.com>, netdev@vger.kernel.org,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- Murali Karicheri <m-karicheri2@ti.com>, linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ kvmarm@lists.cs.columbia.edu, George Cherian <gcherian@marvell.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The K3 INTA driver, which is source TX/RX IRQs for CPSW NUSS, defines IRQs
-triggering type as EDGE by default, but triggering type for CPSW NUSS TX/RX
-IRQs has to be LEVEL as the EDGE triggering type may cause unnecessary IRQs
-triggering and NAPI scheduling for empty queues. It was discovered with
-RT-kernel.
+Hi Andrew,
 
-Fix it by explicitly specifying CPSW NUSS TX/RX IRQ type as
-IRQF_TRIGGER_HIGH.
+On Tue, 05 May 2020 16:26:48 +0100,
+Andrew Scull <ascull@google.com> wrote:
+> 
+> Having a go at reviewing. Might turn out to be more useful as a learning
+> exercise for me rather than useful feedback but we've got to start
+> somewhere..
 
-Fixes: 93a76530316a ("net: ethernet: ti: introduce am65x/j721e gigabit eth subsystem driver")
-Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
----
- drivers/net/ethernet/ti/am65-cpsw-nuss.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+Thanks for making the effort. Asking questions is never a pointless
+exercise, as it usually means that something isn't as crystal clear as
+the author expects... ;-)
 
-diff --git a/drivers/net/ethernet/ti/am65-cpsw-nuss.c b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
-index 2bf56733ba94..2517ffba8178 100644
---- a/drivers/net/ethernet/ti/am65-cpsw-nuss.c
-+++ b/drivers/net/ethernet/ti/am65-cpsw-nuss.c
-@@ -1719,7 +1719,8 @@ static int am65_cpsw_nuss_ndev_add_napi_2g(struct am65_cpsw_common *common)
- 
- 		ret = devm_request_irq(dev, tx_chn->irq,
- 				       am65_cpsw_nuss_tx_irq,
--				       0, tx_chn->tx_chn_name, tx_chn);
-+				       IRQF_TRIGGER_HIGH,
-+				       tx_chn->tx_chn_name, tx_chn);
- 		if (ret) {
- 			dev_err(dev, "failure requesting tx%u irq %u, %d\n",
- 				tx_chn->id, tx_chn->irq, ret);
-@@ -1744,7 +1745,7 @@ static int am65_cpsw_nuss_ndev_reg_2g(struct am65_cpsw_common *common)
- 
- 	ret = devm_request_irq(dev, common->rx_chns.irq,
- 			       am65_cpsw_nuss_rx_irq,
--			       0, dev_name(dev), common);
-+			       IRQF_TRIGGER_HIGH, dev_name(dev), common);
- 	if (ret) {
- 		dev_err(dev, "failure requesting rx irq %u, %d\n",
- 			common->rx_chns.irq, ret);
+> 
+> > -struct kvm_arch {
+> > +struct kvm_s2_mmu {
+> >  	struct kvm_vmid vmid;
+> >  
+> > -	/* stage2 entry level table */
+> > -	pgd_t *pgd;
+> > -	phys_addr_t pgd_phys;
+> > -
+> > -	/* VTCR_EL2 value for this VM */
+> > -	u64    vtcr;
+> > +	/*
+> > +	 * stage2 entry level table
+> > +	 *
+> > +	 * Two kvm_s2_mmu structures in the same VM can point to the same pgd
+> > +	 * here.  This happens when running a non-VHE guest hypervisor which
+> > +	 * uses the canonical stage 2 page table for both vEL2 and for vEL1/0
+> > +	 * with vHCR_EL2.VM == 0.
+> > +	 */
+> > +	pgd_t		*pgd;
+> > +	phys_addr_t	pgd_phys;
+> >  
+> >  	/* The last vcpu id that ran on each physical CPU */
+> >  	int __percpu *last_vcpu_ran;
+> >  
+> > +	struct kvm *kvm;
+> > +};
+> > +
+> > +struct kvm_arch {
+> > +	struct kvm_s2_mmu mmu;
+> > +
+> > +	/* VTCR_EL2 value for this VM */
+> > +	u64    vtcr;
+> 
+> VTCR seems quite strongly tied to the MMU config. Is it not controlled
+> independently for the nested MMUs and so remains in this struct?
+
+This particular instance of VTCR_EL2 is the host's version. Which
+means it describes the virtual HW for the EL1 guest. It constraints,
+among other things, the number of IPA bits for the guest, for example,
+and is configured by the VMM.
+
+Once you start nesting, each vcpu has its own VTCR_EL2 which is still
+constrained by the main one (no nested guest can have a T0SZ bigger
+than the value imposed by userspace for this guest as a whole).
+
+Does it make sense?
+
+> 
+> > -static void stage2_dissolve_pmd(struct kvm *kvm, phys_addr_t addr, pmd_t *pmd)
+> > +static void stage2_dissolve_pmd(struct kvm_s2_mmu *mmu, phys_addr_t addr, pmd_t *pmd)
+> 
+> How strictly is the long line style rule enforced? checkpatch has 16
+> such warnings on this patch.
+
+It isn't enforced at all for KVM/arm. I am perfectly happy with
+longish lines (I stupidly gave away my vt100 a very long time ago).
+In general, checkpatch warnings are to be looked into (it sometimes
+brings interesting stuff up), but this falls into the *cosmetic*
+department, and I cannot be bothered.
+
+> 
+> > -static void stage2_dissolve_pud(struct kvm *kvm, phys_addr_t addr, pud_t *pudp)
+> > +static void stage2_dissolve_pud(struct kvm_s2_mmu *mmu, phys_addr_t addr, pud_t *pudp)
+> >  {
+> > +	struct kvm *kvm __maybe_unused = mmu->kvm;
+> > +
+> >  	if (!stage2_pud_huge(kvm, *pudp))
+> >  		return;
+> 
+> There're a couple places with `__maybe_unused` on variables that are
+> then used soon after. Can they be dropped in these cases so as not to
+> hide legitimate warning?
+
+Absolutely. I'll have a look.
+
+Thanks for the review!
+
+	M.
+
 -- 
-2.17.1
-
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
