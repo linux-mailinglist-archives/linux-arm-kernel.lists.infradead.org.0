@@ -2,74 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C0711C5912
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:21:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 850081C5914
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:22:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T2Zu2m3AhDc1mBGzWn88g6zLXcRm5xsyzKEUjC/lfWw=; b=q78tGX4cbU6fch
-	cFMw7gQF8R9xpG6Axp+oU4YJedS2udk9/vcwmwQVcn0147VFiPP1oStCZsA2p1GCogH6Qm2kPHd6G
-	IUbtQseB/SwI0uesV4xyaAYq1JoWEfg4mAHbBtGToenwrbq4hHjYOm+iZfhrDUo7Rebpbi6v4zC58
-	cMo8ypZOSP7qDx2T6q8GFDjOsL+1cD/atu+YmbJeHnL2Cv2R1kNaKz3KxOOyy3NazvJMWjPnKpric
-	lQRixcfwQkht7ZaHrDeE80nYmKReiK58SDufFhmO1ic5wHcEIlh0wqVgozm4/nf6yGtsv7QliTv9p
-	fbZ6+O9BuYbo2WXeeRVw==;
+	List-Owner; bh=2m15/RAXAGt1eEolW90FTrLpki2Li9ikQLSbfjIYDiI=; b=b73qlmy/avcagl
+	YKyDFkLnOslqqfcbNd3ieR+vth2UZxLmEropUlZA+Y8M+5KyiA41li/Nh6MRiGtXNtcasnLezxknS
+	KJDHVqldUB8GcEbduGBaEYTx8CHRSe3iJTVxnMFh575uXDPVW1exMw/wgTQA7lF1YjvGXaJL+xVqa
+	kYUXorUEE6WxDB4pNUdZAqWLzNDE0lsOSsYICTPSd5XsrIOT6UVXu2EPfhq3tvXWCL4+UZRVpdwGc
+	ekNrP9/5LabJviADEznD2S9ftj5hiXGusDhBDS5NvEKbSsTEdXtfrTDLsX/xKaHbwxAJmljXWtKwc
+	OoDwe7VAm1ehpxKsaPIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVySE-0004dv-Eh; Tue, 05 May 2020 14:21:50 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jVySd-0004yD-RO; Tue, 05 May 2020 14:22:15 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVyRw-0004T6-6a
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:21:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vgLgwA2IYB8xZ+i4x2z61nR3kQ321LSxvjJp90lZwhk=; b=emwvWX7QcAOvZyEwWRtlY3u75
- YrX1Uqcns0qRJwr2MAlCIPi+uSNplwaVui1xMGOENdmL8I4P9spu4Wg9JZR987liWr7K4Cq6lnbum
- lZacolR99lTdruHc1EjyNWly0E96wof1BEtJwXJt2x0c/aGPzrmUF0c8Plw+2LUmlnn1tInPcokgV
- wJxC3v7fjOvva8xRJ/NR74yaGtk8quY9LvGwS0tX+jNMfYeHtQDUVkh3/qOhuVg5qDSxg2waIb45O
- JA6aeyCKI/Hm9AAJRA5+2a3cAakP5gMaXnONZgVJIGJMNjORsxoER52ZwVnZHJn2GtWd2zJQ712nw
- 9o8G9Wdkg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:36328)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jVyRI-0002rx-5s; Tue, 05 May 2020 15:20:52 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jVyRC-0007Dj-U4; Tue, 05 May 2020 15:20:46 +0100
-Date: Tue, 5 May 2020 15:20:46 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
-Message-ID: <20200505142046.GI1551@shell.armlinux.org.uk>
-References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
- <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
- <CAHp75VfQ_ueABUcgUUirQ7kK60CR6vMi1gP-UsdDd+UmsSE4Sw@mail.gmail.com>
+ id 1jVySV-0004x3-QW
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:22:09 +0000
+Received: by mail-pg1-x544.google.com with SMTP id n11so1077936pgl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 07:22:07 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=DGtEu1KsY1dr41QJrz50PNo/qEe9hhqV40ULoK/JQEY=;
+ b=fppBqTIEYFEQOtLCh6kQJwvY3nR8D9p8ij1Nzx+hThzSI07ASyz3kBNezKy+tic7KP
+ Zsf+wOm64CalAwkvMC2Mn9o9GRINg584C08ghOx8sZ4R8wGd/azhLscwrtMcgP/mYDnB
+ ZgRFeECtreW8oFOaEZr6Qg21KCWVxM01TVWPcQxJ2DMZ9UR37Nzdv0e41hgJ0k7F79h8
+ 2JYbgfr495aRcvDK02NYDBI3LfbGcvRNNJN+672pBDjqas9b7zmCfil/XJjjqPYnS0P7
+ sIoQmrXY0ZceG8GEVLvJ9Y3oGMXtLSJXeRx2/ukitX0em9Qy7H+YEvjg3qurclkmeY3s
+ xjnw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=DGtEu1KsY1dr41QJrz50PNo/qEe9hhqV40ULoK/JQEY=;
+ b=Cz4Kj+wR5mm5QuolTv4HSfe0TfKz8ZcrgqFWRx8lzJ3Yx7Y2UvafV93FR2gbbPS7W9
+ yeZ38V9NZUAE5GUJQQkQbVBZyOD26ssRVqNWAVeFsV3Ss9vJlUg0admL5FfZb4jzVWAK
+ IcaBulmZL5/XFzYGZo8kx6dXGJTo5WLrdzywGOcscPF8Q6pScnUf6ZB9q7MXykfR/8wK
+ V4uM1DPxNygIDX1oU6deP0q7Ur+yJGFDMOrob/Q0IfAXMIu7WvXBW52ijscEivR4qL1V
+ Miq7FnVnJMvXW543Kq0/SHtOR3UCKmIY1UfeitO/CW+nJdELVXlFIhi2RKs5N/kvkuFg
+ AVyw==
+X-Gm-Message-State: AGi0PuZkPMaqwZaS5ELxYeMR6jastV4vm9QPw89PrlKPk6aaKCGEYs+i
+ rWPJC2gKM38uFAPr2nMd168MfRqp4bvvYHaLHcU=
+X-Google-Smtp-Source: APiQypIUZH8pTQ1mbnyQiBF+62SPk1HAQJexRMaWRWP7pjcZ9uW5NVk9E1Cq2JTRPBaIyTEIMjg4XAmxWxh6LToXh94=
+X-Received: by 2002:a65:6251:: with SMTP id q17mr3052332pgv.4.1588688527041;
+ Tue, 05 May 2020 07:22:07 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHp75VfQ_ueABUcgUUirQ7kK60CR6vMi1gP-UsdDd+UmsSE4Sw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-6-calvin.johnson@oss.nxp.com>
+In-Reply-To: <20200505132905.10276-6-calvin.johnson@oss.nxp.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Tue, 5 May 2020 17:22:00 +0300
+Message-ID: <CAHp75VfOcQiACsOcfWyJSP1dzdYpaCa-_KKf==4YCkaM_Wk3Tg@mail.gmail.com>
+Subject: Re: [net-next PATCH v3 5/5] net: mdiobus: Introduce
+ fwnode_mdiobus_register_phy()
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_072136_421596_2667CB1F 
-X-CRM114-Status: GOOD (  10.09  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200505_072207_856755_3C7B3F71 
+X-CRM114-Status: GOOD (  16.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [andy.shevchenko[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -92,10 +98,10 @@ Cc: Andrew Lunn <andrew@lunn.ch>,
  Heikki Krogerus <heikki.krogerus@linux.intel.com>,
  "Rafael J . Wysocki" <rafael@kernel.org>,
  Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Calvin Johnson <calvin.johnson@oss.nxp.com>,
  Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
  "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
  Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
  Diana Madalina Craciun <diana.craciun@nxp.com>,
  ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
  Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
@@ -114,22 +120,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 05:15:16PM +0300, Andy Shevchenko wrote:
-> On Tue, May 5, 2020 at 4:29 PM Calvin Johnson
-> > +               if (sscanf(cp, "ethernet-phy-id%4x.%4x",
-> > +                          &upper, &lower) == 2) {
-> 
-> > +                       *phy_id = ((upper & 0xFFFF) << 16) | (lower & 0xFFFF);
-> 
-> How upper can be bigger than 0xfff? Same for lower.
+On Tue, May 5, 2020 at 4:30 PM Calvin Johnson
+<calvin.johnson@oss.nxp.com> wrote:
+>
+> Introduce fwnode_mdiobus_register_phy() to register PHYs on the
+> mdiobus. From the compatible string, identify whether the PHY is
+> c45 and based on this create a PHY device instance which is
+> registered on the mdiobus.
 
-I think your comment is incorrect here.  Four hex digits can be larger
-than 0xfff.  "1000" interpreted as hex is four hex digits and larger
-than 0xfff, for example.
+...
+
+> +int fwnode_mdiobus_register_phy(struct mii_bus *bus,
+> +                               struct fwnode_handle *child, u32 addr)
+> +{
+> +       struct phy_device *phy;
+
+> +       bool is_c45 = false;
+
+Redundant assignment, see below.
+
+> +       const char *cp;
+> +       u32 phy_id;
+> +       int rc;
+> +
+
+> +       fwnode_property_read_string(child, "compatible", &cp);
+
+Consider rc = ...; otherwise you will have UB below.
+
+> +       if (!strcmp(cp, "ethernet-phy-ieee802.3-c45"))
+
+UB!
+
+> +               is_c45 = true;
+
+is_c45 = !(rc || strcmp(...));
+
+> +       if (!is_c45 && !fwnode_get_phy_id(child, &phy_id))
+
+Perhaps positive conditional
+
+if (is_c45 || fwnode_...(...))
+  get_phy_device();
+else
+  ...
+
+> +               phy = phy_device_create(bus, addr, phy_id, 0, NULL);
+> +       else
+> +               phy = get_phy_device(bus, addr, is_c45);
+> +       if (IS_ERR(phy))
+> +               return PTR_ERR(phy);
+> +
+> +       phy->irq = bus->irq[addr];
+> +
+> +       /* Associate the fwnode with the device structure so it
+> +        * can be looked up later.
+> +        */
+> +       phy->mdio.dev.fwnode = child;
+> +
+> +       /* All data is now stored in the phy struct, so register it */
+> +       rc = phy_device_register(phy);
+> +       if (rc) {
+> +               phy_device_free(phy);
+
+> +               fwnode_handle_put(child);
+
+Shouldn't mdio.dev.fwnode be put rather than child (yes, I see the assignment)
+
+> +               return rc;
+> +       }
+> +
+> +       dev_dbg(&bus->dev, "registered phy at address %i\n", addr);
+> +
+> +       return 0;
+> +}
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
