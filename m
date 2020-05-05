@@ -2,88 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9371C5860
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:14:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F0F81C5861
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 16:14:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GE/ztOLeAPkZUW+zVV5znuZRTVVEdKYMVrhnSUwwUqc=; b=YwCJrryr0fPNKG
-	z/QDF8Aqdb4QVABnt+Kv2zeuh5fChy5DW5HEJXsc9gdJOK7HYqisBeUS1oty2FCRX2IuhXRyhnWmL
-	/Q2LD55JkMDbOO6ggdxE06WeN60tY8NBXZM6/6EVfeFcDyrHdQj9dblGYPGktB5EaPv5hrfsx0ly9
-	8kkGm4YckDjnaHECWtUAo38ZskeM9TMWSMyo/Zc5K7b5kgRiz9XwgEGCcgKEsKVj5inyNgmBGkXVA
-	lgHQVP2UyuvIYJ7xk2aHGXSNm7WdgVb47XdhMApBmUis4eNNOtBHM/VW1NG8ZcmSvaTiWmybxLvHS
-	sLfZSM4Ul6EcRR3Sf/Og==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WNtJ5o3v+EcrzjSBs3geIW+2ClFalgKRcm7FV55hK2w=; b=jVlNaVd7UHmN1c
+	BXuvUPu4iUH8j3WrHOrpk5ncK0YgQUSvDg/WfXSgOweZZKAATGBn8ReOJ/ilhzrESAHAA/duS6T5E
+	lFmYah5Vh4lcpOm5c0ZNsOCH6LgPFQ5YZWxO5fTp8wVnrzXNxEBxaoNfo9BuAfk5Xy0yWVW1a0LaG
+	PVNh6LfgydafhrsQq4HR6at+BBCHyV2NbcYQK+2WBzMNcYGDvRlKRH2AU67gxyGJWbHDYt7BUfm99
+	6Sub8UajBhxz/Z36TI7qr0hcE6qGRkkcoJ+qPWrJmVhaO84dqUWSzYggaoY9i207WaGjbdDynt6Ea
+	cL5egcEJlnD6jLepduBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVyKc-0004Sd-9q; Tue, 05 May 2020 14:13:58 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jVyL3-0004pk-HW; Tue, 05 May 2020 14:14:25 +0000
+Received: from mout.kundenserver.de ([217.72.192.73])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVyKG-0004Ld-6p
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:13:42 +0000
-Received: by mail-pl1-x643.google.com with SMTP id u22so833703plq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 07:13:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=vUI7H3zEQ9H8QIwCQ24EAq2pWsz3laTp86kjJwGCy2A=;
- b=YkZw8YQXDccsDbBS4C0O5LMJGsSXIuT1ovPSHZeibMB4ZhJbetT5karBIQDGZyMu0k
- IBdRJNOVOa1GNEbhoAuCCrvOK95e4ExfkjwNMMqw8yyFSpe6/HZclQjj/o/y/DEjyXQf
- D8bD98dH4TU8N9iILFu6DwhyrLrlFYj24qKgldff3S35uVjPxaC8qpPHMbhOElowls51
- NA+CUw+XfSpefYj0MsjjxqdD/1An+fcrvFfnPRdSVMHOAFB4Q7IZukrTfCHjNl6LuXlX
- SkcXFYf+6CloWECw34gLTvnp/U4XgJ2AEyem4IDuABqVEJH0tksWHndPxMQsIdIQQlgL
- 50zQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=vUI7H3zEQ9H8QIwCQ24EAq2pWsz3laTp86kjJwGCy2A=;
- b=PS0lBtGYW+j6ftyu21PK9B4WwaGs4Nm6A95RtTznmlXOW3i7gKZPt+bXg7Ooo3EMD7
- /i/qsTVRsGOwI8Cr67MwC6M2+niPTFoqgm7jTK/54b5SguLneex8LwvAk/wCR0j6S05b
- ZISIxrOfNdlCJq8pQagibvJbZiP6Tl5G+Z30WcjDFMyxR01bzoQ6YGDZsAFfBa5zgwLD
- je/UtyQLM0zgLHX3aB3XdO5waVQQf638oOF1q4p8Bw5eYo0ntao8q154PtE3WRlGTjjO
- tS3+j7nA2d/pwQGaAeX2WN1k3pUOx1uq5IiBAsMOfdGw7y7snGnG9I+hPdYn3vxoJ83y
- 8Mbw==
-X-Gm-Message-State: AGi0PuZevll0WgKkBwWSdDW+Ii2FadaC9Ni2fS6SFUGufEX4nADxZTxX
- SSCo6sYy/PR9MiW3aeJV12w2fp6ZOWdZqqrM29g=
-X-Google-Smtp-Source: APiQypKwqHcpUrfpqYd5uUdTyj3td5+1Wg/esi83wvGDAF8yQlrbm2K4xPgTkvNlPBQj0TfYH1WbhCd8ME96fqQEWY0=
-X-Received: by 2002:a17:90a:37a3:: with SMTP id
- v32mr3401271pjb.2.1588688015023; 
- Tue, 05 May 2020 07:13:35 -0700 (PDT)
+ id 1jVyKs-0004nO-1x
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 14:14:17 +0000
+Received: from localhost.localdomain ([149.172.19.189]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MBDrM-1jQzi83buY-00CePX; Tue, 05 May 2020 16:14:02 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Kevin Hilman <khilman@kernel.org>, Aaro Koskinen <aaro.koskinen@iki.fi>,
+ Tony Lindgren <tony@atomide.com>
+Subject: [PATCH] ARM: omap1: fix irq setup
+Date: Tue,  5 May 2020 16:13:48 +0200
+Message-Id: <20200505141400.767312-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.26.0
 MIME-Version: 1.0
-References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
- <20200505132905.10276-4-calvin.johnson@oss.nxp.com>
-In-Reply-To: <20200505132905.10276-4-calvin.johnson@oss.nxp.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Tue, 5 May 2020 17:13:28 +0300
-Message-ID: <CAHp75Ve4RMhfkNjO9NtNpjT9uRi3p1BAifCGDrB2fhAyBA8YtQ@mail.gmail.com>
-Subject: Re: [net-next PATCH v3 3/5] phylink: Introduce
- phylink_fwnode_phy_connect()
-To: Calvin Johnson <calvin.johnson@oss.nxp.com>
+X-Provags-ID: V03:K1:LvLPepcWVA3cOq/dneR4EUFbqygTCx28UhrDXt4MYSPcNJ4mrgn
+ +QPxmj7Yxy4NuRDL2I3gKatumDNFanxLYw86EEXLQeaxf2uHxTPjdRxsZ0nyaJR+ncJanxy
+ 4nbOjM2H44/xEfwf5IKaHiR31MSIY7ePR1EXQ4Pd0jnyhEqjx5026Ue0/bycDgRv8VJvbSE
+ z15LpjYn+K1X0KpouEG5A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:HMPeHO7MWj0=:QCVLcwagAi7moRTbEI8t4o
+ uzWUr479RSv5Yd9emDprIzlpJRBuT53YlMq5+Ph3I8BO22ZitbEGM7a0XAZV1RVBCFf25N678
+ TSSXd/DZRqPeNA1XgKo27ZE4YfC4aoy7CMpcWIcubWLSwahc2Xd649/RRCJ1m2OeQSpcVNUVy
+ 0S4sfhFaScwVX+oUmWSX3LSejHiSqhMTHxBHagCNqDQkYUgvY7Lk1ZLRLLfo5qI9Tgegs8PwV
+ kV18Qh/OM9PwyUWsjmUIMGZZdeyBpHb7wox2LZZQ/jMUiOLhxzFzpIn3U0Vd/3+pBq1tSf40P
+ ijm0zpuP258+KqWNNf26tgKSlX70j7WNSfTQw5lEjoGpNy0LG3ZHY2lDnbNHOrzrGDkVma1ZW
+ QAUaXOEPlSk2TUXpiNbWsdDdJRKkkz6tSZFsz+tcZa1mCrVp06VXvlpZCDUqidndoJUdqcqTR
+ tTRJSfP9TXKy9QTHkPTSZVr8WxIrcvil34FhEJeiuF0CYUXDWOQLlegPiXAfQ7qD7AHXkTvKh
+ KU3SyvnFld/2S3Ux5n9p6oUgmDcLzE+N+w34hvIMfikZPCamItyAGjJX08clxNMQae1cg+qed
+ 2mMf1XNBAplayot4r50g5EN56RUtCME/8OHkIuIDeQa8l75/AnBimnkj6cz1aPm+9W2i1Pw2N
+ CaQwxqyVNrY45q70PsMqbGXLktumgD0UiY3EMai9x6tPj3+vvsDz+XHg9FtGCe2SDKjL/V6UJ
+ xSbQ3spM4NH7kQgc9kGalLumeO36TZI2qKqiV1K/BSrh2/DKj2yWD0pmUoP6MYOEwQAs1t/cO
+ nDRnVmQi9zqpnZnWAibQPwqWUIJdJXK6XyLcf6VORR8tpPigNQ=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_071336_286761_B9019CBF 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200505_071415_448942_68D3F6A2 
+X-CRM114-Status: GOOD (  12.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
+ no trust [217.72.192.73 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [andy.shevchenko[at]gmail.com]
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [217.72.192.73 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,75 +78,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Rafael J . Wysocki" <rafael@kernel.org>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Diana Madalina Craciun <diana.craciun@nxp.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: linux-omap@vger.kernel.org, afzal mohammed <afzal.mohd.ma@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, Arnd Bergmann <arnd@arndb.de>,
+ linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 5, 2020 at 4:29 PM Calvin Johnson
-<calvin.johnson@oss.nxp.com> wrote:
->
-> Define phylink_fwnode_phy_connect() to connect phy specified by
-> a fwnode to a phylink instance.
+A recent cleanup introduced a bug on any omap1 machine that has
+no wakeup IRQ, i.e. omap15xx:
 
-...
+arch/arm/mach-omap1/pm.c:656:11: error: variable 'irq' is used uninitialized whenever 'if' condition is false [-Werror,-Wsometimes-uninitialized]
+        else if (cpu_is_omap16xx())
+                 ^~~~~~~~~~~~~~~~~
+include/linux/soc/ti/omap1-soc.h:115:30: note: expanded from macro 'cpu_is_omap16xx'
+ #  define cpu_is_omap16xx()             is_omap16xx()
+                                        ^~~~~~~~~~~~~
+arch/arm/mach-omap1/pm.c:658:18: note: uninitialized use occurs here
+        if (request_irq(irq, omap_wakeup_interrupt, 0, "peripheral wakeup",
+                        ^~~
+arch/arm/mach-omap1/pm.c:656:7: note: remove the 'if' if its condition is always true
+        else if (cpu_is_omap16xx())
+             ^~~~~~~~~~~~~~~~~~~~~~
+arch/arm/mach-omap1/pm.c:611:9: note: initialize the variable 'irq' to silence this warning
+        int irq;
+               ^
 
-> +       int ret = 0;
+Move this code into a separate function to deal with it cleanly.
 
-Redundant assignment.
+Fixes: b75ca5217743 ("ARM: OMAP: replace setup_irq() by request_irq()")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ arch/arm/mach-omap1/pm.c | 25 +++++++++++++++++--------
+ 1 file changed, 17 insertions(+), 8 deletions(-)
 
-> +       if ((IS_ERR(phy_fwnode)) && pl->cfg_link_an_mode == MLO_AN_PHY)
-
-No Lisp, please.
-
-> +               return -ENODEV;
-
-...
-
-> +       phy_dev = fwnode_phy_find_device(phy_fwnode);
-> +       fwnode_handle_put(phy_fwnode);
-
-Hmm... Isn't it racy? I mean if you put fwnode here the phy_dev may
-already be gone before you call phy_attach_direct, right?
-
-> +       if (!phy_dev)
-> +               return -ENODEV;
-> +
-> +       ret = phy_attach_direct(pl->netdev, phy_dev, flags,
-> +                               pl->link_interface);
-> +       if (ret)
-> +               return ret;
-> +
-> +       ret = phylink_bringup_phy(pl, phy_dev, pl->link_config.interface);
-> +       if (ret)
-> +               phy_detach(phy_dev);
-> +
-> +       return ret;
-
+diff --git a/arch/arm/mach-omap1/pm.c b/arch/arm/mach-omap1/pm.c
+index 0f8064bd40ae..266aa08aa8ed 100644
+--- a/arch/arm/mach-omap1/pm.c
++++ b/arch/arm/mach-omap1/pm.c
+@@ -605,10 +605,25 @@ static const struct platform_suspend_ops omap_pm_ops = {
+ 	.valid		= suspend_valid_only_mem,
+ };
+ 
++static void omap_wakeup_init(void)
++{
++	int irq;
++
++	if (cpu_is_omap7xx())
++		irq = INT_7XX_WAKE_UP_REQ;
++	else if (cpu_is_omap16xx())
++		irq = INT_1610_WAKE_UP_REQ;
++	else
++		return;
++
++	if (request_irq(irq, omap_wakeup_interrupt, 0, "peripheral wakeup",
++			NULL))
++		pr_err("Failed to request irq %d (peripheral wakeup)\n", irq);
++}
++
+ static int __init omap_pm_init(void)
+ {
+ 	int error = 0;
+-	int irq;
+ 
+ 	if (!cpu_class_is_omap1())
+ 		return -ENODEV;
+@@ -651,13 +666,7 @@ static int __init omap_pm_init(void)
+ 
+ 	arm_pm_idle = omap1_pm_idle;
+ 
+-	if (cpu_is_omap7xx())
+-		irq = INT_7XX_WAKE_UP_REQ;
+-	else if (cpu_is_omap16xx())
+-		irq = INT_1610_WAKE_UP_REQ;
+-	if (request_irq(irq, omap_wakeup_interrupt, 0, "peripheral wakeup",
+-			NULL))
+-		pr_err("Failed to request irq %d (peripheral wakeup)\n", irq);
++	omap_wakeup_init();
+ 
+ 	/* Program new power ramp-up time
+ 	 * (0 for most boards since we don't lower voltage when in deep sleep)
 -- 
-With Best Regards,
-Andy Shevchenko
+2.26.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
