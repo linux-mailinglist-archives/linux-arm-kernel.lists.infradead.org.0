@@ -2,62 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AEE91C5F8A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:02:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 394DB1C5F96
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 20:03:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JNie7PrvVsek4h200tX/gB4bUbkpcjDAKvaFXsVVghA=; b=pyYYh1n4HHmIK9
-	D0yben9GWa9/4LgACsK6xuwqAv9d329+H7EF5s/qKvV8/T4NXgCkHW6Lf2Q9dFvCVtOwMUBCGdUGC
-	X8g8d5nVk14l2z8rSqU8lc4RqHN2yFg203mh39DkDhNL+cBHIcdk7lrt4C0Prh59LFBww1IttGXg6
-	HYSeomLRKa+pNv7T9uhkw3hRwd5AWXVVLxyBSg08NuiR36sZKH/rcnBHihSp0X5FDwM6fcq6fBV6Q
-	w98lJ+FAKuClBI9zmgE74DK96N1fkbz6188nEsutFSYcKvbi7RP2puBop3EdLFvj5T+2qcl7JiS58
-	gJceDCBtffwyl0OYHJWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nPYbF5EIafr2L7trAi9Pias1Ak4hm5l3e4hnD1P2D24=; b=X1ffjYlIDeV7W7DiYO25ShgjY
+	JVEg48i9wqQUDQjyiHlfuNlykHbimtgGwOqdH9PCGCZqyOQFLWjGipCGgxzfXscnT90ZnR+o0ZMGS
+	kQcsAmuy+wY2ltAfTmGkgBKyKFASy1nWV/q1zN8LI/tF7/msJLDjduATjW7oi/5eiOMV2WOXw8Jfu
+	x8LdjJMVboAf4X77/qrLuPsGiKuKghPY01UF1yeS037nx4ldmVg8cZY5ImROI29ifycziMGoo6LKr
+	i1/QALk523BrNh8r3urDeeDKEUMat0FF2csyNTUE8iNkBMbCLMspW2HVGC+PRRcpwn+6weYlqia61
+	+Uho5lY4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1to-0001HN-2c; Tue, 05 May 2020 18:02:32 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1tc-0001Ft-9d
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:02:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB08631B;
- Tue,  5 May 2020 11:02:16 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 846713F305;
- Tue,  5 May 2020 11:02:15 -0700 (PDT)
-Subject: Re: [PATCH 03/16] dt-bindings: ehci/ohci: Allow iommus property
- (fixed subject line)
-To: Robin Murphy <robin.murphy@arm.com>, Rob Herring <robh@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-4-andre.przywara@arm.com>
- <eee99db5-4100-5064-97c0-abf54d2eec15@arm.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Organization: ARM Ltd.
-Message-ID: <2f7ee405-5950-c40e-80d6-43aef5c203bc@arm.com>
-Date: Tue, 5 May 2020 19:01:24 +0100
+	id 1jW1v2-0001ko-81; Tue, 05 May 2020 18:03:48 +0000
+Received: from mail-qv1-xf43.google.com ([2607:f8b0:4864:20::f43])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW1us-0001iq-J0
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 18:03:42 +0000
+Received: by mail-qv1-xf43.google.com with SMTP id v10so1488730qvr.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 11:03:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=Cle1DWcPgPwaZVS6K0GMi0byjOYCQs6ur6FJmvddoLs=;
+ b=J1uhBg+3MkuM1j9tvj0WGa7CGjzz9eGSspQTqVRSKqIdeC3wyzadBR3U7aKzH5oULK
+ 1NBjfx6a+kMXoR0J517DVHPn0CVf6YL9au+1tCE8PnDcWU90F52qXsF3oy6DnBiG/fm4
+ dMGFzOJORy0Gxy5s+E3q2lJ01+5YkrzdLkpM6mgb058B182LFtrBfwEJoJZZaCLaXOf6
+ ZV6IWTrmh7mUs0GBUEpPi+H/OVLR8nI5+T8OWbGeCrvk1S3TCuFPycFL2XDyiZXO8act
+ npVP+w7T+3cyPoxbYqwTrIn+nJsCzBsEpe5mjtm5s3MW73yagI+0b9NjLgfUbh4YmcaO
+ gVhg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Cle1DWcPgPwaZVS6K0GMi0byjOYCQs6ur6FJmvddoLs=;
+ b=imC0V8ejjFpvq0hqOnfQJv+vlzsSHqS8eJmsq/h93sx8gHC50z3UKBvmk+KvaMj0Yv
+ SWGcPytxCzFkhSvsK42lUSPdSLdn3LOB5Jp/cNUIt/ZTmYiQUlXtl3aoarEWNGkyeS8T
+ I6bToMMv9KmKoxfWM5qFpkW67GuFVnofUK9F7mSgGsQgs5nUXjybfu9dKmuqLNeBdmsH
+ tlf717li/+4ZAeeVmWL3SEKVh0LPW0YWxbRQ1U4HAbrnvlujr+NQHxbwy0QoVxsrV9KR
+ ip4KwsYDmX4IfEeu85RukZ5UMARB8dLwKFSya8pH94LbwHX+Xmckkihl/LaOC90CODe0
+ afBw==
+X-Gm-Message-State: AGi0PuanOkJhRlSyoCQM2IBf6lIlQJjzN0G/6UShvNH1cDNW1tOXNe31
+ eHW1SYE8+vOQgBqjjqjABZBCfQ==
+X-Google-Smtp-Source: APiQypJa6N5F6cPRll3YQL8uaSBvMyiPNIl4PgWRh95sWBVd9KkFeg2UCfAEuV2oheS/qEcgVKCSDw==
+X-Received: by 2002:a0c:8262:: with SMTP id h89mr3848628qva.173.1588701816621; 
+ Tue, 05 May 2020 11:03:36 -0700 (PDT)
+Received: from [192.168.0.185] ([191.249.236.107])
+ by smtp.gmail.com with ESMTPSA id c26sm2326833qkm.98.2020.05.05.11.03.31
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 05 May 2020 11:03:35 -0700 (PDT)
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+To: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
+From: Luis Machado <luis.machado@linaro.org>
+Message-ID: <b78fe0c4-f89e-9347-7d7d-a68085f70b1d@linaro.org>
+Date: Tue, 5 May 2020 15:03:29 -0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <eee99db5-4100-5064-97c0-abf54d2eec15@arm.com>
+In-Reply-To: <20200421142603.3894-20-catalin.marinas@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_110220_382523_D656CE97 
-X-CRM114-Status: GOOD (  17.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_110338_652893_05A637BB 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:f43 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,59 +101,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-usb@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Alan Hayward <Alan.Hayward@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDUvMDUvMjAyMCAxODo1MSwgUm9iaW4gTXVycGh5IHdyb3RlOgo+IE9uIDIwMjAtMDUtMDUg
-NTo1MSBwbSwgQW5kcmUgUHJ6eXdhcmEgd3JvdGU6Cj4+IERhdGU6IE1vbiwgNCBNYXkgMjAyMCAx
-Mjo0MzoxOCArMDEwMAo+PiBTdWJqZWN0OiBbUEFUQ0ggMDMvMTZdIGR0LWJpbmRpbmdzOiBlaGNp
-L29oY2k6IEFsbG93IGlvbW11cyBwcm9wZXJ0eQo+Pgo+PiBBIE9IQ0kvRUhDSSBjb250cm9sbGVy
-IGNvdWxkIGJlIGJlaGluZCBhbiBJT01NVSwgaW4gd2hpY2ggY2FzZSBhbiBpb21tdXMKPj4gcHJv
-cGVydHkgYXNzaWducyB0aGUgc3RyZWFtIElEIGZvciB0aGlzIGRldmljZS4KPiAKPiBIbW0sIHBy
-ZXR0eSBtdWNoIGFueSBETUEgbWFzdGVyIGRldmljZSBjb3VsZCBiZSBiZWhpbmQgYW4gSU9NTVUs
-IGFuZCBpbgo+IGEgd2F5IHRoYXQncyBiYXNpY2FsbHkgZW50aXJlbHkgaXJyZWxldmFudCB0byB0
-aGUgZGV2aWNlIGl0c2VsZiAoYW5kCj4gdGh1cyB0aGUgY29uc3VtZXIgb2YgaXRzIGJpbmRpbmcp
-LiBJcyB0aGVyZSBhIGJldHRlciB3YXkgd2UgY2FuIGhhbmRsZQo+IHRoaXMgdGhhbiByZXBlYXRp
-bmcgc3VjaCAic2VtaS1zdGFuZGFyZCIgcHJvcGVydGllcyBpbiBpbmRpdmlkdWFsCj4gYmluZGlu
-Z3MgZm9yIGV2ZXIgbW9yZT8KCkkgd2FzIGFza2luZyBleGFjdGx5IHRoZSBzYW1lIHF1ZXN0aW9u
-IHRvIFJvYi4KSW5kZWVkIHRoaXMgaXMgbW9yZSBvZiBhIHBhcmVudCBidXMgcHJvcGVydHksIGlm
-IGF0IGFsbCwgYW5kIGluZGl2aWR1YWwKZHJpdmVycyBhcmUgbm90IGV2ZW4gYXdhcmUgb2YgdGhp
-cy4KQnV0IHdoYXQgaXMgYSBkZXZpY2UgcHJvcGVydHkgaXMgdGhlIG51bWJlciBvZiBkZXZpY2Ug
-SURzIHRoYXQgdGhlCmRldmljZSB1c2VzIGFuZCB0aGF0IHdvdWxkIG5lZWQgdG8gYmUgdHJhbnNs
-YXRlZCBpbnRvIHN0cmVhbSBJRHMuCgpTbyBJIHRoaW5rIHRoaXMgaXMgbWVyZWx5IHNheWluZzog
-anVzdCBhIHNpbmdsZSBkZXZpY2UgSUQuCgpBbmQgbm8sIHdlIGNvdWxkbid0IGNvbWUgdXAgd2l0
-aCBzb21lIG1vcmUgZ2VuZXJpYyBzb2x1dGlvbiAoeWV0KS4gSQp0aGluayBhIHNpbWlsYXIgcHJv
-YmxlbSBjb21lcyB1cCB3aXRoIHBvd2VyLWRvbWFpbnMgYW5kIG90aGVyIHByb3BlcnRpZXMKaGFu
-ZGxlZCBieSBjb2RlIGluIGRyaXZlcnMvb2YuCgpDaGVlcnMsCkFuZHJlCgo+IAo+IFJvYmluLgo+
-IAo+PiBBbGxvdyB0aGF0IHByb3BlcnR5IGluIHRoZSBEVCBiaW5kaW5ncyB0byBmaXggYSBjb21w
-bGFpbnQgYWJvdXQgdGhlCj4+IEFybSBKdW5vCj4+IGJvYXJkJ3MgRFRTIGZpbGUuCj4+Cj4+IFNp
-Z25lZC1vZmYtYnk6IEFuZHJlIFByenl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29tPgo+PiAt
-LS0KPj4gwqAgRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9nZW5lcmljLWVo
-Y2kueWFtbCB8IDMgKysrCj4+IMKgIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91
-c2IvZ2VuZXJpYy1vaGNpLnlhbWwgfCAzICsrKwo+PiDCoCAyIGZpbGVzIGNoYW5nZWQsIDYgaW5z
-ZXJ0aW9ucygrKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
-bmRpbmdzL3VzYi9nZW5lcmljLWVoY2kueWFtbAo+PiBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJl
-ZS9iaW5kaW5ncy91c2IvZ2VuZXJpYy1laGNpLnlhbWwKPj4gaW5kZXggMTBlZGQwNTg3MmVhLi4y
-MDY2NGMyOGJmYjIgMTAwNjQ0Cj4+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
-aW5ncy91c2IvZ2VuZXJpYy1laGNpLnlhbWwKPj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL3VzYi9nZW5lcmljLWVoY2kueWFtbAo+PiBAQCAtNzQsNiArNzQsOSBAQCBw
-cm9wZXJ0aWVzOgo+PiDCoMKgwqAgcGh5LW5hbWVzOgo+PiDCoMKgwqDCoMKgIGNvbnN0OiB1c2IK
-Pj4gwqAgK8KgIGlvbW11czoKPj4gK8KgwqDCoCBtYXhJdGVtczogMQo+PiArCj4+IMKgIHJlcXVp
-cmVkOgo+PiDCoMKgwqAgLSBjb21wYXRpYmxlCj4+IMKgwqDCoCAtIHJlZwo+PiBkaWZmIC0tZ2l0
-IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9nZW5lcmljLW9oY2kueWFt
-bAo+PiBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2IvZ2VuZXJpYy1vaGNp
-LnlhbWwKPj4gaW5kZXggYmNmZmVjMWYxMzQxLi5mZjZjMDRjZGU2OTUgMTAwNjQ0Cj4+IC0tLSBh
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy91c2IvZ2VuZXJpYy1vaGNpLnlhbWwK
-Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3VzYi9nZW5lcmljLW9o
-Y2kueWFtbAo+PiBAQCAtNzMsNiArNzMsOSBAQCBwcm9wZXJ0aWVzOgo+PiDCoMKgwqAgcGh5LW5h
-bWVzOgo+PiDCoMKgwqDCoMKgIGNvbnN0OiB1c2IKPj4gwqAgK8KgIGlvbW11czoKPj4gK8KgwqDC
-oCBtYXhJdGVtczogMQo+PiArCj4+IMKgIHJlcXVpcmVkOgo+PiDCoMKgwqAgLSBjb21wYXRpYmxl
-Cj4+IMKgwqDCoCAtIHJlZwo+PgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 4/21/20 11:25 AM, Catalin Marinas wrote:
+> Add support for bulk setting/getting of the MTE tags in a tracee's
+> address space at 'addr' in the ptrace() syscall prototype. 'data' points
+> to a struct iovec in the tracer's address space with iov_base
+> representing the address of a tracer's buffer of length iov_len. The
+> tags to be copied to/from the tracer's buffer are stored as one tag per
+> byte.
+> 
+> On successfully copying at least one tag, ptrace() returns 0 and updates
+> the tracer's iov_len with the number of tags copied. In case of error,
+> either -EIO or -EFAULT is returned, trying to follow the ptrace() man
+> page.
+> 
+> Note that the tag copying functions are not performance critical,
+> therefore they lack optimisations found in typical memory copy routines.
+> 
+> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Alan Hayward <Alan.Hayward@arm.com>
+> Cc: Luis Machado <luis.machado@linaro.org>
+> Cc: Omair Javaid <omair.javaid@linaro.org>
+> ---
+> 
+> Notes:
+>      New in v3.
+> 
+>   arch/arm64/include/asm/mte.h         |  17 ++++
+>   arch/arm64/include/uapi/asm/ptrace.h |   3 +
+>   arch/arm64/kernel/mte.c              | 127 +++++++++++++++++++++++++++
+>   arch/arm64/kernel/ptrace.c           |  15 +++-
+>   arch/arm64/lib/mte.S                 |  50 +++++++++++
+>   5 files changed, 211 insertions(+), 1 deletion(-)
+
+I'll try to exercise the new ptrace requests with QEMU and GDB.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
