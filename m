@@ -2,90 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C69731C5CC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:59:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD8781C5CC5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 17:59:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqWPqp/96mZj3E93EQU0Bf4Zlmr1CBTTOmGC58VHS68=; b=VWcm6fVmkQvzUB
-	ljPkENbueKaEbqv22CAkb3zz7etiv15vmak/1xCE6x400BfQ/yYnx+E6UkXYzxCxfo0dvUHmiWbCu
-	29XL20uCqhMzIGlLNEXzELhF0CW7JRKZXBSHqbDxSPjKkHy2jWFSI4KJkCZw6RholtWLAKjwDBeU0
-	b/m5ZJAIFglCFKuQ7zzACuKYJtAZYJ/Gw2/CxdGWyhxMRO/+WdMN/nn9CQRS7y/3RfspVdSN7OUvA
-	l/5PVQkMtht4dpCG5pk16tLEGljZXYhh4ZXLFK3O+745oJtFMpq0lWPCvU4p/I5sVknJCyFCNOiiL
-	+e/Y/pX0Fop7WJ4BfCTA==;
+	List-Owner; bh=6HimJkar3CV7X1G7Q8ckRulL8Sysrx2OOD+rKhWM7Mg=; b=uC80CYIyjnCwRd
+	YRzDufzvBtxgz++pMIojxko6SsVqiap1nozM/vceNArX5MRT7WsJolZhTI/esvHQM+msZjBhNHy7r
+	32PIQYPXZ7kvvk7KHPU85X1tyVTEYWMBTNI/2l1brEZq48650Da/d9AFD5HuiIRA+gIe/gn1UqmfU
+	AtDTt1+UO1ErIwpbsxLbvDfcWOm99DyPkYYraE3bslH+F31yxbummjV1pPS+glcSp86xTQ8+/u77x
+	mI20I871bEZKptQBkjaqzj4A0lRKddvMMgP3i0z885TiU+qFERZKX/hxPV6F2zjxGM3VOfWG2xdQc
+	2QCVmfiIXAJIHKTzkeug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jVzyD-0008KH-K1; Tue, 05 May 2020 15:58:57 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jVzyo-0000FP-Gt; Tue, 05 May 2020 15:59:34 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jVzy6-0008Jk-H8
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:58:52 +0000
-Received: by mail-ot1-f67.google.com with SMTP id k110so2092546otc.2
+ id 1jVzyc-0000Dy-W7
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 15:59:26 +0000
+Received: by mail-wm1-x344.google.com with SMTP id z6so2944555wml.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 08:58:50 -0700 (PDT)
+ Tue, 05 May 2020 08:59:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=PGN1A+sSuq/RZDk1hxq5pwV+/ZZ2rP8eCBzu/0i9JeE=;
+ b=gkD+4b/HuVR1OV+wasxnOnWiiI7SPXpzXXV6NVB0/4aI4sxsX5dMVJHJSdOMD/GURm
+ 0qolj7BO2CfRRwNI14+BawRnPnhQFbnlUcP94ozWZKQZ1j+V70vzlvFOzNOzEr69a50h
+ DB8zN1wrTSCem8xjw10+5voFbemDDzJBFhfQvssigfGPmr4ohNpwDBYQIdOM2SwI6T8a
+ HLnlfx9P89ZU7KsSlT4it26YLSo+cIqmksGluTOY68GBTbihTzxie6CFZNiG0k3v9aPx
+ K/LPKXjBg/4qPR7FGBucSgPN1l94dxQnIeL+ZTHRdPPaYpokD3D/8eXp7f61AvRYXn11
+ zXMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C4mPz/AyaPVad8cEUAI9z6a1p2b2WhQ+aPmzaXcvCIw=;
- b=rYKUmlTfqhdfT3L4SgKChMI8dz0BCb6uw49U2Xpc30Aki6B5qqL4FKn8QIHN9dKTd9
- jGnTrJB7XZSlVmVCDMOIMsRnm9dagkq4yDcK01xyk7LynglBxEiqBS2qQUWECMD4I3hr
- XqIHPlXPQ7MgJs+90+CLSZxC90JYWL/oLY6/+De5vgBOTUCfG5DEELp1R/teCzn7Dv5T
- 0N5EjsDYSqrEFctCsMRzmekMlb4s1kMtFxP3Lx9TJ5mNWSIzO08ZV9rRMgWu76nuJWPd
- ERLJxkzNO1y3eYjJirFEgGdyZwq0FOUAxziSQzEc7g3aRvHeNmB0LWEUJSJrnVBgTaIP
- 9VXQ==
-X-Gm-Message-State: AGi0PuYg9E+Fyax/0nttedKyZynMBI0A7/eh55Lfwm3SuuxKJknZ1Mgn
- /EynV9JTHkbNnAJdOzaz9w==
-X-Google-Smtp-Source: APiQypLHsZTLt/aKBMC4QCDg85LU7bi2M/1CCJwS+nndEH4aqg7dBPb/xUhAfI63wXxh4ar1wMmnnw==
-X-Received: by 2002:a05:6830:3112:: with SMTP id
- b18mr2596278ots.97.1588694328410; 
- Tue, 05 May 2020 08:58:48 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id l37sm687951ota.68.2020.05.05.08.58.46
+ :mime-version:content-disposition:in-reply-to;
+ bh=PGN1A+sSuq/RZDk1hxq5pwV+/ZZ2rP8eCBzu/0i9JeE=;
+ b=j7440YzjcdbodJHU4j+OKaFhYL0nm3ABKqj4MwnoL4Xm7x6hMc9ryhKhUbniIQU/e5
+ OGr8cUj/zAghIYSPVk98mkhECELhOmUK2cWeeD2HkQ6UTI25lF9RVAA3wBlAM5Cuih4L
+ Gi09uJGqEpzOoSIxsVlvMHlU5RytHZ5YhutY1EYXr42dq5i5SgzSAc4maLpi/sDttdEI
+ bH/c39DhZJ2mtWadDqC/BVHy1cCj4iVjmuwB/neZOSkbkk7yBtFY5jRWOaJtkLqXMy5a
+ hNn1a4pFJD8VWVUtAmAy52B/oOHACc3qQzsZDkYLhKWWGHsFPtEWUNuX1qpf3925PKrW
+ CwPQ==
+X-Gm-Message-State: AGi0PubYA4zvlBI4Yfh1RCApOXhk9kKvPeTeC9TXaDylr8Yaym8rxyKL
+ TM/oG/5wsDYYcH1Ibo9pJTJLEMMeDvvcdQ==
+X-Google-Smtp-Source: APiQypIRbnHubEaPb4xAueBVmUC4wFvaCgRRjttD5slQL+gt6ng+H5WZMUHVwb5dq420a0m0Cc4QGw==
+X-Received: by 2002:a7b:c7d2:: with SMTP id z18mr4240013wmk.72.1588694361415; 
+ Tue, 05 May 2020 08:59:21 -0700 (PDT)
+Received: from google.com ([2a00:79e0:d:109:355c:447d:ad3d:ac5c])
+ by smtp.gmail.com with ESMTPSA id a12sm841990wro.68.2020.05.05.08.59.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 May 2020 08:58:47 -0700 (PDT)
-Received: (nullmailer pid 31936 invoked by uid 1000);
- Tue, 05 May 2020 15:58:46 -0000
-Date: Tue, 5 May 2020 10:58:46 -0500
-From: Rob Herring <robh@kernel.org>
-To: Alim Akhtar <alim.akhtar@samsung.com>
-Subject: Re: [PATCH v7 08/10] dt-bindings: ufs: Add DT binding documentation
- for ufs
-Message-ID: <20200505155846.GA28360@bogus>
-References: <20200426173024.63069-1-alim.akhtar@samsung.com>
- <CGME20200426174219epcas5p460c8637629afd930313ae0fa936593cd@epcas5p4.samsung.com>
- <20200426173024.63069-9-alim.akhtar@samsung.com>
+ Tue, 05 May 2020 08:59:20 -0700 (PDT)
+Date: Tue, 5 May 2020 16:59:16 +0100
+From: Andrew Scull <ascull@google.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH 05/26] arm64: Document SW reserved PTE/PMD bits in
+ Stage-2 descriptors
+Message-ID: <20200505155916.GB237572@google.com>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-6-maz@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200426173024.63069-9-alim.akhtar@samsung.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200422120050.3693593-6-maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_085850_566245_3B6765BF 
-X-CRM114-Status: GOOD (  17.01  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200505_085923_049940_89A95A4A 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,139 +104,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
- linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Andre Przywara <andre.przywara@arm.com>,
+ kvmarm@lists.cs.columbia.edu, George Cherian <gcherian@marvell.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Apr 26, 2020 at 11:00:22PM +0530, Alim Akhtar wrote:
-> This patch adds DT binding for samsung ufs hci
+On Wed, Apr 22, 2020 at 01:00:29PM +0100, Marc Zyngier wrote:
+> Advertise bits [58:55] as reserved for SW in the S2 descriptors.
 > 
-> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 > ---
->  .../bindings/ufs/samsung,exynos-ufs.yaml      | 93 +++++++++++++++++++
->  1 file changed, 93 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
+>  arch/arm64/include/asm/pgtable-hwdef.h | 2 ++
+>  1 file changed, 2 insertions(+)
 > 
-> diff --git a/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
-> new file mode 100644
-> index 000000000000..954338b7f37d
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
-> @@ -0,0 +1,93 @@
-> +# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/ufs/samsung,exynos-ufs.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Samsung SoC series UFS host controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Alim Akhtar <alim.akhtar@samsung.com>
-> +
-> +description: |
-> +  Each Samsung UFS host controller instance should have its own node.
-> +  This binding define Samsung specific binding other then what is used
-> +  in the common ufshcd bindings
-> +  [1] Documentation/devicetree/bindings/ufs/ufshcd-pltfrm.txt
-> +
-> +properties:
-> +
-> +  compatible:
-> +    enum:
-> +      - samsung,exynos7-ufs
-> +
-> +  reg:
-> +    items:
-> +     - description: HCI register
-> +     - description: vendor specific register
-> +     - description: unipro register
-> +     - description: UFS protector register
-> +
-> +  reg-names:
-> +    items:
-> +      - const: hci
-> +      - const: vs_hci
-> +      - const: unipro
-> +      - const: ufsp
-> +
-> +  clocks:
-> +    maxItems: 2
-> +    items:
-> +      - description: ufs link core clock
-> +      - description: unipro main clock
-> +
-> +  clock-names:
-> +    maxItems: 2
-> +    items:
-> +      - const: core_clk
-> +      - const: sclk_unipro_main
-> +
-> +  interrupts:
-> +    items:
-> +      - description: interrupt signal for various ufshc status
-
-Just 'maxItems: 1' is fine for single item cases.
-
-> +
-> +  phys:
-> +    maxItems: 1
-> +    description:
-> +      phandle of the ufs phy node
-
-Can drop description.
-
-> +
-> +  phy-names:
-> +      const: ufs-phy
-
-Not much point to a name when only 1 entry.
-
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - phys
-> +  - phy-names
-> +  - clocks
-> +  - clock-names
-
-additionalProperties: false
-
-> +
-> +examples:
-> +  - |
-> +    #include <dt-bindings/interrupt-controller/arm-gic.h>
-> +    #include <dt-bindings/clock/exynos7-clk.h>
-> +
-> +    ufs: ufs@15570000 {
-> +       compatible = "samsung,exynos7-ufs";
-> +       reg = <0x15570000 0x100>,
-> +             <0x15570100 0x100>,
-> +             <0x15571000 0x200>,
-> +             <0x15572000 0x300>;
-> +       reg-names = "hci", "vs_hci", "unipro", "ufsp";
-> +       interrupts = <GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>;
-> +       clocks = <&clock_fsys1 ACLK_UFS20_LINK>,
-> +                <&clock_fsys1 SCLK_UFSUNIPRO20_USER>;
-> +       clock-names = "core_clk", "sclk_unipro_main";
-> +       pinctrl-names = "default";
-> +       pinctrl-0 = <&ufs_rst_n &ufs_refclk_out>;
-> +       pclk-freq-avail-range = <70000000 133000000>;
-> +       phys = <&ufs_phy>;
-> +       phy-names = "ufs-phy";
-> +    };
-> +...
+> diff --git a/arch/arm64/include/asm/pgtable-hwdef.h b/arch/arm64/include/asm/pgtable-hwdef.h
+> index 6bf5e650da788..7eab0d23cdb52 100644
+> --- a/arch/arm64/include/asm/pgtable-hwdef.h
+> +++ b/arch/arm64/include/asm/pgtable-hwdef.h
+> @@ -177,10 +177,12 @@
+>  #define PTE_S2_RDONLY		(_AT(pteval_t, 1) << 6)   /* HAP[2:1] */
+>  #define PTE_S2_RDWR		(_AT(pteval_t, 3) << 6)   /* HAP[2:1] */
+>  #define PTE_S2_XN		(_AT(pteval_t, 2) << 53)  /* XN[1:0] */
+> +#define PTE_S2_SW_RESVD		(_AT(pteval_t, 15) << 55) /* Reserved for SW */
+>  
+>  #define PMD_S2_RDONLY		(_AT(pmdval_t, 1) << 6)   /* HAP[2:1] */
+>  #define PMD_S2_RDWR		(_AT(pmdval_t, 3) << 6)   /* HAP[2:1] */
+>  #define PMD_S2_XN		(_AT(pmdval_t, 2) << 53)  /* XN[1:0] */
+> +#define PMD_S2_SW_RESVD		(_AT(pmdval_t, 15) << 55) /* Reserved for SW */
+>  
+>  #define PUD_S2_RDONLY		(_AT(pudval_t, 1) << 6)   /* HAP[2:1] */
+>  #define PUD_S2_RDWR		(_AT(pudval_t, 3) << 6)   /* HAP[2:1] */
 > -- 
-> 2.17.1
+> 2.26.1
 > 
+> _______________________________________________
+> kvmarm mailing list
+> kvmarm@lists.cs.columbia.edu
+> https://lists.cs.columbia.edu/mailman/listinfo/kvmarm
+
+This is consistent with "Attribute fields in stage 1 VMSAv8-64 Block and
+Page descriptors"
+
+Reviewed-by: Andrew Scull <ascull@google.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
