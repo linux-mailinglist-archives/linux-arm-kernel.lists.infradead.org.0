@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4A221C5EA5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FAD51C5EAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  5 May 2020 19:21:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tV4cKvA+ErDsD+334hZr6K0xfLpyscGb0PMNYcmH2NI=; b=UJB0dYX9JYNvFvUBWyC4QcQfX
-	x9Te0vx5tnJheMqIisftrSoBNcqy6+0aoUKoEh6MlN/8OUTn3SrEdCMfm57iACKHtIUIdY3nS5ULU
-	6ep45ZK5gfpqtxPs+bqaFfUr3Gy6ib/th/DhZv/yR6HhQNzdm0oSt53uk/6I2t8FgVFDzI2I3OvFR
-	Wahvz1tnUIAy/DM1sAmFoHoi0+peHiU1o8vUSVdfiZ5EONiL1350JcW/cH0/ClkhBYyethLqSYbLE
-	4WzH1OUWfsYpCni4sGQcmGlewy32K3fratKv1nBElBnWKXtXtWf+wleZZAQvSLeKGz7LAYOXg4skU
-	NEL8DG+bg==;
+	 bh=AN1lmiSIZWcG0CtqO2dhKGyIydPQOHeF0yNP4rpjAYM=; b=QtkjAQv6Hmaw/2r5jg5KRK+sO
+	X4/zbNgHX4xhe4Vblr6+MipN5LxYNG+aeUXKKRFVO4u/y2KpguAITAY6KUoHGWu+ASE0SZUcfKtsn
+	r3BprBk784PeF3Z0YBZ0zyPamkDIrSddKzSTydwJH94nk3xcGJAHHHUnxMq9JAUDxxtUOQY3HTbDu
+	Ze8A3dx/vImK8HPXyR/HviuPM3mqTrFJs+VOThFK50g85QHNApLtxykLsgbcI8c8yGzScDrEc0o8w
+	p2mzXNDuObRCA+eRekwXzYCHhde/24fl52tzbgOf8YQtWPgbU3RdtT7Vmrzcuc8jRu8q6rQ5Mv8T6
+	ll7D5HXIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jW1DF-0001EP-2Y; Tue, 05 May 2020 17:18:33 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jW1D4-0001Db-P6
- for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:18:24 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DD2A31B;
- Tue,  5 May 2020 10:18:22 -0700 (PDT)
-Received: from [10.57.39.240] (unknown [10.57.39.240])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E6AE33F305;
- Tue,  5 May 2020 10:18:19 -0700 (PDT)
-Subject: Re: [PATCH 04/16] arm64: dts: arm: Fix node address fields
-To: Andre Przywara <andre.przywara@arm.com>, Rob Herring <robh@kernel.org>,
- Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-References: <20200505165212.76466-1-andre.przywara@arm.com>
- <20200505165212.76466-5-andre.przywara@arm.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <347cdcba-a1cf-d308-1cc2-6c2194f40d19@arm.com>
-Date: Tue, 5 May 2020 18:18:19 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jW1Fm-0004QU-17; Tue, 05 May 2020 17:21:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jW1Ff-0004Q5-Hv
+ for linux-arm-kernel@lists.infradead.org; Tue, 05 May 2020 17:21:04 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7AEC6206E6;
+ Tue,  5 May 2020 17:21:02 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588699263;
+ bh=9aVlQ6u6FXHfIvEyOIvfzCaOH41+bI7z19eVLNayuqk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=VAOttl4lW5FMvvl+B/6iNddkuvyJuIxKVQd+7o/fhyF6Mxe2t/RJE5RYpLRqarVpo
+ oYnAZ5TPmR3qRDy4NNu9lKd3PkCA/wSP+WxTry+uoG5DARx/OVJOBx/ejxRZltHa27
+ 09mNvvnOjHVnziEG1gNdYfBodfwCXfSygilNI6rg=
+Date: Tue, 5 May 2020 18:21:00 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when
+ building the kernel with BTI
+Message-ID: <20200505172100.GI5377@sirena.org.uk>
+References: <20200429211641.9279-1-broonie@kernel.org>
+ <20200429211641.9279-3-broonie@kernel.org>
+ <20200505145642.GA24239@willie-the-truck>
+ <20200505151806.GG5377@sirena.org.uk>
+ <20200505160852.GF24239@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <20200505165212.76466-5-andre.przywara@arm.com>
-Content-Language: en-GB
+In-Reply-To: <20200505160852.GF24239@willie-the-truck>
+X-Cookie: Poverty begins at home.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_101822_897218_229AFBAA 
-X-CRM114-Status: GOOD (  17.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_102103_624517_42EEA91A 
+X-CRM114-Status: GOOD (  14.72  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,183 +81,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3008966886191828386=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-05 5:52 pm, Andre Przywara wrote:
-> The Arm Ltd. boards were using an outdated address convention in the DT
-> node names, by separating the high from the low 32-bits of an address by
-> a comma.
 
-I thought that historically that was deliberate, since the actual thing 
-being encoded is <chip select>,<address>, rather than just cosmetically 
-splitting a 64-bit address value?
+--===============3008966886191828386==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Az4VpBrmI9+OyhK/"
+Content-Disposition: inline
 
-Or maybe I'm thinking too far back and things have already changed in 
-the meantime :/
 
-Robin.
+--Az4VpBrmI9+OyhK/
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> Remove the comma from the node name suffix to be DT spec compliant.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> ---
->   arch/arm/boot/dts/vexpress-v2m-rs1.dtsi              | 10 +++++-----
->   arch/arm64/boot/dts/arm/foundation-v8.dtsi           |  4 ++--
->   arch/arm64/boot/dts/arm/juno-motherboard.dtsi        |  6 +++---
->   arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi |  2 +-
->   arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi     |  6 +++---
->   5 files changed, 14 insertions(+), 14 deletions(-)
-> 
-> diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-> index 5c183483ec3b..8010cdcdb37a 100644
-> --- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-> +++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-> @@ -31,7 +31,7 @@
->   			#interrupt-cells = <1>;
->   			ranges;
->   
-> -			nor_flash: flash@0,00000000 {
-> +			nor_flash: flash@0 {
->   				compatible = "arm,vexpress-flash", "cfi-flash";
->   				reg = <0 0x00000000 0x04000000>,
->   				      <4 0x00000000 0x04000000>;
-> @@ -41,13 +41,13 @@
->   				};
->   			};
->   
-> -			psram@1,00000000 {
-> +			psram@100000000 {
->   				compatible = "arm,vexpress-psram", "mtd-ram";
->   				reg = <1 0x00000000 0x02000000>;
->   				bank-width = <4>;
->   			};
->   
-> -			ethernet@2,02000000 {
-> +			ethernet@202000000 {
->   				compatible = "smsc,lan9118", "smsc,lan9115";
->   				reg = <2 0x02000000 0x10000>;
->   				interrupts = <15>;
-> @@ -59,14 +59,14 @@
->   				vddvario-supply = <&v2m_fixed_3v3>;
->   			};
->   
-> -			usb@2,03000000 {
-> +			usb@203000000 {
->   				compatible = "nxp,usb-isp1761";
->   				reg = <2 0x03000000 0x20000>;
->   				interrupts = <16>;
->   				port1-otg;
->   			};
->   
-> -			iofpga@3,00000000 {
-> +			iofpga@300000000 {
->   				compatible = "simple-bus";
->   				#address-cells = <1>;
->   				#size-cells = <1>;
-> diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-> index 12f039fa3dad..e26b492795c5 100644
-> --- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-> +++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-> @@ -151,7 +151,7 @@
->   				<0 0 41 &gic 0 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
->   				<0 0 42 &gic 0 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
->   
-> -		ethernet@2,02000000 {
-> +		ethernet@202000000 {
->   			compatible = "smsc,lan91c111";
->   			reg = <2 0x02000000 0x10000>;
->   			interrupts = <15>;
-> @@ -178,7 +178,7 @@
->   			clock-output-names = "v2m:refclk32khz";
->   		};
->   
-> -		iofpga@3,00000000 {
-> +		iofpga@300000000 {
->   			compatible = "simple-bus";
->   			#address-cells = <1>;
->   			#size-cells = <1>;
-> diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> index e3983ded3c3c..d5cefddde08c 100644
-> --- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> +++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
-> @@ -103,7 +103,7 @@
->   				};
->   			};
->   
-> -			flash@0,00000000 {
-> +			flash@0 {
->   				/* 2 * 32MiB NOR Flash memory mounted on CS0 */
->   				compatible = "arm,vexpress-flash", "cfi-flash";
->   				reg = <0 0x00000000 0x04000000>;
-> @@ -120,7 +120,7 @@
->   				};
->   			};
->   
-> -			ethernet@2,00000000 {
-> +			ethernet@200000000 {
->   				compatible = "smsc,lan9118", "smsc,lan9115";
->   				reg = <2 0x00000000 0x10000>;
->   				interrupts = <3>;
-> @@ -133,7 +133,7 @@
->   				vddvario-supply = <&mb_fixed_3v3>;
->   			};
->   
-> -			iofpga@3,00000000 {
-> +			iofpga@300000000 {
->   				compatible = "simple-bus";
->   				#address-cells = <1>;
->   				#size-cells = <1>;
-> diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-> index 60703b5763c6..350cbf17e8b4 100644
-> --- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-> +++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
-> @@ -9,7 +9,7 @@
->   		motherboard {
->   			arm,v2m-memory-map = "rs2";
->   
-> -			iofpga@3,00000000 {
-> +			iofpga@300000000 {
->   				virtio-p9@140000 {
->   					compatible = "virtio,mmio";
->   					reg = <0x140000 0x200>;
-> diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-> index e333c8d2d0e4..d1bfa62ca073 100644
-> --- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-> +++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-> @@ -17,14 +17,14 @@
->   			#interrupt-cells = <1>;
->   			ranges;
->   
-> -			flash@0,00000000 {
-> +			flash@0 {
->   				compatible = "arm,vexpress-flash", "cfi-flash";
->   				reg = <0 0x00000000 0x04000000>,
->   				      <4 0x00000000 0x04000000>;
->   				bank-width = <4>;
->   			};
->   
-> -			ethernet@2,02000000 {
-> +			ethernet@202000000 {
->   				compatible = "smsc,lan91c111";
->   				reg = <2 0x02000000 0x10000>;
->   				interrupts = <15>;
-> @@ -51,7 +51,7 @@
->   				clock-output-names = "v2m:refclk32khz";
->   			};
->   
-> -			iofpga@3,00000000 {
-> +			iofpga@300000000 {
->   				compatible = "simple-bus";
->   				#address-cells = <1>;
->   				#size-cells = <1>;
-> 
+On Tue, May 05, 2020 at 05:08:53PM +0100, Will Deacon wrote:
+> On Tue, May 05, 2020 at 04:18:06PM +0100, Mark Brown wrote:
+
+> > > I also see a scary linker warning about the native VDSO:
+
+> > > aarch64-none-linux-gnu-ld: arch/arm64/kernel/vdso/vgettimeofday.o: warning: BTI turned on by -z force-bti when all inputs do not have BTI in NOTE section.
+
+> > I can't reproduce this, I am using clang-10 as well...  can you share
+> > your exact command line and config?  I'm using
+
+> Just been debugging this, and it seems that not all clangs are created
+> equal. Updating mine from 10.0.2 to 11.0.1 means I now get the
+> '.note.gnu.property' sections emitted for C files compiled using
+> '-mbranch-protection=pac-ret+leaf+bti', whereas I didn't before.
+
+Oh, that's irritating.  I'm using clang from the llvm.org packages,
+currently that's:
+
+    10.0.0-++20200115115127+cbe681bd833-1~exp1~20200115105727.528
+
+so if this is a clang issue it looks like they fixed it in the clang-10
+branch.  I'm not sure it's worth trying to detect and handle this or
+not, I don't know how widely deployed toolchains that don't emit the
+property are and there's a fairly clear solution.  What do you think?
+
+--Az4VpBrmI9+OyhK/
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6xoHsACgkQJNaLcl1U
+h9ASdwf+Pn5JTZth4KVj8Tje/7OgBYr1sp2c3FxIgsrewozmsT51SjnvNUQHo5Rr
+vUUxD8F1gVD80vZfQX1125uDI/Oe1cDpdAVwH/CctOuVNc88xg2UaLkMo8kxpRWD
+HmNJQxiK4UqyCk3ayDUU+8u66cp1eA3CvKoaLFNlL5kVzrC/mpdfblyLsIZ7FWKQ
+ckpyauJhjtv+wTZ52A48YLD4JGtqC9m1iCbKenAbZoa6H5DXlCheXr5/4gT/qVc3
+KpaddWTtS1OJfD4pXQIyDbqKCkL3GSdE8SS4D7TgjVEWsqWhxyNWZN1uiapg7xSp
+6I8kN1h5MYrYoWS9lRj+xChKkQvadA==
+=acZC
+-----END PGP SIGNATURE-----
+
+--Az4VpBrmI9+OyhK/--
+
+
+--===============3008966886191828386==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3008966886191828386==--
+
