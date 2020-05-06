@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0A211C6A4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 09:44:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5771A1C6A54
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 09:47:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Av0PaX3RVBckqoNwzyZs8gapaRD8FcrVOQFBJd7c1is=; b=QMYUpmrv8wS/Iw
-	767mATNbmC+bb8Mamir4pajDpMqI03oGQEUZA9dsYviHsHaKMv+cUhNEYT5/fVEnBIxGtxqVvbfxO
-	QWA4/JiHGqz/iABwVEZ0YSW7b31SDEi9+1SNkxWeZmjpNT3M0FeCFF1nAB/uKAq5RoRD7EJn9/aho
-	ZvYzpHJOE2Wo5ZP4y/IEq6Kz/91e+1uFXOysiNmgUL1wqoJqplIIrW1dgTPIyyXUnNE0QNsPTowUK
-	PbJNu1qm9c8K+t/S6adg48oRmLh7xfpJoNO0Bn5jI56zPVXijVDb2idduwpq+/jCaAHUYjjJ07fqw
-	/mSQ1zWPin1gp1ncbnxA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=IM8jjaLRxyr9A7Fg3pPjrIfX/qtBtFlBywytrxqCID4=; b=QFSftgQvcghZpp9xnVdjBXEaI
+	tGkYMLjmoL0fc30RGdejrFPjCtN1aldyr50jRQH67K8Z81GZT79SToAI3CU1rdvNYYjF839b2gdwi
+	1GhE9ATvQLIbOvor6LfYL5Kxv6HEreymSoHil6YxfI2i590IDWxH/UihnYvKKq6puqvvYMZo17cCY
+	v/SDMv5r2JvOuk6VSIFMPXj8jpeZOBwULIrp20vZnCsPo1eRPJ4LA4NjblDxrn8t3PDcrGbtpEDzY
+	FL/VI4tSnABJhFOfAzrcOwQgX7mz36kW5mBGuvjeg9/NfRYX7xotrZSaEI7YyWAMjheZToMFUF6ah
+	WpgpWJBQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWEjV-000095-LR; Wed, 06 May 2020 07:44:45 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jWElo-0003cr-Sf; Wed, 06 May 2020 07:47:08 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWEjN-00007S-Dx
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 07:44:38 +0000
-Received: by mail-ot1-f67.google.com with SMTP id t3so630447otp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 00:44:32 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+PZSdGjgBrO1ZN1QwTXyPWZrbqZlSLSFkTwxM8ooADM=;
- b=XRrXjouYX3Ab1+ZnjKWFp4EVTVj1ZD0I3/BtUCPNDA2jFt4hEZikYf4NszZHhNb6Cu
- 0Xn11lAFHdI7cfNYL5FIUMroH6j4iNoIyjsNfxvC6ruDMz55KTLF+YwJI1Elt7JzwSiY
- QInHvlka4yTzJ/pXEvFKbnNg3exdbXCvMs9dZ7i9yF0773nyzOiMbek0emsnwcjCIwAd
- W3vWVEihv4Oeng+e39VYg2gfOtonBRj2GuMqr/4vaLFgqi4XwpO+c1RU28gSVmDYlX/I
- 5uNW9M63SIQszpyP3g74Jb0YvZ8VtDtAlAjMGN2y7IyfGhSqwCrebEUeztizoDVfw86l
- fL3w==
-X-Gm-Message-State: AGi0PuY7jkeZtDiE2BCMUcTrP52tzTaoNx4VBloRo+XPu+4iwegqVcQK
- vPZIaDRZmIbhfFqo4GCD6Slz4Ud3qTU8CAbw+gs=
-X-Google-Smtp-Source: APiQypJ+4xFnHOiS2S+JNds3Xmz+4Kuk15I6/2b9iYq7lC5nwvlq/+iCHXAiNqEpGOfxXlsFFKlO5CbDC3CjtSH/Olk=
-X-Received: by 2002:a9d:564:: with SMTP id 91mr5681994otw.250.1588751071000;
- Wed, 06 May 2020 00:44:31 -0700 (PDT)
+ id 1jWElh-0003c8-DX
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 07:47:03 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 0467hNXZ020268; Wed, 6 May 2020 09:46:55 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=tXxQmbpMfcFKXtnY4AZkiivJh3bpPFj5ua7wsu7Lbng=;
+ b=rETEWOPcZrNQTtX06jTbChKkjWjdr8e9ugeXrTeP7hAzi39AInowVtX5bZM/HKsOODqo
+ 5mQFsUFSIIAJp9hMwL9ng6FIqMtaugcfw8b2K+VkkgTkgjt9s7tPa0TNgD2yrx4D2atm
+ 553k3haeU4Hd1QN++NuDBSlcanZbOrR7/O4TxyHtb6dcar5AGSPviOhlIsLzZRzBJHWU
+ eqL5RpK0tdR+OJVgcTh8YKNnagY6U9cxJ9u8OpoT3vZcLNlz/wNALLy/pCmPOAE/t+A0
+ o1ZknFmXS7d5w5PdY77h4D4MXYeTBjmxGWTM61so1PC+UyffCEFvaIchJfQ2h/hF0uU6 WA== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30rxmvmj7y-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 06 May 2020 09:46:55 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id C7CFD10002A;
+ Wed,  6 May 2020 09:46:54 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B1C1A2A5BB0;
+ Wed,  6 May 2020 09:46:54 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 6 May
+ 2020 09:46:51 +0200
+Subject: Re: [PATCH 01/12] ARM: dts: stm32: Add alternate pinmux for I2C2 pins
+To: Marek Vasut <marex@denx.de>, <linux-arm-kernel@lists.infradead.org>
+References: <20200429163743.67854-1-marex@denx.de>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <13aabff1-d4d0-7afb-6a57-a8136e35c6a4@st.com>
+Date: Wed, 6 May 2020 09:46:44 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-References: <20200501083227.10886-1-ricardo.canuelo@collabora.com>
- <20200501083227.10886-6-ricardo.canuelo@collabora.com>
-In-Reply-To: <20200501083227.10886-6-ricardo.canuelo@collabora.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 6 May 2020 09:44:19 +0200
-Message-ID: <CAMuHMdVbRoGAqeqePQDgRpxg4Vsr_LEfHERW-r6KdiSOCo5a6g@mail.gmail.com>
-Subject: Re: [RFT PATCH 5/5] dt-bindings: drm: bridge: adi,adv7511.txt:
- convert to yaml
-To: =?UTF-8?Q?Ricardo_Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
+In-Reply-To: <20200429163743.67854-1-marex@denx.de>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.49]
+X-ClientProxiedBy: SFHDAG7NODE2.st.com (10.75.127.20) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.138, 18.0.676
+ definitions=2020-05-06_02:2020-05-04,
+ 2020-05-06 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_004437_473179_94F29E9F 
-X-CRM114-Status: GOOD (  10.40  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20200506_004701_818557_D2D03F53 
+X-CRM114-Status: GOOD (  18.84  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [geert.uytterhoeven[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,40 +96,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Wei Xu <xuwei5@hisilicon.com>,
- Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Collabora Kernel ML <kernel@collabora.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUmljYXJkbywKCk9uIEZyaSwgTWF5IDEsIDIwMjAgYXQgMTA6MzMgQU0gUmljYXJkbyBDYcOx
-dWVsbwo8cmljYXJkby5jYW51ZWxvQGNvbGxhYm9yYS5jb20+IHdyb3RlOgo+IENvbnZlcnQgdGhl
-IEFEVjc1MTEvMTF3LzEzLzMzLzM1IERUIGJpbmRpbmdzIHRvIGpzb24tc2NoZW1hLgo+Cj4gU2ln
-bmVkLW9mZi1ieTogUmljYXJkbyBDYcOxdWVsbyA8cmljYXJkby5jYW51ZWxvQGNvbGxhYm9yYS5j
-b20+Cgo+IC0tLSAvZGV2L251bGwKPiArKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvZGlzcGxheS9icmlkZ2UvYWRpLGFkdjc1MTEueWFtbAo+IEBAIC0wLDAgKzEsMjkzIEBA
-Cgo+ICsgIHJlZy1uYW1lczoKPiArICAgIGRlc2NyaXB0aW9uOgo+ICsgICAgICBOYW1lcyBvZiBt
-YXBzIHdpdGggcHJvZ3JhbW1hYmxlIGFkZHJlc3Nlcy4gSXQgY2FuIGNvbnRhaW4gYW55IG1hcAo+
-ICsgICAgICBuZWVkaW5nIGEgbm9uLWRlZmF1bHQgYWRkcmVzcy4KPiArICAgIG1pbkl0ZW1zOiAx
-Cj4gKyAgICBpdGVtczoKPiArICAgICAgLSBjb25zdDogbWFpbgo+ICsgICAgICAtIGNvbnN0OiBl
-ZGlkCj4gKyAgICAgIC0gY29uc3Q6IGNlYwo+ICsgICAgICAtIGNvbnN0OiBwYWNrZXQKCkNhbid0
-IHlvdSBhdm9pZCB0aGUgbmVlZCBmb3IgcGF0Y2hlcwpbUkZUIFBBVENIIDEvNV0gYXJtNjQ6IGR0
-czogZHJhYWs6IFJlb3JkZXIgaGRtaS1lbmNvZGVyQDM5IHJlZyBhbmQKcmVnLW5hbWVzIHByb3Bl
-cnRpZXMKW1JGVCBQQVRDSCAyLzVdIEFSTTogZHRzOiB3aGVhdDogcmVvcmRlciByZWcgYW5kIHJl
-Zy1uYW1lcyBwcm9wZXJ0aWVzCmluIGhkbWkgYnJpZGdlcwoKYnkgdXNpbmcKCiAgICBpdGVtczoK
-ICAgICAgZW51bToKICAgICAgICAtIG1haW4KICAgICAgICAtIGVkaWQKICAgICAgICAtIGNlYwog
-ICAgICAgIC0gcGFja2V0CgppbnN0ZWFkPwoKR3J7b2V0amUsZWV0aW5nfXMsCgogICAgICAgICAg
-ICAgICAgICAgICAgICBHZWVydAoKCi0tCkdlZXJ0IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxv
-dHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2VlcnRAbGludXgtbTY4ay5vcmcKCkluIHBlcnNv
-bmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNobmljYWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEg
-aGFja2VyLiBCdXQKd2hlbiBJJ20gdGFsa2luZyB0byBqb3VybmFsaXN0cyBJIGp1c3Qgc2F5ICJw
-cm9ncmFtbWVyIiBvciBzb21ldGhpbmcgbGlrZSB0aGF0LgogICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgIC0tIExpbnVzIFRvcnZhbGRzCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1h
-cm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcv
-bWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Marek
+
+On 4/29/20 6:37 PM, Marek Vasut wrote:
+> Add another mux option for I2C2 pins, this is used on AV96 board.
+> 
+> Signed-off-by: Marek Vasut <marex@denx.de>
+> Cc: Alexandre Torgue <alexandre.torgue@st.com>
+> Cc: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+> Cc: Patrice Chotard <patrice.chotard@st.com>
+> Cc: Patrick Delaunay <patrick.delaunay@st.com>
+> Cc: linux-stm32@st-md-mailman.stormreply.com
+> To: linux-arm-kernel@lists.infradead.org
+> ---
+>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi | 17 +++++++++++++++++
+>   1 file changed, 17 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> index aeddcaadb829..ca4edcf369d0 100644
+> --- a/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> +++ b/arch/arm/boot/dts/stm32mp15-pinctrl.dtsi
+> @@ -408,6 +408,23 @@ pins {
+>   		};
+>   	};
+>   
+> +	i2c2_pins_c: i2c2-4 {
+> +		pins {
+> +			pinmux = <STM32_PINMUX('F', 1, AF4)>, /* I2C2_SCL */
+> +				 <STM32_PINMUX('H', 5, AF4)>; /* I2C2_SDA */
+> +			bias-disable;
+> +			drive-open-drain;
+> +			slew-rate = <0>;
+> +		};
+> +	};
+> +
+> +	i2c2_pins_sleep_c: i2c2-5 {
+
+should be i2c2-sleep-4. I'll fix it directly when I'll merge.
+
+> +		pins {
+> +			pinmux = <STM32_PINMUX('F', 1, ANALOG)>, /* I2C2_SCL */
+> +				 <STM32_PINMUX('H', 5, ANALOG)>; /* I2C2_SDA */
+> +		};
+> +	};
+> +
+>   	i2c5_pins_a: i2c5-0 {
+>   		pins {
+>   			pinmux = <STM32_PINMUX('A', 11, AF4)>, /* I2C5_SCL */
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
