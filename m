@@ -2,101 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 914681C6F13
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D31561C6F2B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:22:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6gTpnH0oJYMeTWa6jaVq/bFFtX3OXb/26V/S9ifwSXM=; b=TF+CLqVCviM17W
-	BEEIWQJSlNZ92Q1I8cOSc3B/wIsVRMUrbkcNNSfRONXlvyGiNFJKB2CgyxBJSxyrw1IVrGqaQTxj7
-	qyhw7j9k8XyZXf8WEP0OcZ237J9TowxDd9T4xvNXIP3tcUYEOPXqZgYW6zX/Tn/B5RG6lLNSr/j6p
-	UwggrorVwjy4WG493n/jI1Hvkz9ms5tEg4w90vyDhrdbVDM7eEqrfOJueWZlNLdtiPVBcQgtg9Ajg
-	udQ4swT/u2gs/9e2SCPAp8oFTgbqIIeL9Ny1oxAz7bMRJTTHkzCVErn5ZQMxkEVi+s0yyYXOepFDq
-	dVS+KzDqwN6/EPYmG7JA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6AzRD44xJczmC4EhyBHRGmMLnwtr9xONUI5hyehZqkY=; b=Gmsu6yu4QUuW39
+	1YOhJbpyrbmB4bBVBIAdhN0n8DcEnSq/K+bTs32PXQ8iyyGhIJCQq+qKs6gs4zzbfU1HGSvZ7LGdT
+	HYq+Gnjpd2sRznUA4Kv7j7ul0X9LfLsz90djx0O5vuQdPLBplhCL6GrObOzOHPGD61cqRXlMuo2vx
+	fkJMMY5szU+uNNwDAmO2Kd7x9R/wTXumPlvnBsip+C85jh5DTsPMbEOo2EElWS3ovRf9+P/WCIbR4
+	LBrmGUOUeimJ2znptHchsHvZqQaD4bnv15wkFIPKMhJqNUIceSf3EfptBzSMyz4GwJs5ei52o3oW8
+	c45Xyn3wvZ5wq22DLZBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHzN-0000Ti-MN; Wed, 06 May 2020 11:13:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHzF-0000So-W4; Wed, 06 May 2020 11:13:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFEA31FB;
- Wed,  6 May 2020 04:13:12 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EDBE3F71F;
- Wed,  6 May 2020 04:13:11 -0700 (PDT)
-Subject: Re: [PATCH RFC 2/8] dmaengine: Actions: Add support for S700 DMA
- engine
-To: Amit Singh Tomar <amittomer25@gmail.com>, vkoul@kernel.org,
- afaerber@suse.de, manivannan.sadhasivam@linaro.org
-References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
- <1588761371-9078-3-git-send-email-amittomer25@gmail.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
- 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
- i4aIXCH3Wv6K
-Organization: ARM Ltd.
-Message-ID: <1c285ad4-a366-db08-e4e8-c2e1437cc505@arm.com>
-Date: Wed, 6 May 2020 12:12:27 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jWI7f-0007FE-9W; Wed, 06 May 2020 11:21:55 +0000
+Received: from mga07.intel.com ([134.134.136.100])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWI7X-0007EH-Nj; Wed, 06 May 2020 11:21:49 +0000
+IronPort-SDR: T8XABdx+lFQsMYfWUKBSQbQvUvK6kJ0zDl9W3VFG0jUPWH6NrdB/j3aeR/P0VswG8E+1arhDyB
+ uOKgabtX8WGA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga004.jf.intel.com ([10.7.209.38])
+ by orsmga105.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 06 May 2020 04:21:43 -0700
+IronPort-SDR: t6fBvg1qD9timBapcEHbs/9FlgJYCTMxVzSSsZrrxSppL5QxxscvZ9SAIBneDJ6A073f7Ni0gz
+ slXsh7Mvorxg==
+X-IronPort-AV: E=Sophos;i="5.73,358,1583222400"; d="scan'208";a="407210944"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by orsmga004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 06 May 2020 04:21:38 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 89C1F20885; Wed,  6 May 2020 14:21:36 +0300 (EEST)
+Date: Wed, 6 May 2020 14:21:36 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V7, 1/2] media: dt-bindings: media: i2c: Document OV02A10
+ bindings
+Message-ID: <20200506112136.GV9190@paasikivi.fi.intel.com>
+References: <20200430080924.1140-1-dongchun.zhu@mediatek.com>
+ <20200430080924.1140-2-dongchun.zhu@mediatek.com>
+ <20200505070451.GS9190@paasikivi.fi.intel.com>
+ <1588688238.8804.150.camel@mhfsdcap03>
 MIME-Version: 1.0
-In-Reply-To: <1588761371-9078-3-git-send-email-amittomer25@gmail.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <1588688238.8804.150.camel@mhfsdcap03>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_041314_120147_E1122CAF 
-X-CRM114-Status: GOOD (  27.92  )
+X-CRM114-CacheID: sfid-20200506_042147_816601_B6EE021D 
+X-CRM114-Status: GOOD (  26.66  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [134.134.136.100 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -109,254 +74,242 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- cristian.ciocaltea@gmail.com
+Cc: mark.rutland@arm.com, drinkcat@chromium.org,
+ andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ louis.kuo@mediatek.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ matrix.zhu@aliyun.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/05/2020 11:36, Amit Singh Tomar wrote:
+Hi Dongchun,
 
-Hi,
-
-> DMA controller present on S700 SoC is compatible with the one on S900
-> (as most of registers are same), but it has different DMA descriptor
-> structure where registers "fcnt" and "ctrlb" uses different encoding.
+On Tue, May 05, 2020 at 10:17:18PM +0800, Dongchun Zhu wrote:
+> Hi Sakari,
 > 
-> For instance, on S900 "fcnt" starts at offset 0x0c and uses upper 12
-> bits whereas on S700, it starts at offset 0x1c and uses lower 12 bits.
+> Thanks for the review.
 > 
-> This commit adds support for DMA controller present on S700.
+> On Tue, 2020-05-05 at 10:04 +0300, Sakari Ailus wrote:
+> > Hi Dongchun,
+> > 
+> > On Thu, Apr 30, 2020 at 04:09:23PM +0800, Dongchun Zhu wrote:
+> > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
+> > > 
+> > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > ---
+> > >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 148 +++++++++++++++++++++
+> > >  MAINTAINERS                                        |   7 +
+> > >  2 files changed, 155 insertions(+)
+> > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > > 
+> > > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > > new file mode 100644
+> > > index 0000000..2be4bd2
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > > @@ -0,0 +1,148 @@
+> > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> > > +# Copyright (c) 2020 MediaTek Inc.
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
+> > > +
+> > > +maintainers:
+> > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > +
+> > > +description: |-
+> > > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
+> > > +  image sensor, which is the latest production derived from Omnivision's CMOS
+> > > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
+> > > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
+> > > +  sensor output is available via CSI-2 serial data output.
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    const: ovti,ov02a10
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  clocks:
+> > > +    items:
+> > > +      - description: top mux camtg clock
+> > > +      - description: devider clock
+> > > +
+> > > +  clock-names:
+> > > +    items:
+> > > +      - const: eclk
+> > > +      - const: freq_mux
+> > > +
+> > > +  clock-frequency:
+> > > +    description:
+> > > +      Frequency of the eclk clock in Hertz.
+> > > +
+> > > +  dovdd-supply:
+> > > +    description:
+> > > +      Definition of the regulator used as interface power supply.
+> > > +
+> > > +  avdd-supply:
+> > > +    description:
+> > > +      Definition of the regulator used as analog power supply.
+> > > +
+> > > +  dvdd-supply:
+> > > +    description:
+> > > +      Definition of the regulator used as digital power supply.
+> > > +
+> > > +  powerdown-gpios:
+> > > +    description:
+> > > +      The phandle and specifier for the GPIO that controls sensor powerdown.
+> > > +
+> > > +  reset-gpios:
+> > > +    description:
+> > > +      The phandle and specifier for the GPIO that controls sensor reset.
+> > > +
+> > > +  rotation:
+> > > +    description:
+> > > +      Definition of the sensor's placement, valid values are 0 and 180.
+> > > +    allOf:
+> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +      - enum:
+> > > +          - 0    # Sensor Mounted Upright
+> > > +          - 180  # Sensor Mounted Upside Down
+> > > +
+> > > +  ovti,mipi-tx-speed:
+> > > +    description:
+> > > +      Indication of MIPI transmission speed select.
+> > 
+> > What exactly does this signify? And how do you come up with the number?
+> > 
 > 
-> Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
-> ---
->  drivers/dma/owl-dma.c | 99 ++++++++++++++++++++++++++++++++++++---------------
->  1 file changed, 70 insertions(+), 29 deletions(-)
+> Apologies for not addressing this number clear.
 > 
-> diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
-> index b0d80a2fa383..6c2f0d0aad4c 100644
-> --- a/drivers/dma/owl-dma.c
-> +++ b/drivers/dma/owl-dma.c
-> @@ -134,6 +134,11 @@ enum owl_dmadesc_offsets {
->  	OWL_DMADESC_SIZE
->  };
->  
-> +enum owl_dma_id {
-> +	S900_DMA,
-> +	S700_DMA,
-> +};
-> +
->  /**
->   * struct owl_dma_lli - Link list for dma transfer
->   * @hw: hardware link list
-> @@ -200,6 +205,7 @@ struct owl_dma_vchan {
->   * @pchans: array of data for the physical channels
->   * @nr_vchans: the number of physical channels
->   * @vchans: array of data for the physical channels
-> + * @devid: device id based on OWL SoC
->   */
->  struct owl_dma {
->  	struct dma_device	dma;
-> @@ -214,6 +220,7 @@ struct owl_dma {
->  
->  	unsigned int		nr_vchans;
->  	struct owl_dma_vchan	*vchans;
-> +	enum owl_dma_id		devid;
->  };
->  
->  static void pchan_update(struct owl_dma_pchan *pchan, u32 reg,
-> @@ -354,6 +361,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
->  				  struct dma_slave_config *sconfig,
->  				  bool is_cyclic)
->  {
-> +	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
->  	u32 mode, ctrlb;
->  
->  	mode = OWL_DMA_MODE_PW(0);
-> @@ -409,8 +417,14 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
->  	lli->hw[OWL_DMADESC_DADDR] = dst;
->  	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
->  	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
-> -	lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
-> -	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
-> +
-> +	if (od->devid == S700_DMA) {
-> +		lli->hw[OWL_DMADESC_FLEN] = len;
-> +		lli->hw[OWL_DMADESC_CTRLB] = 1 | ctrlb;
-> +	} else {
-> +		lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
-> +		lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
-> +	}
->  
->  	return 0;
->  }
-> @@ -562,26 +576,35 @@ static irqreturn_t owl_dma_interrupt(int irq, void *dev_id)
->  	dma_writel(od, OWL_DMA_IRQ_PD0, pending);
->  
->  	/* Check missed pending IRQ */
-> -	for (i = 0; i < od->nr_pchans; i++) {
-> -		pchan = &od->pchans[i];
-> -		chan_irq_pending = pchan_readl(pchan, OWL_DMAX_INT_CTL) &
-> -				   pchan_readl(pchan, OWL_DMAX_INT_STATUS);
-> -
-> -		/* Dummy read to ensure OWL_DMA_IRQ_PD0 value is updated */
-> -		dma_readl(od, OWL_DMA_IRQ_PD0);
-> +	if (od->devid == S900_DMA) {
+> From the datasheet, P1:0xA1 register represents TX_SPEED_AREA_SEL with
+> the default val: 0x03.
+> The description of this RW register is as below:
+> Bit[2:0]: MIPI transmission speed select.
+> 
+> Thus the enum should be definited as [ 0, 1, 2, 3, 4, 5, 6, 7 ].
+> This would be fixed in next release.
+> 
+> In the meantime, as the default val of P1:0xA1 is 0x03, we hope to keep
+> that value if there is no setting for this private property in DT.
+> The caller in driver would be updated like this in next release.
+> if (ov02a10->mipi_clock_tx_speed)
+> 	ret = i2c_smbus_write_byte_data(...,...);
 
-You should mention (at least in the commit message) why this is needed.
-And please move this into a separate function, this indentation is
-becoming mad here.
+How did you pick the value in the example? And why do you believe it is
+specific to a platform, and not e.g. a sensor mode?
 
-> +		for (i = 0; i < od->nr_pchans; i++) {
-> +			pchan = &od->pchans[i];
-> +			chan_irq_pending = pchan_readl(pchan,
-> +						       OWL_DMAX_INT_CTL) &
-> +					   pchan_readl(pchan,
-> +						       OWL_DMAX_INT_STATUS)
-> +							;
-> +
-> +			/* Dummy read to ensure OWL_DMA_IRQ_PD0 value is
-> +			 * updated
-> +			 */
-> +			dma_readl(od, OWL_DMA_IRQ_PD0);
->  
-> -		global_irq_pending = dma_readl(od, OWL_DMA_IRQ_PD0);
-> +			global_irq_pending = dma_readl(od,
-> +						       OWL_DMA_IRQ_PD0);
->  
-> -		if (chan_irq_pending && !(global_irq_pending & BIT(i)))	{
-> -			dev_dbg(od->dma.dev,
-> -				"global and channel IRQ pending match err\n");
-> +			if (chan_irq_pending && !(global_irq_pending &
-> +						  BIT(i))) {
-> +				dev_dbg(od->dma.dev,
-> +			"global and channel IRQ pending match err\n");
->  
-> -			/* Clear IRQ status for this pchan */
-> -			pchan_update(pchan, OWL_DMAX_INT_STATUS,
-> -				     0xff, false);
-> +				/* Clear IRQ status for this pchan */
-> +				pchan_update(pchan, OWL_DMAX_INT_STATUS,
-> +					     0xff, false);
->  
-> -			/* Update global IRQ pending */
-> -			pending |= BIT(i);
-> +				/* Update global IRQ pending */
-> +				pending |= BIT(i);
-> +			}
->  		}
->  	}
->  
-> @@ -720,6 +743,7 @@ static int owl_dma_resume(struct dma_chan *chan)
->  
->  static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
->  {
-> +	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
->  	struct owl_dma_pchan *pchan;
->  	struct owl_dma_txd *txd;
->  	struct owl_dma_lli *lli;
-> @@ -741,9 +765,15 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
->  		list_for_each_entry(lli, &txd->lli_list, node) {
->  			/* Start from the next active node */
->  			if (lli->phys == next_lli_phy) {
-> -				list_for_each_entry(lli, &txd->lli_list, node)
-> -					bytes += lli->hw[OWL_DMADESC_FLEN] &
-> -						 GENMASK(19, 0);
-> +				list_for_each_entry(lli, &txd->lli_list, node) {
-> +					if (od->devid == S700_DMA)
-> +						bytes +=
-> +						lli->hw[OWL_DMADESC_FLEN];
-> +					else
-> +						bytes +=
-> +						lli->hw[OWL_DMADESC_FLEN] &
-> +						GENMASK(19, 0);
-
-You should have an accessor for getting the frame len, that should avoid
-the insane wrapping here. Or factor this out into a helper function.
-Alternatively revert the if statement and continue, that saves you one
-level of indentation.
-
-I guess flen is limited to 20 bits anyway, so you might want to apply
-the 20-bit mask unconditionally.
-
-Cheers,
-Andre
-
-> +				}
->  				break;
->  			}
->  		}
-> @@ -756,6 +786,7 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
->  					 dma_cookie_t cookie,
->  					 struct dma_tx_state *state)
->  {
-> +	struct owl_dma *od = to_owl_dma(chan->device);
->  	struct owl_dma_vchan *vchan = to_owl_vchan(chan);
->  	struct owl_dma_lli *lli;
->  	struct virt_dma_desc *vd;
-> @@ -773,8 +804,13 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
->  	vd = vchan_find_desc(&vchan->vc, cookie);
->  	if (vd) {
->  		txd = to_owl_txd(&vd->tx);
-> -		list_for_each_entry(lli, &txd->lli_list, node)
-> -			bytes += lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
-> +		list_for_each_entry(lli, &txd->lli_list, node) {
-> +			if (od->devid == S700_DMA)
-> +				bytes += lli->hw[OWL_DMADESC_FLEN];
-> +			else
-> +				bytes += lli->hw[OWL_DMADESC_FLEN] &
-> +					 GENMASK(19, 0);
-> +		}
->  	} else {
->  		bytes = owl_dma_getbytes_chan(vchan);
->  	}
-> @@ -1031,11 +1067,20 @@ static struct dma_chan *owl_dma_of_xlate(struct of_phandle_args *dma_spec,
->  	return chan;
->  }
->  
-> +static const struct of_device_id owl_dma_match[] = {
-> +	{ .compatible = "actions,s900-dma", .data = (void *)S900_DMA,},
-> +	{ .compatible = "actions,s700-dma", .data = (void *)S700_DMA,},
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, owl_dma_match);
-> +
->  static int owl_dma_probe(struct platform_device *pdev)
->  {
->  	struct device_node *np = pdev->dev.of_node;
->  	struct owl_dma *od;
->  	int ret, i, nr_channels, nr_requests;
-> +	const struct of_device_id *of_id =
-> +				of_match_device(owl_dma_match, &pdev->dev);
->  
->  	od = devm_kzalloc(&pdev->dev, sizeof(*od), GFP_KERNEL);
->  	if (!od)
-> @@ -1060,6 +1105,8 @@ static int owl_dma_probe(struct platform_device *pdev)
->  	dev_info(&pdev->dev, "dma-channels %d, dma-requests %d\n",
->  		 nr_channels, nr_requests);
->  
-> +	od->devid = (enum owl_dma_id)of_id->data;
-> +
->  	od->nr_pchans = nr_channels;
->  	od->nr_vchans = nr_requests;
->  
-> @@ -1192,12 +1239,6 @@ static int owl_dma_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> -static const struct of_device_id owl_dma_match[] = {
-> -	{ .compatible = "actions,s900-dma", },
-> -	{ /* sentinel */ }
-> -};
-> -MODULE_DEVICE_TABLE(of, owl_dma_match);
-> -
->  static struct platform_driver owl_dma_driver = {
->  	.probe	= owl_dma_probe,
->  	.remove	= owl_dma_remove,
+> 
+> > > +    allOf:
+> > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
+> > > +      - enum: [ 3, 4 ]
+> > > +
+> > > +  # See ../video-interfaces.txt for details
+> > > +  port:
+> > > +    type: object
+> > > +    additionalProperties: false
+> > > +
+> > > +    properties:
+> > > +      endpoint:
+> > > +        type: object
+> > > +        additionalProperties: false
+> > > +
+> > > +        properties:
+> > > +          remote-endpoint: true
+> > > +          link-frequencies: true
+> > > +
+> > > +    required:
+> > > +      - endpoint
+> > > +
+> > > +required:
+> > > +  - compatible
+> > > +  - reg
+> > > +  - clocks
+> > > +  - clock-names
+> > > +  - clock-frequency
+> > > +  - dovdd-supply
+> > > +  - avdd-supply
+> > > +  - dvdd-supply
+> > > +  - powerdown-gpios
+> > > +  - reset-gpios
+> > > +  - port
+> > > +
+> > > +additionalProperties: false
+> > > +
+> > > +examples:
+> > > +  - |
+> > > +    #include <dt-bindings/clock/mt8183-clk.h>
+> > > +    #include <dt-bindings/gpio/gpio.h>
+> > > +
+> > > +    i2c {
+> > > +        clock-frequency = <400000>;
+> > > +        #address-cells = <1>;
+> > > +        #size-cells = <0>;
+> > > +
+> > > +        ov02a10: camera-sensor@3d {
+> > > +            compatible = "ovti,ov02a10";
+> > > +            reg = <0x3d>;
+> > > +            pinctrl-names = "default";
+> > > +            pinctrl-0 = <&clk_24m_cam>;
+> > > +
+> > > +            clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
+> > > +                     <&topckgen CLK_TOP_UNIVP_192M_D8>;
+> > > +            clock-names = "eclk", "freq_mux";
+> > > +            clock-frequency = <24000000>;
+> > > +
+> > > +            rotation = <180>;
+> > > +            ovti,mipi-tx-speed = <3>;
+> > > +
+> > > +            dovdd-supply = <&mt6358_vcamio_reg>;
+> > > +            avdd-supply = <&mt6358_vcama1_reg>;
+> > > +            dvdd-supply = <&mt6358_vcn18_reg>;
+> > > +            powerdown-gpios = <&pio 107 GPIO_ACTIVE_LOW>;
+> > > +            reset-gpios = <&pio 109 GPIO_ACTIVE_HIGH>;
+> > > +
+> > > +            port {
+> > > +                wcam_out: endpoint {
+> > > +                    remote-endpoint = <&mipi_in_wcam>;
+> > > +                    link-frequencies = /bits/ 64 <390000000>;
+> > > +                };
+> > > +            };
+> > > +        };
+> > > +    };
+> > > +
+> > > +...
+> > > diff --git a/MAINTAINERS b/MAINTAINERS
+> > > index e64e5db..63a2335 100644
+> > > --- a/MAINTAINERS
+> > > +++ b/MAINTAINERS
+> > > @@ -12389,6 +12389,13 @@ M:	Harald Welte <laforge@gnumonks.org>
+> > >  S:	Maintained
+> > >  F:	drivers/char/pcmcia/cm4040_cs.*
+> > >  
+> > > +OMNIVISION OV02A10 SENSOR DRIVER
+> > > +M:	Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > +L:	linux-media@vger.kernel.org
+> > > +S:	Maintained
+> > > +T:	git git://linuxtv.org/media_tree.git
+> > > +F:	Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
+> > > +
+> > >  OMNIVISION OV13858 SENSOR DRIVER
+> > >  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
+> > >  L:	linux-media@vger.kernel.org
+> > 
 > 
 
+-- 
+Regards,
+
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
