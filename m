@@ -2,87 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C3F21C6ED9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:04:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 914681C6F13
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:13:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e29QrjtfQtrojR2aUP3xSIZo53hLi0+6Wezq2wO88jQ=; b=PePpAcpFM7TCGO
-	gHU1gMacae+xP7Bfi7KpCve/Ou1y/8XeaSEQNr+tTaiKEGni9jFf22hYoTSqUOFfaQuhRL3bfxXah
-	G0LDPuvjsbHTcTYWVVCXngVDoUgXw4hBTjY28kP5LE9S6COWuqhqu4d8sqkcHwtFGAB9THpssVhX0
-	o12jLo8W+eHQwIPoqBlO/W2T8YvQAlBvuUXSVd2NTi1mKtSyLKUJN0H+G27nEAh3jvopbLzCm5RIn
-	o27CE87MrGNe8esnEOm8do1FzegsUzefrAqHfVDxc5DatAHM0lCKVv4OVu8nlkbLZisbll0lYrPUX
-	AzxtP9oXMgqEk2aRCdSA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6gTpnH0oJYMeTWa6jaVq/bFFtX3OXb/26V/S9ifwSXM=; b=TF+CLqVCviM17W
+	BEEIWQJSlNZ92Q1I8cOSc3B/wIsVRMUrbkcNNSfRONXlvyGiNFJKB2CgyxBJSxyrw1IVrGqaQTxj7
+	qyhw7j9k8XyZXf8WEP0OcZ237J9TowxDd9T4xvNXIP3tcUYEOPXqZgYW6zX/Tn/B5RG6lLNSr/j6p
+	UwggrorVwjy4WG493n/jI1Hvkz9ms5tEg4w90vyDhrdbVDM7eEqrfOJueWZlNLdtiPVBcQgtg9Ajg
+	udQ4swT/u2gs/9e2SCPAp8oFTgbqIIeL9Ny1oxAz7bMRJTTHkzCVErn5ZQMxkEVi+s0yyYXOepFDq
+	dVS+KzDqwN6/EPYmG7JA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHqK-0002IM-NT; Wed, 06 May 2020 11:04:00 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHqA-0002GI-G7
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:03:54 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g13so1666846wrb.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 04:03:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=rtEuo5nw1S4kpIcS9rhXRJzeE3BjOFfaGFCUT/CfmF4=;
- b=bWfkT4qj3YVYiyTtnBDKzxtH9al8EGIDGEVKQrpkztLlbkCNThDFEuVDTozdfgIzLY
- N4yivpD0Oc9GWBeufPce8cOQgY2lkiqdBkgWTYq4TICJSiiEqMDBnABEBibaWujH6AxN
- v+CfVF7IFDnhjFiERJNR4nbL0mGShNasZXkJk=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=rtEuo5nw1S4kpIcS9rhXRJzeE3BjOFfaGFCUT/CfmF4=;
- b=Mh7jHaL/tGbYeVp8Qy00dU1ngqd1q141cMzq5dhNka+QIzcp+G4++1RFKPUDffAYS1
- 8a/64+sDPPSxUhdZFLmy2KAg4lUQjM3gFPCPouLjI4SKpPlnSjb3En9qpgk45OCVVbHp
- 6EQ1PXTdeTKOKmJgq829GMqqlCHVAiy3Ch08Gm0MIXj+m6eRY7QAYmvaQTQG9GclzZ5M
- gPOsJZfXhbDjNm02dfyVWfAiv1z7zyBZCWmhPGfBI8g7MnoeLrzfkGdMnn5ryLmCiI/P
- dFwXZ8Ci4oa1+M3ziqrunKkxA5WRCN6H2i9+fxN9qcHSLhaIzuGv/StpcMi8IDsE2Y2m
- S27g==
-X-Gm-Message-State: AGi0PuaqAIm5aRo9vaomtGoZxtju1LyvaoVXr1CjFdf1bWp8utHD+2zJ
- Q4OamXVLH1hqkkZ0CC2rqziMxiay7pAPEVL39wV5Hg==
-X-Google-Smtp-Source: APiQypIGj98l9hllH+9ph6fwT8VKRh/Pv4h2UW1ktSL1V2RKXFelTBD7bNCFAlCYli6PKV2AO+prMw92x7qUiOe3LRk=
-X-Received: by 2002:adf:f3cc:: with SMTP id g12mr8407525wrp.427.1588763027630; 
- Wed, 06 May 2020 04:03:47 -0700 (PDT)
+	id 1jWHzN-0000Ti-MN; Wed, 06 May 2020 11:13:21 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWHzF-0000So-W4; Wed, 06 May 2020 11:13:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BFEA31FB;
+ Wed,  6 May 2020 04:13:12 -0700 (PDT)
+Received: from [192.168.2.22] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8EDBE3F71F;
+ Wed,  6 May 2020 04:13:11 -0700 (PDT)
+Subject: Re: [PATCH RFC 2/8] dmaengine: Actions: Add support for S700 DMA
+ engine
+To: Amit Singh Tomar <amittomer25@gmail.com>, vkoul@kernel.org,
+ afaerber@suse.de, manivannan.sadhasivam@linaro.org
+References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
+ <1588761371-9078-3-git-send-email-amittomer25@gmail.com>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ i4aIXCH3Wv6K
+Organization: ARM Ltd.
+Message-ID: <1c285ad4-a366-db08-e4e8-c2e1437cc505@arm.com>
+Date: Wed, 6 May 2020 12:12:27 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200420060834.44461-1-amistry@google.com>
- <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
- <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
- <CAAOTY_9HQTiywgzGrefDHromhXtLPyWeYUyxFU8+h8sN_fo9xw@mail.gmail.com>
- <CAAOTY_9+s8EknSFLyYHNDfJuxERTuubBXaQ41Y3J+DeuDMFGqA@mail.gmail.com>
-In-Reply-To: <CAAOTY_9+s8EknSFLyYHNDfJuxERTuubBXaQ41Y3J+DeuDMFGqA@mail.gmail.com>
-From: Anand Mistry <amistry@chromium.org>
-Date: Wed, 6 May 2020 21:03:36 +1000
-Message-ID: <CAECpkiM5ez8=iEe=fYKiDf5Pb6AHrTyt5uXqJQtQpQJHotupWA@mail.gmail.com>
-Subject: Re: [PATCH] drm/mediatek: stop iterating dma addresses when
- sg_dma_len() == 0
-To: Chun-Kuang Hu <chunkuang.hu@kernel.org>
+In-Reply-To: <1588761371-9078-3-git-send-email-amittomer25@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_040352_880147_E93887ED 
-X-CRM114-Status: GOOD (  24.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_041314_120147_E1122CAF 
+X-CRM114-Status: GOOD (  27.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,69 +109,256 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anand K Mistry <amistry@google.com>,
- DRI Development <dri-devel@lists.freedesktop.org>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ cristian.ciocaltea@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBNYXkgNiwgMjAyMCBhdCAxMDoyNSBBTSBDaHVuLUt1YW5nIEh1IDxjaHVua3Vhbmcu
-aHVAa2VybmVsLm9yZz4gd3JvdGU6Cj4KPiBIaSwgQW5hbmQsCj4KPiBDaHVuLUt1YW5nIEh1IDxj
-aHVua3VhbmcuaHVAa2VybmVsLm9yZz4g5pa8IDIwMjDlubQ05pyIMjnml6Ug6YCx5LiJIOS4iuWN
-iDEyOjM35a+r6YGT77yaCj4gPgo+ID4gSGksIEFuYW5kLAo+ID4KPiA+IEFuYW5kIEsuIE1pc3Ry
-eSA8YW1pc3RyeUBjaHJvbWl1bS5vcmc+IOaWvCAyMDIw5bm0NOaciDI45pelIOmAseS6jCDkuIrl
-jYg5OjU05a+r6YGT77yaCj4gPiA+Cj4gPiA+IE9uIFN1biwgMjYgQXByIDIwMjAgYXQgMTg6MDQs
-IENodW4tS3VhbmcgSHUgPGNodW5rdWFuZy5odUBrZXJuZWwub3JnPiB3cm90ZToKPiA+ID4gPgo+
-ID4gPiA+IEhpLCBBbmFuZDoKPiA+ID4gPgo+ID4gPiA+IEFuYW5kIEsgTWlzdHJ5IDxhbWlzdHJ5
-QGNocm9taXVtLm9yZz4g5pa8IDIwMjDlubQ05pyIMjDml6Ug6YCx5LiAIOS4i+WNiDI6MDnlr6vp
-gZPvvJoKPiA+ID4gPiA+Cj4gPiA+ID4gPiBJZiBkbWFfbWFwX3NnKCkgbWVyZ2VzIHBhZ2VzIHdo
-ZW4gY3JlYXRpbmcgdGhlIG1hcHBpbmcsIG9ubHkgdGhlIGZpcnN0Cj4gPiA+ID4gPiBlbnRyaWVz
-IHdpbGwgaGF2ZSBhIHZhbGlkIHNnX2RtYV9hZGRyZXNzKCkgYW5kIHNnX2RtYV9sZW4oKSwgZm9s
-bG93ZWQgYnkKPiA+ID4gPiA+IGVudHJpZXMgd2l0aCBzZ19kbWFfbGVuKCkgPT0gMC4KPiA+ID4g
-PiA+Cj4gPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBBbmFuZCBLIE1pc3RyeSA8YW1pc3RyeUBnb29n
-bGUuY29tPgo+Cj4gQXV0aG9yIHNob3VsZCBzaWduIG9mZiB0aGlzIHBhdGNoLCBwbGVhc2UgZ2l2
-ZSBhIHNpZ24gb2ZmIHRhZyBieSBhdXRob3IuCgpTb3JyeSwgZW1haWwgaXNzdWVzIG1lYW50IGkg
-c2VudCB0aGUgcGF0Y2ggZnJvbSBhIGRpZmZlcmVudCBhY2NvdW50LgpTaG91bGQgSSByZS1zZW5k
-IHRoZQpwYXRjaCBmcm9tIHRoZSBzYW1lIGFjY291bnQgYXMgdGhlIHNpZ24tb2ZmIGxpbmU/IEkn
-bSBzdGlsbCB3b3JraW5nIG15CndheSB0aHJvdWdoIHRoZSBrZXJuZWwgcGF0Y2ggcHJvY2Vzcy4K
-Cj4KPiBSZWdhcmRzLAo+IENodW4tS3VhbmcuCj4KPiA+ID4gPiA+IC0tLQo+ID4gPiA+ID4gIGRy
-aXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2dlbS5jIHwgMyArKysKPiA+ID4gPiA+ICAx
-IGZpbGUgY2hhbmdlZCwgMyBpbnNlcnRpb25zKCspCj4gPiA+ID4gPgo+ID4gPiA+ID4gZGlmZiAt
-LWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9tZWRpYXRlay9tdGtfZHJtX2dlbS5jIGIvZHJpdmVycy9n
-cHUvZHJtL21lZGlhdGVrL210a19kcm1fZ2VtLmMKPiA+ID4gPiA+IGluZGV4IGIwNGEzYzJiMTEx
-ZTA5Li5mOGZkOGI5OGMzMGUzZCAxMDA2NDQKPiA+ID4gPiA+IC0tLSBhL2RyaXZlcnMvZ3B1L2Ry
-bS9tZWRpYXRlay9tdGtfZHJtX2dlbS5jCj4gPiA+ID4gPiArKysgYi9kcml2ZXJzL2dwdS9kcm0v
-bWVkaWF0ZWsvbXRrX2RybV9nZW0uYwo+ID4gPiA+ID4gQEAgLTIyNCw2ICsyMjQsOSBAQCBzdHJ1
-Y3QgZHJtX2dlbV9vYmplY3QgKm10a19nZW1fcHJpbWVfaW1wb3J0X3NnX3RhYmxlKHN0cnVjdCBk
-cm1fZGV2aWNlICpkZXYsCj4gPiA+ID4gPgo+ID4gPiA+ID4gICAgICAgICBleHBlY3RlZCA9IHNn
-X2RtYV9hZGRyZXNzKHNnLT5zZ2wpOwo+ID4gPiA+ID4gICAgICAgICBmb3JfZWFjaF9zZyhzZy0+
-c2dsLCBzLCBzZy0+bmVudHMsIGkpIHsKPiA+ID4gPiA+ICsgICAgICAgICAgICAgICBpZiAoIXNn
-X2RtYV9sZW4ocykpCj4gPiA+ID4gPiArICAgICAgICAgICAgICAgICAgICAgICBicmVhazsKPiA+
-ID4gPgo+ID4gPiA+IEkgdGhpbmsgdGhpcyBzaG91bGQgYmUgJ2NvbnRpbnVlJwo+ID4gPgo+ID4g
-PiBzY2F0dGVybGlzdC5oIGhhcyB0aGUgY29tbWVudDoKPiA+ID4gLyoKPiA+ID4gICogVGhlc2Ug
-bWFjcm9zIHNob3VsZCBiZSB1c2VkIGFmdGVyIGEgZG1hX21hcF9zZyBjYWxsIGhhcyBiZWVuIGRv
-bmUKPiA+ID4gICogdG8gZ2V0IGJ1cyBhZGRyZXNzZXMgb2YgZWFjaCBvZiB0aGUgU0cgZW50cmll
-cyBhbmQgdGhlaXIgbGVuZ3Rocy4KPiA+ID4gICogWW91IHNob3VsZCBvbmx5IHdvcmsgd2l0aCB0
-aGUgbnVtYmVyIG9mIHNnIGVudHJpZXMgZG1hX21hcF9zZwo+ID4gPiAgKiByZXR1cm5zLCBvciBh
-bHRlcm5hdGl2ZWx5IHN0b3Agb24gdGhlIGZpcnN0IHNnX2RtYV9sZW4oc2cpIHdoaWNoCj4gPiA+
-ICAqIGlzIDAuCj4gPiA+ICAqLwo+ID4gPgo+ID4gPiBTbyBicmVha2luZyBvbiB0aGUgZmlyc3Qg
-c2dfZG1hX2xlbihzZykgPT0gMCBhcHBlYXJzIHRvIGJlIChvbmUgb2YpCj4gPiA+IHRoZSBkb2N1
-bWVudGVkIGFwcHJvYWNoLgo+ID4gPgo+ID4KPiA+IE9rYXksIHlvdSdyZSByaWdodC4gU28KPiA+
-Cj4gPiBSZXZpZXdlZC1ieTogQ2h1bi1LdWFuZyBIdSA8Y2h1bmt1YW5nLmh1QGtlcm5lbC5vcmc+
-Cj4gPgo+ID4gPiA+Cj4gPiA+ID4gUmVnYXJkcywKPiA+ID4gPiBDaHVuLUt1YW5nLgo+ID4gPiA+
-Cj4gPiA+ID4gPiArCj4gPiA+ID4gPiAgICAgICAgICAgICAgICAgaWYgKHNnX2RtYV9hZGRyZXNz
-KHMpICE9IGV4cGVjdGVkKSB7Cj4gPiA+ID4gPiAgICAgICAgICAgICAgICAgICAgICAgICBEUk1f
-RVJST1IoInNnX3RhYmxlIGlzIG5vdCBjb250aWd1b3VzIik7Cj4gPiA+ID4gPiAgICAgICAgICAg
-ICAgICAgICAgICAgICByZXQgPSAtRUlOVkFMOwo+ID4gPiA+ID4gLS0KPiA+ID4gPiA+IDIuMjYu
-MS4zMDEuZzU1YmMzZWI3Y2I5LWdvb2cKPiA+ID4gPiA+Cj4gPiA+ID4gPgo+ID4gPiA+ID4gX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+ID4gPiA+IExp
-bnV4LW1lZGlhdGVrIG1haWxpbmcgbGlzdAo+ID4gPiA+ID4gTGludXgtbWVkaWF0ZWtAbGlzdHMu
-aW5mcmFkZWFkLm9yZwo+ID4gPiA+ID4gaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1tZWRpYXRlawoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On 06/05/2020 11:36, Amit Singh Tomar wrote:
+
+Hi,
+
+> DMA controller present on S700 SoC is compatible with the one on S900
+> (as most of registers are same), but it has different DMA descriptor
+> structure where registers "fcnt" and "ctrlb" uses different encoding.
+> 
+> For instance, on S900 "fcnt" starts at offset 0x0c and uses upper 12
+> bits whereas on S700, it starts at offset 0x1c and uses lower 12 bits.
+> 
+> This commit adds support for DMA controller present on S700.
+> 
+> Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
+> ---
+>  drivers/dma/owl-dma.c | 99 ++++++++++++++++++++++++++++++++++++---------------
+>  1 file changed, 70 insertions(+), 29 deletions(-)
+> 
+> diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+> index b0d80a2fa383..6c2f0d0aad4c 100644
+> --- a/drivers/dma/owl-dma.c
+> +++ b/drivers/dma/owl-dma.c
+> @@ -134,6 +134,11 @@ enum owl_dmadesc_offsets {
+>  	OWL_DMADESC_SIZE
+>  };
+>  
+> +enum owl_dma_id {
+> +	S900_DMA,
+> +	S700_DMA,
+> +};
+> +
+>  /**
+>   * struct owl_dma_lli - Link list for dma transfer
+>   * @hw: hardware link list
+> @@ -200,6 +205,7 @@ struct owl_dma_vchan {
+>   * @pchans: array of data for the physical channels
+>   * @nr_vchans: the number of physical channels
+>   * @vchans: array of data for the physical channels
+> + * @devid: device id based on OWL SoC
+>   */
+>  struct owl_dma {
+>  	struct dma_device	dma;
+> @@ -214,6 +220,7 @@ struct owl_dma {
+>  
+>  	unsigned int		nr_vchans;
+>  	struct owl_dma_vchan	*vchans;
+> +	enum owl_dma_id		devid;
+>  };
+>  
+>  static void pchan_update(struct owl_dma_pchan *pchan, u32 reg,
+> @@ -354,6 +361,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+>  				  struct dma_slave_config *sconfig,
+>  				  bool is_cyclic)
+>  {
+> +	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
+>  	u32 mode, ctrlb;
+>  
+>  	mode = OWL_DMA_MODE_PW(0);
+> @@ -409,8 +417,14 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+>  	lli->hw[OWL_DMADESC_DADDR] = dst;
+>  	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
+>  	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
+> -	lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
+> -	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
+> +
+> +	if (od->devid == S700_DMA) {
+> +		lli->hw[OWL_DMADESC_FLEN] = len;
+> +		lli->hw[OWL_DMADESC_CTRLB] = 1 | ctrlb;
+> +	} else {
+> +		lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
+> +		lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
+> +	}
+>  
+>  	return 0;
+>  }
+> @@ -562,26 +576,35 @@ static irqreturn_t owl_dma_interrupt(int irq, void *dev_id)
+>  	dma_writel(od, OWL_DMA_IRQ_PD0, pending);
+>  
+>  	/* Check missed pending IRQ */
+> -	for (i = 0; i < od->nr_pchans; i++) {
+> -		pchan = &od->pchans[i];
+> -		chan_irq_pending = pchan_readl(pchan, OWL_DMAX_INT_CTL) &
+> -				   pchan_readl(pchan, OWL_DMAX_INT_STATUS);
+> -
+> -		/* Dummy read to ensure OWL_DMA_IRQ_PD0 value is updated */
+> -		dma_readl(od, OWL_DMA_IRQ_PD0);
+> +	if (od->devid == S900_DMA) {
+
+You should mention (at least in the commit message) why this is needed.
+And please move this into a separate function, this indentation is
+becoming mad here.
+
+> +		for (i = 0; i < od->nr_pchans; i++) {
+> +			pchan = &od->pchans[i];
+> +			chan_irq_pending = pchan_readl(pchan,
+> +						       OWL_DMAX_INT_CTL) &
+> +					   pchan_readl(pchan,
+> +						       OWL_DMAX_INT_STATUS)
+> +							;
+> +
+> +			/* Dummy read to ensure OWL_DMA_IRQ_PD0 value is
+> +			 * updated
+> +			 */
+> +			dma_readl(od, OWL_DMA_IRQ_PD0);
+>  
+> -		global_irq_pending = dma_readl(od, OWL_DMA_IRQ_PD0);
+> +			global_irq_pending = dma_readl(od,
+> +						       OWL_DMA_IRQ_PD0);
+>  
+> -		if (chan_irq_pending && !(global_irq_pending & BIT(i)))	{
+> -			dev_dbg(od->dma.dev,
+> -				"global and channel IRQ pending match err\n");
+> +			if (chan_irq_pending && !(global_irq_pending &
+> +						  BIT(i))) {
+> +				dev_dbg(od->dma.dev,
+> +			"global and channel IRQ pending match err\n");
+>  
+> -			/* Clear IRQ status for this pchan */
+> -			pchan_update(pchan, OWL_DMAX_INT_STATUS,
+> -				     0xff, false);
+> +				/* Clear IRQ status for this pchan */
+> +				pchan_update(pchan, OWL_DMAX_INT_STATUS,
+> +					     0xff, false);
+>  
+> -			/* Update global IRQ pending */
+> -			pending |= BIT(i);
+> +				/* Update global IRQ pending */
+> +				pending |= BIT(i);
+> +			}
+>  		}
+>  	}
+>  
+> @@ -720,6 +743,7 @@ static int owl_dma_resume(struct dma_chan *chan)
+>  
+>  static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
+>  {
+> +	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
+>  	struct owl_dma_pchan *pchan;
+>  	struct owl_dma_txd *txd;
+>  	struct owl_dma_lli *lli;
+> @@ -741,9 +765,15 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
+>  		list_for_each_entry(lli, &txd->lli_list, node) {
+>  			/* Start from the next active node */
+>  			if (lli->phys == next_lli_phy) {
+> -				list_for_each_entry(lli, &txd->lli_list, node)
+> -					bytes += lli->hw[OWL_DMADESC_FLEN] &
+> -						 GENMASK(19, 0);
+> +				list_for_each_entry(lli, &txd->lli_list, node) {
+> +					if (od->devid == S700_DMA)
+> +						bytes +=
+> +						lli->hw[OWL_DMADESC_FLEN];
+> +					else
+> +						bytes +=
+> +						lli->hw[OWL_DMADESC_FLEN] &
+> +						GENMASK(19, 0);
+
+You should have an accessor for getting the frame len, that should avoid
+the insane wrapping here. Or factor this out into a helper function.
+Alternatively revert the if statement and continue, that saves you one
+level of indentation.
+
+I guess flen is limited to 20 bits anyway, so you might want to apply
+the 20-bit mask unconditionally.
+
+Cheers,
+Andre
+
+> +				}
+>  				break;
+>  			}
+>  		}
+> @@ -756,6 +786,7 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
+>  					 dma_cookie_t cookie,
+>  					 struct dma_tx_state *state)
+>  {
+> +	struct owl_dma *od = to_owl_dma(chan->device);
+>  	struct owl_dma_vchan *vchan = to_owl_vchan(chan);
+>  	struct owl_dma_lli *lli;
+>  	struct virt_dma_desc *vd;
+> @@ -773,8 +804,13 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
+>  	vd = vchan_find_desc(&vchan->vc, cookie);
+>  	if (vd) {
+>  		txd = to_owl_txd(&vd->tx);
+> -		list_for_each_entry(lli, &txd->lli_list, node)
+> -			bytes += lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
+> +		list_for_each_entry(lli, &txd->lli_list, node) {
+> +			if (od->devid == S700_DMA)
+> +				bytes += lli->hw[OWL_DMADESC_FLEN];
+> +			else
+> +				bytes += lli->hw[OWL_DMADESC_FLEN] &
+> +					 GENMASK(19, 0);
+> +		}
+>  	} else {
+>  		bytes = owl_dma_getbytes_chan(vchan);
+>  	}
+> @@ -1031,11 +1067,20 @@ static struct dma_chan *owl_dma_of_xlate(struct of_phandle_args *dma_spec,
+>  	return chan;
+>  }
+>  
+> +static const struct of_device_id owl_dma_match[] = {
+> +	{ .compatible = "actions,s900-dma", .data = (void *)S900_DMA,},
+> +	{ .compatible = "actions,s700-dma", .data = (void *)S700_DMA,},
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, owl_dma_match);
+> +
+>  static int owl_dma_probe(struct platform_device *pdev)
+>  {
+>  	struct device_node *np = pdev->dev.of_node;
+>  	struct owl_dma *od;
+>  	int ret, i, nr_channels, nr_requests;
+> +	const struct of_device_id *of_id =
+> +				of_match_device(owl_dma_match, &pdev->dev);
+>  
+>  	od = devm_kzalloc(&pdev->dev, sizeof(*od), GFP_KERNEL);
+>  	if (!od)
+> @@ -1060,6 +1105,8 @@ static int owl_dma_probe(struct platform_device *pdev)
+>  	dev_info(&pdev->dev, "dma-channels %d, dma-requests %d\n",
+>  		 nr_channels, nr_requests);
+>  
+> +	od->devid = (enum owl_dma_id)of_id->data;
+> +
+>  	od->nr_pchans = nr_channels;
+>  	od->nr_vchans = nr_requests;
+>  
+> @@ -1192,12 +1239,6 @@ static int owl_dma_remove(struct platform_device *pdev)
+>  	return 0;
+>  }
+>  
+> -static const struct of_device_id owl_dma_match[] = {
+> -	{ .compatible = "actions,s900-dma", },
+> -	{ /* sentinel */ }
+> -};
+> -MODULE_DEVICE_TABLE(of, owl_dma_match);
+> -
+>  static struct platform_driver owl_dma_driver = {
+>  	.probe	= owl_dma_probe,
+>  	.remove	= owl_dma_remove,
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
