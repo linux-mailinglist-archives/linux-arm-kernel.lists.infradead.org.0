@@ -2,70 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AB141C6B87
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 10:23:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 79F951C6B91
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 10:24:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Y5T1f0+MJptpUD+nTqKoNBN//MTvRSiuHXvWcvwixjc=; b=Zn6z3EhLyxYD6VT6zQsgy1yekY
-	La59VG758FMTeh19O8ktEHrklNRIk2mYXBYPGV25QLUJhaHwPVZssbyABQF3fv24EjniXSvXA43I3
-	e1mRcCE+S1KzKSZqPG4bzm6NhTSbMPmItzJWIYTX/MeoNx31QKLx0Bs7Fe/0ZvuJoFX0aaX6FzEwV
-	eqw+rkgLgVGcR6I/G5HIkFd3VklnrRY6vo5KnDIBo23llTccY4LJlvpXFO2w5m9L0KHtFuAwp4Ybd
-	dSVYU4CpkoaZJhTyHjg8bWUlejaTsA7xbttg1JaJffC3N5cFlO9Acylv38Ad5LAtnZgTUtDjeJ9Z8
-	9/YK9YBg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AAHNu1WPfBWQjpBtqVqQC5y4f7iltSoiU3CA+cg5QR4=; b=pLKUGtlMmrJVbM
+	Ug9tNPfQsZsThwiPvVNHdDcx2gxllk10vJFXxS2J/Wd1BhAvHENi1da1NbRLFaQNitR7Yh1+n/hdA
+	y5OBah0UrJHj2XrmJxLQdHwW/OCLaQzdwJddJdtbtvBxnVjo0sIPyq4PyZpfmEGpDj+j2KCT/cgpU
+	o/FEfJcf//hMFalJzwCusAjeraha5sKB9uUEtvacQ1G9d/inK9oIlxXy+PnJYKHlUcP28paYOyo7v
+	Ygi8rFKC4gYRhy2C60AXoRufV5BKdSVAe0zMf/4o+eUwfrJ4l9OBU5WBiyEKqQz41UVsski2H5dpl
+	IjthPMTDXMlrp/ZU256w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWFKR-00058m-9L; Wed, 06 May 2020 08:22:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWFLT-0005dS-2W; Wed, 06 May 2020 08:23:59 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWFHg-0000z0-M1
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 08:20:25 +0000
-Received: from e123331-lin.nice.arm.com
- (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9367A2087E;
- Wed,  6 May 2020 08:20:00 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588753202;
- bh=8ouhSegoa2BFfwpTHy/DDrs8wf6In/Qbisl3KSpg1Z4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Gq6uyEEH87KKgmdEKaqTVXt7XXD01VUHigr6Dh3PCYVXU1fO6rpAOPNGpphQn5X7Q
- NKYqIkRLiZ/dtpKUqXFTdUIHEYJDAQAxViJ5z9c+h8DHjEy1c5uT9rbOwSCGNZa/ys
- KdoeyYykCRxt9YlmDUu381ESPdfzsioVofF2FtOk=
-From: Ard Biesheuvel <ardb@kernel.org>
-To: linux-efi@vger.kernel.org
-Subject: [PATCH v3 5/5] ARM: decompressor: run decompressor in place if loaded
- via UEFI
-Date: Wed,  6 May 2020 10:19:39 +0200
-Message-Id: <20200506081939.8986-6-ardb@kernel.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200506081939.8986-1-ardb@kernel.org>
-References: <20200506081939.8986-1-ardb@kernel.org>
+ id 1jWFLB-0005bG-Fr
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 08:23:42 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
+ with ESMTPSA id DF42B2A1135
+Date: Wed, 6 May 2020 10:23:32 +0200
+From: Ricardo =?utf-8?Q?Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+Subject: Re: [RFT PATCH 5/5] dt-bindings: drm: bridge: adi,adv7511.txt:
+ convert to yaml
+Message-ID: <20200506082332.57ptj42mkrrn4ceo@rcn-XPS-13-9360>
+Mail-Followup-To: Geert Uytterhoeven <geert@linux-m68k.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, 
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Rob Herring <robh+dt@kernel.org>, Wei Xu <xuwei5@hisilicon.com>
+References: <20200501083227.10886-1-ricardo.canuelo@collabora.com>
+ <20200501083227.10886-6-ricardo.canuelo@collabora.com>
+ <CAMuHMdVbRoGAqeqePQDgRpxg4Vsr_LEfHERW-r6KdiSOCo5a6g@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAMuHMdVbRoGAqeqePQDgRpxg4Vsr_LEfHERW-r6KdiSOCo5a6g@mail.gmail.com>
+User-Agent: NeoMutt/20171215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_012004_888267_AC4A816E 
-X-CRM114-Status: GOOD (  20.45  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200506_012341_666126_EE90711D 
+X-CRM114-Status: UNSURE (   8.27  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,161 +71,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Geert Uytterhoeven <geert+renesas@glider.be>,
- Nicolas Pitre <nico@fluxnic.net>, Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Wei Xu <xuwei5@hisilicon.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ Collabora Kernel ML <kernel@collabora.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The decompressor can load from anywhere in memory, and the only reason
-the EFI stub code relocates it is to ensure it appears within the first
-128 MiB of memory, so that the uncompressed kernel ends up at the right
-offset in memory.
-
-We can short circuit this, and simply jump into the decompressor startup
-code at the point where it knows where the base of memory lives. This
-also means there is no need to disable the MMU and caches, create new
-page tables and re-enable them.
-
-Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
-Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
----
- arch/arm/boot/compressed/head.S           | 39 ++++++-----------
- drivers/firmware/efi/libstub/arm32-stub.c | 45 +++-----------------
- 2 files changed, 20 insertions(+), 64 deletions(-)
-
-diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
-index 9dea394b286b..3e525e9325d6 100644
---- a/arch/arm/boot/compressed/head.S
-+++ b/arch/arm/boot/compressed/head.S
-@@ -1480,37 +1480,26 @@ reloc_code_end:
- 
- #ifdef CONFIG_EFI_STUB
- ENTRY(efi_enter_kernel)
--		mov	r7, r0				@ preserve image base
--		mov	r4, r1				@ preserve DT pointer
-+		mov	r4, r0			@ preserve image base
-+		mov	r8, r1			@ preserve DT pointer
- 
--		mov	r0, r4				@ DT start
--		add	r1, r4, r2			@ DT end
--		bl	cache_clean_flush
-+		mrc	p15, 0, r0, c1, c0, 0	@ read SCTLR
-+		tst	r0, #0x1		@ MMU enabled?
-+		orreq	r4, r4, #1		@ set LSB if not
- 
--		mov	r0, r7				@ relocated zImage
--		ldr	r1, =_edata			@ size of zImage
--		add	r1, r1, r0			@ end of zImage
-+		mov	r0, r8			@ DT start
-+		add	r1, r8, r2		@ DT end
- 		bl	cache_clean_flush
- 
--		@ The PE/COFF loader might not have cleaned the code we are
--		@ running beyond the PoU, and so calling cache_off below from
--		@ inside the PE/COFF loader allocated region is unsafe unless
--		@ we explicitly clean it to the PoC.
--		adr	r0, call_cache_fn		@ region of code we will
--		adr	r1, 0f				@ run with MMU off
--		bl	cache_clean_flush
--		bl	cache_off
-+		adr	r0, 0f			@ switch to our stack
-+		ldr	sp, [r0]
-+		add	sp, sp, r0
- 
--		@ Set parameters for booting zImage according to boot protocol
--		@ put FDT address in r2, it was returned by efi_entry()
--		@ r1 is the machine type, and r0 needs to be 0
--		mov	r0, #0
--		mov	r1, #0xFFFFFFFF
--		mov	r2, r4
--		add	r7, r7, #(__efi_start - start)
--		mov	pc, r7				@ no mode switch
-+		mov	r5, #0			@ appended DTB size
-+		mov	r7, #0xFFFFFFFF		@ machine ID
-+		b	wont_overwrite
- ENDPROC(efi_enter_kernel)
--0:
-+0:		.long	.L_user_stack_end - .
- #endif
- 
- 		.align
-diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
-index 7826553af2ba..0050d811bf20 100644
---- a/drivers/firmware/efi/libstub/arm32-stub.c
-+++ b/drivers/firmware/efi/libstub/arm32-stub.c
-@@ -199,14 +199,8 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 	unsigned long kernel_base;
- 	efi_status_t status;
- 
--	/*
--	 * Verify that the DRAM base address is compatible with the ARM
--	 * boot protocol, which determines the base of DRAM by masking
--	 * off the low 27 bits of the address at which the zImage is
--	 * loaded. These assumptions are made by the decompressor,
--	 * before any memory map is available.
--	 */
--	kernel_base = round_up(dram_base, SZ_128M);
-+	/* use a 16 MiB aligned base for the decompressed kernel */
-+	kernel_base = round_up(dram_base, SZ_16M) + TEXT_OFFSET;
- 
- 	/*
- 	 * Note that some platforms (notably, the Raspberry Pi 2) put
-@@ -215,41 +209,14 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
- 	 * base of the kernel image is only partially used at the moment.
- 	 * (Up to 5 pages are used for the swapper page tables)
- 	 */
--	kernel_base += TEXT_OFFSET - 5 * PAGE_SIZE;
--
--	status = reserve_kernel_base(kernel_base, reserve_addr, reserve_size);
-+	status = reserve_kernel_base(kernel_base - 5 * PAGE_SIZE, reserve_addr,
-+				     reserve_size);
- 	if (status != EFI_SUCCESS) {
- 		pr_efi_err("Unable to allocate memory for uncompressed kernel.\n");
- 		return status;
- 	}
- 
--	/*
--	 * Relocate the zImage, so that it appears in the lowest 128 MB
--	 * memory window.
--	 */
--	*image_addr = (unsigned long)image->image_base;
--	*image_size = image->image_size;
--	status = efi_relocate_kernel(image_addr, *image_size, *image_size,
--				     kernel_base + MAX_UNCOMP_KERNEL_SIZE, 0, 0);
--	if (status != EFI_SUCCESS) {
--		pr_efi_err("Failed to relocate kernel.\n");
--		efi_free(*reserve_size, *reserve_addr);
--		*reserve_size = 0;
--		return status;
--	}
--
--	/*
--	 * Check to see if we were able to allocate memory low enough
--	 * in memory. The kernel determines the base of DRAM from the
--	 * address at which the zImage is loaded.
--	 */
--	if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
--		pr_efi_err("Failed to relocate kernel, no low memory available.\n");
--		efi_free(*reserve_size, *reserve_addr);
--		*reserve_size = 0;
--		efi_free(*image_size, *image_addr);
--		*image_size = 0;
--		return EFI_LOAD_ERROR;
--	}
-+	*image_addr = kernel_base;
-+	*image_size = 0;
- 	return EFI_SUCCESS;
- }
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgR2VlcnQsCgpUaGFua3MgZm9yIHJldmlld2luZyB0aGUgcGF0Y2hlcy4gU29tZSBjb21tZW50
+cyBiZWxvdywKCk9uIG1pw6kgMDYtMDUtMjAyMCAwOTo0NDoxOSwgR2VlcnQgVXl0dGVyaG9ldmVu
+IHdyb3RlOiAKPiBDYW4ndCB5b3UgYXZvaWQgdGhlIG5lZWQgZm9yIHBhdGNoZXMKPiBbUkZUIFBB
+VENIIDEvNV0gYXJtNjQ6IGR0czogZHJhYWs6IFJlb3JkZXIgaGRtaS1lbmNvZGVyQDM5IHJlZyBh
+bmQKPiByZWctbmFtZXMgcHJvcGVydGllcwo+IFtSRlQgUEFUQ0ggMi81XSBBUk06IGR0czogd2hl
+YXQ6IHJlb3JkZXIgcmVnIGFuZCByZWctbmFtZXMgcHJvcGVydGllcwo+IGluIGhkbWkgYnJpZGdl
+cwo+IAo+IGJ5IHVzaW5nCj4gCj4gICAgIGl0ZW1zOgo+ICAgICAgIGVudW06Cj4gICAgICAgICAt
+IG1haW4KPiAgICAgICAgIC0gZWRpZAo+ICAgICAgICAgLSBjZWMKPiAgICAgICAgIC0gcGFja2V0
+Cj4gCj4gaW5zdGVhZD8KCk5vdCByZWFsbHksIGJlY2F1c2UgdGhhdCBkZWZpbmVzIGEgc2NhbGFy
+IHByb3BlcnR5IHRoYXQgY2FuIHRha2UgYW55IG9mCnRob3NlIHZhbHVlcyAoaWYgSSdtIG5vdCBt
+aXN0YWtlbiksIGFuZCB0aGUgY29yZSBzY2hlbWEgZW5mb3JjZXMgdGhhdApyZWctbmFtZXMgbXVz
+dCBiZSBhbiBhcnJheS4KCkkgdGhpbmsgdGhlIGNsb3Nlc3QgSSBjYW4gZ2V0IHRvIHdoYXQgeW91
+IG1lYW4gd291bGQgYmUgc29tZXRoaW5nIGxpa2UKdGhpczoKCiAgICBpdGVtczoKICAgICAgLSBl
+bnVtOgogICAgICAgIC0gbWFpbgogICAgICAgIC0gZWRpZAogICAgICAgIC0gY2VjCiAgICAgICAg
+LSBwYWNrZXQKICAgICAgLSBlbnVtOgogICAgICAgIC0gbWFpbgogICAgICAgIC0gZWRpZAogICAg
+ICAgIC0gY2VjCiAgICAgICAgLSBwYWNrZXQKICAgICAgLSBlbnVtOgogICAgICAgIC0gbWFpbgog
+ICAgICAgIC0gZWRpZAogICAgICAgIC0gY2VjCiAgICAgICAgLSBwYWNrZXQKICAgICAgLSBlbnVt
+OgogICAgICAgIC0gbWFpbgogICAgICAgIC0gZWRpZAogICAgICAgIC0gY2VjCiAgICAgICAgLSBw
+YWNrZXQKCkJ1dCB0aGVuIHRoYXQgd291bGRuJ3QgcHJldmVudCBhbnlvbmUgZnJvbSBkZWZpbmlu
+ZyBkdXBsaWNhdGUgcmVnLW5hbWVzCihlZy4gIm1haW4iLCAiY2VjIiwgZWRpZCIsICJjZWMiKSwg
+d2hpY2ggaXMgZXZlbiB3b3JzZSBJTU8uCgpDaGVlcnMsClJpY2FyZG8KCl9fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
+ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
+aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
