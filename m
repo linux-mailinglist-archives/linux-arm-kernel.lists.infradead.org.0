@@ -2,43 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 20E661C76D6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 18:44:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6D2E1C76D7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 18:44:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=VnqccIjBraaAN7VGCrhBEm3F2uXv69QJtKpT9JtFYk0=; b=pzx
-	ADcXd8YNwq60Z/2EOcxWNgr4tVpa0GqufYQW+/YTn3NEUbCBynye1GKFq1puKZ8cO4yCqu8aoAQnn
-	1QkwqFa3/69u4UuLPUzj0asqylpZwAqNy7wo9KdaZ1na+akgZHM+e+Xu96tjp+slAHPbhrWMb3HDP
-	P/KuOwo5hidJTjpol+W8tBHlkimXL35pEHKM+XD12YwF1cSlbXmeMB5CYGzZz6hz+A3+cNOcGs/iO
-	zKvhZKHEd5PrH1+0XPfKujUrugrGpIGNeeixpb3Wp6hQfh/ONQonnF12zlLl42E2iVDdEmTVdKjj5
-	8CrH4TWM5fDsuWhw1CATsC/vQBkr3eA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=aRpM5tyrxGLdtgqea4Xt1r7OMf9KoVBExVWR+0P9UDU=; b=orknie6QEgwG/RZZi++MZVRkdu
+	JE0p0iq5gYQrNEoGhlkHQk8kYk/9TjWQdpfMryUYAiRPIq4UIzUMyzmnvt1Q6c1cRozvEonsUyQQ7
+	1n6tUPUV0BZr4S4l7/08uKje26zCnlloXIvthothZWuk2QopzNRcWJUmZP6+ZvHJzvRRG2W8BWk0j
+	fdd7Qxm8qPdXeH/PsgVzhv9ehMQuBnfJND1922GiB5yvOe9o8v+QySucQfQxa4AJdQOY+wFZzR4RK
+	eeEwbKj4olB7tlFYSdIE4Y9WfXJRiXu0+iliws5W09k5i+HOLCtOWpyvW4cW8Kj1b28PEIyiD25Ay
+	zTEcVK5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWN9p-0000fc-O6; Wed, 06 May 2020 16:44:29 +0000
+	id 1jWNA3-0000qY-V5; Wed, 06 May 2020 16:44:43 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWN9f-0000eC-Gn
+ id 1jWN9g-0000ec-HC
  for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 16:44:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FA98D6E;
- Wed,  6 May 2020 09:44:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C1461101E;
+ Wed,  6 May 2020 09:44:19 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E3DD63F305;
- Wed,  6 May 2020 09:44:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 72E953F305;
+ Wed,  6 May 2020 09:44:18 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 0/7] firmware: smccc: Add basic SMCCC v1.2 + ARCH_SOC_ID
- support
-Date: Wed,  6 May 2020 17:44:04 +0100
-Message-Id: <20200506164411.3284-1-sudeep.holla@arm.com>
+Subject: [PATCH v3 1/7] firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to
+ identify SMCCC v1.1 and above
+Date: Wed,  6 May 2020 17:44:05 +0100
+Message-Id: <20200506164411.3284-2-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200506164411.3284-1-sudeep.holla@arm.com>
+References: <20200506164411.3284-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_094419_600830_BBF8B01C 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200506_094420_609794_7E469933 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -70,61 +73,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+SMCCC v1.0 lacked discoverability of version and features. To accelerate
+adoption of few mitigations and protect systems more rapidly from various
+vulnerability, PSCI v1.0 was updated to add SMCCC discovery mechanism
+though the PSCI firmware implementation of PSCI_FEATURES(SMCCC_VERSION)
+which returns success on firmware compliant to SMCCC v1.1 and above.
 
-This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
-This doesn't add other changes added in SMCCC v1.2 yet. They will
-follow these soon along with its first user SPCI/PSA-FF.
+This inturn makes SMCCC v1.1 and above dependent on ARM_PSCI_FW for
+backward compatibility. Let us introduce a new hidden config for the
+same to build more features on top of SMCCC v1.1 and above.
 
-This is tested using upstream TF-A + the patch[2] fixing the original
-implementation there.
+While at it, also sort alphabetically the psci entry.
 
-
-v1[0]->v2[1]:
-	- Incorporated comments from Steven Price in patch 5/5
-	- Fixed build for CONFIG_PSCI_FW=n on some arm32 platforms
-	- Added Steven Price's review tags
-
-v2[1]->v3:
-	- Incorporated additional comments from Steven Price in patch 5/5
-	  and added his review tags
-	- Refactored SMCCC code from PSCI and moved it under
-	  drivers/firmware/smccc/smccc.c
-	- Also moved soc_id.c under drivers/firmware/smccc
-
-Regards,
-Sudeep
-
-[0] https://lore.kernel.org/r/20200430114814.14116-1-sudeep.holla@arm.com/
-[1] https://lore.kernel.org/r/20200504092905.10580-1-sudeep.holla@arm.com/
-[2] https://review.trustedfirmware.org/c/TF-A/trusted-firmware-a/+/4002
-
-Sudeep Holla (7):
-  firmware: smccc: Add HAVE_ARM_SMCCC_DISCOVERY to identify SMCCC v1.1 and above
-  firmware: smccc: Update link to latest SMCCC specification
-  firmware: smccc: Add the definition for SMCCCv1.2 version/error codes
-  firmware: smccc: Drop smccc_version enum and use ARM_SMCCC_VERSION_1_x instead
-  firmware: smccc: Refactor SMCCC specific bits into separate file
-  firmware: smccc: Add function to fetch SMCCC version
-  firmware: smccc: Add ARCH_SOC_ID support
-
- MAINTAINERS                     |   9 ++
- arch/arm64/kernel/paravirt.c    |   2 +-
- drivers/firmware/Kconfig        |   6 +-
- drivers/firmware/Makefile       |   3 +-
- drivers/firmware/psci/psci.c    |  21 +---
- drivers/firmware/smccc/Kconfig  |  25 +++++
- drivers/firmware/smccc/Makefile |   4 +
- drivers/firmware/smccc/smccc.c  |  30 ++++++
- drivers/firmware/smccc/soc_id.c | 168 ++++++++++++++++++++++++++++++++
- include/linux/arm-smccc.h       |  34 ++++++-
- include/linux/psci.h            |   7 --
- 11 files changed, 278 insertions(+), 31 deletions(-)
+Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+---
+ drivers/firmware/Kconfig       |  6 ++----
+ drivers/firmware/smccc/Kconfig | 17 +++++++++++++++++
+ 2 files changed, 19 insertions(+), 4 deletions(-)
  create mode 100644 drivers/firmware/smccc/Kconfig
- create mode 100644 drivers/firmware/smccc/Makefile
- create mode 100644 drivers/firmware/smccc/smccc.c
- create mode 100644 drivers/firmware/smccc/soc_id.c
 
+diff --git a/drivers/firmware/Kconfig b/drivers/firmware/Kconfig
+index 8007d4aa76dc..4843e94713a4 100644
+--- a/drivers/firmware/Kconfig
++++ b/drivers/firmware/Kconfig
+@@ -295,15 +295,13 @@ config TURRIS_MOX_RWTM
+ 	  other manufacturing data and also utilize the Entropy Bit Generator
+ 	  for hardware random number generation.
+ 
+-config HAVE_ARM_SMCCC
+-	bool
+-
+-source "drivers/firmware/psci/Kconfig"
+ source "drivers/firmware/broadcom/Kconfig"
+ source "drivers/firmware/google/Kconfig"
+ source "drivers/firmware/efi/Kconfig"
+ source "drivers/firmware/imx/Kconfig"
+ source "drivers/firmware/meson/Kconfig"
++source "drivers/firmware/psci/Kconfig"
++source "drivers/firmware/smccc/Kconfig"
+ source "drivers/firmware/tegra/Kconfig"
+ source "drivers/firmware/xilinx/Kconfig"
+ 
+diff --git a/drivers/firmware/smccc/Kconfig b/drivers/firmware/smccc/Kconfig
+new file mode 100644
+index 000000000000..d93f1ab52cb2
+--- /dev/null
++++ b/drivers/firmware/smccc/Kconfig
+@@ -0,0 +1,17 @@
++# SPDX-License-Identifier: GPL-2.0-only
++config HAVE_ARM_SMCCC
++	bool
++	help
++	  Include support for the Secure Monitor Call (SMC) and Hypervisor
++	  Call (HVC) instructions on Armv7 and above architectures.
++
++config HAVE_ARM_SMCCC_DISCOVERY
++	bool
++	depends on ARM_PSCI_FW
++	default y
++	help
++	 SMCCC v1.0 lacked discoverability and hence PSCI v1.0 was updated
++	 to add SMCCC discovery mechanism though the PSCI firmware
++	 implementation of PSCI_FEATURES(SMCCC_VERSION) which returns
++	 success on firmware compliant to SMCCC v1.1 and above.
++
 -- 
 2.17.1
 
