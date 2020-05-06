@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A55FD1C6B86
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 10:22:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AB141C6B87
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 10:23:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,58 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yQ6yfe7cyj0ypvbjZRI0sgpxhvC9xX6baQzamICSdjk=; b=VNDz2LdCW495qPnl04hyE2VqYT
-	IRkmQaOPaS1XMnk+dOboNHpfgfEzZhrnFXCjj87BfgKA2bExjOY4irCFrCrvoMH9xFT+luTihYSIg
-	CTdIqaMSGIb0wAADK8lWo0a95bBavlEbDJUuCv6XtNHjr3rty343uOx1e/8sQonI7ISmXNYX0Y88B
-	84V0cHIc8VJ0KW9iXlkI0qF00TnnY0ykywa6ujlk5otqPqrcBB/pw65pDXFW1WGPUqsN3lBBC++4f
-	bqFVSJmeSYMKABYmNzFYEh3kJJ+nl49zWLo8TO+1fFPxiqZ258Pnxg+zQc2P7zN1GUUYDKBMb7Yty
-	HbwFH2tg==;
+	bh=Y5T1f0+MJptpUD+nTqKoNBN//MTvRSiuHXvWcvwixjc=; b=Zn6z3EhLyxYD6VT6zQsgy1yekY
+	La59VG758FMTeh19O8ktEHrklNRIk2mYXBYPGV25QLUJhaHwPVZssbyABQF3fv24EjniXSvXA43I3
+	e1mRcCE+S1KzKSZqPG4bzm6NhTSbMPmItzJWIYTX/MeoNx31QKLx0Bs7Fe/0ZvuJoFX0aaX6FzEwV
+	eqw+rkgLgVGcR6I/G5HIkFd3VklnrRY6vo5KnDIBo23llTccY4LJlvpXFO2w5m9L0KHtFuAwp4Ybd
+	dSVYU4CpkoaZJhTyHjg8bWUlejaTsA7xbttg1JaJffC3N5cFlO9Acylv38Ad5LAtnZgTUtDjeJ9Z8
+	9/YK9YBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWFK7-0004uB-5f; Wed, 06 May 2020 08:22:35 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWFHl-0001dK-3W
- for linux-arm-kernel@bombadil.infradead.org; Wed, 06 May 2020 08:20:09 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description;
- bh=gS0F8HpgtJQ0I3RvJsKjeUvrwvI720H0oQkARHkLASE=; b=d/Vwjypvr1Mio5+szMgfmdxB6N
- dM6X0cyetaBY+zbQ7VdzzLM5nyN0woYOUmCFHI9b8DEjTV7sXAKcnOw5CUS78zo7nKbarFWAxweu6
- wucRxjCruIwsxs8KQeFcJaMPbwxVqT5AZbQQG88Rmg94PYwxWDAcXWYqmjW1IQ6ktpt3kmPU0zsxv
- hblCsZZwrjrO8aa+hZWdFGZ5ROvrnV788cENfNjZHF0tm3KWk3vqBlkxcYz/0eVRHs9tr1uSqIeVi
- LGKRsHYJyuS15xmBscQVs0XLwAS67x45eQM6cufhYfP8YS2WBXo/QwTxwICp+efY9w4dpH4oFR/gF
- dYLb7emg==;
+	id 1jWFKR-00058m-9L; Wed, 06 May 2020 08:22:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWFHf-0000pT-2Z
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 08:20:06 +0000
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWFHg-0000z0-M1
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 08:20:25 +0000
 Received: from e123331-lin.nice.arm.com
  (amontpellier-657-1-18-247.w109-210.abo.wanadoo.fr [109.210.65.247])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 12A2F207DD;
- Wed,  6 May 2020 08:19:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9367A2087E;
+ Wed,  6 May 2020 08:20:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588753200;
- bh=s8227r3wr+M1LR2ra2WRSSL45hZ8JOxmjLKJcXVBONI=;
+ s=default; t=1588753202;
+ bh=8ouhSegoa2BFfwpTHy/DDrs8wf6In/Qbisl3KSpg1Z4=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=h2xi8hwK1/gE7lQNUJRajm7OJOpRAZ4Ex4VugdP6ljnBn3B9u8jnRa9G3ZpSXs6lh
- FGggTfXmnXdse38q0IPNv3vz584+CRWEHgZxdIuZm694tMcmkxq/cGjWtb1WEQohOM
- 5QaQ8R5WjE0VYX0/F6ZEWxSTKduJhEPr7ATLw0aE=
+ b=Gq6uyEEH87KKgmdEKaqTVXt7XXD01VUHigr6Dh3PCYVXU1fO6rpAOPNGpphQn5X7Q
+ NKYqIkRLiZ/dtpKUqXFTdUIHEYJDAQAxViJ5z9c+h8DHjEy1c5uT9rbOwSCGNZa/ys
+ KdoeyYykCRxt9YlmDUu381ESPdfzsioVofF2FtOk=
 From: Ard Biesheuvel <ardb@kernel.org>
 To: linux-efi@vger.kernel.org
-Subject: [PATCH v3 4/5] ARM: decompressor: move GOT into .data for EFI enabled
- builds
-Date: Wed,  6 May 2020 10:19:38 +0200
-Message-Id: <20200506081939.8986-5-ardb@kernel.org>
+Subject: [PATCH v3 5/5] ARM: decompressor: run decompressor in place if loaded
+ via UEFI
+Date: Wed,  6 May 2020 10:19:39 +0200
+Message-Id: <20200506081939.8986-6-ardb@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200506081939.8986-1-ardb@kernel.org>
 References: <20200506081939.8986-1-ardb@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_092003_481262_7803B103 
-X-CRM114-Status: GOOD (  15.08  )
-X-Spam-Score: -7.1 (-------)
-X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (-7.1 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200506_012004_888267_AC4A816E 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -103,46 +87,146 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We will be running the decompressor in place after a future patch,
-instead of copying it around first. This means we no longer have to
-disable and re-enable the MMU and caches either. However, this means
-we will be loaded with the restricted permissions set by the UEFI
-firmware, which means that we have to move the GOT table into the
-data section in order for the contents to be writable by the code
-itself.
+The decompressor can load from anywhere in memory, and the only reason
+the EFI stub code relocates it is to ensure it appears within the first
+128 MiB of memory, so that the uncompressed kernel ends up at the right
+offset in memory.
+
+We can short circuit this, and simply jump into the decompressor startup
+code at the point where it knows where the base of memory lives. This
+also means there is no need to disable the MMU and caches, create new
+page tables and re-enable them.
 
 Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
 Reviewed-by: Nicolas Pitre <nico@fluxnic.net>
 ---
- arch/arm/boot/compressed/vmlinux.lds.S | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/boot/compressed/head.S           | 39 ++++++-----------
+ drivers/firmware/efi/libstub/arm32-stub.c | 45 +++-----------------
+ 2 files changed, 20 insertions(+), 64 deletions(-)
 
-diff --git a/arch/arm/boot/compressed/vmlinux.lds.S b/arch/arm/boot/compressed/vmlinux.lds.S
-index b247f399de71..d0619ec05705 100644
---- a/arch/arm/boot/compressed/vmlinux.lds.S
-+++ b/arch/arm/boot/compressed/vmlinux.lds.S
-@@ -63,9 +63,11 @@ SECTIONS
-   _etext = .;
+diff --git a/arch/arm/boot/compressed/head.S b/arch/arm/boot/compressed/head.S
+index 9dea394b286b..3e525e9325d6 100644
+--- a/arch/arm/boot/compressed/head.S
++++ b/arch/arm/boot/compressed/head.S
+@@ -1480,37 +1480,26 @@ reloc_code_end:
  
-   .got.plt		: { *(.got.plt) }
-+#ifndef CONFIG_EFI_STUB
-   _got_start = .;
-   .got			: { *(.got) }
-   _got_end = .;
-+#endif
- 
-   /* ensure the zImage file size is always a multiple of 64 bits */
-   /* (without a dummy byte, ld just ignores the empty section) */
-@@ -74,6 +76,9 @@ SECTIONS
  #ifdef CONFIG_EFI_STUB
-   .data : ALIGN(4096) {
-     __pecoff_data_start = .;
-+    _got_start = .;
-+    *(.got)
-+    _got_end = .;
-     /*
-      * The EFI stub always executes from RAM, and runs strictly before the
-      * decompressor, so we can make an exception for its r/w data, and keep it
+ ENTRY(efi_enter_kernel)
+-		mov	r7, r0				@ preserve image base
+-		mov	r4, r1				@ preserve DT pointer
++		mov	r4, r0			@ preserve image base
++		mov	r8, r1			@ preserve DT pointer
+ 
+-		mov	r0, r4				@ DT start
+-		add	r1, r4, r2			@ DT end
+-		bl	cache_clean_flush
++		mrc	p15, 0, r0, c1, c0, 0	@ read SCTLR
++		tst	r0, #0x1		@ MMU enabled?
++		orreq	r4, r4, #1		@ set LSB if not
+ 
+-		mov	r0, r7				@ relocated zImage
+-		ldr	r1, =_edata			@ size of zImage
+-		add	r1, r1, r0			@ end of zImage
++		mov	r0, r8			@ DT start
++		add	r1, r8, r2		@ DT end
+ 		bl	cache_clean_flush
+ 
+-		@ The PE/COFF loader might not have cleaned the code we are
+-		@ running beyond the PoU, and so calling cache_off below from
+-		@ inside the PE/COFF loader allocated region is unsafe unless
+-		@ we explicitly clean it to the PoC.
+-		adr	r0, call_cache_fn		@ region of code we will
+-		adr	r1, 0f				@ run with MMU off
+-		bl	cache_clean_flush
+-		bl	cache_off
++		adr	r0, 0f			@ switch to our stack
++		ldr	sp, [r0]
++		add	sp, sp, r0
+ 
+-		@ Set parameters for booting zImage according to boot protocol
+-		@ put FDT address in r2, it was returned by efi_entry()
+-		@ r1 is the machine type, and r0 needs to be 0
+-		mov	r0, #0
+-		mov	r1, #0xFFFFFFFF
+-		mov	r2, r4
+-		add	r7, r7, #(__efi_start - start)
+-		mov	pc, r7				@ no mode switch
++		mov	r5, #0			@ appended DTB size
++		mov	r7, #0xFFFFFFFF		@ machine ID
++		b	wont_overwrite
+ ENDPROC(efi_enter_kernel)
+-0:
++0:		.long	.L_user_stack_end - .
+ #endif
+ 
+ 		.align
+diff --git a/drivers/firmware/efi/libstub/arm32-stub.c b/drivers/firmware/efi/libstub/arm32-stub.c
+index 7826553af2ba..0050d811bf20 100644
+--- a/drivers/firmware/efi/libstub/arm32-stub.c
++++ b/drivers/firmware/efi/libstub/arm32-stub.c
+@@ -199,14 +199,8 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 	unsigned long kernel_base;
+ 	efi_status_t status;
+ 
+-	/*
+-	 * Verify that the DRAM base address is compatible with the ARM
+-	 * boot protocol, which determines the base of DRAM by masking
+-	 * off the low 27 bits of the address at which the zImage is
+-	 * loaded. These assumptions are made by the decompressor,
+-	 * before any memory map is available.
+-	 */
+-	kernel_base = round_up(dram_base, SZ_128M);
++	/* use a 16 MiB aligned base for the decompressed kernel */
++	kernel_base = round_up(dram_base, SZ_16M) + TEXT_OFFSET;
+ 
+ 	/*
+ 	 * Note that some platforms (notably, the Raspberry Pi 2) put
+@@ -215,41 +209,14 @@ efi_status_t handle_kernel_image(unsigned long *image_addr,
+ 	 * base of the kernel image is only partially used at the moment.
+ 	 * (Up to 5 pages are used for the swapper page tables)
+ 	 */
+-	kernel_base += TEXT_OFFSET - 5 * PAGE_SIZE;
+-
+-	status = reserve_kernel_base(kernel_base, reserve_addr, reserve_size);
++	status = reserve_kernel_base(kernel_base - 5 * PAGE_SIZE, reserve_addr,
++				     reserve_size);
+ 	if (status != EFI_SUCCESS) {
+ 		pr_efi_err("Unable to allocate memory for uncompressed kernel.\n");
+ 		return status;
+ 	}
+ 
+-	/*
+-	 * Relocate the zImage, so that it appears in the lowest 128 MB
+-	 * memory window.
+-	 */
+-	*image_addr = (unsigned long)image->image_base;
+-	*image_size = image->image_size;
+-	status = efi_relocate_kernel(image_addr, *image_size, *image_size,
+-				     kernel_base + MAX_UNCOMP_KERNEL_SIZE, 0, 0);
+-	if (status != EFI_SUCCESS) {
+-		pr_efi_err("Failed to relocate kernel.\n");
+-		efi_free(*reserve_size, *reserve_addr);
+-		*reserve_size = 0;
+-		return status;
+-	}
+-
+-	/*
+-	 * Check to see if we were able to allocate memory low enough
+-	 * in memory. The kernel determines the base of DRAM from the
+-	 * address at which the zImage is loaded.
+-	 */
+-	if (*image_addr + *image_size > dram_base + ZIMAGE_OFFSET_LIMIT) {
+-		pr_efi_err("Failed to relocate kernel, no low memory available.\n");
+-		efi_free(*reserve_size, *reserve_addr);
+-		*reserve_size = 0;
+-		efi_free(*image_size, *image_addr);
+-		*image_size = 0;
+-		return EFI_LOAD_ERROR;
+-	}
++	*image_addr = kernel_base;
++	*image_size = 0;
+ 	return EFI_SUCCESS;
+ }
 -- 
 2.17.1
 
