@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03ADA1C708C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 14:43:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 026801C709A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 14:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BK3Jyfb8xXMDhetzns6W/3jpblddKFOSVIHj5xyrwtI=; b=tHtamXhBHKszXM6pYZN84H8zc
-	/IiM7/ZkNOKY/6RVcxuLj7mO0S/l/CAJqPJ27xDuU6qmxfYgOyiAclIIDeleBfccC44RkDp/TE4TH
-	uGDi0qx77jObu9XZ+j4LehWqpFRWg8zeHQFmOvkkcF5J3k7AhNPy/XP0cvN7fDDK/tSp96De9D0JG
-	5b5YW66/gxHjH4y/W7u0aGBGUzBAukypp3IErbZ+PR5mTwKvPf+pW39uqs6hyXDbzpX5zLY70b3Bc
-	a55V42ToKgcShVIf6JRwiZTW4njjhIrW3FxhVVu3mRza6QeotvePiaBuRQvG7rIYvqfjytp0twmN/
-	Xz8P9webA==;
+	 bh=SvRhpVcexDS4JiWTfEVVT+jQWLER0oIW6TFfgEOFCEo=; b=heuDGZAuw90OHiDNL1gWJPY0t
+	U72LnEzWtKakqBWAxLlMujtURqoRWU8hvGqhvkD5/R+Lb5o3718P7ZSc5Cwatl0BMb/h7UL9YuKmn
+	E3VhvL2HxAh6Umw8l1Nna+3rM0E59Qa3Drpi33VRWsAxdSQmg5/v8YklHYbT2IRsl1UfRigUw4wgl
+	ykx8BUrF+Mg/XJ+C6c1/5eGqrEPO+nhF2aEAvFFIBPEzUAB2rBTc2HHI45XE6JbnBEKFFEJOQuPhK
+	ufpOugVZRBIoRlV+Lyy0DqKW+V+96FPdq0jiyNcykGSEMa8fmLDjE8IPJ5eOuXNFh2od8nZj0+ijN
+	udmhtejng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWJOj-0007Wu-Aw; Wed, 06 May 2020 12:43:37 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jWJQP-0001uT-MU; Wed, 06 May 2020 12:45:21 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWJOW-0007QB-Se
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 12:43:26 +0000
-Received: from DGGEMS405-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id C7EFA2357DDA44AEB548;
- Wed,  6 May 2020 20:43:15 +0800 (CST)
-Received: from [127.0.0.1] (10.166.213.93) by DGGEMS405-HUB.china.huawei.com
- (10.3.19.205) with Microsoft SMTP Server id 14.3.487.0; Wed, 6 May 2020
- 20:43:07 +0800
+ id 1jWJQF-0000m7-5n
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 12:45:12 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 5B8671542E5251861D3F;
+ Wed,  6 May 2020 20:45:06 +0800 (CST)
+Received: from [127.0.0.1] (10.166.213.93) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Wed, 6 May 2020
+ 20:44:56 +0800
 Subject: Re: [PATCH v2 2/2] ACPI/IORT: work around num_ids ambiguity
-From: Hanjun Guo <guohanjun@huawei.com>
-To: Ard Biesheuvel <ardb@kernel.org>, <linux-arm-kernel@lists.infradead.org>
+To: Ard Biesheuvel <ardb@kernel.org>
 References: <20200501161014.5935-1-ardb@kernel.org>
  <20200501161014.5935-3-ardb@kernel.org>
  <bbd56b89-643a-2f86-79af-f65ef46822ef@huawei.com>
-Message-ID: <127f1bc8-01ed-6c14-20f3-eb944ec5c4db@huawei.com>
-Date: Wed, 6 May 2020 20:43:06 +0800
+ <CAMj1kXEuV_Lmhu-2zZhD-YgL-zu+o0v+vooQTK30cemJW5dfNg@mail.gmail.com>
+From: Hanjun Guo <guohanjun@huawei.com>
+Message-ID: <86c60895-365e-9166-8f70-7a353bbc4e86@huawei.com>
+Date: Wed, 6 May 2020 20:44:55 +0800
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
  Thunderbird/68.6.0
 MIME-Version: 1.0
-In-Reply-To: <bbd56b89-643a-2f86-79af-f65ef46822ef@huawei.com>
+In-Reply-To: <CAMj1kXEuV_Lmhu-2zZhD-YgL-zu+o0v+vooQTK30cemJW5dfNg@mail.gmail.com>
 Content-Language: en-GB
 X-Originating-IP: [10.166.213.93]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_054325_093122_DF8E0460 
-X-CRM114-Status: GOOD (  18.74  )
+X-CRM114-CacheID: sfid-20200506_054511_399161_8CC9C527 
+X-CRM114-Status: GOOD (  16.40  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [45.249.212.191 listed in wl.mailspike.net]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [45.249.212.35 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,74 +70,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Catalin
- Marinas <catalin.marinas@arm.com>, Pankaj Bansal <pankaj.bansal@nxp.com>,
- Robin Murphy <robin.murphy@arm.com>, Linuxarm <linuxarm@huawei.com>,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>, Will
- Deacon <will@kernel.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, Robin Murphy <robin.murphy@arm.com>,
+ Linuxarm <linuxarm@huawei.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC81LzQgMTI6MzIsIEhhbmp1biBHdW8gd3JvdGU6Cj4gT24gMjAyMC81LzIgMDoxMCwg
-QXJkIEJpZXNoZXV2ZWwgd3JvdGU6Cj4+IFRoZSBJRCBtYXBwaW5nIHRhYmxlIHN0cnVjdHVyZSBv
-ZiB0aGUgSU9SVCB0YWJsZSBkZXNjcmliZXMgdGhlIHNpemUgb2YKPj4gYSByYW5nZSB1c2luZyBh
-IG51bV9pZHMgZmllbGQgY2FycnlpbmcgdGhlIG51bWJlciBvZiBJRHMgaW4gdGhlIHJlZ2lvbgo+
-PiBtaW51cyBvbmUuIFRoaXMgaGFzIGJlZW4gbWlzaW50ZXJwcmV0ZWQgaW4gdGhlIHBhc3QgaW4g
-dGhlIHBhcnNpbmcgY29kZSwKPj4gYW5kIGZpcm13YXJlIGlzIGtub3duIHRvIGhhdmUgc2hpcHBl
-ZCB3aGVyZSB0aGlzIHJlc3VsdHMgaW4gYW4gYW1iaWd1aXR5LAo+PiB3aGVyZSByZWdpb25zIHRo
-YXQgc2hvdWxkIGJlIGFkamFjZW50IGhhdmUgYW4gb3ZlcmxhcCBvZiBvbmUgdmFsdWUuCj4+Cj4+
-IFNvIGxldCdzIHdvcmsgYXJvdW5kIHRoaXMgYnkgZGV0ZWN0aW5nIHRoaXMgY2FzZSBzcGVjaWZp
-Y2FsbHk6IHdoZW4KPj4gcmVzb2x2aW5nIGFuIElEIHRyYW5zbGF0aW9uLCBhbGxvdyBvbmUgdGhh
-dCBtYXRjaGVzIHJpZ2h0IGF0IHRoZSBlbmQgb2YKPj4gYSBtdWx0aS1JRCByZWdpb24gdG8gYmUg
-c3VwZXJzZWRlZCBieSBhIHN1YnNlcXVlbnQgb25lLgo+Pgo+PiBUbyBwcmV2ZW50IHBvdGVudGlh
-bCByZWdyZXNzaW9ucyBvbiBicm9rZW4gZmlybXdhcmUgdGhhdCBoYXBwZW5lZCB0bwo+PiB3b3Jr
-IGJlZm9yZSwgb25seSB0YWtlIHRoZSBzdWJzZXF1ZW50IG1hdGNoIGludG8gYWNjb3VudCBpZiBp
-dCBvY2N1cnMKPj4gYXQgdGhlIHN0YXJ0IG9mIGEgbWFwcGluZyByZWdpb24uCj4+Cj4+IFNpZ25l
-ZC1vZmYtYnk6IEFyZCBCaWVzaGV1dmVsIDxhcmRiQGtlcm5lbC5vcmc+Cj4+IC0tLQo+PiDCoCBk
-cml2ZXJzL2FjcGkvYXJtNjQvaW9ydC5jIHwgNDAgKysrKysrKysrKysrKysrKystLS0KPj4gwqAg
-MSBmaWxlIGNoYW5nZWQsIDM0IGluc2VydGlvbnMoKyksIDYgZGVsZXRpb25zKC0pCj4+Cj4+IGRp
-ZmYgLS1naXQgYS9kcml2ZXJzL2FjcGkvYXJtNjQvaW9ydC5jIGIvZHJpdmVycy9hY3BpL2FybTY0
-L2lvcnQuYwo+PiBpbmRleCA5OGJlMTgyNjZhNzMuLjlmMTM5YTk0YTFkMyAxMDA2NDQKPj4gLS0t
-IGEvZHJpdmVycy9hY3BpL2FybTY0L2lvcnQuYwo+PiArKysgYi9kcml2ZXJzL2FjcGkvYXJtNjQv
-aW9ydC5jCj4+IEBAIC0zMDAsNyArMzAwLDcgQEAgc3RhdGljIGFjcGlfc3RhdHVzIGlvcnRfbWF0
-Y2hfbm9kZV9jYWxsYmFjayhzdHJ1Y3QgCj4+IGFjcGlfaW9ydF9ub2RlICpub2RlLAo+PiDCoCB9
-Cj4+IMKgIHN0YXRpYyBpbnQgaW9ydF9pZF9tYXAoc3RydWN0IGFjcGlfaW9ydF9pZF9tYXBwaW5n
-ICptYXAsIHU4IHR5cGUsIAo+PiB1MzIgcmlkX2luLAo+PiAtwqDCoMKgwqDCoMKgwqDCoMKgwqDC
-oMKgwqDCoCB1MzIgKnJpZF9vdXQpCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHUz
-MiAqcmlkX291dCwgYm9vbCBjaGVja19vdmVybGFwKQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAgLyog
-U2luZ2xlIG1hcHBpbmcgZG9lcyBub3QgY2FyZSBmb3IgaW5wdXQgaWQgKi8KPj4gwqDCoMKgwqDC
-oCBpZiAobWFwLT5mbGFncyAmIEFDUElfSU9SVF9JRF9TSU5HTEVfTUFQUElORykgewo+PiBAQCAt
-MzE2LDEwICszMTYsMzQgQEAgc3RhdGljIGludCBpb3J0X2lkX21hcChzdHJ1Y3QgCj4+IGFjcGlf
-aW9ydF9pZF9tYXBwaW5nICptYXAsIHU4IHR5cGUsIHUzMiByaWRfaW4sCj4+IMKgwqDCoMKgwqAg
-fQo+PiDCoMKgwqDCoMKgIGlmIChyaWRfaW4gPCBtYXAtPmlucHV0X2Jhc2UgfHwKPj4gLcKgwqDC
-oMKgwqDCoMKgIChyaWRfaW4gPj0gbWFwLT5pbnB1dF9iYXNlICsgbWFwLT5pZF9jb3VudCkpCj4+
-ICvCoMKgwqDCoMKgwqDCoCAocmlkX2luID4gbWFwLT5pbnB1dF9iYXNlICsgbWFwLT5pZF9jb3Vu
-dCkpCj4+IMKgwqDCoMKgwqDCoMKgwqDCoCByZXR1cm4gLUVOWElPOwo+PiArwqDCoMKgIGlmIChj
-aGVja19vdmVybGFwKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCAvKgo+PiArwqDCoMKgwqDCoMKgwqDC
-oCAqIFdlIGFscmVhZHkgZm91bmQgYSBtYXBwaW5nIGZvciB0aGlzIGlucHV0IElEIGF0IHRoZSBl
-bmQgb2YKPj4gK8KgwqDCoMKgwqDCoMKgwqAgKiBhbm90aGVyIHJlZ2lvbi4gSWYgaXQgY29pbmNp
-ZGVzIHdpdGggdGhlIHN0YXJ0IG9mIHRoaXMKPj4gK8KgwqDCoMKgwqDCoMKgwqAgKiByZWdpb24s
-IHdlIGFzc3VtZSB0aGUgcHJpb3IgbWF0Y2ggd2FzIGR1ZSB0byB0aGUgb2ZmLWJ5LTEKPj4gK8Kg
-wqDCoMKgwqDCoMKgwqAgKiBpc3N1ZSBtZW50aW9uZWQgYmVsb3csIGFuZCBhbGxvdyBpdCB0byBi
-ZSBzdXBlcnNlZGVkLgo+PiArwqDCoMKgwqDCoMKgwqDCoCAqIE90aGVyd2lzZSwgdGhpbmdzIGFy
-ZSAqcmVhbGx5KiBicm9rZW4sIGFuZCB3ZSBqdXN0IGRpc3JlZ2FyZAo+PiArwqDCoMKgwqDCoMKg
-wqDCoCAqIGR1cGxpY2F0ZSBtYXRjaGVzIGVudGlyZWx5IHRvIHJldGFpbiBjb21wYXRpYmlsaXR5
-Lgo+PiArwqDCoMKgwqDCoMKgwqDCoCAqLwo+PiArwqDCoMKgwqDCoMKgwqAgcHJfZXJyKEZXX0JV
-RyAiW21hcCAlcF0gY29uZmxpY3RpbmcgbWFwcGluZyBmb3IgaW5wdXQgSUQgCj4+IDB4JXhcbiIs
-Cj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIG1hcCwgcmlkX2luKTsKPiAKPiBBcyB3
-ZSBhbHJlYWR5IGFwcGxpZWQgYSB3b3JrYXJvdW5kIGhlcmUsIGNhbiB3ZSBhZGQgImFwcGx5aW5n
-Cj4gd29ya2Fyb3VuZCIgaW4gdGhlIGVycm9yIG1lc3NhZ2U/IFRoaXMgd2lsbCBtYWtlIHRoZSBj
-dXN0b21lcnMKPiBsZXNzIHVuZWFzeSB0byBzZWUgc3VjaCBtZXNzYWdlIGluIHRoZSBib290IGxv
-Zy4gT25jZSB0aGUgcHJvZHVjdAo+IHdhcyBkZWxpdmVyaWVkIHRvIGN1c3RvbWVycywgaXQncyBu
-b3QgdGhhdCBlYXN5IHRvIHVwZGF0ZSBhbGwgdGhlCj4gZmlybXdhcmVzIGVudGlyZWx5Lgo+IAo+
-IEknbSBvdXQgb2YgcmVhY2ggZm9yIEQwNS9EMDYgaGFyZHdhcmUgYXMgaXQncyBob2xpZGF5cyBp
-biBDaGluYSwKPiBwbGVhc2UgYWxsb3cgbWUgdG8gdGVzdCB0aGlzIHBhdGNoIHNldCBpbiBXZWRu
-ZXNkYXkgdGhpcyB3ZWVrLgoKVGVzdGVkIHRoaXMgcGF0Y2hzZXQgb24gRDA2IGFuZCBJIGNvbWFw
-YXJlZCBlYWNoIHN1Y2Vzc2Z1bCBtYXBwZWQKSUQsIG5vIHJlZ3Jlc3Npb25zLCBhbmQgYWxzbyBu
-byBmdW5jdGlvbiByZWdyZXNzaW9ucyBhcyB3ZWxsLAoKVGVzdGVkLWJ5OiBIYW5qdW4gR3VvIDxn
-dW9oYW5qdW5AaHVhd2VpLmNvbT4KClRoYW5rcwpIYW5qdW4KCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 2020/5/4 15:36, Ard Biesheuvel wrote:
+> On Mon, 4 May 2020 at 06:32, Hanjun Guo <guohanjun@huawei.com> wrote:
+>>
+>> On 2020/5/2 0:10, Ard Biesheuvel wrote:
+>>> The ID mapping table structure of the IORT table describes the size of
+>>> a range using a num_ids field carrying the number of IDs in the region
+>>> minus one. This has been misinterpreted in the past in the parsing code,
+>>> and firmware is known to have shipped where this results in an ambiguity,
+>>> where regions that should be adjacent have an overlap of one value.
+>>>
+>>> So let's work around this by detecting this case specifically: when
+>>> resolving an ID translation, allow one that matches right at the end of
+>>> a multi-ID region to be superseded by a subsequent one.
+>>>
+>>> To prevent potential regressions on broken firmware that happened to
+>>> work before, only take the subsequent match into account if it occurs
+>>> at the start of a mapping region.
+>>>
+>>> Signed-off-by: Ard Biesheuvel <ardb@kernel.org>
+>>> ---
+>>>    drivers/acpi/arm64/iort.c | 40 +++++++++++++++++---
+>>>    1 file changed, 34 insertions(+), 6 deletions(-)
+>>>
+>>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+>>> index 98be18266a73..9f139a94a1d3 100644
+>>> --- a/drivers/acpi/arm64/iort.c
+>>> +++ b/drivers/acpi/arm64/iort.c
+>>> @@ -300,7 +300,7 @@ static acpi_status iort_match_node_callback(struct acpi_iort_node *node,
+>>>    }
+>>>
+>>>    static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>>> -                    u32 *rid_out)
+>>> +                    u32 *rid_out, bool check_overlap)
+>>>    {
+>>>        /* Single mapping does not care for input id */
+>>>        if (map->flags & ACPI_IORT_ID_SINGLE_MAPPING) {
+>>> @@ -316,10 +316,34 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>>>        }
+>>>
+>>>        if (rid_in < map->input_base ||
+>>> -         (rid_in >= map->input_base + map->id_count))
+>>> +         (rid_in > map->input_base + map->id_count))
+>>>                return -ENXIO;
+>>>
+>>> +     if (check_overlap) {
+>>> +             /*
+>>> +              * We already found a mapping for this input ID at the end of
+>>> +              * another region. If it coincides with the start of this
+>>> +              * region, we assume the prior match was due to the off-by-1
+>>> +              * issue mentioned below, and allow it to be superseded.
+>>> +              * Otherwise, things are *really* broken, and we just disregard
+>>> +              * duplicate matches entirely to retain compatibility.
+>>> +              */
+>>> +             pr_err(FW_BUG "[map %p] conflicting mapping for input ID 0x%x\n",
+>>> +                    map, rid_in);
+>>
+>> As we already applied a workaround here, can we add "applying
+>> workaround" in the error message? This will make the customers
+>> less uneasy to see such message in the boot log. Once the product
+>> was deliveried to customers, it's not that easy to update all the
+>> firmwares entirely.
+>>
+> 
+> Sure.
+
+Since Will already merged this patchset, I would like to send a patch
+on top of it, what do you think?
+
+Thanks
+Hanjun
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
