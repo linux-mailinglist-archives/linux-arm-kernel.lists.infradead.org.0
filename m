@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111701C7823
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 19:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 61A471C78A1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 19:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PutHZR/RWliNLarw61GMvyKQpM8PSu33OYC6tnAsZrI=; b=LDgMFUAgAYOPEJ
-	u9UlENvGrqaEbQ2CbMLM805MfsO0vv/jI22gZ/XRutAqiNwzm9riUxuOsgYQl3fkRUekypFANPlqQ
-	BUeNRSevnCG3iWabDS0jibCV44W5NAxW2pL5b3GrrDsZD4Abl9kKRbXplqdxGF/rbWs6sbhFvG944
-	SYSHMdd+0UKpLHwKWBSi5+iZMJUS3AFDezOeNzS7mJZ7PIDxsK71SKnfBWLF9K/mlKBnxIy4WizHK
-	J3JO7ERnirclpS85MQpW3DKPfnLrvfeYrJNuzpZxFMu6zXEchlNoRuusPgCyQceWp1Z2ZcBmHOHk5
-	2IRdE+H0jjZuhvMBaicw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QHkUwaJE2jR71RLCrYrxYszz/skhKJu090Qdnmvvmlc=; b=YXQYJHzms2Kjoa
+	ggBfdGPcZ9AfwXgG+I668kXiLvemyTN86bW66/tWps8dkva8Et7VQQ9fIjwfAvTVQfqWTPen8H2e6
+	0S1bKG5Lv7HOAVtBCfQNmgFvWBy+zZJsGRS30TMQKeX3f2mYUkJ7fpaJBuywn129UgdI+AMPMNBAP
+	Qc/bOniQIp1/3Nfi83PCNhg3t0qcZSXz2MrUQiYvmL0CGeUiVwelfFCbaQ2PX1fLlnhOQt2jJB9Aw
+	OeEcGWUhEdsGNQS/7E89YOgNNxETa1oaMO7N8xe0sHDynM/ba8Wy5mv9pjZyTt9+e4//uUXaIhAAi
+	232eZ4zHboj18inXHD3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWO1q-0002uj-57; Wed, 06 May 2020 17:40:18 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jWOAj-0001cZ-OX; Wed, 06 May 2020 17:49:29 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWO1Y-0002YW-9W
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 17:40:01 +0000
-Received: by mail-pg1-x544.google.com with SMTP id q124so1104655pgq.13
+ id 1jWOAU-0001Y4-SF
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 17:49:17 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v12so1916441wrp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 10:39:59 -0700 (PDT)
+ Wed, 06 May 2020 10:49:14 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=kNgid64Z8J8OSXFaPoP7oLjlQHqHGDbD++ltkI1IK6Y=;
- b=G6bfsrWGcAS7+j7kxaGRlMZcRFqS1EDZqZBiFhHs275pBEqVU76lg9d/2gV/gpjXk5
- UHeD55aizevE0nr+DdQT0bZpEa4NssGaAdv3TJBAk4/VaBNXPqSrImHP0vf5hVOvXejd
- SJHLQrz9Caz7IO75yYSzb3PdK3ZLM3v++CwCS+aZ8MlyGIj6ONJ4rs/ATWVNHLuy895n
- +QLSInWWjst9l3RYlqO1SrQXe6fONmdAQM2PpBDdiB2B2T1Yw3HEDrO1crmUdVrTmOM1
- GoFEs7fu/c8JPp5a2qtBs3gQS5psdaNDWa4YA6mrLhTuFuWsww2uNBTeV/sRik9vsIBq
- glfQ==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hWHyRKp89JVQR9Wj2q/H7Wn4Rwh+/TR6MPPzYZ0wjPA=;
+ b=Dd6f0irrkcgPWqK7bSdzbaR69zH5LEy11m2PBDkF8rr58MdIVe3XqiidJt1QLQOUkd
+ OnFIlEIRK1ptPTFYN1mIrjiH8mfZp7bqRXx1nyuPZTBlsbezWVdvP1RndtQehhuoIQL+
+ Tn8ROK+nP0nDJgN69aFDSbIwkKrEdN+vs8l2uz/tPMcbBnjlLBLZg3C+cy7FH5OOoA0g
+ QZdYe/vNkPVE44XNv7+d5FZVLNRAdWrP4sosF0lVv6YpU+4YdA2w0ZCBxiIz6+XsbKqW
+ mgzOQHZV04Fp4+dSUWOoxHvOAeG578UhI88lY+amhvReZZ6Z83+hRxgL1n8qfa2SZLyB
+ cVbA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=kNgid64Z8J8OSXFaPoP7oLjlQHqHGDbD++ltkI1IK6Y=;
- b=R3fMJXzJ90Mz/LBQeXT0+t5S1W439grmaItKu+/JFw3sCZb3nzYbvDA4jEyLFHDTAe
- 85QyBeuC8CyCbd8xxwuF1AydWj/nk+iKPWVWlAmVmFOfpJ6Xe0Sb7R1CzFM21TR++EVR
- qrPvtmlr/Tpf6T2rTcANf15cQ2PRu5p6way8wmwtA1hb+gCBhT+EgSb1MFgVEfxSVQ4S
- tRqZA0GNp+D77b5CToOImBsPSqdYVanWpYUoEuaHwOq2wTsAde+007IfDBVxlk5QgGhJ
- NISLQlEwhVm3jLnQ5XHY7GI/sYPq6Frdu/815sPAux+I7trFGFZe2+FzzVA2q0/nl3eu
- GNbQ==
-X-Gm-Message-State: AGi0PuZPAJmwedwnXq8ivySAMeaWcRI1GGEBDt4Vgbe+I/EmpwwhngiX
- TiKFa4P/ZEuH8YMqtdpQiUlvWp74whc=
-X-Google-Smtp-Source: APiQypLNLujkEh1u6LyZm8eLBvdZue77yFzYkC7G5bTcXZ1W8UbGX8t9N8aSPW0fe3BfUxac1lxn+g==
-X-Received: by 2002:a62:2cd7:: with SMTP id s206mr9078570pfs.183.1588786798620; 
- Wed, 06 May 2020 10:39:58 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id g184sm2340807pfb.80.2020.05.06.10.39.57
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=hWHyRKp89JVQR9Wj2q/H7Wn4Rwh+/TR6MPPzYZ0wjPA=;
+ b=po6LIqLQW9DM4jcwR+CImj7MgWnsrSR+m1c68A5T94U9UmuZTN5dKPvFvVgybUSeP1
+ 6zvRaxVNHjC2uSl1zfKspyRFrYFAkm3uzVzs3/Prvv1VzBN70k4X3F338FBOaHhZkJC+
+ A+o8PopiDphnc4gd5xxHuOVDM7c12Y1YyXGdabTGHAYnaCIUXHWv1l0aGlf9w2x/igRC
+ E6jIGeW02QV1xmZzPS4hzWPyatbAmYh2XC9lKW5Wvj1rgPYkMoXoyfTmOynxvhgnxFgi
+ ADWEwiqOd6tr0atqXWwCMKYtbAX5ugUwHPmzoyUrhHl1YFuJHi4jLy6Cf2Gc1vhBvwfe
+ Y2wg==
+X-Gm-Message-State: AGi0PuaWInblXIBktXSAIfaI/ZsacVhu+RG+pULc2GzIyYsBIBlVKN8Y
+ kqP3dUkrdignGoH+CVddOXAlYQ==
+X-Google-Smtp-Source: APiQypIiuuHXkr4RsT4xMD4MRnNE4uCLdKVt7VMRDOvlSsSmryUY3pQdNlr5jSgfb/IfLZSpUF/GQg==
+X-Received: by 2002:a5d:414f:: with SMTP id c15mr10706505wrq.61.1588787353314; 
+ Wed, 06 May 2020 10:49:13 -0700 (PDT)
+Received: from localhost.localdomain
+ ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id f5sm3762161wrp.70.2020.05.06.10.49.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 May 2020 10:39:58 -0700 (PDT)
-Date: Wed, 6 May 2020 11:39:56 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH v2 1/2] coresight: cti: Add CPU Hotplug handling to CTI
- driver.
-Message-ID: <20200506173956.GB29826@xps15>
-References: <20200504161530.9284-1-mike.leach@linaro.org>
- <20200504161530.9284-2-mike.leach@linaro.org>
+ Wed, 06 May 2020 10:49:12 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: iommu@lists.linux-foundation.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] iommu/arm-smmu-v3: Don't reserve implementation defined
+ register space
+Date: Wed,  6 May 2020 19:46:30 +0200
+Message-Id: <20200506174629.1504153-1-jean-philippe@linaro.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504161530.9284-2-mike.leach@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_104000_362729_99641585 
-X-CRM114-Status: GOOD (  23.93  )
+X-CRM114-CacheID: sfid-20200506_104914_924743_A77F21A0 
+X-CRM114-Status: GOOD (  14.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -99,188 +97,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
- suzuki.poulose@arm.com
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, lorenzo.pieralisi@arm.com,
+ will@kernel.org, joro@8bytes.org, tuanphan@amperemail.onmicrosoft.com,
+ robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mike,
+Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
+inside the first 64kB region of the SMMU. Since PMCG are managed by a
+separate driver, this layout causes resource reservation conflicts
+during boot.
 
-On Mon, May 04, 2020 at 05:15:29PM +0100, Mike Leach wrote:
-> Adds registration of CPU start and stop functions to CPU hotplug
-> mechanisms - for any CPU bound CTI.
-> 
-> Sets CTI powered flag according to state.
-> Will enable CTI on CPU start if there are existing enable requests.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  drivers/hwtracing/coresight/coresight-cti.c | 91 +++++++++++++++++++++
->  include/linux/cpuhotplug.h                  |  1 +
->  2 files changed, 92 insertions(+)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-cti.c b/drivers/hwtracing/coresight/coresight-cti.c
-> index be61c1705916..9af66719ae5b 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti.c
-> @@ -40,6 +40,12 @@ static DEFINE_MUTEX(ect_mutex);
->  #define csdev_to_cti_drvdata(csdev)	\
->  	dev_get_drvdata(csdev->dev.parent)
->  
-> +/* power management handling */
-> +static int nr_cti_cpu;
-> +
-> +/* quick lookup list for CPU bound CTIs when power handling */
-> +static struct cti_drvdata *cti_cpu_drvdata[NR_CPUS];
-> +
->  /*
->   * CTI naming. CTI bound to cores will have the name cti_cpu<N> where
->   * N is the CPU ID. System CTIs will have the name cti_sys<I> where I
-> @@ -129,6 +135,35 @@ static int cti_enable_hw(struct cti_drvdata *drvdata)
->  	return rc;
->  }
->  
-> +/* re-enable CTI on CPU when using CPU hotplug */
-> +static void cti_cpuhp_enable_hw(struct cti_drvdata *drvdata)
-> +{
-> +	struct cti_config *config = &drvdata->config;
-> +	struct device *dev = &drvdata->csdev->dev;
-> +
-> +	pm_runtime_get_sync(dev->parent);
-> +	spin_lock(&drvdata->spinlock);
-> +	config->hw_powered = true;
-> +
-> +	/* no need to do anything if no enable request */
-> +	if (!atomic_read(&drvdata->config.enable_req_count))
-> +		goto cti_hp_not_enabled;
-> +
-> +	/* try to claim the device */
-> +	if (coresight_claim_device(drvdata->base))
-> +		goto cti_hp_not_enabled;
-> +
-> +	cti_write_all_hw_regs(drvdata);
-> +	config->hw_enabled = true;
-> +	spin_unlock(&drvdata->spinlock);
-> +	return;
-> +
-> +	/* did not re-enable due to no claim / no request */
-> +cti_hp_not_enabled:
-> +	spin_unlock(&drvdata->spinlock);
-> +	pm_runtime_put(dev->parent);
-> +}
-> +
->  /* disable hardware */
->  static int cti_disable_hw(struct cti_drvdata *drvdata)
->  {
-> @@ -620,6 +655,44 @@ static void cti_remove_conn_xrefs(struct cti_drvdata *drvdata)
->  	}
->  }
->  
-> +/* CPU HP handlers */
-> +static int cti_starting_cpu(unsigned int cpu)
-> +{
-> +	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
-> +
-> +	if (!drvdata)
-> +		return 0;
-> +
-> +	cti_cpuhp_enable_hw(drvdata);
-> +	return 0;
-> +}
-> +
-> +static int cti_dying_cpu(unsigned int cpu)
-> +{
-> +	struct cti_drvdata *drvdata = cti_cpu_drvdata[cpu];
-> +
-> +	if (!drvdata)
-> +		return 0;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	drvdata->config.hw_powered = false;
-> +	coresight_disclaim_device(drvdata->base);
-> +	spin_unlock(&drvdata->spinlock);
-> +	return 0;
-> +}
-> +
-> +/* release PM registrations */
-> +static void cti_pm_release(struct cti_drvdata *drvdata)
-> +{
-> +	if (drvdata->ctidev.cpu >= 0) {
-> +		if (--nr_cti_cpu == 0) {
-> +			cpuhp_remove_state_nocalls(
-> +				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING);
-> +		}
-> +		cti_cpu_drvdata[drvdata->ctidev.cpu] = NULL;
-> +	}
-> +}
-> +
->  /** cti ect operations **/
->  int cti_enable(struct coresight_device *csdev)
->  {
-> @@ -655,6 +728,7 @@ static void cti_device_release(struct device *dev)
->  
->  	mutex_lock(&ect_mutex);
->  	cti_remove_conn_xrefs(drvdata);
-> +	cti_pm_release(drvdata);
->  
->  	/* remove from the list */
->  	list_for_each_entry_safe(ect_item, ect_tmp, &ect_net, node) {
-> @@ -730,6 +804,22 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
->  		goto err_out;
->  	}
->  
-> +	/* setup CPU power management handling for CPU bound CTI devices. */
-> +	if (drvdata->ctidev.cpu >= 0) {
-> +		cti_cpu_drvdata[drvdata->ctidev.cpu] = drvdata;
-> +		if (!nr_cti_cpu++) {
-> +			cpus_read_lock();
-> +			cpuhp_setup_state_nocalls_cpuslocked(
+To avoid this conflict, only reserve the MMIO region we actually use:
+the first 0xe0 bytes of page 0 and the first 0xd0 bytes of page 1.
+Although devm_ioremap() still works on full pages under the hood, this
+way we benefit from resource conflict checks.
 
-                        ret = cpuhp_setup_state_nocalls_cpuslocked(
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+A nicer (and hopefully working) solution to the problem dicussed here:
+https://lore.kernel.org/linux-iommu/20200421155745.19815-1-jean-philippe@linaro.org/
+---
+ drivers/iommu/arm-smmu-v3.c | 50 +++++++++++++++++++++++++++++++++----
+ 1 file changed, 45 insertions(+), 5 deletions(-)
 
-Otherwise this patch looks good to me (many thanks for splitting).  On your next
-revision please CC Thomas Gleixner as suggested by the get_maintainer.pl script.
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 82508730feb7a1..fc85cdd5b62cca 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -171,6 +171,9 @@
+ #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
+ #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
+ 
++#define ARM_SMMU_PAGE0_REG_SZ		0xe0
++#define ARM_SMMU_PAGE1_REG_SZ		0xd0
++
+ /* Common MSI config fields */
+ #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
+ #define MSI_CFG2_SH			GENMASK(5, 4)
+@@ -628,6 +631,7 @@ struct arm_smmu_strtab_cfg {
+ struct arm_smmu_device {
+ 	struct device			*dev;
+ 	void __iomem			*base;
++	void __iomem			*page1;
+ 
+ #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
+ #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
+@@ -733,11 +737,14 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
+ 						 struct arm_smmu_device *smmu)
+ {
+-	if ((offset > SZ_64K) &&
+-	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
+-		offset -= SZ_64K;
++	void __iomem *base = smmu->base;
+ 
+-	return smmu->base + offset;
++	if (offset > SZ_64K) {
++		offset -= SZ_64K;
++		if (smmu->page1)
++			base = smmu->page1;
++	}
++	return base + offset;
+ }
+ 
+ static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
+@@ -4021,6 +4028,28 @@ err_reset_pci_ops: __maybe_unused;
+ 	return err;
+ }
+ 
++static void __iomem *arm_smmu_ioremap(struct device *dev,
++				      resource_size_t start,
++				      resource_size_t size)
++{
++	void __iomem *dest_ptr;
++	struct resource *res;
++
++	res = devm_request_mem_region(dev, start, size, dev_name(dev));
++	if (!res) {
++		dev_err(dev, "can't request SMMU region %pa\n", &start);
++		return IOMEM_ERR_PTR(-EINVAL);
++	}
++
++	dest_ptr = devm_ioremap(dev, start, size);
++	if (!dest_ptr) {
++		dev_err(dev, "ioremap failed for SMMU region %pR\n", res);
++		devm_release_mem_region(dev, start, size);
++		dest_ptr = IOMEM_ERR_PTR(-ENOMEM);
++	}
++	return dest_ptr;
++}
++
+ static int arm_smmu_device_probe(struct platform_device *pdev)
+ {
+ 	int irq, ret;
+@@ -4056,10 +4085,21 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	}
+ 	ioaddr = res->start;
+ 
+-	smmu->base = devm_ioremap_resource(dev, res);
++	/*
++	 * Only map what we need, because the IMPLEMENTATION DEFINED registers
++	 * may be used for the PMCGs, which are reserved by the PMU driver.
++	 */
++	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_PAGE0_REG_SZ);
+ 	if (IS_ERR(smmu->base))
+ 		return PTR_ERR(smmu->base);
+ 
++	if (arm_smmu_resource_size(smmu) > SZ_64K) {
++		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
++					       ARM_SMMU_PAGE1_REG_SZ);
++		if (IS_ERR(smmu->page1))
++			return PTR_ERR(smmu->page1);
++	}
++
+ 	/* Interrupt lines */
+ 
+ 	irq = platform_get_irq_byname_optional(pdev, "combined");
+-- 
+2.26.2
 
-Mathieu
-
-> +				CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
-> +				"arm/coresight_cti:starting",
-> +				cti_starting_cpu, cti_dying_cpu);
-> +
-> +			cpus_read_unlock();
-> +			if (ret)
-> +				goto err_out;
-> +		}
-> +	}
-> +
->  	/* create dynamic attributes for connections */
->  	ret = cti_create_cons_sysfs(dev, drvdata);
->  	if (ret) {
-> @@ -768,6 +858,7 @@ static int cti_probe(struct amba_device *adev, const struct amba_id *id)
->  	return 0;
->  
->  err_out:
-> +	cti_pm_release(drvdata);
->  	return ret;
->  }
->  
-> diff --git a/include/linux/cpuhotplug.h b/include/linux/cpuhotplug.h
-> index 77d70b633531..6dc7332307ca 100644
-> --- a/include/linux/cpuhotplug.h
-> +++ b/include/linux/cpuhotplug.h
-> @@ -142,6 +142,7 @@ enum cpuhp_state {
->  	CPUHP_AP_ARM_XEN_STARTING,
->  	CPUHP_AP_ARM_KVMPV_STARTING,
->  	CPUHP_AP_ARM_CORESIGHT_STARTING,
-> +	CPUHP_AP_ARM_CORESIGHT_CTI_STARTING,
->  	CPUHP_AP_ARM64_ISNDEP_STARTING,
->  	CPUHP_AP_SMPCFD_DYING,
->  	CPUHP_AP_X86_TBOOT_DYING,
-> -- 
-> 2.17.1
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
