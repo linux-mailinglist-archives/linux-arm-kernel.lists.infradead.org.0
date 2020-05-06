@@ -2,74 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 874381C7921
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 20:15:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 218F61C7945
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 20:21:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q9nzGEoZLcrKHAVG8R0CMJk2yrj9PoSF+INtZM3zFtc=; b=VFze7lCmdp6QEq
-	xClje2C3p9a6pqjok7ek9oA3vV0H92nUHKAMl0uKzjX5FzlYkqyqt+ptPGLxOHVmj0GDF9mgtSMlS
-	7w7+kDxle3P9XczLrOgpEkyvE2w7xKjTCP5yQG+ihAzZhl/wFosgBYZd++DqRHVUyRKkpoEdBRmx0
-	6TRHMNQgYBobufixm7RpuAxgFdC4fzXhyABkyoeAPe8Hs8XfEq/epFv/aG2WZ4jeQI8W/v25jQywd
-	b88PI3ubKZ7xDLtP57CAae25zQOi2trWz7N8zct+sGXonv+2j70sv1vYKvbSX3RyM2nt1tArd4f5b
-	I9KNsYP0DxtT0uzRlOFQ==;
+	List-Owner; bh=nzij2NveqTE5nZwnBowFuS+XrzOW6DPpvlKDjEp7STc=; b=AkhO4EopG4tpdG
+	KoWdR0tPT+RCd5H1bUNbdg6Njhuu/im4z+l9oFJR8DEhO7Q2jMYCBcZsZpjT/iHPFtpvGDdisRmXx
+	P2HsBctVDB/F4TQG9qX7uLbsZIbqKN8v6kTwvk/Sg+YgaVbsXdGhwVNcZvbCb8SXV0bcOAWQ86LTI
+	u53jmpMYWqhbUAAJuilhyiAC1ONyROzJ4tksjHq8yCmebbKP8MrQ7pN5VTCrwAGgWwZcqOU3FShyS
+	SEQDrMigiIBPbCKmp4K+uZkwilzvnwT9suvyoDkKBN7bYnAB97P/pv4XCWYxze+r51+w8BLA9bOzi
+	3rzmRepYYE3inhIZcCJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWOZz-0005i6-15; Wed, 06 May 2020 18:15:35 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jWOfb-0001mv-Qn; Wed, 06 May 2020 18:21:23 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWOZ1-0002RK-Ne
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 18:14:37 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 046IEWbf113157;
- Wed, 6 May 2020 13:14:32 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588788872;
- bh=BqMkVbEYuFaecKA7rKJabagbooFKYyBAcXaS1sUncZU=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=iohR2VXfroinko+5Qu1QQtZEqSvOcWGk8rQcO8/4/M6OuiHfmz7CEuwKTQK1+r9P9
- JvOCrXcIJxzXrQA6wEQ3Kiq+vWeLcbVOBKWNuqsrf2EPF27pEAnXvk/5BoyBeFPh5Z
- xuccM5U/YgxGM52vp7rektyYT8yjiN+9R2nOdF0M=
-Received: from DFLE104.ent.ti.com (dfle104.ent.ti.com [10.64.6.25])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 046IEWwY094194
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 6 May 2020 13:14:32 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 6 May
- 2020 13:14:31 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 6 May 2020 13:14:31 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 046IEUhO049102;
- Wed, 6 May 2020 13:14:31 -0500
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-To: "David S. Miller" <davem@davemloft.net>, Rob Herring <robh+dt@kernel.org>, 
- <devicetree@vger.kernel.org>, Tero Kristo <t-kristo@ti.com>
-Subject: [PATCH net-next 3/3] arm64: dts: ti: k3-am65/j721e-mcu: update cpts
- node
-Date: Wed, 6 May 2020 21:14:01 +0300
-Message-ID: <20200506181401.28699-4-grygorii.strashko@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200506181401.28699-1-grygorii.strashko@ti.com>
-References: <20200506181401.28699-1-grygorii.strashko@ti.com>
+ id 1jWOfR-0001lO-0Z
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 18:21:15 +0000
+Received: by mail-ot1-x342.google.com with SMTP id g19so2170138otk.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 May 2020 11:21:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=D2taJJRTg2UNCEqvPUHeisc7wYhhWEOMV6TUWaPz7kg=;
+ b=JaXZicmLPCbQ1s4wEPLd+sV+a4q0wnzPoifqdGpBSL8D7Z8GrydmvQGqC8UT22nL2I
+ WZa/znMpgXW+q41TZVo9zK6nCks5GJUhUduUAyuXBbeNVH+4lSu2c8TsdwQTipW46XE8
+ 2YvlAWllyGrBAxfyw+wCC3p4SEMWY6eYou+Co=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=D2taJJRTg2UNCEqvPUHeisc7wYhhWEOMV6TUWaPz7kg=;
+ b=TNhmr1aAWy5RucMqzf4iacL8/Qm7/S877BHBWxYJ/pBF9G8NXiB5t/QvUprSW/jX1i
+ tQYbiO/+dyyJ4F9cpXGht1Tu9zaj+WQRju8j4Eja6kGeZgbBl6c0Tia6rRnUgJHPuGod
+ /06Ns1AdayjtU//4WGVgDjiYseuRgbFzRxnCB/GnPnae1dwWVFEqq4jMBGMPnKEO9C+A
+ 8aXXnDQkkYb2Swd1uUWXtJKhq/iyQBzfGusT8BpgyQXnkwDlHbkcNv95zvYdOxRts0na
+ EcNGOyYTUrXHkjSDXVYci6FzlXYNPOcIEP8oY98yjlDP/i9MCDpggRyEcDoAtLn5XiX4
+ OA7g==
+X-Gm-Message-State: AGi0PuaWdYyNyA2bV0lxQPcHFFEi66ohiYvp665/MAS2R2KluupdokSX
+ TWO2yRgpNpxO2nQaLw7YAM+wPy1U2ARbeohpl6fcUA==
+X-Google-Smtp-Source: APiQypInw39ygS3P/++U3PAE3LlMt925jYmNYdu8cvU7nnL+hmn3yH1R3d09MJ5VoLDPJl2XHnEM/8wYsJ8wMTKfCVI=
+X-Received: by 2002:a9d:490d:: with SMTP id e13mr7509661otf.356.1588789271980; 
+ Wed, 06 May 2020 11:21:11 -0700 (PDT)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-6-brgl@bgdev.pl>
+ <CAKOOJTzcNr7mc9xusQm3nCzkq5P=ha-si3fizeEL2_KJUOC3-Q@mail.gmail.com>
+ <CAMRc=Md7gLMThfGF-7YLqW17MpMhU=UFbdTvfjbr9fFHTLir8g@mail.gmail.com>
+In-Reply-To: <CAMRc=Md7gLMThfGF-7YLqW17MpMhU=UFbdTvfjbr9fFHTLir8g@mail.gmail.com>
+From: Edwin Peer <edwin.peer@broadcom.com>
+Date: Wed, 6 May 2020 11:20:35 -0700
+Message-ID: <CAKOOJTxkcaq0bF34bcz3HZzqsNgfmJH=Hd+odNNMX5gDq4to=w@mail.gmail.com>
+Subject: Re: [PATCH 05/11] net: core: provide devm_register_netdev()
+To: Bartosz Golaszewski <brgl@bgdev.pl>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_111435_868890_654F6825 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200506_112113_781294_6144DC4E 
+X-CRM114-Status: UNSURE (   8.57  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,57 +92,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Grygorii Strashko <grygorii.strashko@ti.com>,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Fabien Parent <fparent@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update CPTS node following DT binding update:
- - add reg and compatible properties
- - fix node name
+On Tue, May 5, 2020 at 11:46 PM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
 
-Signed-off-by: Grygorii Strashko <grygorii.strashko@ti.com>
----
- arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi         | 4 +++-
- arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi | 4 +++-
- 2 files changed, 6 insertions(+), 2 deletions(-)
+> Re the last bit in priv_flags: is this really a problem though? It's
+> not like struct net_device must remain stable - e.g. we can make
+> priv_flags a bitmap.
 
-diff --git a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-index 0e773e0b3f89..ae5f813d0cac 100644
---- a/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-am65-mcu.dtsi
-@@ -248,7 +248,9 @@
- 			bus_freq = <1000000>;
- 		};
- 
--		cpts {
-+		cpts@3d000 {
-+			compatible = "ti,am65-cpts";
-+			reg = <0x0 0x3d000 0x0 0x400>;
- 			clocks = <&mcu_cpsw_cpts_mux>;
- 			clock-names = "cpts";
- 			interrupts-extended = <&gic500 GIC_SPI 570 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-index 37c355e5a833..dc31bd0434cb 100644
---- a/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-+++ b/arch/arm64/boot/dts/ti/k3-j721e-mcu-wakeup.dtsi
-@@ -339,7 +339,9 @@
- 			bus_freq = <1000000>;
- 		};
- 
--		cpts {
-+		cpts@3d000 {
-+			compatible = "ti,am65-cpts";
-+			reg = <0x0 0x3d000 0x0 0x400>;
- 			clocks = <&k3_clks 18 2>;
- 			clock-names = "cpts";
- 			interrupts-extended = <&gic500 GIC_SPI 858 IRQ_TYPE_LEVEL_HIGH>;
--- 
-2.17.1
+Fair enough.
 
+Regards,
+Edwin Peer
 
 _______________________________________________
 linux-arm-kernel mailing list
