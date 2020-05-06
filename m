@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 895501C6EA7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:43:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 428C11C6EAA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:44:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ynwiusu6+twST+eow5fQcuyPRogP1uMYdcS4cEhzLy4=; b=GllMu/iyZej+0I
-	1px71tk9+yhyDyYW4xImPSG+rDW4pBdMry6WML3QDWHdr4Msz+vWPm9kR/enI0eTynrv/RnM8k7++
-	KrpHEiRph1MJ3YU2YnZ4eWF47yph1sp+EL5oBOQyxpV1kjnNHLH9FjK85USeAVa5KUPiQAHy3xphT
-	PQGuOnUn9M0LN/s3RQh6s70JBkSJvNbZqMCbm9g/vthRiGOdrGJZo7GejCbKnNk/UTuxkNRdIoOXO
-	zknUL2QZGw025RU+hSg66wjY+BQbQoiqzY9THwbRXQpYtZnD3fZBsI0rMEfNeey94EW1/uCip2g8u
-	GVnUhyoq0rQ6RN4lIvNQ==;
+	List-Owner; bh=SKrwEj0p4msWCd+vAaOHEeekO7p41iclw15zG5Pszh0=; b=AonLEi5T3TClcL
+	7bef8OqI64FeiGqyx1q/aiA/YCzdYejUE7weAGreRh0bkJq5p34KLC+eMhojSFHSUf1F30wHbY75t
+	PxONTco4zlMFbZVSOELAwrVLYsMTdo67m7AMy0KkiuhJsr8pp3ETcFoT5eGfk0VYFV6gqQLaOHgqq
+	3ossws9QHnndZtfcg5Z5APBZNukyt+Pnoc1umrdRHhpyx0xQuABPWbyTEm6jbFuXOvk1pl/0cSGws
+	8ceW7BklTvKADiKDkXWsdN9wTloulVyP7geEW9fEfRx7pUNNTUJZlCm3TUDlq9ritmjoBBMSeKVnF
+	cLzJ1sP0SiD45QhRsDUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHWI-0002vL-KA; Wed, 06 May 2020 10:43:18 +0000
+	id 1jWHXl-0003NH-0c; Wed, 06 May 2020 10:44:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHW5-0002u1-02; Wed, 06 May 2020 10:43:06 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9094220663;
- Wed,  6 May 2020 10:43:04 +0000 (UTC)
+ id 1jWHXd-0003Lf-1i
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:44:42 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 87C1B206B8;
+ Wed,  6 May 2020 10:44:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588761784;
- bh=qjFxbQJhwnjLswkECG7XON/LpTe8nEe02+5NBDCvjtA=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=cSbK4h9sQzP5m7pYiJdwdOo8ET3iaMr1rZpcO1x03ZxG4zrp7HgG27gc5E7iKlYBV
- z2CtAHjpeUw4uiCUovjFTfPrPUqzcEN6baYqdqmiSR5ifUKXGAwuafruomAwTALY0U
- 9LXU2MHGZNFu4pBSupEbhF2T4zGWwTpkr0kniM8g=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jWHW2-009vEj-UY; Wed, 06 May 2020 11:43:03 +0100
-Date: Wed, 6 May 2020 11:43:01 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: linux-pci@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org, Kevin
- Hilman <khilman@baylibre.com>, Yue Wang <yue.wang@Amlogic.com>
-Subject: Re: [PATCH] PCI: amlogic: meson: Don't use FAST_LINK_MODE to set up
- link
-Message-ID: <20200506114301.7288c02d@why>
-In-Reply-To: <20200429164230.309922-1-maz@kernel.org>
-References: <20200429164230.309922-1-maz@kernel.org>
-Organization: Approximate
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ s=default; t=1588761880;
+ bh=R4oDh1JNBKwNmv8buFb+tjw5BVnKfUttIGjk1ipMKeY=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=r488l/qgml8kF5PEtBUWZlF3u+xseTrLaWZEhGQc2u4iaQcYTbk8KcSROyzpxTgm4
+ 4seZ/sIFO7g38xulvXWVZfVeqf3GCu/LnPrerY0p1+BwGu3b+qRO3FCw8qwLWcXmKd
+ 6oai+TmHRtaT+B+4N2m+KL0dnk+GZ3g31VefQX0Y=
+Date: Wed, 6 May 2020 11:44:36 +0100
+From: Will Deacon <will@kernel.org>
+To: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Subject: Re: [PATCH] arm64: atomics: Fix the issue on xchg when switch to
+ atomic instruction
+Message-ID: <20200506104435.GB8043@willie-the-truck>
+References: <1588669355-38741-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20200505091503.GC16980@willie-the-truck>
+ <a48b7408-adb4-08f2-129b-f71e1c79db5a@hisilicon.com>
+ <20200506075352.GE7021@willie-the-truck>
+ <90dde2e8-ea11-fa7b-1a44-4d357a61cd66@hisilicon.com>
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: linux-pci@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- bhelgaas@google.com, robh@kernel.org, lorenzo.pieralisi@arm.com,
- khilman@baylibre.com, yue.wang@Amlogic.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+Content-Disposition: inline
+In-Reply-To: <90dde2e8-ea11-fa7b-1a44-4d357a61cd66@hisilicon.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_034305_078565_5F4DB626 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20200506_034441_131785_D440672D 
+X-CRM114-Status: GOOD (  18.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -92,75 +81,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Cc: Yuqi Jin <jinyuqi@huawei.com>, Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Apr 2020 17:42:30 +0100
-Marc Zyngier <maz@kernel.org> wrote:
+On Wed, May 06, 2020 at 06:39:16PM +0800, Shaokun Zhang wrote:
+> Apologies for my noise, you are right and it's my mistake.
 
-> My vim3l board stubbornly refuses to play ball with a bog
-> standard PCIe switch (ASM1184e), spitting all kind of errors
-> ranging from link never coming up to crazy things like downstream
-> ports falling off the face of the planet.
-> 
-> Upon investigating how the PCIe RC is configured, I found the
-> following nugget: the Sysnopsys DWC PCIe Reference Manual, in the
-> section dedicated to the PLCR register, describes bit 7 (FAST_LINK_MODE)
-> as:
-> 
-> "Sets all internal timers to fast mode for simulation purposes."
-> 
-> I completely understand the need for setting this bit from a simulation
-> perspective, but what I have on my desk is actual silicon, which
-> expects timers to have a nominal value (and I expect this is the
-> case for most people).
-> 
-> Making sure the FAST_LINK_MODE bit is cleared when configuring the RC
-> solves this problem.
-> 
-> Fixes: 9c0ef6d34fdb ("PCI: amlogic: Add the Amlogic Meson PCIe controller driver")
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  drivers/pci/controller/dwc/pci-meson.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-> index 3715dceca1bf..ca59ba9e0ecd 100644
-> --- a/drivers/pci/controller/dwc/pci-meson.c
-> +++ b/drivers/pci/controller/dwc/pci-meson.c
-> @@ -289,11 +289,11 @@ static void meson_pcie_init_dw(struct meson_pcie *mp)
->  	meson_cfg_writel(mp, val, PCIE_CFG0);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val &= ~LINK_CAPABLE_MASK;
-> +	val &= ~(LINK_CAPABLE_MASK | FAST_LINK_MODE);
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val |= LINK_CAPABLE_X1 | FAST_LINK_MODE;
-> +	val |= LINK_CAPABLE_X1;
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_GEN2_CTRL_OFF);
+No need to apologise, but thanks for letting me know.
 
-Yue, Kevin: any comment on this?
+> On 2020/5/6 15:53, Will Deacon wrote:
+> > On Wed, May 06, 2020 at 03:00:39PM +0800, Shaokun Zhang wrote:
+> >> On 2020/5/5 17:15, Will Deacon wrote:
+> >>> On Tue, May 05, 2020 at 05:02:35PM +0800, Shaokun Zhang wrote:
+> >>>> From: Yuqi Jin <jinyuqi@huawei.com>
+> >>>>
+> >>>> Since commit addfc38672c7 ("arm64: atomics: avoid out-of-line ll/sc atomics"),
+> >>>> it has provided inline implementations of both LSE and ll/sc and used a static
+> >>>> key to select between them, which allows the compiler to generate better
+> >>>> atomics code.
+> >>>> However, xchg still uses the original method which would fail to switch to
+> >>>> the atomic instruction correctly, Let's fix this issue.
+> >>>
+> >>> Please can you elaborate on the failure mode? The current code looks alright
+> >>
+> >> When enable CONFIG_ARM64_LSE_ATOMICS, xchg is failed to switch to swp instruction
+> >> or dynamic replacement instructions are not seen.
+> >>
+> >> We do some tests on the copy of xchg_tail,:
+> >> u32 xchg_tail_my(struct qspinlock *lock, u32 tail)
+> >> {
+> >>         return (u32)xchg_relaxed(&lock->tail,
+> >>                                  tail >> _Q_TAIL_OFFSET) << _Q_TAIL_OFFSET;
+> >> }
+> >> and the asm code is as follows:
+> >>
+> >> ffff80001015b050 <xchg_tail_my>:
+> >> ffff80001015b050:       a9be7bfd        stp     x29, x30, [sp, #-32]!
+> >> ffff80001015b054:       910003fd        mov     x29, sp
+> >> ffff80001015b058:       a90153f3        stp     x19, x20, [sp, #16]
+> >> ffff80001015b05c:       2a0103f3        mov     w19, w1
+> >> ffff80001015b060:       aa0003f4        mov     x20, x0
+> >> ffff80001015b064:       aa1e03e0        mov     x0, x30
+> >> ffff80001015b068:       97fd07ee        bl      ffff80001009d020 <_mcount>
+> >> ffff80001015b06c:       53107e61        lsr     w1, w19, #16
+> >> ffff80001015b070:       91000a83        add     x3, x20, #0x2
+> >> ffff80001015b074:       f9800071        prfm    pstl1strm, [x3]
+> >> ffff80001015b078:       485f7c60        ldxrh   w0, [x3]
+> >> ffff80001015b07c:       48027c61        stxrh   w2, w1, [x3]
+> >> ffff80001015b080:       35ffffc2        cbnz    w2, ffff80001015b078 <xchg_tail_my+0x28>
+> >> ffff80001015b084:       53103c00        lsl     w0, w0, #16
+> >> ffff80001015b088:       a94153f3        ldp     x19, x20, [sp, #16]
+> >> ffff80001015b08c:       a8c27bfd        ldp     x29, x30, [sp], #32
+> >> ffff80001015b090:       d65f03c0        ret
+> > 
+> > This should get patched at runtime, but you're saying that's not happening?
+> > 
+> 
+> My mistake, I didn't check the runtime carefully.
 
-I found that the issue is reproducible even without a PCIe switch,
-depending on the single device I plug in this machine (an Intel SSD
-works fine, while a Marvell Ethernet adapter never shows up) as the
-LTSSM times out much earlier than it really should (HW timers running
-too quickly). Applying this patch makes every single device I have
-lying around work fine.
+Good to hear there's not a bug, but if you see a performance benefit from
+using the static-key for xchg() then I'd obviously be open to changing it
+over as well.
 
 Thanks,
 
-	M.
--- 
-Jazz is not dead. It just smells funny...
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
