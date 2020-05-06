@@ -2,67 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D96D31C73B4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:14:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 139EA1C73E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:15:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G0A7wFPH1b+ujjZQhCQI7mYuYhn9VfgW+KlGAlHvKkY=; b=Vh9vjrACc5BMQ6
-	tEQOAa09HLoIvuzqZXF+ph7yCrYDxw11zuWM6aA5sfrXEz1gMpuo9RsRma0yL1EDg4NmIsGiNQhUq
-	jXImgYHqgQnbrBOJDhl2hTc6j39UxYtrOOx+8kw3NWVNrQVEPm++KcsmmQSlJtb9xPepaBnLDU1XY
-	9OkSdedutp19RQDYcFdBLNfDO6abYrnrYZ4aal5s25+OwjPNyn06lEDpOA4we4WeRUu6sJx7O4Ixu
-	OVxO4sbESQ8estzc9XZXEoI7kGG0nVBbWP4z+Hq1BKhouz7XwTrZE+zd+r2oqMgbcJfIgcakmdBfI
-	vu6u/nnBBBr0dXQnAPug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ridc3R9zMmM666iEFonRjy78B7I3EF8nQ9Oy7eZIWxE=; b=okCQYzhDFizQQD
+	PUS15a4larmhR4WObDxu89xq+WDwt77kJFTVPgdTT28u8c12Q0m7Rf8Vpx4pQvK/HDktGTYXutjxO
+	N67IcWBkf6DaAUG0WBuZXI8rFvhQu7OYmnw/4MhJLHb3MCgJJ2Z4RsFJadUQ6It6B1MD3M/mIVgU0
+	tgm4qQQN3lLSoz0a1ttiHcuwzjNNP8c/swPRmjG4Nff/2Az315S2U/fxmfyq6TqYyxPmfEBLgXUCR
+	yy9YanF9NQQx1Ik8KX4D0WNrpqukRBLaXL/5Mnb2UHXU59jil7ENSYUUtZp7W40DbciY3DAPOkqPO
+	d/WAVZ/sg6Sa3C+VidGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWLkS-0008Pn-9Y; Wed, 06 May 2020 15:14:12 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1jWLlp-0000Y0-Th; Wed, 06 May 2020 15:15:37 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWLkH-0008Ox-Tt; Wed, 06 May 2020 15:14:04 +0000
-IronPort-SDR: Iy9sp4Y9nAVYkk5HZXseUg2g45LC0yQUdad4GstNHWTsci+pbJIIiuMJ4miSt0nShIuPJsXoyA
- PM3lRh74eBaQ==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga005.jf.intel.com ([10.7.209.41])
- by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 06 May 2020 08:13:59 -0700
-IronPort-SDR: YcZnBrAZCGAaVG8GveiQwm6RVEg2niuAee4NTzSWqJd5q7HpWHremCEUpG4+dOsUc1b8mDxwWf
- ltpYEgtCPVbg==
-X-IronPort-AV: E=Sophos;i="5.73,359,1583222400"; d="scan'208";a="434920109"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by orsmga005-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 06 May 2020 08:13:55 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id F20DA2074F; Wed,  6 May 2020 18:13:52 +0300 (EEST)
-Date: Wed, 6 May 2020 18:13:52 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V5, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-Message-ID: <20200506151352.GZ9190@paasikivi.fi.intel.com>
-References: <20200502161727.30463-1-dongchun.zhu@mediatek.com>
- <20200502161727.30463-3-dongchun.zhu@mediatek.com>
+ id 1jWLl1-0000Kk-I2
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:14:49 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 046FEZiO005090;
+ Wed, 6 May 2020 10:14:35 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1588778075;
+ bh=IdCq3HhGfnXfKkkCRXngzOs6oMP/9HZj8dRoQcBYPD4=;
+ h=From:To:CC:Subject:Date;
+ b=UpM8RhwjCOiyYW/f+2iUu+a9AQ0iY0A/4tMZ5v1PsuBxtSP9O+L77yuzPriBqmGSY
+ 5QyLVMMh31ySXmxbUgstorR1nfMwZa4HvSw5B8RYdq4vzLzFzo5FdNZshYhWuxbuI7
+ pBhJji5t7BE6V4AXXrKM+HldYu2yaSlbAAElFvVk=
+Received: from DLEE105.ent.ti.com (dlee105.ent.ti.com [157.170.170.35])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 046FEYnI099464
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 6 May 2020 10:14:34 -0500
+Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 6 May
+ 2020 10:14:34 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 6 May 2020 10:14:34 -0500
+Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 046FEUg6119457;
+ Wed, 6 May 2020 10:14:31 -0500
+From: Kishon Vijay Abraham I <kishon@ti.com>
+To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Tom Joseph <tjoseph@cadence.com>
+Subject: [PATCH v4 00/14] Add PCIe support to TI's J721E SoC
+Date: Wed, 6 May 2020 20:44:15 +0530
+Message-ID: <20200506151429.12255-1-kishon@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200502161727.30463-3-dongchun.zhu@mediatek.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_081402_056495_9FA74587 
-X-CRM114-Status: GOOD (  32.08  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200506_081447_721503_E7751CF5 
+X-CRM114-Status: GOOD (  17.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.24 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,546 +90,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, drinkcat@chromium.org,
- andriy.shevchenko@linux.intel.com, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, linus.walleij@linaro.org,
- shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
- sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
- louis.kuo@mediatek.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
- mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, kishon@ti.com, linux-pci@vger.kernel.org,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun,
+TI's J721E SoC uses Cadence PCIe core to implement both RC mode
+and EP mode.
 
-On Sun, May 03, 2020 at 12:17:27AM +0800, Dongchun Zhu wrote:
-> Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
-> control to set the desired focus via IIC serial interface.
-> 
-> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> ---
->  MAINTAINERS                |   1 +
->  drivers/media/i2c/Kconfig  |  11 ++
->  drivers/media/i2c/Makefile |   1 +
->  drivers/media/i2c/dw9768.c | 440 +++++++++++++++++++++++++++++++++++++++++++++
->  4 files changed, 453 insertions(+)
->  create mode 100644 drivers/media/i2c/dw9768.c
-> 
-> diff --git a/MAINTAINERS b/MAINTAINERS
-> index 8d72c41..c92dc99 100644
-> --- a/MAINTAINERS
-> +++ b/MAINTAINERS
-> @@ -5157,6 +5157,7 @@ L:	linux-media@vger.kernel.org
->  S:	Maintained
->  T:	git git://linuxtv.org/media_tree.git
->  F:	Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> +F:	drivers/media/i2c/dw9768.c
->  
->  DONGWOON DW9807 LENS VOICE COIL DRIVER
->  M:	Sakari Ailus <sakari.ailus@linux.intel.com>
-> diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-> index 125d596..6a3f9da 100644
-> --- a/drivers/media/i2c/Kconfig
-> +++ b/drivers/media/i2c/Kconfig
-> @@ -1040,6 +1040,17 @@ config VIDEO_DW9714
->  	  capability. This is designed for linear control of
->  	  voice coil motors, controlled via I2C serial interface.
->  
-> +config VIDEO_DW9768
-> +	tristate "DW9768 lens voice coil support"
-> +	depends on I2C && VIDEO_V4L2 && MEDIA_CONTROLLER
-> +	depends on VIDEO_V4L2_SUBDEV_API
+The high level features are:
+  *) Supports Legacy, MSI and MSI-X interrupt
+  *) Supports upto GEN4 speed mode
+  *) Supports SR-IOV
+  *) Supports multiple physical function
+  *) Ability to route all transactions via SMMU
 
-Please check how this works in the media tree master branch now --- it's
-largely select based.
+This patch series
+  *) Add support in Cadence PCIe core to be used for TI's J721E SoC
+  *) Add a driver for J721E PCIe wrapper
 
-In general the patch seems fine to me, but please see the other comments
-below, too.
+v1 of the series can be found @ [1]
+v2 of the series can be found @ [2]
+v3 of the series can be found @ [5]
 
-> +	depends on PM
-> +	help
-> +	  This is a driver for the DW9768 camera lens voice coil.
-> +	  DW9768 is a 10 bit DAC with 100mA output current sink
-> +	  capability. This is designed for linear control of
-> +	  voice coil motors, controlled via I2C serial interface.
-> +
->  config VIDEO_DW9807_VCM
->  	tristate "DW9807 lens voice coil support"
->  	depends on I2C && VIDEO_V4L2 && MEDIA_CONTROLLER
-> diff --git a/drivers/media/i2c/Makefile b/drivers/media/i2c/Makefile
-> index 77bf7d0..4057476 100644
-> --- a/drivers/media/i2c/Makefile
-> +++ b/drivers/media/i2c/Makefile
-> @@ -24,6 +24,7 @@ obj-$(CONFIG_VIDEO_SAA6752HS) += saa6752hs.o
->  obj-$(CONFIG_VIDEO_AD5820)  += ad5820.o
->  obj-$(CONFIG_VIDEO_AK7375)  += ak7375.o
->  obj-$(CONFIG_VIDEO_DW9714)  += dw9714.o
-> +obj-$(CONFIG_VIDEO_DW9768)  += dw9768.o
->  obj-$(CONFIG_VIDEO_DW9807_VCM)  += dw9807-vcm.o
->  obj-$(CONFIG_VIDEO_ADV7170) += adv7170.o
->  obj-$(CONFIG_VIDEO_ADV7175) += adv7175.o
-> diff --git a/drivers/media/i2c/dw9768.c b/drivers/media/i2c/dw9768.c
-> new file mode 100644
-> index 0000000..dd68534
-> --- /dev/null
-> +++ b/drivers/media/i2c/dw9768.c
-> @@ -0,0 +1,440 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +// Copyright (c) 2020 MediaTek Inc.
-> +
-> +#include <linux/delay.h>
-> +#include <linux/i2c.h>
-> +#include <linux/module.h>
-> +#include <linux/pm_runtime.h>
-> +#include <linux/regulator/consumer.h>
-> +#include <media/v4l2-async.h>
-> +#include <media/v4l2-ctrls.h>
-> +#include <media/v4l2-device.h>
-> +#include <media/v4l2-subdev.h>
-> +
-> +#define DW9768_NAME				"dw9768"
-> +#define DW9768_MAX_FOCUS_POS			(1024 - 1)
-> +/*
-> + * This sets the minimum granularity for the focus positions.
-> + * A value of 1 gives maximum accuracy for a desired focus position
-> + */
-> +#define DW9768_FOCUS_STEPS			1
-> +
-> +/*
-> + * Ring control and Power control register
-> + * Bit[1] RING_EN
-> + * 0: Direct mode
-> + * 1: AAC mode (ringing control mode)
-> + * Bit[0] PD
-> + * 0: Normal operation mode
-> + * 1: Power down mode
-> + * DW9768 requires waiting time of Topr after PD reset takes place.
-> + */
-> +#define DW9768_RING_PD_CONTROL_REG		0x02
-> +#define DW9768_PD_MODE_OFF			0x00
-> +#define DW9768_PD_MODE_EN			BIT(0)
-> +#define DW9768_AAC_MODE_EN			BIT(1)
-> +
-> +/*
-> + * DW9768 separates two registers to control the VCM position.
-> + * One for MSB value, another is LSB value.
-> + * DAC_MSB: D[9:8] (ADD: 0x03)
-> + * DAC_LSB: D[7:0] (ADD: 0x04)
-> + * D[9:0] DAC data input: positive output current = D[9:0] / 1023 * 100[mA]
-> + */
-> +#define DW9768_MSB_ADDR				0x03
-> +#define DW9768_LSB_ADDR				0x04
-> +#define DW9768_STATUS_ADDR			0x05
-> +
-> +/*
-> + * AAC mode control & prescale register
-> + * Bit[7:5] Namely AC[2:0], decide the VCM mode and operation time.
-> + * 000 Direct(default)
-> + * 001 AAC2 0.48xTvib
-> + * 010 AAC3 0.70xTvib
-> + * 011 AAC4 0.75xTvib
-> + * 100 Reserved
-> + * 101 AAC8 1.13xTvib
-> + * 110 Reserved
-> + * 111 Reserved
-> + * Bit[2:0] Namely PRESC[2:0], set the internal clock dividing rate as follow.
-> + * 000 2
-> + * 001 1(default)
-> + * 010 1/2
-> + * 011 1/4
-> + * 100 8
-> + * 101 4
-> + * 110 Reserved
-> + * 111 Reserved
-> + */
-> +#define DW9768_AAC_PRESC_REG			0x06
-> +#define DW9768_AAC3_SELECT_DIVIDING_RATE_1	0x41
+Changes from v3:
+1) Changed the order of files in MAINTAINTERS file to fix Joe's comments
+2) Fixed indentation and added Reviewed-by: Rob Herring <robh@kernel.org>
+3) Cleaned up computing msix_tbl
+4) Fixed RobH's comment on J721E driver
 
-I guess we can start with these values. But I can't think of another option
-than putting them into DT if there are differences between what hardware
-platforms require.
+Changes from v2:
+1) Converting Cadence binding to YAML schema was done as a 
+   separate series [3] & [4]. [3] is merged and [4] is
+   pending.
+2) Included MSI-X support in this series
+3) Added link down interrupt handling (only error message)
+4) Rebased to latest 5.7-rc1
+5) Adapted TI J721E binding to [3] & [4] 
 
-> +
-> +/*
-> + * VCM period of vibration register
-> + * Bit[5:0] Defined as VCM rising periodic time (Tvib) together with PRESC[2:0]
-> + * Tvib = (6.3ms + AACT[5:0] * 0.1ms) * Dividing Rate
-> + * Dividing Rate is the internal clock dividing rate that is defined at
-> + * PRESCALE register (ADD: 0x06)
-> + */
-> +#define DW9768_AAC_TIME_REG			0x07
-> +#define DW9768_AACT_CNT				0x39
-> +
-> +/*
-> + * DW9768 requires waiting time (delay time) of t_OPR after power-up,
-> + * or in the case of PD reset taking place.
-> + */
-> +#define DW9768_T_OPR_US				1000
-> +
-> +/*
-> + * This acts as the minimum granularity of lens movement.
-> + * Keep this value power of 2, so the control steps can be
-> + * uniformly adjusted for gradual lens movement, with desired
-> + * number of control steps.
-> + */
-> +#define DW9768_MOVE_STEPS			16
-> +
-> +/*
-> + * DW9768_AAC_PRESC_REG & DW9768_AAC_TIME_REG determine VCM operation time.
-> + * If DW9768_AAC_PRESC_REG is 0x41, and DW9768_AAC_TIME_REG is 0x39, VCM mode
-> + * would be AAC3, Operation Time would be 0.70xTvib, that is 8.40ms.
-> + */
-> +#define DW9768_MOVE_DELAY_US			8400
-> +#define DW9768_STABLE_TIME_US			20000
-> +
-> +static const char * const dw9768_supply_names[] = {
-> +	"vin",	/* I2C I/O interface power */
-> +	"vdd",	/* VCM power */
-> +};
-> +
-> +/* dw9768 device structure */
-> +struct dw9768 {
-> +	struct regulator_bulk_data supplies[ARRAY_SIZE(dw9768_supply_names)];
-> +	struct v4l2_ctrl_handler ctrls;
-> +	struct v4l2_ctrl *focus;
-> +	struct v4l2_subdev sd;
-> +};
-> +
-> +static inline struct dw9768 *to_dw9768(struct v4l2_ctrl *ctrl)
-> +{
-> +	return container_of(ctrl->handler, struct dw9768, ctrls);
-> +}
+Changes from v1:
+1) Added DT schemas cdns-pcie-host.yaml, cdns-pcie-ep.yaml and
+   cdns-pcie.yaml for Cadence PCIe core and included it in
+   TI's PCIe DT schema.
+2) Added cpu_addr_fixup() for Cadence Platform driver.
+3) Fixed subject/description/renamed functions as commented by
+   Andrew Murray.
 
-This is used in a single place. I'd just use container_of() directly there.
+[1] -> http://lore.kernel.org/r/20191209092147.22901-1-kishon@ti.com
+[2] -> http://lore.kernel.org/r/20200106102058.19183-1-kishon@ti.com
+[3] -> http://lore.kernel.org/r/20200305103017.16706-1-kishon@ti.com
+[4] -> http://lore.kernel.org/r/20200417114322.31111-1-kishon@ti.com
+[5] -> http://lore.kernel.org/r/20200417125753.13021-1-kishon@ti.com
 
-> +
-> +static inline struct dw9768 *sd_to_dw9768(struct v4l2_subdev *subdev)
-> +{
-> +	return container_of(subdev, struct dw9768, sd);
-> +}
-> +
-> +struct regval_list {
-> +	u8 reg_num;
-> +	u8 value;
-> +};
-> +
-> +static const struct regval_list dw9768_init_regs[] = {
-> +	{DW9768_RING_PD_CONTROL_REG, DW9768_AAC_MODE_EN},
-> +	{DW9768_AAC_PRESC_REG, DW9768_AAC3_SELECT_DIVIDING_RATE_1},
-> +	{DW9768_AAC_TIME_REG, DW9768_AACT_CNT},
-> +};
-> +
-> +static int dw9768_write_array(struct dw9768 *dw9768,
-> +			      const struct regval_list *vals, size_t len)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> +	unsigned int i;
-> +	int ret;
-> +
-> +	for (i = 0; i < len; i++) {
-> +		ret = i2c_smbus_write_byte_data(client, vals[i].reg_num,
-> +						vals[i].value);
-> +		if (ret < 0)
-> +			return ret;
-> +	}
-> +	return 0;
-> +}
-> +
-> +static int dw9768_set_dac(struct dw9768 *dw9768, u16 val)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> +
-> +	/* Write VCM position to registers */
-> +	return i2c_smbus_write_word_swapped(client, DW9768_MSB_ADDR, val);
-> +}
-> +
-> +static int dw9768_init(struct dw9768 *dw9768)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> +	int ret, val;
-> +
-> +	/* Reset DW9768_RING_PD_CONTROL_REG to default status 0x00 */
-> +	ret = i2c_smbus_write_byte_data(client, DW9768_RING_PD_CONTROL_REG,
-> +					DW9768_PD_MODE_OFF);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/*
-> +	 * DW9769 requires waiting delay time of t_OPR
-> +	 * after PD reset takes place.
-> +	 */
-> +	usleep_range(DW9768_T_OPR_US, DW9768_T_OPR_US + 100);
-> +
-> +	ret = dw9768_write_array(dw9768, dw9768_init_regs,
-> +				 ARRAY_SIZE(dw9768_init_regs));
-> +	if (ret)
-> +		return ret;
-> +
-> +	for (val = dw9768->focus->val % DW9768_MOVE_STEPS;
-> +	     val <= dw9768->focus->val;
-> +	     val += DW9768_MOVE_STEPS) {
-> +		ret = dw9768_set_dac(dw9768, val);
-> +		if (ret) {
-> +			dev_err(&client->dev, "%s I2C failure: %d",
-> +				__func__, ret);
-> +			return ret;
-> +		}
-> +		usleep_range(DW9768_MOVE_DELAY_US,
-> +			     DW9768_MOVE_DELAY_US + 1000);
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int dw9768_release(struct dw9768 *dw9768)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&dw9768->sd);
-> +	int ret, val;
-> +
-> +	val = round_down(dw9768->focus->val, DW9768_MOVE_STEPS);
-> +	for ( ; val >= 0; val -= DW9768_MOVE_STEPS) {
-> +		ret = dw9768_set_dac(dw9768, val);
-> +		if (ret) {
-> +			dev_err(&client->dev, "I2C write fail: %d", ret);
-> +			return ret;
-> +		}
-> +		usleep_range(DW9768_MOVE_DELAY_US, DW9768_MOVE_DELAY_US + 1000);
-> +	}
-> +
-> +	/*
-> +	 * Wait for the motor to stabilize after the last movement
-> +	 * to prevent the motor from shaking.
-> +	 */
-> +	usleep_range(DW9768_STABLE_TIME_US - DW9768_MOVE_DELAY_US,
-> +		     DW9768_STABLE_TIME_US - DW9768_MOVE_DELAY_US + 1000);
-> +
-> +	ret = i2c_smbus_write_byte_data(client, DW9768_RING_PD_CONTROL_REG,
-> +					DW9768_PD_MODE_EN);
-> +	if (ret < 0)
-> +		return ret;
-> +
-> +	/*
-> +	 * DW9769 requires waiting delay time of t_OPR
-> +	 * after PD reset takes place.
-> +	 */
-> +	usleep_range(DW9768_T_OPR_US, DW9768_T_OPR_US + 100);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused dw9768_runtime_suspend(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
-> +
-> +	dw9768_release(dw9768);
-> +	regulator_bulk_disable(ARRAY_SIZE(dw9768_supply_names),
-> +			       dw9768->supplies);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused dw9768_runtime_resume(struct device *dev)
-> +{
-> +	struct i2c_client *client = to_i2c_client(dev);
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
-> +	int ret;
-> +
-> +	ret = regulator_bulk_enable(ARRAY_SIZE(dw9768_supply_names),
-> +				    dw9768->supplies);
-> +	if (ret < 0) {
-> +		dev_err(dev, "failed to enable regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	/*
-> +	 * The datasheet refers to t_OPR that needs to be waited before sending
-> +	 * I2C commands after power-up.
-> +	 */
-> +	usleep_range(DW9768_T_OPR_US, DW9768_T_OPR_US + 100);
-> +
-> +	ret = dw9768_init(dw9768);
-> +	if (ret < 0)
-> +		goto disable_regulator;
-> +
-> +	return 0;
-> +
-> +disable_regulator:
-> +	regulator_bulk_disable(ARRAY_SIZE(dw9768_supply_names),
-> +			       dw9768->supplies);
-> +
-> +	return ret;
-> +}
-> +
-> +static int dw9768_set_ctrl(struct v4l2_ctrl *ctrl)
-> +{
-> +	struct dw9768 *dw9768 = to_dw9768(ctrl);
-> +
-> +	if (ctrl->id == V4L2_CID_FOCUS_ABSOLUTE)
-> +		return dw9768_set_dac(dw9768, ctrl->val);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct v4l2_ctrl_ops dw9768_ctrl_ops = {
-> +	.s_ctrl = dw9768_set_ctrl,
-> +};
-> +
-> +static int dw9768_open(struct v4l2_subdev *sd, struct v4l2_subdev_fh *fh)
-> +{
-> +	int ret;
-> +
-> +	ret = pm_runtime_get_sync(sd->dev);
-> +	if (ret < 0) {
-> +		pm_runtime_put_noidle(sd->dev);
-> +		return ret;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int dw9768_close(struct v4l2_subdev *sd, struct v4l2_subdev_fh *fh)
-> +{
-> +	pm_runtime_put(sd->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct v4l2_subdev_internal_ops dw9768_int_ops = {
-> +	.open = dw9768_open,
-> +	.close = dw9768_close,
-> +};
-> +
-> +static const struct v4l2_subdev_ops dw9768_ops = { };
-> +
-> +static int dw9768_init_controls(struct dw9768 *dw9768)
-> +{
-> +	struct v4l2_ctrl_handler *hdl = &dw9768->ctrls;
-> +	const struct v4l2_ctrl_ops *ops = &dw9768_ctrl_ops;
-> +
-> +	v4l2_ctrl_handler_init(hdl, 1);
-> +
-> +	dw9768->focus = v4l2_ctrl_new_std(hdl, ops, V4L2_CID_FOCUS_ABSOLUTE, 0,
-> +					  DW9768_MAX_FOCUS_POS,
-> +					  DW9768_FOCUS_STEPS, 0);
-> +
-> +	if (hdl->error)
-> +		return hdl->error;
-> +
-> +	dw9768->sd.ctrl_handler = hdl;
-> +
-> +	return 0;
-> +}
-> +
-> +static int dw9768_probe(struct i2c_client *client)
-> +{
-> +	struct device *dev = &client->dev;
-> +	struct dw9768 *dw9768;
-> +	unsigned int i;
-> +	int ret;
-> +
-> +	dw9768 = devm_kzalloc(dev, sizeof(*dw9768), GFP_KERNEL);
-> +	if (!dw9768)
-> +		return -ENOMEM;
-> +
-> +	v4l2_i2c_subdev_init(&dw9768->sd, client, &dw9768_ops);
-> +
-> +	for (i = 0; i < ARRAY_SIZE(dw9768_supply_names); i++)
-> +		dw9768->supplies[i].supply = dw9768_supply_names[i];
-> +
-> +	ret = devm_regulator_bulk_get(dev, ARRAY_SIZE(dw9768_supply_names),
-> +				      dw9768->supplies);
-> +	if (ret) {
-> +		dev_err(dev, "failed to get regulators\n");
-> +		return ret;
-> +	}
-> +
-> +	ret = dw9768_init_controls(dw9768);
-> +	if (ret)
-> +		goto entity_cleanup;
-> +
-> +	dw9768->sd.flags |= V4L2_SUBDEV_FL_HAS_DEVNODE;
-> +	dw9768->sd.internal_ops = &dw9768_int_ops;
-> +
-> +	ret = media_entity_pads_init(&dw9768->sd.entity, 0, NULL);
-> +	if (ret < 0)
-> +		goto entity_cleanup;
-> +
-> +	dw9768->sd.entity.function = MEDIA_ENT_F_LENS;
-> +
-> +	pm_runtime_enable(dev);
-> +	if (!pm_runtime_enabled(dev)) {
-> +		ret = dw9768_runtime_resume(dev);
-> +		if (ret < 0) {
-> +			dev_err(dev, "failed to power on: %d\n", ret);
-> +			goto entity_cleanup;
-> +		}
-> +	}
-> +
-> +	ret = v4l2_async_register_subdev(&dw9768->sd);
-> +	if (ret < 0)
-> +		goto entity_cleanup;
-> +
-> +	return 0;
-> +
-> +entity_cleanup:
-> +	v4l2_ctrl_handler_free(&dw9768->ctrls);
-> +	media_entity_cleanup(&dw9768->sd.entity);
-> +	return ret;
-> +}
-> +
-> +static int dw9768_remove(struct i2c_client *client)
-> +{
-> +	struct v4l2_subdev *sd = i2c_get_clientdata(client);
-> +	struct dw9768 *dw9768 = sd_to_dw9768(sd);
-> +
-> +	pm_runtime_disable(&client->dev);
-> +	v4l2_async_unregister_subdev(&dw9768->sd);
-> +	v4l2_ctrl_handler_free(&dw9768->ctrls);
-> +	media_entity_cleanup(&dw9768->sd.entity);
-> +	if (!pm_runtime_status_suspended(&client->dev))
-> +		dw9768_runtime_suspend(&client->dev);
-> +	pm_runtime_set_suspended(&client->dev);
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id dw9768_of_table[] = {
-> +	{ .compatible = "dongwoon,dw9768" },
-> +	{}
-> +};
-> +MODULE_DEVICE_TABLE(of, dw9768_of_table);
-> +
-> +static const struct dev_pm_ops dw9768_pm_ops = {
-> +	SET_SYSTEM_SLEEP_PM_OPS(pm_runtime_force_suspend,
-> +				pm_runtime_force_resume)
-> +	SET_RUNTIME_PM_OPS(dw9768_runtime_suspend, dw9768_runtime_resume, NULL)
-> +};
-> +
-> +static struct i2c_driver dw9768_i2c_driver = {
-> +	.driver = {
-> +		.name = DW9768_NAME,
-> +		.pm = &dw9768_pm_ops,
-> +		.of_match_table = dw9768_of_table,
-> +	},
-> +	.probe_new  = dw9768_probe,
-> +	.remove = dw9768_remove,
-> +};
-> +module_i2c_driver(dw9768_i2c_driver);
-> +
-> +MODULE_AUTHOR("Dongchun Zhu <dongchun.zhu@mediatek.com>");
-> +MODULE_DESCRIPTION("DW9768 VCM driver");
-> +MODULE_LICENSE("GPL v2");
+Alan Douglas (1):
+  PCI: cadence: Add MSI-X support to Endpoint driver
+
+Kishon Vijay Abraham I (13):
+  PCI: cadence: Fix cdns_pcie_{host|ep}_setup() error path
+  linux/kernel.h: Add PTR_ALIGN_DOWN macro
+  PCI: cadence: Add support to use custom read and write accessors
+  PCI: cadence: Add support to start link and verify link status
+  PCI: cadence: Add read/write accessors to perform only 32-bit accesses
+  PCI: cadence: Allow pci_host_bridge to have custom pci_ops
+  PCI: cadence: Add new *ops* for CPU addr fixup
+  PCI: cadence: Fix updating Vendor ID and Subsystem Vendor ID register
+  dt-bindings: PCI: Add host mode dt-bindings for TI's J721E SoC
+  dt-bindings: PCI: Add EP mode dt-bindings for TI's J721E SoC
+  PCI: j721e: Add TI J721E PCIe driver
+  misc: pci_endpoint_test: Add J721E in pci_device_id table
+  MAINTAINERS: Add Kishon Vijay Abraham I for TI J721E SoC PCIe
+
+ .../bindings/pci/ti,j721e-pci-ep.yaml         |  89 ++++
+ .../bindings/pci/ti,j721e-pci-host.yaml       | 113 ++++
+ MAINTAINERS                                   |   4 +-
+ drivers/misc/pci_endpoint_test.c              |   9 +
+ drivers/pci/controller/cadence/Kconfig        |  23 +
+ drivers/pci/controller/cadence/Makefile       |   1 +
+ drivers/pci/controller/cadence/pci-j721e.c    | 492 ++++++++++++++++++
+ .../pci/controller/cadence/pcie-cadence-ep.c  | 125 ++++-
+ .../controller/cadence/pcie-cadence-host.c    |  59 ++-
+ .../controller/cadence/pcie-cadence-plat.c    |  13 +
+ drivers/pci/controller/cadence/pcie-cadence.c |  48 +-
+ drivers/pci/controller/cadence/pcie-cadence.h | 158 +++++-
+ include/linux/kernel.h                        |   1 +
+ 13 files changed, 1093 insertions(+), 42 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/ti,j721e-pci-ep.yaml
+ create mode 100644 Documentation/devicetree/bindings/pci/ti,j721e-pci-host.yaml
+ create mode 100644 drivers/pci/controller/cadence/pci-j721e.c
 
 -- 
-Kind regards,
+2.17.1
 
-Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
