@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAA9F1C6F5D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:31:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2268F1C6F84
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:42:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RjY49SfF7+VeTH42F4WO0wOKKv4RFqL+ARdQM6/A/tU=; b=KGzSPvV+Vb26tW
-	2ht0QYvfPZK6zcSdF8Yuln4/czGFT588XUk9IR0oUNBB6fjYQHmj4xmuWyCcczjiz/Bt62JnhBPE5
-	V1vXj6y1VfVOoP5++R7PLGFjLvFpNu7Z6GOKge9EuMMcfaOBteJJhbTt52QpD86W82lb2WeVHbtv2
-	z696JFP9IU1MqDfxGnjwpRLYuvEY3at5mI4GRdPEuNPVCYsgdc6CqwWMcHoJsrXjyLzXNUmu9mr0W
-	pX9XrkCPF5tfrOibHPI+6k1td7rl/mF7O9lDfjcCT5mWCjoXxRGPGx9gUwp1B+BBr8/Oir2/oRQ3G
-	4pqDn+KIN4Fa+n0i5FaQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KYUIkZ5m3zSBgTYA9SHqJtn3QREtwqd/Y30a57wiLdI=; b=i4US9l7cd5ZU7p
+	NO9+sNimCuCisTi69e9Jle9qc1Z5DwSPEKt78FXBzPDphxmnl1ldN/K0uOyT4sRBt+C8J4u0yTUXz
+	W/pji0z3WIisIk2az2yyeGCBB1sJD0SQoS3xyYNzoJKBDq1y03kwr5jCvp2neWRr9aTRjm8cmZSg2
+	ZTT6CD+MPPFTBZmuQv2Rc1f5OUDI4B5b0oJIGPBQ7jDlcGcA/EViS7LgVRgePR0ZjW92Pxd2CI5NV
+	m/eVfGdn39bQX0eN3cuGJiJDfe65Fq7qlMzeZPd3Uf/Dge9xAOC851NrVjHJ14ZkMfnRLDKn5fPCF
+	fVhqi1JQMrbCCEJ4WW0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWIGS-0005ni-Lc; Wed, 06 May 2020 11:31:00 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jWIRJ-0004cK-Ns; Wed, 06 May 2020 11:42:13 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWIGF-0005mQ-Lt
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:30:49 +0000
-Received: by mail-ot1-x341.google.com with SMTP id g14so1019061otg.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 04:30:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=i/mnRlrL4hTk5ZWZZBpQB+A2vYhFKnlQEEPlCkWsPZE=;
- b=ahVcX9y0875VtYAfqeLGE8/rEUacYR6cv0gOwEAGAK2TtEt3EZqIgzdUxj8+oqmEtg
- x9e9VKyqjWNyJMH3BbsQqcIEjgMedce3ldo/d88jKQw534PPBjFG3b1ecntQ/L+MSrcl
- ZSsO+EEouEiGHHSZtucCvwmF6m6HWcUfia96aiIq5kRGKvsJhToKu+3nBY4adWL1wQj9
- Zgu3L2lTon+z/3KU5UDDwaKQWxILJ9o47N4Yzpd9MGuGXRq/E0gFe5pgMh3uEVm/hpkD
- otLpeiuEMsLF4/Qq9XuYwSDdlDq6/9PsatWSJf8CRiWCWwW7t7ejcu+eVg5Gn6WRWeku
- k3Iw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=i/mnRlrL4hTk5ZWZZBpQB+A2vYhFKnlQEEPlCkWsPZE=;
- b=mUcB+Mt8Vx6duT1zDc8Z+36Adt1962uxVNwLmyBtfBl7XnNFiOxxpvGjanpSSEunau
- BEULX3CSYZxXFxGPNQaZvWapW/08jRRLaMJp9rEnnbhENImhM5z+ix5y33U9zavAhx1O
- y6huOOtg9evlBNJi9hTDyJf8TixHuLc9TY4UbGjMOMirqUdkyrKKjy20Z7rFz8j0pg0j
- FjmoKsqAEqz4pj+7By4R3kKEzM3h/ngvrYwVVS6CgoNuvfXlnIsq+z2eHM8oF3EWXMGX
- jmKY0IGXQFhT/2YSUCzBSc2x83b1cp8kEvo64cGBoO+GKXbwheTQMRqraW2rTz+plaKV
- 21Pw==
-X-Gm-Message-State: AGi0PuYlnfsH2g9ty96052c6VI5UppELvTn2gHjtKix6OhJY0mzSW6G3
- xn4jUe2KA9/SHHUFh9gXXy/Mny3PmwGOpudOpkSKyA==
-X-Google-Smtp-Source: APiQypI10Opg1+VL0qGtAj9swPO65KogncWTx9LO8yV8j8xz4TIqaR59fBT2pvHi/zHAbFL61M3nNSKybpyU+5oO17k=
-X-Received: by 2002:a9d:7645:: with SMTP id o5mr5754004otl.272.1588764646808; 
- Wed, 06 May 2020 04:30:46 -0700 (PDT)
+ id 1jWIR5-0004a8-5J
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:42:00 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1588765320; x=1620301320;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=gXKvzJw9g7LAOQgi97R5QafLHw2jX68aP/tQVwVwRa4=;
+ b=xP3lJaFLCR2xO/GpDZuYFQjaoPl5xunQ/9Qx6KzkOVnRHPNPGOz75ISy
+ yWhrZ1MP2auSA3NhrB3m5Y8g2uXQyrkiyhFTPX/qQEg94NIjRSDu9rVCx
+ k+DFRVyEJ3+oPTJF5qqSbSUQLehZeyNv1IAlh3MjKgqmCFt/ilXuUrv1N
+ q0TrA4F5uJ22jYLwaajx5l1C4isJPSFbE0Toi37tCzOV885ZrKw0jimb/
+ jc/RDUR6qFwNxbsahODyPH3ExbpJukndVgXA4brBMbce5HtLPt02K3+KZ
+ l0A5OcbanzL5WYNhZs3uuHdYt7v9wmaPpipWnMGq5gZ5KqAtCx+4x4b72 A==;
+IronPort-SDR: pV2N48h6LeiTsUHgpKHyNfJ/PapuF0UDYwEHle6+16FTUWVt5NCG1LTvntaKbTycJbxpt9FUIj
+ gSAg8fYnXWgPu7+QoAaZS9SFojxNpQG9HaAwAmFkdOwz7BevhML/RudCL0McHBueMd2r7JDCAw
+ GaSYiBPXJhdkJ2HLgSaoMS7v6ydcANGgICNe5XRAbw1+H1IfWGfVAU1usQERCIYN8pH9ewJ6vH
+ 4d9xA6jCV9Dn7PMgDD1b8fzW1FKfdFWNW9W8hYkUr+8UvFo5UFTDl+GznHrd6eR3ZBIEqyGua6
+ ShM=
+X-IronPort-AV: E=Sophos;i="5.73,358,1583218800"; d="scan'208";a="74979844"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 06 May 2020 04:41:52 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 6 May 2020 04:41:52 -0700
+Received: from localhost.localdomain (10.10.115.15) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 6 May 2020 04:41:47 -0700
+From: <nicolas.ferre@microchip.com>
+To: <linux-arm-kernel@lists.infradead.org>, <netdev@vger.kernel.org>, "Claudiu
+ Beznea" <claudiu.beznea@microchip.com>, <harini.katakam@xilinx.com>
+Subject: [PATCH v4 0/5] net: macb: Wake-on-Lan magic packet fixes and GEM
+ handling
+Date: Wed, 6 May 2020 13:37:36 +0200
+Message-ID: <cover.1588763703.git.nicolas.ferre@microchip.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-References: <20200505100129.104673-1-robert.foss@linaro.org>
- <20200505100129.104673-2-robert.foss@linaro.org>
- <20200505154913.GA17438@bogus>
-In-Reply-To: <20200505154913.GA17438@bogus>
-From: Robert Foss <robert.foss@linaro.org>
-Date: Wed, 6 May 2020 13:30:35 +0200
-Message-ID: <CAG3jFytNwG0tZJnf-qCGEzY_cXucMDYxmCn8z4QW+EHrab8m_A@mail.gmail.com>
-Subject: Re: [PATCH v10 1/3] media: dt-bindings: ov8856: Document YAML bindings
-To: Rob Herring <robh@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_043047_712465_403FE8FF 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_044159_207849_D0ED1AAC 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -92,84 +91,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
- Dongchun Zhu <dongchun.zhu@mediatek.com>,
- Marco Felsch <m.felsch@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
- linux-kernel <linux-kernel@vger.kernel.org>, Ben Kao <ben.kao@intel.com>,
- Sakari Ailus <sakari.ailus@iki.fi>, Maxime Ripard <maxime@cerno.tech>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Fabio Estevam <festevam@gmail.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- linux-media <linux-media@vger.kernel.org>
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, f.fainelli@gmail.com,
+ antoine.tenart@bootlin.com, linux-kernel@vger.kernel.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks Rob!
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
 
-On Tue, 5 May 2020 at 17:49, Rob Herring <robh@kernel.org> wrote:
->
-> On Tue,  5 May 2020 12:01:29 +0200, Robert Foss wrote:
-> > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> >
-> > This patch adds documentation of device tree in YAML schema for the
-> > OV8856 CMOS image sensor.
-> >
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > Signed-off-by: Robert Foss <robert.foss@linaro.org>
-> > Reviewed-by: Maxime Ripard <mripard@kernel.org>
-> > ---
-> >
-> > - Changes since v9:
-> >   * Remove remote-endpoint property
-> >   * Marco: Make port property required again
-> >   * Sakari: Remove Ben as a maintainer
-> >   * Sakari: Replace data-lanes with const items
-> >   * Sakari: Remove clock-lanes property
-> >   * Sakari & Rob Herring: Change type of link-frequency
-> >     work around dt-schema bug
-> >
-> > - Changes since v8:
-> >   * Maxime: Added r-b
-> >
-> > - Changes since v7:
-> >   * Marco: Make 'port' property optional
-> >   * Maxime & Sakari: Add 'link-frequencies' property to dt binding
-> >   * robher: Improve description for 'port' property
-> >
-> > - Changes since v6:
-> >   * Marco: remove qcom specifics from DT example
-> >
-> > - Changes since v5:
-> >   * Add assigned-clocks and assigned-clock-rates
-> >   * robher: dt-schema errors
-> >
-> > - Changes since v4:
-> >   * Fabio: Change reset-gpio to GPIO_ACTIVE_LOW, explain in description
-> >   * Add clock-lanes property to example
-> >   * robher: Fix syntax error in devicetree example
-> >
-> > - Changes since v3:
-> >   * robher: Fix syntax error
-> >   * robher: Removed maxItems
-> >   * Fixes yaml 'make dt-binding-check' errors
-> >
-> > - Changes since v2:
-> >
-> > - Changes since v1:
-> >   Fixes comments from Sakari, Tomasz
-> >   * Add clock-frequency and link-frequencies in DT
-> >
-> >  .../devicetree/bindings/media/i2c/ov8856.yaml | 142 ++++++++++++++++++
-> >  MAINTAINERS                                   |   1 +
-> >  2 files changed, 143 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ov8856.yaml
-> >
->
-> Reviewed-by: Rob Herring <robh@kernel.org>
+Hi,
+Here is a split series to fix WoL magic-packet on the current macb driver. Only
+fixes in this one based on current net/master.
+
+Best regards,
+  Nicolas
+
+Changes in v4:
+- Pure bug fix series for 'net'. GEM addition and MACB update removed: will be
+  sent later.
+
+Changes in v3:
+- Revert some of the v2 changes done in macb_resume(). Now the resume function
+  supports in-depth re-configuration of the controller in order to deal with
+  deeper sleep states. Basically as it was before changes introduced by this
+  series
+- Tested for non-regression with our deeper Power Management mode which cuts
+  power to the controller completely
+
+Changes in v2:
+- Add patch 4/7 ("net: macb: fix macb_suspend() by removing call to netif_carrier_off()")
+  needed for keeping phy state consistent
+- Add patch 5/7 ("net: macb: fix call to pm_runtime in the suspend/resume functions") that prevent
+  putting the macb in runtime pm suspend mode when WoL is used
+- Collect review tags on 3 first patches from Florian: Thanks!
+- Review of macb_resume() function
+- Addition of pm_wakeup_event() in both MACB and GEM WoL IRQ handlers
+
+
+Nicolas Ferre (5):
+  net: macb: fix wakeup test in runtime suspend/resume routines
+  net: macb: mark device wake capable when "magic-packet" property
+    present
+  net: macb: fix macb_get/set_wol() when moving to phylink
+  net: macb: fix macb_suspend() by removing call to netif_carrier_off()
+  net: macb: fix call to pm_runtime in the suspend/resume functions
+
+ drivers/net/ethernet/cadence/macb_main.c | 31 +++++++++++++-----------
+ 1 file changed, 17 insertions(+), 14 deletions(-)
+
+-- 
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
