@@ -2,36 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C6E61C6840
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:15:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D47961C685D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:19:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jPBd/g9pKZ3ANZsVv2y15fONyy3XVjM4INausdI1Skk=; b=aaJA2CBmLRN/Sx
-	SQxkRvb67JOig9MwoQ/2UAzov+CX0lh+8qfZSy8kCFt5m/8jg7EVIJkZheFbBOzIUXVsVRFzFlLeM
-	epqzqbsyjNV4RayoAPuwdZsgYpzicSJ74h+rJwXvi6caxRcJ79nASCRSb08O9zwTdCxUn6oDNY86n
-	ODp2X9DZcJwIDxVf0B/6+2KJYvtWAkyCOGx6Mw1rwQOO7q99Cvinb4IQtKI9wMmbtuq7WNv3TAXyl
-	k3bBXl2wiN9jcoGXo58lI0e6E8/kKcNIOOIVymq24NfvjGz5DxnM0kzTnaTM27GdONaz3+t+hFD/6
-	F546LqvcYAtduJHBzwvw==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PLgl/K4+kyNwXYu10OfPqxadv5Rk1hZCK0DHoNWAiWs=; b=ogIOFgnyY9pA0J
+	zz/9p6KxMItXRFQ2h4ziUmoCCS8FQKuR3xevkra/5ir65Hfd8O7TANy84rtE1gIATr5nrx5nD2BHk
+	lbPQ2wTXgZLp9B685fPPrXx6rX/qDSJXpVy/0v4VmAlc769xLp+BDhw5PCGhaf6lsj70tHuMuU3Qc
+	krcxXzgE95RthmVJXphEBeq4gtIXtKl+aGvF/rOT3ZmPrBBy9FxIgN8yFOA2CGa3Q8hZhkpVZI8r1
+	3MEJFSwWyRPEzaG0mr6x9tt6Hokidsz5Lt29DxO1ABJpNxCqA2wkbE50j5p8NPcD+1TrPbd3fmpsh
+	VOQwx26ndOPvOfAATCBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDKl-0006ZO-17; Wed, 06 May 2020 06:15:07 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jWDJq-00064d-Uc; Wed, 06 May 2020 06:14:10 +0000
-Date: Tue, 5 May 2020 23:14:10 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: ira.weiny@intel.com
-Subject: Re: [PATCH V2 10/11] arch/kmap: Define kmap_atomic_prot() for all
- arch's
-Message-ID: <20200506061410.GE5192@infradead.org>
-References: <20200504010912.982044-1-ira.weiny@intel.com>
- <20200504010912.982044-11-ira.weiny@intel.com>
+	id 1jWDOQ-0002V4-72; Wed, 06 May 2020 06:18:54 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWDOF-0002Q3-TL
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:18:45 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 03D1039169515BAFE5D3;
+ Wed,  6 May 2020 14:18:19 +0800 (CST)
+Received: from huawei.com (10.175.124.28) by DGGEMS401-HUB.china.huawei.com
+ (10.3.19.201) with Microsoft SMTP Server id 14.3.487.0; Wed, 6 May 2020
+ 14:18:13 +0800
+From: Jason Yan <yanaijie@huawei.com>
+To: <jirislaby@gmail.com>, <gregkh@linuxfoundation.org>,
+ <shawnguo@kernel.org>, <s.hauer@pengutronix.de>, <kernel@pengutronix.de>,
+ <festevam@gmail.com>, <linux-imx@nxp.com>, <yanaijie@huawei.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] tty: mxser: make mxser_change_speed() return void
+Date: Wed, 6 May 2020 14:17:35 +0800
+Message-ID: <20200506061735.19369-1-yanaijie@huawei.com>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200504010912.982044-11-ira.weiny@intel.com>
+X-Originating-IP: [10.175.124.28]
+X-CFilter-Loop: Reflected
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200505_231844_122189_F8478A0A 
+X-CRM114-Status: GOOD (  10.15  )
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [45.249.212.190 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -43,47 +67,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Huang Rui <ray.huang@amd.com>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 06:09:11PM -0700, ira.weiny@intel.com wrote:
-> From: Ira Weiny <ira.weiny@intel.com>
-> 
-> To support kmap_atomic_prot(), all architectures need to support
-> protections passed to their kmap_atomic_high() function.  Pass
-> protections into kmap_atomic_high() and change the name to
-> kmap_atomic_high_prot() to match.
-> 
-> Then define kmap_atomic_prot() as a core function which calls
-> kmap_atomic_high_prot() when needed.
-> 
-> Finally, redefine kmap_atomic() as a wrapper of kmap_atomic_prot() with
-> the default kmap_prot exported by the architectures.
-> 
-> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+No other functions use the return value of mxser_change_speed() and the
+return value is always 0 now. Make it return void. This fixes the
+following coccicheck warning:
 
-Looks good,
+drivers/tty/mxser.c:645:5-8: Unneeded variable: "ret". Return "0" on
+line 650
 
-Reviewed-by: Christoph Hellwig <hch@lst.de>
+Signed-off-by: Jason Yan <yanaijie@huawei.com>
+---
+ drivers/tty/mxser.c | 7 ++-----
+ 1 file changed, 2 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/tty/mxser.c b/drivers/tty/mxser.c
+index 9d00ff5ef961..3703987c4666 100644
+--- a/drivers/tty/mxser.c
++++ b/drivers/tty/mxser.c
+@@ -638,16 +638,15 @@ static int mxser_set_baud(struct tty_struct *tty, long newspd)
+  * This routine is called to set the UART divisor registers to match
+  * the specified baud rate for a serial port.
+  */
+-static int mxser_change_speed(struct tty_struct *tty)
++static void mxser_change_speed(struct tty_struct *tty)
+ {
+ 	struct mxser_port *info = tty->driver_data;
+ 	unsigned cflag, cval, fcr;
+-	int ret = 0;
+ 	unsigned char status;
+ 
+ 	cflag = tty->termios.c_cflag;
+ 	if (!info->ioaddr)
+-		return ret;
++		return;
+ 
+ 	if (mxser_set_baud_method[tty->index] == 0)
+ 		mxser_set_baud(tty, tty_get_baud_rate(tty));
+@@ -803,8 +802,6 @@ static int mxser_change_speed(struct tty_struct *tty)
+ 
+ 	outb(fcr, info->ioaddr + UART_FCR);	/* set fcr */
+ 	outb(cval, info->ioaddr + UART_LCR);
+-
+-	return ret;
+ }
+ 
+ static void mxser_check_modem_status(struct tty_struct *tty,
+-- 
+2.21.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
