@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89FC61C7AC2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:53:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9799D1C7AC3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:53:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0QMDhn1nhpo9e1hdmjNROo+jQVeypr4HaDlFjkKJeB4=; b=gLH7GW9mik6u1Y
-	PqUN2X0Ngxxf9pyrfwp28dJaVr8aD5bAqEcw5VRraRTuIJBLcgU6/BnBNMA6k5HE4RV7e9mLnJmPb
-	HFYxHuzy9mXDg/fXYCOdWdx3u5uLqf77f8WeYYCtkZe7TPF567DHqyFlHENi4CQpT4TORXcyubl+q
-	6iV92/7DxBFtwzoiYpD3lLOag5GKAeTYgJzz/rvKwvNyiz8bHGzhEo043eFTHhCcfHnaw2xjnCk42
-	zTJ66vrsRfYKMKx7p0wfzjXE3vMsfOEFmzPQ+q7ceicqZfgv+dsdOjTMxcqp3OtzX1/rdkYquZbRg
-	e5La9ZNuAgrEn9qyg+tg==;
+	List-Owner; bh=+DtTRirrmvgPrd5xVkVe+KDb5bir0CFhXj0ZfcQVwmY=; b=KyCGLZ9sqWF4rt
+	kHQojLbCQmdZt+DLkeLoq3fTO7QrzkLaoXz42hRb2hkIbNaPM8Qn5ySlCXdUaZC3h0DHRJFlcSd1R
+	EXbyAU2M+cvPl6l9HiGvIbGRWzTcM6yPOO8Ns8MmVzPKmsJXIdxlrAFyJyQ8Ic1booitWhDLkSgDO
+	gDqw+6+5yi+0NkaHkJzsBELzN4XsAW99z+G9rcsGBgFTkXJA6b2ovJjD84ys/qwRk0f0XzbGHPm24
+	080tCco/JvKsjW0VZIw2RGxroF6RecqWWEQvy7hOiVAjlRcJq8HH+7f8r3pChkA0SLgth4ZiIZeEu
+	c6ZyZPUTEup6pYd9MRSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ6T-0004xR-Kf; Wed, 06 May 2020 19:53:13 +0000
+	id 1jWQ6f-0005Tr-2Y; Wed, 06 May 2020 19:53:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5L-00042a-Du
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:04 +0000
+ id 1jWQ5P-00045e-Cg
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:08 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3A5CD20870;
- Wed,  6 May 2020 19:52:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 33F88207DD;
+ Wed,  6 May 2020 19:52:05 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794722;
- bh=wI2QVRF4k122W/w3jf/igVsU11bj4Z9TL2ZW2z6sPDw=;
+ s=default; t=1588794725;
+ bh=ZyomlCpuKdUoICLzokR0IbvZQjWsbt/STt1gGfVlAGw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=dkETKzraLh7plPJWsNxbBAGLo7EEeDBrJBIsc4ka92Zf9Ldb6DUPhaEoalbI1FcXY
- 3VgfQJKdMA+wSGCz/8dc9ZCCcGWyhyVvWutsa6SjJVwBi3BcARr1mV8iuagesz7471
- VPphBPAMDN8stFAUKdK9Wrbfht2paUnVMRUgbPcg=
+ b=UNVpkMKkMacihStPGlQbeLbLyn1pE02CQUBiyOVbI2aMjRNiTrPTy5YJq+V0Uuh5s
+ mxIfxDZK/FbTToxk2fgE6CCragrm5cbTCoNVKhqWBttAIRL1Ho3cs0NV/ynwXVQTIz
+ z2e1CvtIK1a9OZBormdzOz+0rOVd82FWFq7YDMjE=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 04/11] arm64: Set GP bit in kernel page tables to enable
- BTI for the kernel
-Date: Wed,  6 May 2020 20:51:31 +0100
-Message-Id: <20200506195138.22086-5-broonie@kernel.org>
+Subject: [PATCH v3 05/11] arm64: bpf: Annotate JITed code for BTI
+Date: Wed,  6 May 2020 20:51:32 +0100
+Message-Id: <20200506195138.22086-6-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125203_523441_D474727B 
-X-CRM114-Status: GOOD (  17.23  )
+X-CRM114-CacheID: sfid-20200506_125207_508723_EBA95D78 
+X-CRM114-Status: GOOD (  11.90  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,113 +85,75 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that the kernel is built with BTI annotations enable the feature by
-setting the GP bit in the stage 1 translation tables.  This is done
-based on the features supported by the boot CPU so that we do not need
-to rewrite the translation tables.
-
-In order to avoid potential issues on big.LITTLE systems when there are
-a mix of BTI and non-BTI capable CPUs in the system when we have enabled
-kernel mode BTI we change BTI to be a _STRICT_BOOT_CPU_FEATURE when we
-have kernel BTI.  This will prevent any CPUs that don't support BTI
-being started if the boot CPU supports BTI rather than simply not using
-BTI as we do when supporting BTI only in userspace.  The main concern is
-the possibility of BTYPE being preserved by a CPU that does not
-implement BTI when a thread is migrated to it resulting in an incorrect
-state which could generate an exception when the thread migrates back to
-a CPU that does support BTI.  If we encounter practical systems which
-mix BTI and non-BTI CPUs we will need to revisit this implementation.
-
-Since we currently do not generate landing pads in the BPF JIT we only
-map the base kernel text in this way.
+In order to extend the protection offered by BTI to all code executing in
+kernel mode we need to annotate JITed BPF code appropriately for BTI. To
+do this we need to add a landing pad to the start of each BPF function and
+also immediately after the function prologue if we are emitting a function
+which can be tail called. Jumps within BPF functions are all to immediate
+offsets and therefore do not require landing pads.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/pgtable-prot.h |  3 +++
- arch/arm64/kernel/cpufeature.c        |  4 ++++
- arch/arm64/mm/mmu.c                   | 24 ++++++++++++++++++++++++
- 3 files changed, 31 insertions(+)
+ arch/arm64/net/bpf_jit.h      |  8 ++++++++
+ arch/arm64/net/bpf_jit_comp.c | 12 ++++++++++++
+ 2 files changed, 20 insertions(+)
 
-diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
-index 1305e28225fc..310690332896 100644
---- a/arch/arm64/include/asm/pgtable-prot.h
-+++ b/arch/arm64/include/asm/pgtable-prot.h
-@@ -21,6 +21,7 @@
+diff --git a/arch/arm64/net/bpf_jit.h b/arch/arm64/net/bpf_jit.h
+index eb73f9f72c46..05b477709b5f 100644
+--- a/arch/arm64/net/bpf_jit.h
++++ b/arch/arm64/net/bpf_jit.h
+@@ -189,4 +189,12 @@
+ /* Rn & Rm; set condition flags */
+ #define A64_TST(sf, Rn, Rm) A64_ANDS(sf, A64_ZR, Rn, Rm)
  
- #ifndef __ASSEMBLY__
- 
-+#include <asm/cpufeature.h>
- #include <asm/pgtable-types.h>
- 
- extern bool arm64_use_ng_mappings;
-@@ -31,6 +32,8 @@ extern bool arm64_use_ng_mappings;
- #define PTE_MAYBE_NG		(arm64_use_ng_mappings ? PTE_NG : 0)
- #define PMD_MAYBE_NG		(arm64_use_ng_mappings ? PMD_SECT_NG : 0)
- 
-+#define PTE_MAYBE_GP		(system_supports_bti() ? PTE_GP : 0)
++/* HINTs */
++#define A64_HINT(x) aarch64_insn_gen_hint(x)
 +
- #define PROT_DEFAULT		(_PROT_DEFAULT | PTE_MAYBE_NG)
- #define PROT_SECT_DEFAULT	(_PROT_SECT_DEFAULT | PMD_MAYBE_NG)
++/* BTI */
++#define A64_BTI_C  A64_HINT(AARCH64_INSN_HINT_BTIC)
++#define A64_BTI_J  A64_HINT(AARCH64_INSN_HINT_BTIJ)
++#define A64_BTI_JC A64_HINT(AARCH64_INSN_HINT_BTIJC)
++
+ #endif /* _BPF_JIT_H */
+diff --git a/arch/arm64/net/bpf_jit_comp.c b/arch/arm64/net/bpf_jit_comp.c
+index cdc79de0c794..83fa475c6b42 100644
+--- a/arch/arm64/net/bpf_jit_comp.c
++++ b/arch/arm64/net/bpf_jit_comp.c
+@@ -171,7 +171,11 @@ static inline int epilogue_offset(const struct jit_ctx *ctx)
+ #define STACK_ALIGN(sz) (((sz) + 15) & ~15)
  
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 9793d3aa9d98..84fea674856f 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -1800,7 +1800,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 	{
- 		.desc = "Branch Target Identification",
- 		.capability = ARM64_BTI,
-+#ifdef CONFIG_ARM64_BTI_KERNEL
-+		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
+ /* Tail call offset to jump into */
++#if IS_ENABLED(CONFIG_ARM64_BTI_KERNEL)
++#define PROLOGUE_OFFSET 8
 +#else
- 		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
+ #define PROLOGUE_OFFSET 7
 +#endif
- 		.matches = has_cpuid_feature,
- 		.cpu_enable = bti_enable,
- 		.sys_reg = SYS_ID_AA64PFR1_EL1,
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index a374e4f51a62..c299b73dd5e4 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -609,6 +609,22 @@ static int __init map_entry_trampoline(void)
- core_initcall(map_entry_trampoline);
- #endif
  
-+/*
-+ * Open coded check for BTI, only for use to determine configuration
-+ * for early mappings for before the cpufeature code has run.
-+ */
-+static bool arm64_early_this_cpu_has_bti(void)
-+{
-+	u64 pfr1;
-+
-+	if (!IS_ENABLED(CONFIG_ARM64_BTI_KERNEL))
-+		return false;
-+
-+	pfr1 = read_sysreg_s(SYS_ID_AA64PFR1_EL1);
-+	return cpuid_feature_extract_unsigned_field(pfr1,
-+						    ID_AA64PFR1_BT_SHIFT);
-+}
-+
- /*
-  * Create fine-grained mappings for the kernel.
-  */
-@@ -624,6 +640,14 @@ static void __init map_kernel(pgd_t *pgdp)
+ static int build_prologue(struct jit_ctx *ctx, bool ebpf_from_cbpf)
+ {
+@@ -208,6 +212,10 @@ static int build_prologue(struct jit_ctx *ctx, bool ebpf_from_cbpf)
+ 	 *
  	 */
- 	pgprot_t text_prot = rodata_enabled ? PAGE_KERNEL_ROX : PAGE_KERNEL_EXEC;
  
-+	/*
-+	 * If we have a CPU that supports BTI and a kernel built for
-+	 * BTI then mark the kernel executable text as guarded pages
-+	 * now so we don't have to rewrite the page tables later.
-+	 */
-+	if (arm64_early_this_cpu_has_bti())
-+		text_prot = __pgprot_modify(text_prot, PTE_GP, PTE_GP);
++	/* BTI landing pad */
++	if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL))
++		emit(A64_BTI_C, ctx);
 +
- 	/*
- 	 * Only rodata will be remapped with different permissions later on,
- 	 * all other segments are allowed to use contiguous mappings.
+ 	/* Save FP and LR registers to stay align with ARM64 AAPCS */
+ 	emit(A64_PUSH(A64_FP, A64_LR, A64_SP), ctx);
+ 	emit(A64_MOV(1, A64_FP, A64_SP), ctx);
+@@ -230,6 +238,10 @@ static int build_prologue(struct jit_ctx *ctx, bool ebpf_from_cbpf)
+ 				    cur_offset, PROLOGUE_OFFSET);
+ 			return -1;
+ 		}
++
++		/* BTI landing pad for the tail call, done with a BR */
++		if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL))
++			emit(A64_BTI_J, ctx);
+ 	}
+ 
+ 	ctx->stack_size = STACK_ALIGN(prog->aux->stack_depth);
 -- 
 2.20.1
 
