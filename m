@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D6061C6E88
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 070D11C6E8C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,61 +11,62 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=gKiE2+YTHFxUh+jEkbk3pRQ1VkTy2z6DtpV1sM6bLBs=; b=rWHGDsWsIn8+NzntZHZtjX2RGv
-	oyPkeIkYFoQGnfqZ/IxZG23OxWv950y/MC59c2ADnzQ6kFBnNqMJmaUUZoRWB+rTDetTE4+TDZEzk
-	ubV+20m05mh7qaFuhARscoBAm1mhQVxwdHFh33X8R6wAVcAoMrge/6gM+Kith89XpCTu53Rwhd5Pa
-	+nMvccq9qSCC54tRikljDA5uWCU7qRU20ge8w0EbU24MP1dvs+zRnDisLoIdkyr4WXJa7EGpscPFp
-	C2csAp0NQw3ea+tTWUKCwhI7Nxw+wEHMW4mj4kmGJwRSDVyLMHYNuBjokqvETsxW4AlPsJpRgHPb+
-	Z66TOfSQ==;
+	bh=VS2CrrVNMLxh2ZBtIiOZZm6ntYezlOobBONM1wlLoCs=; b=Hg4/1tz588ju1z4yBiMsOFeq5L
+	WNhio5fP6Lxq2wwAoKVYbN5aerdxBOBecyyP26/H5V6pVfDe+pYYiJ27uzoUH/D1toB4GsnMO2liT
+	wzXXKGejbP9KBMw25nn6smnvs2+TM0da2pU+47QxfBoTqThBRoPSJfVxp7KooTp/pUhLUFIE5xXtx
+	YYMbJ0h8itoR1Dn1waRIn/5d9F4shnxsMC2pwAPfhcb19z1e4C1qe3umEcvFWOCEYx+IwCsV4zV9r
+	pQs0sRuVA1DNw7PSqtgzMn2Fy/tt9a0UjlZO+Wz+vUdcbM8X5vb3EAoQV+TfYok0gQWNpqW8HV7G6
+	4pCT4HGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHRF-0006xE-8j; Wed, 06 May 2020 10:38:05 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jWHRV-0007Ay-5w; Wed, 06 May 2020 10:38:21 +0000
+Received: from mail-pj1-x102e.google.com ([2607:f8b0:4864:20::102e])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHQ1-0005zO-Ct; Wed, 06 May 2020 10:36:52 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x10so321110plr.4;
- Wed, 06 May 2020 03:36:49 -0700 (PDT)
+ id 1jWHQ6-00063S-7y; Wed, 06 May 2020 10:37:01 +0000
+Received: by mail-pj1-x102e.google.com with SMTP id ms17so657069pjb.0;
+ Wed, 06 May 2020 03:36:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=vEDmWehMN/OIIrM/DKtPb1UlmBRTwVcciQ9VU68K/2M=;
- b=ryLcfp51SykLd9eefw2sS9ewCxi+++Zq5sX+EjkbRb7WOUQ1qANVnDpeQmvvde/GVw
- Ccxp+sXYLk82A+UuVx1FAN7GKEwl9ozaYECReDZWh+av7GNTvC+7vx98bSt9sJDw6T73
- 0STo/RwhuSm/UdmKfd9Syn7YsZ5DAsFtZNXJJMi3wirfJ3WR6X9ed8m4j6nceNOjR+t/
- 3XofwEa2xMwX6Ma6CJMMPxJYwIOjhiiO/LU61iQywxHcZTaXHPCDPJ7J5j8Zn31AwdNU
- j/RL5soUEBHIIfELLknip3S3wqiOX8C+bfhGNet8LpLde4PWw8YnSPzB6e8E9/hTUQAr
- CgEw==
+ bh=NyUfCa4vJCe68eCfNgGfux9KsQ2+gDDMK2mefVqlCAw=;
+ b=om4uVtV4ScdAbAbqXOFUyoy1ztwGhbwiIexBYNcdLG+KgjsQfosXFHDf3hbIMXvoyZ
+ lDaxKjhfrGMGyOpT/qoFx/UjK5pHgafg4FFAKEXwZXyMyWLOq/+iXRL6nSXcVeZ6A7ah
+ +CB4o3/G0eiKwlP9V4yiWA56Pq11Evg37fD4IWUL4MraywLVT9AsVrJidVl8ofeo9+Vc
+ mh18GCTsHqRqcTKWTQI/s309UE00a25SI/ypFmSSbp72+T1TGlbrwEjgcpv4qemJOSbX
+ /KbBv768cYRUdc8kD/Jo0Z0quZr3hbP0wKAoyXkQbHcL4aVpfL2IV583zgwdqiXERkl1
+ uymA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=vEDmWehMN/OIIrM/DKtPb1UlmBRTwVcciQ9VU68K/2M=;
- b=oAZu/VP14+Y3/rLnB07Fql+kAkltL3vj+CdjTYcdHq5+PXMnOMdio7heDIUEBQjYIS
- PQlFAB0CP+erACqKApVTmsxIgi7JSWDoMnJSoDqkf8MXCP5ceJWyX2OIMSAxl0ZXWqmj
- 5iDInc1l9IFWfb5YQFe+RIKgt+VjdUp8nRforWxhB9WwEUfzViGEyyH2TeL60xSnuzbg
- dBuH9yKUbnrV2JbC/I+17mVP2KP7rI0cM0br+SWRWNtflfo/VDqq32u0mDwJ+PjOSirY
- eS2F4wyDp9U11V+n0+RBKOVamAZ+X9AJkr1grF7aCJnV9HAc2VRs4wKU5MQJ1idqu0C/
- jpJw==
-X-Gm-Message-State: AGi0Pua7zXMTGER5pMkrsp8+2jUdrcuE1EWEb0pyNDv6dGk9NLCpjsDu
- 2HHOBKTWNZhplVjQknB+Ly4=
-X-Google-Smtp-Source: APiQypJs8QJWPtZF/NlFI0/mIfFH2Iqo0osSzXmtIRNQXtI6a6a8ii7XMBdpbp1MgbdmgT189WJ/VQ==
-X-Received: by 2002:a17:90a:2e82:: with SMTP id
- r2mr8158837pjd.128.1588761408522; 
- Wed, 06 May 2020 03:36:48 -0700 (PDT)
+ bh=NyUfCa4vJCe68eCfNgGfux9KsQ2+gDDMK2mefVqlCAw=;
+ b=WhCapbKB7XRy+18mQwn2XwEyryCJ2gQd4oORNJXkHhgJrFoTrd+1lxLPS1m9zoktyy
+ QWMVzvIZXBbxV0A5j1Ht2HPQl4nqIy+C/+HflNEzVcYepfTKNMzC+QzjxSkXYkchItad
+ ZDqPDZW7uO7Ps4Y87A/3yTp82ryjmq+19UFibkhUH0yraM0/ilTtC1ZuEqlmEupFWyVz
+ szCFRsbH3E0SAjyGiy9TD+8gg8nkh3Z0snycitEMU6R9Uhdt9/wY1mLNcIR5uG5Q6uau
+ NGliIhvfSc1wzkmRQRdSd5yI7HEcRkU07dJDolMyTYYBijo35hM8gGPEzd5sdYDVzT0G
+ XERw==
+X-Gm-Message-State: AGi0PuaIraAIWaG672VRZYLbiqA/nlmrMY91vxaIySCg5Fv/oZj+lO/o
+ QKi62wTLk2j8xl65eCsAeNp+Puchmfl4/Q==
+X-Google-Smtp-Source: APiQypJ8UpWJLNv2ibr8GmkStj1YLbGnyIzwVViF+uWsg3JwYZsuzqOvITZy3G/+FWnKiLA4H8gbmQ==
+X-Received: by 2002:a17:90a:bc8c:: with SMTP id
+ x12mr1316647pjr.114.1588761412427; 
+ Wed, 06 May 2020 03:36:52 -0700 (PDT)
 Received: from localhost.localdomain ([106.215.43.48])
- by smtp.gmail.com with ESMTPSA id i72sm1601582pfe.104.2020.05.06.03.36.45
+ by smtp.gmail.com with ESMTPSA id i72sm1601582pfe.104.2020.05.06.03.36.48
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 May 2020 03:36:47 -0700 (PDT)
+ Wed, 06 May 2020 03:36:51 -0700 (PDT)
 From: Amit Singh Tomar <amittomer25@gmail.com>
 To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org,
  robh+dt@kernel.org
-Subject: [PATCH RFC 5/8] arm64: dts: actions: Add DMA Controller for S700
-Date: Wed,  6 May 2020 16:06:07 +0530
-Message-Id: <1588761371-9078-6-git-send-email-amittomer25@gmail.com>
+Subject: [PATCH RFC 6/8] dt-bindings: reset: s700: Add binding constants for
+ mmc
+Date: Wed,  6 May 2020 16:06:08 +0530
+Message-Id: <1588761371-9078-7-git-send-email-amittomer25@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
 References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_033649_452646_AA33F4E6 
+X-CRM114-CacheID: sfid-20200506_033654_339678_86571FF5 
 X-CRM114-Status: UNSURE (   9.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
@@ -74,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:102e listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [amittomer25[at]gmail.com]
@@ -108,37 +109,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit adds DAM controller present on Actions S700, it differs from
-S900 in terms of number of dma channels and requests.
+This commit adds device tree binding reset constants for mmc controller
+present on Actions S700 Soc.
 
 Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
 ---
- arch/arm64/boot/dts/actions/s700.dtsi | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ include/dt-bindings/reset/actions,s700-reset.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/actions/s700.dtsi b/arch/arm64/boot/dts/actions/s700.dtsi
-index 0397c5dd3dec..56f2f84812cb 100644
---- a/arch/arm64/boot/dts/actions/s700.dtsi
-+++ b/arch/arm64/boot/dts/actions/s700.dtsi
-@@ -245,5 +245,18 @@
- 				     <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>,
- 				     <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
- 		};
-+
-+		dma: dma-controller@e0230000 {
-+			compatible = "actions,s700-dma";
-+			reg = <0x0 0xe0230000 0x0 0x1000>;
-+			interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 58 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 59 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 60 IRQ_TYPE_LEVEL_HIGH>;
-+			#dma-cells = <1>;
-+			dma-channels = <10>;
-+			dma-requests = <44>;
-+			clocks = <&cmu CLK_DMAC>;
-+		};
- 	};
- };
+diff --git a/include/dt-bindings/reset/actions,s700-reset.h b/include/dt-bindings/reset/actions,s700-reset.h
+index 5e3b16b8ef53..a3118de6d7aa 100644
+--- a/include/dt-bindings/reset/actions,s700-reset.h
++++ b/include/dt-bindings/reset/actions,s700-reset.h
+@@ -30,5 +30,8 @@
+ #define RESET_UART4				20
+ #define RESET_UART5				21
+ #define RESET_UART6				22
++#define RESET_SD0				23
++#define RESET_SD1				24
++#define RESET_SD2				25
+ 
+ #endif /* __DT_BINDINGS_ACTIONS_S700_RESET_H */
 -- 
 2.7.4
 
