@@ -2,92 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AA5F31C6E92
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:38:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FE041C6E97
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:39:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=aZfLJdMVhhv1jGhHtSd1KgFfKEzppUldQbqLzZYCpKg=; b=ebdJfVGunuLINlAc460zsRuz+L
-	dLrn1zPtPSU93vzQnR1N/bNt5n/8qTvyjxmkvuzfjdt7+hGNf6Xn69EBJCxTcOHITMqrObHXmO5dZ
-	/hf7Ra7Q8I2LSQUedf4cox+wZ1YR1je/yM3VohA6skL5r5nptkuhKoqyRyyma2FSU608TQy89xKhO
-	NGsyMVmfVrv65BeZv8OG/ASL3xaUaXYNIuH9Ms/iA0IAwc8oDJqqt1sc6wBY89U6+TvUx9hIF+afS
-	Xhek1lKP2Q4VIrXQfqQL+6itDuhYfBW2BnMGmLXO5E+43Bm1cZ+qfnkLMkm4laMtwL99hlSeERGUJ
-	McxkANsg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=J5cWW8MZYJ7JkDFkCo81WaAt3//zZQNscWV+W5sLYLk=; b=Fv47g1ML2AGoPX
+	Eg0PiYwMPbJYXlxiPuWtI5SQCcjheXfAxdcyZiQpR0qRHlRbM6XG+3VgQfE58FBfpHN4qnR91jSMG
+	NaVdz550QpECt4frxFBUVdPjUsS6fuOTvUZGPoK6630MVml54CtUsx2Hi439YOAUBCaBUrKb7Owm2
+	KRwElDikpmrwJ8h53UL6zs0tH83lUjz27fHvwGGYd1dQg7KlLAfgcC//azeDLlmmoy3WfvGoCHtFt
+	7XXFNVF8eCJ9YOusGvGZlyNv8uZ8S94m8thYirkhuoGfFHSR2oTBbLZzV4vL/3W9LfXYq6mctXA8V
+	V1hSz77jbcMFwHKNsfBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHRz-0007gU-9C; Wed, 06 May 2020 10:38:51 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jWHSo-00087O-Ao; Wed, 06 May 2020 10:39:42 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHQC-000696-Td; Wed, 06 May 2020 10:37:05 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id h12so2337976pjz.1;
- Wed, 06 May 2020 03:37:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=GRl+cRuJItfX393h+k5FDOGSXXO3n1nRchoc5uvkFw0=;
- b=GQtU4g1Ef3lzCGVFsz5hJfhxLq/JbDHXq2Fnt5aY2jcoz6abJGFAl8TWSLvV5LAiCR
- xq2AIK1ypOIYFB3yKM+F3HTkIFVn1WFgMEoisAQKdN2QohM66H6clyjr7TVwk2x25Dm4
- m2hFaKPGzJA8PoiDq96L1+rOiCe57zXAqqEtLyJ5fXF7wSDtegcXaK43a8I3cVufy7ut
- AkZcfFc1HWiBDfS2873H1l1xUK9a+0AN+PQqvwsjaN2Wakgc76c016kMAUENOIASFB7C
- vdrTnXT9nNVefEzuaYGIjVqfU6QHGPz1S2xqKc3ggSHrpFNOp83NDxaudqyoDzuM8LnS
- w8Pw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=GRl+cRuJItfX393h+k5FDOGSXXO3n1nRchoc5uvkFw0=;
- b=aksTluw110JPxDCNu5LUCHUWmhwtZtGL+qF3rXPsyi6h1RRzqbsXTuFHncleQpbznh
- +moMBBDLA0B0YSmZEGR+496g4Qdl5WF8HQdYIRg9YJkX9rtgPys22YL93U172X2KJkCi
- SvmH3b7hOHugART52e1d0QXXbkNrh4is0iTiaJaUekwoSAk7YB7yiwDBF0wDU6qb/zW4
- cz7o7EBuIidTsj7RfM70B1klOnJMFXFE0X5M3Wqzb4UQxm8zm6UjWHfagD9GpIRmGanO
- dlsx5tWG+nVdB1fbs0w03BJuDDKsg357hZLtgUrKMG57xejPZp10xGPh3FUkTbApmbuK
- L3Uw==
-X-Gm-Message-State: AGi0PuZtqYAbaiQZdSXslGmUTck/HzQ3jkSvcyL206mtSzwPlWGM0jUW
- U5NnmEeRk1t7JFSlrYwcyjLNyLbLfrLHVw==
-X-Google-Smtp-Source: APiQypLpxk8AcJgk+dPBHwI9w4FC4I21Xkht0unu7Q97N9db1MwxkgDMsuJhQ7f45VVEMuVfF4YgCw==
-X-Received: by 2002:a17:90a:30a5:: with SMTP id
- h34mr8235042pjb.171.1588761419966; 
- Wed, 06 May 2020 03:36:59 -0700 (PDT)
-Received: from localhost.localdomain ([106.215.43.48])
- by smtp.gmail.com with ESMTPSA id i72sm1601582pfe.104.2020.05.06.03.36.56
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 May 2020 03:36:59 -0700 (PDT)
-From: Amit Singh Tomar <amittomer25@gmail.com>
-To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org,
- robh+dt@kernel.org
-Subject: [PATCH RFC 8/8] arm64: dts: actions: Add uSD support for Cubieboard7
-Date: Wed,  6 May 2020 16:06:10 +0530
-Message-Id: <1588761371-9078-9-git-send-email-amittomer25@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
-References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
+ id 1jWHSe-00086f-HV
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:39:34 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 5387FFE136B34EFEE684;
+ Wed,  6 May 2020 18:39:25 +0800 (CST)
+Received: from [127.0.0.1] (10.74.221.148) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Wed, 6 May 2020
+ 18:39:17 +0800
+Subject: Re: [PATCH] arm64: atomics: Fix the issue on xchg when switch to
+ atomic instruction
+To: Will Deacon <will@kernel.org>
+References: <1588669355-38741-1-git-send-email-zhangshaokun@hisilicon.com>
+ <20200505091503.GC16980@willie-the-truck>
+ <a48b7408-adb4-08f2-129b-f71e1c79db5a@hisilicon.com>
+ <20200506075352.GE7021@willie-the-truck>
+From: Shaokun Zhang <zhangshaokun@hisilicon.com>
+Message-ID: <90dde2e8-ea11-fa7b-1a44-4d357a61cd66@hisilicon.com>
+Date: Wed, 6 May 2020 18:39:16 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.1.1
+MIME-Version: 1.0
+In-Reply-To: <20200506075352.GE7021@willie-the-truck>
+X-Originating-IP: [10.74.221.148]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_033701_022625_C032AB17 
-X-CRM114-Status: GOOD (  12.61  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200506_033932_745880_B922347B 
+X-CRM114-Status: GOOD (  15.29  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [amittomer25[at]gmail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [45.249.212.35 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [amittomer25[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,108 +70,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-actions@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, cristian.ciocaltea@gmail.com
-MIME-Version: 1.0
+Cc: Yuqi Jin <jinyuqi@huawei.com>, Andrew Murray <amurray@thegoodpenguin.co.uk>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This commit adds uSD support for Cubieboard7 board based on Actions Semi
-S700 SoC. SD0 is connected to uSD slot. Since there is no PMIC support
-added yet, fixed regulator has been used as a regulator node.
+Hi Will,
 
-Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
----
- arch/arm64/boot/dts/actions/s700-cubieboard7.dts | 41 ++++++++++++++++++++++++
- arch/arm64/boot/dts/actions/s700.dtsi            |  1 +
- 2 files changed, 42 insertions(+)
+Apologies for my noise, you are right and it's my mistake.
 
-diff --git a/arch/arm64/boot/dts/actions/s700-cubieboard7.dts b/arch/arm64/boot/dts/actions/s700-cubieboard7.dts
-index 63e375cd9eb4..ec117eb12f3a 100644
---- a/arch/arm64/boot/dts/actions/s700-cubieboard7.dts
-+++ b/arch/arm64/boot/dts/actions/s700-cubieboard7.dts
-@@ -13,6 +13,7 @@
- 
- 	aliases {
- 		serial3 = &uart3;
-+		mmc0 = &mmc0;
- 	};
- 
- 	chosen {
-@@ -28,6 +29,23 @@
- 		device_type = "memory";
- 		reg = <0x1 0xe0000000 0x0 0x0>;
- 	};
-+
-+	/* Fixed regulator used in the absence of PMIC */
-+	vcc_3v1: vcc-3v1 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-3.1V";
-+		regulator-min-microvolt = <3100000>;
-+		regulator-max-microvolt = <3100000>;
-+	};
-+
-+	/* Fixed regulator used in the absence of PMIC */
-+	sd_vcc: sd-vcc {
-+		compatible = "regulator-fixed";
-+		regulator-name = "fixed-3.1V";
-+		regulator-min-microvolt = <3100000>;
-+		regulator-max-microvolt = <3100000>;
-+		regulator-always-on;
-+	};
- };
- 
- &i2c0 {
-@@ -81,6 +99,14 @@
- 			bias-pull-up;
- 		};
- 	};
-+
-+	mmc0_default: mmc0_default {
-+		pinmux {
-+			groups = "sd0_d0_mfp", "sd0_d1_mfp", "sd0_d2_d3_mfp",
-+				 "sd0_cmd_mfp", "sd0_clk_mfp";
-+			function = "sd0";
-+		};
-+	};
- };
- 
- &timer {
-@@ -90,3 +116,18 @@
- &uart3 {
- 	status = "okay";
- };
-+
-+/* uSD */
-+&mmc0 {
-+	status = "okay";
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc0_default>;
-+	cd-gpios = <&pinctrl 120 GPIO_ACTIVE_LOW>;
-+	no-sdio;
-+	no-mmc;
-+	no-1-8-v;
-+	bus-width = <4>;
-+	vmmc-supply = <&sd_vcc>;
-+	vqmmc-supply = <&sd_vcc>;
-+};
-+
-diff --git a/arch/arm64/boot/dts/actions/s700.dtsi b/arch/arm64/boot/dts/actions/s700.dtsi
-index 3f1fc3e48415..8a541dd48f61 100644
---- a/arch/arm64/boot/dts/actions/s700.dtsi
-+++ b/arch/arm64/boot/dts/actions/s700.dtsi
-@@ -4,6 +4,7 @@
-  */
- 
- #include <dt-bindings/clock/actions,s700-cmu.h>
-+#include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/reset/actions,s700-reset.h>
- 
--- 
-2.7.4
+On 2020/5/6 15:53, Will Deacon wrote:
+> On Wed, May 06, 2020 at 03:00:39PM +0800, Shaokun Zhang wrote:
+>> On 2020/5/5 17:15, Will Deacon wrote:
+>>> On Tue, May 05, 2020 at 05:02:35PM +0800, Shaokun Zhang wrote:
+>>>> From: Yuqi Jin <jinyuqi@huawei.com>
+>>>>
+>>>> Since commit addfc38672c7 ("arm64: atomics: avoid out-of-line ll/sc atomics"),
+>>>> it has provided inline implementations of both LSE and ll/sc and used a static
+>>>> key to select between them, which allows the compiler to generate better
+>>>> atomics code.
+>>>> However, xchg still uses the original method which would fail to switch to
+>>>> the atomic instruction correctly, Let's fix this issue.
+>>>
+>>> Please can you elaborate on the failure mode? The current code looks alright
+>>
+>> When enable CONFIG_ARM64_LSE_ATOMICS, xchg is failed to switch to swp instruction
+>> or dynamic replacement instructions are not seen.
+>>
+>> We do some tests on the copy of xchg_tail,:
+>> u32 xchg_tail_my(struct qspinlock *lock, u32 tail)
+>> {
+>>         return (u32)xchg_relaxed(&lock->tail,
+>>                                  tail >> _Q_TAIL_OFFSET) << _Q_TAIL_OFFSET;
+>> }
+>> and the asm code is as follows:
+>>
+>> ffff80001015b050 <xchg_tail_my>:
+>> ffff80001015b050:       a9be7bfd        stp     x29, x30, [sp, #-32]!
+>> ffff80001015b054:       910003fd        mov     x29, sp
+>> ffff80001015b058:       a90153f3        stp     x19, x20, [sp, #16]
+>> ffff80001015b05c:       2a0103f3        mov     w19, w1
+>> ffff80001015b060:       aa0003f4        mov     x20, x0
+>> ffff80001015b064:       aa1e03e0        mov     x0, x30
+>> ffff80001015b068:       97fd07ee        bl      ffff80001009d020 <_mcount>
+>> ffff80001015b06c:       53107e61        lsr     w1, w19, #16
+>> ffff80001015b070:       91000a83        add     x3, x20, #0x2
+>> ffff80001015b074:       f9800071        prfm    pstl1strm, [x3]
+>> ffff80001015b078:       485f7c60        ldxrh   w0, [x3]
+>> ffff80001015b07c:       48027c61        stxrh   w2, w1, [x3]
+>> ffff80001015b080:       35ffffc2        cbnz    w2, ffff80001015b078 <xchg_tail_my+0x28>
+>> ffff80001015b084:       53103c00        lsl     w0, w0, #16
+>> ffff80001015b088:       a94153f3        ldp     x19, x20, [sp, #16]
+>> ffff80001015b08c:       a8c27bfd        ldp     x29, x30, [sp], #32
+>> ffff80001015b090:       d65f03c0        ret
+> 
+> This should get patched at runtime, but you're saying that's not happening?
+> 
+
+My mistake, I didn't check the runtime carefully.
+
+>>> to me, so I'm clearly missing something. What's broken?
+>>>
+>>
+>> I'm not sure whether the ARM64_LSE_ATOMIC_INSN could works correctly after the
+>> commit addfc38672c7. If we implement xchg using __lse_ll_sc_body like cmpxchg_case,
+>> xchg works ok.
+>>
+>> What's more, I am wondering why xchg still uses the dynamic replacement mode,
+>> but cmpxchg uses another mode. ;-)
+> 
+> There's a trade-off involving the number of clobbered registers and the
+> number of instructions, which made a bit more sense when we used to branch
+> out-of-line. We also do the direct patching for the pcpu atomics.
+> 
+
+Thanks your explanation, got it and I did check pcpu atomics before.
+
+Thanks,
+Shaokun
+
+> Will
+> 
+> .
+> 
 
 
 _______________________________________________
