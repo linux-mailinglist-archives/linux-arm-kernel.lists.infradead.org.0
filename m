@@ -2,69 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BE791C7337
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 16:46:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5021F1C7348
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 16:48:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KFKhjj3lpzkvycbdgMKp/JI3cjg++AG+hgUhi8Ba1yY=; b=tpQUUZ70TQCojV
-	GpS4vQtI3peFYrtDT65yl5o+GgJT3DHcyVmsYZtxBCv5yp+FOjcjBcZdrqXQkOBq+DHlZmLAcNQcM
-	ydZgZFNA90FKfzn5ul/hkIhiOVuG2vJeMSgqWLXEJ9JPKjliRF1jW578XkYK1rkGSJTVyWE6gHW7B
-	9OPUcXQZAwme7nzEksC1Y74lnV919FMfGEKFElQpQ5wLHRFItziNBaqt5p09Be5IVMC/j/m3MEDPE
-	b4KfGsakVn23PHnjM4vHO9CCGtpqaEZyQTbxRVtxYAIzd/ZIMoTqR8FXb+A+CIQTx10swdx2rJOT0
-	loJFB4lHQlofa7CzTOmw==;
+	List-Owner; bh=/eZ7f7dahf4x1Z0cyHnU+dDMJAb9yaRQe7G8UCdJ3HQ=; b=rNEAqlrwdL5ZxW
+	IJYDkSR9/eHOho77BAY/lU0lfJ2cNWa9nai78A2CKyegwKhO8mL1uJrVUmK+DiRjb34pXFS5gIW+L
+	Q8i01OxvFmNXeevuyLhxbPKjsnwO8wBq3VHWyTIuVHjkygwcAL87Li5djnlmHOibJJYjoNIdDaMhD
+	hjzqE+eZ/wwz4K3BqJp0VnnUbkswsrlA4JmDfTtD6vKzR3VaVC2DrsTgANfg92dglhDYUF8PII9Ju
+	2RuRArWtjTI2dDHMuV3Q0Dba81qrwqjLt+IWgYrmCnLHmiqSC840EGNZw/Xsc0xtdohebSXkOcpOw
+	891p61sZcawWydtxhU2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWLJ5-0005IY-ST; Wed, 06 May 2020 14:45:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWLLW-0005mB-Ke; Wed, 06 May 2020 14:48:26 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWLIy-0005I8-RZ
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 14:45:50 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 635912073A;
- Wed,  6 May 2020 14:45:47 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588776348;
- bh=kK66z7B+1ip1qLOZgZjwFmPxdDIH0EEzQYXtnQ+Aq/g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AI0cex7WpkOYsa8aoZqZQeluoHy9tWNIDdjfTkAvHzkQEr7shUYkk+ZrWIucxtBwM
- 03tlT6oaix6ekVpWdSDwdVAXbji/p5YqE8XKnSpH6lZeF7NN13J6IBFuK5ntYhqBCF
- JVu4+iXzHAKma1PIE/ggzLau4DioDN+Y16rBAb7w=
-Date: Wed, 6 May 2020 15:45:44 +0100
-From: Will Deacon <will@kernel.org>
-To: Dave Martin <Dave.Martin@arm.com>
-Subject: Re: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when
- building the kernel with BTI
-Message-ID: <20200506144543.GB12919@willie-the-truck>
-References: <20200429211641.9279-1-broonie@kernel.org>
- <20200429211641.9279-3-broonie@kernel.org>
- <20200505145642.GA24239@willie-the-truck>
- <20200505151806.GG5377@sirena.org.uk>
- <20200505160852.GF24239@willie-the-truck>
- <20200505172100.GI5377@sirena.org.uk>
- <20200506071025.GA7021@willie-the-truck>
- <20200506104152.GA5299@sirena.org.uk>
- <20200506105006.GC8043@willie-the-truck>
- <20200506134021.GU30377@arm.com>
+ id 1jWLLO-0005lL-FZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 14:48:19 +0000
+Received: by mail-oi1-x244.google.com with SMTP id j16so1937656oih.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 May 2020 07:48:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=wDj5+tuZkrR7oNrhFt9atUhp/2FopkJwEnSLs3/dRt8=;
+ b=NL61s/IE8eFnPePLN3nuUAK4eaP6MM3y2w4CzNYIdhGhoUmj5C8bunqphDdpHaouVa
+ lqnpq/4XtxVVO+mzUickCYq9BEd1L+5zd2wDuxtw3mLZecF7jxGruEn1VXTQSJvH/esc
+ ozZqVMVWm66x7U9TCr+2oJ3Rcat7yJFgS3GMQeuXl5vtO0nmJGTtqj+JYiZASXBG0M4v
+ qqWtNiDDyVCpTFmWcHt59IikbanIVLl7mYsG0X021wQ39a9kfQUvqr40lbY7IIO+0NOP
+ LwawsK2TTi6/SuDQcBF/bo4WGt9GfnkpF7msRIKBU0IGMKTOCaTqZmnB8bdsTRLYE7rf
+ pWIQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wDj5+tuZkrR7oNrhFt9atUhp/2FopkJwEnSLs3/dRt8=;
+ b=bybSzqUZWIs9k8/Y67+a/AkRkuK0wWnurh2Z+Bn9+Nf6zH2xpntUCGcGYe6/fzomtm
+ 8M1BBQdCEXiBjfi24xRz27dahj0irJB6OTWvZqm4fQCaEAPMB+AOwgi9kD1SDQxRR2wL
+ XExFMIPkUdIJ1UyqeWlfGN3d7yDFesWl6PAWrbJDtpkI9LQgVNz9vDX6BGyUXvbkiTPx
+ jvYzLr6+ry7kVexReyydLvPvNKDKJmByDHdNEzb1pTtX8PsS0i3+R/piz+3PFDguQlfT
+ A6NGBbMkqUMJkGkfDCAC62NHLPrzxfsF7NEeuAPDYrboblh6CbxqtV/Mq5zCO1yTbw/H
+ ISGw==
+X-Gm-Message-State: AGi0PuaXtm8Q83uwleexGBdFDYDrprmMDhwI3BGTyhCR4paiYY8IG8K4
+ S7roui6TH8dHX5Eijx5H/g/hdk4rfp1gkSGyATFRUg==
+X-Google-Smtp-Source: APiQypLNUtStA5nMDnbX6HOFM0LGQaCEcidSi5vAAWVsLC9SK3lN1UJfYxfdDKcoZRx18eT3Y5ExcVKLSk6kP1N3Arw=
+X-Received: by 2002:aca:1812:: with SMTP id h18mr2665993oih.133.1588776497531; 
+ Wed, 06 May 2020 07:48:17 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200506134021.GU30377@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200505100129.104673-1-robert.foss@linaro.org>
+ <20200505100129.104673-4-robert.foss@linaro.org>
+ <20200505101729.GF18755@pengutronix.de>
+In-Reply-To: <20200505101729.GF18755@pengutronix.de>
+From: Robert Foss <robert.foss@linaro.org>
+Date: Wed, 6 May 2020 16:48:06 +0200
+Message-ID: <CAG3jFyvvzk8n1+fkfS5h6TPpqMQ3sGXuJ1_yot1MKFRTcDkhnQ@mail.gmail.com>
+Subject: Re: [PATCH v7 3/3] media: ov8856: Implement sensor module revision
+ identification
+To: Marco Felsch <m.felsch@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_074548_933752_EAACCCE7 
-X-CRM114-Status: GOOD (  31.64  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200506_074818_522230_422F78A0 
+X-CRM114-Status: GOOD (  19.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -74,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,77 +93,129 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Tomasz Figa <tfiga@chromium.org>,
+ Ben Kao <ben.kao@intel.com>, Sakari Ailus <sakari.ailus@iki.fi>,
+ Maxime Ripard <maxime@cerno.tech>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 02:40:21PM +0100, Dave Martin wrote:
-> On Wed, May 06, 2020 at 11:50:06AM +0100, Will Deacon wrote:
-> > On Wed, May 06, 2020 at 11:41:52AM +0100, Mark Brown wrote:
-> > > On Wed, May 06, 2020 at 08:10:26AM +0100, Will Deacon wrote:
-> > > > On Tue, May 05, 2020 at 06:21:00PM +0100, Mark Brown wrote:
-> > > 
-> > > > > > > > aarch64-none-linux-gnu-ld: arch/arm64/kernel/vdso/vgettimeofday.o: warning: BTI turned on by -z force-bti when all inputs do not have BTI in NOTE section.
-> > > 
-> > > > > so if this is a clang issue it looks like they fixed it in the clang-10
-> > > > > branch.  I'm not sure it's worth trying to detect and handle this or
-> > > > > not, I don't know how widely deployed toolchains that don't emit the
-> > > > > property are and there's a fairly clear solution.  What do you think?
-> > > 
-> > > > The linker fixes this up when it warns, right? If so, I think the current
-> > > 
-> > > The linker is fixing this up, yes.
-> > > 
-> > > > behaviour is fine *but* we might want to improve the diagnostic a bit not
-> > > > to worry/confuse people. e.g. something like:
-> > > 
-> > > >   "Your compiler is not emitting '.note.gnu.property' sections: forcing
-> > > >    support for BTI in the linker, but consider upgrading your toolchain."
-> > > 
-> > > Well, the theory behind the warning is that if the compiler is emitting
-> > > code suitable for the features described in the note then it should
-> > > always emit the appropriate annotations so the warning is more intended
-> > > to be telling the user that the code is trying to link in code that's
-> > > not built properly and will most likely fail at runtime.  In the current
-> > > situation that's an issue with the toolchain not emitting the
-> > > annotations but the common case expectation is that the issue will be
-> > > that there are object files that weren't built appropriately.
-> > 
-> > Hmm, I suppose, although it's a bit belt-and-braces given that we've got
-> > the right options in KBUILD_CFLAGS. What about:
-> > 
-> > 	"Your compiler is not emitting '.note.gnu.property' sections: forcing
-> > 	 support for BTI in the linker, but check your CFLAGS and consider
-> > 	 upgrading your toolchain."
-> > 
-> > I'd usually not be too bothered, but having run into this yesterday and
-> > not understood the problem, I'd like to save somebody else from puzzling
-> > over this if we can!
-> 
-> I really don't think we should fudge this: if the linker doesn't think
-> the inputs are BTI-enabled then the compiler or linker is broken, or
-> there's a bug in the kernel source tree.
-> 
-> The checking done by the toolchain is important -- if we want to
-> suppress it, we should have an override option than depends on BROKEN
-> (because yes, you're explicitly risking a broken kernel if you do this).
-> 
-> The fact that all gcc and clang both screwed this up in various ways at
-> some point is not our fault, or our problem, providing that fixes are
-> available...
-> 
-> Am I being too paranoid?
+Hey Marco,
 
-I don't think so, but I'm just looking for an answer to "What do we do if
-people start running into this warning?". As it stands, it sounds like it's
-unlikely that they will, but if they do then we're going to have to hack
-something to make it go away.
+On Tue, 5 May 2020 at 12:17, Marco Felsch <m.felsch@pengutronix.de> wrote:
+>
+> Hi Robert,
+>
+> On 20-05-05 12:01, Robert Foss wrote:
+> > Query the sensor for its module revision, and compare it
+> > to known revisions.
+> >
+> > Currently 2A and 1B revision indentification is supported.
+> >
+> > Signed-off-by: Robert Foss <robert.foss@linaro.org>
+> > ---
+> >
+> > - Changes since v3:
+> >   * Actually add module revision 2A
+> >
+> > - Changes since v2:
+> >   * Add module revision 2A
+> >   * Sakari: Remove ov8856_check_revision()
+> >   * Sakari: Stop EEPROM streaming mode
+> >
+> >  drivers/media/i2c/ov8856.c | 53 ++++++++++++++++++++++++++++++++++++++
+> >  1 file changed, 53 insertions(+)
+> >
+> > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
+> > index e6418a79801e..3c82c3e588d7 100644
+> > --- a/drivers/media/i2c/ov8856.c
+> > +++ b/drivers/media/i2c/ov8856.c
+> > @@ -32,6 +32,19 @@
+> >  #define OV8856_MODE_STANDBY          0x00
+> >  #define OV8856_MODE_STREAMING                0x01
+> >
+> > +/* module revisions */
+> > +#define OV8856_2A_MODULE             0x01
+> > +#define OV8856_1B_MODULE             0x02
+> > +
+> > +/* the OTP read-out buffer is at 0x7000 and 0xf is the offset
+> > + * of the byte in the OTP that means the module revision
+> > + */
+> > +#define OV8856_MODULE_REVISION               0x700f
+> > +#define OV8856_OTP_MODE_CTRL         0x3d84
+> > +#define OV8856_OTP_LOAD_CTRL         0x3d81
+> > +#define OV8856_OTP_MODE_AUTO         0x00
+> > +#define OV8856_OTP_LOAD_CTRL_ENABLE  BIT(0)
+> > +
+> >  /* vertical-timings from sensor */
+> >  #define OV8856_REG_VTS                       0x380e
+> >  #define OV8856_VTS_MAX                       0x7fff
+> > @@ -1152,6 +1165,46 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
+> >               return -ENXIO;
+> >       }
+> >
+> > +     ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
+> > +                            OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
+> > +     if (ret)
+> > +             return ret;
+> > +
+> > +     ret = ov8856_write_reg(ov8856, OV8856_OTP_MODE_CTRL,
+> > +                            OV8856_REG_VALUE_08BIT, OV8856_OTP_MODE_AUTO);
+> > +     if (ret) {
+> > +             dev_err(&client->dev, "failed to set otp mode");
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = ov8856_write_reg(ov8856, OV8856_OTP_LOAD_CTRL,
+> > +                            OV8856_REG_VALUE_08BIT,
+> > +                            OV8856_OTP_LOAD_CTRL_ENABLE);
+> > +     if (ret) {
+> > +             dev_err(&client->dev, "failed to enable load control");
+> > +             return ret;
+> > +     }
+> > +
+> > +     ret = ov8856_read_reg(ov8856, OV8856_MODULE_REVISION,
+> > +                           OV8856_REG_VALUE_08BIT, &val);
+> > +     if (ret) {
+> > +             dev_err(&client->dev, "failed to read module revision");
+> > +             return ret;
+> > +     }
+> > +
+> > +     dev_info(&client->dev, "OV8856 revision %x (%s) at address 0x%02x\n",
+> > +             val,
+> > +             val == OV8856_2A_MODULE ? "2A" :
+> > +             val == OV8856_1B_MODULE ? "1B" : "unknown revision",
+> > +             client->addr);
+>
+> Pls check the alignment here too.
 
-Will
+Ack.
+
+>
+> Regards,
+>   Marco
+>
+> > +
+> > +     ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
+> > +                            OV8856_REG_VALUE_08BIT, OV8856_MODE_STANDBY);
+> > +     if (ret) {
+> > +             dev_err(&client->dev, "failed to exit streaming mode");
+> > +             return ret;
+> > +     }
+> > +
+> >       return 0;
+> >  }
+> >
+> > --
+> > 2.25.1
 
 _______________________________________________
 linux-arm-kernel mailing list
