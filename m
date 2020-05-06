@@ -2,81 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0134E1C6764
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 07:22:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06BAA1C676A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 07:22:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=cZzfSd/HOC/6ds3TvRFUM+N7bLSqQLqyN0sabUkTsLw=; b=TSd
-	7AeTq3EjLB/dNVy/4cW6jEltdrCml16EZYZNIp/muDB6FpEVsxeJyR8xylqObmcyYS0bFK2d2ckct
-	XOiYwKC+skeoAqkmOVdfeCDfqbxLj6fY5PiluzSyMOuudgU1dP5aMGAEvoidGhrF8kYxKMAhoshPf
-	Aw4x0sqP1+JdmjSeMBoqXfQA3XeEo9nJ+mH3euGGC+ftSgskYKqWbzLSQmlgUTAdU0m6jykvYKlJ9
-	PSrUHUwjFvT4htOzDsODRctE9Q/MzEMdEstJ1b6z1+UTv5rt5fq64Ws66rAs2/5XvhhvMHl8JIvqB
-	NeMwV0isMee9LVtvWO79VkGxFMB0ogA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4g9jpAT7DcdvIm29UBOqbZahM7acGP//K8Q23c1MdIo=; b=UpbN+QXceiPORo
+	jGQi0P0IvwWfno7dNgaQfmfRz2wlcr2YkKTJHcqxVDD/vUE3+9sxXUxPZd/oAxPJwHjXBabGMuI4c
+	/ygAPi8J/9b6xMQQLZIANR3rGNRGAV7ZEkJmQN35PzilIfG/PCqx9A1BOxpU1kqlY+7U4kxi2cy/c
+	xABWwSJisGs2JjvfWG8ZnBycQlLN0f/JhzhG0RPwyPBLCZ1jyA+sFctrKZ7mlKNnc9CXEZxQJmo2N
+	2An9dx1hY1DAxLA8Gqdrgk7xm8pCwDx+gzSqHX6hc0lieybRx2MDGKXWSzxjpoOunieApmy/AK5T9
+	KbcSxxT5iyJsX0LIbkrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWCVD-0002ou-VD; Wed, 06 May 2020 05:21:51 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1jWCVb-00035a-Vv; Wed, 06 May 2020 05:22:15 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWCV4-0002nn-MU
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 05:21:45 +0000
-Received: by mail-wm1-x341.google.com with SMTP id u127so963146wmg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 22:21:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=h0iQI1iKMcPBV71I0g0LMiicdhg13r/twgoexAQYjOg=;
- b=msl6k3xUOP10ZQIrXYCaMFC2eKJGRBqIerIoJac6rmTcPojb5Amlk5NSjGXfAbSLrp
- DWpQMdcDVsOq36HanaHkqt7E/lp2zVW1oivOFY/qts17Xl25PZv4GqbBBjfczdyLzsuy
- waEtAer881cl93H0GnivxsSJzfcr0vH5BKMRiPoBUbE0Lc9GXlxAjaVDQ7v5WEf97NTS
- DZg7QOHdbliVz5LqPk0Pi9gMF+8QY8gy2icTnL0nj/7DiH8i+6PKQTf/76cNq2WDxOMb
- nebvdY5pYh0zzDDt9S6IodHoVQA2HZi/YaHZ9p4Mo8hvF2Y/akMSm4vp7nUvQm6TNcEV
- WIig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=h0iQI1iKMcPBV71I0g0LMiicdhg13r/twgoexAQYjOg=;
- b=A/Yo5/PoUudjkG7AOmno1Os3ehJS6252G5RI6DTX/IIjczjARcVRvqtkft6hrnXwFm
- mznKHqKjEj14eeefsLheeug4t/5u1YEojjo1d58ypCxjB1eNnyufBaRQBgR/pTr+GTeE
- TEi5+IMAmCkBZtRkwVDpwC1hgmJVFPdbCycmHDtvRuIlIzA8S7zKntBEmmbItdBsAaLJ
- 1kM14y3l54NsHh+EPDa2WpHE3umxufHAV50bSI9etVwyKb1CbiE5oHwKP6YCJiIBjwb9
- TFDzfRLFUFG20m6ufG60dbOwSNTk6nzxCvMEvXCdRjdQwy7mx38P8TsFmjlx13Lk/uyK
- crWQ==
-X-Gm-Message-State: AGi0PuZfQ4TYbjfLUSdM8Aa7lL1luJYPYPKdwgdqq7Uzpfp8pRKabdFk
- yyfg8uxX2NuoMIa8wxfLCYk=
-X-Google-Smtp-Source: APiQypKagx74+kFJPZfSSYCvqwjyzlhtiJgX+PfEa4CrNrzTZMNBMRv1S6YPTwKV7XdGDQHsk90mOw==
-X-Received: by 2002:a7b:c0cb:: with SMTP id s11mr2555917wmh.180.1588742501192; 
- Tue, 05 May 2020 22:21:41 -0700 (PDT)
-Received: from felia.fritz.box ([2001:16b8:2df1:2500:bc2e:80a7:2be5:2fcf])
- by smtp.gmail.com with ESMTPSA id z16sm873707wrl.0.2020.05.05.22.21.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 May 2020 22:21:40 -0700 (PDT)
-From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
-To: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Rob Herring <robh@kernel.org>, Bjorn Helgaas <helgaas@kernel.org>
-Subject: [PATCH v2 RESEND] MAINTAINERS: correct typo in new NXP LAYERSCAPE GEN4
-Date: Wed,  6 May 2020 07:21:30 +0200
-Message-Id: <20200506052130.5780-1-lukas.bulwahn@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1jWCVU-00034V-Fb; Wed, 06 May 2020 05:22:10 +0000
+X-UUID: f034640fdcbd4e75baa140cf878c242f-20200505
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=lTgBW2WWuXjTeKkJYnAtJb3HmcIPptLcokJVsELZxTw=; 
+ b=s4FoA3LLrANr2cDEstJiiQZMcGvcPI1bXlSJb9twtE/IoZ1+3EYlclN3xheo+gO6JlSi7Gm3fPChs34hcnC54v7WJjgewYXc5V3P6DeYAfRSr6/ed5+o0AcxWnKxsAjooBc2ETp1MxtvsuxyLD9UG9THkXZB0QO+ZoTbEMFRoIY=;
+X-UUID: f034640fdcbd4e75baa140cf878c242f-20200505
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 499038752; Tue, 05 May 2020 21:21:59 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 5 May 2020 22:21:56 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 6 May 2020 13:21:55 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Wed, 6 May 2020 13:21:55 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>
+Subject: [PATCH 2/3] kasan: record and print the free track
+Date: Wed, 6 May 2020 13:21:55 +0800
+Message-ID: <20200506052155.14515-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_222142_790304_8FE3661B 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20200505_222208_524923_2F532821 
+X-CRM114-Status: GOOD (  11.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [lukas.bulwahn[at]gmail.com]
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -84,6 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,66 +84,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Joe Perches <joe@perches.com>,
- Lukas Bulwahn <lukas.bulwahn@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 3edeb49525bb ("dt-bindings: PCI: Add NXP Layerscape SoCs PCIe Gen4
-controller") includes a new entry in MAINTAINERS, but slipped in a typo in
-one of the file entries.
+We add new KASAN_RCU_STACK_RECORD configuration option. It will move
+free track from slub meta-data (struct kasan_alloc_meta) into freed object.
+Because we hope this options doesn't enlarge slub meta-data size.
 
-Hence, since then, ./scripts/get_maintainer.pl --self-test complains:
+This option doesn't enlarge struct kasan_alloc_meta size.
+- add two call_rcu() call stack into kasan_alloc_meta, size is 8 bytes.
+- remove free track from kasan_alloc_meta, size is 8 bytes.
 
-  warning: no file matches F: \
-    drivers/pci/controller/mobibeil/pcie-layerscape-gen4.c
+This option is only suitable for generic KASAN, because we move free track
+into the freed object, so free track is valid information only when it
+exists in quarantine. If the object is in-use state, then the KASAN report
+doesn't print call_rcu() free track information.
 
-Correct the typo in PCI DRIVER FOR NXP LAYERSCAPE GEN4 CONTROLLER.
+[1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
 
-Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Cc: Dmitry Vyukov <dvyukov@google.com>
+Cc: Alexander Potapenko <glider@google.com>
 ---
-Rob, please pick this patch (it is not urgent, though).
+ mm/kasan/common.c | 10 +++++++++-
+ mm/kasan/report.c | 24 +++++++++++++++++++++---
+ 2 files changed, 30 insertions(+), 4 deletions(-)
 
-v1: https://lore.kernel.org/lkml/20200314142559.13505-1-lukas.bulwahn@gmail.com/
-  - already received: Reviewed-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
-  - Bjorn Helgaas' suggestion to squash this into commit 3edeb49525bb
-    ("dt-bindings: PCI: Add NXP Layerscape SoCs PCIe Gen4 controller") before
-    merging upstream did not happen.
-
-v1 -> v2:
-  - v1 does not apply after reordering MAINTAINERS, i.e., commit 4400b7d68f6e
-    ("MAINTAINERS: sort entries by entry name") and commit 3b50142d8528
-    ("MAINTAINERS: sort field names for all entries").
-  - PATCH v2 applies on v5.7-rc1 now. Please pick v2 instead of v1.
-
-v2-resend:
-  - resend of v2: https://lore.kernel.org/lkml/20200413070649.7014-1-lukas.bulwahn@gmail.com/ 
-  - still applies to v5.7-rc4 and next-20200505
-
- MAINTAINERS | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/MAINTAINERS b/MAINTAINERS
-index e64e5db31497..0fd27329e6f7 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12941,7 +12941,7 @@ L:	linux-pci@vger.kernel.org
- L:	linux-arm-kernel@lists.infradead.org
- S:	Maintained
- F:	Documentation/devicetree/bindings/pci/layerscape-pcie-gen4.txt
--F:	drivers/pci/controller/mobibeil/pcie-layerscape-gen4.c
-+F:	drivers/pci/controller/mobiveil/pcie-layerscape-gen4.c
+diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+index 32d422bdf127..13ec03e225a7 100644
+--- a/mm/kasan/common.c
++++ b/mm/kasan/common.c
+@@ -321,8 +321,15 @@ void kasan_record_callrcu(void *addr)
+ 		/* record last call_rcu() call stack */
+ 		alloc_info->rcu_free_stack[1] = save_stack(GFP_NOWAIT);
+ }
+-#endif
  
- PCI DRIVER FOR RENESAS R-CAR
- M:	Marek Vasut <marek.vasut+renesas@gmail.com>
++static void kasan_set_free_info(struct kmem_cache *cache,
++		void *object, u8 tag)
++{
++	/* store free track into freed object */
++	set_track((struct kasan_track *)(object + BYTES_PER_WORD), GFP_NOWAIT);
++}
++
++#else
+ static void kasan_set_free_info(struct kmem_cache *cache,
+ 		void *object, u8 tag)
+ {
+@@ -339,6 +346,7 @@ static void kasan_set_free_info(struct kmem_cache *cache,
+ 
+ 	set_track(&alloc_meta->free_track[idx], GFP_NOWAIT);
+ }
++#endif
+ 
+ void kasan_poison_slab(struct page *page)
+ {
+diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+index 7aaccc70b65b..f2b0c6b9dffa 100644
+--- a/mm/kasan/report.c
++++ b/mm/kasan/report.c
+@@ -175,8 +175,23 @@ static void kasan_print_rcu_free_stack(struct kasan_alloc_meta *alloc_info)
+ 	print_track(&free_track, "Last call_rcu() call stack", true);
+ 	pr_err("\n");
+ }
+-#endif
+ 
++static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
++		void *object, u8 tag, const void *addr)
++{
++	u8 *shadow_addr = (u8 *)kasan_mem_to_shadow(addr);
++
++	/*
++	 * Only the freed object can get free track,
++	 * because free track information is stored to freed object.
++	 */
++	if (*shadow_addr == KASAN_KMALLOC_FREE)
++		return (struct kasan_track *)(object + BYTES_PER_WORD);
++	else
++		return NULL;
++}
++
++#else
+ static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
+ 		void *object, u8 tag, const void *addr)
+ {
+@@ -196,6 +211,7 @@ static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
+ 
+ 	return &alloc_meta->free_track[i];
+ }
++#endif
+ 
+ static void describe_object(struct kmem_cache *cache, void *object,
+ 				const void *addr, u8 tag)
+@@ -208,8 +224,10 @@ static void describe_object(struct kmem_cache *cache, void *object,
+ 		print_track(&alloc_info->alloc_track, "Allocated", false);
+ 		pr_err("\n");
+ 		free_track = kasan_get_free_track(cache, object, tag, addr);
+-		print_track(free_track, "Freed", false);
+-		pr_err("\n");
++		if (free_track) {
++			print_track(free_track, "Freed", false);
++			pr_err("\n");
++		}
+ #ifdef CONFIG_KASAN_RCU_STACK_RECORD
+ 		kasan_print_rcu_free_stack(alloc_info);
+ #endif
 -- 
-2.17.1
-
-
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
