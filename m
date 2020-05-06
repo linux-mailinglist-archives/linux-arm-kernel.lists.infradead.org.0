@@ -2,83 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 052931C693E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:46:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B3A61C6942
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:47:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vox22uPKJ+ErFTzHwzlSRecpTElfz51IoQhHrcs34v4=; b=Zj9gJv2tOdY7Um
-	ntecoklq5sSXGTHYT4i45eTE5yDD3fzVJDk++efo4Jdvs7YsdCLH8nPfbYD8tUZ/rLycF92KEFkfF
-	tH05/AapNBqn2Nz3oTMS7TJF84wRSELkSys8oRKrY5Ohpx8bxr2qUwL5xC495h0/OYGkapTPObxiP
-	oJFexiH3rH8ZzlDWtcWUT8mLylhPgsUJ+6o8bl/n9iv2T+OHWGQYuOjY96OHMQOoIfEhZxeFJUaO8
-	BX/dWW7CoMdWkn2ZNfrPZCU/DNP1eWLqBK/R5/EMJrujRlVm4O+0UvoEmFt73UM30VBIyyyysZYj0
-	ICBGesfA0mwOTs0FvzRw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=hPPr5IToMeY4OnwG19+3V7giJyXUkWxn7vKuAe8XOzY=; b=VEEtmLis39LCpU
+	IYHEFaIER4pHa3OjYSSpoKRmyH/CkOINfa/gK35AmaeB54hO7I9Pp7oB7NhU0vD99Ex9pKKhVmaqq
+	U5/jQCCPcvyF0QSPO7+rrQdrtHGhUS8CvY15W3Iwa3+zS5d/tHN4WBz6Vr0/D9Ma7qY9OuQ5tLbui
+	+rOQjGFpjdtyMYBDKrC0IyDvEo2q0JkzIldTFl5EgVVk5qkhiU6mTvaYI+TURTRuTrGkAlOgkgjUo
+	M16p/3AqGLKdEOiQfBkxYlRUtq/il8wjlU1Enk+CEl1zGqNyLayvze984G0M26p7Pd5+kv8cTcvyI
+	VgFiejGFXeLbWf3hjAJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDp8-0008BF-8W; Wed, 06 May 2020 06:46:30 +0000
-Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+	id 1jWDpd-0008UF-Cf; Wed, 06 May 2020 06:47:01 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWDp0-0008AZ-0L
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:46:23 +0000
-Received: by mail-il1-x142.google.com with SMTP id w6so744626ilg.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 23:46:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=+/CvsVsRvsIe2fdwin42oKRwBiHMUNkSBi3zIOYY4k4=;
- b=DT6WmVJOSFGWbwoJzWlGLC1MHvldjbW1aPbGsebQDxlwZe7iwnSNTolfUa76eOd29p
- bY4+DyIu0HM7Ux+b79wpjv1HEfzbH79157RfuHSyksqzSHLknytmZWYPfXFm5QGWRjr4
- trPVXMgze6AHFPvmnwrxjqlJKc728qaSJfARZbGbfhF4give+X0eaTP+oNhRMf+5ac8P
- Arpc631AY/NRljNjuR5I9hcJdirqymusRyVIeUrXArJFWuT3SoexMOmMizUv/8UFF/8J
- GTpCWHc3c1BWYWTjKwX/5uBZaJK6C+gV4m4MOKsh1M5DtywTmEZjpryYodVi30SRoDCo
- EcOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=+/CvsVsRvsIe2fdwin42oKRwBiHMUNkSBi3zIOYY4k4=;
- b=JYkL+TAPid1WJkJBbfNpxFNkdyteLTSt99d3q237zexlGzG8FcuSGzUbO0C3nJ80Rm
- i77z4D3QZxSuXdbSrcoimAVbmdgG3/NFrO7LUGDCeq5k135vOBBbi2A/43rlET0vG/3C
- qHUXUIazDD15ndwnRyjVD2a/lZHcOeFXlpMIksONfKGhBZ76gpkiVKOIJPSdbRCmfZr9
- sVvSyNbmhieJlk2mddJ8f9ucC38aKhAS6g1tsB5qFfh2ZLkPZ+YG5bj/fKAk5MymnV8A
- P49yCTWdm3aDIgHkzyrGXNNguQ7vErZou7kU09qQ+tm7G+4Ha4PPDfiFXeq8V2eyMhFg
- uAOQ==
-X-Gm-Message-State: AGi0PuYwpVyTvS69I/QSLxFFzUokWy4uzKxfe9w+11nclvrV9Yeu7oNl
- pSp9qmUTnZ1AzZcQ4grZFBXlcApo9Y/hxyOvXjaFAA==
-X-Google-Smtp-Source: APiQypKJEgnZebPwGNweIcvVeYvS0XTuBvG2j4m7bwSAxW9ci9eJ/kiRyX1pjwNIRh6SnysmSCqDdQb9gXdF8OxrFFg=
-X-Received: by 2002:a92:aa07:: with SMTP id j7mr7777424ili.40.1588747581285;
- Tue, 05 May 2020 23:46:21 -0700 (PDT)
+ id 1jWDpR-0008TQ-IA
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:46:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1588747607;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:
+ content-transfer-encoding:content-transfer-encoding;
+ bh=dylOKlOOkcmqnOmlxPIhLIeCImPfi8HZqhDsGTLntD8=;
+ b=CyB6u5iZ0ZP0ZCF39MNhoG7gZyNBSo9PE7J20OMUbdXZ8g8yf2Bommze9bbBDVLGoBXK/u
+ EYrJRRQ/hQh+F1qM/zcS+kRrUWJCFpbJcbcKsgCBeBT/ZIzORBuww0taeFsIBESqhRbz+5
+ gqgJNUev04aDZbzyeKq4Qym1SKHD3AU=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-172-E0L-RSu4McSJCbfgZLbRDA-1; Wed, 06 May 2020 02:46:45 -0400
+X-MC-Unique: E0L-RSu4McSJCbfgZLbRDA-1
+Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
+ [10.5.11.11])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id EE27245F;
+ Wed,  6 May 2020 06:46:43 +0000 (UTC)
+Received: from localhost.localdomain.com (vpn2-54-103.bne.redhat.com
+ [10.64.54.103])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id F112A605DF;
+ Wed,  6 May 2020 06:46:41 +0000 (UTC)
+From: Gavin Shan <gshan@redhat.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64/mm: Remove add_huge_page_size()
+Date: Wed,  6 May 2020 16:46:35 +1000
+Message-Id: <20200506064635.20114-1-gshan@redhat.com>
 MIME-Version: 1.0
-References: <20200505140231.16600-1-brgl@bgdev.pl>
- <20200505140231.16600-6-brgl@bgdev.pl>
- <CAKOOJTzcNr7mc9xusQm3nCzkq5P=ha-si3fizeEL2_KJUOC3-Q@mail.gmail.com>
-In-Reply-To: <CAKOOJTzcNr7mc9xusQm3nCzkq5P=ha-si3fizeEL2_KJUOC3-Q@mail.gmail.com>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Wed, 6 May 2020 08:46:10 +0200
-Message-ID: <CAMRc=Md7gLMThfGF-7YLqW17MpMhU=UFbdTvfjbr9fFHTLir8g@mail.gmail.com>
-Subject: Re: [PATCH 05/11] net: core: provide devm_register_netdev()
-To: Edwin Peer <edwin.peer@broadcom.com>
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_234622_054140_7CC305FD 
-X-CRM114-Status: GOOD (  16.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_234649_679405_80BDA6D8 
+X-CRM114-Status: GOOD (  10.17  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ no trust [205.139.110.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.120 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,52 +87,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "David S . Miller" <davem@davemloft.net>, Fabien Parent <fparent@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, will@kernel.org,
+ linux-kernel@vger.kernel.org, shan.gavin@gmail.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-d3QuLCA1IG1haiAyMDIwIG8gMjE6MjUgRWR3aW4gUGVlciA8ZWR3aW4ucGVlckBicm9hZGNvbS5j
-b20+IG5hcGlzYcWCKGEpOgo+ID4gKwo+ID4gK3N0YXRpYyB2b2lkIGRldm1fbmV0ZGV2X3JlbGVh
-c2Uoc3RydWN0IGRldmljZSAqZGV2LCB2b2lkICp0aGlzKQo+ID4gK3sKPiA+ICsgICAgICAgc3Ry
-dWN0IG5ldGRldmljZV9kZXZyZXMgKnJlcyA9IHRoaXM7Cj4gPiArCj4gPiArICAgICAgIHVucmVn
-aXN0ZXJfbmV0ZGV2KHJlcy0+bmRldik7Cj4gPiArfQo+ID4gKwo+ID4gKy8qKgo+ID4gKyAqICAg
-ICBkZXZtX3JlZ2lzdGVyX25ldGRldiAtIHJlc291cmNlIG1hbmFnZWQgdmFyaWFudCBvZiByZWdp
-c3Rlcl9uZXRkZXYoKQo+ID4gKyAqICAgICBAbmRldjogZGV2aWNlIHRvIHJlZ2lzdGVyCj4gPiAr
-ICoKPiA+ICsgKiAgICAgVGhpcyBpcyBhIGRldnJlcyB2YXJpYW50IG9mIHJlZ2lzdGVyX25ldGRl
-digpIGZvciB3aGljaCB0aGUgdW5yZWdpc3Rlcgo+ID4gKyAqICAgICBmdW5jdGlvbiB3aWxsIGJl
-IGNhbGwgYXV0b21hdGljYWxseSB3aGVuIHRoZSBwYXJlbnQgZGV2aWNlIG9mIG5kZXYKPiA+ICsg
-KiAgICAgaXMgZGV0YWNoZWQuCj4gPiArICovCj4gPiAraW50IGRldm1fcmVnaXN0ZXJfbmV0ZGV2
-KHN0cnVjdCBuZXRfZGV2aWNlICpuZGV2KQo+ID4gK3sKPiA+ICsgICAgICAgc3RydWN0IG5ldGRl
-dmljZV9kZXZyZXMgKmRyOwo+ID4gKyAgICAgICBpbnQgcmV0Owo+ID4gKwo+ID4gKyAgICAgICAv
-KiBzdHJ1Y3QgbmV0X2RldmljZSBpdHNlbGYgbXVzdCBiZSBkZXZyZXMgbWFuYWdlZC4gKi8KPiA+
-ICsgICAgICAgQlVHX09OKCEobmRldi0+cHJpdl9mbGFncyAmIElGRl9JU19ERVZSRVMpKTsKPiA+
-ICsgICAgICAgLyogc3RydWN0IG5ldF9kZXZpY2UgbXVzdCBoYXZlIGEgcGFyZW50IGRldmljZSAt
-IGl0IHdpbGwgYmUgdGhlIGRldmljZQo+ID4gKyAgICAgICAgKiBtYW5hZ2luZyB0aGlzIHJlc291
-cmNlLgo+ID4gKyAgICAgICAgKi8KPgo+IENhdGNoaW5nIHN0YXRpYyBwcm9ncmFtbWluZyBlcnJv
-cnMgc2VlbXMgbGlrZSBhbiBleHBlbnNpdmUgdXNlIG9mIHRoZQo+IGxhc3QgcnVudGltZSBmbGFn
-IGluIHRoZSBlbnVtLiBJdCB3b3VsZCBiZSB3ZWlyZCB0byBkZXZyZXMgbWFuYWdlIHRoZQo+IHVu
-cmVnaXN0ZXIgYW5kIG5vdCBhbHNvIGNob29zZSB0byBtYW5hZ2UgdGhlIHVuZGVybHlpbmcgbWVt
-b3J5IGluIHRoZQo+IHNhbWUgZmFzaGlvbiwgc28gaXQgd291bGRuJ3QgYmUgYW4gb2J2aW91cyBt
-aXN0YWtlIHRvIG1ha2UuIElmIGl0IG11c3QKPiBiZSBlbmZvcmNlZCwgb25lIGNvdWxkIGFsc28g
-aXRlcmF0ZSBvdmVyIHRoZSByZWdpc3RlcmVkIHJlbGVhc2UKPiBmdW5jdGlvbnMgYW5kIGNoZWNr
-IGZvciB0aGUgcHJlc2VuY2Ugb2YgZGV2bV9mcmVlX25ldGRldiB3aXRob3V0Cj4gYnVybmluZyB0
-aGUgZmxhZy4KPgoKSGkgRWR3aW4sCgpJJ3ZlIHN1Ym1pdHRlZCB0aGlzIHBhdGNoIHNvbWUgdGlt
-ZSBhZ28gYWxyZWFkeSBhbmQgd2FzIHRvbGQgdG8gY2hlY2sKaWYgdGhlIHVuZGVybHlpbmcgbWVt
-b3J5IGlzIG1hbmFnZWQgdG9vLiBJIGd1ZXNzIEkgY291bGQgdHJ5IHRvIHVzZQpkZXZyZXNfZmlu
-ZCgpIGhlcmUgdGhvdWdoLgoKUmUgdGhlIGxhc3QgYml0IGluIHByaXZfZmxhZ3M6IGlzIHRoaXMg
-cmVhbGx5IGEgcHJvYmxlbSB0aG91Z2g/IEl0J3MKbm90IGxpa2Ugc3RydWN0IG5ldF9kZXZpY2Ug
-bXVzdCByZW1haW4gc3RhYmxlIC0gZS5nLiB3ZSBjYW4gbWFrZQpwcml2X2ZsYWdzIGEgYml0bWFw
-LgoKQmFydAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+The function add_huge_page_size(), wrapper of hugetlb_add_hstate(),
+avoids to register duplicated huge page states for same size. However,
+the same logic has been included in hugetlb_add_hstate(). So it seems
+unnecessary to keep add_huge_page_size() and this just removes it.
+
+Signed-off-by: Gavin Shan <gshan@redhat.com>
+---
+ arch/arm64/mm/hugetlbpage.c | 18 +++++-------------
+ 1 file changed, 5 insertions(+), 13 deletions(-)
+
+diff --git a/arch/arm64/mm/hugetlbpage.c b/arch/arm64/mm/hugetlbpage.c
+index bbeb6a5a6ba6..ed7530413941 100644
+--- a/arch/arm64/mm/hugetlbpage.c
++++ b/arch/arm64/mm/hugetlbpage.c
+@@ -441,22 +441,14 @@ void huge_ptep_clear_flush(struct vm_area_struct *vma,
+ 	clear_flush(vma->vm_mm, addr, ptep, pgsize, ncontig);
+ }
+ 
+-static void __init add_huge_page_size(unsigned long size)
+-{
+-	if (size_to_hstate(size))
+-		return;
+-
+-	hugetlb_add_hstate(ilog2(size) - PAGE_SHIFT);
+-}
+-
+ static int __init hugetlbpage_init(void)
+ {
+ #ifdef CONFIG_ARM64_4K_PAGES
+-	add_huge_page_size(PUD_SIZE);
++	hugetlb_add_hstate(PUD_SHIFT - PAGE_SHIFT);
+ #endif
+-	add_huge_page_size(CONT_PMD_SIZE);
+-	add_huge_page_size(PMD_SIZE);
+-	add_huge_page_size(CONT_PTE_SIZE);
++	hugetlb_add_hstate(CONT_PMD_SHIFT + PMD_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate(PMD_SHIFT - PAGE_SHIFT);
++	hugetlb_add_hstate(CONT_PTE_SHIFT);
+ 
+ 	return 0;
+ }
+@@ -473,7 +465,7 @@ static __init int setup_hugepagesz(char *opt)
+ 	case CONT_PMD_SIZE:
+ 	case PMD_SIZE:
+ 	case CONT_PTE_SIZE:
+-		add_huge_page_size(ps);
++		hugetlb_add_hstate(ilog2(ps) - PAGE_SHIFT);
+ 		return 1;
+ 	}
+ 
+-- 
+2.23.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
