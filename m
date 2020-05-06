@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 784B11C7AC6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:54:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AECAE1C7AC8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:55:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b8W+zr8y5VcktE86sH7E1iUAmYB98g8qNY+JNl6lIkY=; b=J6Gaewu4XD/RnT
-	SHOPQp73N5RudJR1nHNExJESKs7A570nl2F3qAnOyMYwP84dS34Ag/s7OdCT3ztucWjYgUgS1M4KJ
-	BK8TMrFexyRKuw7NsvhEVet6e7v6nrURfpLNgPPnvDNimetj+KmMNcuyROLtHb3Re2LxkEdet6EYD
-	XH5kEYwKc441NeeLfUGeN64tswf9RM/ea4pZGcXs0E3f0rUNGY0JcFJ0PKAx+wVJFF+9OJ9ZqM3lR
-	m9bVYMSORPySNFwYzMQ1YidwVUe1s/fXrBjDJhx0UYc+NcA5L1wP7XoawI1Wl6SAO67u8ATfiL245
-	E85Jfv4FAYnKsxkSlfOQ==;
+	List-Owner; bh=/yGsUHMT+GnDqASaNvHbVVw5Siw0S8Q/EbJixkMc81o=; b=INu5jbow4DWMAa
+	lTO9frpbGteqOcMoSoF1ApUaAxoOdMvGn1C4P/5DUBudHZu/3eB65w1/+tB72NFXFBnvlx1Vbg3lI
+	1grNLniu++DU049DOUHxAD5XsAUWZdRzg3OiBlD+sg1JJtyhvprBKlpxmd/JLbhK+yBXIplOBm2ku
+	RdzuY6yZ6bbGp3b5D38S2xx0cdMWYDOkZs0cX9K6SXaMRFS5xiMD6Nfn2BCwK759xnZ9Ps/u187nS
+	TGwLE0d87uskfpLp2x4PNkiyDP+HDttuxlGr8+KHuLjI5Yv8y9z3qe3BQV4gqncPQUW/bwsFvapz/
+	CABZAdRvYH4RRrqOI74A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ7V-0006B3-MH; Wed, 06 May 2020 19:54:17 +0000
+	id 1jWQ85-0006tm-Ub; Wed, 06 May 2020 19:54:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5Y-0004G1-0A
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:18 +0000
+ id 1jWQ5b-0004JA-Aa
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:20 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 078FD2078C;
- Wed,  6 May 2020 19:52:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EDEB22076D;
+ Wed,  6 May 2020 19:52:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794735;
- bh=Snqv5XILp0SjBXZKuv7YsW0gFPHUcpmfA9E1VqIUnqs=;
+ s=default; t=1588794738;
+ bh=aakVYsllj8JLETFGSJnlgjvy9G3J3P1izYBHonGSEIE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=HzNTEByNB4NNwRzd5Vrze8WC7Wad7WHCdGIi7BmQpmOZ+4bGaREBeB0pMrA3DtIcW
- TpESbRP60tbWhSGh+Dse+DytqDyB4LbSWJOaQsyRZv7Ya7OwwWG/3ZRMLjOXSwhEj5
- UhooOYfE47EaSfAyEL16PapwOAW0Rxc4d5kD+G9Q=
+ b=QNAM1b/XqjTeisOx3vc8lW3+yX3fs6x8wFcErqhuwhOlP8S/HseozJAywvvfDwJH2
+ UI7BFHjmY5yRz4hbLZFaFoneZUVCqR+Rn5u0l/aZ2vWmLUWqZylfriqSNNb88pXV35
+ YCDpJiF7vTnN2YFBEvqVPmQYjhlC8WgjPuw9PRtw=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 08/11] arm64: asm: Provide a mechanism for generating ELF
- note for BTI
-Date: Wed,  6 May 2020 20:51:35 +0100
-Message-Id: <20200506195138.22086-9-broonie@kernel.org>
+Subject: [PATCH v3 09/11] arm64: vdso: Annotate for BTI
+Date: Wed,  6 May 2020 20:51:36 +0100
+Message-Id: <20200506195138.22086-10-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125216_082910_A71CE7F1 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20200506_125219_444169_9A85ADC7 
+X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,82 +86,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ELF files built for BTI should have a program property note section which
-identifies them as such. The linker expects to find this note in all
-object files it is linking into a BTI annotated output, the compiler will
-ensure that this happens for C files but for assembler files we need to do
-this in the source so provide a macro which can be used for this purpose.
-To support likely future requirements for additional notes we split the
-defininition of the flags to set for BTI code from the macro that creates
-the note itself.
-
-This is mainly for use in the vDSO which should be a normal ELF shared
-library and should therefore include BTI annotations when built for BTI.
+Generate BTI annotations for all assembly files included in the 64 bit
+vDSO.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
+Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/assembler.h | 50 ++++++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ arch/arm64/kernel/vdso/note.S      | 3 +++
+ arch/arm64/kernel/vdso/sigreturn.S | 3 +++
+ arch/arm64/kernel/vdso/vdso.S      | 3 +++
+ 3 files changed, 9 insertions(+)
 
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 0bff325117b4..54d181177656 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -736,4 +736,54 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- .Lyield_out_\@ :
- 	.endm
+diff --git a/arch/arm64/kernel/vdso/note.S b/arch/arm64/kernel/vdso/note.S
+index 0ce6ec75a525..3d4e82290c80 100644
+--- a/arch/arm64/kernel/vdso/note.S
++++ b/arch/arm64/kernel/vdso/note.S
+@@ -12,9 +12,12 @@
+ #include <linux/version.h>
+ #include <linux/elfnote.h>
+ #include <linux/build-salt.h>
++#include <asm/assembler.h>
  
-+/*
-+ * This macro emits a program property note section identifying
-+ * architecture features which require special handling, mainly for
-+ * use in assembly files included in the VDSO.
-+ */
+ ELFNOTE_START(Linux, 0, "a")
+ 	.long LINUX_VERSION_CODE
+ ELFNOTE_END
+ 
+ BUILD_SALT
 +
-+#define NT_GNU_PROPERTY_TYPE_0  5
-+#define GNU_PROPERTY_AARCH64_FEATURE_1_AND      0xc0000000
++emit_aarch64_feature_1_and
+diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
+index 12324863d5c2..3fb13b81f780 100644
+--- a/arch/arm64/kernel/vdso/sigreturn.S
++++ b/arch/arm64/kernel/vdso/sigreturn.S
+@@ -9,6 +9,7 @@
+  */
+ 
+ #include <linux/linkage.h>
++#include <asm/assembler.h>
+ #include <asm/unistd.h>
+ 
+ 	.text
+@@ -24,3 +25,5 @@ SYM_FUNC_START(__kernel_rt_sigreturn)
+ 	svc	#0
+ 	.cfi_endproc
+ SYM_FUNC_END(__kernel_rt_sigreturn)
 +
-+#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI      (1U << 0)
-+#define GNU_PROPERTY_AARCH64_FEATURE_1_PAC      (1U << 1)
++emit_aarch64_feature_1_and
+diff --git a/arch/arm64/kernel/vdso/vdso.S b/arch/arm64/kernel/vdso/vdso.S
+index d1414fee5274..c4b1990bf2be 100644
+--- a/arch/arm64/kernel/vdso/vdso.S
++++ b/arch/arm64/kernel/vdso/vdso.S
+@@ -8,6 +8,7 @@
+ #include <linux/init.h>
+ #include <linux/linkage.h>
+ #include <linux/const.h>
++#include <asm/assembler.h>
+ #include <asm/page.h>
+ 
+ 	.globl vdso_start, vdso_end
+@@ -19,3 +20,5 @@ vdso_start:
+ vdso_end:
+ 
+ 	.previous
 +
-+#ifdef CONFIG_ARM64_BTI_KERNEL
-+#define GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT		\
-+		((GNU_PROPERTY_AARCH64_FEATURE_1_BTI |	\
-+		  GNU_PROPERTY_AARCH64_FEATURE_1_PAC))
-+#endif
-+
-+#ifdef GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT
-+.macro emit_aarch64_feature_1_and, feat=GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT
-+	.pushsection .note.gnu.property, "a"
-+	.align  3
-+	.long   2f - 1f
-+	.long   6f - 3f
-+	.long   NT_GNU_PROPERTY_TYPE_0
-+1:      .string "GNU"
-+2:
-+	.align  3
-+3:      .long   GNU_PROPERTY_AARCH64_FEATURE_1_AND
-+	.long   5f - 4f
-+4:
-+	/*
-+	 * This is described with an array of char in the Linux API
-+	 * spec but the text and all other usage (including binutils,
-+	 * clang and GCC) treat this as a 32 bit value so no swizzling
-+	 * is required for big endian.
-+	 */
-+	.long   \feat
-+5:
-+	.align  3
-+6:
-+	.popsection
-+.endm
-+
-+#else
-+.macro emit_aarch64_feature_1_and, feat=0
-+.endm
-+
-+#endif /* GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT */
-+
- #endif	/* __ASM_ASSEMBLER_H */
++emit_aarch64_feature_1_and
 -- 
 2.20.1
 
