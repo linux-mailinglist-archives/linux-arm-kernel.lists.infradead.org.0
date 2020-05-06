@@ -2,72 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 302061C6D5E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 11:42:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C2641C6D61
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 11:42:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=U53BjX+Tp7qlvR+PlKOulpb8Dw66qgGQScYd/CQRV1c=; b=ovnzRPp5Z82FHdsHhTckJ81J+y
-	438gCi03g+ZRnToOWo9+YjtIvnOS0nEev9NednC1rPQ2K6bwWdEX+gcIbKF43c8SkEXfJuWbAYJzo
-	koEZ39T2QcRC/jgjgZGbcIt0OnpjRvn4d+BAIhAGSv75Ax0edh2CKFNaD6bG2mca8inaEN99qPDkt
-	t0Z9HIS6uwUhDLTDTSYG8Fr1pn+jbxUmVVgw/uQnH1ik9WMPDCYtPhPwE7MmYPG1WIs+zgUC5R9FM
-	pvpr0qZW1ri3U9y8+FUxFE2fUVwYK3NiJ8xFafMbtVi9UHkZgupUQtpiX6qBUxbKOmGTIIgIjvRQ5
-	mD/6/kYQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f57psZmgn87jEqD02Sb01u3N6akPu8YKWvA8gsXBIqw=; b=I5IyXwU6jksg/Q
+	HwyJ0boO1KcrKEDUUGEhDKR6mgbCTjFOrcTh03VsCABQ5tgQsGislDHjbFwnLHiYnFVD6xj6H69rc
+	9X1wvBMFXFjFmya2/1ZM8coPlAIywkqaN7Nqn2m7Ict897fL6p8Kpl1IXK1+CXEQL3kQe8V8WCFAo
+	ha0foW2JStW1gJjXhQQUWDtFug193wiWXv7Pkgpfjdc4kgn3G0+FS5IoozE+Art7vVG2AjZohixQH
+	hZoZlupl6EWa1TtKKDwBo98rOJhE9pAUYTtShqfHnB4YXEEn+qjJzWHeoWeNX0ffG0/7vOM3eb9e+
+	xq++i4CbH+tFh+qareVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWGZ6-00050Y-8X; Wed, 06 May 2020 09:42:08 +0000
+	id 1jWGZK-0005JT-4G; Wed, 06 May 2020 09:42:22 +0000
 Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWGYF-0004Tf-6y
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 09:41:18 +0000
-Received: by mail-pl1-x644.google.com with SMTP id z6so255181plk.10
+ id 1jWGYN-0004c7-D7
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 09:41:26 +0000
+Received: by mail-pl1-x644.google.com with SMTP id m7so264551plt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 02:41:14 -0700 (PDT)
+ Wed, 06 May 2020 02:41:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=wxSG5WfhkxEMB45TkG3LoWeSX6r+HmcNcuK6/XuJqfE=;
- b=Cz3qjql4oGUV5mHZ/9oLh+l4ZsRg/D4Fz6/A4C0SdSBUJKGQcl4tKl6ZAX6lUYP3UR
- jUz658tzNq5IgBDWcizEHsM9kbxc4I1gXumbJcFmFbEvx9+g5xOEtXBp0M+YCyi7d6e9
- RA80wL+aQSUfEdlix66YRYJ4ljFDDQVuZgA8kHFeoq/s+Cko7ITcl3iEnNbDt9CvxXza
- 3oL8z35oH2GhuukjTQCzFjENcQgyIXZ0no3bOuGMEk/1eij1e/HynYflKHuQ2wkqEiwf
- W4fyjdAMVrbI9xyR7H174CaE/DAPuBWj1XvOa598Ed6X60KgZVCSXAtWDvSX3uGDwLum
- RpRA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=SlXuatNEebWvbmP7CKvAyoHRGK5SXnJzIr6kq4voDlQ=;
+ b=Tqs/yGb/eL0VSifFGk/ngdQDPkJpIA8MkpRoLRtgxuAIFNN87JAiEBFhk033MO0ieu
+ fN2HkGG/rwSqeF7HAFkuyhb5LxrsSaOsQ7PPqN+ZmJlqvf9PxPozaob3NZ8RmFdgDFbP
+ NGfAZqcSVeXz+MCGw/AJdzl0/9pW6olPEh1zQoeDwu8/tG51an0qOQTkBPGrQ0cwOihW
+ a0ZxZj1WVqKramj1XaTmwNbgR3WPEPK4SqFt/PUrh6HLpkEDva+MRkzNGUi1i/u2135J
+ SVqSoVMHRqmEb/xmJ3rSDNY9aFM2/tp9P3if50Au3hH0t0MmHMUsaPX3ALmOupHVd7/a
+ r2qw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=wxSG5WfhkxEMB45TkG3LoWeSX6r+HmcNcuK6/XuJqfE=;
- b=Hw/IZEPEk0YRWmvQNxl/iGYuEogPKHVrAlBUunOFmBHJ5hzDzQrBEIgDNtSRQv57hV
- tlfEEiWYAUDSk2+W7Wier/oiq5NDddNMajgsiNjvPo5dW3lqfrNLTnuNN+Jdf4Ya8K0X
- 8dhtW9pQWWg4vT7vnY7Sfl+lpLysaGOrgXYsiRot7npUGrfhIBCUY+A6VjcFxQZK+7ql
- VdsXADnrfvBKoX6M24/mfMDdaJdnb4aJBA/tKpm01U4rWPz4vpHQy4XUDGt/F9JYIeaB
- nI3OQhIkHjnBq7O2rCY8A458cnZDkVWHHFIrU2DJWyHSSHfWI+pk0vWbgaUzofo6gWFZ
- 3bCA==
-X-Gm-Message-State: AGi0PuYjxOOisj6uVhXGW1s+AZDaaa9KHUmgc31FXtljVcodKMnJOLYl
- 5TxSsEZmlauK1Hec8nz2rPzR0g==
-X-Google-Smtp-Source: APiQypL8PVNAtbX6SZbxqYBbtEbgTFb0q34Wb8hMyWomxwoyM+3ATnIXBOZ+d8Us2atsIRlin9bZQQ==
-X-Received: by 2002:a17:902:9049:: with SMTP id
- w9mr1642200plz.27.1588758073190; 
- Wed, 06 May 2020 02:41:13 -0700 (PDT)
+ :references:mime-version:content-transfer-encoding;
+ bh=SlXuatNEebWvbmP7CKvAyoHRGK5SXnJzIr6kq4voDlQ=;
+ b=FTw9e1GzjHR4GjZbfkYohglAuhO7resPOhlUWZSqhxRdQUSpB3YhWitpbnMP0orQs1
+ tjglrqB2TZBiR6UNnEvQvfp72YHyHkUfAjLMa/fMbcC/QgtYkdvuDJzs9t7Edtql6zDk
+ yv5/bxzu01DsW+mj0sRwiss86n+1XDp+wKZmRcAnhQaKPqBfir1ZUIoJ9syA4mwvs0ZA
+ 7pAEMI1/ywaDH7pCIUVoyS3iz6+atIH702W3Jm4fybXKIiLsgHl66wzk6twkUFQ3gdY4
+ t5G61wRu3m+YuQpiJSlnIC6tw266cwrW/jlfqUMFA9+u2I8WmWn6DTo07D5Y0uIMmrD7
+ edsQ==
+X-Gm-Message-State: AGi0PuYVlD++i5f7jMnhhuXmOettdTBZ2KfBNgJQYiood7EDGQ3rdDzF
+ hjTMYpzC9yQCbt0YG83V67MQwQ==
+X-Google-Smtp-Source: APiQypIGUY9ehi5r6OOjFpQ4c6AIKsFBEyc2pS42FuTYpDDF0UGGkcxjiiaUJtAiAjyMKrUGRuQXBQ==
+X-Received: by 2002:a17:902:56c:: with SMTP id
+ 99mr7095466plf.124.1588758082507; 
+ Wed, 06 May 2020 02:41:22 -0700 (PDT)
 Received: from localhost.localdomain ([117.252.68.141])
- by smtp.gmail.com with ESMTPSA id a2sm1337360pfg.106.2020.05.06.02.41.04
+ by smtp.gmail.com with ESMTPSA id a2sm1337360pfg.106.2020.05.06.02.41.13
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 06 May 2020 02:41:12 -0700 (PDT)
+ Wed, 06 May 2020 02:41:21 -0700 (PDT)
 From: Sumit Garg <sumit.garg@linaro.org>
 To: jarkko.sakkinen@linux.intel.com, zohar@linux.ibm.com, jejb@linux.ibm.com
-Subject: [PATCH v4 2/4] KEYS: trusted: Introduce TEE based Trusted Keys
-Date: Wed,  6 May 2020 15:10:15 +0530
-Message-Id: <1588758017-30426-3-git-send-email-sumit.garg@linaro.org>
+Subject: [PATCH v4 3/4] doc: trusted-encrypted: updates with TEE as a new
+ trust source
+Date: Wed,  6 May 2020 15:10:16 +0530
+Message-Id: <1588758017-30426-4-git-send-email-sumit.garg@linaro.org>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1588758017-30426-1-git-send-email-sumit.garg@linaro.org>
 References: <1588758017-30426-1-git-send-email-sumit.garg@linaro.org>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_024115_588635_3D441722 
-X-CRM114-Status: GOOD (  20.14  )
+X-CRM114-CacheID: sfid-20200506_024123_539885_8849759B 
+X-CRM114-Status: GOOD (  20.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -104,445 +106,202 @@ Cc: tee-dev@lists.linaro.org, daniel.thompson@linaro.org,
  Markus.Wamser@mixed-mode.de, casey@schaufler-ca.com,
  linux-integrity@vger.kernel.org, jens.wiklander@linaro.org,
  linux-arm-kernel@lists.infradead.org, serge@hallyn.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add support for TEE based trusted keys where TEE provides the functionality
-to seal and unseal trusted keys using hardware unique key.
-
-Refer to Documentation/tee.txt for detailed information about TEE.
-
-Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
----
- include/keys/trusted-type.h                 |   3 +
- include/keys/trusted_tee.h                  |  66 +++++++
- security/keys/Kconfig                       |   3 +
- security/keys/trusted-keys/Makefile         |   1 +
- security/keys/trusted-keys/trusted_common.c |   3 +
- security/keys/trusted-keys/trusted_tee.c    | 282 ++++++++++++++++++++++++++++
- 6 files changed, 358 insertions(+)
- create mode 100644 include/keys/trusted_tee.h
- create mode 100644 security/keys/trusted-keys/trusted_tee.c
-
-diff --git a/include/keys/trusted-type.h b/include/keys/trusted-type.h
-index 5559010..e0df5df 100644
---- a/include/keys/trusted-type.h
-+++ b/include/keys/trusted-type.h
-@@ -67,6 +67,9 @@ extern struct key_type key_type_trusted;
- #if defined(CONFIG_TCG_TPM)
- extern struct trusted_key_ops tpm_trusted_key_ops;
- #endif
-+#if defined(CONFIG_TEE)
-+extern struct trusted_key_ops tee_trusted_key_ops;
-+#endif
- 
- #define TRUSTED_DEBUG 0
- 
-diff --git a/include/keys/trusted_tee.h b/include/keys/trusted_tee.h
-new file mode 100644
-index 0000000..ab58ffd
---- /dev/null
-+++ b/include/keys/trusted_tee.h
-@@ -0,0 +1,66 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/*
-+ * Copyright (C) 2019 Linaro Ltd.
-+ *
-+ * Author:
-+ * Sumit Garg <sumit.garg@linaro.org>
-+ */
-+
-+#ifndef __TEE_TRUSTED_KEY_H
-+#define __TEE_TRUSTED_KEY_H
-+
-+#include <linux/tee_drv.h>
-+
-+#define DRIVER_NAME "tee-trusted-key"
-+
-+/*
-+ * Get random data for symmetric key
-+ *
-+ * [out]     memref[0]        Random data
-+ *
-+ * Result:
-+ * TEE_SUCCESS - Invoke command success
-+ * TEE_ERROR_BAD_PARAMETERS - Incorrect input param
-+ */
-+#define TA_CMD_GET_RANDOM	0x0
-+
-+/*
-+ * Seal trusted key using hardware unique key
-+ *
-+ * [in]      memref[0]        Plain key
-+ * [out]     memref[1]        Sealed key datablob
-+ *
-+ * Result:
-+ * TEE_SUCCESS - Invoke command success
-+ * TEE_ERROR_BAD_PARAMETERS - Incorrect input param
-+ */
-+#define TA_CMD_SEAL		0x1
-+
-+/*
-+ * Unseal trusted key using hardware unique key
-+ *
-+ * [in]      memref[0]        Sealed key datablob
-+ * [out]     memref[1]        Plain key
-+ *
-+ * Result:
-+ * TEE_SUCCESS - Invoke command success
-+ * TEE_ERROR_BAD_PARAMETERS - Incorrect input param
-+ */
-+#define TA_CMD_UNSEAL		0x2
-+
-+/**
-+ * struct trusted_key_private - TEE Trusted key private data
-+ * @dev:		TEE based Trusted key device.
-+ * @ctx:		TEE context handler.
-+ * @session_id:		Trusted key TA session identifier.
-+ * @shm_pool:		Memory pool shared with TEE device.
-+ */
-+struct trusted_key_private {
-+	struct device *dev;
-+	struct tee_context *ctx;
-+	u32 session_id;
-+	u32 data_rate;
-+	struct tee_shm *shm_pool;
-+};
-+
-+#endif
-diff --git a/security/keys/Kconfig b/security/keys/Kconfig
-index 47c0415..6ca6bc7 100644
---- a/security/keys/Kconfig
-+++ b/security/keys/Kconfig
-@@ -84,6 +84,9 @@ config TRUSTED_KEYS
- 	  if the boot PCRs and other criteria match.  Userspace will only ever
- 	  see encrypted blobs.
- 
-+	  It also provides support for alternative TEE based Trusted keys
-+	  generation and sealing in case TPM isn't present.
-+
- 	  If you are unsure as to whether this is required, answer N.
- 
- config ENCRYPTED_KEYS
-diff --git a/security/keys/trusted-keys/Makefile b/security/keys/trusted-keys/Makefile
-index 2b1085b..ea937d3 100644
---- a/security/keys/trusted-keys/Makefile
-+++ b/security/keys/trusted-keys/Makefile
-@@ -7,3 +7,4 @@ obj-$(CONFIG_TRUSTED_KEYS) += trusted.o
- trusted-y += trusted_common.o
- trusted-y += trusted_tpm1.o
- trusted-y += trusted_tpm2.o
-+trusted-y += trusted_tee.o
-diff --git a/security/keys/trusted-keys/trusted_common.c b/security/keys/trusted-keys/trusted_common.c
-index 9bfd081..03555ed 100644
---- a/security/keys/trusted-keys/trusted_common.c
-+++ b/security/keys/trusted-keys/trusted_common.c
-@@ -27,6 +27,9 @@ static struct trusted_key_ops *available_tk_ops[] = {
- #if defined(CONFIG_TCG_TPM)
- 	&tpm_trusted_key_ops,
- #endif
-+#if defined(CONFIG_TEE)
-+	&tee_trusted_key_ops,
-+#endif
- };
- static struct trusted_key_ops *tk_ops;
- 
-diff --git a/security/keys/trusted-keys/trusted_tee.c b/security/keys/trusted-keys/trusted_tee.c
-new file mode 100644
-index 0000000..724a73c
---- /dev/null
-+++ b/security/keys/trusted-keys/trusted_tee.c
-@@ -0,0 +1,282 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 Linaro Ltd.
-+ *
-+ * Author:
-+ * Sumit Garg <sumit.garg@linaro.org>
-+ */
-+
-+#include <linux/err.h>
-+#include <linux/key-type.h>
-+#include <linux/slab.h>
-+#include <linux/string.h>
-+#include <linux/uuid.h>
-+
-+#include <keys/trusted-type.h>
-+#include <keys/trusted_tee.h>
-+
-+static struct trusted_key_private pvt_data;
-+
-+/*
-+ * Have the TEE seal(encrypt) the symmetric key
-+ */
-+static int tee_key_seal(struct trusted_key_payload *p, char *datablob)
-+{
-+	int ret = 0;
-+	struct tee_ioctl_invoke_arg inv_arg;
-+	struct tee_param param[4];
-+	struct tee_shm *reg_shm_in = NULL, *reg_shm_out = NULL;
-+
-+	memset(&inv_arg, 0, sizeof(inv_arg));
-+	memset(&param, 0, sizeof(param));
-+
-+	reg_shm_in = tee_shm_register(pvt_data.ctx, (unsigned long)p->key,
-+				      p->key_len, TEE_SHM_DMA_BUF |
-+				      TEE_SHM_KERNEL_MAPPED);
-+	if (IS_ERR(reg_shm_in)) {
-+		dev_err(pvt_data.dev, "key shm register failed\n");
-+		return PTR_ERR(reg_shm_in);
-+	}
-+
-+	reg_shm_out = tee_shm_register(pvt_data.ctx, (unsigned long)p->blob,
-+				       sizeof(p->blob), TEE_SHM_DMA_BUF |
-+				       TEE_SHM_KERNEL_MAPPED);
-+	if (IS_ERR(reg_shm_out)) {
-+		dev_err(pvt_data.dev, "blob shm register failed\n");
-+		ret = PTR_ERR(reg_shm_out);
-+		goto out;
-+	}
-+
-+	inv_arg.func = TA_CMD_SEAL;
-+	inv_arg.session = pvt_data.session_id;
-+	inv_arg.num_params = 4;
-+
-+	param[0].attr = TEE_IOCTL_PARAM_ATTR_TYPE_MEMREF_INPUT;
-+	param[0].u.memref.shm = reg_shm_in;
-+	param[0].u.memref.size = p->key_len;
-+	param[0].u.memref.shm_offs = 0;
-+	param[1].attr = TEE_IOCTL_PARAM_ATTR_TYPE_MEMREF_OUTPUT;
-+	param[1].u.memref.shm = reg_shm_out;
-+	param[1].u.memref.size = sizeof(p->blob);
-+	param[1].u.memref.shm_offs = 0;
-+
-+	ret = tee_client_invoke_func(pvt_data.ctx, &inv_arg, param);
-+	if ((ret < 0) || (inv_arg.ret != 0)) {
-+		dev_err(pvt_data.dev, "TA_CMD_SEAL invoke err: %x\n",
-+			inv_arg.ret);
-+		ret = -EFAULT;
-+	} else {
-+		p->blob_len = param[1].u.memref.size;
-+	}
-+
-+out:
-+	if (reg_shm_out)
-+		tee_shm_free(reg_shm_out);
-+	if (reg_shm_in)
-+		tee_shm_free(reg_shm_in);
-+
-+	return ret;
-+}
-+
-+/*
-+ * Have the TEE unseal(decrypt) the symmetric key
-+ */
-+static int tee_key_unseal(struct trusted_key_payload *p, char *datablob)
-+{
-+	int ret = 0;
-+	struct tee_ioctl_invoke_arg inv_arg;
-+	struct tee_param param[4];
-+	struct tee_shm *reg_shm_in = NULL, *reg_shm_out = NULL;
-+
-+	memset(&inv_arg, 0, sizeof(inv_arg));
-+	memset(&param, 0, sizeof(param));
-+
-+	reg_shm_in = tee_shm_register(pvt_data.ctx, (unsigned long)p->blob,
-+				      p->blob_len, TEE_SHM_DMA_BUF |
-+				      TEE_SHM_KERNEL_MAPPED);
-+	if (IS_ERR(reg_shm_in)) {
-+		dev_err(pvt_data.dev, "blob shm register failed\n");
-+		return PTR_ERR(reg_shm_in);
-+	}
-+
-+	reg_shm_out = tee_shm_register(pvt_data.ctx, (unsigned long)p->key,
-+				       sizeof(p->key), TEE_SHM_DMA_BUF |
-+				       TEE_SHM_KERNEL_MAPPED);
-+	if (IS_ERR(reg_shm_out)) {
-+		dev_err(pvt_data.dev, "key shm register failed\n");
-+		ret = PTR_ERR(reg_shm_out);
-+		goto out;
-+	}
-+
-+	inv_arg.func = TA_CMD_UNSEAL;
-+	inv_arg.session = pvt_data.session_id;
-+	inv_arg.num_params = 4;
-+
-+	param[0].attr = TEE_IOCTL_PARAM_ATTR_TYPE_MEMREF_INPUT;
-+	param[0].u.memref.shm = reg_shm_in;
-+	param[0].u.memref.size = p->blob_len;
-+	param[0].u.memref.shm_offs = 0;
-+	param[1].attr = TEE_IOCTL_PARAM_ATTR_TYPE_MEMREF_OUTPUT;
-+	param[1].u.memref.shm = reg_shm_out;
-+	param[1].u.memref.size = sizeof(p->key);
-+	param[1].u.memref.shm_offs = 0;
-+
-+	ret = tee_client_invoke_func(pvt_data.ctx, &inv_arg, param);
-+	if ((ret < 0) || (inv_arg.ret != 0)) {
-+		dev_err(pvt_data.dev, "TA_CMD_UNSEAL invoke err: %x\n",
-+			inv_arg.ret);
-+		ret = -EFAULT;
-+	} else {
-+		p->key_len = param[1].u.memref.size;
-+	}
-+
-+out:
-+	if (reg_shm_out)
-+		tee_shm_free(reg_shm_out);
-+	if (reg_shm_in)
-+		tee_shm_free(reg_shm_in);
-+
-+	return ret;
-+}
-+
-+/*
-+ * Have the TEE generate random symmetric key
-+ */
-+static int tee_get_random(unsigned char *key, size_t key_len)
-+{
-+	int ret = 0;
-+	struct tee_ioctl_invoke_arg inv_arg;
-+	struct tee_param param[4];
-+	struct tee_shm *reg_shm = NULL;
-+
-+	memset(&inv_arg, 0, sizeof(inv_arg));
-+	memset(&param, 0, sizeof(param));
-+
-+	reg_shm = tee_shm_register(pvt_data.ctx, (unsigned long)key, key_len,
-+				   TEE_SHM_DMA_BUF | TEE_SHM_KERNEL_MAPPED);
-+	if (IS_ERR(reg_shm)) {
-+		dev_err(pvt_data.dev, "random key shm register failed\n");
-+		return PTR_ERR(reg_shm);
-+	}
-+
-+	inv_arg.func = TA_CMD_GET_RANDOM;
-+	inv_arg.session = pvt_data.session_id;
-+	inv_arg.num_params = 4;
-+
-+	param[0].attr = TEE_IOCTL_PARAM_ATTR_TYPE_MEMREF_OUTPUT;
-+	param[0].u.memref.shm = reg_shm;
-+	param[0].u.memref.size = key_len;
-+	param[0].u.memref.shm_offs = 0;
-+
-+	ret = tee_client_invoke_func(pvt_data.ctx, &inv_arg, param);
-+	if ((ret < 0) || (inv_arg.ret != 0)) {
-+		dev_err(pvt_data.dev, "TA_CMD_GET_RANDOM invoke err: %x\n",
-+			inv_arg.ret);
-+		ret = -EFAULT;
-+	} else {
-+		ret = param[0].u.memref.size;
-+	}
-+
-+	tee_shm_free(reg_shm);
-+
-+	return ret;
-+}
-+
-+static int optee_ctx_match(struct tee_ioctl_version_data *ver, const void *data)
-+{
-+	if (ver->impl_id == TEE_IMPL_ID_OPTEE)
-+		return 1;
-+	else
-+		return 0;
-+}
-+
-+static int trusted_key_probe(struct device *dev)
-+{
-+	struct tee_client_device *rng_device = to_tee_client_device(dev);
-+	int ret = 0, err = -ENODEV;
-+	struct tee_ioctl_open_session_arg sess_arg;
-+
-+	memset(&sess_arg, 0, sizeof(sess_arg));
-+
-+	/* Open context with TEE driver */
-+	pvt_data.ctx = tee_client_open_context(NULL, optee_ctx_match, NULL,
-+					       NULL);
-+	if (IS_ERR(pvt_data.ctx))
-+		return -ENODEV;
-+
-+	/* Open session with hwrng Trusted App */
-+	memcpy(sess_arg.uuid, rng_device->id.uuid.b, TEE_IOCTL_UUID_LEN);
-+	sess_arg.clnt_login = TEE_IOCTL_LOGIN_REE_KERNEL;
-+	sess_arg.num_params = 0;
-+
-+	ret = tee_client_open_session(pvt_data.ctx, &sess_arg, NULL);
-+	if ((ret < 0) || (sess_arg.ret != 0)) {
-+		dev_err(dev, "tee_client_open_session failed, err: %x\n",
-+			sess_arg.ret);
-+		err = -EINVAL;
-+		goto out_ctx;
-+	}
-+	pvt_data.session_id = sess_arg.session;
-+
-+	ret = register_key_type(&key_type_trusted);
-+	if (ret < 0)
-+		goto out_sess;
-+
-+	pvt_data.dev = dev;
-+
-+	return 0;
-+
-+out_sess:
-+	tee_client_close_session(pvt_data.ctx, pvt_data.session_id);
-+out_ctx:
-+	tee_client_close_context(pvt_data.ctx);
-+
-+	return err;
-+}
-+
-+static int trusted_key_remove(struct device *dev)
-+{
-+	unregister_key_type(&key_type_trusted);
-+	tee_client_close_session(pvt_data.ctx, pvt_data.session_id);
-+	tee_client_close_context(pvt_data.ctx);
-+
-+	return 0;
-+}
-+
-+static const struct tee_client_device_id trusted_key_id_table[] = {
-+	{UUID_INIT(0xf04a0fe7, 0x1f5d, 0x4b9b,
-+		   0xab, 0xf7, 0x61, 0x9b, 0x85, 0xb4, 0xce, 0x8c)},
-+	{}
-+};
-+
-+MODULE_DEVICE_TABLE(tee, trusted_key_id_table);
-+
-+static struct tee_client_driver trusted_key_driver = {
-+	.id_table	= trusted_key_id_table,
-+	.driver		= {
-+		.name		= DRIVER_NAME,
-+		.bus		= &tee_bus_type,
-+		.probe		= trusted_key_probe,
-+		.remove		= trusted_key_remove,
-+	},
-+};
-+
-+static int __init init_tee_trusted(void)
-+{
-+	return driver_register(&trusted_key_driver.driver);
-+}
-+
-+static void __exit cleanup_tee_trusted(void)
-+{
-+	driver_unregister(&trusted_key_driver.driver);
-+}
-+
-+struct trusted_key_ops tee_trusted_key_ops = {
-+	.migratable = 0, /* non-migratable */
-+	.init = init_tee_trusted,
-+	.seal = tee_key_seal,
-+	.unseal = tee_key_unseal,
-+	.get_random = tee_get_random,
-+	.cleanup = cleanup_tee_trusted,
-+};
-+EXPORT_SYMBOL_GPL(tee_trusted_key_ops);
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VXBkYXRlIGRvY3VtZW50YXRpb24gZm9yIFRydXN0ZWQgYW5kIEVuY3J5cHRlZCBLZXlzIHdpdGgg
+VEVFIGFzIGEgbmV3CnRydXN0IHNvdXJjZS4gRm9sbG93aW5nIGlzIGJyaWVmIGRlc2NyaXB0aW9u
+IG9mIHVwZGF0ZXM6CgotIEFkZCBhIHNlY3Rpb24gdG8gZGVtb3N0cmF0ZSBhIGxpc3Qgb2Ygc3Vw
+cG9ydGVkIGRldmljZXMgYWxvbmcgd2l0aAogIHRoZWlyIHNlY3VyaXR5IHByb3BlcnRpZXMvZ3Vh
+cmFudGVlcy4KLSBBZGQgYSBrZXkgZ2VuZXJhdGlvbiBzZWN0aW9uLgotIFVwZGF0ZXMgZm9yIHVz
+YWdlIHNlY3Rpb24gaW5jbHVkaW5nIGRpZmZlcmVuY2VzIHNwZWNpZmljIHRvIGEgdHJ1c3QKICBz
+b3VyY2UuCgpTaWduZWQtb2ZmLWJ5OiBTdW1pdCBHYXJnIDxzdW1pdC5nYXJnQGxpbmFyby5vcmc+
+Ci0tLQogRG9jdW1lbnRhdGlvbi9zZWN1cml0eS9rZXlzL3RydXN0ZWQtZW5jcnlwdGVkLnJzdCB8
+IDIwMyArKysrKysrKysrKysrKysrKystLS0tCiAxIGZpbGUgY2hhbmdlZCwgMTcxIGluc2VydGlv
+bnMoKyksIDMyIGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vc2VjdXJp
+dHkva2V5cy90cnVzdGVkLWVuY3J5cHRlZC5yc3QgYi9Eb2N1bWVudGF0aW9uL3NlY3VyaXR5L2tl
+eXMvdHJ1c3RlZC1lbmNyeXB0ZWQucnN0CmluZGV4IDUwYWM4YmMuLjQ3NjRhNmQgMTAwNjQ0Ci0t
+LSBhL0RvY3VtZW50YXRpb24vc2VjdXJpdHkva2V5cy90cnVzdGVkLWVuY3J5cHRlZC5yc3QKKysr
+IGIvRG9jdW1lbnRhdGlvbi9zZWN1cml0eS9rZXlzL3RydXN0ZWQtZW5jcnlwdGVkLnJzdApAQCAt
+NiwzMCArNiwxNjEgQEAgVHJ1c3RlZCBhbmQgRW5jcnlwdGVkIEtleXMgYXJlIHR3byBuZXcga2V5
+IHR5cGVzIGFkZGVkIHRvIHRoZSBleGlzdGluZyBrZXJuZWwKIGtleSByaW5nIHNlcnZpY2UuICBC
+b3RoIG9mIHRoZXNlIG5ldyB0eXBlcyBhcmUgdmFyaWFibGUgbGVuZ3RoIHN5bW1ldHJpYyBrZXlz
+LAogYW5kIGluIGJvdGggY2FzZXMgYWxsIGtleXMgYXJlIGNyZWF0ZWQgaW4gdGhlIGtlcm5lbCwg
+YW5kIHVzZXIgc3BhY2Ugc2VlcywKIHN0b3JlcywgYW5kIGxvYWRzIG9ubHkgZW5jcnlwdGVkIGJs
+b2JzLiAgVHJ1c3RlZCBLZXlzIHJlcXVpcmUgdGhlIGF2YWlsYWJpbGl0eQotb2YgYSBUcnVzdGVk
+IFBsYXRmb3JtIE1vZHVsZSAoVFBNKSBjaGlwIGZvciBncmVhdGVyIHNlY3VyaXR5LCB3aGlsZSBF
+bmNyeXB0ZWQKLUtleXMgY2FuIGJlIHVzZWQgb24gYW55IHN5c3RlbS4gIEFsbCB1c2VyIGxldmVs
+IGJsb2JzLCBhcmUgZGlzcGxheWVkIGFuZCBsb2FkZWQKLWluIGhleCBhc2NpaSBmb3IgY29udmVu
+aWVuY2UsIGFuZCBhcmUgaW50ZWdyaXR5IHZlcmlmaWVkLgorb2YgYSBUcnVzdCBTb3VyY2UgZm9y
+IGdyZWF0ZXIgc2VjdXJpdHksIHdoaWxlIEVuY3J5cHRlZCBLZXlzIGNhbiBiZSB1c2VkIG9uIGFu
+eQorc3lzdGVtLiBBbGwgdXNlciBsZXZlbCBibG9icywgYXJlIGRpc3BsYXllZCBhbmQgbG9hZGVk
+IGluIGhleCBhc2NpaSBmb3IKK2NvbnZlbmllbmNlLCBhbmQgYXJlIGludGVncml0eSB2ZXJpZmll
+ZC4KIAotVHJ1c3RlZCBLZXlzIHVzZSBhIFRQTSBib3RoIHRvIGdlbmVyYXRlIGFuZCB0byBzZWFs
+IHRoZSBrZXlzLiAgS2V5cyBhcmUgc2VhbGVkCi11bmRlciBhIDIwNDggYml0IFJTQSBrZXkgaW4g
+dGhlIFRQTSwgYW5kIG9wdGlvbmFsbHkgc2VhbGVkIHRvIHNwZWNpZmllZCBQQ1IKLShpbnRlZ3Jp
+dHkgbWVhc3VyZW1lbnQpIHZhbHVlcywgYW5kIG9ubHkgdW5zZWFsZWQgYnkgdGhlIFRQTSwgaWYg
+UENScyBhbmQgYmxvYgotaW50ZWdyaXR5IHZlcmlmaWNhdGlvbnMgbWF0Y2guICBBIGxvYWRlZCBU
+cnVzdGVkIEtleSBjYW4gYmUgdXBkYXRlZCB3aXRoIG5ldwotKGZ1dHVyZSkgUENSIHZhbHVlcywg
+c28ga2V5cyBhcmUgZWFzaWx5IG1pZ3JhdGVkIHRvIG5ldyBwY3IgdmFsdWVzLCBzdWNoIGFzCi13
+aGVuIHRoZSBrZXJuZWwgYW5kIGluaXRyYW1mcyBhcmUgdXBkYXRlZC4gIFRoZSBzYW1lIGtleSBj
+YW4gaGF2ZSBtYW55IHNhdmVkCi1ibG9icyB1bmRlciBkaWZmZXJlbnQgUENSIHZhbHVlcywgc28g
+bXVsdGlwbGUgYm9vdHMgYXJlIGVhc2lseSBzdXBwb3J0ZWQuCiAKLVRQTSAxLjIKLS0tLS0tLS0K
+K1RydXN0IFNvdXJjZQorPT09PT09PT09PT09CiAKLUJ5IGRlZmF1bHQsIHRydXN0ZWQga2V5cyBh
+cmUgc2VhbGVkIHVuZGVyIHRoZSBTUkssIHdoaWNoIGhhcyB0aGUgZGVmYXVsdAotYXV0aG9yaXph
+dGlvbiB2YWx1ZSAoMjAgemVyb3MpLiAgVGhpcyBjYW4gYmUgc2V0IGF0IHRha2Vvd25lcnNoaXAg
+dGltZSB3aXRoIHRoZQotdHJvdXNlcidzIHV0aWxpdHk6ICJ0cG1fdGFrZW93bmVyc2hpcCAtdSAt
+eiIuCitUcnVzdCBTb3VyY2UgcHJvdmlkZXMgdGhlIHNvdXJjZSBvZiBzZWN1cml0eSBmb3IgdGhl
+IFRydXN0ZWQgS2V5cywgb24gd2hpY2gKK2Jhc2lzIFRydXN0ZWQgS2V5cyBlc3RhYmxpc2hlcyBh
+IFRydXN0IG1vZGVsIHdpdGggaXRzIHVzZXIuIEEgVHJ1c3QgU291cmNlIGNvdWxkCitkaWZmZXIg
+ZnJvbSBvbmUgc3lzdGVtIHRvIGFub3RoZXIgZGVwZW5kaW5nIG9uIGl0cyBzZWN1cml0eSByZXF1
+aXJlbWVudHMuIEl0Citjb3VsZCBiZSBlaXRoZXIgYW4gb2ZmLWNoaXAgZGV2aWNlIG9yIGFuIG9u
+LWNoaXAgZGV2aWNlLiBGb2xsb3dpbmcgc2VjdGlvbgorZGVtb3N0cmF0ZXMgYSBsaXN0IG9mIHN1
+cHBvcnRlZCBkZXZpY2VzIGFsb25nIHdpdGggdGhlaXIgc2VjdXJpdHkgcHJvcGVydGllcy8KK2d1
+YXJhbnRlZXM6CiAKLVRQTSAyLjAKLS0tLS0tLS0KKyAgKiAgUm9vdCBvZiB0cnVzdCBmb3Igc3Rv
+cmFnZQogCi1UaGUgdXNlciBtdXN0IGZpcnN0IGNyZWF0ZSBhIHN0b3JhZ2Uga2V5IGFuZCBtYWtl
+IGl0IHBlcnNpc3RlbnQsIHNvIHRoZSBrZXkgaXMKLWF2YWlsYWJsZSBhZnRlciByZWJvb3QuIFRo
+aXMgY2FuIGJlIGRvbmUgdXNpbmcgdGhlIGZvbGxvd2luZyBjb21tYW5kcy4KKyAgICAgKDEpIFRQ
+TSAoVHJ1c3RlZCBQbGF0Zm9ybSBNb2R1bGU6IGhhcmR3YXJlIGRldmljZSkKKworICAgICAgICAg
+Um9vdGVkIHRvIFN0b3JhZ2UgUm9vdCBLZXkgKFNSSykgd2hpY2ggbmV2ZXIgbGVhdmVzIHRoZSBU
+UE0gdGhhdAorICAgICAgICAgcHJvdmlkZXMgY3J5cHRvIG9wZXJhdGlvbiB0byBlc3RhYmxpc2gg
+cm9vdCBvZiB0cnVzdCBmb3Igc3RvcmFnZS4KKworICAgICAoMikgVEVFIChUcnVzdGVkIEV4ZWN1
+dGlvbiBFbnZpcm9ubWVudDogT1AtVEVFIGJhc2VkIG9uIEFybSBUcnVzdFpvbmUpCisKKyAgICAg
+ICAgIFJvb3RlZCB0byBIYXJkd2FyZSBVbmlxdWUgS2V5IChIVUspIHdoaWNoIGlzIGdlbmVyYWxs
+eSBidXJudCBpbiBvbi1jaGlwCisgICAgICAgICBmdXNlcyBhbmQgaXMgYWNjZXNzaWJsZSB0byBU
+RUUgb25seS4KKworICAqICBFeGVjdXRpb24gaXNvbGF0aW9uCisKKyAgICAgKDEpIFRQTQorCisg
+ICAgICAgICBGaXhlZCBzZXQgb2Ygb3BlcmF0aW9ucyBydW5uaW5nIGluIGlzb2xhdGVkIGV4ZWN1
+dGlvbiBlbnZpcm9ubWVudC4KKworICAgICAoMikgVEVFCisKKyAgICAgICAgIEN1c3RvbWl6YWJs
+ZSBzZXQgb2Ygb3BlcmF0aW9ucyBydW5uaW5nIGluIGlzb2xhdGVkIGV4ZWN1dGlvbgorICAgICAg
+ICAgZW52aXJvbm1lbnQgdmVyaWZpZWQgdmlhIFNlY3VyZS9UcnVzdGVkIGJvb3QgcHJvY2Vzcy4K
+KworICAqIE9wdGlvbmFsIGJpbmRpbmcgdG8gcGxhdGZvcm0gaW50ZWdyaXR5IHN0YXRlCisKKyAg
+ICAgKDEpIFRQTQorCisgICAgICAgICBLZXlzIGNhbiBiZSBvcHRpb25hbGx5IHNlYWxlZCB0byBz
+cGVjaWZpZWQgUENSIChpbnRlZ3JpdHkgbWVhc3VyZW1lbnQpCisgICAgICAgICB2YWx1ZXMsIGFu
+ZCBvbmx5IHVuc2VhbGVkIGJ5IHRoZSBUUE0sIGlmIFBDUnMgYW5kIGJsb2IgaW50ZWdyaXR5Cisg
+ICAgICAgICB2ZXJpZmljYXRpb25zIG1hdGNoLiBBIGxvYWRlZCBUcnVzdGVkIEtleSBjYW4gYmUg
+dXBkYXRlZCB3aXRoIG5ldworICAgICAgICAgKGZ1dHVyZSkgUENSIHZhbHVlcywgc28ga2V5cyBh
+cmUgZWFzaWx5IG1pZ3JhdGVkIHRvIG5ldyBQQ1IgdmFsdWVzLAorICAgICAgICAgc3VjaCBhcyB3
+aGVuIHRoZSBrZXJuZWwgYW5kIGluaXRyYW1mcyBhcmUgdXBkYXRlZC4gVGhlIHNhbWUga2V5IGNh
+bgorICAgICAgICAgaGF2ZSBtYW55IHNhdmVkIGJsb2JzIHVuZGVyIGRpZmZlcmVudCBQQ1IgdmFs
+dWVzLCBzbyBtdWx0aXBsZSBib290cyBhcmUKKyAgICAgICAgIGVhc2lseSBzdXBwb3J0ZWQuCisK
+KyAgICAgKDIpIFRFRQorCisgICAgICAgICBSZWxpZXMgb24gU2VjdXJlL1RydXN0ZWQgYm9vdCBw
+cm9jZXNzIGZvciBwbGF0Zm9ybSBpbnRlZ3JpdHkuIEl0IGNhbgorICAgICAgICAgYmUgZXh0ZW5k
+ZWQgd2l0aCBURUUgYmFzZWQgbWVhc3VyZWQgYm9vdCBwcm9jZXNzLgorCisgICogIE9uLWNoaXAg
+dmVyc3VzIG9mZi1jaGlwCisKKyAgICAgKDEpIFRQTQorCisgICAgICAgICBPZmYtY2hpcCBkZXZp
+Y2UgY29ubmVjdGVkIHZpYSBzZXJpYWwgYnVzIChsaWtlIEkyQywgU1BJIGV0Yy4pIGV4cG9zaW5n
+CisgICAgICAgICBwaHlzaWNhbCBhY2Nlc3Mgd2hpY2ggcmVwcmVzZW50cyBhbiBhdHRhY2sgc3Vy
+ZmFjZSB0aGF0IGNhbiBiZQorICAgICAgICAgbWl0aWdhdGVkIHZpYSB0YW1wZXIgZGV0ZWN0aW9u
+LgorCisgICAgICgyKSBURUUKKworICAgICAgICAgT24tY2hpcCBmdW5jdGlvbmFsaXR5LCBpbW11
+bmUgdG8gdGhpcyBhdHRhY2sgc3VyZmFjZS4KKworICAqICBNZW1vcnkgYXR0YWNrcyAoRFJBTSBi
+YXNlZCBsaWtlIGF0dGFjaGluZyBhIGJ1cyBtb25pdG9yIGV0Yy4pCisKKyAgICAgKDEpIFRQTQor
+CisgICAgICAgICBJbW11bmUgdG8gdGhlc2UgYXR0YWNrcyBhcyBpdCBkb2VzbuKAmXQgbWFrZSB1
+c2Ugb2Ygc3lzdGVtIERSQU0uCisKKyAgICAgKDIpIFRFRQorCisgICAgICAgICBBbiBpbXBsZW1l
+bnRhdGlvbiBiYXNlZCBvbiBUcnVzdFpvbmUgcHJvdGVjdGVkIERSQU0gaXMgc3VzY2VwdGlibGUg
+dG8KKyAgICAgICAgIHN1Y2ggYXR0YWNrcy4gSW4gb3JkZXIgdG8gbWl0aWdhdGUgdGhlc2UgYXR0
+YWNrcyBvbmUgbmVlZHMgdG8gcmVseSBvbgorICAgICAgICAgb24tY2hpcCBzZWN1cmUgUkFNIHRv
+IHN0b3JlIHNlY3JldHMgb3IgaGF2ZSB0aGUgZW50aXJlIFRFRQorICAgICAgICAgaW1wbGVtZW50
+YXRpb24gYmFzZWQgb24gb24tY2hpcCBzZWN1cmUgUkFNLiBBbiBhbHRlcm5hdGl2ZSBtaXRpZ2F0
+aW9uCisgICAgICAgICB3b3VsZCBiZSB0byB1c2UgZW5jcnlwdGVkIERSQU0uCisKKyAgKiAgU2lk
+ZS1jaGFubmVsIGF0dGFja3MgKGNhY2hlLCBtZW1vcnksIENQVSBvciB0aW1lIGJhc2VkKQorCisg
+ICAgICgxKSBUUE0KKworICAgICAgICAgSW1tdW5lIHRvIHNpZGUtY2hhbm5lbCBhdHRhY2tzIGFz
+IGl0cyByZXNvdXJjZXMgYXJlIGlzb2xhdGVkIGZyb20gdGhlCisgICAgICAgICBtYWluIE9TLgor
+CisgICAgICgyKSBURUUKKworICAgICAgICAgQSBjYXJlZnVsIGltcGxlbWVudGF0aW9uIGlzIHJl
+cXVpcmVkIHRvIG1pdGlnYXRlIGFnYWluc3QgdGhlc2UgYXR0YWNrcworICAgICAgICAgZm9yIHJl
+c291cmNlcyB3aGljaCBhcmUgc2hhcmVkIChlZy4gc2hhcmVkIG1lbW9yeSkgd2l0aCB0aGUgbWFp
+biBPUy4KKyAgICAgICAgIENhY2hlIGFuZCBDUFUgYmFzZWQgc2lkZS1jaGFubmVsIGF0dGFja3Mg
+Y2FuIGJlIG1pdGlnYXRlZCB2aWEKKyAgICAgICAgIGludmFsaWRhdGluZyBjYWNoZXMgYW5kIENQ
+VSByZWdpc3RlcnMgZHVyaW5nIGNvbnRleHQgc3dpdGNoIHRvIGFuZCBmcm9tCisgICAgICAgICB0
+aGUgc2VjdXJlIHdvcmxkLgorICAgICAgICAgVG8gbWl0aWdhdGUgYWdhaW5zdCB0aW1lIGJhc2Vk
+IGF0dGFja3MsIG9uZSBuZWVkcyB0byBoYXZlIHRpbWUKKyAgICAgICAgIGludmFyaWFudCBpbXBs
+ZW1lbnRhdGlvbnMgKGxpa2UgY3J5cHRvIGFsZ29yaXRobXMgZXRjLikuCisKKyAgKiAgUmVzaXN0
+YW5jZSB0byBwaHlzaWNhbCBhdHRhY2tzIChwb3dlciBhbmFseXNpcywgZWxlY3Ryb21hZ25ldGlj
+IGVtYW5hdGlvbiwKKyAgICAgcHJvYmVzIGV0Yy4pCisKKyAgICAgKDEpIFRQTQorCisgICAgICAg
+ICBQcm92aWRlcyBsaW1pdGVkIHByb3RlY3Rpb24gdXRpbGl6aW5nIHRhbXBlciByZXNpc3RhbmNl
+LgorCisgICAgICgyKSBURUUKKworICAgICAgICAgUHJvdmlkZXMgbm8gcHJvdGVjdGlvbiBieSBp
+dHNlbGYsIHJlbGllcyBvbiB0aGUgdW5kZXJseWluZyBwbGF0Zm9ybSBmb3IKKyAgICAgICAgIGZl
+YXR1cmVzIHN1Y2ggYXMgdGFtcGVyIHJlc2lzdGFuY2UuCisKKworS2V5IEdlbmVyYXRpb24KKz09
+PT09PT09PT09PT09CisKK1RydXN0ZWQgS2V5cworLS0tLS0tLS0tLS0tCisKK05ldyBrZXlzIGFy
+ZSBjcmVhdGVkIGZyb20gdHJ1c3Qgc291cmNlIGdlbmVyYXRlZCByYW5kb20gbnVtYmVycywgYW5k
+IGFyZQorZW5jcnlwdGVkL2RlY3J5cHRlZCB1c2luZyB0cnVzdCBzb3VyY2Ugc3RvcmFnZSByb290
+IGtleS4KKworICAqICBUUE0gKGhhcmR3YXJlIGRldmljZSkgYmFzZWQgUk5HCisKKyAgICAgU3Ry
+ZW5ndGggb2YgcmFuZG9tIG51bWJlcnMgbWF5IHZhcnkgZnJvbSBvbmUgZGV2aWNlIG1hbnVmYWN0
+dXJlciB0bworICAgICBhbm90aGVyLgorCisgICogIFRFRSAoT1AtVEVFIGJhc2VkIG9uIEFybSBU
+cnVzdFpvbmUpIGJhc2VkIFJORworCisgICAgIFJORyBpcyBjdXN0b21pemFibGUgYXMgcGVyIHBs
+YXRmb3JtIG5lZWRzLiBJdCBjYW4gZWl0aGVyIGJlIGRpcmVjdCBvdXRwdXQKKyAgICAgZnJvbSBw
+bGF0Zm9ybSBzcGVjaWZpYyBoYXJkd2FyZSBSTkcgb3IgYSBzb2Z0d2FyZSBiYXNlZCBGb3J0dW5h
+IENTUFJORworICAgICB3aGljaCBjYW4gYmUgc2VlZGVkIHZpYSBtdWx0aXBsZSBlbnRyb3B5IHNv
+dXJjZXMuCisKK0VuY3J5cHRlZCBLZXlzCistLS0tLS0tLS0tLS0tLQorCitFbmNyeXB0ZWQga2V5
+cyBkbyBub3QgZGVwZW5kIG9uIGEgdHJ1c3Qgc291cmNlLCBhbmQgYXJlIGZhc3RlciwgYXMgdGhl
+eSB1c2UgQUVTCitmb3IgZW5jcnlwdGlvbi9kZWNyeXB0aW9uLiBOZXcga2V5cyBhcmUgY3JlYXRl
+ZCBmcm9tIGtlcm5lbCBnZW5lcmF0ZWQgcmFuZG9tCitudW1iZXJzLCBhbmQgYXJlIGVuY3J5cHRl
+ZC9kZWNyeXB0ZWQgdXNpbmcgYSBzcGVjaWZpZWQg4oCYbWFzdGVy4oCZIGtleS4gVGhlCivigJht
+YXN0ZXLigJkga2V5IGNhbiBlaXRoZXIgYmUgYSB0cnVzdGVkLWtleSBvciB1c2VyLWtleSB0eXBl
+LiBUaGUgbWFpbiBkaXNhZHZhbnRhZ2UKK29mIGVuY3J5cHRlZCBrZXlzIGlzIHRoYXQgaWYgdGhl
+eSBhcmUgbm90IHJvb3RlZCBpbiBhIHRydXN0ZWQga2V5LCB0aGV5IGFyZSBvbmx5CithcyBzZWN1
+cmUgYXMgdGhlIHVzZXIga2V5IGVuY3J5cHRpbmcgdGhlbS4gVGhlIG1hc3RlciB1c2VyIGtleSBz
+aG91bGQgdGhlcmVmb3JlCitiZSBsb2FkZWQgaW4gYXMgc2VjdXJlIGEgd2F5IGFzIHBvc3NpYmxl
+LCBwcmVmZXJhYmx5IGVhcmx5IGluIGJvb3QuCisKKworVXNhZ2UKKz09PT09CisKK1RydXN0ZWQg
+S2V5cyB1c2FnZTogVFBNCistLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQorCitUUE0gMS4yOiBCeSBk
+ZWZhdWx0LCB0cnVzdGVkIGtleXMgYXJlIHNlYWxlZCB1bmRlciB0aGUgU1JLLCB3aGljaCBoYXMg
+dGhlCitkZWZhdWx0IGF1dGhvcml6YXRpb24gdmFsdWUgKDIwIHplcm9zKS4gIFRoaXMgY2FuIGJl
+IHNldCBhdCB0YWtlb3duZXJzaGlwIHRpbWUKK3dpdGggdGhlIFRyb3VTZXJTIHV0aWxpdHk6ICJ0
+cG1fdGFrZW93bmVyc2hpcCAtdSAteiIuCisKK1RQTSAyLjA6IFRoZSB1c2VyIG11c3QgZmlyc3Qg
+Y3JlYXRlIGEgc3RvcmFnZSBrZXkgYW5kIG1ha2UgaXQgcGVyc2lzdGVudCwgc28gdGhlCitrZXkg
+aXMgYXZhaWxhYmxlIGFmdGVyIHJlYm9vdC4gVGhpcyBjYW4gYmUgZG9uZSB1c2luZyB0aGUgZm9s
+bG93aW5nIGNvbW1hbmRzLgogCiBXaXRoIHRoZSBJQk0gVFNTIDIgc3RhY2s6OgogCkBAIC03OSwx
+NCArMjEwLDIxIEBAIFRQTV9TVE9SRURfREFUQSBmb3JtYXQuICBUaGUga2V5IGxlbmd0aCBmb3Ig
+bmV3IGtleXMgYXJlIGFsd2F5cyBpbiBieXRlcy4KIFRydXN0ZWQgS2V5cyBjYW4gYmUgMzIgLSAx
+MjggYnl0ZXMgKDI1NiAtIDEwMjQgYml0cyksIHRoZSB1cHBlciBsaW1pdCBpcyB0byBmaXQKIHdp
+dGhpbiB0aGUgMjA0OCBiaXQgU1JLIChSU0EpIGtleWxlbmd0aCwgd2l0aCBhbGwgbmVjZXNzYXJ5
+IHN0cnVjdHVyZS9wYWRkaW5nLgogCi1FbmNyeXB0ZWQga2V5cyBkbyBub3QgZGVwZW5kIG9uIGEg
+VFBNLCBhbmQgYXJlIGZhc3RlciwgYXMgdGhleSB1c2UgQUVTIGZvcgotZW5jcnlwdGlvbi9kZWNy
+eXB0aW9uLiAgTmV3IGtleXMgYXJlIGNyZWF0ZWQgZnJvbSBrZXJuZWwgZ2VuZXJhdGVkIHJhbmRv
+bQotbnVtYmVycywgYW5kIGFyZSBlbmNyeXB0ZWQvZGVjcnlwdGVkIHVzaW5nIGEgc3BlY2lmaWVk
+ICdtYXN0ZXInIGtleS4gIFRoZQotJ21hc3Rlcicga2V5IGNhbiBlaXRoZXIgYmUgYSB0cnVzdGVk
+LWtleSBvciB1c2VyLWtleSB0eXBlLiAgVGhlIG1haW4KLWRpc2FkdmFudGFnZSBvZiBlbmNyeXB0
+ZWQga2V5cyBpcyB0aGF0IGlmIHRoZXkgYXJlIG5vdCByb290ZWQgaW4gYSB0cnVzdGVkIGtleSwK
+LXRoZXkgYXJlIG9ubHkgYXMgc2VjdXJlIGFzIHRoZSB1c2VyIGtleSBlbmNyeXB0aW5nIHRoZW0u
+ICBUaGUgbWFzdGVyIHVzZXIga2V5Ci1zaG91bGQgdGhlcmVmb3JlIGJlIGxvYWRlZCBpbiBhcyBz
+ZWN1cmUgYSB3YXkgYXMgcG9zc2libGUsIHByZWZlcmFibHkgZWFybHkgaW4KLWJvb3QuCitUcnVz
+dGVkIEtleXMgdXNhZ2U6IFRFRQorLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KKworVXNhZ2U6Ogor
+CisgICAga2V5Y3RsIGFkZCB0cnVzdGVkIG5hbWUgIm5ldyBrZXlsZW4iIHJpbmcKKyAgICBrZXlj
+dGwgYWRkIHRydXN0ZWQgbmFtZSAibG9hZCBoZXhfYmxvYiIgcmluZworICAgIGtleWN0bCBwcmlu
+dCBrZXlpZAorCisia2V5Y3RsIHByaW50IiByZXR1cm5zIGFuIGFzY2lpIGhleCBjb3B5IG9mIHRo
+ZSBzZWFsZWQga2V5LCB3aGljaCBpcyBpbiBmb3JtYXQKK3NwZWNpZmljIHRvIFRFRSBkZXZpY2Ug
+aW1wbGVtZW50YXRpb24uICBUaGUga2V5IGxlbmd0aCBmb3IgbmV3IGtleXMgYXJlIGFsd2F5cwor
+aW4gYnl0ZXMuIFRydXN0ZWQgS2V5cyBjYW4gYmUgMzIgLSAxMjggYnl0ZXMgKDI1NiAtIDEwMjQg
+Yml0cykuCisKK0VuY3J5cHRlZCBLZXlzIHVzYWdlCistLS0tLS0tLS0tLS0tLS0tLS0tLQogCiBU
+aGUgZGVjcnlwdGVkIHBvcnRpb24gb2YgZW5jcnlwdGVkIGtleXMgY2FuIGNvbnRhaW4gZWl0aGVy
+IGEgc2ltcGxlIHN5bW1ldHJpYwoga2V5IG9yIGEgbW9yZSBjb21wbGV4IHN0cnVjdHVyZS4gVGhl
+IGZvcm1hdCBvZiB0aGUgbW9yZSBjb21wbGV4IHN0cnVjdHVyZSBpcwpAQCAtMTA0LDggKzI0Miw4
+IEBAIFdoZXJlOjoKIAlmb3JtYXQ6PSAnZGVmYXVsdCB8IGVjcnlwdGZzIHwgZW5jMzInCiAJa2V5
+LXR5cGU6PSAndHJ1c3RlZCcgfCAndXNlcicKIAotCiBFeGFtcGxlcyBvZiB0cnVzdGVkIGFuZCBl
+bmNyeXB0ZWQga2V5IHVzYWdlOgorLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0KIAogQ3JlYXRlIGFuZCBzYXZlIGEgdHJ1c3RlZCBrZXkgbmFtZWQgImttayIgb2Yg
+bGVuZ3RoIDMyIGJ5dGVzLgogCkBAIC0xNTEsNyArMjg5LDcgQEAgTG9hZCBhIHRydXN0ZWQga2V5
+IGZyb20gdGhlIHNhdmVkIGJsb2I6OgogICAgIGYxZjhmZmYwM2FkMGFjYjA4MzcyNTUzNTYzNmFk
+ZGIwOGQ3M2RlZGI5ODMyZGExOTgwODFlNWRlYWU4NGJmYWYwNDA5YzIyYgogICAgIGU0YThhZWEy
+YjYwN2VjOTY5MzFlNmY0ZDRmZTU2M2JhCiAKLVJlc2VhbCBhIHRydXN0ZWQga2V5IHVuZGVyIG5l
+dyBwY3IgdmFsdWVzOjoKK1Jlc2VhbCAoVFBNIHNwZWNpZmljKSBhIHRydXN0ZWQga2V5IHVuZGVy
+IG5ldyBQQ1IgdmFsdWVzOjoKIAogICAgICQga2V5Y3RsIHVwZGF0ZSAyNjg3Mjg4MjQgInVwZGF0
+ZSBwY3JpbmZvPWBjYXQgcGNyLmJsb2JgIgogICAgICQga2V5Y3RsIHByaW50IDI2ODcyODgyNApA
+QCAtMTY1LDExICszMDMsMTIgQEAgUmVzZWFsIGEgdHJ1c3RlZCBrZXkgdW5kZXIgbmV3IHBjciB2
+YWx1ZXM6OgogICAgIDdlZjZhMjRkZWZlNDg0NjEwNDIwOWJmMGMzZWNlZDdmYTFhNjcyZWQ1YjEy
+NWZjOWQ4Y2Q4OGI0NzZhNjU4YTQ0MzQ2NDRlZgogICAgIGRmOGFlOWExNzhlOWY4M2JhOWYwOGQx
+MGZhNDdlNDIyNmI5OGIwNzAyZjA2YjNiOAogCisKIFRoZSBpbml0aWFsIGNvbnN1bWVyIG9mIHRy
+dXN0ZWQga2V5cyBpcyBFVk0sIHdoaWNoIGF0IGJvb3QgdGltZSBuZWVkcyBhIGhpZ2gKLXF1YWxp
+dHkgc3ltbWV0cmljIGtleSBmb3IgSE1BQyBwcm90ZWN0aW9uIG9mIGZpbGUgbWV0YWRhdGEuICBU
+aGUgdXNlIG9mIGEKK3F1YWxpdHkgc3ltbWV0cmljIGtleSBmb3IgSE1BQyBwcm90ZWN0aW9uIG9m
+IGZpbGUgbWV0YWRhdGEuIFRoZSB1c2Ugb2YgYQogdHJ1c3RlZCBrZXkgcHJvdmlkZXMgc3Ryb25n
+IGd1YXJhbnRlZXMgdGhhdCB0aGUgRVZNIGtleSBoYXMgbm90IGJlZW4KLWNvbXByb21pc2VkIGJ5
+IGEgdXNlciBsZXZlbCBwcm9ibGVtLCBhbmQgd2hlbiBzZWFsZWQgdG8gc3BlY2lmaWMgYm9vdCBQ
+Q1IKLXZhbHVlcywgcHJvdGVjdHMgYWdhaW5zdCBib290IGFuZCBvZmZsaW5lIGF0dGFja3MuICBD
+cmVhdGUgYW5kIHNhdmUgYW4KK2NvbXByb21pc2VkIGJ5IGEgdXNlciBsZXZlbCBwcm9ibGVtLCBh
+bmQgd2hlbiBzZWFsZWQgdG8gYSBwbGF0Zm9ybSBpbnRlZ3JpdHkKK3N0YXRlLCBwcm90ZWN0cyBh
+Z2FpbnN0IGJvb3QgYW5kIG9mZmxpbmUgYXR0YWNrcy4gQ3JlYXRlIGFuZCBzYXZlIGFuCiBlbmNy
+eXB0ZWQga2V5ICJldm0iIHVzaW5nIHRoZSBhYm92ZSB0cnVzdGVkIGtleSAia21rIjoKIAogb3B0
+aW9uIDE6IG9taXR0aW5nICdmb3JtYXQnOjoKLS0gCjIuNy40CgoKX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxp
+c3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZy
+YWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
