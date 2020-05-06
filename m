@@ -2,36 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80D6E1C67F6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:11:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F29AB1C67FD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:12:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EWd8bODoKGYRqkr9P72IqPUYDMHEhu2WnWGi+KeY0vk=; b=mY5QFmdDFDpquB
-	GpiZBA2sL+l+f4CHKaJPusztkyxGJW33kv3sJeU90h67NLMKVDUIOZ295T120eN8VuDKF/wkqXOlz
-	BFxx9ZJ39lRPcPVLwHpg09oHySnsCAD9kiu8LZ86dA/fAv8IgqwAJ1mopxZq0vr0Kjl017Ai+uQ4J
-	C2LWGSSNXDrh/LaAgbodiKvtFJ8U+7LiGNKKmtFsr2z41VC4Fkura49bANgmuThwKEgJjvjWe1YMW
-	RoYqS0mWrLp7hLwIZC1yMWriIEW1v6wqZUMAFnXwgXAjcZwZAWHTNuc875UuNPiDC+D1CUkhPlC1F
-	lJ452I1VYWZ1BxgVQQGQ==;
+	List-Owner; bh=vou2X21PlPf5OPgEkOaO9i27MPOUTrgR+bQ1mxdDhSI=; b=RV9SSCsFXfT3U5
+	A4HoDu6rcyZbFh0OdEZlpymymjRnDLwjYhMnMVpLd6EWMxZsNLMkrksNr7+ugTBLpNTYN7gbt63C1
+	qFB8XghiPdeF9eoAfbv9/h7drB4FVRiI5EViGA72ulvujkc/j21huviJr4pDsBKWgp3eT6VyglSIi
+	YkwqoSi6giQyxCcVK8ejhgRivZsZsWInt6xAik3oNcvTuUiEjNpG2C3/DHo26W7lzcqvvUERqfj4V
+	Gyq+72mSfmN5nk2ChgcLGOxsdjaXji56MnyFYqmYZONcD7YEZtrw+ry1EKIcNhqYuTKnmIKktnTMl
+	lnglc/4uKcQukBa5Ja6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDHC-0003zw-7n; Wed, 06 May 2020 06:11:26 +0000
+	id 1jWDI2-0004LG-6i; Wed, 06 May 2020 06:12:18 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jWDGz-0003zA-SZ; Wed, 06 May 2020 06:11:13 +0000
-Date: Tue, 5 May 2020 23:11:13 -0700
+ Hat Linux)) id 1jWDHu-0004KN-O0; Wed, 06 May 2020 06:12:10 +0000
+Date: Tue, 5 May 2020 23:12:10 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V2 05/11] {x86,powerpc,microblaze}/kmap: Move preempt
- disable
-Message-ID: <20200506061113.GA5192@infradead.org>
+Subject: Re: [PATCH V2 06/11] arch/kmap_atomic: Consolidate duplicate code
+Message-ID: <20200506061210.GB5192@infradead.org>
 References: <20200504010912.982044-1-ira.weiny@intel.com>
- <20200504010912.982044-6-ira.weiny@intel.com>
+ <20200504010912.982044-7-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200504010912.982044-6-ira.weiny@intel.com>
+In-Reply-To: <20200504010912.982044-7-ira.weiny@intel.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,46 +64,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 06:09:06PM -0700, ira.weiny@intel.com wrote:
-> From: Ira Weiny <ira.weiny@intel.com>
-> 
-> During this kmap() conversion series we must maintain bisect-ability.
-> To do this, kmap_atomic_prot() in x86, powerpc, and microblaze need to
-> remain functional.
-> 
-> Create a temporary inline version of kmap_atomic_prot within these
-> architectures so we can rework their kmap_atomic() calls and then lift
-> kmap_atomic_prot() to the core.
-> 
-> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
-> 
-> ---
-> Changes from V1:
-> 	New patch
-> ---
->  arch/microblaze/include/asm/highmem.h | 11 ++++++++++-
->  arch/microblaze/mm/highmem.c          | 10 ++--------
->  arch/powerpc/include/asm/highmem.h    | 11 ++++++++++-
->  arch/powerpc/mm/highmem.c             |  9 ++-------
->  arch/x86/include/asm/highmem.h        | 11 ++++++++++-
->  arch/x86/mm/highmem_32.c              | 10 ++--------
->  6 files changed, 36 insertions(+), 26 deletions(-)
-> 
-> diff --git a/arch/microblaze/include/asm/highmem.h b/arch/microblaze/include/asm/highmem.h
-> index 0c94046f2d58..ec9954b091e1 100644
-> --- a/arch/microblaze/include/asm/highmem.h
-> +++ b/arch/microblaze/include/asm/highmem.h
-> @@ -51,7 +51,16 @@ extern pte_t *pkmap_page_table;
->  #define PKMAP_NR(virt)  ((virt - PKMAP_BASE) >> PAGE_SHIFT)
->  #define PKMAP_ADDR(nr)  (PKMAP_BASE + ((nr) << PAGE_SHIFT))
->  
-> -extern void *kmap_atomic_prot(struct page *page, pgprot_t prot);
-> +extern void *kmap_atomic_high_prot(struct page *page, pgprot_t prot);
-> +void *kmap_atomic_prot(struct page *page, pgprot_t prot)
-
-Shouldn't this be marked inline?
-
-The rest looks fine:
+Looks good,
 
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 
