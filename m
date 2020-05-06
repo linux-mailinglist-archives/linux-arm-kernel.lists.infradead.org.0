@@ -2,79 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B3181C714D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:03:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5228E1C7158
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:05:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=btvfg7toIxbe4IITa7wf6T5RT2TodeLe2Y3m5/pgVjk=; b=o/vhQvydr41pZxWDz5CS4SfwH
-	U2ZQmTIJqY0rXmaKsXqRi/wEYKATlnFBcmuopsL/KWFR+sPtjm18/BzisvBVklfgIMRCguMtQ1nUe
-	2RGM7yLTZGJeuAJWivUOzuOX8BVy5uIZ6sWdzftazuUbqmPVGVlSUETti3kdTfw104v+TFLH0WecD
-	WlfDUfx1D5zrlgSI/iBAm7M2+g3F0tV2Fd/85s9IudY48iRWnMAB8He9q2Ro6k7DbQjFe1QE+/UPo
-	IcdbZvU84x1pL5RTIw9hLs8AOfqMHB4pJOlSRWrxmSSS17qBva6PcUY9x3BNTaisdEnaVG/49XzCt
-	lCOKIrCuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=421sXDLIHJ2lz7kD2PSmEBCM6Kr1KgE9UVvp1TSjiSk=; b=KzIz0DWqsGUgB1
+	C0uiIvalynyEDltST+NjJbu/JnLh4u0rjgYV8bGuxXI20Q8zRDZW6KmU+Ry0EcLSlQz+DIMgwjgFH
+	X8U9HUhR8ZC2TymWz41wXA3uCHd6ns3dkMBzgP0NuJz/Bk1cfSHDk3qAgiVk87ZDb87afQ0g5H2dI
+	plf8XiH6MxMEmrn1SyC7+8JMS66e3rePUvg/ucJ9bhmj43j5TjRFiA52M3eTX40Lf2NkFv5/BWw6K
+	IaRoSbpcdmbHOvVgUFWab8XBgYe923KcTqjl3WfsC66zTFp01O6ElRXdmd5cJ1k+2VI1XPQccU3TD
+	NLtNCXl7Vz8VDNfgfh0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWJiE-0007aN-5i; Wed, 06 May 2020 13:03:46 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWJi6-0007Zl-0n
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 13:03:39 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5E0E20663;
- Wed,  6 May 2020 13:03:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588770217;
- bh=F75hOouW7I1tCioLzm0kV/Ca1z1F3FHYQZ1RnilS1q4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=LrEBELhXLAEH9XBLmCr2CNpjMFw3Fq51PIRnRmYZ5lUYkb4FA+d7c81WNRFXX5Zi2
- kjOaZI+36NMUgakhwNtwLECHJnwJlYVhKkOBy0D8O+dSoh/wgzrGYymcwKuYu9maVt
- 4f9zPCgCKbcn6TBnkEH+DtNwuYn7fU/9WrZKwkNs=
-Date: Wed, 6 May 2020 14:03:34 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when
- building the kernel with BTI
-Message-ID: <20200506130334.GD5299@sirena.org.uk>
-References: <20200429211641.9279-3-broonie@kernel.org>
- <20200505145642.GA24239@willie-the-truck>
- <20200505151806.GG5377@sirena.org.uk>
- <20200505160852.GF24239@willie-the-truck>
- <20200505172100.GI5377@sirena.org.uk>
- <20200506071025.GA7021@willie-the-truck>
- <20200506104152.GA5299@sirena.org.uk>
- <20200506105006.GC8043@willie-the-truck>
- <20200506114353.GB5299@sirena.org.uk>
- <20200506122709.GE8043@willie-the-truck>
+	id 1jWJjs-0001Wy-9I; Wed, 06 May 2020 13:05:28 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWJjL-0008Qe-SC; Wed, 06 May 2020 13:04:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E843CD6E;
+ Wed,  6 May 2020 06:04:54 -0700 (PDT)
+Received: from [192.168.2.22] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B81BA3F68F;
+ Wed,  6 May 2020 06:04:53 -0700 (PDT)
+Subject: Re: [PATCH RFC 2/8] dmaengine: Actions: Add support for S700 DMA
+ engine
+To: Amit Tomer <amittomer25@gmail.com>
+References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
+ <1588761371-9078-3-git-send-email-amittomer25@gmail.com>
+ <1c285ad4-a366-db08-e4e8-c2e1437cc505@arm.com>
+ <CABHD4K9mqpcO7jo4NQov__8jEGhAJr2o8JTiX1N+Z=zb9vG0OQ@mail.gmail.com>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Autocrypt: addr=andre.przywara@arm.com; prefer-encrypt=mutual; keydata=
+ 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
+ i4aIXCH3Wv6K
+Organization: ARM Ltd.
+Message-ID: <f4791ad3-1edb-3f24-5bcd-b2859e4a1742@arm.com>
+Date: Wed, 6 May 2020 14:04:05 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200506122709.GE8043@willie-the-truck>
-X-Cookie: Not recommended for children.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CABHD4K9mqpcO7jo4NQov__8jEGhAJr2o8JTiX1N+Z=zb9vG0OQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_060338_104401_84954821 
-X-CRM114-Status: GOOD (  23.11  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200506_060456_015207_9C8B77BD 
+X-CRM114-Status: GOOD (  21.25  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,103 +110,141 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6091388225520209418=="
+Cc: linux-actions@lists.infradead.org, cristian.ciocaltea@gmail.com,
+ vkoul@kernel.org, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ =?UTF-8?Q?Andreas_F=c3=a4rber?= <afaerber@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 06/05/2020 13:54, Amit Tomer wrote:
+> Hi,
+> 
+> Thanks for quick review
+> 
+>> You should mention (at least in the commit message) why this is needed.
+>> And please move this into a separate function, this indentation is
+>> becoming mad here
+> 
+> There is not much documented about it, and all I see is GIC crash
+> if I keep it open for S700. Would figure out more details about it and
+> update in next version.
 
---===============6091388225520209418==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="PHCdUe6m4AxPMzOu"
-Content-Disposition: inline
+What I meant is that you should mention this and the fact that you got
+this bit from the BSP source.
 
+> .
+>>
+>>> +             for (i = 0; i < od->nr_pchans; i++) {
+>>> +                     pchan = &od->pchans[i];
+>>> +                     chan_irq_pending = pchan_readl(pchan,
+>>> +                                                    OWL_DMAX_INT_CTL) &
+>>> +                                        pchan_readl(pchan,
+>>> +                                                    OWL_DMAX_INT_STATUS)
+>>> +                                                     ;
+>>> +
+>>> +                     /* Dummy read to ensure OWL_DMA_IRQ_PD0 value is
+>>> +                      * updated
+>>> +                      */
+>>> +                     dma_readl(od, OWL_DMA_IRQ_PD0);
+>>>
+>>> -             global_irq_pending = dma_readl(od, OWL_DMA_IRQ_PD0);
+>>> +                     global_irq_pending = dma_readl(od,
+>>> +                                                    OWL_DMA_IRQ_PD0);
+>>>
+>>> -             if (chan_irq_pending && !(global_irq_pending & BIT(i))) {
+>>> -                     dev_dbg(od->dma.dev,
+>>> -                             "global and channel IRQ pending match err\n");
+>>> +                     if (chan_irq_pending && !(global_irq_pending &
+>>> +                                               BIT(i))) {
+>>> +                             dev_dbg(od->dma.dev,
+>>> +                     "global and channel IRQ pending match err\n");
+>>>
+>>> -                     /* Clear IRQ status for this pchan */
+>>> -                     pchan_update(pchan, OWL_DMAX_INT_STATUS,
+>>> -                                  0xff, false);
+>>> +                             /* Clear IRQ status for this pchan */
+>>> +                             pchan_update(pchan, OWL_DMAX_INT_STATUS,
+>>> +                                          0xff, false);
+>>>
+>>> -                     /* Update global IRQ pending */
+>>> -                     pending |= BIT(i);
+>>> +                             /* Update global IRQ pending */
+>>> +                             pending |= BIT(i);
+>>> +                     }
+>>>               }
+>>>       }
+>>>
+>>> @@ -720,6 +743,7 @@ static int owl_dma_resume(struct dma_chan *chan)
+>>>
+>>>  static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
+>>>  {
+>>> +     struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
+>>>       struct owl_dma_pchan *pchan;
+>>>       struct owl_dma_txd *txd;
+>>>       struct owl_dma_lli *lli;
+>>> @@ -741,9 +765,15 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
+>>>               list_for_each_entry(lli, &txd->lli_list, node) {
+>>>                       /* Start from the next active node */
+>>>                       if (lli->phys == next_lli_phy) {
+>>> -                             list_for_each_entry(lli, &txd->lli_list, node)
+>>> -                                     bytes += lli->hw[OWL_DMADESC_FLEN] &
+>>> -                                              GENMASK(19, 0);
+>>> +                             list_for_each_entry(lli, &txd->lli_list, node) {
+>>> +                                     if (od->devid == S700_DMA)
+>>> +                                             bytes +=
+>>> +                                             lli->hw[OWL_DMADESC_FLEN];
+>>> +                                     else
+>>> +                                             bytes +=
+>>> +                                             lli->hw[OWL_DMADESC_FLEN] &
+>>> +                                             GENMASK(19, 0);
+>>
+>> You should have an accessor for getting the frame len, that should avoid
+>> the insane wrapping here. Or factor this out into a helper function.
+>> Alternatively revert the if statement and continue, that saves you one
+>> level of indentation.
+>>
+>> I guess flen is limited to 20 bits anyway, so you might want to apply
+>> the 20-bit mask unconditionally.
+> 
+> Actually, on S700 flen uses 24 bits , so we should not use 20-bit mask.
 
---PHCdUe6m4AxPMzOu
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+I think it *can* use 24 bits. Where does flen come from? I guess it is
+less than 1 MB  anyway already? It better should be, at least, since the
+S900 seems to have this limit.
 
-On Wed, May 06, 2020 at 01:27:10PM +0100, Will Deacon wrote:
+> For accessor function, shall this be okay ?
 
-> That said, without a way for the linker to force bti *without* generating
-> the warning, I'm not sure how we could implement this sensibly. The warni=
-ng
-> also seems only to be generated if some objects have the BTI property and
-> others don't; if all objects are missing it then it's quiet.
+Something like that. My point was that this can be much more simplified
+if you go with 20 bits *always*. Then you can save the first parameter
+and this becomes a one-liner.
 
-Oh, that's annoying - I'd expected the warning to be generated if any of
-the inputs miss the BTI annotation.  Part of my goal with turning it on=20
-was to provide some defensiveness against future breakage which could
-potentially include messing something up with enabling BTI for the
-inputs.  I'll tell the toolchain people about that too :/
+Cheers,
+Andre
 
-> Maybe we could detect that the compiler doesn't generate the property
-> section, and then avoid generating them in our assembly files? i.e.
-> wrap '.macro emit_aarch64_feature_1_and' in a #ifdef CC_HAS_GNU_PROPERTY
-> ... #endif block?
+> +static u32 llc_hw_flen(struct owl_dma *od,
+> +                       struct owl_dma_lli *lli)
+> +{
+> +       u32 bit_mask;
+> +
+> +       if (od->devid == S700_DMA)
+> +               bit_mask = 23;
+> +       else
+> +               bit_mask = 19;
+> +
+> +       return lli->hw[OWL_DMADESC_FLEN] & GENMASK(bit_mask, 0);
+> +
+> +}
+> 
+> Thanks
+> Amit
+> 
 
-If we're going to do this detection it might be better to just disable
-kernel BTI support entirely if the toolchain doesn't emit the notes,
-treating the missing notes as a most likely overcautious warning flag
-that there might be code generation bugs as well.  Either way it does
-feel like a lot of work.
-
-> > I do think that this will be a lot easier going forwards - hopefully the
-> > problem with the toolchain not generating notes is not going to be an
-> > issue by the time people are actively deploying BTI (people using GCC
-> > are going to need a shiny new version anyway and I don't know how
-> > widespread the clang versions that have issues are), and if people do
-> > start running into it then it'll be possible to usefully search for the
-> > error message online which should help a lot.
-
-> I think we'll get reports of people running into this (I hit it with a
-> defconfig build), so just looking for an idea of what we might do if/when
-> that happens.
-
-Bear in mind that to use BTI kernel support you need to be using either
-clang or version 10 or later of GCC (which hasn't yet been released,
-it's almost there) so it's not going to be triggering in the common case
-where people are using released GCC versions.  The change in clang that
-you're missing is:
-
-   https://reviews.llvm.org/rGd53e61863d48a07ce285d5b0a36abc67583023bd
-
-which is from December last year so rather recent meaning I do think
-it's a valid concern for clang, I'm just not sure how widespread clang
-usage is with people who don't also update their toolchains with a
-fairly high frequency.
-
---PHCdUe6m4AxPMzOu
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6ytaUACgkQJNaLcl1U
-h9AtLgf/cLPUlN4KY/j6W4mKpSdzfDkT2ilQQ+4ynffu/tqQyb7EwkIStEE7Zewi
-MT4w9AhYZ2ON/EwFz4nJ17ZqgqY0kwdWNaDkeF0TVDvHSPYart71dX15za3ul7+w
-ML6j3NX5uQN7wVrRxc7NqMQw/WePRewIiFWxcI/A7IoT9kPMnS5WsspSomMFsaAM
-saHWMKs/Pia2cH3vj5K8pp6UrNJx1Bm+28HY9GgC+9r5vSXzJHwqDN5He7/asDhl
-u3gMH0ruK0RrrHDCUAM2eDuM5yYed/ykmo0TC4QV6jao0FHCpKHcGqZcHPdlGrx3
-FRYh6ec5eTPC81OViNwB7mSzuzY6QA==
-=HNK2
------END PGP SIGNATURE-----
-
---PHCdUe6m4AxPMzOu--
-
-
---===============6091388225520209418==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6091388225520209418==--
-
