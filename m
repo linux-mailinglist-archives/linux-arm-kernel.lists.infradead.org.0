@@ -2,59 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAC561C714C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:02:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B3181C714D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:03:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lNtTB2xc5P595TkiEMIfD5QgKcDCbAsPld4FqJngM4M=; b=j4CTFnotZ84H6X
-	vUj74W5ywLr9q4N0JUvaOhgJAzvx5hBRLaOp7d91fUMv3g2RFOghdZE96957Jldmy3so//fEiSctO
-	4S04iQBu1VHJkGHsKSPxUmAtDFkdJkncbjjWFu9fEyKhlhTMFnL1SIhxiW1aNogHhqx6NaUxHTASr
-	DH878be6y5FENFb2n0grR3149YE+yxN4YMDPyganaNgajrCYKHAUvM2gD/20cx8nCrb1tmqB2Xplm
-	0q5FhEvLb26yezKH1Nld21+yo4KL7LTeEgun9gQwpEU6H3qgArhgzFpWKRlisvIjPUoQd0dJAk8tH
-	fUcMJKzh2y7zJtg+laZg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=btvfg7toIxbe4IITa7wf6T5RT2TodeLe2Y3m5/pgVjk=; b=o/vhQvydr41pZxWDz5CS4SfwH
+	U2ZQmTIJqY0rXmaKsXqRi/wEYKATlnFBcmuopsL/KWFR+sPtjm18/BzisvBVklfgIMRCguMtQ1nUe
+	2RGM7yLTZGJeuAJWivUOzuOX8BVy5uIZ6sWdzftazuUbqmPVGVlSUETti3kdTfw104v+TFLH0WecD
+	WlfDUfx1D5zrlgSI/iBAm7M2+g3F0tV2Fd/85s9IudY48iRWnMAB8He9q2Ro6k7DbQjFe1QE+/UPo
+	IcdbZvU84x1pL5RTIw9hLs8AOfqMHB4pJOlSRWrxmSSS17qBva6PcUY9x3BNTaisdEnaVG/49XzCt
+	lCOKIrCuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWJhI-0007E0-4D; Wed, 06 May 2020 13:02:48 +0000
-Received: from perceval.ideasonboard.com ([213.167.242.64])
+	id 1jWJiE-0007aN-5i; Wed, 06 May 2020 13:03:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWJh9-0007Bp-U6
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 13:02:41 +0000
-Received: from pendragon.ideasonboard.com (81-175-216-236.bb.dnainternet.fi
- [81.175.216.236])
- by perceval.ideasonboard.com (Postfix) with ESMTPSA id 28F5A542;
- Wed,  6 May 2020 15:02:30 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ideasonboard.com;
- s=mail; t=1588770150;
- bh=pPBs9Lx7E3HOerlKlsFhTIFSxpXd4xPnpNsOogA3ass=;
+ id 1jWJi6-0007Zl-0n
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 13:03:39 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B5E0E20663;
+ Wed,  6 May 2020 13:03:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588770217;
+ bh=F75hOouW7I1tCioLzm0kV/Ca1z1F3FHYQZ1RnilS1q4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=F9PUcTl8+vkeemaZPSZeHkYs6rtKiaQrG7A2wpwP32X5b5+SEhkYHYoaeJfGm4CsG
- tUSi7z/c7DahSrKaDG8MhUQKSgo+Zh7eZ0OwAkEGuoIR5nj5X+/LchW1Q/aorhV0Ad
- 3hv5O94CAf4YjlBiWT5j0/zZP2ZjbObN8HjYBpJY=
-Date: Wed, 6 May 2020 16:02:25 +0300
-From: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-To: Vishal Sagar <vishal.sagar@xilinx.com>
-Subject: Re: [PATCH v2 1/2] media: dt-bindings: media: xilinx: Add Xilinx
- UHD-SDI Receiver Subsystem
-Message-ID: <20200506130225.GD5946@pendragon.ideasonboard.com>
-References: <20200429141705.18755-1-vishal.sagar@xilinx.com>
- <20200429141705.18755-2-vishal.sagar@xilinx.com>
+ b=LrEBELhXLAEH9XBLmCr2CNpjMFw3Fq51PIRnRmYZ5lUYkb4FA+d7c81WNRFXX5Zi2
+ kjOaZI+36NMUgakhwNtwLECHJnwJlYVhKkOBy0D8O+dSoh/wgzrGYymcwKuYu9maVt
+ 4f9zPCgCKbcn6TBnkEH+DtNwuYn7fU/9WrZKwkNs=
+Date: Wed, 6 May 2020 14:03:34 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 02/10] arm64: asm: Override SYM_FUNC_START when
+ building the kernel with BTI
+Message-ID: <20200506130334.GD5299@sirena.org.uk>
+References: <20200429211641.9279-3-broonie@kernel.org>
+ <20200505145642.GA24239@willie-the-truck>
+ <20200505151806.GG5377@sirena.org.uk>
+ <20200505160852.GF24239@willie-the-truck>
+ <20200505172100.GI5377@sirena.org.uk>
+ <20200506071025.GA7021@willie-the-truck>
+ <20200506104152.GA5299@sirena.org.uk>
+ <20200506105006.GC8043@willie-the-truck>
+ <20200506114353.GB5299@sirena.org.uk>
+ <20200506122709.GE8043@willie-the-truck>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200429141705.18755-2-vishal.sagar@xilinx.com>
+In-Reply-To: <20200506122709.GE8043@willie-the-truck>
+X-Cookie: Not recommended for children.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_060240_117505_4633244D 
-X-CRM114-Status: GOOD (  20.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_060338_104401_84954821 
+X-CRM114-Status: GOOD (  23.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -62,6 +74,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,206 +86,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- Dinesh Kumar <dineshk@xilinx.com>, Hyun Kwon <hyunk@xilinx.com>,
- Sandip Kothari <sandipk@xilinx.com>, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Michal Simek <michals@xilinx.com>,
- Joe Perches <joe@perches.com>, hans.verkuil@cisco.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Kees Cook <keescook@chromium.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6091388225520209418=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Vishal,
 
-Thank you for the patch.
+--===============6091388225520209418==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="PHCdUe6m4AxPMzOu"
+Content-Disposition: inline
 
-On Wed, Apr 29, 2020 at 07:47:03PM +0530, Vishal Sagar wrote:
-> Add bindings documentation for Xilinx UHD-SDI Receiver Subsystem.
-> 
-> The Xilinx UHD-SDI Receiver Subsystem consists of SMPTE UHD-SDI (RX) IP
-> core, an SDI RX to Video Bridge IP core to convert SDI video to native
-> video and a Video In to AXI4-Stream IP core to convert native video to
-> AXI4-Stream.
-> 
-> Signed-off-by: Vishal Sagar <vishal.sagar@xilinx.com>
-> ---
-> v2
-> - Removed references to xlnx,video*
-> - Fixed as per Sakari Ailus and Rob Herring's comments
-> - Converted to yaml format
-> 
->  .../bindings/media/xilinx/xlnx,sdirxss.yaml   | 132 ++++++++++++++++++
->  1 file changed, 132 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/media/xilinx/xlnx,sdirxss.yaml
-> 
-> diff --git a/Documentation/devicetree/bindings/media/xilinx/xlnx,sdirxss.yaml b/Documentation/devicetree/bindings/media/xilinx/xlnx,sdirxss.yaml
-> new file mode 100644
-> index 000000000000..9133ad19df55
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/media/xilinx/xlnx,sdirxss.yaml
-> @@ -0,0 +1,132 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/media/xilinx/xlnx,sdirxss.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +
-> +title: Xilinx SMPTE UHD-SDI Receiver Subsystem
-> +
-> +maintainers:
-> +  - Vishal Sagar <vishal.sagar@xilinx.com>
-> +
-> +description: |
-> +  The SMPTE UHD-SDI Receiver (RX) Subsystem allows you to quickly create systems
-> +  based on SMPTE SDI protocols. It receives unaligned native SDI streams from
-> +  the SDI GT PHY and outputs an AXI4-Stream video stream, native video, or
-> +  native SDI using Xilinx transceivers as the physical layer.
-> +
-> +  The subsystem consists of
-> +  1 - SMPTE UHD-SDI Rx
-> +  2 - SDI Rx to Native Video Bridge
-> +  3 - Video In to AXI4-Stream Bridge
-> +
-> +  The subsystem can capture SDI streams in upto 12G mode 8 data streams and output
 
-s/upto/up to/
+--PHCdUe6m4AxPMzOu
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> +  a dual pixel per clock RGB/YUV444,422/420 10/12 bits per component AXI4-Stream.
-> +
-> +properties:
-> +  compatible:
-> +    items:
-> +      - enum:
-> +        - xlnx,v-smpte-uhdsdi-rx-ss-2.0
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    description: List of clock specifiers
-> +    items:
-> +      - description: AXI4-Lite clock
-> +      - description: SMPTE UHD-SDI Rx core clock
-> +      - description: Video clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: s_axi_aclk
-> +      - const: sdi_rx_clk
-> +      - const: video_out_clk
-> +
-> +  xlnx,bpp:
-> +    description: Bits per pixel supported. Can be 10 or 12 bits per pixel only.
-> +    allOf:
-> +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> +      - enum: [10, 12]
+On Wed, May 06, 2020 at 01:27:10PM +0100, Will Deacon wrote:
 
-I don't see this as a design parameter in the documentation (pg290,
-v2.0). What does it correspond to ? All the BPC mentions in the
-documentation always state that 10-bit is the only supported value.
+> That said, without a way for the linker to force bti *without* generating
+> the warning, I'm not sure how we could implement this sensibly. The warni=
+ng
+> also seems only to be generated if some objects have the BTI property and
+> others don't; if all objects are missing it then it's quiet.
 
-> +
-> +  xlnx,line-rate:
-> +    description: |
-> +      The maximum mode supported by the design. Possible values are as below
-> +      12G_SDI_8DS - 12G mode with 8 data streams
-> +      6G_SDI      -  6G mode
-> +      3G_SDI      -  3G mode
-> +    enum:
-> +      - 12G_SDI_8DS
-> +      - 6G_SDI
-> +      - 3G_SDI
+Oh, that's annoying - I'd expected the warning to be generated if any of
+the inputs miss the BTI annotation.  Part of my goal with turning it on=20
+was to provide some defensiveness against future breakage which could
+potentially include messing something up with enabling BTI for the
+inputs.  I'll tell the toolchain people about that too :/
 
-How about making this an integer property, with #define in
-include/dt-bindings/media/xilinx-sdi.h ? As far as I understand, the SDI
-TX subsystem has the same parameter, so the #define could be shared
-between the two.
+> Maybe we could detect that the compiler doesn't generate the property
+> section, and then avoid generating them in our assembly files? i.e.
+> wrap '.macro emit_aarch64_feature_1_and' in a #ifdef CC_HAS_GNU_PROPERTY
+> ... #endif block?
 
-> +
-> +  xlnx,include-edh:
-> +    type: boolean
-> +    description: |
-> +      This is present when the Error Detection and Handling processor is
-> +      enabled in design.
-> +
-> +  ports:
-> +    type: object
-> +    description: |
-> +      Generally the SDI port is connected to a device like SDI Broadcast camera
-> +      which is independently controlled. Hence port@0 is a source port which can be
-> +      connected to downstream IP which can work with AXI4 Stream data.
+If we're going to do this detection it might be better to just disable
+kernel BTI support entirely if the toolchain doesn't emit the notes,
+treating the missing notes as a most likely overcautious warning flag
+that there might be code generation bugs as well.  Either way it does
+feel like a lot of work.
 
-We should still have an input port. It can be connected to a DT node for
-a physical SDI connector, or any other component in the platform (I
-expect the former to be the common case). There are DT bindings for
-connectors in Documentation/devicetree/bindings/display/connector/, we
-should add one for SDI.
+> > I do think that this will be a lot easier going forwards - hopefully the
+> > problem with the toolchain not generating notes is not going to be an
+> > issue by the time people are actively deploying BTI (people using GCC
+> > are going to need a shiny new version anyway and I don't know how
+> > widespread the clang versions that have issues are), and if people do
+> > start running into it then it'll be possible to usefully search for the
+> > error message online which should help a lot.
 
-> +    properties:
-> +      port@0:
-> +        type: object
-> +        description: Source port
-> +        properties:
-> +          reg:
-> +            const: 0
-> +          endpoint:
-> +            type: object
-> +            properties:
-> +              remote-endpoint: true
-> +            required:
-> +              - remote-endpoint
-> +            additionalProperties: false
-> +        additionalProperties: false
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - interrupts
-> +  - clocks
-> +  - clock-names
-> +  - xlnx,line-rate
-> +  - xlnx,bpp
-> +  - ports
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    uhdsdirxss: v-smpte-uhdsdi-rxss@80000000 {
-> +      compatible = "xlnx,v-smpte-uhdsdi-rx-ss-2.0";
-> +      interrupt-parent = <&gic>;
-> +      interrupts = <0 89 4>;
-> +      reg = <0x0 0x80000000 0x0 0x10000>;
-> +      xlnx,include-edh;
-> +      xlnx,line-rate = "12G_SDI_8DS";
-> +      clocks = <&clk_1>, <&si570_1>, <&clk_2>;
-> +      clock-names = "s_axi_aclk", "sdi_rx_clk", "video_out_clk";
-> +      xlnx,bpp = <10>;
-> +
-> +      ports {
-> +        #address-cells = <1>;
-> +        #size-cells = <0>;
-> +        port@0 {
-> +          reg = <0>;
-> +          sdirx_out: endpoint {
-> +            remote-endpoint = <&vcap_sdirx_in>;
-> +          };
-> +        };
-> +      };
-> +    };
+> I think we'll get reports of people running into this (I hit it with a
+> defconfig build), so just looking for an idea of what we might do if/when
+> that happens.
 
--- 
-Regards,
+Bear in mind that to use BTI kernel support you need to be using either
+clang or version 10 or later of GCC (which hasn't yet been released,
+it's almost there) so it's not going to be triggering in the common case
+where people are using released GCC versions.  The change in clang that
+you're missing is:
 
-Laurent Pinchart
+   https://reviews.llvm.org/rGd53e61863d48a07ce285d5b0a36abc67583023bd
+
+which is from December last year so rather recent meaning I do think
+it's a valid concern for clang, I'm just not sure how widespread clang
+usage is with people who don't also update their toolchains with a
+fairly high frequency.
+
+--PHCdUe6m4AxPMzOu
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6ytaUACgkQJNaLcl1U
+h9AtLgf/cLPUlN4KY/j6W4mKpSdzfDkT2ilQQ+4ynffu/tqQyb7EwkIStEE7Zewi
+MT4w9AhYZ2ON/EwFz4nJ17ZqgqY0kwdWNaDkeF0TVDvHSPYart71dX15za3ul7+w
+ML6j3NX5uQN7wVrRxc7NqMQw/WePRewIiFWxcI/A7IoT9kPMnS5WsspSomMFsaAM
+saHWMKs/Pia2cH3vj5K8pp6UrNJx1Bm+28HY9GgC+9r5vSXzJHwqDN5He7/asDhl
+u3gMH0ruK0RrrHDCUAM2eDuM5yYed/ykmo0TC4QV6jao0FHCpKHcGqZcHPdlGrx3
+FRYh6ec5eTPC81OViNwB7mSzuzY6QA==
+=HNK2
+-----END PGP SIGNATURE-----
+
+--PHCdUe6m4AxPMzOu--
+
+
+--===============6091388225520209418==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6091388225520209418==--
+
