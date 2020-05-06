@@ -2,90 +2,134 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CC721C6964
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:51:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E6C71C698C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 09:00:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fAH4KHtJPOBg0RViqw12EBRY/D762AM8VgAiuxrsxp8=; b=H6Q337LOlZLElS
-	r1rmkR8yMSekovPqejWr+HjJcjZlopFsnOU0y9NsJ4WONhMql2sZeJeybGuHatqn28TZ/vBICq5mS
-	16LSA+xMYvzIQCW5H/IF4tICNnIorfe/+7bsX0axnB2skjpQzGlLGN8Likoa2kfrvrAHCKFMZe2Y/
-	zZzqY+/a16RAoo8I/LOv3wPsCm2OOUWc5Ol3eoSULyvQf62nMnO8ZM8ZZ7M73Mlp5cC/5mgQlYRbt
-	GpYH3MYEduKbxJ4/Q6FQLUXreC5gXw5pHxhB7NLwuoV6bPu0UzghePqzg2f2dh5J/wuTU9bqpm3mX
-	JN+WF9pA3SIJqREuWm2g==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-Id:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=3jQcYUpCY0Fy+AwYiec88fGtNq8rv4EYBvGV/5XpAes=; b=kw3EEGRSOz9YWM
+	awWklTEy2ho3A2ivyTePZLGdhWocSsp7+FfZYJ/FrfmvnUe/Vn+SVwajDbou2Lh7rCB612MoEcUln
+	ZsXTS9glt7byatPWJasonk1+t5XO3zK7p9Is49RkkXnRgVgGyF9Ql3CzaQvz++EU/pkA5FEUSKfo2
+	A+Jh+f0d8Yav4O+M+hDyvZNr7mBTOgbbdLmMRn2zBDjhfZNav8d24r5HHOwzRxUFG+zl0YZNmlak+
+	5vyYqMMLHS0G+o9FUpZi35TQbw5zIobU64VKv0zjEhzqQUq5xdD3q5XbrSJnuwlrk5IlCP2bfyhu8
+	gwDaQpbM7MWsEtEfxgMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDtt-0003SV-MX; Wed, 06 May 2020 06:51:25 +0000
-Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
+	id 1jWE21-0001Rq-NF; Wed, 06 May 2020 06:59:49 +0000
+Received: from mailout2.samsung.com ([203.254.224.25])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWDtk-0003S5-Ei
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:51:18 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id e6so389936pjt.4
+ id 1jWE1u-0001IS-M4
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:59:44 +0000
+Received: from epcas2p1.samsung.com (unknown [182.195.41.53])
+ by mailout2.samsung.com (KnoxPortal) with ESMTP id
+ 20200506065939epoutp02af3804c1c84e37c722f982143fa25071~MXjvcaEmN2136121361epoutp02o
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 05 May 2020 23:51:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=daemons-net.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=zWslycsoqOQ359IakGW3a1F/5xT9RTlCzfLGPEdji2s=;
- b=VVRPac8JxQ2yO15PzcdX1hP2MLRiJEj2HFle/fWZJfRhqKwz1VUpjJdtye3lEX1NIW
- eY+gb5/i8thO7fxUOpy+IWPnYi5J38J7Ch04uOZqpgneUG982J8lnjA9IyHl8LqowtNz
- LEWFHbTLgVKIXCy18RxFG+qDC1FQjWe0qFZAbncAluPpGa1FeHObBBzZ3Ppsf+qgPZ+Z
- RfMgJMPkmUWvIwQE6WdPM7bjn1qVtatSYhQvhoVZIUAcEC1IQw+W180UdTrVvpgT0NjT
- T/QIsA70LDYe05eVIJuhFW/qNTu7pwhR0OE4Biw0NhIlctzSaqMPjKLbF6yI2eX64HX1
- XdCQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=zWslycsoqOQ359IakGW3a1F/5xT9RTlCzfLGPEdji2s=;
- b=k5/p749OBfQaA/a4K23Jg48QjT2YTPiRpO9B4usqvy4HySx6bCuHlCaGFiMwusMkSM
- LJQXIGV4YG12b7Z1yYihcCn7BZTf8RHcz3QcMH1LEF4aOqLG/yXs9hVcnK1bzkKTmClL
- 3gQP6U+u26OkhiHFJhMDXz8sZCZ5xClnV8Y5mUmHgfYKAD6fapX1+Zj2qs/KicC0KPFf
- kVyCbqd7t4x3bcOEdSQ2JR6E9Fr8dvn16KS4lDJ6yBHacGUYQwiiAaAmGnILrSrNrZlE
- qcSW6TCcwIvDWUizJJMXY2bsmjwWIhIh6a/jNo96OUA4hdnj3fRyJVNeEN3jTBACkwAe
- HkhA==
-X-Gm-Message-State: AGi0PuZ93KsyBA7LqRZEvKs3dzHeYdUYllrkgMGQ4imdP0+1XG+aqnO/
- PSti1M/ivZl8Eu/3+UIBFH+L
-X-Google-Smtp-Source: APiQypJcNy0kd6l7daOweAVRgu2WF8Ua8sYRhEpoLPpFDpd65Xi99VrdKZTPAjbReAAEY1z261G08g==
-X-Received: by 2002:a17:90a:25c3:: with SMTP id
- k61mr7352238pje.28.1588747874993; 
- Tue, 05 May 2020 23:51:14 -0700 (PDT)
-Received: from arctic-shiba-lx ([47.156.151.166])
- by smtp.gmail.com with ESMTPSA id x13sm867837pfq.154.2020.05.05.23.51.12
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 05 May 2020 23:51:14 -0700 (PDT)
-Date: Tue, 5 May 2020 23:51:05 -0700
-From: Clay McClure <clay@daemons.net>
-To: Grygorii Strashko <grygorii.strashko@ti.com>
-Subject: Re: [PATCH v2] net: ethernet: ti: Remove TI_CPTS_MOD workaround
-Message-ID: <20200506065105.GA3226@arctic-shiba-lx>
-References: <CAK8P3a1m-zmiTx0_KJb-9PTW0iK+Zkh10gKsaBzge0OJALBFmQ@mail.gmail.com>
- <20200504165711.5621-1-clay@daemons.net>
- <f07c695b-5537-41bf-e4f8-0d8012532f64@ti.com>
+ Wed,  6 May 2020 06:59:39 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.samsung.com
+ 20200506065939epoutp02af3804c1c84e37c722f982143fa25071~MXjvcaEmN2136121361epoutp02o
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1588748379;
+ bh=lV2O+8iZ2/46R5+QG5laRwy2by68RqeSALI8AS4Fc/A=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=a6mx5bM24fDQD3a/VEqChD9sXCtscW9jdE2NEmhLoMG1/aMmberpPyw0v34tQNJTl
+ iVne9tBs1U9cRF4DIWhCzIih/4ZiVIFOIp6pJ69bT0YtyioGsIQvZkYJjyFncM+5Lo
+ ZiWQFtyS7v8nJXRrJi05fxNSFxKYcValPC5qO1Q4=
+Received: from epsnrtp1.localdomain (unknown [182.195.42.162]) by
+ epcas2p3.samsung.com (KnoxPortal) with ESMTP id
+ 20200506065939epcas2p338187b35d7e399b1400de1b8d3fff8c9~MXju-kI3Q2161321613epcas2p3A;
+ Wed,  6 May 2020 06:59:39 +0000 (GMT)
+Received: from epsmges2p1.samsung.com (unknown [182.195.40.188]) by
+ epsnrtp1.localdomain (Postfix) with ESMTP id 49H6sN68BxzMqYm1; Wed,  6 May
+ 2020 06:59:36 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+ epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 81.39.49908.85062BE5; Wed,  6 May 2020 15:59:36 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas2p4.samsung.com (KnoxPortal) with ESMTPA id
+ 20200506065936epcas2p4dec87b4a038006c26d8c66c151694cdb~MXjsT5Ybh1915819158epcas2p4l;
+ Wed,  6 May 2020 06:59:36 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200506065936epsmtrp17aae55cf1ad37c66d5e89f9f2cb72ab7~MXjsTEpZu2782027820epsmtrp1j;
+ Wed,  6 May 2020 06:59:36 +0000 (GMT)
+X-AuditID: b6c32a45-af9ff7000000c2f4-a7-5eb260581abe
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ CD.B8.18461.85062BE5; Wed,  6 May 2020 15:59:36 +0900 (KST)
+Received: from ishtar.dsn.sec.samsung.com (unknown [12.36.155.159]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200506065936epsmtip14160593c2788d15c268561091017ee03~MXjsI8YjG2294722947epsmtip1m;
+ Wed,  6 May 2020 06:59:36 +0000 (GMT)
+From: Hyunki Koo <hyunki00.koo@samsung.com>
+To: krzk@kernel.org, gregkh@linuxfoundation.org, jslaby@suse.com,
+ robh+dt@kernel.org
+Subject: [PATCH v9 0/3] 32-bit access for TX/RX hold registers for
+ samsung_tty driver
+Date: Wed,  6 May 2020 15:59:31 +0900
+Message-Id: <20200506065931.16648-1-hyunki00.koo@samsung.com>
+X-Mailer: git-send-email 2.15.0.rc1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f07c695b-5537-41bf-e4f8-0d8012532f64@ti.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sa0hTYRjm29l2jtbiOK2+RHIcK8lSN2t2tBaBmoMkxKJCqnnSg0q7sbPZ
+ hSDNmiapyYx0apo6wmGpc4pJGql0I3Vd1pUgzbSLhHaxGQltO4v897zP+z48z/t9L4YIG/nB
+ WK5aT+vUlJLg+3O7B9dLIw9k2A6LzwxGkvVDIzyysKmNT1otLxGysn2GQ46OtqOk7f1zHvm0
+ t5ZPVo32c8hHTaUoea5vCN3hL7dZz/Plt+taUXln82l5md0K5G12J1f+3bY6lZ+u3JZDU1m0
+ TkSrMzVZuepsGbFrjyJBIY0VSyIlceQWQqSmVLSMSExJjdyZq3QnI0R5lNLgplIphiGit2/T
+ aQx6WpSjYfQygtZmKbUSiTaKoVSMQZ0dlalRxUvE4hipezJDmdM/40S0rsDjw3PznHzQjJcA
+ Pwzim2HFk7OgBPhjQrwHwL7xd1y2+AZg8dO3fLaYA/Btyx/uP4nT+B5hG30ALpyZ9UlcADZ/
+ vgQ8U3x8A5z+VY14cBC+DxZYXvA8Qwg+AqCx4yrH0wjE98OOkkdezMXXwgnXL9SDBbgMVo40
+ IKxdGHR8beaxfAB8UD3hjYHgobCwq8YbA+IFGLzWcIvHChLhmNEBWBwIP9+zoywOhp/KjT58
+ GvYbK1BWfAHA+ZkPPvEmaJ4scosxt8N62NYb7YGeEEOvfb7LYPHgAsrSAlhsFLLCdfDG3EcO
+ i0Ng64den5McVnzq8a4ixA/BadNP3kUQal60jXnRNub/vg0AsYIVtJZRZdNMjFay+FttwHuf
+ EUk9oGokZQDgGCCWCsTJHYeFPCqPOaEaABBDiCDBUpebEmRRJ07SOo1CZ1DSzACQuh+7Agle
+ nqlxX7tar5BIY2JjxXFSUhobQxIrBZ1LXh0U4tmUnj5K01pa90/HwfyC80F4SVKGo8wpqrPY
+ ZnscRfEb/e7n1gtrTPawhsKmqbYE03Xb5cdv9v++c6orQDGeAYju+WrN5O7G4VNjS+SHTLKu
+ lU5Z2qqbJmJ8a9BYeuuEA9xdM/dD/SCiHD0X0jKVZyf8BqMNX7TO2qBjpYay8OG9lcL8Z1ei
+ LLfSXEcWHiYTXCaHkkQgOob6C8DSmWi1AwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrBLMWRmVeSWpSXmKPExsWy7bCSnG5EwqY4g1lHhSzmHznHatG8eD2b
+ xaqlN5gtpmz4wGRx/vwGdotNj6+xWlzeNYfNYsb5fUwWZxb3slu07j3C7sDlsWlVJ5vH/rlr
+ 2D02L6n36NuyitFj/ZarLB6fN8kFsEVx2aSk5mSWpRbp2yVwZez7cJW54IdwxdlvP5kaGJcI
+ dDFyckgImEhcbXvM3MXIxSEksJtR4sCjS2wQCRmJCS+WMEPYwhL3W46wQhR9Y5R4u/QxK0iC
+ TUBb4s33mUBFHBwiAlESez76g9QwC1xhlFj4fgsjSI2wQKjE6xtLWUBsFgFViSc/vrOD2LwC
+ thJTzi2AWqAsceHdElaIuKDEyZlPWEBmMguoS6yfJwQSZhaQl2jeOpt5AiP/LCRVsxCqZiGp
+ WsDIvIpRMrWgODc9t9iwwDAvtVyvODG3uDQvXS85P3cTIzjwtTR3MG5f9UHvECMTB+MhRgkO
+ ZiURXp4fG+OEeFMSK6tSi/Lji0pzUosPMUpzsCiJ894oXBgnJJCeWJKanZpakFoEk2Xi4JRq
+ YEpOvCLx5Gj7UrWIRXpWF1Z0O6x5azpl7tuS6ZEXCx6oB1qovlvqp1rg6yV5ccbW579PV6XM
+ WO58i/PkvPTV4tNCjRb7+5xb7a5r9ajtekvZTkHu/u1TfRobkpviGZm2vCz2Us769uD7j6bj
+ h30VYvMFbfqtEjUE1qQ4tHDPWeqh7dWZXapQ/Lhj06aTjK2TZ5x7O/HD98NRrnvv5zn/vl01
+ Xbhm3ZNq8/y/js8mJOSHLRdLyJoefG3yVwUvb/WlDqxq2nGdSd+uKBW2VyrbZsy77Lp1Qejb
+ x1oLH5frGi5JjtNUckkMN3+/Z+LaskjvT9/99N/FfHBwn8miN62lpFX1Q0pptNDrZ8/iN6bG
+ KrEUZyQaajEXFScCAFOw1ojrAgAA
+X-CMS-MailID: 20200506065936epcas2p4dec87b4a038006c26d8c66c151694cdb
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20200506065936epcas2p4dec87b4a038006c26d8c66c151694cdb
+References: <CGME20200506065936epcas2p4dec87b4a038006c26d8c66c151694cdb@epcas2p4.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_235116_557018_DE2E5543 
-X-CRM114-Status: GOOD (  31.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200505_235942_969641_0F21AE97 
+X-CRM114-Status: GOOD (  15.37  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1041 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.25 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,179 +141,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, kbuild test robot <lkp@intel.com>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Murali Karicheri <m-karicheri2@ti.com>,
- Jesper Dangaard Brouer <brouer@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Richard Cochran <richardcochran@gmail.com>,
- Santosh Shilimkar <santosh.shilimkar@oracle.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>, Andrew Jeffery <andrew@aj.id.au>,
- Pankaj Bharadiya <pankaj.laxminarayan.bharadiya@intel.com>,
- Ilias Apalodimas <ilias.apalodimas@linaro.org>, linux-kernel@vger.kernel.org,
- "Eric W. Biederman" <ebiederm@xmission.com>, netdev@vger.kernel.org,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, Hyunki Koo <hyunki00.koo@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 10:41:26AM +0300, Grygorii Strashko wrote:
-
-> It's better if you send v2 not as reply to v1.
-
-Noted, thank you, and thank you for taking the time to review my patch.
-
-> just to clarify. After these two patches
->  - the PTP_1588_CLOCK can still be set to "M"
->  - which will cause TI_CPTS to be "M",
->  - but TI_CPSW will still be "Y".
-> 
-> and all above will build and produce built-in CPSW without CPTS support
-> and cpts.ko which is loadable, but not functional.
-> 
-> Sorry, I'm a little bit lost regarding the target you'are trying to achieve.
-> At least previously "imply PTP_1588_CLOCK" allowed to select properly PTP_1588_CLOCK
-> without modifying every defconfig.
-
-Well, I just wanted to squelch a WARN_ON(). As Arnd pointed out in [1],
-code that uses the stubbed cpts functions is supposed to gracefully
-handle receiving a null pointer. Splatting a warning is not graceful,
-and that's what I was trying to fix.
-
-But your question in [2] prompted me to consider whether it should be
-possible to build TI_CPTS without PTP_1588_CLOCK at all. I think the
-answer is no, so I tried to fix it, but you're right, it's still
-possible to end up with a nonfunctional module after my patch.
-
-If you prefer to revert, that's fine with me. Should I post a patch, or
-just ask David to revert?
-
--- 
-Clay
-
-[1]: https://lore.kernel.org/lkml/CAK8P3a22aSbpcVK-cZ6rhnPgbYEGU3z__G9xk1EexOPZd5Hmzw@mail.gmail.com/
-[2]: https://lore.kernel.org/lkml/6fef3a00-6c18-b775-d1b4-dfd692261bd3@ti.com/
-
-> 
-> > Reported-by: kbuild test robot <lkp@intel.com>
-> > Signed-off-by: Clay McClure <clay@daemons.net>
-> > ---
-> > Changes in v2:
-> > 
-> > - Don't regenerate the defconfigs, just add PTP_1588_CLOCK.
-> > 
-> >   arch/arm/configs/keystone_defconfig    |  1 +
-> >   arch/arm/configs/omap2plus_defconfig   |  1 +
-> >   drivers/net/ethernet/ti/Kconfig        | 13 ++++---------
-> >   drivers/net/ethernet/ti/Makefile       |  2 +-
-> >   drivers/net/ethernet/ti/cpsw_ethtool.c |  2 +-
-> >   drivers/net/ethernet/ti/cpts.h         |  3 +--
-> >   drivers/net/ethernet/ti/netcp_ethss.c  | 10 +++++-----
-> >   7 files changed, 14 insertions(+), 18 deletions(-)
-> > 
-> > diff --git a/arch/arm/configs/keystone_defconfig b/arch/arm/configs/keystone_defconfig
-> > index 11e2211f9007..84a3b055f253 100644
-> > --- a/arch/arm/configs/keystone_defconfig
-> > +++ b/arch/arm/configs/keystone_defconfig
-> > @@ -147,6 +147,7 @@ CONFIG_I2C_DAVINCI=y
-> >   CONFIG_SPI=y
-> >   CONFIG_SPI_DAVINCI=y
-> >   CONFIG_SPI_SPIDEV=y
-> > +CONFIG_PTP_1588_CLOCK=y
-> >   CONFIG_PINCTRL_SINGLE=y
-> >   CONFIG_GPIOLIB=y
-> >   CONFIG_GPIO_SYSFS=y
-> > diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
-> > index 3cc3ca5fa027..8b83d4a5d309 100644
-> > --- a/arch/arm/configs/omap2plus_defconfig
-> > +++ b/arch/arm/configs/omap2plus_defconfig
-> > @@ -274,6 +274,7 @@ CONFIG_SPI_TI_QSPI=m
-> >   CONFIG_HSI=m
-> >   CONFIG_OMAP_SSI=m
-> >   CONFIG_SSI_PROTOCOL=m
-> > +CONFIG_PTP_1588_CLOCK=y
-> >   CONFIG_PINCTRL_SINGLE=y
-> >   CONFIG_DEBUG_GPIO=y
-> >   CONFIG_GPIO_SYSFS=y
-> > diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
-> > index 8e348780efb6..f3f8bb724294 100644
-> > --- a/drivers/net/ethernet/ti/Kconfig
-> > +++ b/drivers/net/ethernet/ti/Kconfig
-> > @@ -77,23 +77,18 @@ config TI_CPSW_SWITCHDEV
-> >   	  will be called cpsw_new.
-> >   config TI_CPTS
-> > -	bool "TI Common Platform Time Sync (CPTS) Support"
-> > +	tristate "TI Common Platform Time Sync (CPTS) Support"
-> >   	depends on TI_CPSW || TI_KEYSTONE_NETCP || TI_CPSW_SWITCHDEV || COMPILE_TEST
-> >   	depends on COMMON_CLK
-> > -	depends on POSIX_TIMERS
-> > +	depends on PTP_1588_CLOCK
-> 
-> > +	default y if TI_CPSW=y || TI_KEYSTONE_NETCP=y || TI_CPSW_SWITCHDEV=y
-> 
-> even with above statement it's possible to force TI_CPTS="M" while CPSW/NETCP="Y"
-> 
-> > +	default m
-> 
-> I could be mistaken by above 2 lines seems can be 'imply TI_CPTS'
-> in TI_CPSW, TI_KEYSTONE_NETCP, TI_CPSW_SWITCHDEV
-> 
-> >   	---help---
-> >   	  This driver supports the Common Platform Time Sync unit of
-> >   	  the CPSW Ethernet Switch and Keystone 2 1g/10g Switch Subsystem.
-> >   	  The unit can time stamp PTP UDP/IPv4 and Layer 2 packets, and the
-> >   	  driver offers a PTP Hardware Clock.
-> > -config TI_CPTS_MOD
-> > -	tristate
-> > -	depends on TI_CPTS
-> > -	depends on PTP_1588_CLOCK
-> > -	default y if TI_CPSW=y || TI_KEYSTONE_NETCP=y || TI_CPSW_SWITCHDEV=y
-> > -	default m
-> 
-> and this prevented user from forcing TI_CPTS="M" while CPSW/NETCP="Y"
-> 
-> > -
-> >   config TI_K3_AM65_CPSW_NUSS
-> >   	tristate "TI K3 AM654x/J721E CPSW Ethernet driver"
-> >   	depends on ARCH_K3 && OF && TI_K3_UDMA_GLUE_LAYER
-> > diff --git a/drivers/net/ethernet/ti/Makefile b/drivers/net/ethernet/ti/Makefile
-> > index 53792190e9c2..cb26a9d21869 100644
-> 
-> Below small diff should fix build fail:
-> diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
-> index 8e348780efb6..eeaee47598aa 100644
-> --- a/drivers/net/ethernet/ti/Kconfig
-> +++ b/drivers/net/ethernet/ti/Kconfig
-> @@ -81,6 +81,7 @@ config TI_CPTS
->         depends on TI_CPSW || TI_KEYSTONE_NETCP || TI_CPSW_SWITCHDEV || COMPILE_TEST
->         depends on COMMON_CLK
->         depends on POSIX_TIMERS
-> +       depends on PTP_1588_CLOCK
->         ---help---
->           This driver supports the Common Platform Time Sync unit of
->           the CPSW Ethernet Switch and Keystone 2 1g/10g Switch Subsystem.
-> @@ -90,7 +91,6 @@ config TI_CPTS
->  config TI_CPTS_MOD
->         tristate
->         depends on TI_CPTS
-> -       depends on PTP_1588_CLOCK
->         default y if TI_CPSW=y || TI_KEYSTONE_NETCP=y || TI_CPSW_SWITCHDEV=y
->         default m
-> 
-> Then separate patch can be used to enable PTP_1588_CLOCK in defconfigs.
-> 
-> My personal opinion - it might be better to revert TI CPTS part from
-> b6d49cab44b5 ("net: Make PTP-specific drivers depend on PTP_1588_CLOCK")
-> at all.
-> 
-> -- 
-> Best regards,
-> grygorii
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Q2hhbmdlIGluIHY5OgotIG1vdmUgd3JfcmVnX2JhcnJpZXIgaW50byBpZmRlZiBvZiBDT05GSUdf
+U0VSSUFMX1NBTVNVTkdfQ09OU09MRQogIHRvIGZpeCBmb2xsb3dpbmcgYnVpbGQgZXJyb3IgZm9y
+IHg4NiBidWlsZAogIENDIFtNXSAgZHJpdmVycy90dHkvc2VyaWFsL3NhbXN1bmdfdHR5Lm8KICBk
+cml2ZXJzL3R0eS9zZXJpYWwvc2Ftc3VuZ190dHkuYzoxODY6MTM6IHdhcm5pbmc6IOKAmHdyX3Jl
+Z19iYXJyaWVy4oCZCiAgZGVmaW5lZCBidXQgbm90IHVzZWQgWy1XdW51c2VkLWZ1bmN0aW9uXQoK
+Q2hhbmdlIGluIHY4OgotIHNwaXQgaW50byAzIHBhdGNoCiAgWzEvM10gY3JlYXRlIHRoZSBuZXcg
+ZnVuY3Rpb25zIHdpdGggbm8gZnVuY3Rpb25hbCBjaGFuZ2UgdG8gdGhlIGNvZGUgYXMtaXMuCiAg
+UmVwbGFjZSByZF9yZWdiL3dyX3JlZ2Igd2l0aCByZF9yZWcvd3JfcmVnIGZvciBnZW5lcmFsIHVz
+YWdlLgogIFsyLzNdIGFkZCB0aGUgbmV3IGJpbmRpbmcgcmVnLWlvLXdpZHRoIGluIGRldmljZSB0
+cmVlCiAgWzMvM10gYWRkIHRoZSBuZXcgZnVudGluYWxpdHkgb2YgcmRfcmVnIC8gd3JfcmVnIGFu
+ZCB3cl9yZWdfYmFycmllciAKICAgICAgICB0byBzdXBwb3J0IDMyLWJpdCBhY2Nlc3MgZm9yIHRo
+ZSBUWC9SWCBob2xkIHJlZ2lzdGVycyBVVFhIIGFuZCBVUlhILgoKQ2hhbmdlIGluIHY3OgotIFsx
+LzJdIGNvcnJlY3QgYnVpbGQgZXJyb3Igb24gcnVubmluZyAnbWFrZSBkdF9iaW5kaW5nX2NoZWNr
+JyAKRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3NlcmlhbC9zYW1zdW5nX3VhcnQu
+eWFtbDogIG1hcHBpbmcgdmFsdWVzIGFyZSBub3QgYWxsb3dlZCBpbiB0aGlzIGNvbnRleHQKICBp
+biAiPHVuaWNvZGUgc3RyaW5nPiIsIGxpbmUgMzYsIGNvbHVtbiAxMwogIERvY3VtZW50YXRpb24v
+ZGV2aWNldHJlZS9iaW5kaW5ncy9NYWtlZmlsZToxMjogcmVjaXBlIGZvciB0YXJnZXQgJ0RvY3Vt
+ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9zZXJpYWwvc2Ftc3VuZ191YXJ0LmV4YW1wbGUu
+ZHRzJyBmYWlsZWQKICBtYWtlWzFdOiAqKiogW0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5k
+aW5ncy9zZXJpYWwvc2Ftc3VuZ191YXJ0LmV4YW1wbGUuZHRzXSBFcnJvciAxCiAgbWFrZVsxXTog
+KioqIFdhaXRpbmcgZm9yIHVuZmluaXNoZWQgam9icy4uLi4KICBNYWtlZmlsZToxMjYyOiByZWNp
+cGUgZm9yIHRhcmdldCAnZHRfYmluZGluZ19jaGVjaycgZmFpbGVkCiAgbWFrZTogKioqIFtkdF9i
+aW5kaW5nX2NoZWNrXSBFcnJvciAyCi0gWzIvMl0gYWRkIGNvbW1pdCBtZXNzYWdlIG9mIHJldmll
+d2VkIGJ5IGFuZCB0ZXN0ZWQgYnkgaW4gY29tbWl0IG1lc3NhZ2UKICBSZXZpZXdlZC1ieTogS3J6
+eXN6dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgogIFRlc3RlZCBvbiBPZHJvaWQgSEMx
+IChFeHlub3M1NDIyKToKICBUZXN0ZWQtYnk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2Vy
+bmVsLm9yZz4KCkNoYW5nZSBpbiB2NjoKLSBbMi8yXSBjbGVhbiBkZXNjcmlwdGlvbiBvZiByZWct
+aW8td2lkdGgKICBhbGxPZiBpcyBub3QgbmVlZGVkLiBKdXN0IGVudW0gWzEsIDJdIGlzIGVub3Vn
+aC4KCkNoYW5nZXMgaW4gdjU6Ci0gc3BpdCBpbnRvIDIgcGF0Y2gsIG5ld2x5IGFkZGVkIHBhdGNo
+IGZvciBkdC1iaW5kaW5nCiAgWzEvMl0gbmV3bHkgYWRkZWQgZHQtYmluZGluZyBhbmQgZ28gYXMg
+Zmlyc3QgcGF0Y2ggaW4gdGhpcyBzZXJpZXMuCiAgWzIvMl0gZ28gYXMgc2Vjb25kIHBhdGNoIGlu
+IHRoaXMgc2VyaWVzLgoKQ2hhbmdlcyBpbiB2NDoKLSBjb3JyZWN0IHZhcmlhYmxlIHR5cGVzIGFu
+ZCBjaGFuZ2UgbWlzbGVhZGluZyBmdW5jdGlvbiBuYW1lCgpDaGFuZ2VzIGluIHYzOgotIGxpbmUg
+MjAzMTogcmVtb3ZlIHJlZHVuZGFudCBpbml0IHZhbHVlICBmb3Igb3VycG9ydC0+cG9ydC5pb3R5
+cGUKCkNoYW5nZXMgaW4gdjI6Ci0gbGluZSA5NTQgOiBjaGFuZ2UgcmRfcmVnbCB0byByZF9yZWcg
+aW4gZm9yIGJhY2t3YXJkIGNvbXBhdGliaWxpdHkuCi0gbGluZSAyMDMxOiBBZGQgaW5pdCB2YWx1
+ZSBmb3Igb3VycG9ydC0+cG9ydC5pb3R5cGUgIHRvIFVQSU9fTUVNCgpIeXVua2kgS29vICgzKToK
+ICBzZXJpYWw6IHNhbXN1bmc6IFJlcGxhY2UgcmRfcmVnYi93cl9yZWdiIHdpdGggcmRfcmVnL3dy
+X3JlZwogIGR0LWJpbmRpbmdzOiBzZXJpYWw6IEFkZCByZWctaW8td2lkdGggY29tcGF0aWJsZQog
+IHR0eTogc2Ftc3VuZ190dHk6IDMyLWJpdCBhY2Nlc3MgZm9yIFRYL1JYIGhvbGQgcmVnaXN0ZXJz
+CgogLi4uL2RldmljZXRyZWUvYmluZGluZ3Mvc2VyaWFsL3NhbXN1bmdfdWFydC55YW1sICAgfCAg
+OCArKysKIGRyaXZlcnMvdHR5L3NlcmlhbC9zYW1zdW5nX3R0eS5jICAgICAgICAgICAgICAgICAg
+IHwgNzYgKysrKysrKysrKysrKysrKysrLS0tLQogMiBmaWxlcyBjaGFuZ2VkLCA3MiBpbnNlcnRp
+b25zKCspLCAxMiBkZWxldGlvbnMoLSkKCi0tIAoyLjE1LjAucmMxCgoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
