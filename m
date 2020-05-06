@@ -2,96 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 171D71C6F4E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1C771C6F58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:30:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mAbpC3x8MSFjgRYq2lmx+DkSC2ZcVspOLs+GEKZu2p8=; b=JqTxycs+dsflcg
-	l/cWTIXnkpwE78kX510ToXYXcnfnyIQz8hCAoZ2n7lf+mIeu1/HaWF9NV/6qcMZYMeCTDtlQcptHF
-	kI/sJSMvyPgY60AH6QsrglIK9UqRm0w1U4Tl2/DrLL1esnG0tB1/IpMcYa2n1yXCid+MAm+fEKA2Z
-	gXU0aiVDWnYRNxdnsJ/fFtiY8ezk+ldqjF4PY21ip4vBsoySYJ0f7mu1NVpuDo6tt2n6pGQJGxDFs
-	ik60G1LHSLeIBLi7w/vR1A10DbX0Mutj/asdYWDxt8KDcYepOumfqniZkeeS4E9gtIqJlQ4bK1Bl1
-	yRYCausKB51mqFjRJWkg==;
+	List-Owner; bh=+4mjprRMtHe6XexGwWYU1w72o8n7P66Bob+HpU8Izu4=; b=UsE/F+ColjBqml
+	3U+6huLKW449xbJh6/4yGUm3+aO3Yg0HFMISURMqpuHYBXDXyaeyiZxoUJngiKVvTRBxY01UkHCkz
+	OD4YMgg0vQzUHtnp5p+cmGUFXohiXR6BYMw/VodpA3dd/mGpzVj2A9EjoO8N/O9Epe5R61/1BMg8L
+	T04Fz4Sh/modWYCFl8uV2zTI7TGGZzf71HlolqL1so7iZl3xqCZ1Qo/orKbUOhcEX0fz1Sdku9E/1
+	gu9V1XJmnGx2x8kH/NXdhxxHhvo1X0B2OkC5P9hbgTahVvpIzQbAkbkMJCQZMuA+QQ3dU9jSyVIOj
+	ufq2tCyoNAiWTpUK3k5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWID4-0002Hq-50; Wed, 06 May 2020 11:27:30 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1jWIFh-0002ok-JI; Wed, 06 May 2020 11:30:13 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWICu-0002GC-1c
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:27:22 +0000
-Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
- by skedge04.snt-world.com (Postfix) with ESMTP id 44AF067A6F2;
- Wed,  6 May 2020 13:27:11 +0200 (CEST)
-Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
- (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Wed, 6 May 2020
- 13:27:10 +0200
-Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
- sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
- 15.01.1913.007; Wed, 6 May 2020 13:27:10 +0200
-From: Schrempf Frieder <frieder.schrempf@kontron.de>
-To: Peng Fan <peng.fan@nxp.com>, Lucas Stach <l.stach@pengutronix.de>, "Adam
- Ford" <aford173@gmail.com>, Anson Huang <anson.huang@nxp.com>, "Christian
- Gmeiner" <christian.gmeiner@gmail.com>, Daniel Baluta
- <daniel.baluta@nxp.com>, Fabio Estevam <festevam@gmail.com>, Leonard Crestez
- <leonard.crestez@nxp.com>, Jun Li <jun.li@nxp.com>, dl-linux-imx
- <linux-imx@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
- "Russell King" <linux+etnaviv@armlinux.org.uk>, Sascha Hauer
- <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, "S.j. Wang"
- <shengjiu.wang@nxp.com>
-Subject: Re: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
- fix boot on i.MX8MM
-Thread-Topic: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
- fix boot on i.MX8MM
-Thread-Index: AQHWHu1V9EwL5xxa+UiJnz7nneFudaiRmbMAgAAQ8oCAAWBPgIAHyDoA
-Date: Wed, 6 May 2020 11:27:10 +0000
-Message-ID: <24a5aceb-9c47-2029-aa5b-8fa7f9ba5670@kontron.de>
-References: <20200430124602.14463-1-frieder.schrempf@kontron.de>
- <20200430124602.14463-4-frieder.schrempf@kontron.de>
- <3895f202cf5919e41a56878a62f6d5259dea12d3.camel@pengutronix.de>
- <72e8618b-856e-de42-9282-958cd03b239f@kontron.de>
- <DB6PR0402MB276059A8D612ECBA8812379988AB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
-In-Reply-To: <DB6PR0402MB276059A8D612ECBA8812379988AB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.25.9.193]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
-Content-ID: <D25527CCBDEB3645AAE31FCF6D268574@snt-world.com>
+ id 1jWIFP-0002nW-IU
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:29:57 +0000
+Received: by mail-ot1-x342.google.com with SMTP id j4so1012689otr.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 May 2020 04:29:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=YSDapmMgNKW5r9KuP6TQNUmeTHZRb0J/HB9oD2+E5xY=;
+ b=MQZj6pwlg0yTJaS9PRfkaH5gydyswEKWshRAcYFNNiG+FnRWt+d1I5K+uVTmAAh6HT
+ uXDVK4EkwfhhFGpXOVRFBr1NJr8TwYUCRbww/eS8XKxDtm1eZ6fwKDQ4g1pvmlVy9CsY
+ JDSEhZHdbN51G+MpZpuJ3qgO8THgeAxp77Z8yobpcfWhM/hizRI3Hb9YMwNjgnnnG9EH
+ Ub6+n9Z7C9s9R/28/KrUcz6wsGEqhC0XTR/9pnaw5Hx2WYNAPK7mJ/dGiQTelDJ556jZ
+ TkkKn5c5ntKQOC8jgFODOJjMAUEycj4khQ5qkYBju0gESsUmgv6fSO4Wa40Yjw/Twc+7
+ G70Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=YSDapmMgNKW5r9KuP6TQNUmeTHZRb0J/HB9oD2+E5xY=;
+ b=iRluuUgjajJ5Uvd1V17e70Quid4/M+gyQkFlSzENnGyuL8ITJAy+lcDHA9f0mLnJyl
+ tsLklDKqja4U3PjJevFhUzQADIXa4AkN1GaYfkrFTeMkf1XZ5i3Deb497yeaPMVKqyD7
+ mU/tEIuM6dgAg/OGkaH11l7U9JL3ZyVI/q0crh7sy1p8Cr3KqZKoC8yJmkdSRwRSTY4K
+ 4YZ/mZJbrSwV+BEqLJQ8gPIEMa3DpPDSYrPjGIYoczhdjONQcBWaNOWW43rprvR7LUqN
+ zZqvERYBJkdlX+p32+KrHenZUozjjxd4/Cy97sSWytvbQ73qrE+GikCVh6yxgXd8tV+D
+ dUIw==
+X-Gm-Message-State: AGi0Puak+e6pOfmGMh7S5AstGJ2Hi1T41tAAzp7CtVmOMuIl4vajP3oU
+ xWkxYJ34dKjHDhWZ6cnDU5ai3kv6wZ0lW4adSHT53A==
+X-Google-Smtp-Source: APiQypIGS3Olnt59XIqgX3m5pyxz9JgUlFMHAZAqicbZYG6FQMcwoTgHPVTzSA29qFYkRFUig7c8zx837fnoQ2EYvdI=
+X-Received: by 2002:a05:6830:1e4e:: with SMTP id
+ e14mr5760377otj.91.1588764594274; 
+ Wed, 06 May 2020 04:29:54 -0700 (PDT)
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: 44AF067A6F2.A23F9
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: frieder.schrempf@kontron.de
-X-SnT-MailScanner-To: aford173@gmail.com, anson.huang@nxp.com,
- christian.gmeiner@gmail.com, daniel.baluta@nxp.com,
- devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
- etnaviv@lists.freedesktop.org, festevam@gmail.com, jun.li@nxp.com,
- kernel@pengutronix.de, l.stach@pengutronix.de,
- leonard.crestez@nxp.com, linux+etnaviv@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- linux-kernel@vger.kernel.org, peng.fan@nxp.com,
- s.hauer@pengutronix.de, shawnguo@kernel.org, shengjiu.wang@nxp.com
-X-Spam-Status: No
+References: <20200505100129.104673-1-robert.foss@linaro.org>
+ <20200505100129.104673-2-robert.foss@linaro.org>
+ <1588679279.8804.133.camel@mhfsdcap03>
+In-Reply-To: <1588679279.8804.133.camel@mhfsdcap03>
+From: Robert Foss <robert.foss@linaro.org>
+Date: Wed, 6 May 2020 13:29:43 +0200
+Message-ID: <CAG3jFyvo3gmO3zLRUKQEdgRkmzvvvMTzDKV-LZAeKYFdOfCnEw@mail.gmail.com>
+Subject: Re: [PATCH v10 1/3] media: dt-bindings: ov8856: Document YAML bindings
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_042720_426262_620ED5D6 
-X-CRM114-Status: GOOD (  17.97  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200506_042955_652105_31D66F3D 
+X-CRM114-Status: GOOD (  19.90  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.208.41.69 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,189 +93,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "etnaviv@lists.freedesktop.org" <etnaviv@lists.freedesktop.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, linux-kernel <linux-kernel@vger.kernel.org>,
+ Marco Felsch <m.felsch@pengutronix.de>, Maxime Ripard <mripard@kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Ben Kao <ben.kao@intel.com>,
+ Sakari Ailus <sakari.ailus@iki.fi>, Maxime Ripard <maxime@cerno.tech>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peng,
+Hey Dongchun,
 
-On 01.05.20 14:36, Peng Fan wrote:
->> Subject: Re: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
->> fix boot on i.MX8MM
->>
->> On 30.04.20 16:35, Lucas Stach wrote:
->>> Am Donnerstag, den 30.04.2020, 12:46 +0000 schrieb Schrempf Frieder:
->>>> From: Frieder Schrempf <frieder.schrempf@kontron.de>
->>>>
->>>> On some i.MX8MM devices the boot hangs when enabling the GPU clocks.
->>>> Changing the order of clock initalization to
->>>>
->>>> core -> shader -> bus -> reg
->>>>
->>>> fixes the issue. This is the same order used in the imx platform code
->>>> of the downstream GPU driver in the NXP kernel [1]. For the sake of
->>>> consistency we also adjust the order of disabling the clocks to the
->>>> reverse.
->>>>
->>>> [1]
->>>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsou
->>>>
->> rce.codeaurora.org%2Fexternal%2Fimx%2Flinux-imx%2Ftree%2Fdrivers%2F
->> mx
->>>>
->> c%2Fgpu-viv%2Fhal%2Fos%2Flinux%2Fkernel%2Fplatform%2Ffreescale%2Fgc
->> _h
->>>>
->> al_kernel_platform_imx.c%3Fh%3Dimx_5.4.3_2.0.0%23n1538&amp;data=02
->> %7C
->>>>
->> 01%7Cpeng.fan%40nxp.com%7Cdc7da53f665e4f567e3008d7ed1c27e0%7C6
->> 86ea1d3
->>>>
->> bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637238577497969787&amp;sda
->> ta=QRHzu
->>>> C6gSKy%2F6y2FTRvlNF5t7DmJIvTgBESYKchI%2FDw%3D&amp;reserved=0
->>>
->>> I don't see why the order of the clocks is important. Is this really a
->>> GPU issue? As in: does a GPU access hang when enabling the clocks in
->>> the wrong order? Or is this a clock driver issue with a clock access
->>> hanging due to an upstream clock still being disabled?
->>
->> Actually you might be right with this being a clock driver issue. The hanging
->> happens while enabling the clocks (unrelated to any GPU register access). The
->> strange thing is that most of the devices we have don't care and work as is
->> and some devices reliably fail each time when enabling the clocks in the
->> "wrong" order.
->>
->> So I guess this could indeed be some clock being enabled with an upstream
->> PLL not having locked yet or something.
-> 
-> https://eur04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11433775%2F&amp;data=02%7C01%7Cfrieder.schrempf%40kontron.de%7C1014be5f9b8b4d0c6e8108d7edcc5bde%7C8c9d3c973fd941c8a2b1646f3942daf1%7C0%7C0%7C637239334279684748&amp;sdata=UwVVzPEvNOP6I4g78uG5O9jVYmHwqyo6hj97wvtlzs0%3D&amp;reserved=0
-> 
-> Will this pachset help?
+Thanks for having a look at this series.
 
-Thanks for the pointer. Unfortunately the clock patches don't help. I 
-tried with 5.7-rc4 and your patches on top and the issue still persists.
+> > +examples:
+> > +  - |
+> > +    #include <dt-bindings/gpio/gpio.h>
+> > +
+> > +    i2c {
+> > +        #address-cells = <1>;
+> > +        #size-cells = <0>;
+> > +
+> > +        ov8856: camera@10 {
+> > +            compatible = "ovti,ov8856";
+> > +            reg = <0x10>;
+> > +
+> > +            reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
+>
+> Apologies for missing to follow the earlier discussion related to this.
+> I noticed the GPIO flag para and __ov8856_power_on() are aligned using
+> ACTIVE_LOW.
+>
+> But from the datasheet, XSHUTDN pin is active-high for OV8856.
+> It means devm_gpiod_get API (in probe func) should use GPIOD_OUT_LOW to
+> initialize the GPIO as output with a value of 0.
+> Otherwise it should use GPIOD_OUT_HIGH.
+>
+> There is one case for GPIO_ACTIVE_LOW setting:
+> https://patchwork.linuxtv.org/patch/63460/
+> https://patchwork.linuxtv.org/patch/63461/
 
-Also I found out that changing the order of the clock initialization as 
-proposed, does not fix the problem, either. On some boards it helps, 
-others still hang when the clocks are initialized.
+We went back and forth about this a few times, and I switched to this
+gpio setting after having worked through the device probing reset gpio
+toggling. Semantically it seemed easier to understand in the driver,
+since the gpio is called reset and not !shutdown.
 
-Thanks,
-Frieder
+Looking into devm_gpiod_get_optional(), the flag argument
+GPIOD_OUT_LOW or HIGH for that matter is actually not used initialize
+the output, but only used for an exclusivity check.
+https://elixir.bootlin.com/linux/latest/source/drivers/gpio/gpiolib-devres.c#L109
 
-> 
-> The i.MX8M CCM root mux code in Linux needs a fix.
-> 
-> Regards,
-> Peng.
-> 
->>
->>>
->>> Regards,
->>> Lucas
->>>
->>>> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
->>>> ---
->>>>    drivers/gpu/drm/etnaviv/etnaviv_gpu.c | 42
->> +++++++++++++--------------
->>>>    1 file changed, 21 insertions(+), 21 deletions(-)
->>>>
->>>> diff --git a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
->>>> b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
->>>> index 7b138d4dd068..424b2e5951f0 100644
->>>> --- a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
->>>> +++ b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
->>>> @@ -1487,55 +1487,55 @@ static int etnaviv_gpu_clk_enable(struct
->> etnaviv_gpu *gpu)
->>>>    {
->>>>    	int ret;
->>>>
->>>> -	if (gpu->clk_reg) {
->>>> -		ret = clk_prepare_enable(gpu->clk_reg);
->>>> +	if (gpu->clk_core) {
->>>> +		ret = clk_prepare_enable(gpu->clk_core);
->>>>    		if (ret)
->>>>    			return ret;
->>>>    	}
->>>>
->>>> -	if (gpu->clk_bus) {
->>>> -		ret = clk_prepare_enable(gpu->clk_bus);
->>>> +	if (gpu->clk_shader) {
->>>> +		ret = clk_prepare_enable(gpu->clk_shader);
->>>>    		if (ret)
->>>> -			goto disable_clk_reg;
->>>> +			goto disable_clk_core;
->>>>    	}
->>>>
->>>> -	if (gpu->clk_core) {
->>>> -		ret = clk_prepare_enable(gpu->clk_core);
->>>> +	if (gpu->clk_bus) {
->>>> +		ret = clk_prepare_enable(gpu->clk_bus);
->>>>    		if (ret)
->>>> -			goto disable_clk_bus;
->>>> +			goto disable_clk_shader;
->>>>    	}
->>>>
->>>> -	if (gpu->clk_shader) {
->>>> -		ret = clk_prepare_enable(gpu->clk_shader);
->>>> +	if (gpu->clk_reg) {
->>>> +		ret = clk_prepare_enable(gpu->clk_reg);
->>>>    		if (ret)
->>>> -			goto disable_clk_core;
->>>> +			goto disable_clk_bus;
->>>>    	}
->>>>
->>>>    	return 0;
->>>>
->>>> -disable_clk_core:
->>>> -	if (gpu->clk_core)
->>>> -		clk_disable_unprepare(gpu->clk_core);
->>>>    disable_clk_bus:
->>>>    	if (gpu->clk_bus)
->>>>    		clk_disable_unprepare(gpu->clk_bus);
->>>> -disable_clk_reg:
->>>> -	if (gpu->clk_reg)
->>>> -		clk_disable_unprepare(gpu->clk_reg);
->>>> +disable_clk_shader:
->>>> +	if (gpu->clk_shader)
->>>> +		clk_disable_unprepare(gpu->clk_shader);
->>>> +disable_clk_core:
->>>> +	if (gpu->clk_core)
->>>> +		clk_disable_unprepare(gpu->clk_core);
->>>>
->>>>    	return ret;
->>>>    }
->>>>
->>>>    static int etnaviv_gpu_clk_disable(struct etnaviv_gpu *gpu)
->>>>    {
->>>> +	if (gpu->clk_reg)
->>>> +		clk_disable_unprepare(gpu->clk_reg);
->>>> +	if (gpu->clk_bus)
->>>> +		clk_disable_unprepare(gpu->clk_bus);
->>>>    	if (gpu->clk_shader)
->>>>    		clk_disable_unprepare(gpu->clk_shader);
->>>>    	if (gpu->clk_core)
->>>>    		clk_disable_unprepare(gpu->clk_core);
->>>> -	if (gpu->clk_bus)
->>>> -		clk_disable_unprepare(gpu->clk_bus);
->>>> -	if (gpu->clk_reg)
->>>> -		clk_disable_unprepare(gpu->clk_reg);
->>>>
->>>>    	return 0;
->>>>    }
->>>
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> https://eur04.safelinks.protection.outlook.com/?url=http%3A%2F%2Flists.infradead.org%2Fmailman%2Flistinfo%2Flinux-arm-kernel&amp;data=02%7C01%7Cfrieder.schrempf%40kontron.de%7C1014be5f9b8b4d0c6e8108d7edcc5bde%7C8c9d3c973fd941c8a2b1646f3942daf1%7C0%7C0%7C637239334279684748&amp;sdata=kpx6LDA6QXgR3CPGsugEIIDt2YbZuJTC7%2FxrRsDhtok%3D&amp;reserved=0
-> 
+If you prefer, I can invert the logic again. To me making the reset
+gpio active resulting in the device being actually reset seems like
+the most intuitive and easy to understand option.
+The different OmniVision drivers seem to have different approaches to
+this. The ov9640 driver for example is doing what this series
+currently is doing.
+
+>
+> Sakari, Tomasz, am I right?
+>
+> > +            pinctrl-names = "default";
+> > +            pinctrl-0 = <&clk_24m_cam>;
+> > +
+> > +            clocks = <&cam_osc>;
+> > +            clock-names = "xvclk";
+> > +            clock-frequency = <19200000>;
+> > +
+> > +            avdd-supply = <&mt6358_vcama2_reg>;
+> > +            dvdd-supply = <&mt6358_vcamd_reg>;
+> > +            dovdd-supply = <&mt6358_vcamio_reg>;
+> > +
+> > +            port {
+> > +                wcam_out: endpoint {
+> > +                    remote-endpoint = <&mipi_in_wcam>;
+> > +                    data-lanes = <1 2 3 4>;
+> > +                    link-frequencies = /bits/ 64 <360000000>;
+> > +                };
+> > +            };
+> > +        };
+> > +    };
+> > +...
+> > \ No newline at end of file
+> > diff --git a/MAINTAINERS b/MAINTAINERS
+> > index 26f281d9f32a..84b262afd13d 100644
+> > --- a/MAINTAINERS
+> > +++ b/MAINTAINERS
+> > @@ -12489,6 +12489,7 @@ L:    linux-media@vger.kernel.org
+> >  S:   Maintained
+> >  T:   git git://linuxtv.org/media_tree.git
+> >  F:   drivers/media/i2c/ov8856.c
+> > +F:   Documentation/devicetree/bindings/media/i2c/ov8856.yaml
+> >
+>
+> Had you run parse-maintainers.pl?
+> The new item is supposed to be arranged in alphabetical order.
+
+No, I have not. But upon running it now, it doesn't make suggest any
+changes. But let me order the files manually in the next revision.
+
+However, I noticed I removed the wrong person from the maintainers
+file in this revision.
+So, I'll correct that and add you Dongchun as the maintainer if that's ok.
+
+>
+> >  OMNIVISION OV9640 SENSOR DRIVER
+> >  M:   Petr Cvek <petrcvekcz@gmail.com>
+>
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
