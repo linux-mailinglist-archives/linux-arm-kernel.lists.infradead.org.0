@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AECAE1C7AC8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:55:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1C9B1C7AC7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:54:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/yGsUHMT+GnDqASaNvHbVVw5Siw0S8Q/EbJixkMc81o=; b=INu5jbow4DWMAa
-	lTO9frpbGteqOcMoSoF1ApUaAxoOdMvGn1C4P/5DUBudHZu/3eB65w1/+tB72NFXFBnvlx1Vbg3lI
-	1grNLniu++DU049DOUHxAD5XsAUWZdRzg3OiBlD+sg1JJtyhvprBKlpxmd/JLbhK+yBXIplOBm2ku
-	RdzuY6yZ6bbGp3b5D38S2xx0cdMWYDOkZs0cX9K6SXaMRFS5xiMD6Nfn2BCwK759xnZ9Ps/u187nS
-	TGwLE0d87uskfpLp2x4PNkiyDP+HDttuxlGr8+KHuLjI5Yv8y9z3qe3BQV4gqncPQUW/bwsFvapz/
-	CABZAdRvYH4RRrqOI74A==;
+	List-Owner; bh=HOsINqjeP/ieZXFJ00tfX5rB4/N+Ah8XifmpAu0ybFs=; b=mRV9ZcUxC/4mVp
+	bhJx7Sl9QQYXP+vOnwh56zUndrvCAE9hHadPngQ/SErup0kdCmMEFgD/0k+H9ZCmzVIjC08aYSeM8
+	Fw7u+Oth8tcj78LsmqZYYCb2sIfnLDmzUwllKA0Uj7Qjl8yrhuJ9Ps63ItfU17MrskubQvQaV1LQx
+	1NA76vgV9oLdz3OXK+NmyfTMp+kGxGgoxc9Z4DoJbHdy+kY7zC7RM86Lleq3u9KaENq0gJ6AqlKlf
+	dANQS2oMCNI+MA4C52rIbz8IAS1G/1L9X6DsvE3rVKfwN+Yhxlgemzlzlqe3BxI0Des9bI8YIuakZ
+	0B7fJ56bAhtJPf292+qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ85-0006tm-Ub; Wed, 06 May 2020 19:54:53 +0000
+	id 1jWQ7s-0006TD-W2; Wed, 06 May 2020 19:54:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5b-0004JA-Aa
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:20 +0000
+ id 1jWQ5e-0004Ls-BK
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:24 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id EDEB22076D;
- Wed,  6 May 2020 19:52:17 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DDCFE207DD;
+ Wed,  6 May 2020 19:52:20 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794738;
- bh=aakVYsllj8JLETFGSJnlgjvy9G3J3P1izYBHonGSEIE=;
+ s=default; t=1588794741;
+ bh=xXgAlVQ+fZjjhJDjHBj+kobr7+HqUmOW/gDHHpp5Orw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=QNAM1b/XqjTeisOx3vc8lW3+yX3fs6x8wFcErqhuwhOlP8S/HseozJAywvvfDwJH2
- UI7BFHjmY5yRz4hbLZFaFoneZUVCqR+Rn5u0l/aZ2vWmLUWqZylfriqSNNb88pXV35
- YCDpJiF7vTnN2YFBEvqVPmQYjhlC8WgjPuw9PRtw=
+ b=Q42xFV9oKWVToV4ehfxhEpzAqRxn5kIXY5+m+Ishr3DTmPag1Y7IHnT9n0PPCET+F
+ kkwLk+ltcdK87O1Q8XVRlyXCCNPml1EKIE1xR7oS8x+F6xqhC4zVRDw83MGbH3VS6i
+ gK5fzFN3FDIUKeLaNnqsMhmnc3hnpfhMbDzYrFDE=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 09/11] arm64: vdso: Annotate for BTI
-Date: Wed,  6 May 2020 20:51:36 +0100
-Message-Id: <20200506195138.22086-10-broonie@kernel.org>
+Subject: [PATCH v3 10/11] arm64: vdso: Force the vDSO to be linked as BTI when
+ built for BTI
+Date: Wed,  6 May 2020 20:51:37 +0100
+Message-Id: <20200506195138.22086-11-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125219_444169_9A85ADC7 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200506_125222_452606_E986CEDC 
+X-CRM114-Status: GOOD (  11.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,70 +86,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Generate BTI annotations for all assembly files included in the 64 bit
-vDSO.
+When the kernel and hence vDSO are built with BTI enabled force the linker
+to link the vDSO as BTI. This will cause the linker to warn if any of the
+input files do not have the BTI annotation, ensuring that we don't silently
+fail to provide a vDSO that is built and annotated for BTI when the
+kernel is being built with BTI.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/kernel/vdso/note.S      | 3 +++
- arch/arm64/kernel/vdso/sigreturn.S | 3 +++
- arch/arm64/kernel/vdso/vdso.S      | 3 +++
- 3 files changed, 9 insertions(+)
+ arch/arm64/kernel/vdso/Makefile | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/vdso/note.S b/arch/arm64/kernel/vdso/note.S
-index 0ce6ec75a525..3d4e82290c80 100644
---- a/arch/arm64/kernel/vdso/note.S
-+++ b/arch/arm64/kernel/vdso/note.S
-@@ -12,9 +12,12 @@
- #include <linux/version.h>
- #include <linux/elfnote.h>
- #include <linux/build-salt.h>
-+#include <asm/assembler.h>
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index dd2514bb1511..51ad1cce8133 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -17,8 +17,10 @@ obj-vdso := vgettimeofday.o note.o sigreturn.o
+ targets := $(obj-vdso) vdso.so vdso.so.dbg
+ obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
  
- ELFNOTE_START(Linux, 0, "a")
- 	.long LINUX_VERSION_CODE
- ELFNOTE_END
- 
- BUILD_SALT
++btildflags-$(CONFIG_ARM64_BTI_KERNEL) += -z force-bti
 +
-+emit_aarch64_feature_1_and
-diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
-index 12324863d5c2..3fb13b81f780 100644
---- a/arch/arm64/kernel/vdso/sigreturn.S
-+++ b/arch/arm64/kernel/vdso/sigreturn.S
-@@ -9,6 +9,7 @@
-  */
+ ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
+-		--build-id -n -T
++		--build-id -n $(btildflags-y) -T
  
- #include <linux/linkage.h>
-+#include <asm/assembler.h>
- #include <asm/unistd.h>
- 
- 	.text
-@@ -24,3 +25,5 @@ SYM_FUNC_START(__kernel_rt_sigreturn)
- 	svc	#0
- 	.cfi_endproc
- SYM_FUNC_END(__kernel_rt_sigreturn)
-+
-+emit_aarch64_feature_1_and
-diff --git a/arch/arm64/kernel/vdso/vdso.S b/arch/arm64/kernel/vdso/vdso.S
-index d1414fee5274..c4b1990bf2be 100644
---- a/arch/arm64/kernel/vdso/vdso.S
-+++ b/arch/arm64/kernel/vdso/vdso.S
-@@ -8,6 +8,7 @@
- #include <linux/init.h>
- #include <linux/linkage.h>
- #include <linux/const.h>
-+#include <asm/assembler.h>
- #include <asm/page.h>
- 
- 	.globl vdso_start, vdso_end
-@@ -19,3 +20,5 @@ vdso_start:
- vdso_end:
- 
- 	.previous
-+
-+emit_aarch64_feature_1_and
+ ccflags-y := -fno-common -fno-builtin -fno-stack-protector -ffixed-x18
+ ccflags-y += -DDISABLE_BRANCH_PROFILING
 -- 
 2.20.1
 
