@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51E071C7DDE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 01:32:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 795121C7DE4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 01:32:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=46e5r038gU8dmbtO8X3IsfCSKMSZHv/euTLF2WiMQ4M=; b=TPrYTb1ZDEwtIA
-	6UAyiHN1Luc2In/Qgcw/aFWw6JEk3rQR7XTpvl8Q310iTK6JEOAh/P3z5D6RHnSySiV+rpUBciB7Z
-	3mCvszFWPz6zGB6jQWWwfs/A5GC/vX/bhVZoWMcjcVO9pPfgzo7nRME2mgN9BlCMxUEqXYyK8Dkw8
-	XIGXOmnYGYgQs0ccOWzoUAzNszG+LNNG8xPrQSBVHcdeMSFr5rqID5ZYtOHAhy9TpjSZC8DRgbUXX
-	wjsl09YY4rWArRSOtIKj3CBoyoVWiEVQD81Lu4jkvm0KGCWKrxkibFPE7AX3C3nJgbcCBhR0mN3sO
-	iqqJZjBE6OkaMHVfElfA==;
+	List-Owner; bh=eVkX7k4cn2jJOKPo+4wb3g5f/gRiPWJBjDD95Omm7kM=; b=h0UjqVcQgXgmuV
+	E7ONYRr9P8Cemt6H8ziO03wvDEO9oqFhg7fLAK0o6ZthkmCqoFWA63Pmd/SEtRIvsQ/WrhH3K8WwG
+	Gk1+oST5E9k0P8l8tsJWMZnXz2X/2EmGDx9oVhYhyTNnjcNGToy4LmqHFQArghRiRgditbToY1d1j
+	0TDMWmyJk3Jf+p5twNEyIYLZ7lIu/LwUUquFEmRNm/omr+zZG6tQhAnt2a+9vcBC6W7N3ZQ/O6VBc
+	2IWf28ks5q04+qVwpAzwdQdJCBbGfnr8dEMMJmKPWzDlEAW5gYRUDRZEZuDZABPgbkJc7i341V5kF
+	T2gQGPqXMIfErunwZTCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWTWJ-00027U-0q; Wed, 06 May 2020 23:32:07 +0000
-Received: from mx.baikalelectronics.com ([94.125.187.42]
+	id 1jWTWW-0002ID-2o; Wed, 06 May 2020 23:32:20 +0000
+Received: from ns2.baikalelectronics.com ([94.125.187.42]
  helo=mail.baikalelectronics.ru)
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWTW7-00024n-C4; Wed, 06 May 2020 23:31:57 +0000
+ id 1jWTW7-00025B-CB; Wed, 06 May 2020 23:31:57 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mail.baikalelectronics.ru (Postfix) with ESMTP id 70B2C8030808;
- Wed,  6 May 2020 23:31:51 +0000 (UTC)
+ by mail.baikalelectronics.ru (Postfix) with ESMTP id 2DBD4803087B;
+ Wed,  6 May 2020 23:31:53 +0000 (UTC)
 X-Virus-Scanned: amavisd-new at baikalelectronics.ru
 Received: from mail.baikalelectronics.ru ([127.0.0.1])
  by localhost (mail.baikalelectronics.ru [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id MhBbxmp3w3vz; Thu,  7 May 2020 02:31:48 +0300 (MSK)
+ with ESMTP id wQ_eRoPPIA7H; Thu,  7 May 2020 02:31:52 +0300 (MSK)
 From: Serge Semin <Sergey.Semin@baikalelectronics.ru>
 To: Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Greg Kroah-Hartman
- <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>, Long Cheng
- <long.cheng@mediatek.com>
-Subject: [PATCH v3 1/4] serial: 8250: Fix max baud limit in generic 8250 port
-Date: Thu, 7 May 2020 02:31:32 +0300
-Message-ID: <20200506233136.11842-2-Sergey.Semin@baikalelectronics.ru>
+ <gregkh@linuxfoundation.org>, Jiri Slaby <jslaby@suse.com>
+Subject: [PATCH v3 2/4] serial: 8250: Add 8250 port clock update method
+Date: Thu, 7 May 2020 02:31:33 +0300
+Message-ID: <20200506233136.11842-3-Sergey.Semin@baikalelectronics.ru>
 In-Reply-To: <20200506233136.11842-1-Sergey.Semin@baikalelectronics.ru>
 References: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
  <20200506233136.11842-1-Sergey.Semin@baikalelectronics.ru>
 MIME-Version: 1.0
 X-ClientProxiedBy: MAIL.baikal.int (192.168.51.25) To mail (192.168.51.25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_163155_766990_F1298F16 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200506_163155_767469_1724E887 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -52,8 +51,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 TVD_PH_BODY_ACCOUNTS_PRE The body matches phrases such as
- "accounts suspended", "account credited", "account verification"
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,49 +62,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <mripard@kernel.org>, Stefan Roese <sr@denx.de>,
- linux-mips@vger.kernel.org, Paul Burton <paulburton@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
- linux-kernel@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- Ralf Baechle <ralf@linux-mips.org>,
+Cc: Vignesh Raghavendra <vigneshr@ti.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Dmitry Safonov <0x7f454c46@gmail.com>,
+ Yegor Yefremov <yegorslists@googlemail.com>,
+ Serge Semin <fancer.lancer@gmail.com>, Stefan Roese <sr@denx.de>,
+ Will Deacon <will@kernel.org>, Paul Burton <paulburton@kernel.org>,
+ Russell King <linux@armlinux.org.uk>, Long Cheng <long.cheng@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, Maxime Ripard <mripard@kernel.org>,
  Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- Serge Semin <Sergey.Semin@baikalelectronics.ru>,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- Lukas Wunner <lukas@wunner.de>, linux-mediatek@lists.infradead.org,
- Serge Semin <fancer.lancer@gmail.com>, linux-serial@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
  Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Vignesh Raghavendra <vigneshr@ti.com>
+ Mika Westerberg <mika.westerberg@linux.intel.com>,
+ Allison Randal <allison@lohutok.net>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Serge Semin <Sergey.Semin@baikalelectronics.ru>,
+ Lukas Wunner <lukas@wunner.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Standard 8250 UART ports are designed in a way so they can communicate
-with baud rates up to 1/16 of a reference frequency. It's expected from
-most of the currently supported UART controllers. That's why the former
-version of serial8250_get_baud_rate() method called uart_get_baud_rate()
-with min and max baud rates passed as (port->uartclk / 16 / UART_DIV_MAX)
-and ((port->uartclk + tolerance) / 16) respectively. Doing otherwise, like
-it was suggested in commit ("serial: 8250_mtk: support big baud rate."),
-caused acceptance of bauds, which was higher than the normal UART
-controllers actually supported. As a result if some user-space program
-requested to set a baud greater than (uartclk / 16) it would have been
-permitted without truncation, but then serial8250_get_divisor(baud)
-(which calls uart_get_divisor() to get the reference clock divisor) would
-have returned a zero divisor. Setting zero divisor will cause an
-unpredictable effect varying from chip to chip. In case of DW APB UART the
-communications just stop.
+Some platforms can be designed in a way so the UART port reference clock
+might be asynchronously changed at some point. In Baikal-T1 SoC this may
+happen due to the reference clock being shared between two UART ports, on
+the Allwinner SoC the reference clock is derived from the CPU clock, so
+any CPU frequency change should get to be known/reflected by/in the UART
+controller as well. But it's not enough to just update the
+uart_port->uartclk field of the corresponding UART port, the 8250
+controller reference clock divisor should be altered so to preserve
+current baud rate setting. All of these things is done in a coherent
+way by calling the serial8250_update_uartclk() method provided in this
+patch. Though note that it isn't supposed to be called from within the
+UART port callbacks because the locks using to the protect the UART port
+data are already taken in there.
 
-Lets fix this problem by getting back the limitation of (uartclk +
-tolerance) / 16 maximum baud supported by the generic 8250 port. Mediatek
-8250 UART ports driver developer shouldn't have touched it in the first
-place  notably seeing he already provided a custom version of set_termios()
-callback in that glue-driver which took into account the extended baud
-rate values and accordingly updated the standard and vendor-specific
-divisor latch registers anyway.
-
-Fixes: 81bb549fdf14 ("serial: 8250_mtk: support big baud rate.")
 Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
 Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
 Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
@@ -124,31 +114,72 @@ Cc: linux-mips@vger.kernel.org
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-mediatek@lists.infradead.org
 ---
- drivers/tty/serial/8250/8250_port.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ drivers/tty/serial/8250/8250_port.c | 38 +++++++++++++++++++++++++++++
+ include/linux/serial_8250.h         |  2 ++
+ 2 files changed, 40 insertions(+)
 
 diff --git a/drivers/tty/serial/8250/8250_port.c b/drivers/tty/serial/8250/8250_port.c
-index f77bf820b7a3..4d83c85a7389 100644
+index 4d83c85a7389..484ff9df1432 100644
 --- a/drivers/tty/serial/8250/8250_port.c
 +++ b/drivers/tty/serial/8250/8250_port.c
-@@ -2615,6 +2615,8 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
- 					     struct ktermios *termios,
- 					     struct ktermios *old)
- {
-+	unsigned int tolerance = port->uartclk / 100;
-+
- 	/*
- 	 * Ask the core to calculate the divisor for us.
- 	 * Allow 1% tolerance at the upper limit so uart clks marginally
-@@ -2623,7 +2625,7 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
- 	 */
- 	return uart_get_baud_rate(port, termios, old,
- 				  port->uartclk / 16 / UART_DIV_MAX,
--				  port->uartclk);
-+				  (port->uartclk + tolerance) / 16);
+@@ -2628,6 +2628,44 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
+ 				  (port->uartclk + tolerance) / 16);
  }
  
++/*
++ * Note in order to avoid the tty port mutex deadlock don't use the next method
++ * within the uart port callbacks. Primarily it's supposed to be utilized to
++ * handle a sudden reference clock rate change.
++ */
++void serial8250_update_uartclk(struct uart_port *port, unsigned int uartclk)
++{
++	struct uart_8250_port *up = up_to_u8250p(port);
++	unsigned int baud, quot, frac = 0;
++	struct ktermios *termios;
++	unsigned long flags;
++
++	mutex_lock(&port->state->port.mutex);
++
++	if (port->uartclk == uartclk)
++		goto out_lock;
++
++	port->uartclk = uartclk;
++	termios = &port->state->port.tty->termios;
++
++	baud = serial8250_get_baud_rate(port, termios, NULL);
++	quot = serial8250_get_divisor(port, baud, &frac);
++
++	spin_lock_irqsave(&port->lock, flags);
++
++	uart_update_timeout(port, termios->c_cflag, baud);
++
++	serial8250_set_divisor(port, baud, quot, frac);
++	serial_port_out(port, UART_LCR, up->lcr);
++	serial8250_out_MCR(up, UART_MCR_DTR | UART_MCR_RTS);
++
++	spin_unlock_irqrestore(&port->lock, flags);
++
++out_lock:
++	mutex_unlock(&port->state->port.mutex);
++}
++EXPORT_SYMBOL(serial8250_update_uartclk);
++
  void
+ serial8250_do_set_termios(struct uart_port *port, struct ktermios *termios,
+ 			  struct ktermios *old)
+diff --git a/include/linux/serial_8250.h b/include/linux/serial_8250.h
+index 6545f8cfc8fa..2b70f736b091 100644
+--- a/include/linux/serial_8250.h
++++ b/include/linux/serial_8250.h
+@@ -155,6 +155,8 @@ extern int early_serial_setup(struct uart_port *port);
+ 
+ extern int early_serial8250_setup(struct earlycon_device *device,
+ 					 const char *options);
++extern void serial8250_update_uartclk(struct uart_port *port,
++				      unsigned int uartclk);
+ extern void serial8250_do_set_termios(struct uart_port *port,
+ 		struct ktermios *termios, struct ktermios *old);
+ extern void serial8250_do_set_ldisc(struct uart_port *port,
 -- 
 2.25.1
 
