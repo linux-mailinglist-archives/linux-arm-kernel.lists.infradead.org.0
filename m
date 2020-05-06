@@ -2,57 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4524D1C6FE1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 14:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C6751C6FF2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 14:07:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=yC7/X1DhTxpERM6KONCsRaKyZSDzki4FDoW+7CqSZyA=; b=R4E/L4S3bR/LNEoSjX+4rWuXW
-	IJnT2DtTLAAJrHc4uiKnkcdxvpKb6iVN+k+YPD2+h4I/qQGZ/CJJnlwH2SwMumjSyAQaJZ/elbrG5
-	NL71K5gu4GKo64QW5gA/sNorRXOGIDkrC35+x4MkAhKrpP1RgYxFIQUG7knsFVoc2Zb+th+BsaXqw
-	9So7MaB5bBqBE//Wbu7EaPrrFPflsnqpKVNYyvz5Hc743B8Yp8Qef32tsJ1z21oKoApT3amfmxl9m
-	yU7Y6EjfkNdOR9ZaKIYQcoeDPK955XpvIxK4dYX6k+LVKjPmifxHBbpo/aXcKtiZcQG9EnLmLAoch
-	Do1/oEhUg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K9jubRPu2PwuYoKztdGiWsUu3gzKP1u49N9W48A2rBo=; b=iWcNTEJjtNrYmX
+	kNz/HPPl+Aim2/sJtNcGO1bJOgRumhdXUE5C+IoyFA6AEQubPiB2UyCq6XofDBOc4TfIf4WDKJbli
+	0mj1J5C12bbGhPG7enlBYQBfQjlwuLLEAptyJfSFQXY2hNfK8YmI7leHEt3ixZYzjPCIOcLA8rIlx
+	n11fjY0Grir5avfAvfh8uK13HWtXceuXWPkVQeNtqxzwiCJN/m5uHLew5vkP5LSR22Rqsbg3JRfjV
+	mBIfyrjBh3fziiX5y8BnhzfrsypZ2dyPEHc7sFLE77eXzsl6ZwoiLCfUMYQ+BZO+rYYXh84g1dN0R
+	1GIKVTS/zrY/XqAUpGVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWIm3-0004gL-NP; Wed, 06 May 2020 12:03:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWIlt-0004eJ-4Z; Wed, 06 May 2020 12:03:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DAC661FB;
- Wed,  6 May 2020 05:03:21 -0700 (PDT)
-Received: from [10.57.31.214] (unknown [10.57.31.214])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 446353F71F;
- Wed,  6 May 2020 05:03:19 -0700 (PDT)
-From: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in
- vmcoreinfo
-To: Will Deacon <will@kernel.org>
-References: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
- <20200504171741.GD1833@willie-the-truck>
-Message-ID: <bc5e6fc5-15f4-40bb-4466-816de5912893@arm.com>
-Date: Wed, 6 May 2020 17:32:56 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jWIpd-0008Bf-LZ; Wed, 06 May 2020 12:07:21 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWIpT-0008AU-RY; Wed, 06 May 2020 12:07:13 +0000
+X-UUID: 14e4cb0d204544f28b7ab95cfcf411c0-20200506
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=xiv1xlLmws1dThuPdvPP+yLmXez/7eZ0aRvlqDySsPo=; 
+ b=e2XxZSMnri4PGs4d0tHZpMtLFBkjSeJ8b8tNp8Tt/6WF+d1cU95isafgH0lF8TcBQSGkOjC12VR5tR6sLUYGHGvdDAZfLyTdfGeEFoHBsIUX7SU9OVV/ZVbGvbXSDBBtOQjHGn/L+tIu/9scTTd9wE7eLhs9GxecVs7j8xu8tK0=;
+X-UUID: 14e4cb0d204544f28b7ab95cfcf411c0-20200506
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 713611829; Wed, 06 May 2020 04:07:10 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 6 May 2020 05:07:07 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 6 May 2020 20:06:58 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 6 May 2020 20:06:58 +0800
+Message-ID: <1588766821.7534.3.camel@mtksdccf07>
+Subject: Re: [PATCH 2/3] kasan: record and print the free track
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Wed, 6 May 2020 20:07:01 +0800
+In-Reply-To: <CACT4Y+bOxe+Y8BuzC=0k6rmkDiJ7PBnVcsY=jzZe1trVj476fg@mail.gmail.com>
+References: <20200506052155.14515-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+ajKJpwNXd1V17bOT_ZShXm8h2eepxx_g4hAqk78SxCDA@mail.gmail.com>
+ <1588766193.23664.28.camel@mtksdccf07>
+ <CACT4Y+bOxe+Y8BuzC=0k6rmkDiJ7PBnVcsY=jzZe1trVj476fg@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20200504171741.GD1833@willie-the-truck>
-Content-Language: en-US
+X-TM-SNTS-SMTP: C775F1E3319AFBF59C1D207AB67E55811CC5F8909591D57E3E5AFA2BB1C54DE42000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_050329_262426_FA50027A 
-X-CRM114-Status: GOOD (  21.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200506_050711_894799_9B7652DA 
+X-CRM114-Status: GOOD (  27.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,126 +86,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ linux-mediatek@lists.infradead.org, LKML <linux-kernel@vger.kernel.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, Linux-MM <linux-mm@kvack.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-On 5/4/20 10:47 PM, Will Deacon wrote:
-> On Mon, Apr 27, 2020 at 11:55:01AM +0530, Amit Daniel Kachhap wrote:
->> Recently arm64 linux kernel added support for Armv8.3-A Pointer
->> Authentication feature. If this feature is enabled in the kernel and the
->> hardware supports address authentication then the return addresses are
->> signed and stored in the stack to prevent ROP kind of attack. Kdump tool
->> will now dump the kernel with signed lr values in the stack.
->>
->> Any user analysis tool for this kernel dump may need the kernel pac mask
->> information in vmcoreinfo to generate the correct return address for
->> stacktrace purpose as well as to resolve the symbol name.
->>
->> This patch is similar to commit ec6e822d1a22d0eef ("arm64: expose user PAC
->> bit positions via ptrace") which exposes pac mask information via ptrace
->> interfaces.
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
->> ---
->> Changes since v1:
->> * Rebased to kernel 5.7-rc3.
->> * commit log change.
->>
->> An implementation of this new KERNELPACMASK vmcoreinfo field used by crash
->> tool can be found here[1]. This change is accepted by crash utility
->> maintainer [2].
->>
->> [1]: https://www.redhat.com/archives/crash-utility/2020-April/msg00095.html
->> [2]: https://www.redhat.com/archives/crash-utility/2020-April/msg00099.html
->>
->>   arch/arm64/include/asm/compiler.h | 3 +++
->>   arch/arm64/kernel/crash_core.c    | 4 ++++
->>   2 files changed, 7 insertions(+)
->>
->> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
->> index eece20d..32d5900 100644
->> --- a/arch/arm64/include/asm/compiler.h
->> +++ b/arch/arm64/include/asm/compiler.h
->> @@ -19,6 +19,9 @@
->>   #define __builtin_return_address(val)					\
->>   	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
->>   
->> +#else  /* !CONFIG_ARM64_PTR_AUTH */
->> +#define	ptrauth_user_pac_mask()		0ULL
->> +#define	ptrauth_kernel_pac_mask()	0ULL
+On Wed, 2020-05-06 at 13:59 +0200, Dmitry Vyukov wrote:
+> On Wed, May 6, 2020 at 1:56 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> >
+> > On Wed, 2020-05-06 at 11:50 +0200, Dmitry Vyukov wrote:
+> > > On Wed, May 6, 2020 at 7:22 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > >
+> > > > We add new KASAN_RCU_STACK_RECORD configuration option. It will move
+> > > > free track from slub meta-data (struct kasan_alloc_meta) into freed object.
+> > > > Because we hope this options doesn't enlarge slub meta-data size.
+> > > >
+> > > > This option doesn't enlarge struct kasan_alloc_meta size.
+> > > > - add two call_rcu() call stack into kasan_alloc_meta, size is 8 bytes.
+> > > > - remove free track from kasan_alloc_meta, size is 8 bytes.
+> > > >
+> > > > This option is only suitable for generic KASAN, because we move free track
+> > > > into the freed object, so free track is valid information only when it
+> > > > exists in quarantine. If the object is in-use state, then the KASAN report
+> > > > doesn't print call_rcu() free track information.
+> > > >
+> > > > [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+> > > >
+> > > > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > > > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> > > > Cc: Dmitry Vyukov <dvyukov@google.com>
+> > > > Cc: Alexander Potapenko <glider@google.com>
+> > > > ---
+> > > >  mm/kasan/common.c | 10 +++++++++-
+> > > >  mm/kasan/report.c | 24 +++++++++++++++++++++---
+> > > >  2 files changed, 30 insertions(+), 4 deletions(-)
+> > > >
+> > > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > > index 32d422bdf127..13ec03e225a7 100644
+> > > > --- a/mm/kasan/common.c
+> > > > +++ b/mm/kasan/common.c
+> > > > @@ -321,8 +321,15 @@ void kasan_record_callrcu(void *addr)
+> > > >                 /* record last call_rcu() call stack */
+> > > >                 alloc_info->rcu_free_stack[1] = save_stack(GFP_NOWAIT);
+> > > >  }
+> > > > -#endif
+> > > >
+> > > > +static void kasan_set_free_info(struct kmem_cache *cache,
+> > > > +               void *object, u8 tag)
+> > > > +{
+> > > > +       /* store free track into freed object */
+> > > > +       set_track((struct kasan_track *)(object + BYTES_PER_WORD), GFP_NOWAIT);
+> > > > +}
+> > > > +
+> > > > +#else
+> > > >  static void kasan_set_free_info(struct kmem_cache *cache,
+> > > >                 void *object, u8 tag)
+> > > >  {
+> > > > @@ -339,6 +346,7 @@ static void kasan_set_free_info(struct kmem_cache *cache,
+> > > >
+> > > >         set_track(&alloc_meta->free_track[idx], GFP_NOWAIT);
+> > > >  }
+> > > > +#endif
+> > > >
+> > > >  void kasan_poison_slab(struct page *page)
+> > > >  {
+> > > > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > > > index 7aaccc70b65b..f2b0c6b9dffa 100644
+> > > > --- a/mm/kasan/report.c
+> > > > +++ b/mm/kasan/report.c
+> > > > @@ -175,8 +175,23 @@ static void kasan_print_rcu_free_stack(struct kasan_alloc_meta *alloc_info)
+> > > >         print_track(&free_track, "Last call_rcu() call stack", true);
+> > > >         pr_err("\n");
+> > > >  }
+> > > > -#endif
+> > > >
+> > > > +static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
+> > > > +               void *object, u8 tag, const void *addr)
+> > > > +{
+> > > > +       u8 *shadow_addr = (u8 *)kasan_mem_to_shadow(addr);
+> > > > +
+> > > > +       /*
+> > > > +        * Only the freed object can get free track,
+> > > > +        * because free track information is stored to freed object.
+> > > > +        */
+> > > > +       if (*shadow_addr == KASAN_KMALLOC_FREE)
+> > > > +               return (struct kasan_track *)(object + BYTES_PER_WORD);
+> > >
+> > > Humm... the other patch defines BYTES_PER_WORD as 4... I would assume
+> > > seeing 8 (or sizeof(long)) here. Why 4?
+> > It should be a pointer size, maybe sizeof(long) makes more sense.
+> >
+> > > Have you tested all 4 modes (RCU/no-RCU x SLAB/SLUB)? As far as I
+> > > remember one of the allocators stored something in the object.
+> > Good question, I only tested in RCU x SLUB, would you tell mew how do
+> > no-RCU? I will test them in v2 pathset.
 > 
-> This doesn't look quite right to me, since you still have to take into
-> account the case where CONFIG_ARM64_PTR_AUTH=y but the feature is not
-> available at runtime:
-
-Yes agree with you here. However the config gaurd is saving some extra
-computation for __builtin_return_address. There are some compiler
-support being added in __builtin_extract_return_address to mask the PAC.
-Hopefully that will improve this code. In the meantime let it be like this.
-
-I can remove this else case and as other users of
-ptrauth_{kernel,user}_pac_mask(ptrace.c) protect it with a config gaurd
-there.
+> I meant with CONFIG_KASAN_RCU_STACK_RECORD=y and with
+> CONFIG_KASAN_RCU_STACK_RECORD not set.
+> But if we drop CONFIG_KASAN_RCU_STACK_RECORD config, then it halves
+> the number of configurations to test ;)
+> 
+Ok, I have be tested by RCU xSLUB and no_RCUxSLUB, It is workable. So I
+only miss this SLAB combination. 
 
 > 
->> @@ -16,4 +17,7 @@ void arch_crash_save_vmcoreinfo(void)
->>   	vmcoreinfo_append_str("NUMBER(PHYS_OFFSET)=0x%llx\n",
->>   						PHYS_OFFSET);
->>   	vmcoreinfo_append_str("KERNELOFFSET=%lx\n", kaslr_offset());
->> +	vmcoreinfo_append_str("NUMBER(KERNELPACMASK)=0x%llx\n",
->> +						system_supports_address_auth() ?
->> +						ptrauth_kernel_pac_mask() : 0);
-> 
-> In which case, would it make more sense to define
-> ptrauth_{kernel,user}_pac_mask() unconditionally? In fact, I'd probably
-> just remove the guards completely from asm/compiler.h because I think
-> they're misleading.
-
-As answered above. Let me know your opinion. Although I don't have 
-strong reservation in keeping the config gaurd.
-
-Thanks,
-Amit Daniel
-
-> 
-> Will
-> 
-> --->8
-> 
-> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
-> index eece20d2c55f..51a7ce87cdfe 100644
-> --- a/arch/arm64/include/asm/compiler.h
-> +++ b/arch/arm64/include/asm/compiler.h
-> @@ -2,8 +2,6 @@
->   #ifndef __ASM_COMPILER_H
->   #define __ASM_COMPILER_H
->   
-> -#if defined(CONFIG_ARM64_PTR_AUTH)
-> -
->   /*
->    * The EL0/EL1 pointer bits used by a pointer authentication code.
->    * This is dependent on TBI0/TBI1 being enabled, or bits 63:56 would also apply.
-> @@ -19,6 +17,4 @@
->   #define __builtin_return_address(val)					\
->   	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
->   
-> -#endif /* CONFIG_ARM64_PTR_AUTH */
-> -
->   #endif /* __ASM_COMPILER_H */
-> 
+> > >
+> > > Also, does this work with objects with ctors and slabs destroyed by
+> > > rcu? kasan_track may smash other things in these cases.
+> > > Have you looked at the KASAN implementation when free_track was
+> > > removed? That may have useful details :)
+> > Set free_track before put into quarantine, free_track should not have to
+> > be removed, it only have to overwirte itself.
+> >
+> > >
+> > >
+> > > > +       else
+> > > > +               return NULL;
+> > > > +}
+> > > > +
+> > > > +#else
+> > > >  static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
+> > > >                 void *object, u8 tag, const void *addr)
+> > > >  {
+> > > > @@ -196,6 +211,7 @@ static struct kasan_track *kasan_get_free_track(struct kmem_cache *cache,
+> > > >
+> > > >         return &alloc_meta->free_track[i];
+> > > >  }
+> > > > +#endif
+> > > >
+> > > >  static void describe_object(struct kmem_cache *cache, void *object,
+> > > >                                 const void *addr, u8 tag)
+> > > > @@ -208,8 +224,10 @@ static void describe_object(struct kmem_cache *cache, void *object,
+> > > >                 print_track(&alloc_info->alloc_track, "Allocated", false);
+> > > >                 pr_err("\n");
+> > > >                 free_track = kasan_get_free_track(cache, object, tag, addr);
+> > > > -               print_track(free_track, "Freed", false);
+> > > > -               pr_err("\n");
+> > > > +               if (free_track) {
+> > > > +                       print_track(free_track, "Freed", false);
+> > > > +                       pr_err("\n");
+> > > > +               }
+> > > >  #ifdef CONFIG_KASAN_RCU_STACK_RECORD
+> > > >                 kasan_print_rcu_free_stack(alloc_info);
+> > > >  #endif
+> > > > --
+> > > > 2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
