@@ -2,73 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 014071C6F4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:26:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 171D71C6F4E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 13:27:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Qov3Ql8zPok5OWRgloCRjfcyRSImuVTaX+f+/h3EWE=; b=LeR1rLYdkg68jQ
-	fkBl7stIllRq9UQbwR/rREHim4lPVU0P3JGiLIXKCbXhaL1bGw0ILnVqP+fDa6hk/iJCIoZi66kNG
-	xA/PJTyT6QHAjc1Tl2L+ravPX/KjK7XzlrreeAJw9/ZRxM2HtEZg/PanRbDOr4XrWmtAcfYV9ztQV
-	6D1Z4TiOaEHMnnLRD19wKm/rxaGs5hOtASlZknj8CTSS1r4pXy333v4OYmtqChmXEF0XnYkiJhPTF
-	o15BbH9E57OF7yPHuBB3WbCsVaVbKJuTY5ib8yNiUyP2fXXkRN2KEiVbAcZkZb3IItRyhs+mVVmzj
-	wVzHnMrMpgAzBOjwoN2A==;
+	List-Owner; bh=mAbpC3x8MSFjgRYq2lmx+DkSC2ZcVspOLs+GEKZu2p8=; b=JqTxycs+dsflcg
+	l/cWTIXnkpwE78kX510ToXYXcnfnyIQz8hCAoZ2n7lf+mIeu1/HaWF9NV/6qcMZYMeCTDtlQcptHF
+	kI/sJSMvyPgY60AH6QsrglIK9UqRm0w1U4Tl2/DrLL1esnG0tB1/IpMcYa2n1yXCid+MAm+fEKA2Z
+	gXU0aiVDWnYRNxdnsJ/fFtiY8ezk+ldqjF4PY21ip4vBsoySYJ0f7mu1NVpuDo6tt2n6pGQJGxDFs
+	ik60G1LHSLeIBLi7w/vR1A10DbX0Mutj/asdYWDxt8KDcYepOumfqniZkeeS4E9gtIqJlQ4bK1Bl1
+	yRYCausKB51mqFjRJWkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWICP-00020i-71; Wed, 06 May 2020 11:26:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWID4-0002Hq-50; Wed, 06 May 2020 11:27:30 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWICE-000205-P5
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:26:40 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 442002070B;
- Wed,  6 May 2020 11:26:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588764398;
- bh=QUJeRh44A3rf0k7FWY2FOtpu5rroyrrUYgKqUa8JTYw=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WvFwCiZABJHlYpeJ23FV6ZM5vbT7y+xhdVx/Xxb8jJ+L1T7Tm4KR0Ji/MojjlQfB+
- C9TL3cPAKfiG2eBHDu0tTlugtjErsqwIzzqvFs63/VUtNjfcPNo5ntS2oTLOTKHlXw
- nJRrqbei+imRBI6gHNBkoBqihy+79klXVIsrxDNM=
-Date: Wed, 6 May 2020 12:26:33 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH v2 07/10] arm64: asm: Provide a mechanism for generating
- ELF note for BTI
-Message-ID: <20200506112632.GD8043@willie-the-truck>
-References: <20200429211641.9279-1-broonie@kernel.org>
- <20200429211641.9279-8-broonie@kernel.org>
- <20200505145858.GB24239@willie-the-truck>
- <20200505170629.GH5377@sirena.org.uk>
+ id 1jWICu-0002GC-1c
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 11:27:22 +0000
+Received: from sntmail11s.snt-is.com (unknown [10.203.32.181])
+ by skedge04.snt-world.com (Postfix) with ESMTP id 44AF067A6F2;
+ Wed,  6 May 2020 13:27:11 +0200 (CEST)
+Received: from sntmail12r.snt-is.com (10.203.32.182) by sntmail11s.snt-is.com
+ (10.203.32.181) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Wed, 6 May 2020
+ 13:27:10 +0200
+Received: from sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305]) by
+ sntmail12r.snt-is.com ([fe80::e551:8750:7bba:3305%3]) with mapi id
+ 15.01.1913.007; Wed, 6 May 2020 13:27:10 +0200
+From: Schrempf Frieder <frieder.schrempf@kontron.de>
+To: Peng Fan <peng.fan@nxp.com>, Lucas Stach <l.stach@pengutronix.de>, "Adam
+ Ford" <aford173@gmail.com>, Anson Huang <anson.huang@nxp.com>, "Christian
+ Gmeiner" <christian.gmeiner@gmail.com>, Daniel Baluta
+ <daniel.baluta@nxp.com>, Fabio Estevam <festevam@gmail.com>, Leonard Crestez
+ <leonard.crestez@nxp.com>, Jun Li <jun.li@nxp.com>, dl-linux-imx
+ <linux-imx@nxp.com>, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "Russell King" <linux+etnaviv@armlinux.org.uk>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Shawn Guo <shawnguo@kernel.org>, "S.j. Wang"
+ <shengjiu.wang@nxp.com>
+Subject: Re: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+ fix boot on i.MX8MM
+Thread-Topic: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+ fix boot on i.MX8MM
+Thread-Index: AQHWHu1V9EwL5xxa+UiJnz7nneFudaiRmbMAgAAQ8oCAAWBPgIAHyDoA
+Date: Wed, 6 May 2020 11:27:10 +0000
+Message-ID: <24a5aceb-9c47-2029-aa5b-8fa7f9ba5670@kontron.de>
+References: <20200430124602.14463-1-frieder.schrempf@kontron.de>
+ <20200430124602.14463-4-frieder.schrempf@kontron.de>
+ <3895f202cf5919e41a56878a62f6d5259dea12d3.camel@pengutronix.de>
+ <72e8618b-856e-de42-9282-958cd03b239f@kontron.de>
+ <DB6PR0402MB276059A8D612ECBA8812379988AB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+In-Reply-To: <DB6PR0402MB276059A8D612ECBA8812379988AB0@DB6PR0402MB2760.eurprd04.prod.outlook.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [172.25.9.193]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+Content-ID: <D25527CCBDEB3645AAE31FCF6D268574@snt-world.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505170629.GH5377@sirena.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: 44AF067A6F2.A23F9
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: frieder.schrempf@kontron.de
+X-SnT-MailScanner-To: aford173@gmail.com, anson.huang@nxp.com,
+ christian.gmeiner@gmail.com, daniel.baluta@nxp.com,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ etnaviv@lists.freedesktop.org, festevam@gmail.com, jun.li@nxp.com,
+ kernel@pengutronix.de, l.stach@pengutronix.de,
+ leonard.crestez@nxp.com, linux+etnaviv@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ linux-kernel@vger.kernel.org, peng.fan@nxp.com,
+ s.hauer@pengutronix.de, shawnguo@kernel.org, shengjiu.wang@nxp.com
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_042638_858842_9A96CD3C 
-X-CRM114-Status: GOOD (  26.81  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200506_042720_426262_620ED5D6 
+X-CRM114-Status: GOOD (  17.97  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.208.41.69 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,129 +103,189 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, dave.martin@arm.com,
- linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "etnaviv@lists.freedesktop.org" <etnaviv@lists.freedesktop.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mark, Dave,
+Hi Peng,
 
-On Tue, May 05, 2020 at 06:06:29PM +0100, Mark Brown wrote:
-> On Tue, May 05, 2020 at 03:58:59PM +0100, Will Deacon wrote:
-> > On Wed, Apr 29, 2020 at 10:16:38PM +0100, Mark Brown wrote:
+On 01.05.20 14:36, Peng Fan wrote:
+>> Subject: Re: [RFC PATCH 3/4] drm/etnaviv: Change order of enabling clocks to
+>> fix boot on i.MX8MM
+>>
+>> On 30.04.20 16:35, Lucas Stach wrote:
+>>> Am Donnerstag, den 30.04.2020, 12:46 +0000 schrieb Schrempf Frieder:
+>>>> From: Frieder Schrempf <frieder.schrempf@kontron.de>
+>>>>
+>>>> On some i.MX8MM devices the boot hangs when enabling the GPU clocks.
+>>>> Changing the order of clock initalization to
+>>>>
+>>>> core -> shader -> bus -> reg
+>>>>
+>>>> fixes the issue. This is the same order used in the imx platform code
+>>>> of the downstream GPU driver in the NXP kernel [1]. For the sake of
+>>>> consistency we also adjust the order of disabling the clocks to the
+>>>> reverse.
+>>>>
+>>>> [1]
+>>>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fsou
+>>>>
+>> rce.codeaurora.org%2Fexternal%2Fimx%2Flinux-imx%2Ftree%2Fdrivers%2F
+>> mx
+>>>>
+>> c%2Fgpu-viv%2Fhal%2Fos%2Flinux%2Fkernel%2Fplatform%2Ffreescale%2Fgc
+>> _h
+>>>>
+>> al_kernel_platform_imx.c%3Fh%3Dimx_5.4.3_2.0.0%23n1538&amp;data=02
+>> %7C
+>>>>
+>> 01%7Cpeng.fan%40nxp.com%7Cdc7da53f665e4f567e3008d7ed1c27e0%7C6
+>> 86ea1d3
+>>>>
+>> bc2b4c6fa92cd99c5c301635%7C0%7C0%7C637238577497969787&amp;sda
+>> ta=QRHzu
+>>>> C6gSKy%2F6y2FTRvlNF5t7DmJIvTgBESYKchI%2FDw%3D&amp;reserved=0
+>>>
+>>> I don't see why the order of the clocks is important. Is this really a
+>>> GPU issue? As in: does a GPU access hang when enabling the clocks in
+>>> the wrong order? Or is this a clock driver issue with a clock access
+>>> hanging due to an upstream clock still being disabled?
+>>
+>> Actually you might be right with this being a clock driver issue. The hanging
+>> happens while enabling the clocks (unrelated to any GPU register access). The
+>> strange thing is that most of the devices we have don't care and work as is
+>> and some devices reliably fail each time when enabling the clocks in the
+>> "wrong" order.
+>>
+>> So I guess this could indeed be some clock being enabled with an upstream
+>> PLL not having locked yet or something.
 > 
-> > > +#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI      (1U << 0)
-> > > +#define GNU_PROPERTY_AARCH64_FEATURE_1_PAC      (1U << 1)
+> https://eur04.safelinks.protection.outlook.com/?url=https%3A%2F%2Fpatchwork.kernel.org%2Fcover%2F11433775%2F&amp;data=02%7C01%7Cfrieder.schrempf%40kontron.de%7C1014be5f9b8b4d0c6e8108d7edcc5bde%7C8c9d3c973fd941c8a2b1646f3942daf1%7C0%7C0%7C637239334279684748&amp;sdata=UwVVzPEvNOP6I4g78uG5O9jVYmHwqyo6hj97wvtlzs0%3D&amp;reserved=0
 > 
-> > > +.macro emit_aarch64_feature_1_and
+> Will this pachset help?
+
+Thanks for the pointer. Unfortunately the clock patches don't help. I 
+tried with 5.7-rc4 and your patches on top and the issue still persists.
+
+Also I found out that changing the order of the clock initialization as 
+proposed, does not fix the problem, either. On some boards it helps, 
+others still hang when the clocks are initialized.
+
+Thanks,
+Frieder
+
 > 
-> > Might be useful to take the features as a macro argument, so we can
-> > re-use this when extra features get added in the future.
+> The i.MX8M CCM root mux code in Linux needs a fix.
 > 
-> I was unsure about that - it'd be a bit annoying to have to have all the
-> callers of the macro list things like BTI where 
-
-It just feels inevitable that we'll need to do this at some point!
-Do you know what is supposed to happen if an object has multiple instances
-of this property identifying different features? For example, could we
-do something like:
-
-	emit_aarch64_feature_1_and_pac_bti
-	emit_aarch64_feature_1_and_whizz
-	emit_aarch64_feature_1_and_bang
-
-all of which wrap emit_aarch64_feature_1_and, but result in an object that
-supports pac, bti, whizz and bang?
-
-If we have to merge this stuff in a single .long, then I think we'll
-probably have to put up with passing in the features as an optional macro
-argument, which defaults to "all features" if it's omitted. So on top of
-your patches, we could do:
-
-
-diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
-index 85a88df2d0fe..53801250a639 100644
---- a/arch/arm64/include/asm/assembler.h
-+++ b/arch/arm64/include/asm/assembler.h
-@@ -750,7 +750,11 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- #define GNU_PROPERTY_AARCH64_FEATURE_1_BTI      (1U << 0)
- #define GNU_PROPERTY_AARCH64_FEATURE_1_PAC      (1U << 1)
- 
--.macro emit_aarch64_feature_1_and
-+#define GNU_PROPERTY_AARCH64_FEATURE_1_ALL				\
-+				(GNU_PROPERTY_AARCH64_FEATURE_1_BTI |	\
-+				 GNU_PROPERTY_AARCH64_FEATURE_1_PAC)
-+
-+.macro emit_aarch64_feature_1_and, feat=GNU_PROPERTY_AARCH64_FEATURE_1_ALL
- 	.pushsection .note.gnu.property, "a"
- 	.align  3
- 	.long   2f - 1f
-@@ -762,8 +766,13 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- 3:      .long   GNU_PROPERTY_AARCH64_FEATURE_1_AND
- 	.long   5f - 4f
- 4:
--	.long   GNU_PROPERTY_AARCH64_FEATURE_1_PAC | \
--		GNU_PROPERTY_AARCH64_FEATURE_1_BTI
-+	/*
-+	 * Although the Linux ABI spec describes this as an array of
-+	 * unsigned char, the rest of the world (including clang and gcc)
-+	 * treat it as a 32-bit value and so no swizzling is required
-+	 * when building for big-endian.
-+	 */
-+	.long   \feat
- 5:
- 	.align  3
- 6:
-@@ -772,7 +781,7 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
- 
- #else
- 
--.macro emit_aarch64_feature_1_and
-+.macro emit_aarch64_feature_1_and, feat=0
- .endm
- 
- #endif  /* CONFIG_ARM64_BTI_KERNEL */
-
-
-> > > +3:      .long   GNU_PROPERTY_AARCH64_FEATURE_1_AND
-> > > +	.long   5f - 4f
-> > > +4:
-> > > +	.long   GNU_PROPERTY_AARCH64_FEATURE_1_PAC | \
-> > > +		GNU_PROPERTY_AARCH64_FEATURE_1_BTI
+> Regards,
+> Peng.
 > 
-> > Hmm. The Linux ABI doc [1] says this field is:
+>>
+>>>
+>>> Regards,
+>>> Lucas
+>>>
+>>>> Signed-off-by: Frieder Schrempf <frieder.schrempf@kontron.de>
+>>>> ---
+>>>>    drivers/gpu/drm/etnaviv/etnaviv_gpu.c | 42
+>> +++++++++++++--------------
+>>>>    1 file changed, 21 insertions(+), 21 deletions(-)
+>>>>
+>>>> diff --git a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>>>> b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>>>> index 7b138d4dd068..424b2e5951f0 100644
+>>>> --- a/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>>>> +++ b/drivers/gpu/drm/etnaviv/etnaviv_gpu.c
+>>>> @@ -1487,55 +1487,55 @@ static int etnaviv_gpu_clk_enable(struct
+>> etnaviv_gpu *gpu)
+>>>>    {
+>>>>    	int ret;
+>>>>
+>>>> -	if (gpu->clk_reg) {
+>>>> -		ret = clk_prepare_enable(gpu->clk_reg);
+>>>> +	if (gpu->clk_core) {
+>>>> +		ret = clk_prepare_enable(gpu->clk_core);
+>>>>    		if (ret)
+>>>>    			return ret;
+>>>>    	}
+>>>>
+>>>> -	if (gpu->clk_bus) {
+>>>> -		ret = clk_prepare_enable(gpu->clk_bus);
+>>>> +	if (gpu->clk_shader) {
+>>>> +		ret = clk_prepare_enable(gpu->clk_shader);
+>>>>    		if (ret)
+>>>> -			goto disable_clk_reg;
+>>>> +			goto disable_clk_core;
+>>>>    	}
+>>>>
+>>>> -	if (gpu->clk_core) {
+>>>> -		ret = clk_prepare_enable(gpu->clk_core);
+>>>> +	if (gpu->clk_bus) {
+>>>> +		ret = clk_prepare_enable(gpu->clk_bus);
+>>>>    		if (ret)
+>>>> -			goto disable_clk_bus;
+>>>> +			goto disable_clk_shader;
+>>>>    	}
+>>>>
+>>>> -	if (gpu->clk_shader) {
+>>>> -		ret = clk_prepare_enable(gpu->clk_shader);
+>>>> +	if (gpu->clk_reg) {
+>>>> +		ret = clk_prepare_enable(gpu->clk_reg);
+>>>>    		if (ret)
+>>>> -			goto disable_clk_core;
+>>>> +			goto disable_clk_bus;
+>>>>    	}
+>>>>
+>>>>    	return 0;
+>>>>
+>>>> -disable_clk_core:
+>>>> -	if (gpu->clk_core)
+>>>> -		clk_disable_unprepare(gpu->clk_core);
+>>>>    disable_clk_bus:
+>>>>    	if (gpu->clk_bus)
+>>>>    		clk_disable_unprepare(gpu->clk_bus);
+>>>> -disable_clk_reg:
+>>>> -	if (gpu->clk_reg)
+>>>> -		clk_disable_unprepare(gpu->clk_reg);
+>>>> +disable_clk_shader:
+>>>> +	if (gpu->clk_shader)
+>>>> +		clk_disable_unprepare(gpu->clk_shader);
+>>>> +disable_clk_core:
+>>>> +	if (gpu->clk_core)
+>>>> +		clk_disable_unprepare(gpu->clk_core);
+>>>>
+>>>>    	return ret;
+>>>>    }
+>>>>
+>>>>    static int etnaviv_gpu_clk_disable(struct etnaviv_gpu *gpu)
+>>>>    {
+>>>> +	if (gpu->clk_reg)
+>>>> +		clk_disable_unprepare(gpu->clk_reg);
+>>>> +	if (gpu->clk_bus)
+>>>> +		clk_disable_unprepare(gpu->clk_bus);
+>>>>    	if (gpu->clk_shader)
+>>>>    		clk_disable_unprepare(gpu->clk_shader);
+>>>>    	if (gpu->clk_core)
+>>>>    		clk_disable_unprepare(gpu->clk_core);
+>>>> -	if (gpu->clk_bus)
+>>>> -		clk_disable_unprepare(gpu->clk_bus);
+>>>> -	if (gpu->clk_reg)
+>>>> -		clk_disable_unprepare(gpu->clk_reg);
+>>>>
+>>>>    	return 0;
+>>>>    }
+>>>
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> https://eur04.safelinks.protection.outlook.com/?url=http%3A%2F%2Flists.infradead.org%2Fmailman%2Flistinfo%2Flinux-arm-kernel&amp;data=02%7C01%7Cfrieder.schrempf%40kontron.de%7C1014be5f9b8b4d0c6e8108d7edcc5bde%7C8c9d3c973fd941c8a2b1646f3942daf1%7C0%7C0%7C637239334279684748&amp;sdata=kpx6LDA6QXgR3CPGsugEIIDt2YbZuJTC7%2FxrRsDhtok%3D&amp;reserved=0
 > 
-> > 	unsigned char pr_data[PR_DATASZ];
-> 
-> > but the AArch64 PCS [2] says:
-> 
-> > 	"It has a single 32-bit value for the pr_data field."
-> 
-> > What does this mean for endianness?
-> 
-> It's not entirely clear is it?  What we're doing here means that we're
-> emitting as a long rather than a character array so the endianness
-> matters.  The ABI doc does have language about the elements being "an
-> array of X-byte integers in the format of the target processor" which
-> seems to align with that as well, my impression is that the intention of
-> the ABI doc is that there should be a Processor_Word type corresponding
-> to the Elf_Word type but there isn't so the char arrays are used to
-> handle the word size difference between AArch32 and AArch64.
-> 
-> Unless I'm missing something this at least appears to agree with what
-> the compilers (both GCC and clang) are emitting for both big and little
-> endian and what a readelf that understands these is decoding so I think
-> at this point it's de facto the way things are interpreted.
-
-As long as the compilers agree with each other and with the way we roll the
-note ourself, then I think all we should do is add a comment above the
-.long. Sound reasonable?
-
-Will
-
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
