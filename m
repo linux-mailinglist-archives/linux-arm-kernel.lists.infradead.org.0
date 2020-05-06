@@ -2,46 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 944FA1C6E32
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:18:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B29931C6E41
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:22:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AOcUgJqSCjXkA17/692Mdaz9tWlCITOozWiECFd29PU=; b=SNwrkqtxl60QRK
-	M7+8G7DkYFKVMH6tcYQbV2tAuZgYDcP75bUkHr051CICFrJ8g9kh4q8l4weUmkoPf91NQpkG1MGZ4
-	MXEP9AFIMXJ1TTkCaHhOYTh0vd2iRVTriKuBvPRvEH5w1/HV7QHaBXba32qIwyLtY5HiZWnixEOAB
-	Yrpak9+2Cn48nmeuMj+6SNTaaE8Np3NzsO5c89RbJK5/9h7ou+cvX9TSA1kUJAn0Bpq0xUKdzIdVH
-	9fI9ytKfWEa1cvBOws/FlT70uvIs7D4XW6ePOaq0GX3JAv5DDreZuxXcfIrTeUYzsSHSMzFGEjPOA
-	B0pdb5/XShZXt7TEV2SQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FVUoCFtKQu7/NRCJPtqUtLVx7SVjeIDul5bQSp5ZGBM=; b=ByW3wNevKCPcNg
+	atM/EpE4w7faJgUi960B4tQqJAR4MY3/5F7YxMJcUmgG2g3vMc6nBengLLCSUaAKiokyYUkSvDC55
+	j58p6hHeFnXlu3KhFhwT4ILraMqYz2pMf0K5P7RsAdDOX9YeebYo9BtdidelOVjuyYHAPR09AMntK
+	dAmg3Bj97t8owiq02SilVWvW2gkvokTde7/Frw09B9MkCpFpVqkeO9J7ltxsTm6goph9i+Yrjn8km
+	wllvbjfIXulrhcEtcBO/X15Iyf1II36ccbPYxLjflKWbyj363tDutYbN4Gw0yIGteg3CL1b9eNW8F
+	+6cgi6RAWTs1TPg57L7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWH8I-00084h-6t; Wed, 06 May 2020 10:18:30 +0000
+	id 1jWHC2-00034M-DD; Wed, 06 May 2020 10:22:22 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWH89-000845-BX
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:18:22 +0000
+ id 1jWHBv-00033v-N8
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:22:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 72ED630E;
- Wed,  6 May 2020 03:18:20 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D58433F71F;
- Wed,  6 May 2020 03:18:19 -0700 (PDT)
-Date: Wed, 6 May 2020 11:18:13 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH] arm64: hugetlb: avoid potential NULL dereference
-Message-ID: <20200506101807.GB2878@gaia>
-References: <20200505125930.26901-1-mark.rutland@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 239E730E;
+ Wed,  6 May 2020 03:22:15 -0700 (PDT)
+Received: from [10.163.71.196] (unknown [10.163.71.196])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E9A7E3F71F;
+ Wed,  6 May 2020 03:22:12 -0700 (PDT)
+Subject: Re: [PATCH V2 1/3] arm64/mm: Drop __HAVE_ARCH_HUGE_PTEP_GET
+To: Will Deacon <will@kernel.org>
+References: <1588745534-24418-1-git-send-email-anshuman.khandual@arm.com>
+ <1588745534-24418-2-git-send-email-anshuman.khandual@arm.com>
+ <20200506074315.GD7021@willie-the-truck>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <14911279-f800-a781-a4fd-de43215aa909@arm.com>
+Date: Wed, 6 May 2020 15:51:42 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505125930.26901-1-mark.rutland@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200506074315.GD7021@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_031821_436402_701CA76A 
-X-CRM114-Status: GOOD (  12.01  )
+X-CRM114-CacheID: sfid-20200506_032215_795967_9239A6CE 
+X-CRM114-Status: GOOD (  17.27  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -62,40 +65,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-mm@kvack.org, akpm@linux-foundation.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBNYXkgMDUsIDIwMjAgYXQgMDE6NTk6MzBQTSArMDEwMCwgTWFyayBSdXRsYW5kIHdy
-b3RlOgo+IFRoZSBzdGF0aWMgYW5hbHl6ZXIgaW4gR0NDIDEwIHNwb3R0ZWQgdGhhdCBpbiBodWdl
-X3B0ZV9hbGxvYygpIHdlIG1heQo+IHBhc3MgYSBOVUxMIHBtZHAgaW50byBwdGVfYWxsb2NfbWFw
-KCkgd2hlbiBwbWRfYWxsb2MoKSByZXR1cm5zIE5VTEw6Cj4gCj4gfCAgIENDICAgICAgYXJjaC9h
-cm02NC9tbS9wYWdlYXR0ci5vCj4gfCAgIENDICAgICAgYXJjaC9hcm02NC9tbS9odWdldGxicGFn
-ZS5vCj4gfCAgICAgICAgICAgICAgICAgIGZyb20gYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5j
-OjEwOgo+IHwgYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5jOiBJbiBmdW5jdGlvbiDigJhodWdl
-X3B0ZV9hbGxvY+KAmToKPiB8IC4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVz
-Lmg6Mjg6MjQ6IHdhcm5pbmc6IGRlcmVmZXJlbmNlIG9mIE5VTEwg4oCYcG1kcOKAmSBbQ1dFLTY5
-MF0gWy1XYW5hbHl6ZXItbnVsbC1kZXJlZmVyZW5jZV0KPiB8IC4vYXJjaC9hcm02NC9pbmNsdWRl
-L2FzbS9wZ3RhYmxlLmg6NDM2OjI2OiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8g4oCYcG1k
-X3ZhbOKAmQo+IHwgYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5jOjI0MjoxMDogbm90ZTogaW4g
-ZXhwYW5zaW9uIG9mIG1hY3JvIOKAmHB0ZV9hbGxvY19tYXDigJkKPiB8ICAgICB8YXJjaC9hcm02
-NC9tbS9odWdldGxicGFnZS5jOjIzMjoxMDoKPiB8ICAgICB8Li9hcmNoL2FybTY0L2luY2x1ZGUv
-YXNtL3BndGFibGUtdHlwZXMuaDoyODoyNDoKPiB8IC4vYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9w
-Z3RhYmxlLmg6NDM2OjI2OiBub3RlOiBpbiBleHBhbnNpb24gb2YgbWFjcm8g4oCYcG1kX3ZhbOKA
-mQo+IHwgYXJjaC9hcm02NC9tbS9odWdldGxicGFnZS5jOjI0MjoxMDogbm90ZTogaW4gZXhwYW5z
-aW9uIG9mIG1hY3JvIOKAmHB0ZV9hbGxvY19tYXDigJkKPiAKPiBUaGlzIGNhbiBvbmx5IG9jY3Vy
-IHdoZW4gdGhlIGtlcm5lbCBjYW5ub3QgYWxsb2NhdGUgYSBwYWdlLCBhbmQgc28gaXMKPiB1bmxp
-a2VseSB0byBoYXBwZW4gaW4gcHJhY3RpY2UgYmVmb3JlIG90aGVyIHN5c3RlbXMgc3RhcnQgZmFp
-bGluZy4KPiAKPiBXZSBjYW4gYXZvaWQgdGhpcyBieSBiYWlsaW5nIG91dCBpZiBwbWRfYWxsb2Mo
-KSBmYWlscywgYXMgd2UgZG8gZWFybGllcgo+IGluIHRoZSBmdW5jdGlvbiBpZiBwdWRfYWxsb2Mo
-KSBmYWlscy4KPiAKPiBGaXhlczogNjZiMzkyM2ExYTBmNzdhNSAoImFybTY0OiBodWdldGxiOiBh
-ZGQgc3VwcG9ydCBmb3IgUFRFIGNvbnRpZ3VvdXMgYml0KSIKPiBTaWduZWQtb2ZmLWJ5OiBNYXJr
-IFJ1dGxhbmQgPG1hcmsucnV0bGFuZEBhcm0uY29tPgo+IFJlcG9ydGVkLWJ5OiBLeXJpbGwgVGth
-Y2hvdiA8a3lyeWxvLnRrYWNob3ZAYXJtLmNvbT4KPiBDYzogQ2F0YWxpbiBNYXJpbmFzIDxjYXRh
-bGluLm1hcmluYXNAYXJtLmNvbT4KPiBDYzogV2lsbCBEZWFjb24gPHdpbGxAa2VybmVsLm9yZz4K
-ClF1ZXVlZCBmb3IgNS43LXJjNS4gVGhhbmtzLgoKLS0gCkNhdGFsaW4KCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+
+
+On 05/06/2020 01:13 PM, Will Deacon wrote:
+> On Wed, May 06, 2020 at 11:42:12AM +0530, Anshuman Khandual wrote:
+>> Platform specific huge_ptep_get() is required only when fetching the huge
+>> PTE involves more than just dereferencing the page table pointer. This is
+>> not the case on arm64 platform. Hence huge_ptep_pte() can be dropped along
+>> with it's __HAVE_ARCH_HUGE_PTEP_GET subscription.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Andrew Morton <akpm@linux-foundation.org>
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-mm@kvack.org
+>> Cc: linux-kernel@vger.kernel.org
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>> ---
+>>  arch/arm64/include/asm/hugetlb.h | 6 ------
+>>  1 file changed, 6 deletions(-)
+>>
+>> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
+>> index 2eb6c234d594..b88878ddc88b 100644
+>> --- a/arch/arm64/include/asm/hugetlb.h
+>> +++ b/arch/arm64/include/asm/hugetlb.h
+>> @@ -17,12 +17,6 @@
+>>  extern bool arch_hugetlb_migration_supported(struct hstate *h);
+>>  #endif
+>>  
+>> -#define __HAVE_ARCH_HUGE_PTEP_GET
+>> -static inline pte_t huge_ptep_get(pte_t *ptep)
+>> -{
+>> -	return READ_ONCE(*ptep);
+>> -}
+> 
+> Hmm, I'm nervous about dropping the READ_ONCE() here. We added them after
+> running into page-table issues with THP [1] and it's really important to
+> use them consistently to avoid hitting that again.
+> 
+> If the generic code used READ_ONCE(), I'd be happy to switch to it.
+
+Sure, will add READ_ONCE() in the generic huge_ptep_get(). AFAICS it should
+not cause any problem for other platforms (but let me know otherwise).
+
+> 
+> Will
+> 
+> [1] https://lore.kernel.org/lkml/1506527369-19535-1-git-send-email-will.deacon@arm.com/
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
