@@ -2,62 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC1391C69A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 09:01:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6982C1C69BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 09:03:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=koQmeYRFHr6ZRkVvIe6YGHN1V4/5EqNOdVj8KiaFMeo=; b=iT+KbQsR7URaij
-	5jOYExI3RCT5K98rwksOyl+1GXHBOxwlPvzBIsw/4QkOi7PHvojeHswcwZrs/+iv/Dqr+3BXs13Wz
-	rzZ8ecSCTkJqf1uKXUMO0LTB7m0oVs5Lgkj7t1TMnVIL5fVQ4pHe8lsytWOOCe2AO82Zzz892pJWa
-	PBzcYGUzdVDTPakeek+cJjTusn8Q9UD5w9OjsMj4q8dsitI4/oc0ArveZVjDTMd9SV0yqdmIq9+Td
-	8dYs4TpsTvN0FhFIOMuotLvB64LWnqrf0ivTdAfxdCaDdOcO8tFe3zaWrnn3JXQ4kb2p2+fdSeM4m
-	JjledEZ85Eu3ZFg9x05g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=o9dlvE6LdRJcFsO5Wiic2MWyE4F3mjqy796yJuQUYqc=; b=LkyU3E/rG2nYMP
+	slgAFPTrEoneRTcmmqIj4v4Oo12NlaLOLEgYroHDBqzEEcRbia6DX/ujxIjxNsav7kxCX5NSLuR4a
+	283tQ+y/B6VJiQzlSoRveLBali6aZV6gq7LN56/LNgitC6Tu0uhWS5t2O/lbaHjI74feSlJh8YzVL
+	hUN1aVyDQzMyM0hVMeRRITtKfcltbxA2iXvVuRY3Is/D3G76x9IfbD+hmvnrdF8XLqC4Dn6EYXnDC
+	11nPL2bTI1SZwhaP+WLUsbdBrmW1ykdBgV4r1Veaqx3cUVWs4v3QQPHh94jQgnfOeiKmhuXGJBGQm
+	TVEhtrCGZ5yjk/T4B61w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWE3N-0004bT-PH; Wed, 06 May 2020 07:01:13 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jWE5T-00054I-I4; Wed, 06 May 2020 07:03:23 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWE33-0004TB-RY
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 07:00:55 +0000
-Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 9578A6C3A746BD8CE854;
- Wed,  6 May 2020 15:00:48 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS411-HUB.china.huawei.com
- (10.3.19.211) with Microsoft SMTP Server id 14.3.487.0; Wed, 6 May 2020
- 15:00:40 +0800
-Subject: Re: [PATCH] arm64: atomics: Fix the issue on xchg when switch to
- atomic instruction
-To: Will Deacon <will@kernel.org>
-References: <1588669355-38741-1-git-send-email-zhangshaokun@hisilicon.com>
- <20200505091503.GC16980@willie-the-truck>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <a48b7408-adb4-08f2-129b-f71e1c79db5a@hisilicon.com>
-Date: Wed, 6 May 2020 15:00:39 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
+ id 1jWE5G-00052V-0A
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 07:03:12 +0000
+Received: by mail-io1-xd43.google.com with SMTP id z2so1018151iol.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 06 May 2020 00:03:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=kNp8v77ILg0esKTUhtdtghBS9Oa/t4onJ0W3YRlQA2s=;
+ b=FeY1euazNQf3RbKL1bjD/43J4EwwmimWuHqwEOZnwBz1hd1L/dc031nSE9oFG+Wg3T
+ 2MlLi4P3wjow8IWLNhEQw5wQzsUq1yR+pgmzkLdVVMq5F7acvzCJw8xt9tRwn4YzdTqI
+ kq7B8RhWDy1Uvo/U/3HxmGo/XUghQ5rSkaM7QtRSng9YDN+DAZRzDNHwxdWW3bqi1RwX
+ Xh5e60qZDatUFmTvM25J+WaTlWzSbN0N0nS7q/Emfd0rfMxf1322dnteGutZVlRQiV6j
+ fm+T0G1XqnxcfRt5xUFvnQ+oI02GhWQhe3J5K8O2fEQKiuxWrHopugqtZsq2TI4F9eZL
+ Ldxw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=kNp8v77ILg0esKTUhtdtghBS9Oa/t4onJ0W3YRlQA2s=;
+ b=m1p7sGp1VZqR4soYnAj90jBEW61X1YliHhs7zDr5EnJu6+qY0+ayw3KURUq/+QraLY
+ gQa6RvcL9/kXrpFFKLCP5BtsRnamaHqMPiK1RaDm4JG1jewh6M0qyLY0HnbmXpPhV8dK
+ 55zErYYcRtEvXMwuNK3WYT544WnaBHAZB45WxrywZwEfUFml56FuoebKz+zRuyhEQ+0F
+ c74IitQYHzn9qG4XtskjNM6yOx8IWsv2fd0RqrBFsoaa2YngVLa7PNmd5KJ1J9YZx6dr
+ S+AzSGv9HpO3hdabN9eJyL646EBDFDXNPZuzxz9t0aS2Jmd6ilda7nj0XjPD4bsu8FzX
+ Ve2Q==
+X-Gm-Message-State: AGi0PubqbzG5h30+2HFjP4Y3LjYTwItkSc9S+jIIxiusteVqI/XyztH8
+ ZOj0rU1tHziEKOjSGEBqx6QTtI/N4zVV6eUf1YBYaw==
+X-Google-Smtp-Source: APiQypK484RcQGROR6N++Jsg8cJZdgh7y4enPWlVzQyBROs9NdLHKNWT34OgKh5Hlj/AoF1qRVFqfpsKTSIhrMt9Np8=
+X-Received: by 2002:a6b:8bd2:: with SMTP id n201mr7159413iod.131.1588748588553; 
+ Wed, 06 May 2020 00:03:08 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200505091503.GC16980@willie-the-truck>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-7-brgl@bgdev.pl>
+ <20200505174709.GD224913@lunn.ch>
+In-Reply-To: <20200505174709.GD224913@lunn.ch>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Wed, 6 May 2020 09:02:57 +0200
+Message-ID: <CAMRc=Meob9VP83HiF4r2zAEXX0+1LduSrJGCXx=rKB1W701pnA@mail.gmail.com>
+Subject: Re: [PATCH 06/11] net: ethernet: mtk-eth-mac: new driver
+To: Andrew Lunn <andrew@lunn.ch>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_000054_068366_B539AAB7 
-X-CRM114-Status: GOOD (  12.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200506_000310_044764_51398007 
+X-CRM114-Status: GOOD (  10.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,79 +90,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yuqi Jin <jinyuqi@huawei.com>, Andrew Murray <amurray@thegoodpenguin.co.uk>,
- linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>, Felix Fietkau <nbd@openwrt.org>,
+ Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
-
-On 2020/5/5 17:15, Will Deacon wrote:
-> On Tue, May 05, 2020 at 05:02:35PM +0800, Shaokun Zhang wrote:
->> From: Yuqi Jin <jinyuqi@huawei.com>
->>
->> Since commit addfc38672c7 ("arm64: atomics: avoid out-of-line ll/sc atomics"),
->> it has provided inline implementations of both LSE and ll/sc and used a static
->> key to select between them, which allows the compiler to generate better
->> atomics code.
->> However, xchg still uses the original method which would fail to switch to
->> the atomic instruction correctly, Let's fix this issue.
-> 
-> Please can you elaborate on the failure mode? The current code looks alright
-
-When enable CONFIG_ARM64_LSE_ATOMICS, xchg is failed to switch to swp instruction
-or dynamic replacement instructions are not seen.
-
-We do some tests on the copy of xchg_tail,:
-u32 xchg_tail_my(struct qspinlock *lock, u32 tail)
-{
-        return (u32)xchg_relaxed(&lock->tail,
-                                 tail >> _Q_TAIL_OFFSET) << _Q_TAIL_OFFSET;
-}
-and the asm code is as follows:
-
-ffff80001015b050 <xchg_tail_my>:
-ffff80001015b050:       a9be7bfd        stp     x29, x30, [sp, #-32]!
-ffff80001015b054:       910003fd        mov     x29, sp
-ffff80001015b058:       a90153f3        stp     x19, x20, [sp, #16]
-ffff80001015b05c:       2a0103f3        mov     w19, w1
-ffff80001015b060:       aa0003f4        mov     x20, x0
-ffff80001015b064:       aa1e03e0        mov     x0, x30
-ffff80001015b068:       97fd07ee        bl      ffff80001009d020 <_mcount>
-ffff80001015b06c:       53107e61        lsr     w1, w19, #16
-ffff80001015b070:       91000a83        add     x3, x20, #0x2
-ffff80001015b074:       f9800071        prfm    pstl1strm, [x3]
-ffff80001015b078:       485f7c60        ldxrh   w0, [x3]
-ffff80001015b07c:       48027c61        stxrh   w2, w1, [x3]
-ffff80001015b080:       35ffffc2        cbnz    w2, ffff80001015b078 <xchg_tail_my+0x28>
-ffff80001015b084:       53103c00        lsl     w0, w0, #16
-ffff80001015b088:       a94153f3        ldp     x19, x20, [sp, #16]
-ffff80001015b08c:       a8c27bfd        ldp     x29, x30, [sp], #32
-ffff80001015b090:       d65f03c0        ret
-
-> to me, so I'm clearly missing something. What's broken?
-> 
-
-I'm not sure whether the ARM64_LSE_ATOMIC_INSN could works correctly after the
-commit addfc38672c7. If we implement xchg using __lse_ll_sc_body like cmpxchg_case,
-xchg works ok.
-
-What's more, I am wondering why xchg still uses the dynamic replacement mode,
-but cmpxchg uses another mode. ;-)
-
-Thanks,
-Shaokun
-
-> Will
-> 
-> .
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5kcmV3LAoKdGhhbmtzIGZvciB0aGUgcmV2aWV3LgoKd3QuLCA1IG1haiAyMDIwIG8gMTk6
+NDcgQW5kcmV3IEx1bm4gPGFuZHJld0BsdW5uLmNoPiBuYXBpc2HFgihhKToKPgo+ID4gK3N0YXRp
+YyBzdHJ1Y3QgbmV0X2RldmljZSAqbXRrX21hY19nZXRfbmV0ZGV2KHN0cnVjdCBtdGtfbWFjX3By
+aXYgKnByaXYpCj4gPiArewo+ID4gKyAgICAgY2hhciAqcHRyID0gKGNoYXIgKilwcml2Owo+ID4g
+Kwo+ID4gKyAgICAgcmV0dXJuIChzdHJ1Y3QgbmV0X2RldmljZSAqKShwdHIgLSBBTElHTihzaXpl
+b2Yoc3RydWN0IG5ldF9kZXZpY2UpLAo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICBORVRERVZfQUxJR04pKTsKPiA+ICt9Cj4KPiBCaXQgb2YgYW4gb2Rk
+IHdheSB0byBkbyBpdC4gSXQgaXMgbXVjaCBtb3JlIG5vcm1hbCB0byBqdXN0IGhhdmUKPgo+ICAg
+ICByZXR1cm4gcHJpdi0+bmV0ZGV2Owo+CgpCdXQgdGhlbiB5b3Ugc3RvcmUgYSBwb2ludGVyIHRv
+IHRoZSBzdGFydGluZyBhZGRyZXNzIG9mIHRoZSBzdHJ1Y3R1cmUKaW4gdGhhdCB2ZXJ5IHN0cnVj
+dHVyZS4gVGhpcyBpcyBhY3R1YWxseSB3ZWlyZGVyIHRvIG1lLiA6KSBJJ2Qgc2F5OgpsZXQncyBn
+ZW5lcmFsaXplIGl0IGFuZCBwcm92aWRlIGEgY291bnRlcnBhcnQgdG8gbmV0ZGV2X3ByaXYoKToK
+cHJpdl90b19uZXRkZXYoKSwgaG93IGFib3V0IHRoYXQ/CgpGb3IgdGhlIG90aGVyIGlzc3Vlczog
+SSdsbCBhZGRyZXNzIHRoZW0gaW4gdjIuCgpCYXJ0CgpfX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
+eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
+cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
