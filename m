@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA3041C74B5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:27:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C7871C74BC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:28:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a22SeH7x1fvmWe7v8EvSlBOg2WV1AP7w9bnOWaAn47U=; b=BGj777NA63R54l
-	UP8ttb2xb9TqZS6JBKA83AttnYRDjgsb70DKscpD8eoNL7utFNqDd2chpbiDzXWo8JzTZ+B3XVO6Y
-	oW7pxzWTzRt0pXGF/GFxcuJv4uVOmtE6hxRhfhrapVcexSf3p8YysLaBwmx9AGAi4AOKmNnwkCtjp
-	sAh0J4wDguDvY4jEvTzcnScI+gu5/O51qBQLYTIqN1LlvQHSon8ZE4iJVDPtbwzJHqT3F0ug1+4gy
-	0VcFfJi7sXkVUW7KOuKPFnevVIOG6CiMzLY9CIm5y9jWeqzyj3maI/fAGg9LwvnoloNY33fMgzLGT
-	eeh8vRBVa/RJbGcsCIew==;
+	List-Owner; bh=+yYEQY4OFkVvwlfhbgO5lf+k6JXrpQyC6bh2YQc7Aio=; b=pZuZvi1bon9az6
+	4eVGaVobKyF2eiwAqB20nsGWYeIjQMae3EbU1hHcUQkTcqiGC+Y+BYmNHFjey9+kfTkCIIbmSxda3
+	9cTyZWZE5V5yCjSiO1UxDe3QUA8kVhJ+tk7cH0WAJEIVrbHOzpz5er0isk/ItZtcduekNhqD7lQKO
+	gkmv3UdaJVe7obitcxXjNUyXNPbNRrrrCvbDRbt/Kg2oRWXPViIjTQkcwrkvWE7FNGkpGXMrdzWYb
+	+qoWttv6cUl80o9q2NhEvANYpT8WxekniGswwUwPvp5VSAM6uE2YXWyd5MrqL5wuDT1zxYIXWFJDp
+	w7Teg6IzkaAY2IxLyLNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWLxR-0000l6-Uk; Wed, 06 May 2020 15:27:37 +0000
+	id 1jWLxu-00015x-QO; Wed, 06 May 2020 15:28:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWLxH-0000iL-SM
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:27:29 +0000
+ id 1jWLxX-0000xv-1G
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:27:47 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0549C21835;
- Wed,  6 May 2020 15:27:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0CE0521775;
+ Wed,  6 May 2020 15:27:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588778847;
- bh=8a2SnxvWNBe3GqsoOkza99aF3fLH7QQX2v4I98Cplic=;
+ s=default; t=1588778862;
+ bh=oQN8qp6hDEoL/3GS4frHSARtCHwkVxOFNNCPRzFDulY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=eTCnjuR0HqouJ/0Wbz/JdHLDry9jIG6u6KGBRqzMV7mkonLKSVtm5BdiSEqPjm2+T
- qjeGFIMNCV1ORwHbjH1aUJrLny4jTHIrd61TQ6x/9uC/x/1/td+Yjr/ePKkBVBfZpD
- hsqdQl2lbiltNph1wtvp5S6SfH/8LMvbn5q0rB38=
+ b=DG83LIg7nauoKkP3EP484uS4xv+JNEVA2PdaBR2ls/X11juoGogRL3moH8tXUbe7B
+ Zg6mjQo6Awa43fluQrqsXf75lFuvrqxYeitAU20aUzJNUlKNUAvYLiFDCSEwXZgLNV
+ 80wRWkztb6KgCuVKdpbuNdv26tambdAY6sBhcKng=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 86/91] perf: cs-etm: Update to build with latest opencsd
- version.
-Date: Wed,  6 May 2020 12:22:29 -0300
-Message-Id: <20200506152234.21977-87-acme@kernel.org>
+Subject: [PATCH 90/91] perf cs-etm: Move definition of 'traceid_list' global
+ variable from header file
+Date: Wed,  6 May 2020 12:22:33 -0300
+Message-Id: <20200506152234.21977-91-acme@kernel.org>
 X-Mailer: git-send-email 2.21.1
 In-Reply-To: <20200506152234.21977-1-acme@kernel.org>
 References: <20200506152234.21977-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_082727_948219_901E3342 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20200506_082743_299743_3739B273 
+X-CRM114-Status: GOOD (  10.34  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,75 +77,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Arnaldo Carvalho de Melo <acme@redhat.com>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- linux-perf-users@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- Jiri Olsa <jolsa@kernel.org>, Leo Yan <leo.yan@linaro.org>,
- Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+ linux-kernel@vger.kernel.org, Tor Jeremiassen <tor@ti.com>,
+ linux-perf-users@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Leo Yan <leo.yan@linaro.org>, Namhyung Kim <namhyung@kernel.org>,
+ Jiri Olsa <jolsa@redhat.com>, Thomas Backlund <tmb@mageia.org>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Leach <mike.leach@linaro.org>
+From: Leo Yan <leo.yan@linaro.org>
 
-OpenCSD version v0.14.0 adds in a new output element. This is represented
-by a new value in the generic element type enum, which must be added to
-the handling code in perf cs-etm-decoder to prevent build errors due to
-build options on the perf project.
+The variable 'traceid_list' is defined in the header file cs-etm.h,
+if multiple C files include cs-etm.h the compiler might complaint for
+multiple definition of 'traceid_list'.
 
-This element is not currently used by the perf decoder.
+To fix multiple definition error, move the definition of 'traceid_list'
+into cs-etm.c.
 
-Perf build feature test updated to require a minimum of 0.14.0
-
-Tested on Linux 5.7-rc3.
-
-Signed-off-by: Mike Leach <mike.leach@linaro.org>
-Reviewed-by: Leo Yan <leo.yan@linaro.org>
+Fixes: cd8bfd8c973e ("perf tools: Add processing of coresight metadata")
+Reported-by: Thomas Backlund <tmb@mageia.org>
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
 Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Reviewed-by: Mike Leach <mike.leach@linaro.org>
+Tested-by: Mike Leach <mike.leach@linaro.org>
+Tested-by: Thomas Backlund <tmb@mageia.org>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Jiri Olsa <jolsa@redhat.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: coresight@lists.linaro.org
+Cc: Tor Jeremiassen <tor@ti.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lore.kernel.org/lkml/20200501143615.1180-1-mike.leach@linaro.org
+Link: http://lore.kernel.org/lkml/20200505133642.4756-1-leo.yan@linaro.org
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/build/feature/test-libopencsd.c           | 4 ++--
- tools/perf/util/cs-etm-decoder/cs-etm-decoder.c | 2 ++
- 2 files changed, 4 insertions(+), 2 deletions(-)
+ tools/perf/util/cs-etm.c | 3 +++
+ tools/perf/util/cs-etm.h | 3 ---
+ 2 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/tools/build/feature/test-libopencsd.c b/tools/build/feature/test-libopencsd.c
-index 2b0e02c38870..1547bc2c0950 100644
---- a/tools/build/feature/test-libopencsd.c
-+++ b/tools/build/feature/test-libopencsd.c
-@@ -4,9 +4,9 @@
- /*
-  * Check OpenCSD library version is sufficient to provide required features
-  */
--#define OCSD_MIN_VER ((0 << 16) | (11 << 8) | (0))
-+#define OCSD_MIN_VER ((0 << 16) | (14 << 8) | (0))
- #if !defined(OCSD_VER_NUM) || (OCSD_VER_NUM < OCSD_MIN_VER)
--#error "OpenCSD >= 0.11.0 is required"
-+#error "OpenCSD >= 0.14.0 is required"
- #endif
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index 3c802fde4954..c283223fb31f 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -94,6 +94,9 @@ struct cs_etm_queue {
+ 	struct cs_etm_traceid_queue **traceid_queues;
+ };
  
- int main(void)
-diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-index cd92a99eb89d..cd007cc9c283 100644
---- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-+++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
-@@ -564,6 +564,8 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
- 		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
- 					       elem, trace_chan_id);
- 		break;
-+	/* Unused packet types */
-+	case OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH:
- 	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
- 	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
- 	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
++/* RB tree for quick conversion between traceID and metadata pointers */
++static struct intlist *traceid_list;
++
+ static int cs_etm__update_queues(struct cs_etm_auxtrace *etm);
+ static int cs_etm__process_queues(struct cs_etm_auxtrace *etm);
+ static int cs_etm__process_timeless_queues(struct cs_etm_auxtrace *etm,
+diff --git a/tools/perf/util/cs-etm.h b/tools/perf/util/cs-etm.h
+index 650ecc2a6349..4ad925d6d799 100644
+--- a/tools/perf/util/cs-etm.h
++++ b/tools/perf/util/cs-etm.h
+@@ -114,9 +114,6 @@ enum cs_etm_isa {
+ 	CS_ETM_ISA_T32,
+ };
+ 
+-/* RB tree for quick conversion between traceID and metadata pointers */
+-struct intlist *traceid_list;
+-
+ struct cs_etm_queue;
+ 
+ struct cs_etm_packet {
 -- 
 2.21.1
 
