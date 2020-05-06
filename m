@@ -2,86 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 660CC1C7AFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 22:12:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 219711C7B15
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 22:19:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zJ5A4BZONYQMb1w/AgYJHn+izwvXUB0TUKkncncpH7A=; b=lYO5+Gp+69+DN8
-	Rz59jPytQOvzw82V0GcfZ4zC11oUlmankn43KnHkHEe1Y5SsjoWgGhgKPwKcha7EnRp2H+CfyzhnT
-	kHgHzil+xBgdK9Oo5XxrYF/V7eyeLvw8GsvohDUJTcn1jv5o1M4Br9vRNnN9KbbMZmjImUFHiltAV
-	CNiMFxZrIvFf6IaxhwXIaQLSibSVALoyZxl3HJ8hhqqKrUWxF41YMrJYLeg/bnSvmSfnpYqeIw+Sm
-	rP6YB34lUv5UJ44JNLCB9842Qs6DC5G2vbfzSovL86GCiYwkQDcCgeSq1trqzZwOXwErYp8djFyUa
-	ZFnmwb6tTycFrHboN1KQ==;
+	List-Owner; bh=fMx+96MgV88dNqMe9RFeI27P1pAqO6NwLX5ob+FN2JI=; b=NvnmY+c2VImo2Z
+	xsBpxGeIcj5IRu2V6BuXMIH7hwJTkoxPEsJf2GJHHdTErgFWf6IYs4pzhlBpdF4Ow23g5aApNYjOd
+	h8oaxo1/MFmsybVBpzeMisYsnxmrNSsZqXl//qTRn5v5mboYVtyvhFc0JF2wjzzBFXS++8tgO7I0O
+	HcctpvAS86S+5jT5kQLvZKyBVI4CYg1PYe8hduVf46wQc/Hnz1UkU3Kp0qwIkLvP/33yll3iinxqb
+	ffwfT9Hdlmu/QH+93p+Aad79k8vOwxA1YBN3CVimowtPvCMe8IzsGpDMLL1bYES6lM98ZaS1FArZm
+	L5aF8Akw2tg7G1EK7p3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQPP-0003dt-Ih; Wed, 06 May 2020 20:12:47 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jWQVM-0007kB-Ph; Wed, 06 May 2020 20:18:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQPF-0003cU-KW; Wed, 06 May 2020 20:12:38 +0000
-Received: by mail-ot1-f65.google.com with SMTP id t3so2475010otp.3;
- Wed, 06 May 2020 13:12:37 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=e+vn9EFSA0UGxoYXwE1EVzF8LOPmMyHze30Po1rkro0=;
- b=Jyw7g8bCBr1zHQiWqTkpMulSUwTK04AbdfiviTgIZQH31wtaP1O0IJOHEDrfsAu8V2
- wwH+BBhgW59VeFSN6pOMvYOQ2BfoDaFaP6KsugjvV4750Sa+CQJCq7JyNfWNs++o4E+M
- 6UKiDsAyqvNng6YD4U5kJGypC1ZJer66btDmw8rnrIZ+oFqjHaAjU5usQ1cWqfyGgWv7
- 6t9wPXPtDpbISqPjuh181jn8b8BcuyXRf8fl3TWV9rq9jTo+KFIA0/agM+Y7Hfeb/W54
- L2GgvEE8mtg7XOj1DHagy0my5scwbNVcuwRPxDfnb4AgwtpJwLBwtTA/mzd4eiorCFol
- C7aA==
-X-Gm-Message-State: AGi0PubAPxcGo4+PrNe6xkyS8WWaBTj/ynfXUDANrNgCg9mGkBWKQxoL
- f2pKia4ms3COwkqKJHxx2w==
-X-Google-Smtp-Source: APiQypKFp1fXOaDvxKO48NzVwW+KRP+mYewDEAYdGEby8SRscKRUph/tJl+f9aaKBbZIMCVBbTTVqg==
-X-Received: by 2002:a9d:12e3:: with SMTP id g90mr7344939otg.247.1588795956372; 
- Wed, 06 May 2020 13:12:36 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n9sm758855otl.76.2020.05.06.13.12.35
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 06 May 2020 13:12:35 -0700 (PDT)
-Received: (nullmailer pid 14836 invoked by uid 1000);
- Wed, 06 May 2020 20:12:34 -0000
-Date: Wed, 6 May 2020 15:12:34 -0500
-From: Rob Herring <robh@kernel.org>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [RFC 1/8] dt-bindings: mfd: add Khadas Microcontroller bindings
-Message-ID: <20200506201234.GA14756@bogus>
-References: <20200421080102.22796-1-narmstrong@baylibre.com>
- <20200421080102.22796-2-narmstrong@baylibre.com>
+ id 1jWQVB-0007iy-VI
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 20:18:49 +0000
+Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown
+ [163.114.132.4])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 297D02075E;
+ Wed,  6 May 2020 20:18:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588796325;
+ bh=8Sej8aUk9IaZRIgP1lsxb1KUmZLb9ww84lQcyW/w7JA=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=koDl/cfHbwUDaHEDXE9KShFTvX2BsBlgoa16I9Uk+ojauzDcpR4gP1c8k9R7aU360
+ 4VzN7manhmTrbJcwtgeUNHAnlq47ZK2mMIaRBW2vPAF4Hzqr+V1BTNn9TOWx/HQQMT
+ mYG4LKhMXVfxpNDXU4ZVvuGbwq0qG/DhC5mVh98Q=
+Date: Wed, 6 May 2020 13:18:43 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: <nicolas.ferre@microchip.com>
+Subject: Re: [PATCH v4 1/5] net: macb: fix wakeup test in runtime
+ suspend/resume routines
+Message-ID: <20200506131843.22cf1dab@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <dc30ff1d17cb5a75ddd10966eab001f67ac744ef.1588763703.git.nicolas.ferre@microchip.com>
+References: <cover.1588763703.git.nicolas.ferre@microchip.com>
+ <dc30ff1d17cb5a75ddd10966eab001f67ac744ef.1588763703.git.nicolas.ferre@microchip.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200421080102.22796-2-narmstrong@baylibre.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_131237_674349_8BBFE304 
-X-CRM114-Status: UNSURE (   9.72  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200506_131846_025391_CAB3E99A 
+X-CRM114-Status: GOOD (  15.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,31 +77,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-hwmon@vger.kernel.org, devicetree@vger.kernel.org, jdelvare@suse.com,
- Neil Armstrong <narmstrong@baylibre.com>, art@khadas.com,
- linux-kernel@vger.kernel.org, srinivas.kandagatla@linaro.org,
- linux-arm-kernel@lists.infradead.org, nick@khadas.com,
- linux-amlogic@lists.infradead.org, lee.jones@linaro.org, linux@roeck-us.net
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, f.fainelli@gmail.com,
+ antoine.tenart@bootlin.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Claudiu Beznea <claudiu.beznea@microchip.com>,
+ harini.katakam@xilinx.com, "David S.
+ Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 Apr 2020 10:00:55 +0200, Neil Armstrong wrote:
-> This Microcontroller is present on the Khadas VIM1, VIM2, VIM3 and Edge
-> boards.
+On Wed, 6 May 2020 13:37:37 +0200 nicolas.ferre@microchip.com wrote:
+> From: Nicolas Ferre <nicolas.ferre@microchip.com>
 > 
-> It has multiple boot control features like password check, power-on
-> options, power-off control and system FAN control on recent boards.
+> Use the proper struct device pointer to check if the wakeup flag
+> and wakeup source are positioned.
+> Use the one passed by function call which is equivalent to
+> &bp->dev->dev.parent.
 > 
-> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  .../devicetree/bindings/mfd/khadas,mcu.yaml   | 44 +++++++++++++++++++
->  1 file changed, 44 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mfd/khadas,mcu.yaml
+> It's preventing the trigger of a spurious interrupt in case the
+> Wake-on-Lan feature is used.
 > 
+> Fixes: bc1109d04c39 ("net: macb: Add pm runtime support")
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+        Fixes tag: Fixes: bc1109d04c39 ("net: macb: Add pm runtime support")
+        Has these problem(s):
+                - Target SHA1 does not exist
+
+> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
+> Cc: Harini Katakam <harini.katakam@xilinx.com>
+> ---
+>  drivers/net/ethernet/cadence/macb_main.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+> index 36290a8e2a84..d11fae37d46b 100644
+> --- a/drivers/net/ethernet/cadence/macb_main.c
+> +++ b/drivers/net/ethernet/cadence/macb_main.c
+> @@ -4616,7 +4616,7 @@ static int __maybe_unused macb_runtime_suspend(struct device *dev)
+>  	struct net_device *netdev = dev_get_drvdata(dev);
+>  	struct macb *bp = netdev_priv(netdev);
+>  
+> -	if (!(device_may_wakeup(&bp->dev->dev))) {
+> +	if (!(device_may_wakeup(dev))) {
+>  		clk_disable_unprepare(bp->tx_clk);
+>  		clk_disable_unprepare(bp->hclk);
+>  		clk_disable_unprepare(bp->pclk);
+> @@ -4632,7 +4632,7 @@ static int __maybe_unused macb_runtime_resume(struct device *dev)
+>  	struct net_device *netdev = dev_get_drvdata(dev);
+>  	struct macb *bp = netdev_priv(netdev);
+>  
+> -	if (!(device_may_wakeup(&bp->dev->dev))) {
+> +	if (!(device_may_wakeup(dev))) {
+>  		clk_prepare_enable(bp->pclk);
+>  		clk_prepare_enable(bp->hclk);
+>  		clk_prepare_enable(bp->tx_clk);
+
 
 _______________________________________________
 linux-arm-kernel mailing list
