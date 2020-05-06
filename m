@@ -2,68 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05EDE1C68FF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:34:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB7B61C68E3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:27:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xySuXoBFbRT7CoIDwCNXYQr9SE5i0ZVt1gp+t2SnAio=; b=BJ2PHPw7J/ADDO
-	vLGGl8th+PJ5XrpKtAQNTlOdNbNgZwdAchrwzCPnubCvJtrhc3CuJAdI3IBmGxbyCfYAEaXNpKLUE
-	RpROYq9Snf0+FP0jPdEcnE+Pv7R/xzx7dZuf4ezP0CtlE7uHh/2mwIRBI27EwSjRPl5AbBUMCi7dL
-	Ow2QtF5GU4vJvH8ZW6rzteuE13fsUvBFp2n498fYgv5B2V+eqIziZoCrpBX2jeiXnSXMc3Q/GhWNk
-	IzTVSwU3IVM3wNquO1lha7PEn4SZLTpAWuXRGx/9Q4J3kjgFmdD9Zb3hbSpLRHHebUHxhILaHHpnX
-	Z79+pGVhueKChuAQ9t7g==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=xtp0uVY7vGFg4J4hGVlYBhDFy9ceTIJSLqasVS+3Dpg=; b=ICL
+	WoqwOs6w84XSTMe7+UvOBD16jX71p45FbngbDouNExZkoeucC9lG6IObkMcRRFV/NE7I0h1fIZzI9
+	hrXTd6kVlpnbOpQTRMD2KskD7qpQ54LEhUonaJOkbS71n6PUJrpcZKS60HbMp1+vCkGo/uMIMGxW4
+	nDD4kqR6RX/Yra0f4tEc6KuYi71cKFs9tcgc/9/Hoq+ygZ9CgnaLlyjOlbPSlANaHL8i6s3yR2lD+
+	nUFiwSLfLVu1A49MPFJL8I8sfv58yM02cd4Uci1yq1qhkelvCjkrMLpnWzdQnaCW7L6nZ+sf5EAtC
+	/bUupAoF6OqEiWxGnfVtY8BXnu03cKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDdF-0006LQ-P8; Wed, 06 May 2020 06:34:13 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jWDWf-0001VX-8u; Wed, 06 May 2020 06:27:25 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWDd1-0006JF-Iv; Wed, 06 May 2020 06:34:01 +0000
-X-UUID: df7162d784c04fb79057c49c474eebee-20200505
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=EMtEpkXEvK9nfHRYvG1dhOQ8iE+qMOZdMvGDu7QjaPw=; 
- b=YdPweka6yiq9Z0oJweGz75TbXzTe35IsBUdRqukYNHsv0yxMFvv1Opj+CQOXnmyPhPGuDzKMdTHfNsr1zNEPlkwOQ7yG896y0YNldjPLZOKsPLWN4J/UuzpClBN5+X3oCsZ60TAyjxQ08WumGZd68we4aev2p+X94HkCN4+gDKo=;
-X-UUID: df7162d784c04fb79057c49c474eebee-20200505
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 842776181; Tue, 05 May 2020 22:33:54 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Tue, 5 May 2020 23:23:53 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 6 May 2020 14:23:38 +0800
-Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Wed, 6 May 2020 14:23:34 +0800
-Message-ID: <1588746219.16219.10.camel@mtksdccf07>
-Subject: Re: [PATCH 0/3] kasan: memorize and print call_rcu stack
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Qian Cai <cai@lca.pw>
-Date: Wed, 6 May 2020 14:23:39 +0800
-In-Reply-To: <2BF68E83-4611-48B2-A57F-196236399219@lca.pw>
-References: <20200506051853.14380-1-walter-zh.wu@mediatek.com>
- <2BF68E83-4611-48B2-A57F-196236399219@lca.pw>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: 42DEFC715D66F1062290FF153DFF6751FECE0CF316B54F13B8825BE6B87E4B562000:8
-X-MTK: N
+ id 1jWDWS-0001TW-G9
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:27:15 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 207so648310pgc.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 23:27:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=r7GDOB4KUTMAbqLQjSRn2Yp8VhPGDy0fV6+iumq7awY=;
+ b=jBpcEW5lr69j9so5i/oJ4oaQlk3dKCoXXc4idlY97rLzzTIBuu6I2lueaxazBcscmw
+ uU5TBTArJH2JBLJUjne0pDUBnrOHBiVV4ybEaXaTvsuYwDK+KfX1z/H1KBnud0jM9qWG
+ q7IUENdQXz2f8ADzBXN3nJq/dHGNAJwwYb5X6zJUe9KRj7NwtUn0Cq42W26PcHRpQzxp
+ LWMIZO0BNiCsHKNW8qzocWLdkF04vvq7YqHCwG4rB5EbKZ1hRBCeSU1r7B03B2FTUXg3
+ EtpO2mKOlZ2kj2//fxGhcw1tK6qd0vTMckQmLA7gzuN5Cw+VdKDDRm/K893UqpOvbNn0
+ baWg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=r7GDOB4KUTMAbqLQjSRn2Yp8VhPGDy0fV6+iumq7awY=;
+ b=sc+Lk5cNwZlyF/VhXVuEGQYhxYxo4Sp9z+eFPpCJ3ZxKYBw/LOwuRcjFHZ6R6lIWnB
+ BEGYd3rJZUaLt35Yub70DZKrPV7IJhBotgLuoEMU/Wb9JXvXq+4y6oDSR3K9GV81dBOB
+ pq4z5FcUl6QW4wyMMRSYPA1N0B0vFCbamncsgu+S44/2CIwWRgbPpB8MIAdk2rzN8s7l
+ ixCQcUmZ0fl45svehv0swBJ/jT8l4fcGNh2uw1CgCpFSOhdlqI7EArbRTM3oegmAMzGR
+ NNh3lvS86w5H1reMGMELWuzpXWvFQ4ASXsKEUPipWD2CNU93T7Ousi8Hq/R3SSok76LN
+ CEzA==
+X-Gm-Message-State: AGi0Pua3EmXPIc5VhdRLo0+7bWZg/2orvN2VHWA44jJmfSqsCtw7KsvA
+ rRGO8HyobL6TTHKwYSdkdK4=
+X-Google-Smtp-Source: APiQypLbjeASMuNkeJLplI8TjiKwaneBMu4BbXtAmciArzDMjGce99NPaKS94y0pdnFzRR5Qi7Z8yQ==
+X-Received: by 2002:a63:7214:: with SMTP id n20mr5948835pgc.437.1588746431402; 
+ Tue, 05 May 2020 23:27:11 -0700 (PDT)
+Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
+ by smtp.gmail.com with ESMTPSA id b140sm752399pfb.119.2020.05.05.23.27.08
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 05 May 2020 23:27:11 -0700 (PDT)
+From: dillon.minfei@gmail.com
+To: alexandre.torgue@st.com, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
+ sam@ravnborg.org
+Subject: [PATCH 1/4] ARM: dts: stm32: Add drm panel ili9341 support for
+ stm32f429-disco board
+Date: Wed,  6 May 2020 14:27:06 +0800
+Message-Id: <1588746426-30979-1-git-send-email-dillon.minfei@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_233359_627588_AFF387B5 
-X-CRM114-Status: GOOD (  13.47  )
+X-CRM114-CacheID: sfid-20200505_232712_562723_F9C0D713 
+X-CRM114-Status: GOOD (  12.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dillon.minfei[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
@@ -71,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,54 +95,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>,
- "Paul E . McKenney" <paulmck@kernel.org>, linux-mm@kvack.org,
- Lai Jiangshan <jiangshanlai@gmail.com>, Josh
- Triplett <josh@joshtriplett.org>, kasan-dev@googlegroups.com,
- linux-kernel@vger.kernel.org, Joel Fernandes <joel@joelfernandes.org>,
- linux-mediatek@lists.infradead.org, Alexander Potapenko <glider@google.com>,
- linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, dillon min <dillon.minfei@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAyMDIwLTA1LTA2IGF0IDAxOjUzIC0wNDAwLCBRaWFuIENhaSB3cm90ZToNCj4gDQo+
-ID4gT24gTWF5IDYsIDIwMjAsIGF0IDE6MTkgQU0sIFdhbHRlciBXdSA8d2FsdGVyLXpoLnd1QG1l
-ZGlhdGVrLmNvbT4gd3JvdGU6DQo+ID4gDQo+ID4gVGhpcyBwYXRjaHNldCBpbXByb3ZlcyBLQVNB
-TiByZXBvcnRzIGJ5IG1ha2luZyB0aGVtIHRvIGhhdmUNCj4gPiBjYWxsX3JjdSgpIGNhbGwgc3Rh
-Y2sgaW5mb3JtYXRpb24uIEl0IGlzIGhlbHBmdWwgZm9yIHByb2dyYW1tZXJzDQo+ID4gdG8gc29s
-dmUgdXNlLWFmdGVyLWZyZWUgb3IgZG91YmxlLWZyZWUgbWVtb3J5IGlzc3VlLg0KPiA+IA0KPiA+
-IFRoZSBLQVNBTiByZXBvcnQgd2FzIGFzIGZvbGxvd3MoY2xlYW5lZCB1cCBzbGlnaHRseSk6DQo+
-ID4gDQo+ID4gQlVHOiBLQVNBTjogdXNlLWFmdGVyLWZyZWUgaW4ga2FzYW5fcmN1X3JlY2xhaW0r
-MHg1OC8weDYwDQo+ID4gDQo+ID4gRnJlZWQgYnkgdGFzayAwOg0KPiA+IHNhdmVfc3RhY2srMHgy
-NC8weDUwDQo+ID4gX19rYXNhbl9zbGFiX2ZyZWUrMHgxMTAvMHgxNzgNCj4gPiBrYXNhbl9zbGFi
-X2ZyZWUrMHgxMC8weDE4DQo+ID4ga2ZyZWUrMHg5OC8weDI3MA0KPiA+IGthc2FuX3JjdV9yZWNs
-YWltKzB4MWMvMHg2MA0KPiA+IHJjdV9jb3JlKzB4OGI0LzB4MTBmOA0KPiA+IHJjdV9jb3JlX3Np
-KzB4Yy8weDE4DQo+ID4gZWZpX2hlYWRlcl9lbmQrMHgyMzgvMHhhNmMNCj4gPiANCj4gPiBGaXJz
-dCBjYWxsX3JjdSgpIGNhbGwgc3RhY2s6DQo+ID4gc2F2ZV9zdGFjaysweDI0LzB4NTANCj4gPiBr
-YXNhbl9yZWNvcmRfY2FsbHJjdSsweGM4LzB4ZDgNCj4gPiBjYWxsX3JjdSsweDE5MC8weDU4MA0K
-PiA+IGthc2FuX3JjdV91YWYrMHgxZDgvMHgyNzgNCj4gPiANCj4gPiBMYXN0IGNhbGxfcmN1KCkg
-Y2FsbCBzdGFjazoNCj4gPiAoc3RhY2sgaXMgbm90IGF2YWlsYWJsZSkNCj4gPiANCj4gPiANCj4g
-PiBBZGQgbmV3IENPTkZJRyBvcHRpb24gdG8gcmVjb3JkIGZpcnN0IGFuZCBsYXN0IGNhbGxfcmN1
-KCkgY2FsbCBzdGFjaw0KPiA+IGFuZCBLQVNBTiByZXBvcnQgcHJpbnRzIHR3byBjYWxsX3JjdSgp
-IGNhbGwgc3RhY2suDQo+ID4gDQo+ID4gVGhpcyBvcHRpb24gZG9lc24ndCBpbmNyZWFzZSB0aGUg
-Y29zdCBvZiBtZW1vcnkgY29uc3VtcHRpb24uIEl0IGlzDQo+ID4gb25seSBzdWl0YWJsZSBmb3Ig
-Z2VuZXJpYyBLQVNBTi4NCj4gDQo+IEkgZG9u4oCZdCB1bmRlcnN0YW5kIHdoeSB0aGlzIG5lZWRz
-IHRvIGJlIGEgS2NvbmZpZyBvcHRpb24gYXQgYWxsLiBJZiBjYWxsX3JjdSgpIHN0YWNrcyBhcmUg
-dXNlZnVsIGluIGdlbmVyYWwsIHRoZW4ganVzdCBhbHdheXMgZ2F0aGVyIHRob3NlIGluZm9ybWF0
-aW9uLiBIb3cgZG8gZGV2ZWxvcGVycyBqdWRnZSBpZiB0aGV5IG5lZWQgdG8gc2VsZWN0IHRoaXMg
-b3B0aW9uIG9yIG5vdD8NCg0KQmVjYXVzZSB3ZSBkb24ndCB3YW50IHRvIGluY3JlYXNlIHNsdWIg
-bWV0YS1kYXRhIHNpemUsIHNvIGVuYWJsaW5nIHRoaXMNCm9wdGlvbiBjYW4gcHJpbnQgY2FsbF9y
-Y3UoKSBzdGFja3MsIGJ1dCB0aGUgaW4tdXNlIHNsdWIgb2JqZWN0IGRvZXNuJ3QNCnByaW50IGZy
-ZWUgc3RhY2suIFNvIGlmIGhhdmUgb3V0LW9mLWJvdW5kIGlzc3VlLCB0aGVuIGl0IHdpbGwgbm90
-IHByaW50DQpmcmVlIHN0YWNrLiBJdCBpcyBhIHRyYWRlLW9mZiwgc2VlIFsxXS4NCg0KWzFdIGh0
-dHBzOi8vYnVnemlsbGEua2VybmVsLm9yZy9zaG93X2J1Zy5jZ2k/aWQ9MTk4NDM3DQoNClRoYW5r
-cw0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+From: dillon min <dillon.minfei@gmail.com>
+
+1, add stm32f429-disco ltdc pins mux config
+2, add ltdc nodes pinned with ili9341
+3, add spi5 node
+
+Signed-off-by: dillon min <dillon.minfei@gmail.com>
+---
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 67 ++++++++++++++++++++++++++++++++++
+ arch/arm/boot/dts/stm32f429-disco.dts  | 40 ++++++++++++++++++++
+ 2 files changed, 107 insertions(+)
+
+diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+index 392fa14..0eb107f 100644
+--- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+@@ -316,6 +316,73 @@
+ 				};
+ 			};
+ 
++			ltdc_pins_f429_disco: ltdc-1 {
++				pins {
++					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
++						/* LCD_HSYNC */
++						 <STM32_PINMUX('A', 4,  AF14)>,
++						 /* LCD_VSYNC */
++						 <STM32_PINMUX('G', 7,  AF14)>,
++						 /* LCD_CLK */
++						 <STM32_PINMUX('C', 10, AF14)>,
++						 /* LCD_R2 */
++						 <STM32_PINMUX('B', 0,  AF9)>,
++						 /* LCD_R3 */
++						 <STM32_PINMUX('A', 11, AF14)>,
++						 /* LCD_R4 */
++						 <STM32_PINMUX('A', 12, AF14)>,
++						 /* LCD_R5 */
++						 <STM32_PINMUX('B', 1,  AF9)>,
++						 /* LCD_R6*/
++						 <STM32_PINMUX('G', 6,  AF14)>,
++						 /* LCD_R7 */
++						 <STM32_PINMUX('A', 6,  AF14)>,
++						 /* LCD_G2 */
++						 <STM32_PINMUX('G', 10, AF9)>,
++						 /* LCD_G3 */
++						 <STM32_PINMUX('B', 10, AF14)>,
++						 /* LCD_G4 */
++						 <STM32_PINMUX('D', 6,  AF14)>,
++						 /* LCD_B2 */
++						 <STM32_PINMUX('G', 11, AF14)>,
++						 /* LCD_B3*/
++						 <STM32_PINMUX('B', 11, AF14)>,
++						 /* LCD_G5 */
++						 <STM32_PINMUX('C', 7,  AF14)>,
++						 /* LCD_G6 */
++						 <STM32_PINMUX('D', 3,  AF14)>,
++						 /* LCD_G7 */
++						 <STM32_PINMUX('G', 12, AF9)>,
++						 /* LCD_B4 */
++						 <STM32_PINMUX('A', 3,  AF14)>,
++						 /* LCD_B5 */
++						 <STM32_PINMUX('B', 8,  AF14)>,
++						 /* LCD_B6 */
++						 <STM32_PINMUX('B', 9,  AF14)>,
++						 /* LCD_B7 */
++						 <STM32_PINMUX('F', 10, AF14)>;
++						 /* LCD_DE */
++					slew-rate = <2>;
++				};
++			};
++
++			spi5_pins: spi5-0 {
++				pins1 {
++					pinmux = <STM32_PINMUX('F', 7, AF5)>,
++						/* SPI5_CLK */
++						 <STM32_PINMUX('F', 9, AF5)>;
++						/* SPI5_MOSI */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('F', 8, AF5)>;
++						/* SPI5_MISO */
++					bias-disable;
++				};
++			};
++
+ 			dcmi_pins: dcmi-0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
+diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+index 30c0f67..3aadddb 100644
+--- a/arch/arm/boot/dts/stm32f429-disco.dts
++++ b/arch/arm/boot/dts/stm32f429-disco.dts
+@@ -49,6 +49,8 @@
+ #include "stm32f429.dtsi"
+ #include "stm32f429-pinctrl.dtsi"
+ #include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/gpio/gpio.h>
+ 
+ / {
+ 	model = "STMicroelectronics STM32F429i-DISCO board";
+@@ -127,3 +129,41 @@
+ 	pinctrl-names = "default";
+ 	status = "okay";
+ };
++
++&ltdc {
++	status = "okay";
++	pinctrl-0 = <&ltdc_pins_f429_disco>;
++	pinctrl-names = "default";
++
++	port {
++		ltdc_out_rgb: endpoint {
++			remote-endpoint = <&panel_in_rgb>;
++		};
++	};
++};
++
++&spi5 {
++	status = "okay";
++	pinctrl-0 = <&spi5_pins>;
++	pinctrl-names = "default";
++	#address-cells = <1>;
++	#size-cells = <0>;
++	cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
++	dmas = <&dma2 3 2 0x400 0x0>,
++	       <&dma2 4 2 0x400 0x0>;
++	dma-names = "rx", "tx";
++	display: display@0{
++		/* Connect panel-ilitek-9341 to ltdc */
++		compatible = "stm32f429-disco,ltdc-panel", "ilitek,ili9341";
++		reg = <0>;
++		spi-3wire;
++		spi-max-frequency = <10000000>;
++		dc-gpios = <&gpiod 13 0>;
++		port {
++			panel_in_rgb: endpoint {
++			remote-endpoint = <&ltdc_out_rgb>;
++			};
++		};
++	};
++};
++
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
