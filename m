@@ -2,35 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCED01C6806
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:12:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAC041C6831
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:14:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SzS1OsFw2t+4Y2Ajy+OqgKjlgJMGVIR47+gPtomQSgY=; b=GHAke/3fjb4PE2
-	RVfOKINpTmSeW9gaK1VlcuODoa87eu831jXhCc+hLxiGWkyOhEUBAhEF6V3H/rUmetinIVf6qz/ny
-	Of4qAmw8j8YwZTYuW2TSQDtug2dD6d82n5mTXphY12E73ylTcCnEWiSkawygZc4Hxbg3mBS20Bcgp
-	3vE63LYdrFoXH7az9CSJMg7vdnewrKrU5Tbm/AN0O3Qk9YNWLDOPYWPLSbVqsyaPtBOhhEjT9lBcC
-	7dSEP7PLC7/Uyr5Lq7WKHEetYHmCpiUG3owwA3sy71DadZ0QbhEe4HQ9pq7pIkRYmMmadZh3RA1/X
-	JPu0A8Kh0ZzGaT+hngNg==;
+	List-Owner; bh=rq66XQWMm/ojhwqbWkDmMlscvdsncmJalm1PDuZRPOo=; b=sUtl1PUw6pHh6w
+	rR6D6poTdPlwT9pcFQG+r8olJfIXsnqc9IJsYJE/i1tqdYZu3vQPZCMu2FIvp9CkajkTZe4tVsMI3
+	T9KLaf+500eIX+bsui8psxvXOueb1VTy5n8s5xW3wc1jToZzddgZ1NJlEiwQsyGphiahNYeUu3X81
+	zDj2C26M+gUX3zdXtJ4rZmh3BA9xWjiK701HktFNLD5Qu9QYW2UnL4p7+jMsPN/6kVo9ckPsasA0H
+	ypK3l/ExbgVZKrxnccZIlAcGEKLKCvVxZvUGN4gvWZ0aQkdEXQKRXRiwTTNIUWCYM0IfG1vEqJVWA
+	CCXPM7uZIQqjKkRi4vAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDIQ-0004d2-7B; Wed, 06 May 2020 06:12:42 +0000
+	id 1jWDJo-0005pf-HI; Wed, 06 May 2020 06:14:08 +0000
 Received: from hch by bombadil.infradead.org with local (Exim 4.92.3 #3 (Red
- Hat Linux)) id 1jWDIF-0004bp-TW; Wed, 06 May 2020 06:12:31 +0000
-Date: Tue, 5 May 2020 23:12:31 -0700
+ Hat Linux)) id 1jWDJ8-0005JQ-4V; Wed, 06 May 2020 06:13:26 +0000
+Date: Tue, 5 May 2020 23:13:26 -0700
 From: Christoph Hellwig <hch@infradead.org>
 To: ira.weiny@intel.com
-Subject: Re: [PATCH V2 07/11] arch/kunmap_atomic: Consolidate duplicate code
-Message-ID: <20200506061231.GC5192@infradead.org>
+Subject: Re: [PATCH V2 08/11] arch/kmap: Ensure kmap_prot visibility
+Message-ID: <20200506061326.GD5192@infradead.org>
 References: <20200504010912.982044-1-ira.weiny@intel.com>
- <20200504010912.982044-8-ira.weiny@intel.com>
+ <20200504010912.982044-9-ira.weiny@intel.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200504010912.982044-8-ira.weiny@intel.com>
+In-Reply-To: <20200504010912.982044-9-ira.weiny@intel.com>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,25 +64,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 03, 2020 at 06:09:08PM -0700, ira.weiny@intel.com wrote:
+On Sun, May 03, 2020 at 06:09:09PM -0700, ira.weiny@intel.com wrote:
 > From: Ira Weiny <ira.weiny@intel.com>
 > 
-> Every single architecture (including !CONFIG_HIGHMEM) calls...
+> We want to support kmap_atomic_prot() on all architectures and it makes
+> sense to define kmap_atomic() to use the default kmap_prot.
 > 
-> 	pagefault_enable();
-> 	preempt_enable();
-> 
-> ... before returning from __kunmap_atomic().  Lift this code into the
-> kunmap_atomic() macro.
-> 
-> While we are at it rename __kunmap_atomic() to kunmap_atomic_high() to
-> be consistent.
-> 
-> Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+> So we ensure all arch's have a globally available kmap_prot either as a
+> define or exported symbol.
 
-Looks good,
+FYI, I still think a
 
-Reviewed-by: Christoph Hellwig <hch@lst.de>
+#ifndef kmap_prot
+#define kmap_prot PAGE_KERNEL
+#endif
+
+in linux/highmem.h would be nicer.  Then only xtensa and sparc need
+to override it and clearly stand out.
 
 _______________________________________________
 linux-arm-kernel mailing list
