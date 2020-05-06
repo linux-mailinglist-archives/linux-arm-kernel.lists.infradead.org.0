@@ -2,143 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 624FE1C665B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 05:31:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1055B1C666A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 05:45:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QKdjjC11woMqMgflYPam6P4/5exRtTohGlJN/UNKPYM=; b=gyn9eBPHdRtl/R
-	zeLSqtSfJZN0huRPF0mzlmTAPiGa2YWC4xm7rJzphDzcAIh9OyiFf/RCYGn3MtDU2qmHBE/0mX8VC
-	+CAvoFcA2C9kzrYnxutzDdpras5OXEZqUqp1g2o8bO8b5Q1FfDS9OihkZXtXkliyH0czivgPJdZt4
-	eocKdD1RUrhc+Q+cX959GCK/8ZaRuj/epKGiXTWflge6AUSd5QwQ0CrpbcLYWEsdPAF1P3OoXMZue
-	MOPlBXZv/9D/tGxCgEhKVSMbERQcxooC/dcV31vJRu8poFcvcAQN9wm+XV0b8mXW43cGzMP7hrO2N
-	4qhyzBJACUFaObCLrVKg==;
+	List-Owner; bh=sxxcvPd+nwr8KMZxMpkPf8SkDEsk+rphF1ebOjeQNfM=; b=RyCT5IrUExaACW
+	URCIAFwQEG1jpwFmmYBunEACnvVF3UTlFcCIoIylQFVaGcv4QcnbDJ9++UgXX/Rc5sKVhTi9HwQVw
+	RLA1ABC8QWp4kAazl8dgihmrTLHiWuyQk1AgV8qip7O+6YR+c2tWhlQirhRdaWbxU+rudv00g7Xfi
+	IwflJLmskL2EO4m+dBo+w78R6OMbE/5oIB6FcZ0kXs9Scx4gIBPwkomxxRsqqrRN9jxI920/Rt2fb
+	Vkr/Cmw+hraLmwuOxQaCvuGwoPzd+wOhKCAxlvewPA28O18H8e0NPdadrST0ETDzJJJV3Rd57ZhnH
+	LdOQYAPBNTS5Pk+M7oaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWAmN-0007EA-As; Wed, 06 May 2020 03:31:27 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jWB03-0000No-2R; Wed, 06 May 2020 03:45:35 +0000
+Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWAmG-0007Ci-LR
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 03:31:22 +0000
-IronPort-SDR: Dhtn2oNzUSouvFeZwi9nVzS+bZmRG74argGRxjXIxtRrhIJxaLAr+FBPe0qlExM2ddeVulBTcm
- 5UDz/tH+PNIA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 05 May 2020 20:31:13 -0700
-IronPort-SDR: JB32Q4wMnIBLi+4AWjdE2T4xpp1OBGveR9G2gmu/9Jzyw2aMgONqrARLWMEK+zeDxueXXsDABT
- hOqI5pi39D3w==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,357,1583222400"; d="scan'208";a="278090403"
-Received: from fmsmsx107.amr.corp.intel.com ([10.18.124.205])
- by orsmga002.jf.intel.com with ESMTP; 05 May 2020 20:31:12 -0700
-Received: from fmsmsx603.amr.corp.intel.com (10.18.126.83) by
- fmsmsx107.amr.corp.intel.com (10.18.124.205) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Tue, 5 May 2020 20:31:12 -0700
-Received: from fmsmsx604.amr.corp.intel.com (10.18.126.84) by
- fmsmsx603.amr.corp.intel.com (10.18.126.83) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 5 May 2020 20:31:10 -0700
-Received: from FMSEDG002.ED.cps.intel.com (10.1.192.134) by
- fmsmsx604.amr.corp.intel.com (10.18.126.84) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
- via Frontend Transport; Tue, 5 May 2020 20:31:09 -0700
-Received: from NAM12-DM6-obe.outbound.protection.outlook.com (104.47.59.171)
- by edgegateway.intel.com (192.55.55.69) with Microsoft SMTP Server (TLS) id
- 14.3.439.0; Tue, 5 May 2020 20:31:02 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=kkjA0c3623OTrTOUCMAz05774OP3DQK/fhtcC0M6OFcojm0Tk++u6THYEVUoIpLbMLmZ+mOiMbBS+TUTpDNEXfCgh2tPsZmH5Kt+ihMmQ/imMFHgi3Wx97AAVzU16zh5UW9/ABrwxwoUDYp1Ph1u0g9DB/Tw2cc2k7vKK1b7MgiCuH5mBLUrg7YYSx+jGDOSL/HlPqDp8FyqIb4eRCGd5DuBVbEeWLpHMBexb+rSfbJ7j8VqYcO8q/ikDoe4bTfm310T/OuYE3R40jGXPlW/uyIpn1YdLEpdUAj8U969MdjbNoLiQVugeRUM6bzx7T8hvflQe7bcryDGMWo+FUr0pQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ScBWiconMMRoToYSAUT2it+XZJPPcplODaIZn/D2E7c=;
- b=eZdgSnk0zifeFCwA6RhEJlBF+WqClpRUXkmJuY+jMmSKyjF4LFp4afHzGYOl+Cg0+pIvK5ZbliRQXE5t10rAVCrKwGzZeU7+MWYHLdjihcaGjjQEndrJ5vycNa3aZG2VfQuFVOGTO//Ha2LIbo17g0ZoVSrsc84pIPSlPmk0eAukYKYQGIXg5DSnTQMfHj6M+7OGVA5SieEBDpy+mW4a0++DNooxqoX2elHFEpL0LrWERbgCpcInJUKFSRuG4J90OwTpfw6nnapnrsb0+RNvaz63SGWlRtMNAklw9jdozkmXhlM193awIJK45c0a7nLvIxwnZgHAhTnLCIg1OwjHxg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=intel.com; dmarc=pass action=none header.from=intel.com;
- dkim=pass header.d=intel.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=intel.onmicrosoft.com; 
- s=selector2-intel-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ScBWiconMMRoToYSAUT2it+XZJPPcplODaIZn/D2E7c=;
- b=lxhITJte4lP2u6ObnRJzWVPYG8cIytd8Ec/u0Fc4IPChrkgKmCGAQXrGcdMlb7Ve8j5gpCsGrrGapJ72zpm+DUeM7qgdyemKCoFVnkwlDY7Um+gH3GUePbLXNRc8GZV1ZAun9df+P3xdF7XIEqCkQhOD/PmnMmQeOUvOZt4zv1I=
-Received: from BYAPR11MB2870.namprd11.prod.outlook.com (2603:10b6:a02:cb::12)
- by BYAPR11MB3302.namprd11.prod.outlook.com (2603:10b6:a03:7b::21)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.29; Wed, 6 May
- 2020 03:31:00 +0000
-Received: from BYAPR11MB2870.namprd11.prod.outlook.com
- ([fe80::75e4:ee66:1e4d:a413]) by BYAPR11MB2870.namprd11.prod.outlook.com
- ([fe80::75e4:ee66:1e4d:a413%4]) with mapi id 15.20.2958.030; Wed, 6 May 2020
- 03:31:00 +0000
-From: "Wong, Vee Khee" <vee.khee.wong@intel.com>
-To: David Miller <davem@davemloft.net>, "joabreu@synopsys.com"
- <joabreu@synopsys.com>
-Subject: RE: [PATCH net-next 1/1] net: stmmac: Add option for VLAN filter fail
- queue enable
-Thread-Topic: [PATCH net-next 1/1] net: stmmac: Add option for VLAN filter
- fail queue enable
-Thread-Index: AQHWGTyVW2FLQsiP2Eedqaoj0MNIyqiHUYmAgBMntQA=
-Date: Wed, 6 May 2020 03:31:00 +0000
-Message-ID: <BYAPR11MB28704CA53250D824BA7422B0ABA40@BYAPR11MB2870.namprd11.prod.outlook.com>
-References: <20200423070026.26200-1-vee.khee.wong@intel.com>
- <20200423.155329.1710757370582804428.davem@davemloft.net>
-In-Reply-To: <20200423.155329.1710757370582804428.davem@davemloft.net>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-dlp-reaction: no-action
-dlp-version: 11.2.0.6
-dlp-product: dlpe-windows
-authentication-results: davemloft.net; dkim=none (message not signed)
- header.d=none;davemloft.net; dmarc=none action=none header.from=intel.com;
-x-originating-ip: [192.198.147.201]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 13b83a13-dc30-4043-897d-08d7f16de5fa
-x-ms-traffictypediagnostic: BYAPR11MB3302:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR11MB33022869FE92AB6A5BB46261ABA40@BYAPR11MB3302.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:206;
-x-forefront-prvs: 03950F25EC
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: TT0Rb0vhllZXOOw4xClXqueA+uiZ2KtSP75P81HDOQFpYphvCmliRFJp3zFGSeJOannf7IlNoEPKhZDkx/7+VtI8MtON4o1lC3eBRC/lZmVIaSnEQrTm3kXawvypuDSboNviNnKj8d5Rl/f5tC0gRrSQlW/oGNYLBHMKPIzbXusAMgrfj19SN2sDycQwqU2RGgMzY8P8fpmx3dvZHgD8TgEls5fLSGBIGJAJ3ZHLkM3P8r6jHqNovru9hmhQYIRFJQY6cca1C8ALJt9RQvu6cpTylK3nce/lUmxXw1Y28IzSamtX65/Mnj7t9fzDVh4pRRcfRvsoSmofi537EJ/LyN8rlJBUPIG+MfWtByvMADdbfGJXmmMO278NTswNxKcUhn+qIKJHQn7YsQxnxMharEcOG0tV0ekHkfiVZNyxv6TJkT/guzWcDHSXyoqWDCBEnMmTNEoj8RjMcpmfmng1iUqXEwSaU6eS2URAtZJnWjqRCRI5tq1/ADlrofuCnHpEBO5sw35VJg/YbDQbOEwp6Q==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BYAPR11MB2870.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(136003)(39860400002)(346002)(396003)(366004)(376002)(33430700001)(26005)(66556008)(8936002)(66446008)(316002)(2906002)(66946007)(52536014)(33440700001)(66476007)(64756008)(76116006)(33656002)(478600001)(86362001)(107886003)(4326008)(186003)(55016002)(8676002)(9686003)(53546011)(6506007)(54906003)(71200400001)(7696005)(110136005)(5660300002);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: Z3brmon97AjM9euBD92NslKtDxw8m57PPRFV2WxfyoJAvGx+TIgPgfO6dvM2jJa4XK6QoN0C08wcF8+EKbj8DKeyHCoN4FEspI2v1Bc7WKmnlvx3Ndhtl3R5LdS6FiJ4SFBOgpRDwUzy95Jv6brji5wQcOxsih3em2BFwCamT96RJgxIk+fDhxIJnPcb6i0wdyDz2SSyoavKzdrF94V4zUvC9YwZWJZbYYk8f4zgqQte5V+1oQGHWNsn0xIURCkgk+tqEiTiNUHltdZHNt0IoFAcZnCT7B8Qu+3+PqHu1vvYeqmQfwNzeXvbyh3+UInceZY4ISCE/NwAmkknB9jVN6l7bZzbd9M88L/FYa6xABcmP/KK3SbJQiY/q7hV9IgL3gqQnO4s0GjtJJHcgHeiP6ji/7o8CVuLhAtWf6gi1qgXm0GUwxoZ5pE+WQonk8ljkGG27j9cJ5qac+3VfB1vt6tCGRKcI0g//sbAlPAtlXD6ccbelpJhJ453299In4e3SZgMIMChqEBssOS8tSraEr9Qon+Lv6t3uoaf4Lppf6mn8vY00XQoIx9YmO0N/6j9t/pGTM8ix0GbmZsqkMVErYbXtZ5kZ2EojJ009uFb1F6CO1HHQ7yliD6TAWoQmNOLt7Z1zaHhyNvnjMSixPftLilNAZr+hgRZnTnMjA6/eg99KiutTr7VsoEPzBRKpAKaLaT3XYg605RYeUoefnyiaL7fI9MQTZh+9QtKEUemedoRz3rWgl/5VDog2UZ8shWg6a+UdLiW8BpcWADUqoOUOrtf1IEmRXZKvNpjGKqnjGWepgmEAreYvcvR08JoBuyB
+ id 1jWAzv-0000Jh-ML
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 03:45:29 +0000
+Received: by mail-oi1-x244.google.com with SMTP id t199so527539oif.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 20:45:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=zWB6cWjMNsKtRxqY/kkJuBnxLsHqY4CSraBHoWMjqp4=;
+ b=OKN4zkBYDIz62lBDvEf3XM4DOuCpBniwoB2/yAFzUSYvxGBnmfmk4quJbCwxjP8DU4
+ xLekmYvvK98w1NXnfe18epulQwaf2+My7yXmRnUncgTNHmX6BQEZFqAgF3JFDGeHWa8+
+ Wbau+QfB/sZDYuLIB3bjX1iQJUToyR1I+k0IZkqJm/07hUnUAQQ1vRXD5CJ+h0n/aq+L
+ 3uf/30GOdRyiYkrNxBtM2huEyCGf5lQYugw3kkdLFna922yF/1J0v3s/y0DXrYoXzVzX
+ f9rUeMCQmbgu9sXAYqxrKEs8BEJWpnKOVhsxzZo5g2Pj2d9a0C3KmGNJIMHH4kQRfRLk
+ gY3g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=zWB6cWjMNsKtRxqY/kkJuBnxLsHqY4CSraBHoWMjqp4=;
+ b=Q0kIMgVDYu+zZz5HMGRgn3wdybKAb0pmPLzl+68/e2m2iKy4Uv7H7FFH8cfeXk2WWS
+ vEc0ZnLUzKudjudVLtrX9wfmGK0WDRrXPS8YOjBBC2BdhDHA6ildQAX8VVSzg4CT4ygx
+ GDC4T7aaj8KdvcdGesXqtaAEfytxv5GcDWq5Dt6T/Il+4UGVDj+eSR1aTVdjt5+ZSpWw
+ h0MjN6LPSy6rbPoqF05dha9JlHC4iRjvccSja2Usf6apc7cz41xZs1HSg0s0MBlgEo3u
+ OUVzqwSWmBa5wN5+b+lIiuw4kSpX3Omki4RBfHrv26W89q8pB4E7ANMgYCo8fqmxcnz/
+ MIPQ==
+X-Gm-Message-State: AGi0PuZeZX91PJ9G2vUN9g1JttbYq+vYVFqMshnEq34uRihSZYYbxJmf
+ z4Xso3TkkWEgnsA957HjqE4=
+X-Google-Smtp-Source: APiQypJeHUSXrgoOMLaldrkbNutzLGRo+2lOCXDoyA2v2XT/zC8q/zdCfYxUKlEywfZjTOMCYuVXBw==
+X-Received: by 2002:a54:409a:: with SMTP id i26mr1403854oii.50.1588736725456; 
+ Tue, 05 May 2020 20:45:25 -0700 (PDT)
+Received: from ubuntu-s3-xlarge-x86 ([2604:1380:4111:8b00::1])
+ by smtp.gmail.com with ESMTPSA id r6sm304439oom.26.2020.05.05.20.45.24
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 05 May 2020 20:45:24 -0700 (PDT)
+Date: Tue, 5 May 2020 20:45:23 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Torsten Duwe <duwe@lst.de>
+Subject: Re: [PATCH] arm64: disable patchable function entry on big-endian
+ clang builds
+Message-ID: <20200506034523.GA564255@ubuntu-s3-xlarge-x86>
+References: <20200505141257.707945-1-arnd@arndb.de>
+ <20200505142556.GF82823@C02TD0UTHF1T.local>
+ <20200505194243.5bfc6ec6@blackhole>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 13b83a13-dc30-4043-897d-08d7f16de5fa
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 May 2020 03:31:00.7246 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 46c98d88-e344-4ed4-8496-4ed7712e255d
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: +/RGKORFg3m1DOhaDC4C3bhSKb3GNHNR6O1uf/+V7Eq5E2I4qfeGvPUF8h+yFfYmhy4corXXxJgFtYflW9ClKQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR11MB3302
-X-OriginatorOrg: intel.com
+Content-Disposition: inline
+In-Reply-To: <20200505194243.5bfc6ec6@blackhole>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_203120_766444_D3767FE4 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200505_204527_738133_1F9377C0 
+X-CRM114-Status: GOOD (  30.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [natechancellor[at]gmail.com]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -150,72 +101,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.torgue@st.com" <alexandre.torgue@st.com>, "Voon,
- Weifeng" <weifeng.voon@intel.com>,
- "netdev@vger.kernel.org" <netdev@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, "Ong,
- Boon Leong" <boon.leong.ong@intel.com>,
- "peppe.cavallaro@st.com" <peppe.cavallaro@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Amit Daniel Kachhap <amit.kachhap@arm.com>, Will Deacon <will@kernel.org>,
+ Ard Biesheuvel <ardb@kernel.org>, Fangrui Song <maskray@google.com>,
+ clang-built-linux@googlegroups.com, Marc Zyngier <maz@kernel.org>,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Torsten Duwe <duwe@suse.de>, Kristina Martsenko <kristina.martsenko@arm.com>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ Julien Thierry <jthierry@redhat.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Steve Capper <steve.capper@arm.com>, linux-kernel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Ionela Voinescu <ionela.voinescu@arm.com>, Alexandre Ghiti <alex@ghiti.fr>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
++ Fangrui, who implemented patchable_function_entry in LLVM/clang
 
-> -----Original Message-----
-> From: netdev-owner@vger.kernel.org <netdev-owner@vger.kernel.org> On
-> Behalf Of David Miller
-> Sent: Friday, April 24, 2020 6:53 AM
-> To: Wong, Vee Khee <vee.khee.wong@intel.com>
-> Cc: peppe.cavallaro@st.com; alexandre.torgue@st.com;
-> joabreu@synopsys.com; mcoquelin.stm32@gmail.com;
-> netdev@vger.kernel.org; linux-stm32@st-md-mailman.stormreply.com;
-> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Ong,
-> Boon Leong <boon.leong.ong@intel.com>; Voon, Weifeng
-> <weifeng.voon@intel.com>
-> Subject: Re: [PATCH net-next 1/1] net: stmmac: Add option for VLAN filter fail
-> queue enable
+On Tue, May 05, 2020 at 07:42:43PM +0200, Torsten Duwe wrote:
+> Hi Arnd, Mark and others,
 > 
-> From: Wong Vee Khee <vee.khee.wong@intel.com>
-> Date: Thu, 23 Apr 2020 15:00:26 +0800
+> this may not be worth arguing but I'm currently fighting excessive
+> workarounds in another area and so this triggers me, so I have to make
+> a remark ;-)
 > 
-> > From: "Chuah, Kim Tatt" <kim.tatt.chuah@intel.com>
-> >
-> > Add option in plat_stmmacenet_data struct to enable VLAN Filter Fail
-> > Queuing. This option allows packets that fail VLAN filter to be routed
-> > to a specific Rx queue when Receive All is also set.
-> >
-> > When this option is enabled:
-> > - Enable VFFQ only when entering promiscuous mode, because Receive All
-> >   will pass up all rx packets that failed address filtering (similar to
-> >   promiscuous mode).
-> > - VLAN-promiscuous mode is never entered to allow rx packet to fail VLAN
-> >   filters and get routed to selected VFFQ Rx queue.
-> >
-> > Reviewed-by: Voon Weifeng <weifeng.voon@intel.com>
-> > Reviewed-by: Ong Boon Leong <boon.leong.ong@intel.com>
-> > Signed-off-by: Chuah, Kim Tatt <kim.tatt.chuah@intel.com>
-> > Signed-off-by: Ong Boon Leong <boon.leong.ong@intel.com>
+> On Tue, 5 May 2020 15:25:56 +0100
+> Mark Rutland <mark.rutland@arm.com> wrote:
 > 
-> Why would you be setting this with a platform attribute?  Even if the
-> capability exists, wouldn't you want the user to be able to choose to opt out?
+> > On Tue, May 05, 2020 at 04:12:36PM +0200, Arnd Bergmann wrote:
+> > > Clang only supports the patchable_function_entry attribute on
+> > > little-endian arm64 builds, but not on big-endian:
+> > > 
+> > > include/linux/kasan-checks.h:16:8: error: unknown attribute
+> > > 'patchable_function_entry' ignored [-Werror,-Wunknown-attributes]
+> > > 
+> > > Disable that configuration with another dependency. Unfortunately
+> > > the existing check is not enough, as $(cc-option) at this point does
+> > > not pass the -mbig-endian flag.
+> > 
+> > Well that's unfortunate. :(
+> > 
+> > Do we know if this is deliberate and/or likely to change in future?
 
-Hi Jose/David Miller,
+I am not sure this is deliberate, I don't see anything about endianness
+in the commits that added this:
 
-1/ In current implementation, TSN uses VLAN filter that can either accept/reject VLAN-tagged network packets. In some situation, we do not want to drop failed packets, but instead steer the packet to a VLAN Failed Queue Channel.
+https://github.com/llvm/llvm-project/commit/4d1e23e3b3cd7c72a8b24dc5acb7e13c58a8de37
+https://github.com/llvm/llvm-project/commit/22467e259507f5ead2a87d989251b4c951a587e4
+https://github.com/llvm/llvm-project/commit/06b8e32d4fd3f634f793e3bc0bc4fdb885e7a3ac
 
-2/ VLAN Fail Queue Channel will be set to use the RxQ with higheset index as per HW IP configuration because that is the least priority channel.
+> > This practically rules out a BE distro kernel with things like PAC,
+> > which isn't ideal.
 
-3/ The way user will enable this feature is through promiscuous mode settings using ifconfig. (e.g. ifconfig enp0s30f4 promisc)
+To be fair, are there big endian AArch64 distros?
 
-4/ VLAN Filter Fail Packets Queue feature is IP version specific (only applicable to DWMAC5). I would propose we add this under platform data (e.g. dwmac-intel), so that it can be built in according to hardware on a separate patch.
+https://wiki.debian.org/Arm64Port: "There is also a big-endian version
+of the architecture/ABI: aarch64_be-linux-gnu but we're not supporting
+that in Debian (so there is no corresponding Debian architecture name)
+and hopefully will never have to. Nevertheless you might want to check
+for this by way of completeness in upstream code."
 
-Any thoughts?
+OpenSUSE and Fedora don't appear to have support for big endian.
 
+> But still better than cumulating workarounds. If clang's flags aren't
+> orthogonal then that's a bug in clang. If I get a vote here I'm against
+> it.
+> 
+> > > Fixes: 3b23e4991fb6 ("arm64: implement ftrace with regs")
+> > > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+> > 
+> > This looks fine for now, and we can add a version check in future, so:
+>                                       ^^^^^^^^^^^^^^^^^^^
+> see what I mean? And in the end another line of code you'll never again
+> get rid of.
+
+That's a rather pessimistic attitude to have. We've been rather good
+about trying to fix stuff in the compiler rather than hacking up the
+kernel.
+
+> I suggest to get a quote from clang folks first about their schedule and
+> regarded importance of patchable-function-entries on BE, and leave it as
+> is: broken on certain clang configurations. It's not the kernel's fault.
+
+We can file an upstream PR (https://bugs.llvm.org) to talk about this
+(although I've CC'd Fangrui) but you would rather the kernel fail to
+work properly than prevent the user from being able to select that
+option? Why even have the "select" or "depends on" keyword then?
+
+That said, I do think we should hold off on this patch until we hear
+from the LLVM developers.
+
+> > Acked-by: Mark Rutland <mark.rutland@arm.com>
+> > 
+> > Mark.
+> > 
+> > > ---
+> > >  arch/arm64/Kconfig | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > > 
+> > > diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> > > index 4b256fa6db7a..a33d6402b934 100644
+> > > --- a/arch/arm64/Kconfig
+> > > +++ b/arch/arm64/Kconfig
+> > > @@ -151,7 +151,7 @@ config ARM64
+> > >  	select HAVE_DMA_CONTIGUOUS
+> > >  	select HAVE_DYNAMIC_FTRACE
+> > >  	select HAVE_DYNAMIC_FTRACE_WITH_REGS \
+> > > -		if $(cc-option,-fies on y=2)
+> > > +		if $(cc-option,-fpatchable-function-entry=2) &&
+> > > !(CC_IS_CLANG && CPU_BIG_ENDIAN) select
+> > > HAVE_EFFICIENT_UNALIGNED_ACCESS select HAVE_FAST_GUP
+> > >  	select HAVE_FTRACE_MCOUNT_RECORD
+> > > -- 
+> > > 2.26.0
+> > > 
+> 
+
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
