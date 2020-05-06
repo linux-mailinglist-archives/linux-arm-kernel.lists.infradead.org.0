@@ -2,55 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AED71C72DB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 16:30:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C318A1C72FA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 16:36:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=22NfiafRB211SbNNPj86ey16St38HY8iXuu/uKqqiJU=; b=h4/6EdmcyaGBgn
-	3VIIncA2lnpiZDZsBtFgAOMsAItKve6UK3J81D8u7etCLUXFJnVr+AItrZ88cxoC30m24N4MfSlMX
-	ZJ9L7vP0nhb0VmuPnP/ldF0odNAlasT0HSPcTopfYkH1tN9h9ZBrVxeHK03YZQO4r5Qg8oy4KGqzA
-	HnGm5bm8SpkOOo8bpjkMg3uPXWDFyVPF+XnVLj6Ypn9s7fYVDYAiXOmbUBrsL0cYrG8mBHlBvqlnH
-	cL17BWtZoEzRlfNKSjI8GpexRsBJXqvmXeIdFjUUdbSgDIPFx1fZ9RR1yiFVZGybbz+UJrwGo4fSf
-	n4DD1+3RLnt3QIjWVQ9A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=K7SZnAmjN+OBfA0t/FXxplPT7p3ovlElHmxPmq0tlLs=; b=L/xS4aDAAX7y/e
+	4NV4JE6JptPyVtQVzu8kgiWavWsXgZM06KX9apaj54dA84qu2xfmmY4ZnYrQ2+By1b4vMEIbx7q/T
+	Byrs3QPLs87qh3WLXmiUO4NtlVPI2IFY3778zooVyAJ3X149Yc8WrrKqwAWQQCNQyirmh6YSto9Cx
+	VEhLFefU9CEhf4yX2CIeMIenBUJB/lh0wZ+7Jw3rvkpQIfNb0OBWqDNk5cMAWsy/D2H4mEInJYB6H
+	2HGvM6lwKiI9VWwoLJg/fnPnx/2CwFzpXFjFvbM79xP17QGdfo1986/6up7W3Xvy7BOzNgMlB8aIG
+	67kK3Zk5eIfUcHISHfHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWL3c-0008PN-3a; Wed, 06 May 2020 14:29:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jWLA4-0006oj-5o; Wed, 06 May 2020 14:36:36 +0000
+Received: from cmccmta1.chinamobile.com ([221.176.66.79])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWL3U-0008OE-09
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 14:29:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D21CCD6E;
- Wed,  6 May 2020 07:29:45 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D27893F68F;
- Wed,  6 May 2020 07:29:44 -0700 (PDT)
-Date: Wed, 6 May 2020 15:29:42 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Subject: Re: RFC: Adding arch-specific user ABI documentation in linux-man
-Message-ID: <20200506142942.GV30377@arm.com>
-References: <20200504153214.GH30377@arm.com>
- <07855941-d0f7-2ec6-819e-e43a8935e29e@gmail.com>
+ id 1jWL9w-0006nq-I5
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 14:36:30 +0000
+Received: from spf.mail.chinamobile.com (unknown[172.16.121.11]) by
+ rmmx-syy-dmz-app01-12001 (RichMail) with SMTP id 2ee15eb2c9d0770-27990;
+ Wed, 06 May 2020 22:29:36 +0800 (CST)
+X-RM-TRANSID: 2ee15eb2c9d0770-27990
+X-RM-TagInfo: emlType=0                                       
+X-RM-SPAM-FLAG: 00000000
+Received: from localhost.localdomain (unknown[112.0.146.193])
+ by rmsmtp-syy-appsvr06-12006 (RichMail) with SMTP id 2ee65eb2c9cc322-73c3f;
+ Wed, 06 May 2020 22:29:36 +0800 (CST)
+X-RM-TRANSID: 2ee65eb2c9cc322-73c3f
+From: Tang Bin <tangbin@cmss.chinamobile.com>
+To: broonie@kernel.org, lgirdwood@gmail.com, perex@perex.cz,
+ matthias.bgg@gmail.com
+Subject: [PATCH] ASoC: mediatek: Fix error handling
+Date: Wed,  6 May 2020 22:30:09 +0800
+Message-Id: <20200506143009.13368-1-tangbin@cmss.chinamobile.com>
+X-Mailer: git-send-email 2.20.1.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <07855941-d0f7-2ec6-819e-e43a8935e29e@gmail.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_072948_130727_8DF37C12 
-X-CRM114-Status: GOOD (  30.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200506_073629_399760_26004284 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [221.176.66.79 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,173 +65,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+Cc: alsa-devel@alsa-project.org, Tang Bin <tangbin@cmss.chinamobile.com>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Zhang Shengju <zhangshengju@cmss.chinamobile.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 12:47:17PM +0200, Michael Kerrisk (man-pages) wrote:
-> Hello Dave, et al.
-> 
-> On 5/4/20 5:32 PM, Dave Martin wrote:
-> > Hi all,
-> > 
-> > I considering trying to plug some gaps in the arch-specific ABI
-> > documentation in the linux man-pages, specifically for arm64 (and
-> > possibly arm, where compat means we have some overlap).
-> 
-> Sounds good to me.
-> 
-> > For arm64, there are now significant new extensions (Pointer
-> > authentication, SVE, MTE etc.)  Currently there is some user-facing
-> > documentation mixed in with the kernel-facing documentation in the
-> > kernel tree, but this situation isn't ideal.
-> > 
-> > Do you have an opinion on where in the man-pages documentation should be
-> > added, and how to structure it?
-> > 
-> > 
-> > Affected areas include:
-> > 
-> >  * exec interface
-> 
-> Not sure what the details are here, so I have no opinion yet.
-> But probably, as additions to execve(2).
+If the function platform_get_irq() failed, the negative value
+returned will not be detected here. So fix error handling in
+mt6797_afe_pcm_dev_probe(). And when get irq failed, the function
+platform_get_irq() logs an error message, so remove redundant
+message here.
 
-Having looked at that page again, probably yes.
+Signed-off-by: Zhang Shengju <zhangshengju@cmss.chinamobile.com>
+Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
+---
+ sound/soc/mediatek/mt6797/mt6797-afe-pcm.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
-This would include things like how arch-specific registers get reset,
-and how various thread properties are reset/inherited.
+diff --git a/sound/soc/mediatek/mt6797/mt6797-afe-pcm.c b/sound/soc/mediatek/mt6797/mt6797-afe-pcm.c
+index 378bfc16e..a621dcf91 100644
+--- a/sound/soc/mediatek/mt6797/mt6797-afe-pcm.c
++++ b/sound/soc/mediatek/mt6797/mt6797-afe-pcm.c
+@@ -807,10 +807,9 @@ static int mt6797_afe_pcm_dev_probe(struct platform_device *pdev)
+ 
+ 	/* request irq */
+ 	irq_id = platform_get_irq(pdev, 0);
+-	if (!irq_id) {
+-		dev_err(dev, "%pOFn no irq found\n", dev->of_node);
+-		return -ENXIO;
+-	}
++	if (irq_id < 0)
++		return irq_id;
++
+ 	ret = devm_request_irq(dev, irq_id, mt6797_afe_irq_handler,
+ 			       IRQF_TRIGGER_NONE, "asys-isr", (void *)afe);
+ 	if (ret) {
+-- 
+2.20.1.windows.1
 
-Possibly, much of this would be documented by cross-referencing other
-pages.
 
-> 
-> >  * aux vector, hwcaps
-> 
-> ==> getauxval(3)
 
-Ah, yes.  I keep forgetting that because it's provided by libc.
-
-There are a few things missing, but we can add them in there.
-
-> >  * arch-specific signals
-> >  * signal frame
-> 
-> Not sure what the details are here, so I have no opinion yet.
-
-Stuff like architecture-specific si_codes and how they are used.
-
-Signal handlers that poke about in the signal frame need to know how it
-is structured, and for arm64 this is now quite complex.  I want to
-document some example code for parsing it somewhere, and I feel that
-will be too much noise for signal(7).
-
-I guess I can try to write something and than we can figure out where to
-put it.
-
-> 
-> >  * mmap/mprotect extensions
-> 
-> See below.
-> 
-> >  * prctl calls
-> 
-> As additions in prctl(2) would be fine, I think.
-> 
-> >  * ptrace quirks and extensions
-> 
-> See below.
-> 
-> >  * coredump contents
-> 
-> Not sure what the details are here, so I have no opinion yet.
-> Possibly as additions to core(5).
-
-Things like arch-specific regsets.  Some of that can probabably live
-in the ptrace page, with cross-references from core(5).
-
-> > Not everything has an obvious home in an existing page, 
-> 
-> Yes.
-> 
-> > and adding
-> > specifics for every architecture could make some existing manpages very
-> > unwieldy.
-> 
-> Still, I think it's worth adding details, especially for widely
-> used architectures.
-
-Agreed.  If there's a lot of explanation required for somethings which
-feels out of scope for the core page, then I might still be tempted to
-push some of that out into a more arch-specific page and cross-reference
-it.  We can play that by ear, though.
-
-> > I think for some arch features, we really need some "overview" pages
-> > too: just documenting the low-level details is of limited value
-> > without some guide as to how to use them together.
-> > 
-> > 
-> > Does the following sketch look reasonable?
-> > 
-> >  * man7/arm64.7: new page: overview of arm64-specific ABI extensions
-> 
-> I'm a little unclear on what would land in here, but sounds 
-> reasonable in principle.
-
-I probably won't attempt to add such a page until I find a use for it.
-
-I mainly intended this as an overview of what areas are impacted by the
-architecture and which other pages to go look at.
-
-> >  * man7/sve.7 (or man7/arm64-sve.7 or man7/sve.7arm64): new page:
-> >    overview of arm64 SVE ABI
-> 
-> Sounds reasonable to me.
-> 
-> >  * man2/arm64-ptrace.2 (or man2/ptrace.2arm64): new page:
-> >    arm64 ptrace extensions
-> 
-> I think maybe better is: ptrace-arm64.2
-
-Agreed.  That's probably easier to for people to place in their mental
-map.
-
-> 
-> I'm agnostic about whether there should be a new page, or whether 
-> these should be added to ptrace(2). But, we could start with the
-> idea of a new page.
-> 
-> >  * man2/mmap.2: extend with arm64-specific flags (only two flags, so we
-> >    add them to the existing man page rather than creating a new one).
-> 
-> Sounds good to me
-> 
-> > etc.
-> > 
-> > 
-> > Ideally, I'd like to adopt a pattern that other arches can follow.
-> 
-> Well, if they do follow. Arch-specific documentation is woefully
-> thin at the moment. I'm not going to worry too much about the right
-> pattern (don't let perfect get in the way of good, yadda, yadda),
-> until I get so much arch-specific documentation that some refactoring
-> may be required. (I'm not going to hold my breath waiting for that
-> to happen ;-).)
-
-Sure.  I don't want to do something obviously broken, but it sounds like
-you're reasonably happy with my approach.  In any case I'll start with the
-simple stuff.
-
-Where it's easy to do so, I may try to trawl up some undocumented non-
-ARM stuff, but I'm not the expert there...
-
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
