@@ -2,77 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94C4E1C7443
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:22:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA3041C74B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:27:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gvXDzZShpu67jkWkSA+iKGrhUaWO3yXpSH2O6OTx3bY=; b=jy5jHK8yOtbaeQ
-	ZOFk9k0UPzy7uqFcuHhr0nXGhgfW4G3fpYFGDbkH8N1AXymSNrY8AlagOVuLVKpEchqOMMzyKC6fF
-	Q8mEqaSAXUf9OGiBoCoG0pAuV16BJDcEnVa2HfquyeRba/FAlev8ZCCZp+ld5onyL11PbZiLS7jeH
-	uJkjeibvnR2WcG5VO5P7QYGSMYLIlMOvm2XaySc1oYgMyWK8TrlnSCkrADxjUXNdkl2yTAlQ60/qj
-	tvdhv/j2aFTnukSv5THpEJTO8S7WmQ7lnJBnBII/rGVPw1oCIWKfSUbW6sGHB5313dWcoqT/xoCtl
-	9rHF4jcQq0U6T0ErUe5A==;
+	List-Owner; bh=a22SeH7x1fvmWe7v8EvSlBOg2WV1AP7w9bnOWaAn47U=; b=BGj777NA63R54l
+	UP8ttb2xb9TqZS6JBKA83AttnYRDjgsb70DKscpD8eoNL7utFNqDd2chpbiDzXWo8JzTZ+B3XVO6Y
+	oW7pxzWTzRt0pXGF/GFxcuJv4uVOmtE6hxRhfhrapVcexSf3p8YysLaBwmx9AGAi4AOKmNnwkCtjp
+	sAh0J4wDguDvY4jEvTzcnScI+gu5/O51qBQLYTIqN1LlvQHSon8ZE4iJVDPtbwzJHqT3F0ug1+4gy
+	0VcFfJi7sXkVUW7KOuKPFnevVIOG6CiMzLY9CIm5y9jWeqzyj3maI/fAGg9LwvnoloNY33fMgzLGT
+	eeh8vRBVa/RJbGcsCIew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWLsf-0003ek-Ee; Wed, 06 May 2020 15:22:41 +0000
-Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
+	id 1jWLxR-0000l6-Uk; Wed, 06 May 2020 15:27:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWLsV-0003dQ-Kd; Wed, 06 May 2020 15:22:33 +0000
-Received: by mail-qk1-x741.google.com with SMTP id n14so2307354qke.8;
- Wed, 06 May 2020 08:22:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UTLapDh6d6sa8JwxWOzYsk+xzBhP38ZyiktZuaXRCHI=;
- b=U4pPQvxDSFslfW9caqLL2iEZJPKAkK07gBRE9swSmx0eoxQPVz7uvid/DnJKkfomyj
- Qku3qbx38HEbSOfJ/7i1rK5VqUxEEibBDynvO2JtYd8jsPBuOJSqRmf9xKjBERGYKZ/c
- GwVO3uJ4W5YsQBhphnG0UlxOfdAiZY7MMHh26coLua4rQMY57/bVZgjbvxIjci01AlO0
- ewa6+hKVqoH/lycs4MtAmlJ7rV8I6a8g+DuNUjC4k+8dyl5ql2VwKPagDk4SP6AXwoEm
- 8Z9eD0tLqSjlyEQl7gwggn3e8qjA6oVWT0Y0XI689Qu2uoxVdNMYqB78Auf/W78dQsFR
- AQDg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UTLapDh6d6sa8JwxWOzYsk+xzBhP38ZyiktZuaXRCHI=;
- b=TsYEGVxh4rE3PEimT33PwiHQYxMzk7nlCbo9IhdZpRL/JRMQo/HJD3WJ4gI7wqrFKn
- jqNpC+dpWC/ZB7JUmWJL3Vf7U19NMcRNwCdD1N+loxQ5JC/29Bf7Ccl0vidXdPJTxrLI
- PqPGomv1lvEMbazpkm+xnbt858vOeCfAwFe1aWWgZGC1GcX9FsEDJcV37JZM9Xvpf+JQ
- yWpG3+gFEVwCI9xxagVC9Jf4A6pWKpLWLk0mCYhQHw1eXQWLhDMXHL3Aj3PUdcFIW7/p
- ZfmgruKBP/awP3jE657ruBFPtLw1XvYkCS9zTssukdBWFqkzrdck0UJ9csNdyIY+QVJ2
- UEpQ==
-X-Gm-Message-State: AGi0PuZufH9a69FLDygdiv910R2e15NJKd9UiqKZw7eVD0FsT+oF3eIn
- oiUNXKmthHcxM6/LwIck2BAPX5W7oDjhbCjZiGs=
-X-Google-Smtp-Source: APiQypKsxvWF4y74GYdGypVDcJfTSzmgBGHkfDV88Yy1EbC8OSn5BNhqQrbQzK/PTVwD9mD+DIxmTIufp9t3uVKQClE=
-X-Received: by 2002:a37:a7d6:: with SMTP id q205mr6564216qke.85.1588778550313; 
- Wed, 06 May 2020 08:22:30 -0700 (PDT)
+ id 1jWLxH-0000iL-SM
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:27:29 +0000
+Received: from quaco.ghostprotocols.net (unknown [179.97.37.151])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0549C21835;
+ Wed,  6 May 2020 15:27:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588778847;
+ bh=8a2SnxvWNBe3GqsoOkza99aF3fLH7QQX2v4I98Cplic=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=eTCnjuR0HqouJ/0Wbz/JdHLDry9jIG6u6KGBRqzMV7mkonLKSVtm5BdiSEqPjm2+T
+ qjeGFIMNCV1ORwHbjH1aUJrLny4jTHIrd61TQ6x/9uC/x/1/td+Yjr/ePKkBVBfZpD
+ hsqdQl2lbiltNph1wtvp5S6SfH/8LMvbn5q0rB38=
+From: Arnaldo Carvalho de Melo <acme@kernel.org>
+To: Ingo Molnar <mingo@kernel.org>,
+	Thomas Gleixner <tglx@linutronix.de>
+Subject: [PATCH 86/91] perf: cs-etm: Update to build with latest opencsd
+ version.
+Date: Wed,  6 May 2020 12:22:29 -0300
+Message-Id: <20200506152234.21977-87-acme@kernel.org>
+X-Mailer: git-send-email 2.21.1
+In-Reply-To: <20200506152234.21977-1-acme@kernel.org>
+References: <20200506152234.21977-1-acme@kernel.org>
 MIME-Version: 1.0
-References: <20200506054920.109738-1-eizan@chromium.org>
- <20200506154832.v2.2.If340fa06d86053aaea25841b36741fe69c3126dd@changeid>
-In-Reply-To: <20200506154832.v2.2.If340fa06d86053aaea25841b36741fe69c3126dd@changeid>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Wed, 6 May 2020 17:22:19 +0200
-Message-ID: <CAFqH_53hZMxwR=Wk8YY485v_uAgPDh1MRs2ksv-BkfJ7TJGT6g@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] [media] mtk-mdp: handle
- vb2_dma_contig_set_max_seg_size errors during probe
-To: Eizan Miyamoto <eizan@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_082231_678910_4BE79C6F 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200506_082727_948219_901E3342 
+X-CRM114-Status: GOOD (  12.08  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eballetbo[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,6 +65,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,70 +77,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew-CT Chen <andrew-ct.chen@mediatek.com>,
- Minghsiu Tsai <minghsiu.tsai@mediatek.com>,
- LKML <linux-kernel@vger.kernel.org>, Houlong Wei <houlong.wei@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
+Cc: Arnaldo Carvalho de Melo <acme@redhat.com>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>, Clark Williams <williams@redhat.com>,
+ coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
+ linux-perf-users@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
+ Jiri Olsa <jolsa@kernel.org>, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Eizan,
+From: Mike Leach <mike.leach@linaro.org>
 
-Thank you for your patch.
+OpenCSD version v0.14.0 adds in a new output element. This is represented
+by a new value in the generic element type enum, which must be added to
+the handling code in perf cs-etm-decoder to prevent build errors due to
+build options on the perf project.
 
-Missatge de Eizan Miyamoto <eizan@chromium.org> del dia dc., 6 de maig
-2020 a les 7:51:
->
-> This is a cleanup to better handle errors during MDP probe.
->
-> Signed-off-by: eizan@chromium.org
+This element is not currently used by the perf decoder.
 
-As I commented on the first patch you should drop the above line.
+Perf build feature test updated to require a minimum of 0.14.0
 
-> Signed-off-by: Eizan Miyamoto <eizan@chromium.org>
+Tested on Linux 5.7-rc3.
 
-Other than that:
+Signed-off-by: Mike Leach <mike.leach@linaro.org>
+Reviewed-by: Leo Yan <leo.yan@linaro.org>
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: coresight@lists.linaro.org
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lore.kernel.org/lkml/20200501143615.1180-1-mike.leach@linaro.org
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+---
+ tools/build/feature/test-libopencsd.c           | 4 ++--
+ tools/perf/util/cs-etm-decoder/cs-etm-decoder.c | 2 ++
+ 2 files changed, 4 insertions(+), 2 deletions(-)
 
-Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+diff --git a/tools/build/feature/test-libopencsd.c b/tools/build/feature/test-libopencsd.c
+index 2b0e02c38870..1547bc2c0950 100644
+--- a/tools/build/feature/test-libopencsd.c
++++ b/tools/build/feature/test-libopencsd.c
+@@ -4,9 +4,9 @@
+ /*
+  * Check OpenCSD library version is sufficient to provide required features
+  */
+-#define OCSD_MIN_VER ((0 << 16) | (11 << 8) | (0))
++#define OCSD_MIN_VER ((0 << 16) | (14 << 8) | (0))
+ #if !defined(OCSD_VER_NUM) || (OCSD_VER_NUM < OCSD_MIN_VER)
+-#error "OpenCSD >= 0.11.0 is required"
++#error "OpenCSD >= 0.14.0 is required"
+ #endif
+ 
+ int main(void)
+diff --git a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+index cd92a99eb89d..cd007cc9c283 100644
+--- a/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
++++ b/tools/perf/util/cs-etm-decoder/cs-etm-decoder.c
+@@ -564,6 +564,8 @@ static ocsd_datapath_resp_t cs_etm_decoder__gen_trace_elem_printer(
+ 		resp = cs_etm_decoder__set_tid(etmq, packet_queue,
+ 					       elem, trace_chan_id);
+ 		break;
++	/* Unused packet types */
++	case OCSD_GEN_TRC_ELEM_I_RANGE_NOPATH:
+ 	case OCSD_GEN_TRC_ELEM_ADDR_NACC:
+ 	case OCSD_GEN_TRC_ELEM_CYCLE_COUNT:
+ 	case OCSD_GEN_TRC_ELEM_ADDR_UNKNOWN:
+-- 
+2.21.1
 
-> ---
->
-> Changes in v1:
-> - remove unnecessary error handling labels in favor of err_m2m_register
->
->  drivers/media/platform/mtk-mdp/mtk_mdp_core.c | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> index aeaed2cf4458..9b24b8d46eb7 100644
-> --- a/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_core.c
-> @@ -193,7 +193,11 @@ static int mtk_mdp_probe(struct platform_device *pdev)
->
->         platform_set_drvdata(pdev, mdp);
->
-> -       vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
-> +       ret = vb2_dma_contig_set_max_seg_size(&pdev->dev, DMA_BIT_MASK(32));
-> +       if (ret) {
-> +               dev_err(&pdev->dev, "Failed to set vb2 dma mag seg size\n");
-> +               goto err_m2m_register;
-> +       }
->
->         pm_runtime_enable(dev);
->         dev_dbg(dev, "mdp-%d registered successfully\n", mdp->id);
-> --
-> 2.26.2.526.g744177e7f7-goog
->
->
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
 
 _______________________________________________
 linux-arm-kernel mailing list
