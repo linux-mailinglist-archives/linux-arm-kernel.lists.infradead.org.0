@@ -2,93 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F4881C7513
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:37:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 951831C7517
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:39:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+cTwtM9CIbhGdX5WPJ/1IImgoYcUfOEInO46ljC4ZIE=; b=WvbWVfOjS383HU1OiiY9S4z+Y
-	euTCvMcWrkYhbKa6cC585PAysgu1RkmcImhh7xCmKYMfRysnevRxaHZtH4Lg5FYKm51VEy5tmHJ2h
-	bUJGaT1Bk8YEyn/SwS6NEc3n1C4/NrgfRQ9TYUfiGU24/FdkJC2E0K7G6NO9p8HOGM9XQGco3dCCc
-	7Opy6ZIonf4vV/AeXtp5orq3B4xaFI/IbPgPgaE4Hb3Zk92f7WcEJQQPOIVAFsu393mq/4VRakmWm
-	+j48+Pp4Ymn7Evr03sYz7JjhgUsc38KESlEXBERI4r2XR13JjAmsNw+NZqj+wxXPVM5CA9dAIGETE
-	rXwTWq/wg==;
+	 bh=R1IlNiHBrw7fGjzZZ6kHgG2fUJUFD+4RHx0vbiVh61M=; b=MHTtC/zULrxTvMtD2ZOTP2CIB
+	mtA0ZTMo30BGW7bkVZO2xE+iDzuFZdBhvQJlXTO5ItJdrWyz3V3ZZ6L7/S3weap/pIIQX5A+TtbjX
+	AyEfssP3HWA3XIis9B2ytbm/oQK2yM4gj6NXxhYz+YCFGw5TrKHUssr5AwCSIoCqDx1aAqM3+KB/A
+	XqqiSI9c626WKKTxycYOyGDh+rV2Gah9TVbj0sgsQKH64LdRlssNFm5QSHcZf+KZO78C58ltgyfxY
+	Neg2V7+04AtL0ll3Wbfje3i3Q7KxIHa2to9ZhocOlQ74zqw/9Bjp1Aw0apRx2PuXBMVFKtpIXUT+K
+	aieO6j8UQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWM6g-00024Y-Fa; Wed, 06 May 2020 15:37:10 +0000
-Received: from new4-smtp.messagingengine.com ([66.111.4.230])
+	id 1jWM8k-0002Qr-Gr; Wed, 06 May 2020 15:39:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWM6U-00022y-Mz
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:37:00 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id A3BCF58032B;
- Wed,  6 May 2020 11:36:53 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 06 May 2020 11:36:53 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=/+05KqBTk3oydVggvk0oaQyCPAJ
- z1Y/tOkrcMC1KWGU=; b=dYMsW87kzQdTYVzBdsHEEWUk+IY0JF5You9OLDT0Plf
- bjPLfchBAW+G3HReL9Ft0Yfc9GNlDMFzQTv9rce9eVI+Qs6xSqw1/KDwNng44Stc
- 44k5Mj5hXWzWpCDyd9MPU7HRi/9OWXUag+9V9IfUrsfwNmIuZW8V33H2jVKJofBA
- +RDI+3yqD6rBVx4u36C65xL/8TpyJeqvQRhmtcBHaIwFz6DC6/WHIxVSglCE1zzv
- FSzwQ9MypkyDIVOEb/P/bzN7cFoygVZd6TMP7pHshw7pf1jVdYyOJJ+lqMei4K29
- 9b5/bbhyzHCQN6nMeaRdVXyEIkbBlbMSFhLOTAhlJTw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=/+05Kq
- BTk3oydVggvk0oaQyCPAJz1Y/tOkrcMC1KWGU=; b=QVJBUdD+tRrFspsGcUoA2F
- PoD0sa7ltQTt4QsnvkUQSaO3LL+S3/rG7CMvrFmVeDRYgAqQ1+BeS8SPjLY0hYi4
- EkMHkLDFPY0+kE4xdWuRSaISvGvZSKyENuV6SDNVy2xysZJsSiMz7bbw1qV++Wd2
- eqSlhLMObAED8BZFQ9gpgwPSwmrr0GeemNFLmEiUSO8OCNQMhujg/EPIax6evtyP
- NJ0EE1S1vFIElq+GKgPcBjaQ2Y4lyWvW/K3TsI2/mgzeDAz3RlvroOsKG7mg2EIE
- YfkpyICiEFCK6w5rJpifKeEDJU4uv6dVDyJyC9/buFRhUigfalit1BJPhwQ8Jkwg
- ==
-X-ME-Sender: <xms:lNmyXgqrCcQNdAIPVuBzajR5lgSq-T-q887yRciGH4wQ7POZKR97Og>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrjeekgdekkecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeethfeiueffueeikeeifefhheeijeeigfelteehheetjeekueevtdfhlefhgfdt
- ieenucffohhmrghinhepghhithhhuhgsrdgtohhmpdgrrhhmsghirghnrdgtohhmnecukf
- hppeeltddrkeelrdeikedrjeeinecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghm
- pehmrghilhhfrhhomhepmhgrgihimhgvsegtvghrnhhordhtvggthh
-X-ME-Proxy: <xmx:lNmyXhlmALE-N71etmI62IoUcm6VIVJqxnhmcYUGF8GOjgbHXwZvDQ>
- <xmx:lNmyXn3UCN8LilgAP3FDW-4A8rSV_1Cj31Jy1FI5Wtoom_IQAPRjog>
- <xmx:lNmyXmp7l0HhvY1DRQ0pIQia1SN6AJdaFGDpEl1IA3fHLvkLB_vhEg>
- <xmx:ldmyXvedgtdvWjzIrDy8oNd09iM8YIUKOKz54FJdGSAdnYSixBEKLA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7F3E8328006C;
- Wed,  6 May 2020 11:36:52 -0400 (EDT)
-Date: Wed, 6 May 2020 17:36:49 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Icenowy Zheng <icenowy@aosc.io>
-Subject: Re: [RFC PATCH] PCI: dwc: add support for Allwinner SoCs' PCIe
- controller
-Message-ID: <20200506153649.ahzlhcquyhnggbou@gilmour.lan>
-References: <20200402160549.296203-1-icenowy@aosc.io>
- <20200406082732.nt5d7puwn65j4nvl@gilmour.lan>
- <13564b9a57f734524357a26665c48211e436e305.camel@aosc.io>
+ id 1jWM8b-0002QL-E8
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:39:10 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 78E0E20643;
+ Wed,  6 May 2020 15:39:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588779549;
+ bh=WgPijPHHydvvVDdXFszamSMx98PO6J2ih0Dh2t0TZGw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=EJ9faVRz/3IBDeZfHxctVP9kuHlElCdfyqjRFcRxBAg3NeXdE2MuX79G9+MWQbFYV
+ 0cfYIfWRguX4+PJVOcgMsdKKZ68jVx6D+rspQHC88JVWSlgCTQ7IzSjZOHEPesRlBm
+ SJZvuwnqWprGY7MXTUsIWJ8fN0LTfHFPQGrHuaUY=
+Date: Wed, 6 May 2020 16:39:06 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v2 07/10] arm64: asm: Provide a mechanism for generating
+ ELF note for BTI
+Message-ID: <20200506153906.GF5299@sirena.org.uk>
+References: <20200429211641.9279-1-broonie@kernel.org>
+ <20200429211641.9279-8-broonie@kernel.org>
+ <20200505145858.GB24239@willie-the-truck>
+ <20200505170629.GH5377@sirena.org.uk>
+ <20200506112632.GD8043@willie-the-truck>
+ <20200506123855.GC5299@sirena.org.uk>
+ <20200506134433.GA12453@willie-the-truck>
 MIME-Version: 1.0
-In-Reply-To: <13564b9a57f734524357a26665c48211e436e305.camel@aosc.io>
+In-Reply-To: <20200506134433.GA12453@willie-the-truck>
+X-Cookie: Not recommended for children.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_083658_889403_E955C4FE 
-X-CRM114-Status: GOOD (  29.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200506_083909_497691_230C5D3D 
+X-CRM114-Status: GOOD (  15.02  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.230 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -96,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,115 +83,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
- linux-pci@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
-Content-Type: multipart/mixed; boundary="===============5171033091798364984=="
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, dave.martin@arm.com,
+ linux-arm-kernel@lists.infradead.org, Kees Cook <keescook@chromium.org>
+Content-Type: multipart/mixed; boundary="===============7237991575718989099=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============5171033091798364984==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="p2kmtjzg5nllbilb"
+--===============7237991575718989099==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Bqc0IY4JZZt50bUr"
 Content-Disposition: inline
 
 
---p2kmtjzg5nllbilb
-Content-Type: text/plain; charset=utf-8
+--Bqc0IY4JZZt50bUr
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Mon, Apr 20, 2020 at 04:18:58PM +0800, Icenowy Zheng wrote:
-> =E5=9C=A8 2020-04-06=E6=98=9F=E6=9C=9F=E4=B8=80=E7=9A=84 10:27 +0200=EF=
-=BC=8CMaxime Ripard=E5=86=99=E9=81=93=EF=BC=9A
-> > Hi,
-> >=20
-> > On Fri, Apr 03, 2020 at 12:05:49AM +0800, Icenowy Zheng wrote:
-> > > The Allwinner H6 SoC uses DesignWare's PCIe controller to provide a
-> > > PCIe
-> > > host.
-> > >=20
-> > > However, on Allwinner H6, the PCIe host has bad MMIO, which needs
-> > > to be
-> > > workarounded. A workaround with the EL2 hypervisor functionality of
-> > > ARM
-> > > Cortex cores is now available, which wraps MMIO operations.
-> > >=20
-> > > This patch is going to add a driver for the DWC PCIe controller
-> > > available in Allwinner SoCs, either the H6 one when wrapped by the
-> > > hypervisor (so that the driver can consider it as an ordinary PCIe
-> > > controller) or further not buggy ones.
-> > >=20
-> > > Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-> > > ---
-> > > There's no device tree binding patch available, because I still
-> > > have
-> > > questions on the device tree compatible string. I want to use it to
-> > > describe that this driver doesn't support the "native Allwinner H6
-> > > PCIe
-> > > controller", but a wrapped version with my hypervisor.
-> > >=20
-> > > I think supporting a "para-physical" device is some new thing, so
-> > > this
-> > > patch is RFC.
-> > >=20
-> > > My hypervisor is at [1], and some basic usage documentation is at
-> > > [2].
-> > >=20
-> > > [1] https://github.com/Icenowy/aw-el2-barebone
-> > > [2]=20
-> > > https://forum.armbian.com/topic/13529-a-try-on-utilizing-h6-pcie-with=
--virtualization/
-> >=20
-> > I'm a bit concerned to throw yet another mandatory, difficult to
-> > update, component in the already quite long boot chain.
-> >=20
-> > Getting fixes deployed in ATF or U-Boot is already pretty long,
-> > having
-> > another component in there will just make it worse, and it's another
-> > hard to debug component that we throw into the mix.
-> >=20
-> > And this prevents any use of virtualisation on the platform.
-> >=20
-> > I haven't found an explanation on what that hypervisor is doing
-> > exactly, but from a look at it it seems that it will trap all the
-> > accesses to the PCIe memory region to emulate a regular space on top
-> > of the restricted one we have?
-> >=20
-> > If so, can't we do that from the kernel directly by using a memory
-> > region that always fault with a fault handler like Framebuffer's
-> > deferred_io is doing (drivers/video/fbdev/core/fb_defio.c) ?
->=20
-> I don't know well about the memory management of the kernel. However,
-> for PCIe memory space, the kernel allows simple ioremap() on it. So
-> wrapping it shouldn't be so easy.
+On Wed, May 06, 2020 at 02:44:34PM +0100, Will Deacon wrote:
+> On Wed, May 06, 2020 at 01:38:55PM +0100, Mark Brown wrote:
 
-I'm not sure this would cause any trouble, it's worth exploring I guess. Th=
-is
-would solve all the current shortcomings.
+> > Right, I was just expecting to have the ifdefs selecting the flags to
+> > emit in the middle of the asm macro definiton rather than separately - I
+> > didn't see a huge win in defining a macro with the only user being
+> > another macro.  I can do something along those lines though.
 
-Maxime
->
+> With my suggestion, we still only have the 'emit_aarch64_feature_1_and'
+> macro, it just provides a way to override the properties if we need that
+> later on. All I'm proposing is adding the optional feat parameter, which
+> defaults to all of the properties we know about.
 
---p2kmtjzg5nllbilb
+> > That will result in us emitting the note with no flags set which
+> > *should* be totally fine but is a bit unusual and feels like tempting
+> > fate.
+
+> Nah, that's just the dummy .macro definition.
+
+I see - I had been reading the idea as being to have the macro outside
+the #ifdef for BTI so that it's usable separately from that and that
+you'd just not updated the ifdefs while sketching it out.  I think I've
+got a sensible way of achieving that without too much pain though so it
+should be fine anyway.
+
+--Bqc0IY4JZZt50bUr
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXrLZkQAKCRDj7w1vZxhR
-xdzrAP9eNr9KcfU2kbvxMpWxzsG/4z0BCVJuoyB9oqqcCJ+rSgEA8LASQMw0yBXS
-EWoo2T8XCMOXkT+flamRrPJwfGv3/AQ=
-=oD3G
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl6y2hkACgkQJNaLcl1U
+h9BNqQf6AgpnT56fh19ePfZHOzchO1Zo38T8JTOqmRM8/WySkWcv1wVbSqD8o9EK
+qGb7QfUbb6/RoDfS+ohs6SiZAA///ElpoyePZkAoussHPteDjU4HDcbuhJZTiikc
+JAwd97zS9Tq9wFha52f20nongAIahJRet8zqyg1rWjKkgxRm4tkP9m7lqmuxV5ka
+/QrQbDQNdCJzJNdo+EnH+AGsQtPTij/RgDq4X3CF71A1aSbmFoGF08eGXPLs9omm
+1gLpc35qm0PS2n9XNNsXHHVb1d+el/LXW/zOtqbMDDBUqXuw74MbHq9mIYj8+gUl
+YE+oQl3jvCdWSSsl+onXjE0SJGMVaw==
+=dovQ
 -----END PGP SIGNATURE-----
 
---p2kmtjzg5nllbilb--
+--Bqc0IY4JZZt50bUr--
 
 
---===============5171033091798364984==
+--===============7237991575718989099==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -226,5 +155,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============5171033091798364984==--
+--===============7237991575718989099==--
 
