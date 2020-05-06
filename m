@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B13981C76E7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 18:45:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 678AE1C76E8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 18:45:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zO2WHGy1ldtdOXITHJZCmzphc2ola0dCIrzx22lbX9I=; b=iunmHuLLcpzjjIrqQLIJNyY+us
-	T4HoHi0Z03l3xfJAuo+/PhtLAVUt2FgCoftH/f6lz2ugvX5rwkTEZNLkmwqPocXKaNAzlO6WJPn6O
-	pYx/hYveR+Caa+eG7SBw3SH4HflcFPjLzsa/k0ZO8AKb30TRqn1nOmnoGrvI2GuI+0CkViyz30yGz
-	H5fk2tp1shjLsk3WMIAbw6hWRbnVhq1u9lJMIKB3z7LRjA/uTozK5ceoGbnwBOFw7uf31vWFQtN7w
-	m1db0W7Qv9Ro4wX7wUjKZSON/kQtkEYUQmSKXx8FE5tdM62Wh9BKgcfbEgp7W/ukm05SF7w6zg2Gl
-	uWWN/7Ig==;
+	bh=uOuPn9gMj9QcDzFlBAMN1py7xNcKf6AETQcMsTmW4rg=; b=Hl6Qwd2wf2SQFDcTmUEntl3zio
+	ZGg7c9hRMMidPu+gGnT0qgcAhGJl5qYLgTaNrnuZivu0IiJmlinr6xO0N5Fr6ebeHOzL//DetjnL8
+	keHa7A6IT8wWjt8TjO3H59H0gYzjhBu54uiAvtSIht57SZP/XHryOXPI2Mo0xb3Pxm2zz6Pq9Mkou
+	Im86/3eYuX5nElJQakzXG3xl9oiVacjrKzCw55NOMiXaEiQunEkj8eCWvnFwT5LozvMGBhUhOVHEf
+	qyJrIzUX5vDddWhrwu9ELhrsaEt1bBi7IO6lYhBztKgXEtFS+1t5CBGczKHjxd1bUdPXShOC7QTrL
+	ZMDoH5Cg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWNAk-0001R6-HP; Wed, 06 May 2020 16:45:27 +0000
+	id 1jWNAv-00047u-KU; Wed, 06 May 2020 16:45:37 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWN9j-0000gR-95
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 16:44:24 +0000
+ id 1jWN9k-0000fB-Hy
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 16:44:26 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB4C81042;
- Wed,  6 May 2020 09:44:22 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A0E8D6E;
+ Wed,  6 May 2020 09:44:24 -0700 (PDT)
 Received: from usa.arm.com (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8CD1E3F305;
- Wed,  6 May 2020 09:44:21 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1B3CC3F305;
+ Wed,  6 May 2020 09:44:23 -0700 (PDT)
 From: Sudeep Holla <sudeep.holla@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 3/7] firmware: smccc: Add the definition for SMCCCv1.2
- version/error codes
-Date: Wed,  6 May 2020 17:44:07 +0100
-Message-Id: <20200506164411.3284-4-sudeep.holla@arm.com>
+Subject: [PATCH v3 4/7] firmware: smccc: Drop smccc_version enum and use
+ ARM_SMCCC_VERSION_1_x instead
+Date: Wed,  6 May 2020 17:44:08 +0100
+Message-Id: <20200506164411.3284-5-sudeep.holla@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200506164411.3284-1-sudeep.holla@arm.com>
 References: <20200506164411.3284-1-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_094423_371799_01ABBCBC 
-X-CRM114-Status: GOOD (  10.57  )
+X-CRM114-CacheID: sfid-20200506_094424_654748_8B5EF133 
+X-CRM114-Status: GOOD (  13.57  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,44 +73,89 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the definition for SMCCC v1.2 version and new error code added.
-While at it, also add a note that ARM DEN 0070A is deprecated and is
-now merged into the main SMCCC specification(ARM DEN 0028C).
+Instead of maintaining 2 sets of enums/macros for tracking SMCCC version,
+let us drop smccc_version enum and use ARM_SMCCC_VERSION_1_x directly
+instead.
+
+This is in preparation to drop smccc_version here and move it separately
+under drivers/firmware/smccc.
 
 Reviewed-by: Steven Price <steven.price@arm.com>
 Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
 ---
- include/linux/arm-smccc.h | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/paravirt.c | 2 +-
+ drivers/firmware/psci/psci.c | 8 ++++----
+ include/linux/psci.h         | 7 +------
+ 3 files changed, 6 insertions(+), 11 deletions(-)
 
-diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index 6c1d1eda3be4..9d9a2e42e919 100644
---- a/include/linux/arm-smccc.h
-+++ b/include/linux/arm-smccc.h
-@@ -56,6 +56,7 @@
+diff --git a/arch/arm64/kernel/paravirt.c b/arch/arm64/kernel/paravirt.c
+index 1ef702b0be2d..295d66490584 100644
+--- a/arch/arm64/kernel/paravirt.c
++++ b/arch/arm64/kernel/paravirt.c
+@@ -120,7 +120,7 @@ static bool has_pv_steal_clock(void)
+ 	struct arm_smccc_res res;
  
- #define ARM_SMCCC_VERSION_1_0		0x10000
- #define ARM_SMCCC_VERSION_1_1		0x10001
-+#define ARM_SMCCC_VERSION_1_2		0x10002
+ 	/* To detect the presence of PV time support we require SMCCC 1.1+ */
+-	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
++	if (arm_smccc_1_1_get_conduit() == SMCCC_CONDUIT_NONE)
+ 		return false;
  
- #define ARM_SMCCC_VERSION_FUNC_ID					\
- 	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-@@ -314,10 +315,14 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
-  */
- #define arm_smccc_1_1_hvc(...)	__arm_smccc_1_1(SMCCC_HVC_INST, __VA_ARGS__)
+ 	arm_smccc_1_1_invoke(ARM_SMCCC_ARCH_FEATURES_FUNC_ID,
+diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+index 2937d44b5df4..6a56d7196697 100644
+--- a/drivers/firmware/psci/psci.c
++++ b/drivers/firmware/psci/psci.c
+@@ -54,12 +54,12 @@ bool psci_tos_resident_on(int cpu)
  
--/* Return codes defined in ARM DEN 0070A */
-+/*
-+ * Return codes defined in ARM DEN 0070A
-+ * ARM DEN 0070A is now merged/consolidated into ARM DEN 0028C
-+ */
- #define SMCCC_RET_SUCCESS			0
- #define SMCCC_RET_NOT_SUPPORTED			-1
- #define SMCCC_RET_NOT_REQUIRED			-2
-+#define SMCCC_RET_INVALID_PARAMETER		-3
+ struct psci_operations psci_ops = {
+ 	.conduit = SMCCC_CONDUIT_NONE,
+-	.smccc_version = SMCCC_VERSION_1_0,
++	.smccc_version = ARM_SMCCC_VERSION_1_0,
+ };
  
- /*
-  * Like arm_smccc_1_1* but always returns SMCCC_RET_NOT_SUPPORTED.
+ enum arm_smccc_conduit arm_smccc_1_1_get_conduit(void)
+ {
+-	if (psci_ops.smccc_version < SMCCC_VERSION_1_1)
++	if (psci_ops.smccc_version < ARM_SMCCC_VERSION_1_1)
+ 		return SMCCC_CONDUIT_NONE;
+ 
+ 	return psci_ops.conduit;
+@@ -411,8 +411,8 @@ static void __init psci_init_smccc(void)
+ 	if (feature != PSCI_RET_NOT_SUPPORTED) {
+ 		u32 ret;
+ 		ret = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
+-		if (ret == ARM_SMCCC_VERSION_1_1) {
+-			psci_ops.smccc_version = SMCCC_VERSION_1_1;
++		if (ret >= ARM_SMCCC_VERSION_1_1) {
++			psci_ops.smccc_version = ret;
+ 			ver = ret;
+ 		}
+ 	}
+diff --git a/include/linux/psci.h b/include/linux/psci.h
+index a67712b73b6c..29bd0671e5bb 100644
+--- a/include/linux/psci.h
++++ b/include/linux/psci.h
+@@ -21,11 +21,6 @@ bool psci_power_state_is_valid(u32 state);
+ int psci_set_osi_mode(void);
+ bool psci_has_osi_support(void);
+ 
+-enum smccc_version {
+-	SMCCC_VERSION_1_0,
+-	SMCCC_VERSION_1_1,
+-};
+-
+ struct psci_operations {
+ 	u32 (*get_version)(void);
+ 	int (*cpu_suspend)(u32 state, unsigned long entry_point);
+@@ -36,7 +31,7 @@ struct psci_operations {
+ 			unsigned long lowest_affinity_level);
+ 	int (*migrate_info_type)(void);
+ 	enum arm_smccc_conduit conduit;
+-	enum smccc_version smccc_version;
++	u32 smccc_version;
+ };
+ 
+ extern struct psci_operations psci_ops;
 -- 
 2.17.1
 
