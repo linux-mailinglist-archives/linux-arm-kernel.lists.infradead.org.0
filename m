@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 054001C7AC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:54:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 784B11C7AC6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:54:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DHi2SMfXXgWfS43ZVVefTqRTT67+USDkTjkJC5Dfq8U=; b=S2Ul8EmTo/ePMj
-	OObSj12KRQ698wqKqkKKa8apVQ9hrN/HQDv1oDhE3BwKsZuWlOVcMMHGXpIf3p73symwk3OoiVoOD
-	WF12VJ8H4inoD83TWYS4yPe7s8AbEsSNrCdUJq6PuX7jQn5ecH13GwbEWjDl2zlcQ/rod2ZDTYn9q
-	3nz8F/WwdW7kVuRPEaVWI4125WgPy06nEj64bWeXbTVXeU1lSmWJz6Ers/AccjUWy6oRRuS3qi/Iz
-	1CPxG9tipcd1zbCUallUWupuBzX5crq/zmYrGac3NFibQIYEJujkesE3ASOKfQ1qhvNEcxjL6MWnm
-	IvBzjsku7qCV6sDsai8g==;
+	List-Owner; bh=b8W+zr8y5VcktE86sH7E1iUAmYB98g8qNY+JNl6lIkY=; b=J6Gaewu4XD/RnT
+	SHOPQp73N5RudJR1nHNExJESKs7A570nl2F3qAnOyMYwP84dS34Ag/s7OdCT3ztucWjYgUgS1M4KJ
+	BK8TMrFexyRKuw7NsvhEVet6e7v6nrURfpLNgPPnvDNimetj+KmMNcuyROLtHb3Re2LxkEdet6EYD
+	XH5kEYwKc441NeeLfUGeN64tswf9RM/ea4pZGcXs0E3f0rUNGY0JcFJ0PKAx+wVJFF+9OJ9ZqM3lR
+	m9bVYMSORPySNFwYzMQ1YidwVUe1s/fXrBjDJhx0UYc+NcA5L1wP7XoawI1Wl6SAO67u8ATfiL245
+	E85Jfv4FAYnKsxkSlfOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ7D-0005xW-8k; Wed, 06 May 2020 19:53:59 +0000
+	id 1jWQ7V-0006B3-MH; Wed, 06 May 2020 19:54:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5V-0004D3-Im
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:15 +0000
+ id 1jWQ5Y-0004G1-0A
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:18 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2237220747;
- Wed,  6 May 2020 19:52:11 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 078FD2078C;
+ Wed,  6 May 2020 19:52:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794732;
- bh=hvk93jzA5z6WaFVWImKm6Tk+c5HrLaAwVB7flR3258I=;
+ s=default; t=1588794735;
+ bh=Snqv5XILp0SjBXZKuv7YsW0gFPHUcpmfA9E1VqIUnqs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=RpbfyVQ4tfqdPqYtlMyb8jExBCFQYfs/rd5lCQzNFs/fZtGS4Tqztqk28CYX2/QnR
- xoAzqLiGO6DijSu1RmdK8Vmg0neDHDcaOd0xP+EUO2i8r0PYEBJ6kC+6ZBsOPrdps5
- VaruZRXS4dul4SxqqUoAYpUCPNrJK5pb5O6jfO1k=
+ b=HzNTEByNB4NNwRzd5Vrze8WC7Wad7WHCdGIi7BmQpmOZ+4bGaREBeB0pMrA3DtIcW
+ TpESbRP60tbWhSGh+Dse+DytqDyB4LbSWJOaQsyRZv7Ya7OwwWG/3ZRMLjOXSwhEj5
+ UhooOYfE47EaSfAyEL16PapwOAW0Rxc4d5kD+G9Q=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 07/11] arm64: bti: Provide Kconfig for kernel mode BTI
-Date: Wed,  6 May 2020 20:51:34 +0100
-Message-Id: <20200506195138.22086-8-broonie@kernel.org>
+Subject: [PATCH v3 08/11] arm64: asm: Provide a mechanism for generating ELF
+ note for BTI
+Date: Wed,  6 May 2020 20:51:35 +0100
+Message-Id: <20200506195138.22086-9-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125213_675606_9ED475A2 
-X-CRM114-Status: GOOD (  11.37  )
+X-CRM114-CacheID: sfid-20200506_125216_082910_A71CE7F1 
+X-CRM114-Status: GOOD (  14.00  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,52 +86,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that all the code is in place provide a Kconfig option allowing users
-to enable BTI for the kernel if their toolchain supports it, defaulting it
-on since this has security benefits. This is a separate configuration
-option since we currently don't support secondary CPUs that lack BTI if
-the boot CPU supports it.
+ELF files built for BTI should have a program property note section which
+identifies them as such. The linker expects to find this note in all
+object files it is linking into a BTI annotated output, the compiler will
+ensure that this happens for C files but for assembler files we need to do
+this in the source so provide a macro which can be used for this purpose.
+To support likely future requirements for additional notes we split the
+defininition of the flags to set for BTI code from the macro that creates
+the note itself.
 
-Code generation issues mean that current GCC 9 versions are not able to
-produce usable BTI binaries so we disable support for building with GCC
-versions prior to 10, once a fix is backported to GCC 9 the dependencies
-will be updated.
+This is mainly for use in the vDSO which should be a normal ELF shared
+library and should therefore include BTI annotations when built for BTI.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
-Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/Kconfig | 18 ++++++++++++++++++
- 1 file changed, 18 insertions(+)
+ arch/arm64/include/asm/assembler.h | 50 ++++++++++++++++++++++++++++++
+ 1 file changed, 50 insertions(+)
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 6f199d8146d4..f3de1c115fc0 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -1610,6 +1610,24 @@ config ARM64_BTI
- 	  BTI, such binaries can still run, but you get no additional
- 	  enforcement of branch destinations.
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 0bff325117b4..54d181177656 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -736,4 +736,54 @@ USER(\label, ic	ivau, \tmp2)			// invalidate I line PoU
+ .Lyield_out_\@ :
+ 	.endm
  
-+config ARM64_BTI_KERNEL
-+	bool "Use Branch Target Identification for kernel"
-+	default y
-+	depends on ARM64_BTI
-+	depends on ARM64_PTR_AUTH
-+	depends on CC_HAS_BRANCH_PROT_PAC_RET_BTI
-+	depends on !CC_IS_GCC || GCC_VERSION >= 100000
-+	depends on (!FUNCTION_GRAPH_TRACER || DYNAMIC_FTRACE_WITH_REGS)
-+	help
-+	  Build the kernel with Branch Target Identification annotations
-+	  and enable enforcement of this for kernel code. When this option
-+	  is enabled and the system supports BTI all kernel code including
-+	  modular code must have BTI enabled.
++/*
++ * This macro emits a program property note section identifying
++ * architecture features which require special handling, mainly for
++ * use in assembly files included in the VDSO.
++ */
 +
-+config CC_HAS_BRANCH_PROT_PAC_RET_BTI
-+	# GCC 9 or later, clang 8 or later
-+	def_bool $(cc-option,-mbranch-protection=pac-ret+leaf+bti)
++#define NT_GNU_PROPERTY_TYPE_0  5
++#define GNU_PROPERTY_AARCH64_FEATURE_1_AND      0xc0000000
 +
- config ARM64_E0PD
- 	bool "Enable support for E0PD"
- 	default y
++#define GNU_PROPERTY_AARCH64_FEATURE_1_BTI      (1U << 0)
++#define GNU_PROPERTY_AARCH64_FEATURE_1_PAC      (1U << 1)
++
++#ifdef CONFIG_ARM64_BTI_KERNEL
++#define GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT		\
++		((GNU_PROPERTY_AARCH64_FEATURE_1_BTI |	\
++		  GNU_PROPERTY_AARCH64_FEATURE_1_PAC))
++#endif
++
++#ifdef GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT
++.macro emit_aarch64_feature_1_and, feat=GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT
++	.pushsection .note.gnu.property, "a"
++	.align  3
++	.long   2f - 1f
++	.long   6f - 3f
++	.long   NT_GNU_PROPERTY_TYPE_0
++1:      .string "GNU"
++2:
++	.align  3
++3:      .long   GNU_PROPERTY_AARCH64_FEATURE_1_AND
++	.long   5f - 4f
++4:
++	/*
++	 * This is described with an array of char in the Linux API
++	 * spec but the text and all other usage (including binutils,
++	 * clang and GCC) treat this as a 32 bit value so no swizzling
++	 * is required for big endian.
++	 */
++	.long   \feat
++5:
++	.align  3
++6:
++	.popsection
++.endm
++
++#else
++.macro emit_aarch64_feature_1_and, feat=0
++.endm
++
++#endif /* GNU_PROPERTY_AARCH64_FEATURE_1_DEFAULT */
++
+ #endif	/* __ASM_ASSEMBLER_H */
 -- 
 2.20.1
 
