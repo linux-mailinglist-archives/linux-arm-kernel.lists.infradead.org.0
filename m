@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1C9B1C7AC7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:54:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5C711C7AC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:55:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HOsINqjeP/ieZXFJ00tfX5rB4/N+Ah8XifmpAu0ybFs=; b=mRV9ZcUxC/4mVp
-	bhJx7Sl9QQYXP+vOnwh56zUndrvCAE9hHadPngQ/SErup0kdCmMEFgD/0k+H9ZCmzVIjC08aYSeM8
-	Fw7u+Oth8tcj78LsmqZYYCb2sIfnLDmzUwllKA0Uj7Qjl8yrhuJ9Ps63ItfU17MrskubQvQaV1LQx
-	1NA76vgV9oLdz3OXK+NmyfTMp+kGxGgoxc9Z4DoJbHdy+kY7zC7RM86Lleq3u9KaENq0gJ6AqlKlf
-	dANQS2oMCNI+MA4C52rIbz8IAS1G/1L9X6DsvE3rVKfwN+Yhxlgemzlzlqe3BxI0Des9bI8YIuakZ
-	0B7fJ56bAhtJPf292+qQ==;
+	List-Owner; bh=PveSU2jpohuPEHHKeyJJKPKrEdeG0Eo9ZOgKTZeJazk=; b=ipMlKW1J87Xr2m
+	RMaJjuyvuGPc+Al/KXdcv/JRzovuG9UyDVxgZqWJTYhfIrVxAmFBYxsqJcvs03KvrO79iAfd9gnCv
+	WuhB8AOhPx2dXXxwB56TlmbCfTR3Pm+KtHwOOcyleoyYTkT2/kS+KU2J8QRQCjs3pNhgHvGCl1yrX
+	D04GfPqDHCSaJgIybCC/m5Bz3TIlq3kdcVsx6T1npzXK7R/Nk9Q3svTSYIAAqNx3VIYkuO8qqB7O/
+	MADZZeh1OzqqhHrwHhDD//fTFExWFHUOqaTSGXxryQo0Y1KI/PpMGc5rdbqmwSyaBGVqM2yWwuh4Z
+	bGhnfBqYokVvs4xTcqkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ7s-0006TD-W2; Wed, 06 May 2020 19:54:41 +0000
+	id 1jWQ8U-000766-Ry; Wed, 06 May 2020 19:55:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5e-0004Ls-BK
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:24 +0000
+ id 1jWQ5g-0004O5-Tp
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:28 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DDCFE207DD;
- Wed,  6 May 2020 19:52:20 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CBB642075E;
+ Wed,  6 May 2020 19:52:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794741;
- bh=xXgAlVQ+fZjjhJDjHBj+kobr7+HqUmOW/gDHHpp5Orw=;
+ s=default; t=1588794744;
+ bh=JIUl5dv/EKhdfrbZDTfh2/cQNaEZ3ZcEwVUjix5iGNs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Q42xFV9oKWVToV4ehfxhEpzAqRxn5kIXY5+m+Ishr3DTmPag1Y7IHnT9n0PPCET+F
- kkwLk+ltcdK87O1Q8XVRlyXCCNPml1EKIE1xR7oS8x+F6xqhC4zVRDw83MGbH3VS6i
- gK5fzFN3FDIUKeLaNnqsMhmnc3hnpfhMbDzYrFDE=
+ b=r/+EliwKyujOWvPWHG2aBFFvIiu8YC+7kSSr41yUHstuAaBFow0xR9Tq4bslMT3dG
+ otJk86vIzsJhQzQ3FqyuUwjScA4ndeSV2q9cusEtrfbh4liqNSi8rydc5N3kXldToR
+ wRfzgPPWLg7BnVaHmHEWXLPjNgSQK4M1Y35rBxME=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 10/11] arm64: vdso: Force the vDSO to be linked as BTI when
- built for BTI
-Date: Wed,  6 May 2020 20:51:37 +0100
-Message-Id: <20200506195138.22086-11-broonie@kernel.org>
+Subject: [PATCH v3 11/11] arm64: vdso: Map the vDSO text with guarded pages
+ when built for BTI
+Date: Wed,  6 May 2020 20:51:38 +0100
+Message-Id: <20200506195138.22086-12-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125222_452606_E986CEDC 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20200506_125225_019151_67330573 
+X-CRM114-Status: GOOD (  11.66  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,34 +86,48 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the kernel and hence vDSO are built with BTI enabled force the linker
-to link the vDSO as BTI. This will cause the linker to warn if any of the
-input files do not have the BTI annotation, ensuring that we don't silently
-fail to provide a vDSO that is built and annotated for BTI when the
-kernel is being built with BTI.
+The kernel is responsible for mapping the vDSO into userspace processes,
+including mapping the text section as executable. Handle the mapping of
+the vDSO for BTI similarly, mapping the text section as guarded pages so
+the BTI annotations in the vDSO become effective when they are present.
+
+This will mean that we can have BTI active for the vDSO in processes that
+do not otherwise support BTI. This should not be an issue for any expected
+use of the vDSO.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/kernel/vdso/Makefile | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/vdso.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index dd2514bb1511..51ad1cce8133 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -17,8 +17,10 @@ obj-vdso := vgettimeofday.o note.o sigreturn.o
- targets := $(obj-vdso) vdso.so vdso.so.dbg
- obj-vdso := $(addprefix $(obj)/, $(obj-vdso))
+diff --git a/arch/arm64/kernel/vdso.c b/arch/arm64/kernel/vdso.c
+index 033a48f30dbb..3b0289d5cccb 100644
+--- a/arch/arm64/kernel/vdso.c
++++ b/arch/arm64/kernel/vdso.c
+@@ -142,6 +142,7 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
+ 				    int uses_interp)
+ {
+ 	unsigned long vdso_base, vdso_text_len, vdso_mapping_len;
++	unsigned long gp_flags = 0;
+ 	void *ret;
  
-+btildflags-$(CONFIG_ARM64_BTI_KERNEL) += -z force-bti
+ 	vdso_text_len = vdso_lookup[arch_index].vdso_pages << PAGE_SHIFT;
+@@ -160,10 +161,13 @@ static int __setup_additional_pages(enum arch_vdso_type arch_index,
+ 	if (IS_ERR(ret))
+ 		goto up_fail;
+ 
++	if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL) && system_supports_bti())
++		gp_flags = VM_ARM64_BTI;
 +
- ldflags-y := -shared -nostdlib -soname=linux-vdso.so.1 --hash-style=sysv \
--		--build-id -n -T
-+		--build-id -n $(btildflags-y) -T
- 
- ccflags-y := -fno-common -fno-builtin -fno-stack-protector -ffixed-x18
- ccflags-y += -DDISABLE_BRANCH_PROFILING
+ 	vdso_base += PAGE_SIZE;
+ 	mm->context.vdso = (void *)vdso_base;
+ 	ret = _install_special_mapping(mm, vdso_base, vdso_text_len,
+-				       VM_READ|VM_EXEC|
++				       VM_READ|VM_EXEC|gp_flags|
+ 				       VM_MAYREAD|VM_MAYWRITE|VM_MAYEXEC,
+ 				       vdso_lookup[arch_index].cm);
+ 	if (IS_ERR(ret))
 -- 
 2.20.1
 
