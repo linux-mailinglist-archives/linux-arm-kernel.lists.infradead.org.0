@@ -2,59 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 779AB1C6938
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:44:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 052931C693E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 08:46:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sLzY25n5cfaaNK2EpSBM8n/b5Oqhs0AjbukIHFGQawI=; b=msjmkkGGse+KCe
-	Da4Ylq/xWqH5BlH6NadC4es74CLXtLugf1BB9LA7sS+GsDbwY6Mos+LwJ1ZedfHf8Xa1O5CifkP02
-	bkrp0fgGWeM2xEMaSWxgKDOSA8ty1SSI3BXV7JOMbzhBe5KbZ16iGKABb1VS8tfjG8iRix6ttZIxd
-	RwPPlglpRQKU2zyd+Zmv39q7hL0tkxNJEM8EwizcDH8/PcuK9V1tOwvNMwJ9uCEzJOeJeuXwifajv
-	DuZOMD4qUuYEEmEcPdQKnCtaTlpIlVVP6uNAtK7AciGPw9JAH0vxZX5Kb6LCkaIVQVSECbikU3eIu
-	stUd0ZJFGauY0O9ZbW8A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=vox22uPKJ+ErFTzHwzlSRecpTElfz51IoQhHrcs34v4=; b=Zj9gJv2tOdY7Um
+	ntecoklq5sSXGTHYT4i45eTE5yDD3fzVJDk++efo4Jdvs7YsdCLH8nPfbYD8tUZ/rLycF92KEFkfF
+	tH05/AapNBqn2Nz3oTMS7TJF84wRSELkSys8oRKrY5Ohpx8bxr2qUwL5xC495h0/OYGkapTPObxiP
+	oJFexiH3rH8ZzlDWtcWUT8mLylhPgsUJ+6o8bl/n9iv2T+OHWGQYuOjY96OHMQOoIfEhZxeFJUaO8
+	BX/dWW7CoMdWkn2ZNfrPZCU/DNP1eWLqBK/R5/EMJrujRlVm4O+0UvoEmFt73UM30VBIyyyysZYj0
+	ICBGesfA0mwOTs0FvzRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWDn6-0005Mv-AP; Wed, 06 May 2020 06:44:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWDmy-0005MR-Dg
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:44:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE7D430E;
- Tue,  5 May 2020 23:44:15 -0700 (PDT)
-Received: from [10.163.71.196] (unknown [10.163.71.196])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF5BC3F68F;
- Tue,  5 May 2020 23:44:13 -0700 (PDT)
-Subject: Re: [PATCH V3 08/16] arm64/cpufeature: Add remaining feature bits in
- ID_MMFR4 register
-To: Will Deacon <will@kernel.org>
-References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
- <1588426445-24344-9-git-send-email-anshuman.khandual@arm.com>
- <20200505111417.GG19710@willie-the-truck>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <ae1a105d-65aa-7225-38d3-3839a7d4aa19@arm.com>
-Date: Wed, 6 May 2020 12:13:44 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jWDp8-0008BF-8W; Wed, 06 May 2020 06:46:30 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWDp0-0008AZ-0L
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 06:46:23 +0000
+Received: by mail-il1-x142.google.com with SMTP id w6so744626ilg.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 05 May 2020 23:46:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=+/CvsVsRvsIe2fdwin42oKRwBiHMUNkSBi3zIOYY4k4=;
+ b=DT6WmVJOSFGWbwoJzWlGLC1MHvldjbW1aPbGsebQDxlwZe7iwnSNTolfUa76eOd29p
+ bY4+DyIu0HM7Ux+b79wpjv1HEfzbH79157RfuHSyksqzSHLknytmZWYPfXFm5QGWRjr4
+ trPVXMgze6AHFPvmnwrxjqlJKc728qaSJfARZbGbfhF4give+X0eaTP+oNhRMf+5ac8P
+ Arpc631AY/NRljNjuR5I9hcJdirqymusRyVIeUrXArJFWuT3SoexMOmMizUv/8UFF/8J
+ GTpCWHc3c1BWYWTjKwX/5uBZaJK6C+gV4m4MOKsh1M5DtywTmEZjpryYodVi30SRoDCo
+ EcOg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=+/CvsVsRvsIe2fdwin42oKRwBiHMUNkSBi3zIOYY4k4=;
+ b=JYkL+TAPid1WJkJBbfNpxFNkdyteLTSt99d3q237zexlGzG8FcuSGzUbO0C3nJ80Rm
+ i77z4D3QZxSuXdbSrcoimAVbmdgG3/NFrO7LUGDCeq5k135vOBBbi2A/43rlET0vG/3C
+ qHUXUIazDD15ndwnRyjVD2a/lZHcOeFXlpMIksONfKGhBZ76gpkiVKOIJPSdbRCmfZr9
+ sVvSyNbmhieJlk2mddJ8f9ucC38aKhAS6g1tsB5qFfh2ZLkPZ+YG5bj/fKAk5MymnV8A
+ P49yCTWdm3aDIgHkzyrGXNNguQ7vErZou7kU09qQ+tm7G+4Ha4PPDfiFXeq8V2eyMhFg
+ uAOQ==
+X-Gm-Message-State: AGi0PuYwpVyTvS69I/QSLxFFzUokWy4uzKxfe9w+11nclvrV9Yeu7oNl
+ pSp9qmUTnZ1AzZcQ4grZFBXlcApo9Y/hxyOvXjaFAA==
+X-Google-Smtp-Source: APiQypKJEgnZebPwGNweIcvVeYvS0XTuBvG2j4m7bwSAxW9ci9eJ/kiRyX1pjwNIRh6SnysmSCqDdQb9gXdF8OxrFFg=
+X-Received: by 2002:a92:aa07:: with SMTP id j7mr7777424ili.40.1588747581285;
+ Tue, 05 May 2020 23:46:21 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200505111417.GG19710@willie-the-truck>
-Content-Language: en-US
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-6-brgl@bgdev.pl>
+ <CAKOOJTzcNr7mc9xusQm3nCzkq5P=ha-si3fizeEL2_KJUOC3-Q@mail.gmail.com>
+In-Reply-To: <CAKOOJTzcNr7mc9xusQm3nCzkq5P=ha-si3fizeEL2_KJUOC3-Q@mail.gmail.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Wed, 6 May 2020 08:46:10 +0200
+Message-ID: <CAMRc=Md7gLMThfGF-7YLqW17MpMhU=UFbdTvfjbr9fFHTLir8g@mail.gmail.com>
+Subject: Re: [PATCH 05/11] net: core: provide devm_register_netdev()
+To: Edwin Peer <edwin.peer@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200505_234416_505901_231A01E3 
-X-CRM114-Status: GOOD (  13.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200505_234622_054140_7CC305FD 
+X-CRM114-Status: GOOD (  16.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,59 +90,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ netdev <netdev@vger.kernel.org>, Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Fabien Parent <fparent@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/05/2020 04:44 PM, Will Deacon wrote:
-> On Sat, May 02, 2020 at 07:03:57PM +0530, Anshuman Khandual wrote:
->> Enable all remaining feature bits like EVT, CCIDX, LSM, HPDS, CnP, XNX,
->> SpecSEI in ID_MMFR4 register per ARM DDI 0487F.a.
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: linux-kernel@vger.kernel.org
->>
->> Suggested-by: Mark Rutland <mark.rutland@arm.com>
->> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> ---
->>  arch/arm64/include/asm/sysreg.h |  8 ++++++++
->>  arch/arm64/kernel/cpufeature.c  | 13 +++++++++++++
->>  2 files changed, 21 insertions(+)
->>
->> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
->> index f9e3b9350540..0f34927f52b9 100644
->> --- a/arch/arm64/include/asm/sysreg.h
->> +++ b/arch/arm64/include/asm/sysreg.h
->> @@ -790,6 +790,14 @@
->>  #define ID_ISAR6_DP_SHIFT		4
->>  #define ID_ISAR6_JSCVT_SHIFT		0
->>  
->> +#define ID_MMFR4_EVT_SHIFT		28
->> +#define ID_MMFR4_CCIDX_SHIFT		24
->> +#define ID_MMFR4_LSM_SHIFT		20
->> +#define ID_MMFR4_HPDS_SHIFT		16
->> +#define ID_MMFR4_CNP_SHIFT		12
->> +#define ID_MMFR4_XNX_SHIFT		8
-> 
-> Why didn't you add ID_MMFR4_AC2_SHIFT as well?
-
-ID_MMFR4_AC2_SHIFT, which will be the replacement for an existing hard
-coded bits shift encoding ('4') is being added via [PATCH 16/16] where
-we replace all existing open encodings.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+d3QuLCA1IG1haiAyMDIwIG8gMjE6MjUgRWR3aW4gUGVlciA8ZWR3aW4ucGVlckBicm9hZGNvbS5j
+b20+IG5hcGlzYcWCKGEpOgo+ID4gKwo+ID4gK3N0YXRpYyB2b2lkIGRldm1fbmV0ZGV2X3JlbGVh
+c2Uoc3RydWN0IGRldmljZSAqZGV2LCB2b2lkICp0aGlzKQo+ID4gK3sKPiA+ICsgICAgICAgc3Ry
+dWN0IG5ldGRldmljZV9kZXZyZXMgKnJlcyA9IHRoaXM7Cj4gPiArCj4gPiArICAgICAgIHVucmVn
+aXN0ZXJfbmV0ZGV2KHJlcy0+bmRldik7Cj4gPiArfQo+ID4gKwo+ID4gKy8qKgo+ID4gKyAqICAg
+ICBkZXZtX3JlZ2lzdGVyX25ldGRldiAtIHJlc291cmNlIG1hbmFnZWQgdmFyaWFudCBvZiByZWdp
+c3Rlcl9uZXRkZXYoKQo+ID4gKyAqICAgICBAbmRldjogZGV2aWNlIHRvIHJlZ2lzdGVyCj4gPiAr
+ICoKPiA+ICsgKiAgICAgVGhpcyBpcyBhIGRldnJlcyB2YXJpYW50IG9mIHJlZ2lzdGVyX25ldGRl
+digpIGZvciB3aGljaCB0aGUgdW5yZWdpc3Rlcgo+ID4gKyAqICAgICBmdW5jdGlvbiB3aWxsIGJl
+IGNhbGwgYXV0b21hdGljYWxseSB3aGVuIHRoZSBwYXJlbnQgZGV2aWNlIG9mIG5kZXYKPiA+ICsg
+KiAgICAgaXMgZGV0YWNoZWQuCj4gPiArICovCj4gPiAraW50IGRldm1fcmVnaXN0ZXJfbmV0ZGV2
+KHN0cnVjdCBuZXRfZGV2aWNlICpuZGV2KQo+ID4gK3sKPiA+ICsgICAgICAgc3RydWN0IG5ldGRl
+dmljZV9kZXZyZXMgKmRyOwo+ID4gKyAgICAgICBpbnQgcmV0Owo+ID4gKwo+ID4gKyAgICAgICAv
+KiBzdHJ1Y3QgbmV0X2RldmljZSBpdHNlbGYgbXVzdCBiZSBkZXZyZXMgbWFuYWdlZC4gKi8KPiA+
+ICsgICAgICAgQlVHX09OKCEobmRldi0+cHJpdl9mbGFncyAmIElGRl9JU19ERVZSRVMpKTsKPiA+
+ICsgICAgICAgLyogc3RydWN0IG5ldF9kZXZpY2UgbXVzdCBoYXZlIGEgcGFyZW50IGRldmljZSAt
+IGl0IHdpbGwgYmUgdGhlIGRldmljZQo+ID4gKyAgICAgICAgKiBtYW5hZ2luZyB0aGlzIHJlc291
+cmNlLgo+ID4gKyAgICAgICAgKi8KPgo+IENhdGNoaW5nIHN0YXRpYyBwcm9ncmFtbWluZyBlcnJv
+cnMgc2VlbXMgbGlrZSBhbiBleHBlbnNpdmUgdXNlIG9mIHRoZQo+IGxhc3QgcnVudGltZSBmbGFn
+IGluIHRoZSBlbnVtLiBJdCB3b3VsZCBiZSB3ZWlyZCB0byBkZXZyZXMgbWFuYWdlIHRoZQo+IHVu
+cmVnaXN0ZXIgYW5kIG5vdCBhbHNvIGNob29zZSB0byBtYW5hZ2UgdGhlIHVuZGVybHlpbmcgbWVt
+b3J5IGluIHRoZQo+IHNhbWUgZmFzaGlvbiwgc28gaXQgd291bGRuJ3QgYmUgYW4gb2J2aW91cyBt
+aXN0YWtlIHRvIG1ha2UuIElmIGl0IG11c3QKPiBiZSBlbmZvcmNlZCwgb25lIGNvdWxkIGFsc28g
+aXRlcmF0ZSBvdmVyIHRoZSByZWdpc3RlcmVkIHJlbGVhc2UKPiBmdW5jdGlvbnMgYW5kIGNoZWNr
+IGZvciB0aGUgcHJlc2VuY2Ugb2YgZGV2bV9mcmVlX25ldGRldiB3aXRob3V0Cj4gYnVybmluZyB0
+aGUgZmxhZy4KPgoKSGkgRWR3aW4sCgpJJ3ZlIHN1Ym1pdHRlZCB0aGlzIHBhdGNoIHNvbWUgdGlt
+ZSBhZ28gYWxyZWFkeSBhbmQgd2FzIHRvbGQgdG8gY2hlY2sKaWYgdGhlIHVuZGVybHlpbmcgbWVt
+b3J5IGlzIG1hbmFnZWQgdG9vLiBJIGd1ZXNzIEkgY291bGQgdHJ5IHRvIHVzZQpkZXZyZXNfZmlu
+ZCgpIGhlcmUgdGhvdWdoLgoKUmUgdGhlIGxhc3QgYml0IGluIHByaXZfZmxhZ3M6IGlzIHRoaXMg
+cmVhbGx5IGEgcHJvYmxlbSB0aG91Z2g/IEl0J3MKbm90IGxpa2Ugc3RydWN0IG5ldF9kZXZpY2Ug
+bXVzdCByZW1haW4gc3RhYmxlIC0gZS5nLiB3ZSBjYW4gbWFrZQpwcml2X2ZsYWdzIGEgYml0bWFw
+LgoKQmFydAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
