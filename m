@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AACD1C73F6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:16:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3AAA1C7402
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 17:16:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=t0R1DZ8qr1tTIDaqYOs5uGv1rpnlgJHjoa1E96dpE1Y=; b=SHgiPNDWwmlyTZ
-	FqpbRES67giHs3RxFpSnf46TuzhRu4Xff/L5pbuzSxU3k+EsGAiD5xkC7Y/J2xLCbugmDD9roMCQa
-	pQITmTCi4smiq7tIhMAj6PrUcTpBMd+dmbuyWALwDCmIZ9YBLZXXuvqvTGEhaFpGfRLYyl2wVYx8d
-	10f0VK51glhr7McxQBsAfOcIj0m5TNM087ONGYXaKHA1SK9SY+Dw6YdD66kEh8GnPZ2Y4nqxOeKCQ
-	p8mna47/olF5nrdDP3RT4C3BmF14WKMMmhJ/f2AvNmStTKYaaXgmBpIFNg2jmDLRLKHLk4Q4RQPEw
-	4DPEBRLCU8+qR3UWZlUw==;
+	List-Owner; bh=sFE85eh8NImFQQ7nlGLOZUUzGCxJ5yjNgHq+rIaMpIQ=; b=YUKwXIrXXl4JPo
+	NCBB6L6V7KCJed/xkliXy/mWnQknvc5vcuQS+tQFVi1mqFxpqBju5XhW4W0teFdOiGycRc8EuHLDt
+	BIeE0wtzLqpImbkxZtfxxbNJvUe4DkoqdW8lATDbMCDZLCGWgk26PCqwddVk8c4hNQUUx3Lx++369
+	BIFzt0MagF4dkqc5OFXIKLNY9n/NgeBJxSbLFbHaDhkuQMPZA8m5u5izt3a+tNQApJAGkp6E8kiTg
+	sKKUGO95498t+9q4Iiv4GlZnhNCVeCv/C3g0EPVCBXDBl9yVN/UYPF/+/X6dlzZuzfqdgzLp0Bhm4
+	K+alDvOG7u67wuU8eUjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWLmJ-0004DP-5J; Wed, 06 May 2020 15:16:07 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1jWLmt-0004wu-48; Wed, 06 May 2020 15:16:43 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWLl6-0000Oi-P9
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:14:54 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 046FEgMb005116;
- Wed, 6 May 2020 10:14:42 -0500
+ id 1jWLlC-0000ZS-Oo
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 15:15:00 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 046FEkMm096803;
+ Wed, 6 May 2020 10:14:46 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588778082;
- bh=ANKUGmxjcIwlV3rIaZN/J5tOLrnX04VnB9EtUZpb2tU=;
+ s=ti-com-17Q1; t=1588778086;
+ bh=DOBs9Avsla6Bvl41pGUSBS2Aw8GI+lo3Fc5IsqKblZY=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=nMov142WRcXu5mobYWDrEDh68bXqU6z1qExS+1/glqx3tY16Z+SMTRXAdUkmWHcij
- /cy4K6fublaZwh9IGnTLJs5tK8F8eDyV3cEe5uc1rJPxBoDXkh2B7zMWqWa1sG8i0U
- TG1vmi7X2jAgRp21iwH2kp3C+0RDDVzNusSHx+ZM=
-Received: from DFLE102.ent.ti.com (dfle102.ent.ti.com [10.64.6.23])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 046FEgPQ015335;
- Wed, 6 May 2020 10:14:42 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE102.ent.ti.com
- (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ b=RVRbJ1cy7e6LHv8Xmp2/S9PjW63MP4xleWOnSHY7b0mFmZjx8dx9UfJw4fgNUoIKq
+ tiyvZNz/yu5j7uSj/UDWPrD4Kh6uLia+3yoFXgtRS3l7os/aNhiI+BQiHP679swqp8
+ GKTzZkw2qdHiGNM9cNyl/5rrJ8OVyVN6O7Ot1IX4=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 046FEkaI099712
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 6 May 2020 10:14:46 -0500
+Received: from DLEE103.ent.ti.com (157.170.170.33) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 6 May
- 2020 10:14:42 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
+ 2020 10:14:45 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE103.ent.ti.com
+ (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 6 May 2020 10:14:42 -0500
+ Frontend Transport; Wed, 6 May 2020 10:14:45 -0500
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 046FEUg8119457;
- Wed, 6 May 2020 10:14:38 -0500
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 046FEUg9119457;
+ Wed, 6 May 2020 10:14:42 -0500
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
  Arnd Bergmann <arnd@arndb.de>, Tom Joseph <tjoseph@cadence.com>
-Subject: [PATCH v4 02/14] linux/kernel.h: Add PTR_ALIGN_DOWN macro
-Date: Wed, 6 May 2020 20:44:17 +0530
-Message-ID: <20200506151429.12255-3-kishon@ti.com>
+Subject: [PATCH v4 03/14] PCI: cadence: Add support to use custom read and
+ write accessors
+Date: Wed, 6 May 2020 20:44:18 +0530
+Message-ID: <20200506151429.12255-4-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200506151429.12255-1-kishon@ti.com>
 References: <20200506151429.12255-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_081452_885212_CB75C2E5 
-X-CRM114-Status: GOOD (  16.49  )
+X-CRM114-CacheID: sfid-20200506_081458_889124_B34FF8C4 
+X-CRM114-Status: GOOD (  17.28  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -99,27 +101,201 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a macro for aligning down a pointer. This is useful to get an
-aligned register address when a device allows only word access and
-doesn't allow half word or byte access.
+Add support to use custom read and write accessors. Platforms that
+don't support half word or byte access or any other constraint
+while accessing registers can use this feature to populate custom
+read and write accessors. These custom accessors are used for both
+standard register access and configuration space register access of
+the PCIe host bridge.
 
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- include/linux/kernel.h | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/pci/controller/cadence/pcie-cadence.h | 107 +++++++++++++++---
+ 1 file changed, 94 insertions(+), 13 deletions(-)
 
-diff --git a/include/linux/kernel.h b/include/linux/kernel.h
-index 9b7a8d74a9d6..c3b361b5be54 100644
---- a/include/linux/kernel.h
-+++ b/include/linux/kernel.h
-@@ -34,6 +34,7 @@
- #define ALIGN_DOWN(x, a)	__ALIGN_KERNEL((x) - ((a) - 1), (a))
- #define __ALIGN_MASK(x, mask)	__ALIGN_KERNEL_MASK((x), (mask))
- #define PTR_ALIGN(p, a)		((typeof(p))ALIGN((unsigned long)(p), (a)))
-+#define PTR_ALIGN_DOWN(p, a)	((typeof(p))ALIGN_DOWN((unsigned long)(p), (a)))
- #define IS_ALIGNED(x, a)		(((x) & ((typeof(x))(a) - 1)) == 0)
+diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
+index df14ad002fe9..70b6b25153e8 100644
+--- a/drivers/pci/controller/cadence/pcie-cadence.h
++++ b/drivers/pci/controller/cadence/pcie-cadence.h
+@@ -223,6 +223,11 @@ enum cdns_pcie_msg_routing {
+ 	MSG_ROUTING_GATHER,
+ };
  
- /* generic data direction definitions */
++struct cdns_pcie_ops {
++	u32	(*read)(void __iomem *addr, int size);
++	void	(*write)(void __iomem *addr, int size, u32 value);
++};
++
+ /**
+  * struct cdns_pcie - private data for Cadence PCIe controller drivers
+  * @reg_base: IO mapped register base
+@@ -239,7 +244,7 @@ struct cdns_pcie {
+ 	int			phy_count;
+ 	struct phy		**phy;
+ 	struct device_link	**link;
+-	const struct cdns_pcie_common_ops *ops;
++	const struct cdns_pcie_ops *ops;
+ };
+ 
+ /**
+@@ -299,69 +304,145 @@ struct cdns_pcie_ep {
+ /* Register access */
+ static inline void cdns_pcie_writeb(struct cdns_pcie *pcie, u32 reg, u8 value)
+ {
+-	writeb(value, pcie->reg_base + reg);
++	void __iomem *addr = pcie->reg_base + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x1, value);
++		return;
++	}
++
++	writeb(value, addr);
+ }
+ 
+ static inline void cdns_pcie_writew(struct cdns_pcie *pcie, u32 reg, u16 value)
+ {
+-	writew(value, pcie->reg_base + reg);
++	void __iomem *addr = pcie->reg_base + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x2, value);
++		return;
++	}
++
++	writew(value, addr);
+ }
+ 
+ static inline void cdns_pcie_writel(struct cdns_pcie *pcie, u32 reg, u32 value)
+ {
+-	writel(value, pcie->reg_base + reg);
++	void __iomem *addr = pcie->reg_base + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x4, value);
++		return;
++	}
++
++	writel(value, addr);
+ }
+ 
+ static inline u32 cdns_pcie_readl(struct cdns_pcie *pcie, u32 reg)
+ {
+-	return readl(pcie->reg_base + reg);
++	void __iomem *addr = pcie->reg_base + reg;
++
++	if (pcie->ops && pcie->ops->read)
++		return pcie->ops->read(addr, 0x4);
++
++	return readl(addr);
+ }
+ 
+ /* Root Port register access */
+ static inline void cdns_pcie_rp_writeb(struct cdns_pcie *pcie,
+ 				       u32 reg, u8 value)
+ {
+-	writeb(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_RP_BASE + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x1, value);
++		return;
++	}
++
++	writeb(value, addr);
+ }
+ 
+ static inline void cdns_pcie_rp_writew(struct cdns_pcie *pcie,
+ 				       u32 reg, u16 value)
+ {
+-	writew(value, pcie->reg_base + CDNS_PCIE_RP_BASE + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_RP_BASE + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x2, value);
++		return;
++	}
++
++	writew(value, addr);
+ }
+ 
+ /* Endpoint Function register access */
+ static inline void cdns_pcie_ep_fn_writeb(struct cdns_pcie *pcie, u8 fn,
+ 					  u32 reg, u8 value)
+ {
+-	writeb(value, pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x1, value);
++		return;
++	}
++
++	writeb(value, addr);
+ }
+ 
+ static inline void cdns_pcie_ep_fn_writew(struct cdns_pcie *pcie, u8 fn,
+ 					  u32 reg, u16 value)
+ {
+-	writew(value, pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x2, value);
++		return;
++	}
++
++	writew(value, addr);
+ }
+ 
+ static inline void cdns_pcie_ep_fn_writel(struct cdns_pcie *pcie, u8 fn,
+ 					  u32 reg, u32 value)
+ {
+-	writel(value, pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->write) {
++		pcie->ops->write(addr, 0x4, value);
++		return;
++	}
++
++	writel(value, addr);
+ }
+ 
+ static inline u8 cdns_pcie_ep_fn_readb(struct cdns_pcie *pcie, u8 fn, u32 reg)
+ {
+-	return readb(pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->read)
++		return pcie->ops->read(addr, 0x1);
++
++	return readb(addr);
+ }
+ 
+ static inline u16 cdns_pcie_ep_fn_readw(struct cdns_pcie *pcie, u8 fn, u32 reg)
+ {
+-	return readw(pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->read)
++		return pcie->ops->read(addr, 0x2);
++
++	return readw(addr);
+ }
+ 
+ static inline u32 cdns_pcie_ep_fn_readl(struct cdns_pcie *pcie, u8 fn, u32 reg)
+ {
+-	return readl(pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg);
++	void __iomem *addr = pcie->reg_base + CDNS_PCIE_EP_FUNC_BASE(fn) + reg;
++
++	if (pcie->ops && pcie->ops->read)
++		return pcie->ops->read(addr, 0x4);
++
++	return readl(addr);
+ }
+ 
+ #ifdef CONFIG_PCIE_CADENCE_HOST
 -- 
 2.17.1
 
