@@ -2,59 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7898B1C7156
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:05:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 539C41C715D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 15:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AQspeWbtuWOOh9MuEavGl+qh1TGWFxG5fqOOQcAJA/o=; b=jkC88AG9GRBvAZvrWB6Gj9JSd
-	MgV8VF/+OlMiEqjSYtDElG3OXPSInJr2KQ5Rx+WnehAb/iOJyhJdu7MO05TY/0FfOXDc5pM4B9v93
-	Fd5+ZzQO88DKWL6ds5Rre2DFClfOZWh46/jzebwL02gaWHWVVCLUi6EzvUSH0PZCm3PwgRXj39MC+
-	teYm+g/GcUcowQOY5gJjYAJv5uYyYbiByKKp6zqHBkxkW5iU7/HHHa8QNeA7/9lEarBAyhOUIlOl8
-	sZGMo4+guKAUfWfGVsOfYp7ukWeyUu67GpnwtvMgHi54XLxexFI3tFDtRZR3GZBLJxXxyqmd0Fq2W
-	k64Kyknrg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=j/46CW35nVDNGsNVi0zrRenNnn2xV86G3g4xuqAohgI=; b=jeppv1FZG2ZOP2
+	L4OBKUUaTUEF1Pm9fAluap0zlCQ7WAigNbkFsBgQPQmQ0O5KHPeKDGL1DhsyVRdPS1DvhPqzBxZPL
+	TSLGmvwXRzwbZMZcQuwCDWBTV+InyZiFxuX6xAp6dsgrSSENg2yxkpTsrLiVZAGRt1ARvQpMAP7cv
+	HXn5n3gG6tF1MACLYmzRnDr5LtBvxMJanarCjSaBzB144/JpbyJ6RnVOnR9L9lF88aUJWLocTQjk/
+	0I7oo1CCbJfpi8UFTd88rR47wPI/igbMT6PtL9EwuHOzLsFj/eyvpDXRIU+toH3eu79H4OA16mPMl
+	vEAj/IjzgFNdSFbwM1mQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWJjT-0008JR-CK; Wed, 06 May 2020 13:05:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWJjD-0008IM-7x; Wed, 06 May 2020 13:04:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 63B95D6E;
- Wed,  6 May 2020 06:04:46 -0700 (PDT)
-Received: from [10.57.31.214] (unknown [10.57.31.214])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 64E833F68F;
- Wed,  6 May 2020 06:04:43 -0700 (PDT)
-Subject: Re: [PATCH v2 1/2] arm64/crash_core: Export KERNELPACMASK in
- vmcoreinfo
-To: Will Deacon <will@kernel.org>
-References: <1587968702-19996-1-git-send-email-amit.kachhap@arm.com>
- <20200504171741.GD1833@willie-the-truck>
- <bc5e6fc5-15f4-40bb-4466-816de5912893@arm.com>
- <20200506123112.GF8043@willie-the-truck>
-From: Amit Kachhap <amit.kachhap@arm.com>
-Message-ID: <590176f0-802b-f71a-0c1e-00283808e1d8@arm.com>
-Date: Wed, 6 May 2020 18:34:20 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jWJkc-0002r8-8h; Wed, 06 May 2020 13:06:14 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWJkS-0002qH-PK
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 13:06:07 +0000
+Received: from epcas2p2.samsung.com (unknown [182.195.41.54])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20200506130601epoutp04163c3c78aed1c0640b2c8177866b6258~Mcjnm7QGR1407814078epoutp04Q
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed,  6 May 2020 13:06:01 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20200506130601epoutp04163c3c78aed1c0640b2c8177866b6258~Mcjnm7QGR1407814078epoutp04Q
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1588770361;
+ bh=REp5cMAB/X+MaeXe6tEHjuJoP5GbS74ogwgiAXj7E9U=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=g8gfqBz/nbCf58wVIk1LxSh58cg1gOSFDAvvHs4zeTods8Sq4DrHxBfioQNRG3YjD
+ vJBbmSg1433ZNSiiGA0RDCnjyDOcaLVCkoAPL/AYzNqg0tR4fhj/pTSZ9EwMmdzWUn
+ wsKFD+zAfgMwcBojtarPHyixgerou3Jt+5KVhslI=
+Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
+ epcas2p4.samsung.com (KnoxPortal) with ESMTP id
+ 20200506130601epcas2p40ca1fb93bfb5ae459906e6d8478720f9~McjnLXtU_0139801398epcas2p43;
+ Wed,  6 May 2020 13:06:01 +0000 (GMT)
+Received: from epsmges2p4.samsung.com (unknown [182.195.40.187]) by
+ epsnrtp4.localdomain (Postfix) with ESMTP id 49HH062kFHzMqYkZ; Wed,  6 May
+ 2020 13:05:58 +0000 (GMT)
+Received: from epcas2p1.samsung.com ( [182.195.41.53]) by
+ epsmges2p4.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 46.10.04647.636B2BE5; Wed,  6 May 2020 22:05:58 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas2p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200506130557epcas2p2816ed596f34dd10405e748e1fcd12ebe~McjjgQBdh2082720827epcas2p2b;
+ Wed,  6 May 2020 13:05:57 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200506130557epsmtrp2f90465e95893ece2bdff5919744dea36~McjjcR9B41737917379epsmtrp2H;
+ Wed,  6 May 2020 13:05:57 +0000 (GMT)
+X-AuditID: b6c32a48-88dff70000001227-be-5eb2b636b0c7
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 0D.81.18461.436B2BE5; Wed,  6 May 2020 22:05:56 +0900 (KST)
+Received: from KORCO008850 (unknown [12.36.185.49]) by epsmtip2.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20200506130556epsmtip22f1bdb82c78c22d15ee7aff33ca275ad~McjjLUrlw3177131771epsmtip2B;
+ Wed,  6 May 2020 13:05:56 +0000 (GMT)
+From: =?utf-8?Q?=EC=B5=9C=EB=8F=99=ED=98=81/DONGHYEOK_CHOE?=
+ <d7271.choe@samsung.com>
+To: "'Will Deacon'" <will@kernel.org>
+In-Reply-To: <20200506125315.GH8043@willie-the-truck>
+Subject: RE: Reqeust export symbol for API in arch/arm64/*
+Date: Wed, 6 May 2020 22:05:56 +0900
+Message-ID: <000001d623a7$14bc6590$3e3530b0$@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <20200506123112.GF8043@willie-the-truck>
-Content-Language: en-US
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQHWb/N1gTRzZGonrGREO3YTptpglQFi3uW7ArVbMHuoeau0sA==
+Content-Language: ko
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+Ty7HK0TX2vVq3/IOBmkYW2rs46WEhU1SGoVGHSZHdxBzd3Y
+ 2Sqji5SVltkFU5op2sVCxGyJWFGtGSwrM4yuVJZd6YZpWesC7Xgm+d+P932e732f7/tIQlWv
+ iCPz7G7eZeestCJG1tqeyCQbWn1mbVPHeLbk+W05+3YwRLA7rnYT7PeHvUrW9+qBnL138ZiC
+ LXrKsCf8/cq5pLHW5zH6GkoUxvMntxvLWhqQccAXb5Kvss7J5TkL79Lw9myHJc+ek0YvXpE1
+ P4sxaHXJuhR2Fq2xczY+jV6QYUpemGcNL0JrNnBWT7hk4gSBnp4+x+XwuHlNrkNwp9G802J1
+ 6nTOaQJnEzz2nGnZDluqTqvVM2HlOmtu4bu+KOcjalPNn0+yQlRJ7UXRJOCZsOt7h3IviiFV
+ uA3BnpedSGyocD+CS5X5UmMQwcDvQjTsaL3+Ry41LiO4di4Usb9HEPx2ekilwCuh5/UDhchq
+ PBmuhJqRKCJwF4Kij51hB0lGYwaaAzpRMw6nQoU/IBdZhhOgseXaEFM4BToHbyglHgsdR1/L
+ RCbwVKiv+0hIG2kg9KZeLh6pxvOgIhgrSdRQVbKbEMcCPkrCqV1FkQQL4MzxqxHvOPgQbFFK
+ HAcDXy4rJN4I/aEgkszFCJ7fKo2YZ4D37R4kDiNwIpy9OF1EwJPg+pPIamOguP2vUipTULxb
+ JRkToKvsBRqe1Fz9Oeogor0jgnlHBPOOSOD9P6sWyRrQBN4p2HJ4Qe+cOfKtfWjojyYZ25D/
+ TkYAYRLRoyl/vc+sknMbhAJbAAFJ0Gpq9M9zZhVl4Qo28y5Hlstj5YUAYsL3foiIG5/tCP94
+ uztLx+gNBm0KwzIGPUtPpHyjHq9R4RzOzefzvJN3DfuiyOi4QtRQuzWTSiLjm8qrzd3Ly5fW
+ VVlS0mdrlllvN25RtGUc0nj7bK0Fh7V0z9ptyh198fub8snSZysWZ2wasKSePdBsypbdWVS5
+ moyf/8v7ON2yJPFu+5RYd3JReuL6818dTT9ia+4fOXFBb5i7r3ereVtXzM3MbvKeSc11mipw
+ zU5/kJYJuZwuiXAJ3D/9dj9CuQMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmphkeLIzCtJLcpLzFFi42LZdlhJXtdk26Y4g1VTrC06751htXj27Sez
+ RdP+S8wWX68/YrfY9Pgaq8XlXXPYLFrumFosPvCJ3YHDY8GmUo9NqzrZPDYvqffo27KK0ePz
+ JrkA1igum5TUnMyy1CJ9uwSujG89J1gKmrgqzv89xNjA2MfRxcjJISFgIrHtyB/WLkYuDiGB
+ 3YwSffMvMUIkpCTat8xkgrCFJe63HIEqesYocerOJpYuRg4ONoFQie0nBUBqRARUJfb93MAI
+ UsMscJ1RYtbPX4wQDVsYJVZfOMYE0sApYCqx4ZAhSIOwgJXEtAOHWEFsFgEViTVbDoLZvAKW
+ Eme/nWCHsAUlTs58wgJiMwtoSzy9+RTOXrbwNTPEcQoSP58uYwUZLyLgJDHtuCREiYjE7M42
+ 5gmMwrOQTJqFZNIsJJNmIWlZwMiyilEytaA4Nz232LDAMC+1XK84Mbe4NC9dLzk/dxMjOKK0
+ NHcwbl/1Qe8QIxMH4yFGCQ5mJRFenh8b44R4UxIrq1KL8uOLSnNSiw8xSnOwKInz3ihcGCck
+ kJ5YkpqdmlqQWgSTZeLglGpgYv/uZJy3x1dxY4TlIfuUPRX67N8iJ/nd+Dqrv/2wxRaVw0sP
+ VWT6rtOf8oXX6PSeZ9q+wjPnpkgZ9ol6BL9bM295zIJHJ1TcD0xxORsaap0ipdPwVNPukGeX
+ 97svWsbsu+PWKbYlXmbgvrtirnf20ff7M6cvblm2Wf3zG6+b8dv+1PZUqp0487VySr6lp5a2
+ TW34JkH/aQbPPe/xv432dtO6s+lLnub51Bl7bcotX5T+vc1hWBskouJV4O1YsmTb9Q1HJ8/c
+ kWZ1er9L3I0kAeEdaexHRR7mJD4JTaj0UXz99aetg9v1h5dnyTmktuXvTktcuUW/noGx80Ol
+ 8hZfz51PH/w+sShkTm7LIituJZbijERDLeai4kQAxdBsDBcDAAA=
+X-CMS-MailID: 20200506130557epcas2p2816ed596f34dd10405e748e1fcd12ebe
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20200506124645epcas2p25a8efbe59fa20194e19d642227dd47ae
+References: <CGME20200506124645epcas2p25a8efbe59fa20194e19d642227dd47ae@epcas2p2.samsung.com>
+ <00bc01d623a4$669d1e70$33d75b50$@samsung.com>
+ <20200506125315.GH8043@willie-the-truck>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_060447_322757_41BD931A 
-X-CRM114-Status: GOOD (  14.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200506_060605_261630_40FC3373 
+X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,55 +148,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bhupesh Sharma <bhsharma@redhat.com>, kexec@lists.infradead.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: changki.kim@samsung.com, linux-kernel@vger.kernel.org,
+ youngmin.nam@samsung.com, hosung0.kim@samsung.com, hajun.sung@samsung.com,
+ gregkh@google.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On 5/6/20 6:01 PM, Will Deacon wrote:
-> On Wed, May 06, 2020 at 05:32:56PM +0530, Amit Kachhap wrote:
->> On 5/4/20 10:47 PM, Will Deacon wrote:
->>> On Mon, Apr 27, 2020 at 11:55:01AM +0530, Amit Daniel Kachhap wrote:
->>>> diff --git a/arch/arm64/include/asm/compiler.h b/arch/arm64/include/asm/compiler.h
->>>> index eece20d..32d5900 100644
->>>> --- a/arch/arm64/include/asm/compiler.h
->>>> +++ b/arch/arm64/include/asm/compiler.h
->>>> @@ -19,6 +19,9 @@
->>>>    #define __builtin_return_address(val)					\
->>>>    	(void *)(ptrauth_clear_pac((unsigned long)__builtin_return_address(val)))
->>>> +#else  /* !CONFIG_ARM64_PTR_AUTH */
->>>> +#define	ptrauth_user_pac_mask()		0ULL
->>>> +#define	ptrauth_kernel_pac_mask()	0ULL
->>>
->>> This doesn't look quite right to me, since you still have to take into
->>> account the case where CONFIG_ARM64_PTR_AUTH=y but the feature is not
->>> available at runtime:
->>
->> Yes agree with you here. However the config gaurd is saving some extra
->> computation for __builtin_return_address. There are some compiler
->> support being added in __builtin_extract_return_address to mask the PAC.
->> Hopefully that will improve this code. In the meantime let it be like this.
-> 
-> Does the extra computation matter? Isn't it just a couple of instructions?
-
-ok sure. I will push v3 as you suggested.
-
-Thanks,
-Amit
-
-> 
-> Will
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Cj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0KPiBGcm9tOiBXaWxsIERlYWNvbiA8d2lsbEBr
+ZXJuZWwub3JnPgo+IFNlbnQ6IFdlZG5lc2RheSwgTWF5IDYsIDIwMjAgOTo1MyBQTQo+IFRvOiDv
+v73Wte+/ve+/ve+/vS9ET05HSFlFT0sgQ0hPRSA8ZDcyNzEuY2hvZUBzYW1zdW5nLmNvbT4NCj4g
+Q2M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGludXgta2VybmVsQHZn
+ZXIua2VybmVsLm9yZzsNCj4gaG9zdW5nMC5raW1Ac2Ftc3VuZy5jb207IGNoYW5na2kua2ltQHNh
+bXN1bmcuY29tOyBoYWp1bi5zdW5nQHNhbXN1bmcuY29tOw0KPiBncmVna2hAZ29vZ2xlLmNvbTsg
+eW91bmdtaW4ubmFtQHNhbXN1bmcuY29tDQo+IFN1YmplY3Q6IFJlOiBSZXFldXN0IGV4cG9ydCBz
+eW1ib2wgZm9yIEFQSSBpbiBhcmNoL2FybTY0LyoNCj4gDQo+IE9uIFdlZCwgTWF5IDA2LCAyMDIw
+IGF0IDA5OjQ2OjQ1UE0gKzA5MDAsICDWtSAgIC9ET05HSFlFT0sgQ0hPRSB3cm90ZToNCj4gPiBJ
+IGFtIHNvZnR3YXJlIGVuZ2luZWVyIGluIGNoYXJnZSBvZiBCU1AgKFNhbXN1bmcgU09DIHZlbmRv
+cikuDQo+ID4NCj4gPiBSZWNlbnRseSwgR29vZ2xlIGludHJvZHVjZWQgR0tJIGZyb20gQW5kcm9p
+ZCBSIHZlcnNpb24uDQo+ID4gV2UgY2Fubm90IHVzZSBtYWlubGluZSBBUEkgd2l0aG91dCAnZXhw
+b3J0IHN5bWJvbCcgYnkgdGhlIEdLSSBwb2xpY3kuDQo+ID4gQnV0IHdlIHdhbnQgdG8gbWFrZSBh
+biBhcm02NCBzcGVjaWZpYyB2ZW5kb3IgZHJpdmVyIGluIHtrZXJuZWwgc291cmNlDQo+ID4gcm9v
+dH0vZHJpdmVycy9zb2Mvc2Ftc3VuZy8qLg0KPiA+DQo+ID4gQ291bGQgeW91IHN1cHBvcnQgdXMg
+dG8gdXNlIHRoZSBiZWxvdyBBUElzPw0KPiANCj4gU29ycnksIGJ1dCBhcyBhIGdlbmVyYWwgcnVs
+ZSBvZiB0aHVtYiB0aGUga2VybmVsIGRvZXNuJ3QgRVhQT1JUIHN5bWJvbHMNCj4gdGhhdCBhcmUg
+bm90IHVzZWQgYnkgaW4tdHJlZSBtb2R1bGVzLiBZb3UnbGwgbmVlZCB0byBzdWJtaXQgeW91ciBk
+cml2ZXJzDQo+IGFsb25nIHdpdGggdGhlIHBhdGNoZXMgZG9pbmcgdGhlIGV4cG9ydHMgaWYgdGhl
+eSBhcmUgdG8gYmUgY29uc2lkZXJlZCBmb3INCj4gaW5jbHVzaW9uLg0KPiANCj4gVGhhbmtzLA0K
+PiANCj4gV2lsbA0KDQpUaGFuayB5b3UgZm9yIHlvdXIgcXVpY2sgcmVzcG9uc2UuDQpJJ2xsIHRy
+eS4NCg0KVGhhbmtzDQoNCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
