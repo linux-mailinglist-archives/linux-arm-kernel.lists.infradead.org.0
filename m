@@ -2,82 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35F011C6DD3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 11:58:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 763711C6DE3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:01:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZXIFYSPaEwYIl3lFGutDJgt6l5WjJXHdwbPERV+3fV8=; b=sNnkg/EEPElBts
-	ZGqgjKcQdN8+diuRwciYTqh5n0iEV2LncjmjzoEyWbIFIFqluc6IxKStwFmeQ2lTITX2WAB0WjaiY
-	Jpqt492Wgr+h/lIGjaS5DNxxPjUt0QPOBT4GGWquuSIxNeeKkUOCXgUqwOiWAZRwkxf5jdGsRd8KH
-	RtfbNh0T/958lOGPDEd8gMn950Cg32GZnJ3aYuxDMZSOrPdr0PlVELFq2iyX/bRluz3eaLphIEG8Z
-	8uEygqITnzHEAD5Ppj0OZcg3XD7pDivRrdmyDWOmOxpULAZ3y6w9Ex58UrkCHLW5nTnS3QpxC7XY/
-	cQ2h4OXsBAZryzjNIpAg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+IlSdlZfVfhx9OcBTDP1NWxcEVfQAYPFQDxZamMXnhI=; b=KrifQ+uU97gx9F
+	tCgoyDaYDhGJ2aSbcRZJJAPgFyPLD0mwqOhqiBP4fEa2P8EYxAzlRvlZOZ57Of4Q6QOimcKeShzOm
+	A5Sjeyg2CLqVYqatVAG/P6AS0pUDvnLEtJDWrlJo0FhL1/qJZes48tWpMHOBt+vJKk0iFemnYiTvW
+	Y5vr9IIhAt8rghtavtAIPgvMMj1J5yg5C2cC+0D1/tGkMzM3cnUYSYu6YjR0dQYS/liEbO5dc9Wr2
+	LFWq+6Ei9ggwAN2Y0rgZEEeBNNLYha3DDa95/8SgwNdZt5TfmimR0BViJjt0sTJcL4G4dQ5BooLIx
+	IEW0ArrddV6ExbN8N7SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWGoU-0002Dr-2k; Wed, 06 May 2020 09:58:02 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWGoF-0002D6-B0
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 09:57:48 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id u12so738972vsq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 06 May 2020 02:57:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cLVRESBoKPDQJtZ+ThuiAcYI3TdQCvmpu5N5ap/84vg=;
- b=QvHcHNJv4TLk4yeHfEs21Cb+swsgc5BqyQVaDr8vGh+oOkIyjdNVK6vBnsXKt1Ro9p
- lrbWbY9rsYAi6JYMsF181p9daiS8QWD+IGymftoG3EZHH7QOWQ8B704TB8nGmamk5N0/
- UcjaM/2y/cqADBsPMReZoS3BUAf7j50WZZo6mRAVi2C3JyeTqzjhgNLISHmn+Wi7wSZ9
- DmFgpjYKj+Iq8cdZyHzkwPUNn9cl+6zFjGKtkD2UE4xcQ70GFSHB9M1QyCPFzHABYV57
- ZnRi4yBgQdUQelQh1HBHv32p1LwaKnuyUf7AfoAPkacmfXnsltTrRNejAN8HBeSPOuaF
- 5Eyg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cLVRESBoKPDQJtZ+ThuiAcYI3TdQCvmpu5N5ap/84vg=;
- b=Aji40pgqA7UupENFrUGJcH6LBXl8B8K3sijlUKGr8u9I7n7sRInUOR0sX4aOZbNekI
- 9BAk5NTVCLDxzn1DwKsfJcoLB7j8NICvZuYHxiQsQYpD8LnqWJ9vgdnt991rvpAvbNZ3
- ucUjbiy24ii9Y9WuJLDOh8oh9HJ76Z6eXN5cZEmkskeAP1joDuK2tXaULnJvM1hAtZdy
- XJcfxrKRWfdc+7lR2AUzQQxB+tZ51JaKa1NotRtaGEeaBT/3gu+JPbF5TKutWGxnQbql
- i/0eWL3RDmrDg5v/FmxIa5/GacuC9bs0CLOjGcVI8zPICVwHiOVuNVUBMafLsbbBAJTu
- Z+4A==
-X-Gm-Message-State: AGi0PubbCsbvQvfPF6Q6oVuLyLXOTtna4MafVKFW/Pr2zfT3TBDP/0Hv
- SA2D9O6WSz9rII/yYjF7Hp/8L0PLO4enSdkvmjrPcA==
-X-Google-Smtp-Source: APiQypKLOZf+1q8lOTy5vDVF1evQNddQakrlqUF5XgociHzpoFintL/zhnSsv06HVF3oEHG2Eb1/X7JPOcMW2F7Qklo=
-X-Received: by 2002:a05:6102:407:: with SMTP id
- d7mr6020126vsq.159.1588759065941; 
- Wed, 06 May 2020 02:57:45 -0700 (PDT)
+	id 1jWGrT-0005EK-AK; Wed, 06 May 2020 10:01:07 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWGrJ-0005BQ-Tz
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:01:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E6B030E;
+ Wed,  6 May 2020 03:00:56 -0700 (PDT)
+Received: from [192.168.2.22] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 681FE3F71F;
+ Wed,  6 May 2020 03:00:55 -0700 (PDT)
+Subject: Re: [PATCH 07/16] arm64: dts: arm: Fix GIC compatible names
+To: Marc Zyngier <maz@kernel.org>
+References: <20200505165212.76466-1-andre.przywara@arm.com>
+ <20200505165212.76466-8-andre.przywara@arm.com>
+ <86lfm6tf1f.wl-maz@kernel.org> <629da7f9-9cc9-ec9e-f175-ef6c90b5e3f1@arm.com>
+ <d9ebbc077d70805bed252656dede750b@kernel.org>
+From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
+Organization: ARM Ltd.
+Message-ID: <72e7ca7e-003f-7edf-267c-763014f33fdc@arm.com>
+Date: Wed, 6 May 2020 11:00:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200429103644.5492-1-daniel.lezcano@linaro.org>
- <20200429103644.5492-4-daniel.lezcano@linaro.org>
-In-Reply-To: <20200429103644.5492-4-daniel.lezcano@linaro.org>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Wed, 6 May 2020 15:27:10 +0530
-Message-ID: <CAHLCerPJkwi9o5p6UheC+bkdkSYu1fZu5jjWrOjWeSk8+R75ZQ@mail.gmail.com>
-Subject: Re: [PATCH v4 4/4] thermal: cpuidle: Register cpuidle cooling device
-To: Daniel Lezcano <daniel.lezcano@linaro.org>
+In-Reply-To: <d9ebbc077d70805bed252656dede750b@kernel.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_025747_378885_06B94897 
-X-CRM114-Status: GOOD (  18.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200506_030059_525596_EB53B9DF 
+X-CRM114-Status: GOOD (  20.88  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,93 +67,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- open list <linux-kernel@vger.kernel.org>,
- "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Zhang Rui <rui.zhang@intel.com>,
- Lukasz Luba <lukasz.luba@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 4:07 PM Daniel Lezcano
-<daniel.lezcano@linaro.org> wrote:
->
-> The cpuidle driver can be used as a cooling device by injecting idle
-> cycles. The DT binding for the idle state added an optional
-
-Incomplete sentence.
-
-> When the property is set, register the cpuidle driver with the idle
-> state node pointer as a cooling device. The thermal framework will do
-> the association automatically with the thermal zone via the
-> cooling-device defined in the device tree cooling-maps section.
->
-> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-
-Conditionally,
-
-Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
-
-
-> ---
->  - V4:
->    - Do not check the return value as the function does no longer return one
-> ---
->  drivers/cpuidle/cpuidle-arm.c  | 3 +++
->  drivers/cpuidle/cpuidle-psci.c | 3 +++
->  2 files changed, 6 insertions(+)
->
-> diff --git a/drivers/cpuidle/cpuidle-arm.c b/drivers/cpuidle/cpuidle-arm.c
-> index 9e5156d39627..8c758920d699 100644
-> --- a/drivers/cpuidle/cpuidle-arm.c
-> +++ b/drivers/cpuidle/cpuidle-arm.c
-> @@ -8,6 +8,7 @@
->
->  #define pr_fmt(fmt) "CPUidle arm: " fmt
->
-> +#include <linux/cpu_cooling.h>
->  #include <linux/cpuidle.h>
->  #include <linux/cpumask.h>
->  #include <linux/cpu_pm.h>
-> @@ -124,6 +125,8 @@ static int __init arm_idle_init_cpu(int cpu)
->         if (ret)
->                 goto out_kfree_drv;
->
-> +       cpuidle_cooling_register(drv);
-> +
->         return 0;
->
->  out_kfree_drv:
-> diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
-> index bae9140a65a5..1f38e0dfc9b2 100644
-> --- a/drivers/cpuidle/cpuidle-psci.c
-> +++ b/drivers/cpuidle/cpuidle-psci.c
-> @@ -9,6 +9,7 @@
->  #define pr_fmt(fmt) "CPUidle PSCI: " fmt
->
->  #include <linux/cpuhotplug.h>
-> +#include <linux/cpu_cooling.h>
->  #include <linux/cpuidle.h>
->  #include <linux/cpumask.h>
->  #include <linux/cpu_pm.h>
-> @@ -313,6 +314,8 @@ static int __init psci_idle_init_cpu(int cpu)
->         if (ret)
->                 goto out_kfree_drv;
->
-> +       cpuidle_cooling_register(drv);
-> +
->         return 0;
->
->  out_kfree_drv:
-> --
-> 2.17.1
->
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDYvMDUvMjAyMCAxMDoxNiwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IE9uIDIwMjAtMDUtMDYg
+MDk6NDUsIEFuZHLDqSBQcnp5d2FyYSB3cm90ZToKPj4gT24gMDUvMDUvMjAyMCAxOToyNSwgTWFy
+YyBaeW5naWVyIHdyb3RlOgo+Pj4gT24gVHVlLCAwNSBNYXkgMjAyMCAxNzo1MjowMyArMDEwMCwK
+Pj4+IEFuZHJlIFByenl3YXJhIDxhbmRyZS5wcnp5d2FyYUBhcm0uY29tPiB3cm90ZToKPj4+Pgo+
+Pj4+IFRoZSBHSUMgRFQgYmluZGluZyBvbmx5IGFsbG93cyBhIGNlcnRhaW4gY29tYmluYXRpb24g
+b2YgRFQgY29tcGF0aWJsZQo+Pj4+IHN0cmluZ3MsIG1vc3RseSBqdXN0IGNvbnNpc3Rpbmcgb2Yg
+b25lIG5hbWUuCj4+Pj4KPj4+PiBEcm9wIHRoZSBjb21iaW5hdGlvbiBvZiBtdWx0aXBsZSBuYW1l
+cyBhbmQgZ28gd2l0aCB0aGUKPj4+PiAiYXJtLGNvcnRleC1hMTUtZ2ljIiBuYW1lIGZvciBHSUN2
+MiwgYXMgdGhpcyBzZWVtcyB0byBiZSB0aGUgbW9zdAo+Pj4+IHdpZGVseQo+Pj4+IGFjY2VwdGVk
+IHN0cmluZy4gImFybSxnaWMtNDAwIiB3b3VsZCBiZSBtb3JlIGNvcnJlY3QsIGJ1dCB3YXMKPj4+
+PiBpbnRyb2R1Y2VkCj4+Pj4gbXVjaCBsYXRlciBpbnRvIHRoZSBrZXJuZWwncyBHSUMgZHJpdmVy
+Lgo+Pj4+Cj4+Pj4gU2lnbmVkLW9mZi1ieTogQW5kcmUgUHJ6eXdhcmEgPGFuZHJlLnByenl3YXJh
+QGFybS5jb20+Cj4+Pj4gLS0tCj4+Pj4gwqBhcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0
+aW9uLXY4LWdpY3YyLmR0c2kgfCAyICstCj4+Pj4gwqBhcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9q
+dW5vLWJhc2UuZHRzacKgwqDCoMKgwqDCoMKgwqDCoMKgIHwgMiArLQo+Pj4+IMKgYXJjaC9hcm02
+NC9ib290L2R0cy9hcm0vcnRzbV92ZS1hZW12OGEuZHRzwqDCoMKgwqDCoMKgIHwgMiArLQo+Pj4+
+IMKgMyBmaWxlcyBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDMgZGVsZXRpb25zKC0pCj4+Pj4K
+Pj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9ib290L2R0cy9hcm0vZm91bmRhdGlvbi12OC1n
+aWN2Mi5kdHNpCj4+Pj4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LWdp
+Y3YyLmR0c2kKPj4+PiBpbmRleCAxNWZlODE3MzhlOTQuLjYxYTE3NTBmY2RkNiAxMDA2NDQKPj4+
+PiAtLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LWdpY3YyLmR0c2kK
+Pj4+PiArKysgYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9mb3VuZGF0aW9uLXY4LWdpY3YyLmR0
+c2kKPj4+PiBAQCAtNiw3ICs2LDcgQEAKPj4+Pgo+Pj4+IMKgLyB7Cj4+Pj4gwqDCoMKgwqAgZ2lj
+OiBpbnRlcnJ1cHQtY29udHJvbGxlckAyYzAwMTAwMCB7Cj4+Pj4gLcKgwqDCoMKgwqDCoMKgIGNv
+bXBhdGlibGUgPSAiYXJtLGNvcnRleC1hMTUtZ2ljIiwgImFybSxjb3J0ZXgtYTktZ2ljIjsKPj4+
+PiArwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJhcm0sY29ydGV4LWExNS1naWMiOwo+Pj4+
+IMKgwqDCoMKgwqDCoMKgwqAgI2ludGVycnVwdC1jZWxscyA9IDwzPjsKPj4+PiDCoMKgwqDCoMKg
+wqDCoMKgICNhZGRyZXNzLWNlbGxzID0gPDI+Owo+Pj4+IMKgwqDCoMKgwqDCoMKgwqAgaW50ZXJy
+dXB0LWNvbnRyb2xsZXI7Cj4+Pj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJt
+L2p1bm8tYmFzZS5kdHNpCj4+Pj4gYi9hcmNoL2FybTY0L2Jvb3QvZHRzL2FybS9qdW5vLWJhc2Uu
+ZHRzaQo+Pj4+IGluZGV4IDNmZWVmZDYxZWI3Ni4uNjIzOTJhYjFmODgwIDEwMDY0NAo+Pj4+IC0t
+LSBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvYXJtL2p1bm8tYmFzZS5kdHNpCj4+Pj4gKysrIGIvYXJj
+aC9hcm02NC9ib290L2R0cy9hcm0vanVuby1iYXNlLmR0c2kKPj4+PiBAQCAtNjksNyArNjksNyBA
+QAo+Pj4+IMKgwqDCoMKgIH07Cj4+Pj4KPj4+PiDCoMKgwqDCoCBnaWM6IGludGVycnVwdC1jb250
+cm9sbGVyQDJjMDEwMDAwIHsKPj4+PiAtwqDCoMKgwqDCoMKgwqAgY29tcGF0aWJsZSA9ICJhcm0s
+Z2ljLTQwMCIsICJhcm0sY29ydGV4LWExNS1naWMiOwo+Pj4+ICvCoMKgwqDCoMKgwqDCoCBjb21w
+YXRpYmxlID0gImFybSxjb3J0ZXgtYTE1LWdpYyI7Cj4+Pgo+Pj4gV2h5PyBHSUMtNDAwIGlzIGRl
+ZmluaXRlbHkgdGhlIG1vc3QgY29ycmVjdCBjb21wYXRpYmxlIHN0cmluZy4gSSdkCj4+PiByYXRo
+ZXIgc2VlIHRoaXMgY29tcGF0aWJsZSBiZWluZyBnZW5lcmFsaXNlZCB0byB0aGUgbW9kZWxzIHJh
+dGhlciB0aGFuCj4+PiBvbmx5IHJlZmVyZW5jaW5nIHRoZSBBMTUgR0lDLgo+Pgo+PiBJIGFncmVl
+IHRoYXQgZ2ljLTQwMCBpcyB0aGUgZmFyIGJldHRlciBuYW1lLCBidXQgaXQgd2FzIG9ubHkgaW50
+cm9kdWNlZAo+PiBpbiB2My4xNi4gU28gb21pdHRpbmcgYXJtLGNvcnRleC1hMTUtZ2ljIHdvdWxk
+IGJyZWFrIGFueSBrZXJuZWxzIGJlZm9yZQo+PiB0aGF0LCB3aGljaCBJIHdvdWxkIGxpa2UgdG8g
+YXZvaWQuCj4gCj4gSSBhbSBub3QgdGFsa2luZyBhYm91dCBkcm9wcGluZyB0aGUgQTE1IEdJQy4g
+SSdtIHNheWluZyB0aGF0IGJvdGggc2hvdWxkCj4gc3RheS4gSXMgdGhlcmUgYW55dGhpbmcgaW4g
+dGhlIERUIGJpbmRpbmcgdGhhdCBmb3JiaWRzIG11bHRpcGxlIG5hbWVzIGluCj4gdGhlIGNvbXBh
+dGlibGUgcHJvcGVydHk/CgpXZWxsLCB0aGUgY3VycmVudCBmb3JtIG9mIHRoZSBZQU1MIGJpbmRp
+bmdzIHJlcXVpcmUgZXZlcnkgY29tYmluYXRpb24gb2YKY29tcGF0aWJsZSBzdHJpbmdzIHRvIGJl
+IGxpc3RlZCwgZWl0aGVyIGV4cGxpY2l0bHksIG9yIHVzaW5nIGFuIGxpc3Qgb2YKYWxsb3dlZCBz
+dHJpbmdzIGZvciBlYWNoIHBvc2l0aW9uLiBUaGlzIGNvbWJpbmF0aW9uIGhlcmUgaXMgbm90IGxp
+c3RlZAphdCB0aGUgbW9tZW50LgoKPj4gSXQncyBhY3R1YWxseSBhIHBpdHkgdGhhdCB3ZSBhcmUg
+c28gcGlja3kgYWJvdXQgdGhlIGNvbXBhdGlibGUgbGlzdGluZ3MsCj4+IGJlY2F1c2UgdGhlIGV4
+aXN0aW5nIGNvbWJpbmF0aW9uIGlzIGFjdHVhbGx5IHF1aXRlIG5pY2U6IHdlIGdldAo+PiBjb21w
+YXRpYmlsaXR5IHdpdGggb2xkZXIgRFQgY29uc3VtZXJzLCBidXQgc3RpbGwgY2FuIHNheSB3aGF0
+IGl0Cj4+IGFjdHVhbGx5IGlzLgo+PiBJIHdvbmRlciBpZiBJIHNob3VsZCBpbnRyb2R1Y2UgdGhp
+cyBjb21iaW5hdGlvbiB0byB0aGUgR0lDIERUIGJpbmRpbmcKPj4gaW5zdGVhZCwgaXQgc2VlbXMg
+bGlrZSB0aGVyZSBhcmUgb3RoZXIgdXNlcnMgaW4gdGhlIHRyZWUgYXMgd2VsbC4KPj4KPj4gV2hh
+dCBkbyB5b3UgdGhpbms/Cj4gCj4gSSdkIHNheSB0aGF0IGlmIHRoZSBiaW5kaW5nIGZvcmJpZHMg
+bXVsdGlwbGUgY29tcGF0aWJsZSBzdHJpbmdzLCB0aGUKPiBiaW5kaW5nIGlzIGxpa2VseSB0byBi
+ZSB3cm9uZy4gV2Ugc2hvdWxkIGZpeCBpdCwgYW5kIG5vdCBtYWtlIHRoZSBEVHMKPiB3b3JzZSBh
+cyBhIHJlc3VsdCBvZiBhIGJpbmRpbmcgaXNzdWUuCgpPSywgdGhhbmtzIGZvciB0aGUgY29uZmly
+bWF0aW9uLCBhbmQgSSBhZ3JlZS4gSSB3aWxsIGRpdGNoIHRoaXMgcGF0Y2gKYW5kIHJlcGxhY2Ug
+aXQgd2l0aCBhIHJlc3BlY3RpdmUgYmluZGluZ3MgZml4LgoKVGhhbmtzLApBbmRyZS4KCl9fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
+ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
+Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
