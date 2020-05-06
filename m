@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9E3C91C6E74
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:35:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 010AB1C6E75
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 12:35:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dSabshSUfx2+PHjmHeHOSwUm/pprltxI1ojpqg9dZpI=; b=PkBM5Ur4aRJE3N
-	dkmYsMgMDknjcT4qhFG7Wl7kNXW3QKmHPH+hfxkbX/Olf7GqnOamqDhY63E0gZDMkIh2vJlLKinag
-	8Pi3DIOegomYys8IWv/+oEfMtl5MiuRkakNBDYqqL5YVQ9Q0d6Ml7qDLh/F+uON91SPb8qtI0eQcl
-	APYYLzAhrVTQEr4zJow1avDPWDvkzVscNjTig/rBYLC/yWEDJrhkD6d8JjDct2Kd64ZbWTT8GxYYQ
-	t1cW0R+qb66DS7bGjOwJ4t1dxnILANdMYq3Qkd5TTqYmPjx6+vdX8ZzWiK/U1p4Udr6RIck3qMqEx
-	hMiyuwIrs5m+Y5taf42g==;
+	List-Owner; bh=A2SkTkxXA99x0L4adscPWapsKetR+aTAqcChjT4XUAw=; b=NT8h2t+jRaxz/9
+	i35pBkeVzK1pQGk46iupg+msIPbcvh/Fa2GMsLacXckMhQUqRbGHHTHdk6CUz3sLa7aF98xw1tHpH
+	0aGK+udtfrg2/fNvqpb5BW9QqkMfYuo18zUO+h6eLwSiIBMdOO4U4af/N4lAFL2kwlS5B6mYgR8eU
+	GcqlVBP/rewl4IbzbKaTU5nVHuDH3G6OJzrVRxOCF0SrJYXmGTqiupFEJL6AH53ari7Qw19zJkAZT
+	z0FhCyAnzOQ4xuSrgvC+/S2avw2NgBkpnSmkVHP+3qlT6UTKxLMoZP2IrHAu2T9FzxwMY6zb7sgCR
+	YfuHO3Ai/ygwLFllYXXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWHOY-0002QH-99; Wed, 06 May 2020 10:35:18 +0000
+	id 1jWHOi-0004zd-Pb; Wed, 06 May 2020 10:35:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWHOE-0002PX-EL
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:34:59 +0000
+ id 1jWHOK-0002e9-0U
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 10:35:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6A2101FB;
- Wed,  6 May 2020 03:34:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 811531FB;
+ Wed,  6 May 2020 03:35:03 -0700 (PDT)
 Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 843823F71F;
- Wed,  6 May 2020 03:34:55 -0700 (PDT)
-Date: Wed, 6 May 2020 11:34:53 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9B6943F71F;
+ Wed,  6 May 2020 03:35:02 -0700 (PDT)
+Date: Wed, 6 May 2020 11:35:00 +0100
 From: Dave Martin <Dave.Martin@arm.com>
 To: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Subject: Re: [PATCH 1/2] syscall.2: arm: Use real register names for arm/OABI
-Message-ID: <20200506103453.GS30377@arm.com>
+Subject: Re: [PATCH 2/2] syscall.2: arm64: Fix syscall number register size
+Message-ID: <20200506103500.GT30377@arm.com>
 References: <1588692280-15878-1-git-send-email-Dave.Martin@arm.com>
- <1588692280-15878-2-git-send-email-Dave.Martin@arm.com>
- <9c75b89f-be1e-52a7-e98c-46b7dfe89d1d@gmail.com>
+ <1588692280-15878-3-git-send-email-Dave.Martin@arm.com>
+ <82affb91-8aa9-0316-421a-3ce503e396e0@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <9c75b89f-be1e-52a7-e98c-46b7dfe89d1d@gmail.com>
+In-Reply-To: <82affb91-8aa9-0316-421a-3ce503e396e0@gmail.com>
 User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_033458_529362_BE2EC479 
-X-CRM114-Status: GOOD (  14.07  )
+X-CRM114-CacheID: sfid-20200506_033504_130555_203FDD11 
+X-CRM114-Status: GOOD (  12.90  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,22 +72,17 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 12:05:00PM +0200, Michael Kerrisk (man-pages) wrote:
+On Wed, May 06, 2020 at 12:16:07PM +0200, Michael Kerrisk (man-pages) wrote:
 > On 5/5/20 5:24 PM, Dave Martin wrote:
-> > The arm OABI syscall interface is currently documented in terms of
-> > register name aliases defined by the ARM Procedure Call Standard
-> > (APCS).  However, these don't make sense in the context of a binary
-> > interface that doesn't comply (or need to comply) with APCS.
+> > arm64 is currently documented as receiving the syscall number in
+> > x8.
 > > 
-> > Use the real architectural register names instead.
+> > While this is the correct register, the syscall number is a 32-bit
+> > integer.  Bits [63:32] are ignored by the kernel.
 > > 
-> > The names a1-a4, v1... are just aliases for r0-r3, r4... anyway, so
-> > the interface is just the same regardless of which set of names is
-> > used.
-> > 
-> > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> > So it is more correct to say "w8".
 > 
-> Thanks, Dave. Patch applied, with Russell's Acked-by added.
+> Thanks, Dave. Patch applied, with Will's Acked-by.
 > 
 > Cheers,
 > 
