@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77DEC1C7ABF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:53:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 89FC61C7AC2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  6 May 2020 21:53:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WdB5X1yx4xpcsxcUeXgIZ8Pvdj4p9XjbHYhvqVYOwkY=; b=hngkTMnBu1x1Zq
-	INMcBiIfyjiJJpqIC8aLF7Mr7GnI740CrRXNxvjMSCH0YMZg7wATSth2LdxoD3ezyMp+oiDWHJcFz
-	6FXcimdnT0cv5745GCGlavsl50HUYgNOTtDk9Cens3o6liPI3HGt2GOCNl0IjRaJY2bRcOh7eq9wQ
-	fFGw8IJT3P/X+SidZJOMI8GdJ70vS72xmOdfrYNqte4/dBYm9KZ8Kwzk+b+kYrr+Vv0YR3//FnLMc
-	kdp4q8q21r3OZiwv09CMVChHeE5TXh8qDNYkbVSkmbwokmBOeY6wAO1Axb18WYEeSZSfImjj30S5T
-	m2mIQkLBc2mUc30k29pQ==;
+	List-Owner; bh=0QMDhn1nhpo9e1hdmjNROo+jQVeypr4HaDlFjkKJeB4=; b=gLH7GW9mik6u1Y
+	PqUN2X0Ngxxf9pyrfwp28dJaVr8aD5bAqEcw5VRraRTuIJBLcgU6/BnBNMA6k5HE4RV7e9mLnJmPb
+	HFYxHuzy9mXDg/fXYCOdWdx3u5uLqf77f8WeYYCtkZe7TPF567DHqyFlHENi4CQpT4TORXcyubl+q
+	6iV92/7DxBFtwzoiYpD3lLOag5GKAeTYgJzz/rvKwvNyiz8bHGzhEo043eFTHhCcfHnaw2xjnCk42
+	zTJ66vrsRfYKMKx7p0wfzjXE3vMsfOEFmzPQ+q7ceicqZfgv+dsdOjTMxcqp3OtzX1/rdkYquZbRg
+	e5La9ZNuAgrEn9qyg+tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWQ6B-0004gd-J0; Wed, 06 May 2020 19:52:55 +0000
+	id 1jWQ6T-0004xR-Kf; Wed, 06 May 2020 19:53:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWQ5I-0003xz-3z
- for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:01 +0000
+ id 1jWQ5L-00042a-Du
+ for linux-arm-kernel@lists.infradead.org; Wed, 06 May 2020 19:52:04 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 35C2B2080D;
- Wed,  6 May 2020 19:51:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3A5CD20870;
+ Wed,  6 May 2020 19:52:02 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588794719;
- bh=c1ol0RvlHIaUwsMwduGt7msqTxJWoyKjcr29z1IV95I=;
+ s=default; t=1588794722;
+ bh=wI2QVRF4k122W/w3jf/igVsU11bj4Z9TL2ZW2z6sPDw=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=tjRkPEFm/aVEoTwAI8VWZSMer7W3ucSHvNpI8rMJ8aB3sdaiTW8CtWgoNUMtpaGns
- TINY5+SQ4HUDcHBecVxzC/0BABnOC/AcAOmzlN3ip1Ur5/oT0OSJxM2cylrTEKug8v
- hGGaMkFcGH8LMmHn3eB2DEbzzCKRUa0vGvBk3mdw=
+ b=dkETKzraLh7plPJWsNxbBAGLo7EEeDBrJBIsc4ka92Zf9Ldb6DUPhaEoalbI1FcXY
+ 3VgfQJKdMA+wSGCz/8dc9ZCCcGWyhyVvWutsa6SjJVwBi3BcARr1mV8iuagesz7471
+ VPphBPAMDN8stFAUKdK9Wrbfht2paUnVMRUgbPcg=
 From: Mark Brown <broonie@kernel.org>
 To: Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
  Will Deacon <will@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 03/11] arm64: asm: Override SYM_FUNC_START when building
- the kernel with BTI
-Date: Wed,  6 May 2020 20:51:30 +0100
-Message-Id: <20200506195138.22086-4-broonie@kernel.org>
+Subject: [PATCH v3 04/11] arm64: Set GP bit in kernel page tables to enable
+ BTI for the kernel
+Date: Wed,  6 May 2020 20:51:31 +0100
+Message-Id: <20200506195138.22086-5-broonie@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
 References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_125200_199058_808ECFF8 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200506_125203_523441_D474727B 
+X-CRM114-Status: GOOD (  17.23  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,74 +86,113 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the kernel is built for BTI override SYM_FUNC_START and related macros
-to add a BTI landing pad to the start of all global functions, ensuring that
-they are BTI safe. The ; at the end of the BTI_x macros is for the
-benefit of the macro-generated functions in xen-hypercall.S.
+Now that the kernel is built with BTI annotations enable the feature by
+setting the GP bit in the stage 1 translation tables.  This is done
+based on the features supported by the boot CPU so that we do not need
+to rewrite the translation tables.
+
+In order to avoid potential issues on big.LITTLE systems when there are
+a mix of BTI and non-BTI capable CPUs in the system when we have enabled
+kernel mode BTI we change BTI to be a _STRICT_BOOT_CPU_FEATURE when we
+have kernel BTI.  This will prevent any CPUs that don't support BTI
+being started if the boot CPU supports BTI rather than simply not using
+BTI as we do when supporting BTI only in userspace.  The main concern is
+the possibility of BTYPE being preserved by a CPU that does not
+implement BTI when a thread is migrated to it resulting in an incorrect
+state which could generate an exception when the thread migrates back to
+a CPU that does support BTI.  If we encounter practical systems which
+mix BTI and non-BTI CPUs we will need to revisit this implementation.
+
+Since we currently do not generate landing pads in the BPF JIT we only
+map the base kernel text in this way.
 
 Signed-off-by: Mark Brown <broonie@kernel.org>
 Reviewed-by: Catalin Marinas <catalin.marinas@arm.com>
 ---
- arch/arm64/include/asm/linkage.h | 46 ++++++++++++++++++++++++++++++++
- 1 file changed, 46 insertions(+)
+ arch/arm64/include/asm/pgtable-prot.h |  3 +++
+ arch/arm64/kernel/cpufeature.c        |  4 ++++
+ arch/arm64/mm/mmu.c                   | 24 ++++++++++++++++++++++++
+ 3 files changed, 31 insertions(+)
 
-diff --git a/arch/arm64/include/asm/linkage.h b/arch/arm64/include/asm/linkage.h
-index ebee3113a62f..b5a7998a6b2a 100644
---- a/arch/arm64/include/asm/linkage.h
-+++ b/arch/arm64/include/asm/linkage.h
-@@ -4,6 +4,52 @@
- #define __ALIGN		.align 2
- #define __ALIGN_STR	".align 2"
+diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
+index 1305e28225fc..310690332896 100644
+--- a/arch/arm64/include/asm/pgtable-prot.h
++++ b/arch/arm64/include/asm/pgtable-prot.h
+@@ -21,6 +21,7 @@
  
-+#if defined(CONFIG_ARM64_BTI_KERNEL) && defined(__aarch64__)
+ #ifndef __ASSEMBLY__
+ 
++#include <asm/cpufeature.h>
+ #include <asm/pgtable-types.h>
+ 
+ extern bool arm64_use_ng_mappings;
+@@ -31,6 +32,8 @@ extern bool arm64_use_ng_mappings;
+ #define PTE_MAYBE_NG		(arm64_use_ng_mappings ? PTE_NG : 0)
+ #define PMD_MAYBE_NG		(arm64_use_ng_mappings ? PMD_SECT_NG : 0)
+ 
++#define PTE_MAYBE_GP		(system_supports_bti() ? PTE_GP : 0)
 +
-+/*
-+ * Since current versions of gas reject the BTI instruction unless we
-+ * set the architecture version to v8.5 we use the hint instruction
-+ * instead.
-+ */
-+#define BTI_C hint 34 ;
-+#define BTI_J hint 36 ;
-+
-+/*
-+ * When using in-kernel BTI we need to ensure that assembly functions
-+ * have suitable annotations.  Override SYM_FUNC_START to insert a BTI
-+ * landing pad at the start of everything.
-+ */
-+#define SYM_FUNC_START(name)				\
-+	SYM_START(name, SYM_L_GLOBAL, SYM_A_ALIGN)	\
-+	BTI_C
-+
-+#define SYM_FUNC_START_NOALIGN(name)			\
-+	SYM_START(name, SYM_L_GLOBAL, SYM_A_NONE)	\
-+	BTI_C
-+
-+#define SYM_FUNC_START_LOCAL(name)			\
-+	SYM_START(name, SYM_L_LOCAL, SYM_A_ALIGN)	\
-+	BTI_C
-+
-+#define SYM_FUNC_START_LOCAL_NOALIGN(name)		\
-+	SYM_START(name, SYM_L_LOCAL, SYM_A_NONE)	\
-+	BTI_C
-+
-+#define SYM_FUNC_START_WEAK(name)			\
-+	SYM_START(name, SYM_L_WEAK, SYM_A_ALIGN)	\
-+	BTI_C
-+
-+#define SYM_FUNC_START_WEAK_NOALIGN(name)		\
-+	SYM_START(name, SYM_L_WEAK, SYM_A_NONE)		\
-+	BTI_C
-+
-+#define SYM_INNER_LABEL(name, linkage)			\
-+	.type name SYM_T_NONE ASM_NL			\
-+	SYM_ENTRY(name, linkage, SYM_A_NONE)		\
-+	BTI_J
-+
+ #define PROT_DEFAULT		(_PROT_DEFAULT | PTE_MAYBE_NG)
+ #define PROT_SECT_DEFAULT	(_PROT_SECT_DEFAULT | PMD_MAYBE_NG)
+ 
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 9793d3aa9d98..84fea674856f 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -1800,7 +1800,11 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		.desc = "Branch Target Identification",
+ 		.capability = ARM64_BTI,
++#ifdef CONFIG_ARM64_BTI_KERNEL
++		.type = ARM64_CPUCAP_STRICT_BOOT_CPU_FEATURE,
++#else
+ 		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
 +#endif
+ 		.matches = has_cpuid_feature,
+ 		.cpu_enable = bti_enable,
+ 		.sys_reg = SYS_ID_AA64PFR1_EL1,
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index a374e4f51a62..c299b73dd5e4 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -609,6 +609,22 @@ static int __init map_entry_trampoline(void)
+ core_initcall(map_entry_trampoline);
+ #endif
+ 
++/*
++ * Open coded check for BTI, only for use to determine configuration
++ * for early mappings for before the cpufeature code has run.
++ */
++static bool arm64_early_this_cpu_has_bti(void)
++{
++	u64 pfr1;
++
++	if (!IS_ENABLED(CONFIG_ARM64_BTI_KERNEL))
++		return false;
++
++	pfr1 = read_sysreg_s(SYS_ID_AA64PFR1_EL1);
++	return cpuid_feature_extract_unsigned_field(pfr1,
++						    ID_AA64PFR1_BT_SHIFT);
++}
 +
  /*
-  * Annotate a function as position independent, i.e., safe to be called before
-  * the kernel virtual mapping is activated.
+  * Create fine-grained mappings for the kernel.
+  */
+@@ -624,6 +640,14 @@ static void __init map_kernel(pgd_t *pgdp)
+ 	 */
+ 	pgprot_t text_prot = rodata_enabled ? PAGE_KERNEL_ROX : PAGE_KERNEL_EXEC;
+ 
++	/*
++	 * If we have a CPU that supports BTI and a kernel built for
++	 * BTI then mark the kernel executable text as guarded pages
++	 * now so we don't have to rewrite the page tables later.
++	 */
++	if (arm64_early_this_cpu_has_bti())
++		text_prot = __pgprot_modify(text_prot, PTE_GP, PTE_GP);
++
+ 	/*
+ 	 * Only rodata will be remapped with different permissions later on,
+ 	 * all other segments are allowed to use contiguous mappings.
 -- 
 2.20.1
 
