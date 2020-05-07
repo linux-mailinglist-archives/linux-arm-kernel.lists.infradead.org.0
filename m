@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C38A21C9DE7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 23:49:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6586A1C9DED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 23:52:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4W8B4N3WZYxVdp/Rev3k4az4rkJqTvVOY/5T45d+6WM=; b=kacNQOEgsaXfFW
-	u+LmBLK/mJf3avvdEYK/0orHIgBZNvgF16YoUoSclwW37cc9E9JYRWEBiAbAnkm/cq6m95+qDz0Nd
-	4v35evnDj6jpIBxwjmyMpEskGiKwZ8gN3dpOBdh1Va2tt6vHkl0/u1zrDmVNRm+7C0zwpGmh+ws+j
-	TPB3jl80GiMPQH1RyFkgp/JuCAgFd/Mu+3Uy+7BDmtkTKwvGT/PKPjwLZZmpx18f+rer8NkEKDiXI
-	CkWKk9Sh/oKDacZ0+si1V/+dWhcDuSEy2yMqTEYqFPsBPi1IdxblZxQKuG5fSrfGlSN5J5vtTmYOK
-	PAwX1qpQQ0/UWRQoCuNA==;
+	List-Owner; bh=MXJvdjRUiCjrHWet8P5D0D0uPNPPLK5WDOSNJJu0BIU=; b=QwuxCceFlTP/35
+	BBFfxwvLEFUh9ZGBE9VKYZhWoZc/Js8Za9d+QqYrNVe3xRcbnc+az706Y/oRIub/aTiFTBqJkvoT4
+	LNXSrs1fIAikyDBvVV2NII0KKy0s5PNu4gcvyou77Z5GcxRCLoTauCUH0sKEXi2WP5Rj2FmgG00ER
+	WCNAzvlmxCSC7ba0OT1RogdUXuj/sVqaIbTlQ/QtX+FM4Zq8SRUBuZH+WP1/FbQse0Cq7dxK0csAD
+	jJQAhesGDDYxXdhQZcTABaO1cauw5v9FdyO2wTeKp3WPPkmgp+UBaZQVeLCSre71qG2R3paIhBwmK
+	v171mzYYMycCI9AqjiBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWoOj-0004KV-N7; Thu, 07 May 2020 21:49:41 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jWoR2-0007lc-Si; Thu, 07 May 2020 21:52:04 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWoOO-0004Dr-DA; Thu, 07 May 2020 21:49:21 +0000
-Received: by mail-oi1-f194.google.com with SMTP id r25so6614720oij.4;
- Thu, 07 May 2020 14:49:20 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+K99SXnOq1F0ZjGFhanj1w7QeN74kq3HeaG8Lj+To9M=;
- b=lK54zGFn84y6nfrWuNj4px08yR8x8kuntHgkkzVgIW/eMU9MI4Cjd467wJmyYvF19R
- Xo4WXlwvmAiVyKjjQCOrDtNzgXaXQZnAQW+vaEvK3kVcBYSSJroz/qeFN3mUNjPHq7f+
- Yg3FNTNpvd2GBizu3KTegQLvdHGD/u/c6pRvEooCSvVcdacL1D173MpltvM5suVJUoNX
- Ulsnp3qffcPvRSkt2wO1EzYjGIZDApnOy8JySvmcaL5hUPADzTZdHYBl1i7v+avhFucc
- qAf/khEX5V955IRz2RAd/kJ/p+k8KBq3qzlO9ZAhSRhQFaXdEf5qLDlFScH6iSFYCJF8
- M1Ug==
-X-Gm-Message-State: AGi0PuYG+xzcGt/R7diN75+3LQsvrQBZJ72YVr56n7PTuHuEfYMG8bt+
- etlkiPkYkPLyfLTNyD4qNGKurX8=
-X-Google-Smtp-Source: APiQypKdSAfXlYDSJkrzlHUQWVZ3sDz1eGY4XlY4moRp5cxhz0qwaJnHQ2p2QyHEOMcpweAS8N35kw==
-X-Received: by 2002:aca:447:: with SMTP id 68mr7898114oie.94.1588888159223;
- Thu, 07 May 2020 14:49:19 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id b25sm1671203otj.7.2020.05.07.14.49.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 May 2020 14:49:18 -0700 (PDT)
-Received: (nullmailer pid 1308 invoked by uid 1000);
- Thu, 07 May 2020 21:49:17 -0000
-Date: Thu, 7 May 2020 16:49:17 -0500
-From: Rob Herring <robh@kernel.org>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v8 3/4] PCI: brcmstb: Wait for Raspberry Pi's firmware
- when  present
-Message-ID: <20200507214917.GA876@bogus>
-References: <20200505161318.26200-1-nsaenzjulienne@suse.de>
- <20200505161318.26200-4-nsaenzjulienne@suse.de>
+ id 1jWoQv-0007l5-Vz
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 21:51:59 +0000
+Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
+ helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1jWoQp-00079V-W0; Thu, 07 May 2020 23:51:52 +0200
+Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
+ id 46CA0102652; Thu,  7 May 2020 23:51:51 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Marek Vasut <marex@denx.de>, linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH] [RFC] genirq: Check irq_data_get_irq_chip() return value
+ before use
+In-Reply-To: <05c06df8-f871-c20f-3b7e-bcfa0b5d88cd@denx.de>
+References: <20200507150729.244468-1-marex@denx.de>
+ <87r1vvejqa.fsf@nanos.tec.linutronix.de>
+ <05c06df8-f871-c20f-3b7e-bcfa0b5d88cd@denx.de>
+Date: Thu, 07 May 2020 23:51:51 +0200
+Message-ID: <875zd7e7m0.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200505161318.26200-4-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_144920_463672_BC9A59D2 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200507_145158_171753_CB68463B 
+X-CRM114-Status: GOOD (  14.78  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,38 +68,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
- tim.gover@raspberrypi.org, gregkh@linuxfoundation.org,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, helgaas@kernel.org,
- wahrenst@gmx.net, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- linux-rpi-kernel@lists.infradead.org
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Stephen Boyd <sboyd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue,  5 May 2020 18:13:16 +0200, Nicolas Saenz Julienne wrote:
-> xHCI's PCI fixup, run at the end of pcie-brcmstb's probe, depends on
-> RPi4's VideoCore firmware interface to be up and running. It's possible
-> for both initializations to race, so make sure it's available prior to
-> starting.
-> 
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-> 
-> ---
-> 
-> Changes since v6:
-> - Add more complete comment
-> 
->  drivers/pci/controller/pcie-brcmstb.c | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
-> 
+Marek,
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Marek Vasut <marex@denx.de> writes:
+> On 5/7/20 7:30 PM, Thomas Gleixner wrote:
+>> Marek Vasut <marex@denx.de> writes:
+>>> NOTE: I don't know whether this is a correct fix. Maybe the
+>>>       irq_data_get_irq_chip() should never return NULL, and
+>>>       I have some other issue?
+>> 
+>> What's the callchain?
+>
+> Hmm, I'm currently unable to replicate it on linux-next, but on 5.4.39 I
+> get what's at the end of the email.
+>
+> On next I just noticed I get i2c: Transfer while suspended, which is
+> what I suspect would be the real root cause of my problem, and why
+> irq_data_get_irq_chip() returns NULL?
+
+Looks like.
+
+>  Unable to handle kernel NULL pointer dereference at virtual address 00000070
+>  PC is at __irq_get_irqchip_state+0x4/0x30
+>  LR is at __synchronize_hardirq+0x7c/0xe8
+>  [<c0166758>] (__irq_get_irqchip_state) from [<c0166800>] (__synchronize_hardirq+0x7c/0xe8)
+>  [<c0166800>] (__synchronize_hardirq) from [<c01668f0>] (synchronize_irq+0x2c/0x9c)
+>  [<c01668f0>] (synchronize_irq) from [<c016cba0>] (suspend_device_irqs+0xd8/0xf4)
+>  [<c016cba0>] (suspend_device_irqs) from [<c04e3388>] (dpm_suspend_noirq+0x18/0x194)
+>  [<c04e3388>] (dpm_suspend_noirq) from [<c015f174>] (suspend_devices_and_enter+0x170/0x514)
+>  [<c015f174>] (suspend_devices_and_enter) from [<c015f6f4>] (pm_suspend+0x1dc/0x278)
+>  [<c015f6f4>] (pm_suspend) from [<c015e100>] (state_store+0x9c/0xcc)
+>  [<c015e100>] (state_store) from [<c029a424>] (kernfs_fop_write+0x124/0x1e0)
+>  [<c029a424>] (kernfs_fop_write) from [<c02301c8>] (__vfs_write+0x2c/0xe8)
+>  [<c02301c8>] (__vfs_write) from [<c0231658>] (vfs_write+0x98/0xbc)
+>  [<c0231658>] (vfs_write) from [<c02317fc>] (ksys_write+0x74/0xc4)
+>  [<c02317fc>] (ksys_write) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
+
+I assume that the i2c controller in question tears down the interrupt on
+suspend. The changelog of that i2c driver should give you a few hints.
+
+Thanks,
+
+        tglx
+
 
 _______________________________________________
 linux-arm-kernel mailing list
