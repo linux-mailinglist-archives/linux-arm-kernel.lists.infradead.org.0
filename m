@@ -2,61 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBD761C96D0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:48:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A67B1C96E8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:53:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kMa+9P35lRAQRR48HgLsom3zvT7W4q496d3Lz9j6lLM=; b=LBYsjCMleaKfWTbp9NiO25UU9
-	a969e/1+DzzAZrrjXddET83MySQPPTOkMMAIiFct5fEAHRdoacC3zOe8T6Rh6sormDiZEggPqc6DA
-	43lhexKkCd7aKf7cJLEi3WAFE/corD7RcHorZUunRNBhsoV5VkrTriouJLrL/iFEdEuugzKlzl3bJ
-	nmvh3QDgVXXfUWmobQDcmeCpqu+k4SnCOeripmhEqy0njbD1R6wgm1DIjvOq2FiS1rZPYt59Y8Ajs
-	o25txXClwJBbg6e4hNdJEaUbBFHq7zoe3VkI1hrpqzJ22KyQqgPewdugkHshn80eZHC/RQkbOBWQP
-	mnGwtqm5g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/JYDqvYnfXDerk47a2w6k1yBC3LClEIe67UhMTLbzhA=; b=ZO5cwoVChwalvB
+	evGqvIi5cmYRU5ZFpOSWb6BFIW37oF1G+UNKb/zGshNHO0ffsqbOyU3I6rVtHBORrEkHegzADVlZB
+	1rCHsTDvJyl/XrrQs3X0L2QAxWZjlT3kKmp3Nyfa2rdJjqk9KjeUYJzCvIWYT/LTlzPVLzqHluL3Z
+	ttti/gbYQzfSePiMXtdvkCCbUItKwHTVlw0M7Shk9T6Mju1Tqr1JspmhAfuKh5xmw5YgiTx3fcpuB
+	C4VKI7lFq1wDowjxmL3vvQpbfKbVeihPtGwKP194tf1DwuuCQj8+/QQnM2eC55lGcZenTNSZjHbY0
+	rRM0+UUsfMAMK7Bj0nnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWjgh-0002xh-Rp; Thu, 07 May 2020 16:47:55 +0000
+	id 1jWjm2-00065n-O3; Thu, 07 May 2020 16:53:26 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWjgb-0002oH-S7
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 16:47:51 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ id 1jWjlv-000656-3p; Thu, 07 May 2020 16:53:20 +0000
+Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown
+ [163.114.132.1])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E0DB020870;
- Thu,  7 May 2020 16:47:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BA13720870;
+ Thu,  7 May 2020 16:53:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588870069;
- bh=wXrhFL7ZkDxdvVqq5II1eKFCD+GFt9RiVWoUUUrzcsU=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Ps8OGbEotEzFiQ4vSiODI3BCLjgza469ctzAd22gZYU1T7gxDJJBoIfei4ZNRz4rd
- 5ql3ALow9sVkYrqlYxHaay38mgys2lqX7yyGoUMhd7yfb0r0SJHUH0xm7eHLfBbVRA
- ZBIugcgfzlp4Q2Ofqeb5okxzchEuZb5KDfcOzUZ4=
-Date: Thu, 7 May 2020 17:47:46 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v3 00/11] arm64: BTI kernel and vDSO support
-Message-ID: <20200507164746.GE6183@sirena.org.uk>
-References: <20200506195138.22086-1-broonie@kernel.org>
- <20200507143332.GB1422@willie-the-truck>
- <20200507143547.GC1422@willie-the-truck>
- <20200507145901.GA1938@willie-the-truck>
- <20200507150905.GB6183@sirena.org.uk>
- <20200507151848.GA2294@willie-the-truck>
- <20200507154854.GC6183@sirena.org.uk>
- <20200507155523.GB2648@willie-the-truck>
- <20200507163045.GD6183@sirena.org.uk>
- <20200507163658.GC2648@willie-the-truck>
+ s=default; t=1588870398;
+ bh=NujDvlsKX4AJIFdjy/ZhQD238Qri2e97mGwjx7CIqAE=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=JlpUvKEn0HsL1QzZ6h0GinpcwY43KR9GznAQ+FL4QesMiCkMJw93GU5TwBvOCIFlz
+ oDiB+OAbY87TeFnWWySAZIX6SU7tU2T9wJTNWj2i7/rl5S7c6osUw7TFtna6K9D1mG
+ wfTQmnKlhMMMYAIGnBkzPrnxLqDRRPiR4meHNTtg=
+Date: Thu, 7 May 2020 09:53:15 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: Re: [PATCH 05/11] net: core: provide devm_register_netdev()
+Message-ID: <20200507095315.1154a1a6@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <CAMpxmJWckQdKvUGFDAJ1WMtD9WoGWmGe3kyKYhcfRT2nOB93xw@mail.gmail.com>
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-6-brgl@bgdev.pl>
+ <20200505103105.1c8b0ce3@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <CAMRc=Mf0ipaeLKhHCZaq2YeZKzi=QBAse7bEz2hHxXN5OL=ptg@mail.gmail.com>
+ <20200506101236.25a13609@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <CAMpxmJWckQdKvUGFDAJ1WMtD9WoGWmGe3kyKYhcfRT2nOB93xw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200507163658.GC2648@willie-the-truck>
-X-Cookie: 1 + 1 = 3, for large values of 1.
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_094749_928729_BC9B4103 
-X-CRM114-Status: GOOD (  13.91  )
+X-CRM114-CacheID: sfid-20200507_095319_198362_C3F81168 
+X-CRM114-Status: GOOD (  17.67  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,81 +79,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kees Cook <keescook@chromium.org>, Daniel Borkmann <daniel@iogearbox.net>,
- Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Amit Kachhap <amit.kachhap@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3416582522270674447=="
+Cc: devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ netdev <netdev@vger.kernel.org>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============3416582522270674447==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="7LkOrbQMr4cezO2T"
-Content-Disposition: inline
-
-
---7LkOrbQMr4cezO2T
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Thu, May 07, 2020 at 05:36:58PM +0100, Will Deacon wrote:
-> On Thu, May 07, 2020 at 05:30:45PM +0100, Mark Brown wrote:
-
-> > GCC does emit some helper functions wrapping GCOV stuff but they have
-> > appropriate annotations, eg:
-
-> > 00000000000000ac <_sub_D_00100_1>:
-> >   ac:	d503245f 	bti	c
-
-> Hmm, where have the PAC/AUT instructions gone?
-
-I was testing with -mbranch-protection=bti while trying to narrow down
-the issue when I pasted that example in, if PAC is enabled then you get
-the PAC/AUT instructions instead.
-
-> > It does seem it's a straight compiler issue, if the compiler is emitting
-> > runtime then the compiler ought to be ensuring that it agrees with the
-> > build options the compiler was given and I can't think how this would be
-> > fixable or avoidable outside of the compiler other than "don't do that"
-> > which is what my Kconfig bodge did.  I'm talking to the toolchain people
-> > internally about this.
-
-> Thanks. I'll apply your 'depends on ...' line locally and push that out
-> if I don't run into any more issues.
-
-Thanks, hopefully it'll be fine.
-
---7LkOrbQMr4cezO2T
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl60O7IACgkQJNaLcl1U
-h9CcJQf/Su9Dcjg4IvxmRRZ3ipceB7T0unD2ionx52JreUAJBHDaBgeM2171KdI9
-WeS2LkQk0Evb4055bYU1WGJHLooeWuEI3KXS5MoGjQwc1I+iiJJyWjOhHzTr5tyk
-ouOwlLfFUHpCrjbLzTvfn+g+oMNJj3KWdoccb3ZxFT1IbhK+DwWeu4dsCdJCuQAR
-Uqf8lr25NBz8Z08biFrUrKRJLm9mvR534OZNDQnXcCTauuLFpSZ+jRBUIjxF4n4H
-ShigzM0idpiEWNrPhj47+bNQ5tkCiB3iBMS9oeYcwCVCtsPlGNnzGWtxufCsCvFC
-ItxNkWfIaLo45tYyPDmFBXpuKmXUZw==
-=qYHd
------END PGP SIGNATURE-----
-
---7LkOrbQMr4cezO2T--
-
-
---===============3416582522270674447==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3416582522270674447==--
-
+T24gVGh1LCA3IE1heSAyMDIwIDExOjI1OjAxICswMjAwIEJhcnRvc3ogR29sYXN6ZXdza2kgd3Jv
+dGU6Cj4gxZtyLiwgNiBtYWogMjAyMCBvIDE5OjEyIEpha3ViIEtpY2luc2tpIDxrdWJhQGtlcm5l
+bC5vcmc+IG5hcGlzYcWCKGEpOgo+ID4KPiA+IE9uIFdlZCwgNiBNYXkgMjAyMCAwODozOTo0NyAr
+MDIwMCBCYXJ0b3N6IEdvbGFzemV3c2tpIHdyb3RlOiAgCj4gPiA+IHd0LiwgNSBtYWogMjAyMCBv
+IDE5OjMxIEpha3ViIEtpY2luc2tpIDxrdWJhQGtlcm5lbC5vcmc+IG5hcGlzYcWCKGEpOiAgCj4g
+PiA+ID4KPiA+ID4gPiBPbiBUdWUsICA1IE1heSAyMDIwIDE2OjAyOjI1ICswMjAwIEJhcnRvc3og
+R29sYXN6ZXdza2kgd3JvdGU6ICAKPiA+ID4gPiA+IEZyb206IEJhcnRvc3ogR29sYXN6ZXdza2kg
+PGJnb2xhc3pld3NraUBiYXlsaWJyZS5jb20+Cj4gPiA+ID4gPgo+ID4gPiA+ID4gUHJvdmlkZSBk
+ZXZtX3JlZ2lzdGVyX25ldGRldigpIC0gYSBkZXZpY2UgcmVzb3VyY2UgbWFuYWdlZCB2YXJpYW50
+Cj4gPiA+ID4gPiBvZiByZWdpc3Rlcl9uZXRkZXYoKS4gVGhpcyBuZXcgaGVscGVyIHdpbGwgb25s
+eSB3b3JrIGZvciBuZXRfZGV2aWNlCj4gPiA+ID4gPiBzdHJ1Y3RzIHRoYXQgaGF2ZSBhIHBhcmVu
+dCBkZXZpY2UgYXNzaWduZWQgYW5kIGFyZSBkZXZyZXMgbWFuYWdlZCB0b28uCj4gPiA+ID4gPgo+
+ID4gPiA+ID4gU2lnbmVkLW9mZi1ieTogQmFydG9zeiBHb2xhc3pld3NraSA8YmdvbGFzemV3c2tp
+QGJheWxpYnJlLmNvbT4gIAo+ID4gPiA+ICAKPiA+ID4gPiA+IGRpZmYgLS1naXQgYS9uZXQvY29y
+ZS9kZXYuYyBiL25ldC9jb3JlL2Rldi5jCj4gPiA+ID4gPiBpbmRleCA1MjIyODgxNzdiYmQuLjk5
+ZGI1MzdjOTQ2OCAxMDA2NDQKPiA+ID4gPiA+IC0tLSBhL25ldC9jb3JlL2Rldi5jCj4gPiA+ID4g
+PiArKysgYi9uZXQvY29yZS9kZXYuYwo+ID4gPiA+ID4gQEAgLTk1MTksNiArOTUxOSw1NCBAQCBp
+bnQgcmVnaXN0ZXJfbmV0ZGV2KHN0cnVjdCBuZXRfZGV2aWNlICpkZXYpCj4gPiA+ID4gPiAgfQo+
+ID4gPiA+ID4gIEVYUE9SVF9TWU1CT0wocmVnaXN0ZXJfbmV0ZGV2KTsKPiA+ID4gPiA+Cj4gPiA+
+ID4gPiArc3RydWN0IG5ldGRldmljZV9kZXZyZXMgewo+ID4gPiA+ID4gKyAgICAgc3RydWN0IG5l
+dF9kZXZpY2UgKm5kZXY7Cj4gPiA+ID4gPiArfTsgIAo+ID4gPiA+Cj4gPiA+ID4gSXMgdGhlcmUg
+cmVhbGx5IGEgbmVlZCB0byBkZWZpbmUgYSBzdHJ1Y3R1cmUgaWYgd2Ugb25seSBuZWVkIGEgcG9p
+bnRlcj8KPiA+ID4gPiAgCj4gPiA+Cj4gPiA+IFRoZXJlIGlzIG5vIG5lZWQgZm9yIHRoYXQsIGJ1
+dCBpdCByZWFsbHkgaXMgbW9yZSByZWFkYWJsZSB0aGlzIHdheS4KPiA+ID4gQWxzbzogdXNpbmcg
+YSBwb2ludGVyIGRpcmVjdGx5IGRvZXNuJ3Qgc2F2ZSB1cyBhbnkgbWVtb3J5IG5vciBjb2RlCj4g
+PiA+IGhlcmUuICAKPiA+Cj4gPiBJIGRvbid0IGNhcmUgZWl0aGVyIHdheSBidXQgZGV2bV9hbGxv
+Y19ldGhlcmRldl9tcXMoKSBhbmQgY28uIGFyZSB1c2luZwo+ID4gdGhlIGRvdWJsZSBwb2ludGVy
+IGRpcmVjdGx5LiBQbGVhc2UgbWFrZSB0aGluZ3MgY29uc2lzdGVudC4gRWl0aGVyIGRvCj4gPiB0
+aGUgc2FtZSwgb3IgZGVmaW5lIHRoZSBzdHJ1Y3R1cmUgaW4gc29tZSBoZWFkZXIgYW5kIGNvbnZl
+cnQgb3RoZXIKPiA+IGhlbHBlcnMgdG8gYWxzbyBtYWtlIHVzZSBvZiBpdC4gIAo+IAo+IEluIG9y
+ZGVyIHRvIHVzZSBkZXZyZXNfZmluZCgpIHRvIGNoZWNrIGlmIHN0cnVjdCBuZXRfZGV2aWNlIGlz
+IG1hbmFnZWQKPiBpbiBkZXZtX3JlZ2lzdGVyX25ldGRldigpIEkgbmVlZCB0byBrbm93IHRoZSBh
+ZGRyZXNzIG9mIHRoZSByZWxlYXNlCj4gZnVuY3Rpb24gdXNlZCBieSBkZXZtX2FsbG9jX2V0aGVy
+ZGV2X21xcygpLiBEbyB5b3UgbWluZCBpZiBJIG1vdmUgYWxsCj4gbmV0d29ya2luZyBkZXZyZXMg
+cm91dGluZXMgKGN1cnJlbnRseSBvbmx5IGRldm1fYWxsb2NfZXRoZXJkZXZfbXFzKCkpCj4gaW50
+byBhIHNlcGFyYXRlIC5jIGZpbGUgKGUuZy4gdW5kZXIgbmV0L2RldnJlcy5jKT8KClRvIGltcGxl
+bWVudCBFZHdpbidzIHN1Z2dlc3Rpb24/IE1ha2VzIHNlbnNlLCBidXQgSSdtIG5vIGV4cGVydCwg
+bGV0J3MKYWxzbyBDQyBIZWluZXIgc2luY2UgaGUgd2FzIGFza2luZyBhYm91dCBpdCBsYXN0IHRp
+bWUuCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
