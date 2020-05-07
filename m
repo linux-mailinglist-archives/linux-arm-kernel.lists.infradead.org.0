@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF6FD1C88C2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:47:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F10381C8909
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:57:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ko7Rdl7DXkZJzJF5dmvF8K5p8AMYs4Ny9kzrhsrZzJg=; b=OY9QrBo4He9AinpW63a0FqjFX
-	9IST3XSPvE1Bh+xWqGOaSm0KpbL8BsOsB5zHmulxSntD8qn9mrVDUd+rJn3YIT+oYB3nPZOVU9P6j
-	ug7tlsyyMC/JN0uGZLRHOtGSFHzgs40+rQWYLzdjykKLI5N+/TWTNyjfSRjD1zExLCx/dm7HVk26k
-	A/U2T0LcMP/I1SEiucel6cxCi4FXhmzsb/Cg30nyci6Ho8CpHuPuNa/OS+lk7pktxxhCFxS8H2Gmf
-	uN86n75/qvjzMAJvysYUOREGAEuYmHm6vXJjv++bRfwaueMHhBo2kXkZCKINGqvDIIFa2nmaZ5hi4
-	dkm474mIQ==;
+	 bh=OxfELPcGV4wbKgDTU96WaRwLN5qhisMWkjicngebGLU=; b=mB4CIMFPF9VaAceIvIh2G9PZE
+	88dODEgfXxCcC/a/yUWEjx2uTvxTRQIwbGgy2cHpArHt5urUOkXHIw1ITxHLx4leO+vHRXlsPZSYa
+	zRuiDrBgjBkUfLR3WgcrOeW6F0kKEVXHRGzmmeFPqu57oNYregBoBUOhGprruddquAGD2y4w+8zIs
+	ED9tquUUD8Tf7Xgxx26CfcwjE9mVKzLbncows6jrPHfi45nCmmbu4fgamhYEpyItrC154IRKiYWBe
+	SvUis+RXgIbRWwcoNHWBlxY08JBJw3lUW4A83R6zHgFirVxommBtFJKF2OEQzO5ouQ3iyehO0LRfj
+	ACKMo5tYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWezs-0004Tx-Mi; Thu, 07 May 2020 11:47:24 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jWf9C-0003AP-3r; Thu, 07 May 2020 11:57:02 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWezk-0004TR-Sl
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:47:18 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 047BlDVV124185;
- Thu, 7 May 2020 06:47:13 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588852033;
- bh=BMGzqer+DWUoEKSS+dBUfKNGGh9G1GOzHgNg215nJaM=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=u4kKeVAR6GOsWI6xKQQXLoC6q+A/7jMk1B2BX3f0AQUA6efHQdusFcqCdvsTtLmwb
- lZEc7BEeMS86EnKS3yGUL4gX+4RfB72iuNsKTyPT8PHb0RSM9V1Pzda86c1FlAro+L
- qYedcV8NKFNrSSjmPXWOZGZzQ7JyxjuJ1RPeJl5Y=
-Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 047BlDat068218
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 7 May 2020 06:47:13 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE100.ent.ti.com
- (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 7 May
- 2020 06:47:13 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Thu, 7 May 2020 06:47:13 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 047Bl9mu023398;
- Thu, 7 May 2020 06:47:10 -0500
-Subject: Re: [PATCH v2 0/2] soc: ti: add k3 platforms chipid module driver
-To: Grygorii Strashko <grygorii.strashko@ti.com>, Santosh Shilimkar
- <ssantosh@kernel.org>, Rob Herring <robh+dt@kernel.org>, Lokesh Vutla
- <lokeshvutla@ti.com>, <devicetree@vger.kernel.org>
-References: <20200505193417.2112-1-grygorii.strashko@ti.com>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <c9153895-5e7b-d7e2-53f6-b36b9e1282fd@ti.com>
-Date: Thu, 7 May 2020 14:47:09 +0300
+ id 1jWf92-00038x-Bm
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:56:55 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 047BlNbU019120; Thu, 7 May 2020 13:56:49 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=Abi1sauqthy0o7ll0iZzcPHhpwrLBTxb2uGa7fPFiLQ=;
+ b=GIJuQejXla90HpGmtZDbiJfaJf/Te3VxqU5xQ8jWvu3wploWyszCvSsKUweezDFW9JZD
+ v5I2NIwxgtJi/DD25NO3uhdFTdXffkshL548goU2CzpT/tgDv7+6lueMj5trNVk/JlVA
+ 6816KnHtUHmmKtpwzbz+My1gAJfm7Hm/cV/yyNvPncYAi7gE3K/GpvUor8dQ6QQPP1RA
+ jR73rI7qcu/ULlX0lnFWMyfzPlffis242A6KJaw9sipz0R1U4bYM89ZJGUfbUc56l0n4
+ 8T5FTzGDE61OHZxhMe9cOgXpjTURWb1qRWIG8vqgeYYtPYkOX/3IqktROmpagvnOVud+ MQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 30rxb2bhgj-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 07 May 2020 13:56:49 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id D088B10002A;
+ Thu,  7 May 2020 13:56:48 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id BE4582B42A0;
+ Thu,  7 May 2020 13:56:48 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.50) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 7 May
+ 2020 13:56:44 +0200
+Subject: Re: [PATCH V2 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
+ board
+To: <dillon.minfei@gmail.com>, <mcoquelin.stm32@gmail.com>,
+ <philippe.schenker@toradex.com>
+References: <1588850125-24344-1-git-send-email-dillon.minfei@gmail.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <98d6d44c-ff23-ac15-c17b-8f5f49ad2274@st.com>
+Date: Thu, 7 May 2020 13:56:36 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <20200505193417.2112-1-grygorii.strashko@ti.com>
+In-Reply-To: <1588850125-24344-1-git-send-email-dillon.minfei@gmail.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Originating-IP: [10.75.127.50]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-07_06:2020-05-07,
+ 2020-05-07 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_044717_004211_FED1862F 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200507_045652_887593_3ED22411 
+X-CRM114-Status: GOOD (  20.16  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -81,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,64 +98,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Sekhar Nori <nsekhar@ti.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Dave Gerlach <d-gerlach@ti.com>
+Cc: linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/05/2020 22:34, Grygorii Strashko wrote:
-> Hi All,
-> 
-> This series introduces TI K3 Multicore SoC platforms chipid module driver
-> which provides identification support of the TI K3 SoCs (family, revision)
-> and register this information with the SoC bus. It is available under
-> /sys/devices/soc0/ for user space, and can be checked, where needed,
-> in Kernel using soc_device_match().
-> It is also required for introducing support for new revisions of
-> K3 AM65x/J721E SoCs.
-> 
-> Example J721E:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments K3 J721E SoC
->    J721E
->    SR1.0
-> 
-> Example AM65x:
->    # cat /sys/devices/soc0/{machine,family,revision}
->    Texas Instruments AM654 Base Board
->    AM65X
->    SR1.0
-> 
-> Changes in v2:
->   - pr_debug() replaced with pr_info() to show SoC info on init
->   - minor format change
->   - split series on driver and platform changes
->   - add Reviewed-by: Lokesh Vutla <lokeshvutla@ti.com>
-> 
-> v1: https://lwn.net/Articles/818577/
-> 
-> Grygorii Strashko (2):
->    dt-bindings: soc: ti: add binding for k3 platforms chipid module
->    soc: ti: add k3 platforms chipid module driver
-> 
->   .../bindings/soc/ti/k3-socinfo.yaml           |  40 ++++++
->   drivers/soc/ti/Kconfig                        |  10 ++
->   drivers/soc/ti/Makefile                       |   1 +
->   drivers/soc/ti/k3-socinfo.c                   | 135 ++++++++++++++++++
->   4 files changed, 186 insertions(+)
->   create mode 100644 Documentation/devicetree/bindings/soc/ti/k3-socinfo.yaml
->   create mode 100644 drivers/soc/ti/k3-socinfo.c
-> 
+Hi Dillon
 
-Got a minor comments on patch #2, other than that looks fine to me. Once 
-that is fixed, for whole series:
+On 5/7/20 1:15 PM, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
+> 
+> Enable the stmpe811 touch screen on stm32429-disco board.
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> 
+> [PATCH 3/4]: ARM: dts: stm32: enable stmpe811 on stm32429-disco
+> 
+> V2:
+> patch 3: remove unused id, blocks, irq-trigger
+> 
+> V1:
+> patch 4: fix read touch screen xyz timeout bug
+> patch 3: enable stmpe_touchscreen on stm32f429-disco board
+> patch 2: add i2c3 pin mux for stm32f4
+> patch 1: add i2c3 controller interface for stm32f4
 
-Reviewed-by: Tero Kristo <t-kristo@ti.com>
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Good idea to add changes log for this patch. But this log has to be 
+placed  after "---" below. This log has not to appear in your commit 
+message. Furthermore, you should only add changes for this patch without 
+talking about other patches .
+
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> ---
+
+Add patch change log here.
+
+>   arch/arm/boot/dts/stm32f429-disco.dts | 47 +++++++++++++++++++++++++++++++++++
+>   1 file changed, 47 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+> index 30c0f67..fad1ec1 100644
+> --- a/arch/arm/boot/dts/stm32f429-disco.dts
+> +++ b/arch/arm/boot/dts/stm32f429-disco.dts
+> @@ -49,6 +49,8 @@
+>   #include "stm32f429.dtsi"
+>   #include "stm32f429-pinctrl.dtsi"
+>   #include <dt-bindings/input/input.h>
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/gpio/gpio.h>
+>   
+>   / {
+>   	model = "STMicroelectronics STM32F429i-DISCO board";
+> @@ -127,3 +129,48 @@
+>   	pinctrl-names = "default";
+>   	status = "okay";
+>   };
+> +
+> +&i2c3 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&i2c3_pins>;
+> +	clock-frequency = <100000>;
+> +	status = "okay";
+> +
+> +	stmpe811@41 {
+> +		compatible = "st,stmpe811";
+> +		reg = <0x41>;
+> +		interrupts = <15 IRQ_TYPE_EDGE_FALLING>;
+> +		interrupt-parent = <&gpioa>;
+> +		/* 3.25 MHz ADC clock speed */
+> +		st,adc-freq = <1>;
+> +		/* 12-bit ADC */
+> +		st,mod-12b = <1>;
+> +		/* internal ADC reference */
+> +		st,ref-sel = <0>;
+> +		/* ADC converstion time: 80 clocks */
+> +		st,sample-time = <4>;
+> +
+> +		stmpe_touchscreen {
+> +			compatible = "st,stmpe-ts";
+> +			/* 8 sample average control */
+> +			st,ave-ctrl = <3>;
+> +			/* 7 length fractional part in z */
+> +			st,fraction-z = <7>;
+> +			/*
+> +			 * 50 mA typical 80 mA max touchscreen drivers
+> +			 * current limit value
+> +			 */
+> +			st,i-drive = <1>;
+> +			/* 1 ms panel driver settling time */
+> +			st,settling = <3>;
+> +			/* 5 ms touch detect interrupt delay */
+> +			st,touch-det-delay = <5>;
+> +		};
+> +
+> +		stmpe_adc {
+> +			compatible = "st,stmpe-adc";
+> +			/* forbid to use ADC channels 3-0 (touch) */
+> +			st,norequest-mask = <0x0F>;
+> +		};
+> +	};
+> +};
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
