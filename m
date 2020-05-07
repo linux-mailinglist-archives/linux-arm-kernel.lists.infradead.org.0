@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83A7D1C838F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 09:36:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E74E11C8392
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 09:36:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YBdzEPwiMxhmqLkALSu0nV4FuX2dMArskAG8LdXtCuc=; b=CzLlfbDDShIxR5gqSVw9Ux48FK
-	g/xndQWILiRdhd1I+bfkzKLXptS+73Imf272LdBzMUqKZg5pDumO1HoLXBYpquBZ7lCtPfTB4DBei
-	lHfP/le1Zp16/G8S8Z0c7yvlhrH+JDWC1i6f9gg+yzhe8i0cqVEhgkwBjDOkioy1cSwYWnpnecLDk
-	de1zQx+s3kPzr5DFBTL4kRpuYl2DaT6n7lq5ujn7aOj0laqoMd1DdOLusoFVCeVujqBPWVJYlhL5x
-	M10VN3ls8DoMRORDVjhAeDVrDCdLpO4LmUXn6GPqmIIBPwqFpeR0lphDEOUodVELRSuVC1/GFziho
-	s+bEV4Hg==;
+	bh=N5DtYmmavSsJQjKcDUWFq2obDaKK8huNV/OvA9tJvGo=; b=eidClggnT9lNGlkdlSjvA/X5JI
+	VJI4dNDgC6bjmzr61bsRpdo793DWWKC00tCbiLGlY83XeLuKva1bf9WtJiQwR9EqWMbeR+yl67++a
+	LY7hpcJEnfKp8PfIQy8Lya1GGGE/+cwjT50JJMc4RSWO3xbbGhI0kB6CEpsB7sBMj+XSiXC4XJM2t
+	lsmz9Xf/73jsRBCmumd97WtqY1GwlEeiPPnJJONCvxOKye49ShqyPozGPYoN9sNJJw5fZxwpIOo06
+	bjlRwpVmhVs9Pjar4vALzigddcuFv/AWfVEO2CkPglOLPuOj79FZuV5FM0LwKoWpBYaXsqIIMtpz0
+	ui6DKthw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWb4s-0001nN-3B; Thu, 07 May 2020 07:36:18 +0000
+	id 1jWb55-00023H-Hh; Thu, 07 May 2020 07:36:31 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWb4M-0001Y8-R1
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 07:35:49 +0000
+ id 1jWb4N-0001YB-8j
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 07:35:48 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AABDB200F27;
- Thu,  7 May 2020 09:35:45 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1367D200F16;
+ Thu,  7 May 2020 09:35:46 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9E03A200F10;
- Thu,  7 May 2020 09:35:45 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 07152200F10;
+ Thu,  7 May 2020 09:35:46 +0200 (CEST)
 Received: from fsr-ub1864-111.ea.freescale.net
  (fsr-ub1864-111.ea.freescale.net [10.171.82.141])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 47A58203C5;
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id ACB52203C5;
  Thu,  7 May 2020 09:35:45 +0200 (CEST)
 From: Diana Craciun <diana.craciun@oss.nxp.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 06/12] bus/fsl-mc: Add dprc-reset-container support
-Date: Thu,  7 May 2020 10:34:25 +0300
-Message-Id: <20200507073431.2710-7-diana.craciun@oss.nxp.com>
+Subject: [PATCH v2 07/12] bus/fsl-mc: Export a dprc scan function to be used
+ by multiple entities
+Date: Thu,  7 May 2020 10:34:26 +0300
+Message-Id: <20200507073431.2710-8-diana.craciun@oss.nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200507073431.2710-1-diana.craciun@oss.nxp.com>
 References: <20200507073431.2710-1-diana.craciun@oss.nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_003547_143356_01434770 
-X-CRM114-Status: GOOD (  14.77  )
+X-CRM114-CacheID: sfid-20200507_003547_588352_DD5BB595 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -69,149 +70,100 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: stuyoder@gmail.com, gregkh@linuxfoundation.org, leoyang.li@nxp.com,
  Diana Craciun <diana.craciun@oss.nxp.com>,
- Bharat Bhushan <Bharat.Bhushan@nxp.com>, linux-arm-kernel@lists.infradead.org,
- laurentiu.tudor@nxp.com
+ linux-arm-kernel@lists.infradead.org, laurentiu.tudor@nxp.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bharat Bhushan <Bharat.Bhushan@nxp.com>
+Currently the DPRC scan function is used only by the bus driver.
+But the same functionality will be needed by the VFIO driver.
+To support this, the dprc scan function was exported and a little
+bit adjusted to fit both scenarios. Also the scan mutex initialization
+is done when the bus object is created, not in dprc_probe in order
+to be used by both VFIO and bus driver.
 
-DPRC reset is required by VFIO-mc in order to stop a device
-to further generate DMA transactions.
-
-Signed-off-by: Bharat Bhushan <Bharat.Bhushan@nxp.com>
-Signed-off-by: Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
 ---
- drivers/bus/fsl-mc/dprc.c           | 71 +++++++++++++++++++++++++++++
- drivers/bus/fsl-mc/fsl-mc-private.h |  7 +++
- include/linux/fsl/mc.h              |  7 +++
- 3 files changed, 85 insertions(+)
+ drivers/bus/fsl-mc/dprc-driver.c | 19 +++++++------------
+ drivers/bus/fsl-mc/fsl-mc-bus.c  |  1 +
+ include/linux/fsl/mc.h           |  3 +++
+ 3 files changed, 11 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/bus/fsl-mc/dprc.c b/drivers/bus/fsl-mc/dprc.c
-index 01bf41743efc..44bde72bdea7 100644
---- a/drivers/bus/fsl-mc/dprc.c
-+++ b/drivers/bus/fsl-mc/dprc.c
-@@ -80,6 +80,77 @@ int dprc_close(struct fsl_mc_io *mc_io,
+diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
+index 7a8061224df8..4f7fa5127844 100644
+--- a/drivers/bus/fsl-mc/dprc-driver.c
++++ b/drivers/bus/fsl-mc/dprc-driver.c
+@@ -331,9 +331,10 @@ static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev,
+  * bus driver with the actual state of the MC by adding and removing
+  * devices as appropriate.
+  */
+-static int dprc_scan_container(struct fsl_mc_device *mc_bus_dev)
++int dprc_scan_container(struct fsl_mc_device *mc_bus_dev,
++			bool alloc_interrupts)
+ {
+-	int error;
++	int error = 0;
+ 	struct fsl_mc_bus *mc_bus = to_fsl_mc_bus(mc_bus_dev);
+ 
+ 	fsl_mc_init_all_resource_pools(mc_bus_dev);
+@@ -342,16 +343,12 @@ static int dprc_scan_container(struct fsl_mc_device *mc_bus_dev)
+ 	 * Discover objects in the DPRC:
+ 	 */
+ 	mutex_lock(&mc_bus->scan_mutex);
+-	error = dprc_scan_objects(mc_bus_dev, true);
++	error = dprc_scan_objects(mc_bus_dev, alloc_interrupts);
+ 	mutex_unlock(&mc_bus->scan_mutex);
+-	if (error < 0) {
+-		fsl_mc_cleanup_all_resource_pools(mc_bus_dev);
+-		return error;
+-	}
+ 
+-	return 0;
++	return error;
  }
- EXPORT_SYMBOL_GPL(dprc_close);
- 
-+/**
-+ * dprc_reset_container - Reset child container.
-+ * @mc_io:	Pointer to MC portal's I/O object
-+ * @cmd_flags:	Command flags; one or more of 'MC_CMD_FLAG_'
-+ * @token:	Token of DPRC object
-+ * @child_container_id:	ID of the container to reset
-+ * @options: 32 bit options:
-+ *   - 0 (no bits set) - all the objects inside the container are
-+ *     reset. The child containers are entered recursively and the
-+ *     objects reset. All the objects (including the child containers)
-+ *     are closed.
-+ *   - bit 0 set - all the objects inside the container are reset.
-+ *     However the child containers are not entered recursively.
-+ *     This option is supported for API versions >= 6.5
-+ * In case a software context crashes or becomes non-responsive, the parent
-+ * may wish to reset its resources container before the software context is
-+ * restarted.
-+ *
-+ * This routine informs all objects assigned to the child container that the
-+ * container is being reset, so they may perform any cleanup operations that are
-+ * needed. All objects handles that were owned by the child container shall be
-+ * closed.
-+ *
-+ * Note that such request may be submitted even if the child software context
-+ * has not crashed, but the resulting object cleanup operations will not be
-+ * aware of that.
-+ *
-+ * Return:	'0' on Success; Error code otherwise.
-+ */
-+int dprc_reset_container(struct fsl_mc_io *mc_io,
-+			 u32 cmd_flags,
-+			 u16 token,
-+			 int child_container_id,
-+			 u32 options)
-+{
-+	struct fsl_mc_command cmd = { 0 };
-+	struct dprc_cmd_reset_container *cmd_params;
-+	u32 cmdid = DPRC_CMDID_RESET_CONT;
-+	int err;
-+
-+	/**
-+	 * If the DPRC object version was not yet cached, cache it now.
-+	 * Otherwise use the already cached value.
-+	 */
-+	if (!dprc_major_ver && !dprc_minor_ver) {
-+		err = dprc_get_api_version(mc_io, 0,
-+				&dprc_major_ver,
-+				&dprc_minor_ver);
-+		if (err)
-+			return err;
-+	}
-+
-+	/**
-+	 * MC API 6.5 introduced a new field in the command used to pass
-+	 * some flags.
-+	 * Bit 0 indicates that the child containers are not recursively reset.
-+	 */
-+	if (dprc_major_ver > 6 || (dprc_major_ver == 6 && dprc_minor_ver >= 5))
-+		cmdid = DPRC_CMDID_RESET_CONT_V2;
-+
-+	/* prepare command */
-+	cmd.header = mc_encode_cmd_header(cmdid, cmd_flags, token);
-+	cmd_params = (struct dprc_cmd_reset_container *)cmd.params;
-+	cmd_params->child_container_id = cpu_to_le32(child_container_id);
-+	cmd_params->options = cpu_to_le32(options);
-+
-+	/* send command to mc*/
-+	return mc_send_command(mc_io, &cmd);
-+}
-+EXPORT_SYMBOL_GPL(dprc_reset_container);
-+
+-
++EXPORT_SYMBOL_GPL(dprc_scan_container);
  /**
-  * dprc_set_irq() - Set IRQ information for the DPRC to trigger an interrupt.
-  * @mc_io:	Pointer to MC portal's I/O object
-diff --git a/drivers/bus/fsl-mc/fsl-mc-private.h b/drivers/bus/fsl-mc/fsl-mc-private.h
-index c2a688c07ee2..fdd9e9aa6701 100644
---- a/drivers/bus/fsl-mc/fsl-mc-private.h
-+++ b/drivers/bus/fsl-mc/fsl-mc-private.h
-@@ -91,6 +91,8 @@ int dpmcp_reset(struct fsl_mc_io *mc_io,
- #define DPRC_CMDID_GET_API_VERSION              DPRC_CMD(0xa05)
+  * dprc_irq0_handler - Regular ISR for DPRC interrupt 0
+  *
+@@ -675,12 +672,10 @@ static int dprc_probe(struct fsl_mc_device *mc_dev)
+ 		goto error_cleanup_open;
+ 	}
  
- #define DPRC_CMDID_GET_ATTR                     DPRC_CMD(0x004)
-+#define DPRC_CMDID_RESET_CONT                   DPRC_CMD(0x005)
-+#define DPRC_CMDID_RESET_CONT_V2                DPRC_CMD_V2(0x005)
+-	mutex_init(&mc_bus->scan_mutex);
+-
+ 	/*
+ 	 * Discover MC objects in DPRC object:
+ 	 */
+-	error = dprc_scan_container(mc_dev);
++	error = dprc_scan_container(mc_dev, true);
+ 	if (error < 0)
+ 		goto error_cleanup_open;
  
- #define DPRC_CMDID_SET_IRQ                      DPRC_CMD(0x010)
- #define DPRC_CMDID_SET_IRQ_ENABLE               DPRC_CMD(0x012)
-@@ -111,6 +113,11 @@ struct dprc_cmd_open {
- 	__le32 container_id;
- };
+diff --git a/drivers/bus/fsl-mc/fsl-mc-bus.c b/drivers/bus/fsl-mc/fsl-mc-bus.c
+index df96f1602361..bf4f01ddf846 100644
+--- a/drivers/bus/fsl-mc/fsl-mc-bus.c
++++ b/drivers/bus/fsl-mc/fsl-mc-bus.c
+@@ -636,6 +636,7 @@ int fsl_mc_device_add(struct fsl_mc_obj_desc *obj_desc,
+ 		if (!mc_bus)
+ 			return -ENOMEM;
  
-+struct dprc_cmd_reset_container {
-+	__le32 child_container_id;
-+	__le32 options;
-+};
-+
- struct dprc_cmd_set_irq {
- 	/* cmd word 0 */
- 	__le32 irq_val;
++		mutex_init(&mc_bus->scan_mutex);
+ 		mc_dev = &mc_bus->mc_dev;
+ 	} else {
+ 		/*
 diff --git a/include/linux/fsl/mc.h b/include/linux/fsl/mc.h
-index 4e9b570a1845..805a19516338 100644
+index 805a19516338..4c95e2dcf350 100644
 --- a/include/linux/fsl/mc.h
 +++ b/include/linux/fsl/mc.h
-@@ -486,6 +486,13 @@ static inline bool is_fsl_mc_bus_dpseci(const struct fsl_mc_device *mc_dev)
- 	return mc_dev->dev.type == &fsl_mc_bus_dpseci_type;
- }
+@@ -493,6 +493,9 @@ int dprc_reset_container(struct fsl_mc_io *mc_io,
+ 			 int child_container_id,
+ 			 u32 options);
  
-+#define DPRC_RESET_OPTION_NON_RECURSIVE                0x00000001
-+int dprc_reset_container(struct fsl_mc_io *mc_io,
-+			 u32 cmd_flags,
-+			 u16 token,
-+			 int child_container_id,
-+			 u32 options);
++int dprc_scan_container(struct fsl_mc_device *mc_bus_dev,
++			bool alloc_interrupts);
 +
  /*
   * Data Path Buffer Pool (DPBP) API
