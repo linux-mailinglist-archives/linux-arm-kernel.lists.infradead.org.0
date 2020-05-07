@@ -2,52 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48C921C955C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:46:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DC8B1C9564
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:49:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yHPi+BAOn9c2MfzO7SaE5EXV5WhNLayA8NYH/6oTRX0=; b=P6Fn35QRQU+A4Y
-	w47KtVcRW1XDxE78xGP6yvaQXQEINwrDunxy2o3vGQ/f47nEpdg1FATaesjryEgivv7j8A9zPo+gI
-	2mIiEGkkgrkEFRm8L3FtQPo3mrtELt9n724XXhzG1dDHH9UCXz7PzZliZvz23rO7OQ/zB2Qczk1Ed
-	YrffPi3xLpIoRzl5NlaUptlC68J3ewHb7UsE9k5clk2REd01zE8so4oek1q9Kv1sZBsdGfZL3rFwa
-	Lf5kHjhETGpV15T8uI/wjuufiB5QA9RihL+3kAei7/xJrag7Pt9HSrYbhXVGVDy+Y4kGSq6KEK2ek
-	5g95M0rAfAJwFjRG6wQg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=pyutyTlv7xJlLGOgR9FqJVThDPFg32Df3DT17RIAkO8=; b=NPM/uVYnyeZ0QeU/7a846felG
+	U8DYjzv4iFL/QIdiLpUYA227XxogXAIyZ1gr1i9sVk8AokugYTmqGzIbionzcK6qWhM15+oi2w3X+
+	i0bIzmqlPDMM7x66ONAityN0Mk64yfkWLhsNBOXbgOmNJ04HayvVNARqNkPZOZTttey5YSuHg8Mhl
+	BDqnDvsprjzC/xIcDg366G/R4gABRv5u+YlmlbO2a+1Pu5Sw1r12KYL0ETYsDbZRr3MF8mzt4J4Uc
+	uhPL2VneU4vjwxK+9CTFxSJONmjOSnazHj6jojDOXTclbd115T0Xmq6qMxjhT4CmpVbdA/Yrl76pN
+	AgyHb92pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWiiy-0002Tv-Kr; Thu, 07 May 2020 15:46:12 +0000
+	id 1jWill-0003p3-ST; Thu, 07 May 2020 15:49:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWiiq-0002Rf-I1
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:46:05 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ id 1jWild-0003oX-Ph
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:48:59 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A94A0207DD;
- Thu,  7 May 2020 15:45:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E056320659;
+ Thu,  7 May 2020 15:48:56 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588866364;
- bh=MtT1K1QhdR93RnKXEINbJSy9JalbcJDWOmF/snclf4U=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=ImqSVH0/sYKWxb69Pox8SY+3RRS3M0o9prJxmrXYt8yg5zRTmmeBZywK3+SkqtrL6
- E/vnxRTB860fUDJ2IjcmXxXHAZtW7XsQ6S5pE/G3KhhSWAPa9YAoxBy66VhyVAX51N
- bX1AZ3994AOUMkgIZt+6mf9rmrCoRDcawwBU0ZGQ=
-Date: Fri, 8 May 2020 00:45:56 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Masami Hiramatsu <mhiramat@kernel.org>
-Subject: Re: [RFC PATCH 1/3] x86/kprobes: Support nested kprobes
-Message-Id: <20200508004556.d968ee87b91dc7940ac161f2@kernel.org>
-In-Reply-To: <158884559505.12656.1357851132314046716.stgit@devnote2>
-References: <158884558272.12656.7654266361809594662.stgit@devnote2>
- <158884559505.12656.1357851132314046716.stgit@devnote2>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ s=default; t=1588866537;
+ bh=3onI+WG5EXP2XiJAcWod89vXkAIvYlECrP3YejYM8mM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ozOlbadDmc0RTnA15nAvajIDGdLNzUE3HtWszMfRkpAomuVMCzMSVnOPd86MXT8Ni
+ mCObDntaBzjjizWEDZ0OUO21cqMcML1wBSm14B5WS7gpdCgz1TLQLhvqTH9YRyuYxO
+ 3CiT9K4GgBj+gP1Tox3hSw6Fm92MIVZnei88mDYA=
+Date: Thu, 7 May 2020 16:48:54 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3 00/11] arm64: BTI kernel and vDSO support
+Message-ID: <20200507154854.GC6183@sirena.org.uk>
+References: <20200506195138.22086-1-broonie@kernel.org>
+ <20200507143332.GB1422@willie-the-truck>
+ <20200507143547.GC1422@willie-the-truck>
+ <20200507145901.GA1938@willie-the-truck>
+ <20200507150905.GB6183@sirena.org.uk>
+ <20200507151848.GA2294@willie-the-truck>
+MIME-Version: 1.0
+In-Reply-To: <20200507151848.GA2294@willie-the-truck>
+X-Cookie: 1 + 1 = 3, for large values of 1.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_084604_618322_9DB57481 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20200507_084857_855589_4B88AE88 
+X-CRM114-Status: GOOD (  10.56  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,47 +81,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Wang Nan <wangnan0@huawei.com>, Song Liu <songliubraving@fb.com>,
- Martin KaFai Lau <kafai@fb.com>, Alexei Starovoitov <ast@kernel.org>,
- Daniel Borkmann <daniel@iogearbox.net>, Russell King <linux@armlinux.org.uk>,
- Network Development <netdev@vger.kernel.org>,
- LKML <linux-kernel@vger.kernel.org>,
- Arnaldo Carvalho de Melo <acme@kernel.org>,
- "David S . Miller" <davem@davemloft.net>, Will Deacon <will@kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Yonghong Song <yhs@fb.com>,
- bpf <bpf@vger.kernel.org>, Andrii Nakryiko <andriin@fb.com>,
- Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Eelco Chaudron <echaudro@redhat.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1005121468436321123=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu,  7 May 2020 18:59:55 +0900
-Masami Hiramatsu <mhiramat@kernel.org> wrote:
 
-> Make kprobes to accept 1-level nesting instead of
-> diff --git a/arch/x86/kernel/kprobes/ftrace.c b/arch/x86/kernel/kprobes/ftrace.c
-> index 681a4b36e9bb..b695c2e118f8 100644
-> --- a/arch/x86/kernel/kprobes/ftrace.c
-> +++ b/arch/x86/kernel/kprobes/ftrace.c
-> @@ -25,13 +25,15 @@ void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
->  		return;
->  
->  	kcb = get_kprobe_ctlblk();
-> -	if (kprobe_running()) {
-> +	if (!kprobe_can_nest()) {
+--===============1005121468436321123==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="s9fJI615cBHmzTOP"
+Content-Disposition: inline
 
-Oops, something wrong. this kprobe_can_nest() requires kcb for
-the parameter. I'll fix this.
 
-Thank you,
+--s9fJI615cBHmzTOP
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
--- 
-Masami Hiramatsu <mhiramat@kernel.org>
+On Thu, May 07, 2020 at 04:18:48PM +0100, Will Deacon wrote:
+> On Thu, May 07, 2020 at 04:09:06PM +0100, Mark Brown wrote:
+
+> > Can you share a .config?
+
+> allmodconfig
+
+Right, I'm seeing it here now - it's when CONFIG_GCOV_KERNEL is enabled
+and happens for clang-10 as well but not a GCC 10 prerelease build.
+Adding
+
+	depends !(CC_IS_CLANG && GCOV_KERNEL)
+
+avoids the warning but obviously we should actually fix the issue.
+
+--s9fJI615cBHmzTOP
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl60LeYACgkQJNaLcl1U
+h9BU+Af/TXcKSnX8zGIFcb5/0FvYcFwt+LUC+3auGS5XCB9p5JJpb0nNg8O6QVKp
++GNMf5K5grHeyA2+GeqKA4Zwr4eXmhcgwWr/g4RxjQrx8j6T25OLhK3Nq6XmoRfL
+jxsJfPdftjelOSSARlzlQ27a3+44bzkpVrBUyZN2zG7OnuHXuDlECqTAk0mDb0pM
+k5/kI38kLIhpnCCvpGxTVGTRlKqoo0DxwFzEyVkJGkRt+TFNsJpl6fZy6eJdZ3EK
+igco4oLqX59IbH6QJ4pSy1sHwOcdfW0PCXQ9/c76BK2hWl8VMqMXg6Ixc9EEKJAo
+cI6pBEYWj0tvp6F4a6GNE10/Q2ehqQ==
+=3Vtl
+-----END PGP SIGNATURE-----
+
+--s9fJI615cBHmzTOP--
+
+
+--===============1005121468436321123==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1005121468436321123==--
+
