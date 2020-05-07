@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9872A1C98A8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:04:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8FAC21C9917
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:15:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fCmmTd9ZGmvpBlYj1vC10GlvOsTDMinD8u6/V4rARrE=; b=qMCs9QPgP+EmgmXmADGXORnKo
-	4ssLozwUQEAiSUZpHyOyGavwUp+18VoMfhzfHsb5NFuabLlhS8rmZp/FK2XFQA7r1BZJE2CwLrqfC
-	NiK9FPOuvol7z/t3DC0QBuO6PiBgEZZX560qM0mPUJBCyQVVcXSjfn+Y6eXKUlFrhqgwgL8J/hx4s
-	G8y4Iqh8lOiw97JUyZnaaSgWkxz1lhgzu3c8cHkZKHhwg0Ly7oWSnBLtbXeWG7awxALnQYkamyPfN
-	g6ZSMXrmgg1pcP0o1adPjiNYN7Mf80LOyBZ5P5XD6fyHuNBoKZ2Y3zzS2IPh+i1zbOdE3ZHoXYXhz
-	E+67iJJjw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=+kiCtkmNmTzdXtLuKtQkRQsrxGeW3pJ6k9a80rlwK6Y=; b=lL2XDs2bT7OPhI
+	UEdBmwDqYnTF8Ywpt7nYJow11KL8e2QrBP//iFKnMNv6NYfQFkyduVwDt+Jipxdk8U1yzqCAeRVHv
+	pAUvAoewT4Kp6qbdldP0EDXuQEhZiNlYPcfu8f7hXMBmAKfDhxatSgE1ZRYLPo7TxgoP7iILDgleQ
+	U3AK8Lr9rAsGEOhZX7AgJLPUiY5WD3WqL+oAEiNJPnFcxIC3uAmsmswGqJuYlwGl4gZw0u0BWxBbs
+	UfJZGtKMbH4QcvXiivocBLfqEP6YBbiKhndHBcT3XcLNFmeC3/RyMVn8jpvguGY3AlfvgyeEI2WU5
+	fbS3c6QRk5PNrF5KposQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWksS-0004vN-4o; Thu, 07 May 2020 18:04:08 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jWl3g-0006sJ-QL; Thu, 07 May 2020 18:15:44 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWksH-0004tr-ER
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 18:03:59 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588874637; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=jxc6IOMXReaSlkhn51fI24AkRcV8/V9PR5zPvCqwQdw=;
- b=lQ7LrqFYpf9Q2a8Idi+pzbHVvC75eapdjXw8ePY+N0saSD+cIgeAdGatnYVns3zXkQld8yQ/
- hiQhN2cgycwbgLpQ8Q2L+fMLTv+dummWIN+4afYpgJEKP39VaEWgCX+zz2M1hx02Zch4mfsR
- OFJbEjdQaFdQmhvpVnkZdkd65XE=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eb44d8c.7f183f857df8-smtp-out-n05;
- Thu, 07 May 2020 18:03:56 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 87126C432C2; Thu,  7 May 2020 18:03:56 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested) (Authenticated sender: rishabhb)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 9FFB5C433D2;
- Thu,  7 May 2020 18:03:55 +0000 (UTC)
+ id 1jWl3Z-0006n4-Ep
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 18:15:39 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 047IFURQ069949;
+ Thu, 7 May 2020 13:15:30 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1588875330;
+ bh=YZqZOiyTdpd6D7lyHKpIqa4mX/cvgizJMPiENUz0xKs=;
+ h=From:To:CC:Subject:Date;
+ b=XYGNDRDlEbvrQ0uYCoF3acT1XCsUor3Oq0OX9i5ASfS3SuWsMOm0u6jWhgch4yzo/
+ dXmdtYaQDlpxVJK1LLXa4F6bzoD00q3rzVUZ+Rn8qw9I0ddpY+XxiHXvJ654U9wG5N
+ qoXf3btGVn/OloCGl/jt/pKY9kOfYZZe54bZgeUE=
+Received: from DFLE101.ent.ti.com (dfle101.ent.ti.com [10.64.6.22])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 047IFUF3115778
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 7 May 2020 13:15:30 -0500
+Received: from DFLE102.ent.ti.com (10.64.6.23) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 7 May
+ 2020 13:15:30 -0500
+Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE102.ent.ti.com
+ (10.64.6.23) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Thu, 7 May 2020 13:15:30 -0500
+Received: from a0230074-Latitude-E7470.ent.ti.com (ileax41-snat.itg.ti.com
+ [10.172.224.153])
+ by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 047IFQPO121363;
+ Thu, 7 May 2020 13:15:27 -0500
+From: Faiz Abbas <faiz_abbas@ti.com>
+To: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH v2] arm64: dts: ti: k3-am654-main: Update otap-del-sel values
+Date: Thu, 7 May 2020 23:45:26 +0530
+Message-ID: <20200507181526.12529-1-faiz_abbas@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Date: Thu, 07 May 2020 11:03:55 -0700
-From: rishabhb@codeaurora.org
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-Subject: Re: [PATCH 4/4] arm64: defconfig: Remove QCOM_GLINK_SSR
-In-Reply-To: <20200423003736.2027371-5-bjorn.andersson@linaro.org>
-References: <20200423003736.2027371-1-bjorn.andersson@linaro.org>
- <20200423003736.2027371-5-bjorn.andersson@linaro.org>
-Message-ID: <a783c4f600ea40b9242ccd383f464bb2@codeaurora.org>
-X-Sender: rishabhb@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_110358_067964_26CC6487 
-X-CRM114-Status: GOOD (  12.57  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200507_111537_592878_EAF55511 
+X-CRM114-Status: GOOD (  10.59  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.26 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,42 +89,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, linux-remoteproc-owner@vger.kernel.org,
- linux-arm-msm@vger.kernel.org, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chris Lew <clew@codeaurora.org>,
- Andy Gross <agross@kernel.org>, Sibi <sibis@codeaurora.org>,
- Siddharth Gupta <sidgup@codeaurora.org>, linux-arm-kernel@lists.infradead.org
+Cc: nm@ti.com, t-kristo@ti.com, robh+dt@kernel.org, faiz_abbas@ti.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-04-22 17:37, Bjorn Andersson wrote:
-> Remove the QCOM_GLINK_SSR option from the arm64 defconfig, as the 
-> module
-> is assimilated by QCOM_GLINK - which is selected by other means.
-> 
-> Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-> ---
+According to the latest AM65x Data Manual[1], a different output tap
+delay value is optimum for a given speed mode. Update these values.
 
-Acked-by: Rishabh Bhatnagar <rishabhb@codeaurora.org>
+[1] http://www.ti.com/lit/gpn/am6526
 
->  arch/arm64/configs/defconfig | 1 -
->  1 file changed, 1 deletion(-)
-> 
-> diff --git a/arch/arm64/configs/defconfig 
-> b/arch/arm64/configs/defconfig
-> index f9eefb5940ca..f26a0b6ea0e8 100644
-> --- a/arch/arm64/configs/defconfig
-> +++ b/arch/arm64/configs/defconfig
-> @@ -838,7 +838,6 @@ CONFIG_FSL_MC_DPIO=y
->  CONFIG_IMX_SCU_SOC=y
->  CONFIG_QCOM_AOSS_QMP=y
->  CONFIG_QCOM_GENI_SE=y
-> -CONFIG_QCOM_GLINK_SSR=m
->  CONFIG_QCOM_RMTFS_MEM=m
->  CONFIG_QCOM_RPMH=y
->  CONFIG_QCOM_RPMHPD=y
+Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
+---
+v2: Rebased to the latest mainline kernel
+
+ arch/arm64/boot/dts/ti/k3-am65-main.dtsi | 12 +++++++++++-
+ 1 file changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+index 11887c72f23a..6cd9701e4ead 100644
+--- a/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
++++ b/arch/arm64/boot/dts/ti/k3-am65-main.dtsi
+@@ -244,7 +244,17 @@
+ 		interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
+ 		mmc-ddr-1_8v;
+ 		mmc-hs200-1_8v;
+-		ti,otap-del-sel = <0x2>;
++		ti,otap-del-sel-legacy = <0x0>;
++		ti,otap-del-sel-mmc-hs = <0x0>;
++		ti,otap-del-sel-sd-hs = <0x0>;
++		ti,otap-del-sel-sdr12 = <0x0>;
++		ti,otap-del-sel-sdr25 = <0x0>;
++		ti,otap-del-sel-sdr50 = <0x8>;
++		ti,otap-del-sel-sdr104 = <0x5>;
++		ti,otap-del-sel-ddr50 = <0x5>;
++		ti,otap-del-sel-ddr52 = <0x5>;
++		ti,otap-del-sel-hs200 = <0x5>;
++		ti,otap-del-sel-hs400 = <0x0>;
+ 		ti,trm-icp = <0x8>;
+ 		dma-coherent;
+ 	};
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
