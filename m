@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5AC671C884D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F08B1C884B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:31:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,50 +11,50 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2COEMCpRhlwm5NUd1TS3a9gRvK96l9Mo09UP2svTClc=; b=aSbaOU0sa55j82FFFSH+x/nAoK
-	2Bk4dggYTQie15ii+OAStps1pVJhnHhnhWkDf3zfwUDriiW5MyhnVoyEks6bmyXVtueiiADEzO25f
-	9YNfbMOnQZAnrw3IcqMm/atzwCIIctUI6SjrhMWaU/yagPtIbC70hUwGcTVX6ah6qRC0Yhc28vM8d
-	Ciy9elehYGS5OsZaZ5poCGwPkaCQqiV75KcQpQpEmPrM/1T3S1Ltb0YZrcca3BVLTD1GMs4b8RWzp
-	1ya48E9B19rOqzY8qQA3d7b0RM9K8uScsKcyUKY2oDRmnKFx92mZ9/oHe0owvZaKXXEX0Uy7TKAKp
-	FkCjQ5wQ==;
+	bh=CAX7cnji3ZO2zF6L/hzWUwUKwOA48SlqGJGdXUaX5Kk=; b=oKDIvLg5aGmAqfxLP06IKhn52o
+	d8Q4yN6bFHmrtDP7pCU1NTXvlYyBPr3KQDXoEnjYhmnBp90kB3VaUhw7R6uwQ4P8iH+AH4USe8jQF
+	a7vEenGeKz2Zjkk1Iwuxc/0/N00plWnThTKc18E7aZo/udShY0fDzTNCIGDrJQgnUUHU9fqIrY3ie
+	/f5p5MazMDcqAovgdDqEqBh6eradaFivhUmdOYlUQbFxwNjd/mu9GgJ64z+6zR+HYMgN9c5/igUwB
+	NjTNZxgZsCnJDW1U+xfjtavxc4/7z9l72Mgm3u/AIov3UA+UCsHbiq9ucfbx+w7BLTiXFf5Fq/k8l
+	FQjYRmlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWekK-0000Tx-7c; Thu, 07 May 2020 11:31:20 +0000
-Received: from andre.telenet-ops.be ([2a02:1800:120:4::f00:15])
+	id 1jWejq-0008Mq-HI; Thu, 07 May 2020 11:30:50 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWejM-0007v6-10
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:30:22 +0000
+ id 1jWejK-0007uf-On
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:30:21 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:6572:4a1f:d283:9ae8])
- by andre.telenet-ops.be with bizsmtp
- id bnW3220073ZRV0X01nW3kK; Thu, 07 May 2020 13:30:11 +0200
+ by xavier.telenet-ops.be with bizsmtp
+ id bnW3220063ZRV0X01nW3Km; Thu, 07 May 2020 13:30:11 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jWej5-0006zL-1B; Thu, 07 May 2020 13:30:03 +0200
+ id 1jWej5-0006zO-21; Thu, 07 May 2020 13:30:03 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jWej5-00068X-0v; Thu, 07 May 2020 13:30:03 +0200
+ id 1jWej5-00068f-1m; Thu, 07 May 2020 13:30:03 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Jens Axboe <axboe@kernel.dk>, Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
  Viresh Kumar <viresh.kumar@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH 3/4] clk: qoriq: Add platform dependencies
-Date: Thu,  7 May 2020 13:29:54 +0200
-Message-Id: <20200507112955.23520-4-geert+renesas@glider.be>
+Subject: [PATCH 4/4] thermal: qoriq: Add platform dependencies
+Date: Thu,  7 May 2020 13:29:55 +0200
+Message-Id: <20200507112955.23520-5-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200507112955.23520-1-geert+renesas@glider.be>
 References: <20200507112955.23520-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_043020_209187_7A7C675B 
-X-CRM114-Status: GOOD (  10.84  )
+X-CRM114-CacheID: sfid-20200507_043019_803489_CF50D2EF 
+X-CRM114-Status: GOOD (  10.50  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:15 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -82,30 +82,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Freescale QorIQ clock controller is only present on Freescale E500MC
-and Layerscape SoCs.  Add platform dependencies to the CLK_QORIQ config
-symbol, to avoid asking the user about it when configuring a kernel
-without E500MC or Layerscape support.
+The QorIQ Thermal Monitoring Unit is only present on Freescale E500MC
+and Layerscape SoCs, and on NXP i.MX8 SoCs.  Add platform dependencies
+to the QORIQ_THERMAL config symbol, to avoid asking the user about it
+when configuring a kernel without support for any of the aforementioned
+SoCs.
 
 Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
 ---
- drivers/clk/Kconfig | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/thermal/Kconfig | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
-index bcb257baed06daa0..22bf015610d1724c 100644
---- a/drivers/clk/Kconfig
-+++ b/drivers/clk/Kconfig
-@@ -232,7 +232,8 @@ config COMMON_CLK_AXI_CLKGEN
+diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
+index 91af271e9bb02475..61a994e1e7824ff6 100644
+--- a/drivers/thermal/Kconfig
++++ b/drivers/thermal/Kconfig
+@@ -285,8 +285,8 @@ config MAX77620_THERMAL
  
- config CLK_QORIQ
- 	bool "Clock driver for Freescale QorIQ platforms"
--	depends on (PPC_E500MC || ARM || ARM64 || COMPILE_TEST) && OF
-+	depends on OF
-+	depends on PPC_E500MC || SOC_LS1021A || ARCH_LAYERSCAPE || COMPILE_TEST
- 	---help---
- 	  This adds the clock driver support for Freescale QorIQ platforms
- 	  using common clock framework.
+ config QORIQ_THERMAL
+ 	tristate "QorIQ Thermal Monitoring Unit"
+-	depends on THERMAL_OF
+-	depends on HAS_IOMEM
++	depends on THERMAL_OF && HAS_IOMEM
++	depends on PPC_E500MC || SOC_LS1021A || ARCH_LAYERSCAPE || (ARCH_MXC && ARM64) || COMPILE_TEST
+ 	select REGMAP_MMIO
+ 	help
+ 	  Support for Thermal Monitoring Unit (TMU) found on QorIQ platforms.
 -- 
 2.17.1
 
