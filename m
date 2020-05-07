@@ -2,80 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1054F1C8C14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 15:25:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B105F1C8C21
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 15:26:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NQB3FfI9/EhTxXQposqK4gCjJI81I1jkp133pTKkbxE=; b=R66bUUYg2zw6MK
-	SeWI0viG2ln2NKmKCTgCT9N8aL5OoRpJUliKyUOVJjIpUZlPofDhbS/UpwabjwXjUDKG0ytYqccrr
-	PAP/vX89ITKbkdxyT5+8a7VZ5XAoWM0IpPT/YuhrbEWz736AjhB7HzHXrKwDlWAt28KIq/+hBDe8C
-	d9uDAp1WAsZ5fKXdVZ2E+6Fh8URa8c2QeoAC2UcDzB5wk1PXnUVwUR0Fjox5uGRfPjmEhd3jV15m2
-	gQZsbxNEXh+OY06W0agIG+SLP0qhvN5A/cjeTP9Flu1yhmb/D99KORFOFA7QKH7QeC7FWL6ywxXT8
-	9cgF1yjMiCiLeM1LgmRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=TwxLAIHMG+SZ8oc/8ln2G3tYbNbGSZCtcruWopJ04Js=; b=RriUO1wedX6tN68zLBPYn/Xyl
+	jsM1bWuTTrKaZLUb8wmEvzkg3LP2b6xxMDMVBpl4KckIVSB73nOk3D8m/PTVg8nY7kQVRg0Avk+G4
+	VFfU2vTUPesHqQ6wal+5Mg1MosnzvMTx1CUmvQGchWwyTWmU3KVqldDPy+7DhSpBxJj0NO2pQxlXR
+	WcR36W6tEgT9rIqcu1oBelHijFxslrwxyxSZAE6fZyqa7rBZDU7p7kyonnp8GMnjbicqLHF5nf59m
+	aHIIOzeyP3hN4XzHTT/32bhm9/VCeoSRK7eqS8jLmHZ897U1oSdXzhE6BKlRL07jIZFISeYl0bDNY
+	yaS3+ZIcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWgWb-0000pW-F4; Thu, 07 May 2020 13:25:17 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWgWL-0000DW-IC
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 13:25:03 +0000
-Received: from mail-qv1-f51.google.com ([209.85.219.51]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1MOAmt-1jmRBj0xtR-00OZfx for <linux-arm-kernel@lists.infradead.org>; Thu,
- 07 May 2020 15:24:58 +0200
-Received: by mail-qv1-f51.google.com with SMTP id di6so2574681qvb.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 06:24:57 -0700 (PDT)
-X-Gm-Message-State: AGi0PuaLn46UqdZxiRw8DJSZLZgb4UfcEiX5opEq6+8WdapZkZL/kjo0
- 2EfKk5NIPZqoqSuC32ky2mWsQjgrEXJ5gFu29oY=
-X-Google-Smtp-Source: APiQypLIAviOYBCYxRnII0AvfushamRE+8Q+7+nbZJVXRnY9HSekpz3+fnWiynyno8isRVxgoJHmyQo0K7lErlQsonk=
-X-Received: by 2002:a0c:ea43:: with SMTP id u3mr12360811qvp.211.1588857896673; 
- Thu, 07 May 2020 06:24:56 -0700 (PDT)
+	id 1jWgY9-00030j-FT; Thu, 07 May 2020 13:26:53 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWgXy-0002zh-D5
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 13:26:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 06F3C101E;
+ Thu,  7 May 2020 06:26:40 -0700 (PDT)
+Received: from [192.168.122.166] (unknown [10.119.48.73])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 24FBF3F68F;
+ Thu,  7 May 2020 06:26:39 -0700 (PDT)
+Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>,
+ "Rafael J . Wysocki" <rafael@kernel.org>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>, linux.cj@gmail.com,
+ Andrew Lunn <andrew@lunn.ch>, Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <67e263cf-5cd7-98d1-56ff-ebd9ac2265b6@arm.com>
+Date: Thu, 7 May 2020 08:26:38 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200507112955.23520-1-geert+renesas@glider.be>
-In-Reply-To: <20200507112955.23520-1-geert+renesas@glider.be>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 7 May 2020 15:24:39 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a2TcOrWOhLKdovo0qTTx1PB4+iWVyFyzQOen7ZRwNZhJA@mail.gmail.com>
-Message-ID: <CAK8P3a2TcOrWOhLKdovo0qTTx1PB4+iWVyFyzQOen7ZRwNZhJA@mail.gmail.com>
-Subject: Re: [PATCH 0/4] qoriq: Add platform dependencies
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-X-Provags-ID: V03:K1:C1uFOW8cvNALGQg33aoxr6BX1FKuL1IIYz+uIteSkppMkx4WwEP
- BBGLn/3UMeN/dAudeFG4NsoffERTsIPr8WrvamUGS7mUZB3Uhphu7EhcRQR1KviAhHCwgrr
- PFM5Yrm+qnQZVe+Yh4vLl9N37+LWRtJGM6DDgPz7JMRZ6BkO3HLI2ZSoo/xzj5tUaxr9fkQ
- 7KfMk9Q9zvSMOx62pPcAg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ND9WOH/x+uw=:tnq9zF+LEhjbjrMMY1gl1t
- juQA7T1bpBkZ5/0t3uyzBuHm9wHQCnllL/s6xstoF462OI6XXmP2BwwjZVCGerY23PqWcN5mL
- 9136rHORdeJjpy2GHj4RuzE3wsCS3yWrFHjXTJzUXRRYXokMTYtk1zh9xafCLD4ktRmxX3mEv
- i134N9pXLG5nW9PuUIE4SB1I/wr9keM7i0h2kNX4+V+cdcXqv1ewUwotkviENIpxA/wma/UDb
- dsONFhxgGY9bIkVNew86LHln14326L61LvTbk6WfS7kw5Y8cHA1qUSCJaxz/+bBsXWckX7syq
- 9optz2nuRpoHFicWN9GsURL++ox7mOxJyXoSDhRilxzK7eMhzyUKYue1gctitRv01Yab+TNhM
- 1A7alUYMrk/aXJJgESOZ1+Cfjwkdm6sAhRD+bURDvN2PJU2tgry3a+BVy8QGp4oeHMZspVrFb
- 8wVaTNIKSSRW+gN4sUjoii861TAS2mdKsnEV0rM7+l0RLz556x9InGqyI4kxeVcWpXOSzg2RW
- S45gMGpjIp7funAMcdOhY1Sr41gYi13tuLj3lrGgDd+au+ihb5rtykP5kyQKYokS8Bh2Ph/Mu
- sBnr1Hmi1pZe+WDKlmcNwWlyWJLEAn4cayqZr2se7qOZ6YmTvoGswChPFnWXqHtU450utHSRf
- rv9x0n+rJO4+hAsHHyeZC3S/+hcVW2ssKSi1ygHWumB0kEG3cDkDzDzobWc+5m6qPIOn16By7
- a2mfq+lF6iNlUYvzuy8KI6P3xi4vLJgUsFWnkCHw3b4SV9ah+4o/MHbdzSGBN2aw8A4mI5/3s
- m9+DxyEoXu6hpT43UZOwI+TuYMbT7x7ykISsIVlZT9Loq0+p48=
+In-Reply-To: <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_062501_913567_18917474 
-X-CRM114-Status: GOOD (  14.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200507_062642_485271_32E7DE49 
+X-CRM114-Status: GOOD (  19.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.17.13 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,42 +74,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jens Axboe <axboe@kernel.dk>, Amit Kucheria <amit.kucheria@verdurent.com>,
- Linux PM list <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Li Yang <leoyang.li@nxp.com>, IDE-ML <linux-ide@vger.kernel.org>,
- Zhang Rui <rui.zhang@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>, netdev@vger.kernel.org,
+ Pankaj Bansal <pankaj.bansal@nxp.com>, linux-kernel@vger.kernel.org,
+ Heiner Kallweit <hkallweit1@gmail.com>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>, linux-acpi@vger.kernel.org,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>, "David S. Miller" <davem@davemloft.net>,
+ linux-arm-kernel@lists.infradead.org,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 7, 2020 at 1:30 PM Geert Uytterhoeven
-<geert+renesas@glider.be> wrote:
->
->         Hi all,
->
-> Several QorIQ blocks are only present on Freescale or NXP SoCs.
-> This series adds platform dependencies to the corresponding config
-> ymbols, to avoid asking the user about them when configuring a kernel
-> without support for these SoCs.
->
-> Most patches in this series are independent, but the third patch may
-> cause some Kconfig warnings when applied before the second patch, and
-> enabling the QorIQ CPU frequency scaling driver in a non-Layerscape
-> kernel.
->
-> Thanks for your comments!
+Hi,
 
-These all look good to me, thank you for the improvements!
+On 5/5/20 8:29 AM, Calvin Johnson wrote:
+> Extract phy_id from compatible string. This will be used by
+> fwnode_mdiobus_register_phy() to create phy device using the
+> phy_id.
+> 
+> Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
+> ---
+> 
+> Changes in v3: None
+> Changes in v2: None
+> 
+>   drivers/net/phy/phy_device.c | 21 +++++++++++++++++++++
+>   include/linux/phy.h          |  5 +++++
+>   2 files changed, 26 insertions(+)
+> 
+> diff --git a/drivers/net/phy/phy_device.c b/drivers/net/phy/phy_device.c
+> index 4204d49586cd..f4ad47f73f8d 100644
+> --- a/drivers/net/phy/phy_device.c
+> +++ b/drivers/net/phy/phy_device.c
+> @@ -662,6 +662,27 @@ struct phy_device *phy_device_create(struct mii_bus *bus, int addr, u32 phy_id,
+>   }
+>   EXPORT_SYMBOL(phy_device_create);
+>   
+> +/* Extract the phy ID from the compatible string of the form
+> + * ethernet-phy-idAAAA.BBBB.
+> + */
+> +int fwnode_get_phy_id(struct fwnode_handle *fwnode, u32 *phy_id)
+> +{
+> +	const char *cp;
+> +	unsigned int upper, lower;
+> +	int ret;
+> +
+> +	ret = fwnode_property_read_string(fwnode, "compatible", &cp);
+> +	if (!ret) {
+> +		if (sscanf(cp, "ethernet-phy-id%4x.%4x",
+> +			   &upper, &lower) == 2) {
+> +			*phy_id = ((upper & 0xFFFF) << 16) | (lower & 0xFFFF);
+> +			return 0;
+> +		}
 
-Acked-by: Arnd Bergmann <arnd@arndb.de>
+
+Isn't the ACPI _CID() conceptually similar to the DT compatible 
+property? It even appears to be getting used in a similar way to 
+identify particular phy drivers in this case.
+
+
+Thanks,
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
