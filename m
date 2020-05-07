@@ -2,100 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2F871C8663
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 12:09:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCE451C8678
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 12:15:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bpBRtLDfIMvZs39j23UMlE5ZQItLCF7Beq8LIJ/F7jo=; b=f+4eIPPiqMgMg9
-	wouUEAUMmC2V8lF68t6RHe2kQC9f4kLZQe2G43c69znlytu1/9I8AgHVni4tB3qhC0ow41br8QV+V
-	TJPQ8ev1L/lmRPvabyq2YR7YCtU6/MgUrVnzuM9e7i475/o7VFep/8NBtvI6BC0nnsGCJ0GzfbfIK
-	WQtU6xJTJes0eYU8PGLiC52HcPkk80Z3kGMA23Y7AoQWgHxNPoam9KoUD1zB1Xt3szmHU+hI438YT
-	fOnmqT0HJp8yqKKfrR6ZNFI8j9jdjNbHMwFSWBJgyWhPOjw0+IayftWSSYDxYE7YkLrX3Xba+I7jL
-	pfcPCj1xrtIM3V+6A61w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=jgXPxrVkO12OYlHXDAP0djnZtqr93Ro7cDV4PnkPtMo=; b=Dr3GaA+rxaNGHU2SQSTRSoZhC
+	JmJBi+M+xX0ZVdNktZoqbc29hpig4/GoThJFMpFA3nTVK4JmFrlO/xJ66AamCopnUNAS/lIkZLbp8
+	TUwdqWzNimz1PHX3dnkNLz+NxGlCUpKH4Ojorm619Oa6MmG0d41zUnQXlPIswPavz9J9V7F2SajPv
+	UEV4DAzXk5r2q47zzj5TOT9+k/MUkMmgvNZPgFc6vfdF1dlYX81Yey2Wkfjfo2XIhuJaKwIOi5cQI
+	TAsFhoLg9n+OgXQrq+1sVGsC55G4qiq9f94jUoI4A6lxLQ1ky/3cF43vJ05XA5xt8uc5hzhs9nIIU
+	Y1u0ZQOXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWdTN-0003RY-8X; Thu, 07 May 2020 10:09:45 +0000
-Received: from mx0a-001b2d01.pphosted.com ([148.163.156.1])
+	id 1jWdYx-00019p-7h; Thu, 07 May 2020 10:15:31 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWdTG-0003R3-6d
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 10:09:39 +0000
-Received: from pps.filterd (m0187473.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 047A1Xmb110478; Thu, 7 May 2020 06:09:28 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 30s4gwxe0p-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 06:09:28 -0400
-Received: from m0187473.ppops.net (m0187473.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 047A1kwi110956;
- Thu, 7 May 2020 06:09:27 -0400
-Received: from ppma01fra.de.ibm.com (46.49.7a9f.ip4.static.sl-reverse.com
- [159.122.73.70])
- by mx0a-001b2d01.pphosted.com with ESMTP id 30s4gwxdun-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 06:09:27 -0400
-Received: from pps.filterd (ppma01fra.de.ibm.com [127.0.0.1])
- by ppma01fra.de.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 047A5GIc010683;
- Thu, 7 May 2020 10:09:15 GMT
-Received: from b06cxnps3075.portsmouth.uk.ibm.com
- (d06relay10.portsmouth.uk.ibm.com [9.149.109.195])
- by ppma01fra.de.ibm.com with ESMTP id 30s0g5chgt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 10:09:15 +0000
-Received: from d06av22.portsmouth.uk.ibm.com (d06av22.portsmouth.uk.ibm.com
- [9.149.105.58])
- by b06cxnps3075.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
- 047A9D8u64159964
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 7 May 2020 10:09:13 GMT
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 9F4124C058;
- Thu,  7 May 2020 10:09:13 +0000 (GMT)
-Received: from d06av22.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id EAB0C4C040;
- Thu,  7 May 2020 10:09:12 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.201.211])
- by d06av22.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Thu,  7 May 2020 10:09:12 +0000 (GMT)
-Date: Thu, 7 May 2020 13:09:11 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH 0/2] Allow either FLATMEM or SPARSEMEM on the
- multiplatform build
-Message-ID: <20200507100911.GD683243@linux.ibm.com>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200507081409.GQ1551@shell.armlinux.org.uk>
+ id 1jWdYm-00016A-7q
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 10:15:26 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1588846523; h=Message-ID: References: In-Reply-To: Subject:
+ Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Sender; bh=XFqf1wHSQnZtSaEYl1tXrhnf2kvJl+dy/TED/57qEYE=;
+ b=cDVrHHP9fkZFJNMDN6TKtxkvFI6q7SyMs7mKlF6DDosBGam3fiHKVeUMeKJGDi9OVK4oYvJk
+ RipF/ogcKXSv1JHJgPPK89xlVabDOeB3ZfkHHTdQwdSow1ZnXUCSZRQTXp7QBa43oISLqgcQ
+ Ld8rU8M+QTQMQEsXf5nqHgvBksI=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5eb3dfa5.7fb15b8a7d88-smtp-out-n04;
+ Thu, 07 May 2020 10:15:01 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 9EB7EC43637; Thu,  7 May 2020 10:15:00 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: saiprakash.ranjan)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id C0458C433D2;
+ Thu,  7 May 2020 10:14:59 +0000 (UTC)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507081409.GQ1551@shell.armlinux.org.uk>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-07_06:2020-05-05,
- 2020-05-07 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- adultscore=0
- lowpriorityscore=0 mlxlogscore=999 clxscore=1015 bulkscore=0 mlxscore=0
- priorityscore=1501 malwarescore=0 phishscore=0 spamscore=0 impostorscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2005070078
+Date: Thu, 07 May 2020 15:44:59 +0530
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
+ Joerg Roedel <joro@8bytes.org>, Rob Clark <robdclark@gmail.com>, Jordan
+ Crouse <jcrouse@codeaurora.org>
+Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
+In-Reply-To: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
+Message-ID: <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
+X-Sender: saiprakash.ranjan@codeaurora.org
+User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_030938_246343_52D80BFB 
-X-CRM114-Status: GOOD (  17.68  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_031524_546352_61A9145E 
+X-CRM114-Status: GOOD (  19.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.156.1 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.156.1 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,46 +91,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sboyd@kernel.org, opendmb@gmail.com,
- Florian Fainelli <f.fainelli@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm@vger.kernel.org, iommu@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+Hi Will, Robin
 
-On Thu, May 07, 2020 at 09:14:09AM +0100, Russell King - ARM Linux admin wrote:
-> On Wed, May 06, 2020 at 04:50:07PM -0700, Florian Fainelli wrote:
-> > Hi all,
-> > 
-> > This patch series somehow got lost back in 2015, and while looking at
-> > the various patches that we are carrying in our BRCMSTB downstream
-> > kernel those two patches should have made it upstream.
+On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
+> Add stall implementation hook to enable stalling
+> faults on QCOM platforms which supports it without
+> causing any kind of hardware mishaps. Without this
+> on QCOM platforms, GPU faults can cause unrelated
+> GPU memory accesses to return zeroes. This has the
+> unfortunate result of command-stream reads from CP
+> getting invalid data, causing a cascade of fail.
 > 
-> I don't believe it's a good idea for multiplatform.
+> Suggested-by: Rob Clark <robdclark@gmail.com>
+> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+> ---
+> This has been attempted previously by Rob Clark in 2017, 2018.
+> Hopefully we can get something concluded in 2020.
+>  * https://patchwork.kernel.org/patch/9953803/
+>  * https://patchwork.kernel.org/patch/10618713/
+> ---
+>  drivers/iommu/arm-smmu-qcom.c | 1 +
+>  drivers/iommu/arm-smmu.c      | 7 +++++++
+>  drivers/iommu/arm-smmu.h      | 1 +
+>  3 files changed, 9 insertions(+)
 > 
-> If you have a platform that relies on sparsemem within the multiplatform
-> family, and you select flatmem, how would it boot?
+> diff --git a/drivers/iommu/arm-smmu-qcom.c 
+> b/drivers/iommu/arm-smmu-qcom.c
+> index 24c071c1d8b0..a13b229389d4 100644
+> --- a/drivers/iommu/arm-smmu-qcom.c
+> +++ b/drivers/iommu/arm-smmu-qcom.c
+> @@ -32,6 +32,7 @@ static int qcom_sdm845_smmu500_reset(struct
+> arm_smmu_device *smmu)
 > 
-> Sparsemem can support flatmem layouts, but flatmem can't support
-> sparsemem layouts.
+>  static const struct arm_smmu_impl qcom_smmu_impl = {
+>  	.reset = qcom_sdm845_smmu500_reset,
+> +	.stall = true,
+>  };
 > 
-> So, allowing flatmem seems to go against the underlying principle of
-> multiplatform support.
+>  struct arm_smmu_device *qcom_smmu_impl_init(struct arm_smmu_device 
+> *smmu)
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index e622f4e33379..16b03fca9966 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -488,6 +488,11 @@ static irqreturn_t arm_smmu_context_fault(int
+> irq, void *dev)
+>  			    fsr, iova, fsynr, cbfrsynra, idx);
+> 
+>  	arm_smmu_cb_write(smmu, idx, ARM_SMMU_CB_FSR, fsr);
+> +
+> +	if (smmu->impl && smmu->impl->stall && (fsr & ARM_SMMU_FSR_SS))
+> +		arm_smmu_cb_write(smmu, idx, ARM_SMMU_CB_RESUME,
+> +				  ARM_SMMU_RESUME_TERMINATE);
+> +
+>  	return IRQ_HANDLED;
+>  }
+> 
+> @@ -659,6 +664,8 @@ static void arm_smmu_write_context_bank(struct
+> arm_smmu_device *smmu, int idx)
+>  		reg |= ARM_SMMU_SCTLR_S1_ASIDPNE;
+>  	if (IS_ENABLED(CONFIG_CPU_BIG_ENDIAN))
+>  		reg |= ARM_SMMU_SCTLR_E;
+> +	if (smmu->impl && smmu->impl->stall)
+> +		reg |= ARM_SMMU_SCTLR_CFCFG;
+> 
+>  	arm_smmu_cb_write(smmu, idx, ARM_SMMU_CB_SCTLR, reg);
+>  }
+> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+> index 8d1cd54d82a6..d5134e0d5cce 100644
+> --- a/drivers/iommu/arm-smmu.h
+> +++ b/drivers/iommu/arm-smmu.h
+> @@ -386,6 +386,7 @@ struct arm_smmu_impl {
+>  	int (*init_context)(struct arm_smmu_domain *smmu_domain);
+>  	void (*tlb_sync)(struct arm_smmu_device *smmu, int page, int sync,
+>  			 int status);
+> +	bool stall;
+>  };
+> 
+>  static inline void __iomem *arm_smmu_page(struct arm_smmu_device 
+> *smmu, int n)
 
-Currently neither of multiplafrom builds has SPARSEMEM enabled, so
-unless I misread theses patches, they actually allow enabling SPARSEMEM
-in menuconfig for custom builds based on a multiplatform config.
+Any comments on this patch?
 
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+Thanks,
+Sai
 
 -- 
-Sincerely yours,
-Mike.
+QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
+member
+of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
