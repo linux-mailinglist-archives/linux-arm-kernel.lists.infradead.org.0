@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 33BA51C881C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:25:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A05EF1C881D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:26:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=RX8mN9hXL968C4aocxFAPD0KJGzvj1WBFGFrimJjpVw=; b=c9g6r0qkRXOZyU5klSPClreyjh
-	5lcpAfdGiG862inCimM3xstchdD94iQYZVweeymZSsYOA5k1m6NaS3Uvs9Saxag3b7e/tMOjU8sxy
-	R4aC3SKlMHaqyjO4HyQEu7awUF877B3Nhqxu/aW/BOkegnd8ZTx9wq0dl2xiA+YcjC10V4xqq3DYb
-	yszzIh0N0ow6Z17lku3YlqS4gWlZKu6Ye6P52xhk/gNotXB6rurbMRxcUKuiSquY7vK4dyQ3pk31b
-	gct5q3K2bYm7jGO41YylToTFuxq7aOitNkpZboM2+9s1zvbcboCDv2qgHvVL1yIlemK8E5krU5hy1
-	rzExV/ug==;
+	bh=6im1dNUYv54owY2Ps7ur33yeW9Xf21ylhzLYFlhFriU=; b=CGY41ucjWQxGOv02NE+NpwCzLU
+	udpmk7iqrIwDFSG+KJ5VLqNTwY6x9MXru2vkQkuPeDf7tp6jIG6zPGrLlnAH0fRVhiaHzd+ubJSF/
+	FSeVdhlB03NdRL3FmfXiOv86Y8w6WnS0CBYMhfFq9aOzernkrcAMaEnknzel01NEeTJ9SEQ3x2oGF
+	9SMj3/LcBFTw4IB7oNnp2yrzyPFlmWhSVl/2ei6XenAq7a9kGcVDpYCmJYHNu0XRwtVl8dKgTrBlt
+	5xWN3S4dXDJehrHxjMhukF/rO6dBSWO70mPZfbxCpKyK32zvmmbxXiZ97ttJ5V/WIBz/hyQdjbySu
+	DQe5+rWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWeet-0001FV-Dr; Thu, 07 May 2020 11:25:43 +0000
+	id 1jWef8-0001Qk-KQ; Thu, 07 May 2020 11:25:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWedy-0006im-KK
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:24:48 +0000
+ id 1jWee0-0006kk-H8
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:24:50 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 280B31FB;
- Thu,  7 May 2020 04:24:46 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 748691045;
+ Thu,  7 May 2020 04:24:47 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E89E73F68F;
- Thu,  7 May 2020 04:24:44 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5B9AD3F68F;
+ Thu,  7 May 2020 04:24:46 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 02/17] dt-bindings: arm: gic: Allow combining arm,
- gic-400 compatible strings
-Date: Thu,  7 May 2020 12:24:15 +0100
-Message-Id: <20200507112430.183940-3-andre.przywara@arm.com>
+Subject: [PATCH v2 03/17] arm64: dts: arm: Fix node address fields
+Date: Thu,  7 May 2020 12:24:16 +0100
+Message-Id: <20200507112430.183940-4-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200507112430.183940-1-andre.przywara@arm.com>
 References: <20200507112430.183940-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_042446_724587_12E98FBB 
-X-CRM114-Status: GOOD (  10.47  )
+X-CRM114-CacheID: sfid-20200507_042448_733908_78F962E0 
+X-CRM114-Status: GOOD (  11.66  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,45 +64,170 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Marc Zyngier <maz@kernel.org>
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The arm,gic-400 compatible is probably the best matching string for the
-GIC in most modern SoCs, but was only introduced later into the kernel.
-For historic reasons and to keep compatibility, some SoC DTs were thus
-using a combination of this name and one of the older strings, which
-currently the binding denies.
+The Arm Ltd. boards were using an outdated address convention in the DT
+node names, by separating the high from the low 32-bits of an address by
+a comma.
 
-Add a stanza to the DT binding to allow "arm,gic-400", followed by
-either "arm,cortex-a15-gic" or "arm,cortex-a7-gic". This fixes binding
-compliance for quite some SoC .dtsi files in the kernel tree.
+Remove the comma from the node name suffix to be DT spec compliant.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- .../devicetree/bindings/interrupt-controller/arm,gic.yaml   | 6 ++++++
- 1 file changed, 6 insertions(+)
+ arch/arm/boot/dts/vexpress-v2m-rs1.dtsi              | 10 +++++-----
+ arch/arm64/boot/dts/arm/foundation-v8.dtsi           |  4 ++--
+ arch/arm64/boot/dts/arm/juno-motherboard.dtsi        |  6 +++---
+ arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi |  2 +-
+ arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi     |  6 +++---
+ 5 files changed, 14 insertions(+), 14 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-index 9a47820ef346..3ab258c82930 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-+++ b/Documentation/devicetree/bindings/interrupt-controller/arm,gic.yaml
-@@ -39,6 +39,12 @@ properties:
-               - qcom,msm-8660-qgic
-               - qcom,msm-qgic2
+diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+index 5c183483ec3b..8010cdcdb37a 100644
+--- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
++++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+@@ -31,7 +31,7 @@
+ 			#interrupt-cells = <1>;
+ 			ranges;
  
-+      - items:
-+          - const: arm,gic-400
-+          - enum:
-+             - arm,cortex-a15-gic
-+             - arm,cortex-a7-gic
-+
-       - items:
-           - const: arm,arm1176jzf-devchip-gic
-           - const: arm,arm11mp-gic
+-			nor_flash: flash@0,00000000 {
++			nor_flash: flash@0 {
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>,
+ 				      <4 0x00000000 0x04000000>;
+@@ -41,13 +41,13 @@
+ 				};
+ 			};
+ 
+-			psram@1,00000000 {
++			psram@100000000 {
+ 				compatible = "arm,vexpress-psram", "mtd-ram";
+ 				reg = <1 0x00000000 0x02000000>;
+ 				bank-width = <4>;
+ 			};
+ 
+-			ethernet@2,02000000 {
++			ethernet@202000000 {
+ 				compatible = "smsc,lan9118", "smsc,lan9115";
+ 				reg = <2 0x02000000 0x10000>;
+ 				interrupts = <15>;
+@@ -59,14 +59,14 @@
+ 				vddvario-supply = <&v2m_fixed_3v3>;
+ 			};
+ 
+-			usb@2,03000000 {
++			usb@203000000 {
+ 				compatible = "nxp,usb-isp1761";
+ 				reg = <2 0x03000000 0x20000>;
+ 				interrupts = <16>;
+ 				port1-otg;
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
+index 12f039fa3dad..e26b492795c5 100644
+--- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
++++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
+@@ -151,7 +151,7 @@
+ 				<0 0 41 &gic 0 0 GIC_SPI 41 IRQ_TYPE_LEVEL_HIGH>,
+ 				<0 0 42 &gic 0 0 GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+ 
+-		ethernet@2,02000000 {
++		ethernet@202000000 {
+ 			compatible = "smsc,lan91c111";
+ 			reg = <2 0x02000000 0x10000>;
+ 			interrupts = <15>;
+@@ -178,7 +178,7 @@
+ 			clock-output-names = "v2m:refclk32khz";
+ 		};
+ 
+-		iofpga@3,00000000 {
++		iofpga@300000000 {
+ 			compatible = "simple-bus";
+ 			#address-cells = <1>;
+ 			#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
+index e3983ded3c3c..d5cefddde08c 100644
+--- a/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-motherboard.dtsi
+@@ -103,7 +103,7 @@
+ 				};
+ 			};
+ 
+-			flash@0,00000000 {
++			flash@0 {
+ 				/* 2 * 32MiB NOR Flash memory mounted on CS0 */
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>;
+@@ -120,7 +120,7 @@
+ 				};
+ 			};
+ 
+-			ethernet@2,00000000 {
++			ethernet@200000000 {
+ 				compatible = "smsc,lan9118", "smsc,lan9115";
+ 				reg = <2 0x00000000 0x10000>;
+ 				interrupts = <3>;
+@@ -133,7 +133,7 @@
+ 				vddvario-supply = <&mb_fixed_3v3>;
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
+diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
+index 60703b5763c6..350cbf17e8b4 100644
+--- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
++++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard-rs2.dtsi
+@@ -9,7 +9,7 @@
+ 		motherboard {
+ 			arm,v2m-memory-map = "rs2";
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				virtio-p9@140000 {
+ 					compatible = "virtio,mmio";
+ 					reg = <0x140000 0x200>;
+diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
+index e333c8d2d0e4..d1bfa62ca073 100644
+--- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
++++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
+@@ -17,14 +17,14 @@
+ 			#interrupt-cells = <1>;
+ 			ranges;
+ 
+-			flash@0,00000000 {
++			flash@0 {
+ 				compatible = "arm,vexpress-flash", "cfi-flash";
+ 				reg = <0 0x00000000 0x04000000>,
+ 				      <4 0x00000000 0x04000000>;
+ 				bank-width = <4>;
+ 			};
+ 
+-			ethernet@2,02000000 {
++			ethernet@202000000 {
+ 				compatible = "smsc,lan91c111";
+ 				reg = <2 0x02000000 0x10000>;
+ 				interrupts = <15>;
+@@ -51,7 +51,7 @@
+ 				clock-output-names = "v2m:refclk32khz";
+ 			};
+ 
+-			iofpga@3,00000000 {
++			iofpga@300000000 {
+ 				compatible = "simple-bus";
+ 				#address-cells = <1>;
+ 				#size-cells = <1>;
 -- 
 2.17.1
 
