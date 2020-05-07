@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4956D1C9653
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:22:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 669F31C9656
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:22:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=64VwdIZHQ+4DWFWDxSSYOdvvZVngdHRZSy30o1DXLGg=; b=sMEvEnzc6vetLJ
-	Acp5gvLIWSggBExeeYhG7e2N6DQDDGLP3mI2Qv2eZv1odhgFKqBEpxGOpLBfOf5EkUHOD85q97X1X
-	jznIuwSAhW9Z6XVtY97VgC+L3Qy0JiN8/cSf9rluaEQYZjM2ETaxGDnoq5FuvOrawcJ2nkfYG2eW3
-	w7x193oB44rhVrdXow+b24gD+6h906x0ji9qQO415rY9cTXoDIB5aVooEYCNPCGojnzpjT0Pakqdo
-	Q+aMwij6sGsijTW7pWHK20Ecdbg2pglqL3f86ablyw3nrXsQoGGb4cxicuysf5USzpQLYlGJ1lDzm
-	4NQ8+BNTNociyHoX6zYw==;
+	List-Owner; bh=qMYw1zFgT506cPLGk0ee03kqjr1Ug/scXOHrPP17OOI=; b=W15tfGKtsriUdj
+	88Is8YZVIEdMlWz2a8nqEDf2dnACWQdQQHOktHewhHlNVcozhhsd6iuvQm5pdrmS8fSRh0hk8VkFc
+	d4l/Gure2AN44L2npiW3TA0Sle5+Iy/VVpttP/for57Ggizk71+i2qymfGOKMqc+PmiXoQxdrn9Vd
+	B5v8gtqp2lUyLFiC57d6tlRaGNTddXCxouy0g/+EmyApLVNMitov8oHLraA4KCDQ8/MegnogrGyBY
+	7+sNUi45VXHNZcsL4BbDBthFuECKVyO/38B6ACKBmBB5+KoQ/N6mxvglM9N/NF5Cx/1Bsd4kHzfyw
+	B02m8ep0jtC8w6be672g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWjHv-0007R5-Eb; Thu, 07 May 2020 16:22:19 +0000
+	id 1jWjIM-0007na-KN; Thu, 07 May 2020 16:22:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWjHn-0007PN-6z; Thu, 07 May 2020 16:22:12 +0000
+ id 1jWjHt-0007Vj-Bg; Thu, 07 May 2020 16:22:19 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 393D61FB;
- Thu,  7 May 2020 09:22:08 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 09FB3101E;
+ Thu,  7 May 2020 09:22:17 -0700 (PDT)
 Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0949C3F71F;
- Thu,  7 May 2020 09:22:04 -0700 (PDT)
-Subject: Re: [PATCH v9 15/18] arm64: kexec: kexec EL2 vectors
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3C5BD3F71F;
+ Thu,  7 May 2020 09:22:14 -0700 (PDT)
+Subject: Re: [PATCH v9 11/18] arm64: kexec: arm64_relocate_new_kernel clean-ups
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20200326032420.27220-1-pasha.tatashin@soleen.com>
- <20200326032420.27220-16-pasha.tatashin@soleen.com>
+ <20200326032420.27220-12-pasha.tatashin@soleen.com>
 From: James Morse <james.morse@arm.com>
-Message-ID: <c9b5897b-a4a3-0ec1-10d1-520c8b7c89cc@arm.com>
-Date: Thu, 7 May 2020 17:21:59 +0100
+Message-ID: <dc47bee6-69ee-2ece-12d4-258bd964b954@arm.com>
+Date: Thu, 7 May 2020 17:22:13 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200326032420.27220-16-pasha.tatashin@soleen.com>
+In-Reply-To: <20200326032420.27220-12-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_092211_296325_1C2714AA 
-X-CRM114-Status: GOOD (  14.66  )
+X-CRM114-CacheID: sfid-20200507_092217_497581_32B6E6E7 
+X-CRM114-Status: GOOD (  22.38  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -77,42 +77,172 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Pavel,
 
-What happened to the subject?
-(it really needs a verb to make any sense)
-
 On 26/03/2020 03:24, Pavel Tatashin wrote:
-> If we have a EL2 mode without VHE, the EL2 vectors are needed in order
-> to switch to EL2 and jump to new world with hyperivsor privileges.
+> Remove excessive empty lines from arm64_relocate_new_kernel.
 
-Yes, but the hyp-stub has an API to let you do this... but you need your own version.
+To make it harder to read? Or just for the churn ...
 
-Could you explain why in the commit message?
+> Also, use comments on the same lines with instructions where
+> appropriate.
 
-(spelling: hyperivsor)
-
-
-> diff --git a/arch/arm64/kernel/machine_kexec.c b/arch/arm64/kernel/machine_kexec.c
-> index ab571fca9bd1..bd398def7627 100644
-> --- a/arch/arm64/kernel/machine_kexec.c
-> +++ b/arch/arm64/kernel/machine_kexec.c
-> @@ -84,6 +84,11 @@ int machine_kexec_post_load(struct kimage *kimage)
->  	kern_reloc_arg->head = kimage->head;
->  	kern_reloc_arg->entry_addr = kimage->start;
->  	kern_reloc_arg->kern_arg0 = kimage->arch.dtb_mem;
-> +	/* Setup vector table only when EL2 is available, but no VHE */
-> +	if (is_hyp_mode_available() && !is_kernel_in_hyp_mode()) {
-> +		kern_reloc_arg->el2_vector = __pa(reloc_code)
-> +						+ kexec_el2_vectors_offset;
-> +	}
-
-Why does the asm relocation code need to know where the vector is? It must access it via HVC.
+Churn,
 
 
+> Change ENDPROC to END it never returns.
+
+It might be more useful to convert this to the new style annotations, which should be a
+separate patch. See Documentation/asm-annotations.rst
+
+
+> copy_page(dest, src, tmps...)
+> Increments dest and src by PAGE_SIZE, so no need to store dest
+> prior to calling copy_page and increment it after. Also, src is not
+> used after a copy, not need to copy either.
+
+This bit sounds like cleanup, but I can't isolate it from the noise below....
+
+
+> Call raw_dcache_line_size()  only when relocation is actually going to
+> happen.
+
+Why?
+
+The pattern in this code is to setup register that don't change at the top, then do all
+the work. I think this was an attempt to make it more readable.
+
+Nothing branches back to that label, so this is fine, its just less obviously correct.
+
+
+> Since '.align 3' is intended to align globals at the end of the file,
+> move it there.
+
+
+Please don't make noisy changes to whitespace and comments, its never worth it.
 
 
 Thanks,
 
 James
+
+
+> diff --git a/arch/arm64/kernel/relocate_kernel.S b/arch/arm64/kernel/relocate_kernel.S
+> index c1d7db71a726..e9c974ea4717 100644
+> --- a/arch/arm64/kernel/relocate_kernel.S
+> +++ b/arch/arm64/kernel/relocate_kernel.S
+> @@ -8,7 +8,6 @@
+>  
+>  #include <linux/kexec.h>
+>  #include <linux/linkage.h>
+> -
+>  #include <asm/assembler.h>
+>  #include <asm/kexec.h>
+>  #include <asm/page.h>
+> @@ -17,25 +16,21 @@
+>  /*
+>   * arm64_relocate_new_kernel - Put a 2nd stage image in place and boot it.
+>   *
+> - * The memory that the old kernel occupies may be overwritten when coping the
+> + * The memory that the old kernel occupies may be overwritten when copying the
+>   * new image to its final location.  To assure that the
+>   * arm64_relocate_new_kernel routine which does that copy is not overwritten,
+>   * all code and data needed by arm64_relocate_new_kernel must be between the
+>   * symbols arm64_relocate_new_kernel and arm64_relocate_new_kernel_end.  The
+>   * machine_kexec() routine will copy arm64_relocate_new_kernel to the kexec
+> - * control_code_page, a special page which has been set up to be preserved
+> - * during the copy operation.
+> + * safe memory that has been set up to be preserved during the copy operation.
+>   */
+>  ENTRY(arm64_relocate_new_kernel)
+> -
+>  	/* Setup the list loop variables. */
+>  	mov	x18, x2				/* x18 = dtb address */
+>  	mov	x17, x1				/* x17 = kimage_start */
+>  	mov	x16, x0				/* x16 = kimage_head */
+> -	raw_dcache_line_size x15, x0		/* x15 = dcache line size */
+>  	mov	x14, xzr			/* x14 = entry ptr */
+>  	mov	x13, xzr			/* x13 = copy dest */
+> -
+>  	/* Clear the sctlr_el2 flags. */
+>  	mrs	x0, CurrentEL
+>  	cmp	x0, #CurrentEL_EL2
+> @@ -46,14 +41,11 @@ ENTRY(arm64_relocate_new_kernel)
+>  	pre_disable_mmu_workaround
+>  	msr	sctlr_el2, x0
+>  	isb
+> -1:
+> -
+> -	/* Check if the new image needs relocation. */
+> +1:	/* Check if the new image needs relocation. */
+>  	tbnz	x16, IND_DONE_BIT, .Ldone
+> -
+> +	raw_dcache_line_size x15, x1		/* x15 = dcache line size */
+>  .Lloop:
+>  	and	x12, x16, PAGE_MASK		/* x12 = addr */
+> -
+>  	/* Test the entry flags. */
+>  .Ltest_source:
+>  	tbz	x16, IND_SOURCE_BIT, .Ltest_indirection
+> @@ -69,34 +61,18 @@ ENTRY(arm64_relocate_new_kernel)
+>  	b.lo    2b
+>  	dsb     sy
+>  
+> -	mov x20, x13
+> -	mov x21, x12
+> -	copy_page x20, x21, x0, x1, x2, x3, x4, x5, x6, x7
+> -
+> -	/* dest += PAGE_SIZE */
+> -	add	x13, x13, PAGE_SIZE
+> +	copy_page x13, x12, x0, x1, x2, x3, x4, x5, x6, x7
+>  	b	.Lnext
+> -
+>  .Ltest_indirection:
+>  	tbz	x16, IND_INDIRECTION_BIT, .Ltest_destination
+> -
+> -	/* ptr = addr */
+> -	mov	x14, x12
+> +	mov	x14, x12			/* ptr = addr */
+>  	b	.Lnext
+> -
+>  .Ltest_destination:
+>  	tbz	x16, IND_DESTINATION_BIT, .Lnext
+> -
+> -	/* dest = addr */
+> -	mov	x13, x12
+> -
+> +	mov	x13, x12			/* dest = addr */
+>  .Lnext:
+> -	/* entry = *ptr++ */
+> -	ldr	x16, [x14], #8
+> -
+> -	/* while (!(entry & DONE)) */
+> -	tbz	x16, IND_DONE_BIT, .Lloop
+> -
+> +	ldr	x16, [x14], #8			/* entry = *ptr++ */
+> +	tbz	x16, IND_DONE_BIT, .Lloop	/* while (!(entry & DONE)) */
+>  .Ldone:
+>  	/* wait for writes from copy_page to finish */
+>  	dsb	nsh
+> @@ -110,16 +86,12 @@ ENTRY(arm64_relocate_new_kernel)
+>  	mov	x2, xzr
+>  	mov	x3, xzr
+>  	br	x17
+> -
+> -ENDPROC(arm64_relocate_new_kernel)
+> -
+>  .ltorg
+> -
+> -.align 3	/* To keep the 64-bit values below naturally aligned. */
+> +END(arm64_relocate_new_kernel)
+>  
+>  .Lcopy_end:
+>  .org	KEXEC_CONTROL_PAGE_SIZE
+> -
+> +.align 3	/* To keep the 64-bit values below naturally aligned. */
+>  /*
+>   * arm64_relocate_new_kernel_size - Number of bytes to copy to the
+>   * control_code_page.
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
