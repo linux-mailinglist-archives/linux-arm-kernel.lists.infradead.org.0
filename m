@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF9A81C95CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:01:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0293C1C95D4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:01:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F+aeQaXzMFzzN8PpAuFEuREMyUhzuLmBA0mYOXsiMnE=; b=NpJBPT4Cfz9brd
-	PJej+5BpU8S8NTESZGers/OWTAzm9YEbrFQpw4c+BTOi0YCkaiZ9bFz923i3yGbBFLdBxZYlKiDjp
-	pMWMU4QL3GyvBUDaKszi16Qd+rJUnbpo6oyr7J+6KoZyxIBC++TV5R6ESLH/+ujRc2NnRhZCfctMs
-	Z/coIap6wrs00jLQNSvP6Xcxg7e6pyZkGVBeXuTjku2btkgHNLWYGUa3QQ7t9y8bA4HZfFOhEeV3/
-	XQXjgZWkV+s+M55/anm8okgRjpPDcq1BrAeSYfLkbigz/V0AFQA73qnqFoG12L+OS53OKvP0W7Wz3
-	kgGjAo7erdLEgpWfaoSw==;
+	List-Owner; bh=6qOJn3InIwXGv8idJAuuWX4w/Uzi4k5neKgCtc6Y4Ck=; b=eqHKsNJO2890pR
+	ZSd8H3HGUM2Z8yRfXpipgrS/i/ujUznJw4xTAPLBKYkuyaEmpdCEaRSl3UV+ml4rrl+vJ8ulG1AJi
+	yfNQDBA+/0c1l+n+gEfJDm0ChHGjInwYoMcPs0v/lZHDwPjqnqjjzonD+N8uwUSpkWB6DtOFyS2P6
+	tRlalYIY9tLaDE/OlBUlwKGA8UFP0HmfzFSBj8XtIHTEoBFnnaijWFscNdsh49/l/xgyAsjkrN7aJ
+	OaxxAFsWegiOI6rohUjVOkgSxr5KB8+OArA1fe+zcNDWtSm/+no7a/ffEo3au3KZ7r75w24qJpigf
+	5flApOSX4pwFHJGxVMVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWixU-00066n-4x; Thu, 07 May 2020 16:01:12 +0000
-Received: from relay1-d.mail.gandi.net ([217.70.183.193])
+	id 1jWixn-0006Nk-No; Thu, 07 May 2020 16:01:31 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWixM-000669-16
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 16:01:05 +0000
-X-Originating-IP: 87.231.134.186
-Received: from localhost (87-231-134-186.rev.numericable.fr [87.231.134.186])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id 85319240009;
- Thu,  7 May 2020 16:01:01 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Cristian Birsan <cristian.birsan@microchip.com>,
- Felipe Balbi <balbi@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: Re: [PATCH v2 0/3] Remove the USB EP configuration from device tree
-In-Reply-To: <20200507155651.1094142-1-gregory.clement@bootlin.com>
-References: <20200507155651.1094142-1-gregory.clement@bootlin.com>
-Date: Thu, 07 May 2020 18:01:01 +0200
-Message-ID: <87a72jivk2.fsf@FE-laptop>
+ id 1jWixb-0006L6-1L
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 16:01:20 +0000
+Received: by mail-pg1-x542.google.com with SMTP id j21so2993173pgb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 May 2020 09:01:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Qb1yn5t1IPTyFXfHjM+vtDPWSLy9RS5I827KfmdCCPo=;
+ b=Ck3JfrNRWLl4iKhvrbrwAo0aqn2iznGCOPLQN7AZB/I6QIqhcf3pbDchgXrgdxsUQZ
+ r09bBzmYp0r9JmGWIo+471PZRPGKWNqRKYmQcv0AWtZQeweBK//Zkc92SQm0LU/TKDRK
+ cjaTyCgRetkk61Zos0idJaFJ8Uc22QzAahcybaafa3ZFz9Vmg/rbNgBfZ1LiQ6Gc2SSH
+ f+PzK5YUS6X+9FiOIykPkrxpfpEPbSqwIsYXna7y5JukxEIAe25gCn5auYl0BnYGouvU
+ Iu/s7vL+POy1Yz8gtgmUB7kqFQttbdsL2otyzz41gvINlKeOaaLCgpeJP4iCsURPZZb4
+ EluA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Qb1yn5t1IPTyFXfHjM+vtDPWSLy9RS5I827KfmdCCPo=;
+ b=oHf/aBrcZnER/cNvDsmY5YY0DUlYwOcsMji9jR3yAyfEuIvxBKWIrNOKvTQXz+2ojW
+ t6BM1aMWHySY0GFAliE/pg/MLmrLUPjG3PjQfyFwAFnB4/vXhedh4EdgVJ6YFvCSQAxe
+ M80DG1lSDYhpn7X7kTYFJGxPvlqRGbOYSw0ot7cxe3ptOoBrwGDiruFreRaQXlDdCWF6
+ O/Q+4r4M0dvbpOBksD5CypgHC0c5VXdO7y0iPNM90GZD2Nw3TviE8ZQSA+LgNor5Nt9N
+ 37NYRfhWNgyXmiOB7CZ/vjBndWtLgISon8FtaDQ2h6p0/A5xDOovm9Ka2/U459roIpvA
+ nGRA==
+X-Gm-Message-State: AGi0PuZ2aqNoDmPhBboYmSfUmC5R0Dz/Wc0HzgLfFXa3AsVgorQ4NlqI
+ 0YY9dlF9A+iplpZCh9LsruXn4Qip
+X-Google-Smtp-Source: APiQypIwGDuQgimi4V/sjeD/CcQ9q76z4XBPPy4eInhw8zbWKN+NgHOwT1svgrCLdMyW4GrW/Ppe3w==
+X-Received: by 2002:a62:7d8c:: with SMTP id
+ y134mr15435058pfc.231.1588867276268; 
+ Thu, 07 May 2020 09:01:16 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
+ by smtp.gmail.com with ESMTPSA id e11sm5321395pfl.85.2020.05.07.09.01.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 May 2020 09:01:15 -0700 (PDT)
+Date: Thu, 7 May 2020 09:01:13 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Chuhong Yuan <hslester96@gmail.com>
+Subject: Re: [PATCH] Input: stmfts - add missed input_unregister_device
+Message-ID: <20200507160113.GG89269@dtor-ws>
+References: <20200507151147.792578-1-hslester96@gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200507151147.792578-1-hslester96@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_090104_210240_E4186386 
-X-CRM114-Status: GOOD (  17.76  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_090119_099627_B6764707 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dmitry.torokhov[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [217.70.183.193 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,79 +100,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, linux-input@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 07, 2020 at 11:11:47PM +0800, Chuhong Yuan wrote:
+> This driver calls input_register_device() in probe, but misses
+> input_unregister_device() in probe failure and remove.
+> Add the missed function calls to fix it.
 
-Sorry I forgot to add back the title of the series which was:
+The input device in question is devm-managed and therefore does not need
+explicit unregistering.
 
-"Remove the USB EP configuration from device tree"
-
-Gregory
-
-Gregory CLEMENT <gregory.clement@bootlin.com> writes:
-
-> Hello,
->
-> A few month ago this series was sent and has not been merged while it
-> didn't have anything against it. I've ported the series onto v5.7-rc1,
-> added the acked by and reviewed by received on the first series and
-> took into account the comment from Robin Murphy for the last patch.
->
-> For the record this the original cover letter explaining the purpose
-> of this series:
->
-> The Atmel USB device controller is the only one having the description
-> of the End Point configuration in the device tree.
->
-> This configuration depend on the version of the controller used in the
-> SoC. This variation is already documented by the compatible string of
-> the controller.
->
-> In this series the configuration is associated to the compatible
-> string which allows to remove the EP child node from the device
-> tree. The main benefit of it, beyond the simplification of the device
-> tree, is the reduction of the size of the dtb which was too big to be
-> managed by the bootloader.
->
-> The first two patches should be merged through the USB subsystem while
-> the last one should be take by the a91 subsystem. Moreover this last
-> patch should be merged only once the change in the driver is merged.
->
-> Gregory
->
-> Gregory CLEMENT (3):
->   usb: gadget: udc: atmel: Don't use DT to configure end point
->   dt-bindings: usb: atmel: Mark EP child node as deprecated
->   ARM: dts: at91: Remove the USB EP child node
->
->  .../devicetree/bindings/usb/atmel-usb.txt     |  56 +-------
->  arch/arm/boot/dts/at91sam9g45.dtsi            |  54 --------
->  arch/arm/boot/dts/at91sam9rl.dtsi             |  54 --------
->  arch/arm/boot/dts/at91sam9x5.dtsi             |  54 --------
->  arch/arm/boot/dts/sama5d2.dtsi                | 120 ------------------
->  arch/arm/boot/dts/sama5d3.dtsi                | 107 ----------------
->  arch/arm/boot/dts/sama5d4.dtsi                | 120 ------------------
->  drivers/usb/gadget/udc/atmel_usba_udc.c       | 112 ++++++++++------
->  drivers/usb/gadget/udc/atmel_usba_udc.h       |  12 ++
->  9 files changed, 87 insertions(+), 602 deletions(-)
->
-> -- 
-> 2.26.2
->
+Thanks.
 
 -- 
-Gregory Clement, Bootlin
-Embedded Linux and Kernel engineering
-http://bootlin.com
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
