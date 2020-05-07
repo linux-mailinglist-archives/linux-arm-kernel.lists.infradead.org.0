@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F2231C8E74
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:29:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC0491C8E68
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:28:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AEpF/nWc6ic//n2N2bfGDzfxHxfIWCnhcHcHu/ExUh0=; b=NyAPEjix8FL3+X
-	5eIP+lZAEUyVSOsHvi3I2eygt0X+K4lyjhtewrv5cmVMULsPKfux04isElo5U4aLKpwwKDZeb2dQX
-	GMDYH9hzxwGjVtJa7Qb8G/8tdIJTG0HVCxb5R3bwWsNpNWNm62bSKiGvuxhYGc1FWmjeKMNx5GiO1
-	Ftp+XAa0IwCGBiik0wzMs9RUxmXiMuyosWQvtn67g6ScrqB5+UrCyDCdvNvyLgjaBxkYN7Iv8GsKw
-	bo7ZxIFcx/y1qzV2wdDLmpenzqMwv1PnsM8kLdTCCYHHOFtsVm3vgaPP8OycvemUvysBWSdQFZe86
-	e9eWGOiJW1yd+wMLi3nA==;
+	List-Owner; bh=tOuM+z3GPdVMUBoJtH1Dd4vptlU1X61/iOZizXd8gBk=; b=JYWY2rBu//hNuD
+	AHXZsctSfDc7l540bDC+TZudY6zgVRa+dl5H1pwZBG7b069sRzLTuJfq/ZrI9XzWGAecWbzntnqN4
+	cqjM+XL1K/PlmTFZgDQ27G/38bUrtxCEZXvB6xI8cdDzWuWNp88zAXSktpmlfuweFPUNWOmsgCupa
+	Fp5GRhos3VCCnmU+I63ABNFi8XlqN034C16IsVjbWF0IFWiaT2bdspYduy4sSM0GThKKtaGRF0r02
+	5O8LPtH+sy5VPTchBCInTJ/rPqYkhmNfubUD2wD/EmBSjAaslF9P8kGPYScI+ujGmya9EuEXVzs9d
+	8mOeGQr3jxL81GSeD7OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhWL-0002LV-Ml; Thu, 07 May 2020 14:29:05 +0000
+	id 1jWhW3-00027Y-L7; Thu, 07 May 2020 14:28:47 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhVc-0001vh-Gr
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:28:29 +0000
+ id 1jWhVg-0001zP-8y
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:28:30 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3EA892145D;
- Thu,  7 May 2020 14:28:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CE88924959;
+ Thu,  7 May 2020 14:28:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588861699;
- bh=wWICHhShsjiNXg4Lrs8fFbE9djX+UgP3NHhA9p/iUbk=;
+ s=default; t=1588861703;
+ bh=vvdSzbEpBcmS5iWnBqJ8Fdmt3xvKYr6xWdUdjkVYuFA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=kAFbJKmw+kx+SNyLvkjCxoHkV2wHauOSygLJr1OgrBo5HjYYy4NCTm5u2V4kCsDzC
- iNq/4mXiwNFGWwHpkJAxF7QlYzucofEk6rH2gqcUoOIrrvAXciP1M9FOBhyc7ZUP41
- g+4WwDXXuohA19NGyLQHOHKFbe8lfXBN0xjpJTA4=
+ b=iTaPbQ2esZeZ03s0hxjNpTWqFu3VjjOck5+xb8HmulnMSOG4voI3Vn3x6rStl2Laf
+ TMviOW3k3OD3itDIUgjH9/o+Q+cIm7J18jvjX9LpvwWs8Fp/HPZ6+V0T6NE0uT2eMg
+ HOSv1ak5JdQhF5bE0/qVfspJkC54nmMH8cy53PAY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 41/50] i2c: aspeed: Avoid i2c interrupt status
- clear race condition.
-Date: Thu,  7 May 2020 10:27:17 -0400
-Message-Id: <20200507142726.25751-41-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 44/50] arm64: vdso: Add
+ -fasynchronous-unwind-tables to cflags
+Date: Thu,  7 May 2020 10:27:20 -0400
+Message-Id: <20200507142726.25751-44-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200507142726.25751-1-sashal@kernel.org>
 References: <20200507142726.25751-1-sashal@kernel.org>
@@ -50,8 +50,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_072820_616809_571B8662 
-X-CRM114-Status: GOOD (  10.76  )
+X-CRM114-CacheID: sfid-20200507_072824_406368_0C968C03 
+X-CRM114-Status: GOOD (  12.11  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,59 +80,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, ryan_chen <ryan_chen@aspeedtech.com>,
- linux-aspeed@lists.ozlabs.org, Wolfram Sang <wsa@the-dreams.de>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>, openbmc@lists.ozlabs.org,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: ryan_chen <ryan_chen@aspeedtech.com>
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 
-[ Upstream commit c926c87b8e36dcc0ea5c2a0a0227ed4f32d0516a ]
+[ Upstream commit 1578e5d03112e3e9d37e1c4d95b6dfb734c73955 ]
 
-In AST2600 there have a slow peripheral bus between CPU and i2c
-controller. Therefore GIC i2c interrupt status clear have delay timing,
-when CPU issue write clear i2c controller interrupt status. To avoid
-this issue, the driver need have read after write clear at i2c ISR.
+On arm64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
+by default since gcc-8, so now the de facto platform ABI is to allow
+unwinding from async signal handlers.
 
-Fixes: f327c686d3ba ("i2c: aspeed: added driver for Aspeed I2C")
-Signed-off-by: ryan_chen <ryan_chen@aspeedtech.com>
-Acked-by: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-[wsa: added Fixes tag]
-Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
+However on bare metal targets (aarch64-none-elf), and on old gcc,
+async and sync unwind tables are not enabled by default to avoid
+runtime memory costs.
+
+This means if linux is built with a baremetal toolchain the vdso.so
+may not have unwind tables which breaks the gcc platform ABI guarantee
+in userspace.
+
+Add -fasynchronous-unwind-tables explicitly to the vgettimeofday.o
+cflags to address the ABI change.
+
+Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
+Cc: Will Deacon <will@kernel.org>
+Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/i2c/busses/i2c-aspeed.c | 5 ++++-
- 1 file changed, 4 insertions(+), 1 deletion(-)
+ arch/arm64/kernel/vdso/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/i2c/busses/i2c-aspeed.c b/drivers/i2c/busses/i2c-aspeed.c
-index a7be6f24450bd..538dfc4110f85 100644
---- a/drivers/i2c/busses/i2c-aspeed.c
-+++ b/drivers/i2c/busses/i2c-aspeed.c
-@@ -603,6 +603,7 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq, void *dev_id)
- 	/* Ack all interrupts except for Rx done */
- 	writel(irq_received & ~ASPEED_I2CD_INTR_RX_DONE,
- 	       bus->base + ASPEED_I2C_INTR_STS_REG);
-+	readl(bus->base + ASPEED_I2C_INTR_STS_REG);
- 	irq_remaining = irq_received;
+diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
+index dd2514bb1511f..3862cad2410cf 100644
+--- a/arch/arm64/kernel/vdso/Makefile
++++ b/arch/arm64/kernel/vdso/Makefile
+@@ -32,7 +32,7 @@ UBSAN_SANITIZE			:= n
+ OBJECT_FILES_NON_STANDARD	:= y
+ KCOV_INSTRUMENT			:= n
  
- #if IS_ENABLED(CONFIG_I2C_SLAVE)
-@@ -645,9 +646,11 @@ static irqreturn_t aspeed_i2c_bus_irq(int irq, void *dev_id)
- 			irq_received, irq_handled);
+-CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny
++CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables
  
- 	/* Ack Rx done */
--	if (irq_received & ASPEED_I2CD_INTR_RX_DONE)
-+	if (irq_received & ASPEED_I2CD_INTR_RX_DONE) {
- 		writel(ASPEED_I2CD_INTR_RX_DONE,
- 		       bus->base + ASPEED_I2C_INTR_STS_REG);
-+		readl(bus->base + ASPEED_I2C_INTR_STS_REG);
-+	}
- 	spin_unlock(&bus->lock);
- 	return irq_remaining ? IRQ_NONE : IRQ_HANDLED;
- }
+ ifneq ($(c-gettimeofday-y),)
+   CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
 -- 
 2.20.1
 
