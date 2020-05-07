@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 283CA1C8A17
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:06:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D1E41C8A0D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:04:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SYm6LCUJsnbBWtz6vdlBJEj6wfEgwgt4BBseLNpL26M=; b=s9q4s41SzGhrgu
-	9e5t32Bqhy59tQkLKM+987cbx8ainTFVNSIAiXoIYHczKdFCkpj7bIiA0mze4aKUploHNpisCDWOv
-	tfKyFPap68PCuzpTcMXu0kFEA7FGzc5Q0M70cQXdI1C/yuNr7Y0diENNqEje/A7vwGRz7+vE2KFmx
-	tR8NJXY9yNIpM7Ks4daHX/cekddIWWbxPveeybICJ+SAv/whSlg2y3YMhitxWigXgbiFAi/t6H1hS
-	qxc58/8ZQqKvjt8p4nVU6Z1DkRoPlaI1yiRITLJ8j5tfHk+v8aU1ElRwLo/T4860gpPXDl0P0TBWB
-	qwunf1biUXVSSyP1l7sw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dxgPzsTZO7b0cFXtk1I8gArCB4NozLnqZAE0c3kNzmo=; b=u2R94bxu3MYD4q
+	EzOq/xulWwu7dQdSVq4Sjy3SJ4xYo6g3rjffoWczFabq5HElKWLQDkNyW3pGBOYiJzwo5YfYJnh+e
+	opXgfxur54jziP3FHxxHnTs4St0EzoGzmBhr5Jsed3hXYWoZijvG6afHygjHsYui37Rj5i0FGSWix
+	7J6GGiwYqEEseoIiwMxzWGv6xL1X4apl2kR4C7rNZw+fuVQ149bXLh1NLlZmg8Y4Gu49JMhH3UUee
+	dNmPKU9VM53nWZBQ2dW6BfepplupU5zSZKIsC9YFxrwW69WcWELGIGp/eOz9nijBB3OajumuBPLPJ
+	WSQ+ZLy3dhvL+ORtJL5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfHq-0004b1-1k; Thu, 07 May 2020 12:05:58 +0000
+	id 1jWfGX-0001E3-Hb; Thu, 07 May 2020 12:04:37 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfEK-0007ep-PZ
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:28 +0000
+ id 1jWfEK-0007bx-RD
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:27 +0000
 Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id D020926EDC3F62E6A5A9;
+ by Forcepoint Email with ESMTP id AE66FC3030AE3292DC49;
  Thu,  7 May 2020 20:02:04 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
@@ -33,17 +33,19 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH RFC v3 00/12] perf pmu-events: Support event aliasing for
- system PMUs
-Date: Thu, 7 May 2020 19:57:39 +0800
-Message-ID: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC v3 01/12] perf jevents: Add support for an extra directory
+ level
+Date: Thu, 7 May 2020 19:57:40 +0800
+Message-ID: <1588852671-61996-2-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
+In-Reply-To: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
+References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_050221_440203_59716F69 
-X-CRM114-Status: GOOD (  15.03  )
+X-CRM114-CacheID: sfid-20200507_050221_476117_C748D1B9 
+X-CRM114-Status: GOOD (  12.70  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,160 +77,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently event aliasing for only CPU and uncore PMUs is supported. In
-fact, only uncore PMUs aliasing is supported for when the uncore PMUs are
-fixed for a CPU, which may not always be the case for certain
-architectures.
+Currently we support upto a level 2 directory, and level 2 would be in the
+form vendor/platform.
 
-This series adds support for PMU event aliasing for system and other
-uncore PMUs which are not tied to a specific CPU. Or, more specifically,
-CPUs which not tied to those PMUs.
+Add support for a further level, to hold specific categories of events for
+when we want to segregate them for matching purposes.
 
-For this, we introduce system event tables in generated pmu-events.c,
-which contain a per-SoC table of events of all its system PMUs. Each
-per-PMU event is matched by a "COMPAT" property.
+Signed-off-by: John Garry <john.garry@huawei.com>
+---
+ tools/perf/pmu-events/jevents.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
 
-When creating aliases for PMUs, we treat core/uncore* and system PMUs
-differently:
-
-- For CPU PMU, we always match for the event mapfile based on the CPUID.
-   This has not changed.
-
-- For an uncore or system PMU, we iterate through all the events in all
-   the system PMU tables.
-
-   Matches are based on the "COMPAT" property matching the PMU sysfs
-   identifier contents, in /sys/bus/event_source/devices/<PMU>/identifier
-
-* uncore PMUs may also be matched by system PMUs event support.
-
-Initial reference support is also added for ARM SMMUv3 PMCG (Performance
-Monitor Event Group) PMU for HiSilicon hip08 platform with only a single
-event so far - see driver in drivers/perf/arm_smmuv3_pmu.c for that driver.
-
-Here is a sample output with this series on Huawei D06CS board:
-
-root@ubuntu:/# ./perf list
-   [...]
-
-smmu v3 pmcg:
-   smmuv3_pmcg.config_cache_miss
-        [Configuration cache miss caused by transaction or(ATS or
-        non-ATS)translation request. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.config_struct_access
-        [Configuration structure access. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.cycles
-        [Clock cycles. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.l1_tlb
-        [SMMUv3 PMCG L1 TABLE transation. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.pcie_ats_trans_passed
-        [PCIe ATS Translated Transaction passed through SMMU. Unit: 
-smmuv3_pmcg]
-   smmuv3_pmcg.pcie_ats_trans_rq
-        [PCIe ATS Translation Request received. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.tlb_miss
-        [TLB miss caused by incomingtransaction or (ATS or non-ATS) 
-translation
-         request. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.trans_table_walk_access
-        [Translation table walk access. Unit: smmuv3_pmcg]
-   smmuv3_pmcg.transaction
-        [Transaction. Unit: smmuv3_pmcg]
-
-
-root@ubuntu:/# ./perf stat -v -e smmuv3_pmcg.l1_tlb sleep 1
-Using CPUID 0x00000000480fd010
-Using SYSID HIP08
--> smmuv3_pmcg_200100020/event=0x8a/
--> smmuv3_pmcg_200140020/event=0x8a/
--> smmuv3_pmcg_100020/event=0x8a/
--> smmuv3_pmcg_140020/event=0x8a/
--> smmuv3_pmcg_200148020/event=0x8a/
--> smmuv3_pmcg_148020/event=0x8a/
-smmuv3_pmcg.l1_tlb: 0 1001221690 1001221690
-smmuv3_pmcg.l1_tlb: 0 1001220090 1001220090
-smmuv3_pmcg.l1_tlb: 101 1001219660 1001219660
-smmuv3_pmcg.l1_tlb: 0 1001219010 1001219010
-smmuv3_pmcg.l1_tlb: 0 1001218360 1001218360
-smmuv3_pmcg.l1_tlb: 134 1001217850 1001217850
-
-Performance counter stats for 'system wide':
-
-                235      smmuv3_pmcg.l1_tlb 
-
-        1.001263128 seconds time elapsed
-
-root@ubuntu:/#
-
-Support is also added for imx8mm DDR PMU.
-
-Series is here:
-https://github.com/hisilicon/kernel-dev/tree/private-topic-perf-5.7-sys-pmu-events-v3
-
-Differences to v2:
-- fixups for imx8mm JSONs
-- fix for metrics being repeated per PMU
-- use sysfs__read_str()
-- fix typo in PMCG JSON
-- drop evsel fix, which someone else fixed
-
-Differences to v1:
-- Stop using SoC id and use a per-PMU identifier instead
-- Add metric group sys events support
-   - This is a bit hacky
-- Add imx8mm DDR Perf support
-- Add fix for parse events sel
-	- without it, I get this spewed for metric event:
-
-	assertion failed at util/parse-events.c:1637
-
-Patches still need to be sent to support per-PMU identifer sysfs file
-in the kernel.
-
-Thanks,
-John
-
-Joakim Zhang (1):
-  perf vendor events: Add JSON metrics for imx8mm DDR Perf
-
-John Garry (11):
-  perf jevents: Add support for an extra directory level
-  perf jevents: Add support for system events tables
-  perf vendor events arm64: Relocate hip08 events
-  perf vendor events arm64: Add Architected events smmuv3-pmcg.json
-  perf vendor events arm64: Add hip08 SMMUv3 PMCG events
-  perf pmu: Add pmu_id()
-  perf pmu: Add pmu_add_sys_aliases()
-  perf metricgroup: Split up metricgroup__add_metric()
-  perf metricgroup: Split up metricgroup__print()
-  perf metricgroup: Support printing metric groups for system PMUs
-  perf metricgroup: Support adding metrics for system PMUs
-
- .../arch/arm64/freescale/imx8mm/sys/ddrc.json      |  39 +++
- .../arch/arm64/freescale/imx8mm/sys/metrics.json   |  18 ++
- .../hisilicon/hip08/{ => cpu}/core-imp-def.json    |   0
- .../hisilicon/hip08/{ => cpu}/uncore-ddrc.json     |   0
- .../hisilicon/hip08/{ => cpu}/uncore-hha.json      |   0
- .../hisilicon/hip08/{ => cpu}/uncore-l3c.json      |   0
- .../arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json    |  42 +++
- tools/perf/pmu-events/arch/arm64/mapfile.csv       |   2 +-
- tools/perf/pmu-events/arch/arm64/smmuv3-pmcg.json  |  58 ++++
- tools/perf/pmu-events/jevents.c                    | 152 ++++++++---
- tools/perf/pmu-events/jevents.h                    |  11 +-
- tools/perf/pmu-events/pmu-events.h                 |   6 +
- tools/perf/util/metricgroup.c                      | 295 +++++++++++++++------
- tools/perf/util/pmu.c                              |  96 +++++++
- tools/perf/util/pmu.h                              |   3 +
- 15 files changed, 593 insertions(+), 129 deletions(-)
- create mode 100644 tools/perf/pmu-events/arch/arm64/freescale/imx8mm/sys/ddrc.json
- create mode 100644 tools/perf/pmu-events/arch/arm64/freescale/imx8mm/sys/metrics.json
- rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/core-imp-def.json (100%)
- rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/uncore-ddrc.json (100%)
- rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/uncore-hha.json (100%)
- rename tools/perf/pmu-events/arch/arm64/hisilicon/hip08/{ => cpu}/uncore-l3c.json (100%)
- create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
- create mode 100644 tools/perf/pmu-events/arch/arm64/smmuv3-pmcg.json
-
+diff --git a/tools/perf/pmu-events/jevents.c b/tools/perf/pmu-events/jevents.c
+index fa86c5f997cc..c7868d0a7a6b 100644
+--- a/tools/perf/pmu-events/jevents.c
++++ b/tools/perf/pmu-events/jevents.c
+@@ -981,15 +981,20 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+ 	int level   = ftwbuf->level;
+ 	int err = 0;
+ 
+-	if (level == 2 && is_dir) {
++	if (level >= 2 && is_dir) {
++		int count = 0;
+ 		/*
+ 		 * For level 2 directory, bname will include parent name,
+ 		 * like vendor/platform. So search back from platform dir
+ 		 * to find this.
++		 * Something similar for level 3 directory, but we're a PMU
++		 * category folder, like vendor/platform/cpu.
+ 		 */
+ 		bname = (char *) fpath + ftwbuf->base - 2;
+ 		for (;;) {
+ 			if (*bname == '/')
++				count++;
++			if (count == level - 1)
+ 				break;
+ 			bname--;
+ 		}
+@@ -1002,13 +1007,13 @@ static int process_one_file(const char *fpath, const struct stat *sb,
+ 		 level, sb->st_size, bname, fpath);
+ 
+ 	/* base dir or too deep */
+-	if (level == 0 || level > 3)
++	if (level == 0 || level > 4)
+ 		return 0;
+ 
+ 
+ 	/* model directory, reset topic */
+ 	if ((level == 1 && is_dir && is_leaf_dir(fpath)) ||
+-	    (level == 2 && is_dir)) {
++	    (level >= 2 && is_dir && is_leaf_dir(fpath))) {
+ 		if (close_table)
+ 			print_events_table_suffix(eventsfp);
+ 
 -- 
 2.16.4
 
