@@ -2,101 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7A031C9C60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:30:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 242D31C9CA4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:47:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d4S0DJ2YO3TlLxhj/tKec2tSRnBu25memO48xrkx508=; b=E1laqgnJOolHKz
-	eSIgj1k9U79YvmD6DA4WWJmIXtoq24dobGafXu+L0M/nxV4PoQDX7HV2uWmxILMBnLe6ujBNeyQDq
-	YqZD1DwDU/jOalNM6JST8Ah867mLAejcI8JIOBaveRSpH5k1jz7lUEDnHitW2PBfDnEQtWd2ofonQ
-	nSmvAzlLPRBTUcSA7ytnBcX3iJkRjpiUpOrCFv1kemKZ10xDIhrTELhtA51qBR6Aex2EHE5qX1Nmj
-	/lPTCzA7oHFFPUu3rd48GtBDrelZLb0Fs7MCkpzE847xLiJFQDSbxzuC1L+J2Hpvr6nilYqZvU40z
-	9jkAG+zv0lb5CsI65HcA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LzFwrINY+n/W+oISJfwDQLX72MZ7XLwPgNT2zUFojxw=; b=Rc6Lx6rEDAtK6g
+	uS6fY1QYIQ3PHJAG321Yqv/eN4sq6WJYQUCdCF0Cztwm9c10/6ErNCLunso2dAjdVszECFLdLEUw4
+	nMMEuXrfIsV+BLqyr6c/U+fGoj2rvb1O0Jmy6nj2H9zpzlPHYmax2OAOxfApJKvDuY7EZ7U59sWsK
+	PkZ3fgPTnzh4P60jJ2vgFLEjuEWllulHcWVRw8iv/zOVy7XIPJGz3bcTnScSqVeA8a4eGKk0ApzZl
+	8/1hIu5zOBYBW+D9fwW6HOuCl7ty92nojMkPdmT8CwL1cer/ju8jdwG2R+j6/76MGmyHMIYcGLdUJ
+	idj5PxLZrV2q6/3qsJAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWnA0-0000el-GJ; Thu, 07 May 2020 20:30:24 +0000
-Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
- helo=mx0a-001b2d01.pphosted.com)
+	id 1jWnQA-00055W-IS; Thu, 07 May 2020 20:47:06 +0000
+Received: from mail.andi.de1.cc ([2a01:238:4321:8900:456f:ecd6:43e:202c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWn9n-0008OT-CK
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:30:13 +0000
-Received: from pps.filterd (m0098421.ppops.net [127.0.0.1])
- by mx0a-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 047K2fR5136401; Thu, 7 May 2020 16:30:04 -0400
-Received: from pps.reinject (localhost [127.0.0.1])
- by mx0a-001b2d01.pphosted.com with ESMTP id 30s4vatexn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 16:30:04 -0400
-Received: from m0098421.ppops.net (m0098421.ppops.net [127.0.0.1])
- by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 047KNI4F196396;
- Thu, 7 May 2020 16:30:03 -0400
-Received: from ppma01fra.de.ibm.com (46.49.7a9f.ip4.static.sl-reverse.com
- [159.122.73.70])
- by mx0a-001b2d01.pphosted.com with ESMTP id 30s4vatewt-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 16:30:03 -0400
-Received: from pps.filterd (ppma01fra.de.ibm.com [127.0.0.1])
- by ppma01fra.de.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 047KL3jM017705;
- Thu, 7 May 2020 20:30:01 GMT
-Received: from b06avi18626390.portsmouth.uk.ibm.com
- (b06avi18626390.portsmouth.uk.ibm.com [9.149.26.192])
- by ppma01fra.de.ibm.com with ESMTP id 30s0g5cwus-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 20:30:01 +0000
-Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
- [9.149.105.59])
- by b06avi18626390.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
- id 047KSnwm63046106
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 7 May 2020 20:28:49 GMT
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 46ABEA4051;
- Thu,  7 May 2020 20:29:59 +0000 (GMT)
-Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
- by IMSVA (Postfix) with ESMTP id 71135A404D;
- Thu,  7 May 2020 20:29:58 +0000 (GMT)
-Received: from linux.ibm.com (unknown [9.148.201.211])
- by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
- Thu,  7 May 2020 20:29:58 +0000 (GMT)
-Date: Thu, 7 May 2020 23:29:56 +0300
-From: Mike Rapoport <rppt@linux.ibm.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
-Message-ID: <20200507202956.GG683243@linux.ibm.com>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200506235009.25023-2-f.fainelli@gmail.com>
- <20200507103039.GR1551@shell.armlinux.org.uk>
+ id 1jWnQ3-00054v-OB
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:47:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=kemnade.info; s=20180802; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BOPvhULF3Vi20Px15Vghj/sDxm5k9HzIyVTMiezd0g8=; b=fJZJ0A0UmxWMdezzeGRRELCqNp
+ mssH61P0EAUiest7OITWPVbrCnw1BdFHg0O9E3SyVnNbnRIq/SQ3bzSP+4mex0MdhmtiSJeqV5F3P
+ U1FJP/TgcpoaoqHdYsmFQEKuHJDQEH0Rcdc2bMsAPBgwTCbLDMdks/5wFtWZ8V+CDb/c=;
+Received: from p200300ccff2da2001a3da2fffebfd33a.dip0.t-ipconnect.de
+ ([2003:cc:ff2d:a200:1a3d:a2ff:febf:d33a] helo=aktux)
+ by mail.andi.de1.cc with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <andreas@kemnade.info>)
+ id 1jWnPl-0001ss-O3; Thu, 07 May 2020 22:46:42 +0200
+Received: from andi by aktux with local (Exim 4.92)
+ (envelope-from <andreas@kemnade.info>)
+ id 1jWnPk-00089w-ML; Thu, 07 May 2020 22:46:40 +0200
+From: Andreas Kemnade <andreas@kemnade.info>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, linux-imx@nxp.com, Anson.Huang@nxp.com,
+ aford173@gmail.com, oleksandr.suvorov@toradex.com,
+ u.kleine-koenig@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: imx_v6_v7_defconfig: extend RN5T618 PMIC family support
+Date: Thu,  7 May 2020 22:43:39 +0200
+Message-Id: <20200507204339.31253-1-andreas@kemnade.info>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507103039.GR1551@shell.armlinux.org.uk>
-X-TM-AS-GCONF: 00
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-07_13:2020-05-07,
- 2020-05-07 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- malwarescore=0 spamscore=0
- suspectscore=0 adultscore=0 clxscore=1015 impostorscore=0
- lowpriorityscore=0 bulkscore=0 phishscore=0 mlxscore=0 mlxlogscore=596
- priorityscore=1501 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2005070158
+X-Spam-Score: -1.0 (-)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_133011_541241_BAC7EE61 
-X-CRM114-Status: GOOD (  27.18  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_134700_088715_121FE942 
+X-CRM114-Status: UNSURE (   6.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.158.5 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [148.163.158.5 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,123 +81,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
- Florian Fainelli <f.fainelli@gmail.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Andreas Kemnade <andreas@kemnade.info>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 11:30:39AM +0100, Russell King - ARM Linux admin wrote:
-> On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
-> > From: Kevin Cernekee <cernekee@gmail.com>
-> > 
-> > If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
-> > then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
-> > choice.  This is true for all of the existing ARM users of
-> > ARCH_SPARSEMEM_ENABLE.
-> > 
-> > Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
-> > us from ever defaulting to FLATMEM, so we should remove this setting.
-> 
-> No explanation why that is desirable.
-> 
-> > -config ARCH_SPARSEMEM_DEFAULT
-> > -	def_bool ARCH_SPARSEMEM_ENABLE
-> > -
-> 
-> What this basically says is ARCH_SPARSEMEM_ENABLE=ARCH_SPARSEMEM_DEFAULT,
-> which is exactly what we want for the non-multiplatform boards that
-> select ARCH_SPARSEMEM_ENABLE - we _want_ them to default to sparsemem
-> because that is what the platform requires.
+There are new drivers for functionality of that family
+(RTC and ADC), so enable them, since they are used by
+various i.MX6 boards.
 
-The ARCH_SPARSEMEM_DEFAULT knob has no effect unless manual selection
-of the memory model is enabled, i.e. arch Kconfig sets
-ARCH_SELECT_MEMORY_MODEL to 'y'.
+Signed-off-by: Andreas Kemnade <andreas@kemnade.info>
+---
+ arch/arm/configs/imx_v6_v7_defconfig | 2 ++
+ 1 file changed, 2 insertions(+)
 
-Otherwise, ARCH_SPARSEMEM_ENABLE is sufficient to select SPARSEMEM over
-FLATMEM:
-
-config SPARSEMEM
-	def_bool y
-	depends on (!SELECT_MEMORY_MODEL && ARCH_SPARSEMEM_ENABLE) || SPARSEMEM_MANUAL
-
-config FLATMEM
-	def_bool y
-	depends on (!DISCONTIGMEM && !SPARSEMEM) || FLATMEM_MANUAL
-
-> For example, with RiscPC, which selects ARCH_SPARSEMEM_ENABLE, we have
-> four banks of memory at 0x10000000, 0x14000000, 0x18000000 and
-> 0x1c000000.  These correspond with the two memory slots - the first two
-> for the first slot, and the second two for the second slot.  Each slot
-> has two banks.  The size of each memory bank depends on the size of the
-> module.
->
-> Flatmem is completely unable to work with this setup if all banks are
-> populated, and the first bank does not contain enough memory to allocate
-> the struct page array.  So, sparsemem is the only option there.
-> 
-> Hence, for these platforms, we want sparsemem and only sparsemem, not
-> flatmem.
-> 
-> So, this patch which makes it possible to select flatmem is completely
-> out of the question for these platforms.
-
-This patch alone won't make it possible to select flatmem for these
-platforms, actually, as of now it changes nothing.
-
-The removal of ARCH_SPARSEMEM_DEFAULT will have an effect only with
-addtion of ARCH_SELECT_MEMORY_MODEL.
-
-If I understood Florian's intention correctly, the goal was to allow
-manual selection of the memory model for multiplatform builds that today
-implicitly use flatmem.
-
-I think that the patch below would achieve that without changing the
-current defaults and without forcing flatmem on the platforms that
-already explicitly select sparsemem.
-
-diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-index 66a04f6f4775..b6eb1a28ca27 100644
---- a/arch/arm/Kconfig
-+++ b/arch/arm/Kconfig
-@@ -312,6 +312,9 @@ choice
- config ARCH_MULTIPLATFORM
- 	bool "Allow multiple platforms to be selected"
- 	depends on MMU
-+	select ARCH_FLATMEM_ENABLE
-+	select ARCH_SPARSEMEM_ENABLE
-+	select ARCH_SELECT_MEMORY_MODEL
- 	select ARM_HAS_SG_CHAIN
- 	select ARM_PATCH_PHYS_VIRT
- 	select AUTO_ZRELADDR
-@@ -1515,11 +1518,14 @@ config OABI_COMPAT
- config ARCH_HAS_HOLES_MEMORYMODEL
- 	bool
- 
-+config ARCH_FLATMEM_ENABLE
-+	bool
-+
- config ARCH_SPARSEMEM_ENABLE
- 	bool
- 
--config ARCH_SPARSEMEM_DEFAULT
--	def_bool ARCH_SPARSEMEM_ENABLE
-+config ARCH_SELECT_MEMORY_MODEL
-+	bool
- 
- config HAVE_ARCH_PFN_VALID
- 	def_bool ARCH_HAS_HOLES_MEMORYMODEL || !SPARSEMEM
-
-> -- 
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 5a20d12d62bd..87e6400c436b 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -395,6 +395,7 @@ CONFIG_RTC_DRV_DA9063=y
+ CONFIG_RTC_DRV_MC13XXX=y
+ CONFIG_RTC_DRV_MXC=y
+ CONFIG_RTC_DRV_MXC_V2=y
++CONFIG_RTC_DRV_RC5T619=y
+ CONFIG_RTC_DRV_SNVS=y
+ CONFIG_DMADEVICES=y
+ CONFIG_FSL_EDMA=y
+@@ -408,6 +409,7 @@ CONFIG_COMMON_CLK_PWM=y
+ CONFIG_IIO=y
+ CONFIG_MMA8452=y
+ CONFIG_IMX7D_ADC=y
++CONFIG_RN5T618_ADC=y
+ CONFIG_VF610_ADC=y
+ CONFIG_SENSORS_ISL29018=y
+ CONFIG_MAG3110=y
 -- 
-Sincerely yours,
-Mike.
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
