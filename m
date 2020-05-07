@@ -2,56 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D21921C8EE0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:30:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F1A3E1C8EF3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:33:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tOuM+z3GPdVMUBoJtH1Dd4vptlU1X61/iOZizXd8gBk=; b=Hp6lHaXrgrL4/b
-	8JwunWJuMDddO3vEaipQteEtVK1BVVqXpy5S6MC1jLWii0X7XfDhfbGPqNFrjLEe/mugvpFzVWl3G
-	5E1Z3dKFGm+1zOcMuQHNUag+q8dsXOgjIgRRFw3jZrnNLBHZ/X3xyXFlcuOxarAI9SiHH/0iJfd/u
-	LJnLNHUZztbZ9FfCQ3HGRToZ5q0dyJy/xHhwA4Yh4EzUm2XaynquoghDVVmX1kZTBsgvOxaIOGXj3
-	tWdZC+4kFOUghuel5PxwnRsPnwVuGq42zUHTH/IWJWg6eHXQAskySLOB+9SXh5SBB5c5oad5EI9Eb
-	jdrTCgxroiT1HlCJ273w==;
+	List-Owner; bh=PoYwvSbdqyAnyzfzCEnZ5QnALAqC0m3hCSKmxy5XsOk=; b=MpE0D38pJbjQ3p
+	EGBZNUCFLPd1NATvdBcui492n6O4r0GtR12GGITRf3u2B+k6pp9vTlvzbp2kLE3YQt6Fx9MY30PRY
+	0TNx52oFObqAM6rBilJDkx476pwCLXERkVy7ml2CD7h6jm6OSxpc7DBk2n5uveGwHYgn3o6TQNfat
+	jX1hnXIhRaxh4IK3fS3FTUA4UIXXvdUnP+mG5cnySHJAdueLIIlv08mfduYPjhMKXPfhh4mHy+yhq
+	Um0RIXCevQPsOkbNvZ22M3mXWA+SYqw9KbTrZPHw67alw9ddsIF6WZa+MMJRM3sgb+IQE1Ndzg4Np
+	wA8BlxOTsxznqb2TJr5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhXM-0003O3-Jc; Thu, 07 May 2020 14:30:08 +0000
+	id 1jWhaq-00075H-W0; Thu, 07 May 2020 14:33:44 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhWT-0002jE-ET
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:29:16 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E651724956;
- Thu,  7 May 2020 14:29:11 +0000 (UTC)
+ id 1jWhak-00074H-HQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:33:39 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A7B822073A;
+ Thu,  7 May 2020 14:33:36 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588861752;
- bh=vvdSzbEpBcmS5iWnBqJ8Fdmt3xvKYr6xWdUdjkVYuFA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=jijZ92rDQsmBZgQF74Ndc0eQ0F+5LPh8xwnD7afsmNLh+KODtB8PzYu0zCFMMBMPO
- XeNOLcnaKQmew07EJKcCwJzgXkk++eezbUOvOkGlONaPnTZl9YiL+Nx4S4bwhbyruy
- O7GMQNJYLwBdJYWv7UNiV6x3UseFJdP9d+biCw0c=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.4 33/35] arm64: vdso: Add
- -fasynchronous-unwind-tables to cflags
-Date: Thu,  7 May 2020 10:28:27 -0400
-Message-Id: <20200507142830.26239-33-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200507142830.26239-1-sashal@kernel.org>
-References: <20200507142830.26239-1-sashal@kernel.org>
+ s=default; t=1588862018;
+ bh=gS5K6uBeqmAnog4nX3dKjqYA8fArLwjZtxMIQ7sUGek=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dIe8iTueE4kje0EI0zxWsGx9yJC3pYoNRMc7MiDM5hy6hb+fTEB3JN2D3JKPWFbgU
+ tk9AcWG6GYUjkPJKodCUuMZwUkTO7q0GLd1JVeKMU3h71PabsudG3OJQYh7XLmUVhl
+ 8l/Q5MbeF3RgLh19w81Su9Ct42QRZv65+8xkW9zM=
+Date: Thu, 7 May 2020 15:33:33 +0100
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v3 00/11] arm64: BTI kernel and vDSO support
+Message-ID: <20200507143332.GB1422@willie-the-truck>
+References: <20200506195138.22086-1-broonie@kernel.org>
 MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+Content-Disposition: inline
+In-Reply-To: <20200506195138.22086-1-broonie@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_072913_544829_E33A2D7E 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20200507_073338_597158_EF9F9E69 
+X-CRM114-Status: GOOD (  16.74  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,60 +76,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Kees Cook <keescook@chromium.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+On Wed, May 06, 2020 at 08:51:27PM +0100, Mark Brown wrote:
+> This patch series adds support for protecting the kernel and vDSO with
+> BTI including code compiled with the BPF JIT at runtime.
+> 
+> We build the kernel with annotations for BTI and then map the kernel
+> with GP based on the support on the boot CPU, rejecting secondaries that
+> don't have BTI support. If there is a need to handle big.LITTLE systems
+> with mismatched BTI support we will have to revisit this, currently no
+> such implementations exist.
+> 
+> This series depends on several branches in the arm64 tree:
+> 
+>  - for-next/bti-user
+>  - for-next/insn
+>  - for-next/asm
+> 
+> v3:
+>  - Add a patch adding a comment about why we enable leaf support for
+>    PAC.
+>  - Fix build of the 32 bit vDSO.
+>  - Refactor the macro for emitting the ELF note for BTI code so that
+>    the flags are defined separately in order to make it easier to
+>    add handling for any future users.
 
-[ Upstream commit 1578e5d03112e3e9d37e1c4d95b6dfb734c73955 ]
+Bugger, I'm still getting warnings (clang 11.0.1), but from an allmodconfig
+build now:
 
-On arm64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
-by default since gcc-8, so now the de facto platform ABI is to allow
-unwinding from async signal handlers.
+  warning: some functions compiled with BTI and some compiled without BTI
+  warning: not setting BTI in feature flags
 
-However on bare metal targets (aarch64-none-elf), and on old gcc,
-async and sync unwind tables are not enabled by default to avoid
-runtime memory costs.
+(repeated many, many times).
 
-This means if linux is built with a baremetal toolchain the vdso.so
-may not have unwind tables which breaks the gcc platform ABI guarantee
-in userspace.
+I'll try to get you some more info.
 
-Add -fasynchronous-unwind-tables explicitly to the vgettimeofday.o
-cflags to address the ABI change.
-
-Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
-Cc: Will Deacon <will@kernel.org>
-Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
----
- arch/arm64/kernel/vdso/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index dd2514bb1511f..3862cad2410cf 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -32,7 +32,7 @@ UBSAN_SANITIZE			:= n
- OBJECT_FILES_NON_STANDARD	:= y
- KCOV_INSTRUMENT			:= n
- 
--CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny
-+CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables
- 
- ifneq ($(c-gettimeofday-y),)
-   CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
--- 
-2.20.1
-
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
