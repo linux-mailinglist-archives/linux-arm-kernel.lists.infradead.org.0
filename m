@@ -2,66 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 952841C9EB4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 00:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12BBF1C9EB7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 00:51:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OCo3MtE25P284HRLKv20HIPJe70VIdOUxxbwaxY55z8=; b=P0FfycDGQAow+D
-	KvvbPnCmx9JvDM9w5/AHXIQMpoZ4VwRnfFUQ6H60nkqGqybVr+OmbtS/Fb2AxYHTKeHmF/Q6h+mZT
-	ugFZjFYVXAcL1T7gUehTpbfX9n+3DASUykQvlAQtoDkpqXTNwSRvU3D+lu3myeiWNZzZJRV3ZGnPb
-	tWpV+xo++1BWk2X8PCiQB/aFNNMz1UKlh7RrkTsyWB469UIjjbUVVAzUW5h6j4T7SPtPhGfQGlvSW
-	SXeD03GPyx0nAoVca1V9K9JQoVwhLpbLcGNZcZNIlBTqRDgtZkWFcVwQYH4bmzbc0XOJV8TzH7Pcy
-	mW/OTMlekptjFvJ0TEOw==;
+	List-Owner; bh=G5qfdSzcZrBU1tqeIXez8eba0YMeoHCNh/CycFXtMLc=; b=OC0AnN3n1qfuwC
+	78hl8r3GaGF+FjcAGQwJrZZvk8t2J36+Z6f008Qb8jLZDQ5NbWeHtdbCM5A9wRWF1Ol8+elgCK5dt
+	++9DychTSrC8td/9w6T7Sh1MG+JOakA8xRSVDpZU4QHPfnk7XrGKghat4LSqUQJlY9Xif08Nnd+7Z
+	uDy5mKvfDfRiycbRGJcCXVHQOMXFq7Bdc0MgTcDGvTH4/lvXXZbdD3K0vxqOvBR0xAbT3Nsc/15QE
+	CeCKMHRy7BJUV45dF8cdO5p6+B2qwLjBwvon1OCoMV8N6W9vqvPtCdHCOEoQuFJW2GAv3+97YC2Es
+	CkJKiDjCDVGx461zGIoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWpLy-0006Va-DJ; Thu, 07 May 2020 22:50:54 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jWpMC-0006cP-8f; Thu, 07 May 2020 22:51:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWpLq-0006Td-Iv; Thu, 07 May 2020 22:50:47 +0000
-IronPort-SDR: i9H0+9svt0VH/bF4iwLqq5qgM+Y+JqQw0VhMmzu6o4KmboXGySKCbIojqJMpzUfRojSUcFItFC
- 9d+zsiuSQSUA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 15:50:41 -0700
-IronPort-SDR: A94YOimG+GBTCtRnotihIHXo/4uYOm9rsXy8xtuLX5Aw2+CVkRWX3diLimU1sfCOXtFd1OcX1r
- bTWfMT7evkVA==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,365,1583222400"; d="scan'208";a="278753786"
-Received: from iweiny-desk2.sc.intel.com ([10.3.52.147])
- by orsmga002.jf.intel.com with ESMTP; 07 May 2020 15:50:40 -0700
-Date: Thu, 7 May 2020 15:50:40 -0700
-From: Ira Weiny <ira.weiny@intel.com>
-To: Andrew Morton <akpm@linux-foundation.org>
-Subject: Re: [PATCH V3 13/15] parisc/kmap: Remove duplicate kmap code
-Message-ID: <20200507225039.GA1428632@iweiny-DESK2.sc.intel.com>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-14-ira.weiny@intel.com>
- <20200507135258.f430182578c0d63b7488916e@linux-foundation.org>
+ id 1jWpLr-0006Tv-ET; Thu, 07 May 2020 22:50:48 +0000
+Received: from kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com (unknown
+ [163.114.132.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0B6B52083B;
+ Thu,  7 May 2020 22:50:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588891843;
+ bh=i+twVoWgvvE+sIIP8RfgWgYxL/0MZSnTVluZHAQYh3Q=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ICncuhdNNndVuoB1VtwfIDdgvPbWU7TqOUOopbLTG92SjYIh2Y+ZXN7dZ7uv9QN/N
+ cGD88cOB2d5XW7sFR+z2oKehsB3Xwxpp8roB7DvPSFKiT4X0MihPS6+mwq4PxGMaJH
+ 8DzcqHio0DrqnqsYLTTKoxab0nHtwN3l3kwaeu+M=
+Date: Thu, 7 May 2020 15:50:41 -0700
+From: Jakub Kicinski <kuba@kernel.org>
+To: Leon Romanovsky <leon@leon.nu>
+Subject: Re: [PATCH 06/11] net: ethernet: mtk-eth-mac: new driver
+Message-ID: <20200507155041.4f1c71e7@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+In-Reply-To: <20200507055547.GB78674@unreal>
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-7-brgl@bgdev.pl>
+ <CALq1K=Lu0hv9UCgxgrwCVoOe9L7A4sgBEM=RW2d9JkizHmdBPQ@mail.gmail.com>
+ <20200506122329.0a6b2ac4@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <20200507055547.GB78674@unreal>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507135258.f430182578c0d63b7488916e@linux-foundation.org>
-User-Agent: Mutt/1.11.1 (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_155046_633903_1EDA0A2B 
-X-CRM114-Status: GOOD (  15.28  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200507_155047_500126_2FD7C21C 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,82 +79,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: devicetree@vger.kernel.org, Felix Fietkau <nbd@openwrt.org>,
+ Arnd Bergmann <arnd@arndb.de>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-netdev <netdev@vger.kernel.org>, Bartosz Golaszewski <brgl@bgdev.pl>,
+ Sean Wang <sean.wang@mediatek.com>, linux-kernel@vger.kernel.org,
+ Mark Lee <Mark-MC.Lee@mediatek.com>, Fabien Parent <fparent@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 01:52:58PM -0700, Andrew Morton wrote:
-> On Thu,  7 May 2020 08:00:01 -0700 ira.weiny@intel.com wrote:
+On Wed, May 06, 2020 at 12:23:29PM -0700, Jakub Kicinski wrote:
+> Please trim your replies.  
 > 
-> > parisc reimplements the kmap calls except to flush it's dcache.  This is
-> > arguably an abuse of kmap but regardless it is messy and confusing.
-> > 
-> > Remove the duplicate code and have parisc define
-> > ARCH_HAS_FLUSH_ON_KUNMAP for a kunmap_flush_on_unmap() architecture
-> > specific call to flush the cache.
+> Off-topic.
 > 
-> checkpatch says:
+> Is there any simple way to trim replies semi-automatically in VIM?
 > 
-> ERROR: #define of 'ARCH_HAS_FLUSH_ON_KUNMAP' is wrong - use Kconfig variables or standard guards instead
-> #69: FILE: arch/parisc/include/asm/cacheflush.h:103:
-> +#define ARCH_HAS_FLUSH_ON_KUNMAP
-> 
-> which is fair enough, I guess.  More conventional would be
-> 
-> arch/parisc/include/asm/cacheflush.h:
-> 
-> static inline void kunmap_flush_on_unmap(void *addr)
-> {
-> 	...
-> }
-> #define kunmap_flush_on_unmap kunmap_flush_on_unmap
-> 
-> 
-> include/linux/highmem.h:
-> 
-> #ifndef kunmap_flush_on_unmap
-> static inline void kunmap_flush_on_unmap(void *addr)
-> {
-> }
-> #define kunmap_flush_on_unmap kunmap_flush_on_unmap
-> #endif
-> 
-> 
-> static inline void kunmap_atomic_high(void *addr)
-> {
-> 	/* Mostly nothing to do in the CONFIG_HIGHMEM=n case as kunmap_atomic()
-> 	 * handles re-enabling faults + preemption */
-> 	kunmap_flush_on_unmap(addr);
-> }
-> 
-> 
-> but I don't really think it's worth bothering changing it.	
-> 
-> (Ditto patch 3/15)
+> Right now, I'm doing it manually, but maybe there is some better
+> way to do it.
 
-Yes I was following the pattern already there.
-
-I'll fix up the last patch now.
-Ira
-
+I'm also doing it manually :(
 
 _______________________________________________
 linux-arm-kernel mailing list
