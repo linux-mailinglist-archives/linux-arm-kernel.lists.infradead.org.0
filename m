@@ -2,91 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85D371C9BC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:09:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 960B51C9BCF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:09:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rmVBrLI+AI0zGjv0I+Z4jsPe2pYe6EbA0qHgmzho5aM=; b=LmZ5Mh1QsnwyLw
-	b6hkceJrLUVKWKmKkSRe/UHiLZ0PC/0wx5E1vl+B2zBsEnnfqfDntHiLh3CLAhE46XS94ffGNOOTm
-	yL5AQkd30tXbtwZNhiIKNszSDcX36AaGdk5TVR6vCwcOo9ih1gX0A9DXrnXEevV/R8MnReQcsy2xN
-	OkFTqiKiRLFSoRmYJ9KRq8TYNXR2OjgTkx6CuqB1k02Aj+YXnzR0gd+niespJ2eJGfDTLuWdceCt+
-	A7uVnVci7Sdrg4Smr+M7vFyZHHGkSqPQlVMOcHDgF5QbwOTio92+rkhrvTaMoceV0kM2jayqBOyl1
-	fA2cAzxGikvgIlmO2w3g==;
+	List-Owner; bh=1wIm4YB3ULJD6hU4SMIDdayzcrYiZCJELsZGtbBoqLc=; b=gSYM426W3bFbTb
+	r7ffhzjnkDRPG976zVBqo559Y6CH2gQpxqhzNNUNOcfS18Hc16EyZVrAKexhHjZ+HsPE/Y5UbblsF
+	g7SuK8F9cilOmX9iiHH4gesvrMvARPJylubFX8jXdY8dIDAZB+/SPzPBIFHdqoviPumL9YhXqqEba
+	VfWMXR7QJHOy1NTfleOroQgH42zI4mx/dAtLA1QqNuSQY8OVuGp1O/dSIJn7wcRkkDhLmevDMXlE5
+	T1ZL7bD5Ei0EUzLz0qLYhelNOhFBq1pIv7+0CcZypgcTAfaI8C+3qSRq429aQtvSwBwIF1Z9eHZ/K
+	VWJalCjnx6C/0FpQCkeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWmpm-0000BR-TO; Thu, 07 May 2020 20:09:30 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jWmq1-0000VN-L9; Thu, 07 May 2020 20:09:45 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWmpP-00006o-KN
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:09:09 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id h12so4215408pjz.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 13:09:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=cED6NDO4Kxls/KrnV6UJCllmK01DyycDxaWWk+2LKjw=;
- b=oGL2HmBjVpDLGAerPqZz5QWfbBmc6h4NYbJ+HPzp2t89q2jx0vM/u3t8eVesy/Kp/i
- c6jIzQyF5Xt3oUA9KKLyvj4PI1/KF3EWjdAl8k/oJnQ9h3m6Y+2sBbN/hiJm7zpjHRd+
- M3GAlPq6ArCpj5RzA2ZcdESD+Zbesy1vwzmP0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=cED6NDO4Kxls/KrnV6UJCllmK01DyycDxaWWk+2LKjw=;
- b=YhtR8E1SN5RMCHcKPynCnNEN22IlTNDQb6vx9XssS6j5fQJd2kYlAyJ+LqovA0Idt0
- n2IKDaPJeUSWdipSwbWti7b8nYfOW9L3Y+V3o6EtYZQJDrtWFJuyfOAkpud1g+pCPGcc
- Dd6uiFZjtapHUJjymqjNrn4PsSGCxABRD5rr4a8feutE0RgPgUfzkZZvMxNzqOahsU9C
- Sefiy0NFFIx1B7+ItSbM0tyK1ptOmmz+kgurcejj/C7X4EDjrS/NnPlxPgHzwuFLU6K6
- oBvn8nb/ynjVaXyZJkFgL0OiRrq5kpEabXRw+r0DYXz67QJ3Fq3xpMeVIlEDjURUrVBI
- X0Fg==
-X-Gm-Message-State: AGi0PuZiuDaC5Ta1jucvirpeFq1g9LIGaMNzjx+HNRi8gAOo3VitGWd4
- 5VcLoBkwoIXbrdickPGYGdGEwg==
-X-Google-Smtp-Source: APiQypKpAqCp8XOc/MLMZN0fgX43ORq5W22WL3D4XMRDrYPdkpsKqwzrWH7JlpnFrGUTMIhRBkHrmg==
-X-Received: by 2002:a17:90b:a8e:: with SMTP id
- bn14mr2009217pjb.197.1588882146670; 
- Thu, 07 May 2020 13:09:06 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id d203sm5547601pfd.79.2020.05.07.13.09.05
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 May 2020 13:09:06 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: jason.wessel@windriver.com, daniel.thompson@linaro.org,
- gregkh@linuxfoundation.org
-Subject: [PATCH v4 05/12] arm64: Add call_break_hook() to early_brk64() for
- early kgdb
-Date: Thu,  7 May 2020 13:08:43 -0700
-Message-Id: <20200507130644.v4.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
-X-Mailer: git-send-email 2.26.2.645.ge9eca65c58-goog
-In-Reply-To: <20200507200850.60646-1-dianders@chromium.org>
-References: <20200507200850.60646-1-dianders@chromium.org>
+ id 1jWmpY-0000HA-Fk
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:09:20 +0000
+Received: from pps.filterd (m0098414.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 047K2oAe183408; Thu, 7 May 2020 16:09:07 -0400
+Received: from pps.reinject (localhost [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 30vmqarft0-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 07 May 2020 16:09:07 -0400
+Received: from m0098414.ppops.net (m0098414.ppops.net [127.0.0.1])
+ by pps.reinject (8.16.0.36/8.16.0.36) with SMTP id 047K4B9E187014;
+ Thu, 7 May 2020 16:09:06 -0400
+Received: from ppma04fra.de.ibm.com (6a.4a.5195.ip4.static.sl-reverse.com
+ [149.81.74.106])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 30vmqarfsc-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 07 May 2020 16:09:06 -0400
+Received: from pps.filterd (ppma04fra.de.ibm.com [127.0.0.1])
+ by ppma04fra.de.ibm.com (8.16.0.27/8.16.0.27) with SMTP id 047JoZio003986;
+ Thu, 7 May 2020 20:09:05 GMT
+Received: from b06cxnps4074.portsmouth.uk.ibm.com
+ (d06relay11.portsmouth.uk.ibm.com [9.149.109.196])
+ by ppma04fra.de.ibm.com with ESMTP id 30s0g64ux5-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 07 May 2020 20:09:04 +0000
+Received: from d06av23.portsmouth.uk.ibm.com (d06av23.portsmouth.uk.ibm.com
+ [9.149.105.59])
+ by b06cxnps4074.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id
+ 047K92mo63176956
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 7 May 2020 20:09:02 GMT
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id A1576A4055;
+ Thu,  7 May 2020 20:09:02 +0000 (GMT)
+Received: from d06av23.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id D4F41A404D;
+ Thu,  7 May 2020 20:09:01 +0000 (GMT)
+Received: from linux.ibm.com (unknown [9.148.201.211])
+ by d06av23.portsmouth.uk.ibm.com (Postfix) with ESMTPS;
+ Thu,  7 May 2020 20:09:01 +0000 (GMT)
+Date: Thu, 7 May 2020 23:08:59 +0300
+From: Mike Rapoport <rppt@linux.ibm.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: [PATCH] arm: use SPARSMEM_STATIC when SPARSEMEM is enabled (Was:
+ [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting)
+Message-ID: <20200507200859.GF683243@linux.ibm.com>
+References: <20200506235009.25023-1-f.fainelli@gmail.com>
+ <20200506235009.25023-2-f.fainelli@gmail.com>
+ <20200507103039.GR1551@shell.armlinux.org.uk>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200507103039.GR1551@shell.armlinux.org.uk>
+X-TM-AS-GCONF: 00
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-07_13:2020-05-07,
+ 2020-05-07 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ clxscore=1015
+ priorityscore=1501 lowpriorityscore=0 phishscore=0 bulkscore=0
+ adultscore=0 malwarescore=0 spamscore=0 suspectscore=1 impostorscore=0
+ mlxscore=0 mlxlogscore=999 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2005070159
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_130907_745107_96AE206F 
-X-CRM114-Status: GOOD (  14.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_130916_657771_3082BB0C 
+X-CRM114-Status: GOOD (  24.87  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [148.163.158.5 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,108 +109,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- bjorn.andersson@linaro.org, hpa@zytor.com, will@kernel.org, corbet@lwn.net,
- frowand.list@gmail.com, jinho lim <jordan.lim@samsung.com>, agross@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
- kgdb-bugreport@lists.sourceforge.net, Dave Martin <Dave.Martin@arm.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, jslaby@suse.com,
- Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de, tglx@linutronix.de,
- mingo@redhat.com, Allison Randal <allison@lohutok.net>, sumit.garg@linaro.org,
- Douglas Anderson <dianders@chromium.org>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Enrico Weigelt <info@metux.net>
+Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In order to make early kgdb work properly we need early_brk64() to be
-able to call into it.  This is as easy as adding a call into
-call_break_hook() just like we do later in the normal brk_handler().
+On Thu, May 07, 2020 at 11:30:39AM +0100, Russell King - ARM Linux admin wrote:
+> On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
+> > From: Kevin Cernekee <cernekee@gmail.com>
+> > 
+> > If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
+> > then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
+> > choice.  This is true for all of the existing ARM users of
+> > ARCH_SPARSEMEM_ENABLE.
+> > 
+> > Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
+> > us from ever defaulting to FLATMEM, so we should remove this setting.
+> 
+> No explanation why that is desirable.
+> 
+> > -config ARCH_SPARSEMEM_DEFAULT
+> > -	def_bool ARCH_SPARSEMEM_ENABLE
+> > -
+> 
+> What this basically says is ARCH_SPARSEMEM_ENABLE=ARCH_SPARSEMEM_DEFAULT,
+> which is exactly what we want for the non-multiplatform boards that
+> select ARCH_SPARSEMEM_ENABLE - we _want_ them to default to sparsemem
+> because that is what the platform requires.
+>
+> For example, with RiscPC, which selects ARCH_SPARSEMEM_ENABLE, we have
+> four banks of memory at 0x10000000, 0x14000000, 0x18000000 and
+> 0x1c000000.  These correspond with the two memory slots - the first two
+> for the first slot, and the second two for the second slot.  Each slot
+> has two banks.  The size of each memory bank depends on the size of the
+> module.
 
-Once we do this we can let kgdb know that it can break into the
-debugger a little earlier (specifically when parsing early_param's).
+Out of curiosity I've run 
 
-NOTE: without this patch it turns out that arm64 can't do breakpoints
-even at dbg_late_init(), so if we decide something about this patch is
-wrong we might need to move dbg_late_init() a little later.
+	make ARCH=arm rpc_defconfig
+	grep SPARSEMEM .config
 
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Reviewed-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-Reviewed-by: Daniel Thompson <daniel.thompson@linaro.org>
+and I was surprised to find out that it has
+
+	CONFIG_SPARSEMEM_EXTREME=y
+
+Which would waste several kilibytes of memory for nothing.
+Here is the fix:
+
+From 7097c114226b5b1b2fc6bb605bf0d7eae601cc7f Mon Sep 17 00:00:00 2001
+From: Mike Rapoport <rppt@linux.ibm.com>
+Date: Thu, 7 May 2020 22:39:12 +0300
+Subject: [PATCH] arm: use SPARSMEM_STATIC when SPARSEMEM is enabled
+
+The commit 3e347261a80b5 ("[PATCH] sparsemem extreme implementation")
+made SPARSMEM_EXTREME the default option for configurations that enable
+SPARSEMEM.
+
+For ARM systems with handful of memory banks SPARSEMEM_EXTREME is an
+overkill.
+
+Ensure that SPARSMEM_STATIC is enabled in the configurations that use
+SPARSEMEM.
+
+Fixes: 3e347261a80b5 ("[PATCH] sparsemem extreme implementation")
+Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 ---
+ arch/arm/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-Changes in v4:
-- Add "if KGDB" to "select ARCH_HAS_EARLY_DEBUG" in Kconfig.
-
-Changes in v3:
-- Change boolean weak function to KConfig.
-
-Changes in v2: None
-
- arch/arm64/Kconfig                      | 1 +
- arch/arm64/include/asm/debug-monitors.h | 2 ++
- arch/arm64/kernel/debug-monitors.c      | 2 +-
- arch/arm64/kernel/traps.c               | 3 +++
- 4 files changed, 7 insertions(+), 1 deletion(-)
-
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 40fb05d96c60..3d78f581269c 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -13,6 +13,7 @@ config ARM64
- 	select ARCH_HAS_DEVMEM_IS_ALLOWED
- 	select ARCH_HAS_DMA_PREP_COHERENT
- 	select ARCH_HAS_ACPI_TABLE_UPGRADE if ACPI
-+	select ARCH_HAS_EARLY_DEBUG if KGDB
- 	select ARCH_HAS_FAST_MULTIPLIER
- 	select ARCH_HAS_FORTIFY_SOURCE
- 	select ARCH_HAS_GCOV_PROFILE_ALL
-diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-index 7619f473155f..2d82a0314d29 100644
---- a/arch/arm64/include/asm/debug-monitors.h
-+++ b/arch/arm64/include/asm/debug-monitors.h
-@@ -97,6 +97,8 @@ void unregister_user_break_hook(struct break_hook *hook);
- void register_kernel_break_hook(struct break_hook *hook);
- void unregister_kernel_break_hook(struct break_hook *hook);
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 66a04f6f4775..c88a48d622fc 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -1517,6 +1517,7 @@ config ARCH_HAS_HOLES_MEMORYMODEL
  
-+int call_break_hook(struct pt_regs *regs, unsigned int esr);
-+
- u8 debug_monitors_arch(void);
+ config ARCH_SPARSEMEM_ENABLE
+ 	bool
++	select SPARSEMEM_STATIC
  
- enum dbg_active_el {
-diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-index 48222a4760c2..59c353dfc8e9 100644
---- a/arch/arm64/kernel/debug-monitors.c
-+++ b/arch/arm64/kernel/debug-monitors.c
-@@ -297,7 +297,7 @@ void unregister_kernel_break_hook(struct break_hook *hook)
- 	unregister_debug_hook(&hook->node);
- }
- 
--static int call_break_hook(struct pt_regs *regs, unsigned int esr)
-+int call_break_hook(struct pt_regs *regs, unsigned int esr)
- {
- 	struct break_hook *hook;
- 	struct list_head *list;
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index cf402be5c573..a8173f0c1774 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
- 	if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
- 		return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
- #endif
-+	if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
-+		return 0;
-+
- 	return bug_handler(regs, esr) != DBG_HOOK_HANDLED;
- }
- 
+ config ARCH_SPARSEMEM_DEFAULT
+ 	def_bool ARCH_SPARSEMEM_ENABLE
 -- 
-2.26.2.645.ge9eca65c58-goog
+2.25.2
 
 
 _______________________________________________
