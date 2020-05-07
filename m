@@ -2,56 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF7F11C8B14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:37:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7E2A1C8B1E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:38:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Byl7b1T+0y4/L7AnoKpw60U8srgZlh/8chrN36yB1mI=; b=mwOjl066SBExESZUNQ+DBT+44h
-	eoOiDzHeLTEj7S+OkdxGBxmOMZDV+91UIj6q55pZnl3xxRZ9PZxUIfWGZ3b0y1zeVic6Qy33kkxy9
-	MhA20EHJ12cZuLk5F3iHaFxpkICetvnzj2vuvQXoVjJwOgpEYPAryipUJ+7rLq3/3FKaaGR1Og6/g
-	anDlUltxeBYjQW09KrYPsyiiQVQl42eQQkMATDomQwuXuiBM/DILfwl8X47Ls60OqyDX6DQeWalP9
-	tgl2ekOXlR/XZMOg+lRUnPYgJC+6I9km4tvim9Eb1w4rN0MuKPr01ksRVX4IkScJ1p7ugnUwuMm7p
-	977fGiYg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=yHqEN0Buo9z/Hv8c/ZnAfIlwc8XAu8T7WhvL1Nfn71k=; b=b6qJy/y3RXZzVx
+	TOzQr70pWjs4M+pJnjOfudIdY/KWr4XhOwZG3F0fZvWqS6PSc+/mgqhG0bOJl8eMOjCrQ1nOE+elg
+	B1ZHZ1kRu+dEq8WhFwpIvV3Q6E6dtTK1xwd2X3cHX8iVoprO1g0OdB5g5CkKi9DZ48tAJbNJWohFv
+	nGwZQ0m5nZBHFQuR0/5XdLwqRGmJmls5MjvWj7Nx588UAvuV7NJ0rvW1ZThILNJcGyG8ElHRpfmF5
+	q1ujRgJMrHvAaFicBmFTz+XSYl3l8D4h9KMvjvOWYglacgg4a1Jp6RMgrQNuDQsILLlYk9EvEP3hy
+	vMmxKp3uo9pB+oS09XOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWflo-0002CL-Ar; Thu, 07 May 2020 12:36:56 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171]
- helo=relmlie5.idc.renesas.com)
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfkQ-00011d-KW; Thu, 07 May 2020 12:35:38 +0000
-X-IronPort-AV: E=Sophos;i="5.73,363,1583161200"; d="scan'208";a="46498204"
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie5.idc.renesas.com with ESMTP; 07 May 2020 21:35:30 +0900
-Received: from localhost.localdomain (unknown [10.226.36.204])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id DFDC2400C089;
- Thu,  7 May 2020 21:35:25 +0900 (JST)
-From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v10 8/8] MAINTAINERS: Add file patterns for rcar PCI device
- tree bindings
-Date: Thu,  7 May 2020 13:33:19 +0100
-Message-Id: <1588854799-13710-9-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1588854799-13710-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
-References: <1588854799-13710-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+	id 1jWfmo-0003ND-3g; Thu, 07 May 2020 12:37:58 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWflV-00029a-Hb
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:36:39 +0000
+Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id C0507E11C10FEA00DF20;
+ Thu,  7 May 2020 20:36:31 +0800 (CST)
+Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
+ DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
+ 14.3.487.0; Thu, 7 May 2020 20:36:22 +0800
+From: Zenghui Yu <yuzenghui@huawei.com>
+To: <kvmarm@lists.cs.columbia.edu>, <suzuki.poulose@arm.com>
+Subject: [PATCH resend 0/2] KVM: arm64: Unify stage2 mapping for THP backed
+ memory
+Date: Thu, 7 May 2020 20:35:44 +0800
+Message-ID: <20200507123546.1875-1-yuzenghui@huawei.com>
+X-Mailer: git-send-email 2.23.0.windows.1
+MIME-Version: 1.0
+X-Originating-IP: [10.173.222.27]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_053530_796456_D8C68854 
-X-CRM114-Status: UNSURE (   8.24  )
+X-CRM114-CacheID: sfid-20200507_053637_761114_417C22CA 
+X-CRM114-Status: UNSURE (   6.40  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.171 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [45.249.212.35 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,49 +65,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Jingoo Han <jingoohan1@gmail.com>,
- Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
- linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
- Rob Herring <robh+dt@kernel.org>, Prabhakar <prabhakar.csengg@gmail.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Bjorn Helgaas <bhelgaas@google.com>,
- Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
- Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
- Marek Vasut <marek.vasut+renesas@gmail.com>
-MIME-Version: 1.0
+Cc: kvm@vger.kernel.org, maz@kernel.org, christoffer.dall@arm.com,
+ linux-kernel@vger.kernel.org, eric.auger@redhat.com, zhengxiang9@huawei.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com,
+ Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
+ linux-arm-kernel@lists.infradead.org, amurray@thegoodpenguin.co.uk
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add file pattern entry for rcar PCI devicetree binding, so that when
-people run ./scripts/get_maintainer.pl the rcar PCI maintainers could also
-be listed.
+This series was originally posted by Suzuki K Poulose a year ago [*],
+with the aim of cleaning up the handling of the stage2 huge mapping for
+THP. I think this still helps to make the current code cleaner, so
+rebase it on top of kvmarm/master and repost it for acceptance.
 
-Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
-Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
----
- MAINTAINERS | 1 +
- 1 file changed, 1 insertion(+)
+Thanks!
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index e64e5db31497..8cec0ecd36e2 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -12949,6 +12949,7 @@ M:	Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
- L:	linux-pci@vger.kernel.org
- L:	linux-renesas-soc@vger.kernel.org
- S:	Maintained
-+F:	Documentation/devicetree/bindings/pci/*rcar*
- F:	drivers/pci/controller/*rcar*
- 
- PCI DRIVER FOR SAMSUNG EXYNOS
+[*] https://lore.kernel.org/kvm/1554909832-7169-1-git-send-email-suzuki.poulose@arm.com/
+
+Suzuki K Poulose (2):
+  KVM: arm64: Clean up the checking for huge mapping
+  KVM: arm64: Unify handling THP backed host memory
+
+ virt/kvm/arm/mmu.c | 121 ++++++++++++++++++++++++---------------------
+ 1 file changed, 65 insertions(+), 56 deletions(-)
+
 -- 
-2.17.1
+2.19.1
+
 
 
 _______________________________________________
