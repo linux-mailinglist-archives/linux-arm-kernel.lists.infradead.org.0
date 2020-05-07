@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3ED1F1C97AB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:26:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E88AB1C97AD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:26:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EmG++oNi/wNEqqTdcMjPG6lCldINSmXKofxFL+Z0P6c=; b=H3enGlkMQg4KAK
-	RV/isNVk3vcJYo9jpwfOneqoz9ceJOT3DzgWKgL2gtPSojB2GtVHziw+XwOUSVlQnwfIt/KkuoJFA
-	Si/ySQVqV3FL03bzeEiVJtQYXx3NxilMwohQm/7BZtzMvSE23FL6Sti2gESe5E12GEYn0Re97JWRA
-	8piEJypqSs86gTVRi3OkuP2yAprC0e5s6ApGcgpl5YnTACssX+ZGFKk3gXRfX2ZnuspZmvTIoVtnX
-	h+npC1MEZY3sycYX1yMCl2L0asP6xFqPqC//iAbpMmS6gA3xbL9jSOPQkLeVu9bxIo2Nik5XIoHlm
-	rPxOs5WkqVRvoM+h5ciQ==;
+	List-Owner; bh=oszoTK2GvyTijq8JoRkBNE3/CZWMUl6zgr8OxKmk7R8=; b=R54rvFPmIfg7Gt
+	YUDtRDMBhAi9bUykqTCro+lwHzo+QZxvcXXWJBD3Lf2SgHQTYO7OI3Fazjq7Tbzq/R/J2r9d1uQP8
+	9p/gz6tn8DHM4JMjVnzLF4jiy+3PQIvhtF0NlY9olAylFQThS2g3QDLKpu9ow208hYWftApQRqGNC
+	/s4SPC7m+i972mQwJQrneuzfFOxqzzUQIKKF1dv2DVkb6r3L/JeK++Fo2P8E/5dy2UMYegFQqm8em
+	nULVZU/u05x1tPItZKZEjpfiOug9fuI1nkfw9hKgjAXxIANtS/iARisJJldoZFdZBgERbFt10AeBq
+	2Nt05gA+AKyObYmtPMjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWkHi-0006Y6-AF; Thu, 07 May 2020 17:26:10 +0000
+	id 1jWkHx-0006lm-O9; Thu, 07 May 2020 17:26:25 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWkFY-0002KR-Q9
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:23:58 +0000
+ id 1jWkFb-0002NS-CK
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:24:01 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id BD3A3817C;
- Thu,  7 May 2020 17:24:43 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id A9A0080CD;
+ Thu,  7 May 2020 17:24:46 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 07/14] ARM: dts: Configure system timers for am437x
-Date: Thu,  7 May 2020 10:23:23 -0700
-Message-Id: <20200507172330.18679-8-tony@atomide.com>
+Subject: [PATCH 08/14] ARM: dts: Configure system timers for omap4
+Date: Thu,  7 May 2020 10:23:24 -0700
+Message-Id: <20200507172330.18679-9-tony@atomide.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200507172330.18679-1-tony@atomide.com>
 References: <20200507172330.18679-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_102356_896116_AD4E00FE 
-X-CRM114-Status: GOOD (  12.79  )
+X-CRM114-CacheID: sfid-20200507_102359_486849_A40FF46A 
+X-CRM114-Status: GOOD (  12.48  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -96,274 +96,198 @@ Cc: Rob Herring <robh@kernel.org>
 Cc: Tero Kristo <t-kristo@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- arch/arm/boot/dts/am4372.dtsi                 | 20 +++++++
- arch/arm/boot/dts/am437x-l4.dtsi              |  7 +--
- arch/arm/mach-omap2/board-generic.c           |  2 +-
- .../omap_hwmod_33xx_43xx_common_data.h        |  2 -
- .../omap_hwmod_33xx_43xx_interconnect_data.c  |  8 ---
- .../omap_hwmod_33xx_43xx_ipblock_data.c       | 60 -------------------
- arch/arm/mach-omap2/omap_hwmod_43xx_data.c    | 45 --------------
- 7 files changed, 23 insertions(+), 121 deletions(-)
+ arch/arm/boot/dts/omap4-l4.dtsi            |  4 +-
+ arch/arm/boot/dts/omap4.dtsi               | 10 +++
+ arch/arm/mach-omap2/board-generic.c        |  2 +-
+ arch/arm/mach-omap2/omap_hwmod_44xx_data.c | 90 ----------------------
+ 4 files changed, 12 insertions(+), 94 deletions(-)
 
-diff --git a/arch/arm/boot/dts/am4372.dtsi b/arch/arm/boot/dts/am4372.dtsi
---- a/arch/arm/boot/dts/am4372.dtsi
-+++ b/arch/arm/boot/dts/am4372.dtsi
-@@ -553,3 +553,23 @@ prm_device: prm@4000 {
+diff --git a/arch/arm/boot/dts/omap4-l4.dtsi b/arch/arm/boot/dts/omap4-l4.dtsi
+--- a/arch/arm/boot/dts/omap4-l4.dtsi
++++ b/arch/arm/boot/dts/omap4-l4.dtsi
+@@ -974,7 +974,6 @@ segment@0 {					/* 0x4a300000 */
+ 
+ 		target-module@4000 {			/* 0x4a304000, ap 17 24.0 */
+ 			compatible = "ti,sysc-omap2", "ti,sysc";
+-			ti,hwmods = "counter_32k";
+ 			reg = <0x4000 0x4>,
+ 			      <0x4004 0x4>;
+ 			reg-names = "rev", "sysc";
+@@ -1139,9 +1138,8 @@ wdt2: wdt@0 {
+ 			};
+ 		};
+ 
+-		target-module@8000 {			/* 0x4a318000, ap 9 1c.0 */
++		timer1_target: target-module@8000 {	/* 0x4a318000, ap 9 1c.0 */
+ 			compatible = "ti,sysc-omap2-timer", "ti,sysc";
+-			ti,hwmods = "timer1";
+ 			reg = <0x8000 0x4>,
+ 			      <0x8010 0x4>,
+ 			      <0x8014 0x4>;
+diff --git a/arch/arm/boot/dts/omap4.dtsi b/arch/arm/boot/dts/omap4.dtsi
+--- a/arch/arm/boot/dts/omap4.dtsi
++++ b/arch/arm/boot/dts/omap4.dtsi
+@@ -655,3 +655,13 @@ prm_device: prm@1b00 {
  		#reset-cells = <1>;
  	};
  };
 +
-+/* Preferred always-on timer for clocksource */
++/* Preferred always-on timer for clockevent */
 +&timer1_target {
 +	ti,no-reset-on-init;
 +	ti,no-idle;
 +	timer@0 {
-+		assigned-clocks = <&timer1_fck>;
++		assigned-clocks = <&l4_wkup_clkctrl OMAP4_TIMER1_CLKCTRL 24>;
 +		assigned-clock-parents = <&sys_clkin_ck>;
 +	};
 +};
-+
-+/* Preferred timer for clockevent */
-+&timer2_target {
-+	ti,no-reset-on-init;
-+	ti,no-idle;
-+	timer@0 {
-+		assigned-clocks = <&timer2_fck>;
-+		assigned-clock-parents = <&sys_clkin_ck>;
-+	};
-+};
-diff --git a/arch/arm/boot/dts/am437x-l4.dtsi b/arch/arm/boot/dts/am437x-l4.dtsi
---- a/arch/arm/boot/dts/am437x-l4.dtsi
-+++ b/arch/arm/boot/dts/am437x-l4.dtsi
-@@ -328,9 +328,8 @@ scm_clockdomains: clockdomains {
- 			};
- 		};
- 
--		target-module@31000 {			/* 0x44e31000, ap 24 40.0 */
-+		timer1_target: target-module@31000 {	/* 0x44e31000, ap 24 40.0 */
- 			compatible = "ti,sysc-omap2-timer", "ti,sysc";
--			ti,hwmods = "timer1";
- 			reg = <0x31000 0x4>,
- 			      <0x31010 0x4>,
- 			      <0x31014 0x4>;
-@@ -450,7 +449,6 @@ target-module@40000 {			/* 0x44e40000, ap 36 68.0 */
- 
- 		target-module@86000 {			/* 0x44e86000, ap 40 70.0 */
- 			compatible = "ti,sysc-omap2", "ti,sysc";
--			ti,hwmods = "counter_32k";
- 			reg = <0x86000 0x4>,
- 			      <0x86004 0x4>;
- 			reg-names = "rev", "sysc";
-@@ -868,9 +866,8 @@ mcasp1: mcasp@0 {
- 			};
- 		};
- 
--		target-module@40000 {			/* 0x48040000, ap 18 1e.0 */
-+		timer2_target: target-module@40000 {	/* 0x48040000, ap 18 1e.0 */
- 			compatible = "ti,sysc-omap4-timer", "ti,sysc";
--			ti,hwmods = "timer2";
- 			reg = <0x40000 0x4>,
- 			      <0x40010 0x4>,
- 			      <0x40014 0x4>;
 diff --git a/arch/arm/mach-omap2/board-generic.c b/arch/arm/mach-omap2/board-generic.c
 --- a/arch/arm/mach-omap2/board-generic.c
 +++ b/arch/arm/mach-omap2/board-generic.c
-@@ -308,7 +308,7 @@ DT_MACHINE_START(AM43_DT, "Generic AM43 (Flattened Device Tree)")
- 	.init_late	= am43xx_init_late,
+@@ -261,7 +261,7 @@ DT_MACHINE_START(OMAP4_DT, "Generic OMAP4 (Flattened Device Tree)")
  	.init_irq	= omap_gic_of_init,
  	.init_machine	= omap_generic_init,
--	.init_time	= omap3_gptimer_timer_init,
+ 	.init_late	= omap4430_init_late,
+-	.init_time	= omap4_local_timer_init,
 +	.init_time	= omap_init_time_of,
- 	.dt_compat	= am43_boards_compat,
+ 	.dt_compat	= omap4_boards_compat,
  	.restart	= omap44xx_restart,
  MACHINE_END
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_common_data.h
-@@ -44,8 +44,6 @@ extern struct omap_hwmod am33xx_smartreflex0_hwmod;
- extern struct omap_hwmod am33xx_smartreflex1_hwmod;
- extern struct omap_hwmod am33xx_gpmc_hwmod;
- extern struct omap_hwmod am33xx_rtc_hwmod;
--extern struct omap_hwmod am33xx_timer1_hwmod;
--extern struct omap_hwmod am33xx_timer2_hwmod;
+diff --git a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
+--- a/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
++++ b/arch/arm/mach-omap2/omap_hwmod_44xx_data.c
+@@ -231,39 +231,6 @@ static struct omap_hwmod omap44xx_ocp_wp_noc_hwmod = {
+  * usim
+  */
  
- extern struct omap_hwmod_class am33xx_emif_hwmod_class;
- extern struct omap_hwmod_class am33xx_l4_hwmod_class;
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_interconnect_data.c
-@@ -106,14 +106,6 @@ struct omap_hwmod_ocp_if am33xx_l3_s__gpmc = {
- 	.user		= OCP_USER_MPU,
- };
- 
--/* l4 per -> timer2 */
--struct omap_hwmod_ocp_if am33xx_l4_ls__timer2 = {
--	.master		= &am33xx_l4_ls_hwmod,
--	.slave		= &am33xx_timer2_hwmod,
--	.clk		= "l4ls_gclk",
--	.user		= OCP_USER_MPU,
--};
+-/*
+- * 'counter' class
+- * 32-bit ordinary counter, clocked by the falling edge of the 32 khz clock
+- */
 -
- /* l3 main -> ocmc */
- struct omap_hwmod_ocp_if am33xx_l3_main__ocmc = {
- 	.master		= &am33xx_l3_main_hwmod,
-diff --git a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_33xx_43xx_ipblock_data.c
-@@ -307,64 +307,6 @@ struct omap_hwmod am33xx_rtc_hwmod = {
- 	},
- };
- 
--/* 'timer 2-7' class */
--static struct omap_hwmod_class_sysconfig am33xx_timer_sysc = {
+-static struct omap_hwmod_class_sysconfig omap44xx_counter_sysc = {
 -	.rev_offs	= 0x0000,
--	.sysc_offs	= 0x0010,
--	.syss_offs	= 0x0014,
--	.sysc_flags	= SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET |
--			  SYSC_HAS_RESET_STATUS,
--	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART |
--			  SIDLE_SMART_WKUP),
--	.sysc_fields	= &omap_hwmod_sysc_type2,
--};
--
--struct omap_hwmod_class am33xx_timer_hwmod_class = {
--	.name		= "timer",
--	.sysc		= &am33xx_timer_sysc,
--};
--
--/* timer1 1ms */
--static struct omap_hwmod_class_sysconfig am33xx_timer1ms_sysc = {
--	.rev_offs	= 0x0000,
--	.sysc_offs	= 0x0010,
--	.syss_offs	= 0x0014,
--	.sysc_flags	= (SYSC_HAS_CLOCKACTIVITY | SYSC_HAS_SIDLEMODE |
--			SYSC_HAS_SOFTRESET | SYSC_HAS_AUTOIDLE |
--			SYSS_HAS_RESET_STATUS),
--	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
--	.sysc_fields	= &omap_hwmod_sysc_type1,
--};
--
--static struct omap_hwmod_class am33xx_timer1ms_hwmod_class = {
--	.name		= "timer",
--	.sysc		= &am33xx_timer1ms_sysc,
--};
--
--struct omap_hwmod am33xx_timer1_hwmod = {
--	.name		= "timer1",
--	.class		= &am33xx_timer1ms_hwmod_class,
--	.clkdm_name	= "l4_wkup_clkdm",
--	.main_clk	= "timer1_fck",
--	.prcm		= {
--		.omap4	= {
--			.modulemode	= MODULEMODE_SWCTRL,
--		},
--	},
--};
--
--struct omap_hwmod am33xx_timer2_hwmod = {
--	.name		= "timer2",
--	.class		= &am33xx_timer_hwmod_class,
--	.clkdm_name	= "l4ls_clkdm",
--	.main_clk	= "timer2_fck",
--	.prcm		= {
--		.omap4	= {
--			.modulemode	= MODULEMODE_SWCTRL,
--		},
--	},
--};
--
- static void omap_hwmod_am33xx_clkctrl(void)
- {
- 	CLKCTRL(am33xx_smartreflex0_hwmod,
-@@ -397,12 +339,10 @@ void omap_hwmod_am33xx_reg(void)
- 
- static void omap_hwmod_am43xx_clkctrl(void)
- {
--	CLKCTRL(am33xx_timer2_hwmod, AM43XX_CM_PER_TIMER2_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_smartreflex0_hwmod,
- 		AM43XX_CM_WKUP_SMARTREFLEX0_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_smartreflex1_hwmod,
- 		AM43XX_CM_WKUP_SMARTREFLEX1_CLKCTRL_OFFSET);
--	CLKCTRL(am33xx_timer1_hwmod, AM43XX_CM_WKUP_TIMER1_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_rtc_hwmod, AM43XX_CM_RTC_RTC_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_gpmc_hwmod, AM43XX_CM_PER_GPMC_CLKCTRL_OFFSET);
- 	CLKCTRL(am33xx_l4_ls_hwmod, AM43XX_CM_PER_L4LS_CLKCTRL_OFFSET);
-diff --git a/arch/arm/mach-omap2/omap_hwmod_43xx_data.c b/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
---- a/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
-+++ b/arch/arm/mach-omap2/omap_hwmod_43xx_data.c
-@@ -85,34 +85,6 @@ static struct omap_hwmod am43xx_control_hwmod = {
- 	},
- };
- 
--static struct omap_hwmod_class_sysconfig am43xx_synctimer_sysc = {
--	.rev_offs	= 0x0,
--	.sysc_offs	= 0x4,
+-	.sysc_offs	= 0x0004,
 -	.sysc_flags	= SYSC_HAS_SIDLEMODE,
 -	.idlemodes	= (SIDLE_FORCE | SIDLE_NO),
 -	.sysc_fields	= &omap_hwmod_sysc_type1,
 -};
 -
--static struct omap_hwmod_class am43xx_synctimer_hwmod_class = {
--	.name	= "synctimer",
--	.sysc	= &am43xx_synctimer_sysc,
+-static struct omap_hwmod_class omap44xx_counter_hwmod_class = {
+-	.name	= "counter",
+-	.sysc	= &omap44xx_counter_sysc,
 -};
 -
--static struct omap_hwmod am43xx_synctimer_hwmod = {
+-/* counter_32k */
+-static struct omap_hwmod omap44xx_counter_32k_hwmod = {
 -	.name		= "counter_32k",
--	.class		= &am43xx_synctimer_hwmod_class,
--	.clkdm_name	= "l4_wkup_aon_clkdm",
+-	.class		= &omap44xx_counter_hwmod_class,
+-	.clkdm_name	= "l4_wkup_clkdm",
 -	.flags		= HWMOD_SWSUP_SIDLE,
--	.main_clk	= "synctimer_32kclk",
+-	.main_clk	= "sys_32k_ck",
 -	.prcm = {
 -		.omap4 = {
--			.clkctrl_offs = AM43XX_CM_WKUP_SYNCTIMER_CLKCTRL_OFFSET,
+-			.clkctrl_offs = OMAP4_CM_WKUP_SYNCTIMER_CLKCTRL_OFFSET,
+-			.context_offs = OMAP4_RM_WKUP_SYNCTIMER_CONTEXT_OFFSET,
+-		},
+-	},
+-};
+-
+ /*
+  * 'ctrl_module' class
+  * attila core control module + core pad control module + wkup pad control
+@@ -672,45 +639,6 @@ static struct omap_hwmod omap44xx_sl2if_hwmod = {
+ 	},
+ };
+ 
+-/*
+- * 'timer' class
+- * general purpose timer module with accurate 1ms tick
+- * This class contains several variants: ['timer_1ms', 'timer']
+- */
+-
+-static struct omap_hwmod_class_sysconfig omap44xx_timer_1ms_sysc = {
+-	.rev_offs	= 0x0000,
+-	.sysc_offs	= 0x0010,
+-	.syss_offs	= 0x0014,
+-	.sysc_flags	= (SYSC_HAS_AUTOIDLE | SYSC_HAS_CLOCKACTIVITY |
+-			   SYSC_HAS_EMUFREE | SYSC_HAS_ENAWAKEUP |
+-			   SYSC_HAS_SIDLEMODE | SYSC_HAS_SOFTRESET |
+-			   SYSS_HAS_RESET_STATUS),
+-	.idlemodes	= (SIDLE_FORCE | SIDLE_NO | SIDLE_SMART),
+-	.sysc_fields	= &omap_hwmod_sysc_type1,
+-};
+-
+-static struct omap_hwmod_class omap44xx_timer_1ms_hwmod_class = {
+-	.name	= "timer",
+-	.sysc	= &omap44xx_timer_1ms_sysc,
+-};
+-
+-/* timer1 */
+-static struct omap_hwmod omap44xx_timer1_hwmod = {
+-	.name		= "timer1",
+-	.class		= &omap44xx_timer_1ms_hwmod_class,
+-	.clkdm_name	= "l4_wkup_clkdm",
+-	.flags		= HWMOD_SET_DEFAULT_CLOCKACT,
+-	.main_clk	= "dmt1_clk_mux",
+-	.prcm = {
+-		.omap4 = {
+-			.clkctrl_offs = OMAP4_CM_WKUP_TIMER1_CLKCTRL_OFFSET,
+-			.context_offs = OMAP4_RM_WKUP_TIMER1_CONTEXT_OFFSET,
 -			.modulemode   = MODULEMODE_SWCTRL,
 -		},
 -	},
 -};
 -
--
- static struct omap_hwmod_class_sysconfig am43xx_usb_otg_ss_sysc = {
- 	.rev_offs	= 0x0000,
- 	.sysc_offs	= 0x0010,
-@@ -206,20 +178,6 @@ static struct omap_hwmod_ocp_if am43xx_l4_wkup__control = {
- 	.user		= OCP_USER_MPU,
+ /*
+  * 'usb_host_fs' class
+  * full-speed usb host controller
+@@ -1063,14 +991,6 @@ static struct omap_hwmod_ocp_if omap44xx_l4_cfg__ocp_wp_noc = {
+ 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
  };
  
--static struct omap_hwmod_ocp_if am43xx_l4_wkup__timer1 = {
--	.master		= &am33xx_l4_wkup_hwmod,
--	.slave		= &am33xx_timer1_hwmod,
--	.clk		= "sys_clkin_ck",
--	.user		= OCP_USER_MPU,
+-/* l4_wkup -> counter_32k */
+-static struct omap_hwmod_ocp_if omap44xx_l4_wkup__counter_32k = {
+-	.master		= &omap44xx_l4_wkup_hwmod,
+-	.slave		= &omap44xx_counter_32k_hwmod,
+-	.clk		= "l4_wkup_clk_mux_ck",
+-	.user		= OCP_USER_MPU | OCP_USER_SDMA,
 -};
 -
--static struct omap_hwmod_ocp_if am33xx_l4_wkup__synctimer = {
--	.master		= &am33xx_l4_wkup_hwmod,
--	.slave		= &am43xx_synctimer_hwmod,
--	.clk		= "sys_clkin_ck",
--	.user		= OCP_USER_MPU,
--};
--
- static struct omap_hwmod_ocp_if am43xx_l3_s__usbotgss0 = {
- 	.master         = &am33xx_l3_s_hwmod,
- 	.slave          = &am43xx_usb_otg_ss0_hwmod,
-@@ -235,7 +193,6 @@ static struct omap_hwmod_ocp_if am43xx_l3_s__usbotgss1 = {
+ /* l4_cfg -> ctrl_module_core */
+ static struct omap_hwmod_ocp_if omap44xx_l4_cfg__ctrl_module_core = {
+ 	.master		= &omap44xx_l4_cfg_hwmod,
+@@ -1199,14 +1119,6 @@ static struct omap_hwmod_ocp_if __maybe_unused omap44xx_l3_main_2__sl2if = {
+ 	.user		= OCP_USER_MPU | OCP_USER_SDMA,
  };
  
- static struct omap_hwmod_ocp_if *am43xx_hwmod_ocp_ifs[] __initdata = {
--	&am33xx_l4_wkup__synctimer,
- 	&am33xx_mpu__l3_main,
- 	&am33xx_mpu__prcm,
- 	&am33xx_l3_s__l4_ls,
-@@ -252,8 +209,6 @@ static struct omap_hwmod_ocp_if *am43xx_hwmod_ocp_ifs[] __initdata = {
- 	&am43xx_l4_wkup__control,
- 	&am43xx_l4_wkup__smartreflex0,
- 	&am43xx_l4_wkup__smartreflex1,
--	&am43xx_l4_wkup__timer1,
--	&am33xx_l4_ls__timer2,
- 	&am33xx_l3_s__gpmc,
- 	&am33xx_l3_main__ocmc,
- 	&am43xx_l3_s__usbotgss0,
+-/* l4_wkup -> timer1 */
+-static struct omap_hwmod_ocp_if omap44xx_l4_wkup__timer1 = {
+-	.master		= &omap44xx_l4_wkup_hwmod,
+-	.slave		= &omap44xx_timer1_hwmod,
+-	.clk		= "l4_wkup_clk_mux_ck",
+-	.user		= OCP_USER_MPU | OCP_USER_SDMA,
+-};
+-
+ /* l4_cfg -> usb_host_fs */
+ static struct omap_hwmod_ocp_if __maybe_unused omap44xx_l4_cfg__usb_host_fs = {
+ 	.master		= &omap44xx_l4_cfg_hwmod,
+@@ -1273,7 +1185,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap44xx_l4_cfg__l4_wkup,
+ 	&omap44xx_mpu__mpu_private,
+ 	&omap44xx_l4_cfg__ocp_wp_noc,
+-	&omap44xx_l4_wkup__counter_32k,
+ 	&omap44xx_l4_cfg__ctrl_module_core,
+ 	&omap44xx_l4_cfg__ctrl_module_pad_core,
+ 	&omap44xx_l4_wkup__ctrl_module_wkup,
+@@ -1290,7 +1201,6 @@ static struct omap_hwmod_ocp_if *omap44xx_hwmod_ocp_ifs[] __initdata = {
+ 	&omap44xx_l4_wkup__prm,
+ 	&omap44xx_l4_wkup__scrm,
+ 	/* &omap44xx_l3_main_2__sl2if, */
+-	&omap44xx_l4_wkup__timer1,
+ 	/* &omap44xx_l4_cfg__usb_host_fs, */
+ 	&omap44xx_l4_cfg__usb_host_hs,
+ 	&omap44xx_l4_cfg__usb_tll_hs,
 -- 
 2.26.2
 
