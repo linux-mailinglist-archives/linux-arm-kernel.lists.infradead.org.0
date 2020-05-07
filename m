@@ -2,52 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D9701C862E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 11:57:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F413E1C8638
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 12:00:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=sIKuusACVJe/IRP0jslzaMG/k0NghIeY8kiVLEqyMbU=; b=ue3
-	tQZ0vSyeVJqruhmE/Qys6qnCNoXFdeC4ZIA8OK1/7N88EliCkZYttDalSr72jA+Ou+OgaifsTvWNs
-	Va2Uo5dvNc5GBHyNvPx5VFVjM0WZ3lsJYJ9azaWlGyUzt55VpQ7sxhob31kBuOlhWZ6oHuUwW7kQu
-	qn6W3rV6/esGjmayEoMfCSj4DNIP7RoWjb0HJ8UYTSFTy2+3Ver2Mgd2BVp5o8lyQTE4aTFJsdoGK
-	dF7eKL4hhb4JLdrRU9SoOLLFzuuEji75+D3noHjpPuR3twsbSMq3DrBOUuDJTqssVNYngLioK5XpK
-	5mN6L3Ng+QQ6GsQvkVcN0zdTa/4uV5w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Xqio4q8H3ijZUCvDtXPxiN/Za475z0T10mofspdC1vE=; b=W3M7FPdmfWjeLB
+	vmLZwSPRvM8ylNTQ53JP1RrrzMunfsawn9daCAEKUwz+tFuCczVQ9VBNuUO5w7ZwOIR6/wxaLf/dh
+	0hrJR6hbIkwB7qpd8HT7K1Aw1CWWFoygPCZepsj2/KMh0OviUxUFq0IgDIA2gCjYc+b6DMfe+/xgZ
+	nCnDVFjf6IfenIUA/myrjUaZO3wjVVtVraxqSHXyKoSrsEOztO5OJLyBoQ6yhi87m26GTpuD65fln
+	kIQFAlN4hm5jS+VFrMkggiBIL7f+h6MSX8KSop4RwwSm2ZpqCALUkAOfvgUBS1jwxuMgKFedgyyAa
+	JCICulu/+xdARdBb4F9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWdHg-000390-IA; Thu, 07 May 2020 09:57:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWdHY-00037w-2C
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 09:57:33 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 031D8D6E;
- Thu,  7 May 2020 02:57:29 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.73.155])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 453F03F71F;
- Thu,  7 May 2020 02:57:26 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/cpuinfo: Move HWCAP name arrays alongside their bit
- definitions
-Date: Thu,  7 May 2020 15:26:30 +0530
-Message-Id: <1588845390-2032-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jWdJu-0003Xd-N6; Thu, 07 May 2020 09:59:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWdJo-0003Wv-0L
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 09:59:53 +0000
+Received: from localhost.localdomain (NE2965lan1.rev.em-net.ne.jp
+ [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9027C20643;
+ Thu,  7 May 2020 09:59:45 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588845589;
+ bh=1dH5G1leAYENAhuCpe5L02sl2FX0JniYY4i2b+iiscs=;
+ h=From:To:Cc:Subject:Date:From;
+ b=1aUldhiQbHoUUq98QeyZox9aJSM7fUex2qh2uKAqXjx1zIHigKYWqndTApyZ8Q6h+
+ kmOaWmRVk1MiImGIY8H0404e2ryIMSTusCdfZi2zrrVtdCKI+4inXLc8iYKXrGtO//
+ UKpQuhTXij4WrjkTmPbAG530abAmO1w29UVHXsHQ=
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: LKML <linux-kernel@vger.kernel.org>
+Subject: [RFC PATCH 0/3] kprobes: Support nested kprobes
+Date: Thu,  7 May 2020 18:59:42 +0900
+Message-Id: <158884558272.12656.7654266361809594662.stgit@devnote2>
+X-Mailer: git-send-email 2.20.1
+User-Agent: StGit/0.17.1-dirty
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_025732_190708_D9D86131 
-X-CRM114-Status: GOOD (  13.47  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_025952_095643_C779BEDA 
+X-CRM114-Status: GOOD (  11.73  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,314 +75,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>
-MIME-Version: 1.0
+Cc: Wang Nan <wangnan0@huawei.com>, Song Liu <songliubraving@fb.com>,
+ Martin KaFai Lau <kafai@fb.com>, Daniel Borkmann <daniel@iogearbox.net>,
+ Russell King <linux@armlinux.org.uk>,
+ Network Development <netdev@vger.kernel.org>,
+ Alexei Starovoitov <ast@kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Will Deacon <will@kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Yonghong Song <yhs@fb.com>,
+ bpf <bpf@vger.kernel.org>, Andrii Nakryiko <andriin@fb.com>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Eelco Chaudron <echaudro@redhat.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-All HWCAP name arrays (i.e hwcap_str, compat_hwcap_str, compat_hwcap2_str)
-that are scanned for /proc/cpuinfo output are detached from their bit fild
-definitions making it difficult to corelate. This is also bit problematic
-because during /proc/cpuinfo dump these arrays get traversed sequentially
-assuming that they reflect and match HWCAP bit sequence, to test various
-features for a given CPU.
+Hi,
 
-This moves all HWCAP name arrays near their bit definitions. But first it
-defines all missing COMPAT_HWCAP_XXX that are present in the name string.
-Also defines all COMPAT_KERNEL_HWCAP macros to be used for the HWCAP name
-string indexing.
+Here is a series to add nested-kprobes support to x86, arm64
+and arm (which I can test).
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Mark Brown <broonie@kernel.org>
-Cc: Ard Biesheuvel <ardb@kernel.org>
-Cc: Mark Rutland <mark.rutland@arm.com>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
+These make kprobes to accept 1-level nesting instead of incrementing
+missed count.
 
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+Any kprobes hits in kprobes pre/post handler context can be nested
+at once. If the other kprobes hits in the nested pre/post handler
+context or in the single-stepping context, that will be still
+missed.
+
+The nest level is actually easily extended, but too many nest
+level can lead the overflow of the kernel stack (for each nest,
+the stack will be consumed by saving registers, handling kprobes
+and pre/post handlers.) Thus, at this moment it allows only one
+level nest.
+
+This feature allows BPF or ftrace user to put a kprobe on BPF
+jited code or ftrace internal code running in the kprobe context
+for debugging.
+
+We can test this feature on the kernel with
+CONFIG_KPROBE_EVENTS_ON_NOTRACE=y as below.
+
+  # cd /sys/kernel/debug/tracing
+  # echo p ring_buffer_lock_reserve > kprobe_events
+  # echo p vfs_read >> kprobe_events
+  # echo stacktrace > events/kprobes/p_ring_buffer_lock_reserve_0/trigger
+  # echo 1 > events/kprobes/enable
+  # cat trace
+  ...
+               cat-151   [000] ...1    48.669190: p_vfs_read_0: (vfs_read+0x0/0x160)
+               cat-151   [000] ...2    48.669276: p_ring_buffer_lock_reserve_0: (ring_buffer_lock_reserve+0x0/0x400)
+               cat-151   [000] ...2    48.669288: <stack trace>
+   => kprobe_dispatcher
+   => opt_pre_handler
+   => optimized_callback
+   => 0xffffffffa0002331
+   => ring_buffer_lock_reserve
+   => kprobe_trace_func
+   => kprobe_dispatcher
+   => opt_pre_handler
+   => optimized_callback
+   => 0xffffffffa00023b0
+   => vfs_read
+   => load_elf_phdrs
+   => load_elf_binary
+   => search_binary_handler.part.0
+   => __do_execve_file.isra.0
+   => __x64_sys_execve
+   => do_syscall_64
+   => entry_SYSCALL_64_after_hwframe
+  
+To check unoptimized code, disable optprobe and dump the log.
+
+  # echo 0 > /proc/sys/debug/kprobes-optimization
+  # echo > trace
+  # cat trace
+               cat-153   [000] d..1   140.581433: p_vfs_read_0: (vfs_read+0x0/0x160)
+               cat-153   [000] d..2   140.581780: p_ring_buffer_lock_reserve_0: (ring_buffer_lock_reserve+0x0/0x400)
+               cat-153   [000] d..2   140.581811: <stack trace>
+   => kprobe_dispatcher
+   => aggr_pre_handler
+   => kprobe_int3_handler
+   => do_int3
+   => int3
+   => ring_buffer_lock_reserve
+   => kprobe_trace_func
+   => kprobe_dispatcher
+   => aggr_pre_handler
+   => kprobe_int3_handler
+   => do_int3
+   => int3
+   => vfs_read
+   => load_elf_phdrs
+   => load_elf_binary
+   => search_binary_handler.part.0
+   => __do_execve_file.isra.0
+   => __x64_sys_execve
+   => do_syscall_64
+   => entry_SYSCALL_64_after_hwframe
+
+So we can see the kprobe can be nested.
+
+Thank you,
+
 ---
-In longer term we might want to generate these HWCAP macros with scripting,
-and this is a step in that direction. This applies on 5.7-rc4.
 
- arch/arm64/include/asm/hwcap.h | 132 +++++++++++++++++++++++++++++++++
- arch/arm64/kernel/cpuinfo.c    |  90 ----------------------
- 2 files changed, 132 insertions(+), 90 deletions(-)
+Masami Hiramatsu (3):
+      x86/kprobes: Support nested kprobes
+      arm64: kprobes: Support nested kprobes
+      arm: kprobes: Support nested kprobes
 
-diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-index 0f00265248b5..cb99b5f75e5d 100644
---- a/arch/arm64/include/asm/hwcap.h
-+++ b/arch/arm64/include/asm/hwcap.h
-@@ -8,18 +8,27 @@
- #include <uapi/asm/hwcap.h>
- #include <asm/cpufeature.h>
- 
-+#define COMPAT_HWCAP_SWP	(1 << 0)
- #define COMPAT_HWCAP_HALF	(1 << 1)
- #define COMPAT_HWCAP_THUMB	(1 << 2)
-+#define COMPAT_HWCAP_26BIT	(1 << 3)
- #define COMPAT_HWCAP_FAST_MULT	(1 << 4)
-+#define COMPAT_HWCAP_FPA	(1 << 5)
- #define COMPAT_HWCAP_VFP	(1 << 6)
- #define COMPAT_HWCAP_EDSP	(1 << 7)
-+#define COMPAT_HWCAP_JAVA	(1 << 8)
-+#define COMPAT_HWCAP_IWMMXT	(1 << 9)
-+#define COMPAT_HWCAP_CRUNCH	(1 << 10)
-+#define COMPAT_HWCAP_THUMBEE	(1 << 11)
- #define COMPAT_HWCAP_NEON	(1 << 12)
- #define COMPAT_HWCAP_VFPv3	(1 << 13)
-+#define COMPAT_HWCAP_VFPV3D16	(1 << 14)
- #define COMPAT_HWCAP_TLS	(1 << 15)
- #define COMPAT_HWCAP_VFPv4	(1 << 16)
- #define COMPAT_HWCAP_IDIVA	(1 << 17)
- #define COMPAT_HWCAP_IDIVT	(1 << 18)
- #define COMPAT_HWCAP_IDIV	(COMPAT_HWCAP_IDIVA|COMPAT_HWCAP_IDIVT)
-+#define COMPAT_HWCAP_VFPD32	(1 << 19)
- #define COMPAT_HWCAP_LPAE	(1 << 20)
- #define COMPAT_HWCAP_EVTSTRM	(1 << 21)
- 
-@@ -95,6 +104,129 @@
- #define KERNEL_HWCAP_DGH		__khwcap2_feature(DGH)
- #define KERNEL_HWCAP_RNG		__khwcap2_feature(RNG)
- 
-+#ifdef CONFIG_COMPAT
-+#define __compat_khwcap_feature(x)	const_ilog2(COMPAT_HWCAP_ ## x)
-+#define COMPAT_KERNEL_HWCAP_SWP		__compat_khwcap_feature(SWP)
-+#define COMPAT_KERNEL_HWCAP_HALF	__compat_khwcap_feature(HALF)
-+#define COMPAT_KERNEL_HWCAP_THUMB	__compat_khwcap_feature(THUMB)
-+#define COMPAT_KERNEL_HWCAP_26BIT	__compat_khwcap_feature(26BIT)
-+#define COMPAT_KERNEL_HWCAP_FAST_MULT	__compat_khwcap_feature(FAST_MULT)
-+#define COMPAT_KERNEL_HWCAP_FPA		__compat_khwcap_feature(FPA)
-+#define COMPAT_KERNEL_HWCAP_VFP		__compat_khwcap_feature(VFP)
-+#define COMPAT_KERNEL_HWCAP_EDSP	__compat_khwcap_feature(EDSP)
-+#define COMPAT_KERNEL_HWCAP_JAVA	__compat_khwcap_feature(JAVA)
-+#define COMPAT_KERNEL_HWCAP_IWMMXT	__compat_khwcap_feature(IWMMXT)
-+#define COMPAT_KERNEL_HWCAP_CRUNCH	__compat_khwcap_feature(CRUNCH)
-+#define COMPAT_KERNEL_HWCAP_THUMBEE	__compat_khwcap_feature(THUMBEE)
-+#define COMPAT_KERNEL_HWCAP_NEON	__compat_khwcap_feature(NEON)
-+#define COMPAT_KERNEL_HWCAP_VFPv3	__compat_khwcap_feature(VFPv3)
-+#define COMPAT_KERNEL_HWCAP_VFPV3D16	__compat_khwcap_feature(VFPV3D16)
-+#define COMPAT_KERNEL_HWCAP_TLS		__compat_khwcap_feature(TLS)
-+#define COMPAT_KERNEL_HWCAP_VFPv4	__compat_khwcap_feature(VFPv4)
-+#define COMPAT_KERNEL_HWCAP_IDIVA	__compat_khwcap_feature(IDIVA)
-+#define COMPAT_KERNEL_HWCAP_IDIVT	__compat_khwcap_feature(IDIVT)
-+#define COMPAT_KERNEL_HWCAP_VFPD32	__compat_khwcap_feature(VFPD32)
-+#define COMPAT_KERNEL_HWCAP_LPAE	__compat_khwcap_feature(LPAE)
-+#define COMPAT_KERNEL_HWCAP_EVTSTRM	__compat_khwcap_feature(EVTSTRM)
-+
-+#define __compat_khwcap2_feature(x)	const_ilog2(COMPAT_HWCAP2_ ## x)
-+#define COMPAT_KERNEL_HWCAP_AES		__compat_khwcap2_feature(AES)
-+#define COMPAT_KERNEL_HWCAP_PMULL	__compat_khwcap2_feature(PMULL)
-+#define COMPAT_KERNEL_HWCAP_SHA1	__compat_khwcap2_feature(SHA1)
-+#define COMPAT_KERNEL_HWCAP_SHA2	__compat_khwcap2_feature(SHA2)
-+#define COMPAT_KERNEL_HWCAP_CRC32	__compat_khwcap2_feature(CRC32)
-+#endif /* CONFIG_COMPAT */
-+
-+static const char *const hwcap_str[] = {
-+	[KERNEL_HWCAP_FP]		= "fp",
-+	[KERNEL_HWCAP_ASIMD]		= "asimd",
-+	[KERNEL_HWCAP_EVTSTRM]		= "evtstrm",
-+	[KERNEL_HWCAP_AES]		= "aes",
-+	[KERNEL_HWCAP_PMULL]		= "pmull",
-+	[KERNEL_HWCAP_SHA1]		= "sha1",
-+	[KERNEL_HWCAP_SHA2]		= "sha2",
-+	[KERNEL_HWCAP_CRC32]		= "crc32",
-+	[KERNEL_HWCAP_ATOMICS]		= "atomics",
-+	[KERNEL_HWCAP_FPHP]		= "fphp",
-+	[KERNEL_HWCAP_ASIMDHP]		= "asimdhp",
-+	[KERNEL_HWCAP_CPUID]		= "cpuid",
-+	[KERNEL_HWCAP_ASIMDRDM]		= "asimdrdm",
-+	[KERNEL_HWCAP_JSCVT]		= "jscvt",
-+	[KERNEL_HWCAP_FCMA]		= "fcma",
-+	[KERNEL_HWCAP_LRCPC]		= "lrcpc",
-+	[KERNEL_HWCAP_DCPOP]		= "dcpop",
-+	[KERNEL_HWCAP_SHA3]		= "sha3",
-+	[KERNEL_HWCAP_SM3]		= "sm3",
-+	[KERNEL_HWCAP_SM4]		= "sm4",
-+	[KERNEL_HWCAP_ASIMDDP]		= "asimddp",
-+	[KERNEL_HWCAP_SHA512]		= "sha512",
-+	[KERNEL_HWCAP_SVE]		= "sve",
-+	[KERNEL_HWCAP_ASIMDFHM]		= "asimdfhm",
-+	[KERNEL_HWCAP_DIT]		= "dit",
-+	[KERNEL_HWCAP_USCAT]		= "uscat",
-+	[KERNEL_HWCAP_ILRCPC]		= "ilrcpc",
-+	[KERNEL_HWCAP_FLAGM]		= "flagm",
-+	[KERNEL_HWCAP_SSBS]		= "ssbs",
-+	[KERNEL_HWCAP_SB]		= "sb",
-+	[KERNEL_HWCAP_PACA]		= "paca",
-+	[KERNEL_HWCAP_PACG]		= "pacg",
-+	[KERNEL_HWCAP_DCPODP]		= "dcpodp",
-+	[KERNEL_HWCAP_SVE2]		= "sve2",
-+	[KERNEL_HWCAP_SVEAES]		= "sveaes",
-+	[KERNEL_HWCAP_SVEPMULL]		= "svepmull",
-+	[KERNEL_HWCAP_SVEBITPERM]	= "svebitperm",
-+	[KERNEL_HWCAP_SVESHA3]		= "svesha3",
-+	[KERNEL_HWCAP_SVESM4]		= "svesm4",
-+	[KERNEL_HWCAP_FLAGM2]		= "flagm2",
-+	[KERNEL_HWCAP_FRINT]		= "frint",
-+	[KERNEL_HWCAP_SVEI8MM]		= "svei8mm",
-+	[KERNEL_HWCAP_SVEF32MM]		= "svef32mm",
-+	[KERNEL_HWCAP_SVEF64MM]		= "svef64mm",
-+	[KERNEL_HWCAP_SVEBF16]		= "svebf16",
-+	[KERNEL_HWCAP_I8MM]		= "i8mm",
-+	[KERNEL_HWCAP_BF16]		= "bf16",
-+	[KERNEL_HWCAP_DGH]		= "dgh",
-+	[KERNEL_HWCAP_RNG]		= "rng",
-+	NULL
-+};
-+
-+#ifdef CONFIG_COMPAT
-+static const char *const compat_hwcap_str[] = {
-+	[COMPAT_KERNEL_HWCAP_SWP]	= "swp",
-+	[COMPAT_KERNEL_HWCAP_HALF]	= "half",
-+	[COMPAT_KERNEL_HWCAP_THUMB]	= "thumb",
-+	[COMPAT_KERNEL_HWCAP_26BIT]	= "26bit",
-+	[COMPAT_KERNEL_HWCAP_FAST_MULT] = "fastmult",
-+	[COMPAT_KERNEL_HWCAP_FPA]	= "fpa",
-+	[COMPAT_KERNEL_HWCAP_VFP]	= "vfp",
-+	[COMPAT_KERNEL_HWCAP_EDSP]	= "edsp",
-+	[COMPAT_KERNEL_HWCAP_JAVA]	= "java",
-+	[COMPAT_KERNEL_HWCAP_IWMMXT]	= "iwmmxt",
-+	[COMPAT_KERNEL_HWCAP_CRUNCH]	= "crunch",
-+	[COMPAT_KERNEL_HWCAP_THUMBEE]	= "thumbee",
-+	[COMPAT_KERNEL_HWCAP_NEON]	= "neon",
-+	[COMPAT_KERNEL_HWCAP_VFPv3]	= "vfpv3",
-+	[COMPAT_KERNEL_HWCAP_VFPV3D16]	= "vfpv3d16",
-+	[COMPAT_KERNEL_HWCAP_TLS]	= "tls",
-+	[COMPAT_KERNEL_HWCAP_VFPv4]	= "vfpv4",
-+	[COMPAT_KERNEL_HWCAP_IDIVA]	= "idiva",
-+	[COMPAT_KERNEL_HWCAP_IDIVT]	= "idivt",
-+	[COMPAT_KERNEL_HWCAP_VFPD32]	= "vfpd32",
-+	[COMPAT_KERNEL_HWCAP_LPAE]	= "lpae",
-+	[COMPAT_KERNEL_HWCAP_EVTSTRM]	= "evtstrm",
-+	NULL
-+};
-+
-+static const char *const compat_hwcap2_str[] = {
-+	[COMPAT_KERNEL_HWCAP_AES]	= "aes",
-+	[COMPAT_KERNEL_HWCAP_PMULL]	= "pmull",
-+	[COMPAT_KERNEL_HWCAP_SHA1]	= "sha1",
-+	[COMPAT_KERNEL_HWCAP_SHA2]	= "sha2",
-+	[COMPAT_KERNEL_HWCAP_CRC32]	= "crc32",
-+	NULL,
-+};
-+#endif /* CONFIG_COMPAT */
-+
- /*
-  * This yields a mask that user programs can use to figure out what
-  * instruction set this cpu supports.
-diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-index 86136075ae41..f45f8614e8bd 100644
---- a/arch/arm64/kernel/cpuinfo.c
-+++ b/arch/arm64/kernel/cpuinfo.c
-@@ -42,96 +42,6 @@ static const char *icache_policy_str[] = {
- 
- unsigned long __icache_flags;
- 
--static const char *const hwcap_str[] = {
--	"fp",
--	"asimd",
--	"evtstrm",
--	"aes",
--	"pmull",
--	"sha1",
--	"sha2",
--	"crc32",
--	"atomics",
--	"fphp",
--	"asimdhp",
--	"cpuid",
--	"asimdrdm",
--	"jscvt",
--	"fcma",
--	"lrcpc",
--	"dcpop",
--	"sha3",
--	"sm3",
--	"sm4",
--	"asimddp",
--	"sha512",
--	"sve",
--	"asimdfhm",
--	"dit",
--	"uscat",
--	"ilrcpc",
--	"flagm",
--	"ssbs",
--	"sb",
--	"paca",
--	"pacg",
--	"dcpodp",
--	"sve2",
--	"sveaes",
--	"svepmull",
--	"svebitperm",
--	"svesha3",
--	"svesm4",
--	"flagm2",
--	"frint",
--	"svei8mm",
--	"svef32mm",
--	"svef64mm",
--	"svebf16",
--	"i8mm",
--	"bf16",
--	"dgh",
--	"rng",
--	NULL
--};
--
--#ifdef CONFIG_COMPAT
--static const char *const compat_hwcap_str[] = {
--	"swp",
--	"half",
--	"thumb",
--	"26bit",
--	"fastmult",
--	"fpa",
--	"vfp",
--	"edsp",
--	"java",
--	"iwmmxt",
--	"crunch",
--	"thumbee",
--	"neon",
--	"vfpv3",
--	"vfpv3d16",
--	"tls",
--	"vfpv4",
--	"idiva",
--	"idivt",
--	"vfpd32",
--	"lpae",
--	"evtstrm",
--	NULL
--};
--
--static const char *const compat_hwcap2_str[] = {
--	"aes",
--	"pmull",
--	"sha1",
--	"sha2",
--	"crc32",
--	NULL
--};
--#endif /* CONFIG_COMPAT */
--
- static int c_show(struct seq_file *m, void *v)
- {
- 	int i, j;
--- 
-2.20.1
 
+ arch/arm/include/asm/kprobes.h     |    5 ++
+ arch/arm/probes/kprobes/core.c     |   79 ++++++++++++++----------------
+ arch/arm/probes/kprobes/core.h     |   30 +++++++++++
+ arch/arm/probes/kprobes/opt-arm.c  |    6 ++
+ arch/arm64/include/asm/kprobes.h   |    5 ++
+ arch/arm64/kernel/probes/kprobes.c |   75 ++++++++++++++++------------
+ arch/x86/include/asm/kprobes.h     |    5 ++
+ arch/x86/kernel/kprobes/common.h   |   39 ++++++++++++++-
+ arch/x86/kernel/kprobes/core.c     |   96 +++++++++++++++---------------------
+ arch/x86/kernel/kprobes/ftrace.c   |    6 ++
+ arch/x86/kernel/kprobes/opt.c      |   13 +++--
+ 11 files changed, 214 insertions(+), 145 deletions(-)
+
+--
+Masami Hiramatsu (Linaro) <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
