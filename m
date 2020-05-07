@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A0FC1C9365
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:02:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85BAF1C939C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:05:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5/5qS14DEn73MCpdgsBzNz8DUR6ZxCtdjDJk3Yau3f8=; b=WtfOYMdCes13CD
-	zmjiyCxSOBAZnxHy5YD71mbp1hCCErUJrZpZ7FnfgMyj8Lde82Pm3FgBHj05FHtQjVbDPNxp+ioh6
-	LalrL4kaI6PLYsCNEz1Yen+jP8Bg06lH67DSoqztYrOjJVWhEQpsnfKXrxNM1hVyqHX3ZmJNqdxj4
-	dlvtxZufmJojnJuwWV2Mj8ZDbyEvwLFa+ch4YUfvZ2AcWnRHz9+h7gEO5wjHX4BRcOWzigmWYTYY2
-	r0iK4UqHou8SJqLNyaFBrihq0EcOl/xvN6bVskibNe/rvPR7fzPmP1G84c2PEhoP/xFwofQrVvVdo
-	OfmTavV0EY1r69ZkFEWA==;
+	List-Owner; bh=IzwtEwc8OQWq4tYj/jKg5DPWEWV+1AIJucLRy5RTpVo=; b=aqqG3Lhckykb0y
+	sqmB7izgTbjttRGc1tIJKUwFxS2R9EE1YeeZ5wC0Y03KxyR2ZEJ+FVP+X5G107qu6mrJjBFylzJG+
+	eY+7SQHFxYYzCwJSflWr2uRghLNIrBiWQjW1ceq+kC67cN+m+7+ZgLLVVeRGTEUA8zhZeIC5talJW
+	ZtQtB8w7v9+uEJn/f4TOvfEGOoaLNq9GqecWsrwa85OIs9YpLLZUomTPzzgL5r0t+OfsWabiLj53p
+	3s4+B49LnWnHtaRYrFDLDwiyJTBjpMB3u5rpiDASlVuSSvd9nBP5p2ZNFZY9TvpdvfMFSqMELQs+S
+	MMZdylUWPGQz1KOg3bxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWi2r-0006Ux-56; Thu, 07 May 2020 15:02:41 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1jWi5X-0000gL-4Q; Thu, 07 May 2020 15:05:27 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWi0a-0002U9-1z; Thu, 07 May 2020 15:00:27 +0000
-IronPort-SDR: 5OidfqTaj/KR8+wblwxaRV7rUu2xjZ9iWx+Ja9y0+ms7oGJB9BEIRs0CPxh9phRf5zIqGILx8G
- myQsRXIsvKyA==
+ id 1jWi0k-0003ce-TL; Thu, 07 May 2020 15:00:32 +0000
+IronPort-SDR: xTxg1/GTFAxOGTcKCzYL59eVQpx9ei/BnucisWP+7GGjalBtLhR5H70GvSwXb35SdS5Ajm2B1Z
+ 2bh9IebAq/kA==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:19 -0700
-IronPort-SDR: Cy4UofL/ZGlxBiwM8d7yBPac+s1xeopmMiYRGd1bsbjvN9m3oMzJUzzLiZDzQ9TZkKicsB3vdJ
- vg2mxCRP3g1g==
-X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="296559905"
+Received: from orsmga001.jf.intel.com ([10.7.209.18])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 May 2020 08:00:20 -0700
+IronPort-SDR: 8kelONvFWkDSLnlxb+aC09SCcHpfPaQNdOui/5AjOqlu1OGR0HzXrUJ86xU7g9SACnHrbkp/Nh
+ JAksyq4FIvkw==
+X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="339377415"
 Received: from iweiny-desk2.sc.intel.com (HELO localhost) ([10.3.52.147])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:18 -0700
+ by orsmga001-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 May 2020 08:00:19 -0700
 From: ira.weiny@intel.com
 To: linux-kernel@vger.kernel.org,
 	Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH V3 11/15] drm: Remove drm specific kmap_atomic code
-Date: Thu,  7 May 2020 07:59:59 -0700
-Message-Id: <20200507150004.1423069-12-ira.weiny@intel.com>
+Subject: [PATCH V3 12/15] kmap: Remove kmap_atomic_to_page()
+Date: Thu,  7 May 2020 08:00:00 -0700
+Message-Id: <20200507150004.1423069-13-ira.weiny@intel.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200507150004.1423069-1-ira.weiny@intel.com>
 References: <20200507150004.1423069-1-ira.weiny@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_080020_223374_4849AF0B 
-X-CRM114-Status: GOOD (  13.99  )
+X-CRM114-CacheID: sfid-20200507_080031_029599_3423FAD9 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,125 +72,96 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Peter Zijlstra <peterz@infradead.org>,
- Daniel Vetter <daniel.vetter@ffwll.ch>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
  Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
  "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
  Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
  "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, Christoph Hellwig <hch@lst.de>,
+ Ira Weiny <ira.weiny@intel.com>, Thomas Gleixner <tglx@linutronix.de>,
  Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Christoph Hellwig <hch@lst.de>, Ingo Molnar <mingo@redhat.com>,
  linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Dan Williams <dan.j.williams@intel.com>, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
+ Borislav Petkov <bp@alien8.de>, Al Viro <viro@zeniv.linux.org.uk>,
+ Andy Lutomirski <luto@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
  Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org,
- =?UTF-8?q?Christian=20K=C3=B6nig?= <christian.koenig@amd.com>,
+ linux-mips@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
  linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogSXJhIFdlaW55IDxpcmEud2VpbnlAaW50ZWwuY29tPgoKa21hcF9hdG9taWNfcHJvdCgp
-IGlzIG5vdyBleHBvcnRlZCBieSBhbGwgYXJjaGl0ZWN0dXJlcy4gIFVzZSB0aGlzCmZ1bmN0aW9u
-IHJhdGhlciB0aGFuIG9wZW4gY29kaW5nIGEgZHJpdmVyIHNwZWNpZmljIGttYXBfYXRvbWljLgoK
-QWNrZWQtYnk6IERhbmllbCBWZXR0ZXIgPGRhbmllbC52ZXR0ZXJAZmZ3bGwuY2g+ClJldmlld2Vk
-LWJ5OiBDaHJpc3RpYW4gS8O2bmlnIDxjaHJpc3RpYW4ua29lbmlnQGFtZC5jb20+ClJldmlld2Vk
-LWJ5OiBDaHJpc3RvcGggSGVsbHdpZyA8aGNoQGxzdC5kZT4KU2lnbmVkLW9mZi1ieTogSXJhIFdl
-aW55IDxpcmEud2VpbnlAaW50ZWwuY29tPgotLS0KIGRyaXZlcnMvZ3B1L2RybS90dG0vdHRtX2Jv
-X3V0aWwuYyAgICB8IDU2ICsrLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIGRyaXZlcnMvZ3B1
-L2RybS92bXdnZngvdm13Z2Z4X2JsaXQuYyB8IDE2ICsrKystLS0tCiBpbmNsdWRlL2RybS90dG0v
-dHRtX2JvX2FwaS5oICAgICAgICAgfCAgNCAtLQogMyBmaWxlcyBjaGFuZ2VkLCAxMiBpbnNlcnRp
-b25zKCspLCA2NCBkZWxldGlvbnMoLSkKCmRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vdHRt
-L3R0bV9ib191dGlsLmMgYi9kcml2ZXJzL2dwdS9kcm0vdHRtL3R0bV9ib191dGlsLmMKaW5kZXgg
-NTJkMmI3MWYxNTg4Li5mMDliMDk2YmE0ZmQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvZ3B1L2RybS90
-dG0vdHRtX2JvX3V0aWwuYworKysgYi9kcml2ZXJzL2dwdS9kcm0vdHRtL3R0bV9ib191dGlsLmMK
-QEAgLTI1Nyw1NCArMjU3LDYgQEAgc3RhdGljIGludCB0dG1fY29weV9pb19wYWdlKHZvaWQgKmRz
-dCwgdm9pZCAqc3JjLCB1bnNpZ25lZCBsb25nIHBhZ2UpCiAJcmV0dXJuIDA7CiB9CiAKLSNpZmRl
-ZiBDT05GSUdfWDg2Ci0jZGVmaW5lIF9fdHRtX2ttYXBfYXRvbWljX3Byb3QoX19wYWdlLCBfX3By
-b3QpIGttYXBfYXRvbWljX3Byb3QoX19wYWdlLCBfX3Byb3QpCi0jZGVmaW5lIF9fdHRtX2t1bm1h
-cF9hdG9taWMoX19hZGRyKSBrdW5tYXBfYXRvbWljKF9fYWRkcikKLSNlbHNlCi0jZGVmaW5lIF9f
-dHRtX2ttYXBfYXRvbWljX3Byb3QoX19wYWdlLCBfX3Byb3QpIHZtYXAoJl9fcGFnZSwgMSwgMCwg
-IF9fcHJvdCkKLSNkZWZpbmUgX190dG1fa3VubWFwX2F0b21pYyhfX2FkZHIpIHZ1bm1hcChfX2Fk
-ZHIpCi0jZW5kaWYKLQotCi0vKioKLSAqIHR0bV9rbWFwX2F0b21pY19wcm90IC0gRWZmaWNpZW50
-IGtlcm5lbCBtYXAgb2YgYSBzaW5nbGUgcGFnZSB3aXRoCi0gKiBzcGVjaWZpZWQgcGFnZSBwcm90
-ZWN0aW9uLgotICoKLSAqIEBwYWdlOiBUaGUgcGFnZSB0byBtYXAuCi0gKiBAcHJvdDogVGhlIHBh
-Z2UgcHJvdGVjdGlvbi4KLSAqCi0gKiBUaGlzIGZ1bmN0aW9uIG1hcHMgYSBUVE0gcGFnZSB1c2lu
-ZyB0aGUga21hcF9hdG9taWMgYXBpIGlmIGF2YWlsYWJsZSwKLSAqIG90aGVyd2lzZSBmYWxscyBi
-YWNrIHRvIHZtYXAuIFRoZSB1c2VyIG11c3QgbWFrZSBzdXJlIHRoYXQgdGhlCi0gKiBzcGVjaWZp
-ZWQgcGFnZSBkb2VzIG5vdCBoYXZlIGFuIGFsaWFzZWQgbWFwcGluZyB3aXRoIGEgZGlmZmVyZW50
-IGNhY2hpbmcKLSAqIHBvbGljeSB1bmxlc3MgdGhlIGFyY2hpdGVjdHVyZSBleHBsaWNpdGx5IGFs
-bG93cyBpdC4gQWxzbyBtYXBwaW5nIGFuZAotICogdW5tYXBwaW5nIHVzaW5nIHRoaXMgYXBpIG11
-c3QgYmUgY29ycmVjdGx5IG5lc3RlZC4gVW5tYXBwaW5nIHNob3VsZAotICogb2NjdXIgaW4gdGhl
-IHJldmVyc2Ugb3JkZXIgb2YgbWFwcGluZy4KLSAqLwotdm9pZCAqdHRtX2ttYXBfYXRvbWljX3By
-b3Qoc3RydWN0IHBhZ2UgKnBhZ2UsIHBncHJvdF90IHByb3QpCi17Ci0JaWYgKHBncHJvdF92YWwo
-cHJvdCkgPT0gcGdwcm90X3ZhbChQQUdFX0tFUk5FTCkpCi0JCXJldHVybiBrbWFwX2F0b21pYyhw
-YWdlKTsKLQllbHNlCi0JCXJldHVybiBfX3R0bV9rbWFwX2F0b21pY19wcm90KHBhZ2UsIHByb3Qp
-OwotfQotRVhQT1JUX1NZTUJPTCh0dG1fa21hcF9hdG9taWNfcHJvdCk7Ci0KLS8qKgotICogdHRt
-X2t1bm1hcF9hdG9taWNfcHJvdCAtIFVubWFwIGEgcGFnZSB0aGF0IHdhcyBtYXBwZWQgdXNpbmcK
-LSAqIHR0bV9rbWFwX2F0b21pY19wcm90LgotICoKLSAqIEBhZGRyOiBUaGUgdmlydHVhbCBhZGRy
-ZXNzIGZyb20gdGhlIG1hcC4KLSAqIEBwcm90OiBUaGUgcGFnZSBwcm90ZWN0aW9uLgotICovCi12
-b2lkIHR0bV9rdW5tYXBfYXRvbWljX3Byb3Qodm9pZCAqYWRkciwgcGdwcm90X3QgcHJvdCkKLXsK
-LQlpZiAocGdwcm90X3ZhbChwcm90KSA9PSBwZ3Byb3RfdmFsKFBBR0VfS0VSTkVMKSkKLQkJa3Vu
-bWFwX2F0b21pYyhhZGRyKTsKLQllbHNlCi0JCV9fdHRtX2t1bm1hcF9hdG9taWMoYWRkcik7Ci19
-Ci1FWFBPUlRfU1lNQk9MKHR0bV9rdW5tYXBfYXRvbWljX3Byb3QpOwotCiBzdGF0aWMgaW50IHR0
-bV9jb3B5X2lvX3R0bV9wYWdlKHN0cnVjdCB0dG1fdHQgKnR0bSwgdm9pZCAqc3JjLAogCQkJCXVu
-c2lnbmVkIGxvbmcgcGFnZSwKIAkJCQlwZ3Byb3RfdCBwcm90KQpAQCAtMzE2LDEzICsyNjgsMTMg
-QEAgc3RhdGljIGludCB0dG1fY29weV9pb190dG1fcGFnZShzdHJ1Y3QgdHRtX3R0ICp0dG0sIHZv
-aWQgKnNyYywKIAkJcmV0dXJuIC1FTk9NRU07CiAKIAlzcmMgPSAodm9pZCAqKSgodW5zaWduZWQg
-bG9uZylzcmMgKyAocGFnZSA8PCBQQUdFX1NISUZUKSk7Ci0JZHN0ID0gdHRtX2ttYXBfYXRvbWlj
-X3Byb3QoZCwgcHJvdCk7CisJZHN0ID0ga21hcF9hdG9taWNfcHJvdChkLCBwcm90KTsKIAlpZiAo
-IWRzdCkKIAkJcmV0dXJuIC1FTk9NRU07CiAKIAltZW1jcHlfZnJvbWlvKGRzdCwgc3JjLCBQQUdF
-X1NJWkUpOwogCi0JdHRtX2t1bm1hcF9hdG9taWNfcHJvdChkc3QsIHByb3QpOworCWt1bm1hcF9h
-dG9taWMoZHN0KTsKIAogCXJldHVybiAwOwogfQpAQCAtMzM4LDEzICsyOTAsMTMgQEAgc3RhdGlj
-IGludCB0dG1fY29weV90dG1faW9fcGFnZShzdHJ1Y3QgdHRtX3R0ICp0dG0sIHZvaWQgKmRzdCwK
-IAkJcmV0dXJuIC1FTk9NRU07CiAKIAlkc3QgPSAodm9pZCAqKSgodW5zaWduZWQgbG9uZylkc3Qg
-KyAocGFnZSA8PCBQQUdFX1NISUZUKSk7Ci0Jc3JjID0gdHRtX2ttYXBfYXRvbWljX3Byb3Qocywg
-cHJvdCk7CisJc3JjID0ga21hcF9hdG9taWNfcHJvdChzLCBwcm90KTsKIAlpZiAoIXNyYykKIAkJ
-cmV0dXJuIC1FTk9NRU07CiAKIAltZW1jcHlfdG9pbyhkc3QsIHNyYywgUEFHRV9TSVpFKTsKIAot
-CXR0bV9rdW5tYXBfYXRvbWljX3Byb3Qoc3JjLCBwcm90KTsKKwlrdW5tYXBfYXRvbWljKHNyYyk7
-CiAKIAlyZXR1cm4gMDsKIH0KZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS92bXdnZngvdm13
-Z2Z4X2JsaXQuYyBiL2RyaXZlcnMvZ3B1L2RybS92bXdnZngvdm13Z2Z4X2JsaXQuYwppbmRleCBi
-YjQ2Y2EwYzQ1OGYuLjk0ZDQ1NmExZDFhOSAxMDA2NDQKLS0tIGEvZHJpdmVycy9ncHUvZHJtL3Zt
-d2dmeC92bXdnZnhfYmxpdC5jCisrKyBiL2RyaXZlcnMvZ3B1L2RybS92bXdnZngvdm13Z2Z4X2Js
-aXQuYwpAQCAtMzc0LDEyICszNzQsMTIgQEAgc3RhdGljIGludCB2bXdfYm9fY3B1X2JsaXRfbGlu
-ZShzdHJ1Y3Qgdm13X2JvX2JsaXRfbGluZV9kYXRhICpkLAogCQljb3B5X3NpemUgPSBtaW5fdCh1
-MzIsIGNvcHlfc2l6ZSwgUEFHRV9TSVpFIC0gc3JjX3BhZ2Vfb2Zmc2V0KTsKIAogCQlpZiAodW5t
-YXBfc3JjKSB7Ci0JCQl0dG1fa3VubWFwX2F0b21pY19wcm90KGQtPnNyY19hZGRyLCBkLT5zcmNf
-cHJvdCk7CisJCQlrdW5tYXBfYXRvbWljKGQtPnNyY19hZGRyKTsKIAkJCWQtPnNyY19hZGRyID0g
-TlVMTDsKIAkJfQogCiAJCWlmICh1bm1hcF9kc3QpIHsKLQkJCXR0bV9rdW5tYXBfYXRvbWljX3By
-b3QoZC0+ZHN0X2FkZHIsIGQtPmRzdF9wcm90KTsKKwkJCWt1bm1hcF9hdG9taWMoZC0+ZHN0X2Fk
-ZHIpOwogCQkJZC0+ZHN0X2FkZHIgPSBOVUxMOwogCQl9CiAKQEAgLTM4OCw4ICszODgsOCBAQCBz
-dGF0aWMgaW50IHZtd19ib19jcHVfYmxpdF9saW5lKHN0cnVjdCB2bXdfYm9fYmxpdF9saW5lX2Rh
-dGEgKmQsCiAJCQkJcmV0dXJuIC1FSU5WQUw7CiAKIAkJCWQtPmRzdF9hZGRyID0KLQkJCQl0dG1f
-a21hcF9hdG9taWNfcHJvdChkLT5kc3RfcGFnZXNbZHN0X3BhZ2VdLAotCQkJCQkJICAgICBkLT5k
-c3RfcHJvdCk7CisJCQkJa21hcF9hdG9taWNfcHJvdChkLT5kc3RfcGFnZXNbZHN0X3BhZ2VdLAor
-CQkJCQkJIGQtPmRzdF9wcm90KTsKIAkJCWlmICghZC0+ZHN0X2FkZHIpCiAJCQkJcmV0dXJuIC1F
-Tk9NRU07CiAKQEAgLTQwMSw4ICs0MDEsOCBAQCBzdGF0aWMgaW50IHZtd19ib19jcHVfYmxpdF9s
-aW5lKHN0cnVjdCB2bXdfYm9fYmxpdF9saW5lX2RhdGEgKmQsCiAJCQkJcmV0dXJuIC1FSU5WQUw7
-CiAKIAkJCWQtPnNyY19hZGRyID0KLQkJCQl0dG1fa21hcF9hdG9taWNfcHJvdChkLT5zcmNfcGFn
-ZXNbc3JjX3BhZ2VdLAotCQkJCQkJICAgICBkLT5zcmNfcHJvdCk7CisJCQkJa21hcF9hdG9taWNf
-cHJvdChkLT5zcmNfcGFnZXNbc3JjX3BhZ2VdLAorCQkJCQkJIGQtPnNyY19wcm90KTsKIAkJCWlm
-ICghZC0+c3JjX2FkZHIpCiAJCQkJcmV0dXJuIC1FTk9NRU07CiAKQEAgLTQ5OSw5ICs0OTksOSBA
-QCBpbnQgdm13X2JvX2NwdV9ibGl0KHN0cnVjdCB0dG1fYnVmZmVyX29iamVjdCAqZHN0LAogCX0K
-IG91dDoKIAlpZiAoZC5zcmNfYWRkcikKLQkJdHRtX2t1bm1hcF9hdG9taWNfcHJvdChkLnNyY19h
-ZGRyLCBkLnNyY19wcm90KTsKKwkJa3VubWFwX2F0b21pYyhkLnNyY19hZGRyKTsKIAlpZiAoZC5k
-c3RfYWRkcikKLQkJdHRtX2t1bm1hcF9hdG9taWNfcHJvdChkLmRzdF9hZGRyLCBkLmRzdF9wcm90
-KTsKKwkJa3VubWFwX2F0b21pYyhkLmRzdF9hZGRyKTsKIAogCXJldHVybiByZXQ7CiB9CmRpZmYg
-LS1naXQgYS9pbmNsdWRlL2RybS90dG0vdHRtX2JvX2FwaS5oIGIvaW5jbHVkZS9kcm0vdHRtL3R0
-bV9ib19hcGkuaAppbmRleCAwYTlkMDQyZTA3NWEuLmRlMWNjZGNkNTcwMyAxMDA2NDQKLS0tIGEv
-aW5jbHVkZS9kcm0vdHRtL3R0bV9ib19hcGkuaAorKysgYi9pbmNsdWRlL2RybS90dG0vdHRtX2Jv
-X2FwaS5oCkBAIC02NjgsMTAgKzY2OCw2IEBAIGludCB0dG1fYm9fbW1hcF9vYmooc3RydWN0IHZt
-X2FyZWFfc3RydWN0ICp2bWEsIHN0cnVjdCB0dG1fYnVmZmVyX29iamVjdCAqYm8pOwogaW50IHR0
-bV9ib19tbWFwKHN0cnVjdCBmaWxlICpmaWxwLCBzdHJ1Y3Qgdm1fYXJlYV9zdHJ1Y3QgKnZtYSwK
-IAkJc3RydWN0IHR0bV9ib19kZXZpY2UgKmJkZXYpOwogCi12b2lkICp0dG1fa21hcF9hdG9taWNf
-cHJvdChzdHJ1Y3QgcGFnZSAqcGFnZSwgcGdwcm90X3QgcHJvdCk7Ci0KLXZvaWQgdHRtX2t1bm1h
-cF9hdG9taWNfcHJvdCh2b2lkICphZGRyLCBwZ3Byb3RfdCBwcm90KTsKLQogLyoqCiAgKiB0dG1f
-Ym9faW8KICAqCi0tIAoyLjI1LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Ira Weiny <ira.weiny@intel.com>
+
+kmap_atomic_to_page() has no callers and is only defined on 1 arch and
+declared on another.  Remove it.
+
+Suggested-by: Al Viro <viro@zeniv.linux.org.uk>
+Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+
+---
+Changes from V2:
+	New Patch for this series
+---
+ arch/csky/include/asm/highmem.h  |  1 -
+ arch/csky/mm/highmem.c           | 13 -------------
+ arch/nds32/include/asm/highmem.h |  1 -
+ 3 files changed, 15 deletions(-)
+
+diff --git a/arch/csky/include/asm/highmem.h b/arch/csky/include/asm/highmem.h
+index 263fbddcd0a3..ea2f3f39174d 100644
+--- a/arch/csky/include/asm/highmem.h
++++ b/arch/csky/include/asm/highmem.h
+@@ -33,7 +33,6 @@ extern pte_t *pkmap_page_table;
+ #define ARCH_HAS_KMAP_FLUSH_TLB
+ extern void kmap_flush_tlb(unsigned long addr);
+ extern void *kmap_atomic_pfn(unsigned long pfn);
+-extern struct page *kmap_atomic_to_page(void *ptr);
+ 
+ #define flush_cache_kmaps() do {} while (0)
+ 
+diff --git a/arch/csky/mm/highmem.c b/arch/csky/mm/highmem.c
+index 3ae5c8cd7619..3b3f622f5ae9 100644
+--- a/arch/csky/mm/highmem.c
++++ b/arch/csky/mm/highmem.c
+@@ -81,19 +81,6 @@ void *kmap_atomic_pfn(unsigned long pfn)
+ 	return (void *) vaddr;
+ }
+ 
+-struct page *kmap_atomic_to_page(void *ptr)
+-{
+-	unsigned long idx, vaddr = (unsigned long)ptr;
+-	pte_t *pte;
+-
+-	if (vaddr < FIXADDR_START)
+-		return virt_to_page(ptr);
+-
+-	idx = virt_to_fix(vaddr);
+-	pte = kmap_pte - (idx - FIX_KMAP_BEGIN);
+-	return pte_page(*pte);
+-}
+-
+ static void __init kmap_pages_init(void)
+ {
+ 	unsigned long vaddr;
+diff --git a/arch/nds32/include/asm/highmem.h b/arch/nds32/include/asm/highmem.h
+index 4d21308549c9..a48a6536d41a 100644
+--- a/arch/nds32/include/asm/highmem.h
++++ b/arch/nds32/include/asm/highmem.h
+@@ -52,7 +52,6 @@ extern void kmap_init(void);
+  */
+ #ifdef CONFIG_HIGHMEM
+ extern void *kmap_atomic_pfn(unsigned long pfn);
+-extern struct page *kmap_atomic_to_page(void *ptr);
+ #endif
+ 
+ #endif
+-- 
+2.25.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
