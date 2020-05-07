@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 417D31C976C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:25:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 656E21C97A4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:25:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mKpox67OV0Ap0LjRLTSX2XDiOoYyn6jkAsxBqzZo1zY=; b=qVEbFWyJUbIGaP
-	9maI8bMiOo7zFqMAc5ZhSlB+gpNNq+rrYP5vqSL7JqXMO2nJfY0D2PBK0T/n23rib5yneuLriGFFH
-	KBKrgot7S3zxWXHg7pykR+91LWr9bUI4dMjmcWhGbKoGbTj+32SkB3ftoJ4XQIGGgtC5Ed3JuD7V4
-	4EVc94qnkKgcS/OaqWd5fvuVbtTmzri1olxHPPyWRon81YaHJLLVwx4BfV8MjFTjhogcE5MEDh7Bg
-	yr6OaeNhF0W+8sRMYK7FSW2U2cp7shlYvMalgWb9olCZSXpgn8Kbu2I0t3uw9qTaMdFazi+W3kJg+
-	noyWbQBKjAboZzxOZCWg==;
+	List-Owner; bh=Wr4i4HtY+hLWIK6qB4IUUwdJeQ0ntIEgZi4lDmd1WxA=; b=f6GT9iopisIgyl
+	sPxsfjhou0JzYun7XPsJ/wCepZN795LD9amqeZMMFPTPvZQcjPHb3Dp6dP6WMKHh1wR0azV9cPW5v
+	7DvEJE4k9DU91oiNdX7Ke7rPpROSW/2kZRqs7JQYOskEz0FGpR+hHg4MW7S9ZGNB/nOH5ZPSkDkep
+	pyyrLvU8oGz2AwT1hS1gTu/oU4+PvjqoPQS5B80jjwcU6w40RvJLR6uu0GA4OCsDNDwGkg/7JHA/X
+	r7wSZR3FuZGmC6VlpkM07JWQIeKS8sWlvmUQ29H1DlLgNreNmVfHqxi4GEXgdZYnGhI2pIx276+80
+	+Fxfc/LCshs872FvOOWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWkGV-0002tu-2K; Thu, 07 May 2020 17:24:55 +0000
+	id 1jWkHH-00066C-84; Thu, 07 May 2020 17:25:43 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWkFR-0002Bc-Jq
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:23:51 +0000
+ id 1jWkFT-0002E5-QS
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:23:53 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 226C3822F;
- Thu,  7 May 2020 17:24:37 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 5B87F80CD;
+ Thu,  7 May 2020 17:24:39 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: Daniel Lezcano <daniel.lezcano@linaro.org>,
  Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 04/14] bus: ti-sysc: Ignore timer12 on secure omap3
-Date: Thu,  7 May 2020 10:23:20 -0700
-Message-Id: <20200507172330.18679-5-tony@atomide.com>
+Subject: [PATCH 05/14] ARM: OMAP2+: Add omap_init_time_of()
+Date: Thu,  7 May 2020 10:23:21 -0700
+Message-Id: <20200507172330.18679-6-tony@atomide.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200507172330.18679-1-tony@atomide.com>
 References: <20200507172330.18679-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_102349_730924_30DD994A 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20200507_102351_904136_866A377C 
+X-CRM114-Status: UNSURE (   8.97  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -75,10 +75,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some early omap3 boards use timer12 for system timer, but for secure
-SoCs like on n900 it's not accessible. Likely we will be configuring
-unavailable devices for other SoCs too based on runtime SoC detection,
-so let's use a switch to start with.
+This allows us to move the SoCs to probe system timers one SoC
+at at time. As arch/arm/mach-omap2/timer.c will be eventually gone,
+let's just add omap_init_time_of() to board-generic.c directly.
 
 Cc: Grygorii Strashko <grygorii.strashko@ti.com>
 Cc: Keerthy <j-keerthy@ti.com>
@@ -87,30 +86,34 @@ Cc: Rob Herring <robh@kernel.org>
 Cc: Tero Kristo <t-kristo@ti.com>
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/bus/ti-sysc.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ arch/arm/mach-omap2/board-generic.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
-diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
---- a/drivers/bus/ti-sysc.c
-+++ b/drivers/bus/ti-sysc.c
-@@ -2744,6 +2744,17 @@ static int sysc_init_soc(struct sysc *ddata)
- 	if (match && match->data)
- 		sysc_soc->soc = (int)match->data;
+diff --git a/arch/arm/mach-omap2/board-generic.c b/arch/arm/mach-omap2/board-generic.c
+--- a/arch/arm/mach-omap2/board-generic.c
++++ b/arch/arm/mach-omap2/board-generic.c
+@@ -12,6 +12,7 @@
+ #include <linux/of_irq.h>
+ #include <linux/of_platform.h>
+ #include <linux/irqdomain.h>
++#include <linux/clocksource.h>
  
-+	/* Ignore devices that are not available on HS and EMU SoCs */
-+	if (!sysc_soc->general_purpose) {
-+		switch (sysc_soc->soc) {
-+		case SOC_3430 ... SOC_3630:
-+			sysc_add_disabled(0x48304000);	/* timer12 */
-+			break;
-+		default:
-+			break;
-+		};
-+	}
+ #include <asm/setup.h>
+ #include <asm/mach/arch.h>
+@@ -31,6 +32,13 @@ static void __init __maybe_unused omap_generic_init(void)
+ 	omap_soc_device_init();
+ }
+ 
++/* Clocks are needed early, see drivers/clocksource for the rest */
++void __init __maybe_unused omap_init_time_of(void)
++{
++	omap_clk_init();
++	timer_probe();
++}
 +
- 	match = soc_device_match(sysc_soc_feat_match);
- 	if (!match)
- 		return 0;
+ #ifdef CONFIG_SOC_OMAP2420
+ static const char *const omap242x_boards_compat[] __initconst = {
+ 	"ti,omap2420",
 -- 
 2.26.2
 
