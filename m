@@ -2,93 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D08F01C8A9D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:21:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB1411C8AD1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:33:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=F/D7uxfw7ofyui+VNm+cLMtR+/T0Rmk1cmFhaXLCpAU=; b=asP4aRCN+NKKlIr9EzLXpgH1q
-	8SpB3vig4n0Wq8YCA1q0/PwD9IxZNNfB7AVCRa2aXDp/wrBqT7pGWYOTp5QWD2rIG36rSNWFuNRJ3
-	ySsRw3zrgcWyjaFUZ22xHhEGFibwNJ5fq/XZYdjunDOwPhnjI32vN0XUrZxf1k8oqePnCnR8xGB4l
-	BYFwudJa629Lt5Z5zNfh/x0Yb+CtdiWsSjUXmuSmEWatOStwcMo7Ez5S+tosmLI3rkhdBNuBpKxrG
-	h+763L+NJOG6yijEJrBVpQ6O3Fnp1np99USPsViq5325JS6Dp5jaD1odpCu7zilclCeYr4d44xWkW
-	lzY9hcNLg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=h7hWgb83Vg1YeCMGzTFH9Xw0Uxi3HVJlVUSI8Hsdwz8=; b=mJ1
+	1uUAWG0owkPy1q4NQnHdbc2+y/uSrCLRdkJeMt9UhxfPOpiPyPxZmTgcKgejMzkVvy5XmRn9uz3Q2
+	FHkMmZYjMfXumXKfxQURZC1jyJ6niHhw1BSKCSfA9yP6gBlUcowP1v3gG72gzPMdOtroA9i2wZnPD
+	5w+5nesODCSblit04HmnqAsJKQLy7LG8zNQ3ltsCXlXwJ4RXhynCyTJWfnrp83ZU4x9lvZP5jzzqW
+	2ySLEyA8+8rKrXZcvk09Zon4xd8Ft0KGVS3DgyQURkccks7AfjOrTC/YLfRH/QSrZEjyZQw5Xge3t
+	5WWHhjj5NwXIuYMZ2eD5qhdpEbGiwDg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfWd-00085W-PA; Thu, 07 May 2020 12:21:15 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfWU-00084G-DC
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:21:08 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 047CBwO7017687; Thu, 7 May 2020 14:21:02 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=sy+j/OzdVrEShb4BU6oaOmleHPnk3+iamhvdZNojZEw=;
- b=d+NGdAqKZLAQ6HBYKK+y8XVU0Z3aE6OQ0SW6zYRQR/oFSWeN8KB4KtWisXPV4g314C/C
- 7gQ2XxwcWR6om6AawV5ikoN2jc75VEKlE6vaDVtmwqxb3o7qcRN0cRtO5Hduvtrpaa97
- AOli0a/6ljvu72oqCiURwN2aJf1kYTG6OzpW+sSokga3M5i5PRVw2qamLK9/04DK1mgs
- clLiN0MoODFrfi+W09hLdjQYqVIf38q57oDDmSTUgzGTBBXb4vFkCb2Gzm0u14T7ojCI
- 8QTQXYKlpYGf1EKOjVNV5Ub+XcjLbfYbpVseGXBcsO85i4BiOAqom6oEBWyAn2IbXBTt LQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30ryrjkhm7-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 07 May 2020 14:21:02 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E925310002A;
- Thu,  7 May 2020 14:21:01 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D7E6A2B4D2A;
- Thu,  7 May 2020 14:21:01 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.49) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 7 May
- 2020 14:20:58 +0200
-Subject: Re: [PATCH 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
- board
-To: Hua Dillon <dillonhua@gmail.com>
-References: <1588850125-24344-1-git-send-email-dillon.minfei@gmail.com>
- <98d6d44c-ff23-ac15-c17b-8f5f49ad2274@st.com>
- <CAPTRvHns7WZj49O2MKHN-ByJpHjYftCqakHN_XOzTwMkg57z0Q@mail.gmail.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <bf42a03d-0719-b4c9-7153-818e26dae888@st.com>
-Date: Thu, 7 May 2020 14:20:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <CAPTRvHns7WZj49O2MKHN-ByJpHjYftCqakHN_XOzTwMkg57z0Q@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-07_06:2020-05-07,
- 2020-05-07 signatures=0
+	id 1jWfif-0005fJ-6Q; Thu, 07 May 2020 12:33:41 +0000
+Received: from relmlor1.renesas.com ([210.160.252.171]
+ helo=relmlie5.idc.renesas.com)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWfiY-0005eD-Cy; Thu, 07 May 2020 12:33:36 +0000
+X-IronPort-AV: E=Sophos;i="5.73,363,1583161200"; d="scan'208";a="46498096"
+Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
+ by relmlie5.idc.renesas.com with ESMTP; 07 May 2020 21:33:27 +0900
+Received: from localhost.localdomain (unknown [10.226.36.204])
+ by relmlir5.idc.renesas.com (Postfix) with ESMTP id 2013B400C089;
+ Thu,  7 May 2020 21:33:22 +0900 (JST)
+From: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+Subject: [PATCH v10 0/8] Add endpoint driver for R-Car PCIe controller
+Date: Thu,  7 May 2020 13:33:11 +0100
+Message-Id: <1588854799-13710-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_052106_804968_80CA0B2A 
-X-CRM114-Status: GOOD (  24.94  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200507_053334_760612_DA038661 
+X-CRM114-Status: GOOD (  14.90  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.160.252.171 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,117 +58,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "philippe.schenker@toradex.com" <philippe.schenker@toradex.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "dillon.minfei@gmail.com" <dillon.minfei@gmail.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
+ Rob Herring <robh+dt@kernel.org>, Prabhakar <prabhakar.csengg@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>,
+ Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>,
+ Shawn Lin <shawn.lin@rock-chips.com>, linux-arm-kernel@lists.infradead.org,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiA1LzcvMjAgMjoxMyBQTSwgSHVhIERpbGxvbiB3cm90ZToKPiBoaSwgYWxleGFuZHJlIHRv
-cmd1ZQo+IAo+IHNvLCBpZiBpIGFkZCAiLS0tIiBiZWxvdwo+ICDCoFNpZ25lZC1vZmYtYnk6IGRp
-bGxvbiBtaW4gPGRpbGxvbi5taW5mZWlAZ21haWwuY29tIAo+IDxtYWlsdG86ZGlsbG9uLm1pbmZl
-aUBnbWFpbC5jb20+Pgo+ICDCoGluIGdpdCBjb21taXQgcHJvY2Vzcywgd2l0aCBjaGFuZ2VzIGxv
-ZyBhZnRlciB0aGF0LsKgIHRoZSBsb2cgd2lsbCBub3QgCj4gc2hvdyBpbiBjb21taXQgbWVzc2Fn
-ZXMsIGJ1dCB3aWxsIGV4aXN0IGluIGdpdCBwYXRjaHMsIGp1c3Qgc2hvd2luZyBmb3IgCj4gcmV2
-aWV3ZXJzID8KClNvcnJ5IEkgd2FzIG5vdCBlbm91Z2ggY2xlYXIuIEFkZCAtLS0gYWZ0ZXIgeW91
-ciBzaWduZWQtb2ZmIGFuZCBhZGQgeW91ciAKbG9nIGNoYW5nZSBhZnRlcgoKPiAKPiBpIHdpbGwg
-dHJ5IHRoaXMgdG9tb3Jyb3csIHJlc3VibWl0IGl0Lgo+IAo+IHRoYW5rcyBmb3IgeW91ciBoZWxw
-Lgo+IAo+IGJlc3QgcmVnYXJkcwo+IAo+IGRpbGxvbgo+IAo+IOWcqCAyMDIw5bm0NeaciDfml6Xm
-mJ/mnJ/lm5vvvIxBbGV4YW5kcmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbSAKPiA8
-bWFpbHRvOmFsZXhhbmRyZS50b3JndWVAc3QuY29tPj4g5YaZ6YGT77yaCj4gCj4gICAgIEhpIERp
-bGxvbgo+IAo+ICAgICBPbiA1LzcvMjAgMToxNSBQTSwgZGlsbG9uLm1pbmZlaUBnbWFpbC5jb20K
-PiAgICAgPG1haWx0bzpkaWxsb24ubWluZmVpQGdtYWlsLmNvbT4gd3JvdGU6Cj4gCj4gICAgICAg
-ICBGcm9tOiBkaWxsb24gbWluIDxkaWxsb24ubWluZmVpQGdtYWlsLmNvbQo+ICAgICAgICAgPG1h
-aWx0bzpkaWxsb24ubWluZmVpQGdtYWlsLmNvbT4+Cj4gCj4gICAgICAgICBFbmFibGUgdGhlIHN0
-bXBlODExIHRvdWNoIHNjcmVlbiBvbiBzdG0zMjQyOS1kaXNjbyBib2FyZC4KPiAKPiAgICAgICAg
-IFNpZ25lZC1vZmYtYnk6IGRpbGxvbiBtaW4gPGRpbGxvbi5taW5mZWlAZ21haWwuY29tCj4gICAg
-ICAgICA8bWFpbHRvOmRpbGxvbi5taW5mZWlAZ21haWwuY29tPj4KPiAKPiAgICAgICAgIFtQQVRD
-SCAzLzRdOiBBUk06IGR0czogc3RtMzI6IGVuYWJsZSBzdG1wZTgxMSBvbiBzdG0zMjQyOS1kaXNj
-bwo+IAo+ICAgICAgICAgVjI6Cj4gICAgICAgICBwYXRjaCAzOiByZW1vdmUgdW51c2VkIGlkLCBi
-bG9ja3MsIGlycS10cmlnZ2VyCj4gCj4gICAgICAgICBWMToKPiAgICAgICAgIHBhdGNoIDQ6IGZp
-eCByZWFkIHRvdWNoIHNjcmVlbiB4eXogdGltZW91dCBidWcKPiAgICAgICAgIHBhdGNoIDM6IGVu
-YWJsZSBzdG1wZV90b3VjaHNjcmVlbiBvbiBzdG0zMmY0MjktZGlzY28gYm9hcmQKPiAgICAgICAg
-IHBhdGNoIDI6IGFkZCBpMmMzIHBpbiBtdXggZm9yIHN0bTMyZjQKPiAgICAgICAgIHBhdGNoIDE6
-IGFkZCBpMmMzIGNvbnRyb2xsZXIgaW50ZXJmYWNlIGZvciBzdG0zMmY0Cj4gCj4gCj4gICAgIEdv
-b2QgaWRlYSB0byBhZGQgY2hhbmdlcyBsb2cgZm9yIHRoaXMgcGF0Y2guIEJ1dCB0aGlzIGxvZyBo
-YXMgdG8gYmUKPiAgICAgcGxhY2VkwqAgYWZ0ZXIgIi0tLSIgYmVsb3cuIFRoaXMgbG9nIGhhcyBu
-b3QgdG8gYXBwZWFyIGluIHlvdXIgY29tbWl0Cj4gICAgIG1lc3NhZ2UuIEZ1cnRoZXJtb3JlLCB5
-b3Ugc2hvdWxkIG9ubHkgYWRkIGNoYW5nZXMgZm9yIHRoaXMgcGF0Y2gKPiAgICAgd2l0aG91dCB0
-YWxraW5nIGFib3V0IG90aGVyIHBhdGNoZXMgLgo+IAo+IAo+ICAgICAgICAgU2lnbmVkLW9mZi1i
-eTogZGlsbG9uIG1pbiA8ZGlsbG9uLm1pbmZlaUBnbWFpbC5jb20KPiAgICAgICAgIDxtYWlsdG86
-ZGlsbG9uLm1pbmZlaUBnbWFpbC5jb20+Pgo+ICAgICAgICAgLS0tCj4gCj4gCj4gICAgIEFkZCBw
-YXRjaCBjaGFuZ2UgbG9nIGhlcmUuCj4gCj4gICAgICAgICAgwqAgYXJjaC9hcm0vYm9vdC9kdHMv
-c3RtMzJmNDI5LWRpc2NvLmR0cyB8IDQ3Cj4gICAgICAgICArKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKwo+ICAgICAgICAgIMKgIDEgZmlsZSBjaGFuZ2VkLCA0NyBpbnNlcnRpb25z
-KCspCj4gCj4gICAgICAgICBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJmNDI5
-LWRpc2NvLmR0cwo+ICAgICAgICAgYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMmY0MjktZGlzY28u
-ZHRzCj4gICAgICAgICBpbmRleCAzMGMwZjY3Li5mYWQxZWMxIDEwMDY0NAo+ICAgICAgICAgLS0t
-IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJmNDI5LWRpc2NvLmR0cwo+ICAgICAgICAgKysrIGIv
-YXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJmNDI5LWRpc2NvLmR0cwo+ICAgICAgICAgQEAgLTQ5LDYg
-KzQ5LDggQEAKPiAgICAgICAgICDCoCAjaW5jbHVkZSAic3RtMzJmNDI5LmR0c2kiCj4gICAgICAg
-ICAgwqAgI2luY2x1ZGUgInN0bTMyZjQyOS1waW5jdHJsLmR0c2kiCj4gICAgICAgICAgwqAgI2lu
-Y2x1ZGUgPGR0LWJpbmRpbmdzL2lucHV0L2lucHV0Lmg+Cj4gICAgICAgICArI2luY2x1ZGUgPGR0
-LWJpbmRpbmdzL2ludGVycnVwdC1jb250cm9sbGVyL2lycS5oPgo+ICAgICAgICAgKyNpbmNsdWRl
-IDxkdC1iaW5kaW5ncy9ncGlvL2dwaW8uaD4KPiAgICAgICAgICDCoCDCoCAvIHsKPiAgICAgICAg
-ICDCoCDCoCDCoCDCoCBtb2RlbCA9ICJTVE1pY3JvZWxlY3Ryb25pY3MgU1RNMzJGNDI5aS1ESVND
-TyBib2FyZCI7Cj4gICAgICAgICBAQCAtMTI3LDMgKzEyOSw0OCBAQAo+ICAgICAgICAgIMKgIMKg
-IMKgIMKgIHBpbmN0cmwtbmFtZXMgPSAiZGVmYXVsdCI7Cj4gICAgICAgICAgwqAgwqAgwqAgwqAg
-c3RhdHVzID0gIm9rYXkiOwo+ICAgICAgICAgIMKgIH07Cj4gICAgICAgICArCj4gICAgICAgICAr
-JmkyYzMgewo+ICAgICAgICAgK8KgIMKgIMKgIMKgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsK
-PiAgICAgICAgICvCoCDCoCDCoCDCoHBpbmN0cmwtMCA9IDwmaTJjM19waW5zPjsKPiAgICAgICAg
-ICvCoCDCoCDCoCDCoGNsb2NrLWZyZXF1ZW5jeSA9IDwxMDAwMDA+Owo+ICAgICAgICAgK8KgIMKg
-IMKgIMKgc3RhdHVzID0gIm9rYXkiOwo+ICAgICAgICAgKwo+ICAgICAgICAgK8KgIMKgIMKgIMKg
-c3RtcGU4MTFANDEgewo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKgIMKgIMKgIMKgY29tcGF0aWJs
-ZSA9ICJzdCxzdG1wZTgxMSI7Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqByZWcg
-PSA8MHg0MT47Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqBpbnRlcnJ1cHRzID0g
-PDE1IElSUV9UWVBFX0VER0VfRkFMTElORz47Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAg
-wqAgwqBpbnRlcnJ1cHQtcGFyZW50ID0gPCZncGlvYT47Cj4gICAgICAgICArwqAgwqAgwqAgwqAg
-wqAgwqAgwqAgwqAvKiAzLjI1IE1IeiBBREMgY2xvY2sgc3BlZWQgKi8KPiAgICAgICAgICvCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoHN0LGFkYy1mcmVxID0gPDE+Owo+ICAgICAgICAgK8KgIMKgIMKg
-IMKgIMKgIMKgIMKgIMKgLyogMTItYml0IEFEQyAqLwo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKg
-IMKgIMKgIMKgc3QsbW9kLTEyYiA9IDwxPjsKPiAgICAgICAgICvCoCDCoCDCoCDCoCDCoCDCoCDC
-oCDCoC8qIGludGVybmFsIEFEQyByZWZlcmVuY2UgKi8KPiAgICAgICAgICvCoCDCoCDCoCDCoCDC
-oCDCoCDCoCDCoHN0LHJlZi1zZWwgPSA8MD47Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAg
-wqAgwqAvKiBBREMgY29udmVyc3Rpb24gdGltZTogODAgY2xvY2tzICovCj4gICAgICAgICArwqAg
-wqAgwqAgwqAgwqAgwqAgwqAgwqBzdCxzYW1wbGUtdGltZSA9IDw0PjsKPiAgICAgICAgICsKPiAg
-ICAgICAgICvCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoHN0bXBlX3RvdWNoc2NyZWVuIHsKPiAgICAg
-ICAgICvCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoGNvbXBhdGlibGUgPSAic3Qs
-c3RtcGUtdHMiOwo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKg
-LyogOCBzYW1wbGUgYXZlcmFnZSBjb250cm9sICovCj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAg
-wqAgwqAgwqAgwqAgwqAgwqAgwqBzdCxhdmUtY3RybCA9IDwzPjsKPiAgICAgICAgICvCoCDCoCDC
-oCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoC8qIDcgbGVuZ3RoIGZyYWN0aW9uYWwgcGFydCBp
-biB6ICovCj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqBzdCxm
-cmFjdGlvbi16ID0gPDc+Owo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKg
-IMKgIMKgLyoKPiAgICAgICAgICvCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCAq
-IDUwIG1BIHR5cGljYWwgODAgbUEgbWF4IHRvdWNoc2NyZWVuCj4gICAgICAgICBkcml2ZXJzCj4g
-ICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgKiBjdXJyZW50IGxp
-bWl0IHZhbHVlCj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAg
-Ki8KPiAgICAgICAgICvCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoHN0LGktZHJp
-dmUgPSA8MT47Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAv
-KiAxIG1zIHBhbmVsIGRyaXZlciBzZXR0bGluZyB0aW1lICovCj4gICAgICAgICArwqAgwqAgwqAg
-wqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqBzdCxzZXR0bGluZyA9IDwzPjsKPiAgICAgICAgICvC
-oCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoCDCoC8qIDUgbXMgdG91Y2ggZGV0ZWN0IGlu
-dGVycnVwdCBkZWxheSAqLwo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKg
-IMKgIMKgc3QsdG91Y2gtZGV0LWRlbGF5ID0gPDU+Owo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKg
-IMKgIMKgIMKgfTsKPiAgICAgICAgICsKPiAgICAgICAgICvCoCDCoCDCoCDCoCDCoCDCoCDCoCDC
-oHN0bXBlX2FkYyB7Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAgwqAg
-wqBjb21wYXRpYmxlID0gInN0LHN0bXBlLWFkYyI7Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAg
-wqAgwqAgwqAgwqAgwqAgwqAgwqAvKiBmb3JiaWQgdG8gdXNlIEFEQyBjaGFubmVscyAzLTAgKHRv
-dWNoKSAqLwo+ICAgICAgICAgK8KgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgIMKgc3Qs
-bm9yZXF1ZXN0LW1hc2sgPSA8MHgwRj47Cj4gICAgICAgICArwqAgwqAgwqAgwqAgwqAgwqAgwqAg
-wqB9Owo+ICAgICAgICAgK8KgIMKgIMKgIMKgfTsKPiAgICAgICAgICt9Owo+IAo+IAo+ICAgICBf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+ICAgICBsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAo+ICAgICBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKPiAgICAgPG1haWx0bzpsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmc+Cj4gICAgIGh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo+ICAgICA8aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsPgo+IAoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi All,
+
+This patch series adds support for endpoint driver for R-Car PCIe controller on
+R-Car/RZ-G2x SoC's, this also extends the epf framework to handle multiple windows
+supported by the controller for mapping PCI address locally.
+
+Note:
+The rockchip/dwc endpoint drivers are build tested only and was tested on cadence
+by Kishon (https://lkml.org/lkml/2020/5/6/1535)
+
+Changes for v10:
+* Rebased patches on top of pci/rcar branch on tree
+  https://git.kernel.org/pub/scm/linux/kernel/git/lpieralisi/pci.git
+* Made pci_epc_get_matching_window() as static
+* Included Ack's from Kishon for patches 4/8 and 5/8
+* Included Reviewed-by tag from Shimoda-san for patches 4/8 and 5/8
+
+Changes for v9:
+* Rebased patches on top of v5.7.rc1
+* Replaced mdelay(1) with usleep_range(1000, 1001) in rcar_pcie_ep_assert_intx()
+* Added a check for max_functions read from DT to restrict with
+  RCAR_EPC_MAX_FUNCTIONS
+* Replaced MSICAP0_MMENUM with MSICAP0_MMESE
+* Retry ioremap for other windows on failure in pci_epc_mem_alloc_addr()
+* Fixed looping for number windows in pci_epc_mem_exit()
+* Set maximum to 1 for max-functions in DT binding (I have restored the acks
+  from  Rob and Shimoda-san)
+* Sorted the entry in MAINTAINERS
+
+Changes for v8:
+* Dropped adding R8A774C0 (0x002d) pci-id in pci_ids.h
+* Fixed typo in commit message for patch 2/8
+* Reworded commit message for patch 5/8 as suggested by Bjorn
+* Split up patch to add pci_epc_mem_init() interface to add page_size argument
+  as suggested by Bjorn.
+
+Changes for v7:
+* Fixed review comments pointed by Shimoda-san
+  1] Made DT bindings dual licensed, added Shimoda-san as maintainer and fixed
+     the example as its built with #{address,size}-cells = <1>. I have still
+     restored the Ack from Rob and Shimoda-san with these changes.
+  2] Split up the patches so that they can be picked up by respective subsystem
+     patches 1/4-9/11 are now part of this series.
+  3] Dropped altering a comment in pci-epc.h
+  4] Used a local variable align_size in pci_epc_mem_alloc_addr() so that size
+     variable doesn't get overwritten in the loop.
+  5] Replaced i-=1 with i--
+  6] Replaced rcar with R-Car in patch subject and description.
+  7] Set MACCTLR in init() callback
+
+Changes for v6:
+1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
+   scm/linux/kernel/git/lpieralisi/pci.git/
+2] Fixed review comments from Shimoda-san
+   a] Made sure defconfig changes were in separate patch
+   b] Created rcar_pcie_host/rcar_pcie_ep structures
+   c] Added pci-id for R8A774C0
+   d] Added entry in MAINTAINERS for dt-binding
+   e] Dropped unnecessary braces
+3] Added support for msi.
+
+Changes for v5:
+1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
+   linux/kernel/git/helgaas/pci.git
+2] Fixed review comments reported by Kishon while fetching the matching
+   window in function pci_epc_get_matching_window()
+3] Fixed review comments reported by Bjorn
+   a] Split patch up first patch so that its easier to review and incremental
+   b] Fixed typos
+4] Included Reviewed tag from Rob for the dt-binding patch
+5] Fixed issue reported by Nathan for assigning variable to itself
+
+Changes for v4:
+1] Fixed dtb_check error reported by Rob
+2] Fixed review comments reported by Kishon
+   a] Dropped pci_epc_find_best_fit_window()
+   b] Fixed initializing mem ptr in __pci_epc_mem_init()
+   c] Dropped map_size from pci_epc_mem_window structure
+
+Changes for v3:
+1] Fixed review comments from Bjorn and Kishon.
+3] Converted to DT schema
+
+Changes for v2:
+1] Fixed review comments from Biju for dt-bindings to include an example
+   for a tested platform.
+2] Fixed review comments from Kishon to extend the features of outbound
+   regions in epf framework.
+3] Added support to parse outbound-ranges in OF.
+
+Lad Prabhakar (8):
+  PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+  PCI: rcar: Move shareable code to a common file
+  PCI: rcar: Fix calculating mask for PCIEPAMR register
+  PCI: endpoint: Pass page size as argument to pci_epc_mem_init()
+  PCI: endpoint: Add support to handle multiple base for mapping
+    outbound memory
+  dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+    controller
+  PCI: rcar: Add endpoint mode support
+  MAINTAINERS: Add file patterns for rcar PCI device tree bindings
+
+ .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   77 +
+ MAINTAINERS                                   |    1 +
+ drivers/pci/controller/Kconfig                |   18 +
+ drivers/pci/controller/Makefile               |    3 +-
+ .../pci/controller/cadence/pcie-cadence-ep.c  |    2 +-
+ .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
+ drivers/pci/controller/pcie-rcar-ep.c         |  563 ++++++++
+ drivers/pci/controller/pcie-rcar-host.c       | 1130 +++++++++++++++
+ drivers/pci/controller/pcie-rcar.c            | 1268 +----------------
+ drivers/pci/controller/pcie-rcar.h            |  140 ++
+ drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
+ drivers/pci/endpoint/pci-epc-mem.c            |  204 ++-
+ include/linux/pci-epc.h                       |   38 +-
+ 13 files changed, 2150 insertions(+), 1312 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+ create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+ create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+ create mode 100644 drivers/pci/controller/pcie-rcar.h
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
