@@ -2,59 +2,138 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDF941C8890
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:42:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70A7B1C88AF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:44:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=21pBnKILz5LVe2cKhiWsnyfxQ2UIdnZ+kQ8g4/uLTrY=; b=qGdS11zI055PYD
-	DsDblwUQ9juZHkpNbIrBPsHMIpl8lw5/8e38ht5FWCX/76GdhUoFHn2DEsgus3ytczgcLWP4iDeGb
-	ePTwR+9KIo/g4BMKmw90rBeaEFVRzwky65+wJpY3iORX37LTMxGsB3p/PUZYNxSFNNn6U+cnuMGmC
-	vLt9B7UO9/L6DntSjnxX+ojzkPfwbGJA8GRw68n9eu/WV6QiEOFjwBWa//UxnOuBwgBcCMqDESCy5
-	tbJV+K6jRTXGklWeOKdqXJkJb6B0yjgKArmMO+fjmz8ivZefSxIDJsjRbevlV6WBiTbHmf+cTWDpb
-	gMV8eyj3ZfGX/8AzllNg==;
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iyOTcyuMGWGjzdlUCKs1bvW4axEErdKzG0dOre/VoSw=; b=T0n2s0oRaAbBfa
+	mTwkVzlBaoT4E5uQKv9uoXXXdAv2X8vJviinZGPxU8Fbkn6kIacA5OB1qasjvkb055ilIHV5TYttl
+	leHGYsx6+jqy/fnHZ4gVqoMxdTQ8jtua14DjsK//W9miA7QSeRqihfUeEODwFZ+dWwwFxPsc3UJWe
+	pWCRTSrJ4UHazBVmhZ8TlMrUtXz8ufUp2EQlIsJPXFA4oLnT2AaPMcJ9xNh2HQIMCXAaH6aSb4Hj/
+	KC6CKJgQf1bSyT4H5AMrJvjAEMnpIyvBuAesism6pYYtraR2Hj2x1xP02BX5lA2gbpH7rI/nGpAop
+	6NkyprNnHU1lyC1/XS7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWeuX-00083d-S0; Thu, 07 May 2020 11:41:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWeuO-0007wd-LH
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:41:46 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67A991FB;
- Thu,  7 May 2020 04:41:42 -0700 (PDT)
-Received: from [192.168.0.110] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6DA9D3F68F;
- Thu,  7 May 2020 04:41:40 -0700 (PDT)
-Subject: Re: [PATCH 01/26] KVM: arm64: Check advertised Stage-2 page size
- capability
-To: Marc Zyngier <maz@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
-References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-2-maz@kernel.org>
-From: Alexandru Elisei <alexandru.elisei@arm.com>
-Message-ID: <f2de215f-2ad4-da04-36ab-8932d35abba6@arm.com>
-Date: Thu, 7 May 2020 12:42:12 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+	id 1jWexC-0000iQ-NM; Thu, 07 May 2020 11:44:38 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWex0-0000hg-3F
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:44:27 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200507114423euoutp02e4159f6e18633edccb05d0209a0989f1~MvFob59F42551825518euoutp02P
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu,  7 May 2020 11:44:23 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200507114423euoutp02e4159f6e18633edccb05d0209a0989f1~MvFob59F42551825518euoutp02P
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1588851863;
+ bh=kpbXruaAjh/ByRT/sbjAJa08QbsfTMyfxI+LUHOHJjE=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=cnOpLFckwjQQIyvwRtsLnf3maZtz+WKXlKNPIf5xjett/E2gUVW8+WAh9WPtRpz9r
+ +eqTX670FuQmGIfVQBpkN7LDbEOkMtJaErAVibYcQuc+LWRmCfIo7lJPIWKMqVpB81
+ y/to8SciCT1MTz3xxoTJ803t29entc+Az3Dc1VPg=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200507114423eucas1p1525d26c3c9881fe5dfb36759f5237d3c~MvFoKuJVH0889508895eucas1p1Y;
+ Thu,  7 May 2020 11:44:23 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id E1.23.60679.794F3BE5; Thu,  7
+ May 2020 12:44:23 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200507114423eucas1p2e326eca146ccc5d6af1a2c70c96d5ff2~MvFn0XtWh2554125541eucas1p2Q;
+ Thu,  7 May 2020 11:44:23 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200507114423eusmtrp27f55bf5f72794bd080a3753e993729e6~MvFnzu0Pa3262232622eusmtrp21;
+ Thu,  7 May 2020 11:44:23 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-5a-5eb3f497779b
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id C6.75.08375.694F3BE5; Thu,  7
+ May 2020 12:44:22 +0100 (BST)
+Received: from [106.210.88.143] (unknown [106.210.88.143]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200507114422eusmtip1d6bf9b1fa6e1bb1a25743cc9d4d460f3~MvFnPM7pO3002230022eusmtip12;
+ Thu,  7 May 2020 11:44:22 +0000 (GMT)
+Subject: Re: [PATCH] amba: Retry adding deferred devices at late_initcall
+To: Saravana Kannan <saravanak@google.com>, Ulf Hansson
+ <ulf.hansson@linaro.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <c9a2dccd-50c0-5e9a-5ca7-69ec063e3630@samsung.com>
+Date: Thu, 7 May 2020 13:44:23 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200422120050.3693593-2-maz@kernel.org>
+In-Reply-To: <CAGETcx-kC18pwF7uDYE4XwVOWBJN8Lx48LD74LECgDts+VB0gA@mail.gmail.com>
 Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrCKsWRmVeSWpSXmKPExsWy7djP87rTv2yOM1g2Wcxi7uxJjBZnfuta
+ TPmznMli0+NrrBaHpu5ltNg2azmbxf89O9gtug79ZbNYfmoHi8XxteEOXB5r5q1h9Lh87SKz
+ x8Szuh4LNpV6bFrVyeZx59oeNo/NS+o9Np+uDuCI4rJJSc3JLEst0rdL4MpYceY2e8F9zorT
+ b/MbGK+xdzFyckgImEjc39jO2MXIxSEksIJR4u+ZBywQzhdGieU9j9ggnM+MEpPXboNreXT2
+ AxNEYjmjRMOvtVAt7xklXu28xwpSJSzgKfH63RImEFtEIEhibvcBVpAiZoGrTBLL7y4GS7AJ
+ GEp0ve1iA7F5BewkFr++DmazCKhIvDh4FaiGg0NUIFZi+rUQiBJBiZMzn7CA2JwCgRItu1eA
+ lTMLyEtsfzuHGcIWl7j1ZD7YdRIC19gl+p/9Z4U420Wis+UeM4QtLPHq+Baod2Qk/u+EaWhm
+ lHh4bi07hNPDKHG5aQYjRJW1xJ1zv9hALmIW0JRYv0sfIuwosaTjIVhYQoBP4sZbQYgj+CQm
+ bZvODBHmlehoE4KoVpOYdXwd3NqDFy4xT2BUmoXktVlI3pmF5J1ZCHsXMLKsYhRPLS3OTU8t
+ NspLLdcrTswtLs1L10vOz93ECExbp/8d/7KDcdefpEOMAhyMSjy8Fh83xwmxJpYVV+YeYpTg
+ YFYS4eX5sTFOiDclsbIqtSg/vqg0J7X4EKM0B4uSOK/xopexQgLpiSWp2ampBalFMFkmDk6p
+ BkYZM93YtepN2+N32P0rF3lavFSG6/YBtXAGhtVuwst5Ig0ia/skfU1kv5d2fX2gGuUez9/+
+ MtPgu5VPwplZGsv4zWdP8j74t/jXnpb3xrxrKyQSmtRjxNsEXa64fCv5tVLsbPryulPb/+7g
+ 0AiNm3036PF3dcaspbttq0M5V/3Ijle7cMfnuBJLcUaioRZzUXEiAHlwggNXAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrCIsWRmVeSWpSXmKPExsVy+t/xu7rTv2yOM5jJbDF39iRGizO/dS2m
+ /FnOZLHp8TVWi0NT9zJabJu1nM3i/54d7BZdh/6yWSw/tYPF4vjacAcujzXz1jB6XL52kdlj
+ 4lldjwWbSj02repk87hzbQ+bx+Yl9R6bT1cHcETp2RTll5akKmTkF5fYKkUbWhjpGVpa6BmZ
+ WOoZGpvHWhmZKunb2aSk5mSWpRbp2yXoZaw4c5u94D5nxem3+Q2M19i7GDk5JARMJB6d/cDU
+ xcjFISSwlFHi040tTBAJGYmT0xpYIWxhiT/Xutggit4ySnzZN58ZJCEs4Cnx+t0SsAYRgSCJ
+ 2d1z2EGKmAVuMkks+/CKDSQhJHCTWaL5mDKIzSZgKNH1tgsszitgJ7H49XUwm0VAReLFwatA
+ gzg4RAViJVouakKUCEqcnPmEBcTmFAiUaNm9AqycWcBMYt7mh8wQtrzE9rdzoGxxiVtP5jNN
+ YBSahaR9FpKWWUhaZiFpWcDIsopRJLW0ODc9t9hQrzgxt7g0L10vOT93EyMwRrcd+7l5B+Ol
+ jcGHGAU4GJV4eC0+bo4TYk0sK67MPcQowcGsJMLL82NjnBBvSmJlVWpRfnxRaU5q8SFGU6Df
+ JjJLiSbnA9NHXkm8oamhuYWlobmxubGZhZI4b4fAwRghgfTEktTs1NSC1CKYPiYOTqkGxl4V
+ /TO8C6XfTbCa+U/pdc6xuOhmS16Fg8I+droH5I89U/vfL5IZox+95//mK55rYn8ckdTckzr5
+ CtNvT3ulH+tD+yw7f6bsi4lTqH1zQVXcUnojl4TfO0f+fUovOi9demF3Z0N8m6p0zydBm4dW
+ zXee5Pydo3Bya9Zk1gl2iVel3kv0/1CQUWIpzkg01GIuKk4EAHnc+2bnAgAA
+X-CMS-MailID: 20200507114423eucas1p2e326eca146ccc5d6af1a2c70c96d5ff2
+X-Msg-Generator: CA
+X-RootMTR: 20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f
+References: <20200427212514.11219-1-robh@kernel.org>
+ <CGME20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f@eucas1p2.samsung.com>
+ <CACRpkdZSPb8FxTSt8F3F1VcsTM4qG=6gxz1pBPjTZ0Dk2iVfSQ@mail.gmail.com>
+ <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
+ <CAGETcx8Cn-b6L2y10LKb91S3n06b6+Be2z_A0402EyNy-8yECg@mail.gmail.com>
+ <CAPDyKFrt01tDrCgdf7hjLDTqzOYWJ=m7fNMo-2PB-uHEOzZkmw@mail.gmail.com>
+ <CAGETcx-kC18pwF7uDYE4XwVOWBJN8Lx48LD74LECgDts+VB0gA@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_044144_788956_8E68455E 
-X-CRM114-Status: GOOD (  21.99  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_044426_273888_48890357 
+X-CRM114-Status: GOOD (  14.92  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,176 +145,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <andre.przywara@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- George Cherian <gcherian@marvell.com>, James Morse <james.morse@arm.com>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Jintack Lim <jintack@cs.columbia.edu>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Rob Herring <robh@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
+ John Stultz <john.stultz@linaro.org>,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
+ Sudeep Holla <sudeep.holla@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Saravana,
 
-On 4/22/20 1:00 PM, Marc Zyngier wrote:
-> With ARMv8.5-GTG, the hardware (or more likely a hypervisor) can
-> advertise the supported Stage-2 page sizes.
->
-> Let's check this at boot time.
->
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  arch/arm64/include/asm/kvm_host.h |  2 +-
->  arch/arm64/include/asm/sysreg.h   |  3 +++
->  arch/arm64/kernel/cpufeature.c    |  8 +++++++
->  arch/arm64/kvm/reset.c            | 40 ++++++++++++++++++++++++++++---
->  virt/kvm/arm/arm.c                |  4 +---
->  5 files changed, 50 insertions(+), 7 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> index 32c8a675e5a4a..7dd8fefa6aecd 100644
-> --- a/arch/arm64/include/asm/kvm_host.h
-> +++ b/arch/arm64/include/asm/kvm_host.h
-> @@ -670,7 +670,7 @@ static inline int kvm_arm_have_ssbd(void)
->  void kvm_vcpu_load_sysregs(struct kvm_vcpu *vcpu);
->  void kvm_vcpu_put_sysregs(struct kvm_vcpu *vcpu);
->  
-> -void kvm_set_ipa_limit(void);
-> +int kvm_set_ipa_limit(void);
->  
->  #define __KVM_HAVE_ARCH_VM_ALLOC
->  struct kvm *kvm_arch_alloc_vm(void);
-> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-> index ebc6224328318..5d10c9148e844 100644
-> --- a/arch/arm64/include/asm/sysreg.h
-> +++ b/arch/arm64/include/asm/sysreg.h
-> @@ -686,6 +686,9 @@
->  #define ID_AA64ZFR0_SVEVER_SVE2		0x1
->  
->  /* id_aa64mmfr0 */
-> +#define ID_AA64MMFR0_TGRAN4_2_SHIFT	40
-> +#define ID_AA64MMFR0_TGRAN64_2_SHIFT	36
-> +#define ID_AA64MMFR0_TGRAN16_2_SHIFT	32
->  #define ID_AA64MMFR0_TGRAN4_SHIFT	28
->  #define ID_AA64MMFR0_TGRAN64_SHIFT	24
->  #define ID_AA64MMFR0_TGRAN16_SHIFT	20
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index 9fac745aa7bb2..9892a845d06c9 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -208,6 +208,14 @@ static const struct arm64_ftr_bits ftr_id_aa64zfr0[] = {
->  };
->  
->  static const struct arm64_ftr_bits ftr_id_aa64mmfr0[] = {
-> +	/*
-> +	 * Page size not being supported at Stage-2 are not fatal. You
+On 04.05.2020 21:28, Saravana Kannan wrote:
+> On Mon, May 4, 2020 at 12:11 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
+>> In principle we should then be able to rely on the regular defered
+>> probe mechanism, just that it's the dummy device that is being defered
+>> probed (if we fail to read PID/CID).
+>>> Any reason to not do something like that? I'd think that should clean
+>>> up a whole lot of this code. Also, if we are primarily dealing with
+>>> AMBA devices created from DT, then we might even be able to massage
+>>> the fw_devlink feature to optimize this even more when fw_devlink=on.
+>>>
+>>> Just my 2 cents.
+>> Someone should try to implement this to see if it fits well.
+> I don't mind taking a stab at this if people are actually okay with
+> this approach and will test and merge it if it works. I have no
+> platform to test this. I'll wait to hear what others think before I
+> jump on this.
 
-s/are not fatal/is not fatal
+The time I've prepared my patch I've also considered something like 
+that, but I gave up because timer or notifier based approach was much 
+simpler. If you have some time to implement your idea I would be happy 
+to test it.
 
-> +	 * just give up KVM if PAGE_SIZE isn't supported there. Go fix
-> +	 * your favourite nesting hypervisor.
-> +	 */
-> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_EXACT, ID_AA64MMFR0_TGRAN4_2_SHIFT, 4, 1),
-> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_EXACT, ID_AA64MMFR0_TGRAN64_2_SHIFT, 4, 1),
-> +	ARM64_FTR_BITS(FTR_HIDDEN, FTR_NONSTRICT, FTR_EXACT, ID_AA64MMFR0_TGRAN16_2_SHIFT, 4, 1),
->  	/*
->  	 * We already refuse to boot CPUs that don't support our configured
->  	 * page size, so we can only detect mismatches for a page size other
-> diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-> index 30b7ea680f66c..241db35a7ef4f 100644
-> --- a/arch/arm64/kvm/reset.c
-> +++ b/arch/arm64/kvm/reset.c
-> @@ -9,6 +9,7 @@
->   */
->  
->  #include <linux/errno.h>
-> +#include <linux/bitfield.h>
->  #include <linux/kernel.h>
->  #include <linux/kvm_host.h>
->  #include <linux/kvm.h>
-> @@ -340,11 +341,42 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
->  	return ret;
->  }
->  
-> -void kvm_set_ipa_limit(void)
-> +int kvm_set_ipa_limit(void)
->  {
-> -	unsigned int ipa_max, pa_max, va_max, parange;
-> +	unsigned int ipa_max, pa_max, va_max, parange, tgran_2;
-> +	u64 mmfr0 = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1);
->  
-> -	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) & 0x7;
-> +	/*
-> +	 * Check with ARMv8.5-GTG that our PAGE_SIZE is supported at
-> +	 * Stage-2. If not, things will stop very quickly.
-> +	 */
-> +	switch (PAGE_SIZE) {
-> +	default:
-> +	case SZ_4K:
-> +		tgran_2 = ID_AA64MMFR0_TGRAN4_2_SHIFT;
-> +		break;
-> +	case SZ_16K:
-> +		tgran_2 = ID_AA64MMFR0_TGRAN16_2_SHIFT;
-> +		break;
-> +	case SZ_64K:
-> +		tgran_2 = ID_AA64MMFR0_TGRAN64_2_SHIFT;
-> +		break;
-> +	}
-> +
-> +	switch (FIELD_GET(0xFUL << tgran_2, mmfr0)) {
-> +	default:
-> +	case 1:
-> +		kvm_err("PAGE_SIZE not supported at Stage-2, giving up\n");
-> +		return -EINVAL;
-> +	case 0:
-> +		kvm_debug("PAGE_SIZE supported at Stage-2 (default)\n");
-> +		break;
-> +	case 2:
-> +		kvm_debug("PAGE_SIZE supported at Stage-2 (advertised)\n");
-> +		break;
-> +	}
-> +
-> +	parange = mmfr0 & 0x7;
->  	pa_max = id_aa64mmfr0_parange_to_phys_shift(parange);
->  
->  	/* Clamp the IPA limit to the PA size supported by the kernel */
-> @@ -378,6 +410,8 @@ void kvm_set_ipa_limit(void)
->  	     "KVM IPA limit (%d bit) is smaller than default size\n", ipa_max);
->  	kvm_ipa_limit = ipa_max;
->  	kvm_info("IPA Size Limit: %dbits\n", kvm_ipa_limit);
-> +
-> +	return 0;
->  }
->  
->  /*
-> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> index 48d0ec44ad77e..53b3ba9173ba7 100644
-> --- a/virt/kvm/arm/arm.c
-> +++ b/virt/kvm/arm/arm.c
-> @@ -1387,9 +1387,7 @@ static inline void hyp_cpu_pm_exit(void)
->  
->  static int init_common_resources(void)
->  {
-> -	kvm_set_ipa_limit();
-> -
-> -	return 0;
-> +	return kvm_set_ipa_limit();
->  }
->  
->  static int init_subsystems(void)
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
 
-For what is worth, I've taken a look at the ARMv8.5-GTG spec and your patch looks
-fine to me:
-
-Reviewed-by: Alexandru Elisei <alexandru.elisei@arm.com>
-
-Thanks,
-Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
