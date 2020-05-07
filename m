@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1B1F1C9A18
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:56:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D0141C9A19
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:56:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=NUijkqFKeo+HkKdHuDaMU4JPBnwbdG5ATV7MwneHGMk=; b=DRK1Y+GZUG7v8b
-	uZk/jHtq1pNsf9r5kEcdjS6+xyEcsIks+EmcvRoQM619N8AUuqaA6Twq+TfnmhoPTOOfmAcZArfJJ
-	JKipcDElgS1Nk81p9UWUiqoai7t+B1loPA78l8jIVI55TCosJUFGvAwDEjROprn7iNZQSiUl4ApJC
-	TCkM8HsarCgpYQ5kainS4TlzMtd46eRUThvJXsf65P4v7ppo/lHw+jrqyXLXozlxsthB2vQogz6NV
-	zK/9qi9WvI1OD6jcFoSc27mHK2YukvkmOSpR750W+vwT0duGSh8oRriXbbl7/K95kuEhEeJ80voV1
-	6/te+yFs5RbKLM7qlfDQ==;
+	List-Owner; bh=3NBZAYuaTBxjkXTOTduhLx7aY9pcNa7I2UcE55H5jrg=; b=CZtvcf7mMEtpg7
+	DUUb5O4lV8HRUvIzY0Lp9qjQM801ixre8Lz+csbml6cqy9JU/CK9id4PRKIcTwsJ8AZevyG81+N1Q
+	29WSq+Y8vBE1hr0jBXHlx+0+9wz5QKkIfhNs9+nW+Fdy/MUrKFsWe/JDpvU9hbGJwsLTjlXrXjwF9
+	Hkw6YNr5vYl2hl9jj1Y1OWPrv5hCp/hnrs+0Pkxxbog0h8/WqCltVSHX1dKfPsPkfevJ0OdJzbwZ3
+	FgTXnpc+iE9F/Rfx8aTtxZiVGL1t0J3uGWKTtusQpqVm8Ak8k1/SsLFWmSRRjJtUZZq22wcOaGSNE
+	2KNO820I1iI/unHGfYEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWlhB-0002a3-Oj; Thu, 07 May 2020 18:56:33 +0000
+	id 1jWlhQ-0002om-U6; Thu, 07 May 2020 18:56:48 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWlgr-0002S8-0Q
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 18:56:14 +0000
+ id 1jWlgy-0002bs-HR
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 18:56:23 +0000
 Received: from embeddedor (unknown [189.207.59.248])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 24E0220575;
- Thu,  7 May 2020 18:56:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id B3DC9216FD;
+ Thu,  7 May 2020 18:56:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588877772;
- bh=4Vs8QxaVwzsgCZC7VZqciOtD1Lflpg1/+iLS46dpZGM=;
+ s=default; t=1588877780;
+ bh=jm3fKnCO4Xf3QTCG3k8/S+/8DNeXKLAAKD5XoFMMhyY=;
  h=Date:From:To:Cc:Subject:From;
- b=O9847wy6gQrf3ooNlVPFe+hHKH/0f/mytZcFG+j+BNZBaXoQrvTeAEhKECvvx/DBf
- VGlMP6sU4ne/8Ma9PawMSCVC4QG6ES2Ga9zJqGc0R671Oedp+xMhGTxiSsrKIDyibR
- 7XTe4/2TKtN2z4P6CdP26AEUsvIx7mznlhQJ1Fyc=
-Date: Thu, 7 May 2020 14:00:38 -0500
+ b=j8F77k+hOMYWNsm4ZYGQsIc2ubNpcV2lJi+sF3xlCpyYvURINI7X9RHHgSWg7/c0j
+ k45JS4quwF/uKI6F4RcPAt11oF+N91Qn+NxJt0yJ/nN7nFfTnYIiWChCWiNAjpgmMV
+ lhfWkscvzOYaHFDVlhw9do8omT79Q0bRoM6p4Wh0=
+Date: Thu, 7 May 2020 14:00:46 -0500
 From: "Gustavo A. R. Silva" <gustavoars@kernel.org>
 To: Ludovic Desroches <ludovic.desroches@microchip.com>
-Subject: [PATCH] dmaengine: at_hdmac: Replace zero-length array with
+Subject: [PATCH] dmaengine: at_xdmac: Replace zero-length array with
  flexible-array
-Message-ID: <20200507190038.GA15272@embeddedor>
+Message-ID: <20200507190046.GA15298@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
 User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_115613_132051_02762B86 
-X-CRM114-Status: GOOD (  14.06  )
+X-CRM114-CacheID: sfid-20200507_115620_608847_35A8F567 
+X-CRM114-Status: GOOD (  13.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -119,22 +119,22 @@ This issue was found with the help of Coccinelle.
 
 Signed-off-by: Gustavo A. R. Silva <gustavoars@kernel.org>
 ---
- drivers/dma/at_hdmac_regs.h |    2 +-
+ drivers/dma/at_xdmac.c |    2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/dma/at_hdmac_regs.h b/drivers/dma/at_hdmac_regs.h
-index 397692e937b3..80fc2fe8c77e 100644
---- a/drivers/dma/at_hdmac_regs.h
-+++ b/drivers/dma/at_hdmac_regs.h
-@@ -331,7 +331,7 @@ struct at_dma {
- 	struct dma_pool		*dma_desc_pool;
- 	struct dma_pool		*memset_pool;
- 	/* AT THE END channels table */
--	struct at_dma_chan	chan[0];
-+	struct at_dma_chan	chan[];
+diff --git a/drivers/dma/at_xdmac.c b/drivers/dma/at_xdmac.c
+index bb0eaf38b594..fd92f048c491 100644
+--- a/drivers/dma/at_xdmac.c
++++ b/drivers/dma/at_xdmac.c
+@@ -212,7 +212,7 @@ struct at_xdmac {
+ 	struct clk		*clk;
+ 	u32			save_gim;
+ 	struct dma_pool		*at_xdmac_desc_pool;
+-	struct at_xdmac_chan	chan[0];
++	struct at_xdmac_chan	chan[];
  };
  
- #define	dma_readl(atdma, name) \
+ 
 
 
 _______________________________________________
