@@ -2,60 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F386B1C9C3A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:23:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17DC11C9C40
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:24:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VnI1w0/ttAesFW8nSBRi4Zutzml47qDeyWAtuGFctJ4=; b=T/v73y01kckrDd
-	yWjp0776L15hlC6Fq52yrAlsDzfh7TCgfy544FDljiabD6s+AE6JEOGLteJDkX5/TGVeg3QiE0OsR
-	/+w+pzDWv9LLc6Q7vULZDbRr5EiajBZmle4JAwNmBoE85gZl5xKoFpsNRxitWJfg5WR3bNjvQKVpv
-	bljif40QrZqnKhV85FzF/yg/8UsulU+hEccStNRZXmR3uqIXTXg2NwHou/vKwMmbEGb20ynCkfoXL
-	jUbTsqYwURGblG4Vlq02jgVjEz5KY7eY53GdOkWua6uQlQW2CBfYl+NdmW7h6vEnXJazJAdQz6L17
-	2qgTwlTXyswCkRMYZbNw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xSQEgR3fHkDAfaN680OUO9iDaDCSf8orq1fTROG13RM=; b=Xzd3HvEUkmNdl48tgSX4oA9N8
+	PtKQ1zCHhDHH5Hku8jmSUE7LW6+XKMG2ZycKrTaV4+l/lOccpaNj2XnDujWX3YaC/lGr3eq5dVYRx
+	6uXl5BzthyzsgQ7AlA3oUTSY2uhEmdpx7S5TAJxcFrNNSznIDZQ0oZztMFNr1OLO5dIkzEWmlT9yC
+	hK5EbRAyyQzqk+1uqeVkuOEZ+9czi3XRTXDFtQWFCj9i+2f1mpiVqHCnLPXXz1xTBoNeqq3wAgang
+	XBT6lW9DUpwr0hNpY6cHPs4WBAjSSm5Fi7ceCS8nU09woBIrQdPEgqShZknl856U1UK7i7fU1AxJr
+	hQCNRmq4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWn2k-0004V1-9u; Thu, 07 May 2020 20:22:54 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1jWn3i-0004og-27; Thu, 07 May 2020 20:23:54 +0000
+Received: from relay5-d.mail.gandi.net ([217.70.183.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWn2a-0004Q5-0P
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:22:45 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
- by youngberry.canonical.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.86_2)
- (envelope-from <colin.king@canonical.com>)
- id 1jWn2T-0006Hm-Hp; Thu, 07 May 2020 20:22:37 +0000
-From: Colin King <colin.king@canonical.com>
-To: Inki Dae <inki.dae@samsung.com>, Joonyoung Shim <jy0922.shim@samsung.com>,
- Seung-Woo Kim <sw0312.kim@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel@ffwll.ch>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, dri-devel@lists.freedesktop.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH] drm/exynos: remove redundant initialization to variable
- 'start'
-Date: Thu,  7 May 2020 21:22:37 +0100
-Message-Id: <20200507202237.64350-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.25.1
+ id 1jWn3Y-0004nj-6Z; Thu, 07 May 2020 20:23:45 +0000
+X-Originating-IP: 93.29.109.196
+Received: from aptenodytes (196.109.29.93.rev.sfr.net [93.29.109.196])
+ (Authenticated sender: paul.kocialkowski@bootlin.com)
+ by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id E845A1C0002;
+ Thu,  7 May 2020 20:23:37 +0000 (UTC)
+Date: Thu, 7 May 2020 22:23:37 +0200
+From: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+To: Johan Jonker <jbx6244@gmail.com>
+Subject: Re: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
+Message-ID: <20200507202337.GJ2422122@aptenodytes>
+References: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
+ <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
 MIME-Version: 1.0
+In-Reply-To: <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_132244_189079_90B1B257 
-X-CRM114-Status: GOOD (  12.03  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200507_132344_378956_DE52BADD 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [91.189.89.112 listed in wl.mailspike.net]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [217.70.183.197 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,42 +61,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, heiko@sntech.de, linux-kernel@vger.kernel.org,
+ hansverk@cisco.com, linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
+ thomas.petazzoni@bootlin.com, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: multipart/mixed; boundary="===============8781984611739313312=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
 
-The variable 'start' is being initialized with a value that is never read
-and it is being updated later with a new value.  The initialization is
-redundant and can be removed.
+--===============8781984611739313312==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="LQAwcd5tHl0Qlnzi"
+Content-Disposition: inline
 
-Addresses-Coverity: ("Unused value")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
----
- drivers/gpu/drm/exynos/exynos_drm_dsi.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-index 902938d2568f..b0b9cb1ec18f 100644
---- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-+++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
-@@ -1150,7 +1150,7 @@ static bool exynos_dsi_transfer_finish(struct exynos_dsi *dsi)
- {
- 	struct exynos_dsi_transfer *xfer;
- 	unsigned long flags;
--	bool start = true;
-+	bool start;
- 
- 	spin_lock_irqsave(&dsi->transfer_lock, flags);
- 
--- 
-2.25.1
+--LQAwcd5tHl0Qlnzi
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
+Hi,
+
+On Thu 30 Apr 20, 23:24, Johan Jonker wrote:
+> Hi Paul,
+>=20
+> >=20
+> > Add a new compatible for the PX30 Rockchip SoC, which also features
+> > a RGA block. It is compatible with the RK3288 RGA block.
+> >=20
+> > Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> > ---
+> >  Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
+> >  1 file changed, 3 insertions(+)
+> >=20
+> > diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml =
+b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > index dd645ddccb07..740586299da9 100644
+> > --- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
+> > @@ -23,6 +23,9 @@ properties:
+>=20
+>=20
+> >        - items:
+> >            - const: rockchip,rk3228-rga
+> >            - const: rockchip,rk3288-rga
+> > +      - items:
+> > +          - const: rockchip,px30-rga
+> > +          - const: rockchip,rk3288-rga
+>=20
+> Use enum.
+>=20
+>       - items:
+>           - enum:
+>             - rockchip,px30-rga
+>             - rockchip,rk3228-rga
+>           - const: rockchip,rk3288-rga
+
+Are you sure about this? The rk3228 above does it as I did it and other exa=
+mples
+like allwinner,sun4i-a10-csi.yaml appear to be doing the same too.
+
+The case with rockchip,rk3288-rga alone already seems covered.
+
+Cheers,
+
+Paul
+
+> > =20
+> >    reg:
+> >      maxItems: 1
+> > --=20
+> > 2.26.0
+>=20
+
+--=20
+Paul Kocialkowski, Bootlin
+Embedded Linux and kernel engineering
+https://bootlin.com
+
+--LQAwcd5tHl0Qlnzi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEJZpWjZeIetVBefti3cLmz3+fv9EFAl60bkkACgkQ3cLmz3+f
+v9FGRQf+NACpI/Qm8LidCAjDd2uHl97xlPGI/gb4zzpGYeK/t1BGJfLcDSY4MCkK
+srG+0VSic+47U4qA5hlWqq4jXYTLkV5DBpF79lSqNCI6yrPln2oTaZ2bIcY/mF6E
+Q1/AljAuM8pcoBnFdLwJEq7Td82Nb79teutcAlVCSl2uUvVI+bEY5EtLmWjeLnOb
+ejYXlItHF3Od/hKE8C7GPpPazLyb4Oh67ZP1/RpnxkCEmkl/J41nni9NIRi+wV7Q
+1Sz063fVOuzdDdDgmfc7NHdl9pstkqBq/gKyurtSGkpVnAC/qSfSGSRdCk3JX1Om
+QZhzaBXFzWq8bStS1rjzsAz+AHUctA==
+=zYey
+-----END PGP SIGNATURE-----
+
+--LQAwcd5tHl0Qlnzi--
+
+
+--===============8781984611739313312==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8781984611739313312==--
+
