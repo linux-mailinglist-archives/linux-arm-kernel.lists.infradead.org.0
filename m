@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59E731C8D8A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:06:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E8711C8DA8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:08:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K99k/Uyp9JVYbKgRNpggh7gPA53AIIK0HtsRs/FbsF0=; b=UeuPJ3aSBbF0MF
-	AjW7b7PG1wipuR5Ju15bDaKTF+aLSqX9NxAU3d8NnsAG72XpJR1nOATHjir1T9aGK5EEaAeCi4iS5
-	0IdPHe5rhNoxzAG2EGHl2oqdOlNKAkjDiZyzAFt8pDwsbJ2Vg1Ufj8j3T2L+iW4PjUzZKTvxmOxk3
-	gK3t7YVWKPa9Df5cvWpUcq4VVYKcevmk3lRJdJ6wDWnDQtMZ1GM5rt+3rkzPICAGQfj8QtS4In8SK
-	R30q/DixSdjviGgdJH/G6SS/u5/v4a07jkErUApw6zvzw/gALrQjCAi2pbcmHVqWsMPBP2lTh6+gW
-	Yh5awgy+rPsu3U3L8J2g==;
+	List-Owner; bh=eR4SFakkcovCQ3F7TcLsn8NZ6RjucI8Uk1f7YTKgXtU=; b=Mp0fhT/3cTzw0j
+	Xjot2IWORX8fZvT9fBTBzWq9OlpdV/YxzYM13tpKWTLw0QQpkAjm9lbJTwkHKEGwLkcODAD3+kzUS
+	VG1RZJE0YUi7aw4Qq4xT3ZF1OleYmAHA/X6qiCvMhFbLHiBqMzQAexO7jk0BWvTxb9dtznQSy1g66
+	o1Wp7LCwIiVmw9WdZzWRs5ODHgrMwEaRHwaxnFZ2zjm3WuvWMv8zD1ko0c7WnBqy4MFsM7Hooeuzm
+	UlgdZwJSiSp4bhiBvisj94ekW0r/diG22xMSPYBXN2iX3VwFZjFjXGLt+Hm7oQXuVWIVR37HAcjEJ
+	0scD7BEyBPwkFjjWWCXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhAD-0002Vw-FJ; Thu, 07 May 2020 14:06:13 +0000
+	id 1jWhC2-00031y-Bn; Thu, 07 May 2020 14:08:06 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWh9D-0000wM-Ff
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:05:13 +0000
-Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
- [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jWhBv-00031B-F7
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:08:00 +0000
+Received: from Mani-XPS-13-9360 (unknown [157.46.59.191])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C79592082E;
- Thu,  7 May 2020 14:05:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F03462084D;
+ Thu,  7 May 2020 14:07:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588860311;
- bh=UGMaIlmDe2PXXTCKVFDLhA4MiqbreTvt2g9+e67JfNI=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zWjmSSzhb+E9LNn9Z+3SfSebl0OxqpT9NebL/MFNLynazreXVZlpJguuZojkRlq+4
- IStMR7EFrTps/BTPAntLRtv9KJML9JuFnWVl6Caz4peuX90hr5R0F5E4naRYX2MaIw
- zaIaIiP+z1LcjeJ1v0to2hGmQ40JoPpCUbnt5uFQ=
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] arm64: vdso: Add --eh-frame-hdr to ldflags
-Date: Thu,  7 May 2020 15:04:56 +0100
-Message-Id: <158885881702.237249.11426070057323434764.b4-ty@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200507104049.47834-1-vincenzo.frascino@arm.com>
-References: <20200507104049.47834-1-vincenzo.frascino@arm.com>
+ s=default; t=1588860478;
+ bh=up72YqQmbXKsh+0pM1oCFb1Y0z05K3pNe8Mi871M7kc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jsUyk3GojI51408CO+VP69Uj5RZ4eJkVtRwanijT5SOihR0odMv6AqV9EZzz+J4vR
+ T6Tr+k2nnIhLGKQQWLg10jhz8YQoFL9axsSFvzcb+NeN05rqb4r2Q3PvDv3Hw90MXl
+ 7te6rl2Rr1MRb/oDmEb64s1lK3JiRdPHtZK4Ev5U=
+Date: Thu, 7 May 2020 19:37:50 +0530
+From: Manivannan Sadhasivam <mani@kernel.org>
+To: gregkh@linuxfoundation.org
+Subject: Re: [PATCH v3 0/2] Add CTS/RTS gpio support to STM32 UART
+Message-ID: <20200507140750.GA2019@Mani-XPS-13-9360>
+References: <20200420170204.24541-1-mani@kernel.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200420170204.24541-1-mani@kernel.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_070511_576395_AEC8AAB9 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20200507_070759_525316_087C0911 
+X-CRM114-Status: GOOD (  17.21  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,36 +76,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <tamas.zsoldos@arm.com>, catalin.marinas@arm.com,
- Will Deacon <will@kernel.org>
+Cc: devicetree@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-kernel@vger.kernel.org, andy.shevchenko@gmail.com, robh+dt@kernel.org,
+ linux-serial@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 May 2020 11:40:49 +0100, Vincenzo Frascino wrote:
-> LLVM's unwinder depends on the .eh_frame_hdr being present for
-> unwinding. However, when compiling Linux with GCC, the section
-> is not present in the vdso library object and when compiling
-> with Clang, it is present, but it has zero length.
+Hi Greg,
+
+On Mon, Apr 20, 2020 at 10:32:02PM +0530, mani@kernel.org wrote:
+> From: Manivannan Sadhasivam <mani@kernel.org>
 > 
-> With GCC the problem was not spotted because libgcc unwinder does
-> not require the .eh_frame_hdr section to be present.
+> Hello,
 > 
-> [...]
+> This patchset adds CTS/RTS gpio support to STM32 UART controller.
+> Eventhough the UART controller supports using dedicated CTS/RTS gpios,
+> sometimes we need to use different set of gpios for flow control.
+> 
+> This is necessary for the upcoming STM32MP1 based board called Stinger96
+> IoT-Box. On that board, a bluetooth chip is connected to one of the UART
+> controller but the CTS/RTS lines got swapped mistakenly. So this patchset
+> serves as a workaround for that hardware bug and also supports the
+> usecase of using any gpio for CTS/RTS functionality. As per the sugggestion
+> provided by Andy for v1, I've now switched to mctrl_gpio driver.
+> 
+> This patchset has been validated with Stinger96 IoT-Box connected to Murata
+> WiFi-BT combo chip.
+> 
 
-Applied to arm64 (for-next/vdso), thanks!
+Are you planning to take this series for 5.8?
 
-[1/1] arm64: vdso: Add --eh-frame-hdr to ldflags
-      https://git.kernel.org/arm64/c/7e9f5e6629f6
+Thanks,
+Mani
 
-Cheers,
--- 
-Will
-
-https://fixes.arm64.dev
-https://next.arm64.dev
-https://will.arm64.dev
+> Thanks,
+> Mani
+> 
+> Changes in v3:
+> 
+> * Added Andy's reviewed-by tag
+> * Fixed minor issues spotted by Fabrice
+> 
+> Changes in v2:
+> 
+> As per the review by Andy:
+> 
+> * Switched to mctrl_gpio driver instead of using custom CTS/RTS
+>   implementation
+> * Removed the use of software flow control terminology.
+> 
+> Manivannan Sadhasivam (2):
+>   dt-bindings: serial: Document CTS/RTS gpios in STM32 UART
+>   tty: serial: Add modem control gpio support for STM32 UART
+> 
+>  .../bindings/serial/st,stm32-uart.yaml        | 14 +++++
+>  drivers/tty/serial/Kconfig                    |  1 +
+>  drivers/tty/serial/stm32-usart.c              | 53 ++++++++++++++++++-
+>  drivers/tty/serial/stm32-usart.h              |  1 +
+>  4 files changed, 67 insertions(+), 2 deletions(-)
+> 
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
