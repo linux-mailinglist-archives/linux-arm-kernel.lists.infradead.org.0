@@ -2,86 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94AC61C9D0D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 23:15:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EAB8B1C9D7F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 23:38:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rdqIr8y6aRthpC9WUXYJFCjbqvx7/nJxaDzIzRBl5NE=; b=t8OUk7glzVzdef
-	n6HQSCKF562fctzn0/opKqKR+9fl4UXVfQP2/yIg9npmA1dQ8bbHRX+jqt4LwKkOfQ/MFNAlUM6Zu
-	DMnAu31CCnGLQaKMZD1OlQRJS0M6rdi/Onlh0tIEoW2orwtPjSY6aCmaUfbJ45uwnaXMf9TrohZ3I
-	OtVCnG7PnbizRFMKIg7OPMBfgC8vwE7GdA+S5Wp65+q2JHuY8M+KC2HnwyJwM/DvPuwgZPbmNJtYY
-	nTCVo3TTAx3oSbbKxjrUw3uR7lfjui7vIvDToxDKziSyPXfKUeVnYDLenp75ayghyQOxtmCqkV2uH
-	UAlLPwhV+WLKLA+FacoQ==;
+	List-Owner; bh=d/+R7CY4vyIaRyurMKmLekxZcDl/hhJfrjm6JUXjoMc=; b=JLb/W1e8sqeWna
+	Ofmu54PkbGvK+uWhj7TrTtRLT2BtwgV78kgM45n542NwQzojHRFgel9TWk4dGiYAllkfqU0mzpOlj
+	YS8zi99bsTQhRaeA5YV1N2NWURAISeqPFi40MO8BCyUWietJwgSSTiOxZJO3PhAHLtI+Yi9/GDCLI
+	wZQesoxe+gdhbe0Jm+DDU7PouRY6QRvWuIhVOMIhtQVnfR7Rdttnry6TD5b3Prl1YXL0CrnZsJpJ9
+	f4JUPBpZMvXCjBfXeoC5BFZle7YN5j7DCWzYPPd6kpcelyphh4Jarmi35fux06ybq/+BVTv1v/rI+
+	ciaXJuayQ20J9qDGeqig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWnrV-00068S-51; Thu, 07 May 2020 21:15:21 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1jWoDT-0005TD-1V; Thu, 07 May 2020 21:38:03 +0000
+Received: from mout.kundenserver.de ([212.227.126.130])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWnr9-00064m-Pp; Thu, 07 May 2020 21:15:01 +0000
-Received: by mail-ed1-x542.google.com with SMTP id p16so6662644edm.10;
- Thu, 07 May 2020 14:14:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dlDs+U3XxwFlGFdtHF+fukVcWtwSF1Z0OgPl62MgGJM=;
- b=jDdQCSJovln1Lf/24UzvqlU8zkkJWIfjYA8K+reeYoaXMDZLRywoTaRrYgEansIOVu
- xLDFmXjMpJywubKmEutMQlk4l18GDY8473pkQf8vSB05ajTGkQ8G/n2IHySx0L1iIo5Q
- XSoSoDy4G3w6Sijg9QV3RwtwbIXO8y9Reeyw3HCX7C8Okrcv4LaDY/c+pOS31n72xoax
- vyXE8BHk9Ft8OGqHdtspBUDb0OvZVedrRZVkgbIdCSDZWf+808WZYW1fZYiLQM+IC22v
- 30a+DwGTvsExUQsCWFmykcnHJsdKApvvUMcuwdHbO56L6qD2+mRguIIIGqazyKBHdKip
- nuSA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dlDs+U3XxwFlGFdtHF+fukVcWtwSF1Z0OgPl62MgGJM=;
- b=QLH/gqzoHDS4qsF5tNBR66LKpdZeZ6ow6TTJ7y24Q5PvvrHAND77YytxKpIIlEfSzA
- 13xJ4uMGGChT4/6JTIz1zrMDKHYWYXJ2kvXWa6fjTVLMZmU/ZkgGA/NCaZYD2Sze4B5k
- tyap1pqV/LVfjupZkZRSAoDfIrMt9n4d9OrnT31P+vRU5PUDu734RAc1BrxlUaAqedOh
- aodC6wusnFyZTVKdEEuJnAydES+OipV4aMnnq1Yj6iIsoLE1c+FZq4EQio33dzhA986Z
- 2OljsYz1sI8M36JacAL2bPrU1LF6sB4GBzr3Tz1UdheyBORYBySDx4W2PpVZ73Rcb4aO
- L+iw==
-X-Gm-Message-State: AGi0PubVDeH4DH0QnTjPZabTzz3iOE18AssguNYbBS93X/+mjQJ0IUbO
- YIkxOl6T3TU8+T9OQENbWR/Ji1hATzmb6adibZoIwqYX
-X-Google-Smtp-Source: APiQypKEh0NTeD0wH+GLzSZXKy7BF/ZjCae+PeiLcsewYN+o1b/IW2FRBmqOJLsZfWNktV5E+osIzub72f9+pPe6WZE=
-X-Received: by 2002:a50:a985:: with SMTP id n5mr13773610edc.338.1588886097684; 
- Thu, 07 May 2020 14:14:57 -0700 (PDT)
+ id 1jWoDJ-0005Sk-Il
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 21:37:55 +0000
+Received: from mail-qv1-f54.google.com ([209.85.219.54]) by
+ mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mum2d-1jG6H73RIJ-00rr4R for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 07 May 2020 23:37:51 +0200
+Received: by mail-qv1-f54.google.com with SMTP id ck5so3452819qvb.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 May 2020 14:37:50 -0700 (PDT)
+X-Gm-Message-State: AGi0Pub+SYGIGSVhSen1l2wWLJ67eDSnKmfmKAMfMQaARE9lS3ZpZCby
+ lJQpfPxScpdUWIiBCDNSF0b09Eg/jck9ORd19SA=
+X-Google-Smtp-Source: APiQypIy0ivVXkCT3c5B4I5EgvFGLWa7J/9f8YYkIpCwUCnJWSFZ90o0xiJTmB7TdUw0mxevxdV5Wmq5dREViYtj/Ks=
+X-Received: by 2002:ad4:4d50:: with SMTP id m16mr15688068qvm.222.1588887469634; 
+ Thu, 07 May 2020 14:37:49 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200503222805.2668941-1-martin.blumenstingl@googlemail.com>
- <CAPDyKFrY0ApUCNL4gVHRc2FRcYaS0PKr_P4a18RUZHxcVceVWg@mail.gmail.com>
-In-Reply-To: <CAPDyKFrY0ApUCNL4gVHRc2FRcYaS0PKr_P4a18RUZHxcVceVWg@mail.gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Thu, 7 May 2020 23:14:46 +0200
-Message-ID: <CAFBinCAhLiunUvw+BAHnv3XVmmU=Wxs1i=WLAAFL5=Hn0RPOvQ@mail.gmail.com>
-Subject: Re: [PATCH] mmc: meson-mx-sdio: trigger a soft reset after a timeout
- or CRC error
-To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <CAK8P3a1m-zmiTx0_KJb-9PTW0iK+Zkh10gKsaBzge0OJALBFmQ@mail.gmail.com>
+ <20200504165711.5621-1-clay@daemons.net>
+ <f07c695b-5537-41bf-e4f8-0d8012532f64@ti.com>
+ <20200506065105.GA3226@arctic-shiba-lx>
+ <1654101f-9dd7-2e10-7344-0d08e32bc309@ti.com>
+In-Reply-To: <1654101f-9dd7-2e10-7344-0d08e32bc309@ti.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 7 May 2020 23:37:32 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a07z=kauDKVJzroHyOZ1ZSqpqZA4X69XJ5QCQ4c6JO_pg@mail.gmail.com>
+Message-ID: <CAK8P3a07z=kauDKVJzroHyOZ1ZSqpqZA4X69XJ5QCQ4c6JO_pg@mail.gmail.com>
+Subject: Re: [PATCH v2] net: ethernet: ti: Remove TI_CPTS_MOD workaround
+To: Grygorii Strashko <grygorii.strashko@ti.com>
+X-Provags-ID: V03:K1:YHfIP6cWUwPnO2ZZvy1RotxY9OsfBFD0f9Q7RDxsp1WM1jGc/My
+ AdPhHj1xKzvVdk+CJmwgSyAaDlP5FtfMYFd/U5BkSd4vyKnKe+8KRZ5r0AWQcxQ7MTItT/8
+ k80k4eakgRCDnCV4MWTgnTbnSu4gkrF4EJldQFeSzsTXlF81LeYOsDCI6BK5YvwVNtbEsV3
+ U51r2veDJvwaXcx7/0AxA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:i9f3dfQr+oY=:GvnBti41Txiw1IASn6IIzV
+ fOyh5Vvvv+/rC+cQ7diAbcdV8PjSUcNHQkC60OozC+pHzzo7gzQMn6j2uFgv/E65YFSbeiZBF
+ ylFioqYkMMmLx855ENy82CqmVCNetafHcvE7BREnOnuUIvXKH97+HXyxu8aOtcB6JJvPCOJHk
+ HuEdMVw2i+LxFDqbfU0fNRtK37325Ypxf8QdTCJYcuo6Uu69iBYhLWg8AW7RWNyjJLrcE4Rvp
+ CmKJO/UignkUqNpj+g8snViV0kOKRMjwFmg5u8EV62OIYbTioEdXck6IZiaYmlUmkOfNloOj+
+ 5MzBiGKSUwBhlS9TTiRUC3gu8EsN0J+sI2AapymPjCA9xjqW9BzrMGKH1bWxzbBwzGv3lbPtv
+ nbGYdnc5wiREwFHV+UC/sXiZNEHkD8zM9F0iXcGRM59KX7/ZSu9ESsU3+7Q4VaowKWYIkjWom
+ SLZTuPRbCpPwiAesCB0CYwW8yxpbXIUPacNMenlHf83X6pK9Yf2AkVv9XaMB3+NsDytd74/8z
+ cATCclqD+l9gCYgqh7u+4f9Nbx/Z8wsFPXgI8FqlnKxIMgTMbPux3uhAQhbYuJn6Otv7No+/T
+ GmSRO4+1NQx5rN8ECa3r5zpoL1gGXI7gsbhsuXjQ0VjMws3cPLFvssF/clmgPcewCBnGR13CE
+ KvkLO//RRQD4o3na2w001bPbrZKpY8pspnxE1+9kM/IJDiisG6Zs1Qa7dkcsimastHAO+DAbt
+ cy4cdc5Ap0qDGpQx/GzJHshqH6OdylPXaZ7NzgobbUJK1Shzw0RPnuwcZaybibBehcvuB8vlr
+ 8y0VFxGsQcxiIGAq97rXDrtiBBC/rOg9c5dJuySyGEa8NFVB34=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_141459_834668_0EF89F9D 
-X-CRM114-Status: GOOD (  19.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_143753_914664_C9F1DE9D 
+X-CRM114-Status: GOOD (  22.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ no trust [212.227.126.130 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.130 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,85 +91,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+Cc: Tony Lindgren <tony@atomide.com>, kbuild test robot <lkp@intel.com>,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Murali Karicheri <m-karicheri2@ti.com>,
+ Jesper Dangaard Brouer <brouer@redhat.com>, Jakub Kicinski <kuba@kernel.org>,
+ Kees Cook <keescook@chromium.org>, Richard Cochran <richardcochran@gmail.com>,
+ Santosh Shilimkar <santosh.shilimkar@oracle.com>,
+ Clay McClure <clay@daemons.net>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-omap <linux-omap@vger.kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Tobias Baumann <017623705678@o2online.de>
+ Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>, Andrew Jeffery <andrew@aj.id.au>,
+ Pankaj Bharadiya <pankaj.laxminarayan.bharadiya@intel.com>,
+ Ilias Apalodimas <ilias.apalodimas@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Networking <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ulf,
+On Wed, May 6, 2020 at 10:57 PM Grygorii Strashko
+<grygorii.strashko@ti.com> wrote:
+> On 06/05/2020 09:51, Clay McClure wrote:
+> > On Tue, May 05, 2020 at 10:41:26AM +0300, Grygorii Strashko wrote:
 
-On Thu, May 7, 2020 at 11:29 AM Ulf Hansson <ulf.hansson@linaro.org> wrote:
->
-> On Mon, 4 May 2020 at 00:28, Martin Blumenstingl
-> <martin.blumenstingl@googlemail.com> wrote:
-> >
-> > The vendor driver (from the 3.10 kernel) triggers a soft reset every
-> > time before starting a new command. While this fixes a problem where
-> > SDIO cards are not detected at all (because all commands simply
-> > timed out) this hurts SD card read performance a bit (in my tests
-> > between 10% to 20%).
-> >
-> > Trigger a soft reset after we got a CRC error or if the previous command
-> > timed out (just like the vendor driver from the same 3.10 kernel for the
-> > newer SDHC controller IP does). This fixes detection of SDIO cards and
-> > doesn't hurt SD card read performance at the same time.
-> >
-> > With this patch the initialization of an RTL8723BS SDIO card looks like
-> > this:
-> >   req done (CMD52): -110: 00000000 00000000 00000000 00000000
-> >   clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 21 width 1 timing 0
-> >   starting CMD0 arg 00000000 flags 000000c0
-> >   req done (CMD0): 0: 00000000 00000000 00000000 00000000
-> >   clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 0
-> >   starting CMD8 arg 000001aa flags 000002f5
-> >   req done (CMD8): -110: 00000000 00000000 00000000 00000000
-> >   starting CMD5 arg 00000000 flags 000002e1
-> >   req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
-> >   starting CMD5 arg 00200000 flags 000002e1
-> >   req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
-> >   starting CMD3 arg 00000000 flags 00000075
-> >   req done (CMD3): 0: 00010000 00000000 00000000 00000000
-> >   starting CMD7 arg 00010000 flags 00000015
-> >   req done (CMD7): 0: 00001e00 00000000 00000000 00000000
-> >   starting CMD52 arg 00000000 flags 00000195
-> >   req done (CMD52): 0: 00001032 00000000 00000000 00000000
-> >   [... more CMD52 omitted ...]
-> >   clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
-> >   clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
-> >   starting CMD52 arg 00000e00 flags 00000195
-> >   req done (CMD52): 0: 00001000 00000000 00000000 00000000
-> >   starting CMD52 arg 80000e02 flags 00000195
-> >   req done (CMD52): 0: 00001002 00000000 00000000 00000000
-> >   clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 4 timing 2
-> >   starting CMD52 arg 00020000 flags 00000195
-> >   req done (CMD52): 0: 00001007 00000000 00000000 00000000
-> >   [... more CMD52 omitted ...]
-> >   new high speed SDIO card at address 0001
-> >
-> > Fixes: ed80a13bb4c4c9 ("mmc: meson-mx-sdio: Add a driver for the Amlogic Meson8 and Meson8b SoCs")
-> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> > ---
-> > Ulf, I consider this non-critical because as long as the meson-mx-sdhc
-> > driver is not merged we only have one MMC driver for these platforms.
-> > I don't know anybody to prefer SDIO wifi over SD card access, so this
-> > can go into -next (in my option at least).
 > >
 >
-> Alright, applied for next, thanks!
-thank you for taking this patch!
+> Ok. After some thinking and hence you commit b6d49cab44b5 ("net: Make PTP-specific drivers depend on PTP_1588_CLOCK")
+> seems was merged in net (not net-next)
+> 1) for-net: defconfig changes can be separated to fix build fail, but add change for multi_v7_defconfig
+> 2) for-net-next: rest of changes plus below diff on top of it
+>
+> diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
+> index f3f8bb724294..62f809b67469 100644
+> --- a/drivers/net/ethernet/ti/Kconfig
+> +++ b/drivers/net/ethernet/ti/Kconfig
+> @@ -49,6 +49,7 @@ config TI_CPSW_PHY_SEL
+>   config TI_CPSW
+>          tristate "TI CPSW Switch Support"
+>          depends on ARCH_DAVINCI || ARCH_OMAP2PLUS || COMPILE_TEST
+> +       depends on TI_CPTS || !TI_CPTS
+>          select TI_DAVINCI_MDIO
+>          select MFD_SYSCON
+>          select PAGE_POOL
+> @@ -64,6 +65,7 @@ config TI_CPSW_SWITCHDEV
+>          tristate "TI CPSW Switch Support with switchdev"
+>          depends on ARCH_DAVINCI || ARCH_OMAP2PLUS || COMPILE_TEST
+>          depends on NET_SWITCHDEV
+> +       depends on TI_CPTS || !TI_CPTS
+>          select PAGE_POOL
+>          select TI_DAVINCI_MDIO
+>          select MFD_SYSCON
+> @@ -78,11 +80,9 @@ config TI_CPSW_SWITCHDEV
+>
+>   config TI_CPTS
+>          tristate "TI Common Platform Time Sync (CPTS) Support"
+> -       depends on TI_CPSW || TI_KEYSTONE_NETCP || TI_CPSW_SWITCHDEV || COMPILE_TEST
+> +       depends on ARCH_OMAP2PLUS || ARCH_KEYSTONE || COMPILE_TEST
+>          depends on COMMON_CLK
+>          depends on PTP_1588_CLOCK
+> -       default y if TI_CPSW=y || TI_KEYSTONE_NETCP=y || TI_CPSW_SWITCHDEV=y
+> -       default m
+>          ---help---
+>            This driver supports the Common Platform Time Sync unit of
+>            the CPSW Ethernet Switch and Keystone 2 1g/10g Switch Subsystem.
+> @@ -109,6 +109,7 @@ config TI_KEYSTONE_NETCP
+>          select TI_DAVINCI_MDIO
+>          depends on OF
+>          depends on KEYSTONE_NAVIGATOR_DMA && KEYSTONE_NAVIGATOR_QMSS
+> +       depends on TI_CPTS || !TI_CPTS
+>          ---help---
+>            This driver supports TI's Keystone NETCP Core.
+>
+> It should properly resolve "M" vs "Y" dependencies between
+>   PTP_1588_CLOCK->TI_CPTS->TI_CPSW
+>
+> On thing, TI_CPTS can be selected without TI_CPSW, but it's probably ok.
 
-I received a confirmation (off-list) saying that this patch works as it should.
-Tobias was not Cc'ed on the original mail so he gave me to permission
-(again, off-list - he's Cc'ed now) to add his:
-Tested-by: Tobias Baumann <017623705678@o2online.de>
+I think that solution is reasonable. I had come up with a different
+for when I ran
+into the build failure, but I like yours better. Here is my patch, for
+reference:
 
 
-Martin
+commit 94233d78655876f735189890eb40ef33c49e8523 (HEAD -> randconfig)
+Author: Arnd Bergmann <arnd@arndb.de>
+Date:   Thu May 7 21:25:59 2020 +0200
+
+    cpsw: fix cpts link failure
+
+    When CONFIG_PTP_1588_CLOCK is a loadable module, trying to build cpts
+    support into the built-in cpsw driver results in a link error:
+
+    arm-linux-gnueabi-ld: drivers/net/ethernet/ti/cpsw.o: in function
+`cpsw_probe':
+    cpsw.c:(.text+0x918): undefined reference to `cpts_release'
+    arm-linux-gnueabi-ld: drivers/net/ethernet/ti/cpsw.o: in function
+`cpsw_remove':
+    cpsw.c:(.text+0x1048): undefined reference to `cpts_release'
+    arm-linux-gnueabi-ld: drivers/net/ethernet/ti/cpsw.o: in function
+`cpsw_rx_handler':
+    cpsw.c:(.text+0x12c0): undefined reference to `cpts_rx_timestamp'
+    arm-linux-gnueabi-ld: drivers/net/ethernet/ti/cpsw.o: in function
+`cpsw_ndo_open':
+
+    Add a dependency for CPTS that only allows it to be enabled when
+    doing so does not cause link-time probles.
+
+    Fixes: b6d49cab44b5 ("net: Make PTP-specific drivers depend on
+PTP_1588_CLOCK")
+    Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+
+diff --git a/drivers/net/ethernet/ti/Kconfig b/drivers/net/ethernet/ti/Kconfig
+index 4ab35ce7b451..571caf4192c5 100644
+--- a/drivers/net/ethernet/ti/Kconfig
++++ b/drivers/net/ethernet/ti/Kconfig
+@@ -79,6 +79,9 @@ config TI_CPSW_SWITCHDEV
+ config TI_CPTS
+        bool "TI Common Platform Time Sync (CPTS) Support"
+        depends on TI_CPSW || TI_KEYSTONE_NETCP || TI_CPSW_SWITCHDEV
+|| COMPILE_TEST
++       depends on TI_CPSW=n || TI_CPSW=PTP_1588_CLOCK || PTP_1588_CLOCK=y
++       depends on TI_KEYSTONE_NETCP=n ||
+TI_KEYSTONE_NETCP=PTP_1588_CLOCK || PTP_1588_CLOCK=y
++       depends on TI_CPSW_SWITCHDEV=n ||
+TI_CPSW_SWITCHDEV=PTP_1588_CLOCK || PTP_1588_CLOCK=y
+        depends on COMMON_CLK
+        depends on POSIX_TIMERS
+        ---help---
 
 _______________________________________________
 linux-arm-kernel mailing list
