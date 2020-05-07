@@ -2,67 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA3F71C93B6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:08:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5967F1C93B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:08:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=HCD8AzCcWdG00hnMAhdr68o8qNWBMHpPO4namWANBOY=; b=IWqMyAMkpYRHFj
-	RbjrgqcPYe456a83CcwATtHO38cw57Ra1w3AIwupELT3512YgwpKsxSWSg5HGCCau4P4GMtpuViSR
-	Imp4uEqf+Okl+pg8I+rsppOxJPIzXUh4xnRDejjgEoMfSlFx7BerkqoLO/c5SwV9X1GcuRHty+cKH
-	D1FpPb8hOb1GQnxU2t0o2BxsBUlToaMGcB5OhzR0Wk+927dv6xquJctM9CUAh3iTKE08JyaljYilu
-	+O9SEsy0GHYCFOpUcflabTgElxzi4AMiXAytbWwV3/2ArhHtNtbYwkQYSbmOiPc0BMkIcxsKVsTNv
-	uxTHv2+rzVo7t9v/lAMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9TTn2aPjJR7w1MzSYkQMt0WufsCPuhLa1k23BI1AH6I=; b=q/f4UmE/AQROCC
+	ELOordTALtDSuFilLLt60RT90oSyyGObX3EznDYoDl0VDofK9CfZWdmBF/Js1hbj0WXgtudEIbiMT
+	kvkHae8NodwWTFGxuwOuZp4o4AaAoL7S0GHF/E/4nk1NlcxIlTSFZDqPfi7lNqls0AAR7Bt4UVNrB
+	t4OPGyUsLioPeUQNKn18mcN1B7eh34wYfVF28GXSFpSZz8vi29gurmPcIfO2BZj63E8lFHRQX7obp
+	SiX2cViMw1Y1WItGqnz3dIfdU7Li6dgUu4O9Rdxsy3d0QrpyRTwiUQqC4itJo7XMLkjVMhyv7l5e0
+	lAJJJmUTGRt8HToxTQLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWi8S-0004XG-W8; Thu, 07 May 2020 15:08:29 +0000
-Received: from mail-out.m-online.net ([212.18.0.10])
+	id 1jWi8g-0004kt-JD; Thu, 07 May 2020 15:08:42 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWi7g-0004LQ-7q
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:07:41 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 49Hxf1571Lz1rtNH;
- Thu,  7 May 2020 17:07:37 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 49Hxf14Lq0z1qtwM;
- Thu,  7 May 2020 17:07:37 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id aNUxGlV124a5; Thu,  7 May 2020 17:07:36 +0200 (CEST)
-X-Auth-Info: iWDVgyW8TVCuBeXnoCZ5Bm1lCGckYWQwVlFIl94Lnow=
-Received: from desktop.lan (ip-86-49-35-8.net.upcbroadband.cz [86.49.35.8])
+ id 1jWi80-0004NL-LY
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:08:02 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Thu,  7 May 2020 17:07:36 +0200 (CEST)
-From: Marek Vasut <marex@denx.de>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] [RFC] genirq: Check irq_data_get_irq_chip() return value
- before use
-Date: Thu,  7 May 2020 17:07:29 +0200
-Message-Id: <20200507150729.244468-1-marex@denx.de>
-X-Mailer: git-send-email 2.25.1
-MIME-Version: 1.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 1E33420857;
+ Thu,  7 May 2020 15:08:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588864080;
+ bh=I6CP1bbqm86yiKkH4SCLmCHIahi+tjXLVQAe829l6ts=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=qXs0fLbLR4ftwE2PDlpaYuWKnAFnBUT/tGw7nW0oEbCBHnZ7Jye92XoXAuVqZ/k+i
+ kr6s5pN6sUu149ODm7Ctg89mBkUuCKvi5CadYAo8+yHIqwUxRSgqqLWmSvAquvXh4H
+ WPete+mOqVmAK8AV3VbBjIIdCiMJcyeiH4gtFot8=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=wait-a-minute.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jWi7y-00AJYS-ET; Thu, 07 May 2020 16:07:58 +0100
+Date: Thu, 07 May 2020 16:07:54 +0100
+Message-ID: <87imh72379.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: David Brazdil <dbrazdil@google.com>
+Subject: Re: [PATCH 05/15] arm64: kvm: Build hyp-entry.S separately for
+ VHE/nVHE
+In-Reply-To: <20200430144831.59194-6-dbrazdil@google.com>
+References: <20200430144831.59194-1-dbrazdil@google.com>
+ <20200430144831.59194-6-dbrazdil@google.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: dbrazdil@google.com, catalin.marinas@arm.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_080740_424834_4B30C2F1 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_080800_747982_43793F09 
+X-CRM114-Status: GOOD (  34.21  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.18.0.10 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [212.18.0.10 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,59 +94,357 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Marc Zyngier <marc.zyngier@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Stephen Boyd <sboyd@codeaurora.org>,
- Thomas Gleixner <tglx@linutronix.de>
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The irq_data_get_irq_chip() can return NULL. If the kernel accesses
-chip->irq_get_irqchip_state without checking whether chip is valid,
-we get a crash. Fix this by checking whether chip is not NULL before
-using it.
+On Thu, 30 Apr 2020 15:48:21 +0100,
+David Brazdil <dbrazdil@google.com> wrote:
+> 
+> This patch is part of a series which builds KVM's non-VHE hyp code separately
+> from VHE and the rest of the kernel.
 
-Fixes: 1b7047edfcfb ("genirq: Allow the irqchip state of an IRQ to be save/restored")
-Signed-off-by: Marek Vasut <marex@denx.de>
-Cc: Linus Walleij <linus.walleij@linaro.org>
-Cc: Marc Zyngier <marc.zyngier@arm.com>
-Cc: Stephen Boyd <sboyd@codeaurora.org>
-Cc: Thomas Gleixner <tglx@linutronix.de>
-To: linux-arm-kernel@lists.infradead.org
----
-NOTE: I don't know whether this is a correct fix. Maybe the
-      irq_data_get_irq_chip() should never return NULL, and
-      I have some other issue?
----
- kernel/irq/manage.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+This sentence should be part of your cover letter, and not in the 5th
+patch.
 
-diff --git a/kernel/irq/manage.c b/kernel/irq/manage.c
-index fe40c658f86f..509128ab21ea 100644
---- a/kernel/irq/manage.c
-+++ b/kernel/irq/manage.c
-@@ -2663,7 +2663,7 @@ int __irq_get_irqchip_state(struct irq_data *data, enum irqchip_irq_state which,
- 
- 	do {
- 		chip = irq_data_get_irq_chip(data);
--		if (chip->irq_get_irqchip_state)
-+		if (chip && chip->irq_get_irqchip_state)
- 			break;
- #ifdef CONFIG_IRQ_DOMAIN_HIERARCHY
- 		data = data->parent_data;
-@@ -2740,7 +2740,7 @@ int irq_set_irqchip_state(unsigned int irq, enum irqchip_irq_state which,
- 
- 	do {
- 		chip = irq_data_get_irq_chip(data);
--		if (chip->irq_set_irqchip_state)
-+		if (chip && chip->irq_set_irqchip_state)
- 			break;
- #ifdef CONFIG_IRQ_DOMAIN_HIERARCHY
- 		data = data->parent_data;
+> 
+> hyp-entry.S contains implementation of KVM hyp vectors. This code is mostly
+> shared between VHE/nVHE, therefore compile it under both VHE and nVHE build
+> rules, with small differences hidden behind '#ifdef __HYPERVISOR__'. These are:
+>   * only nVHE should handle host HVCs, VHE will now panic,
+
+That's not true. VHE does handle HVCs from the guest. If you make VHE
+panic on guest exit, I'll come after you! ;-)
+
+>   * only nVHE needs kvm_hcall_table, so move host_hypcall.c to nvhe/,
+>   * __smccc_workaround_1_smc is not needed by nVHE, only cpu_errata.c in
+>     kernel proper.
+
+How comes? You certainly need to be able to use the generated code,
+don't you? Or do you actually mean that the assembly code doesn't need
+to live in the file that contains the vectors themselves (which I'd
+agree with)?
+
+> 
+> Adjust code which selects which KVM hyp vecs to install to choose the correct
+> VHE/nVHE symbol.
+> 
+> Signed-off-by: David Brazdil <dbrazdil@google.com>
+> ---
+>  arch/arm64/include/asm/kvm_asm.h              |  7 +++++
+>  arch/arm64/include/asm/kvm_mmu.h              | 13 +++++----
+>  arch/arm64/include/asm/mmu.h                  |  7 -----
+>  arch/arm64/kernel/cpu_errata.c                |  2 +-
+>  arch/arm64/kernel/image-vars.h                | 28 +++++++++++++++++++
+>  arch/arm64/kvm/hyp/Makefile                   |  2 +-
+>  arch/arm64/kvm/hyp/hyp-entry.S                | 27 ++++++++++++------
+>  arch/arm64/kvm/hyp/nvhe/Makefile              |  2 +-
+>  .../arm64/kvm/hyp/{ => nvhe}/host_hypercall.c |  0
+>  arch/arm64/kvm/va_layout.c                    |  2 +-
+>  10 files changed, 65 insertions(+), 25 deletions(-)
+>  rename arch/arm64/kvm/hyp/{ => nvhe}/host_hypercall.c (100%)
+> 
+> diff --git a/arch/arm64/include/asm/kvm_asm.h b/arch/arm64/include/asm/kvm_asm.h
+> index 99ab204519ca..cdaf3df8085d 100644
+> --- a/arch/arm64/include/asm/kvm_asm.h
+> +++ b/arch/arm64/include/asm/kvm_asm.h
+> @@ -71,6 +71,13 @@ extern char __kvm_hyp_init[];
+>  extern char __kvm_hyp_init_end[];
+>  
+>  extern char __kvm_hyp_vector[];
+> +extern char kvm_nvhe_sym(__kvm_hyp_vector)[];
+
+This is becoming pretty ugly. I'd rather we have a helper that emits
+the declaration for both symbols. Or something.
+
+> +
+> +#ifdef CONFIG_KVM_INDIRECT_VECTORS
+> +extern char __bp_harden_hyp_vecs[];
+> +extern char kvm_nvhe_sym(__bp_harden_hyp_vecs)[];
+> +extern atomic_t arm64_el2_vector_last_slot;
+> +#endif
+>  
+>  extern void __kvm_flush_vm_context(void);
+>  extern void __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa);
+> diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
+> index 30b0e8d6b895..0a5fa033422c 100644
+> --- a/arch/arm64/include/asm/kvm_mmu.h
+> +++ b/arch/arm64/include/asm/kvm_mmu.h
+> @@ -468,7 +468,7 @@ static inline int kvm_write_guest_lock(struct kvm *kvm, gpa_t gpa,
+>   * VHE, as we don't have hypervisor-specific mappings. If the system
+>   * is VHE and yet selects this capability, it will be ignored.
+>   */
+> -#include <asm/mmu.h>
+> +#include <asm/kvm_asm.h>
+>  
+>  extern void *__kvm_bp_vect_base;
+>  extern int __kvm_harden_el2_vector_slot;
+> @@ -477,11 +477,11 @@ extern int __kvm_harden_el2_vector_slot;
+>  static inline void *kvm_get_hyp_vector(void)
+>  {
+>  	struct bp_hardening_data *data = arm64_get_bp_hardening_data();
+> -	void *vect = kern_hyp_va(kvm_ksym_ref(__kvm_hyp_vector));
+> +	void *vect = kern_hyp_va(kvm_hyp_ref(__kvm_hyp_vector));
+
+I find it pretty annoying (again) that I have to know where a symbol
+lives (kernel or nVHE-EL2) to know which kvm_*_ref() helper to use.
+Maybe there is no good solution to this, but still...
+
+>  	int slot = -1;
+>  
+>  	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR) && data->fn) {
+> -		vect = kern_hyp_va(kvm_ksym_ref(__bp_harden_hyp_vecs));
+> +		vect = kern_hyp_va(kvm_hyp_ref(__bp_harden_hyp_vecs));
+>  		slot = data->hyp_vectors_slot;
+>  	}
+>  
+> @@ -510,12 +510,13 @@ static inline int kvm_map_vectors(void)
+>  	 *  HBP +  HEL2 -> use hardened vertors and use exec mapping
+>  	 */
+>  	if (cpus_have_const_cap(ARM64_HARDEN_BRANCH_PREDICTOR)) {
+> -		__kvm_bp_vect_base = kvm_ksym_ref(__bp_harden_hyp_vecs);
+> +		__kvm_bp_vect_base = kvm_hyp_ref(__bp_harden_hyp_vecs);
+>  		__kvm_bp_vect_base = kern_hyp_va(__kvm_bp_vect_base);
+>  	}
+>  
+>  	if (cpus_have_const_cap(ARM64_HARDEN_EL2_VECTORS)) {
+> -		phys_addr_t vect_pa = __pa_symbol(__bp_harden_hyp_vecs);
+> +		phys_addr_t vect_pa =
+> +			__pa_symbol(kvm_nvhe_sym(__bp_harden_hyp_vecs));
+
+Please keep the assignment on a single line (and screw checkpatch).
+
+>  		unsigned long size = __BP_HARDEN_HYP_VECS_SZ;
+>  
+>  		/*
+> @@ -534,7 +535,7 @@ static inline int kvm_map_vectors(void)
+>  #else
+>  static inline void *kvm_get_hyp_vector(void)
+>  {
+> -	return kern_hyp_va(kvm_ksym_ref(__kvm_hyp_vector));
+> +	return kern_hyp_va(kvm_hyp_ref(__kvm_hyp_vector));
+>  }
+>  
+>  static inline int kvm_map_vectors(void)
+> diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+> index 68140fdd89d6..4d913f6dd366 100644
+> --- a/arch/arm64/include/asm/mmu.h
+> +++ b/arch/arm64/include/asm/mmu.h
+> @@ -42,13 +42,6 @@ struct bp_hardening_data {
+>  	bp_hardening_cb_t	fn;
+>  };
+>  
+> -#if (defined(CONFIG_HARDEN_BRANCH_PREDICTOR) ||	\
+> -     defined(CONFIG_HARDEN_EL2_VECTORS))
+> -
+> -extern char __bp_harden_hyp_vecs[];
+> -extern atomic_t arm64_el2_vector_last_slot;
+> -#endif  /* CONFIG_HARDEN_BRANCH_PREDICTOR || CONFIG_HARDEN_EL2_VECTORS */
+> -
+>  #ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
+>  DECLARE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, bp_hardening_data);
+>  
+> diff --git a/arch/arm64/kernel/cpu_errata.c b/arch/arm64/kernel/cpu_errata.c
+> index a102321fc8a2..b4b41552c6df 100644
+> --- a/arch/arm64/kernel/cpu_errata.c
+> +++ b/arch/arm64/kernel/cpu_errata.c
+> @@ -117,7 +117,7 @@ DEFINE_PER_CPU_READ_MOSTLY(struct bp_hardening_data, bp_hardening_data);
+>  static void __copy_hyp_vect_bpi(int slot, const char *hyp_vecs_start,
+>  				const char *hyp_vecs_end)
+>  {
+> -	void *dst = lm_alias(__bp_harden_hyp_vecs + slot * SZ_2K);
+> +	void *dst = lm_alias(kvm_hyp_sym(__bp_harden_hyp_vecs) + slot * SZ_2K);
+>  	int i;
+>  
+>  	for (i = 0; i < SZ_2K; i += 0x80)
+> diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+> index 13850134fc28..59c53566eceb 100644
+> --- a/arch/arm64/kernel/image-vars.h
+> +++ b/arch/arm64/kernel/image-vars.h
+> @@ -61,6 +61,34 @@ __efistub__ctype		= _ctype;
+>   * memory mappings.
+>   */
+>  
+> +__hyp_text___guest_exit = __guest_exit;
+> +__hyp_text___kvm_enable_ssbs = __kvm_enable_ssbs;
+> +__hyp_text___kvm_flush_vm_context = __kvm_flush_vm_context;
+> +__hyp_text___kvm_get_mdcr_el2 = __kvm_get_mdcr_el2;
+> +__hyp_text___kvm_handle_stub_hvc = __kvm_handle_stub_hvc;
+> +__hyp_text___kvm_timer_set_cntvoff = __kvm_timer_set_cntvoff;
+> +__hyp_text___kvm_tlb_flush_local_vmid = __kvm_tlb_flush_local_vmid;
+> +__hyp_text___kvm_tlb_flush_vmid = __kvm_tlb_flush_vmid;
+> +__hyp_text___kvm_tlb_flush_vmid_ipa = __kvm_tlb_flush_vmid_ipa;
+> +__hyp_text___kvm_vcpu_run_nvhe = __kvm_vcpu_run_nvhe;
+> +__hyp_text___vgic_v3_get_ich_vtr_el2 = __vgic_v3_get_ich_vtr_el2;
+> +__hyp_text___vgic_v3_init_lrs = __vgic_v3_init_lrs;
+> +__hyp_text___vgic_v3_read_vmcr = __vgic_v3_read_vmcr;
+> +__hyp_text___vgic_v3_restore_aprs = __vgic_v3_restore_aprs;
+> +__hyp_text___vgic_v3_save_aprs = __vgic_v3_save_aprs;
+> +__hyp_text___vgic_v3_write_vmcr = __vgic_v3_write_vmcr;
+> +__hyp_text_abort_guest_exit_end = abort_guest_exit_end;
+> +__hyp_text_abort_guest_exit_start = abort_guest_exit_start;
+> +__hyp_text_arm64_enable_wa2_handling = arm64_enable_wa2_handling;
+> +__hyp_text_arm64_ssbd_callback_required = arm64_ssbd_callback_required;
+> +__hyp_text_hyp_panic = hyp_panic;
+> +__hyp_text_kimage_voffset = kimage_voffset;
+> +__hyp_text_kvm_host_data = kvm_host_data;
+> +__hyp_text_kvm_patch_vector_branch = kvm_patch_vector_branch;
+> +__hyp_text_kvm_update_va_mask = kvm_update_va_mask;
+> +__hyp_text_panic = panic;
+> +__hyp_text_physvirt_offset = physvirt_offset;
+> +
+
+Err... What on Earth is this? Why can't this be generated? one way or
+another? Safety is our goal ("But let's be realistic here" ;-), so
+having to manually maintain this symbol list is unlikely to work long
+term. And are all these symbols required at this stage in the series?
+
+>  #endif /* CONFIG_KVM */
+>  
+>  #endif /* __ARM64_KERNEL_IMAGE_VARS_H */
+> diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+> index 79bf822a484b..a6883f4fed9e 100644
+> --- a/arch/arm64/kvm/hyp/Makefile
+> +++ b/arch/arm64/kvm/hyp/Makefile
+> @@ -9,7 +9,7 @@ ccflags-y += -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
+>  obj-$(CONFIG_KVM) += vhe.o nvhe/
+>  
+>  vhe-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
+> -	 debug-sr.o entry.o switch.o fpsimd.o tlb.o host_hypercall.o hyp-entry.o
+> +	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
+>  
+>  # KVM code is run at a different exception code with a different map, so
+>  # compiler instrumentation that inserts callbacks or checks into the code may
+> diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+> index 1a51a0958504..5986e1d78d3f 100644
+> --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> @@ -36,12 +36,6 @@
+>  	ldr	lr, [sp], #16
+>  .endm
+>  
+> -/* kern_hyp_va(lm_alias(ksym)) */
+> -.macro ksym_hyp_va ksym, lm_offset
+> -	sub	\ksym, \ksym, \lm_offset
+> -	kern_hyp_va	\ksym
+> -.endm
+> -
+>  el1_sync:				// Guest trapped into EL2
+>  
+>  	mrs	x0, esr_el2
+> @@ -53,7 +47,15 @@ el1_sync:				// Guest trapped into EL2
+>  	mrs	x1, vttbr_el2		// If vttbr is valid, the guest
+>  	cbnz	x1, el1_hvc_guest	// called HVC
+>  
+> -	/* Here, we're pretty sure the host called HVC. */
+> +#ifdef __HYPERVISOR__
+
+nit: We may need a better symbol than __HYPERVISOR__.
+__nVHE_HYPERVISOR__, maybe?
+
+> +
+> +/* kern_hyp_va(lm_alias(ksym)) */
+> +.macro ksym_hyp_va ksym, lm_offset
+> +	sub	\ksym, \ksym, \lm_offset
+> +	kern_hyp_va	\ksym
+> +.endm
+> +
+> +	/* nVHE: Here, we're pretty sure the host called HVC. */
+>  	ldp	x0, x1, [sp], #16
+>  
+>  	/* Check for a stub HVC call */
+> @@ -107,6 +109,13 @@ el1_sync:				// Guest trapped into EL2
+>  	eret
+>  	sb
+>  
+> +#else /* __HYPERVISOR__ */
+> +
+> +	/* VHE: Guest called HVC but vttbr is not valid. */
+> +	b	__hyp_panic
+
+The comment doesn't quite describe the reality of this case. If
+VTTBR_EL2 is zero, you cannot run the guest at all, let alone have it
+to execute a HVC. Where are its S2 PTs? And it cannot come from the
+host either, as a HVC would go via the local EL vector.
+
+I honestly don't see how you can realistically reach this code. But
+maybe the whole point is to have a "catch the unexpected" branch.
+
+> +
+> +#endif /* __HYPERVISOR__ */
+> +
+>  el1_hvc_guest:
+>  	/*
+>  	 * Fastest possible path for ARM_SMCCC_ARCH_WORKAROUND_1.
+> @@ -354,6 +363,7 @@ SYM_CODE_END(__bp_harden_hyp_vecs)
+>  
+>  	.popsection
+>  
+> +#ifndef __HYPERVISOR__
+>  SYM_CODE_START(__smccc_workaround_1_smc)
+>  	esb
+>  	sub	sp, sp, #(8 * 4)
+> @@ -367,4 +377,5 @@ SYM_CODE_START(__smccc_workaround_1_smc)
+>  1:	.org __smccc_workaround_1_smc + __SMCCC_WORKAROUND_1_SMC_SZ
+>  	.org 1b
+>  SYM_CODE_END(__smccc_workaround_1_smc)
+> -#endif
+> +#endif /* __HYPERVISOR__ */
+
+Instead of wrapping this in yet another layer of ifdefs, how about
+moving it to a different object file altogether?
+
+> +#endif /* CONFIG_KVM_INDIRECT_VECTORS */
+> diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile b/arch/arm64/kvm/hyp/nvhe/Makefile
+> index 873d3ab0fd68..fa20b2723652 100644
+> --- a/arch/arm64/kvm/hyp/nvhe/Makefile
+> +++ b/arch/arm64/kvm/hyp/nvhe/Makefile
+> @@ -7,7 +7,7 @@ asflags-y := -D__HYPERVISOR__
+>  ccflags-y := -D__HYPERVISOR__ -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
+>  	     $(DISABLE_STACKLEAK_PLUGIN)
+>  
+> -obj-y :=
+> +obj-y := host_hypercall.o ../hyp-entry.o
+
+"The return of the vengeance of relative paths in KVM...". Oh well.
+
+>  
+>  obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
+>  extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
+> diff --git a/arch/arm64/kvm/hyp/host_hypercall.c b/arch/arm64/kvm/hyp/nvhe/host_hypercall.c
+> similarity index 100%
+> rename from arch/arm64/kvm/hyp/host_hypercall.c
+> rename to arch/arm64/kvm/hyp/nvhe/host_hypercall.c
+> diff --git a/arch/arm64/kvm/va_layout.c b/arch/arm64/kvm/va_layout.c
+> index a4f48c1ac28c..8d941d19085d 100644
+> --- a/arch/arm64/kvm/va_layout.c
+> +++ b/arch/arm64/kvm/va_layout.c
+> @@ -150,7 +150,7 @@ void kvm_patch_vector_branch(struct alt_instr *alt,
+>  	/*
+>  	 * Compute HYP VA by using the same computation as kern_hyp_va()
+>  	 */
+> -	addr = (uintptr_t)kvm_ksym_ref(__kvm_hyp_vector);
+> +	addr = (uintptr_t)kvm_hyp_ref(__kvm_hyp_vector);
+>  	addr &= va_mask;
+>  	addr |= tag_val << tag_lsb;
+>  
+> -- 
+> 2.26.1
+> 
+> 
+
+Thanks,
+
+	M.
+
 -- 
-2.25.1
-
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
