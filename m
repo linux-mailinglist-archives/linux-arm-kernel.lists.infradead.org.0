@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC0491C8E68
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:28:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 298D01C8EB7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:29:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tOuM+z3GPdVMUBoJtH1Dd4vptlU1X61/iOZizXd8gBk=; b=JYWY2rBu//hNuD
-	AHXZsctSfDc7l540bDC+TZudY6zgVRa+dl5H1pwZBG7b069sRzLTuJfq/ZrI9XzWGAecWbzntnqN4
-	cqjM+XL1K/PlmTFZgDQ27G/38bUrtxCEZXvB6xI8cdDzWuWNp88zAXSktpmlfuweFPUNWOmsgCupa
-	Fp5GRhos3VCCnmU+I63ABNFi8XlqN034C16IsVjbWF0IFWiaT2bdspYduy4sSM0GThKKtaGRF0r02
-	5O8LPtH+sy5VPTchBCInTJ/rPqYkhmNfubUD2wD/EmBSjAaslF9P8kGPYScI+ujGmya9EuEXVzs9d
-	8mOeGQr3jxL81GSeD7OA==;
+	List-Owner; bh=K6puHmr6iUXIkW3rCsVGkOdBRPdoME7u4EIa8RIllKs=; b=M+jVdksdGZl0hy
+	bZBI+ZUQv+04zv8DUS8aH5IREhgAnfuO74OxFmEnmSHI9R5bfV9E4iKYDG3YGDPD5yUCprGNDbsNw
+	fZrfcR7d8A3MsKA+mbWxU8J1BgVQSrnhvjcCzh3Mcc2VrAANZvZPuwyPl6GyFxZfi2BuVHVfGwHyy
+	PKMeXwnMzHMvbDe+yeqfikhJ6SynmrHPJaYkqdTjVSaepaPj6jeY4w1oHOd8xsZt+XiEXH6u6cNvc
+	DjP1NGIfzlq2qc2kVPexpqFkWZOwhz7CrC7cE8rtGfsXFavTsPd7olh3lW17w93yy4C8cEJdJUxik
+	Xqcd2MQOr7ozE/VgleMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhW3-00027Y-L7; Thu, 07 May 2020 14:28:47 +0000
+	id 1jWhWt-0002tP-Hx; Thu, 07 May 2020 14:29:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhVg-0001zP-8y
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:28:30 +0000
+ id 1jWhWF-0002Xs-20
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:29:01 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CE88924959;
- Thu,  7 May 2020 14:28:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 01D0020936;
+ Thu,  7 May 2020 14:28:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588861703;
- bh=vvdSzbEpBcmS5iWnBqJ8Fdmt3xvKYr6xWdUdjkVYuFA=;
+ s=default; t=1588861738;
+ bh=Bq4eHZWtEpaN3euD1FZIVBHPQAYGNnABrym1Qp0jRmI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=iTaPbQ2esZeZ03s0hxjNpTWqFu3VjjOck5+xb8HmulnMSOG4voI3Vn3x6rStl2Laf
- TMviOW3k3OD3itDIUgjH9/o+Q+cIm7J18jvjX9LpvwWs8Fp/HPZ6+V0T6NE0uT2eMg
- HOSv1ak5JdQhF5bE0/qVfspJkC54nmMH8cy53PAY=
+ b=uCGruXGNvVCibc0Kkzv6KgAZWS8HrGG6DJ+ZafePEp5TYQWcVIjpD0ptjPe1oGkMe
+ +u3Ed62e3+pZ5whsWSVrzvzZh4PQZByFV2I+7kVwc8VTdXqKFyxPXohEICdE671MZx
+ dZF+nmV1lYWmUbWGGtrsbAh3cGF5z/0wr6ttYW4I=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 44/50] arm64: vdso: Add
- -fasynchronous-unwind-tables to cflags
-Date: Thu,  7 May 2020 10:27:20 -0400
-Message-Id: <20200507142726.25751-44-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 22/35] i2c: iproc: generate stop event for slave
+ writes
+Date: Thu,  7 May 2020 10:28:16 -0400
+Message-Id: <20200507142830.26239-22-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200507142726.25751-1-sashal@kernel.org>
-References: <20200507142726.25751-1-sashal@kernel.org>
+In-Reply-To: <20200507142830.26239-1-sashal@kernel.org>
+References: <20200507142830.26239-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_072824_406368_0C968C03 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20200507_072900_003472_0D0CCE69 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,57 +81,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ Sasha Levin <sashal@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Wolfram Sang <wsa@the-dreams.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 
-[ Upstream commit 1578e5d03112e3e9d37e1c4d95b6dfb734c73955 ]
+[ Upstream commit 068143a8195fb0fdeea1f3ca430b3db0f6d04a53 ]
 
-On arm64 linux gcc uses -fasynchronous-unwind-tables -funwind-tables
-by default since gcc-8, so now the de facto platform ABI is to allow
-unwinding from async signal handlers.
+When slave status is I2C_SLAVE_RX_END, generate I2C_SLAVE_STOP
+event to i2c_client.
 
-However on bare metal targets (aarch64-none-elf), and on old gcc,
-async and sync unwind tables are not enabled by default to avoid
-runtime memory costs.
-
-This means if linux is built with a baremetal toolchain the vdso.so
-may not have unwind tables which breaks the gcc platform ABI guarantee
-in userspace.
-
-Add -fasynchronous-unwind-tables explicitly to the vgettimeofday.o
-cflags to address the ABI change.
-
-Fixes: 28b1a824a4f4 ("arm64: vdso: Substitute gettimeofday() with C implementation")
-Cc: Will Deacon <will@kernel.org>
-Reported-by: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+Fixes: c245d94ed106 ("i2c: iproc: Add multi byte read-write support for slave mode")
+Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm64/kernel/vdso/Makefile | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ drivers/i2c/busses/i2c-bcm-iproc.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/kernel/vdso/Makefile b/arch/arm64/kernel/vdso/Makefile
-index dd2514bb1511f..3862cad2410cf 100644
---- a/arch/arm64/kernel/vdso/Makefile
-+++ b/arch/arm64/kernel/vdso/Makefile
-@@ -32,7 +32,7 @@ UBSAN_SANITIZE			:= n
- OBJECT_FILES_NON_STANDARD	:= y
- KCOV_INSTRUMENT			:= n
- 
--CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny
-+CFLAGS_vgettimeofday.o = -O2 -mcmodel=tiny -fasynchronous-unwind-tables
- 
- ifneq ($(c-gettimeofday-y),)
-   CFLAGS_vgettimeofday.o += -include $(c-gettimeofday-y)
+diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
+index 9ffdffaf6141e..03475f1799730 100644
+--- a/drivers/i2c/busses/i2c-bcm-iproc.c
++++ b/drivers/i2c/busses/i2c-bcm-iproc.c
+@@ -359,6 +359,9 @@ static bool bcm_iproc_i2c_slave_isr(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 			value = (u8)((val >> S_RX_DATA_SHIFT) & S_RX_DATA_MASK);
+ 			i2c_slave_event(iproc_i2c->slave,
+ 					I2C_SLAVE_WRITE_RECEIVED, &value);
++			if (rx_status == I2C_SLAVE_RX_END)
++				i2c_slave_event(iproc_i2c->slave,
++						I2C_SLAVE_STOP, &value);
+ 		}
+ 	} else if (status & BIT(IS_S_TX_UNDERRUN_SHIFT)) {
+ 		/* Master read other than start */
 -- 
 2.20.1
 
