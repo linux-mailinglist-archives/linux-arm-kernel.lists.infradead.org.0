@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D58A81C8A01
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:03:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09261C8A09
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:04:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KdQXKtgPOOPY6NbcrsrNKQI7xflAHarfsZDK3vi0BiQ=; b=CvOfbZgz9EbFkm
-	bioAz83UOgomnN92nU2qQWtd0bE4BXoZrTRssniNjkWHvdALAXcPF6AR+YlxtCsR+VSVi2D346RhA
-	snaWa6sHojyWspT/BDzDW2rNoJbzerBpFfMgvSKfMONr8FBpZvAVSmmezJRGeByHHmHWcS3ltEj1r
-	Qa1+5Wd5gp4vI73o/VC4NOQJcEo7RZSv3qo1NNeomeLuaEHUXIt0D3M2PTDeGh7SmuTtdSE/ccKnx
-	2ag7VAKotmtHHP9t+xTa2I0en9QdP6ZY9WqABPoXoDv94esemOnx0sI6MDUmVo9cygWSQtLFFRNuI
-	24OWweRXna3n3laL5XeA==;
+	List-Owner; bh=ZZRd1cwPkB6IH04gfQzOEg/6OmKSigjkEO+Ica0FdAI=; b=dxTMOlDT8heLzW
+	8k0JDhKQDjgaXqF/cb0xcVkOvKFJCwuj1QuDv8SJmQDmFlffWIY1hH9yz2Np2IQbHr1rmPWiJMC8P
+	b+fgcsV6cpXxGnkXIBWHqIsfdXFNgxsLTNNdNitmM/xy2Mtm73EkTGVHd9OO3A7zpIOoNpdKSEHw4
+	sjuc9LRlwbd3hYoUDkiinuLxAqzV8gwVIQphcP7i9LRFpMvClXalOFq5qlQBSz0X8RpmxkZ/z9/SC
+	+pyO8drJSdJJc4RcEt/p9QANJnocGMiAIFDJPo3jQmTiAAtFp4dTCkKOpjnLHX11ZQB/MuO80rzYw
+	ITNav/rd7AXWrewZPRWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfF6-0008CQ-9O; Thu, 07 May 2020 12:03:08 +0000
+	id 1jWfFv-0000Yo-0D; Thu, 07 May 2020 12:03:59 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfEK-0007cS-D5
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:22 +0000
+ id 1jWfEK-0007cT-D5
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:25 +0000
 Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id A036DE4807D337282B8E;
+ by Forcepoint Email with ESMTP id AA14637066ECD14BF777;
  Thu,  7 May 2020 20:02:09 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
@@ -33,9 +33,10 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH RFC v3 10/12] perf metricgroup: Split up metricgroup__print()
-Date: Thu, 7 May 2020 19:57:49 +0800
-Message-ID: <1588852671-61996-11-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC v3 11/12] perf metricgroup: Support printing metric groups
+ for system PMUs
+Date: Thu, 7 May 2020 19:57:50 +0800
+Message-ID: <1588852671-61996-12-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
 References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
@@ -43,8 +44,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_050220_646245_D6FC6337 
-X-CRM114-Status: GOOD (  12.46  )
+X-CRM114-CacheID: sfid-20200507_050220_657398_F6FB91DD 
+X-CRM114-Status: GOOD (  12.22  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -52,10 +53,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
  medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
  [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -77,164 +78,112 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To aid supporting system event metric groups, break up the function
-metricgroup__print() into a part which iterates metrics and a part
-which actually "prints" the metric.
+Currently only metricgroups for core- or uncore-based events is supported.
+Extend this for system events.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- tools/perf/util/metricgroup.c | 117 ++++++++++++++++++++++++------------------
- 1 file changed, 66 insertions(+), 51 deletions(-)
+ tools/perf/util/metricgroup.c | 66 ++++++++++++++++++++++++++++++++++++++++---
+ 1 file changed, 62 insertions(+), 4 deletions(-)
 
 diff --git a/tools/perf/util/metricgroup.c b/tools/perf/util/metricgroup.c
-index d1033756a1bc..31e97e24c2b0 100644
+index 31e97e24c2b0..ecf14aa01a59 100644
 --- a/tools/perf/util/metricgroup.c
 +++ b/tools/perf/util/metricgroup.c
-@@ -315,6 +315,68 @@ static void metricgroup__print_strlist(struct strlist *metrics, bool raw)
- 		putchar('\n');
+@@ -377,6 +377,51 @@ static void metricgroup__print_pmu_event(struct pmu_event *pe,
+ 	}
  }
  
++struct metricgroup_print_sys_idata {
++	struct strlist *metriclist;
++	bool metricgroups;
++	char *filter;
++	bool raw;
++	bool details;
++	struct rblist *groups;
++};
 +
-+static void metricgroup__print_pmu_event(struct pmu_event *pe,
-+					 bool metricgroups, char *filter,
-+					 bool raw, bool details,
-+					 struct rblist *groups,
-+					 struct strlist *metriclist)
++typedef int (*metricgroup_sys_event_iter_fn)(struct pmu_event *pe, void *);
++
++struct metricgroup_iter_data {
++	metricgroup_sys_event_iter_fn fn;
++	void *data;
++};
++
++static int metricgroup__sys_event_iter(struct pmu_event *pe, void *data)
 +{
-+	const char *g;
++	struct metricgroup_iter_data *d = data;
++	struct perf_pmu *pmu = NULL;
 +
-+	g = pe->metric_group;
-+	if (!g && pe->metric_name) {
-+		if (pe->name)
-+			return;
-+		g = "No_group";
++	if (!pe->metric_expr || !pe->compat)
++		return 0;
++
++	while ((pmu = perf_pmu__scan(pmu)) != NULL) {
++
++		if (!pmu->id || strcmp(pmu->id, pe->compat))
++			continue;
++
++		return d->fn(pe, d->data);
 +	}
 +
-+	if (g) {
-+		char *omg;
-+		char *mg = strdup(g);
++	return 0;
++}
 +
-+		if (!mg)
-+			return;
-+		omg = mg;
-+		while ((g = strsep(&mg, ";")) != NULL) {
-+			struct mep *me;
-+			char *s;
++static int metricgroup__print_sys_event_iter(struct pmu_event *pe, void *data)
++{
++	struct metricgroup_print_sys_idata *d = data;
 +
-+			g = skip_spaces(g);
-+			if (*g == 0)
-+				g = "No_group";
-+			if (filter && !strstr(g, filter))
-+				continue;
-+			if (raw)
-+				s = (char *)pe->metric_name;
-+			else {
-+				if (asprintf(&s, "%s\n%*s%s]", pe->metric_name,
-+					     8, "[", pe->desc) < 0)
-+					return;
++	metricgroup__print_pmu_event(pe, d->metricgroups, d->filter, d->raw,
++				     d->details, d->groups, d->metriclist);
 +
-+				if (details) {
-+					if (asprintf(&s, "%s\n%*s%s]", s, 8,
-+						     "[", pe->metric_expr) < 0)
-+						return;
-+				}
-+			}
-+
-+			if (!s)
-+				continue;
-+
-+			if (!metricgroups) {
-+				strlist__add(metriclist, s);
-+			} else {
-+				me = mep_lookup(groups, g);
-+				if (!me)
-+					continue;
-+				strlist__add(me->metrics, s);
-+			}
-+		}
-+		free(omg);
-+	}
++	return 0;
 +}
 +
  void metricgroup__print(bool metrics, bool metricgroups, char *filter,
  			bool raw, bool details)
  {
-@@ -339,63 +401,15 @@ void metricgroup__print(bool metrics, bool metricgroups, char *filter,
+@@ -387,9 +432,6 @@ void metricgroup__print(bool metrics, bool metricgroups, char *filter,
+ 	struct rb_node *node, *next;
+ 	struct strlist *metriclist = NULL;
+ 
+-	if (!map)
+-		return;
+-
+ 	if (!metricgroups) {
+ 		metriclist = strlist__new(NULL, NULL);
+ 		if (!metriclist)
+@@ -400,7 +442,7 @@ void metricgroup__print(bool metrics, bool metricgroups, char *filter,
+ 	groups.node_new = mep_new;
  	groups.node_cmp = mep_cmp;
  	groups.node_delete = mep_delete;
- 	for (i = 0; ; i++) {
--		const char *g;
+-	for (i = 0; ; i++) {
++	for (i = 0; map; i++) {
  		pe = &map->table[i];
  
  		if (!pe->name && !pe->metric_group && !pe->metric_name)
- 			break;
- 		if (!pe->metric_expr)
- 			continue;
--		g = pe->metric_group;
--		if (!g && pe->metric_name) {
--			if (pe->name)
--				continue;
--			g = "No_group";
--		}
--		if (g) {
--			char *omg;
--			char *mg = strdup(g);
--
--			if (!mg)
--				return;
--			omg = mg;
--			while ((g = strsep(&mg, ";")) != NULL) {
--				struct mep *me;
--				char *s;
--
--				g = skip_spaces(g);
--				if (*g == 0)
--					g = "No_group";
--				if (filter && !strstr(g, filter))
--					continue;
--				if (raw)
--					s = (char *)pe->metric_name;
--				else {
--					if (asprintf(&s, "%s\n%*s%s]",
--						     pe->metric_name, 8, "[", pe->desc) < 0)
--						return;
--
--					if (details) {
--						if (asprintf(&s, "%s\n%*s%s]",
--							     s, 8, "[", pe->metric_expr) < 0)
--							return;
--					}
--				}
--
--				if (!s)
--					continue;
- 
--				if (!metricgroups) {
--					strlist__add(metriclist, s);
--				} else {
--					me = mep_lookup(&groups, g);
--					if (!me)
--						continue;
--					strlist__add(me->metrics, s);
--				}
--			}
--			free(omg);
--		}
-+		metricgroup__print_pmu_event(pe, metricgroups, filter, raw,
-+					     details, &groups, metriclist);
+@@ -412,6 +454,22 @@ void metricgroup__print(bool metrics, bool metricgroups, char *filter,
+ 					     details, &groups, metriclist);
  	}
  
++	{
++		struct metricgroup_iter_data data = {
++			.fn = metricgroup__print_sys_event_iter,
++			.data = (void *) &(struct metricgroup_print_sys_idata){
++				.metriclist = metriclist,
++				.metricgroups = metricgroups,
++				.filter = filter,
++				.raw = raw,
++				.details = details,
++				.groups = &groups,
++			},
++		};
++
++		pmu_for_each_sys_event(metricgroup__sys_event_iter, &data);
++	}
++
  	if (metricgroups && !raw)
-@@ -407,7 +421,8 @@ void metricgroup__print(bool metrics, bool metricgroups, char *filter,
- 		struct mep *me = container_of(node, struct mep, nd);
- 
- 		if (metricgroups)
--			printf("%s%s%s", me->name, metrics && !raw ? ":" : "", raw ? " " : "\n");
-+			printf("%s%s%s", me->name, metrics && !raw ? ":" : "",
-+			       raw ? " " : "\n");
- 		if (metrics)
- 			metricgroup__print_strlist(me->metrics, raw);
- 		next = rb_next(node);
+ 		printf("\nMetric Groups:\n\n");
+ 	else if (metrics && !raw)
 -- 
 2.16.4
 
