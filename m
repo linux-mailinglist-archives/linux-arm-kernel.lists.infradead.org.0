@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32A061C86B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 12:28:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAD841C86B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 12:31:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dug8uAtljk0scGp1tGbl6AB9VcYZ7XRA0MmisC64sUM=; b=QvL2x9qZ1XBaDupma67TYcMRT
-	+7Vq5zwo0isCfUpFkTLM+acM7sJGQgafJlWdda7MQqXf3lM596IHLVEoupWS45xnS2TzT8LSe8cP3
-	WtzP6iwpWNwVkqSQ6dRDQ5oPuyYKODWUFZWu/dttBQisBcYybJa6ppGSFOcHyfqCa/4whG1AWsiJG
-	1xn0Ot+ccEZK8tmgTEXTaYtV0Ari6Ns8IhlZGLHtcgrpwNOf0I1348YJjPJFH2xrWqlejmXWliSa6
-	1jS9/ytl6nAhE3rNj0fyHSMRDU/irKWq/+qVqWXoiLe9MwtBohtGYOqXijPxp1yGJIaTSiNW/qxKT
-	sf40mo3cw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bpdPE6XuXVoaMQNp62E0niAYPyQBVEPKXLDCImN7YNE=; b=BAWvkT1Z0AobE6
+	nvPaboWtzQid/Z8/TN3qxZhDMqLfBsbaBzLb2PUdd1LD/p/2pGrvK7Sa0YTbyKBxiGau/pcDxliTc
+	nnH7uVSWOJTtdOQWMIw8sWIU6AJPMDy97f7g9BDveSWS0UAVVy4W553ft+Az7HkxWwhvZlV4bvaAy
+	FJ6jwEn9j40UHI1Y5dY60Cv6BbvbOeGiEHNJQGCzewGwyMehWQBZVsuZy7RuVR92qfUqPzbLwnkBf
+	t9pR/Ez4sBkjwirnkXvrvL/QKwpEoYnGgMpvrWSbbENMRfZZH/MZKuyS1dMLoImX+JBIaxmFZ/ukD
+	USHX6DABbgdv/BDbEQGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWdlU-0003xs-Fu; Thu, 07 May 2020 10:28:28 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jWdnt-0007Pw-Hd; Thu, 07 May 2020 10:30:57 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWdlJ-0003wz-9h
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 10:28:21 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588847299; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=505A69X26wFMczjQPH01/FWDBb9GRlXXRfy7TtInLmg=;
- b=jbwq7FhvY5B0Z9cN1k2gYshiyGfk6Iau0j0nWfWt5PzlifgCVvZx3+oBeqZoorBNTddvtF7Z
- YmrFRws+de4yZasCc8S+EXRY/ThMKdI4JGgRmorsCTXibmuUUr3wmPtqko6KyixHFCNCPn6T
- OpUqS2oP3ajEyWgfQcyFPpUxYQs=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eb3e2b8.7f01f4513e68-smtp-out-n03;
- Thu, 07 May 2020 10:28:08 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id C9CC5C433F2; Thu,  7 May 2020 10:28:07 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id E36D5C433F2;
- Thu,  7 May 2020 10:28:06 +0000 (UTC)
+ id 1jWdnk-0007OQ-ES
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 10:30:50 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Fdqh7nDIY7RwLunTRzai9I+YfboOVf74IQv3yVp2Cw4=; b=l4vKvqCu+rJ3clInZ549K9dt3
+ sUKgz5T5HNDZTL7+6K2l+xOFnkZAITyKpvtvOU/d0PWDD1Fp8wDpRoYX9N5tINz5IzY7rlOTvH0Fa
+ 81xXEE1cyhPQxgSvCk6ztDd4uT1D/M6F+XwDVb3Mr7GG0a3PRv5jms9lRwgSDJQhaP9usicFsEW4w
+ Ta/Cx9aTE6aFoOBgq3EMSxjryL0XsXFZOCzwAb7AgK2ZYz41aJSnd6onkOF5HMCjMOdk6a1/CsqEX
+ hDLlF9dDZ762uW+w89jSZZjw3DZuK8WWf1pXZ10+1cI1Ub/GvKvqnmoT4Ojat0rVCsqOJbyJ8oY3q
+ ycDYtSbFQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:57290)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jWdnd-0005Bg-5a; Thu, 07 May 2020 11:30:41 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jWdnb-0000gk-R5; Thu, 07 May 2020 11:30:39 +0100
+Date: Thu, 7 May 2020 11:30:39 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Florian Fainelli <f.fainelli@gmail.com>
+Subject: Re: [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
+Message-ID: <20200507103039.GR1551@shell.armlinux.org.uk>
+References: <20200506235009.25023-1-f.fainelli@gmail.com>
+ <20200506235009.25023-2-f.fainelli@gmail.com>
 MIME-Version: 1.0
-Date: Thu, 07 May 2020 15:58:06 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Will Deacon <will@kernel.org>, Robin Murphy <robin.murphy@arm.com>,
- Joerg Roedel <joro@8bytes.org>, Sibi Sankar <sibis@codeaurora.org>, Bjorn
- Andersson <bjorn.andersson@linaro.org>, Jordan Crouse
- <jcrouse@codeaurora.org>, Rob Clark <robdclark@gmail.com>, jroedel@suse.de
-Subject: Re: [PATCHv4 0/6] iommu/arm-smmu: Allow client devices to select
- identity mapping
-In-Reply-To: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
-References: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
-Message-ID: <aa54fd00a6d353c72664e41b7a4a4e3d@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <20200506235009.25023-2-f.fainelli@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_032819_682084_CCE305E4 
-X-CRM114-Status: GOOD (  13.72  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200507_033048_484016_D4A6241F 
+X-CRM114-Status: GOOD (  14.87  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.26 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,70 +87,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, Stephen Boyd <swboyd@chromium.org>,
- iommu@lists.linux-foundation.org, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-msm-owner@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
+ Mike Rapoport <rppt@linux.ibm.com>, Gregory Fong <gregory.0xf0@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will, Joerg
+On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
+> From: Kevin Cernekee <cernekee@gmail.com>
+> 
+> If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
+> then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
+> choice.  This is true for all of the existing ARM users of
+> ARCH_SPARSEMEM_ENABLE.
+> 
+> Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
+> us from ever defaulting to FLATMEM, so we should remove this setting.
 
-On 2020-04-21 00:03, Sai Prakash Ranjan wrote:
-> This series allows DRM, Modem devices to set a default
-> identity mapping in qcom smmu implementation.
-> 
-> Patch 1 is cleanup to support other SoCs to call into
-> QCOM specific  implementation.
-> Patch 2 sets the default identity domain for DRM devices.
-> Patch 3 implements def_domain_type callback for arm-smmu.
-> Patch 4 sets the default identity domain for modem device.
-> Patch 5-6 adds the iommus property for mss pil.
-> 
-> This is based on Joerg's tree:
->  -
-> https://git.kernel.org/pub/scm/linux/kernel/git/joro/linux.git/log/?h=iommu-probe-device-v2
-> 
-> v4:
->  * Updated commit msg for mss pil requesting direct mapping
-> 
-> v3:
->  * Use arm_smmu_master_cfg to get impl instead of long way as per 
-> Robin.
->  * Use def_domain_type name for the callback in arm_smmu_imp as per 
-> Robin
-> 
-> Jordan Crouse (1):
->   iommu/arm-smmu: Allow client devices to select direct mapping
-> 
-> Sai Prakash Ranjan (2):
->   iommu: arm-smmu-impl: Convert to a generic reset implementation
->   iommu/arm-smmu: Implement iommu_ops->def_domain_type call-back
-> 
-> Sibi Sankar (3):
->   iommu/arm-smmu-qcom: Request direct mapping for modem device
->   dt-bindings: remoteproc: qcom: Add iommus property
->   arm64: dts: qcom: sdm845-cheza: Add iommus property
-> 
->  .../bindings/remoteproc/qcom,q6v5.txt         |  3 ++
->  arch/arm64/boot/dts/qcom/sdm845-cheza.dtsi    |  5 +++
->  drivers/iommu/arm-smmu-impl.c                 |  8 ++--
->  drivers/iommu/arm-smmu-qcom.c                 | 37 +++++++++++++++++--
->  drivers/iommu/arm-smmu.c                      | 12 ++++++
->  drivers/iommu/arm-smmu.h                      |  1 +
->  6 files changed, 60 insertions(+), 6 deletions(-)
+No explanation why that is desirable.
 
-This series is reviewed by Robin.
-Any chance this series can make it to 5.8?
+> -config ARCH_SPARSEMEM_DEFAULT
+> -	def_bool ARCH_SPARSEMEM_ENABLE
+> -
 
-Thanks,
-Sai
+What this basically says is ARCH_SPARSEMEM_ENABLE=ARCH_SPARSEMEM_DEFAULT,
+which is exactly what we want for the non-multiplatform boards that
+select ARCH_SPARSEMEM_ENABLE - we _want_ them to default to sparsemem
+because that is what the platform requires.
+
+For example, with RiscPC, which selects ARCH_SPARSEMEM_ENABLE, we have
+four banks of memory at 0x10000000, 0x14000000, 0x18000000 and
+0x1c000000.  These correspond with the two memory slots - the first two
+for the first slot, and the second two for the second slot.  Each slot
+has two banks.  The size of each memory bank depends on the size of the
+module.
+
+Flatmem is completely unable to work with this setup if all banks are
+populated, and the first bank does not contain enough memory to allocate
+the struct page array.  So, sparsemem is the only option there.
+
+Hence, for these platforms, we want sparsemem and only sparsemem, not
+flatmem.
+
+So, this patch which makes it possible to select flatmem is completely
+out of the question for these platforms.
+
 -- 
-QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a 
-member
-of Code Aurora Forum, hosted by The Linux Foundation
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
