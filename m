@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B93D1C9EDD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 01:02:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A36BF1C9F3E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 01:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bnq6Tpy9fofHZ1DhYHP5QABMZkmi/DWR3s344YUHhUo=; b=l8dcrIIiEyC5pk
-	HyA9v7cmOaQrG2tiEGx8PNUzzeCRUEAZfwT+McyEHg5pDOmVzCQ0CKg6rBDoHi1BQwxVqBaJY/E7h
-	UpSvD74oVBQVH7kthXRL5qVZLQsfEY/LFOXpZ78nA1V9fReRYFdf4URkKVLh4f0pnNPTGLnTYXHMC
-	BLNFFJdwLd+0AdEhz32+u7o2rW0ad7Ix6f4+IqLLsaFF1BGTwL/FuZBO/znKF6OMnZkuG9yWVy0+m
-	2uHvEE9xfYPR7BZJBxd33s0l6byB8ZT31qEudPVSG1P84JBLY0JqQ1eoP+p8HjBG31yWZtyPC47zh
-	ZObNIDYKg17DHsDsagdQ==;
+	List-Owner; bh=tX6PQlCVAZ5K8kviFWGmZw73Y3vQNxPsqIyCaO0M5Hw=; b=IPIJGG38/PQ92x
+	fKYqXxYQCH2m+Q+lIdttKwG9IrvOEYfeP5kpK3Rmh1ba2CmFWMOH6zSGFUvbFnNAOpxMo5sfS05zt
+	L1oRXqACLNJs5zK+Rnv22N+bRwetTPD8fDWeQg+UI/tgKtbnncidveT7N8SZ/CKOOzfw1jDoW0HSS
+	/38EC/YV+SZn+0Ao7COsxh6PtVsGpjIFlb4J1oejj9Ay8BAQII7jJwAq3BkznnYKJS4vIT+vQI61/
+	5ofH/TR6Sx37J8w2SFBuPZTkJY+It5bOAVz7HbtB2Lhn+SD/PQkoNUHciG7RfitQgXWt1sZXQh7N6
+	HtauyUABiuR8Ddn/Ai8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWpWn-0006Lv-Fx; Thu, 07 May 2020 23:02:05 +0000
+	id 1jWq7q-0004wB-83; Thu, 07 May 2020 23:40:22 +0000
 Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWpWe-0006KB-Ou; Thu, 07 May 2020 23:01:58 +0000
-Received: by mail-wm1-x343.google.com with SMTP id v8so8577110wma.0;
- Thu, 07 May 2020 16:01:51 -0700 (PDT)
+ id 1jWq7f-0004q2-O1; Thu, 07 May 2020 23:40:13 +0000
+Received: by mail-wm1-x343.google.com with SMTP id h4so8432432wmb.4;
+ Thu, 07 May 2020 16:40:11 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Amh3I1P5I6BDFw+wjiIvKdrZM+vTRzn1yeHAQhH/mXQ=;
- b=JZvvpLly/WeFwEdPOAjsfNLtdVO1/saQlF77s8DN/ZF0BWu1MgILCIAn0AhqV/pkzw
- A0z4h7Q7Qvesyxx0pJK9xiME+nqD+bD7+zezYnuvLxdVrG7bfR2xuNnCOZbd7Dp6Aw9W
- FlL9tVfTviOY30rRUZm/SMF+6ks0eCV/FFZHuBJ0WdDjEBUfnVt31v0t9gAzu0jsoLVH
- AwOgqjj5EJZcN1de/fTVXyjqZ+mIoyGc2+9/yRLieRQErLNiDBjfrZDxmp+4ReKs+gkd
- qbJraJ6Wg1CzU+dZlm9aoFQFOrDAszZLkvflSUVLE3Z17CrA2vSTtqaGC/3MMcKqRqSQ
- qsvA==
+ bh=LeEjSoC+KWHnDVL+GAb88TtcLPL+vxgTH1UqxiwLGBE=;
+ b=jJI7iisBRN9lUPdFF2pIY3P84wTuq5rziNa8d2Njwyf5twXA4f2pAJ22picElxpgCN
+ RyBGlJMHmqCVyGXHpafltfYuFvjwQjXLeErMK7RbRKwR4i+jSCyDu/Gm9UGj92UXGQQV
+ 4xuAE50GfM5+SUDeyXcWbvxi81C49veMoelfexh+sxYyvi6Xd3Hf9sHZwf2oJcdfqZ4c
+ sj/MaurplX/+lA2Srv921WfXEfqyWGZrz6mDmuGsdFSU76YgtdC4NYP5L4n7Aew+1boG
+ OaND5pJ0wkJhUVj19FxWH28LxXSvtdi1BUQOEzbpOOID4pvqpenZMTLZ0B7mDjS+3XJS
+ cwzg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Amh3I1P5I6BDFw+wjiIvKdrZM+vTRzn1yeHAQhH/mXQ=;
- b=VKxmEpYaSF+lfapUsT5lt/jOhYiPbXerFdejgvyJuKWnp0c97SrUJF+swKZAzVQP+8
- G7tg+eMARfc6vF2YTdFPIZp74LLpbxmPYlW7RNv8USJSkqYQiS4oHmwDj/XrWxO5AF+e
- yIrabWdxDTzosfUKz/dukcjBz1FvXwDBzqoCO2SJCJOtxXcHaC0/Hnt1rVA6gp6rG0ov
- KG7lzrQU3iSpYob1ng+sat5c5rV22jnzLPObl0Rgzd3fOUvEQGeAYAI+uvXDr75HLrZ9
- p/n8qsmOalR++/1W1QNWxofZpEZ9uZcxXsVFoXyE6Lr6kxMby9FtP0HWs13sRZ6G/Um3
- SYZw==
-X-Gm-Message-State: AGi0PuaziFSnVlfMuoI1k6lr9UUqxlcuGPS36kjX0fRMAjsywQoWm4Ew
- gl/JVnSwFmJop/cD6WFD8S8=
-X-Google-Smtp-Source: APiQypIXEPr64bDK5N2O7Q4uwKSHEOYR2e4k2roCXqGS0mC2od1qBH2YrfIpQ9yDJcfBWvqV0nWskg==
-X-Received: by 2002:a1c:4b15:: with SMTP id y21mr12876858wma.150.1588892510056; 
- Thu, 07 May 2020 16:01:50 -0700 (PDT)
+ bh=LeEjSoC+KWHnDVL+GAb88TtcLPL+vxgTH1UqxiwLGBE=;
+ b=JW4D841p8sI2aHT9twOg3XSAMQ9OOkb6ruLZyZNRqpejK6299ATgj2Sy1w5hOI3pss
+ D7mRdMnuisDBTQ738MBEGkurNLmnMrkGqpv1PLI2Z1/xVqa52VWJI0pU+ozZZir4b6zv
+ hF3N9sUti5X8kxui/3R6op293qokGNA4sj0zIgCP8VnSpkOwI7vP9uDAN0o3D/XcgwcV
+ uBC8x43LaGGKfAyf69NBPC/x/h4EWOEgRvAapzmfc2vl++s2asUzQcsUrEqsRJCDGsco
+ q7xoSck9w0PrP+rU53W6enbqms+kMPCNgf+aUYW/XUiQRO2WEgM7Am8LnQqjyuMX7/rE
+ 1Nfg==
+X-Gm-Message-State: AGi0Puag9/uYUOoUOCZhkiN9ygeLr0Bu1fngCJsQUFx+u8CdYjGN8mls
+ Kp5xJzFlh4Kb1ku3/S//E+g=
+X-Google-Smtp-Source: APiQypIMjl0Gv1T78MM/jPEcJHt9TQ1o4EZ7MA/8Dhv4FzUE6INX4d2J+WXVM11MeDplM6s2Vrwqbg==
+X-Received: by 2002:a05:600c:22d3:: with SMTP id
+ 19mr13644233wmg.110.1588894810321; 
+ Thu, 07 May 2020 16:40:10 -0700 (PDT)
 Received: from [192.168.2.1] (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id o6sm10910992wrw.63.2020.05.07.16.01.48
+ by smtp.gmail.com with ESMTPSA id c128sm10549504wma.42.2020.05.07.16.40.09
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 07 May 2020 16:01:49 -0700 (PDT)
-Subject: Re: [PATCH v3 1/4] dt-bindings: rockchip-rga: Add PX30 compatible
+ Thu, 07 May 2020 16:40:09 -0700 (PDT)
+Subject: Re: [PATCH v3 2/4] arm64: dts: rockchip: Add RGA support to the PX30
 To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
-References: <20200430164245.1630174-2-paul.kocialkowski@bootlin.com>
- <ed1ac7d6-12d3-5480-3699-70a88595cac2@gmail.com>
- <20200507202337.GJ2422122@aptenodytes>
+References: <20200430164245.1630174-3-paul.kocialkowski@bootlin.com>
+ <c3954924-c220-73ef-06dd-85b6876be819@gmail.com>
+ <20200507202558.GK2422122@aptenodytes>
 From: Johan Jonker <jbx6244@gmail.com>
-Message-ID: <b3d65325-7383-f89b-f493-6219904c8931@gmail.com>
-Date: Fri, 8 May 2020 01:01:47 +0200
+Message-ID: <7112d1fa-a872-c66f-0ece-a77ba1f852de@gmail.com>
+Date: Fri, 8 May 2020 01:40:08 +0200
 User-Agent: Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200507202337.GJ2422122@aptenodytes>
+In-Reply-To: <20200507202558.GK2422122@aptenodytes>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_160156_807435_A1AF018C 
-X-CRM114-Status: GOOD (  17.31  )
+X-CRM114-CacheID: sfid-20200507_164011_810981_77774DAB 
+X-CRM114-Status: GOOD (  18.07  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -114,98 +115,84 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Paul,
 
-With help of enum each additional compatibility string with fall back
-'rockchip,rk3288-rga' adds only 1 extra line instead of 3.
-
-See my and Heiko's response at the review of 'rockchip-saradc.yaml'.
-
-Re: [PATCH v1 1/3] dt-bindings: iio: adc: convert rockchip saradc
-bindings to yaml
-https://lore.kernel.org/lkml/a35bdff4-601e-6186-584e-9a0b88cf3dbb@gmail.com/
-
-The response of robh when I did something similar wrong as this patch.
-
-Re: [PATCH 1/2] dt-bindings: usb: dwc2: add compatible property for
-rk3328 usb
-https://lore.kernel.org/lkml/20200310192933.GA15236@bogus/
-
-Example of an approved patch with enum.
-
-[PATCH v2 1/2] dt-bindings: usb: dwc2: add compatible property for
-rk3328 usb
-https://lore.kernel.org/lkml/20200311122121.8912-1-jbx6244@gmail.com/
-
-Kind regards,
-
-Johan
-
-On 5/7/20 10:23 PM, Paul Kocialkowski wrote:
+On 5/7/20 10:25 PM, Paul Kocialkowski wrote:
 > Hi,
 > 
-> On Thu 30 Apr 20, 23:24, Johan Jonker wrote:
+> On Fri 01 May 20, 00:05, Johan Jonker wrote:
 >> Hi Paul,
 >>
->>>
->>> Add a new compatible for the PX30 Rockchip SoC, which also features
->>> a RGA block. It is compatible with the RK3288 RGA block.
+>>> The PX30 features a RGA block: add the necessary node to support it.
 >>>
 >>> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 >>> ---
->>>  Documentation/devicetree/bindings/media/rockchip-rga.yaml | 3 +++
->>>  1 file changed, 3 insertions(+)
+>>>  arch/arm64/boot/dts/rockchip/px30.dtsi | 11 +++++++++++
+>>>  1 file changed, 11 insertions(+)
 >>>
->>> diff --git a/Documentation/devicetree/bindings/media/rockchip-rga.yaml b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
->>> index dd645ddccb07..740586299da9 100644
->>> --- a/Documentation/devicetree/bindings/media/rockchip-rga.yaml
->>> +++ b/Documentation/devicetree/bindings/media/rockchip-rga.yaml
->>> @@ -23,6 +23,9 @@ properties:
+>>> diff --git a/arch/arm64/boot/dts/rockchip/px30.dtsi b/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> index f809dd6d5dc3..3de70aa4f1ce 100644
+>>> --- a/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> +++ b/arch/arm64/boot/dts/rockchip/px30.dtsi
+>>> @@ -1102,6 +1102,17 @@ vopl_mmu: iommu@ff470f00 {
+>>>  		status = "disabled";
+>>>  	};
+>>>  
+>>> +	rga: rga@ff480000 {
+>>> +		compatible = "rockchip,px30-rga", "rockchip,rk3288-rga";
+>>> +		reg = <0x0 0xff480000 0x0 0x10000>;
+>>> +		interrupts = <GIC_SPI 76 IRQ_TYPE_LEVEL_HIGH 0>;
+>>> +		clocks = <&cru ACLK_RGA>, <&cru HCLK_RGA>, <&cru SCLK_RGA_CORE>;
+>>> +		clock-names = "aclk", "hclk", "sclk";
 >>
+>>> +		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+>>> +		reset-names = "core", "axi", "ahb";
+>>> +		power-domains = <&power PX30_PD_VO>;
 >>
->>>        - items:
->>>            - const: rockchip,rk3228-rga
->>>            - const: rockchip,rk3288-rga
->>> +      - items:
->>> +          - const: rockchip,px30-rga
->>> +          - const: rockchip,rk3288-rga
+>> sort
 >>
->> Use enum.
->>
->>       - items:
->>           - enum:
->>             - rockchip,px30-rga
->>             - rockchip,rk3228-rga
->>           - const: rockchip,rk3288-rga
+>> 		power-domains = <&power PX30_PD_VO>;
+>> 		resets = <&cru SRST_RGA>, <&cru SRST_RGA_A>, <&cru SRST_RGA_H>;
+>> 		reset-names = "core", "axi", "ahb";
 > 
-> Are you sure about this? The rk3228 above does it as I did it and other examples
-> like allwinner,sun4i-a10-csi.yaml appear to be doing the same too.
+> What's the rationale behind this (besides alphabetic sorting, which I don't
+> believe is a rule for dt properties)? Some nodes above in the file have it in
+> the same order that I do, and I like to see clocks followed by resets.
 
-The use of enum starts from 2 or more identical fall back strings.
-'allwinner,sun4i-a10-csi.yaml' has 2 different fall back strings.
+My short list.
+There is no hard rule... It mostly depend on Heiko...
 
-properties:
-  compatible:
-    oneOf:
-      - const: allwinner,sun4i-a10-csi1
-      - const: allwinner,sun7i-a20-csi0
-      - items:
-        - const: allwinner,sun7i-a20-csi1
-        - const: allwinner,sun4i-a10-csi1
-      - items:
-        - const: allwinner,sun8i-r40-csi0
-        - const: allwinner,sun7i-a20-csi0
+For nodes:
+If exists on top: model, compatible and chosen.
+Sort things without reg alphabetical first,
+then sort the rest by reg address.
 
-> 
-> The case with rockchip,rk3288-rga alone already seems covered.
-See yaml examples in the links above.
+Inside nodes:
+If exists on top: compatible, reg and interrupts.
+In alphabetical order the required properties.
+Then in alphabetical order the other properties.
+And as last things that start with '#' in alphabetical order.
+Add status below all other properties for soc internal components with
+any board-specifics.
+Keep an empty line between properties and nodes.
+
+Exceptions:
+Sort pinctrl-0 above pinctrl-names, so it stays in line with clock-names
+and dma-names.
+Sort simple-audio-card,name above other simple-audio-card properties.
+Sort regulator-name above other regulator properties.
+Sort regulator-min-microvolt above regulator-max-microvolt.
 
 > 
 > Cheers,
 > 
 > Paul
 > 
->>>  
->>>    reg:
->>>      maxItems: 1
+>>
+>>
+>>> +	};
+>>> +
+>>>  	qos_gmac: qos@ff518000 {
+>>>  		compatible = "syscon";
+>>>  		reg = <0x0 0xff518000 0x0 0x20>;
 >>> -- 
 >>> 2.26.0
 >>
