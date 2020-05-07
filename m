@@ -2,79 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1DC331C8854
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:33:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8AFD81C8880
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:40:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+uy2kWXLU13JNT/Qsx4GS66QCU3CbodSxloQnr+iVlw=; b=FpV
-	tdtIn69nBMzCl/bB0mNLQmXWvEnbTXrV18J+WMfS1XGM0+ERtwCMJb23fZCOawjTAlF2OROaw7L9G
-	TxY/G+mRzDiAuFzid7IF2/yPnWSvJKSxzeFCU5QUqGDeg5OUEGmiuEg65Ah2D1AbjuTb2PNVBvql5
-	pXWVJPv5vlmivwGbGPzzId8f68V8kk+OHZspeICLz7kDhr92PvJ2KupzLAyju1/6qTv0MB8s52Hit
-	BLvYfSTrhwL1Y6NpzDV3eRa3sOcvA+PUBgMuE73urMHMIJoiMS1iKOdx7Fm2J6Q+IfbX00PA5o1qb
-	+L+4Ii/3YCZ15bDq1ncYT/FCQ2E7hjQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Fz0stCyJBpnH9j1fi/BXolHZInXK96cEMZZBqvMbJYw=; b=gZbLvfsNwu+4a9
+	tSGsgx32jsR/VM0cFAXIv8jQHLdMteqsUmAs//CFIfV8Gs1ACfTDEyVC9DEd1uzqIquxt53nyT+ov
+	oszsQ83inMcDw76y/t1JQghlRt0ZPrHTj0+tJ3bKRrCCBJRstwQ/r2VVhW/KSqs1ge5UxK1IwAId/
+	VdpJPs0+ZfNAEN7VNKmj/196uZ7dpZyRqch+hjsjl2834ZL/ZP+NitMw+QG+/pPcSiSz/P+B4lLtS
+	KD85WHe5CV5p3qAX4QF3mrHvXy9LhoRNRIyvBSrXumVnimdHM0t4EzHgMmShLSNLqGqGWfmnwXZeA
+	VvUWGQuGJ6siUyrgOjTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWels-0001aM-9Y; Thu, 07 May 2020 11:32:56 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1jWesy-0006UQ-Fx; Thu, 07 May 2020 11:40:16 +0000
+Received: from mail-eopbgr70099.outbound.protection.outlook.com ([40.107.7.99]
+ helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWelk-0001Zi-5C; Thu, 07 May 2020 11:32:49 +0000
-Received: by mail-wr1-x441.google.com with SMTP id e16so5949163wra.7;
- Thu, 07 May 2020 04:32:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=miVjUF+kU459Gr4P0bFX33XFzImTaFGt5nwVSljspPk=;
- b=ezklgun3NG8L1ZLbd0I/M8AZkRmb1NVMMIzZtOYA91JKlr7sDY4h8dRsT8fHiZr5sc
- 2sKrYYkfWy7mm6Dop7KFiE7THZONbRDESBN5SaxRJyxxPlV75OGFN5EwIeHYNMfcUs+7
- WHfoMElCdA+YwRMYWk7eDqMnoBRVoOdWHVwFqlgVvXodrb/6OyPVetautl0IkOlR0lSd
- bhoqGy1Uwk+sx7DQBfov++lxLzCGHj2VbAqkaGnjQyqRWtZU9QeEENpE13pjwZsSlp0c
- prbBP2cwXGsLBVjkN2TnjXD2QppwjO/pDiBiyJtvIxq1e2LCMS0YGWJdTZe2otTlprTs
- k33Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=miVjUF+kU459Gr4P0bFX33XFzImTaFGt5nwVSljspPk=;
- b=Bg8nwjcxxSJeYVoiRmRlPeBtcc+aN2cjhXGTrJnrSX1NHeO00QPHQC+nC3Xd8dH9W1
- CVlmJRLYOmRDgqJ8wrada1n5GmwXtUpJJRCAdpC5RDWrVbznewtVfo4MoCjkcenhIJ1g
- gaUVyGrD5eWlAR0XSoTodmOgFcodOzNn56R2DSU8g32ezYJExqxzFmOfIgN6a+1Lg2Gd
- Mmzxof3jzSOW5WJ65FImhNyUoqMu4AURBy2GvLWFlQQCxzTB0S663zJBw8V1rwX3kq8P
- q8fUgwTCyJRnD8oezngEvq/PjBKgZHWc1MfvJSiS24fbVJ/ENuVn6A5usabH0DG89uVf
- x3zw==
-X-Gm-Message-State: AGi0PuYSxMas3C8aB3UrH5aoXB9z5hCOEPw2NlcClO0dv915Uyf9ZTgw
- ekRH9L4urDle9eO4PLAGkaV3lEJbRn4=
-X-Google-Smtp-Source: APiQypKZOjvXEiIprA5Ny63FeE9kMmGQs4HOWplnvTx4gD1ekq4zG5NManY4iny4mcyhjAje3EfW1Q==
-X-Received: by 2002:a5d:6712:: with SMTP id o18mr16171936wru.115.1588851165984; 
- Thu, 07 May 2020 04:32:45 -0700 (PDT)
-Received: from debian.home (ip51ccf9cd.speed.planet.nl. [81.204.249.205])
- by smtp.gmail.com with ESMTPSA id e21sm7745787wrc.1.2020.05.07.04.32.44
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 May 2020 04:32:45 -0700 (PDT)
-From: Johan Jonker <jbx6244@gmail.com>
-To: heiko@sntech.de
-Subject: [PATCH v1] ASoC: rockchip-i2s: add description for rk3308
-Date: Thu,  7 May 2020 13:32:38 +0200
-Message-Id: <20200507113238.7904-1-jbx6244@gmail.com>
-X-Mailer: git-send-email 2.11.0
+ id 1jWesm-0005FY-TG
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:40:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PY/rlHBI/GA6Ox+evhgewN1JrE96GThJ7RqaWlvvZXh/TLijrF50ffR+YNyzw3RaxqCaK67k+1CEoVjXT1iQR73R7y6HCVBeInVZWMChMnvk4a5aD8UXvj1Bo6+TYFvmv5iAdpg2CbWaEuguw5AFtVRM/leM8q7Vsx2/Fbo/CcY8TJtYbnVFhPD0J/5HfkLLpZTAu+HGQT15zI65+fuHX5Fb7UcDlH6cef9UEvSpbCN5S9X/aW2Qt9Ll8D3DiN3m7Gv7iW1fo8JaCtsG5mc8RcGKOPCKtBvvtomDzgh07CBEcRYPi896bAoVRM5vImw9vTfXZlNmvNyP1Cx2HOEZPw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=REG8EPehNarY/yGsa0fRI7+j40UTo7cDPWZwMPV7x5s=;
+ b=fW+wTme0WB4TZxjoqlewCwHtGi28tfCX/vgE9/jVvv9Mj1s8HnIgaKoF7EW+RFA4XWsxwi2MxFrGVU4UAXWm7rj4X9Vc3FKfKHHSLKB2MLbsOeb9jT5DvgOf5pDKxIliZrlayXouM815epxesLZEZBft/ORt5MA3TIyQ0tJtDrXnZeJGne4unGRgAa1zfqIJxHg6I3aEhjFjYs8i/No0Xfh57QjhIu7HGeHsyPuRtCfSqIEBgA6c6atGr2aMJKch2vqhpTuSi/DaaN+Vf1YgOqggglsorlUQbCyIJxjQ21rnq18mwxGWio8t0DTaVx2AYi2+vsLQKLoC8Cdq2IUPoA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=REG8EPehNarY/yGsa0fRI7+j40UTo7cDPWZwMPV7x5s=;
+ b=LGy0aG0fgW23CtMjN1U0FspwVKn6WneXgdZbEcWN8YsKBE/l9Dy60j9HGAN6A+mi5EbQUJGkspx2alshu9uuMDGwIBfytSr2CNJPNqF1FfccEQwgY0LSklcSQZuQw5hEYdD7EDlNNjGVm7bxCwCOUn6ymeI3bg3rRamUpE/+Fmc=
+Received: from AM6PR05MB6120.eurprd05.prod.outlook.com (2603:10a6:20b:a8::25)
+ by AM6PR05MB4422.eurprd05.prod.outlook.com (2603:10a6:209:43::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.27; Thu, 7 May
+ 2020 11:40:01 +0000
+Received: from AM6PR05MB6120.eurprd05.prod.outlook.com
+ ([fe80::d8d3:ead7:9f42:4289]) by AM6PR05MB6120.eurprd05.prod.outlook.com
+ ([fe80::d8d3:ead7:9f42:4289%6]) with mapi id 15.20.2979.030; Thu, 7 May 2020
+ 11:40:01 +0000
+From: Philippe Schenker <philippe.schenker@toradex.com>
+To: "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "dillon.minfei@gmail.com" <dillon.minfei@gmail.com>,
+ "alexandre.torgue@st.com" <alexandre.torgue@st.com>
+Subject: Re: [PATCH V2 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
+ board
+Thread-Topic: [PATCH V2 3/4] ARM: dts: stm32: enable stmpe811 on
+ stm32429-disco board
+Thread-Index: AQHWJGDUkh+1vWERX0ChStn6nGXI06icf7qA
+Date: Thu, 7 May 2020 11:40:01 +0000
+Message-ID: <7f7ad11559ec728c72d3d4df19ca16fe6a57058e.camel@toradex.com>
+References: <1588850125-24344-1-git-send-email-dillon.minfei@gmail.com>
+In-Reply-To: <1588850125-24344-1-git-send-email-dillon.minfei@gmail.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Evolution 3.36.2 
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=toradex.com;
+x-originating-ip: [51.154.7.61]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 29fbc4f7-5b24-419c-9140-08d7f27b60de
+x-ms-traffictypediagnostic: AM6PR05MB4422:
+x-microsoft-antispam-prvs: <AM6PR05MB44221BADEA5EDEC59ABEC04BF4A50@AM6PR05MB4422.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4502;
+x-forefront-prvs: 03965EFC76
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: AxzFTOa8ZwZzlUHwLviCmW15pVlyFHD61ml8tbRAheNapEz6R2qqMQJZs5K0egBhJtCe8/KYwvRFwYymrgkeCxkrcdFEqv5OqUK5kdrF6nYkMQYSLQOqSxoBEQ/DSonEOPfEqy6VIaPBFa1sSfV6m6NaACmdJjRNAlZHPFH3620pL6MOzFJ+jgKU59CFEi+ldEcuHgKSg9tdF1SlDSDxDx9kUX3Pezpngve6c/GN46zqZb5/FJzCjCgzsSl9l2TELuTD5g6mjmk2kqpdfjPFNk0XxUDd6hEHLaydBtaBz9pEk+HIC1FZO91qyugRdJ4CMA03KSJQUPwIAN/F/+tbVCQyegzamce+r0rG+l9DClFuMoP2GtCq65KxQMJnyVGEez3FTEr+aVMsJ7fkfwUXraGDBrmWjQPS9xVC8GzQXjnVw+WiKIVeCl3wn75X4+3yq7SDoDYjyfIIB9Z0mHesVcJr2E3joAoN3iUxQMYb1H2ePavuTK/xHvQKXJVFKpl7SBI1ZjHPRweGAFe8hZ1rag==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM6PR05MB6120.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(346002)(136003)(366004)(396003)(39850400004)(33430700001)(8936002)(33440700001)(6512007)(86362001)(6506007)(66946007)(44832011)(6486002)(2906002)(66556008)(186003)(66476007)(66446008)(64756008)(8676002)(36756003)(2616005)(110136005)(54906003)(5660300002)(83320400001)(83280400001)(83310400001)(316002)(478600001)(83290400001)(26005)(71200400001)(83300400001)(76116006)(4326008)(91956017);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: g237bnMKZYHSTxKGC0S2aRZgC+wlf9bYDfQvima5NeqHgOF+b/1YDLbo7xgWAJg7euX79jT1euKDhKz6u8bNpyJyUpG5AmHELThrHAOcvTXfjPNg/8nmCziSylUjJ8ZUBROIb7FxH3186lfraE/efIvtqFw1FDfO5e6wTRaixR4YHgYWOVllg1nSdj+3+UwuZX21F2Sg57dBJDD1TSfH8KYwksoQje6qMNI1tYDNi6xgN4hwSOUbepIgdWc7BHcmVZbKA6+0qwAyHb8B6Y4L04ClAgxAVL659vSAQboI2HPfbWGM0nqEGm4iYm1Y41jmf5jbi7OQdEyEvHt1Drfxogq1LQ5m5JpmrsW5P6qbKZHO7Wlea+mUhqA06f+qzOolGkNujjuzDJ+Mjw+YzQ7kVQlNdKtjTyp72wyPEzPFxy16pMpVA8Vg+tiLz/s6AONzr5xLaCwFU68Y7+HLHrL4yO/mqkGY7x1hbOrV/RuH2ckC4RiWIAgQkudgdKK19lJ+HNxExKUl+Ue27kVP2CM4RZ2BHsyoHu/mODsgUlXZTRiaao+uTyl7LWn4BTOa/wh02Ku8zucMy3kQlBfIUaJ2jZEtuVHwv1X+WW8E1t+CEod9z0UNThQDm1eze3wIGt6WxzB3B7IfzmwRA9ve91e6fqU/JbAtwubAPheVu0QOpldonwtclc1wV6GbHdy+m7h5URzEp99yoI//u45121TgOlBD0YfqRFmvEdUq3ueXrRXwoB0RC41z6xnp9kCJHB5ASkfoawRz1mj6vjF7p3IRTwoAv6D9JP0+I8JiHzQ6Pi4=
+x-ms-exchange-transport-forked: True
+Content-ID: <014E3F861DA3C24E97B6948622A59A2E@eurprd05.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 29fbc4f7-5b24-419c-9140-08d7f27b60de
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2020 11:40:01.5313 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FkoWnmgKnXKPCVfB9l406okk2fIZ3OPQdaotk2TPJHn5dHgC03+PYc8NOglY1k0F3uA/i/cEhY5jD+4uzzHwCusuDIL9QXdFROhKUetwFOU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR05MB4422
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_043248_220738_71DA4B26 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20200507_044005_031828_069391A8 
+X-CRM114-Status: GOOD (  15.75  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.7.99 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [jbx6244[at]gmail.com]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [jbx6244[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.7.99 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,69 +127,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, robh+dt@kernel.org, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The description below is already in use for rk3308.dtsi,
-but was somehow never added to a document, so add
-"rockchip,rk3308-i2s", "rockchip,rk3066-i2s"
-for i2s nodes on a rk3308 platform to rockchip-i2s.yaml.
-One of the rk3308 i2s nodes also has a different dma layout,
-so change that as well.
+On Thu, 2020-05-07 at 19:15 +0800, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
+> 
+> Enable the stmpe811 touch screen on stm32429-disco board.
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> 
+> [PATCH 3/4]: ARM: dts: stm32: enable stmpe811 on stm32429-disco
+> 
+> V2:
+> patch 3: remove unused id, blocks, irq-trigger
+> 
+> V1:
+> patch 4: fix read touch screen xyz timeout bug
+> patch 3: enable stmpe_touchscreen on stm32f429-disco board
+> patch 2: add i2c3 pin mux for stm32f4
+> patch 1: add i2c3 controller interface for stm32f4
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
 
-Signed-off-by: Johan Jonker <jbx6244@gmail.com>
----
-The rk3308 i2s nodes also contain the properties
-"reset-names" and "resets". Code in the manufacturer tree is
-not yet applied in the mainline kernel, so skip them for now.
----
- Documentation/devicetree/bindings/sound/rockchip-i2s.yaml | 12 +++++++-----
- 1 file changed, 7 insertions(+), 5 deletions(-)
+For the STMPE part:
 
-diff --git a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-index a3ba2186d..10f9d3ad0 100644
---- a/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-+++ b/Documentation/devicetree/bindings/sound/rockchip-i2s.yaml
-@@ -24,6 +24,7 @@ properties:
-             - rockchip,rk3188-i2s
-             - rockchip,rk3228-i2s
-             - rockchip,rk3288-i2s
-+            - rockchip,rk3308-i2s
-             - rockchip,rk3328-i2s
-             - rockchip,rk3366-i2s
-             - rockchip,rk3368-i2s
-@@ -47,14 +48,15 @@ properties:
-       - const: i2s_hclk
- 
-   dmas:
--    items:
--      - description: TX DMA Channel
--      - description: RX DMA Channel
-+    minItems: 1
-+    maxItems: 2
- 
-   dma-names:
--    items:
--      - const: tx
-+    oneOf:
-       - const: rx
-+      - items:
-+        - const: tx
-+        - const: rx
- 
-   power-domains:
-     maxItems: 1
--- 
-2.11.0
+Reviewed-by: Philippe Schenker <philippe.schenker@toradex.com>
 
-
+> ---
+>  arch/arm/boot/dts/stm32f429-disco.dts | 47
+> +++++++++++++++++++++++++++++++++++
+>  1 file changed, 47 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32f429-disco.dts
+> b/arch/arm/boot/dts/stm32f429-disco.dts
+> index 30c0f67..fad1ec1 100644
+> --- a/arch/arm/boot/dts/stm32f429-disco.dts
+> +++ b/arch/arm/boot/dts/stm32f429-disco.dts
+> @@ -49,6 +49,8 @@
+>  #include "stm32f429.dtsi"
+>  #include "stm32f429-pinctrl.dtsi"
+>  #include <dt-bindings/input/input.h>
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/gpio/gpio.h>
+>  
+>  / {
+>  	model = "STMicroelectronics STM32F429i-DISCO board";
+> @@ -127,3 +129,48 @@
+>  	pinctrl-names = "default";
+>  	status = "okay";
+>  };
+> +
+> +&i2c3 {
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&i2c3_pins>;
+> +	clock-frequency = <100000>;
+> +	status = "okay";
+> +
+> +	stmpe811@41 {
+> +		compatible = "st,stmpe811";
+> +		reg = <0x41>;
+> +		interrupts = <15 IRQ_TYPE_EDGE_FALLING>;
+> +		interrupt-parent = <&gpioa>;
+> +		/* 3.25 MHz ADC clock speed */
+> +		st,adc-freq = <1>;
+> +		/* 12-bit ADC */
+> +		st,mod-12b = <1>;
+> +		/* internal ADC reference */
+> +		st,ref-sel = <0>;
+> +		/* ADC converstion time: 80 clocks */
+> +		st,sample-time = <4>;
+> +
+> +		stmpe_touchscreen {
+> +			compatible = "st,stmpe-ts";
+> +			/* 8 sample average control */
+> +			st,ave-ctrl = <3>;
+> +			/* 7 length fractional part in z */
+> +			st,fraction-z = <7>;
+> +			/*
+> +			 * 50 mA typical 80 mA max touchscreen drivers
+> +			 * current limit value
+> +			 */
+> +			st,i-drive = <1>;
+> +			/* 1 ms panel driver settling time */
+> +			st,settling = <3>;
+> +			/* 5 ms touch detect interrupt delay */
+> +			st,touch-det-delay = <5>;
+> +		};
+> +
+> +		stmpe_adc {
+> +			compatible = "st,stmpe-adc";
+> +			/* forbid to use ADC channels 3-0 (touch) */
+> +			st,norequest-mask = <0x0F>;
+> +		};
+> +	};
+> +};
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
