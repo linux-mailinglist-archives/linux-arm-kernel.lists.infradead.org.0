@@ -2,65 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5EDE71C994A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:29:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5B671C994F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 20:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IS/jJpZYnP+zu2kgWSRZTabRZmOwQohXL3yz+7n6I1Q=; b=rKOnayFUM7IH0Q
-	MgDanJ/I/eWqiAF2ZO15zqgDaSh6+TKmORecHTWRT5ybwmV76614j4otHQW6WBCpIZoylVmlGhPpX
-	oZrWCmKuqEOKFejpUj0nm4c5G0UPeUbiJzBJtp1CxVsa0eLFmDZ+52hnMta0pzxUBLs0mn0MKyhPT
-	LeMbKZ+T7+8A+zkwMmMXI/0J3WQqX8tLsFThAEqC3kU+p6ypaQfGVFXXu8bdtQ+LLORO4R711dMk2
-	ytpdspOIB6euo6FZLX0Bgcgo+IXQqzoJFgx7GuO3nFEEg8dg9ebmrHWF33ZnoxTPkqO8+w4bo4/I3
-	bFxB+tNSvZanqWN/Z0MA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MWIHU4cQFeQ8ytMgj8FJA6xMZmaKv8Ab8620bOwsndA=; b=P1ropU3skRRutj
+	FLX69IPXQ85K/+tWM1TFM8n9bqUoSCOg+m1dw1V3Vv2RgBduCfDQcmmDWxomBue7GEEfwD8tHmhT/
+	r8akKGdzRoxXemaWUKeuYsYG+7FV7FVCRsWQazJdl4d2KGa/qpA+JX3BXqSDVXOuaMc3lBEQHMBmB
+	MKlttwUHqUPCAvUt8zW6avRNd+fSW+bFjROzK2BSIqKQMuy5MHwCbEepOQCEVyous0f4eFYPA23Mu
+	wWbiQUDMYWSMINIfFpT+Tvuf1LlUUiL3LG5/zlje3ADDgukxMQaHwTSXw/aJkBv23qMwhEroKTWAm
+	yYs/w1c0rmat74H9APFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWlGq-0005lW-DW; Thu, 07 May 2020 18:29:20 +0000
-Received: from mga04.intel.com ([192.55.52.120])
+	id 1jWlHg-00064v-Ee; Thu, 07 May 2020 18:30:12 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWlGh-0005kx-HA; Thu, 07 May 2020 18:29:12 +0000
-IronPort-SDR: HA41BbmPZ7enBf4966TNb2meT4E/Jg3zVwABcnQSJrALlSW+FZAM2QZ4u9DLqNND0Kzf4s75xY
- 2VEd+mgcCS4w==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by fmsmga104.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 11:29:10 -0700
-IronPort-SDR: wMCF1cDvnibopdXFyBYMTMWQUgrGoVywPKBnfFBshtu66Lml/9Uhcx1CeU2Dk+bYh/7TpE83ne
- 9LAth0IHca1A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="296619233"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga008.jf.intel.com with ESMTP; 07 May 2020 11:29:03 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jWlGc-005H6v-15; Thu, 07 May 2020 21:29:06 +0300
-Date: Thu, 7 May 2020 21:29:06 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Subject: Re: [PATCH v3 0/4] serial: 8250_dw: Fix ref clock usage
-Message-ID: <20200507182906.GC185537@smile.fi.intel.com>
-References: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
- <20200506233136.11842-1-Sergey.Semin@baikalelectronics.ru>
+ id 1jWlHO-00063y-CW
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 18:29:56 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49J27M73Szz1qrfc;
+ Thu,  7 May 2020 20:29:51 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49J27M6MPXz1qtwT;
+ Thu,  7 May 2020 20:29:51 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id IvhfuZ31SWu3; Thu,  7 May 2020 20:29:50 +0200 (CEST)
+X-Auth-Info: ak3Pt2h1c+ULM+yIYYZI42YXGyZ3Lg4m+rzC4+KsQEI=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu,  7 May 2020 20:29:49 +0200 (CEST)
+Subject: Re: [PATCH] [RFC] genirq: Check irq_data_get_irq_chip() return value
+ before use
+To: Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+References: <20200507150729.244468-1-marex@denx.de>
+ <87r1vvejqa.fsf@nanos.tec.linutronix.de>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <05c06df8-f871-c20f-3b7e-bcfa0b5d88cd@denx.de>
+Date: Thu, 7 May 2020 20:29:49 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200506233136.11842-1-Sergey.Semin@baikalelectronics.ru>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <87r1vvejqa.fsf@nanos.tec.linutronix.de>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_112911_592620_60B1BA73 
-X-CRM114-Status: GOOD (  19.59  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_112954_731444_6A4E1570 
+X-CRM114-Status: GOOD (  17.75  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.120 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [212.18.0.9 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,111 +79,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Serge Semin <fancer.lancer@gmail.com>, Will Deacon <will@kernel.org>,
- Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>,
- Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>,
- Russell King <linux@armlinux.org.uk>, Long Cheng <long.cheng@mediatek.com>,
- Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>,
- Jiri Slaby <jslaby@suse.com>, linux-serial@vger.kernel.org,
- Arnd Bergmann <arnd@arndb.de>, Maxime Ripard <mripard@kernel.org>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Vadim Vlasov <V.Vlasov@baikalelectronics.ru>,
- Paul Burton <paulburton@kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>,
- Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>,
- Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
+Cc: Marc Zyngier <marc.zyngier@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Stephen Boyd <sboyd@codeaurora.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 02:31:31AM +0300, Serge Semin wrote:
-> It might be dangerous if an UART port reference clock rate is suddenly
-> changed. In particular the 8250 port drivers (and AFAICS most of the tty
-> drivers using common clock framework clocks) rely either on the
-> exclusive reference clock utilization or on the ref clock rate being
-> always constant. Needless to say that it turns out not true and if some
-> other service suddenly changes the clock rate behind an UART port driver
-> back it's no good. So the port might not only end up with an invalid
-> uartclk value saved, but may also experience a distorted output/input
-> data since such action will effectively update the programmed baud-clock.
-> We discovered such problem on Baikal-T1 SoC where two DW 8250 ports have
-> got a shared reference clock. Allwinner SoC is equipped with an UART,
-> which clock is derived from the CPU PLL clock source, so the CPU frequency
-> change might be propagated down up to the serial port reference clock.
-> This patchset provides a way to fix the problem to the 8250 serial port
-> controllers and mostly fixes it for the DW 8250-compatible UART. I say
-> mostly because due to not having a facility to pause/stop and resume/
-> restart on-going transfers we implemented the UART clock rate update
-> procedure executed post factum of the actual reference clock rate change.
+On 5/7/20 7:30 PM, Thomas Gleixner wrote:
+> Marek Vasut <marex@denx.de> writes:
 > 
-> In addition the patchset includes a few fixes we discovered when were
-> working the issue. First one concerns the maximum baud rate setting used
-> to determine a serial port baud based on the current UART port clock rate.
-> Another one simplifies the ref clock rate setting procedure a bit.
+>> The irq_data_get_irq_chip() can return NULL. If the kernel accesses
+>> chip->irq_get_irqchip_state without checking whether chip is valid,
+>> we get a crash. Fix this by checking whether chip is not NULL before
+>> using it.
+>>
+>> Fixes: 1b7047edfcfb ("genirq: Allow the irqchip state of an IRQ to be save/restored")
+>> Signed-off-by: Marek Vasut <marex@denx.de>
+>> ---
+>> NOTE: I don't know whether this is a correct fix. Maybe the
+>>       irq_data_get_irq_chip() should never return NULL, and
+>>       I have some other issue?
 > 
-> This patchset is rebased and tested on the mainline Linux kernel 5.7-rc4:
-> 0e698dfa2822 ("Linux 5.7-rc4")
-> tag: v5.7-rc4
+> What's the callchain?
 
-Thanks!
+Hmm, I'm currently unable to replicate it on linux-next, but on 5.4.39 I
+get what's at the end of the email.
 
-I will look at them later, but first impression that the first approach narrowed
-to the certain SoC (by matching compatible string) looks better solution for
-time being.
+On next I just noticed I get i2c: Transfer while suspended, which is
+what I suspect would be the real root cause of my problem, and why
+irq_data_get_irq_chip() returns NULL?
 
-> Changelog v3:
-> - Refactor the original patch to adjust the UART port divisor instead of
->   requesting an exclusive ref clock utilization.
-> 
-> Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-> Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
-> Cc: Maxim Kaurkin <Maxim.Kaurkin@baikalelectronics.ru>
-> Cc: Pavel Parkhomenko <Pavel.Parkhomenko@baikalelectronics.ru>
-> Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
-> Cc: Ramil Zaripov <Ramil.Zaripov@baikalelectronics.ru>
-> Cc: Ekaterina Skachko <Ekaterina.Skachko@baikalelectronics.ru>
-> Cc: Vadim Vlasov <V.Vlasov@baikalelectronics.ru>
-> Cc: Alexey Kolotnikov <Alexey.Kolotnikov@baikalelectronics.ru>
-> Cc: Paul Burton <paulburton@kernel.org>
-> Cc: Ralf Baechle <ralf@linux-mips.org>
-> Cc: Arnd Bergmann <arnd@arndb.de>
-> Cc: Long Cheng <long.cheng@mediatek.com>
-> Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> Cc: Maxime Ripard <mripard@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: linux-mips@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-mediatek@lists.infradead.org
-> Cc: linux-serial@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> 
-> Serge Semin (4):
->   serial: 8250: Fix max baud limit in generic 8250 port
->   serial: 8250: Add 8250 port clock update method
->   serial: 8250_dw: Simplify the ref clock rate setting procedure
->   serial: 8250_dw: Fix common clocks usage race condition
-> 
->  drivers/tty/serial/8250/8250_dw.c   | 125 +++++++++++++++++++++++++---
->  drivers/tty/serial/8250/8250_port.c |  42 +++++++++-
->  include/linux/serial_8250.h         |   2 +
->  3 files changed, 156 insertions(+), 13 deletions(-)
-> 
-> -- 
-> 2.25.1
-> 
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
+ 8<--- cut here ---
+ Unable to handle kernel NULL pointer dereference at virtual address
+00000070
+ pgd = d06053c1
+ [00000070] *pgd=fb2ae835
+ Internal error: Oops: 17 [#1] SMP ARM
+ Modules linked in:
+ CPU: 1 PID: 134 Comm: sh Not tainted 5.4.39-00040-gbfd890984358 #3
+ Hardware name: STM32 (Device Tree Support)
+ PC is at __irq_get_irqchip_state+0x4/0x30
+ LR is at __synchronize_hardirq+0x7c/0xe8
+ pc : [<c0166758>]    lr : [<c0166800>]    psr: a0000093
+ sp : ed8bddb8  ip : 0000000f  fp : 00000000
+ r10: eeedcd68  r9 : c0e0ee04  r8 : eeedcd14
+ r7 : eeedcd68  r6 : 00000001  r5 : 40000013  r4 : eeedcd00
+ r3 : 00000000  r2 : ed8bddbb  r1 : 00000001  r0 : eeef5f40
+ Flags: NzCv  IRQs off  FIQs on  Mode SVC_32  ISA ARM  Segment none
+ Control: 10c5387d  Table: eef1c06a  DAC: 00000051
+ Process sh (pid: 134, stack limit = 0xd4728d7d)
+ Stack: (0xed8bddb8 to 0xed8be000)
+ dda0:                                                       00edcd00
+c0e04e48
+ ddc0: eeedcd00 00000001 0000004d 40000013 c0e0ef40 c01668f0 00000fff
+c0e04e48
+ dde0: eeedc700 00000001 0000004d c0e04e48 40000013 eeedcd00 00000001
+c016cba0
+ de00: 00000001 c0e8d714 c0ed0498 00000002 c0e9494c 00000001 c0e8d5bc
+00000004
+ de20: 00000000 c04e3388 00000002 00000002 c0e8a44c 00000000 c0ed0498
+00000001
+ de40: c0e9494c 00000001 c0e8d5bc 00000004 00000000 c015f174 2e9b7000
+c0162a48
+ de60: ed8bde74 c0e04e48 00000000 00000000 c0ed0498 00000001 c0e8d5bc
+c094b61f
+ de80: c0e94960 c015f6f4 00000007 c0e04e48 eef5c1c3 00000003 00000001
+eef5c1c0
+ dea0: 00000004 c015e100 00000004 eef5c1c0 eef4c780 ed8bdf78 eef4c790
+00000051
+ dec0: 00000004 c029a424 00000000 00000000 00000004 00000000 ee9e6540
+00000004
+ dee0: c029a300 ed8bdf78 ed8bc000 c02301c8 eef1c000 eef1c000 00000000
+00000000
+ df00: 00000000 00000000 00000000 eef1a03c 00000000 c0e04e48 eeb25a00
+00075ff4
+ df20: ed8bdfb0 eeebb1e0 00000054 80000007 eef1a040 c015b6ac 00075ff4
+c0112a30
+ df40: c0101204 c0e04e48 ee9e6540 00000000 ee9e6540 00000004 001d2730
+c0231658
+ df60: ee9e6540 001d2730 ed8bdf78 ed8bdf84 00000004 c02317fc 00000000
+00000000
+ df80: 00000000 ee9e6540 00000000 c0e04e48 001ceeac 00000004 001d2730
+00000004
+ dfa0: c0101204 c0101000 001ceeac 00000004 00000001 001d2730 00000004
+00000000
+ dfc0: 001ceeac 00000004 001d2730 00000004 00000001 00000002 00000020
+00000000
+ dfe0: 00000001 be830660 0000c1d0 00008e0c 60000010 00000001 00000000
+00000000
+ [<c0166758>] (__irq_get_irqchip_state) from [<c0166800>]
+(__synchronize_hardirq+0x7c/0xe8)
+ [<c0166800>] (__synchronize_hardirq) from [<c01668f0>]
+(synchronize_irq+0x2c/0x9c)
+ [<c01668f0>] (synchronize_irq) from [<c016cba0>]
+(suspend_device_irqs+0xd8/0xf4)
+ [<c016cba0>] (suspend_device_irqs) from [<c04e3388>]
+(dpm_suspend_noirq+0x18/0x194)
+ [<c04e3388>] (dpm_suspend_noirq) from [<c015f174>]
+(suspend_devices_and_enter+0x170/0x514)
+ [<c015f174>] (suspend_devices_and_enter) from [<c015f6f4>]
+(pm_suspend+0x1dc/0x278)
+ [<c015f6f4>] (pm_suspend) from [<c015e100>] (state_store+0x9c/0xcc)
+ [<c015e100>] (state_store) from [<c029a424>] (kernfs_fop_write+0x124/0x1e0)
+ [<c029a424>] (kernfs_fop_write) from [<c02301c8>] (__vfs_write+0x2c/0xe8)
+ [<c02301c8>] (__vfs_write) from [<c0231658>] (vfs_write+0x98/0xbc)
+ [<c0231658>] (vfs_write) from [<c02317fc>] (ksys_write+0x74/0xc4)
+ [<c02317fc>] (ksys_write) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
+ Exception stack(0xed8bdfa8 to 0xed8bdff0)
+ dfa0:                   001ceeac 00000004 00000001 001d2730 00000004
+00000000
+ dfc0: 001ceeac 00000004 001d2730 00000004 00000001 00000002 00000020
+00000000
+ dfe0: 00000001 be830660 0000c1d0 00008e0c
+ Code: e8bd8010 c094f6b4 c094f6ee e5903010 (e5933070)
+ ---[ end trace 0c491ff303550b8d ]---
 
 _______________________________________________
 linux-arm-kernel mailing list
