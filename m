@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57AD01C8056
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 05:10:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C25F1C8058
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 05:10:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Date:From:MIME-Version:In-Reply-To:
 	Subject:To:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=MMR+vRU+wS35Xwd63sMFVhEvDD9xfeR+DYXW6mbk16w=; b=VDJbTHm4mTAFnm
-	nXybizx/Mz6To1RMmV4jPJ3XS10Wny1wle6JpZjvu2H1LAt6+TT5lZ/nuQQEsN2lXP/MOAFWQfJsc
-	+0UwsV5GSad4+CvSV7cUr0ZxVJ9CnLIZVE7OfWVJEHeKgrWwjvQus83i+SqDyZb1/WgIweK6CQD1t
-	/uiqs4ditR6G/fkT5AAaHLvnYmvxRL2dgC4XRg4aYf6gKPeEquYvEeZllzd03OUNze51dNK8EM1Wf
-	AEjpq3Y7SEt1+uNsOXDrkiqLiJKQ/Fm7PmyBAmUBfaapEtRPX8lyfAas3lqJtIDpxp3YIW5qtcdgl
-	XYdC5buZx6BMzdyDKJng==;
+	List-Owner; bh=If0hLEBMCcpDjIBcfmblhhF0DZT0oVJLKKzfgrMXTi4=; b=FACk0Tfl78k2w2
+	0qjwxt7766JFFtNmSCSE5zvKVPK0BOCGWFcrWKtR1EuNxShEQ9Fq4Z0eMqTagMzkCaG1U4rTe5lWC
+	LqFNdbZvgeA1saA4L0Ey/2o6nq/illZ+ARjnM3ZjQjxkytkE5A31qUMtMzR54y4+7V+RkALBvOcC9
+	3SS7O1sXhG3Klpcd6nRZz4tBDWSoIfiSEtuxZ3h3AZWtqy+v0icEdtAkctCr5K3gcBih8pY7ZTr12
+	bgkVqxokwBCUH30jZTGLaAKTlItgeYR89DcPUNl3mas9QDuteyhfDH9Kzrw0wQgCUGY3P6Zyt4RJA
+	h9Ehqz/rWr1iWE421R2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWWvP-0003mt-Rg; Thu, 07 May 2020 03:10:15 +0000
+	id 1jWWvd-0006RN-On; Thu, 07 May 2020 03:10:29 +0000
 Received: from m176150.mail.qiye.163.com ([59.111.176.150])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWWv5-0003ln-F5
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 03:09:57 +0000
+ id 1jWWvU-0006Mq-Ez
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 03:10:22 +0000
 Received: from vivo.com (wm-10.qy.internal [127.0.0.1])
- by m176150.mail.qiye.163.com (Hmail) with ESMTP id E210C1A30A3;
- Thu,  7 May 2020 11:09:15 +0800 (CST)
-Message-ID: <AAsA8gAQCF1C9rDJm0RSQaqC.3.1588820955909.Hmail.bernard@vivo.com>
+ by m176150.mail.qiye.163.com (Hmail) with ESMTP id CE1361A2E1E;
+ Thu,  7 May 2020 11:09:43 +0800 (CST)
+Message-ID: <ABMAdgC5CDjCyrCBmyLV44rX.3.1588820983821.Hmail.bernard@vivo.com>
 To: Bernard Zhao <bernard@vivo.com>
-Subject: =?UTF-8?B?UmU6W1BBVENIXSBkcm0vbWVzb246IHBtIHJlc3VtZSBhZGQgcmV0dXJuIGVycm5vIGJyYW5jaA==?=
+Subject: =?UTF-8?B?UmU6W1BBVENIXSBkcm0vZXh5bm9zOiBtYWtlIHBvaW50ZXIgdG8gY29uc3QgZGF0YSBjb25zdCB0eXBl?=
 X-Priority: 3
 X-Mailer: HMail Webmail Server V2.0 Copyright (c) 2016-163.com
 X-Originating-IP: 157.0.31.122
-In-Reply-To: <20200428131747.2099-1-bernard@vivo.com>
+In-Reply-To: <20200426090142.21251-1-bernard@vivo.com>
 MIME-Version: 1.0
 Received: from bernard@vivo.com( [157.0.31.122) ] by ajax-webmail (
- [127.0.0.1] ) ; Thu, 7 May 2020 11:09:15 +0800 (GMT+08:00)
+ [127.0.0.1] ) ; Thu, 7 May 2020 11:09:43 +0800 (GMT+08:00)
 From: Bernard <bernard@vivo.com>
-Date: Thu, 7 May 2020 11:09:15 +0800 (GMT+08:00)
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZSFVNQ0lLS0tKTUtJSkxJQllXWShZQU
+Date: Thu, 7 May 2020 11:09:43 +0800 (GMT+08:00)
+X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VNSUNCQkJMSktLQ0hLSllXWShZQU
  hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kJHlYWEh9ZQUhMTktISU9MQk5JN1dZDB4ZWUEPCQ4eV1kSHx4VD1lB
- WUc6Ogg6Qxw6Kjg9SjhCCT8xFkspKCoaCjhVSFVKTkNDQ0lLQk5NS0hIVTMWGhIXVRkeCRUaCR87
- DRINFFUYFBZFWVdZEgtZQVlKTkxVS1VISlVKSUlZV1kIAVlBT0tOSDcG
-X-HM-Tid: 0a71ed1bd32393b4kuwse210c1a30a3
+X-HM-Sender-Digest: e1kJHlYWEh9ZQUhMT09DSE9LSE1ON1dZDB4ZWUEPCQ4eV1kSHx4VD1lB
+ WUc6OTY6Hxw4Tjg*ETgCCTg5FgI3LU9PCSNVSFVKTkNDQ0lLQkNOQkpMVTMWGhIXVRkeCRUaCR87
+ DRINFFUYFBZFWVdZEgtZQVlKTkxVS1VISlVKSUlZV1kIAVlBTklLSDcG
+X-HM-Tid: 0a71ed1c403493b4kuwsce1361a2e1e
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_200955_656797_A036F7D1 
-X-CRM114-Status: UNSURE (   6.63  )
+X-CRM114-CacheID: sfid-20200506_201020_813164_A0800E48 
+X-CRM114-Status: UNSURE (   6.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,10 +70,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com, Neil Armstrong <narmstrong@baylibre.com>,
- David Airlie <airlied@linux.ie>, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Daniel Vetter <daniel@ffwll.ch>, linux-amlogic@lists.infradead.org,
+Cc: opensource.kernel@vivo.com, linux-samsung-soc@vger.kernel.org,
+ Joonyoung Shim <jy0922.shim@samsung.com>, David Airlie <airlied@linux.ie>,
+ Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Inki Dae <inki.dae@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -82,34 +84,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 From: Bernard Zhao <bernard@vivo.com>
-Date: 2020-04-28 21:17:47
-To:  Neil Armstrong <narmstrong@baylibre.com>,David Airlie <airlied@linux.ie>,Daniel Vetter <daniel@ffwll.ch>,Kevin Hilman <khilman@baylibre.com>,dri-devel@lists.freedesktop.org,linux-amlogic@lists.infradead.org,linux-arm-kernel@lists.infradead.org,linux-kernel@vger.kernel.org
+Date: 2020-04-26 17:01:42
+To:  Inki Dae <inki.dae@samsung.com>,Joonyoung Shim <jy0922.shim@samsung.com>,Seung-Woo Kim <sw0312.kim@samsung.com>,Kyungmin Park <kyungmin.park@samsung.com>,David Airlie <airlied@linux.ie>,Daniel Vetter <daniel@ffwll.ch>,Kukjin Kim <kgene@kernel.org>,Krzysztof Kozlowski <krzk@kernel.org>,dri-devel@lists.freedesktop.org,linux-arm-kernel@lists.infradead.org,linux-samsung-soc@vger.kernel.org,linux-kernel@vger.kernel.org
 Cc:  opensource.kernel@vivo.com,Bernard Zhao <bernard@vivo.com>
-Subject: [PATCH] drm/meson: pm resume add return errno branch>pm_resump api did not handle drm_mode_config_helper_resume error.
->This change add handle to return drm_mode_config_helper_resume`s
->error number. This code logic is aligned with api pm_suspend.
->After this change, the code maybe a bit readable.
+Subject: [PATCH] drm/exynos: make pointer to const data const type>Maybe keep pointer which points to global const string data
+>in const type is better, make sure not change const data.
 >
 >Signed-off-by: Bernard Zhao <bernard@vivo.com>
 >---
-> drivers/gpu/drm/meson/meson_drv.c | 4 +---
-> 1 file changed, 1 insertion(+), 3 deletions(-)
+> drivers/gpu/drm/exynos/exynos_drm_dsi.c | 2 +-
+> drivers/gpu/drm/exynos/exynos_drm_mic.c | 2 +-
+> 2 files changed, 2 insertions(+), 2 deletions(-)
 >
->diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
->index b5f5eb7b4bb9..8c2e1b47e81a 100644
->--- a/drivers/gpu/drm/meson/meson_drv.c
->+++ b/drivers/gpu/drm/meson/meson_drv.c
->@@ -412,9 +412,7 @@ static int __maybe_unused meson_drv_pm_resume(struct device *dev)
-> 	if (priv->afbcd.ops)
-> 		priv->afbcd.ops->init(priv);
+>diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+>index e080aa92338c..f60d99c85ac9 100644
+>--- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+>+++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+>@@ -211,7 +211,7 @@
 > 
->-	drm_mode_config_helper_resume(priv->drm);
->-
->-	return 0;
->+	return drm_mode_config_helper_resume(priv->drm);
-> }
+> #define OLD_SCLK_MIPI_CLK_NAME "pll_clk"
 > 
-> static int compare_of(struct device *dev, void *data)
+>-static char *clk_names[5] = { "bus_clk", "sclk_mipi",
+>+static const char *const clk_names[5] = { "bus_clk", "sclk_mipi",
+> 	"phyclk_mipidphy0_bitclkdiv8", "phyclk_mipidphy0_rxclkesc0",
+> 	"sclk_rgb_vclk_to_dsim0" };
+> 
+>diff --git a/drivers/gpu/drm/exynos/exynos_drm_mic.c b/drivers/gpu/drm/exynos/exynos_drm_mic.c
+>index f41d75923557..a86abc173605 100644
+>--- a/drivers/gpu/drm/exynos/exynos_drm_mic.c
+>+++ b/drivers/gpu/drm/exynos/exynos_drm_mic.c
+>@@ -88,7 +88,7 @@
+> 
+> #define MIC_BS_SIZE_2D(x)	((x) & 0x3fff)
+> 
+>-static char *clk_names[] = { "pclk_mic0", "sclk_rgb_vclk_to_mic0" };
+>+static const char *const clk_names[] = { "pclk_mic0", "sclk_rgb_vclk_to_mic0" };
+> #define NUM_CLKS		ARRAY_SIZE(clk_names)
+> static DEFINE_MUTEX(mic_mutex);
+> 
 >-- 
 >2.26.2
 >
