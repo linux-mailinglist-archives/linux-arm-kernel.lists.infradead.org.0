@@ -2,59 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2E071C9511
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:29:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5CBF01C951D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:33:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:Subject:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LfHI2ccmiGVqRx9s66/Nso8wGdaSI8i2edTdDsiTM5Y=; b=vA8vAmiwj3bsQaXVmdUm7hSBe
-	Xg7aJ2WFVi63r8P8wEjMCs2xlqLCuV73E9mDQXmRsaPy6vXNmPRDE5ZUKnPiAOX8OEwdK1ctV94/+
-	nvQHm5zbLns9YNmcxkJjjf70GT4uB3hjZcDJboB5pF/NOK0fRstQFQ+aFDi9nxldGnZAc4k5hgaTS
-	ajZoFfqU/BTvk18f4UrHEK7BwH4lpgob+ZwyUhGfN0OZM3Bk/gp+yUGoDusu9g5L4cexW7k5R4FbU
-	n24eEOMcpLrZ1G6T8YbZa6MX/yUVFEqNEfEDD5ES2/WVW2gGy+l5CCnCt0dbxU5rmObOT72+qTisN
-	NsUpdTBww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mxken6c/unzrK0Hxhigi25l2P0esrD9BpD3WGYC/HkA=; b=bkKCYAJTHACo/S
+	X12qu1ebeohu/OexeD002v/fskpO/pUsnP7CH6k86PN7hVIarLvf69uApyTbQehq5hdaprIk1np2x
+	PcZT6xWNknydoVKoH5Qo9itbohuPUTZu1u3xC9eL6X9pa7KfZVnYu41qB5LxUq9ENZvvjU1S8RhoR
+	/fSblb85wh1uWyu+L01HlgyNRQEocMnk8LtxUlqY9t2CVbYG2rbyPmEFflVFXZpd1NdtqBiOAKlSf
+	Iq6+izi9zG8rvknB2YOotuZYfjRKvl5TeK/AED81vP1UBvYSPalAkBHQ76SH5caPl02mxmXgFeM6o
+	EShquU7DTu/UzK/gKRSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWiSj-0005TU-Pm; Thu, 07 May 2020 15:29:25 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWiSc-0005Sm-Az
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:29:19 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A8BDB1FB;
- Thu,  7 May 2020 08:29:17 -0700 (PDT)
-Received: from [10.57.23.221] (unknown [10.57.23.221])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8F4443F68F;
- Thu,  7 May 2020 08:29:14 -0700 (PDT)
-From: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v2 2/4] arm64: ptrauth: add pointer authentication Armv8.6
- enhanced feature
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
- <1586842314-19527-3-git-send-email-amit.kachhap@arm.com>
- <20200506163155.GG2878@gaia>
-Message-ID: <b9823e15-3d5f-9689-562a-284921377dbf@arm.com>
-Date: Thu, 7 May 2020 20:58:51 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+	id 1jWiWV-0000Lm-Vo; Thu, 07 May 2020 15:33:19 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWiWO-0000GC-QV
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:33:14 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49HyCV1YJMz1rwDl;
+ Thu,  7 May 2020 17:33:10 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49HyCV0RB2z1qqkV;
+ Thu,  7 May 2020 17:33:10 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id cbrmrNHPcsmZ; Thu,  7 May 2020 17:33:08 +0200 (CEST)
+X-Auth-Info: CCuPi2J0NVmY1Ov60Q8HkVbCDko6uHs1JRs2xSMfe84=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu,  7 May 2020 17:33:08 +0200 (CEST)
+Subject: Re: [PATCH 12/12] ARM: dts: stm32: Add DTs for STM32MP15x variants of
+ the DHCOR SOM and AV96
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+References: <20200429163743.67854-1-marex@denx.de>
+ <20200429163743.67854-12-marex@denx.de>
+ <20200507152616.GB2019@Mani-XPS-13-9360>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <687cdc32-7486-1090-154b-58e711dd6a2a@denx.de>
+Date: Thu, 7 May 2020 17:33:08 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-In-Reply-To: <20200506163155.GG2878@gaia>
+In-Reply-To: <20200507152616.GB2019@Mani-XPS-13-9360>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_082918_464955_6E153C94 
-X-CRM114-Status: GOOD (  27.53  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_083313_162340_E3C2A429 
+X-CRM114-Status: GOOD (  15.67  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,113 +77,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Patrick Delaunay <patrick.delaunay@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 5/7/20 5:26 PM, Manivannan Sadhasivam wrote:
+
 Hi,
 
-On 5/6/20 10:01 PM, Catalin Marinas wrote:
-> On Tue, Apr 14, 2020 at 11:01:52AM +0530, Amit Daniel Kachhap wrote:
->> This patch add changes for Pointer Authentication enhanced features
->> mandatory for Armv8.6. These features are,
->>
->> * Uses an enhanced PAC generation logic which hardens finding the correct
->>    PAC value of the authenticated pointer. However, no code change done
->>    for this.
->>
->> * Fault(FPAC) is generated now when the ptrauth authentication instruction
->>    fails in authenticating the PAC present in the address. This is different
->>    from earlier case when such failures just adds an error code in the top
->>    byte and waits for subsequent load/store to abort. The ptrauth
->>    instructions which may cause this fault are autiasp, retaa etc.
->>
->> The above features are now represented by additional configurations
->> for the Address Authentication cpufeature.
->>
->> The fault received in the kernel due to FPAC is treated as Illegal
->> instruction and hence signal SIGILL is injected with ILL_ILLOPN as the
->> signal code. Note that this is different from earlier ARMv8.3 ptrauth
->> where signal SIGSEGV is issued due to Pointer authentication failures.
-> 
-> Sorry if it was discussed before. Was there any reasoning behind
-> choosing ILL_ILLOPN vs something else like ILL_ILLADR?
+[...]
 
-No it was not discussed earlier. I used it as I thought that autiasp 
-failed here due to incorrect operands provided (sp, key, lr). Although
-sp and lr are addresses.
-
+>> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+>> index f43467b02bcd..b4a4d2b0f18e 100644
+>> --- a/arch/arm/boot/dts/Makefile
+>> +++ b/arch/arm/boot/dts/Makefile
+>> @@ -1029,6 +1029,9 @@ dtb-$(CONFIG_ARCH_STM32) += \
+>>  	stm32h743i-eval.dtb \
+>>  	stm32h743i-disco.dtb \
+>>  	stm32mp157a-avenger96.dtb \
+>> +	stm32mp151a-dhcor-avenger96.dtb \
+>> +	stm32mp153a-dhcor-avenger96.dtb \
+>> +	stm32mp157a-dhcor-avenger96.dtb \
 > 
->> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
->> index cf402be5c573..0ef9e9880194 100644
->> --- a/arch/arm64/kernel/traps.c
->> +++ b/arch/arm64/kernel/traps.c
->> @@ -411,6 +411,23 @@ void do_undefinstr(struct pt_regs *regs)
->>   }
->>   NOKPROBE_SYMBOL(do_undefinstr);
->>   
->> +void do_ptrauth_fault(struct pt_regs *regs, unsigned long esr)
->> +{
->> +	const char *desc;
+> I'm not really sure if keeping SoM name is a good practice here. Since the
+> board is sold as "Avenger96" alone, why do you want to prepend SoM name to it?
+> When you say, "stm32mp157a-avenger96.dtb" it obviously means that Avenger96
+> board uses the stm32mp157a SoC and that comes from SoM.
+
+That's because if you look at the other side of the AV96, you will
+notice there is this other piece of PCB on it, that's the DHCOR SoM. The
+SoM is soldered on the AV96 carrier board. And only on that SoM is the
+STM32MP15xx SoC.
+
+>>  	stm32mp157a-dk1.dtb \
+>>  	stm32mp157c-dhcom-pdk2.dtb \
+>>  	stm32mp157c-dk2.dtb \
+>> diff --git a/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
+>> new file mode 100644
+>> index 000000000000..0f3875fbdd73
+>> --- /dev/null
+>> +++ b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
+>> @@ -0,0 +1,9 @@
+>> +// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+>> +/*
+>> + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
+>> + */
 >> +
->> +	BUG_ON(!user_mode(regs));
+>> +/dts-v1/;
 >> +
->> +	/* Even if we chose not to use PTRAUTH, the hardware might still trap */
->> +	if (unlikely(!(system_supports_address_auth()))) {
+>> +#include "stm32mp151a-dhcor-som.dtsi"
+>> +#include "stm32mp15xa-dhcor-avenger96.dtsi"
 > 
-> Nitpick: no need for braces around system_supports_address_auth().
-
-ok
-
+> [...]
 > 
->> +		force_signal_inject(SIGILL, ILL_ILLOPC, regs->pc);
->> +		return;
->> +	}
-> 
-> So when do we execute this path? Is it on a big.LITTLE system where some
-> CPUs don't have the 8.6 behaviour? It's the same AUT instruction that
-> triggered it, so I don't think we should report a different ILL code.
-> 
-> It's a bit unfortunate that this new ptrauth feature doesn't have an
-> opt-in, so user-space would have to cope with both behaviours. In this
-> case I don't see why we need to differentiate on
-> system_supports_address_auth().
+>> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> index 10f11ca53c7d..dc3bbd576756 100644
+>> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
+>> @@ -1,421 +1,9 @@
+>>  // SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
+>>  /*
+>> - * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
+>> - * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 
-I was referring to some similar checks present in do_sve_acc in
-file arch/arm64/kernel/fpsimd.c to gaurd some unknown situations. Anyway 
-I should probably drop this as EC value is already matched.
-
-> 
-> While the new behaviour is a lot more useful in practice, I wonder
-> whether we could still emulate the old one by setting regs->pc to a
-> faulting address and returning to user.
-
-However even if we set regs->pc to the faulting lr address but this lr
-may not be same as earlier one as theoretically there can be two autia
-instructions so I am not sure if complete emulation is possible. Also 
-other work will be change ESR value, set error pattern in the faulting 
-address etc when the error pattern is itself not defined.
-
-> 
->> +
->> +	desc = "pointer authentication fault";
->> +	arm64_notify_die(desc, regs, SIGILL, ILL_ILLOPN, (void __user *)regs->pc, esr);
-> 
-> Nitpick: you could pass the string directly, no need for an additional
-> variable.
-
-ok
-
-Amit
-
-> 
+That's fixed in the other submission, sorry.
 
 _______________________________________________
 linux-arm-kernel mailing list
