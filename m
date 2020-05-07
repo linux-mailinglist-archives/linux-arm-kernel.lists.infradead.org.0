@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FCFB1C96B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:40:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBD761C96D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 18:48:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Wp1zyF5gvHrh3SonoX62wmDvQmUlw4JjOxxbdzy2shM=; b=GoL2IevkqUBrcE
-	dMopOe3dyeFHolSZV08POz1XyMBBtj3VQQIPiwvcUqMqgwJfFQar2o9FX5Uv3nSd+h6heYVNYn828
-	h7Ic7EweFOuAg0E4H/a0qF5I+ZrqdhJT08+at6BwnjU1/xIvfcBvxMs0+KXJe5zw8i6kFl3/+UGYK
-	hQqBrHpyfCAd3/jrtkNkgaLsxVVXH3DDCzqeYB5B1eomwl2WIHr2E6lULjrkV5fe5xa9Fy699C/TU
-	jVyNrQmri4AE510jteuXO0iJvF7YVXW2M/8HN/lj56UjJN41uWUsm5FDnBRqptZK0dFvjX4j6fda5
-	epAneN4JHRfHpITLFSiQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=kMa+9P35lRAQRR48HgLsom3zvT7W4q496d3Lz9j6lLM=; b=LBYsjCMleaKfWTbp9NiO25UU9
+	a969e/1+DzzAZrrjXddET83MySQPPTOkMMAIiFct5fEAHRdoacC3zOe8T6Rh6sormDiZEggPqc6DA
+	43lhexKkCd7aKf7cJLEi3WAFE/corD7RcHorZUunRNBhsoV5VkrTriouJLrL/iFEdEuugzKlzl3bJ
+	nmvh3QDgVXXfUWmobQDcmeCpqu+k4SnCOeripmhEqy0njbD1R6wgm1DIjvOq2FiS1rZPYt59Y8Ajs
+	o25txXClwJBbg6e4hNdJEaUbBFHq7zoe3VkI1hrpqzJ22KyQqgPewdugkHshn80eZHC/RQkbOBWQP
+	mnGwtqm5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWjZO-0006yU-Ns; Thu, 07 May 2020 16:40:22 +0000
+	id 1jWjgh-0002xh-Rp; Thu, 07 May 2020 16:47:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWjZE-0006y2-Sg
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 16:40:14 +0000
-Received: from mail-io1-f45.google.com (mail-io1-f45.google.com
- [209.85.166.45])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1jWjgb-0002oH-S7
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 16:47:51 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 789DD2084D
- for <linux-arm-kernel@lists.infradead.org>;
- Thu,  7 May 2020 16:40:12 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id E0DB020870;
+ Thu,  7 May 2020 16:47:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588869612;
- bh=GG1N4eYVC6gF2jkWtOf+2i+94GM+Npe39EG8Lf+ifms=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=lSoInqQWKZdOk6yqBVwyC9y2rILPgpGoOiG4JYyLlJZevyFW3ocZmunf0x59/PLf4
- 1T4hZiud1waK7qcpciXTloxHdDkf5MZQoKey2v/MWjXY17a9u/1zyoP4ng0J2vsU87
- PukH15HR9jErgSVI6Dt6zRWS7jvyon150XLWC85M=
-Received: by mail-io1-f45.google.com with SMTP id 19so1147200ioz.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 09:40:12 -0700 (PDT)
-X-Gm-Message-State: AGi0PuZLHGNeurhB6PzJKsUfhMMN3zIioI/G48sB6+1XbMQOkKgF46pl
- /XIjm8sat0d+o6v3KEbbqgc9fOkBaxjhWmEx85c=
-X-Google-Smtp-Source: APiQypJU8CxXD0K+wmjkUZLW0ktGnLc+EwVNbQw+UBmlCqtOEoPpKmbWJbvupmPg1sRh5Xk+l48nSrDsKKRjQXG30+w=
-X-Received: by 2002:a02:3341:: with SMTP id k1mr13309473jak.74.1588869610945; 
- Thu, 07 May 2020 09:40:10 -0700 (PDT)
+ s=default; t=1588870069;
+ bh=wXrhFL7ZkDxdvVqq5II1eKFCD+GFt9RiVWoUUUrzcsU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Ps8OGbEotEzFiQ4vSiODI3BCLjgza469ctzAd22gZYU1T7gxDJJBoIfei4ZNRz4rd
+ 5ql3ALow9sVkYrqlYxHaay38mgys2lqX7yyGoUMhd7yfb0r0SJHUH0xm7eHLfBbVRA
+ ZBIugcgfzlp4Q2Ofqeb5okxzchEuZb5KDfcOzUZ4=
+Date: Thu, 7 May 2020 17:47:46 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3 00/11] arm64: BTI kernel and vDSO support
+Message-ID: <20200507164746.GE6183@sirena.org.uk>
+References: <20200506195138.22086-1-broonie@kernel.org>
+ <20200507143332.GB1422@willie-the-truck>
+ <20200507143547.GC1422@willie-the-truck>
+ <20200507145901.GA1938@willie-the-truck>
+ <20200507150905.GB6183@sirena.org.uk>
+ <20200507151848.GA2294@willie-the-truck>
+ <20200507154854.GC6183@sirena.org.uk>
+ <20200507155523.GB2648@willie-the-truck>
+ <20200507163045.GD6183@sirena.org.uk>
+ <20200507163658.GC2648@willie-the-truck>
 MIME-Version: 1.0
-References: <1588858868-18039-1-git-send-email-guohanjun@huawei.com>
- <CAMj1kXHGfW=OKLO1S1Mf__9TzNXkrZ5BNvD8H_QYUTtF+awwpg@mail.gmail.com>
- <251b222a-7340-2d06-f07b-f81a9c19ac43@huawei.com>
- <628896e3-e43f-5814-a5ff-2bd5de223f20@huawei.com>
-In-Reply-To: <628896e3-e43f-5814-a5ff-2bd5de223f20@huawei.com>
-From: Ard Biesheuvel <ardb@kernel.org>
-Date: Thu, 7 May 2020 18:39:59 +0200
-X-Gmail-Original-Message-ID: <CAMj1kXHY1mwtWYe3JnO4Gw_oEqSgNLiRxVyFFR2rxp4nh6sF0g@mail.gmail.com>
-Message-ID: <CAMj1kXHY1mwtWYe3JnO4Gw_oEqSgNLiRxVyFFR2rxp4nh6sF0g@mail.gmail.com>
-Subject: Re: [PATCH] ACPI: IORT: Add extra message "applying workaround" for
- off-by-1 issue
-To: Hanjun Guo <guohanjun@huawei.com>
+In-Reply-To: <20200507163658.GC2648@willie-the-truck>
+X-Cookie: 1 + 1 = 3, for large values of 1.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_094012_969589_85BA0353 
-X-CRM114-Status: GOOD (  21.54  )
+X-CRM114-CacheID: sfid-20200507_094749_928729_BC9B4103 
+X-CRM114-Status: GOOD (  13.91  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,72 +85,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3416582522270674447=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 May 2020 at 16:02, Hanjun Guo <guohanjun@huawei.com> wrote:
->
-> On 2020/5/7 21:53, Hanjun Guo wrote:
-> > Hi Ard,
-> >
-> > On 2020/5/7 21:49, Ard Biesheuvel wrote:
-> >> On Thu, 7 May 2020 at 15:47, Hanjun Guo <guohanjun@huawei.com> wrote:
-> >>>
-> >>> As we already applied a workaround for the off-by-1 issue,
-> >>> it's good to add extra message "applying workaround" to
-> >>> make people less uneasy to see such message in the boot log.
-> >>>
-> >>> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
-> >>
-> >> Hi Hanjun,
-> >>
-> >>> ---
-> >>>
-> >>> Based on top of for-next/acpi branch of ARM64 repo
-> >>>
-> >>>   drivers/acpi/arm64/iort.c | 2 +-
-> >>>   1 file changed, 1 insertion(+), 1 deletion(-)
-> >>>
-> >>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> >>> index b011d25..f3d492a 100644
-> >>> --- a/drivers/acpi/arm64/iort.c
-> >>> +++ b/drivers/acpi/arm64/iort.c
-> >>> @@ -328,7 +328,7 @@ static int iort_id_map(struct
-> >>> acpi_iort_id_mapping *map, u8 type, u32 rid_in,
-> >>>                   * Otherwise, things are *really* broken, and we
-> >>> just disregard
-> >>>                   * duplicate matches entirely to retain compatibility.
-> >>>                   */
-> >>> -               pr_err(FW_BUG "[map %p] conflicting mapping for input
-> >>> ID 0x%x\n",
-> >>> +               pr_err(FW_BUG "[map %p] conflicting mapping for input
-> >>> ID 0x%x, applying workaround\n",
-> >>
-> >> This is not correct. The workaround is only applied if rid_in ==
-> >> map->input_base, so better to print a second line after the 'return'
-> >> below that is only reached in that particular case.
-> >
-> > Obvious I'm wrong, I will update this patch, thanks a lot!
->
-> By the way, how about the print below? Should I add something more?
->
->                  if (rid_in != map->input_base)
->                          return -ENXIO;
-> +
-> +         pr_err(FW_BUG "applying workaround for the conflicting
-> mapping\n");
->
 
-Simply 'applying workaround' should do it imo.
+--===============3416582522270674447==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="7LkOrbQMr4cezO2T"
+Content-Disposition: inline
+
+
+--7LkOrbQMr4cezO2T
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+
+On Thu, May 07, 2020 at 05:36:58PM +0100, Will Deacon wrote:
+> On Thu, May 07, 2020 at 05:30:45PM +0100, Mark Brown wrote:
+
+> > GCC does emit some helper functions wrapping GCOV stuff but they have
+> > appropriate annotations, eg:
+
+> > 00000000000000ac <_sub_D_00100_1>:
+> >   ac:	d503245f 	bti	c
+
+> Hmm, where have the PAC/AUT instructions gone?
+
+I was testing with -mbranch-protection=bti while trying to narrow down
+the issue when I pasted that example in, if PAC is enabled then you get
+the PAC/AUT instructions instead.
+
+> > It does seem it's a straight compiler issue, if the compiler is emitting
+> > runtime then the compiler ought to be ensuring that it agrees with the
+> > build options the compiler was given and I can't think how this would be
+> > fixable or avoidable outside of the compiler other than "don't do that"
+> > which is what my Kconfig bodge did.  I'm talking to the toolchain people
+> > internally about this.
+
+> Thanks. I'll apply your 'depends on ...' line locally and push that out
+> if I don't run into any more issues.
+
+Thanks, hopefully it'll be fine.
+
+--7LkOrbQMr4cezO2T
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl60O7IACgkQJNaLcl1U
+h9CcJQf/Su9Dcjg4IvxmRRZ3ipceB7T0unD2ionx52JreUAJBHDaBgeM2171KdI9
+WeS2LkQk0Evb4055bYU1WGJHLooeWuEI3KXS5MoGjQwc1I+iiJJyWjOhHzTr5tyk
+ouOwlLfFUHpCrjbLzTvfn+g+oMNJj3KWdoccb3ZxFT1IbhK+DwWeu4dsCdJCuQAR
+Uqf8lr25NBz8Z08biFrUrKRJLm9mvR534OZNDQnXcCTauuLFpSZ+jRBUIjxF4n4H
+ShigzM0idpiEWNrPhj47+bNQ5tkCiB3iBMS9oeYcwCVCtsPlGNnzGWtxufCsCvFC
+ItxNkWfIaLo45tYyPDmFBXpuKmXUZw==
+=qYHd
+-----END PGP SIGNATURE-----
+
+--7LkOrbQMr4cezO2T--
+
+
+--===============3416582522270674447==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3416582522270674447==--
+
