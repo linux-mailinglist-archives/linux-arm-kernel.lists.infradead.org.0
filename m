@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB78E1C8E57
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:28:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DD0B1C8E66
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:28:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RbTOa1nnAzgJtnJjvrSFjHgaLen1QiiOmFFK9N77VoM=; b=DMHWu1yNoIOJMQ
-	wM6RmUHjKOhZ0q4jkPnE9sI3WIo8kMHnSg8EXXq1PsVaCNzPad5swcXAKRfLHZb0XUfhjJ2n7e018
-	sDBXtN8QmX9Fdy1eNwUIrMM0l88pQ7NGBpYLKK68ktrFfU+8bS1UUYaYSD4rZR/lyZ+lrdxhCDGIA
-	TTqawAD+gb9ASqmEVpA+gsXb4lEbx4cRdx4DdyLaLMo/N3jyrU2YOlZWgPEnGgOODYFPtJexLsAIH
-	UFlgZ3XvMKZMA9Xi7wlOUc5Bej+uCbqX1Nqq1eMiOlwCqdYiciiCGnWj26hwBRQNgu4QlXir8Xs6l
-	gpOEKket6i77dPQ2jK1Q==;
+	List-Owner; bh=ZsYAXl3HX8Z8nTa8mTcfKRFhPwH2JgcHdcuXsv0YViQ=; b=jq6a6641J2Bk3f
+	zf1VSZ/+HHYMY/SIbkYlYSmPOzAf03sz7RjNVM8chgClJsh+S33uVdhvoZsGPXVuBjQ1UzSiwL6gY
+	UexpJIDCn7GrNb0Rkj38i1dk5NfvrC4ZIx211Sfb35EBAJJZaklWZ37FrtKLhURN17/Gui/wOjrb8
+	VQZvqRvO/tW2BrFhqdk+xhegyYzP+k1AEA3jXSag4UkePeaAK/JzENEfLG3UdZL2t2TQpYQVFTtPu
+	G6/I8Vho7qdCeT+B5SENsVM8eGhlN0zMrP1h3s/Pcv5pXf71jQj9mJH1AlqpqZC1I7y/0BZIxvDXb
+	VZI2YGTbxucd/k2OoNUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhVE-0001F2-IC; Thu, 07 May 2020 14:27:56 +0000
+	id 1jWhVl-0001nF-IO; Thu, 07 May 2020 14:28:29 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhUs-00012O-1L
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:27:39 +0000
+ id 1jWhVL-0001c9-El
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:28:05 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 798162083B;
- Thu,  7 May 2020 14:27:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0DAAD2084D;
+ Thu,  7 May 2020 14:28:01 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588861653;
- bh=nldiJ+MHYYN+kjgAX5mo6jUIk7pC/Xc/j4g2G7Uco6Y=;
+ s=default; t=1588861683;
+ bh=JpMqNa6KjjZACMc14JpRz2Qlsk+u9kAyVz8DlBvFEG0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=e0s4o+5EI+KKTv1EgVraZSnAfNcypP9onwpJf01GmePNVCzCRa9kHDOdp2JmKvYAR
- QtzvVzwnfVW3XUo6M556Gizb5EI8oMj9cvYjDBNL59gnAAmOwQK3XM/R7wVj+WZJUZ
- eA8cU4ZevAU/7OzP0/EfaWKkx4XzjRT8pJYN7l+g=
+ b=B//tsRXIep6Gf8/h90s+PRqDFmRSBnsVLvHOXzzIJ6LNnzxPAH+dCX4bAMif71Z1Y
+ fhEs6zcG0t3TyW0Dk4T3R5F6t6BGPAISnT7pW1RGYRsGnxqSNcHqeAa5i8H/LV3NzO
+ skYpq4VxIzqkf3fWF3RuiYeHK6u5iajtjwF+lVTY=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 05/50] dmaengine: xilinx_dma: Add missing check
- for empty list
-Date: Thu,  7 May 2020 10:26:41 -0400
-Message-Id: <20200507142726.25751-5-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.6 29/50] i2c: iproc: generate stop event for slave
+ writes
+Date: Thu,  7 May 2020 10:27:05 -0400
+Message-Id: <20200507142726.25751-29-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200507142726.25751-1-sashal@kernel.org>
 References: <20200507142726.25751-1-sashal@kernel.org>
@@ -50,8 +50,9 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_072734_112078_8425851C 
-X-CRM114-Status: GOOD (  11.68  )
+X-CRM114-CacheID: sfid-20200507_072803_517883_FC02D1DB 
+X-CRM114-Status: UNSURE (   9.90  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,66 +81,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>,
- Vinod Koul <vkoul@kernel.org>, Sebastian von Ohr <vonohr@smaract.com>,
- dmaengine@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ Sasha Levin <sashal@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Wolfram Sang <wsa@the-dreams.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sebastian von Ohr <vonohr@smaract.com>
+From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 
-[ Upstream commit b269426011bcfd97b7c3101abfe1a99147b6f40b ]
+[ Upstream commit 068143a8195fb0fdeea1f3ca430b3db0f6d04a53 ]
 
-The DMA transfer might finish just after checking the state with
-dma_cookie_status, but before the lock is acquired. Not checking
-for an empty list in xilinx_dma_tx_status may result in reading
-random data or data corruption when desc is written to. This can
-be reliably triggered by using dma_sync_wait to wait for DMA
-completion.
+When slave status is I2C_SLAVE_RX_END, generate I2C_SLAVE_STOP
+event to i2c_client.
 
-Signed-off-by: Sebastian von Ohr <vonohr@smaract.com>
-Tested-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Link: https://lore.kernel.org/r/20200303130518.333-1-vonohr@smaract.com
-Signed-off-by: Vinod Koul <vkoul@kernel.org>
+Fixes: c245d94ed106 ("i2c: iproc: Add multi byte read-write support for slave mode")
+Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+Signed-off-by: Wolfram Sang <wsa@the-dreams.de>
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/dma/xilinx/xilinx_dma.c | 20 ++++++++++----------
- 1 file changed, 10 insertions(+), 10 deletions(-)
+ drivers/i2c/busses/i2c-bcm-iproc.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/drivers/dma/xilinx/xilinx_dma.c b/drivers/dma/xilinx/xilinx_dma.c
-index a9c5d5cc9f2bd..5d5f1d0ce16cb 100644
---- a/drivers/dma/xilinx/xilinx_dma.c
-+++ b/drivers/dma/xilinx/xilinx_dma.c
-@@ -1229,16 +1229,16 @@ static enum dma_status xilinx_dma_tx_status(struct dma_chan *dchan,
- 		return ret;
- 
- 	spin_lock_irqsave(&chan->lock, flags);
--
--	desc = list_last_entry(&chan->active_list,
--			       struct xilinx_dma_tx_descriptor, node);
--	/*
--	 * VDMA and simple mode do not support residue reporting, so the
--	 * residue field will always be 0.
--	 */
--	if (chan->has_sg && chan->xdev->dma_config->dmatype != XDMA_TYPE_VDMA)
--		residue = xilinx_dma_get_residue(chan, desc);
--
-+	if (!list_empty(&chan->active_list)) {
-+		desc = list_last_entry(&chan->active_list,
-+				       struct xilinx_dma_tx_descriptor, node);
-+		/*
-+		 * VDMA and simple mode do not support residue reporting, so the
-+		 * residue field will always be 0.
-+		 */
-+		if (chan->has_sg && chan->xdev->dma_config->dmatype != XDMA_TYPE_VDMA)
-+			residue = xilinx_dma_get_residue(chan, desc);
-+	}
- 	spin_unlock_irqrestore(&chan->lock, flags);
- 
- 	dma_set_residue(txstate, residue);
+diff --git a/drivers/i2c/busses/i2c-bcm-iproc.c b/drivers/i2c/busses/i2c-bcm-iproc.c
+index 30efb7913b2e1..b58224b7ba791 100644
+--- a/drivers/i2c/busses/i2c-bcm-iproc.c
++++ b/drivers/i2c/busses/i2c-bcm-iproc.c
+@@ -360,6 +360,9 @@ static bool bcm_iproc_i2c_slave_isr(struct bcm_iproc_i2c_dev *iproc_i2c,
+ 			value = (u8)((val >> S_RX_DATA_SHIFT) & S_RX_DATA_MASK);
+ 			i2c_slave_event(iproc_i2c->slave,
+ 					I2C_SLAVE_WRITE_RECEIVED, &value);
++			if (rx_status == I2C_SLAVE_RX_END)
++				i2c_slave_event(iproc_i2c->slave,
++						I2C_SLAVE_STOP, &value);
+ 		}
+ 	} else if (status & BIT(IS_S_TX_UNDERRUN_SHIFT)) {
+ 		/* Master read other than start */
 -- 
 2.20.1
 
