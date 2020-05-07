@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AE8C1C97CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:30:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECF111C97ED
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 19:35:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u+DkS/MlFv7vb4TjrM+dNKiI08wHZSOb1bgQC2MSdF4=; b=k7wN3SVY5r+QZM
-	/qGYogZx9B5UDpdlk8ozhCvpdE1F6nm9g3l0b6HkEcrNw0SxFPogFrLWRjSJNDSG9k9u/r7hWmx7N
-	rRmKevx1i1/d1RrA8Af46Ih+JDxid2C6InuPIi33MtiRZF1pzZ6DtqOF7U0s5595vlq9+Hwm18dJT
-	1oeenbwdivNwbDDgmnFIo7FVVIeI+XsZH7mRHuWnrB32goe8RuQZagytKxYmeZSxHGljEEyrNFSmX
-	mDfwNMuBNpVq6fuKbp8LueQxPnB99orNX2zSru7aWNq7PFJEqX4IJ92B4DCU/Zy+GJtbzctI3KfFC
-	WwKYwMIZqBGuJGAAxy+A==;
+	List-Owner; bh=dLEbCOVCucLw+GFyml/3NMjwNXQU56bXzMCLSQfrrMw=; b=Q8j2mfYQ6x7uXg
+	H8/VgmGdjJoM2Bk1i9OdLDFAznE0hYm1uBSvpColxOU4P8BTAcVRWpFVYOaz2+xfvfj/v/lCcx7Sf
+	KD4tEVB52nKXPXAMkjY48G1j9R8dIwnkxoo1uTE/Er382FlLZfbbSbLte8+XmXGK1k3Nu5T6hzMV/
+	oG8QZckgd/1ScEt0h4/8NVcrKVjfI0GlydmNF48FI5ENotCpXC3Q/Z1m6ytY8aNVfqpCxW68K5F46
+	m32xHw13gZqe+ow8zoWW+46K6bvKFH82WKD4hs8ZYoXf+ojtX4paAxFOoCfZZ46hur3ahuUC5tGl+
+	Lv/FsCc/MYZRCakzOhmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWkLr-0003HH-Do; Thu, 07 May 2020 17:30:27 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1jWkQW-00086C-Uo; Thu, 07 May 2020 17:35:16 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWkLd-0001nO-85
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:30:14 +0000
-Received: from p5de0bf0b.dip0.t-ipconnect.de ([93.224.191.11]
- helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1jWkLW-0001Z4-63; Thu, 07 May 2020 19:30:06 +0200
-Received: by nanos.tec.linutronix.de (Postfix, from userid 1000)
- id 9030A102652; Thu,  7 May 2020 19:30:05 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: Marek Vasut <marex@denx.de>, linux-arm-kernel@lists.infradead.org
-Subject: Re: [PATCH] [RFC] genirq: Check irq_data_get_irq_chip() return value
- before use
-In-Reply-To: <20200507150729.244468-1-marex@denx.de>
-References: <20200507150729.244468-1-marex@denx.de>
-Date: Thu, 07 May 2020 19:30:05 +0200
-Message-ID: <87r1vvejqa.fsf@nanos.tec.linutronix.de>
-MIME-Version: 1.0
-X-Linutronix-Spam-Score: -1.0
-X-Linutronix-Spam-Level: -
-X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
- SHORTCIRCUIT=-0.0001
+ id 1jWkQM-0006zj-Ox
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 17:35:08 +0000
+Subject: Re: [GIT PULL] arm64 fixes for 5.7-rc5
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588872905;
+ bh=pNvybinVXhnLApEYIsATDA6ow4V7vidIFGKxLR60T1I=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=0MRyfyijVYgrRS+zGknQwqukXy473QDY59v4keVrs/+VVlezEJ5kcldXNHl20w6mx
+ GRQxasinAZiWiWVi3Df+Ch1UTTsVwn9YV7/oYA+v9fIrvTh3F3HIcFt2d4zsSfsgNB
+ Q10fMjh5QkWqqSbfKlHQrmR3AiNwACamkN335zxk=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20200507163108.GA17399@gaia>
+References: <20200507163108.GA17399@gaia>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20200507163108.GA17399@gaia>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
+X-PR-Tracked-Commit-Id: 027d0c7101f50cf03aeea9eebf484afd4920c8d3
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 6e7f2eacf09811d092c1b41263108ac7fe0d089d
+Message-Id: <158887290554.22656.8225125558948373624.pr-tracker-bot@kernel.org>
+Date: Thu, 07 May 2020 17:35:05 +0000
+To: Catalin Marinas <catalin.marinas@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_103013_440611_AFDF39DD 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_103506_854559_BC65C1C6 
+X-CRM114-Status: UNSURE (   2.20  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a0a:51c0:0:12e:550:0:0:1 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,32 +76,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Marc Zyngier <marc.zyngier@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Stephen Boyd <sboyd@codeaurora.org>
+Cc: Will Deacon <will@kernel.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Marek Vasut <marex@denx.de> writes:
+The pull request you sent on Thu, 7 May 2020 17:31:10 +0100:
 
-> The irq_data_get_irq_chip() can return NULL. If the kernel accesses
-> chip->irq_get_irqchip_state without checking whether chip is valid,
-> we get a crash. Fix this by checking whether chip is not NULL before
-> using it.
->
-> Fixes: 1b7047edfcfb ("genirq: Allow the irqchip state of an IRQ to be save/restored")
-> Signed-off-by: Marek Vasut <marex@denx.de>
-> ---
-> NOTE: I don't know whether this is a correct fix. Maybe the
->       irq_data_get_irq_chip() should never return NULL, and
->       I have some other issue?
+> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux tags/arm64-fixes
 
-What's the callchain?
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/6e7f2eacf09811d092c1b41263108ac7fe0d089d
 
-Thanks,
+Thank you!
 
-        tglx
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
