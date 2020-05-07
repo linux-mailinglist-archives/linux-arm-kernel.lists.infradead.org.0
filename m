@@ -2,70 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CBF01C951D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:33:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65C211C9529
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:34:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mxken6c/unzrK0Hxhigi25l2P0esrD9BpD3WGYC/HkA=; b=bkKCYAJTHACo/S
-	X12qu1ebeohu/OexeD002v/fskpO/pUsnP7CH6k86PN7hVIarLvf69uApyTbQehq5hdaprIk1np2x
-	PcZT6xWNknydoVKoH5Qo9itbohuPUTZu1u3xC9eL6X9pa7KfZVnYu41qB5LxUq9ENZvvjU1S8RhoR
-	/fSblb85wh1uWyu+L01HlgyNRQEocMnk8LtxUlqY9t2CVbYG2rbyPmEFflVFXZpd1NdtqBiOAKlSf
-	Iq6+izi9zG8rvknB2YOotuZYfjRKvl5TeK/AED81vP1UBvYSPalAkBHQ76SH5caPl02mxmXgFeM6o
-	EShquU7DTu/UzK/gKRSw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rKGOSa3r16hUPX4FiZQjUp4IbghHibo6LVnOskZlRWs=; b=jikmORaoalI2SF
+	dL14nOO4zVRcj28tSxet0FqRcmRd/knOJgHwd3looMG0xpVyrX+yIBYoYXT7Ks3+692h+IDO2TMN3
+	DWUyAbey2pKWfjfsrUiIl9lSEL4zfwAKRboct6LVBN8UyvpecC4cG4CvqxIM3Fqgm7CQhTOC3IM/A
+	l0s/uy0tpGZhvY480XclclGbVnFYX5P7h76SzZ0LrrmLsTOSTy42WyK5PSfmP5HUhQUbrU8fhPxdg
+	OiNAs7fgKq6LW3H35ctWupSdpfhsZKHQQBmjksbEUTp7LhmCLUWHTKGlKAM1rx7JnW7hpWKzG2R/8
+	Z9x/EUvKm6CegAOn2RIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWiWV-0000Lm-Vo; Thu, 07 May 2020 15:33:19 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1jWiXw-0001V3-VS; Thu, 07 May 2020 15:34:48 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWiWO-0000GC-QV
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:33:14 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 49HyCV1YJMz1rwDl;
- Thu,  7 May 2020 17:33:10 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 49HyCV0RB2z1qqkV;
- Thu,  7 May 2020 17:33:10 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id cbrmrNHPcsmZ; Thu,  7 May 2020 17:33:08 +0200 (CEST)
-X-Auth-Info: CCuPi2J0NVmY1Ov60Q8HkVbCDko6uHs1JRs2xSMfe84=
-Received: from [IPv6:::1] (unknown [195.140.253.167])
+ id 1jWiXq-0001Uc-1Y
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:34:43 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Thu,  7 May 2020 17:33:08 +0200 (CEST)
-Subject: Re: [PATCH 12/12] ARM: dts: stm32: Add DTs for STM32MP15x variants of
- the DHCOR SOM and AV96
-To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-References: <20200429163743.67854-1-marex@denx.de>
- <20200429163743.67854-12-marex@denx.de>
- <20200507152616.GB2019@Mani-XPS-13-9360>
-From: Marek Vasut <marex@denx.de>
-Message-ID: <687cdc32-7486-1090-154b-58e711dd6a2a@denx.de>
-Date: Thu, 7 May 2020 17:33:08 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ by mail.kernel.org (Postfix) with ESMTPSA id 42CE6207DD;
+ Thu,  7 May 2020 15:34:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588865681;
+ bh=su42LeOpkqoZ9FpxsWpq/u+jVkw8iFswKLvseMb3xkM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=MqGpj3R284gvc+wtAR2/E8G9RRNEz2VSI1EmoFaWXTzSSeWiZDJdSZcqH/orgGZNM
+ 3pkvM6V9zWFMFBzg4693wAFXpMM2ctlEy2EsbY5B+vZJw8t6/fpY7TJ9244gxU6VEc
+ Fb+U+CjMoscYeEsuPnqsNI5TqcV6qAG9GVikqy+w=
+Date: Thu, 7 May 2020 17:34:39 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Manivannan Sadhasivam <mani@kernel.org>
+Subject: Re: [PATCH v3 0/2] Add CTS/RTS gpio support to STM32 UART
+Message-ID: <20200507153439.GA1919950@kroah.com>
+References: <20200420170204.24541-1-mani@kernel.org>
+ <20200507140750.GA2019@Mani-XPS-13-9360>
 MIME-Version: 1.0
-In-Reply-To: <20200507152616.GB2019@Mani-XPS-13-9360>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200507140750.GA2019@Mani-XPS-13-9360>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_083313_162340_E3C2A429 
-X-CRM114-Status: GOOD (  15.67  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200507_083442_105633_E496B9F4 
+X-CRM114-Status: GOOD (  15.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,76 +73,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>,
- Patrice Chotard <patrice.chotard@st.com>,
- Patrick Delaunay <patrick.delaunay@st.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-kernel@vger.kernel.org, andy.shevchenko@gmail.com, robh+dt@kernel.org,
+ linux-serial@vger.kernel.org, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ alexandre.torgue@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/7/20 5:26 PM, Manivannan Sadhasivam wrote:
-
-Hi,
-
-[...]
-
->> diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
->> index f43467b02bcd..b4a4d2b0f18e 100644
->> --- a/arch/arm/boot/dts/Makefile
->> +++ b/arch/arm/boot/dts/Makefile
->> @@ -1029,6 +1029,9 @@ dtb-$(CONFIG_ARCH_STM32) += \
->>  	stm32h743i-eval.dtb \
->>  	stm32h743i-disco.dtb \
->>  	stm32mp157a-avenger96.dtb \
->> +	stm32mp151a-dhcor-avenger96.dtb \
->> +	stm32mp153a-dhcor-avenger96.dtb \
->> +	stm32mp157a-dhcor-avenger96.dtb \
+On Thu, May 07, 2020 at 07:37:50PM +0530, Manivannan Sadhasivam wrote:
+> Hi Greg,
 > 
-> I'm not really sure if keeping SoM name is a good practice here. Since the
-> board is sold as "Avenger96" alone, why do you want to prepend SoM name to it?
-> When you say, "stm32mp157a-avenger96.dtb" it obviously means that Avenger96
-> board uses the stm32mp157a SoC and that comes from SoM.
-
-That's because if you look at the other side of the AV96, you will
-notice there is this other piece of PCB on it, that's the DHCOR SoM. The
-SoM is soldered on the AV96 carrier board. And only on that SoM is the
-STM32MP15xx SoC.
-
->>  	stm32mp157a-dk1.dtb \
->>  	stm32mp157c-dhcom-pdk2.dtb \
->>  	stm32mp157c-dk2.dtb \
->> diff --git a/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
->> new file mode 100644
->> index 000000000000..0f3875fbdd73
->> --- /dev/null
->> +++ b/arch/arm/boot/dts/stm32mp151a-dhcor-avenger96.dts
->> @@ -0,0 +1,9 @@
->> +// SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
->> +/*
->> + * Copyright (C) 2020 Marek Vasut <marex@denx.de>
->> + */
->> +
->> +/dts-v1/;
->> +
->> +#include "stm32mp151a-dhcor-som.dtsi"
->> +#include "stm32mp15xa-dhcor-avenger96.dtsi"
+> On Mon, Apr 20, 2020 at 10:32:02PM +0530, mani@kernel.org wrote:
+> > From: Manivannan Sadhasivam <mani@kernel.org>
+> > 
+> > Hello,
+> > 
+> > This patchset adds CTS/RTS gpio support to STM32 UART controller.
+> > Eventhough the UART controller supports using dedicated CTS/RTS gpios,
+> > sometimes we need to use different set of gpios for flow control.
+> > 
+> > This is necessary for the upcoming STM32MP1 based board called Stinger96
+> > IoT-Box. On that board, a bluetooth chip is connected to one of the UART
+> > controller but the CTS/RTS lines got swapped mistakenly. So this patchset
+> > serves as a workaround for that hardware bug and also supports the
+> > usecase of using any gpio for CTS/RTS functionality. As per the sugggestion
+> > provided by Andy for v1, I've now switched to mctrl_gpio driver.
+> > 
+> > This patchset has been validated with Stinger96 IoT-Box connected to Murata
+> > WiFi-BT combo chip.
+> > 
 > 
-> [...]
-> 
->> diff --git a/arch/arm/boot/dts/stm32mp157a-avenger96.dts b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
->> index 10f11ca53c7d..dc3bbd576756 100644
->> --- a/arch/arm/boot/dts/stm32mp157a-avenger96.dts
->> +++ b/arch/arm/boot/dts/stm32mp157a-avenger96.dts
->> @@ -1,421 +1,9 @@
->>  // SPDX-License-Identifier: (GPL-2.0 OR BSD-3-Clause)
->>  /*
->> - * Copyright (C) Linaro Ltd 2019 - All Rights Reserved
->> - * Author: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> Are you planning to take this series for 5.8?
 
-That's fixed in the other submission, sorry.
+I had to wait for the DT protion to be reviewed before I could do
+anything.  Give me some time, if it looks ok, it will go into 5.8.
+
+thanks,
+
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
