@@ -2,85 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA2E31C8F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:36:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF05F1C8FA9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:36:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NarTsz8NqZHc0LpHBjJysJHCMA00IcihZCmZT6swMxI=; b=X10hEthucz55g+
-	9K4iQ4H+IsyLz9vJ8JSapLHdK5Pbuy7GSHg/umfSIH4WgS8gdI+nQeUkNCn6uteOl/KlGACXoJQ+1
-	IYf5OTaUQ+5SQ5rPr3KDZquWNTSuLaAwcCs8VMKyYCMLyB4qL426aUT5MFgGW3fmDIxRqiiSViwVP
-	Bgj3M6/Rzztb6ScO0h3tVYpNn7f3Y0/JBHgcIrPLmFVuDHKAJHO2T7dpCHpjVPqd6OxJaJg15JY01
-	0jouZ7T7FDPBar7yrWBLdvITnbpa09diNdXhE7yayCjliuylu25kbOLdTTluTAgTyQmFpK6hTGkwe
-	X6kJhpCdPRQtji6DZr6A==;
+	List-Owner; bh=noGRUmFW1nxsi/KPO7p91EK2DaMFVYqKkVWD+Z3RC+g=; b=KUJPMlsC9I7ENL
+	APE+vyPXZCFTFP5XLp1c0mqfatNkzob/PtsNCPIpggfnWpjvLZGo83JBK8gQkTZhn4cjxyPCgZXKF
+	yR+deKu/pboY9Vc3bU+35FoUw/N1SCa6HiiSLeLSW2+vJNPiYlj4l6f54imOFzvjMAQYs4vUaY0Td
+	/GUZ7llm4YT9bzYWemLhMpyVxe6ds8haMzoR4E9cncae1dtXHdeH1asCwUwqDjadLlkqF8fyB6bQ8
+	F0K1XEij5WucdIRXw9QVUSnZpIhyBm2eAYvR8gjNN1H9mc2cD7shtDEXPtIGZIZFh20h6wVqt3Ra0
+	woCENUE1GORwYnI5Gp/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhdZ-0002F3-66; Thu, 07 May 2020 14:36:33 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jWhdt-0002V6-2F; Thu, 07 May 2020 14:36:53 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhdP-0002DU-VO
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:36:26 +0000
-Received: by mail-wm1-x344.google.com with SMTP id h4so6812614wmb.4
+ id 1jWhdf-0002SM-R8
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:36:42 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g13so6671035wrb.8
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 07:36:21 -0700 (PDT)
+ Thu, 07 May 2020 07:36:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=from:date:to:cc:subject:message-id:references:mime-version
+ h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=97qbtlSksxUqP4IepQZvJvrELnOIuCcLtceZei2X0fU=;
- b=ZzB4d4PH21eRkcpcL8/dT+++RvB0ZZmSphkIMJLtD5oMY2Jnwy7S98JFpZfw1OYm52
- 3TWG2h2gorD9PKb0JKdyLP7kgH0CYBI6AQD+bD51IoyPOPJmai2OhLaOaM2Tn8KR/r+T
- 0HjMn9km6DG+HcLGaNGTTtsaAmKgEi66yeYEVYKrej1QmHPcsTZfgNVFFeqPB5IR4/oJ
- G297cddKz4Z7Lxx7yvZy8V268l+77Bsr7s7lMPa0lTjhhO62NCnger0sZ9xW99EGDqJN
- GyLqbTJdof20XyI1vBiW1i2flDKKGUJpK3R7pfKCu/PK8sMvX8aEdJ/CQGv2O2uojqIf
- fROw==
+ bh=2cUePzGWzDDGYMdSJecoGhzZI0bICDSzA7fgbQwoVdI=;
+ b=va8IcNz8I2zqjE9CHsCzAnM6YWsHCkT+6BNuJ8fRsAg/QlH3lUCW+YkNknR8VqSvOG
+ E/IC3lRkd0ZwHQalan9TG1D4/w2fUTyiZGxS/Q17YpXKcCbyWWsxSxx0xFlWxdzfx+ut
+ ysYussSGR3GqsKtZzvNvKz5uEtHfKa8FYgUcDiMWE1hpFlB7r3M6eaEtZRKXOjsn7QfN
+ oORfrpfCEN3NfkyQRARTPBZf4GQ7PEgSTsKIsFDcD3penmf6YN2IBJ8mFLFunzaBnjmu
+ tuILSOMKhNChWN19gJNhOvmcEv+JElMcVgODP4coW1YiN9SIPkaGu9JYdaOSup2+p4YN
+ 6M5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:date:to:cc:subject:message-id:references
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=97qbtlSksxUqP4IepQZvJvrELnOIuCcLtceZei2X0fU=;
- b=oVglBXljtFfEJjbITEwvBkDeCUzQ4+f5gpU9wZsDftNg/KjMsUD1PSucVGZ5TN1+qA
- tzyNHJ6UDtnGzxDtyX74EwZfkKycD6PVHSecWrTtzUrT7cWa/eMcZeJWEzMesyV8uQIo
- Y14l5qwU08YR1+5J/OPvDx//cRuF4i2f61dSb4OEJSQvw6uLVgq00I4SmEPF10JwDbWf
- PAATzVgtlYWCwLgUUdOzJ9thOR68ezTfKjuLgowPt3bmsjAMszRSdGa9YQfBeoar32GG
- n3PkxZFqQ7Y8GrNZRKKst2mXey9ONTj580Pta2An5qZ1lnIts+umbiYtXFqqNfP74ETG
- jvfg==
-X-Gm-Message-State: AGi0PuZrM2JlzWNAlQFiGp4WTkLzD/wpMDsqZauAIs0iNupWRGpaDGe4
- VwgPiGcNsH813inBqNHHv3U5aA==
-X-Google-Smtp-Source: APiQypKByb7yOAaqMEZY3XrineEZDS7bGjGUh3lbDYheXhS+bRdzViSRoAmOnUwDPOJrmi6GqqsTGw==
-X-Received: by 2002:a1c:7d4b:: with SMTP id y72mr10888700wmc.11.1588862179402; 
- Thu, 07 May 2020 07:36:19 -0700 (PDT)
-Received: from dbrazdil-macbookpro.roam.corp.google.com
- ([2a01:4b00:8523:2d03:1887:a290:f251:d169])
- by smtp.gmail.com with ESMTPSA id c190sm8793473wme.4.2020.05.07.07.36.18
+ bh=2cUePzGWzDDGYMdSJecoGhzZI0bICDSzA7fgbQwoVdI=;
+ b=jGhwDMGR8NIPAW+EOE0sFZKHva4luAb7MST+2uW3XuH3fNVnJRVyVCX14qNYMWRGZQ
+ RWWbLP5BmsiG/ZL5LH+x3A77qOXb3sNiSixrxcJDsoqs2CeXURtoFWgkborKjZuX4LwL
+ uF0OMs42JCuuGMAhIuImwFOPT+Aeq5HCACy732r4GXoKzXPH7ablrr5rvotNhH9LBUCj
+ pKoLFVk/DhL5hE9y7Uwo8lT9x9oae8spTQAjFUMl2RBphphrfgobGre6nsAjzeA4htJb
+ skcXND5WbQnMWn+MBouLczW+7dvDc2hcZejXo25pS1uMfhfO7FQnOqarxNY/AMJjW2PD
+ 9YQA==
+X-Gm-Message-State: AGi0PuZCGEYWSQLkrSvEEwWbEZvzgnG0uNLOGsh/P92I+T5Tsc7vYDxD
+ liGoeIQ65Rz8cu+XxialCM7qWQ==
+X-Google-Smtp-Source: APiQypIg/E6o9sgqmhLM4Cgv9qszquDB3MDl0xGyH0m0ulxsGd7+lcGC7cQvQySga4gTWRe+HpOBog==
+X-Received: by 2002:adf:f8c1:: with SMTP id f1mr15498170wrq.171.1588862197885; 
+ Thu, 07 May 2020 07:36:37 -0700 (PDT)
+Received: from google.com ([2a00:79e0:d:110:d6cc:2030:37c1:9964])
+ by smtp.gmail.com with ESMTPSA id h17sm8450409wmm.6.2020.05.07.07.36.37
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 May 2020 07:36:18 -0700 (PDT)
-From: David Brazdil <dbrazdil@google.com>
-X-Google-Original-From: David Brazdil
- <dbrazdil@dbrazdil-macbookpro.roam.corp.google.com>
-Date: Thu, 7 May 2020 15:36:17 +0100
+ Thu, 07 May 2020 07:36:37 -0700 (PDT)
+Date: Thu, 7 May 2020 15:36:33 +0100
+From: Quentin Perret <qperret@google.com>
 To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 03/15] arm64: kvm: Fix symbol dependency in
- __hyp_call_panic_nvhe
-Message-ID: <20200507143617.2j5x3mfxi3ber7ig@dbrazdil-macbookpro.roam.corp.google.com>
+Subject: Re: [PATCH 01/15] arm64: kvm: Unify users of HVC instruction
+Message-ID: <20200507143633.GA169263@google.com>
 References: <20200430144831.59194-1-dbrazdil@google.com>
- <20200430144831.59194-4-dbrazdil@google.com>
- <87blmzj2w5.wl-maz@kernel.org>
+ <20200430144831.59194-2-dbrazdil@google.com>
+ <878si3j13w.wl-maz@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <87blmzj2w5.wl-maz@kernel.org>
+In-Reply-To: <878si3j13w.wl-maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_073624_036284_C782D563 
-X-CRM114-Status: GOOD (  11.86  )
+X-CRM114-CacheID: sfid-20200507_073640_677057_47E9AECC 
+X-CRM114-Status: GOOD (  18.69  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -118,25 +114,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
+On Thursday 07 May 2020 at 15:01:07 (+0100), Marc Zyngier wrote:
+> >  /*
+> > - * u64 __kvm_call_hyp(void *hypfn, ...);
+> > + * u64 __kvm_call_hyp(unsigned long arg, ...);
+> >   *
+> >   * This is not really a variadic function in the classic C-way and care must
+> >   * be taken when calling this to ensure parameters are passed in registers
+> >   * only, since the stack will change between the caller and the callee.
+> > - *
+> > - * Call the function with the first argument containing a pointer to the
+> > - * function you wish to call in Hyp mode, and subsequent arguments will be
+> > - * passed as x0, x1, and x2 (a maximum of 3 arguments in addition to the
+> > - * function pointer can be passed).  The function being called must be mapped
+> > - * in Hyp mode (see init_hyp_mode in arch/arm/kvm/arm.c).  Return values are
+> > - * passed in x0.
+> > - *
+> > - * A function pointer with a value less than 0xfff has a special meaning,
+> > - * and is used to implement hyp stubs in the same way as in
+> > - * arch/arm64/kernel/hyp_stub.S.
 > 
-> What breaks without this constraint? Is it a fix that should go in
-> early? Otherwise looks good.
+> I don't think any of this becomes obsolete with this patch (apart from
+> the reference to 32bit), and only changes with patch #2. Or am I
+> misunderstanding something?
 
-This only becomes an issue when __hyp_call_panic_nvhe() and
-__hyp_call_panic_vhe() are moved to separate files, so I don't think it's
-necessary to go in early.
+Nope, I think you're right. To be fair, this patch has changed quite
+a bit since the first version (which did change that comment a little
+later IIRC), but David has done all the hard work on top so I'll let
+him answer that one.
 
-Currently the string variable (declared static) is seen by the C compiler as
-used by __hyp_call_panic_vhe(). But when split, the variable in the nVHE source
-file becomes unused, is dropped by the compiler and the inline assembly's
-reference is unresolved. We could then alias __hyp_text___hyp_panic_string back
-to the VHE copy, but this is the right way of addressing it.
+And David, feel free to take the authorship for this patch -- I barely
+recognize it (for the better), so it's more than fair if you get the
+credit :)
 
-Thanks for the review,
-David
-
+Thanks,
+Quentin
 
 _______________________________________________
 linux-arm-kernel mailing list
