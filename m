@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A7A21C882D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:28:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C244A1C882F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:29:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6bK1F9gDC7i2vgQySliD/nH9lQeimeYMv06s5ihyCBc=; b=QLlEq4wM3SUu0mUL7q74OTk23r
-	hXfZOh/NgFpr3TMGN+CckbwLplqsClbcviDN4pLACjMiOA0/DVMJWpmrERSZKTVCj9r1v6tmGyB6b
-	65TsVmIHvxswWsFZhsqtXvjrrX9q+dQzK/uScQpc6eHMYws+ZY+oIhW/d+PExpPfl3WEZh0zklZoO
-	9pbsqWU37Th52RUWdTWCXmrQz4gH3QlETwH+SZ8lfo9vuQiiYjvUhxnykuUCv4K0QSViAmksc557m
-	kDjP6Y3gtbnLFGn3Hx0qLErPTRukhtXk4VPzWKqt+vMJrp9vFSbvkdclXKBXsSmNacXEoxotA85A3
-	aY6uSZvQ==;
+	bh=6AeqxhuaCMQSJYvzeANxZV88LpiGc2+ub2/z+kRxofE=; b=d66HnrBb0CD1XMFu4H2BkyWRy4
+	bmk2s+pNGbVLR6w3TdQz8GkRD3Ln/7xu1qtKozY1fSF71QfCD+nfNFiqfJVN7MZdfcxD2kGuKMhtf
+	5B57ruTXvEIYugRLljnJo6H3iu7IIfW8Ql1ewxlc0RY5/HIp6+zOC8MZTQwswWUIBcjtjDu4Gy9Du
+	wj/I2ZacOGFUvEWsMqk1Wt4W1DT76xE0sPfJROhcm8skHpvC6JlOeCn2vyecLAlW7xoiz5mFHbaRb
+	DyiKOMWMV7x5h8UKR+DKMEMEfWkEnVwbBrQNGneSLdSAEfdAGbOoRY10HWcDuUd8rfDi/7uXXYMUH
+	N1o9/7kw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWehT-0003pB-Gt; Thu, 07 May 2020 11:28:23 +0000
+	id 1jWehw-0004II-5Q; Thu, 07 May 2020 11:28:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWeeD-0006ql-8c
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:25:04 +0000
+ id 1jWeeF-00075h-QI
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:25:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D00D1FB;
- Thu,  7 May 2020 04:25:01 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5AE34101E;
+ Thu,  7 May 2020 04:25:02 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E78D63F68F;
- Thu,  7 May 2020 04:24:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4063F3F68F;
+ Thu,  7 May 2020 04:25:01 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 13/17] arm64: dts: juno: Fix GPU interrupt order
-Date: Thu,  7 May 2020 12:24:26 +0100
-Message-Id: <20200507112430.183940-14-andre.przywara@arm.com>
+Subject: [PATCH v2 14/17] arm64: dts: arm: Fix VExpress LED names
+Date: Thu,  7 May 2020 12:24:27 +0100
+Message-Id: <20200507112430.183940-15-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200507112430.183940-1-andre.przywara@arm.com>
 References: <20200507112430.183940-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_042502_332934_3E73DF98 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200507_042504_052142_0766E3DC 
+X-CRM114-Status: GOOD (  10.92  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,34 +71,81 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Mali binding insists on the GPU interrupts to be in ordered as: job,
-mmu, gpu.
-Sort the GPU interrupts and interrupt-names properties accordingly.
+The common LED binding wants the LED node names to start with led- and
+then have just a single number.
+
+Changing the naming for the 8 user LEDs from using user<x> to led-<x>.
+Also there is no default-trigger named "mmc0" in the kernel, so use the
+more generic "disk-activity".
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm64/boot/dts/arm/juno-base.dtsi | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ arch/arm/boot/dts/vexpress-v2m-rs1.dtsi | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index c04c6167d522..e9b4f0004cd4 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -501,10 +501,10 @@
- 	gpu: gpu@2d000000 {
- 		compatible = "arm,juno-mali", "arm,mali-t624";
- 		reg = <0 0x2d000000 0 0x10000>;
--		interrupts = <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>,
--			     <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
--			     <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
--		interrupt-names = "gpu", "job", "mmu";
-+		interrupts = <GIC_SPI 33 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 32 IRQ_TYPE_LEVEL_HIGH>;
-+		interrupt-names = "job", "mmu", "gpu";
- 		clocks = <&scpi_dvfs 2>;
- 		power-domains = <&scpi_devpd 1>;
- 		dma-coherent;
+diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+index 4aaae848f370..1681e046b855 100644
+--- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
++++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
+@@ -315,49 +315,49 @@
+ 			leds {
+ 				compatible = "gpio-leds";
+ 
+-				user1 {
++				led-1 {
+ 					label = "v2m:green:user1";
+ 					gpios = <&v2m_led_gpios 0 0>;
+ 					linux,default-trigger = "heartbeat";
+ 				};
+ 
+-				user2 {
++				led-2 {
+ 					label = "v2m:green:user2";
+ 					gpios = <&v2m_led_gpios 1 0>;
+-					linux,default-trigger = "mmc0";
++					linux,default-trigger = "disk-activity";
+ 				};
+ 
+-				user3 {
++				led-3 {
+ 					label = "v2m:green:user3";
+ 					gpios = <&v2m_led_gpios 2 0>;
+ 					linux,default-trigger = "cpu0";
+ 				};
+ 
+-				user4 {
++				led-4 {
+ 					label = "v2m:green:user4";
+ 					gpios = <&v2m_led_gpios 3 0>;
+ 					linux,default-trigger = "cpu1";
+ 				};
+ 
+-				user5 {
++				led-5 {
+ 					label = "v2m:green:user5";
+ 					gpios = <&v2m_led_gpios 4 0>;
+ 					linux,default-trigger = "cpu2";
+ 				};
+ 
+-				user6 {
++				led-6 {
+ 					label = "v2m:green:user6";
+ 					gpios = <&v2m_led_gpios 5 0>;
+ 					linux,default-trigger = "cpu3";
+ 				};
+ 
+-				user7 {
++				led-7 {
+ 					label = "v2m:green:user7";
+ 					gpios = <&v2m_led_gpios 6 0>;
+ 					linux,default-trigger = "cpu4";
+ 				};
+ 
+-				user8 {
++				led-8 {
+ 					label = "v2m:green:user8";
+ 					gpios = <&v2m_led_gpios 7 0>;
+ 					linux,default-trigger = "cpu5";
 -- 
 2.17.1
 
