@@ -2,98 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 00C591C9B3F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 21:39:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EA0F1C9B69
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 21:54:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1OWe5nUebpGc1iPMKTMlJzrk1t/WtmkrsX7sdZm8ARU=; b=VYuJ9AHagLUFmp
-	OSP3ZKmnF/BuZSlP0ru4kE2i/WN9r4Bgh+MNElSBTDPJh67PzoiAdSrVRb91ZG+PG4s0hZsNNX4E9
-	/LfEAMYwI2w+8Gd2qLaF9kGxEAtIxz4rgQBKyK9Ffk/0UD1G4y78lUHe4ICKOco4M2nC6D3twp6lx
-	fysw1n8f/eEhZnEMjyXJchc6M8DNAwg20qgdGIFj98/phxPc1souetUhsRJpKMQX5ypaTbvRYqtSf
-	ajrgVEW7zgdtYH014MOAFNYM2e7D6ezaKTGIx6pEr+vq2zwM+JKskJQU1RJB4+nCj0EmYnF9XEjKG
-	v/TrEj1S2Jr/4a7fCEbQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ATom3+NtAr4Xx9Bj4KwipfskYLLlJQS5HVntoKyTN44=; b=GiiQNLpIbtCuYHmRXMVCdvxc6
+	Q+/HJpU6ECXuz48Minr7qtz5E8KdI68lMafNI0mqBUEfEnB9xrF96reRGOtUZO5KrDoXuAiOo+H+z
+	P8rd9wwdIQAi4HG1k2mdGtSVmr/qzhT88WsYFC3VK49ZlQwksTfF9ON7SH1UsGUjPokEE35w7nsi1
+	hIuRGFJKy25V8NsctG58/fB0SuIMdVW7yNphnJDcPQ9fTNFaFf0s8GoISnN488eM/88nA3lc7qhLA
+	URw/93s9C7nLjitxWcUegpXpQXJH4Mr2UEjIvxcXnyuJgilRzfZ9ZQ/p3zhXUh/5MrSj+TcSBKuk5
+	eF5jAvPAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWmMA-0005Gm-A2; Thu, 07 May 2020 19:38:54 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWmM2-0005GJ-IH
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 19:38:48 +0000
-Received: by mail-wr1-x443.google.com with SMTP id h9so7825745wrt.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 12:38:44 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=tCa2iyU090PRG7nqaEHUGgigRMwS3+A15dirQJhZy6Y=;
- b=M1Ov5LG90uDXiEFR7+kdov+y8ucPMSJlLbU+UM83E2N0nYX14nG7Fa0xadeWBUZPEN
- Jvuz0D8GuFZJzbXo3N+juSp6KLDUco6b8Y9RslnerkP9Mpx8z28yGoljLSZbfRk0BDuc
- o3kkkC6wBVtLG4SsNznmXDSLmU1Nabymiz2Zhpa85kjVtn8FHOl0gSGlHk0QhUNFgUvi
- 42/quw1mFapaRbfrDAZJwhJ7XQ9K56NFUaSlc0u2okZzGvGnWhhRReObrFMUfrVDTBcq
- iBqS0R87Me7oRAC1YEHfKZdJfaNSCirHo6swHyyzyOSDlSFn18GeG5kxbKHmZ4BNbBvc
- 4h7g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=tCa2iyU090PRG7nqaEHUGgigRMwS3+A15dirQJhZy6Y=;
- b=qvejE8rOdVhawZeFLI4/89lVRls9vCnDOwH+xYVOSS11xKiWF6h45rtyu0TlGFxoKX
- t8aiWiS8QqGwwkeYSaKvOdikdN4rWR+YKSrBp428IdMhY6Op8evNio0aQkvSuBsv82eC
- QIvkjVlChIHLeP55bc3SKGJz9d5Au7VeljltYe9SU3noY7j0kxsDE34UNb+etIdkZ7N+
- /yUHQK2usGLTnOOvyd5RrECxcYpcNKO3X1KND5pjqBA8Jzu9n8SmZ/h7YPRa6yc6xf1t
- RdYBPxTsPuG7NIkVeLoorIMJsJrGw+6VOnzMQ/VZBo3o/aLYLHzSC9VW99rDDtZT4tYQ
- neHA==
-X-Gm-Message-State: AGi0PuZCuGkbWH5MfZHTqp0LK4BeW8g5k0f4jbYOiefLo7csuku0Rfiw
- zkTHZ67aFWtyRY+AZyR2QgM=
-X-Google-Smtp-Source: APiQypK3F7nQSO8oFUrOf7WBax7sb90ccvLSFYO1wQFWkv8HQ6iyxvHCPghmafAGLwxuHQ9Q2XxTwA==
-X-Received: by 2002:adf:ed82:: with SMTP id c2mr18485730wro.255.1588880323603; 
- Thu, 07 May 2020 12:38:43 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id n6sm7671942wrt.58.2020.05.07.12.38.41
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 07 May 2020 12:38:42 -0700 (PDT)
-Subject: Re: [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200506235009.25023-2-f.fainelli@gmail.com>
- <20200507103039.GR1551@shell.armlinux.org.uk>
- <3e7ee3ba-fae9-0ec3-fe1f-c076fc28aba9@gmail.com>
- <20200507185030.GT1551@shell.armlinux.org.uk>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <f252f8db-3047-ef5e-9cde-222e4282ca9d@gmail.com>
-Date: Thu, 7 May 2020 12:38:39 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.7.0
+	id 1jWmb9-000733-Dq; Thu, 07 May 2020 19:54:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWmb0-00071p-Da
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 19:54:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0E7961FB;
+ Thu,  7 May 2020 12:54:11 -0700 (PDT)
+Received: from [192.168.122.166] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D60F83F68F;
+ Thu,  7 May 2020 12:54:09 -0700 (PDT)
+Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
+To: Andy Shevchenko <andy.shevchenko@gmail.com>
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
+ <67e263cf-5cd7-98d1-56ff-ebd9ac2265b6@arm.com>
+ <CAHp75Vew8Fh6HEoOACk+J9KCpw+AE2t2+oFnXteK1eShopfYAA@mail.gmail.com>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <83ab4ca4-9c34-4cdd-4413-3b4cdf96727d@arm.com>
+Date: Thu, 7 May 2020 14:54:09 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200507185030.GT1551@shell.armlinux.org.uk>
+In-Reply-To: <CAHp75Vew8Fh6HEoOACk+J9KCpw+AE2t2+oFnXteK1eShopfYAA@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_123846_602150_CBAE76DF 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_125414_543134_DF6C0BD8 
+X-CRM114-Status: GOOD (  21.61  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,50 +66,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
- Mike Rapoport <rppt@linux.ibm.com>, Gregory Fong <gregory.0xf0@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Andrew Lunn <andrew@lunn.ch>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "Rafael J . Wysocki" <rafael@kernel.org>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Calvin Johnson <calvin.johnson@oss.nxp.com>, linux.cj@gmail.com,
+ netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
-
-On 5/7/2020 11:50 AM, Russell King - ARM Linux admin wrote:
-> On Thu, May 07, 2020 at 10:25:16AM -0700, Florian Fainelli wrote:
->>
->>
->> On 5/7/2020 3:30 AM, Russell King - ARM Linux admin wrote:
->>> On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
->>>> From: Kevin Cernekee <cernekee@gmail.com>
->>>>
->>>> If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
->>>> then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
->>>> choice.  This is true for all of the existing ARM users of
->>>> ARCH_SPARSEMEM_ENABLE.
->>>>
->>>> Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
->>>> us from ever defaulting to FLATMEM, so we should remove this setting.
->>>
->>> No explanation why that is desirable.
->>
->> This was explained in the original submission out of which only the
->> first patch landed upstream:
->>
->> https://lkml.org/lkml/2015/6/4/756
+On 5/7/20 12:27 PM, Andy Shevchenko wrote:
+> On Thu, May 7, 2020 at 4:26 PM Jeremy Linton <jeremy.linton@arm.com> wrote:
+>> On 5/5/20 8:29 AM, Calvin Johnson wrote:
 > 
-> Sorry, I don't see where.  The message you link to is for patch 1.
-> I'd say that the reason only the first patch landed is because that's
-> all I was happy with.
+>>> +             if (sscanf(cp, "ethernet-phy-id%4x.%4x",
+>>> +                        &upper, &lower) == 2) {
+>>> +                     *phy_id = ((upper & 0xFFFF) << 16) | (lower & 0xFFFF);
+>>> +                     return 0;
+>>> +             }
+> 
+>> Isn't the ACPI _CID() conceptually similar to the DT compatible
+>> property?
+> 
+> Where?
 
-I misunderstood you as to why the whole patch series, but now understand
-you meant specifically this patch, let me try to dig up some of the
-history of this and see if I can provide a justification, else, it
-should be dropped.
--- 
-Florian
+Not, sure I understand exactly what your asking. AFAIK, in general the 
+dt property is used to select a device driver/etc based on a more to 
+less compatible set of substrings. The phy case is a bit different 
+because it codes a numerical part number into the string rather than 
+just using arbitrary strings to select a driver and device. But it uses 
+that as a vendor selector for binding to the correct driver/device.
+
+Rephrasing the ACPI spec, the _CID() is either a single compatible id, 
+or a list of ids in order of preference. Each id is either a HID (string 
+or EISA type id) or a bus specific string encoding vendor/device/etc. 
+(https://elixir.bootlin.com/linux/v5.7-rc4/source/drivers/acpi/acpica/utids.c#L186). 
+One of the examples is "PCI\VEN_vvvv&DEV_dddd"
+
+So that latter case seems to be almost exactly what we have here.
+
+> 
+>> It even appears to be getting used in a similar way to
+>> identify particular phy drivers in this case.
+> 
+> _CID() is a string. It can't be used as pure number.
+> 
+
+It does have a numeric version defined for EISA types. OTOH I suspect 
+that your right. If there were a "PHY\VEN_IDvvvv&ID_DDDD" definition, it 
+may not be ideal to parse it. Instead the normal ACPI model of exactly 
+matching the complete string in the phy driver might be more appropriate.
+
+Similarly to how I suspect the next patch's use of "compatible" isn't 
+ideal either, because whether a device is c45 or not, should tend to be 
+fixed to a particular vendor/device implementation and not a firmware 
+provided property.
 
 _______________________________________________
 linux-arm-kernel mailing list
