@@ -2,64 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CD0A1C9394
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:04:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 312501C93B3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:08:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VyeMjk78Pt/4pG9dP7FG1xSjcD99cv8Y1VtkLgk3IQw=; b=Fi4wkkvnCc53vH
-	iKUVJLT9bgQz2Xe5FV0tbx5J54j3nmlUP5mP87FYYnJHTe2EfEuzcM/V/Cg1ijUSokBZUkTChsGIE
-	siE7n3TkK6GqZ2Ln5Nq4xNLttrjPBsBzJi8qhOaRPVH4XoZdG7XbVnzZ7hLShcnwSc0CouhGyHdCn
-	FDAGarsES7NR1/ZygqYq9VJy1BrkNOlfMIO++7zMX/zbkA8tjGcnJ9o+tykF2Ak/tKKBf8ZlDQTWl
-	p6F3FSvz350ETRQkvOkhFFBCcA9S8F01sF2OY33nyH6XfLRn0tZC3CaUT4E/89NuV1dKg7gVxn38a
-	myi4E4P14fGkamv0bGqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xu+OqlEfAqXn6b1nV9ptlG+mb6h2kCfdLmbJEGNRZWg=; b=atp/G3g84aql2ccNn+EuvZ3fZ
+	7WtO6sZlxw0QMBHRsQL2q8krpTK93fS5OwrNsrdEi6UnD0EHuxJMeAkSaK5/6GJCD3+Z4m6Y+tnAU
+	6FD1ca98e5iUDDjU9GPVXh61PRDvzyQcv/Z1480Wl483egphHbr5DS+DSapoQOse3qf2qnIYBhePI
+	YBVzwzbF8KxSp4OQBsQu4La13cFGf+e+j1so9mq1HkXLHBCALVlyjl2c+6wSmziVC9rG74spwZKAH
+	zboDpwG+hTbZ68PA+3uvC2t2OfQVjzIlZw8zDhMVD3bHZ/kdMYI6/o/Tcl31fGHJEgHAZO426U/p0
+	zsjb7kO9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWi4m-0008SI-3t; Thu, 07 May 2020 15:04:40 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1jWi8K-0004PQ-9w; Thu, 07 May 2020 15:08:20 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWi0i-0003tC-NL; Thu, 07 May 2020 15:00:31 +0000
-IronPort-SDR: 2k6jY2DOHmPf5m6WTk7haRbXwMUu79A90bS5LErebwCk4AX0uWoIEcTrSM+hgFD50sI6rjY/Dw
- EdxSg2nLYkfA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga101.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:25 -0700
-IronPort-SDR: ccj/YBIhZWifHTceF3C935K94/o3dJdXmT/VRmo3rphR+KioUyOCSj372Y/MERIhXtEQ84T1Fq
- 9jpOl8Z1pCKQ==
-X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="407664237"
-Received: from iweiny-desk2.sc.intel.com (HELO localhost) ([10.3.52.147])
- by orsmga004-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:24 -0700
-From: ira.weiny@intel.com
-To: linux-kernel@vger.kernel.org,
-	Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH V3 15/15] kmap: Consolidate kmap_prot definitions
-Date: Thu,  7 May 2020 08:00:03 -0700
-Message-Id: <20200507150004.1423069-16-ira.weiny@intel.com>
-X-Mailer: git-send-email 2.25.1
-In-Reply-To: <20200507150004.1423069-1-ira.weiny@intel.com>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
+ id 1jWi7J-0004J7-6A
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:07:18 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id DF3D52083B;
+ Thu,  7 May 2020 15:07:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588864036;
+ bh=0KSuXtisez4FmxZnZPinK1jyZ7q+uauXU1NDAwq9+ic=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=tQeKVedTaYJbvCstjp02l9Jq1wkc5xIvLHMxxd+udhdS4+NTsNj3yO0DfYaBYYxFt
+ 3LoM1vFXSQpLnkxfwbQSfwkeCLm0Xj+pcBLc9lBXq/Xbz540QGkjxjjoqht2rXE2qf
+ tSNL/0gM83A/i6Sw3lFdGbmbbbqeC2D5/c+iHqGI=
+Date: Thu, 7 May 2020 16:07:13 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v3 00/11] arm64: BTI kernel and vDSO support
+Message-ID: <20200507150713.GA6183@sirena.org.uk>
+References: <20200506195138.22086-1-broonie@kernel.org>
+ <20200507143332.GB1422@willie-the-truck>
+ <20200507143547.GC1422@willie-the-truck>
 MIME-Version: 1.0
+In-Reply-To: <20200507143547.GC1422@willie-the-truck>
+X-Cookie: 1 + 1 = 3, for large values of 1.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_080029_244318_7129D4C7 
-X-CRM114-Status: GOOD (  13.40  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200507_080717_250555_A23FD9C5 
+X-CRM114-Status: GOOD (  12.82  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [192.55.52.88 listed in wl.mailspike.net]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,216 +78,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Ira Weiny <ira.weiny@intel.com>, Dan Williams <dan.j.williams@intel.com>,
- Helge Deller <deller@gmx.de>, x86@kernel.org, linux-csky@vger.kernel.org,
- Christoph Hellwig <hch@lst.de>, Christoph Hellwig <hch@infradead.org>,
- Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
- linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kees Cook <keescook@chromium.org>, Daniel Borkmann <daniel@iogearbox.net>,
+ Jean-Philippe Brucker <jean-philippe.brucker@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Amit Kachhap <amit.kachhap@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8841076602939921040=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ira Weiny <ira.weiny@intel.com>
 
-Most architectures define kmap_prot to be PAGE_KERNEL.
+--===============8841076602939921040==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="fdj2RfSjLxBAspz7"
+Content-Disposition: inline
 
-Let sparc and xtensa define there own and define PAGE_KERNEL as the
-default if not overridden.
 
-Suggested-by: Christoph Hellwig <hch@infradead.org>
-Signed-off-by: Ira Weiny <ira.weiny@intel.com>
+--fdj2RfSjLxBAspz7
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
----
-Changes from V2:
-	New Patch for this series
----
- arch/arc/include/asm/highmem.h        | 3 ---
- arch/arm/include/asm/highmem.h        | 2 --
- arch/csky/include/asm/highmem.h       | 2 --
- arch/microblaze/include/asm/highmem.h | 1 -
- arch/mips/include/asm/highmem.h       | 2 --
- arch/nds32/include/asm/highmem.h      | 1 -
- arch/powerpc/include/asm/highmem.h    | 1 -
- arch/sparc/include/asm/highmem.h      | 3 ++-
- arch/sparc/mm/highmem.c               | 4 ----
- arch/x86/include/asm/fixmap.h         | 1 -
- include/linux/highmem.h               | 4 ++++
- 11 files changed, 6 insertions(+), 18 deletions(-)
+On Thu, May 07, 2020 at 03:35:47PM +0100, Will Deacon wrote:
+> On Thu, May 07, 2020 at 03:33:32PM +0100, Will Deacon wrote:
 
-diff --git a/arch/arc/include/asm/highmem.h b/arch/arc/include/asm/highmem.h
-index 70900a73bfc8..6e5eafb3afdd 100644
---- a/arch/arc/include/asm/highmem.h
-+++ b/arch/arc/include/asm/highmem.h
-@@ -25,9 +25,6 @@
- #define PKMAP_ADDR(nr)		(PKMAP_BASE + ((nr) << PAGE_SHIFT))
- #define PKMAP_NR(virt)		(((virt) - PKMAP_BASE) >> PAGE_SHIFT)
- 
--#define kmap_prot		PAGE_KERNEL
--
--
- #include <asm/cacheflush.h>
- 
- extern void kmap_init(void);
-diff --git a/arch/arm/include/asm/highmem.h b/arch/arm/include/asm/highmem.h
-index b0d4bd8dc3c1..31811be38d78 100644
---- a/arch/arm/include/asm/highmem.h
-+++ b/arch/arm/include/asm/highmem.h
-@@ -10,8 +10,6 @@
- #define PKMAP_NR(virt)		(((virt) - PKMAP_BASE) >> PAGE_SHIFT)
- #define PKMAP_ADDR(nr)		(PKMAP_BASE + ((nr) << PAGE_SHIFT))
- 
--#define kmap_prot		PAGE_KERNEL
--
- #define flush_cache_kmaps() \
- 	do { \
- 		if (cache_is_vivt()) \
-diff --git a/arch/csky/include/asm/highmem.h b/arch/csky/include/asm/highmem.h
-index ea2f3f39174d..14645e3d5cd5 100644
---- a/arch/csky/include/asm/highmem.h
-+++ b/arch/csky/include/asm/highmem.h
-@@ -38,8 +38,6 @@ extern void *kmap_atomic_pfn(unsigned long pfn);
- 
- extern void kmap_init(void);
- 
--#define kmap_prot PAGE_KERNEL
--
- #endif /* __KERNEL__ */
- 
- #endif /* __ASM_CSKY_HIGHMEM_H */
-diff --git a/arch/microblaze/include/asm/highmem.h b/arch/microblaze/include/asm/highmem.h
-index d7c55cfd27bd..284ca8fb54c1 100644
---- a/arch/microblaze/include/asm/highmem.h
-+++ b/arch/microblaze/include/asm/highmem.h
-@@ -25,7 +25,6 @@
- #include <linux/uaccess.h>
- #include <asm/fixmap.h>
- 
--#define kmap_prot		PAGE_KERNEL
- extern pte_t *kmap_pte;
- extern pte_t *pkmap_page_table;
- 
-diff --git a/arch/mips/include/asm/highmem.h b/arch/mips/include/asm/highmem.h
-index 76dec0bd4f59..f1f788b57166 100644
---- a/arch/mips/include/asm/highmem.h
-+++ b/arch/mips/include/asm/highmem.h
-@@ -54,8 +54,6 @@ extern void *kmap_atomic_pfn(unsigned long pfn);
- 
- extern void kmap_init(void);
- 
--#define kmap_prot PAGE_KERNEL
--
- #endif /* __KERNEL__ */
- 
- #endif /* _ASM_HIGHMEM_H */
-diff --git a/arch/nds32/include/asm/highmem.h b/arch/nds32/include/asm/highmem.h
-index a48a6536d41a..5717647d14d1 100644
---- a/arch/nds32/include/asm/highmem.h
-+++ b/arch/nds32/include/asm/highmem.h
-@@ -32,7 +32,6 @@
- #define LAST_PKMAP_MASK		(LAST_PKMAP - 1)
- #define PKMAP_NR(virt)		(((virt) - (PKMAP_BASE)) >> PAGE_SHIFT)
- #define PKMAP_ADDR(nr)		(PKMAP_BASE + ((nr) << PAGE_SHIFT))
--#define kmap_prot		PAGE_KERNEL
- 
- static inline void flush_cache_kmaps(void)
- {
-diff --git a/arch/powerpc/include/asm/highmem.h b/arch/powerpc/include/asm/highmem.h
-index 8d8ee3fcd800..104026f7d6bc 100644
---- a/arch/powerpc/include/asm/highmem.h
-+++ b/arch/powerpc/include/asm/highmem.h
-@@ -29,7 +29,6 @@
- #include <asm/page.h>
- #include <asm/fixmap.h>
- 
--#define kmap_prot		PAGE_KERNEL
- extern pte_t *kmap_pte;
- extern pte_t *pkmap_page_table;
- 
-diff --git a/arch/sparc/include/asm/highmem.h b/arch/sparc/include/asm/highmem.h
-index f4babe67cb5d..37f8694bde84 100644
---- a/arch/sparc/include/asm/highmem.h
-+++ b/arch/sparc/include/asm/highmem.h
-@@ -25,11 +25,12 @@
- #include <asm/vaddrs.h>
- #include <asm/kmap_types.h>
- #include <asm/pgtable.h>
-+#include <asm/pgtsrmmu.h>
- 
- /* declarations for highmem.c */
- extern unsigned long highstart_pfn, highend_pfn;
- 
--extern pgprot_t kmap_prot;
-+#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
- extern pte_t *pkmap_page_table;
- 
- void kmap_init(void) __init;
-diff --git a/arch/sparc/mm/highmem.c b/arch/sparc/mm/highmem.c
-index 414f578d1e57..d237d902f9c3 100644
---- a/arch/sparc/mm/highmem.c
-+++ b/arch/sparc/mm/highmem.c
-@@ -32,9 +32,6 @@
- #include <asm/pgalloc.h>
- #include <asm/vaddrs.h>
- 
--pgprot_t kmap_prot;
--EXPORT_SYMBOL(kmap_prot);
--
- static pte_t *kmap_pte;
- 
- void __init kmap_init(void)
-@@ -51,7 +48,6 @@ void __init kmap_init(void)
- 
-         /* cache the first kmap pte */
-         kmap_pte = pte_offset_kernel(dir, address);
--        kmap_prot = __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
- }
- 
- void *kmap_atomic_high_prot(struct page *page, pgprot_t prot)
-diff --git a/arch/x86/include/asm/fixmap.h b/arch/x86/include/asm/fixmap.h
-index 28183ee3cc42..b9527a54db99 100644
---- a/arch/x86/include/asm/fixmap.h
-+++ b/arch/x86/include/asm/fixmap.h
-@@ -152,7 +152,6 @@ extern void reserve_top_address(unsigned long reserve);
- extern int fixmaps_set;
- 
- extern pte_t *kmap_pte;
--#define kmap_prot PAGE_KERNEL
- extern pte_t *pkmap_page_table;
- 
- void __native_set_fixmap(enum fixed_addresses idx, pte_t pte);
-diff --git a/include/linux/highmem.h b/include/linux/highmem.h
-index cc0c3904e501..bf470c16cecb 100644
---- a/include/linux/highmem.h
-+++ b/include/linux/highmem.h
-@@ -40,6 +40,10 @@ extern void kunmap_atomic_high(void *kvaddr);
- static inline void kmap_flush_tlb(unsigned long addr) { }
- #endif
- 
-+#ifndef kmap_prot
-+#define kmap_prot PAGE_KERNEL
-+#endif
-+
- void *kmap_high(struct page *page);
- static inline void *kmap(struct page *page)
- {
--- 
-2.25.1
+> > Bugger, I'm still getting warnings (clang 11.0.1), but from an allmodconfig
+> > build now:
 
+> >   warning: some functions compiled with BTI and some compiled without BTI
+> >   warning: not setting BTI in feature flags
+
+> > (repeated many, many times).
+
+> > I'll try to get you some more info.
+
+Where are you getting this clang from?  When I test using clang 11 from
+the LLVM apt repos right now it seems fine, and clang 11 doesn't seem to
+have been released yet so I'm guessing this is some kind of snapshot.
+
+> Quick look at the log suggests that these are caused by HDRTEST, whatever
+> that is.
+
+AFAICT that's something that's supposed to be checking for include
+guards and not doing anything fancy...  I can't think what could cause
+this on a per-function basis.
+
+--fdj2RfSjLxBAspz7
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl60JCAACgkQJNaLcl1U
+h9Dvowf+I+U4pcQnYnmNHOmPe/w6MMdKl+eVz7n/WXcEjLWLGmtIHyYdD58eWx6d
+J75DPJTAAaud5LeaVaB77OaY23Sx8n/q8RQ5FoUGc3ekQJVYkrYi+362HmI/UNcz
+vo/hQ6YklaZEpM3dRsVlbxEJU5VRCMMaD1zzRpEOHuA2y0fGyeGXD7w2h8UWfJZQ
+yN6LqBQoYVw524WoZ0kwn5nc4SvPbjiZg0Rky3ZChfwa5TyCyElLl7gaD1N3IEd+
+bHiMVVRSktwkjD9zw2GY3CQVy+KHwFQIGAbHF0T5KrXC5cu48YXVARB3ThFW1++4
+ZM56LEnOcEN1sUcsB8rAUuVjLswjoQ==
+=rwDI
+-----END PGP SIGNATURE-----
+
+--fdj2RfSjLxBAspz7--
+
+
+--===============8841076602939921040==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8841076602939921040==--
+
