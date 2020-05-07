@@ -2,65 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C6EF1C9CC1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:53:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4611A1C9CE9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 23:03:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9PGE+oLlxr1jHCpUgl7tfZ4wAeT5BnuimuxSRg1bKeA=; b=NaIGmu4DmJ3epN
-	wjtgILIkYSOo3rskqd+3fMwL2eg+Bewsjx0jG1JrtW7XxQ0KdEZqhPHIbVJ1QQLohfs5Wimlx7fCR
-	OUaHf0FWGNNxYkIi0Gxum0viLoWihTe7q+gkFrcAVamduKc9K+GjXdpArOWBZj56dYIc+ln0RRsZZ
-	pb4TTkFkZtE/wYDYXm1wlqgIGc6kA4JGLC2CO8B/m1HY5PVy6+Cj7m9kMPWRxjxrptRqWAP2cVRh1
-	byBjOBR9zOKp16KLw6K5WZKPO6wQtMZkMhccVmj8wibVLd9vuhdOoYm1hPTooZ5biIPEjLpax6CFB
-	9f6ndD0iftJ2KL0frBng==;
+	List-Owner; bh=QCNIE2WavaAk4l8nkC3G00CTqa3Tl9sjRjnu0NUBkDo=; b=p9E59A7jkBi/WR
+	zBJsuuteowFrRSsj4wCJEuJQy9y/5+srHKKwoBx941Ke6eVUud6Ze/6tGbM2Vul+RcJX/LLUPBZDQ
+	LUtC2AzIJOpHW/ZwDIBrs1CpNpLcHd7DupnigZEP7wU+e9kbbtUD6MVEngwDU2cpHZJ85DIJk+jb4
+	BJdLFr+Egz1UjD6klrGiDUqlZ2uMeCwCVYArq4+Ys3nc3D/tzZGL+iDpZvyfQaIq1LDaLOqdUYtUd
+	kNm9aXr8swM6h2x9CRPitPitC59czqNJ0hKOfaIXs9EgB0ilqSaYE+GEIm2D99yDOyILBdNZ1JhOr
+	Y7r+4G3SiLRYR/qiPy+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWnWH-00006K-96; Thu, 07 May 2020 20:53:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWng2-0007H4-3a; Thu, 07 May 2020 21:03:30 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWnW2-0008Tn-6p; Thu, 07 May 2020 20:53:11 +0000
-Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
- [73.231.172.41])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 635C4208D6;
- Thu,  7 May 2020 20:53:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588884789;
- bh=hMm94zV9WGH7Tl9oZXIOfH3+eFqjMiH47dainavvzmQ=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Xo0uB0jzEa+6RQj31qDV5iepwWr5b+doPXcry4uWKXnR6W6xL9I88EI0MA39g9SuS
- 5U/3zuoJRDt8b6/Q0n2onWLVPdRnd11VRA3YS2nqAKv/QZZqRC8GdpFAaS/d7ESL7c
- ZnKJEnreBWqqWrZToty2CxiWaRWmtHuPnx6/3ffI=
-Date: Thu, 7 May 2020 13:53:07 -0700
-From: Andrew Morton <akpm@linux-foundation.org>
-To: ira.weiny@intel.com
-Subject: Re: [PATCH V3 15/15] kmap: Consolidate kmap_prot definitions
-Message-Id: <20200507135307.4ba10d99c611f17beab31751@linux-foundation.org>
-In-Reply-To: <20200507150004.1423069-16-ira.weiny@intel.com>
-References: <20200507150004.1423069-1-ira.weiny@intel.com>
- <20200507150004.1423069-16-ira.weiny@intel.com>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+ id 1jWnfp-0007G0-Vi; Thu, 07 May 2020 21:03:19 +0000
+Received: by mail-ot1-f68.google.com with SMTP id m13so5765665otf.6;
+ Thu, 07 May 2020 14:03:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=VyDpqjFf92FEuiIHFMXtKbzqroXrkI/e2oOzUcuJwg4=;
+ b=WFtsAYsEOXEPtidC3yPPiwfL8ALf0BEr5bcEVh0AC79BWPb+VsZe9ZeRyCHw2KbBgU
+ +gnjL+WnfhLalMFl0lHzJIv1Kq7VA2J/xqOq1Vte95rKtHz9v+GP6Oee3Sbb4Co38nGB
+ BWwttZHdacUgCQ9Th5EJqClMYBwcWzoQ2ZInKliYcm6hnGlmvjYlP6d5gKbqcPhrPacf
+ trapTOS2DdYh9JXPVcUfqonbpG4yiJVNDxz4+vJBOQt1dmZecpz227Cujb9C8zv/Dbb9
+ FsSxM2n5AqQdJ22aSlgp4EVnEDiKcyxG6BH30bkgdetejC5/Dh+ArnXeI64d9b/SIFle
+ pjAw==
+X-Gm-Message-State: AGi0Puahw3Wmow9SDIzIgqPkqjAfvqcX5wd6Jx7e1vKdmByZ9HWdxdai
+ knlNH5I1FGqNiGxME1JV7w==
+X-Google-Smtp-Source: APiQypIvjGiPp77s+t3QROHzGlT5BlLPBuZkwM7E4Px8YsppOcYnIGj84LS8p2dt85sZiqhftDFgJg==
+X-Received: by 2002:a9d:3785:: with SMTP id x5mr11888606otb.81.1588885396749; 
+ Thu, 07 May 2020 14:03:16 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g25sm1645901ots.21.2020.05.07.14.03.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 May 2020 14:03:16 -0700 (PDT)
+Received: (nullmailer pid 19976 invoked by uid 1000);
+ Thu, 07 May 2020 21:03:15 -0000
+Date: Thu, 7 May 2020 16:03:15 -0500
+From: Rob Herring <robh@kernel.org>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH] PCI: amlogic: meson: Don't use FAST_LINK_MODE to set up
+ link
+Message-ID: <20200507210315.GA19547@bogus>
+References: <20200429164230.309922-1-maz@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200429164230.309922-1-maz@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_135310_316183_9C5E6FAD 
-X-CRM114-Status: GOOD (  14.36  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200507_140318_020564_C3FC8011 
+X-CRM114-Status: GOOD (  12.80  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,80 +92,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
- linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
- Christoph Hellwig <hch@infradead.org>, Ingo Molnar <mingo@redhat.com>,
- linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
- Borislav Petkov <bp@alien8.de>, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org, Chris Zankel <chris@zankel.net>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Yue Wang <yue.wang@Amlogic.com>,
+ Kevin Hilman <khilman@baylibre.com>, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu,  7 May 2020 08:00:03 -0700 ira.weiny@intel.com wrote:
-
-> From: Ira Weiny <ira.weiny@intel.com>
+On Wed, 29 Apr 2020 17:42:30 +0100, Marc Zyngier wrote:
+> My vim3l board stubbornly refuses to play ball with a bog
+> standard PCIe switch (ASM1184e), spitting all kind of errors
+> ranging from link never coming up to crazy things like downstream
+> ports falling off the face of the planet.
 > 
-> Most architectures define kmap_prot to be PAGE_KERNEL.
+> Upon investigating how the PCIe RC is configured, I found the
+> following nugget: the Sysnopsys DWC PCIe Reference Manual, in the
+> section dedicated to the PLCR register, describes bit 7 (FAST_LINK_MODE)
+> as:
 > 
-> Let sparc and xtensa define there own and define PAGE_KERNEL as the
-> default if not overridden.
+> "Sets all internal timers to fast mode for simulation purposes."
+> 
+> I completely understand the need for setting this bit from a simulation
+> perspective, but what I have on my desk is actual silicon, which
+> expects timers to have a nominal value (and I expect this is the
+> case for most people).
+> 
+> Making sure the FAST_LINK_MODE bit is cleared when configuring the RC
+> solves this problem.
+> 
+> Fixes: 9c0ef6d34fdb ("PCI: amlogic: Add the Amlogic Meson PCIe controller driver")
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  drivers/pci/controller/dwc/pci-meson.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
 > 
 
-checkpatch considered useful ;)
-
-
-From: Andrew Morton <akpm@linux-foundation.org>
-Subject: kmap-consolidate-kmap_prot-definitions-checkpatch-fixes
-
-WARNING: macros should not use a trailing semicolon
-#134: FILE: arch/sparc/include/asm/highmem.h:33:
-+#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
-
-total: 0 errors, 1 warnings, 100 lines checked
-
-NOTE: For some of the reported defects, checkpatch may be able to
-      mechanically convert to the typical style using --fix or --fix-inplace.
-
-./patches/kmap-consolidate-kmap_prot-definitions.patch has style problems, please review.
-
-NOTE: If any of the errors are false positives, please report
-      them to the maintainer, see CHECKPATCH in MAINTAINERS.
-
-Please run checkpatch prior to sending patches
-
-Cc: Ira Weiny <ira.weiny@intel.com>
-Signed-off-by: Andrew Morton <akpm@linux-foundation.org>
----
-
- arch/sparc/include/asm/highmem.h |    2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
---- a/arch/sparc/include/asm/highmem.h~kmap-consolidate-kmap_prot-definitions-checkpatch-fixes
-+++ a/arch/sparc/include/asm/highmem.h
-@@ -30,7 +30,7 @@
- /* declarations for highmem.c */
- extern unsigned long highstart_pfn, highend_pfn;
- 
--#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE);
-+#define kmap_prot __pgprot(SRMMU_ET_PTE | SRMMU_PRIV | SRMMU_CACHE)
- extern pte_t *pkmap_page_table;
- 
- void kmap_init(void) __init;
-_
-
+Acked-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
