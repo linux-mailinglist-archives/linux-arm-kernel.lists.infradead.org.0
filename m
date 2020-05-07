@@ -2,50 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE2951C8395
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 09:36:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D960F1C8386
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 09:36:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=0zBkQftCUf4+h0WHqwJT3q4Q0Zog67v5iB5kQV1oQSQ=; b=OzN
-	9/nVymyEWTZtGmYCreekKTpQ8vVeKOef4w3+1IGjK1GeS1Lwa55b5yLBcNtKDN9vul3qIMtV2Rxa4
-	7CC5ILlDHGmFTOhxKcIHDeuFYaNRQE+TDPv83e8QFWt2HMBRCX00BnFGTtKA8QZ4RVTk6wxRMaqt8
-	O7kjaCVfWOI8OeCluVQJLc32koXgCZPRd00hvIte1JR5OXB0nJSbLTa7sfKP+FyOF2g1YdcZfJQbM
-	6tMioHGEn0JsBEdDqUUifG2LgmTPSx3xC3nZexcsRmShHhyk+X8db8hvT/TD64BnYqeXVf63Y/JCp
-	dxYYBGWCURxVjuwN2+LU0yRjNJXON1w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=y+I4DraNz3hycy/QiVGcEmJeBGR1Heqrkk4S7IJVzbs=; b=G7sSxBNvZFngVpet2FLGS20mdf
+	EIEz/xsxVCkPDRVf9OYeF0vq0gcTj/9wA7rNyLftwxusPt4JjKhzHDL+45N/UNqnZBbVIvvHGf80s
+	zjZne7h3aNRYEwWJDRbhLA1GC5cBigK0jGSjv3e8TQan2w+JgHAKyfVjUToVRxVv1wV0soMKjJmCE
+	yP3iWww9R0GZVqXFUTbP9MZOdAejeYPjYYM1GB26hv/pNfEZbO9c6OI1R1s2lNFkkr+fMo88g/EKT
+	Sj6GdnDIg1CHz1IqgXzxbRCd1XHWxBMf0HXNhqlihYLN/Y8WF44aTEAnGzCQr4ViOxcPLBU2bo8vl
+	hasxA5lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWb5J-0002IE-D7; Thu, 07 May 2020 07:36:45 +0000
+	id 1jWb4a-0001b8-3H; Thu, 07 May 2020 07:36:00 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWb4N-0001Xr-C9
+ id 1jWb4M-0001Xs-K9
  for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 07:35:48 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 5C619200F19;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B7E1720177E;
  Thu,  7 May 2020 09:35:43 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4DDB1200F10;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id AB623201781;
  Thu,  7 May 2020 09:35:43 +0200 (CEST)
 Received: from fsr-ub1864-111.ea.freescale.net
  (fsr-ub1864-111.ea.freescale.net [10.171.82.141])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id F394A203C5;
- Thu,  7 May 2020 09:35:42 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 5CA3E203C5;
+ Thu,  7 May 2020 09:35:43 +0200 (CEST)
 From: Diana Craciun <diana.craciun@oss.nxp.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 00/12] bus/fsl-mc: Extend mc-bus driver functionalities in
- preparation for mc-bus VFIO support
-Date: Thu,  7 May 2020 10:34:19 +0300
-Message-Id: <20200507073431.2710-1-diana.craciun@oss.nxp.com>
+Subject: [PATCH v2 01/12] bus/fsl-mc: Do no longer export the total number of
+ irqs outside dprc_scan_objects
+Date: Thu,  7 May 2020 10:34:20 +0300
+Message-Id: <20200507073431.2710-2-diana.craciun@oss.nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200507073431.2710-1-diana.craciun@oss.nxp.com>
+References: <20200507073431.2710-1-diana.craciun@oss.nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_003547_547635_0E3E014E 
-X-CRM114-Status: UNSURE (   7.42  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200507_003546_937433_909E1B46 
+X-CRM114-Status: GOOD (  13.86  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -75,51 +77,109 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The vfio-mc bus driver needs some additional services to be exported by the
-mc-bus driver like:
-- a way to reset the DPRC container
-- driver_override support
-- functions to setup/tear down a DPRC
-- functions for allocating the pool of interrupts. In case of VFIO the
-interrupts are not configured at probe time, but later by userspace
-request
+The total number of interrupts is only used for some checks
+outside the dprc_scan_objects function. Furthermore, in some
+situations the check is made twice. Move the bounds check inside
+the function for all situations.
 
-v1 -> v2
-- Remove driver_override propagation through various functions
-- Cache the DPRC API version
+Signed-off-by: Diana Craciun <diana.craciun@oss.nxp.com>
+---
+ drivers/bus/fsl-mc/dprc-driver.c | 30 ++++++++++--------------------
+ 1 file changed, 10 insertions(+), 20 deletions(-)
 
-The patches are related with "vfio/fsl-mc: VFIO support for FSL-MC
-devices" patches, but the series were split because they are targeting
-different subsystems. However, the mc-bus patches may suffer changes
-when addressing the VFIO review comments.
-
-Bharat Bhushan (3):
-  bus/fsl-mc: add support for 'driver_override' in the mc-bus
-  bus/fsl-mc: Add dprc-reset-container support
-  bus/fsl-mc: Extend ICID size from 16bit to 32bit
-
-Diana Craciun (9):
-  bus/fsl-mc: Do no longer export the total number of irqs outside
-    dprc_scan_objects
-  bus/fsl-mc: Add a new parameter to dprc_scan_objects function
-  bus/fsl-mc: Set the QMAN/BMAN region flags
-  bus/fsl-mc: Cache the DPRC API version
-  bus/fsl-mc: Export a dprc scan function to be used by multiple
-    entities
-  bus/fsl-mc: Export a cleanup function for DPRC
-  bus/fsl-mc: Add a container setup function
-  bus/fsl_mc: Do not rely on caller to provide non NULL mc_io
-  bus/fsl-mc: Export IRQ pool handling functions to be used by VFIO
-
- drivers/bus/fsl-mc/dprc-driver.c      | 181 ++++++++++++++++----------
- drivers/bus/fsl-mc/dprc.c             | 103 +++++++++++++--
- drivers/bus/fsl-mc/fsl-mc-allocator.c |  12 +-
- drivers/bus/fsl-mc/fsl-mc-bus.c       |  64 ++++++++-
- drivers/bus/fsl-mc/fsl-mc-private.h   |  28 ++--
- drivers/bus/fsl-mc/mc-io.c            |   7 +-
- include/linux/fsl/mc.h                |  29 ++++-
- 7 files changed, 313 insertions(+), 111 deletions(-)
-
+diff --git a/drivers/bus/fsl-mc/dprc-driver.c b/drivers/bus/fsl-mc/dprc-driver.c
+index c8b1c3842c1a..035b220779d0 100644
+--- a/drivers/bus/fsl-mc/dprc-driver.c
++++ b/drivers/bus/fsl-mc/dprc-driver.c
+@@ -3,6 +3,7 @@
+  * Freescale data path resource container (DPRC) driver
+  *
+  * Copyright (C) 2014-2016 Freescale Semiconductor, Inc.
++ * Copyright 2019-2020 NXP
+  * Author: German Rivera <German.Rivera@freescale.com>
+  *
+  */
+@@ -197,8 +198,6 @@ static void dprc_add_new_devices(struct fsl_mc_device *mc_bus_dev,
+  * dprc_scan_objects - Discover objects in a DPRC
+  *
+  * @mc_bus_dev: pointer to the fsl-mc device that represents a DPRC object
+- * @total_irq_count: If argument is provided the function populates the
+- * total number of IRQs created by objects in the DPRC.
+  *
+  * Detects objects added and removed from a DPRC and synchronizes the
+  * state of the Linux bus driver, MC by adding and removing
+@@ -212,8 +211,7 @@ static void dprc_add_new_devices(struct fsl_mc_device *mc_bus_dev,
+  * populated before they can get allocation requests from probe callbacks
+  * of the device drivers for the non-allocatable devices.
+  */
+-static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev,
+-			     unsigned int *total_irq_count)
++static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev)
+ {
+ 	int num_child_objects;
+ 	int dprc_get_obj_failures;
+@@ -294,22 +292,21 @@ static int dprc_scan_objects(struct fsl_mc_device *mc_bus_dev,
+ 	 * Allocate IRQ's before binding the scanned devices with their
+ 	 * respective drivers.
+ 	 */
+-	if (dev_get_msi_domain(&mc_bus_dev->dev) && !mc_bus->irq_resources) {
++	if (dev_get_msi_domain(&mc_bus_dev->dev)) {
+ 		if (irq_count > FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS) {
+ 			dev_warn(&mc_bus_dev->dev,
+ 				 "IRQs needed (%u) exceed IRQs preallocated (%u)\n",
+ 				 irq_count, FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+ 		}
+ 
+-		error = fsl_mc_populate_irq_pool(mc_bus,
++		if (!mc_bus->irq_resources) {
++			error = fsl_mc_populate_irq_pool(mc_bus,
+ 				FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+-		if (error < 0)
+-			return error;
++			if (error < 0)
++				return error;
++		}
+ 	}
+ 
+-	if (total_irq_count)
+-		*total_irq_count = irq_count;
+-
+ 	dprc_remove_devices(mc_bus_dev, child_obj_desc_array,
+ 			    num_child_objects);
+ 
+@@ -342,7 +339,7 @@ static int dprc_scan_container(struct fsl_mc_device *mc_bus_dev)
+ 	 * Discover objects in the DPRC:
+ 	 */
+ 	mutex_lock(&mc_bus->scan_mutex);
+-	error = dprc_scan_objects(mc_bus_dev, NULL);
++	error = dprc_scan_objects(mc_bus_dev);
+ 	mutex_unlock(&mc_bus->scan_mutex);
+ 	if (error < 0) {
+ 		fsl_mc_cleanup_all_resource_pools(mc_bus_dev);
+@@ -411,9 +408,8 @@ static irqreturn_t dprc_irq0_handler_thread(int irq_num, void *arg)
+ 		      DPRC_IRQ_EVENT_CONTAINER_DESTROYED |
+ 		      DPRC_IRQ_EVENT_OBJ_DESTROYED |
+ 		      DPRC_IRQ_EVENT_OBJ_CREATED)) {
+-		unsigned int irq_count;
+ 
+-		error = dprc_scan_objects(mc_dev, &irq_count);
++		error = dprc_scan_objects(mc_dev);
+ 		if (error < 0) {
+ 			/*
+ 			 * If the error is -ENXIO, we ignore it, as it indicates
+@@ -428,12 +424,6 @@ static irqreturn_t dprc_irq0_handler_thread(int irq_num, void *arg)
+ 
+ 			goto out;
+ 		}
+-
+-		if (irq_count > FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS) {
+-			dev_warn(dev,
+-				 "IRQs needed (%u) exceed IRQs preallocated (%u)\n",
+-				 irq_count, FSL_MC_IRQ_POOL_MAX_TOTAL_IRQS);
+-		}
+ 	}
+ 
+ out:
 -- 
 2.17.1
 
