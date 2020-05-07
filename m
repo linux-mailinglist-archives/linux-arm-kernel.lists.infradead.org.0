@@ -2,72 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 867831C8BA6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 15:02:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F7231C8BC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 15:07:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sAemzGR+jag3CeZ4D5JT4WIVI32upUI6J2ARTlfnvVk=; b=Hu8nnTLO7FPlpv
-	KSDeGL9++4sin1IjSOlQBb7N/BXWcDLV2cdgPR4/XIvnPNsoSQat+A7QbAvZpyQxDbmeSUbViByVp
-	bvK4n/pND+V1YgqOYPB49yu4z7zdEYREiCLYNRub4YSxTdCRbO/4E48N34Vx4a0lFw6WP7ScU38Cn
-	RsjvRbq+9iNNl8dBBdehdyfZ//GVKo9F7Q4LkaeQE0wyDY0P5RfiEVrdDIJKY4Z56L65AWmyeG0od
-	Hfl+vl6ZAikRmN9G3fhE00ZHYQUrChnDDjvj8sPmJVUC3lte2Vq+6pO0i/3Apv1uniMmwN6s8vqlV
-	4kqtUbDErk8aHiLuc0hA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=3ZlaDXxQgcSfiB7EPehg7E1zEVNSQJ/DcVd2dXIAuz8=; b=qw4xm9mJCvjwPbPU6t0fEXZKn
+	GdM+PQTjfO04YCo/VoBT9w9BL4N9VaLR6W9rqfCOX96n3NkZJe5d77EUi8ZfCHThg/+Ks7arNPESY
+	Q5DmczJ2fe9dOmBcrUgROHp+fzowMN5W3Fu0BTvFerw4WP0vPgcq/YTjdIK4RClfNKJjnDousKt4/
+	he/hr78E0fHZGHCDLpyynw15QTI2XLK24w4h4CoBUKiU1B3FQGyMHZpws8lxmjDylZeTQl9In8Zzy
+	1g9Fs7uEmXUjWWjsezaaF+MDoWDPx8dazOl/jGkFPJxTHPaDDVcizMWmFgra91R7FdHNqEw6rwiSj
+	0XNsSkYUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWgAS-00009x-0z; Thu, 07 May 2020 13:02:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWgEy-00049V-LK; Thu, 07 May 2020 13:07:04 +0000
+Received: from out4436.biz.mail.alibaba.com ([47.88.44.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWgAL-00009U-C9
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 13:02:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CCD58208D6;
- Thu,  7 May 2020 13:02:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588856537;
- bh=FOLAqCJSZFjeRrOo2AB0h8nYBfFZfVGOKBM3v6LFHEc=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hPdVXwPH7TI3PLb2Kzf96tHmWwUOaHaRsR9QY3oETGLePCe9qnlm3SrHoIHVJvrhl
- USV/bVxAywRxh3AAjmb8S7vCYFM5W9+E/KCoYipYYHVLXWsh1cDrwIfRPR5fgggIzI
- QUXnyvUgJqyr8F5xVYoQdqXVxsH20PpnU3tHRjQw=
-Date: Thu, 7 May 2020 14:02:11 +0100
-From: Will Deacon <will@kernel.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCHv4 4/6] iommu/arm-smmu-qcom: Request direct mapping for
- modem device
-Message-ID: <20200507130210.GB31783@willie-the-truck>
-References: <cover.1587407458.git.saiprakash.ranjan@codeaurora.org>
- <8ef5d93c74f5cd9e4a6edab86d1d46efbf3aa038.1587407458.git.saiprakash.ranjan@codeaurora.org>
+ id 1jWgEr-00048C-9q
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 13:06:58 +0000
+X-Alimail-AntiSpam: AC=PASS; BC=-1|-1; BR=01201311R881e4; CH=green; DM=||false|;
+ DS=||; FP=0|-1|-1|-1|0|-1|-1|-1; HT=e01e07425;
+ MF=tianjia.zhang@linux.alibaba.com; NM=1; PH=DS; RN=37; SR=0;
+ TI=SMTPD_---0TxqomBt_1588856677; 
+Received: from 30.27.116.247(mailfrom:tianjia.zhang@linux.alibaba.com
+ fp:SMTPD_---0TxqomBt_1588856677) by smtp.aliyun-inc.com(127.0.0.1);
+ Thu, 07 May 2020 21:04:38 +0800
+Subject: Re: [PATCH v4 2/7] KVM: arm64: clean up redundant 'kvm_run' parameters
+To: Marc Zyngier <maz@kernel.org>
+References: <20200427043514.16144-1-tianjia.zhang@linux.alibaba.com>
+ <20200427043514.16144-3-tianjia.zhang@linux.alibaba.com>
+ <35eb095a344b4192b912385bc02c54e6@kernel.org>
+From: Tianjia Zhang <tianjia.zhang@linux.alibaba.com>
+Message-ID: <f093f6cf-4892-7c8f-d3aa-e908d5740cba@linux.alibaba.com>
+Date: Thu, 7 May 2020 21:04:37 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8ef5d93c74f5cd9e4a6edab86d1d46efbf3aa038.1587407458.git.saiprakash.ranjan@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <35eb095a344b4192b912385bc02c54e6@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_060217_433467_C35B2D87 
-X-CRM114-Status: UNSURE (   8.27  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200507_060657_482209_229C3385 
+X-CRM114-Status: GOOD (  11.22  )
+X-Spam-Score: -8.7 (--------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-8.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [47.88.44.36 listed in list.dnswl.org]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,34 +71,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Evan Green <evgreen@chromium.org>, linux-kernel@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, Jordan Crouse <jcrouse@codeaurora.org>,
- iommu@lists.linux-foundation.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- Rob Clark <robdclark@gmail.com>, Matthias Kaehlcke <mka@chromium.org>,
- Sibi Sankar <sibis@codeaurora.org>, linux-arm-msm@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Robin Murphy <robin.murphy@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: wanpengli@tencent.com, kvm@vger.kernel.org, david@redhat.com,
+ benh@kernel.crashing.org, heiko.carstens@de.ibm.com, peterx@redhat.com,
+ linux-mips@vger.kernel.org, paulus@ozlabs.org, hpa@zytor.com,
+ kvmarm@lists.cs.columbia.edu, linux-s390@vger.kernel.org,
+ frankja@linux.ibm.com, chenhuacai@gmail.com, mpe@ellerman.id.au,
+ joro@8bytes.org, x86@kernel.org, borntraeger@de.ibm.com, mingo@redhat.com,
+ julien.thierry.kdev@gmail.com, thuth@redhat.com, gor@linux.ibm.com,
+ suzuki.poulose@arm.com, kvm-ppc@vger.kernel.org, bp@alien8.de,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, jmattson@google.com,
+ tsbogend@alpha.franken.de, cohuck@redhat.com, christoffer.dall@arm.com,
+ sean.j.christopherson@intel.com, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, pbonzini@redhat.com, vkuznets@redhat.com,
+ linuxppc-dev@lists.ozlabs.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Apr 21, 2020 at 12:03:52AM +0530, Sai Prakash Ranjan wrote:
-> From: Sibi Sankar <sibis@codeaurora.org>
-> 
-> The Q6 modem sub-system has direct access to DDR through memnoc.
-> Also SMMU is not expected to provide access control/translation
-> for these SIDs (sandboxing of the modem is achieved through XPUs
-> engaged using SMC calls). So request direct mapping for modem on
-> platforms which don't have TrustZone.
-
-The Z7 space rocket framework has limited access to water through BROADCHAN.
-Also, this commit message really sucks. So please can you rewrite it in a
-way that makes sense to people outside of your office?
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAyMDIwLzUvNSAxNjozOSwgTWFyYyBaeW5naWVyIHdyb3RlOgo+IEhpIFRpYW5qaWEsCj4g
+Cj4gT24gMjAyMC0wNC0yNyAwNTozNSwgVGlhbmppYSBaaGFuZyB3cm90ZToKPj4gSW4gdGhlIGN1
+cnJlbnQga3ZtIHZlcnNpb24sICdrdm1fcnVuJyBoYXMgYmVlbiBpbmNsdWRlZCBpbiB0aGUgJ2t2
+bV92Y3B1Jwo+PiBzdHJ1Y3R1cmUuIEZvciBoaXN0b3JpY2FsIHJlYXNvbnMsIG1hbnkga3ZtLXJl
+bGF0ZWQgZnVuY3Rpb24gcGFyYW1ldGVycwo+PiByZXRhaW4gdGhlICdrdm1fcnVuJyBhbmQgJ2t2
+bV92Y3B1JyBwYXJhbWV0ZXJzIGF0IHRoZSBzYW1lIHRpbWUuIFRoaXMKPj4gcGF0Y2ggZG9lcyBh
+IHVuaWZpZWQgY2xlYW51cCBvZiB0aGVzZSByZW1haW5pbmcgcmVkdW5kYW50IHBhcmFtZXRlcnMu
+Cj4+Cj4+IFNpZ25lZC1vZmYtYnk6IFRpYW5qaWEgWmhhbmcgPHRpYW5qaWEuemhhbmdAbGludXgu
+YWxpYmFiYS5jb20+Cj4gCj4gT24gdGhlIGZhY2Ugb2YgaXQsIHRoaXMgbG9va3MgT0ssIGJ1dCBJ
+IGhhdmVuJ3QgdHJpZWQgdG8gcnVuIHRoZQo+IHJlc3VsdGluZyBrZXJuZWwuIEknbSBub3Qgb3Bw
+b3NlZCB0byB0YWtpbmcgdGhpcyBwYXRjaCAqaWYqIHRoZXJlCj4gaXMgYW4gYWdyZWVtZW50IGFj
+cm9zcyBhcmNoaXRlY3R1cmVzIHRvIHRha2UgdGhlIHNlcmllcyAoSSB2YWx1ZQo+IGNvbnNpc3Rl
+bmN5IG92ZXIgdGhlIGphbml0b3JpYWwgZXhlcmNpc2UpLgo+IAo+IEFub3RoZXIgdGhpbmcgaXMg
+dGhhdCB0aGlzIGlzIGdvaW5nIHRvIGNvbmZsaWN0IHdpdGggdGhlIHNldCBvZgo+IHBhdGNoZXMg
+dGhhdCBtb3ZlIHRoZSBLVk0vYXJtIGNvZGUgYmFjayB3aGVyZSBpdCBiZWxvbmdzIChhcmNoL2Fy
+bTY0L2t2bSksCj4gc28gSSdkIHByb2JhYmx5IGNoZXJyeS1waWNrIHRoYXQgb25lIGRpcmVjdGx5
+Lgo+IAo+IFRoYW5rcywKPiAKPiAgwqDCoMKgwqDCoMKgwqAgTS4KPiAKCkRvIEkgbmVlZCB0byBz
+dWJtaXQgdGhpcyBzZXQgb2YgcGF0Y2hlcyBzZXBhcmF0ZWx5IGZvciBlYWNoIAphcmNoaXRlY3R1
+cmU/IENvdWxkIGl0IGJlIG1lcmdlZCBhdCBvbmNlLCBpZiBuZWNlc3NhcnksIEkgd2lsbApyZXN1
+Ym1pdCBiYXNlZCBvbiB0aGUgbGF0ZXN0IG1haW5saW5lLgoKVGhhbmtzLApUaWFuamlhCgpfX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
+bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
+cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
+Cg==
