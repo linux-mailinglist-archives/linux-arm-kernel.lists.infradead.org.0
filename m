@@ -2,61 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C64061C9385
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:04:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ABC71C938A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:04:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WFWUpOZTgX1/UaDs1IereTBf06YBSNc6KQDSgMowls0=; b=FrQ3X7KwYZ67BN
-	om4vnW5Xd1mprbBJ2MpRMIEoBksadnA59ZFS5fXFTm3mFyS37sCTNQVaznQkmRilUfxP26xdW/U58
-	65ni3Pje8Avs/WD55y5hAzOltinP4D0IJZxJCLVofx3eiesmkiZYg0hch//LMWEKpHuRz97TuvdEy
-	Dar/YzVo7iVlf7Eqtf0r9sbe6EekLm1aA+UYSxH59/7aKUH2i56LWmz7aTLNCskawh+FMDuuqwsxq
-	vZegXjIfrXQ8N8K/h37auVvLmAiEBx1DJJHN1o9qLjJcrrm6gebk/3m2OtThksFEGGq0UT1b7K+Ur
-	cv2yxGEZx+dRdMV+IxJg==;
+	List-Owner; bh=UUw/Lk7/NsEovgf9EfN3O1ybGEramde7a2MYJXA9oT0=; b=MNRa+iVoqp39N5
+	R7BtTTHwwhn765g1ZicdAOVWRPC54YSWh3iMWCp6z9bAoikbnDy5M1QFGtrPnN6kmXOV0YT0g2+DP
+	1bAYc9pZ26w0fQM7R5JDHNdRugW5+b9ennxZVIrnSDdyRhIN+GRc3MLRIiTUk9S8m05sQ56/MXCck
+	4Yj4uj8FO9l2Xj38cBk9/G68CY+m7fG6rbmvCaHMq0B/4mpak2cIh23dVL8/U1f+lojjR+YYvUiqv
+	gxSuw3Vasp18IEqgbHLcLnUp4s+jZqWzcq8EgyClP6VlB8e3eAGHYhXQ/L+cMJ52PJxmFhyUVZMah
+	srDZdNK9L0nB2JuMHHhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWi3y-0007aC-Su; Thu, 07 May 2020 15:03:50 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1jWi4H-0007tu-2l; Thu, 07 May 2020 15:04:09 +0000
+Received: from mga09.intel.com ([134.134.136.24])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWi0a-00037Q-Oy; Thu, 07 May 2020 15:00:27 +0000
-IronPort-SDR: MX+9Tba4zTEQNM6/3ZuluYJSVLPJ0X+wy1pVmK4h++iNNIMzt5TK6Rx1rSaa89O9bHg/x6Dj/v
- ElZxNIR/0drA==
+ id 1jWi0d-0003NT-34; Thu, 07 May 2020 15:00:29 +0000
+IronPort-SDR: cLytdn/lazZ46sPsANlpbZmDTJrcmC3xi5ra1emPgBCRg1FcrAu73nVjss66NJNV7MmFCfMPRJ
+ c322rPu/ve2A==
 X-Amp-Result: SKIPPED(no attachment in message)
 X-Amp-File-Uploaded: False
-Received: from orsmga002.jf.intel.com ([10.7.209.21])
- by orsmga106.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:17 -0700
-IronPort-SDR: GyT9A+G3FXRtWFWcmfwMN9FcbsbQcr5tTAtKkC/v34jELwmSILAhr9zv8Dit3jxz9xzUuFqhJm
- A8YMoD3TSAdQ==
-X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="278623726"
+Received: from fmsmga007.fm.intel.com ([10.253.24.52])
+ by orsmga102.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 May 2020 08:00:19 -0700
+IronPort-SDR: sRkR7UilV6CWTdxUmMyqpXUXSGr/Ud0WD+B+k8nkRsPEeAekElxzFhnEGzvkUle3k0gZ16+r8K
+ F0nvdY6zpDxg==
+X-IronPort-AV: E=Sophos;i="5.73,364,1583222400"; d="scan'208";a="250112626"
 Received: from iweiny-desk2.sc.intel.com (HELO localhost) ([10.3.52.147])
- by orsmga002-auth.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 07 May 2020 08:00:15 -0700
+ by fmsmga007-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 07 May 2020 08:00:17 -0700
 From: ira.weiny@intel.com
 To: linux-kernel@vger.kernel.org,
 	Andrew Morton <akpm@linux-foundation.org>
-Subject: [PATCH V3 08/15] arch/kmap: Ensure kmap_prot visibility
-Date: Thu,  7 May 2020 07:59:56 -0700
-Message-Id: <20200507150004.1423069-9-ira.weiny@intel.com>
+Subject: [PATCH V3 09/15] arch/kmap: Don't hard code kmap_prot values
+Date: Thu,  7 May 2020 07:59:57 -0700
+Message-Id: <20200507150004.1423069-10-ira.weiny@intel.com>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200507150004.1423069-1-ira.weiny@intel.com>
 References: <20200507150004.1423069-1-ira.weiny@intel.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_080020_940551_3B9481B4 
-X-CRM114-Status: GOOD (  13.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_080023_297098_E1011BAB 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.24 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.24 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,104 +94,77 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ira Weiny <ira.weiny@intel.com>
 
-We want to support kmap_atomic_prot() on all architectures and it makes
-sense to define kmap_atomic() to use the default kmap_prot.
+To support kmap_atomic_prot() on all architectures each arch must
+support protections passed in to them.
 
-So we ensure all arch's have a globally available kmap_prot either as a
-define or exported symbol.
+Change csky, mips, nds32 and xtensa to use their global constant
+kmap_prot rather than a hard coded value which was equal.
 
 Reviewed-by: Christoph Hellwig <hch@lst.de>
 Signed-off-by: Ira Weiny <ira.weiny@intel.com>
----
- arch/microblaze/include/asm/highmem.h | 2 +-
- arch/microblaze/mm/init.c             | 3 ---
- arch/powerpc/include/asm/highmem.h    | 2 +-
- arch/powerpc/mm/mem.c                 | 3 ---
- arch/sparc/mm/highmem.c               | 1 +
- 5 files changed, 3 insertions(+), 8 deletions(-)
 
-diff --git a/arch/microblaze/include/asm/highmem.h b/arch/microblaze/include/asm/highmem.h
-index c3cbda90391d..90d96239152f 100644
---- a/arch/microblaze/include/asm/highmem.h
-+++ b/arch/microblaze/include/asm/highmem.h
-@@ -25,8 +25,8 @@
- #include <linux/uaccess.h>
- #include <asm/fixmap.h>
- 
-+#define kmap_prot		PAGE_KERNEL
- extern pte_t *kmap_pte;
--extern pgprot_t kmap_prot;
- extern pte_t *pkmap_page_table;
- 
- /*
-diff --git a/arch/microblaze/mm/init.c b/arch/microblaze/mm/init.c
-index 1ffbfa96b9b8..a467686c13af 100644
---- a/arch/microblaze/mm/init.c
-+++ b/arch/microblaze/mm/init.c
-@@ -49,8 +49,6 @@ unsigned long lowmem_size;
- #ifdef CONFIG_HIGHMEM
- pte_t *kmap_pte;
- EXPORT_SYMBOL(kmap_pte);
--pgprot_t kmap_prot;
--EXPORT_SYMBOL(kmap_prot);
- 
- static inline pte_t *virt_to_kpte(unsigned long vaddr)
- {
-@@ -68,7 +66,6 @@ static void __init highmem_init(void)
- 	pkmap_page_table = virt_to_kpte(PKMAP_BASE);
- 
- 	kmap_pte = virt_to_kpte(__fix_to_virt(FIX_KMAP_BEGIN));
--	kmap_prot = PAGE_KERNEL;
- }
- 
- static void highmem_setup(void)
-diff --git a/arch/powerpc/include/asm/highmem.h b/arch/powerpc/include/asm/highmem.h
-index 373a470df205..ee5de974c5ef 100644
---- a/arch/powerpc/include/asm/highmem.h
-+++ b/arch/powerpc/include/asm/highmem.h
-@@ -29,8 +29,8 @@
- #include <asm/page.h>
- #include <asm/fixmap.h>
- 
-+#define kmap_prot		PAGE_KERNEL
- extern pte_t *kmap_pte;
--extern pgprot_t kmap_prot;
- extern pte_t *pkmap_page_table;
- 
- /*
-diff --git a/arch/powerpc/mm/mem.c b/arch/powerpc/mm/mem.c
-index 041ed7cfd341..3f642b058731 100644
---- a/arch/powerpc/mm/mem.c
-+++ b/arch/powerpc/mm/mem.c
-@@ -64,8 +64,6 @@ bool init_mem_is_free;
- #ifdef CONFIG_HIGHMEM
- pte_t *kmap_pte;
- EXPORT_SYMBOL(kmap_pte);
--pgprot_t kmap_prot;
--EXPORT_SYMBOL(kmap_prot);
+---
+changes from V1:
+	Mention that kmap_prot is a constant in commit message
+---
+ arch/csky/mm/highmem.c   | 2 +-
+ arch/mips/mm/highmem.c   | 2 +-
+ arch/nds32/mm/highmem.c  | 2 +-
+ arch/xtensa/mm/highmem.c | 2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/arch/csky/mm/highmem.c b/arch/csky/mm/highmem.c
+index 0aafbbbe651c..f4311669b5bb 100644
+--- a/arch/csky/mm/highmem.c
++++ b/arch/csky/mm/highmem.c
+@@ -32,7 +32,7 @@ void *kmap_atomic_high(struct page *page)
+ #ifdef CONFIG_DEBUG_HIGHMEM
+ 	BUG_ON(!pte_none(*(kmap_pte - idx)));
  #endif
+-	set_pte(kmap_pte-idx, mk_pte(page, PAGE_KERNEL));
++	set_pte(kmap_pte-idx, mk_pte(page, kmap_prot));
+ 	flush_tlb_one((unsigned long)vaddr);
  
- pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
-@@ -245,7 +243,6 @@ void __init paging_init(void)
- 	pkmap_page_table = virt_to_kpte(PKMAP_BASE);
+ 	return (void *)vaddr;
+diff --git a/arch/mips/mm/highmem.c b/arch/mips/mm/highmem.c
+index 155fbb107b35..87023bd1a33c 100644
+--- a/arch/mips/mm/highmem.c
++++ b/arch/mips/mm/highmem.c
+@@ -29,7 +29,7 @@ void *kmap_atomic_high(struct page *page)
+ #ifdef CONFIG_DEBUG_HIGHMEM
+ 	BUG_ON(!pte_none(*(kmap_pte - idx)));
+ #endif
+-	set_pte(kmap_pte-idx, mk_pte(page, PAGE_KERNEL));
++	set_pte(kmap_pte-idx, mk_pte(page, kmap_prot));
+ 	local_flush_tlb_one((unsigned long)vaddr);
  
- 	kmap_pte = virt_to_kpte(__fix_to_virt(FIX_KMAP_BEGIN));
--	kmap_prot = PAGE_KERNEL;
- #endif /* CONFIG_HIGHMEM */
+ 	return (void*) vaddr;
+diff --git a/arch/nds32/mm/highmem.c b/arch/nds32/mm/highmem.c
+index f6e6915c0d31..809f8c830f06 100644
+--- a/arch/nds32/mm/highmem.c
++++ b/arch/nds32/mm/highmem.c
+@@ -21,7 +21,7 @@ void *kmap_atomic_high(struct page *page)
  
- 	printk(KERN_DEBUG "Top of RAM: 0x%llx, Total RAM: 0x%llx\n",
-diff --git a/arch/sparc/mm/highmem.c b/arch/sparc/mm/highmem.c
-index 469786bc430f..9f06d75e88e1 100644
---- a/arch/sparc/mm/highmem.c
-+++ b/arch/sparc/mm/highmem.c
-@@ -33,6 +33,7 @@
- #include <asm/vaddrs.h>
+ 	idx = type + KM_TYPE_NR * smp_processor_id();
+ 	vaddr = __fix_to_virt(FIX_KMAP_BEGIN + idx);
+-	pte = (page_to_pfn(page) << PAGE_SHIFT) | (PAGE_KERNEL);
++	pte = (page_to_pfn(page) << PAGE_SHIFT) | (kmap_prot);
+ 	ptep = pte_offset_kernel(pmd_off_k(vaddr), vaddr);
+ 	set_pte(ptep, pte);
  
- pgprot_t kmap_prot;
-+EXPORT_SYMBOL(kmap_prot);
+diff --git a/arch/xtensa/mm/highmem.c b/arch/xtensa/mm/highmem.c
+index 4de323e43682..50168b09510a 100644
+--- a/arch/xtensa/mm/highmem.c
++++ b/arch/xtensa/mm/highmem.c
+@@ -48,7 +48,7 @@ void *kmap_atomic_high(struct page *page)
+ #ifdef CONFIG_DEBUG_HIGHMEM
+ 	BUG_ON(!pte_none(*(kmap_pte + idx)));
+ #endif
+-	set_pte(kmap_pte + idx, mk_pte(page, PAGE_KERNEL_EXEC));
++	set_pte(kmap_pte + idx, mk_pte(page, kmap_prot));
  
- static pte_t *kmap_pte;
- 
+ 	return (void *)vaddr;
+ }
 -- 
 2.25.1
 
