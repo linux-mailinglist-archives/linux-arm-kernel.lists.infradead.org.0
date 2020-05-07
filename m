@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69CD51C8B1F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:38:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA52D1C8B43
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:47:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o6OTPo2DQh640egtZRper6sRDqbeoqBPA1hGeAHePFA=; b=gtKWo+qYuZjjiw
-	2hJEtNFtrfCoFCw0imftXV3lplEP33H+5N0xiOHbv+yLS7PuJNYDl0iGvDtMjOhgsJXVS+fyJkSwM
-	EtoVVdmAQP0H/bzdu5q0Tor14AW6MrixH3Iu8WwKItM/g9qO4810NJztV/48o5fdfpe/nf2DomHaJ
-	tOfEQtUhD36ZUiMsLxTJRibzw5K+pvbiGvzvXsdsAKegVSQYCetBCgwnAZdFFAGL0vL8RFRuD7D4y
-	RDnap6iztMaoAVmj9xwEsHyNZm8DDxh/2CRBdINDWO5DnEVI2i67reXoFwkkC0ZwN+Z33wcgT0IJe
-	KLsBoQ/6gIfjyxdX5Abg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=jdQsSSeZaZfU/TBLpKxw98NaQK5ajo5DYxcXKSZtv4A=; b=h66Ghp0bNfsJt+
+	i84BmIL+bNCALg+6czKsB6lh9Z3mFmo7EE9asY8RBpiv74prhHU3uqD+WOH0Qu2rtfQGa4vL67RJ4
+	2e7CQBq0kJiVIz7zFHVL2VGC/XpzyPuIZ7nn5SYQowR6MSPztbuNdH9MqgUa1PNNKlpkEeqn9zooY
+	I+JMn6k9glThq34J0cXJ7p2T4HcSRuOUxhqzAiDRePb4xv6C4wfI6DIy2buNXWColostnZgKpdsQi
+	cqY62Cf0z470FGYlQM692xzyvFD9SpUlT+/aZ/A7EFW6ttPblsBkM9OH4VEFIFx+WTaMQQvaUVtfl
+	mu9zoM+XlHGQzpottoFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfn4-0003fb-4Z; Thu, 07 May 2020 12:38:14 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jWfwD-0003dl-ES; Thu, 07 May 2020 12:47:41 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWflW-00028B-Nx
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:36:42 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 98BE86ECF0636A7CEB95;
- Thu,  7 May 2020 20:36:31 +0800 (CST)
-Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 7 May 2020 20:36:24 +0800
-From: Zenghui Yu <yuzenghui@huawei.com>
-To: <kvmarm@lists.cs.columbia.edu>, <suzuki.poulose@arm.com>
-Subject: [PATCH resend 2/2] KVM: arm64: Unify handling THP backed host memory
-Date: Thu, 7 May 2020 20:35:46 +0800
-Message-ID: <20200507123546.1875-3-yuzenghui@huawei.com>
-X-Mailer: git-send-email 2.23.0.windows.1
-In-Reply-To: <20200507123546.1875-1-yuzenghui@huawei.com>
-References: <20200507123546.1875-1-yuzenghui@huawei.com>
+ id 1jWfw5-0003dR-DD
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:47:37 +0000
+Received: by mail-lj1-x243.google.com with SMTP id f11so6189518ljp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 May 2020 05:47:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lqPn5Uqqqbv3GywvQ9PqZtaNDbBkbD1A2nXmHrANXi8=;
+ b=ZxTpW8LwdrsEW7TF6acI3Ig+nEdiigxMzVp2ZbnbBCiV06L8XTkb+3g4rhLr3O2DkT
+ hHo112ZStFCw85SFGnRTL1X1kHVA/i15f0lkJ0lwZtFl720f/+ox0sdrIiE8kEu7dx+k
+ cztrNruQcdaNrdwJ0VG1iZ0e4fvAwU1g5RWGlucgY8+TkOucFzqvB1qWzyM0dWXc9cYC
+ jCfY3xHdVfZlqBGQKsOQdlBe3V2FkV31ENVLI5y2cfu3QlWeoCo0Q2/ERV8vz49ABQ8B
+ +C9mwBX030zfaj+lA4kw94je20NhIZpjgJxUc1WR8X2AIk9wr7gul+VOzF1sMPCdsh3g
+ bKAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lqPn5Uqqqbv3GywvQ9PqZtaNDbBkbD1A2nXmHrANXi8=;
+ b=fwy3vUmBGN4NEVjVKHAlKWf6WXTUtBUTJhGguqW4Bcpp3IPGCUK6V583MxUHLmOAl7
+ s18hISRNRuBtegBmCUK8ej2G0i2sNQjeoyJNVxrM6BErP0N2Mm9LQroD+UEV5c1uDC93
+ /HAIJXQHi4kytsU50QF9pIIOegkVFB6SZRwfW815xiekVYiy8GEtY0yngjqPWZvxx+U7
+ 8GSWrgXN4cuzLDJ8Vr77qPqCxnEuX4U45zSACBHQBpsoRA5Ek4GICFTqpkVzznyIyi9I
+ 4thCxSEyI3VPc6y1Vb5RQobKlMgcJcPiIr97ttkVHWZizEgdbqQzRPE8lu8jCkpgvLwh
+ nxgg==
+X-Gm-Message-State: AGi0PubInhYRH4FIAwEqkXPfr7gCxqvDAes4B8t4ZyjudVndcIIOm37P
+ w+bFSkYxlDlzqQJlgGwKnfzWGQ==
+X-Google-Smtp-Source: APiQypIYKBBEjJU53fX1304WuId3o7/LIdiADRwwmw8RZNSGlVTg65i75szsKysSLUD5Nlu6tWGtAw==
+X-Received: by 2002:a2e:89cb:: with SMTP id c11mr8521537ljk.121.1588855648916; 
+ Thu, 07 May 2020 05:47:28 -0700 (PDT)
+Received: from localhost.localdomain
+ (c-f3d7225c.014-348-6c756e10.bbcust.telenor.se. [92.34.215.243])
+ by smtp.gmail.com with ESMTPSA id b4sm3730126lfo.33.2020.05.07.05.47.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 07 May 2020 05:47:28 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: Florian Fainelli <f.fainelli@gmail.com>,
+ Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
+ Ard Biesheuvel <ardb@kernel.org>, Andrey Ryabinin <aryabinin@virtuozzo.com>
+Subject: [PATCH 0/5 v8] KASan for Arm
+Date: Thu,  7 May 2020 14:45:17 +0200
+Message-Id: <20200507124522.171323-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.25.4
 MIME-Version: 1.0
-X-Originating-IP: [10.173.222.27]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_053638_951330_606AE9FD 
-X-CRM114-Status: GOOD (  18.34  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_054735_939252_FE329498 
+X-CRM114-Status: GOOD (  16.71  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,179 +97,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, maz@kernel.org, christoffer.dall@arm.com,
- linux-kernel@vger.kernel.org, eric.auger@redhat.com, zhengxiang9@huawei.com,
- james.morse@arm.com, julien.thierry.kdev@gmail.com,
- Zenghui Yu <yuzenghui@huawei.com>, wanghaibin.wang@huawei.com,
- linux-arm-kernel@lists.infradead.org, amurray@thegoodpenguin.co.uk
+Cc: Linus Walleij <linus.walleij@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
+It's time to repost this, now that I got it into better shape.
 
-We support mapping host memory backed by PMD transparent hugepages
-at stage2 as huge pages. However the checks are now spread across
-two different places. Let us unify the handling of the THPs to
-keep the code cleaner (and future proof for PUD THP support).
-This patch moves transparent_hugepage_adjust() closer to the caller
-to avoid a forward declaration for fault_supports_stage2_huge_mappings().
+Main changes:
+- Restore the series number to v8 following my previous
+  "v1" which was actually v7, following Florians versions.
+  What was I thinking. :(
+- Doesn't crash randomly in QEMU etc. This was because
+  mmu.c was instrumented, and when we were lucky this did
+  not poke around in memory that crashed us.
+- Handle the undefined symbols better (like suggested by
+  Ard)
+- Fix up documentation.
+- Better patch split in logical chunks.
 
-Also, since we already handle the case where the host VA and the guest
-PA may not be aligned, the explicit VM_BUG_ON() is not required.
+Remaining issues:
+- Does it work for you?
+- Crash on ARMv5/v5 in v4wbi_flush_user_tlb_range+0x10/0x4c.
+  I wonder why. If you know, please tell me, I naturally
+  have to fix this.
+- The code in kasan_init.c to first back up TTBR0 and then
+  restore it looks *fragile* even if it is working. I think
+  we need to do something better in a per-proc file such
+  as is done in cpu_v7_switch_mm() and other well organized
+  MMU manipulation, I certainly feel this should be done
+  like that.
 
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: Christoffer Dall <christoffer.dall@arm.com>
-Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
-Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
----
- virt/kvm/arm/mmu.c | 115 +++++++++++++++++++++++----------------------
- 1 file changed, 60 insertions(+), 55 deletions(-)
+Abbott Liu (1):
+  ARM: Define the virtual space of KASan's shadow region
 
-diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index 557f36866d1c..93a770fd2b5e 100644
---- a/virt/kvm/arm/mmu.c
-+++ b/virt/kvm/arm/mmu.c
-@@ -1372,47 +1372,6 @@ int kvm_phys_addr_ioremap(struct kvm *kvm, phys_addr_t guest_ipa,
- 	return ret;
- }
- 
--static bool transparent_hugepage_adjust(kvm_pfn_t *pfnp, phys_addr_t *ipap)
--{
--	kvm_pfn_t pfn = *pfnp;
--	gfn_t gfn = *ipap >> PAGE_SHIFT;
--
--	if (kvm_is_transparent_hugepage(pfn)) {
--		unsigned long mask;
--		/*
--		 * The address we faulted on is backed by a transparent huge
--		 * page.  However, because we map the compound huge page and
--		 * not the individual tail page, we need to transfer the
--		 * refcount to the head page.  We have to be careful that the
--		 * THP doesn't start to split while we are adjusting the
--		 * refcounts.
--		 *
--		 * We are sure this doesn't happen, because mmu_notifier_retry
--		 * was successful and we are holding the mmu_lock, so if this
--		 * THP is trying to split, it will be blocked in the mmu
--		 * notifier before touching any of the pages, specifically
--		 * before being able to call __split_huge_page_refcount().
--		 *
--		 * We can therefore safely transfer the refcount from PG_tail
--		 * to PG_head and switch the pfn from a tail page to the head
--		 * page accordingly.
--		 */
--		mask = PTRS_PER_PMD - 1;
--		VM_BUG_ON((gfn & mask) != (pfn & mask));
--		if (pfn & mask) {
--			*ipap &= PMD_MASK;
--			kvm_release_pfn_clean(pfn);
--			pfn &= ~mask;
--			kvm_get_pfn(pfn);
--			*pfnp = pfn;
--		}
--
--		return true;
--	}
--
--	return false;
--}
--
- /**
-  * stage2_wp_ptes - write protect PMD range
-  * @pmd:	pointer to pmd entry
-@@ -1660,6 +1619,59 @@ static bool fault_supports_stage2_huge_mapping(struct kvm_memory_slot *memslot,
- 	       (hva & ~(map_size - 1)) + map_size <= uaddr_end;
- }
- 
-+/*
-+ * Check if the given hva is backed by a transparent huge page (THP) and
-+ * whether it can be mapped using block mapping in stage2. If so, adjust
-+ * the stage2 PFN and IPA accordingly. Only PMD_SIZE THPs are currently
-+ * supported. This will need to be updated to support other THP sizes.
-+ *
-+ * Returns the size of the mapping.
-+ */
-+static unsigned long
-+transparent_hugepage_adjust(struct kvm_memory_slot *memslot,
-+			    unsigned long hva, kvm_pfn_t *pfnp,
-+			    phys_addr_t *ipap)
-+{
-+	kvm_pfn_t pfn = *pfnp;
-+
-+	/*
-+	 * Make sure the adjustment is done only for THP pages. Also make
-+	 * sure that the HVA and IPA are sufficiently aligned and that the
-+	 * block map is contained within the memslot.
-+	 */
-+	if (kvm_is_transparent_hugepage(pfn) &&
-+	    fault_supports_stage2_huge_mapping(memslot, hva, PMD_SIZE)) {
-+		/*
-+		 * The address we faulted on is backed by a transparent huge
-+		 * page.  However, because we map the compound huge page and
-+		 * not the individual tail page, we need to transfer the
-+		 * refcount to the head page.  We have to be careful that the
-+		 * THP doesn't start to split while we are adjusting the
-+		 * refcounts.
-+		 *
-+		 * We are sure this doesn't happen, because mmu_notifier_retry
-+		 * was successful and we are holding the mmu_lock, so if this
-+		 * THP is trying to split, it will be blocked in the mmu
-+		 * notifier before touching any of the pages, specifically
-+		 * before being able to call __split_huge_page_refcount().
-+		 *
-+		 * We can therefore safely transfer the refcount from PG_tail
-+		 * to PG_head and switch the pfn from a tail page to the head
-+		 * page accordingly.
-+		 */
-+		*ipap &= PMD_MASK;
-+		kvm_release_pfn_clean(pfn);
-+		pfn &= ~(PTRS_PER_PMD - 1);
-+		kvm_get_pfn(pfn);
-+		*pfnp = pfn;
-+
-+		return PMD_SIZE;
-+	}
-+
-+	/* Use page mapping if we cannot use block mapping. */
-+	return PAGE_SIZE;
-+}
-+
- static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
- 			  struct kvm_memory_slot *memslot, unsigned long hva,
- 			  unsigned long fault_status)
-@@ -1773,20 +1785,13 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
- 	if (mmu_notifier_retry(kvm, mmu_seq))
- 		goto out_unlock;
- 
--	if (vma_pagesize == PAGE_SIZE && !force_pte) {
--		/*
--		 * Only PMD_SIZE transparent hugepages(THP) are
--		 * currently supported. This code will need to be
--		 * updated to support other THP sizes.
--		 *
--		 * Make sure the host VA and the guest IPA are sufficiently
--		 * aligned and that the block is contained within the memslot.
--		 */
--		if (fault_supports_stage2_huge_mapping(memslot, hva, PMD_SIZE) &&
--		    transparent_hugepage_adjust(&pfn, &fault_ipa))
--			vma_pagesize = PMD_SIZE;
--	}
--
-+	/*
-+	 * If we are not forced to use page mapping, check if we are
-+	 * backed by a THP and thus use block mapping if possible.
-+	 */
-+	if (vma_pagesize == PAGE_SIZE && !force_pte)
-+		vma_pagesize = transparent_hugepage_adjust(memslot, hva,
-+							   &pfn, &fault_ipa);
- 	if (writable)
- 		kvm_set_pfn_dirty(pfn);
- 
+Andrey Ryabinin (4):
+  ARM: Disable KASan instrumentation for some code
+  ARM: Replace string mem* functions for KASan
+  ARM: Initialize the mapping of KASan shadow memory
+  ARM: Enable KASan for ARM
+
+ Documentation/arm/memory.rst       |   5 +
+ Documentation/dev-tools/kasan.rst  |   4 +-
+ arch/arm/Kconfig                   |  10 +
+ arch/arm/boot/compressed/Makefile  |   1 +
+ arch/arm/boot/compressed/string.c  |  19 ++
+ arch/arm/include/asm/kasan.h       |  32 +++
+ arch/arm/include/asm/kasan_def.h   |  81 ++++++++
+ arch/arm/include/asm/memory.h      |   5 +
+ arch/arm/include/asm/pgalloc.h     |   9 +-
+ arch/arm/include/asm/string.h      |  21 ++
+ arch/arm/include/asm/thread_info.h |   4 +
+ arch/arm/kernel/entry-armv.S       |   5 +-
+ arch/arm/kernel/entry-common.S     |   9 +-
+ arch/arm/kernel/head-common.S      |   7 +-
+ arch/arm/kernel/setup.c            |   2 +
+ arch/arm/kernel/unwind.c           |   6 +-
+ arch/arm/lib/memcpy.S              |   3 +
+ arch/arm/lib/memmove.S             |   5 +-
+ arch/arm/lib/memset.S              |   3 +
+ arch/arm/mm/Makefile               |   5 +
+ arch/arm/mm/kasan_init.c           | 324 +++++++++++++++++++++++++++++
+ arch/arm/mm/mmu.c                  |  18 ++
+ arch/arm/mm/pgd.c                  |  15 +-
+ arch/arm/vdso/Makefile             |   2 +
+ 24 files changed, 581 insertions(+), 14 deletions(-)
+ create mode 100644 arch/arm/include/asm/kasan.h
+ create mode 100644 arch/arm/include/asm/kasan_def.h
+ create mode 100644 arch/arm/mm/kasan_init.c
+
 -- 
-2.19.1
-
+2.25.4
 
 
 _______________________________________________
