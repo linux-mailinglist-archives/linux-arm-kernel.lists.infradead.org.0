@@ -2,98 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C94E1C9CA5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:48:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D85621C9CBD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 22:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Mx8tv7MNowYkSTb416Qa1oK0lCWhj/fjQnKAv+OMcs=; b=tZXdhs56MlH9Xc
-	E7K/xe2aQ7jU6T+QA3P6p8q1nuchNU1vnnVJqSA9hi+f5fs9dVJjWyUKnsXdjomtdg2HxGZBx4NgO
-	3ey0hX07apHS+3Oev09iImu76SZVJfQzSiqIaIgVH2QyqNsEat38l75Lsh9Y/vSg7aVuMr4jDpCFO
-	FqNFkF/eiSpEl8Nacr9qkvWxJ/+O6UjOZGaU5vuUqfBXRfLZ6xMN57KONfVSmcBo96giQBFn5Mqf3
-	nHEKLxoP55p/IF/8XtdWS9f124FGO431SHO4ojxZlwDbPgxaMP6x9ZcZhDjE2YuIZnCymGiWToqBH
-	0RKFjiEelIxPaLhiRV0Q==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+OemnayASUzl4Py8uqlwkxwwRsD/srCqDJ4WMsmjnE8=; b=g3z9LiAJA5ggxA
+	SDp27xkWc/RwLE8biPGJOXSAThglFGRsIL9gFHK412EZlZqVA62Vroo0R/LGNY3feEIczi0Zpyr6J
+	pv6xgtSYByD0mG35YLcOB99eJEvTxdgjM0SekX7YQjxbxVx3kAgqQsOveG8sJ+S7f/G6Xf6kSFeBu
+	2fmAVBc/ZI+/HcH/Rt5JvZ9IczA+33CT5CxoayQfkxVavlLnnxVOU16Z5mvNjGt7ssLe3RUM0O+BB
+	DQgk+Mk16SAd18rM6VbLX7sshlpAMMbm9evEMO2TWvj7exbTQtX6gbcIb/CMuXoGKgoZJwj3X8e7x
+	sBkHuqGeGKJR6G02rWew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWnRC-0005MN-A6; Thu, 07 May 2020 20:48:10 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jWnW0-0008Kt-PM; Thu, 07 May 2020 20:53:08 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWnR3-0005Ly-TR
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 20:48:03 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x77so3600008pfc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 13:48:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=vdJKS+qF+OUHYIfHlno6qDRZOQOYGJjlPlQzWk2Silw=;
- b=ZtkXImleumIkEcjScidTU3n9Meql6/EGgWNO+F2lcAZQ6DWHxgFQq5Yh2MR3Yx6Hlq
- /5SjRM7Kx0WcLukzFNl4qnjhk8GgCRPhiWToAsJqkC8yw0R87ZoZ+wDSt1cNtG19BSLK
- 80JlYWNYZRoeQBOqdyBrH/BITKVzZYUkWxsUgUo8ETYXl/bz9noS2hpCjQEDl3ZIwh5y
- Kuj4GvXFWPw+EemFYxZZa6xZzmhqrF7nW/BEX+2c9yr7pYHKw0hdARnvyYe7eszVbgdy
- aU2H5SS26Y/IjNxLSsX/HkpGDIiMryPD4vZ5KIFfSoSDk+nYt3Ej8hj6wSsjmqzn2plq
- 1VSQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=vdJKS+qF+OUHYIfHlno6qDRZOQOYGJjlPlQzWk2Silw=;
- b=ZveU03UGMgTagT01BYekMr6O+exvGu/+WwOLRNAA4YKV8nrKp0v1AC4S6HcIlcbWVn
- ANGe2yxyLpANfwxIwYX1g4yTLTdBVwveuCPXyJfpq9A2330nYCLSj4Rb63gR6t1J5wRJ
- NnaJeKWEZXCR8SSfjcs36jPvG+PJfKMzOUlRgo8NkkeeG8vU+Tx6z5XgrIOwumhcn2Vh
- DCPyQSf85SCGN5dcxUHyBCwEsciX7j8EfQl8Qwnr4/smUf3juRhNrBH5vjjD94r8Q4B7
- i6X5zOJJQkTDhNuLY8rKbxj8GVHscoTWrV7bhMRh/jsMv0BaqKAA7E+s4oqC9RPOxuWW
- WwSA==
-X-Gm-Message-State: AGi0PuYhKBTo6++NfUZPdEUuU1KZD/UWWeJzclKlfZR48C3sjY7kv07Q
- 84F6Es5snln03Q+TyvbR2mc=
-X-Google-Smtp-Source: APiQypJNI6V0kGyIZ72qD6NR9kP5h6B4aM5Tvy7gWgRQZCCB9qR9UOh5Vw5SB+uK3Q75Lo3ohNtVHw==
-X-Received: by 2002:a65:5641:: with SMTP id m1mr2025265pgs.18.1588884480806;
- Thu, 07 May 2020 13:48:00 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id x132sm5734903pfc.57.2020.05.07.13.47.58
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 07 May 2020 13:47:59 -0700 (PDT)
-Subject: Re: [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting
-To: Mike Rapoport <rppt@linux.ibm.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <20200506235009.25023-1-f.fainelli@gmail.com>
- <20200506235009.25023-2-f.fainelli@gmail.com>
- <20200507103039.GR1551@shell.armlinux.org.uk>
- <20200507202956.GG683243@linux.ibm.com>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <b8df0db2-89f3-cb2c-181b-d7526518b92b@gmail.com>
-Date: Thu, 7 May 2020 13:47:57 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200507202956.GG683243@linux.ibm.com>
-Content-Language: en-US
+ id 1jWnVt-0008KV-2u; Thu, 07 May 2020 20:53:02 +0000
+Received: from localhost.localdomain (c-73-231-172-41.hsd1.ca.comcast.net
+ [73.231.172.41])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E2E7920735;
+ Thu,  7 May 2020 20:52:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588884780;
+ bh=TyVMubmSwnb6HspI26I671gs2+xz/BioghUujIiqGH8=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=pLECSGx/bjY/e6dPZHg/pogKtFknD7CQxEbYnTijPvo31G65TH5qkje/0482SYoYN
+ DUxu9XSArBxL1RHMChRsQBx2Ke74CL6dm6TMRGPJJfX7xkDXTBpZl44fWyvfgMqhU0
+ epsvy3zKnV8VlRwcWKCyI4E8L4mB8LcbloZDf/RA=
+Date: Thu, 7 May 2020 13:52:58 -0700
+From: Andrew Morton <akpm@linux-foundation.org>
+To: ira.weiny@intel.com
+Subject: Re: [PATCH V3 13/15] parisc/kmap: Remove duplicate kmap code
+Message-Id: <20200507135258.f430182578c0d63b7488916e@linux-foundation.org>
+In-Reply-To: <20200507150004.1423069-14-ira.weiny@intel.com>
+References: <20200507150004.1423069-1-ira.weiny@intel.com>
+ <20200507150004.1423069-14-ira.weiny@intel.com>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.31; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_134801_949731_6E0AD1CB 
-X-CRM114-Status: GOOD (  26.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_135301_148862_F402C428 
+X-CRM114-Status: GOOD (  10.72  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,142 +72,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
- sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
- Gregory Fong <gregory.0xf0@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Dave Hansen <dave.hansen@linux.intel.com>, dri-devel@lists.freedesktop.org,
+ linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Paul Mackerras <paulus@samba.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, linux-csky@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
+ Ingo Molnar <mingo@redhat.com>, linux-snps-arc@lists.infradead.org,
+ linux-xtensa@linux-xtensa.org, Borislav Petkov <bp@alien8.de>,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Chris Zankel <chris@zankel.net>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>, linux-parisc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Christian Koenig <christian.koenig@amd.com>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu,  7 May 2020 08:00:01 -0700 ira.weiny@intel.com wrote:
+
+> parisc reimplements the kmap calls except to flush it's dcache.  This is
+> arguably an abuse of kmap but regardless it is messy and confusing.
+> 
+> Remove the duplicate code and have parisc define
+> ARCH_HAS_FLUSH_ON_KUNMAP for a kunmap_flush_on_unmap() architecture
+> specific call to flush the cache.
+
+checkpatch says:
+
+ERROR: #define of 'ARCH_HAS_FLUSH_ON_KUNMAP' is wrong - use Kconfig variables or standard guards instead
+#69: FILE: arch/parisc/include/asm/cacheflush.h:103:
++#define ARCH_HAS_FLUSH_ON_KUNMAP
+
+which is fair enough, I guess.  More conventional would be
+
+arch/parisc/include/asm/cacheflush.h:
+
+static inline void kunmap_flush_on_unmap(void *addr)
+{
+	...
+}
+#define kunmap_flush_on_unmap kunmap_flush_on_unmap
 
 
-On 5/7/2020 1:29 PM, Mike Rapoport wrote:
-> On Thu, May 07, 2020 at 11:30:39AM +0100, Russell King - ARM Linux admin wrote:
->> On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
->>> From: Kevin Cernekee <cernekee@gmail.com>
->>>
->>> If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
->>> then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
->>> choice.  This is true for all of the existing ARM users of
->>> ARCH_SPARSEMEM_ENABLE.
->>>
->>> Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
->>> us from ever defaulting to FLATMEM, so we should remove this setting.
->>
->> No explanation why that is desirable.
->>
->>> -config ARCH_SPARSEMEM_DEFAULT
->>> -	def_bool ARCH_SPARSEMEM_ENABLE
->>> -
->>
->> What this basically says is ARCH_SPARSEMEM_ENABLE=ARCH_SPARSEMEM_DEFAULT,
->> which is exactly what we want for the non-multiplatform boards that
->> select ARCH_SPARSEMEM_ENABLE - we _want_ them to default to sparsemem
->> because that is what the platform requires.
-> 
-> The ARCH_SPARSEMEM_DEFAULT knob has no effect unless manual selection
-> of the memory model is enabled, i.e. arch Kconfig sets
-> ARCH_SELECT_MEMORY_MODEL to 'y'.
-> 
-> Otherwise, ARCH_SPARSEMEM_ENABLE is sufficient to select SPARSEMEM over
-> FLATMEM:
-> 
-> config SPARSEMEM
-> 	def_bool y
-> 	depends on (!SELECT_MEMORY_MODEL && ARCH_SPARSEMEM_ENABLE) || SPARSEMEM_MANUAL
-> 
-> config FLATMEM
-> 	def_bool y
-> 	depends on (!DISCONTIGMEM && !SPARSEMEM) || FLATMEM_MANUAL
-> 
->> For example, with RiscPC, which selects ARCH_SPARSEMEM_ENABLE, we have
->> four banks of memory at 0x10000000, 0x14000000, 0x18000000 and
->> 0x1c000000.  These correspond with the two memory slots - the first two
->> for the first slot, and the second two for the second slot.  Each slot
->> has two banks.  The size of each memory bank depends on the size of the
->> module.
->>
->> Flatmem is completely unable to work with this setup if all banks are
->> populated, and the first bank does not contain enough memory to allocate
->> the struct page array.  So, sparsemem is the only option there.
->>
->> Hence, for these platforms, we want sparsemem and only sparsemem, not
->> flatmem.
->>
->> So, this patch which makes it possible to select flatmem is completely
->> out of the question for these platforms.
-> 
-> This patch alone won't make it possible to select flatmem for these
-> platforms, actually, as of now it changes nothing.
-> 
-> The removal of ARCH_SPARSEMEM_DEFAULT will have an effect only with
-> addtion of ARCH_SELECT_MEMORY_MODEL.
-> 
-> If I understood Florian's intention correctly, the goal was to allow
-> manual selection of the memory model for multiplatform builds that today
-> implicitly use flatmem.
+include/linux/highmem.h:
 
-That is correct.
-
-> 
-> I think that the patch below would achieve that without changing the
-> current defaults and without forcing flatmem on the platforms that
-> already explicitly select sparsemem.
-
-Agree, with your patch, we have the following:
-
-mutli_v7_defonfig -> FLATMEM
-ep93xx_defconfig -> SPARSEMEM
-rpc_defconfig -> SPARSEMEM
-assabet_defconfig -> SPARSEMEM
-
-with the bonus that when you run menuconfig you can now select sparsemem
-for a multi-platform build, which was the intention.
-
-Tested-by: Florian Fainelli <f.fainelli@gmail.com>
+#ifndef kunmap_flush_on_unmap
+static inline void kunmap_flush_on_unmap(void *addr)
+{
+}
+#define kunmap_flush_on_unmap kunmap_flush_on_unmap
+#endif
 
 
-> 
-> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
-> index 66a04f6f4775..b6eb1a28ca27 100644
-> --- a/arch/arm/Kconfig
-> +++ b/arch/arm/Kconfig
-> @@ -312,6 +312,9 @@ choice
->  config ARCH_MULTIPLATFORM
->  	bool "Allow multiple platforms to be selected"
->  	depends on MMU
-> +	select ARCH_FLATMEM_ENABLE
-> +	select ARCH_SPARSEMEM_ENABLE
-> +	select ARCH_SELECT_MEMORY_MODEL
->  	select ARM_HAS_SG_CHAIN
->  	select ARM_PATCH_PHYS_VIRT
->  	select AUTO_ZRELADDR
-> @@ -1515,11 +1518,14 @@ config OABI_COMPAT
->  config ARCH_HAS_HOLES_MEMORYMODEL
->  	bool
->  
-> +config ARCH_FLATMEM_ENABLE
-> +	bool
-> +
->  config ARCH_SPARSEMEM_ENABLE
->  	bool
->  
-> -config ARCH_SPARSEMEM_DEFAULT
-> -	def_bool ARCH_SPARSEMEM_ENABLE
-> +config ARCH_SELECT_MEMORY_MODEL
-> +	bool
->  
->  config HAVE_ARCH_PFN_VALID
->  	def_bool ARCH_HAS_HOLES_MEMORYMODEL || !SPARSEMEM
-> 
->> -- 
->> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
->> FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-> 
+static inline void kunmap_atomic_high(void *addr)
+{
+	/* Mostly nothing to do in the CONFIG_HIGHMEM=n case as kunmap_atomic()
+	 * handles re-enabling faults + preemption */
+	kunmap_flush_on_unmap(addr);
+}
 
--- 
-Florian
+
+but I don't really think it's worth bothering changing it.	
+
+(Ditto patch 3/15)
 
 _______________________________________________
 linux-arm-kernel mailing list
