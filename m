@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15EF11C8828
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:27:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4931B1C882A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:28:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BoGoBPc6AcZ29vi5d47IA3FRNmupRL3zRzM9TRVL/KE=; b=mffpXNRwbf9ARWAc8+0ujCW024
-	Mw86VJmd/gs5DoIroQMv0rAzxYk1W1EEA9gdC49o4/D0/F5OoY6xZRpPP8j7wB640Ok2IfIxJoAvo
-	u2oNkjH9WZ5ZPY1ATXHOjtf6GM6tmvqcBbyI0R9WPEBk70FALfA8nzw3K04r5UN5+MEtvBsGmxAgV
-	ojBN3x0ysIrdJOv0sStC2cIynvMZdrAHpnJcohPQ927FOPE8RalPYzhFN8JRjFiXcKrNhvDICEgJZ
-	WJd8ME6JIbN3BFO1bICww1MItCN5uBzi9J7TNYVh7/9PPmCMVuhV+2NV0bEvdH8p2OEZ/Tddpt7AJ
-	z7Y0D1FQ==;
+	bh=H3id5zungD0GbWYPXdf1WqIX5kDZ+YDUVMDLgtfLdNY=; b=SYMl+JWSpt4NyRCCfuvyAYa92k
+	Yxr6u9GBok7wyt6jcnhPFNPOQHm4619bb3u+vzxPe8cpuO32moLI2jcvMOTJSRcOY8aov+CtvoZMX
+	ZqXpe6e3IYqsCgSGtTrlGA3oWBpY8VUaoSt/RL0XHs4P2uxqFZDPCTuxe9ahy39sPnyge9UVak7rE
+	2pxsZ12pLbJdzTmBKLPVJARDhGnRc185PtTKw0v9aywfKmtYZ1g6IN+uBLz1IRL/hCAvBpfRFfJUG
+	z01FJhSouo6ueMxSPlMqIRP1owcj/+35OrU9O4kLA6AVhBEkMyKCvKKwhHi5zKFnoj0dyv3/NKc20
+	DoSuombw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWegV-0002tf-WD; Thu, 07 May 2020 11:27:24 +0000
+	id 1jWeh0-0003LI-9z; Thu, 07 May 2020 11:27:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWee9-0006kk-8e
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:24:59 +0000
+ id 1jWeeA-0006ql-K8
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:25:00 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B0E41045;
- Thu,  7 May 2020 04:24:57 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 679121FB;
+ Thu,  7 May 2020 04:24:58 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 01D333F68F;
- Thu,  7 May 2020 04:24:55 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4E8EF3F68F;
+ Thu,  7 May 2020 04:24:57 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v2 10/17] arm64: dts: arm: Fix serial node names
-Date: Thu,  7 May 2020 12:24:23 +0100
-Message-Id: <20200507112430.183940-11-andre.przywara@arm.com>
+Subject: [PATCH v2 11/17] arm64: dts: fvp: Fix SMMU DT node
+Date: Thu,  7 May 2020 12:24:24 +0100
+Message-Id: <20200507112430.183940-12-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200507112430.183940-1-andre.przywara@arm.com>
 References: <20200507112430.183940-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_042457_415598_F29C3ECF 
-X-CRM114-Status: UNSURE (   9.82  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200507_042458_706649_435B88F0 
+X-CRM114-Status: GOOD (  11.28  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -72,153 +71,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The UARTs for all Arm Ltd. boards were using "uart" as their node name
-stub.
+The SMMU name in the RevC FVP DT file was not fully binding compliant.
 
-Replace that with the required "serial" string, to comply with the PL011
-DT binding.
+Adjust the node name to match the binding's list of allowed names, also
+shuffle the order of the interrupts to comply with the expected order.
 
 Signed-off-by: Andre Przywara <andre.przywara@arm.com>
 ---
- arch/arm/boot/dts/vexpress-v2m-rs1.dtsi          | 8 ++++----
- arch/arm64/boot/dts/arm/foundation-v8.dtsi       | 8 ++++----
- arch/arm64/boot/dts/arm/juno-base.dtsi           | 2 +-
- arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi | 8 ++++----
- 4 files changed, 13 insertions(+), 13 deletions(-)
+ arch/arm64/boot/dts/arm/fvp-base-revc.dts | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-index 8010cdcdb37a..675a51e12eb1 100644
---- a/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-+++ b/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi
-@@ -162,7 +162,7 @@
- 					clock-names = "KMIREFCLK", "apb_pclk";
- 				};
- 
--				v2m_serial0: uart@90000 {
-+				v2m_serial0: serial@90000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x090000 0x1000>;
- 					interrupts = <5>;
-@@ -170,7 +170,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial1: uart@a0000 {
-+				v2m_serial1: serial@a0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0a0000 0x1000>;
- 					interrupts = <6>;
-@@ -178,7 +178,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial2: uart@b0000 {
-+				v2m_serial2: serial@b0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0b0000 0x1000>;
- 					interrupts = <7>;
-@@ -186,7 +186,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial3: uart@c0000 {
-+				v2m_serial3: serial@c0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0c0000 0x1000>;
- 					interrupts = <8>;
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8.dtsi b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-index e26b492795c5..d1918253ab39 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8.dtsi
-@@ -189,7 +189,7 @@
- 				reg = <0x010000 0x1000>;
- 			};
- 
--			v2m_serial0: uart@90000 {
-+			v2m_serial0: serial@90000 {
- 				compatible = "arm,pl011", "arm,primecell";
- 				reg = <0x090000 0x1000>;
- 				interrupts = <5>;
-@@ -197,7 +197,7 @@
- 				clock-names = "uartclk", "apb_pclk";
- 			};
- 
--			v2m_serial1: uart@a0000 {
-+			v2m_serial1: serial@a0000 {
- 				compatible = "arm,pl011", "arm,primecell";
- 				reg = <0x0a0000 0x1000>;
- 				interrupts = <6>;
-@@ -205,7 +205,7 @@
- 				clock-names = "uartclk", "apb_pclk";
- 			};
- 
--			v2m_serial2: uart@b0000 {
-+			v2m_serial2: serial@b0000 {
- 				compatible = "arm,pl011", "arm,primecell";
- 				reg = <0x0b0000 0x1000>;
- 				interrupts = <7>;
-@@ -213,7 +213,7 @@
- 				clock-names = "uartclk", "apb_pclk";
- 			};
- 
--			v2m_serial3: uart@c0000 {
-+			v2m_serial3: serial@c0000 {
- 				compatible = "arm,pl011", "arm,primecell";
- 				reg = <0x0c0000 0x1000>;
- 				interrupts = <8>;
-diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
-index 5b589856dbaa..51951cfd126e 100644
---- a/arch/arm64/boot/dts/arm/juno-base.dtsi
-+++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
-@@ -729,7 +729,7 @@
- 		};
+diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+index 0cf96ceff431..b8a21092db4d 100644
+--- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
++++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
+@@ -172,14 +172,14 @@
+ 		dma-coherent;
  	};
  
--	soc_uart0: uart@7ff80000 {
-+	soc_uart0: serial@7ff80000 {
- 		compatible = "arm,pl011", "arm,primecell";
- 		reg = <0x0 0x7ff80000 0x0 0x1000>;
- 		interrupts = <GIC_SPI 83 IRQ_TYPE_LEVEL_HIGH>;
-diff --git a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-index f61e313ab1a4..b81651b1890a 100644
---- a/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-+++ b/arch/arm64/boot/dts/arm/rtsm_ve-motherboard.dtsi
-@@ -158,7 +158,7 @@
- 					clock-names = "KMIREFCLK", "apb_pclk";
- 				};
- 
--				v2m_serial0: uart@90000 {
-+				v2m_serial0: serial@90000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x090000 0x1000>;
- 					interrupts = <5>;
-@@ -166,7 +166,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial1: uart@a0000 {
-+				v2m_serial1: serial@a0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0a0000 0x1000>;
- 					interrupts = <6>;
-@@ -174,7 +174,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial2: uart@b0000 {
-+				v2m_serial2: serial@b0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0b0000 0x1000>;
- 					interrupts = <7>;
-@@ -182,7 +182,7 @@
- 					clock-names = "uartclk", "apb_pclk";
- 				};
- 
--				v2m_serial3: uart@c0000 {
-+				v2m_serial3: serial@c0000 {
- 					compatible = "arm,pl011", "arm,primecell";
- 					reg = <0x0c0000 0x1000>;
- 					interrupts = <8>;
+-	smmu: smmu@2b400000 {
++	smmu: iommu@2b400000 {
+ 		compatible = "arm,smmu-v3";
+ 		reg = <0x0 0x2b400000 0x0 0x100000>;
+ 		interrupts = <GIC_SPI 74 IRQ_TYPE_EDGE_RISING>,
++			     <GIC_SPI 79 IRQ_TYPE_EDGE_RISING>,
+ 			     <GIC_SPI 75 IRQ_TYPE_EDGE_RISING>,
+-			     <GIC_SPI 77 IRQ_TYPE_EDGE_RISING>,
+-			     <GIC_SPI 79 IRQ_TYPE_EDGE_RISING>;
+-		interrupt-names = "eventq", "priq", "cmdq-sync", "gerror";
++			     <GIC_SPI 77 IRQ_TYPE_EDGE_RISING>;
++		interrupt-names = "eventq", "gerror", "priq", "cmdq-sync";
+ 		dma-coherent;
+ 		#iommu-cells = <1>;
+ 		msi-parent = <&its 0x10000>;
 -- 
 2.17.1
 
