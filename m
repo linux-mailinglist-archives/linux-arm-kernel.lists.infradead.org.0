@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 250C51C9545
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:43:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48C921C955C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:46:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TGu1fQrUcOTae+6Oh9xjP0VGuEVoqX5Iy1ML9tPD7w8=; b=JdwcDnTHoHdYmq1OK/o54b4Yz
-	PCfEC8cUFKT2a3ZQsu7msibI8EHbZdqL4zzPZDp6Aw3scyitZid80mogvlTYVsne9Yewo2EJTXZna
-	Oyc3DWgNrwcXvehRz0eyRkGWLO77fpHAk2CQys4GEdl0GwKy8VAakxbT/fwai+H8FtRuHDpLMQuTh
-	/HReoMcTIvuXGICJkJMhbYYmWimY2yv0CAIgq2g8U1oAjjzCShqrZhRTAZ99ZCiqkcsNCETKzrGM4
-	aL8+4+WnMsYsVvqdUx+kQVKriBCxbxwHYiaduxtwsdEfuQltQMOFID25wf7Df0ULrGQvNQin/Qt9+
-	NVyMIBZWw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yHPi+BAOn9c2MfzO7SaE5EXV5WhNLayA8NYH/6oTRX0=; b=P6Fn35QRQU+A4Y
+	w47KtVcRW1XDxE78xGP6yvaQXQEINwrDunxy2o3vGQ/f47nEpdg1FATaesjryEgivv7j8A9zPo+gI
+	2mIiEGkkgrkEFRm8L3FtQPo3mrtELt9n724XXhzG1dDHH9UCXz7PzZliZvz23rO7OQ/zB2Qczk1Ed
+	YrffPi3xLpIoRzl5NlaUptlC68J3ewHb7UsE9k5clk2REd01zE8so4oek1q9Kv1sZBsdGfZL3rFwa
+	Lf5kHjhETGpV15T8uI/wjuufiB5QA9RihL+3kAei7/xJrag7Pt9HSrYbhXVGVDy+Y4kGSq6KEK2ek
+	5g95M0rAfAJwFjRG6wQg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWifv-0007jd-LC; Thu, 07 May 2020 15:43:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWifm-0007i0-QS
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:42:56 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 08C801FB;
- Thu,  7 May 2020 08:42:51 -0700 (PDT)
-Received: from [10.37.12.53] (unknown [10.37.12.53])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 292293F68F;
- Thu,  7 May 2020 08:42:48 -0700 (PDT)
-Subject: Re: [PATCH] memory/samsung: Maybe wrong triming parameter
-To: Bernard Zhao <bernard@vivo.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-pm@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20200507114514.11589-1-bernard@vivo.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <2eeb33f7-1acc-66bb-704a-b724fa0be0a8@arm.com>
-Date: Thu, 7 May 2020 16:42:46 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
-MIME-Version: 1.0
-In-Reply-To: <20200507114514.11589-1-bernard@vivo.com>
-Content-Language: en-US
+	id 1jWiiy-0002Tv-Kr; Thu, 07 May 2020 15:46:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWiiq-0002Rf-I1
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:46:05 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A94A0207DD;
+ Thu,  7 May 2020 15:45:59 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588866364;
+ bh=MtT1K1QhdR93RnKXEINbJSy9JalbcJDWOmF/snclf4U=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=ImqSVH0/sYKWxb69Pox8SY+3RRS3M0o9prJxmrXYt8yg5zRTmmeBZywK3+SkqtrL6
+ E/vnxRTB860fUDJ2IjcmXxXHAZtW7XsQ6S5pE/G3KhhSWAPa9YAoxBy66VhyVAX51N
+ bX1AZ3994AOUMkgIZt+6mf9rmrCoRDcawwBU0ZGQ=
+Date: Fri, 8 May 2020 00:45:56 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Masami Hiramatsu <mhiramat@kernel.org>
+Subject: Re: [RFC PATCH 1/3] x86/kprobes: Support nested kprobes
+Message-Id: <20200508004556.d968ee87b91dc7940ac161f2@kernel.org>
+In-Reply-To: <158884559505.12656.1357851132314046716.stgit@devnote2>
+References: <158884558272.12656.7654266361809594662.stgit@devnote2>
+ <158884559505.12656.1357851132314046716.stgit@devnote2>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_084254_895925_39EA6C02 
-X-CRM114-Status: GOOD (  20.26  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_084604_618322_9DB57481 
+X-CRM114-Status: GOOD (  11.59  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,83 +76,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com
+Cc: Wang Nan <wangnan0@huawei.com>, Song Liu <songliubraving@fb.com>,
+ Martin KaFai Lau <kafai@fb.com>, Alexei Starovoitov <ast@kernel.org>,
+ Daniel Borkmann <daniel@iogearbox.net>, Russell King <linux@armlinux.org.uk>,
+ Network Development <netdev@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>, Will Deacon <will@kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Yonghong Song <yhs@fb.com>,
+ bpf <bpf@vger.kernel.org>, Andrii Nakryiko <andriin@fb.com>,
+ Ingo Molnar <mingo@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ Eelco Chaudron <echaudro@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bernard,
+On Thu,  7 May 2020 18:59:55 +0900
+Masami Hiramatsu <mhiramat@kernel.org> wrote:
 
+> Make kprobes to accept 1-level nesting instead of
+> diff --git a/arch/x86/kernel/kprobes/ftrace.c b/arch/x86/kernel/kprobes/ftrace.c
+> index 681a4b36e9bb..b695c2e118f8 100644
+> --- a/arch/x86/kernel/kprobes/ftrace.c
+> +++ b/arch/x86/kernel/kprobes/ftrace.c
+> @@ -25,13 +25,15 @@ void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
+>  		return;
+>  
+>  	kcb = get_kprobe_ctlblk();
+> -	if (kprobe_running()) {
+> +	if (!kprobe_can_nest()) {
 
-On 5/7/20 12:45 PM, Bernard Zhao wrote:
-> In function create_timings_aligned, all the max is to use
-> dmc->min_tck->xxx, aligned with val dmc->timings->xxx.
-> But the dmc->timings->tFAW use dmc->min_tck->tXP?
-> Maybe this point is wrong parameter useing.
-> 
-> Signed-off-by: Bernard Zhao <bernard@vivo.com>
-> ---
->   drivers/memory/samsung/exynos5422-dmc.c | 2 +-
->   1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/memory/samsung/exynos5422-dmc.c b/drivers/memory/samsung/exynos5422-dmc.c
-> index 81a1b1d01683..22a43d662833 100644
-> --- a/drivers/memory/samsung/exynos5422-dmc.c
-> +++ b/drivers/memory/samsung/exynos5422-dmc.c
-> @@ -1091,7 +1091,7 @@ static int create_timings_aligned(struct exynos5_dmc *dmc, u32 *reg_timing_row,
->   	/* power related timings */
->   	val = dmc->timings->tFAW / clk_period_ps;
->   	val += dmc->timings->tFAW % clk_period_ps ? 1 : 0;
-> -	val = max(val, dmc->min_tck->tXP);
-> +	val = max(val, dmc->min_tck->tFAW);
->   	reg = &timing_power[0];
->   	*reg_timing_power |= TIMING_VAL2REG(reg, val);
->   
-> 
+Oops, something wrong. this kprobe_can_nest() requires kcb for
+the parameter. I'll fix this.
 
-Good catch! Indeed this should be a dmc->min_tck->tFAW used for
-clamping.
+Thank you,
 
-It didn't show up in testing because the frequency values based on
-which the 'clk_period_ps' are calculated are sane.
-Check the dump below:
-
-[    5.458227] DMC: mem tFAW=25000, clk_period_ps=6060
-[    5.461743] DMC: tFAW=5, tXP=2 val=5
-[    5.465273] DMC: mem tFAW=25000, clk_period_ps=4854
-[    5.470101] DMC: tFAW=5, tXP=2 val=6
-[    5.473668] DMC: mem tFAW=25000, clk_period_ps=3636
-[    5.478507] DMC: tFAW=5, tXP=2 val=7
-[    5.482072] DMC: mem tFAW=25000, clk_period_ps=2421
-[    5.486951] DMC: tFAW=5, tXP=2 val=11
-[    5.490531] DMC: mem tFAW=25000, clk_period_ps=1841
-[    5.495439] DMC: tFAW=5, tXP=2 val=14
-[    5.499113] DMC: mem tFAW=25000, clk_period_ps=1579
-[    5.503877] DMC: tFAW=5, tXP=2 val=16
-[    5.507476] DMC: mem tFAW=25000, clk_period_ps=1373
-[    5.512368] DMC: tFAW=5, tXP=2 val=19
-[    5.515968] DMC: mem tFAW=25000, clk_period_ps=1212
-[    5.520826] DMC: tFAW=5, tXP=2 val=21
-
-That's why in the existing configuration it does not harm
-(the calculated 'val' is always >= 5) the board.
-
-But I think this patch should be applied (after small changes in the
-commit message).
-
-@Krzysztof could you have a look on the commit message or take the
-patch with small adjustment in the description, please?
-
-I conditionally give (because of this description):
-
-Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
-
-
-Thank you Bernard for reporting and fixing this.
-
-Regards,
-Lukasz
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
