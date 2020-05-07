@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DD1C1C8208
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 08:06:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6C831C8216
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 08:06:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ul00F3FQb2KX7fFNDItSypWiF59q0ZRqkfQxI/QLUfs=; b=c7kqAHfJHo05qB
-	H2SmuMIfZC24BtL81IZlKGXzAt1MM+la+h17eYEKWC38Y2nRSLCNhdx8oco7IdW70I5B+9CYOepp4
-	jvBtO+Bx8SU2RMJPuBu4C+rQtTiw3sor7xyyause4GEEHKpptJWH5GT4U2fe97v567QB8j41IXm53
-	gwXVEQacsRv6l3DWPQXk7konCW8J2zFb1cLYBHg9Ole69tghuVYBG/OnTTPlUB9nSObjWpkMVRTxv
-	CepAQAs7N526WOtxRgyJsjAUEe/4Xv5J5IT5ElBBq1e1WLZ4Y7azdQzPffQ9NsLDJyL0GeorEhylg
-	gnL7AtWXSKhL1yxWye5A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xIiQVtywO+KlBG+M1eC3zyXrlOpZ6lNtnmpu3UPwADY=; b=ny+eRiogvkyRRH
+	bACYkPX0SDHTjUdxQigMx8dC3C43Ye6A0acBW339w+MgGNawojfFFQLGcYQT8Ych2NG/eYHjh1CbV
+	iFMEp9eohkj4AWCbs54iApUEvpSev5oF33yfOEN4OkIVvD8Iw9rTQtQNhzpe3qHZ8bavItzigafMX
+	pALeEdc72lwN0HYoZQBbxxePE9Xe17xlVlS9rSNHi30d1BRfwpew2jwTg253f0x/TCOdWDGtUuKbG
+	V0vmaw3kCewVbFGpja1uOgOJteVuDQfJ1bq4Y/xkUsYOZzmIGq3NKdZ5rV1aNnuWDtEuIMaBnDijO
+	+aRCB0juUQkKx0PHwKOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWZfP-0004SB-OR; Thu, 07 May 2020 06:05:55 +0000
+	id 1jWZfo-0004pQ-Io; Thu, 07 May 2020 06:06:20 +0000
 Received: from mail-eopbgr70052.outbound.protection.outlook.com ([40.107.7.52]
  helo=EUR04-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWZfC-0004ML-Mr
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 06:05:44 +0000
+ id 1jWZfE-0004ML-T7
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 06:05:46 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NMB8QKb1uzZju1F6PguZmpgiFWtOJXfckvjF0m3Rm6bcrvX7tuRnIT6k9Sh0V/sSehn/EHhXzvgaPc48k0wJuAoD0LI1w4wLHHimEthLFnUBC/83zMFRnrnTHSgxG3uYOGhIPSFDBY6k/HukNxkDQ1I5ygoYoWIViC7IkPkZTKQKJclsPaKg0bmtHq8pViw6hlHUYmlkYNjYBOP87ncgQDaPkZEphKxPLv+650sVS3wL+YmCAKdz/honEDUtOxm+XwW5rlPhPTWGLYLfwHonVvr8qYJU5Eih7EzJca9njhT0RDenV8Sn/p2kITCQRrIz2O2cmLYhaeXepXH+hLZrPw==
+ b=TV+q/Ac+n6asiq6CfpD0g8u5xLWvfJajusWEua3G076Alz3ao9a0TqXwiQQKeKFDpw6kRnOFQQsWTnwDu5pjkhwhHOFLWPFfABEUJvAU/CK1o3Icu+ecLh9/pizkr6CftRTQvjYSD08OcUn2T9bmfZgcCOxq3HCfIXlkOVbMCyV2N81MNK2Gr08MUIJxm9EBaH7A8SW+Tk2C+XxN+OKT1pDbG7KXJoBtRl4w6YZveG5i2WP+QOsw2SIui4OFvyO++2OzYN4wHXyxA9gRpld1F35HHnU6jjAKvX7rBifAgwnoR3RkOCniHrutziMHKiaAH5zj6cMPlbZsAlIu4TwYiw==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8ar6Czx/TezE8j5XbVIC+AYzW2sKAS85fp3d2AJzNPA=;
- b=hGsnKpUQiymTgTqXbi7ECWjPRWURWWFz1biPD44cLrB2l39mkDpeOL0y1tsGzGfNq8PkXXHjIoLnJchPPHMcsWAeRm16u6LbTtwTShJRCOlaJILr903Okamjvh1niB9YvDk/wyZaz4xZyVwIxnmMZUEH8acIv+S3ccTLFyGzfZbZQzZohSif0EZ+IiIyifPEtKXNwcRN2myIPcyuYcKY1PL2gt8tp/8Lo7x6EwTTDjuy+B4OjatuxwORFgfFRuTaMZPs5hys3J0pMRcQ/c1aKeMeIEEs+FvXsnTmlTrWfQ/AJ3BVs7WHIi+Xe5+nKKYOCmWHtI6dtm0KvwzFCRF8gw==
+ bh=pbqSHfoVQ2BeBf+O+6BaFn8kZrjzGekqOC890+tzGCs=;
+ b=e+bFhNchaYWVH8dbmd4/0FxuQOTtxU8BqWUz0UODnwEqQvNZRRzOAS9axxPZ/Nt0cP5S3kHLvQ968vfSAdbO9+hfKAM70Wia/xVj73osmKjNqz78vw5gZpDAnsYZMlLzzn1gMEYKh+yMd4NaSKy3wGhOpYRWDbUkZx4GUyY7rLHnEOMWYFvR29EHh14f7/baef+lttWIIwSyPQKDXQ0O2XZK557cBfdT0CxgEbdVsnOJ0IB0GJ1wr8ulydc5S5K9eoZUjWA0/sm6Cdm4QDk5+Yk+gK3HCSyYA8OulvuNIZ6NYaIGbKKn+cXqSYhv3MA1vSOIgv/hHo9cvqbe7Iam5g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=8ar6Czx/TezE8j5XbVIC+AYzW2sKAS85fp3d2AJzNPA=;
- b=cYTApWxQ0H6hBwEH+maN8lCMBnZKXtsFbyHgAzUZ0ra9oBA4GzVDMvAV1ZsdpQW/ZdgoryLpCWLwZUssj0YIb3LD1zDFdoSDodEw7szeb+fPQ0OqB0BGW2WS3TnA5keuqxMhRERBVvxaVhNCj+I6tqV8bxhhiS7FjlCtgtWlEdE=
+ bh=pbqSHfoVQ2BeBf+O+6BaFn8kZrjzGekqOC890+tzGCs=;
+ b=pT+VVNhSTdey2FYcbGjQ3FNCayVKhaBO/RwIPHjQ0+UUVH50qno1k61xYF/AJAkDnLKfVtHp03MmOJIPLdjsVOwQu9Nh+65itAKclxFdHuQ7LVjW7GS4ZDREE3m7S3TWqU9JTR7R2qZQXepGieWlZA6PRGrR5iYSZ5uvDG5pIdE=
 Authentication-Results: kernel.org; dkim=none (message not signed)
  header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com (2603:10a6:4:a1::14)
  by DB6PR0402MB2710.eurprd04.prod.outlook.com (2603:10a6:4:95::15)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.19; Thu, 7 May
- 2020 06:05:35 +0000
+ 2020 06:05:39 +0000
 Received: from DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871]) by DB6PR0402MB2760.eurprd04.prod.outlook.com
  ([fe80::d17b:d767:19c3:b871%6]) with mapi id 15.20.2979.028; Thu, 7 May 2020
- 06:05:34 +0000
+ 06:05:39 +0000
 From: peng.fan@nxp.com
 To: shawnguo@kernel.org, s.hauer@pengutronix.de, leonard.crestez@nxp.com,
  abel.vesa@nxp.com, aisheng.dong@nxp.com
-Subject: [PATCH V3 00/10] clk: imx: fixes and improve for i.MX8M
-Date: Thu,  7 May 2020 13:56:09 +0800
-Message-Id: <1588830979-11586-1-git-send-email-peng.fan@nxp.com>
+Subject: [PATCH V3 01/10] arm64: dts: imx8m: assign clocks for A53
+Date: Thu,  7 May 2020 13:56:10 +0800
+Message-Id: <1588830979-11586-2-git-send-email-peng.fan@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1588830979-11586-1-git-send-email-peng.fan@nxp.com>
+References: <1588830979-11586-1-git-send-email-peng.fan@nxp.com>
 X-ClientProxiedBy: SG2PR01CA0147.apcprd01.prod.exchangelabs.com
  (2603:1096:4:8f::27) To DB6PR0402MB2760.eurprd04.prod.outlook.com
  (2603:10a6:4:a1::14)
@@ -65,37 +67,38 @@ Received: from localhost.localdomain (119.31.174.66) by
  SG2PR01CA0147.apcprd01.prod.exchangelabs.com (2603:1096:4:8f::27) with
  Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2979.28 via Frontend
- Transport; Thu, 7 May 2020 06:05:30 +0000
+ Transport; Thu, 7 May 2020 06:05:35 +0000
 X-Mailer: git-send-email 2.7.4
 X-Originating-IP: [119.31.174.66]
 X-MS-PublicTrafficType: Email
 X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 02a6064c-16a9-43e1-3c33-08d7f24ca7f5
+X-MS-Office365-Filtering-Correlation-Id: 4637ea3c-c25c-4328-8cb5-08d7f24caaa5
 X-MS-TrafficTypeDiagnostic: DB6PR0402MB2710:|DB6PR0402MB2710:
 X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <DB6PR0402MB271014BBCD40325ADBBB8C2D88A50@DB6PR0402MB2710.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:1923;
+X-Microsoft-Antispam-PRVS: <DB6PR0402MB2710E558EE711496F42AABF088A50@DB6PR0402MB2710.eurprd04.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
 X-Forefront-PRVS: 03965EFC76
 X-MS-Exchange-SenderADCheck: 1
 X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: 69C5UPZIlP2kpsBMD0rlpsa/vyxXA3k2zWsjnj4/aEmUEP7X9+O2EE4M9OVJYL2cCj2FmVE7HB2EZOajmi3/93eHIn1oRJLm2hIXGUxlWTy+UmcHAHSbJtNdCXHzv+JYUy4S1RSBBV+YzdGnR5VP2nROM338hU68ydkN5EdPywLMZdv0hQuaFfv5eIT17v56mKBKPdarUnspqQyVRKdUDBOtmwbnjJIPcnQA/mlx1lhhakRTt4ELILJ+CoSD6iuwnxhUjBX26HsYhShZ5E+Z5plvXfhtbBdrHZTqFSriAIjFXHWQTOjFtzYENhwptTvyGX7lwfQhGWOpiBUoUZ+NmbNkay31AwW26TSfRAK3tT//+2241v0ZiK4X7qePpsQIORxsaQ4Qb6/34apKNuA4JAF17OHUh/zxBLt7zHmJi56SdRjGHTEXbj+EZ/yLDe82X3E1Rkxl/Qtwb7rEx1EwNTkKWadigy3s4deLIKfsmH7SERhIRKqXzN3W/euPWAXUbMqTfJNnR1kISaa41gkx84UmYM9fMh2YTHtbOqKdn8L52zJVWc8k4+nj11E1iJp5mvGj5d0N3QgMPAWTZ7P3plxhIw7tP4F79XOAT+bhlUM=
+X-Microsoft-Antispam-Message-Info: +AM/O3xxhvcwaxB7l5LJdMAFqC8GnIoErki1kvNfz8pVz0GMcB0+v5KSMdmo7d04GjvSCP8ouqhDp6Kx+dlMGleJtnHJr2QbWmbn2vuXhDQYuFc8B8DrHo658S1QTnDxAiTi2P10ZL1B06QzlwgMAutZ1rY8eZTBqhlCtyStb76zzDNxyYZap+wf4yqrkdQxxWAovApEig6XVo5mLOGiIILC4el+jHhDjGyorUh5t9FaRxBS0v55CcWteT+0ErhxHjrw7WNoY3984E8rzU2dl+Xhk/JnWINPC0oHj3ITK0dfeUv704yDjGEVnGtJWt6/j84ag9/Pb2RZ7F/9p6jisO/D2wBtg5rpY3aDxw7MhIBXeTPFqyliOpkZ+zcjs530HUx7mrV7QNl82ZKWV+BRBy31h5urGq0o2OCW77edQ42DDbICZCPc+cqVjPDULRp/dlFc/65K8sORi7BD/J/RTHsCqEHGgI5dxkSvUTBZUsXo+9lzdK/ybYFRw7wd+5sI/Blva7xkX2RHpm3zpDq9YAii/nAPhAXQzLgQiNCteupSnrQnOqYrawbN+kD8ipns4ia5H6MYdAJq3LnFHNtCxg==
 X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:DB6PR0402MB2760.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
- SFS:(4636009)(366004)(376002)(346002)(136003)(39860400002)(396003)(33430700001)(316002)(33440700001)(478600001)(2616005)(16526019)(966005)(6666004)(4326008)(66476007)(66946007)(86362001)(2906002)(66556008)(956004)(6486002)(52116002)(36756003)(8676002)(26005)(6506007)(8936002)(5660300002)(186003)(6512007)(9686003)(83320400001)(83280400001)(83300400001)(83310400001)(83290400001);
+ SFS:(4636009)(366004)(376002)(346002)(136003)(39860400002)(396003)(33430700001)(316002)(33440700001)(478600001)(2616005)(16526019)(69590400007)(6666004)(4326008)(66476007)(66946007)(86362001)(2906002)(66556008)(956004)(6486002)(52116002)(36756003)(8676002)(26005)(6506007)(8936002)(5660300002)(186003)(6512007)(9686003)(83320400001)(83280400001)(83300400001)(83310400001)(83290400001)(32563001);
  DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: sDmWfNqIVpa5quykLxRir7anePHe3TZvoWVcKcH2b4kv/K2SV+O/DK5alhs1GATwF7RswsjCaBP/NJvIW+z7JpufZBj9ZDD9WWZMF286uGDkeTojOyQ8ZErShoHlo687dsiV9CwYBPWAEjvpxjMsKsa53RzaBgizJlmmjRbNzBwmXNpFFjsAplp3kD7425kdpSK20HRDNvhdbPLytij8uhJDuE1WWzxQbJd3n72HQrTDUUc6aThaEOBd3z1DdvZhtLKmiYOLBImNu/UYAOm48ZhBdykdds58lmuxPI5TUcWDwCHCD7nJ1LH9yoNmo7bBpdGsnXE9x4DYacUIwPi5kfn8xMdVLfS/uv6Oaijymk0LrpXxfJUeBQESiQGJp+c0jSf6o+HT7J08a2lNe9N0gqCaaP32gr/S4Gyo0N2AR2/N/SnWFr+FPnF85866Ntg6tHGfLIxioizBor6/pha8yl1uYNUtopPk+W7CtBf7OghfF8P8R6ezv77cm3Y1loufWHYDJhS9wH/SqK84qfjZivvmSZoJPZCWTdZGlG1yawcIFfvdrwPetdCl95FSX8hEtZqH6k6mE8YCFRItA9ojUPehLlEGhUNQsVoPql0EOZfjskcrzi+PF7XVS94ZNXh41feloYpn5JXFH4AfribLmHzsPJm4M6FbsAwY4dFA7zXHoR97RDScU7PFYtMpx71pSxlYS3yULTY8UcFpehppg/swmBGZ8GkZ5bGRnLy6jAzZMJcjPz5xBMxAi8LHbac3LwyNEkWS69tW60eofXMTH/rvexqfKD17mnbLeJSNERs=
+X-MS-Exchange-AntiSpam-MessageData: RAG7b5zQC5yFA9LYzERw2pzYmHFRdfWpcmhsFAhE+itBXNM/M8t/DY9V55YoYcB98N5vwdg8tajOnBzXUjZjkxtBheIBpKsS5WCokPWfxJRMgSaAvqx1xHOMEMJB4jegtdmLOkfQesxUIHnrIddih5Hiq+Sk56ZEPgedU6MbNy9aQI2b8LOW6q042GfXGQP+ehpXYo6lnI8mOBtzg1M7gZcdWKfHDWaabtnpzyhxhCiOFx33+zVYhQ54NPeYlmu7rUmBxwVaKl1l+B4YdHCpbyFxrymBNJpML7Ztuy2G7LibzkKVjMivxq1jVRG9fIEV1pRSyGnd0tF5f5LTSN52d33J5du8RU1x1o8/KEEvtAjiR2/O4YOWtD/Afhaez+8pIw6EQwYYpvyhzCuGRYu7ge8rcso3nSeP9uNUZKyE8omCm6fmqNerKA7zaTqV2sNiK/p/WAcicE82QwRl5O6Yxo7bW+evXQbyVXBveskNUPd8twRNs4slR9sMcIfPReD4Npk0eqQWcC2ZDZFKJc/krMZ49VHGUL+TW3JVtjQ3z/UsJQS65+6rC7dDcNqMmoRw49cOraMcG7oWouU9pdyx7UAUOSMVNaoGMsVxWrPnqeDlxEICty4ndi0F/UWiMQ3Y9CTI/2Cgfv80iDMBlyJESAz9n1gsl95Akrc6Y+ZBjVtPnzwT3b12DB9XhbYywmSW4WwMRjs5uWE1wQEQXvHtT+3EvmXXG9fH/fKZM6fLrYd8p+OClcYyfX6OyLu+7AVIJBgx3b4dGZxb+aLraLqjzv68RCT5VlYiT4F4W7VvrNg=
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 02a6064c-16a9-43e1-3c33-08d7f24ca7f5
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2020 06:05:34.8346 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4637ea3c-c25c-4328-8cb5-08d7f24caaa5
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 07 May 2020 06:05:39.3005 (UTC)
 X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
 X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: dJQJWG4lhIZkf/fv4uc6NySBm+ggWBKVrn1vjM3F5sp4SSRdCYYDFs83sJtP5Oj73p2T3ZuylJAytZuimzQRKg==
+X-MS-Exchange-CrossTenant-UserPrincipalName: uhLm6TaIH+BRCralT4nIB1rwU0y2ZVfr1rKBnh8eleNLURvaCqabnb1tyMask5ovpd9ZdWileMAI8A3+hwvYTQ==
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0402MB2710
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200506_230542_825264_0EDA207B 
-X-CRM114-Status: GOOD (  10.05  )
+X-CRM114-CacheID: sfid-20200506_230544_947733_CE51D74A 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -103,10 +106,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [40.107.7.52 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
  [40.107.7.52 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -136,71 +139,128 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Peng Fan <peng.fan@nxp.com>
 
-Patches rebased on for-next
+Assign IMX8M*_CLK_A53_SRC's parent to system pll1 and
+assign IMX8M*_CLK_A53_CORE's parent to arm pll out as what
+is done in drivers/clk/imx/clk-imx8m*.c, then we could remove
+the settings in driver which triggers lockdep warning.
 
-V3:
- Add R-b tag for patch 1-6,10
- Use clk_mux_ops in patch 7, explain more details in commit log
- Boot test on i.MX8MM/N/MQ/P
+Reported-by: Leonard Crestez <leonard.crestez@nxp.com>
+Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+Reviewed-by: Leonard Crestez <leonard.crestez@nxp.com>
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ arch/arm64/boot/dts/freescale/imx8mm.dtsi | 10 +++++++---
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi | 10 +++++++---
+ arch/arm64/boot/dts/freescale/imx8mp.dtsi | 11 ++++++++---
+ arch/arm64/boot/dts/freescale/imx8mq.dtsi |  9 +++++++--
+ 4 files changed, 29 insertions(+), 11 deletions(-)
 
-V2:
- Patch 7, drop wait after write, add one line comment for write twice
-
-V1:
-Patch 1,2 is to fix the lockdep warning reported by Leonard
-Patch 3 is to fix pll mux bit
-Patch 4 is align with other i.MX8M using gate
-Patch 5 is to simplify i.MX8MP clk root using composite
-
-Patch 3~5 is actually https://patchwork.kernel.org/patch/11402761/
-with a minimal change to patch 5 here.
-
-Patch 6 is to use composite core clk for A53 clk root
-Patch 7,8,9 is actually to fix CORE/BUS clk slice issue.
- This issue is triggerred after we update U-Boot to include
- the A53 clk fixes to sources from PLL, not from A53 root clk,
- because of the signoff timing is 1GHz. U-Boot set the A53 root
- mux to 2, sys pll2 500MHz. Kernel will set the A53 root mux to
- 4, sys pll1 800MHz, then gate off sys pll2 500MHz. Then kernel
- will gate off A53 root because clk_ignore_unsed, A53 directly sources
- PLL, so it is ok to gate off A53 root. However when gate off A53
- root clk, system hang, because the original mux sys pll2 500MHz
- gated off with CLK_OPS_PARENT_ENABLE flag.
-
- It is lucky that we not met issue for other core/bus clk slice
- except A53 ROOT core slice. But it is always triggerred after
- U-Boot and Linux both switch to use ARM PLL for A53 core, but
- have different mux settings for A53 root clk slice.
-
- So the three patches is to address this issue.
-
-Patch 10 is make memrepair as critical.
-
-Peng Fan (10):
-  arm64: dts: imx8m: assign clocks for A53
-  clk: imx8m: drop clk_hw_set_parent for A53
-  clk: imx: imx8mp: fix pll mux bit
-  clk: imx8mp: Define gates for pll1/2 fixed dividers
-  clk: imx8mp: use imx8m_clk_hw_composite_core to simplify code
-  clk: imx8m: migrate A53 clk root to use composite core
-  clk: imx: add mux ops for i.MX8M composite clk
-  clk: imx: add imx8m_clk_hw_composite_bus
-  clk: imx: use imx8m_clk_hw_composite_bus for i.MX8M bus clk slice
-  clk: imx8mp: mark memrepair clock as critical
-
- arch/arm64/boot/dts/freescale/imx8mm.dtsi |  10 +-
- arch/arm64/boot/dts/freescale/imx8mn.dtsi |  10 +-
- arch/arm64/boot/dts/freescale/imx8mp.dtsi |  11 ++-
- arch/arm64/boot/dts/freescale/imx8mq.dtsi |   9 +-
- drivers/clk/imx/clk-composite-8m.c        |  56 ++++++++++-
- drivers/clk/imx/clk-imx8mm.c              |  27 +++---
- drivers/clk/imx/clk-imx8mn.c              |  25 +++--
- drivers/clk/imx/clk-imx8mp.c              | 150 +++++++++++++++---------------
- drivers/clk/imx/clk-imx8mq.c              |  29 +++---
- drivers/clk/imx/clk.h                     |   7 ++
- include/dt-bindings/clock/imx8mp-clock.h  |  28 +++++-
- 11 files changed, 229 insertions(+), 133 deletions(-)
-
+diff --git a/arch/arm64/boot/dts/freescale/imx8mm.dtsi b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+index c63685ae80ee..aaf6e71101a1 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mm.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mm.dtsi
+@@ -519,16 +519,20 @@
+ 					 <&clk_ext3>, <&clk_ext4>;
+ 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
+ 					      "clk_ext3", "clk_ext4";
+-				assigned-clocks = <&clk IMX8MM_CLK_NOC>,
++				assigned-clocks = <&clk IMX8MM_CLK_A53_SRC>,
++						<&clk IMX8MM_CLK_A53_CORE>,
++						<&clk IMX8MM_CLK_NOC>,
+ 						<&clk IMX8MM_CLK_AUDIO_AHB>,
+ 						<&clk IMX8MM_CLK_IPG_AUDIO_ROOT>,
+ 						<&clk IMX8MM_SYS_PLL3>,
+ 						<&clk IMX8MM_VIDEO_PLL1>,
+ 						<&clk IMX8MM_AUDIO_PLL1>,
+ 						<&clk IMX8MM_AUDIO_PLL2>;
+-				assigned-clock-parents = <&clk IMX8MM_SYS_PLL3_OUT>,
++				assigned-clock-parents = <&clk IMX8MM_SYS_PLL1_800M>,
++							 <&clk IMX8MM_ARM_PLL_OUT>,
++							 <&clk IMX8MM_SYS_PLL3_OUT>,
+ 							 <&clk IMX8MM_SYS_PLL1_800M>;
+-				assigned-clock-rates = <0>,
++				assigned-clock-rates = <0>, <0>, <0>,
+ 							<400000000>,
+ 							<400000000>,
+ 							<750000000>,
+diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+index fb63a98fdff5..9a4b65a267d4 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
+@@ -426,13 +426,17 @@
+ 					 <&clk_ext3>, <&clk_ext4>;
+ 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
+ 					      "clk_ext3", "clk_ext4";
+-				assigned-clocks = <&clk IMX8MN_CLK_NOC>,
++				assigned-clocks = <&clk IMX8MN_CLK_A53_SRC>,
++						<&clk IMX8MN_CLK_A53_CORE>,
++						<&clk IMX8MN_CLK_NOC>,
+ 						<&clk IMX8MN_CLK_AUDIO_AHB>,
+ 						<&clk IMX8MN_CLK_IPG_AUDIO_ROOT>,
+ 						<&clk IMX8MN_SYS_PLL3>;
+-				assigned-clock-parents = <&clk IMX8MN_SYS_PLL3_OUT>,
++				assigned-clock-parents = <&clk IMX8MN_SYS_PLL1_800M>,
++							 <&clk IMX8MN_ARM_PLL_OUT>,
++							 <&clk IMX8MN_SYS_PLL3_OUT>,
+ 							 <&clk IMX8MN_SYS_PLL1_800M>;
+-				assigned-clock-rates = <0>,
++				assigned-clock-rates = <0>, <0>, <0>,
+ 							<400000000>,
+ 							<400000000>,
+ 							<600000000>;
+diff --git a/arch/arm64/boot/dts/freescale/imx8mp.dtsi b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+index 014205fc24f6..6d30208b6aee 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mp.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mp.dtsi
+@@ -360,7 +360,9 @@
+ 					 <&clk_ext3>, <&clk_ext4>;
+ 				clock-names = "osc_32k", "osc_24m", "clk_ext1", "clk_ext2",
+ 					      "clk_ext3", "clk_ext4";
+-				assigned-clocks = <&clk IMX8MP_CLK_NOC>,
++				assigned-clocks = <&clk IMX8MP_CLK_A53_SRC>,
++						  <&clk IMX8MP_CLK_A53_CORE>,
++						  <&clk IMX8MP_CLK_NOC>,
+ 						  <&clk IMX8MP_CLK_NOC_IO>,
+ 						  <&clk IMX8MP_CLK_GIC>,
+ 						  <&clk IMX8MP_CLK_AUDIO_AHB>,
+@@ -368,12 +370,15 @@
+ 						  <&clk IMX8MP_CLK_IPG_AUDIO_ROOT>,
+ 						  <&clk IMX8MP_AUDIO_PLL1>,
+ 						  <&clk IMX8MP_AUDIO_PLL2>;
+-				assigned-clock-parents = <&clk IMX8MP_SYS_PLL2_1000M>,
++				assigned-clock-parents = <&clk IMX8MP_SYS_PLL1_800M>,
++							 <&clk IMX8MP_ARM_PLL_OUT>,
++							 <&clk IMX8MP_SYS_PLL2_1000M>,
+ 							 <&clk IMX8MP_SYS_PLL1_800M>,
+ 							 <&clk IMX8MP_SYS_PLL2_500M>,
+ 							 <&clk IMX8MP_SYS_PLL1_800M>,
+ 							 <&clk IMX8MP_SYS_PLL1_800M>;
+-				assigned-clock-rates = <1000000000>,
++				assigned-clock-rates = <0>, <0>,
++						       <1000000000>,
+ 						       <800000000>,
+ 						       <500000000>,
+ 						       <400000000>,
+diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+index bab88369be1b..a6189460ed89 100644
+--- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+@@ -595,8 +595,13 @@
+ 				clock-names = "ckil", "osc_25m", "osc_27m",
+ 				              "clk_ext1", "clk_ext2",
+ 				              "clk_ext3", "clk_ext4";
+-				assigned-clocks = <&clk IMX8MQ_CLK_NOC>;
+-				assigned-clock-rates = <800000000>;
++				assigned-clocks = <&clk IMX8MQ_CLK_A53_SRC>,
++						  <&clk IMX8MQ_CLK_A53_CORE>,
++						  <&clk IMX8MQ_CLK_NOC>;
++				assigned-clock-rates = <0>, <0>,
++						       <800000000>;
++				assigned-clock-parents = <&clk IMX8MQ_SYS1_PLL_800M>,
++							 <&clk IMX8MQ_ARM_PLL_OUT>;
+ 			};
+ 
+ 			src: reset-controller@30390000 {
 -- 
 2.16.4
 
