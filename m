@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2540C1C8B75
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:54:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D73E1C8B8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:58:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JWodH/zr5N+1UdF310E0yDR4hS0uH6z4BU42FP9ibP8=; b=TXXEZUaZpkG1XD
-	A8Hm9T67mXvQubaQPUUXeagVu/qLubMFyBFPBv+qfQjphxMhsB9VRi0avF2IiPaNQVGgluw2q0c77
-	DgWUIXYXjsN7XLCmteTWZ9ouQdaI7KworW1NCucM5R4l7tjFaPgyiOsqgiDYCLLtyMsQHCbcggMvT
-	Pm+m/D9KBKRQliJcH6JukLeZetjIdzteZFbF5o/4UpY45g+5XQG/dn5eyD0weeS9ZZHgg0f1w0I47
-	PCfT95uJgsgAQ4bjfKv6UYdfMLT+H5ltNyARlRFRz7RfmKH5sXZ7FUvoStTbWqc2AztOVxUSsxxbQ
-	kDDed0gKlc07mLyC8nng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aUMD5xOlFfmKq31ZESPP+lJ2oPJ3sp6gidWTf2BJFWU=; b=HlU1AXS/np2Rzf
+	TU/Rf1fL++36zjOpSBHx4PUFKtSzNfTUDFlO8445Tv5/9I7eofjUxz7q0AJFw69+Hk/6t5NHQG1X4
+	9w/nkGZSnsxdGqtpecVnYCMjo1gA3yhFeuOWQvvEpJV5Z4qQbUPKEfgWtCRXee/G3MNqUtLmqiYr7
+	Mh8CT0fEyGRJZ18qYGfsVIqKwg4ywlbKDBpBL1RWZqNPN8QDKfWrLRdlj+iUyC5Te0IlAXiL4SoyU
+	jgnCmwCvSs7zL7Re+qiDbUcW5vBz5EncbvAUvgKGb3fvsDqkz6iUunmSAdYrtmcVLtIZvWOcyL6t1
+	F0E68vE27YGmtS/vNvmQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWg2Z-0000i7-MS; Thu, 07 May 2020 12:54:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jWg6R-0004iJ-01; Thu, 07 May 2020 12:58:15 +0000
+Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWg2Q-0000hI-5F
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:54:07 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AEE472082E;
- Thu,  7 May 2020 12:54:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588856043;
- bh=ejai9cTPU/wXSWdxchfGt1itA5yy8fQdOCXV1pCVHB8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=RQWnluLJiArcmPu9fOV36aetvJ89LlV4OkXKlOag7m8wEFYv8k8CmgXArbDzu6Wsq
- pswbvEeTfFU5iF88PS7C3PtcspXniovK40FRu2E7ppNmm6cyjd3Iso9XksHltSy6+K
- p+BGlBgqY06MAoY6CKRIfJ85jBPtzde5OXgykwOI=
-Date: Thu, 7 May 2020 13:53:58 +0100
-From: Will Deacon <will@kernel.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
-Message-ID: <20200507125357.GA31783@willie-the-truck>
-References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
- <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
- <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
+ id 1jWg6H-0004hT-Q4
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:58:07 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 49HtmT12g8z1rxbg;
+ Thu,  7 May 2020 14:58:01 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 49HtmT0JHtz1qtwC;
+ Thu,  7 May 2020 14:58:01 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id O59GV7mkA03e; Thu,  7 May 2020 14:57:59 +0200 (CEST)
+X-Auth-Info: 2eFNAvj3gqcF/NuZ7TI8cUcb7hVGFTld8y1L23hxGHM=
+Received: from [IPv6:::1] (unknown [195.140.253.167])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu,  7 May 2020 14:57:59 +0200 (CEST)
+Subject: Re: [PATCH 10/12] ARM: dts: stm32: Add bindings for SPI2 on AV96
+To: Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-arm-kernel@lists.infradead.org
+References: <20200429163743.67854-1-marex@denx.de>
+ <20200429163743.67854-10-marex@denx.de>
+ <2c4b1332-7bde-8c7e-91d2-fee62b7299e6@st.com>
+From: Marek Vasut <marex@denx.de>
+Message-ID: <b1e84edd-ec40-af64-b73e-6deb7ce7291b@denx.de>
+Date: Thu, 7 May 2020 14:57:59 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.5.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <2c4b1332-7bde-8c7e-91d2-fee62b7299e6@st.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_055406_244358_FEA5EC70 
-X-CRM114-Status: GOOD (  19.18  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200507_055805_992709_6B1E66D3 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,75 +77,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Jordan Crouse <jcrouse@codeaurora.org>, iommu@lists.linux-foundation.org,
- linux-kernel@vger.kernel.org, Rob Clark <robdclark@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Patrick Delaunay <patrick.delaunay@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Patrice Chotard <patrice.chotard@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 11:55:54AM +0100, Robin Murphy wrote:
-> On 2020-05-07 11:14 am, Sai Prakash Ranjan wrote:
-> > On 2020-04-22 01:50, Sai Prakash Ranjan wrote:
-> > > Add stall implementation hook to enable stalling
-> > > faults on QCOM platforms which supports it without
-> > > causing any kind of hardware mishaps. Without this
-> > > on QCOM platforms, GPU faults can cause unrelated
-> > > GPU memory accesses to return zeroes. This has the
-> > > unfortunate result of command-stream reads from CP
-> > > getting invalid data, causing a cascade of fail.
-> =
-
-> I think this came up before, but something about this rationale doesn't a=
-dd
-> up - we're not *using* stalls at all, we're still terminating faulting
-> transactions unconditionally; we're just using CFCFG to terminate them wi=
-th
-> a slight delay, rather than immediately. It's really not clear how or why
-> that makes a difference. Is it a GPU bug? Or an SMMU bug? Is this reliable
-> (or even a documented workaround for something), or might things start
-> blowing up again if any other behaviour subtly changes? I'm not dead set
-> against adding this, but I'd *really* like to have a lot more confidence =
-in
-> it.
-
-Rob mentioned something about the "bus returning zeroes" before, but I agree
-that we need more information so that we can reason about this and maintain
-the code as the driver continues to change. That needs to be a comment in
-the driver, and I don't think "but android seems to work" is a good enough
-justification. There was some interaction with HUPCF as well.
-
-As a template, I'd suggest:
-
-> > > diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> > > index 8d1cd54d82a6..d5134e0d5cce 100644
-> > > --- a/drivers/iommu/arm-smmu.h
-> > > +++ b/drivers/iommu/arm-smmu.h
-> > > @@ -386,6 +386,7 @@ struct arm_smmu_impl {
-> > > =A0=A0=A0=A0 int (*init_context)(struct arm_smmu_domain *smmu_domain);
-> > > =A0=A0=A0=A0 void (*tlb_sync)(struct arm_smmu_device *smmu, int page,=
- int sync,
-> > > =A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0=A0 int status);
-
-/*
- * Stall transactions on a context fault, where they will be terminated
- * in response to the resulting IRQ rather than immediately. This should
- * pretty much always be set to "false" as stalling can introduce the
- * potential for deadlock in most SoCs, however it is needed on Qualcomm
- * XXXX because YYYY.
- */
-
-> > > +=A0=A0=A0 bool stall;
-
-Hmm, the more I think about this, the more I think this is an erratum
-workaround in disguise, in which case this could be better named...
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNS83LzIwIDI6NTMgUE0sIEFsZXhhbmRyZSBUb3JndWUgd3JvdGU6Cj4gSGkgTWFyZWsKPiAK
+PiBPbiA0LzI5LzIwIDY6MzcgUE0sIE1hcmVrIFZhc3V0IHdyb3RlOgo+PiBBZGQgU1BJMiBiaW5k
+aW5ncyB0byBBVjk2IERULCB0aGUgU1BJMiBJT3MgYXJlIHByZXNlbnQgb24KPj4gbG93LXNwZWVk
+IGV4cGFuc2lvbiBjb25uZWN0b3IgWDYuIFRoaXMgaXMgZGlzYWJsZWQgYnkgZGVmYXVsdAo+PiBh
+bmQgY2FuIGJlIGVuYWJsZWQgaWYgc29tZXRoaW5nIGlzIGNvbm5lY3RlZCB0aGVyZS4KPj4KPj4g
+U2lnbmVkLW9mZi1ieTogTWFyZWsgVmFzdXQgPG1hcmV4QGRlbnguZGU+Cj4+IENjOiBBbGV4YW5k
+cmUgVG9yZ3VlIDxhbGV4YW5kcmUudG9yZ3VlQHN0LmNvbT4KPj4gQ2M6IE1hbml2YW5uYW4gU2Fk
+aGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFtQGxpbmFyby5vcmc+Cj4+IENjOiBNYXhpbWUg
+Q29xdWVsaW4gPG1jb3F1ZWxpbi5zdG0zMkBnbWFpbC5jb20+Cj4+IENjOiBQYXRyaWNlIENob3Rh
+cmQgPHBhdHJpY2UuY2hvdGFyZEBzdC5jb20+Cj4+IENjOiBQYXRyaWNrIERlbGF1bmF5IDxwYXRy
+aWNrLmRlbGF1bmF5QHN0LmNvbT4KPj4gQ2M6IGxpbnV4LXN0bTMyQHN0LW1kLW1haWxtYW4uc3Rv
+cm1yZXBseS5jb20KPj4gVG86IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwo+
+PiAtLS0KPj4gwqAgYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1N2EtYXZlbmdlcjk2LmR0cyB8
+IDkgKysrKysrKysrCj4+IMKgIDEgZmlsZSBjaGFuZ2VkLCA5IGluc2VydGlvbnMoKykKPj4KPj4g
+ZGlmZiAtLWdpdCBhL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdhLWF2ZW5nZXI5Ni5kdHMK
+Pj4gYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3YS1hdmVuZ2VyOTYuZHRzCj4+IGluZGV4
+IDcyY2EyODI4OThlYi4uYTlmM2JhOWRhMTcwIDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybS9ib290
+L2R0cy9zdG0zMm1wMTU3YS1hdmVuZ2VyOTYuZHRzCj4+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRz
+L3N0bTMybXAxNTdhLWF2ZW5nZXI5Ni5kdHMKPj4gQEAgLTU1MSw2ICs1NTEsMTUgQEAgYnJjbWY6
+IGJjcm1mQDEgewo+PiDCoMKgwqDCoMKgIH07Cj4+IMKgIH07Cj4+IMKgICsmc3BpMiB7Cj4+ICvC
+oMKgwqAgcGluY3RybC1uYW1lcyA9ICJkZWZhdWx0IjsKPj4gK8KgwqDCoCBwaW5jdHJsLTAgPSA8
+JnNwaTJfcGluc19hPjsKPj4gK8KgwqDCoCBjcy1ncGlvcyA9IDwmZ3Bpb2kgMCAwPjsKPj4gK8Kg
+wqDCoCBzdGF0dXMgPSAiZGlzYWJsZWQiOwo+PiArwqDCoMKgIC9kZWxldGUtcHJvcGVydHkvZG1h
+czsKPj4gK8KgwqDCoCAvZGVsZXRlLXByb3BlcnR5L2RtYS1uYW1lczsKPj4gK307Cj4+ICsKPj4g
+wqAgJnVhcnQ0IHsKPj4gwqDCoMKgwqDCoCAvKiBPbiBMb3cgc3BlZWQgZXhwYW5zaW9uIGhlYWRl
+ciAqLwo+PiDCoMKgwqDCoMKgIGxhYmVsID0gIkxTLVVBUlQxIjsKPj4KPiAKPiBTb3JyeSBJIChh
+Z2FpbikgbG9zdCB0aGUgY292ZXItbGV0dGVyIChJIG5lZWQgdG8gYmV0dGVyIGNvbmZpZ3VyZSBt
+eQo+IG1haWxlcikgc28gSSByZXBvbmQgb24gdGhpcyBwYXRjaCBvbmx5Lgo+IAo+IEFzIGRpc2N1
+c3NlZCwgcGF0Y2ggMSB0byAxMCBoYXZlIGJlZW4gYXBwbGllZCBvbiBzdG0zMi1uZXh0Lgo+IFBh
+dGNoZXMgMTEvMTIgaGF2ZSBiZWVuIGRyb3BwZWQgd2FpdGluZyBmb3Igb24gdXBkYXRlLgoKVGhh
+bmsgeW91IQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
+bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
+dXgtYXJtLWtlcm5lbAo=
