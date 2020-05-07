@@ -2,81 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD0511C9420
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:12:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DE5C1C942C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 17:12:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CXgzs3e43Pm1lh1cltY8pcHmG8eXYBtelPUGpj8/58A=; b=c2ZtCG4LAcBeyv
-	y7+O3CVOajBpvJK2Fz+1Z8EKPybB9N6VkcZb2vyKgIo+C21CbxNgbfZCYTduo0i7DGoP5cxcjKuJk
-	WGJE8hFJGKmBuzTqP7h3rd697ohVXOeW4oMrZJb4Zu4uYIkYktQ0eHO2tw2/5A07PUUa8Hd32XHdq
-	rNo6bqLZNGFE6XcHMwuMHtuE37iSHVZyzPWNvDRYSvfwKXKRGSBvuzRPRBxgvslqlv2baUktuGrXb
-	da2+BpuLAD6pVdYOEp/+pG751ZJlSMeepWVRENOYBUosB3DWfNieqIbGBGUp6+uGKAcBC4uvEASdK
-	mlSlAvkWchZ4MvAVbTsw==;
+	List-Owner; bh=n5X1Rn/i2rVd6QNy43YAX9rROHsj1BOL+22pwxNGRfI=; b=kdXnTwC95Rh8fO
+	T+j9A7Zx9cNJBvlTqCtmgSc6AWfp0TzrFbg5leFluF/U7h/I3gDqxL/+yIAs8gs84+7Dy58PF2wgu
+	2ZuhXovexemLoH1+rWJSE4yiUPX0riYj7H9fzUmdgCJlFuR2gPh4ZvWrEDqPleLHDRPQnAtjuQr8f
+	P7c6IquE4sVwL/hPnJiy2bC6/4G4Fmt4JF6n0ol1BFetVXzTP+wnvAhRCc63PVOHf8N9sAtwALpIK
+	xN1g+Un6g9h5Uajup3akMAQXpnls56/f5cQ/e2C+zJzB4juOaWrzWiEuubnLXbn1UiyJyAuI9mfTC
+	YQX6wChioJo7y3TI8qnw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWiBy-00009F-Rv; Thu, 07 May 2020 15:12:06 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jWiCV-0000Ve-8G; Thu, 07 May 2020 15:12:39 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWiBp-00008T-Ku
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:11:59 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id q24so2748560pjd.1
+ id 1jWiCE-0000S3-OV
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 15:12:24 +0000
+Received: by mail-pg1-x541.google.com with SMTP id d22so2947396pgk.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 08:11:57 -0700 (PDT)
+ Thu, 07 May 2020 08:12:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=zt3dWszzUGPIr1is87/3ZzRSaPFAJm76db1aD6xZhws=;
- b=TI0Y1zgsKvAwRGvVFzQgzAJe5FKsPk4nM6Qs1kkkV3SrYAqnMd/EWdCrqUe5JjReO8
- 9monr1ObfM/RMMg+6Qy0g5hfQezijmL7qGV645Q7hl3DZAX/vzVDtSdz8uwfQs7ynM0H
- O8VtsG475Cnp3USWAolj5xZcr7y60g51TfZqlE4pnoR0Ug4BxPZuc8QY+ihNBy/x1DM4
- YUmDWXIxdGI2sMrOb9y+a/9LtG7L9/poXMtaZwDmREq1Ro82qAtLi9e+eMs8amEd4323
- o2CTewy/Ya2M7CJNdNsoBx1+CCVa/j6zocbtX5R4rIJHxeBHt8TVu5xEGBtzuedcqixU
- TNQg==
+ bh=96jnTCBD83Wv0PAJTE2BBo0VXx5TqKQi9pMzwgM4Bvo=;
+ b=qkcIoMnyddwZz6l2iGAXDhyexKTgNnQAW9lafUYWDMhTepNj8Sta9ZXm4w3wyB2AST
+ 1AJTMdMBajSvLBhvM16D9KgIqtXbBuhudE+UHuISqWO+qY00UPgJD8yJPr8DZ8rCOMzJ
+ c2ItNvJ+ttYCUdfWTOe3xXVOp6Iplo5z9il0iU+Oml333s/6CXcW4Jgp77xvzRrLQgL+
+ /ncoVKcoluCYvfQGspde7NgrHxWuU1aOLIThVKDHkx9x8j/6bqj2QsmqLDnPEMdzRg9Z
+ Fznfhyk50qoESkluSuANZvefs7UgpLkAYOsCejb35HG+Jd3EE+CfYyOZaeuDWCVW5Z2i
+ 9hqg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=zt3dWszzUGPIr1is87/3ZzRSaPFAJm76db1aD6xZhws=;
- b=hbKQrAj9vDopsg7Q2P2R19T7by4iQbsAh32/Wzd9/objY1SzLmERUcmfJzXcyUYt3A
- 6Jh/81WZMoYo3b/gbpEQpTdGn3+pOBhpdTq42cXfGoPLJAtNLsXnVtVhyj0jb/EHUKEg
- AlwBzYJ0r5hPAYjZahvNEDkRPl9Q69g/EkoLACKBU1a9zntoNhokitDFPrc0OeFvw/qF
- Oe431zvg7cAujgsbjBTohEAg9erIhtcJajgeU+iHlReVgp8vLgomrGEbyarveV/OkWpb
- MnWDQKRONFgb5RRjAVKSw38k3GCwmoyUN/JVPZU5K5TCeOevO4BVznrYKh2SZ0FYZO82
- Mfow==
-X-Gm-Message-State: AGi0PuaQ4vgt7nJwYmlfQzbzDFRxG+bMB7H6QS0Ca6DOeNUbVX9YgAGl
- sf3ras52UGo7jY+NWAz2Kvc=
-X-Google-Smtp-Source: APiQypJ4IITkjemHUaedvi2tTs9YZUePEepBqshIpV75NrwzsADS0UX6wsRQ65tM/+jrQuiEF+T0Jg==
-X-Received: by 2002:a17:90b:46d1:: with SMTP id
- jx17mr550749pjb.212.1588864316603; 
- Thu, 07 May 2020 08:11:56 -0700 (PDT)
+ bh=96jnTCBD83Wv0PAJTE2BBo0VXx5TqKQi9pMzwgM4Bvo=;
+ b=LmVgfOWaAT5aoDKPz4dKUnERdkhc/utxfy0NBvkBmW02fylj92rNjvg0clDtFiTsW8
+ OVWd3M8GJKY4TCDXZ2mWHS4CbQ8+GFM5moB5Plo/yV7eRxvIsI3pBmvD2EhgF8WSF91L
+ p+/oAfcheeRdnUtSADbiJStpvHZv+8tqqQH8dyJR46qY0oAhHB16t/ZVU5Jykc8mIzc8
+ lFrVtwG49nA2LaPzdCXQ2T3Ok0vVTKXVicoOrLieUAlH55wGqYdGOu5hoRmmkJBqB/Id
+ rpOKKHaIYoUjFUBfyJ/+3aBrEFchRLTlOfmufV8LBqc1qxQZYe9UBaJ3ET9JIKUa4ck5
+ qM3Q==
+X-Gm-Message-State: AGi0Pubs+6nS/UY2N/CZ2s51vVd/qU6ndM45gvQJ3aqD7t+C60gZ7S+B
+ 5hLgZH1l59rUaF0ca7ZFWkU=
+X-Google-Smtp-Source: APiQypJdokPYKCL5kUn4xIRQIDNKHKOdREr5Pgq69HVLtf4k/OCqHfoHoqbZ9uKHEKRIlSnCEIMzsA==
+X-Received: by 2002:a63:6e81:: with SMTP id
+ j123mr12541889pgc.333.1588864342098; 
+ Thu, 07 May 2020 08:12:22 -0700 (PDT)
 Received: from suzukaze.ipads-lab.se.sjtu.edu.cn ([202.120.40.82])
- by smtp.gmail.com with ESMTPSA id j7sm5080620pfi.160.2020.05.07.08.11.52
+ by smtp.gmail.com with ESMTPSA id a196sm5276794pfd.184.2020.05.07.08.12.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 07 May 2020 08:11:55 -0700 (PDT)
+ Thu, 07 May 2020 08:12:21 -0700 (PDT)
 From: Chuhong Yuan <hslester96@gmail.com>
 To: 
-Subject: [PATCH] Input: stmfts - add missed input_unregister_device
-Date: Thu,  7 May 2020 23:11:47 +0800
-Message-Id: <20200507151147.792578-1-hslester96@gmail.com>
+Subject: [PATCH] Input: stmpe-ts - add missed input_unregister_device
+Date: Thu,  7 May 2020 23:12:13 +0800
+Message-Id: <20200507151213.792640-1-hslester96@gmail.com>
 X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_081158_221081_F0FE5A83 
-X-CRM114-Status: GOOD (  10.49  )
+X-CRM114-CacheID: sfid-20200507_081222_793890_95E96ECC 
+X-CRM114-Status: UNSURE (   9.75  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.6 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (1.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
  1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
  [202.120.40.82 listed in dnsbl.sorbs.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [hslester96[at]gmail.com]
@@ -112,41 +113,26 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 This driver calls input_register_device() in probe, but misses
-input_unregister_device() in probe failure and remove.
-Add the missed function calls to fix it.
+input_unregister_device() in remove.
+Add the missed function call to fix it.
 
 Signed-off-by: Chuhong Yuan <hslester96@gmail.com>
 ---
- drivers/input/touchscreen/stmfts.c | 7 ++++++-
- 1 file changed, 6 insertions(+), 1 deletion(-)
+ drivers/input/touchscreen/stmpe-ts.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/drivers/input/touchscreen/stmfts.c b/drivers/input/touchscreen/stmfts.c
-index b6f95f20f924..4345aa98a320 100644
---- a/drivers/input/touchscreen/stmfts.c
-+++ b/drivers/input/touchscreen/stmfts.c
-@@ -728,8 +728,10 @@ static int stmfts_probe(struct i2c_client *client,
- 	}
- 
- 	err = devm_device_add_group(&client->dev, &stmfts_attribute_group);
--	if (err)
-+	if (err) {
-+		input_unregister_device(sdata->input);
- 		return err;
-+	}
- 
- 	pm_runtime_enable(&client->dev);
- 	device_enable_async_suspend(&client->dev);
-@@ -739,7 +741,10 @@ static int stmfts_probe(struct i2c_client *client,
- 
- static int stmfts_remove(struct i2c_client *client)
+diff --git a/drivers/input/touchscreen/stmpe-ts.c b/drivers/input/touchscreen/stmpe-ts.c
+index 7e16fcfe3b95..5e62b466629b 100644
+--- a/drivers/input/touchscreen/stmpe-ts.c
++++ b/drivers/input/touchscreen/stmpe-ts.c
+@@ -350,6 +350,7 @@ static int stmpe_ts_remove(struct platform_device *pdev)
  {
-+	struct stmfts_data *sdata = i2c_get_clientdata(client);
-+
- 	pm_runtime_disable(&client->dev);
-+	input_unregister_device(sdata->input);
+ 	struct stmpe_touch *ts = platform_get_drvdata(pdev);
+ 
++	input_unregister_device(ts->idev);
+ 	stmpe_disable(ts->stmpe, STMPE_BLOCK_TOUCHSCREEN);
  
  	return 0;
- }
 -- 
 2.26.2
 
