@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 811971C8A04
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DF1A1C89FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:03:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NOMBg3PUUKQdZ+m1JhNuIOCwqPn1eI/uOGydCTFZ9xg=; b=lhFmpdgM3c4w25
-	Sh2/HVEWq2w5y1fA6mbty/JX10yac9HX6Gw2I49Nb5Ol7C1TbuLVA4CeaQEVAwA50SS/jLSqAGXel
-	3frnYnRRbw9zSB/g4qxgC8T72ueJqeHlcTluCeeixh6hJRMAG0Oac/TMfh+ryIwXKLYM+NNSpN/pE
-	SqfyZiZJBnFfYmPay48mT6Dh/O2cRAiSYtP35pPpwCncAoxag4d6PD4TKaujoKMykAvOFSDHg8/A7
-	iu6c/jTAFp1w8lOPWtTLfhsSVkiaeg+rZT4QcOie4YkLoRDDsVJ9JdqHFAzqnFUrwQheOHLPMLdDt
-	BlZxarpxHUNFdSLXkp9w==;
+	List-Owner; bh=ALZ6AXybDzeqDocv9ciaNVwpJVicb8i4hJmgPvXpKFs=; b=fXq17oR5b5PlMk
+	niohn9++29UnR62iMKLvKndMbYqcF25CtjvNp2GnIeeV1NNudLJZKJWkbZQ0fPVxDKpPzAK6vWqQw
+	WBFVgoXKKWwuBY2ia2scc+LirWRjdD4iKGzZOj9BBk4naUqPQ98wva1LRkNvRaCHOA7qaWTk91apH
+	izvl9R0Haa9hq+X9bWjm3vVaYoaKsjmQaGNWsTSmIs3tnNqb/4BlPHjHJ6yAsyz/J8doIjrDwfTKo
+	If6Q070YCIRjJvpbEmzlTantXWOZqttor+9SzQuGM4lo1EmKO47A5I+afuGEMKbx6x33zmR1R00mC
+	PbIQQbyhK64N4508xmtw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfFa-0000Gm-CU; Thu, 07 May 2020 12:03:38 +0000
+	id 1jWfEq-0007tJ-MB; Thu, 07 May 2020 12:02:52 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfEL-0007ei-5n
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:25 +0000
+ id 1jWfEH-0007c2-Kn
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:19 +0000
 Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id B653B1428696BD3F08A5;
+ by Forcepoint Email with ESMTP id 9590B2471D12B6EA3F03;
  Thu,  7 May 2020 20:02:04 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
@@ -33,9 +33,9 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH RFC v3 06/12] perf pmu: Add pmu_id()
-Date: Thu, 7 May 2020 19:57:45 +0800
-Message-ID: <1588852671-61996-7-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC v3 07/12] perf pmu: Add pmu_add_sys_aliases()
+Date: Thu, 7 May 2020 19:57:46 +0800
+Message-ID: <1588852671-61996-8-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
 References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
@@ -43,8 +43,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_050221_404000_A9F36A66 
-X-CRM114-Status: GOOD (  11.40  )
+X-CRM114-CacheID: sfid-20200507_050217_851117_AFAF4980 
+X-CRM114-Status: GOOD (  11.20  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -76,70 +76,132 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a function to read the PMU id sysfs entry. We only do it for uncore
-PMUs where this would be relevant.
+Add pmu_add_sys_aliases() to add system PMU events aliases.
+
+For adding system PMU events, we iterate through all the events per
+SoC event table in pmu_sys_event_tables[].
+
+Matches must satisfy both:
+- PMU identifer matches event "compat" value
+- like uncore event matching, the event "Unit" member must match; this
+  match under return value of pmu_uncore_alias_match() (maybe rename that
+  function?)
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- tools/perf/util/pmu.c | 18 ++++++++++++++++++
- tools/perf/util/pmu.h |  1 +
- 2 files changed, 19 insertions(+)
+ tools/perf/util/pmu.c | 78 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ tools/perf/util/pmu.h |  2 ++
+ 2 files changed, 80 insertions(+)
 
 diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
-index ef6a63f3d386..6f77c6af9e04 100644
+index 6f77c6af9e04..3986d2360fc1 100644
 --- a/tools/perf/util/pmu.c
 +++ b/tools/perf/util/pmu.c
-@@ -594,6 +594,7 @@ static struct perf_cpu_map *__pmu_cpumask(const char *path)
-  * Uncore PMUs have a "cpumask" file under sysfs. CPU PMUs (e.g. on arm/arm64)
-  * may have a "cpus" file.
-  */
-+#define CPUS_TEMPLATE_ID	"./bus/event_source/devices/%s/identifier"
- #define CPUS_TEMPLATE_UNCORE	"%s/bus/event_source/devices/%s/cpumask"
- #define CPUS_TEMPLATE_CPU	"%s/bus/event_source/devices/%s/cpus"
- 
-@@ -632,6 +633,21 @@ static bool pmu_is_uncore(const char *name)
- 	return file_available(path);
+@@ -809,6 +809,83 @@ static void pmu_add_cpu_aliases(struct list_head *head, struct perf_pmu *pmu)
+ 	pmu_add_cpu_aliases_map(head, pmu, map);
  }
  
-+static char *pmu_id(const char *name)
++void pmu_for_each_sys_event(pmu_sys_event_iter_fn fn, void *data)
 +{
-+	char path[PATH_MAX], *str;
-+	size_t len;
++	int i = 0;
 +
-+	snprintf(path, PATH_MAX, CPUS_TEMPLATE_ID, name);
++	while (1) {
++		struct pmu_sys_events *event_table;
++		int j = 0;
 +
-+	if (sysfs__read_str(path, &str, &len) < 0)
-+		return NULL;
++		event_table = &pmu_sys_event_tables[i++];
 +
-+	str[len - 1] = 0; // remove line feed
++		if (!event_table->table)
++			break;
 +
-+	return str;
++		while (1) {
++			struct pmu_event *pe = &event_table->table[j++];
++			int ret;
++
++			if (!pe->name && !pe->metric_group && !pe->metric_name)
++				break;
++
++			ret = fn(pe, data);
++			if (ret)
++				break;
++		}
++	}
 +}
 +
- /*
-  *  PMU CORE devices have different name other than cpu in sysfs on some
-  *  platforms.
-@@ -844,6 +860,8 @@ static struct perf_pmu *pmu_lookup(const char *name)
- 	pmu->name = strdup(name);
- 	pmu->type = type;
- 	pmu->is_uncore = pmu_is_uncore(name);
-+	if (pmu->is_uncore)
-+		pmu->id = pmu_id(name);
++struct pmu_sys_event_iter_data {
++	struct list_head *head;
++	struct perf_pmu *pmu;
++};
++
++static int pmu_add_sys_aliases_iter_fn(struct pmu_event *pe, void *data)
++{
++	struct pmu_sys_event_iter_data *idata = data;
++	struct perf_pmu *pmu = idata->pmu;
++
++	if (!pe->name) {
++		if (pe->metric_group || pe->metric_name)
++			return 0;
++		return -EINVAL;
++	}
++
++	if (!pe->compat || !pe->pmu)
++		return 0;
++
++	if (!strcmp(pmu->id, pe->compat) &&
++	    pmu_uncore_alias_match(pe->pmu, pmu->name)) {
++		__perf_pmu__new_alias(idata->head, NULL,
++				      (char *)pe->name,
++				      (char *)pe->desc,
++				      (char *)pe->event,
++				      (char *)pe->long_desc,
++				      (char *)pe->topic,
++				      (char *)pe->unit,
++				      (char *)pe->perpkg,
++				      (char *)pe->metric_expr,
++				      (char *)pe->metric_name,
++				      (char *)pe->deprecated);
++	}
++
++	return 0;
++}
++
++static void pmu_add_sys_aliases(struct list_head *head, struct perf_pmu *pmu)
++{
++	struct pmu_sys_event_iter_data idata = {
++		.head = head,
++		.pmu = pmu,
++	};
++
++	if (!pmu->id)
++		return;
++
++	pmu_for_each_sys_event(pmu_add_sys_aliases_iter_fn, &idata);
++}
++
+ struct perf_event_attr * __weak
+ perf_pmu__get_default_config(struct perf_pmu *pmu __maybe_unused)
+ {
+@@ -864,6 +941,7 @@ static struct perf_pmu *pmu_lookup(const char *name)
+ 		pmu->id = pmu_id(name);
  	pmu->max_precise = pmu_max_precise(name);
  	pmu_add_cpu_aliases(&aliases, pmu);
++	pmu_add_sys_aliases(&aliases, pmu);
  
+ 	INIT_LIST_HEAD(&pmu->format);
+ 	INIT_LIST_HEAD(&pmu->aliases);
 diff --git a/tools/perf/util/pmu.h b/tools/perf/util/pmu.h
-index 5fb3f16828df..62ebca9481fe 100644
+index 62ebca9481fe..f75f54afb354 100644
 --- a/tools/perf/util/pmu.h
 +++ b/tools/perf/util/pmu.h
-@@ -24,6 +24,7 @@ struct perf_event_attr;
+@@ -106,6 +106,8 @@ void pmu_add_cpu_aliases_map(struct list_head *head, struct perf_pmu *pmu,
+ struct pmu_events_map *perf_pmu__find_map(struct perf_pmu *pmu);
+ bool pmu_uncore_alias_match(const char *pmu_name, const char *name);
  
- struct perf_pmu {
- 	char *name;
-+	char *id;
- 	__u32 type;
- 	bool selectable;
- 	bool is_uncore;
++typedef int (*pmu_sys_event_iter_fn)(struct pmu_event *pe, void *data);
++void pmu_for_each_sys_event(pmu_sys_event_iter_fn fn, void *data);
+ int perf_pmu__convert_scale(const char *scale, char **end, double *sval);
+ 
+ #endif /* __PMU_H */
 -- 
 2.16.4
 
