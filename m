@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DE9A1C8A0E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:05:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 811971C8A04
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:03:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QwTMXHCp9Ao2/sk/Z1A5wByJSvPujPBj2oMTwD01++g=; b=BR1xKECAU7zbS0
-	H7eZNjni4lvhGVFfvlaYi1DTOXVZAEyihm2ZJRaNzUIHlMhkc4Pt5ZWJPVeFmiPopxoWUD1A+5awT
-	cO9ZYEWR8p6wOpQWMCSrMH3oKgVNrBOx8prafEzOe8eTcGi3LpDY8vCIrRTA7mCa3BT0otokcTyiU
-	p8focdCXzbsk7Jb9RNw8BT71AIbNz9mpdmgkN+TvcVgm0ITuuisrSXhfp4bKOtJ3LvRwx7unmKqg9
-	12autjqIPOcs1rWs3skZLEhWt/ihGvGzY/dPA78rcyA4Jc/k6P2ArVI6ksMeV9i2ybDQl4XNPuh/N
-	5BMAidvQBSsa53cMFV3w==;
+	List-Owner; bh=NOMBg3PUUKQdZ+m1JhNuIOCwqPn1eI/uOGydCTFZ9xg=; b=lhFmpdgM3c4w25
+	Sh2/HVEWq2w5y1fA6mbty/JX10yac9HX6Gw2I49Nb5Ol7C1TbuLVA4CeaQEVAwA50SS/jLSqAGXel
+	3frnYnRRbw9zSB/g4qxgC8T72ueJqeHlcTluCeeixh6hJRMAG0Oac/TMfh+ryIwXKLYM+NNSpN/pE
+	SqfyZiZJBnFfYmPay48mT6Dh/O2cRAiSYtP35pPpwCncAoxag4d6PD4TKaujoKMykAvOFSDHg8/A7
+	iu6c/jTAFp1w8lOPWtTLfhsSVkiaeg+rZT4QcOie4YkLoRDDsVJ9JdqHFAzqnFUrwQheOHLPMLdDt
+	BlZxarpxHUNFdSLXkp9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfGn-0001UX-M6; Thu, 07 May 2020 12:04:53 +0000
+	id 1jWfFa-0000Gm-CU; Thu, 07 May 2020 12:03:38 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWfEK-0007eq-PS
+ id 1jWfEL-0007ei-5n
  for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:02:25 +0000
 Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id C823112467B10D8A5B61;
+ by Forcepoint Email with ESMTP id B653B1428696BD3F08A5;
  Thu,  7 May 2020 20:02:04 +0800 (CST)
 Received: from localhost.localdomain (10.69.192.58) by
  DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
@@ -33,10 +33,9 @@ From: John Garry <john.garry@huawei.com>
 To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
  <mark.rutland@arm.com>, <alexander.shishkin@linux.intel.com>,
  <jolsa@redhat.com>, <namhyung@kernel.org>
-Subject: [PATCH RFC v3 05/12] perf vendor events arm64: Add hip08 SMMUv3 PMCG
- events
-Date: Thu, 7 May 2020 19:57:44 +0800
-Message-ID: <1588852671-61996-6-git-send-email-john.garry@huawei.com>
+Subject: [PATCH RFC v3 06/12] perf pmu: Add pmu_id()
+Date: Thu, 7 May 2020 19:57:45 +0800
+Message-ID: <1588852671-61996-7-git-send-email-john.garry@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
 References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
@@ -44,9 +43,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.69.192.58]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_050221_009157_A8C7DB1C 
-X-CRM114-Status: UNSURE (   9.65  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200507_050221_404000_A9F36A66 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,65 +76,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the SMMUv3 PMCG (Performance Monitor Event Group) events for hip08
-platform.
-
-This contains a mix of architected and IMP def events
+Add a function to read the PMU id sysfs entry. We only do it for uncore
+PMUs where this would be relevant.
 
 Signed-off-by: John Garry <john.garry@huawei.com>
 ---
- .../arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json    | 42 ++++++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
+ tools/perf/util/pmu.c | 18 ++++++++++++++++++
+ tools/perf/util/pmu.h |  1 +
+ 2 files changed, 19 insertions(+)
 
-diff --git a/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
-new file mode 100644
-index 000000000000..f2a1cb0332a6
---- /dev/null
-+++ b/tools/perf/pmu-events/arch/arm64/hisilicon/hip08/sys/smmu-v3-pmcg.json
-@@ -0,0 +1,42 @@
-+[
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.CYCLES"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.TRANSACTION"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.TLB_MISS"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.CONFIG_CACHE_MISS"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.TRANS_TABLE_WALK_ACCESS"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.CONFIG_STRUCT_ACCESS"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.PCIE_ATS_TRANS_RQ"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "ArchStdEvent": "smmuv3_pmcg.PCIE_ATS_TRANS_PASSED"
-+	    "Compat": "hip08"
-+   },
-+   {
-+	    "EventCode": "0x8a",
-+	    "EventName": "smmuv3_pmcg.L1_TLB",
-+	    "BriefDescription": "SMMUv3 PMCG L1 TABLE transation",
-+	    "PublicDescription": "SMMUv3 PMCG L1 TABLE transation",
-+	    "Unit": "smmuv3_pmcg",
-+	    "Compat": "hip08"
-+   },
-+]
+diff --git a/tools/perf/util/pmu.c b/tools/perf/util/pmu.c
+index ef6a63f3d386..6f77c6af9e04 100644
+--- a/tools/perf/util/pmu.c
++++ b/tools/perf/util/pmu.c
+@@ -594,6 +594,7 @@ static struct perf_cpu_map *__pmu_cpumask(const char *path)
+  * Uncore PMUs have a "cpumask" file under sysfs. CPU PMUs (e.g. on arm/arm64)
+  * may have a "cpus" file.
+  */
++#define CPUS_TEMPLATE_ID	"./bus/event_source/devices/%s/identifier"
+ #define CPUS_TEMPLATE_UNCORE	"%s/bus/event_source/devices/%s/cpumask"
+ #define CPUS_TEMPLATE_CPU	"%s/bus/event_source/devices/%s/cpus"
+ 
+@@ -632,6 +633,21 @@ static bool pmu_is_uncore(const char *name)
+ 	return file_available(path);
+ }
+ 
++static char *pmu_id(const char *name)
++{
++	char path[PATH_MAX], *str;
++	size_t len;
++
++	snprintf(path, PATH_MAX, CPUS_TEMPLATE_ID, name);
++
++	if (sysfs__read_str(path, &str, &len) < 0)
++		return NULL;
++
++	str[len - 1] = 0; // remove line feed
++
++	return str;
++}
++
+ /*
+  *  PMU CORE devices have different name other than cpu in sysfs on some
+  *  platforms.
+@@ -844,6 +860,8 @@ static struct perf_pmu *pmu_lookup(const char *name)
+ 	pmu->name = strdup(name);
+ 	pmu->type = type;
+ 	pmu->is_uncore = pmu_is_uncore(name);
++	if (pmu->is_uncore)
++		pmu->id = pmu_id(name);
+ 	pmu->max_precise = pmu_max_precise(name);
+ 	pmu_add_cpu_aliases(&aliases, pmu);
+ 
+diff --git a/tools/perf/util/pmu.h b/tools/perf/util/pmu.h
+index 5fb3f16828df..62ebca9481fe 100644
+--- a/tools/perf/util/pmu.h
++++ b/tools/perf/util/pmu.h
+@@ -24,6 +24,7 @@ struct perf_event_attr;
+ 
+ struct perf_pmu {
+ 	char *name;
++	char *id;
+ 	__u32 type;
+ 	bool selectable;
+ 	bool is_uncore;
 -- 
 2.16.4
 
