@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337971C8D7B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:05:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB4FE1C8D7C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:05:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CrLKRRzrzGKWDdJXS77+/Yf2NgU+zBvDdhMheNpVyuI=; b=k3IRpmHY++41hJ
-	qQc/dd8PUu3iTHtr2UYVmGqeSd6SGZwFchrIXGHzafLQS4ANHYLkMNb1LvhzDP3zioc2cV5K4gGdk
-	Me3wZ9odXZRsVuh2sklahAeJTFL54yCjF+53x+3LE/UGnzaIOfEPcvUHTa6/NBB3Kzo+msl7WVP22
-	IwKA1JHw5CDCqpsg+cftAJIcXvuRkKOHv/BNNxHaND/inta8prLu0QvaQ+JyoKn8Z6i1TsRtU/0JD
-	+x2fK42iQUuhGpQrKzjiaGAdsRodvjth8ZfE2m8+UDMTJTxAsBvIrIxN4VkgD47NSvjFWvafZ55aj
-	MjeSwAn3DPM21dxZtpbQ==;
+	List-Owner; bh=5bn5C6f2PgZhIlSjeIYkEGvkxEXeeIpZfiJ+YmrgYug=; b=LPN6Ou8/e9b5q6
+	+uOCs90bp/aX3w+vYgbFy3QDtvOgvKfHXzapZMGVOlgCtRknjYgz+B1DqTj56TnootOirf7bE21qV
+	EqQuR1fPVrxzXNl70y6SyKMos772GmW4Bps9ySotZeZhbPFkHvHYUSwt88Bq9MuEvMgFwagKm8j6L
+	QyvDoDomSQT0Q/XgOIgJ18v99WFmLIg89pPfJzQLdnTBRcFWYv1Wkk5rqWXlwb4r33FTV3HmjJXtN
+	+5PDSX+wTzMEC/wDP0M7g6lHSwuNYrXbH5m4LCMJMyjEPeZzaP6wBJaYCUqYKedcoPg0ckQpLVoyl
+	O0W9ork4r0pG4r9m2IVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWh9N-0000TN-Fb; Thu, 07 May 2020 14:05:21 +0000
+	id 1jWh9a-00021g-Iw; Thu, 07 May 2020 14:05:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWh96-0007uB-EH
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:05:06 +0000
+ id 1jWh98-0008Vs-Mp
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:05:08 +0000
 Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
  [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 32DE4205C9;
- Thu,  7 May 2020 14:05:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8BD282084D;
+ Thu,  7 May 2020 14:05:04 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588860304;
- bh=do7jj4xNiV93/Ok5rLnVTv8RM5tgiHm8W42BbdTJhtg=;
+ s=default; t=1588860306;
+ bh=SiwCH8RCKfzXT3qqrhJZK6OicpexUtZYquQREUsumG0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=ihvV3xfnDKpebQZ3Ywf5sLUtP522MrZXgyFJFLL6xvm1K7NICybc9EkWnEBnUvrt3
- zpw1blEz4xFNQjy1YPstcN3IqAWG46LTywYV4IaOyqnEiAfIJVg8v1FctIjfohU9GN
- HJcEKsTlK1EWrOs9YMTszd52O2RkDWjFiekG+nfY=
+ b=AvO/xVWP7PR6qhNwWQTmOuJP+VmmvTjbcv7/q8WBox/SvGGpjlLs0ZpZWiMQQqE8k
+ 07XEMskdNPbV4W/3A3Sd8DKXulryXo/P7jizjir6hH/A3wgkZ1oTWAuapQYbWI+5An
+ RgrPeC32TR1T/YvGhq3ltgPztLpwbdSfcFH4UqHk=
 From: Will Deacon <will@kernel.org>
-To: Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
- Rob Herring <robh@kernel.org>, Andre Przywara <andre.przywara@arm.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: Re: [PATCH v2 00/17] dts/dt-bindings: Fix Arm Ltd. ARMv8 "boards"
-Date: Thu,  7 May 2020 15:04:53 +0100
-Message-Id: <158885788096.89602.16621379341221804648.b4-ty@kernel.org>
+To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
+ Douglas Anderson <dianders@chromium.org>, Joerg Roedel <joro@8bytes.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Subject: Re: [PATCHv2] iommu/arm-smmu: Make remove callback message more
+ informative
+Date: Thu,  7 May 2020 15:04:54 +0100
+Message-Id: <158885763013.86999.17864741879925126551.b4-ty@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200507112430.183940-1-andre.przywara@arm.com>
-References: <20200507112430.183940-1-andre.przywara@arm.com>
+In-Reply-To: <20200423095531.9868-1-saiprakash.ranjan@codeaurora.org>
+References: <20200423095531.9868-1-saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_070504_520226_88FEA517 
-X-CRM114-Status: UNSURE (   8.38  )
+X-CRM114-CacheID: sfid-20200507_070506_797542_2E12D9C8 
+X-CRM114-Status: UNSURE (   9.13  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -79,28 +80,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- catalin.marinas@arm.com, Marc Zyngier <maz@kernel.org>,
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ iommu@lists.linux-foundation.org, linux-arm-msm@vger.kernel.org,
  Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 May 2020 12:24:13 +0100, Andre Przywara wrote:
-> Just some small fixes in v2: changing the GIC binding instead of the
-> compatible strings used for Juno, re-ordering the patches, and, most
-> importantly, (hopefully) fixing the subject lines ;-)
-> I keep the last two patches in, even though I agree that there should be
-> a more generic solution.
-> -----------------------------------
+On Thu, 23 Apr 2020 15:25:31 +0530, Sai Prakash Ranjan wrote:
+> Currently on reboot/shutdown, the following messages are
+> displayed on the console as error messages before the
+> system reboots/shutdown as part of remove callback.
+> 
+> On SC7180:
+> 
+>   arm-smmu 15000000.iommu: removing device with active domains!
+>   arm-smmu 5040000.iommu: removing device with active domains!
 > 
 > [...]
 
-Applied the SMMU patch to will (for-joerg/arm-smmu/updates), thanks!
+Applied to will (for-joerg/arm-smmu/updates), thanks!
 
-[01/17] dt-bindings: arm-smmu: Allow mmu-400, smmu-v1 compatible
-        https://git.kernel.org/will/c/bd0d696023cb
+[1/1] iommu/arm-smmu: Make remove callback message more informative
+      https://git.kernel.org/will/c/02782f3d60f1
 
 Cheers,
 -- 
