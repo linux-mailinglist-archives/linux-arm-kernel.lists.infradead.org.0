@@ -2,56 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 455F51C883A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:30:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6DEA1C884E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 13:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qGfUXMixK54oCJLmDT3v6mQCj4LDfQV23hzp60vj47k=; b=Vdi
-	ll/+XrYJm2PSCExqqAHnBkAFp0j0Fgvyav+pJuE+NVMhzchmccugfEZVXYUWu5ocmH46z8Zatvy+U
-	UdXqyvFf1BuxQosyfVmeFzlGNpVjCtw3RSbfzO2vESAUwf2W7MlwInymY/5dCZruCDJ524W7dpgR1
-	5ASfsrt+s8ENZH6qpp44qpPfO61MM/bflj6T2Epp56ViPWNSdUeUZS8PBjWvtkclIkzmTp/kyAc9c
-	0ItUUNZ5X49xxLB/7x0pnEqwhyWw1qG8umM7TH0WDoRQPwP/KaxXxuVQBb4ViKlfO11Hbz660DN/W
-	7krgPMW0MYxiYQemMTUWfAJi3nqsneA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=+MZrV0QikfoOOt/64/N9D2ybUrOeiYzA/0xf1BCEZNk=; b=qVxmjQuuUK4IaDQiOB4YPozCJa
+	kmkF3ZtmS8dUl8ESv1/JN35c4W++0WBAaYApLG7nVPZFxwegT3uj40mmJvh5Kyucug0zSmtLh1H+I
+	tHULomuXiu8L/wAkqFL83Cn74tcqAiYa9YqtHqt8c43D7+KykUbROe0Z59lOuLW+EkmBgUe68RfRE
+	L60estibddKcP1t68/Ycn8iYQr0V7V8TavdR84Tgt+JWS2OPga7N0vHsM69mFqP6UYsceAZbquoLC
+	4UG2tagH7bWddJFLNzI+26zRDZVzWLbarcnFAowQwu21M21fwv0bxvJ+Pr7BchzLQ84WKoA5GVufJ
+	yQk0L3qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWejZ-00085v-Bs; Thu, 07 May 2020 11:30:33 +0000
-Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
+	id 1jWekY-0000ml-M9; Thu, 07 May 2020 11:31:34 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWejK-0007ue-Of
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:30:21 +0000
+ id 1jWejO-00080N-R7
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 11:30:24 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:6572:4a1f:d283:9ae8])
- by xavier.telenet-ops.be with bizsmtp
- id bnW3220043ZRV0X01nW3Ki; Thu, 07 May 2020 13:30:11 +0200
+ by baptiste.telenet-ops.be with bizsmtp
+ id bnW3220073ZRV0X01nW3o3; Thu, 07 May 2020 13:30:15 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jWej4-0006zG-Vp; Thu, 07 May 2020 13:30:02 +0200
+ id 1jWej4-0006zF-Vp; Thu, 07 May 2020 13:30:02 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jWej4-00068L-UG; Thu, 07 May 2020 13:30:02 +0200
+ id 1jWej4-00068N-VW; Thu, 07 May 2020 13:30:02 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
  Jens Axboe <axboe@kernel.dk>, Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>, "Rafael J . Wysocki" <rjw@rjwysocki.net>,
  Viresh Kumar <viresh.kumar@linaro.org>, Zhang Rui <rui.zhang@intel.com>,
  Daniel Lezcano <daniel.lezcano@linaro.org>
-Subject: [PATCH 0/4] qoriq: Add platform dependencies
-Date: Thu,  7 May 2020 13:29:51 +0200
-Message-Id: <20200507112955.23520-1-geert+renesas@glider.be>
+Subject: [PATCH 1/4] ahci: qoriq: Add platform dependencies
+Date: Thu,  7 May 2020 13:29:52 +0200
+Message-Id: <20200507112955.23520-2-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200507112955.23520-1-geert+renesas@glider.be>
+References: <20200507112955.23520-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_043019_799783_18C7D043 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20200507_043023_049314_8307B409 
+X-CRM114-Status: UNSURE (   9.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:120:4:0:0:f00:14 listed in]
+ low trust [2a02:1800:120:4:0:0:f00:13 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -79,45 +83,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi all,
+The Freescale QorIQ AHCI SATA controller is only present on Freescale
+Layerscape SoCs.  Add platform dependencies to the AHCI_QORIQ config
+symbol, to avoid asking the user about it when configuring a kernel
+without Layerscape support.
 
-Several QorIQ blocks are only present on Freescale or NXP SoCs.
-This series adds platform dependencies to the corresponding config
-ymbols, to avoid asking the user about them when configuring a kernel
-without support for these SoCs.
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+ drivers/ata/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-Most patches in this series are independent, but the third patch may
-cause some Kconfig warnings when applied before the second patch, and
-enabling the QorIQ CPU frequency scaling driver in a non-Layerscape
-kernel.
-
-Thanks for your comments!
-
-Geert Uytterhoeven (4):
-  ahci: qoriq: Add platform dependencies
-  cpufreq: qoriq: Add platform dependencies
-  clk: qoriq: Add platform dependencies
-  thermal: qoriq: Add platform dependencies
-
- drivers/ata/Kconfig     | 1 +
- drivers/clk/Kconfig     | 3 ++-
- drivers/cpufreq/Kconfig | 3 ++-
- drivers/thermal/Kconfig | 4 ++--
- 4 files changed, 7 insertions(+), 4 deletions(-)
-
+diff --git a/drivers/ata/Kconfig b/drivers/ata/Kconfig
+index 05ecdce1b702cf8b..d9e66b37acd1862a 100644
+--- a/drivers/ata/Kconfig
++++ b/drivers/ata/Kconfig
+@@ -264,6 +264,7 @@ config AHCI_XGENE
+ config AHCI_QORIQ
+ 	tristate "Freescale QorIQ AHCI SATA support"
+ 	depends on OF
++	depends on SOC_LS1021A || ARCH_LAYERSCAPE || COMPILE_TEST
+ 	select SATA_HOST
+ 	help
+ 	  This option enables support for the Freescale QorIQ AHCI SoC's
 -- 
 2.17.1
 
-Gr{oetje,eeting}s,
-
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
