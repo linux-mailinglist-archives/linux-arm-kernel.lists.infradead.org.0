@@ -2,60 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9952D1C90EE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:56:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 591DE1C92C4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 16:58:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+Pe9/59ilGOCh1Gz6fmKnkr39s9QDlQcbUbO0i4YWyg=; b=QAIlTmRCX1A7Ai0uP5EszYZ9F
-	WlR/3CqEUgiYJgFd2s4pY6KoVNxif1mMlN9mqukNnWCh2Cx94Bv2K5pRf0OFTEH78MoNSy+Ef3wk7
-	L73E7e+uBev/Az+E9JU1WV61jvu7WxYnZS0R0+RW58GIHXNaGcJBDhkOFQFbci1pOlA+xN1K0n1T9
-	3hhqptieF00BLiAHRoFxzbloo7yf56c7euzoW+zW7B8aORNWR6Ipb5Dot9D9+Kq4WBOORbai6xbMT
-	x8NSExDE0ErI2UBTmV1BsVV6tPJ4sF899HBi18ksH7AMGyVg14n6WpbJiXL55ZpKZ7zkmIzFHTqiw
-	E4vk5PdDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z2zXREVK3LzB/zCDokkB0tLNROez8rTnIoBAJ4BbD20=; b=E7iu6UxbwB/CP1
+	4OzhkclCCoVxNIk5kSh2gPBi9FAyXHyHbY889dnxVBC6OA7vD7PAgGF1ZMUyxnVOMKftR9cKq1Lau
+	MnXnQHdvUm+jqxZ9yI5D0OGzANfhcnEC7k3METGUkoIBUZuFPPxgeeBXDRcR1suWJSwgsr5PxY1HW
+	2zjwnghQ0G0agyiqoGccuolA4L+Bs+2i5V1mGnX7jF4W2ZRoowth2zuWhiF+sWchJFKF4rCbFjuvc
+	q7G09aesG8EawRctnbdNq1WrK8ZVDuHbtYVlblE7fMjT52+YdDpTSiwJPzgiLmctWuZj5Ss8tLUYC
+	3SKcxoSqewmzUBikyO8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWhwy-00089y-Vz; Thu, 07 May 2020 14:56:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWhwt-00089b-LV
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:56:32 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 75A1C1FB;
- Thu,  7 May 2020 07:56:30 -0700 (PDT)
-Received: from [10.57.36.85] (unknown [10.57.36.85])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1D63D3F68F;
- Thu,  7 May 2020 07:56:28 -0700 (PDT)
-Subject: Re: [PATCH] iomm/arm-smmu: Add stall implementation hook
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>,
- Rob Clark <robdclark@gmail.com>
-References: <20200421202004.11686-1-saiprakash.ranjan@codeaurora.org>
- <b491e02ad790a437115fdeab6b21bc48@codeaurora.org>
- <1ced023b-157c-21a0-ac75-1adef7f029f0@arm.com>
- <fad5dc096a2bd9404341ba8738ba8fc9@codeaurora.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <80a3b07d-f3a7-07c4-4e8f-76e28563027c@arm.com>
-Date: Thu, 7 May 2020 15:56:28 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jWhyg-0000GX-I7; Thu, 07 May 2020 14:58:22 +0000
+Received: from pb-smtp20.pobox.com ([173.228.157.52])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWhyY-0000FM-H9
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 14:58:16 +0000
+Received: from pb-smtp20.pobox.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id 81493CEABE;
+ Thu,  7 May 2020 10:58:11 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
+ :cc:subject:in-reply-to:message-id:references:mime-version
+ :content-type; s=sasl; bh=RvoqLAm6E1F9sc8szmi/z/waAck=; b=l6R4ig
+ oyu55Dk2igYtcQHsvFbjMaF9RGXKq9et/a9WIv+BUueIGjitLer8bItqCdJqh7lL
+ Pjaw8xItuPbCTu8pav5dimqp/OY8Wy5hvgS5ssYwu9ldzFEOdWrRhE7f6xzzuTKA
+ G3twC2VRgX2P7K7nnM5girhHM5g2ssditrfV4=
+Received: from pb-smtp20.sea.icgroup.com (unknown [127.0.0.1])
+ by pb-smtp20.pobox.com (Postfix) with ESMTP id 78D2ECEABD;
+ Thu,  7 May 2020 10:58:11 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
+ h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
+ s=2016-12.pbsmtp; bh=avpgv82DmbB3yL/GA/TaTqceQa67MoZ6ohBnqrkR+4Q=;
+ b=l0QLt9nNFzBYHAvu3zUntQuIDzb6t+XapKITA1VEv/wFKgMySZYT3gCggWCEz5wK11I4HgOhqw/6XPXclTA47eqzjUH005vsdKSClfRzx7PgpoqklvJ69vaNublc4kwZFnzUdE4PZmqxxWNPSeSzArIWhNv7AyHQTIJpFS7oQyE=
+Received: from yoda.home (unknown [24.203.50.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by pb-smtp20.pobox.com (Postfix) with ESMTPSA id 6A4CFCEABC;
+ Thu,  7 May 2020 10:58:08 -0400 (EDT)
+ (envelope-from nico@fluxnic.net)
+Received: from xanadu.home (xanadu.home [192.168.2.2])
+ by yoda.home (Postfix) with ESMTPSA id 65CA42DA0CE1;
+ Thu,  7 May 2020 10:58:06 -0400 (EDT)
+Date: Thu, 7 May 2020 10:58:06 -0400 (EDT)
+From: Nicolas Pitre <nico@fluxnic.net>
+To: Geert Uytterhoeven <geert+renesas@glider.be>
+Subject: Re: [PATCH/RFC] ARM: dts: rza2mevb: Upstream Linux requires SDRAM
+In-Reply-To: <20200507080528.547-1-geert+renesas@glider.be>
+Message-ID: <nycvar.YSQ.7.77.849.2005071056450.5637@knanqh.ubzr>
+References: <20200507080528.547-1-geert+renesas@glider.be>
 MIME-Version: 1.0
-In-Reply-To: <fad5dc096a2bd9404341ba8738ba8fc9@codeaurora.org>
-Content-Language: en-GB
+X-Pobox-Relay-ID: 29C2F538-9073-11EA-B970-B0405B776F7B-78420484!pb-smtp20.pobox.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_075631_746075_D5C72F03 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200507_075814_626883_351F2D51 
+X-CRM114-Status: UNSURE (   8.08  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [173.228.157.52 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,35 +86,22 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- iommu@lists.linux-foundation.org, linux-kernel@vger.kernel.org,
- Jordan Crouse <jcrouse@codeaurora.org>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Magnus Damm <magnus.damm@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, linux-renesas-soc@vger.kernel.org,
+ Chris Brandt <chris.brandt@renesas.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-07 1:06 pm, Sai Prakash Ranjan wrote:
-[...]
-> We could have our own context fault handler in QCOM implementation,
-> but that would just be duplicating things from arm-smmu context fault
-> handler. So I did not think it makes much sense to have our own
-> fault handler in qcom impl just for enabling stall model.
+On Thu, 7 May 2020, Geert Uytterhoeven wrote:
 
-Hmm, it's probably worth thinking ahead a bit here, to the "actually 
-doing things with stalls" plan. I don't have a clear picture off-hand of 
-how well the new device fault handler API might fit into arm-smmu - at 
-the very least trying to make it truly generic implies having to play 
-nasty tricks with disable_irq() for the general case given the "IRQ may 
-remain asserted while SS is active" possibility, and that isn't 
-particularly inviting. Not to mention tying it into the 
-pretend-auxdomain stuff that *is* rather dependent on the qcom impl. If 
-it turns out that you'll eventually have to reimplement the IRQ handler 
-anyway for all that, then starting off down that route *might* work out 
-cleaner and less hassle overall.
+> As upstream Linux does not support XIP,
 
-Robin.
+What?
+
+
+Nicolas
 
 _______________________________________________
 linux-arm-kernel mailing list
