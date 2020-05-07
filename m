@@ -2,115 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A48B01C85BA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 11:29:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24A341C85D1
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 11:30:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MygF7+tY0qWEK071mfHQm0O/svMBkorjipol9DM3dLY=; b=SETPXCae3rZpDG
-	9E7gt/lmN7kc1b6A8tIAj+GSADOUeV1wtmjeZGaCt1lkSCDyJKbGRPN71isOM1USlPHWv8AC78Aa7
-	1Jwf1Fi8bvOwm3goi4JDJlowkVL+Boml7mTIwSlQa/aO1v8Y0dvsW/Fpkt7iL/zzJ5nLtM2rzHWs/
-	AOW4ChCL7qhXUoJ7w4Hb78Ldr52zr/7r04QCFzOvwLsdHhIeXeq5oydgkWkweE1OCdiMMYHmCNIKw
-	ZEIlRGB5m0a36tQyWQGAHCDRQeUFWvSWAXlWIsBEP3QIzEoxlORmCvInSldjZXqrCmYQsMoJygig1
-	5qLypVywTtwi0vl6vTvg==;
+	List-Owner; bh=beuiBDc75ZvcmqfVOk8XumZEaZNzcCcnCuGTbEzrbcU=; b=p/HjsllmpQL7xd
+	zZPQqCI98vRcDvqw18Ddjt+3niwIHmX6u2OI/fj7T6s/ehKE8Q88a0cER09tlZzsDRsnf5XMiP5SA
+	b4cIecOG8zxqx1qorwqR/nwZprUTjZ2yphu3KFsaPno4EI0X9u+msoL1dnU0AhPLmhfkli7UvO04g
+	WExxFMfUsKWveRH6H4Mf2gxhc3az3NbxsOdnZzMJgMsoSJIblTeVOlM8fS1x3HB/Zb0zhgJ6Yitrw
+	/lt3QJPKXtw03CX8gV/6ShmhatStGLVWa6BaLTF8ECljFtYv0yBDlILX6PX3GHZUeuYrbOiIBz+tM
+	3NcCH+p1d7dadQcV+Fcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWcqV-0000dl-Hf; Thu, 07 May 2020 09:29:35 +0000
-Received: from mail-db8eur05on2124.outbound.protection.outlook.com
- ([40.107.20.124] helo=EUR05-DB8-obe.outbound.protection.outlook.com)
+	id 1jWcrG-00013C-1n; Thu, 07 May 2020 09:30:22 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWcqB-0000X9-VQ
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 09:29:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lNyUHM0m5gTxHWHnZY/RX+MuQ5m1kzgdBEzX2bl9WGVoaNBr0xNgOS2AOuFZ5hKET6tJDVLrlDFVQzu5sOpoHEnNlngwlVyuql84pYk8LvPECOjVSy6k2zArw/j1OMmNhNKL4JBhO8/GsZB8rIBq/+f+JJBxh4mbQR8ALlsSeJ+hfIl1VW67Vn22agXo3SmozUjv4LZnzlVR55I4VqCpVBiC9zqqL1qk9TihFiSd7uBmR1aC7v3REEzAZYtQuIOSg1rmWIajnA+i/azZcNAAkERq3qPi8OEqxHY5TeHxQE3iMBdzpQ3qYco/JhhN3vtcaf6M5Ap9OLBBkJ0DmINiZg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VXM7p5YPzCrYtrQmBcctITv8skIU/S73tOtu84RqL3g=;
- b=XfkzHN5BIwllyxvIsEncO7YjEARAszeCcltvvGGXPiM7nle71Vlxm3joeUTYUeqOrtd4MsRTwbc6L2W96E7uUPY3j6jM0X62flngZ+lGR3PTFfdZrX31dcrGcNuyppYlHNyUqP5VYhw5ZVPISnGzHfoLYjZxda31AetslbY317MQFGMWSdRth7KgmsWupVL3v/t5s4j3mI1QEqsrR1zXB+MHvx7u7NZIX7LkS5dotZCxcng6EChVcDzz6Yu1vXdYO4GEFYSym1LMGJ123nVbtJwK3yscgQQEK55h/hEpynZ5tCI8/vaeTlQrHEY5tgBuZv6Nem9y/WTHaEbtuqWIlg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=VXM7p5YPzCrYtrQmBcctITv8skIU/S73tOtu84RqL3g=;
- b=byZL+6YKNB4qlWwiGz4XEqnh04QaeOsKDdkQpFjnLJhav69nFxNHPe7w5OYqjZnXnYOqV5Z9w2RTcQ1tdYrFElO/gBMSfQwdYaQdXTsenBoeuX4Uu/HaVEONt/hAwXvkK/XaP+V7XjMQCf/NnSHrcJdqr3wUg0bvJPEvWLY/SXA=
-Received: from AM6PR05MB6120.eurprd05.prod.outlook.com (2603:10a6:20b:a8::25)
- by AM6PR05MB5521.eurprd05.prod.outlook.com (2603:10a6:20b:5e::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.26; Thu, 7 May
- 2020 09:29:13 +0000
-Received: from AM6PR05MB6120.eurprd05.prod.outlook.com
- ([fe80::d8d3:ead7:9f42:4289]) by AM6PR05MB6120.eurprd05.prod.outlook.com
- ([fe80::d8d3:ead7:9f42:4289%6]) with mapi id 15.20.2979.030; Thu, 7 May 2020
- 09:29:12 +0000
-From: Philippe Schenker <philippe.schenker@toradex.com>
-To: "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "dillon.minfei@gmail.com" <dillon.minfei@gmail.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>
-Subject: Re: [PATCH 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
- board
-Thread-Topic: [PATCH 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco
- board
-Thread-Index: AQHWJFAw2k3Ods8/jU2+K0HVpP++Y6icW04A
-Date: Thu, 7 May 2020 09:29:12 +0000
-Message-ID: <e7002d31d1392cf8969e56aba060ed3cc1c12ed9.camel@toradex.com>
-References: <philippe.schenker@toradex.com>
- <1588842971-20495-1-git-send-email-dillon.minfei@gmail.com>
-In-Reply-To: <1588842971-20495-1-git-send-email-dillon.minfei@gmail.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Evolution 3.36.2 
-authentication-results: gmail.com; dkim=none (message not signed)
- header.d=none;gmail.com; dmarc=none action=none header.from=toradex.com;
-x-originating-ip: [51.154.7.61]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 553d7c32-7a7b-413e-f6f0-08d7f2691ab0
-x-ms-traffictypediagnostic: AM6PR05MB5521:
-x-microsoft-antispam-prvs: <AM6PR05MB552121AC7729CDEA9C7A1231F4A50@AM6PR05MB5521.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3513;
-x-forefront-prvs: 03965EFC76
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: ol4llQ0pAI7EOUU7QOKRmwkBhiy/ptSXcOfyoXnCCY3Zl9at1HS2fZN2JA5gOd8FnqOOlIOjOJRi/MczR0b/N0mv3GA47QLtnCqRPvjEFyimkmAN5Pe7D0CKPVqcoFyN/M4Y515AtbfJ7s4MY0u32Yzi8p8Z1laAbW7XCZtXWbMwKFKhq0nGRAtdRYavYpOqCzoyNW0fdKiUugUPAgvbBN3JQxZdcsZ4TzYQ1h9bfarpZeo9FrULOJz048sHcFCayHMvVDWM4GooQHlU23MwHsw6Nw4/eYkaMx3r9bL0fJ3CGoA63cuhv92idLKSnyamo266X7iyfWXE9vkMlo5PqLaaIQIIWv8V+CJr2Hrlfv6mnAQMyxEmBDowjNTcZi+4+zp7cj4Tpqxks4dXuTk25V4DH7uHiQtZH5bh8AyIFyOI9ODy0nuIXWK0tbnM0PN8YbAd4oR76HVtywktBRwpRuXPMCcLZdEYKRdUaYJPihKyRJunVs9K/2OxDzfZQ9gteY1QzhxRGo9y5hmUoqsmCzUsy8yAoPJbjzy7quj0XON7jw0cligYUe5zahv3KyJ37GhIRiKmxQ9Spq3OWQpLTJpq8MlmziSGb5csSamjD+k=
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM6PR05MB6120.eurprd05.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(136003)(346002)(366004)(39850400004)(396003)(33430700001)(186003)(26005)(2616005)(66946007)(91956017)(110136005)(86362001)(6512007)(54906003)(33440700001)(316002)(6486002)(66446008)(64756008)(66556008)(66476007)(6506007)(44832011)(966005)(4326008)(478600001)(4744005)(8676002)(71200400001)(76116006)(36756003)(83320400001)(83280400001)(2906002)(83310400001)(8936002)(5660300002)(83300400001)(83290400001);
- DIR:OUT; SFP:1102; 
-x-ms-exchange-antispam-messagedata: CjuZXDkShw/FWNcXi9vIelDkKCvtXPaK7E0l0U+B2V4zhyXlvakZRqdZaJCNPlD7KKbl1H08A2kWG8DTEbw8hyM3jpyj8BPC7JXQGo8eA0C+nBrvt4ug6T1+wwMV5i0jWeYpG1PMcrRMmpI4jVW2l4D0T0/4Mcsg5Ac1jYNYPW8FmvoCUdNtA4/yY18G+Oq4cFyDgDN9/UnozCUhseasRWruzu78grrwHcvzis/09Xu+i84Lls2BAjBVTWFFkpr7FB7I558RqEltL6CEn/UABKrUt2FCYa1ld2qcUrEkkW+/MPojDadTzjnySZbpK+S/3C/N4+btZ6QaXXXaE31tjNcOW6A7Vl3XuQZeG8/ZXefkY4zwlUvU2X6PAz6+Kc3vBodH1/dL1xqME/UQXE0d+GRPGBKVfubp9XjbwqknHfJLydA/PdfYMJbldlRZLOCfmPIJ4Ue4PV9W1v1mgFSKjyixiVODpJGWoCuD+B/JdCPZ/69ZGOwx2l86bkvREgA0UK+uCN6HQBSca8ZizUAAX0upwiJcxfcmFoyx9ILyQC2d9E1siInmawn95SsgP6a6YAgnA6YfazdSmtVtJtC5Pe6/U0JWUKIUUTDRG6X2JAXORP8gezDI9VBcnxoK2DqM+62ErzNHhSu/NVpuhTc8y4fzqVXSYd45o1Bp/6+ES1zBsxz4o7YADlXXrJjdHeWtSeRwM7SSKVK0KesB3q+giVERbsz1z4HHck3DbCACtvKnY/K8AQNWO2lkPnnhAGYp87t/E/ICN7TN0KZFEmSz4G6SUP/imvYB/MPrKYbeMn8=
-x-ms-exchange-transport-forked: True
-Content-ID: <8C8175B59EDE444786D2E10D974A5359@eurprd05.prod.outlook.com>
+ id 1jWcqr-00011w-W1
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 09:29:59 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id e10so2936236vsp.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 07 May 2020 02:29:56 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=viH1iV0igem6dG1osD5lXSFto5UeKQo6I/r6j41w2Kg=;
+ b=kI+WeYFEEA9jLoKV2d3E7dwUyyonlIPIl242k9750XKo5ORe4klWfuAV7grrUmx0pe
+ 81oSbWvf2JRpXrMDhtyaIzsMHzryrCqE0t4iOTWk45BvIr2QwotvhUUNbfqfE0msdui8
+ A/+Tx3vLGOvtTPE1kWGs//HDeaZI2xem+qIyqcHHUztTiprouVP8b8AuR5o78AMr89UA
+ HQzNycaDph+I3X8/VRavIrGj+mUVMK/JPdIhTI7VAtbK0NComAh/lF/6zjRcrVSpW9xG
+ GFPpsYWE/TH2D45e4L0+VhUZX/H6aNF9Tc8iOkF1hmV0MpGcaJAkoIVvTpDm7sSAnW/t
+ gQDg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=viH1iV0igem6dG1osD5lXSFto5UeKQo6I/r6j41w2Kg=;
+ b=i9d+GrZlhw2GeMZjX19OL+WEwfnNgMYaa76qjt9YFGlXbMNnRKddUSQCGqnSjQwTJd
+ HNeIRB3BClNnDmFsGNmWhIViq8Jhky/lOX2NRnCmgpUBKP6ksvnrmE0Iyp9CqaGV00gt
+ F8DgC0MksK0DCsCKpEFhI3SlHYrJ2shRFjy/nfs21o4meZ1d+tAekzDehN+ExG5uXaz2
+ asm7ViCQ3jwWteBzOnKvF0JvEZmTJOSmaA/lgN10KRvK00Av94SRSbJ4B8ooiwX4+LWx
+ hnarjas0BB6slvl2adVcuQZvEKvbV40nFzLubZCHEam75k3SPqcW87rkFnYuyK4G2e4h
+ jNUw==
+X-Gm-Message-State: AGi0Pub5Q0MxSjyILBEZs9oxEjsrDfRQ9y3g5kxYbShRVwWBiffXiDso
+ GB2TG1pXPQ2wq8iQnV9Zm5k8miktkui7mEpTdgG0BA==
+X-Google-Smtp-Source: APiQypI4am7jPf3se8Tdni9X7LAo6FYulFfGe4r2VYbr/7W89ZmzBdleCOUBkENYjHbYMqRf6aOMQjzkJhq36+9MZOM=
+X-Received: by 2002:a67:ee0d:: with SMTP id f13mr11495244vsp.191.1588843795661; 
+ Thu, 07 May 2020 02:29:55 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 553d7c32-7a7b-413e-f6f0-08d7f2691ab0
-X-MS-Exchange-CrossTenant-originalarrivaltime: 07 May 2020 09:29:12.8668 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: OieHTxGQi5bwKiPCyiMVaHUa+gzIR4JNH7vALDGhPkIyUmFmMumM4i8SINuhlByj2P66NTUHGa/Q6+GefUc4caKnaLhfiDcQeSMiKogcFpA=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR05MB5521
+References: <20200503222805.2668941-1-martin.blumenstingl@googlemail.com>
+In-Reply-To: <20200503222805.2668941-1-martin.blumenstingl@googlemail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 7 May 2020 11:29:19 +0200
+Message-ID: <CAPDyKFrY0ApUCNL4gVHRc2FRcYaS0PKr_P4a18RUZHxcVceVWg@mail.gmail.com>
+Subject: Re: [PATCH] mmc: meson-mx-sdio: trigger a soft reset after a timeout
+ or CRC error
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_022916_119353_13D400F8 
-X-CRM114-Status: UNSURE (   8.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200507_022958_030475_74F637EC 
+X-CRM114-Status: GOOD (  24.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.20.124 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.20.124 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -129,36 +91,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi dillon
+On Mon, 4 May 2020 at 00:28, Martin Blumenstingl
+<martin.blumenstingl@googlemail.com> wrote:
+>
+> The vendor driver (from the 3.10 kernel) triggers a soft reset every
+> time before starting a new command. While this fixes a problem where
+> SDIO cards are not detected at all (because all commands simply
+> timed out) this hurts SD card read performance a bit (in my tests
+> between 10% to 20%).
+>
+> Trigger a soft reset after we got a CRC error or if the previous command
+> timed out (just like the vendor driver from the same 3.10 kernel for the
+> newer SDHC controller IP does). This fixes detection of SDIO cards and
+> doesn't hurt SD card read performance at the same time.
+>
+> With this patch the initialization of an RTL8723BS SDIO card looks like
+> this:
+>   req done (CMD52): -110: 00000000 00000000 00000000 00000000
+>   clock 400000Hz busmode 2 powermode 2 cs 1 Vdd 21 width 1 timing 0
+>   starting CMD0 arg 00000000 flags 000000c0
+>   req done (CMD0): 0: 00000000 00000000 00000000 00000000
+>   clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 0
+>   starting CMD8 arg 000001aa flags 000002f5
+>   req done (CMD8): -110: 00000000 00000000 00000000 00000000
+>   starting CMD5 arg 00000000 flags 000002e1
+>   req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
+>   starting CMD5 arg 00200000 flags 000002e1
+>   req done (CMD5): 0: 90ff0000 00000000 00000000 00000000
+>   starting CMD3 arg 00000000 flags 00000075
+>   req done (CMD3): 0: 00010000 00000000 00000000 00000000
+>   starting CMD7 arg 00010000 flags 00000015
+>   req done (CMD7): 0: 00001e00 00000000 00000000 00000000
+>   starting CMD52 arg 00000000 flags 00000195
+>   req done (CMD52): 0: 00001032 00000000 00000000 00000000
+>   [... more CMD52 omitted ...]
+>   clock 400000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
+>   clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 1 timing 2
+>   starting CMD52 arg 00000e00 flags 00000195
+>   req done (CMD52): 0: 00001000 00000000 00000000 00000000
+>   starting CMD52 arg 80000e02 flags 00000195
+>   req done (CMD52): 0: 00001002 00000000 00000000 00000000
+>   clock 50000000Hz busmode 2 powermode 2 cs 0 Vdd 21 width 4 timing 2
+>   starting CMD52 arg 00020000 flags 00000195
+>   req done (CMD52): 0: 00001007 00000000 00000000 00000000
+>   [... more CMD52 omitted ...]
+>   new high speed SDIO card at address 0001
+>
+> Fixes: ed80a13bb4c4c9 ("mmc: meson-mx-sdio: Add a driver for the Amlogic Meson8 and Meson8b SoCs")
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+> Ulf, I consider this non-critical because as long as the meson-mx-sdhc
+> driver is not merged we only have one MMC driver for these platforms.
+> I don't know anybody to prefer SDIO wifi over SD card access, so this
+> can go into -next (in my option at least).
+>
 
-If you change something in your patchset please make sure to add version
-to patch (e.g. [PATCH v2 3/4] ARM: dt....) and also mention in commit
-message below Signed-off-by what you changed.
+Alright, applied for next, thanks!
 
-Also make sure to set your
-email client to text mode also for replies, that makes life easier for
-everyone.
+Kind regards
+Uffe
 
-Refer to these instructions:
 
-https://www.kernel.org/doc/html/latest/process/submitting-patches.html
+>
+>  drivers/mmc/host/meson-mx-sdio.c | 3 +++
+>  1 file changed, 3 insertions(+)
+>
+> diff --git a/drivers/mmc/host/meson-mx-sdio.c b/drivers/mmc/host/meson-mx-sdio.c
+> index 2e58743d83bb..3813b544f571 100644
+> --- a/drivers/mmc/host/meson-mx-sdio.c
+> +++ b/drivers/mmc/host/meson-mx-sdio.c
+> @@ -246,6 +246,9 @@ static void meson_mx_mmc_request_done(struct meson_mx_mmc_host *host)
+>
+>         mrq = host->mrq;
+>
+> +       if (host->cmd->error)
+> +               meson_mx_mmc_soft_reset(host);
+> +
+>         host->mrq = NULL;
+>         host->cmd = NULL;
+>
+> --
+> 2.26.2
+>
 
-Best Regards,
-Philippe
-
-On Thu, 2020-05-07 at 17:16 +0800, dillon.minfei@gmail.com wrote:
-> [PATCH 3/4] ARM: dts: stm32: enable stmpe811 on stm32429-disco board
-> 
-> remove id, blocks, irq-trigger from the stmpe mfd dts node.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
