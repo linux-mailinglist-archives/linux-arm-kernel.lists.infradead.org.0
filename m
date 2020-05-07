@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F25E61C8B1D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:37:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69CD51C8B1F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  7 May 2020 14:38:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sH/JMqOvFnIYiGGMaOBKZDncg+OAI85wJhHc3lN3OVc=; b=aCLvh0gK4BdSuR
-	VIOXkITVaFrNNJLv1spZ5KEDxEnTfdWlGWgSnuxv3c4jTIDeb7FpejOjSGDFBmb5qybc4B91pxhTt
-	9qGh8qjU2R7JUpiSS0u1DNPC2SkFnJ86tH2xH2J10yBJXUmcBKMSz0jpTqSKr9q41958GU3/FOOC1
-	5fUQTajVv9nIxfrRxz7n7m+qo8OWOWffLwnwOkT6+X9rpNDF+3ILGGHwjrYELw0uiPI9y94j9/+6p
-	kPxOUk6zbPyRmoz627NhiK2zY98I30ZwrgX+ErUoKbZgKLBVXy0QU4qv3a7Nyx0P8TtZisxrJICo/
-	/keypAbpuH9G/L0mdc9Q==;
+	List-Owner; bh=o6OTPo2DQh640egtZRper6sRDqbeoqBPA1hGeAHePFA=; b=gtKWo+qYuZjjiw
+	2hJEtNFtrfCoFCw0imftXV3lplEP33H+5N0xiOHbv+yLS7PuJNYDl0iGvDtMjOhgsJXVS+fyJkSwM
+	EtoVVdmAQP0H/bzdu5q0Tor14AW6MrixH3Iu8WwKItM/g9qO4810NJztV/48o5fdfpe/nf2DomHaJ
+	tOfEQtUhD36ZUiMsLxTJRibzw5K+pvbiGvzvXsdsAKegVSQYCetBCgwnAZdFFAGL0vL8RFRuD7D4y
+	RDnap6iztMaoAVmj9xwEsHyNZm8DDxh/2CRBdINDWO5DnEVI2i67reXoFwkkC0ZwN+Z33wcgT0IJe
+	KLsBoQ/6gIfjyxdX5Abg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWfmX-00036b-Sw; Thu, 07 May 2020 12:37:41 +0000
+	id 1jWfn4-0003fb-4Z; Thu, 07 May 2020 12:38:14 +0000
 Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWflW-00028A-I1
- for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:36:41 +0000
+ id 1jWflW-00028B-Nx
+ for linux-arm-kernel@lists.infradead.org; Thu, 07 May 2020 12:36:42 +0000
 Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 920F063535DED5715A9D;
+ by Forcepoint Email with ESMTP id 98BE86ECF0636A7CEB95;
  Thu,  7 May 2020 20:36:31 +0800 (CST)
 Received: from DESKTOP-8RFUVS3.china.huawei.com (10.173.222.27) by
  DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Thu, 7 May 2020 20:36:23 +0800
+ 14.3.487.0; Thu, 7 May 2020 20:36:24 +0800
 From: Zenghui Yu <yuzenghui@huawei.com>
 To: <kvmarm@lists.cs.columbia.edu>, <suzuki.poulose@arm.com>
-Subject: [PATCH resend 1/2] KVM: arm64: Clean up the checking for huge mapping
-Date: Thu, 7 May 2020 20:35:45 +0800
-Message-ID: <20200507123546.1875-2-yuzenghui@huawei.com>
+Subject: [PATCH resend 2/2] KVM: arm64: Unify handling THP backed host memory
+Date: Thu, 7 May 2020 20:35:46 +0800
+Message-ID: <20200507123546.1875-3-yuzenghui@huawei.com>
 X-Mailer: git-send-email 2.23.0.windows.1
 In-Reply-To: <20200507123546.1875-1-yuzenghui@huawei.com>
 References: <20200507123546.1875-1-yuzenghui@huawei.com>
@@ -41,8 +41,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.173.222.27]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_053638_778859_759AFE77 
-X-CRM114-Status: GOOD (  11.30  )
+X-CRM114-CacheID: sfid-20200507_053638_951330_606AE9FD 
+X-CRM114-Status: GOOD (  18.34  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -78,45 +78,164 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-If we are checking whether the stage2 can map PAGE_SIZE,
-we don't have to do the boundary checks as both the host
-VMA and the guest memslots are page aligned. Bail the case
-easily.
+We support mapping host memory backed by PMD transparent hugepages
+at stage2 as huge pages. However the checks are now spread across
+two different places. Let us unify the handling of the THPs to
+keep the code cleaner (and future proof for PUD THP support).
+This patch moves transparent_hugepage_adjust() closer to the caller
+to avoid a forward declaration for fault_supports_stage2_huge_mappings().
 
-While we're at it, fixup a typo in the comment below.
+Also, since we already handle the case where the host VA and the guest
+PA may not be aligned, the explicit VM_BUG_ON() is not required.
 
-Cc: Christoffer Dall <christoffer.dall@arm.com>
 Cc: Marc Zyngier <maz@kernel.org>
+Cc: Christoffer Dall <christoffer.dall@arm.com>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
 ---
- virt/kvm/arm/mmu.c | 6 +++++-
- 1 file changed, 5 insertions(+), 1 deletion(-)
+ virt/kvm/arm/mmu.c | 115 +++++++++++++++++++++++----------------------
+ 1 file changed, 60 insertions(+), 55 deletions(-)
 
 diff --git a/virt/kvm/arm/mmu.c b/virt/kvm/arm/mmu.c
-index e3b9ee268823..557f36866d1c 100644
+index 557f36866d1c..93a770fd2b5e 100644
 --- a/virt/kvm/arm/mmu.c
 +++ b/virt/kvm/arm/mmu.c
-@@ -1607,6 +1607,10 @@ static bool fault_supports_stage2_huge_mapping(struct kvm_memory_slot *memslot,
- 	hva_t uaddr_start, uaddr_end;
- 	size_t size;
+@@ -1372,47 +1372,6 @@ int kvm_phys_addr_ioremap(struct kvm *kvm, phys_addr_t guest_ipa,
+ 	return ret;
+ }
  
-+	/* The memslot and the VMA are guaranteed to be aligned to PAGE_SIZE */
-+	if (map_size == PAGE_SIZE)
-+		return true;
+-static bool transparent_hugepage_adjust(kvm_pfn_t *pfnp, phys_addr_t *ipap)
+-{
+-	kvm_pfn_t pfn = *pfnp;
+-	gfn_t gfn = *ipap >> PAGE_SHIFT;
+-
+-	if (kvm_is_transparent_hugepage(pfn)) {
+-		unsigned long mask;
+-		/*
+-		 * The address we faulted on is backed by a transparent huge
+-		 * page.  However, because we map the compound huge page and
+-		 * not the individual tail page, we need to transfer the
+-		 * refcount to the head page.  We have to be careful that the
+-		 * THP doesn't start to split while we are adjusting the
+-		 * refcounts.
+-		 *
+-		 * We are sure this doesn't happen, because mmu_notifier_retry
+-		 * was successful and we are holding the mmu_lock, so if this
+-		 * THP is trying to split, it will be blocked in the mmu
+-		 * notifier before touching any of the pages, specifically
+-		 * before being able to call __split_huge_page_refcount().
+-		 *
+-		 * We can therefore safely transfer the refcount from PG_tail
+-		 * to PG_head and switch the pfn from a tail page to the head
+-		 * page accordingly.
+-		 */
+-		mask = PTRS_PER_PMD - 1;
+-		VM_BUG_ON((gfn & mask) != (pfn & mask));
+-		if (pfn & mask) {
+-			*ipap &= PMD_MASK;
+-			kvm_release_pfn_clean(pfn);
+-			pfn &= ~mask;
+-			kvm_get_pfn(pfn);
+-			*pfnp = pfn;
+-		}
+-
+-		return true;
+-	}
+-
+-	return false;
+-}
+-
+ /**
+  * stage2_wp_ptes - write protect PMD range
+  * @pmd:	pointer to pmd entry
+@@ -1660,6 +1619,59 @@ static bool fault_supports_stage2_huge_mapping(struct kvm_memory_slot *memslot,
+ 	       (hva & ~(map_size - 1)) + map_size <= uaddr_end;
+ }
+ 
++/*
++ * Check if the given hva is backed by a transparent huge page (THP) and
++ * whether it can be mapped using block mapping in stage2. If so, adjust
++ * the stage2 PFN and IPA accordingly. Only PMD_SIZE THPs are currently
++ * supported. This will need to be updated to support other THP sizes.
++ *
++ * Returns the size of the mapping.
++ */
++static unsigned long
++transparent_hugepage_adjust(struct kvm_memory_slot *memslot,
++			    unsigned long hva, kvm_pfn_t *pfnp,
++			    phys_addr_t *ipap)
++{
++	kvm_pfn_t pfn = *pfnp;
 +
- 	size = memslot->npages * PAGE_SIZE;
++	/*
++	 * Make sure the adjustment is done only for THP pages. Also make
++	 * sure that the HVA and IPA are sufficiently aligned and that the
++	 * block map is contained within the memslot.
++	 */
++	if (kvm_is_transparent_hugepage(pfn) &&
++	    fault_supports_stage2_huge_mapping(memslot, hva, PMD_SIZE)) {
++		/*
++		 * The address we faulted on is backed by a transparent huge
++		 * page.  However, because we map the compound huge page and
++		 * not the individual tail page, we need to transfer the
++		 * refcount to the head page.  We have to be careful that the
++		 * THP doesn't start to split while we are adjusting the
++		 * refcounts.
++		 *
++		 * We are sure this doesn't happen, because mmu_notifier_retry
++		 * was successful and we are holding the mmu_lock, so if this
++		 * THP is trying to split, it will be blocked in the mmu
++		 * notifier before touching any of the pages, specifically
++		 * before being able to call __split_huge_page_refcount().
++		 *
++		 * We can therefore safely transfer the refcount from PG_tail
++		 * to PG_head and switch the pfn from a tail page to the head
++		 * page accordingly.
++		 */
++		*ipap &= PMD_MASK;
++		kvm_release_pfn_clean(pfn);
++		pfn &= ~(PTRS_PER_PMD - 1);
++		kvm_get_pfn(pfn);
++		*pfnp = pfn;
++
++		return PMD_SIZE;
++	}
++
++	/* Use page mapping if we cannot use block mapping. */
++	return PAGE_SIZE;
++}
++
+ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 			  struct kvm_memory_slot *memslot, unsigned long hva,
+ 			  unsigned long fault_status)
+@@ -1773,20 +1785,13 @@ static int user_mem_abort(struct kvm_vcpu *vcpu, phys_addr_t fault_ipa,
+ 	if (mmu_notifier_retry(kvm, mmu_seq))
+ 		goto out_unlock;
  
- 	gpa_start = memslot->base_gfn << PAGE_SHIFT;
-@@ -1626,7 +1630,7 @@ static bool fault_supports_stage2_huge_mapping(struct kvm_memory_slot *memslot,
- 	 *    |abcde|fgh  Stage-1 block  |    Stage-1 block tv|xyz|
- 	 *    +-----+--------------------+--------------------+---+
- 	 *
--	 *    memslot->base_gfn << PAGE_SIZE:
-+	 *    memslot->base_gfn << PAGE_SHIFT:
- 	 *      +---+--------------------+--------------------+-----+
- 	 *      |abc|def  Stage-2 block  |    Stage-2 block   |tvxyz|
- 	 *      +---+--------------------+--------------------+-----+
+-	if (vma_pagesize == PAGE_SIZE && !force_pte) {
+-		/*
+-		 * Only PMD_SIZE transparent hugepages(THP) are
+-		 * currently supported. This code will need to be
+-		 * updated to support other THP sizes.
+-		 *
+-		 * Make sure the host VA and the guest IPA are sufficiently
+-		 * aligned and that the block is contained within the memslot.
+-		 */
+-		if (fault_supports_stage2_huge_mapping(memslot, hva, PMD_SIZE) &&
+-		    transparent_hugepage_adjust(&pfn, &fault_ipa))
+-			vma_pagesize = PMD_SIZE;
+-	}
+-
++	/*
++	 * If we are not forced to use page mapping, check if we are
++	 * backed by a THP and thus use block mapping if possible.
++	 */
++	if (vma_pagesize == PAGE_SIZE && !force_pte)
++		vma_pagesize = transparent_hugepage_adjust(memslot, hva,
++							   &pfn, &fault_ipa);
+ 	if (writable)
+ 		kvm_set_pfn_dirty(pfn);
+ 
 -- 
 2.19.1
 
