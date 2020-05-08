@@ -2,76 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E4B601CAE05
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:08:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F6531CAEA3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:14:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VJUQoRVUiFOFqXu9f6HijxZLf7MgyDmtLs+qxkmF57c=; b=mBOeKNHM9EioDP
-	kmdmT7E4fdsZJzms58ZGHsajuhs5/eMMBFygpckKMYSc71hfGEKSl3sTaMg+sMKrLUZzIWWeiT11w
-	DsJI2D1DYwvXIGDGgKC3DsJJOD7p/QXbK+Ju8V0Jbk3WIIC2Pc0dO6ksyh3rDoMQLe1av8x+259cL
-	XZc+URhycILw0PfFGY1E/jnFeo4KqwmmtnTElRlNB3+ZgzPeBjFdWkrgZAHqTtnKat7ZuAXD7DJAz
-	dO44tVQ0oQYVsX27+KwkxNCs3OFxkpVSIPMS6nYmBZAqmBhOnvDPLP5NIK84ux7l45kzba3kyoAzP
-	wVUHLog7DbBBi3uN5Zdw==;
+	List-Owner; bh=2i1yPeufthbAXXyxAKI4uKFff8+J3gUo4US8B0N6FZg=; b=JX2ZXaJWzgRxHY
+	8ZDF9OF4gGhNTbppzGA1BlMi3OFKMPObQ1ROMEgP5RkRukt1nqiTrkhXIMIDPFqye1yT2KzMmzeXg
+	Yeys/+Ss2hc5BeKZ4ckSiJKV25QLZUnaynsXNvOtvqcuvl2/vT04UVEoioIi81JtBzoHniCONvqeq
+	AFFiliPI02+EQ8or8eXsA6YZv2w6qOBBEnnBb0Hl+0qo+9huky8+rmdBRhAe9W+f2yoUwB5pnNBcf
+	RPA7/TqTF46+ABsDLa5pm8l20YS2loiuJk1z3oZeW0KwvDrEospP6OdZ4lbXbG4J27xpL+OUH8OEJ
+	W7qMDipVE3voWdMv2zVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX2k8-0002jo-4Y; Fri, 08 May 2020 13:08:44 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jX2pC-0006OV-4h; Fri, 08 May 2020 13:13:58 +0000
+Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX2ib-0001cu-Uk
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 13:07:12 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 048D74PE088083;
- Fri, 8 May 2020 08:07:04 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588943224;
- bh=tDC1pjicYjkUm+KPLaJb1qehvPKazM9rDiMFSqZ4yQ4=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=EjKbh+Z7iN1NOlO7sVNZ6eCv51YzOA6gDOeBA0ovesAObpj9mYYT4XZ3fa//2ycl2
- 6zt4rC4jpkhVEhrsXR4chSnwJkkMos5iptoaxXk4C2Z6U89qxhk5sZ0zNoZBm6iPDL
- CzG/qda4Hr2PSJ5uTzXcW6gKhmAE2V+W8i/EahH0=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 048D73nH105107
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 8 May 2020 08:07:03 -0500
-Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 8 May
- 2020 08:07:03 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE101.ent.ti.com
- (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 8 May 2020 08:07:03 -0500
-Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6kYo018673;
- Fri, 8 May 2020 08:07:00 -0500
-From: Kishon Vijay Abraham I <kishon@ti.com>
-To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Robin Murphy
- <robin.murphy@arm.com>, Tom Joseph <tjoseph@cadence.com>
-Subject: [PATCH v3 4/4] PCI: cadence: Use "dma-ranges" instead of "cdns,
- no-bar-match-nbits" property
-Date: Fri, 8 May 2020 18:36:46 +0530
-Message-ID: <20200508130646.23939-5-kishon@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200508130646.23939-1-kishon@ti.com>
-References: <20200508130646.23939-1-kishon@ti.com>
+ id 1jX2p2-0006Ms-6C; Fri, 08 May 2020 13:13:49 +0000
+Received: by mail-yb1-xb44.google.com with SMTP id i16so901886ybq.9;
+ Fri, 08 May 2020 06:13:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UZUHxL6dK/8dzR9N6s6AZeq1aeEEpSlSvFIxKEKChKA=;
+ b=qsJmNv2lvscxfX2ik0Ne+2iMwpcudN+70KShliyZwbkS/OPcZyB7kvwP1E/2REaPx6
+ vIIXtcCXFGQFsefJ6NXp52NUdX+iYVI994JXF3SOoU0CcOysrhSZkh6uhNiCAFsEwHm/
+ /F3brgRGedJU0VA7Dv2/Ct9sMb1BFWV2dPvQbFw3FUd7V3XE0sA6bC+kGALoByCa6jbx
+ TcfwKTILVttfKtCEQhGhqp9j8yKEBxu0lmi8too2ZodJPlffxHN0SMzN3FMX34qqGQTp
+ aAMAv5t5uX6VYYLM1dnCH6mC3iN8RoBt64oMM8PT+vP+upfVdyMgp9Zs7qO0ESXtXEBL
+ 2jLQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UZUHxL6dK/8dzR9N6s6AZeq1aeEEpSlSvFIxKEKChKA=;
+ b=CViJOTIsdf2KcRfaProAVwDh08xTcKL8yz5qWD3+ZgWBsHErH+VwK1tCNt5h7arnjo
+ j9CR1xEUn/eXYKiOQife0dpnED8TTClUpJM0Fk+Xi+XpC2Ju66Zy9pt+O6MTdn62EwRF
+ ZWfh9xYHO5frI77Z4hC6mKEUpXE8XX8X/ovjdeJl4Rl+KArmQhnAS1CZKWEyrSGn0qn2
+ GsuPKwStvJY8NavKfgQBD93juXAxw5MAosCu+KcMXgKuoYG11v1EQOL+fRqXMi8HlpeZ
+ SvNludiduRAOX9t4VxorAnZbVc8fy70hkJkn2P4aEGi4+mfQhrZd/KO41PyFV4CR3AK4
+ kUsg==
+X-Gm-Message-State: AGi0PuZ9S1qsAw32s/QUVAboqP/4nDLz/LWoVgLUq/LzPt/gTUutomQh
+ /n7c1yplx5BkH7a2jh6K9zzhwDZ4B6ibYdc8L3E=
+X-Google-Smtp-Source: APiQypJcJJf4FWxZRHAgRmZI60uj695OdBwj45e7L8i9yMDpq9iE5MmqC6vak2XFQW19zVXsnyrmwa3h7nYYR8d3rZs=
+X-Received: by 2002:a25:e082:: with SMTP id x124mr4441633ybg.509.1588943626311; 
+ Fri, 08 May 2020 06:13:46 -0700 (PDT)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20200508083729.5560-1-chris.ruehl@gtsys.com.hk>
+ <20200508083729.5560-2-chris.ruehl@gtsys.com.hk>
+In-Reply-To: <20200508083729.5560-2-chris.ruehl@gtsys.com.hk>
+From: Emil Renner Berthing <emil.renner.berthing@gmail.com>
+Date: Fri, 8 May 2020 15:13:35 +0200
+Message-ID: <CANBLGcwA+=OB-_nOYUijWrDBSkLYhR7_PNG1ewO7LZ-zRVGoxg@mail.gmail.com>
+Subject: Re: [PATCH v0 1/1] spi: spi-rockchip: add support for spi slave_mode
+To: Chris Ruehl <chris.ruehl@gtsys.com.hk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_060710_103082_A73271A2 
-X-CRM114-Status: GOOD (  22.99  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200508_061348_229236_4FA6A44B 
+X-CRM114-Status: GOOD (  24.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [emil.renner.berthing[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -81,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,263 +91,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, kishon@ti.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, devicetree@vger.kernel.org
+Cc: Heiko Stuebner <heiko@sntech.de>, Jack Lo <jack.lo@gtsys.com.hk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-spi@vger.kernel.org,
+ "open list:ARM/Rockchip SoC..." <linux-rockchip@lists.infradead.org>,
+ Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cadence PCIe core driver (host mode) uses "cdns,no-bar-match-nbits"
-property to configure the number of bits passed through from PCIe
-address to internal address in Inbound Address Translation register.
-This only used the NO MATCH BAR.
+Hi Chris,
 
-However standard PCI dt-binding already defines "dma-ranges" to
-describe the address ranges accessible by PCIe controller. Add support
-in Cadence PCIe host driver to parse dma-ranges and configure the
-inbound regions for BAR0, BAR1 and NO MATCH BAR. Cadence IP specifies
-maximum size for BAR0 as 256GB, maximum size for BAR1 as 2 GB, so if
-the dma-ranges specifies a size larger than the maximum allowed, the
-driver will split and configure the BARs.
+On Fri, 8 May 2020 at 10:47, Chris Ruehl <chris.ruehl@gtsys.com.hk> wrote:
+>
+> This patch aim to add spi slave mode support to the rockchip driver.
+> Fix the wrong usage of num_cs set fix to ROCKCHIP_SPI_MAX_CS_NUM,
+> instead use max_native_cs flag to set the limit of native chip-select.
+> Enable use_gpio_descriptors to have cs_gpiod for gpio based chip-selects.
+>
+> Signed-off-by: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+> ---
+>  drivers/spi/spi-rockchip.c | 46 +++++++++++++++++++++++++++++++++-----
+>  1 file changed, 41 insertions(+), 5 deletions(-)
+>
+> diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
+> index 70ef63e0b6b8..9c1ff52c0f85 100644
+> --- a/drivers/spi/spi-rockchip.c
+> +++ b/drivers/spi/spi-rockchip.c
+> @@ -183,6 +183,9 @@ struct rockchip_spi {
+>         u8 rsd;
+>
+>         bool cs_asserted[ROCKCHIP_SPI_MAX_CS_NUM];
+> +
+> +       bool slave_mode;
+> +       bool slave_abort;
+>  };
+>
+>  static inline void spi_enable_chip(struct rockchip_spi *rs, bool enable)
+> @@ -359,7 +362,7 @@ static void rockchip_spi_dma_rxcb(void *data)
+>         struct rockchip_spi *rs = spi_master_get_devdata(master);
+>         int state = atomic_fetch_andnot(RXDMA, &rs->state);
+>
+> -       if (state & TXDMA)
+> +       if (state & TXDMA && !rs->slave_abort)
+>                 return;
+>
+>         spi_enable_chip(rs, false);
+> @@ -372,7 +375,7 @@ static void rockchip_spi_dma_txcb(void *data)
+>         struct rockchip_spi *rs = spi_master_get_devdata(master);
+>         int state = atomic_fetch_andnot(TXDMA, &rs->state);
+>
+> -       if (state & RXDMA)
+> +       if (state & RXDMA && !rs->slave_abort)
+>                 return;
+>
+>         /* Wait until the FIFO data completely. */
+> @@ -466,6 +469,10 @@ static void rockchip_spi_config(struct rockchip_spi *rs,
+>         u32 cr1;
+>         u32 dmacr = 0;
+>
+> +       if (rs->slavemode)
+> +               cr0 |= CR0_OPM_SLAVE << CR0_OPM_OFFSET;
+> +       rs->slave_abort = false;
+> +
+>         cr0 |= rs->rsd << CR0_RSD_OFFSET;
+>         cr0 |= (spi->mode & 0x3U) << CR0_SCPH_OFFSET;
+>         if (spi->mode & SPI_LSB_FIRST)
+> @@ -535,6 +542,16 @@ static size_t rockchip_spi_max_transfer_size(struct spi_device *spi)
+>         return ROCKCHIP_SPI_MAX_TRANLEN;
+>  }
+>
+> +static int rockchip_spi_slave_abort(struct spi_master *master)
+> +{
+> +       struct rockchip_spi *rs = spi_master_get_devdata(master);
+> +
+> +       rs->slave_abort = true;
+> +       complete(master);
+> +
+> +       return 0;
+> +}
+> +
+>  static int rockchip_spi_transfer_one(
+>                 struct spi_master *master,
+>                 struct spi_device *spi,
+> @@ -589,14 +606,25 @@ static int rockchip_spi_probe(struct platform_device *pdev)
+>         struct spi_master *master;
+>         struct resource *mem;
+>         u32 rsd_nsecs;
+> +       bool slave_mode;
+> +       u32 num_cs = 1;
+> +
+> +       slave_mode = of_property_read_bool(np, "spi-slave");
+> +
+> +       if (slave_mode)
+> +               master = spi_alloc_slave(&pdev->dev,
+> +                               sizeof(struct rockchip_spi));
+> +       else
+> +               master = spi_alloc_master(&pdev->dev,
+> +                               sizeof(struct rockchip_spi));
+>
+> -       master = spi_alloc_master(&pdev->dev, sizeof(struct rockchip_spi));
+>         if (!master)
+>                 return -ENOMEM;
+>
+>         platform_set_drvdata(pdev, master);
+>
+>         rs = spi_master_get_devdata(master);
+> +       rs->slave_mode = slave_mode;
 
-Legacy device tree binding compatibility is maintained by retaining
-support for "cdns,no-bar-match-nbits".
+This entry doesn't seem to be read from any of your code, and even it
+it was, the same information is available in master->slave, so I don't
+see why you need it in the rockchip_spi struct.
 
-Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
----
- .../controller/cadence/pcie-cadence-host.c    | 141 ++++++++++++++++--
- drivers/pci/controller/cadence/pcie-cadence.h |  17 ++-
- 2 files changed, 141 insertions(+), 17 deletions(-)
+Also spi_master is just #defined to spi_controller in spi.h, so maybe
+consider changing all 'struct spi_master *master' to 'struct
+spi_controller *ctrl' now that the driver supports both modes.
 
-diff --git a/drivers/pci/controller/cadence/pcie-cadence-host.c b/drivers/pci/controller/cadence/pcie-cadence-host.c
-index 6ecebb79057a..2485ecd8434d 100644
---- a/drivers/pci/controller/cadence/pcie-cadence-host.c
-+++ b/drivers/pci/controller/cadence/pcie-cadence-host.c
-@@ -11,6 +11,12 @@
- 
- #include "pcie-cadence.h"
- 
-+static u64 cdns_rp_bar_max_size[] = {
-+	[RP_BAR0] = _ULL(128 * SZ_2G),
-+	[RP_BAR1] = SZ_2G,
-+	[RP_NO_BAR] = SZ_64T,
-+};
-+
- void __iomem *cdns_pci_map_bus(struct pci_bus *bus, unsigned int devfn,
- 			       int where)
- {
-@@ -106,6 +112,117 @@ static int cdns_pcie_host_init_root_port(struct cdns_pcie_rc *rc)
- 	return 0;
- }
- 
-+static void cdns_pcie_host_bar_ib_config(struct cdns_pcie_rc *rc,
-+					 enum cdns_pcie_rp_bar bar,
-+					 u64 cpu_addr, u32 aperture)
-+{
-+	struct cdns_pcie *pcie = &rc->pcie;
-+	u32 addr0, addr1;
-+
-+	addr0 = CDNS_PCIE_AT_IB_RP_BAR_ADDR0_NBITS(aperture) |
-+		(lower_32_bits(cpu_addr) & GENMASK(31, 8));
-+	addr1 = upper_32_bits(cpu_addr);
-+	cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_RP_BAR_ADDR0(bar), addr0);
-+	cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_RP_BAR_ADDR1(bar), addr1);
-+}
-+
-+static int cdns_pcie_host_bar_config(struct cdns_pcie_rc *rc,
-+				     struct resource_entry *entry,
-+				     enum cdns_pcie_rp_bar *index)
-+{
-+	u64 cpu_addr, pci_addr, size, winsize;
-+	struct cdns_pcie *pcie = &rc->pcie;
-+	struct device *dev = pcie->dev;
-+	enum cdns_pcie_rp_bar bar;
-+	unsigned long flags;
-+	u32 aperture;
-+	u32 value;
-+
-+	cpu_addr = entry->res->start;
-+	flags = entry->res->flags;
-+	pci_addr = entry->res->start - entry->offset;
-+	size = resource_size(entry->res);
-+	bar = *index;
-+
-+	if (entry->offset) {
-+		dev_err(dev, "Cannot map PCI addr: %llx to CPU addr: %llx\n",
-+			pci_addr, cpu_addr);
-+		return -EINVAL;
-+	}
-+
-+	value = cdns_pcie_readl(pcie, CDNS_PCIE_LM_RC_BAR_CFG);
-+	while (size > 0) {
-+		if (bar > RP_NO_BAR) {
-+			dev_err(dev, "Failed to map inbound regions!\n");
-+			return -EINVAL;
-+		}
-+
-+		winsize = size;
-+		if (size > cdns_rp_bar_max_size[bar])
-+			winsize = cdns_rp_bar_max_size[bar];
-+
-+		aperture = ilog2(winsize);
-+
-+		cdns_pcie_host_bar_ib_config(rc, bar, cpu_addr, aperture);
-+
-+		if (bar == RP_NO_BAR)
-+			break;
-+
-+		if (winsize + cpu_addr >= SZ_4G) {
-+			if (!(flags & IORESOURCE_PREFETCH))
-+				value |= LM_RC_BAR_CFG_CTRL_MEM_64BITS(bar);
-+			value |= LM_RC_BAR_CFG_CTRL_PREF_MEM_64BITS(bar);
-+		} else {
-+			if (!(flags & IORESOURCE_PREFETCH))
-+				value |= LM_RC_BAR_CFG_CTRL_MEM_32BITS(bar);
-+			value |= LM_RC_BAR_CFG_CTRL_PREF_MEM_32BITS(bar);
-+		}
-+
-+		value |= LM_RC_BAR_CFG_APERTURE(bar, aperture);
-+
-+		size -= winsize;
-+		cpu_addr += winsize;
-+		bar++;
-+	}
-+	cdns_pcie_writel(pcie, CDNS_PCIE_LM_RC_BAR_CFG, value);
-+	*index = bar;
-+
-+	return 0;
-+}
-+
-+static int cdns_pcie_host_map_dma_ranges(struct cdns_pcie_rc *rc)
-+{
-+	enum cdns_pcie_rp_bar bar = RP_BAR0;
-+	struct cdns_pcie *pcie = &rc->pcie;
-+	struct device *dev = pcie->dev;
-+	struct device_node *np = dev->of_node;
-+	struct pci_host_bridge *bridge;
-+	struct resource_entry *entry;
-+	u32 no_bar_nbits = 32;
-+	int err;
-+
-+	bridge = pci_host_bridge_from_priv(rc);
-+	if (!bridge)
-+		return -ENOMEM;
-+
-+	if (list_empty(&bridge->dma_ranges)) {
-+		of_property_read_u32(np, "cdns,no-bar-match-nbits",
-+				     &no_bar_nbits);
-+		cdns_pcie_host_bar_ib_config(rc, RP_NO_BAR, 0x0, no_bar_nbits);
-+		return 0;
-+	}
-+
-+	resource_list_for_each_entry(entry, &bridge->dma_ranges) {
-+		err = cdns_pcie_host_bar_config(rc, entry, &bar);
-+		if (err) {
-+			dev_err(dev, "Fail to configure IB using dma-ranges\n");
-+			return err;
-+		}
-+	}
-+
-+	return 0;
-+}
-+
- static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
- {
- 	struct cdns_pcie *pcie = &rc->pcie;
-@@ -160,16 +277,9 @@ static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
- 		r++;
- 	}
- 
--	/*
--	 * Set Root Port no BAR match Inbound Translation registers:
--	 * needed for MSI and DMA.
--	 * Root Port BAR0 and BAR1 are disabled, hence no need to set their
--	 * inbound translation registers.
--	 */
--	addr0 = CDNS_PCIE_AT_IB_RP_BAR_ADDR0_NBITS(rc->no_bar_nbits);
--	addr1 = 0;
--	cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_RP_BAR_ADDR0(RP_NO_BAR), addr0);
--	cdns_pcie_writel(pcie, CDNS_PCIE_AT_IB_RP_BAR_ADDR1(RP_NO_BAR), addr1);
-+	err = cdns_pcie_host_map_dma_ranges(rc);
-+	if (err)
-+		return err;
- 
- 	return 0;
- }
-@@ -179,10 +289,16 @@ static int cdns_pcie_host_init(struct device *dev,
- 			       struct cdns_pcie_rc *rc)
- {
- 	struct resource *bus_range = NULL;
-+	struct pci_host_bridge *bridge;
- 	int err;
- 
-+	bridge = pci_host_bridge_from_priv(rc);
-+	if (!bridge)
-+		return -ENOMEM;
-+
- 	/* Parse our PCI ranges and request their resources */
--	err = pci_parse_request_of_pci_ranges(dev, resources, NULL, &bus_range);
-+	err = pci_parse_request_of_pci_ranges(dev, resources,
-+					      &bridge->dma_ranges, &bus_range);
- 	if (err)
- 		return err;
- 
-@@ -239,9 +355,6 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
- 	pcie = &rc->pcie;
- 	pcie->is_rc = true;
- 
--	rc->no_bar_nbits = 32;
--	of_property_read_u32(np, "cdns,no-bar-match-nbits", &rc->no_bar_nbits);
--
- 	rc->vendor_id = 0xffff;
- 	of_property_read_u32(np, "vendor-id", &rc->vendor_id);
- 
-diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
-index f349f5828a58..336237a7025c 100644
---- a/drivers/pci/controller/cadence/pcie-cadence.h
-+++ b/drivers/pci/controller/cadence/pcie-cadence.h
-@@ -92,6 +92,20 @@
- #define  CDNS_PCIE_LM_BAR_CFG_CTRL_MEM_64BITS		0x6
- #define  CDNS_PCIE_LM_BAR_CFG_CTRL_PREFETCH_MEM_64BITS	0x7
- 
-+#define LM_RC_BAR_CFG_CTRL_DISABLED(bar)		\
-+		(CDNS_PCIE_LM_BAR_CFG_CTRL_DISABLED << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_CTRL_IO_32BITS(bar)		\
-+		(CDNS_PCIE_LM_BAR_CFG_CTRL_IO_32BITS << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_CTRL_MEM_32BITS(bar)		\
-+		(CDNS_PCIE_LM_BAR_CFG_CTRL_MEM_32BITS << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_CTRL_PREF_MEM_32BITS(bar)	\
-+	(CDNS_PCIE_LM_BAR_CFG_CTRL_PREFETCH_MEM_32BITS << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_CTRL_MEM_64BITS(bar)		\
-+		(CDNS_PCIE_LM_BAR_CFG_CTRL_MEM_64BITS << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_CTRL_PREF_MEM_64BITS(bar)	\
-+	(CDNS_PCIE_LM_BAR_CFG_CTRL_PREFETCH_MEM_64BITS << (((bar) * 8) + 6))
-+#define LM_RC_BAR_CFG_APERTURE(bar, aperture)		\
-+					(((aperture) - 2) << ((bar) * 8))
- 
- /*
-  * Endpoint Function Registers (PCI configuration space for endpoint functions)
-@@ -266,8 +280,6 @@ struct cdns_pcie {
-  * @bus_range: first/last buses behind the PCIe host controller
-  * @cfg_base: IO mapped window to access the PCI configuration space of a
-  *            single function at a time
-- * @no_bar_nbits: Number of bits to keep for inbound (PCIe -> CPU) address
-- *                translation (nbits sets into the "no BAR match" register)
-  * @vendor_id: PCI vendor ID
-  * @device_id: PCI device ID
-  */
-@@ -276,7 +288,6 @@ struct cdns_pcie_rc {
- 	struct resource		*cfg_res;
- 	struct resource		*bus_range;
- 	void __iomem		*cfg_base;
--	u32			no_bar_nbits;
- 	u32			vendor_id;
- 	u32			device_id;
- };
--- 
-2.17.1
+>
+>         /* Get basic io resource and map it */
+>         mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> @@ -676,7 +704,16 @@ static int rockchip_spi_probe(struct platform_device *pdev)
+>         master->auto_runtime_pm = true;
+>         master->bus_num = pdev->id;
+>         master->mode_bits = SPI_CPOL | SPI_CPHA | SPI_LOOP | SPI_LSB_FIRST;
+> -       master->num_chipselect = ROCKCHIP_SPI_MAX_CS_NUM;
+> +       if (slave_mode) {
+> +               master->mode_bits |= SPI_NO_CS;
+> +               master->slave_abort = rockchip_spi_slave_abort;
+> +       } else {
+> +               of_property_read_u32(np, "num-cs", &num_cs);
+> +               master->num_chipselect = num_cs;
 
+If you do something like this you won't need the temporary num_cs variable:
+
+if (of_property_read_u32(np, "num-cs", &master->num_chipselect))
+    master->num_chipselect = 1;
+
+Also it seems like you're changing the default from
+ROCKCHIP_SPI_MAX_CS_NUM to 1 if there is no num-cs property. Did you
+check that all boards either have the num-cs property defined or only
+needs num_chipselect = 1?
+
+> +               master->use_gpio_descriptors = true;
+> +               master->max_native_cs = ROCKCHIP_SPI_MAX_CS_NUM;
+> +               master->flags = SPI_MASTER_GPIO_SS;
+> +       }
+>         master->dev.of_node = pdev->dev.of_node;
+>         master->bits_per_word_mask = SPI_BPW_MASK(16) | SPI_BPW_MASK(8) | SPI_BPW_MASK(4);
+>         master->min_speed_hz = rs->freq / BAUDR_SCKDV_MAX;
+> @@ -686,7 +723,6 @@ static int rockchip_spi_probe(struct platform_device *pdev)
+>         master->transfer_one = rockchip_spi_transfer_one;
+>         master->max_transfer_size = rockchip_spi_max_transfer_size;
+>         master->handle_err = rockchip_spi_handle_err;
+> -       master->flags = SPI_MASTER_GPIO_SS;
+>
+>         master->dma_tx = dma_request_chan(rs->dev, "tx");
+>         if (IS_ERR(master->dma_tx)) {
+> --
+> 2.20.1
+>
+>
+> _______________________________________________
+> Linux-rockchip mailing list
+> Linux-rockchip@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-rockchip
 
 _______________________________________________
 linux-arm-kernel mailing list
