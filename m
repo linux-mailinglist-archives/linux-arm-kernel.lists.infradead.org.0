@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3DC331CADFE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:07:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 993631CAE01
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:08:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VefJQWPy1ebu1YkF9aXTuKrblvrtmnSpz1E4iL4sMDY=; b=JbyGDFJExzdrkj
-	wA4BP0byRubc0xPcgWPF3hVH2FoJJsw+PTKbATrDlWrVSK65frr789ROttxkoQYNdoN5GOHDVzAEN
-	JMQ1ciHTWG1nGXx9ac9LUprDaGFirVhfV1JHZJY6eQlkYEFiVhTZfxtdYnr3GcWKYnUUUqfFCwfUA
-	j3k2/MragRLeIav8fUT6MqkFgD3bvgnEVWy4yU0s4aVnj96qGKpoKwLvWhsYJLE7LFoxF4ZfzT9Jc
-	JMbXYg08TiP0AX7uAgxMfHu/Ul1zCCcICQw6Xk1+FAHsXN8HJUctfEAQmW7JGanP+Y3OruH0GkDWv
-	kIqAVsXCu0WBUdZDp0Cw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Qwp3lsX16AtiEMsGOvMKpmPXRLWr0pu6kaZgWrLDulA=; b=sFL9LMkZ/2nnTX
+	M4MWCq4T3M1Yn6f40QXcHgsInkmJc8dZpWIh6PEp+/Y60mecG85TI7awLBHZJEVew57J/BTrdiAAD
+	wuAzN5HUu4riI+tb4z5rMBLRuo08oJL80gzkaiCfuH6L2ocqqmZegXMrdZ9x01vg5DE9BkfFJcQAg
+	r1l7O7QGrreWPOJGj9mXZxXpAeD9MxozBtpBoNxRhleE6HEvB9zqCHPug7PISsU3ymnToMJI/zOlD
+	joB6QOF8g3PQUY6ySR1xc5705T4IWR+Z6jo2dHJ/AIJPkOX95QL6bc15XPk7eFTE23MYQjp/NJviz
+	hnkR89WB/Ch5y9nY6Iqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX2ie-0001ZR-Va; Fri, 08 May 2020 13:07:13 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jX2jJ-0001hF-4S; Fri, 08 May 2020 13:07:53 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX2iV-0001Wa-Gc
+ id 1jX2iV-0001Y5-VW
  for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 13:07:05 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 048D6oHY082815;
- Fri, 8 May 2020 08:06:50 -0500
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 048D6rJs088052;
+ Fri, 8 May 2020 08:06:53 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588943210;
- bh=7TFi8DenwabYdupg92PMqRYeyZT1ttnchvOUlGfcwpc=;
- h=From:To:CC:Subject:Date;
- b=TqL3Pzp733fAQrOCIkHz80JSjfKlDiEM2UFYAzUyw3GGabhU9P2Gm4C7KS/giVKuo
- u29bGztq86zQOohltHNcW/FbJr2dKt7knj3L8yg5owuuj2URSasgEVXdu2eSSX52YS
- SlACno9Jma6W7hZhBnfHcspidkek4id/gYuveUMM=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6oGH000444;
- Fri, 8 May 2020 08:06:50 -0500
-Received: from DFLE100.ent.ti.com (10.64.6.21) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ s=ti-com-17Q1; t=1588943213;
+ bh=92Ee+tMLcURU8mNv/W9fRnCJAHuvD9EdOs9ASqzvK88=;
+ h=From:To:CC:Subject:Date:In-Reply-To:References;
+ b=hjY4J2jGmYErx/clt3GNJdUEEKwfEszWnG2t/mJcvS8/8F2ikQIsSSmLGIrXGkBH0
+ muYhrHuUnpulIom79b3xNftzB/iI2wlJodZi2VXtpdKkbx0wfYTkOmex/O6Ch+KJoX
+ wRI1E8uEypLW+rOaraKD2DsBTGRIW3LF7heL0yVk=
+Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 048D6rlq103723
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 8 May 2020 08:06:53 -0500
+Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE105.ent.ti.com
+ (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 8 May
- 2020 08:06:50 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE100.ent.ti.com
- (10.64.6.21) with Microsoft SMTP Server (version=TLS1_2,
+ 2020 08:06:53 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE113.ent.ti.com
+ (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 8 May 2020 08:06:50 -0500
+ Frontend Transport; Fri, 8 May 2020 08:06:53 -0500
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6kYk018673;
- Fri, 8 May 2020 08:06:47 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6kYl018673;
+ Fri, 8 May 2020 08:06:50 -0500
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Robin Murphy
  <robin.murphy@arm.com>, Tom Joseph <tjoseph@cadence.com>
-Subject: [PATCH v3 0/4] PCI: cadence: Deprecate inbound/outbound specific
- bindings
-Date: Fri, 8 May 2020 18:36:42 +0530
-Message-ID: <20200508130646.23939-1-kishon@ti.com>
+Subject: [PATCH v3 1/4] dt-bindings: PCI: cadence: Deprecate inbound/outbound
+ specific bindings
+Date: Fri, 8 May 2020 18:36:43 +0530
+Message-ID: <20200508130646.23939-2-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200508130646.23939-1-kishon@ti.com>
+References: <20200508130646.23939-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_060703_654780_880976A5 
-X-CRM114-Status: GOOD (  13.06  )
+X-CRM114-CacheID: sfid-20200508_060704_095779_51B706AC 
+X-CRM114-Status: GOOD (  17.09  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -97,43 +100,134 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series is a result of comments given by Rob Herring @ [1].
-Patch series changes the DT bindings and makes the corresponding driver
-changes.
+Deprecate cdns,max-outbound-regions and cdns,no-bar-match-nbits for
+host mode as both these could be derived from "ranges" and "dma-ranges"
+property. "cdns,max-outbound-regions" property would still be required
+for EP mode.
 
-Changes from v2:
-1) Changed the order of patches (no solid reason. Just save some
-rebasing effort for me)
-2) Added Acked-by Tom and Rob except for the dma-ranges patch
-3) Re-worked dma-ranges patch for it do decode multiple dma-ranges
-   and configure BAR0, BAR1 and NO_BAR instead of just NO_BAR [2].
-
-Changes from v1:
-1) Added Reviewed-by: Rob Herring <robh@kernel.org> for dt-binding patch
-2) Fixed nitpick comments from Bjorn Helgaas
-3) Added a patch to read 32-bit Vendor ID/Device ID property from DT
-
-[1] -> http://lore.kernel.org/r/20200219202700.GA21908@bogus
-[2] -> http://lore.kernel.org/r/eb1ffcb3-264f-5174-1f25-b5b2d3269840@ti.com
-
-Kishon Vijay Abraham I (4):
-  dt-bindings: PCI: cadence: Deprecate inbound/outbound specific
-    bindings
-  PCI: cadence: Remove "cdns,max-outbound-regions" DT property
-  PCI: cadence: Fix to read 32-bit Vendor ID/Device ID property from DT
-  PCI: cadence: Use "dma-ranges" instead of "cdns,no-bar-match-nbits"
-    property
-
- .../bindings/pci/cdns,cdns-pcie-ep.yaml       |   2 +-
- .../bindings/pci/cdns,cdns-pcie-host.yaml     |   3 +-
- .../devicetree/bindings/pci/cdns-pcie-ep.yaml |  25 +++
- .../bindings/pci/cdns-pcie-host.yaml          |  10 ++
- .../devicetree/bindings/pci/cdns-pcie.yaml    |   8 -
- .../controller/cadence/pcie-cadence-host.c    | 151 +++++++++++++++---
- drivers/pci/controller/cadence/pcie-cadence.h |  23 ++-
- 7 files changed, 182 insertions(+), 40 deletions(-)
+Reviewed-by: Rob Herring <robh@kernel.org>
+Acked-by: Tom Joseph <tjoseph@cadence.com>
+Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
+---
+ .../bindings/pci/cdns,cdns-pcie-ep.yaml       |  2 +-
+ .../bindings/pci/cdns,cdns-pcie-host.yaml     |  3 +--
+ .../devicetree/bindings/pci/cdns-pcie-ep.yaml | 25 +++++++++++++++++++
+ .../bindings/pci/cdns-pcie-host.yaml          | 10 ++++++++
+ .../devicetree/bindings/pci/cdns-pcie.yaml    |  8 ------
+ 5 files changed, 37 insertions(+), 11 deletions(-)
  create mode 100644 Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
 
+diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.yaml
+index 2996f8d4777c..50ce5d79d2c7 100644
+--- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.yaml
++++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-ep.yaml
+@@ -10,7 +10,7 @@ maintainers:
+   - Tom Joseph <tjoseph@cadence.com>
+ 
+ allOf:
+-  - $ref: "cdns-pcie.yaml#"
++  - $ref: "cdns-pcie-ep.yaml#"
+   - $ref: "pci-ep.yaml#"
+ 
+ properties:
+diff --git a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.yaml b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.yaml
+index cabbe46ff578..84a8f095d031 100644
+--- a/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.yaml
++++ b/Documentation/devicetree/bindings/pci/cdns,cdns-pcie-host.yaml
+@@ -45,8 +45,6 @@ examples:
+             #size-cells = <2>;
+             bus-range = <0x0 0xff>;
+             linux,pci-domain = <0>;
+-            cdns,max-outbound-regions = <16>;
+-            cdns,no-bar-match-nbits = <32>;
+             vendor-id = <0x17cd>;
+             device-id = <0x0200>;
+ 
+@@ -57,6 +55,7 @@ examples:
+ 
+             ranges = <0x02000000 0x0 0x42000000  0x0 0x42000000  0x0 0x1000000>,
+                      <0x01000000 0x0 0x43000000  0x0 0x43000000  0x0 0x0010000>;
++            dma-ranges = <0x02000000 0x0 0x0 0x0 0x0 0x1 0x00000000>;
+ 
+             #interrupt-cells = <0x1>;
+ 
+diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+new file mode 100644
+index 000000000000..6150a7a7bdbf
+--- /dev/null
++++ b/Documentation/devicetree/bindings/pci/cdns-pcie-ep.yaml
+@@ -0,0 +1,25 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/pci/cdns-pcie-ep.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: Cadence PCIe Device
++
++maintainers:
++  - Tom Joseph <tjoseph@cadence.com>
++
++allOf:
++  - $ref: "cdns-pcie.yaml#"
++
++properties:
++  cdns,max-outbound-regions:
++    description: maximum number of outbound regions
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 1
++    maximum: 32
++    default: 32
++
++required:
++  - cdns,max-outbound-regions
+diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+index ab6e43b636ec..3d64f85aeb39 100644
+--- a/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
++++ b/Documentation/devicetree/bindings/pci/cdns-pcie-host.yaml
+@@ -14,6 +14,15 @@ allOf:
+   - $ref: "cdns-pcie.yaml#"
+ 
+ properties:
++  cdns,max-outbound-regions:
++    description: maximum number of outbound regions
++    allOf:
++      - $ref: /schemas/types.yaml#/definitions/uint32
++    minimum: 1
++    maximum: 32
++    default: 32
++    deprecated: true
++
+   cdns,no-bar-match-nbits:
+     description:
+       Set into the no BAR match register to configure the number of least
+@@ -23,5 +32,6 @@ properties:
+     minimum: 0
+     maximum: 64
+     default: 32
++    deprecated: true
+ 
+   msi-parent: true
+diff --git a/Documentation/devicetree/bindings/pci/cdns-pcie.yaml b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
+index 6887ccc339cc..02553d5e6c51 100644
+--- a/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
++++ b/Documentation/devicetree/bindings/pci/cdns-pcie.yaml
+@@ -10,14 +10,6 @@ maintainers:
+   - Tom Joseph <tjoseph@cadence.com>
+ 
+ properties:
+-  cdns,max-outbound-regions:
+-    description: maximum number of outbound regions
+-    allOf:
+-      - $ref: /schemas/types.yaml#/definitions/uint32
+-    minimum: 1
+-    maximum: 32
+-    default: 32
+-
+   phys:
+     description:
+       One per lane if more than one in the list. If only one PHY listed it must
 -- 
 2.17.1
 
