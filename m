@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1EC71CB5DB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 19:25:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 340401CB5E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 19:26:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k1cH74y58k9GmfpRS9/P4ZW9ZrOgr2ydn4K5mLITmI4=; b=nlyIGa1tFMz/Wj
-	e0gfLvX7lgQAzgpLkO9U1Lhd/w6L5PCFjRD7r3+zGk6X+WV2diUNnrdUBE7x0NYMuWBtu8O3IkeYE
-	YPY0WrqE7UohP8OGhBbobI+VUe0bbuLwvSeIuO5FSXg4i8mnq4PH3Amt1CamsEhMMoV8BQ4G8nGqr
-	UMJcgLSZ0c/k3rhdopTKXoMwGjiDilfJuOueGkBK/1RezTGcvsClkoKZn1OlzmiCNnX7/WL5R6M3+
-	s/t4g9lY7DTH+RerFEyFihuXVnL/fD+6ib1KM2eyP0pbv0ThPQWoTi1zNlgNCugdOM5Kck6C0IPzS
-	gsf1yau3yDTor1T6fgsA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4l7ZbV6bizRwifWhUVC3NLAPRn/ZyEDq0+e1bg6RYxQ=; b=tYWK3mB35QfNRl
+	NQXERXBedKmqZT39beFJHD423YB30qmwcT0LmFFiR1w8cKQIuMyWiYaxUYYaC40E5Tooizxe1cEiO
+	a9Jxa2vtWSibBTbvuc75ZXa+aSN7g+NRuQE0EA39EYPZv0fpOE3QBzb66PZJCcBzA9EfghzfMNsPH
+	i/L4b64wNKJW7y6z8viwF+z7TIxN1pLypfvCjjkW/ZMfr+wSIPCP47clBW4nTE2wflgzExAtkUFRx
+	FVCqOcpb/0TL97uqCKU+HfIHhzUV/jXkJ1SssmNtycZUgF1FrxGAzGpldHOhEk1m+JnsOf5j4SFS8
+	v8c2JYsc4v+ll1djSM/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX6kj-000143-Es; Fri, 08 May 2020 17:25:37 +0000
+	id 1jX6lm-00023v-NW; Fri, 08 May 2020 17:26:42 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX6ka-00011F-2y; Fri, 08 May 2020 17:25:29 +0000
-X-UUID: 706d676d0c9542448787566cfd93cd4c-20200508
+ id 1jX6kc-00011F-Pd; Fri, 08 May 2020 17:25:32 +0000
+X-UUID: 8525725cce364e0abaf215bbb9515d1a-20200508
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=0knH9HNnIx9SRZudXymGnZJ0S7xeMFAxCHgdkhMyXYU=; 
- b=jb1ZHoTbS6RmvKKyVnkkYGuNz4QeH4brKBU9QKshK9Ucv8FXhWVonTeyRElPwWz6fGDFBVoIyedng4IzfI6De7MHje+8LBccoNlzRjddd3/ne/U6CdQkF4li5vmEBO2k2D2yCEStfUzjQCPD/n9vZNwkqWXMY0EQQFSR+CZXVhw=;
-X-UUID: 706d676d0c9542448787566cfd93cd4c-20200508
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
+ bh=63Ha8H1vD2DgULJ74Wxv3WLmceNjswpQ6smXNM7kEpI=; 
+ b=B0rhEwcoHnH9DLOGvX73rxz6/0NorLjMbRA6Kerw3jSGgJMDVyDcqALXL4W/YPLVkc5IZxUc7C/XhUYuFBjPsST4jBsvE22meY53ZJTBQKhMypK5tE6QzjUIlonqghoYSwmfRlbcmKA1T+jG67mPtvwF6o4ycGe0VedY0ma3Fy8=;
+X-UUID: 8525725cce364e0abaf215bbb9515d1a-20200508
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1334446526; Fri, 08 May 2020 09:25:04 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ with ESMTP id 1581936568; Fri, 08 May 2020 09:25:04 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 10:15:18 -0700
+ 15.0.1497.2; Fri, 8 May 2020 10:15:14 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 9 May 2020 01:15:11 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 9 May 2020 01:15:10 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
  Frontend Transport; Sat, 9 May 2020 01:15:11 +0800
@@ -46,17 +46,19 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v1 0/5] scsi: ufs: allow customizable WriteBooster flush policy
-Date: Sat, 9 May 2020 01:15:08 +0800
-Message-ID: <20200508171513.14665-1-stanley.chu@mediatek.com>
+Subject: [PATCH v1 1/5] scsi: ufs: introduce ufs_hba_variant_params to collect
+ customizable parameters
+Date: Sat, 9 May 2020 01:15:09 +0800
+Message-ID: <20200508171513.14665-2-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
+In-Reply-To: <20200508171513.14665-1-stanley.chu@mediatek.com>
+References: <20200508171513.14665-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: F7A3837055F0D783E3D514AAFE929BFFDF806506BD535D7E485499953F07CA592000:8
+X-TM-SNTS-SMTP: 739650311132C533E0239377C792F065F22E93209043B0A347B74DED9CE26FAE2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_102528_138580_E4937F54 
-X-CRM114-Status: UNSURE (   5.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200508_102530_838281_4903ACC6 
+X-CRM114-Status: GOOD (  12.01  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,26 +98,128 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+There are more and more customizable parameters showed up
+in UFS driver. Let's collect them into an unified place to make
+the driver more clean.
 
-This patch set tries to allow vendors to modify the WriteBooster flush policy.
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+---
+ drivers/scsi/ufs/ufshcd.c | 38 +++++++++++++++-----------------------
+ drivers/scsi/ufs/ufshcd.h |  8 +++++++-
+ 2 files changed, 22 insertions(+), 24 deletions(-)
 
-In the same time, collect all customizable parameters to an unified structure to make UFS driver more clean.
-
-Stanley Chu (5):
-  scsi: ufs: introduce ufs_hba_variant_params to collect customizable
-    parameters
-  scsi: ufs-mediatek: change the way to use customizable parameters
-  scsi: ufs: customize flush threshold for WriteBooster
-  scsi: ufs: use flexible definition for UFS_WB_BUF_REMAIN_PERCENT
-  scsi: ufs-mediatek: customize WriteBooster flush policy
-
- drivers/scsi/ufs/ufs-mediatek.c |  5 ++--
- drivers/scsi/ufs/ufs.h          |  5 +---
- drivers/scsi/ufs/ufshcd.c       | 46 ++++++++++++++-------------------
- drivers/scsi/ufs/ufshcd.h       |  9 ++++++-
- 4 files changed, 32 insertions(+), 33 deletions(-)
-
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 426073a518ef..cdacbe6378a1 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -1353,23 +1353,6 @@ static int ufshcd_devfreq_get_dev_status(struct device *dev,
+ 	return 0;
+ }
+ 
+-static struct devfreq_dev_profile ufs_devfreq_profile = {
+-	.polling_ms	= 100,
+-	.target		= ufshcd_devfreq_target,
+-	.get_dev_status	= ufshcd_devfreq_get_dev_status,
+-};
+-
+-#if IS_ENABLED(CONFIG_DEVFREQ_GOV_SIMPLE_ONDEMAND)
+-static struct devfreq_simple_ondemand_data ufs_ondemand_data = {
+-	.upthreshold = 70,
+-	.downdifferential = 5,
+-};
+-
+-static void *gov_data = &ufs_ondemand_data;
+-#else
+-static void *gov_data; /* NULL */
+-#endif
+-
+ static int ufshcd_devfreq_init(struct ufs_hba *hba)
+ {
+ 	struct list_head *clk_list = &hba->clk_list_head;
+@@ -1385,12 +1368,12 @@ static int ufshcd_devfreq_init(struct ufs_hba *hba)
+ 	dev_pm_opp_add(hba->dev, clki->min_freq, 0);
+ 	dev_pm_opp_add(hba->dev, clki->max_freq, 0);
+ 
+-	ufshcd_vops_config_scaling_param(hba, &ufs_devfreq_profile,
+-					 gov_data);
++	ufshcd_vops_config_scaling_param(hba, &hba->vps->devfreq_profile,
++					 &hba->vps->ondemand_data);
+ 	devfreq = devfreq_add_device(hba->dev,
+-			&ufs_devfreq_profile,
++			&hba->vps->devfreq_profile,
+ 			DEVFREQ_GOV_SIMPLE_ONDEMAND,
+-			gov_data);
++			&hba->vps->ondemand_data);
+ 	if (IS_ERR(devfreq)) {
+ 		ret = PTR_ERR(devfreq);
+ 		dev_err(hba->dev, "Unable to register with devfreq %d\n", ret);
+@@ -4314,7 +4297,7 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
+ 	 * instruction might be read back.
+ 	 * This delay can be changed based on the controller.
+ 	 */
+-	ufshcd_delay_us(hba->hba_enable_delay_us, 100);
++	ufshcd_delay_us(hba->vps->hba_enable_delay_us, 100);
+ 
+ 	/* wait for the host controller to complete initialization */
+ 	retry = 50;
+@@ -7477,6 +7460,15 @@ static const struct attribute_group *ufshcd_driver_groups[] = {
+ 	NULL,
+ };
+ 
++static struct ufs_hba_variant_params ufs_hba_vps = {
++	.hba_enable_delay_us		= 1000,
++	.devfreq_profile.polling_ms	= 100,
++	.devfreq_profile.target		= ufshcd_devfreq_target,
++	.devfreq_profile.get_dev_status	= ufshcd_devfreq_get_dev_status,
++	.ondemand_data.upthreshold	= 70,
++	.ondemand_data.downdifferential	= 5,
++};
++
+ static struct scsi_host_template ufshcd_driver_template = {
+ 	.module			= THIS_MODULE,
+ 	.name			= UFSHCD,
+@@ -8724,7 +8716,7 @@ int ufshcd_init(struct ufs_hba *hba, void __iomem *mmio_base, unsigned int irq)
+ 
+ 	hba->mmio_base = mmio_base;
+ 	hba->irq = irq;
+-	hba->hba_enable_delay_us = 1000;
++	hba->vps = &ufs_hba_vps;
+ 
+ 	err = ufshcd_hba_init(hba);
+ 	if (err)
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index 23a434c03c2a..f7bdf52ba8b0 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -566,6 +566,12 @@ enum ufshcd_caps {
+ 	UFSHCD_CAP_WB_EN				= 1 << 7,
+ };
+ 
++struct ufs_hba_variant_params {
++	struct devfreq_dev_profile devfreq_profile;
++	struct devfreq_simple_ondemand_data ondemand_data;
++	u16 hba_enable_delay_us;
++};
++
+ /**
+  * struct ufs_hba - per adapter private structure
+  * @mmio_base: UFSHCI base register address
+@@ -663,6 +669,7 @@ struct ufs_hba {
+ 	int nutmrs;
+ 	u32 ufs_version;
+ 	const struct ufs_hba_variant_ops *vops;
++	struct ufs_hba_variant_params *vps;
+ 	void *priv;
+ 	unsigned int irq;
+ 	bool is_irq_enabled;
+@@ -684,7 +691,6 @@ struct ufs_hba {
+ 	u32 eh_flags;
+ 	u32 intr_mask;
+ 	u16 ee_ctrl_mask;
+-	u16 hba_enable_delay_us;
+ 	bool is_powered;
+ 
+ 	/* Work Queues */
 -- 
 2.18.0
 _______________________________________________
