@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 737C11CA1FD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9B0F1CA238
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:26:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xTcgNX6lZSQHPreZXc5lACHrCtgiVWu/6Yabk5UN7Jo=; b=o5nEp5MX9t4dkb
-	bc0rP//lyGKTeQZy3a988jgJTeRBCTD+2UHNaTb0x6EEXCvbRHSrsx3U+EBeFPqSa1y1tOPGjep6J
-	xlAaIu0z3coRd7JKvezqZcN9m7ek1WbUFnh2Msw++v47CZHmHkdNc4nitOggj1qj7CiYR7LvFvev2
-	zTxyrBhDAsj0kE425s0tSPat7VHMiSjPRbYMQKV+lTSrLxULGiRxl95cEDBppJ6Fj0/HxXdnCSTIL
-	RkRAJv0FEjipudq0yc9kb2fxiYn0mTHAmC/c8IKSpPYP7l6rvUWcQLAo/Q+DAFKJLeYBi6qMh6BuZ
-	7SR3zoZXP+++kN9gZ9UQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5cgu4L5yUka9N+MM3i4QpxikXbNcswEuEeTjXJpf79c=; b=rQERv5peJLRE0g
+	ERj6KHayo14VbKOkv1dwwjKTWjrX0hyfvt4ooVoN6EXo5+poL+zhu7W2YtZdGjYFe4utiqpApgYRz
+	qG+fYpkpSL5ekln+I0HpRMhHQoleSudHI3al/sEhX0jH6BZwSq8xA5Jabq1a4mPmWxWQ5jpyWAnjm
+	22TRAj4V/01kKAUlIw8Aed/qY+tdp/jFJOnxkxt4zoletW2aUp3xZBHX1i4xzfdUOUvGmjv1BBO8r
+	g32pAWdxZAKfv80/C7aESpFwa5sSwt/hBoTDXM7JtGxxD2fyFQRTE+/qvtTwIbmWS4Z1ny0Xpp7y3
+	zLzN3g0l60EEJplgV8aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWuU7-0002JH-LR; Fri, 08 May 2020 04:19:39 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWuTy-0002Im-1J; Fri, 08 May 2020 04:19:31 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: ezequiel) with ESMTPSA id 936272A2D84
-Message-ID: <96c35183ad7cde60afb8617e334b060e718ee532.camel@collabora.com>
-Subject: Re: [PATCH v3 4/4] media: rockchip: rga: Only set output CSC mode
- for RGB input
-From: Ezequiel Garcia <ezequiel@collabora.com>
-To: Paul Kocialkowski <paul.kocialkowski@bootlin.com>, 
- linux-media@vger.kernel.org, linux-rockchip@lists.infradead.org, 
- devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org, 
- linux-kernel@vger.kernel.org
-Date: Fri, 08 May 2020 01:19:17 -0300
-In-Reply-To: <20200430164245.1630174-5-paul.kocialkowski@bootlin.com>
-References: <20200430164245.1630174-1-paul.kocialkowski@bootlin.com>
- <20200430164245.1630174-5-paul.kocialkowski@bootlin.com>
-Organization: Collabora
-User-Agent: Evolution 3.36.0-1 
+	id 1jWuao-0007it-Rj; Fri, 08 May 2020 04:26:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWuag-0007iM-3l
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 04:26:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 06A7530E;
+ Thu,  7 May 2020 21:26:25 -0700 (PDT)
+Received: from [10.163.73.155] (unknown [10.163.73.155])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B8DAA3F68F;
+ Thu,  7 May 2020 21:26:22 -0700 (PDT)
+Subject: Re: [PATCH V3 02/16] arm64/cpufeature: Drop TraceFilt feature
+ exposure from ID_DFR0 register
+To: Will Deacon <will@kernel.org>
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-3-git-send-email-anshuman.khandual@arm.com>
+ <20200504202453.GA5012@willie-the-truck>
+ <56cd3062-a0c2-6cdf-b7c6-c2b7bf56d23b@arm.com>
+ <20200505104250.GA19710@willie-the-truck>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <26002f7f-865c-bcdb-8394-c8565bebeb5c@arm.com>
+Date: Fri, 8 May 2020 09:55:52 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <20200505104250.GA19710@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_211930_206081_B4B81749 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200507_212626_241882_971E8833 
+X-CRM114-Status: GOOD (  27.44  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,62 +68,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Hans Verkuil <hansverk@cisco.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Heiko Stuebner <heiko@sntech.de>, Rob Herring <robh+dt@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-04-30 at 18:42 +0200, Paul Kocialkowski wrote:
-> Setting the output CSC mode is required for a YUV output, but must not
-> be set when the input is also YUV. Doing this (as tested with a YUV420P
-> to YUV420P conversion) results in wrong colors.
-> 
-> Adapt the logic to only set the output CSC mode when the output is YUV and
-> the input is RGB. Also add a comment to clarify the rationale.
-> 
-> Fixes: f7e7b48e6d79 ("[media] rockchip/rga: v4l2 m2m support")
-> Signed-off-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
 
-Reviewed-by: Ezequiel Garcia <ezequiel@collabora.com>
 
-Thanks!
-
-> ---
->  drivers/media/platform/rockchip/rga/rga-hw.c | 8 +++++++-
->  1 file changed, 7 insertions(+), 1 deletion(-)
+On 05/05/2020 04:12 PM, Will Deacon wrote:
+> On Tue, May 05, 2020 at 12:20:41PM +0530, Anshuman Khandual wrote:
+>> On 05/05/2020 01:54 AM, Will Deacon wrote:
+>>> On Sat, May 02, 2020 at 07:03:51PM +0530, Anshuman Khandual wrote:
+>>>> ID_DFR0 based TraceFilt feature should not be exposed to guests. Hence lets
+>>>> drop it.
+>>>>
+>>>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>>>> Cc: Will Deacon <will@kernel.org>
+>>>> Cc: Marc Zyngier <maz@kernel.org>
+>>>> Cc: Mark Rutland <mark.rutland@arm.com>
+>>>> Cc: James Morse <james.morse@arm.com>
+>>>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+>>>> Cc: linux-arm-kernel@lists.infradead.org
+>>>> Cc: linux-kernel@vger.kernel.org
+>>>>
+>>>> Suggested-by: Mark Rutland <mark.rutland@arm.com>
+>>>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>>>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>>>> ---
+>>>>  arch/arm64/kernel/cpufeature.c | 1 -
+>>>>  1 file changed, 1 deletion(-)
+>>>>
+>>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+>>>> index 6d032fbe416f..51386dade423 100644
+>>>> --- a/arch/arm64/kernel/cpufeature.c
+>>>> +++ b/arch/arm64/kernel/cpufeature.c
+>>>> @@ -435,7 +435,6 @@ static const struct arm64_ftr_bits ftr_id_pfr1[] = {
+>>>>  };
+>>>>  
+>>>>  static const struct arm64_ftr_bits ftr_id_dfr0[] = {
+>>>> -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
+>>>
+>>> Hmm, this still confuses me. Is this not now FTR_NONSTRICT? Why is that ok?
+>>
+>> Mark had mentioned about it earlier (https://patchwork.kernel.org/patch/11287805/)
+>> Did I misinterpret the first part ? Could not figure "capping the emulated debug
+>> features" part. Probably, Mark could give some more details.
+>>
+>> From the earlier discussion:
+>>
+>> * ID_DFR0 fields need more thought; we should limit what we expose here.
+>>   I don't think it's valid for us to expose TraceFilt, and I suspect we
+>>   need to add capping for debug features we currently emulate.
 > 
-> diff --git a/drivers/media/platform/rockchip/rga/rga-hw.c b/drivers/media/platform/rockchip/rga/rga-hw.c
-> index 5607ee8d1917..aaa96f256356 100644
-> --- a/drivers/media/platform/rockchip/rga/rga-hw.c
-> +++ b/drivers/media/platform/rockchip/rga/rga-hw.c
-> @@ -200,6 +200,11 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
->  	dst_info.data.format = ctx->out.fmt->hw_format;
->  	dst_info.data.swap = ctx->out.fmt->color_swap;
+> Sorry, I for confused (again) by the cpufeature code :) I'm going to add
+> the following to my comment:
+> 
+> 
+> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+> index c1d44d127baa..9b05843d67af 100644
+> --- a/arch/arm64/kernel/cpufeature.c
+> +++ b/arch/arm64/kernel/cpufeature.c
+> @@ -53,6 +53,11 @@
+>   *   arbitrary physical CPUs, but some features not present on the host are
+>   *   also advertised and emulated. Look at sys_reg_descs[] for the gory
+>   *   details.
+> + *
+> + * - If the arm64_ftr_bits[] for a register has a missing field, then this
+> + *   field is treated as STRICT RES0, including for read_sanitised_ftr_reg().
+> + *   This is stronger than FTR_HIDDEN and can be used to hide features from
+> + *   KVM guests.
+>   */
 >  
-> +	/*
-> +	 * CSC mode must only be set when the colorspace families differ between
-> +	 * input and output. It must remain unset (zeroed) if both are the same.
-> +	 */
-> +
->  	if (RGA_COLOR_FMT_IS_YUV(ctx->in.fmt->hw_format) &&
->  	    RGA_COLOR_FMT_IS_RGB(ctx->out.fmt->hw_format)) {
->  		switch (ctx->in.colorspace) {
-> @@ -212,7 +217,8 @@ static void rga_cmd_set_trans_info(struct rga_ctx *ctx)
->  		}
->  	}
+>  #define pr_fmt(fmt) "CPU features: " fmt
+> 
+
+Wondering if you will take this comment via a separate patch/branch or
+should I fold it here instead.
+
+> 
+> However, I think we really want to get rid of ftr_generic_32bits[] entirely
+> and spell out all of the register fields, even just using comments for the
+> fields we're omitting:
+
+Should we do that later or in this series itself ?
+
+> 
+> 
+> @@ -425,7 +430,7 @@ static const struct arm64_ftr_bits ftr_id_pfr1[] = {
+>  };
 >  
-> -	if (RGA_COLOR_FMT_IS_YUV(ctx->out.fmt->hw_format)) {
-> +	if (RGA_COLOR_FMT_IS_RGB(ctx->in.fmt->hw_format) &&
-> +	    RGA_COLOR_FMT_IS_YUV(ctx->out.fmt->hw_format)) {
->  		switch (ctx->out.colorspace) {
->  		case V4L2_COLORSPACE_REC709:
->  			dst_info.data.csc_mode = RGA_SRC_CSC_MODE_BT709_R0;
+>  static const struct arm64_ftr_bits ftr_id_dfr0[] = {
+> -	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 28, 4, 0),
+> +	/* 31:28	TraceFilt */
+>  	S_ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 24, 4, 0xf),	/* PerfMon */
+>  	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 20, 4, 0),
+>  	ARM64_FTR_BITS(FTR_HIDDEN, FTR_STRICT, FTR_LOWER_SAFE, 16, 4, 0),
+> 
+> 
+> Longer term, I think we'll probably want to handle these within
+> ARM64_FTR_BITS, as we may end up with features that we want to hide from
+> KVM guests but not from the host kernel.
 
-
+Sure, but for now will fold the above changes here.
 
 _______________________________________________
 linux-arm-kernel mailing list
