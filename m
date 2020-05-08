@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E08B91CAE02
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:08:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BF5C1CAE03
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 15:08:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aOjjKl+aM7/2WYkw7rGgajArhnhjw6t6eSsLMdVoq/o=; b=IhDBx1hcjVugzZ
-	6GE9zxMDwofuf5eiVJmdbVwyOC6sPzPD/txNUfLrGuzlH67zUJ2VzJz7/Q20HBlrwiMOpnV+w9dNk
-	JnwLbotpq+iu3odDjRYRVPEHAJoh1gZOApFGyyMhSx69hQxMyxOG2YeHRiufIp4mmrbHhM+VPD2Gy
-	Vy8TRAC8Ct4mdO6iy23R7WVtFMEQPtf7Vf6mG561YsJCAeOwi3H3W5gGuRP8mXxpQEnAKMzwstaTf
-	N4+OCiY+Kseo3iliUK+QZy9ySFhCMrDaykSNilYYGaEVbfxxLmJisMHCtXAJbmpqx+psosEGvvky3
-	kTpwdh03iVCBSd9GfJ3Q==;
+	List-Owner; bh=uo4SQZz539i4fEQYHztjdEFWbmVRv+/X208R2SARdQM=; b=pBI0rW1YfSjj6n
+	gbJSM7OzGOHbBy2CIbK/iJKbRYvW7gXECDnPODHLS7rXVKWSllaJ5biMNmSd3B/aG/SAbtb+L6aL6
+	Nc9HkEpSx/JfqcNBhhm2yXz97BE7ZM4IT1q7HLeBfI0UEFc0tjAhrDGg8JxsDJNFRjruIudOePV8B
+	aVlNDZa1G/xxN4XeAlt/jLQFKC7Rk5yBUQ4YhLNqmLqzb6EgN8XBZsa5vjo6VIoJKRMwzsxjGd3RW
+	iURKYPH/HsZfnj1Zg7YOodyMCFOA0H7fAV15RyKKFVBTLzSyEU7QTBwrIE0wFs4OwwqPl2UPS7eRq
+	O4Jqw8VADsZMJVnE9Vjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX2ja-00026g-En; Fri, 08 May 2020 13:08:10 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1jX2jo-0002Oc-QL; Fri, 08 May 2020 13:08:24 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX2iW-0001YU-6c
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 13:07:06 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 048D6vGc082832;
- Fri, 8 May 2020 08:06:57 -0500
+ id 1jX2ia-0001a7-3e
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 13:07:09 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 048D70F9024868;
+ Fri, 8 May 2020 08:07:00 -0500
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1588943217;
- bh=u2mvYMRrFerGW2wl1QCxHV1orEWryyhjOCrVBc6sKOU=;
+ s=ti-com-17Q1; t=1588943220;
+ bh=9OzK3cQ79vBtHjYhXF7SZZ/2/l/Kv3M5T/+KgLUKvlA=;
  h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=eSNLHz0dvEr0b+XTqR5qDNsGIzQyLZUHNm6KXPiFykSXesosekROV+VgLL1MagaGv
- PHU7HCVEkPXC4gad6dZ6Ywcl1btVQfnzWCaOebLpMmWxGlx8uhHjF2lIp0s2/4GPEQ
- nSVyVzEV9Av4hql+iViHeadY3rcKR0iKZ4SWku48=
-Received: from DLEE103.ent.ti.com (dlee103.ent.ti.com [157.170.170.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 048D6v38103741
+ b=L577MJo6qayHav2G4S58GJbhUHozlXmfu5TOzzGjtYSV3s9EDMKaVl+5ib9LgzJd8
+ MQxIXWavf6SgoYrb778kQuGriJH9PolZ+1YJ65Gs4p86Fux3wFko0FiVDPJD2yu2Up
+ lzctd0+DSbq4o1xgEpXNguVaSKexgUPpX/x8woXY=
+Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 048D70E4007596
  (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 8 May 2020 08:06:57 -0500
-Received: from DLEE101.ent.ti.com (157.170.170.31) by DLEE103.ent.ti.com
- (157.170.170.33) with Microsoft SMTP Server (version=TLS1_2,
+ Fri, 8 May 2020 08:07:00 -0500
+Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 8 May
- 2020 08:06:56 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE101.ent.ti.com
- (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ 2020 08:07:00 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 8 May 2020 08:06:56 -0500
+ Frontend Transport; Fri, 8 May 2020 08:07:00 -0500
 Received: from a0393678ub.india.ti.com (ileax41-snat.itg.ti.com
  [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6kYm018673;
- Fri, 8 May 2020 08:06:54 -0500
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 048D6kYn018673;
+ Fri, 8 May 2020 08:06:57 -0500
 From: Kishon Vijay Abraham I <kishon@ti.com>
 To: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Robin Murphy
  <robin.murphy@arm.com>, Tom Joseph <tjoseph@cadence.com>
-Subject: [PATCH v3 2/4] PCI: cadence: Remove "cdns,
- max-outbound-regions" DT property
-Date: Fri, 8 May 2020 18:36:44 +0530
-Message-ID: <20200508130646.23939-3-kishon@ti.com>
+Subject: [PATCH v3 3/4] PCI: cadence: Fix to read 32-bit Vendor ID/Device ID
+ property from DT
+Date: Fri, 8 May 2020 18:36:45 +0530
+Message-ID: <20200508130646.23939-4-kishon@ti.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200508130646.23939-1-kishon@ti.com>
 References: <20200508130646.23939-1-kishon@ti.com>
 MIME-Version: 1.0
 X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_060704_321682_F06C6C80 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20200508_060708_256493_A9831EA7 
+X-CRM114-Status: GOOD (  13.93  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -100,66 +100,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-"cdns,max-outbound-regions" device tree property provides the
-maximum number of outbound regions supported by the Host PCIe
-controller. However the outbound regions are configured based
-on what is populated in the "ranges" DT property.
+The PCI Bus Binding specification (IEEE Std 1275-1994 Revision 2.1 [1])
+defines both Vendor ID and Device ID to be 32-bits. Fix
+pcie-cadence-host.c driver to read 32-bit Vendor ID and Device ID
+properties from device tree.
 
-Avoid using two properties for configuring outbound regions and
-use only "ranges" property instead.
+[1] -> https://www.devicetree.org/open-firmware/bindings/pci/pci2_1.pdf
 
 Acked-by: Rob Herring <robh@kernel.org>
 Acked-by: Tom Joseph <tjoseph@cadence.com>
 Signed-off-by: Kishon Vijay Abraham I <kishon@ti.com>
 ---
- drivers/pci/controller/cadence/pcie-cadence-host.c | 6 ------
- drivers/pci/controller/cadence/pcie-cadence.h      | 2 --
- 2 files changed, 8 deletions(-)
+ drivers/pci/controller/cadence/pcie-cadence-host.c | 4 ++--
+ drivers/pci/controller/cadence/pcie-cadence.h      | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/drivers/pci/controller/cadence/pcie-cadence-host.c b/drivers/pci/controller/cadence/pcie-cadence-host.c
-index 597b61e6cc4b..079692aa4da1 100644
+index 079692aa4da1..6ecebb79057a 100644
 --- a/drivers/pci/controller/cadence/pcie-cadence-host.c
 +++ b/drivers/pci/controller/cadence/pcie-cadence-host.c
-@@ -146,9 +146,6 @@ static int cdns_pcie_host_init_address_translation(struct cdns_pcie_rc *rc)
- 	for_each_of_pci_range(&parser, &range) {
- 		bool is_io;
- 
--		if (r >= rc->max_regions)
--			break;
--
- 		if ((range.flags & IORESOURCE_TYPE_BITS) == IORESOURCE_MEM)
- 			is_io = false;
- 		else if ((range.flags & IORESOURCE_TYPE_BITS) == IORESOURCE_IO)
-@@ -242,9 +239,6 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
- 	pcie = &rc->pcie;
- 	pcie->is_rc = true;
- 
--	rc->max_regions = 32;
--	of_property_read_u32(np, "cdns,max-outbound-regions", &rc->max_regions);
--
- 	rc->no_bar_nbits = 32;
+@@ -243,10 +243,10 @@ int cdns_pcie_host_setup(struct cdns_pcie_rc *rc)
  	of_property_read_u32(np, "cdns,no-bar-match-nbits", &rc->no_bar_nbits);
  
+ 	rc->vendor_id = 0xffff;
+-	of_property_read_u16(np, "vendor-id", &rc->vendor_id);
++	of_property_read_u32(np, "vendor-id", &rc->vendor_id);
+ 
+ 	rc->device_id = 0xffff;
+-	of_property_read_u16(np, "device-id", &rc->device_id);
++	of_property_read_u32(np, "device-id", &rc->device_id);
+ 
+ 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "reg");
+ 	pcie->reg_base = devm_ioremap_resource(dev, res);
 diff --git a/drivers/pci/controller/cadence/pcie-cadence.h b/drivers/pci/controller/cadence/pcie-cadence.h
-index ecb159dba6f6..cf1afd85c2f5 100644
+index cf1afd85c2f5..f349f5828a58 100644
 --- a/drivers/pci/controller/cadence/pcie-cadence.h
 +++ b/drivers/pci/controller/cadence/pcie-cadence.h
-@@ -266,7 +266,6 @@ struct cdns_pcie {
-  * @bus_range: first/last buses behind the PCIe host controller
-  * @cfg_base: IO mapped window to access the PCI configuration space of a
-  *            single function at a time
-- * @max_regions: maximum number of regions supported by the hardware
-  * @no_bar_nbits: Number of bits to keep for inbound (PCIe -> CPU) address
-  *                translation (nbits sets into the "no BAR match" register)
-  * @vendor_id: PCI vendor ID
-@@ -277,7 +276,6 @@ struct cdns_pcie_rc {
- 	struct resource		*cfg_res;
+@@ -277,8 +277,8 @@ struct cdns_pcie_rc {
  	struct resource		*bus_range;
  	void __iomem		*cfg_base;
--	u32			max_regions;
  	u32			no_bar_nbits;
- 	u16			vendor_id;
- 	u16			device_id;
+-	u16			vendor_id;
+-	u16			device_id;
++	u32			vendor_id;
++	u32			device_id;
+ };
+ 
+ /**
 -- 
 2.17.1
 
