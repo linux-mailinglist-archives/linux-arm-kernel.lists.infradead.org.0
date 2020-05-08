@@ -2,88 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D1771CB818
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 21:20:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C87A1CB8E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 22:20:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tQ6+0xGGo8HLFd9R5EPlPURsevW6VnXslgmQGRVKiKk=; b=HdWUa++Qc4EsIk
-	qZMH6f918nKm/W7YXI2psYSaLCg8gao7f4YBcFn0JaAG9E+Hw+QDvr3BeMfBTPl9JG+G4kq8so5Jb
-	mKBb0MiprB47yAJqrEH0Cs3e+UNLJI/nRdHbwbgKoIcKEF+lKTp8ZEQMGQi6g1CPcDq3Yhfm50dt4
-	Pi6e926PITmP7oQSK3eUx+cAFJu9swpSKheFHZmK13yBrDGxDfmym2RIvAvKenWsK3y8i7+GqSZLv
-	RLZbNWHDBauLozhESFKrqsNTBu8XQjxL0Db5ebhou9oiaXjhy6ZrkBkOF4GjXC8nZYtreqUlJibh5
-	toV1EZRHy5fRupV7JaEw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SzdZ6L5lrJP7lXxq4Lp8mlC0Shg4qD47g+HPa1gHkhQ=; b=cHFDR4O9BdYqC1
+	Q4THaGho8fCdLj6H3f3EGs4TKCFRGQf6OpQ0fJB2TT+d28E95muRo/YrQM4FjCqyLKSFmJlmXn3z7
+	6l62OSWbsWCvEzBYQErorbD9l1du/BQKrrPRyThQOl46UXO1h/FGf21HCUvjUMpgq9524iN8y+/tR
+	SeiJEY95yJuHXWCOWZBbk50168p1JCHxHY+i8/PchI2P5VcH5YSj0ZuxJsy0JoHWhyqflMLRjt0Dn
+	3oUoyZzaf8WC6buDkP85qNoqApWR2gbsXDqGqM1GKMJQLoB7IB/rCbrpkZhokF1AuLeVc6qrInJiC
+	nzsOT7dMcjjx15khi2uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX8Y2-00086X-Ue; Fri, 08 May 2020 19:20:38 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1jX9Tp-0002W0-4h; Fri, 08 May 2020 20:20:21 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX8Xt-00083u-OM
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 19:20:31 +0000
-Received: by mail-ot1-x341.google.com with SMTP id t3so2381886otp.3
+ id 1jX9Th-0002Kb-Rm
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 20:20:15 +0000
+Received: by mail-wm1-x343.google.com with SMTP id e26so11503369wmk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 May 2020 12:20:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=dy14bCmAe7BVzWvoumFEZwlusDC/g1jSzHL5AYdiSpQ=;
- b=cDQeSsZI7jUp/t2wo5cjLtPTAlmmdrVlTSnSdLsYsI7s9jgUnACsI9sj5ES/ddQVvW
- wUykj0H9WH5cbPcljRy/LLCnwcrMqR0MS43jZfw+i4kWEFy7yt8ennBi8q6kE+FslofE
- cF8LyO4sYPyUZNNLuKDlz4UOxxVYDuSInSs3WBNRaN3aNhG7g9bBhsz8l0q/7tP+kB3E
- dU+gOmo6EJ5gY/aXGFShcBS56FlPrrSlEFm7S9+4dKOVG/zl8OVW9D4YYTVJD4sDeHQo
- K4mTI7TcAvACP3gbVPyzvegbAaS9Q+kvg2WrP9u2QCdyCF34KRSXCcTsAVh59YWWhAop
- yKLg==
+ Fri, 08 May 2020 13:20:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=iEUjvelwXy8CWK5HabUo2qnW5586fdmwk4hsFNhgWgk=;
+ b=DGuFm4EolHYHVQPXYJyEZCd/SDMorbrBWxJhVQNvIxFh59gtLDHFLbMmChtFw1HLga
+ 1BtOr7TldiKL0Y8Y3dxKg2U1uNeMsb2VxplirrxX48zcIV71v954ftpQej6oS3OIG7oL
+ SvI0Q9HEMnrFO13Bh3cSFIVFrass6xLWL2Pf9YOeV0zHYMLoNMwbfbPbSRjPMzg+Fucr
+ pbbh1TOHisOlML7S7kzMyjAK8yPYHxlCehOBSen+HFslf6HSDKqo5/4VJmPzr6AEikqu
+ b61Nr5u/QGtCDayWTub1ta5Tb5/c7xYpOKQL9gcYgvenXnAmEQo+MX7OfPkf30dxcpi9
+ rh6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=dy14bCmAe7BVzWvoumFEZwlusDC/g1jSzHL5AYdiSpQ=;
- b=K9se3SjfjEX86Kfv4RIm15vpIVcqZpX1d7B/dKF4W5Vt9j4IW96TUrasp/w3YBve0+
- JGCmBc8Z4+eHJPEj5M8g0PlUCd8wperqrfXUQ0EeGeFoROne5kMnx5fLMbLO9Gf0OXoB
- hPtkHbCGyPN2z6PgzNBNSofqhyedIJFDGTKSUrzN/wXbkzxmNv6waBfvHq7OQk+0bLx8
- 2zcyi1QsJZ3gbPfVmIZP40DVcckFyMtg4ZrV4kgZ+Lyb9MDGsVfEjSWNj8tptNdI7yYU
- Wv4XUckdqFpHDcanl+No/At4479wOM+JvDuJxfE3dtRfXIjtefkurY9HygRqNtzaWhd+
- ATEA==
-X-Gm-Message-State: AGi0PuYWBY7cFb7rMMlPYQGim6aGBJ5qhC37ZfVgw/PqL3V7MORznay4
- w5kRQjfWr5JLJUVcMbUhg2GqPzbzvPhWbPsxzRpL9w==
-X-Google-Smtp-Source: APiQypKUfg5XnRWPl9u8/xZ92W+BChS+FVqbYlkoqnPcN7KydWTtimtjkSLbOagW7JcAEkW0Y6QXwhV/ofZLf44mTw4=
-X-Received: by 2002:a9d:1caa:: with SMTP id l42mr3625835ota.139.1588965625706; 
- Fri, 08 May 2020 12:20:25 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=iEUjvelwXy8CWK5HabUo2qnW5586fdmwk4hsFNhgWgk=;
+ b=DgzkcdLOUBneL01SXG3n97NJt9bkMW5kakNSbGoy3WFKvxBr9Mv4nvo4BMAIsWIOVM
+ mi/VU1E0HI63Z2oiAGp6pRXdId1AsmXD758vgpCBLMlkRpJBWWG0GRkJ9hsgOg9XoOYg
+ jPRHDSBwWo3kamRmdMzGzZ8Vevl32PURYytJgGU4JqV1m0E6JWNo7mEFsrNDiUR6yY7a
+ dte409A/NUOo1LhNMO0TFInE+rrK18ui+EY2rqQYMW2/AaVq+8dHf6AlZasnRQnF9kqX
+ wc4hBDVoP+bwyTtP+tsU5y/Rk4xC2Xiqmwryubs3qqIueez+JuTu+ksxnbQonQC/Vr/1
+ //MQ==
+X-Gm-Message-State: AGi0PuaDvckzCbNfO1mJeuFFZvRiAg4xb57xTQtJ9XTRKVCPMrZJhlA7
+ hjgFPfd6tPOJb+Ggp51y+dY=
+X-Google-Smtp-Source: APiQypLoQyVP6hrRyLepx+LpOeJvL8bCPmpMX1VcFrAj7rP41elns1bWPmWucpq8UwoOyGloW9ewWA==
+X-Received: by 2002:a1c:6a17:: with SMTP id f23mr16962529wmc.136.1588969209492; 
+ Fri, 08 May 2020 13:20:09 -0700 (PDT)
+Received: from [10.230.188.43] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id j2sm4648887wrp.47.2020.05.08.13.20.07
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 08 May 2020 13:20:08 -0700 (PDT)
+Subject: Re: [PATCH] arm: use SPARSMEM_STATIC when SPARSEMEM is enabled (Was:
+ [PATCH 1/2] ARM: Remove redundant ARCH_SPARSEMEM_DEFAULT setting)
+To: Mike Rapoport <rppt@linux.ibm.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20200506235009.25023-1-f.fainelli@gmail.com>
+ <20200506235009.25023-2-f.fainelli@gmail.com>
+ <20200507103039.GR1551@shell.armlinux.org.uk>
+ <20200507200859.GF683243@linux.ibm.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <235b21a0-f0c9-24d9-a78e-a54010aa87ef@gmail.com>
+Date: Fri, 8 May 2020 13:20:05 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <20200427212514.11219-1-robh@kernel.org>
- <CGME20200428203953eucas1p20561ca638be023be0fae9b613d4a1d4f@eucas1p2.samsung.com>
- <CACRpkdZSPb8FxTSt8F3F1VcsTM4qG=6gxz1pBPjTZ0Dk2iVfSQ@mail.gmail.com>
- <733e20b1-9592-6941-766b-9f321ad2ace5@samsung.com>
- <CAGETcx8Cn-b6L2y10LKb91S3n06b6+Be2z_A0402EyNy-8yECg@mail.gmail.com>
- <CAPDyKFrt01tDrCgdf7hjLDTqzOYWJ=m7fNMo-2PB-uHEOzZkmw@mail.gmail.com>
- <CAGETcx-kC18pwF7uDYE4XwVOWBJN8Lx48LD74LECgDts+VB0gA@mail.gmail.com>
- <c9a2dccd-50c0-5e9a-5ca7-69ec063e3630@samsung.com>
- <CAGETcx-CmDMYj2=2LRo37MX5C=9UipiburyiPisnaSULLQCBzw@mail.gmail.com>
- <CAL_Jsq+0DL260-h-2buV0YKxgYrJOxfk=kocBjm1aKdLhovpMg@mail.gmail.com>
-In-Reply-To: <CAL_Jsq+0DL260-h-2buV0YKxgYrJOxfk=kocBjm1aKdLhovpMg@mail.gmail.com>
-From: Saravana Kannan <saravanak@google.com>
-Date: Fri, 8 May 2020 12:19:49 -0700
-Message-ID: <CAGETcx-vG75FPmXA8VaTZ9h5hiCeHa4WkOn-+2i80HsX-=WNQA@mail.gmail.com>
-Subject: Re: [PATCH] amba: Retry adding deferred devices at late_initcall
-To: Rob Herring <robh@kernel.org>
+In-Reply-To: <20200507200859.GF683243@linux.ibm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_122029_817298_4CBC3FBD 
-X-CRM114-Status: GOOD (  28.06  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200508_132013_922932_6D941970 
+X-CRM114-Status: GOOD (  19.30  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -92,8 +95,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,91 +106,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Linus Walleij <linus.walleij@linaro.org>, Russell King <linux@armlinux.org.uk>,
- John Stultz <john.stultz@linaro.org>,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Sudeep Holla <sudeep.holla@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: Doug Berger <opendmb@gmail.com>, Arnd Bergmann <arnd@arndb.de>,
+ sboyd@kernel.org, Kevin Cernekee <cernekee@gmail.com>,
+ Gregory Fong <gregory.0xf0@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 8, 2020 at 6:41 AM Rob Herring <robh@kernel.org> wrote:
->
-> On Thu, May 7, 2020 at 12:39 PM Saravana Kannan <saravanak@google.com> wrote:
-> >
-> > On Thu, May 7, 2020 at 4:44 AM Marek Szyprowski
-> > <m.szyprowski@samsung.com> wrote:
-> > >
-> > > Hi Saravana,
-> > >
-> > > On 04.05.2020 21:28, Saravana Kannan wrote:
-> > > > On Mon, May 4, 2020 at 12:11 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
-> > > >> In principle we should then be able to rely on the regular defered
-> > > >> probe mechanism, just that it's the dummy device that is being defered
-> > > >> probed (if we fail to read PID/CID).
-> > > >>> Any reason to not do something like that? I'd think that should clean
-> > > >>> up a whole lot of this code. Also, if we are primarily dealing with
-> > > >>> AMBA devices created from DT, then we might even be able to massage
-> > > >>> the fw_devlink feature to optimize this even more when fw_devlink=on.
-> > > >>>
-> > > >>> Just my 2 cents.
-> > > >> Someone should try to implement this to see if it fits well.
-> > > > I don't mind taking a stab at this if people are actually okay with
-> > > > this approach and will test and merge it if it works. I have no
-> > > > platform to test this. I'll wait to hear what others think before I
-> > > > jump on this.
-> > >
-> > > The time I've prepared my patch I've also considered something like
-> > > that, but I gave up because timer or notifier based approach was much
-> > > simpler.
-> >
-> > Maybe I'll reach the same conclusion. We'll see.
-> >
-> > > If you have some time to implement your idea I would be happy
-> > > to test it.
-> >
-> > Thanks. I'll take a stab at it then. Btw, does this need to support
-> > the non-DT/machine file way of populating device/getting resources
-> > too? Are or all supported configurations DT based?
->
-> Not sure. There may still be a few cases of non-DT. If everything is
-> DT, we could probably just get rid of AMBA bus and make everything
-> platform drivers. We have the compatible strings to match on already
-> (we only use 'arm,primecell' currently).
 
-Ok
 
-> I'm not really a fan of creating a dummy platform device.
+On 5/7/2020 1:08 PM, Mike Rapoport wrote:
+> On Thu, May 07, 2020 at 11:30:39AM +0100, Russell King - ARM Linux admin wrote:
+>> On Wed, May 06, 2020 at 04:50:08PM -0700, Florian Fainelli wrote:
+>>> From: Kevin Cernekee <cernekee@gmail.com>
+>>>
+>>> If ARCH_SPARSEMEM_ENABLE=y and ARCH_{FLATMEM,DISCONTIGMEM}_ENABLE=n,
+>>> then the logic in mm/Kconfig already makes CONFIG_SPARSEMEM the only
+>>> choice.  This is true for all of the existing ARM users of
+>>> ARCH_SPARSEMEM_ENABLE.
+>>>
+>>> Forcing ARCH_SPARSEMEM_DEFAULT=y if ARCH_SPARSEMEM_ENABLE=y prevents
+>>> us from ever defaulting to FLATMEM, so we should remove this setting.
+>>
+>> No explanation why that is desirable.
+>>
+>>> -config ARCH_SPARSEMEM_DEFAULT
+>>> -	def_bool ARCH_SPARSEMEM_ENABLE
+>>> -
+>>
+>> What this basically says is ARCH_SPARSEMEM_ENABLE=ARCH_SPARSEMEM_DEFAULT,
+>> which is exactly what we want for the non-multiplatform boards that
+>> select ARCH_SPARSEMEM_ENABLE - we _want_ them to default to sparsemem
+>> because that is what the platform requires.
+>>
+>> For example, with RiscPC, which selects ARCH_SPARSEMEM_ENABLE, we have
+>> four banks of memory at 0x10000000, 0x14000000, 0x18000000 and
+>> 0x1c000000.  These correspond with the two memory slots - the first two
+>> for the first slot, and the second two for the second slot.  Each slot
+>> has two banks.  The size of each memory bank depends on the size of the
+>> module.
+> 
+> Out of curiosity I've run 
+> 
+> 	make ARCH=arm rpc_defconfig
+> 	grep SPARSEMEM .config
+> 
+> and I was surprised to find out that it has
+> 
+> 	CONFIG_SPARSEMEM_EXTREME=y
+> 
+> Which would waste several kilibytes of memory for nothing.
+> Here is the fix:
+> 
+> From 7097c114226b5b1b2fc6bb605bf0d7eae601cc7f Mon Sep 17 00:00:00 2001
+> From: Mike Rapoport <rppt@linux.ibm.com>
+> Date: Thu, 7 May 2020 22:39:12 +0300
+> Subject: [PATCH] arm: use SPARSMEM_STATIC when SPARSEMEM is enabled
+> 
+> The commit 3e347261a80b5 ("[PATCH] sparsemem extreme implementation")
+> made SPARSMEM_EXTREME the default option for configurations that enable
+> SPARSEMEM.
+> 
+> For ARM systems with handful of memory banks SPARSEMEM_EXTREME is an
+> overkill.
+> 
+> Ensure that SPARSMEM_STATIC is enabled in the configurations that use
+> SPARSEMEM.
+> 
+> Fixes: 3e347261a80b5 ("[PATCH] sparsemem extreme implementation")
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
 
-I'm not saying it's awesome, but I think it would make amba code a bit
-cleaner and more importantly easier to maintain? It'll get all future
-deferred probe fixes automatically instead of having to replicate it
-here? Don't have a strong opinion, just thinking out aloud.
-
-> There's
-> other cases of needing to power on or enable devices before probe.
-> SDIO devices are one case. That's how we ended up with the mmc-pwrseq
-> binding.
-
-But how many of them have this weird userspace dependency where you
-can't tell userspace about the device (too soon) but also can't probe
-without userspace? At least the mmc-pwrseq doesn't seem to have those
-issues.
-
-> I really think we need some bus/driver hook between device
-> add and probe. Or maybe more precisely it is just between add and the
-> add uevent.
-
-That feels kinda odd to me though "Hey, add this device, but don't
-tell userspace". Might be better to keep the "complexity" away in the
-places that have odd requirements?
-
--Saravana
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
