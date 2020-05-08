@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 908321CA1D1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:12:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EA051CA1CF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:12:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5/noC4WHhYH/q9jTNs9EK6kluFV0IdEvsSEpXGy31zw=; b=UKNr3h+HmuvBlB
-	PRMWdIRLh1eRJMrSkkKu7YRTkeSR9hZWiqGf5UNd/RRz+759cHJBXOvTpNDGMLJwTOkim9cpN1Fai
-	F/lz6vf0FV84dsMp5OVpQvSsRMtm+H0eHGHs8S5FxbMPwJZHWG+xqxxEuvf5/rpDhpxDa8WPscf4f
-	SDHSls01TpXttiAy0s4Had2npksltn9t/d5Uv5NPa9jmTIe0yWPc3Km1KSuWknnXg/dvSOBLzpOkB
-	Qf7AiKdlbcc/yIczkc2iOHNDh/4EPPC7+6T2LzbzfO+ea1H70cwUnAe3MToEZ1qArOMID+eqAlpk/
-	1z/yscY5IfpuZgUq3DjA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iLPk86J7oxEmIn67pYD9m697rfLf0xKbCLmrEUv+cK0=; b=O6YJA7NXO1vcHR
+	XzTVCDyTF0mXBhaKhqLQoYpkjSq8Thag4SUwVvSNQAvbKzhuljS6w+kq3ud1dQrDXrpVoFa3hNJVh
+	rZ5zO/kVjqvi6Betj+GmMUWV1WgxLU4zxLF8C87VcZXzx/VZyFaJjTuNVpUzMagivYgDOxQsBNzkE
+	cP5lwu14gonGVgwWnpJIQZ21HDkptoS/K4RkSuCPc8OJjLpoy+ppQX1I/HUTT8ri5RIAkzUv5Fo9T
+	YrkLVXouQhsM7mIYKTSa7Y0a07B1g/sCy7ZFOupT11Lke/PbCfGdRnc6YpPMjTLfDZsx8F89Zi3/d
+	8gBq5a0Ih6Xx0XmKZHJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWuNK-0005kI-Sl; Fri, 08 May 2020 04:12:38 +0000
+	id 1jWuN4-0005eU-Hy; Fri, 08 May 2020 04:12:22 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWuMx-0005dh-Mi
+ id 1jWuMx-0005dg-Ns
  for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 04:12:17 +0000
 Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 82F1688CE6760E452CDF;
+ by Forcepoint Email with ESMTP id 7DA261CDD37E0367DED5;
  Fri,  8 May 2020 12:12:13 +0800 (CST)
 Received: from linux-ibm.site (10.175.102.37) by
  DGGEMS403-HUB.china.huawei.com (10.3.19.203) with Microsoft SMTP Server id
@@ -33,16 +33,18 @@ From: Hanjun Guo <guohanjun@huawei.com>
 To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "Rafael J. Wysocki"
  <rjw@rjwysocki.net>, Sudeep Holla <sudeep.holla@arm.com>, Will Deacon
  <will@kernel.org>
-Subject: [PATCH 1/2] ACPI: GTDT: Put GTDT table after parsing
-Date: Fri, 8 May 2020 12:05:52 +0800
-Message-ID: <1588910753-18543-1-git-send-email-guohanjun@huawei.com>
+Subject: [PATCH 2/2] ACPI: IORT: Add comments for not calling acpi_put_table()
+Date: Fri, 8 May 2020 12:05:53 +0800
+Message-ID: <1588910753-18543-2-git-send-email-guohanjun@huawei.com>
 X-Mailer: git-send-email 1.7.12.4
+In-Reply-To: <1588910753-18543-1-git-send-email-guohanjun@huawei.com>
+References: <1588910753-18543-1-git-send-email-guohanjun@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.175.102.37]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_211215_907851_99AAAE43 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20200507_211215_930931_D82FBA89 
+X-CRM114-Status: UNSURE (   8.78  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -73,40 +75,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The mapped GTDT table needs to be released after
-the driver init.
+The iort_table will be used at runtime after acpi_iort_init(),
+so add some comments to clarify this to make it less confusing.
 
 Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
 ---
+ drivers/acpi/arm64/iort.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-Patch 1/2 2/2 are based on top of for-next/acpi branch of                       
-the ARM64 repo.
-
- drivers/acpi/arm64/gtdt.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/acpi/arm64/gtdt.c b/drivers/acpi/arm64/gtdt.c
-index 01962c6..f2d0e59 100644
---- a/drivers/acpi/arm64/gtdt.c
-+++ b/drivers/acpi/arm64/gtdt.c
-@@ -394,7 +394,7 @@ static int __init gtdt_sbsa_gwdt_init(void)
- 	 */
- 	ret = acpi_gtdt_init(table, &timer_count);
- 	if (ret || !timer_count)
--		return ret;
-+		goto out_put_gtdt;
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index 6e445bc..619a3e5 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -1667,6 +1667,10 @@ void __init acpi_iort_init(void)
+ {
+ 	acpi_status status;
  
- 	for_each_platform_timer(platform_timer) {
- 		if (is_non_secure_watchdog(platform_timer)) {
-@@ -408,6 +408,8 @@ static int __init gtdt_sbsa_gwdt_init(void)
- 	if (gwdt_count)
- 		pr_info("found %d SBSA generic Watchdog(s).\n", gwdt_count);
- 
-+out_put_gtdt:
-+	acpi_put_table(table);
- 	return ret;
- }
- 
++	/* iort_table will be used at runtime after the iort init,
++	 * so we don't need to call acpi_put_table() to release
++	 * the IORT table mapping.
++	 */
+ 	status = acpi_get_table(ACPI_SIG_IORT, 0, &iort_table);
+ 	if (ACPI_FAILURE(status)) {
+ 		if (status != AE_NOT_FOUND) {
 -- 
 1.7.12.4
 
