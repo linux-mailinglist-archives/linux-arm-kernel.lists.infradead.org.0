@@ -2,78 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7E191CA570
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:52:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6F5BB1CA56C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:49:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Fi2OKxAqqM9BuzB1Eg5i2u5KpFnmy2FgaS9yVi8f4VQ=; b=bvN+Yac6pFPHZa
-	6xcX004v3/5PMe1LaE2i0QHNs62hBvldlWpM30YOUmua12Gnv0ldJ2CIGdPM6XARgbMhsgzAMBymF
-	rubuxxWLrVGZkbDCS/Gqnm/hal8UvfwwA9T4RjJsgqSTuRdjMyJcq+I9liZeiumVbrez78Lk/II8m
-	Fsa3ZkgHBVsKZnEiIR8MVB9PIpqV5dEjHWTFgWz81xxkSB9NJ67FouuiWOFQkhiLD6Osd6My4Pbxa
-	+bFeiM1ssh1KcY1MFKLdS0UUtIKrZLIx1nTx8slkofOA7Yo1tUbTnf7JDOeoBtipZ18Mm4aUXHzAt
-	cNzs6NsAWC1kk34P1K9Q==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kqrGWbLalZeMUYec1yeI0Jl4SmAqb0G0sMMDWtn/jCI=; b=MzWznDCPjmL0vI
+	pI+D6qSDGZG8yVFvFhVlkLW+h0/TsQth4aSRCd6wA93lMPNI1f9+MTeoeGhHnpxnEKkzdAX/V+5aU
+	4oThcbGkX7H0AisktncUfPSm/fSEYOrjlYAZsJzbKOp9f0oszQ4M7VclL4Ra+6K5y1LyzdTqZg7SG
+	6QPcSRJPkt3jYPiwzuTAl/EHr+5FBNN6DTC4dmGLfaoEwuL/HippybgKk/COuzroDgptKFUkiAzP4
+	ILa6i/FzDKgzDjGWtr/reOAFHCMZXh0FGzG16OuA0g8P90mZ2lBwtK9cWSd2/HREteGJKbkQ7oEMn
+	rDmm7HALgEwZs8ay79SA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWxne-0001ck-K1; Fri, 08 May 2020 07:52:02 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jWxlT-0007DD-0c; Fri, 08 May 2020 07:49:47 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWxnX-0001cL-F0; Fri, 08 May 2020 07:51:56 +0000
-X-UUID: 599fdd48b3644391b4ad832610efac0a-20200507
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=VH3FkscophLr2VZ9hGJSs8XypZWlJDmz13jJccd0dz0=; 
- b=dy6FG3Qt1M9MzeAdMdIy5SqfZd6yrN5zXBGsh657YUwsitPbXJHWi64XpMW83GXZOwYJFWbjaIsdBT85ffQqYxc/OBuRLu7AuKN5UuoAwvuXDAlqRS0ADZPuDw5YPcb6nFL8fXKJ95dfTU4Dxml+XepmrkfMn/Y88aqR84V2d9A=;
-X-UUID: 599fdd48b3644391b4ad832610efac0a-20200507
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 894468058; Thu, 07 May 2020 23:51:48 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 00:46:47 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 15:46:47 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 8 May 2020 15:46:47 +0800
-Message-ID: <1588924008.3197.44.camel@mtkswgap22>
-Subject: RE: [PATCH v7 3/8] scsi: ufs: export ufs_fixup_device_setup() function
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Fri, 8 May 2020 15:46:48 +0800
-In-Reply-To: <SN6PR04MB4640777E2AEF4A77A642B81BFCA20@SN6PR04MB4640.namprd04.prod.outlook.com>
-References: <20200508022141.10783-1-stanley.chu@mediatek.com>
- <20200508022141.10783-4-stanley.chu@mediatek.com>
- <SN6PR04MB4640777E2AEF4A77A642B81BFCA20@SN6PR04MB4640.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jWxlL-0007Cq-N9
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 07:49:41 +0000
+Received: by mail-ej1-x643.google.com with SMTP id n17so581862ejh.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 May 2020 00:49:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=2ojn62szLR5yAed7Cpk2YDlU98vpC3/PF24hZzNfukc=;
+ b=PxOeyEL/WMCKE3MykeDNUl697V1NpTyQ+qyuJgQxQ8veMFpQxgpdy0q0uitmgCQku3
+ AnlRbwLIqljlfpjrPUWg2Tch4lPIPqQrWF1Dnoo0vadM5KzPZH53D9+GueDnlWl+v2j5
+ IcKBukPfZVftBM8Wyrfw3H54TI86QA0J6V/4Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=2ojn62szLR5yAed7Cpk2YDlU98vpC3/PF24hZzNfukc=;
+ b=FqfhggZwKldpsaLe3s75xheRhlMLyCKoMcWwjiqgQRsZ3rTgQd7ysYoeVhRCeLP0Wm
+ bucNcmbQHm57xH+IX4ZZKUetJm5sUIRMX9HNbF7521vSrRdT2gI1dj1aM/vMdQCFWWy8
+ V3Ty5ZlJ3LzPHA7uxDhOpguC5vgN/4m9TpxJKvJXb6tOWy/K1lgbh37hnIBlKZJIrzUR
+ mXs3fvpO2Yl+dDxtgV6ztwEXIAngFH2/Q5PA/mZbFU5x1PGvlTdycXKOij2aWyRhUUYv
+ 5efmHmMEQxgQH5R/17obc5QpR0HrDA4hyzsppn0SbRJVMppR0+73tQi2m8IeLh+V5NOK
+ Fg4g==
+X-Gm-Message-State: AGi0PuaaA9I60K4V1M5jIOJ7OaJseLFBP94qi5dgPxNPcwqL/6fa7Gkn
+ zdAhpUF3BdMEBYXcGDQc8B4sPHofBsxGM6S6BtX/7FjH
+X-Google-Smtp-Source: APiQypJt1hvsyUFF0tzsQJYCtHjMMGdAT3QaHxDwrq0/Tkfdj2zjCuSUV+TqJSyReKLbgKVtk0+DWLYID9k0DtsoTxw=
+X-Received: by 2002:a17:906:4c8e:: with SMTP id
+ q14mr881699eju.208.1588924177282; 
+ Fri, 08 May 2020 00:49:37 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+From: Joel Stanley <joel@jms.id.au>
+Date: Fri, 8 May 2020 07:49:25 +0000
+Message-ID: <CACPK8Xd-=XFREvvS-mK_ECyn14y0GPAMyy5BpEEUYfaw4jAgsw@mail.gmail.com>
+Subject: ARM: aspeed: devicetree changes for 5.8
+To: arm <arm@kernel.org>, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_005155_505846_BBBE9B80 
-X-CRM114-Status: UNSURE (   6.93  )
+X-CRM114-CacheID: sfid-20200508_004939_946816_E8D67B63 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [joel.stan[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,44 +90,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "cang@codeaurora.org" <cang@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>,
- "bvanassche@acm.org" <bvanassche@acm.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "beanhuo@micron.com" <beanhuo@micron.com>
+Cc: Andrew Jeffery <andrew@aj.id.au>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
+Hello ARM Maintainers,
 
-On Fri, 2020-05-08 at 07:42 +0000, Avri Altman wrote:
-> > 
-> > -static void ufshcd_fixup_dev_quirks(struct ufs_hba *hba)
-> > +void ufshcd_fixup_dev_quirks(struct ufs_hba *hba, struct ufs_dev_fix
-> > *fixups)
-> >  {
-> >         struct ufs_dev_fix *f;
-> >         struct ufs_dev_info *dev_info = &hba->dev_info;
-> Now that you are exporting it, maybe return if (!fixups)?
-> 
+Thanks to covid chaos there was no aspeed pull request for 5.7. We're
+back for 5.8 though!
 
-Good idea, I will add it in next version.
+There's a patch in here that causes some build time warnings from the
+device tree compiler. I've sent a patch for that to the dtc folk:
 
-Thanks,
-Stanley Chu
+https://lore.kernel.org/lkml/20200508063904.60162-1-joel@jms.id.au/
+
+The following changes since commit fa4c8ec6feaa3237f5d44cb8c6d0aa0dff6e1bcc:
+
+  ARM: dts: aspeed: Change KCS nodes to v2 binding (2020-05-05 16:37:17 +0930)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git
+tags/aspeed-5.8-devicetree
+
+for you to fetch changes up to fa4c8ec6feaa3237f5d44cb8c6d0aa0dff6e1bcc:
+
+  ARM: dts: aspeed: Change KCS nodes to v2 binding (2020-05-05 16:37:17 +0930)
+
+----------------------------------------------------------------
+ASPEED device tree updates for 5.8
+
+New machines:
+
+ - YADRO's ast2500 OpenPower P9 Nicole BMC
+ - Facebook's ast2500 x86 Yosemite V2 BMC
+
+The AST2600 machines Rainier and Tacoma were fleshed out.
+
+Machines have started describing the GPIO names as userspace attempts
+to use the GPIO chardev API.
+
+----------------------------------------------------------------
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
