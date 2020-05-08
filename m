@@ -2,96 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B97FC1CA69B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 10:53:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CA321CA6BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 11:03:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PylCNUBkpQeaPry386S4S9wU3pK0u6JMqs05G0Tj4A4=; b=pUrtu0MfyriCwDbfVde2T5705
-	Gn8p5iNYGMQi+EtCyjXLBGX0n9AOAiik5Ie9kXhPhVV4kY/CgQaYFSsSx32LXqRPKleAkYnkcxklp
-	EBcJPpspae7Y1O0fpXmVHlzysbR3iL3Nu4fKmqT2tqHJCzNc/NN01zq4/ByhTG6swM2p2upgkqpuo
-	Pir4TZdc2kqm/8FN2zEj32xqBYuuA41qR80vWj4/ag/Vf2x5+xnVgWZJNPGpXEqp8uVAjiE3U7jy6
-	lPyzSaF5zgDUAcpnA14n673PWYgl8ePEXGeGBrg7Y8QNg+GKxhLK4FlEdsi1cC/DlDPo6O4cZf64/
-	ehUTOUUGQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c3XdhC5xE5ajMAS8L2upmv8cEvZqNTiFz5Vfe49/F20=; b=eUDJ6mjARfCEZb
+	nd/Gw807SbzPXlziJnL1xjS+0e3UkmVbB9KIDnYYQ3+IgMOw95IhGOudlPblkMahZFyTOVkYPzzIr
+	44d6jrxARmwc60tL4rGGNPgZH7lA9TAnmBpU2LEZsLXYBoDh+mR+5epEWPZ6eq1Er0OOc0dX89tin
+	HbLFQXJLpfvtMJnabkYzzHFJx/to+QSd3ACtzNxuWCIBBIJfRaLFG/PzEHJIQTW9yN9bw+Stn5BpR
+	Y3rQcHAj4vfmtIdE5QYdZFzc52O5ZF2BthmdzZOgGhvng2y6l+s+b+beEZaDKRAMZKeUUTHmrCUco
+	+tlyOMx8/16wwcT1T/TA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWylI-00053E-8k; Fri, 08 May 2020 08:53:40 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jWyuV-0003sI-Sg; Fri, 08 May 2020 09:03:11 +0000
+Received: from asavdk3.altibox.net ([109.247.116.14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWyl9-00052k-QL
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 08:53:33 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588928011; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=izonpifA+1EYd8UgQ+Vm38HVhqg6VLQAcixpWCMi9fg=;
- b=JPIgS0b5FJE6+ow0dXAOC6JPv5Vp0rxf1OwzfNFWtPX8gu3jLTb/IocKWT5lLu6dbPFqjKaQ
- l/MOt++xMH/uD+UIoWB9tdIB8l2wWuhaubY1APuA/PIpv8WbLQ5Lihv+heziA+yU5+VQfJxx
- hiFa1UXa1ru1j981hipFt02DQEQ=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eb51e08.7f9782d58928-smtp-out-n01;
- Fri, 08 May 2020 08:53:28 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id A6C45C432C2; Fri,  8 May 2020 08:53:28 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ id 1jWyuJ-0003hS-U6
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 09:03:03 +0000
+Received: from ravnborg.org (unknown [158.248.194.18])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id D608EC433F2;
- Fri,  8 May 2020 08:53:27 +0000 (UTC)
+ by asavdk3.altibox.net (Postfix) with ESMTPS id 52E5E2002C;
+ Fri,  8 May 2020 11:02:54 +0200 (CEST)
+Date: Fri, 8 May 2020 11:02:47 +0200
+From: Sam Ravnborg <sam@ravnborg.org>
+To: dillon.minfei@gmail.com
+Subject: Re: [PATCH v2 5/5] drm/panel: add panel driver for Ilitek ili9341
+ panels
+Message-ID: <20200508090247.GA11575@ravnborg.org>
+References: <1588911194-12433-1-git-send-email-dillon.minfei@gmail.com>
+ <1588911194-12433-6-git-send-email-dillon.minfei@gmail.com>
 MIME-Version: 1.0
-Date: Fri, 08 May 2020 14:23:27 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mike Leach <mike.leach@linaro.org>, Suzuki K Poulose
- <suzuki.poulose@arm.com>
-Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-In-Reply-To: <b8c1cc35846d425a1677c73fddf5874d@codeaurora.org>
-References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
- <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
- <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
- <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
- <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
- <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
- <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
- <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
- <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
- <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
- <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
- <ae0fe2050be01cc1403c7d53a0da8cb8@codeaurora.org>
- <b8c1cc35846d425a1677c73fddf5874d@codeaurora.org>
-Message-ID: <eee1b9a90266eed9a9c75401f0679777@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+Content-Disposition: inline
+In-Reply-To: <1588911194-12433-6-git-send-email-dillon.minfei@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-CMAE-Score: 0
+X-CMAE-Analysis: v=2.3 cv=ULXz4hXy c=1 sm=1 tr=0
+ a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
+ a=kj9zAlcOel0A:10 a=pGLkceISAAAA:8 a=f00rTkaq7gsWSwZchSUA:9
+ a=V3FauXp4hO1YZiWc:21 a=DYt0V8K-_OyiRC18:21 a=CjuIK1q_8ugA:10
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_015331_916458_5EE35732 
-X-CRM114-Status: GOOD (  22.54  )
+X-CRM114-CacheID: sfid-20200508_020300_518119_3A450EF0 
+X-CRM114-Status: GOOD (  30.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,92 +66,703 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>, linux-arm-msm@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
+ devicetree@vger.kernel.org, airlied@linux.ie, mturquette@baylibre.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-clk@vger.kernel.org, sboyd@kernel.org, robh+dt@kernel.org,
+ thierry.reding@gmail.com, daniel@ffwll.ch,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU3V6dWtpLCBNaWtlLAoKT24gMjAyMC0wNS0wNiAxMzowNSwgU2FpIFByYWthc2ggUmFuamFu
-IHdyb3RlOgpbLi4uXQoKPj4+PiAKPj4+IE9LIC0gc29ycnkgSSByZWFkIHlvdXIgc3RhdGVtZW50
-IHNheWluZyB0aGF0IHJlcGxpY2F0b3IxIHdhcyAwIGFmdGVyCj4+PiB0aGUgcmVzZXQgaW4gcHJv
-YmUoKSwgcmF0aGVyIHRoYW4gbG9vayBhdCB0aGUgbG9ncy4KPj4+IAo+Pj4gRnJvbSB0aGUgbG9n
-cyBpdCBpcyB3b3JraW5nIGF0IHRoZSB0aW1lIHByb2JlKCkgb2NjdXJzLCBidXQgYnkgdGhlCj4+
-PiB0aW1lIHdlIGNvbWUgdG8gZW5hYmxlIHRoZSByZXBsaWNhdG9yIGxhdGVyLCBzb21ldGhpbmcg
-aGFzIHJlc2V0IAo+Pj4gdGhlc2UKPj4+IHJlZ2lzdGVycyAvIGhhcmR3YXJlIG91dHNpZGUgdGhl
-IGNvbnRyb2wgb2YgdGhlIHJlcGxpY2F0b3IgZHJpdmVyLgo+Pj4gCj4+IAo+PiBZZXMsIEkgd2ls
-bCB0cnkgdG8gZ2V0IHNvbWUgbW9yZSBpbmZvcm1hdGlvbiBmcm9tIHRoZSBmaXJtd2FyZSBzaWRl
-IGlmCj4+IHRoZXJlIGlzIGFueXRoaW5nIG1lc3NpbmcgdXAuCj4+IAo+IAo+IFRoaXMgdHVybmVk
-IG91dCB0byBiZSBhIGNsb2NrL3BtIGlzc3VlLiBUbyBjb25maXJtLCBJIGp1c3QgbWFya2VkIGNs
-awo+IGFzIGNyaXRpY2FsCj4gc28gdGhhdCBpdCB3b24ndCBiZSBnYXRlZCBhbmQgSSBzYXcgdGhl
-IHJlcGxpY2F0b3IxKHN3YW9fcmVwbGljYXRvcikgCj4gcmVnaXN0ZXJzCj4gaW50YWN0IGFmdGVy
-IHByb2JlLiBBbHNvIGFsdGVybmF0aXZlbHksIEkgdHJpZWQgdG8gY29tbWVudCBvdXQgCj4gZGlz
-YWJsaW5nIHBjbGsKPiB0byBjaGVjayBpZiB0aGVyZSBpcyBzb21ldGhpbmcgd3JvbmcgaW4gYW1i
-YSBwbSBhbmQgdGhpcyBrZWVwcyB0aGUgCj4gcmVnaXN0ZXJzCj4gaW50YWN0IGFzIHdlbGwuCj4g
-Cj4gQEAgLTI4OCw3ICsyOTUsNyBAQCBzdGF0aWMgaW50IGFtYmFfcHJvYmUoc3RydWN0IGRldmlj
-ZSAqZGV2KQo+ICAgICAgICAgICAgICAgICBwbV9ydW50aW1lX3NldF9zdXNwZW5kZWQoZGV2KTsK
-PiAgICAgICAgICAgICAgICAgcG1fcnVudGltZV9wdXRfbm9pZGxlKGRldik7Cj4gCj4gLSAgICAg
-ICAgICAgICAgIGFtYmFfcHV0X2Rpc2FibGVfcGNsayhwY2Rldik7Cj4gKyAgICAgICAgICAgICAg
-IC8vYW1iYV9wdXRfZGlzYWJsZV9wY2xrKHBjZGV2KTsKPiAgICAgICAgICAgICAgICAgZGV2X3Bt
-X2RvbWFpbl9kZXRhY2goZGV2LCB0cnVlKTsKPiAgICAgICAgIH0gd2hpbGUgKDApOwo+IAoKSSBj
-aGVja2VkIHdpdGggdGhlIGRlYnVnIHRlYW0gYW5kIHRoZXJlIGlzIGEgbGltaXRhdGlvbiB3aXRo
-CnRoZSByZXBsaWNhdG9yKHN3YW9fcmVwbGljYXRvcikgaW4gdGhlIEFPU1MgZ3JvdXAgd2hlcmUg
-aXQKbG9zZXMgdGhlIGlkZmlsdGVyIHJlZ2lzdGVyIGNvbnRleHQgd2hlbiB0aGUgY2xvY2sgaXMg
-ZGlzYWJsZWQuClRoaXMgaXMgbm90IGp1c3QgaW4gU0M3MTgwIFNvQyBidXQgYWxzbyByZXBvcnRl
-ZCBvbiBzb21lIGxhdGVzdAp1cGNvbWluZyBRQ09NIFNvQ3MgYXMgd2VsbCBhbmQgd2lsbCBuZWVk
-IHRvIGJlIHRha2VuIGNhcmUgaW4Kb3JkZXIgdG8gZW5hYmxlIGNvcmVzaWdodCBvbiB0aGVzZSBj
-aGlwc2V0cy4KCkhlcmUncyB3aGF0J3MgaGFwcGVuaW5nIC0gIEFmdGVyIHRoZSByZXBsaWNhdG9y
-IGlzIGluaXRpYWxpemVkLAp0aGUgY2xvY2sgaXMgZGlzYWJsZWQgaW4gYW1iYV9wbV9ydW50aW1l
-X3N1c3BlbmQoKSBhcyBhIHBhcnQgb2YKcG0gcnVudGltZSB3b3JrcXVldWUgd2l0aCB0aGUgYXNz
-dW1wdGlvbiB0aGF0IHRoZXJlIHdpbGwgYmUgbm8KbG9zcyBvZiBjb250ZXh0IGFmdGVyIHRoZSBy
-ZXBsaWNhdG9yIGlzIGluaXRpYWxpemVkLiBCdXQgaXQgZG9lc24ndApob2xkIGdvb2Qgd2l0aCB0
-aGUgcmVwbGljYXRvcnMgd2l0aCB0aGVzZSB1bmZvcnR1bmF0ZSBsaW1pdGF0aW9uCmFuZCB0aGUg
-aWRmaWx0ZXIgcmVnaXN0ZXIgY29udGV4dCBpcyBsb3N0LgoKWyAgICA1Ljg4OTQwNl0gYW1iYV9w
-bV9ydW50aW1lX3N1c3BlbmQgZGV2bmFtZT02YjA2MDAwLnJlcGxpY2F0b3IgcmV0PTAKWyAgICA1
-LjkxNDUxNl0gV29ya3F1ZXVlOiBwbSBwbV9ydW50aW1lX3dvcmsKWyAgICA1LjkxODY0OF0gQ2Fs
-bCB0cmFjZToKWyAgICA1LjkyMTE4NV0gIGR1bXBfYmFja3RyYWNlKzB4MC8weDFkMApbICAgIDUu
-OTI0OTU4XSAgc2hvd19zdGFjaysweDJjLzB4MzgKWyAgICA1LjkyODM4Ml0gIGR1bXBfc3RhY2sr
-MHhjMC8weDEwNApbICAgIDUuOTMxODk2XSAgYW1iYV9wbV9ydW50aW1lX3N1c3BlbmQrMHhkOC8w
-eGUwClsgICAgNS45MzY0NjldICBfX3JwbV9jYWxsYmFjaysweGUwLzB4MTQwClsgICAgNS45NDAz
-MzJdICBycG1fY2FsbGJhY2srMHgzOC8weDk4ClsgICAgNS45NDM5MjZdICBycG1fc3VzcGVuZCsw
-eGVjLzB4NjE4ClsgICAgNS45NDc1MjJdICBycG1faWRsZSsweDVjLzB4M2Y4ClsgICAgNS45NTA4
-NTFdICBwbV9ydW50aW1lX3dvcmsrMHhhOC8weGMwClsgICAgNS45NTQ3MThdICBwcm9jZXNzX29u
-ZV93b3JrKzB4MWY4LzB4NGMwClsgICAgNS45NTg4NDhdICB3b3JrZXJfdGhyZWFkKzB4NTAvMHg0
-NjgKWyAgICA1Ljk2MjYyM10gIGt0aHJlYWQrMHgxMmMvMHgxNTgKWyAgICA1Ljk2NTk1N10gIHJl
-dF9mcm9tX2ZvcmsrMHgxMC8weDFjCgpUaGlzIGlzIGEgcGxhdGZvcm0vU29DIHNwZWNpZmljIHJl
-cGxpY2F0b3IgaXNzdWUsIHNvIHdlIGNhbiBlaXRoZXIKaW50cm9kdWNlIHNvbWUgRFQgcHJvcGVy
-dHkgZm9yIHJlcGxpY2F0b3JzIHRvIGlkZW50aWZ5IHdoaWNoIHJlcGxpY2F0b3IKaGFzIHRoaXMg
-bGltaXRhdGlvbiwgY2hlY2sgaW4gcmVwbGljYXRvcl9lbmFibGUoKSBhbmQgcmVzZXQgdGhlIApy
-ZWdpc3RlcnMKb3IgaGF2ZSBzb21ldGhpbmcgbGlrZSBiZWxvdyBkaWZmIHRvIGNoZWNrIHRoZSBp
-ZGZpbHRlciByZWdpc3RlcnMgaW4KcmVwbGljYXRvcl9lbmFibGUoKSBhbmQgdGhlbiByZXNldCB3
-aXRoIGNsZWFyIGNvbW1lbnQgc3BlY2lmeWluZyBpdOKAmXMgCnRoZQpoYXJkd2FyZSBsaW1pdGF0
-aW9uIG9uIHNvbWUgUUNPTSBTb0NzLiBQbGVhc2UgbGV0IG1lIGtub3cgeW91ciB0aG91Z2h0cyAK
-b24KdGhpcz8KCmRpZmYgLS1naXQgYS9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNp
-Z2h0LXJlcGxpY2F0b3IuYyAKYi9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0
-LXJlcGxpY2F0b3IuYwppbmRleCBlN2RjMWMzMWQyMGQuLmE5YzAzOWM5NDRlYiAxMDA2NDQKLS0t
-IGEvZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1yZXBsaWNhdG9yLmMKKysr
-IGIvZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1yZXBsaWNhdG9yLmMKQEAg
-LTY4LDYgKzY4LDE3IEBAIHN0YXRpYyBpbnQgZHluYW1pY19yZXBsaWNhdG9yX2VuYWJsZShzdHJ1
-Y3QgCnJlcGxpY2F0b3JfZHJ2ZGF0YSAqZHJ2ZGF0YSwKICAgICAgICAgaW50IHJjID0gMDsKICAg
-ICAgICAgdTMyIHJlZzsKCisgICAgICAgLyoKKyAgICAgICAgKiBPbiBzb21lIFFDT00gU29DcyB3
-aXRoIHJlcGxpY2F0b3JzIGluIEFsd2F5cy1PbiBkb21haW4sIApkaXNhYmxpbmcKKyAgICAgICAg
-KiBjbG9jayB3aWxsIHJlc3VsdCBpbiByZXBsaWNhdG9yIGxvc2luZyBpdHMgY29udGV4dC4gQ3Vy
-cmVudGx5CisgICAgICAgICogYXMgYSBwYXJ0IG9mIHBtX3J1bnRpbWUgd29ya3F1ZXVlLCBhbWJh
-X3BtX3J1bnRpbWVfc3VzcGVuZCAKZGlzYWJsZXMKKyAgICAgICAgKiBjbG9jayBhc3N1bWluZyB0
-aGUgY29udGV4dCBpcyBub3QgbG9zdCB3aGljaCBpcyBub3QgdHJ1ZSBmb3IgCmNhc2VzCisgICAg
-ICAgICogd2l0aCBoYXJkd2FyZSBsaW1pdGF0aW9ucyBhcyB0aGUgYWJvdmUuCisgICAgICAgICov
-CisgICAgICAgaWYgKChyZWFkbF9yZWxheGVkKGRydmRhdGEtPmJhc2UgKyBSRVBMSUNBVE9SX0lE
-RklMVEVSMCkgPT0gMCkgCiYmCisgICAgICAgICAgIChyZWFkbF9yZWxheGVkKGRydmRhdGEtPmJh
-c2UgKyBSRVBMSUNBVE9SX0lERklMVEVSMSkgPT0gMCkpCisgICAgICAgICAgICAgICBkeW5hbWlj
-X3JlcGxpY2F0b3JfcmVzZXQoZHJ2ZGF0YSk7CisKICAgICAgICAgc3dpdGNoIChvdXRwb3J0KSB7
-CiAgICAgICAgIGNhc2UgMDoKICAgICAgICAgICAgICAgICByZWcgPSBSRVBMSUNBVE9SX0lERklM
-VEVSMDsKCgoKVGhhbmtzLApTYWkKCi0tIApRVUFMQ09NTSBJTkRJQSwgb24gYmVoYWxmIG9mIFF1
-YWxjb21tIElubm92YXRpb24gQ2VudGVyLCBJbmMuIGlzIGEgCm1lbWJlcgpvZiBDb2RlIEF1cm9y
-YSBGb3J1bSwgaG9zdGVkIGJ5IFRoZSBMaW51eCBGb3VuZGF0aW9uCgpfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
-bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
-ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Dillon.
+
+Patch submissions starts to look fine.
+
+On Fri, May 08, 2020 at 12:13:14PM +0800, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
+> 
+> This is a driver for 320x240 TFT panels, accepting a rgb input
+> streams that get adapted and scaled to the panel.
+This driver is, I suppose, prepared to be a driver for ILI9341 based
+panles, and as such not for a fixed resolution.
+I expect (hope) we in the future will see more panels added.
+
+
+Some things to fix, see comments in the follwoing.
+
+	Sam
+
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> ---
+>  drivers/gpu/drm/panel/Kconfig                |   8 +
+>  drivers/gpu/drm/panel/Makefile               |   1 +
+>  drivers/gpu/drm/panel/panel-ilitek-ili9341.c | 561 +++++++++++++++++++++++++++
+>  3 files changed, 570 insertions(+)
+>  create mode 100644 drivers/gpu/drm/panel/panel-ilitek-ili9341.c
+> 
+> diff --git a/drivers/gpu/drm/panel/Kconfig b/drivers/gpu/drm/panel/Kconfig
+> index a1723c1..e42692c 100644
+> --- a/drivers/gpu/drm/panel/Kconfig
+> +++ b/drivers/gpu/drm/panel/Kconfig
+> @@ -95,6 +95,14 @@ config DRM_PANEL_ILITEK_IL9322
+>  	  Say Y here if you want to enable support for Ilitek IL9322
+>  	  QVGA (320x240) RGB, YUV and ITU-T BT.656 panels.
+>  
+> +config DRM_PANEL_ILITEK_IL9341
+ILI9341 - so the config name matches the name of the driver IC.
+
+> +	tristate "Ilitek ILI9341 240x320 QVGA panels"
+> +	depends on OF && SPI
+> +	select REGMAP
+> +	help
+> +	  Say Y here if you want to enable support for Ilitek IL9341
+> +	  QVGA (240x320) RGB panels.
+See comment to the changelog, the driver is more generic - I assume.
+So the wording here can be improved to express this.
+
+> +
+>  config DRM_PANEL_ILITEK_ILI9881C
+>  	tristate "Ilitek ILI9881C-based panels"
+>  	depends on OF
+> diff --git a/drivers/gpu/drm/panel/Makefile b/drivers/gpu/drm/panel/Makefile
+> index 96a883c..d123543 100644
+> --- a/drivers/gpu/drm/panel/Makefile
+> +++ b/drivers/gpu/drm/panel/Makefile
+> @@ -8,6 +8,7 @@ obj-$(CONFIG_DRM_PANEL_ELIDA_KD35T133) += panel-elida-kd35t133.o
+>  obj-$(CONFIG_DRM_PANEL_FEIXIN_K101_IM2BA02) += panel-feixin-k101-im2ba02.o
+>  obj-$(CONFIG_DRM_PANEL_FEIYANG_FY07024DI26A30D) += panel-feiyang-fy07024di26a30d.o
+>  obj-$(CONFIG_DRM_PANEL_ILITEK_IL9322) += panel-ilitek-ili9322.o
+> +obj-$(CONFIG_DRM_PANEL_ILITEK_IL9341) += panel-ilitek-ili9341.o
+>  obj-$(CONFIG_DRM_PANEL_ILITEK_ILI9881C) += panel-ilitek-ili9881c.o
+>  obj-$(CONFIG_DRM_PANEL_INNOLUX_P079ZCA) += panel-innolux-p079zca.o
+>  obj-$(CONFIG_DRM_PANEL_JDI_LT070ME05000) += panel-jdi-lt070me05000.o
+> diff --git a/drivers/gpu/drm/panel/panel-ilitek-ili9341.c b/drivers/gpu/drm/panel/panel-ilitek-ili9341.c
+> new file mode 100644
+> index 0000000..ec22d80
+> --- /dev/null
+> +++ b/drivers/gpu/drm/panel/panel-ilitek-ili9341.c
+> @@ -0,0 +1,561 @@
+> +// SPDX-License-Identifier: GPL-2.0-only
+> +/*
+> + * Ilitek ILI9341 TFT LCD drm_panel driver.
+> + *
+> + * This panel can be configured to support:
+> + * - 16-bit parallel RGB interface
+The interface to ILI9341 is SPI, and the interface between the ILI9341
+and the panel is more of an itnernal thing. Or did I get this worng?
+
+> + *
+> + * Copyright (C) 2020 Dillon Min <dillon.minfei@gmail.com>
+> + * Derived from drivers/drm/gpu/panel/panel-ilitek-ili9322.c
+> + */
+> +
+> +#include <linux/bitops.h>
+> +#include <linux/gpio/consumer.h>
+> +#include <linux/module.h>
+> +#include <linux/of_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/regulator/consumer.h>
+> +#include <linux/spi/spi.h>
+> +
+> +#include <video/mipi_display.h>
+> +#include <video/of_videomode.h>
+> +#include <video/videomode.h>
+> +
+> +#include <drm/drm_modes.h>
+> +#include <drm/drm_panel.h>
+> +#include <drm/drm_print.h>
+> +
+> +#define DEFAULT_SPI_SPEED	10000000
+> +
+
+Please use same case for hex numbers in the driver.
+My personal preferences is lower-case.
+
+> +#define ILI9341_SLEEP_OUT            0x11   /* Sleep out register */
+> +#define ILI9341_GAMMA                0x26   /* Gamma register */
+> +#define ILI9341_DISPLAY_OFF          0x28   /* Display off register */
+> +#define ILI9341_DISPLAY_ON           0x29   /* Display on register */
+> +#define ILI9341_COLUMN_ADDR          0x2A   /* Colomn address register */
+> +#define ILI9341_PAGE_ADDR            0x2B   /* Page address register */
+> +#define ILI9341_GRAM                 0x2C   /* GRAM register */
+> +#define ILI9341_MAC                  0x36   /* Memory Access Control register*/
+> +#define ILI9341_PIXEL_FORMAT         0x3A   /* Pixel Format register */
+> +#define ILI9341_WDB                  0x51   /* Write Brightness Display
+> +					     * register
+> +					     */
+> +#define ILI9341_WCD                  0x53   /* Write Control Display
+> +					     * register
+> +					     */
+> +#define ILI9341_RGB_INTERFACE        0xB0   /* RGB Interface Signal Control */
+> +#define ILI9341_FRC                  0xB1   /* Frame Rate Control register */
+> +#define ILI9341_BPC                  0xB5   /* Blanking Porch Control
+> +					     * register
+> +					     */
+> +#define ILI9341_DFC                  0xB6   /* Display Function Control
+> +					     * register
+> +					     */
+> +#define ILI9341_POWER1               0xC0   /* Power Control 1 register */
+> +#define ILI9341_POWER2               0xC1   /* Power Control 2 register */
+> +#define ILI9341_VCOM1                0xC5   /* VCOM Control 1 register */
+> +#define ILI9341_VCOM2                0xC7   /* VCOM Control 2 register */
+> +#define ILI9341_POWERA               0xCB   /* Power control A register */
+> +#define ILI9341_POWERB               0xCF   /* Power control B register */
+> +#define ILI9341_PGAMMA               0xE0   /* Positive Gamma Correction
+> +					     * register
+> +					     */
+> +#define ILI9341_NGAMMA               0xE1   /* Negative Gamma Correction
+> +					     * register
+> +					     */
+> +#define ILI9341_DTCA                 0xE8   /* Driver timing control A */
+> +#define ILI9341_DTCB                 0xEA   /* Driver timing control B */
+> +#define ILI9341_POWER_SEQ            0xED   /* Power on sequence register */
+> +#define ILI9341_3GAMMA_EN            0xF2   /* 3 Gamma enable register */
+> +#define ILI9341_INTERFACE            0xF6   /* Interface control register */
+> +#define ILI9341_PRC                  0xF7   /* Pump ratio control register */
+> +
+
+All the following should be const.
+Can any of the below be replaces by DEFINED constants?
+> +static u8 ili9341_cmd0[] = {0xc3, 0x08, 0x50};
+> +static u8 ili9341_powerb[] = {0x00, 0xc1, 0x30};
+> +static u8 ili9341_power_seq[] = {0x64, 0x03, 0x12, 0x81};
+> +static u8 ili9341_dtca[] = {0x85, 0x00, 0x78};
+> +static u8 ili9341_powera[] = {0x39, 0x2c, 0x00, 0x34, 0x02};
+> +static u8 ili9341_prc[] = {0x20};
+> +static u8 ili9341_dtcb[] = {0x00, 0x00};
+> +static u8 ili9341_frc[] = {0x00, 0x1b};
+> +static u8 ili9341_dfc1[] = {0x0a, 0xa2};
+> +static u8 ili9341_power1[] = {0x10};
+> +static u8 ili9341_power2[] = {0x10};
+> +static u8 ili9341_vcom1[] = {0x45, 0x15};
+> +static u8 ili9341_vcom2[] = {0x90};
+> +static u8 ili9341_mac[] = {0xc8};
+> +static u8 ili9341_gamma_en[] = {0x00};
+> +static u8 ili9341_rgb_intr[] = {0xc2};
+> +static u8 ili9341_dfc2[] = {0x0a, 0xa7, 0x27, 0x04};
+> +static u8 ili9341_column_addr[] = {0x00, 0x00, 0x00, 0xef};
+> +static u8 ili9341_page_addr[] = {0x00, 0x00, 0x01, 0x3f};
+> +static u8 ili9341_intr[] = {0x01, 0x00, 0x06};
+> +static u8 ili9341_gamma[] = {0x01};
+> +static u8 ili9341_pgamma[] = {0x0f, 0x29, 0x24, 0x0c, 0x0e, 0x09, 0x4e, 0x78,
+> +				0x3c, 0x09, 0x13, 0x05,	0x17, 0x11, 0x00};
+> +static u8 ili9341_ngamma[] = {0x00, 0x16, 0x1b, 0x04, 0x11, 0x07, 0x31, 0x33,
+> +				0x42, 0x05, 0x0c, 0x0a, 0x28, 0x2f, 0x0f};
+> +
+> +/**
+> + * enum ili9341_input - the format of the incoming signal to the panel
+> + *
+> + * The panel can be connected to various input streams and four of them can
+> + * be selected by electronic straps on the display. However it is possible
+> + * to select another mode or override the electronic default with this
+> + * setting.
+> + */
+> +enum ili9341_input {
+> +	ILI9341_INPUT_PRGB_THROUGH = 0x0,
+> +	ILI9341_INPUT_PRGB_ALIGNED = 0x1,
+> +	ILI9341_INPUT_UNKNOWN = 0xf,
+> +};
+> +
+> +/**
+> + * struct ili9341_config - the system specific ILI9341 configuration
+> + * @width_mm: physical panel width [mm]
+> + * @height_mm: physical panel height [mm]
+> + * @input: the input/entry type used in this system, if this is set to
+> + * ILI9341_INPUT_UNKNOWN the driver will try to figure it out by probing
+> + * the hardware
+> + * @dclk_active_high: data/pixel clock active high, data will be clocked
+> + * in on the rising edge of the DCLK (this is usually the case).
+> + * @de_active_high: DE (data entry) is active high
+> + * @hsync_active_high: HSYNC is active high
+> + * @vsync_active_high: VSYNC is active high
+> + */
+> +struct ili9341_config {
+> +	u32 width_mm;
+> +	u32 height_mm;
+> +	enum ili9341_input input;
+> +	bool dclk_active_high;
+> +	bool de_active_high;
+> +	bool hsync_active_high;
+> +	bool vsync_active_high;
+> +};
+> +
+> +struct ili9341 {
+> +	struct device *dev;
+> +	const struct ili9341_config *conf;
+> +	struct drm_panel panel;
+> +	struct regmap *regmap;
+> +	struct gpio_desc *reset_gpio;
+> +	struct gpio_desc *dc_gpio;
+> +	enum ili9341_input input;
+
+> +	struct videomode vm;
+videomode is not used. So drop this field and drop the include files
+that are no logner needed.
+
+> +};
+> +
+> +static inline struct ili9341 *panel_to_ili9341(struct drm_panel *panel)
+> +{
+> +	return container_of(panel, struct ili9341, panel);
+> +}
+> +
+> +int ili9341_spi_transfer(struct spi_device *spi, u32 speed_hz,
+> +			  u8 bpw, const void *buf, size_t len)
+> +{
+> +	size_t max_chunk = spi_max_transfer_size(spi);
+> +	struct spi_transfer tr = {
+const?
+
+> +		.bits_per_word = bpw,
+> +		.speed_hz = speed_hz,
+> +		.len = len,
+> +	};
+> +	struct spi_message m;
+> +	size_t chunk;
+> +	int ret;
+> +
+> +	spi_message_init_with_transfers(&m, &tr, 1);
+> +
+> +	while (len) {
+> +		chunk = min(len, max_chunk);
+> +
+> +		tr.tx_buf = buf;
+> +		tr.len = chunk;
+> +		buf += chunk;
+> +		len -= chunk;
+> +
+> +		ret = spi_sync(spi, &m);
+> +		if (ret)
+> +			return ret;
+> +	}
+> +	return 0;
+> +}
+> +static int ili9341_regmap_spi_write(void *context, const void *data,
+> +				    size_t count)
+> +{
+> +	struct device *dev = context;
+> +	struct spi_device *spi = to_spi_device(dev);
+> +	struct ili9341 *ili = spi_get_drvdata(spi);
+> +	int ret = 0;
+> +
+> +	gpiod_set_value_cansleep(ili->dc_gpio, 0);
+> +
+> +	ret = ili9341_spi_transfer(spi, DEFAULT_SPI_SPEED, 8, data+0, 1);
+> +	if (ret || count == 1 ||
+> +			((u8 *)data)[0] == ILI9341_GRAM ||
+> +			((u8 *)data)[0] == ILI9341_DISPLAY_ON ||
+> +			((u8 *)data)[0] == ILI9341_SLEEP_OUT ||
+> +			((u8 *)data)[0] == ILI9341_DISPLAY_OFF)
+> +		return ret;
+> +
+> +	gpiod_set_value_cansleep(ili->dc_gpio, 1);
+> +
+> +	return ili9341_spi_transfer(spi, DEFAULT_SPI_SPEED, 8, data+1, count-1);
+> +}
+> +
+> +static int ili9341_regmap_spi_read(void *context, const void *reg,
+> +				   size_t reg_size, void *val, size_t val_size)
+> +{
+> +	return 0;
+> +}
+Is this function really needed? If not delete it.
+
+> +
+> +static struct regmap_bus ili9341_regmap_bus = {
+> +	.write = ili9341_regmap_spi_write,
+> +	.read = ili9341_regmap_spi_read,
+> +	.reg_format_endian_default = REGMAP_ENDIAN_BIG,
+> +	.val_format_endian_default = REGMAP_ENDIAN_BIG,
+> +};
+> +
+> +static bool ili9341_volatile_reg(struct device *dev, unsigned int reg)
+> +{
+> +	return false;
+> +}
+Is this function really nedded? If not delete it.
+
+> +
+> +static bool ili9341_writeable_reg(struct device *dev, unsigned int reg)
+> +{
+> +	/* Just register 0 is read-only */
+> +	if (reg == 0x00)
+> +		return false;
+> +	return true;
+> +}
+> +
+> +static const struct regmap_config ili9341_regmap_config = {
+> +	.reg_bits = 8,
+> +	.val_bits = 8,
+> +	.max_register = 0xff,
+> +	.cache_type = REGCACHE_RBTREE,
+> +	.volatile_reg = ili9341_volatile_reg,
+> +	.writeable_reg = ili9341_writeable_reg,
+> +};
+> +
+
+No error checks - consider something like:
+
+static int bulk_write(struct ili9341 *ili, u8 reg, const u8[] data, int len)
+{
+	int err = ili->err;
+
+	if (!err) {
+		err = regmap_bulk_write(ili->regmap, reg, data, len);
+		if (err) {
+			dev_err(...);
+			ili->err = err;
+		}
+	}
+
+	return err;
+}
+
+Then you can use this in the following, and make this more readable.
+
+> +static int ili9341_init(struct drm_panel *panel, struct ili9341 *ili)
+> +{
+> +	regmap_bulk_write(ili->regmap, 0xca,
+> +					ili9341_cmd0, sizeof(ili9341_cmd0));
+> +	regmap_bulk_write(ili->regmap, ILI9341_POWERB,
+> +				ili9341_powerb, sizeof(ili9341_powerb));
+> +	regmap_bulk_write(ili->regmap, ILI9341_POWER_SEQ,
+> +				ili9341_power_seq, sizeof(ili9341_power_seq));
+> +	regmap_bulk_write(ili->regmap, ILI9341_DTCA,
+> +				ili9341_dtca, sizeof(ili9341_dtca));
+> +	regmap_bulk_write(ili->regmap, ILI9341_POWERA,
+> +				ili9341_powera, sizeof(ili9341_powera));
+> +	regmap_write(ili->regmap, ILI9341_PRC, ili9341_prc[0]);
+> +	regmap_bulk_write(ili->regmap, ILI9341_DTCB,
+> +				ili9341_dtcb, sizeof(ili9341_dtcb));
+> +	regmap_bulk_write(ili->regmap, ILI9341_FRC,
+> +				ili9341_frc, sizeof(ili9341_frc));
+> +	regmap_bulk_write(ili->regmap, ILI9341_DFC,
+> +				ili9341_dfc1, sizeof(ili9341_dfc1));
+> +	regmap_write(ili->regmap, ILI9341_POWER1, ili9341_power1[0]);
+> +	regmap_write(ili->regmap, ILI9341_POWER2, ili9341_power2[0]);
+> +	regmap_bulk_write(ili->regmap, ILI9341_VCOM1,
+> +				ili9341_vcom1, sizeof(ili9341_vcom1));
+> +	regmap_write(ili->regmap, ILI9341_VCOM2, ili9341_vcom2[0]);
+> +	regmap_write(ili->regmap, ILI9341_MAC, ili9341_mac[0]);
+> +	regmap_write(ili->regmap, ILI9341_3GAMMA_EN, ili9341_gamma_en[0]);
+> +	regmap_write(ili->regmap, ILI9341_RGB_INTERFACE, ili9341_rgb_intr[0]);
+> +	regmap_bulk_write(ili->regmap, ILI9341_DFC,
+> +				ili9341_dfc2, sizeof(ili9341_dfc2));
+> +
+> +	/* colomn address set */
+> +	regmap_bulk_write(ili->regmap, ILI9341_COLUMN_ADDR,
+> +			ili9341_column_addr, sizeof(ili9341_column_addr));
+> +
+> +	/* Page Address Set */
+> +	regmap_bulk_write(ili->regmap, ILI9341_PAGE_ADDR,
+> +				ili9341_page_addr, sizeof(ili9341_page_addr));
+> +	regmap_bulk_write(ili->regmap, ILI9341_INTERFACE,
+> +				ili9341_intr, sizeof(ili9341_intr));
+> +	regmap_write(ili->regmap, ILI9341_GRAM, 0);
+> +	msleep(200);
+> +
+> +	regmap_write(ili->regmap, ILI9341_GAMMA, ili9341_gamma[0]);
+> +	regmap_bulk_write(ili->regmap, ILI9341_PGAMMA,
+> +				ili9341_pgamma, sizeof(ili9341_pgamma));
+> +	regmap_bulk_write(ili->regmap, ILI9341_NGAMMA,
+> +				ili9341_ngamma, sizeof(ili9341_ngamma));
+> +	regmap_write(ili->regmap, ILI9341_SLEEP_OUT, 0);
+> +	msleep(200);
+> +
+> +	regmap_write(ili->regmap, ILI9341_DISPLAY_ON, 0);
+> +
+> +	/* GRAM start writing */
+> +	regmap_write(ili->regmap, ILI9341_GRAM, 0);
+> +
+> +	dev_info(ili->dev, "initialized display\n");
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * This power-on sequence if from the datasheet, page 57.
+> + */
+> +static int ili9341_power_on(struct ili9341 *ili)
+> +{
+> +	/* Assert RESET */
+> +	gpiod_set_value(ili->reset_gpio, 1);
+> +
+> +	msleep(20);
+> +
+> +	/* De-assert RESET */
+> +	gpiod_set_value(ili->reset_gpio, 0);
+> +
+> +	msleep(10);
+> +
+> +	return 0;
+> +}
+> +
+> +static int ili9341_power_off(struct ili9341 *ili)
+> +{
+
+	Assert reset?
+
+> +	return 0;
+> +}
+> +
+> +static int ili9341_disable(struct drm_panel *panel)
+> +{
+> +	struct ili9341 *ili = panel_to_ili9341(panel);
+> +	int ret;
+> +
+> +	ret = regmap_write(ili->regmap, ILI9341_DISPLAY_OFF, 0);
+> +	if (ret) {
+> +		dev_err(ili->dev, "unable to go to standby mode\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int ili9341_unprepare(struct drm_panel *panel)
+> +{
+> +	struct ili9341 *ili = panel_to_ili9341(panel);
+> +
+> +	return ili9341_power_off(ili);
+> +}
+> +
+> +static int ili9341_prepare(struct drm_panel *panel)
+> +{
+> +	struct ili9341 *ili = panel_to_ili9341(panel);
+> +	int ret;
+> +
+> +	ret = ili9341_power_on(ili);
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	ret = ili9341_init(panel, ili);
+> +	if (ret < 0)
+> +		ili9341_unprepare(panel);
+> +
+> +	return ret;
+> +}
+> +
+> +static int ili9341_enable(struct drm_panel *panel)
+> +{
+> +	struct ili9341 *ili = panel_to_ili9341(panel);
+> +	int ret;
+> +
+> +	ret = regmap_write(ili->regmap, ILI9341_DISPLAY_ON, 0);
+> +	if (ret) {
+> +		dev_err(ili->dev, "unable to enable panel\n");
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +/* This is the only mode listed for parallel RGB in the datasheet */
+> +static const struct drm_display_mode prgb_320x240_mode = {
+> +	.clock = 6100,
+> +	.hdisplay = 240,
+> +	.hsync_start = 240 + 10,
+> +	.hsync_end = 240 + 10 + 10,
+> +	.htotal = 280,
+> +	.vdisplay = 320,
+> +	.vsync_start = 320 + 4,
+> +	.vsync_end = 320 + 4 + 2,
+> +	.vtotal = 328,
+> +	.vrefresh = 60,
+> +	.flags = 0,
+> +};
+> +
+> +static int ili9341_get_modes(struct drm_panel *panel,
+> +				struct drm_connector *connector)
+> +{
+> +	struct ili9341 *ili = panel_to_ili9341(panel);
+> +	struct drm_device *drm = connector->dev;
+> +	struct drm_display_mode *mode;
+> +	struct drm_display_info *info;
+> +
+> +	info = &connector->display_info;
+> +	info->width_mm = ili->conf->width_mm;
+> +	info->height_mm = ili->conf->height_mm;
+> +	if (ili->conf->dclk_active_high)
+> +		info->bus_flags |= DRM_BUS_FLAG_PIXDATA_DRIVE_POSEDGE;
+> +	else
+> +		info->bus_flags |= DRM_BUS_FLAG_PIXDATA_DRIVE_NEGEDGE;
+> +
+> +	if (ili->conf->de_active_high)
+> +		info->bus_flags |= DRM_BUS_FLAG_DE_HIGH;
+> +	else
+> +		info->bus_flags |= DRM_BUS_FLAG_DE_LOW;
+> +
+> +	switch (ili->input) {
+> +	case ILI9341_INPUT_PRGB_THROUGH:
+> +	case ILI9341_INPUT_PRGB_ALIGNED:
+> +		mode = drm_mode_duplicate(drm, &prgb_320x240_mode);
+> +		break;
+> +	default:
+> +		mode = NULL;
+> +		break;
+> +	}
+> +	if (!mode) {
+> +		DRM_ERROR("bad mode or failed to add mode\n");
+> +		return -EINVAL;
+> +	}
+> +	drm_mode_set_name(mode);
+> +	/*
+> +	 * This is the preferred mode because most people are going
+> +	 * to want to use the display with VGA type graphics.
+> +	 */
+> +	mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
+> +
+> +	/* Set up the polarity */
+> +	if (ili->conf->hsync_active_high)
+> +		mode->flags |= DRM_MODE_FLAG_PHSYNC;
+> +	else
+> +		mode->flags |= DRM_MODE_FLAG_NHSYNC;
+> +	if (ili->conf->vsync_active_high)
+> +		mode->flags |= DRM_MODE_FLAG_PVSYNC;
+> +	else
+> +		mode->flags |= DRM_MODE_FLAG_NVSYNC;
+> +
+> +	mode->width_mm = ili->conf->width_mm;
+> +	mode->height_mm = ili->conf->height_mm;
+> +	drm_mode_probed_add(connector, mode);
+> +
+> +	return 1; /* Number of modes */
+> +}
+> +
+> +static const struct drm_panel_funcs ili9341_drm_funcs = {
+> +	.disable = ili9341_disable,
+> +	.unprepare = ili9341_unprepare,
+> +	.prepare = ili9341_prepare,
+> +	.enable = ili9341_enable,
+> +	.get_modes = ili9341_get_modes,
+> +};
+> +
+> +static int ili9341_probe(struct spi_device *spi)
+> +{
+> +	struct device *dev = &spi->dev;
+> +	struct ili9341 *ili;
+> +	const struct regmap_config *regmap_config;
+> +	int ret;
+> +
+> +	ili = devm_kzalloc(dev, sizeof(struct ili9341), GFP_KERNEL);
+> +	if (!ili)
+> +		return -ENOMEM;
+> +
+> +	spi_set_drvdata(spi, ili);
+> +
+> +	ili->dev = dev;
+> +	/*
+> +	 * Every new incarnation of this display must have a unique
+> +	 * data entry for the system in this driver.
+> +	 */
+> +	ili->conf = of_device_get_match_data(dev);
+> +	if (!ili->conf) {
+> +		dev_err(dev, "missing device configuration\n");
+> +		return -ENODEV;
+> +	}
+> +
+> +	ili->reset_gpio = devm_gpiod_get_optional(dev, "reset", GPIOD_OUT_HIGH);
+> +	if (IS_ERR(ili->reset_gpio)) {
+> +		dev_err(dev, "failed to get RESET GPIO\n");
+> +		return PTR_ERR(ili->reset_gpio);
+> +	}
+> +
+> +	ili->dc_gpio = devm_gpiod_get_optional(dev, "dc", GPIOD_OUT_LOW);
+> +	if (IS_ERR(ili->dc_gpio)) {
+> +		dev_err(dev, "failed to get DC GPIO\n");
+> +		return PTR_ERR(ili->dc_gpio);
+> +	}
+> +
+> +	spi->bits_per_word = 8;
+> +	ret = spi_setup(spi);
+> +	if (ret < 0) {
+> +		dev_err(dev, "spi setup failed.\n");
+> +		return ret;
+> +	}
+> +
+> +	regmap_config = &ili9341_regmap_config;
+> +
+> +	ili->regmap = devm_regmap_init(dev, &ili9341_regmap_bus, dev,
+> +				       regmap_config);
+> +	if (IS_ERR(ili->regmap)) {
+> +		dev_err(dev, "failed to allocate register map\n");
+> +		return PTR_ERR(ili->regmap);
+> +	}
+> +
+> +	ili->input = ili->conf->input;
+> +
+> +	drm_panel_init(&ili->panel, dev, &ili9341_drm_funcs,
+> +		       DRM_MODE_CONNECTOR_DPI);
+> +
+> +	return drm_panel_add(&ili->panel);
+> +}
+> +
+> +static int ili9341_remove(struct spi_device *spi)
+> +{
+> +	struct ili9341 *ili = spi_get_drvdata(spi);
+> +
+> +	ili9341_power_off(ili);
+> +	drm_panel_remove(&ili->panel);
+> +
+> +	return 0;
+> +}
+> +
+> +/*
+> + * The Stm32f429-disco board has a panel ili9341 connected to ltdc controller
+> + */
+> +static const struct ili9341_config ili9341_data = {
+This should be named "disco" something as this is m32f429-disco
+specific.
+
+> +	.width_mm = 65,
+> +	.height_mm = 50,
+> +	.input = ILI9341_INPUT_PRGB_THROUGH,
+> +	.dclk_active_high = true,
+> +	.de_active_high = false,
+> +	.hsync_active_high = false,
+> +	.vsync_active_high = false,
+> +};
+> +
+> +static const struct of_device_id ili9341_of_match[] = {
+> +	{
+> +		.compatible = "stm32f429,ltdc-panel",
+> +		.data = &ili9341_data,
+> +	},
+
+
+> +	{
+> +		.compatible = "ilitek,ili9341",
+> +		.data = NULL,
+This part is wrong, as ilitek,ili9341 is just the generic part.
+Only the first entry is relevant.
+
+
+> +	},
+> +	{ }
+> +};
+> +MODULE_DEVICE_TABLE(of, ili9341_of_match);
+> +
+> +static struct spi_driver ili9341_driver = {
+> +	.probe = ili9341_probe,
+> +	.remove = ili9341_remove,
+> +	.driver = {
+> +		.name = "panel-ilitek-ili9341",
+> +		.of_match_table = ili9341_of_match,
+> +	},
+> +};
+> +module_spi_driver(ili9341_driver);
+> +
+> +MODULE_AUTHOR("Dillon Min <dillon.minfei@gmail.com>");
+> +MODULE_DESCRIPTION("ILI9341 LCD panel driver");
+> +MODULE_LICENSE("GPL v2");
+> -- 
+> 2.7.4
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
