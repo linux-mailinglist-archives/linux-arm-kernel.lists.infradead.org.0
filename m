@@ -2,76 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE43B1CA486
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 08:52:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F24F1CA491
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 08:53:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jx+tjaswfzdzpkQp/7RhXVerN1RoZ3LEmZv0MxnDYFQ=; b=gd5yD449zfY95m
-	n7cegZ7qOTCedM3tBc5eQystLJldIAhOE3tpcOW2I1m7vh3RBbI2ACuX2kPmCXbvDDO2CEbwoLRKP
-	Zvm142QQ54mnhr5X11NwWm+WITLj3xjMXlUfLuuXoYIymWnWRvE9edoJh9ddNpPRgphnS4JLMNG4L
-	IT+UMh13aRKl1NztP7EMjXQOM4L2JYJlUegYpVkc1/3wHaUo/6I+x7kcGvLptif1TWEW7ZoTPqPNT
-	WQyCe+qzUFzvtMGGVgQ1d/K7LA116TTQZ6XqBPnJVZvs5EtREi6HY7y1TE5SKenjqJxyuRoenGwfW
-	F2gU66Q2DbdTi0W/FdsQ==;
+	List-Owner; bh=jUFI8zyJkvJmui+8zvGQSBrV1V2R/cSvh7ESA3KD10Y=; b=CALzDpM1f9ogGV
+	TQupI5uTb9Zv3CYcJ3lwoAD9gUQaRHg2PqCQO3ob/bFFylhzOO9ml2TPo5m1NO7oWb8HUR2QT+fY3
+	2TZa3hqtqnZlWph2D5rS20lOBbC3H4PtlITZVe6iim1Jelg3UWwNvhSezGO1Egm5ZH7tHtlRZxWvL
+	nATmaxiAslx3B7pOC2U62na+moWNGvoh4LohWzWgq5qTDBO5IDgR5zSz53yufTLRODyQLSmkhjvUK
+	Re15yvIsMJdx7WZhb8uLd3YWIQVOtuyXCV+zeOka+pLQwq1ZlJA2cP75BdRujl1+d9UUqIpvpe80G
+	Rzq9sf8utAGI8WVTkuXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWwsP-0000ix-6S; Fri, 08 May 2020 06:52:53 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jWwtC-00014W-Pq; Fri, 08 May 2020 06:53:42 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWwsE-0000hk-K9; Fri, 08 May 2020 06:52:44 +0000
-X-UUID: b116485f5c8946bd955a0f98a6053f1e-20200507
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=leR87/m+ioTYiyMDhRy3zThQl59BIigmPV0iNZvelx4=; 
- b=AbO6VnNOilM4RfXbdbCQzeENNBjoZiIiilseLgBW4HFQYoWF6/PV5DV3mNEl7WfRfJOMMuDh5folSSoSv//QxzEEA+GEtxgvli0cwfRvWb6T4KN+m2Wy1Cs9/80MzKdcYo1tWZD/FI++L5y2MI2rfjJK0yYMhRBem8+JONDrkx8=;
-X-UUID: b116485f5c8946bd955a0f98a6053f1e-20200507
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 314586407; Thu, 07 May 2020 22:52:33 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 7 May 2020 23:52:34 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Fri, 8 May 2020 14:52:31 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 8 May 2020 14:52:32 +0800
-Message-ID: <1588920685.8804.230.camel@mhfsdcap03>
-Subject: Re: [V7, 1/2] media: dt-bindings: media: i2c: Document OV02A10
- bindings
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Fri, 8 May 2020 14:51:25 +0800
-In-Reply-To: <CAAFQd5DgDk57MCc4vE9VmifZYjtO_SUFss+vc8W-28SFHbKDrA@mail.gmail.com>
-References: <20200430080924.1140-1-dongchun.zhu@mediatek.com>
- <20200430080924.1140-2-dongchun.zhu@mediatek.com>
- <20200505070451.GS9190@paasikivi.fi.intel.com>
- <1588688238.8804.150.camel@mhfsdcap03>
- <20200506112136.GV9190@paasikivi.fi.intel.com>
- <1588856325.8804.179.camel@mhfsdcap03>
- <CAAFQd5CXRD_j7Xkxb4=9kkd+pDy4W5pirAPSG8RsMVH6L-MU2w@mail.gmail.com>
- <20200507141147.GF9190@paasikivi.fi.intel.com>
- <CAAFQd5DgDk57MCc4vE9VmifZYjtO_SUFss+vc8W-28SFHbKDrA@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jWwt0-000147-MM
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 06:53:32 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200508065328euoutp01c6e48b3218343420fa606763be5d5508~M_w5_Zbte1038110381euoutp01B;
+ Fri,  8 May 2020 06:53:28 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200508065328euoutp01c6e48b3218343420fa606763be5d5508~M_w5_Zbte1038110381euoutp01B
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1588920808;
+ bh=Z7m45ytXKpkmvuwQpxVLZ3SHLM3cMj1bzkRRhkTnaDw=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=pzSVIV3/v4e6lL50pBf9yQgvuF1lvhHNPmqHibxlL4qnnHlOO6Ca0kv2oDyxarTjN
+ XhrxPH3lLvQzFvDmw9NPUFKSSTxL3kVHrAUEIe01K54sMLxFlf2tG3i4RZGhacY21r
+ A0MDXGqKfAhgnG0tYNBqygHojYiWJ2fPWkwBsF2I=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200508065327eucas1p2f725cefdb89745bd1d77d3dfb0ffb3d3~M_w5qPND-1155711557eucas1p2A;
+ Fri,  8 May 2020 06:53:27 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 99.CD.60679.7E105BE5; Fri,  8
+ May 2020 07:53:27 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200508065327eucas1p21ec9f6144ed975dc1fa11d99b6dc3ffb~M_w5PabC_1674116741eucas1p2U;
+ Fri,  8 May 2020 06:53:27 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200508065327eusmtrp2d1c70c67a2854b27d77b372c8fb55774~M_w5OM_4x2329423294eusmtrp2-;
+ Fri,  8 May 2020 06:53:27 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-8e-5eb501e7ebe1
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 65.7B.08375.7E105BE5; Fri,  8
+ May 2020 07:53:27 +0100 (BST)
+Received: from [106.210.88.143] (unknown [106.210.88.143]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200508065325eusmtip1a647998be423003f3e0d8a7ff6ef6317~M_w3Sghb12877628776eusmtip1m;
+ Fri,  8 May 2020 06:53:25 +0000 (GMT)
+Subject: Re: [PATCH v4 02/14] arm: add support for folded p4d page tables
+To: Mike Rapoport <rppt@linux.ibm.com>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <98229ab1-fbf8-0a89-c5d6-270c828799e7@samsung.com>
+Date: Fri, 8 May 2020 08:53:27 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 7B430ACF199A0DD3CD2B89E3F25EC99EC9E33957251108332B788809AC1EFD7E2000:8
-X-MTK: N
+In-Reply-To: <20200507161155.GE683243@linux.ibm.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01TbUxTZxTee+/t7W2z6m1F+8YRlzULyWaQ6TZ3Ehc/4n68Jv7wj4lZAtrp
+ DbAVMK04NPtRy0ewwQ9qEbwt4ujinNQ1Fiofs3M2aFFCh9YYUBBlGEXBYq1Tvoptr278e85z
+ nnOe5/w4HK15zS7l8gv3CMZCvUHHKpkLVydDmY+QL+eztiNZ4PS4WZi1XZXD+TqPDNrL+xiY
+ sJTTEDldhaCylIKfJ6dkUHF8A9Q7bAhm/edZmDkxQcFYdDk8vx6UQ3/gDIKhPw4k5B0vGfD+
+ c1sGkbI2FiYqn8kg3OFk4Z57TgbOGTsNgRo/gulX8YSV85oMWswBFqziQxa8B8MsuDtdcuj0
+ tFLQZzez4K+5j6DH+1vCrPceA77uCA1lA1/CkM1Prc8g7pNuRMK3b9BkesqGSPmR1ywJHz5E
+ kcZRM0OqezJJuzgoJ66LoxSpGiuTEe/ZgyzxRm1yEnJMMKSrbpohRxv/QuRvr5vekv6t8utd
+ giF/r2DMWrtDmec/UMbsHlKXVNsXmlHFQitScJj/Ao8MjyErUnIa/gzCF2tdlFTEEHZ3tjBS
+ 8QLhhw9m2Xcj52ab36p+RXjq5K238xGE4z02KqlaxG/Ch5qvMEmcxmdgy0sxNUHzj5XYPNNF
+ JxssvxJbx62ptSp+LX5ku5TgOY7hP8Z+z/4kvZjPxt2uZiRJ1PjaiZHUTkUiRX3NqxRP8x/i
+ Up+DlrAW3xlpoKSkNxU4fnqZhL/BYcccI+FF+EmwRS7hdDzX3pDKhvlShB+EzsmlogrhsKUO
+ Sao1eCA0xSbD0fwn2NORJdEbcG2klUrSmF+A+8bVUoYF2HahlpZoFa6s0EjqDCwGf//P9nLv
+ Tfoo0onzLhPnXSPOu0b83/cUYs4irVBsKsgVTKsKhR9XmPQFpuLC3BU7iwq8KPEP3fFgrA11
+ zHwXQDyHdO+r4Hlzjkam32vaVxBAmKN1aarqkpYcjWqXft9+wVi03VhsEEwB9AHH6LSqzxtH
+ szV8rn6P8IMg7BaM77oUp1hqRmsMsV7nTsv299Ii0V8cQnDg3+WGrTvqT4U8yHe86EV/kyHW
+ EyU31sWv9wb7fd9vjVXlDa/eXPmT69Li0FddTxh1/mr7U1BvPBYoWTeseBa5nNN5pb1VK0aX
+ NI39mT54d7DBUjtpv5XWlLVxS4NjfP0Sf0jLbsvO/GjztrvH7o+4dIwpT7/yU9po0r8Bp3xZ
+ 7AsEAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Sb0xTZxTGfe+/XogN1wr6hmA01ZC5hbILVA5GiSQkvvrJxX1Y5sQ1egNE
+ 2pLe1igfloKtwSpqGzC0FJyyGYUulRYU2ZptnQORsanEypiAizrDoqN2Gv9Q1EI14duTc57f
+ c85JDk+rjnCZfKXBLJkMuio1l8oMvR4Yz3mIeso+drozwOv3cTDr6ldAV7Ofhcv2UQaidXYa
+ ps8eRVB/kILTL1+xcOhkCbS2uBDMhro4iLujFDyKfQRPrg0o4M/wOQST39cm7H3PGAjci7Aw
+ bevlIFr/HwsjfV4OJnxvWPDGG2kIN4UQzDx/nRjlHWSh2xrmwOF5wEHg8AgHvivtCrjiv0TB
+ aKOVg1DTXQTDgfOJYdcnGOgZmqbBdkcLk64QtSmb+Np8iIxEbtBk5pULEfvxFxwZOdZAkTNT
+ VoY4h3PIZc+4grT/MEWRo49sLAl0HOZIIOZSkN9bogy52jzDkBNnfkLkj4CP3pb1uWaDyWgx
+ S6sqjLJ5o3qHCHkasQg0eQVFGjG/cOf6PK06t3jDHqmqcp9kyi3+UlMRqrUx1ZNL9jsb06zo
+ UJoDpfBYKMDfzQYpB0rlVcK3CF/03lAkG1l48KSVTeqlOB5xcEnTY4R9fXfpucZSYQtuCP7K
+ zOl0IRvXPfPMJ9HCv6n43CnvO8JF4f+n/pl3cYKIHY/nolJ4pVCMH7p+TCTxPCOswSF/zVw5
+ Q9iJOyN2lLQswYPu+/NoSmLV1qbn83VaWIfbgn/TSb0SH+xpeaeX47H7p6gTSOVZgHsWIJ4F
+ iGcB8jViOlC6ZJH15XpZ1Mg6vWwxlGt2G/UBlHjEi/0vg73oZtf2MBJ4pF6shCfBMhWr2ycf
+ 0IcR5ml1utK5v7tMpdyjO1AjmYy7TJYqSQ4jbeI2J52ZsduYeGuDeZeoFQuhSCzML8xfB+rl
+ ynrh5y9UQrnOLO2VpGrJ9J6j+JRMK2oYt3x29kK2YfRpyYPWS78wv+21hHPNvY1Ct6apN3Ys
+ frsgqq8prX0zel2/bKv2yFh/RXUs85vN/g+Ctzu/av5k4NOaOyp3WmST86+J9Mod9mFl3UTx
+ 8bHB8dPD8ZvnSXvbvVnH6s4hpbEzlJPb0V4Si6zZ0uApvbVIWGsrda/oyVIzcoVO/JA2ybq3
+ og0iYZ4DAAA=
+X-CMS-MailID: 20200508065327eucas1p21ec9f6144ed975dc1fa11d99b6dc3ffb
+X-Msg-Generator: CA
+X-RootMTR: 20200507121658eucas1p240cf4a3e0fe5c22dda5ec4f72734149f
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200507121658eucas1p240cf4a3e0fe5c22dda5ec4f72734149f
+References: <20200414153455.21744-1-rppt@kernel.org>
+ <20200414153455.21744-3-rppt@kernel.org>
+ <CGME20200507121658eucas1p240cf4a3e0fe5c22dda5ec4f72734149f@eucas1p2.samsung.com>
+ <39ba8a04-d6b5-649d-c289-0c8b27cb66c5@samsung.com>
+ <20200507161155.GE683243@linux.ibm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_235242_670650_A3A0E923 
-X-CRM114-Status: GOOD (  35.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200507_235331_043982_DA836D8E 
+X-CRM114-Status: GOOD (  14.18  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -79,8 +136,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,233 +149,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark
- Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>, Shengnan
- Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
- <shengnan.wang@mediatek.com>, Louis Kuo <louis.kuo@mediatek.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing
- Bu <bingbu.cao@intel.com>, matrix.zhu@aliyun.com,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU DRIVERS
- <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
- " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Fenghua Yu <fenghua.yu@intel.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, Michael Ellerman <mpe@ellerman.id.au>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Jonas Bonn <jonas@southpole.se>, Brian Cain <bcain@codeaurora.org>,
+ linux-hexagon@vger.kernel.org, linux-sh@vger.kernel.org,
+ Russell King <linux@armlinux.org.uk>, Ley Foon Tan <ley.foon.tan@intel.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ uclinux-h8-devel@lists.sourceforge.jp, linux-arch@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ =?UTF-8?Q?=c5=81ukasz_Stelmach?= <l.stelmach@samsung.com>,
+ kvm-ppc@vger.kernel.org,
+ Stefan Kristiansson <stefan.kristiansson@saunalahti.fi>,
+ openrisc@lists.librecores.org, Stafford Horne <shorne@gmail.com>,
+ Guan Xuetao <gxt@pku.edu.cn>, linux-arm-kernel@lists.infradead.org,
+ Christophe Leroy <christophe.leroy@c-s.fr>, Tony Luck <tony.luck@intel.com>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>, linux-kernel@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, nios2-dev@lists.rocketboards.org,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ Mike Rapoport <rppt@kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Sakari, Tomasz,
-
-On Thu, 2020-05-07 at 16:25 +0200, Tomasz Figa wrote:
-> On Thu, May 7, 2020 at 4:12 PM Sakari Ailus
-> <sakari.ailus@linux.intel.com> wrote:
-> >
-> > Hi Tomasz, Dongchun,
-> >
-> > On Thu, May 07, 2020 at 03:50:40PM +0200, Tomasz Figa wrote:
-> > > Hi Sakari and Dongchun,
-> > >
-> > > On Thu, May 7, 2020 at 3:00 PM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> > > >
-> > > > Hi Sakari,
-> > > >
-> > > > Thanks for the review.
-> > > >
-> > > > On Wed, 2020-05-06 at 14:21 +0300, Sakari Ailus wrote:
-> > > > > Hi Dongchun,
-> > > > >
-> > > > > On Tue, May 05, 2020 at 10:17:18PM +0800, Dongchun Zhu wrote:
-> > > > > > Hi Sakari,
-> > > > > >
-> > > > > > Thanks for the review.
-> > > > > >
-> > > > > > On Tue, 2020-05-05 at 10:04 +0300, Sakari Ailus wrote:
-> > > > > > > Hi Dongchun,
-> > > > > > >
-> > > > > > > On Thu, Apr 30, 2020 at 04:09:23PM +0800, Dongchun Zhu wrote:
-> > > > > > > > Add DT bindings documentation for Omnivision OV02A10 image sensor.
-> > > > > > > >
-> > > > > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > > > > ---
-> > > > > > > >  .../bindings/media/i2c/ovti,ov02a10.yaml           | 148 +++++++++++++++++++++
-> > > > > > > >  MAINTAINERS                                        |   7 +
-> > > > > > > >  2 files changed, 155 insertions(+)
-> > > > > > > >  create mode 100644 Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > > > > > >
-> > > > > > > > diff --git a/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > > > > > > new file mode 100644
-> > > > > > > > index 0000000..2be4bd2
-> > > > > > > > --- /dev/null
-> > > > > > > > +++ b/Documentation/devicetree/bindings/media/i2c/ovti,ov02a10.yaml
-> > > > > > > > @@ -0,0 +1,148 @@
-> > > > > > > > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > > > > > > > +# Copyright (c) 2020 MediaTek Inc.
-> > > > > > > > +%YAML 1.2
-> > > > > > > > +---
-> > > > > > > > +$id: http://devicetree.org/schemas/media/i2c/ovti,ov02a10.yaml#
-> > > > > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > > > > +
-> > > > > > > > +title: Omnivision OV02A10 CMOS Sensor Device Tree Bindings
-> > > > > > > > +
-> > > > > > > > +maintainers:
-> > > > > > > > +  - Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > > > > +
-> > > > > > > > +description: |-
-> > > > > > > > +  The Omnivision OV02A10 is a low-cost, high performance, 1/5-inch, 2 megapixel
-> > > > > > > > +  image sensor, which is the latest production derived from Omnivision's CMOS
-> > > > > > > > +  image sensor technology. Ihis chip supports high frame rate speeds up to 30fps
-> > > > > > > > +  @ 1600x1200 (UXGA) resolution transferred over a 1-lane MIPI interface. The
-> > > > > > > > +  sensor output is available via CSI-2 serial data output.
-> > > > > > > > +
-> > > > > > > > +properties:
-> > > > > > > > +  compatible:
-> > > > > > > > +    const: ovti,ov02a10
-> > > > > > > > +
-> > > > > > > > +  reg:
-> > > > > > > > +    maxItems: 1
-> > > > > > > > +
-> > > > > > > > +  clocks:
-> > > > > > > > +    items:
-> > > > > > > > +      - description: top mux camtg clock
-> > > > > > > > +      - description: devider clock
-> > > > > > > > +
-> > > > > > > > +  clock-names:
-> > > > > > > > +    items:
-> > > > > > > > +      - const: eclk
-> > > > > > > > +      - const: freq_mux
-> > > > > > > > +
-> > > > > > > > +  clock-frequency:
-> > > > > > > > +    description:
-> > > > > > > > +      Frequency of the eclk clock in Hertz.
-> > > > > > > > +
-> > > > > > > > +  dovdd-supply:
-> > > > > > > > +    description:
-> > > > > > > > +      Definition of the regulator used as interface power supply.
-> > > > > > > > +
-> > > > > > > > +  avdd-supply:
-> > > > > > > > +    description:
-> > > > > > > > +      Definition of the regulator used as analog power supply.
-> > > > > > > > +
-> > > > > > > > +  dvdd-supply:
-> > > > > > > > +    description:
-> > > > > > > > +      Definition of the regulator used as digital power supply.
-> > > > > > > > +
-> > > > > > > > +  powerdown-gpios:
-> > > > > > > > +    description:
-> > > > > > > > +      The phandle and specifier for the GPIO that controls sensor powerdown.
-> > > > > > > > +
-> > > > > > > > +  reset-gpios:
-> > > > > > > > +    description:
-> > > > > > > > +      The phandle and specifier for the GPIO that controls sensor reset.
-> > > > > > > > +
-> > > > > > > > +  rotation:
-> > > > > > > > +    description:
-> > > > > > > > +      Definition of the sensor's placement, valid values are 0 and 180.
-> > > > > > > > +    allOf:
-> > > > > > > > +      - $ref: "/schemas/types.yaml#/definitions/uint32"
-> > > > > > > > +      - enum:
-> > > > > > > > +          - 0    # Sensor Mounted Upright
-> > > > > > > > +          - 180  # Sensor Mounted Upside Down
-> > > > > > > > +
-> > > > > > > > +  ovti,mipi-tx-speed:
-> > > > > > > > +    description:
-> > > > > > > > +      Indication of MIPI transmission speed select.
-> > > > > > >
-> > > > > > > What exactly does this signify? And how do you come up with the number?
-> > > > > > >
-> > > > > >
-> > > > > > Apologies for not addressing this number clear.
-> > > > > >
-> > > > > > From the datasheet, P1:0xA1 register represents TX_SPEED_AREA_SEL with
-> > > > > > the default val: 0x03.
-> > > > > > The description of this RW register is as below:
-> > > > > > Bit[2:0]: MIPI transmission speed select.
-> > > > > >
-> > > > > > Thus the enum should be definited as [ 0, 1, 2, 3, 4, 5, 6, 7 ].
-> > > > > > This would be fixed in next release.
-> > > > > >
-> > > > > > In the meantime, as the default val of P1:0xA1 is 0x03, we hope to keep
-> > > > > > that value if there is no setting for this private property in DT.
-> > > > > > The caller in driver would be updated like this in next release.
-> > > > > > if (ov02a10->mipi_clock_tx_speed)
-> > > > > >     ret = i2c_smbus_write_byte_data(...,...);
-> > > > >
-> > > > > How did you pick the value in the example? And why do you believe it is
-> > > > > specific to a platform, and not e.g. a sensor mode?
-> > > > >
-> > > >
-> > > > We look into P1:0XA1, one register that defines MIPI transmission speed
-> > > > select.
-> > > > From the datasheet, we can get the possible values that could be set to
-> > > > P1:0xA1.
-> > > >
-> > > > Actually this register is an independent of sensor mode, it is just
-> > > > included in sensor mode's register setting table.
-> > > >
-> > > > In addition, this private DT Property is created to fix the MIPI test
-> > > > failure. The register values are adjusted and verified from vendor to
-> > > > make sensor signal meet MIPI specification.
-> > > >
-> > >
-> > > In theory the value could depend on the mode, because different link
-> > > rate could impose different requirements for the physical interface.
-> > > In practice, we haven't seen any hardware that would require different
-> > > values for different modes.
-> >
-> > The mode (possibly in conjunction with other information available to the
-> > driver via V4L2 fwnode interface) precisely defines the parameters of the
-> > CSI-2 bus --- apart from the possible exception of the bus timing related
-> > parameters but this is not supported by the name of the parameter.
-> >
-> > Therefore I don't see how this parameter, which supposedly is used to
-> > determine the CSI-2 transmissions speed, could be board specific and thus
-> > belong to DT.
-> 
-> According to the very imprecise information I have access to, it is
-> not about the CSI-2 bus itself, but rather some internal parameter of
-> the sensor's CSI interface. Unfortunately there isn't much information
-> on what this value exactly controls...
-> 
-> Best regards,
-> Tomasz
-
-Just got some feedback from OV vendor about this parameter.
-
-P1:0xA1 is the register to control D-PHY timing setting based on bclk.
-It is to adjust the MIPI clock voltage to improve the clock drive
-capability, and has no affect on the transmission speed of MIPI data.
-
-From vendor's perspective, P1:0xA1 depends upon the length of FPC of
-camera module that used on the board. Considering the physical
-connections for MIPI signals to user-facing camera are very different
-between our 2 projects, it can be very difficult to find universal SI
-parameters for both projects.
-
-Thus here we create one new DT property to separate these tuning in
-driver, to be more like project-specific.
-
-More details about the register is as below.
-P1:0xA1 val: 0x03 default
-Case: 0  20MHz-30MHz
-      1  30MHz-50MHz
-      2  50MHz-75MHz
-      3  75MHz-100MHz   (default, old DB setting use)
-      4  100MHz-130MHz  (suggested, new DB setting use)
-      5  Manual
-So the value in the example should be [ 0, 1, 2, 3, 4, 5 ].
-
-Additionally, P1:0xA1 is recommended to be set as 0x04 in the newest DB
-setting. We would adjust the register in next release.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWlrZSwKCk9uIDA3LjA1LjIwMjAgMTg6MTEsIE1pa2UgUmFwb3BvcnQgd3JvdGU6Cj4gT24g
+VGh1LCBNYXkgMDcsIDIwMjAgYXQgMDI6MTY6NTZQTSArMDIwMCwgTWFyZWsgU3p5cHJvd3NraSB3
+cm90ZToKPj4gT24gMTQuMDQuMjAyMCAxNzozNCwgTWlrZSBSYXBvcG9ydCB3cm90ZToKPj4+IEZy
+b206IE1pa2UgUmFwb3BvcnQgPHJwcHRAbGludXguaWJtLmNvbT4KPj4+Cj4+PiBJbXBsZW1lbnQg
+cHJpbWl0aXZlcyBuZWNlc3NhcnkgZm9yIHRoZSA0dGggbGV2ZWwgZm9sZGluZywgYWRkIHdhbGtz
+IG9mIHA0ZAo+Pj4gbGV2ZWwgd2hlcmUgYXBwcm9wcmlhdGUsIGFuZCByZW1vdmUgX19BUkNIX1VT
+RV81TEVWRUxfSEFDSy4KPj4+Cj4+PiBTaWduZWQtb2ZmLWJ5OiBNaWtlIFJhcG9wb3J0IDxycHB0
+QGxpbnV4LmlibS5jb20+Cj4+IFRvZGF5IEkndmUgbm90aWNlZCB0aGF0IGtleGVjIGlzIGJyb2tl
+biBvbiBBUk0gMzJiaXQuIEJpc2VjdGluZyBiZXR3ZWVuCj4+IGN1cnJlbnQgbGludXgtbmV4dCBh
+bmQgdjUuNy1yYzEgcG9pbnRlZCB0byB0aGlzIGNvbW1pdC4gSSd2ZSB0ZXN0ZWQgdGhpcwo+PiBv
+biBPZHJvaWQgWFU0IGFuZCBSYXNwYmVycnkgUGk0IGJvYXJkcy4gSGVyZSBpcyB0aGUgcmVsZXZh
+bnQgbG9nOgo+Pgo+PiAjIGtleGVjIC0ta2V4ZWMtc3lzY2FsbCAtbCB6SW1hZ2UgLS1hcHBlbmQg
+IiQoY2F0IC9wcm9jL2NtZGxpbmUpIgo+PiBtZW1vcnlfcmFuZ2VbMF06MHg0MDAwMDAwMC4uMHhi
+ZTlmZmZmZgo+PiBtZW1vcnlfcmFuZ2VbMF06MHg0MDAwMDAwMC4uMHhiZTlmZmZmZgo+PiAjIGtl
+eGVjIC1lCj4+IGtleGVjX2NvcmU6IFN0YXJ0aW5nIG5ldyBrZXJuZWwKPj4gODwtLS0gY3V0IGhl
+cmUgLS0tCj4+IFVuYWJsZSB0byBoYW5kbGUga2VybmVsIHBhZ2luZyByZXF1ZXN0IGF0IHZpcnR1
+YWwgYWRkcmVzcyBjMDEwZjFmNAo+PiBwZ2QgPSBjNjgxNzc5Mwo+PiBbYzAxMGYxZjRdICpwZ2Q9
+NDAwMDA0MWUoYmFkKQo+PiBJbnRlcm5hbCBlcnJvcjogT29wczogODBkIFsjMV0gUFJFRU1QVCBB
+Uk0KPj4gTW9kdWxlcyBsaW5rZWQgaW46Cj4+IENQVTogMCBQSUQ6IDEzMjkgQ29tbToga2V4ZWMg
+VGFpbnRlZDogR8KgwqDCoMKgwqDCoMKgIFcKPj4gNS43LjAtcmMzLTAwMTI3LWc2Y2JhODFlZDBm
+NjIgIzYxMQo+PiBIYXJkd2FyZSBuYW1lOiBTYW1zdW5nIEV4eW5vcyAoRmxhdHRlbmVkIERldmlj
+ZSBUcmVlKQo+PiBQQyBpcyBhdCBtYWNoaW5lX2tleGVjKzB4NDAvMHhmYwo+IEFueSBjaGFuY2Ug
+eW91IGhhdmUgdGhlIGRlYnVnIGluZm8gaW4gdGhpcyBrZXJuZWw/Cj4gc2NyaXB0cy9mYWRkcjJs
+aW5lIHdvdWxkIGNvbWUgaGFuZHkgaGVyZS4KCiMgLi9zY3JpcHRzL2ZhZGRyMmxpbmUgLS1saXN0
+IHZtbGludXggbWFjaGluZV9rZXhlYysweDQwCm1hY2hpbmVfa2V4ZWMrMHg0MC8weGY4OgoKbWFj
+aGluZV9rZXhlYyBhdCBhcmNoL2FybS9rZXJuZWwvbWFjaGluZV9rZXhlYy5jOjE4MgogwqAxNzfC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgIHJlYm9vdF9jb2RlX2J1ZmZlciA9IApwYWdlX2FkZHJlc3Mo
+aW1hZ2UtPmNvbnRyb2xfY29kZV9wYWdlKTsKIMKgMTc4CiDCoDE3OcKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgLyogUHJlcGFyZSBwYXJhbWV0ZXJzIGZvciByZWJvb3RfY29kZV9idWZmZXIqLwogwqAx
+ODDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIHNldF9rZXJuZWxfdGV4dF9ydygpOwogwqAxODHCoMKg
+wqDCoMKgwqDCoMKgwqDCoMKgIGtleGVjX3N0YXJ0X2FkZHJlc3MgPSBpbWFnZS0+c3RhcnQ7CiA+
+MTgyPMKgwqDCoMKgwqDCoMKgwqDCoMKgIGtleGVjX2luZGlyZWN0aW9uX3BhZ2UgPSBwYWdlX2xp
+c3Q7CiDCoDE4M8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAga2V4ZWNfbWFjaF90eXBlID0gbWFjaGlu
+ZV9hcmNoX3R5cGU7CiDCoDE4NMKgwqDCoMKgwqDCoMKgwqDCoMKgwqAga2V4ZWNfYm9vdF9hdGFn
+cyA9IGltYWdlLT5hcmNoLmtlcm5lbF9yMjsKIMKgMTg1CiDCoDE4NsKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgLyogY29weSBvdXIga2VybmVsIHJlbG9jYXRpb24gY29kZSB0byB0aGUgY29udHJvbCBj
+b2RlIApwYWdlICovCiDCoDE4N8KgwqDCoMKgwqDCoMKgwqDCoMKgwqAgcmVib290X2VudHJ5ID0g
+Zm5jcHkocmVib290X2NvZGVfYnVmZmVyLAoKID4gLi4uCgpCZXN0IHJlZ2FyZHMKLS0gCk1hcmVr
+IFN6eXByb3dza2ksIFBoRApTYW1zdW5nIFImRCBJbnN0aXR1dGUgUG9sYW5kCgoKX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBt
+YWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9s
+aXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
