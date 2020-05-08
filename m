@@ -2,176 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC3E01CA795
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 11:52:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D58941CA79A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 11:57:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yq8+MtCzh654Jzsduce0owbGJ/9UpMChsQuZLibQzI8=; b=NsBpcvx3lKc348
-	1fzNpCadvwT0yhAVy/eqeQOIlybD+B2YOiZr3vZjtYDkmYa4S21JGDSccSfBMmtloJh7bbhQnZ+CA
-	M3DvIsx46zYPTK+fnLKFtv7BZSYljWNVTy4h9rvqbTECYceZV5YxJgy8jc9cSBDjMgvD0Y6815/Ep
-	w/NnyiV4YU1zstjwl8YOWIcDvXhC+rgCzGGwUsnGMvFPuLB8Cx9jEpdXNnT8qKN8aswdq8TQSTedp
-	KUmfwIptyfQ4NMIq2V2/ZKc7ksXhRV29+KkTxGhYb++0whG18yp2A5u1b6iKgxSnwvEF3ikl+ZVsq
-	pC3zPZEq1tijeoayzVdg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wbZCvPaTw3Ntx+SajA3NXl6/BeLMbc+Ycr7i17nC1PE=; b=gT6Ao6GhIKQOap
+	SnXzfBHFlrKWzUTao7EpTVxmxFxzLwEkjw+OGo5Yhe2Qd19AZX23tVcz14qoCOpHi9cPdzXTDVVUn
+	SexGjGzhXI+8hst/xyqUEbL74aP4Oxbwru/fYYkJb2NaGO/ejFYhKDXpPwNV1YINxK2S1sMjJRe+h
+	hk/zdJ9BdAn0VqciUfRw2gUSMfPnUaJRB6p19GLv8TMjKMDyuFfGhHK6MDL8BbZoTUM+fcdjtY6fM
+	rsxsVvH/n0+OW1EIxVNE3M6iJ8k9Kt6pL/wFf8WeHJE+KcgoY4GG3QRXmJV9938PL/Lyr/NvXLvoy
+	CuA2wX7Bvs2ZBT0ddXCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWzgH-0002rv-It; Fri, 08 May 2020 09:52:33 +0000
-Received: from mail-eopbgr120088.outbound.protection.outlook.com
- ([40.107.12.88] helo=FRA01-PR2-obe.outbound.protection.outlook.com)
+	id 1jWzkX-0005wv-JK; Fri, 08 May 2020 09:56:57 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWzg9-0002rG-1W
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 09:52:26 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=M29HzgUFDlk/rtKj3vbJ/+RaBfLCY1j2eNAg54IJ7ic=;
- b=bwow+7IM6z1siM2ez6r3SMx7xX4IW+9rWvpQQ8Dh/1E7FjS1+UeBWiVOZs48TFZuNLOc59jH80Ly2LEFSb1HbIPmbkfnz4vrMHYqPmONshjdHkEbYnEgQVVSl71pTu5j4FAsV2ybxlblmayNHxqllAf63yE8Nf8LHAcFa9zxgEc=
-Received: from AM6PR04CA0018.eurprd04.prod.outlook.com (2603:10a6:20b:92::31)
- by PR2PR08MB4649.eurprd08.prod.outlook.com (2603:10a6:101:1f::18)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.19; Fri, 8 May
- 2020 09:52:22 +0000
-Received: from VE1EUR03FT004.eop-EUR03.prod.protection.outlook.com
- (2603:10a6:20b:92:cafe::21) by AM6PR04CA0018.outlook.office365.com
- (2603:10a6:20b:92::31) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.27 via Frontend
- Transport; Fri, 8 May 2020 09:52:22 +0000
-Authentication-Results: spf=pass (sender IP is 63.35.35.123)
- smtp.mailfrom=arm.com; lists.infradead.org; dkim=pass (signature was
- verified) header.d=armh.onmicrosoft.com;lists.infradead.org;
- dmarc=bestguesspass action=none header.from=arm.com;
-Received-SPF: Pass (protection.outlook.com: domain of arm.com designates
- 63.35.35.123 as permitted sender) receiver=protection.outlook.com;
- client-ip=63.35.35.123; helo=64aa7808-outbound-1.mta.getcheckrecipient.com;
-Received: from 64aa7808-outbound-1.mta.getcheckrecipient.com (63.35.35.123) by
- VE1EUR03FT004.mail.protection.outlook.com (10.152.18.106) with
- Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2979.27 via Frontend Transport; Fri, 8 May 2020 09:52:22 +0000
-Received: ("Tessian outbound ff098c684b24:v54");
- Fri, 08 May 2020 09:52:21 +0000
-X-CheckRecipientChecked: true
-X-CR-MTA-CID: 52431477484d2502
-X-CR-MTA-TID: 64aa7808
-Received: from 26703805e3e0.2
- by 64aa7808-outbound-1.mta.getcheckrecipient.com id
- BCDDD3F6-4DE8-4F6E-8B84-F79CD54B7EF6.1; 
- Fri, 08 May 2020 09:52:15 +0000
-Received: from EUR04-VI1-obe.outbound.protection.outlook.com
- by 64aa7808-outbound-1.mta.getcheckrecipient.com with ESMTPS id 26703805e3e0.2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384);
- Fri, 08 May 2020 09:52:15 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=XW1fZhRZ05l0D45ouFBE2R5tPBBuTUpbryjqoXq9qO5+4oWt6+6jHczqkEf4F6a/0VoqYP1wf1VfD1/lJRlSM8PHufoYaAlZT6D26FlcHNF6zNeTL5XBR5YE6JE1OthwXg58cAUKnTEJ7N8nwnIx6O7aYIdiRaGbhF829Vrv0B41lAmeni5I16iVt8oLy3gA8Hj4onQrqggi6kNj5bvwsMkLJ0+oVf9gM1xy8Jpk4YyEV+1Ead3nQrcs2BYSqBiQbde57PFc76HUElZ47011OIbiAGgjG4Z0LHXTWGOSKYSzGY+AqddY8lI/yLNlHKGtBYRJRW9oNLcEb7ptc9AuLQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=M29HzgUFDlk/rtKj3vbJ/+RaBfLCY1j2eNAg54IJ7ic=;
- b=XN9WRsnFs/Ii4bwfBJXgyaKErif2Tp+1n2AGoWzevqhD71qkUsaIKcFKb8+v8/rrmINcZjyAJRD1LzW9m+g2/ap4hZhv5XSBGwPkFZcyICkiZ96dL/lyIjR6Y63Qp4JV0TjbDtzrYZonn+clV/1ly16zVtWCN4N1nVQjSM9f1Ttgw4FjKZMrPJuFcDzsyztwUc9fb2cJp03n6bJQ3VORl+ge8YzG5AySmdahVjaLPNTvc/mzuOlsKS7EN4BVmwTELDY1uiLKu+ovt9lVvAntCZknIinpy0suQ896lGpV/AfVtf3nZj4lxDyXxKXdV1TZHXip/7wBoXA7oBTo6GeJ1A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=arm.com; dmarc=pass action=none header.from=arm.com; dkim=pass
- header.d=arm.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=armh.onmicrosoft.com; 
- s=selector2-armh-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=M29HzgUFDlk/rtKj3vbJ/+RaBfLCY1j2eNAg54IJ7ic=;
- b=bwow+7IM6z1siM2ez6r3SMx7xX4IW+9rWvpQQ8Dh/1E7FjS1+UeBWiVOZs48TFZuNLOc59jH80Ly2LEFSb1HbIPmbkfnz4vrMHYqPmONshjdHkEbYnEgQVVSl71pTu5j4FAsV2ybxlblmayNHxqllAf63yE8Nf8LHAcFa9zxgEc=
-Received: from DB8PR08MB5259.eurprd08.prod.outlook.com (2603:10a6:10:bf::13)
- by DB8PR08MB5161.eurprd08.prod.outlook.com (2603:10a6:10:ea::16) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2958.29; Fri, 8 May
- 2020 09:52:14 +0000
-Received: from DB8PR08MB5259.eurprd08.prod.outlook.com
- ([fe80::951c:f6f0:2397:392d]) by DB8PR08MB5259.eurprd08.prod.outlook.com
- ([fe80::951c:f6f0:2397:392d%3]) with mapi id 15.20.2979.028; Fri, 8 May 2020
- 09:52:14 +0000
-From: Daniel Kiss <Daniel.Kiss@arm.com>
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH] arm64: vdso: Fix CFI info in sigreturn.
-Thread-Topic: [PATCH] arm64: vdso: Fix CFI info in sigreturn.
-Thread-Index: AQHWJR4GrYiegZWLm0yCnuYpTVtWxqid8naA
-Date: Fri, 8 May 2020 09:52:14 +0000
-Message-ID: <DDD18BB4-B773-4471-B5E0-9DDD839B7D46@arm.com>
-References: <30E488CA-46FF-4927-A07F-8CE11263B92E@arm.com>
- <CF896434-E995-438C-88F8-86CCFE24C5A2@arm.com>
-In-Reply-To: <CF896434-E995-438C-88F8-86CCFE24C5A2@arm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: Apple Mail (2.3608.80.23.2.2)
-Authentication-Results-Original: lists.infradead.org; dkim=none (message not
- signed) header.d=none;lists.infradead.org; dmarc=none action=none
- header.from=arm.com;
-x-originating-ip: [2001:4c4c:1b20:6f00:184f:4ec7:4e92:bc62]
-x-ms-publictraffictype: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: 5b8ed02f-aeda-4dab-09aa-08d7f3358120
-x-ms-traffictypediagnostic: DB8PR08MB5161:|DB8PR08MB5161:|PR2PR08MB4649:
-x-ms-exchange-transport-forked: True
-X-Microsoft-Antispam-PRVS: <PR2PR08MB46492625384A3E4A7D3BDCC5ECA20@PR2PR08MB4649.eurprd08.prod.outlook.com>
-x-checkrecipientrouted: true
-nodisclaimer: true
-x-ms-oob-tlc-oobclassifiers: OLM:758;OLM:758;
-x-forefront-prvs: 039735BC4E
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Untrusted: BCL:0;
-X-Microsoft-Antispam-Message-Info-Original: G5dXHd8B7mFOIBiG6RlSlxaopZYlkXxJgZJUwX1kIyQPvhb/x3E0vB9AELsCyQIHCDLm61AA8K/yHTH4QmnCWzpXiJuBAMJ9rnCggL07KTkF7mjqHxOdtEjdpXoUPMGrsXTwTHaiErxSBVdQKx3nbUSbF5fGQih+ES15/ARi/p9o7n8dN+S7iXIb6Uf8SYJiAmwCDN9nbf8dF3LFt8mcuqsltCihvZEzL2qK4PpnLyL7EgCPDhHGPnMXLi3xEo1IFdgtVcuzsJ8lmWTaF8z9QOHW061TFy9s7i1vLMvLwGmfqdeAY6DtQSql5H/pQVex54+JHxB9W3HpgA9VgzUqwtGf9DfKGCN9P9qJhoDiE4CHPj8HRcqpiRvA9gaQiDKnk0OINpPoQXJVqYriBtpKZL7KNMcFaYjbAb1UYP7/0nWTWWglA+685wwak8kEK43xXi10uP17tFljpFqqnaUYxV03Ckv2GSHm/CD93jsA23kUtHMyfdSfNV6Ibz44+h4iOwHINchUW6yybkdnJ7sy5w==
-X-Forefront-Antispam-Report-Untrusted: CIP:255.255.255.255; CTRY:; LANG:en;
- SCL:1; SRV:; IPV:NLI; SFV:NSPM; H:DB8PR08MB5259.eurprd08.prod.outlook.com;
- PTR:; CAT:NONE; SFTY:;
- SFS:(4636009)(366004)(346002)(376002)(136003)(39860400002)(396003)(33430700001)(66476007)(64756008)(5660300002)(83310400001)(83320400001)(83280400001)(83290400001)(83300400001)(54906003)(6506007)(36756003)(33440700001)(86362001)(2906002)(2616005)(6916009)(8936002)(4326008)(33656002)(8676002)(66446008)(66556008)(316002)(6512007)(66946007)(478600001)(6486002)(71200400001)(91956017)(186003)(76116006);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: ZCZr4da0Rr33xJ4DQqrKgcMrdBy4X505vvm5rPIGc29wyW1sra+n6p/mm1bGjamrDLVxYZ9xFRVKVQO8jGXKR7GhwexrSulY2IR3x8kUJ1rcvNUscklj5g5vRNBTVJsNCNEnm+HUSYa9bdzThWPG7iraoqMw1frEP2PbrXG+SxSUyP+r17CbUcFcvtbXak3QsQED7c4lv5TFsC4ost7C5Y369eQ6TfkKrob6uu4iZyyyWWz+f+ZfP1I5TNNzWGKUVk0B/vG5u2fVLT3Fb+cGzB4pxLAybJw/Ya2wP3zObY6WaiZHEiFbK59Y86pt1GoEDPxX/zYpstA9QC4058Mbk6XW/MC16s6ZqKzUmE0XNBHUa971jcEivE7GBcgXQQSOYbxcp8J7cqjHl0jJ6Js0no8J+pFD9MTK/ITQr/je+gTR3nVXdfGo4T+JTC6SJ0rp8rEziQEXK/byyENvEKeZR8qg+8FIP7JM2udjVCKfdgOfc2/+5ikgbNpAyax1wQxekYh0E81EdEqJsII9mAKzD/BpOa8HZLY9IyFkxhM6LcAqp0CV3KMU0yoauGDzXF0T
-Content-ID: <C6A110752DC0F04897DC7CD2CF6C1EEC@eurprd08.prod.outlook.com>
+ id 1jWzkO-0005wN-PL
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 09:56:50 +0000
+IronPort-SDR: +qaFhCImGlvQQ9JO8gRXaCrzQIMzoSNMQ0xceuN+NR3RDgHaxn3nzkCVbJ9RqgHKmYWpm0EhZI
+ 5pr+5UKEG+Ow==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 08 May 2020 02:56:46 -0700
+IronPort-SDR: rPZIWfNStLwiGNZ3H2QrRiLOpRo3OHVLbXbecach4h+8OlNFmC39dpKDQVVuvP8s5fJj174Cg6
+ uC3T8CuOCaVg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,367,1583222400"; d="scan'208";a="249587330"
+Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
+ by orsmga007.jf.intel.com with ESMTP; 08 May 2020 02:56:44 -0700
+Received: from kbuild by lkp-server01 with local (Exim 4.89)
+ (envelope-from <lkp@intel.com>)
+ id 1jWzkJ-0007dq-FZ; Fri, 08 May 2020 17:56:43 +0800
+Date: Fri, 8 May 2020 17:56:02 +0800
+From: kbuild test robot <lkp@intel.com>
+To: Saurabh Sengar <saurabh.singh@xilinx.com>
+Subject: [xlnx:xlnx_rebase_v5.4 242/1296]
+ drivers/gpu/drm/xlnx/xlnx_mixer.c:2100:6: warning: Variable 'ret' is
+ reassigned a value before the old one has been used. [redundantAssignment]
+Message-ID: <202005081737.A14krgz5%lkp@intel.com>
 MIME-Version: 1.0
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB8PR08MB5161
-Original-Authentication-Results: lists.infradead.org;
- dkim=none (message not signed)
- header.d=none;lists.infradead.org; dmarc=none action=none
- header.from=arm.com;
-X-EOPAttributedMessage: 0
-X-MS-Exchange-Transport-CrossTenantHeadersStripped: VE1EUR03FT004.eop-EUR03.prod.protection.outlook.com
-X-Forefront-Antispam-Report: CIP:63.35.35.123; CTRY:IE; LANG:en; SCL:1; SRV:;
- IPV:CAL; SFV:NSPM; H:64aa7808-outbound-1.mta.getcheckrecipient.com;
- PTR:ec2-63-35-35-123.eu-west-1.compute.amazonaws.com; CAT:NONE; SFTY:;
- SFS:(4636009)(396003)(346002)(136003)(376002)(39860400002)(46966005)(33430700001)(186003)(33656002)(36906005)(70586007)(316002)(54906003)(70206006)(36756003)(4326008)(6512007)(6486002)(8936002)(2616005)(6916009)(2906002)(8676002)(336012)(86362001)(478600001)(82310400002)(81166007)(47076004)(33440700001)(6506007)(356005)(82740400003)(5660300002)(26005);
- DIR:OUT; SFP:1101; 
-X-MS-Office365-Filtering-Correlation-Id-Prvs: 64c5fcd0-03c1-4b4c-2b57-08d7f3357c85
-X-Forefront-PRVS: 039735BC4E
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: qupUS/k89/uG2k4NfR4f4wvXoaJklR5ZlGkdLWwfY4JG5AZ1GFBXdy+dD60cAtiiNTieJ2jBeiZNnXpC86vHlHNhRB+vPZvJkVpYvCynZ7LQFMm/tXhv1BhBO2Sf0SaiiK22FQgvAvVWM6g5t+LdiGtNKXBYU7vtCj6K3SExrPiiOFwfDKdyEtOxMFTKcjvjiBTqq7ELnme3uwQuPjadKEmM/LC0+phO5F+bopuRbmhjDMzP6PzMYHfvAuMKpakUrjTIQEXIgsMdDTQdL6PFvuJDmjoXwa/DfbessSS+j69EXElAzEgSshSCs/AbgQsCMkZlgKkpXKgYcwFSMe1LoHNMm+clU1O0nnzjThxzda4S854GDV6JWJbT/EVNfiwvdJQSPo4vXMwXgodRcvBece0mNLU4prCPqXWTVOsMrxjpwk3VjPWafgmzPgdqDCqVW+Jgfh8+nnqwfBxvyNYEE3FNuByXYBW3wdlT7ypJJ3PPOINgoGss17NcX/x50T0SxHBOusYgTJ9MFiySceFId/ugq24sUwBYEFphKFMKXybApQDlQ2LQRNTrR8OyP6r+VRW0mgMjwHlI+JoRM14C+Q==
-X-OriginatorOrg: arm.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 08 May 2020 09:52:22.0331 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5b8ed02f-aeda-4dab-09aa-08d7f3358120
-X-MS-Exchange-CrossTenant-Id: f34e5979-57d9-4aaa-ad4d-b122a662184d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=f34e5979-57d9-4aaa-ad4d-b122a662184d; Ip=[63.35.35.123];
- Helo=[64aa7808-outbound-1.mta.getcheckrecipient.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: PR2PR08MB4649
+Content-Disposition: inline
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_025225_087900_B4F832B5 
-X-CRM114-Status: GOOD (  11.17  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200508_025648_841476_0D602F0A 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.12.88 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.12.88 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -183,50 +72,260 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tamas Zsoldos <Tamas.Zsoldos@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>
+Cc: Michal Simek <monstr@monstr.eu>, kbuild-all@lists.01.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-[PATCH] arm64: vdso: Fix CFI info in sigreturn.
+tree:   https://github.com/Xilinx/linux-xlnx xlnx_rebase_v5.4
+head:   0b197959bbbdb68e1da974bd013339f08704b178
+commit: 4507a574f06a834a997d961988aad9481e446f93 [242/1296] drm: xlnx: mixer: Initial video mixer driver
 
-When the signal handler is called the registers set up as the return address
-points to the __kernel_rt_sigreturn. The NOP here is the placeholder of the
-branch and link instruction that "calls" the signal handler. In case of a
-return address the unwinder identifies the location of the caller because
-in some cases the return address might not exist. Since the .cfi_startproc
-is after the NOP, it won't be associated with any location and the
-unwinder will stop walking.
-This change corrects the generated EHFrames only.
-Signed-off-by: Daniel Kiss <daniel.kiss@arm.com(opens in new tab)>
-Signed-off-by: Tamas Zsoldos <tamas.zsoldos@arm.com(opens in new tab)>
+If you fix the issue, kindly add following tag as appropriate
+Reported-by: kbuild test robot <lkp@intel.com>
+
+
+cppcheck warnings: (new ones prefixed by >>)
+
+>> drivers/gpu/drm/xlnx/xlnx_mixer.c:2100:6: warning: Variable 'ret' is reassigned a value before the old one has been used. [redundantAssignment]
+    ret = of_property_read_u32(node, "xlnx,ppc", &mixer_hw->ppc);
+        ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:2087:6: note: ret is assigned
+    ret = xlnx_mix_init_plane(&mixer->planes[XVMIX_MASTER_LAYER_IDX], 1,
+        ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:2100:6: note: ret is overwritten
+    ret = of_property_read_u32(node, "xlnx,ppc", &mixer_hw->ppc);
+        ^
+>> drivers/gpu/drm/xlnx/xlnx_mixer.c:2228:30: warning: Variable 'mixer->pixel_clock_enabled' is reassigned a value before the old one has been used. [redundantAssignment]
+     mixer->pixel_clock_enabled = true;
+                                ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:2225:32: note: mixer->pixel_clock_enabled is assigned
+       mixer->pixel_clock_enabled = false;
+                                  ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:2228:30: note: mixer->pixel_clock_enabled is overwritten
+     mixer->pixel_clock_enabled = true;
+                                ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:1938:2: warning: Consecutive return, break, continue, goto or throw statements are unnecessary. [duplicateBreak]
+    return 0;
+    ^
+>> drivers/gpu/drm/xlnx/xlnx_mixer.c:1067:41: warning: Checking if unsigned expression 'val' is less than zero. [unsignedLessThanZero]
+    if (val > XVMIX_SCALE_FACTOR_4X || val < XVMIX_SCALE_FACTOR_1X) {
+                                           ^
+   drivers/gpu/drm/xlnx/xlnx_mixer.c:1143:35: warning: Checking if unsigned expression 'val' is less than zero. [unsignedLessThanZero]
+    if (val > XVMIX_ALPHA_MAX || val < XVMIX_ALPHA_MIN) {
+                                     ^
+
+vim +/ret +2100 drivers/gpu/drm/xlnx/xlnx_mixer.c
+
+  2041	
+  2042	static int xlnx_mix_plane_create(struct device *dev, struct xlnx_mix *mixer)
+  2043	{
+  2044		struct xlnx_mix_hw		*mixer_hw;
+  2045		struct device_node		*node, *layer_node;
+  2046		char				name[20];
+  2047		struct xlnx_mix_layer_data	*layer_data;
+  2048		int				ret, i;
+  2049		int				layer_idx;
+  2050	
+  2051		node = dev->of_node;
+  2052		mixer_hw = &mixer->mixer_hw;
+  2053		xlnx_mix_create_plane_properties(mixer);
+  2054	
+  2055		mixer->planes[XVMIX_MASTER_LAYER_IDX].mixer_layer =
+  2056					&mixer_hw->layer_data[XVMIX_MASTER_LAYER_IDX];
+  2057		mixer->planes[XVMIX_MASTER_LAYER_IDX].id = XVMIX_MASTER_LAYER_IDX;
+  2058		mixer->hw_master_layer = &mixer->planes[XVMIX_MASTER_LAYER_IDX];
+  2059	
+  2060		if (mixer_hw->logo_layer_en) {
+  2061			mixer->planes[XVMIX_LOGO_LAYER_IDX].mixer_layer =
+  2062					&mixer_hw->layer_data[XVMIX_LOGO_LAYER_IDX];
+  2063			mixer->planes[XVMIX_LOGO_LAYER_IDX].id = XVMIX_LOGO_LAYER_IDX;
+  2064			mixer->hw_logo_layer = &mixer->planes[XVMIX_LOGO_LAYER_IDX];
+  2065			layer_node = of_get_child_by_name(node, "logo");
+  2066			ret = xlnx_mix_init_plane(&mixer->planes[XVMIX_LOGO_LAYER_IDX],
+  2067						  1, layer_node);
+  2068			if (ret)
+  2069				return ret;
+  2070		}
+  2071		layer_idx = mixer_hw->logo_layer_en ? 2 : 1;
+  2072		for (i = 1; i < mixer_hw->max_layers; i++, layer_idx++) {
+  2073			snprintf(name, sizeof(name), "layer_%d", i);
+  2074			ret = xlnx_mix_of_init_layer(dev, node, name,
+  2075						     &mixer_hw->layer_data[layer_idx],
+  2076						     mixer_hw->max_layer_width,
+  2077						     mixer, layer_idx);
+  2078			if (ret)
+  2079				return ret;
+  2080		}
+  2081		/* If none of the overlay layers were designated as the drm
+  2082		 * primary layer, default to the mixer's video0 layer as drm primary
+  2083		 */
+  2084		if (!mixer->drm_primary_layer)
+  2085			mixer->drm_primary_layer = mixer->hw_master_layer;
+  2086		layer_node = of_get_child_by_name(node, "layer_0");
+  2087		ret = xlnx_mix_init_plane(&mixer->planes[XVMIX_MASTER_LAYER_IDX], 1,
+  2088					  layer_node);
+  2089		/* request irq and obtain pixels-per-clock (ppc) property */
+  2090		mixer_hw->irq = irq_of_parse_and_map(node, 0);
+  2091		if (mixer_hw->irq > 0) {
+  2092			ret = devm_request_irq(dev, mixer_hw->irq,
+  2093					       xlnx_mix_intr_handler,
+  2094					       IRQF_SHARED, "xlnx-mixer", mixer_hw);
+  2095			if (ret) {
+  2096				dev_err(dev, "Failed to request irq\n");
+  2097				return ret;
+  2098			}
+  2099		}
+> 2100		ret = of_property_read_u32(node, "xlnx,ppc", &mixer_hw->ppc);
+  2101		if (ret) {
+  2102			dev_err(dev, "No xlnx,ppc property for mixer dts\n");
+  2103			return ret;
+  2104		}
+  2105	
+  2106		/* Init all layers to inactive state in software. An update_plane()
+  2107		 * call to our drm driver will change this to 'active' and permit the
+  2108		 * layer to be enabled in hardware
+  2109		 */
+  2110		for (i = 0; i < mixer_hw->layer_cnt; i++)
+  2111			layer_data = &mixer_hw->layer_data[i];
+  2112	
+  2113		mixer->max_width = XVMIX_DISP_MAX_WIDTH;
+  2114		mixer->max_height = XVMIX_DISP_MAX_HEIGHT;
+  2115		if (mixer->hw_logo_layer) {
+  2116			mixer->max_cursor_width =
+  2117				mixer->hw_logo_layer->mixer_layer->layer_regs.width;
+  2118			mixer->max_cursor_height =
+  2119				mixer->hw_logo_layer->mixer_layer->layer_regs.height;
+  2120		}
+  2121		return 0;
+  2122	}
+  2123	
+  2124	/**
+  2125	 * xlnx_mix_plane_restore - Restore the plane states
+  2126	 * @mixer: mixer device core structure
+  2127	 *
+  2128	 * Restore the plane states to the default ones. Any state that needs to be
+  2129	 * restored should be here. This improves consistency as applications see
+  2130	 * the same default values, and removes mismatch between software and hardware
+  2131	 * values as software values are updated as hardware values are reset.
+  2132	 */
+  2133	static void xlnx_mix_plane_restore(struct xlnx_mix *mixer)
+  2134	{
+  2135		struct xlnx_mix_plane *plane;
+  2136		unsigned int i;
+  2137	
+  2138		if (!mixer)
+  2139			return;
+  2140		/*
+  2141		 * Reinitialize property default values as they get reset by DPMS OFF
+  2142		 * operation. User will read the correct default values later, and
+  2143		 * planes will be initialized with default values.
+  2144		 */
+  2145		for (i = 0; i < mixer->num_planes; i++) {
+  2146			plane = &mixer->planes[i];
+  2147			if (!plane)
+  2148				continue;
+  2149			xlnx_mix_hw_plane_dpms(plane, DRM_MODE_DPMS_OFF);
+  2150		}
+  2151	}
+  2152	
+  2153	/**
+  2154	 * xlnx_mix_set_bkg_col - Set background color
+  2155	 * @mixer: Mixer instance to program with new background color
+  2156	 * @rgb_value: RGB encoded as 32-bit integer in little-endian format
+  2157	 *
+  2158	 * Set the color to be output as background color when background stream layer
+  2159	 */
+  2160	static void xlnx_mix_set_bkg_col(struct xlnx_mix_hw *mixer, u64 rgb_value)
+  2161	{
+  2162		u32 bg_bpc = mixer->bg_layer_bpc;
+  2163		u32 bpc_mask_shift = XVMIX_MAX_BPC - bg_bpc;
+  2164		u32 val_mask = (GENMASK(15, 0) >> bpc_mask_shift);
+  2165		u16 b_val = (rgb_value >> (bg_bpc * 2)) & val_mask;
+  2166		u16 g_val = (rgb_value >> bg_bpc) & val_mask;
+  2167		u16 r_val = (rgb_value >> 0) &  val_mask;
+  2168	
+  2169		/* Set Background Color */
+  2170		reg_writel(mixer->base, XVMIX_BACKGROUND_Y_R_DATA, r_val);
+  2171		reg_writel(mixer->base, XVMIX_BACKGROUND_U_G_DATA, g_val);
+  2172		reg_writel(mixer->base, XVMIX_BACKGROUND_V_B_DATA, b_val);
+  2173		mixer->bg_color = rgb_value;
+  2174	}
+  2175	
+  2176	/**
+  2177	 * xlnx_mix_reset - Reset the mixer core video generator
+  2178	 * @mixer: Mixer core instance for which to start video output
+  2179	 *
+  2180	 * Toggle the reset gpio and restores the bg color, plane and interrupt mask.
+  2181	 */
+  2182	static void xlnx_mix_reset(struct xlnx_mix *mixer)
+  2183	{
+  2184		struct xlnx_mix_hw *mixer_hw = &mixer->mixer_hw;
+  2185	
+  2186		gpiod_set_raw_value(mixer_hw->reset_gpio, 0);
+  2187		gpiod_set_raw_value(mixer_hw->reset_gpio, 1);
+  2188		/* restore layer properties and bg color after reset */
+  2189		xlnx_mix_set_bkg_col(mixer_hw, mixer_hw->bg_color);
+  2190		xlnx_mix_plane_restore(mixer);
+  2191		xlnx_mix_intrpt_enable_done(&mixer->mixer_hw);
+  2192	}
+  2193	
+  2194	static void xlnx_mix_dpms(struct xlnx_mix *mixer, int dpms)
+  2195	{
+  2196		switch (dpms) {
+  2197		case DRM_MODE_DPMS_ON:
+  2198			xlnx_mix_start(&mixer->mixer_hw);
+  2199			break;
+  2200		default:
+  2201			xlnx_mix_stop(&mixer->mixer_hw);
+  2202			mdelay(50); /* let IP shut down */
+  2203			xlnx_mix_reset(mixer);
+  2204		}
+  2205	}
+  2206	
+  2207	/* set crtc dpms */
+  2208	static void xlnx_mix_crtc_dpms(struct drm_crtc *base_crtc, int dpms)
+  2209	{
+  2210		struct xlnx_crtc *crtc = to_xlnx_crtc(base_crtc);
+  2211		struct xlnx_mix *mixer = to_xlnx_mixer(crtc);
+  2212		int ret;
+  2213	
+  2214		DRM_DEBUG_KMS("dpms: %d\n", dpms);
+  2215		if (mixer->dpms == dpms)
+  2216			return;
+  2217		mixer->dpms = dpms;
+  2218	
+  2219		switch (dpms) {
+  2220		case DRM_MODE_DPMS_ON:
+  2221			if (!mixer->pixel_clock_enabled) {
+  2222				ret = clk_prepare_enable(mixer->pixel_clock);
+  2223				if (ret) {
+  2224					DRM_ERROR("failed to enable a pixel clock\n");
+  2225					mixer->pixel_clock_enabled = false;
+  2226				}
+  2227			}
+> 2228			mixer->pixel_clock_enabled = true;
+  2229	
+  2230			xlnx_mix_dpms(mixer, dpms);
+  2231			xlnx_mix_plane_dpms(base_crtc->primary, dpms);
+  2232			break;
+  2233		default:
+  2234			xlnx_mix_plane_dpms(base_crtc->primary, dpms);
+  2235			xlnx_mix_dpms(mixer, dpms);
+  2236			if (mixer->pixel_clock_enabled) {
+  2237				clk_disable_unprepare(mixer->pixel_clock);
+  2238				mixer->pixel_clock_enabled = false;
+  2239			}
+  2240			break;
+  2241		}
+  2242	}
+  2243	
+
 ---
-arch/arm64/kernel/vdso/sigreturn.S | 4 ++--
-1 file changed, 2 insertions(+), 2 deletions(-)
-diff --git a/arch/arm64/kernel/vdso/sigreturn.S b/arch/arm64/kernel/vdso/sigreturn.S
-index 12324863d5c2..5d50ee92faa4 100644
---- a/arch/arm64/kernel/vdso/sigreturn.S
-+++ b/arch/arm64/kernel/vdso/sigreturn.S
-@@ -13,13 +13,13 @@
-.text
-- nop
--SYM_FUNC_START(__kernel_rt_sigreturn)
-.cfi_startproc
-.cfi_signal_frame
-.cfi_def_cfa x29, 0
-.cfi_offset x29, 0 * 8
-.cfi_offset x30, 1 * 8
-+ nop /* placeholder for bl signalhandler */
-+SYM_FUNC_START(__kernel_rt_sigreturn)
-mov x8, #__NR_rt_sigreturn
-svc #0
-.cfi_endproc
--- 
-2.17.1
-
-
+0-DAY CI Kernel Test Service, Intel Corporation
+https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
 
 _______________________________________________
 linux-arm-kernel mailing list
