@@ -2,107 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 485A71CBA73
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:10:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A5DCD1CBA9B
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:18:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GI48DLcrexuuVsn/47ZjLwapSbFOMBI8PY429DYzTwA=; b=P+u2lPdQq8hPZJ
-	WoXBUy2OQjKyFjMguBUO8vzLQblPOZO4zsdlQdv2gPUWavuv2mZybKD0m1jtdyRHwzHvgDgw6Wf0R
-	2MAyXoDHS1BRXV0YDvFB8PNnehAtJraoZ+yb3UK+dJN6yNsZAulIH0QWNCKGyqixulNo9Nt7Pbj7+
-	G0TxogZZVSV3kNnNlbSNMd/BJrMwV6EaVasz70AaqmDdHOvAzZGCsYP8cQiQfHiHBBwZRs5ENvWCe
-	mUa0lkMxFSKaHw2VCWJCC6pxn2xQsszx42WmRq+ZWG8s0ZFh61BkcPVPQtmIOcyVB2INxgbUsUsbM
-	pFG3w6wT9Tmu7ylk4krg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v0am4hJeLzWO2FNo3PcX9ToBG0kWLehaRz8g8+ScoRU=; b=gGki8E6Rh2QS+i
+	1r5ppFvcd/l82WHtT+NN/4LEPchA0e9VwWlBUiuGgkSOu3ugx+8NE5erjwICUTaiGs9EKQiG5XHFk
+	kRQGJo+u21N8xGPkuqfovL/k04MVPrg7O36p3pLeHouWxHduSTxhjfQCiPP5/eY3VNp2hhcpUqzX+
+	JjPbauuPdck6gJaelyxXbZx8zpWdKuLSlk8U1fHyGTrWhZ5wBy5wy2vCzfqIN3Y9b/fZugY1Fw0X6
+	hja5FdqmF7Zw9lYOGQ61cwXI2OSme6uD7C53V5cp21FE3wtwyyS2IqD4XfnoipQuDM1d4dzlGCdth
+	0AffZMD+99MVPM86atkw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXBBt-00077z-Tk; Fri, 08 May 2020 22:09:57 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jXBK5-0004id-Mk; Fri, 08 May 2020 22:18:25 +0000
+Received: from mout.kundenserver.de ([212.227.126.135])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXBBm-000772-NC
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 22:09:52 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 048M3pT7098830;
- Fri, 8 May 2020 22:09:40 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=e9WYgBCMI0KkS01+P+GDEHtd1NK7qTQIe6h+j1aFO7I=;
- b=TgFaCClTZHf+stqcvIDP2Bl7jaksNxPDQr/w7CfLJoVEUXZKyCTP2NEcQFg77e9AybrD
- Vf3+/kQREb4a5vA306kuIVOO5vtgIE6GV5q+50/4zyNOo7C2bP53T8T+oBbTx0Ap5ofn
- OLkEIVLferlceZkGLq4GYWDgX+ZQWuM6nC37AcdBVOodFt1Zk/pSXB4OtYMO70kTKnd0
- jKYbUxZvFKXvZ37VCrIwmcEWl/YqsZeZtfOaOUcdLlTd8fy/TKudRInZ/zgUQ3ymKxs+
- rUqg2uj68Trkzvsxn9tnGBIqjAXsJifHxtdzQ1c8oU/nEoUFgn+IqOUHxd4HjqSmjJ5r jQ== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 30vtexwdn4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 08 May 2020 22:09:40 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 048M6tFL128051;
- Fri, 8 May 2020 22:09:39 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by userp3020.oracle.com with ESMTP id 30vtehmy9e-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 08 May 2020 22:09:39 +0000
-Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 048M9c41015658;
- Fri, 8 May 2020 22:09:38 GMT
-Received: from [192.168.2.157] (/71.63.128.209)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 08 May 2020 15:09:37 -0700
-Subject: Re: [PATCH V3 1/3] arm64/mm: Drop __HAVE_ARCH_HUGE_PTEP_GET
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
- akpm@linux-foundation.org
-References: <1588907271-11920-1-git-send-email-anshuman.khandual@arm.com>
- <1588907271-11920-2-git-send-email-anshuman.khandual@arm.com>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <7db44202-0d21-d8fb-6998-0210508a488a@oracle.com>
-Date: Fri, 8 May 2020 15:09:34 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jXBJz-0004hq-0V
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 22:18:20 +0000
+Received: from mail-qk1-f180.google.com ([209.85.222.180]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1McH1Q-1iywQs42VY-00cln0 for <linux-arm-kernel@lists.infradead.org>; Sat,
+ 09 May 2020 00:18:15 +0200
+Received: by mail-qk1-f180.google.com with SMTP id c64so3426770qkf.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 May 2020 15:18:14 -0700 (PDT)
+X-Gm-Message-State: AGi0Pub4MxPHHCThSqBIsn/pRX7n2tCP8M3YPpizvu5bOol0xGweHg2B
+ 1m5vkMltY3utpatVqMOjmA1vP5B0e62DNPL41Xk=
+X-Google-Smtp-Source: APiQypJrR0dMcIrORsz+mb0P5jMKjcH41Y5dSQnIphjwVkSDjNgvO+SuEE4oe+M/6LHNn7ZHN8PzaYAriS9TiHos0+0=
+X-Received: by 2002:a37:c96:: with SMTP id 144mr3233352qkm.138.1588976293715; 
+ Fri, 08 May 2020 15:18:13 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1588907271-11920-2-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9615
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- adultscore=0
- phishscore=0 mlxlogscore=999 bulkscore=0 malwarescore=0 spamscore=0
- mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2005080187
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9615
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- lowpriorityscore=0 adultscore=0
- spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501 malwarescore=0
- phishscore=0 impostorscore=0 mlxscore=0 mlxlogscore=999 clxscore=1015
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2005080187
+References: <20200508100100.20740-1-grygorii.strashko@ti.com>
+ <20200508100100.20740-3-grygorii.strashko@ti.com>
+In-Reply-To: <20200508100100.20740-3-grygorii.strashko@ti.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Sat, 9 May 2020 00:17:57 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a0vewSiFc4rXu43_bs_A85EYx12_YuyBaU3PYJ1HszE=w@mail.gmail.com>
+Message-ID: <CAK8P3a0vewSiFc4rXu43_bs_A85EYx12_YuyBaU3PYJ1HszE=w@mail.gmail.com>
+Subject: Re: [PATCH v3 2/2] soc: ti: add k3 platforms chipid module driver
+To: Grygorii Strashko <grygorii.strashko@ti.com>
+X-Provags-ID: V03:K1:KZOfml+1O/tN212VWS7gtm7QnJ/r+XVXMlF5Yd3Dei+s48lyv12
+ l4DglPOJAbh0Oait2TF/uM/MED+l3tEkkkn+NBoDBsCQQ5PabomOXLght34Tm9ENQLQ3EwO
+ BGIUNVfeftrbYFuxDPhlHfPPBdA5L6TGh3s5t4Xoz1jP/d96uHILbUqfjTi11smMMJ1gM9T
+ 5U5xO1Oi9C4zHXTZQpB+A==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:uqwh3/81EcQ=:0N9HKph2XKMufpGUSVEJ1M
+ gfpJdRtREUBJ1Z47w3rDFc9S3NkS/kTmq98GzLJFTmkxdbTVUe16p7yDo7CUje+HLY5+pNpww
+ YrXjgQvm+WvjfmivU61/DICF1P5rBOXm4mtoDYqcZg40URi0/NZPsO8AQ6QgLE12eOwGmSkk+
+ lXskCThcOrw6rXur+7cy5EZYp91XpDec1VYmiZA91dxvjZ6FDvXGQeqvoiPQ9qgWSAieGfKc8
+ VCIDMeeFk+HBq5BAzdx7cF4TBh7wwxj8uvriW6EsJcNnYi9RiefDWWSsMtDr4VCJDbDK7ZN8C
+ +Uio03kvg1vxwCkYAeftjqQlZm9W+QvqEXX45Go1XQABmxex/alzhi7n2wJ3X8Y9JVuROFRMZ
+ p09ZLl2t9b+gYp+uFIknjdz1UVMFGzhnRgleqRktTi0d137jHg1gWLqjnf/hzPARqkIjYIn2W
+ mgpnGGsBbvvaCgIYQWSquV4fCH+fvuTq1o553lxZZpdVdC/WclbVjXMloykLO65xkQV88Yi1Q
+ l5i8TRRGiamYDrK9dJ8MerCCamS+HqCP2eIVqDnt4BmMAC8FxD/VYw0LKkN+mZuoy7CsD0Okj
+ VIAQiIrXcooAFv0XCJ8yCc6sZIP+bkrD8BqL0zUfuOE2kRQQ89umC+TO6jjSI7l76AR01RQc8
+ SS3RBT+1CG7deG/rhmsgOEmTfnuL3sJ66Meua4gseQqs5acwM5TRDjRmw0FJxw/dRZQ2xsCBI
+ xFGtVrGFF8Qayfcx+C6wG0aJZdwks+di9/rC+USZNgUKbrgNN0BEHl6D2h94FY0rZt1d6gwGQ
+ VRV4r90rsOPEB6BL+0vK6FFEEgtAXmIWLbbLJsU69y4kQEqhRc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_150950_845638_45C0F474 
-X-CRM114-Status: GOOD (  24.52  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200508_151819_343324_30282132 
+X-CRM114-Status: GOOD (  10.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.135 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ [212.227.126.135 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,79 +88,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
+ Dave Gerlach <d-gerlach@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
+ Sekhar Nori <nsekhar@ti.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/7/20 8:07 PM, Anshuman Khandual wrote:
-> Platform specific huge_ptep_get() is required only when fetching the huge
-> PTE involves more than just dereferencing the page table pointer. This is
-> not the case on arm64 platform. Hence huge_ptep_pte() can be dropped along
-> with it's __HAVE_ARCH_HUGE_PTEP_GET subscription. Before that, it updates
-> the generic huge_ptep_get() with READ_ONCE() which will prevent known page
-> table issues with THP on arm64.
-> 
-> https://lore.kernel.org/r/1506527369-19535-1-git-send-email-will.deacon@arm.com/
-> 
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-mm@kvack.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  arch/arm64/include/asm/hugetlb.h | 6 ------
->  include/asm-generic/hugetlb.h    | 2 +-
->  2 files changed, 1 insertion(+), 7 deletions(-)
-> 
-> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
-> index 2eb6c234d594..b88878ddc88b 100644
-> --- a/arch/arm64/include/asm/hugetlb.h
-> +++ b/arch/arm64/include/asm/hugetlb.h
-> @@ -17,12 +17,6 @@
->  extern bool arch_hugetlb_migration_supported(struct hstate *h);
->  #endif
->  
-> -#define __HAVE_ARCH_HUGE_PTEP_GET
-> -static inline pte_t huge_ptep_get(pte_t *ptep)
-> -{
-> -	return READ_ONCE(*ptep);
-> -}
-> -
->  static inline int is_hugepage_only_range(struct mm_struct *mm,
->  					 unsigned long addr, unsigned long len)
->  {
-> diff --git a/include/asm-generic/hugetlb.h b/include/asm-generic/hugetlb.h
-> index 822f433ac95c..40f85decc2ee 100644
-> --- a/include/asm-generic/hugetlb.h
-> +++ b/include/asm-generic/hugetlb.h
-> @@ -122,7 +122,7 @@ static inline int huge_ptep_set_access_flags(struct vm_area_struct *vma,
->  #ifndef __HAVE_ARCH_HUGE_PTEP_GET
->  static inline pte_t huge_ptep_get(pte_t *ptep)
->  {
-> -	return *ptep;
-> +	return READ_ONCE(*ptep);
->  }
->  #endif
+On Fri, May 8, 2020 at 12:01 PM Grygorii Strashko
+<grygorii.strashko@ti.com> wrote:
 
-I know you made this change in response to Will's comment.  And, since
-changes were made to consistently use READ_ONCE in arm64 code, it makes
-sense for that architecture.
+> +static int __init k3_chipinfo_init(void)
+> +{
+> +       struct soc_device_attribute *soc_dev_attr;
+> +       struct soc_device *soc_dev;
+> +       struct device_node *node;
+> +       struct regmap *regmap;
+> +       u32 partno_id;
+> +       u32 variant;
+> +       u32 jtag_id;
+> +       u32 mfg;
+> +       int ret;
+> +
+> +       node = of_find_compatible_node(NULL, NULL, "ti,am654-chipid");
+> +       if (!node)
+> +               return -ENODEV;
 
-However, with this change to generic code, you introduce READ_ONCE to
-other architectures where it was not used before.  Could this possibly
-introduce inconsistencies in their use of READ_ONCE?  To be honest, I
-am not very good at identifying any possible issues this could cause.
-However, it does seem possible.
+This will fail the initcall and print a warning when the kernel runs on any
+other SoC. Would it be possible to just make this a platform_driver?
 
-Will was nervous about dropping this from arm64.  I'm just a little nervous
-about adding it to other architectures.
--- 
-Mike Kravetz
+If not, I think you should silently return success when the device
+node is absent.
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
