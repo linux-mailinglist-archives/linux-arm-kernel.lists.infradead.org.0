@@ -2,158 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C02721CBAB7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:28:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DA461CBAE2
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:49:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z220KrUNOLRxSXkPKnHj6sWXk5Swe6NJjzQHk8hkN/I=; b=tAPDPG/CeX8cKZ
-	Z0idwvQIr56Q/rsJmzGYpfJlwy7BoNHPMkmYnv03JdcMwNIDYrLXFznfLuCmZmFMIYv8bL/Hyjw7I
-	my7Kbd2u7QnR+CP5A1f56vm8V8ZagIac1CieA0BpcANMaNYqUUQ1imyhvayQjsKkamICCGPYJPU1x
-	4tg0ovjfBYr26MLUZomDRVd8BlLvfp85x2XAUfDQPyv7okP872KfxoGbY/yS0+BGG9FSmcQRL+7FU
-	7q3wcWKjxvHRHQ2cgFoiqBT0FEiW0EAexqvdNXEUjWthK8JGZpPM9AVthWMLTCqurk2hlPQFeq2Bp
-	qRy703ituwBuye2jvmkw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SdDcXaSM7uaj5q4L4mSPQU4G908Yq0Xy6MtnyoUTr9A=; b=Ha9e/66fvp/qrzzLNj2dvGidg
+	MdXGUCFXnx8S5eITy0c1K2xmxiCu0N+fLZakZefu+FMKxgL8WBIcf//zFJlOvsIg2Dfb4w5AVZEK9
+	DXlmK9wgG7JwNZ7UzNH1FPtjNTh5sOivOmDVIFde+9jTcvQjT23+pVQBj6XGIdv7m39YN3oD50OVP
+	KkLRGRcBhizF5quC1AicHpKMKab88ly4O9G4fCnfQ4Yb2t+fEiSHi5G9BJ09MF/zW2JXFvu7VQYuG
+	vVNYq+Hnx1NXB1aD14AAiHjuBEZJcI12s0/6FTnBVqcIqSUvqhE0lUytYW2KLE3VABxJddL+ZxI2N
+	xgeB2NaqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXBTH-0002XM-Fp; Fri, 08 May 2020 22:27:55 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXBT7-0002WI-HG; Fri, 08 May 2020 22:27:47 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j5so3720387wrq.2;
- Fri, 08 May 2020 15:27:44 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:dmarc-filter:dkim-signature:dkim-signature:in-reply-to
- :references:mime-version:precedence:list-id:list-unsubscribe
- :list-archive:list-post:list-help:list-subscribe:errors-to
- :archived-at:list-archive:content-transfer-encoding;
- bh=oJY2tXB3h0jgTTxYsPIJ64qPRYc6VY1czEgCBA/cBOs=;
- b=Oy0DLQoRf5S8ozJ8EBS6KK4sFTj7giBqabsC8wGmwuQXJrOlJcZyOBpeA3cjnGlPUv
- a8zXOVDC7RrCePGsqyJCg4EnSFJVQYZoOA8Fi65W6fbFaWUrG2OqZEbYRCHE/NACmebu
- pQOxB2SNzxbLQ6OHY+0C7KYcQpkgm5EgsUYb6tOm25+sgMr7uFEi7TuiDKVh8zst8fHq
- Bi6j48c0m3vTZDQuVU8goxtaNnYtQfBnMftKP1d23iFp3K7+oppOuqZUrYTyr4+Xts2O
- d8fSF20U/9SvGdILp2RuOaGF0ZHbs5GNRevOuR5iuAHeGXAJ17MV2PvKZyYtD1J35fTF
- Smkw==
-X-Gm-Message-State: AGi0PubDT/ph5Cis1A2pFGmZy2kE2xMdneChSTaDOwCUXcprVNUx0CYk
- RBBlzwHPan9usutkti/DQV4=
-X-Google-Smtp-Source: APiQypJ/tHXFNl2aDE+ldylgI+C5KhtJolAD/ilG/HX28NkBMw8dXbr36eeu4B+zMOiTEmaXBZQs9Q==
-X-Received: by 2002:adf:f845:: with SMTP id d5mr5448345wrq.239.1588976862281; 
- Fri, 08 May 2020 15:27:42 -0700 (PDT)
-Received: from localhost (i577BC173.versanet.de. [87.123.193.115])
- by smtp.gmail.com with ESMTPSA id y3sm5020750wrm.64.2020.05.08.15.27.40
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 08 May 2020 15:27:41 -0700 (PDT)
-From: thomas graichen <thomas.graichen@googlemail.com>
-X-Google-Original-From: thomas graichen <thomas.graichen@gmail.com>
-To: martin.blumenstingl@googlemail.com, kishon@ti.com, robh+dt@kernel.org,
- vkoul@kernel.org, devicetree@vger.kernel.org,
- linux-amlogic@lists.infradead.org
-Subject: [PATCH 1/6] dt-bindings: phy: meson8b-usb2: Convert to json-schema
-Date: Sat,  9 May 2020 00:25:24 +0200
-Message-Id: <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-References: <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-korg-lkml-1.web.codeaurora.org
-X-Spam-Status: No, score=-9.5 required=3.0 tests=DKIM_ADSP_CUSTOM_MED,
- DKIM_SIGNED, DKIM_VALID, FREEMAIL_FORGED_FROMDOMAIN, FREEMAIL_FROM,
- HEADER_FROM_DIFFERENT_DOMAINS, INCLUDES_PATCH, MAILING_LIST_MULTI,
- SIGNED_OFF_BY, SPF_HELO_NONE, SPF_PASS, URIBL_BLOCKED,
- USER_AGENT_GIT autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from mail.kernel.org (mail.kernel.org [198.145.29.99]) by
- smtp.lore.kernel.org (Postfix) with ESMTP id D2799C47254 for
- <linux-amlogic@archiver.kernel.org>; Sat,  2 May 2020 11:48:56 +0000 (UTC)
-Received: from bombadil.infradead.org (bombadil.infradead.org
- [198.137.202.133]) (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384
- (256/256 bits)) (No client certificate requested) by mail.kernel.org
- (Postfix) with ESMTPS id A962D2137B for <linux-amlogic@archiver.kernel.org>;
- Sat,  2 May 2020 11:48:56 +0000 (UTC)
-Authentication-Results: mail.kernel.org;
- dkim=pass (2048-bit key) header.d=lists.infradead.org
- header.i=@lists.infradead.org header.b="TRLX2qyG";
- dkim=fail reason="signature verification failed" (2048-bit key)
- header.d=googlemail.com header.i=@googlemail.com header.b="oQM9HI5Y"
-DMARC-Filter: OpenDMARC Filter v1.3.2 mail.kernel.org A962D2137B
-Authentication-Results: mail.kernel.org; dmarc=fail (p=quarantine dis=none)
- header.from=googlemail.com
-Authentication-Results: mail.kernel.org; spf=none
- smtp.mailfrom=linux-amlogic-bounces+linux-amlogic=archiver.kernel.org@lists.infradead.org
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=lists.infradead.org; s=bombadil.20170209;
- h=Sender: Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
- List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
- Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
- Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
- List-Owner; bh=LlW1ruu91jD6bCtxOoyDFXSQfkgAj+gmVCSR8ubB/ys=;
- b=TRLX2qyGB+RbAL
- wN60LIV869hKMHBmO4um8k9dkDQjuI+LT1fsk9SJJ5V+GP1aZWGiKtFHs9Nyklzpsodq/fqOp9FLF
- ido5Hj2kkGFVm/pAh3B8LyutkX7ypqSG6IXnUrGBdYJaIUlZ0xCMMvjti387Z0SkuceSr4HeZqlF4
- AzZOg1HbXkZyERnJxhhBZU5cdqEVjreN7Aa+7y5tqvQ0kYjPFphkaDcNYS5jjQm0LlEcDewm++slx
- WsKEpyZOYn+1f79YP0ZwaUGqHs2JtxSgWwxUl43z2u7VbFJTUQ/b5hJDOjvXQoBOwK+O1OO54x7Bu
- 6EzELTsRg/YEVv0eNhHg==; 
-Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org) by
- bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux)) id
- 1jUqdW-00084F-Vx; Sat, 02 May 2020 11:48:50 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441]) by
- bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux)) id
- 1jUqdC-0007d8-Kx; Sat, 02 May 2020 11:48:32 +0000
-Received: by mail-wr1-x441.google.com with SMTP id x17so14968984wrt.5;
- Sat, 02 May 2020 04:48:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=googlemail.com;
- s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=98yd6/MjdfkYVYK6lpue8l8KyVR5I9cjkaTH2AGGuE8=;
- b=oQM9HI5YKF9AIc22557RWgfMXw189lprQTDWh3/TkJNwafueJi6rEJ+MLbh1sCtDEu
- fwTxkLF9lABWq8K74S8CepWTreXt46oNYy0lTL7yxXCTGXvQeZFZVWjij+rD6uIJ1yt1
- qcnY8JljC4/tTbDqXNVA9riGb0b40m9NuuwinG9pk+cekjW5lXzAg6MQUX0o7oD9qTGz
- Y0nTLoAPSST6/0pYZWxMBxUnz1ORSlyPx72hZEI6IF/XfzvYNbPBwyt02yA++1YkZ1VE
- J2/UECV/BR0GA/ONA/s2yZfDSK4dQRqYkipAgYEwiPhFk98jVs1uZmzFapjZaSnIhJWi 5plg==
-X-Received: by 2002:a5d:6850:: with SMTP id o16mr8668993wrw.309.1588420108230;
- Sat, 02 May 2020 04:48:28 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F137142E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:3714:2e00:428d:5cff:feb9:9db8]) by smtp.googlemail.com with ESMTPSA
- id s17sm3801599wmc.48.2020.05.02.04.48.27 (version=TLS1_3
- cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 02 May 2020 04:48:27 -0700 (PDT)
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
-References: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
+	id 1jXBnU-0006GZ-Gq; Fri, 08 May 2020 22:48:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jXBnL-0006FR-Jm
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 22:48:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7E8601FB;
+ Fri,  8 May 2020 15:48:35 -0700 (PDT)
+Received: from [192.168.122.166] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1777A3F68F;
+ Fri,  8 May 2020 15:48:34 -0700 (PDT)
+Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
+To: Andrew Lunn <andrew@lunn.ch>
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
+ <67e263cf-5cd7-98d1-56ff-ebd9ac2265b6@arm.com>
+ <CAHp75Vew8Fh6HEoOACk+J9KCpw+AE2t2+oFnXteK1eShopfYAA@mail.gmail.com>
+ <83ab4ca4-9c34-4cdd-4413-3b4cdf96727d@arm.com>
+ <20200508160755.GB10296@lsv03152.swis.in-blr01.nxp.com>
+ <20200508181301.GF298574@lunn.ch>
+ <1e33605e-42fd-baf8-7584-e8fcd5ca6fd3@arm.com>
+ <20200508202722.GI298574@lunn.ch>
+From: Jeremy Linton <jeremy.linton@arm.com>
+Message-ID: <97a9e145-bbaa-efb8-6215-dc3109ee7290@arm.com>
+Date: Fri, 8 May 2020 17:48:33 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-X-BeenThere: linux-amlogic@lists.infradead.org
-X-Mailman-Version: 2.1.29
-Precedence: list
-Archived-At: <https://lore.kernel.org/linux-amlogic/20200502114752.1048500-2-martin.blumenstingl@googlemail.com/>
+In-Reply-To: <20200508202722.GI298574@lunn.ch>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_152745_574282_2F436A3C 
-X-CRM114-Status: GOOD (  24.28  )
-X-Spam-Score: -0.8 (/)
+X-CRM114-CacheID: sfid-20200508_154839_741325_6C8991C6 
+X-CRM114-Status: GOOD (  28.17  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [thomas.graichen[at]googlemail.com]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 DKIM_ADSP_CUSTOM_MED   No valid author signature, adsp_override is
- CUSTOM_MED
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -1.0 MAILING_LIST_MULTI     Multiple indicators imply a widely-seen list
- manager
- 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
+X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -162,145 +71,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: hexdump0815@googlemail.com, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, narmstrong@baylibre.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "Rafael J . Wysocki" <rafael@kernel.org>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Calvin Johnson <calvin.johnson@oss.nxp.com>, linux.cj@gmail.com,
+ netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Hi,
 
-Martin Blumenstingl <martin.blumenstingl at googlemail.com> wrote:
-> Now that we have the DT validation in place, let's convert the device
-> tree bindings for the Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2
-> PHY over to a YAML schema.
+On 5/8/20 3:27 PM, Andrew Lunn wrote:
+>>> There is a very small number of devices where the vendor messed up,
+>>> and did not put valid contents in the ID registers. In such cases, we
+>>> can read the IDs from device tree. These are then used in exactly the
+>>> same way as if they were read from the device.
+>>>
+>>
+>> Is that the case here?
 > 
-> While here, also add the fallback compatible string
-> "amlogic,meson-gxbb-usb2-phy" which is already used in
-> arch/arm/boot/dts/meson{,8,8b}.dtsi.
-> 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Sorry, I don't understand the question?
 
-Tested-by: thomas graichen <thomas.graichen@gmail.com>
+I was asking in general, does this machine report the ID's correctly. 
+More directed at Calvin, but part of it is the board vendor too. So I 
+suspect no one can really answer "yes", despite that seeming to be the case.
 
-> ---
->  .../phy/amlogic,meson8b-usb2-phy.yaml         | 61 +++++++++++++++++++
->  .../bindings/phy/meson8b-usb2-phy.txt         | 28 ---------
->  2 files changed, 61 insertions(+), 28 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
+
+
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> new file mode 100644
-> index 000000000000..c2fe8c08d99e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> @@ -0,0 +1,61 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/amlogic,meson8b-usb2-phy.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
-> +
-> +title: Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY
-> +
-> +maintainers:
-> +  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +            - amlogic,meson8-usb2-phy
-> +            - amlogic,meson8b-usb2-phy
-> +          - const: amlogic,meson-mx-usb2-phy
-> +      - const: amlogic,meson-gxbb-usb2-phy
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  clocks:
-> +    minItems: 2
-> +
-> +  clock-names:
-> +    items:
-> +      - const: usb_general
-> +      - const: usb
-> +
-> +  resets:
-> +    minItems: 1
-> +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  phy-supply:
-> +     description:
-> +       Phandle to a regulator that provides power to the PHY. This
-> +       regulator will be managed during the PHY power on/off sequence.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - "#phy-cells"
-> +
-> +examples:
-> +  - |
-> +    usb-phy@c0000000 {
-> +      compatible = "amlogic,meson-gxbb-usb2-phy";
-> +      reg = <0xc0000000 0x20>;
-> +      resets = <&reset_usb_phy>;
-> +      clocks = <&clk_usb_general>, <&reset_usb>;
-> +      clock-names = "usb_general", "usb";
-> +      phy-supply = <&usb_vbus>;
-> +      #phy-cells = <0>;
-> +    };
-> diff --git a/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt b/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
-> deleted file mode 100644
-> index d81d73aea608..000000000000
-> --- a/Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
-> +++ /dev/null
-> @@ -1,28 +0,0 @@
-> -* Amlogic Meson8, Meson8b and GXBB USB2 PHY
-> -
-> -Required properties:
-> -- compatible:	Depending on the platform this should be one of:
-> -	"amlogic,meson8-usb2-phy"
-> -	"amlogic,meson8b-usb2-phy"
-> -	"amlogic,meson-gxbb-usb2-phy"
-> -- reg:		The base address and length of the registers
-> -- #phys-cells:	should be 0 (see phy-bindings.txt in this directory)
-> -- clocks:	phandle and clock identifier for the phy clocks
-> -- clock-names:	"usb_general" and "usb"
-> -
-> -Optional properties:
-> -- resets:	reference to the reset controller
-> -- phy-supply:	see phy-bindings.txt in this directory
-> -
-> -
-> -Example:
-> -
-> -usb0_phy: usb-phy@c0000000 {
-> -	compatible = "amlogic,meson-gxbb-usb2-phy";
-> -	#phy-cells = <0>;
-> -	reg = <0x0 0xc0000000 0x0 0x20>;
-> -	resets = <&reset RESET_USB_OTG>;
-> -	clocks = <&clkc CLKID_USB>, <&clkc CLKID_USB0>;
-> -	clock-names = "usb_general", "usb";
-> -	phy-supply = <&usb_vbus>;
-> -};
-> -- 
-> 2.26.2
+>> Also, how much of this was caused by uboot being deficient
 > 
+> None. It is a silicon issue. The PHY chip simply has the wrong or no
+> ID value in the registers.
 > 
-> _______________________________________________
-> linux-amlogic mailing list
-> linux-amlogic@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-amlogic
+>>> Not exactly true. It is the combination of can the bus master do C45
+>>> and can the device do C45. Unfortunately, we have no knowledge of the
+>>> bus masters capabilities, if it can do C45. And many MDIO drivers will
+>>> do a C22 transaction when asked to perform a C45 transaction. All new
+>>> submissions for MDIO drivers i ask for EOPNOTSUPP to be returned if
+>>> C45 is not supported. But we cannot rely on that. Too much history >
+>>>>
+>>>> I tend to agree with you on this. Even for DT, ideal case, IMO should be:
+>>>>
+>>>> 1) mdiobus_scan scans the mdiobus for c22 devices by reading phy id from
+>>>> registers 2 and 3
+>>>> 2) if not found scan for c45 devices <= looks like this is missing in Linux
+>>>> 3) look for phy_id from compatible string.
+>>>
+>>> It is somewhat more complex, in that there are a small number of
+>>> devices which will respond to both C22 and C45. Generally, you want to
+>>> use C45 if supported. So you would want to do the C45 scan first. But
+>>> then the earlier problem comes to play, you have no idea if the bus
+>>> master actually correctly supports C45.
+>>
+>> But this shouldn't this be implied by the mdio vendor/model?
 > 
+> Nope. Many MDIO bus masters don't even appear in DT, because they are
+> embedded into the MAC driver. The MAC driver just instantiates an MDIO
+> device, maybe passing a pointer where to find the PHY properties in
+> DT. If the MDIO bus master is in its own address range, then it
+> probably does exist in device tree, and has a compatible string. But
+> that just gets the driver loaded, it says nothing about what it is
+> capable of, C22 and or C45. And there are cases where the MDIO bus is
+> embedded inside an Ethernet switch, which is hanging off another MDIO
+> bus, etc.
+
+The embedded single mac:mdio per nic case seems like the normal case, 
+and most of the existing ACPI described devices are setup that way. But 
+at the same time, that shifts the c22/45 question to the nic driver, 
+where use of a DSD property before instantiating/probing MDIO isn't 
+really a problem if needed.
+
+In fact this embedded nic/mac/mdio/phy 1:1:1 case, is likely a 
+requirement for passthrough into a generic VM, otherwise someone has to 
+create a virtual mdio, and pass the phy in for the nic/mac.
+
+AFAIK, NXP's part avoids this despite having a shared MDIO, because the 
+phy state never leaves the mgmt side of the picture. It monitors the 
+state and then feeds that back into their nic mgmt complex rather than 
+using it directly.
+> 
+>> How much of this can be simplified for ACPI buy ignoring the legacy and
+>> putting some guides around the ACPI/platform requirements?
+> 
+> You can probably ignore the phy-idXXXX.YYYY compatible, since that is
+> working around silicon issues, and put in place some guidelines that
+> the PHY silicon needs to conform to the basics of C22 and C45 in terms
+> of ID registers.
+> 
+> C45 you are going to need. ACPI tends to be more high end devices,
+> which in general have higher speed network interfaces. Multi-Gige PHYs
+> tend to be C45. But there is also interest in using ACPI on 1G PHYs
+> where the majority is C22.
+
+Oh, I was just trying to see if we can get away with saying things like 
+"your phy's must respond as specified by the spec" and leave it at that 
+for the time being to simplify the probing sequence. I'm not really sure 
+we can represent the more complex switch/etc situations in ACPI either. 
+There is a certain amount of "use DT if you machine doesn't conform to 
+standards".
+
 
 _______________________________________________
 linux-arm-kernel mailing list
