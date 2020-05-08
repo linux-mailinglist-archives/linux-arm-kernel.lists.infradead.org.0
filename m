@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0BD601CB216
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 16:42:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C7A01CB236
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 16:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
-	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0NeFQYXnJTvsh/e7lJ3CJBhzpUlwBioFaBiej2VADJU=; b=dLqltbF881CK1N
-	HjtEZgSQHP/pHzqQv6qUT/rWKcp6W2dN3DEObK7CmY0dpBzmNHRrreCKdE+Qz338a4SG4RQDUht61
-	PM94p9YR+F8/5VqD+Re9NvCgCeZECqplA3LdqM3SctpoPc2Tjs6ggIRZBxoPOjYwFo9fai2oXCUOX
-	TJM7Fj0qSLgaL6t+QWnqrKNIxiSQDux0EWqxFmgZLHXLCW1yWRUqzyLu/L36JKVeRP3Be+0HY/uAQ
-	sByg3AYJcHMB4xfxgr91bzXj/zI5T8uHCjv1K82taPXVq9/VB5AersEg1GcN1RqmsNq0WVTGCRkeQ
-	TLO5aw34UUfzKiRcM+Tg==;
+	List-Owner; bh=G+efBwiLxcxwXmmfYVvaRsn9RBRkZU6XjrM3MFX1RvU=; b=JL9DK2J9jH1oRA
+	DAi1Uy7mGpzKhqW2izBhSPjTj1LyHH8aVbna77mCJxL8mjougdMDe4hRjKMLMuKWJ43/W7kwQvg6p
+	MH38/5Quwwzq2SkK2jI9cJLsnesVHSjPVQNgi8ycWRkMQnmmCliVFc32iEGKnWi6DrOpJOK4Lb9Wo
+	b7k3Bs8o73VTOrsPR69kqSHmWiVfyYo/j2EykYMkA1vE+4XpfIa2aJ+KWTr4st4TgNyWt7c+rJDW7
+	4Ja9+FyIJGYmwLg+T2HxQbCyB6kkOrj/yyDepWoNgaO3RZfvQagecGp4tpmDpRulesSwPtsp4Fo5y
+	tKYJW4kjVuo4w0qaIkHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX4CT-00015t-DF; Fri, 08 May 2020 14:42:05 +0000
-Received: from pb-smtp21.pobox.com ([173.228.157.53])
+	id 1jX4Gc-0004J7-B4; Fri, 08 May 2020 14:46:22 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX4CK-00015O-Aq
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 14:41:57 +0000
-Received: from pb-smtp21.pobox.com (unknown [127.0.0.1])
- by pb-smtp21.pobox.com (Postfix) with ESMTP id 80148DF4AB;
- Fri,  8 May 2020 10:41:50 -0400 (EDT)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha1; c=relaxed; d=pobox.com; h=date:from:to
- :cc:subject:in-reply-to:message-id:references:mime-version
- :content-type; s=sasl; bh=268nGxKP+kP8/XSx+FAGYbeJFbM=; b=EfDZKg
- quu3bsCWpJPAtiimjwFQdAyQ3doXrreNcbzWilo7RWd3SQCeFvhsS0rCUUTa5kvK
- 4gwnC5q3fAG/n+LTUB7TBNJaaHc4+mHoZYcu/6kpvDBQmVyzuBNA2NAsOoHVcFaG
- lXqOZSyEt8KZYCqLQ7niTrQmMI/j8xeAE/ySw=
-Received: from pb-smtp21.sea.icgroup.com (unknown [127.0.0.1])
- by pb-smtp21.pobox.com (Postfix) with ESMTP id 76C27DF4AA;
- Fri,  8 May 2020 10:41:50 -0400 (EDT)
- (envelope-from nico@fluxnic.net)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed; d=fluxnic.net;
- h=date:from:to:cc:subject:in-reply-to:message-id:references:mime-version:content-type;
- s=2016-12.pbsmtp; bh=8mmkg4rH5isXJ8wYaDfAzwV/UGUoKXvhObaLZRR/pjg=;
- b=iHBypVXsGyesmH50JwnbTKdvFsdL098OUBaME150jW1tisDFVFN6gpceGMEJQOpHUXDpL87A8bqLblvH3cGGI8qdDy7ZazHhBSCK+UuDTWnOMaNGu5k5t6RFkDEj1EDxRxgulIsuLyUwwU2ZhuikCo+lBg5yMVTmz5mQMKWbBfU=
-Received: from yoda.home (unknown [24.203.50.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by pb-smtp21.pobox.com (Postfix) with ESMTPSA id 0E163DF4A9;
- Fri,  8 May 2020 10:41:47 -0400 (EDT)
- (envelope-from nico@fluxnic.net)
-Received: from xanadu.home (xanadu.home [192.168.2.2])
- by yoda.home (Postfix) with ESMTPSA id 10AC02DA0AA9;
- Fri,  8 May 2020 10:41:45 -0400 (EDT)
-Date: Fri, 8 May 2020 10:41:44 -0400 (EDT)
-From: Nicolas Pitre <nico@fluxnic.net>
-To: Chris Brandt <Chris.Brandt@renesas.com>
-Subject: RE: [PATCH/RFC] ARM: dts: rza2mevb: Upstream Linux requires SDRAM
-In-Reply-To: <OSAPR01MB2114FB6F10EC904F19363F9D8AA20@OSAPR01MB2114.jpnprd01.prod.outlook.com>
-Message-ID: <nycvar.YSQ.7.77.849.2005081023180.5637@knanqh.ubzr>
-References: <20200507080528.547-1-geert+renesas@glider.be>
- <nycvar.YSQ.7.77.849.2005071056450.5637@knanqh.ubzr>
- <CAMuHMdXgpR6HDQs_NS4W2C8NxqJp3g1DjR2VneUF5Rvun-L4jQ@mail.gmail.com>
- <nycvar.YSQ.7.77.849.2005071303480.5637@knanqh.ubzr>
- <CAMuHMdW0=KWk2pC2tRUajvZQsoObBEFz7WoJ+uJbHbX27f7b2g@mail.gmail.com>
- <OSAPR01MB2114FB6F10EC904F19363F9D8AA20@OSAPR01MB2114.jpnprd01.prod.outlook.com>
+ id 1jX4GV-0004Id-Eh
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 14:46:16 +0000
+Received: by mail-ed1-f65.google.com with SMTP id f12so1391610edn.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 May 2020 07:46:14 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=XarHM7quPtL8Iwp9fTwswhgZUavH/ZpsvuGgVu5XAdQ=;
+ b=bJ1LKaoZWjnVnOhqmxPWwQZ0aG3SDrZb69PgLGxRXIdgyLol2X5mqteVC+oa5L2gmJ
+ NatLs5cMyxM2exES5cmR2PfuQ0GPntYYqG5APfWhi4Fw4bS06pu6Ghl9BKu+CXISU/NA
+ Rwbt0Ax2zUOXhW0mBChW0tj/A31Ar1YjaE9tPtcZ0u7xIzmwsrzTuSOrrmSiBBEsa8go
+ /5cJUqIBggnubskE427JMng8NQk4zgAPRsjL/ObHn8D6yVlaSEgA0ohwPpDvDzI/2HlQ
+ pNc+0/v4xvd6jbJ0SU3ApDFEQx2JTeStt7UGOqFh3gIlw4JfsekRgMF9qfQ5ZZrvFSUV
+ lwxA==
+X-Gm-Message-State: AGi0PuaLIq/fKZybss8pLil7soMmBl2Bmp71cZJlbS7TuN6yj/j+2BkS
+ JuztePI8UTe/aSKtzbxpbU4=
+X-Google-Smtp-Source: APiQypJjIQQnYzAO+FSyQEz9WwVtWHbUUhLRrRKlBcmzLwDdJK0dXJ06g9EggDcxrDp7mWZKsB0M9g==
+X-Received: by 2002:a05:6402:1515:: with SMTP id
+ f21mr2448831edw.370.1588949173380; 
+ Fri, 08 May 2020 07:46:13 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.237])
+ by smtp.googlemail.com with ESMTPSA id a5sm289736edn.14.2020.05.08.07.46.12
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 08 May 2020 07:46:12 -0700 (PDT)
+Date: Fri, 8 May 2020 16:46:10 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Lukasz Luba <lukasz.luba@arm.com>
+Subject: Re: [PATCH] memory/samsung: Maybe wrong triming parameter
+Message-ID: <20200508144610.GA5983@kozik-lap>
+References: <20200507114514.11589-1-bernard@vivo.com>
+ <2eeb33f7-1acc-66bb-704a-b724fa0be0a8@arm.com>
 MIME-Version: 1.0
-X-Pobox-Relay-ID: 0B3AB5CA-913A-11EA-8877-8D86F504CC47-78420484!pb-smtp21.pobox.com
+Content-Disposition: inline
+In-Reply-To: <2eeb33f7-1acc-66bb-704a-b724fa0be0a8@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_074156_446615_D7AEB77B 
-X-CRM114-Status: GOOD (  13.39  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200508_074615_490799_4BB9A0BC 
+X-CRM114-Status: GOOD (  23.18  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [173.228.157.53 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,50 +89,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Magnus Damm <magnus.damm@gmail.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: opensource.kernel@vivo.com, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, Bernard Zhao <bernard@vivo.com>,
+ linux-kernel@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 8 May 2020, Chris Brandt wrote:
+On Thu, May 07, 2020 at 04:42:46PM +0100, Lukasz Luba wrote:
+> Hi Bernard,
+> 
+> 
+> On 5/7/20 12:45 PM, Bernard Zhao wrote:
+> > In function create_timings_aligned, all the max is to use
+> > dmc->min_tck->xxx, aligned with val dmc->timings->xxx.
+> > But the dmc->timings->tFAW use dmc->min_tck->tXP?
+> > Maybe this point is wrong parameter useing.
+> > 
+> > Signed-off-by: Bernard Zhao <bernard@vivo.com>
+> > ---
+> >   drivers/memory/samsung/exynos5422-dmc.c | 2 +-
+> >   1 file changed, 1 insertion(+), 1 deletion(-)
+> > 
+> > diff --git a/drivers/memory/samsung/exynos5422-dmc.c b/drivers/memory/samsung/exynos5422-dmc.c
+> > index 81a1b1d01683..22a43d662833 100644
+> > --- a/drivers/memory/samsung/exynos5422-dmc.c
+> > +++ b/drivers/memory/samsung/exynos5422-dmc.c
+> > @@ -1091,7 +1091,7 @@ static int create_timings_aligned(struct exynos5_dmc *dmc, u32 *reg_timing_row,
+> >   	/* power related timings */
+> >   	val = dmc->timings->tFAW / clk_period_ps;
+> >   	val += dmc->timings->tFAW % clk_period_ps ? 1 : 0;
+> > -	val = max(val, dmc->min_tck->tXP);
+> > +	val = max(val, dmc->min_tck->tFAW);
+> >   	reg = &timing_power[0];
+> >   	*reg_timing_power |= TIMING_VAL2REG(reg, val);
+> > 
+> 
+> Good catch! Indeed this should be a dmc->min_tck->tFAW used for
+> clamping.
+> 
+> It didn't show up in testing because the frequency values based on
+> which the 'clk_period_ps' are calculated are sane.
+> Check the dump below:
+> 
+> [    5.458227] DMC: mem tFAW=25000, clk_period_ps=6060
+> [    5.461743] DMC: tFAW=5, tXP=2 val=5
+> [    5.465273] DMC: mem tFAW=25000, clk_period_ps=4854
+> [    5.470101] DMC: tFAW=5, tXP=2 val=6
+> [    5.473668] DMC: mem tFAW=25000, clk_period_ps=3636
+> [    5.478507] DMC: tFAW=5, tXP=2 val=7
+> [    5.482072] DMC: mem tFAW=25000, clk_period_ps=2421
+> [    5.486951] DMC: tFAW=5, tXP=2 val=11
+> [    5.490531] DMC: mem tFAW=25000, clk_period_ps=1841
+> [    5.495439] DMC: tFAW=5, tXP=2 val=14
+> [    5.499113] DMC: mem tFAW=25000, clk_period_ps=1579
+> [    5.503877] DMC: tFAW=5, tXP=2 val=16
+> [    5.507476] DMC: mem tFAW=25000, clk_period_ps=1373
+> [    5.512368] DMC: tFAW=5, tXP=2 val=19
+> [    5.515968] DMC: mem tFAW=25000, clk_period_ps=1212
+> [    5.520826] DMC: tFAW=5, tXP=2 val=21
+> 
+> That's why in the existing configuration it does not harm
+> (the calculated 'val' is always >= 5) the board.
+> 
+> But I think this patch should be applied (after small changes in the
+> commit message).
+> 
+> @Krzysztof could you have a look on the commit message or take the
+> patch with small adjustment in the description, please?
+> 
+> I conditionally give (because of this description):
+> 
+> Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
 
-> The big argument was always that "XIP cannot be multi-platform by 
-> definition because RAM/ROM always resides at different addresses in different 
-> devices". And as you know, the physical address for RAM and ROM have to 
-> be hard coded in the kernel binary.
+Thanks for review.
 
-Exact.  So what is the problem?
+I applied patch with CC-stable and adjusred commit msg.
 
-> At an ELC a while back, I talked to Arnd and his suggestion was to put 
-> the base addresses for RAM and ROM at a fixed location in the kernel 
-> binary. Then for each SoC, you manually modify those values in the each 
-> binary to match your board. This means there is 'technically' a single build
-> that will support all boards.
+Best regards,
+Krzysztof
 
-The very reason for using XIP in the first place is to maximize resource 
-savings on constrained platforms. Any notion of a multi-platform kernel 
-is completely contrary to this goal. This is even more true for no-MMU 
-platforms where you can't abstract physical address differences behind a 
-page table.
-
-Multi-platform kernel supporting all boards make sense for generic 
-distros and/or build coverage tests. But a multi-platform XIP kernel is 
-a nonsense. Trying to make XIP multi-platform might be a nice 
-intellectual challenge but that has zero value for actual deployment and 
-usage.
-
-Given that there isn't a lot of such platforms anyway, it should be 
-possible to carry a few kconfig entries outside of the multi-platform 
-menu for XIP targets and live with possible kconfig duplicates. That 
-shouldn't be such a maintenance burden.
-
-
-Nicolas
 
 _______________________________________________
 linux-arm-kernel mailing list
