@@ -2,76 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6E401CA03F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 03:47:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 39A3F1CA046
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 03:47:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=GUh6oXkos+pTcFJpTJzsXKYkHM+N7PNIcCMQUeUJAZQ=; b=mbQ
-	thavDfJTx0hppqqYV0xZJaGnK7JIDgA7aLwuJdI49RcTyKAI2VWFPj3Yx3WYej9//JQJht2JZYj/S
-	L6Vo2aF3h+qT1+6u6qdTMtmfCyB3sDlu3Pt8/HAavUxsZXqfdIuw9cuLIuAtj1Op+FN6VPUF+DKd3
-	gf5mKb8YYJ/jcYVtGD8F9kw+qihbHSHeAF8Z/6ziqNvfxPTTQKLGztyu9Lhy/FdD12wv42gPbhW6M
-	xP4j39kc71cYySV9uojH+qXoJH7QfxUu4lqUvRwKI71fXg1wAWQ89kKhdEqVUGdigwmADvWMux/LH
-	CuQa5m7yGgZ9aZyGe+wNqvvdqmt/HQw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=O3YqjF5OiOVsEVCKLkTC2Z6EaQKCOMF8t/dmPviYF3M=; b=RtYWjkwSe3wbdNAFRnh/iE6cbA
+	MY2ESgP/R/hQQpCYctkAC/JLduYK2P7g++jrFLSRKPi1iewdeqR2e04HEH0j0cYlJIviNr8/Tnvt3
+	6XoJuR+IFekTzTI5R1EBMXLtFZh4CgyK9FHvZMlprTR0ysowaEVmZToXphHfmh/JQu4AaU/dj6kOu
+	Ebk3qTEmsQwho35cYYY48UAGzvYQEOmStPqzbcew/YYkLLpk07NHSXJBvnbLMlPexx4fypeq0ZCtQ
+	i4RTFWEiuV5FYL7B5U85ICwoqtCr3M6LDWWzRI+UMp9/r2Ol6nIGWwNpIdRVNCX/r3Xr+LavhyojE
+	YTlGP9GA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWs6L-0004Jj-AJ; Fri, 08 May 2020 01:46:57 +0000
-Received: from mail-pf1-x42d.google.com ([2607:f8b0:4864:20::42d])
+	id 1jWs6Y-0004ax-Ay; Fri, 08 May 2020 01:47:10 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWs5y-0004E0-Kk
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 01:46:36 +0000
-Received: by mail-pf1-x42d.google.com with SMTP id x77so109352pfc.0
+ id 1jWs60-0004Gz-P4
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 01:46:38 +0000
+Received: by mail-pf1-x441.google.com with SMTP id y25so97639pfn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 18:46:34 -0700 (PDT)
+ Thu, 07 May 2020 18:46:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=alS8Kr7RIS62zN20gJA22RVwlZfBznZKCMd7Fh+rxNs=;
- b=GeSWVtCymiM2pRkZiRajPWrIg9Phe4A4Dum5/RXbulyy2pTFx37DkoJ3vgJQPbq9MW
- mf3uvUdLVFUtj9TWWhRT4xsy8nPUrV4+kNmUbV+M7J5x3KDLwvZrEpcORIanmdZcqaot
- xVrXu8dWMeOmcaGLN/uQNUT78TTuflDHZl2mgS0hD4Fv30ARH5wq6EYUkk7d2cVLE3o1
- VVGDDhKvyXHaYrqSX8RUuNe7an0f+NXBxeHDBAvAekTxjoSMyhjFrFuWV5ms0PxgUn++
- DCWmhcZ0pwc2yf9xKUCbHIMTNVAujIBZ8dFVTgSZ+bE6FWjuSyjf9XidcD1luwSLW9Z4
- hiNg==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=cweRr9cAyY6zAkbWBKWMpZ4+w4vWexg4Pp5+tOHzveM=;
+ b=qkSr8PCxTjLesHCIYKLjPg4DjNMUEOltWQ3xEt49V/dH3wG5Q2bFVu8h0oBVariOzD
+ 64FCLQtbLsFM3L2fGXIu2f3ZTV87w4JIZ4pByFeHiG0fb0e2eaLbwVSxq6uhbBOIsFVA
+ o4X2O6+JRsVnyjJXUZCkalLxRJ19vJF6+ZvXy4tIUYZe3eqzhmjPxg1NFR03nYirHoGO
+ OpqTL/wuA1r4/GAj+Y9d4LJ5zE7GQ+lQ0xsUWjmmOj7dJ+fpkQ5+L7+wbhfF/McwSuJp
+ Vlw/LHP/qZWOzoDyAuA3DYq4M3wy/I8sbhcO3oXxbgWsWyVjfc/swSe/DlISYnfepxCd
+ Vx2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=alS8Kr7RIS62zN20gJA22RVwlZfBznZKCMd7Fh+rxNs=;
- b=qhmZGsVn4VpiTvKoppo4VENsjvLRjvOZI139Irx6DnFKlsOEvXUDSuUZgobbEvBlMm
- MX162NXmH5BxP7SrXpwAlDr+TDJ5WnWADnZ0D+kALaAhEsVXBhPOnJfcETbjobhbkcNE
- g6/d5nQYDxpd4esd1S+TY5GVC5LEntkcECE9+DT/kutsZIZ3oLd/EDNHUm6xP+nYrABg
- +HuxP58obcTRVZ0jQTfzkxyAnrrES4STqeQMSxUa7HXCJ47SP+IOYeFHv6l8j4FH4rbt
- NRiHuECBmTUhltCLE9rxmFh6zzqEKeAQn54PFhjpgZS8lVFZ7L/oKuyRDJCQ2pDTp5Uo
- zvyg==
-X-Gm-Message-State: AGi0PubnKg+3CMa3isgnCUe33pMx3CR6GMHEMkda8C8WcSY5w76/765G
- QaSlh2iZO5BHDzMAc/a3+0k=
-X-Google-Smtp-Source: APiQypJnSQcMaolrg+UI+/NNrYXp5sdhjMIzzc+8xWsfA0ZYycN3cwtOCSb4v/IJVPkWRFUHNgwBkg==
-X-Received: by 2002:a05:6a00:c8:: with SMTP id e8mr275081pfj.206.1588902393523; 
- Thu, 07 May 2020 18:46:33 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=cweRr9cAyY6zAkbWBKWMpZ4+w4vWexg4Pp5+tOHzveM=;
+ b=FbBcfMf4OPe10kej72a4WV3xSfL0Ne9WEGaRGEYtkSEZbTEjzgLqWXOYkuefJ8kfT/
+ wFaSR2LHTLaz9nwP8gP0i09Ys2LaTiSZAXlGXl+wti8GhKOSTBZoEGepKBplW1H4/6jR
+ 5ZPmKRg03YMwKbg8GkY94NIqXKUzdOOPESlWJavp/A2hWmXbg9zU3sKrQL1PkH/Vd7Kr
+ o9XvpZqDEHrTOySbfLvVFCmU2YRk1L72fc24702jpPCANvCk4l3NWoJqa3OZAZ9jWahD
+ t9jRb7kDuXpVrewEiVv2WUHSuamccDSDXVx+00cOUisACd+LEEc7AAmLVpM2UFkFznLq
+ FnhA==
+X-Gm-Message-State: AGi0Pua5fjpwK5iqnS5ad+KFeW80JKvgNb8ZFy5SRbRh/mDdCHV43Jzs
+ UOvPWBzqj2SOhr5awQih87E=
+X-Google-Smtp-Source: APiQypLM2K5G2GnkqO1UGyLId9fhCM/BEPlhPv4MJCsMXb2nUR3hPIVNMI8YnRBe67fjalob4a88aQ==
+X-Received: by 2002:a62:18c8:: with SMTP id 191mr242124pfy.255.1588902396205; 
+ Thu, 07 May 2020 18:46:36 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
- by smtp.gmail.com with ESMTPSA id f74sm9270816pje.3.2020.05.07.18.46.31
+ by smtp.gmail.com with ESMTPSA id f74sm9270816pje.3.2020.05.07.18.46.33
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 May 2020 18:46:33 -0700 (PDT)
+ Thu, 07 May 2020 18:46:35 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
  philippe.schenker@toradex.com
-Subject: [PATCH v3 0/4] Enable stmpe811 touch screen on stm32f429-disco board
-Date: Fri,  8 May 2020 09:46:24 +0800
-Message-Id: <1588902388-4596-1-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v3 1/4] ARM: dts: stm32: add I2C3 support on STM32F429 SoC
+Date: Fri,  8 May 2020 09:46:25 +0800
+Message-Id: <1588902388-4596-2-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1588902388-4596-1-git-send-email-dillon.minfei@gmail.com>
+References: <1588902388-4596-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_184634_721586_0E722AAD 
-X-CRM114-Status: UNSURE (   7.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200507_184636_834222_30B8393B 
+X-CRM114-Status: GOOD (  12.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:42d listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,35 +109,36 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-This patchset is intend to enable stmpe811 touch screen on stm32f429-disco
-board with three dts and one i2c driver changes.
+This patch adds I2C3 instances of the STM32F429 SoC
 
-has been validated by ts_print tool
+Signed-off-by: dillon min <dillon.minfei@gmail.com>
+---
+ arch/arm/boot/dts/stm32f429.dtsi | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
 
-Changes log:
-
-V3: just add change log in [PATCH V3 3/4] below ---
-
-V2: remove id, blocks, irq-trigger from stmpe811 dts
-
-V1:
-    ARM: dts: stm32: add I2C3 support on STM32F429 SoC
-    ARM: dts: stm32: Add pin map for I2C3 controller on stm32f4
-    ARM: dts: stm32: enable stmpe811 on stm32429-disco board
-    i2c: stm32f4: Fix stmpe811 get xyz data timeout issue
-
-dillon min (4):
-  ARM: dts: stm32: add I2C3 support on STM32F429 SoC
-  ARM: dts: stm32: Add pin map for I2C3 controller on stm32f4
-  ARM: dts: stm32: enable stmpe811 on stm32429-disco board
-  i2c: stm32f4: Fix stmpe811 get xyz data timeout issue
-
- arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 12 +++++++++
- arch/arm/boot/dts/stm32f429-disco.dts  | 47 ++++++++++++++++++++++++++++++++++
- arch/arm/boot/dts/stm32f429.dtsi       | 12 +++++++++
- drivers/i2c/busses/i2c-stm32f4.c       |  6 ++---
- 4 files changed, 74 insertions(+), 3 deletions(-)
-
+diff --git a/arch/arm/boot/dts/stm32f429.dtsi b/arch/arm/boot/dts/stm32f429.dtsi
+index d777069..257b843 100644
+--- a/arch/arm/boot/dts/stm32f429.dtsi
++++ b/arch/arm/boot/dts/stm32f429.dtsi
+@@ -402,6 +402,18 @@
+ 			status = "disabled";
+ 		};
+ 
++		i2c3: i2c@40005c00 {
++			compatible = "st,stm32f4-i2c";
++			reg = <0x40005c00 0x400>;
++			interrupts = <72>,
++				     <73>;
++			resets = <&rcc STM32F4_APB1_RESET(I2C3)>;
++			clocks = <&rcc 0 STM32F4_APB1_CLOCK(I2C3)>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++			status = "disabled";
++		};
++
+ 		dac: dac@40007400 {
+ 			compatible = "st,stm32f4-dac-core";
+ 			reg = <0x40007400 0x400>;
 -- 
 2.7.4
 
