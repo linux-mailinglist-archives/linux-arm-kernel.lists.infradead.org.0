@@ -2,91 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F31B21CB6C6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 20:12:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 730DA1CB6CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 20:13:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=wiH/RwuuozObqhMLiXh0Nur46ILf+uaTPM0On0ojPPY=; b=Lx40uMeA6553AmuwkCamzMu8V
-	qlfqecJ0iVvfvoLyot9b+VJf/EyTeie8eiO6pwG9fv43j/JaHARwphFX18fseHZorOeK6FUytz8Mb
-	0H/xcz2p8UhabN1Q7m93RNj+Ad17O2YacQ1q7BNLHXou4BjprKl5qCUheC5sTomsLuKW7lDVRkeWK
-	nh15D1A6nmxNW43vQ9QjRxAVKFJbzA3ekmNdYlJFnvzxro0Iarbuo8xJawVRuECL/hmUHtuY+ouIW
-	JrBqXM/dDPNdUt7WfFdLunai+JHGso8YoYOhl9ggtyUn/0LXfPP27ZNCVkjJuGwr0aMY9Hn2bi9zd
-	gKBUxTCug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wym4Z0caMA6ksSwrRRNLpfu4i6EcNiu2BbujbWrgges=; b=OWbqp5tCBn7uKW
+	MFxK6bVejWYexdycOeJgQddExcJyHlJowNN5Rp2L8RyJ5abdXt5XQfeuzCZFvxTcau+gNrtQF9GMB
+	BqQdbTrC/QNKK+1VN87fReLE8yBJwX1S3P6wXYnLQ2TWI+/isHg01rvk4vegaEmog76/l1TJFS/bs
+	GwdHIP+f/9xRIfB7+ejyuvoHhtxPo+LWsJqU5ivijyN3zRBK/kiqQxbaJQbbr8lwpfdJ6p/w1OuqP
+	QiQzC4R9RMRCanE1zet7hpFtt0gFcGAsc6u7IQn83VKN00e8PUQD6kRDsaUbYEpgRNznUyM/dRfOQ
+	EabqdldeF2w5hw9+pQAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX7UQ-000478-Vb; Fri, 08 May 2020 18:12:51 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jX7V4-0004WZ-1B; Fri, 08 May 2020 18:13:30 +0000
+Received: from vps0.lunn.ch ([185.16.172.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX7U8-0003yU-Ct
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 18:12:36 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1588961554; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=wPiyQjSJF8vUdRxJrjwFgYJTIXhq+dC/nAsEoueYbiA=;
- b=P8Qwb/7mQf4LJMQpSpqJ+bkCnTzHpDT38Ijj4qb4VEcWYoofcmIW5PLRbe6HOpun7lyUZO5O
- Rcklyc4rjHOLGERpGPhbj9P36hvD7EEte+5LJFOiJ8t8IyxMZAymZ5vMx/bKA5qUlVZ0nMEU
- pQEPP96qF/GfbSoljLFlLEc4AeE=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eb5a10a.7f0590c69618-smtp-out-n01;
- Fri, 08 May 2020 18:12:26 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id A759AC433BA; Fri,  8 May 2020 18:12:25 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from [192.168.8.176] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 0B44CC433D2;
- Fri,  8 May 2020 18:12:23 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0B44CC433D2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v1 3/5] scsi: ufs: customize flush threshold for
- WriteBooster
-To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
- martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
- jejb@linux.ibm.com
-References: <20200508171513.14665-1-stanley.chu@mediatek.com>
- <20200508171513.14665-4-stanley.chu@mediatek.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <4196ff98-093e-3708-d166-a7a7c6046c57@codeaurora.org>
-Date: Fri, 8 May 2020 11:12:23 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jX7Uq-0004VS-Ro
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 18:13:18 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=lunn.ch;
+ s=20171124; h=In-Reply-To:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:List-Subscribe:
+ List-Post:List-Owner:List-Archive;
+ bh=wWNCGA+EwqVktP3Bvv8WPRuSGI2htUTB8ahmxkxy++o=; b=cnTTDe7IEMZQkOtb+qm05miDls
+ qWpgdgwqMbp0QDQSa8AkoBwo0d0VM5xkLtPW4k6zxwQi6z8HB0tr28cuy0ZDKjRHX9EAa0FbYWmHj
+ QWynS9sMpHL3874vkA6Ctk6HUGYbaoReKgS6pAqdqplDkHSybpgFsPJDClHsAzkBWUb0=;
+Received: from andrew by vps0.lunn.ch with local (Exim 4.93)
+ (envelope-from <andrew@lunn.ch>)
+ id 1jX7Ub-001P3h-KM; Fri, 08 May 2020 20:13:01 +0200
+Date: Fri, 8 May 2020 20:13:01 +0200
+From: Andrew Lunn <andrew@lunn.ch>
+To: Calvin Johnson <calvin.johnson@oss.nxp.com>
+Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
+Message-ID: <20200508181301.GF298574@lunn.ch>
+References: <20200505132905.10276-1-calvin.johnson@oss.nxp.com>
+ <20200505132905.10276-5-calvin.johnson@oss.nxp.com>
+ <67e263cf-5cd7-98d1-56ff-ebd9ac2265b6@arm.com>
+ <CAHp75Vew8Fh6HEoOACk+J9KCpw+AE2t2+oFnXteK1eShopfYAA@mail.gmail.com>
+ <83ab4ca4-9c34-4cdd-4413-3b4cdf96727d@arm.com>
+ <20200508160755.GB10296@lsv03152.swis.in-blr01.nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20200508171513.14665-4-stanley.chu@mediatek.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200508160755.GB10296@lsv03152.swis.in-blr01.nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_111234_789703_78F4784E 
-X-CRM114-Status: GOOD (  21.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200508_111316_896097_4727AA2F 
+X-CRM114-Status: GOOD (  22.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.26 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,82 +77,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ "Rafael J . Wysocki" <rafael@kernel.org>,
+ Cristi Sovaiala <cristian.sovaiala@nxp.com>,
+ Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
+ "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
+ Pankaj Bansal <pankaj.bansal@nxp.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Diana Madalina Craciun <diana.craciun@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
+ Madalin Bucur <madalin.bucur@oss.nxp.com>,
+ Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
+ Marcin Wojtas <mw@semihalf.com>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Laurentiu Tudor <laurentiu.tudor@nxp.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
+ netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/8/2020 10:15 AM, Stanley Chu wrote:
-> Allow flush threshold for WriteBooster to be customizable by
-> vendors. To achieve this, make the value as a variable in struct
-> ufs_hba first.
+> > It does have a numeric version defined for EISA types. OTOH I suspect that
+> > your right. If there were a "PHY\VEN_IDvvvv&ID_DDDD" definition, it may not
+> > be ideal to parse it. Instead the normal ACPI model of exactly matching the
+> > complete string in the phy driver might be more appropriate.
 > 
-> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> ---
->   drivers/scsi/ufs/ufshcd.c | 6 ++++--
->   drivers/scsi/ufs/ufshcd.h | 1 +
->   2 files changed, 5 insertions(+), 2 deletions(-)
+> IMO, it should be fine to parse the string to extract the phy_id. Is there any
+> reason why we cannot do this?
+
+Some background here, about what the PHY core does.
+
+PHYs have two ID registers. This contains vendor, device, and often
+revision of the PHY. Only the vendor part is standardised, vendors can
+decide how to use the device part, but it is common for the lowest
+nibble to be revision. The core will read these ID registers, and then
+go through all the PHY drivers registered and ask them if they support
+this ID. The drivers provide a table of IDs and masks. The mask is
+applied, and then if the ID matches, the driver is used. The mask
+allows the revision to be ignored, etc.
+
+There is a very small number of devices where the vendor messed up,
+and did not put valid contents in the ID registers. In such cases, we
+can read the IDs from device tree. These are then used in exactly the
+same way as if they were read from the device.
+
+If you want the ACPI model to be used, an exact match on the string,
+you are going to have to modify the core and the drivers. They
+currently don't have any string, and have no idea about different
+revisions which are out in the wild.
+
+> > Similarly to how I suspect the next patch's use of "compatible" isn't ideal
+> > either, because whether a device is c45 or not, should tend to be fixed to a
+> > particular vendor/device implementation and not a firmware provided
+> > property.
+
+Not exactly true. It is the combination of can the bus master do C45
+and can the device do C45. Unfortunately, we have no knowledge of the
+bus masters capabilities, if it can do C45. And many MDIO drivers will
+do a C22 transaction when asked to perform a C45 transaction. All new
+submissions for MDIO drivers i ask for EOPNOTSUPP to be returned if
+C45 is not supported. But we cannot rely on that. Too much history.
+
 > 
-> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> index cdacbe6378a1..9a0ce6550c2f 100644
-> --- a/drivers/scsi/ufs/ufshcd.c
-> +++ b/drivers/scsi/ufs/ufshcd.c
-> @@ -5301,8 +5301,8 @@ static bool ufshcd_wb_presrv_usrspc_keep_vcc_on(struct ufs_hba *hba,
->   			 cur_buf);
->   		return false;
->   	}
-> -	/* Let it continue to flush when >60% full */
-> -	if (avail_buf < UFS_WB_40_PERCENT_BUF_REMAIN)
-> +	/* Let it continue to flush when available buffer exceeds threshold */
-> +	if (avail_buf < hba->vps->wb_flush_threshold)
->   		return true;
->   
->   	return false;
-> @@ -6839,6 +6839,7 @@ static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
->   		if (!d_lu_wb_buf_alloc)
->   			goto wb_disabled;
->   	}
-> +
-Is this newline needed?
-
->   	return;
->   
->   wb_disabled:
-> @@ -7462,6 +7463,7 @@ static const struct attribute_group *ufshcd_driver_groups[] = {
->   
->   static struct ufs_hba_variant_params ufs_hba_vps = {
->   	.hba_enable_delay_us		= 1000,
-> +	.wb_flush_threshold		= UFS_WB_40_PERCENT_BUF_REMAIN,
->   	.devfreq_profile.polling_ms	= 100,
->   	.devfreq_profile.target		= ufshcd_devfreq_target,
->   	.devfreq_profile.get_dev_status	= ufshcd_devfreq_get_dev_status,
-> diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-> index f7bdf52ba8b0..e3dfb48e669e 100644
-> --- a/drivers/scsi/ufs/ufshcd.h
-> +++ b/drivers/scsi/ufs/ufshcd.h
-> @@ -570,6 +570,7 @@ struct ufs_hba_variant_params {
->   	struct devfreq_dev_profile devfreq_profile;
->   	struct devfreq_simple_ondemand_data ondemand_data;
->   	u16 hba_enable_delay_us;
-> +	u32 wb_flush_threshold;
->   };
->   
->   /**
+> I tend to agree with you on this. Even for DT, ideal case, IMO should be:
 > 
+> 1) mdiobus_scan scans the mdiobus for c22 devices by reading phy id from
+> registers 2 and 3
+> 2) if not found scan for c45 devices <= looks like this is missing in Linux
+> 3) look for phy_id from compatible string.
 
-Patch[3] & [4] may be combined into a single patch perhaps?
-Patch[4] just redoes what [3] did in a different way, so might as well 
-just do what patch[4] does right away.
+It is somewhat more complex, in that there are a small number of
+devices which will respond to both C22 and C45. Generally, you want to
+use C45 if supported. So you would want to do the C45 scan first. But
+then the earlier problem comes to play, you have no idea if the bus
+master actually correctly supports C45.
 
+Given the issues, we assume all bus masters and PHY devices are C22
+unless DT says the bus master and PHY combination is compatible with
+C45.
 
--- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+	   Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
