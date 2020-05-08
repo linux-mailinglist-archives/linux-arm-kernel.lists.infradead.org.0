@@ -2,66 +2,133 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 135E81CA536
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:30:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1FAD1CA546
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:36:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kz5lFYKk76bH/6kQHGslYt/wdcYOZg+XpPU9hroP9Vw=; b=ME+WNmSsu9brFC
-	KLufBw2WjcGJinCRxydSKBL2zxFhJuo71pkgPIfmLaqAaIvtR+hogC7YSowQDZMmiyHmFtlpysrBY
-	/lMD/2Y7N9Lk/SPpwnXHLmhvncR8l/6Zh8DU13TEtviY0292Gx2AViSy08oK4WpuvhcG3D1wVWVgr
-	YvTdskqPm03IHMr6R84yqBraApLAAMTLRPm6ibKxXOYIdNuYLlzGVCvAb8DkFc4eWfhHhcI9Xgfou
-	IUnVdK5IKhjLq28pYfv4t35GpUiibzvsQLIkrXQWR7n78qdB1a+0DVhgOpM8J2gvKJFFVsyhXqjA7
-	0eB/79IDikW7VW8sNexg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6Z54ENpLRp3Ho2UrXI1fwu1eghRsglaptqH7o9OgLms=; b=jQ6EwD5tFN6dGs
+	WwTFR3Nu/AvJROI01h3pCVcYDI5rOpzbjIA/8RLrkflTyxtLTWoYlsDn1B+qxcmWOEzkUnLOj+g9N
+	JaaOYVxCcQ2osKvauXhxyH/E3oEJtnkhy5qfdVpoLCVr/gqosLL+fi865V1U90W3vKp5WLpB3EXcz
+	36bqDxgX2/yfJJKXakPDF7hr0U8OoRdbkBWnYtd/7hXAVM+4gY7CO9scZX9/0zte9LAg9Lgwp0h68
+	24aPLLJtHBvi8a+NkWB18Rez7sE3Ky3V4XY6RgEXc3vkEwESnqsj16WmB7R3zO0SrIrF1pNB/dsSy
+	z+1m//Z+5oaZJjdZ8u7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWxSy-0004cm-My; Fri, 08 May 2020 07:30:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jWxYB-0007lo-Sz; Fri, 08 May 2020 07:36:03 +0000
+Received: from esa1.hgst.iphmx.com ([68.232.141.245])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWxSr-0004c7-C5; Fri, 08 May 2020 07:30:35 +0000
-X-UUID: 7ded1b8c40844115a7eaf89c1ae12b2b-20200507
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=hMzkDjf4CwNkJ6jDAGDRDS68Rl17O69scTmHX/6AYo8=; 
- b=r/AXLo5sCvJ//SfpE+Gj1fMeE00e6lp9DYA/5WxuE8URNvlYBhnDYVdmKOB78OmSVOX+Sw0xTU08tKI9T19cmGzLPt6hp8PJZw4RB1Gz+SxUdtvTZNvwA8SZ3gB0sIxSunFfbNIpBpoWMQwiGdVCAokSJ6FTZnebnIdU1uh7gq4=;
-X-UUID: 7ded1b8c40844115a7eaf89c1ae12b2b-20200507
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <qiangming.xia@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2077144198; Thu, 07 May 2020 23:30:22 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 00:21:12 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 15:21:12 +0800
-Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 8 May 2020 15:21:11 +0800
-From: Qiangming Xia <qiangming.xia@mediatek.com>
-To: <wsa@the-dreams.de>
-Subject: [PATCH] i2c: mediatek: Add i2c support for continuous mode
-Date: Fri, 8 May 2020 15:18:09 +0800
-Message-ID: <20200508071809.10187-1-qiangming.xia@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1jWxXy-0007ij-70; Fri, 08 May 2020 07:35:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1588923349; x=1620459349;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=X5zpXGzypz+RUfEDSxNZYpScsSgg3HpAUCUhb3mVpSY=;
+ b=B7k1BmMWtSb49P1JR2eCGYgSWS6Ev6Ol9fV844pmy1joMxpS1nYWCCG/
+ +gD41jGFpzlyNAS7zXlBodOZ8G7V2+8vPzF3Y+FLPFY9UEYBpaNl7IpbY
+ kFe36T36IXTrbtllRna2NiLt+SpDM09UVRhVS2HEh0VwY7GPeXQwNw/lB
+ AsohYa0Bcu8gjX/QwRAQM2p5muXMwussBTpOKIcgUvB3iGmPBGM19ahQI
+ +h3x3h0feg8jUIZbbi7Gi8vzacsRDUjbpZxRjXf+7K4LFvkTBedFZ5AH0
+ X2wog6by7zNB5uEKotr0pa9UUeBuTpC5dgruxAuJK6vnIxyk+UhLVUXLS g==;
+IronPort-SDR: mLiukl/iEaDcfyte3dnKMYBvtGRzRm51497jfvfleyY+qgdm4+myOPsp0fmwGGje6F83QA4zoB
+ c/6XHtXciHK1eP+cep56GwFKy/Mdfadcv2pPRXUnP60InCK3dK05YX6vkoj6MZn6+qe9B1/ol/
+ G3FrVLIRX979rujqDAVch9PRCz4AhzDyy+BQ0pMrsVpXfStHTbAFmukU/G6CbzlPMuRZ/TTdsz
+ o4AkfxQluKbbQiLDqa3ZqilYDLE8xxTIb3VLp0X1uJ0b+5vBRHrHQB+IV8GAwgmpwESq+JpEeB
+ Ec8=
+X-IronPort-AV: E=Sophos;i="5.73,366,1583164800"; d="scan'208";a="246093381"
+Received: from mail-bn8nam12lp2176.outbound.protection.outlook.com (HELO
+ NAM12-BN8-obe.outbound.protection.outlook.com) ([104.47.55.176])
+ by ob1.hgst.iphmx.com with ESMTP; 08 May 2020 15:35:45 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=KEOWaOn+FPnuWU2vJPnzlx+kbEmcXnejBNF0xJbEPnIWRXHEJqUF7cGR43YB91Hqn5pg+0wz1tVApgzPpCkBtkkHIcGwXpXtt+sUaUr8RPv/JZLFWSz47k+7FLZkhkONpeEtTFzrHA18B4pDTncrQVkQtt6PGmGe5GAveMh1UQdG9X4l8WEAKGtsDSRFT/7mzUGEU1y6S8ea26eWKdc50YhSDt8x3ACcI1npS/Wb8dSkyeJDMr+nUTGpnxbsaSudhr3mYEabgqmkim0HVrE6+aWMbPQTssN0+UJCvzkmcDLBpbckP6X0RiwWKHXL6NnKiQwqJmnn1avWZ4nCgkA9WQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=x+8ELw6aHoSUiZfVKYmdXzmRh2+/ZAIWp8FU0p5Ri+0=;
+ b=nT1/bYuQAM1QCh5UtJFnaIPAlXDPLkwbAGwJw3LwxPkOZVwVwu2PYZiaCmwsyypFkOwfYyS3YU76EZf/GSZkHAoVhAS2iEFL+hAyixyIEKFbenOr7KXlQJOx4JK1P7Tt8/0jnOaKQBiHyCK+/V4kErc5ZB/F1slT6Tw0+zF7+2s6fsCSyM3znyDskiEWIhYJUS76sItDCSMapW2q8C6s4x2x+34hvYAKfPyJXFIzIBi47DP45Bu67k4X5RZ8F3lqMVc4ACl0KNuiPyMJTla5ThXe+bDy3mMq9nyESebWrtdclXGhgxdhvYrQzSi1LpK/vui0jeQRMZfMFXs86XX2UA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=x+8ELw6aHoSUiZfVKYmdXzmRh2+/ZAIWp8FU0p5Ri+0=;
+ b=OsRuotv9E5gR3yUCEBL8IIyBjS7IDG8sN8vuCo6BV6KYvFejfFPvzzXcxsZ4glD3qxztaTozlGs08v8vS2EdBgyeGkQkO3FVakx57XdGE2jNoQVNtE1EZ8CZ6stkygD3H7UAVDuO/OrdGgfeuWy+38pJ9zsphK5B3V43bjeJkpE=
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com (2603:10b6:805:a4::19)
+ by SN6PR04MB4845.namprd04.prod.outlook.com (2603:10b6:805:b3::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.28; Fri, 8 May
+ 2020 07:35:44 +0000
+Received: from SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288]) by SN6PR04MB4640.namprd04.prod.outlook.com
+ ([fe80::9cbe:995f:c25f:d288%6]) with mapi id 15.20.2958.032; Fri, 8 May 2020
+ 07:35:43 +0000
+From: Avri Altman <Avri.Altman@wdc.com>
+To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
+ <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
+ <martin.petersen@oracle.com>, "alim.akhtar@samsung.com"
+ <alim.akhtar@samsung.com>, "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "asutoshd@codeaurora.org" <asutoshd@codeaurora.org>
+Subject: RE: [PATCH v7 1/8] scsi: ufs: enable WriteBooster on some pre-3.1 UFS
+ devices
+Thread-Topic: [PATCH v7 1/8] scsi: ufs: enable WriteBooster on some pre-3.1
+ UFS devices
+Thread-Index: AQHWJN904L6sndOEuECiOw2U04WYjqidzIYw
+Date: Fri, 8 May 2020 07:35:43 +0000
+Message-ID: <SN6PR04MB4640F483F0821F76DF6C344AFCA20@SN6PR04MB4640.namprd04.prod.outlook.com>
+References: <20200508022141.10783-1-stanley.chu@mediatek.com>
+ <20200508022141.10783-2-stanley.chu@mediatek.com>
+In-Reply-To: <20200508022141.10783-2-stanley.chu@mediatek.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: mediatek.com; dkim=none (message not signed)
+ header.d=none;mediatek.com; dmarc=none action=none header.from=wdc.com;
+x-originating-ip: [77.138.4.172]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 481c8c9f-8e28-45ef-feb6-08d7f3226aa3
+x-ms-traffictypediagnostic: SN6PR04MB4845:
+x-microsoft-antispam-prvs: <SN6PR04MB48459F38A8756AF880879A0BFCA20@SN6PR04MB4845.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 039735BC4E
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: WLcD/kILk2XNVkIfjc6iuQA3EkaGRvG4yIccRjx+1Pg/Jl9HIcFrEcaHGEyqJ8PhI+2ztRO04jMc/xLwBvx+cBw72mOo/xPzPst8cjjWKBKG8BQrxR1i4JvAtd+j8KF3DfBB0Hsa3aGQqEwkpyHeWRgdX/gZ/CwJ63CDBkvhufzdG246b9NCc6LljSbywAWbNaNfnBIq/2NTcKxpFNIxqp/l1QaPmNGcPvocSJJpv4EZ41/DR5GV8opGS99UzbZeHO+am9ZvF/UPlSeyJyN96fOxakgnqMhrEYFJeSqzRMNFDG6Afg6NrdtX6PXLSmilbMeHJX0KP8VFYnf14r16FT1oLHs15wAKqqK0y9tHdbZo1wkW4i5rciC4sg53PBMxqztf1QwTKLB99XH72m9ksGX4SCg6Bl5GRqQhoh7E52Rw2IRoLESTENRbBuzLp/NUHa3ezNkphZ4rEyc90n7FjKvYx4mmQ1GWv+q0aFEPScm7WP50hSyvw4qZlEp8ox7ghTd78LBYxCBk7msWnPfK9g==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:SN6PR04MB4640.namprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(396003)(376002)(366004)(346002)(39860400002)(33430700001)(54906003)(66556008)(7416002)(316002)(478600001)(76116006)(66946007)(7696005)(5660300002)(33440700001)(83300400001)(186003)(8936002)(83280400001)(83310400001)(83320400001)(83290400001)(8676002)(86362001)(66476007)(66446008)(26005)(71200400001)(4744005)(33656002)(55016002)(52536014)(9686003)(64756008)(4326008)(6506007)(110136005)(2906002);
+ DIR:OUT; SFP:1102; 
+x-ms-exchange-antispam-messagedata: bgmRUCOp0IPIHtvfLkfdX7av0az+TjvVWuDfdmF/MLFlqgiwcDTXazUC0hJX7Gw4XI85VBxRtdWaoFDJMipQnOX32ApsZVAZh7WpDCpqyMZoNkoaKNiJXRD6+6oChBhAyHAPf+iFnT7REuG/OnhwQm7zqOJ9DQEEAjaCWfkh71NrWFl6bfeKqSX27LhrmBL4fazKSQ+m6hvV/2cJ6lXmNaj/nk1pgQpVkwvZFln/7ou+jp36OjZypZC1jQLLaFNpIIbPsqL+kfHIIdrPVNkYMmRcHTfQ3HFNEGPpubxsLCuKEOGd7GLUCL105EwBmTy1lppoNb2nnQChFlGspYSpzRX7shf6YLOiOIgWllA0IwxUyRX4pD4VMYatFIHavsXendLJlcXzQQeBtwc0ojvVFlnY1vsFXhHW/5+2zNXqw6Cn/KRThYdMwDLayn9+Uz8PKsuY4y7jcGYdVi/022UAMilMS/J6VSCFH3DrjA4VpNo=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 481c8c9f-8e28-45ef-feb6-08d7f3226aa3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 May 2020 07:35:43.8825 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: QzoYbvvQQKPpsFcTsqtk+8DFZE++iXZ5NvLoYGhNMNz6TrPtuK+ekaqTx4ib95cd1JiRzT1Xe/bgXeiljL5oDA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR04MB4845
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_003033_422485_AF78D6E8 
-X-CRM114-Status: GOOD (  12.47  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200508_003551_911236_843166E6 
+X-CRM114-Status: GOOD (  11.19  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.141.245 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -69,8 +136,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,168 +147,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "qiangming.xia" <qiangming.xia@mediatek.com>, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "bvanassche@acm.org" <bvanassche@acm.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "cang@codeaurora.org" <cang@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: "qiangming.xia" <qiangming.xia@mediatek.com>
+> 
+> WriteBooster feature can be supported by some pre-3.1 UFS devices
+> by upgrading firmware.
+> 
+> To enable WriteBooster feature in such devices, introduce a device
+> quirk to relax the entrance condition of ufshcd_wb_probe() to allow
+> host driver to check those devices' WriteBooster capability.
+> 
+> WriteBooster feature can be available if below all conditions are
+> satisfied,
+> 
+> 1. Host enables WriteBooster capability
+> 2. UFS 3.1 device or UFS pre-3.1 device with quirk
+>    UFS_DEVICE_QUIRK_SUPPORT_EXTENDED_FEATURES enabled
+> 3. The device descriptor shall have
+>    DEVICE_DESC_PARAM_EXT_UFS_FEATURE_SUP field
+> 4. WriteBooster support is specified in above field
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
 
-    Mediatek i2c controller support for continuous mode, it allow to
-transfer multiple write messages once. It combined by
-'S + addr(wr) + data + Sr + ... + Sr + S + addr(wr) + data + P'.
-    Some slave devices need write many offset ranges, and the offset range
-maybe not continuous. For example, need write 'offset_0', 'offset_3' and
-'offset_5' 10 bytes, total 30 bytes. Slave device driver usually execute
-three times i2c transfer API,i.e,i2c_transfer() to complete it, however,
-it can use once transfer to finish it by continuous mode.
-
-Signed-off-by: Qiangming Xia <qiangming.xia@mediatek.com>
-Feature: I2C
----
- drivers/i2c/busses/i2c-mt65xx.c | 74 ++++++++++++++++++++++++++++++++-
- 1 file changed, 72 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-index 2152ec5f535c..9bab8c44ad58 100644
---- a/drivers/i2c/busses/i2c-mt65xx.c
-+++ b/drivers/i2c/busses/i2c-mt65xx.c
-@@ -98,6 +98,7 @@ enum mtk_trans_op {
- 	I2C_MASTER_WR = 1,
- 	I2C_MASTER_RD,
- 	I2C_MASTER_WRRD,
-+	I2C_MASTER_CONTINUOUS_WR,
- };
- 
- enum I2C_REGS_OFFSET {
-@@ -619,6 +620,9 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 					    OFFSET_TRANSFER_LEN);
- 		}
- 		mtk_i2c_writew(i2c, I2C_WRRD_TRANAC_VALUE, OFFSET_TRANSAC_LEN);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		mtk_i2c_writew(i2c, msgs->len / num, OFFSET_TRANSFER_LEN);
-+		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
- 	} else {
- 		mtk_i2c_writew(i2c, msgs->len, OFFSET_TRANSFER_LEN);
- 		mtk_i2c_writew(i2c, num, OFFSET_TRANSAC_LEN);
-@@ -671,7 +675,7 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 
- 		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
- 		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
--	} else {
-+	} else if (i2c->op == I2C_MASTER_WRRD) {
- 		writel(I2C_DMA_CLR_FLAG, i2c->pdmabase + OFFSET_INT_FLAG);
- 		writel(I2C_DMA_CLR_FLAG, i2c->pdmabase + OFFSET_CON);
- 
-@@ -722,6 +726,24 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 		writel((u32)rpaddr, i2c->pdmabase + OFFSET_RX_MEM_ADDR);
- 		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
- 		writel((msgs + 1)->len, i2c->pdmabase + OFFSET_RX_LEN);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		writel(I2C_DMA_INT_FLAG_NONE, i2c->pdmabase + OFFSET_INT_FLAG);
-+		writel(I2C_DMA_CON_TX, i2c->pdmabase + OFFSET_CON);
-+
-+		wpaddr = dma_map_single(i2c->dev, msgs->buf,
-+					msgs->len, DMA_TO_DEVICE);
-+		if (dma_mapping_error(i2c->dev, wpaddr)) {
-+			kfree(msgs->buf);
-+			return -ENOMEM;
-+		}
-+
-+		if (i2c->dev_comp->support_33bits) {
-+			reg_4g_mode = mtk_i2c_set_4g_mode(wpaddr);
-+			writel(reg_4g_mode, i2c->pdmabase + OFFSET_TX_4G_MODE);
-+		}
-+
-+		writel((u32)wpaddr, i2c->pdmabase + OFFSET_TX_MEM_ADDR);
-+		writel(msgs->len, i2c->pdmabase + OFFSET_TX_LEN);
- 	}
- 
- 	writel(I2C_DMA_START_EN, i2c->pdmabase + OFFSET_EN);
-@@ -752,7 +774,7 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 				 msgs->len, DMA_FROM_DEVICE);
- 
- 		i2c_put_dma_safe_msg_buf(dma_rd_buf, msgs, true);
--	} else {
-+	} else if (i2c->op == I2C_MASTER_WRRD) {
- 		dma_unmap_single(i2c->dev, wpaddr, msgs->len,
- 				 DMA_TO_DEVICE);
- 		dma_unmap_single(i2c->dev, rpaddr, (msgs + 1)->len,
-@@ -760,6 +782,11 @@ static int mtk_i2c_do_transfer(struct mtk_i2c *i2c, struct i2c_msg *msgs,
- 
- 		i2c_put_dma_safe_msg_buf(dma_wr_buf, msgs, true);
- 		i2c_put_dma_safe_msg_buf(dma_rd_buf, (msgs + 1), true);
-+	} else if (i2c->op == I2C_MASTER_CONTINUOUS_WR) {
-+		dma_unmap_single(i2c->dev, wpaddr,
-+				 msgs->len, DMA_TO_DEVICE);
-+
-+		kfree(msgs->buf);
- 	}
- 
- 	if (ret == 0) {
-@@ -783,6 +810,9 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
- 	int ret;
- 	int left_num = num;
- 	struct mtk_i2c *i2c = i2c_get_adapdata(adap);
-+	struct i2c_msg multi_msg[1];
-+	u8 *dma_multi_wr_buf;
-+	int j;
- 
- 	ret = mtk_i2c_clock_enable(i2c);
- 	if (ret)
-@@ -798,6 +828,46 @@ static int mtk_i2c_transfer(struct i2c_adapter *adap,
- 		}
- 	}
- 
-+	if (num > 1) {
-+		for (int i = 0; i < num - 1; i++) {
-+			if (!(msgs[i].flags & I2C_M_RD) &&
-+				!(msgs[i+1].flags & I2C_M_RD) &&
-+					(msgs[i].addr == msgs[i+1].addr) &&
-+						(msgs[i].len ==
-+							msgs[i+1].len)) {
-+				continue;
-+			} else
-+				break;
-+		}
-+		if (i >= num - 1) {
-+			i2c->op = I2C_MASTER_CONTINUOUS_WR;
-+			j = 0;
-+			dma_multi_wr_buf = kzalloc(msgs->len * num, GFP_KERNEL);
-+			if (!dma_multi_wr_buf) {
-+				ret =  -ENOMEM;
-+				goto err_exit;
-+			}
-+			multi_msg->addr  = msgs->addr;
-+			multi_msg->len   = msgs->len * num;
-+			multi_msg->buf   = dma_multi_wr_buf;
-+			multi_msg->flags  = 0;
-+			while (j < num) {
-+				memcpy(dma_multi_wr_buf + msgs->len * j,
-+							msgs->buf, msgs->len);
-+				j++;
-+				msgs++;
-+			}
-+
-+			i2c->ignore_restart_irq = false;
-+			ret = mtk_i2c_do_transfer(i2c, multi_msg, num, 0);
-+			if (ret < 0)
-+				goto err_exit;
-+			ret = num;
-+				goto err_exit;
-+
-+		}
-+	}
-+
- 	if (i2c->auto_restart && num >= 2 && i2c->speed_hz > MAX_FS_MODE_SPEED)
- 		/* ignore the first restart irq after the master code,
- 		 * otherwise the first transfer will be discarded.
--- 
-2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
