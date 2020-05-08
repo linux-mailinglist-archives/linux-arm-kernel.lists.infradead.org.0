@@ -2,61 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 141361CA57A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:54:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 887E21CA57F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 09:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=99IszxPWnZpa9oNpk+FQY1G1H0GK1KS267IabPQZhqM=; b=nGB/S+wvwV/88j
-	ME/LlBgxGMUMQ4CJ4oTDkrdS+xld34VGvLnkEQHiXfAvalAlDDuoUXQEYsJXEs3c9c7EvWQWgfXLM
-	mjCX1mASpiW4EccTlkmYwgOn2PafN4E7awspQQFyOgHqr141XOZzc/CT+079heae6qxNtQ9xHiWU2
-	dOPuceXE5RI58K0sjCLyJdlS8buGhGewZ6aujRWAGLnV0QcSQI2V7JQnyNfc53TiXp4Ga8v7CS6md
-	Z11Hw+T3PbWQuWztCy4zzX0orDV9W5lK3s7rwwtG5FOGBARXVjn2n5k97P6lE4LLTL00YDU/2ecGr
-	Yi/hCVoNXdq6LVC3kLdQ==;
+	List-Owner; bh=4oQAURP4rskRyKpXgszC2YE+C4ZZK0ygorEuMOmUrMM=; b=I0LIXttNe90gpO
+	5QjnpDpaUo8S8K/gotslAOs5FVDkJ/p6y1z41cHkQDKCBq4BgOUMs4ei6OD07GbgVWdRRWh8YuqQU
+	DSwbGbNdOypEl8qLPWbI4C5/EuL6RA5YW3LPTbZ8tTeXMRt1+w4o/vPJpjpCITd95Zzh3DeYXDRW3
+	e8z98BtlJvvnnq+dynlE7tW8bcvNGdWXxc4svb8HKsfd8EKf0oqYN8/qfgcdnazMY7gt0ByutJUx4
+	hjDraCmdf/Y90AUTCVgPsVjRQGoKN8t87kdrYz4IEGUF13ZI0eorQGS6DopNzCU2jjBktykPvH8fP
+	f+sq2Ohoxp64xSde3XYA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWxq5-00020i-Rs; Fri, 08 May 2020 07:54:33 +0000
-Received: from asavdk4.altibox.net ([109.247.116.15])
+	id 1jWxuX-0004vN-Qx; Fri, 08 May 2020 07:59:09 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWxpy-0001t4-97
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 07:54:28 +0000
-Received: from ravnborg.org (unknown [158.248.194.18])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1jWxuQ-0004ug-Eb
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 07:59:03 +0000
+Received: from mail-io1-f52.google.com (mail-io1-f52.google.com
+ [209.85.166.52])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by asavdk4.altibox.net (Postfix) with ESMTPS id 7451980503;
- Fri,  8 May 2020 09:52:17 +0200 (CEST)
-Date: Fri, 8 May 2020 09:52:10 +0200
-From: Sam Ravnborg <sam@ravnborg.org>
-To: Bernard <bernard@vivo.com>
-Subject: Re: [PATCH] drm/exynos: remove no need devm_kfree in probe [re-send, 
- welcome any comments]
-Message-ID: <20200508075210.GA8789@ravnborg.org>
-References: <AMkACAAICCLCcgaekrYcyKoA.1.1588769343436.Hmail.bernard@vivo.com>
+ by mail.kernel.org (Postfix) with ESMTPSA id ABB3820CC7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  8 May 2020 07:59:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1588924741;
+ bh=oGLEQ5sAjvnz3eUh91xK8a09DsPMMmKTJ2Z6abxsvqs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=fJ6a5/nygGEvyU53DS1Y8VM3K42UYD7C7HjbWyC04G9tCbBSmG4hC/4c6QcRVtbbe
+ gOm0RU4eJ29lyPVkPOjPI4QefMVl7E/FIqKTm4r43Qb9k6ou0ObCR8OFprvMWr3Yby
+ IAzSSw07c1FrZxgtyj/F/ItAoyHiItR1Vukq3MyY=
+Received: by mail-io1-f52.google.com with SMTP id i19so927419ioh.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 08 May 2020 00:59:01 -0700 (PDT)
+X-Gm-Message-State: AGi0PubdZHZOWkOY9W9AOj13gwAKN2jIqQO9mLLfnp1LsqQyKN4tpzlC
+ 0byyvFoq9tn8b/+FsQg9DpnXG+s9Qb0uhm3OV/s=
+X-Google-Smtp-Source: APiQypIdqjD5MGoadJoDKdb0EEAop2TdCCcfVbYoPrrjr50p4id0tTbt7KPkrhFZmg0fsYMjDM9rX29PFEvt6RhhNfk=
+X-Received: by 2002:a5d:9b8a:: with SMTP id r10mr1417623iom.171.1588924741105; 
+ Fri, 08 May 2020 00:59:01 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <AMkACAAICCLCcgaekrYcyKoA.1.1588769343436.Hmail.bernard@vivo.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CMAE-Score: 0
-X-CMAE-Analysis: v=2.3 cv=MOBOZvRl c=1 sm=1 tr=0
- a=UWs3HLbX/2nnQ3s7vZ42gw==:117 a=UWs3HLbX/2nnQ3s7vZ42gw==:17
- a=kj9zAlcOel0A:10 a=1WtWmnkvAAAA:8 a=7gkXJVJtAAAA:8 a=e5mUnYsNAAAA:8
- a=BHcMzYUn60HY1PDIBp0A:9 a=CjuIK1q_8ugA:10 a=-_UHfarfsM-RsASml2Jt:22
- a=E9Po1WZjFZOl8hwRPBS3:22 a=Vxmtnl_E_bksehYqCbjh:22
+References: <1588910198-8348-1-git-send-email-guohanjun@huawei.com>
+In-Reply-To: <1588910198-8348-1-git-send-email-guohanjun@huawei.com>
+From: Ard Biesheuvel <ardb@kernel.org>
+Date: Fri, 8 May 2020 09:58:50 +0200
+X-Gmail-Original-Message-ID: <CAMj1kXGoe4aar3g3Qu7LU85JSdd1QqOMYp2mGtO1p2h_KiDb7g@mail.gmail.com>
+Message-ID: <CAMj1kXGoe4aar3g3Qu7LU85JSdd1QqOMYp2mGtO1p2h_KiDb7g@mail.gmail.com>
+Subject: Re: [PATCH v2] ACPI: IORT: Add extra message "applying workaround"
+ for off-by-1 issue
+To: Hanjun Guo <guohanjun@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_005426_496119_31E1FE6F 
-X-CRM114-Status: GOOD (  21.18  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200508_005902_508515_8A628CAC 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [109.247.116.15 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,90 +86,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com, linux-samsung-soc@vger.kernel.org,
- Joonyoung Shim <jy0922.shim@samsung.com>, David Airlie <airlied@linux.ie>,
- Seung-Woo Kim <sw0312.kim@samsung.com>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, Inki Dae <inki.dae@samsung.com>,
- Kyungmin Park <kyungmin.park@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- dri-devel@lists.freedesktop.org, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bernard.
-
-On Wed, May 06, 2020 at 08:49:03PM +0800, Bernard wrote:
-> Remove no need devm_kfree in probe.
-> The change is to make the code a bit more readable
-> 
-> Signed-off-by: Bernard Zhao <bernard@vivo.com>
-
-Could you take a closer look and fix similar patterns
-in the rest of the driver?
-For example in exynos_dpi_probe()
-
-Is would be nice to only have to review for this
-type of changes once, so one patch-set is preferred
-over single patches over time.
-
-You can add:
-Reviewed-by: Sam Ravnborg <sam@ravnborg.org>
-
-to this patch when you re-send a new series.
-
-Thanks,
-	Sam
-
+On Fri, 8 May 2020 at 06:07, Hanjun Guo <guohanjun@huawei.com> wrote:
+>
+> As we already applied a workaround for the off-by-1 issue,
+> it's good to add extra message "applying workaround" to make
+> people less uneasy to see FW_BUG message in the boot log.
+>
+> Signed-off-by: Hanjun Guo <guohanjun@huawei.com>
 > ---
->  drivers/gpu/drm/exynos/exynos_drm_dpi.c | 10 +++-------
->  1 file changed, 3 insertions(+), 7 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/exynos/exynos_drm_dpi.c b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-> index 43fa0f26c052..e06f7d7a6695 100644
-> --- a/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-> +++ b/drivers/gpu/drm/exynos/exynos_drm_dpi.c
-> @@ -181,10 +181,8 @@ static int exynos_dpi_parse_dt(struct exynos_dpi *ctx)
->  			return -ENOMEM;
->  
->  		ret = of_get_videomode(dn, vm, 0);
-> -		if (ret < 0) {
-> -			devm_kfree(dev, vm);
-> +		if (ret < 0)
->  			return ret;
-> -		}
->  
->  		ctx->vm = vm;
->  
-> @@ -233,10 +231,8 @@ struct drm_encoder *exynos_dpi_probe(struct device *dev)
->  	ctx->dev = dev;
->  
->  	ret = exynos_dpi_parse_dt(ctx);
-> -	if (ret < 0) {
-> -		devm_kfree(dev, ctx);
-> -		return NULL;
-> -	}
-> +	if (ret < 0)
-> +		return ERR_PTR(ret);
->  
->  	if (ctx->panel_node) {
->  		ctx->panel = of_drm_find_panel(ctx->panel_node);
-> -- 
-> 2.26.2
-> 
-> 
-> [re-send, welcome any comments]
-> Regards,
-> Bernard
-> 
-> 
-> 
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
+>
+> v2:
+>  - Print the extra message only for rid_in == map->input_base;
+>  - Still based on top of for-next/acpi branch of ARM64 repo
+>
+>  drivers/acpi/arm64/iort.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+> index b011d25..6e445bc 100644
+> --- a/drivers/acpi/arm64/iort.c
+> +++ b/drivers/acpi/arm64/iort.c
+> @@ -332,6 +332,8 @@ static int iort_id_map(struct acpi_iort_id_mapping *map, u8 type, u32 rid_in,
+>                        map, rid_in);
+>                 if (rid_in != map->input_base)
+>                         return -ENXIO;
+> +
+> +               pr_err(FW_BUG "applying workaround.\n");
+>         }
+>
+>         *rid_out = map->output_base + (rid_in - map->input_base);
+> --
+> 1.7.12.4
+>
+
+Acked-by: Ard Biesheuvel <ardb@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
