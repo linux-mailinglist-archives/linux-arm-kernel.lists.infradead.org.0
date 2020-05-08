@@ -2,59 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EF33C1CB573
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 19:13:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A1EC71CB5DB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 19:25:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
-	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UsYPZehEHvQVXUB8tUDZa2Fmhp61d2Feo4MZh06ilN0=; b=pXxsFkQ+rxNU0J
-	2I6dx19gf+y9cd2beZHySYpGZ7mY9Ie5f99yddwB2InRfuIAtXhH4r8htYszJktFKX5TVxHMJsyVi
-	QLfkwIUq5jKJEgfuIsUnVFHV65sqda87hz42MFWWdoPQ/avYBLJYpmMLN/wWR3NCx3DoMUCwtKFYy
-	Nt9VWusLnxRzCvICOhcXycjVlWDAC9rU6mT8W0i1PgMn4LQ470qtxjUbAXHTGbc90tXMUCAR1Gz0/
-	OL+ibERvnBzBsbABE2V2P2cKZZtkW2qdHnzDDnaV3ibSdzh8v6H10d7LSdyf+OlsBSBFj1SxHYsps
-	6k4VzoS7HouuQscM+u6g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k1cH74y58k9GmfpRS9/P4ZW9ZrOgr2ydn4K5mLITmI4=; b=nlyIGa1tFMz/Wj
+	e0gfLvX7lgQAzgpLkO9U1Lhd/w6L5PCFjRD7r3+zGk6X+WV2diUNnrdUBE7x0NYMuWBtu8O3IkeYE
+	YPY0WrqE7UohP8OGhBbobI+VUe0bbuLwvSeIuO5FSXg4i8mnq4PH3Amt1CamsEhMMoV8BQ4G8nGqr
+	UMJcgLSZ0c/k3rhdopTKXoMwGjiDilfJuOueGkBK/1RezTGcvsClkoKZn1OlzmiCNnX7/WL5R6M3+
+	s/t4g9lY7DTH+RerFEyFihuXVnL/fD+6ib1KM2eyP0pbv0ThPQWoTi1zNlgNCugdOM5Kck6C0IPzS
+	gsf1yau3yDTor1T6fgsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX6ZC-0005dn-F3; Fri, 08 May 2020 17:13:42 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jX6kj-000143-Es; Fri, 08 May 2020 17:25:37 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX6Z7-0005dT-Ja
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 17:13:38 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A46242063A;
- Fri,  8 May 2020 17:13:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588958017;
- bh=5t7WJiL5EwvoF0nnqVxBZir0wWe3BIQcNbcs1QJffwA=;
- h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=rAgyn1AzkpzjDtU1+fwmVGaaW32AsL9fJeQxDyPG+4bENc1L72C8N/5TpqKgFGG9m
- fVSCnRSKUlW1rqiwWnyL1VjbOfKnkKZMqOtQYKcK7yW11nTwDAQx+SjIkWmXvVeTlh
- wIenW1KdCjcuSDpdquykMkHaJ9Bw5hXfIm1zBzdU=
-Date: Fri, 08 May 2020 18:13:34 +0100
-From: Mark Brown <broonie@kernel.org>
-To: tiwai@suse.com, perex@perex.cz, s.hauer@pengutronix.de, lgirdwood@gmail.com,
- shawnguo@kernel.org, Tang Bin <tangbin@cmss.chinamobile.com>
-In-Reply-To: <20200429094023.12856-1-tangbin@cmss.chinamobile.com>
-References: <20200429094023.12856-1-tangbin@cmss.chinamobile.com>
-Subject: Re: [PATCH] ASoC: mxs-saif: Add variable dev to simplify code
-Message-Id: <158895800277.30774.18095767521738841967.b4-ty@kernel.org>
+ id 1jX6ka-00011F-2y; Fri, 08 May 2020 17:25:29 +0000
+X-UUID: 706d676d0c9542448787566cfd93cd4c-20200508
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=0knH9HNnIx9SRZudXymGnZJ0S7xeMFAxCHgdkhMyXYU=; 
+ b=jb1ZHoTbS6RmvKKyVnkkYGuNz4QeH4brKBU9QKshK9Ucv8FXhWVonTeyRElPwWz6fGDFBVoIyedng4IzfI6De7MHje+8LBccoNlzRjddd3/ne/U6CdQkF4li5vmEBO2k2D2yCEStfUzjQCPD/n9vZNwkqWXMY0EQQFSR+CZXVhw=;
+X-UUID: 706d676d0c9542448787566cfd93cd4c-20200508
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1334446526; Fri, 08 May 2020 09:25:04 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 8 May 2020 10:15:18 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 9 May 2020 01:15:11 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Sat, 9 May 2020 01:15:11 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
+ <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
+ <asutoshd@codeaurora.org>
+Subject: [PATCH v1 0/5] scsi: ufs: allow customizable WriteBooster flush policy
+Date: Sat, 9 May 2020 01:15:08 +0800
+Message-ID: <20200508171513.14665-1-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: F7A3837055F0D783E3D514AAFE929BFFDF806506BD535D7E485499953F07CA592000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_101337_663854_F3A43180 
-X-CRM114-Status: GOOD (  11.41  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200508_102528_138580_E4937F54 
+X-CRM114-Status: UNSURE (   5.22  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -62,7 +73,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,54 +86,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org,
- Zhang Shengju <zhangshengju@cmss.chinamobile.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 29 Apr 2020 17:40:23 +0800, Tang Bin wrote:
-> Add variable 'dev' to make the code cleaner in the function
-> mxs_saif_probe(). And now that the function mxs_saif_mclk_init()
-> have defined the variables 'ret' as the error returned value,
-> then it should be used instead in this place.
-> 
-> Signed-off-by: Zhang Shengju <zhangshengju@cmss.chinamobile.com>
-> Signed-off-by: Tang Bin <tangbin@cmss.chinamobile.com>
-> 
-> [...]
+Hi,
 
-Applied to
+This patch set tries to allow vendors to modify the WriteBooster flush policy.
 
-   local tree regulator/for-5.7
+In the same time, collect all customizable parameters to an unified structure to make UFS driver more clean.
 
-Thanks!
+Stanley Chu (5):
+  scsi: ufs: introduce ufs_hba_variant_params to collect customizable
+    parameters
+  scsi: ufs-mediatek: change the way to use customizable parameters
+  scsi: ufs: customize flush threshold for WriteBooster
+  scsi: ufs: use flexible definition for UFS_WB_BUF_REMAIN_PERCENT
+  scsi: ufs-mediatek: customize WriteBooster flush policy
 
-[1/1] ASoC: mxs-saif: Add variable dev to simplify code
-      (no commit info)
+ drivers/scsi/ufs/ufs-mediatek.c |  5 ++--
+ drivers/scsi/ufs/ufs.h          |  5 +---
+ drivers/scsi/ufs/ufshcd.c       | 46 ++++++++++++++-------------------
+ drivers/scsi/ufs/ufshcd.h       |  9 ++++++-
+ 4 files changed, 32 insertions(+), 33 deletions(-)
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
-
-Thanks,
-Mark
-
+-- 
+2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
