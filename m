@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6B921CA5A0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 10:02:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 138741CA5AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 10:04:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lUV0Ch+HYgWhIAgYVtciFGDHlgYDsFriUQQCnRVy6V4=; b=RHuZ9MI6ED3sE0
-	aATyL0vmZKnpdRSGPwfzaN7cV0Kmr/pMF7o3q9q4gj3ACphtTFI3Ii77nNe7M7JlQq5S0dnDPK87A
-	WbN7uonbsdgBUaVT9k2A/tbRyVVtR/MfyCQegDY50RyAKtEvy+6gyH5gdnDcaV6GxoFNAhh9RnL3J
-	jEzde30rfr+oZGFFLj6ISPMD+E0nccw5h5ZD+SJdse4kr0dI9V8cMaFQcnxXo7HTQRi+iKSMKTsIV
-	fquF822SZnnJtQmsVlZkw/wvcpUg6VKfLDgZNVBNsD/Gc6eAyBq2EphCmb+p8mCjkeUzgu3/ncHJH
-	Pg2ayUQILG0bjBPuSMPA==;
+	List-Owner; bh=8Qbs0tvcoj4Flo2JpcK3glBGcfgWoiHPeAOduvHKvGg=; b=jgHIWynj2kPGe5
+	Op1Va2MJymQ/eplszqUnIHxtEIKxvkuzJDIa1B3FqS6I5FzKwhyVD2TuNMoRYbznDx0tvCwdLtdu+
+	XkOIR3p6tXT3lFZnPpRPV7otyihPLKQO06BDZi6hoNSypllM/BpsgfqgMiFmxY3/Y4yI46rhmQzh7
+	nSM0pqguCXzF6uacUPj3UVj7m1NlS19HAtkujd2WLmjmiHx+CQq6vGko0R+bHXHe2KrMqArdcF74T
+	fXm7vL1GpV0RW9TCeSxEABRitCHZHZbGGoFHmKsXigjn3AwVVDikt7nqJPkFSJJtDo7Mo6LT5tJ/n
+	c0YMEu5vyGxZT8XTi6xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWxxi-0000Q2-Sd; Fri, 08 May 2020 08:02:26 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jWxz8-0001g9-Sl; Fri, 08 May 2020 08:03:54 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWxwl-0007wo-Vy; Fri, 08 May 2020 08:01:29 +0000
-X-UUID: 3f0a1e1926b249329c9d33a0c8c53396-20200508
+ id 1jWxx3-0008I4-05; Fri, 08 May 2020 08:01:46 +0000
+X-UUID: 0ef9f5bfd095443c9e5d834328e2faa7-20200508
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=vEN1vovOBm7CE8IUBRV0WJtnR6QWXPmyg5EWPiTMLuA=; 
- b=jG06Ubx1DgVLKlbiLoSA/7CQz9KBRlCA3baPx9szcJq5XP4Ks6joKAlCcFnk85lEVDhR+CO6zl1sv7YNYf1qCdmiGqIyZW9ZiToZJzlKw69C9TB3StpOxTduWshCUbsIAbW13toIZpcgiv3jRtjHvXWEZzzRWs8RhR98TNfotRI=;
-X-UUID: 3f0a1e1926b249329c9d33a0c8c53396-20200508
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ bh=uGT7hSTUzH9ZKoRQUM/Tvp8FCrc2dsU2C85wx6zrn7c=; 
+ b=jXappDhhT6v7+89hWqkMKS6/jweiyhR/macCNpBydYfSeFGDa5UkOJ7BDDO27f6M76jlElqkwtijSABhNScf78ey3im8UYPeZIHS4SAhr2uzFAQRS4kNciPwFEd1BKMFxigjO8wuQsxwaIpZFXCyVdRQdy7fnrAf79fMooDd26U=;
+X-UUID: 0ef9f5bfd095443c9e5d834328e2faa7-20200508
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1642686524; Fri, 08 May 2020 00:01:15 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 01:01:18 -0700
+ with ESMTP id 1762883254; Fri, 08 May 2020 00:01:28 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 8 May 2020 01:01:31 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 8 May 2020 16:01:17 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 8 May 2020 16:01:16 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
  Frontend Transport; Fri, 8 May 2020 16:01:18 +0800
@@ -46,17 +46,19 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v8 2/8] scsi: ufs: introduce fixup_dev_quirks vops
-Date: Fri, 8 May 2020 16:01:09 +0800
-Message-ID: <20200508080115.24233-3-stanley.chu@mediatek.com>
+Subject: [PATCH v8 3/8] scsi: ufs: export ufs_fixup_device_setup() function
+Date: Fri, 8 May 2020 16:01:10 +0800
+Message-ID: <20200508080115.24233-4-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200508080115.24233-1-stanley.chu@mediatek.com>
 References: <20200508080115.24233-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 47C1EFE60891844C887843C26736B395BD6B73E41061F5077EBA054EDA9897692000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_010128_029617_68DCD292 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20200508_010145_080944_9B033F88 
+X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,91 +98,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some UFS deivces may have required device quirks or have non-standard
-features which are enabled only on specified UFS hosts or for special
-customers.
-
-To not "pollute" common device quirk list, i.e., ufs_fixups table for
-those devices mentioned above, introduce "fixup_dev_quirks" vops to
-allow vendors to fix or modify device quirks accordingly.
+Export ufs_fixup_device_setup() to allow vendors to re-use it for
+fixing device quriks on specified UFS hosts.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 Reviewed-by: Avri Altman <avri.altman@wdc.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 11 ++++++++++-
- drivers/scsi/ufs/ufshcd.h |  9 ++++++++-
- 2 files changed, 18 insertions(+), 2 deletions(-)
+ drivers/scsi/ufs/ufshcd.c | 10 +++++++---
+ drivers/scsi/ufs/ufshcd.h |  1 +
+ 2 files changed, 8 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index a802c5f5ec7c..8d86d9a6a622 100644
+index 8d86d9a6a622..c0b2cec5dcd8 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -6838,7 +6838,7 @@ static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
+@@ -6838,12 +6838,15 @@ static void ufshcd_wb_probe(struct ufs_hba *hba, u8 *desc_buf)
  	hba->caps &= ~UFSHCD_CAP_WB_EN;
  }
  
--static void ufs_fixup_device_setup(struct ufs_hba *hba)
-+static void ufshcd_fixup_dev_quirks(struct ufs_hba *hba)
+-static void ufshcd_fixup_dev_quirks(struct ufs_hba *hba)
++void ufshcd_fixup_dev_quirks(struct ufs_hba *hba, struct ufs_dev_fix *fixups)
  {
  	struct ufs_dev_fix *f;
  	struct ufs_dev_info *dev_info = &hba->dev_info;
-@@ -6853,6 +6853,15 @@ static void ufs_fixup_device_setup(struct ufs_hba *hba)
+ 
+-	for (f = ufs_fixups; f->quirk; f++) {
++	if (!fixups)
++		return;
++
++	for (f = fixups; f->quirk; f++) {
+ 		if ((f->wmanufacturerid == dev_info->wmanufacturerid ||
+ 		     f->wmanufacturerid == UFS_ANY_VENDOR) &&
+ 		     ((dev_info->model &&
+@@ -6852,11 +6855,12 @@ static void ufshcd_fixup_dev_quirks(struct ufs_hba *hba)
+ 			hba->dev_quirks |= f->quirk;
  	}
  }
++EXPORT_SYMBOL_GPL(ufshcd_fixup_dev_quirks);
  
-+static void ufs_fixup_device_setup(struct ufs_hba *hba)
-+{
-+	/* fix by general quirk table */
-+	ufshcd_fixup_dev_quirks(hba);
-+
-+	/* allow vendors to fix quirks */
-+	ufshcd_vops_fixup_dev_quirks(hba);
-+}
-+
- static int ufs_get_device_desc(struct ufs_hba *hba)
+ static void ufs_fixup_device_setup(struct ufs_hba *hba)
  {
- 	int err;
+ 	/* fix by general quirk table */
+-	ufshcd_fixup_dev_quirks(hba);
++	ufshcd_fixup_dev_quirks(hba, ufs_fixups);
+ 
+ 	/* allow vendors to fix quirks */
+ 	ufshcd_vops_fixup_dev_quirks(hba);
 diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 056537e52c19..897338ba67aa 100644
+index 897338ba67aa..4d296acadd6f 100644
 --- a/drivers/scsi/ufs/ufshcd.h
 +++ b/drivers/scsi/ufs/ufshcd.h
-@@ -69,6 +69,7 @@
- #include <scsi/scsi_eh.h>
- 
- #include "ufs.h"
-+#include "ufs_quirks.h"
- #include "ufshci.h"
- 
- #define UFSHCD "ufshcd"
-@@ -336,6 +337,7 @@ struct ufs_hba_variant_ops {
- 	void    (*hibern8_notify)(struct ufs_hba *, enum uic_cmd_dme,
- 					enum ufs_notify_change_status);
- 	int	(*apply_dev_quirks)(struct ufs_hba *hba);
-+	void	(*fixup_dev_quirks)(struct ufs_hba *hba);
- 	int     (*suspend)(struct ufs_hba *, enum ufs_pm_op);
- 	int     (*resume)(struct ufs_hba *, enum ufs_pm_op);
- 	void	(*dbg_register_dump)(struct ufs_hba *hba);
-@@ -950,7 +952,6 @@ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
+@@ -952,6 +952,7 @@ int ufshcd_query_flag(struct ufs_hba *hba, enum query_opcode opcode,
  
  void ufshcd_auto_hibern8_enable(struct ufs_hba *hba);
  void ufshcd_auto_hibern8_update(struct ufs_hba *hba, u32 ahit);
--
++void ufshcd_fixup_dev_quirks(struct ufs_hba *hba, struct ufs_dev_fix *fixups);
  #define SD_ASCII_STD true
  #define SD_RAW false
  int ufshcd_read_string_desc(struct ufs_hba *hba, u8 desc_index,
-@@ -1085,6 +1086,12 @@ static inline int ufshcd_vops_apply_dev_quirks(struct ufs_hba *hba)
- 	return 0;
- }
- 
-+static inline void ufshcd_vops_fixup_dev_quirks(struct ufs_hba *hba)
-+{
-+	if (hba->vops && hba->vops->fixup_dev_quirks)
-+		hba->vops->fixup_dev_quirks(hba);
-+}
-+
- static inline int ufshcd_vops_suspend(struct ufs_hba *hba, enum ufs_pm_op op)
- {
- 	if (hba->vops && hba->vops->suspend)
 -- 
 2.18.0
 _______________________________________________
