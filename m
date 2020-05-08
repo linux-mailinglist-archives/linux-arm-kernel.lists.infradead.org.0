@@ -2,61 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 838BE1CA181
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 05:30:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C058E1CA183
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 05:30:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=66hJLMXW+yoQj1b97FIJBGV5RGUGauqh9bqqqihRGvo=; b=TUbisIqPtAZHIO
-	NYFp70G+oMSo4Wgm+rY5EvQX10386d1l0BMxAqEXklLVDUBIQ0ylgDgdMEiJjVOGN71V1DytmV/cy
-	6HTQexS5PwcEmaqy2OpNkvR3zmn4u4mry0KFog1lAGkHEFKK8sXpGxdxmGvpHC3psQ9bpXF+SP89j
-	XslvN7Ffg8jKrmUGGrdmxqZBiJkIxbQdfoswGS+PgKfDVknoPE7ItV008zvek5C78x7drFONqNeX7
-	IlV/M8nVzibunrs/AQ47GSSx3ZCcSB6MgWO3L5AoBNWfaBqVP50FsIrqHjq0508S8qNZWHYot429R
-	7zYiO0gxmLTppEPGRDwQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EThg5RLpX+6EDlmhlw0pNGOTfrmlRm1L2l/KAaNfP8A=; b=aHu/QC0cwOhYAC
+	D+VaFwQ8oo/gtd3vo/tbksb+A5N1mHq9HzSxRYRqQeUFZX4ohjFR0wojcMoNoMDY3nZ8ZYH8+YLRP
+	ui0b4QZUqfCXYlCjn9so/mUHc+UwmhfN8a6YD7v+zuVMPjsUAEsrbbGjUo87FrXgUCnkajSM753z/
+	m5za1rc9Zkk+2BcIVWYJzsZBL9nlZ7puCfJEXdCmukAVuA9CgNFsBgABMoEILkOl9kcTkZ7Vp9QDP
+	YziarIqWZ0JQefOMT058z9UfBUTZyCBWx9sixgxlyI7nXbjTJB4K6WSrS7AaehvyVE+ka3Sq3TbMC
+	j7mXpFCp0JryWKrgYGZQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWtiY-0001TQ-0Y; Fri, 08 May 2020 03:30:30 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1jWtil-0001dQ-Ug; Fri, 08 May 2020 03:30:43 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWtiN-0001SA-Su
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 03:30:21 +0000
+ id 1jWtiR-0001TS-E3
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 03:30:25 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588908615;
+ s=mimecast20190719; t=1588908622;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:
- content-transfer-encoding:content-transfer-encoding;
- bh=uMmWKYvsn3nnZTAMQNA1F04i+bwvwBgW7960VIk8KxA=;
- b=OEY+QSjX8JGgwFE6+IVTwE5u4HURCThryVjW2JjUMukAUnie/3TywnB/SG/2CLW/3iliC4
- l27rR3gATRKcUEzXNh6VTxk3CKl3jv+66Xq+/RNa7yJGnQ+XyFYkjpn/c4w7tD2swH1Tke
- poyAo4J2IAeEd9hc7ZqUfsmd5tY7t3U=
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=v2m5baSn+ZYgBiiLOUz37xt+J63O4vzP3FQSixT340E=;
+ b=Dm/7xupWpqA7IlXpoaVqUKpD76A3Q44xKRPRZuAComz3DMvrvQoGFbUIr4VvZdgoGo3TEX
+ DkMmFimmYZiiA0Kv6zWIkRxR89FRk5tGBaEMblqmHnjDHoJkhXiO0X3YMY1rNdlMMvJ9N/
+ /DRxLTU/6G8z+2NsRa/jFZfAEGGfvq0=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-279-rD_5F9cgPAGS1X_7Nk_q0Q-1; Thu, 07 May 2020 23:30:13 -0400
-X-MC-Unique: rD_5F9cgPAGS1X_7Nk_q0Q-1
+ us-mta-447-mK6p5XOzO-Gc_iPCxbJ03w-1; Thu, 07 May 2020 23:30:20 -0400
+X-MC-Unique: mK6p5XOzO-Gc_iPCxbJ03w-1
 Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
  [10.5.11.23])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 170E246B;
- Fri,  8 May 2020 03:30:12 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 5E47610082EA;
+ Fri,  8 May 2020 03:30:18 +0000 (UTC)
 Received: from localhost.localdomain.com (vpn2-54-199.bne.redhat.com
  [10.64.54.199])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 536FE99CF;
- Fri,  8 May 2020 03:29:57 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 9342599CF;
+ Fri,  8 May 2020 03:30:12 +0000 (UTC)
 From: Gavin Shan <gshan@redhat.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH RFCv2 0/9] kvm/arm64: Support Async Page Fault
-Date: Fri,  8 May 2020 13:29:10 +1000
-Message-Id: <20200508032919.52147-1-gshan@redhat.com>
+Subject: [PATCH RFCv2 1/9] arm64: Probe for the presence of KVM hypervisor
+ services during boot
+Date: Fri,  8 May 2020 13:29:11 +1000
+Message-Id: <20200508032919.52147-2-gshan@redhat.com>
+In-Reply-To: <20200508032919.52147-1-gshan@redhat.com>
+References: <20200508032919.52147-1-gshan@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_203020_012255_0C0A3FA5 
-X-CRM114-Status: GOOD (  16.32  )
+X-CRM114-CacheID: sfid-20200507_203023_575830_884D34C9 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,135 +101,160 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are two stages of page faults and the stage one page fault is
-handled by guest itself. The guest is trapped to host when the page
-fault is caused by stage 2 page table, for example missing. The guest
-is suspended until the requested page is populated. There might be
-IO activities involved for host to populate the requested page. For
-instance, the requested page has been swapped out previously. In this
-case, the guest (vCPU) has to suspend for a few of milliseconds, which
-depends on the swapping media, regardless of the overall system load.
+From: Will Deacon <will@kernel.org>
 
-The series adds asychornous page fault to improve the situation. A
-signal (PAGE_NOT_PRESENT) is sent from host to the guest if the requested
-page isn't absent immediately. In the mean while, a worker is started
-to populate the requested page in background. Guest either picks another
-available process to run or puts current (faulting) process to power
-saving mode when receiving the (PAGE_NOT_PRESENT) signal. After the
-requested page is populated by the worker, another signal (PAGE_READY)
-is sent from host to guest. Guest wakes up the (faulting) process when
-receiving the (PAGE_READY) signal.
+Although the SMCCC specification provides some limited functionality for
+describing the presence of hypervisor and firmware services, this is
+generally applicable only to functions designated as "Arm Architecture
+Service Functions" and no portable discovery mechanism is provided for
+standard hypervisor services, despite having a designated range of
+function identifiers reserved by the specification.
 
-The signals are conveyed through control block. The control block physical
-address is passed from guest to host through dedicated KVM vendor specific
-hypercall. The control block is visible and accessible by host and guest
-in the mean while. The hypercall is also used to enable, disable, configure
-the functionality. Notifications, by injected abort data exception, are
-fired when there are pending signals. The exception handler will be invoked
-in guest kernel.
+In an attempt to avoid the need for additional firmware changes every
+time a new function is added, introduce a UID to identify the service
+provider as being compatible with KVM. Once this has been established,
+additional services can be discovered via a feature bitmap.
 
-Testing
-=======
-The tests are carried on the following machine. A guest with single vCPU
-and 4GB memory is started. Also, the QEMU process is put into memory cgroup
-(v1) whose memory limit is set to 2GB. In the guest, there are two threads,
-which are memory bound and CPU bound separately. The memory bound thread
-allocates all available memory, accesses and them free them. The CPU bound
-thread simply executes block of "nop". The test is carried out for 5 time
-continuously and the average number (per minute) of executed blocks in the
-CPU bound thread is taken as indicator of improvement.
+Cc: Marc Zyngier <maz@kernel.org>
+Signed-off-by: Will Deacon <will@kernel.org>
+Signed-off-by: Gavin Shan <gshan@redhat.com>
+---
+ arch/arm64/include/asm/hypervisor.h | 11 +++++++++
+ arch/arm64/kernel/setup.c           | 35 +++++++++++++++++++++++++++++
+ include/linux/arm-smccc.h           | 26 +++++++++++++++++++++
+ 3 files changed, 72 insertions(+)
 
-   Vendor: GIGABYTE   CPU: 224 x Cavium ThunderX2(R) CPU CN9975 v2.2 @ 2.0GHz
-   Memory: 32GB       Disk: Fusion-MPT SAS-3 (PCIe3.0 x8)
-
-   Without-APF: 7029030180/minute = avg(7559625120 5962155840 7823208540
-                                        7629633480 6170527920)
-   With-APF:    8286827472/minute = avg(8464584540 8177073360 8262723180
-                                        8095084020 8434672260)
-   Outcome:     +17.8%
-
-Another test case is to measure the time consumed by the application, but
-with the CPU-bound thread disabled.
-
-   Without-APF: 40.3s = avg(40.6 39.3 39.2 41.6 41.2)
-   With-APF:    40.8s = avg(40.6 41.1 40.9 41.0 40.7)
-   Outcome:     +1.2%
-
-I also have some code in the host to capture the number of async page faults,
-time used to do swapin and its maximal/minimal values when async page fault
-is enabled. During the test, the CPU-bound thread is disabled. There is about
-30% of the time used to do swapin.
-
-   Number of async page fault:     7555 times
-   Total time used by application: 42.2 seconds
-   Total time used by swapin:      12.7 seconds   (30%)
-         Minimal swapin time:      36.2 us
-         Maximal swapin time:      55.7 ms
-
-Changelog
-=========
-RFCv1 -> RFCv2
-   * Rebase to 5.7.rc3
-   * Performance data                                                   (Marc Zyngier)
-   * Replace IMPDEF system register with KVM vendor specific hypercall  (Mark Rutland)
-   * Based on Will's KVM vendor hypercall probe mechanism               (Will Deacon)
-   * Don't use IMPDEF DFSC (0x43). Async page fault reason is conveyed
-     by the control block                                               (Mark Rutland)
-   * Delayed wakeup mechanism in guest kernel                           (Gavin Shan)
-   * Stability improvement in the guest kernel: delayed wakeup mechanism,
-     external abort disallowed region, lazily clear async page fault,
-     disabled interrupt on acquiring the head's lock and so on          (Gavin Shan)
-   * Stability improvement in the host kernel: serialized async page
-     faults etc.                                                        (Gavin Shan)
-   * Performance improvement in guest kernel: percpu sleeper head       (Gavin Shan)
-
-Gavin Shan (7):
-  kvm/arm64: Rename kvm_vcpu_get_hsr() to kvm_vcpu_get_esr()
-  kvm/arm64: Detach ESR operator from vCPU struct
-  kvm/arm64: Replace hsr with esr
-  kvm/arm64: Export kvm_handle_user_mem_abort() with prefault mode
-  kvm/arm64: Support async page fault
-  kernel/sched: Add cpu_rq_is_locked()
-  arm64: Support async page fault
-
-Will Deacon (2):
-  arm64: Probe for the presence of KVM hypervisor services during boot
-  arm/arm64: KVM: Advertise KVM UID to guests via SMCCC
-
- arch/arm64/Kconfig                       |  11 +
- arch/arm64/include/asm/exception.h       |   3 +
- arch/arm64/include/asm/hypervisor.h      |  11 +
- arch/arm64/include/asm/kvm_emulate.h     |  83 +++--
- arch/arm64/include/asm/kvm_host.h        |  47 +++
- arch/arm64/include/asm/kvm_para.h        |  40 +++
- arch/arm64/include/uapi/asm/Kbuild       |   2 -
- arch/arm64/include/uapi/asm/kvm_para.h   |  22 ++
- arch/arm64/kernel/entry.S                |  33 ++
- arch/arm64/kernel/process.c              |   4 +
- arch/arm64/kernel/setup.c                |  35 ++
- arch/arm64/kvm/Kconfig                   |   1 +
- arch/arm64/kvm/Makefile                  |   2 +
- arch/arm64/kvm/handle_exit.c             |  48 +--
- arch/arm64/kvm/hyp/switch.c              |  33 +-
- arch/arm64/kvm/hyp/vgic-v2-cpuif-proxy.c |   7 +-
- arch/arm64/kvm/inject_fault.c            |   4 +-
- arch/arm64/kvm/sys_regs.c                |  38 +-
- arch/arm64/mm/fault.c                    | 434 +++++++++++++++++++++++
- include/linux/arm-smccc.h                |  32 ++
- include/linux/sched.h                    |   1 +
- kernel/sched/core.c                      |   8 +
- virt/kvm/arm/arm.c                       |  40 ++-
- virt/kvm/arm/async_pf.c                  | 335 +++++++++++++++++
- virt/kvm/arm/hyp/aarch32.c               |   4 +-
- virt/kvm/arm/hyp/vgic-v3-sr.c            |   7 +-
- virt/kvm/arm/hypercalls.c                |  37 +-
- virt/kvm/arm/mmio.c                      |  27 +-
- virt/kvm/arm/mmu.c                       |  69 +++-
- 29 files changed, 1264 insertions(+), 154 deletions(-)
- create mode 100644 arch/arm64/include/asm/kvm_para.h
- create mode 100644 arch/arm64/include/uapi/asm/kvm_para.h
- create mode 100644 virt/kvm/arm/async_pf.c
-
+diff --git a/arch/arm64/include/asm/hypervisor.h b/arch/arm64/include/asm/hypervisor.h
+index f9cc1d021791..91e4bd890819 100644
+--- a/arch/arm64/include/asm/hypervisor.h
++++ b/arch/arm64/include/asm/hypervisor.h
+@@ -2,6 +2,17 @@
+ #ifndef _ASM_ARM64_HYPERVISOR_H
+ #define _ASM_ARM64_HYPERVISOR_H
+ 
++#include <linux/arm-smccc.h>
+ #include <asm/xen/hypervisor.h>
+ 
++static inline bool kvm_arm_hyp_service_available(u32 func_id)
++{
++	extern DECLARE_BITMAP(__kvm_arm_hyp_services, ARM_SMCCC_KVM_NUM_FUNCS);
++
++	if (func_id >= ARM_SMCCC_KVM_NUM_FUNCS)
++		return -EINVAL;
++
++	return test_bit(func_id, __kvm_arm_hyp_services);
++}
++
+ #endif
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 3fd2c11c09fc..61c3774c7bc9 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -7,6 +7,7 @@
+  */
+ 
+ #include <linux/acpi.h>
++#include <linux/arm-smccc.h>
+ #include <linux/export.h>
+ #include <linux/kernel.h>
+ #include <linux/stddef.h>
+@@ -275,6 +276,39 @@ static int __init reserve_memblock_reserved_regions(void)
+ arch_initcall(reserve_memblock_reserved_regions);
+ 
+ u64 __cpu_logical_map[NR_CPUS] = { [0 ... NR_CPUS-1] = INVALID_HWID };
++DECLARE_BITMAP(__kvm_arm_hyp_services, ARM_SMCCC_KVM_NUM_FUNCS) = { };
++
++static void __init kvm_init_hyp_services(void)
++{
++	int i;
++	struct arm_smccc_res res;
++
++	if (psci_ops.smccc_version == SMCCC_VERSION_1_0)
++		return;
++
++	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_CALL_UID_FUNC_ID, &res);
++	if (res.a0 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_0 ||
++	    res.a1 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_1 ||
++	    res.a2 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_2 ||
++	    res.a3 != ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_3)
++		return;
++
++	memset(&res, 0, sizeof(res));
++	arm_smccc_1_1_invoke(ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID, &res);
++	for (i = 0; i < 32; ++i) {
++		if (res.a0 & (i))
++			set_bit(i + (32 * 0), __kvm_arm_hyp_services);
++		if (res.a1 & (i))
++			set_bit(i + (32 * 1), __kvm_arm_hyp_services);
++		if (res.a2 & (i))
++			set_bit(i + (32 * 2), __kvm_arm_hyp_services);
++		if (res.a3 & (i))
++			set_bit(i + (32 * 3), __kvm_arm_hyp_services);
++	}
++
++	pr_info("KVM hypervisor services detected (0x%08lx 0x%08lx 0x%08lx 0x%08lx)\n",
++		res.a3, res.a2, res.a1, res.a0);
++}
+ 
+ void __init setup_arch(char **cmdline_p)
+ {
+@@ -344,6 +378,7 @@ void __init setup_arch(char **cmdline_p)
+ 	else
+ 		psci_acpi_init();
+ 
++	kvm_init_hyp_services();
+ 	init_bootcpu_ops();
+ 	smp_init_cpus();
+ 	smp_build_mpidr_hash();
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 59494df0f55b..bdc0124a064a 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -46,11 +46,14 @@
+ #define ARM_SMCCC_OWNER_OEM		3
+ #define ARM_SMCCC_OWNER_STANDARD	4
+ #define ARM_SMCCC_OWNER_STANDARD_HYP	5
++#define ARM_SMCCC_OWNER_VENDOR_HYP	6
+ #define ARM_SMCCC_OWNER_TRUSTED_APP	48
+ #define ARM_SMCCC_OWNER_TRUSTED_APP_END	49
+ #define ARM_SMCCC_OWNER_TRUSTED_OS	50
+ #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
+ 
++#define ARM_SMCCC_FUNC_QUERY_CALL_UID	0xff01
++
+ #define ARM_SMCCC_QUIRK_NONE		0
+ #define ARM_SMCCC_QUIRK_QCOM_A6		1 /* Save/restore register a6 */
+ 
+@@ -77,6 +80,29 @@
+ 			   ARM_SMCCC_SMC_32,				\
+ 			   0, 0x7fff)
+ 
++#define ARM_SMCCC_VENDOR_HYP_CALL_UID_FUNC_ID				\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
++			   ARM_SMCCC_FUNC_QUERY_CALL_UID)
++
++/* KVM UID value: 28b46fb6-2ec5-11e9-a9ca-4b564d003a74 */
++#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_0	0xb66fb428U
++#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_1	0xe911c52eU
++#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_2	0x564bcaa9U
++#define ARM_SMCCC_VENDOR_HYP_UID_KVM_REG_3	0x743a004dU
++
++/* KVM "vendor specific" services */
++#define ARM_SMCCC_KVM_FUNC_FEATURES		0
++#define ARM_SMCCC_KVM_FUNC_FEATURES_2		127
++#define ARM_SMCCC_KVM_NUM_FUNCS			128
++
++#define ARM_SMCCC_VENDOR_HYP_KVM_FEATURES_FUNC_ID			\
++	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
++			   ARM_SMCCC_SMC_32,				\
++			   ARM_SMCCC_OWNER_VENDOR_HYP,			\
++			   ARM_SMCCC_KVM_FUNC_FEATURES)
++
+ #ifndef __ASSEMBLY__
+ 
+ #include <linux/linkage.h>
 -- 
 2.23.0
 
