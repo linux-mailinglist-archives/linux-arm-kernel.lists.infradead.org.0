@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1F861CA600
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 10:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99B031CA625
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 10:33:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=q/AaFo6SMIT5qItVOUUtuZWLSrf6MwVWIIg9rAsRXw8=; b=GO1dkPkqclHk5J53rpXHfZ90K
-	JImmrSk6aQYp36Ik6Meq+2s+btUcBLqNjapPG2sSpNVWyz4mW7qdUg6cVidfI94WbLlrf84PlnkRC
-	6vkyt1+D+Zw9PFWmMzNdLrvw3NUPu4dWJ83jPrJ1mGJvrZNVJSVJigyDPVMMGNMTljNoR6UtlNuMv
-	agiZ+/UEqt4knDRVa852AKk4szXdAbgb1KIXFgLf6UlIcN0tkbUgXrCFhFNKZQGkFv8OkGkuLlwu2
-	a2jFeXcIWk33Lni+PLOWvsXw/G9xIQ4iF/k98BoTXjZBQF0ffKPhJGjkZ0pZOdrbpmYTXEmDL2I+P
-	0r4LxSJwA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4OB8eJJcY5ZZYNWxyThxTBJPEuVGaxYQ8OIf+KE0tGQ=; b=VUocbyffBbK0qk
+	/3vVN79wluqtYjcM9GNDrAiLAfay05uZc62oLpw6MPYwewbjyHCP1aYpdnHqkCHiJ5Has4jHIcCaO
+	3RHj4dlIPJTPPOVi04Py9w7L2cljf1q5CmhxgUYToieDM8hC7yWPICLxloYWFXbmRjocq4dMLt3mY
+	DcA+KyHERztc18ewtPZlL7ZF+BulaqchGtfzP2nl+5PAkkiAk2x5dyQgbllH17MrwJ0Xmdt1dPB36
+	p2PqV4kFeH6MM2y0pPE7Kazu8XqbTCZJpM6lfbsdexWEMly9L+7WpZMh0UMghghOuZ3pJTA+nK2fR
+	unCdhp3Qzd/fXT11rZng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWyJr-0002Pe-UL; Fri, 08 May 2020 08:25:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWyJk-0002Nc-6T
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 08:25:13 +0000
-Received: from linux-8ccs.fritz.box (p57A239F2.dip0.t-ipconnect.de
- [87.162.57.242])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AAAE208CA;
- Fri,  8 May 2020 08:25:10 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1588926311;
- bh=nXOlXreEj4ITmMhrknV0ABFkeWV53vYLs9Lxe0vrS9c=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Fgqadvh0KYrgQ+vVt7gNXOSWy+5bu8SWM9NpQUF3xDcwcDDKiRS6/BXu91SeQwo++
- AhR9oqCCV7WjvhdGVo7TTrdj5sCxdS+sTJWlXkGTYtI1yGWrJswnZ+ioYIZPOX+A9E
- ftmv7/n/dkq5KNcqkCNzg1YJOkatQjPbSjVxxxuU=
-Date: Fri, 8 May 2020 10:25:07 +0200
-From: Jessica Yu <jeyu@kernel.org>
-To: Vincent Whitchurch <vincent.whitchurch@axis.com>
-Subject: Re: [PATCH 1/2] module: allow arch overrides for .init section names
-Message-ID: <20200508082504.GA15302@linux-8ccs.fritz.box>
-References: <20200506152533.31286-1-vincent.whitchurch@axis.com>
+	id 1jWyRn-00060C-1n; Fri, 08 May 2020 08:33:31 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jWyRT-0005wZ-8E
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 08:33:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 021CA1FB;
+ Fri,  8 May 2020 01:33:10 -0700 (PDT)
+Received: from [10.163.73.155] (unknown [10.163.73.155])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB1ED3F305;
+ Fri,  8 May 2020 01:33:06 -0700 (PDT)
+Subject: Re: [PATCH V3 04/16] arm64/cpufeature: Introduce ID_PFR2 CPU register
+To: Will Deacon <will@kernel.org>
+References: <1588426445-24344-1-git-send-email-anshuman.khandual@arm.com>
+ <1588426445-24344-5-git-send-email-anshuman.khandual@arm.com>
+ <20200505111241.GF19710@willie-the-truck>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <918e2dfb-4b3b-c1e6-3151-c81ac9f416b6@arm.com>
+Date: Fri, 8 May 2020 14:02:35 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200506152533.31286-1-vincent.whitchurch@axis.com>
-X-OS: Linux linux-8ccs 4.12.14-lp150.12.61-default x86_64
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200505111241.GF19710@willie-the-truck>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_012512_265991_B9E977F8 
-X-CRM114-Status: GOOD (  11.50  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200508_013311_364176_B9665507 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,77 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@axis.com, linux@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+++ Vincent Whitchurch [06/05/20 17:25 +0200]:
->ARM stores unwind information for .init.text in sections named
->.ARM.extab.init.text and .ARM.exidx.init.text.  Since those aren't
->currently recognized as init sections, they're allocated along with the
->core section, and relocation fails if the core and the init section are
->allocated from different regions and can't reach other.
->
->  final section addresses:
->        ...
->        0x7f800000 .init.text
->        ..
->        0xcbb54078 .ARM.exidx.init.text
->        ..
->
-> section 16 reloc 0 sym '': relocation 42 out of range (0xcbb54078 ->
-> 0x7f800000)
->
->Allow architectures to override the section name so that ARM can fix
->this.
->
->Signed-off-by: Vincent Whitchurch <vincent.whitchurch@axis.com>
->---
-> include/linux/moduleloader.h | 2 ++
-> kernel/module.c              | 9 +++++++--
-> 2 files changed, 9 insertions(+), 2 deletions(-)
->
->diff --git a/include/linux/moduleloader.h b/include/linux/moduleloader.h
->index ca92aea8a6bd..07d079085f11 100644
->--- a/include/linux/moduleloader.h
->+++ b/include/linux/moduleloader.h
->@@ -29,6 +29,8 @@ void *module_alloc(unsigned long size);
-> /* Free memory returned from module_alloc. */
-> void module_memfree(void *module_region);
->
->+bool module_init_section(const char *name);
->+
 
-Hi, I just have two small nits. Could you please add a comment on top of
-module_init_section to document it? (similar to module_exit_section())
 
-> /* Determines if the section name is an exit section (that is only used during
->  * module unloading)
->  */
->diff --git a/kernel/module.c b/kernel/module.c
->index 33569a01d6e1..a5f2b4e1ef53 100644
->--- a/kernel/module.c
->+++ b/kernel/module.c
->@@ -2370,6 +2370,11 @@ static long get_offset(struct module *mod, unsigned int *size,
-> 	return ret;
-> }
->
->+bool __weak module_init_section(const char *name)
->+{
->+	return strstarts(name, ".init");
->+}
->+
+On 05/05/2020 04:42 PM, Will Deacon wrote:
+> On Sat, May 02, 2020 at 07:03:53PM +0530, Anshuman Khandual wrote:
+>> This adds basic building blocks required for ID_PFR2 CPU register which
+>> provides information about the AArch32 programmers model which must be
+>> interpreted along with ID_PFR0 and ID_PFR1 CPU registers. This is added
+>> per ARM DDI 0487F.a specification.
+>>
+>> Cc: Catalin Marinas <catalin.marinas@arm.com>
+>> Cc: Will Deacon <will@kernel.org>
+>> Cc: Marc Zyngier <maz@kernel.org>
+>> Cc: Mark Rutland <mark.rutland@arm.com>
+>> Cc: James Morse <james.morse@arm.com>
+>> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> Cc: kvmarm@lists.cs.columbia.edu
+>> Cc: linux-arm-kernel@lists.infradead.org
+>> Cc: linux-kernel@vger.kernel.org
+>>
+>> Suggested-by: Mark Rutland <mark.rutland@arm.com>
+>> Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+>> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+>> ---
+>>  arch/arm64/include/asm/cpu.h    |  1 +
+>>  arch/arm64/include/asm/sysreg.h |  4 ++++
+>>  arch/arm64/kernel/cpufeature.c  | 11 +++++++++++
+>>  arch/arm64/kernel/cpuinfo.c     |  1 +
+>>  arch/arm64/kvm/sys_regs.c       |  2 +-
+>>  5 files changed, 18 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/include/asm/cpu.h b/arch/arm64/include/asm/cpu.h
+>> index b4a40535a3d8..464e828a994d 100644
+>> --- a/arch/arm64/include/asm/cpu.h
+>> +++ b/arch/arm64/include/asm/cpu.h
+>> @@ -46,6 +46,7 @@ struct cpuinfo_arm64 {
+>>  	u32		reg_id_mmfr3;
+>>  	u32		reg_id_pfr0;
+>>  	u32		reg_id_pfr1;
+>> +	u32		reg_id_pfr2;
+>>  
+>>  	u32		reg_mvfr0;
+>>  	u32		reg_mvfr1;
+>> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+>> index e5317a6367b6..c977449e02db 100644
+>> --- a/arch/arm64/include/asm/sysreg.h
+>> +++ b/arch/arm64/include/asm/sysreg.h
+>> @@ -153,6 +153,7 @@
+>>  #define SYS_MVFR0_EL1			sys_reg(3, 0, 0, 3, 0)
+>>  #define SYS_MVFR1_EL1			sys_reg(3, 0, 0, 3, 1)
+>>  #define SYS_MVFR2_EL1			sys_reg(3, 0, 0, 3, 2)
+>> +#define SYS_ID_PFR2_EL1			sys_reg(3, 0, 0, 3, 4)
+> 
+> nit: but please group these defines by name rather than encoding.
 
-Could you move this next to module_exit_section()? Just trying to keep
-similar functions together. Otherwise, the patch looks fine to me.
-
-Thanks!
-
-Jessica
-
+Sure, will do the same for all new register being added in the series.
 
 _______________________________________________
 linux-arm-kernel mailing list
