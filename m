@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 034951CB6EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 20:16:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2E671CB77E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 20:40:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=kTgtVedBvQVbXcxKFoPjkuaUDF2N+MwLfhyBoa6o9jo=; b=gJo3SDcl7kQ0YvFx6EgNQ9fLQV
-	0VzKX9bZdEamu6ZD4FVjcYHLLemiStdff1d7VRuJzZrqfkJdTgy6WlBDxo4vsw/MSdmAvFcCz9kmH
-	O6suOnOfuzwWAg35DFHKihShjFKwF3yHbekdyLI8aamzcAzMlgeaLmfmkzU8T2tlei0H2ovm+Htkf
-	g48CI6J2yXgk2mdlsx2b8ncgRMRt08Z7R+GtusxYw80+cUI1ciKU8wZ9TX/BPKdgzoNhr5Y50UwR0
-	f83x8TtJyrlfc798ROc8asJKF7AR+0mkuPiHKd9KOJPG/MP+CeGvIXTkEnyZWRgzcVSCvK1gHOzEI
-	RAFX0JEQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tJwJkCHPAlc9HHngUqO+c9B7UZo68qOQRVwnMw83xbI=; b=DjgFE6VbLSoMQn
+	fR/ILcH8O3arhGCbNnXVyuJOHlCpf5IjBQa01WBrgu/kQTk7QL5a2UcqztYHUQnnjYSm/J7DGjLt3
+	v42JYpf0MUAkGStmhfGMfp+k26+il1M7CKH+gNyjB76OTzzCoMV1jJnvhuZLItgr3apk22S1eDB+B
+	+zn+7zk43SXuBhiIBapSrZtp8x3mXp9TojZw2f8lO+WopOHCeykWPm7ZGe7nHahQNEXd0jkstPX/x
+	GMmhpEbHIc+lU/Q1A01tvfU2LEi6McwI2SqxAxRSJ3KGFRvdrPqFR2USKTUd4WZ+tqqcBCKcNbfIZ
+	eb0qZI79NZ90CeEc7U9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jX7YK-0008Pz-Tr; Fri, 08 May 2020 18:16:52 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jX7uV-00044x-1u; Fri, 08 May 2020 18:39:47 +0000
+Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jX7Xa-0007l2-Ju
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 18:16:08 +0000
-Received: by mail-pg1-x542.google.com with SMTP id d22so1230064pgk.3
+ id 1jX7uJ-00043r-9B
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 18:39:36 +0000
+Received: by mail-il1-x141.google.com with SMTP id i16so2309616ils.12
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 May 2020 11:16:06 -0700 (PDT)
+ Fri, 08 May 2020 11:39:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=cs.washington.edu; s=goo201206;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=1RkJFS+t50tivJwSHzxWQpizFYGiyRAPi5B/W8OYM90=;
- b=CCWu0LupJQSLY09+5kTFGNYiHYCgaMr3aDRuRcSjVMD7wkRduR4zrHrWLKa53mVjjP
- 9DMnW8euiPBliMtpPia67Qi698Z94wMFIWcXHzXx/3KnrghW58Dl0By0ArPQMx0jRC4E
- xAxlH1UM5bTdYo8pmzNqUBGKcKRxGOFWRpDAk=
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=RGIpRsn9hXDxHTNl/QnLM0SbzmG3DHjOVcysfR1ByLg=;
+ b=bqJnS5vane6smgkAuFEEcD0f6Ycc9yf0lJgeJRU4JjUw54yjKs7BXh8x7lk1vbGGnV
+ 0f+IMGeKn3Gw8E15EFVxSoihcpqVq3H2ka3HfRPYyf0OuTLXCPToeBb+OyVQEtZC7lHl
+ zuolyQtCP3X66zQBV9+hARMxLnivHPtSnxXf5rUK+0xz88gPQQ3kiIwNSw4silZ09ksy
+ iZesm817N+ct23uLjo+cnMxE5KHcCYtZJFFhLRXkIQCkpT0bZ5O/5lBtIwyt1tjgyZpr
+ XXPJFtNZ04z6cdHl7rsn9ul842f84tS91OI8taD3ChAh0ODWd61l9meBxJla50/OQul7
+ oA8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=1RkJFS+t50tivJwSHzxWQpizFYGiyRAPi5B/W8OYM90=;
- b=d1v13HGiLIz+GJQ1E8pIyJHHXsXZmAoLbmzOhrNNpormmTSFZQJeM3BEn0VGFkx7LP
- avDGLTtt9M/3sFguX9121N2EVeDQ3SeCDJe1kiZ8/TAhMcUR9YH+eCZi0UVV5Tq4f4In
- nvW5P/WLJLNESnWJPKrmYxsmwnaJ4njPwvT3yQcTkbr2574SS4oWBWEiV3NLu8XKGeZ7
- mBLV6ln5LikPSRSgAIuiV/TYOa+i8hKjqLzjsTEECoBznqcU2CuiKALxL7OL+EAlxRZ5
- 90nawlcHRP0ixIFrn71nGLawpDVUZs7tHWErdRXVJ708rV23EYucfaPpj+Tk6T7yjJz0
- W5hQ==
-X-Gm-Message-State: AGi0PuZMcEyH7q0/sYpgg5xlxDfwlVoMzS8OsZAFcT2NUrWk7OT/Zw09
- TFlEOyMFjBgecvhlMZc7XZTlPw==
-X-Google-Smtp-Source: APiQypKlpWm+EIgUVSCtoFz2t937EsJIcePxRHt5/hrRD9OkiuRJ1E5BYoVCYwVZF5C/mgLC1saWKA==
-X-Received: by 2002:aa7:951b:: with SMTP id b27mr4228455pfp.2.1588961765560;
- Fri, 08 May 2020 11:16:05 -0700 (PDT)
-Received: from localhost.localdomain (c-73-53-94-119.hsd1.wa.comcast.net.
- [73.53.94.119])
- by smtp.gmail.com with ESMTPSA id e11sm2349463pfl.85.2020.05.08.11.16.04
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 May 2020 11:16:05 -0700 (PDT)
-From: Luke Nelson <lukenels@cs.washington.edu>
-X-Google-Original-From: Luke Nelson <luke.r.nels@gmail.com>
-To: bpf@vger.kernel.org
-Subject: [PATCH bpf-next v2 3/3] bpf, arm64: Optimize ADD, SUB,
- JMP BPF_K using arm64 add/sub immediates
-Date: Fri,  8 May 2020 11:15:46 -0700
-Message-Id: <20200508181547.24783-4-luke.r.nels@gmail.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200508181547.24783-1-luke.r.nels@gmail.com>
-References: <20200508181547.24783-1-luke.r.nels@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=RGIpRsn9hXDxHTNl/QnLM0SbzmG3DHjOVcysfR1ByLg=;
+ b=WWUJFzZ35QYfzy/RvdQgBwBzRO09uUs8Kl3r/LP0YOJMzPdbR6u40n7Bc+A05lrgLy
+ jEeiwT51pfsQGCisbaW9fd6SJIESD/zxTzIpDc6njhp1yDaGDdAkalfy8Gcb7BaDz0rj
+ 2eeLWRjX91i+oJARz7UaQVliXgJi3Sb4qUVtW+GvFpj2a4r6v9edQJ7Gu0pE8oUUEtKH
+ d2GTmLdVJAmfUeZZQCV9OQJBljCqpzUzM0r/lL3tzldkMR07agmewq8ABsvj2Xm5KSyu
+ mDYbMJk4zng002CSf9OVisa4JeH3q+on+by1shfpJWwf3lpVe1TbgbiNgkzkJweg+qmU
+ ZrzQ==
+X-Gm-Message-State: AGi0PuYFqk1XIpRb4vCRj9xahjzGsZwRQvw7k5Gop41WbAHHthnHhZQu
+ pBNxpBYPDtOt7oLZHTmJ3+DmvWxadUloCq74GBNe6Q==
+X-Google-Smtp-Source: APiQypIK7HVLTAX4pxfdG4Np+jILsEOGqiII5aB+gQC6LJN5kcIhjqNVKZy0G/G/rBz+o1NbRC9W4C8NgLZeDmRHgVw=
+X-Received: by 2002:a92:aa07:: with SMTP id j7mr4467857ili.40.1588963173745;
+ Fri, 08 May 2020 11:39:33 -0700 (PDT)
+MIME-Version: 1.0
+References: <20200505140231.16600-1-brgl@bgdev.pl>
+ <20200505140231.16600-6-brgl@bgdev.pl>
+ <20200505103105.1c8b0ce3@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <CAMRc=Mf0ipaeLKhHCZaq2YeZKzi=QBAse7bEz2hHxXN5OL=ptg@mail.gmail.com>
+ <20200506101236.25a13609@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <CAMpxmJWckQdKvUGFDAJ1WMtD9WoGWmGe3kyKYhcfRT2nOB93xw@mail.gmail.com>
+ <20200507095315.1154a1a6@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <CAMpxmJUEk3itZs4HujJOXUiL80kmEvGBvLF0NFc2UQoVDVTWRg@mail.gmail.com>
+ <20200507155650.0c19229e@kicinski-fedora-pc1c0hjn.dhcp.thefacebook.com>
+ <c6e12eb6-d6ea-9ba9-4559-b2eda326601f@gmail.com>
+In-Reply-To: <c6e12eb6-d6ea-9ba9-4559-b2eda326601f@gmail.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Fri, 8 May 2020 20:39:22 +0200
+Message-ID: <CAMRc=MdKjZbHFfTYV12DjMet3sXbBht+qgiViddxs9csDvrf-Q@mail.gmail.com>
+Subject: Re: [PATCH 05/11] net: core: provide devm_register_netdev()
+To: Heiner Kallweit <hkallweit1@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_111606_672093_E910D644 
-X-CRM114-Status: GOOD (  14.54  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20200508_113935_393436_D189A122 
+X-CRM114-Status: GOOD (  16.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -94,148 +97,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Song Liu <songliubraving@fb.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Alexei Starovoitov <ast@kernel.org>,
- Will Deacon <will@kernel.org>, Daniel Borkmann <daniel@iogearbox.net>,
- Marc Zyngier <maz@kernel.org>, John Fastabend <john.fastabend@gmail.com>,
- clang-built-linux@googlegroups.com, linux-arm-kernel@lists.infradead.org,
- Zi Shen Lim <zlim.lnx@gmail.com>, Yonghong Song <yhs@fb.com>,
- Andrii Nakryiko <andriin@fb.com>, Xi Wang <xi.wang@gmail.com>,
- Luke Nelson <luke.r.nels@gmail.com>, Alexios Zavras <alexios.zavras@intel.com>,
- KP Singh <kpsingh@chromium.org>, Thomas Gleixner <tglx@linutronix.de>,
- Allison Randal <allison@lohutok.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- netdev@vger.kernel.org, Martin KaFai Lau <kafai@fb.com>,
- Christoffer Dall <christoffer.dall@linaro.org>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree <devicetree@vger.kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Fabien Parent <fparent@baylibre.com>, netdev <netdev@vger.kernel.org>,
+ Sean Wang <sean.wang@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The current code for BPF_{ADD,SUB} BPF_K loads the BPF immediate to a
-temporary register before performing the addition/subtraction. Similarly,
-BPF_JMP BPF_K cases load the immediate to a temporary register before
-comparison.
-
-This patch introduces optimizations that use arm64 immediate add, sub,
-cmn, or cmp instructions when the BPF immediate fits. If the immediate
-does not fit, it falls back to using a temporary register.
-
-Example of generated code for BPF_ALU64_IMM(BPF_ADD, R0, 2):
-
-without optimization:
-
-  24: mov x10, #0x2
-  28: add x7, x7, x10
-
-with optimization:
-
-  24: add x7, x7, #0x2
-
-The code could use A64_{ADD,SUB}_I directly and check if it returns
-AARCH64_BREAK_FAULT, similar to how logical immediates are handled.
-However, aarch64_insn_gen_add_sub_imm from insn.c prints error messages
-when the immediate does not fit, and it's simpler to check if the
-immediate fits ahead of time.
-
-Co-developed-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Xi Wang <xi.wang@gmail.com>
-Signed-off-by: Luke Nelson <luke.r.nels@gmail.com>
-Acked-by: Daniel Borkmann <daniel@iogearbox.net>
----
- arch/arm64/net/bpf_jit.h      |  8 ++++++++
- arch/arm64/net/bpf_jit_comp.c | 36 +++++++++++++++++++++++++++++------
- 2 files changed, 38 insertions(+), 6 deletions(-)
-
-diff --git a/arch/arm64/net/bpf_jit.h b/arch/arm64/net/bpf_jit.h
-index f36a779949e6..923ae7ff68c8 100644
---- a/arch/arm64/net/bpf_jit.h
-+++ b/arch/arm64/net/bpf_jit.h
-@@ -100,6 +100,14 @@
- /* Rd = Rn OP imm12 */
- #define A64_ADD_I(sf, Rd, Rn, imm12) A64_ADDSUB_IMM(sf, Rd, Rn, imm12, ADD)
- #define A64_SUB_I(sf, Rd, Rn, imm12) A64_ADDSUB_IMM(sf, Rd, Rn, imm12, SUB)
-+#define A64_ADDS_I(sf, Rd, Rn, imm12) \
-+	A64_ADDSUB_IMM(sf, Rd, Rn, imm12, ADD_SETFLAGS)
-+#define A64_SUBS_I(sf, Rd, Rn, imm12) \
-+	A64_ADDSUB_IMM(sf, Rd, Rn, imm12, SUB_SETFLAGS)
-+/* Rn + imm12; set condition flags */
-+#define A64_CMN_I(sf, Rn, imm12) A64_ADDS_I(sf, A64_ZR, Rn, imm12)
-+/* Rn - imm12; set condition flags */
-+#define A64_CMP_I(sf, Rn, imm12) A64_SUBS_I(sf, A64_ZR, Rn, imm12)
- /* Rd = Rn */
- #define A64_MOV(sf, Rd, Rn) A64_ADD_I(sf, Rd, Rn, 0)
- 
-diff --git a/arch/arm64/net/bpf_jit_comp.c b/arch/arm64/net/bpf_jit_comp.c
-index 083e5d8a5e2c..561a2fea9cdd 100644
---- a/arch/arm64/net/bpf_jit_comp.c
-+++ b/arch/arm64/net/bpf_jit_comp.c
-@@ -167,6 +167,12 @@ static inline int epilogue_offset(const struct jit_ctx *ctx)
- 	return to - from;
- }
- 
-+static bool is_addsub_imm(u32 imm)
-+{
-+	/* Either imm12 or shifted imm12. */
-+	return !(imm & ~0xfff) || !(imm & ~0xfff000);
-+}
-+
- /* Stack must be multiples of 16B */
- #define STACK_ALIGN(sz) (((sz) + 15) & ~15)
- 
-@@ -479,13 +485,25 @@ static int build_insn(const struct bpf_insn *insn, struct jit_ctx *ctx,
- 	/* dst = dst OP imm */
- 	case BPF_ALU | BPF_ADD | BPF_K:
- 	case BPF_ALU64 | BPF_ADD | BPF_K:
--		emit_a64_mov_i(is64, tmp, imm, ctx);
--		emit(A64_ADD(is64, dst, dst, tmp), ctx);
-+		if (is_addsub_imm(imm)) {
-+			emit(A64_ADD_I(is64, dst, dst, imm), ctx);
-+		} else if (is_addsub_imm(-imm)) {
-+			emit(A64_SUB_I(is64, dst, dst, -imm), ctx);
-+		} else {
-+			emit_a64_mov_i(is64, tmp, imm, ctx);
-+			emit(A64_ADD(is64, dst, dst, tmp), ctx);
-+		}
- 		break;
- 	case BPF_ALU | BPF_SUB | BPF_K:
- 	case BPF_ALU64 | BPF_SUB | BPF_K:
--		emit_a64_mov_i(is64, tmp, imm, ctx);
--		emit(A64_SUB(is64, dst, dst, tmp), ctx);
-+		if (is_addsub_imm(imm)) {
-+			emit(A64_SUB_I(is64, dst, dst, imm), ctx);
-+		} else if (is_addsub_imm(-imm)) {
-+			emit(A64_ADD_I(is64, dst, dst, -imm), ctx);
-+		} else {
-+			emit_a64_mov_i(is64, tmp, imm, ctx);
-+			emit(A64_SUB(is64, dst, dst, tmp), ctx);
-+		}
- 		break;
- 	case BPF_ALU | BPF_AND | BPF_K:
- 	case BPF_ALU64 | BPF_AND | BPF_K:
-@@ -639,8 +657,14 @@ static int build_insn(const struct bpf_insn *insn, struct jit_ctx *ctx,
- 	case BPF_JMP32 | BPF_JSLT | BPF_K:
- 	case BPF_JMP32 | BPF_JSGE | BPF_K:
- 	case BPF_JMP32 | BPF_JSLE | BPF_K:
--		emit_a64_mov_i(is64, tmp, imm, ctx);
--		emit(A64_CMP(is64, dst, tmp), ctx);
-+		if (is_addsub_imm(imm)) {
-+			emit(A64_CMP_I(is64, dst, imm), ctx);
-+		} else if (is_addsub_imm(-imm)) {
-+			emit(A64_CMN_I(is64, dst, -imm), ctx);
-+		} else {
-+			emit_a64_mov_i(is64, tmp, imm, ctx);
-+			emit(A64_CMP(is64, dst, tmp), ctx);
-+		}
- 		goto emit_cond_jmp;
- 	case BPF_JMP | BPF_JSET | BPF_K:
- 	case BPF_JMP32 | BPF_JSET | BPF_K:
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+cHQuLCA4IG1haiAyMDIwIG8gMDc6NTQgSGVpbmVyIEthbGx3ZWl0IDxoa2FsbHdlaXQxQGdtYWls
+LmNvbT4gbmFwaXNhxYIoYSk6Cj4KPiBPbiAwOC4wNS4yMDIwIDAwOjU2LCBKYWt1YiBLaWNpbnNr
+aSB3cm90ZToKPiA+IE9uIFRodSwgNyBNYXkgMjAyMCAxOTowMzo0NCArMDIwMCBCYXJ0b3N6IEdv
+bGFzemV3c2tpIHdyb3RlOgo+ID4+PiBUbyBpbXBsZW1lbnQgRWR3aW4ncyBzdWdnZXN0aW9uPyBN
+YWtlcyBzZW5zZSwgYnV0IEknbSBubyBleHBlcnQsIGxldCdzCj4gPj4+IGFsc28gQ0MgSGVpbmVy
+IHNpbmNlIGhlIHdhcyBhc2tpbmcgYWJvdXQgaXQgbGFzdCB0aW1lLgo+ID4+Cj4gPj4gWWVzLCBi
+ZWNhdXNlIHRha2luZyB0aGUgbGFzdCBiaXQgb2YgcHJpdl9mbGFncyBmcm9tIG5ldF9kZXZpY2Ug
+c2VlbXMKPiA+PiB0byBiZSBtb3JlIGNvbnRyb3ZlcnNpYWwgYnV0IGlmIG5ldCBtYWludGFpbmVy
+cyBhcmUgZmluZSB3aXRoIHRoYXQgSQo+ID4+IGNhbiBzaW1wbHkgZ28gd2l0aCB0aGUgY3VycmVu
+dCBhcHByb2FjaC4KPiA+Cj4gPiBGcm9tIG15IHBlcnNwZWN0aXZlIHdoYXQgRWR3aW4gc3VnZ2Vz
+dHMgbWFrZXMgc2Vuc2UuIEFwYXJ0IGZyb20KPiA+IGxpdHRsZSB1c2UgZm9yIHRoZSBiaXQgYWZ0
+ZXIgcHJvYmUsIGl0IGFsc28gc2VlbXMgY2xlYW5lciBmb3IgZGV2cmVzCj4gPiB0byBiZSBhYmxl
+IHRvIHJlY29nbml6ZSBtYW5hZ2VkIG9iamVjdHMgYmFzZWQgb24gaXRzIG93biBzdGF0ZS4KPiA+
+Cj4gV2hhdCBJIHdhcyBzYXlpbmcgaXMgdGhhdCB3ZSBzaG91bGQgY2F0Y2ggdGhlIGNhc2UgdGhh
+dCBhIGRyaXZlcgo+IGF1dGhvciB1c2VzIGEgZGV2aWNlLW1hbmFnZWQgcmVnaXN0ZXIoKSB3L28g
+ZG9pbmcgdGhlIHNhbWUgZm9yIHRoZQo+IGFsbG9jKCkuIEEgY29yZSBmdW5jdGlvbiBzaG91bGQg
+bm90IGFzc3VtZSB0aGF0IGRyaXZlciBhdXRob3JzIGRvCj4gc2FuZSB0aGluZ3Mgb25seS4KPiBJ
+IGRvbid0IGhhdmUgYSBzdHJvbmcgcHJlZmVyZW5jZSBob3cgaXQgc2hvdWxkIGJlIGRvbmUuCj4g
+Q29uc2lkZXJpbmcgd2hhdCBpcyBiZWluZyBkaXNjdXNzZWQsIGhhdmUgYSBsb29rIGF0IGdldF9w
+Y2lfZHIoKSBhbmQKPiBmaW5kX3BjaV9kcigpLCB0aGV5IGRlYWwgd2l0aCBtYW5hZ2luZyB3aGlj
+aCBwYXJ0cyBvZiB0aGUgUENJCj4gc3Vic3lzdGVtIGFyZSBkZXZpY2UtbWFuYWdlZC4KClllcywg
+SSBoYXZlIC0gdGhhdCdzIHdoeSBJIGFza2VkIGlmIGFueW9uZSBvYmplY3RzIHRvIG1lIG1vdmlu
+ZyBhbGwKbmV0d29ya2luZyBkZXZyZXMgZnVuY3Rpb25zIGludG8gdGhlaXIgb3duIHNvdXJjZSBm
+aWxlLiBUaGUgcmVhc29uIGZvcgp0aGF0IGJlaW5nOiBkZXZyZXNfZmluZCgpIG5lZWRzIHRvIGtu
+b3cgdGhlIGFkZHJlc3Mgb2YgdGhlIHJlbGVhc2UKZnVuY3Rpb24sIG1lYW53aGlsZSBkZXZtX3Jl
+Z2lzdGVyX25ldGRldigpIHdvdWxkIGhhdmUgdG8gZ28gaW50bwpuZXQvY29yZSwgd2hpbGUgZGV2
+bV9hbGxvY19ldGhlcmRldigpIGxpdmVzIGluIG5ldC9ldGhlcm5ldC4KCkJhcnQKCl9fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
+bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
+bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
