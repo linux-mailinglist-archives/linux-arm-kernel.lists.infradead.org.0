@@ -2,83 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91E881CBA5D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:03:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 485A71CBA73
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 00:10:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XJHVQUsiP2vqdNHEPSgY7gPzUJDrqLxW7EQ1cEEUiq4=; b=nn8JMeQ2DfofcP
-	xifRTVfzAbQIv5XDYgbK7yDA6F39ENI+IOmkQBBOWIEJ8fdZ8WcY/okAvwzRm7NKBabv0cb+aEUlm
-	wBEJmXEB+0LqT0SKuzm19dZkxyqI4i1f5EdD1teiLIHUWhvbL7xvE5BoOlhUOF/PIuxhBltyUbHHa
-	mJlejvRLA1v3+q+HnUoQKL6uPyEN36NB5m98cEgquGRklYvtZ27XExiWZH2FTeoa9EdQZV7sxuip5
-	oykYidtLZss8twqRDW7Xf2vz85HhcS0J665K3GHt0hxTS7TGK2CtYoklSPRHd5y/wvKW/FC8vwTXT
-	3FaSzWq0iq0Wf0QhHh/w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GI48DLcrexuuVsn/47ZjLwapSbFOMBI8PY429DYzTwA=; b=P+u2lPdQq8hPZJ
+	WoXBUy2OQjKyFjMguBUO8vzLQblPOZO4zsdlQdv2gPUWavuv2mZybKD0m1jtdyRHwzHvgDgw6Wf0R
+	2MAyXoDHS1BRXV0YDvFB8PNnehAtJraoZ+yb3UK+dJN6yNsZAulIH0QWNCKGyqixulNo9Nt7Pbj7+
+	G0TxogZZVSV3kNnNlbSNMd/BJrMwV6EaVasz70AaqmDdHOvAzZGCsYP8cQiQfHiHBBwZRs5ENvWCe
+	mUa0lkMxFSKaHw2VCWJCC6pxn2xQsszx42WmRq+ZWG8s0ZFh61BkcPVPQtmIOcyVB2INxgbUsUsbM
+	pFG3w6wT9Tmu7ylk4krg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXB51-0005XO-Kg; Fri, 08 May 2020 22:02:51 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jXBBt-00077z-Tk; Fri, 08 May 2020 22:09:57 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXB4u-0005Wx-F0; Fri, 08 May 2020 22:02:45 +0000
-Received: by mail-lj1-x242.google.com with SMTP id h4so3252930ljg.12;
- Fri, 08 May 2020 15:02:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lhCsaegrOoZCl6vEZUTaZb3RsjsXs48GL1YIxAy2vMI=;
- b=ImULIUI8vS4rl30btrShLAv/odGxPb+iKIwLWS8bpsq8EqlczEXeOHncOPDLih+Px7
- uU9n0bwtBXNBGGJiHNgj2kmCMPOE/IW08jsh+I0AQzL0tbzcGAid1l/wBxL8affWHSaS
- 4Yyd5V+/8Lk+UCopi4EWT9m7UrILlhs6fl3GdoOg80g6tMmwJrTnA10sFgEM/glQeJZZ
- 59XRifwnZOajpkXY518U5eH1D8yv/L6GtZ/9UMmJ9jx7D0pQUifX0VS5qIK0wHrIcTVz
- Lgpsp5hODw/VsKDu1DTC1gDjGj6Oz5o14hDM8BEMOAB0TeEaReBYn6DELaFqyzEcMscj
- 0JtA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=lhCsaegrOoZCl6vEZUTaZb3RsjsXs48GL1YIxAy2vMI=;
- b=rfoEnksOdTvdH32dmV5bn/Rdv/MusSm84eFu1JbuwbkInoIznFBlCj2agtqDTJAsSh
- nw5Hg+jv9V8nKp8u01mTMJtI2VszjSfLduwBqyvK0X/enp2Z2uEvHRavip1px6JJbINl
- SVCK0TLaWAuKnYQtD6FbaeB3Veco3OR47yBmHzdKUMN27E2yb4KjYug4O28r1Ii+Rs9g
- dgMULkmUdK2i8eu38wf8Ka7sU+Tkwm6wT40i/cfeyQIFGsT8/VU5oaK6c5l7SbTYph7N
- gLf3gfLXmdV+3qeE1P0+4MPkSiDw6JyRChsG+k8BkGYWnpNq8JchRYFHeIvzVA3hYJ6X
- +qeg==
-X-Gm-Message-State: AOAM532HDQlozAjI24arBwe38SotPcc3lAQURtTLoicLOrc129iclvhC
- HdVPDm+XNwdlSb+9veKLo9I=
-X-Google-Smtp-Source: ABdhPJw5V0LEup6lO2Xmzty14DNHX7dQZQi4Pw21Q/XfLitxOcS1zS+lmtgxbzVOiXxhlLAowrwfww==
-X-Received: by 2002:a05:651c:505:: with SMTP id o5mr3196487ljp.0.1588975362361; 
- Fri, 08 May 2020 15:02:42 -0700 (PDT)
-Received: from localhost.localdomain (h-158-174-22-22.NA.cust.bahnhof.se.
- [158.174.22.22])
- by smtp.gmail.com with ESMTPSA id s11sm2260983lfo.86.2020.05.08.15.02.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 08 May 2020 15:02:41 -0700 (PDT)
-From: Rikard Falkeborn <rikard.falkeborn@gmail.com>
-To: mturquette@baylibre.com, sboyd@kernel.org, nsaenzjulienne@suse.de,
- f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com,
- eric@anholt.net, wahrenst@gmx.net
-Subject: [PATCH] clk: bcm2835: Constify struct debugfs_reg32
-Date: Sat,  9 May 2020 00:02:38 +0200
-Message-Id: <20200508220238.4883-1-rikard.falkeborn@gmail.com>
-X-Mailer: git-send-email 2.26.2
+ id 1jXBBm-000772-NC
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 22:09:52 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 048M3pT7098830;
+ Fri, 8 May 2020 22:09:40 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=e9WYgBCMI0KkS01+P+GDEHtd1NK7qTQIe6h+j1aFO7I=;
+ b=TgFaCClTZHf+stqcvIDP2Bl7jaksNxPDQr/w7CfLJoVEUXZKyCTP2NEcQFg77e9AybrD
+ Vf3+/kQREb4a5vA306kuIVOO5vtgIE6GV5q+50/4zyNOo7C2bP53T8T+oBbTx0Ap5ofn
+ OLkEIVLferlceZkGLq4GYWDgX+ZQWuM6nC37AcdBVOodFt1Zk/pSXB4OtYMO70kTKnd0
+ jKYbUxZvFKXvZ37VCrIwmcEWl/YqsZeZtfOaOUcdLlTd8fy/TKudRInZ/zgUQ3ymKxs+
+ rUqg2uj68Trkzvsxn9tnGBIqjAXsJifHxtdzQ1c8oU/nEoUFgn+IqOUHxd4HjqSmjJ5r jQ== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2120.oracle.com with ESMTP id 30vtexwdn4-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 08 May 2020 22:09:40 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 048M6tFL128051;
+ Fri, 8 May 2020 22:09:39 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3020.oracle.com with ESMTP id 30vtehmy9e-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 08 May 2020 22:09:39 +0000
+Received: from abhmp0012.oracle.com (abhmp0012.oracle.com [141.146.116.18])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 048M9c41015658;
+ Fri, 8 May 2020 22:09:38 GMT
+Received: from [192.168.2.157] (/71.63.128.209)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 08 May 2020 15:09:37 -0700
+Subject: Re: [PATCH V3 1/3] arm64/mm: Drop __HAVE_ARCH_HUGE_PTEP_GET
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
+ akpm@linux-foundation.org
+References: <1588907271-11920-1-git-send-email-anshuman.khandual@arm.com>
+ <1588907271-11920-2-git-send-email-anshuman.khandual@arm.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <7db44202-0d21-d8fb-6998-0210508a488a@oracle.com>
+Date: Fri, 8 May 2020 15:09:34 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
+In-Reply-To: <1588907271-11920-2-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9615
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ adultscore=0
+ phishscore=0 mlxlogscore=999 bulkscore=0 malwarescore=0 spamscore=0
+ mlxscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2005080187
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9615
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ lowpriorityscore=0 adultscore=0
+ spamscore=0 suspectscore=0 bulkscore=0 priorityscore=1501 malwarescore=0
+ phishscore=0 impostorscore=0 mlxscore=0 mlxlogscore=999 clxscore=1015
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2005080187
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_150244_502233_DFF23F83 
-X-CRM114-Status: GOOD (  10.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200508_150950_845638_45C0F474 
+X-CRM114-Status: GOOD (  24.52  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [rikard.falkeborn[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -86,6 +102,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,60 +114,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Rikard Falkeborn <rikard.falkeborn@gmail.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-bcm2835_debugfs_clock_reg32 is never changed and can therefore be made
-const.
+On 5/7/20 8:07 PM, Anshuman Khandual wrote:
+> Platform specific huge_ptep_get() is required only when fetching the huge
+> PTE involves more than just dereferencing the page table pointer. This is
+> not the case on arm64 platform. Hence huge_ptep_pte() can be dropped along
+> with it's __HAVE_ARCH_HUGE_PTEP_GET subscription. Before that, it updates
+> the generic huge_ptep_get() with READ_ONCE() which will prevent known page
+> table issues with THP on arm64.
+> 
+> https://lore.kernel.org/r/1506527369-19535-1-git-send-email-will.deacon@arm.com/
+> 
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-mm@kvack.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>  arch/arm64/include/asm/hugetlb.h | 6 ------
+>  include/asm-generic/hugetlb.h    | 2 +-
+>  2 files changed, 1 insertion(+), 7 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/hugetlb.h b/arch/arm64/include/asm/hugetlb.h
+> index 2eb6c234d594..b88878ddc88b 100644
+> --- a/arch/arm64/include/asm/hugetlb.h
+> +++ b/arch/arm64/include/asm/hugetlb.h
+> @@ -17,12 +17,6 @@
+>  extern bool arch_hugetlb_migration_supported(struct hstate *h);
+>  #endif
+>  
+> -#define __HAVE_ARCH_HUGE_PTEP_GET
+> -static inline pte_t huge_ptep_get(pte_t *ptep)
+> -{
+> -	return READ_ONCE(*ptep);
+> -}
+> -
+>  static inline int is_hugepage_only_range(struct mm_struct *mm,
+>  					 unsigned long addr, unsigned long len)
+>  {
+> diff --git a/include/asm-generic/hugetlb.h b/include/asm-generic/hugetlb.h
+> index 822f433ac95c..40f85decc2ee 100644
+> --- a/include/asm-generic/hugetlb.h
+> +++ b/include/asm-generic/hugetlb.h
+> @@ -122,7 +122,7 @@ static inline int huge_ptep_set_access_flags(struct vm_area_struct *vma,
+>  #ifndef __HAVE_ARCH_HUGE_PTEP_GET
+>  static inline pte_t huge_ptep_get(pte_t *ptep)
+>  {
+> -	return *ptep;
+> +	return READ_ONCE(*ptep);
+>  }
+>  #endif
 
-This allows the compiler to put it in the text section instead of the
-data section.
+I know you made this change in response to Will's comment.  And, since
+changes were made to consistently use READ_ONCE in arm64 code, it makes
+sense for that architecture.
 
-Before:
-   text    data     bss     dec     hex filename
-  26598   16088      64   42750    a6fe drivers/clk/bcm/clk-bcm2835.o
+However, with this change to generic code, you introduce READ_ONCE to
+other architectures where it was not used before.  Could this possibly
+introduce inconsistencies in their use of READ_ONCE?  To be honest, I
+am not very good at identifying any possible issues this could cause.
+However, it does seem possible.
 
-After:
-   text    data     bss     dec     hex filename
-  26662   16024      64   42750    a6fe drivers/clk/bcm/clk-bcm2835.o
-
-Signed-off-by: Rikard Falkeborn <rikard.falkeborn@gmail.com>
----
- drivers/clk/bcm/clk-bcm2835.c | 6 +++---
- 1 file changed, 3 insertions(+), 3 deletions(-)
-
-diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
-index ded13ccf768e..7da3b1ba1377 100644
---- a/drivers/clk/bcm/clk-bcm2835.c
-+++ b/drivers/clk/bcm/clk-bcm2835.c
-@@ -396,8 +396,8 @@ static unsigned long bcm2835_measure_tcnt_mux(struct bcm2835_cprman *cprman,
- }
- 
- static void bcm2835_debugfs_regset(struct bcm2835_cprman *cprman, u32 base,
--				  struct debugfs_reg32 *regs, size_t nregs,
--				  struct dentry *dentry)
-+				   const struct debugfs_reg32 *regs,
-+				   size_t nregs, struct dentry *dentry)
- {
- 	struct debugfs_regset32 *regset;
- 
-@@ -1240,7 +1240,7 @@ static u8 bcm2835_clock_get_parent(struct clk_hw *hw)
- 	return (src & CM_SRC_MASK) >> CM_SRC_SHIFT;
- }
- 
--static struct debugfs_reg32 bcm2835_debugfs_clock_reg32[] = {
-+static const struct debugfs_reg32 bcm2835_debugfs_clock_reg32[] = {
- 	{
- 		.name = "ctl",
- 		.offset = 0,
+Will was nervous about dropping this from arm64.  I'm just a little nervous
+about adding it to other architectures.
 -- 
-2.26.2
-
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
