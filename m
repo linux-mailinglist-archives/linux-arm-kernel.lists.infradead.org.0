@@ -2,76 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 178771CA1DC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:13:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C16751CA1EC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  8 May 2020 06:13:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wHO50pExU48vTXAPQXVhDdm9BYYP6Rm1a4YZSH4Tc+Y=; b=Xum
-	QcFxEIlFNA2uL+TGl2NGrpB7ql0ITVO2NM4KLrA2APnIrCSbm3/kvdJuX0D3q/EJZjiZe8Seolu7Q
-	55mN5I9xCxeuu/wmSN9Ef+VXIGX0gHdN37/WXD5g5oO1kzYSG1YLfr4C9iXpcpTi22xSESzppm4Xa
-	iJtiO1nN3QbJR74dUt2uvmTj6mBRMkKigHfLGJFN1yfRMICPq+DQHv27f4Pgz1kUZ+T3GH9QcZe9R
-	LayvKICUyCyV/k/GqZyNX8dFk/CgdhG3rQXQnLorstcx8cskIfq+JAG9FcsqH4rwOTpVUMUyZXQIl
-	0XagFlRNkI/cthJBBDRWz0Ko14vtSJA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=QlB4jK9+0jCPu887HemfNAu4ut36BqHSPDEy/A3gq0Y=; b=Rj8N/sGae52GdLIlaF8gOSyy2q
+	jEX3D9/2ghuMmKM8gCePhbVDFGeoPQLIMW6szmBdXOTPWB8VfXMeQOa13A1o2BjJ4bVNK1aGprRuz
+	oxapFOYOBydUcxUjGBUnK2vSdwsUmDHwpZJpnNZ/Gz1TDV3e6ILYtSN6CuIxkRwg8IlV2M0WDpjM6
+	vW2FPVzny41+UL2tV8P57wrNl+sPwgN2F884hg2jP4BK+cJlO+OaN6DKRppRJCDmsMNvdgyxWa0D2
+	YPcKdMWSFbw+L6DxqxvL3/+Lmxx+4UVrTR09GM5kyc7MRrWLoHtergK43CDi2KXOSMG0D7HgyA8I0
+	72RKLVjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jWuO9-00068y-6t; Fri, 08 May 2020 04:13:29 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jWuOU-0006Or-Cf; Fri, 08 May 2020 04:13:50 +0000
+Received: from mail-pj1-x102c.google.com ([2607:f8b0:4864:20::102c])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jWuO1-00068T-Kn
- for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 04:13:22 +0000
-Received: by mail-pg1-x544.google.com with SMTP id q124so256885pgq.13
+ id 1jWuO6-0006Aj-2s
+ for linux-arm-kernel@lists.infradead.org; Fri, 08 May 2020 04:13:27 +0000
+Received: by mail-pj1-x102c.google.com with SMTP id a7so3659200pju.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 07 May 2020 21:13:21 -0700 (PDT)
+ Thu, 07 May 2020 21:13:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=n63i3r0L2IRpeGMKN7qKGLKSiEkxvDfFBuN0D82sIKo=;
- b=f549fH1riIbuo8ah1TTsCCpm1ZZXn7S2OPcoVIKseqS3u3naNxt2u5u2yue9ia4f35
- aukn+x9RoVtzRotGy89BFThqOsN+8Hvz0BiPwBjQEETQ9gD+zhB0cqzrEvTxKYQDvgwF
- ZZ3vzEx4Edbtr92ALNFDitl/XcwHHmoK6aBBirRzTJb2giYxmR8LHalrm8FHTOBuhSD6
- hR6zDTJluoRElYuNmnpxzdsWrJvQ2QN2cyG5asOiU16f9ANpVcSJF4/7QDMMFK9+ZPgV
- k0NVAlaHzH3PUoYp+3/40hIKX2qcANGDt4gxjc+LWJBv7LnVGgOCTAESa5PmQ5zQMZyR
- da5A==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=bqTEGNao+ElhEnj/Er0d6hjqKNpR+gP54ehE1oHzSA8=;
+ b=i/wVvqB3+fPstJONzideNUUichY4wXWAHwVT5OQLoilFMuWRm7HLeiVWnJD9vk5L2g
+ h4DjyEQWGBpKydXHU4jH84MwcoftntpYGKLRk7FeRa2HlSbTL7k/dCDmlTDLUYqrNv9x
+ 8fKBPKdrsl1AgvxHR+2tsJI+a/Zn7fS8yL5vBco3g5r5hy68/ez54uQXLk02BYhzNwxe
+ XJ+57zEcPIeXSYqew1WXPstiL7P9xONrnXfrZHUpHcQij+nSG/2LQe6RMHTZuIk8W8nF
+ yhNLkDSAxYl9+2wxiG6WmvwyvgnWi2SVjnvkJjV/gyXpEB8cfuMG6whNJnyE3S73SEiI
+ 5r5Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=n63i3r0L2IRpeGMKN7qKGLKSiEkxvDfFBuN0D82sIKo=;
- b=qbXa4pUa2cj73OHl3KkdR2/kPn0O2yztJTOGh9SLwuObTKGM4jo57zkwmQN4nnVJMV
- w72O7RkwtVSVREHcYWFMbfBiYvd/ItVoDqZoSW9LisgaIHl7Z/Vrm+cIpQzVDuAkagzJ
- wD+zsJg2cplixwqjJRJWoVplkh9aj7JXLxas9JGL50UNI8/SW5UcciUeoXxIRnANzQDh
- p1TZ27ECYxt9l02zaYUdxUwKRxYg7dODl5G2ek1ag8VuExCC86Mrv4nFAZYF9n3uuNA5
- KvaKe87LB2dKU1V/FkVfyanIs60OIvU/e1g7z2+gYMl/Xgc6DKYHmvESfR/BQd5qwV6T
- IAZQ==
-X-Gm-Message-State: AGi0PubaGDL2h5Fcb9Hjd7Z0mjkqUg7WDVAfgwnIhrFKpI4GyuyCO3Xq
- MV9ykTWBdf+Lsvx3MABqKfc=
-X-Google-Smtp-Source: APiQypKy7XAhc6hawzdj77Xs0oeZFyq8G/VpqAn061VrqG5U+MNUQKe6OKJlyeRDZxXp18aM4MdX/g==
-X-Received: by 2002:a63:da49:: with SMTP id l9mr508966pgj.432.1588911200789;
- Thu, 07 May 2020 21:13:20 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=bqTEGNao+ElhEnj/Er0d6hjqKNpR+gP54ehE1oHzSA8=;
+ b=K2Ib+XvHI96R3LkwpR2RFBlKlmB6L+IP4L2MlffaN7bwZD6u6ZkdBIO1OzSu44c4Kg
+ BTXDvLSbwXzKBbc8lvqmRRlsPjN2BMLjbJqeBLGsH+fnaxMDE633TeREgYuhH05IIZNz
+ x3CLAUTP1LYKqWdd2A+jpBI+3gGZm10q+l4n1z6XK7a1MKczKtZuNNp7iCl5KdHe4Tcx
+ L3SS7PDii4Ln4tDei7T7dpzMPh/UZjpbbaVrXZqleUoJulBvoULNIt2Fb68uPJDSW3ma
+ ZaRo5Hk+bjjImIbVwz3fxyxekNCFBnv4rW3RwDNzR0N2MDQtJ8qD1lS2tpbu1r2FfObM
+ 1FjQ==
+X-Gm-Message-State: AGi0Puan3ffhKjytZMN6PU6fVMJnRXOWX6jO6cskYGNDnaoWUnzdYKel
+ B5VAEY3DQZ0nrTkEQ+Q6Mak=
+X-Google-Smtp-Source: APiQypKaHw2KbN8J8RS60qHgSElYdfw03GNwICgDqOrarpdg12Wuj8BCSk6lbVC3eFPsDQVLZweYLQ==
+X-Received: by 2002:a17:90a:fd89:: with SMTP id
+ cx9mr3869773pjb.64.1588911205126; 
+ Thu, 07 May 2020 21:13:25 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
- by smtp.gmail.com with ESMTPSA id h12sm314868pfq.176.2020.05.07.21.13.16
+ by smtp.gmail.com with ESMTPSA id h12sm314868pfq.176.2020.05.07.21.13.21
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 07 May 2020 21:13:20 -0700 (PDT)
+ Thu, 07 May 2020 21:13:24 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
  thierry.reding@gmail.com, sam@ravnborg.org, airlied@linux.ie,
  daniel@ffwll.ch, mturquette@baylibre.com, sboyd@kernel.org
-Subject: [PATCH v2 0/5] Enable ilitek ili9341 on stm32f429-disco board
-Date: Fri,  8 May 2020 12:13:09 +0800
-Message-Id: <1588911194-12433-1-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v2 1/5] ARM: dts: stm32: Add pin map for ltdc,
+ spi5 on stm32f429-disco board
+Date: Fri,  8 May 2020 12:13:10 +0800
+Message-Id: <1588911194-12433-2-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1588911194-12433-1-git-send-email-dillon.minfei@gmail.com>
+References: <1588911194-12433-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200507_211321_677687_3F27C82D 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20200507_211326_134943_9F1F3DB9 
+X-CRM114-Status: GOOD (  12.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:102c listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,38 +113,92 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-This patchset have following changes
+This patch adds the pin configuration for ltdc, spi5 controller
+on stm32f429-disco board.
 
-V2: verify ilitek,ili9341.yaml with make O=../linux-stm32 dt_binding_check
-DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
+Signed-off-by: dillon min <dillon.minfei@gmail.com>
+---
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi | 67 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 67 insertions(+)
 
-V1:
-    add ili9341 drm panel driver
-    add ltdc, spi5 controller for stm32f429-disco
-    add ltdc, spi5 pin map for stm32f429-disco
-    add docs about ili9341
-    fix ltdc driver loading hang in clk set rate bug
-
-dillon min (5):
-  ARM: dts: stm32: Add pin map for ltdc, spi5 on stm32f429-disco board
-  ARM: dts: stm32: enable ltdc binding with ili9341 on stm32429-disco
-    board
-  dt-bindings: display: panel: Add ilitek ili9341 panel bindings
-  clk: stm32: Fix stm32f429 ltdc driver loading hang in clk set rate.
-    keep ltdc     clk running after kernel startup
-  drm/panel: add panel driver for Ilitek ili9341 panels
-
- .../bindings/display/panel/ilitek,ili9341.yaml     |  68 +++
- arch/arm/boot/dts/stm32f4-pinctrl.dtsi             |  67 +++
- arch/arm/boot/dts/stm32f429-disco.dts              |  40 ++
- drivers/clk/clk-stm32f4.c                          |   5 +-
- drivers/gpu/drm/panel/Kconfig                      |   8 +
- drivers/gpu/drm/panel/Makefile                     |   1 +
- drivers/gpu/drm/panel/panel-ilitek-ili9341.c       | 561 +++++++++++++++++++++
- 7 files changed, 748 insertions(+), 2 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
- create mode 100644 drivers/gpu/drm/panel/panel-ilitek-ili9341.c
-
+diff --git a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+index 392fa14..0eb107f 100644
+--- a/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
++++ b/arch/arm/boot/dts/stm32f4-pinctrl.dtsi
+@@ -316,6 +316,73 @@
+ 				};
+ 			};
+ 
++			ltdc_pins_f429_disco: ltdc-1 {
++				pins {
++					pinmux = <STM32_PINMUX('C', 6,  AF14)>,
++						/* LCD_HSYNC */
++						 <STM32_PINMUX('A', 4,  AF14)>,
++						 /* LCD_VSYNC */
++						 <STM32_PINMUX('G', 7,  AF14)>,
++						 /* LCD_CLK */
++						 <STM32_PINMUX('C', 10, AF14)>,
++						 /* LCD_R2 */
++						 <STM32_PINMUX('B', 0,  AF9)>,
++						 /* LCD_R3 */
++						 <STM32_PINMUX('A', 11, AF14)>,
++						 /* LCD_R4 */
++						 <STM32_PINMUX('A', 12, AF14)>,
++						 /* LCD_R5 */
++						 <STM32_PINMUX('B', 1,  AF9)>,
++						 /* LCD_R6*/
++						 <STM32_PINMUX('G', 6,  AF14)>,
++						 /* LCD_R7 */
++						 <STM32_PINMUX('A', 6,  AF14)>,
++						 /* LCD_G2 */
++						 <STM32_PINMUX('G', 10, AF9)>,
++						 /* LCD_G3 */
++						 <STM32_PINMUX('B', 10, AF14)>,
++						 /* LCD_G4 */
++						 <STM32_PINMUX('D', 6,  AF14)>,
++						 /* LCD_B2 */
++						 <STM32_PINMUX('G', 11, AF14)>,
++						 /* LCD_B3*/
++						 <STM32_PINMUX('B', 11, AF14)>,
++						 /* LCD_G5 */
++						 <STM32_PINMUX('C', 7,  AF14)>,
++						 /* LCD_G6 */
++						 <STM32_PINMUX('D', 3,  AF14)>,
++						 /* LCD_G7 */
++						 <STM32_PINMUX('G', 12, AF9)>,
++						 /* LCD_B4 */
++						 <STM32_PINMUX('A', 3,  AF14)>,
++						 /* LCD_B5 */
++						 <STM32_PINMUX('B', 8,  AF14)>,
++						 /* LCD_B6 */
++						 <STM32_PINMUX('B', 9,  AF14)>,
++						 /* LCD_B7 */
++						 <STM32_PINMUX('F', 10, AF14)>;
++						 /* LCD_DE */
++					slew-rate = <2>;
++				};
++			};
++
++			spi5_pins: spi5-0 {
++				pins1 {
++					pinmux = <STM32_PINMUX('F', 7, AF5)>,
++						/* SPI5_CLK */
++						 <STM32_PINMUX('F', 9, AF5)>;
++						/* SPI5_MOSI */
++					bias-disable;
++					drive-push-pull;
++					slew-rate = <0>;
++				};
++				pins2 {
++					pinmux = <STM32_PINMUX('F', 8, AF5)>;
++						/* SPI5_MISO */
++					bias-disable;
++				};
++			};
++
+ 			dcmi_pins: dcmi-0 {
+ 				pins {
+ 					pinmux = <STM32_PINMUX('A', 4, AF13)>, /* DCMI_HSYNC */
 -- 
 2.7.4
 
