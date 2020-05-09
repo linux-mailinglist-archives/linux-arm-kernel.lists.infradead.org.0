@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86EB21CC2FE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 19:05:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 172031CC318
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 19:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kHUW3NuwCE2AMyMaIqgUlZGeS3oaiWcp7yHecWGJNYI=; b=gV5zHIFEwP8UdN
-	s2us8WDH3/12yPlM+eYp++MWnLhasC4jhpq2EXKLrbZHgOtkg6TSToRo7o3UIT5aBWd7njgjEPRzR
-	/Pfu+N2S+FakA9uWrbwIn+G/i+7GrVuJf+K2HAlOUIk8CWR5JZzm9h/cSKhA2UiTMIfYOphTvakqx
-	GR1X+7xEzp2Ncl3dkpREFOhdO+ezsoUheHACqHbwwIAyEHOivvBtR4UydKiBOzK6a1KfHshnN7hBb
-	yy+PrEqlVbgcp/fXPex/YOAW+c5wUiZRdttOGhYgl01bmQiS+hRYy2nZmP/adGN7pZCuza0BBEwt0
-	KEx/y+9rZyYkoJyIUhIQ==;
+	List-Owner; bh=ZjT/5HroZhnphT+qOi+UEH+8zYaPpCvBPTuwuj+AgZQ=; b=IYaXu00AGIKvfp
+	A6/MyJot5NqoDtmSfJ7RgXmt62hgDZr2G2ybPKXoDynmwS2E44obJLs/vYWiEgUk0Hxo/Wy7LSKtN
+	2SPqQ7EVL+vATK9uHFhFxYWl1GQEhyn1uS+c+u5beV7qxAfjOx4MW1DusSXV01P7EQUS294fdJQee
+	Gj+Nz7tkxRRDpeJpKdaQryz51PRCoOLq/kNHBToaXcGUwTkq5gE3ddZ76bWYbR73+t+pSW3rXpkOU
+	iRrfcQVVmzcXu+pLA5BLb8TK2uwkCbKmcXAim56JFxb5tIZJOn9QLIxevosfKn9KMIbgTkvb/7sL8
+	sDCp08eeCJPpMZGj4BQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXSv0-0000O8-Kj; Sat, 09 May 2020 17:05:42 +0000
+	id 1jXT0n-0003X0-Ei; Sat, 09 May 2020 17:11:41 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXSuu-0000Na-2H
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 17:05:37 +0000
+ id 1jXT0f-0003Vi-T0; Sat, 09 May 2020 17:11:35 +0000
 Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
  [83.86.89.107])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 31E282184D;
- Sat,  9 May 2020 17:05:34 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DB84D2184D;
+ Sat,  9 May 2020 17:11:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589043934;
- bh=TNwiGuU59AdvUvN9asdWl7nZzKASsxAJBDv7IGkPFr8=;
+ s=default; t=1589044293;
+ bh=Knc6lihQiyioaGFRTOVqQ9keAhGSuwjLXItKg6yamdM=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WaOxtm11ka0eex5A8IsSAhiIQBAAbnR1SlGVN+p5m/ApPhE02EghMulZ9Tou7XakE
- 7HY+DjVjwBpIcsK4hpuUu+FsG5MLegFztrLn++fr1ADvBPMEJG7w3sIGb3tCOYnVB0
- 53m6aX7zpOBwe9pbkk2fIKjqHJCKTio5j3vjQXHw=
-Date: Sat, 9 May 2020 19:05:32 +0200
+ b=Awx6svb+sXY9Nb1+JkPtcyV+gT732HQk2LBchxvGubEgp3mbS7q9AwBqMxh55g0/t
+ Li864Ct2Zx/qanTNcvtRN350fif6Rr+879RB03rX33tTlRlh7X+9aHfnSKofph22sn
+ Js8zspBbqLHuW6ZBLywIrEdE3ccr8zKi+rkUJYdU=
+Date: Sat, 9 May 2020 19:11:31 +0200
 From: Greg KH <gregkh@linuxfoundation.org>
-To: Harshal Chaudhari <harshalchau04@gmail.com>
-Subject: Re: [PATCH] Driver: Adding helper macro for platform_driver
- boilerplate.
-Message-ID: <20200509170532.GB2482887@kroah.com>
-References: <20200509100716.11044-1-harshalchau04@gmail.com>
+To: John Oldman <john.oldman@polehill.co.uk>
+Subject: Re: [PATCH] staging: vc04_services: interface: vchiq_arm:
+ vchiq_connected.c: Block comments should align the * on each line
+Message-ID: <20200509171131.GA2495033@kroah.com>
+References: <20200509130714.10586-1-john.oldman@polehill.co.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200509100716.11044-1-harshalchau04@gmail.com>
+In-Reply-To: <20200509130714.10586-1-john.oldman@polehill.co.uk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_100536_130009_26CC98B2 
-X-CRM114-Status: GOOD (  11.27  )
+X-CRM114-CacheID: sfid-20200509_101133_954436_35117704 
+X-CRM114-Status: UNSURE (   6.83  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -73,39 +73,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arnd@arndb.de, dragan.cvetic@xilinx.com, linux-kernel@vger.kernel.org,
- michal.simek@xilinx.com, derek.kiernan@xilinx.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, nsaenzjulienne@suse.de,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 09, 2020 at 03:37:16PM +0530, Harshal Chaudhari wrote:
-> From: Harshal <harshalchau04@gmail.com>
-> 
-> For simple module that contain a single platform_driver without any additional setup code then ends up being a block
-> of duplicated boilerplate.
-> 
-> This patch add a new micro, module_platform_driver(), which replace the module_init()/module_exit() registrations
-> with template functions.
+On Sat, May 09, 2020 at 02:07:14PM +0100, John Oldman wrote:
+> Coding style issue
 
-Please properly wrap your changelog text.
-
-And fixup the Subject line to match other patches for this driver.
-
-And the text needs to be revised a bit to say what this really is doing,
-as what you describe is not correct.
-
-> 
-> Signed-off-by: harshal chaudhari <harshalchau04@gmail.com>
-
-Finally, this does not match your "From:" line for the patch, which
-means I couldn't take it even if all of the above was correct :(
+Your subject line needs to be much shorter, don't you think?
 
 Please fix up and resend.
-
-thanks,
 
 greg k-h
 
