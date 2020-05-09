@@ -2,80 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A670A1CC441
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 21:53:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F2421CC453
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 22:04:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3XY7ZSZ36SpboB13wa2mBPf0gdudAXhStNlJsz1PQsU=; b=mm0HcOKbHdmQta
-	Jw+gu5IivEFpUtx+A/+PEHJm5Pq4evPfgPJzOblGL6EF7PQ4t+PVxT7B2mO686PzpHWciz8DWXpGG
-	wEBmBhSy/If8cbD3w5avCSs+FvSYsX1ScSxwPggS1ISih07RSp61CFUvStKlC2x+tTlTSbvDWdrbm
-	eRlvGKbKmAidQ1uHNu/eVbSOiuqpG6k9vpv49+NYsQtxzV+cQYu3ikd7I/XIGySQ/BkQo09jHscj9
-	6eqcfN+dAjRyS/NkeQ6iIvGUZCa55gpnjOquVmaSzDziM7qr7pxWXdoeaVnQXU3Oy3K3bFzfx6RGO
-	MlmHWGyyPXzBoKhovsrQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TIMSJpGJJkYPddXuTMOX+lNMgz8BxTw0D+abnjd21XQ=; b=J1wqI0Q0it/p75
+	w8yrRSHqbxU+mAj+IUipTzynSpHgDjKYGDpX7Qo8u7mINP2VWfsUaj8R/hWkC/XqAodr42P6DUq/8
+	q3Wj2w0x67pMuXDOb2kH5BZuJd/PK1oammmhhG2dy3rJQOu3cQAbg4hFi9j8dv97RQgQhIDAU8rwS
+	/oFWQCqPzDKDzwmlqBZiM/vjuksinlkLSuPOcGZu4Ol2oXr/qy+MCgsE/CN0NY0KBfcOt1MYeFTnw
+	2R1oETOtRMLRSsZGKhiXY/aBqyW9B2XCg0y+FNOoqoY9jUb6g205HLS4R/s+zCXi20QhW++A/hz0e
+	ZIbKKhvDhabdRQD1i3rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXVXW-00051p-DQ; Sat, 09 May 2020 19:53:38 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jXVho-00038h-9p; Sat, 09 May 2020 20:04:16 +0000
+Received: from wnew1-smtp.messagingengine.com ([64.147.123.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXVXN-000506-SA
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 19:53:32 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=50ywxHpW41ImbkC5vHJi6Ia6Ntj61X/IaD76qF4a0R4=; b=zcKgfplSVU/5cTk4tFp6Nx3SR
- tTDVq9Rd80NNvWCcB0C3e3s1h1CC/Wpz6GyZCzTMoG33AYDO/tXLrOS3WryoOcd4Nk5HRd+lPVtuH
- HItUlDL3JmAxdcBTYCVefoirnQ/j3DYBX8GrO/yZYxtxQTNQI71soJBGzw5eDsyMJf23NaIYBlUKn
- ri6Pf1istaE671WEM3J3PJ6hvawdWLGuVg8j78gUH33zUtakmcWsdObaXpYnzYE5sWMVggI8pbgeA
- OEH2yFRH51soaKiz+w2KYQIR9MfCuk/Hvtfo0/v+O32mRY19uzfMywUJBWxBzhq8rbfIcWfV68nC2
- BhpNr9wgg==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:55872)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jXVWx-00051L-6I; Sat, 09 May 2020 20:53:08 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jXVWg-00038W-Vk; Sat, 09 May 2020 20:52:47 +0100
-Date: Sat, 9 May 2020 20:52:46 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Matteo Croce <mcroce@redhat.com>
-Subject: Re: [EXT] Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts
- to handle RSS tables
-Message-ID: <20200509195246.GJ1551@shell.armlinux.org.uk>
-References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
- <20190524100554.8606-4-maxime.chevallier@bootlin.com>
- <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
- <20200423170003.GT25745@shell.armlinux.org.uk>
- <CAGnkfhwOavaeUjcm4_+TG-xLxQA519o+fR8hxBCCfSy3qpcYhQ@mail.gmail.com>
- <DM5PR18MB1146686527DE66495F75D0DAB0A30@DM5PR18MB1146.namprd18.prod.outlook.com>
- <20200509114518.GB1551@shell.armlinux.org.uk>
- <CAGnkfhx8fEZCoLPzGxSzQnj1ZWcQtBMn+g_jO1Jxc4zF7pQwjQ@mail.gmail.com>
+ id 1jXVhg-00037W-Gb
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 20:04:10 +0000
+Received: from compute3.internal (compute3.nyi.internal [10.202.2.43])
+ by mailnew.west.internal (Postfix) with ESMTP id 69CAD51A;
+ Sat,  9 May 2020 16:04:01 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute3.internal (MEProxy); Sat, 09 May 2020 16:04:02 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sholland.org; h=
+ subject:to:cc:references:from:message-id:date:mime-version
+ :in-reply-to:content-type:content-transfer-encoding; s=fm2; bh=D
+ Eu1xYhVh1J9scHqnTyhXAX973gnleovZHMHNnlRJvU=; b=YLH+5XfxeNoqxPEhx
+ lg7HVYOQzWgAHO/V1Rth7iTd0aRp9UUjwNxIqbNLoCCPACm7XDjhBdCQVvjZvAmN
+ Qj0+XYI0hZPuI4nt8wFPY90EJbf2Wh5V8AoEaKJVt2JfLUE2QhlEqYMoFhagWLYn
+ MAa+DRkFENaEDy46fUfTjM2S1xL5NOPD9Fa8Paus5xtsu/V/+6JIf3WESCdqsk1q
+ AV/V1X0He+c1mJXF9+w9iyTOhD8HxiQKjtbDGvmrvRiO0PNdGmeuGJPC+68dc002
+ bLIxvUofw3e+3iZ5XP9l9jFa9wneH7tgnXZhmHQmFyTOqlxW4eooeX4OKAS1oaR1
+ Geadg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:content-type
+ :date:from:in-reply-to:message-id:mime-version:references
+ :subject:to:x-me-proxy:x-me-proxy:x-me-sender:x-me-sender
+ :x-sasl-enc; s=fm2; bh=DEu1xYhVh1J9scHqnTyhXAX973gnleovZHMHNnlRJ
+ vU=; b=ds+96DIME0pz5ne+oIUNuar/qLTa/vcpv2GDAtH9nRwstAyxkaqzfzJ4e
+ qUFogdKaGr973RslWFEHbfvp1x70jKqW7b07SskLEL+Y8pWqFjtXMflJoXZxkrUM
+ gwqCrVo/b9BbHyRkBqBw0QNCwrTyITQdkM0UcQyZzC+JH8Z6mj8qLmwf2IbORWU8
+ /H4XktWnxrE6GEIIjHwVAp/Df/YgswSqtQ0Vkl1uCxoUpS7UH83Xmibo1yEPWMBt
+ UTpOOo5a2S6qqFTZMqBq6QxgQpFmljRmPQjpOMwctAN4dzSHs4Mc6V0mI8PWEgUO
+ LQ2bfhtIPRp+3cHPEEAyNKv9kCm8g==
+X-ME-Sender: <xms:rAy3XjQPW4KE5BjjcX3sy4azS0KiYTgvyBevwy-tpOfNYIjrS6wYpQ>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrkeehgddugeefucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepuffvfhfhkffffgggjggtgfesthekredttdefjeenucfhrhhomhepufgrmhhu
+ vghlucfjohhllhgrnhguuceoshgrmhhuvghlsehshhholhhlrghnugdrohhrgheqnecugg
+ ftrfgrthhtvghrnhepgfelkeduveejtdejhfeiledvhfeggeeiieeklefhfeefffffffeg
+ udetteelieejnecukfhppeejtddrudefhedrudegkedrudehudenucevlhhushhtvghruf
+ hiiigvpedtnecurfgrrhgrmhepmhgrihhlfhhrohhmpehsrghmuhgvlhesshhhohhllhgr
+ nhgurdhorhhg
+X-ME-Proxy: <xmx:rAy3XtWFJsn1ugLKawvNOs1ecseNcV8ZsKifycbtyIkMQ97o1o3hDg>
+ <xmx:rAy3Xv79-fSTd5mfrUKdpJO0WvvD5LeRB-jMCJUP2LJWspcYDbXHSg>
+ <xmx:rAy3XoG2nm_Yi_-7jyfwec8t8R_kgaqMfKfZ7DTav5bOAtW6TB02Mg>
+ <xmx:sQy3Xvb0p7cCpi1x8QY3uLfRyaEXZ3_I7qjtiMV-RD29fIGYxGpqcXKCiok>
+Received: from [192.168.50.169]
+ (70-135-148-151.lightspeed.stlsmo.sbcglobal.net [70.135.148.151])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 25ED6306623E;
+ Sat,  9 May 2020 16:03:56 -0400 (EDT)
+Subject: Re: [linux-sunxi] [PATCH v2 2/2] media: cedrus: Implement runtime PM
+To: Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>
+References: <20200422040410.6251-1-samuel@sholland.org>
+ <20200422040410.6251-2-samuel@sholland.org>
+ <CAAEAJfBdRVZwvEZNU_Hu4eutOO5HJzLLU2HJ2OcP=L+pBZfiTg@mail.gmail.com>
+From: Samuel Holland <samuel@sholland.org>
+Message-ID: <e3bba831-f835-d35b-58a3-c4b6b22c8949@sholland.org>
+Date: Sat, 9 May 2020 15:03:55 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.6.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAGnkfhx8fEZCoLPzGxSzQnj1ZWcQtBMn+g_jO1Jxc4zF7pQwjQ@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <CAAEAJfBdRVZwvEZNU_Hu4eutOO5HJzLLU2HJ2OcP=L+pBZfiTg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_125330_449789_ACBEFD3F 
-X-CRM114-Status: GOOD (  19.13  )
+X-CRM114-CacheID: sfid-20200509_130408_661902_ACEB85EC 
+X-CRM114-Status: GOOD (  21.56  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ low trust [64.147.123.26 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,178 +110,176 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- "David S . Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-sunxi@googlegroups.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>,
+ =?UTF-8?Q?Jernej_=c5=a0krabec?= <jernej.skrabec@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 09, 2020 at 03:14:05PM +0200, Matteo Croce wrote:
-> Hi,
-> 
-> When git bisect pointed to 895586d5dc32 ("net: mvpp2: cls: Use RSS
-> contexts to handle RSS tables"), which was merged
-> almost an year after d33ec4525007 ("net: mvpp2: add an RSS
-> classification step for each flow"), so I assume that between these
-> two commits either the feature was working or it was disable and we
-> didn't notice
-> 
-> Without knowing what was happening, which commit should my Fixes tag point to?
-
-It is highly likely that 895586d5dc32 is responsible for this breakage.
-I've been investigating this afternoon, and what I've found, comparing
-a kernel without 895586d5dc32 and with 895586d5dc32 applied is:
-
-- The table programmed into the hardware via mvpp22_rss_fill_table()
-  appears to be identical with or without the commit.
-
-- When rxhash is enabled on eth2, mvpp2_rss_port_c2_enable() reports
-  that c2.attr[0] and c2.attr[2] are written back containing:
-
-   - with 895586d5dc32, failing:    00200000 40000000
-   - without 895586d5dc32, working: 04000000 40000000
-
-- When disabling rxhash, c2.attr[0] and c2.attr[2] are written back as:
-
-   04000000 00000000
-
-The second value represents the MVPP22_CLS_C2_ATTR2_RSS_EN bit, the
-first value is the queue number, which comprises two fields.  The high
-5 bits are 24:29 and the low three are 21:23 inclusive.  This comes
-from:
-
-       c2.attr[0] = MVPP22_CLS_C2_ATTR0_QHIGH(qh) |
-                     MVPP22_CLS_C2_ATTR0_QLOW(ql);
-#define     MVPP22_CLS_C2_ATTR0_QHIGH(qh)       (((qh) & 0x1f) << 24)
-#define     MVPP22_CLS_C2_ATTR0_QLOW(ql)        (((ql) & 0x7) << 21)
-
-So, the working case gives eth2 a queue id of 4.0, or 32 as per
-port->first_rxq, and the non-working case a queue id of 0.1, or 1.
-
-The allocation of queue IDs seems to be in mvpp2_port_probe():
-
-        if (priv->hw_version == MVPP21)
-                port->first_rxq = port->id * port->nrxqs;
-        else
-                port->first_rxq = port->id * priv->max_port_rxqs;
-
-Where:
-
-        if (priv->hw_version == MVPP21)
-                priv->max_port_rxqs = 8;
-        else
-                priv->max_port_rxqs = 32;
-
-Making the port 0 (eth0 / eth1) have port->first_rxq = 0, and port 1
-(eth2) be 32.  It seems the idea is that the first 32 queues belong to
-port 0, the second 32 queues belong to port 1, etc.
-
-mvpp2_rss_port_c2_enable() gets the queue number from it's parameter,
-'ctx', which comes from mvpp22_rss_ctx(port, 0).  This returns
-port->rss_ctx[0].
-
-mvpp22_rss_context_create() is responsible for allocating that, which
-it does by looking for an unallocated priv->rss_tables[] pointer.  This
-table is shared amongst all ports on the CP silicon.
-
-When we write the tables in mvpp22_rss_fill_table(), the RSS table
-entry is defined by:
-
-		u32 sel = MVPP22_RSS_INDEX_TABLE(rss_ctx) |
-                          MVPP22_RSS_INDEX_TABLE_ENTRY(i);
-
-where rss_ctx is the context ID (queue number) and i is the index in
-the table.
-
-#define     MVPP22_RSS_INDEX_TABLE_ENTRY(idx)   (idx)
-#define     MVPP22_RSS_INDEX_TABLE(idx)         ((idx) << 8)
-#define     MVPP22_RSS_INDEX_QUEUE(idx)         ((idx) << 16)
-
-If we look at what is written:
-
-- The first table to be written has "sel" values of 00000000..0000001f,
-  containing values 0..3. This appears to be for eth1.  This is table 0,
-  RX queue number 0.
-- The second table has "sel" values of 00000100..0000011f, and appears
-  to be for eth2.  These contain values 0x20..0x23.  This is table 1,
-  RX queue number 0.
-- The third table has "sel" values of 00000200..0000021f, and appears
-  to be for eth3.  These contain values 0x40..0x43.  This is table 2,
-  RX queue number 0.
-
-Okay, so how do queue numbers translate to the RSS table?  There is
-another table - the RXQ2RSS table, indexed by the MVPP22_RSS_INDEX_QUEUE
-field of MVPP22_RSS_INDEX and accessed through the MVPP22_RXQ2RSS_TABLE
-register.  Before 895586d5dc32, it was:
-
-       mvpp2_write(priv, MVPP22_RSS_INDEX,
-                   MVPP22_RSS_INDEX_QUEUE(port->first_rxq));
-       mvpp2_write(priv, MVPP22_RXQ2RSS_TABLE,
-                   MVPP22_RSS_TABLE_POINTER(port->id));
-
-and after:
-
-       mvpp2_write(priv, MVPP22_RSS_INDEX, MVPP22_RSS_INDEX_QUEUE(ctx));
-       mvpp2_write(priv, MVPP22_RXQ2RSS_TABLE, MVPP22_RSS_TABLE_POINTER(ctx));
-
-So, before the commit, for eth2, that would've contained '32' for the
-index and '1' for the table pointer - mapping queue 32 to table 1.
-Remember that this is queue-high.queue-low of 4.0.
-
-After the commit, we appear to map queue 1 to table 1.  That again
-looks fine on the face of it.
-
-Section 9.3.1 of the A8040 manual seems indicate the reason that the
-queue number is separated.  queue-low seems to always come from the
-classifier, whereas queue-high can be from the ingress physical port
-number or the classifier depending on the MVPP2_CLS_SWFWD_PCTRL_REG.
-
-We set the port bit in MVPP2_CLS_SWFWD_PCTRL_REG, meaning that queue-high
-comes from the MVPP2_CLS_SWFWD_P2HQ_REG() register... and this seems to
-be where our bug comes from.
-
-mvpp2_cls_oversize_rxq_set() sets this up as:
-
-        mvpp2_write(port->priv, MVPP2_CLS_SWFWD_P2HQ_REG(port->id),
-                    (port->first_rxq >> MVPP2_CLS_OVERSIZE_RXQ_LOW_BITS));
-
-        val = mvpp2_read(port->priv, MVPP2_CLS_SWFWD_PCTRL_REG);
-        val |= MVPP2_CLS_SWFWD_PCTRL_MASK(port->id);
-        mvpp2_write(port->priv, MVPP2_CLS_SWFWD_PCTRL_REG, val);
-
-so, the queue-high for eth2 is _always_ 4, meaning that only queues
-32 through 39 inclusive are available to eth2.  Yet, we're trying to
-tell the classifier to set queue-high, which will be ignored, to zero.
-
-So we end up directing traffic from eth2 not to queue 1, but to queue
-33, and then we tell it to look up queue 33 in the RSS table.  However,
-RSS table has not been programmed for queue 33, and so it ends up
-(presumably) dropping the packets.
-
-It seems that mvpp22_rss_context_create() doesn't take account of the
-fact that the upper 5 bits of the queue ID can't actually be changed
-due to the settings in mvpp2_cls_oversize_rxq_set(), _or_ it seems
-that mvpp2_cls_oversize_rxq_set() has been missed in this commit.
-Either way, these two functions mutually disagree with what queue
-number should be used.
-
-So, 895586d5dc32 is indeed the cause of this problem.
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gNS81LzIwIDc6NTMgQU0sIEV6ZXF1aWVsIEdhcmNpYSB3cm90ZToKPiBPbiBXZWQsIDIyIEFw
+ciAyMDIwIGF0IDAxOjAwLCBTYW11ZWwgSG9sbGFuZCA8c2FtdWVsQHNob2xsYW5kLm9yZz4gd3Jv
+dGU6Cj4+Cj4+IFRoaXMgYWxsb3dzIHRoZSBWRSBjbG9ja3MgYW5kIFBMTF9WRSB0byBiZSBkaXNh
+YmxlZCBtb3N0IG9mIHRoZSB0aW1lLgo+PiBBIHJ1bnRpbWUgUE0gcmVmZXJlbmNlIGlzIGhlbGQg
+d2hpbGUgc3RyZWFtaW5nLgo+Pgo+PiBPcmlnaW5hbGx5LWJ5OiBKZXJuZWogxaBrcmFiZWMgPGpl
+cm5lai5za3JhYmVjQGdtYWlsLmNvbT4KPiAKPiBPcmlnaW5hbGx5LWJ5IGlzIG5vdCBkb2N1bWVu
+dGVkLCBwZXJoYXBzIGp1c3QgZ28gd2l0aCBTaWduZWQtb2ZmLWJ5LAo+IGFzIEplcm5laiBzdWdn
+ZXN0ZWQuCj4gCj4+IFNpZ25lZC1vZmYtYnk6IFNhbXVlbCBIb2xsYW5kIDxzYW11ZWxAc2hvbGxh
+bmQub3JnPgo+PiAtLS0KPj4KPj4gdjI6IG1vdmVkIFBNIHJlZmVyZW5jZSB0byBjZWRydXNfe3N0
+YXJ0LHN0b3B9X3N0cmVhbWluZywgYmFzZWQgb24gYW4KPj4gICAgIGVhcmxpZXIgcGF0Y2ggYnkg
+SmVybmVqIFNrcmFiZWMuIFJlbW92ZXMgdGhlIG5lZWQgZm9yIGF1dG9zdXNwZW5kLgo+PiAgICAg
+SSB0ZXN0ZWQgdGhpcyB3aXRoIHJ1bm5pbmcgMnggdjRsMi1yZXF1ZXN0LXRlc3QgaW4gcGFyYWxs
+ZWwuCj4+Cj4+IC0tLQo+PiAgZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRy
+dXMuYyAgIHwgICA3ICsrCj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVz
+X2h3LmMgICAgfCAxMDYgKysrKysrKysrKysrLS0tLS0tCj4+ICAuLi4vc3RhZ2luZy9tZWRpYS9z
+dW54aS9jZWRydXMvY2VkcnVzX2h3LmggICAgfCAgIDMgKwo+PiAgLi4uL3N0YWdpbmcvbWVkaWEv
+c3VueGkvY2VkcnVzL2NlZHJ1c192aWRlby5jIHwgIDMzICsrKystLQo+PiAgNCBmaWxlcyBjaGFu
+Z2VkLCAxMDQgaW5zZXJ0aW9ucygrKSwgNDUgZGVsZXRpb25zKC0pCj4+Cj4+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1cy5jIGIvZHJpdmVycy9z
+dGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXMuYwo+PiBpbmRleCAwNWE4NTUxN2ZmNjAu
+LmJjMjdmOTQzMGVlYiAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhp
+L2NlZHJ1cy9jZWRydXMuYwo+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2Vk
+cnVzL2NlZHJ1cy5jCj4+IEBAIC0xNiw2ICsxNiw3IEBACj4+ICAjaW5jbHVkZSA8bGludXgvcGxh
+dGZvcm1fZGV2aWNlLmg+Cj4+ICAjaW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4+ICAjaW5jbHVk
+ZSA8bGludXgvb2YuaD4KPj4gKyNpbmNsdWRlIDxsaW51eC9wbS5oPgo+Pgo+PiAgI2luY2x1ZGUg
+PG1lZGlhL3Y0bDItZGV2aWNlLmg+Cj4+ICAjaW5jbHVkZSA8bWVkaWEvdjRsMi1pb2N0bC5oPgo+
+PiBAQCAtNTUxLDEyICs1NTIsMTggQEAgc3RhdGljIGNvbnN0IHN0cnVjdCBvZl9kZXZpY2VfaWQg
+Y2VkcnVzX2R0X21hdGNoW10gPSB7Cj4+ICB9Owo+PiAgTU9EVUxFX0RFVklDRV9UQUJMRShvZiwg
+Y2VkcnVzX2R0X21hdGNoKTsKPj4KPj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZGV2X3BtX29wcyBj
+ZWRydXNfZGV2X3BtX29wcyA9IHsKPj4gKyAgICAgICBTRVRfUlVOVElNRV9QTV9PUFMoY2VkcnVz
+X2h3X3N1c3BlbmQsCj4+ICsgICAgICAgICAgICAgICAgICAgICAgICAgIGNlZHJ1c19od19yZXN1
+bWUsIE5VTEwpCj4+ICt9Owo+PiArCj4+ICBzdGF0aWMgc3RydWN0IHBsYXRmb3JtX2RyaXZlciBj
+ZWRydXNfZHJpdmVyID0gewo+PiAgICAgICAgIC5wcm9iZSAgICAgICAgICA9IGNlZHJ1c19wcm9i
+ZSwKPj4gICAgICAgICAucmVtb3ZlICAgICAgICAgPSBjZWRydXNfcmVtb3ZlLAo+PiAgICAgICAg
+IC5kcml2ZXIgICAgICAgICA9IHsKPj4gICAgICAgICAgICAgICAgIC5uYW1lICAgICAgICAgICA9
+IENFRFJVU19OQU1FLAo+PiAgICAgICAgICAgICAgICAgLm9mX21hdGNoX3RhYmxlID0gb2ZfbWF0
+Y2hfcHRyKGNlZHJ1c19kdF9tYXRjaCksCj4+ICsgICAgICAgICAgICAgICAucG0gICAgICAgICAg
+ICAgPSAmY2VkcnVzX2Rldl9wbV9vcHMsCj4+ICAgICAgICAgfSwKPj4gIH07Cj4+ICBtb2R1bGVf
+cGxhdGZvcm1fZHJpdmVyKGNlZHJ1c19kcml2ZXIpOwo+PiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9z
+dGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9jZWRydXNfaHcuYyBiL2RyaXZlcnMvc3RhZ2luZy9t
+ZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX2h3LmMKPj4gaW5kZXggZGFmNWYyNDRmOTNiLi4xNzQ0
+ZTZmY2M5OTkgMTAwNjQ0Cj4+IC0tLSBhL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRy
+dXMvY2VkcnVzX2h3LmMKPj4gKysrIGIvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1
+cy9jZWRydXNfaHcuYwo+PiBAQCAtMTksNiArMTksNyBAQAo+PiAgI2luY2x1ZGUgPGxpbnV4L2Rt
+YS1tYXBwaW5nLmg+Cj4+ICAjaW5jbHVkZSA8bGludXgvaW50ZXJydXB0Lmg+Cj4+ICAjaW5jbHVk
+ZSA8bGludXgvY2xrLmg+Cj4+ICsjaW5jbHVkZSA8bGludXgvcG1fcnVudGltZS5oPgo+PiAgI2lu
+Y2x1ZGUgPGxpbnV4L3JlZ21hcC5oPgo+PiAgI2luY2x1ZGUgPGxpbnV4L3Jlc2V0Lmg+Cj4+ICAj
+aW5jbHVkZSA8bGludXgvc29jL3N1bnhpL3N1bnhpX3NyYW0uaD4KPj4gQEAgLTE0MCw2ICsxNDEs
+NjQgQEAgc3RhdGljIGlycXJldHVybl90IGNlZHJ1c19pcnEoaW50IGlycSwgdm9pZCAqZGF0YSkK
+Pj4gICAgICAgICByZXR1cm4gSVJRX0hBTkRMRUQ7Cj4+ICB9Cj4+Cj4+ICtpbnQgY2VkcnVzX2h3
+X3N1c3BlbmQoc3RydWN0IGRldmljZSAqZGV2aWNlKQo+PiArewo+PiArICAgICAgIHN0cnVjdCBj
+ZWRydXNfZGV2ICpkZXYgPSBkZXZfZ2V0X2RydmRhdGEoZGV2aWNlKTsKPj4gKwo+PiArICAgICAg
+IHJlc2V0X2NvbnRyb2xfYXNzZXJ0KGRldi0+cnN0Yyk7Cj4+ICsKPj4gKyAgICAgICBjbGtfZGlz
+YWJsZV91bnByZXBhcmUoZGV2LT5yYW1fY2xrKTsKPj4gKyAgICAgICBjbGtfZGlzYWJsZV91bnBy
+ZXBhcmUoZGV2LT5tb2RfY2xrKTsKPj4gKyAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUoZGV2
+LT5haGJfY2xrKTsKPj4gKwo+IAo+IFlvdSBjYW4gdXNlIGNsa19idWxrIEFQSSBoZXJlLgoKU2lu
+Y2UgdGhpcyBjaGFuZ2UgaXMgYWxyZWFkeSB0ZXN0ZWQsIEknZCBwcmVmZXIgdG8gZG8gdGhhdCBh
+cyBhIHNlcGFyYXRlIHBhdGNoLgoKPj4gKyAgICAgICByZXR1cm4gMDsKPj4gK30KPj4gKwo+PiAr
+aW50IGNlZHJ1c19od19yZXN1bWUoc3RydWN0IGRldmljZSAqZGV2aWNlKQo+PiArewo+PiArICAg
+ICAgIHN0cnVjdCBjZWRydXNfZGV2ICpkZXYgPSBkZXZfZ2V0X2RydmRhdGEoZGV2aWNlKTsKPj4g
+KyAgICAgICBpbnQgcmV0Owo+PiArCj4+ICsgICAgICAgcmV0ID0gY2xrX3ByZXBhcmVfZW5hYmxl
+KGRldi0+YWhiX2Nsayk7Cj4+ICsgICAgICAgaWYgKHJldCkgewo+PiArICAgICAgICAgICAgICAg
+ZGV2X2VycihkZXYtPmRldiwgIkZhaWxlZCB0byBlbmFibGUgQUhCIGNsb2NrXG4iKTsKPj4gKwo+
+PiArICAgICAgICAgICAgICAgcmV0dXJuIHJldDsKPj4gKyAgICAgICB9Cj4+ICsKPj4gKyAgICAg
+ICByZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUoZGV2LT5tb2RfY2xrKTsKPj4gKyAgICAgICBpZiAo
+cmV0KSB7Cj4+ICsgICAgICAgICAgICAgICBkZXZfZXJyKGRldi0+ZGV2LCAiRmFpbGVkIHRvIGVu
+YWJsZSBNT0QgY2xvY2tcbiIpOwo+PiArCj4+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9haGJf
+Y2xrOwo+PiArICAgICAgIH0KPj4gKwo+PiArICAgICAgIHJldCA9IGNsa19wcmVwYXJlX2VuYWJs
+ZShkZXYtPnJhbV9jbGspOwo+PiArICAgICAgIGlmIChyZXQpIHsKPj4gKyAgICAgICAgICAgICAg
+IGRldl9lcnIoZGV2LT5kZXYsICJGYWlsZWQgdG8gZW5hYmxlIFJBTSBjbG9ja1xuIik7Cj4+ICsK
+Pj4gKyAgICAgICAgICAgICAgIGdvdG8gZXJyX21vZF9jbGs7Cj4+ICsgICAgICAgfQo+PiArCj4+
+ICsgICAgICAgcmV0ID0gcmVzZXRfY29udHJvbF9yZXNldChkZXYtPnJzdGMpOwo+PiArICAgICAg
+IGlmIChyZXQpIHsKPj4gKyAgICAgICAgICAgICAgIGRldl9lcnIoZGV2LT5kZXYsICJGYWlsZWQg
+dG8gYXBwbHkgcmVzZXRcbiIpOwo+PiArCj4+ICsgICAgICAgICAgICAgICBnb3RvIGVycl9yYW1f
+Y2xrOwo+PiArICAgICAgIH0KPj4gKwo+PiArICAgICAgIHJldHVybiAwOwo+PiArCj4+ICtlcnJf
+cmFtX2NsazoKPj4gKyAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUoZGV2LT5yYW1fY2xrKTsK
+Pj4gK2Vycl9tb2RfY2xrOgo+PiArICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZShkZXYtPm1v
+ZF9jbGspOwo+PiArZXJyX2FoYl9jbGs6Cj4+ICsgICAgICAgY2xrX2Rpc2FibGVfdW5wcmVwYXJl
+KGRldi0+YWhiX2Nsayk7Cj4+ICsKPj4gKyAgICAgICByZXR1cm4gcmV0Owo+PiArfQo+PiArCj4+
+ICBpbnQgY2VkcnVzX2h3X3Byb2JlKHN0cnVjdCBjZWRydXNfZGV2ICpkZXYpCj4+ICB7Cj4+ICAg
+ICAgICAgY29uc3Qgc3RydWN0IGNlZHJ1c192YXJpYW50ICp2YXJpYW50Owo+PiBAQCAtMjM2LDQy
+ICsyOTUsMTcgQEAgaW50IGNlZHJ1c19od19wcm9iZShzdHJ1Y3QgY2VkcnVzX2RldiAqZGV2KQo+
+PiAgICAgICAgICAgICAgICAgZ290byBlcnJfc3JhbTsKPj4gICAgICAgICB9Cj4+Cj4+IC0gICAg
+ICAgcmV0ID0gY2xrX3ByZXBhcmVfZW5hYmxlKGRldi0+YWhiX2Nsayk7Cj4+IC0gICAgICAgaWYg
+KHJldCkgewo+PiAtICAgICAgICAgICAgICAgZGV2X2VycihkZXYtPmRldiwgIkZhaWxlZCB0byBl
+bmFibGUgQUhCIGNsb2NrXG4iKTsKPj4gLQo+PiAtICAgICAgICAgICAgICAgZ290byBlcnJfc3Jh
+bTsKPj4gLSAgICAgICB9Cj4+IC0KPj4gLSAgICAgICByZXQgPSBjbGtfcHJlcGFyZV9lbmFibGUo
+ZGV2LT5tb2RfY2xrKTsKPj4gLSAgICAgICBpZiAocmV0KSB7Cj4+IC0gICAgICAgICAgICAgICBk
+ZXZfZXJyKGRldi0+ZGV2LCAiRmFpbGVkIHRvIGVuYWJsZSBNT0QgY2xvY2tcbiIpOwo+PiAtCj4+
+IC0gICAgICAgICAgICAgICBnb3RvIGVycl9haGJfY2xrOwo+PiAtICAgICAgIH0KPj4gLQo+PiAt
+ICAgICAgIHJldCA9IGNsa19wcmVwYXJlX2VuYWJsZShkZXYtPnJhbV9jbGspOwo+PiAtICAgICAg
+IGlmIChyZXQpIHsKPj4gLSAgICAgICAgICAgICAgIGRldl9lcnIoZGV2LT5kZXYsICJGYWlsZWQg
+dG8gZW5hYmxlIFJBTSBjbG9ja1xuIik7Cj4+IC0KPj4gLSAgICAgICAgICAgICAgIGdvdG8gZXJy
+X21vZF9jbGs7Cj4+IC0gICAgICAgfQo+PiAtCj4+IC0gICAgICAgcmV0ID0gcmVzZXRfY29udHJv
+bF9yZXNldChkZXYtPnJzdGMpOwo+PiAtICAgICAgIGlmIChyZXQpIHsKPj4gLSAgICAgICAgICAg
+ICAgIGRldl9lcnIoZGV2LT5kZXYsICJGYWlsZWQgdG8gYXBwbHkgcmVzZXRcbiIpOwo+PiAtCj4+
+IC0gICAgICAgICAgICAgICBnb3RvIGVycl9yYW1fY2xrOwo+PiArICAgICAgIHBtX3J1bnRpbWVf
+ZW5hYmxlKGRldi0+ZGV2KTsKPj4gKyAgICAgICBpZiAoIXBtX3J1bnRpbWVfZW5hYmxlZChkZXYt
+PmRldikpIHsKPj4gKyAgICAgICAgICAgICAgIHJldCA9IGNlZHJ1c19od19yZXN1bWUoZGV2LT5k
+ZXYpOwo+PiArICAgICAgICAgICAgICAgaWYgKHJldCkKPj4gKyAgICAgICAgICAgICAgICAgICAg
+ICAgZ290byBlcnJfcG07Cj4+ICAgICAgICAgfQo+Pgo+PiAgICAgICAgIHJldHVybiAwOwo+Pgo+
+PiAtZXJyX3JhbV9jbGs6Cj4+IC0gICAgICAgY2xrX2Rpc2FibGVfdW5wcmVwYXJlKGRldi0+cmFt
+X2Nsayk7Cj4+IC1lcnJfbW9kX2NsazoKPj4gLSAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUo
+ZGV2LT5tb2RfY2xrKTsKPj4gLWVycl9haGJfY2xrOgo+PiAtICAgICAgIGNsa19kaXNhYmxlX3Vu
+cHJlcGFyZShkZXYtPmFoYl9jbGspOwo+PiArZXJyX3BtOgo+PiArICAgICAgIHBtX3J1bnRpbWVf
+ZGlzYWJsZShkZXYtPmRldik7Cj4+ICBlcnJfc3JhbToKPj4gICAgICAgICBzdW54aV9zcmFtX3Jl
+bGVhc2UoZGV2LT5kZXYpOwo+PiAgZXJyX21lbToKPj4gQEAgLTI4MiwxMSArMzE2LDkgQEAgaW50
+IGNlZHJ1c19od19wcm9iZShzdHJ1Y3QgY2VkcnVzX2RldiAqZGV2KQo+Pgo+PiAgdm9pZCBjZWRy
+dXNfaHdfcmVtb3ZlKHN0cnVjdCBjZWRydXNfZGV2ICpkZXYpCj4+ICB7Cj4+IC0gICAgICAgcmVz
+ZXRfY29udHJvbF9hc3NlcnQoZGV2LT5yc3RjKTsKPj4gLQo+PiAtICAgICAgIGNsa19kaXNhYmxl
+X3VucHJlcGFyZShkZXYtPnJhbV9jbGspOwo+PiAtICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFy
+ZShkZXYtPm1vZF9jbGspOwo+PiAtICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZShkZXYtPmFo
+Yl9jbGspOwo+PiArICAgICAgIHBtX3J1bnRpbWVfZGlzYWJsZShkZXYtPmRldik7Cj4+ICsgICAg
+ICAgaWYgKCFwbV9ydW50aW1lX3N0YXR1c19zdXNwZW5kZWQoZGV2LT5kZXYpKQo+PiArICAgICAg
+ICAgICAgICAgY2VkcnVzX2h3X3N1c3BlbmQoZGV2LT5kZXYpOwo+Pgo+PiAgICAgICAgIHN1bnhp
+X3NyYW1fcmVsZWFzZShkZXYtPmRldik7Cj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3N0YWdp
+bmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c19ody5oIGIvZHJpdmVycy9zdGFnaW5nL21lZGlh
+L3N1bnhpL2NlZHJ1cy9jZWRydXNfaHcuaAo+PiBpbmRleCA2MDRmZjkzMmZiZjUuLjQ1ZjY0MWYw
+YmZhMiAxMDA2NDQKPj4gLS0tIGEvZHJpdmVycy9zdGFnaW5nL21lZGlhL3N1bnhpL2NlZHJ1cy9j
+ZWRydXNfaHcuaAo+PiArKysgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2Nl
+ZHJ1c19ody5oCj4+IEBAIC0yMiw2ICsyMiw5IEBAIHZvaWQgY2VkcnVzX2VuZ2luZV9kaXNhYmxl
+KHN0cnVjdCBjZWRydXNfZGV2ICpkZXYpOwo+PiAgdm9pZCBjZWRydXNfZHN0X2Zvcm1hdF9zZXQo
+c3RydWN0IGNlZHJ1c19kZXYgKmRldiwKPj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgc3Ry
+dWN0IHY0bDJfcGl4X2Zvcm1hdCAqZm10KTsKPj4KPj4gK2ludCBjZWRydXNfaHdfc3VzcGVuZChz
+dHJ1Y3QgZGV2aWNlICpkZXZpY2UpOwo+PiAraW50IGNlZHJ1c19od19yZXN1bWUoc3RydWN0IGRl
+dmljZSAqZGV2aWNlKTsKPj4gKwo+PiAgaW50IGNlZHJ1c19od19wcm9iZShzdHJ1Y3QgY2VkcnVz
+X2RldiAqZGV2KTsKPj4gIHZvaWQgY2VkcnVzX2h3X3JlbW92ZShzdHJ1Y3QgY2VkcnVzX2RldiAq
+ZGV2KTsKPj4KPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRy
+dXMvY2VkcnVzX3ZpZGVvLmMgYi9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2Nl
+ZHJ1c192aWRlby5jCj4+IGluZGV4IGVkM2Y1MTFmMDY2Zi4uMTZkODIzMDllN2I2IDEwMDY0NAo+
+PiAtLS0gYS9kcml2ZXJzL3N0YWdpbmcvbWVkaWEvc3VueGkvY2VkcnVzL2NlZHJ1c192aWRlby5j
+Cj4+ICsrKyBiL2RyaXZlcnMvc3RhZ2luZy9tZWRpYS9zdW54aS9jZWRydXMvY2VkcnVzX3ZpZGVv
+LmMKPj4gQEAgLTEzLDYgKzEzLDggQEAKPj4gICAqIE1hcmVrIFN6eXByb3dza2ksIDxtLnN6eXBy
+b3dza2lAc2Ftc3VuZy5jb20+Cj4+ICAgKi8KPj4KPj4gKyNpbmNsdWRlIDxsaW51eC9wbV9ydW50
+aW1lLmg+Cj4+ICsKPj4gICNpbmNsdWRlIDxtZWRpYS92aWRlb2J1ZjItZG1hLWNvbnRpZy5oPgo+
+PiAgI2luY2x1ZGUgPG1lZGlhL3Y0bDItZGV2aWNlLmg+Cj4+ICAjaW5jbHVkZSA8bWVkaWEvdjRs
+Mi1pb2N0bC5oPgo+PiBAQCAtNDUwLDEyICs0NTIsMjQgQEAgc3RhdGljIGludCBjZWRydXNfc3Rh
+cnRfc3RyZWFtaW5nKHN0cnVjdCB2YjJfcXVldWUgKnZxLCB1bnNpZ25lZCBpbnQgY291bnQpCj4+
+ICAgICAgICAgICAgICAgICByZXR1cm4gLUVJTlZBTDsKPj4gICAgICAgICB9Cj4+Cj4+IC0gICAg
+ICAgaWYgKFY0TDJfVFlQRV9JU19PVVRQVVQodnEtPnR5cGUpICYmCj4+IC0gICAgICAgICAgIGRl
+di0+ZGVjX29wc1tjdHgtPmN1cnJlbnRfY29kZWNdLT5zdGFydCkKPj4gLSAgICAgICAgICAgICAg
+IHJldCA9IGRldi0+ZGVjX29wc1tjdHgtPmN1cnJlbnRfY29kZWNdLT5zdGFydChjdHgpOwo+PiAr
+ICAgICAgIGlmIChWNEwyX1RZUEVfSVNfT1VUUFVUKHZxLT50eXBlKSkgewo+PiArICAgICAgICAg
+ICAgICAgcmV0ID0gcG1fcnVudGltZV9nZXRfc3luYyhkZXYtPmRldik7Cj4gCj4gSXQncyBlbnRp
+cmVseSB1cCB0byB5b3UsIGJ1dCB5b3UgY291bGQgZG8gZ2V0X3N5bmMvcHV0Cj4gYmV0d2VlbiAu
+ZGV2aWNlX3J1biwgYXMgZXZlcnl0aGluZyBzaG91bGQgaGFwcGVuCj4gaW4gdGhlIGNvbnRleHQg
+b2YgdjRsMl9tMm1fb3BzLmRldmljZV9ydW4uCj4gKEluIHRoYXQgY2FzZSwgSSBiZWxpZXZlIHlv
+dSdkIHdhbnQgdG8gZW5hYmxlIGF1dG9zdXNwZW5kLikKPiAKPiBOb3Qgc3VyZSB0aGVyZSdzIG11
+Y2ggdG8gZ2FpbiBmcm9tIGFuIHBvd2VyIGNvbnN1bXB0aW9uCj4gcG92LCB0aG91Z2guCgpBZ3Jl
+ZWQuIEVpdGhlciB5b3UgaGF2ZSBhIHNob3J0IGF1dG9zdXNwZW5kIGRlbGF5LCBhbmQgZ2V0IHBl
+ci1mcmFtZSBsYXRlbmN5OyBvcgphIGxvbmdlciBkZWxheSwgYW5kIHRoZSBoYXJkd2FyZSBpcyBv
+biBmb3IgdGhlIGVudGlyZSBzdHJlYW0gYW55d2F5LiBTbyBJIGRvbid0CnRoaW5rIGl0J3Mgd29y
+dGggdGhlIG92ZXJoZWFkLgoKPiBXaXRoIHRoZSBPcmlnaW5hbGx5LWJ5IGNoYW5nZWQ6Cj4gCj4g
+UmV2aWV3ZWQtYnk6IEV6ZXF1aWVsIEdhcmNpYSA8ZXplcXVpZWxAY29sbGFib3JhLmNvbT4KPiAK
+PiBUaGFua3MsCj4gRXplcXVpZWwKPiAKClRoYW5rcywKU2FtdWVsCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
