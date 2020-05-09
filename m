@@ -2,127 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82B1C1CBBD0
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 02:33:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43D081CBBD8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 02:36:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
 	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QchHN06ReWoi9okwoANJK18O/nO27xdOnnOUGrTyqRA=; b=q1119eHj/dc/Pf
-	EO7k7VxsFP1svYNFk9xDD6k9VRt2reI8/voGV5jtCedfVT3UOGLFqjQrSDhe1uKrAe3GJNEDdELo1
-	NL5CcmW7UK8b9uqjqr8wUMXNSGf/hvO+Lxt7DSdK6BvtyTEloK/jpXseIPiaWJF1U7V8/nIBbADDF
-	i8oyAnm0nlX2bciuVquiTCvX7SVNIVN31ohRucINgeybGnleAfYkZoQmzeL8/PCNPw5UBN04jsWaQ
-	8aFOixBc3XfpIQAz9WzxkFjV09nXcr08kc/VI3pflFXovU4WWA25uztk42c2Ev9DwqjMtFqegWwUW
-	Ub940ItqBOvCxXM8g02A==;
+	List-Owner; bh=io3HkTwT/Rp6hirs/gE0DiBPycHBNPzIeJTMk/XEzIg=; b=Yp3d8e1fm2JJ3N
+	kJtZp6lWGtFQJuXOBOYI/MwiODM2bRdkhk9T6GP3sMQ8hKZQiCmko1in3eEFh6hKnT9zapYKGn7fv
+	MHb5Gi2KUGrP8XagvdWlz3Uq684qdSv9TYkNlmAT5yjNiSp+KBVAb9OKlTGuUc1SnM68W7hDtGGVS
+	TDnZtlKthQsBtE0qnVTvonnQfaNVtqzFAVDIuciUU+d/Yhx58HVaXlpe786DWrk9e+GhmcmcIr7mm
+	ilCaHlAcYL5BWDLOThK/TSpkFZPFZXJkZHhQh8W4eN1HQnTVENpBAk2Ivly6iGM3RiwzfU1OTPhhI
+	OD0zbWAOr8XYCNUWsxuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXDQR-0004WH-Dz; Sat, 09 May 2020 00:33:07 +0000
-Received: from mailout4.samsung.com ([203.254.224.34])
+	id 1jXDTj-0007MJ-N8; Sat, 09 May 2020 00:36:31 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXDQJ-0004Uu-8O
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 00:33:01 +0000
-Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
- by mailout4.samsung.com (KnoxPortal) with ESMTP id
- 20200509003254epoutp04577ae75fa5b3ff365a8938b2f0a05a6b~NNN6wcGJI1840018400epoutp04W
+ id 1jXDTa-0007Lf-A4
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 00:36:24 +0000
+Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20200509003617epoutp03a4301dfbbe2b080ccf48e3565444e1e9~NNQ3pUsVx2954629546epoutp03F
  for <linux-arm-kernel@lists.infradead.org>;
- Sat,  9 May 2020 00:32:54 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
- 20200509003254epoutp04577ae75fa5b3ff365a8938b2f0a05a6b~NNN6wcGJI1840018400epoutp04W
+ Sat,  9 May 2020 00:36:17 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20200509003617epoutp03a4301dfbbe2b080ccf48e3565444e1e9~NNQ3pUsVx2954629546epoutp03F
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1588984374;
- bh=neo+HlKkQMCxdPB9fgCSJEAlMpQVKOxhn4oUXLHS10E=;
+ s=mail20170921; t=1588984577;
+ bh=dlOOLufDeg99NYiBMXLuCCLPr1sINIot7eHDqZu/lJc=;
  h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
- b=hAiMPJi+nizBw2Fj/dnHMciZK9KPIa6IJwQTAji8h10W6euA+4TKz62jSFO+xFcrd
- /lc34pmvu239DrIG1IBCUHi0GkvAmROTHaIac18THQ7mHl2i/rkDUnMaoN7ZmzY/2Z
- e6n6OEiB0xxVJg+ugXNOeV6JGo6kMsD/+fXKQo7o=
-Received: from epsmges5p1new.samsung.com (unknown [182.195.42.73]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTP id
- 20200509003253epcas5p12e5c0818bdeb7dd26794d78ea4f841dd~NNN5oftA52572825728epcas5p1f;
- Sat,  9 May 2020 00:32:53 +0000 (GMT)
-Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
- epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- E9.13.10010.53AF5BE5; Sat,  9 May 2020 09:32:53 +0900 (KST)
+ b=YiTlflKbHNgy/NR7HAZmiAAznR1kxCXHN9zD8eSqnfGDZiJSpzdyTYCmQj5Oot6qa
+ K5OpI5ZCWGX9pkzLIg1afzepzr/9DUrLSjgYXt90/zV5m/JRx+nkr68DLHoHnRWykD
+ 48+wpkH/ffMKDbFmNi3LLikr14BHKapwjUeXor0Q=
+Received: from epsmges5p2new.samsung.com (unknown [182.195.42.74]) by
+ epcas5p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200509003616epcas5p2b3225e9b3de1025e352c09357cd74b2f~NNQ2tFXFt0795707957epcas5p2q;
+ Sat,  9 May 2020 00:36:16 +0000 (GMT)
+Received: from epcas5p4.samsung.com ( [182.195.41.42]) by
+ epsmges5p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 6B.BB.23569.00BF5BE5; Sat,  9 May 2020 09:36:16 +0900 (KST)
 Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
- 20200509003252epcas5p105fcdf77df196a4f581f51fc7e82f1f8~NNN43vH4C0506305063epcas5p1v;
- Sat,  9 May 2020 00:32:52 +0000 (GMT)
-Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+ epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20200509003615epcas5p38e36fa225186103d1158bdc16aa0ec0e~NNQ1f7CPs1946519465epcas5p3-;
+ Sat,  9 May 2020 00:36:15 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
  epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200509003252epsmtrp2b1babae60489d2cafa01eac8fa1ed4b3~NNN424e_p1992219922epsmtrp2L;
- Sat,  9 May 2020 00:32:52 +0000 (GMT)
-X-AuditID: b6c32a49-735ff7000000271a-b9-5eb5fa351a28
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
- A0.1A.25866.43AF5BE5; Sat,  9 May 2020 09:32:52 +0900 (KST)
+ 20200509003615epsmtrp26ec80a06ab964cfa41b2048be6f47dd0~NNQ1eyo1q1992219922epsmtrp2s;
+ Sat,  9 May 2020 00:36:15 +0000 (GMT)
+X-AuditID: b6c32a4a-3c7ff70000005c11-88-5eb5fb003fd2
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 16.CC.18461.EFAF5BE5; Sat,  9 May 2020 09:36:14 +0900 (KST)
 Received: from alimakhtar02 (unknown [107.108.234.165]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200509003248epsmtip2b6fddca22f966ae2f394d65a39833f31~NNN1ile1w2388123881epsmtip2O;
- Sat,  9 May 2020 00:32:48 +0000 (GMT)
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200509003611epsmtip1f8a8c89552403ae0a2b5ae3fa4852119~NNQymPHSw2460824608epsmtip1O;
+ Sat,  9 May 2020 00:36:11 +0000 (GMT)
 From: "Alim Akhtar" <alim.akhtar@samsung.com>
-To: "'Kishon Vijay Abraham I'" <kishon@ti.com>, <robh@kernel.org>
-In-Reply-To: <b0239aa5-004e-fc88-93a4-5b0d6f174ca3@ti.com>
-Subject: RE: [PATCH v7 07/10] phy: samsung-ufs: add UFS PHY driver for
- samsung SoC
-Date: Sat, 9 May 2020 06:02:36 +0530
-Message-ID: <006701d62599$5fbc2c80$1f348580$@samsung.com>
+To: "'Rob Herring'" <robh@kernel.org>
+In-Reply-To: <20200505155611.GA23690@bogus>
+Subject: RE: [PATCH v7 06/10] dt-bindings: phy: Document Samsung UFS PHY
+ bindings
+Date: Sat, 9 May 2020 06:06:10 +0530
+Message-ID: <006801d62599$d8761690$896243b0$@samsung.com>
 MIME-Version: 1.0
 X-Mailer: Microsoft Outlook 16.0
-Thread-Index: AQINaKJiJYqhfY8pF8dQGQjTbFgO/QI75FnYAdd4tKsCTMaX9af9XhAA
+Thread-Index: AQINaKJiJYqhfY8pF8dQGQjTbFgO/QHYsHSaAmfiCw4BzArg0Kf//KSQ
 Content-Language: en-in
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrKKsWRmVeSWpSXmKPExsWy7bCmhq7pr61xBm83CFm8/HmVzeLT+mWs
- FvOPnGO1uPC0h83i/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
- sXTrTUaLnXdOMDvweVzu62Xy2LSqk81j85J6j5aT+1k8Pj69xeLRt2UVo8fxG9uZPD5vkvNo
- P9DNFMAZxWWTkpqTWZZapG+XwJWx/PUz1oKruhX3rx9jbWDsVOli5OSQEDCRmPB1PksXIxeH
- kMBuRonbq3ZAOZ+AnJt/WSGcz4wS115OYoRp2XFvAiNEYhejxIcPrcwQzhtGiYaWl0wgVWwC
- uhI7FrexdTFycIgIOEo07IoDqWEWeMUk8XfbRhaQGk4BK4mbHWeYQWxhgRCJa++2gcVZBFQk
- etuug23jFbCUONh3GMoWlDg58wlYDbOAtsSyha+ZIS5SkPj5dBkriC0i4CaxcepWNogacYmj
- P3vAjpMQeMAhcbP1DytEg4vExJ+3oZqFJV4d38IOYUtJfH63F+xoCYFsiZ5dxhDhGoml846x
- QNj2EgeuzGEBKWEW0JRYv0sfYhWfRO/vJ0wQnbwSHW1CENWqEs3vrkJ1SktM7O6GOsBDYv7m
- s+wTGBVnIXlsFpLHZiF5YBbCsgWMLKsYJVMLinPTU4tNCwzzUsv1ihNzi0vz0vWS83M3MYJT
- npbnDsa7Dz7oHWJk4mA8xCjBwawkwjuxYkucEG9KYmVValF+fFFpTmrxIUZpDhYlcd7TaUAp
- gfTEktTs1NSC1CKYLBMHp1QDk2z1xlj77zpPxZ/UqM37t0/tjPOHJRW/Au/M+XQ8pv3mT4k5
- zw7U9h97UtUatq9UaOvRxas/3+g7EXz+yPKZHP9zCtSDF664dUKnk/Oq0c1t1ZdZ1Gv/Jro7
- 82pHL4s78M3LZNKyMGOVF2VTOS5cVkjv+Prf6pjCNuOYme2X+iOf/hDTD/60LC9k+QmRfcvn
- qe42XdivcPBg0M+2HFaHfHm+e35JnCmJUlPSGJawHE3Y+IzL0CVgZ/8kC1GmZRaVieUsnFZR
- 9U3sOXOWfUhw+d6f8i+l0pyrXS6vYn2u/j6rZbzv5ix7lvkpwqVF62MZd/wBXo7dKUe3l53o
- KuWxZv6TI9wvquf/pqP3iK6DEktxRqKhFnNRcSIAf9XfVugDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrNIsWRmVeSWpSXmKPExsWy7bCSvK7Jr61xBitvSlu8/HmVzeLT+mWs
- FvOPnGO1uPC0h83i/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
- sXTrTUaLnXdOMDvweVzu62Xy2LSqk81j85J6j5aT+1k8Pj69xeLRt2UVo8fxG9uZPD5vkvNo
- P9DNFMAZxWWTkpqTWZZapG+XwJXx7uZrloJ32hVHu3ezNzAuUepi5OSQEDCR2HFvAmMXIxeH
- kMAORomvR06yQySkJa5vnABlC0us/PecHaLoFaPE7uZpzCAJNgFdiR2L29hAbBEBZ4m7256y
- ghQxC/xgkjg7pRNq7FtGicY7G8FGcQpYSdzsOAPWLSwQJHF/VTcriM0ioCLR23adEcTmFbCU
- ONh3GMoWlDg58wkLiM0soC3R+7CVEcZetvA1M8R5ChI/ny5jhbjCTWLj1K1sEDXiEkd/9jBP
- YBSehWTULCSjZiEZNQtJywJGllWMkqkFxbnpucWGBUZ5qeV6xYm5xaV56XrJ+bmbGMHxq6W1
- g3HPqg96hxiZOBgPMUpwMCuJ8E6s2BInxJuSWFmVWpQfX1Sak1p8iFGag0VJnPfrrIVxQgLp
- iSWp2ampBalFMFkmDk6pBqalDd837vr9qY89RvacjuCHA4bhAf2OIRfDZBOlrONK1j7Oc15z
- vibx03kWNfdnFyfNnLxhi0ZEbGGQavjLUpumLFHHFyGiO2d+WMdqznj/SsbsiD3cCQL8jmLM
- 01U/aq/d/EtI+ZqfrPSudWWxAnXBC6ccq3TKWSrkH/KxJ4v9ybFjd5oUI0wVOFVWBtae9ub7
- cuj8skcHU5dtqNDTZl54J1co8H3L4Y03PwbYnJ/K7MVUFrPwxLxVDG+CXI+cFA14Ozc03Fbk
- u8hOZS+2AOv55Telf1hw+KUn8C3+tGDl+7UHPdZUWqe092gdsePdoLLJqMrCPrpkZ1lNqu2l
- myGx904ny/jcrjzD7juxW4mlOCPRUIu5qDgRAM2N5vdOAwAA
-X-CMS-MailID: 20200509003252epcas5p105fcdf77df196a4f581f51fc7e82f1f8
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrCKsWRmVeSWpSXmKPExsWy7bCmli7D761xBrPOClq8/HmVzeLT+mWs
+ FvOPnGO1OH9+A7vFzS1HWSw2Pb7GanF51xw2ixnn9zFZdF/fwWax/Pg/Jov/e3awWyzdepPR
+ gcfjcl8vk8emVZ1sHpuX1Hu0nNzP4vHx6S0Wj74tqxg9Pm+S82g/0M0UwBHFZZOSmpNZllqk
+ b5fAlXGm8QVLwV2jiteNJ9kbGG8ZdDFyckgImEgc/jufrYuRi0NIYDejxK3FqxhBEkICnxgl
+ zu7wgUh8Y5T41zmDCaajdc8+JojEXkaJP3seskI4bxglJrRvZgapYhPQldixuI0NxBYRUJVo
+ mvWABaSIWeA4k8TjjltgozgFtCWaL25gAbGFBYIlvkyZDNbAIqAi8fPjGbBBvAKWEk9fb2GD
+ sAUlTs58AlbPDNS7bOFrZoiTFCR+Pl0GdAUH0DI3ifZmY4gScYmjP3uYQfZKCFzgkNg+6QQL
+ RL2LxN2PN6HeEZZ4dXwLO4QtJfH53V42kDkSAtkSPbuMIcI1EkvnHYNqtZc4cGUOC0gJs4Cm
+ xPpd+hCr+CR6fz9hgujklehoE4KoVpVofncVqlNaYmJ3NytEiYfE0k6nCYyKs5C8NQvJW7OQ
+ 3D8LYdcCRpZVjJKpBcW56anFpgVGeanlesWJucWleel6yfm5mxjBCU3Lawfjwwcf9A4xMnEw
+ HmKU4GBWEuGdWLElTog3JbGyKrUoP76oNCe1+BCjNAeLkjhvUiNQSiA9sSQ1OzW1ILUIJsvE
+ wSnVwDQt5XOwu7l5KPfaALeH36ovbT3SYGQuqD3lzgpdWbmy5k11wik8vUUTLx1V77qy/MaL
+ bwV8DO+nPzym8eLS98f3TKP+/Z/NGFho94dx+rLCbRc9U56bv3iS9nzvZ645eR9Z4tZ1nj7x
+ /dHDkGWCOub3JhzZPNs9IOTNguiqBa9W9ZjPjT1wW9j4/r0rf/WiDIMkz3rpzv79Sc2c4UwE
+ 09/KxJ4Pyt6FoqsnLJjT9mH1g08mbGYvRLeX2rwVf18bGle2Pn1LwVyP0v1TdZdFdgcq1xy9
+ fmni7qke9dvm/hadb8v/xn27Ud8540knYm9f3dr2+OoRfq41caUxWu47Ms6Vza89G9W3YM7T
+ xokqxvNfKrEUZyQaajEXFScCAEjSJGjXAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrFIsWRmVeSWpSXmKPExsWy7bCSnO6/X1vjDHrf21i8/HmVzeLT+mWs
+ FvOPnGO1OH9+A7vFzS1HWSw2Pb7GanF51xw2ixnn9zFZdF/fwWax/Pg/Jov/e3awWyzdepPR
+ gcfjcl8vk8emVZ1sHpuX1Hu0nNzP4vHx6S0Wj74tqxg9Pm+S82g/0M0UwBHFZZOSmpNZllqk
+ b5fAlfFxy2XGglVKFZf+/2RqYNwg1cXIySEhYCLRumcfE4gtJLCbUWLPLhmIuLTE9Y0T2CFs
+ YYmV/54D2VxANa8YJWbM+MMKkmAT0JXYsbiNDcQWEVCVaJr1gAWkiFngMpPEkTcv2CA67jFK
+ 7Oj8AraCU0BbovniBhYQW1ggUOJ2/wNGEJtFQEXi58czzCA2r4ClxNPXW9ggbEGJkzOfgNUz
+ A/X2PmxlhLGXLXzNDHGegsTPp8uALuIAusJNor3ZGKJEXOLozx7mCYzCs5BMmoVk0iwkk2Yh
+ aVnAyLKKUTK1oDg3PbfYsMAwL7Vcrzgxt7g0L10vOT93EyM4OrU0dzBuX/VB7xAjEwfjIUYJ
+ DmYlEd6JFVvihHhTEiurUovy44tKc1KLDzFKc7AoifPeKFwYJySQnliSmp2aWpBaBJNl4uCU
+ amAyLT9msSQ/wvbRE55D4QJH5gnpzdONb548vVhMZCLX/DPcK7sy7795w6d1O8ZP9EUUW4LW
+ w3XF8w79XH3YJdXP8ss9/WYT7pVeN9v/yD5oCeNIv2Dak77JrPDvl55k01/lThUii+bsmMDK
+ wb0mbfdGDjdR9+jV+nLz3xvs3GkftXFZUuBePvOJipudGV99tFiZqdvoFaZk7Xr7KHNIWaTZ
+ fQc26/R1Of2L9a4sMZszu2QGy7U85qPLf/WXX1E8eXLC4cVvN5ZvWbul9fLDmTfu7pANbXm2
+ futaPeXg5ynNOhcFWT/7X2H9I+Fz50wE7/ssvyPd7fVy1cpJF69uPs2pt4U/KPCNmUCd6aSp
+ y12VWIozEg21mIuKEwEjBPjwPQMAAA==
+X-CMS-MailID: 20200509003615epcas5p38e36fa225186103d1158bdc16aa0ec0e
 X-Msg-Generator: CA
 CMS-TYPE: 105P
-X-CMS-RootMailID: 20200426174217epcas5p2c7d1606b641b73f67a169b8d22f0637d
+X-CMS-RootMailID: 20200426174215epcas5p3e87abccf47976f6318eb470efef9db39
 References: <20200426173024.63069-1-alim.akhtar@samsung.com>
- <CGME20200426174217epcas5p2c7d1606b641b73f67a169b8d22f0637d@epcas5p2.samsung.com>
- <20200426173024.63069-8-alim.akhtar@samsung.com>
- <b0239aa5-004e-fc88-93a4-5b0d6f174ca3@ti.com>
+ <CGME20200426174215epcas5p3e87abccf47976f6318eb470efef9db39@epcas5p3.samsung.com>
+ <20200426173024.63069-7-alim.akhtar@samsung.com>
+ <20200505155611.GA23690@bogus>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_173259_716459_88D5B4AC 
-X-CRM114-Status: GOOD (  16.15  )
+X-CRM114-CacheID: sfid-20200508_173622_524375_41E32E51 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.34 listed in list.dnswl.org]
+ high trust [203.254.224.33 listed in list.dnswl.org]
  0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [203.254.224.34 listed in wl.mailspike.net]
+ [203.254.224.33 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -148,210 +149,89 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
  linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
  linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, 'Vinod Koul' <vkoul@kernel.org>, cang@codeaurora.org,
- stanley.chu@mediatek.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Kishon,
-Thanks for review.
-
-> -----Original Message-----
-> From: Kishon Vijay Abraham I <kishon@ti.com>
-> Sent: 07 May 2020 10:49
-> To: Alim Akhtar <alim.akhtar@samsung.com>; robh@kernel.org
-> Cc: devicetree@vger.kernel.org; linux-scsi@vger.kernel.org; krzk@kernel.org;
-> avri.altman@wdc.com; martin.petersen@oracle.com;
-> kwmad.kim@samsung.com; stanley.chu@mediatek.com;
-> cang@codeaurora.org; linux-samsung-soc@vger.kernel.org; linux-arm-
-> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Vinod Koul
-> <vkoul@kernel.org>
-> Subject: Re: [PATCH v7 07/10] phy: samsung-ufs: add UFS PHY driver for
-> samsung SoC
-> 
-.
-.
-.
-> Okay, here you are using a state machine for the PHY configuration because of
-> the way the PHY is integrated with the UFS. Would be nice to have the state
-> machine documented somewhere. I only have the PHY patch in my inbox.
-Ok, will document in the driver file as well as in the header file.
-
-> > +
-> > +	if (ufs_phy->ufs_phy_state == CFG_POST_PWR_HS)
-> > +		err = samsung_ufs_phy_wait_for_lock_acq(phy);
-> > +out:
-> > +	return err;
-> > +}
-> > +
-> > +static int samsung_ufs_phy_symbol_clk_init(struct samsung_ufs_phy
-> > +*phy) {
-> > +	struct clk *clk;
-> > +	int ret = 0;
-> > +
-> > +	clk = devm_clk_get(phy->dev, "tx0_symbol_clk");
-> 
-> There is no "exit" callback in phy_ops which means if there are multiple phy_init
-> calls, this clock will not be freed. This could be moved to "probe" IMO.
-
-Ok, will add exit callback.
-
-> > +	if (IS_ERR(clk)) {
-> > +		dev_err(phy->dev, "failed to get tx0_symbol_clk clock\n");
-> > +		goto out;
-> > +	} else {
-> 
-> "else" here and below is not required. Something like below
-> 
-Ack
-> 	clk = devm_clk_get(phy->dev, "tx0_symbol_clk");
-> 	if (IS_ERR(clk)) {
-> 		dev_err(phy->dev, "failed to get tx0_symbol_clk clock\n");
-> 		goto out;
-> 	}
-> 	phy->tx0_symbol_clk = clk;
-> 
-> > +		phy->tx0_symbol_clk = clk;
-> > +	}
-> > +
-> > +	clk = devm_clk_get(phy->dev, "rx0_symbol_clk");
-> > +	if (IS_ERR(clk)) {
-> > +		dev_err(phy->dev, "failed to get rx0_symbol_clk clock\n");
-> > +		goto out;
-> > +	} else {
-> > +		phy->rx0_symbol_clk = clk;
-> > +	}
-> > +
-> > +	clk = devm_clk_get(phy->dev, "rx1_symbol_clk");
-> > +	if (IS_ERR(clk)) {
-> > +		dev_err(phy->dev, "failed to get rx1_symbol_clk clock\n");
-> > +		goto out;
-> > +	} else {
-> > +		phy->rx1_symbol_clk = clk;
-> > +	}
-> > +
-> > +	ret = clk_prepare_enable(phy->tx0_symbol_clk);
-> > +	if (ret) {
-> > +		dev_err(phy->dev, "%s: tx0_symbol_clk enable failed %d\n",
-> > +				__func__, ret);
-> > +		goto out;
-> > +	}
-> > +	ret = clk_prepare_enable(phy->rx0_symbol_clk);
-> > +	if (ret) {
-> > +		dev_err(phy->dev, "%s: rx0_symbol_clk enable failed %d\n",
-> > +				__func__, ret);
-> > +		goto out;
-> > +	}
-> > +	ret = clk_prepare_enable(phy->rx1_symbol_clk);
-> > +	if (ret) {
-> > +		dev_err(phy->dev, "%s: rx1_symbol_clk enable failed %d\n",
-> > +				__func__, ret);
-> > +		goto out;
-> > +	}
-> 
-> All these clocks are never disabled?
-Sure, will add disabling of clocks in exit callback 
-
-> > +out:
-> > +	return ret;
-> > +}
-> > +
-> > +static int samsung_ufs_phy_clks_init(struct samsung_ufs_phy *phy) {
-> > +	struct clk *phy_ref_clk;
-> > +	int ret;
-> > +
-> > +	phy_ref_clk = devm_clk_get(phy->dev, "ref_clk");
-> > +	if (IS_ERR(phy_ref_clk))
-> > +		dev_err(phy->dev, "failed to get ref_clk clock\n");
-> > +	else
-> > +		phy->ref_clk = phy_ref_clk;
-> > +
-> > +	ret = clk_prepare_enable(phy->ref_clk);
-> > +	if (ret) {
-> > +		dev_err(phy->dev, "%s: ref_clk enable failed %d\n",
-> > +				__func__, ret);
-> > +		return ret;
-> > +	}
-> > +
-> > +	dev_info(phy->dev, "UFS MPHY ref_clk_rate = %ld\n",
-> > +clk_get_rate(phy_ref_clk));
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static int samsung_ufs_phy_init(struct phy *phy) {
-> > +	struct samsung_ufs_phy *_phy = get_samsung_ufs_phy(phy);
-> > +	int ret;
-> > +
-> > +	_phy->lane_cnt = phy->attrs.bus_width;
-> > +	_phy->ufs_phy_state = CFG_PRE_INIT;
-> > +
-> > +	_phy->is_pre_init = true;
-> > +	_phy->is_post_init = false;
-> > +	_phy->is_pre_pmc = false;
-> > +	_phy->is_post_pmc = false;
-> > +
-> > +
-> > +	if (of_device_is_compatible(_phy->dev->of_node,
-> > +				"samsung,exynos7-ufs-phy")) {
-> 
-> Can't it be added in driver data for this compatible?
-Sure, will handle via driver data.
-
-> > +		ret = samsung_ufs_phy_symbol_clk_init(_phy);
-> > +		if (ret)
-> > +			dev_err(_phy->dev,
-> > +				"failed to set ufs phy symbol clocks\n");
-> > +	}
-> > +
-.
-.
-.
-> > +static int samsung_ufs_phy_set_mode(struct phy *generic_phy,
-> > +					enum phy_mode mode, int submode) {
-> > +	struct samsung_ufs_phy *_phy = get_samsung_ufs_phy(generic_phy);
-> > +
-> > +	_phy->mode = PHY_MODE_INVALID;
-> > +
-> > +	if (mode > 0)
-> > +		_phy->mode = mode;
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static struct phy_ops samsung_ufs_phy_ops = {
-> > +	.init		= samsung_ufs_phy_init,
-> > +	.power_on	= samsung_ufs_phy_power_on,
-> > +	.power_off	= samsung_ufs_phy_power_off,
-> > +	.calibrate	= samsung_ufs_phy_calibrate,
-> > +	.set_mode	= samsung_ufs_phy_set_mode,
-> 
-> missing .owner.
-Ack,
-
-> > +}
-> > +;
-.
-.
-> > +++ b/drivers/phy/samsung/phy-samsung-ufs.h
-> > @@ -0,0 +1,142 @@
-> > +/* SPDX-License-Identifier: GPL-2.0-only */
-> > +/*
-> > + * UFS PHY driver for Samsung EXYNOS SoC
-> > + *
-> > + * Copyright (C) 2015 Samsung Electronics Co., Ltd.
-> 
-> 2020
-> 
-Sure, will update.
-
-> Thanks
-> Kishon
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iCgo+IC0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tCj4gRnJvbTogUm9iIEhlcnJpbmcg
+PHJvYmhAa2VybmVsLm9yZz4KPiBTZW50OiAwNSBNYXkgMjAyMCAyMToyNgo+IFRvOiBBbGltIEFr
+aHRhciA8YWxpbS5ha2h0YXJAc2Ftc3VuZy5jb20+Cj4gQ2M6IGRldmljZXRyZWVAdmdlci5rZXJu
+ZWwub3JnOyBsaW51eC1zY3NpQHZnZXIua2VybmVsLm9yZzsga3J6a0BrZXJuZWwub3JnOwo+IGF2
+cmkuYWx0bWFuQHdkYy5jb207IG1hcnRpbi5wZXRlcnNlbkBvcmFjbGUuY29tOwo+IGt3bWFkLmtp
+bUBzYW1zdW5nLmNvbTsgc3RhbmxleS5jaHVAbWVkaWF0ZWsuY29tOwo+IGNhbmdAY29kZWF1cm9y
+YS5vcmc7IGxpbnV4LXNhbXN1bmctc29jQHZnZXIua2VybmVsLm9yZzsgbGludXgtYXJtLQo+IGtl
+cm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJuZWwub3JnCj4g
+U3ViamVjdDogUmU6IFtQQVRDSCB2NyAwNi8xMF0gZHQtYmluZGluZ3M6IHBoeTogRG9jdW1lbnQg
+U2Ftc3VuZyBVRlMgUEhZCj4gYmluZGluZ3MKPiAKPiBPbiBTdW4sIEFwciAyNiwgMjAyMCBhdCAx
+MTowMDoyMFBNICswNTMwLCBBbGltIEFraHRhciB3cm90ZToKPiA+IFRoaXMgcGF0Y2ggZG9jdW1l
+bnRzIFNhbXN1bmcgVUZTIFBIWSBkZXZpY2UgdHJlZSBiaW5kaW5ncwo+ID4KPiA+IFNpZ25lZC1v
+ZmYtYnk6IEFsaW0gQWtodGFyIDxhbGltLmFraHRhckBzYW1zdW5nLmNvbT4KPiA+IFRlc3RlZC1i
+eTogUGF3ZcWCIENobWllbCA8cGF3ZWwubWlrb2xhai5jaG1pZWxAZ21haWwuY29tPg0KPiA+IC0t
+LQ0KPiA+ICAuLi4vYmluZGluZ3MvcGh5L3NhbXN1bmcsdWZzLXBoeS55YW1sICAgICAgICAgfCA3
+NCArKysrKysrKysrKysrKysrKysrDQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCA3NCBpbnNlcnRpb25z
+KCspDQo+ID4gIGNyZWF0ZSBtb2RlIDEwMDY0NA0KPiA+IERvY3VtZW50YXRpb24vZGV2aWNldHJl
+ZS9iaW5kaW5ncy9waHkvc2Ftc3VuZyx1ZnMtcGh5LnlhbWwNCj4gPg0KPiA+IGRpZmYgLS1naXQN
+Cj4gPiBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc2Ftc3VuZyx1ZnMt
+cGh5LnlhbWwNCj4gPiBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc2Ft
+c3VuZyx1ZnMtcGh5LnlhbWwNCj4gPiBuZXcgZmlsZSBtb2RlIDEwMDY0NA0KPiA+IGluZGV4IDAw
+MDAwMDAwMDAwMC4uMzUyZDVkZGEzMjBkDQo+ID4gLS0tIC9kZXYvbnVsbA0KPiA+ICsrKyBiL0Rv
+Y3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9waHkvc2Ftc3VuZyx1ZnMtcGh5LnlhbWwN
+Cj4gPiBAQCAtMCwwICsxLDc0IEBADQo+ID4gKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQ
+TC0yLjAtb25seSBPUiBCU0QtMi1DbGF1c2UgJVlBTUwgMS4yDQo+ID4gKy0tLQ0KPiA+ICskaWQ6
+DQo+ID4gK2h0dHBzOi8vcHJvdGVjdDIuZmlyZWV5ZS5jb20vdXJsP2s9NWMzNWRmMGEtMDFmZmVh
+YmQtNWMzNDU0NDUtMGNjNDdhMw0KPiA+ICswMDNlOC0NCj4gYWE2Yzk4MGRhYjJiYTMzYSZxPTEm
+dT1odHRwJTNBJTJGJTJGZGV2aWNldHJlZS5vcmclMkZzY2hlbWFzJTJGDQo+ID4gK3BoeSUyRnNh
+bXN1bmclMkN1ZnMtcGh5LnlhbWwlMjMNCj4gPiArJHNjaGVtYToNCj4gPiAraHR0cHM6Ly9wcm90
+ZWN0Mi5maXJlZXllLmNvbS91cmw/az05NzM0ZmM1ZS1jYWZlYzllOS05NzM1NzcxMS0wY2M0N2Ez
+DQo+ID4gKzAwM2U4LQ0KPiA3OWQxNzZiOTkyNzc0MzM5JnE9MSZ1PWh0dHAlM0ElMkYlMkZkZXZp
+Y2V0cmVlLm9yZyUyRm1ldGEtc2NoZW0NCj4gPiArYXMlMkZjb3JlLnlhbWwlMjMNCj4gPiArDQo+
+ID4gK3RpdGxlOiBTYW1zdW5nIFNvQyBzZXJpZXMgVUZTIFBIWSBEZXZpY2UgVHJlZSBCaW5kaW5n
+cw0KPiA+ICsNCj4gPiArbWFpbnRhaW5lcnM6DQo+ID4gKyAgLSBBbGltIEFraHRhciA8YWxpbS5h
+a2h0YXJAc2Ftc3VuZy5jb20+DQo+ID4gKw0KPiA+ICtwcm9wZXJ0aWVzOg0KPiA+ICsgICIjcGh5
+LWNlbGxzIjoNCj4gPiArICAgIGNvbnN0OiAwDQo+ID4gKw0KPiA+ICsgIGNvbXBhdGlibGU6DQo+
+ID4gKyAgICBlbnVtOg0KPiA+ICsgICAgICAtIHNhbXN1bmcsZXh5bm9zNy11ZnMtcGh5DQo+ID4g
+Kw0KPiA+ICsgIHJlZzoNCj4gPiArICAgIG1heEl0ZW1zOiAxDQo+ID4gKyAgICBkZXNjcmlwdGlv
+bjogUEhZIGJhc2UgcmVnaXN0ZXIgYWRkcmVzcw0KPiANCj4gQ2FuIGRyb3AgdGhlIGRlc2NyaXB0
+aW9uLiBEb2Vzbid0IGFkZCBhbnl0aGluZyBzcGVjaWFsLg0KPiANCj4gPiArDQo+ID4gKyAgcmVn
+LW5hbWVzOg0KPiA+ICsgICAgaXRlbXM6DQo+ID4gKyAgICAgIC0gY29uc3Q6IHBoeS1wbWENCj4g
+PiArDQo+ID4gKyAgY2xvY2tzOg0KPiA+ICsgICAgaXRlbXM6DQo+ID4gKyAgICAgIC0gZGVzY3Jp
+cHRpb246IFBMTCByZWZlcmVuY2UgY2xvY2sNCj4gPiArICAgICAgLSBkZXNjcmlwdGlvbjogc3lt
+Ym9sIGNsb2NrIGZvciBpbnB1dCBzeW1ib2wgKCByeDAtY2gwIHN5bWJvbCBjbG9jaykNCj4gPiAr
+ICAgICAgLSBkZXNjcmlwdGlvbjogc3ltYm9sIGNsb2NrIGZvciBpbnB1dCBzeW1ib2wgKCByeDEt
+Y2gxIHN5bWJvbCBjbG9jaykNCj4gPiArICAgICAgLSBkZXNjcmlwdGlvbjogc3ltYm9sIGNsb2Nr
+IGZvciBvdXRwdXQgc3ltYm9sICggdHgwIHN5bWJvbA0KPiA+ICsgY2xvY2spDQo+ID4gKw0KPiA+
+ICsgIGNsb2NrLW5hbWVzOg0KPiA+ICsgICAgaXRlbXM6DQo+ID4gKyAgICAgIC0gY29uc3Q6IHJl
+Zl9jbGsNCj4gPiArICAgICAgLSBjb25zdDogcngxX3N5bWJvbF9jbGsNCj4gPiArICAgICAgLSBj
+b25zdDogcngwX3N5bWJvbF9jbGsNCj4gPiArICAgICAgLSBjb25zdDogdHgwX3N5bWJvbF9jbGsN
+Cj4gPiArDQo+ID4gKyAgc2Ftc3VuZyxwbXUtc3lzY29uOg0KPiA+ICsgICAgJHJlZjogJy9zY2hl
+bWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3BoYW5kbGUnDQo+ID4gKyAgICBkZXNjcmlwdGlv
+bjogcGhhbmRsZSBmb3IgUE1VIHN5c3RlbSBjb250cm9sbGVyIGludGVyZmFjZSwgdXNlZCB0bw0K
+PiA+ICsgICAgICAgICAgICAgICAgIGNvbnRyb2wgcG11IHJlZ2lzdGVycyBiaXRzIGZvciB1ZnMg
+bS1waHkNCj4gPiArDQo+ID4gK3JlcXVpcmVkOg0KPiA+ICsgIC0gIiNwaHktY2VsbHMiDQo+ID4g
+KyAgLSBjb21wYXRpYmxlDQo+ID4gKyAgLSByZWcNCj4gPiArICAtIHJlZy1uYW1lcw0KPiA+ICsg
+IC0gY2xvY2tzDQo+ID4gKyAgLSBjbG9jay1uYW1lcw0KPiA+ICsgIC0gc2Ftc3VuZyxwbXUtc3lz
+Y29uDQo+IA0KPiBBZGQ6DQo+IA0KPiBhZGRpdGlvbmFsUHJvcGVydGllczogZmFsc2UNCj4gDQo+
+IFdpdGggdGhhdCwNCj4gDQpXaWxsIHVwZGF0ZSB0aGUgZG9jdW1lbnRhdGlvbiBhcyBwZXIgeW91
+ciBzdWdnZXN0aW9uDQoNCj4gUmV2aWV3ZWQtYnk6IFJvYiBIZXJyaW5nIDxyb2JoQGtlcm5lbC5v
+cmc+DQo+DQpUaGFua3MgZm9yIHJldmlldyBjb21tZW50cy4gQWZ0ZXIgZml4aW5nLCB3aWxsIGFk
+ZCB5b3VyIHJldmlldyB0YWcuDQogDQo+ID4gKw0KPiA+ICtleGFtcGxlczoNCj4gPiArICAtIHwN
+Cj4gPiArICAgICNpbmNsdWRlIDxkdC1iaW5kaW5ncy9jbG9jay9leHlub3M3LWNsay5oPg0KPiA+
+ICsNCj4gPiArICAgIHVmc19waHk6IHVmcy1waHlAMTU1NzE4MDAgew0KPiA+ICsgICAgICAgIGNv
+bXBhdGlibGUgPSAic2Ftc3VuZyxleHlub3M3LXVmcy1waHkiOw0KPiA+ICsgICAgICAgIHJlZyA9
+IDwweDE1NTcxODAwIDB4MjQwPjsNCj4gPiArICAgICAgICByZWctbmFtZXMgPSAicGh5LXBtYSI7
+DQo+ID4gKyAgICAgICAgc2Ftc3VuZyxwbXUtc3lzY29uID0gPCZwbXVfc3lzdGVtX2NvbnRyb2xs
+ZXI+Ow0KPiA+ICsgICAgICAgICNwaHktY2VsbHMgPSA8MD47DQo+ID4gKyAgICAgICAgY2xvY2tz
+ID0gPCZjbG9ja19mc3lzMSBTQ0xLX0NPTUJPX1BIWV9FTUJFRERFRF8yNk0+LA0KPiA+ICsgICAg
+ICAgICAgICAgICAgIDwmY2xvY2tfZnN5czEgUEhZQ0xLX1VGUzIwX1JYMV9TWU1CT0xfVVNFUj4s
+DQo+ID4gKyAgICAgICAgICAgICAgICAgPCZjbG9ja19mc3lzMSBQSFlDTEtfVUZTMjBfUlgwX1NZ
+TUJPTF9VU0VSPiwNCj4gPiArICAgICAgICAgICAgICAgICA8JmNsb2NrX2ZzeXMxIFBIWUNMS19V
+RlMyMF9UWDBfU1lNQk9MX1VTRVI+Ow0KPiA+ICsgICAgICAgIGNsb2NrLW5hbWVzID0gInJlZl9j
+bGsiLCAicngxX3N5bWJvbF9jbGsiLA0KPiA+ICsgICAgICAgICAgICAgICAgICAgICAgInJ4MF9z
+eW1ib2xfY2xrIiwgInR4MF9zeW1ib2xfY2xrIjsNCj4gPiArDQo+ID4gKyAgICB9Ow0KPiA+ICsu
+Li4NCj4gPiAtLQ0KPiA+IDIuMTcuMQ0KPiA+DQoNCgoKX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
+dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
+b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
