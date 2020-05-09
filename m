@@ -2,88 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2EFC1CC23F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 16:49:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F0CC1CC258
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 17:18:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b86WuPyVBCWdUYzoaFQihBq7ejFKP7OQuD6CMjoT4hg=; b=JAJ1hpXZwN8vfH
-	sCcEVgfdmKSggJJlylTD+OM+jDZE1pDu26I1drCurZIgqfI91XA49vzX0S4zDrRvEMFIc7yvurinq
-	CpMPTm5jTOPt8itse8Rmml33vbsl2zdO2DzKQX15bBnUFrgCrP6qqHvvQy/yYLNHidHXwQa14DXwa
-	PsNZzrK+lqtTpjIUC4aPnt8xO69YcROC0Ut214mvuYUKLSvaaKEeYTHH77jD+Fs2uPRiynHh/dR17
-	DmVWU0Tn2OZDyxMp4aPCTVl4JED6pyKxgfeiG/ld2+gFxzVGI6dWu1LWj2q3+19IULb9UMoKHlWJp
-	JhlnLJSb8AZ1gR3WzXoQ==;
+	List-Owner; bh=aG9xWFyThwJY8kdOlasSgLC+GMGIGwfdN40F+rUIWeE=; b=bxJu5oEU/y+hev
+	b/SvlNR50T8pBwJf44B8y+wPV9Be6v9kkdUc6B225knAD0sQAOVTjqJpRzhjDWV1kWDa8lPjcbT8S
+	YGysPFtpNQQ+rnaicbLqBjqENEv+9yuLv69N6BKS+XCC/sO/bB2XxqkB9oTWSvfY4c+IbYY8By3po
+	3WttIqSCzpTDsjKojke8ANYAquu8uVJWHKz7XEOMoLOPGA2yM6R5JGWmDlKZS7jxT2LiscyTDZhmt
+	v7R7RFM9kDW1JokHF2E76P5CmYDB8eJzzdd/YPgQQjpPwwillG949D6b4HqnvvLRxqQt3vJt56uwJ
+	r+9jprxcxlTS1Ako1NEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXQn7-00024Z-Bb; Sat, 09 May 2020 14:49:25 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jXRFV-0003WQ-Ey; Sat, 09 May 2020 15:18:45 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXQn1-00023D-D4
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 14:49:21 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Z6vD6PmD89Ixku9rc/p9RR0bXWZL+mPNX4ud5gSu6aw=; b=v2bazMjSOW3QuO3Cwm/AZIlGa
- QeYz/rk2irlMaD9bOX5DGoy2dgTbaKVEEuxct7DZEYERsw3AyqIhgYeZJ4cC5B2iu49Dyg7rmeJme
- pOxw6mHkyeeD7VtZiuGXi0MNe4qAPoKKdfO5WF2F9v4xHYz7P4IvG+F+7tKc86Pm1UB6zjeUdDSzD
- vpVdafAM1t2inbCi87XoqvbloXpzK4paV0goJ+ZcoP8SJBZYewsCvGgi6EHl7ed9Tz2CLUIXEXhQV
- NSLlu15mJI8+ZvmzC3QzHzbwqTaNygMdsWwXp26pl1AiLyBNy2sjZ0Q7IggWUB7ur18sdRbtzEAoI
- eL2Qx7waA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:55780)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jXQmd-0004EY-W2; Sat, 09 May 2020 15:48:56 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jXQmT-0002wF-PJ; Sat, 09 May 2020 15:48:45 +0100
-Date: Sat, 9 May 2020 15:48:45 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Matteo Croce <mcroce@redhat.com>
-Subject: Re: [EXT] Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts
- to handle RSS tables
-Message-ID: <20200509144845.GF1551@shell.armlinux.org.uk>
-References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
- <20190524100554.8606-4-maxime.chevallier@bootlin.com>
- <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
- <20200423170003.GT25745@shell.armlinux.org.uk>
- <CAGnkfhwOavaeUjcm4_+TG-xLxQA519o+fR8hxBCCfSy3qpcYhQ@mail.gmail.com>
- <DM5PR18MB1146686527DE66495F75D0DAB0A30@DM5PR18MB1146.namprd18.prod.outlook.com>
- <20200509114518.GB1551@shell.armlinux.org.uk>
- <CAGnkfhx8fEZCoLPzGxSzQnj1ZWcQtBMn+g_jO1Jxc4zF7pQwjQ@mail.gmail.com>
- <20200509135105.GE1551@shell.armlinux.org.uk>
+ id 1jXRFN-0003TB-8A; Sat, 09 May 2020 15:18:39 +0000
+Received: from in01.mta.xmission.com ([166.70.13.51])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jXRF4-0002RL-57; Sat, 09 May 2020 09:18:18 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in01.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1jXRF3-00073s-70; Sat, 09 May 2020 09:18:18 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: David Hildenbrand <david@redhat.com>
+References: <20200501165701.24587-1-james.morse@arm.com>
+ <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
+Date: Sat, 09 May 2020 10:14:49 -0500
+In-Reply-To: <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com> (David
+ Hildenbrand's message of "Fri, 1 May 2020 19:26:39 +0200")
+Message-ID: <8736892l92.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200509135105.GE1551@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-XM-SPF: eid=1jXRF3-00073s-70; ; ; mid=<8736892l92.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in01.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1/78Q2ZzN+DiVqOLa3MERJ4/bRoZCWRbLY=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa06.xmission.com
+X-Spam-Level: *
+X-Spam-Status: No, score=1.0 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG,XM_Multi_Part_URI
+ autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.5000]
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ *  1.2 XM_Multi_Part_URI URI: Long-Multi-Part URIs
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa06 0; Body=1 Fuz1=1 Fuz2=1]
+X-Spam-DCC: ; sa06 0; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: *;David Hildenbrand <david@redhat.com>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 596 ms - load_scoreonly_sql: 0.08 (0.0%),
+ signal_user_changed: 12 (2.0%), b_tie_ro: 10 (1.7%), parse: 1.34
+ (0.2%), extract_message_metadata: 14 (2.4%), get_uri_detail_list: 2.6
+ (0.4%), tests_pri_-1000: 4.8 (0.8%), tests_pri_-950: 1.30 (0.2%),
+ tests_pri_-900: 1.06 (0.2%), tests_pri_-90: 163 (27.4%), check_bayes:
+ 161 (27.0%), b_tokenize: 9 (1.5%), b_tok_get_all: 9 (1.4%),
+ b_comp_prob: 3.1 (0.5%), b_tok_touch_all: 136 (22.9%), b_finish: 0.93
+ (0.2%), tests_pri_0: 278 (46.7%), check_dkim_signature: 0.64 (0.1%),
+ check_dkim_adsp: 2.1 (0.4%), poll_dns_idle: 106 (17.8%), tests_pri_10:
+ 2.2 (0.4%), tests_pri_500: 114 (19.1%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in01.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_074919_443352_4AFBEF57 
-X-CRM114-Status: GOOD (  29.92  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200509_081837_289183_AA1829A0 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ low trust [166.70.13.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [166.70.13.232 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,117 +103,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
- netdev <netdev@vger.kernel.org>,
- "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
- LKML <linux-kernel@vger.kernel.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- "David S . Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 09, 2020 at 02:51:05PM +0100, Russell King - ARM Linux admin wrote:
-> On Sat, May 09, 2020 at 03:14:05PM +0200, Matteo Croce wrote:
-> > On Sat, May 9, 2020 at 1:45 PM Russell King - ARM Linux admin
-> > <linux@armlinux.org.uk> wrote:
-> > >
-> > > On Sat, May 09, 2020 at 11:15:58AM +0000, Stefan Chulski wrote:
-> > > >
-> > > >
-> > > > > -----Original Message-----
-> > > > > From: Matteo Croce <mcroce@redhat.com>
-> > > > > Sent: Saturday, May 9, 2020 3:13 AM
-> > > > > To: David S . Miller <davem@davemloft.net>
-> > > > > Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>; netdev
-> > > > > <netdev@vger.kernel.org>; LKML <linux-kernel@vger.kernel.org>; Antoine
-> > > > > Tenart <antoine.tenart@bootlin.com>; Thomas Petazzoni
-> > > > > <thomas.petazzoni@bootlin.com>; gregory.clement@bootlin.com;
-> > > > > miquel.raynal@bootlin.com; Nadav Haklai <nadavh@marvell.com>; Stefan
-> > > > > Chulski <stefanc@marvell.com>; Marcin Wojtas <mw@semihalf.com>; Linux
-> > > > > ARM <linux-arm-kernel@lists.infradead.org>; Russell King - ARM Linux admin
-> > > > > <linux@armlinux.org.uk>
-> > > > > Subject: [EXT] Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts to
-> > > > > handle RSS tables
-> > > > >
-> > > > > Hi,
-> > > > >
-> > > > > What do you think about temporarily disabling it like this?
-> > > > >
-> > > > > --- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-> > > > > +++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-> > > > > @@ -5775,7 +5775,8 @@ static int mvpp2_port_probe(struct platform_device
-> > > > > *pdev,
-> > > > >                             NETIF_F_HW_VLAN_CTAG_FILTER;
-> > > > >
-> > > > >         if (mvpp22_rss_is_supported()) {
-> > > > > -               dev->hw_features |= NETIF_F_RXHASH;
-> > > > > +               if (port->phy_interface != PHY_INTERFACE_MODE_SGMII)
-> > > > > +                       dev->hw_features |= NETIF_F_RXHASH;
-> > > > >                 dev->features |= NETIF_F_NTUPLE;
-> > > > >         }
-> > > > >
-> > > > >
-> > > > > David, is this "workaround" too bad to get accepted?
-> > > >
-> > > > Not sure that RSS related to physical interface(SGMII), better just remove NETIF_F_RXHASH as "workaround".
-> > >
-> > > Hmm, I'm not sure this is the right way forward.  This patch has the
-> > > effect of disabling:
-> > >
-> > > d33ec4525007 ("net: mvpp2: add an RSS classification step for each flow")
-> > >
-> > > but the commit you're pointing at which caused the regression is:
-> > >
-> > > 895586d5dc32 ("net: mvpp2: cls: Use RSS contexts to handle RSS tables")
-> > >
-> > >
-> > 
-> > Hi,
-> > 
-> > When git bisect pointed to 895586d5dc32 ("net: mvpp2: cls: Use RSS
-> > contexts to handle RSS tables"), which was merged
-> > almost an year after d33ec4525007 ("net: mvpp2: add an RSS
-> > classification step for each flow"), so I assume that between these
-> > two commits either the feature was working or it was disable and we
-> > didn't notice
-> > 
-> > Without knowing what was happening, which commit should my Fixes tag point to?
-> 
-> Let me make sure that I get this clear:
-> 
-> - Prior to 895586d5dc32, you can turn on and off rxhash without issue
->   on any port.
-> - After 895586d5dc32, turning rxhash on eth2 prevents reception.
-> 
-> Prior to 895586d5dc32, with rxhash on, it looks like hashing using
-> CRC32 is supported but only one context.  So, if it's possible to
-> enable rxhash on any port on the mcbin without 895586d5dc32, and the
-> port continues to work, I'd say the bug was introduced by
-> 895586d5dc32.
-> 
-> Of course, that would be reinforced if there was a measurable
-> difference in performance due to rxhash on each port.
+David Hildenbrand <david@redhat.com> writes:
 
-I've just run this test, but I can detect no difference in performance
-with or without 895586d5dc32 on eth0 or eth2 on the mcbin (apart from
-eth2 stopping working with 895586d5dc32 applied.)  I tested this by
-reverting almost all changes to the mvpp2 driver between 5.6 and that
-commit.
+> On 01.05.20 18:57, James Morse wrote:
+>> On x86, the kexec payload contains a copy of the current memory map.
+>> If memory is added or removed, this copy of the memory map becomes
+>> stale. Getting this wrong may prevent the next kernel from booting.
+>> The first kernel may die if it tries to re-assemble the next kernel
+>> in memory that has been removed.
+>> 
+>> Discard the loaded kexec image when the memory map changes, user-space
+>> should reload it.
+>> 
+>> Kdump is unaffected, as it is placed within the crashkernel reserved
+>> memory area and only uses this memory. The stale memory map may affect
+>> generation of the vmcore, but the kdump kernel should be in a position
+>> to validate it.
+>> 
+>> Signed-off-by: James Morse <james.morse@arm.com>
+>> ---
+>> This patch obsoletes:
+>>  * kexec/memory_hotplug: Prevent removal and accidental use
+>> https://lore.kernel.org/linux-arm-kernel/20200326180730.4754-1-james.morse@arm.com/
+>> 
+>>  kernel/kexec_core.c | 40 ++++++++++++++++++++++++++++++++++++++++
+>>  1 file changed, 40 insertions(+)
+>> 
+>> diff --git a/kernel/kexec_core.c b/kernel/kexec_core.c
+>> index c19c0dad1ebe..e1901e5bd4b5 100644
+>> --- a/kernel/kexec_core.c
+>> +++ b/kernel/kexec_core.c
+>> @@ -12,6 +12,7 @@
+>>  #include <linux/slab.h>
+>>  #include <linux/fs.h>
+>>  #include <linux/kexec.h>
+>> +#include <linux/memory.h>
+>>  #include <linux/mutex.h>
+>>  #include <linux/list.h>
+>>  #include <linux/highmem.h>
+>> @@ -22,10 +23,12 @@
+>>  #include <linux/elf.h>
+>>  #include <linux/elfcore.h>
+>>  #include <linux/utsname.h>
+>> +#include <linux/notifier.h>
+>>  #include <linux/numa.h>
+>>  #include <linux/suspend.h>
+>>  #include <linux/device.h>
+>>  #include <linux/freezer.h>
+>> +#include <linux/pfn.h>
+>>  #include <linux/pm.h>
+>>  #include <linux/cpu.h>
+>>  #include <linux/uaccess.h>
+>> @@ -1219,3 +1222,40 @@ void __weak arch_kexec_protect_crashkres(void)
+>>  
+>>  void __weak arch_kexec_unprotect_crashkres(void)
+>>  {}
+>> +
+>> +/*
+>> + * If the memory layout changes, any loaded kexec image should be evicted
+>> + * as it may contain a copy of the (now stale) memory map. This also means
+>> + * we don't need to check the memory is still present when re-assembling the
+>> + * new kernel at machine_kexec() time.
+>> + */
+>
+> Onlining/offlining is not a change of the memory map.
 
-That's not too surprising; I'm using my cex7 platform with the Mellanox
-card in for one end of the 10G link, and that platform doesn't seem to
-be able to saturdate a 10G link - it only seems to manage around 4Gbps.
+Phrasing it that way is non-sense.  What is important is memory
+available in the system.  A memory map is just a reflection upon that,
+a memory map is not the definition of truth.
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+So if this notifier reflects when memory is coming and going on the
+system this is a reasonable approach.  
+
+Do these notifiers might fire for special kinds of memory that should
+only be used for very special purposes?
+
+This change with the addition of some filters say to limit taking action
+to MEM_ONLINE and MEM_OFFLINE looks reasonable to me.  Probably also
+filtering out special kinds of memory that is not gernally useful.
+
+Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
