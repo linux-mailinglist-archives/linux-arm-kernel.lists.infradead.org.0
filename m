@@ -2,116 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 612781CBC1E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 03:35:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1841B1CBC55
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 04:10:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7MPGNMv6jlHV2CPdYC42SvKIBOJg6FoetDoRHIOG5vc=; b=YUCZhciU2DpjIK
-	OIWYWbfDfA/LO/7oTKyMqcAhFM/wdjm6t/ksf1UsCO6wbE2FjcGfX2N/LR5exdlsfIWYZUD2UmCN4
-	R6huBB7P2EnKzgPxkf1hqOyAtwEbJATAsvEkFevgekYwUBuUfkYX4X1GP56g3rCQZv5PWc3excaj5
-	stjq5LbtIaMDlDFcZyUrtj8LVGnPA3/YTBhqrbwqW0q3p6JGO8dmZW0CWt4Wb6rxlAx7Qj8ikhf1+
-	6WlwcR78TT/k7cBY+XFPaendkDg6Gh4vQL6oLHfROsW4dY1S0+TKtU2tPyv6qaFcKQQeFvOpwUSK3
-	khaG2O0vi01RRZ0vY+Zw==;
+	List-Owner; bh=vkSWa48JvP2rsb9FFjq2la2Bk/AZ+deEC216f3a1kKY=; b=WRiALzVTSCq1sb
+	e96NXCXZjqVYTY7PDjMbNrmUO6F1kS+rPvfAC1nNiB+arERVhNTx4eNh8l+6H8/bF+H7exkuCN0Tx
+	oaZ2rxOX3HK4rkB6+rlRMtwNppcWEg83nlsHkSNuWYX87ar1OVwY1IGjpptf8gIJbXL7W6ZU9zTjw
+	Q60XzIsQSzrekTvmDUbiOCOm4ojzsdARFEQ4kCZN983IcRHYdFeadZc6Gkq3oMS4hh7L/RYHcUg23
+	PrnCMyrqOB+H3WrTvwe3Uyb2LPABTCE52Oec8EIs68K+QsXOMFQvUH3epXi/fvDkn0VMFmD2Swxul
+	DKtpaSe6hX19DKGC+8rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXEOF-0006NM-Be; Sat, 09 May 2020 01:34:55 +0000
-Received: from mail-mw2nam12olkn2031.outbound.protection.outlook.com
- ([40.92.23.31] helo=NAM12-MW2-obe.outbound.protection.outlook.com)
+	id 1jXEwV-0001rj-78; Sat, 09 May 2020 02:10:19 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXEO8-0006MP-4k
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 01:34:49 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=fxAt6Yw3a29xPbXCUIsYdXRk6+e7v+cGmZ/HjG1MQRm90Qw0f4jDLLxPsCzc2btto6evkEMWWlycdSelN5yMXhsSRiue/rvTQ4+17C0lyencFn2z4EOfTj0XhEptbe/h7alIN/mGo07vyHr7bVkcniicOTGIu+dTi3kfNLBOcGetWZRiJjZ4RVrLQsvx9CZ9IDIuPqaH8R3jXqbkVzKCu6MXNdc7ZlHld+hRRZFEvqw3NSPfZZgbJn9maqHSQwhAEibtwqqNkg9aA2C38j45HsDX/g+w4dLY5zCowBLOizKhmA6yJcLCEzvnfkx2PyAVnhOICva56pANf3+ge0iP/g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zg0OsvzlU1eLMvS0vAoFzf9f4nkJrus+FNqiK+LOu2I=;
- b=Xnc79Th8Cj+D6eh6Iv2z+22qULBstWjonQ6ShBeGpxY1gbm4LLU8XebPkvQUVg/r7/EhGY5ldLWZv1dvMmGwzUUqe1sbr3HxyzPWFTxFaw/eV8uWF77LM7/Sf2wVYoJqzEbsfDaL81TN/y4F1HYVSdYEByjsQYu63mVzXTBL765xj437Hb3giebRq0Gs/OhMOM50DabHS5ct3VIaae6QCxugStItk0uK+aXJDC2hgRgUqp8EEbtOs+mW3lWL+6TfGx8zdOLbGtEed9iBn5t3mihALBLwDfUyU0BPkLn1Nmj9owKZg3/pYmj2ua1Q14hXyKqD2PC9bMJ7rPuYjLhDPw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=live.ca; dmarc=pass action=none header.from=live.ca; dkim=pass
- header.d=live.ca; arc=none
-Received: from BN8NAM12FT019.eop-nam12.prod.protection.outlook.com
- (2a01:111:e400:fc66::51) by
- BN8NAM12HT197.eop-nam12.prod.protection.outlook.com (2a01:111:e400:fc66::385)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.11; Sat, 9 May
- 2020 01:34:44 +0000
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- (2a01:111:e400:fc66::49) by BN8NAM12FT019.mail.protection.outlook.com
- (2a01:111:e400:fc66::416) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.11 via Frontend
- Transport; Sat, 9 May 2020 01:34:44 +0000
-X-IncomingTopHeaderMarker: OriginalChecksum:D3D0BD23F8AD38415164C897CD7B9247A5EB6F568E4DEB138FB449DB98DEBD0E;
- UpperCasedChecksum:059D37F2A3F4A1A387B49EDA450D39FF8E59769650961E57C50C8618236AF017;
- SizeAsReceived:7738; Count:48
-Received: from BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc]) by BN6PR04MB0660.namprd04.prod.outlook.com
- ([fe80::ad10:4127:4bc8:76fc%6]) with mapi id 15.20.2979.033; Sat, 9 May 2020
- 01:34:44 +0000
-From: Jonathan Bakker <xc-racer2@live.ca>
-To: kgene@kernel.org, krzk@kernel.org, gregkh@linuxfoundation.org,
- jslaby@suse.com, linux-arm-kernel@lists.infradead.org,
- linux-samsung-soc@vger.kernel.org, linux-serial@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] tty: serial: samsung: Correct clock selection logic
-Date: Fri,  8 May 2020 18:34:33 -0700
-Message-ID: <BN6PR04MB06604E63833EA41837EBF77BA3A30@BN6PR04MB0660.namprd04.prod.outlook.com>
-X-Mailer: git-send-email 2.20.1
-X-ClientProxiedBy: CO2PR04CA0007.namprd04.prod.outlook.com
- (2603:10b6:102:1::17) To BN6PR04MB0660.namprd04.prod.outlook.com
- (2603:10b6:404:d9::21)
-X-Microsoft-Original-Message-ID: <20200509013433.23152-1-xc-racer2@live.ca>
+ id 1jXEwC-00017p-Gl; Sat, 09 May 2020 02:10:03 +0000
+X-UUID: f97ec90435d743c2bc57d1ed1fb37359-20200508
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=1B+choKMEWf5xgsDH1Xvz4r98si4Toef2xxzNstIEMc=; 
+ b=WVPofjpp0VLBguQpJu5sO7PG4xp585zhHL5kaY5GN4ax6yZyup7ckNf1CfzJCQp/XLQthBFtWydoIccdvERs23acVXpSpUglCYB8UH7mrTzk761XMMrKpPJbKs76zGETv/kNtGgEyB5KaCYcKNJXhpsh9zjT5mi3gzPS7/aqn4o=;
+X-UUID: f97ec90435d743c2bc57d1ed1fb37359-20200508
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <fengping.yu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 403766129; Fri, 08 May 2020 18:09:49 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 8 May 2020 19:09:36 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 9 May 2020 10:09:23 +0800
+Received: from localhost.localdomain (10.15.20.246) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Sat, 9 May 2020 10:09:17 +0800
+From: Fengping Yu <fengping.yu@mediatek.com>
+To: Marco Felsch <m.felsch@pengutronix.de>, Andy Shevchenko
+ <andriy.shevchenko@linux.intel.com>, Dmitry Torokhov
+ <dmitry.torokhov@gmail.com>, Yingjoe Chen <yingjoe.chen@mediatek.com>
+Subject: [PATCH v6] Add mtk matrix keypad driver for keypad on MTK SoC
+Date: Sat, 9 May 2020 10:04:56 +0800
+Message-ID: <20200509020458.8359-1-fengping.yu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from jon-hp-6570b.telus (2001:569:fb68:9c00:8067:f823:1e15:7520) by
- CO2PR04CA0007.namprd04.prod.outlook.com (2603:10b6:102:1::17) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2979.28 via Frontend Transport; Sat, 9 May 2020 01:34:43 +0000
-X-Mailer: git-send-email 2.20.1
-X-Microsoft-Original-Message-ID: <20200509013433.23152-1-xc-racer2@live.ca>
-X-TMN: [NN/Ci17XNAwKoNPXso5hxFZpP2g50cHt4TsXayU35974VRbh31XZ/ItSSL84vS+8]
-X-MS-PublicTrafficType: Email
-X-IncomingHeaderCount: 48
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-Correlation-Id: 78b3340d-b96b-452d-59f6-08d7f3b926bc
-X-MS-TrafficTypeDiagnostic: BN8NAM12HT197:
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: S+Pmf+7X1j1nLgegg525J2+23iYcy2bhoHxH+EkC2ENEuS36A+dHlaKl+L/r2a5je2rG37sXbLxkR0w215OhBM0UKKp04P/s0wk3jwcy9hGo3M1Vge4l4nd5xjDKwqKhahvyoqrNBQ5M5b9dHXA4KfXbqT1bM1UOOpfNWTNeWOCOBshLsAXZlb9EYGUaOA76nZjJuun1WKmBTTQe2tW87Q==
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:0; SRV:;
- IPV:NLI; SFV:NSPM; H:BN6PR04MB0660.namprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:; SFS:; DIR:OUT; SFP:1901; 
-X-MS-Exchange-AntiSpam-MessageData: osNfQuONJHWs8koab4YCXiQIb3SnKhMK3W9431E2kJQRg+sFYCTBJJbSS+BrWYQwCVZN/+BEsywDEW5Bf/Dg8yq/4lOHipVOl0ZJ8eCrcWrH/z+zuzqateBKfPQLVNXhlFe9I6HHfFUumU3qoDh2nys89Ndyg6tH7szq/RW7yAf/LOn9UKRpv9xoLXr6AhG5E3eCcXnXno2nlNKa/mUQHw==
-X-OriginatorOrg: outlook.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 78b3340d-b96b-452d-59f6-08d7f3b926bc
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 09 May 2020 01:34:44.6349 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
-X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
-X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN8NAM12HT197
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_183448_185153_9C830DFB 
-X-CRM114-Status: GOOD (  10.78  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200508_191000_556749_7187CFE9 
+X-CRM114-Status: UNSURE (   7.41  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.92.23.31 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [xc-racer2[at]live.ca]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [xc-racer2[at]live.ca]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.92.23.31 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,52 +85,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Bakker <xc-racer2@live.ca>
+Cc: linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some variants of the samsung tty driver can pick which clock
-to use for their baud rate generation.  In the DT conversion,
-a default clock was selected to be used if a specific one wasn't
-assigned and then a comparison of which clock rate worked better
-was done.  Unfortunately, the comparison was implemented in such
-a way that only the default clock was ever actually compared.
-Fix this by iterating through all possible clocks, except when a
-specific clock has already been picked via clk_sel (which is
-only possible via board files).
+Change since v5:
+- remove unnecessary include files
+- remove redundant comments and newlines
+- use local irqnr variable instead of member variable of mtk_keypad struct
+- use regmap to read and write registers
+- drop kpd_get_dts_info directly into probe function
+- use devm_add_action_or_reset to avoid goto error handling when do clk setting
+- use devm_request_threaded_irq api to request irq
+- remove platform_set_drvdata
 
-Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
----
- drivers/tty/serial/samsung_tty.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+fengping.yu (3):
+  dt-bindings: Change keypad documentation schema
+  drivers: input: keyboard: Add mtk keypad driver
+  configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=y
 
-diff --git a/drivers/tty/serial/samsung_tty.c b/drivers/tty/serial/samsung_tty.c
-index 73f951d65b93..9d2b4be44209 100644
---- a/drivers/tty/serial/samsung_tty.c
-+++ b/drivers/tty/serial/samsung_tty.c
-@@ -1281,14 +1281,14 @@ static unsigned int s3c24xx_serial_getclk(struct s3c24xx_uart_port *ourport,
- 	struct s3c24xx_uart_info *info = ourport->info;
- 	struct clk *clk;
- 	unsigned long rate;
--	unsigned int cnt, baud, quot, clk_sel, best_quot = 0;
-+	unsigned int cnt, baud, quot, best_quot = 0;
- 	char clkname[MAX_CLK_NAME_LENGTH];
- 	int calc_deviation, deviation = (1 << 30) - 1;
- 
--	clk_sel = (ourport->cfg->clk_sel) ? ourport->cfg->clk_sel :
--			ourport->info->def_clk_sel;
- 	for (cnt = 0; cnt < info->num_clks; cnt++) {
--		if (!(clk_sel & (1 << cnt)))
-+		/* Keep selected clock if provided */
-+		if (ourport->cfg->clk_sel &&
-+			!(ourport->cfg->clk_sel & (1 << cnt)))
- 			continue;
- 
- 		sprintf(clkname, "clk_uart_baud%d", cnt);
--- 
-2.20.1
+ .../devicetree/bindings/input/mtk-kpd.txt     |  61 -------
+ .../devicetree/bindings/input/mtk-kpd.yaml    |  93 +++++++++++
+ arch/arm64/configs/defconfig                  |   1 +
+ drivers/input/keyboard/Kconfig                |   5 +-
+ drivers/input/keyboard/mtk-kpd.c              | 151 ++++++++----------
+ 5 files changed, 163 insertions(+), 148 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.txt
+ create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
+
+--
+2.18.0
 
 
 _______________________________________________
