@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EBCF21CBF63
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 10:51:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D6FA1CBF5F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 10:50:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mBxrCsbsfhTWdDPzzSol1d537C7uJzhUUqvpikO86AA=; b=O8Mnwmp9pdBgxa
-	vCGS3XtanILTA7PtolcNiaegBAeGCMnnzEsN0HdSLC90TwLLvG+CXFnknQ2rEdo+DgJAEZtybL45H
-	9LvpmBLbHWr7k93/xvhB/+OQr87yuizlyaxXzfaMEYZOeM067QX31w8cjmyohkEQHcdxEtpBugvLL
-	/YoR1GphYKXd5k1vdN/6zrwh/Pa5gExF70l7rnXNRLu9wvXRopwRH6XGu3qLzFEyEshAVjK5TbKeU
-	EqmRXTTfQP+usukog35mab5BqmcWq/hn7fgp4DQV46uLg9Ucs4mPDbYlqJSE6EC2A//N2pAdEorPm
-	Jo4hOTfp2KMhpSYEEcNQ==;
+	List-Owner; bh=GuApjnDyrr1ISo2nMC6KxF0uY4DpvNHTiHtxwG/CnEo=; b=qtLIyY7spjNAMt
+	DOmjVT9KTl1NTNf+IsufUm/wpqUih6CNpgvZ3F11X0rFvwjWApL15Rrp71lIgCHEPcO6XrExqP42Y
+	6b0wHI7cWuVtQtjSc2UIARWeBA1ZvEVnrBoqJ+da8sF6//ppfU9JatwkWCOxj1iwSBV72SHaSr1sw
+	Ne0IS1NZFh+vdy4MiPbIGfejk7rsSUBYlRfngh84O20ok1yr6Lm9+hzetWl13xpfiChigaqyUCj7G
+	TZA+I3gkV2WuU/KertZPjm70N/4LaBjlSH7vxL+KWKi/fzBnVCGAaMyawASPgRRrBkFA4nVwdGJYs
+	O4BggcgRL1Kcplr1sYzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXLCg-00039s-98; Sat, 09 May 2020 08:51:26 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jXLC5-0002Yl-Sv; Sat, 09 May 2020 08:50:49 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXLBh-0002MY-G1; Sat, 09 May 2020 08:50:27 +0000
-X-UUID: 84a4b81b1bb4484885d81f09481c60d2-20200509
+ id 1jXLBd-0002JI-Bn; Sat, 09 May 2020 08:50:22 +0000
+X-UUID: 7ac49f4d851d4219b84eb47d6b07f048-20200509
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=nxNKFtFcVgXCGJ4BNQwJD0XYyDxH3mH6r9HcI8tiLlE=; 
- b=oE5s5aU1cUlNlDXUCYx/ZOk+zS6vsVWYIXC/4LFD6Kry81QWVB6CaxJ3HxZzz11A7jLae75gfLeUXPabLAyxXPMHbY8uT3PVfqEmaE+iRMGW3hvjF3+EhabuQEEk76yUFITAX2Cr5GOq8lkq7he4f/GEuHHo9G4dZqtLVtRwA3M=;
-X-UUID: 84a4b81b1bb4484885d81f09481c60d2-20200509
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ bh=CJeloX2LqvuI/dnpF7lv9RpSaPjcGxrPB01SIxCcvJ4=; 
+ b=E71HrxDDcaR6E5pj54CGVTj4UoLchzjMlh9s+dLWSZmZlIN2IRvbdpV5jOimjj2L09sCCbAWxOeVyKdGYuJTpRFYUZm9PRCPDQF4hICC2BS+Yh+VRiTjzF5l71dT16X6mOzqzl0BdE/Le+VY/mP3FiDjATnzv98ty0pG4e0lMs0=;
+X-UUID: 7ac49f4d851d4219b84eb47d6b07f048-20200509
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chao.hao@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 387575333; Sat, 09 May 2020 00:50:14 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 9 May 2020 01:40:17 -0700
+ with ESMTP id 1919160907; Sat, 09 May 2020 00:50:09 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 9 May 2020 01:40:21 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 9 May 2020 16:40:17 +0800
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sat, 9 May 2020 16:40:20 +0800
 Received: from localhost.localdomain (10.15.20.246) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Sat, 9 May 2020 16:40:16 +0800
+ Transport; Sat, 9 May 2020 16:40:19 +0800
 From: Chao Hao <chao.hao@mediatek.com>
 To: Joerg Roedel <joro@8bytes.org>, Rob Herring <robh+dt@kernel.org>,
  "Matthias Brugger" <matthias.bgg@gmail.com>
-Subject: [PATCH v3 6/7] iommu/mediatek: Add REG_MMU_WR_LEN definition
- preparing for mt6779
-Date: Sat, 9 May 2020 16:36:53 +0800
-Message-ID: <20200509083654.5178-7-chao.hao@mediatek.com>
+Subject: [PATCH v3 7/7] iommu/mediatek: Add mt6779 basic support
+Date: Sat, 9 May 2020 16:36:54 +0800
+Message-ID: <20200509083654.5178-8-chao.hao@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200509083654.5178-1-chao.hao@mediatek.com>
 References: <20200509083654.5178-1-chao.hao@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 3A137A09BE077EE258C0837B180446A21F7D2EEC13F5CA1EF7311B16A30ACAD62000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_015025_601776_0EE3B568 
-X-CRM114-Status: GOOD (  11.11  )
+X-CRM114-CacheID: sfid-20200509_015021_418197_8DD68F42 
+X-CRM114-Status: GOOD (  11.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,78 +96,91 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some platforms(ex: mt6779) have a new register called by REG_MMU_WR_LEN
-to improve performance.
-This patch add this register definition.
+1. Start from mt6779, INVLDT_SEL move to offset=0x2c, so we add
+   REG_MMU_INV_SEL_GEN2 definition and mt6779 uses it.
+2. Change PROTECT_PA_ALIGN from 128 byte to 256 byte.
+3. For REG_MMU_CTRL_REG register, we only need to change bit[2:0],
+   others bits keep default value, ex: enable victim tlb.
+4. Add mt6779_data to support mm_iommu HW init.
 
 Signed-off-by: Chao Hao <chao.hao@mediatek.com>
 ---
- drivers/iommu/mtk_iommu.c | 10 ++++++++++
- drivers/iommu/mtk_iommu.h |  2 ++
- 2 files changed, 12 insertions(+)
+ drivers/iommu/mtk_iommu.c | 18 +++++++++++++++---
+ drivers/iommu/mtk_iommu.h |  1 +
+ 2 files changed, 16 insertions(+), 3 deletions(-)
 
 diff --git a/drivers/iommu/mtk_iommu.c b/drivers/iommu/mtk_iommu.c
-index 3914c418d1b0..dc9ae944e712 100644
+index dc9ae944e712..34c4ffb77c73 100644
 --- a/drivers/iommu/mtk_iommu.c
 +++ b/drivers/iommu/mtk_iommu.c
-@@ -45,6 +45,8 @@
- #define F_MMU_STANDARD_AXI_MODE_BIT		(BIT(3) | BIT(19))
+@@ -37,6 +37,7 @@
+ #define REG_MMU_INVLD_START_A			0x024
+ #define REG_MMU_INVLD_END_A			0x028
  
- #define REG_MMU_DCM_DIS				0x050
-+#define REG_MMU_WR_LEN				0x054
-+#define F_MMU_WR_THROT_DIS_BIT			(BIT(5) |  BIT(21))
++#define REG_MMU_INV_SEL_GEN2			0x02c
+ #define REG_MMU_INV_SEL_GEN1			0x038
+ #define F_INVLD_EN0				BIT(0)
+ #define F_INVLD_EN1				BIT(1)
+@@ -97,7 +98,7 @@
+ #define F_MMU_INT_ID_LARB_ID(a)			(((a) >> 7) & 0x7)
+ #define F_MMU_INT_ID_PORT_ID(a)			(((a) >> 2) & 0x1f)
  
- #define REG_MMU_CTRL_REG			0x110
- #define F_MMU_TF_PROT_TO_PROGRAM_ADDR		(2 << 4)
-@@ -592,6 +594,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
- 		writel_relaxed(regval, data->base + REG_MMU_VLD_PA_RNG);
- 	}
- 	writel_relaxed(0, data->base + REG_MMU_DCM_DIS);
-+	if (data->plat_data->has_wr_len) {
-+		/* write command throttling mode */
-+		regval = readl_relaxed(data->base + REG_MMU_WR_LEN);
-+		regval &= ~F_MMU_WR_THROT_DIS_BIT;
-+		writel_relaxed(regval, data->base + REG_MMU_WR_LEN);
-+	}
+-#define MTK_PROTECT_PA_ALIGN			128
++#define MTK_PROTECT_PA_ALIGN			256
  
- 	if (data->plat_data->has_misc_ctrl) {
- 		regval = readl_relaxed(data->base + REG_MMU_MISC_CTRL);
-@@ -744,6 +752,7 @@ static int __maybe_unused mtk_iommu_suspend(struct device *dev)
- 	struct mtk_iommu_suspend_reg *reg = &data->reg;
- 	void __iomem *base = data->base;
- 
-+	reg->wr_len = readl_relaxed(base + REG_MMU_WR_LEN);
- 	reg->misc_ctrl = readl_relaxed(base + REG_MMU_MISC_CTRL);
- 	reg->dcm_dis = readl_relaxed(base + REG_MMU_DCM_DIS);
- 	reg->ctrl_reg = readl_relaxed(base + REG_MMU_CTRL_REG);
-@@ -768,6 +777,7 @@ static int __maybe_unused mtk_iommu_resume(struct device *dev)
- 		dev_err(data->dev, "Failed to enable clk(%d) in resume\n", ret);
+ /*
+  * Get the local arbiter ID and the portid within the larb arbiter
+@@ -554,11 +555,12 @@ static int mtk_iommu_hw_init(const struct mtk_iommu_data *data)
  		return ret;
  	}
-+	writel_relaxed(reg->wr_len, base + REG_MMU_WR_LEN);
- 	writel_relaxed(reg->misc_ctrl, base + REG_MMU_MISC_CTRL);
- 	writel_relaxed(reg->dcm_dis, base + REG_MMU_DCM_DIS);
- 	writel_relaxed(reg->ctrl_reg, base + REG_MMU_CTRL_REG);
-diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
-index d51ff99c2c71..9971cedd72ea 100644
---- a/drivers/iommu/mtk_iommu.h
-+++ b/drivers/iommu/mtk_iommu.h
-@@ -25,6 +25,7 @@ struct mtk_iommu_suspend_reg {
- 	u32				int_main_control;
- 	u32				ivrp_paddr;
- 	u32				vld_pa_rng;
-+	u32				wr_len;
+ 
++	regval = readl_relaxed(data->base + REG_MMU_CTRL_REG);
+ 	if (data->plat_data->m4u_plat == M4U_MT8173)
+-		regval = F_MMU_PREFETCH_RT_REPLACE_MOD |
++		regval |= F_MMU_PREFETCH_RT_REPLACE_MOD |
+ 			 F_MMU_TF_PROT_TO_PROGRAM_ADDR_MT8173;
+ 	else
+-		regval = F_MMU_TF_PROT_TO_PROGRAM_ADDR;
++		regval |= F_MMU_TF_PROT_TO_PROGRAM_ADDR;
+ 	writel_relaxed(regval, data->base + REG_MMU_CTRL_REG);
+ 
+ 	regval = F_L2_MULIT_HIT_EN |
+@@ -804,6 +806,15 @@ static const struct mtk_iommu_plat_data mt2712_data = {
+ 	.larbid_remap = {{0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}},
  };
  
++static const struct mtk_iommu_plat_data mt6779_data = {
++	.m4u_plat = M4U_MT6779,
++	.larbid_remap = {{0}, {1}, {2}, {3}, {5}, {7, 8}, {10}, {9}},
++	.has_sub_comm = true,
++	.has_wr_len = true,
++	.has_misc_ctrl = true,
++	.inv_sel_reg = REG_MMU_INV_SEL_GEN2,
++};
++
+ static const struct mtk_iommu_plat_data mt8173_data = {
+ 	.m4u_plat     = M4U_MT8173,
+ 	.has_4gb_mode = true,
+@@ -822,6 +833,7 @@ static const struct mtk_iommu_plat_data mt8183_data = {
+ 
+ static const struct of_device_id mtk_iommu_of_ids[] = {
+ 	{ .compatible = "mediatek,mt2712-m4u", .data = &mt2712_data},
++	{ .compatible = "mediatek,mt6779-m4u", .data = &mt6779_data},
+ 	{ .compatible = "mediatek,mt8173-m4u", .data = &mt8173_data},
+ 	{ .compatible = "mediatek,mt8183-m4u", .data = &mt8183_data},
+ 	{}
+diff --git a/drivers/iommu/mtk_iommu.h b/drivers/iommu/mtk_iommu.h
+index 9971cedd72ea..fb79e710c8d9 100644
+--- a/drivers/iommu/mtk_iommu.h
++++ b/drivers/iommu/mtk_iommu.h
+@@ -31,6 +31,7 @@ struct mtk_iommu_suspend_reg {
  enum mtk_iommu_plat {
-@@ -43,6 +44,7 @@ struct mtk_iommu_plat_data {
- 	bool		    has_misc_ctrl;
- 	bool		    has_sub_comm;
- 	bool                has_vld_pa_rng;
-+	bool                has_wr_len;
- 	bool                reset_axi;
- 	u32                 inv_sel_reg;
- 	unsigned char       larbid_remap[8][4];
+ 	M4U_MT2701,
+ 	M4U_MT2712,
++	M4U_MT6779,
+ 	M4U_MT8173,
+ 	M4U_MT8183,
+ };
 -- 
 2.18.0
 _______________________________________________
