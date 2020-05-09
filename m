@@ -2,92 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E645F1CBBAF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 02:14:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 82B1C1CBBD0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 02:33:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:In-Reply-To:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Sm1BJSsQpsirxtV3fjEcXN1dPr39swoVpKGmZ2NibD4=; b=rGdjdiV9trQCNt
-	lzVotpFjxzcvvgVLd7bckv4OFTVQtUAZnwFgGablOZOpyaNwaOPyDAqbfkvktu5OQJoTlf0IHg0cI
-	8rhNet5ip2cPOAGbpMpKhqqu0xu7IF3z60msLbU0m8UFS0DJemDmteCfkp6CKBBii4+HgTcfLKmtF
-	gyYWtOWraUZnnXEMyAPZFR8ka+AMY99lz6m8zPuMgyH/AYZCh8tKM/pLCpm4r1uQ0tqkS0NrvaXRM
-	0mcJNtq3Ts2aNuA6gzK69Zccer16+zi4K3L30ABdNdiI8/HdnnAmriWsM00OYRImDyUVYlRzL77RA
-	RRC7KnrqBzrhq9n1mowA==;
+	List-Owner; bh=QchHN06ReWoi9okwoANJK18O/nO27xdOnnOUGrTyqRA=; b=q1119eHj/dc/Pf
+	EO7k7VxsFP1svYNFk9xDD6k9VRt2reI8/voGV5jtCedfVT3UOGLFqjQrSDhe1uKrAe3GJNEDdELo1
+	NL5CcmW7UK8b9uqjqr8wUMXNSGf/hvO+Lxt7DSdK6BvtyTEloK/jpXseIPiaWJF1U7V8/nIBbADDF
+	i8oyAnm0nlX2bciuVquiTCvX7SVNIVN31ohRucINgeybGnleAfYkZoQmzeL8/PCNPw5UBN04jsWaQ
+	8aFOixBc3XfpIQAz9WzxkFjV09nXcr08kc/VI3pflFXovU4WWA25uztk42c2Ev9DwqjMtFqegWwUW
+	Ub940ItqBOvCxXM8g02A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXD7y-0007J0-7V; Sat, 09 May 2020 00:14:02 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jXDQR-0004WH-Dz; Sat, 09 May 2020 00:33:07 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXD7j-0007CW-Ki
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 00:13:49 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1588983224;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=ZhMKYaxcr11NMRkCgTBjG7GpLbTFZxzwIgvmF68ljDw=;
- b=aEpI4ZLVLCUewXoSm6o5jrYBCYBnyIFwA7XCBFy6vQKm4I5dmLtq5rK9tTO76VIqHtgGc6
- 0pjBooXJGgKl15mrfBs0UFLe+MQ17cbPCeF4GudBmYFZcnZMIQlzBfDGuVElOk3VBxQdTK
- xvWo9g8/vztS7Iuwgre5+05DU17c2Mg=
-Received: from mail-ej1-f72.google.com (mail-ej1-f72.google.com
- [209.85.218.72]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-334-WTx-7eKOMniR8dpgA_cJLw-1; Fri, 08 May 2020 20:13:35 -0400
-X-MC-Unique: WTx-7eKOMniR8dpgA_cJLw-1
-Received: by mail-ej1-f72.google.com with SMTP id c22so1356637ejm.2
+ id 1jXDQJ-0004Uu-8O
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 00:33:01 +0000
+Received: from epcas5p2.samsung.com (unknown [182.195.41.40])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20200509003254epoutp04577ae75fa5b3ff365a8938b2f0a05a6b~NNN6wcGJI1840018400epoutp04W
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 08 May 2020 17:13:34 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZhMKYaxcr11NMRkCgTBjG7GpLbTFZxzwIgvmF68ljDw=;
- b=cRqp6WxjRxwQvSq8ReVGGiENlx5gm9U8V2Tbdxxi6fJqfRkBrs7t6F+hFdfY27cCe8
- 7Hi6dTjNFw6SKs/+HBmcfeZMbYuO+0KisdKYOkJcTOc/vzAMNAVssJWNhn4XGzYWrJ4+
- C6DN0dwvwKNW1H3Ip0E1M0H8REuHuKhYjeJ0Y+aSiHzcKebk768BzI/D5M93dFWtIO+Q
- r1ROlRijI/+7Qm1LrTLuCbKLF0HztGDRENFbifXFexUtZ/Shxx4ocTkhJyj8ZdvyJ2G2
- g5MIH/CIS4pAbN9EsuHSBQ8LK6MeovxmsLwEJRuV2NZL6jmt8Xl+m8Vis7XM0LCkhMPE
- 0T+g==
-X-Gm-Message-State: AGi0Puab8/Ig9jhvinyYNsMNhGIKy79ajfvoJHHDnLtliH3QrQce1nCZ
- GpUulHNwVTkLWvkjfRkJTJq2Z34xdHdRiZPzPa628Q0yD+ogT0mFemVKU2TbPlacS4eX2mdj1lw
- 7WeidGqO4wEK0Nmq4YvsULKw7rLConKKhbqJ9Fs5bWVGxhN3k8TA=
-X-Received: by 2002:a17:906:328c:: with SMTP id
- 12mr3850935ejw.69.1588983213652; 
- Fri, 08 May 2020 17:13:33 -0700 (PDT)
-X-Google-Smtp-Source: APiQypJqN+TFhvtZqdkdpPo6lJw1R9Pu/We69ZDkgECDwa6VM+i564ZjE0uPtDGVAOi0WNgy1fVhvrOMu14Ja9Aja74=
-X-Received: by 2002:a17:906:328c:: with SMTP id
- 12mr3850919ejw.69.1588983213332; 
- Fri, 08 May 2020 17:13:33 -0700 (PDT)
+ Sat,  9 May 2020 00:32:54 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20200509003254epoutp04577ae75fa5b3ff365a8938b2f0a05a6b~NNN6wcGJI1840018400epoutp04W
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1588984374;
+ bh=neo+HlKkQMCxdPB9fgCSJEAlMpQVKOxhn4oUXLHS10E=;
+ h=From:To:Cc:In-Reply-To:Subject:Date:References:From;
+ b=hAiMPJi+nizBw2Fj/dnHMciZK9KPIa6IJwQTAji8h10W6euA+4TKz62jSFO+xFcrd
+ /lc34pmvu239DrIG1IBCUHi0GkvAmROTHaIac18THQ7mHl2i/rkDUnMaoN7ZmzY/2Z
+ e6n6OEiB0xxVJg+ugXNOeV6JGo6kMsD/+fXKQo7o=
+Received: from epsmges5p1new.samsung.com (unknown [182.195.42.73]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200509003253epcas5p12e5c0818bdeb7dd26794d78ea4f841dd~NNN5oftA52572825728epcas5p1f;
+ Sat,  9 May 2020 00:32:53 +0000 (GMT)
+Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
+ epsmges5p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ E9.13.10010.53AF5BE5; Sat,  9 May 2020 09:32:53 +0900 (KST)
+Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200509003252epcas5p105fcdf77df196a4f581f51fc7e82f1f8~NNN43vH4C0506305063epcas5p1v;
+ Sat,  9 May 2020 00:32:52 +0000 (GMT)
+Received: from epsmgms1p2.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200509003252epsmtrp2b1babae60489d2cafa01eac8fa1ed4b3~NNN424e_p1992219922epsmtrp2L;
+ Sat,  9 May 2020 00:32:52 +0000 (GMT)
+X-AuditID: b6c32a49-735ff7000000271a-b9-5eb5fa351a28
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ A0.1A.25866.43AF5BE5; Sat,  9 May 2020 09:32:52 +0900 (KST)
+Received: from alimakhtar02 (unknown [107.108.234.165]) by
+ epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200509003248epsmtip2b6fddca22f966ae2f394d65a39833f31~NNN1ile1w2388123881epsmtip2O;
+ Sat,  9 May 2020 00:32:48 +0000 (GMT)
+From: "Alim Akhtar" <alim.akhtar@samsung.com>
+To: "'Kishon Vijay Abraham I'" <kishon@ti.com>, <robh@kernel.org>
+In-Reply-To: <b0239aa5-004e-fc88-93a4-5b0d6f174ca3@ti.com>
+Subject: RE: [PATCH v7 07/10] phy: samsung-ufs: add UFS PHY driver for
+ samsung SoC
+Date: Sat, 9 May 2020 06:02:36 +0530
+Message-ID: <006701d62599$5fbc2c80$1f348580$@samsung.com>
 MIME-Version: 1.0
-References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
- <20190524100554.8606-4-maxime.chevallier@bootlin.com>
- <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
- <20200423170003.GT25745@shell.armlinux.org.uk>
-In-Reply-To: <20200423170003.GT25745@shell.armlinux.org.uk>
-From: Matteo Croce <mcroce@redhat.com>
-Date: Sat, 9 May 2020 02:12:57 +0200
-Message-ID: <CAGnkfhwOavaeUjcm4_+TG-xLxQA519o+fR8hxBCCfSy3qpcYhQ@mail.gmail.com>
-Subject: Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts to handle
- RSS tables
-To: "David S . Miller" <davem@davemloft.net>
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
+X-Mailer: Microsoft Outlook 16.0
+Thread-Index: AQINaKJiJYqhfY8pF8dQGQjTbFgO/QI75FnYAdd4tKsCTMaX9af9XhAA
+Content-Language: en-in
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrKKsWRmVeSWpSXmKPExsWy7bCmhq7pr61xBm83CFm8/HmVzeLT+mWs
+ FvOPnGO1uPC0h83i/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
+ sXTrTUaLnXdOMDvweVzu62Xy2LSqk81j85J6j5aT+1k8Pj69xeLRt2UVo8fxG9uZPD5vkvNo
+ P9DNFMAZxWWTkpqTWZZapG+XwJWx/PUz1oKruhX3rx9jbWDsVOli5OSQEDCRmPB1PksXIxeH
+ kMBuRonbq3ZAOZ+AnJt/WSGcz4wS115OYoRp2XFvAiNEYhejxIcPrcwQzhtGiYaWl0wgVWwC
+ uhI7FrexdTFycIgIOEo07IoDqWEWeMUk8XfbRhaQGk4BK4mbHWeYQWxhgRCJa++2gcVZBFQk
+ etuug23jFbCUONh3GMoWlDg58wlYDbOAtsSyha+ZIS5SkPj5dBkriC0i4CaxcepWNogacYmj
+ P3vAjpMQeMAhcbP1DytEg4vExJ+3oZqFJV4d38IOYUtJfH63F+xoCYFsiZ5dxhDhGoml846x
+ QNj2EgeuzGEBKWEW0JRYv0sfYhWfRO/vJ0wQnbwSHW1CENWqEs3vrkJ1SktM7O6GOsBDYv7m
+ s+wTGBVnIXlsFpLHZiF5YBbCsgWMLKsYJVMLinPTU4tNCwzzUsv1ihNzi0vz0vWS83M3MYJT
+ npbnDsa7Dz7oHWJk4mA8xCjBwawkwjuxYkucEG9KYmVValF+fFFpTmrxIUZpDhYlcd7TaUAp
+ gfTEktTs1NSC1CKYLBMHp1QDk2z1xlj77zpPxZ/UqM37t0/tjPOHJRW/Au/M+XQ8pv3mT4k5
+ zw7U9h97UtUatq9UaOvRxas/3+g7EXz+yPKZHP9zCtSDF664dUKnk/Oq0c1t1ZdZ1Gv/Jro7
+ 82pHL4s78M3LZNKyMGOVF2VTOS5cVkjv+Prf6pjCNuOYme2X+iOf/hDTD/60LC9k+QmRfcvn
+ qe42XdivcPBg0M+2HFaHfHm+e35JnCmJUlPSGJawHE3Y+IzL0CVgZ/8kC1GmZRaVieUsnFZR
+ 9U3sOXOWfUhw+d6f8i+l0pyrXS6vYn2u/j6rZbzv5ix7lvkpwqVF62MZd/wBXo7dKUe3l53o
+ KuWxZv6TI9wvquf/pqP3iK6DEktxRqKhFnNRcSIAf9XfVugDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrNIsWRmVeSWpSXmKPExsWy7bCSvK7Jr61xBitvSlu8/HmVzeLT+mWs
+ FvOPnGO1uPC0h83i/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
+ sXTrTUaLnXdOMDvweVzu62Xy2LSqk81j85J6j5aT+1k8Pj69xeLRt2UVo8fxG9uZPD5vkvNo
+ P9DNFMAZxWWTkpqTWZZapG+XwJXx7uZrloJ32hVHu3ezNzAuUepi5OSQEDCR2HFvAmMXIxeH
+ kMAORomvR06yQySkJa5vnABlC0us/PecHaLoFaPE7uZpzCAJNgFdiR2L29hAbBEBZ4m7256y
+ ghQxC/xgkjg7pRNq7FtGicY7G8FGcQpYSdzsOAPWLSwQJHF/VTcriM0ioCLR23adEcTmFbCU
+ ONh3GMoWlDg58wkLiM0soC3R+7CVEcZetvA1M8R5ChI/ny5jhbjCTWLj1K1sEDXiEkd/9jBP
+ YBSehWTULCSjZiEZNQtJywJGllWMkqkFxbnpucWGBUZ5qeV6xYm5xaV56XrJ+bmbGMHxq6W1
+ g3HPqg96hxiZOBgPMUpwMCuJ8E6s2BInxJuSWFmVWpQfX1Sak1p8iFGag0VJnPfrrIVxQgLp
+ iSWp2ampBalFMFkmDk6pBqalDd837vr9qY89RvacjuCHA4bhAf2OIRfDZBOlrONK1j7Oc15z
+ vibx03kWNfdnFyfNnLxhi0ZEbGGQavjLUpumLFHHFyGiO2d+WMdqznj/SsbsiD3cCQL8jmLM
+ 01U/aq/d/EtI+ZqfrPSudWWxAnXBC6ccq3TKWSrkH/KxJ4v9ybFjd5oUI0wVOFVWBtae9ub7
+ cuj8skcHU5dtqNDTZl54J1co8H3L4Y03PwbYnJ/K7MVUFrPwxLxVDG+CXI+cFA14Ozc03Fbk
+ u8hOZS+2AOv55Telf1hw+KUn8C3+tGDl+7UHPdZUWqe092gdsePdoLLJqMrCPrpkZ1lNqu2l
+ myGx904ny/jcrjzD7juxW4mlOCPRUIu5qDgRAM2N5vdOAwAA
+X-CMS-MailID: 20200509003252epcas5p105fcdf77df196a4f581f51fc7e82f1f8
+X-Msg-Generator: CA
+CMS-TYPE: 105P
+X-CMS-RootMailID: 20200426174217epcas5p2c7d1606b641b73f67a169b8d22f0637d
+References: <20200426173024.63069-1-alim.akhtar@samsung.com>
+ <CGME20200426174217epcas5p2c7d1606b641b73f67a169b8d22f0637d@epcas5p2.samsung.com>
+ <20200426173024.63069-8-alim.akhtar@samsung.com>
+ <b0239aa5-004e-fc88-93a4-5b0d6f174ca3@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200508_171347_757837_908DE154 
-X-CRM114-Status: GOOD (  27.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200508_173259_716459_88D5B4AC 
+X-CRM114-Status: GOOD (  16.15  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [203.254.224.34 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -96,6 +132,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -108,119 +145,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Antoine Tenart <antoine.tenart@bootlin.com>, netdev <netdev@vger.kernel.org>,
- gregory.clement@bootlin.com, LKML <linux-kernel@vger.kernel.org>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, miquel.raynal@bootlin.com,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
+ linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
+ avri.altman@wdc.com, 'Vinod Koul' <vkoul@kernel.org>, cang@codeaurora.org,
+ stanley.chu@mediatek.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Apr 23, 2020 at 7:00 PM Russell King - ARM Linux admin
-<linux@armlinux.org.uk> wrote:
->
-> On Tue, Apr 14, 2020 at 01:43:02AM +0200, Matteo Croce wrote:
-> > On Tue, Apr 14, 2020 at 1:21 AM Maxime Chevallier
-> > <maxime.chevallier@bootlin.com> wrote:
-> > >
-> > > The PPv2 controller has 8 RSS tables that are shared across all ports on
-> > > a given PPv2 instance. The previous implementation allocated one table
-> > > per port, leaving others unused.
-> > >
-> > > By using RSS contexts, we can make use of multiple RSS tables per
-> > > port, one being the default table (always id 0), the other ones being
-> > > used as destinations for flow steering, in the same way as rx rings.
-> > >
-> > > This commit introduces RSS contexts management in the PPv2 driver. We
-> > > always reserve one table per port, allocated when the port is probed.
-> > >
-> > > The global table list is stored in the struct mvpp2, as it's a global
-> > > resource. Each port then maintains a list of indices in that global
-> > > table, that way each port can have it's own numbering scheme starting
-> > > from 0.
-> > >
-> > > One limitation that seems unavoidable is that the hashing parameters are
-> > > shared across all RSS contexts for a given port. Hashing parameters for
-> > > ctx 0 will be applied to all contexts.
-> > >
-> > > Signed-off-by: Maxime Chevallier <maxime.chevallier@bootlin.com>
-> >
-> > Hi all,
-> >
-> > I noticed that enabling rxhash blocks the RX on my Macchiatobin. It
-> > works fine with the 10G ports (the RX rate goes 4x up) but it
-> > completely kills the gigabit interface.
-> >
-> > # 10G port
-> > root@macchiatobin:~# iperf3 -c 192.168.0.2
-> > Connecting to host 192.168.0.2, port 5201
-> > [  5] local 192.168.0.1 port 42394 connected to 192.168.0.2 port 5201
-> > [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> > [  5]   0.00-1.00   sec   941 MBytes  7.89 Gbits/sec  4030    250 KBytes
-> > [  5]   1.00-2.00   sec   933 MBytes  7.82 Gbits/sec  4393    240 KBytes
-> > root@macchiatobin:~# ethtool -K eth0 rxhash on
-> > root@macchiatobin:~# iperf3 -c 192.168.0.2
-> > Connecting to host 192.168.0.2, port 5201
-> > [  5] local 192.168.0.1 port 42398 connected to 192.168.0.2 port 5201
-> > [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> > [  5]   0.00-1.00   sec   860 MBytes  7.21 Gbits/sec  428    410 KBytes
-> > [  5]   1.00-2.00   sec   859 MBytes  7.20 Gbits/sec  185    563 KBytes
-> >
-> > # gigabit port
-> > root@macchiatobin:~# iperf3 -c turbo
-> > Connecting to host turbo, port 5201
-> > [  5] local 192.168.85.42 port 45144 connected to 192.168.85.6 port 5201
-> > [ ID] Interval           Transfer     Bitrate         Retr  Cwnd
-> > [  5]   0.00-1.00   sec   113 MBytes   948 Mbits/sec    0    407 KBytes
-> > [  5]   1.00-2.00   sec   112 MBytes   942 Mbits/sec    0    428 KBytes
-> > root@macchiatobin:~# ethtool -K eth2 rxhash on
-> > root@macchiatobin:~# iperf3 -c turbo
-> > iperf3: error - unable to connect to server: Resource temporarily unavailable
-> >
-> > I've bisected and it seems that this commit causes the issue. I tried
-> > to revert it on nex-next as a second test, but the code has changed a
-> > lot much since, generating too much conflicts.
-> > Can you have a look into this?
->
-> This behaviour on eth2 is confirmed here on v5.6.  Turning on rxhash
-> appears to prevent eth2 working.
->
-> Maxime, please look into this regression, thanks.
->
-> --
-> RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-> FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
->
+Hi Kishon,
+Thanks for review.
 
-Hi,
+> -----Original Message-----
+> From: Kishon Vijay Abraham I <kishon@ti.com>
+> Sent: 07 May 2020 10:49
+> To: Alim Akhtar <alim.akhtar@samsung.com>; robh@kernel.org
+> Cc: devicetree@vger.kernel.org; linux-scsi@vger.kernel.org; krzk@kernel.org;
+> avri.altman@wdc.com; martin.petersen@oracle.com;
+> kwmad.kim@samsung.com; stanley.chu@mediatek.com;
+> cang@codeaurora.org; linux-samsung-soc@vger.kernel.org; linux-arm-
+> kernel@lists.infradead.org; linux-kernel@vger.kernel.org; Vinod Koul
+> <vkoul@kernel.org>
+> Subject: Re: [PATCH v7 07/10] phy: samsung-ufs: add UFS PHY driver for
+> samsung SoC
+> 
+.
+.
+.
+> Okay, here you are using a state machine for the PHY configuration because of
+> the way the PHY is integrated with the UFS. Would be nice to have the state
+> machine documented somewhere. I only have the PHY patch in my inbox.
+Ok, will document in the driver file as well as in the header file.
 
-What do you think about temporarily disabling it like this?
+> > +
+> > +	if (ufs_phy->ufs_phy_state == CFG_POST_PWR_HS)
+> > +		err = samsung_ufs_phy_wait_for_lock_acq(phy);
+> > +out:
+> > +	return err;
+> > +}
+> > +
+> > +static int samsung_ufs_phy_symbol_clk_init(struct samsung_ufs_phy
+> > +*phy) {
+> > +	struct clk *clk;
+> > +	int ret = 0;
+> > +
+> > +	clk = devm_clk_get(phy->dev, "tx0_symbol_clk");
+> 
+> There is no "exit" callback in phy_ops which means if there are multiple phy_init
+> calls, this clock will not be freed. This could be moved to "probe" IMO.
 
---- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-+++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
-@@ -5775,7 +5775,8 @@ static int mvpp2_port_probe(struct platform_device *pdev,
-                            NETIF_F_HW_VLAN_CTAG_FILTER;
+Ok, will add exit callback.
 
-        if (mvpp22_rss_is_supported()) {
--               dev->hw_features |= NETIF_F_RXHASH;
-+               if (port->phy_interface != PHY_INTERFACE_MODE_SGMII)
-+                       dev->hw_features |= NETIF_F_RXHASH;
-                dev->features |= NETIF_F_NTUPLE;
-        }
+> > +	if (IS_ERR(clk)) {
+> > +		dev_err(phy->dev, "failed to get tx0_symbol_clk clock\n");
+> > +		goto out;
+> > +	} else {
+> 
+> "else" here and below is not required. Something like below
+> 
+Ack
+> 	clk = devm_clk_get(phy->dev, "tx0_symbol_clk");
+> 	if (IS_ERR(clk)) {
+> 		dev_err(phy->dev, "failed to get tx0_symbol_clk clock\n");
+> 		goto out;
+> 	}
+> 	phy->tx0_symbol_clk = clk;
+> 
+> > +		phy->tx0_symbol_clk = clk;
+> > +	}
+> > +
+> > +	clk = devm_clk_get(phy->dev, "rx0_symbol_clk");
+> > +	if (IS_ERR(clk)) {
+> > +		dev_err(phy->dev, "failed to get rx0_symbol_clk clock\n");
+> > +		goto out;
+> > +	} else {
+> > +		phy->rx0_symbol_clk = clk;
+> > +	}
+> > +
+> > +	clk = devm_clk_get(phy->dev, "rx1_symbol_clk");
+> > +	if (IS_ERR(clk)) {
+> > +		dev_err(phy->dev, "failed to get rx1_symbol_clk clock\n");
+> > +		goto out;
+> > +	} else {
+> > +		phy->rx1_symbol_clk = clk;
+> > +	}
+> > +
+> > +	ret = clk_prepare_enable(phy->tx0_symbol_clk);
+> > +	if (ret) {
+> > +		dev_err(phy->dev, "%s: tx0_symbol_clk enable failed %d\n",
+> > +				__func__, ret);
+> > +		goto out;
+> > +	}
+> > +	ret = clk_prepare_enable(phy->rx0_symbol_clk);
+> > +	if (ret) {
+> > +		dev_err(phy->dev, "%s: rx0_symbol_clk enable failed %d\n",
+> > +				__func__, ret);
+> > +		goto out;
+> > +	}
+> > +	ret = clk_prepare_enable(phy->rx1_symbol_clk);
+> > +	if (ret) {
+> > +		dev_err(phy->dev, "%s: rx1_symbol_clk enable failed %d\n",
+> > +				__func__, ret);
+> > +		goto out;
+> > +	}
+> 
+> All these clocks are never disabled?
+Sure, will add disabling of clocks in exit callback 
 
+> > +out:
+> > +	return ret;
+> > +}
+> > +
+> > +static int samsung_ufs_phy_clks_init(struct samsung_ufs_phy *phy) {
+> > +	struct clk *phy_ref_clk;
+> > +	int ret;
+> > +
+> > +	phy_ref_clk = devm_clk_get(phy->dev, "ref_clk");
+> > +	if (IS_ERR(phy_ref_clk))
+> > +		dev_err(phy->dev, "failed to get ref_clk clock\n");
+> > +	else
+> > +		phy->ref_clk = phy_ref_clk;
+> > +
+> > +	ret = clk_prepare_enable(phy->ref_clk);
+> > +	if (ret) {
+> > +		dev_err(phy->dev, "%s: ref_clk enable failed %d\n",
+> > +				__func__, ret);
+> > +		return ret;
+> > +	}
+> > +
+> > +	dev_info(phy->dev, "UFS MPHY ref_clk_rate = %ld\n",
+> > +clk_get_rate(phy_ref_clk));
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static int samsung_ufs_phy_init(struct phy *phy) {
+> > +	struct samsung_ufs_phy *_phy = get_samsung_ufs_phy(phy);
+> > +	int ret;
+> > +
+> > +	_phy->lane_cnt = phy->attrs.bus_width;
+> > +	_phy->ufs_phy_state = CFG_PRE_INIT;
+> > +
+> > +	_phy->is_pre_init = true;
+> > +	_phy->is_post_init = false;
+> > +	_phy->is_pre_pmc = false;
+> > +	_phy->is_post_pmc = false;
+> > +
+> > +
+> > +	if (of_device_is_compatible(_phy->dev->of_node,
+> > +				"samsung,exynos7-ufs-phy")) {
+> 
+> Can't it be added in driver data for this compatible?
+Sure, will handle via driver data.
 
-David, is this "workaround" too bad to get accepted?
+> > +		ret = samsung_ufs_phy_symbol_clk_init(_phy);
+> > +		if (ret)
+> > +			dev_err(_phy->dev,
+> > +				"failed to set ufs phy symbol clocks\n");
+> > +	}
+> > +
+.
+.
+.
+> > +static int samsung_ufs_phy_set_mode(struct phy *generic_phy,
+> > +					enum phy_mode mode, int submode) {
+> > +	struct samsung_ufs_phy *_phy = get_samsung_ufs_phy(generic_phy);
+> > +
+> > +	_phy->mode = PHY_MODE_INVALID;
+> > +
+> > +	if (mode > 0)
+> > +		_phy->mode = mode;
+> > +
+> > +	return 0;
+> > +}
+> > +
+> > +static struct phy_ops samsung_ufs_phy_ops = {
+> > +	.init		= samsung_ufs_phy_init,
+> > +	.power_on	= samsung_ufs_phy_power_on,
+> > +	.power_off	= samsung_ufs_phy_power_off,
+> > +	.calibrate	= samsung_ufs_phy_calibrate,
+> > +	.set_mode	= samsung_ufs_phy_set_mode,
+> 
+> missing .owner.
+Ack,
 
-Bye,
+> > +}
+> > +;
+.
+.
+> > +++ b/drivers/phy/samsung/phy-samsung-ufs.h
+> > @@ -0,0 +1,142 @@
+> > +/* SPDX-License-Identifier: GPL-2.0-only */
+> > +/*
+> > + * UFS PHY driver for Samsung EXYNOS SoC
+> > + *
+> > + * Copyright (C) 2015 Samsung Electronics Co., Ltd.
+> 
+> 2020
+> 
+Sure, will update.
 
---
-Matteo Croce
-per aspera ad upstream
+> Thanks
+> Kishon
 
 
 _______________________________________________
