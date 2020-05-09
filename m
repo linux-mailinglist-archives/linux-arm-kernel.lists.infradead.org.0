@@ -2,75 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB0F61CC1D1
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 15:39:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A71E51CC1EF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 15:51:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yLxwnELXa2ELn7vVE6u8cZyI6VJsxS107zZ1wMEfFbM=; b=AjLAqLFtDLt0Dr
-	3u17eHPVyyh9dFxGKm147DZgfTAHy1woYqZiKaKMKlJCa4YWmTIDQsC1TF3IsOA0aB24rsRc6t/3D
-	UM4xTmgsp7wIbM9SqLoHt54iJ+/DWBi4zu6hw1S1T4/ltICz5TNgnZgwE1zHwJBJwE/7PPh8NbEJ4
-	AX3iFyJfrIkbnFnIu7hFF+RgCNrUZEVNhkjTXxtzX8gMzC6CLdkM+nIwP/9ytcsrDvvuCsDGGj3qB
-	I/HAHk2VVCglQ4wJvHZBioCLRI0c95EeFg+DtLCHyjQU+crOw4L7yO2bETT9bNE1LXC3ECbDgFoGQ
-	x0aTRNqj+uF8RkuU6BAw==;
+	List-Owner; bh=HBGBkL7by44ARpnixbZacquLhukdK+oF1srDZl//gT4=; b=CSoFMEyN+7ClgN
+	zdD2e3ViGogL2e+QfyBWwM286PYC9PRqYII+FKlRN65PnaTSMpovL1OwsPlNHtb05Kkaru5yf/QQa
+	QFxDfgw9zDQRFdVTSZBpcaG+EWWNXaV/flW2jEwduCgpSeC/xxPI1sHR9IG0DmHgvlSO4y9eH8Szq
+	Xt81KA05yKhcIeeVDXEj35HdpH0Wq1cmmcl9JwU9JjF7la09k95+8AkP8cP8uET/mdA/qissPlrw6
+	0iWEO7sJ2a5uDZ2RFEDCaOYzg88j6bDS/wpdkhSWKhTQPyl3PrJ12KiSdWm8T6M0VOdqnruACKFrW
+	3ega5hCgszK4TjBHpvrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXPhM-00016P-3W; Sat, 09 May 2020 13:39:24 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jXPtG-00032i-5z; Sat, 09 May 2020 13:51:42 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXPhB-00015g-KE; Sat, 09 May 2020 13:39:16 +0000
-Received: from mail-ed1-f44.google.com (mail-ed1-f44.google.com
- [209.85.208.44])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8833A21473;
- Sat,  9 May 2020 13:39:11 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589031551;
- bh=NfAWv5xLC3OLtEXGg4DLKE4Rs4dQe/gWzY1FYPLzrnU=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=LCp8NEoAaA+uu2MTfGB+K2tTdJQ1+xO4TqmYY3DOj1bHNZsR1GorBtpcmWwPD8aDA
- XWh2rxHWreY7Oxwpq29aVsALD+vJrtqqh8Of6v0af/CwgEt2Sv0ogkQpTzsbzK9eAX
- Kh61/GwaV7fJmbjJVw8VsjPHca7P0PzV4e0HftWM=
-Received: by mail-ed1-f44.google.com with SMTP id k22so3737810eds.6;
- Sat, 09 May 2020 06:39:11 -0700 (PDT)
-X-Gm-Message-State: AGi0Pub4S3Mrs8yCut0hRs8mDgrP/P0fxBIBbAqz3fSy5JK0pHxEWXdI
- smwWUVe4fqRnlqH6hOsYycQDeXLUljgHn5WKsw==
-X-Google-Smtp-Source: APiQypLDSD424Rd1jJ06F9Cw+H9XU2K8fwhUCsuNh2gmkAlo465fOvtpAh9yMMEaBJNHQ4DkLUOTOTMCQS83wK57D+c=
-X-Received: by 2002:aa7:dd95:: with SMTP id g21mr6153861edv.148.1589031549904; 
- Sat, 09 May 2020 06:39:09 -0700 (PDT)
+ id 1jXPt8-000320-GT
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 13:51:36 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=2uygEucO5eCGyC1Yl+l/qEGrNAjV1cjP3RBl/px8ykw=; b=LYvqtNTkAfpe2zWTtXqs0AlVr
+ JSY/8pWu8EKEKUpiD3KHRAIrqtN/gZWHmvDAyeY6MYSSAmSw+HjwcOoURlbOlMtkwKx/eYWaE8NAe
+ estJ6I3KznNOQ+XT5SNmMxkySCAiYeQP46EeJpLbeso6Y8i7JQkzn6aN7sAwovHwQVrnnSLUoWnMD
+ ilbvI8F/q0AhjOMwccK28a53kaB6tg7R3G2bnyHC/TP5TqmVJrbWwsESPcr/dVb8e4e1p590UHxg/
+ o8aW5eD5kKR+Vb8IK/zowKmzjpCn3Fzib3PAmwVQNiVk4K6VhAboF9Et6ayykFoPahOH1R55nlk/S
+ tFwQiXG3w==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:38036)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jXPsk-00044H-Uh; Sat, 09 May 2020 14:51:11 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jXPsf-0002u4-W2; Sat, 09 May 2020 14:51:06 +0100
+Date: Sat, 9 May 2020 14:51:05 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Matteo Croce <mcroce@redhat.com>
+Subject: Re: [EXT] Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts
+ to handle RSS tables
+Message-ID: <20200509135105.GE1551@shell.armlinux.org.uk>
+References: <20190524100554.8606-1-maxime.chevallier@bootlin.com>
+ <20190524100554.8606-4-maxime.chevallier@bootlin.com>
+ <CAGnkfhzsx_uEPkZQC-_-_NamTigD8J0WgcDioqMLSHVFa3V6GQ@mail.gmail.com>
+ <20200423170003.GT25745@shell.armlinux.org.uk>
+ <CAGnkfhwOavaeUjcm4_+TG-xLxQA519o+fR8hxBCCfSy3qpcYhQ@mail.gmail.com>
+ <DM5PR18MB1146686527DE66495F75D0DAB0A30@DM5PR18MB1146.namprd18.prod.outlook.com>
+ <20200509114518.GB1551@shell.armlinux.org.uk>
+ <CAGnkfhx8fEZCoLPzGxSzQnj1ZWcQtBMn+g_jO1Jxc4zF7pQwjQ@mail.gmail.com>
 MIME-Version: 1.0
-References: <20200420060834.44461-1-amistry@google.com>
- <CAAOTY_81qB+WJN_2-ZNqM63NOp+Es1qEmsp2qje2bfePg1O5Vw@mail.gmail.com>
- <CAATStaNwCyveF-fmrT=1m-BJh=8WOyaffFzVsC_Lo_rFkm6Z=Q@mail.gmail.com>
- <CAAOTY_9HQTiywgzGrefDHromhXtLPyWeYUyxFU8+h8sN_fo9xw@mail.gmail.com>
- <CAAOTY_9+s8EknSFLyYHNDfJuxERTuubBXaQ41Y3J+DeuDMFGqA@mail.gmail.com>
- <CAECpkiM5ez8=iEe=fYKiDf5Pb6AHrTyt5uXqJQtQpQJHotupWA@mail.gmail.com>
- <CAAOTY__B+8XY=5n5C2AYBGskRhvOs2PmHVhjKJk7NmXDVM_-Nw@mail.gmail.com>
- <CAECpkiO9P1+GpQi+aH_B2B8d5Bsba5XJnUKJDfL-kZk455Edcg@mail.gmail.com>
-In-Reply-To: <CAECpkiO9P1+GpQi+aH_B2B8d5Bsba5XJnUKJDfL-kZk455Edcg@mail.gmail.com>
-From: Chun-Kuang Hu <chunkuang.hu@kernel.org>
-Date: Sat, 9 May 2020 21:38:59 +0800
-X-Gmail-Original-Message-ID: <CAAOTY_82rA6cQoN-3CWtLAHje56k8TnLfaBkBz_BN_sWnt9r2A@mail.gmail.com>
-Message-ID: <CAAOTY_82rA6cQoN-3CWtLAHje56k8TnLfaBkBz_BN_sWnt9r2A@mail.gmail.com>
-Subject: Re: [PATCH] drm/mediatek: stop iterating dma addresses when
- sg_dma_len() == 0
-To: Anand Mistry <amistry@chromium.org>
+Content-Disposition: inline
+In-Reply-To: <CAGnkfhx8fEZCoLPzGxSzQnj1ZWcQtBMn+g_jO1Jxc4zF7pQwjQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_063914_810472_CBB86CAD 
-X-CRM114-Status: GOOD (  24.67  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200509_065134_549026_6CFEEDBB 
+X-CRM114-Status: GOOD (  24.31  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -78,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,92 +94,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Anand K Mistry <amistry@google.com>,
- DRI Development <dri-devel@lists.freedesktop.org>, CK Hu <ck.hu@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: Antoine Tenart <antoine.tenart@bootlin.com>,
+ netdev <netdev@vger.kernel.org>,
+ "gregory.clement@bootlin.com" <gregory.clement@bootlin.com>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Nadav Haklai <nadavh@marvell.com>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ "miquel.raynal@bootlin.com" <miquel.raynal@bootlin.com>,
+ Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
+ "David S . Miller" <davem@davemloft.net>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksIEFuYW5kOgoKQW5hbmQgTWlzdHJ5IDxhbWlzdHJ5QGNocm9taXVtLm9yZz4g5pa8IDIwMjDl
-ubQ15pyIN+aXpSDpgLHlm5sg5LiL5Y2INzo1NuWvq+mBk++8mgo+Cj4gT24gV2VkLCBNYXkgNiwg
-MjAyMCBhdCAxMDo1OSBQTSBDaHVuLUt1YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4g
-d3JvdGU6Cj4gPgo+ID4gSGksIEFuYW5kOgo+ID4KPiA+IEFuYW5kIE1pc3RyeSA8YW1pc3RyeUBj
-aHJvbWl1bS5vcmc+IOaWvCAyMDIw5bm0NeaciDbml6Ug6YCx5LiJIOS4i+WNiDc6MDPlr6vpgZPv
-vJoKPiA+ID4KPiA+ID4gT24gV2VkLCBNYXkgNiwgMjAyMCBhdCAxMDoyNSBBTSBDaHVuLUt1YW5n
-IEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4gd3JvdGU6Cj4gPiA+ID4KPiA+ID4gPiBIaSwg
-QW5hbmQsCj4gPiA+ID4KPiA+ID4gPiBDaHVuLUt1YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVs
-Lm9yZz4g5pa8IDIwMjDlubQ05pyIMjnml6Ug6YCx5LiJIOS4iuWNiDEyOjM35a+r6YGT77yaCj4g
-PiA+ID4gPgo+ID4gPiA+ID4gSGksIEFuYW5kLAo+ID4gPiA+ID4KPiA+ID4gPiA+IEFuYW5kIEsu
-IE1pc3RyeSA8YW1pc3RyeUBjaHJvbWl1bS5vcmc+IOaWvCAyMDIw5bm0NOaciDI45pelIOmAseS6
-jCDkuIrljYg5OjU05a+r6YGT77yaCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IE9uIFN1biwgMjYg
-QXByIDIwMjAgYXQgMTg6MDQsIENodW4tS3VhbmcgSHUgPGNodW5rdWFuZy5odUBrZXJuZWwub3Jn
-PiB3cm90ZToKPiA+ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiA+IEhpLCBBbmFuZDoKPiA+ID4gPiA+
-ID4gPgo+ID4gPiA+ID4gPiA+IEFuYW5kIEsgTWlzdHJ5IDxhbWlzdHJ5QGNocm9taXVtLm9yZz4g
-5pa8IDIwMjDlubQ05pyIMjDml6Ug6YCx5LiAIOS4i+WNiDI6MDnlr6vpgZPvvJoKPiA+ID4gPiA+
-ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiBJZiBkbWFfbWFwX3NnKCkgbWVyZ2VzIHBhZ2VzIHdoZW4g
-Y3JlYXRpbmcgdGhlIG1hcHBpbmcsIG9ubHkgdGhlIGZpcnN0Cj4gPiA+ID4gPiA+ID4gPiBlbnRy
-aWVzIHdpbGwgaGF2ZSBhIHZhbGlkIHNnX2RtYV9hZGRyZXNzKCkgYW5kIHNnX2RtYV9sZW4oKSwg
-Zm9sbG93ZWQgYnkKPiA+ID4gPiA+ID4gPiA+IGVudHJpZXMgd2l0aCBzZ19kbWFfbGVuKCkgPT0g
-MC4KPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiBTaWduZWQtb2ZmLWJ5OiBBbmFuZCBL
-IE1pc3RyeSA8YW1pc3RyeUBnb29nbGUuY29tPgo+ID4gPiA+Cj4gPiA+ID4gQXV0aG9yIHNob3Vs
-ZCBzaWduIG9mZiB0aGlzIHBhdGNoLCBwbGVhc2UgZ2l2ZSBhIHNpZ24gb2ZmIHRhZyBieSBhdXRo
-b3IuCj4gPiA+Cj4gPiA+IFNvcnJ5LCBlbWFpbCBpc3N1ZXMgbWVhbnQgaSBzZW50IHRoZSBwYXRj
-aCBmcm9tIGEgZGlmZmVyZW50IGFjY291bnQuCj4gPiA+IFNob3VsZCBJIHJlLXNlbmQgdGhlCj4g
-PiA+IHBhdGNoIGZyb20gdGhlIHNhbWUgYWNjb3VudCBhcyB0aGUgc2lnbi1vZmYgbGluZT8gSSdt
-IHN0aWxsIHdvcmtpbmcgbXkKPiA+ID4gd2F5IHRocm91Z2ggdGhlIGtlcm5lbCBwYXRjaCBwcm9j
-ZXNzLgo+ID4gPgo+ID4KPiA+IElmIHlvdSB3YW50IHRvIHVzZSBjaHJvbWl1bSBhY2NvdW50LCB5
-b3UgY291bGQgc2ltcGx5IHJlcGx5IHRoaXMgZW1haWwKPiA+IHdpdGggYSBzaWduLW9mZi1ieSB0
-YWcgb2YgY2hyb21pdW0gYWNjb3VudC4KPgo+IEFjay4gQXMgcGF0aCBvZiBsZWFzdCByZXNpc3Rh
-bmNlLCBoZXJlOgo+Cj4gU2lnbmVkLW9mZi1ieTogQW5hbmQgSyBNaXN0cnkgPGFtaXN0cnlAY2hy
-b21pdW0ub3JnPgo+CgpBcHBsaWVkIHRvIG1lZGlhdGVrLWRybS1uZXh0IFsxXSwgdGhhbmtzLgoK
-WzFdIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L2NodW5r
-dWFuZy5odS9saW51eC5naXQvbG9nLz9oPW1lZGlhdGVrLWRybS1uZXh0CgpSZWdhcmRzLApDaHVu
-LUt1YW5nLgoKPgo+ID4KPiA+IFJlZ2FyZHMsCj4gPiBDaHVuLUt1YW5nLgo+ID4KPiA+ID4gPgo+
-ID4gPiA+IFJlZ2FyZHMsCj4gPiA+ID4gQ2h1bi1LdWFuZy4KPiA+ID4gPgo+ID4gPiA+ID4gPiA+
-ID4gLS0tCj4gPiA+ID4gPiA+ID4gPiAgZHJpdmVycy9ncHUvZHJtL21lZGlhdGVrL210a19kcm1f
-Z2VtLmMgfCAzICsrKwo+ID4gPiA+ID4gPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlv
-bnMoKykKPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVy
-cy9ncHUvZHJtL21lZGlhdGVrL210a19kcm1fZ2VtLmMgYi9kcml2ZXJzL2dwdS9kcm0vbWVkaWF0
-ZWsvbXRrX2RybV9nZW0uYwo+ID4gPiA+ID4gPiA+ID4gaW5kZXggYjA0YTNjMmIxMTFlMDkuLmY4
-ZmQ4Yjk4YzMwZTNkIDEwMDY0NAo+ID4gPiA+ID4gPiA+ID4gLS0tIGEvZHJpdmVycy9ncHUvZHJt
-L21lZGlhdGVrL210a19kcm1fZ2VtLmMKPiA+ID4gPiA+ID4gPiA+ICsrKyBiL2RyaXZlcnMvZ3B1
-L2RybS9tZWRpYXRlay9tdGtfZHJtX2dlbS5jCj4gPiA+ID4gPiA+ID4gPiBAQCAtMjI0LDYgKzIy
-NCw5IEBAIHN0cnVjdCBkcm1fZ2VtX29iamVjdCAqbXRrX2dlbV9wcmltZV9pbXBvcnRfc2dfdGFi
-bGUoc3RydWN0IGRybV9kZXZpY2UgKmRldiwKPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ID4g
-PiAgICAgICAgIGV4cGVjdGVkID0gc2dfZG1hX2FkZHJlc3Moc2ctPnNnbCk7Cj4gPiA+ID4gPiA+
-ID4gPiAgICAgICAgIGZvcl9lYWNoX3NnKHNnLT5zZ2wsIHMsIHNnLT5uZW50cywgaSkgewo+ID4g
-PiA+ID4gPiA+ID4gKyAgICAgICAgICAgICAgIGlmICghc2dfZG1hX2xlbihzKSkKPiA+ID4gPiA+
-ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIGJyZWFrOwo+ID4gPiA+ID4gPiA+Cj4gPiA+
-ID4gPiA+ID4gSSB0aGluayB0aGlzIHNob3VsZCBiZSAnY29udGludWUnCj4gPiA+ID4gPiA+Cj4g
-PiA+ID4gPiA+IHNjYXR0ZXJsaXN0LmggaGFzIHRoZSBjb21tZW50Ogo+ID4gPiA+ID4gPiAvKgo+
-ID4gPiA+ID4gPiAgKiBUaGVzZSBtYWNyb3Mgc2hvdWxkIGJlIHVzZWQgYWZ0ZXIgYSBkbWFfbWFw
-X3NnIGNhbGwgaGFzIGJlZW4gZG9uZQo+ID4gPiA+ID4gPiAgKiB0byBnZXQgYnVzIGFkZHJlc3Nl
-cyBvZiBlYWNoIG9mIHRoZSBTRyBlbnRyaWVzIGFuZCB0aGVpciBsZW5ndGhzLgo+ID4gPiA+ID4g
-PiAgKiBZb3Ugc2hvdWxkIG9ubHkgd29yayB3aXRoIHRoZSBudW1iZXIgb2Ygc2cgZW50cmllcyBk
-bWFfbWFwX3NnCj4gPiA+ID4gPiA+ICAqIHJldHVybnMsIG9yIGFsdGVybmF0aXZlbHkgc3RvcCBv
-biB0aGUgZmlyc3Qgc2dfZG1hX2xlbihzZykgd2hpY2gKPiA+ID4gPiA+ID4gICogaXMgMC4KPiA+
-ID4gPiA+ID4gICovCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFNvIGJyZWFraW5nIG9uIHRoZSBm
-aXJzdCBzZ19kbWFfbGVuKHNnKSA9PSAwIGFwcGVhcnMgdG8gYmUgKG9uZSBvZikKPiA+ID4gPiA+
-ID4gdGhlIGRvY3VtZW50ZWQgYXBwcm9hY2guCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPgo+ID4gPiA+
-ID4gT2theSwgeW91J3JlIHJpZ2h0LiBTbwo+ID4gPiA+ID4KPiA+ID4gPiA+IFJldmlld2VkLWJ5
-OiBDaHVuLUt1YW5nIEh1IDxjaHVua3VhbmcuaHVAa2VybmVsLm9yZz4KPiA+ID4gPiA+Cj4gPiA+
-ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiBSZWdhcmRzLAo+ID4gPiA+ID4gPiA+IENodW4tS3Vhbmcu
-Cj4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+ICsKPiA+ID4gPiA+ID4gPiA+ICAgICAgICAg
-ICAgICAgICBpZiAoc2dfZG1hX2FkZHJlc3MocykgIT0gZXhwZWN0ZWQpIHsKPiA+ID4gPiA+ID4g
-PiA+ICAgICAgICAgICAgICAgICAgICAgICAgIERSTV9FUlJPUigic2dfdGFibGUgaXMgbm90IGNv
-bnRpZ3VvdXMiKTsKPiA+ID4gPiA+ID4gPiA+ICAgICAgICAgICAgICAgICAgICAgICAgIHJldCA9
-IC1FSU5WQUw7Cj4gPiA+ID4gPiA+ID4gPiAtLQo+ID4gPiA+ID4gPiA+ID4gMi4yNi4xLjMwMS5n
-NTViYzNlYjdjYjktZ29vZwo+ID4gPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gPiA+Cj4gPiA+ID4g
-PiA+ID4gPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+
-ID4gPiA+ID4gPiA+ID4gTGludXgtbWVkaWF0ZWsgbWFpbGluZyBsaXN0Cj4gPiA+ID4gPiA+ID4g
-PiBMaW51eC1tZWRpYXRla0BsaXN0cy5pbmZyYWRlYWQub3JnCj4gPiA+ID4gPiA+ID4gPiBodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LW1lZGlhdGVrCgpf
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0t
-a2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcK
-aHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2Vy
-bmVsCg==
+On Sat, May 09, 2020 at 03:14:05PM +0200, Matteo Croce wrote:
+> On Sat, May 9, 2020 at 1:45 PM Russell King - ARM Linux admin
+> <linux@armlinux.org.uk> wrote:
+> >
+> > On Sat, May 09, 2020 at 11:15:58AM +0000, Stefan Chulski wrote:
+> > >
+> > >
+> > > > -----Original Message-----
+> > > > From: Matteo Croce <mcroce@redhat.com>
+> > > > Sent: Saturday, May 9, 2020 3:13 AM
+> > > > To: David S . Miller <davem@davemloft.net>
+> > > > Cc: Maxime Chevallier <maxime.chevallier@bootlin.com>; netdev
+> > > > <netdev@vger.kernel.org>; LKML <linux-kernel@vger.kernel.org>; Antoine
+> > > > Tenart <antoine.tenart@bootlin.com>; Thomas Petazzoni
+> > > > <thomas.petazzoni@bootlin.com>; gregory.clement@bootlin.com;
+> > > > miquel.raynal@bootlin.com; Nadav Haklai <nadavh@marvell.com>; Stefan
+> > > > Chulski <stefanc@marvell.com>; Marcin Wojtas <mw@semihalf.com>; Linux
+> > > > ARM <linux-arm-kernel@lists.infradead.org>; Russell King - ARM Linux admin
+> > > > <linux@armlinux.org.uk>
+> > > > Subject: [EXT] Re: [PATCH net-next 3/5] net: mvpp2: cls: Use RSS contexts to
+> > > > handle RSS tables
+> > > >
+> > > > Hi,
+> > > >
+> > > > What do you think about temporarily disabling it like this?
+> > > >
+> > > > --- a/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+> > > > +++ b/drivers/net/ethernet/marvell/mvpp2/mvpp2_main.c
+> > > > @@ -5775,7 +5775,8 @@ static int mvpp2_port_probe(struct platform_device
+> > > > *pdev,
+> > > >                             NETIF_F_HW_VLAN_CTAG_FILTER;
+> > > >
+> > > >         if (mvpp22_rss_is_supported()) {
+> > > > -               dev->hw_features |= NETIF_F_RXHASH;
+> > > > +               if (port->phy_interface != PHY_INTERFACE_MODE_SGMII)
+> > > > +                       dev->hw_features |= NETIF_F_RXHASH;
+> > > >                 dev->features |= NETIF_F_NTUPLE;
+> > > >         }
+> > > >
+> > > >
+> > > > David, is this "workaround" too bad to get accepted?
+> > >
+> > > Not sure that RSS related to physical interface(SGMII), better just remove NETIF_F_RXHASH as "workaround".
+> >
+> > Hmm, I'm not sure this is the right way forward.  This patch has the
+> > effect of disabling:
+> >
+> > d33ec4525007 ("net: mvpp2: add an RSS classification step for each flow")
+> >
+> > but the commit you're pointing at which caused the regression is:
+> >
+> > 895586d5dc32 ("net: mvpp2: cls: Use RSS contexts to handle RSS tables")
+> >
+> >
+> 
+> Hi,
+> 
+> When git bisect pointed to 895586d5dc32 ("net: mvpp2: cls: Use RSS
+> contexts to handle RSS tables"), which was merged
+> almost an year after d33ec4525007 ("net: mvpp2: add an RSS
+> classification step for each flow"), so I assume that between these
+> two commits either the feature was working or it was disable and we
+> didn't notice
+> 
+> Without knowing what was happening, which commit should my Fixes tag point to?
+
+Let me make sure that I get this clear:
+
+- Prior to 895586d5dc32, you can turn on and off rxhash without issue
+  on any port.
+- After 895586d5dc32, turning rxhash on eth2 prevents reception.
+
+Prior to 895586d5dc32, with rxhash on, it looks like hashing using
+CRC32 is supported but only one context.  So, if it's possible to
+enable rxhash on any port on the mcbin without 895586d5dc32, and the
+port continues to work, I'd say the bug was introduced by
+895586d5dc32.
+
+Of course, that would be reinforced if there was a measurable
+difference in performance due to rxhash on each port.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
