@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC4261CC06B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 12:40:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF62A1CC072
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 12:40:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=bQlr3+tAQb7Jt6Lxu3HkrIw1kjPf3EhGgS19EsnxE4k=; b=m2s
-	DbvxcyGRvxD7pdCFmxKdWDLGkP58KSJjB68DHf/liWqV98mRc++iOd/lxcwx3wSfqujxuctrXotkm
-	QIl7ATS6asQhaM931Ty8WNFOMVPZD7433dUysvm8fu5F3+V3kmh09uGrtYpFHHyLP5Vw4qIRtIa3V
-	uc9j187yIMS0/+E6R+mWE4dP0QinehkykxMB3rSxZQ9I0g/xakof2pe4nDCtjbrZxxoiqmPdz31rO
-	ftlJW7xKuidtLd/LdT6S22eF4CNkaiJ10+8M7kbcNfn/wjw9cIvWeRnMbJ/oz6DALuxsNrT4Eo/yg
-	5neY7CVr28QnTP/5fRzp2AvE2qsMtig==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=NwZNGaQi3IQXbtJaBuh2XaSCz4Ehhh0nYnv6FzrOyQY=; b=qLoUTqy516LjP7rgLCY9pVYwff
+	HQdBuJlFyPiVGAmry/yZq75tpSxzxyAywn/zxoAGABjsT+8b20WrbLZ4t9KX4mlVYNRG1A9nLi8qd
+	3KKC5qNK9ZW5nxSPqoUEGTqvyB6qeQG4Npx63kwGQuif4dRPvr6jQaoea7+8Ql58CP7+uSsJhBCmt
+	mebi+6VYSq9csYugR67PN9lCoIPa2IsnXms8lWPd3U+LDWQfRztNWcRWxWYAyXoXa13rMErY8NicP
+	s9jEaudR61RaoU6EvRuFqyJyNAPj6GojR+u71NjKIbo6wZZSiUcPdv5Cl5bpyihmDf8uFBe9uFirs
+	q1WTE4Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXMuI-0003IA-Qx; Sat, 09 May 2020 10:40:34 +0000
+	id 1jXMuY-0003Od-Qq; Sat, 09 May 2020 10:40:50 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXMuA-0003GG-LJ
+ id 1jXMuB-0003Gz-Er
  for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 10:40:28 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1FEE42002EE;
- Sat,  9 May 2020 12:40:21 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9201B200102;
+ Sat,  9 May 2020 12:40:24 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 700A1200102;
- Sat,  9 May 2020 12:40:17 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 2638120032A;
+ Sat,  9 May 2020 12:40:21 +0200 (CEST)
 Received: from localhost.localdomain (mega.ap.freescale.net [10.192.208.232])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CFBE640285;
- Sat,  9 May 2020 18:40:12 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7DB0A40297;
+ Sat,  9 May 2020 18:40:16 +0800 (SGT)
 From: Hui Song <hui.song_1@nxp.com>
 To: jagdish.gediya@nxp.com,
 	priyanka.jain@nxp.com,
 	pramod.kumar_1@nxp.com
-Subject: [PATCH v1 1/3] gpio: mpc8xxx: support fsl-layerscape platform.
-Date: Sat,  9 May 2020 18:35:35 +0800
-Message-Id: <20200509103537.22865-1-hui.song_1@nxp.com>
+Subject: [PATCH v1 2/3] armv8: gpio: add gpio feature
+Date: Sat,  9 May 2020 18:35:36 +0800
+Message-Id: <20200509103537.22865-2-hui.song_1@nxp.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200509103537.22865-1-hui.song_1@nxp.com>
+References: <20200509103537.22865-1-hui.song_1@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_034026_976058_F25A88F2 
-X-CRM114-Status: UNSURE (   9.57  )
+X-CRM114-CacheID: sfid-20200509_034027_632274_E9DE61F8 
+X-CRM114-Status: UNSURE (   7.61  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -77,171 +80,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "hui.song" <hui.song_1@nxp.com>
 
-Make the MPC8XXX gpio driver to support the fsl-layerscape.
+add one struct mpc8xxx_gpio_plat to enable gpio feature.
 
 Signed-off-by: hui.song <hui.song_1@nxp.com>
 ---
- drivers/gpio/mpc8xxx_gpio.c | 59 +++++++++++++++++++++++++++++++++++++
- 1 file changed, 59 insertions(+)
+ .../include/asm/arch-fsl-layerscape/gpio.h    | 22 +++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 arch/arm/include/asm/arch-fsl-layerscape/gpio.h
 
-diff --git a/drivers/gpio/mpc8xxx_gpio.c b/drivers/gpio/mpc8xxx_gpio.c
-index 1dfd22522c..466f5f50cf 100644
---- a/drivers/gpio/mpc8xxx_gpio.c
-+++ b/drivers/gpio/mpc8xxx_gpio.c
-@@ -12,6 +12,8 @@
- #include <dm.h>
- #include <mapmem.h>
- #include <asm/gpio.h>
-+#include <asm/io.h>
-+#include <dm/of_access.h>
- 
- struct ccsr_gpio {
- 	u32	gpdir;
-@@ -20,6 +22,7 @@ struct ccsr_gpio {
- 	u32	gpier;
- 	u32	gpimr;
- 	u32	gpicr;
-+	u32	gpibe;
- };
- 
- struct mpc8xxx_gpio_data {
-@@ -49,31 +52,51 @@ inline u32 gpio_mask(uint gpio)
- 
- static inline u32 mpc8xxx_gpio_get_val(struct ccsr_gpio *base, u32 mask)
- {
-+#if CONFIG_ARM
-+	return in_le32(&base->gpdat) & mask;
-+#else
- 	return in_be32(&base->gpdat) & mask;
-+#endif
- }
- 
- static inline u32 mpc8xxx_gpio_get_dir(struct ccsr_gpio *base, u32 mask)
- {
-+#if CONFIG_ARM
-+	return in_le32(&base->gpdir) & mask;
-+#else
- 	return in_be32(&base->gpdir) & mask;
-+#endif
- }
- 
- static inline int mpc8xxx_gpio_open_drain_val(struct ccsr_gpio *base, u32 mask)
- {
-+#if CONFIG_ARM
-+	return in_le32(&base->gpodr) & mask;
-+#else
- 	return in_be32(&base->gpodr) & mask;
-+#endif
- }
- 
- static inline void mpc8xxx_gpio_open_drain_on(struct ccsr_gpio *base, u32
- 					      gpios)
- {
-+#if CONFIG_ARM
-+	setbits_le32(&base->gpodr, gpios);
-+#else
- 	/* GPODR register 1 -> open drain on */
- 	setbits_be32(&base->gpodr, gpios);
-+#endif
- }
- 
- static inline void mpc8xxx_gpio_open_drain_off(struct ccsr_gpio *base,
- 					       u32 gpios)
- {
-+#if CONFIG_ARM
-+	clrbits_le32(&base->gpodr, gpios);
-+#else
- 	/* GPODR register 0 -> open drain off (actively driven) */
- 	clrbits_be32(&base->gpodr, gpios);
-+#endif
- }
- 
- static int mpc8xxx_gpio_direction_input(struct udevice *dev, uint gpio)
-@@ -81,9 +104,13 @@ static int mpc8xxx_gpio_direction_input(struct udevice *dev, uint gpio)
- 	struct mpc8xxx_gpio_data *data = dev_get_priv(dev);
- 	u32 mask = gpio_mask(gpio);
- 
-+#if CONFIG_ARM
-+	clrbits_le32(&data->base->gpdir, mask);
-+#else
- 	/* GPDIR register 0 -> input */
- 	clrbits_be32(&data->base->gpdir, mask);
- 
-+#endif
- 	return 0;
- }
- 
-@@ -100,10 +127,19 @@ static int mpc8xxx_gpio_set_value(struct udevice *dev, uint gpio, int value)
- 		data->dat_shadow &= ~mask;
- 	}
- 
-+#if CONFIG_ARM
-+	gpdir = in_le32(&base->gpdir);
-+#else
- 	gpdir = in_be32(&base->gpdir);
-+#endif
- 	gpdir |= gpio_mask(gpio);
-+#if CONFIG_ARM
-+	out_le32(&base->gpdat, gpdir & data->dat_shadow);
-+	out_le32(&base->gpdir, gpdir);
-+#else
- 	out_be32(&base->gpdat, gpdir & data->dat_shadow);
- 	out_be32(&base->gpdir, gpdir);
-+#endif
- 
- 	return 0;
- }
-@@ -147,13 +183,29 @@ static int mpc8xxx_gpio_ofdata_to_platdata(struct udevice *dev)
- {
- 	struct mpc8xxx_gpio_plat *plat = dev_get_platdata(dev);
- 	fdt_addr_t addr;
-+	u32 i;
-+#if CONFIG_ARM
-+	u32 reg[4];
+diff --git a/arch/arm/include/asm/arch-fsl-layerscape/gpio.h b/arch/arm/include/asm/arch-fsl-layerscape/gpio.h
+new file mode 100644
+index 0000000000..d8dd750a72
+--- /dev/null
++++ b/arch/arm/include/asm/arch-fsl-layerscape/gpio.h
+@@ -0,0 +1,22 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
++/*
++ * Copyright 2014 Freescale Semiconductor, Inc.
++ */
 +
-+	dev_read_u32_array(dev, "reg", reg, 4);
-+#else
- 	u32 reg[2];
- 
- 	dev_read_u32_array(dev, "reg", reg, 2);
-+#endif
++/*
++ * Dummy header file to enable CONFIG_OF_CONTROL.
++ * If CONFIG_OF_CONTROL is enabled, lib/fdtdec.c is compiled.
++ * It includes <asm/arch/gpio.h> via <asm/gpio.h>, so those SoCs that enable
++ * OF_CONTROL must have arch/gpio.h.
++ */
 +
-+#if CONFIG_ARM
-+	for (i = 0; i < 2; i++)
-+		reg[i] = be32_to_cpu(reg[i]);
-+#endif
- 	addr = dev_translate_address(dev, reg);
- 
- 	plat->addr = addr;
-+#if CONFIG_ARM
-+	plat->size = reg[3];
-+#else
- 	plat->size = reg[1];
-+#endif
- 	plat->ngpios = dev_read_u32_default(dev, "ngpios", 32);
- 
- 	return 0;
-@@ -187,6 +239,7 @@ static int mpc8xxx_gpio_platdata_to_priv(struct udevice *dev)
- static int mpc8xxx_gpio_probe(struct udevice *dev)
- {
- 	struct gpio_dev_priv *uc_priv = dev_get_uclass_priv(dev);
-+	struct device_node const  *np = dev->node.np;
- 	struct mpc8xxx_gpio_data *data = dev_get_priv(dev);
- 	char name[32], *str;
- 
-@@ -198,6 +251,12 @@ static int mpc8xxx_gpio_probe(struct udevice *dev)
- 	if (!str)
- 		return -ENOMEM;
- 
-+	if (of_device_is_compatible(np, "fsl,qoriq-gpio", NULL, NULL)) {
-+		unsigned long gpibe = data->addr + sizeof(struct ccsr_gpio);
++#ifndef __ASM_ARCH_MX85XX_GPIO_H
++#define __ASM_ARCH_MX85XX_GPIO_H
 +
-+		out_be32(gpibe, 0xffffffff);
-+	}
++struct mpc8xxx_gpio_plat {
++	ulong addr;
++	unsigned long size;
++	uint ngpios;
++};
 +
- 	uc_priv->bank_name = str;
- 	uc_priv->gpio_count = data->gpio_count;
- 
++#endif
 -- 
 2.17.1
 
