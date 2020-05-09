@@ -2,73 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 117EB1CC3B2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 20:35:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ABBA1CC3BA
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 20:47:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
+	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WGIgI3MWWs7Tti0MQ2FeN/AjKjSkFueYV1jAjkhfA/A=; b=tvdC2/QYuUbMOh
-	CMVSWItB6FEoxbDgMJRgKwTMFtPH74sgT+YJblBB6+O5xteBhAvLw/9EN1+VABWqDhv4XLiImhcEi
-	svoljta/CBnkNqGo3UCJ/Rq8DOl/mhNOEs+YL6cMv5qcFDNLuDdSpVMO4jcrGrONXFFCo8oSHRVWM
-	OojK5RpLOT/Zf1Ln7LBaAvz8NFqbvKoOONJNF7bNfsOmsNM0vAgGniOcv48T0NrgrBw/JgSKOVlbl
-	lVQmkaRs4rh+mv8YyEfZDpNtWqA/VAfA132/KzQ0exFBTqlPueQswDdeC2Fii7auO6IIx7KayiN1x
-	qUxsiWruQYprNZLyOKcQ==;
+	List-Owner; bh=P0sm3l3Kyg2IKDj7Ql40zaVSCDPCg7x6WMTzwK9ScBc=; b=DpAGzdcsb/R6bk
+	KZalKhvgMgHdi9C9h+cALruaFPLo4ZZQ6cKbgo4Nka6gVCLjmrQ3QHoeYMCANeJ6hPBDbudXXfPUu
+	B3LouayTCPUQKixSRKSFhPaSm788PkcE2XLLlek5ZkH+ZM+caeLDkRIwCGRzeKZvOopfh2YbYHK9x
+	zNqFH2CJPVV2WYrr3kfWxd26o0f64LuISBt78yYQbN7dUgYDN4pmP7KFf6dO8nthnl4EIqYfpjYFR
+	QxIgV+6oDE2+VpMX649HWTTahLZ0AG84r6HLlxI2NFZDGLaRWT+WSJBoOdJKFYIru4bolee1tjmpl
+	LdAHWqrjEAocFnRJsCZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXUJw-0002wM-CA; Sat, 09 May 2020 18:35:32 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1jXUVO-0002Yq-QR; Sat, 09 May 2020 18:47:22 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXUJp-0002vB-Pr
- for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 18:35:27 +0000
-Received: by mail-ed1-x543.google.com with SMTP id z19so2292379edq.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 09 May 2020 11:35:24 -0700 (PDT)
+ id 1jXUVF-0002XY-VQ; Sat, 09 May 2020 18:47:15 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 8so1355234lfp.4;
+ Sat, 09 May 2020 11:47:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=utUg+njPE1R78ibsKG63T1N43ZIUmqNveGR52jnUI1c=;
- b=n0UrUCUiYUufwg68km1Zk/XTBqLkxN7YNzPhw7YD5CC9FSMdO/4Me0UnvTh4DVY22l
- 975HXTVf/njdTs4t4gn4B+3wBxpLzXQa5xLBEwERg74NC/R8Ob8nWqKnM8zlGRrkKG1l
- rjzze9yNW0ZPmY6B0ehS7oiqxfOeUPBYNx0QerSHqciFL/fBYmCOKmvZqcjZfgMDrkE0
- BksKzEKmd1yAnQ/YF4OLzEJuEH2ABG8agdVfG1M++BiAHOYMLNOfCfFsXpOIQI3vNrGf
- LEpLgOUPnREPEY3zS4aCLrwjwewCyV5a7NVxGMdl0CU/oOUWJd8MA99a0vVlPFJLtNUy
- wb+w==
+ h=mime-version:references:in-reply-to:reply-to:from:date:message-id
+ :subject:to:cc;
+ bh=r2VqzdQ3t3l9GLlfIblPu8fIc2SHZonPe2y2Y9yrzwA=;
+ b=GNin6+nWM1QP0m2z2hzY8zsRxqDBXtplG9wjFmOI1ojkUNRLK/92I4+Q7OAX+WzfxJ
+ jeP6kJWDxAzjEZPTJifP7QYUSRiOgFJ0ke4eAeXHoWxJc0jOMZjK1g5wF0zWOpZxTuhv
+ sv0T/R7VPmB2U+RjECSIWuLjjX+Gx2KuWI36/teOaZZHLHYxC3t51ccoY/x9Hv9XdvK6
+ jV09Kal555yn4AtGCKL0piKHqimwgL45NBm2bp5fgO9slMCOhh0JzQ+CHBC4lhDoLPvp
+ i4ihRv9OUGLBDyKhHPev4lxHDLhsTsxQ34cMV7CmmZYgwfYd/TG5gdUR7BY59qve9I0v
+ uyew==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=utUg+njPE1R78ibsKG63T1N43ZIUmqNveGR52jnUI1c=;
- b=AggJi9bcHTOMda+qqs3jaMFBXt254fiuQthLMyfd6sy6+ldOXBuorPxmD5+RrRqfVU
- 4Z1HTLVEUNk/OtQj4Gc2tpUu3ZN9Ctq+talrkTWhQ4HBhZMyjVZw8Ohj1d67bxW/Tr8/
- +arNlJyG+6/MyaoCBcEk6fgmbYNjL5YpSsmjAfWQunzmHeLV3Dw93SYM8grwHULpPc9U
- t4NcjYbOCt6/Mk1jlj7XV+QwcLhDZFee2CDXa4T0KqCu8DdXVLO59Hy4ozCbUg//ujQF
- 9kH8eF6WMw7nzfLMz5seYQKikusnc+bfYB7/F6uDxhCggy6mg6/sK/0tS/dOmWbVIINW
- kEzA==
-X-Gm-Message-State: AGi0PuYTXhg8elh8IgYiiHDIiZ57wnS8EXkL7lEcAX3QauyTzP5aPX1k
- 9OsjhO7UzEJg+3xQ38qTByrXqNqUxl4ZUOQHqrA=
-X-Google-Smtp-Source: APiQypKcDsrlf52ien88Tvw4J/n6MWoqk4eQg25WolLAm5L6tIYO9yQtvjjLKsoe0bV542rP9Hm42Tfch5r9JTLIZdY=
-X-Received: by 2002:a05:6402:1a46:: with SMTP id
- bf6mr7000136edb.44.1589049323195; 
- Sat, 09 May 2020 11:35:23 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
+ :from:date:message-id:subject:to:cc;
+ bh=r2VqzdQ3t3l9GLlfIblPu8fIc2SHZonPe2y2Y9yrzwA=;
+ b=oJZAhstu10b+WOi4W9xPLp2M9aw1GJEnD7CBPjJYg+V/6VHCUVYFRjh5Cni1fGwYm/
+ lGLGxmFFBqvS5wUOJ4wsutK4aN56+z7lNy5ljQDcSZT5ok8CKz8yQt/8hMlWcsTjGWu2
+ 52VmaDT4FLoD8DgXC5RKZYjmX9qEFLHJ9VAxITPUGwYWjCUBW1W28J/49I+yy6YG6lHd
+ 3n1gOtKJnpazyT4Cnyjcb5Sx6Bw6pabqw3Riz65TcRV1+obaQs6dwwP/UyFHjScevL09
+ npHpIgtkOhVhp0YzTESsfjwIG1xkoZNcqiG/Lg0ZqKdvLssHRaWjSi54Dcuwmg7yOdWz
+ U/Jg==
+X-Gm-Message-State: AOAM533wZu3sjlcI12DAnmKR+3S/rndg5iKIwlI4TdpaNjTIwiZ2zxfx
+ 86q8PjOuXHYX96OkGlO5im8SBnqMDor8SIjd1ro=
+X-Google-Smtp-Source: ABdhPJy9gyB1ktrqC1Zd3HyibZp0l6obehCp4vpCDO0qkgRUMj3Vjub/ykfUERbE41LdjhQm/0RhnA0bO0Yeti7gp9Q=
+X-Received: by 2002:ac2:4945:: with SMTP id o5mr5705467lfi.21.1589050031766;
+ Sat, 09 May 2020 11:47:11 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200509103956.26038-3-hui.song_1@nxp.com>
- <20200509103956.26038-2-hui.song_1@nxp.com>
- <20200509153315.GR208718@lunn.ch>
- <20200509172724.GG1551@shell.armlinux.org.uk>
- <CABHD4K_tPkCherpY5zUtxV1wcKc=7aj3ayr9yxG-sLFZeMf3Dw@mail.gmail.com>
- <20200509181845.GH1551@shell.armlinux.org.uk>
- <20200509182647.GI1551@shell.armlinux.org.uk>
-In-Reply-To: <20200509182647.GI1551@shell.armlinux.org.uk>
-From: Amit Tomer <amittomer25@gmail.com>
-Date: Sun, 10 May 2020 00:04:46 +0530
-Message-ID: <CABHD4K8jwLxcfLeeiAQpsEVfafV5DutFOWukj2WJaKKU0gPjUw@mail.gmail.com>
-Subject: Re: [PATCH v1 2/3] armv8: gpio: add gpio feature
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <20200509130714.10586-1-john.oldman@polehill.co.uk>
+ <20200509171131.GA2495033@kroah.com>
+In-Reply-To: <20200509171131.GA2495033@kroah.com>
+From: John Oldman <john.oldman60@gmail.com>
+Date: Sat, 9 May 2020 19:47:00 +0100
+Message-ID: <CAMJX__Skgr+1ZO5JxwnwRt6A1C5rBc50cUDSN+6BM4pmYGPY4w@mail.gmail.com>
+Subject: Re: [PATCH] staging: vc04_services: interface: vchiq_arm:
+ vchiq_connected.c: Block comments should align the * on each line
+To: Greg KH <gregkh@linuxfoundation.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_113525_864577_226A32C7 
-X-CRM114-Status: UNSURE (   8.58  )
+X-CRM114-CacheID: sfid-20200509_114714_034835_D8C9C614 
+X-CRM114-Status: UNSURE (   8.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -76,13 +70,13 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [amittomer25[at]gmail.com]
+ provider [john.oldman60[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [amittomer25[at]gmail.com]
+ in digit [john.oldman60[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -102,28 +96,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Hui Song <hui.song_1@nxp.com>,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, jiafei.pan@nxp.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Reply-To: john.oldman@polehill.co.uk
+Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org,
+ John Oldman <john.oldman@polehill.co.uk>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ nsaenzjulienne@suse.de, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Oh, and... u-boot@linux.nxdi.nxp.com bounces because that domain is
-> not resolvable - I guess that is internal to NXP, and this patch
-> should have remained within NXP and not been posted publically.
+Hi Greg
 
- Yeah, realized it just after sending my reply. It is for internal NXP list.
- Had it been for open source U-boot, Author would have chosen
- "u-boot@lists.denx.de" ?
+Yea, thanks for the feedback.
 
-But, I still believe Author did it unknowingly and we all should be
-easy on him/her.
+Will fix and resend...
 
-Thanks
--Amit
+John
+
+
+On Sat, 9 May 2020 at 18:11, Greg KH <gregkh@linuxfoundation.org> wrote:
+>
+> On Sat, May 09, 2020 at 02:07:14PM +0100, John Oldman wrote:
+> > Coding style issue
+>
+> Your subject line needs to be much shorter, don't you think?
+>
+> Please fix up and resend.
+>
+> greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
