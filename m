@@ -2,80 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 466AD1CBFED
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 11:38:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089061CBFFE
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  9 May 2020 11:39:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=plUN2yP0iRV/JAXwu3AwVMzsXe6UZREU7dVo2KuDgXE=; b=tDyZsveWQa2jLH
-	0ICJxIpamgWRVVvwyLG7jklJsJxMfx9+EWO2+ZOIGKi4/2KnHb7sst9SbudDo0oWxWDmYHjUewfLi
-	kD6poybYc/xVvt28V2lWipbitvNtxFSbNJvBaFuLpxophh5YVTa1JilN6x4ZVsn49RhfJwTaqwaK5
-	bI5KoDxzhXQcx1ZJcVRGAVOumb5al6luy+WZiaICvYylZqDTNc2m2A55dfNC16EzZXVoVjDNSUKMm
-	/rKsCOlFb3YTjR2kQl4whcSXthl9Cd2/9/TJ/7uL3yArhFLaVZyadeJcvW2E3LbiyM5uZ/AZOjr+G
-	lJCCZibJPwVWDIJ5G65Q==;
+	List-Owner; bh=1ueYi8/6/O2z3LoCv8OQNTJVUo6jhtGj2Xv9zNMo7ro=; b=Mtng1mZK8bVbBP
+	H9hIW4ycl0KLpfJSap0dwXVs3qEc5TpBMK+eLOON1L+qBH8XgLXhdxKyPmRB36R6QNdjsn642HOXW
+	o61W1xVaFWd1OodMfhgCYvm+nuIjczEeGam6+By2boD1fPIXAnUUkvdQFu2pJvLZ1+aP9/iLoHggE
+	Ou6g/6DxY3Ysh32rZ839kB+gyT6obyssFeuXXpP1pR/aZF7nVw+tiEENtXc5gjKoXBlQxYBXgtTpz
+	WgoUEE6ajqBQlmDUGXYep/OENmRhkrWUzAGsHepH3VNPBXY2GU4yar2WiAZYhrEcAvmthYzmQvQPm
+	mheGal243JxO3TqxV2Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXLvv-0006FV-2p; Sat, 09 May 2020 09:38:11 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jXLxF-0007I6-TA; Sat, 09 May 2020 09:39:33 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXLvP-0005wR-Vd; Sat, 09 May 2020 09:37:41 +0000
-X-UUID: 38ac0fa4e9ba4293a7d461fa63f63f02-20200509
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=+7J/Ls/qZVPDQuRiUUjEeGW9nmJ58u2HwRnHyuO/vGQ=; 
- b=F682NrjVCiA6DkCOVjnfoy8CWlR7fchyfIbvkY1zxY2C1WDZJYIjaNKNxRUtVxmcVEh7SvbOu87ZwZ1h0GeH0pT3z7t6ZDvtkwgKEuJeBWOyln2UwD0nCLFHnS1IINyt4LMt1aKqvsI2ApouD1H/peNM7I+RYGIrAYUj136/MAQ=;
-X-UUID: 38ac0fa4e9ba4293a7d461fa63f63f02-20200509
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1650384041; Sat, 09 May 2020 01:37:25 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 9 May 2020 02:37:29 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sat, 9 May 2020 17:37:17 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Sat, 9 May 2020 17:37:17 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
- <asutoshd@codeaurora.org>
-Subject: [PATCH v2 4/4] scsi: ufs-mediatek: customize WriteBooster flush policy
-Date: Sat, 9 May 2020 17:37:16 +0800
-Message-ID: <20200509093716.21010-5-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200509093716.21010-1-stanley.chu@mediatek.com>
-References: <20200509093716.21010-1-stanley.chu@mediatek.com>
+ id 1jXLx7-0007Gt-Sg
+ for linux-arm-kernel@lists.infradead.org; Sat, 09 May 2020 09:39:27 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jXLwx-0002uz-Fz; Sat, 09 May 2020 11:39:15 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jXLww-0005mD-2O; Sat, 09 May 2020 11:39:14 +0200
+Date: Sat, 9 May 2020 11:39:14 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Fengping Yu <fengping.yu@mediatek.com>
+Subject: Re: [PATCH v6] Add mtk matrix keypad driver for keypad on MTK SoC
+Message-ID: <20200509093914.qidkjwkp32gn6td6@pengutronix.de>
+References: <20200509020458.8359-1-fengping.yu@mediatek.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200509020458.8359-1-fengping.yu@mediatek.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 11:36:19 up 176 days, 54 min, 170 users, load average: 0.06, 0.07, 
+ 0.01
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_023740_043242_0565F578 
-X-CRM114-Status: UNSURE (   7.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200509_023925_928062_3B4B0DE9 
+X-CRM114-Status: GOOD (  12.20  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,39 +74,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-input@vger.kernel.org,
+ Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change the WriteBooster policy to keep VCC on during
-runtime suspend if available WriteBooster buffer is less
-than 80%.
+Hi Yu,
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 1 +
- 1 file changed, 1 insertion(+)
+sorry if this is not your first name..
+Something went wrong with you v6 since you are sending diffs to files
+that are not present in input-master/next.
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 56620f7d88ce..94e97701f456 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -271,6 +271,7 @@ static int ufs_mtk_init(struct ufs_hba *hba)
- 
- 	/* Enable WriteBooster */
- 	hba->caps |= UFSHCD_CAP_WB_EN;
-+	hba->vps->wb_flush_threshold = UFS_WB_BUF_REMAIN_PERCENT(80);
- 
- 	/*
- 	 * ufshcd_vops_init() is invoked after
+Regards,
+  Marco
+
+On 20-05-09 10:04, Fengping Yu wrote:
+> Change since v5:
+> - remove unnecessary include files
+> - remove redundant comments and newlines
+> - use local irqnr variable instead of member variable of mtk_keypad struct
+> - use regmap to read and write registers
+> - drop kpd_get_dts_info directly into probe function
+> - use devm_add_action_or_reset to avoid goto error handling when do clk setting
+> - use devm_request_threaded_irq api to request irq
+> - remove platform_set_drvdata
+> 
+> fengping.yu (3):
+>   dt-bindings: Change keypad documentation schema
+>   drivers: input: keyboard: Add mtk keypad driver
+>   configs: defconfig: Add CONFIG_KEYBOARD_MTK_KPD=y
+> 
+>  .../devicetree/bindings/input/mtk-kpd.txt     |  61 -------
+>  .../devicetree/bindings/input/mtk-kpd.yaml    |  93 +++++++++++
+>  arch/arm64/configs/defconfig                  |   1 +
+>  drivers/input/keyboard/Kconfig                |   5 +-
+>  drivers/input/keyboard/mtk-kpd.c              | 151 ++++++++----------
+>  5 files changed, 163 insertions(+), 148 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.txt
+>  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
+> 
+> --
+> 2.18.0
+> 
+> 
+
 -- 
-2.18.0
+Pengutronix e.K.                           |                             |
+Steuerwalder Str. 21                       | http://www.pengutronix.de/  |
+31137 Hildesheim, Germany                  | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
