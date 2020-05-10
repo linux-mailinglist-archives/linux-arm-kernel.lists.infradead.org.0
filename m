@@ -2,52 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2F5C1CCA31
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 12:24:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 630DD1CCA92
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 13:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lLnbcztCMY4I+MToEU6AxoYfnGl2IY995PJKTbmQxA8=; b=a9IbrVm1msbK/T
-	HHCczDiTfdV6yMQBwRDM1S8+OkAVmBtg3vgfxodcluskgwwJ3h5aNyYVaTGTkSoODtzafnDk2vlEt
-	EqoYjQ1wvyJcVj03akx4QCF/PPjL7VF8TJsWSuV6hFuQzuZ/zcpLg6dZ1QWUmvLMhxYYSiH1BqWUE
-	wX0t4gcsx3G+37f9YYBtWPmKw/RSy53uTU2tnferDZv50hO3davj3fmRXtdMoY0CoD3rQf5NyTGoo
-	xw9O3vjCLRiSmCn/0j3xH/lruz2P9QUIWfwQRrZBQxJX9KeE6B0g7DdLmyVaKl7PaJ7YhTTuAjsYT
-	Y91ulZsKV2XrbZhzI2Bw==;
+	List-Owner; bh=qe6Zgs210JuOUmxG4iduoJf6JWsjOsIPpLJDEfTWyN4=; b=rFVWN4cTEcPfQQ
+	xrcffKPBkads1PWGZWhgYkopL1Jvv+na4uxaxHXvB/0CTKlPgXmIkZXT7vq6UImeVXCU5Rdumfq51
+	lzZBpmM3XwVFFJoBy/kHQ91EA0ST9T+zXNIZEiwz/dt7/R3shvnfZIxRQiOadB59lfDYqvUnsrP7n
+	GDaYrq4nhQ386pt9t5ipEma1dC2OyarOT2T1Z5vQH2U6STl2srs71LIjMNoqHs91ZW0rufQ2i3oGp
+	sVsVyT9G1PKBLEga4Xdr1INofzj35/brvx1vZ0EtRuyxpklIJb4BtMArBitOuPCYEN5ISxk3EH8nz
+	exPe/1Fka6Fe01LreC1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXj8H-0006yQ-Ls; Sun, 10 May 2020 10:24:29 +0000
+	id 1jXjuq-00042y-KU; Sun, 10 May 2020 11:14:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXj8B-0006xv-3Q
- for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 10:24:24 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
+ id 1jXjuj-0003yq-Ju
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 11:14:34 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE3AC207DD;
- Sun, 10 May 2020 10:24:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5C0D920820;
+ Sun, 10 May 2020 11:14:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589106262;
- bh=nyOHSQ2FNu3ylsodACsA1C8WkrdfFaSaWV5/EwOdWdQ=;
+ s=default; t=1589109272;
+ bh=COlajW8RQKFlinJelX+sun7g6nJcYpctTT4QvIPlbX8=;
  h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=u2svKgegrkGdy/DBfzCb4ftBgLueIc34lm0CABqR+jdB5hlYIySgw+kFP7S0Oi8OV
- kQTG2r+jsWUV6OSmbNtdrq2ZsjNwUSmKizar78OCPGGbcZYGnK5/EmXhRyYGSNMijW
- zBBsLo7rzXkkNA42IKXVSUxqSweYh4rl9sKxW/qI=
-Date: Sun, 10 May 2020 11:24:17 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Jonathan Bakker <xc-racer2@live.ca>
-Subject: Re: [PATCH] iio: adc: Add scaling support to exynos adc driver
-Message-ID: <20200510112417.1e54d66e@archlinux>
-In-Reply-To: <BN6PR04MB066058A68D6471E7F6AFCFF7A3A20@BN6PR04MB0660.namprd04.prod.outlook.com>
-References: <BN6PR04MB066058A68D6471E7F6AFCFF7A3A20@BN6PR04MB0660.namprd04.prod.outlook.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-MIME-Version: 1.0
+ b=ksl3qV3whlzZHfDZ/iooD4rNAwXGnBpVXEeLbI99mabix0HJLXjJxB5UVIAazarRl
+ k9v7Slcjlp8FQcOYiQMeleTwsNZzGaeokKb1YKDKDjqlOANUsiluwpyGjlnnXikKyi
+ xWdBqSu93fUOucfzYcRydKpWilnWbNMrNjxBfq5w=
+Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
+ helo=wait-a-minute.misterjones.org)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jXjug-00B1qO-OD; Sun, 10 May 2020 12:14:30 +0100
+Date: Sun, 10 May 2020 12:14:29 +0100
+Message-ID: <87zhagyrca.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: David Brazdil <dbrazdil@google.com>
+Subject: Re: [PATCH 03/15] arm64: kvm: Fix symbol dependency in
+ __hyp_call_panic_nvhe
+In-Reply-To: <20200507143617.2j5x3mfxi3ber7ig@dbrazdil-macbookpro.roam.corp.google.com>
+References: <20200430144831.59194-1-dbrazdil@google.com>
+ <20200430144831.59194-4-dbrazdil@google.com>
+ <87blmzj2w5.wl-maz@kernel.org>
+ <20200507143617.2j5x3mfxi3ber7ig@dbrazdil-macbookpro.roam.corp.google.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (x86_64-pc-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
+X-SA-Exim-Connect-IP: 62.31.163.78
+X-SA-Exim-Rcpt-To: dbrazdil@google.com, catalin.marinas@arm.com,
+ james.morse@arm.com, julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com,
+ will@kernel.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_032423_162731_78BD3E02 
-X-CRM114-Status: GOOD (  19.07  )
+X-CRM114-CacheID: sfid-20200510_041433_681109_8988D11B 
+X-CRM114-Status: GOOD (  17.59  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -76,77 +96,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, linux-samsung-soc@vger.kernel.org,
- lars@metafoo.de, linux-iio@vger.kernel.org, mpe@ellerman.id.au,
- linux-kernel@vger.kernel.org, krzk@kernel.org, swboyd@chromium.org,
- cw00.choi@samsung.com, kgene@kernel.org, pmeerw@pmeerw.net, knaack.h@gmx.de,
- tglx@linutronix.de, linux-arm-kernel@lists.infradead.org,
- m.szyprowski@samsung.com
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri,  8 May 2020 14:14:00 -0700
-Jonathan Bakker <xc-racer2@live.ca> wrote:
+Hi David,
 
-> Currently the driver only exposes the raw counts.  As we
-> have the regulator voltage and the maximum value (stored in
-> the data mask), we can trivially produce a scaling fraction
-> of voltage / max value.
+On Thu, 07 May 2020 15:36:17 +0100,
+David Brazdil <dbrazdil@google.com> wrote:
 > 
-> This assumes that the regulator voltage is in fact the max
-> voltage, which appears to be the case for all mainline dts
-> and cross referenced with the public Exynos4412 and S5PV210
-> datasheets.
+> Hi Marc,
 > 
-> Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
-
-Seems reasonable to me. I'd like an exynos Ack though before applying.
-
-thanks,
-
-Jonathan
-
-
-> ---
->  drivers/iio/adc/exynos_adc.c | 14 +++++++++++++-
->  1 file changed, 13 insertions(+), 1 deletion(-)
+> > 
+> > What breaks without this constraint? Is it a fix that should go in
+> > early? Otherwise looks good.
 > 
-> diff --git a/drivers/iio/adc/exynos_adc.c b/drivers/iio/adc/exynos_adc.c
-> index 22131a677445..9d29b56805cd 100644
-> --- a/drivers/iio/adc/exynos_adc.c
-> +++ b/drivers/iio/adc/exynos_adc.c
-> @@ -531,8 +531,19 @@ static int exynos_read_raw(struct iio_dev *indio_dev,
->  	unsigned long timeout;
->  	int ret;
->  
-> -	if (mask != IIO_CHAN_INFO_RAW)
-> +	if (mask == IIO_CHAN_INFO_SCALE) {
-> +		ret = regulator_get_voltage(info->vdd);
-> +		if (ret < 0)
-> +			return ret;
-> +
-> +		/* Regulator voltage is in uV, but need mV */
-> +		*val = ret / 1000;
-> +		*val2 = info->data->mask;
-> +
-> +		return IIO_VAL_FRACTIONAL;
-> +	} else if (mask != IIO_CHAN_INFO_RAW) {
->  		return -EINVAL;
-> +	}
->  
->  	mutex_lock(&indio_dev->mlock);
->  	reinit_completion(&info->completion);
-> @@ -683,6 +694,7 @@ static const struct iio_info exynos_adc_iio_info = {
->  	.channel = _index,				\
->  	.address = _index,				\
->  	.info_mask_separate = BIT(IIO_CHAN_INFO_RAW),	\
-> +	.info_mask_shared_by_all = BIT(IIO_CHAN_INFO_SCALE),	\
->  	.datasheet_name = _id,				\
->  }
->  
+> This only becomes an issue when __hyp_call_panic_nvhe() and
+> __hyp_call_panic_vhe() are moved to separate files, so I don't think
+> it's necessary to go in early.
+> 
+> Currently the string variable (declared static) is seen by the C
+> compiler as used by __hyp_call_panic_vhe(). But when split, the
+> variable in the nVHE source file becomes unused, is dropped by the
+> compiler and the inline assembly's reference is unresolved. We could
+> then alias __hyp_text___hyp_panic_string back to the VHE copy, but
+> this is the right way of addressing it.
 
+Thanks for the detailed explanation. I think some of it should make it
+in the commit message, pointing what breaks and when.
+
+	M.
+
+-- 
+Without deviation from the norm, progress is not possible.
 
 _______________________________________________
 linux-arm-kernel mailing list
