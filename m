@@ -2,52 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A22A1CCA13
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 12:08:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05D791CCA1C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 12:13:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kDaQKhtXI3N1VFDEvozhGlLK3K5JZu9KB1qlKD568Og=; b=oVWtL8LhCL4ouA
-	ZEzhNVJI+JCWiPmB2EXEVCsGefVOswY62UjLEFolXUalwsE0FYq5C7z5ilhJjySCGh1zK8zle6cDU
-	q7aOFUve3ybptWTLoIgvv6uAHA0vYxpW7DEXyQchqavBGc3EIX9Ibj8HmA3BfS/ofrmb5AzXH5QNy
-	TRrNTmDw0GtVVPIslQlHifOtJurgNQlQ4ClskD0MAOO2k980jXoviWzN4m+XgRE4i3jeePMrqrS++
-	Rd3utpdUJQs7HLp0490QcdgInomkvH2GgUcMWnTZzJJIX5n5jKd4RVQe1FCBSM8MiaPGwOBfRHoQF
-	0un65yDBRfjM747kNayg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=AJSuAg1ICO/FIelGy2UzTAc+IsUq27LJNdUAHJ5S3iw=; b=hJX
+	N7GgL21zaUlZx8eOPi1CSjDjPeDh8W3PjARJ0XAtZPEBQOdm8QBWKOZ+vxqVCOT51E6sDia7bvDYU
+	lXqBIT3jpgMPkmv6jWIOQhye86ij2178+aQW3T53lAcVvqpPeTKnssZNT1QiiSrIjzbkFtvIP/dME
+	oZZDOfD4MvdWDuziYj11GPF3iEjprP3dL3z7kQnOeByz5sFwg2pT2MyK3Gx6DDbIF+G1W7U9DHGRC
+	aH/BaAvjTrxCsvQdMaVQv98lMjeZ096t1fud3e/yIrtbDkzFkPpq8gVyAF5DBPnOoHyC3kNY6IZyE
+	vjdRQ7nhp5zuwbDBTBkmpWXZK9dNWqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXisG-0005UI-6Y; Sun, 10 May 2020 10:07:56 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jXixi-00009O-Ho; Sun, 10 May 2020 10:13:34 +0000
+Received: from mailomta31-sa.btinternet.com ([213.120.69.37]
+ helo=sa-prd-fep-040.btinternet.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXis8-0005TJ-7w; Sun, 10 May 2020 10:07:49 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 14D8C2A08D3
-Subject: Re: [PATCH] clk / soc: mediatek: fix ptr_ret.cocci warnings
-To: kbuild test robot <lkp@intel.com>, Matthias Brugger <mbrugger@suse.com>
-References: <202005101033.xLBIJF9V%lkp@intel.com>
- <20200510025338.GA81310@f5ba873997c7>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <5ca9a334-31d7-8878-f586-13d5020c24fc@collabora.com>
-Date: Sun, 10 May 2020 12:07:40 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200510025338.GA81310@f5ba873997c7>
-Content-Language: en-US
+ id 1jXixV-00007V-AK; Sun, 10 May 2020 10:13:23 +0000
+Received: from sa-prd-rgout-003.btmx-prd.synchronoss.net ([10.2.38.6])
+ by sa-prd-fep-040.btinternet.com with ESMTP id
+ <20200510101316.TBCT5900.sa-prd-fep-040.btinternet.com@sa-prd-rgout-003.btmx-prd.synchronoss.net>;
+ Sun, 10 May 2020 11:13:16 +0100
+Authentication-Results: btinternet.com;
+ auth=pass (LOGIN) smtp.auth=j.oldman998@btinternet.com
+X-Originating-IP: [31.53.141.224]
+X-OWM-Source-IP: 31.53.141.224 (GB)
+X-OWM-Env-Sender: j.oldman998@btinternet.com
+X-VadeSecure-score: verdict=clean score=0/300, class=clean
+X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgeduhedrkeekgddvjecutefuodetggdotefrodftvfcurfhrohhfihhlvgemuceutffkvffkuffjvffgnffgvefqofdpqfgfvfenuceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofestddtredtredttdenucfhrhhomheplfhohhhnucfqlhgumhgrnhcuoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqnecuggftrfgrthhtvghrnhepgeeftdfhfeeuiefhgfekfeethedutddtfeduteevleevfedvfefhjeeijefhgffgnecukfhppeefuddrheefrddugedurddvvdegnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghlohephhgvnhhrhidrhhhomhgvpdhinhgvthepfedurdehfedrudeguddrvddvgedpmhgrihhlfhhrohhmpeeojhhohhhnrdholhgumhgrnhesphholhgvhhhilhhlrdgtohdruhhkqedprhgtphhtthhopeeosggtmhdqkhgvrhhnvghlqdhfvggvuggsrggtkhdqlhhishhtsegsrhhorggutghomhdrtghomheqpdhrtghpthhtohepoeguvghvvghlsegurhhivhgvrhguvghvrdhoshhuohhslhdrohhrgheqpdhrtghpthhtohepoehgrhgvghhkhheslhhinhhugihfohhunhgurghtihhonhdrohhrgheqpdhrtghpthhtohepoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqpdhrtghpthhtohepoehlihhnuhigqdgrrhhmqdhkvghrnhgvlheslhhishhtshdr
+ ihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhrphhiqdhkvghrnhgvlheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehnshgrvghniihjuhhlihgvnhhnvgesshhushgvrdguvgeq
+X-RazorGate-Vade-Verdict: clean 0
+X-RazorGate-Vade-Classification: clean
+Received: from henry.home (31.53.141.224) by
+ sa-prd-rgout-003.btmx-prd.synchronoss.net (5.8.340) (authenticated as
+ j.oldman998@btinternet.com)
+ id 5E3A268A0FE173CE; Sun, 10 May 2020 11:13:16 +0100
+From: John Oldman <john.oldman@polehill.co.uk>
+To: nsaenzjulienne@suse.de
+Subject: [PATCH V3] staging: vc04_services: vchiq_connected.c: Block comment
+ alignment
+Date: Sun, 10 May 2020 11:13:08 +0100
+Message-Id: <20200510101308.10451-1-john.oldman@polehill.co.uk>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_030748_410459_7EA65669 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200510_031321_637485_BA33C69A 
+X-CRM114-Status: UNSURE (   9.53  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [213.120.69.37 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 1.4 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,56 +73,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild-all@lists.01.org, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
- CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, John Oldman <john.oldman@polehill.co.uk>,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Coding style issue
+This patch clears the checkpatch.pl "Block comments should align the * on each line" warning.
 
+Signed-off-by: John Oldman <john.oldman@polehill.co.uk>
+---
+v1: Initial attempt.
+v2: Resubmitted with shorter comment line, as suggested by Greg KH.
+v3: Resubmitted with descriptiuon text moved into the comment area.
 
-On 10/5/20 4:53, kbuild test robot wrote:
-> From: kbuild test robot <lkp@intel.com>
-> 
-> drivers/soc/mediatek/mtk-mmsys.c:28:1-3: WARNING: PTR_ERR_OR_ZERO can be used
-> 
-> 
->  Use PTR_ERR_OR_ZERO rather than if(IS_ERR(...)) + PTR_ERR
-> 
-> Generated by: scripts/coccinelle/api/ptr_ret.cocci
-> 
-> Fixes: 13032709e232 ("clk / soc: mediatek: Move mt8173 MMSYS to platform driver")
-> CC: Matthias Brugger <mbrugger@suse.com>
-> Signed-off-by: kbuild test robot <lkp@intel.com>
+ .../interface/vchiq_arm/vchiq_connected.c     | 32 +++++++++----------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
 
-Reviewed-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
+index 1640906e3929..993535bbc479 100644
+--- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
++++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
+@@ -15,10 +15,10 @@ static   int                        g_once_init;
+ static   struct mutex               g_connected_mutex;
+ 
+ /****************************************************************************
+-*
+-* Function to initialize our lock.
+-*
+-***************************************************************************/
++ *
++ * Function to initialize our lock.
++ *
++ ***************************************************************************/
+ 
+ static void connected_init(void)
+ {
+@@ -29,13 +29,13 @@ static void connected_init(void)
+ }
+ 
+ /****************************************************************************
+-*
+-* This function is used to defer initialization until the vchiq stack is
+-* initialized. If the stack is already initialized, then the callback will
+-* be made immediately, otherwise it will be deferred until
+-* vchiq_call_connected_callbacks is called.
+-*
+-***************************************************************************/
++ *
++ * This function is used to defer initialization until the vchiq stack is
++ * initialized. If the stack is already initialized, then the callback will
++ * be made immediately, otherwise it will be deferred until
++ * vchiq_call_connected_callbacks is called.
++ *
++ ***************************************************************************/
+ 
+ void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
+ {
+@@ -64,11 +64,11 @@ void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
+ }
+ 
+ /****************************************************************************
+-*
+-* This function is called by the vchiq stack once it has been connected to
+-* the videocore and clients can start to use the stack.
+-*
+-***************************************************************************/
++ *
++ * This function is called by the vchiq stack once it has been connected to
++ * the videocore and clients can start to use the stack.
++ *
++ ***************************************************************************/
+ 
+ void vchiq_call_connected_callbacks(void)
+ {
+-- 
+2.17.1
 
-> ---
-> 
-> tree:   https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git master
-> head:   30e2206e11ce27ae910cc0dab21472429e400a87
-> commit: 13032709e2328553970f0002df5edce6aac69425 [1266/7905] clk / soc: mediatek: Move mt8173 MMSYS to platform driver
-> 
->  mtk-mmsys.c |    5 +----
->  1 file changed, 1 insertion(+), 4 deletions(-)
-> 
-> --- a/drivers/soc/mediatek/mtk-mmsys.c
-> +++ b/drivers/soc/mediatek/mtk-mmsys.c
-> @@ -25,10 +25,7 @@ static int mtk_mmsys_probe(struct platfo
->  
->  	clks = platform_device_register_data(&pdev->dev, data->clk_driver,
->  					     PLATFORM_DEVID_AUTO, NULL, 0);
-> -	if (IS_ERR(clks))
-> -		return PTR_ERR(clks);
-> -
-> -	return 0;
-> +	return PTR_ERR_OR_ZERO(clks);
->  }
->  
->  static const struct of_device_id of_match_mtk_mmsys[] = {
-> 
 
 _______________________________________________
 linux-arm-kernel mailing list
