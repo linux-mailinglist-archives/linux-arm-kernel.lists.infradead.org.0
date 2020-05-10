@@ -2,32 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 141271CC93D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 10:05:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AEEE1CC943
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 10:06:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=h5Vzo1loKlBKOR9UW+thAq074bf7/kN9mJ+tDA8VNPE=; b=i2mCEgvjUM6Zwr
-	Z4eDPJLOW6UAM0Ye0prdvwiDyv2a0WGMEkvyBnmODEDGh0ssP3YCHPVJHu0a9DFiY7Ja8Bc3Hqbf4
-	uLj6HYgUp1IFtU9h2PcBnfms3lsPy4Oe9DjuTAVkLZnRhUkZtkiGJzVj4DT7c7XeXn8JYuNPgzqyo
-	p/5co+HKJV2/uxV8KrcSQry0iLTgkI6rOIcvFofq/rTX7rFZr9UlOTZkEaGAkteaZgTQozVYa8rxP
-	g8SE6C6ILb9ZMgc8o/6hd+BedwanAEVGM1ndgoSQyWifFw7/m61QBT8QgPhdmU7cnfN5aEiD+BsY6
-	gMlFn3MlfzDDKMAIAlMg==;
+	List-Owner; bh=eVQYz7lUSOPQ7r4/a7RMLuqUtZBq1O958RBBjYE0STE=; b=WfdAjg23G0NChE
+	7eebbrwEk/WjAxQQ6NO8R8cOQJNDRvvU+4hjUoClWcQpVcs03fb06FY2M5eJuBZj40H/CJkAHcjrv
+	KX+7jpE70WuzYfRwF1M2LQ4gEj6YcAQwK9MTiHn/AVbAdPbwN234QVnC3JS+/ztlrQoKyMzIcjmJp
+	DImO6s34w7E6A7QzHioAFX8By2km1077uVvt3axYhB+4NLij1a+vg1/YrUJ5XI2oQVeVOYd4UJxw9
+	df2vEsA2yw22ydLOggiyOpAW9HRLABLsC0uo0FdBBDKo139J+tQ7SipvDdfyaWAZdT6447VyXxsGA
+	DYcny9K4qDC5RVXKPnUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgy2-0007Jy-4E; Sun, 10 May 2020 08:05:46 +0000
+	id 1jXgyR-0007jl-J7; Sun, 10 May 2020 08:06:11 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgpL-0001Mc-7G; Sun, 10 May 2020 07:56:47 +0000
+ id 1jXgpO-0001Pa-9R; Sun, 10 May 2020 07:56:50 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 30/31] nommu: use flush_icache_user_range in brk and mmap
-Date: Sun, 10 May 2020 09:55:09 +0200
-Message-Id: <20200510075510.987823-31-hch@lst.de>
+Subject: [PATCH 31/31] module: move the set_fs hack for flush_icache_range to
+ m68k
+Date: Sun, 10 May 2020 09:55:10 +0200
+Message-Id: <20200510075510.987823-32-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -58,35 +59,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These obviously operate on user addresses.
+flush_icache_range generally operates on kernel addresses, but for some
+reason m68k needed a set_fs override.  Move that into the m68k code
+insted of keeping it in the module loader.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- mm/nommu.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/m68k/mm/cache.c | 4 ++++
+ kernel/module.c      | 8 --------
+ 2 files changed, 4 insertions(+), 8 deletions(-)
 
-diff --git a/mm/nommu.c b/mm/nommu.c
-index 318df4e236c99..aed7acaed2383 100644
---- a/mm/nommu.c
-+++ b/mm/nommu.c
-@@ -443,7 +443,7 @@ SYSCALL_DEFINE1(brk, unsigned long, brk)
+diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
+index 7915be3a09712..5ecb3310e8745 100644
+--- a/arch/m68k/mm/cache.c
++++ b/arch/m68k/mm/cache.c
+@@ -107,7 +107,11 @@ void flush_icache_user_range(unsigned long address, unsigned long endaddr)
+ 
+ void flush_icache_range(unsigned long address, unsigned long endaddr)
+ {
++	mm_segment_t old_fs = get_fs();
++
++	set_fs(KERNEL_DS);
+ 	flush_icache_user_range(address, endaddr);
++	set_fs(old_fs);
+ }
+ EXPORT_SYMBOL(flush_icache_range);
+ 
+diff --git a/kernel/module.c b/kernel/module.c
+index 646f1e2330d2b..b1673ed49594f 100644
+--- a/kernel/module.c
++++ b/kernel/module.c
+@@ -3312,12 +3312,6 @@ static int check_module_license_and_versions(struct module *mod)
+ 
+ static void flush_module_icache(const struct module *mod)
+ {
+-	mm_segment_t old_fs;
+-
+-	/* flush the icache in correct context */
+-	old_fs = get_fs();
+-	set_fs(KERNEL_DS);
+-
  	/*
- 	 * Ok, looks good - let it rip.
- 	 */
--	flush_icache_range(mm->brk, brk);
-+	flush_icache_user_range(mm->brk, brk);
- 	return mm->brk = brk;
+ 	 * Flush the instruction cache, since we've played with text.
+ 	 * Do it before processing of module parameters, so the module
+@@ -3329,8 +3323,6 @@ static void flush_module_icache(const struct module *mod)
+ 				   + mod->init_layout.size);
+ 	flush_icache_range((unsigned long)mod->core_layout.base,
+ 			   (unsigned long)mod->core_layout.base + mod->core_layout.size);
+-
+-	set_fs(old_fs);
  }
  
-@@ -1287,7 +1287,7 @@ unsigned long do_mmap(struct file *file,
- 	/* we flush the region from the icache only when the first executable
- 	 * mapping of it is made  */
- 	if (vma->vm_flags & VM_EXEC && !region->vm_icache_flushed) {
--		flush_icache_range(region->vm_start, region->vm_end);
-+		flush_icache_user_range(region->vm_start, region->vm_end);
- 		region->vm_icache_flushed = true;
- 	}
- 
+ int __weak module_frob_arch_sections(Elf_Ehdr *hdr,
 -- 
 2.26.2
 
