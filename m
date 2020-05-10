@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 884A31CC716
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 08:07:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7CB271CC719
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 08:14:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=5h2TwCp7WwVixtpYflQjHKhL/Da/EBm0Sfor2N0XVaY=; b=bc1
-	zkfjDp7QKnToZBLS4T3IrnIUwBdgOmFYHRc7It+rHneA5TKKJVlZb/P15G7UBmmie1oLVpeVcqaMB
-	gPHtMeTja1aTKrEwx/wTF7lpHjs5PFKiDutOrpL1lN8y4Tdw9B0424xyq10SmRJ3+/ZklFFDJL3y0
-	7AhdmqMd445nP4cCFe5E9YW6GRhjh5w9nktn9Hw6MFehvMkL9fLvZ5mJeR7QC2Ycsrs6zuNr5KybF
-	Ewp3ik3pPLp8zmaMHIEDXzzt8eVGh0BHcODjig5JhLqmAifXH6Q4U73xG+wQAy+j55HVg1n2JfON/
-	Nt3VrgMsC7L20QAGhzSaveZ1uezx+0A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V1E6jwbn4JuDDMj7kYhyN6FN0kGs3o4QOkpSc089fcY=; b=VUg9iQp6NRYUrq
+	gQRtafdtsMgObo7XXNE6u6EdP2DpKJBap7lm3bHGlONdHLs2cUVsxeL0I48s9pISNTTqoY6hkMo+6
+	Ch9o9RfI8sBSOmWB27hiYN7b8SmuFNuxO71lQFwWRWi7IJavyltOUInPAwIPCNRe8wJAxevpeC6Xn
+	DvQk5u/fDLj2LLEMmVO6KAP5YaF0ih3N5+G3WtoXiDGon34XoxyyOsxkv+XYWppdfuyMvINcUSU9P
+	oJyBeTWASkavp7ftkI9sqbmuJwkTwhSMIOj5sIFbRXzJQrUPOqevI7rRl7kqQLInZJ+XpLHd38P6Y
+	fM0q+tCHxUB3s/PY1Fdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXf7P-0008Oh-0Z; Sun, 10 May 2020 06:07:19 +0000
-Received: from mailomta24-re.btinternet.com ([213.120.69.117]
- helo=re-prd-fep-044.btinternet.com)
+	id 1jXfES-0003HF-3p; Sun, 10 May 2020 06:14:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXf7F-0008MG-K8; Sun, 10 May 2020 06:07:11 +0000
-Received: from re-prd-rgout-003.btmx-prd.synchronoss.net ([10.2.54.6])
- by re-prd-fep-044.btinternet.com with ESMTP id
- <20200510060705.EELH21962.re-prd-fep-044.btinternet.com@re-prd-rgout-003.btmx-prd.synchronoss.net>;
- Sun, 10 May 2020 07:07:05 +0100
-Authentication-Results: btinternet.com;
- auth=pass (LOGIN) smtp.auth=j.oldman998@btinternet.com
-X-Originating-IP: [31.53.141.224]
-X-OWM-Source-IP: 31.53.141.224 (GB)
-X-OWM-Env-Sender: j.oldman998@btinternet.com
-X-VadeSecure-score: verdict=clean score=0/300, class=clean
-X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgeduhedrkeejgddtlecutefuodetggdotefrodftvfcurfhrohhfihhlvgemuceutffkvffkuffjvffgnffgvefqofdpqfgfvfenuceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofestddtredtredttdenucfhrhhomheplfhohhhnucfqlhgumhgrnhcuoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqnecuggftrfgrthhtvghrnhepgeeftdfhfeeuiefhgfekfeethedutddtfeduteevleevfedvfefhjeeijefhgffgnecukfhppeefuddrheefrddugedurddvvdegnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghlohephhgvnhhrhidrhhhomhgvpdhinhgvthepfedurdehfedrudeguddrvddvgedpmhgrihhlfhhrohhmpeeojhhohhhnrdholhgumhgrnhesphholhgvhhhilhhlrdgtohdruhhkqedprhgtphhtthhopeeosggtmhdqkhgvrhhnvghlqdhfvggvuggsrggtkhdqlhhishhtsegsrhhorggutghomhdrtghomheqpdhrtghpthhtohepoeguvghvvghlsegurhhivhgvrhguvghvrdhoshhuohhslhdrohhrgheqpdhrtghpthhtohepoehgrhgvghhkhheslhhinhhugihfohhunhgurghtihhonhdrohhrgheqpdhrtghpthhtohepoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqpdhrtghpthhtohepoehlihhnuhigqdgrrhhmqdhkvghrnhgvlheslhhishhtshdr
- ihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhrphhiqdhkvghrnhgvlheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehnshgrvghniihjuhhlihgvnhhnvgesshhushgvrdguvgeq
-X-RazorGate-Vade-Verdict: clean 0
-X-RazorGate-Vade-Classification: clean
-Received: from henry.home (31.53.141.224) by
- re-prd-rgout-003.btmx-prd.synchronoss.net (5.8.340) (authenticated as
- j.oldman998@btinternet.com)
- id 5E3A16DE0FB0AA7B; Sun, 10 May 2020 07:07:05 +0100
-From: John Oldman <john.oldman@polehill.co.uk>
-To: nsaenzjulienne@suse.de
-Subject: [PATCH V2] staging: vc04_services: vchiq_connected.c: Block comment
- alignment
-Date: Sun, 10 May 2020 07:06:45 +0100
-Message-Id: <20200510060645.10159-1-john.oldman@polehill.co.uk>
-X-Mailer: git-send-email 2.17.1
+ id 1jXfEL-0003Fx-Aw
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 06:14:30 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E6ACE2082E;
+ Sun, 10 May 2020 06:14:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589091265;
+ bh=dhSX1koUXR01QNflrqzyeDk0HZwGZnOuulR+owPUVxA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=ucm/1umG+61KjNyTKq2IX2ZBYcRg+6v/Mx/iyTwnFn9ufXLQC8aqrYWQiFPYuy7ap
+ eUeKYsnKisIPlDOWh3qlbQuhDe39DkIeXMbpEWrZDcYHefB7xrrtgGL45LM5DaAhto
+ tJN5JUcFYWgXPbSBWeJ9TDusCbJSFEB0MeuNI9FM=
+Date: Sun, 10 May 2020 08:14:22 +0200
+From: Greg KH <gregkh@linuxfoundation.org>
+To: Chen Zhou <chenzhou10@huawei.com>
+Subject: Re: [PATCH -next] arch/arm: use scnprintf() in l2x0_pmu_event_show()
+Message-ID: <20200510061422.GA3375088@kroah.com>
+References: <20200509083539.113156-1-chenzhou10@huawei.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200509083539.113156-1-chenzhou10@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_230709_930710_F95DFE70 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200509_231429_395584_62F9CBB4 
+X-CRM114-Status: GOOD (  15.20  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [213.120.69.117 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.0 FORGED_SPF_HELO        No description available.
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,88 +72,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, John Oldman <john.oldman@polehill.co.uk>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+Cc: linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
+ alexios.zavras@intel.com, allison@lohutok.net, tglx@linutronix.de,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Coding style issue
+On Sat, May 09, 2020 at 04:35:39PM +0800, Chen Zhou wrote:
+> snprintf() returns the number of bytes that would be written,
+> which may be greater than the the actual length to be written.
+> 
+> show() methods should return the number of bytes printed into the
+> buffer. This is the return value of scnprintf().
+> 
+> Signed-off-by: Chen Zhou <chenzhou10@huawei.com>
+> ---
+>  arch/arm/mm/cache-l2x0-pmu.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm/mm/cache-l2x0-pmu.c b/arch/arm/mm/cache-l2x0-pmu.c
+> index 993fefdc167a..d20626451a2e 100644
+> --- a/arch/arm/mm/cache-l2x0-pmu.c
+> +++ b/arch/arm/mm/cache-l2x0-pmu.c
+> @@ -343,7 +343,7 @@ static ssize_t l2x0_pmu_event_show(struct device *dev,
+>  	struct l2x0_event_attribute *lattr;
+>  
+>  	lattr = container_of(attr, typeof(*lattr), attr);
+> -	return snprintf(buf, PAGE_SIZE, "config=0x%x\n", lattr->config);
+> +	return scnprintf(buf, PAGE_SIZE, "config=0x%x\n", lattr->config);
 
-Signed-off-by: John Oldman <john.oldman@polehill.co.uk>
----
-v1: Initial attempt.
-V2: Resubmitted with shorter comment line, as suggested by Greg KH.
+This should just be replaced with sprintf() as there's no way such a
+string can go beyond PAGE_SIZE.
 
-This patch clears the checkpatch.pl "Block comments should align the * on each line" warning.
+And the "config=" part could be dropped as well, but now userspace
+probably requires it, that is sad.
 
- .../interface/vchiq_arm/vchiq_connected.c     | 32 +++++++++----------
- 1 file changed, 16 insertions(+), 16 deletions(-)
+thanks,
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-index 1640906e3929..993535bbc479 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-@@ -15,10 +15,10 @@ static   int                        g_once_init;
- static   struct mutex               g_connected_mutex;
- 
- /****************************************************************************
--*
--* Function to initialize our lock.
--*
--***************************************************************************/
-+ *
-+ * Function to initialize our lock.
-+ *
-+ ***************************************************************************/
- 
- static void connected_init(void)
- {
-@@ -29,13 +29,13 @@ static void connected_init(void)
- }
- 
- /****************************************************************************
--*
--* This function is used to defer initialization until the vchiq stack is
--* initialized. If the stack is already initialized, then the callback will
--* be made immediately, otherwise it will be deferred until
--* vchiq_call_connected_callbacks is called.
--*
--***************************************************************************/
-+ *
-+ * This function is used to defer initialization until the vchiq stack is
-+ * initialized. If the stack is already initialized, then the callback will
-+ * be made immediately, otherwise it will be deferred until
-+ * vchiq_call_connected_callbacks is called.
-+ *
-+ ***************************************************************************/
- 
- void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
- {
-@@ -64,11 +64,11 @@ void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
- }
- 
- /****************************************************************************
--*
--* This function is called by the vchiq stack once it has been connected to
--* the videocore and clients can start to use the stack.
--*
--***************************************************************************/
-+ *
-+ * This function is called by the vchiq stack once it has been connected to
-+ * the videocore and clients can start to use the stack.
-+ *
-+ ***************************************************************************/
- 
- void vchiq_call_connected_callbacks(void)
- {
--- 
-2.17.1
-
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
