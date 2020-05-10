@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49F4A1CC849
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 09:57:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 875921CC855
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 09:57:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=exZqTRxVIAwV2nZlfV3emWz4mFjoxexWGIWvI7agY74=; b=DRK8zP0QXetf/Z
-	cj1VA42wNpeRp1MbwSGZn/ye8uyhI/WFLJSdyx5ng8OLKn1H35k/tv2msARkdKUu5JD8s0qmw1ypg
-	26ngmgnZCSTDO/gYVXbwLXwZhHyK1sz7vdBhUX9T2jE8MhT9k+tAu26XNqE78IIuI17l41VCgprS+
-	jbJC2z+lm2jlIC4Zka5IuMg+oEf+AoG4FGsWdR7XNtul4oEYtGjZCq8OTizr5BAl1oXTWPyC28RBR
-	0rbydl6FkIzf2y2KkaP2+ahACJx0VZ/ifiGgc19x1waAouiaAPQnx1Q3wvPiRrQsoHtVHYWQxZ5Bi
-	7wjAcZFw/6sWVJz8c5/A==;
+	List-Owner; bh=wVwenj3kA4itmLhwxXdVIqrOow5G0rR+MB7OKIwvLYs=; b=PvOHfDM6OxufvY
+	+8JlACJUh2dj1Dsa4O3x8jOfQhpSyfR7amFRhwtZikBxzXhEh8SmITNku064nJvCYI32PwQOwqJbh
+	Vwkf+s1x/562IlWBAM+IkOgFSlJGiyt+b9X5SaXXmqVntL692R/D+/z9UT5qglA+0fbOiw6h3FBYv
+	rH2StJ4OxyWP0nUMuFCpZm/TBpugl34XsJe3rjzGng0p9TzPdHoDLjrca3UC8X1BRoCpAmyVxOYx3
+	V1HrjCamfBtOCqP2OW14Prx1iu2o/0s2O4V8PCihyfwNj6LhkjA6TFSc6dqLFFApTLNUphqjfcSXq
+	lFouF6xO8mxkD2wvvcpw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgpY-0001LV-JG; Sun, 10 May 2020 07:57:00 +0000
+	id 1jXgpq-0001k9-DM; Sun, 10 May 2020 07:57:18 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgny-0007sD-0h; Sun, 10 May 2020 07:55:22 +0000
+ id 1jXgo0-0007vN-Vz; Sun, 10 May 2020 07:55:25 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 03/31] MIPS: unexport __flush_icache_user_range
-Date: Sun, 10 May 2020 09:54:42 +0200
-Message-Id: <20200510075510.987823-4-hch@lst.de>
+Subject: [PATCH 04/31] nds32: unexport flush_icache_page
+Date: Sun, 10 May 2020 09:54:43 +0200
+Message-Id: <20200510075510.987823-5-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -58,25 +58,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-__flush_icache_user_range is not used in modular code, so unexport it.
+flush_icache_page is only used by mm/memory.c.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/mips/mm/cache.c | 1 -
+ arch/nds32/mm/cacheflush.c | 1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/arch/mips/mm/cache.c b/arch/mips/mm/cache.c
-index 33b409391ddb6..ad6df1cea866f 100644
---- a/arch/mips/mm/cache.c
-+++ b/arch/mips/mm/cache.c
-@@ -36,7 +36,6 @@ EXPORT_SYMBOL_GPL(flush_icache_range);
- void (*local_flush_icache_range)(unsigned long start, unsigned long end);
- EXPORT_SYMBOL_GPL(local_flush_icache_range);
- void (*__flush_icache_user_range)(unsigned long start, unsigned long end);
--EXPORT_SYMBOL_GPL(__flush_icache_user_range);
- void (*__local_flush_icache_user_range)(unsigned long start, unsigned long end);
- EXPORT_SYMBOL_GPL(__local_flush_icache_user_range);
+diff --git a/arch/nds32/mm/cacheflush.c b/arch/nds32/mm/cacheflush.c
+index 254703653b6f5..8f168b33065fa 100644
+--- a/arch/nds32/mm/cacheflush.c
++++ b/arch/nds32/mm/cacheflush.c
+@@ -35,7 +35,6 @@ void flush_icache_page(struct vm_area_struct *vma, struct page *page)
+ 	kunmap_atomic((void *)kaddr);
+ 	local_irq_restore(flags);
+ }
+-EXPORT_SYMBOL(flush_icache_page);
  
+ void flush_icache_user_range(struct vm_area_struct *vma, struct page *page,
+ 	                     unsigned long addr, int len)
 -- 
 2.26.2
 
