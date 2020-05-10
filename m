@@ -2,70 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 290B81CCBA8
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 16:50:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACFAB1CCC0B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 17:49:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BR79Xk5DCKLxqvvyznvqQbgiei6cdoCQDNLPNc3eldI=; b=Nl+1U0lEpuIwAU
-	CHl24XkkHqB5HE0wva7Fz3PGn1Nv7wED3b7aFE9clgDuczQieZxy2quKnFbv8sAeWFBLh8nDiQCa6
-	0tdEpCggpUk4iuG7lawtoR+x34lrhRlgDhES/o185MeKiOc6FuuGYjbHF6uHlUa1UJP2dXFD/wDkm
-	heXN8kbAixdySmq3tKI/wpAHAMjO769jJn4S2aAjOAjftIThIlHogJ6xHNVkxFxGtTDcX2HImj0G5
-	r4qi6XBP3lgqZndZRqZIvChLW/JolIy8d43jHsh9AkehBCrHBJUCUjpM1b+g4RbfThfJIUVefN7iy
-	NANly7myHFcE4nj0M9/g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=MJlXbMeNvLlJdbHOYcsuMXbCb/1o89NozSChfdwlXfU=; b=e7d5lceqf+UlPw
+	IhoAy0LbgYDR57YJJ3WVxUXoWbntuk4CYOxlxRYDZ/Tml7qjC7Irjxf+cyAr3gwmA9t7pHWURT1Uq
+	0dmn55UgMpuAtoD7lwsTw/Ywfg/1TBGR550scCszDYb10j1gccQ6dCrI5J6IOTBwRfJL0kNjDhP9u
+	xDBIUjwRCiH9d7UhK0q/qPPB0GQkNk6oU65oDkuAuu0170jeEImsp2CeRpxtiTN92040+UQrhtvJj
+	T6ax2SV6qnAwCztC/uxXIWEz2pS6BroP/+kXLoiGgECCa1KRqpbriW3OEPvaAKwDZEgBTVFZuYR44
+	UnoYZSVXggNrNCMKITeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXnHl-0000Ag-4w; Sun, 10 May 2020 14:50:33 +0000
-Received: from mail-out.m-online.net ([2001:a60:0:28:0:1:25:1])
+	id 1jXoCK-0005UB-Fi; Sun, 10 May 2020 15:49:00 +0000
+Received: from smtp09.smtpout.orange.fr ([80.12.242.131]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXnGk-0006yC-G1
- for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 14:49:41 +0000
-Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
- by mail-out.m-online.net (Postfix) with ESMTP id 49Kn5Z5ZV1z1rrVt;
- Sun, 10 May 2020 16:49:22 +0200 (CEST)
-Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
- by mail.m-online.net (Postfix) with ESMTP id 49Kn5Z3V2Lz1qrKt;
- Sun, 10 May 2020 16:49:22 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at mnet-online.de
-Received: from mail.mnet-online.de ([192.168.8.182])
- by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
- port 10024)
- with ESMTP id s5e_F91k8rct; Sun, 10 May 2020 16:49:21 +0200 (CEST)
-X-Auth-Info: 9LnSJ1S6AjSmKm+RtiCzdDYwN2gImZ1E3M5CGUmY80Y=
-Received: from [127.0.0.1] (unknown [195.140.253.167])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.mnet-online.de (Postfix) with ESMTPSA;
- Sun, 10 May 2020 16:49:21 +0200 (CEST)
-From: Marek Vasut <marex@denx.de>
-Subject: Re: [PATCH] [RFC] genirq: Check irq_data_get_irq_chip() return value
- before use
-To: Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
-References: <20200507150729.244468-1-marex@denx.de>
- <87r1vvejqa.fsf@nanos.tec.linutronix.de>
- <05c06df8-f871-c20f-3b7e-bcfa0b5d88cd@denx.de>
- <875zd7e7m0.fsf@nanos.tec.linutronix.de>
-Message-ID: <d3b76d43-675b-c699-06fa-aab448504f25@denx.de>
-Date: Sun, 10 May 2020 16:49:20 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.5.0
+ id 1jXoCA-0005Rw-B8
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 15:48:54 +0000
+Received: from localhost.localdomain ([92.148.185.155]) by mwinf5d69 with ME
+ id d3oc220073MbWjg033ocWy; Sun, 10 May 2020 17:48:44 +0200
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Sun, 10 May 2020 17:48:44 +0200
+X-ME-IP: 92.148.185.155
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: inki.dae@samsung.com, jy0922.shim@samsung.com, sw0312.kim@samsung.com,
+ kyungmin.park@samsung.com, airlied@linux.ie, daniel@ffwll.ch,
+ kgene@kernel.org, krzk@kernel.org
+Subject: [PATCH] drm/exynos: dsi: Remove bridge node reference in error
+ handling path in probe function
+Date: Sun, 10 May 2020 17:48:33 +0200
+Message-Id: <20200510154833.238320-1-christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.25.1
 MIME-Version: 1.0
-In-Reply-To: <875zd7e7m0.fsf@nanos.tec.linutronix.de>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_074932_106406_BA527C02 
-X-CRM114-Status: GOOD (  19.73  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200510_084850_869027_1C18C596 
+X-CRM114-Status: GOOD (  18.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:a60:0:28:0:1:25:1 listed in] [list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.131 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.131 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -78,69 +65,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>, Stephen Boyd <sboyd@codeaurora.org>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- Fabien Dessenne <fabien.dessenne@st.com>
+Cc: linux-samsung-soc@vger.kernel.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/7/20 11:51 PM, Thomas Gleixner wrote:
-> Marek,
-> 
-> Marek Vasut <marex@denx.de> writes:
->> On 5/7/20 7:30 PM, Thomas Gleixner wrote:
->>> Marek Vasut <marex@denx.de> writes:
->>>> NOTE: I don't know whether this is a correct fix. Maybe the
->>>>       irq_data_get_irq_chip() should never return NULL, and
->>>>       I have some other issue?
->>>
->>> What's the callchain?
->>
->> Hmm, I'm currently unable to replicate it on linux-next, but on 5.4.39 I
->> get what's at the end of the email.
->>
->> On next I just noticed I get i2c: Transfer while suspended, which is
->> what I suspect would be the real root cause of my problem, and why
->> irq_data_get_irq_chip() returns NULL?
-> 
-> Looks like.
-> 
->>  Unable to handle kernel NULL pointer dereference at virtual address 00000070
->>  PC is at __irq_get_irqchip_state+0x4/0x30
->>  LR is at __synchronize_hardirq+0x7c/0xe8
->>  [<c0166758>] (__irq_get_irqchip_state) from [<c0166800>] (__synchronize_hardirq+0x7c/0xe8)
->>  [<c0166800>] (__synchronize_hardirq) from [<c01668f0>] (synchronize_irq+0x2c/0x9c)
->>  [<c01668f0>] (synchronize_irq) from [<c016cba0>] (suspend_device_irqs+0xd8/0xf4)
->>  [<c016cba0>] (suspend_device_irqs) from [<c04e3388>] (dpm_suspend_noirq+0x18/0x194)
->>  [<c04e3388>] (dpm_suspend_noirq) from [<c015f174>] (suspend_devices_and_enter+0x170/0x514)
->>  [<c015f174>] (suspend_devices_and_enter) from [<c015f6f4>] (pm_suspend+0x1dc/0x278)
->>  [<c015f6f4>] (pm_suspend) from [<c015e100>] (state_store+0x9c/0xcc)
->>  [<c015e100>] (state_store) from [<c029a424>] (kernfs_fop_write+0x124/0x1e0)
->>  [<c029a424>] (kernfs_fop_write) from [<c02301c8>] (__vfs_write+0x2c/0xe8)
->>  [<c02301c8>] (__vfs_write) from [<c0231658>] (vfs_write+0x98/0xbc)
->>  [<c0231658>] (vfs_write) from [<c02317fc>] (ksys_write+0x74/0xc4)
->>  [<c02317fc>] (ksys_write) from [<c0101000>] (ret_fast_syscall+0x0/0x54)
-> 
-> I assume that the i2c controller in question tears down the interrupt on
-> suspend. The changelog of that i2c driver should give you a few hints.
+'exynos_dsi_parse_dt()' takes a reference to 'dsi->in_bridge_node'.
+This must be released in the error handling path.
 
-All right, so I found out the root cause is already fixed in next, and
-just needs to be backported to stable. I'll ping the patch author about
-that.
+This patch is similar to commit 70505c2ef94b ("drm/exynos: dsi: Remove bridge node reference in removal")
+which fixed the issue in the remove function.
 
-It's this patch:
-69269446ccbf ("mailbox: stm32-ipcc: Update wakeup management")
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+---
+A Fixes tag could be required, but I've not been able to figure out which
+one to use.
 
-I also need to revisit the regulator suspend topic next, that seems to
-be a separate issue after all.
+I think that moving 'exynos_dsi_parse_dt()' in the probe could simplify
+the error handling in the probe function. However, I don't know this code
+well enough to play this game. So better safe than sorry.
+So I've kept the logic in place and added goto everywhere. :(
+---
+ drivers/gpu/drm/exynos/exynos_drm_dsi.c | 28 ++++++++++++++++++-------
+ 1 file changed, 20 insertions(+), 8 deletions(-)
 
-Sorry for the noise.
+diff --git a/drivers/gpu/drm/exynos/exynos_drm_dsi.c b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+index 902938d2568f..2aa74c3dc733 100644
+--- a/drivers/gpu/drm/exynos/exynos_drm_dsi.c
++++ b/drivers/gpu/drm/exynos/exynos_drm_dsi.c
+@@ -1770,14 +1770,17 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 	if (ret) {
+ 		if (ret != -EPROBE_DEFER)
+ 			dev_info(dev, "failed to get regulators: %d\n", ret);
+-		return ret;
++		goto err_put_in_bridge_node;
+ 	}
+ 
+ 	dsi->clks = devm_kcalloc(dev,
+ 			dsi->driver_data->num_clks, sizeof(*dsi->clks),
+ 			GFP_KERNEL);
+-	if (!dsi->clks)
+-		return -ENOMEM;
++	if (!dsi->clks) {
++		ret = -ENOMEM;
++		goto err_put_in_bridge_node;
++	}
++
+ 
+ 	for (i = 0; i < dsi->driver_data->num_clks; i++) {
+ 		dsi->clks[i] = devm_clk_get(dev, clk_names[i]);
+@@ -1791,7 +1794,8 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 
+ 			dev_info(dev, "failed to get the clock: %s\n",
+ 					clk_names[i]);
+-			return PTR_ERR(dsi->clks[i]);
++			ret = PTR_ERR(dsi->clks[i]);
++			goto err_put_in_bridge_node;
+ 		}
+ 	}
+ 
+@@ -1799,19 +1803,22 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 	dsi->reg_base = devm_ioremap_resource(dev, res);
+ 	if (IS_ERR(dsi->reg_base)) {
+ 		dev_err(dev, "failed to remap io region\n");
+-		return PTR_ERR(dsi->reg_base);
++		ret = PTR_ERR(dsi->reg_base);
++		goto err_put_in_bridge_node;
+ 	}
+ 
+ 	dsi->phy = devm_phy_get(dev, "dsim");
+ 	if (IS_ERR(dsi->phy)) {
+ 		dev_info(dev, "failed to get dsim phy\n");
+-		return PTR_ERR(dsi->phy);
++		ret = PTR_ERR(dsi->phy);
++		goto err_put_in_bridge_node;
+ 	}
+ 
+ 	dsi->irq = platform_get_irq(pdev, 0);
+ 	if (dsi->irq < 0) {
+ 		dev_err(dev, "failed to request dsi irq resource\n");
+-		return dsi->irq;
++		ret = dsi->irq;
++		goto err_put_in_bridge_node;
+ 	}
+ 
+ 	irq_set_status_flags(dsi->irq, IRQ_NOAUTOEN);
+@@ -1820,7 +1827,7 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 					dev_name(dev), dsi);
+ 	if (ret) {
+ 		dev_err(dev, "failed to request dsi irq\n");
+-		return ret;
++		goto err_put_in_bridge_node;
+ 	}
+ 
+ 	platform_set_drvdata(pdev, &dsi->encoder);
+@@ -1828,6 +1835,11 @@ static int exynos_dsi_probe(struct platform_device *pdev)
+ 	pm_runtime_enable(dev);
+ 
+ 	return component_add(dev, &exynos_dsi_component_ops);
++
++err_put_in_bridge_node:
++	of_node_put(dsi->in_bridge_node);
++
++	return ret;
+ }
+ 
+ static int exynos_dsi_remove(struct platform_device *pdev)
+-- 
+2.25.1
 
-That said, do you want to take this patch to add the missing check
-anyway or is there a reason the check is missing ?
 
 _______________________________________________
 linux-arm-kernel mailing list
