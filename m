@@ -2,66 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 671411CC765
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 08:55:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7CAA1CC7D6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 09:55:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aCvjxsUAELIjkIBLTw0JsxOvKupG1IzURvfFsSK/oCw=; b=JaAO2puCOgolJL
-	IPW+qgrsJE5tvQawjxc8weJAMwY9Mtpk0a3O9Dbi5aeyEitYl85oGvghbNZbzbCyY0/T3zlUQdzha
-	t0d07M9nvmdcol3zRfZHqjgoKqKFZkUMaBI8Z0bVLBDV08hLMUq8YeFXadK5d4H+Ts9QpSy//tmpK
-	Ybhc5zCKw7QnmapNxclDVdCPZHP17W/G6JyP5IK1nvtzknXd2X47ZVTt5cYs9ujamtBLmkb046wkI
-	kNQB5U1MJUAftevDjNyjEGRwSThPpyuILbIsZOVqLTFU73206iLIcKOKybzjI7EO0wLFGhs1eShvw
-	PjZaVQ7L2mB9zPcAzCVg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4ipimoDiXJDciyHyBGTtxrk/MhBeWw3xmbNePYztvvo=; b=PpFFookTHctCwB
+	AOrSi3ECXjKy9ZZzueXvAWjzaXDJk51VcCEnYWzYvpyPqNl6RugGmo2aN+l1r4Uh4yopmPcNip542
+	A8PhmZkwLJYEYDAgxlgaS7i1YFWf950urM+p8EH5tYYDFw7+IlHTepZ9b/84Tkd0vSEXHt09sscHk
+	gsgzcqoO7i7O32jXHhRwF2BJNaz9ybyF4ciijvALB74opcZNFpar33cHUihg5+ChNAOU+JwUjexGL
+	OxWajnUTRG02jOJV3IveGxNzb95k3WPRwT7vBHnf3ECmhI2lBuk8uIeMc4lP1/8gLGhynsMk72I3s
+	8DLR+TUkiOXtCGqT13eA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXfs3-0005fG-Br; Sun, 10 May 2020 06:55:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXfru-0005eV-TS; Sun, 10 May 2020 06:55:24 +0000
-Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
- [83.86.89.107])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E2B4120801;
- Sun, 10 May 2020 06:55:21 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589093722;
- bh=i5eGJPVlmK+E4XcF7rr2doxsy/jQO4NBL2xSdPxqnXY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BdYDUObf0M7RBKkgpJMQOM//qgcTHgD4HLXJMvm/0yg8PHYzmQLbD/HcCwqHXrbxf
- SgJdjqHun6gQKs6rojSgCGfRyHRsA9pIYljd5bnqC7GyjKHs7GR5Uz/gn86gfTDlbn
- dt4aKmQVM1hyuL8QYEY8YO3Vq8/4tOJh5hVKpDUo=
-Date: Sun, 10 May 2020 08:55:19 +0200
-From: Greg KH <gregkh@linuxfoundation.org>
-To: John Oldman <john.oldman@polehill.co.uk>
-Subject: Re: [PATCH V2] staging: vc04_services: vchiq_connected.c: Block
- comment alignment
-Message-ID: <20200510065519.GB3434442@kroah.com>
-References: <20200510060645.10159-1-john.oldman@polehill.co.uk>
+	id 1jXgoM-0007xb-9b; Sun, 10 May 2020 07:55:46 +0000
+Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jXgno-0007lE-9T; Sun, 10 May 2020 07:55:13 +0000
+From: Christoph Hellwig <hch@lst.de>
+To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
+ Roman Zippel <zippel@linux-m68k.org>
+Subject: sort out the flush_icache_range mess
+Date: Sun, 10 May 2020 09:54:39 +0200
+Message-Id: <20200510075510.987823-1-hch@lst.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200510060645.10159-1-john.oldman@polehill.co.uk>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200509_235522_970674_06D1545D 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,32 +41,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, nsaenzjulienne@suse.de,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Michal Simek <monstr@monstr.eu>, Jessica Yu <jeyu@kernel.org>,
+ linux-ia64@vger.kernel.org, linux-c6x-dev@linux-c6x.org,
+ linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-um@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-mips@vger.kernel.org, linux-mm@kvack.org,
+ linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, linux-riscv@lists.infradead.org,
+ linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 10, 2020 at 07:06:45AM +0100, John Oldman wrote:
-> Coding style issue
-> 
-> Signed-off-by: John Oldman <john.oldman@polehill.co.uk>
-> ---
-> v1: Initial attempt.
-> V2: Resubmitted with shorter comment line, as suggested by Greg KH.
-> 
-> This patch clears the checkpatch.pl "Block comments should align the * on each line" warning.
+Hi all,
 
-Why is this text not in the changelog area?  Don't you think that it is
-better than the 3 words you currently put there?
+flush_icache_range is mostly used for kernel address, except for the following
+cases:
 
-Please fix up and resend.
+ - the nommu brk and mmap implementations,
+ - the read_code helper that is only used for binfmt_flat, binfmt_elf_fdpic,
+   and binfmt_aout including the broken ia32 compat version
+ - binfmt_flat itself,
 
-thanks,
+none of which really are used by a typical MMU enabled kernel, as a.out can
+only be build for alpha and m68k to start with.
 
-greg k-h
+But strangely enough commit ae92ef8a4424 ("PATCH] flush icache in correct
+context") added a "set_fs(KERNEL_DS)" around the flush_icache_range call
+in the module loader, because apparently m68k assumed user pointers.
+
+This series first cleans up the cacheflush implementations, largely by
+switching as much as possible to the asm-generic version after a few
+preparations, then moves the misnamed current flush_icache_user_range to
+a new name, to finally introduce a real flush_icache_user_range to be used
+for the above use cases to flush the instruction cache for a userspace
+address range.  The last patch then drops the set_fs in the module code
+and moves it into the m68k implementation.
+
+A git tree is available here:
+
+    git://git.infradead.org/users/hch/misc.git flush_icache_range
+
+Gitweb:
+
+    http://git.infradead.org/users/hch/misc.git/shortlog/refs/heads/flush_icache_range
 
 _______________________________________________
 linux-arm-kernel mailing list
