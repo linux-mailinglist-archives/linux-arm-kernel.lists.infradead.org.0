@@ -2,63 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B4B81CCA45
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 12:29:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F6C1CCA3E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 12:27:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kMUTxyIKC3uLb0r5vg16QRE/Ffy4MH9zeJciSb8qIwA=; b=E9gTJ0dDswTr8C
-	f32gEdbhJgWHftd2jHaLrZ0ufwrlpvwTx3lyI7/hX59W/Yb32LB20GI/J2qAMu18cNTrRFPlEb/rK
-	Oy8OiIGNYLeE5co+RAtj0Sn3SMGqKy32GLM5n/sr+uD2renRYIj7wRoy/tTNXDtP7EJpzgBxTzhAs
-	6V0Aq+WpIfmilsGoelh/ih8Nt3DxiQuvjPB9+/42K1nSx1+dgXXmZJUxRnno8Mtp7axkjUexI2p/G
-	EagnL2IA+8ElDNXXFafY4IyQYNrzKzW3etkkLZ/X5uT4bMbDgOf6pPfAuGqDTcS3Stdaos/FePM5y
-	YhZypHcEqAYWBKyVUk4A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=wagz4l1cUQU8u9sQUIVfsc1CGuEtQKoicPS4+SgVlWc=; b=IBu9CQJsgcfWI1
+	c/Mj3q53YZcgDiwRJkiAx7sejA/3mBZ3NmompWUK3teT6K5xXgALrPrXoSiHXW5y/1zqnzEHvTDmg
+	uru6KcfKnVM3RwWv9kkrXZTuTITdqSAkh8IFrqZCUp4j3NQK2WUhPsG0Qov26rk9ZoE1ph8+k9mbz
+	TIRQXwTqIfykZpwPdnWe+0BQsgqjCL/Zau9ncy7d1N7INAAw5/0yCz8YQHNaiTOdUv5uY45a4jp6d
+	YTdf9IkZrKRcxvxXVEWLLAU8u0I3zRCl5X4mldT3DMjNX3duKnNkArYcm/YiVM5YsFR2lBDJjWlez
+	qeu2oC7JspJFwEAp+xCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXjCb-0002Ji-U5; Sun, 10 May 2020 10:28:57 +0000
+	id 1jXjAk-0001pf-MA; Sun, 10 May 2020 10:27:02 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXjCW-0002JW-9S
- for linux-arm-kernel@bombadil.infradead.org; Sun, 10 May 2020 10:28:52 +0000
+ id 1jXjAd-0001pX-MQ
+ for linux-arm-kernel@bombadil.infradead.org; Sun, 10 May 2020 10:26:55 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:In-Reply-To:References;
- bh=WSdlP4bhd2BTZ2E2L2qzf6BwEaoV8h8beYDzb5zZRQE=; b=wRsBBKoaE7z5ZpuXdS9lFTDkkd
- U9I0wcDYCaN3w6TzzDHzMOJJnQzAwi7iY7xPobD6LKS3KmuAFCeqYtHZjXrxeW0sSLLIZ5F4Mwaxb
- stspokPAoJZf4zgSKxWeTw/uidaYgYSauZAZi4GxNRFP5oVC+JObk6/EeEg8hXO8WRdfKTfXS5fdG
- bNMSPeyp9DQTGhWy3TiBlAd/0H39S/3v9oEJe1bul927SkFXOsIEBaREy67MEA03bg3f7A6kUYCKb
- Wb1bYED+UWDk4+WIhQa+csg2KWXyNLhJHugaiUBYI95SOC/xFFYDYC+vwqOjO3iyudv/5VYngNVRM
- lKy5Ht9A==;
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description;
+ bh=0J4DyPwATLFEM3PG5dx+Z3LEb/4LtXuA/xLQVFUXgXg=; b=QO2BmGtUwUfRtMtUShfwcG3zQD
+ 5jptwnbvTbssozB+Q7ASU2fAc05T1bkVPD3JudkpBosvRzhl3kSv/qsFMggZWkl4WZYkw+SLn3iHy
+ tJCSEsI78Dpe+SwU4fA+DzT6FpKtN1Q4G94twQZXP4kzL99fxP0lvylHb/O2e6HRZ5s95P1U0ZRdO
+ x37P06OkwkOGl4zw34YeFhstl+JtGumQBUTxIQBK5t5UsmZKCc5v3ivFCbmnHo7q+lQunJuCCHEkR
+ XO+wTxHhQSKSZZkakRkWOsH7386WUVqtz3FcVT3RDUdxlemI207IehKpDJsgViZoWBJIbjxFoydNh
+ tZK4I8bQ==;
 Received: from 212.199.177.27.static.012.net.il ([212.199.177.27]
  helo=herzl.nuvoton.co.il)
  by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXjCR-0002Bs-Td
- for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 10:28:50 +0000
+ id 1jXjAX-00020I-NF
+ for linux-arm-kernel@lists.infradead.org; Sun, 10 May 2020 10:26:53 +0000
 Received: from taln60.nuvoton.co.il (ntil-fw [212.199.177.25])
- by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04AANrFe015175;
+ by herzl.nuvoton.co.il (8.13.8/8.13.8) with ESMTP id 04AANrW8015178;
  Sun, 10 May 2020 13:23:53 +0300
 Received: by taln60.nuvoton.co.il (Postfix, from userid 20088)
- id 94DF6639C0; Sun, 10 May 2020 13:23:53 +0300 (IDT)
+ id A6DD6639C1; Sun, 10 May 2020 13:23:53 +0300 (IDT)
 From: Tali Perry <tali.perry1@gmail.com>
 To: ofery@google.com, brendanhiggins@google.com, avifishman70@gmail.com,
  tmaimon77@gmail.com, kfting@nuvoton.com, venture@google.com,
  yuenn@google.com, benjaminfair@google.com, robh+dt@kernel.org,
  wsa@the-dreams.de, andriy.shevchenko@linux.intel.com
-Subject: [PATCH v10 0/3] i2c: npcm7xx: add NPCM i2c controller driver
-Date: Sun, 10 May 2020 13:23:27 +0300
-Message-Id: <20200510102330.66715-1-tali.perry1@gmail.com>
+Subject: [PATCH v10 1/3] dt-bindings: i2c: npcm7xx: add NPCM I2C controller
+Date: Sun, 10 May 2020 13:23:28 +0300
+Message-Id: <20200510102330.66715-2-tali.perry1@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20200510102330.66715-1-tali.perry1@gmail.com>
+References: <20200510102330.66715-1-tali.perry1@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_112848_569703_6B6F3F5C 
-X-CRM114-Status: GOOD (  16.19  )
-X-Spam-Score: 2.8 (++)
+X-CRM114-CacheID: sfid-20200510_112650_870501_EB93039E 
+X-CRM114-Status: GOOD (  18.14  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
- Content analysis details:   (2.8 points, 5.0 required)
+ Content analysis details:   (0.8 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
@@ -79,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on casper.infradead.org summary:
  0.9 NML_ADSP_CUSTOM_MED    ADSP custom_med hit, and not from a mailing
  list
  0.3 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
- 2.0 SPOOFED_FREEMAIL       No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,87 +92,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, kbuild test robot <lkp@intel.com>,
- openbmc@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- Tali Perry <tali.perry1@gmail.com>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, openbmc@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, Tali Perry <tali.perry1@gmail.com>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch set adds i2c controller support 
-for the Nuvoton NPCM Baseboard Management Controller (BMC).
-
-NPCM7xx includes 16 I2C controllers. This driver operates the controller.
-This module also includes a slave mode.
-
----
-v10 -> v9:
-	- Fix according to maintainer comments.
-	- binding file changed to yaml format.
-	- Shorten recovery flow.
-	- Add support for health monitoring counters.
-
-v9 -> v8:
-	- Fix according to maintainer comments.
-	- Split lines of iowrite..(ioread..) to separate lines.
-	- Use readx_poll_timeout_atomic
-	- resolve various style issues.
-	 
-v8 -> v7:
-	- Split to two commits, one for master, one for slave.
-	- Rename smb to i2c.
-	- Remove global vars.
-
-v7 -> v6:
-	- Rebased on Linux 5.4-rc8  (was Linux 5.4-rc7).
-	- Fix issue found by kbuild test robot (redundant include).
-	- Note: left a warning related to fall through. This fall through is
-	  intentional.
-	
-v6 -> v5:
-	- Update documentation
-
-v5 -> v4:
-	- support recovery
-	- master-slave switch support needed for IPMB
-
-v4 -> v3:
-	- typo on cover letter.
-
-v3 -> v2:
-	- fix dt binding: compatible name: omit "bus"
-
-v2 -> v1:
-	- run check patch in strict mode.
-	- use linux crc.
-	- define regs in constant offset without base.
-	- remove debug prints.
-	- no declarations for local functions.
-	
-v1: initial version
+Added device tree binding documentation for Nuvoton BMC
+NPCM I2C controller.
 
 Signed-off-by: Tali Perry <tali.perry1@gmail.com>
-Reported-by: kbuild test robot <lkp@intel.com>
-
 ---
-Tali Perry (3):
-  dt-bindings: i2c: npcm7xx: add NPCM I2C controller documentation
-  i2c: npcm7xx: Add Nuvoton NPCM I2C controller driver
-  i2c: npcm7xx: Add support for slave mode for Nuvoton NPCM BMC I2C
-    controller driver.
-
- .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     |   62 +
- drivers/i2c/busses/Kconfig                    |    9 +
- drivers/i2c/busses/Makefile                   |    1 +
- drivers/i2c/busses/i2c-npcm7xx.c              | 2467 +++++++++++++++++
- 4 files changed, 2539 insertions(+)
+ .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
- create mode 100644 drivers/i2c/busses/i2c-npcm7xx.c
 
-
-base-commit: 262f7a6b8317a06e7d51befb690f0bca06a473ea
+diff --git a/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+new file mode 100644
+index 000000000000..d6f553154388
+--- /dev/null
++++ b/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+@@ -0,0 +1,62 @@
++# SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/i2c/nuvoton,npcm7xx-i2c.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: nuvoton NPCM7XX I2C Controller Device Tree Bindings
++
++description: |
++  The NPCM750x includes sixteen I2C bus controllers. All Controllers support
++  both master and slave mode. Each controller can switch between master and slave
++  at run time (i.e. IPMB mode). Each controller has two 16 byte HW FIFO for TX and
++  RX.
++
++maintainers:
++  - Tali Perry <tali.perry1@gmail.com>
++
++properties:
++  compatible:
++      - const: nuvoton,npcm7xx-i2c
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    maxItems: 1
++
++  clocks:
++    maxItems: 1
++    items:
++      - description: Reference clock for the I2C bus
++
++  clock-frequency:
++    maxItems: 1
++    default: 100000
++    enum: [ 100000, 400000, 1000000 ]
++    description:
++      SCL frequency to use (in Hz). If omitted, 100kHz is used.
++
++required:
++  - compatible
++  - reg
++  - interrupts
++
++allOf:
++  - $ref: /schemas/i2c/i2c-controller.yaml#
++
++unevaluatedProperties: false
++
++examples:
++  - |
++    i2c0: i2c@80000 {
++        compatible = "nuvoton,npcm750-i2c";
++        reg = <0x80000 0x1000>;
++        clocks = <&clk NPCM7XX_CLK_APB2>;
++        bus-frequency = <100000>;
++        interrupts = <GIC_SPI 64 IRQ_TYPE_LEVEL_HIGH>;
++        pinctrl-names = "default";
++        pinctrl-0 = <&smb0_pins>;
++    };
++
++...
 -- 
 2.22.0
 
