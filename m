@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0C781CC931
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 10:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B0441CC935
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 10 May 2020 10:04:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=97J56Qi12b7EdzlCt5fcFjbRFu6+BlKMb9os3S3QT+s=; b=BNYGACJHSBw9DQ
-	2KOC9SrSmOSdDpzd/u1ZqOJAIeT8MJcpczk2KkSggZkcSt2x550kwbV37Zq+i9qpso+ggZiC2QxNL
-	bMKcAZASSPrEdY+8byGidZcSZJx9Rlrt2VhJ5zh0X1hgvA63m/hNQUevdwrs0NsLwhqg8Um7dwppe
-	ov19J5lVxmvw1kUGRm5TBvn8pu/sksJYX/16NX/qXxNdM8QM6D2IWWdPy1c9w/kIcXs9BBHDvZkFO
-	WNVhgGKNldKHG21F/GDUknrv6j5IhV6Nz4UrXV8fWo3H0BQQXFDMYPAnqonLAFE+DpY17bKs8q/sf
-	jnZJ2d4YblRtWeuQLf+w==;
+	List-Owner; bh=hAySdM+ITY6JfmNX50OJCvHw9c5JAoK70MVhE3UE//k=; b=l3G0SR9GPluEIa
+	CtG8GURoJ4wayLEiTm2Sb1zeJG+gnF3KdKo/D6g8xkT+8KkAbs2MI08uFtK8biV/Mzh9+ymcainS1
+	fyBRhoC2FHY2fsDoBNoHLhnlAEUCzv1CIJyVgImERCSkYZCVPJlPuNalrjy5b60jG8EqSkTfJTgeK
+	oux1NVQsrZUM3ziuLWqAzRf1p5oButOsqkZKclj2jsZdOTKPS+65tFDjVB/4kdQYFh1RuvCPbGujk
+	XTFhywEyf8DTtgtfoitg60eG48QbcEv15UWI7owR8fJZYDxDpSPxWDMv1lBI51BdhiqOKnS1X7aVp
+	unArvkNsD3lVBJXk4lVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXgwb-0003Vi-F8; Sun, 10 May 2020 08:04:17 +0000
+	id 1jXgwy-0003wo-LC; Sun, 10 May 2020 08:04:40 +0000
 Received: from [2001:4bb8:180:9d3f:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXgp9-0001Bf-B4; Sun, 10 May 2020 07:56:35 +0000
+ id 1jXgpC-0001El-6j; Sun, 10 May 2020 07:56:38 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 26/31] m68k: implement flush_icache_user_range
-Date: Sun, 10 May 2020 09:55:05 +0200
-Message-Id: <20200510075510.987823-27-hch@lst.de>
+Subject: [PATCH 27/31] exec: only build read_code when needed
+Date: Sun, 10 May 2020 09:55:06 +0200
+Message-Id: <20200510075510.987823-28-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200510075510.987823-1-hch@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
@@ -58,55 +58,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rename the current flush_icache_range to flush_icache_user_range as
-per commit ae92ef8a4424 ("PATCH] flush icache in correct context") there
-seems to be an assumption that it operates on user addresses.  Add a
-flush_icache_range around it that for now is a no-op.
+Only build read_code when binary formats that use it are built into the
+kernel.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/m68k/include/asm/cacheflush_mm.h | 2 ++
- arch/m68k/mm/cache.c                  | 7 ++++++-
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ fs/exec.c | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/m68k/include/asm/cacheflush_mm.h b/arch/m68k/include/asm/cacheflush_mm.h
-index 95376bf84faa5..1ac55e7b47f01 100644
---- a/arch/m68k/include/asm/cacheflush_mm.h
-+++ b/arch/m68k/include/asm/cacheflush_mm.h
-@@ -257,6 +257,8 @@ static inline void __flush_page_to_ram(void *vaddr)
- extern void flush_icache_user_page(struct vm_area_struct *vma, struct page *page,
- 				    unsigned long addr, int len);
- extern void flush_icache_range(unsigned long address, unsigned long endaddr);
-+extern void flush_icache_user_range(unsigned long address,
-+		unsigned long endaddr);
- 
- static inline void copy_to_user_page(struct vm_area_struct *vma,
- 				     struct page *page, unsigned long vaddr,
-diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
-index 99057cd5ff7f1..7915be3a09712 100644
---- a/arch/m68k/mm/cache.c
-+++ b/arch/m68k/mm/cache.c
-@@ -73,7 +73,7 @@ static unsigned long virt_to_phys_slow(unsigned long vaddr)
- 
- /* Push n pages at kernel virtual address and clear the icache */
- /* RZ: use cpush %bc instead of cpush %dc, cinv %ic */
--void flush_icache_range(unsigned long address, unsigned long endaddr)
-+void flush_icache_user_range(unsigned long address, unsigned long endaddr)
- {
- 	if (CPU_IS_COLDFIRE) {
- 		unsigned long start, end;
-@@ -104,6 +104,11 @@ void flush_icache_range(unsigned long address, unsigned long endaddr)
- 			      : "di" (FLUSH_I));
- 	}
+diff --git a/fs/exec.c b/fs/exec.c
+index 06b4c550af5d9..a4f766f296f8f 100644
+--- a/fs/exec.c
++++ b/fs/exec.c
+@@ -1027,6 +1027,8 @@ int kernel_read_file_from_fd(int fd, void **buf, loff_t *size, loff_t max_size,
  }
-+
-+void flush_icache_range(unsigned long address, unsigned long endaddr)
-+{
-+	flush_icache_user_range(address, endaddr);
-+}
- EXPORT_SYMBOL(flush_icache_range);
+ EXPORT_SYMBOL_GPL(kernel_read_file_from_fd);
  
- void flush_icache_user_page(struct vm_area_struct *vma, struct page *page,
++#if defined(CONFIG_HAVE_AOUT) || defined(CONFIG_BINFMT_FLAT) || \
++    defined(CONFIG_BINFMT_ELF_FDPIC)
+ ssize_t read_code(struct file *file, unsigned long addr, loff_t pos, size_t len)
+ {
+ 	ssize_t res = vfs_read(file, (void __user *)addr, len, &pos);
+@@ -1035,6 +1037,7 @@ ssize_t read_code(struct file *file, unsigned long addr, loff_t pos, size_t len)
+ 	return res;
+ }
+ EXPORT_SYMBOL(read_code);
++#endif
+ 
+ /*
+  * Maps the mm_struct mm into the current task struct.
 -- 
 2.26.2
 
