@@ -2,74 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE5F91CD708
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:02:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C46261CD70B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:02:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Xi3hja4iAELIOIW4XoRa5tGN0D3//RfV8jKpMusrvs=; b=ASLm7aZGpSlGPk
-	afPRceLE4MeKkvgCK5vcIDTsCpEHlcu8++8933FfElJUaSgHOBrFPap1XIp7iWc7ewd+cFjkcIr75
-	gO7EuyttK3qqlnaVy3zbFD/lQNfRdkQOIYhE5z3NCbXLs2TDRnH1f1XJkE6U1scDXum0aqhPvsGWS
-	8quCZM9ttojratqIo1i4lU3/oQQAIiDN6S664R8a+1DeaiOz+hxA/VcAe5SZZ0J8yZKaa52qohKQ3
-	M1OsZPReSu/ASmKKXr3J5mDFzDTMMLnYww/21pWqdgFs9pRsj3QGvaFbfkIQsBKiM9k2mpDFvtgVC
-	w2MrjfcAJRpWU1A4iV7w==;
+	List-Owner; bh=A1TjqoSgaMWLYo8EKchhLa7NOXagGZ859nnf1pHCItM=; b=hvClmwYjcUs0td
+	f/39fb6UUcUG1MxPdX7gycqK68cWghm851mVUB4rwndaiynyQw/SZRbpWi0O2eMjv5PaU/cy6aSzu
+	HMpQ+B0h1ZnHQInIro6UprIksm4AUVbJ7rUgPcirte9OwbjVlwkCZKgKL1pU6gxsCf9SGGeSauUKv
+	MLvg4lJEMqb9PKPVUJzQFzoMUVVUa2QAZKAJ6RgQnSfB3M6493w1EmZeezO6CaFtAXcbc1ijJvTRJ
+	McMvRHEXsY20jiSUAZ9MBUUf4hSMKW+RCaGdC0C3rlXvhVcuWGQI6v4MDd6GI5dqgUjgXOKWeDsUf
+	OiX/QIRYKc5wRvZDV6rQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6CV-0006l9-DR; Mon, 11 May 2020 11:02:23 +0000
-Received: from us-smtp-2.mimecast.com ([207.211.31.81]
+	id 1jY6Cl-0006z8-I3; Mon, 11 May 2020 11:02:39 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
  helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6Bx-0006Vs-3b
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:01:50 +0000
+ id 1jY6C6-0006dX-Qi
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:02:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589194907;
+ s=mimecast20190719; t=1589194917;
  h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
  to:to:cc:cc:mime-version:mime-version:content-type:content-type:
  in-reply-to:in-reply-to:references:references;
- bh=oFDVkhRoHqXvQ6Q+8XkWGBWxZCbZLeL6G8I1FDsAcKI=;
- b=huMNMqYJN46cyRV6jtJobDr/Lr0lDnESjvF8bZtAafJ62TX4naY7+jfQ0YHPbk46tFhnJm
- 6MCtJXDKIrr7t/hNO7/J//zKc0dGZiF2OlY3zAKKSrdtWoBlgrWA0xFHg46CZikU/rQBRQ
- CxMS6HjJV4EsWigJyAg0HshPra0VLpY=
+ bh=/wxVoTSctGeT+2x6Wq8s20j7ese2p9h/0eegbNP4kOM=;
+ b=c0gkqkbhiVwy4n9rjjWoblLLlii1OK7GIHdoN9mBCpZNWpWadYF8sCSdAUU6001n815Zli
+ pnlkxugtji2gAKxTBFgXxcOZ09S5aFZD1fw7/v9CIC2/wZjrTA9HQquLw9JebL4uduOODN
+ Fcr0jT3nbQl+7ZbFMxNKe//S3wtUsZM=
 Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
  [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-449-N-YvmnBvNaWFqTnrZdz2WA-1; Mon, 11 May 2020 07:01:44 -0400
-X-MC-Unique: N-YvmnBvNaWFqTnrZdz2WA-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
+ us-mta-146-Db2IzRKJPYKnYViZoazu_A-1; Mon, 11 May 2020 07:01:53 -0400
+X-MC-Unique: Db2IzRKJPYKnYViZoazu_A-1
+Received: from smtp.corp.redhat.com (int-mx05.intmail.prod.int.phx2.redhat.com
+ [10.5.11.15])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id E9EFD460;
- Mon, 11 May 2020 11:01:41 +0000 (UTC)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id BBDB61899520;
+ Mon, 11 May 2020 11:01:50 +0000 (UTC)
 Received: from krava (unknown [10.40.194.31])
- by smtp.corp.redhat.com (Postfix) with SMTP id 4576D60FC2;
- Mon, 11 May 2020 11:01:38 +0000 (UTC)
-Date: Mon, 11 May 2020 13:01:37 +0200
+ by smtp.corp.redhat.com (Postfix) with SMTP id 3F2486C77D;
+ Mon, 11 May 2020 11:01:47 +0000 (UTC)
+Date: Mon, 11 May 2020 13:01:46 +0200
 From: Jiri Olsa <jolsa@redhat.com>
 To: John Garry <john.garry@huawei.com>
 Subject: Re: [PATCH RFC v3 02/12] perf jevents: Add support for system events
  tables
-Message-ID: <20200511110137.GC2986380@krava>
+Message-ID: <20200511110146.GD2986380@krava>
 References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
  <1588852671-61996-3-git-send-email-john.garry@huawei.com>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <1588852671-61996-3-git-send-email-john.garry@huawei.com>
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.15
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_040149_234640_C8A0E9A7 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20200511_040158_966910_66EF7493 
+X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [207.211.31.81 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [207.211.31.81 listed in wl.mailspike.net]
+ no trust [205.139.110.61 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -106,69 +105,28 @@ On Thu, May 07, 2020 at 07:57:41PM +0800, John Garry wrote:
 
 SNIP
 
-> +				      &sys_event_tables);
-> +		}
-> +
->  		print_events_table_prefix(eventsfp, tblname);
->  		return 0;
->  	}
-> @@ -1180,7 +1253,6 @@ int main(int argc, char *argv[])
->  	} else if (rc < 0) {
->  		/* Make build fail */
->  		fclose(eventsfp);
-> -		free_arch_std_events();
->  		ret = 1;
->  		goto out_free_mapfile;
->  	} else if (rc) {
-> @@ -1206,27 +1278,31 @@ int main(int argc, char *argv[])
->  	if (close_table)
->  		print_events_table_suffix(eventsfp);
 >  
-> -	if (!mapfile) {
-> -		pr_info("%s: No CPU->JSON mapping?\n", prog);
-> -		goto empty_map;
-> +	if (mapfile) {
-> +		if (process_mapfile(eventsfp, mapfile)) {
-> +			pr_err("%s: Error processing mapfile %s\n", prog,
-> +			       mapfile);
-> +			/* Make build fail */
-> +			fclose(eventsfp);
-> +			ret = 1;
-> +		}
-> +	} else {
-> +		pr_err("%s: No CPU->JSON mapping?\n", prog);
+> +static int process_system_event_tables(FILE *outfp)
+> +{
+> +	struct sys_event_table *sys_event_table;
+> +
+> +	fprintf(outfp, "struct pmu_sys_events pmu_sys_event_tables[] = {");
+> +
+> +	list_for_each_entry(sys_event_table, &sys_event_tables, list) {
+> +		fprintf(outfp, "\n\t{\n\t\t.table = %s,\n\t},",
+> +			sys_event_table->name);
+> +	}
+> +	fprintf(outfp, "\n\t{\n\t\t.table = 0\n\t},");
 
-shouldn't we jump to empty_map in here? there still needs to be a
-mapfile, right?
+this will add extra tabs:
+
+        {
+                .table = 0
+        },
+
+while the rest of the file starts items without any indent
 
 jirka
-
->  	}
->  
-> -	if (process_mapfile(eventsfp, mapfile)) {
-> -		pr_info("%s: Error processing mapfile %s\n", prog, mapfile);
-> -		/* Make build fail */
-> +	if (process_system_event_tables(eventsfp)) {
->  		fclose(eventsfp);
-> -		free_arch_std_events();
->  		ret = 1;
->  	}
->  
-> -
->  	goto out_free_mapfile;
->  
->  empty_map:
->  	fclose(eventsfp);
->  	create_empty_mapping(output_file);
-> -	free_arch_std_events();
->  out_free_mapfile:
-> +	free_arch_std_events();
-> +	free_sys_event_tables();
->  	free(mapfile);
->  	return ret;
->  }
-
-SNIP
 
 
 _______________________________________________
