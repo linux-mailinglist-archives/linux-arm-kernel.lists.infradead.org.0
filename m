@@ -2,80 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F9731CD317
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 09:43:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5C721CD32F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 09:46:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oy0sa8axlxWxENRwZ6tOW6uGq3A3nELPSbrRIJTGJTI=; b=dmKrF7QMBP+HCV
-	QxSLya7P3dbC2LDBsXInflpEhT4n70SW4n/YdzpO6RjohHpxSYkwUbpRwX3bnd2RGBFW37hXnGtgc
-	9utla5tRCVzdxp63QqywplR/4/IsRLHxcepmJQ0iKwhjDAzoJQ8gSKurTNMTconYzaFhJD6a04kPy
-	vEfu8we1Yvw2bY0yKPvgJQPws/ZQ8WljmlhrXQh/5UwjT2C4r7RYAdkwW3LUGlNVchoMWiUS78sXA
-	+N4vzvmfPaObQtFKTadQM8LV1kNVbWYtTkXnUcjt6bESMo2w/Mc8hgFSTvSn0ciHiBrbVWgT18un1
-	LGhW/6PVQb2KqXLvps8g==;
+	List-Owner; bh=A7etq8E1bNrKMY3/q1W4cxxRkKu555yFsHawGBcK6kM=; b=Hz5OKNJO/wBG30
+	ASlslYdrbg0w34rDTPto5SfZiZQJCM+TQ6/duDjMH8nteuF1kz6SNwqYD25Gzhc6/QYnhew4tBcnd
+	gSuNu9+G2orXw/g1zXDziFpyDigeURfSfxmmPGEMybmJyxa+6+k2iFruuhO87sYTv4MQ69jc5j5+u
+	oFaFzA4GQbL7nYqWT/X8Yq/UZUmRHbA+119d1czuc73FJO9G8FgaKWMcsGnUxsu7OdySdBywJpoYM
+	m5cUeRLLLex1+Cq3J7Os4HDKfa5bx2rQh/wEPEXyFxil8BNQFiWpqBuyV6AXWPu7mVbdoJeoHeOsA
+	2cyJV4fkj7U7RYSaSGgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY35V-0007EX-Bb; Mon, 11 May 2020 07:42:57 +0000
-Received: from mail-ed1-f68.google.com ([209.85.208.68])
+	id 1jY399-0002Sc-4D; Mon, 11 May 2020 07:46:43 +0000
+Received: from mail-oi1-f196.google.com ([209.85.167.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY35C-0007AF-Om
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 07:42:40 +0000
-Received: by mail-ed1-f68.google.com with SMTP id e10so375418edq.0
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 00:42:37 -0700 (PDT)
+ id 1jY38w-0002Q4-5O; Mon, 11 May 2020 07:46:31 +0000
+Received: by mail-oi1-f196.google.com with SMTP id o7so14342742oif.2;
+ Mon, 11 May 2020 00:46:29 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/gXH+5V1OhGf0lDZmtXQexZA4f2X1Oj6FaM9kDcTW/I=;
- b=nIis/z1U0G/Vrke0zMaJbtUJFbBgjE8e2teqZrgQZ8eBbHOGeG6vT5M05AgcCFRZHF
- yiNmzz4nlSTuh/0BQO5RYt+/EG66UxmqIsHn+W0Hyke9IjMoDHdcK1jfkBXrv0upfXI7
- tElHuFJb2+ehqiABsrsH11LBrx9UsT6AnGvVmglN3gq5bB7pIYFeaM5QBa4O1LGuj70z
- 37qn28J++hmIW1MDVHwq7IvoAyt7fbyt6+VvNg9s8aZngQKGMz6mNu0Q7I46xa950p3+
- yF+Faml2qFuTeMBRktzT20Ue4jQqUu1yB+YIq/oJjokLSzukwGCHzPbwsscP0NoBoNkD
- FGYw==
-X-Gm-Message-State: AGi0PubgkXSnv3lWQBpf3NjJJrsZG995qovTMJKeLC1H1B97nE7dhC99
- 32QQywqiuGiUnUXkCCQnUNI=
-X-Google-Smtp-Source: APiQypKNXJxBqeWKUcQZCLy5hhnnh16d804wT763ceEEJlpi/zqQEfidD1ZPGObtTh2DAv0fOSjHSw==
-X-Received: by 2002:a05:6402:1d23:: with SMTP id
- dh3mr12214214edb.349.1589182956149; 
- Mon, 11 May 2020 00:42:36 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.237])
- by smtp.googlemail.com with ESMTPSA id g20sm1194769ejb.41.2020.05.11.00.42.33
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 11 May 2020 00:42:35 -0700 (PDT)
-Date: Mon, 11 May 2020 09:42:32 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Jonathan Cameron <jic23@kernel.org>
-Subject: Re: [PATCH] iio: adc: Add scaling support to exynos adc driver
-Message-ID: <20200511074232.GA7134@kozik-lap>
-References: <BN6PR04MB066058A68D6471E7F6AFCFF7A3A20@BN6PR04MB0660.namprd04.prod.outlook.com>
- <20200510112417.1e54d66e@archlinux>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2yJ6ElOmiCSyE9da4JBaYJBkgTCIAd7AfbCRMY3E6sk=;
+ b=DfOVC2gbxPs9o0tfQDBpTLM1p3/8/sEYjiQLa3Zqdoe/KZ7MhQI3pVIiReZJIlDZml
+ NpQwUhGIXNXFVVgtLqiauWOIkLHCjZ08y0HS4oyon3gquvcUj9Y7o4Airbf/klGcNTB7
+ X/ChgohflMuHqgBkdllvPIhqIL1mV9QMEyj7SA7GOL0HngCedjCTaUlZpwjlqwYqrbvr
+ G4fTZW9t+4Jq/75sNDuXF+GowQaskQm1RhxaW5BO1dVQvTmGrUdVGt/UOR7gbrEIMDEb
+ lCjTp0E1i8S8OsbEctcA29kBcdj7D6CoRwKlchpKbjsKjFPzX8Q1YKNGnisSfpre3L0H
+ iRnQ==
+X-Gm-Message-State: AGi0PuYjy5T3Ubo3hPrVBEvgcR3InSY3kVNH+kgxge/tSgVIlvj563U0
+ uw2aNkv1V8RGUrHxbY9kiFCDi5eUu0pSSliGRao=
+X-Google-Smtp-Source: APiQypIoFxa7a3EUthZ/8xx0aZ//Vc0pDLpqFY6DB0zkXv6WP4wkoKn8ne3ghzK30RcpwYDHtmi30TMFV3MiIELEMLg=
+X-Received: by 2002:aca:895:: with SMTP id 143mr18042949oii.153.1589183188927; 
+ Mon, 11 May 2020 00:46:28 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200510112417.1e54d66e@archlinux>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200510075510.987823-1-hch@lst.de>
+In-Reply-To: <20200510075510.987823-1-hch@lst.de>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Mon, 11 May 2020 09:46:17 +0200
+Message-ID: <CAMuHMdXazsBw0mjJd0uFHQud7qbb5-Uw-PTDB3+-M=huRWOfgQ@mail.gmail.com>
+Subject: Re: sort out the flush_icache_range mess
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_004238_822814_DC767475 
-X-CRM114-Status: GOOD (  15.72  )
+X-CRM114-CacheID: sfid-20200511_004630_205832_9D4CAD87 
+X-CRM114-Status: UNSURE (   8.33  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.68 listed in wl.mailspike.net]
+ no trust [209.85.167.196 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [k.kozlowski.k[at]gmail.com]
+ provider [geert.uytterhoeven[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.196 listed in wl.mailspike.net]
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -89,53 +80,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, linux-samsung-soc@vger.kernel.org,
- lars@metafoo.de, linux-iio@vger.kernel.org, mpe@ellerman.id.au,
- Jonathan Bakker <xc-racer2@live.ca>, linux-kernel@vger.kernel.org,
- swboyd@chromium.org, cw00.choi@samsung.com, kgene@kernel.org,
- pmeerw@pmeerw.net, knaack.h@gmx.de, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
+Cc: "linux-ia64@vger.kernel.org" <linux-ia64@vger.kernel.org>,
+ Linux-sh list <linux-sh@vger.kernel.org>, Roman Zippel <zippel@linux-m68k.org>,
+ "open list:BROADCOM NVRAM DRIVER" <linux-mips@vger.kernel.org>,
+ Linux MM <linux-mm@kvack.org>, sparclinux <sparclinux@vger.kernel.org>,
+ linux-riscv@lists.infradead.org, Linux-Arch <linux-arch@vger.kernel.org>,
+ linux-c6x-dev@linux-c6x.org,
+ "open list:QUALCOMM HEXAGON..." <linux-hexagon@vger.kernel.org>,
+ the arch/x86 maintainers <x86@kernel.org>,
+ "open list:TENSILICA XTENSA PORT \(xtensa\)" <linux-xtensa@linux-xtensa.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jessica Yu <jeyu@kernel.org>,
+ linux-um <linux-um@lists.infradead.org>,
+ linux-m68k <linux-m68k@lists.linux-m68k.org>,
+ Openrisc <openrisc@lists.librecores.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Michal Simek <monstr@monstr.eu>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ alpha <linux-alpha@vger.kernel.org>,
+ Linux FS Devel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linuxppc-dev <linuxppc-dev@lists.ozlabs.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, May 10, 2020 at 11:24:17AM +0100, Jonathan Cameron wrote:
-> On Fri,  8 May 2020 14:14:00 -0700
-> Jonathan Bakker <xc-racer2@live.ca> wrote:
-> 
-> > Currently the driver only exposes the raw counts.  As we
-> > have the regulator voltage and the maximum value (stored in
-> > the data mask), we can trivially produce a scaling fraction
-> > of voltage / max value.
-> > 
-> > This assumes that the regulator voltage is in fact the max
-> > voltage, which appears to be the case for all mainline dts
-> > and cross referenced with the public Exynos4412 and S5PV210
-> > datasheets.
-> > 
-> > Signed-off-by: Jonathan Bakker <xc-racer2@live.ca>
-> 
-> Seems reasonable to me. I'd like an exynos Ack though before applying.
+Hi Christoph,
 
+On Sun, May 10, 2020 at 9:55 AM Christoph Hellwig <hch@lst.de> wrote:
+> none of which really are used by a typical MMU enabled kernel, as a.out can
+> only be build for alpha and m68k to start with.
 
-It's correct, at least with ARMv7 Exynos datasheets
+Quoting myself:
+"I think it's safe to assume no one still runs a.out binaries on m68k."
+http://lore.kernel.org/r/CAMuHMdW+m0Q+j3rsQdMXnrEPm+XB5Y2AQrxW5sD1mZAKgmEqoA@mail.gmail.com
 
-The few ARMv8 Exynos chips are silent about the voltage levels. The
-Exynos 7 DTS board in mainline kernel does not have regulator but it
-looks clearly like mistake.
+Gr{oetje,eeting}s,
 
-I think they behave the same, so for Exynos:
-Reviewed-by: Krzysztof Kozlowski <krzk@kernel.org>
+                        Geert
 
-Best regards,
-Krzysztof
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-> thanks,
-> 
-> Jonathan
-> 
-> 
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
