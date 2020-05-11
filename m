@@ -2,92 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45F8A1CE43A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 21:24:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CD6A1CE47E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 21:30:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=e2ohjzwvVp/HA8lRNKQN/ppwbIBpnEJMt3BLNlWZLVM=; b=CFseqhtumRlani
-	/d1jQeeDwe5D5EQyoD8KYhATPywCbLfcFMxK4xt0dy2WplpZKbzNOSrqpOd2+GMNIAGMJd2ov6tvq
-	IC2ppMj0k2cNqnmMGAMz33OWAtmeAPWW59WlH1s2EnYc2+MaSW/QUNjPpbPJJtOmL9v3aOGWk1PKn
-	W3+MVzK71FyCt5pinMoahJsoCj15LNFSBn/YhzYc9I6tjZVYLFoya4KQ79vG69wILZOniL10Fzjlr
-	6pEki+8edYa/R5x9w1yT9f1eemeSPUxmlw1dWi7/VutAR7Zkw0x77i63NfS+sjmmAgAS/0r645ARP
-	Ok+CsCNf9ESdAxKLmlfQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sX2Uw2ZpaGkvmElxu37HsbaijWhYugDk+7aB14Dsz2M=; b=GsDbRl2D5pTAPP
+	MjIC9yt/a/J2ZfXSmyist1pTwzCMCRotknw3WRxN4b+rwbQVgw+F1fL5VD+emo5Tlum0af65rQoG/
+	munQm7I1tvZ4Vl1wWyo0wIoh3gLMRCXNziHQloMESatO6EttK4o+xxflFwkb61kuIFdU/S8DqHhAN
+	Q9YM2Qq169rCmaiSrdTlkAId0Kn3mU0jGTwThXaWPaIDiDvBtM9oFtT9nPgiJfzPSUcVYM0zuYWCN
+	UWcUaa5iyYTCZICZeQsI+wNt4a735j7S7a8i45YLBRkxuxpVJwkCLzo8ItwDV0TlwHigClyWtZIxS
+	lBndVTVFepbs3csXlm2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYE2X-0001tL-Tm; Mon, 11 May 2020 19:24:37 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jYE8O-0007PG-Ow; Mon, 11 May 2020 19:30:40 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYE2P-0001rc-1d; Mon, 11 May 2020 19:24:30 +0000
-Received: by mail-wm1-x343.google.com with SMTP id w19so5897163wmc.1;
- Mon, 11 May 2020 12:24:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=uxtARxCkPHWXnqT8lNpH00A1Ut0N5U8vfZ7iT6ckY1E=;
- b=AG7MZsX4ZOvpaULyOTIRKeZi/M6nLPWkPou4BnwRwJjZZDbwmwc2GN+LFtRg6wIESO
- vDwFcsA0F9F8GADGT963+l1vut2xgX7EXRxhHkCv6hTX5WfGbNkIvpOrqt1P8oTzAJz/
- m5qsiNAMDXCrGhAu62TssTPTyLX86ziIjlYQYM28Z3sLDG7euOQE0FHm9wmb/jvmSBPV
- KXJj34jfWOCW4evwPoBU2tc+6EDIbrbGKo00RF3+ioMJPD8pnCrwjacGigLPWEAZQdRO
- mH1+73oEcvkmFLleEXiquqHS2lIN9MqN2mLm+NJaK2yDyzE4nh5a5CG9TexWJG6o0TWy
- oyoA==
+ id 1jYE8G-0007OQ-Po
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 19:30:34 +0000
+Received: by mail-pf1-x442.google.com with SMTP id v63so5182943pfb.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 12:30:31 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=gzyfnO/5LbG2mrH2lA0azbgAQiWtK0agPG/QW/aD0JA=;
+ b=OzVpqUU6k4CDMc0nrbShznwLyn+kmnl+BiPHhPbWnikxGiuco8hPSb3nS1q3qW7Cek
+ TlIdfXMHgEChfZXCfsI3of4zCEHuppr5PoCE3ZmpK0SP1LiofuG1NSTRPyOmD0nbKgGD
+ Bwa03tUplrVt+uaafrpI8WO/Kiw8FLdoImebhEbTRHIm2mxwGlr8SIVV8RSntyAW7IIW
+ m9WJ98M8I/GIgMuti/4gM3KJ4GRCV7VPnkIyNoVSwhRvr8uOQ9XfPJNaLkNucRR21ygo
+ 7yLopUX/fMQxLY0w5Z54iE/yRdh2wOKRkc5CN/QWkO77VCCiI1CCgHTzJiuY46Yq4gJI
+ 1epw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=uxtARxCkPHWXnqT8lNpH00A1Ut0N5U8vfZ7iT6ckY1E=;
- b=FlMPLnjSpF/+TSnOnq4nVDWML35aG/ljqs48+ofKOMpvCaonr9jkZ3IFBWQMPED1IV
- VzpEzqF0fdCDjHyjOdzOTsLqukPt8Z9C5ZZgEHmWvAuMlAvf7wyOXf+zOOMdX7uk+3Eo
- Z4VoIhz2QcpFEIdFIRUa0L1AV9L0rpm7t/VrEAAyb1HQpPcvo7cCwdB63Bf4wAiuusr0
- T6LkydZ3tzCRrrKZ0dO5/BV791Tu9qGrwbxR96gPtr7vjY0RBGMi3OrzeiWC2cbvAbBz
- uG6udQINvTWsWhr4X/znHSzheQPbRTC8kaFtbdopwqn806uT5zkzESKwdM5OdHnFOLcc
- lvJQ==
-X-Gm-Message-State: AGi0PuZCY2FKjjilhiUF7aIeki9oAzxahfjYpYfPWXvCekAe2er8wwU3
- HxbX0Agr1WhYyVeuvBRinas=
-X-Google-Smtp-Source: APiQypJW5vvk30z5iWdY0hSQCc1Ykgc7TXvbdxesRiVaoSvVocTszQuT5j6sF6kDtbT7WU3aCncc9w==
-X-Received: by 2002:a1c:6402:: with SMTP id y2mr33787682wmb.116.1589225065733; 
- Mon, 11 May 2020 12:24:25 -0700 (PDT)
-Received: from [10.230.188.43] ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id p4sm8187632wrq.31.2020.05.11.12.24.21
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 May 2020 12:24:25 -0700 (PDT)
-Subject: Re: [PATCH v2 09/14] net: ethernet: mtk-eth-mac: new driver
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Rob Herring <robh+dt@kernel.org>,
- "David S . Miller" <davem@davemloft.net>,
- Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
- Sean Wang <sean.wang@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
- Jakub Kicinski <kuba@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Fabien Parent <fparent@baylibre.com>, Heiner Kallweit
- <hkallweit1@gmail.com>, Edwin Peer <edwin.peer@broadcom.com>
-References: <20200511150759.18766-1-brgl@bgdev.pl>
- <20200511150759.18766-10-brgl@bgdev.pl>
-From: Florian Fainelli <f.fainelli@gmail.com>
-Message-ID: <dab80587-a196-e0ab-ae97-f8e5cc4a71d4@gmail.com>
-Date: Mon, 11 May 2020 12:24:20 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Firefox/68.0 Thunderbird/68.8.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=gzyfnO/5LbG2mrH2lA0azbgAQiWtK0agPG/QW/aD0JA=;
+ b=rjjlE8WC4al6ZuGI2EIcnPYNFkDHmm7fIyKB0givUm8y8LCJkcBj+SJqtkLGGHRd5F
+ soG4ZvdzzhFLyvOrS4WqBOV7yLPtTKI89Sk3zM9/vKnzQScTK6fqCh0pbn5lvXTgvrL8
+ 2EiIQIfjFocY2mrb7CQQlw2D2xqRNtIlMH2Dob4yg0vJM6Zm84vJ9lLRrMEc6um1Eh+o
+ W1+fHAHMznxuMi7dVrCcHQfnEBkEkLX660QiuTYH5vc47LcI2hffAa9sF1LcJiCXipWj
+ rmvBG6owgjaMUuN/2y/KAKJhQ/ygd+sPxLvXVjCBAzrczYSGFi/xSVAfLImmRHynS4kM
+ MyfA==
+X-Gm-Message-State: AGi0Pua0+en585W2uYJZNKhdFEMRy+gnEZX2Aw5RXLNXmu+0X0jqr1BA
+ A0r0QGTAQAWEsDJqjp8sgW7TUw==
+X-Google-Smtp-Source: APiQypIOtVLmN26sBLQEPnN3hrhyIv6xvI5WifHGysFUwEmFLrhzINvd3EvqA0ARHr6GkqxEp7LIOw==
+X-Received: by 2002:a63:750b:: with SMTP id q11mr15767211pgc.138.1589225431230; 
+ Mon, 11 May 2020 12:30:31 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id z185sm8726197pgz.26.2020.05.11.12.30.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 11 May 2020 12:30:30 -0700 (PDT)
+Date: Mon, 11 May 2020 12:31:24 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Sibi Sankar <sibis@codeaurora.org>
+Subject: Re: [PATCH v6] iommu/arm-smmu-qcom: Request direct mapping for modem
+ device
+Message-ID: <20200511193124.GG20625@builder.lan>
+References: <20200511175532.25874-1-sibis@codeaurora.org>
 MIME-Version: 1.0
-In-Reply-To: <20200511150759.18766-10-brgl@bgdev.pl>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20200511175532.25874-1-sibis@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_122429_135864_9304AADD 
-X-CRM114-Status: GOOD (  17.67  )
+X-CRM114-CacheID: sfid-20200511_123032_904270_9DA84653 
+X-CRM114-Status: GOOD (  16.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [f.fainelli[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -106,144 +98,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Stephane Le Provost <stephane.leprovost@mediatek.com>, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-mediatek@lists.infradead.org,
- Andrew Perepech <andrew.perepech@mediatek.com>,
- Pedro Tsai <pedro.tsai@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: dianders@chromium.org, will@kernel.org, joro@8bytes.org,
+ linux-kernel@vger.kernel.org, evgreen@chromium.org, swboyd@chromium.org,
+ iommu@lists.linux-foundation.org, mka@chromium.org,
+ linux-arm-msm@vger.kernel.org, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon 11 May 10:55 PDT 2020, Sibi Sankar wrote:
 
+> The modem remote processor has two access paths to DDR. One path is
+> directly connected to DDR and another path goes through an SMMU. The
+> SMMU path is configured to be a direct mapping because it's used by
+> various peripherals in the modem subsystem. Typically this direct
+> mapping is configured statically at EL2 by QHEE (Qualcomm's Hypervisor
+> Execution Environment) before the kernel is entered.
+> 
+> In certain firmware configuration, especially when the kernel is already
+> in full control of the SMMU, defer programming the modem SIDs to the
+> kernel. Let's add compatibles here so that we can have the kernel
+> program the SIDs for the modem in these cases.
+> 
 
-On 5/11/2020 8:07 AM, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-> 
-> This adds the driver for the MediaTek Ethernet MAC used on the MT8* SoC
-> family. For now we only support full-duplex.
-> 
-> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+Regards,
+Bjorn
+
+> Signed-off-by: Sibi Sankar <sibis@codeaurora.org>
 > ---
-
-[snip]
-
-> +static int mtk_mac_ring_pop_tail(struct mtk_mac_ring *ring,
-> +				 struct mtk_mac_ring_desc_data *desc_data)
-> +{
-> +	struct mtk_mac_ring_desc *desc = &ring->descs[ring->tail];
-> +	unsigned int status;
-> +
-> +	/* Let the device release the descriptor. */
-> +	dma_rmb();
-> +	status = desc->status;
-> +
-> +	if (!(status & MTK_MAC_DESC_BIT_COWN))
-> +		return -1;
-> +
-> +	desc_data->len = status & MTK_MAC_DESC_MSK_LEN;
-> +	desc_data->flags = status & ~MTK_MAC_DESC_MSK_LEN;
-> +	desc_data->dma_addr = desc->data_ptr;
-> +	desc_data->skb = ring->skbs[ring->tail];
-> +
-> +	desc->data_ptr = 0;
-> +	desc->status = MTK_MAC_DESC_BIT_COWN;
-> +	if (status & MTK_MAC_DESC_BIT_EOR)
-> +		desc->status |= MTK_MAC_DESC_BIT_EOR;
-
-Don't you need a dma_wmb() for the device to observe the new descriptor
-here?
-
-[snip]
-
-> +static void mtk_mac_dma_unmap_tx(struct mtk_mac_priv *priv,
-> +				 struct mtk_mac_ring_desc_data *desc_data)
-> +{
-> +	struct device *dev = mtk_mac_get_dev(priv);
-> +
-> +	return dma_unmap_single(dev, desc_data->dma_addr,
-> +				desc_data->len, DMA_TO_DEVICE);
-
-If you stored a pointer to the sk_buff you transmitted, then you would
-need an expensive read to the descriptor to determine the address and
-length, and you would also not be at the mercy of the HW putting
-incorrect values there.
-
-sp
-> +static void mtk_mac_dma_init(struct mtk_mac_priv *priv)
-> +{
-> +	struct mtk_mac_ring_desc *desc;
-> +	unsigned int val;
-> +	int i;
-> +
-> +	priv->descs_base = (struct mtk_mac_ring_desc *)priv->ring_base;
-> +
-> +	for (i = 0; i < MTK_MAC_NUM_DESCS_TOTAL; i++) {
-> +		desc = &priv->descs_base[i];
-> +
-> +		memset(desc, 0, sizeof(*desc));
-> +		desc->status = MTK_MAC_DESC_BIT_COWN;
-> +		if ((i == MTK_MAC_NUM_TX_DESCS - 1) ||
-> +		    (i == MTK_MAC_NUM_DESCS_TOTAL - 1))
-> +			desc->status |= MTK_MAC_DESC_BIT_EOR;
-> +	}
-> +
-> +	mtk_mac_ring_init(&priv->tx_ring, priv->descs_base, 0);
-> +	mtk_mac_ring_init(&priv->rx_ring,
-> +			  priv->descs_base + MTK_MAC_NUM_TX_DESCS,
-> +			  MTK_MAC_NUM_RX_DESCS);
-> +
-> +	/* Set DMA pointers. */
-> +	val = (unsigned int)priv->dma_addr;
-
-You would probably add a WARN_ON() or something that catches the upper
-32-bits of the dma_addr being set, see my comment about the DMA mask
-setting.
-
-[snip]
-
-> +static void mtk_mac_tx_complete_all(struct mtk_mac_priv *priv)
-> +{
-> +	struct net_device *ndev = priv_to_netdev(priv);
-> +	struct mtk_mac_ring *ring = &priv->tx_ring;
-> +	int ret;
-> +
-> +	for (;;) {
-> +		mtk_mac_lock(priv);
-> +
-> +		if (!mtk_mac_ring_descs_available(ring)) {
-> +			mtk_mac_unlock(priv);
-> +			break;
-> +		}
-> +
-> +		ret = mtk_mac_tx_complete_one(priv);
-> +		if (ret) {
-> +			mtk_mac_unlock(priv);
-> +			break;
-> +		}
-> +
-> +		if (netif_queue_stopped(ndev))
-> +			netif_wake_queue(ndev);
-> +
-> +		mtk_mac_unlock(priv);
-> +	}
-
-Where do you increment the net_device statistics to indicate the bytes
-and packets transmitted?
-
-[snip]
-
-> +	mtk_mac_set_mode_rmii(priv);
-> +
-> +	dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32));
-
-Your code assumes that DMA addresses are not going to be >= 4GB so you
-should be checking this function's return code and abort here otherwise
-your driver will fail in surprisingly difficult ways to debug.
--- 
-Florian
+> 
+> V6
+>  * Rebased on Will's for-joerg/arm-smmu/updates
+>  * Reword commit message and add more details [Stephen]
+> 
+>  drivers/iommu/arm-smmu-qcom.c | 2 ++
+>  1 file changed, 2 insertions(+)
+> 
+> diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
+> index 5bedf21587a56..cf01d0215a397 100644
+> --- a/drivers/iommu/arm-smmu-qcom.c
+> +++ b/drivers/iommu/arm-smmu-qcom.c
+> @@ -17,7 +17,9 @@ static const struct of_device_id qcom_smmu_client_of_match[] = {
+>  	{ .compatible = "qcom,mdp4" },
+>  	{ .compatible = "qcom,mdss" },
+>  	{ .compatible = "qcom,sc7180-mdss" },
+> +	{ .compatible = "qcom,sc7180-mss-pil" },
+>  	{ .compatible = "qcom,sdm845-mdss" },
+> +	{ .compatible = "qcom,sdm845-mss-pil" },
+>  	{ }
+>  };
+>  
+> -- 
+> The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+> a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
