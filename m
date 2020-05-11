@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C02801CDF52
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:45:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AACDE1CDFAD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:51:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hmaxiw/l7GXfFK52joCINSHLuxwo0BrkzWak1LKZOkE=; b=t05ayJHtXCSK1s1aHFu7sIrro
-	VqP3Ik3DfiQExMgON3YaqO89xInkhF95+AUPb4eBMw2r4a25r+WDd6meWXqN4cHWlZiIkn7WoI9mX
-	+M0SJgbpHBiWOK/TpVH/aKelA5TWT4djYrRY08itj2Fm5AkmMZa6hKC7dmYA15okOlqpU0CyKxcWt
-	h7PVIx7kBTS4mSUJzN+DMSow4sgw2m0DtGbb03iSpJZaNzFmalsd5Q7aDONm71pV+Rfls5wcelFGP
-	O1YnC+pvg8rI10ZsuzJdnYqi7EuEvrPZGAd23PoOIuOXrUcyYaeA0SVBP6JJFNt+ZxkjdtrGmb2tT
-	GNNjZbXXg==;
+	 bh=lN44T9H+XbjQMuOeLC5Cre7fYVslVDfxNb6DnEmBcyQ=; b=qAvm5shhVb5qFzVEOG3RI7eer
+	L/8k0Q892Uo+my20YoznrFJ5s8YIXl+MQrXsizhMcCBbeVp5SOXPTATHz+u1LLDh3l8KUr9Pnx9N/
+	Oq5E3YWX+W6CzuxdfObMVnX7IhZ57ev5WTALRpd5Zzk3/Nj3iySmqsnxBaZBreyQ22rMJmvAh4GkM
+	7m1TR7advqB++vfZh8Gk7qVVEPa+ak7L7W5d2+rFcgA2ZuT4XnrzzvtSaH81IG/9ZxaMxduvSkmZl
+	8zQ8AdCqcFTX5ipdYOuoz7g4T85Ol+69xKA5omsJ7uFA70PnD8MisYKRTd/iHLcckMvj/ov/8PmgI
+	DhX5eCatw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYAcH-0006w9-Lo; Mon, 11 May 2020 15:45:17 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYAc5-0005qe-BR
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:45:07 +0000
-Received: from linux-8ccs.fritz.box (p57A239F2.dip0.t-ipconnect.de
- [87.162.57.242])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 44B93206A3;
- Mon, 11 May 2020 15:45:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589211904;
- bh=Dn5xsd49kG0h2c2CrnzZeVPVNAk3al24vvTB0Sc2m0k=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=K4TBHeUOcbjQPuLM1SPMnGs/lByNxC7FONLY6cQMwCuoMn2VLo1q3W/mNi1Ey7Xsn
- xX/vlLJhGaVyh4NjREfDaUziNvuxEaoxjb4DRt+mdWLaka8u8YwbAXkvXBZNwreFUU
- AJEwdcc5i7A6prvHmgLpK0a0UmJgke8Ta04bdjFE=
-Date: Mon, 11 May 2020 17:45:00 +0200
-From: Jessica Yu <jeyu@kernel.org>
-To: Vincent Whitchurch <vincent.whitchurch@axis.com>
-Subject: Re: [PATCH v2 1/2] module: allow arch overrides for .init section
- names
-Message-ID: <20200511154459.GA26699@linux-8ccs.fritz.box>
-References: <20200511114803.4475-1-vincent.whitchurch@axis.com>
+	id 1jYAiS-00036Z-L3; Mon, 11 May 2020 15:51:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYAiG-00035Y-Eb
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:51:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9ED230E;
+ Mon, 11 May 2020 08:51:24 -0700 (PDT)
+Received: from [192.168.1.84] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 19DA63F305;
+ Mon, 11 May 2020 08:51:22 -0700 (PDT)
+Subject: Re: [PATCH v3 10/25] drm: panfrost: fix common struct sg_table
+ related issues
+To: Marek Szyprowski <m.szyprowski@samsung.com>,
+ dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
+ linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
+References: <20200505083926.28503-1-m.szyprowski@samsung.com>
+ <20200505084614.30424-1-m.szyprowski@samsung.com>
+ <CGME20200505084629eucas1p23d2d6a53451e67e2b0a3544eb696008b@eucas1p2.samsung.com>
+ <20200505084614.30424-10-m.szyprowski@samsung.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <eaaeae03-3fd4-fdd7-ec21-3218a5f74a28@arm.com>
+Date: Mon, 11 May 2020 16:51:21 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200511114803.4475-1-vincent.whitchurch@axis.com>
-X-OS: Linux linux-8ccs 4.12.14-lp150.12.61-default x86_64
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200505084614.30424-10-m.szyprowski@samsung.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_084505_443826_E2A87699 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200511_085128_578199_615D8D49 
+X-CRM114-Status: GOOD (  23.07  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,43 +69,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel@axis.com, linux@armlinux.org.uk,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Rob Herring <robh@kernel.org>, Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-+++ Vincent Whitchurch [11/05/20 13:48 +0200]:
->ARM stores unwind information for .init.text in sections named
->.ARM.extab.init.text and .ARM.exidx.init.text.  Since those aren't
->currently recognized as init sections, they're allocated along with the
->core section, and relocation fails if the core and the init section are
->allocated from different regions and can't reach other.
->
->  final section addresses:
->        ...
->        0x7f800000 .init.text
->        ..
->        0xcbb54078 .ARM.exidx.init.text
->        ..
->
-> section 16 reloc 0 sym '': relocation 42 out of range (0xcbb54078 ->
-> 0x7f800000)
->
->Allow architectures to override the section name so that ARM can fix
->this.
->
->Signed-off-by: Vincent Whitchurch <vincent.whitchurch@axis.com>
->---
->v2: Add comment and move module_init_section() next to module_exit_section().
+On 05/05/2020 09:45, Marek Szyprowski wrote:
+> The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
+> numer of the created entries in the DMA address space. However the
+> subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
+> called with the original number of the entries passed to dma_map_sg. The
+> sg_table->nents in turn holds the result of the dma_map_sg call as stated
+> in include/linux/scatterlist.h. A common mistake was to ignore a result
+> of the dma_map_sg function and don't use the sg_table->orig_nents at all.
+> 
+> To avoid such issues, lets use common dma-mapping wrappers operating
+> directly on the struct sg_table objects and adjust references to the
+> nents and orig_nents respectively.
+> 
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 
-Thanks, this patch looks fine to me. You could add my:
+The change looks good to me:
 
-   Acked-by: Jessica Yu <jeyu@kernel.org>
+Reviewed-by: Steven Price <steven.price@arm.com>
 
-Alternatively, I can take this through modules-next if the second
-patch gets a review and ack from an ARM maintainer.
+Although I would have appreciated the commit message being modified to 
+match the specifics of Panfrost - the return of dma_mpa_sg() wasn't 
+being ignored, but the use of orig_nents/nents was indeed wrong.
+
+Steve
+
+> ---
+> For more information, see '[PATCH v3 00/25] DRM: fix struct sg_table nents
+> vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/5/187
+> ---
+>   drivers/gpu/drm/panfrost/panfrost_gem.c | 4 ++--
+>   drivers/gpu/drm/panfrost/panfrost_mmu.c | 5 ++---
+>   2 files changed, 4 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_gem.c b/drivers/gpu/drm/panfrost/panfrost_gem.c
+> index 17b654e..95d7e80 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_gem.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_gem.c
+> @@ -41,8 +41,8 @@ static void panfrost_gem_free_object(struct drm_gem_object *obj)
+>   
+>   		for (i = 0; i < n_sgt; i++) {
+>   			if (bo->sgts[i].sgl) {
+> -				dma_unmap_sg(pfdev->dev, bo->sgts[i].sgl,
+> -					     bo->sgts[i].nents, DMA_BIDIRECTIONAL);
+> +				dma_unmap_sgtable(pfdev->dev, &bo->sgts[i],
+> +						  DMA_BIDIRECTIONAL);
+>   				sg_free_table(&bo->sgts[i]);
+>   			}
+>   		}
+> diff --git a/drivers/gpu/drm/panfrost/panfrost_mmu.c b/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> index ed28aeb..9926111 100644
+> --- a/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> +++ b/drivers/gpu/drm/panfrost/panfrost_mmu.c
+> @@ -517,10 +517,9 @@ static int panfrost_mmu_map_fault_addr(struct panfrost_device *pfdev, int as,
+>   	if (ret)
+>   		goto err_pages;
+>   
+> -	if (!dma_map_sg(pfdev->dev, sgt->sgl, sgt->nents, DMA_BIDIRECTIONAL)) {
+> -		ret = -EINVAL;
+> +	ret = dma_map_sgtable(pfdev->dev, sgt, DMA_BIDIRECTIONAL);
+> +	if (ret)
+>   		goto err_map;
+> -	}
+>   
+>   	mmu_map_sg(pfdev, bomapping->mmu, addr,
+>   		   IOMMU_WRITE | IOMMU_READ | IOMMU_NOEXEC, sgt);
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
