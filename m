@@ -2,77 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 43EE51CD597
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:44:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 490881CD5AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1E77hi4ERW6+oYc2W2ylyhB5hgcKCIfI/nk4yqTfdPg=; b=B/h6sZpNLRYjeR
-	bD7e30vxxf3P0Uz8qm9RpBGcRaiY57NCejEPIVlbagA/MHpAC5zRt9dnNShqahQPoHRUpkhpM7aaQ
-	ZObyv/I6UuSr3jUstY5iRSJwTEu57KO0zQwM5ZCMkpwdHhBaltlWLT4YDl1VEVTbjs1d7PC1Nr/9D
-	NVsOwvWZcEXRhpMv8rT9B84+kvhMtTAwzp1okGCf0WNv4ad5t422Q/6RGPDPM3T1YxoB4jndxNjX3
-	RT3KIIzNqWXlk1re1j5ZroaA4KiBZtr2isNt48NZWqvBZgZBF96BjhhWNdwNIQv16B4cJfqBXUEO7
-	vuFOlKhRj7lggwoaZStg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=bVFnq5ctBXfgeCqnVMb/l9sdGvt6QYhud1v6TaDhgBA=; b=iYXt61DO85BHvEhG5pm+OAaCK
+	I0ZA55Foyk9LdMe2sw+SIQ8dYpM/ev9RL1S3Odvoii97hP/tNBmqKpjRo48EpKO8DEJjbJ6jdYddA
+	eFGIZNAUKu19iZg+bIGKHU22HggrgiH/wDW8SuebKCPeLyhabYlkuasl3NHkkjY3jpWChj//pk47C
+	vBxH9uOVd251UK2OYdCaVQ3GpyemDbAekHVcUcE+AaiZc2DxaD9VrY6IPmp3X7D+k7d1PCYCBfkzn
+	zQxTvCG1pc9UXQ2gkf/mQmrQ/v9BKMgsEPkPFgQyJ4mv7zbMraaPbJvW+NrGweQqgUeKMNhTaTxmQ
+	NNhXt5g3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY4zJ-0004Aj-LM; Mon, 11 May 2020 09:44:41 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jY540-0007ME-Po; Mon, 11 May 2020 09:49:32 +0000
+Received: from new1-smtp.messagingengine.com ([66.111.4.221])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY4yv-00041A-Kv; Mon, 11 May 2020 09:44:19 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04B9i1TG078513;
- Mon, 11 May 2020 04:44:01 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589190241;
- bh=byFyzQdwQhDM3dT5bOyJ2WghB41M52QlHFMI+0b6a0I=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=hmgf4bF3g5JuARgRipO90N1PvW0GwD8QNTHDuyyXUDlNeHfIhIWTM5Yg3hUr2a3L1
- q07eUpscFLogOsbMvNc/eJXct8Ojitroy8pSAuFjzbUwA2g0KKj4kXlvl2/dZwwf+j
- py8opZGiTzJ3Y7mEwFYKPcp8TOWIcmLU3/N1OCRI=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04B9i1AJ059978
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 May 2020 04:44:01 -0500
-Received: from DFLE112.ent.ti.com (10.64.6.33) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 11
- May 2020 04:44:01 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 11 May 2020 04:44:01 -0500
-Received: from [10.250.234.195] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04B9htxe073284;
- Mon, 11 May 2020 04:43:56 -0500
-Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
-To: <Tudor.Ambarus@microchip.com>, <p.yadav@ti.com>,
- <boris.brezillon@collabora.com>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <3649933.zuh8VGJVCz@192.168.0.120>
-From: Vignesh Raghavendra <vigneshr@ti.com>
-Message-ID: <7462190d-7459-7756-a32e-fb08e18d2ee2@ti.com>
-Date: Mon, 11 May 2020 15:13:54 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jY53r-0007Kr-JT
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 09:49:25 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailnew.nyi.internal (Postfix) with ESMTP id 16EDC580127;
+ Mon, 11 May 2020 05:49:17 -0400 (EDT)
+Received: from mailfrontend1 ([10.202.2.162])
+ by compute4.internal (MEProxy); Mon, 11 May 2020 05:49:17 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
+ date:from:to:cc:subject:message-id:references:mime-version
+ :content-type:in-reply-to; s=fm2; bh=AFDLytZLwrAWtNS6DftLVcVEIvL
+ 2Q1JHb78PJuPzU/M=; b=Uvm5+q5OsZm2v0RMLRdSFFCJo7uBUm6w9n26rAXCE+B
+ f7fuiytA91+yrBL92MjnHgURaATHNuP6+l9ph1omHb5SKDpMCMH4PinGNSzSDzR5
+ 7p/0UtSDpXs15ibFeRX7gDFcOmk44bbNLsXwFFy0TxhWCk/T5DJGJwjgnPc1Ds9L
+ bdtg4wdBizph2hQ3GvNT2pGESoN6kv749kiFNRpsj4HSmddVlAowVueSvPpY1CHQ
+ W62rABcYmdpaOqJmXx+dyNsVBaybCRIusPE0Buzp3vFJtWvVTN637mA4Cwpz5ZOu
+ OtlvsQXd6Ukb8w77TUW67IazNoRzHAbsicrXkbXIaOg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=AFDLyt
+ ZLwrAWtNS6DftLVcVEIvL2Q1JHb78PJuPzU/M=; b=ckkifgXt+nysktk4wv6UV6
+ 1gbPDRcIH2cD3SJ8roY9Y6hEddLlw+JW1MM7JgKdkmi2tWecPdoHssB7VWpaUbjI
+ XmZdkswIvB2KqkZxzb+NVbrtKfywS5CrFEqCZ3mWLrf17cMGFN+kJX+8qc00InmS
+ eOY4pkSeWKiJEVqBPvb8grtgH6YGoRMKoZ3EgZe+fQVjRq5H62fx5b2AVSmDG0Hy
+ 520cbYNJn2v0LgU932TL27NbPDbj2tvoiMzr/Exuq2j+lwdJ9A9Eoud4V3NSOLd5
+ iIthU6k/5cwscP2sdALnb9DC4AncuypWH8ODQDIzEMTHo4bZK6r30hwJkmq2IBNA
+ ==
+X-ME-Sender: <xms:mh-5XqruMGqX-eu2ARjQhmI5xCT7GS__lszJB6LLkuJmcB_GRebGVA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrledtgdduhecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpeffhffvuffkfhggtggujgesghdtreertddtjeenucfhrhhomhepofgrgihimhgv
+ ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
+ gvrhhnpeeutdfgjeeuudehvefgvedvtedtudelfffgffekledtffekgedukeejueevieeg
+ udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
+ grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:mh-5XoUcdSeueLFnBPD-uw5IlFrUgKX8oHEcpRcfPf0Dp3eVEl6xtA>
+ <xmx:mh-5Xq0okQc7pvI4nbMsz10hkUPpuEoh-AhCdE4hmlDPZG7_vd7ZLg>
+ <xmx:mh-5XlsDJCCL641W3VBXHe3o_A2KbVYymUGjW4ayScl2SdkUQdxozg>
+ <xmx:nR-5Xn4bRiNIsYfFIbrgL2QYKPtVSj2XizXlI7Qrpn4qYhibzd4Htg>
+Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
+ [90.89.68.76])
+ by mail.messagingengine.com (Postfix) with ESMTPA id A216F328005A;
+ Mon, 11 May 2020 05:49:14 -0400 (EDT)
+Date: Mon, 11 May 2020 11:49:13 +0200
+From: Maxime Ripard <maxime@cerno.tech>
+To: Samuel Holland <samuel@sholland.org>
+Subject: Re: [linux-sunxi] [PATCH v2 2/2] media: cedrus: Implement runtime PM
+Message-ID: <20200511094913.g6mcaq7gmg23zjar@gilmour.lan>
+References: <20200422040410.6251-1-samuel@sholland.org>
+ <20200422040410.6251-2-samuel@sholland.org>
+ <CAAEAJfBdRVZwvEZNU_Hu4eutOO5HJzLLU2HJ2OcP=L+pBZfiTg@mail.gmail.com>
+ <e3bba831-f835-d35b-58a3-c4b6b22c8949@sholland.org>
 MIME-Version: 1.0
-In-Reply-To: <3649933.zuh8VGJVCz@192.168.0.120>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <e3bba831-f835-d35b-58a3-c4b6b22c8949@sholland.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_024417_806996_6973F0C5 
-X-CRM114-Status: GOOD (  20.24  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200511_024923_777467_A6FF9E6D 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.221 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +97,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,83 +109,154 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, richard@nod.at, nsekhar@ti.com,
- linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- broonie@kernel.org, linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-sunxi@googlegroups.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@gmail.com>,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Chen-Yu Tsai <wens@csie.org>, Ezequiel Garcia <ezequiel@vanguardiasur.com.ar>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-media <linux-media@vger.kernel.org>
+Content-Type: multipart/mixed; boundary="===============2203781988100954726=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-
-On 11/05/20 2:30 pm, Tudor.Ambarus@microchip.com wrote:
-> Hi, Pratyush, Boris,
-> 
-> On Friday, April 24, 2020 9:43:54 PM EEST Pratyush Yadav wrote:
->> This series adds support for octal DTR flashes in the spi-nor framework,
-> 
-> I'm still learning about this, but I can give you my 2 cents as of now, to 
-> open the discussion. Enabling 2-2-2, 4-4-4, and 8-8-8 modes is dangerous 
-> because the flash may not recover from unexpected resets. 
-
-Unfortunately, xSPI compliant flashes need to support 1S-1S-1S and
-8D-8D-8D (or 4S-4D-4D) mode only. So we have to start supporting
-state-full modes
-
-> Entering one of these modes can be:
-> 1/ volatile selectable, the device return to the 1-1-1 protocol after the next 
-> power-on. I guess this is conditioned by the optional RESET pin, but I'll have 
-> to check. Also the flash can return to the 1-1-1 mode using the software reset 
-> or through writing to its Configuration Register, without power-on or power-
-> off.
-
-Right, I guess switching to octal mode be made conditional based upon
-SNOR_F_BROKEN_RESET?
-
-> 2/ non-volatile selectable in which RESET# and software reset are useless, the 
-> flash defaults to the mode selected in the non volatile Configuration Register 
-> bits. The only way to get back to 1-1-1 is to write to the Configuration 
-> Register.
-> 
-
-In addition to reset issue, supporting flash that boot up in Octal DDR
-mode (due to non-volatile setting) is still pretty difficult. Commands
-like Read ID and READ SFDP (that are used for flash discovery at
-runtime) follow different protocols across different vendors in Octal
-DDR mode. So its almost impossible to support such flashes w/o a hint
-about device type from DT (or somewhere else).
-I would really stick to option 1 for now until someone makes a
-compelling case to support option 2.
+--===============2203781988100954726==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="7huedradtlhh76dw"
+Content-Disposition: inline
 
 
-> Not recovering from unexpected resets is unacceptable. One should always 
-> prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8 with the 
-> presence of the optional RESET pin.
-> 
-> For the unfortunate flashes that support just option 2/, we should not enter 
-> these modes on our own, just by discovering the capabilities from the SFDP 
-> tables or by the flags in the flash_info struct. The best we can do for them 
-> is to move the responsibility to the user. Maybe to add a Kconfig option that 
-> is disabled by default with which we condition the entering in 2-2-2, 4-4-4 or 
-> 8-8-8 modes. Once entered in one of these modes, if an unexpected reset comes, 
-> you most likely are doomed, because early stage bootloaders may not work in 
-> these modes and you'll not be able to boot the board. Assuming that one uses 
-> other environment to boot the board, we should at least make sure that the 
-> flash works in linux after an unexpected reset. We should try to determine in 
-> which mode we are at init, so maybe an extension of the default_init hook is 
-> needed. But all this looks like a BIG compromise, I'm not yet sure if we 
-> should adress 2/. Thoughts?
-> 
+--7huedradtlhh76dw
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat, May 09, 2020 at 03:03:55PM -0500, Samuel Holland wrote:
+> On 5/5/20 7:53 AM, Ezequiel Garcia wrote:
+> > On Wed, 22 Apr 2020 at 01:00, Samuel Holland <samuel@sholland.org> wrot=
+e:
+> >>
+> >> This allows the VE clocks and PLL_VE to be disabled most of the time.
+> >> A runtime PM reference is held while streaming.
+> >>
+> >> Originally-by: Jernej =C5=A0krabec <jernej.skrabec@gmail.com>
+> >=20
+> > Originally-by is not documented, perhaps just go with Signed-off-by,
+> > as Jernej suggested.
+> >=20
+> >> Signed-off-by: Samuel Holland <samuel@sholland.org>
+> >> ---
+> >>
+> >> v2: moved PM reference to cedrus_{start,stop}_streaming, based on an
+> >>     earlier patch by Jernej Skrabec. Removes the need for autosuspend.
+> >>     I tested this with running 2x v4l2-request-test in parallel.
+> >>
+> >> ---
+> >>  drivers/staging/media/sunxi/cedrus/cedrus.c   |   7 ++
+> >>  .../staging/media/sunxi/cedrus/cedrus_hw.c    | 106 ++++++++++++------
+> >>  .../staging/media/sunxi/cedrus/cedrus_hw.h    |   3 +
+> >>  .../staging/media/sunxi/cedrus/cedrus_video.c |  33 ++++--
+> >>  4 files changed, 104 insertions(+), 45 deletions(-)
+> >>
+> >> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.c b/drivers/sta=
+ging/media/sunxi/cedrus/cedrus.c
+> >> index 05a85517ff60..bc27f9430eeb 100644
+> >> --- a/drivers/staging/media/sunxi/cedrus/cedrus.c
+> >> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.c
+> >> @@ -16,6 +16,7 @@
+> >>  #include <linux/platform_device.h>
+> >>  #include <linux/module.h>
+> >>  #include <linux/of.h>
+> >> +#include <linux/pm.h>
+> >>
+> >>  #include <media/v4l2-device.h>
+> >>  #include <media/v4l2-ioctl.h>
+> >> @@ -551,12 +552,18 @@ static const struct of_device_id cedrus_dt_match=
+[] =3D {
+> >>  };
+> >>  MODULE_DEVICE_TABLE(of, cedrus_dt_match);
+> >>
+> >> +static const struct dev_pm_ops cedrus_dev_pm_ops =3D {
+> >> +       SET_RUNTIME_PM_OPS(cedrus_hw_suspend,
+> >> +                          cedrus_hw_resume, NULL)
+> >> +};
+> >> +
+> >>  static struct platform_driver cedrus_driver =3D {
+> >>         .probe          =3D cedrus_probe,
+> >>         .remove         =3D cedrus_remove,
+> >>         .driver         =3D {
+> >>                 .name           =3D CEDRUS_NAME,
+> >>                 .of_match_table =3D of_match_ptr(cedrus_dt_match),
+> >> +               .pm             =3D &cedrus_dev_pm_ops,
+> >>         },
+> >>  };
+> >>  module_platform_driver(cedrus_driver);
+> >> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c b/drivers/=
+staging/media/sunxi/cedrus/cedrus_hw.c
+> >> index daf5f244f93b..1744e6fcc999 100644
+> >> --- a/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+> >> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_hw.c
+> >> @@ -19,6 +19,7 @@
+> >>  #include <linux/dma-mapping.h>
+> >>  #include <linux/interrupt.h>
+> >>  #include <linux/clk.h>
+> >> +#include <linux/pm_runtime.h>
+> >>  #include <linux/regmap.h>
+> >>  #include <linux/reset.h>
+> >>  #include <linux/soc/sunxi/sunxi_sram.h>
+> >> @@ -140,6 +141,64 @@ static irqreturn_t cedrus_irq(int irq, void *data)
+> >>         return IRQ_HANDLED;
+> >>  }
+> >>
+> >> +int cedrus_hw_suspend(struct device *device)
+> >> +{
+> >> +       struct cedrus_dev *dev =3D dev_get_drvdata(device);
+> >> +
+> >> +       reset_control_assert(dev->rstc);
+> >> +
+> >> +       clk_disable_unprepare(dev->ram_clk);
+> >> +       clk_disable_unprepare(dev->mod_clk);
+> >> +       clk_disable_unprepare(dev->ahb_clk);
+> >> +
+> >=20
+> > You can use clk_bulk API here.
+>=20
+> Since this change is already tested, I'd prefer to do that as a separate
+> patch.
+
+Given that those three clocks are also pretty different from a semantic poi=
+nt of
+view, I'm not sure it's wise to switch to the bulk API anyway.
+
+Maxime
+
+--7huedradtlhh76dw
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXrkfmQAKCRDj7w1vZxhR
+xUgWAP475V+7CuCjiCo2hfLc1qvsVn92Yy/nTm4A9bJS8+oKvwD/eNmxqGe8EaXn
+wGIEJR5YrOpOK0VckZQzMe2av1+1UAw=
+=ZpSw
+-----END PGP SIGNATURE-----
+
+--7huedradtlhh76dw--
 
 
-Agree, lets not worry about option 2 for now...
-
-Regards
-Vignesh
+--===============2203781988100954726==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2203781988100954726==--
+
