@@ -2,126 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E50881CDE02
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:00:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9E881CDE13
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:04:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g+zsP1Pv91VzoD4NSUtgVZ1Dm5+NbFcfBCny9L+o5j0=; b=cx7e9qceaSF0VX
-	M4iaS97mZFK30vi5udI/5BnYzfEpyRITQ6kcPxBIo9+n9Hk9PDvANx7rumrwXmtjpQMGw4KGJLWHe
-	QOjYsxN2x5wfWNQBUMLcMmbMELJKNT/a58LfADIyxhmrlm9eRAaxwlNuJcopd7jfoJNOUXCIBAPmT
-	tpf3xGQ0BouSZdgbGh3Fo1LyLM1WgA/xvu/gB6YSf2qTS/IZ1ELn7IfDpJ1NHElKjED3OzTWRW2Hz
-	vemq03DtA628UZ1XekjHM3TNbPE4Lh6EWBg/il9anua/Q7KdNyQ6+WOAiStTkgYTK7rGnZHqfAXeR
-	r6dtg/enutiq0xRaE8GA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6DQB1ytSp7m/A7927OkIpafpx1nMLXkCKt5xw7JTz9g=; b=Y9hx6W0Kis3H9PtmLy/ohLWJX
+	W/i6KJ906QHk1N5z/bHVHk1VYm781B5FMgFDDqTct/dLUqp+iC8k1uFvlTL0mBM48xvKSf6XlVjkq
+	4avZsblLQxNOPeUCxFtwSOtSPVRjhroWOhpbU3nIbUHqvCHvtd2RWuosIjwp6lq4nimlKDXqBhPb8
+	6f2QmmBlMnq2u0SE7lyzefRYiksTDJddzIjUPKfPk7JNW8drbF8AQTSdc7ij3elrZs7aAKRzrliZ/
+	UAo4XPvUrinb7klP7OFebmfxWKcdGPQMJzPwjnlkj4A0KdRlhFvMNFikOx+SUMZlY3fzwNL+tk77n
+	Cnky6YPwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY9v4-0006p6-HH; Mon, 11 May 2020 15:00:38 +0000
-Received: from mail-eopbgr70084.outbound.protection.outlook.com ([40.107.7.84]
- helo=EUR04-HE1-obe.outbound.protection.outlook.com)
+	id 1jY9yD-0007Zp-VQ; Mon, 11 May 2020 15:03:53 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY9us-000602-EN
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:00:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AeCImlC4chJMb3f5/Lfv7PlcFfdE/JY2gCx7Ruyztl1XbdKcl6vtjTbYn07fV8GewUneFqPV68aZzgDhxwqnEFeFl0JtJedTn7FOuCBhU44dGkflfVl/5loB021qzFUpMyq3BTolTkUz+Begiy5byXur5Gl1niPe4PfIr122WTtPqH9FLg/RifbYBwZ0w1Am0h+bdXJL+gKhKngkc9UEcTttzX0doeE3rdPNDbwxQPgjTWS+yrR2t2mZB6XgeR9ZHNEnAKsAzPd6mWN14Tx5odyn64rt++YQ7piPmgXQJb96ki1kZeG12/Lv4IfmMUXxm+a7+7WifXAi9y/+9uN1Kg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=70kWKPa/VI0yZxSWLk1C9yAVONUDQb8EL+l77CagnBA=;
- b=iKD0G0tL8Xu5PknNLNRgeZ9PYmN4w6V3oTJcDDNkQe6MRCFoAwXL/SUeGIlhLrzovkmQSTy4p+KxJWx75BG3f4dcd/Owg1+KEJVFq2j/7VuM7GSMgqk4zfLzo7KoN617cxtF75qztyQ8tu3RW0PPKGZbwH1FJsbsKodyvwro7jwRYAM7tqammhiXLp6T6KoOrIXV/MCp/tqf8RLdkv+HfDQxIz8d8/yzWu9Qe0RuydjHXBF0YHJrnobeVDja/1nth2vZuScFTN2pnPU/VdWsFU9U1rTkcYTKica+WzYYKh/ztkQRh+6U0fGWewml8Wez8tUbOGd3akuWNRw3v16H1Q==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=oss.nxp.com; dmarc=pass action=none header.from=oss.nxp.com;
- dkim=pass header.d=oss.nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=NXP1.onmicrosoft.com; 
- s=selector2-NXP1-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=70kWKPa/VI0yZxSWLk1C9yAVONUDQb8EL+l77CagnBA=;
- b=E9VmoY9dfWpdo2yy7Bu5JxSh99jwsFyR1i8liUvZ+/6IwPVesV0oEuKkjgCKLrXOnU3YpYZl3BKYBzFiYAJYL9s0HjbuYDqC8Zykl1smjzXfsQ9KlU1o3Y4ClmCGuwOroZiZSEt1y87d7ftzv2E7CnHzwUZ6vxP4VLrZOu22xaQ=
-Authentication-Results: lunn.ch; dkim=none (message not signed)
- header.d=none;lunn.ch; dmarc=none action=none header.from=oss.nxp.com;
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com (2603:10a6:208:130::22)
- by AM0PR04MB6147.eurprd04.prod.outlook.com (2603:10a6:208:13f::19)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.26; Mon, 11 May
- 2020 15:00:12 +0000
-Received: from AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b]) by AM0PR04MB5636.eurprd04.prod.outlook.com
- ([fe80::c4fe:d4a4:f0e1:a75b%4]) with mapi id 15.20.2979.033; Mon, 11 May 2020
- 15:00:12 +0000
-Date: Mon, 11 May 2020 20:29:59 +0530
-From: Calvin Johnson <calvin.johnson@oss.nxp.com>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [net-next PATCH v3 4/5] net: phy: Introduce fwnode_get_phy_id()
-Message-ID: <20200511145959.GA20671@lsv03152.swis.in-blr01.nxp.com>
-References: <CAHp75Vew8Fh6HEoOACk+J9KCpw+AE2t2+oFnXteK1eShopfYAA@mail.gmail.com>
- <83ab4ca4-9c34-4cdd-4413-3b4cdf96727d@arm.com>
- <20200508160755.GB10296@lsv03152.swis.in-blr01.nxp.com>
- <20200508181301.GF298574@lunn.ch>
- <1e33605e-42fd-baf8-7584-e8fcd5ca6fd3@arm.com>
- <20200508202722.GI298574@lunn.ch>
- <97a9e145-bbaa-efb8-6215-dc3109ee7290@arm.com>
- <20200508234257.GA338317@lunn.ch>
- <20200511080040.GC12725@lsv03152.swis.in-blr01.nxp.com>
- <20200511130457.GC409897@lunn.ch>
-Content-Disposition: inline
-In-Reply-To: <20200511130457.GC409897@lunn.ch>
-User-Agent: Mutt/1.9.4 (2018-02-28)
-X-ClientProxiedBy: SG2PR02CA0107.apcprd02.prod.outlook.com
- (2603:1096:4:92::23) To AM0PR04MB5636.eurprd04.prod.outlook.com
- (2603:10a6:208:130::22)
+ id 1jY9y6-0007YY-Qq
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:03:48 +0000
+Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.107])
+ by Forcepoint Email with ESMTP id 3CEBA7F2CD3F1CC8B4DC;
+ Mon, 11 May 2020 16:03:44 +0100 (IST)
+Received: from [127.0.0.1] (10.47.0.142) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Mon, 11 May
+ 2020 16:03:40 +0100
+Subject: Re: [PATCH RFC v3 02/12] perf jevents: Add support for system events
+ tables
+To: Jiri Olsa <jolsa@redhat.com>
+References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
+ <1588852671-61996-3-git-send-email-john.garry@huawei.com>
+ <20200511110137.GC2986380@krava>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <9f4ea413-325f-98b4-eb4c-e47aead4f455@huawei.com>
+Date: Mon, 11 May 2020 16:02:49 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from lsv03152.swis.in-blr01.nxp.com (14.142.151.118) by
- SG2PR02CA0107.apcprd02.prod.outlook.com (2603:1096:4:92::23) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2979.29 via Frontend Transport; Mon, 11 May 2020 15:00:06 +0000
-X-Originating-IP: [14.142.151.118]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: f99488bf-b96b-4f1b-dfd5-08d7f5bc015e
-X-MS-TrafficTypeDiagnostic: AM0PR04MB6147:|AM0PR04MB6147:
-X-MS-Exchange-SharedMailbox-RoutingAgent-Processed: True
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <AM0PR04MB614796BB9D9D6F18379BF94CD2A10@AM0PR04MB6147.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:9508;
-X-Forefront-PRVS: 04004D94E2
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: WPnk+ZAFs1/pxg0oRAIA9ZfT5uPDX7Y2pCUn0X9NQi3kndtcpTgxOpJBzT9wEXCJg56ltSbePrPHvXR6kEbq63RCwH1mSYHSx4X4rULI1glAOj64Ma2M2jAOqmgk2YTwrzdZXdoMweDZFO+1bcvwZgVCbug9EE7CdTPxmqebiqdiDq+kbJABZYDHSoZlwKTgiv830WLCrM9QRXC5sbXAxRAtm8vNfQ7FihITiOTwULnJ2NAAPs5CPAAfXnViiikSnztyUBf4k5BPBeRpaPrX92KNP/kdAyYV+AFHruvLRVkOoQGmoMsbqcZN/d3gBOHMwdcIgoLIJA+cMnX/1YFuRGtozZ7svR57k0VyEEh8WGM8yAeq4P/thNiNPW+arqaTozde4Az6l5g5iVloRCQkRNqp9e1CRJ8MDxy6AMcR0gLsxWMXaCNp2uc4K5I5TPWPnBNMvh3EpT1lCKCuFSjCyL/2FdyPTMLgnf12R/gQKWoASJ9qWiU4NspszUfCFYVMP/VPlOJnsGm05pFjESAjBw3g4ubQ/t9nQDB/YDSBP5eqbK1MSjkGQ+QVo5j7JvZL
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:AM0PR04MB5636.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(136003)(39860400002)(376002)(366004)(346002)(33430700001)(956004)(66556008)(55016002)(316002)(55236004)(478600001)(54906003)(5660300002)(9686003)(2906002)(8936002)(7416002)(66476007)(26005)(66946007)(7696005)(1076003)(44832011)(86362001)(52116002)(33440700001)(33656002)(6506007)(6916009)(8676002)(186003)(1006002)(16526019)(4326008)(6666004)(110426005);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: AxnNMDqn4TewmZcF9GaVqx1FUUanpeHZxNLG1kn3WGijGKzjcAqpUi9oygieQEObnQEZa5XmrRYMG9hXq3VZHrM19hA5WFCuTp03lDuwZT45tAi2YBloTkUwaBFiy45jqwVG9/ByuamU4u3SLfjpZ16KXVIu0kRO5ip8vXNQfTqqi99NITYEGd/bWUdmfvd5W/YfcXKjdnofmp3jsyD99/onlj74rOx6MufolbOCKRHyyhJsnlMyGjrYeXpGFLvPdB088alsdxAtiKFzLJ5Sd5wqVGVmcTzSMZKozz8cLNotZskTi46lYhZhRX6PVH4MIScl8dWjo81tF1ZjdodNLR/GSI/l12zse6S5OCa3g058lbjUAKA3mrS/OxUOZIYdNMqUUpF6XLlxejaGEW+OyQcAQQQrrI5YquKOjEn+4RWQyr1kp2SVxlDsQVIm6VYgb2tBcvd3S9Zj0FyIgV5exYvljeVgaTRSf48Nxw2l020=
-X-OriginatorOrg: oss.nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: f99488bf-b96b-4f1b-dfd5-08d7f5bc015e
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2020 15:00:12.6483 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: ojXa9cEsx+751jZY5Jg7MoiwH4uwqoQHjQSModpw1up5bSwcsCwYwQP4cLHUFe95jAiyTSRWUhiNoT7Kc02l5g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6147
+In-Reply-To: <20200511110137.GC2986380@krava>
+Content-Language: en-US
+X-Originating-IP: [10.47.0.142]
+X-ClientProxiedBy: lhreml705-chm.china.huawei.com (10.201.108.54) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_080026_643094_9880197C 
-X-CRM114-Status: GOOD (  11.82  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200511_080347_020004_22D23D2A 
+X-CRM114-Status: GOOD (  14.05  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.7.84 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.7.84 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [185.176.76.210 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -133,59 +74,124 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- "Rafael J . Wysocki" <rafael@kernel.org>,
- Cristi Sovaiala <cristian.sovaiala@nxp.com>,
- Ioana Ciornei <ioana.ciornei@nxp.com>, Florian Fainelli <f.fainelli@gmail.com>,
- "Rajesh V . Bikkina" <rajesh.bikkina@nxp.com>,
- Pankaj Bansal <pankaj.bansal@nxp.com>,
- Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Diana Madalina Craciun <diana.craciun@nxp.com>,
- ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- Andy Shevchenko <andy.shevchenko@gmail.com>,
- Florin Laurentiu Chiculita <florinlaurentiu.chiculita@nxp.com>,
- Madalin Bucur <madalin.bucur@oss.nxp.com>,
- Makarand Pawagi <makarand.pawagi@nxp.com>, Varun Sethi <V.Sethi@nxp.com>,
- Marcin Wojtas <mw@semihalf.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Jeremy Linton <jeremy.linton@arm.com>, linux.cj@gmail.com,
- netdev <netdev@vger.kernel.org>, "David S. Miller" <davem@davemloft.net>,
- Heiner Kallweit <hkallweit1@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: mark.rutland@arm.com, irogers@google.com, ak@linux.intel.com,
+ qiangqing.zhang@nxp.com, peterz@infradead.org, robin.murphy@arm.com,
+ linuxarm@huawei.com, acme@kernel.org, linux-kernel@vger.kernel.org,
+ zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
+ mingo@redhat.com, namhyung@kernel.org, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 03:04:57PM +0200, Andrew Lunn wrote:
-> > NXP's LX2160ARDB platform currently has the following MDIO-PHY connection.
-> > 
-> > MDIO-1 ==> one 40G PHY, two 1G PHYs(C45), two 10G PHYs(C22)
-> > MDIO-2 ==> one 25G PHY
+On 11/05/2020 12:01, Jiri Olsa wrote:
+> On Thu, May 07, 2020 at 07:57:41PM +0800, John Garry wrote:
 > 
-> It has been suggested that ACPI only support a one to one
-> mapping. Each MAC has one MDIO bus, with one PHY on it. KISS.
+> SNIP
 > 
-> This clearly does not work for your hardware. So not only do we need
-> to solve how PHY properties are described, we also need an equivalent
-> of phy-handle, so a MAC can indicate which PHY it is connected to.
+>> +				      &sys_event_tables);
+>> +		}
+>> +
+>>   		print_events_table_prefix(eventsfp, tblname);
+>>   		return 0;
+>>   	}
+>> @@ -1180,7 +1253,6 @@ int main(int argc, char *argv[])
+>>   	} else if (rc < 0) {
+>>   		/* Make build fail */
+>>   		fclose(eventsfp);
+>> -		free_arch_std_events();
+>>   		ret = 1;
+>>   		goto out_free_mapfile;
+>>   	} else if (rc) {
+>> @@ -1206,27 +1278,31 @@ int main(int argc, char *argv[])
+>>   	if (close_table)
+>>   		print_events_table_suffix(eventsfp);
+>>   
+>> -	if (!mapfile) {
+>> -		pr_info("%s: No CPU->JSON mapping?\n", prog);
+>> -		goto empty_map;
+>> +	if (mapfile) {
+>> +		if (process_mapfile(eventsfp, mapfile)) {
+>> +			pr_err("%s: Error processing mapfile %s\n", prog,
+>> +			       mapfile);
+>> +			/* Make build fail */
+>> +			fclose(eventsfp);
+>> +			ret = 1;
+>> +		}
+>> +	} else {
+>> +		pr_err("%s: No CPU->JSON mapping?\n", prog);
+> 
+> shouldn't we jump to empty_map in here? there still needs to be a
+> mapfile, right?
+
+In theory we could only support sys events :)
+
+But I'll now make this a (empty map) failure case. And I think that 
+another error case handling needs fixing in my patch.
+
+
+As for this:
+
+  +	fprintf(outfp, "struct pmu_sys_events pmu_sys_event_tables[] = {");
+ >> +
+ >> +	list_for_each_entry(sys_event_table, &sys_event_tables, list) {
+ >> +		fprintf(outfp, "\n\t{\n\t\t.table = %s,\n\t},",
+ >> +			sys_event_table->name);
+ >> +	}
+ >> +	fprintf(outfp, "\n\t{\n\t\t.table = 0\n\t},");
+ >
+ > this will add extra tabs:
+ >
+ >          {
+ >                  .table = 0
+ >          },
+ >
+ > while the rest of the file starts items without any indent
+ >
+
+I'll ensure the indent is the same.
+
+BTW, is there anything to be said for removing the empty map feature 
+(and always breaking the perf build instead)? I guess that it was just 
+an early feature for dealing with unstable JSONs.
+
+Thanks,
+john
+
+> 
+> jirka
+> 
+>>   	}
+>>   
+>> -	if (process_mapfile(eventsfp, mapfile)) {
+>> -		pr_info("%s: Error processing mapfile %s\n", prog, mapfile);
+>> -		/* Make build fail */
+>> +	if (process_system_event_tables(eventsfp)) {
+>>   		fclose(eventsfp);
+>> -		free_arch_std_events();
+>>   		ret = 1;
+>>   	}
+>>   
+>> -
+>>   	goto out_free_mapfile;
+>>   
+>>   empty_map:
+>>   	fclose(eventsfp);
+>>   	create_empty_mapping(output_file);
+>> -	free_arch_std_events();
+>>   out_free_mapfile:
+>> +	free_arch_std_events();
+>> +	free_sys_event_tables();
+>>   	free(mapfile);
+>>   	return ret;
+>>   }
+> 
+> SNIP
+> 
+> .
 > 
 
-Right. I had introduced fwnode_get_phy_node() to take care of phy-handle.
-
-> So in effect, you seem to be heading towards a pretty full
-> reproduction of the DT binding. Before you go too much further and
-> waste too much of your time, you might want confirmation from the ACPI
-> people this is not too advanced for what ACPI can do and they tell you
-> to forget ACPI for this hardware and stick with DT.
-
-I've copied the patchset to Rafael and acpi ML.
-Waiting for their response.
-
-Thanks
-Calvin
 
 _______________________________________________
 linux-arm-kernel mailing list
