@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D25161CE18D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 19:22:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E98831CE199
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 19:22:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
 	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pM6NZhaZysN7mGdjgNPWuw7tBOl0NsOHrOd8SgFUX20=; b=nFu6z5Z29qAv5X
-	dEDJeCnb9SJK0LTSj7FuYEzsKTUmaxOTPfm8uVys+EBdpkwPY5PZjGkSD467GgPQ6KtKneGHEwdGO
-	dx/ZFBS9H8tKSH7U6I2CpNC/qYoHLTwf2t0Xy6bcz8XudS3IiULtkekTtQkmof2QTa4mfwwGVz8fD
-	3t3kxz+p0K5IKU6ELmL6KJzrD1O1rNJSbZ05lkydZw2KOI3sV5GVVY3XHPpNUgzDhilTO68X8Tu2s
-	0kzRCLiCZiPTKQ0Cxm2Lt82PW2tcLMPG4ItJ6ie1v/dhxDNApbiTWm2yUGeT+nDBuJwFMruLztMjZ
-	3Hf7MxqsWlxr8e+xsP5A==;
+	List-Owner; bh=XhmVxjz3hGft0wphiqLgamcPWH0WuweSFxsOOiIWOpU=; b=Fki4oMw8hmFgjY
+	s/ZjzqfnZVBgsohEmuYMIpAX+F519sxnxjgx8fyjpvsZqLii4kq+9fsDwiVIxg7NOBIz0KlgVtAn2
+	FnZhyrFi9TP1EA3WNuhm4LivVDJQSNig4tzsldrx34HRW1iHu2lGil+0MOpkEDX5D8L5pxaaym07q
+	vnXhGiYMfPuHICj7sB+ElBcSrjBBsv/6+umH5B8dOuSO7YkWGlt6kodaQIsEh0YeRXcBC+S//o3ex
+	vhi4M8Bk8sjaguJOCpz8K9hcRspdRjj9PSbuhkpJ8Gn3fG23ieuJyxWUXlZEwH8RTItTlZJcvOoek
+	TDqeUfBZFxN070kAtaSw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYC7o-0007F6-Ns; Mon, 11 May 2020 17:21:56 +0000
+	id 1jYC8B-0007dR-Jb; Mon, 11 May 2020 17:22:19 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYC7h-0007Ef-Kl
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 17:21:50 +0000
+ id 1jYC7n-0007JX-NU
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 17:21:57 +0000
 Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6451E20746;
- Mon, 11 May 2020 17:21:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2EB3F20746;
+ Mon, 11 May 2020 17:21:54 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589217708;
- bh=uLiY26Fl0HsdaY+0df8HTe/ulHJxBjmHpFvc/MQdxKo=;
+ s=default; t=1589217714;
+ bh=hbim+lK4kK4svUzZv9ph3jJIF+6ksgUNjk/EOsFRWqo=;
  h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=D85ROROMtcdx6iqvyEY3chT8cRwx2acwED/ck89w9onUCiajphvGfrEaUuGOYC7ja
- 87qbsFodx/iGjXkelEMrwc0r+VX06FWesqsnMaF3dFTzFq/o4+v3KNJpaghu4zqI+8
- kuSN6VvDWwH8O69xThbxxzSEvUhRK73ymiQ183F0=
-Date: Mon, 11 May 2020 18:21:46 +0100
+ b=tDNYww2k6hQ4sYbnEEt/tR5lkW++TYhDRiTFmKPKb5MPvdhzdk/yfl7iHJlGyYgGB
+ AcpkbcqGB+aCE6il8WLv5xRKCJfbIzviLk/KjDiukRD+kaNl/nA9snN4hqUFDarks/
+ JtfkPYd5hGuoGgkryUFt0KjHDjO4eHCtBqVF+yEY=
+Date: Mon, 11 May 2020 18:21:52 +0100
 From: Mark Brown <broonie@kernel.org>
-To: Masahiro Yamada <yamada.masahiro@socionext.com>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-In-Reply-To: <1589185530-28170-1-git-send-email-hayashi.kunihiko@socionext.com>
-References: <1589185530-28170-1-git-send-email-hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH 1/2] spi: uniphier: Depend on HAS_IOMEM
-Message-Id: <158921769452.22432.4067237223059688972.b4-ty@kernel.org>
+To: linux-spi@vger.kernel.org, Alistair Francis <alistair@alistair23.me>
+In-Reply-To: <20200511045330.690507-1-alistair@alistair23.me>
+References: <20200511045330.690507-1-alistair@alistair23.me>
+Subject: Re: [PATCH v2] spi: sun6i: Add support for GPIO chip select lines
+Message-Id: <158921769452.22432.2126080919845661372.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_102149_701267_04102486 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20200511_102155_824826_4BC3580B 
+X-CRM114-Status: UNSURE (   9.23  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -74,17 +74,17 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-spi@vger.kernel.org
+Cc: alistair23@gmail.com, wens@csie.org, linux-arm-kernel@lists.infradead.org,
+ mripard@kernel.org, linux-kernel@vger.kernel.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 May 2020 17:25:29 +0900, Kunihiko Hayashi wrote:
-> The driver uses devm_ioremap_resource() which is only available when
-> CONFIG_HAS_IOMEM is set, so the driver depends on this option.
+On Sun, 10 May 2020 21:53:30 -0700, Alistair Francis wrote:
+> Set use_gpio_descriptors as true to support using generic GPIO
+> lines for the chip select.
 
 Applied to
 
@@ -92,9 +92,7 @@ Applied to
 
 Thanks!
 
-[1/2] spi: uniphier: Depend on HAS_IOMEM
-      (no commit info)
-[2/2] spi: uniphier: Use devm_platform_get_and_ioremap_resource() to simplify code
+[1/1] spi: sun6i: Add support for GPIO chip select lines
       (no commit info)
 
 All being well this means that it will be integrated into the linux-next
