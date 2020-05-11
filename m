@@ -2,55 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E601CD6CB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:46:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 05D0B1CD6CF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:46:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u7tLDRWA0WQQ2D0xA9ULVDOg/KWz25Aj9baN8tNwu1o=; b=P0puxl2nf3dYh3
-	ZVF29W6tXLf+h0oSG4Ch4zGj4R68rvNF3HZ4Ig0es4+PWJh5+Q4imQirTVdIIhRTzOF7wP2wMUl20
-	C+nAcQ0alYP/mWV4tKoCZQObI3LiIk5SR79i1qBLPkvY515Z6tkAZ9hvkKCdA/ykWrcqEt4kHbWuW
-	RYP2Ql3n3oYf0BkCXR34zyR40vuif5Q/QkRkkGat3cqUBEOsU7NDrUfvijVAbntxFhTcrlYzN4fe9
-	qA9TJnuIl7lCp0R/U88gXuxplWOt3YhzeHpdsV+dByVLLf4sFMjNzsAYU+78tqZcfdPfAttB0i7JR
-	zOX/+VU5RdmLYGqKIDKg==;
+	List-Owner; bh=iHy0nnlG1NT2je1SzxVO3JhB+POmRYpFaZDgLJssddA=; b=ZWstb8rXEyDwTd
+	mO+Qrpe1ywGauwUS2KPkafnmeFv4/0Un+CRuw7UM1Tv+Z+0OxZ2fkqSPBmKzSaCZ4k0dEQp1GzqA9
+	OtMCs1MFZjMFo7TS7kyZU8WcGZ1/VV2nYKeX31Eq4nZ/cgfWIVkBNa29uEm5cnmSl9yCWibgsywdw
+	YYHNwmhi4GX+n/PNwuIHPTKtAdq4MmHKqGlSN9xGmEe6doaCghlOJudWNyUPtKucVBfIhZyBVHCjZ
+	yCt0d84O/jVH9MQY+uXKxqvjpLCeVYiD3rqQS8ow29Dce469vpJ8e0uUyzidBqj0FzFi3CbUsACmD
+	pKq3/N+b1oiuGjcALt4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY5we-0004id-JI; Mon, 11 May 2020 10:46:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY5wV-0004hx-Hr; Mon, 11 May 2020 10:45:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8AB041FB;
- Mon, 11 May 2020 03:45:50 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C49693F305;
- Mon, 11 May 2020 03:45:48 -0700 (PDT)
-Date: Mon, 11 May 2020 11:45:38 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH] PCI: brcmstb: Assert fundamental reset on initialization
-Message-ID: <20200511104527.GA24954@e121166-lin.cambridge.arm.com>
-References: <20200507172020.18000-1-nsaenzjulienne@suse.de>
+	id 1jY5xO-00050J-IF; Mon, 11 May 2020 10:46:46 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jY5xE-0004zk-Fd; Mon, 11 May 2020 10:46:37 +0000
+Received: by mail-ed1-x544.google.com with SMTP id s10so7505907edy.9;
+ Mon, 11 May 2020 03:46:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=urJaoEU+KjNM8t/1W6rOD5GSwCsLZCnOcRW+jTf5YXE=;
+ b=Ms5aX7PKhyl1ejvyS3mnFs2nrNI7o9KLkrVFTPKNqwRnap699bfDKc9D6s/vSUipxY
+ FcAiZPLw3t+NcJaMlBhdvTCt08tF4hqsZhyBhh1YG7SxLRFfA1Zu3YEKhkCMUMYPxI6H
+ 9zmn6kQqdvWEwZ0ZGT0oWX1/cOHDbzocBIVHwwX2eKzRjLVvU2Kff77bPXeRxVkHcwq3
+ TGbBnN168spbj604i2YNRNCmZ3LREk8XX577TjlA6Ktvvs4/z5JzGIpmPRvykVGXAmxd
+ C1moJkh5Bs777C9cgkrHv+RmbCaoHSDa24U5ntO2hDwx4OshBUHLh3W31g1z1ofboKB8
+ BStg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=urJaoEU+KjNM8t/1W6rOD5GSwCsLZCnOcRW+jTf5YXE=;
+ b=WbS2hn30MhlABHRF+VvlfAIquZItmf0LpY31SXaUqrEWesKrySKpPGpjfZWhR/O4Gy
+ GVdn4+H+vAhXkVkl7LsBc7ZIABxUFSMi/bcCgQa8JTOw6z3gT4pYxmM41inYI3tn9G2Y
+ xKbq4ymtHrLJY6U4ElDByKjSV/bOfTc5iVPnEaLLWi8wCoOglRFelEUimCImuG6KBTAs
+ FXVl2LerXYedta4c2zJSlwN1nI4IsZ7nZOE+heFKXKxcHJ+bBudjaOtktuSpzWziXINJ
+ Ft2zCvOjKdnGxBTLAtBVCfStep+cF8Q9M5twQHyeqH+M0rT4meV4OkwXnFMUt1fbTq0N
+ 3Bjg==
+X-Gm-Message-State: AGi0PuZYhnELUBYDWywTvzuvOfs54QWJXbs1prPShwyOgaDRTMu+zsHn
+ vgCmzkPIA9T32JIQXcAmgXlOEL3HTp8Ddt+Q70g=
+X-Google-Smtp-Source: APiQypKHPD8WQl5PzmD5IhowpK2bhwpFyWu9KvvRIuxOVec1ue35BXCcqWpfO0EbdFjdmjdqBSG4tdgoyLg8B1+ZCyw=
+X-Received: by 2002:a05:6402:1a46:: with SMTP id
+ bf6mr12476835edb.44.1589193994538; 
+ Mon, 11 May 2020 03:46:34 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507172020.18000-1-nsaenzjulienne@suse.de>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
+ <1588761371-9078-2-git-send-email-amittomer25@gmail.com>
+ <20200510155159.GA27924@Mani-XPS-13-9360>
+In-Reply-To: <20200510155159.GA27924@Mani-XPS-13-9360>
+From: Amit Tomer <amittomer25@gmail.com>
+Date: Mon, 11 May 2020 16:15:57 +0530
+Message-ID: <CABHD4K_h7wc1gc3wvya1PRTRjMRkDPW==yrAWSk7cCF9ghkUjg@mail.gmail.com>
+Subject: Re: [PATCH RFC 1/8] dmaengine: Actions: get rid of bit fields from
+ dma descriptor
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_034551_635803_006DB066 
-X-CRM114-Status: GOOD (  14.45  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_034636_543933_FFCE15AD 
+X-CRM114-Status: UNSURE (   8.06  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [amittomer25[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [amittomer25[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,50 +97,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Florian Fainelli <f.fainelli@gmail.com>,
- s.nawrocki@samsung.com, tim.gover@raspberrypi.com, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jeremy Linton <jeremy.linton@arm.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- Jim Quinlan <james.quinlan@broadcom.com>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel@lists.infradead.org,
- Andrew Murray <amurray@thegoodpenguin.co.uk>
+Cc: Andre Przywara <andre.przywara@arm.com>, linux-actions@lists.infradead.org,
+ cristian.ciocaltea@gmail.com, vkoul@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 07:20:20PM +0200, Nicolas Saenz Julienne wrote:
-> While preparing the driver for upstream this detail was missed.
-> 
-> If not asserted during the initialization process, devices connected on
-> the bus will not be made aware of the internal reset happening. This,
-> potentially resulting in unexpected behavior.
-> 
-> Fixes: c0452137034b ("PCI: brcmstb: Add Broadcom STB PCIe host controller driver")
-> Signed-off-by: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-> ---
->  drivers/pci/controller/pcie-brcmstb.c | 1 +
->  1 file changed, 1 insertion(+)
+Hi
 
-Applied to pci/brcmstb, thanks.
+Thanks for the reply.
 
-Lorenzo
+> I'm in favor of getting rid of bitfields due to its not so defined way of
+> working (and forgive me for using it in first place) but I don't quite like
+> the current approach.
 
-> diff --git a/drivers/pci/controller/pcie-brcmstb.c b/drivers/pci/controller/pcie-brcmstb.c
-> index 0b97b94c4a9a..795a03be4150 100644
-> --- a/drivers/pci/controller/pcie-brcmstb.c
-> +++ b/drivers/pci/controller/pcie-brcmstb.c
-> @@ -699,6 +699,7 @@ static int brcm_pcie_setup(struct brcm_pcie *pcie)
->  
->  	/* Reset the bridge */
->  	brcm_pcie_bridge_sw_init_set(pcie, 1);
-> +	brcm_pcie_perst_set(pcie, 1);
->  
->  	usleep_range(100, 200);
->  
-> -- 
-> 2.26.2
-> 
+Because , its less readable the way we are writing to those different fields ?
+But this can be made more verbose by adding some comments around .
+
+> Rather I'd like to have custom bitmasks (S900/S700/S500?) for writing to those
+> fields.
+>
+I think S900 and S500 are same as pointed out by Cristian. and I didn't get by
+creating custom bitmasks for it ?
+
+Did you mean function like:
+
+lli->hw[OWL_DMADESC_FLEN]= llc_hw_FLEN(len, FCNT_VALUE, FCNT_SHIFT);
+
+Thanks
+-Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
