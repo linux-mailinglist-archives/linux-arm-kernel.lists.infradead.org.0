@@ -2,84 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 82E0A1CE28C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:25:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8A761CE29B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:27:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4sLcknFQSajwx0uFH0x6xYoyAMKhF06in3yYfj3CDaM=; b=SmS/5DU+rJJ+DR
-	RO9XE5Gvq4Q6w75qSBRtd3AUhZTaeykuh2dU/iU0F3UYoRUbZrSaWVerPhavq/Zdu0FD9txNer+Iq
-	3lEwKMF8Gyxm8ljdh8SEXlOnBGLkhT+ZfTDZRZ3srFjqAaXr40KNhj5J8xe+30stjOJ+wkW5flwAe
-	yJrwXKfcdZNd7Gt903zAifcvDqa52wsCHL7QMgQSwAw8ABvNX0v0MtOulRrz0ieOjWZjU268vw8gf
-	Yd8A1MDvzquU98Ux0XlNyb5e0REcFRvUVfTRDCGxWC4+SLt93DwLKIPMdjMiwQoCARQOdVMygAloS
-	8s6OqJ0IsWyxEFfK4IKQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=fjdU4tAu9dIo2jfN2NAFIXN6pLKAoUnHWrdF8b7Eq38=; b=eMa
+	C9xI5a+A2qzAUnIXfF+DlYza6QbJurkexA+aGbfF28Th8/zVBpxC+orl0pU9L+L9klUgGO7Phe7pE
+	JkRvD6CbPr8cFBm8jC4s/ESmkVveXZGg2NysMr4sANiW//BltlkFSUbnEmy1P+W9o4VsB+69bJclN
+	ZeSp6q8XOxNGm6TIwJVx9kv0BXEtXyj6usztKTAiw9Ac5pX8ahXMNhP8NRTBvuKLPX9Xqo60HutOj
+	0bjobJ/I0ePLTVCDxZPkG6aJ1lzKf6VHG4qwQahUOK7tAncjslFRk3zKlBiLFbmWsrGX3K2FCLUC3
+	b56luyIBQXx+edtdiNDfwpBinS91kNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYD78-0004mE-Pa; Mon, 11 May 2020 18:25:18 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jYD94-0006v3-S0; Mon, 11 May 2020 18:27:18 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYD6t-00042m-LO; Mon, 11 May 2020 18:25:05 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04BIOvqo080948;
- Mon, 11 May 2020 13:24:57 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589221497;
- bh=hJLYMptzNWCT2nBGzqtwtRbCzj89zOemjfUVGWWmvq8=;
- h=Date:From:To:CC:Subject:References:In-Reply-To;
- b=kRBX/UYTIJPvURcW2quJqeY9dWna9Z8FokWumJAkr2O9TfPJKXW1C/WVCGnL8sF46
- fAGKfo4rrchhj/nm5pJiZpZ/f9uMxBBFO55qGa3sYNaa2nExrfhe9FfR8ppHTAtBgt
- w3DXFEbQpRVcW3TH80+XA37ROsdVgCekZS+Vfxd8=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04BIOvSX024459
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 May 2020 13:24:57 -0500
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 11
- May 2020 13:24:56 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 11 May 2020 13:24:56 -0500
-Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04BIOu9u096276;
- Mon, 11 May 2020 13:24:56 -0500
-Date: Mon, 11 May 2020 23:54:55 +0530
-From: Pratyush Yadav <p.yadav@ti.com>
-To: Boris Brezillon <boris.brezillon@collabora.com>
-Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
-Message-ID: <20200511182453.ivfwu4wlfn2ta5ag@ti.com>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <3649933.zuh8VGJVCz@192.168.0.120>
- <20200511112712.466f7246@collabora.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200511112712.466f7246@collabora.com>
-User-Agent: NeoMutt/20171215
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1jYD8w-0006uY-4e
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:27:11 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589221630; h=Message-Id: Date: Subject: Cc: To: From:
+ Sender; bh=4tojzUk0+KKF9I2AVQ6mA8PuzXqs6EPae9bRmzGTpvM=;
+ b=tMMXsDjtJPf1qw9W/X9X31rzdIfbDfCBGcfk66jaZuhiGKJgg4Zq2O746+tFXAH6wlRTZZFq
+ 7VIQTtQBKI49IztMsHJS1Q5HfFbUjHEJjR2fUx8V4fiaqrlxm/yZCYF42QEgtxjkx7cXuWRf
+ Scc40x6HgHnpZIq/F5DrMosEEo4=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5eb998fc.7f8bea323df8-smtp-out-n05;
+ Mon, 11 May 2020 18:27:08 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 681FFC43636; Mon, 11 May 2020 18:27:07 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from eberman-linux.qualcomm.com (i-global254.qualcomm.com
+ [199.106.103.254])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: eberman)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 0B77DC433F2;
+ Mon, 11 May 2020 18:27:05 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0B77DC433F2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=eberman@codeaurora.org
+From: Elliot Berman <eberman@codeaurora.org>
+To: Jason Baron <jbaron@akamai.com>,
+	Joe Perches <joe@perches.com>
+Subject: [PATCH] Revert "dynamic_debug: Remove unnecessary __used"
+Date: Mon, 11 May 2020 11:26:58 -0700
+Message-Id: <1589221618-21808-1-git-send-email-eberman@codeaurora.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_112503_871837_1A0D9A2B 
-X-CRM114-Status: GOOD (  29.99  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200511_112710_411043_F70FB911 
+X-CRM114-Status: GOOD (  13.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.26 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,105 +90,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, vigneshr@ti.com, Tudor.Ambarus@microchip.com,
- richard@nod.at, nsekhar@ti.com, linux-kernel@vger.kernel.org,
- Ludovic.Desroches@microchip.com, broonie@kernel.org,
- linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Trilok Soni <tsoni@codeaurora.org>, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/05/20 11:27AM, Boris Brezillon wrote:
-> On Mon, 11 May 2020 09:00:35 +0000
-> <Tudor.Ambarus@microchip.com> wrote:
-> 
-> > Hi, Pratyush, Boris,
-> > 
-> > On Friday, April 24, 2020 9:43:54 PM EEST Pratyush Yadav wrote:
-> > > This series adds support for octal DTR flashes in the spi-nor framework,  
-> > 
-> > I'm still learning about this, but I can give you my 2 cents as of now, to 
-> > open the discussion. Enabling 2-2-2, 4-4-4, and 8-8-8 modes is dangerous 
-> > because the flash may not recover from unexpected resets. Entering one of 
-> > these modes can be:
-> > 1/ volatile selectable, the device return to the 1-1-1 protocol after the next 
-> > power-on. I guess this is conditioned by the optional RESET pin, but I'll have 
-> > to check. Also the flash can return to the 1-1-1 mode using the software reset 
-> > or through writing to its Configuration Register, without power-on or power-
-> > off.
-> 
-> My understanding is that there's no standard software reset procedure
-> that guarantees no conflict with existing 1S commands, so even the
-> software reset approach doesn't work here.
-> 
-> > 2/ non-volatile selectable in which RESET# and software reset are useless, the 
-> > flash defaults to the mode selected in the non volatile Configuration Register 
-> > bits. The only way to get back to 1-1-1 is to write to the Configuration 
-> > Register.
-> 
-> I'm less worried about this case though, since I'd expect the ROM
-> code and bootloaders to be able to deal with xD-xD-xD modes when the
-> flash is set in this mode by default. That implies letting Linux know
-> about this default mode of course, maybe through an extra DT
-> property/cmdline param.
-> 
-> > 
-> > Not recovering from unexpected resets is unacceptable. One should always 
-> > prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8 with the 
-> > presence of the optional RESET pin.
-> 
-> Totally agree with you on that one, but we know what happens in
-> practice...
-> 
-> > 
-> > For the unfortunate flashes that support just option 2/, we should not enter 
-> > these modes on our own, just by discovering the capabilities from the SFDP 
-> > tables or by the flags in the flash_info struct. The best we can do for them 
-> > is to move the responsibility to the user. Maybe to add a Kconfig option that 
-> > is disabled by default with which we condition the entering in 2-2-2, 4-4-4 or 
-> > 8-8-8 modes.
-> 
-> Hm, a Kconfig option doesn't sound like the right solution to the
-> problem, since it should be a per-flash decision, not something you set
-> system-wise.
+This reverts commit c0d2af637863940b1a4fb208224ca7acb905c39f.
 
-Agreed.
+Some compilers[1] may break dynamic_hex_dump by optimizing the
+DYNAMIC_DEBUG_BRANCH check inside __dynamic_func_call_no_desc and completely
+removing the dynamic debug metadata. Thus, there is no dynamic_debug control
+site to enable or disable. The if condition is optimized away based on the
+initial value of flags (i.e. if DEBUG macro is present).
 
-Is there any such flash in use today? The two flashes the series adds 
-support for both have volatile configuration for 8D mode. Unless we have 
-to support a flash like this in practice, I think such a change is out 
-of the scope of this series.
+[1]: This behavior is present on [aarch64-gnu-linux-gcc (Ubuntu/Linaro
+5.4.0-6ubuntu1~16.04.9) 5.4.0 20160609] and [Android Common Kernel
+toolchain: "Android (6051079 based on r370808) clang version
+10.0.1"] using arm64 default defconfig + DYNAMIC_DEBUG enabled.
+
+Change-Id: I28e9b86088eee5d5ed2384fbcea2ac2e7337a559
+Signed-off-by: Elliot Berman <eberman@codeaurora.org>
+---
+ include/linux/dynamic_debug.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/linux/dynamic_debug.h b/include/linux/dynamic_debug.h
+index abcd5fd..7518db4f 100644
+--- a/include/linux/dynamic_debug.h
++++ b/include/linux/dynamic_debug.h
+@@ -79,7 +79,7 @@ void __dynamic_ibdev_dbg(struct _ddebug *descriptor,
+ 			 const char *fmt, ...);
  
-> > Once entered in one of these modes, if an unexpected reset comes, 
-> > you most likely are doomed, because early stage bootloaders may not work in 
-> > these modes and you'll not be able to boot the board. Assuming that one uses 
-> > other environment to boot the board, we should at least make sure that the 
-> > flash works in linux after an unexpected reset. We should try to determine in 
-> > which mode we are at init, so maybe an extension of the default_init hook is 
-> > needed. But all this looks like a BIG compromise, I'm not yet sure if we 
-> > should adress 2/. Thoughts?
-> 
-> We should definitely not write non-volatile regs on our own, but
-> instead use the mode that's been chosen there. I doubt anyone
-> setting the non-volative conf to 8D-8D-8D will ever want to go back to
-> 1S-1S-1S anyway, so 8D -> 1S transitions are not really an issue, right?
-> 
-> Of course, that still leaves us with the 'mode detection' issue, and I
-> have no solution other than flagging it through the DT/cmdline for that
-> one...
-
-Correct. I tried doing it, and the best way I could figure out was to 
-try reading the SFDP signature in 1S and 8D mode, and see where we get 
-the correct value. But unfortunately, because the Read ID command is 
-different in 8D mode for different flashes, we can't then figure out 
-which flash it actually is.
-
+ #define DEFINE_DYNAMIC_DEBUG_METADATA(name, fmt)		\
+-	static struct _ddebug  __aligned(8)			\
++	static struct _ddebug __used __aligned(8)		\
+ 	__attribute__((section("__verbose"))) name = {		\
+ 		.modname = KBUILD_MODNAME,			\
+ 		.function = __func__,				\
 -- 
-Regards,
-Pratyush Yadav
-Texas Instruments India
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
