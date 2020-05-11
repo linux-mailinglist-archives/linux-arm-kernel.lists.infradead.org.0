@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 726911CD819
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:25:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E78381CD81C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:26:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=XReMQSFrk3d07/31clcJAWT2Qe99i6KQhGivgIAOHHU=; b=lhTzdQTnV5MyEEEcTEySAOr9aF
-	vCZ0NeyEizgWf9jb0/aZ0rG9OL1qaA3yPulKYHjS4BQheswmbZ1O5u3suM0vPKiaOKH4jPvh6Le+i
-	rdMXzx1HYN0rZTEnVAN+M5OeL5yiAKpJkNf2vbj2W8xoDqzQcY+1Ge+aUb+cjme00F2ydn/YXkXp5
-	OmGxz6QxHtlML8h40apHRXL0t5xg5BranoJlolLm0BrrBsYKF6LIXt76oEpUStCI4/yd0VZqKW/9G
-	VxcFs99NjqTaXIYKsdTSyT5VxjkFRBYbplCmduxavFtBfdxXPOtyLNtfEDOfRtCKGiCNqQ+K231lb
-	BQWRXF0Q==;
+	bh=XVO97r7adBtOUP6TbJxeAMr6Jf+X/wZMFq0wjYcAf6o=; b=YsEfP9U9Tz/3YW03gxlYK4YzRg
+	zDkhLX27xiX6rNtUZFvHc6WkNQNLF+wk1nHAi9z70Ed6AmazDtx0ZHVLEBNo6sCVYMG59PmrkoBGj
+	Do7cbhZIhho5KGcFOnrMPCWRfKvp6klhlz/7w7xegJkgT9HAip5gn+5XAi90pTymtyUHKn8W+jIrT
+	HX3dPX+FsLQMt9m8i24xu4sitmwy/LGWRWszQ4VNrUABb7CxqA5wRdSzmWz/8fTNNDovyvZg/hote
+	6tvJkYIHPvump+0mg3kkbVzaVcmXv2nnrrg2EqoW7Ch0SfVEACOL99pY7UiL6dbQeiK9pWuZXh1Fo
+	OYems7gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6Z5-0005ru-GR; Mon, 11 May 2020 11:25:43 +0000
+	id 1jY6Zb-0006Ks-C4; Mon, 11 May 2020 11:26:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6VZ-0000Lx-LR; Mon, 11 May 2020 11:22:10 +0000
+ id 1jY6Vk-0000WO-9E; Mon, 11 May 2020 11:22:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EAE0F1045;
- Mon, 11 May 2020 04:22:04 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F28F101E;
+ Mon, 11 May 2020 04:22:15 -0700 (PDT)
 Received: from e123648.arm.com (unknown [10.37.12.83])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 9D86F3F305;
- Mon, 11 May 2020 04:21:54 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 506FB3F305;
+ Mon, 11 May 2020 04:22:05 -0700 (PDT)
 From: Lukasz Luba <lukasz.luba@arm.com>
 To: linux-kernel@vger.kernel.org, linux-pm@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, dri-devel@lists.freedesktop.org,
  linux-omap@vger.kernel.org, linux-mediatek@lists.infradead.org,
  linux-arm-msm@vger.kernel.org, linux-imx@nxp.com
-Subject: [PATCH v7 14/15] thermal: devfreq_cooling: update license to use SPDX
-Date: Mon, 11 May 2020 12:19:11 +0100
-Message-Id: <20200511111912.3001-15-lukasz.luba@arm.com>
+Subject: [PATCH v7 15/15] drm/panfrost: Register devfreq cooling and attempt
+ to add Energy Model
+Date: Mon, 11 May 2020 12:19:12 +0100
+Message-Id: <20200511111912.3001-16-lukasz.luba@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200511111912.3001-1-lukasz.luba@arm.com>
 References: <20200511111912.3001-1-lukasz.luba@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_042205_806797_5E030773 
-X-CRM114-Status: UNSURE (   9.53  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200511_042216_404504_9CD15E3F 
+X-CRM114-Status: GOOD (  10.24  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -83,62 +83,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Change the license headers and use SPDX standard.
+Register devfreq cooling device and attempt to register Energy Model. This
+will add the devfreq device to the Energy Model framework. It will create
+a dedicated and unified data structures used i.e. in thermal framework.
+The last NULL parameter indicates that the power model is simplified and
+created based on DT 'dynamic-power-coefficient', voltage and frequency.
 
+Reviewed-by: Steven Price <steven.price@arm.com>
+Reviewed-by: Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>
 Signed-off-by: Lukasz Luba <lukasz.luba@arm.com>
 ---
- drivers/thermal/devfreq_cooling.c | 12 ++----------
- include/linux/devfreq_cooling.h   | 12 ++----------
- 2 files changed, 4 insertions(+), 20 deletions(-)
+ drivers/gpu/drm/panfrost/panfrost_devfreq.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/thermal/devfreq_cooling.c b/drivers/thermal/devfreq_cooling.c
-index 79dcef3dbeeb..77d996fd82d2 100644
---- a/drivers/thermal/devfreq_cooling.c
-+++ b/drivers/thermal/devfreq_cooling.c
-@@ -1,17 +1,9 @@
-+// SPDX-License-Identifier: GPL-2.0
- /*
-  * devfreq_cooling: Thermal cooling device implementation for devices using
-  *                  devfreq
-  *
-- * Copyright (C) 2014-2015 ARM Limited
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-- *
-- * This program is distributed "as is" WITHOUT ANY WARRANTY of any
-- * kind, whether express or implied; without even the implied warranty
-- * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-+ * Copyright (C) 2014-2020 ARM Limited
-  *
-  * TODO:
-  *    - If OPPs are added or removed after devfreq cooling has
-diff --git a/include/linux/devfreq_cooling.h b/include/linux/devfreq_cooling.h
-index 613678ce23df..1f5c07c78f0f 100644
---- a/include/linux/devfreq_cooling.h
-+++ b/include/linux/devfreq_cooling.h
-@@ -1,17 +1,9 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
- /*
-  * devfreq_cooling: Thermal cooling device implementation for devices using
-  *                  devfreq
-  *
-- * Copyright (C) 2014-2015 ARM Limited
-- *
-- * This program is free software; you can redistribute it and/or modify
-- * it under the terms of the GNU General Public License version 2 as
-- * published by the Free Software Foundation.
-- *
-- * This program is distributed "as is" WITHOUT ANY WARRANTY of any
-- * kind, whether express or implied; without even the implied warranty
-- * of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-- * GNU General Public License for more details.
-+ * Copyright (C) 2014-2020 ARM Limited
-  */
+diff --git a/drivers/gpu/drm/panfrost/panfrost_devfreq.c b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+index 413987038fbf..8759a73db153 100644
+--- a/drivers/gpu/drm/panfrost/panfrost_devfreq.c
++++ b/drivers/gpu/drm/panfrost/panfrost_devfreq.c
+@@ -105,7 +105,7 @@ int panfrost_devfreq_init(struct panfrost_device *pfdev)
+ 	}
+ 	pfdev->devfreq.devfreq = devfreq;
  
- #ifndef __DEVFREQ_COOLING_H__
+-	cooling = of_devfreq_cooling_register(dev->of_node, devfreq);
++	cooling = devfreq_cooling_em_register(devfreq, NULL);
+ 	if (IS_ERR(cooling))
+ 		DRM_DEV_INFO(dev, "Failed to register cooling device\n");
+ 	else
 -- 
 2.17.1
 
