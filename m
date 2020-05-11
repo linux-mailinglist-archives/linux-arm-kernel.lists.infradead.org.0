@@ -2,90 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D8BD1CD3E2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 10:28:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 387BB1CD3F3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 10:31:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q8JrZd2/d3pLCWzw/S4W5k9BidLX13NggL3i+DWe/F8=; b=uR2J+My8Hyq6FZ
-	UA6ssci7Ls+XNvKh1Z32SahcMlTyUGGFannT5ZxfqLiyHMHppnH9LpGIBZ+euEumHfYTUY+LT/Av4
-	u8gZxhIqjnxUj1xanY9os2UgIiwtQhXhXsHtWZhltdQG/BbjnXzjMx1qXWI/JisD02FAXVos7mgVR
-	TxI5CKlhRcQXBwbqLgenSCVrmveERJowbHr1eTmEBJl5Y+bty3RJkepc93aC5OMJu5kQmeMb5iCVy
-	CmGEtYt/8518jKH663O2Nuz72Ue/FHtHoHc2LAfzFcZ59LStK69WnHKBXcuGHkOKktl7ml7SQcbtg
-	gDdWKvLG3aVRIfKuLBcw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YTKw1vhwz8CuOayws6mGsgeR2MZvUXpbECFwlA8Eyjc=; b=F9Yg5zOIK8kJCv
+	C7G4y1y6gdy1yT8yJw4UBwQtClPLmAduWlOtumb2svaiQZzrrqdN097pedh7VTgeGGy282ygADVIJ
+	8iTVtt3alXN9xMTZ9JV6xQkxDMn5wGwdHqNh8bDB8PdlNJpmfmSPpeWlvELLnpvVVZ0NBaKlzwugS
+	IWQJmtVs/Y8alr3vE2D0QAd4eXiYfCaTvT6mZdUwvL/PilXWyTF34V/03lYVMWCY+5l/gNy84PDQF
+	leg1jaQoNU7V+ZSEZGNdy0ccEvxRmDgWUOYbfYXjSpnKjuzF4b2YmuWn+bAi1ZBMrrkc05s2IVwC2
+	jnbzp9RDuiD9sbsfLKMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY3nb-0004wR-Jj; Mon, 11 May 2020 08:28:31 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jY3qG-0008Ff-H7; Mon, 11 May 2020 08:31:16 +0000
+Received: from [27.111.83.178] (helo=mail.gtsys.com.hk)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY3nM-0004vd-RQ
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 08:28:19 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04B8S0Bg010988; Mon, 11 May 2020 10:28:12 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=ARKtW82Ju4foRRG5jzp6GKL8UxrRXVO/KxZ4yej17EA=;
- b=YFyWS89NgLXHX4OBgXe4bdHZ0ZrWu3Se8fTc63Y7Y7DZ1QCCq3Hd6g+I9JYmYYTEmEcY
- oMDyhNRAzcGcsj4jrNNcl5qEQy/W4P0iBT84tCCw894FoqHhLIHhDIRgoeCOLz/jMwOa
- xdIXW8pRnV/jgNccj3k6tzeSOlvLjCCn3FDmVpcu6DYota4vSFCdOHMfZVviRLnYONC9
- uXwtKcj+BW8RSD/0e733l81RcgUU1B4R8EuolGkDqpLbsJZ8yjTXzHcWfGaaoQ0LW2hC
- mn/9z3mAQ86o5V+xQgSZmyAFm/nNwJXG6aJ7ygfyA3RrRhk7tZNSYmxOcAwFJAC9DWsU jQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30wj01sa7x-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Mon, 11 May 2020 10:28:11 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 6D58A10002A;
- Mon, 11 May 2020 10:28:06 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 5B1482B27B5;
- Mon, 11 May 2020 10:28:06 +0200 (CEST)
-Received: from [10.131.226.156] (10.75.127.47) by SFHDAG5NODE2.st.com
- (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 11 May
- 2020 10:28:04 +0200
-Subject: Re: [PATCH 2/4] i2c: addition of client reg/unreg callbacks
-To: Alain Volmat <alain.volmat@st.com>, <wsa@kernel.org>, <robh+dt@kernel.org>
-References: <1588657871-14747-1-git-send-email-alain.volmat@st.com>
- <1588657871-14747-3-git-send-email-alain.volmat@st.com>
-From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
-Message-ID: <a68f47ca-47e1-a293-f4ad-a5104c9ee620@st.com>
-Date: Mon, 11 May 2020 10:28:07 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1jY3pn-00082W-5D; Mon, 11 May 2020 08:30:48 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id C7A462002518;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+X-Virus-Scanned: Debian amavisd-new at gtsys.com.hk
+Received: from mail.gtsys.com.hk ([127.0.0.1])
+ by localhost (mail.gtsys.com.hk [127.0.0.1]) (amavisd-new, port 10024)
+ with ESMTP id AuE0Dfh_okQ8; Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: from s01.gtsys.com.hk (unknown [10.128.4.2])
+ by mail.gtsys.com.hk (Postfix) with ESMTP id A2E5320020CB;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: from armhf2.gtsys.com.hk (unknown [10.128.4.15])
+ by s01.gtsys.com.hk (Postfix) with ESMTP id 96943C01F94;
+ Mon, 11 May 2020 16:30:40 +0800 (HKT)
+Received: by armhf2.gtsys.com.hk (Postfix, from userid 1000)
+ id 3F6272001DE; Mon, 11 May 2020 16:30:40 +0800 (HKT)
+From: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+To: Chris Ruehl <chris.ruehl@gtsys.com.hk>,
+	Jack Lo <jack.lo@gtsys.com.hk>
+Subject: [PATCH v1 0/3] spi: spi-rockchip spi slave mode
+Date: Mon, 11 May 2020 16:30:19 +0800
+Message-Id: <20200511083022.23678-1-chris.ruehl@gtsys.com.hk>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <1588657871-14747-3-git-send-email-alain.volmat@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG5NODE2.st.com
- (10.75.127.14)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-11_03:2020-05-11,
- 2020-05-11 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_012818_422584_8DAE978E 
-X-CRM114-Status: GOOD (  21.95  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200511_013047_354670_0B1DD665 
+X-CRM114-Status: UNSURE (   6.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.3 (+)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,93 +68,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, alexandre.torgue@st.com,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+The spi-rockchip driver does not implement spi slave mode, but the register map
+have a corresponding flag. An example implementation found
+here: https://dev.t-firefly.com/thread-101485-1-1.html
+This patchset clean the compatiblity names and add support slave mode.
+We need the slave mode for our project, but the PCBA is not yet available
+in consequence the code in the patch isn't tested yet but need your review.
 
-Reviewed-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+Patch 1/3
+Cleanup, move from the compatibily layer struct spi_master over
+to struct spi_controller, and rename the related function calls.
 
-Thanks
+Patch 2/3
+Add support for spi slave mode and support function
 
-On 5/5/20 7:51 AM, Alain Volmat wrote:
-> Addition of two callbacks reg_client and unreg_client that can be
-> implemented by adapter drivers in order to take action whenever a
-> client is being registered to it.
-> 
-> Signed-off-by: Alain Volmat <alain.volmat@st.com>
-> ---
->  drivers/i2c/i2c-core-base.c | 11 +++++++++++
->  include/linux/i2c.h         |  6 ++++++
->  2 files changed, 17 insertions(+)
-> 
-> diff --git a/drivers/i2c/i2c-core-base.c b/drivers/i2c/i2c-core-base.c
-> index 2e4560671183..4c84c6264314 100644
-> --- a/drivers/i2c/i2c-core-base.c
-> +++ b/drivers/i2c/i2c-core-base.c
-> @@ -319,6 +319,12 @@ static int i2c_device_probe(struct device *dev)
->  	if (!client)
->  		return 0;
->  
-> +	if (client->adapter->algo->reg_client) {
-> +		status = client->adapter->algo->reg_client(client);
-> +		if (status)
-> +			return status;
-> +	}
-> +
->  	driver = to_i2c_driver(dev->driver);
->  
->  	client->irq = client->init_irq;
-> @@ -417,6 +423,8 @@ static int i2c_device_probe(struct device *dev)
->  put_sync_adapter:
->  	if (client->flags & I2C_CLIENT_HOST_NOTIFY)
->  		pm_runtime_put_sync(&client->adapter->dev);
-> +	if (client->adapter->algo->reg_client)
-> +		client->adapter->algo->unreg_client(client);
->  
->  	return status;
->  }
-> @@ -445,6 +453,9 @@ static int i2c_device_remove(struct device *dev)
->  	if (client->flags & I2C_CLIENT_HOST_NOTIFY)
->  		pm_runtime_put(&client->adapter->dev);
->  
-> +	if (client->adapter->algo->unreg_client)
-> +		client->adapter->algo->unreg_client(client);
-> +
->  	return status;
->  }
->  
-> diff --git a/include/linux/i2c.h b/include/linux/i2c.h
-> index 45d36ba4826b..61b838caf454 100644
-> --- a/include/linux/i2c.h
-> +++ b/include/linux/i2c.h
-> @@ -509,6 +509,8 @@ i2c_register_board_info(int busnum, struct i2c_board_info const *info,
->   *   so e.g. PMICs can be accessed very late before shutdown. Optional.
->   * @functionality: Return the flags that this algorithm/adapter pair supports
->   *   from the ``I2C_FUNC_*`` flags.
-> + * @reg_client: Callback informing that a new client is being registered
-> + * @unreg_client: Callback informing that a client is being removed
->   * @reg_slave: Register given client to I2C slave mode of this adapter
->   * @unreg_slave: Unregister given client from I2C slave mode of this adapter
->   *
-> @@ -545,6 +547,10 @@ struct i2c_algorithm {
->  	/* To determine what the adapter supports */
->  	u32 (*functionality)(struct i2c_adapter *adap);
->  
-> +	/* To inform the adapter of the probe/remove of a client */
-> +	int (*reg_client)(struct i2c_client *client);
-> +	void (*unreg_client)(struct i2c_client *client);
-> +
->  #if IS_ENABLED(CONFIG_I2C_SLAVE)
->  	int (*reg_slave)(struct i2c_client *client);
->  	int (*unreg_slave)(struct i2c_client *client);
-> 
+Patch 3/3
+Use OF property num-cs and enable support for cs_gpiods
+
+IMHO its wrong, that the num_chipselect is set fixed to the amount of 
+native chip-select lines. SPI0 which has two native lines, while the others
+SPIs one native cs line only.
+Set max_native_cs in the controller struct with ROCKCHIP_SPI_MAX_CS_NUM seems
+the correct way to do and let num-cs the OF / dts config set the CS count for
+the boards.
+
+Patch against next-20200508
+
+Thanks for review!
+
+Happy hacking
+Chris
+
+Signed-off-by: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+---
+
 
 _______________________________________________
 linux-arm-kernel mailing list
