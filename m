@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D10241CD974
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 14:16:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5081CD996
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 14:25:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1jsJjNV2BCQn4uCu10fBcy0JBuiFbsZ7d9wR4/njTS8=; b=gEFlIys7Fn1rHV
-	+NpKgMIXE1194T9vbjW61Qlvl5117p82fcxeTqP8fZpIUtSztqar3icIHSDULfcYVqtlOttohelBn
-	1UbzIQGkbSrKA6mYvMFeiwZ7HKQgdPskxGcepTRBso3NAJLFbAu+RB6emAq3ugdob7s1Cwnhv2XIo
-	xthDYvm0jGvt585T2xlP0KPD1ZPphGRmbWUOoLonB1vfZ9rK9RxFH3vR6N6NYFeM/5uulWGYCxQrU
-	uFFYMXDAHhLHg9kmTwTOQk6aJd0x/hHgBGpMXKENkMelqABmCPsnH9V4PXxfMmB0TJcflApgNFxQP
-	/gLifnVojWedAGmcYMww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=h3W73SXnNZzJBSMX1aKDzoyeFo7Gb64eRHxTwJWqp/U=; b=dgS7h8Xg9/w8hG
+	rHSmmQVQJN69D+xvFR1jnwUL2ICtcuhKn1rNAKzRhjriZqu5xgZQTKJJRa64pakMeuFEfAgFotzps
+	zq6ZhzBGnt8Xi37Zz9Ji+JlLJBViBi/yhEMJjlfX0QickshIQyAGc2NX9k6V8Mh54vuL6F406VObK
+	CrkLffyUgQiIiK5FNvpIrKPSSmLSMedt0Te/noacHn8rY9KysrjXoDDB+uc+Km9HkZwa0rB5Ie5WG
+	AWwq/tRKEVEExdC2QVFQJrY7aRq0KoCvtrREaKokPVsz2MfaUFq3a1zs0OOZCZQsQN8Sfa/kX4VQO
+	oYniC3uoDJ83uVyv26AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY7Lp-0003rc-Et; Mon, 11 May 2020 12:16:05 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1jY7Uj-0000uM-Mo; Mon, 11 May 2020 12:25:17 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY7Li-0003mr-Bi
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 12:15:59 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 2E31EEECA77004EA773D;
- Mon, 11 May 2020 20:15:40 +0800 (CST)
-Received: from linux-lmwb.huawei.com (10.175.103.112) by
- DGGEMS409-HUB.china.huawei.com (10.3.19.209) with Microsoft SMTP Server id
- 14.3.487.0; Mon, 11 May 2020 20:15:36 +0800
-From: Ma Feng <mafeng.ma@huawei.com>
-To: <tony@atomide.com>
-Subject: [PATCH] ARM: omap2: make omap5_erratum_workaround_801819 static
-Date: Mon, 11 May 2020 20:21:44 +0800
-Message-ID: <1589199704-11980-1-git-send-email-mafeng.ma@huawei.com>
-X-Mailer: git-send-email 2.6.2
+ id 1jY7UU-0008TG-F8
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 12:25:04 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: ezequiel) with ESMTPSA id 79A402A117C
+Message-ID: <28fa96d51523448656c71656dc80177d08c481ed.camel@collabora.com>
+Subject: Re: [PATCH v2 3/6] ARM: dts: zynq: add port definitions to hdmi-tx@39
+From: Ezequiel Garcia <ezequiel@collabora.com>
+To: Michal Simek <michal.simek@xilinx.com>
+Date: Mon, 11 May 2020 09:24:49 -0300
+In-Reply-To: <20200511110611.3142-4-ricardo.canuelo@collabora.com>
+References: <20200511110611.3142-1-ricardo.canuelo@collabora.com>
+ <20200511110611.3142-4-ricardo.canuelo@collabora.com>
+Organization: Collabora
+User-Agent: Evolution 3.36.0-1 
 MIME-Version: 1.0
-X-Originating-IP: [10.175.103.112]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_051558_570750_3CA0E420 
-X-CRM114-Status: UNSURE (   8.89  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_052502_678197_3D85A3B4 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,42 +61,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-omap@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org, geert+renesas@glider.be, xuwei5@hisilicon.com,
+ robh+dt@kernel.org, Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
+ kernel@collabora.com,
+ Ricardo =?ISO-8859-1?Q?Ca=F1uelo?= <ricardo.canuelo@collabora.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix sparse warning:
-
-arch/arm/mach-omap2/omap-smp.c:75:6: warning: symbol
-'omap5_erratum_workaround_801819' was not declared. Should it be static?
-
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: Ma Feng <mafeng.ma@huawei.com>
----
- arch/arm/mach-omap2/omap-smp.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/arch/arm/mach-omap2/omap-smp.c b/arch/arm/mach-omap2/omap-smp.c
-index 6a82fce..570a987e 100644
---- a/arch/arm/mach-omap2/omap-smp.c
-+++ b/arch/arm/mach-omap2/omap-smp.c
-@@ -72,7 +72,7 @@ void __iomem *omap4_get_scu_base(void)
- }
-
- #ifdef CONFIG_OMAP5_ERRATA_801819
--void omap5_erratum_workaround_801819(void)
-+static void omap5_erratum_workaround_801819(void)
- {
- 	u32 acr, revidr;
- 	u32 acr_mask;
---
-2.6.2
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+KEFkZGluZyBNaWNoYWwpCgpPbiBNb24sIDIwMjAtMDUtMTEgYXQgMTM6MDYgKzAyMDAsIFJpY2Fy
+ZG8gQ2HDsXVlbG8gd3JvdGU6Cj4gRGVmaW5lIGEgJ3BvcnRzJyBub2RlIGZvciAnYWR2NzUxMTog
+aGRtaS10eEAzOScgdG8gbWFrZSBpdCBjb21wbGlhbnQgd2l0aAo+IHRoZSBhZGksYWR2NzUxMSBE
+VCBiaW5kaW5nLgo+IAo+IFRoaXMgZmlsbHMgdGhlIG1pbmltdW0gcmVxdWlyZW1lbnRzIHRvIG1l
+ZXQgdGhlIGJpbmRpbmcgcmVxdWlyZW1lbnRzLAo+IHJlbW90ZSBlbmRwb2ludHMgYXJlIG5vdCBk
+ZWZpbmVkLgo+IAo+IFNpZ25lZC1vZmYtYnk6IFJpY2FyZG8gQ2HDsXVlbG8gPHJpY2FyZG8uY2Fu
+dWVsb0Bjb2xsYWJvcmEuY29tPgo+IC0tLQo+ICBhcmNoL2FybS9ib290L2R0cy96eW5xLXpjNzAy
+LmR0cyB8IDEwICsrKysrKysrKysKPiAgYXJjaC9hcm0vYm9vdC9kdHMvenlucS16YzcwNi5kdHMg
+fCAxMCArKysrKysrKysrCj4gIDIgZmlsZXMgY2hhbmdlZCwgMjAgaW5zZXJ0aW9ucygrKQo+IAo+
+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9ib290L2R0cy96eW5xLXpjNzAyLmR0cyBiL2FyY2gvYXJt
+L2Jvb3QvZHRzL3p5bnEtemM3MDIuZHRzCj4gaW5kZXggMjdjZDZjYjUyZjFiLi43OWZkMjM2ZWRk
+ZWQgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvenlucS16YzcwMi5kdHMKPiArKysg
+Yi9hcmNoL2FybS9ib290L2R0cy96eW5xLXpjNzAyLmR0cwo+IEBAIC0xMzUsNiArMTM1LDE2IEBA
+Cj4gIAkJCQlhZGksaW5wdXQtY2xvY2sgPSAiMXgiOwo+ICAJCQkJYWRpLGlucHV0LXN0eWxlID0g
+PDM+Owo+ICAJCQkJYWRpLGlucHV0LWp1c3RpZmljYXRpb24gPSAicmlnaHQiOwo+ICsJCQkJcG9y
+dHMgewo+ICsJCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ICsJCQkJCSNzaXplLWNlbGxzID0g
+PDA+Owo+ICsJCQkJCXBvcnRAMCB7Cj4gKwkJCQkJCXJlZyA9IDwwPjsKPiArCQkJCQl9Owo+ICsJ
+CQkJCXBvcnRAMSB7Cj4gKwkJCQkJCXJlZyA9IDwxPjsKPiArCQkJCQl9Owo+ICsJCQkJfTsKPiAg
+CQkJfTsKPiAgCQl9Owo+ICAKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvenlucS16
+YzcwNi5kdHMgYi9hcmNoL2FybS9ib290L2R0cy96eW5xLXpjNzA2LmR0cwo+IGluZGV4IDc3OTQz
+YzE2ZDMzZi4uOTlmYTUxYmE2ZTkzIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3p5
+bnEtemM3MDYuZHRzCj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvenlucS16YzcwNi5kdHMKPiBA
+QCAtOTMsNiArOTMsMTYgQEAKPiAgCQkJCWFkaSxpbnB1dC1jbG9jayA9ICIxeCI7Cj4gIAkJCQlh
+ZGksaW5wdXQtc3R5bGUgPSA8Mz47Cj4gIAkJCQlhZGksaW5wdXQtanVzdGlmaWNhdGlvbiA9ICJl
+dmVubHkiOwo+ICsJCQkJcG9ydHMgewo+ICsJCQkJCSNhZGRyZXNzLWNlbGxzID0gPDE+Owo+ICsJ
+CQkJCSNzaXplLWNlbGxzID0gPDA+Owo+ICsJCQkJCXBvcnRAMCB7Cj4gKwkJCQkJCXJlZyA9IDww
+PjsKPiArCQkJCQl9Owo+ICsJCQkJCXBvcnRAMSB7Cj4gKwkJCQkJCXJlZyA9IDwxPjsKPiArCQkJ
+CQl9Owo+ICsJCQkJfTsKPiAgCQkJfTsKPiAgCQl9Owo+ICAKPiAtLSAKPiAyLjE4LjAKPiAKPiAK
+CgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
