@@ -2,68 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26F3A1CE6D6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 23:05:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D21A71CE709
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 23:06:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HshHLIVnkAtAI4W0gAsiQIxOg9jO//dg9ICsGTu3IKE=; b=tbA
-	trOQfeoKn0Zx6i22+mys2p0PxoJwl8BaIV3SXFq+RT8qApaLiP2rtWwnAxqwO1a2coT2ymHU1CCCo
-	roO19rYkOpIjhedae1VJyBvskCk3mJjVgeCDFjFdAjg1SVoVgxvQPNO/Q8s/9hmWRN3GchwrEBCzH
-	YRFXqqbRHtv5RqMRnztMhn6LWATYW20LzycSGIie4efNQ1FiOnEI+037oeu4vK24QwzO/P8RMkqr4
-	Nf218PhFS+2tlBhubDr9wpq006WwEDccB7pNpkWB1n3wHfGPo8pbxLYsNys/KDLLCoJP19P7HG7F1
-	YF5Eqe7dXjTOl6aQc63jH6hOZ7oZRPQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=rM3ZdZJLpJrf9tY3tj8Ef30OUH1doEGhVPQvdV5CIQI=; b=qjyopY7GI/+eyjC7138mf3kMss
+	TmIzg9XoAXx1CZxGFsPCs2Lyvr/DXl0zntay+FBJ9nrKdTs9Yq3ia6LHNMkxBCAhKWXxfQGQnif8A
+	vgT8ZSisXsMODCIsHm47hNhuWK1z/LgjKwGQ6X0CsiN5mdWvUvAsO/KgGQWi+TDjBvRZsbPrsbdQr
+	zgq1qTQXAgnZHjgDkWsfSMGnK+uWhOSWMV3fSFWKS3wzQF6W34bUxcKoYEq0aIEYdIoX39BMYeOTt
+	nv/+tKM6SsImavI/8HdkoWXCtN+kgK4lCCvBtgQ0Z1WjVP9WvfpJZGgHsv2KSQ1EynlbI3AGOvtBF
+	mTaSsoqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYFcG-0001N7-53; Mon, 11 May 2020 21:05:36 +0000
+	id 1jYFch-0001dZ-Pz; Mon, 11 May 2020 21:06:03 +0000
 Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYFc6-0001LO-10
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 21:05:27 +0000
-Received: by mail-pf1-x444.google.com with SMTP id 18so5300886pfx.6
+ id 1jYFc7-0001MJ-Hu
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 21:05:28 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x15so4711015pfa.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 14:05:25 -0700 (PDT)
+ Mon, 11 May 2020 14:05:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=6w36UvFQ/M6HNNcr5WBBYQV6zUbaEerQuhwtlPhUyw8=;
- b=JYKOFnRU/Nv+h4zg3x2GvY9V5K6C/VK7NulUOa7an5293lSxQDr71GNnRU0XshGaS6
- R3TxIIwOcTp0jHEBRVuHIEKwlGD7Hoa5y4Nq6e5H0J4yoa5fCML3t8nQhRDvWhr40CuL
- JoC7mO+CkxwMJW9DD3DFytFu9fsj+3qqsqwMAralBT+W7YImsQMqMcyS6EzLt7W/mxlc
- fH5tj9c33ZYfWU0sae38Z9Tlib21CBzxoyLAZn9lB2vqaneLrN4A2lwrwrOU85F3aYkQ
- Tk5GpFiyoxwcCZNpgcPVgSwpy/0s0qGQKKQsfMQBp7drgTJojnc3q5lJL760mmszwHOu
- osqQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=xQD9E0I8T20s+9ER9n57S8jp4cV1BJb7ghQVAxtwwBE=;
+ b=JNedmZ7mHmQHZCmuX0dX/jKoXar0R4U3lP1ioI1aL0XQiUyBz/vFdEgBCHHKzyGGaP
+ XtGsh4LQXMLTb8t3w9708wl4fswfa1BJWxVj+qcUQtfABSkCrnVX4/lvQ6aoXJzNNf22
+ pNDkqkwX18mLrbfguelBH+kZezeEuuxFMP2A1lK/OSdUjaxIZo7DLAOxhUE+2BKwsdZa
+ lCRsUS1DdonWgr381cLa6JTnDjfQVoru02lAgeBsl4MlQn18e20pI74BK36bSS9cfPJB
+ M2hB8xxvbV5EIotihZCnccVzZgYfq711/Nszi/tkPm1qNfqziewoTT6M+0jXzD1dwIHV
+ z+vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=6w36UvFQ/M6HNNcr5WBBYQV6zUbaEerQuhwtlPhUyw8=;
- b=rHPd2kO2/IdX8FH3xDqzzC8xKi2TiaWktDXfxejzx3ZzZahG/hEwk8OCFhzAwgorPI
- WsJo8sZHCRlvM1nVrgilfkE+3zjt/xX82ouFnPQIVrr68aG+aUX/0F4fRLW9vE2yJ/kD
- cJCpzwppKkWZmBV2E2NAMqYoQKkzJxS3ZNnAPNGdYiqPWzszb7BBAslpRN9EAMKyi+NH
- EvyLs5xGPko1IN6J4tqnRRF3tyx4fM/Ph1cskdYgnp6uDS1+PbyRlPMXExV67V5HMcI4
- CrhEnBIByZx3/u+VgO0Uil8i6POMJWbtPDpOcBJQxJ8dcw6OkbnrfcKJb9rUJXtLqbLh
- KnnQ==
-X-Gm-Message-State: AGi0PuZOmQScFK/mpO++2Cg2rKXBn/oj+dVlb0fh7WLMWWvd0FaPQU8I
- GsA8h8oyIXOoi3XxLFC15HU=
-X-Google-Smtp-Source: APiQypKlUwWoprzBXBS9r/xa5V1PkvXWztfA6or495RiWOARZPIv/UivYZv3xFOcNDdbUeU/x+lDfQ==
-X-Received: by 2002:a62:3343:: with SMTP id z64mr15356149pfz.55.1589231125494; 
- Mon, 11 May 2020 14:05:25 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=xQD9E0I8T20s+9ER9n57S8jp4cV1BJb7ghQVAxtwwBE=;
+ b=hUxzP/VYRp82PUMsDupJI8n0hqi+1b1yIOHuwuMetZpo3UZXl1t37Rwi1yauW2l8B/
+ wyHjcmcWTJ9wA0DQcMNeaMYHWUBydWMUojHpI2rU1O/GMndjdfJzoS1EzxvhfkhgyrVT
+ pMunXTRqfBo8cbyACjYPwYv0LEkBANSVbtOhykF6muBm/oxQCITrSuSUVdpdWpPSQW42
+ IdDjnMF++ywKoMe1ywU4C8JWlEDANH4S5uLzn/nvoaFu1ofdL6l6QgHUTlcBYYcIQLg5
+ SxYPPGeRgqsZTpoo6cAKr4SESWA4lqXS5WIKHYHSPj9IjFAroW6AVnoSCfuzX/d2a2MG
+ tjbQ==
+X-Gm-Message-State: AGi0PuaNo6om/70zCSz4A+JpF5zvJfEU2vMNvmBtU9Ma3pcBv8mkAK9a
+ 1e/7Zitfo4KobXbblGGd1EM=
+X-Google-Smtp-Source: APiQypItQ5cHL2TagcF3E1X8gJ8H+muxFoYu+9Sqd7pvZTWbIxapY9PNGXNy+NAXID33kgWY0skeOA==
+X-Received: by 2002:a63:d909:: with SMTP id r9mr15882497pgg.245.1589231127042; 
+ Mon, 11 May 2020 14:05:27 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c2sm10032230pfp.118.2020.05.11.14.05.23
+ by smtp.gmail.com with ESMTPSA id c2sm10032230pfp.118.2020.05.11.14.05.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 14:05:24 -0700 (PDT)
+ Mon, 11 May 2020 14:05:26 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: soc@kernel.org
-Subject: [GIT PULL 1/4] Broadcom defconfig changes for 5.8
-Date: Mon, 11 May 2020 14:05:19 -0700
-Message-Id: <20200511210522.28243-1-f.fainelli@gmail.com>
+Subject: [GIT PULL 2/4] Broadcom devicetree changes for 5.8
+Date: Mon, 11 May 2020 14:05:20 -0700
+Message-Id: <20200511210522.28243-2-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200511210522.28243-1-f.fainelli@gmail.com>
+References: <20200511210522.28243-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_140526_067347_5C36C388 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200511_140527_594947_BEA0E059 
+X-CRM114-Status: GOOD (  13.61  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -111,28 +114,38 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.8/defconfig
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.8/devicetree
 
-for you to fetch changes up to 35cdc3fa00ee3aebf1a25f55db8a114cbb612092:
+for you to fetch changes up to 460227c329e5bd39103b9f7ba01cbad69b14c4c4:
 
-  Merge tag 'tags/bcm2835-defconfig-next-2020-03-27' into defconfig/next (2020-04-13 15:55:35 -0700)
+  Merge tag 'tags/bcm2835-dt-next-2020-03-27' into devicetree/next (2020-04-13 15:53:28 -0700)
 
 ----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoCs defconfig file
-updates for v5.8, please pull the following:
+This pull request contains Broadcom ARM-based SoCs Device Tree changes
+for v5.8, please pull the following:
 
-- Nicolas enables the fixed-regulator in bcm2835_defconfig which is need
-  to control the Raspberry Pi 4 SD car power supply
+- Nicolas updates the Raspberry Pi 4 board DTS to include the GPIO
+  controlling power to the SD card, adds support for the vmmc regulator
+  for the emmc2 controller and finally updates the power management
+  provider for V3D to use the firmware to solve instabilities.
 
 ----------------------------------------------------------------
 Florian Fainelli (1):
-      Merge tag 'tags/bcm2835-defconfig-next-2020-03-27' into defconfig/next
+      Merge tag 'tags/bcm2835-dt-next-2020-03-27' into devicetree/next
 
-Nicolas Saenz Julienne (1):
-      ARM: bcm2835_defconfig: Enable fixed-regulator
+Nicolas Saenz Julienne (3):
+      ARM: dts: bcm2711: Update expgpio's GPIO labels
+      ARM: dts: bcm2711: Add vmmc regulator in emmc2
+      ARM: dts: bcm283x: Use firmware PM driver for V3D
 
- arch/arm/configs/bcm2835_defconfig | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts     | 13 ++++++++++++-
+ arch/arm/boot/dts/bcm2835-common.dtsi     |  1 -
+ arch/arm/boot/dts/bcm2835-rpi-common.dtsi | 12 ++++++++++++
+ arch/arm/boot/dts/bcm2835.dtsi            |  1 +
+ arch/arm/boot/dts/bcm2836.dtsi            |  1 +
+ arch/arm/boot/dts/bcm2837.dtsi            |  1 +
+ 6 files changed, 27 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm/boot/dts/bcm2835-rpi-common.dtsi
 
 _______________________________________________
 linux-arm-kernel mailing list
