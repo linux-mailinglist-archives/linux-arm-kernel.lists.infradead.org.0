@@ -2,63 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12F781CD3F2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 10:31:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 27E9C1CD406
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 10:34:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2WZlyVn7R06eFPXvJhXfJ3BLz3uKvqFrhZLrt+l5ZlY=; b=dHU8EfuUwy2Zp/
-	vjKRS7KjRY+D/z7rjXuBcVLlBrUwyZn7raM77zyLKt0pNkp/9GLYiZiVRl9YUKKA3Yjpypz6ZcxFH
-	0iJzbZKo/J3f99ZTs5JWatZO4vgUYpSuGx4Yo6A6CtFIflwsLAhwiqs5h3nxTdXFC281E++O+zNtc
-	dp9pvTMuVK1g+a039rf5f7+/1SrK5zwcqZT6B/Mk1VkOAbnzdIK8ONWmy9LASN8CKTKGVql0bBxr2
-	RAo7VltOfOMM12KdZEoGvfFiB5xJJOYs7Vf0piM0e7Yqk+1DGTY9PTbTcOY0xOgfkF/K06RQ+dQfO
-	238WFxw85Na7bTounNoA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=v3PwXtmCxg/QxQjiqNWPUo0uH0zMMBQ+r5CmkNuilKc=; b=KcT
+	FagAbICieQ5qRMhRoFgB9+LHZAWu8JrIsRs2sLGEwnuV5uK3J6UGt/+meuBf2ciBaA+JqP4yqcSje
+	X2FrrKTunU9GFc//WLmuFRGEVYhEKAZSQ7VjdwVE+F8PDigRtm9Xl3WDAvcrH1v5oToMtpO4/jbrQ
+	TkJFBRUknnmXczhyAnRG78ISmuGCLeEuexEP2TUCCa03sHAHd7aAfgOCoHsbW/9hh2FdKm7aNgI91
+	NJC4dA/JMtI75JkQjmxbswNaKtn2bq0qOOTOzMR4U4BY3YI4K4fKVPQHicSz5uJJBk/qcBPa1hhW/
+	AedCu4NxY2WnN+IMNEioodR27ROfL9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY3pv-000849-Qh; Mon, 11 May 2020 08:30:55 +0000
-Received: from [27.111.83.178] (helo=mail.gtsys.com.hk)
+	id 1jY3t6-0001K9-U5; Mon, 11 May 2020 08:34:12 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY3pn-00082Z-4D; Mon, 11 May 2020 08:30:48 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.gtsys.com.hk (Postfix) with ESMTP id 3159D2005E73;
- Mon, 11 May 2020 16:30:42 +0800 (HKT)
-X-Virus-Scanned: Debian amavisd-new at gtsys.com.hk
-Received: from mail.gtsys.com.hk ([127.0.0.1])
- by localhost (mail.gtsys.com.hk [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id li1WDHJHoWxu; Mon, 11 May 2020 16:30:42 +0800 (HKT)
-Received: from s01.gtsys.com.hk (unknown [10.128.4.2])
- by mail.gtsys.com.hk (Postfix) with ESMTP id 161AB20020CB;
- Mon, 11 May 2020 16:30:42 +0800 (HKT)
-Received: from armhf2.gtsys.com.hk (unknown [10.128.4.15])
- by s01.gtsys.com.hk (Postfix) with ESMTP id 12A7CC01F94;
- Mon, 11 May 2020 16:30:42 +0800 (HKT)
-Received: by armhf2.gtsys.com.hk (Postfix, from userid 1000)
- id 0D5D32001DE; Mon, 11 May 2020 16:30:42 +0800 (HKT)
-From: Chris Ruehl <chris.ruehl@gtsys.com.hk>
-To: Chris Ruehl <chris.ruehl@gtsys.com.hk>,
-	Jack Lo <jack.lo@gtsys.com.hk>
-Subject: [PATCH v1 3/3] spi: spi-rockchip: use num-cs property and
- ctlr->enable_gpiods
-Date: Mon, 11 May 2020 16:30:22 +0800
-Message-Id: <20200511083022.23678-4-chris.ruehl@gtsys.com.hk>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200511083022.23678-1-chris.ruehl@gtsys.com.hk>
-References: <20200511083022.23678-1-chris.ruehl@gtsys.com.hk>
-MIME-Version: 1.0
+ id 1jY3sy-0001Ji-BK
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 08:34:05 +0000
+Received: from kozik-lap.mshome.net (unknown [194.230.155.237])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62D2120720;
+ Mon, 11 May 2020 08:34:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589186043;
+ bh=HK8Ij0xiNrB/Gl8FM5rFEArqdCz320rGYDH4m1F1yqo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=VaCZI3/hNdtc35fu2VhsYjcpUUQrspf1hVeygY0z3HbMsD0jF7bNNgLEbKdMOXshM
+ p0r/wmmO4EZRVgfAV6HDb9GVBnLgtYb3O8Z9hbnDSCSrGmzPd6gSF3P9wsqYIO7Olb
+ xdC0yU09Tsp0pZ4YNvsOR42tbAdYaqmlI0ePseOQ=
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Jonathan Cameron <jic23@kernel.org>, Hartmut Knaack <knaack.h@gmx.de>,
+ Lars-Peter Clausen <lars@metafoo.de>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Kukjin Kim <kgene@kernel.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-iio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] iio: adc: exynos: Simplify Exynos7-specific init
+Date: Mon, 11 May 2020 10:33:48 +0200
+Message-Id: <20200511083348.7577-1-krzk@kernel.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_013047_322737_5844EB55 
-X-CRM114-Status: GOOD (  10.66  )
-X-Spam-Score: 1.3 (+)
+X-CRM114-CacheID: sfid-20200511_013404_410528_B4020F26 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (1.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 1.3 RDNS_NONE Delivered to internal network by a host with no rDNS
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,48 +77,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Heiko Stuebner <heiko@sntech.de>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Alim Akhtar <alim.akhtar@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The original implementation set num_chipselect to ROCKCHIP_SPI_MAX_CS_NUM (2)
-which seems wrong here. spi0 has 2 native cs, all others just one. With
-enable and use of cs_gpiods / GPIO CS, its correct to set the num_chipselect
-from the num-cs property and set max_native_cs with the define.
-If num-cs is missing the default set to num_chipselect = 1.
+The Exynos7-specific code bits in ADC driver do not play with PHY:
+the field exynos_adc_data.needs_adc_phy is not set in exynos7_adc_data
+instance.  Therefore the initialization code does not have to check if
+it is true.
 
-Signed-off-by: Chris Ruehl <chris.ruehl@gtsys.com.hk>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+
 ---
- drivers/spi/spi-rockchip.c | 9 ++++++++-
- 1 file changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/drivers/spi/spi-rockchip.c b/drivers/spi/spi-rockchip.c
-index f57a8faa6f31..9b8a5e1233c0 100644
---- a/drivers/spi/spi-rockchip.c
-+++ b/drivers/spi/spi-rockchip.c
-@@ -708,8 +708,15 @@ static int rockchip_spi_probe(struct platform_device *pdev)
- 		ctlr->slave_abort = rockchip_spi_slave_abort;
- 	} else {
- 		ctlr->flags = SPI_MASTER_GPIO_SS;
-+		ctlr->max_native_cs = ROCKCHIP_SPI_MAX_CS_NUM;
-+		/*
-+		 * rk spi0 has two native cs, spi1..5 one cs only
-+		 * if num-cs is missing in the dts, default to 1
-+		 */
-+		if (of_property_read_u16(np, "num-cs", &ctlr->num_chipselect))
-+			ctlr->num_chipselect = 1;
-+		ctlr->use_gpio_descriptors = true;
- 	}
--	ctlr->num_chipselect = ROCKCHIP_SPI_MAX_CS_NUM;
- 	ctlr->dev.of_node = pdev->dev.of_node;
- 	ctlr->bits_per_word_mask = SPI_BPW_MASK(16) | SPI_BPW_MASK(8) | SPI_BPW_MASK(4);
- 	ctlr->min_speed_hz = rs->freq / BAUDR_SCKDV_MAX;
+Only build tested.
+---
+ drivers/iio/adc/exynos_adc.c | 3 ---
+ 1 file changed, 3 deletions(-)
+
+diff --git a/drivers/iio/adc/exynos_adc.c b/drivers/iio/adc/exynos_adc.c
+index 22131a677445..219c8eb32d16 100644
+--- a/drivers/iio/adc/exynos_adc.c
++++ b/drivers/iio/adc/exynos_adc.c
+@@ -449,9 +449,6 @@ static void exynos_adc_exynos7_init_hw(struct exynos_adc *info)
+ {
+ 	u32 con1, con2;
+ 
+-	if (info->data->needs_adc_phy)
+-		regmap_write(info->pmu_map, info->data->phy_offset, 1);
+-
+ 	con1 = ADC_V2_CON1_SOFT_RESET;
+ 	writel(con1, ADC_V2_CON1(info->regs));
+ 
 -- 
-2.20.1
+2.17.1
 
 
 _______________________________________________
