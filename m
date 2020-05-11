@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 734DF1CD6C2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:42:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B2D71CD6AC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:37:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XIiz2aCEbm0c6GgbKhWZPXvIkq40kM+uv5EK8cJNnc0=; b=PORqHS9EESUwSl
-	ttMwFgDCPTEt2LCDvsOvX2fgl0HKkXUkaJjsNaCQtDPr8FSt9gHiw9PTA8vXX8z4KnR72KgKUL60x
-	2DkAk/WvwQLIf3zVFV86DR3ZNE0UlS//uw8vlQo0Z15LJpqZ4werBovGlZC365akM+7yDAc5c8s6H
-	2ALEUM1VsIYSFSJZz8GCGycFQTdjBDi4LEvQIhKHdnDysRr7lSYqz0liDn7Lq0pskCQJk1YLoLA9e
-	cJi3XmkneWgQ+Uxz1SaMELQGibAIYxRq721E9VyAHjsXOsl07tq2FJ4hasprefUa9VoGKB/1t80Ij
-	dct30x9w5swuRR2O8ndQ==;
+	List-Owner; bh=mxnzPOVQU1LGKQXZCtAPT1ya43ez1lvz0p9SCBR9p+k=; b=fBokCRyFvHVjHq
+	HKLI6vWBWzNL23rODyqADEtJ+P35Kcrn8yjFrY6K0in9lvZ5PL80nnvqkyFpFjEhJSoV8TXMIL5SP
+	T3WMYNxgyWyUCipSF2Nw3rF8EP2vqrlKaazd5WPTJk3D/RLO3ApofCllHRn3fzTQ4ul5hPGv02yOi
+	bKtaETM79EsJisUfmcXVMKB+pQ5JDuGN1zmu0lphH5butMY+eKYjANcTsHiBPtIxVw24aaQFaNXiF
+	ZdX3BOZdz0JeaSm6a123ohhe2yGASNicr+NdrfAB+rEfZlhxHtIDoyHO76Nxnz/b8wYlOUa9IOX6s
+	OnLTbE5onaPa//iD+lLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY5tH-0001Lo-7s; Mon, 11 May 2020 10:42:31 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY5t8-0001L5-Vt; Mon, 11 May 2020 10:42:25 +0000
-X-UUID: a4505c5fb14a4bb9824502a8d5515b7b-20200511
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=1U5wzqzVt4EBKPbHjQ+DbeiJr8CenT4487+ft0swDlU=; 
- b=aHHSCwP9dy84me30HL8Zv6SGfja9eynXrd9Jq2DJNdg10H8M3BSIRCteS8YlBc5LS0cxRNkF6BpnuPXQVOKH+DNM+j2rTRqTas8M30euWkvA2cuHF0rP41pFn1oNjMQsd2+q3y4rro0DNnxtFFWQinyJplhkUrc6EsA2nL6yqAY=;
-X-UUID: a4505c5fb14a4bb9824502a8d5515b7b-20200511
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 322679965; Mon, 11 May 2020 02:42:08 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 11 May 2020 03:32:12 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 11 May 2020 18:32:04 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 11 May 2020 18:32:04 +0800
-Message-ID: <1589193126.2930.2.camel@mtksdccf07>
-Subject: Re: [PATCH v2 0/3] kasan: memorize and print call_rcu stack
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Dmitry Vyukov <dvyukov@google.com>
-Date: Mon, 11 May 2020 18:32:06 +0800
-In-Reply-To: <CACT4Y+aC4i8cAVFu2-s82RczWCjYMpPVJLwS0OBLELR9qF8SYg@mail.gmail.com>
-References: <20200511022359.15063-1-walter-zh.wu@mediatek.com>
- <CACT4Y+aC4i8cAVFu2-s82RczWCjYMpPVJLwS0OBLELR9qF8SYg@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+	id 1jY5o5-0006PR-BH; Mon, 11 May 2020 10:37:09 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jY5nv-0006OU-T5; Mon, 11 May 2020 10:37:03 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DCE101FB;
+ Mon, 11 May 2020 03:36:58 -0700 (PDT)
+Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
+ [10.1.196.255])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 917703F305;
+ Mon, 11 May 2020 03:36:56 -0700 (PDT)
+Date: Mon, 11 May 2020 11:36:54 +0100
+From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+Subject: Re: [PATCH v10 0/8] Add endpoint driver for R-Car PCIe controller
+Message-ID: <20200511103654.GD24149@e121166-lin.cambridge.arm.com>
+References: <1588854799-13710-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <1588854799-13710-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_034223_193694_31AD8FF4 
-X-CRM114-Status: GOOD (  21.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200511_033700_026645_040D432C 
+X-CRM114-Status: GOOD (  24.72  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,107 +62,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream <wsd_upstream@mediatek.com>, "Paul E .
- McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
- kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
- Joel Fernandes <joel@joelfernandes.org>, linux-mediatek@lists.infradead.org,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>, Andrew
- Morton <akpm@linux-foundation.org>, Linux
- ARM <linux-arm-kernel@lists.infradead.org>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+ Geert Uytterhoeven <geert+renesas@glider.be>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kishon Vijay Abraham I <kishon@ti.com>, linux-renesas-soc@vger.kernel.org,
+ linux-rockchip@lists.infradead.org, Tom Joseph <tjoseph@cadence.com>,
+ Rob Herring <robh+dt@kernel.org>, Prabhakar <prabhakar.csengg@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Shawn Lin <shawn.lin@rock-chips.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Vasut <marek.vasut+renesas@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-05-11 at 12:01 +0200, 'Dmitry Vyukov' via kasan-dev wrote:
-> On Mon, May 11, 2020 at 4:24 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> >
-> > This patchset improves KASAN reports by making them to have
-> > call_rcu() call stack information. It is useful for programmers
-> > to solve use-after-free or double-free memory issue.
+On Thu, May 07, 2020 at 01:33:11PM +0100, Lad Prabhakar wrote:
+> Hi All,
 > 
-> Hi Walter,
+> This patch series adds support for endpoint driver for R-Car PCIe controller on
+> R-Car/RZ-G2x SoC's, this also extends the epf framework to handle multiple windows
+> supported by the controller for mapping PCI address locally.
 > 
-> I am looking at this now.
+> Note:
+> The rockchip/dwc endpoint drivers are build tested only and was tested on cadence
+> by Kishon (https://lkml.org/lkml/2020/5/6/1535)
 > 
-> I've upload the change to gerrit [1]
-> https://linux-review.googlesource.com/c/linux/kernel/git/torvalds/linux/+/2458
+> Changes for v10:
+> * Rebased patches on top of pci/rcar branch on tree
+>   https://git.kernel.org/pub/scm/linux/kernel/git/lpieralisi/pci.git
+> * Made pci_epc_get_matching_window() as static
+> * Included Ack's from Kishon for patches 4/8 and 5/8
+> * Included Reviewed-by tag from Shimoda-san for patches 4/8 and 5/8
 > 
-> I am not capable enough to meaningfully review such changes in this format...
+> Changes for v9:
+> * Rebased patches on top of v5.7.rc1
+> * Replaced mdelay(1) with usleep_range(1000, 1001) in rcar_pcie_ep_assert_intx()
+> * Added a check for max_functions read from DT to restrict with
+>   RCAR_EPC_MAX_FUNCTIONS
+> * Replaced MSICAP0_MMENUM with MSICAP0_MMESE
+> * Retry ioremap for other windows on failure in pci_epc_mem_alloc_addr()
+> * Fixed looping for number windows in pci_epc_mem_exit()
+> * Set maximum to 1 for max-functions in DT binding (I have restored the acks
+>   from  Rob and Shimoda-san)
+> * Sorted the entry in MAINTAINERS
 > 
-> [1] https://linux.googlesource.com/Documentation
+> Changes for v8:
+> * Dropped adding R8A774C0 (0x002d) pci-id in pci_ids.h
+> * Fixed typo in commit message for patch 2/8
+> * Reworded commit message for patch 5/8 as suggested by Bjorn
+> * Split up patch to add pci_epc_mem_init() interface to add page_size argument
+>   as suggested by Bjorn.
 > 
+> Changes for v7:
+> * Fixed review comments pointed by Shimoda-san
+>   1] Made DT bindings dual licensed, added Shimoda-san as maintainer and fixed
+>      the example as its built with #{address,size}-cells = <1>. I have still
+>      restored the Ack from Rob and Shimoda-san with these changes.
+>   2] Split up the patches so that they can be picked up by respective subsystem
+>      patches 1/4-9/11 are now part of this series.
+>   3] Dropped altering a comment in pci-epc.h
+>   4] Used a local variable align_size in pci_epc_mem_alloc_addr() so that size
+>      variable doesn't get overwritten in the loop.
+>   5] Replaced i-=1 with i--
+>   6] Replaced rcar with R-Car in patch subject and description.
+>   7] Set MACCTLR in init() callback
+> 
+> Changes for v6:
+> 1] Rebased patches on endpoint branch of https://git.kernel.org/pub/
+>    scm/linux/kernel/git/lpieralisi/pci.git/
+> 2] Fixed review comments from Shimoda-san
+>    a] Made sure defconfig changes were in separate patch
+>    b] Created rcar_pcie_host/rcar_pcie_ep structures
+>    c] Added pci-id for R8A774C0
+>    d] Added entry in MAINTAINERS for dt-binding
+>    e] Dropped unnecessary braces
+> 3] Added support for msi.
+> 
+> Changes for v5:
+> 1] Rebased patches on next branch of https://git.kernel.org/pub/scm/
+>    linux/kernel/git/helgaas/pci.git
+> 2] Fixed review comments reported by Kishon while fetching the matching
+>    window in function pci_epc_get_matching_window()
+> 3] Fixed review comments reported by Bjorn
+>    a] Split patch up first patch so that its easier to review and incremental
+>    b] Fixed typos
+> 4] Included Reviewed tag from Rob for the dt-binding patch
+> 5] Fixed issue reported by Nathan for assigning variable to itself
+> 
+> Changes for v4:
+> 1] Fixed dtb_check error reported by Rob
+> 2] Fixed review comments reported by Kishon
+>    a] Dropped pci_epc_find_best_fit_window()
+>    b] Fixed initializing mem ptr in __pci_epc_mem_init()
+>    c] Dropped map_size from pci_epc_mem_window structure
+> 
+> Changes for v3:
+> 1] Fixed review comments from Bjorn and Kishon.
+> 3] Converted to DT schema
+> 
+> Changes for v2:
+> 1] Fixed review comments from Biju for dt-bindings to include an example
+>    for a tested platform.
+> 2] Fixed review comments from Kishon to extend the features of outbound
+>    regions in epf framework.
+> 3] Added support to parse outbound-ranges in OF.
+> 
+> Lad Prabhakar (8):
+>   PCI: rcar: Rename pcie-rcar.c to pcie-rcar-host.c
+>   PCI: rcar: Move shareable code to a common file
+>   PCI: rcar: Fix calculating mask for PCIEPAMR register
+>   PCI: endpoint: Pass page size as argument to pci_epc_mem_init()
+>   PCI: endpoint: Add support to handle multiple base for mapping
+>     outbound memory
+>   dt-bindings: PCI: rcar: Add bindings for R-Car PCIe endpoint
+>     controller
+>   PCI: rcar: Add endpoint mode support
+>   MAINTAINERS: Add file patterns for rcar PCI device tree bindings
+> 
+>  .../devicetree/bindings/pci/rcar-pci-ep.yaml  |   77 +
+>  MAINTAINERS                                   |    1 +
+>  drivers/pci/controller/Kconfig                |   18 +
+>  drivers/pci/controller/Makefile               |    3 +-
+>  .../pci/controller/cadence/pcie-cadence-ep.c  |    2 +-
+>  .../pci/controller/dwc/pcie-designware-ep.c   |   16 +-
+>  drivers/pci/controller/pcie-rcar-ep.c         |  563 ++++++++
+>  drivers/pci/controller/pcie-rcar-host.c       | 1130 +++++++++++++++
+>  drivers/pci/controller/pcie-rcar.c            | 1268 +----------------
+>  drivers/pci/controller/pcie-rcar.h            |  140 ++
+>  drivers/pci/controller/pcie-rockchip-ep.c     |    2 +-
+>  drivers/pci/endpoint/pci-epc-mem.c            |  204 ++-
+>  include/linux/pci-epc.h                       |   38 +-
+>  13 files changed, 2150 insertions(+), 1312 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/pci/rcar-pci-ep.yaml
+>  create mode 100644 drivers/pci/controller/pcie-rcar-ep.c
+>  create mode 100644 drivers/pci/controller/pcie-rcar-host.c
+>  create mode 100644 drivers/pci/controller/pcie-rcar.h
+ 
 
-Hi Dmitry,
+Applied to pci/rcar, thanks !
 
-I don't fully understand your meaning, our patchset's format has
-problem? or?
-
-
-> 
-> > The KASAN report was as follows(cleaned up slightly):
-> >
-> > BUG: KASAN: use-after-free in kasan_rcu_reclaim+0x58/0x60
-> >
-> > Freed by task 0:
-> >  save_stack+0x24/0x50
-> >  __kasan_slab_free+0x110/0x178
-> >  kasan_slab_free+0x10/0x18
-> >  kfree+0x98/0x270
-> >  kasan_rcu_reclaim+0x1c/0x60
-> >  rcu_core+0x8b4/0x10f8
-> >  rcu_core_si+0xc/0x18
-> >  efi_header_end+0x238/0xa6c
-> >
-> > First call_rcu() call stack:
-> >  save_stack+0x24/0x50
-> >  kasan_record_callrcu+0xc8/0xd8
-> >  call_rcu+0x190/0x580
-> >  kasan_rcu_uaf+0x1d8/0x278
-> >
-> > Last call_rcu() call stack:
-> > (stack is not available)
-> >
-> > Generic KASAN will record first and last call_rcu() call stack
-> > and print two call_rcu() call stack in KASAN report.
-> >
-> > This feature doesn't increase the cost of memory consumption. It is
-> > only suitable for generic KASAN.
-> >
-> > [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
-> > [2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
-> >
-> > Changes since v2:
-> > - remove new config option, default enable it in generic KASAN
-> > - test this feature in SLAB/SLUB, it is pass.
-> > - modify macro to be more clearly
-> > - modify documentation
-> >
-> > Walter Wu (3):
-> > rcu/kasan: record and print call_rcu() call stack
-> > kasan: record and print the free track
-> > kasan: update documentation for generic kasan
-> >
-> > Documentation/dev-tools/kasan.rst |  6 ++++++
-> > include/linux/kasan.h             |  2 ++
-> > kernel/rcu/tree.c                 |  4 ++++
-> > lib/Kconfig.kasan                 |  2 ++
-> > mm/kasan/common.c                 | 26 ++++----------------------
-> > mm/kasan/generic.c                | 50 ++++++++++++++++++++++++++++++++++++++++++++++++++
-> > mm/kasan/kasan.h                  | 23 +++++++++++++++++++++++
-> > mm/kasan/report.c                 | 47 +++++++++++++++++++++--------------------------
-> > mm/kasan/tags.c                   | 37 +++++++++++++++++++++++++++++++++++++
-> > 9 files changed, 149 insertions(+), 48 deletions(-)
-> >
-> > --
-> > You received this message because you are subscribed to the Google Groups "kasan-dev" group.
-> > To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
-> > To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200511022359.15063-1-walter-zh.wu%40mediatek.com.
-> 
+Lorenzo
 
 _______________________________________________
 linux-arm-kernel mailing list
