@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD7C31CD187
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 08:01:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA09F1CD1B0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 08:13:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7s7/ON9T0NsB4NYmCiU0it6U4mZq/GJGRYbPz4UftuI=; b=bKPnj/zpuBxpSz
-	QdmmiRBCeJ6bS8AAMugl9ntYIoH6d3ksFatA11Zv1QeRZu2eSXzt0ES9WBNY2cv63lGVeoJpeA1AZ
-	Kg3agNipvte+xOrFn8eGOTa8DKTcZmWRbWqQj6rBfzHI7EyZriMDv8cSnk+pM7wcBIRs6ubW8G6uY
-	upyW9SQVGbgNl18dyH+yaRyWgUBVfBtrl138sSO3t2I8P313SJSYldkKxrqf/BhQbUOgWklrnmJO9
-	W3Wl1TePdhZ0l/SpN2LaVOVXfI7NAGcFWV962S4WAYoUT8Hz/sUl5NrJ8DUzGj13yvd2x2y1oIbgu
-	+qkAb748zeAfvrd27Ohg==;
+	List-Owner; bh=EucjQ47/Temn1ThQSPbMPEkKInxbhdEDLVwNfBcNNDE=; b=Hw7D8Lsj/BVeXo
+	VwQ/Adio/BqU9guvHJB4KEywgPwJbOv2jZJb31nqQqgSL2kYt2NX6EaYG6jzPU4TTnNzgE78PrKEx
+	iGb/vx4MW32MRuJMxxpuecxlcvL+KcW0rPqYK1wRWeUwL7xKoA+iCrqti0vL3z9owxs95kI+6dh95
+	bDyGrU3X1XGHfh+nGEpxX985o/GbRZ7Cu1pVQKH3YWV1ajOizP45jYJ/nP6QmpCiUVI9nPSXPYs7d
+	R/nvGSIq6OssOx1RHqQ5ydemQkm0wqrf6VzVMRQi/LJC7y4MZ8DvVVaqcxOQBTE5jmUGYK2R5i/XY
+	kiI2weLBbRdSteEMngpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY1Va-0007Mc-Gs; Mon, 11 May 2020 06:01:46 +0000
+	id 1jY1gR-0005Sv-HX; Mon, 11 May 2020 06:12:59 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY1VR-0007Le-9r; Mon, 11 May 2020 06:01:39 +0000
-X-UUID: b7460f87c3374a269347f8e773d2d048-20200510
+ id 1jY1g1-0005GA-Q3; Mon, 11 May 2020 06:12:35 +0000
+X-UUID: e8d7c648059a4f7681b5f0e8d8eb5209-20200510
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=dAyYAdHMIpZ/6SM5RLDr2tB/daH+XXcNJM3j7jHXEJo=; 
- b=CxhbECJsxZgqTWZoSR3SMjcF9M1aJwByXjcBBRoch8knE0S929+L/ygFSQSM/KDp38GyY7m7YFZXigikHQrZelr9jkdUHiljm4PFBLXw2+EvDg+bgjaGzoFG9+hLI9Pa9LXg61Via+OA7gbXdwxWS55hqcQf2ZCZIHn89cfGgtA=;
-X-UUID: b7460f87c3374a269347f8e773d2d048-20200510
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ bh=Lsl8lnD7OWKP4jCPIL+fIGfMyXwcqWyWiC/ejlNhD8w=; 
+ b=oQESTFDjCnAE78tcpXC+QY0W1SxBdNbWuhPTIdOz9O3zspoBPQejEVhz+IrErc8LOyu/mr2MvABtsyjG9AD6E/Rs9jF6UF4iQ5qaKgKeWycdh5HThhkiqulD6wPK9tMft2PzW5ydJySxMUpBSGGzKROJuL3Ny4/vmc/hTZpqaPQ=;
+X-UUID: e8d7c648059a4f7681b5f0e8d8eb5209-20200510
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <weiyi.lu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1900158767; Sun, 10 May 2020 22:01:20 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Sun, 10 May 2020 23:01:20 -0700
+ with ESMTP id 1774483; Sun, 10 May 2020 22:12:27 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 10 May 2020 23:02:25 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Mon, 11 May 2020 14:01:20 +0800
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 11 May 2020 14:02:27 +0800
 Received: from [172.21.77.4] (172.21.77.4) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Mon, 11 May 2020 14:01:19 +0800
-Message-ID: <1589176880.21832.8.camel@mtksdaap41>
-Subject: Re: [PATCH v14 02/11] dt-bindings: soc: Add MT8183 power dt-bindings
+ Transport; Mon, 11 May 2020 14:02:27 +0800
+Message-ID: <1589176947.21832.9.camel@mtksdaap41>
+Subject: Re: [PATCH v14 03/11] soc: mediatek: Add basic_clk_name to
+ scp_power_data
 From: Weiyi Lu <weiyi.lu@mediatek.com>
 To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Date: Mon, 11 May 2020 14:01:20 +0800
-In-Reply-To: <30046b88-0fb7-5506-7460-bf0fba320c3d@collabora.com>
+Date: Mon, 11 May 2020 14:02:27 +0800
+In-Reply-To: <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
 References: <1588752963-19934-1-git-send-email-weiyi.lu@mediatek.com>
- <1588752963-19934-3-git-send-email-weiyi.lu@mediatek.com>
- <30046b88-0fb7-5506-7460-bf0fba320c3d@collabora.com>
+ <1588752963-19934-4-git-send-email-weiyi.lu@mediatek.com>
+ <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: DC61A680C42B6E7D8C79A5AE02CAC469C3B32FE8863099B2CB8B03AD60D641312000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_230137_349836_E7CBBE19 
-X-CRM114-Status: GOOD (  21.99  )
+X-CRM114-CacheID: sfid-20200510_231233_850040_E1534C59 
+X-CRM114-Status: GOOD (  24.22  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -88,8 +90,7 @@ Cc: James Liao <jamesjj.liao@mediatek.com>,
  Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com, Rob
  Herring <robh@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>,
  linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- devicetree <devicetree@vger.kernel.org>, linux-mediatek@lists.infradead.org,
- Sascha Hauer <kernel@pengutronix.de>,
+ linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
  Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
@@ -98,146 +99,232 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On Wed, 2020-05-06 at 23:00 +0200, Enric Balletbo i Serra wrote:
+On Wed, 2020-05-06 at 23:01 +0200, Enric Balletbo i Serra wrote:
 > Hi Weiyi,
 > 
-> Thank you for your patch. You should cc devicetree@vger.kernel.org, otherwise
-> this patch might be ignored.
+> Thank you for your patch.
 > 
-
-Got it.
-
 > On 6/5/20 10:15, Weiyi Lu wrote:
-> > Add power dt-bindings of MT8183 and introduces "BASIC" and
-> > "SUBSYS" clock types in binding document.
-> > The "BASIC" type is compatible to the original power control with
-> > clock name [a-z]+[0-9]*, e.g. mm, vpu1.
-> > The "SUBSYS" type is used for bus protection control with clock
-> > name [a-z]+-[0-9]+, e.g. isp-0, cam-1.
-> > And add an optional smi-comm property for phandle to smi-common
-> > controller.
+> > Try to stop extending the clk_id or clk_names if there are
+> > more and more new BASIC clocks. To get its own clocks by the
+> > basic_clk_name of each power domain.
+> > And then use basic_clk_name strings for all compatibles, instead of
+> > mixing clk_id and clk_name.
 > > 
 > > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
 > > ---
-> >  .../devicetree/bindings/soc/mediatek/scpsys.txt    | 21 ++++++++++++++---
-> >  include/dt-bindings/power/mt8183-power.h           | 26 ++++++++++++++++++++++
-> >  2 files changed, 44 insertions(+), 3 deletions(-)
-> >  create mode 100644 include/dt-bindings/power/mt8183-power.h
+> >  drivers/soc/mediatek/mtk-scpsys.c | 134 ++++++++++++--------------------------
+> >  1 file changed, 41 insertions(+), 93 deletions(-)
 > > 
-> > diff --git a/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt b/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
-> > index 2bc3677..5424e66 100644
-> > --- a/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
-> > +++ b/Documentation/devicetree/bindings/soc/mediatek/scpsys.txt
-> > @@ -15,6 +15,7 @@ power/power-domain.yaml. It provides the power domains defined in
-> >  - include/dt-bindings/power/mt2701-power.h
-> >  - include/dt-bindings/power/mt2712-power.h
-> >  - include/dt-bindings/power/mt7622-power.h
-> > +- include/dt-bindings/power/mt8183-power.h
+> > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> > index f669d37..c9c3cf7 100644
+> > --- a/drivers/soc/mediatek/mtk-scpsys.c
+> > +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> > @@ -78,34 +78,6 @@
+> >  #define PWR_STATUS_HIF1			BIT(26)	/* MT7622 */
+> >  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
 > >  
-> >  Required properties:
-> >  - compatible: Should be one of:
-> > @@ -27,12 +28,16 @@ Required properties:
-> >  	- "mediatek,mt7623a-scpsys": For MT7623A SoC
-> >  	- "mediatek,mt7629-scpsys", "mediatek,mt7622-scpsys": For MT7629 SoC
-> >  	- "mediatek,mt8173-scpsys"
-> > +	- "mediatek,mt8183-scpsys"
-> >  - #power-domain-cells: Must be 1
-> >  - reg: Address range of the SCPSYS unit
-> >  - infracfg: must contain a phandle to the infracfg controller
-> > -- clock, clock-names: clocks according to the common clock binding.
-> > -                      These are clocks which hardware needs to be
-> > -                      enabled before enabling certain power domains.
-> > +- clock, clock-names: Clocks according to the common clock binding.
-> > +                      Some SoCs have to groups of clocks.
-> > +                      BASIC clocks need to be enabled before enabling the
-> > +                      corresponding power domain.
-> > +                      SUBSYS clocks need to be enabled before releasing the
-> > +                      bus protection.
-> >  	Required clocks for MT2701 or MT7623: "mm", "mfg", "ethif"
-> >  	Required clocks for MT2712: "mm", "mfg", "venc", "jpgdec", "audio", "vdec"
-> >  	Required clocks for MT6765: MUX: "mm", "mfg"
-> > @@ -43,6 +48,15 @@ Required properties:
-> >  	Required clocks for MT7622 or MT7629: "hif_sel"
-> >  	Required clocks for MT7623A: "ethif"
-> >  	Required clocks for MT8173: "mm", "mfg", "venc", "venc_lt"
-> > +	Required clocks for MT8183: BASIC: "audio", "mfg", "mm", "cam", "isp",
-> > +					   "vpu", "vpu1", "vpu2", "vpu3"
-> > +				    SUBSYS: "mm-0", "mm-1", "mm-2", "mm-3",
-> > +					    "mm-4", "mm-5", "mm-6", "mm-7",
-> > +					    "mm-8", "mm-9", "isp-0", "isp-1",
-> > +					    "cam-0", "cam-1", "cam-2", "cam-3",
-> > +					    "cam-4", "cam-5", "cam-6", "vpu-0",
-> > +					    "vpu-1", "vpu-2", "vpu-3", "vpu-4",
-> > +					    "vpu-5"
+> > -enum clk_id {
+> > -	CLK_NONE,
+> > -	CLK_MM,
+> > -	CLK_MFG,
+> > -	CLK_VENC,
+> > -	CLK_VENC_LT,
+> > -	CLK_ETHIF,
+> > -	CLK_VDEC,
+> > -	CLK_HIFSEL,
+> > -	CLK_JPGDEC,
+> > -	CLK_AUDIO,
+> > -	CLK_MAX,
+> > -};
+> > -
+> > -static const char * const clk_names[] = {
+> > -	NULL,
+> > -	"mm",
+> > -	"mfg",
+> > -	"venc",
+> > -	"venc_lt",
+> > -	"ethif",
+> > -	"vdec",
+> > -	"hif_sel",
+> > -	"jpgdec",
+> > -	"audio",
+> > -	NULL,
+> > -};
+> > -
+> >  #define MAX_CLKS	3
 > >  
-> >  Optional properties:
-> >  - vdec-supply: Power supply for the vdec power domain
-> > @@ -55,6 +69,7 @@ Optional properties:
-> >  - mfg_async-supply: Power supply for the mfg_async power domain
-> >  - mfg_2d-supply: Power supply for the mfg_2d power domain
-> >  - mfg-supply: Power supply for the mfg power domain
-> > +- smi_comm: a phandle to the smi-common controller
+> >  /**
+> > @@ -116,7 +88,7 @@ enum clk_id {
+> >   * @sram_pdn_bits: The mask for sram power control bits.
+> >   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
+> >   * @bus_prot_mask: The mask for single step bus protection.
+> > - * @clk_id: The basic clocks required by this power domain.
+> > + * @basic_clk_name: The basic clocks required by this power domain.
+> >   * @caps: The flag for active wake-up action.
+> >   */
+> >  struct scp_domain_data {
+> > @@ -126,7 +98,7 @@ struct scp_domain_data {
+> >  	u32 sram_pdn_bits;
+> >  	u32 sram_pdn_ack_bits;
+> >  	u32 bus_prot_mask;
+> > -	enum clk_id clk_id[MAX_CLKS];
+> > +	const char *basic_clk_name[MAX_CLKS];
 > 
+> I only reviewed v13, so sorry if this was already discussed. I am wondering if
+> would be better take advantage of the devm_clk_bulk_get() function instead of
+> kind of reimplementing the same, something like this
 > 
-> I think that in device-tree hyphen are preferred and kind of a must for new
-> properties, also I think you should prefix this property with "mediatek,". Can I
-> suggest you to use "mediatek,smi" like is done in the mediatek,smi-larb binding?
-> AFAICS is the same phandle right?
-> 
-> Documentation/devicetree/bindings/memory-controllers/mediatek,smi-larb.txt:
-> - mediatek,smi : a phandle to the smi_common node.
+> 	const struct clk_bulk_data *basic_clocks;
 > 
 
-Thanks, I'll follow your suggestion in next version.
+I thought it should be const struct clk_bulk_data
+basic_clocks[MAX_CLKS]; instead of const struct clk_bulk_data
+*basic_clocks; in struct scp_domain_data data type
 
-> 
+> >  	u8 caps;
+> >  };
 > >  
-> >  Example:
+> > @@ -411,12 +383,19 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+> >  	return ret;
+> >  }
 > >  
-> > diff --git a/include/dt-bindings/power/mt8183-power.h b/include/dt-bindings/power/mt8183-power.h
-> > new file mode 100644
-> > index 0000000..d6b25f8
-> > --- /dev/null
-> > +++ b/include/dt-bindings/power/mt8183-power.h
-> > @@ -0,0 +1,26 @@
-> > +/* SPDX-License-Identifier: GPL-2.0 */
-> > +/*
-> > + * Copyright (c) 2018 MediaTek Inc.
-> 
-> You probably want to update the copyright to 2020.
-> 
-
-Thanks, I'll fix it.
-
-> > + * Author: Weiyi Lu <weiyi.lu@mediatek.com>
-> > + */
+> > -static void init_clks(struct platform_device *pdev, struct clk **clk)
+> > +static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
+> > +			const char * const *name)
+> >  {
+> >  	int i;
+> >  
+> > -	for (i = CLK_NONE + 1; i < CLK_MAX; i++)
+> > -		clk[i] = devm_clk_get(&pdev->dev, clk_names[i]);
+> > +	for (i = 0; i < MAX_CLKS && name[i]; i++) {
+> > +		clk[i] = devm_clk_get(&pdev->dev, name[i]);
 > > +
-> > +#ifndef _DT_BINDINGS_POWER_MT8183_POWER_H
-> > +#define _DT_BINDINGS_POWER_MT8183_POWER_H
-> > +
-> > +#define MT8183_POWER_DOMAIN_AUDIO	0
-> > +#define MT8183_POWER_DOMAIN_CONN	1
-> > +#define MT8183_POWER_DOMAIN_MFG_ASYNC	2
-> > +#define MT8183_POWER_DOMAIN_MFG		3
-> > +#define MT8183_POWER_DOMAIN_MFG_CORE0	4
-> > +#define MT8183_POWER_DOMAIN_MFG_CORE1	5
-> > +#define MT8183_POWER_DOMAIN_MFG_2D	6
-> > +#define MT8183_POWER_DOMAIN_DISP	7
-> > +#define MT8183_POWER_DOMAIN_CAM		8
-> > +#define MT8183_POWER_DOMAIN_ISP		9
-> > +#define MT8183_POWER_DOMAIN_VDEC	10
-> > +#define MT8183_POWER_DOMAIN_VENC	11
-> > +#define MT8183_POWER_DOMAIN_VPU_TOP	12
-> > +#define MT8183_POWER_DOMAIN_VPU_CORE0	13
-> > +#define MT8183_POWER_DOMAIN_VPU_CORE1	14
-> > +
-> > +#endif /* _DT_BINDINGS_POWER_MT8183_POWER_H */
-> > 
+> > +		if (IS_ERR(clk[i]))
+> > +			return PTR_ERR(clk[i]);
+> > +	}
 > 
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+> You will be able to remove this function, see below ...
+> 
+> > +
+> > +	return 0;
+> >  }
+> >  
+> >  static struct scp *init_scp(struct platform_device *pdev,
+> > @@ -426,9 +405,8 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >  {
+> >  	struct genpd_onecell_data *pd_data;
+> >  	struct resource *res;
+> > -	int i, j;
+> > +	int i, ret;
+> >  	struct scp *scp;
+> > -	struct clk *clk[CLK_MAX];
+> >  
+> >  	scp = devm_kzalloc(&pdev->dev, sizeof(*scp), GFP_KERNEL);
+> >  	if (!scp)
+> > @@ -481,8 +459,6 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >  
+> >  	pd_data->num_domains = num;
+> >  
+> > -	init_clks(pdev, clk);
+> > -
+> >  	for (i = 0; i < num; i++) {
+> >  		struct scp_domain *scpd = &scp->domains[i];
+> >  		struct generic_pm_domain *genpd = &scpd->genpd;
+> > @@ -493,17 +469,9 @@ static struct scp *init_scp(struct platform_device *pdev,
+> >  
+> >  		scpd->data = data;
+> >  
+> > -		for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
+> > -			struct clk *c = clk[data->clk_id[j]];
+> > -
+> > -			if (IS_ERR(c)) {
+> > -				dev_err(&pdev->dev, "%s: clk unavailable\n",
+> > -					data->name);
+> > -				return ERR_CAST(c);
+> > -			}
+> > -
+> > -			scpd->clk[j] = c;
+> > -		}
+> > +		ret = init_basic_clks(pdev, scpd->clk, data->basic_clk_name);
+> > +		if (ret)
+> > +			return ERR_PTR(ret);
+> 
+> Just call:
+> 
+> 	ret = devm_clk_bulk_get(&pdev->dev, ARRAY_SIZE(basic_clocks),
+> 				data->basic_clocks);
+> 	if (ret)
+> 		return ERR_PTR(ret);
+> 
+> >  
+> >  		genpd->name = data->name;
+> >  		genpd->power_off = scpsys_power_off;
+> > @@ -560,7 +528,6 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> >  		.ctl_offs = SPM_CONN_PWR_CON,
+> >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_CONN_M |
+> >  				 MT2701_TOP_AXI_PROT_EN_CONN_S,
+> > -		.clk_id = {CLK_NONE},
+> >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> >  	},
+> >  	[MT2701_POWER_DOMAIN_DISP] = {
+> > @@ -568,7 +535,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> >  		.sta_mask = PWR_STATUS_DISP,
+> >  		.ctl_offs = SPM_DIS_PWR_CON,
+> >  		.sram_pdn_bits = GENMASK(11, 8),
+> > -		.clk_id = {CLK_MM},
+> > +		.basic_clk_name = {"mm"},
+> 
+> 		.basic_clocks[] = {
+> 			{ .id = "mm" },
+> 		};
+> 
+
+Those basic clocks without given a name (name: null) would get incorrect
+clock via clk_bulk_get(...) due to 
+
+/**
+ * of_parse_clkspec() - Parse a DT clock specifier for a given device
+node
+ * @np: device node to parse clock specifier from
+ * @index: index of phandle to parse clock out of. If index < 0, @name
+is used
+ * @name: clock name to find and parse. If name is NULL, the index is
+used
+
+And the index is 0 here in this callstack
+
+I guess something need to be improved before we use the clk_bulk_ APIs.
+
+
+> >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_MM_M0,
+> >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> >  	},
+> > @@ -578,7 +545,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> >  		.ctl_offs = SPM_MFG_PWR_CON,
+> >  		.sram_pdn_bits = GENMASK(11, 8),
+> >  		.sram_pdn_ack_bits = GENMASK(12, 12),
+> > -		.clk_id = {CLK_MFG},
+> > +		.basic_clk_name = {"mfg"},
+> 
+> 		.basic_clocks[] = {
+> 			{ .id = "mfg" },
+> 		};
+> 
+> >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
+> >  	},
+> >  	[MT2701_POWER_DOMAIN_VDEC] = {
+> > @@ -587,7 +554,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
+> >  		.ctl_offs = SPM_VDE_PWR_CON,
+> >  		.sram_pdn_bits = GENMASK(11, 8),
+> >  		.sram_pdn_ack_bits = GENMASK(12, 12),
+> > -		.clk_id = {CLK_MM},
+> > +		.basic_clk_name = {"mm"},
+> 
+> ...
+> 
+> [snip]
 
 
 _______________________________________________
