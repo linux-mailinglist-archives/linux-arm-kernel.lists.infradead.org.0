@@ -2,91 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C0981CDF09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:30:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81BC21CDF03
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:29:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U0IxFnNUxt2FhfHYRAQHOWOOt2OtHrTsSAkCX6fWdsM=; b=PyDc7bwYyA8/pJ
-	iCp+HQlP4hkthgtEhDMrfFoRxUeFXOM06rGcAIoFllUDUG7uinAKbXU4mpr++J0MtAwJkU747wyrD
-	cZnVzJzVomKb/cM6rRuzAQ8GvnlgIGaunZAHea470YTla2/stw2NdhAbAXbxD6XPKOxLvQusb46sI
-	b2YiCicR1w17CTz+dHN3SHV6WdA8+1ecCrPNMdpu5wc5jjmodoqa2SAvs+E7lYHsc1CuDNtXNpY2T
-	9JaTqwykEmUIrBqCnRkYPUrv3JbOjIM9m3mUGZBi+UtqI2Wyz9QFA+tycuwqYm1Uris7GA114E/9d
-	OZCmg0haP004fwvKbtNQ==;
+	List-Owner; bh=Rdt78sTNTll61Hwg8Sf1RrdeVJxNJfUDz5eMfDf1yvU=; b=SdsfR+Zu5AEwCg
+	qXau6qqhBSISeT2ns9mlfQymlo+F8tFxpA04JpZkUOtByvXUzh/WVFcDbVvwkqulUFfdr+bOExBi/
+	mxsKGTXvcSCisvHOQwX3G4wv0XCVRchhKa7fdOHbrJiy+aa4dttOKGjDpKEAlHp08m7YFfy+jArWh
+	OQp/LTep44q7oJd76vLgj6ieZ8n0+CFPUZ4NOkYVbTM3yZMVjcu7kQBaMTBM99U0CZ07NipAjhklN
+	YAiGlNEtReTleGpY07cz79sCwRRjU7uEgmVtG9bm/Dk2rgzI/mJm02J4jmmfoWk01e3bMJNGfCt9C
+	OlCJ4/L7sDR2rawVdCNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYANp-0003XZ-Qo; Mon, 11 May 2020 15:30:21 +0000
-Received: from mout.kundenserver.de ([217.72.192.74])
+	id 1jYANJ-0003If-E0; Mon, 11 May 2020 15:29:49 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYANK-0003PV-Q2
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:29:52 +0000
-Received: from mail-qk1-f169.google.com ([209.85.222.169]) by
- mrelayeu.kundenserver.de (mreue107 [212.227.15.145]) with ESMTPSA (Nemesis)
- id 1M7bJ5-1jSOY50lgr-0080Re for <linux-arm-kernel@lists.infradead.org>; Mon,
- 11 May 2020 17:29:48 +0200
-Received: by mail-qk1-f169.google.com with SMTP id b6so9029272qkh.11
+ id 1jYANA-0003I1-GF
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:29:42 +0000
+Received: by mail-pg1-x543.google.com with SMTP id u35so1733551pgk.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 08:29:47 -0700 (PDT)
-X-Gm-Message-State: AGi0PuYBv1iFjcpVEScbOuDVRIRHTmHuDwfRwZ3DWHYtjvYITR9NMNBm
- hi5WMzWQ7n4NSAi/zt1q/RaOzDJlWBrmSQhmUMM=
-X-Google-Smtp-Source: APiQypJqkx9Wh1nNgK7vVycduyuXesKEQUeeckiF+gPcu6V41M9Z/9Eq//BTqI9+j2JHqoWMGtanrCSLxeUhS5Jd6lo=
-X-Received: by 2002:a37:4e08:: with SMTP id c8mr16010333qkb.286.1589210986640; 
- Mon, 11 May 2020 08:29:46 -0700 (PDT)
+ Mon, 11 May 2020 08:29:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=y/V0wcoxC/Yk3CV9Ny72KgJNadmz9KFuZ61yQV7Ioak=;
+ b=o+le0p8g5d/nvE3pzywPAZJpoIzOEmlpxN4Sow/q0VQ0QPFnUNKO3GCJZXABsT8kiu
+ 45bmA1W0/PY04u/CF5DEvBlWWogZwMOD+4v5iRBJZxWW61zr5u7/t/aibMPEj0TI7Y5J
+ MGAKDOtUi35Rip0Z0Jqi5oRQBPX0mI5Ewpgiw0l6+cb72hGVJa2QS6+y8ddjJNz/UPdh
+ w9h/1eSZ7tN5++f87W+3DrlTwG7T2KKvA55KeE+piTOrAib+leIymvWshHf0bYTXWfEK
+ 6y6v8OFu1YoRueD1I2O8XHyGDEmvGPtohynwLNxLB/9TX+HCMwUn1+A4nBQXWX4ynnps
+ WtQg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=y/V0wcoxC/Yk3CV9Ny72KgJNadmz9KFuZ61yQV7Ioak=;
+ b=MHfdQpUbptI2AuYlWXEAxUjgDd+Ctv7KgfsAFiC5UHjjLuO8wY0VNmUwPTioviYW1P
+ FC3LKkHDpAD39hdFff6TE6ze4fhiDs7aFlZSTGs2nW7CXKR22H5IHDjOUqEtoCcdf42h
+ 5iGRmSCTLJocD7ILe6JeKQxlAseYtKdpVz7ryuojf9huR+0+xjPUqUP2T/4YWVXXM8wI
+ C3eFuLBwBlv8R9QiETeygYMdytbhqywZd0TZRSimwbSs5VuRO/tFLjKTv/sPQ6OCMQTz
+ OY5G+T2ih/MTf21tpyNo/moPJFpPYG4ClQJQCw8mFtOABmaSTdQzfcs17850ry/GCJ3u
+ G0OA==
+X-Gm-Message-State: AGi0Pub42YS+PnTfDyJ5j0XQNBbCPta5qk+sXMv3lxdufeYZqlfn9xEX
+ +WLq2NtG6k4/V5N0hPAe4NBF
+X-Google-Smtp-Source: APiQypLyFwhYqdaWIHUXhMcandw2Ds1EIzw/MYLXIpDgFhOYsgqj0h7AN5YikFI6HeX1TtAh5mWmyA==
+X-Received: by 2002:a63:dd0e:: with SMTP id t14mr14918193pgg.226.1589210979329; 
+ Mon, 11 May 2020 08:29:39 -0700 (PDT)
+Received: from Mani-XPS-13-9360 ([2409:4072:28b:647d:9464:e66e:7157:1965])
+ by smtp.gmail.com with ESMTPSA id g9sm3204412pgh.52.2020.05.11.08.29.32
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 11 May 2020 08:29:38 -0700 (PDT)
+Date: Mon, 11 May 2020 20:59:29 +0530
+From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+To: =?iso-8859-1?Q?Andr=E9?= Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH RFC 1/8] dmaengine: Actions: get rid of bit fields from
+ dma descriptor
+Message-ID: <20200511152929.GB6865@Mani-XPS-13-9360>
+References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
+ <1588761371-9078-2-git-send-email-amittomer25@gmail.com>
+ <20200510155159.GA27924@Mani-XPS-13-9360>
+ <CABHD4K_h7wc1gc3wvya1PRTRjMRkDPW==yrAWSk7cCF9ghkUjg@mail.gmail.com>
+ <20200511112014.GA3322@Mani-XPS-13-9360>
+ <87569683-509e-96e6-17f9-c1734a8b32d4@arm.com>
+ <20200511120458.GB3322@Mani-XPS-13-9360>
+ <68aa739c-f2fe-a739-f8ed-5683cba90b23@arm.com>
 MIME-Version: 1.0
-References: <CAK8P3a3LokurC0n9XiwtPQh9ZgQcswMKY4b+TEsQh1VgYDNeWA@mail.gmail.com>
- <20200408035118.GA1451@andestech.com>
- <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
- <20200414151748.GA5624@afzalpc>
- <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
- <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
- <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
- <20200504091018.GA24897@afzalpc>
- <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
- <20200511142113.GA31707@afzalpc>
-In-Reply-To: <20200511142113.GA31707@afzalpc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 11 May 2020 17:29:29 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
-Message-ID: <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
-Subject: Re: ARM: static kernel in vmalloc space (was Re: [PATCH 0/3] Highmem
- support for 32-bit RISC-V)
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-X-Provags-ID: V03:K1:9qdkbTJTJQhe9O7Tp/T4Qzm851bZCjsp1TZcLuqyxE0LnpXuvMa
- F8og235/skzY2zcoA7sldZfm2Xo9m2forcxInOh3De6eFJZ8DsAqy5F8q/TDUfOyT6zK8vi
- tW+3W+IuoJezKUwZvZ42CFE27UzTyud9H1xXhyICn2LoBfJ9WNSnlyFfa06JNFdxhvn54Xc
- yhm88br4s+vB03IpQbw3w==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:HSxPklhK3wk=:57b1/MwrOuaUVCJRZqKpuv
- suHjCjsPRn1s8EIxjO5iJmlC/jClKtJ/Df5r/cX/iHyTVPZbzeHVVXvUgXU2wmeL2gIrSDQnk
- PqtJa5q0UaNoeOVlRNR18ZFqHu1zIS+rk66Lnr07lDQ00F/DBT0SB0bIaU600eRRI6c+1BSPY
- 4mH3cXKd56P60GZ0Fr/BnPcEi3dHRhB/5l/vNJ6Cz1F2leq2mzMk/Nru5mCgTf80UAIg33esx
- +U+Lo/sXaVGT8CmA3dDSCRcMz+lUDYaZUSz2rvbQxaNDiA3maqU+8kiSwTOHXhLYzQvnxnQUy
- L12LkXz1Aj2FXE+pXWwtoQLH6/kj/4U7V+JGxOjnxn9/RFBBsFXoZ3qMtwQzL3Bh5sSFZ52Y1
- oqbQAoNcIh31nbSU6dRCEGrJiUlkjWBZSV5tbLVyy2pgoSkusc0nTc+qTTiGK4kCl/m7Mf1dP
- baXHYhYF+TtEv7K4TBV0E62ey1z7hqh6VxpaloNmmUf3AgLwt71E0eajUTue9V62SYLHVIaGE
- O5komGxkwgTHTtZT88W6Df1xy0toVXGmXZtP1Ncu82p20p8CmCZkwemz/lUwTNp8fbfXJ/341
- Md64UjlEOjusb2EjloV+4NIVvRaEdwFEspXNq+H9+5w9SfG9IFWbPPloy0mSMp3AdwXb6CcNJ
- 1UVcm4AxVDlQ+gdymoDKUC1caDIwRuY81QjWbS9Z0/jqWAkwfrBXHe/lIEZqqWn71v8EHAHM0
- /dOLBRuHRB6+M5VhGpwNDYeU9DEOx7l57SztPzYTZ9sc5q425TMlP2+glA/YfJbqiUQiHHOSZ
- rWuLRlWsAQYN9gwLYsm/Q7Q5AmY9Q/OgwUSgXecFoSiXi2xbLg=
+Content-Disposition: inline
+In-Reply-To: <68aa739c-f2fe-a739-f8ed-5683cba90b23@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_082951_140374_6C684D3F 
-X-CRM114-Status: GOOD (  12.93  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200511_082940_577585_8288466F 
+X-CRM114-Status: GOOD (  33.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [217.72.192.74 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [217.72.192.74 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,35 +106,209 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-actions@lists.infradead.org, cristian.ciocaltea@gmail.com,
+ vkoul@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ Amit Tomer <amittomer25@gmail.com>,
+ Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 4:21 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
->
+On Mon, May 11, 2020 at 01:48:41PM +0100, Andr=E9 Przywara wrote:
+> On 11/05/2020 13:04, Manivannan Sadhasivam wrote:
+> =
+
 > Hi,
->
-> Kernel now boots to prompt w/ static kernel mapping moved to vmalloc
-> space.
->
-> Changes currently done have a couple of platform specific things, this
-> has to be modified to make it multiplatform friendly (also to be taken
-> care is ARM_PATCH_PHYS_VIRT case).
+> =
 
-Nice!
+> > On Mon, May 11, 2020 at 12:44:26PM +0100, Andr=E9 Przywara wrote:
+> >> On 11/05/2020 12:20, Manivannan Sadhasivam wrote:
+> >>
+> >> Hi,
+> >>
+> >>> On Mon, May 11, 2020 at 04:15:57PM +0530, Amit Tomer wrote:
+> >>>> Hi
+> >>>>
+> >>>> Thanks for the reply.
+> >>>>
+> >>>>> I'm in favor of getting rid of bitfields due to its not so defined =
+way of
+> >>>>> working (and forgive me for using it in first place) but I don't qu=
+ite like
+> >>>>> the current approach.
+> >>>>
+> >>>> Because , its less readable the way we are writing to those differen=
+t fields ?
+> >>>> But this can be made more verbose by adding some comments around .
+> >>>>
+> >>>
+> >>> I don't like the way the hw linked lists are accessed (using an array=
+ with
+> >>> enums).
+> >>
+> >> But honestly this is the most sane way of doing this, see below.
+> >>
+> >>>>> Rather I'd like to have custom bitmasks (S900/S700/S500?) for writi=
+ng to those
+> >>>>> fields.
+> >>>>>
+> >>>> I think S900 and S500 are same as pointed out by Cristian. and I did=
+n't get by
+> >>>> creating custom bitmasks for it ?
+> >>>>
+> >>>> Did you mean function like:
+> >>>>
+> >>>> lli->hw[OWL_DMADESC_FLEN]=3D llc_hw_FLEN(len, FCNT_VALUE, FCNT_SHIFT=
+);
+> >>>>
+> >>>
+> >>> I meant to keep using old struct for accessing the linked list and re=
+placing
+> >>> bitfields with masks as below:
+> >>>
+> >>> struct owl_dma_lli_hw {
+> >>> 	...
+> >>>         u32     flen;
+> >>>         u32     fcnt;
+> >>> 	...
+> >>> };
+> >>
+> >> And is think this is the wrong way of modelling hardware defined
+> >> register fields. C structs have no guarantee of not introducing padding
+> >> in between fields, the only guarantee you get is that the first member
+> >> has no padding *before* it:
+> >> C standard, section 6.7.2.1, end of paragraph 15:
+> >> "There may be unnamed padding within a structure object, but not at its
+> >> beginning."
+> >>
+> >> Arrays in C on the contrary have very much this guarantee: The members
+> >> are next to each other, no padding.
+> >>
+> >> I see that structs are sometimes used in this function, but it's much
+> >> less common in the kernel than in other projects (U-Boot comes to mind=
+).
+> >> It typically works, because common compiler *implementations* provide
+> >> this guarantee, but we should not rely on this.
+> >>
+> >> So:
+> >> Using enums for the keys provides a natural way of increasing indices,
+> >> without gaps. Also you get this nice and automatic size value by making
+> >> this the last member of the enum.
+> >> Arrays provide the guarantee of consecutive allocation.
+> >>
+> > =
 
-> Module address space has to be taken care as well.
+> > I agree with your concerns of using struct for defining registers. But =
+we can
+> > safely live with the existing implementation since all fields are u32 a=
+nd if
+> =
 
-What do you currently do with the module address space? I suppose the
-easiest way is to just always put modules into vmalloc space, as we already
-do with CONFIG_ARM_MODULE_PLTS when the special area gets full,
-but that could be optimized once the rest works.
+> But why, actually? I can understand that this is done in existing code,
+> because this was done in the past and apparently never challenged. And
+> since it seems to work, at least, there is probably not much reason to
+> change it, just for the sake of it.
+> But if we need to rework this anyway, we should do the right thing. This
+> is especially true in the Linux kernel, which is highly critical and
+> privileged code and also aims to be very portable. We should take no
+> chances here.
+> =
 
-        Arnd
+
+I gave it a spin and I think it makes sense to stick to arrays. I do talk to
+a compiler guy internally and he recommended to not trust compilers to do t=
+he
+right thing for non standard behaviour like this.
+
+> Honestly I don't understand the advantage of using a struct here,
+> especially if you need to play some tricks (__packed__) to make it work.
+> So why is:
+> 	hw->flen
+> so much better than
+> 	hw[DMA_FLEN]
+
+To be honest this looks ugly to me and that's why I was reluctant. But lets=
+ not
+worry about it :)
+
+> that it justifies to introduce dodgy code?
+> =
+
+> In think in general we should be much more careful when using C language
+> constructs to access hardware or hardware defined data structures, and
+> be it to not give people the wrong idea about this.
+> I think with the advance of more optimising compilers (and, somewhat
+> related, more out-of-order CPUs) the chance of breakage becomes much
+> higher here.
+> =
+
+
+Only way it can go wrong is, if a nasty compiler adds padding eventhough the
+struct is homogeneous. And yeah, let's be on the safe side.
+
+Sorry for stretching this so long!
+
+Thanks,
+Mani
+
+> Cheers,
+> Andre.
+> =
+
+> > needed we can also add '__packed' flag to it to avoid padding for any c=
+ases.
+> > =
+
+> > The reason why I prefer to stick to this is, this is a hardware linked =
+list and
+> > by defining it as an array and accessing the fields using enums looks a=
+wful to
+> > me. Other than that there is no real justification to shy away.
+> > =
+
+> > When you are modelling a plain register bank (which we are also doing i=
+n this
+> > driver), I'd prefer to use the defines directly.
+> > =
+
+> >> We can surely have a look at the masking problem, but this would need =
+to
+> >> be runtime determined masks, which tend to become "wordy". There can be
+> >> simplifications, for instance I couldn't find where the frame length is
+> >> really limited for the S900 (it must be less than 1MB). Since the S700
+> >> supports *more* than that, there is no need to limit this differently.
+> > =
+
+> > I was just giving an example of how to handle the bitmasks for different
+> > SoCs if needed. So yeah if it can be avoided, feel free to drop it.
+> > =
+
+> > Thanks,
+> > Mani
+> > =
+
+> >>
+> >> Cheers,
+> >> Andre.
+> >>
+> >>
+> >>>
+> >>> hw->flen =3D len & OWL_S900_DMA_FLEN_MASK;
+> >>> hw->fcnt =3D 1 & OWL_S900_DMA_FCNT_MASK;
+> >>>
+> >>> Then you can use different masks for S700/S900 based on the compatibl=
+e.
+> >>>
+> >>> Thanks,
+> >>> Mani
+> >>>
+> >>>> Thanks
+> >>>> -Amit
+> >>
+> =
+
 
 _______________________________________________
 linux-arm-kernel mailing list
