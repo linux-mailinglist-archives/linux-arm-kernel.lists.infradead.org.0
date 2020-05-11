@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24DB51CD4DF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:27:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB4101CD53B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:35:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cAQzUkcso5R1x948lhPneoJONFBVkgtnzF2+bhg0BKc=; b=YwFbFRwQeWQqR5
-	OMrHyQ1QNV1EmPDnTv94+Ogk0tISvRhXyFqJW8MznNBmRMb9NV016JHMtvLGHZi7ErhjjHwkpjk4L
-	dlSguUvuSPDNyYwwHNNYDrCUrsP5utjtsvYwK7HB/mWUFClSqNcfZ6u4MvQejQrmcEinqEAGiTlgL
-	fcomnol86LWrvQdaamqzWErBBD5xpoSPHuq09K1QA3XNw1jSi8meZCZXxk7maQfnYe5EAE7Au/AlC
-	DWVmv4iB+7400v0QxNqeWA9rSg6fznMEOjJ0MVypy4Iu9zPUH9raMiU/OsIqV23ssYvX3Lsr7so6C
-	cuSW3EVhb7IqK2jXlgvA==;
+	List-Owner; bh=KIH8hf/nNOmXv7h+matSQ7sdHLf9MamG2MiK4nk8TUc=; b=dRWFyxM5WLluwN
+	aL4fFw84al87UQGkAxAK737j0sEv4Ho+jetohEec028eAXxf4Krn1wmeBwM5U5ipUJH2Ui0qpoYVY
+	NQuGc01Jmd9xFtyUQfPpaWrBHEYaRmRHhUrTc7QAd21z9hKx4WfcudUlIRJB3H5dF/qV9ZVaM6DLG
+	ew7qmfpGS5ByXOgmPTmHub1IsdHHZVOj+7WrcwPmo6VXM9vbofmyLfVlq9lcOVx8pcOXLJ/sh/r7X
+	mCL7+MAY4aIv92InaOSUkUKompVv6k4tQn3QHgTTIl8CIC9gXqhHqXFQmJJm17WsnSgOwlGDXi/q1
+	sK5tkAZi8OoBSYiaxnlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY4ia-00072d-Ni; Mon, 11 May 2020 09:27:24 +0000
-Received: from bhuna.collabora.co.uk ([46.235.227.227])
+	id 1jY4qf-00072Z-0f; Mon, 11 May 2020 09:35:45 +0000
+Received: from mga02.intel.com ([134.134.136.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY4iT-000729-PS; Mon, 11 May 2020 09:27:19 +0000
-Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id D85042A0F28;
- Mon, 11 May 2020 10:27:15 +0100 (BST)
-Date: Mon, 11 May 2020 11:27:12 +0200
-From: Boris Brezillon <boris.brezillon@collabora.com>
-To: <Tudor.Ambarus@microchip.com>
-Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
-Message-ID: <20200511112712.466f7246@collabora.com>
-In-Reply-To: <3649933.zuh8VGJVCz@192.168.0.120>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <3649933.zuh8VGJVCz@192.168.0.120>
-Organization: Collabora
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
+ id 1jY4oB-00036d-RT; Mon, 11 May 2020 09:33:13 +0000
+IronPort-SDR: jdVOlFjP40SMSG91Mhe8vOIQcSPgpYnwCzSyXB2VVFLjaF44cpZ5A3uO2oPI1As7J0fcpXc/kT
+ w+5ycurg8k/w==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 11 May 2020 02:33:10 -0700
+IronPort-SDR: ONYW+QqYbjMLn1MDFmvWENe6egF5WQnYr3Nj7Te1ktN7xBvPMhyHdGCfc/X9xjhrYEJUEWRnwl
+ KL4sexatOzeQ==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,379,1583222400"; d="scan'208";a="371171194"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga001.fm.intel.com with ESMTP; 11 May 2020 02:33:06 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jY4o8-005vQO-I5; Mon, 11 May 2020 12:33:08 +0300
+Date: Mon, 11 May 2020 12:33:08 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Subject: Re: [V8, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+Message-ID: <20200511093308.GF185537@smile.fi.intel.com>
+References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
+ <20200509080627.23222-3-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200509080627.23222-3-dongchun.zhu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_022717_958156_7CE8D683 
-X-CRM114-Status: GOOD (  21.88  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200511_023311_960479_35423B89 
+X-CRM114-Status: GOOD (  13.48  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [46.235.227.227 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.20 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [134.134.136.20 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,86 +75,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, vigneshr@ti.com, richard@nod.at,
- nsekhar@ti.com, linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
- broonie@kernel.org, linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
- linux-spi@vger.kernel.org, p.yadav@ti.com,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ louis.kuo@mediatek.com, srv_heupstream@mediatek.com, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 May 2020 09:00:35 +0000
-<Tudor.Ambarus@microchip.com> wrote:
+On Sat, May 09, 2020 at 04:06:27PM +0800, Dongchun Zhu wrote:
+> Add a V4L2 sub-device driver for OV02A10 image sensor.
 
-> Hi, Pratyush, Boris,
-> 
-> On Friday, April 24, 2020 9:43:54 PM EEST Pratyush Yadav wrote:
-> > This series adds support for octal DTR flashes in the spi-nor framework,  
-> 
-> I'm still learning about this, but I can give you my 2 cents as of now, to 
-> open the discussion. Enabling 2-2-2, 4-4-4, and 8-8-8 modes is dangerous 
-> because the flash may not recover from unexpected resets. Entering one of 
-> these modes can be:
-> 1/ volatile selectable, the device return to the 1-1-1 protocol after the next 
-> power-on. I guess this is conditioned by the optional RESET pin, but I'll have 
-> to check. Also the flash can return to the 1-1-1 mode using the software reset 
-> or through writing to its Configuration Register, without power-on or power-
-> off.
+...
 
-My understanding is that there's no standard software reset procedure
-that guarantees no conflict with existing 1S commands, so even the
-software reset approach doesn't work here.
+> +#define OV02A10_ID(_msb, _lsb)				((_msb) << 8 | (_lsb))
 
-> 2/ non-volatile selectable in which RESET# and software reset are useless, the 
-> flash defaults to the mode selected in the non volatile Configuration Register 
-> bits. The only way to get back to 1-1-1 is to write to the Configuration 
-> Register.
+How often do you use this macro?
 
-I'm less worried about this case though, since I'd expect the ROM
-code and bootloaders to be able to deal with xD-xD-xD modes when the
-flash is set in this mode by default. That implies letting Linux know
-about this default mode of course, maybe through an extra DT
-property/cmdline param.
+...
 
-> 
-> Not recovering from unexpected resets is unacceptable. One should always 
-> prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8 with the 
-> presence of the optional RESET pin.
+> +static int ov02a10_read_smbus(struct ov02a10 *ov02a10, unsigned char reg,
+> +			      unsigned char *val)
+> +{
+> +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+> +	int ret;
+> +
+> +	ret = i2c_smbus_read_byte_data(client, reg);
 
-Totally agree with you on that one, but we know what happens in
-practice...
+> +
 
-> 
-> For the unfortunate flashes that support just option 2/, we should not enter 
-> these modes on our own, just by discovering the capabilities from the SFDP 
-> tables or by the flags in the flash_info struct. The best we can do for them 
-> is to move the responsibility to the user. Maybe to add a Kconfig option that 
-> is disabled by default with which we condition the entering in 2-2-2, 4-4-4 or 
-> 8-8-8 modes.
+Extra blank line.
 
-Hm, a Kconfig option doesn't sound like the right solution to the
-problem, since it should be a per-flash decision, not something you set
-system-wise.
+> +	if (ret < 0)
+> +		return ret;
+> +
+> +	*val = (unsigned char)ret;
+> +
+> +	return 0;
+> +}
 
-> Once entered in one of these modes, if an unexpected reset comes, 
-> you most likely are doomed, because early stage bootloaders may not work in 
-> these modes and you'll not be able to boot the board. Assuming that one uses 
-> other environment to boot the board, we should at least make sure that the 
-> flash works in linux after an unexpected reset. We should try to determine in 
-> which mode we are at init, so maybe an extension of the default_init hook is 
-> needed. But all this looks like a BIG compromise, I'm not yet sure if we 
-> should adress 2/. Thoughts?
+...
 
-We should definitely not write non-volatile regs on our own, but
-instead use the mode that's been chosen there. I doubt anyone
-setting the non-volative conf to 8D-8D-8D will ever want to go back to
-1S-1S-1S anyway, so 8D -> 1S transitions are not really an issue, right?
+> +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
+> +				   struct v4l2_subdev_pad_config *cfg)
+> +{
+> +	struct v4l2_subdev_format fmt = {
 
-Of course, that still leaves us with the 'mode detection' issue, and I
-have no solution other than flagging it through the DT/cmdline for that
-one...
+> +		.which = cfg ? V4L2_SUBDEV_FORMAT_TRY
+> +			     : V4L2_SUBDEV_FORMAT_ACTIVE,
+
+I think it would be fine to have it on one line.
+
+> +		.format = {
+> +			.width = 1600,
+> +			.height = 1200,
+> +		}
+> +	};
+> +
+> +	ov02a10_set_fmt(sd, cfg, &fmt);
+> +
+> +	return 0;
+> +}
+
+...
+
+> +	if (!ret) {
+> +		if (rotation == 180) {
+
+if (a) {
+	if (b) {
+		...
+	}
+}
+
+==
+
+if (a && b) {
+	...
+}
+
+> +			ov02a10->upside_down = true;
+> +			ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> +		}
+> +	}
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
