@@ -2,107 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7E2D1CE562
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 22:25:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D0651CE556
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 22:24:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pFwmkxNHiIoUMeML2hRuMKsoz0AP0YqS7gFGfPQhL4Q=; b=bDnV+tpXrRgG5a
-	7nO1UyIcdIP5BsZlGRQx3qGifBlimTMVUu79YSzxITujPb8EmESSSxdXDa/TM3UvIFVbqH1D0a/VY
-	ZRBGuVj5PjfeCystKC2wxefWYrNGEJZKhPS+nvhEwahIlcytKyOH+7AFUQ14OMjtuWXIbh8R6GwnH
-	tQgGfcbOgs6OSLW6uWkiHgmw0twQNXmwOrcGJ5dDX52Q+7Sa04p11pOxHMH+HPsCvzC53pCykSazV
-	Oy6NZjrEY6qz0agvV29pueX3wJWX4k0RVyFuE3NdfsIpRGLSkIa/pB3wo2BQ1rjc4cAHSEMJBx3FO
-	GpSD5ELUFcltxUwURjAQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=CoA6vDbykV/J4C8BLH23T8BdC4uBr9nv0lU2/YRZFQs=; b=YYm8RkWA1gC/f0
+	uCKUd6yex7UO90Lgj64YKRdZoF+Vqy1mvxdcCNWDWV+5sP9jm2dWPD4/ibcti3IX+fPx9XeUghreF
+	bUr1XnMOHd9dMCg5ADRIvbNTZF9aH0QLXeesaeJhjnBnzyzTvlGJcVW/6a1/mXD7ikrAqIVqzRkWT
+	ammdqchWPocWuLyqAA0T+X5bQHPX6LK8TxfU0MhUEq0i5XOOOK7t16kF4cT1SAx3LWh4V2H5/zN00
+	u8lOcKqFYH/rkcwrEBRjqu7vEOua1oOOvD/RvvlbgsF9Dnd6giN19FalKCBhmBxqIGeprILP6pO7C
+	GM8aUl1l/KVEVB8Jr/vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYEyt-0005Zw-2k; Mon, 11 May 2020 20:24:55 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jYEyW-0005PV-62; Mon, 11 May 2020 20:24:32 +0000
+Received: from mail-dm6nam12on2093.outbound.protection.outlook.com
+ ([40.107.243.93] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYEyP-0005OV-Id; Mon, 11 May 2020 20:24:26 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04BKN1ae178275;
- Mon, 11 May 2020 20:23:14 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2020-01-29;
- bh=Zo5Cza0n1Es3FSckgTZNHDduwVjYv8Se3/rnvi5K1+U=;
- b=zNA36/v3LiAoVOKNe46hByFJzcgmlm6fSXJxh2iNnyOiub80LYucHlnc0/E56KgILM9H
- IFRiKn4q0LUdaR2nYs6dCPMSq80mGCHofR6f2TqItyeoJMBmDZXvQ7v2tUhfVy9k1X36
- tcBZGa4jzU7DQvWfHUpO9TKxtWFGYZZ9nF7VsO1e0ZGnb9D9DoRmFfbUB6r4TRv4NYPv
- o37UJDnsiD3w8Clee8jwQnZrV85aEd6/M09htR49v5WSHMk/NB7F5FD5bkmsoKKY23Ji
- COyA88eG4SJcYvBMQXLI4Ajl98LrSZ6SUDDOJAn/OQQSjR8daR7AoTwaaFTFsvb7nqV0 BA== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 30x3mbqayv-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 May 2020 20:23:14 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04BKMUL6165379;
- Mon, 11 May 2020 20:23:13 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3020.oracle.com with ESMTP id 30xbgfkcvb-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Mon, 11 May 2020 20:23:13 +0000
-Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04BKMsCT016911;
- Mon, 11 May 2020 20:22:55 GMT
-Received: from [192.168.2.157] (/73.164.160.178)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Mon, 11 May 2020 13:22:53 -0700
-Subject: Re: [PATCH V3 3/3] mm/hugetlb: Define a generic fallback for
- arch_clear_hugepage_flags()
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
- akpm@linux-foundation.org
-References: <1588907271-11920-1-git-send-email-anshuman.khandual@arm.com>
- <1588907271-11920-4-git-send-email-anshuman.khandual@arm.com>
-From: Mike Kravetz <mike.kravetz@oracle.com>
-Message-ID: <cbccae27-ff79-5580-80be-0a9493d063ba@oracle.com>
-Date: Mon, 11 May 2020 13:22:50 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jYEyP-0005OQ-8Y
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 20:24:26 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YNhmWni5PMIHhu2NkCc1Fj/KVPQ5VjsIHkQTb5K0gAlz7urm5g4eGE3JUsgR0n0wRHYGnZQolTbVrNlb7IjXVezfBQvzIHmjYCBne6az+mE2eOOfj9g+n4AsOOf5ad2tQYENQ5QQAUW+glNsnYAixhG7syqoHAnHgqxYfHAYBc0Dr6ZTP2RfJVtHVs8eLZA0EiBQDDCRFX2ww4v6nIjHuQQ6nlJB1qYo0kykgIc/I/BrZN3twSqGhG5Hwr9vd0TX7cIYslAsHKZi3Buq/DaTqjSoiDw4lxKSsLEYCK3ogDfAFqhw+XEvIf0d8ynXsKSZ2Em5cxis9Flxw4GqsYteJw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hq3fJ3RM6kU4R3Uq0Vu4j00iy+yvtu7EhPrqpt6JAj8=;
+ b=mMt3h+5hVWaqB6U+fgJS9FO0kTTvDwm8M23/LoIP3YM0kqd3SDpC9Gpm8nS5RigUPC0SjNN8Mg9Z1fGVxrmJk9cJBy/7p0XRqTuczr+Gu/uIfrr6DCSIHesnB6jjidkD9zDZMZ/Cgyy+PYDwBeExtzARZ4FuQ8dB5dYYJF75Dvi2FN0xrhXh0ts/eGtRw9LrtRLUQpWERI3N2WgcpcanMIqr+SmilmqBNvome3BzhZqkbsXOvaaqdJquNy7qLJih3TnKHqJJcDhUtY2gw5OkPBtU1wrgXptjA2goCi0eUe311QDWzVZdg/Z/DOyaWhsgqsAPRWlZkkNL2vPD7yzGPw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
+ header.from=os.amperecomputing.com; dkim=pass
+ header.d=os.amperecomputing.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=os.amperecomputing.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hq3fJ3RM6kU4R3Uq0Vu4j00iy+yvtu7EhPrqpt6JAj8=;
+ b=cXzlBtFJfpDmmXtMxMti3TNVKaBp14FO6oQ6wguruM0E+xh5R7/9sYURdLIGRWAAygT3xqpKXJTdSn4vQZWQBIGb32AhNglU47NVequiEbfma2YoeYgZ9dyU7AAjGS2DnMUA0L9PudNgX/si9rwK43SviOWVEoMUjhmE1ASfE8U=
+Authentication-Results: amperecomputing.com; dkim=none (message not signed)
+ header.d=none;amperecomputing.com; dmarc=none action=none
+ header.from=os.amperecomputing.com;
+Received: from BYAPR01MB4598.prod.exchangelabs.com (2603:10b6:a03:8a::18) by
+ BYAPR01MB5382.prod.exchangelabs.com (2603:10b6:a03:121::29) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2979.34; Mon, 11 May 2020 20:24:18 +0000
+Received: from BYAPR01MB4598.prod.exchangelabs.com
+ ([fe80::296c:b848:8bf0:6f2c]) by BYAPR01MB4598.prod.exchangelabs.com
+ ([fe80::296c:b848:8bf0:6f2c%5]) with mapi id 15.20.2979.033; Mon, 11 May 2020
+ 20:24:14 +0000
+From: Tuan Phan <tuanphan@os.amperecomputing.com>
+To: patches@amperecomputing.com
+Subject: [PATCH] ACPI/IORT: Fix PMCG node always look for a single ID mapping.
+Date: Mon, 11 May 2020 13:22:56 -0700
+Message-Id: <1589228576-18053-1-git-send-email-tuanphan@os.amperecomputing.com>
+X-Mailer: git-send-email 2.7.4
+X-ClientProxiedBy: BY5PR16CA0019.namprd16.prod.outlook.com
+ (2603:10b6:a03:1a0::32) To BYAPR01MB4598.prod.exchangelabs.com
+ (2603:10b6:a03:8a::18)
 MIME-Version: 1.0
-In-Reply-To: <1588907271-11920-4-git-send-email-anshuman.khandual@arm.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9618
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
- mlxlogscore=784
- spamscore=0 suspectscore=0 phishscore=0 bulkscore=0 mlxscore=0
- malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-2003020000 definitions=main-2005110154
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9618
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 impostorscore=0
- mlxscore=0 suspectscore=0 bulkscore=0 mlxlogscore=817 phishscore=0
- malwarescore=0 lowpriorityscore=0 spamscore=0 adultscore=0 clxscore=1015
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
- definitions=main-2005110154
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from aptiov-dev-Latitude-E7470.amperecomputing.com (4.28.12.214) by
+ BY5PR16CA0019.namprd16.prod.outlook.com (2603:10b6:a03:1a0::32) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.20.2979.28 via Frontend
+ Transport; Mon, 11 May 2020 20:24:13 +0000
+X-Mailer: git-send-email 2.7.4
+X-Originating-IP: [4.28.12.214]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 73cb5893-38a8-4b5b-23f4-08d7f5e94564
+X-MS-TrafficTypeDiagnostic: BYAPR01MB5382:|BYAPR01MB5382:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <BYAPR01MB53827A6057E7517332372E8FE0A10@BYAPR01MB5382.prod.exchangelabs.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:1201;
+X-Forefront-PRVS: 04004D94E2
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: w9z1aKXnMNe+z2M+1z1DLtlhHSQtZJwK/jbCPf1w4XRBep8D8LtKSQvNqvSsHQ6duQv9PvYjTZDE3YkDET62RW7DvbRRJtM9K2EReuYJuT+lvwwXRNsnOk9ggyV54zgHNMqbZnhYqf+loZiTTKdP++ebvmfHQQLdOxnlArvJfbmI39K2N+3xpu0U6CfVqBeSCvYtRmVWcHp8abcr0nz3D9jaXFggFxZ0JvOWTAnlb3PRQ6gomdK/u9Nqg8FJr8IuyERSeinw5UjkNIL94Smo8IVLxJ70bYE9UTCYHcQ8qCwjKJZr4Mw8e0Pcx4uHlcvnMAR0J7pNjowYV1qu80prn5Tp9vzksPTl8WBh3ReQSoCHC/KeyAJeu9OtP7tnoZalvd5EzHM25qS8Q//eR/nP7WQ1DyqZAlcVXO455wNRyftXrjSl5NU1tXf7uKsY0tf4JYwWDLfckRHoeXhG9/5hW5lKRt3qJqvhO34AYoKCAb3Dp6+Fko4EvzomH4ULzvxpRXjwJ5ariSjqzl6vOqNEqw==
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR01MB4598.prod.exchangelabs.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(376002)(396003)(39840400004)(136003)(366004)(346002)(33430700001)(8676002)(6666004)(316002)(186003)(16526019)(2616005)(86362001)(33440700001)(956004)(34206002)(54906003)(2906002)(478600001)(66946007)(66556008)(6506007)(26005)(52116002)(4326008)(66476007)(6512007)(4744005)(5660300002)(6486002)(8936002);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: 7TCl7MPWD3xeFxGg7BUtgHyj0nQxyIr83Oq+UuXxsPqNSsPHN2W5i5UzbVCDIDnJtz4akjFFim93P5YjqpC4viyjq8jORlkN0CaMdM6x6WznIDDxkwAo3gCi+PZVtz+ZsKjGRHiUR1W+qLP5z6hv2Fr+lKmz9gZlLZpl5pN9ftAKxssOHIavgcwRXTZyxye9J/fAlol7DyAaoIPTqIsrtVjhyWOn7jMpbBqH9BRxAjYZmodHHRHyU8RedzCfRzXQGgo8bd7xbh8bVrec/6VCGb/N+QVvRaRKQfhYBrNeLZryNuTI1ej58pIgmVrYgohbJTwVroKvW4hCNVmb9MctTOFaFxzCgz9N+PMLhsM5laRhYgU4Z/IK0OnxKKqSAYxS/NCWeDfpKLbrm0PgINFQJoNENW/JXgxHT4/moSFzSR2nEkMS6WdaO1GFUFPUlr7LBEUubOZ/rVNwcNFg1sdhWi2Ib/o/RoY/VBHynTQbOMA=
+X-OriginatorOrg: os.amperecomputing.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 73cb5893-38a8-4b5b-23f4-08d7f5e94564
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2020 20:24:14.2654 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: NOZgATAa8OxObk1HDB4eOhLxvtrKOeLmfUXmiGdE6015AbFJiVKvWms7/T1ketATQUs7/lGO8Btj71g6rdXf4e5oDdscVfolhVOwXgZqOR5gb+xEyHskGeNsp4ctg6Rc
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB5382
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_132425_743286_773F1653 
-X-CRM114-Status: GOOD (  16.11  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20200511_132425_373757_07B36509 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ [40.107.243.93 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.243.93 listed in list.dnswl.org]
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,82 +125,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
- Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
- sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
- Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
- linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Fenghua Yu <fenghua.yu@intel.com>, Vasily Gorbik <gor@linux.ibm.com>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Tony Luck <tony.luck@intel.com>, linux-parisc@vger.kernel.org,
- linux-mips@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
- linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ Sudeep Holla <sudeep.holla@arm.com>, linux-arm-kernel@lists.infradead.org,
+ Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/7/20 8:07 PM, Anshuman Khandual wrote:
-> There are multiple similar definitions for arch_clear_hugepage_flags() on
-> various platforms. Lets just add it's generic fallback definition for
-> platforms that do not override. This help reduce code duplication.
-> 
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Tony Luck <tony.luck@intel.com>
-> Cc: Fenghua Yu <fenghua.yu@intel.com>
-> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-> Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
-> Cc: Helge Deller <deller@gmx.de>
-> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
-> Cc: Paul Mackerras <paulus@samba.org>
-> Cc: Michael Ellerman <mpe@ellerman.id.au>
-> Cc: Paul Walmsley <paul.walmsley@sifive.com>
-> Cc: Palmer Dabbelt <palmer@dabbelt.com>
-> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
-> Cc: Vasily Gorbik <gor@linux.ibm.com>
-> Cc: Christian Borntraeger <borntraeger@de.ibm.com>
-> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-> Cc: Rich Felker <dalias@libc.org>
-> Cc: "David S. Miller" <davem@davemloft.net>
-> Cc: Thomas Gleixner <tglx@linutronix.de>
-> Cc: Ingo Molnar <mingo@redhat.com>
-> Cc: Borislav Petkov <bp@alien8.de>
-> Cc: "H. Peter Anvin" <hpa@zytor.com>
-> Cc: Mike Kravetz <mike.kravetz@oracle.com>
-> Cc: Andrew Morton <akpm@linux-foundation.org>
-> Cc: x86@kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-ia64@vger.kernel.org
-> Cc: linux-mips@vger.kernel.org
-> Cc: linux-parisc@vger.kernel.org
-> Cc: linuxppc-dev@lists.ozlabs.org
-> Cc: linux-riscv@lists.infradead.org
-> Cc: linux-s390@vger.kernel.org
-> Cc: linux-sh@vger.kernel.org
-> Cc: sparclinux@vger.kernel.org
-> Cc: linux-mm@kvack.org
-> Cc: linux-arch@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+PMCG node can have zero ID mapping if its overflow interrupt
+is wire based. The code to parse PMCG node can not assume it will
+have a single ID mapping.
 
-Thanks!
-Removing duplicate code is good.
+Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+---
+ drivers/acpi/arm64/iort.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-Acked-by: Mike Kravetz <mike.kravetz@oracle.com>
-
+diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+index ed3d2d1..72444e1 100644
+--- a/drivers/acpi/arm64/iort.c
++++ b/drivers/acpi/arm64/iort.c
+@@ -441,7 +441,9 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
+ 
+ 		return smmu->id_mapping_index;
+ 	case ACPI_IORT_NODE_PMCG:
+-		return 0;
++		if (node->mapping_count)
++			return 0;
++		return -EINVAL;
+ 	default:
+ 		return -EINVAL;
+ 	}
 -- 
-Mike Kravetz
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
