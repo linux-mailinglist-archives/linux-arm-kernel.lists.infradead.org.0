@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAAD31CE35B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:57:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A99E1CE35F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:57:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n+SKrprCQGwVLUT6T9zZCZjuXbtgQQaxQZaABVkpAI0=; b=t0YRohiBadk7Xl
-	XnXe9DI+U1eP0vI/ysiY7l9Ssfcnnff8JtDUPSPME2C6EqNbxi/EOOpOFQS4ax7KWUsLvgckjkO1C
-	S/pyukL8zGIKgQNsczzGq3XSUPF0iRBvlitqGC23lzrff7ZWW/FbAGPDEUMXj0GY5A12AL4y4cQ/j
-	d7+jP43moo80XgdDTYOOexcW7E2zR3+SkJD9e+5sCckPwtZ6qjMZZ2elw9yeM9Qb21HQ4c1e7oElT
-	k+PswSYBLzil7Y/WQ8EcAchj94bP5VaDLHrrbdXSoZk9c25ww8Xsv/5aLWvzTZA0ZZhmddnANc/Pi
-	k5laoaGw7oGF00c8xWzg==;
+	List-Owner; bh=hWNz+BugkhIvUrngPK5WAIHSt9s7tkBbhu2DTotDl5w=; b=c9q00+z9H3nlNn
+	0bMifzCsNJFZJEo69tOBuWVMVYnFBOQ48MP0ytukdA2AiFPFt6dFwbFTDpfj65m+EXl8Q/GCWvTTB
+	I/xJnvS4NoJEpFHmLqmsL49nJNGKibBzpyAf4HqReu1sBCsDer/321jNTpNZElJekAvPSP+UEEFsN
+	wgKIEtDLCHQ4IHq/D3k/eMFCEiOENmjPJdugjEoMxWvIm47j97TNA7iAbFjNCnPeeflNMDXBBvKBY
+	98aoTj57mvgrjheMPUDhLq4UFoWbPHAa8tiRAVWqxB0xgDAUZO8BRfne6YJBnQ5FYAhRX6t2bWuCL
+	89UdVbsS2UdaGGQskbTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYDbu-0001du-AS; Mon, 11 May 2020 18:57:06 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jYDcG-0001rO-6s; Mon, 11 May 2020 18:57:28 +0000
+Received: from mail-oo1-f67.google.com ([209.85.161.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYDbn-0001dF-6C
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:57:00 +0000
-Received: by mail-oi1-f194.google.com with SMTP id i13so16045538oie.9
+ id 1jYDbx-0001lJ-Bb
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:57:10 +0000
+Received: by mail-oo1-f67.google.com with SMTP id a83so362380oob.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 11:56:58 -0700 (PDT)
+ Mon, 11 May 2020 11:57:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qIn25vBi82IOwahM5pBiB38UosZt4F/Z2M2+HzBSDZ4=;
- b=ssExukON2r5H6S80AgnHqWDzN5q5Qc+aw3FJigLTClUMhrcfuttLvfy6VjcYORfqRl
- +jCe6+aNebKRZedQqrbqsIVoaoAzQOA+8YSCBJla3m9v33333Zep/5z1apsTeoA1bRsv
- prZ0FtVGO6YIZvqRWOLT/7aGkNZlWq8L8jtk25ubUNOLwmhT2FpltoJA2tJeQehvNsXN
- 8DZO0ZtbeSyPti1M7UXGHChz2lf+dixOUdNdLbfFohA2Mja7cs2TrLypbBfeu1AuYcSU
- h/iMc3T7UKc+QOu+BN1fVazt8ixwqSWmy2rJU4tAiwBoN/3ln57reIp++z9KRzpReWuI
- 5SOA==
-X-Gm-Message-State: AGi0Pub5vJQV7SLyEO0GiFOb5d0vpUnadTmKFZ7rLu3L4nQ0rIRxOPUL
- 0cF0IJX6LJ7tSKBBwKO1AQ==
-X-Google-Smtp-Source: APiQypKUJXiJDpd8lpqc1m/Rf0pICBB2aUHxHx/w7KltA8pYYnkSuq5OQKc/RZp2TaGVNnEtZWtLmA==
-X-Received: by 2002:aca:6705:: with SMTP id z5mr20071285oix.122.1589223417936; 
- Mon, 11 May 2020 11:56:57 -0700 (PDT)
+ bh=O81zLtu1BdFWeCMUJf9Mg4FTRQ1nE4nJG/nnDMBNYg0=;
+ b=bFKW4eYywHJlZcT+/BYb5pYlrSNsEqzGzIRGy4QGkSo64kk1ZwqXr/s35N9TSPYOTE
+ uy0c8/UE7Syb9jE1AelFSSiA4mwJ428jOsft30mDRRzNlznZgJ6bl23EK1ydm8aflKzN
+ HlRSOZqwEXqYuUhLoV5Sjaqu3u3R3MKroxi+zxkTFNrvjtROwMOVVXCZ8zJZ4YbNtNXs
+ hn+gFfIqPhTbUv8XLFRPbKWrTs5tmhEGyx0ETr4Kb2CUyYpygIFja1qkPPau/25ndm6x
+ 34DP4gX4GoUEpEu74EKWjsV9jVpBryKVB5xdUy3cndENKiuHiolqTWL0aXzCom0j1L7D
+ zqWw==
+X-Gm-Message-State: AGi0Pub0M3BzNG3FWhXIgHnqFl5uVKgFMDG0b467rinZkH0oCZz4plVx
+ ExEOSrU8zA6FgIBHwUYPbQ==
+X-Google-Smtp-Source: APiQypJK8Cdqg6qDrQ5p85pVfGjbAkyd7vaTSUq60Z1+Bd5hHgZ1aBojkROk+BcugoEzhl4nSMvXBA==
+X-Received: by 2002:a4a:c30e:: with SMTP id c14mr14939182ooq.74.1589223426715; 
+ Mon, 11 May 2020 11:57:06 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id k8sm3034534oop.30.2020.05.11.11.56.56
+ by smtp.gmail.com with ESMTPSA id y25sm1812430oto.29.2020.05.11.11.57.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 11:56:57 -0700 (PDT)
-Received: (nullmailer pid 2278 invoked by uid 1000);
- Mon, 11 May 2020 18:56:56 -0000
-Date: Mon, 11 May 2020 13:56:56 -0500
+ Mon, 11 May 2020 11:57:06 -0700 (PDT)
+Received: (nullmailer pid 2875 invoked by uid 1000);
+ Mon, 11 May 2020 18:57:05 -0000
+Date: Mon, 11 May 2020 13:57:05 -0500
 From: Rob Herring <robh@kernel.org>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V2 1/3] dt-bindings: nvmem: Convert i.MX OCOTP to
- json-schema
-Message-ID: <20200511185656.GA2102@bogus>
+Subject: Re: [PATCH V2 2/3] dt-bindings: nvmem: Convert i.MX IIM to json-schema
+Message-ID: <20200511185705.GA2797@bogus>
 References: <1587478181-21226-1-git-send-email-Anson.Huang@nxp.com>
+ <1587478181-21226-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1587478181-21226-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1587478181-21226-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_115659_235128_E584A6FD 
-X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-CacheID: sfid-20200511_115709_397406_CA82FCEE 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,7 +70,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.161.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -79,8 +79,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,20 +104,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 21 Apr 2020 22:09:39 +0800, Anson Huang wrote:
-> Convert the i.MX OCOTP binding to DT schema format using json-schema.
+On Tue, 21 Apr 2020 22:09:40 +0800, Anson Huang wrote:
+> Convert the i.MX IIM binding to DT schema format using json-schema.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
 > Changes since V1:
-> 	- improve compatible;
 > 	- drop clocks description.
 > ---
->  .../devicetree/bindings/nvmem/imx-ocotp.txt        | 50 ------------
->  .../devicetree/bindings/nvmem/imx-ocotp.yaml       | 95 ++++++++++++++++++++++
->  2 files changed, 95 insertions(+), 50 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/nvmem/imx-ocotp.txt
->  create mode 100644 Documentation/devicetree/bindings/nvmem/imx-ocotp.yaml
+>  .../devicetree/bindings/nvmem/imx-iim.txt          | 22 ---------
+>  .../devicetree/bindings/nvmem/imx-iim.yaml         | 57 ++++++++++++++++++++++
+>  2 files changed, 57 insertions(+), 22 deletions(-)
+>  delete mode 100644 Documentation/devicetree/bindings/nvmem/imx-iim.txt
+>  create mode 100644 Documentation/devicetree/bindings/nvmem/imx-iim.yaml
 > 
 
 Applied, thanks!
