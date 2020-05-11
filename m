@@ -2,84 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 176081CE1F7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 19:45:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 888B61CE210
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 19:56:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a+VBiJMLUR7eQQbE8HuKIYs7ifiIvQX0M54OdYQk+lE=; b=TRTdoSZOWfPWIi
-	9jbXV5fC6is52UOA3x6SxV5LuE7QDt5xzr1t9t8gT0UXSuY1aTD0RrfEhre07HgpVYZEgbwH9e+Lu
-	nEu9UtOjrY04BiZgi6md8WwLD7ITxQ+bXvvcJK22jJEjXceyDbMFw3ZPe6wEsKOMgm4aR99mJDtjY
-	NKImSfnsoMmfynnZ+imrzf+VXu5mZ3wOXyCUKTfHv0BrqZp5MXHNilU5J4mMCLydp57irdLezpCgr
-	jT6GHB2yjhLiiFAT31jljta5yAbjVVmFjvfiQbrhJjf20NCSc+QnJG9T9qaGicfcU0zt1aFmFBnPR
-	3j81dAMj2vVxJpl72A1A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OnGszNR2dkZkq6UduuZrtcDLFb0nrj9bX4k8P8pmjzA=; b=lFlzIehUvgU0iy
+	vwVUv0xyb4YuryH/j7noXdjVAQJp91b2M2YEz/1Ca2wN3BjFd5JX2o0lBpwz/XYgKtx/49xUEuh54
+	SfS6FTHJ3e8HWVZXAJmNFViS0S5DyU0fVkHbOMeLDDfij9Zygok8cdHS7kl8KjHrVqltPwAFs5WNJ
+	fJDJu3xoIPb9Wlg1Wk265hRmOX6Hd9t3ZR6N+v07V470Nv1wBdP1a8CRSm1HLUaWMpnvo6GX80IKe
+	xjFq9odVe2o35oNamIowSYiLPPJDsq0lhcjLkGukpHrhuisfH3zIjdINrE9bc+0fpz7IEAWgmmRpg
+	1NVOb6KUzZUkB7gJFamg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYCUX-0006im-68; Mon, 11 May 2020 17:45:25 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1jYCem-0004vs-Kr; Mon, 11 May 2020 17:56:00 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYCUP-0006hy-3M
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 17:45:18 +0000
-Received: by mail-io1-xd42.google.com with SMTP id f4so4346755iov.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 10:45:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=OTMcsGbSNPLL7L+tUlyt0FenOS7bLLaekCh7ftl59gc=;
- b=Nfb99L6TDVBBWvt/W0lqIjZKrLZDJ/LXYKTvX3IvTOiMFZN/A1DIPF051AUp+7tDkX
- sVxPiC2nZH5U1Io2kW6fVGpMx0LndJCvV34Rtso3BcUX/uM3fh+Tn6Vv0dzctSr/Sr/h
- oOigNR9VZNxYR7ovbguI2IiC8jqBsgoBPcFVnPRW3diKX5sGiDRwDwEVYlkUdYFKgJJo
- a9K6d4sMtYVdzpts1rmuMGBOlg9MC0MDNS7lYCgvz8oZVIPDKCqPEbsSwSnIMt8JFDlO
- wPJa+exWgkN4H31DKuofRThFklXX4KwpyrWMoDwOYrBrEAy19dk1llmjWrb2Y9/Yp/2u
- xbzA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=OTMcsGbSNPLL7L+tUlyt0FenOS7bLLaekCh7ftl59gc=;
- b=mvZjWw5n7dhZYQMlo7+WNxeKJ5jMDY3uu579cClp7bGEYneHYs5Tt4Lv+4PtKxGSIC
- Zjw2ixOGlJwa6gcUnCX+DlNOW1OM/ckRQGKHcATZ0qCIToVCg01KYXlN0psW7Tn0mX+V
- AIXiT0buBoWdHIZdpOuopWDODoiI6HG56y+pQsgkgCE4yzyqWXAzqjbOuHC4SJs1Yjnk
- RKaxvQKxbCBBeTZ3mMSWTO947J4GlDsLtAPKcoq9QeFRh5r5UKSXy0F4nJ0Jz6HdkS3M
- udeDFO/Yc0zdi0AKcaAAECfYGleH65WO1PxLdvYMZKZ1qQfmr4gQ22wuhe21crgr0qlH
- QZhw==
-X-Gm-Message-State: AGi0PuZFhtW5HAl3a22fwD5odsKsz8gJiDPsZFrMMRdLEcLUuM1vlDDw
- yuRHHwTIBKKFeIg7qAoznGlBY63kQWggSWgRmsUyUg==
-X-Google-Smtp-Source: APiQypL8QQIH8rAW3VdEhTJm19ncep/OtoyHj8sVIDxfQabUswS2mLh+6DC+2Nmsa/EfSAbxASZU982W9dmlWpW0JZE=
-X-Received: by 2002:a6b:dd06:: with SMTP id f6mr13132232ioc.90.1589219114664; 
- Mon, 11 May 2020 10:45:14 -0700 (PDT)
+ id 1jYCef-0004vP-JT
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 17:55:55 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589219754; h=Content-Transfer-Encoding: MIME-Version:
+ Message-Id: Date: Subject: Cc: To: From: Sender;
+ bh=4qUl98VkUMkimx3wUPtLlVj4sP6schRM56csAATyTnI=;
+ b=wyhHaXyiIdAuSDy0toR7QzjAhWwUbwq+81c8a/g4KTWptCx7I3rPPx48ou0FIKBP8gmDYX0m
+ 907jgNCmjW9APJuDNgd+Mez7+Zbim1uI9OqyWXbhHZUTkU6Q3U7YR1GAmQ0shkW/1aK4p1nl
+ geBxf+MVJDy/t2TyUbzOlM4HuI0=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5eb991a3.7f19ca37c5e0-smtp-out-n04;
+ Mon, 11 May 2020 17:55:47 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 1F763C4478F; Mon, 11 May 2020 17:55:47 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from blr-ubuntu-87.qualcomm.com
+ (blr-bdr-fw-01_GlobalNAT_AllZones-Outside.qualcomm.com [103.229.18.19])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: sibis)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 8C439C433CB;
+ Mon, 11 May 2020 17:55:42 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 8C439C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=sibis@codeaurora.org
+From: Sibi Sankar <sibis@codeaurora.org>
+To: will@kernel.org, robin.murphy@arm.com, joro@8bytes.org, swboyd@chromium.org
+Subject: [PATCH v6] iommu/arm-smmu-qcom: Request direct mapping for modem
+ device
+Date: Mon, 11 May 2020 23:25:32 +0530
+Message-Id: <20200511175532.25874-1-sibis@codeaurora.org>
+X-Mailer: git-send-email 2.25.0
 MIME-Version: 1.0
-References: <20200509084237.36293-1-weiyongjun1@huawei.com>
-In-Reply-To: <20200509084237.36293-1-weiyongjun1@huawei.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Mon, 11 May 2020 11:45:03 -0600
-Message-ID: <CANLsYkxn2QAHgGtmygbw4x-kmrzo2R5u3XDmDUz5EVAYg=SQyQ@mail.gmail.com>
-Subject: Re: [PATCH -next] remoteproc/mediatek: fix invalid use of sizeof in
- scp_ipi_init()
-To: Wei Yongjun <weiyongjun1@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_104517_171887_C8E47F39 
-X-CRM114-Status: GOOD (  14.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200511_105554_190571_56EA5FEE 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,50 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ohad Ben-Cohen <ohad@wizery.com>, kernel-janitors@vger.kernel.org,
- Erin Lo <erin.lo@mediatek.com>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Hulk Robot <hulkci@huawei.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-msm@vger.kernel.org, dianders@chromium.org, evgreen@chromium.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ mka@chromium.org, Sibi Sankar <sibis@codeaurora.org>,
+ bjorn.andersson@linaro.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 9 May 2020 at 02:38, Wei Yongjun <weiyongjun1@huawei.com> wrote:
->
-> sizeof() when applied to a pointer typed expression gives the
-> size of the pointer, not that of the pointed data.
->
-> Fixes: 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183")
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
-> ---
->  drivers/remoteproc/mtk_scp.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
-> index 2bead57c9cf9..ac13e7b046a6 100644
-> --- a/drivers/remoteproc/mtk_scp.c
-> +++ b/drivers/remoteproc/mtk_scp.c
-> @@ -132,8 +132,8 @@ static int scp_ipi_init(struct mtk_scp *scp)
->                 (struct mtk_share_obj __iomem *)(scp->sram_base + recv_offset);
->         scp->send_buf =
->                 (struct mtk_share_obj __iomem *)(scp->sram_base + send_offset);
-> -       memset_io(scp->recv_buf, 0, sizeof(scp->recv_buf));
-> -       memset_io(scp->send_buf, 0, sizeof(scp->send_buf));
-> +       memset_io(scp->recv_buf, 0, sizeof(*scp->recv_buf));
-> +       memset_io(scp->send_buf, 0, sizeof(*scp->send_buf));
+The modem remote processor has two access paths to DDR. One path is
+directly connected to DDR and another path goes through an SMMU. The
+SMMU path is configured to be a direct mapping because it's used by
+various peripherals in the modem subsystem. Typically this direct
+mapping is configured statically at EL2 by QHEE (Qualcomm's Hypervisor
+Execution Environment) before the kernel is entered.
 
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+In certain firmware configuration, especially when the kernel is already
+in full control of the SMMU, defer programming the modem SIDs to the
+kernel. Let's add compatibles here so that we can have the kernel
+program the SIDs for the modem in these cases.
 
->
->         return 0;
->  }
->
->
->
+Signed-off-by: Sibi Sankar <sibis@codeaurora.org>
+---
+
+V6
+ * Rebased on Will's for-joerg/arm-smmu/updates
+ * Reword commit message and add more details [Stephen]
+
+ drivers/iommu/arm-smmu-qcom.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/iommu/arm-smmu-qcom.c b/drivers/iommu/arm-smmu-qcom.c
+index 5bedf21587a56..cf01d0215a397 100644
+--- a/drivers/iommu/arm-smmu-qcom.c
++++ b/drivers/iommu/arm-smmu-qcom.c
+@@ -17,7 +17,9 @@ static const struct of_device_id qcom_smmu_client_of_match[] = {
+ 	{ .compatible = "qcom,mdp4" },
+ 	{ .compatible = "qcom,mdss" },
+ 	{ .compatible = "qcom,sc7180-mdss" },
++	{ .compatible = "qcom,sc7180-mss-pil" },
+ 	{ .compatible = "qcom,sdm845-mdss" },
++	{ .compatible = "qcom,sdm845-mss-pil" },
+ 	{ }
+ };
+ 
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+a Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
