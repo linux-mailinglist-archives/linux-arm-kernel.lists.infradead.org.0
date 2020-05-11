@@ -2,65 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3474A1CE81A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 00:30:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2ADA11CE885
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 00:53:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=C2ZGhyUvE8lznTQnV3PyFChKr8xfTnZDMOVyBCsM3MQ=; b=uLfZnzXS4JCqs/V7dlSSfz0oz
-	+btS13l6T0VGxHVtz/aESctJaKfll7r0q7JlTcw/q2nMCyYvUGvQbevOrcvN+sZUSLhhPJTr7DZNu
-	kxnCx+4j1YMMMLmF/YI/f/hEWz90fnIh4busxEkrv5WqBf/4uyYYcauVQbRRTy//4yAKybLB+SuJS
-	KGT642LFDHarPn7yLC8iup22QBcm6I3KVgEhpLItF2s0f9JdyJv1f13RZSsTc8Nb/Z5JLSuQEjfLg
-	7MNcP+mSwBUI/l2X5p8NbiNM7x75wKu/0LU5siqCyiK72tqf+2Pwvs71uvqHCY+UbN0ur+QmHDlsO
-	HN1PklWkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Uy6TWxYROgkozKSgUrwkIecMObKEs2idpaJ0DMtwvBI=; b=ZnznQZ0KHa1PMy
+	3tgtIjt2kvpkC/mLbHxCkVy25xwnXNLu+RooKzzeg3N6CCJenLtg+cF5JfFVRuzzdDNqZ0OpCCh0Y
+	yBkDiOSeLWJ0l/YbseZZ3TS+vBj1Dvz0eqvjL7uxKvdEsWp2p1GZGkyQlTgw9CgjgnzGaBGL3M/bk
+	guekJzRCQWTIP+2sa9nm59CPeZWg2ZP4IHhnVB9inc4omZnVkby/72oMnZNtPbEP5Dofa95RCArXa
+	7aX/i0LE/MUR/xzrcVeJ+UCFtDF8epcYtsHRLBmGTljjBlhG9LB9gLvrLeGYccWyTmF+s4Zd5XYAo
+	Jk8PZCNRAZf/Oo5lmLdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYGvv-0002Cu-GU; Mon, 11 May 2020 22:29:59 +0000
-Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
+	id 1jYHIE-00028L-AA; Mon, 11 May 2020 22:53:02 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYGvn-0002CH-GB
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 22:29:53 +0000
-Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by ssl.serverraum.org (Postfix) with ESMTPSA id E950223E4D;
- Tue, 12 May 2020 00:29:46 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
- s=mail2016061301; t=1589236187;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ZWtR9bzSYXnNm25amIJ9C/96FTsepP7H5IrzZ9zpG/A=;
- b=YdDVOLeZBQ34l+NCgbOJbibwaRMlbhkryBPCyVboFq3OoIIcwGhTb4bpx1oqBWsLm0T3Ny
- CZp5yyu0djrMsi4kOWfKCfNplFlS7gp1ntDK+bdoeton2uRftwbJISw7i+6IVo7b7aosbu
- kNxvxZ/YLMcP4rurnW92mHmhw4rdMek=
+ id 1jYHI7-00027M-4c
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 22:52:56 +0000
+Received: by mail-pl1-x642.google.com with SMTP id u22so4528593plq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 15:52:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=6oQAHkHCTjdXQutqjFpnQFKkQXPKWu36loMHxr/U/Bw=;
+ b=ABJ9An36QqvDTKUmlo81w3VPI+NywC5sRr3Udf1h5mkJQruw2r+/d0TK5KCxAvQnkM
+ AnX6dF0ESk/0FMYf94bsuWf7TyAgd59x096hAtrjjgg+oqFcAzxb3dsZhEMl1OgQwajx
+ UeNlEyLzrUVksn8Oh25g81dOCnaTLldN7BPyA=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=6oQAHkHCTjdXQutqjFpnQFKkQXPKWu36loMHxr/U/Bw=;
+ b=R0//wgjYfZj7xLOO+Vd1WaGEIIqVQRO37kk58aTSCIYE5nG9vMDgV4nT7sgQEXtOwU
+ jlebxrFte+bnZDKNIVYVLI23NpO+v2u+x6EsH8FfYZSq2YvLK7Mv4p7KT6H2VjlLtfyD
+ CEOQywpf+0tEdKX3L4MnunXencWyVpvdcYyTSgHhJdMlCCx7M21Mf2dSSxo1bPrdBvVq
+ 4Qfk2pgNKCIDwEZ33MyUfdwPAM9BY2Yda/V7peTXtZSke3KNpVzy1eSlxb7roiOyRYm1
+ QzjyL5QGJsaztHsGhIJasHin53prBOLtfmAT1mRExn8Sgnsu5ldh3AGCb2W6kneYeAXV
+ 786A==
+X-Gm-Message-State: AGi0Pubvalq887GguQkOhG/JsjtW1+IxWCtFujPJearR/dObhN8OJ+QU
+ GnW573saY9AJyhHUATx6sAKaUJcN7vU=
+X-Google-Smtp-Source: APiQypIy2T/GL+CQJ2rGQu9gU0HYJzJjsezCn+O4ZOJZed098nVP0mQXdsNAsnme8iull0NZu6Js8g==
+X-Received: by 2002:a17:90a:3b0c:: with SMTP id
+ d12mr24072589pjc.78.1589237571928; 
+ Mon, 11 May 2020 15:52:51 -0700 (PDT)
+Received: from mail-pg1-f170.google.com (mail-pg1-f170.google.com.
+ [209.85.215.170])
+ by smtp.gmail.com with ESMTPSA id k14sm2629514pgn.94.2020.05.11.15.52.51
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 11 May 2020 15:52:51 -0700 (PDT)
+Received: by mail-pg1-f170.google.com with SMTP id f6so5235083pgm.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 15:52:51 -0700 (PDT)
+X-Received: by 2002:a67:c40c:: with SMTP id c12mr13653102vsk.106.1589237114125; 
+ Mon, 11 May 2020 15:45:14 -0700 (PDT)
 MIME-Version: 1.0
-Date: Tue, 12 May 2020 00:29:46 +0200
-From: Michael Walle <michael@walle.cc>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v3 05/16] mfd: Add support for Kontron sl28cpld management
- controller
-In-Reply-To: <f0fafa63047f00e912013b137e4db15c@walle.cc>
-References: <20200423174543.17161-1-michael@walle.cc>
- <20200423174543.17161-6-michael@walle.cc> <20200511211359.GB3518@bogus>
- <f0fafa63047f00e912013b137e4db15c@walle.cc>
-User-Agent: Roundcube Webmail/1.4.4
-Message-ID: <7acbb6d9b2240b1856136fa35c1318bf@walle.cc>
-X-Sender: michael@walle.cc
+References: <20200428211351.85055-1-dianders@chromium.org>
+ <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
+ <20200511145908.GA22040@willie-the-truck>
+In-Reply-To: <20200511145908.GA22040@willie-the-truck>
+From: Doug Anderson <dianders@chromium.org>
+Date: Mon, 11 May 2020 15:45:02 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=W1F-B7SUwxebhhH2HS+fN4sYv4RHvvKud5a+00J0T=SA@mail.gmail.com>
+Message-ID: <CAD=FV=W1F-B7SUwxebhhH2HS+fN4sYv4RHvvKud5a+00J0T=SA@mail.gmail.com>
+Subject: Re: [PATCH v3 05/11] arm64: Add call_break_hook() to early_brk64()
+ for early kgdb
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_152951_849659_1563A8C2 
-X-CRM114-Status: GOOD (  27.00  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200511_155255_203886_8E372E5D 
+X-CRM114-Status: GOOD (  20.17  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -71,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,187 +104,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
- Jason Cooper <jason@lakedaemon.net>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
- Guenter Roeck <linux@roeck-us.net>, linux-pwm@vger.kernel.org,
- Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
- linux-gpio@vger.kernel.org, Mark Brown <broonie@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>,
- Wim Van Sebroeck <wim@linux-watchdog.org>,
- linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
+ jinho lim <jordan.lim@samsung.com>, Andy Gross <agross@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-serial@vger.kernel.org,
+ kgdb-bugreport@lists.sourceforge.net, Dave Martin <Dave.Martin@arm.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Jiri Slaby <jslaby@suse.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
+ Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ Allison Randal <allison@lohutok.net>, Sumit Garg <sumit.garg@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Jason Wessel <jason.wessel@windriver.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am 2020-05-11 23:44, schrieb Michael Walle:
-> Am 2020-05-11 23:13, schrieb Rob Herring:
->> On Thu, Apr 23, 2020 at 07:45:32PM +0200, Michael Walle wrote:
->>> This patch adds core support for the board management controller 
->>> found
->>> on the SMARC-sAL28 board. It consists of the following functions:
->>>  - watchdog
->>>  - GPIO controller
->>>  - PWM controller
->>>  - fan sensor
->>>  - interrupt controller
->>> 
->>> At the moment, this controller is used on the Kontron SMARC-sAL28 
->>> board.
->>> 
->>> Please note that the MFD driver is defined as bool in the Kconfig
->>> because the next patch will add interrupt support.
->>> 
->>> Signed-off-by: Michael Walle <michael@walle.cc>
->>> ---
->>>  drivers/mfd/Kconfig    |  19 +++++
->>>  drivers/mfd/Makefile   |   2 +
->>>  drivers/mfd/sl28cpld.c | 153 
->>> +++++++++++++++++++++++++++++++++++++++++
->>>  3 files changed, 174 insertions(+)
->>>  create mode 100644 drivers/mfd/sl28cpld.c
->>> 
->>> diff --git a/drivers/mfd/Kconfig b/drivers/mfd/Kconfig
->>> index 0a59249198d3..be0c8d93c526 100644
->>> --- a/drivers/mfd/Kconfig
->>> +++ b/drivers/mfd/Kconfig
->>> @@ -2060,5 +2060,24 @@ config SGI_MFD_IOC3
->>>  	  If you have an SGI Origin, Octane, or a PCI IOC3 card,
->>>  	  then say Y. Otherwise say N.
->>> 
->>> +config MFD_SL28CPLD
->>> +	bool "Kontron sl28 core driver"
->>> +	depends on I2C=y
->>> +	depends on OF
->>> +	select REGMAP_I2C
->>> +	select MFD_CORE
->>> +	help
->>> +	  This option enables support for the board management controller
->>> +	  found on the Kontron sl28 CPLD. You have to select individual
->>> +	  functions, such as watchdog, GPIO, etc, under the corresponding 
->>> menus
->>> +	  in order to enable them.
->>> +
->>> +	  Currently supported boards are:
->>> +
->>> +		Kontron SMARC-sAL28
->>> +
->>> +	  To compile this driver as a module, choose M here: the module 
->>> will be
->>> +	  called sl28cpld.
->>> +
->>>  endmenu
->>>  endif
->>> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
->>> index f935d10cbf0f..9bc38863b9c7 100644
->>> --- a/drivers/mfd/Makefile
->>> +++ b/drivers/mfd/Makefile
->>> @@ -259,3 +259,5 @@ obj-$(CONFIG_MFD_ROHM_BD718XX)	+= rohm-bd718x7.o
->>>  obj-$(CONFIG_MFD_STMFX) 	+= stmfx.o
->>> 
->>>  obj-$(CONFIG_SGI_MFD_IOC3)	+= ioc3.o
->>> +
->>> +obj-$(CONFIG_MFD_SL28CPLD)	+= sl28cpld.o
->>> diff --git a/drivers/mfd/sl28cpld.c b/drivers/mfd/sl28cpld.c
->>> new file mode 100644
->>> index 000000000000..1e5860cc7ffc
->>> --- /dev/null
->>> +++ b/drivers/mfd/sl28cpld.c
->>> @@ -0,0 +1,153 @@
->>> +// SPDX-License-Identifier: GPL-2.0-only
->>> +/*
->>> + * MFD core for the sl28cpld.
->>> + *
->>> + * Copyright 2019 Kontron Europe GmbH
->>> + */
->>> +
->>> +#include <linux/i2c.h>
->>> +#include <linux/interrupt.h>
->>> +#include <linux/kernel.h>
->>> +#include <linux/mfd/core.h>
->>> +#include <linux/module.h>
->>> +#include <linux/of_platform.h>
->>> +#include <linux/regmap.h>
->>> +
->>> +#define SL28CPLD_VERSION	0x03
->>> +#define SL28CPLD_WATCHDOG_BASE	0x04
->>> +#define SL28CPLD_HWMON_FAN_BASE	0x0b
->>> +#define SL28CPLD_PWM0_BASE	0x0c
->>> +#define SL28CPLD_PWM1_BASE	0x0e
->>> +#define SL28CPLD_GPIO0_BASE	0x10
->>> +#define SL28CPLD_GPIO1_BASE	0x15
->>> +#define SL28CPLD_GPO_BASE	0x1a
->>> +#define SL28CPLD_GPI_BASE	0x1b
->>> +#define SL28CPLD_INTC_BASE	0x1c
->> 
->> If you want to use 'reg' in the binding, these are the numbers you
->> should be using rather than making up numbering!
-> 
-> My motivation is that I don't want to hardcode the internal addresses
-> of the management controller in the device tree. For example if they
-> will move around with a later update of the controller, so a driver can
-> be compatible with both the old and the new version. If they are in the
-> device tree, only one register layout is possible.
-> 
->> However, I still don't think you need any child nodes. All the data in
->> the DT binding is right here in the driver already. There's no 
->> advantage
->> to putting child nodes in DT, because this driver still has to be
->> updated if you add more nodes.
-> 
-> But then any phandle will reference the mfd device. And for example 
-> there
-> are two different interrupt controllers, that is the INTC and the 
-> GPIO[01],
-> which will then be combined into one device tree node, right?
-> 
-> So the mfd node would be
-> 
-> cpld: sl28cpld@4a {
->   interrupt-controller;
->   #interrupt-cells = <2>;
->   gpio-controller;
->   #gpio-cells = <2>;
->   [..]
-> };
-> 
-> and then depending on the mapping one could use:
-> 
-> interrupts-extended = <&cpld 0 FLAGS>; /* gpio0 line 0 */
-> interrupts-extended = <&cpld 8 FLAGS>; /* gpio1 line 0 */
-> interrupts-extended = <&cpld 12 FLAGS>; /* irq0 */
-> 
-> gpios = <&cpld 0> /* gpio0 line 0 */
-> 
-> But there is also offset 12, but then it is the GPI controller:
-> 
-> gpios = <&cpld 12> /* gpi line 0, nothing to do with irq0 */
-> 
-> I don't know if this is good practice, I guess you have to tell me. And
-> is it possible to combine any sub device into the mfd node in that way?
+Hi,
 
-Oh I don't think that will work for the watchdog. If you just have one
-watchdog it just looks odd.
+On Mon, May 11, 2020 at 7:59 AM Will Deacon <will@kernel.org> wrote:
+>
+> Hi Doug,
+>
+> On Tue, Apr 28, 2020 at 02:13:45PM -0700, Douglas Anderson wrote:
+> > diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+> > index 48222a4760c2..59c353dfc8e9 100644
+> > --- a/arch/arm64/kernel/debug-monitors.c
+> > +++ b/arch/arm64/kernel/debug-monitors.c
+> > @@ -297,7 +297,7 @@ void unregister_kernel_break_hook(struct break_hook *hook)
+> >       unregister_debug_hook(&hook->node);
+> >  }
+> >
+> > -static int call_break_hook(struct pt_regs *regs, unsigned int esr)
+> > +int call_break_hook(struct pt_regs *regs, unsigned int esr)
+> >  {
+> >       struct break_hook *hook;
+> >       struct list_head *list;
+> > diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+> > index cf402be5c573..a8173f0c1774 100644
+> > --- a/arch/arm64/kernel/traps.c
+> > +++ b/arch/arm64/kernel/traps.c
+> > @@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
+> >       if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
+> >               return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
+> >  #endif
+> > +     if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
+> > +             return 0;
+>
+> I think this just means we're not running debug_traps_init() early enough,
+> and actually the KASAN early handler is unnecessary too.
+>
+> If we call debug_traps_init() directly from setup_arch() and drop the
+> arch_initcall(), can we then drop early_brk64 entirely?
 
-cpld: sl28cpld@4a {
-    interrupt-controller;
-    #interrupt-cells = <2>;
-    gpio-controller;
-    #gpio-cells = <2>;
-    timeout-sec = <10>; /* watchdog property */
-};
+It seems to work in my testing.  ...but the worry I have is the
+comment right before trap_init().  It says:
 
-And won't pass the dtbindings check because the nodename is not
-"watchdog(@[0-9]+)?". But it really falls short if you want to have
-two watchdogs with different properties.
+/* This registration must happen early, before debug_traps_init(). */
 
--michael
+By moving debug_traps_init() early we're violating that comment.  Do I
+just remove that comment, or was there a good reason for it?  ...or am
+I reading it wrong and I should have read it as if it said:
+
+/* NOTE: this registration happens early, before debug_traps_init(). */
+
+...then removing it is fine.  Maybe that's right?
+
+I coded this up and put it on the Chrome OS gerrit at
+<https://crrev.com/c/2195061>.  I'm happy to post this on the list as
+a loner patch to replace this one or spin the whole series depending
+on what people want.
+
+
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
