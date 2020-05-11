@@ -2,44 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4BAC91CDE8D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:13:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B90691CDE90
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:14:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uij3xZssq5oHTemtHb2gsOA/6lEuCDK5ja6trOpygMU=; b=RlDpBZ7n9S2dj8
-	AFvrbS+3H7j28o5cF/Uh8xVRQf/6fbS8mMsuh4eNSHu9jifSq03axNaO5UYGIRQBGV3Dx2n/h7y3z
-	pBadGkPhuVZp49B9mbPglJRpWJW7QoNKsVDBBN8ec/Gc55EB+VWX5pHT75Dv4OQYWnCAag1i9wK0a
-	GHehmxHtC7REc40e8E00SXgkHshe4MDWP25bzzyqiskhyu5uvTcI2Xwmr1Gw4WRnQmFCRSjz+EH4I
-	LOm0/IiqdMXRtISCjJ+k4wHBZ/XBA0phVTG30chW/HPeBhvWQe/6IWi8nKLgzYbYTluSOC9FIEF4Y
-	/6cNIi1A4XGTmmRt1BCA==;
+	List-Owner; bh=iON8hnB8jMTf+7WDvSI8Y3OucCaPn4kwJDXVxeJJiwg=; b=iSeH1OxkbZzTqK
+	QPvxfTCdk/sHsJPrZWcdhhQqEAbUDbP9odrXNpISzYhKxM45AaEuXyxP0YouPziHIbS2G7rXmqItD
+	A9utHjA/cRxtlL3cARMaUdSaZYn+n+/q/CmEx/tOn6YQgzU+S7GaWl/WWqqmJuS5k996h/t1RmxnA
+	EfkC+D7IL5KDP2wpu+XBPxifYL300lCjp8Nb/HSEoOZ/SdZXduBmcFYXcOcpMUR5nTItCJnrp3yrq
+	V75dxB744e5/1oS3IHEkIedhGBYLlgTIL20/39FiCsaRHy7RECPihRhHzxC2rFjPxjPY4HSLvj8dM
+	G/WsYcXJSCrI/u6alO3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYA7l-0001NR-Ug; Mon, 11 May 2020 15:13:45 +0000
+	id 1jYA8A-0001lR-Oh; Mon, 11 May 2020 15:14:10 +0000
 Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYA7V-0007jb-1H; Mon, 11 May 2020 15:13:33 +0000
+ id 1jYA7z-0001jy-PL; Mon, 11 May 2020 15:14:01 +0000
 Received: by verein.lst.de (Postfix, from userid 2407)
- id 2865568BFE; Mon, 11 May 2020 17:11:21 +0200 (CEST)
-Date: Mon, 11 May 2020 17:11:20 +0200
+ id B6F0368BFE; Mon, 11 May 2020 17:13:56 +0200 (CEST)
+Date: Mon, 11 May 2020 17:13:56 +0200
 From: Christoph Hellwig <hch@lst.de>
 To: Geert Uytterhoeven <geert@linux-m68k.org>
-Subject: Re: [PATCH 31/31] module: move the set_fs hack for
- flush_icache_range to m68k
-Message-ID: <20200511151120.GA28634@lst.de>
+Subject: Re: sort out the flush_icache_range mess
+Message-ID: <20200511151356.GB28634@lst.de>
 References: <20200510075510.987823-1-hch@lst.de>
- <20200510075510.987823-32-hch@lst.de>
- <CAMuHMdU_OxNoKfO=i903kx0mgk0-i2h4u2ase3m9_dn6oFh_5g@mail.gmail.com>
+ <CAMuHMdXazsBw0mjJd0uFHQud7qbb5-Uw-PTDB3+-M=huRWOfgQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAMuHMdU_OxNoKfO=i903kx0mgk0-i2h4u2ase3m9_dn6oFh_5g@mail.gmail.com>
+In-Reply-To: <CAMuHMdXazsBw0mjJd0uFHQud7qbb5-Uw-PTDB3+-M=huRWOfgQ@mail.gmail.com>
 User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_081329_257225_56C6BA8C 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20200511_081359_970252_02A81D7E 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,21 +84,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 09:40:39AM +0200, Geert Uytterhoeven wrote:
-> On Sun, May 10, 2020 at 9:57 AM Christoph Hellwig <hch@lst.de> wrote:
-> >
-> > flush_icache_range generally operates on kernel addresses, but for some
-> > reason m68k needed a set_fs override.  Move that into the m68k code
-> > insted of keeping it in the module loader.
-> >
-> > Signed-off-by: Christoph Hellwig <hch@lst.de>
+On Mon, May 11, 2020 at 09:46:17AM +0200, Geert Uytterhoeven wrote:
+> Hi Christoph,
 > 
-> Reviewed-by: Geert Uytterhoeven <geert@linux-m68k.org>
-> Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
+> On Sun, May 10, 2020 at 9:55 AM Christoph Hellwig <hch@lst.de> wrote:
+> > none of which really are used by a typical MMU enabled kernel, as a.out can
+> > only be build for alpha and m68k to start with.
+> 
+> Quoting myself:
+> "I think it's safe to assume no one still runs a.out binaries on m68k."
+> http://lore.kernel.org/r/CAMuHMdW+m0Q+j3rsQdMXnrEPm+XB5Y2AQrxW5sD1mZAKgmEqoA@mail.gmail.com
 
-Btw, do you know what part of flush_icache_range relied on set_fs?
-Do any of the m68k maintainers have an idea how to handle that in
-a nicer way when we can split the implementations?
+Do you want to drop the:
+
+    select HAVE_AOUT if MMU
+
+for m68k then?
+
+Note that we'll still need flush_icache_user_range for m68k with mmu,
+as it also allows binfmt_flat for mmu configs.
 
 _______________________________________________
 linux-arm-kernel mailing list
