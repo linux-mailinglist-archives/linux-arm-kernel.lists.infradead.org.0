@@ -2,58 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C67F21CE385
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 21:03:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45F8A1CE43A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 21:24:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/fKHcgiMj1KkUOEuH6F8xprCjZD76FROws3+7YMM6dE=; b=dEK5v1WpNf2Pne2Yu7v5MInap
-	vF8ATIRW6rQjKBSc2kGWSCvfwpFTfFs/EgQE56MoE4T1ACMxM48g1y3U6SMevuzL8yNNF2pXCDAWU
-	hzEjlaKW59YuOsLs+an4wm8N2qvFAD5Kgnx3qTMC6Pag4WuaWZT7Jo5vvJoaLtLXM8lN0AX5FVBAS
-	bn41R8C1JVSNvPfF4i2ifEauw02Uc8tXtYVK1Uf1niv5A1yjujQ+3BLSDBk8PxzsNWXMowqNdaC3B
-	VLjQupyFRJDy/9raqHJ/aAgz4usKZ5UGQpvdq9jfEJD7sifkOUCfUHr6CFGdLbVcocb4pj96WMmZm
-	hd/5JPmVQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=e2ohjzwvVp/HA8lRNKQN/ppwbIBpnEJMt3BLNlWZLVM=; b=CFseqhtumRlani
+	/d1jQeeDwe5D5EQyoD8KYhATPywCbLfcFMxK4xt0dy2WplpZKbzNOSrqpOd2+GMNIAGMJd2ov6tvq
+	IC2ppMj0k2cNqnmMGAMz33OWAtmeAPWW59WlH1s2EnYc2+MaSW/QUNjPpbPJJtOmL9v3aOGWk1PKn
+	W3+MVzK71FyCt5pinMoahJsoCj15LNFSBn/YhzYc9I6tjZVYLFoya4KQ79vG69wILZOniL10Fzjlr
+	6pEki+8edYa/R5x9w1yT9f1eemeSPUxmlw1dWi7/VutAR7Zkw0x77i63NfS+sjmmAgAS/0r645ARP
+	Ok+CsCNf9ESdAxKLmlfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYDhv-0006Lw-3x; Mon, 11 May 2020 19:03:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYDhk-0006LI-HC
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 19:03:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 611D81FB;
- Mon, 11 May 2020 12:03:07 -0700 (PDT)
-Received: from [10.57.36.85] (unknown [10.57.36.85])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F6683F71E;
- Mon, 11 May 2020 12:03:06 -0700 (PDT)
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Don't reserve implementation defined
- register space
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
-References: <20200506174629.1504153-1-jean-philippe@linaro.org>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <2c5b52c0-8be0-9c22-ed27-3a2acd2b570c@arm.com>
-Date: Mon, 11 May 2020 20:03:05 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jYE2X-0001tL-Tm; Mon, 11 May 2020 19:24:37 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYE2P-0001rc-1d; Mon, 11 May 2020 19:24:30 +0000
+Received: by mail-wm1-x343.google.com with SMTP id w19so5897163wmc.1;
+ Mon, 11 May 2020 12:24:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=uxtARxCkPHWXnqT8lNpH00A1Ut0N5U8vfZ7iT6ckY1E=;
+ b=AG7MZsX4ZOvpaULyOTIRKeZi/M6nLPWkPou4BnwRwJjZZDbwmwc2GN+LFtRg6wIESO
+ vDwFcsA0F9F8GADGT963+l1vut2xgX7EXRxhHkCv6hTX5WfGbNkIvpOrqt1P8oTzAJz/
+ m5qsiNAMDXCrGhAu62TssTPTyLX86ziIjlYQYM28Z3sLDG7euOQE0FHm9wmb/jvmSBPV
+ KXJj34jfWOCW4evwPoBU2tc+6EDIbrbGKo00RF3+ioMJPD8pnCrwjacGigLPWEAZQdRO
+ mH1+73oEcvkmFLleEXiquqHS2lIN9MqN2mLm+NJaK2yDyzE4nh5a5CG9TexWJG6o0TWy
+ oyoA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=uxtARxCkPHWXnqT8lNpH00A1Ut0N5U8vfZ7iT6ckY1E=;
+ b=FlMPLnjSpF/+TSnOnq4nVDWML35aG/ljqs48+ofKOMpvCaonr9jkZ3IFBWQMPED1IV
+ VzpEzqF0fdCDjHyjOdzOTsLqukPt8Z9C5ZZgEHmWvAuMlAvf7wyOXf+zOOMdX7uk+3Eo
+ Z4VoIhz2QcpFEIdFIRUa0L1AV9L0rpm7t/VrEAAyb1HQpPcvo7cCwdB63Bf4wAiuusr0
+ T6LkydZ3tzCRrrKZ0dO5/BV791Tu9qGrwbxR96gPtr7vjY0RBGMi3OrzeiWC2cbvAbBz
+ uG6udQINvTWsWhr4X/znHSzheQPbRTC8kaFtbdopwqn806uT5zkzESKwdM5OdHnFOLcc
+ lvJQ==
+X-Gm-Message-State: AGi0PuZCY2FKjjilhiUF7aIeki9oAzxahfjYpYfPWXvCekAe2er8wwU3
+ HxbX0Agr1WhYyVeuvBRinas=
+X-Google-Smtp-Source: APiQypJW5vvk30z5iWdY0hSQCc1Ykgc7TXvbdxesRiVaoSvVocTszQuT5j6sF6kDtbT7WU3aCncc9w==
+X-Received: by 2002:a1c:6402:: with SMTP id y2mr33787682wmb.116.1589225065733; 
+ Mon, 11 May 2020 12:24:25 -0700 (PDT)
+Received: from [10.230.188.43] ([192.19.223.252])
+ by smtp.gmail.com with ESMTPSA id p4sm8187632wrq.31.2020.05.11.12.24.21
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 11 May 2020 12:24:25 -0700 (PDT)
+Subject: Re: [PATCH v2 09/14] net: ethernet: mtk-eth-mac: new driver
+To: Bartosz Golaszewski <brgl@bgdev.pl>, Rob Herring <robh+dt@kernel.org>,
+ "David S . Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
+ Sean Wang <sean.wang@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Jakub Kicinski <kuba@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Fabien Parent <fparent@baylibre.com>, Heiner Kallweit
+ <hkallweit1@gmail.com>, Edwin Peer <edwin.peer@broadcom.com>
+References: <20200511150759.18766-1-brgl@bgdev.pl>
+ <20200511150759.18766-10-brgl@bgdev.pl>
+From: Florian Fainelli <f.fainelli@gmail.com>
+Message-ID: <dab80587-a196-e0ab-ae97-f8e5cc4a71d4@gmail.com>
+Date: Mon, 11 May 2020 12:24:20 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200506174629.1504153-1-jean-philippe@linaro.org>
-Content-Language: en-GB
+In-Reply-To: <20200511150759.18766-10-brgl@bgdev.pl>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_120308_662810_6FB32E8E 
-X-CRM114-Status: GOOD (  25.29  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_122429_135864_9304AADD 
+X-CRM114-Status: GOOD (  17.67  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [f.fainelli[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,159 +106,144 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: will@kernel.org, tuanphan@amperemail.onmicrosoft.com
+Cc: devicetree@vger.kernel.org,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ linux-mediatek@lists.infradead.org,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-06 6:46 pm, Jean-Philippe Brucker wrote:
-> Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
-> inside the first 64kB region of the SMMU. Since PMCG are managed by a
-> separate driver, this layout causes resource reservation conflicts
-> during boot.
+
+
+On 5/11/2020 8:07 AM, Bartosz Golaszewski wrote:
+> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 > 
-> To avoid this conflict, only reserve the MMIO region we actually use:
-> the first 0xe0 bytes of page 0 and the first 0xd0 bytes of page 1.
-> Although devm_ioremap() still works on full pages under the hood, this
-> way we benefit from resource conflict checks.
+> This adds the driver for the MediaTek Ethernet MAC used on the MT8* SoC
+> family. For now we only support full-duplex.
 > 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 > ---
-> A nicer (and hopefully working) solution to the problem dicussed here:
-> https://lore.kernel.org/linux-iommu/20200421155745.19815-1-jean-philippe@linaro.org/
-> ---
->   drivers/iommu/arm-smmu-v3.c | 50 +++++++++++++++++++++++++++++++++----
->   1 file changed, 45 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> index 82508730feb7a1..fc85cdd5b62cca 100644
-> --- a/drivers/iommu/arm-smmu-v3.c
-> +++ b/drivers/iommu/arm-smmu-v3.c
-> @@ -171,6 +171,9 @@
->   #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
->   #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
->   
-> +#define ARM_SMMU_PAGE0_REG_SZ		0xe0
-> +#define ARM_SMMU_PAGE1_REG_SZ		0xd0
 
-I wonder if we shouldn't still claim all the way up to 0xdff for good 
-measure, since the IMP-DEF areas only start appearing beyond that.
+[snip]
 
-> +
->   /* Common MSI config fields */
->   #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
->   #define MSI_CFG2_SH			GENMASK(5, 4)
-> @@ -628,6 +631,7 @@ struct arm_smmu_strtab_cfg {
->   struct arm_smmu_device {
->   	struct device			*dev;
->   	void __iomem			*base;
-> +	void __iomem			*page1;
->   
->   #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
->   #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
-> @@ -733,11 +737,14 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
->   static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
->   						 struct arm_smmu_device *smmu)
->   {
-> -	if ((offset > SZ_64K) &&
-> -	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
-> -		offset -= SZ_64K;
-> +	void __iomem *base = smmu->base;
->   
-> -	return smmu->base + offset;
-> +	if (offset > SZ_64K) {
-> +		offset -= SZ_64K;
-> +		if (smmu->page1)
-> +			base = smmu->page1;
-> +	}
-> +	return base + offset;
->   }
-
-Why not just assign page1 = base in the Cavium case and let this simply be:
-
-	if (offset > SZ_64K)
-		return smmu->page1 + offset - SZ_64K;
-	return smmu->base + offset;
-
-Then it's only one step further to get rid of the fixup and use page1 
-directly where relevant, but that could be a cleanup on top, since we 
-probably want a minimal change here for the sake of backporting (I 
-believe this deserves to go to stable, now that MMU-600 hardware is 
-reaching the field and will go wonky otherwise).
-
->   
->   static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
-> @@ -4021,6 +4028,28 @@ err_reset_pci_ops: __maybe_unused;
->   	return err;
->   }
->   
-> +static void __iomem *arm_smmu_ioremap(struct device *dev,
-> +				      resource_size_t start,
-> +				      resource_size_t size)
+> +static int mtk_mac_ring_pop_tail(struct mtk_mac_ring *ring,
+> +				 struct mtk_mac_ring_desc_data *desc_data)
 > +{
-> +	void __iomem *dest_ptr;
-> +	struct resource *res;
+> +	struct mtk_mac_ring_desc *desc = &ring->descs[ring->tail];
+> +	unsigned int status;
 > +
-> +	res = devm_request_mem_region(dev, start, size, dev_name(dev));
-> +	if (!res) {
-> +		dev_err(dev, "can't request SMMU region %pa\n", &start);
-> +		return IOMEM_ERR_PTR(-EINVAL);
+> +	/* Let the device release the descriptor. */
+> +	dma_rmb();
+> +	status = desc->status;
+> +
+> +	if (!(status & MTK_MAC_DESC_BIT_COWN))
+> +		return -1;
+> +
+> +	desc_data->len = status & MTK_MAC_DESC_MSK_LEN;
+> +	desc_data->flags = status & ~MTK_MAC_DESC_MSK_LEN;
+> +	desc_data->dma_addr = desc->data_ptr;
+> +	desc_data->skb = ring->skbs[ring->tail];
+> +
+> +	desc->data_ptr = 0;
+> +	desc->status = MTK_MAC_DESC_BIT_COWN;
+> +	if (status & MTK_MAC_DESC_BIT_EOR)
+> +		desc->status |= MTK_MAC_DESC_BIT_EOR;
+
+Don't you need a dma_wmb() for the device to observe the new descriptor
+here?
+
+[snip]
+
+> +static void mtk_mac_dma_unmap_tx(struct mtk_mac_priv *priv,
+> +				 struct mtk_mac_ring_desc_data *desc_data)
+> +{
+> +	struct device *dev = mtk_mac_get_dev(priv);
+> +
+> +	return dma_unmap_single(dev, desc_data->dma_addr,
+> +				desc_data->len, DMA_TO_DEVICE);
+
+If you stored a pointer to the sk_buff you transmitted, then you would
+need an expensive read to the descriptor to determine the address and
+length, and you would also not be at the mercy of the HW putting
+incorrect values there.
+
+sp
+> +static void mtk_mac_dma_init(struct mtk_mac_priv *priv)
+> +{
+> +	struct mtk_mac_ring_desc *desc;
+> +	unsigned int val;
+> +	int i;
+> +
+> +	priv->descs_base = (struct mtk_mac_ring_desc *)priv->ring_base;
+> +
+> +	for (i = 0; i < MTK_MAC_NUM_DESCS_TOTAL; i++) {
+> +		desc = &priv->descs_base[i];
+> +
+> +		memset(desc, 0, sizeof(*desc));
+> +		desc->status = MTK_MAC_DESC_BIT_COWN;
+> +		if ((i == MTK_MAC_NUM_TX_DESCS - 1) ||
+> +		    (i == MTK_MAC_NUM_DESCS_TOTAL - 1))
+> +			desc->status |= MTK_MAC_DESC_BIT_EOR;
 > +	}
 > +
-> +	dest_ptr = devm_ioremap(dev, start, size);
-> +	if (!dest_ptr) {
-> +		dev_err(dev, "ioremap failed for SMMU region %pR\n", res);
-> +		devm_release_mem_region(dev, start, size);
-> +		dest_ptr = IOMEM_ERR_PTR(-ENOMEM);
-> +	}
-> +	return dest_ptr;
-> +}
-
-Would it be any less complicated to stick with devm_ioremap_resource() 
-and fix up the resource itself for each call, rather than open-coding it?
-
+> +	mtk_mac_ring_init(&priv->tx_ring, priv->descs_base, 0);
+> +	mtk_mac_ring_init(&priv->rx_ring,
+> +			  priv->descs_base + MTK_MAC_NUM_TX_DESCS,
+> +			  MTK_MAC_NUM_RX_DESCS);
 > +
->   static int arm_smmu_device_probe(struct platform_device *pdev)
->   {
->   	int irq, ret;
-> @@ -4056,10 +4085,21 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
->   	}
->   	ioaddr = res->start;
->   
-> -	smmu->base = devm_ioremap_resource(dev, res);
-> +	/*
-> +	 * Only map what we need, because the IMPLEMENTATION DEFINED registers
-> +	 * may be used for the PMCGs, which are reserved by the PMU driver.
-> +	 */
-> +	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_PAGE0_REG_SZ);
->   	if (IS_ERR(smmu->base))
->   		return PTR_ERR(smmu->base);
->   
-> +	if (arm_smmu_resource_size(smmu) > SZ_64K) {
-> +		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
-> +					       ARM_SMMU_PAGE1_REG_SZ);
-> +		if (IS_ERR(smmu->page1))
-> +			return PTR_ERR(smmu->page1);
+> +	/* Set DMA pointers. */
+> +	val = (unsigned int)priv->dma_addr;
+
+You would probably add a WARN_ON() or something that catches the upper
+32-bits of the dma_addr being set, see my comment about the DMA mask
+setting.
+
+[snip]
+
+> +static void mtk_mac_tx_complete_all(struct mtk_mac_priv *priv)
+> +{
+> +	struct net_device *ndev = priv_to_netdev(priv);
+> +	struct mtk_mac_ring *ring = &priv->tx_ring;
+> +	int ret;
+> +
+> +	for (;;) {
+> +		mtk_mac_lock(priv);
+> +
+> +		if (!mtk_mac_ring_descs_available(ring)) {
+> +			mtk_mac_unlock(priv);
+> +			break;
+> +		}
+> +
+> +		ret = mtk_mac_tx_complete_one(priv);
+> +		if (ret) {
+> +			mtk_mac_unlock(priv);
+> +			break;
+> +		}
+> +
+> +		if (netif_queue_stopped(ndev))
+> +			netif_wake_queue(ndev);
+> +
+> +		mtk_mac_unlock(priv);
 > +	}
 
-As above,
+Where do you increment the net_device statistics to indicate the bytes
+and packets transmitted?
 
-	} else {
-		smmu->page1 = smmu->base;
-	}
+[snip]
 
-Either way, those are just cleanliness nitpicks; I've no real objection 
-to the patch in its current state. Getting MMU-600 systems un-broken at 
-all is more important, there will always be time for cleanup :)
-
-Robin.
-
+> +	mtk_mac_set_mode_rmii(priv);
 > +
->   	/* Interrupt lines */
->   
->   	irq = platform_get_irq_byname_optional(pdev, "combined");
-> 
+> +	dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32));
+
+Your code assumes that DMA addresses are not going to be >= 4GB so you
+should be checking this function's return code and abort here otherwise
+your driver will fail in surprisingly difficult ways to debug.
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
