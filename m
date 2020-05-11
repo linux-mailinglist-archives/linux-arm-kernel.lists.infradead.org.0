@@ -2,58 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D0531CDFE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 18:05:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCB7F1CE2C0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:28:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WnYxXPGfsTts/biKUb8YR/WSr/w+in1+vGqPsyhCgEU=; b=saF5Qybfhvlr42
-	v5lu6OB5YCfrKdtRB4Aa8iEksYaFj2JygO93OOtT25RuiJD8Tyn2BwcYjxDQU1GgNMuFEWtpCdrJ2
-	rxOeVaFn1ZQxoxSy4U/ejfV1n74nMmXmbKUg+TZ/aBcGNAndfclGL77PVLItTlWzuVd5dvN5kT54p
-	Lw0WBRg0nDevkzcjBzZ8aaPfctfKJPYp+JS7Gj6Ym8F6XxoLsomXx+I6gI/JiisqzGoyrSJ3J3LUi
-	1YHvKH1oaVnzPI2pKrIakZSxEqh+8I6Eo6+6cbyY1hP06/dp9dtCsvyiZoDoJpcYIpBFIm8s2A9C9
-	FqxPrbgTW4znZsGkWpEQ==;
+	List-Owner; bh=Jma1feo1wGkW+KQ2BlpUozdNqKoOTlrMYp3LVKNDDak=; b=gb9tQMDT+CqPKw
+	dBIQ1JUFZ2XJXHOmaFzkuDkCl1CyvxEdXDQSl7PEDOFMpgMxp8SR0SSsKOchRIwxzaCWVkeeZWFny
+	baTRZXKds/DnxeUYQm+Q6ChCCf6Hl0YoR05oZXpyd2Elo3+zfQjMVooPsmtVaZAw+MCWqRU0BiYCy
+	zwZAr1UWBiX12iQFkdzKvoBsJLHynU0QEHme1qGZS5lfUXUq3burRG91fXn4uYjVxwbjvpiYzPpz7
+	89tH/A7w3Nfrmhgkck4UFzp7y23bb8uGkLqZ/5pCUDj+AxRECbUse/BU1BokfFHsqvgHW7hhgUKRZ
+	sknsYgkKxWYsoQwxqw5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYAvh-0004Df-9u; Mon, 11 May 2020 16:05:21 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYAvV-0003BB-Hd
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 16:05:11 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5D66A30E;
- Mon, 11 May 2020 09:05:07 -0700 (PDT)
-Received: from e119603-lin.cambridge.arm.com (unknown [10.57.42.196])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4638F3F305;
- Mon, 11 May 2020 09:05:06 -0700 (PDT)
-Date: Mon, 11 May 2020 17:05:04 +0100
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: Rob Herring <robh@kernel.org>
-Subject: Re: [RFC PATCH 0/3] SCMI System Power Support
-Message-ID: <20200511160504.GA17648@e119603-lin.cambridge.arm.com>
-References: <20200427210806.37422-1-cristian.marussi@arm.com>
- <CAL_JsqKV8j8Jm_7B7no6SsZ9AAv=WjqOx9EmCp3fomUXRO-FzQ@mail.gmail.com>
- <DB7PR08MB3657577B2251084FF2B4A0EF9EAA0@DB7PR08MB3657.eurprd08.prod.outlook.com>
- <CAL_JsqK6+2c9jXfsipqH0qakTGrszSGN4+kZqGstOmkWj40JGQ@mail.gmail.com>
+	id 1jYDAU-00086S-3c; Mon, 11 May 2020 18:28:46 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYD9N-0007GG-Ps
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:27:40 +0000
+Received: by mail-ot1-f67.google.com with SMTP id i27so8345463ota.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 11:27:37 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8XrifLV0oFLLyLn6BjacaXHOgkoMzKo1Zf9sFmdQHNs=;
+ b=HmdonS7wrVRErIePD1z5l4ZDAJjYASoG0c7lovwGoHdFrjVGdwUuNla8uc5sjbpYMN
+ kQMaQiuPjV8beUul2lUfmJ4YfXUMeoO3sIbj1jVybJVEs4WQJATEBiw/4luTnYPFXO4L
+ jragyxO5zR43R3VXbBfPHoTEFk515cFrKsLDUCVXRje4ZN0fIXx7rvgr3XbcLkHIk2dt
+ yc6IXgkcpl/vwWlflMmkfGTCgaP7jhjtj3BzwakpRvcl9ltJKEsTg8oU2nvAz3cPGqSs
+ uPHoNcwNSvErdMfAW4xxg2s6g9evhUHmfTE3JYikwTInNYTs2Ji2zFRyIVkHV50zG4nW
+ 2gZQ==
+X-Gm-Message-State: AGi0PubYv6w8ZCCwVImYvK9Yx5hATdjiNItVexTS4ZZzOp1sguDV2eJg
+ eZxP+g6rET4q7VKCq8MJZA==
+X-Google-Smtp-Source: APiQypIEDiszqremOLj3ZVCWNAGbs747WHBAa7K2a7Gvw2bUX1jdvt5C7wSdJKYiwrOZmAnZ6GAWZg==
+X-Received: by 2002:a9d:2264:: with SMTP id o91mr13983559ota.258.1589221656049; 
+ Mon, 11 May 2020 11:27:36 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id j186sm4802742oia.31.2020.05.11.11.27.34
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 11 May 2020 11:27:35 -0700 (PDT)
+Received: (nullmailer pid 19748 invoked by uid 1000);
+ Mon, 11 May 2020 16:09:49 -0000
+Date: Mon, 11 May 2020 11:09:49 -0500
+From: Rob Herring <robh@kernel.org>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v10 1/3] dt-bindings: i2c: npcm7xx: add NPCM I2C controller
+Message-ID: <20200511160949.GA19364@bogus>
+References: <20200510102330.66715-1-tali.perry1@gmail.com>
+ <20200510102330.66715-2-tali.perry1@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAL_JsqK6+2c9jXfsipqH0qakTGrszSGN4+kZqGstOmkWj40JGQ@mail.gmail.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20200510102330.66715-2-tali.perry1@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_090509_645160_2DDA7673 
-X-CRM114-Status: GOOD (  15.91  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_112738_006288_B3067789 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,65 +95,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- "james.quinlan@broadcom.com" <james.quinlan@broadcom.com>,
- Sudeep Holla <Sudeep.Holla@arm.com>, Lukasz Luba <Lukasz.Luba@arm.com>
+Cc: devicetree@vger.kernel.org, tmaimon77@gmail.com, wsa@the-dreams.de,
+ avifishman70@gmail.com, venture@google.com, openbmc@lists.ozlabs.org,
+ brendanhiggins@google.com, linux-kernel@vger.kernel.org, ofery@google.com,
+ kfting@nuvoton.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ andriy.shevchenko@linux.intel.com, yuenn@google.com,
+ linux-arm-kernel@lists.infradead.org, benjaminfair@google.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 02:11:45PM -0500, Rob Herring wrote:
-> On Thu, Apr 30, 2020 at 12:23 PM Cristian Marussi
-> <Cristian.Marussi@arm.com> wrote:
-> >
-> > Hi Rob
-> >
-> > thanks for the feedback.
+On Sun, 10 May 2020 13:23:28 +0300, Tali Perry wrote:
+> Added device tree binding documentation for Nuvoton BMC
+> NPCM I2C controller.
 > 
-> Plain text for maillists please.
-> 
-Yes I know, sorry, used wrong client by mistake.
-
-> >
-> > > On top of this a new SCMI driver has been developed which registers for
-> > > ----
-> > > such System Power notification and acts accordingly to satisfy such
-> > > plaform system-state transition requests that can be of forceful or
-> > > graceful kind.
-> >
-> > > I needed this 7 years ago. :) (hb_keys_notifier in
-> > > arch/arm/mach-highbank/highbank.c)
-> >
-> > ...better later than never
-> >
-> > > Such alternative, if deemed worth, should clearly be configurable via DT
-> > > (also in terms of which signals to use), BUT all of this work is not done
-> > > in this series: and that's the reason for the RFC tag: does it make sense
-> > > to add such a configurable additional option ?
-> >
-> > >Which process signal to use in DT? I don't think so.
-> >
-> > ... beside the awkward bad idea of mine of configuring it via DT
-> > (which I'll drop possibly using modparams for this config), my question
-> > was more about if it makes sense at all to have another alternative mechanism
-> > (other than orderly_poweroof/reboot)) based on signals to gracefully ask userspace
-> > to shutdown
-> 
-> gregkh will tell you no to module params.
-> 
-> If the signal is not standard, then we probably shouldn't go that route.
+> Signed-off-by: Tali Perry <tali.perry1@gmail.com>
+> ---
+>  .../bindings/i2c/nuvoton,npcm7xx-i2c.yaml     | 62 +++++++++++++++++++
+>  1 file changed, 62 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
 > 
 
-Before this reply, I posted a v2 with alternative signal-method configurable by modparam;
-it's anyway a small addition which I can easily remove in a v3.
 
-Thanks
+My bot found errors running 'make dt_binding_check' on your patch:
 
-Cristian
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: properties:compatible: [{'const': 'nuvoton,npcm7xx-i2c'}] is not of type 'object', 'boolean'
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: properties:clock-frequency:enum: False schema does not allow [100000, 400000, 1000000]
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: properties:clocks: {'maxItems': 1, 'items': [{'description': 'Reference clock for the I2C bus'}]} is not valid under any of the given schemas (Possible causes of the failure):
+	/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: properties:clocks: 'maxItems' is not one of ['type', 'description', 'dependencies', 'properties', 'patternProperties', 'additionalProperties', 'unevaluatedProperties', 'deprecated', 'required', 'allOf', 'anyOf', 'oneOf', '$ref']
+
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: properties:clock-frequency: 'maxItems' is not one of ['description', 'deprecated', 'const', 'enum', 'minimum', 'maximum', 'default', '$ref']
+Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.example.dts' failed
+make[1]: *** [Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.example.dts] Error 1
+make[1]: *** Waiting for unfinished jobs....
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: ignoring, error in schema: properties: compatible
+warning: no schema found in file: ./Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml: ignoring, error in schema: properties: compatible
+warning: no schema found in file: ./Documentation/devicetree/bindings/i2c/nuvoton,npcm7xx-i2c.yaml
+Makefile:1300: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
+
+See https://patchwork.ozlabs.org/patch/1287083
+
+If you already ran 'make dt_binding_check' and didn't see the above
+error(s), then make sure dt-schema is up to date:
+
+pip3 install git+https://github.com/devicetree-org/dt-schema.git@master --upgrade
+
+Please check and re-submit.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
