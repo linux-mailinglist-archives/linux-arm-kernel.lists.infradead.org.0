@@ -2,58 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 863021CDCA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:07:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C15901CDCBD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:12:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mSsKhqgd3Yl3W3Tf7+DJl9+1tW+2icG8SnI2KywshRA=; b=roWu7P1xRVyJW7
-	MWalZUoaWbobgCNMTBNgvc3Yp0J1rXmto+aczbNuCyNF5H9FmHbzuRM1t5epRd0Z/0ev4a1ztmKEW
-	g0QS2iJjOd+sL32jrZ+CQBpFB1VRc9N9P+pPYTDuM0IJR0hrZqi1zOk73cVTZlmZv7H2i/WG0wr0w
-	xA8TEQLstQP1ZWCif+/B+MUlZJz72lXQ+NqSMOVB78hCf+38LRCRFRN3J5Hxl5ElDSuFgEZuo1pwm
-	aBiDiX2i173E3tZX6GUuTO1zJoDKoAoKdqO09llDOkk0zBpaW6npwOy/NZB3yoixYlBZei3cMkFUN
-	+roQlrgnzgSsqSVM4zkA==;
+	List-Owner; bh=bcLaEjyV7355NB37Z2zmoriU37ZJWJTYCxiGxJnVwuw=; b=dS8KKgvTzYnqSA
+	Cu6G4r8hrj3lP6L2CfwjITs/30MectmoYo0Two7uIbQdxpn7YkaMpyi4kQtm8nU+rURU/eIKHWgnu
+	3lVqT/TIe35gVbRlVQBP0RoaoJe6zyDR9h12ef/ahBtP7oQpAldhKo3G8X8NYDojkIfWLndXMDHrp
+	WszowQ3xMYpweyB54sQu5oorPenYQiQNFFQ4WTom5nBA/bEA/RDPpBT5AzBItwtZexKnmodh23Hlp
+	SvptfQwh1+S6+HI0F/7EdY0ccBmz5Zd9LeoztO2L7Ms3ijFkudBsgyNxTRfkh/6LCrW/5JkoYdBkj
+	thf0brqeERbSYRPmJNMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY954-0002Vo-Q9; Mon, 11 May 2020 14:06:55 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1jY9AV-00066o-Hx; Mon, 11 May 2020 14:12:31 +0000
+Received: from mail-bn8nam12on2050.outbound.protection.outlook.com
+ ([40.107.237.50] helo=NAM12-BN8-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY93m-0001K4-9N
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:05:39 +0000
-X-Originating-IP: 78.193.40.249
-Received: from localhost (unknown [78.193.40.249])
- (Authenticated sender: kamel.bouhara@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 83CFF2001B;
- Mon, 11 May 2020 14:05:31 +0000 (UTC)
-From: Kamel Bouhara <kamel.bouhara@bootlin.com>
-To: William Breathitt Gray <vilhelm.gray@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Nicolas Ferre <nicolas.ferre@microchip.com>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 5/5] counter: Add microchip TCB capture counter
-Date: Mon, 11 May 2020 16:05:05 +0200
-Message-Id: <20200511140505.1649111-6-kamel.bouhara@bootlin.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200511140505.1649111-1-kamel.bouhara@bootlin.com>
-References: <20200511140505.1649111-1-kamel.bouhara@bootlin.com>
+ id 1jY9AO-000664-9p
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:12:25 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nzWjH2qMxouDt7+yUNiNdAmNgi57gmm0Dc3VL4h4maFP4W9Bc5dEOa/l7vX74HyIGjhOmFVEgQP9+EM0XMFxomPb9hZo/aU8AcZn5PnGcJX97UzJYArG1vQWvnYG3L9eJLDzPz+VPrTibBGr6Nl6Q2eBxWRzLyKLODGpMPBy0Uaj0W0GIIbgMdin46uoKbZHcSPqC/a2p0cBgVeBnT61pNFIhIkyqhKMdWK4hsOOjlXUZFaDi6zGLtu/R3/CFSzssvPYdnmoOe2Jiq0IRGxVV69ZJ8TgKTInCn1RvBzTlavYjPHNgCRrYeV34wa/0xZUeL1Td3NqITE5s3itloGH8A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9aHJaBav8SVerFGBaiFCVvU6lmrRdvs76kV2PP7qr0o=;
+ b=XbNaZykZZ8ejPGHdQXJq0YnOf4RMOuYzxNoBB3DnqY34crhT7yrhZl+5ik0gmYejE7uVT0u+uRTqUxzMdo/THLmizR195fEvhx8pniNUCLt6I8IiloS49b3SlCDV826imbmEGdr5wFnoRNeOId92YdgfhS1SzDHN+STtSIICxChaCnRuJAmUBoyXBhKZmURG1DLwT965nwqBJxwi5btHoKEqn5IN6v58o3FOJKeN7OMvW91C+KqRq7w8Nk+xRL22EIInCSyYg+NBpTbq5gbDhIiDTdHt2lZhwudqtM+dOJBG3MuEnDNKfbifnleB8GpRr52nlNSGtf8ALb0xxSMIew==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
+ dkim=pass header.d=xilinx.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9aHJaBav8SVerFGBaiFCVvU6lmrRdvs76kV2PP7qr0o=;
+ b=rtnvihcrcFpTckkKSfR5pd0rBWwuC2PYKVWUgslkQxtwrptPHZHP3eiogK2bJ75U7n15WVR5YRQwZJMCVqy+6xu6vnN+L9OScJJ4DDh8bUgG0jLylnwkMUDC2woQcTyAafkg8F2uEbKzeSqqnEnVz21aWkbNRZj+AWyZ5suzgCo=
+Received: from DM6PR02MB4140.namprd02.prod.outlook.com (2603:10b6:5:97::21) by
+ DM6PR02MB4059.namprd02.prod.outlook.com (2603:10b6:5:96::24) with
+ Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2979.34; Mon, 11 May 2020 14:12:21 +0000
+Received: from DM6PR02MB4140.namprd02.prod.outlook.com
+ ([fe80::3de9:d192:ff78:5302]) by DM6PR02MB4140.namprd02.prod.outlook.com
+ ([fe80::3de9:d192:ff78:5302%5]) with mapi id 15.20.2979.033; Mon, 11 May 2020
+ 14:12:21 +0000
+From: Dragan Cvetic <draganc@xilinx.com>
+To: Harshal Chaudhari <harshalchau04@gmail.com>, "gregkh@linuxfoundation.org"
+ <gregkh@linuxfoundation.org>
+Subject: RE: [PATCH] misc: xilinx-sdfec: convert to module_platform_driver()
+Thread-Topic: [PATCH] misc: xilinx-sdfec: convert to module_platform_driver()
+Thread-Index: AQHWJuoken/qqN3q0UyLQIrh4T2n7Kii7bNQ
+Date: Mon, 11 May 2020 14:12:21 +0000
+Message-ID: <DM6PR02MB41406B5BD7A4379F73ECEB12CBA10@DM6PR02MB4140.namprd02.prod.outlook.com>
+References: <20200510164308.31358-1-harshalchau04@gmail.com>
+In-Reply-To: <20200510164308.31358-1-harshalchau04@gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-TNEF-Correlator: 
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=xilinx.com;
+x-originating-ip: [149.199.80.133]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 5e62cc84-f681-469f-9a6e-08d7f5b5524b
+x-ms-traffictypediagnostic: DM6PR02MB4059:|DM6PR02MB4059:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM6PR02MB4059B61A501F7C0E2CE477BDCBA10@DM6PR02MB4059.namprd02.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4502;
+x-forefront-prvs: 04004D94E2
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Z0eU+vFffxo1aKQvxiz8o2j2Wcek9CB6yoSHgCkqqHOYbQSI/hocSIcSMB5LRGUif3A5q7t0g0iwOd8YG+/ueD5Lmb8dLenmGV9S0Hf2Y0ygUelvIiJufmXHRgBE2dpXA8YHyRiYESrQLtu9kM2sJ7inIi3pXciM8QXAU9etmBNJmapp2DTND0uOd6QWJ5+qkFQtjBV7Jrn9I8Rp8xyOJtzybLeNiwFStLI+bIwCi6H9/miIVlOA8H2dU5mBql1sW1p/mDxAyltdE2wMYoLPVVQ9sfxbOLWYJ2uqjynkaF7UBeIawRDHlsuVWaYDyyNQNoPoEIp5O+0PuEr2x2M9ZkNhR+JNRr7e+yg//XvBPI3BWIg4QSsnKabdh0C4UG+M6oT3F9IsWhRNT2RhkKb/4gzQIxYRhSHhUVM3GO5kZZQHeDF3QsizsUWdMbULdX10R9Rwub+KkrcZllWbhrL2U3fGNEvRCBmQB8z+lSJCqwMBgmDbH1bN3XAAhH2uKHberLsJE3VNqZwk47RBHNHsnw==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DM6PR02MB4140.namprd02.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(39860400002)(376002)(346002)(366004)(396003)(136003)(33430700001)(54906003)(53546011)(110136005)(66446008)(66946007)(316002)(66556008)(55016002)(9686003)(4326008)(6506007)(71200400001)(478600001)(66476007)(64756008)(8676002)(26005)(7696005)(33656002)(5660300002)(76116006)(186003)(33440700001)(8936002)(52536014)(2906002)(86362001);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: 48T4btpSAerlz1vPlylJtZrzVmY20xDv5AUHhFsqpn2o+/RrOozNdEsQQ7Pm2SQXy5rzgr4eSUwUEQuj10JGmOhuqxEzodf7e1FTw30j4NS4p7wfP2fLdfWLWeD2eDMsAOTLm9+JTyv4x0LN9p7PwHM2FXBOfIlpSfWbxnfJ3EOuM/iySz9BRpXRrVg5xIyJjxmOjJ7ahVKJPCxk89vxtMJTriWGyZ4lTqAbMr1xeNbLvfiVoGLua9u9U21zX+H5bzeU0kZxMg0QJUBm/xy9hMtD09RMEDFPKYH1Xp+BOSsSm3Q1ADuroOT1c9K2VD+R96RXk8XSq3kMGXLUksbJ2D4M2SG/ILuRxStpuRMkTrr5aqZ4xsZ1ScB4f3RH23yzy+Ca+kW06DXqPcHeif+q2eFl0d8P7DeTxai7DekZ+/6nyMPNS3yn000SZTpC2Q8Uk+NcxVdWi7FrgnQe4CsshKCvMeHeDCVt41Z5BwhwAcnEoMV4vVenZf8QiRWtqO6Z
 MIME-Version: 1.0
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5e62cc84-f681-469f-9a6e-08d7f5b5524b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 May 2020 14:12:21.3627 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: w0Tqkd5la4CU9SXwpGwclkIHeK6rrmSSr8as/u0T/FyZAnu6CBi0JiBaUEqv1K6G9mCy9sa7F/40DJGGhY6aHw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR02MB4059
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_070534_690937_4675BDFF 
-X-CRM114-Status: GOOD (  20.38  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200511_071224_342500_CD25D48D 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.237.50 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.237.50 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,471 +120,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-iio@vger.kernel.org, devicetree@vger.kernel.org,
- Kamel Bouhara <kamel.bouhara@bootlin.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org
+Cc: Michal Simek <michals@xilinx.com>, Derek Kiernan <dkiernan@xilinx.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This drivers allows to use the capture mode of the Timer Counter Block
-hardware block available in Microchip SoCs through the counter subsystem.
 
-Two functions of the counter are supported for the moment: period
-capture and quadrature decoder. The latter is only supported by the
-SAMA5 series of SoCs.
 
-For the period capture mode a basic setup has been chosen that will
-reset the counter each time the period is actually reached. Of course
-the device offers much more possibilities.
+> -----Original Message-----
+> From: Harshal Chaudhari <harshalchau04@gmail.com>
+> Sent: Sunday 10 May 2020 17:43
+> To: gregkh@linuxfoundation.org
+> Cc: Derek Kiernan <dkiernan@xilinx.com>; Dragan Cvetic <draganc@xilinx.com>; arnd@arndb.de; Michal Simek
+> <michals@xilinx.com>; linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; harshalchau04@gmail.com
+> Subject: [PATCH] misc: xilinx-sdfec: convert to module_platform_driver()
+> 
+> The driver init and exit function don't do anything besides registering
+> and unregistering the platform driver, so the module_platform_driver()
+> macro could just be used instead of having separate functions.
+> 
+> Signed-off-by: Harshal Chaudhari <harshalchau04@gmail.com>
+> ---
+>  drivers/misc/xilinx_sdfec.c | 20 +-------------------
+>  1 file changed, 1 insertion(+), 19 deletions(-)
+> 
+> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
+> index 71bbaa56bdb5..db16a42c66f4 100644
+> --- a/drivers/misc/xilinx_sdfec.c
+> +++ b/drivers/misc/xilinx_sdfec.c
+> @@ -1484,25 +1484,7 @@ static struct platform_driver xsdfec_driver = {
+>  	.remove =  xsdfec_remove,
+>  };
+> 
+> -static int __init xsdfec_init(void)
+> -{
+> -	int err;
+> -
+> -	err = platform_driver_register(&xsdfec_driver);
+> -	if (err < 0) {
+> -		pr_err("%s Unabled to register SDFEC driver", __func__);
+> -		return err;
+> -	}
+> -	return 0;
+> -}
+> -
+> -static void __exit xsdfec_exit(void)
+> -{
+> -	platform_driver_unregister(&xsdfec_driver);
+> -}
+> -
+> -module_init(xsdfec_init);
+> -module_exit(xsdfec_exit);
+> +module_platform_driver(xsdfec_driver);
+> 
+>  MODULE_AUTHOR("Xilinx, Inc");
+>  MODULE_DESCRIPTION("Xilinx SD-FEC16 Driver");
+> --
+> 2.17.1
 
-For quadrature mode, both channel 0 and 1 must be configured even if we
-only capture the position (no revolution/rotation).
+Acked-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
 
-Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
----
- drivers/counter/Kconfig                 |  11 +
- drivers/counter/Makefile                |   1 +
- drivers/counter/microchip-tcb-capture.c | 397 ++++++++++++++++++++++++
- 3 files changed, 409 insertions(+)
- create mode 100644 drivers/counter/microchip-tcb-capture.c
-
-diff --git a/drivers/counter/Kconfig b/drivers/counter/Kconfig
-index c80fa76bb531..2de53ab0dd25 100644
---- a/drivers/counter/Kconfig
-+++ b/drivers/counter/Kconfig
-@@ -70,4 +70,15 @@ config FTM_QUADDEC
- 	  To compile this driver as a module, choose M here: the
- 	  module will be called ftm-quaddec.
- 
-+config MICROCHIP_TCB_CAPTURE
-+	tristate "Microchip Timer Counter Capture driver"
-+	depends on HAS_IOMEM && OF
-+	select REGMAP_MMIO
-+	help
-+	  Select this option to enable the Microchip Timer Counter Block
-+	  capture driver.
-+
-+	  To compile this driver as a module, choose M here: the
-+	  module will be called microchip-tcb-capture.
-+
- endif # COUNTER
-diff --git a/drivers/counter/Makefile b/drivers/counter/Makefile
-index 55142d1f4c43..0a393f71e481 100644
---- a/drivers/counter/Makefile
-+++ b/drivers/counter/Makefile
-@@ -10,3 +10,4 @@ obj-$(CONFIG_STM32_TIMER_CNT)	+= stm32-timer-cnt.o
- obj-$(CONFIG_STM32_LPTIMER_CNT)	+= stm32-lptimer-cnt.o
- obj-$(CONFIG_TI_EQEP)		+= ti-eqep.o
- obj-$(CONFIG_FTM_QUADDEC)	+= ftm-quaddec.o
-+obj-$(CONFIG_MICROCHIP_TCB_CAPTURE)	+= microchip-tcb-capture.o
-diff --git a/drivers/counter/microchip-tcb-capture.c b/drivers/counter/microchip-tcb-capture.c
-new file mode 100644
-index 000000000000..f7b7743ddb94
---- /dev/null
-+++ b/drivers/counter/microchip-tcb-capture.c
-@@ -0,0 +1,397 @@
-+// SPDX-License-Identifier: GPL-2.0-only
-+/**
-+ * Copyright (C) 2020 Microchip
-+ *
-+ * Author: Kamel Bouhara <kamel.bouhara@bootlin.com>
-+ */
-+#include <linux/clk.h>
-+#include <linux/counter.h>
-+#include <linux/mfd/syscon.h>
-+#include <linux/module.h>
-+#include <linux/mutex.h>
-+#include <linux/of.h>
-+#include <linux/of_device.h>
-+#include <linux/platform_device.h>
-+#include <linux/regmap.h>
-+#include <soc/at91/atmel_tcb.h>
-+
-+#define ATMEL_TC_CMR_MASK	(ATMEL_TC_LDRA_RISING | ATMEL_TC_LDRB_FALLING | \
-+				 ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_LDBDIS | \
-+				 ATMEL_TC_LDBSTOP)
-+
-+#define ATMEL_TC_QDEN			BIT(8)
-+#define ATMEL_TC_POSEN			BIT(9)
-+
-+struct mchp_tc_data {
-+	const struct atmel_tcb_config *tc_cfg;
-+	struct counter_device counter;
-+	struct regmap *regmap;
-+	int qdec_mode;
-+	int num_channels;
-+	int channel[2];
-+	bool trig_inverted;
-+};
-+
-+enum mchp_tc_count_function {
-+	MCHP_TC_FUNCTION_INCREASE,
-+	MCHP_TC_FUNCTION_QUADRATURE,
-+};
-+
-+static enum counter_count_function mchp_tc_count_functions[] = {
-+	[MCHP_TC_FUNCTION_INCREASE] = COUNTER_COUNT_FUNCTION_INCREASE,
-+	[MCHP_TC_FUNCTION_QUADRATURE] = COUNTER_COUNT_FUNCTION_QUADRATURE_X4,
-+};
-+
-+enum mchp_tc_synapse_action {
-+	MCHP_TC_SYNAPSE_ACTION_NONE = 0,
-+	MCHP_TC_SYNAPSE_ACTION_RISING_EDGE,
-+	MCHP_TC_SYNAPSE_ACTION_FALLING_EDGE,
-+	MCHP_TC_SYNAPSE_ACTION_BOTH_EDGE
-+};
-+
-+static enum counter_synapse_action mchp_tc_synapse_actions[] = {
-+	[MCHP_TC_SYNAPSE_ACTION_NONE] = COUNTER_SYNAPSE_ACTION_NONE,
-+	[MCHP_TC_SYNAPSE_ACTION_RISING_EDGE] = COUNTER_SYNAPSE_ACTION_RISING_EDGE,
-+	[MCHP_TC_SYNAPSE_ACTION_FALLING_EDGE] = COUNTER_SYNAPSE_ACTION_FALLING_EDGE,
-+	[MCHP_TC_SYNAPSE_ACTION_BOTH_EDGE] = COUNTER_SYNAPSE_ACTION_BOTH_EDGES,
-+};
-+
-+static struct counter_signal mchp_tc_count_signals[] = {
-+	{
-+		.id = 0,
-+		.name = "Channel A",
-+	},
-+	{
-+		.id = 1,
-+		.name = "Channel B",
-+	}
-+};
-+
-+static struct counter_synapse mchp_tc_count_synapses[] = {
-+	{
-+		.actions_list = mchp_tc_synapse_actions,
-+		.num_actions = ARRAY_SIZE(mchp_tc_synapse_actions),
-+		.signal = &mchp_tc_count_signals[0]
-+	},
-+	{
-+		.actions_list = mchp_tc_synapse_actions,
-+		.num_actions = ARRAY_SIZE(mchp_tc_synapse_actions),
-+		.signal = &mchp_tc_count_signals[1]
-+	}
-+};
-+
-+static int mchp_tc_count_function_get(struct counter_device *counter,
-+				      struct counter_count *count,
-+				      size_t *function)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+
-+	if (priv->qdec_mode)
-+		*function = MCHP_TC_FUNCTION_QUADRATURE;
-+	else
-+		*function = MCHP_TC_FUNCTION_INCREASE;
-+
-+	return 0;
-+}
-+
-+static int mchp_tc_count_function_set(struct counter_device *counter,
-+				      struct counter_count *count,
-+				      size_t function)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+	u32 bmr, cmr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_BMR, &bmr);
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-+
-+	/* Set capture mode */
-+	cmr &= ~ATMEL_TC_WAVE;
-+
-+	switch (function) {
-+	case MCHP_TC_FUNCTION_INCREASE:
-+		priv->qdec_mode = 0;
-+		/* Set highest rate based on whether soc has gclk or not */
-+		bmr &= ~(ATMEL_TC_QDEN | ATMEL_TC_POSEN);
-+		if (priv->tc_cfg->has_gclk)
-+			cmr |= ATMEL_TC_TIMER_CLOCK2;
-+		else
-+			cmr |= ATMEL_TC_TIMER_CLOCK1;
-+		/* Setup the period capture mode */
-+		cmr |=  ATMEL_TC_CMR_MASK;
-+		cmr &= ~(ATMEL_TC_ABETRG | ATMEL_TC_XC0);
-+		break;
-+	case MCHP_TC_FUNCTION_QUADRATURE:
-+		if (!priv->tc_cfg->has_qdec)
-+			return -EINVAL;
-+		/* In QDEC mode settings both channels 0 and 1 are required */
-+		if (priv->num_channels < 2 || priv->channel[0] != 0 ||
-+		    priv->channel[1] != 1) {
-+			pr_err("Invalid channels number or id for quadrature mode\n");
-+			return -EINVAL;
-+		}
-+		priv->qdec_mode = 1;
-+		bmr |= ATMEL_TC_QDEN | ATMEL_TC_POSEN;
-+		cmr |= ATMEL_TC_ETRGEDG_RISING | ATMEL_TC_ABETRG | ATMEL_TC_XC0;
-+		break;
-+	}
-+
-+	regmap_write(priv->regmap, ATMEL_TC_BMR, bmr);
-+	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), cmr);
-+
-+	/* Enable clock and trigger counter */
-+	regmap_write(priv->regmap, ATMEL_TC_REG(priv->channel[0], CCR),
-+		     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-+
-+	if (priv->qdec_mode) {
-+		regmap_write(priv->regmap,
-+			     ATMEL_TC_REG(priv->channel[1], CMR), cmr);
-+		regmap_write(priv->regmap,
-+			     ATMEL_TC_REG(priv->channel[1], CCR),
-+			     ATMEL_TC_CLKEN | ATMEL_TC_SWTRG);
-+	}
-+
-+	return 0;
-+}
-+
-+static int mchp_tc_count_signal_read(struct counter_device *counter,
-+				     struct counter_signal *signal,
-+				     enum counter_signal_value *val)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+	bool sigstatus;
-+	u32 sr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], SR), &sr);
-+
-+	if (priv->trig_inverted)
-+		sigstatus = (sr & ATMEL_TC_MTIOB);
-+	else
-+		sigstatus = (sr & ATMEL_TC_MTIOA);
-+
-+	*val = sigstatus ? COUNTER_SIGNAL_HIGH : COUNTER_SIGNAL_LOW;
-+
-+	return 0;
-+}
-+
-+static int mchp_tc_count_action_get(struct counter_device *counter,
-+				    struct counter_count *count,
-+				    struct counter_synapse *synapse,
-+				    size_t *action)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+	u32 cmr;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CMR), &cmr);
-+
-+	*action = MCHP_TC_SYNAPSE_ACTION_NONE;
-+
-+	if (cmr & ATMEL_TC_ETRGEDG_NONE)
-+		*action = MCHP_TC_SYNAPSE_ACTION_NONE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_RISING)
-+		*action = MCHP_TC_SYNAPSE_ACTION_RISING_EDGE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_FALLING)
-+		*action = MCHP_TC_SYNAPSE_ACTION_FALLING_EDGE;
-+	else if (cmr & ATMEL_TC_ETRGEDG_BOTH)
-+		*action = MCHP_TC_SYNAPSE_ACTION_BOTH_EDGE;
-+
-+	return 0;
-+}
-+
-+static int mchp_tc_count_action_set(struct counter_device *counter,
-+				    struct counter_count *count,
-+				    struct counter_synapse *synapse,
-+				    size_t action)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+	u32 edge = ATMEL_TC_ETRGEDG_NONE;
-+
-+	/* QDEC mode is rising edge only */
-+	if (priv->qdec_mode)
-+		return -EINVAL;
-+
-+	switch (action) {
-+	case MCHP_TC_SYNAPSE_ACTION_NONE:
-+		edge = ATMEL_TC_ETRGEDG_NONE;
-+		break;
-+	case MCHP_TC_SYNAPSE_ACTION_RISING_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_RISING;
-+		break;
-+	case MCHP_TC_SYNAPSE_ACTION_FALLING_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_FALLING;
-+		break;
-+	case MCHP_TC_SYNAPSE_ACTION_BOTH_EDGE:
-+		edge = ATMEL_TC_ETRGEDG_BOTH;
-+		break;
-+	}
-+
-+	return regmap_write_bits(priv->regmap,
-+				ATMEL_TC_REG(priv->channel[0], CMR),
-+				ATMEL_TC_ETRGEDG, edge);
-+}
-+
-+static int mchp_tc_count_read(struct counter_device *counter,
-+			      struct counter_count *count,
-+			      unsigned long *val)
-+{
-+	struct mchp_tc_data *const priv = counter->priv;
-+	u32 cnt;
-+
-+	regmap_read(priv->regmap, ATMEL_TC_REG(priv->channel[0], CV), &cnt);
-+	*val = cnt;
-+
-+	return 0;
-+}
-+
-+static struct counter_count mchp_tc_counts[] = {
-+	{
-+		.id = 0,
-+		.name = "Timer Counter",
-+		.functions_list = mchp_tc_count_functions,
-+		.num_functions = ARRAY_SIZE(mchp_tc_count_functions),
-+		.synapses = mchp_tc_count_synapses,
-+		.num_synapses = ARRAY_SIZE(mchp_tc_count_synapses),
-+	},
-+};
-+
-+static struct counter_ops mchp_tc_ops = {
-+	.signal_read  = mchp_tc_count_signal_read,
-+	.count_read   = mchp_tc_count_read,
-+	.function_get = mchp_tc_count_function_get,
-+	.function_set = mchp_tc_count_function_set,
-+	.action_get   = mchp_tc_count_action_get,
-+	.action_set   = mchp_tc_count_action_set
-+};
-+
-+static const struct atmel_tcb_config tcb_rm9200_config = {
-+		.counter_width = 16,
-+};
-+
-+static const struct atmel_tcb_config tcb_sam9x5_config = {
-+		.counter_width = 32,
-+};
-+
-+static const struct atmel_tcb_config tcb_sama5d2_config = {
-+		.counter_width = 32,
-+		.has_gclk = true,
-+		.has_qdec = true,
-+};
-+
-+static const struct atmel_tcb_config tcb_sama5d3_config = {
-+		.counter_width = 32,
-+		.has_qdec = true,
-+};
-+
-+static const struct of_device_id atmel_tc_of_match[] = {
-+	{ .compatible = "atmel,at91rm9200-tcb", .data = &tcb_rm9200_config, },
-+	{ .compatible = "atmel,at91sam9x5-tcb", .data = &tcb_sam9x5_config, },
-+	{ .compatible = "atmel,sama5d2-tcb", .data = &tcb_sama5d2_config, },
-+	{ .compatible = "atmel,sama5d3-tcb", .data = &tcb_sama5d3_config, },
-+	{ /* sentinel */ }
-+};
-+
-+static void mchp_tc_clk_remove(void *ptr)
-+{
-+	clk_disable_unprepare((struct clk *)ptr);
-+}
-+
-+static int mchp_tc_probe(struct platform_device *pdev)
-+{
-+	struct device_node *np = pdev->dev.of_node;
-+	const struct atmel_tcb_config *tcb_config;
-+	const struct of_device_id *match;
-+	struct mchp_tc_data *priv;
-+	char clk_name[7];
-+	struct regmap *regmap;
-+	struct clk *clk[3];
-+	int channel;
-+	int ret, i;
-+
-+	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-+	if (!priv)
-+		return -ENOMEM;
-+
-+	platform_set_drvdata(pdev, priv);
-+
-+	match = of_match_node(atmel_tc_of_match, np->parent);
-+	tcb_config = match->data;
-+	if (!tcb_config) {
-+		dev_err(&pdev->dev, "No matching parent node found\n");
-+		return -ENODEV;
-+	}
-+
-+	regmap = syscon_node_to_regmap(np->parent);
-+	if (IS_ERR(priv->regmap))
-+		return PTR_ERR(priv->regmap);
-+
-+	/* max. channels number is 2 when in QDEC mode */
-+	priv->num_channels = of_property_count_u32_elems(np, "reg");
-+	if (priv->num_channels < 0) {
-+		dev_err(&pdev->dev, "Invalid or missing channel\n");
-+		return -EINVAL;
-+	}
-+
-+	/* Register channels and initialize clocks */
-+	for (i = 0; i < priv->num_channels; i++) {
-+		ret = of_property_read_u32_index(np, "reg", i, &channel);
-+		if (ret < 0 || channel > 2)
-+			return -ENODEV;
-+
-+		priv->channel[i] = channel;
-+
-+		snprintf(clk_name, sizeof(clk_name), "t%d_clk", channel);
-+
-+		clk[i] = of_clk_get_by_name(np->parent, clk_name);
-+		if (IS_ERR(clk[i])) {
-+			/* Fallback to t0_clk */
-+			clk[i] = of_clk_get_by_name(np->parent, "t0_clk");
-+			if (IS_ERR(clk[i]))
-+				return PTR_ERR(clk[i]);
-+		}
-+
-+		ret = clk_prepare_enable(clk[i]);
-+		if (ret)
-+			return ret;
-+
-+		ret = devm_add_action_or_reset(&pdev->dev,
-+					       mchp_tc_clk_remove,
-+					       clk[i]);
-+		if (ret)
-+			return ret;
-+
-+		dev_dbg(&pdev->dev,
-+			"Initialized capture mode on channel %d\n",
-+			channel);
-+	}
-+
-+	priv->tc_cfg = tcb_config;
-+	priv->regmap = regmap;
-+	priv->counter.name = dev_name(&pdev->dev);
-+	priv->counter.parent = &pdev->dev;
-+	priv->counter.ops = &mchp_tc_ops;
-+	priv->counter.num_counts = ARRAY_SIZE(mchp_tc_counts);
-+	priv->counter.counts = mchp_tc_counts;
-+	priv->counter.num_signals = ARRAY_SIZE(mchp_tc_count_signals);
-+	priv->counter.signals = mchp_tc_count_signals;
-+	priv->counter.priv = priv;
-+
-+	return devm_counter_register(&pdev->dev, &priv->counter);
-+}
-+
-+static const struct of_device_id mchp_tc_dt_ids[] = {
-+	{ .compatible = "microchip,tcb-capture", },
-+	{ /* sentinel */ },
-+};
-+MODULE_DEVICE_TABLE(of, mchp_tc_dt_ids);
-+
-+static struct platform_driver mchp_tc_driver = {
-+	.probe = mchp_tc_probe,
-+	.driver = {
-+		.name = "microchip-tcb-capture",
-+		.of_match_table = mchp_tc_dt_ids,
-+	},
-+};
-+module_platform_driver(mchp_tc_driver);
-+
-+MODULE_AUTHOR("Kamel Bouhara <kamel.bouhara@bootlin.com>");
-+MODULE_DESCRIPTION("Microchip TCB Capture driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.25.0
-
+Thanks
+Dragan
 
 _______________________________________________
 linux-arm-kernel mailing list
