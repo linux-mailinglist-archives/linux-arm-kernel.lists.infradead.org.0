@@ -2,97 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 147851CDCE5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:17:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FA901CDCF2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:20:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=rRFtVfL0MHyU2Diqu3ocJdikbyqZXcT9ecyMBjH+6fA=; b=lMRDgRxnR/Mr7IFd9OMVbSYNI
-	L43O4+9HVkjG2k9CXNc8DOu3k2s00bih++kQlbka3iaspxBTCXRIZe5qCr2XDU5CPz6MZxWtRxNj5
-	lR0xgWW1uTxS7WDS5H5v+Me7p8J5+zF1mITdKs7wnynLIvAo0x5cTzkZiwgFU6HfJkMBHt7EEib5K
-	OeNBQW6hCrdpiGziIwmrL2Bibxgccyc6rWltJTG/v4DClaqAu9h8LWdnBr/QVXLJeo6Hjl0h2020o
-	m8SNZ7qHxUyw46nnCV+S8ZE7PEIMx3EVi0NFyuJm0s2Eh4+apQPMhfWQbYayg8fLt6FDsdbqhvG0M
-	FIcyBfgkQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yUBTkhBqTiK2S39gSUXCzycoEX7IFFxLw6HBcUigVDw=; b=iTxRyWkKePnN1m
+	GwvcoC2M0PuU17dfW79UivGsScZim6HbOii97CxV3u2KFOUndfZOc5A1bMe/mVALvBEyIqAIh9APk
+	11JLtk6I9iJB5Kj1BOjr3TaqXjG8zCTDk0YchXlB5gEJuAbzgj6gvcLwv2VXrB8bPizVP+yKhV+hA
+	JxKGc7yjDjC0oeTxV21XBR3XWUKX3/4KqWLw5mLaeW/wHImSMA+41G3Wu6UV2iLnY02tyzQkMvGHB
+	ViduWUbbjiRhvhVc2QfmqBOJv8b9F0A9tDIVDUHd3mcxtVZQMN7JhGqzAi4GXF/RZfZKYuiQjK/Qc
+	+G8R40AKAsuQV8M+vCCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY9Ex-0001GJ-Pt; Mon, 11 May 2020 14:17:07 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jY9Hj-00026x-TD; Mon, 11 May 2020 14:19:59 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY9Eo-0001Fq-K7
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:17:00 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1589206617; h=Message-ID: References: In-Reply-To: Subject:
- Cc: To: From: Date: Content-Transfer-Encoding: Content-Type:
- MIME-Version: Sender; bh=FVAth4pYBtTXQqicR7pFM3iw/uwUViT59NQhEjjdoQ8=;
- b=TR1KftBEtMlfMAX4/2+uyCFzg55MDJYIfQ1HVkPVd8AeS4X6mBtVXx5AG/04eADDxh66t7oJ
- AdezgjAezfh+iEd9zHwenHK6efQwrn3qVmD51CQcTTGR/Tx/4zJuWu2GZKYAxfbU0mLIH+7v
- uMP/DCAE3f0R75AgeiY/GRWG3zk=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eb95e55.7ff0f2ec68f0-smtp-out-n03;
- Mon, 11 May 2020 14:16:53 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 4CAB0C433CB; Mon, 11 May 2020 14:16:52 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED autolearn=ham
- autolearn_force=no version=3.4.0
-Received: from mail.codeaurora.org (localhost.localdomain [127.0.0.1])
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id D992BC433F2;
- Mon, 11 May 2020 14:16:51 +0000 (UTC)
+ id 1jY9HY-00022g-AR
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:19:50 +0000
+Received: by mail-qk1-x744.google.com with SMTP id b6so8741912qkh.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 07:19:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=jwYtW81/ygzueOYMSAUrciWMI3nlvA3U3h7VebjOjDI=;
+ b=FpIqnthqKF6E1nISw5GZZh3DtLh1jggOsu/LZg/KsCwXgytz8jgcdAODXSqltynbVP
+ oU8PoTIDbTOaHqoiCMQ7JsPkbF3Md+xoZqtwpbt2qsS0SVr1l1szMyTO5sgsxlpOpTyn
+ LgOpm0F+qu3xHCvowehNBVtHO+BX2nzdfCbsq7KD3xbYE1VdKDNsDc+jS57o1g4+Q3Mh
+ JPsl1F0PZyLgptdp14qMNh6v+8q4ZEXWPirSD9KL1vO7f9z5kjeq0hrCgpouSs7F9m7K
+ MazERd4z8Vs9UN9GaFQLkCU+Ks02ir7N2sC3AWOy1NhXQUOMJowTYPlPCjjQKBCwXYJj
+ AfYQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=jwYtW81/ygzueOYMSAUrciWMI3nlvA3U3h7VebjOjDI=;
+ b=GXWr8fL5JpOmj0iWH3JvL5pcj+Y4iqUN3+lx0UDnGyoCn65V5xgLOmSjHx0buKxn1p
+ mhWAzS8TGkKZKMLc4wz53JOnz3eFIBzMxETyFdf1DTB+qFwoScPsYOQHqchGAQ2/IWwx
+ 0lNJqzZtKUocmzqZYTtcnCvbbJGDuYvUyo5qz6wodNMlyH6SH7zedTwmHSNhL2Ex5zNT
+ v/uHTenKeCccrtCa9cM29cnWDHUhMEztjnve8Ys50wPY6sSip0fKM+2uXJ/zwdqII1tB
+ DqRTzp23JBy6ap4+3yoNqcLAl9BQr33U9TycxWS8g0UmuSK3acpG5iu9ykpIKWA1dowb
+ SElg==
+X-Gm-Message-State: AGi0Puae0LvKzIb7OtDzm4ZX3q/0xaxvAcgmysUC21P3dpUqSUj9MRmO
+ FX5HxghWgkhmkFDiZ2Kfb34diUxdccOV1u57Prsnng==
+X-Google-Smtp-Source: APiQypIH1miSFLYzpZvavTEDFqwR+yYPqlsx9M/06lTpRbDRXGn+u5f/FXgEP1uLFEQLt/xiVaW00GBa8fZ9ZGPzbEA=
+X-Received: by 2002:ae9:f401:: with SMTP id y1mr16758561qkl.8.1589206786606;
+ Mon, 11 May 2020 07:19:46 -0700 (PDT)
 MIME-Version: 1.0
-Date: Mon, 11 May 2020 19:46:51 +0530
-From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH] coresight: dynamic-replicator: Fix handling of multiple
- connections
-In-Reply-To: <CAJ9a7Vjd0XG+rAvHptAAjGtE6xRhYsPaOSC_Bf9B-w-FZFu_Qw@mail.gmail.com>
-References: <20200426143725.18116-1-saiprakash.ranjan@codeaurora.org>
- <cf5852e9-c3c1-3d31-46f0-0370719947ab@arm.com>
- <CAJ9a7VgF3-Hdc7KSw9gVBeXSDHNguhqVhp60oK2XhCtr3DhDqg@mail.gmail.com>
- <84918e7d-c933-3fa1-a61e-0615d4b3cf2c@arm.com>
- <668ea1283a6dd6b34e701972f6f71034@codeaurora.org>
- <5b0f5d77c4eec22d8048bb0ffa078345@codeaurora.org>
- <759d47de-2101-39cf-2f1c-cfefebebd548@arm.com>
- <7d343e96cf0701d91152fd14c2fdec42@codeaurora.org>
- <CAJ9a7VgEiX19ukjwakNHBHDeZJ05f5Z7pAYG9iEnpXCuuDfBqg@mail.gmail.com>
- <a4bba03d41a2b0145b3c6c19d48698eb@codeaurora.org>
- <CAJ9a7Vj4eyv1n=RxuqfV=pdBN3SDG+ShYS5J4s40KJtqOnR7vw@mail.gmail.com>
- <ae0fe2050be01cc1403c7d53a0da8cb8@codeaurora.org>
- <b8c1cc35846d425a1677c73fddf5874d@codeaurora.org>
- <eee1b9a90266eed9a9c75401f0679777@codeaurora.org>
- <CAJ9a7Vjd0XG+rAvHptAAjGtE6xRhYsPaOSC_Bf9B-w-FZFu_Qw@mail.gmail.com>
-Message-ID: <47f6d51bfad0a0bf1553e101e6a2c8c9@codeaurora.org>
-X-Sender: saiprakash.ranjan@codeaurora.org
-User-Agent: Roundcube Webmail/1.3.9
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+YWNwTSoheJhc3nMdQi9m719F3PzpGo3TfRY3zAg9EwuQ@mail.gmail.com>
+ <CACT4Y+bO1Zg_jgFHbOWgp7fLAADOQ_-AZmjEHz0WG7=oyOt4Gg@mail.gmail.com>
+ <1589203771.21284.22.camel@mtksdccf07>
+In-Reply-To: <1589203771.21284.22.camel@mtksdccf07>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 11 May 2020 16:19:34 +0200
+Message-ID: <CACT4Y+aOkuH6Dn+L+wv1qVOLgXyCY_Ck4hecAMw3DgyBgC9qHw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_071658_723723_45C5B7CA 
-X-CRM114-Status: GOOD (  24.35  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200511_071948_419401_0FE3AA44 
+X-CRM114-Status: GOOD (  31.50  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,92 +99,327 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Russell King <linux@armlinux.org.uk>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: "Paul E . McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWlrZSwKCk9uIDIwMjAtMDUtMTEgMTY6NDQsIE1pa2UgTGVhY2ggd3JvdGU6ClsuLi5dCgo+
-PiAKPj4gSSBjaGVja2VkIHdpdGggdGhlIGRlYnVnIHRlYW0gYW5kIHRoZXJlIGlzIGEgbGltaXRh
-dGlvbiB3aXRoCj4+IHRoZSByZXBsaWNhdG9yKHN3YW9fcmVwbGljYXRvcikgaW4gdGhlIEFPU1Mg
-Z3JvdXAgd2hlcmUgaXQKPj4gbG9zZXMgdGhlIGlkZmlsdGVyIHJlZ2lzdGVyIGNvbnRleHQgd2hl
-biB0aGUgY2xvY2sgaXMgZGlzYWJsZWQuCj4+IFRoaXMgaXMgbm90IGp1c3QgaW4gU0M3MTgwIFNv
-QyBidXQgYWxzbyByZXBvcnRlZCBvbiBzb21lIGxhdGVzdAo+PiB1cGNvbWluZyBRQ09NIFNvQ3Mg
-YXMgd2VsbCBhbmQgd2lsbCBuZWVkIHRvIGJlIHRha2VuIGNhcmUgaW4KPj4gb3JkZXIgdG8gZW5h
-YmxlIGNvcmVzaWdodCBvbiB0aGVzZSBjaGlwc2V0cy4KPj4gCj4+IEhlcmUncyB3aGF0J3MgaGFw
-cGVuaW5nIC0gIEFmdGVyIHRoZSByZXBsaWNhdG9yIGlzIGluaXRpYWxpemVkLAo+PiB0aGUgY2xv
-Y2sgaXMgZGlzYWJsZWQgaW4gYW1iYV9wbV9ydW50aW1lX3N1c3BlbmQoKSBhcyBhIHBhcnQgb2YK
-Pj4gcG0gcnVudGltZSB3b3JrcXVldWUgd2l0aCB0aGUgYXNzdW1wdGlvbiB0aGF0IHRoZXJlIHdp
-bGwgYmUgbm8KPj4gbG9zcyBvZiBjb250ZXh0IGFmdGVyIHRoZSByZXBsaWNhdG9yIGlzIGluaXRp
-YWxpemVkLiBCdXQgaXQgZG9lc24ndAo+PiBob2xkIGdvb2Qgd2l0aCB0aGUgcmVwbGljYXRvcnMg
-d2l0aCB0aGVzZSB1bmZvcnR1bmF0ZSBsaW1pdGF0aW9uCj4+IGFuZCB0aGUgaWRmaWx0ZXIgcmVn
-aXN0ZXIgY29udGV4dCBpcyBsb3N0Lgo+PiAKPj4gWyAgICA1Ljg4OTQwNl0gYW1iYV9wbV9ydW50
-aW1lX3N1c3BlbmQgZGV2bmFtZT02YjA2MDAwLnJlcGxpY2F0b3IgCj4+IHJldD0wCj4+IFsgICAg
-NS45MTQ1MTZdIFdvcmtxdWV1ZTogcG0gcG1fcnVudGltZV93b3JrCj4+IFsgICAgNS45MTg2NDhd
-IENhbGwgdHJhY2U6Cj4+IFsgICAgNS45MjExODVdICBkdW1wX2JhY2t0cmFjZSsweDAvMHgxZDAK
-Pj4gWyAgICA1LjkyNDk1OF0gIHNob3dfc3RhY2srMHgyYy8weDM4Cj4+IFsgICAgNS45MjgzODJd
-ICBkdW1wX3N0YWNrKzB4YzAvMHgxMDQKPj4gWyAgICA1LjkzMTg5Nl0gIGFtYmFfcG1fcnVudGlt
-ZV9zdXNwZW5kKzB4ZDgvMHhlMAo+PiBbICAgIDUuOTM2NDY5XSAgX19ycG1fY2FsbGJhY2srMHhl
-MC8weDE0MAo+PiBbICAgIDUuOTQwMzMyXSAgcnBtX2NhbGxiYWNrKzB4MzgvMHg5OAo+PiBbICAg
-IDUuOTQzOTI2XSAgcnBtX3N1c3BlbmQrMHhlYy8weDYxOAo+PiBbICAgIDUuOTQ3NTIyXSAgcnBt
-X2lkbGUrMHg1Yy8weDNmOAo+PiBbICAgIDUuOTUwODUxXSAgcG1fcnVudGltZV93b3JrKzB4YTgv
-MHhjMAo+PiBbICAgIDUuOTU0NzE4XSAgcHJvY2Vzc19vbmVfd29yaysweDFmOC8weDRjMAo+PiBb
-ICAgIDUuOTU4ODQ4XSAgd29ya2VyX3RocmVhZCsweDUwLzB4NDY4Cj4+IFsgICAgNS45NjI2MjNd
-ICBrdGhyZWFkKzB4MTJjLzB4MTU4Cj4+IFsgICAgNS45NjU5NTddICByZXRfZnJvbV9mb3JrKzB4
-MTAvMHgxYwo+PiAKPj4gVGhpcyBpcyBhIHBsYXRmb3JtL1NvQyBzcGVjaWZpYyByZXBsaWNhdG9y
-IGlzc3VlLCBzbyB3ZSBjYW4gZWl0aGVyCj4+IGludHJvZHVjZSBzb21lIERUIHByb3BlcnR5IGZv
-ciByZXBsaWNhdG9ycyB0byBpZGVudGlmeSB3aGljaCAKPj4gcmVwbGljYXRvcgo+PiBoYXMgdGhp
-cyBsaW1pdGF0aW9uLCBjaGVjayBpbiByZXBsaWNhdG9yX2VuYWJsZSgpIGFuZCByZXNldCB0aGUK
-Pj4gcmVnaXN0ZXJzCj4+IG9yIGhhdmUgc29tZXRoaW5nIGxpa2UgYmVsb3cgZGlmZiB0byBjaGVj
-ayB0aGUgaWRmaWx0ZXIgcmVnaXN0ZXJzIGluCj4+IHJlcGxpY2F0b3JfZW5hYmxlKCkgYW5kIHRo
-ZW4gcmVzZXQgd2l0aCBjbGVhciBjb21tZW50IHNwZWNpZnlpbmcgaXTigJlzCj4+IHRoZQo+PiBo
-YXJkd2FyZSBsaW1pdGF0aW9uIG9uIHNvbWUgUUNPTSBTb0NzLiBQbGVhc2UgbGV0IG1lIGtub3cg
-eW91ciAKPj4gdGhvdWdodHMKPj4gb24KPj4gdGhpcz8KPj4gCgpTb3JyeSBmb3IgaHVycnlpbmcg
-dXAgYW5kIHNlbmRpbmcgdGhlIHBhdGNoIC0gCmh0dHBzOi8vbG9yZS5rZXJuZWwub3JnL3BhdGNo
-d29yay9wYXRjaC8xMjM5OTIzLy4KSSB3aWxsIHNlbmQgdjIgYmFzZWQgb24gZnVydGhlciBmZWVk
-YmFja3MgaGVyZSBvciB0aGVyZS4KCj4gCj4gMSkgZG9lcyB0aGlzIHJlcGxpY2F0b3IgcGFydCBo
-YXZlIGEgdW5pcXVlIElEIHRoYXQgZGlmZmVycyBmcm9tIHRoZQo+IHN0YW5kYXJkIEFSTSBkZXNp
-Z25lZCByZXBsaWNhdG9ycz8KPiBJZiBzbyBwZXJoYXBzIGxpbmsgdGhlIG1vZGlmaWNhdGlvbiBp
-bnRvIHRoaXMuIChldmVuIGlmIHRoZSBwYXJ0IG5vIGluCj4gUElEUjAvMSBpcyB0aGUgc2FtZSB0
-aGUgVUNJIHNob3VsZCBiZSBkaWZmZXJlbnQgZm9yIGEgZGlmZmVyZW50Cj4gaW1wbGVtZW50YXRp
-b24pCj4gCgpwaWQ9MHgyYmI5MDkgZm9yIGJvdGggcmVwbGljYXRvcnMuIFNvIHBhcnQgbnVtYmVy
-IGlzIHNhbWUuClVDSSB3aWxsIGJlIGRpZmZlcmVudCBmb3IgZGlmZmVyZW50IGltcGxlbWVudGF0
-aW9uKFFDT00gbWF5YmUgZGlmZmVyZW50IApmcm9tIEFSTSksCmJ1dCB3aWxsIGl0IGJlIGRpZmZl
-cmVudCBmb3IgZGlmZmVyZW50IHJlcGxpY2F0b3JzIHVuZGVyIHRoZSBzYW1lIAppbXBsKGkuZS4s
-IG9uIFFDT00pLgoKPiAyKSBXZSBoYXZlIHVzZWQgRFQgcHJvcGVydGllcyBpbiB0aGUgcGFzdCAt
-IChlLmcuIHNjYXR0ZXIgZ2F0aGVyIGluCj4gVE1DKSB3aGVyZSBoYXJkd2FyZSBjb21wYXRpYmls
-aXR5IGlzc3VlcyBoYXZlIGltcGFjdGVkIG9uIHRoZQo+IG9wZXJhdGlvbiBvZiBhIGNvcmVzaWdo
-dCBjb21wb25lbnQuIFRoaXMgaXMgZnVydGhlciBjb21wbGljYXRlZCBieSB0aGUKPiBmYWN0IHRo
-YXQgYW4gQUNQSSBwcm9wZXJ0eSB3b3VsZCBiZSBuZWVkZWQgYXMgd2VsbC4KPiAKClllcywgdGhp
-cyB3YXMgYWxzbyBvbmUgb3B0aW9uIHdoaWNoIEkgaGFkIG1lbnRpb25lZC4gQnV0IGFzIHlvdSBz
-YWlkIHdlIApuZWVkCnRvIGhhdmUgYW4gQUNQSSBwcm9wZXJ0eSBhcyB3ZWxsIGFuZCB0aGVzZSBz
-eXN0ZW1zIHdpdGggbGltaXRhdGlvbnMgYXJlIApEVCBiYXNlZC4KCj4gMykgVGhlIHN5c2ZzIGFj
-Y2VzcyB0byBGSUxURVJJRDAvMSBvbiB0aGlzIHJlcGxpY2F0b3IgaXMgZ29pbmcgdG8gc2hvdwo+
-IGRpZmZlcmVudCB2YWx1ZXMgdGhhbiBvbiBhIHN0YW5kYXJkIHJlcGxpY2F0b3IgKDB4MDAgaW5z
-dGVhZCBvZiAweEZGKS4KPiBEb2VzIHRoaXMgbmVlZCB0byBiZSBhZGRyZXNzZWQ/Cj4gCgpJIGRv
-bid0IHRoaW5rIHdlIG5lZWQgdG8gY2hhbmdlIHRoaXMgYmVjYXVzZSBpdHMgYWN0dWFsbHkgc2hv
-d2luZyB0aGUgCnJpZ2h0CnZhbHVlcyBmb3IgdGhlIHJlcGxpY2F0b3IuCgo+IDQgKSBBbiBhbHRl
-cm5hdGl2ZSBhcHByb2FjaCBjb3VsZCBiZSB0byBtb2RlbCB0aGUgZHJpdmVyIG9uIHRoZSBFVE0g
-Lwo+IENUSSBkcml2ZXJzIHdoZXJlIHRoZSByZWdpc3RlciB2YWx1ZXMgYXJlIGhlbGQgaW4gdGhl
-IGRyaXZlciBzdHJ1Y3R1cmUKPiBhbmQgb25seSBhcHBsaWVkIG9uIGVuYWJsZSAvIGRpc2FibGUu
-Cj4gCgpUaGlzIGxvb2tzIGdvb2QgdG8gbWUgc2luY2Ugd2UgcmVhbGx5IGRvbid0IG5lZWQgdG8g
-cmVzZXQgcmVwbGljYXRvciBpbiAKcHJvYmUsCndlIG5lZWQgdG8gcmVzZXQgaXQgb25seSBpbiBy
-ZXBsaWNhdG9yX2VuYWJsZSgpIGFuZCB0aGF0IGVuc3VyZXMgY2xvY2tzIAphcmUgZW5hYmxlZAp3
-aXRob3V0IGhhdmluZyB0byBhc3N1bWUgdGhpbmdzKGZyb20gYW1iYSkgYWJvdXQgY29udGV4dCBi
-ZWluZyBsb3N0IG9yIApub3Qgd2hlbgpjbG9ja3MgYXJlIGRpc2FibGVkIHNpbmNlIHRoYXQgaXMg
-aW1wbGVtZW50YXRpb24gZGVmaW5lZCBhbnl3YXlzLgoKQnV0LCB3aHkgY2FuJ3Qgd2UganVzdCBt
-b3ZlIHJlcGxpY2F0b3JfcmVzZXQoKSBmcm9tIHByb2JlIHRvIApyZXBsaWNhdG9yX2VuYWJsZSgp
-PwpBbnl0aGluZyB3cm9uZyB3aXRoIGl0PyBTZWVtcyBsaWtlIHJpZ2h0IHRoaW5nIHRvIGRvIGJl
-Y2F1c2Ugd2Ugd2lsbCBiZSAKaGF2aW5nCmNsb2NrcyBlbmFibGVkIHdoZW4gd2UgdG91Y2ggdGhl
-IHJlcGxpY2F0b3IgcmVnaXN0ZXJzIGFuZCBvbmx5IGluIHRoZSAKZW5hYmxlCnBhdGguCgpUaGFu
-a3MsClNhaQoKLS0gClFVQUxDT01NIElORElBLCBvbiBiZWhhbGYgb2YgUXVhbGNvbW0gSW5ub3Zh
-dGlvbiBDZW50ZXIsIEluYy4gaXMgYSAKbWVtYmVyCm9mIENvZGUgQXVyb3JhIEZvcnVtLCBob3N0
-ZWQgYnkgVGhlIExpbnV4IEZvdW5kYXRpb24KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Mon, May 11, 2020 at 3:29 PM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > This feature will record first and last call_rcu() call stack and
+> > > print two call_rcu() call stack in KASAN report.
+> > >
+> > > When call_rcu() is called, we store the call_rcu() call stack into
+> > > slub alloc meta-data, so that KASAN report can print rcu stack.
+> > >
+> > > It doesn't increase the cost of memory consumption. Because we don't
+> > > enlarge struct kasan_alloc_meta size.
+> > > - add two call_rcu() call stack into kasan_alloc_meta, size is 8 bytes.
+> > > - remove free track from kasan_alloc_meta, size is 8 bytes.
+> > >
+> > > [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+> > > [2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
+> > >
+> > > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > > Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> > > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> > > Cc: Dmitry Vyukov <dvyukov@google.com>
+> > > Cc: Alexander Potapenko <glider@google.com>
+> > > Cc: Andrew Morton <akpm@linux-foundation.org>
+> > > Cc: Paul E. McKenney <paulmck@kernel.org>
+> > > Cc: Josh Triplett <josh@joshtriplett.org>
+> > > Cc: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+> > > Cc: Lai Jiangshan <jiangshanlai@gmail.com>
+> > > Cc: Joel Fernandes <joel@joelfernandes.org>
+> > > ---
+> > >  include/linux/kasan.h |  2 ++
+> > >  kernel/rcu/tree.c     |  3 +++
+> > >  lib/Kconfig.kasan     |  2 ++
+> > >  mm/kasan/common.c     |  4 ++--
+> > >  mm/kasan/generic.c    | 29 +++++++++++++++++++++++++++++
+> > >  mm/kasan/kasan.h      | 19 +++++++++++++++++++
+> > >  mm/kasan/report.c     | 21 +++++++++++++++++----
+> > >  7 files changed, 74 insertions(+), 6 deletions(-)
+> > >
+> > > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > > index 31314ca7c635..23b7ee00572d 100644
+> > > --- a/include/linux/kasan.h
+> > > +++ b/include/linux/kasan.h
+> > > @@ -174,11 +174,13 @@ static inline size_t kasan_metadata_size(struct kmem_cache *cache) { return 0; }
+> > >
+> > >  void kasan_cache_shrink(struct kmem_cache *cache);
+> > >  void kasan_cache_shutdown(struct kmem_cache *cache);
+> > > +void kasan_record_aux_stack(void *ptr);
+> > >
+> > >  #else /* CONFIG_KASAN_GENERIC */
+> > >
+> > >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> > >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > > +static inline void kasan_record_aux_stack(void *ptr) {}
+> > >
+> > >  #endif /* CONFIG_KASAN_GENERIC */
+> > >
+> > > diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
+> > > index 06548e2ebb72..de872b6cc261 100644
+> > > --- a/kernel/rcu/tree.c
+> > > +++ b/kernel/rcu/tree.c
+> > > @@ -57,6 +57,7 @@
+> > >  #include <linux/slab.h>
+> > >  #include <linux/sched/isolation.h>
+> > >  #include <linux/sched/clock.h>
+> > > +#include <linux/kasan.h>
+> > >  #include "../time/tick-internal.h"
+> > >
+> > >  #include "tree.h"
+> > > @@ -2694,6 +2695,8 @@ __call_rcu(struct rcu_head *head, rcu_callback_t func)
+> > >                 trace_rcu_callback(rcu_state.name, head,
+> > >                                    rcu_segcblist_n_cbs(&rdp->cblist));
+> > >
+> > > +       kasan_record_aux_stack(head);
+> > > +
+> > >         /* Go handle any RCU core processing required. */
+> > >         if (IS_ENABLED(CONFIG_RCU_NOCB_CPU) &&
+> > >             unlikely(rcu_segcblist_is_offloaded(&rdp->cblist))) {
+> > > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> > > index 81f5464ea9e1..56a89291f1cc 100644
+> > > --- a/lib/Kconfig.kasan
+> > > +++ b/lib/Kconfig.kasan
+> > > @@ -58,6 +58,8 @@ config KASAN_GENERIC
+> > >           For better error detection enable CONFIG_STACKTRACE.
+> > >           Currently CONFIG_KASAN_GENERIC doesn't work with CONFIG_DEBUG_SLAB
+> > >           (the resulting kernel does not boot).
+> > > +         Currently CONFIG_KASAN_GENERIC will print first and last call_rcu()
+> > > +         call stack. It doesn't increase the cost of memory consumption.
+> > >
+> > >  config KASAN_SW_TAGS
+> > >         bool "Software tag-based mode"
+> > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > index 2906358e42f0..8bc618289bb1 100644
+> > > --- a/mm/kasan/common.c
+> > > +++ b/mm/kasan/common.c
+> > > @@ -41,7 +41,7 @@
+> > >  #include "kasan.h"
+> > >  #include "../slab.h"
+> > >
+> > > -static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > > +depot_stack_handle_t kasan_save_stack(gfp_t flags)
+> > >  {
+> > >         unsigned long entries[KASAN_STACK_DEPTH];
+> > >         unsigned int nr_entries;
+> > > @@ -54,7 +54,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > >  static inline void set_track(struct kasan_track *track, gfp_t flags)
+> > >  {
+> > >         track->pid = current->pid;
+> > > -       track->stack = save_stack(flags);
+> > > +       track->stack = kasan_save_stack(flags);
+> > >  }
+> > >
+> > >  void kasan_enable_current(void)
+> > > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > > index 56ff8885fe2e..b86880c338e2 100644
+> > > --- a/mm/kasan/generic.c
+> > > +++ b/mm/kasan/generic.c
+> > > @@ -325,3 +325,32 @@ DEFINE_ASAN_SET_SHADOW(f2);
+> > >  DEFINE_ASAN_SET_SHADOW(f3);
+> > >  DEFINE_ASAN_SET_SHADOW(f5);
+> > >  DEFINE_ASAN_SET_SHADOW(f8);
+> > > +
+> > > +void kasan_record_aux_stack(void *addr)
+> > > +{
+> > > +       struct page *page = kasan_addr_to_page(addr);
+> > > +       struct kmem_cache *cache;
+> > > +       struct kasan_alloc_meta *alloc_info;
+> > > +       void *object;
+> > > +
+> > > +       if (!(page && PageSlab(page)))
+> > > +               return;
+> > > +
+> > > +       cache = page->slab_cache;
+> > > +       object = nearest_obj(cache, page, addr);
+> > > +       alloc_info = get_alloc_info(cache, object);
+> > > +
+> > > +       if (!alloc_info->rcu_stack[0])
+> > > +               /* record first call_rcu() call stack */
+> > > +               alloc_info->rcu_stack[0] = kasan_save_stack(GFP_NOWAIT);
+> > > +       else
+> > > +               /* record last call_rcu() call stack */
+> > > +               alloc_info->rcu_stack[1] = kasan_save_stack(GFP_NOWAIT);
+> > > +}
+> > > +
+> > > +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> > > +                                               u8 idx)
+> > > +{
+> > > +       return container_of(&alloc_info->rcu_stack[idx],
+> > > +                                               struct kasan_track, stack);
+> > > +}
+> > > diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
+> > > index e8f37199d885..1cc1fb7b0de3 100644
+> > > --- a/mm/kasan/kasan.h
+> > > +++ b/mm/kasan/kasan.h
+> > > @@ -96,15 +96,28 @@ struct kasan_track {
+> > >         depot_stack_handle_t stack;
+> > >  };
+> > >
+> > > +#ifdef CONFIG_KASAN_GENERIC
+> > > +#define SIZEOF_PTR sizeof(void *)
+> >
+> > Please move this to generic.c closer to kasan_set_free_info.
+> > Unnecessary in the header.
+> >
+> > > +#define KASAN_NR_RCU_CALL_STACKS 2
+> >
+> > Since KASAN_NR_RCU_CALL_STACKS is only used once below, you could as
+> > well use 2 instead of it.
+> > Reduces level of indirection and cognitive load.
+> >
+> > > +#else /* CONFIG_KASAN_GENERIC */
+> > >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > >  #define KASAN_NR_FREE_STACKS 5
+> > >  #else
+> > >  #define KASAN_NR_FREE_STACKS 1
+> > >  #endif
+> > > +#endif /* CONFIG_KASAN_GENERIC */
+> > >
+> > >  struct kasan_alloc_meta {
+> > >         struct kasan_track alloc_track;
+> > > +#ifdef CONFIG_KASAN_GENERIC
+> > > +       /*
+> > > +        * call_rcu() call stack is stored into struct kasan_alloc_meta.
+> > > +        * The free stack is stored into freed object.
+> > > +        */
+> > > +       depot_stack_handle_t rcu_stack[KASAN_NR_RCU_CALL_STACKS];
+> > > +#else
+> > >         struct kasan_track free_track[KASAN_NR_FREE_STACKS];
+> > > +#endif
+> > >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > >         u8 free_pointer_tag[KASAN_NR_FREE_STACKS];
+> > >         u8 free_track_idx;
+> > > @@ -159,16 +172,22 @@ void kasan_report_invalid_free(void *object, unsigned long ip);
+> > >
+> > >  struct page *kasan_addr_to_page(const void *addr);
+> > >
+> > > +depot_stack_handle_t kasan_save_stack(gfp_t flags);
+> > > +
+> > >  #if defined(CONFIG_KASAN_GENERIC) && \
+> > >         (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+> > >  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
+> > >  void quarantine_reduce(void);
+> > >  void quarantine_remove_cache(struct kmem_cache *cache);
+> > > +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> > > +                       u8 idx);
+> > >  #else
+> > >  static inline void quarantine_put(struct kasan_free_meta *info,
+> > >                                 struct kmem_cache *cache) { }
+> > >  static inline void quarantine_reduce(void) { }
+> > >  static inline void quarantine_remove_cache(struct kmem_cache *cache) { }
+> > > +static inline struct kasan_track *kasan_get_aux_stack(
+> > > +                       struct kasan_alloc_meta *alloc_info, u8 idx) { return NULL; }
+> > >  #endif
+> > >
+> > >  #ifdef CONFIG_KASAN_SW_TAGS
+> > > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > > index 80f23c9da6b0..f16a1a210815 100644
+> > > --- a/mm/kasan/report.c
+> > > +++ b/mm/kasan/report.c
+> > > @@ -105,9 +105,13 @@ static void end_report(unsigned long *flags)
+> > >         kasan_enable_current();
+> > >  }
+> > >
+> > > -static void print_track(struct kasan_track *track, const char *prefix)
+> > > +static void print_track(struct kasan_track *track, const char *prefix,
+> > > +                                               bool is_callrcu)
+> > >  {
+> > > -       pr_err("%s by task %u:\n", prefix, track->pid);
+> > > +       if (is_callrcu)
+> > > +               pr_err("%s:\n", prefix);
+> > > +       else
+> > > +               pr_err("%s by task %u:\n", prefix, track->pid);
+> > >         if (track->stack) {
+> > >                 unsigned long *entries;
+> > >                 unsigned int nr_entries;
+> > > @@ -187,11 +191,20 @@ static void describe_object(struct kmem_cache *cache, void *object,
+> > >         if (cache->flags & SLAB_KASAN) {
+> > >                 struct kasan_track *free_track;
+> > >
+> > > -               print_track(&alloc_info->alloc_track, "Allocated");
+> > > +               print_track(&alloc_info->alloc_track, "Allocated", false);
+> > >                 pr_err("\n");
+> > >                 free_track = kasan_get_free_track(cache, object, tag);
+> > > -               print_track(free_track, "Freed");
+> > > +               print_track(free_track, "Freed", false);
+> > >                 pr_err("\n");
+> > > +
+> > > +               if (IS_ENABLED(CONFIG_KASAN_GENERIC)) {
+> > > +                       free_track = kasan_get_aux_stack(alloc_info, 0);
+> > > +                       print_track(free_track, "First call_rcu() call stack", true);
+> > > +                       pr_err("\n");
+> > > +                       free_track = kasan_get_aux_stack(alloc_info, 1);
+> > > +                       print_track(free_track, "Last call_rcu() call stack", true);
+> > > +                       pr_err("\n");
+> > > +               }
+> > >         }
+> > >
+> > >         describe_object_addr(cache, object, addr);
+>
+> Some higher level comments.
+>
+> 1. I think we need to put the free track into kasan_free_meta as it
+> was before. It looks like exactly the place for it. We have logic to
+> properly place it and to do the casts.
+>
+>
+> If the free track put kasan_free_meta, then it increase slab meta size?
+> Our original goal does not enlarge it.
+
+Are you sure it will increase object size?
+I think we overlap kasan_free_meta with the object as well. The only
+case we don't overlap kasan_free_meta with the object are
+SLAB_TYPESAFE_BY_RCU || cache->ctor. But these are rare and it should
+only affect small objects with small redzones.
+And I think now we simply have a bug for these objects, we check
+KASAN_KMALLOC_FREE and then assume object contains free stack, but for
+objects with ctor, they still contain live object data, we don't store
+free stack in them.
+Such objects can be both free and still contain user data.
+
+
+> 2. We need to zero aux stacks when we reallocate the object. Otherwise
+> we print confusing garbage.
+>
+> My local has an UT about use-after-free and rcu, but it is hard to test the printing confusing garbage, because we may need to get the same object(old pointer and new pointer). In generic KASAN is not easy to get it.
+>
+> 3. __kasan_slab_free now contains a window of inconsistency when it
+> marked the object as KASAN_KMALLOC_FREE, but did not store the free
+> track yet. If another thread prints a report now, it will print random
+> garbage.
+>
+>
+> It is possible, but the window is so tiny. It sets free track immediately after write the KASAN_KMALLOC_FREE.
+
+It is small. But (1) why do we want to allow it at all, (2) there is
+actually a more serious problem. If we mark an object as
+KASAN_KMALLOC_FREE, but don't do kasan_set_free_info (because object
+has ctor), now we will treat live object data as free track. We need
+to fix it anyway.
+
+
+
+
+> 4. We need some tests. At least (2) should be visible on tests.
+>
+>
+> Ok.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
