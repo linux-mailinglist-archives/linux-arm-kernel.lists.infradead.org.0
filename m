@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C17261CDE2B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:08:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 019F01CDE39
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 17:09:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VHx0WdI8mdQ1/cXvoVuQJaz4gtGxI5QLtxM08vmEdbw=; b=MIWW+Nu3W2wzXK
-	1U7cFeGeE9s/w8hiSQviCJMujMq/cEMLa13Cjq9yHolH0d9SvIzRIvnh8t2ZSf2j+Z/HGork9Ebiv
-	XrZ/Vfqa5BgCcIFIYkT8W3bnZ5bYi8KtkuWjdDeVWVjotIBl6oLZijC/Phg1Z9zZgZs03VpjFUose
-	uhY7Wrt7DqWbiBT9uEkIqLHu+YR0gBM2t8UErlLPRuclW3r5xGD4vNnLebCz2p3jHBw44sBk9vUjv
-	cLOT6slyHyI4UfcXHZ3XQM8rNVyCoFBYeDrwM+aJctBFP6mpD1k+v7iSy0QnvhCmE7ar5sabo2ev4
-	cSIBgiCRA10QrJTxjV7Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jfgtIAGfyvvzaUSVZyeoqIuMiFy5aNdcbgjb3D3I/5M=; b=fDAoWP4R0Udt83
+	yoY1TovvkzhfzIBU/gjZWk8IjOvu655y97H9nL9KYpam+hKtqppXqsJvWdmnbuopPn88K/FgAEXaN
+	koWdl9a28WG9tK0rZp50e3E3RTd4bA09l8qHtsgz0988T6lBTAcjHQgu7sE+p4J62Z8z87w76S9UE
+	mszbJ9wfL1gfB4hYhzlwYv0YZcVB8vnytv2kjbAzl9gx36T684C4w5+BmuAS6TP1bI7FY1HtbmW0D
+	Ig3zsJs1Q2cVG59jS1PWsEv/Oiao42QUa03fWqMvwhTnTKe9kx5rH9AgqhkxEIFMhSKn56jUJOkcj
+	EydTa9sBlb2Q0IL6yT4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYA2p-0002Ks-UD; Mon, 11 May 2020 15:08:39 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jYA3B-0002pf-IL; Mon, 11 May 2020 15:09:01 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYA2X-0002H2-Kq
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:08:23 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z72so10106584wmc.2
+ id 1jYA2Y-0002H3-I7
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 15:08:24 +0000
+Received: by mail-wr1-x442.google.com with SMTP id v12so11382264wrp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 08:08:20 -0700 (PDT)
+ Mon, 11 May 2020 08:08:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/J8miyILwwd4yeHypeApHEY6tVwb+3C32vv+icx83JU=;
- b=OTdMO8s1WgboMNhaDTGwQRLL6oPTm6LLnYMKvpds/gLxCEYm/L/tz9ICUGzZLiU3ei
- YvwiSmIcssbhOdrNVTjU1HfBqBCs40dnl89hXOHPRmjaAeJghS71NCJu97EEFzClXyBj
- zTErYcE0rLjPIXk+WVMw1CWhUrB1AnSiADXS9GirXjYlf3y0SX2kJ2UxyLMjh70hVx8I
- 8EHLcu3Ps8hB00DG8HRf8pVDeNBL0fkVe//Q9BB7IlC/wjAB4W/ZNdfHvQ/nEkSNqcuW
- 58RZ2Gwh4Oygoe8bll6iXGBANCMQIPkT9lY0vDfjRphc+q+S6RvvW0gPn4yLXGy29b/Y
- zW1g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=sewIQrOfMSMCFki5vvjbKoo8BkZz8WZa7NzooTrVnts=;
+ b=q37ckKvI97gdW/9Qf733N08+axobkxxkecqbP8tELu1P7icQxfg3axOfLOYxiFCBwl
+ oW05IYZCYgxJNYg+koCtaEP74kUPAP7PvkOTtmB8izDdFoqQ7hUPr6KHdo+QapU5fG+q
+ okYraohC8Z+OVy+h3pew0mfKrvkCW5otHVTVv/M3aUqhjbBCgmNhqm0DjbiAtK+BOLLi
+ J3u3/fW1XlTDrkKTN/e8xinBIg+wOmpGaGiK4N+T0FY9XJO2tq6hVKqSmb/ITP3KJx0m
+ 772YiDG8qWBy+CWk7PZaNjByABatlmXAblj8wCORl9qC2OeLAPGB+ni3oUS02zE0ASo0
+ jDXA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=/J8miyILwwd4yeHypeApHEY6tVwb+3C32vv+icx83JU=;
- b=KqPRHM0AhReoKS+1GCTWQ/30pZlrI/D+dabkL+PXxMfBN6LtR5L1jH16x0vDN4FkrJ
- 8M7L01h+Vei9R6jAVImhoof8mvpT0w/yOI7NmwDpf96Z0F9fmnIJ2YFhrlMOfHWceDYC
- gNdp1Wb/jaap4EA/bOKwTSeWkhMoYTeB7n9LjGXTzWeWRjbM/Xmx1TH7W4iBd3yf/OcA
- OgkQ1x8wWBZmRHsU0aOLGRM6WAv+pvYJ7+OUSItubibVk9FP/extL7n8T3HO8JR70a1n
- 7JqjTz3GluDQkp5PIp872zStWr6pFmI6OG7byYi1jSb3A668zpm71vtNvLbE5NGPdeTt
- s72w==
-X-Gm-Message-State: AGi0PuZTc8a6yVxyS8bcn06fnynIJdcKV0wKg2vhQBLUJMKBkAmeIrnZ
- b58W2fn6hSqQktFkRHVP8ucx6w==
-X-Google-Smtp-Source: APiQypKvNSjq4TfJ0CivzedoluQIOXBiXcFnJi5slyojLcRrav800+2iZaWdjk73vkbbGixHhUBMBA==
-X-Received: by 2002:a1c:2457:: with SMTP id k84mr30052808wmk.96.1589209699367; 
- Mon, 11 May 2020 08:08:19 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=sewIQrOfMSMCFki5vvjbKoo8BkZz8WZa7NzooTrVnts=;
+ b=uF+FerJFwIsbSwRT7JboRkaRYz8ia3KbRBDNM6obPqpLEDtoLBWv7QtPeNbIBr2aQY
+ djKYlXOVHIdV4C/QLdn/fC93rwoe7MMSwxToTshRYPRBDSOLWKb7qCXIBh647mg06nvt
+ rZv99BnZ97Xh/jm8n8RaqxACrn1p4bVrDr3IfmAUFomvqVU2X+wkQD+B2NOuRHKqsOVH
+ VJ2VWKSCTTMhBGTWi0i0++evIRJfNO2lJ50icpXYih3NhSSv+hdoHPcqmXvIISqj0Fuz
+ wvNFoaMZubKk6eKXj1pnBR+HFC/9cdg4zVPkiNMlk5vwlxj/XCFo8WaP0L8A5+HO7E1t
+ tijA==
+X-Gm-Message-State: AGi0PuaGpWfV2lKvjf/SVQk+5yMEK/stjJ3deh0vcM4hokQJ/5lzCHiH
+ 4tf7hm/8N4CY5FjqNBg/mNiCdA==
+X-Google-Smtp-Source: APiQypJkabPSlSRTzxm2g+2Pcl2v8TJeYzS/3rcaydFEeD66RCudiytYlqP+kPoPaNBs86GUJFZHvA==
+X-Received: by 2002:adf:f605:: with SMTP id t5mr19294913wrp.354.1589209700812; 
+ Mon, 11 May 2020 08:08:20 -0700 (PDT)
 Received: from localhost.localdomain (lfbn-nic-1-65-232.w2-15.abo.wanadoo.fr.
  [2.15.156.232])
- by smtp.gmail.com with ESMTPSA id 94sm3514792wrf.74.2020.05.11.08.08.17
+ by smtp.gmail.com with ESMTPSA id 94sm3514792wrf.74.2020.05.11.08.08.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 08:08:18 -0700 (PDT)
+ Mon, 11 May 2020 08:08:20 -0700 (PDT)
 From: Bartosz Golaszewski <brgl@bgdev.pl>
 To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Matthias Brugger <matthias.bgg@gmail.com>, John Crispin <john@phrozen.org>,
@@ -66,21 +66,24 @@ To: Rob Herring <robh+dt@kernel.org>, "David S . Miller" <davem@davemloft.net>,
  Fabien Parent <fparent@baylibre.com>,
  Heiner Kallweit <hkallweit1@gmail.com>,
  Edwin Peer <edwin.peer@broadcom.com>
-Subject: [PATCH v2 00/14] mediatek: add support for MediaTek Ethernet MAC
-Date: Mon, 11 May 2020 17:07:45 +0200
-Message-Id: <20200511150759.18766-1-brgl@bgdev.pl>
+Subject: [PATCH v2 01/14] dt-bindings: arm: add a binding document for
+ MediaTek PERICFG controller
+Date: Mon, 11 May 2020 17:07:46 +0200
+Message-Id: <20200511150759.18766-2-brgl@bgdev.pl>
 X-Mailer: git-send-email 2.25.0
+In-Reply-To: <20200511150759.18766-1-brgl@bgdev.pl>
+References: <20200511150759.18766-1-brgl@bgdev.pl>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_080821_719939_26B292D2 
-X-CRM114-Status: GOOD (  18.37  )
+X-CRM114-CacheID: sfid-20200511_080822_595325_04C7215E 
+X-CRM114-Status: GOOD (  11.98  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,88 +114,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
 
-This adds support for the Ethernet Controller present on MediaTeK SoCs
-from the MT8* family.
+This adds a binding document for the PERICFG controller present on
+MediaTek SoCs. For now the only variant supported is 'mt8516-pericfg'.
 
-The first two patches add binding documents for the PERICFG syscon and
-for the MAC itself.
-
-Patches 3/14 & 4/14 do some cleanup of the mediatek ethernet drivers
-directory.
-
-Patch 5/14 provides a new helper that allows to retrieve the address of
-the net_device associated with given private data address.
-
-Patches 6-8/14 introduce the managed variant of register_netdev().
-
-Patch 9/11 adds the new ethernet driver.
-
-The rest of the patches add DT fixups for the boards already supported
-upstream.
-
-v1 -> v2:
-- add a generic helper for retrieving the net_device associated with given
-  private data
-- fix several typos in commit messages
-- remove MTK_MAC_VERSION and don't set the driver version
-- use NET_IP_ALIGN instead of a magic number (2) but redefine it as it defaults
-  to 0 on arm64
-- don't manually turn the carrier off in mtk_mac_enable()
-- process TX cleanup in napi poll callback
-- configure pause in the adjust_link callback
-- use regmap_read_poll_timeout() instead of handcoding the polling
-- use devres_find() to verify that struct net_device is managed by devres in
-  devm_register_netdev()
-- add a patch moving all networking devres helpers into net/devres.c
-- tweak the dma barriers: remove where unnecessary and add comments to the
-  remaining barriers
-- don't reset internal counters when enabling the NIC
-- set the net_device's mtu size instead of checking the framesize in
-  ndo_start_xmit() callback
-- fix a race condition in waking up the netif queue
-- don't emit log messages on OOM errors
-- use dma_set_mask_and_coherent()
-- use eth_hw_addr_random()
-- rework the receive callback so that we reuse the previous skb if unmapping
-  fails, like we already do if skb allocation fails
-- rework hash table operations: add proper timeout handling and clear bits when
-  appropriate
-
-Bartosz Golaszewski (14):
-  dt-bindings: arm: add a binding document for MediaTek PERICFG
-    controller
-  dt-bindings: net: add a binding document for MediaTek Ethernet MAC
-  net: ethernet: mediatek: rename Kconfig prompt
-  net: ethernet: mediatek: remove unnecessary spaces from Makefile
-  net: core: provide priv_to_netdev()
-  net: move devres helpers into a separate source file
-  net: devres: define a separate devres structure for
-    devm_alloc_etherdev()
-  net: devres: provide devm_register_netdev()
-  net: ethernet: mtk-eth-mac: new driver
-  ARM64: dts: mediatek: add pericfg syscon to mt8516.dtsi
-  ARM64: dts: mediatek: add the ethernet node to mt8516.dtsi
-  ARM64: dts: mediatek: add an alias for ethernet0 for pumpkin boards
-  ARM64: dts: mediatek: add ethernet pins for pumpkin boards
-  ARM64: dts: mediatek: enable ethernet on pumpkin boards
-
- .../arm/mediatek/mediatek,pericfg.yaml        |   34 +
- .../bindings/net/mediatek,eth-mac.yaml        |   80 +
- arch/arm64/boot/dts/mediatek/mt8516.dtsi      |   17 +
- .../boot/dts/mediatek/pumpkin-common.dtsi     |   34 +
- drivers/net/ethernet/mediatek/Kconfig         |    8 +-
- drivers/net/ethernet/mediatek/Makefile        |    3 +-
- drivers/net/ethernet/mediatek/mtk_eth_mac.c   | 1561 +++++++++++++++++
- include/linux/netdevice.h                     |   14 +
- net/Makefile                                  |    2 +-
- net/devres.c                                  |   95 +
- net/ethernet/eth.c                            |   28 -
- 11 files changed, 1845 insertions(+), 31 deletions(-)
+Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+---
+ .../arm/mediatek/mediatek,pericfg.yaml        | 34 +++++++++++++++++++
+ 1 file changed, 34 insertions(+)
  create mode 100644 Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
- create mode 100644 Documentation/devicetree/bindings/net/mediatek,eth-mac.yaml
- create mode 100644 drivers/net/ethernet/mediatek/mtk_eth_mac.c
- create mode 100644 net/devres.c
 
+diff --git a/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
+new file mode 100644
+index 000000000000..74b2a6173ffb
+--- /dev/null
++++ b/Documentation/devicetree/bindings/arm/mediatek/mediatek,pericfg.yaml
+@@ -0,0 +1,34 @@
++# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: "http://devicetree.org/schemas/arm/mediatek/mediatek,pericfg.yaml#"
++$schema: "http://devicetree.org/meta-schemas/core.yaml#"
++
++title: MediaTek Peripheral Configuration Controller
++
++maintainers:
++  - Bartosz Golaszewski <bgolaszewski@baylibre.com>
++
++properties:
++  compatible:
++    oneOf:
++      - items:
++        - enum:
++          - mediatek,pericfg
++        - const: syscon
++
++  reg:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++
++additionalProperties: false
++
++examples:
++  - |
++    pericfg: pericfg@10003050 {
++        compatible = "mediatek,mt8516-pericfg", "syscon";
++        reg = <0 0x10003050 0 0x1000>;
++    };
 -- 
 2.25.0
 
