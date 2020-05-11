@@ -2,71 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 962FF1CE2C1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:29:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D50E01CE2BF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 20:28:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zx0N8I/BoSmzNRdUBOeq3zmqS13gVagxMk0PuBdI5wI=; b=u1bWnjo12a26WW
-	qxKpoy2y0G1ef8Quuy9F5S7jC7V1s6goP60OR49q4LDDEK96XCxj7itPgsV9uMY3newF8+5POcUbJ
-	x0JzrJwR0c64xtdo4kNyFHoOfR0nnsEXZFLw0cq+9jktl5hJ3i8cIyJu7kyq0zUmOQ3RXRV9aVNr9
-	g3LqNSI/bbA1AfYPl2mXVt6ElY/MRQimCTpJFrSzPW2/ZJwrBUip9wdib/iNQI8Z99ScbuIXKxc2H
-	zIbaCYU4h2W4JZR9+Rs0iIPVMDCYn87YZuraEbY2dbCsRpxF7bFWDFj55Ier4cwcihPqqs8CwC42K
-	5SNmw2j+ih8Mj5Afe+zA==;
+	List-Owner; bh=kUxN7U2dO5iDXJsVmTgWcDemG4JuO6mT+EhTwMA7BQw=; b=b7wi39T4wPd0vc
+	X/qOiroOVBPa59dmWrzTcfIjJhdbqnW+2hZOkzBBRh4fsw6F1uJ5hMa2za+8hItlYCN2EqVl6hpqL
+	HJMeTsBSkbgWXWmNMUSgsWsQ3tKIcIUCOcGTw8YLfclVL576TAgrT/j9t0zetUEyhodyl3kU7gGq8
+	8YWnbtHYZgEQ4T4jqisA0FdxhgJL0Gj2AUon45INq8SUSOw2wipt1JxNVn4g3K5+I7aSy2sIiJXwF
+	YEDwE9kn53IbeBTeM/8tUkp8OibOareBvpjgLHEW1r3ParVj9haxEi7hbmotTGu2mNQpiOBKxu0z1
+	mvUr1vsF/6JyYMb52B9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYDAh-0008Pf-Hr; Mon, 11 May 2020 18:28:59 +0000
+	id 1jYDA0-0007eE-8j; Mon, 11 May 2020 18:28:16 +0000
 Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYD9W-0007PV-Hq
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:27:48 +0000
-Received: by mail-oi1-f193.google.com with SMTP id o24so15974557oic.0
+ id 1jYD9E-00079o-Tg
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 18:27:31 +0000
+Received: by mail-oi1-f193.google.com with SMTP id c124so15741293oib.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 11:27:46 -0700 (PDT)
+ Mon, 11 May 2020 11:27:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=AF44SBQidL/1nuTUY00MQnDKIQPVWNPKZOL9w+D+Z08=;
- b=YPmdk8eF3J/nnODlu86P1gOj6sZDQuNwQJKIXfQOIdAnmYSVMz1knOTY2xCOEqKOys
- FjfYv7jS7igNLLdfWmxGcOaUZaZI4qJfkomVlgq1CTHFCE9t+k5dBGauXUS6LzSZnJDo
- fgmQx8eiiO2TYqx3OnbT4Tg4K6TPb3PlwjyiYSGuhqzaUKJbbEcM/PsFv+zT4iXf+4LH
- IfFENhP97C09VpZMGzeeqlnwtm/kma7IYAE1SutPP6iRIZ/NggXHdEv7PrpZkJnhqmSt
- A/XrTczu3ik5qvdrEFONtJj9SeneNgKgPMcUfgoP/Y3L9DPEGlX3vtcUUGPnQvinshOA
- ZOhQ==
-X-Gm-Message-State: AGi0PuYhtcCkVOj4yFdRK8D7TfRGVaJkh6yN3CBup2LVfxg6tOXhmliM
- H8TG11NJP9tTqdShYAydLA==
-X-Google-Smtp-Source: APiQypJZp8K7ZKYFivbdUWwWOufHVF5HSbqXoCMZfWZ7Fhk4i9srELxLj+oi9ZKacSVH9aLLafe8xQ==
-X-Received: by 2002:a05:6808:b36:: with SMTP id
- t22mr21158774oij.121.1589221665737; 
- Mon, 11 May 2020 11:27:45 -0700 (PDT)
+ bh=7Dq6v2RgQ1NzWRtNWHz7ueSOJkRsa7ZUQ4A+tRGmEk0=;
+ b=XIYWaW5jVk9RDBaL+oy2xvJoJbarELQ6ga+XvApKSRtYekviRDzbnOym0WLviuIpo8
+ 8zMlXFe84QAIV6aVcp8BB2q/Spasd/HWqoCAtRUpiGraCSYX2+B53xA8UGgH8dNPwUGG
+ K0NR+nUcf3aiSxW0K8rENTjkOiXevmlnXkspHCX7yWWYT+NNIvAYofxfIzTFyerXKwoL
+ wJz/u6RtEabWXNJz72vPrnkAh0teuPAXUkujWhtRpuBX1IMJKdrn4zoXswOnuH553muS
+ srlcwDNis8cgdUEAdWc/Hbx4xot2DDQ7TB0MquV2XUX0PRX4aGAt+d0qWFvAr+gMf6xi
+ JIVA==
+X-Gm-Message-State: AGi0PuZcrpvBAZx84lMMQv0V8+yXmVxu7CnG6Q1rJeYd+kpVGxias7BX
+ JyFJhQeAtCm68iJIHr9O7g==
+X-Google-Smtp-Source: APiQypIddoKpSsY4vXjl9FBRpjHvq4vl8fRKeIJdFi0j9WY+HcG6j9RKFSXh8teT5bLZUpju5w9kTA==
+X-Received: by 2002:aca:cc0d:: with SMTP id c13mr12333340oig.125.1589221648092; 
+ Mon, 11 May 2020 11:27:28 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id x5sm3322995oif.29.2020.05.11.11.27.44
+ by smtp.gmail.com with ESMTPSA id k26sm2859224ots.3.2020.05.11.11.27.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 11:27:45 -0700 (PDT)
-Received: (nullmailer pid 20642 invoked by uid 1000);
- Mon, 11 May 2020 16:10:23 -0000
-Date: Mon, 11 May 2020 11:10:23 -0500
+ Mon, 11 May 2020 11:27:27 -0700 (PDT)
+Received: (nullmailer pid 22174 invoked by uid 1000);
+ Mon, 11 May 2020 16:11:27 -0000
+Date: Mon, 11 May 2020 11:11:27 -0500
 From: Rob Herring <robh@kernel.org>
-To: Alim Akhtar <alim.akhtar@samsung.com>
-Subject: Re: [PATCH v8 08/10] dt-bindings: ufs: Add DT binding documentation
- for ufs
-Message-ID: <20200511161023.GA20124@bogus>
-References: <20200511020031.25730-1-alim.akhtar@samsung.com>
- <CGME20200511021406epcas5p229fb46815d3c29ae06709fa6160e0308@epcas5p2.samsung.com>
- <20200511020031.25730-9-alim.akhtar@samsung.com>
+To: Kamel Bouhara <kamel.bouhara@bootlin.com>
+Subject: Re: [PATCH v4 4/5] dt-bindings: counter: microchip-tcb-capture counter
+Message-ID: <20200511161127.GA21385@bogus>
+References: <20200511140505.1649111-1-kamel.bouhara@bootlin.com>
+ <20200511140505.1649111-5-kamel.bouhara@bootlin.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200511020031.25730-9-alim.akhtar@samsung.com>
+In-Reply-To: <20200511140505.1649111-5-kamel.bouhara@bootlin.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_112746_786438_07A0BCFE 
-X-CRM114-Status: UNSURE (   9.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200511_112728_974525_888FCDEA 
+X-CRM114-Status: GOOD (  12.02  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -97,32 +93,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- martin.petersen@oracle.com, linux-scsi@vger.kernel.org,
- linux-kernel@vger.kernel.org, krzk@kernel.org, kwmad.kim@samsung.com,
- avri.altman@wdc.com, cang@codeaurora.org, stanley.chu@mediatek.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-iio@vger.kernel.org,
+ William Breathitt Gray <vilhelm.gray@gmail.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, linux-input@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 11 May 2020 07:30:29 +0530, Alim Akhtar wrote:
-> This patch adds DT binding for samsung ufs hci
+On Mon, 11 May 2020 16:05:04 +0200, Kamel Bouhara wrote:
+> Describe the devicetree binding for the Microchip TCB module.
+> Each counter blocks exposes three independent counters.
 > 
-> Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
+> However, when configured in quadrature decoder, both channel <0> and <1>
+> are required for speed/position and rotation capture (yet only the
+> position is captured).
+> 
+> Signed-off-by: Kamel Bouhara <kamel.bouhara@bootlin.com>
 > ---
->  .../bindings/ufs/samsung,exynos-ufs.yaml      | 92 +++++++++++++++++++
->  1 file changed, 92 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.yaml
+>  .../soc/microchip/atmel,at91rm9200-tcb.yaml   | 29 +++++++++++++++++--
+>  1 file changed, 26 insertions(+), 3 deletions(-)
 > 
 
 
 My bot found errors running 'make dt_binding_check' on your patch:
 
-/builds/robherring/linux-dt-review/Documentation/devicetree/bindings/ufs/samsung,exynos-ufs.example.dt.yaml: ufs@15570000: 'pclk-freq-avail-range' does not match any of the regexes: 'pinctrl-[0-9]+'
+Traceback (most recent call last):
+  File "/usr/local/bin/dt-doc-validate", line 64, in <module>
+    ret = check_doc(args.yamldt)
+  File "/usr/local/bin/dt-doc-validate", line 25, in check_doc
+    testtree = dtschema.load(filename, line_number=line_number, duplicate_keys=False)
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 592, in load
+    return yaml.load(f.read())
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 113, in get_single_data
+    return self.construct_document(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 123, in construct_document
+    for _dummy in generator:
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 723, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 440, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 257, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 295, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "<unicode string>", line 4, column 1
+found duplicate key "examples" with value "[]" (original value: "[]")
+  in "<unicode string>", line 157, column 1
 
-See https://patchwork.ozlabs.org/patch/1287439
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become an error in future releases, and are errors
+by default when using the new API.
+
+Documentation/devicetree/bindings/Makefile:12: recipe for target 'Documentation/devicetree/bindings/soc/microchip/atmel,at91rm9200-tcb.example.dts' failed
+make[1]: *** [Documentation/devicetree/bindings/soc/microchip/atmel,at91rm9200-tcb.example.dts] Error 1
+make[1]: *** Waiting for unfinished jobs....
+Traceback (most recent call last):
+  File "/usr/local/bin/dt-mk-schema", line 34, in <module>
+    schemas = dtschema.process_schemas(args.schemas, core_schema=(not args.useronly))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 554, in process_schemas
+    sch = process_schema(os.path.abspath(filename))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 507, in process_schema
+    schema = load_schema(filename)
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 123, in load_schema
+    return do_load(os.path.join(schema_basedir, schema))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 108, in do_load
+    return yaml.load(tmp)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 113, in get_single_data
+    return self.construct_document(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 123, in construct_document
+    for _dummy in generator:
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 723, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 440, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 257, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 295, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "<unicode string>", line 4, column 1
+found duplicate key "examples" with value "[]" (original value: "[]")
+  in "<unicode string>", line 157, column 1
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become an error in future releases, and are errors
+by default when using the new API.
+
+Traceback (most recent call last):
+  File "/usr/local/bin/dt-mk-schema", line 34, in <module>
+    schemas = dtschema.process_schemas(args.schemas, core_schema=(not args.useronly))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 554, in process_schemas
+    sch = process_schema(os.path.abspath(filename))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 507, in process_schema
+    schema = load_schema(filename)
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 123, in load_schema
+    return do_load(os.path.join(schema_basedir, schema))
+  File "/usr/local/lib/python3.6/dist-packages/dtschema/lib.py", line 108, in do_load
+    return yaml.load(tmp)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/main.py", line 343, in load
+    return constructor.get_single_data()
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 113, in get_single_data
+    return self.construct_document(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 123, in construct_document
+    for _dummy in generator:
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 723, in construct_yaml_map
+    value = self.construct_mapping(node)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 440, in construct_mapping
+    return BaseConstructor.construct_mapping(self, node, deep=deep)
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 257, in construct_mapping
+    if self.check_mapping_key(node, key_node, mapping, key, value):
+  File "/usr/local/lib/python3.6/dist-packages/ruamel/yaml/constructor.py", line 295, in check_mapping_key
+    raise DuplicateKeyError(*args)
+ruamel.yaml.constructor.DuplicateKeyError: while constructing a mapping
+  in "<unicode string>", line 4, column 1
+found duplicate key "examples" with value "[]" (original value: "[]")
+  in "<unicode string>", line 157, column 1
+
+To suppress this check see:
+    http://yaml.readthedocs.io/en/latest/api.html#duplicate-keys
+
+Duplicate keys will become an error in future releases, and are errors
+by default when using the new API.
+
+Documentation/devicetree/bindings/Makefile:41: recipe for target 'Documentation/devicetree/bindings/processed-schema-examples.yaml' failed
+make[1]: *** [Documentation/devicetree/bindings/processed-schema-examples.yaml] Error 123
+make[1]: *** Deleting file 'Documentation/devicetree/bindings/processed-schema-examples.yaml'
+Documentation/devicetree/bindings/Makefile:45: recipe for target 'Documentation/devicetree/bindings/processed-schema.yaml' failed
+make[1]: *** [Documentation/devicetree/bindings/processed-schema.yaml] Error 123
+make[1]: *** Deleting file 'Documentation/devicetree/bindings/processed-schema.yaml'
+Makefile:1300: recipe for target 'dt_binding_check' failed
+make: *** [dt_binding_check] Error 2
+
+See https://patchwork.ozlabs.org/patch/1287813
 
 If you already ran 'make dt_binding_check' and didn't see the above
 error(s), then make sure dt-schema is up to date:
