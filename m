@@ -2,51 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9336F1CD73C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:08:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B4881CD741
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:09:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wAyQ4Rpa8O4Z1YDU6JcKV9jWsK0f1cutplo8NxMNETg=; b=CxGxFgqBsQYGeG
-	F/6/P48F7WZcfzLgopZOBKoQRm+E6p/Ra50KaoMeM3TNxu/YnHrf5u/LHEoL2MF299zTP5EzkVYuk
-	WBg3jRl7opbdT02BPv7UJys3QARNgLqPE/WDY2VYy6D/l346QSDWSzn4meSkBxWZkgvkgfdpYM2Lm
-	p4PJPhHZ+Y681YEmftUOVbus6PBmmBEFin9a3iF1hlOoEIc4ZUq9LlMa6qJVddc1AUty/6i3Tq6cA
-	BgXapzKvnWZMzQwiXVvQoQZAKOF8TQ2Psj/DDbQt9jYo5bBsDP6uGRc3jI/GAIb8Kc8y1BshfMuQ+
-	jiT9oHYaH1Evrb5CJhvA==;
+	List-Owner; bh=kCIrOXMgyUDocfHoHcNuyWLCCxSrx2+yr0VrpnxPScQ=; b=AyxHULCG8UNEGV
+	hnvvrE1nXhw8pT08qh+Mf74agVBkY7bppfZVZ901U6iRZBHoTzRYuEW9VrmJzbUvGu3Dym3c9/1Rx
+	K2JPjy5DITjiEMasSK5XKUriBMyMZHSfziaQhom2TltmhuWwF7IWUHM2yufjWUr5bArUVY6f94yuO
+	cN9LfVYyLsWeSsZvmA4fg2KeVxepsWWEbP4Na+MxXaSnZQ1BjZHNW3cEmeYTxLOYjJj9zOZAwZNIf
+	oNTGo0Lpzk7a1K9vFYRC8onbIKpD++j2Lnn3ukJqvvwz4qSgIqcAALwZ8tOQzNYNkHyssOnEk0iBT
+	RARjvXwwgg6cywH519DQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6IG-0004UT-Bo; Mon, 11 May 2020 11:08:20 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1jY6Iq-0004wx-Ry; Mon, 11 May 2020 11:08:56 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6Ge-00038Z-82
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:06:43 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
- with ESMTPSA id 924712A0CB2
-From: =?UTF-8?q?Ricardo=20Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
-To: laurent.pinchart@ideasonboard.com
-Subject: [PATCH v2 6/6] dt-bindings: drm: bridge: adi,
- adv7511.txt: convert to yaml
-Date: Mon, 11 May 2020 13:06:11 +0200
-Message-Id: <20200511110611.3142-7-ricardo.canuelo@collabora.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200511110611.3142-1-ricardo.canuelo@collabora.com>
-References: <20200511110611.3142-1-ricardo.canuelo@collabora.com>
+ id 1jY6IZ-0004uH-Uq
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:08:44 +0000
+Received: by mail-qk1-x742.google.com with SMTP id f189so3577337qkd.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 04:08:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=UNMUTX3IVOdWGAHdZTtQUCk6o1GLMdtGOMtI+KbtqjM=;
+ b=bPhme0DYSxuNJS0xabwnhk/nbCwYIC2ZwIYET/ovP/uw4N700fQn6kSCUX+zY10Fq3
+ bBwiCfRbi7GZfNX6QOem92EItjO0Bpygo420AcjxrBbQpnjZjiHgP1QlPvtR38tkMiQY
+ hA5OuWa/atTXj7EAS8B6ZFtX05xhjDJ0lyHb3S8xghRANvqWPoHLzDl8hHF2kK9DazMm
+ UPxvFyHnjA5w4Vn5Cl6FAq23BpnIQpbt54+84/FbiTEyPYdKTbbkiWE/Qc8lAeAAC4LW
+ mWK1k4i99QbW35UsT/Eb6Jbu9P94zG7I+ekoV+1wSU43GbrzJTsMjmu/vb9YT6uEb4Nl
+ Uf7A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UNMUTX3IVOdWGAHdZTtQUCk6o1GLMdtGOMtI+KbtqjM=;
+ b=omcBkjncfIKgcOZJmDArmkxCA9Hfgx3M8h05IjXuXcbl36Od9vjCw0ptbOOGT3k0fX
+ hctj/ayrVxJZ2Xo3qMXUg+LqfYvWAXVD2aHhp3ML7WtUg05gEyyBa5z5tXZaJ+tkIn/K
+ OW0/aR0G+mKk51clbslxKZeUtQegoxLX67BRvjBZy5txvProCnogpjHPp3KnS7RAe0cO
+ RBamfATb2EzHSH8081kMf1EQzUpSmQiOKSHDgEbifkOmMpxbJScijC+YAviD2MasWpW6
+ tF4vC19CfkvMC0RhGxHJ5d+2momp2GuA/SP9ldpKPLM3EYZ91wQvqCfajsflNMV26koH
+ kF9w==
+X-Gm-Message-State: AGi0PuZp/Zi4a8h9kpczexZa2H4gvXwATZcWHlARYT0I59QdvNisDNIs
+ QDGvPSfgxZVKVW1czNHrhvgMjSpHGds874/OKwaoow==
+X-Google-Smtp-Source: APiQypLzSdKj50fxdYIg/0tOrZBAi+Iph6ydmFtO78v6WTjKy8v87iz0Vh0gdYkOSr/3PRRmZ92AcER3oyNFqP3q4+g=
+X-Received: by 2002:ae9:ed05:: with SMTP id c5mr15323301qkg.250.1589195318085; 
+ Mon, 11 May 2020 04:08:38 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+In-Reply-To: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Mon, 11 May 2020 13:08:26 +0200
+Message-ID: <CACT4Y+ZDaONL63_GdGQpgs+7dxG3GHRMGcNOVgfn9P88Kx7fig@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_040640_561560_A8A123A7 
-X-CRM114-Status: GOOD (  18.20  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200511_040840_032759_39D752FF 
+X-CRM114-Status: GOOD (  29.93  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,323 +96,286 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, geert+renesas@glider.be, xuwei5@hisilicon.com,
- robh+dt@kernel.org, kernel@collabora.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: wsd_upstream <wsd_upstream@mediatek.com>,
+ "Paul E . McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>, linux-mediatek@lists.infradead.org,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q29udmVydCB0aGUgQURWNzUxMS8xMXcvMTMvMzMvMzUgRFQgYmluZGluZ3MgdG8ganNvbi1zY2hl
-bWEuIFRoZQpvcmlnaW5hbCBiaW5kaW5nIGhhcyBiZWVuIHNwbGl0IGludG8gdHdvIGZpbGVzOiBh
-ZGksYWR2NzUxMS55YW1sIGZvcgpBRFY3NTExLzExVy8xMyBhbmQgYWRpLGFkdjc1MzMueWFtbCBm
-b3IgQURWNzUzMy8zNS4KClNpZ25lZC1vZmYtYnk6IFJpY2FyZG8gQ2HDsXVlbG8gPHJpY2FyZG8u
-Y2FudWVsb0Bjb2xsYWJvcmEuY29tPgotLS0KIC4uLi9iaW5kaW5ncy9kaXNwbGF5L2JyaWRnZS9h
-ZGksYWR2NzUxMS50eHQgICB8IDE0MyAtLS0tLS0tLS0tLQogLi4uL2JpbmRpbmdzL2Rpc3BsYXkv
-YnJpZGdlL2FkaSxhZHY3NTExLnlhbWwgIHwgMjMwICsrKysrKysrKysrKysrKysrKwogLi4uL2Jp
-bmRpbmdzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTMzLnlhbWwgIHwgMTY2ICsrKysrKysrKysr
-KysKIDMgZmlsZXMgY2hhbmdlZCwgMzk2IGluc2VydGlvbnMoKyksIDE0MyBkZWxldGlvbnMoLSkK
-IGRlbGV0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlz
-cGxheS9icmlkZ2UvYWRpLGFkdjc1MTEudHh0CiBjcmVhdGUgbW9kZSAxMDA2NDQgRG9jdW1lbnRh
-dGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTExLnlhbWwK
-IGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlz
-cGxheS9icmlkZ2UvYWRpLGFkdjc1MzMueWFtbAoKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24v
-ZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L2JyaWRnZS9hZGksYWR2NzUxMS50eHQgYi9Eb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvYWRpLGFkdjc1MTEu
-dHh0CmRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0NAppbmRleCA2NTk1MjNmNTM4YmYuLjAwMDAwMDAw
-MDAwMAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlk
-Z2UvYWRpLGFkdjc1MTEudHh0CisrKyAvZGV2L251bGwKQEAgLTEsMTQzICswLDAgQEAKLUFuYWxv
-ZyBEZXZpY2VzIEFEVjc1MTEoVykvMTMvMzMvMzUgSERNSSBFbmNvZGVycwotLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCi0KLVRoZSBBRFY3NTExLCBBRFY3
-NTExVywgQURWNzUxMywgQURWNzUzMyBhbmQgQURWNzUzNSBhcmUgSERNSSBhdWRpbyBhbmQgdmlk
-ZW8KLXRyYW5zbWl0dGVycyBjb21wYXRpYmxlIHdpdGggSERNSSAxLjQgYW5kIERWSSAxLjAuIFRo
-ZXkgc3VwcG9ydCBjb2xvciBzcGFjZQotY29udmVyc2lvbiwgUy9QRElGLCBDRUMgYW5kIEhEQ1Au
-IEFEVjc1MzMvNSBzdXBwb3J0cyB0aGUgRFNJIGludGVyZmFjZSBmb3IgaW5wdXQKLXBpeGVscywg
-d2hpbGUgdGhlIG90aGVycyBzdXBwb3J0IFJHQiBpbnRlcmZhY2UuCi0KLVJlcXVpcmVkIHByb3Bl
-cnRpZXM6Ci0KLS0gY29tcGF0aWJsZTogU2hvdWxkIGJlIG9uZSBvZjoKLQkJImFkaSxhZHY3NTEx
-IgotCQkiYWRpLGFkdjc1MTF3IgotCQkiYWRpLGFkdjc1MTMiCi0JCSJhZGksYWR2NzUzMyIKLQkJ
-ImFkaSxhZHY3NTM1IgotCi0tIHJlZzogSTJDIHNsYXZlIGFkZHJlc3NlcwotICBUaGUgQURWNzUx
-MSBpbnRlcm5hbCByZWdpc3RlcnMgYXJlIHNwbGl0IGludG8gZm91ciBwYWdlcyBleHBvc2VkIHRo
-cm91Z2gKLSAgZGlmZmVyZW50IEkyQyBhZGRyZXNzZXMsIGNyZWF0aW5nIGZvdXIgcmVnaXN0ZXIg
-bWFwcy4gRWFjaCBtYXAgaGFzIGl0IG93bgotICBJMkMgYWRkcmVzcyBhbmQgYWN0cyBhcyBhIHN0
-YW5kYXJkIHNsYXZlIGRldmljZSBvbiB0aGUgSTJDIGJ1cy4gVGhlIG1haW4KLSAgYWRkcmVzcyBp
-cyBtYW5kYXRvcnksIG90aGVycyBhcmUgb3B0aW9uYWwgYW5kIHJldmVydCB0byBkZWZhdWx0cyBp
-ZiBub3QKLSAgc3BlY2lmaWVkLgotCi0KLVRoZSBBRFY3NTExIHN1cHBvcnRzIGEgbGFyZ2UgbnVt
-YmVyIG9mIGlucHV0IGRhdGEgZm9ybWF0cyB0aGF0IGRpZmZlciBieSB0aGVpcgotY29sb3IgZGVw
-dGgsIGNvbG9yIGZvcm1hdCwgY2xvY2sgbW9kZSwgYml0IGp1c3RpZmljYXRpb24gYW5kIHJhbmRv
-bQotYXJyYW5nZW1lbnQgb2YgY29tcG9uZW50cyBvbiB0aGUgZGF0YSBidXMuIFRoZSBjb21iaW5h
-dGlvbiBvZiB0aGUgZm9sbG93aW5nCi1wcm9wZXJ0aWVzIGRlc2NyaWJlIHRoZSBpbnB1dCBhbmQg
-bWFwIGRpcmVjdGx5IHRvIHRoZSB2aWRlbyBpbnB1dCB0YWJsZXMgb2YgdGhlCi1BRFY3NTExIGRh
-dGFzaGVldCB0aGF0IGRvY3VtZW50IGFsbCB0aGUgc3VwcG9ydGVkIGNvbWJpbmF0aW9ucy4KLQot
-LSBhZGksaW5wdXQtZGVwdGg6IE51bWJlciBvZiBiaXRzIHBlciBjb2xvciBjb21wb25lbnQgYXQg
-dGhlIGlucHV0ICg4LCAxMCBvcgotICAxMikuCi0tIGFkaSxpbnB1dC1jb2xvcnNwYWNlOiBUaGUg
-aW5wdXQgY29sb3Igc3BhY2UsIG9uZSBvZiAicmdiIiwgInl1djQyMiIgb3IKLSAgInl1djQ0NCIu
-Ci0tIGFkaSxpbnB1dC1jbG9jazogVGhlIGlucHV0IGNsb2NrIHR5cGUsIG9uZSBvZiAiMXgiIChv
-bmUgY2xvY2sgY3ljbGUgcGVyCi0gIHBpeGVsKSwgIjJ4IiAodHdvIGNsb2NrIGN5Y2xlcyBwZXIg
-cGl4ZWwpLCAiZGRyIiAob25lIGNsb2NrIGN5Y2xlIHBlciBwaXhlbCwKLSAgZGF0YSBkcml2ZW4g
-b24gYm90aCBlZGdlcykuCi0KLVRoZSBmb2xsb3dpbmcgaW5wdXQgZm9ybWF0IHByb3BlcnRpZXMg
-YXJlIHJlcXVpcmVkIGV4Y2VwdCBpbiAicmdiIDF4IiBhbmQKLSJ5dXY0NDQgMXgiIG1vZGVzLCBp
-biB3aGljaCBjYXNlIHRoZXkgbXVzdCBub3QgYmUgc3BlY2lmaWVkLgotCi0tIGFkaSxpbnB1dC1z
-dHlsZTogVGhlIGlucHV0IGNvbXBvbmVudHMgYXJyYW5nZW1lbnQgdmFyaWFudCAoMSwgMiBvciAz
-KSwgYXMKLSAgbGlzdGVkIGluIHRoZSBpbnB1dCBmb3JtYXQgdGFibGVzIGluIHRoZSBkYXRhc2hl
-ZXQuCi0tIGFkaSxpbnB1dC1qdXN0aWZpY2F0aW9uOiBUaGUgaW5wdXQgYml0IGp1c3RpZmljYXRp
-b24gKCJsZWZ0IiwgImV2ZW5seSIsCi0gICJyaWdodCIpLgotCi0tIGF2ZGQtc3VwcGx5OiBBIDEu
-OFYgc3VwcGx5IHRoYXQgcG93ZXJzIHVwIHRoZSBBVkREIHBpbiBvbiB0aGUgY2hpcC4KLS0gZHZk
-ZC1zdXBwbHk6IEEgMS44ViBzdXBwbHkgdGhhdCBwb3dlcnMgdXAgdGhlIERWREQgcGluIG9uIHRo
-ZSBjaGlwLgotLSBwdmRkLXN1cHBseTogQSAxLjhWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUg
-UFZERCBwaW4gb24gdGhlIGNoaXAuCi0tIGR2ZGQtM3Ytc3VwcGx5OiBBIDMuM1Ygc3VwcGx5IHRo
-YXQgcG93ZXJzIHVwIHRoZSBwaW4gY2FsbGVkIERWRERfM1YKLSAgb24gdGhlIGNoaXAuCi0tIGJn
-dmRkLXN1cHBseTogQSAxLjhWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgQkdWREQgcGluLiBU
-aGlzIGlzCi0gIG5lZWRlZCBvbmx5IGZvciBBRFY3NTExLgotCi1UaGUgZm9sbG93aW5nIHByb3Bl
-cnRpZXMgYXJlIHJlcXVpcmVkIGZvciBBRFY3NTMzIGFuZCBBRFY3NTM1OgotCi0tIGFkaSxkc2kt
-bGFuZXM6IE51bWJlciBvZiBEU0kgZGF0YSBsYW5lcyBjb25uZWN0ZWQgdG8gdGhlIERTSSBob3N0
-LiBJdCBzaG91bGQKLSAgYmUgb25lIG9mIDEsIDIsIDMgb3IgNC4KLS0gYTJ2ZGQtc3VwcGx5OiAx
-LjhWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgQTJWREQgcGluIG9uIHRoZSBjaGlwLgotLSB2
-M3AzLXN1cHBseTogQSAzLjNWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgVjNQMyBwaW4gb24g
-dGhlIGNoaXAuCi0tIHYxcDItc3VwcGx5OiBBIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgVjFQ
-MiBwaW4gb24gdGhlIGNoaXAuIEl0IGNhbiBiZQotICBlaXRoZXIgMS4yViBvciAxLjhWIGZvciBB
-RFY3NTMzIGJ1dCBvbmx5IDEuOFYgZm9yIEFEVjc1MzUuCi0KLU9wdGlvbmFsIHByb3BlcnRpZXM6
-Ci0KLS0gaW50ZXJydXB0czogU3BlY2lmaWVyIGZvciB0aGUgQURWNzUxMSBpbnRlcnJ1cHQKLS0g
-cGQtZ3Bpb3M6IFNwZWNpZmllciBmb3IgdGhlIEdQSU8gY29ubmVjdGVkIHRvIHRoZSBwb3dlciBk
-b3duIHNpZ25hbAotCi0tIGFkaSxjbG9jay1kZWxheTogVmlkZW8gZGF0YSBjbG9jayBkZWxheSBy
-ZWxhdGl2ZSB0byB0aGUgcGl4ZWwgY2xvY2ssIGluIHBzCi0gICgtMTIwMCBwcyAuLiAxNjAwIHBz
-KS4gRGVmYXVsdHMgdG8gbm8gZGVsYXkuCi0tIGFkaSxlbWJlZGRlZC1zeW5jOiBUaGUgaW5wdXQg
-dXNlcyBzeW5jaHJvbml6YXRpb24gc2lnbmFscyBlbWJlZGRlZCBpbiB0aGUKLSAgZGF0YSBzdHJl
-YW0gKHNpbWlsYXIgdG8gQlQuNjU2KS4gRGVmYXVsdHMgdG8gc2VwYXJhdGUgSC9WIHN5bmNocm9u
-aXphdGlvbgotICBzaWduYWxzLgotLSBhZGksZGlzYWJsZS10aW1pbmctZ2VuZXJhdG9yOiBPbmx5
-IGZvciBBRFY3NTMzIGFuZCBBRFY3NTM1LiBEaXNhYmxlcyB0aGUKLSAgaW50ZXJuYWwgdGltaW5n
-IGdlbmVyYXRvci4gVGhlIGNoaXAgd2lsbCByZWx5IG9uIHRoZSBzeW5jIHNpZ25hbHMgaW4gdGhl
-Ci0gIERTSSBkYXRhIGxhbmVzLCByYXRoZXIgdGhhbiBnZW5lcmF0ZSBpdHMgb3duIHRpbWluZ3Mg
-Zm9yIEhETUkgb3V0cHV0LgotLSBjbG9ja3M6IGZyb20gY29tbW9uIGNsb2NrIGJpbmRpbmc6IHJl
-ZmVyZW5jZSB0byB0aGUgQ0VDIGNsb2NrLgotLSBjbG9jay1uYW1lczogZnJvbSBjb21tb24gY2xv
-Y2sgYmluZGluZzogbXVzdCBiZSAiY2VjIi4KLS0gcmVnLW5hbWVzIDogTmFtZXMgb2YgbWFwcyB3
-aXRoIHByb2dyYW1tYWJsZSBhZGRyZXNzZXMuCi0JSXQgY2FuIGNvbnRhaW4gYW55IG1hcCBuZWVk
-aW5nIGEgbm9uLWRlZmF1bHQgYWRkcmVzcy4KLQlQb3NzaWJsZSBtYXBzIG5hbWVzIGFyZSA6ICJt
-YWluIiwgImVkaWQiLCAiY2VjIiwgInBhY2tldCIKLQotUmVxdWlyZWQgbm9kZXM6Ci0KLVRoZSBB
-RFY3NTExIGhhcyB0d28gdmlkZW8gcG9ydHMuIFRoZWlyIGNvbm5lY3Rpb25zIGFyZSBtb2RlbGxl
-ZCB1c2luZyB0aGUgT0YKLWdyYXBoIGJpbmRpbmdzIHNwZWNpZmllZCBpbiBEb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvZ3JhcGgudHh0LgotCi0tIFZpZGVvIHBvcnQgMCBmb3IgdGhl
-IFJHQiwgWVVWIG9yIERTSSBpbnB1dC4gSW4gdGhlIGNhc2Ugb2YgQURWNzUzMy81LCB0aGUKLSAg
-cmVtb3RlIGVuZHBvaW50IHBoYW5kbGUgc2hvdWxkIGJlIGEgcmVmZXJlbmNlIHRvIGEgdmFsaWQg
-bWlwaV9kc2lfaG9zdCBkZXZpY2UKLSAgbm9kZS4KLS0gVmlkZW8gcG9ydCAxIGZvciB0aGUgSERN
-SSBvdXRwdXQKLS0gQXVkaW8gcG9ydCAyIGZvciB0aGUgSERNSSBhdWRpbyBpbnB1dAotCi0KLUV4
-YW1wbGUKLS0tLS0tLS0KLQotCWFkdjc1MTF3OiBoZG1pQDM5IHsKLQkJY29tcGF0aWJsZSA9ICJh
-ZGksYWR2NzUxMXciOwotCQkvKgotCQkgKiBUaGUgRURJRCBwYWdlIHdpbGwgYmUgYWNjZXNzaWJs
-ZSBvbiBhZGRyZXNzIDB4NjYgb24gdGhlIEkyQwotCQkgKiBidXMuIEFsbCBvdGhlciBtYXBzIGNv
-bnRpbnVlIHRvIHVzZSB0aGVpciBkZWZhdWx0IGFkZHJlc3Nlcy4KLQkJICovCi0JCXJlZyA9IDww
-eDM5PiwgPDB4NjY+OwotCQlyZWctbmFtZXMgPSAibWFpbiIsICJlZGlkIjsKLQkJaW50ZXJydXB0
-LXBhcmVudCA9IDwmZ3BpbzM+OwotCQlpbnRlcnJ1cHRzID0gPDI5IElSUV9UWVBFX0VER0VfRkFM
-TElORz47Ci0JCWNsb2NrcyA9IDwmY2VjX2Nsb2NrPjsKLQkJY2xvY2stbmFtZXMgPSAiY2VjIjsK
-LQotCQlhZGksaW5wdXQtZGVwdGggPSA8OD47Ci0JCWFkaSxpbnB1dC1jb2xvcnNwYWNlID0gInJn
-YiI7Ci0JCWFkaSxpbnB1dC1jbG9jayA9ICIxeCI7Ci0JCWFkaSxpbnB1dC1zdHlsZSA9IDwxPjsK
-LQkJYWRpLGlucHV0LWp1c3RpZmljYXRpb24gPSAiZXZlbmx5IjsKLQotCQlwb3J0cyB7Ci0JCQkj
-YWRkcmVzcy1jZWxscyA9IDwxPjsKLQkJCSNzaXplLWNlbGxzID0gPDA+OwotCi0JCQlwb3J0QDAg
-ewotCQkJCXJlZyA9IDwwPjsKLQkJCQlhZHY3NTExd19pbjogZW5kcG9pbnQgewotCQkJCQlyZW1v
-dGUtZW5kcG9pbnQgPSA8JmRwaV9vdXQ+OwotCQkJCX07Ci0JCQl9OwotCi0JCQlwb3J0QDEgewot
-CQkJCXJlZyA9IDwxPjsKLQkJCQlhZHY3NTExX291dDogZW5kcG9pbnQgewotCQkJCQlyZW1vdGUt
-ZW5kcG9pbnQgPSA8JmhkbWlfY29ubmVjdG9yX2luPjsKLQkJCQl9OwotCQkJfTsKLQotCQkJcG9y
-dEAyIHsKLQkJCQlyZWcgPSA8Mj47Ci0JCQkJY29kZWNfZW5kcG9pbnQ6IGVuZHBvaW50IHsKLQkJ
-CQkJcmVtb3RlLWVuZHBvaW50ID0gPCZpMnMwX2NwdV9lbmRwb2ludD47Ci0JCQkJfTsKLQkJCX07
-Ci0JCX07Ci0JfTsKZGlmZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5n
-cy9kaXNwbGF5L2JyaWRnZS9hZGksYWR2NzUxMS55YW1sIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0
-cmVlL2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTExLnlhbWwKbmV3IGZpbGUgbW9k
-ZSAxMDA2NDQKaW5kZXggMDAwMDAwMDAwMDAwLi5hMzA2YWRiYTEwNWYKLS0tIC9kZXYvbnVsbAor
-KysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvYWRp
-LGFkdjc1MTEueWFtbApAQCAtMCwwICsxLDIzMyBAQAorIyBTUERYLUxpY2Vuc2UtSWRlbnRpZmll
-cjogR1BMLTIuMC1vbmx5CislWUFNTCAxLjIKKy0tLQorJGlkOiBodHRwOi8vZGV2aWNldHJlZS5v
-cmcvc2NoZW1hcy9kaXNwbGF5L2JyaWRnZS9hZGksYWR2NzUxMS55YW1sIworJHNjaGVtYTogaHR0
-cDovL2RldmljZXRyZWUub3JnL21ldGEtc2NoZW1hcy9jb3JlLnlhbWwjCisKK3RpdGxlOiBBbmFs
-b2cgRGV2aWNlcyBBRFY3NTExLzExVy8xMyBIRE1JIEVuY29kZXJzCisKK21haW50YWluZXJzOgor
-ICAtIExhdXJlbnQgUGluY2hhcnQgPGxhdXJlbnQucGluY2hhcnRAaWRlYXNvbmJvYXJkLmNvbT4K
-KworZGVzY3JpcHRpb246IHwKKyAgVGhlIEFEVjc1MTEsIEFEVjc1MTFXIGFuZCBBRFY3NTEzIGFy
-ZSBIRE1JIGF1ZGlvIGFuZCB2aWRlbworICB0cmFuc21pdHRlcnMgY29tcGF0aWJsZSB3aXRoIEhE
-TUkgMS40IGFuZCBEVkkgMS4wLiBUaGV5IHN1cHBvcnQgY29sb3IKKyAgc3BhY2UgY29udmVyc2lv
-biwgUy9QRElGLCBDRUMgYW5kIEhEQ1AuIFRoZXkgc3VwcG9ydCBSR0IgaW5wdXQKKyAgaW50ZXJm
-YWNlLgorCitwcm9wZXJ0aWVzOgorICBjb21wYXRpYmxlOgorICAgIGVudW06CisgICAgICAtIGFk
-aSxhZHY3NTExCisgICAgICAtIGFkaSxhZHY3NTExdworICAgICAgLSBhZGksYWR2NzUxMworCisg
-IHJlZzoKKyAgICBkZXNjcmlwdGlvbjogfAorICAgICAgSTJDIHNsYXZlIGFkZHJlc3Nlcy4KKwor
-ICAgICAgVGhlIEFEVjc1MTEvMTFXLzEzIGludGVybmFsIHJlZ2lzdGVycyBhcmUgc3BsaXQgaW50
-byBmb3VyIHBhZ2VzCisgICAgICBleHBvc2VkIHRocm91Z2ggZGlmZmVyZW50IEkyQyBhZGRyZXNz
-ZXMsIGNyZWF0aW5nIGZvdXIgcmVnaXN0ZXIKKyAgICAgIG1hcHMuIEVhY2ggbWFwIGhhcyBpdCBv
-d24gSTJDIGFkZHJlc3MgYW5kIGFjdHMgYXMgYSBzdGFuZGFyZCBzbGF2ZQorICAgICAgZGV2aWNl
-IG9uIHRoZSBJMkMgYnVzLiBUaGUgbWFpbiBhZGRyZXNzIGlzIG1hbmRhdG9yeSwgb3RoZXJzIGFy
-ZQorICAgICAgb3B0aW9uYWwgYW5kIHJldmVydCB0byBkZWZhdWx0cyBpZiBub3Qgc3BlY2lmaWVk
-LgorICAgIG1pbkl0ZW1zOiAxCisgICAgbWF4SXRlbXM6IDQKKworICByZWctbmFtZXM6CisgICAg
-ZGVzY3JpcHRpb246CisgICAgICBOYW1lcyBvZiBtYXBzIHdpdGggcHJvZ3JhbW1hYmxlIGFkZHJl
-c3Nlcy4gSXQgY2FuIGNvbnRhaW4gYW55IG1hcAorICAgICAgbmVlZGluZyBhIG5vbi1kZWZhdWx0
-IGFkZHJlc3MuCisgICAgbWluSXRlbXM6IDEKKyAgICBpdGVtczoKKyAgICAgIC0gY29uc3Q6IG1h
-aW4KKyAgICAgIC0gY29uc3Q6IGVkaWQKKyAgICAgIC0gY29uc3Q6IGNlYworICAgICAgLSBjb25z
-dDogcGFja2V0CisKKyAgY2xvY2tzOgorICAgIGRlc2NyaXB0aW9uOiBSZWZlcmVuY2UgdG8gdGhl
-IENFQyBjbG9jay4KKyAgICBtYXhJdGVtczogMQorCisgIGNsb2NrLW5hbWVzOgorICAgIGNvbnN0
-OiBjZWMKKworICBpbnRlcnJ1cHRzOgorICAgIG1heEl0ZW1zOiAxCisKKyAgcGQtZ3Bpb3M6Cisg
-ICAgZGVzY3JpcHRpb246IEdQSU8gY29ubmVjdGVkIHRvIHRoZSBwb3dlciBkb3duIHNpZ25hbC4K
-KyAgICBtYXhJdGVtczogMQorCisgIGF2ZGQtc3VwcGx5OgorICAgIGRlc2NyaXB0aW9uOiBBIDEu
-OFYgc3VwcGx5IHRoYXQgcG93ZXJzIHVwIHRoZSBBVkREIHBpbi4KKworICBkdmRkLXN1cHBseToK
-KyAgICBkZXNjcmlwdGlvbjogQSAxLjhWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgRFZERCBw
-aW4uCisKKyAgcHZkZC1zdXBwbHk6CisgICAgZGVzY3JpcHRpb246IEEgMS44ViBzdXBwbHkgdGhh
-dCBwb3dlcnMgdXAgdGhlIFBWREQgcGluLgorCisgIGR2ZGQtM3Ytc3VwcGx5OgorICAgIGRlc2Ny
-aXB0aW9uOiBBIDMuM1Ygc3VwcGx5IHRoYXQgcG93ZXJzIHVwIHRoZSBEVkREXzNWIHBpbi4KKwor
-ICBiZ3ZkZC1zdXBwbHk6CisgICAgZGVzY3JpcHRpb246IEEgMS44ViBzdXBwbHkgdGhhdCBwb3dl
-cnMgdXAgdGhlIEJHVkREIHBpbi4KKworICBhZGksaW5wdXQtZGVwdGg6CisgICAgZGVzY3JpcHRp
-b246IE51bWJlciBvZiBiaXRzIHBlciBjb2xvciBjb21wb25lbnQgYXQgdGhlIGlucHV0LgorICAg
-IGFsbE9mOgorICAgICAgLSAkcmVmOiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0aW9ucy91
-aW50MzIKKyAgICAgIC0gZW51bTogWyA4LCAxMCwgMTIgXQorCisgIGFkaSxpbnB1dC1jb2xvcnNw
-YWNlOgorICAgIGRlc2NyaXB0aW9uOiBJbnB1dCBjb2xvciBzcGFjZS4KKyAgICBhbGxPZjoKKyAg
-ICAgIC0gJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvc3RyaW5nCisgICAg
-ICAtIGVudW06IFsgcmdiLCB5dXY0MjIsIHl1djQ0NCBdCisKKyAgYWRpLGlucHV0LWNsb2NrOgor
-ICAgIGRlc2NyaXB0aW9uOiB8CisgICAgICBJbnB1dCBjbG9jayB0eXBlLgorICAgICAgICAiMXgi
-OiBvbmUgY2xvY2sgY3ljbGUgcGVyIHBpeGVsCisgICAgICAgICIyeCI6IHR3byBjbG9jayBjeWNs
-ZXMgcGVyIHBpeGVsCisgICAgICAgICJkZCI6IG9uZSBjbG9jayBjeWNsZSBwZXIgcGl4ZWwsIGRh
-dGEgZHJpdmVuIG9uIGJvdGggZWRnZXMKKyAgICBhbGxPZjoKKyAgICAgIC0gJHJlZjogL3NjaGVt
-YXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvc3RyaW5nCisgICAgICAtIGVudW06IFsgMXgsIDJ4
-LCBkZCBdCisKKyAgYWRpLGNsb2NrLWRlbGF5OgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgVmlk
-ZW8gZGF0YSBjbG9jayBkZWxheSByZWxhdGl2ZSB0byB0aGUgcGl4ZWwgY2xvY2ssIGluIHBzCisg
-ICAgICAoLTEyMDBwcyAuLiAxNjAwIHBzKS4KKyAgICBhbGxPZjoKKyAgICAgIC0gJHJlZjogL3Nj
-aGVtYXMvdHlwZXMueWFtbCMvZGVmaW5pdGlvbnMvdWludDMyCisgICAgICAtIGRlZmF1bHQ6IDAK
-KworICBhZGksZW1iZWRkZWQtc3luYzoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBpbnB1
-dCB1c2VzIHN5bmNocm9uaXphdGlvbiBzaWduYWxzIGVtYmVkZGVkIGluIHRoZSBkYXRhCisgICAg
-ICBzdHJlYW0gKHNpbWlsYXIgdG8gQlQuNjU2KS4gRGVmYXVsdHMgdG8gMCAoc2VwYXJhdGUgSC9W
-CisgICAgICBzeW5jaHJvbml6YXRpb24gc2lnbmFscykuCisgICAgYWxsT2Y6CisgICAgICAtICRy
-ZWY6IC9zY2hlbWFzL3R5cGVzLnlhbWwjL2RlZmluaXRpb25zL3VpbnQzMgorICAgICAgLSBlbnVt
-OiBbIDAsIDEgXQorICAgICAgLSBkZWZhdWx0OiAwCisKKyAgYWRpLGlucHV0LXN0eWxlOgorICAg
-IGRlc2NyaXB0aW9uOgorICAgICAgSW5wdXQgY29tcG9uZW50cyBhcnJhbmdlbWVudCB2YXJpYW50
-IGFzIGxpc3RlZCBpbiB0aGUgaW5wdXQKKyAgICAgIGZvcm1hdCB0YWJsZXMgaW4gdGhlIGRhdGFz
-aGVldC4KKyAgICBhbGxPZjoKKyAgICAgIC0gJHJlZjogL3NjaGVtYXMvdHlwZXMueWFtbCMvZGVm
-aW5pdGlvbnMvdWludDMyCisgICAgICAtIGVudW06IFsgMSwgMiwgMyBdCisKKyAgYWRpLGlucHV0
-LWp1c3RpZmljYXRpb246CisgICAgZGVzY3JpcHRpb246IElucHV0IGJpdCBqdXN0aWZpY2F0aW9u
-LgorICAgIGFsbE9mOgorICAgICAgLSAkcmVmOiAvc2NoZW1hcy90eXBlcy55YW1sIy9kZWZpbml0
-aW9ucy9zdHJpbmcKKyAgICAgIC0gZW51bTogWyBsZWZ0LCBldmVubHksIHJpZ2h0IF0KKworICBw
-b3J0czoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBBRFY3NTExKFcpLzEzIGhhcyB0d28g
-dmlkZW8gcG9ydHMgYW5kIG9uZSBhdWRpbyBwb3J0LiBUaGlzIG5vZGUKKyAgICAgIG1vZGVscyB0
-aGVpciBjb25uZWN0aW9ucyBhcyBkb2N1bWVudGVkIGluCisgICAgICBEb2N1bWVudGF0aW9uL2Rl
-dmljZXRyZWUvYmluZGluZ3MvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy50eHQKKyAgICAgIERvY3Vt
-ZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncmFwaC50eHQKKyAgICB0eXBlOiBvYmplY3QK
-KyAgICBwcm9wZXJ0aWVzOgorICAgICAgcG9ydEAwOgorICAgICAgICBkZXNjcmlwdGlvbjogVmlk
-ZW8gcG9ydCBmb3IgdGhlIFJHQiwgWVVWIG9yIERTSSBpbnB1dC4KKyAgICAgICAgdHlwZTogb2Jq
-ZWN0CisKKyAgICAgIHBvcnRAMToKKyAgICAgICAgZGVzY3JpcHRpb246IFZpZGVvIHBvcnQgZm9y
-IHRoZSBIRE1JIG91dHB1dC4KKyAgICAgICAgdHlwZTogb2JqZWN0CisKKyAgICAgIHBvcnRAMjoK
-KyAgICAgICAgZGVzY3JpcHRpb246IEF1ZGlvIHBvcnQgZm9yIHRoZSBIRE1JIG91dHB1dC4KKyAg
-ICAgICAgdHlwZTogb2JqZWN0CisKKyMgYWRpLGlucHV0LWNvbG9yc3BhY2UgYW5kIGFkaSxpbnB1
-dC1jbG9jayBhcmUgcmVxdWlyZWQgZXhjZXB0IGluCisjICJyZ2IgMXgiIGFuZCAieXV2NDQ0IDF4
-IiBtb2RlcywgaW4gd2hpY2ggY2FzZSB0aGV5IG11c3Qgbm90IGJlCisjIHNwZWNpZmllZC4KK2lm
-OgorICBub3Q6CisgICAgcHJvcGVydGllczoKKyAgICAgIGFkaSxpbnB1dC1jb2xvcnNwYWNlOgor
-ICAgICAgICBjb250YWluczoKKyAgICAgICAgICBlbnVtOiBbIHJnYiwgeXV2NDQ0IF0KKyAgICAg
-IGFkaSxpbnB1dC1jbG9jazoKKyAgICAgICAgY29udGFpbnM6CisgICAgICAgICAgY29uc3Q6IDF4
-CisKK3RoZW46CisgIHJlcXVpcmVkOgorICAgIC0gYWRpLGlucHV0LXN0eWxlCisgICAgLSBhZGks
-aW5wdXQtanVzdGlmaWNhdGlvbgorCitlbHNlOgorICBwcm9wZXJ0aWVzOgorICAgIGFkaSxpbnB1
-dC1zdHlsZTogZmFsc2UKKyAgICBhZGksaW5wdXQtanVzdGlmaWNhdGlvbjogZmFsc2UKKworCity
-ZXF1aXJlZDoKKyAgLSBjb21wYXRpYmxlCisgIC0gcmVnCisgIC0gcG9ydHMKKyAgLSBhZGksaW5w
-dXQtZGVwdGgKKyAgLSBhZGksaW5wdXQtY29sb3JzcGFjZQorICAtIGFkaSxpbnB1dC1jbG9jawor
-CitleGFtcGxlczoKKyAgLSB8CisgICAgI2luY2x1ZGUgPGR0LWJpbmRpbmdzL2ludGVycnVwdC1j
-b250cm9sbGVyL2lycS5oPgorCisgICAgYWR2NzUxMXc6IGhkbWlAMzkgeworICAgICAgICBjb21w
-YXRpYmxlID0gImFkaSxhZHY3NTExdyI7CisgICAgICAgIC8qCisgICAgICAgICAqIFRoZSBFRElE
-IHBhZ2Ugd2lsbCBiZSBhY2Nlc3NpYmxlIG9uIGFkZHJlc3MgMHg2NiBvbiB0aGUgSTJDCisgICAg
-ICAgICAqIGJ1cy4gQWxsIG90aGVyIG1hcHMgY29udGludWUgdG8gdXNlIHRoZWlyIGRlZmF1bHQg
-YWRkcmVzc2VzLgorICAgICAgICAgKi8KKyAgICAgICAgcmVnID0gPDB4Mzk+LCA8MHg2Nj47Cisg
-ICAgICAgIHJlZy1uYW1lcyA9ICJtYWluIiwgImVkaWQiOworICAgICAgICBpbnRlcnJ1cHQtcGFy
-ZW50ID0gPCZncGlvMz47CisgICAgICAgIGludGVycnVwdHMgPSA8MjkgSVJRX1RZUEVfRURHRV9G
-QUxMSU5HPjsKKyAgICAgICAgY2xvY2tzID0gPCZjZWNfY2xvY2s+OworICAgICAgICBjbG9jay1u
-YW1lcyA9ICJjZWMiOworCisgICAgICAgIGFkaSxpbnB1dC1kZXB0aCA9IDw4PjsKKyAgICAgICAg
-YWRpLGlucHV0LWNvbG9yc3BhY2UgPSAieXV2NDIyIjsKKyAgICAgICAgYWRpLGlucHV0LWNsb2Nr
-ID0gIjF4IjsKKworICAgICAgICBhZGksaW5wdXQtc3R5bGUgPSA8Mz47CisgICAgICAgIGFkaSxp
-bnB1dC1qdXN0aWZpY2F0aW9uID0gInJpZ2h0IjsKKyAgICAgICAgcG9ydHMgeworICAgICAgICAg
-ICAgI2FkZHJlc3MtY2VsbHMgPSA8MT47CisgICAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwwPjsK
-KworICAgICAgICAgICAgcG9ydEAwIHsKKyAgICAgICAgICAgICAgICByZWcgPSA8MD47CisgICAg
-ICAgICAgICAgICAgYWR2NzUxMXdfaW46IGVuZHBvaW50IHsKKyAgICAgICAgICAgICAgICAgICAg
-cmVtb3RlLWVuZHBvaW50ID0gPCZkcGlfb3V0PjsKKyAgICAgICAgICAgICAgICB9OworICAgICAg
-ICAgICAgfTsKKworICAgICAgICAgICAgcG9ydEAxIHsKKyAgICAgICAgICAgICAgICByZWcgPSA8
-MT47CisgICAgICAgICAgICAgICAgYWR2NzUxMV9vdXQ6IGVuZHBvaW50IHsKKyAgICAgICAgICAg
-ICAgICAgICAgcmVtb3RlLWVuZHBvaW50ID0gPCZoZG1pX2Nvbm5lY3Rvcl9pbj47CisgICAgICAg
-ICAgICAgICAgfTsKKyAgICAgICAgICAgIH07CisKKyAgICAgICAgICAgIHBvcnRAMiB7CisgICAg
-ICAgICAgICAgICAgcmVnID0gPDI+OworICAgICAgICAgICAgICAgIGNvZGVjX2VuZHBvaW50OiBl
-bmRwb2ludCB7CisgICAgICAgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmaTJzMF9j
-cHVfZW5kcG9pbnQ+OworICAgICAgICAgICAgICAgIH07CisgICAgICAgICAgICB9OworICAgICAg
-ICB9OworICAgIH07CisKKy4uLgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
-L2JpbmRpbmdzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTMzLnlhbWwgYi9Eb2N1bWVudGF0aW9u
-L2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9icmlkZ2UvYWRpLGFkdjc1MzMueWFtbApuZXcg
-ZmlsZSBtb2RlIDEwMDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLmRmY2M2M2RmYzVjNQotLS0gL2Rl
-di9udWxsCisrKyBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L2Jy
-aWRnZS9hZGksYWR2NzUzMy55YW1sCkBAIC0wLDAgKzEsMTY2IEBACisjIFNQRFgtTGljZW5zZS1J
-ZGVudGlmaWVyOiBHUEwtMi4wLW9ubHkKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZp
-Y2V0cmVlLm9yZy9zY2hlbWFzL2Rpc3BsYXkvYnJpZGdlL2FkaSxhZHY3NTMzLnlhbWwjCiskc2No
-ZW1hOiBodHRwOi8vZGV2aWNldHJlZS5vcmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0
-bGU6IEFuYWxvZyBEZXZpY2VzIEFEVjc1MzMvMzUgSERNSSBFbmNvZGVycworCittYWludGFpbmVy
-czoKKyAgLSBMYXVyZW50IFBpbmNoYXJ0IDxsYXVyZW50LnBpbmNoYXJ0QGlkZWFzb25ib2FyZC5j
-b20+CisKK2Rlc2NyaXB0aW9uOiB8CisgIFRoZSBBRFY3NTMzIGFuZCBBRFY3NTM1IGFyZSBIRE1J
-IGF1ZGlvIGFuZCB2aWRlbyB0cmFuc21pdHRlcnMKKyAgY29tcGF0aWJsZSB3aXRoIEhETUkgMS40
-IGFuZCBEVkkgMS4wLiBUaGV5IHN1cHBvcnQgY29sb3Igc3BhY2UKKyAgY29udmVyc2lvbiwgUy9Q
-RElGLCBDRUMgYW5kIEhEQ1AuIFRoZXkgc3VwcG9ydCBEU0kgZm9yIGlucHV0IHBpeGVscy4KKwor
-cHJvcGVydGllczoKKyAgY29tcGF0aWJsZToKKyAgICBlbnVtOgorICAgICAgLSBhZGksYWR2NzUz
-MworICAgICAgLSBhZGksYWR2NzUzNQorCisgIHJlZzoKKyAgICBkZXNjcmlwdGlvbjogfAorICAg
-ICAgSTJDIHNsYXZlIGFkZHJlc3Nlcy4KKworICAgICAgVGhlIEFEVjc1MzMvMzUgaW50ZXJuYWwg
-cmVnaXN0ZXJzIGFyZSBzcGxpdCBpbnRvIGZvdXIgcGFnZXMKKyAgICAgIGV4cG9zZWQgdGhyb3Vn
-aCBkaWZmZXJlbnQgSTJDIGFkZHJlc3NlcywgY3JlYXRpbmcgZm91ciByZWdpc3RlcgorICAgICAg
-bWFwcy4gRWFjaCBtYXAgaGFzIGl0IG93biBJMkMgYWRkcmVzcyBhbmQgYWN0cyBhcyBhIHN0YW5k
-YXJkIHNsYXZlCisgICAgICBkZXZpY2Ugb24gdGhlIEkyQyBidXMuIFRoZSBtYWluIGFkZHJlc3Mg
-aXMgbWFuZGF0b3J5LCBvdGhlcnMgYXJlCisgICAgICBvcHRpb25hbCBhbmQgcmV2ZXJ0IHRvIGRl
-ZmF1bHRzIGlmIG5vdCBzcGVjaWZpZWQuCisgICAgbWluSXRlbXM6IDEKKyAgICBtYXhJdGVtczog
-NAorCisgIHJlZy1uYW1lczoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIE5hbWVzIG9mIG1hcHMg
-d2l0aCBwcm9ncmFtbWFibGUgYWRkcmVzc2VzLiBJdCBjYW4gY29udGFpbiBhbnkgbWFwCisgICAg
-ICBuZWVkaW5nIGEgbm9uLWRlZmF1bHQgYWRkcmVzcy4KKyAgICBtaW5JdGVtczogMQorICAgIGl0
-ZW1zOgorICAgICAgLSBjb25zdDogbWFpbgorICAgICAgLSBjb25zdDogZWRpZAorICAgICAgLSBj
-b25zdDogY2VjCisgICAgICAtIGNvbnN0OiBwYWNrZXQKKworICBjbG9ja3M6CisgICAgZGVzY3Jp
-cHRpb246IFJlZmVyZW5jZSB0byB0aGUgQ0VDIGNsb2NrLgorICAgIG1heEl0ZW1zOiAxCisKKyAg
-Y2xvY2stbmFtZXM6CisgICAgY29uc3Q6IGNlYworCisgIGludGVycnVwdHM6CisgICAgbWF4SXRl
-bXM6IDEKKworICBwZC1ncGlvczoKKyAgICBkZXNjcmlwdGlvbjogR1BJTyBjb25uZWN0ZWQgdG8g
-dGhlIHBvd2VyIGRvd24gc2lnbmFsLgorICAgIG1heEl0ZW1zOiAxCisKKyAgYXZkZC1zdXBwbHk6
-CisgICAgZGVzY3JpcHRpb246IEEgMS44ViBzdXBwbHkgdGhhdCBwb3dlcnMgdXAgdGhlIEFWREQg
-cGluLgorCisgIGR2ZGQtc3VwcGx5OgorICAgIGRlc2NyaXB0aW9uOiBBIDEuOFYgc3VwcGx5IHRo
-YXQgcG93ZXJzIHVwIHRoZSBEVkREIHBpbi4KKworICBwdmRkLXN1cHBseToKKyAgICBkZXNjcmlw
-dGlvbjogQSAxLjhWIHN1cHBseSB0aGF0IHBvd2VycyB1cCB0aGUgUFZERCBwaW4uCisKKyAgYTJ2
-ZGQtc3VwcGx5OgorICAgIGRlc2NyaXB0aW9uOiBBIDEuOFYgc3VwcGx5IHRoYXQgcG93ZXJzIHVw
-IHRoZSBBMlZERCBwaW4uCisKKyAgdjNwMy1zdXBwbHk6CisgICAgZGVzY3JpcHRpb246IEEgMy4z
-ViBzdXBwbHkgdGhhdCBwb3dlcnMgdXAgdGhlIFYzUDMgcGluLgorCisgIHYxcDItc3VwcGx5Ogor
-ICAgIGRlc2NyaXB0aW9uOgorICAgICAgQSBzdXBwbHkgdGhhdCBwb3dlcnMgdXAgdGhlIFYxUDIg
-cGluLiBJdCBjYW4gYmUgZWl0aGVyIDEuMlYKKyAgICAgIG9yIDEuOFYgZm9yIEFEVjc1MzMgYnV0
-IG9ubHkgMS44ViBmb3IgQURWNzUzNS4KKworICBhZGksZGlzYWJsZS10aW1pbmctZ2VuZXJhdG9y
-OgorICAgIGRlc2NyaXB0aW9uOgorICAgICAgRGlzYWJsZXMgdGhlIGludGVyYWwgdGltaW5nIGdl
-bmVyYXRvci4gVGhlIGNoaXAgd2lsbCByZWx5IG9uIHRoZQorICAgICAgc3luYyBzaWduYWxzIGlu
-IHRoZSBEU0kgZGF0YSBsYW5lcywgcmF0aGVyIHRoYW4gZ2VuZXJhdGUgaXRzIG93bgorICAgICAg
-dGltaW5ncyBmb3IgSERNSSBvdXRwdXQuCisgICAgdHlwZTogYm9vbGVhbgorCisgIGFkaSxkc2kt
-bGFuZXM6CisgICAgZGVzY3JpcHRpb246IE51bWJlciBvZiBEU0kgZGF0YSBsYW5lcyBjb25uZWN0
-ZWQgdG8gdGhlIERTSSBob3N0LgorICAgIGFsbE9mOgorICAgICAgLSAkcmVmOiAvc2NoZW1hcy90
-eXBlcy55YW1sIy9kZWZpbml0aW9ucy91aW50MzIKKyAgICAgIC0gZW51bTogWyAxLCAyLCAzLCA0
-IF0KKworICBwb3J0czoKKyAgICBkZXNjcmlwdGlvbjoKKyAgICAgIFRoZSBBRFY3NTMzLzM1IGhh
-cyB0d28gdmlkZW8gcG9ydHMgYW5kIG9uZSBhdWRpbyBwb3J0LiBUaGlzIG5vZGUKKyAgICAgIG1v
-ZGVscyB0aGVpciBjb25uZWN0aW9ucyBhcyBkb2N1bWVudGVkIGluCisgICAgICBEb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3MvbWVkaWEvdmlkZW8taW50ZXJmYWNlcy50eHQKKyAgICAg
-IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncmFwaC50eHQKKyAgICB0eXBlOiBv
-YmplY3QKKyAgICBwcm9wZXJ0aWVzOgorICAgICAgcG9ydEAwOgorICAgICAgICBkZXNjcmlwdGlv
-bjoKKyAgICAgICAgICBWaWRlbyBwb3J0IGZvciB0aGUgUkdCLCBZVVYgb3IgRFNJIGlucHV0LiBU
-aGUgcmVtb3RlIGVuZHBvaW50CisgICAgICAgICAgcGhhbmRsZSBzaG91bGQgYmUgYSByZWZlcmVu
-Y2UgdG8gYSB2YWxpZCBtaXBpX2RzaV9ob3N0X2RldmljZS4KKyAgICAgICAgdHlwZTogb2JqZWN0
-CisKKyAgICAgIHBvcnRAMToKKyAgICAgICAgZGVzY3JpcHRpb246IFZpZGVvIHBvcnQgZm9yIHRo
-ZSBIRE1JIG91dHB1dC4KKyAgICAgICAgdHlwZTogb2JqZWN0CisKKyAgICAgIHBvcnRAMjoKKyAg
-ICAgICAgZGVzY3JpcHRpb246IEF1ZGlvIHBvcnQgZm9yIHRoZSBIRE1JIG91dHB1dC4KKyAgICAg
-ICAgdHlwZTogb2JqZWN0CisKK3JlcXVpcmVkOgorICAtIGNvbXBhdGlibGUKKyAgLSByZWcKKyAg
-LSBwb3J0cworICAtIGFkaSxkc2ktbGFuZXMKKworZXhhbXBsZXM6CisgIC0gfAorICAgICNpbmNs
-dWRlIDxkdC1iaW5kaW5ncy9pbnRlcnJ1cHQtY29udHJvbGxlci9pcnEuaD4KKworICAgIGFkdjc1
-MzM6IGhkbWlAMzkgeworICAgICAgICBjb21wYXRpYmxlID0gImFkaSxhZHY3NTMzIjsKKyAgICAg
-ICAgLyoKKyAgICAgICAgICogVGhlIEVESUQgcGFnZSB3aWxsIGJlIGFjY2Vzc2libGUgb24gYWRk
-cmVzcyAweDY2IG9uIHRoZSBJMkMKKyAgICAgICAgICogYnVzLiBBbGwgb3RoZXIgbWFwcyBjb250
-aW51ZSB0byB1c2UgdGhlaXIgZGVmYXVsdCBhZGRyZXNzZXMuCisgICAgICAgICAqLworICAgICAg
-ICByZWcgPSA8MHgzOT4sIDwweDY2PjsKKyAgICAgICAgcmVnLW5hbWVzID0gIm1haW4iLCAiZWRp
-ZCI7CisgICAgICAgIGludGVycnVwdC1wYXJlbnQgPSA8JmdwaW8zPjsKKyAgICAgICAgaW50ZXJy
-dXB0cyA9IDwyOSBJUlFfVFlQRV9FREdFX0ZBTExJTkc+OworICAgICAgICBjbG9ja3MgPSA8JmNl
-Y19jbG9jaz47CisgICAgICAgIGNsb2NrLW5hbWVzID0gImNlYyI7CisgICAgICAgIGFkaSxkc2kt
-bGFuZXMgPSA8ND47CisKKyAgICAgICAgcG9ydHMgeworICAgICAgICAgICAgI2FkZHJlc3MtY2Vs
-bHMgPSA8MT47CisgICAgICAgICAgICAjc2l6ZS1jZWxscyA9IDwwPjsKKworICAgICAgICAgICAg
-cG9ydEAwIHsKKyAgICAgICAgICAgICAgICByZWcgPSA8MD47CisgICAgICAgICAgICAgICAgYWR2
-NzUxMXdfaW46IGVuZHBvaW50IHsKKyAgICAgICAgICAgICAgICAgICAgcmVtb3RlLWVuZHBvaW50
-ID0gPCZkcGlfb3V0PjsKKyAgICAgICAgICAgICAgICB9OworICAgICAgICAgICAgfTsKKworICAg
-ICAgICAgICAgcG9ydEAxIHsKKyAgICAgICAgICAgICAgICByZWcgPSA8MT47CisgICAgICAgICAg
-ICAgICAgYWR2NzUxMV9vdXQ6IGVuZHBvaW50IHsKKyAgICAgICAgICAgICAgICAgICAgcmVtb3Rl
-LWVuZHBvaW50ID0gPCZoZG1pX2Nvbm5lY3Rvcl9pbj47CisgICAgICAgICAgICAgICAgfTsKKyAg
-ICAgICAgICAgIH07CisKKyAgICAgICAgICAgIHBvcnRAMiB7CisgICAgICAgICAgICAgICAgcmVn
-ID0gPDI+OworICAgICAgICAgICAgICAgIGNvZGVjX2VuZHBvaW50OiBlbmRwb2ludCB7CisgICAg
-ICAgICAgICAgICAgICAgIHJlbW90ZS1lbmRwb2ludCA9IDwmaTJzMF9jcHVfZW5kcG9pbnQ+Owor
-ICAgICAgICAgICAgICAgIH07CisgICAgICAgICAgICB9OworICAgICAgICB9OworICAgIH07CisK
-Ky4uLgotLSAKMi4xOC4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
-dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Mon, May 11, 2020 at 4:31 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+>
+> This feature will record first and last call_rcu() call stack and
+> print two call_rcu() call stack in KASAN report.
+>
+> When call_rcu() is called, we store the call_rcu() call stack into
+> slub alloc meta-data, so that KASAN report can print rcu stack.
+>
+> It doesn't increase the cost of memory consumption. Because we don't
+> enlarge struct kasan_alloc_meta size.
+> - add two call_rcu() call stack into kasan_alloc_meta, size is 8 bytes.
+> - remove free track from kasan_alloc_meta, size is 8 bytes.
+>
+> [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+> [2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
+>
+> Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> Cc: Dmitry Vyukov <dvyukov@google.com>
+> Cc: Alexander Potapenko <glider@google.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: Paul E. McKenney <paulmck@kernel.org>
+> Cc: Josh Triplett <josh@joshtriplett.org>
+> Cc: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+> Cc: Lai Jiangshan <jiangshanlai@gmail.com>
+> Cc: Joel Fernandes <joel@joelfernandes.org>
+> ---
+>  include/linux/kasan.h |  2 ++
+>  kernel/rcu/tree.c     |  3 +++
+>  lib/Kconfig.kasan     |  2 ++
+>  mm/kasan/common.c     |  4 ++--
+>  mm/kasan/generic.c    | 29 +++++++++++++++++++++++++++++
+>  mm/kasan/kasan.h      | 19 +++++++++++++++++++
+>  mm/kasan/report.c     | 21 +++++++++++++++++----
+>  7 files changed, 74 insertions(+), 6 deletions(-)
+>
+> diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> index 31314ca7c635..23b7ee00572d 100644
+> --- a/include/linux/kasan.h
+> +++ b/include/linux/kasan.h
+> @@ -174,11 +174,13 @@ static inline size_t kasan_metadata_size(struct kmem_cache *cache) { return 0; }
+>
+>  void kasan_cache_shrink(struct kmem_cache *cache);
+>  void kasan_cache_shutdown(struct kmem_cache *cache);
+> +void kasan_record_aux_stack(void *ptr);
+>
+>  #else /* CONFIG_KASAN_GENERIC */
+>
+>  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+>  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> +static inline void kasan_record_aux_stack(void *ptr) {}
+>
+>  #endif /* CONFIG_KASAN_GENERIC */
+>
+> diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
+> index 06548e2ebb72..de872b6cc261 100644
+> --- a/kernel/rcu/tree.c
+> +++ b/kernel/rcu/tree.c
+> @@ -57,6 +57,7 @@
+>  #include <linux/slab.h>
+>  #include <linux/sched/isolation.h>
+>  #include <linux/sched/clock.h>
+> +#include <linux/kasan.h>
+>  #include "../time/tick-internal.h"
+>
+>  #include "tree.h"
+> @@ -2694,6 +2695,8 @@ __call_rcu(struct rcu_head *head, rcu_callback_t func)
+>                 trace_rcu_callback(rcu_state.name, head,
+>                                    rcu_segcblist_n_cbs(&rdp->cblist));
+>
+> +       kasan_record_aux_stack(head);
+
+This happens after we queued the object onto some queue and after some
+return statements. I think this is wrong.
+We need to do this somewhere at the very beginning of the function.
+
+This is what I meant by "hard to review". This is completely invisible
+in the diff.
+
+
+>         /* Go handle any RCU core processing required. */
+>         if (IS_ENABLED(CONFIG_RCU_NOCB_CPU) &&
+>             unlikely(rcu_segcblist_is_offloaded(&rdp->cblist))) {
+> diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> index 81f5464ea9e1..56a89291f1cc 100644
+> --- a/lib/Kconfig.kasan
+> +++ b/lib/Kconfig.kasan
+> @@ -58,6 +58,8 @@ config KASAN_GENERIC
+>           For better error detection enable CONFIG_STACKTRACE.
+>           Currently CONFIG_KASAN_GENERIC doesn't work with CONFIG_DEBUG_SLAB
+>           (the resulting kernel does not boot).
+> +         Currently CONFIG_KASAN_GENERIC will print first and last call_rcu()
+> +         call stack. It doesn't increase the cost of memory consumption.
+>
+>  config KASAN_SW_TAGS
+>         bool "Software tag-based mode"
+> diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> index 2906358e42f0..8bc618289bb1 100644
+> --- a/mm/kasan/common.c
+> +++ b/mm/kasan/common.c
+> @@ -41,7 +41,7 @@
+>  #include "kasan.h"
+>  #include "../slab.h"
+>
+> -static inline depot_stack_handle_t save_stack(gfp_t flags)
+> +depot_stack_handle_t kasan_save_stack(gfp_t flags)
+>  {
+>         unsigned long entries[KASAN_STACK_DEPTH];
+>         unsigned int nr_entries;
+> @@ -54,7 +54,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
+>  static inline void set_track(struct kasan_track *track, gfp_t flags)
+>  {
+>         track->pid = current->pid;
+> -       track->stack = save_stack(flags);
+> +       track->stack = kasan_save_stack(flags);
+>  }
+>
+>  void kasan_enable_current(void)
+> diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> index 56ff8885fe2e..b86880c338e2 100644
+> --- a/mm/kasan/generic.c
+> +++ b/mm/kasan/generic.c
+> @@ -325,3 +325,32 @@ DEFINE_ASAN_SET_SHADOW(f2);
+>  DEFINE_ASAN_SET_SHADOW(f3);
+>  DEFINE_ASAN_SET_SHADOW(f5);
+>  DEFINE_ASAN_SET_SHADOW(f8);
+> +
+> +void kasan_record_aux_stack(void *addr)
+> +{
+> +       struct page *page = kasan_addr_to_page(addr);
+> +       struct kmem_cache *cache;
+> +       struct kasan_alloc_meta *alloc_info;
+> +       void *object;
+> +
+> +       if (!(page && PageSlab(page)))
+> +               return;
+> +
+> +       cache = page->slab_cache;
+> +       object = nearest_obj(cache, page, addr);
+> +       alloc_info = get_alloc_info(cache, object);
+> +
+> +       if (!alloc_info->rcu_stack[0])
+> +               /* record first call_rcu() call stack */
+> +               alloc_info->rcu_stack[0] = kasan_save_stack(GFP_NOWAIT);
+> +       else
+> +               /* record last call_rcu() call stack */
+> +               alloc_info->rcu_stack[1] = kasan_save_stack(GFP_NOWAIT);
+> +}
+> +
+> +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> +                                               u8 idx)
+> +{
+> +       return container_of(&alloc_info->rcu_stack[idx],
+> +                                               struct kasan_track, stack);
+> +}
+> diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
+> index e8f37199d885..1cc1fb7b0de3 100644
+> --- a/mm/kasan/kasan.h
+> +++ b/mm/kasan/kasan.h
+> @@ -96,15 +96,28 @@ struct kasan_track {
+>         depot_stack_handle_t stack;
+>  };
+>
+> +#ifdef CONFIG_KASAN_GENERIC
+> +#define SIZEOF_PTR sizeof(void *)
+> +#define KASAN_NR_RCU_CALL_STACKS 2
+> +#else /* CONFIG_KASAN_GENERIC */
+>  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+>  #define KASAN_NR_FREE_STACKS 5
+>  #else
+>  #define KASAN_NR_FREE_STACKS 1
+>  #endif
+> +#endif /* CONFIG_KASAN_GENERIC */
+>
+>  struct kasan_alloc_meta {
+>         struct kasan_track alloc_track;
+> +#ifdef CONFIG_KASAN_GENERIC
+> +       /*
+> +        * call_rcu() call stack is stored into struct kasan_alloc_meta.
+> +        * The free stack is stored into freed object.
+> +        */
+> +       depot_stack_handle_t rcu_stack[KASAN_NR_RCU_CALL_STACKS];
+> +#else
+>         struct kasan_track free_track[KASAN_NR_FREE_STACKS];
+> +#endif
+>  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+>         u8 free_pointer_tag[KASAN_NR_FREE_STACKS];
+>         u8 free_track_idx;
+> @@ -159,16 +172,22 @@ void kasan_report_invalid_free(void *object, unsigned long ip);
+>
+>  struct page *kasan_addr_to_page(const void *addr);
+>
+> +depot_stack_handle_t kasan_save_stack(gfp_t flags);
+> +
+>  #if defined(CONFIG_KASAN_GENERIC) && \
+>         (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+>  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
+>  void quarantine_reduce(void);
+>  void quarantine_remove_cache(struct kmem_cache *cache);
+> +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> +                       u8 idx);
+>  #else
+>  static inline void quarantine_put(struct kasan_free_meta *info,
+>                                 struct kmem_cache *cache) { }
+>  static inline void quarantine_reduce(void) { }
+>  static inline void quarantine_remove_cache(struct kmem_cache *cache) { }
+> +static inline struct kasan_track *kasan_get_aux_stack(
+> +                       struct kasan_alloc_meta *alloc_info, u8 idx) { return NULL; }
+>  #endif
+>
+>  #ifdef CONFIG_KASAN_SW_TAGS
+> diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> index 80f23c9da6b0..f16a1a210815 100644
+> --- a/mm/kasan/report.c
+> +++ b/mm/kasan/report.c
+> @@ -105,9 +105,13 @@ static void end_report(unsigned long *flags)
+>         kasan_enable_current();
+>  }
+>
+> -static void print_track(struct kasan_track *track, const char *prefix)
+> +static void print_track(struct kasan_track *track, const char *prefix,
+> +                                               bool is_callrcu)
+>  {
+> -       pr_err("%s by task %u:\n", prefix, track->pid);
+> +       if (is_callrcu)
+> +               pr_err("%s:\n", prefix);
+> +       else
+> +               pr_err("%s by task %u:\n", prefix, track->pid);
+>         if (track->stack) {
+>                 unsigned long *entries;
+>                 unsigned int nr_entries;
+> @@ -187,11 +191,20 @@ static void describe_object(struct kmem_cache *cache, void *object,
+>         if (cache->flags & SLAB_KASAN) {
+>                 struct kasan_track *free_track;
+>
+> -               print_track(&alloc_info->alloc_track, "Allocated");
+> +               print_track(&alloc_info->alloc_track, "Allocated", false);
+>                 pr_err("\n");
+>                 free_track = kasan_get_free_track(cache, object, tag);
+> -               print_track(free_track, "Freed");
+> +               print_track(free_track, "Freed", false);
+>                 pr_err("\n");
+> +
+> +               if (IS_ENABLED(CONFIG_KASAN_GENERIC)) {
+> +                       free_track = kasan_get_aux_stack(alloc_info, 0);
+> +                       print_track(free_track, "First call_rcu() call stack", true);
+> +                       pr_err("\n");
+> +                       free_track = kasan_get_aux_stack(alloc_info, 1);
+> +                       print_track(free_track, "Last call_rcu() call stack", true);
+> +                       pr_err("\n");
+> +               }
+>         }
+>
+>         describe_object_addr(cache, object, addr);
+> --
+> 2.18.0
+>
+> --
+> You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/20200511023111.15310-1-walter-zh.wu%40mediatek.com.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
