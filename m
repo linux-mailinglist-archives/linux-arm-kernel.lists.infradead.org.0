@@ -2,56 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18EB81CD677
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:23:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 797311CD690
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 12:29:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rvvhezDcaaSZCZnvskgh61MojTc6yaAB4M0p471di5k=; b=IpYhNZjo4LeZ8X
-	O2dybhPgYv5hwVSjmaXPmb+v1+jI810yBx6UXhvhuEwDom30V98GbAqaTJQwcHPCzAmpmAM1f0P/u
-	yEbAiaW2a2u9kevyerqhSceEdbiiy/7SRd1Woj568xlDuo1j3ukf6GGchO+MKnorBdQ/lSWPOuAX9
-	2uiRN8md1HYK9m19ogE7r0uyAY6FnlTM4y1M46Qd/9edr1/N2V6JDjdsPRp7mRkJ85QD8M0RZN0TZ
-	LiGAeX8BDzFkKkmwYAUT0Ofa2RA6lGmSjTiQXfuR7mKExTF0CbBqftxqxQdzhHVNv0nFVgi7PpFZ9
-	mntmV5fOEwwMzynMqdRw==;
+	List-Owner; bh=ilI38STsID77GBO/fewX8xwcykxTC6m8bQ0nqHsx5GI=; b=kkweFYQMo1rXBX
+	5Ww5lk8sF38xxHjGBYWXc5S4qhTwGQVZ8F7Rb4DErAYUXyrkWMy5LTaqjE0kUUl+DFfFpy6TNZw6s
+	0xgweDr6Eb/w1KiyGifbTU+JuenHc/1x+ecNbLkALavlp5kgyPmSXsrYY+KwCJKOy2/v+kbuSdWcz
+	d+1L2nNhtGWxGP5c/r8ChsuxIQnMQw4/XsvfISmXU9irvTzrYSUNZJUPuNyvBaWmrDK04kzvwKI4f
+	UmTnvoepgZ+MnFtVm3WEAm0iIfII9o4J7WNGh2yjD7ASP5fleF69lmL6pdUMGnLIxaNBmeTYW4+hc
+	QVMhrsT3FdxUE2IgfnzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY5aM-0004tu-5c; Mon, 11 May 2020 10:22:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY5aC-0004s8-6z; Mon, 11 May 2020 10:22:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7D3A51FB;
- Mon, 11 May 2020 03:22:43 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 4790F3F305;
- Mon, 11 May 2020 03:22:42 -0700 (PDT)
-Date: Mon, 11 May 2020 11:22:40 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+	id 1jY5gk-0008Bu-VO; Mon, 11 May 2020 10:29:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jY5gc-0008BE-TZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 10:29:28 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E97C02080C;
+ Mon, 11 May 2020 10:29:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589192966;
+ bh=/HtkDEUSJNCGLykcJeF51FbbiEEPPZDAt/jaVHdhRWc=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=J0vuf+ZotQeRxth/qHzk0monizmO/oZrY0XlTEMp3GOvKC2C9ZGzbBQsmEje6tfhV
+ drhODojTl9CKLTGN3jGxEvkg0amm8cChelSejV1audJqLmta+BCdVclouAv4z/FqLZ
+ 5UsKODnRShHCuOk9nIvWvHXpIdZ2tVePfXGqPstU=
+Date: Mon, 11 May 2020 11:29:21 +0100
+From: Will Deacon <will@kernel.org>
 To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH] PCI: amlogic: meson: Don't use FAST_LINK_MODE to set up
- link
-Message-ID: <20200511102239.GC24149@e121166-lin.cambridge.arm.com>
-References: <20200429164230.309922-1-maz@kernel.org>
+Subject: Re: [PATCH 06/15] arm64: kvm: Move __smccc_workaround_1_smc to .rodata
+Message-ID: <20200511102921.GA18310@willie-the-truck>
+References: <20200430144831.59194-1-dbrazdil@google.com>
+ <20200430144831.59194-7-dbrazdil@google.com>
+ <20200511110459.1fcf4db7@why>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200429164230.309922-1-maz@kernel.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200511110459.1fcf4db7@why>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_032248_295997_34455922 
-X-CRM114-Status: GOOD (  17.56  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_032926_973552_F6B8E286 
+X-CRM114-Status: GOOD (  18.48  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,68 +78,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Yue Wang <yue.wang@Amlogic.com>,
- Kevin Hilman <khilman@baylibre.com>, Bjorn Helgaas <bhelgaas@google.com>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ David Brazdil <dbrazdil@google.com>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Apr 29, 2020 at 05:42:30PM +0100, Marc Zyngier wrote:
-> My vim3l board stubbornly refuses to play ball with a bog
-> standard PCIe switch (ASM1184e), spitting all kind of errors
-> ranging from link never coming up to crazy things like downstream
-> ports falling off the face of the planet.
+On Mon, May 11, 2020 at 11:04:59AM +0100, Marc Zyngier wrote:
+> On Thu, 30 Apr 2020 15:48:22 +0100
+> David Brazdil <dbrazdil@google.com> wrote:
 > 
-> Upon investigating how the PCIe RC is configured, I found the
-> following nugget: the Sysnopsys DWC PCIe Reference Manual, in the
-> section dedicated to the PLCR register, describes bit 7 (FAST_LINK_MODE)
-> as:
+> > This snippet of assembly is used by cpu_errata.c to overwrite parts of KVM hyp
+> > vector. It is never directly executed, so move it from .text to .rodata.
+> > 
+> > Signed-off-by: David Brazdil <dbrazdil@google.com>
+> > ---
+> >  arch/arm64/kvm/hyp/hyp-entry.S | 6 ++++++
+> >  1 file changed, 6 insertions(+)
+> > 
+> > diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
+> > index 5986e1d78d3f..7e5f386c5c2d 100644
+> > --- a/arch/arm64/kvm/hyp/hyp-entry.S
+> > +++ b/arch/arm64/kvm/hyp/hyp-entry.S
+> > @@ -364,6 +364,11 @@ SYM_CODE_END(__bp_harden_hyp_vecs)
+> >  	.popsection
+> >  
+> >  #ifndef __HYPERVISOR__
+> > +	/*
+> > +	 * This is not executed directly and is instead copied into the vectors
+> > +	 * by install_bp_hardening_cb().
+> > +	 */
+> > +	.pushsection	.rodata
+> >  SYM_CODE_START(__smccc_workaround_1_smc)
 > 
-> "Sets all internal timers to fast mode for simulation purposes."
-> 
-> I completely understand the need for setting this bit from a simulation
-> perspective, but what I have on my desk is actual silicon, which
-> expects timers to have a nominal value (and I expect this is the
-> case for most people).
-> 
-> Making sure the FAST_LINK_MODE bit is cleared when configuring the RC
-> solves this problem.
-> 
-> Fixes: 9c0ef6d34fdb ("PCI: amlogic: Add the Amlogic Meson PCIe controller driver")
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  drivers/pci/controller/dwc/pci-meson.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+> I wonder whether we should keep the SYM_CODE_START() annotation or not.
+> It feels weird to say "code" in a rodata section, and the alignment
+> doesn't matter as we copy it in place, as you noticed.
 
-Reworded the commit log (even if yours was more fun :)) and applied
-to pci/dwc, thanks !
+The BTI patches hook these, but I don't see that being relevant for a
+vector entry as PSTATE.BTYPE is zapped to 0.
 
-Lorenzo
-
-> diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-> index 3715dceca1bf..ca59ba9e0ecd 100644
-> --- a/drivers/pci/controller/dwc/pci-meson.c
-> +++ b/drivers/pci/controller/dwc/pci-meson.c
-> @@ -289,11 +289,11 @@ static void meson_pcie_init_dw(struct meson_pcie *mp)
->  	meson_cfg_writel(mp, val, PCIE_CFG0);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val &= ~LINK_CAPABLE_MASK;
-> +	val &= ~(LINK_CAPABLE_MASK | FAST_LINK_MODE);
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val |= LINK_CAPABLE_X1 | FAST_LINK_MODE;
-> +	val |= LINK_CAPABLE_X1;
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_GEN2_CTRL_OFF);
-> -- 
-> 2.26.2
-> 
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
