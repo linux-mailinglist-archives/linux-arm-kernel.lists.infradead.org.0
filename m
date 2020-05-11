@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F254D1CD824
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:26:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 912D41CD837
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:27:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=skONZw8oom7jW3kti7NoaUvWkB+hUNWVy2Vl8xgV9C0=; b=SRkGZseLs+0HYvU0KppoTsimY
-	WCrVCgL+BA2umJotQSCux+7RNanV7gcnhEYHHhN3/TSWN/46+fMaOcgpzE8O1ZaB5i7LuASk+YmEi
-	l44T6/ErIxUxOJmOSznmizdVonZv0J2XcyVP1w5TxBVkTttx1Lai1RKMGb8P6SzDU0T65Q5nuVedK
-	X+KN/3F/n1l5iNLsoYYGsAKsKPx4w6P/JXCGgLG5MGLdrThOLeuLoi2zipdJGooEqKBCWmY7h03WC
-	1gZ5I44o4+fsAhm7mh+96SVL5H37keT1IBHGUtcgSELtZLzSyFdxUf9ja8dNt/cyP5bCY7fhUv5Q+
-	f/uLza0PQ==;
+	 bh=fY9VN8us4WPWkgXsx32bFx590vetwP9Kxmtwyuhf608=; b=NHS2Zdn02Y0NvKK2U+5VSHq1G
+	sFc1Ri/Uhk9gQQx7Rvt37le/cKt/TtEO3pXbZFseuKb6giSmlD6tqyqdTYnovgo9C18RsWfweaKvk
+	V2+YaSetvYTRa3NogOXJLPoKeayydK9088JLTt0bYfv5qt5jFS0U2Sc9d5ax0KmPxjXarARJbPKJf
+	sEiA4/EkpXV7zn8xiJomw8NEuyh4VpbjXIH61WElBnu5RcZVX2NERO0rgAEXBAhg1hlK5qtNrj/lw
+	fmh+i2hiRTuKmNeWtfkxic3OroVyLCrixYy7RtFLzGsiIHmbXGQlagiNASzgUdlCQG+YlR/xgSxA4
+	TM7BC1D+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6a2-0006sy-B1; Mon, 11 May 2020 11:26:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6YX-00040f-Ok
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:25:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D3D7F101E;
- Mon, 11 May 2020 04:25:06 -0700 (PDT)
-Received: from [10.57.36.85] (unknown [10.57.36.85])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 823AC3F305;
- Mon, 11 May 2020 04:25:05 -0700 (PDT)
-Subject: Re: arm64: tegra186: bpmp: kernel crash while decompressing initrd
-To: Mian Yousaf Kaukab <ykaukab@suse.de>, talho@nvidia.com,
- thierry.reding@gmail.com, jonathanh@nvidia.com, linux-tegra@vger.kernel.org
-References: <20200508084041.23366-1-ykaukab@suse.de>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e01aba39-1f81-de00-2f7e-dd7295baa7ed@arm.com>
-Date: Mon, 11 May 2020 12:25:00 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jY6ak-0007ge-DY; Mon, 11 May 2020 11:27:26 +0000
+Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jY6Zi-0006qN-AV
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:26:33 +0000
+Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.106])
+ by Forcepoint Email with ESMTP id 3774A85C518BDB71CCA5;
+ Mon, 11 May 2020 12:26:15 +0100 (IST)
+Received: from [127.0.0.1] (10.47.0.142) by lhreml724-chm.china.huawei.com
+ (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Mon, 11 May
+ 2020 12:26:13 +0100
+Subject: Re: [PATCH RFC v3 09/12] perf metricgroup: Split up
+ metricgroup__add_metric()
+To: Jiri Olsa <jolsa@redhat.com>, <qiangqing.zhang@nxp.com>
+References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
+ <1588852671-61996-10-git-send-email-john.garry@huawei.com>
+ <20200511110118.GA2986380@krava>
+From: John Garry <john.garry@huawei.com>
+Message-ID: <eeb29c90-52fc-fd17-6ad0-745372a1a15d@huawei.com>
+Date: Mon, 11 May 2020 12:25:22 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.1.2
 MIME-Version: 1.0
-In-Reply-To: <20200508084041.23366-1-ykaukab@suse.de>
-Content-Language: en-GB
+In-Reply-To: <20200511110118.GA2986380@krava>
+Content-Language: en-US
+X-Originating-IP: [10.47.0.142]
+X-ClientProxiedBy: lhreml705-chm.china.huawei.com (10.201.108.54) To
+ lhreml724-chm.china.huawei.com (10.201.108.75)
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_042509_964504_F2E17F9A 
-X-CRM114-Status: GOOD (  23.79  )
+X-CRM114-CacheID: sfid-20200511_042622_531584_715F1296 
+X-CRM114-Status: GOOD (  17.47  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [185.176.76.210 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [185.176.76.210 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,110 +74,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- afaerber@suse.de
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: mark.rutland@arm.com, irogers@google.com, ak@linux.intel.com,
+ peterz@infradead.org, robin.murphy@arm.com, linuxarm@huawei.com,
+ acme@kernel.org, linux-kernel@vger.kernel.org, zhangshaokun@hisilicon.com,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAyMC0wNS0wOCA5OjQwIGFtLCBNaWFuIFlvdXNhZiBLYXVrYWIgd3JvdGU6Cj4gSSBhbSBz
-ZWVpbmcgZm9sbG93aW5nIGtlcm5lbCBjcmFzaCBvbiBKZXRzb24gVFgyLiBCb2FyZCBpcyBmbGFz
-aGVkIHdpdGgKPiBmaXJtd2FyZSBiaXRzIGZyb20gTDRUIFIzMi40LjIgd2l0aCB1cHN0cmVhbSB1
-LWJvb3QuIENyYXNoIGFsd2F5cwo+IGhhcHBlbnMgd2hpbGUgZGVjb21wcmVzc2luZyBpbml0cmQu
-IEluaXRyZCBpcyBhcHByb3hpbWF0ZWx5IDgwIE1pQiBpbgo+IHNpemUgYW5kIGNvbXByZXNzZWQg
-d2l0aCB4eiAoeHogLS1jaGVjaz1jcmMzMiAtLWx6bWEyPWRpY3Q9MzJNaUIpLgo+IENyYXNoIGlz
-IG5vdCBvYnNlcnZlZCBpZiB0aGUgc2FtZSBpbml0cmQgaXMgY29tcHJlc3NlZCB3aXRoIGd6aXAu
-Cj4gWzFdIHdhcyBhIHByZXZpb3VzIGF0dGVtcHQgdG8gd29ya2Fyb3VuZCB0aGUgc2FtZSBpc3N1
-ZS4KPiAKPiBbICAgIDAuNjUxMTY4XSBUcnlpbmcgdG8gdW5wYWNrIHJvb3RmcyBpbWFnZSBhcyBp
-bml0cmFtZnMuLi4KPiBbICAgIDIuODkwMTcxXSBTRXJyb3IgSW50ZXJydXB0IG9uIENQVTAsIGNv
-ZGUgMHhiZjQwYzAwMCAtLSBTRXJyb3IKPiBbICAgIDIuODkwMTc0XSBDUFU6IDAgUElEOiAxIENv
-bW06IHN3YXBwZXIvMCBUYWludGVkOiBHIFMgICAgICAgICAgICAgICAgNS43LjAtcmM0LW5leHQt
-MjAyMDA1MDUgIzIyCj4gWyAgICAyLjg5MDE3NV0gSGFyZHdhcmUgbmFtZTogbnZpZGlhIHAyNzcx
-LTAwMDAvcDI3NzEtMDAwMCwgQklPUyAyMDIwLjA0LXJjMyAwMy8yNS8yMDIwCj4gWyAgICAyLjg5
-MDE3Nl0gcHN0YXRlOiAyMDAwMDAwNSAobnpDdiBkYWlmIC1QQU4gLVVBTyBCVFlQRT0tLSkKPiBb
-ICAgIDIuODkwMTc3XSBwYyA6IGx6bWFfbWFpbisweDY0OC8weDkwOAo+IFsgICAgMi44OTAxNzhd
-IGxyIDogbHptYV9tYWluKzB4MzMwLzB4OTA4Cj4gWyAgICAyLjg5MDE3OV0gc3AgOiBmZmZmODAw
-MDEwMDNiYjcwCj4gWyAgICAyLjg5MDE4MF0geDI5OiBmZmZmODAwMDEwMDNiYjcwIHgyODogMDAw
-MDAwMDAwNGQ3OTRhNAo+IFsgICAgMi44OTAxODNdIHgyNzogMDAwMDAwMDAwNDc2OTk0MSB4MjY6
-IGZmZmYwMDAxZWIwNjQwMDAKPiBbICAgIDIuODkwMTg1XSB4MjU6IGZmZmYwMDAxZWIwNjAwMjgg
-eDI0OiAwMDAwMDAwMDAwMDAwMDAyCj4gWyAgICAyLjg5MDE4N10geDIzOiAwMDAwMDAwMDAwMDAw
-MDAzIHgyMjogMDAwMDAwMDAwMDAwMDAwNwo+IFsgICAgMi44OTAxODldIHgyMTogMDAwMDAwMDAw
-MDYxMWY0YiB4MjA6IGZmZmYwMDAxZWIwNjAwMDAKPiBbICAgIDIuODkwMTkyXSB4MTk6IGZmZmY4
-MDAwMTAwM2JjYjggeDE4OiAwMDAwMDAwMDAwMDAwMDY4Cj4gWyAgICAyLjg5MDE5NF0geDE3OiAw
-MDAwMDAwMDAwMDAwMGMwIHgxNjogZmZmZmZlMDAwNzZiMjEwOAo+IFsgICAgMi44OTAxOTZdIHgx
-NTogMDAwMDAwMDAwMDAwMDgwMCB4MTQ6IDAwMDAwMDAwMDBmZmZmZmYKPiBbICAgIDIuODkwMTk4
-XSB4MTM6IDAwMDAwMDAwMDAwMDAwMDEgeDEyOiBmZmZmMDAwMWViMDYwMDAwCj4gWyAgICAyLjg5
-MDIwMF0geDExOiAwMDAwMDAwMDAwMDAwNjAwIHgxMDogZmZmZjAwMDFlYjA2MDAyOAo+IFsgICAg
-Mi44OTAyMDJdIHg5IDogMDAwMDAwMDBmZmJiMmEwOCB4OCA6IDAwMDAwMDAwMDAwMDBlZDAKPiBb
-ICAgIDIuODkwMjA0XSB4NyA6IDAwMDAwMDAwMDExNTUzZWMgeDYgOiAwMDAwMDAwMDAwMDAwMDAw
-Cj4gWyAgICAyLjg5MDIwNl0geDUgOiAwMDAwMDAwMDAwMDAwMDAwIHg0IDogMDAwMDAwMDAwMDAw
-MDAwNgo+IFsgICAgMi44OTAyMDhdIHgzIDogMDAwMDAwMDAwMTVhMjllNCB4MiA6IGZmZmYwMDAx
-ZWIwNjJkMGMKPiBbICAgIDIuODkwMjEwXSB4MSA6IDAwMDAwMDAwMDAwMDAwMGMgeDAgOiAwMDAw
-MDAwMDAyNjNkZTQ0Cj4gCj4gV2l0aCBzb21lIGRlYnVnZ2luZyBhaWQgcG9ydGVkIGZyb20gTnZp
-ZGlhIGRvd25zdHJlYW0ga2VybmVsIFsyXSB0aGUKPiBhY3R1YWwgY2F1c2Ugd2FzIGZvdW5kOgo+
-IAo+IFsgICAgMC43NjE1MjVdIFRyeWluZyB0byB1bnBhY2sgcm9vdGZzIGltYWdlIGFzIGluaXRy
-YW1mcy4uLgo+IFsgICAgMi45NTU0OTldIENQVTA6IFNFcnJvcjogbXBpZHI9MHg4MDAwMDEwMCwg
-ZXNyPTB4YmY0MGMwMDAKPiBbICAgIDIuOTU1NTAyXSBDUFUxOiBTRXJyb3I6IG1waWRyPTB4ODAw
-MDAwMDAsIGVzcj0weGJlMDAwMDAwCj4gWyAgICAyLjk1NTUwNV0gQ1BVMjogU0Vycm9yOiBtcGlk
-cj0weDgwMDAwMDAxLCBlc3I9MHhiZTAwMDAwMAo+IFsgICAgMi45NTU1MDZdIENQVTM6IFNFcnJv
-cjogbXBpZHI9MHg4MDAwMDEwMSwgZXNyPTB4YmY0MGMwMDAKPiBbICAgIDIuOTU1NTA3XSBST0M6
-Q0NFIE1hY2hpbmUgQ2hlY2sgRXJyb3I6Cj4gWyAgICAyLjk1NTUwOF0gUk9DOkNDRSBSZWdpc3Rl
-cnM6Cj4gWyAgICAyLjk1NTUwOV0gIFNUQVQ6IDB4YjQwMDAwMDAwMDQwMDQxNQo+IFsgICAgMi45
-NTU1MTBdICBBRERSOiAweDQwMGMwMGU3YTAwYwo+IFsgICAgMi45NTU1MTFdICBNU0MxOiAweDgw
-ZmZjCj4gWyAgICAyLjk1NTUxMl0gIE1TQzI6IDB4MzkwMDAwMDAwMDgwMAo+IFsgICAgMi45NTU1
-MTNdIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCj4gWyAgICAyLjk1NTUx
-NF0gRGVjb2RlZCBST0M6Q0NFIE1hY2hpbmUgQ2hlY2s6Cj4gWyAgICAyLjk1NTUxNV0gIFVuY29y
-cmVjdGVkICh0aGlzIGlzIGZhdGFsKQo+IFsgICAgMi45NTU1MTZdICBFcnJvciByZXBvcnRpbmcg
-ZW5hYmxlZCB3aGVuIGVycm9yIGFycml2ZWQKPiBbICAgIDIuOTU1NTE3XSAgRXJyb3IgQ29kZSA9
-IDB4NDE1Cj4gWyAgICAyLjk1NTUxOF0gIFBvaXNvbiBFcnJvcgo+IFsgICAgMi45NTU1MThdICBD
-b21tYW5kID0gTkNSZCAoMHhjKQo+IFsgICAgMi45NTU1MTldICBBZGRyZXNzIFR5cGUgPSBOb24t
-U2VjdXJlIERSQU0KPiBbICAgIDIuOTU1NTIxXSAgQWRkcmVzcyA9IDB4MzAwMzllODAgLS0gMzAw
-MDAwMDAuc3lzcmFtICsgMHgzOWU4MAo+IFsgICAgMi45NTU1MjFdICBUTGltaXQgPSAweDNmZgo+
-IFsgICAgMi45NTU1MjJdICBQb2lzb24gRXJyb3IgTWFzayA9IDB4ODAKPiBbICAgIDIuOTU1NTIz
-XSAgTW9yZSBJbmZvID0gMHg4MDAKPiBbICAgIDIuOTU1NTI0XSAgVGltZW91dCBJbmZvID0gMHgw
-Cj4gWyAgICAyLjk1NTUyNV0gICAgICAgICAgUG9pc29uIEluZm8gPSAweDgwMAo+IFsgICAgMi45
-NTU1MjZdICAgICAgICAgIFJlYWQgUmVxdWVzdCBmYWlsZWQgR1NDIGNoZWNrcwo+IFsgICAgMi45
-NTU1MjddICBTb3VyY2UgPSBMMl8xIChBNTcpICgweDEpCj4gWyAgICAyLjk1NTUyOF0gIFRJRCA9
-IDB4ZQo+IAo+IElJVUMsIHRoZXJlIHdhcyByZWFkIHJlcXVlc3QgZm9yIDB4MzAwMzllODAgZnJv
-bSBFTDEvMiB3aGljaCBmYWlsZWQuCj4gVGhpcyBhZGRyZXNzIGZhbGxzIGluIHRoZSBzeXNyYW0g
-c2VjdXJpdHkgYXBlcnR1cmUgYW5kIGhlbmNlIGEgcmVhZAo+IGZyb20gbm9ybWFsIG1vZGUgZmFp
-bGVkLgo+IAo+IHN5c3JhbSBpcyBtYXBwZWQgYXQgMHgzMDAwXzAwMDAgdG8gMHgzMDA0X2ZmZmYg
-YW5kIGlzIG1hbmFnZWQgYnkgdGhlCj4gc3JhbSBkcml2ZXIgKGRyaXZlcnMvbWlzYy9zcmFtLmMp
-LiBUaGVyZSBhcmUgdHdvIHJlc2VydmVkIHBvb2xzIGZvcgo+IEJQTVAgZHJpdmVyIGNvbW11bmlj
-YXRpb24gYXQgMHgzMDA0X2UwMDAgYW5kIDB4MzAwNF9mMDAwIG9mIDB4MTAwMAo+IGJ5dGVzIGVh
-Y2guCj4gCj4gc3JhbSBkcml2ZXIgbWFwcyBjb21wbGV0ZSAweDMwMDBfMDAwMCB0byAweDMwMDRf
-ZmZmZiByYW5nZSBhcyBub3JtYWwKPiBtZW1vcnkuCgpUaGF0J3MgeW91ciBwcm9ibGVtLiBJdCdz
-IG5vdCByZWFsbHkgd29ydGggYXR0ZW1wdGluZyB0byByZWFzb24gYWJvdXQsIAp0aGUgYXJjaGl0
-ZWN0dXJlIHNheXMgdGhhdCBhbnl0aGluZyBtYXBwZWQgYXMgTm9ybWFsIG1lbW9yeSBtYXkgYmUg
-CnNwZWN1bGF0aXZlbHkgYWNjZXNzZWQgYXQgYW55IHRpbWUsIHNvIG5vIGFtb3VudCBvZiBzZWNv
-bmQtZ3Vlc3NpbmcgaXMgCmdvaW5nIHRvIHNhdmUgeW91IGluIGdlbmVyYWwuIERvbid0IG1ha2Ug
-c3R1ZmYgYWNjZXNzaWJsZSB0byB0aGUga2VybmVsIAp0aGF0IGl0IGRvZXNuJ3QgbmVlZCB0byBh
-Y2Nlc3MsIGFuZCBlc3BlY2lhbGx5IGRvbid0IG1ha2Ugc3R1ZmYgCmFjY2Vzc2libGUgdG8gdGhl
-IGtlcm5lbCBpZiBhY2Nlc3NpbmcgaXQgd2lsbCBraWxsIHRoZSBzeXN0ZW0uCgo+IEhvd2V2ZXIs
-IG9ubHkgdGhlIEJQTVAgcmVzZXJ2ZWQgcG9vbHMgKDB4MzAwNF9lMDAwIC0gMHgzMDA0X2ZmZmYp
-Cj4gYXJlIGFjY2Vzc2libGUgZnJvbSB0aGUga2VybmVsLiBBZGRyZXNzIDB4MzAwM185ZTgwIGlz
-IGluYWNjZXNzaWJsZQo+IGZyb20gdGhlIGtlcm5lbCBhbmQgYSByZWFkIHRvIGl0ICh3aGljaCBJ
-IGJlbGlldmUgaXMgc3BlY3VsYXRpdmUpCj4gY2F1c2VzIHRoZSBTRXJyb3IuIE9ubHkgZHJpdmVy
-IHdoaWNoIHVzZXMgc3lzcmFtIGlzIG5vdCBpbml0aWFsaXplZCBhdAo+IHRoaXMgcG9pbnQgKHJv
-b3Rmc19pbml0Y2FsbCBsZXZlbCkuIEFzIHNpbmNlCj4gY29tbWl0IGQ3MGY1ZTU0MWFiMyAoImZp
-cm13YXJlOiB0ZWdyYTogTWFrZSBCUE1QIGEgcmVndWxhciBkcml2ZXIiKQo+IGJwbXAgZHJpdmVy
-IGlzIGluaXRpYWxpemVkIGF0IGRldmljZV9pbml0Y2FsbCBsZXZlbC4KPiAKPiBJZiBub25lIG9m
-IHRoZSBkcml2ZXJzIG9uIHRoZSBrZXJuZWwgc2lkZSB1c2luZyAweDMwMDNfOWU4MCBhZGRyZXNz
-Cj4gcmFuZ2UuIFdoeSBhIHJlYWQgdG8gaXQgb2NjdXJzIGV2ZW4gc3BlY3VsYXRpdmVseT8gQ291
-bGQgaXQgYmUgdGhhdAo+IHNvbWUgRUwzIHNvZnR3YXJlIGRpZG7igJl0IGNsZWFudXAgYWZ0ZXIg
-aXRzZWxmIHByb3Blcmx5PyBBbnkKPiBzdWdnZXN0aW9ucyBvbiBkZWJ1Z2dpbmcgdGhpcyBpc3N1
-ZSBmdXJ0aGVyPwo+IAo+IEFub3RoZXIgc29sdXRpb24gc3VnZ2VzdGVkIGluIFsxXSB3YXMgdG8g
-YWRkIG5vLW1lbW9yeS13YyBpbiBzeXNyYW0KPiBub2RlIGluIGRldmljZS10cmVlIHNvIHRoYXQg
-c3lzcmFtIGlzIG1hcHBlZCBhcyBkZXZpY2UtbWVtb3J5LiBUaHVzCj4gcHJldmVudGluZyBhbnkg
-c3BlY3VsYXRpdmUgYWNjZXNzLiBIb3dldmVyLCBpdCBjYXVzZXMgYW5vdGhlciBzZXQgb2YKPiBp
-c3N1ZXMgd2l0aCB0aGUgYnBtcCBkcml2ZXIuIFRoYXQncyBtYXkgYmUgYSBkaXNjdXNzaW9uIGZv
-ciBhbm90aGVyCj4gdGltZS4KCkFGQUlDUyB0aGUgdHJ1bHkgY29ycmVjdCBzb2x1dGlvbiBpcyB3
-aGF0IFN0ZXBoZW4gaW5pdGlhbGx5IHN1Z2dlc3RlZCAKdGhlcmUgLSBmb3IgdGhlIGJvb3QgcHJv
-Y2VzcyB0byBzb21laG93IGRlc2NyaWJlIHdoaWNoIHBhcnRzIG9mIFNSQU0gCmhhdmUgYmVlbiBy
-ZXNlcnZlZCBieSBTZWN1cmUgc29mdHdhcmUgYW5kL29yIHdoaWNoIHBhcnRzIHJlbWFpbiAKTm9u
-LVNlY3VyZSwgYW5kIGZvciB0aGUga2VybmVsIGRyaXZlciB0byBvbmx5IG1hcCBhbmQgdXNlIHRo
-ZSBsYXR0ZXIuCgpSb2Jpbi4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 11/05/2020 12:01, Jiri Olsa wrote:
+> On Thu, May 07, 2020 at 07:57:48PM +0800, John Garry wrote:
+>> To aid supporting system event metric groups, break up the function
+>> metricgroup__add_metric() into a part which iterates metrics and a part
+>> which actually "adds" the metric.
+>>
+>> No functional change intended.
+> 
+> this no longer applied on Arnaldo's perf/core,
+
+
+Hi jirka,
+
+> it's very busy part now :-\
+
+Right.
+
+So I could rebase and resend, but I rather avoid that if possible since 
+the metric code is so busy.
+
+The point is that I would like to see progress on the kernel part first 
+(to expose per-PMU sysfs identifier file). Once we agreement there, then 
+I can promote this series to non-RFC and ensure I'm based on acme tip.
+
+Hi Joakim, can you progress 
+https://lore.kernel.org/linux-arm-kernel/20200226073433.5834-1-qiangqing.zhang@nxp.com/ 
+to non-RFC now?
+
+Thanks,
+John
+
+
+> 
+> jirka
+> 
+>>
+>> Signed-off-by: John Garry <john.garry@huawei.com>
+>> ---
+>>   tools/perf/util/metricgroup.c | 75 ++++++++++++++++++++++++++-----------------
+>>   1 file changed, 45 insertions(+), 30 deletions(-)
+>>
+>> diff --git a/tools/perf/util/metricgroup.c b/tools/perf/util/metricgroup.c
+>> index 926449a7cdbf..d1033756a1bc 100644
+>> --- a/tools/perf/util/metricgroup.c
+>> +++ b/tools/perf/util/metricgroup.c
+>> @@ -231,6 +231,12 @@ static bool match_metric(const char *n, const char *list)
+>>   	return false;
+>>   }
+>>   
+>> +static bool match_pe_metric(struct pmu_event *pe, const char *metric)
+>> +{
+>> +	return match_metric(pe->metric_group, metric) ||
+>> +	       match_metric(pe->metric_name, metric);
+>> +}
+>> +
+>>   struct mep {
+>>   	struct rb_node nd;
+>>   	const char *name;
+>> @@ -485,6 +491,40 @@ static bool metricgroup__has_constraint(struct pmu_event *pe)
+>>   	return false;
+>>   }
+>>   
+>> +static int metricgroup__add_metric_pmu_event(struct pmu_event *pe,
+>> +					     struct strbuf *events,
+>> +					     struct list_head *group_list)
+>> +{
+>> +	const char **ids;
+>> +	int idnum;
+>> +	struct egroup *eg;
+>> +
+>> +	pr_debug("metric expr %s for %s\n", pe->metric_expr, pe->metric_name);
+>> +
+>> +	if (expr__find_other(pe->metric_expr, NULL, &ids, &idnum) < 0)
+>> +		return 0;
+>> +
+>> +	if (events->len > 0)
+>> +		strbuf_addf(events, ",");
+>> +
+>> +	if (metricgroup__has_constraint(pe))
+>> +		metricgroup__add_metric_non_group(events, ids, idnum);
+>> +	else
+>> +		metricgroup__add_metric_weak_group(events, ids, idnum);
+>> +
+>> +	eg = malloc(sizeof(*eg));
+>> +	if (!eg)
+>> +		return -ENOMEM;
+>> +	eg->ids = ids;
+>> +	eg->idnum = idnum;
+>> +	eg->metric_name = pe->metric_name;
+>> +	eg->metric_expr = pe->metric_expr;
+>> +	eg->metric_unit = pe->unit;
+>> +	list_add_tail(&eg->nd, group_list);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>>   static int metricgroup__add_metric(const char *metric, struct strbuf *events,
+>>   				   struct list_head *group_list)
+>>   {
+>> @@ -502,37 +542,12 @@ static int metricgroup__add_metric(const char *metric, struct strbuf *events,
+>>   			break;
+>>   		if (!pe->metric_expr)
+>>   			continue;
+>> -		if (match_metric(pe->metric_group, metric) ||
+>> -		    match_metric(pe->metric_name, metric)) {
+>> -			const char **ids;
+>> -			int idnum;
+>> -			struct egroup *eg;
+>> -
+>> -			pr_debug("metric expr %s for %s\n", pe->metric_expr, pe->metric_name);
+>>   
+>> -			if (expr__find_other(pe->metric_expr,
+>> -					     NULL, &ids, &idnum) < 0)
+>> -				continue;
+>> -			if (events->len > 0)
+>> -				strbuf_addf(events, ",");
+>> -
+>> -			if (metricgroup__has_constraint(pe))
+>> -				metricgroup__add_metric_non_group(events, ids, idnum);
+>> -			else
+>> -				metricgroup__add_metric_weak_group(events, ids, idnum);
+>> -
+>> -			eg = malloc(sizeof(struct egroup));
+>> -			if (!eg) {
+>> -				ret = -ENOMEM;
+>> -				break;
+>> -			}
+>> -			eg->ids = ids;
+>> -			eg->idnum = idnum;
+>> -			eg->metric_name = pe->metric_name;
+>> -			eg->metric_expr = pe->metric_expr;
+>> -			eg->metric_unit = pe->unit;
+>> -			list_add_tail(&eg->nd, group_list);
+>> -			ret = 0;
+>> +		if (match_pe_metric(pe, metric)) {
+>> +			ret = metricgroup__add_metric_pmu_event(pe, events,
+>> +								group_list);
+>> +			if (ret)
+>> +				return ret;
+>>   		}
+>>   	}
+>>   	return ret;
+>> -- 
+>> 2.16.4
+>>
+> 
+> .
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
