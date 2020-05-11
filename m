@@ -2,85 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6F3C61CE7B5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 23:50:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40DA11CE7E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 00:04:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0sZiWHDjMelsge7ntPTAkPM8bg03roo8iDUxWIfqPKs=; b=OTY1gTfgq7hqyM
-	A0Uyu+iki/9W8/2Z9yK+RiBqf//1lYCNmWMS1Snv1lDlJbaZQNxTkoXtUUOZ9VmCgDu3Xn/1SUdpF
-	Kd11KW2eoTrZTX8gdi4fLNa1eWpi6p6FTSzDGRHnzc9mmoEa8mfZIsLXBo+ZbZz9QFuvU77+4PDBP
-	fpiy8GKwKGIPlu1/aqnQZOksO3fBXEsrAnPTRxJozkKd2NfcfbP6f0028WjW4MKyjMw+3C2ZKRF+8
-	8e86kzBE+PsPUeTDto4q1Vx7iqVPmfKAdpf8bH53B9slRDdFoQik3bmt5eA9pmkmt91Emu7Mui9Cs
-	63Wrj2yitBA1/XlXd78A==;
+	List-Owner; bh=p0GjNfNx3Y3UIablVTS9hBQnBPFejqkfFbYrDFG7G9o=; b=OJpqGFtXNacwKF
+	VWIbrd6M8hUsHr+uQ9ddK0blmhydzAIT23XrouUPfiV8rreQ2i1O+un1rof3yYRbMIXNBakk84xys
+	R/mFpJIhfrwR5F0fXxxuU6+YV5QrOjDU5sJxs4cGYoF9XiPUvEGkzPa/HRxiDxCg6Xu52ggPFocNm
+	tTTgahC5/LWLg48nrfvJ7EGc3PPbFmbbO31fw+MS9/q8r0Xc5OcTevOgWkIUxgY4JGtBwVeX/7IYC
+	iMEA09kpvA05RhcV3/CYVzJHlFR23Jazwsje7nTy+4p+GOzQXF6DifVImXUMA7R6jOh11wCfE6mhK
+	Lax8ZfvZrO2/H0B+I1Zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYGJd-0004Vu-9j; Mon, 11 May 2020 21:50:25 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYGJV-0004Ux-BF; Mon, 11 May 2020 21:50:18 +0000
-Received: by mail-oi1-f193.google.com with SMTP id i13so16483414oie.9;
- Mon, 11 May 2020 14:50:16 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=C2cQ0d2Fnc+VFNF+rbZqUCi2lMUrS+g08IvuwIRHzJU=;
- b=Ji5NA/2NMx1hK8Zt4IudWO8LB8PluynfUoRjbJRHgckJqng1hOCuAcsypqZRSmHS9P
- 8Qpkle0FnnozH/mq6swxFo1txct9qJa2E1jZzNxbVPkVfQitPXQ2e0fecbZpQTf/fDrq
- D8smCrmRHsHdiSnv7htxWT39kygHFmqoKlrqB1Nmt6+uG2R5LsguSIBS7S9pYEZ2lBsB
- /BJp3sXTxUD2stC/oLasEw5hwKIzZEP3zEd+kfPsx/GI8jkbR8oMkOku9xDZlgmlUibC
- wBPNfzfhAVEgIEcov4ObvlU2MdnnDt2ZR2VajG9o+NBDOn+cJ7/oDhfUCMrrtWzmbxLt
- LFVw==
-X-Gm-Message-State: AGi0Pub9hNE+z/YShzAj3NRQw+IcE+Y8Vy+TK/Q8UPFcPUb0pCpq8j11
- WkuZf/MfEuyH3fY4jBrKXA==
-X-Google-Smtp-Source: APiQypKb4S01qoeMGw5ylYdZeHeHc7Sh8XoMTwKIJeFH1WTXjNyN0cepckfp1oAcEe9Zui5mtOwgPw==
-X-Received: by 2002:aca:1904:: with SMTP id l4mr21640640oii.106.1589233816216; 
- Mon, 11 May 2020 14:50:16 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id e4sm1229075oou.33.2020.05.11.14.50.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 14:50:15 -0700 (PDT)
-Received: (nullmailer pid 8406 invoked by uid 1000);
- Mon, 11 May 2020 21:50:14 -0000
-Date: Mon, 11 May 2020 16:50:14 -0500
-From: Rob Herring <robh@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v2 90/91] dt-bindings: display: vc4: hdmi: Add BCM2711
- HDMI controllers bindings
-Message-ID: <20200511215014.GA4800@bogus>
-References: <cover.d1e741d37e43e1ba2d2ecd93fc81d42a6df99d14.1587742492.git-series.maxime@cerno.tech>
- <9bdee4024b3f95bed9b55c642f0f9415c22fc506.1587742492.git-series.maxime@cerno.tech>
+	id 1jYGX3-0002Su-1X; Mon, 11 May 2020 22:04:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYGWt-0002SH-QE
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 22:04:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBCED30E;
+ Mon, 11 May 2020 15:04:06 -0700 (PDT)
+Received: from e119603-lin.cambridge.arm.com (unknown [10.57.42.196])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B26453F68F;
+ Mon, 11 May 2020 15:04:05 -0700 (PDT)
+Date: Mon, 11 May 2020 23:04:03 +0100
+From: Cristian Marussi <cristian.marussi@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v7 1/9] firmware: arm_scmi: Add notification
+ protocol-registration
+Message-ID: <20200511220403.GB17648@e119603-lin.cambridge.arm.com>
+References: <20200504163855.54548-1-cristian.marussi@arm.com>
+ <20200504163855.54548-2-cristian.marussi@arm.com>
+ <20200506152550.GA21779@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <9bdee4024b3f95bed9b55c642f0f9415c22fc506.1587742492.git-series.maxime@cerno.tech>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200506152550.GA21779@arm.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_145017_388238_57ABA362 
-X-CRM114-Status: GOOD (  16.84  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200511_150407_942119_9C60CD65 
+X-CRM114-Status: GOOD (  40.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,157 +65,384 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Tim Gover <tim.gover@raspberrypi.com>,
- Dave Stevenson <dave.stevenson@raspberrypi.com>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Eric Anholt <eric@anholt.net>,
- bcm-kernel-feedback-list@broadcom.com,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>,
- Phil Elwell <phil@raspberrypi.com>, linux-arm-kernel@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org
+Cc: Jonathan.Cameron@Huawei.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, james.quinlan@broadcom.com,
+ sudeep.holla@arm.com, lukasz.luba@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Apr 24, 2020 at 05:35:11PM +0200, Maxime Ripard wrote:
-> The HDMI controllers found in the BCM2711 SoC need some adjustments to the
-> bindings, especially since the registers have been shuffled around in more
-> register ranges.
+Hi Dave
+
+thanks for the review first of all.
+
+On Wed, May 06, 2020 at 04:25:50PM +0100, Dave Martin wrote:
+> On Mon, May 04, 2020 at 05:38:47PM +0100, Cristian Marussi wrote:
+> > Add core SCMI Notifications protocol-registration support: allow protocols
+> > to register their own set of supported events, during their initialization
+> > phase. Notification core can track multiple platform instances by their
+> > handles.
+> > 
+> > Reviewed-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+> > Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> > ---
+> > V4 --> V5
+> > - fixed kernel-doc
+> > - added barriers for registered protocols and events
+> > - using kfifo_alloc and devm_add_action_or_reset
+> > V3 --> V4
+> > - removed scratch ISR buffer, move scratch BH buffer into protocol
+> >   descriptor
+> > - converted registered_protocols and registered_events from hashtables
+> >   into bare fixed-sized arrays
+> > - removed unregister protocols' routines (never called really)
+> > V2 --> V3
+> > - added scmi_notify_instance to track target platform instance
+> > V1 --> V2
+> > - splitted out of V1 patch 04
+> > - moved from IDR maps to real HashTables to store events
+> > - scmi_notifications_initialized is now an atomic_t
+> > - reviewed protocol registration/unregistration to use devres
+> > - fixed:
+> >   drivers/firmware/arm_scmi/notify.c:483:18-23: ERROR:
+> >   	reference preceded by free on line 482
+> > 
+> > Reported-by: kbuild test robot <lkp@intel.com>
+> > Reported-by: Julia Lawall <julia.lawall@lip6.fr>
+> > ---
+> >  drivers/firmware/arm_scmi/Makefile |   2 +-
+> >  drivers/firmware/arm_scmi/common.h |   4 +
+> >  drivers/firmware/arm_scmi/notify.c | 444 +++++++++++++++++++++++++++++
+> >  drivers/firmware/arm_scmi/notify.h |  56 ++++
+> >  include/linux/scmi_protocol.h      |   3 +
+> >  5 files changed, 508 insertions(+), 1 deletion(-)
+> >  create mode 100644 drivers/firmware/arm_scmi/notify.c
+> >  create mode 100644 drivers/firmware/arm_scmi/notify.h
 > 
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: devicetree@vger.kernel.org
-> Signed-off-by: Maxime Ripard <maxime@cerno.tech>
-> ---
->  Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml | 109 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
->  1 file changed, 109 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
+> [...]
 > 
-> diff --git a/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml b/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
-> new file mode 100644
-> index 000000000000..6091fe3d315b
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/display/brcm,bcm2711-hdmi.yaml
-> @@ -0,0 +1,109 @@
-> +# SPDX-License-Identifier: GPL-2.0
+> > diff --git a/drivers/firmware/arm_scmi/notify.c b/drivers/firmware/arm_scmi/notify.c
+> 
+> [...]
+> 
+> > +int scmi_register_protocol_events(const struct scmi_handle *handle,
+> > +				  u8 proto_id, size_t queue_sz,
+> > +				  const struct scmi_protocol_event_ops *ops,
+> > +				  const struct scmi_event *evt, int num_events,
+> > +				  int num_sources)
+> > +{
+> > +	int i;
+> > +	size_t payld_sz = 0;
+> > +	struct scmi_registered_protocol_events_desc *pd;
+> > +	struct scmi_notify_instance *ni = handle->notify_priv;
+> > +
+> > +	if (!ops || !evt || proto_id >= SCMI_MAX_PROTO)
+> > +		return -EINVAL;
+> > +
+> > +	/* Ensure atomic value is updated */
+> > +	smp_mb__before_atomic();
+> > +	if (unlikely(!ni || !atomic_read(&ni->initialized)))
+> > +		return -EAGAIN;
+> 
+> The atomics/barriers don't look quite right to me here.
+> 
+> I'd have expected:
+> 
+> scmi_register_protocol_events()
+> {
+> 	if (atomic_read(&ni->initialized))
+> 		return -EAGAIN;
+> 	smp_mb_after_atomic();
+> 
+> 	/* ... */
+> }
+> 
+> to pair with:
+> 
+> scmi_notification_init()
+> {
+> 	/* ... */
+> 
+> 	smp_mb__before_atomic();
+> 	atomic_set(&ni->enabled, 1);
+> }
+> 
+> 
+> ...however, do we need to allow these two functions to race with each
+> other at all?  (I haven't tried to understand the wider context here,
+> so if there really is no way to avoid initialisation racing with use I
+> guess we may have to do something like this.  We don't want callers
+> to dumbly spin on this function though.)
+> 
+> 
+> In other patches in the series, calls to scmi_register_protocol_events()
+> seem to be assuming there is no race: the return value is not checked.
+> Possibly a bug?
+> 
 
-Dual license
+I think you are right in these regards, there's no need of an atomic here
+for 'initialized' and using -EAGAIN on !initialized as error code in
+scmi_register_protocol_events() is wrong too in this context.
 
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/display/brcm,bcm2711-hdmi.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Broadcom BCM2711 HDMI Controller Device Tree Bindings
-> +
-> +maintainers:
-> +  - Eric Anholt <eric@anholt.net>
-> +
-> +properties:
-> +  compatible:
-> +    enum:
-> +      - brcm,bcm2711-hdmi0
-> +      - brcm,bcm2711-hdmi1
-> +
-> +  reg:
-> +    items:
-> +      - description: HDMI controller register range
-> +      - description: DVP register range
-> +      - description: HDMI PHY register range
-> +      - description: Rate Manager register range
-> +      - description: Packet RAM register range
-> +      - description: Metadata RAM register range
-> +      - description: CSC register range
-> +      - description: CEC register range
-> +      - description: HD register range
-> +
-> +  reg-names:
-> +    items:
-> +      - const: hdmi
-> +      - const: dvp
-> +      - const: phy
-> +      - const: rm
-> +      - const: packet
-> +      - const: metadata
-> +      - const: csc
-> +      - const: cec
-> +      - const: hd
-> +
-> +  clocks:
-> +    description: The HDMI state machine clock
-> +
-> +  clock-names:
-> +    const: hdmi
-> +
-> +  ddc:
-> +    allOf:
-> +      - $ref: /schemas/types.yaml#/definitions/phandle
-> +    description: >
-> +      Phandle of the I2C controller used for DDC EDID probing
+The aim is to detect when general SCMI notification core initialization has
+failed as a whole and in that case inhibit any further SCMI protocols events'
+registration attempt during general protocol init (since init has failed and
+no related data has been allocated and readied).
+No attempt should be made to re-register on failure because the failure to
+init the notif stuff is permanent when happens (not solvable with deferred
+re-probing) and there's no race in checking this condition
+(more on this down below)
 
-This belongs in a connector node. (ddc-i2c-bus)
+So I think I'll just drop the 'initialized' field as a whole and simply use
+the value of handle->notify_priv (ni) to detect if initialization was
+successfull or not, like:
 
-> +
-> +  hpd-gpios:
-> +    description: >
-> +      The GPIO pin for the HDMI hotplug detect (if it doesn't appear
-> +      as an interrupt/status bit in the HDMI controller itself)
+scmi_register_protocol_events()
+{
+	...
+	if (unlikely(!ni))  		// ni is NULL when init has failed
+		return -ENOMEM;
+}
 
-This belongs in a connector node.
+(..plus barriers where needed)
 
-> +
-> +  dmas:
-> +    maxItems: 1
-> +    description: >
-> +      Should contain one entry pointing to the DMA channel used to
-> +      transfer audio data.
-> +
-> +  dma-names:
-> +    const: audio-rx
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - reg-names
-> +  - clocks
-> +  - resets
-> +  - ddc
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    hdmi0: hdmi@7ef00700 {
-> +        compatible = "brcm,bcm2711-hdmi0";
-> +        reg = <0x7ef00700 0x300>,
-> +              <0x7ef00300 0x200>,
-> +              <0x7ef00f00 0x80>,
-> +              <0x7ef00f80 0x80>,
-> +              <0x7ef01b00 0x200>,
-> +              <0x7ef01f00 0x400>,
-> +              <0x7ef00200 0x80>,
-> +              <0x7ef04300 0x100>,
-> +              <0x7ef20000 0x100>;
-> +        reg-names = "hdmi",
-> +                    "dvp",
-> +                    "phy",
-> +                    "rm",
-> +                    "packet",
-> +                    "metadata",
-> +                    "csc",
-> +                    "cec",
-> +                    "hd";
-> +        clocks = <&firmware_clocks 13>;
-> +        clock-names = "hdmi";
-> +        resets = <&dvp 0>;
-> +        ddc = <&ddc0>;
-> +    };
-> +
-> +...
-> -- 
-> git-series 0.9.1
+and could probably check the ret value too in the caller to printout some
+debug info in case of other-than-ENOMEM errors. (due anyway to a broken
+implementation not to runtime errors)
+
+As said there's no race to initialized (or ni itself) in fact because the
+sequence in SCMI general init is roughly as follows:
+
+a. SCMI bus is created and registered
+b. SCMI protocol driver (a platform driver) is probed and an SCMI handle is
+   initialized for each distinct SCMI plaform (if any) defined in the DT,
+   and then:
+  -> scmi_notification_init()
+  -> scmi_create_protocol_devices:
+     DT-defined and fw-supported SCMI protocol devices are created (this does
+     NOT cause automatically protocol initialization though...)
+	--> scmi_set_handle()
+c. An SCMI driver using protoX is finally loaded/initialized (say scmi-cpufreq)
+   and the related protocol device is probed, and, if this was the first device
+   to be probe relying on protoX, protocol X itself (say perf.c) is finally
+   initialized:
+  __probe():
+  -> if !handle	return -EPROBEDEFER
+  -> ...
+  -> X.scmi_protocol_init()
+    ...
+    -> scmi_register_protocol_events(X..)
+
+b. and c. could indeed happen out of order and lead to a deferred reprobe of c.
+once b. has finally completed, BUT the reprobe is triggered anyway before any
+protocol init and event registration can start, so when ni == NULL
+in scmi_register_protocol(), the initialization has been effectively attempted
+and has failed (-ENOMEM) and so makes no sense to retry further.
+
+> 
+> I'm not sure about scmi_notification_exit() (see below).
+> 
+> > +
+> > +	/* Attach to the notification main devres group */
+> > +	if (!devres_open_group(ni->handle->dev, ni->gid, GFP_KERNEL))
+> > +		return -ENOMEM;
+> > +
+> > +	for (i = 0; i < num_events; i++)
+> > +		payld_sz = max_t(size_t, payld_sz, evt[i].max_payld_sz);
+> > +	pd = scmi_allocate_registered_protocol_desc(ni, proto_id, queue_sz,
+> > +				    sizeof(struct scmi_event_header) + payld_sz,
+> > +						    num_events, ops);
+> > +	if (IS_ERR(pd))
+> > +		goto err;
+> > +
+> > +	for (i = 0; i < num_events; i++, evt++) {
+> > +		struct scmi_registered_event *r_evt;
+> > +
+> > +		r_evt = devm_kzalloc(ni->handle->dev, sizeof(*r_evt),
+> > +				     GFP_KERNEL);
+> > +		if (!r_evt)
+> > +			goto err;
+> > +		r_evt->proto = pd;
+> > +		r_evt->evt = evt;
+> > +
+> > +		r_evt->sources = devm_kcalloc(ni->handle->dev, num_sources,
+> > +					      sizeof(refcount_t), GFP_KERNEL);
+> > +		if (!r_evt->sources)
+> > +			goto err;
+> > +		r_evt->num_sources = num_sources;
+> > +		mutex_init(&r_evt->sources_mtx);
+> > +
+> > +		r_evt->report = devm_kzalloc(ni->handle->dev,
+> > +					     evt->max_report_sz, GFP_KERNEL);
+> > +		if (!r_evt->report)
+> > +			goto err;
+> > +
+> > +		pd->registered_events[i] = r_evt;
+> > +		/* Ensure events are updated */
+> > +		smp_wmb();
+> > +		pr_info("SCMI Notifications: registered event - %X\n",
+> > +			MAKE_ALL_SRCS_KEY(r_evt->proto->id, r_evt->evt->id));
+> > +	}
+> > +
+> > +	/* Register protocol and events...it will never be removed */
+> > +	ni->registered_protocols[proto_id] = pd;
+> > +	/* Ensure protocols are updated */
+> > +	smp_wmb();
+> > +
+> > +	devres_close_group(ni->handle->dev, ni->gid);
+> > +
+> > +	return 0;
+> > +
+> > +err:
+> > +	pr_warn("SCMI Notifications - Proto:%X - Registration Failed !\n",
+> > +		proto_id);
+> > +	/* A failing protocol registration does not trigger full failure */
+> > +	devres_close_group(ni->handle->dev, ni->gid);
+> > +
+> > +	return -ENOMEM;
+> > +}
+> > +
+> > +/**
+> > + * scmi_notification_init()  - Initializes Notification Core Support
+> > + * @handle: The handle identifying the platform instance to initialize
+> > + *
+> > + * This function lays out all the basic resources needed by the notification
+> > + * core instance identified by the provided handle: once done, all of the
+> > + * SCMI Protocols can register their events with the core during their own
+> > + * initializations.
+> > + *
+> > + * Note that failing to initialize the core notifications support does not
+> > + * cause the whole SCMI Protocols stack to fail its initialization.
+> > + *
+> > + * SCMI Notification Initialization happens in 2 steps:
+> > + * * initialization: basic common allocations (this function) -> @initialized
+> > + * * registration: protocols asynchronously come into life and registers their
+> > + *		   own supported list of events with the core; this causes
+> > + *		   further per-protocol allocations
+> > + *
+> > + * Any user's callback registration attempt, referring a still not registered
+> > + * event, will be registered as pending and finalized later (if possible)
+> > + * by scmi_protocols_late_init() work.
+> > + * This allows for lazy initialization of SCMI Protocols due to late (or
+> > + * missing) SCMI drivers' modules loading.
+> > + *
+> > + * Return: 0 on Success
+> > + */
+> > +int scmi_notification_init(struct scmi_handle *handle)
+> > +{
+> > +	void *gid;
+> > +	struct scmi_notify_instance *ni;
+> > +
+> > +	gid = devres_open_group(handle->dev, NULL, GFP_KERNEL);
+> > +	if (!gid)
+> > +		return -ENOMEM;
+> > +
+> > +	ni = devm_kzalloc(handle->dev, sizeof(*ni), GFP_KERNEL);
+> > +	if (!ni)
+> > +		goto err;
+> > +
+> > +	ni->gid = gid;
+> > +	ni->handle = handle;
+> > +
+> > +	ni->registered_protocols = devm_kcalloc(handle->dev, SCMI_MAX_PROTO,
+> > +						sizeof(char *), GFP_KERNEL);
+> > +	if (!ni->registered_protocols)
+> > +		goto err;
+> > +
+> > +	handle->notify_priv = ni;
+> > +
+> > +	atomic_set(&ni->initialized, 1);
+> > +	atomic_set(&ni->enabled, 1);
+> > +	/* Ensure atomic values are updated */
+> > +	smp_mb__after_atomic();
+> > +
+> > +	pr_info("SCMI Notifications Core Initialized.\n");
+> > +
+> > +	devres_close_group(handle->dev, ni->gid);
+> > +
+> > +	return 0;
+> > +
+> > +err:
+> > +	pr_warn("SCMI Notifications - Initialization Failed.\n");
+> > +	devres_release_group(handle->dev, NULL);
+> > +	return -ENOMEM;
+> > +}
+> > +
+> > +/**
+> > + * scmi_notification_exit()  - Shutdown and clean Notification core
+> > + * @handle: The handle identifying the platform instance to shutdown
+> > + */
+> > +void scmi_notification_exit(struct scmi_handle *handle)
+> > +{
+> > +	struct scmi_notify_instance *ni = handle->notify_priv;
+> > +
+> > +	if (unlikely(!ni || !atomic_read(&ni->initialized)))
+> > +		return;
+> > +
+> > +	atomic_set(&ni->enabled, 0);
+> > +	/* Ensure atomic values are updated */
+> > +	smp_mb__after_atomic();
+> 
+> If users can race with this, we're dead: the atomic by itself doesn't
+> ensure that handle is not in use once we arrive here.  Should this
+> be a refcount instead?
+> 
+> If users can't race with this, we probably don't protection here.
+> 
+> 
+> I may be misunderstanding what this code is doing...
+> 
+
+First of all the enabled flag does not probably belong to this commit properly;
+here is initialized but it is really fully used only in subsequent patches
+(...so makes apparently little sense here... my bad...)
+
+Anyway, in general SCMI protocols (beside notifications stuff) are initialized
+as depicted above, BUT they are never deinitialized explicitly (there's no
+equivalent scmi_protocol_deinit()) and also proto devices are never destroyed:
+so there's no scmi_protocol_deregister_events() neither in this series, because
+it would have been tricky to properly invoke it and would have not been consistent
+with the original SCMI design.
+
+On the other side since in protocol driver _remove() some general protos resources
+are in fact freed anyway, for consistency I decided to free the devm notification
+resources allocated with the above init() in scmi_notification_exit(): this should
+happen only at system shutdown in fact when notification are no more of a concern.
+
+So given there's no explicit deregister I had to ensure somehow that the wanna-be-freed
+notif devm resources were safe to be released.
+
+In this context the 'enabled' atomic flag is set to 0 @_exit to stop the dispatch of the
+events (possibly still coming from the fw) from the ISR into the kfifo queues: once such
+pkts flow is stopped I destroy_sync() (in a subsequent patch @_exit too) all the workqueues
+fetching the events from the kfifos: this way I can be sure that all the notif resources
+are no more used at all when I free all of them with devm_release() at the end.
+
+All of this is an additional precaution against buggy fw not stopping sending events
+even when asked to do so (by drivers when deregistering notif callbacks in their shutdown)
+
+Give the above scenario on shutdown (which I never observed to tell the truth), and the fact
+I'm freeing all devm res (including ni) at shutdown, it's now apparent ALSO that I cannot use
+'enabled' to keep stopped the flow in a safe way after its enclosing struct ni has been freed !
+
+So I'll remove the 'enable' atomic_t too and rely equally on the bare !ni check to determine
+if the notification are enabled and should be dispatched. So that in 
+
+scmi_notify_init() {
+
+	if (unlikely(!ni))
+		return 0;     /// Stop notification dispatching from ISR
+}
+
+So ni and !ni will signify (initialized && enabled) or not.
+
+Not really a short explanation...sorry
+
+Thanks
+
+Cristian
+
 
 _______________________________________________
 linux-arm-kernel mailing list
