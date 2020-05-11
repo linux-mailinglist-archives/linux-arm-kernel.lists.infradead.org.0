@@ -2,80 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 89E981CE4F3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 22:02:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7E2D1CE562
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 22:25:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=k+HhkU4dDnMKD9sIApfEyNdqw5OBbu8izDjJCDDCHHA=; b=QPWGwcrM9Xn10UiW9worjXL/a
-	9IlV6qtoQDIsZ6+a3t0i8sl+0gAGkiL+daZ2Jcki9Zr4QXyLfXOITFA7ytj2+KPWScX2Hf8K9TX/H
-	NaCwtLjTgKffLl8kaltQQN28XYGq/0zGW4d0ib7HRS8ZlXErQaRemSVfj4DTlCMLsKf6yxX8Vhllo
-	fUdtEKiBco5VYYd0chnk5CSW1NjN5nXXRCPlgHUpH1c5M/JHJsn3ceDujBo/81CvglRX5y2cUMTyM
-	azWhcO86wCt5LGDmN5KiIATfKlUTOhsFqLQeVxfyj2ouGG0eBFwj1ue+18URfsohRULIGuwFIVwDk
-	Da/oHAfMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pFwmkxNHiIoUMeML2hRuMKsoz0AP0YqS7gFGfPQhL4Q=; b=bDnV+tpXrRgG5a
+	7nO1UyIcdIP5BsZlGRQx3qGifBlimTMVUu79YSzxITujPb8EmESSSxdXDa/TM3UvIFVbqH1D0a/VY
+	ZRBGuVj5PjfeCystKC2wxefWYrNGEJZKhPS+nvhEwahIlcytKyOH+7AFUQ14OMjtuWXIbh8R6GwnH
+	tQgGfcbOgs6OSLW6uWkiHgmw0twQNXmwOrcGJ5dDX52Q+7Sa04p11pOxHMH+HPsCvzC53pCykSazV
+	Oy6NZjrEY6qz0agvV29pueX3wJWX4k0RVyFuE3NdfsIpRGLSkIa/pB3wo2BQ1rjc4cAHSEMJBx3FO
+	GpSD5ELUFcltxUwURjAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYEdV-0001gt-4Y; Mon, 11 May 2020 20:02:49 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jYEyt-0005Zw-2k; Mon, 11 May 2020 20:24:55 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYEdN-0001fw-Ry
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 20:02:43 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04BK2YDk093707;
- Mon, 11 May 2020 15:02:34 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589227354;
- bh=Nbw5S0nlz0IKqlpjtqgO4SfYIFZYmYYUYfxzJYCueho=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=hxY1wVVJO5z5aZxvXkJSUzcJhaNnifY0kKqtoUzkl1UOvKMYihMunyLW01a5tpHZ+
- ojxi/JN+ILiZGZ9qEzt436nONhUj7OQJ/7gksDH49CFYNMGZwoaokNSGLqydTi32OT
- epDzLdBtBEs3pqkAi1ueD/bG4FFvhM/BHtlYnF/I=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04BK2Y7p008391
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 11 May 2020 15:02:34 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Mon, 11
- May 2020 15:02:34 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Mon, 11 May 2020 15:02:34 -0500
-Received: from [10.250.100.73] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04BK2V0L119216;
- Mon, 11 May 2020 15:02:31 -0500
-Subject: Re: [PATCH v3 2/2] soc: ti: add k3 platforms chipid module driver
-To: Arnd Bergmann <arnd@arndb.de>
-References: <20200508100100.20740-1-grygorii.strashko@ti.com>
- <20200508100100.20740-3-grygorii.strashko@ti.com>
- <CAK8P3a0vewSiFc4rXu43_bs_A85EYx12_YuyBaU3PYJ1HszE=w@mail.gmail.com>
- <6614f29d-1796-18d9-9b78-214f56964a35@ti.com>
- <CAK8P3a19RC1hPZkLiGCEHFuHDNxNLiAg34RdbBZ=gxDhRg4RpA@mail.gmail.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <71c11d42-9645-7b93-9cf3-3139d35befc9@ti.com>
-Date: Mon, 11 May 2020 23:02:30 +0300
+ id 1jYEyP-0005OV-Id; Mon, 11 May 2020 20:24:26 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04BKN1ae178275;
+ Mon, 11 May 2020 20:23:14 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2020-01-29;
+ bh=Zo5Cza0n1Es3FSckgTZNHDduwVjYv8Se3/rnvi5K1+U=;
+ b=zNA36/v3LiAoVOKNe46hByFJzcgmlm6fSXJxh2iNnyOiub80LYucHlnc0/E56KgILM9H
+ IFRiKn4q0LUdaR2nYs6dCPMSq80mGCHofR6f2TqItyeoJMBmDZXvQ7v2tUhfVy9k1X36
+ tcBZGa4jzU7DQvWfHUpO9TKxtWFGYZZ9nF7VsO1e0ZGnb9D9DoRmFfbUB6r4TRv4NYPv
+ o37UJDnsiD3w8Clee8jwQnZrV85aEd6/M09htR49v5WSHMk/NB7F5FD5bkmsoKKY23Ji
+ COyA88eG4SJcYvBMQXLI4Ajl98LrSZ6SUDDOJAn/OQQSjR8daR7AoTwaaFTFsvb7nqV0 BA== 
+Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
+ by userp2120.oracle.com with ESMTP id 30x3mbqayv-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Mon, 11 May 2020 20:23:14 +0000
+Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
+ by aserp3020.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04BKMUL6165379;
+ Mon, 11 May 2020 20:23:13 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by aserp3020.oracle.com with ESMTP id 30xbgfkcvb-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Mon, 11 May 2020 20:23:13 +0000
+Received: from abhmp0005.oracle.com (abhmp0005.oracle.com [141.146.116.11])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04BKMsCT016911;
+ Mon, 11 May 2020 20:22:55 GMT
+Received: from [192.168.2.157] (/73.164.160.178)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Mon, 11 May 2020 13:22:53 -0700
+Subject: Re: [PATCH V3 3/3] mm/hugetlb: Define a generic fallback for
+ arch_clear_hugepage_flags()
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
+ akpm@linux-foundation.org
+References: <1588907271-11920-1-git-send-email-anshuman.khandual@arm.com>
+ <1588907271-11920-4-git-send-email-anshuman.khandual@arm.com>
+From: Mike Kravetz <mike.kravetz@oracle.com>
+Message-ID: <cbccae27-ff79-5580-80be-0a9493d063ba@oracle.com>
+Date: Mon, 11 May 2020 13:22:50 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a19RC1hPZkLiGCEHFuHDNxNLiAg34RdbBZ=gxDhRg4RpA@mail.gmail.com>
+In-Reply-To: <1588907271-11920-4-git-send-email-anshuman.khandual@arm.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9618
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 adultscore=0
+ mlxlogscore=784
+ spamscore=0 suspectscore=0 phishscore=0 bulkscore=0 mlxscore=0
+ malwarescore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-2003020000 definitions=main-2005110154
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9618
+ signatures=668687
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 impostorscore=0
+ mlxscore=0 suspectscore=0 bulkscore=0 mlxlogscore=817 phishscore=0
+ malwarescore=0 lowpriorityscore=0 spamscore=0 adultscore=0 clxscore=1015
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2003020000
+ definitions=main-2005110154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_130241_990276_A4C1C67A 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20200511_132425_743286_773F1653 
+X-CRM114-Status: GOOD (  16.11  )
 X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ medium trust [156.151.31.85 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [156.151.31.85 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -95,68 +114,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, DTML <devicetree@vger.kernel.org>,
- Dave Gerlach <d-gerlach@ti.com>, Lokesh Vutla <lokeshvutla@ti.com>,
- Sekhar Nori <nsekhar@ti.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- Santosh Shilimkar <ssantosh@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Rich Felker <dalias@libc.org>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-kernel@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Fenghua Yu <fenghua.yu@intel.com>, Vasily Gorbik <gor@linux.ibm.com>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Borislav Petkov <bp@alien8.de>, Paul Walmsley <paul.walmsley@sifive.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Tony Luck <tony.luck@intel.com>, linux-parisc@vger.kernel.org,
+ linux-mips@vger.kernel.org, Palmer Dabbelt <palmer@dabbelt.com>,
+ linuxppc-dev@lists.ozlabs.org, "David S. Miller" <davem@davemloft.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
-
-On 11/05/2020 15:43, Arnd Bergmann wrote:
-> On Mon, May 11, 2020 at 1:11 PM Grygorii Strashko
-> <grygorii.strashko@ti.com> wrote:
->>
->> Hi Arnd,
->>
->> On 09/05/2020 01:17, Arnd Bergmann wrote:
->>> On Fri, May 8, 2020 at 12:01 PM Grygorii Strashko
->>> <grygorii.strashko@ti.com> wrote:
->>>
->>>> +static int __init k3_chipinfo_init(void)
->>>> +{
->>>> +       struct soc_device_attribute *soc_dev_attr;
->>>> +       struct soc_device *soc_dev;
->>>> +       struct device_node *node;
->>>> +       struct regmap *regmap;
->>>> +       u32 partno_id;
->>>> +       u32 variant;
->>>> +       u32 jtag_id;
->>>> +       u32 mfg;
->>>> +       int ret;
->>>> +
->>>> +       node = of_find_compatible_node(NULL, NULL, "ti,am654-chipid");
->>>> +       if (!node)
->>>> +               return -ENODEV;
->>>
->>> This will fail the initcall and print a warning when the kernel runs on any
->>> other SoC. Would it be possible to just make this a platform_driver?
->>>
->>> If not, I think you should silently return success when the device
->>> node is absent.
->>
->> Thank you for your report.
->> Can' make it platform drv., as the SoC info need to be accessible by divers early.
+On 5/7/20 8:07 PM, Anshuman Khandual wrote:
+> There are multiple similar definitions for arch_clear_hugepage_flags() on
+> various platforms. Lets just add it's generic fallback definition for
+> platforms that do not override. This help reduce code duplication.
 > 
-> Which drivers in particular? In most cases you should be able to still do this
-> right by relying on initcall ordering as long as this one can only be built-in
-> (or possibly only a module for compile-testing).
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Tony Luck <tony.luck@intel.com>
+> Cc: Fenghua Yu <fenghua.yu@intel.com>
+> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
+> Cc: "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>
+> Cc: Helge Deller <deller@gmx.de>
+> Cc: Benjamin Herrenschmidt <benh@kernel.crashing.org>
+> Cc: Paul Mackerras <paulus@samba.org>
+> Cc: Michael Ellerman <mpe@ellerman.id.au>
+> Cc: Paul Walmsley <paul.walmsley@sifive.com>
+> Cc: Palmer Dabbelt <palmer@dabbelt.com>
+> Cc: Heiko Carstens <heiko.carstens@de.ibm.com>
+> Cc: Vasily Gorbik <gor@linux.ibm.com>
+> Cc: Christian Borntraeger <borntraeger@de.ibm.com>
+> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
+> Cc: Rich Felker <dalias@libc.org>
+> Cc: "David S. Miller" <davem@davemloft.net>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> Cc: Ingo Molnar <mingo@redhat.com>
+> Cc: Borislav Petkov <bp@alien8.de>
+> Cc: "H. Peter Anvin" <hpa@zytor.com>
+> Cc: Mike Kravetz <mike.kravetz@oracle.com>
+> Cc: Andrew Morton <akpm@linux-foundation.org>
+> Cc: x86@kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-ia64@vger.kernel.org
+> Cc: linux-mips@vger.kernel.org
+> Cc: linux-parisc@vger.kernel.org
+> Cc: linuxppc-dev@lists.ozlabs.org
+> Cc: linux-riscv@lists.infradead.org
+> Cc: linux-s390@vger.kernel.org
+> Cc: linux-sh@vger.kernel.org
+> Cc: sparclinux@vger.kernel.org
+> Cc: linux-mm@kvack.org
+> Cc: linux-arch@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 
-Thanks for you review.
+Thanks!
+Removing duplicate code is good.
 
-As I'm aware of right now, it's going to be: ringacc, dma, net drv and mmc.
-So, It seems should work with platform_driver and subsys_initcall.
-I'll try it.
+Acked-by: Mike Kravetz <mike.kravetz@oracle.com>
 
 -- 
-Best regards,
-grygorii
+Mike Kravetz
 
 _______________________________________________
 linux-arm-kernel mailing list
