@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C57451CDDFB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:59:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22B271CDDF7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:59:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EVYMguRt/37zQgw+Dsax5qH8TjL+1xIkOyEGbFxp6wk=; b=M0yqrsyBLT7yIR
-	baYfdOSQLJEbfa75IyvDjWwwcLfj8s/H2w2eAAYd894jRLF72IabcPU2LDCpgzY4ZmdGdwDZSgb9q
-	20Tw/YvRMIzd+B62NsHFisszjFcGt37Ml1DZIjc1HQ6AlEnB4fm7inkGe8F5KYHTupCqiF7i6p3yA
-	o/ayi4hybiIAfc0/Pk0GWQzlZmjESCXstwvkjo+bZj03h3dzIY0tHZwR/o8Nn1QDzRaRf7D5uB0zq
-	RiESK1hSJ9S4+X8sfmeJ6NPHHKUCXLNnDrqb+JCriGSN6Tyy3do27QVYOFVR/l21h5Ig8mpeIaaqJ
-	QXcTRfzIgd0JzxIO69DA==;
+	List-Owner; bh=lnxdBkXV2d67M9y22XcRIGdhG46GOWkX1djRj7BdWGI=; b=Kpa9IOnGToEGAZ
+	GI66gQrrI9sk65c2rfbi1T4l20Sesw3lwaleZV8A2KcRI5HpZZjD65b/pToGFKdb9NNp2YbRmHsLG
+	iLYYwk6B++gR5YNem13WVGVdFAqHpAAFrSS7q8P20UxZMjdrOC2Bvy35/dki9tOel0y+F3dJ9e8Mh
+	p6wCV/kLlEUIzsINCds7eoczt0UqPQjyn7M61d2mQ6EZCOQISfq14RfEZaXJWOIQEusLahL03Swbg
+	bXAlFDZaiA0xHPwPJo3JgxGTBZZ6oG9cHUDRfNzdU8Y+CLtqSDRtkarTN5jIhQjUsNQiFyeiNkvE3
+	gsHy7mRil2Q1XvPlVePw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY9u7-0003iR-6D; Mon, 11 May 2020 14:59:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jY9ts-0003Yz-HD; Mon, 11 May 2020 14:59:24 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY9tl-0003Yb-9m
+ id 1jY9tk-0003YL-CW
  for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:59:18 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B959420643;
- Mon, 11 May 2020 14:59:12 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589209157;
- bh=h6Ea4lLoHxX7Auk/jUvpA6sDRTJxI89bcfhFCCCylgg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=wKZwMCRGb/qPVQrXagi72UbQrDDDpUCfscELhKXUCYWtWz/96oJ3TsTAVuOo9hq3N
- OTup9e3bn90dJWWmHxlKrSdmxAXWW+8b1fClhGGt1d9f8pbz6odwWVeOYY4PQ/tUpC
- Fx64l5wovGXZdTUhdEqOyQyid+5J32xaXo4AOdek=
-Date: Mon, 11 May 2020 15:59:09 +0100
-From: Will Deacon <will@kernel.org>
-To: Douglas Anderson <dianders@chromium.org>
-Subject: Re: [PATCH v3 05/11] arm64: Add call_break_hook() to early_brk64()
- for early kgdb
-Message-ID: <20200511145908.GA22040@willie-the-truck>
-References: <20200428211351.85055-1-dianders@chromium.org>
- <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
+Received: from [127.0.0.1] (localhost [127.0.0.1]) (Authenticated sender: rcn)
+ with ESMTPSA id 67E002A1873
+Date: Mon, 11 May 2020 16:59:11 +0200
+From: Ricardo =?utf-8?Q?Ca=C3=B1uelo?= <ricardo.canuelo@collabora.com>
+To: robh+dt@kernel.org
+Subject: Re: [RFC PATCH] dt-bindings: display: ti,tfp410.txt: convert to yaml
+Message-ID: <20200511145911.2yv3aepofxqwdsju@rcn-XPS-13-9360>
+Mail-Followup-To: robh+dt@kernel.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, kernel@collabora.com,
+ devicetree@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-arm-kernel@lists.infradead.org, jason@lakedaemon.net,
+ laurent.pinchart@ideasonboard.com
+References: <20200428092048.14939-1-ricardo.canuelo@collabora.com>
+ <3e377c73-25a3-a7b3-0604-41c54d70039e@ti.com>
+ <20200506155320.GC15206@pendragon.ideasonboard.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200506155320.GC15206@pendragon.ideasonboard.com>
+User-Agent: NeoMutt/20171215
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_075917_356532_E3ADF014 
-X-CRM114-Status: GOOD (  12.66  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200511_075916_557981_B023559A 
+X-CRM114-Status: GOOD (  25.01  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,58 +65,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
- bjorn.andersson@linaro.org, hpa@zytor.com, frowand.list@gmail.com,
- daniel.thompson@linaro.org, corbet@lwn.net, jinho lim <jordan.lim@samsung.com>,
- agross@kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-serial@vger.kernel.org, kgdb-bugreport@lists.sourceforge.net,
- Dave Martin <Dave.Martin@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
- jslaby@suse.com, Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
- tglx@linutronix.de, mingo@redhat.com, Allison Randal <allison@lohutok.net>,
- sumit.garg@linaro.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>, jason.wessel@windriver.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, jason@lakedaemon.net,
+ dri-devel@lists.freedesktop.org, robh+dt@kernel.org,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>, laurent.pinchart@ideasonboard.com,
+ kernel@collabora.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Doug,
-
-On Tue, Apr 28, 2020 at 02:13:45PM -0700, Douglas Anderson wrote:
-> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-> index 48222a4760c2..59c353dfc8e9 100644
-> --- a/arch/arm64/kernel/debug-monitors.c
-> +++ b/arch/arm64/kernel/debug-monitors.c
-> @@ -297,7 +297,7 @@ void unregister_kernel_break_hook(struct break_hook *hook)
->  	unregister_debug_hook(&hook->node);
->  }
->  
-> -static int call_break_hook(struct pt_regs *regs, unsigned int esr)
-> +int call_break_hook(struct pt_regs *regs, unsigned int esr)
->  {
->  	struct break_hook *hook;
->  	struct list_head *list;
-> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> index cf402be5c573..a8173f0c1774 100644
-> --- a/arch/arm64/kernel/traps.c
-> +++ b/arch/arm64/kernel/traps.c
-> @@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
->  	if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
->  		return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
->  #endif
-> +	if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
-> +		return 0;
-
-I think this just means we're not running debug_traps_init() early enough,
-and actually the KASAN early handler is unnecessary too.
-
-If we call debug_traps_init() directly from setup_arch() and drop the
-arch_initcall(), can we then drop early_brk64 entirely?
-
-Will
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLAoKV2hhdCdzIHlvdXIgb3BpbmlvbiBvbiB0aGlzPwoKU29tZSBjb250ZXh0OiBJdCdz
+IGFib3V0IGJpbmRpbmdzIHRoYXQgZGVmaW5lIHNpZ25lZCBpbnRlZ2VyIHByb3BlcnRpZXMKd2l0
+aCByYW5nZSBjaGVja3MgdGhhdCBnbyBiZWxvdyBhbmQgYWJvdmUgemVyby4gVGhlIHNjaGVtYSBj
+aGVja2VyIGZhaWxzCmJlY2F1c2UsIGFwcGFyZW50bHksIGl0IGludGVycHJldHMgZXZlcnkgY2Vs
+bCB2YWx1ZSBhcyBhbiB1aW50MzIsIHdoaWNoCm1ha2VzIHRoZSByYW5nZSBjaGVjayBmYWlsIGZv
+ciBuZWdhdGl2ZSBudW1iZXJzLgoKT24gbWnDqSAwNi0wNS0yMDIwIDE4OjUzOjIwLCBMYXVyZW50
+IFBpbmNoYXJ0IHdyb3RlOgo+IEhpIFRvbWksCj4gCj4gT24gVHVlLCBBcHIgMjgsIDIwMjAgYXQg
+MTI6NDk6MjhQTSArMDMwMCwgVG9taSBWYWxrZWluZW4gd3JvdGU6Cj4gPiBPbiAyOC8wNC8yMDIw
+IDEyOjIwLCBSaWNhcmRvIENhw7F1ZWxvIHdyb3RlOgo+ID4gCj4gPiA+IDIpIFRoZSBkZWZpbml0
+aW9uIG9mIHRpLGRlc2tldyBpbiB0aGUgb3JpZ2luYWwgYmluZGluZyBzZWVtcyB0byBiZQo+ID4g
+PiB0YWlsb3JlZCB0byB0aGUgY3VycmVudCBkcml2ZXIgYW5kIHRoZSB3YXkgaXQncyBkZWZpbmVk
+IG1heSBub3QgYmUgdmVyeQo+ID4gPiBEVC1mcmllbmRseS4KPiA+ID4gCj4gPiA+ICAgIFRoaXMg
+cGFyYW1ldGVyIG1hcHMgdG8gYSAzLWJpdCBmaWVsZCBpbiBhIGhhcmR3YXJlIHJlZ2lzdGVyIHRo
+YXQgdGFrZXMKPiA+ID4gICAgYSB2YWx1ZSBmcm9tIDAgdG8gNywgc28gdGhlIFstNCwgM10gcmFu
+Z2UgZGVzY3JpYmVkIGZvciB0aGlzIHdvdWxkIG1hcAo+ID4gPiAgICB0byBbMDAwLCAxMTFdOiAt
+NCAtPiAwMDAsIC0zIC0+IDAwMSwgLTIgLT4gMDEwLCAuLi4gMyAtPiAxMTEuCj4gPiA+IAo+ID4g
+PiAgICBUaGVuLCB0aGUgZHJpdmVyIHBhcnNlcyB0aGUgcGFyYW1ldGVyICh1bnNpZ25lZCkgYW5k
+IGNhc3RzIGl0IHRvIGEKPiA+ID4gICAgc2lnbmVkIGludGVnZXIgdG8gZ2V0IGEgbnVtYmVyIGlu
+IHRoZSBbLTQsIDNdIHJhbmdlLgo+ID4gCj4gPiBJbnRlcmVzdGluZ2x5IHRoZSBjdXJyZW50IGV4
+YW1wbGUgaGFzIHRpLGRlc2tldyA9IDw0Pi4uLgo+ID4gCj4gPiA+ICAgIEEgdmVuZG9yLXNwZWNp
+ZmljIHByb3BlcnR5IG11c3QgaGF2ZSBhIHR5cGUgZGVmaW5pdGlvbiBpbiBqc29uLXNjaGVtYSwK
+PiA+ID4gICAgc28gaWYgSSB0cmFuc2xhdGUgdGhlIG9yaWdpbmFsIGJpbmRpbmdzIHNlbWFudGlj
+cyBkaXJlY3RseSwgSSBzaG91bGQKPiA+ID4gICAgZGVmaW5lIHRpLGRlc2tldyBhcyBhbiBpbnQz
+MiwgYnV0IHRoaXMgbWFrZXMgZHRfYmluZGluZ19jaGVjayBmYWlsIGlmCj4gPiA+ICAgIHRoZSBw
+cm9wZXJ0eSBoYXMgYSBuZWdhdGl2ZSB2YWx1ZSBpbiB0aGUgZXhhbXBsZSBiZWNhdXNlIG9mIHRo
+ZQo+ID4gPiAgICBpbnRlcm5hbCByZXByZXNlbnRhdGlvbiBvZiBjZWxscyBhcyB1bnNpZ25lZCBp
+bnRlZ2VyczoKPiA+ID4gCj4gPiA+ICAgICAgIHRpLGRlc2tldzowOjA6IDQyOTQ5NjcyOTMgaXMg
+Z3JlYXRlciB0aGFuIHRoZSBtYXhpbXVtIG9mIDIxNDc0ODM2NDcKPiA+IAo+ID4gSSBkb24ndCBx
+dWl0ZSB1bmRlcnN0YW5kIHRoaXMuIFdlIGNhbm5vdCBoYXZlIG5lZ2F0aXZlIG51bWJlcnMgaW4g
+ZHRzIGZpbGVzPyBPciB3ZSBjYW4sIGJ1dCAKPiA+IGR0X2JpbmRpbmdfY2hlY2sgZG9lc24ndCBo
+YW5kbGUgdGhlbSBjb3JyZWN0bHk/IE9yIHRoYXQgaW50MzIgaXMgbm90IHN1cHBvcnRlZCBpbiB5
+YW1sIGJpbmRpbmdzPwo+ID4gCj4gPiA+ICAgIFNvIEkgY2FuIHRoaW5rIG9mIHR3byBzb2x1dGlv
+bnMgdG8gdGhpczoKPiA+ID4gCj4gPiA+ICAgIGEpIEtlZXAgdGhlIHRpLGRlc2tldyBwcm9wZXJ0
+eSBhcyBhbiB1aW50MzIgYW5kIGRvY3VtZW50IHRoZSB2YWxpZAo+ID4gPiAgICByYW5nZSAoWy00
+LCAzXSkgaW4gdGhlIHByb3BlcnR5IGRlc2NyaXB0aW9uICh0aGlzIGlzIHdoYXQgdGhpcyBwYXRj
+aAo+ID4gPiAgICBkb2VzIGN1cnJlbnRseSkuCj4gPiA+IAo+ID4gPiAgICBiKSBSZWRlZmluZSB0
+aGlzIHByb3BlcnR5IHRvIGJlIGNsb3NlciB0byB0aGUgZGF0YXNoZWV0IGRlc2NyaXB0aW9uCj4g
+PiA+ICAgIChpZS4gdW5zaWduZWQgaW50ZWdlcnMgZnJvbSAwIHRvIDcpIGFuZCBhZGFwdCB0aGUg
+ZHJpdmVyIGFjY29yZGluZ2x5Lgo+ID4gPiAgICBUaGlzIHdvdWxkIGFsc28gbGV0IHVzIGRlZmlu
+ZSBpdHMgcmFuZ2UgcHJvcGVybHkgdXNpbmcgbWluaW11bSBhbmQKPiA+ID4gICAgbWF4aW11bSBw
+cm9wZXJ0aWVzIGZvciBpdC4KPiA+ID4gCj4gPiA+ICAgIEkgdGhpbmsgKGIpIGlzIHRoZSByaWdo
+dCB0aGluZyB0byBkbyBidXQgSSB3YW50IHRvIGtub3cgeW91cgo+ID4gPiAgICBvcGluaW9uLiBC
+ZXNpZGVzLCBJIGRvbid0IGhhdmUgdGhpcyBoYXJkd2FyZSBhdCBoYW5kIGFuZCBpZiBJIHVwZGF0
+ZWQKPiA+ID4gICAgdGhlIGRyaXZlciBJIHdvdWxkbid0IGJlIGFibGUgdG8gdGVzdCBpdC4KPiA+
+IAo+ID4gSSBkb24ndCB0aGluayBhbnlvbmUgaGFzIHVzZWQgZGVza2V3IHByb3BlcnR5LCBzbyBJ
+IGd1ZXNzIGNoYW5naW5nIGl0IGlzIG5vdCBvdXQgb2YgdGhlIHF1ZXN0aW9uLgo+ID4gCj4gPiBM
+YXVyZW50LCBkaWQgeW91IGhhdmUgYSBib2FyZCB0aGF0IG5lZWRzIGRlc2tldyB3aGVuIHlvdSBh
+ZGRlZCBpdCB0byB0ZnA0MTA/Cj4gCj4gSSBkaWRuJ3QgaWYgSSByZW1lbWJlciBjb3JyZWN0bHks
+IEkganVzdCBtYXBwZWQgaXQgdG8gdGhlIGhhcmR3YXJlCj4gZmVhdHVyZXMuIFRoZSBoYXJkd2Fy
+ZSByZWdpc3RlciBpbmRlZWQgdGFrZXMgYSB2YWx1ZSBiZXR3ZWVuIDAgYW5kIDcsCj4gYW5kIHRo
+YXQgaXMgbWFwcGVkIHRvIFstNCwzXSB4IHQoU1RFUCkuIEkgZG9uJ3QgbWluZCBlaXRoZXIgb3B0
+aW9uLgo+IAo+IC0tIAo+IFJlZ2FyZHMsCj4gCj4gTGF1cmVudCBQaW5jaGFydAoKSSBoYXZlbid0
+IGZvdW5kIGFueSBleGFtcGxlcyBvZiB5YW1sIGJpbmRpbmdzIGRlZmluaW5nIHNpZ25lZCBpbnRl
+Z2VyCnByb3BlcnRpZXMgc3VjaCBhcyB0aGlzLCB3aGF0J3MgdGhlIG5vcm0gaW4gdGhpcyBjYXNl
+PyBEbyB5b3UgYWdyZWUgd2l0aAphbnkgb2YgdGhlIHByb3Bvc2VkIHNvbHV0aW9ucz8gRG8geW91
+IGhhdmUgYSBiZXR0ZXIgc3VnZ2VzdGlvbj8KClRoYW5rcywKUmljYXJkbwoKX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWls
+aW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0
+cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
