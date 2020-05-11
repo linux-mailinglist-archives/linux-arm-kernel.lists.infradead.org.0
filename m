@@ -2,114 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 058791CD561
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:37:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 176081CE1F7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 19:45:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=T0DRSWqJ/OAzK20KQw7n7LDBdIx52vjoQ9dsAZBVnxc=; b=skKd4s4OMD8E3m
-	p/1YyxVgwjuixd3fsoKYMfhtVuMzX6ROO9HywgHF67W8apsoA/Ffskvya4LBchWUOZjsrB6HWP24Q
-	byT8c5iNFiNte39Iem6T9o7p7LpumM6yxZSFya38ut6ws4MGyheVMdqvwQNcLH3bn6dB8Aeojq++6
-	eIwPQOoYtzX7ymWxGd6mgGOxk8ZAa7Fujcc339uTSE+u5CArWHaQ0uKBYJMfl0nEsAhiSvJg5eNUP
-	LsQgC43cI05P4N9ut4qCZTjtBrul7XmjD2wW7bRDNnTFZp8fsHyUweTEIIsEC+iUom89ixTjcZYiL
-	Sxm+9cqZCa9azaJNUXmw==;
+	List-Owner; bh=a+VBiJMLUR7eQQbE8HuKIYs7ifiIvQX0M54OdYQk+lE=; b=TRTdoSZOWfPWIi
+	9jbXV5fC6is52UOA3x6SxV5LuE7QDt5xzr1t9t8gT0UXSuY1aTD0RrfEhre07HgpVYZEgbwH9e+Lu
+	nEu9UtOjrY04BiZgi6md8WwLD7ITxQ+bXvvcJK22jJEjXceyDbMFw3ZPe6wEsKOMgm4aR99mJDtjY
+	NKImSfnsoMmfynnZ+imrzf+VXu5mZ3wOXyCUKTfHv0BrqZp5MXHNilU5J4mMCLydp57irdLezpCgr
+	jT6GHB2yjhLiiFAT31jljta5yAbjVVmFjvfiQbrhJjf20NCSc+QnJG9T9qaGicfcU0zt1aFmFBnPR
+	3j81dAMj2vVxJpl72A1A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY4rl-0000Pb-E9; Mon, 11 May 2020 09:36:53 +0000
-Received: from mail-eopbgr130044.outbound.protection.outlook.com
- ([40.107.13.44] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
+	id 1jYCUX-0006im-68; Mon, 11 May 2020 17:45:25 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY4oX-0003Mu-15
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 09:33:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=MhMWncHtYtflvtOkWxFoSCRc5tVNuXimGuxhtt6fyjAv+X6cq74vFvWrSipUdOLoCY1YGRcXyPxwjZ8im1p+q5DujDDbF5OuOt/RdHQpoJ0MWiOh0V7FuHrJPii4EX561U4TXbDFo9Qu/+tsjB7GQxLwXB9gI2ZkIf2pDB8aafMQ19KMWL0uZUcp654EpyOWecfCxKG5eV7dWZhvUnafkE8vCaDn9SMQQA1qpz/Tap6YYWOCOoDrbONcuqwELIJLpqeXjjGW5nGNaQeh86MQrzgYhsAPXjUx5vZMfHHg1xkU8evLdZZdf9QNk/fjfPkOIwM6S64P01O1fscVv2SLuQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WEoEhyBGFSr+T0WmOOJnN6+RjSQtavc5N5PmyRlXha4=;
- b=S7EZFAvJ8yathjmhdTKFTHYQIkRMFaY2antZsHk33s7z+byuhszHd8I6JRHkHlkpgmKVZqX6Xkie3F9QOitd7BN5ben8ld1+6ao/Z6KV6fNp9OObpD/mHMhaVjsiL6Ftk/Z1yphE6ex/IDDlu5uMj4IW5rCrA22HDY+FmQ8AfFK821u1k2TvE3nE0/GB9LETfBZIFN/IBQrrEGrwrb6qKEoeDXencA2jokc3n7Jkata9ob2fjUzK5H6/eUIAt6wpl/dQvu4pYJQiDxaWwGkSJFUqEkrmLzQg0bk971qJBit2nOlWmAICsOr2R28Hetnyiin9p3pLx7drNyNdtzEWDw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=WEoEhyBGFSr+T0WmOOJnN6+RjSQtavc5N5PmyRlXha4=;
- b=VOPTMp3kRzeI9Al29ixpd0VhBn8fofs3l3lmmSP8fVWSH2HDOAI/Y+EkTk5gu79GSWKP6wtIEhI6QYP/d51AsZciSFcfwGvkJh4thxeJGaVTQbs9OcUQJMYA3dH0B2cSVAPThux35aK3YxaAkPsa4+WMEcUa4TQ6VGb3DjRetRA=
-Authentication-Results: pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=none action=none header.from=nxp.com;
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6733.eurprd04.prod.outlook.com (2603:10a6:803:11e::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.28; Mon, 11 May
- 2020 09:33:30 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.2979.033; Mon, 11 May 2020
- 09:33:30 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: s.hauer@pengutronix.de, vkoul@kernel.org, shawnguo@kernel.org,
- u.kleine-koenig@pengutronix.de, robh+dt@kernel.org, festevam@gmail.com,
- dan.j.williams@intel.com, mark.rutland@arm.com, catalin.marinas@arm.com
-Subject: [PATCH v7 RESEND 13/13] dmaengine: imx-sdma: add uart rom script
-Date: Tue, 12 May 2020 01:32:36 +0800
-Message-Id: <1589218356-17475-14-git-send-email-yibin.gong@nxp.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
-References: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
-X-ClientProxiedBy: SG2PR06CA0141.apcprd06.prod.outlook.com
- (2603:1096:1:1f::19) To VE1PR04MB6638.eurprd04.prod.outlook.com
- (2603:10a6:803:119::15)
+ id 1jYCUP-0006hy-3M
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 17:45:18 +0000
+Received: by mail-io1-xd42.google.com with SMTP id f4so4346755iov.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 10:45:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=OTMcsGbSNPLL7L+tUlyt0FenOS7bLLaekCh7ftl59gc=;
+ b=Nfb99L6TDVBBWvt/W0lqIjZKrLZDJ/LXYKTvX3IvTOiMFZN/A1DIPF051AUp+7tDkX
+ sVxPiC2nZH5U1Io2kW6fVGpMx0LndJCvV34Rtso3BcUX/uM3fh+Tn6Vv0dzctSr/Sr/h
+ oOigNR9VZNxYR7ovbguI2IiC8jqBsgoBPcFVnPRW3diKX5sGiDRwDwEVYlkUdYFKgJJo
+ a9K6d4sMtYVdzpts1rmuMGBOlg9MC0MDNS7lYCgvz8oZVIPDKCqPEbsSwSnIMt8JFDlO
+ wPJa+exWgkN4H31DKuofRThFklXX4KwpyrWMoDwOYrBrEAy19dk1llmjWrb2Y9/Yp/2u
+ xbzA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=OTMcsGbSNPLL7L+tUlyt0FenOS7bLLaekCh7ftl59gc=;
+ b=mvZjWw5n7dhZYQMlo7+WNxeKJ5jMDY3uu579cClp7bGEYneHYs5Tt4Lv+4PtKxGSIC
+ Zjw2ixOGlJwa6gcUnCX+DlNOW1OM/ckRQGKHcATZ0qCIToVCg01KYXlN0psW7Tn0mX+V
+ AIXiT0buBoWdHIZdpOuopWDODoiI6HG56y+pQsgkgCE4yzyqWXAzqjbOuHC4SJs1Yjnk
+ RKaxvQKxbCBBeTZ3mMSWTO947J4GlDsLtAPKcoq9QeFRh5r5UKSXy0F4nJ0Jz6HdkS3M
+ udeDFO/Yc0zdi0AKcaAAECfYGleH65WO1PxLdvYMZKZ1qQfmr4gQ22wuhe21crgr0qlH
+ QZhw==
+X-Gm-Message-State: AGi0PuZFhtW5HAl3a22fwD5odsKsz8gJiDPsZFrMMRdLEcLUuM1vlDDw
+ yuRHHwTIBKKFeIg7qAoznGlBY63kQWggSWgRmsUyUg==
+X-Google-Smtp-Source: APiQypL8QQIH8rAW3VdEhTJm19ncep/OtoyHj8sVIDxfQabUswS2mLh+6DC+2Nmsa/EfSAbxASZU982W9dmlWpW0JZE=
+X-Received: by 2002:a6b:dd06:: with SMTP id f6mr13132232ioc.90.1589219114664; 
+ Mon, 11 May 2020 10:45:14 -0700 (PDT)
 MIME-Version: 1.0
-X-MS-Exchange-MessageSentRepresentingType: 1
-Received: from robin-OptiPlex-790.ap.freescale.net (119.31.174.66) by
- SG2PR06CA0141.apcprd06.prod.outlook.com (2603:1096:1:1f::19) with Microsoft
- SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id
- 15.20.2979.27 via Frontend Transport; Mon, 11 May 2020 09:33:24 +0000
-X-Mailer: git-send-email 2.7.4
-X-Originating-IP: [119.31.174.66]
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-HT: Tenant
-X-MS-Office365-Filtering-Correlation-Id: bd6facc5-5efb-4906-7e82-08d7f58e5d65
-X-MS-TrafficTypeDiagnostic: VE1PR04MB6733:|VE1PR04MB6733:
-X-MS-Exchange-Transport-Forked: True
-X-Microsoft-Antispam-PRVS: <VE1PR04MB673391F1A575D7EA68B59B1189A10@VE1PR04MB6733.eurprd04.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-Forefront-PRVS: 04004D94E2
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam: BCL:0;
-X-Microsoft-Antispam-Message-Info: mdo5vcFbc9L2x6E13sHg5pWwqTUFVcnG72FKPcbN5GsPPfDxcpQye31HwwILK28on7/5fCYUia1ppwmq93l6haHrC8Ba+glSJns6oXz9boopEEvv0bkRq+LX21Ueq/+btY/2iEhRfxhYl+rZOslnSiCYlmSCpYP6/DkxELZuFwOWo88lR5L7mrfrRuEBMcIWPpCrHru+PCG8T2h+LyYgneHijZ3UyQB3niRs3XsXPhbP6i0dKXFLlRZ5Xl+9XQ1N1hXBDj4u7DUSQftq64+o6ZyHLgDMUvvUYhsOArYLmZsr2uRhBj8s70DDRSK0PiL5gfkmqgSNqo72YmYWkpxfQKfS/Cw2C0lMQxoXnPMkkjDgzEKvmKYldDfdGmLHM/+/0yaL/aLcVkPesCZ2eCksQlbkej6M683u8PbdU5ObK4NC1ExbxThy1axrBym+nWqV7sw/ithmkGPT9whcXxFIPAZI/gpMpwhzeMvEeMtyq7YQKRrfPLTNx7TynW7J1aKZnNrvipblwN/S2PRBV6gsSD2fU8nuO+dcW098cJOUEyVPSoRbfo9FqyEQWYt8mQfU5IN7AOYe7NMrzcACr0V+eehSsMTyk04g52sV/AVIQzk=
-X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(376002)(346002)(136003)(366004)(39860400002)(396003)(33430700001)(5660300002)(66556008)(956004)(2616005)(7416002)(4326008)(6666004)(52116002)(478600001)(8936002)(86362001)(8676002)(966005)(26005)(33440700001)(66946007)(6486002)(6506007)(66476007)(36756003)(2906002)(316002)(6512007)(186003)(16526019);
- DIR:OUT; SFP:1101; 
-X-MS-Exchange-AntiSpam-MessageData: /5fYM0WG0rhdYvy5a68mOObDswZoTwPJJaPzlgJXYUSwjAHQ3SXStlRQiVB6MdsP5qevJCDmM/dy0WnkKGx4KyYIqjTdc3lsxLTuFnlnKYF0x22RsMDHhcqH/L3JvbVWOL5OEYzb5G37TbuZuDRBSJI6iaeeyCNqILMbLb5StE8QsizIf7ngpX0EMATR6nEs2o6y43A5PMNnCQbPpUW9njhgABMBWyWPU4U7xvjyQGlXHUIb6Dp81KUDMbYIvHv/GvgRFZGfHljijOOnUMfX7Zbiy4g3bsvMpA6jD7JHypYYas1ybTEpMtvom/fQ86B0wyb0ycdFPGlJHnit2WBNtQ4nN880DhpOsHJ4phEU23CPHvucqM16O0VYCrqdOt1iH0Oad4dwVxVZ9baAJ73gqrNwobwQIdPiLVO8L1SWxbFbfK1OxBs7gJ5gIjGwdORhVHcohI3MD8u4UhvM+QZhhOHn3BDP3cSztYq1VeChMOI=
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: bd6facc5-5efb-4906-7e82-08d7f58e5d65
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 11 May 2020 09:33:29.9427 (UTC)
-X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
-X-MS-Exchange-CrossTenant-Id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-MailboxType: HOSTED
-X-MS-Exchange-CrossTenant-UserPrincipalName: XHDmzgnnD+saW92bZ4h8R6UC2D0j3SpLlICtzvg4/8i/ZZFWC6RohYS5AlzYL9OUmISeK9yoxOOhF+FxNirC2w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6733
+References: <20200509084237.36293-1-weiyongjun1@huawei.com>
+In-Reply-To: <20200509084237.36293-1-weiyongjun1@huawei.com>
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+Date: Mon, 11 May 2020 11:45:03 -0600
+Message-ID: <CANLsYkxn2QAHgGtmygbw4x-kmrzo2R5u3XDmDUz5EVAYg=SQyQ@mail.gmail.com>
+Subject: Re: [PATCH -next] remoteproc/mediatek: fix invalid use of sizeof in
+ scp_ipi_init()
+To: Wei Yongjun <weiyongjun1@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_023333_086809_AE37A6C9 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200511_104517_171887_C8E47F39 
+X-CRM114-Status: GOOD (  14.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.13.44 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.13.44 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -117,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,89 +91,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, martin.fuzzey@flowbird.group,
- will.deacon@arm.com, linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- linux-imx@nxp.com, kernel@pengutronix.de, dmaengine@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, l.stach@pengutronix.de
+Cc: Ohad Ben-Cohen <ohad@wizery.com>, kernel-janitors@vger.kernel.org,
+ Erin Lo <erin.lo@mediatek.com>,
+ linux-remoteproc <linux-remoteproc@vger.kernel.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Hulk Robot <hulkci@huawei.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For the compatibility of NXP internal legacy kernel before 4.19 which
-is based on uart ram script and upstreaming kernel based on uart rom
-script, add both uart ram/rom script in latest sdma firmware. By default
-uart rom script used.
-Besides, add two multi-fifo scripts for SAI/PDM on i.mx8m/8mm and add
-back qspi script miss for v4(i.mx7d/8m/8mm family, but v3 is for i.mx6).
+On Sat, 9 May 2020 at 02:38, Wei Yongjun <weiyongjun1@huawei.com> wrote:
+>
+> sizeof() when applied to a pointer typed expression gives the
+> size of the pointer, not that of the pointed data.
+>
+> Fixes: 63c13d61eafe ("remoteproc/mediatek: add SCP support for mt8183")
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+> ---
+>  drivers/remoteproc/mtk_scp.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+>
+> diff --git a/drivers/remoteproc/mtk_scp.c b/drivers/remoteproc/mtk_scp.c
+> index 2bead57c9cf9..ac13e7b046a6 100644
+> --- a/drivers/remoteproc/mtk_scp.c
+> +++ b/drivers/remoteproc/mtk_scp.c
+> @@ -132,8 +132,8 @@ static int scp_ipi_init(struct mtk_scp *scp)
+>                 (struct mtk_share_obj __iomem *)(scp->sram_base + recv_offset);
+>         scp->send_buf =
+>                 (struct mtk_share_obj __iomem *)(scp->sram_base + send_offset);
+> -       memset_io(scp->recv_buf, 0, sizeof(scp->recv_buf));
+> -       memset_io(scp->send_buf, 0, sizeof(scp->send_buf));
+> +       memset_io(scp->recv_buf, 0, sizeof(*scp->recv_buf));
+> +       memset_io(scp->send_buf, 0, sizeof(*scp->send_buf));
 
-rom script:
-        uart_2_mcu_addr
-	uartsh_2_mcu_addr /* through spba bus */
-am script:
-	uart_2_mcu_ram_addr
-	uartsh_2_mcu_ram_addr /* through spba bus */
+Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Please get latest sdma firmware from the below and put them into the path
-(/lib/firmware/imx/sdma/):
-https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-/tree/imx/sdma
-
-Signed-off-by: Robin Gong <yibin.gong@nxp.com>
-Acked-by: Vinod Koul <vkoul@kernel.org>
----
- drivers/dma/imx-sdma.c                     | 4 ++--
- include/linux/platform_data/dma-imx-sdma.h | 8 ++++++--
- 2 files changed, 8 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
-index 9d49aaf..01422e7 100644
---- a/drivers/dma/imx-sdma.c
-+++ b/drivers/dma/imx-sdma.c
-@@ -1718,8 +1718,8 @@ static void sdma_issue_pending(struct dma_chan *chan)
- 
- #define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V1	34
- #define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V2	38
--#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3	41
--#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V4	42
-+#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3	45
-+#define SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V4	46
- 
- static void sdma_add_scripts(struct sdma_engine *sdma,
- 		const struct sdma_script_start_addrs *addr)
-diff --git a/include/linux/platform_data/dma-imx-sdma.h b/include/linux/platform_data/dma-imx-sdma.h
-index 30e676b..e12d2e8 100644
---- a/include/linux/platform_data/dma-imx-sdma.h
-+++ b/include/linux/platform_data/dma-imx-sdma.h
-@@ -20,12 +20,12 @@ struct sdma_script_start_addrs {
- 	s32 per_2_firi_addr;
- 	s32 mcu_2_firi_addr;
- 	s32 uart_2_per_addr;
--	s32 uart_2_mcu_addr;
-+	s32 uart_2_mcu_ram_addr;
- 	s32 per_2_app_addr;
- 	s32 mcu_2_app_addr;
- 	s32 per_2_per_addr;
- 	s32 uartsh_2_per_addr;
--	s32 uartsh_2_mcu_addr;
-+	s32 uartsh_2_mcu_ram_addr;
- 	s32 per_2_shp_addr;
- 	s32 mcu_2_shp_addr;
- 	s32 ata_2_mcu_addr;
-@@ -52,6 +52,10 @@ struct sdma_script_start_addrs {
- 	s32 zcanfd_2_mcu_addr;
- 	s32 zqspi_2_mcu_addr;
- 	s32 mcu_2_ecspi_addr;
-+	s32 mcu_2_sai_addr;
-+	s32 sai_2_mcu_addr;
-+	s32 uart_2_mcu_addr;
-+	s32 uartsh_2_mcu_addr;
- 	/* End of v3 array */
- 	s32 mcu_2_zqspi_addr;
- 	/* End of v4 array */
--- 
-2.7.4
-
+>
+>         return 0;
+>  }
+>
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
