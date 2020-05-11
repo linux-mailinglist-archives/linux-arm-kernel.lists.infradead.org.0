@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF5861CDDBA
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:53:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C57451CDDFB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:59:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=mpJdR76HHb1hdDDAa5h43OQz5LsMT2qdDEaupdH5qzk=; b=U1wfD+XMlVpHlcrXPV0lacnw+
-	hPieIKeGpdwVOJoTF5FsB7XznPYDiefOyAm+5lHTG6KxQyLXqoKe8gqsHv6mjAOJWZQMDFD5eyx3m
-	PvovqQPFDgATAzW+Bh3yPs9xdGgDamuML5+udvlcwcz+FAq92KwO1/5FrzA0+4u1InGZhpRnN6Uw7
-	C9WNw6VMRUSDBIAm7cTY2MWP+5infGsjy7JOg+NNn3ARDoytlL7ND76pD/BOvZwXDi99nFSCj9Hmq
-	D6TxRaTYpVFxCOVpaR7ywSJFW8yeq5DTKwEL4AnlyiQgK84IM5e50NXtqkzHvApUYMu1BN/05AyPz
-	9X3LdyBDA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=EVYMguRt/37zQgw+Dsax5qH8TjL+1xIkOyEGbFxp6wk=; b=M0yqrsyBLT7yIR
+	baYfdOSQLJEbfa75IyvDjWwwcLfj8s/H2w2eAAYd894jRLF72IabcPU2LDCpgzY4ZmdGdwDZSgb9q
+	20Tw/YvRMIzd+B62NsHFisszjFcGt37Ml1DZIjc1HQ6AlEnB4fm7inkGe8F5KYHTupCqiF7i6p3yA
+	o/ayi4hybiIAfc0/Pk0GWQzlZmjESCXstwvkjo+bZj03h3dzIY0tHZwR/o8Nn1QDzRaRf7D5uB0zq
+	RiESK1hSJ9S4+X8sfmeJ6NPHHKUCXLNnDrqb+JCriGSN6Tyy3do27QVYOFVR/l21h5Ig8mpeIaaqJ
+	QXcTRfzIgd0JzxIO69DA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY9oE-0000Zz-IQ; Mon, 11 May 2020 14:53:34 +0000
+	id 1jY9u7-0003iR-6D; Mon, 11 May 2020 14:59:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY9o5-0000ZF-4r
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:53:26 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 357E020736;
- Mon, 11 May 2020 14:53:24 +0000 (UTC)
+ id 1jY9tl-0003Yb-9m
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:59:18 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B959420643;
+ Mon, 11 May 2020 14:59:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589208804;
- bh=AYhDvod9nbCHA/bULmju1oTd3bMlLvpXFTEjrTYtibM=;
+ s=default; t=1589209157;
+ bh=h6Ea4lLoHxX7Auk/jUvpA6sDRTJxI89bcfhFCCCylgg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=BQXPdOqRsCKFPkcM8uaWvpoPeWFeD16/uCo96bJsLuWVqFcVoC3Lvd/YKAajzEKpH
- 7L14ijj8OlDNIuJXcIfuVyzQ8zOvMbHeJ4r0AaGTJYu5cPF4l6DLdEVAaJO7VRlhTT
- zGz5p3udlLnloZkIsN3n71pCtGKjoWOnydSQzGvI=
-Date: Mon, 11 May 2020 15:53:22 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <maxime@cerno.tech>
-Subject: Re: [PATCH v2] spi: sun6i: Add support for GPIO chip select lines
-Message-ID: <20200511145321.GH8216@sirena.org.uk>
-References: <20200511045330.690507-1-alistair@alistair23.me>
- <158919630591.8372.404655401498379497.b4-ty@kernel.org>
- <20200511124245.j5pdnpsuhixzvs32@gilmour.lan>
+ b=wKZwMCRGb/qPVQrXagi72UbQrDDDpUCfscELhKXUCYWtWz/96oJ3TsTAVuOo9hq3N
+ OTup9e3bn90dJWWmHxlKrSdmxAXWW+8b1fClhGGt1d9f8pbz6odwWVeOYY4PQ/tUpC
+ Fx64l5wovGXZdTUhdEqOyQyid+5J32xaXo4AOdek=
+Date: Mon, 11 May 2020 15:59:09 +0100
+From: Will Deacon <will@kernel.org>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH v3 05/11] arm64: Add call_break_hook() to early_brk64()
+ for early kgdb
+Message-ID: <20200511145908.GA22040@willie-the-truck>
+References: <20200428211351.85055-1-dianders@chromium.org>
+ <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
 MIME-Version: 1.0
-In-Reply-To: <20200511124245.j5pdnpsuhixzvs32@gilmour.lan>
-X-Cookie: TANSTAAFL
+Content-Disposition: inline
+In-Reply-To: <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_075325_204957_DB95C2AE 
-X-CRM114-Status: UNSURE (   9.68  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200511_075917_356532_E3ADF014 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -79,61 +78,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alistair Francis <alistair@alistair23.me>, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, wens@csie.org, alistair23@gmail.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7893135873814737915=="
+Cc: Mark Rutland <mark.rutland@arm.com>, catalin.marinas@arm.com,
+ bjorn.andersson@linaro.org, hpa@zytor.com, frowand.list@gmail.com,
+ daniel.thompson@linaro.org, corbet@lwn.net, jinho lim <jordan.lim@samsung.com>,
+ agross@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-serial@vger.kernel.org, kgdb-bugreport@lists.sourceforge.net,
+ Dave Martin <Dave.Martin@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>,
+ jslaby@suse.com, Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
+ tglx@linutronix.de, mingo@redhat.com, Allison Randal <allison@lohutok.net>,
+ sumit.garg@linaro.org, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>, jason.wessel@windriver.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Doug,
 
---===============7893135873814737915==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="f5QefDQHtn8hx44O"
-Content-Disposition: inline
+On Tue, Apr 28, 2020 at 02:13:45PM -0700, Douglas Anderson wrote:
+> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+> index 48222a4760c2..59c353dfc8e9 100644
+> --- a/arch/arm64/kernel/debug-monitors.c
+> +++ b/arch/arm64/kernel/debug-monitors.c
+> @@ -297,7 +297,7 @@ void unregister_kernel_break_hook(struct break_hook *hook)
+>  	unregister_debug_hook(&hook->node);
+>  }
+>  
+> -static int call_break_hook(struct pt_regs *regs, unsigned int esr)
+> +int call_break_hook(struct pt_regs *regs, unsigned int esr)
+>  {
+>  	struct break_hook *hook;
+>  	struct list_head *list;
+> diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+> index cf402be5c573..a8173f0c1774 100644
+> --- a/arch/arm64/kernel/traps.c
+> +++ b/arch/arm64/kernel/traps.c
+> @@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
+>  	if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
+>  		return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
+>  #endif
+> +	if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
+> +		return 0;
 
+I think this just means we're not running debug_traps_init() early enough,
+and actually the KASAN early handler is unnecessary too.
 
---f5QefDQHtn8hx44O
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+If we call debug_traps_init() directly from setup_arch() and drop the
+arch_initcall(), can we then drop early_brk64 entirely?
 
-On Mon, May 11, 2020 at 02:42:45PM +0200, Maxime Ripard wrote:
-> On Mon, May 11, 2020 at 12:25:35PM +0100, Mark Brown wrote:
-
-> >    local tree asoc/for-5.7
-
-> Are you sure this is the proper tree?
-
-b4 seems to have grown a bug :/
-
---f5QefDQHtn8hx44O
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl65ZuEACgkQJNaLcl1U
-h9DG2Af/d3GLvqRVx3OU87X/ee8QKnzpdk92r1kOKIfbzpKT2ig5TTitLAuzMqu/
-Bt3yc9nVe97aZaCDrK18VjO2zhwhKsC6ztew3GExiDmD5tVaqEmrO3kQE38znATY
-NBNjvhRRU0bQNQn+eVL/Zd0sm53wP3Zh4x/wNSaes0grabov7f5AyaRB27zCz57y
-1/TCKj8WkUiO5Pjmr121NJOSjwtCA/RwIMZt+l7IGkMFR76ytYtuPNFTjI9Wdgp9
-3DGFhF4lE2cIJJt44YPU0rnWCD9vReZw13awY1jmdIqUMkZPBHi9Jw2bWWOSQ02a
-tofRzH/OWkFf2/2+TQ0mUWTVlPUWUw==
-=+1Zk
------END PGP SIGNATURE-----
-
---f5QefDQHtn8hx44O--
-
-
---===============7893135873814737915==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7893135873814737915==--
-
