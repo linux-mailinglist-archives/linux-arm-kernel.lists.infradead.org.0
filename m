@@ -2,80 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48B251CD84B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:28:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6429F1CD84A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:28:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/IgVvPVPdngD8e/fdKA1KXSuOI1KtiUniOxcPJYOF8Q=; b=HFYJ2iBjP5Onpm
-	pBg8pEWjCDuF5u3+x2e7lS4J8aaqn158gU+l+Jdv+WE1Ueg+NnVtoxDRZ08gZCymxoI3TteLoFDFM
-	JDEz/Lui0LsxX+1UXNVbItvANaS6KngK0LmtZ+wxP+NAgC+hOsDSZO8QZZRs4PHVB2wJqPsp44dyt
-	Oc73A2H+UzPkUv5eab1qahlrQCbrpwrzF/0BktvXg/7fJkX5ZWzvgrmXP4b5yLhn73m3acxtkDL5w
-	E07PhBdatjNABNrcr4yZ9fNULDxs9OHcfDgZL8H1NNYGMWvFQHKszWxu7OpZYNxCGy99gb4Q66Txy
-	U/0U14a9Tfo2mtQR0U2A==;
+	List-Owner; bh=Y/DXHvIjGk/t277cKkM0UFL0wHlDi38HqH970MAgjpU=; b=M/qqfWSRDKa6F7
+	ZaS1s1IBprWc806ffLn83zfd8xzXTkFuXXJnUDZGX9McuQYLibf7pwT/jXeF4DM//bCx0SElZPBq7
+	kil/77KjzcZ9LV0fi+VHwGtNWFyolFZ3M20GCiItoDVnaX78BcIzXMHWfq8jACOydeombEqNs9vZ7
+	r6jBmFaOA/A6oQ6lL2fVzVVia1FoxPUXGM44Oz2VH9vAHegmKTZ7OWjkvQLwpG8WJbRIVVIzx72mp
+	YvdDsdZdi9uoCBBUkKJ2YXJX6SegQsHP9MfCQO3uBc8S26A4H79OFS1SjUlxT3tGG56zkCRRk6Vnm
+	Ht0i2Eln7NrvTcGZ4p1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6ba-0008Tu-48; Mon, 11 May 2020 11:28:18 +0000
-Received: from us-smtp-2.mimecast.com ([205.139.110.61]
- helo=us-smtp-delivery-1.mimecast.com)
+	id 1jY6bC-00087C-NZ; Mon, 11 May 2020 11:27:54 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6bR-0008SP-EC
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:28:11 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
- s=mimecast20190719; t=1589196487;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- in-reply-to:in-reply-to:references:references;
- bh=s7GIl9tuMpK1VOwRBY9ihebUTptjwd7riGoyjLY7P6Q=;
- b=bBzvX/oPYT1oCLX14LlAvVS81ECQ4JdLUpLRIZg6t/bLywV3raC7c2mQmfRnW2n5aOhgPA
- waa781UPPdG2TwVQdMlrJOC+rlxyQmMDVNN78+hWBBRj874hlD5m//JVueLuQrbH3iZ/ap
- ymVzqlMYIcUFBGlS0P7xPUnH7qW1/d4=
-Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
- [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
- us-mta-472-CMeEOkNMNLSPh_fWphzpMw-1; Mon, 11 May 2020 07:28:05 -0400
-X-MC-Unique: CMeEOkNMNLSPh_fWphzpMw-1
-Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
- [10.5.11.12])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 56C89107ACF5;
- Mon, 11 May 2020 11:28:04 +0000 (UTC)
-Received: from localhost (ovpn-12-129.pek2.redhat.com [10.72.12.129])
- by smtp.corp.redhat.com (Postfix) with ESMTPS id EA737610AF;
- Mon, 11 May 2020 11:27:58 +0000 (UTC)
-Date: Mon, 11 May 2020 19:27:55 +0800
-From: Baoquan He <bhe@redhat.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
-Message-ID: <20200511112755.GB4922@MiWiFi-R3L-srv>
-References: <20200501165701.24587-1-james.morse@arm.com>
- <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
- <8736892l92.fsf@x220.int.ebiederm.org>
- <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
+ id 1jY6ay-00085b-DX
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:27:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id a21so9023051ljj.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 11 May 2020 04:27:39 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=vaB9hU9OmyfFXTQp3Ro8TCS0oJ1JBGJMlLHsQD/icQs=;
+ b=B11Pm6i378UfISHZsNk0nzMTp1ytpuFElTXChP5p5rfSBHgFXSvuIWdO9AuSII/v4L
+ JoXj8tmU64Sov4ttXUk+utPGxHIq+UsAHzKdC+xfO2pyjaQgU0B8FNCNM1tEE5a6a+Bb
+ lVLbbKB5+Drtgyu+Cx6j2yuv4R6xL3Vx83M/2VTvQGYK5L9CGr8jRyKNLN/TGYcESVrg
+ fPnZvzpHrNC2Ub7OaStzqBPbwrPL5nuRFb5OH615K8cpdmSNBoRfCYqnn1LNnamAJLVa
+ ymOntHstg1G1B2aaxiJSR7DHWzSbohQ93hZO8PTB8Ync9/qLg3Qkf7TZJn0VuMhti5DF
+ Dd4Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=vaB9hU9OmyfFXTQp3Ro8TCS0oJ1JBGJMlLHsQD/icQs=;
+ b=b/mh8TaII2sZAGsMnPBFd1BoI9gaf8z5ODgLk3n/fMNM+1VxXPlKecrKahpDq5X0yJ
+ 74BTIdCtvfp+u5EczzpJC6+WdRFViIDBC2O7/w9o08RIM0wzhkfXPmDZql9xTMiF2/TX
+ 5eku7gENYn5wuXDbciCQjmQu0iWYNlvhkEp+t7ygSuqEyFtrS7mPVSwcWpfQ7IvKP/MZ
+ CZCbHeel8ENRet5ayJQsb2RXT2HASY3FFMSICAGRJ01hiILNwE8SvEy5zBrF6sYRJzTK
+ 2WItJ1zOYyhHt4TlSQknPJi/5Q4ESZDshzIoAceoeyOS2NvPYANeNLlMaBpV5YkY3XnB
+ g8dQ==
+X-Gm-Message-State: AOAM530Fdw89X1o92/r4iDr83SaPIU0vLZKX+hAs/QyOQFzCXXmr57XM
+ vCeweoVvAkTcW56S6lv4g9O3pfBoJe7a8YSL7x4bCSmuEnE=
+X-Google-Smtp-Source: ABdhPJxjS7B69iERkJXybN1FRa7Oxd7PZfUVSfeSeQJxEpGjVNnxZ1aHys/mj0Ck3Q4insH6zi+f+AQGU7gf0xFawuI=
+X-Received: by 2002:a2e:b6d3:: with SMTP id m19mr6903929ljo.43.1589196457920; 
+ Mon, 11 May 2020 04:27:37 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
-X-Mimecast-Spam-Score: 0
-X-Mimecast-Originator: redhat.com
-Content-Disposition: inline
+References: <20200510102330.66715-1-tali.perry1@gmail.com>
+ <20200510102330.66715-3-tali.perry1@gmail.com>
+ <20200511091759.GE185537@smile.fi.intel.com>
+In-Reply-To: <20200511091759.GE185537@smile.fi.intel.com>
+From: Tali Perry <tali.perry1@gmail.com>
+Date: Mon, 11 May 2020 14:28:50 +0300
+Message-ID: <CAHb3i=tERsM+gwmQN1+vjnML9o5NxRK=uBokEUsd-Ljyje4s3A@mail.gmail.com>
+Subject: Re: [PATCH v10 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_042809_546805_8BAFAE06 
-X-CRM114-Status: GOOD (  22.17  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200511_042740_659986_F3864BF2 
+X-CRM114-Status: GOOD (  16.05  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [205.139.110.61 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [205.139.110.61 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [tali.perry1[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tali.perry1[at]gmail.com]
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,7 +86,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,86 +97,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kexec@lists.infradead.org, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Dave Young <dyoung@redhat.com>, linux-arm-kernel@lists.infradead.org
+Cc: devicetree <devicetree@vger.kernel.org>, Tomer Maimon <tmaimon77@gmail.com>,
+ Nancy Yuen <yuenn@google.com>, avifishman70@gmail.com,
+ Patrick Venture <venture@google.com>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Brendan Higgins <brendanhiggins@google.com>, ofery@google.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, kfting@nuvoton.com,
+ Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Benjamin Fair <benjaminfair@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/11/20 at 10:19am, David Hildenbrand wrote:
-> On 09.05.20 17:14, Eric W. Biederman wrote:
-> >>> + * If the memory layout changes, any loaded kexec image should be evicted
-> >>> + * as it may contain a copy of the (now stale) memory map. This also means
-> >>> + * we don't need to check the memory is still present when re-assembling the
-> >>> + * new kernel at machine_kexec() time.
-> >>> + */
-> >>
-> >> Onlining/offlining is not a change of the memory map.
-> > 
-> > Phrasing it that way is non-sense.  What is important is memory
-> > available in the system.  A memory map is just a reflection upon that,
-> > a memory map is not the definition of truth.
-> > 
-> > So if this notifier reflects when memory is coming and going on the
-> > system this is a reasonable approach.  
-> > 
-> > Do these notifiers might fire for special kinds of memory that should
-> > only be used for very special purposes?
-> > 
-> > This change with the addition of some filters say to limit taking action
-> > to MEM_ONLINE and MEM_OFFLINE looks reasonable to me.  Probably also
-> > filtering out special kinds of memory that is not gernally useful.
-> 
-> There are cases, where this notifier will not get called (e.g., hotplug
-> a DIMM and don't online it) or will get called, although nothing changed
-> (offline+re-online to a different zone triggered by user space). AFAIK,
-> nothing in kexec (*besides kdump) cares about online vs. offline memory.
-> This is why this feels wrong.
-> 
-> add_memory()/try_remove_memory() is the place where:
-> - Memblocks are created/deleted (if the memblock allocator is still
->   alive)
-> - Memory resources are created/deleted (e.g., reflected in /proc/iomem)
-> - Firmware memmap entries are created/deleted (/sys/firmware/memmap)
-> 
-> My idea would be to add something like
-> kexec_map_add()/kexec_map_remove() where we have
-> firmware_map_add_hotplug()/firmware_map_remove(). From there, we can
-> unload the kexec image like done in this patch.
+On Mon, May 11, 2020 at 12:18 PM Andy Shevchenko
+<andriy.shevchenko@linux.intel.com> wrote:
+>
+> On Sun, May 10, 2020 at 01:23:29PM +0300, Tali Perry wrote:
+> > Add Nuvoton NPCM BMC I2C controller driver.
+>
+> Some cosmetic changes needs to be done.
+>
 
-Hi David,
+Thanks for the review and the comments.
+Will fix all, have a few questions (below)
 
-I may miss some details, do you know why we have to unload the kexec image
-when add/remove memory?
+> ...
+>
+> > +/*
+> > + * Nuvoton NPCM7xx I2C Controller driver
+> > + *
+> > + * Copyright (C) 2020 Nuvoton Technologies tali.perry@nuvoton.com
+> > + */
+>
+> So, entire file has C99 comment style, but this and few other places.
+> Any reason of inconsistency?
+>
+> ...
+>
+> > +#if IS_ENABLED(CONFIG_DEBUG_FS)
+>
+> Why?
 
-If this is applied, even kexec_file_load is also affected. As we
-discussed, kexec_file_load is not impacted by kinds of memory
-adding/removing at all.
+We wanted to add an optional feature to track i2c slave status.
+the NPCM has 16 channels handling multiple devices each. Some of the devices
+are polled periodically, and might power down.
+The user wanted to implement a health monitoring option
+to occasionally check the status of the buses (how many timeouts, recovery etc.)
+This feature is optional and depends on CONFIG_DEBUG_FS The counters are exposed
+to user through the file system.
 
-Besides, if unload image in casae memory added/removed, we will accept
-that the later 'kexec -e' is actually rebooting?
+....
 
-Thanks
-Baoquan
+> ...
+>
+> > +#define I2C_NUM_OF_ADDR 10
+>
+> Is it 10-bit address support or what?
+>
 
-> 
-> And these callbacks might come in handy for fixing up the kexec initial
-> memmap in case of kexec_file_load(). AFAIKS on x86_64:
-> - Hotplugging a DIMM will not add that memory to
->   e820_table_kexec
-> - Hotunplugging a DIMM will not remove that memory from e820_table_kexec
-> 
-> Maybe we have similar things to handle on other architectures.
-> 
-> -- 
-> Thanks,
-> 
-> David / dhildenb
-> 
-> 
+No, the NPCM has an option to respond to multiple slave addresses
+(10 own slave addresses)
 
+
+
+...
+
+> > +     // Repeat the following sequence until SDA is released
+> > +     do {
+> > +             // Issue a single SCL toggle
+> > +             iowrite8(NPCM_I2CCST_TGSCL, bus->reg + NPCM_I2CCST);
+> > +             udelay(20);
+> > +             // If SDA line is inactive (high), stop
+> > +             if (npcm_i2c_get_SDA(_adap)) {
+> > +                     done = true;
+> > +                     status = 0;
+> > +             }
+> > +     } while (!done && iter--);
+>
+> readx_poll_timeout() ?
+
+Not exactly, readx_poll_timeout includes only a read operation, here there is a
+write in the middle. (iowrite8)
+
+
+>
+> ...
+>
+
+
+...
+
+
+Thanks!
+Tali Perry
+Nuvoton Technologies
 
 _______________________________________________
 linux-arm-kernel mailing list
