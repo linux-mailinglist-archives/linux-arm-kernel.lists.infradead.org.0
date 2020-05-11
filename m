@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D21A71CE709
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 23:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 934E41CE70A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 23:06:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,69 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=rM3ZdZJLpJrf9tY3tj8Ef30OUH1doEGhVPQvdV5CIQI=; b=qjyopY7GI/+eyjC7138mf3kMss
-	TmIzg9XoAXx1CZxGFsPCs2Lyvr/DXl0zntay+FBJ9nrKdTs9Yq3ia6LHNMkxBCAhKWXxfQGQnif8A
-	vgT8ZSisXsMODCIsHm47hNhuWK1z/LgjKwGQ6X0CsiN5mdWvUvAsO/KgGQWi+TDjBvRZsbPrsbdQr
-	zgq1qTQXAgnZHjgDkWsfSMGnK+uWhOSWMV3fSFWKS3wzQF6W34bUxcKoYEq0aIEYdIoX39BMYeOTt
-	nv/+tKM6SsImavI/8HdkoWXCtN+kgK4lCCvBtgQ0Z1WjVP9WvfpJZGgHsv2KSQ1EynlbI3AGOvtBF
-	mTaSsoqA==;
+	bh=LEq4gyFszHar67x0HdaXP9r3AFQCAC5RMV3exxa9Htw=; b=Yvym4bcfsPQOCUyJTrQCGyTqVn
+	qmYwt74oLSKGO2qpjvaz5dYxl/JPnX9w0Y+d/BlSxQ1vB9hmGaxjnel42zNYXs7EOq/ZxG6WIDwKd
+	s0RHc5H85EoR0kYqwPl1aKCUEI/CCLWR7HH9w8aBfqkSBPU3sAVGsFQSiFbI/xAMbkt2ZX3Yw0PTF
+	gHCz16bF9NQwPNRH/h7RrOmEf52AH3hKVncIPUuixHDZPIuimksjLtVX+NNF/FeBVBzBIG/mntarX
+	dJEOeT9AWhRyBZH+i8WyjDKY+jQ1x2f81PclzF8fQIs5YZhbGdD88+W4dcf3k+u2LuoM+t1pNmqF2
+	8pU5Lmxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYFch-0001dZ-Pz; Mon, 11 May 2020 21:06:03 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1jYFcv-0001uw-PY; Mon, 11 May 2020 21:06:17 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYFc7-0001MJ-Hu
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 21:05:28 +0000
-Received: by mail-pf1-x444.google.com with SMTP id x15so4711015pfa.1
+ id 1jYFc9-0001NB-Fi
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 21:05:31 +0000
+Received: by mail-pg1-x542.google.com with SMTP id j21so5112376pgb.7
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 14:05:27 -0700 (PDT)
+ Mon, 11 May 2020 14:05:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=xQD9E0I8T20s+9ER9n57S8jp4cV1BJb7ghQVAxtwwBE=;
- b=JNedmZ7mHmQHZCmuX0dX/jKoXar0R4U3lP1ioI1aL0XQiUyBz/vFdEgBCHHKzyGGaP
- XtGsh4LQXMLTb8t3w9708wl4fswfa1BJWxVj+qcUQtfABSkCrnVX4/lvQ6aoXJzNNf22
- pNDkqkwX18mLrbfguelBH+kZezeEuuxFMP2A1lK/OSdUjaxIZo7DLAOxhUE+2BKwsdZa
- lCRsUS1DdonWgr381cLa6JTnDjfQVoru02lAgeBsl4MlQn18e20pI74BK36bSS9cfPJB
- M2hB8xxvbV5EIotihZCnccVzZgYfq711/Nszi/tkPm1qNfqziewoTT6M+0jXzD1dwIHV
- z+vg==
+ bh=XqqspZiHqwYUdfNIpGEaM440YydHzXGPo72A0riGwI4=;
+ b=CTLAHQSMJ3Qkqc7d3jXVvpKQ5pB6pna+ljz744NOCTtX4pBYkCEnO8hAG++sKsIEiz
+ k2yXW7jp9LDyJ7oGF5bG9/OXnrVMx/BKhSCKA/gp30yeQ5j1yndPYRvokkew3jJGHJKB
+ C1u81fMs6q7lHyVVA6+E6v6Mpl5CZJmCpqhW/3N3s2Sv80y0ezYCMfJUj8qFsN/0e047
+ NipGFTB21Asie7LT+041gpR9A4/masXezsiz3XV0ZCscupJSB1Vp3axRwJVtuJ8WnO43
+ shWwPU0SBnrScxGzBXLVcU3A+jL9kGWTCm71aMdKy/mgBcugxuJQ6dWAlr6YhJsakvz0
+ 3iIQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=xQD9E0I8T20s+9ER9n57S8jp4cV1BJb7ghQVAxtwwBE=;
- b=hUxzP/VYRp82PUMsDupJI8n0hqi+1b1yIOHuwuMetZpo3UZXl1t37Rwi1yauW2l8B/
- wyHjcmcWTJ9wA0DQcMNeaMYHWUBydWMUojHpI2rU1O/GMndjdfJzoS1EzxvhfkhgyrVT
- pMunXTRqfBo8cbyACjYPwYv0LEkBANSVbtOhykF6muBm/oxQCITrSuSUVdpdWpPSQW42
- IdDjnMF++ywKoMe1ywU4C8JWlEDANH4S5uLzn/nvoaFu1ofdL6l6QgHUTlcBYYcIQLg5
- SxYPPGeRgqsZTpoo6cAKr4SESWA4lqXS5WIKHYHSPj9IjFAroW6AVnoSCfuzX/d2a2MG
- tjbQ==
-X-Gm-Message-State: AGi0PuaNo6om/70zCSz4A+JpF5zvJfEU2vMNvmBtU9Ma3pcBv8mkAK9a
- 1e/7Zitfo4KobXbblGGd1EM=
-X-Google-Smtp-Source: APiQypItQ5cHL2TagcF3E1X8gJ8H+muxFoYu+9Sqd7pvZTWbIxapY9PNGXNy+NAXID33kgWY0skeOA==
-X-Received: by 2002:a63:d909:: with SMTP id r9mr15882497pgg.245.1589231127042; 
- Mon, 11 May 2020 14:05:27 -0700 (PDT)
+ bh=XqqspZiHqwYUdfNIpGEaM440YydHzXGPo72A0riGwI4=;
+ b=EI07WSBADh19TK3ssVu+JdyU7lW/umVbs64gPOeJJ4+YNqPIOucad1mLIU0RLBH0dy
+ OMw/TQPCnAuU7TNra90jVkGe15qh69iHpMhezcfQ9/tSte1T//7N/QdqO2qa5OF702BD
+ p7odBD/Sd5PnKjZ9Ijrj4pWnCmpPNd4f59fLBrwhtswYJJ9ce4QquVqttugxS29O1oPi
+ m2zqLQv8wyx0rmr9kr2JX4WqcDABSZjZZ5XIeP8tFK4pPZwDeXK+y/AIcKddyVVEH65q
+ gjIIv+iuMxslZPW7wGZFGfNbvwygzB0gRlrXCciS9wcUg0Qj5jCrkSuHX+PAzYiBXRv/
+ hY8w==
+X-Gm-Message-State: AGi0PuYV4iCw8WWQIRrYuKVuCORuOkvMecpgQuMJ7GfnbJFhwuciuUP2
+ ZgVUSFujdbO3KT09w8cgC68=
+X-Google-Smtp-Source: APiQypLLSUvUI07JR9RsfZi9+gO/1YVa9tHNrsA121s1r+HhWkldytCQgDAQdjEVln4awLi8/6uMgA==
+X-Received: by 2002:a62:ed14:: with SMTP id u20mr18477510pfh.69.1589231128618; 
+ Mon, 11 May 2020 14:05:28 -0700 (PDT)
 Received: from fainelli-desktop.igp.broadcom.net ([192.19.223.252])
- by smtp.gmail.com with ESMTPSA id c2sm10032230pfp.118.2020.05.11.14.05.25
+ by smtp.gmail.com with ESMTPSA id c2sm10032230pfp.118.2020.05.11.14.05.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 14:05:26 -0700 (PDT)
+ Mon, 11 May 2020 14:05:27 -0700 (PDT)
 From: Florian Fainelli <f.fainelli@gmail.com>
 To: soc@kernel.org
-Subject: [GIT PULL 2/4] Broadcom devicetree changes for 5.8
-Date: Mon, 11 May 2020 14:05:20 -0700
-Message-Id: <20200511210522.28243-2-f.fainelli@gmail.com>
+Subject: [GIT PULL 3/4] Broadcom maintainers changes for 5.8
+Date: Mon, 11 May 2020 14:05:21 -0700
+Message-Id: <20200511210522.28243-3-f.fainelli@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200511210522.28243-1-f.fainelli@gmail.com>
 References: <20200511210522.28243-1-f.fainelli@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_140527_594947_BEA0E059 
-X-CRM114-Status: GOOD (  13.61  )
+X-CRM114-CacheID: sfid-20200511_140529_532030_082A8CC5 
+X-CRM114-Status: GOOD (  11.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,9 +97,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
- bcm-kernel-feedback-list@broadcom.com,
+Cc: Florian Fainelli <f.fainelli@gmail.com>, arnd@arndb.de, khilman@kernel.org,
+ Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
  Nicolas Saenz Julienne <nsaenzjulienne@suse.de>, olof@lixom.net,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
@@ -114,38 +113,25 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.8/devicetree
+  https://github.com/Broadcom/stblinux.git tags/arm-soc/for-5.8/maintainers
 
-for you to fetch changes up to 460227c329e5bd39103b9f7ba01cbad69b14c4c4:
+for you to fetch changes up to 9442c09e784d805048611d23fa4d253caef0a62b:
 
-  Merge tag 'tags/bcm2835-dt-next-2020-03-27' into devicetree/next (2020-04-13 15:53:28 -0700)
-
-----------------------------------------------------------------
-This pull request contains Broadcom ARM-based SoCs Device Tree changes
-for v5.8, please pull the following:
-
-- Nicolas updates the Raspberry Pi 4 board DTS to include the GPIO
-  controlling power to the SD card, adds support for the vmmc regulator
-  for the emmc2 controller and finally updates the power management
-  provider for V3D to use the firmware to solve instabilities.
+  MAINTAINERS: Update Raspberry Pi development repository (2020-05-11 14:02:41 -0700)
 
 ----------------------------------------------------------------
-Florian Fainelli (1):
-      Merge tag 'tags/bcm2835-dt-next-2020-03-27' into devicetree/next
+This pull request contains Broadcom SoCs MAINTAINERS file update for
+v5.8, please pull the following:
 
-Nicolas Saenz Julienne (3):
-      ARM: dts: bcm2711: Update expgpio's GPIO labels
-      ARM: dts: bcm2711: Add vmmc regulator in emmc2
-      ARM: dts: bcm283x: Use firmware PM driver for V3D
+- Nicolas updates the git tree where all BCM2835 kernel development is
+  happening now
 
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts     | 13 ++++++++++++-
- arch/arm/boot/dts/bcm2835-common.dtsi     |  1 -
- arch/arm/boot/dts/bcm2835-rpi-common.dtsi | 12 ++++++++++++
- arch/arm/boot/dts/bcm2835.dtsi            |  1 +
- arch/arm/boot/dts/bcm2836.dtsi            |  1 +
- arch/arm/boot/dts/bcm2837.dtsi            |  1 +
- 6 files changed, 27 insertions(+), 2 deletions(-)
- create mode 100644 arch/arm/boot/dts/bcm2835-rpi-common.dtsi
+----------------------------------------------------------------
+Nicolas Saenz Julienne (1):
+      MAINTAINERS: Update Raspberry Pi development repository
+
+ MAINTAINERS | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
