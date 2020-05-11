@@ -2,67 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF60D1CDDB9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:53:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF5861CDDBA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 16:53:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=18Zhh+MeClQqUjJvTKtJjvZq2vQ839IWFVRe0kh1ZTw=; b=LTH08gxJqV0V5s8XMe3QXfYWq
-	gAJV4YE+CLVXKSfMhnHf4Sd/HSui5B9Vqp24meBWtIJJLEmMMaYz8TY3vG9YmjcHjd/9lfNFnRKxF
-	11zGFZFK+121u6T04R9sQuV4f5MrcCVfOjDwmFJahJFqlRHTUj8ODFSRnyaY+APnYEQ0ehcdkGqNF
-	ox0DM6A+cVI7Q1XvnyicLZEftm17CU0fE4DLT+ByxjzQFXKVvX71GE4GHH0dG8RBSCeGP4YG7/HcL
-	OY7Lot46PlT2rjacu65Nan9AftmSdsSuV66Bq5U6UCj3YMVEFL9HKbmf1Mo71YIu1r3ar9rWG+H6L
-	dQ9jJdSTQ==;
+	 bh=mpJdR76HHb1hdDDAa5h43OQz5LsMT2qdDEaupdH5qzk=; b=U1wfD+XMlVpHlcrXPV0lacnw+
+	hPieIKeGpdwVOJoTF5FsB7XznPYDiefOyAm+5lHTG6KxQyLXqoKe8gqsHv6mjAOJWZQMDFD5eyx3m
+	PvovqQPFDgATAzW+Bh3yPs9xdGgDamuML5+udvlcwcz+FAq92KwO1/5FrzA0+4u1InGZhpRnN6Uw7
+	C9WNw6VMRUSDBIAm7cTY2MWP+5infGsjy7JOg+NNn3ARDoytlL7ND76pD/BOvZwXDi99nFSCj9Hmq
+	D6TxRaTYpVFxCOVpaR7ywSJFW8yeq5DTKwEL4AnlyiQgK84IM5e50NXtqkzHvApUYMu1BN/05AyPz
+	9X3LdyBDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY9no-0000JL-Ip; Mon, 11 May 2020 14:53:08 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jY9oE-0000Zz-IQ; Mon, 11 May 2020 14:53:34 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY9nh-0000I9-6Q
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:53:02 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.106])
- by Forcepoint Email with ESMTP id 9E81F9E1ADD340018546;
- Mon, 11 May 2020 15:52:55 +0100 (IST)
-Received: from [127.0.0.1] (10.47.0.142) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Mon, 11 May
- 2020 15:52:54 +0100
-Subject: Re: [PATCH RFC v3 02/12] perf jevents: Add support for system events
- tables
-To: Jiri Olsa <jolsa@redhat.com>
-References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
- <1588852671-61996-3-git-send-email-john.garry@huawei.com>
- <20200511110127.GB2986380@krava>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <7d416932-12a0-8130-354a-f0a9898d9bf6@huawei.com>
-Date: Mon, 11 May 2020 15:52:02 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jY9o5-0000ZF-4r
+ for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 14:53:26 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 357E020736;
+ Mon, 11 May 2020 14:53:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589208804;
+ bh=AYhDvod9nbCHA/bULmju1oTd3bMlLvpXFTEjrTYtibM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=BQXPdOqRsCKFPkcM8uaWvpoPeWFeD16/uCo96bJsLuWVqFcVoC3Lvd/YKAajzEKpH
+ 7L14ijj8OlDNIuJXcIfuVyzQ8zOvMbHeJ4r0AaGTJYu5cPF4l6DLdEVAaJO7VRlhTT
+ zGz5p3udlLnloZkIsN3n71pCtGKjoWOnydSQzGvI=
+Date: Mon, 11 May 2020 15:53:22 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <maxime@cerno.tech>
+Subject: Re: [PATCH v2] spi: sun6i: Add support for GPIO chip select lines
+Message-ID: <20200511145321.GH8216@sirena.org.uk>
+References: <20200511045330.690507-1-alistair@alistair23.me>
+ <158919630591.8372.404655401498379497.b4-ty@kernel.org>
+ <20200511124245.j5pdnpsuhixzvs32@gilmour.lan>
 MIME-Version: 1.0
-In-Reply-To: <20200511110127.GB2986380@krava>
-Content-Language: en-US
-X-Originating-IP: [10.47.0.142]
-X-ClientProxiedBy: lhreml705-chm.china.huawei.com (10.201.108.54) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+In-Reply-To: <20200511124245.j5pdnpsuhixzvs32@gilmour.lan>
+X-Cookie: TANSTAAFL
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_075301_383475_4D8C49F0 
-X-CRM114-Status: GOOD (  12.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_075325_204957_DB95C2AE 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [185.176.76.210 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,66 +79,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, irogers@google.com, ak@linux.intel.com,
- qiangqing.zhang@nxp.com, peterz@infradead.org, robin.murphy@arm.com,
- linuxarm@huawei.com, acme@kernel.org, linux-kernel@vger.kernel.org,
- zhangshaokun@hisilicon.com, alexander.shishkin@linux.intel.com,
- mingo@redhat.com, namhyung@kernel.org, will@kernel.org,
+Cc: Alistair Francis <alistair@alistair23.me>, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, wens@csie.org, alistair23@gmail.com,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: multipart/mixed; boundary="===============7893135873814737915=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11/05/2020 12:01, Jiri Olsa wrote:
-> On Thu, May 07, 2020 at 07:57:41PM +0800, John Garry wrote:
-> 
-> SNIP
-> 
->>   
->> +static bool is_sys_dir(char *fname)
->> +{
->> +	char *pos;
->> +
->> +	while (true) {
->> +		pos = strchr(fname, '/');
-> 
-> would strrchr be faster?
 
-maybe, I'll check the logic here to see if it can be reduced
+--===============7893135873814737915==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="f5QefDQHtn8hx44O"
+Content-Disposition: inline
 
-  also I thought there's something like
-> basename function that could be usable in here?
 
-it's tricky, as we support putting JSONs in ./, or ./sys, or ./cpu
+--f5QefDQHtn8hx44O
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-But I'll revisit this, as I cannot understand the logic at a glance, 
-which is not good...
+On Mon, May 11, 2020 at 02:42:45PM +0200, Maxime Ripard wrote:
+> On Mon, May 11, 2020 at 12:25:35PM +0100, Mark Brown wrote:
 
-Thanks,
-John
+> >    local tree asoc/for-5.7
 
-> 
-> jirka
-> 
->> +
->> +		if (!pos) {
->> +			if (!strcmp(fname, "sys"))
->> +				return true;
->> +			return false;
->> +		}
->> +
->> +		fname = pos + 1;
->> +	}
->> +
->> +	return false;
->> +}
-> 
-> .
-> 
+> Are you sure this is the proper tree?
 
+b4 seems to have grown a bug :/
+
+--f5QefDQHtn8hx44O
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl65ZuEACgkQJNaLcl1U
+h9DG2Af/d3GLvqRVx3OU87X/ee8QKnzpdk92r1kOKIfbzpKT2ig5TTitLAuzMqu/
+Bt3yc9nVe97aZaCDrK18VjO2zhwhKsC6ztew3GExiDmD5tVaqEmrO3kQE38znATY
+NBNjvhRRU0bQNQn+eVL/Zd0sm53wP3Zh4x/wNSaes0grabov7f5AyaRB27zCz57y
+1/TCKj8WkUiO5Pjmr121NJOSjwtCA/RwIMZt+l7IGkMFR76ytYtuPNFTjI9Wdgp9
+3DGFhF4lE2cIJJt44YPU0rnWCD9vReZw13awY1jmdIqUMkZPBHi9Jw2bWWOSQ02a
+tofRzH/OWkFf2/2+TQ0mUWTVlPUWUw==
+=+1Zk
+-----END PGP SIGNATURE-----
+
+--f5QefDQHtn8hx44O--
+
+
+--===============7893135873814737915==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7893135873814737915==--
+
