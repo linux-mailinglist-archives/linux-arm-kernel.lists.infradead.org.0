@@ -2,58 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A72B21CCF9E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 04:17:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3F141CCFCD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 04:34:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=uk0a1snbpKmXZv616bYDJkAcEgToZwTIg1ETA5N/1fc=; b=dq7ihNfTUUYCol
-	CUiT9shzdNKtSNo1FOx5OEzh1253Yp0YXhMGGI6WcQlijqnHBiD2Tnky3HjkqCeE83TFe/Yj63UOd
-	DbQ7yGeJnQkkatf6H6ctbdpNlMt6T8vbxLm3two0+m79cy4yqDzcVdkT5BeckMLdXO+O2zW5ToFFE
-	qmB0rF7L/wUU8inD9ICPcLslN8TpE8yh50ytF4Y3IcdzGp+dyTwvnLTbJ/E4LhRMltxlo/Zu/9dvD
-	SNSimwcyPqAXV0PU+AC0bmEwqOqSxw1J1de4z4i+C7GsxZvHFuj9euZF0gNCLZn1ufqenY2pViQ01
-	jxPHEfKpFIywMVgk9xXw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lktewrJh3FYeGwwmcYhdS7fWGuSpvAOjlOFeTBRJS4s=; b=S7sqpmSlLLoPny
+	9K39cKc8VWyRJ4+8L2hDlloqFBXFi4zK0B49kK4idW3QN0LvQNvBFGX+78pd0FqvAYO2mUBLHd6sr
+	5Rm7jWBxe17OS30EhY8CwSLYBWpjHTAQZ4qDWa7Sf7O7PPUsMcdcfNIXa0iPp7NTlfLbSuFdDL6RR
+	s8bbamuCSjLMVvKRHWBmBDOvJylxFk+UkFeW0GDCxE2a4wVlwaS14Ldc58/+9oVSZxR2c73JCz0fq
+	M6mAmU2vSEEXV9xnqvzap+hARVNrkJLydbl75vWwToNbO8bwQdSy8aH5vqQeZXJfFbo6mPBHokdRp
+	OHHnPPh7AxbFEk4HWXNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jXy0m-0000IU-3O; Mon, 11 May 2020 02:17:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jXxxq-0003QN-Pz
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 02:14:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B86A31FB;
- Sun, 10 May 2020 19:14:28 -0700 (PDT)
-Received: from [10.163.72.179] (unknown [10.163.72.179])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1FBA83F305;
- Sun, 10 May 2020 19:14:25 -0700 (PDT)
-Subject: Re: [PATCH V2] arm64/cpufeature: Validate hypervisor capabilities
- during CPU hotplug
-To: Marc Zyngier <maz@kernel.org>
-References: <1588906358-7845-1-git-send-email-anshuman.khandual@arm.com>
- <875zd51iis.wl-maz@kernel.org>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <ecd96b3e-59b0-4bb5-bb2e-b1de80bb945c@arm.com>
-Date: Mon, 11 May 2020 07:43:56 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1jXyH0-0002GF-Ep; Mon, 11 May 2020 02:34:30 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jXyGe-00024p-9C; Mon, 11 May 2020 02:34:09 +0000
+X-UUID: b195569c74af4b058bb32914ff936ec4-20200510
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=fxR+3x6dfchTUCq1rEZKfrKVHn0oaDflYS25MJ56o6M=; 
+ b=iOtaRZEJrfZrFyp8o9aHZn+PMxZeVo3t20kE6ChrSvpTyTZDSUJiyrJLlityA+jY4uR8fOA5DRxjRpfow1U5+dvfD3slAlEsbP9TKYU/FoCEt1KNHjBaUmSic0S7v5CgmVrgGepsC8uIFNXxf4Jvj8+2f9pSaag6tDH04FYsMKE=;
+X-UUID: b195569c74af4b058bb32914ff936ec4-20200510
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1961648567; Sun, 10 May 2020 18:34:04 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Sun, 10 May 2020 19:23:58 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 11 May 2020 10:24:00 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
+ Frontend Transport; Mon, 11 May 2020 10:24:00 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, "Paul E . McKenney" <paulmck@kernel.org>, "Josh
+ Triplett" <josh@joshtriplett.org>, Mathieu Desnoyers
+ <mathieu.desnoyers@efficios.com>, Lai Jiangshan <jiangshanlai@gmail.com>,
+ Joel Fernandes <joel@joelfernandes.org>, Andrew Morton
+ <akpm@linux-foundation.org>
+Subject: [PATCH v2 0/3] kasan: memorize and print call_rcu stack
+Date: Mon, 11 May 2020 10:23:59 +0800
+Message-ID: <20200511022359.15063-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <875zd51iis.wl-maz@kernel.org>
-Content-Language: en-US
+X-TM-SNTS-SMTP: B313EB8E7A005151BC9122FE7936DF9B364C35100A83A879C7D0BF8EF3E92D172000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200510_191442_979755_38284DF4 
-X-CRM114-Status: GOOD (  28.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200510_193408_321750_B47AEE71 
+X-CRM114-Status: UNSURE (   6.23  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,247 +90,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This patchset improves KASAN reports by making them to have
+call_rcu() call stack information. It is useful for programmers
+to solve use-after-free or double-free memory issue.
 
+The KASAN report was as follows(cleaned up slightly):
 
-On 05/09/2020 04:29 PM, Marc Zyngier wrote:
-> On Fri, 08 May 2020 03:52:38 +0100,
-> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
->>
->> This validates hypervisor capabilities like VMID width, IPA range for any
->> hot plug CPU against system finalized values. While here, it factors out
->> get_vmid_bits() for general use and also defines ID_AA64MMFR0_PARANGE_MASK.
-> 
-> Maybe add a quick word on the fact that we use KVM's view of the IPA
-> space to allow a CPU to come up.
+BUG: KASAN: use-after-free in kasan_rcu_reclaim+0x58/0x60
 
-Sure, will do.
+Freed by task 0:
+ save_stack+0x24/0x50
+ __kasan_slab_free+0x110/0x178
+ kasan_slab_free+0x10/0x18
+ kfree+0x98/0x270
+ kasan_rcu_reclaim+0x1c/0x60
+ rcu_core+0x8b4/0x10f8
+ rcu_core_si+0xc/0x18
+ efi_header_end+0x238/0xa6c
 
-> 
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Marc Zyngier <maz@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: James Morse <james.morse@arm.com>
->> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: kvmarm@lists.cs.columbia.edu
->> Cc: linux-kernel@vger.kernel.org
->>
->> Suggested-by: Suzuki Poulose <suzuki.poulose@arm.com>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> ---
->> Changes in V2:
->>
->> - Added is_hyp_mode_available() check per Marc
->> - Moved verify_kvm_capabilities() into cpufeature.c per Marc
->> - Added helper get_kvm_ipa_limit() to fetch kvm_ipa_limit per Marc
->> - Renamed kvm as hyp including the commit message per Marc
->>
->> Changes in V1: (https://patchwork.kernel.org/patch/11532565/)
->>
->>  arch/arm64/include/asm/cpufeature.h | 20 +++++++++++++++++
->>  arch/arm64/include/asm/kvm_mmu.h    |  2 +-
->>  arch/arm64/include/asm/sysreg.h     |  1 +
->>  arch/arm64/kernel/cpufeature.c      | 33 +++++++++++++++++++++++++++++
->>  arch/arm64/kvm/reset.c              | 11 ++++++++--
->>  5 files changed, 64 insertions(+), 3 deletions(-)
->>
->> diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
->> index afe08251ff95..fbbb4d2216f0 100644
->> --- a/arch/arm64/include/asm/cpufeature.h
->> +++ b/arch/arm64/include/asm/cpufeature.h
->> @@ -745,6 +745,26 @@ static inline bool cpu_has_hw_af(void)
->>  extern bool cpu_has_amu_feat(int cpu);
->>  #endif
->>  
->> +static inline unsigned int get_vmid_bits(u64 mmfr1)
->> +{
->> +	int vmid_bits;
->> +
->> +	vmid_bits = cpuid_feature_extract_unsigned_field(mmfr1,
->> +						ID_AA64MMFR1_VMIDBITS_SHIFT);
->> +	if (vmid_bits == ID_AA64MMFR1_VMIDBITS_16)
->> +		return 16;
->> +
->> +	/*
->> +	 * Return the default here even if any reserved
->> +	 * value is fetched from the system register.
->> +	 */
->> +	return 8;
->> +}
->> +
->> +#ifdef CONFIG_KVM_ARM_HOST
-> 
-> nit: useless #ifdefery.
+First call_rcu() call stack:
+ save_stack+0x24/0x50
+ kasan_record_callrcu+0xc8/0xd8
+ call_rcu+0x190/0x580
+ kasan_rcu_uaf+0x1d8/0x278
 
-Dropped.
+Last call_rcu() call stack:
+(stack is not available)
 
-> 
->> +u32 get_kvm_ipa_limit(void);
->> +#endif
->> +
->>  #endif /* __ASSEMBLY__ */
->>  
->>  #endif
->> diff --git a/arch/arm64/include/asm/kvm_mmu.h b/arch/arm64/include/asm/kvm_mmu.h
->> index 30b0e8d6b895..a7137e144b97 100644
->> --- a/arch/arm64/include/asm/kvm_mmu.h
->> +++ b/arch/arm64/include/asm/kvm_mmu.h
->> @@ -416,7 +416,7 @@ static inline unsigned int kvm_get_vmid_bits(void)
->>  {
->>  	int reg = read_sanitised_ftr_reg(SYS_ID_AA64MMFR1_EL1);
->>  
->> -	return (cpuid_feature_extract_unsigned_field(reg, ID_AA64MMFR1_VMIDBITS_SHIFT) == 2) ? 16 : 8;
->> +	return get_vmid_bits(reg);
->>  }
->>  
->>  /*
->> diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
->> index c4ac0ac25a00..3510a4668970 100644
->> --- a/arch/arm64/include/asm/sysreg.h
->> +++ b/arch/arm64/include/asm/sysreg.h
->> @@ -705,6 +705,7 @@
->>  #define ID_AA64MMFR0_TGRAN16_SUPPORTED	0x1
->>  #define ID_AA64MMFR0_PARANGE_48		0x5
->>  #define ID_AA64MMFR0_PARANGE_52		0x6
->> +#define ID_AA64MMFR0_PARANGE_MASK	0x7
-> 
-> I realise this is already like this in the current code, but using 7
-> as a mask value for the feature feels wrong. If we ever get a value
-> with bit 3 of the capability being set, we will confuse it with some
-> other configuration.
-> 
-> We should be more careful and pass the full value of the feature to
-> id_aa64mmfr0_parange_to_phys_shift(), which already does the right
-> thing.
+Generic KASAN will record first and last call_rcu() call stack
+and print two call_rcu() call stack in KASAN report.
 
-So we should instead pass complete SYS_ID_AA64MMFR0_EL1 value (sanitized)
-and do the masking inside id_aa64mmfr0_parange_to_phys_shift(), probably
-dropping "_parange_to" from it's name. But kvm_arm_setup_stage2() fetches
-only parange not IPA range. Otherwise a new helper id_aa64mmfr0_parange()
-which takes full SYS_ID_AA64MMFR0_EL1 value and does the masking before
-returning the parange could achieve the same result i.e localizing this
-parange mask.
+This feature doesn't increase the cost of memory consumption. It is
+only suitable for generic KASAN.
 
-Actually, we could have both the above changes i.e there will be following
-two helpers with ID_AA64MMFR0_PARANGE_MASK defined locally.
+[1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+[2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
 
-1. id_aa64mmfr0_phys_shift (u64 mmfr0)
-2. id_aa64mmfr0_parange (u64 mmfr0)
+Changes since v2:
+- remove new config option, default enable it in generic KASAN
+- test this feature in SLAB/SLUB, it is pass.
+- modify macro to be more clearly
+- modify documentation
 
-Thoughts ?
+Walter Wu (3):
+rcu/kasan: record and print call_rcu() call stack
+kasan: record and print the free track
+kasan: update documentation for generic kasan
 
-> 
->>  
->>  #ifdef CONFIG_ARM64_PA_BITS_52
->>  #define ID_AA64MMFR0_PARANGE_MAX	ID_AA64MMFR0_PARANGE_52
->> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
->> index 9fac745aa7bb..7e5ff452574c 100644
->> --- a/arch/arm64/kernel/cpufeature.c
->> +++ b/arch/arm64/kernel/cpufeature.c
->> @@ -2181,6 +2181,36 @@ static void verify_sve_features(void)
->>  	/* Add checks on other ZCR bits here if necessary */
->>  }
->>  
->> +#ifdef CONFIG_KVM_ARM_HOST
->> +void verify_hyp_capabilities(void)
->> +{
->> +	u64 safe_mmfr1, mmfr0, mmfr1;
->> +	int parange, ipa_max;
->> +	unsigned int safe_vmid_bits, vmid_bits;
->> +
->> +	safe_mmfr1 = read_sanitised_ftr_reg(SYS_ID_AA64MMFR1_EL1);
->> +	mmfr0 = read_cpuid(ID_AA64MMFR0_EL1);
->> +	mmfr1 = read_cpuid(ID_AA64MMFR1_EL1);
->> +
->> +	/* Verify VMID bits */
->> +	safe_vmid_bits = get_vmid_bits(safe_mmfr1);
->> +	vmid_bits = get_vmid_bits(mmfr1);
->> +	if (vmid_bits < safe_vmid_bits) {
->> +		pr_crit("CPU%d: VMID width mismatch\n", smp_processor_id());
->> +		cpu_die_early();
->> +	}
->> +
->> +	/* Verify IPA range */
->> +	parange = mmfr0 & ID_AA64MMFR0_PARANGE_MASK;
->> +	ipa_max = id_aa64mmfr0_parange_to_phys_shift(parange);
->> +	if (ipa_max < get_kvm_ipa_limit()) {
->> +		pr_crit("CPU%d: IPA range mismatch\n", smp_processor_id());
->> +		cpu_die_early();
->> +	}
->> +}
->> +#else	/* !CONFIG_KVM_ARM_HOST */
->> +static inline void verify_hyp_capabilities(void) { }
->> +#endif	/* CONFIG_KVM_ARM_HOST */
->>  
->>  /*
->>   * Run through the enabled system capabilities and enable() it on this CPU.
->> @@ -2206,6 +2236,9 @@ static void verify_local_cpu_capabilities(void)
->>  
->>  	if (system_supports_sve())
->>  		verify_sve_features();
->> +
->> +	if (is_hyp_mode_available())
->> +		verify_hyp_capabilities();
->>  }
->>  
->>  void check_local_cpu_capabilities(void)
->> diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
->> index 30b7ea680f66..1131b112dda2 100644
->> --- a/arch/arm64/kvm/reset.c
->> +++ b/arch/arm64/kvm/reset.c
->> @@ -340,11 +340,17 @@ int kvm_reset_vcpu(struct kvm_vcpu *vcpu)
->>  	return ret;
->>  }
->>  
->> +u32 get_kvm_ipa_limit(void)
->> +{
->> +	return kvm_ipa_limit;
->> +}
->> +
->>  void kvm_set_ipa_limit(void)
->>  {
->>  	unsigned int ipa_max, pa_max, va_max, parange;
->>  
->> -	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) & 0x7;
->> +	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) &
->> +						ID_AA64MMFR0_PARANGE_MASK;
->>  	pa_max = id_aa64mmfr0_parange_to_phys_shift(parange);
->>  
->>  	/* Clamp the IPA limit to the PA size supported by the kernel */
->> @@ -406,7 +412,8 @@ int kvm_arm_setup_stage2(struct kvm *kvm, unsigned long type)
->>  		phys_shift = KVM_PHYS_SHIFT;
->>  	}
->>  
->> -	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) & 7;
->> +	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) &
->> +						ID_AA64MMFR0_PARANGE_MASK;
->>  	if (parange > ID_AA64MMFR0_PARANGE_MAX)
->>  		parange = ID_AA64MMFR0_PARANGE_MAX;
->>  	vtcr |= parange << VTCR_EL2_PS_SHIFT;
->> -- 
->> 2.20.1
->>
->>
-> 
-> With the couple of nits above addressed:
-> 
-> Reviewed-by: Marc Zyngier <maz@kernel.org>
-> 
-> 	M.
-> 
-
+Documentation/dev-tools/kasan.rst |  6 ++++++
+include/linux/kasan.h             |  2 ++
+kernel/rcu/tree.c                 |  4 ++++
+lib/Kconfig.kasan                 |  2 ++
+mm/kasan/common.c                 | 26 ++++----------------------
+mm/kasan/generic.c                | 50 ++++++++++++++++++++++++++++++++++++++++++++++++++
+mm/kasan/kasan.h                  | 23 +++++++++++++++++++++++
+mm/kasan/report.c                 | 47 +++++++++++++++++++++--------------------------
+mm/kasan/tags.c                   | 37 +++++++++++++++++++++++++++++++++++++
+9 files changed, 149 insertions(+), 48 deletions(-)
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
