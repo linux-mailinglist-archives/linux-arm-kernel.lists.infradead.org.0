@@ -2,64 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D30CC1CD8D7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:48:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08E2F1CD8D6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 13:48:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=JXakJnhbF+6rNLrx+rXOdpMUa17vYQEq7ep1H6Fsb18=; b=esu9C23z+dmNpX
-	CT2iAcFlDHNi2D5nRoVuwks8lBFxneIuhw2I+GDhWaY4LDMiuppVC0MKAriN9vyRopzolYxrfzpcv
-	cCtYo7onEuq7lUFZ3HMIoTeWvrSLw9xepqstvDJHyPK4qXCMCyrbaA+JJjoyl7OUDubDUcEjkev8n
-	GrH9e6Z7TPOCUoca8WEaS1Dqw0hkCrl7KLW1ffGE8xxtRO9sdg0wHihhR3jHZowCm5LX4X5du8MbM
-	9mAMLX6vKdLSQNVmK+GEgmAy21MwZrMnzWdhODR1YILW9PYZmPOoX16PWgLvxnXVcbz0tZlpy1l+A
-	u5bMJ83wAEGPFQQPi8Ig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E+p/Ii74GPLmemSW1Kufad+Bgv/sq+pm6DRX7qp3Pfs=; b=PJO0tI6R3+EDJS
+	ELT5zxuzNpDFp2A0OUO6yCdDGGWyNd5jv5hcSpsuX9RvpU/ONE676p1NxduCgEwWhd7rkizQ1ry/t
+	fWxpM5DOOV/GRBGp92yeGPBW7ZBr2Tm/9dymg9Qs//myHxh49xO2pb6Q/6LxjAUpBs7TSOzBpkfJY
+	0JqZ1DmWWgCaO4bnqIqR10E0KlI4WbNHlrF1nQKMG+fo2/y8KRJYdXGMB6+SbaeIsQ5orFnknmGV6
+	BKH/obvAh+9m1I9bc3CU3h2Z12Ss3f/xmFk9+zDXhmy10GvtXFVZlU7yQREBHtPhTGjIY4CFdWtLW
+	/QBixUs168OdLVPfs1NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY6vD-0005e2-Ph; Mon, 11 May 2020 11:48:35 +0000
-Received: from smtp2.axis.com ([195.60.68.18])
+	id 1jY6v0-0005Vf-Fe; Mon, 11 May 2020 11:48:22 +0000
+Received: from smtp1.axis.com ([195.60.68.17])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY6up-0005UE-HA
+ id 1jY6up-0005UD-H6
  for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 11:48:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=axis.com; l=2683; q=dns/txt; s=axis-central1;
+ d=axis.com; l=2003; q=dns/txt; s=axis-central1;
  t=1589197691; x=1620733691;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=nJ1qTOy5LEl+3ghrdE6ayVo+QTlImTiM42UK10R/CO0=;
- b=AUhNVz39PfUReg7loaKOLYw+MRYeeYpcOVEuP+MazkAQQy3ZUjCZ9Usd
- Zd10Yt3T/6cm6vPpfE7ZQZsWKdQiKURFOPNoDGR84JneGUXwJug//Bf8A
- 2RDQcdY8IdZmaPSjLVjB1XLeJB2gUAYHSDv4WnR5Td+F1soNImwS4xN36
- V4WPwKVo+criaI5CUyH6mNmbRcSaAq2nTjusuvsNITumA2jsKcX4dXCky
- DqRZqu9qtb9GIHlJpXDMesvrpzIxnHUhsdcJOpYsU0htg6u7Cf1WOhif9
- MDqJ3WwTTelld3hlrGDeL1Y2/6Ec0YkPcJlelKWrKtrFbL5Z+wy3FVuwS Q==;
-IronPort-SDR: eWZuRw32j5JYJgOi5OmGwaaj8bk7KszfEuOPpxP4bH8Wi8itNv+fizjpxYs2CA1SNITyHvwDyy
- qF5XgZsbtYDgaXmRoOUZPIQjDvnmgDdVFNOj+YUImbRBZMNyhpfwCzvty6IclSGzLL0wn4Ylkg
- NMSpihDcfR3G7ROq4TYzqOCAX+eMijiP9tOhd2iSgF4dLKYOfzCfwuCXkzHJvihLExksYRL8+y
- icIrmdn+FfpXtULH6nfG6NJs0t6kxPaR7E/bKSLsZ87dQvssdR9LdF0N5Ld/GlMxn9zZsK4lbm
- 7jI=
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=OE/19k10wHaCTdv4vIwiGTk7dV4vSV5kv7LOywkW2XA=;
+ b=EZGoZC9v14p/wgDvYZgHKbJOSbAqitY96sQ4mMM8LpY7ALV7cc6rqzUL
+ AdJ3nSvwII+wS2aLp47UDw5R8N7vkd6hb8Z/+eY6OR6dMsyAeo8Hcw0V/
+ gOKZCi4MK2WA6J1Hatg6JAKPfxfIb/6DClatjFNop4P/74UPuh8dQyWeX
+ pMLEV7OgRzeWgfQJ/bVzIhulhmDwGKdW78/xqY9/zGFEsiGegnd5+aUWV
+ 27fUAEn/1gaUyjWkNIsW3EQa7FOl28UQpmBqzMNJiuxxnGNfduVxE8E+M
+ uA6GuhAuKaMl1ZEpamzPS6IpCYdeE3Y+TehapErYekvR5mQKvyi1/qZMV Q==;
+IronPort-SDR: 02SQVDjpik5zxGFTX9qHDTx6h+TsrBW/mI8e6OKwbZ2V2pIRyW0gJOUtBPc5udRSKYGCDz2TRP
+ BtyJ0kPw9EMk65iaw5ORSzp9FR2PlAKLwKZVIOb1ibUu6/FNY1nmP7ANumYzAQZ+TRbCCkFWU9
+ fSP209hHNrQC4vtajdNMSwRevwB1q82NqpdGDCvpH0ZfAAt1U83WkYo/oxzlW5BjHJvil8BRcR
+ BW850Lq1eZSWfp2aS/aljyQaVnsrwBMscwaPU3GPeH621K570R9Dc5C2oHI540MLBM5ol0uxE5
+ VYc=
 X-IronPort-AV: E=Sophos;i="5.73,379,1583190000"; 
-   d="scan'208";a="8358766"
+   d="scan'208";a="8596078"
 From: Vincent Whitchurch <vincent.whitchurch@axis.com>
 To: <linux@armlinux.org.uk>, <jeyu@kernel.org>
-Subject: [PATCH v2 1/2] module: allow arch overrides for .init section names
-Date: Mon, 11 May 2020 13:48:02 +0200
-Message-ID: <20200511114803.4475-1-vincent.whitchurch@axis.com>
+Subject: [PATCH v2 2/2] ARM: module: fix handling of unwind init sections
+Date: Mon, 11 May 2020 13:48:03 +0200
+Message-ID: <20200511114803.4475-2-vincent.whitchurch@axis.com>
 X-Mailer: git-send-email 2.25.1
+In-Reply-To: <20200511114803.4475-1-vincent.whitchurch@axis.com>
+References: <20200511114803.4475-1-vincent.whitchurch@axis.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_044812_074784_25C45E74 
-X-CRM114-Status: UNSURE (   8.81  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200511_044812_074892_FEB6E8F6 
+X-CRM114-Status: GOOD (  10.80  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.60.68.18 listed in list.dnswl.org]
+ medium trust [195.60.68.17 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,83 +88,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARM stores unwind information for .init.text in sections named
-.ARM.extab.init.text and .ARM.exidx.init.text.  Since those aren't
-currently recognized as init sections, they're allocated along with the
-core section, and relocation fails if the core and the init section are
-allocated from different regions and can't reach other.
+Unwind information for init sections is placed in .ARM.exidx.init.text
+and .ARM.extab.init.text.  The module core doesn't know that these are
+init sections so they are allocated along with the core sections, and if
+the core and init sections get allocated in different memory regions
+(which is possible with CONFIG_ARM_MODULE_PLTS=y) and they can't reach
+each other, relocation fails:
 
   final section addresses:
-        ...
-        0x7f800000 .init.text
-        ..
-        0xcbb54078 .ARM.exidx.init.text
-        ..
+  	...
+  	0x7f800000 .init.text
+	..
+  	0xcbb54078 .ARM.exidx.init.text
+	..
 
  section 16 reloc 0 sym '': relocation 42 out of range (0xcbb54078 ->
  0x7f800000)
 
-Allow architectures to override the section name so that ARM can fix
-this.
+Fix this by informing the module core that these sections are init
+sections, and by removing the init unwind tables before the module core
+frees the init sections.
 
 Signed-off-by: Vincent Whitchurch <vincent.whitchurch@axis.com>
 ---
-v2: Add comment and move module_init_section() next to module_exit_section().
+v2: No changes.
 
- include/linux/moduleloader.h | 5 +++++
- kernel/module.c              | 9 +++++++--
- 2 files changed, 12 insertions(+), 2 deletions(-)
+ arch/arm/kernel/module.c | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
 
-diff --git a/include/linux/moduleloader.h b/include/linux/moduleloader.h
-index ca92aea8a6bd..4fa67a8b2265 100644
---- a/include/linux/moduleloader.h
-+++ b/include/linux/moduleloader.h
-@@ -29,6 +29,11 @@ void *module_alloc(unsigned long size);
- /* Free memory returned from module_alloc. */
- void module_memfree(void *module_region);
- 
-+/* Determines if the section name is an init section (that is only used during
-+ * module loading).
-+ */
-+bool module_init_section(const char *name);
-+
- /* Determines if the section name is an exit section (that is only used during
-  * module unloading)
-  */
-diff --git a/kernel/module.c b/kernel/module.c
-index 33569a01d6e1..84d0c455fb44 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -2400,7 +2400,7 @@ static void layout_sections(struct module *mod, struct load_info *info)
- 			if ((s->sh_flags & masks[m][0]) != masks[m][0]
- 			    || (s->sh_flags & masks[m][1])
- 			    || s->sh_entsize != ~0UL
--			    || strstarts(sname, ".init"))
-+			    || module_init_section(sname))
- 				continue;
- 			s->sh_entsize = get_offset(mod, &mod->core_layout.size, s, i);
- 			pr_debug("\t%s\n", sname);
-@@ -2433,7 +2433,7 @@ static void layout_sections(struct module *mod, struct load_info *info)
- 			if ((s->sh_flags & masks[m][0]) != masks[m][0]
- 			    || (s->sh_flags & masks[m][1])
- 			    || s->sh_entsize != ~0UL
--			    || !strstarts(sname, ".init"))
-+			    || !module_init_section(sname))
- 				continue;
- 			s->sh_entsize = (get_offset(mod, &mod->init_layout.size, s, i)
- 					 | INIT_OFFSET_MASK);
-@@ -2768,6 +2768,11 @@ void * __weak module_alloc(unsigned long size)
- 	return vmalloc_exec(size);
+diff --git a/arch/arm/kernel/module.c b/arch/arm/kernel/module.c
+index deef17f34bd2..af0a8500a24e 100644
+--- a/arch/arm/kernel/module.c
++++ b/arch/arm/kernel/module.c
+@@ -55,6 +55,13 @@ void *module_alloc(unsigned long size)
  }
+ #endif
  
-+bool __weak module_init_section(const char *name)
++bool module_init_section(const char *name)
 +{
-+	return strstarts(name, ".init");
++	return strstarts(name, ".init") ||
++		strstarts(name, ".ARM.extab.init") ||
++		strstarts(name, ".ARM.exidx.init");
 +}
 +
- bool __weak module_exit_section(const char *name)
+ bool module_exit_section(const char *name)
  {
- 	return strstarts(name, ".exit");
+ 	return strstarts(name, ".exit") ||
+@@ -409,8 +416,17 @@ module_arch_cleanup(struct module *mod)
+ #ifdef CONFIG_ARM_UNWIND
+ 	int i;
+ 
+-	for (i = 0; i < ARM_SEC_MAX; i++)
+-		if (mod->arch.unwind[i])
+-			unwind_table_del(mod->arch.unwind[i]);
++	for (i = 0; i < ARM_SEC_MAX; i++) {
++		unwind_table_del(mod->arch.unwind[i]);
++		mod->arch.unwind[i] = NULL;
++	}
++#endif
++}
++
++void __weak module_arch_freeing_init(struct module *mod)
++{
++#ifdef CONFIG_ARM_UNWIND
++	unwind_table_del(mod->arch.unwind[ARM_SEC_INIT]);
++	mod->arch.unwind[ARM_SEC_INIT] = NULL;
+ #endif
+ }
 -- 
 2.25.1
 
