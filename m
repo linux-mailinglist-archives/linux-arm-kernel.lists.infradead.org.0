@@ -2,142 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E2FCA1CD451
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 10:59:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92F5D1CD45E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 11:01:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3jh7EHSHnCGPPjUK34Rb6hrPE9dIWiaVM5uv2Xz8X+A=; b=iPpTBYbDoAgHVj
-	tg9nnCWwWbdaX3pwKcWnVlruVp7fVUw1SQFk9vLndsbvs7/Y1eYiUfgF87kmVO6qAHw2SHnmguNJS
-	n8rHbEuUbwrnW9mTGAnLhCiJSKjoq3CeF7eBQ6EOV/Sg2fZWySwGB3t9MfBDPoxzqLo/LDCjy+cp3
-	shRONMvfv9JO8PYnDN2+DBZFFQp6emZ72SgYeujvtWk3edPiX8SxpmMPzMceyrY+zl0owcYFrW9W+
-	Bzt/JRUbtwORsp5O0PCJzYdU7wZyiRX6Dio8s20zM5ZLRipTYFCe4GyppkmVoW81xZxdLCqiXrUO/
-	BzvSngOGphSd1IWQVzPg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zLfD1XkWlR6ndb7Tk/U+6OlIpKjRfS9LdWOia2T9eGI=; b=opBGiIjefpbth7
+	r4PwQtF/EQRCOjmvLegHe1xY0zPWabpu4dl6fagoRLqxgdMVPsvi3t4Al4s9+wNEyvykgpARnFaOT
+	qOiFY04+lyTlgQLJQFJYzHbrEX7HKs14W+bgJklG0RZ15TZublD1Z4fG3D91DMCOoIB5yJCh9nReM
+	ph7vUA33qDMU9CnaYHxTut9ZvvGrIJCjg6u+Mj7RtWRZJNoV2AiMjE1DeOEKay7707SRLu3RTDSF9
+	PkqcV3ikMhJrUQpEKqHG4qK1hE0PSShYaccU4Jd+GMEqzVlAJ8Bs+8zCz0KN6gx36TOjfcID8Qc+8
+	lttsfsnwYVaRXwOdmWDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY4HI-0002Jp-Dm; Mon, 11 May 2020 08:59:12 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jY4JC-0005Ad-MI; Mon, 11 May 2020 09:01:10 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY4H9-0002Ip-4a
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 08:59:05 +0000
-Received: by mail-wr1-x444.google.com with SMTP id 50so9342392wrc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 01:59:02 -0700 (PDT)
+ id 1jY4In-00052i-27; Mon, 11 May 2020 09:00:48 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589187645; x=1620723645;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=Ps9HwEIgGRmWlYbSzXCQ2wypQT0gHrWrHPwwkkx9emk=;
+ b=uoHV6g3slz3yHmLozvv9WTO4PnKljIvWt7pixxWxPw+cWwJzr6hkiQyd
+ R+Jl/DX9nI/nvya5zwcKRqW50HxQzLD73uZDbF0px1gMn4WjHAmYaBU79
+ qE7/HKytsI7/bjRvREk+3bvfqa3baeAq5JoLW1+omxtSSkJhpBUY4mO8i
+ +QxonQ1qS7cUy888IPMKqOxrOSEOlhScSxN0xQoCUfBcg0BzOATaL/ao1
+ 4zsfwTpkgrDwxgmLZdkqMCjiPKQTeF5zgvtsh2lwIy42//3j40Z/FJDSC
+ GzJ7k+5/d5pgK8JbBrXLUHk7nMvfBS7WTKgCYHekIviL8EYKnHNk9EdqD w==;
+IronPort-SDR: W7v7F3fePcC79mASEJuRUi2aeRbMisK56hJ5pb8/Z0MEMXddV04zkxIM/DS0KkHCB8cwJbfKtZ
+ sOV1zFJ489f6rwxwBzRwXeU5BEf0c1MWhHj0M9HlXlZEbMgYq4KWEftTSfe7VvHAb9ZocR7E5A
+ vQK/iHjprASF+UGEF62XEegOINB0ZlYuJK5FXWActVloXTDt9vD8WVD6RbqSnRjOR2UPZ+wfYq
+ 0ohMZzy9hrKO+rWdOvx2zVfvj+6QA9kyAhupxS7/mCAz3p1ZGbQ8rDID9o3F6TF63jdg07D4lv
+ vM8=
+X-IronPort-AV: E=Sophos;i="5.73,379,1583218800"; d="scan'208";a="75456419"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 May 2020 02:00:39 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 11 May 2020 02:00:37 -0700
+Received: from NAM10-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Mon, 11 May 2020 02:00:41 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=hA0pEtvfQ1VBJDX983Fg3TU3zWHhrVJIjdAW+aBeU4LdZcU3LhWA5VCY8F0apAB7ekGJc8tNnQorDwGeXJx2hIBoGHH4uujvDbku6hMp7mG9ECz6w+Tgo7x0/vT/97lv7XQvMmiBGHb2RUb0vlYsN1+Td457R/unU8/YcNj1n/mYzGfG9DWxYAVweWITqxtF36vrqh0OB5ALG1ibvpXu98Qc/LYWIampkwSSew/Me4JpNkYKcOHo2SSz/l8Wa0aZ5HPpnaNbvVyt0zB7ddTNg6D03pbIZVcvVgNdmjehhAuVIwgEh2KOw7os0dFmQnPn9mqzrEHzXqLmt6LweftRcg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ps9HwEIgGRmWlYbSzXCQ2wypQT0gHrWrHPwwkkx9emk=;
+ b=SyuPPHvXklve8pqkEjYn6X/RL81mnQw08rVA6Ug+lomm/NnSqzrVosQi8WTXptN8UKyjFpPS387eF4mNPJDJOHmduDtAIgpgjpaDJUtu3iGtf1kDklG227ehk75E7TY4bhDlzf6fcMAikfFaA26QkTzZ7kVc0jG9BMvrWVYntU6+rxyfK2zz+NYx6RC19NfjxqO6LiTkb2QQXUtns3LX13vV/Bid7+NYkH3UtbG7zZein8XeAQ652Mz+BCEqPpeWPdhRl/ctVJeavPvqeGD4Z2aMmz75pobZpkE7KSQlGx63MyRXm494cxrTohp+oKku6mcEJ3wB5DlqH5OHJ7QAHA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=4594gfI4UDDb5BHmkZ1Vrt7zRtwvI2AafBdXlVzokpE=;
- b=L2oWkVDrMt7rC8usziISopoeQywYM13P71sCRLx6RBxxnU86/yId4ghA7YBeY/O9H5
- GBODbPhF+WzbSqOl75+W4rtO/K7UIRDYO0mULqPhepXqx7jxrcXjHe6G1KcENpNSFq15
- TvjUOgfDoP3MvUp7YckbCaIRZyCjCKUvqkgkwe1Wgg05q06mA9kURltlQ+oZTsIm9T4L
- JM+hGCZVBGuVdnDQiO3YSoge1nnTwLgmVPuQ4Otv/tm4bn0DIiZCbJ5aFsJ2weSeY0Ox
- D7X6iOb7X77kF3vWNH2hXmt4E0m3HsmAAk7dg+ldT7goS4FgQn5teh4q5UUVopEYbw+y
- wOZg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=4594gfI4UDDb5BHmkZ1Vrt7zRtwvI2AafBdXlVzokpE=;
- b=Q+506j0uHP2UUSLwybmmAtCZK1+dtRU5uYMJdnS4Ry8mFiNjMlX5Mfjd5Fr2OZMLUk
- WS+oBJeVvF7JVuqi6NlS7W1nYHjDLy75elRU3UJzzKcsm6NI+iNCTCPcH9puVh657Rbl
- J4R22CiDz/1EIL6iaUTGed+F+wKXNoy1yrElpJrZ3nF9+Hh6tu1JUx7tM/dBFsqrdSz9
- PQEg79DJURVLSoBU7Lr6TZ9uWpltzNpf9s1FMJwWVRreEUj5p/GLu4sg+WgBf5k6ad6s
- 8uCBPEf4if2G/nGAGOZU0Ws+FoAxC4JeyA13Xj3Y0O2KSLbKY3JDzdc2zaoVwVND8VQN
- Pvhg==
-X-Gm-Message-State: AGi0PuaF1kLphNhODCpLO6ndx8InkOZgpzXhOk9nuJb6Bv8j4oOt2aeQ
- hL+orYAO1aChvPjJWAln6Gvcbw==
-X-Google-Smtp-Source: APiQypKL22mEB7w5xWfFhhD4mc35jDTt+J1mNIuLFLl9oZlb878iIn3z1XWKnQh7gYznR9Vvq8zv/g==
-X-Received: by 2002:a05:6000:1150:: with SMTP id
- d16mr9947563wrx.197.1589187541097; 
- Mon, 11 May 2020 01:59:01 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
- ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
- by smtp.gmail.com with ESMTPSA id u16sm16660514wrq.17.2020.05.11.01.58.59
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 May 2020 01:59:00 -0700 (PDT)
-Subject: Re: [PATCH] PCI: amlogic: meson: Don't use FAST_LINK_MODE to set up
- link
-To: Marc Zyngier <maz@kernel.org>, linux-pci@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-References: <20200429164230.309922-1-maz@kernel.org>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <02c1ce97-109a-90da-46ce-f8394f00de74@baylibre.com>
-Date: Mon, 11 May 2020 10:58:59 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
-MIME-Version: 1.0
-In-Reply-To: <20200429164230.309922-1-maz@kernel.org>
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Ps9HwEIgGRmWlYbSzXCQ2wypQT0gHrWrHPwwkkx9emk=;
+ b=iali1JoD7uZ/E722LD6/UB2g1aV8If9sAwbPbjidTw8ou2tI70eXhzmjcXKg4rbeNkX1BBik6Xee11Ret2v4DvKwgQ/BFRKVRt6b9IpsWUflPsPJ1wi1fXPZNUOlmMirQZz6rXfduQ1L/SSK+cm4aFGZK4tcRFgCsB2AhaiguRM=
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com (2603:10b6:a03:1c8::13)
+ by BY5PR11MB3975.namprd11.prod.outlook.com (2603:10b6:a03:184::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.26; Mon, 11 May
+ 2020 09:00:35 +0000
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536]) by BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536%7]) with mapi id 15.20.2979.033; Mon, 11 May 2020
+ 09:00:35 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <p.yadav@ti.com>, <boris.brezillon@collabora.com>
+Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
+Thread-Topic: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
+Thread-Index: AQHWJ3Khn/aolf/mv0usqjltSIxTLg==
+Date: Mon, 11 May 2020 09:00:35 +0000
+Message-ID: <3649933.zuh8VGJVCz@192.168.0.120>
+References: <20200424184410.8578-1-p.yadav@ti.com>
+In-Reply-To: <20200424184410.8578-1-p.yadav@ti.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: ti.com; dkim=none (message not signed)
+ header.d=none;ti.com; dmarc=none action=none header.from=microchip.com;
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 92a278c0-aece-4143-0505-08d7f589c47d
+x-ms-traffictypediagnostic: BY5PR11MB3975:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BY5PR11MB397506D5434693BD7B9B9E4FF0A10@BY5PR11MB3975.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 04004D94E2
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: PUszZyRx7LcE2BjzcR/GjCjj/eYzbWgHZuuwW7HPlMLgV93zX9ntVFj1+k+rCSx6FzwPZGMSMMgcCArZmixOrwE0kPrIVf6wF+xrCgeO2C7aLnob6P0IHJ77bfk2G4xq9/Lqs2ju9V0p6PRyoxKit5auds9ABbIzLESL/0etR+9W6MY2ZwZE5sVMvnE+sVbuCBZYMGI1MoczUIlwj6ruO4loWmSkfsYW+g89AxWvVmmd6+cm8sGc5sX0WItZQJ3q6SkhOyVvs/x7MvYrpa/IeysVRX0GU8+HnfwdVKe6rvi0MzI6yD69zCv+iTgsOKgRnxQMkBLytVLaGQrs9gHja6fKweEKh4aDRnpxboVr1JQNoD31lIem2TBGsNm19SxNjmLkdl3hxFOm4TfU2kqS1aNZkN2Pwj+GoTZZi9Kr+VKPiscBr41RTOZ1HlTgjFCe7tEsATA3e/R/7J7PxJkBojrrYoHqvMk9ZAc58dgv/8DnhAcpnwedYamzX3fnDFE1jBfo+Ow22H0sxbtnuTOIFqp/RoyoDgSucMq7d3VJdjc7M3wU4IclaYHBf7YgA2v2
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BY5PR11MB4419.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(396003)(366004)(39860400002)(376002)(136003)(346002)(33430700001)(71200400001)(33440700001)(2906002)(86362001)(14286002)(6486002)(7416002)(64756008)(66556008)(66476007)(66446008)(9686003)(6512007)(8676002)(8936002)(54906003)(5660300002)(316002)(91956017)(76116006)(66946007)(6506007)(53546011)(4326008)(478600001)(26005)(110136005)(186003)(39026012);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: oAUyy0pW1NzoftWqj90QzDowXKm6CDEK02CRVS12jeO6mRV8ZRlSaK9nfWq3aMyADRV14oithkK6woSW4GFIJ+ZJza85l9T9wwCb1ZLNv7jUGF2rm/AwA2ImrAWy0DmPFQqBRxWSHzFZY7a4SrnsPON0x5WC/RauFd9Wh2TgAkywn+UPA5Yv23HIEXtYq/Au6p4JU0kFNNjOelhtlXRZ7zjRmOAO6YTe3hgBQiiNowfnpPSgS5npGuHKLz1ELBZntvMEYub1iDXTKz4DnuYpbl9Q3zvteZa2CyN0GDyPfiyoQHLgWFJH3PGX9pTUMlKD7Ku13mPtcjkqzcL1z2brHu/4/g5R2a4TYG0Lj433u0PUMrqtjptNTRR9E9R/xzXtzc9jokhG9DwFQLnc0NcJoM730ttzKnM4AbFBstVT0pKw9keADyN4j1p0gt3sOF7Pu2ikYoPjmn1MnF6exVbkSzpIFoIW0kYsbj7KMU8A0U0=
+Content-ID: <FC1D03ED70AB18478EDAF0B070DEC3BA@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 92a278c0-aece-4143-0505-08d7f589c47d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 May 2020 09:00:35.0417 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sPFMgUsS60Ng6GTw35EFXYBzZNSRfKeHnUj6l6W59l0y1Yc9YdPYG0V0t3vH6gWN6QgSz44LRUraa1s0LYN3xvqpqDOfFBuMCrWJlKLW15Q=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB3975
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_015903_234059_515FE65E 
-X-CRM114-Status: GOOD (  21.37  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200511_020045_109471_CD5281E9 
+X-CRM114-Status: UNSURE (   9.42  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -152,67 +151,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Yue Wang <yue.wang@Amlogic.com>,
- Kevin Hilman <khilman@baylibre.com>
+Cc: alexandre.belloni@bootlin.com, vigneshr@ti.com, richard@nod.at,
+ nsekhar@ti.com, linux-kernel@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ broonie@kernel.org, linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/04/2020 18:42, Marc Zyngier wrote:
-> My vim3l board stubbornly refuses to play ball with a bog
-> standard PCIe switch (ASM1184e), spitting all kind of errors
-> ranging from link never coming up to crazy things like downstream
-> ports falling off the face of the planet.
-> 
-> Upon investigating how the PCIe RC is configured, I found the
-> following nugget: the Sysnopsys DWC PCIe Reference Manual, in the
-> section dedicated to the PLCR register, describes bit 7 (FAST_LINK_MODE)
-> as:
-> 
-> "Sets all internal timers to fast mode for simulation purposes."
-> 
-> I completely understand the need for setting this bit from a simulation
-> perspective, but what I have on my desk is actual silicon, which
-> expects timers to have a nominal value (and I expect this is the
-> case for most people).
-> 
-> Making sure the FAST_LINK_MODE bit is cleared when configuring the RC
-> solves this problem.
-> 
-> Fixes: 9c0ef6d34fdb ("PCI: amlogic: Add the Amlogic Meson PCIe controller driver")
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-> ---
->  drivers/pci/controller/dwc/pci-meson.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pci-meson.c b/drivers/pci/controller/dwc/pci-meson.c
-> index 3715dceca1bf..ca59ba9e0ecd 100644
-> --- a/drivers/pci/controller/dwc/pci-meson.c
-> +++ b/drivers/pci/controller/dwc/pci-meson.c
-> @@ -289,11 +289,11 @@ static void meson_pcie_init_dw(struct meson_pcie *mp)
->  	meson_cfg_writel(mp, val, PCIE_CFG0);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val &= ~LINK_CAPABLE_MASK;
-> +	val &= ~(LINK_CAPABLE_MASK | FAST_LINK_MODE);
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_PORT_LINK_CTRL_OFF);
-> -	val |= LINK_CAPABLE_X1 | FAST_LINK_MODE;
-> +	val |= LINK_CAPABLE_X1;
->  	meson_elb_writel(mp, val, PCIE_PORT_LINK_CTRL_OFF);
->  
->  	val = meson_elb_readl(mp, PCIE_GEN2_CTRL_OFF);
-> 
+Hi, Pratyush, Boris,
 
-I don't have HW to test on non NVMe, but I'm reading the same as you in the
-DWC PCIe Reference Manual, and it seems coherent.
+On Friday, April 24, 2020 9:43:54 PM EEST Pratyush Yadav wrote:
+> This series adds support for octal DTR flashes in the spi-nor framework,
 
-Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
+I'm still learning about this, but I can give you my 2 cents as of now, to 
+open the discussion. Enabling 2-2-2, 4-4-4, and 8-8-8 modes is dangerous 
+because the flash may not recover from unexpected resets. Entering one of 
+these modes can be:
+1/ volatile selectable, the device return to the 1-1-1 protocol after the next 
+power-on. I guess this is conditioned by the optional RESET pin, but I'll have 
+to check. Also the flash can return to the 1-1-1 mode using the software reset 
+or through writing to its Configuration Register, without power-on or power-
+off.
+2/ non-volatile selectable in which RESET# and software reset are useless, the 
+flash defaults to the mode selected in the non volatile Configuration Register 
+bits. The only way to get back to 1-1-1 is to write to the Configuration 
+Register.
 
-Neil
+Not recovering from unexpected resets is unacceptable. One should always 
+prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8 with the 
+presence of the optional RESET pin.
+
+For the unfortunate flashes that support just option 2/, we should not enter 
+these modes on our own, just by discovering the capabilities from the SFDP 
+tables or by the flags in the flash_info struct. The best we can do for them 
+is to move the responsibility to the user. Maybe to add a Kconfig option that 
+is disabled by default with which we condition the entering in 2-2-2, 4-4-4 or 
+8-8-8 modes. Once entered in one of these modes, if an unexpected reset comes, 
+you most likely are doomed, because early stage bootloaders may not work in 
+these modes and you'll not be able to boot the board. Assuming that one uses 
+other environment to boot the board, we should at least make sure that the 
+flash works in linux after an unexpected reset. We should try to determine in 
+which mode we are at init, so maybe an extension of the default_init hook is 
+needed. But all this looks like a BIG compromise, I'm not yet sure if we 
+should adress 2/. Thoughts?
+
+I'm still looking into this.
+
+Cheers,
+ta
+
 
 _______________________________________________
 linux-arm-kernel mailing list
