@@ -2,97 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2ADA11CE885
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 00:53:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91F3A1CE8E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 01:13:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uy6TWxYROgkozKSgUrwkIecMObKEs2idpaJ0DMtwvBI=; b=ZnznQZ0KHa1PMy
-	3tgtIjt2kvpkC/mLbHxCkVy25xwnXNLu+RooKzzeg3N6CCJenLtg+cF5JfFVRuzzdDNqZ0OpCCh0Y
-	yBkDiOSeLWJ0l/YbseZZ3TS+vBj1Dvz0eqvjL7uxKvdEsWp2p1GZGkyQlTgw9CgjgnzGaBGL3M/bk
-	guekJzRCQWTIP+2sa9nm59CPeZWg2ZP4IHhnVB9inc4omZnVkby/72oMnZNtPbEP5Dofa95RCArXa
-	7aX/i0LE/MUR/xzrcVeJ+UCFtDF8epcYtsHRLBmGTljjBlhG9LB9gLvrLeGYccWyTmF+s4Zd5XYAo
-	Jk8PZCNRAZf/Oo5lmLdQ==;
+	List-Owner; bh=HzwBNAS3YJfcS63uv93Yb5QwNrKDliczRGubyHkC20M=; b=K+kP6blvVoez4V
+	0t6i+0QGLbMKfXd5aBk/OjnEDFExWArplZT77sZRMTjKReuhwO+qUFnXETpYFDI/XsZpdzXsLEFdG
+	jtBr8x9Y9XCDw+X/srDTWzNhAh7uY7F4CqzHkkKcD+DERyQ0i9x5UdzrwmG4n/OZwWcgYZsneoEP9
+	crXFvBLTtf6r0xROVSpvxiqfdlVtmiyqhtZJ7/0TMvhR/3lquerD0ynOiKjEKMGhTDO4uoP1BvKJO
+	NpIqDpP7OIcGfxuTd0fAeSw0yFwG9IHErMktEKVwPkKcS0Hqh7QoAz9x5bkPSgyhxS+ZDnCRNV6ZO
+	smXA7O3gRuDuAdXurTTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYHIE-00028L-AA; Mon, 11 May 2020 22:53:02 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jYHbg-00071Z-UY; Mon, 11 May 2020 23:13:08 +0000
+Received: from mail-oo1-f65.google.com ([209.85.161.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYHI7-00027M-4c
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 22:52:56 +0000
-Received: by mail-pl1-x642.google.com with SMTP id u22so4528593plq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 15:52:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6oQAHkHCTjdXQutqjFpnQFKkQXPKWu36loMHxr/U/Bw=;
- b=ABJ9An36QqvDTKUmlo81w3VPI+NywC5sRr3Udf1h5mkJQruw2r+/d0TK5KCxAvQnkM
- AnX6dF0ESk/0FMYf94bsuWf7TyAgd59x096hAtrjjgg+oqFcAzxb3dsZhEMl1OgQwajx
- UeNlEyLzrUVksn8Oh25g81dOCnaTLldN7BPyA=
+ id 1jYHbY-00070H-KU; Mon, 11 May 2020 23:13:01 +0000
+Received: by mail-oo1-f65.google.com with SMTP id c187so938926ooc.2;
+ Mon, 11 May 2020 16:12:57 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6oQAHkHCTjdXQutqjFpnQFKkQXPKWu36loMHxr/U/Bw=;
- b=R0//wgjYfZj7xLOO+Vd1WaGEIIqVQRO37kk58aTSCIYE5nG9vMDgV4nT7sgQEXtOwU
- jlebxrFte+bnZDKNIVYVLI23NpO+v2u+x6EsH8FfYZSq2YvLK7Mv4p7KT6H2VjlLtfyD
- CEOQywpf+0tEdKX3L4MnunXencWyVpvdcYyTSgHhJdMlCCx7M21Mf2dSSxo1bPrdBvVq
- 4Qfk2pgNKCIDwEZ33MyUfdwPAM9BY2Yda/V7peTXtZSke3KNpVzy1eSlxb7roiOyRYm1
- QzjyL5QGJsaztHsGhIJasHin53prBOLtfmAT1mRExn8Sgnsu5ldh3AGCb2W6kneYeAXV
- 786A==
-X-Gm-Message-State: AGi0Pubvalq887GguQkOhG/JsjtW1+IxWCtFujPJearR/dObhN8OJ+QU
- GnW573saY9AJyhHUATx6sAKaUJcN7vU=
-X-Google-Smtp-Source: APiQypIy2T/GL+CQJ2rGQu9gU0HYJzJjsezCn+O4ZOJZed098nVP0mQXdsNAsnme8iull0NZu6Js8g==
-X-Received: by 2002:a17:90a:3b0c:: with SMTP id
- d12mr24072589pjc.78.1589237571928; 
- Mon, 11 May 2020 15:52:51 -0700 (PDT)
-Received: from mail-pg1-f170.google.com (mail-pg1-f170.google.com.
- [209.85.215.170])
- by smtp.gmail.com with ESMTPSA id k14sm2629514pgn.94.2020.05.11.15.52.51
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 11 May 2020 15:52:51 -0700 (PDT)
-Received: by mail-pg1-f170.google.com with SMTP id f6so5235083pgm.1
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 15:52:51 -0700 (PDT)
-X-Received: by 2002:a67:c40c:: with SMTP id c12mr13653102vsk.106.1589237114125; 
- Mon, 11 May 2020 15:45:14 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YDsjgW4MArlBA1SB+uZg3khyj2WK0GRuGD4JKeBynv8=;
+ b=jY12Na3ADfUQtCwzsZ9W0JxU4xAhUsWkjfYPgEFQfhyulVFxEq0T11HcWl+HtcCF8d
+ eUyD9e+ktOYMLP54/0HNFvxQieAcVmkxZYeEVplWQhDoVrrxNdUp1vuXb3YOreVpnBkv
+ XTnxwLDkL+0voQpMvTHEyh4qpB+GWxUsoE+uFZUL7HDS4K3ZwguCdEmImn6d15mNlD54
+ 7qMGk49MCKrL6PaMZ3Hfc8U91Gpz/4dSIVAaiC80Ib9e13mMYZ2jB2YP0OY+gNLmCI5E
+ DiCRgaGo/C6R7VU5OVfxOnDMCTrOonbqHVZghWHxaDqEfLBzH4XL1LMiUJV/MlvSD9yg
+ JMKA==
+X-Gm-Message-State: AGi0Pubb2+6KNUVju4N5bMkFb7iyDmysSD5sH2nXsxrV3YAIiAuRsQei
+ W0Jyx6AGSbbh/ehsp3VMEw==
+X-Google-Smtp-Source: APiQypJYcIJELa5zMY/ISbRUVZAa+Q7Ic4+PGG1ZB0L0pvzkPLwl0FKURFdszYQ9BrNGvh3O0VOGQw==
+X-Received: by 2002:a4a:af0d:: with SMTP id w13mr3249600oon.77.1589238776873; 
+ Mon, 11 May 2020 16:12:56 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id m65sm2138476oib.49.2020.05.11.16.12.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 11 May 2020 16:12:56 -0700 (PDT)
+Received: (nullmailer pid 11706 invoked by uid 1000);
+ Mon, 11 May 2020 23:12:55 -0000
+Date: Mon, 11 May 2020 18:12:55 -0500
+From: Rob Herring <robh@kernel.org>
+To: Chen-Yu Tsai <wens@kernel.org>
+Subject: Re: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for
+ linux,default-triggers
+Message-ID: <20200511231255.GA24112@bogus>
+References: <20200427073132.29997-1-wens@kernel.org>
+ <20200427073132.29997-2-wens@kernel.org>
 MIME-Version: 1.0
-References: <20200428211351.85055-1-dianders@chromium.org>
- <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
- <20200511145908.GA22040@willie-the-truck>
-In-Reply-To: <20200511145908.GA22040@willie-the-truck>
-From: Doug Anderson <dianders@chromium.org>
-Date: Mon, 11 May 2020 15:45:02 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=W1F-B7SUwxebhhH2HS+fN4sYv4RHvvKud5a+00J0T=SA@mail.gmail.com>
-Message-ID: <CAD=FV=W1F-B7SUwxebhhH2HS+fN4sYv4RHvvKud5a+00J0T=SA@mail.gmail.com>
-Subject: Re: [PATCH v3 05/11] arm64: Add call_break_hook() to early_brk64()
- for early kgdb
-To: Will Deacon <will@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200427073132.29997-2-wens@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_155255_203886_8E372E5D 
-X-CRM114-Status: GOOD (  20.17  )
-X-Spam-Score: -0.4 (/)
+X-CRM114-CacheID: sfid-20200511_161300_673068_32DB8568 
+X-CRM114-Status: GOOD (  15.01  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.4 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
+ no trust [209.85.161.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.161.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,84 +93,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, "H. Peter Anvin" <hpa@zytor.com>,
- Frank Rowand <frowand.list@gmail.com>,
- Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
- jinho lim <jordan.lim@samsung.com>, Andy Gross <agross@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-serial@vger.kernel.org,
- kgdb-bugreport@lists.sourceforge.net, Dave Martin <Dave.Martin@arm.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Jiri Slaby <jslaby@suse.com>,
- Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
- Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
- Allison Randal <allison@lohutok.net>, Sumit Garg <sumit.garg@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
- "Eric W. Biederman" <ebiederm@xmission.com>,
- Jason Wessel <jason.wessel@windriver.com>
+Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ Chen-Yu Tsai <wens@csie.org>, Dan Murphy <dmurphy@ti.com>,
+ Pavel Machek <pavel@ucw.cz>, linux-leds@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org,
+ Jacek Anaszewski <jacek.anaszewski@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Mon, Apr 27, 2020 at 03:31:30PM +0800, Chen-Yu Tsai wrote:
+> From: Chen-Yu Tsai <wens@csie.org>
+> 
+> The bindings currently list a very small subset of valid triggers for
+> LEDs. Since many drivers or subsystems in Linux register custom
+> triggers, the list would become very hard to maintain.
 
-On Mon, May 11, 2020 at 7:59 AM Will Deacon <will@kernel.org> wrote:
->
-> Hi Doug,
->
-> On Tue, Apr 28, 2020 at 02:13:45PM -0700, Douglas Anderson wrote:
-> > diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-> > index 48222a4760c2..59c353dfc8e9 100644
-> > --- a/arch/arm64/kernel/debug-monitors.c
-> > +++ b/arch/arm64/kernel/debug-monitors.c
-> > @@ -297,7 +297,7 @@ void unregister_kernel_break_hook(struct break_hook *hook)
-> >       unregister_debug_hook(&hook->node);
-> >  }
-> >
-> > -static int call_break_hook(struct pt_regs *regs, unsigned int esr)
-> > +int call_break_hook(struct pt_regs *regs, unsigned int esr)
-> >  {
-> >       struct break_hook *hook;
-> >       struct list_head *list;
-> > diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-> > index cf402be5c573..a8173f0c1774 100644
-> > --- a/arch/arm64/kernel/traps.c
-> > +++ b/arch/arm64/kernel/traps.c
-> > @@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
-> >       if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
-> >               return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
-> >  #endif
-> > +     if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
-> > +             return 0;
->
-> I think this just means we're not running debug_traps_init() early enough,
-> and actually the KASAN early handler is unnecessary too.
->
-> If we call debug_traps_init() directly from setup_arch() and drop the
-> arch_initcall(), can we then drop early_brk64 entirely?
+The idea was we'll consolidate around standardized names and that new 
+users should use 'function' instead.
 
-It seems to work in my testing.  ...but the worry I have is the
-comment right before trap_init().  It says:
+There was discussion around this when adding 'function'.
 
-/* This registration must happen early, before debug_traps_init(). */
-
-By moving debug_traps_init() early we're violating that comment.  Do I
-just remove that comment, or was there a good reason for it?  ...or am
-I reading it wrong and I should have read it as if it said:
-
-/* NOTE: this registration happens early, before debug_traps_init(). */
-
-...then removing it is fine.  Maybe that's right?
-
-I coded this up and put it on the Chrome OS gerrit at
-<https://crrev.com/c/2195061>.  I'm happy to post this on the list as
-a loner patch to replace this one or spin the whole series depending
-on what people want.
-
-
--Doug
+> 
+> Instead, just drop the list and allow free form strings.
+> 
+> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> ---
+>  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
+>  1 file changed, 1 insertion(+), 20 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
+> index 4c270fde4567..3b3cdab3fc15 100644
+> --- a/Documentation/devicetree/bindings/leds/common.yaml
+> +++ b/Documentation/devicetree/bindings/leds/common.yaml
+> @@ -79,26 +79,7 @@ properties:
+>      description:
+>        This parameter, if present, is a string defining the trigger assigned to
+>        the LED.
+> -    allOf:
+> -      - $ref: /schemas/types.yaml#definitions/string
+> -    enum:
+> -        # LED will act as a back-light, controlled by the framebuffer system
+> -      - backlight
+> -        # LED will turn on (but for leds-gpio see "default-state" property in
+> -        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
+> -      - default-on
+> -        # LED "double" flashes at a load average based rate
+> -      - heartbeat
+> -        # LED indicates disk activity
+> -      - disk-activity
+> -        # LED indicates IDE disk activity (deprecated), in new implementations
+> -        # use "disk-activity"
+> -      - ide-disk
+> -        # LED flashes at a fixed, configurable rate
+> -      - timer
+> -        # LED alters the brightness for the specified duration with one software
+> -        # timer (requires "led-pattern" property)
+> -      - pattern
+> +    $ref: /schemas/types.yaml#definitions/string
+>  
+>    led-pattern:
+>      description: |
+> -- 
+> 2.26.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
