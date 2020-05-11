@@ -2,89 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B48FB1CD951
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 14:05:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 68E7C1CD960
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 11 May 2020 14:08:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SoKdpxiPQv6G4GpWsGKxUoN5/bZiBdsIIibAGIkhEng=; b=OggYSxxBb2ry8r
-	I+7ZAXFcLOz3/EU5OMf6qTaC57eHbE2rT2b0XukljxroBVismV7lQKxHF8AoVZDXBEU6rn2JAToIk
-	ocrK9G+AMZZzzH1mxzesBmLEsYo6+0vorWdYhSGsxuwnsADDacvaP3I1brSscVPhSomq1aeGk5/BZ
-	QS8xEAK9hzKKtZ681ipxIwNzoWNOLE8zL8fuCzMinDQMSuz0Yy7ylICtuRuWpWit84Okm/9yCiHcy
-	SmvVDYUffWgiT8OlYaVf23/qnxpVrzuxfQ5LhaxDpIFqF4tUwEfPfis/tknlHBkaEHAwqxTUuyEFh
-	PRgDfd5BXfqpVLyX4reA==;
+	List-Owner; bh=AQed1ETKHD60KOu5V40TGs3AdTr2zMNvFy6dXn95iG0=; b=S6KZZ/wFFHKqxu
+	vN5oDEgH8JZb5LcRP486OWrkTGGL/o7xL2GXkO/oD3HQCYjs95hVw2/yYOpQDlRt6BF3nr4xZr49d
+	KD9D0hA6ZqD1iVjOodSHYBlfbbBrc30EWarBSd1nyjGJJ8ZvpvatpGRNTuLMSFON8NdCdW/1op/FP
+	7xPkazngJ3DzXQw+XtTxYJZrnSymdhjGftDi5FzR+L2EHt6czXl1u066xzdxfTsNOsfZcugY6FkOX
+	qt7Y72c84mVVzLBXlvByU1unsmfZJ+WIB62TTfpcqkV4oQkEuv0O4m9pBUTt6+N2vkz4i77+ifVNg
+	vuAZqilkqkKbl5GTMLBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jY7BS-0005gZ-RY; Mon, 11 May 2020 12:05:22 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1jY7E8-0006Vh-Ew; Mon, 11 May 2020 12:08:08 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jY7BG-0004hZ-8F
- for linux-arm-kernel@lists.infradead.org; Mon, 11 May 2020 12:05:12 +0000
-Received: by mail-pl1-x643.google.com with SMTP id f15so3849646plr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 05:05:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=sjMFDdzqoNT+Naq9xj8UYhZ5lsrML++iqrUgDzgeiyM=;
- b=Bk4/X/KvmnRxk7QBnw2YKwzYK3Xsi4NFpkiAaQlw2danAx7mgGkSV8QbT2/jVlSj2o
- ewwUEOwgcoPSvsdyrjMQkRSQlmtzYz2yEwKQIuyYcwNI3M+zOI+xB9US7zA47OEGuN9j
- p9c4Znk0iyqVSX22SfzxCrimPr9JSsBN3dAlTcjCeHQqnYSlezeh622BL3ppU0MUNeXU
- kwmz9+vZNmgakRVbV3M2lvS1l2XVAyAr4t12wIOrsSOCWdkbGRCfK7wKqOSLOIrPD4XM
- hNZk7kogqQByKfXHHbsZ4+lXf1De+rgQdcTv9XlsdSGOamvmPVBh1Vd8OpOq9VdHUX/O
- pXaQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=sjMFDdzqoNT+Naq9xj8UYhZ5lsrML++iqrUgDzgeiyM=;
- b=OOSgL4cswwxfNw08YlbCzAWe9axm9ATRUlTnzhdpn8/96hfX8xJtyIjl1gTId18ESY
- SejReI1SHDdNDepRDXD0i22uihqEdDiwb/j7wnm0536+gtfwjjDEc7B5ybrKps0yfh+x
- OZsZOwrpDSwOtk3V5lk6X4eb6nRFyQ/yapLGKEZ6PJJiyXY/LfL04ZyNzPwmjF2815Y7
- //Tdk6da2hDHu5qE/toH5lWy7r59ux4Vs6r8yjOOKf+MbP1CWGsRJOOPIJhpkXlf0VbV
- cb7eu64h/PAcJGA6unFg9s4yagleAhmT6HVHCdbsiMHcG8zi8IwHk+FHgZTh92GuUC3a
- a62w==
-X-Gm-Message-State: AGi0PuYbZT36SBL++RG/FdUKnXeqm0RyMu8Y/84hOFV0fwkx/Ql+RKRJ
- RDw54oWYpI/LbTrP8ABnIAmpeASbeQ==
-X-Google-Smtp-Source: APiQypJen5c1uXINi2G4YgDD8yneG/m9c0hzml6Du7AQ77Y6AAXhEHiZjqtAaV+L/m77H2OQG4DZUA==
-X-Received: by 2002:a17:90a:c702:: with SMTP id
- o2mr21889591pjt.196.1589198706525; 
- Mon, 11 May 2020 05:05:06 -0700 (PDT)
-Received: from Mani-XPS-13-9360 ([103.59.133.81])
- by smtp.gmail.com with ESMTPSA id m12sm7933086pgj.46.2020.05.11.05.05.02
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 11 May 2020 05:05:05 -0700 (PDT)
-Date: Mon, 11 May 2020 17:34:58 +0530
-From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
-To: =?iso-8859-1?Q?Andr=E9?= Przywara <andre.przywara@arm.com>
-Subject: Re: [PATCH RFC 1/8] dmaengine: Actions: get rid of bit fields from
- dma descriptor
-Message-ID: <20200511120458.GB3322@Mani-XPS-13-9360>
-References: <1588761371-9078-1-git-send-email-amittomer25@gmail.com>
- <1588761371-9078-2-git-send-email-amittomer25@gmail.com>
- <20200510155159.GA27924@Mani-XPS-13-9360>
- <CABHD4K_h7wc1gc3wvya1PRTRjMRkDPW==yrAWSk7cCF9ghkUjg@mail.gmail.com>
- <20200511112014.GA3322@Mani-XPS-13-9360>
- <87569683-509e-96e6-17f9-c1734a8b32d4@arm.com>
+ id 1jY7Dx-0006UA-3q; Mon, 11 May 2020 12:07:58 +0000
+X-UUID: 5f75d4f11dcc41e5a94868badf489859-20200511
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=vMipxxyx4vvbm6f5PGT2B9rTKQUVPBjJU6zHZu06PhY=; 
+ b=nijYdYWKJk1lzibIVt030yqGOvFax/1AxuCU4dnlCz1eTIQp9rhRPGj1G390+fSzgtzOZRF0CuVjULyhUffyV3kbsL6BSV7UdjVL6TBQTZ6WOJMb3/hy65sJWYUIDMmyKrA+0U0DooE3Kpyd1ac9uBkFsdaMoATLZkTNX33QycU=;
+X-UUID: 5f75d4f11dcc41e5a94868badf489859-20200511
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 545490689; Mon, 11 May 2020 04:07:50 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Mon, 11 May 2020 05:07:51 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Mon, 11 May 2020 20:07:49 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Mon, 11 May 2020 20:07:47 +0800
+Message-ID: <1589198795.8804.276.camel@mhfsdcap03>
+Subject: Re: [V8, 2/2] media: i2c: ov02a10: Add OV02A10 image sensor driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+Date: Mon, 11 May 2020 20:06:35 +0800
+In-Reply-To: <20200511093308.GF185537@smile.fi.intel.com>
+References: <20200509080627.23222-1-dongchun.zhu@mediatek.com>
+ <20200509080627.23222-3-dongchun.zhu@mediatek.com>
+ <20200511093308.GF185537@smile.fi.intel.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87569683-509e-96e6-17f9-c1734a8b32d4@arm.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-TM-SNTS-SMTP: 1C8EC2EFA9EA89E9356A83C33519571046D31C38383666B09EF4913B1E4D0A3F2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_050510_311619_F142C89B 
-X-CRM114-Status: GOOD (  26.19  )
+X-CRM114-CacheID: sfid-20200511_050757_164799_DF586DE1 
+X-CRM114-Status: GOOD (  15.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -94,6 +72,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,154 +85,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, cristian.ciocaltea@gmail.com,
- vkoul@kernel.org, dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- Amit Tomer <amittomer25@gmail.com>,
- Andreas =?iso-8859-1?Q?F=E4rber?= <afaerber@suse.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ louis.kuo@mediatek.com, srv_heupstream@mediatek.com, linus.walleij@linaro.org,
+ shengnan.wang@mediatek.com, tfiga@chromium.org, bgolaszewski@baylibre.com,
+ sj.huang@mediatek.com, robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ sakari.ailus@linux.intel.com, matthias.bgg@gmail.com, bingbu.cao@intel.com,
+ mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 12:44:26PM +0100, Andr=E9 Przywara wrote:
-> On 11/05/2020 12:20, Manivannan Sadhasivam wrote:
-> =
+Hi Andy,
 
-> Hi,
-> =
+Thanks for the kindly review.
 
-> > On Mon, May 11, 2020 at 04:15:57PM +0530, Amit Tomer wrote:
-> >> Hi
-> >>
-> >> Thanks for the reply.
-> >>
-> >>> I'm in favor of getting rid of bitfields due to its not so defined wa=
-y of
-> >>> working (and forgive me for using it in first place) but I don't quit=
-e like
-> >>> the current approach.
-> >>
-> >> Because , its less readable the way we are writing to those different =
-fields ?
-> >> But this can be made more verbose by adding some comments around .
-> >>
-> > =
+On Mon, 2020-05-11 at 12:33 +0300, Andy Shevchenko wrote:
+> On Sat, May 09, 2020 at 04:06:27PM +0800, Dongchun Zhu wrote:
+> > Add a V4L2 sub-device driver for OV02A10 image sensor.
+> 
+> ...
+> 
+> > +#define OV02A10_ID(_msb, _lsb)				((_msb) << 8 | (_lsb))
+> 
+> How often do you use this macro?
+> 
 
-> > I don't like the way the hw linked lists are accessed (using an array w=
-ith
-> > enums).
-> =
+Just once.
+I would try to use the macro function directly in next release.
 
-> But honestly this is the most sane way of doing this, see below.
-> =
+> ...
+> 
+> > +static int ov02a10_read_smbus(struct ov02a10 *ov02a10, unsigned char reg,
+> > +			      unsigned char *val)
+> > +{
+> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov02a10->subdev);
+> > +	int ret;
+> > +
+> > +	ret = i2c_smbus_read_byte_data(client, reg);
+> 
+> > +
+> 
+> Extra blank line.
+> 
 
-> >>> Rather I'd like to have custom bitmasks (S900/S700/S500?) for writing=
- to those
-> >>> fields.
-> >>>
-> >> I think S900 and S500 are same as pointed out by Cristian. and I didn'=
-t get by
-> >> creating custom bitmasks for it ?
-> >>
-> >> Did you mean function like:
-> >>
-> >> lli->hw[OWL_DMADESC_FLEN]=3D llc_hw_FLEN(len, FCNT_VALUE, FCNT_SHIFT);
-> >>
-> > =
+Thanks for the carefully reminder.
+This error can easily be neglected.
+I would remove it in next release.
 
-> > I meant to keep using old struct for accessing the linked list and repl=
-acing
-> > bitfields with masks as below:
-> > =
+> > +	if (ret < 0)
+> > +		return ret;
+> > +
+> > +	*val = (unsigned char)ret;
+> > +
+> > +	return 0;
+> > +}
+> 
+> ...
+> 
+> > +static int ov02a10_entity_init_cfg(struct v4l2_subdev *sd,
+> > +				   struct v4l2_subdev_pad_config *cfg)
+> > +{
+> > +	struct v4l2_subdev_format fmt = {
+> 
+> > +		.which = cfg ? V4L2_SUBDEV_FORMAT_TRY
+> > +			     : V4L2_SUBDEV_FORMAT_ACTIVE,
+> 
+> I think it would be fine to have it on one line.
+> 
 
-> > struct owl_dma_lli_hw {
-> > 	...
-> >         u32     flen;
-> >         u32     fcnt;
-> > 	...
-> > };
-> =
+Got it.
+Fixed in next release.
 
-> And is think this is the wrong way of modelling hardware defined
-> register fields. C structs have no guarantee of not introducing padding
-> in between fields, the only guarantee you get is that the first member
-> has no padding *before* it:
-> C standard, section 6.7.2.1, end of paragraph 15:
-> "There may be unnamed padding within a structure object, but not at its
-> beginning."
-> =
+> > +		.format = {
+> > +			.width = 1600,
+> > +			.height = 1200,
+> > +		}
+> > +	};
+> > +
+> > +	ov02a10_set_fmt(sd, cfg, &fmt);
+> > +
+> > +	return 0;
+> > +}
+> 
+> ...
+> 
+> > +	if (!ret) {
+> > +		if (rotation == 180) {
+> 
+> if (a) {
+> 	if (b) {
+> 		...
+> 	}
+> }
+> 
+> ==
+> 
+> if (a && b) {
+> 	...
+> }
+> 
 
-> Arrays in C on the contrary have very much this guarantee: The members
-> are next to each other, no padding.
-> =
+Thanks for the reminder :-)
+Next release would use:
+if (!ret && rotation == 180) {
+	...
+}
 
-> I see that structs are sometimes used in this function, but it's much
-> less common in the kernel than in other projects (U-Boot comes to mind).
-> It typically works, because common compiler *implementations* provide
-> this guarantee, but we should not rely on this.
-> =
-
-> So:
-> Using enums for the keys provides a natural way of increasing indices,
-> without gaps. Also you get this nice and automatic size value by making
-> this the last member of the enum.
-> Arrays provide the guarantee of consecutive allocation.
-> =
-
-
-I agree with your concerns of using struct for defining registers. But we c=
-an
-safely live with the existing implementation since all fields are u32 and if
-needed we can also add '__packed' flag to it to avoid padding for any cases.
-
-The reason why I prefer to stick to this is, this is a hardware linked list=
- and
-by defining it as an array and accessing the fields using enums looks awful=
- to
-me. Other than that there is no real justification to shy away.
-
-When you are modelling a plain register bank (which we are also doing in th=
-is
-driver), I'd prefer to use the defines directly.
-
-> We can surely have a look at the masking problem, but this would need to
-> be runtime determined masks, which tend to become "wordy". There can be
-> simplifications, for instance I couldn't find where the frame length is
-> really limited for the S900 (it must be less than 1MB). Since the S700
-> supports *more* than that, there is no need to limit this differently.
-
-I was just giving an example of how to handle the bitmasks for different
-SoCs if needed. So yeah if it can be avoided, feel free to drop it.
-
-Thanks,
-Mani
-
-> =
-
-> Cheers,
-> Andre.
-> =
-
-> =
-
-> > =
-
-> > hw->flen =3D len & OWL_S900_DMA_FLEN_MASK;
-> > hw->fcnt =3D 1 & OWL_S900_DMA_FCNT_MASK;
-> > =
-
-> > Then you can use different masks for S700/S900 based on the compatible.
-> > =
-
-> > Thanks,
-> > Mani
-> > =
-
-> >> Thanks
-> >> -Amit
-> =
-
+> > +			ov02a10->upside_down = true;
+> > +			ov02a10->fmt.code = MEDIA_BUS_FMT_SRGGB10_1X10;
+> > +		}
+> > +	}
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
