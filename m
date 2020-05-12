@@ -2,86 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31B021D027C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:44:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A32A71D028D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:52:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=82odc2uL0i7NHt7bcscEbxDG5SGHJbRZSdX6xnw66Wo=; b=e8IWcN1z3eWbas
-	X00VnqDNOZ30PnNEXeQOPy9JPCqXYX/1DJ0a6IixJ/iYilLj5I3bfxS5EIjskXHifWvqIjev2PoZQ
-	5xoaSsZO6PkSViUxiyIxSZEA+gKN1GC8BtcANGZExAMJYaqwWWxLhxUY5zEclpXWwGfIf7ngkjSLq
-	K2OuAfbJjtjl1Ar/OpIHzCmZuDE8G/Y9TSm5oi8bpSfzHz79q0IWuxG2tNRiEZjHTPjF1zGIMf6w9
-	5Z8Uc71EACsAoDsi//xAaBuLL8tS0DXe64sDddijDINbBadnYmqlJIxCl6TE6vN9XJNzhmSRDfy5A
-	2NhRdYmXRErOCEguelHg==;
+	List-Owner; bh=yyyTdKUaCrs1UZmfpuySHoURNbM04b16mthyohiEmXY=; b=gpHTSILUA89oql
+	neHscEQOBGJIWT2TzSuK21+wlmIp4wrDQLVqjux8dOH40Z0FNrBqLWZ00afAzirMTiOTPgOu8XDAL
+	aBfDV+wkG4tyLANCxiTMqS26EatBN7WCLC6Uj5inn9ipTpPIBPviNN9cIWv6vJKJ4ZzfYeE+8QJm0
+	LQkbP3ZeMAdFBfx1lR0NWePKHIzeQUSY7taSH3QpNVmRNzLTOdHg8aZkl0K4+ZvSkO3cPv9PbwaDk
+	09LbCyw+99EsCRBrnPJyvZZ9e6+DC9jJt6xurhS1WajHK+k3RFUMaBdDBWsUoCNQ+6UhwCJjHLJtH
+	jnOnxl9ye37ieV9vQqIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYddV-0000Qk-LA; Tue, 12 May 2020 22:44:29 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1jYdlA-00072C-IJ; Tue, 12 May 2020 22:52:24 +0000
+Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYddL-0000P0-OF; Tue, 12 May 2020 22:44:20 +0000
-Received: by mail-ot1-f67.google.com with SMTP id d26so645697otc.7;
- Tue, 12 May 2020 15:44:19 -0700 (PDT)
+ id 1jYdl3-00071K-LE
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 22:52:19 +0000
+Received: by mail-pj1-x1042.google.com with SMTP id t9so10272979pjw.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 15:52:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=L8tksuSDTqs67QtjinsHE4FheuuliIT8AjKoc4ucm54=;
+ b=A+aCawbyEMDcOaXESvLqmbZABWw9O6EP2s1AngbXLV2jFIlhagWHaNG/zKjJM2RhFx
+ zR4GIbUSqtZJSgejE1vf8+vegxIzPbGyVYxtbx7Sl6ZFU7jT0DgnrOAM/PpuOSJsUNex
+ ociJ4yn2NMIxKt+ipD9wQM7WQ8Z8Ygwn/nKw56/uOd2ygIegOMO5lGFdn6ZFbNuhwQeq
+ fqbZNZMncqohFrxIOZq7UENBmTJw+EzF/ChjImjT+PVEz6Zm2ogd4nnvSD5b3goCf5lm
+ bu6L9fnzBNIH9phxEleqG+Q4AJiTnHttCCBooCe3hgtQy5Dm9JgzUAi44UmBHKWlzh3N
+ qcwg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=uumrDYsgwLaDX3HJhkdtaUmDr4MtGqDPU0CrAV2rD6U=;
- b=o6P9O7+GUFEAnlaFQYg++B/rlkYKb0+jRvIAkec7UIzEKTKbBb7/2AqIg3M3dAi1Mn
- qyxrzf0nRThCODOXpXw0i75wAsBhnoKZhv1vvvOyVhXBBVmGXLY2CoGXx9ObEgMFpPTv
- giT1/MWdid++d1NMoWxTWaw/8/UM4aRUWmLOFSl1tyzRfT7Ae8TtvgFfT11IYeZwluc4
- ZSYRq9bZMJXOLJglczuO1vDBvviRSfxvPIEXChsnCW9tHwd3bZzpvkS6e1JrrWNxMOG6
- CNF/CXwqMU+I5XJ2rGaJyJLLX8bw+tkQkM61t+/lHXilkLvPy/S5U6E95o+UtkdlHStY
- wL4A==
-X-Gm-Message-State: AGi0PuZhij8V/EyHqN2y+u6X35/vWtKPLXbAYvchORCTHhTH7hAxIqeb
- 6uXAS4jTS5ESAEdqIH6jWw==
-X-Google-Smtp-Source: APiQypLudLaDx5Hvkugopv+ecKjUtr8tCweVHIWbZyoNgK4NPkO3hFmOEWUVAp12V5dMbReJH6+0XQ==
-X-Received: by 2002:a9d:69c9:: with SMTP id v9mr19153655oto.267.1589323458777; 
- Tue, 12 May 2020 15:44:18 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w3sm3779500otg.24.2020.05.12.15.44.17
+ :mime-version:content-disposition:in-reply-to;
+ bh=L8tksuSDTqs67QtjinsHE4FheuuliIT8AjKoc4ucm54=;
+ b=Kwbts9ju1T1r4aQ+0xI74QhaJbDf5u69Qugxy0jpKUGx4O9qg8H7//cSY3RLu9E31u
+ 7/UONpP7CJpiX0qfDnuwxmHuQQZGotzvQ87WzNejL1bvS38Ym0Yj9nbqX0v7ai1TQ8/3
+ HWD9ZyK0cu2EHWFYAVpAaL7yeef+OuJru1Y5H5xdwAFiGb13OKfN5LHOjbuPqSiIIe18
+ g6qrNl3s8V/I5WCB4ZD5kMmOVxhAPz5sDnxw5YLH5i4zUpo86896xT4H02RwHSuBHVLR
+ P1CylAXpCodxpJsYquKhtLTKJJsB7sKsC5XzeDnTsxgliZBHHFhcsOJNDddMqybcsztu
+ JmZQ==
+X-Gm-Message-State: AOAM531S7wX/K/I0YRjhCAYS5BU5mB/t7boiYoZJTQlnRt7Qd+WMcytK
+ FCYvZWWia+ovqt+9iE8/A8wsw9ea
+X-Google-Smtp-Source: ABdhPJwDUrxJZKSLp+Xr6kWbTqL3Ofq02Ayex445wtfRyI6/RGyZxIFRJC7Rb3atq+Syq8sFipfKUw==
+X-Received: by 2002:a17:90a:344c:: with SMTP id
+ o70mr5619516pjb.23.1589323935225; 
+ Tue, 12 May 2020 15:52:15 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
+ by smtp.gmail.com with ESMTPSA id z1sm13623932pjn.43.2020.05.12.15.52.14
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:44:18 -0700 (PDT)
-Received: (nullmailer pid 11405 invoked by uid 1000);
- Tue, 12 May 2020 22:44:17 -0000
-Date: Tue, 12 May 2020 17:44:17 -0500
-From: Rob Herring <robh@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH v7 1/2] dt-bindings: mmc: Document the Amlogic Meson SDHC
- MMC host controller
-Message-ID: <20200512224417.GA11220@bogus>
-References: <20200512204147.504087-1-martin.blumenstingl@googlemail.com>
- <20200512204147.504087-2-martin.blumenstingl@googlemail.com>
+ Tue, 12 May 2020 15:52:14 -0700 (PDT)
+Date: Tue, 12 May 2020 15:52:12 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: Ondrej Jirman <megous@megous.com>
+Subject: Re: [PATCH v2 1/4] dt-bindings: input: gpio-vibrator: Don't require
+ enable-gpios
+Message-ID: <20200512225212.GE89269@dtor-ws>
+References: <20200512222205.1456300-1-megous@megous.com>
+ <20200512222205.1456300-2-megous@megous.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200512204147.504087-2-martin.blumenstingl@googlemail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200512222205.1456300-2-megous@megous.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_154419_786778_411835C5 
-X-CRM114-Status: GOOD (  10.06  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200512_155217_720219_9D4EEC83 
+X-CRM114-Status: GOOD (  15.09  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ provider [dmitry.torokhov[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.67 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,32 +101,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org, jianxin.pan@amlogic.com,
- linux.amoon@gmail.com, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- yinxin_1989@aliyun.com, robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
- lnykww@gmail.com, linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Rob Herring <robh@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
+ Luca Weiss <luca@z3ntu.xyz>, linux-sunxi@googlegroups.com,
+ Rob Herring <robh+dt@kernel.org>, Tomas Novotny <tomas@novotny.cz>,
+ linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 May 2020 22:41:46 +0200, Martin Blumenstingl wrote:
-> This documents the devicetree bindings for the SDHC MMC host controller
-> found in Meson6, Meson8, Meson8b and Meson8m2 SoCs. It can use a
-> bus-width of 1/4/8-bit and it supports eMMC spec 4.4x/4.5x including
-> HS200 mode (up to 100MHz clock). It embeds an internal clock controller
-> which outputs four clocks (mod_clk, sd_clk, tx_clk and rx_clk) and is
-> fed by four external input clocks (clkin[0-3]). "pclk" is the module
-> register clock, it has to be enabled to access the registers.
+On Wed, May 13, 2020 at 12:22:02AM +0200, Ondrej Jirman wrote:
+> It is possible to turn the motor on/off just by enabling/disabling
+> the vcc-supply.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Signed-off-by: Ondrej Jirman <megous@megous.com>
+> Acked-by: Rob Herring <robh@kernel.org>
 > ---
->  .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   | 68 +++++++++++++++++++
->  1 file changed, 68 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
+>  Documentation/devicetree/bindings/input/gpio-vibrator.yaml | 1 -
+>  1 file changed, 1 deletion(-)
 > 
+> diff --git a/Documentation/devicetree/bindings/input/gpio-vibrator.yaml b/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
+> index 2384465eaa19..c700b640bd53 100644
+> --- a/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
+> +++ b/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
+> @@ -24,7 +24,6 @@ properties:
+>  
+>  required:
+>    - compatible
+> -  - enable-gpios
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Hmm we need at least one of the 2 (gpio and supply). Should we encode it
+in the binding?
+
+Also, in the dirver code, I guess we need to switch to have regulator
+optional (so we are not given the dummy one) and bail if neither
+regulator nor GPIO is found.
+
+Thanks.
+
+-- 
+Dmitry
 
 _______________________________________________
 linux-arm-kernel mailing list
