@@ -2,94 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 262F81D0249
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:26:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31B021D027C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:44:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HJi4X3Qlx0L4CaHMn+Mri9nqHeyPJouVuFOQ/4YKsm4=; b=SXQ3IOprsMMbvn
-	OK3qq/UXIPBZoJ3f09hGHf056A/aMKK4/meBOJQXGFyGp5v6H7WWzyNXbCJ2GHrVMEW0cpiOENksD
-	iz5WP9IkJnnC/mHJgdyq/iTsqAdkIoEPTo3k08EudpZrkB1/tOySjE47gPH562LNny6mBoFNL7jll
-	6pMoiIQE8Igp7WfAmMbeOyRUdgUzYNmbjE57rBi9VPwKFsKIn2K7GtdE6suF5y9BHuECEt2Trv1Cv
-	boWPWkSANWqVlhgJm3ArG+ct8BR7fYxiSOh44hWZX8BK1+yOVjiv0zZTdlXdtWwHtrJTFFZTN4zrG
-	QwA8nF/yiQv/06QL+eBA==;
+	List-Owner; bh=82odc2uL0i7NHt7bcscEbxDG5SGHJbRZSdX6xnw66Wo=; b=e8IWcN1z3eWbas
+	X00VnqDNOZ30PnNEXeQOPy9JPCqXYX/1DJ0a6IixJ/iYilLj5I3bfxS5EIjskXHifWvqIjev2PoZQ
+	5xoaSsZO6PkSViUxiyIxSZEA+gKN1GC8BtcANGZExAMJYaqwWWxLhxUY5zEclpXWwGfIf7ngkjSLq
+	K2OuAfbJjtjl1Ar/OpIHzCmZuDE8G/Y9TSm5oi8bpSfzHz79q0IWuxG2tNRiEZjHTPjF1zGIMf6w9
+	5Z8Uc71EACsAoDsi//xAaBuLL8tS0DXe64sDddijDINbBadnYmqlJIxCl6TE6vN9XJNzhmSRDfy5A
+	2NhRdYmXRErOCEguelHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYdMS-0007r7-W3; Tue, 12 May 2020 22:26:53 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jYddV-0000Qk-LA; Tue, 12 May 2020 22:44:29 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYdKM-0003fQ-Jm; Tue, 12 May 2020 22:24:44 +0000
-Received: by mail-wm1-x343.google.com with SMTP id g14so10386855wme.1;
- Tue, 12 May 2020 15:24:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=T6/lnxUNaPxPPXlTLJRj6AhR7vTkkb3EZ8aqBlM0OWk=;
- b=SrTd/ro7AvaEauxrrPTxDh3wvmrjWHigYFTwI6OCAchA0LTOoEpBuyhjdECOi3W5JP
- nloq0YQb4LVaFJ6VN6jMc4vp45mu2GK2NfcpiPSB7PZcjFY/G4TJ/29TgVI+riddVEoL
- zUHupnteXosHUlb6g5tBM3MRUBRaAsYsPgJw5YGIK6TJcOeGeHWH2noAhwAjEgJ7xuNp
- NNWp6qZDm9EDrFYn8eWry4sxi1E95y7tlM33Mvgvv9fYzK+5509XDCTKjRnTh53apiu2
- Uz9wc7CXgR42yew0ceWmexHuk4qJEcsX4qtzfW0GyiDsj0ePezsQiGlpEqBQz3rQxeQC
- ZpSw==
+ id 1jYddL-0000P0-OF; Tue, 12 May 2020 22:44:20 +0000
+Received: by mail-ot1-f67.google.com with SMTP id d26so645697otc.7;
+ Tue, 12 May 2020 15:44:19 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=T6/lnxUNaPxPPXlTLJRj6AhR7vTkkb3EZ8aqBlM0OWk=;
- b=eErfbnQ+0QxJmAserSkAvDjD2wtWmjANQloBMDXYxc6cFfMgJFbxT3ScL7aLacWdFq
- YNeyTpuw2zUrxxOFLMMH8jo20mTCTgm8hXGe7TUA5Oeuje190P2sIgusSARDy0VC7LvP
- 6+b7a4I3Mk09ETNTE2Zo8jtMl/q0n/AVsetU4FkZWlxnZwHFjVSILc4B0gsuFnAnGh7o
- I/NJ+F77Q9ozMVYDPXs0bDdKe55E/KMoM67VKyH7hds34khFy0uzqHAOSQp6AUxk4/4Y
- I2souB7myZ1Qeb4Adcv0lpvcLUG4yBEfLEwzLL9s3iL3IS7Kfpw5EJ6YJrXJIDZ5y909
- Y08g==
-X-Gm-Message-State: AGi0Pua+nxCYhIuWZ11/3LwFqljiRJzFyhcutDdE5eljMBJoikpNxkyn
- G70Ej7vmN9IyXiEl3fkQ520=
-X-Google-Smtp-Source: APiQypIFFG9NZZdOzQj9vGlbbtC4ygVpYGhkLOO2LmO2sp/3GaDT2eT9UR+jUxCZfNfk8KIGsqyO7A==
-X-Received: by 2002:a1c:f211:: with SMTP id s17mr43022273wmc.168.1589322280765; 
- Tue, 12 May 2020 15:24:40 -0700 (PDT)
-Received: from localhost.localdomain
- (p200300F137132E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
- [2003:f1:3713:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id b2sm21758758wrm.30.2020.05.12.15.24.39
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=uumrDYsgwLaDX3HJhkdtaUmDr4MtGqDPU0CrAV2rD6U=;
+ b=o6P9O7+GUFEAnlaFQYg++B/rlkYKb0+jRvIAkec7UIzEKTKbBb7/2AqIg3M3dAi1Mn
+ qyxrzf0nRThCODOXpXw0i75wAsBhnoKZhv1vvvOyVhXBBVmGXLY2CoGXx9ObEgMFpPTv
+ giT1/MWdid++d1NMoWxTWaw/8/UM4aRUWmLOFSl1tyzRfT7Ae8TtvgFfT11IYeZwluc4
+ ZSYRq9bZMJXOLJglczuO1vDBvviRSfxvPIEXChsnCW9tHwd3bZzpvkS6e1JrrWNxMOG6
+ CNF/CXwqMU+I5XJ2rGaJyJLLX8bw+tkQkM61t+/lHXilkLvPy/S5U6E95o+UtkdlHStY
+ wL4A==
+X-Gm-Message-State: AGi0PuZhij8V/EyHqN2y+u6X35/vWtKPLXbAYvchORCTHhTH7hAxIqeb
+ 6uXAS4jTS5ESAEdqIH6jWw==
+X-Google-Smtp-Source: APiQypLudLaDx5Hvkugopv+ecKjUtr8tCweVHIWbZyoNgK4NPkO3hFmOEWUVAp12V5dMbReJH6+0XQ==
+X-Received: by 2002:a9d:69c9:: with SMTP id v9mr19153655oto.267.1589323458777; 
+ Tue, 12 May 2020 15:44:18 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w3sm3779500otg.24.2020.05.12.15.44.17
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:24:40 -0700 (PDT)
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-To: kishon@ti.com, robh+dt@kernel.org, vkoul@kernel.org,
- devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
-Subject: [PATCH v2 6/6] phy: amlogic: meson8b-usb2: Add a compatible string
- for Meson8m2
-Date: Wed, 13 May 2020 00:24:24 +0200
-Message-Id: <20200512222424.549351-7-martin.blumenstingl@googlemail.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200512222424.549351-1-martin.blumenstingl@googlemail.com>
-References: <20200512222424.549351-1-martin.blumenstingl@googlemail.com>
+ Tue, 12 May 2020 15:44:18 -0700 (PDT)
+Received: (nullmailer pid 11405 invoked by uid 1000);
+ Tue, 12 May 2020 22:44:17 -0000
+Date: Tue, 12 May 2020 17:44:17 -0500
+From: Rob Herring <robh@kernel.org>
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+Subject: Re: [PATCH v7 1/2] dt-bindings: mmc: Document the Amlogic Meson SDHC
+ MMC host controller
+Message-ID: <20200512224417.GA11220@bogus>
+References: <20200512204147.504087-1-martin.blumenstingl@googlemail.com>
+ <20200512204147.504087-2-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200512204147.504087-2-martin.blumenstingl@googlemail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_152442_666052_18A466F9 
-X-CRM114-Status: GOOD (  12.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_154419_786778_411835C5 
+X-CRM114-Status: GOOD (  10.06  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [martin.blumenstingl[at]googlemail.com]
+ provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,65 +93,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: narmstrong@baylibre.com,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Thomas Graichen <thomas.graichen@gmail.com>, hexdump0815@googlemail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, ulf.hansson@linaro.org, jianxin.pan@amlogic.com,
+ linux.amoon@gmail.com, linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ yinxin_1989@aliyun.com, robh+dt@kernel.org, linux-amlogic@lists.infradead.org,
+ lnykww@gmail.com, linux-arm-kernel@lists.infradead.org, jbrunet@baylibre.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The 3.10 vendor kernel sets the ACA_ENABLE bit on Meson8b, Meson8m2 and
-GXBB, but not on Meson8. Add a compatible string for Meson8m2 which also
-sets that bit.
-While here, also update the Kconfig text and MODULE_DESCRIPTION.
+On Tue, 12 May 2020 22:41:46 +0200, Martin Blumenstingl wrote:
+> This documents the devicetree bindings for the SDHC MMC host controller
+> found in Meson6, Meson8, Meson8b and Meson8m2 SoCs. It can use a
+> bus-width of 1/4/8-bit and it supports eMMC spec 4.4x/4.5x including
+> HS200 mode (up to 100MHz clock). It embeds an internal clock controller
+> which outputs four clocks (mod_clk, sd_clk, tx_clk and rx_clk) and is
+> fed by four external input clocks (clkin[0-3]). "pclk" is the module
+> register clock, it has to be enabled to access the registers.
+> 
+> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> ---
+>  .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   | 68 +++++++++++++++++++
+>  1 file changed, 68 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
+> 
 
-Tested-by: Thomas Graichen <thomas.graichen@gmail.com>
-Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
----
- drivers/phy/amlogic/Kconfig            | 2 +-
- drivers/phy/amlogic/phy-meson8b-usb2.c | 6 +++++-
- 2 files changed, 6 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
-index 3495b23af797..5ec53874d1ea 100644
---- a/drivers/phy/amlogic/Kconfig
-+++ b/drivers/phy/amlogic/Kconfig
-@@ -3,7 +3,7 @@
- # Phy drivers for Amlogic platforms
- #
- config PHY_MESON8B_USB2
--	tristate "Meson8, Meson8b and GXBB USB2 PHY driver"
-+	tristate "Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver"
- 	default ARCH_MESON
- 	depends on OF && (ARCH_MESON || COMPILE_TEST)
- 	depends on USB_SUPPORT
-diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-index 436dfa1a8a04..03c061dd5f0d 100644
---- a/drivers/phy/amlogic/phy-meson8b-usb2.c
-+++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-@@ -302,6 +302,10 @@ static const struct of_device_id phy_meson8b_usb2_of_match[] = {
- 		.compatible = "amlogic,meson8b-usb2-phy",
- 		.data = &phy_meson8b_usb2_match_data
- 	},
-+	{
-+		.compatible = "amlogic,meson8m2-usb2-phy",
-+		.data = &phy_meson8b_usb2_match_data
-+	},
- 	{
- 		.compatible = "amlogic,meson-gxbb-usb2-phy",
- 		.data = &phy_meson8b_usb2_match_data
-@@ -320,5 +324,5 @@ static struct platform_driver phy_meson8b_usb2_driver = {
- module_platform_driver(phy_meson8b_usb2_driver);
- 
- MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
--MODULE_DESCRIPTION("Meson8, Meson8b and GXBB USB2 PHY driver");
-+MODULE_DESCRIPTION("Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver");
- MODULE_LICENSE("GPL");
--- 
-2.26.2
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
