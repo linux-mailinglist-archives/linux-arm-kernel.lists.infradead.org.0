@@ -2,58 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BA421CF3F6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:04:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 196401CF41F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:18:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gS/zZ8drceq/yzgb/0YydAO4cy8Ge6DfKYssm4uZfmY=; b=I4uWAHMKOMiBNG
-	UWv0q2cQPYdLBp7BK5HViSMacKF9okXEArVGjn6sELgn8DZfC/S9riSJnHp3S94RRNsKm2KUbwwOQ
-	KvqwyyL41LoDFasgPcv9gkiORbWKDJE49wXM4I1sEt/tZ8h86QX9KcXOeDYSC6T/nNKRwqjlNFz+q
-	GBSCOzoLUC62TuFdxU+XlmL1ul0XPTgIVyBpYw5S55utADQbaaiXOJ/JXbCT+KOydfyDlaKxyKdzB
-	3t9fPvPJN/xYWAN/7DFW9MfA75iofkgrUGhHAdEFmdUny3O3wLiFTGkHpRNaNdUVOYRWINGrxLUzF
-	7oxi4X+Q8PbR47JF8k9g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ITWOWCSaw/OZFGqc7BWflCG2u3f/o5YB+h3xltLppqQ=; b=QBuyFDr36ACtey
+	s28ootXRJ/dsEidrjynjcbs8D0/O80bUSnclmT+rxGTqgyH0ZD9LVRgGyJCZTPwyk6OU7/86XcXkL
+	CjHTDREhiBsDyn3Lk9r+J0+vH+SkTGeLP92PAfZfbLjZqFM7hJQKgD/FXzWCOIIBItjLaV5pJchEa
+	mAA10dTC4ugzEadSxSJ7NdX4xMYEZmTcDq3V9k74/EN5R962buCASwU9ZhYCMs9vaOIGMFHEyXcBI
+	+Ffa51862kOsNTI5EcjDjbjubFdBsadOABpKnTxhF1BjpIj5bD/cTS9NbPELV2KY6lMR/iRmOPj0J
+	X5Xw2Viboi1LdGDHX+4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYTeU-0001gp-Rp; Tue, 12 May 2020 12:04:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYTeK-0001fs-1b
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 12:04:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 073B130E;
- Tue, 12 May 2020 05:04:38 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F7063F71E;
- Tue, 12 May 2020 05:04:36 -0700 (PDT)
-Subject: Re: [PATCH 08/26] KVM: arm64: Use TTL hint in when invalidating
- stage-2 translations
-To: Andrew Scull <ascull@google.com>
-References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-9-maz@kernel.org>
- <20200507151321.GH237572@google.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <63e16fdd-fe1b-07d3-23b7-cd99170fdd59@arm.com>
-Date: Tue, 12 May 2020 13:04:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jYTrZ-0001vL-AF; Tue, 12 May 2020 12:18:21 +0000
+Received: from verein.lst.de ([213.95.11.211])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYTrQ-0001uC-5U
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 12:18:14 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 8F23F68BEB; Tue, 12 May 2020 14:18:08 +0200 (CEST)
+Date: Tue, 12 May 2020 14:18:08 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH v4 01/38] dma-mapping: add generic helpers for mapping
+ sgtable objects
+Message-ID: <20200512121808.GA20393@lst.de>
+References: <20200512085710.14688-1-m.szyprowski@samsung.com>
+ <CGME20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0@eucas1p1.samsung.com>
+ <20200512090058.14910-1-m.szyprowski@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <20200507151321.GH237572@google.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20200512090058.14910-1-m.szyprowski@samsung.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_050440_522583_4659A6B3 
-X-CRM114-Status: GOOD (  12.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_051812_357385_6D9F9177 
+X-CRM114-Status: GOOD (  22.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -66,62 +61,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>, kvm@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
- George Cherian <gcherian@marvell.com>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linaro-mm-sig@lists.linaro.org,
+ iommu@lists.linux-foundation.org, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
-
-On 07/05/2020 16:13, Andrew Scull wrote:
->> @@ -176,7 +177,7 @@ static void clear_stage2_pud_entry(struct kvm_s2_mmu *mmu, pud_t *pud, phys_addr
->>  	pmd_t *pmd_table __maybe_unused = stage2_pmd_offset(kvm, pud, 0);
->>  	VM_BUG_ON(stage2_pud_huge(kvm, *pud));
->>  	stage2_pud_clear(kvm, pud);
->> -	kvm_tlb_flush_vmid_ipa(mmu, addr);
->> +	kvm_tlb_flush_vmid_ipa(mmu, addr, S2_NO_LEVEL_HINT);
->>  	stage2_pmd_free(kvm, pmd_table);
->>  	put_page(virt_to_page(pud));
->>  }
->> @@ -186,7 +187,7 @@ static void clear_stage2_pmd_entry(struct kvm_s2_mmu *mmu, pmd_t *pmd, phys_addr
->>  	pte_t *pte_table = pte_offset_kernel(pmd, 0);
->>  	VM_BUG_ON(pmd_thp_or_huge(*pmd));
->>  	pmd_clear(pmd);
->> -	kvm_tlb_flush_vmid_ipa(mmu, addr);
->> +	kvm_tlb_flush_vmid_ipa(mmu, addr, S2_NO_LEVEL_HINT);
->>  	free_page((unsigned long)pte_table);
->>  	put_page(virt_to_page(pmd));
->>  }
+On Tue, May 12, 2020 at 11:00:21AM +0200, Marek Szyprowski wrote:
+> struct sg_table is a common structure used for describing a memory
+> buffer. It consists of a scatterlist with memory pages and DMA addresses
+> (sgl entry), as well as the number of scatterlist entries: CPU pages
+> (orig_nents entry) and DMA mapped pages (nents entry).
 > 
-> Going by the names, is it possible to give a better level hint for these
-> cases?
+> It turned out that it was a common mistake to misuse nents and orig_nents
+> entries, calling DMA-mapping functions with a wrong number of entries or
+> ignoring the number of mapped entries returned by the dma_map_sg
+> function.
+> 
+> To avoid such issues, lets introduce a common wrappers operating directly
+> on the struct sg_table objects, which take care of the proper use of
+> the nents and orig_nents entries.
+> 
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> ---
+> For more information, see '[PATCH v4 00/38] DRM: fix struct sg_table nents
+> vs. orig_nents misuse' thread:
+> https://lore.kernel.org/dri-devel/20200512085710.14688-1-m.szyprowski@samsung.com/T/
+> ---
+>  include/linux/dma-mapping.h | 79 +++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 79 insertions(+)
+> 
+> diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
+> index b43116a..88f01cc 100644
+> --- a/include/linux/dma-mapping.h
+> +++ b/include/linux/dma-mapping.h
+> @@ -609,6 +609,85 @@ static inline void dma_sync_single_range_for_device(struct device *dev,
+>  	return dma_sync_single_for_device(dev, addr + offset, size, dir);
+>  }
+>  
+> +/**
+> + * dma_map_sgtable - Map the given buffer for the DMA operations
+> + * @dev:	The device to perform a DMA operation
+> + * @sgt:	The sg_table object describing the buffer
+> + * @dir:	DMA direction
+> + * @attrs:	Optional DMA attributes for the map operation
+> + *
+> + * Maps a buffer described by a scatterlist stored in the given sg_table
+> + * object for the @dir DMA operation by the @dev device. After success
+> + * the ownership for the buffer is transferred to the DMA domain. One has
+> + * to call dma_sync_sgtable_for_cpu() or dma_unmap_sgtable() to move the
+> + * ownership of the buffer back to the CPU domain before touching the
+> + * buffer by the CPU.
+> + * Returns 0 on success or -EINVAL on error during mapping the buffer.
+> + */
+> +static inline int dma_map_sgtable(struct device *dev, struct sg_table *sgt,
+> +		enum dma_data_direction dir, unsigned long attrs)
+> +{
+> +	int n = dma_map_sg_attrs(dev, sgt->sgl, sgt->orig_nents, dir, attrs);
+> +
+> +	if (n > 0) {
+> +		sgt->nents = n;
+> +		return 0;
+> +	}
+> +	return -EINVAL;
 
-There is no leaf entry being invalidated here. After clearing the range, we found we'd
-emptied (and invalidated) a whole page of mappings:
-|	if (stage2_pmd_table_empty(kvm, start_pmd))
-|		clear_stage2_pud_entry(mmu, pud, start_addr);
+Nit:  code tend to be a tad easier to read if the the exceptional
+condition is inside the branch block, so:
 
-Now we want to remove the link to the empty page so we can free it. We are changing the
-structure of the tables, not what gets mapped.
+	if (n <= 0)
+		return -EINVAL;
+	sgt->nents = n;
+	return 0;
 
-I think this is why we need the un-hinted behaviour, to invalidate "any level of the
-translation table walk required to translate the specified IPA". Otherwise the hardware
-can look for a leaf at the indicated level, find none, and do nothing.
+Otherwise this looks good to me:
 
-
-This is sufficiently horrible, its possible I've got it completely wrong! (does it make
-sense?)
-
-
-Thanks,
-
-James
+Reviewed-by: Christoph Hellwig <hch@lst.de>
 
 _______________________________________________
 linux-arm-kernel mailing list
