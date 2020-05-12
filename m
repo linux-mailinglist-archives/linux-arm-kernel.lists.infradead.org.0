@@ -2,65 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7AC61CFB2F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:45:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F05A1CFB5D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:53:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
-	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MBYef4Q3YsWttESEBS/UOaLyUGen3319DremElPA5qc=; b=JZtUd4bbenLlxo
-	k8fDZb6+gVCwJ3gMh110Jpp8ikFc+xzw5IO0nk881KSqXy3fJS8CVJRPfPv2FKgU+VB9jjQliJ/UT
-	dSi6ZQbnKrG7BPXst8jTde3grzV3UotGAflhRFbl3CLo05BEpzWUICIF9pTClGDCzBTN6AJww8i4w
-	39MsvaZsy43VCI3mPjljOX9iXjrHy045ouz8iIukRelhvWssoGFZoU0CnvL5f02BPnGRo/y20ze4l
-	zvgAqq3JW8KojIyCkQGSTdnJY5HVg/yyl6PyPg5dT22FZGrHqI87TYQ+exQwBhCNVDfTUuC33n/s7
-	5xGoeKb4UZEbKPhtcrJA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xHTiJB6lp3FTJSYamKYWBgi6g0w1ctdbJX8IUUQjo1E=; b=UQdxxtOKwqJ4oz
+	4DNQgWokRFKZEGgQWE2Ji4I5mcvYKSleqlKV4pkELXm4PhlVWmI7g5a36uiemWcuasEmwgLsirHK4
+	UxFZsMMOhmjNCD1i3r4SZVK+bWgNt+7dkMEdoBHavEoVzdseBKcseZp/v6RXpQLZBH4v7yH/y2zvU
+	MJsVKY7H4s+F0R7Z1eXO+KPaZEFgV0zyBBuL0QoFSDK9qfJ6YRb12MBD/WkQNFZ1jl8N5BfnL25V0
+	SQZgEBAue7JraDtBjUK2Y+XzOsCRlL+ULJKp3uA+pnupWo93LtK+bxH3qU1crr8eEAA3UXJDNQuqu
+	YriNImAv64CfJ3PpWVTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYY1a-0006Qj-MJ; Tue, 12 May 2020 16:44:58 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYY1P-0006QL-MD; Tue, 12 May 2020 16:44:49 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B1198206B9;
- Tue, 12 May 2020 16:44:46 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589301887;
- bh=Trwo38OmVBD2TlImzx3c+TlSZBTuSuR0SffTOf0cwTA=;
- h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
- b=nASl9ChizvQCSHZxqM5SKnNBNtsxJze1bOhEBm/r+ek96uRhxFd21jPbl4IkHLDtY
- g/4XQcCzQEALbK6PoUnVZG1pZ0itOTInxIIrK99bvUOF9VbhlUUi/jqwiISyUndL0j
- EemoVeSFjbqGZkFTHccsawGsW9qlKRal6xO7BUYc=
-Date: Tue, 12 May 2020 17:44:44 +0100
-From: Mark Brown <broonie@kernel.org>
-To: heiko@sntech.de, Johan Jonker <jbx6244@gmail.com>
-In-Reply-To: <20200507113238.7904-1-jbx6244@gmail.com>
-References: <20200507113238.7904-1-jbx6244@gmail.com>
-Subject: Re: [PATCH v1] ASoC: rockchip-i2s: add description for rk3308
-Message-Id: <158930188455.55827.16068992221946601782.b4-ty@kernel.org>
+	id 1jYY9x-0003oD-6H; Tue, 12 May 2020 16:53:37 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYY9m-0003nT-7K
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 16:53:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5104B1FB;
+ Tue, 12 May 2020 09:53:21 -0700 (PDT)
+Received: from [192.168.0.110] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5A5E93F305;
+ Tue, 12 May 2020 09:53:19 -0700 (PDT)
+Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
+ struct kvm
+To: James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-4-maz@kernel.org>
+ <a7c8207c-9061-ad0e-c9f8-64c995e928b6@arm.com>
+ <76d811eb-b304-c49f-1f21-fe9d95112a28@arm.com>
+From: Alexandru Elisei <alexandru.elisei@arm.com>
+Message-ID: <6518439c-65b7-1e87-a21d-a053d75c0514@arm.com>
+Date: Tue, 12 May 2020 17:53:53 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+MIME-Version: 1.0
+In-Reply-To: <76d811eb-b304-c49f-1f21-fe9d95112a28@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_094447_744406_0574D95E 
-X-CRM114-Status: GOOD (  11.10  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200512_095326_305353_23CDCDA0 
+X-CRM114-Status: GOOD (  15.64  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,51 +67,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, alsa-devel@alsa-project.org,
- lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
- linux-rockchip@lists.infradead.org, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Jintack Lim <jintack@cs.columbia.edu>, Andre Przywara <andre.przywara@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, kvmarm@lists.cs.columbia.edu,
+ George Cherian <gcherian@marvell.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 7 May 2020 13:32:38 +0200, Johan Jonker wrote:
-> The description below is already in use for rk3308.dtsi,
-> but was somehow never added to a document, so add
-> "rockchip,rk3308-i2s", "rockchip,rk3066-i2s"
-> for i2s nodes on a rk3308 platform to rockchip-i2s.yaml.
-> One of the rk3308 i2s nodes also has a different dma layout,
-> so change that as well.
+Hi,
 
-Applied to
+On 5/12/20 12:17 PM, James Morse wrote:
+> Hi Alex, Marc,
+>
+> (just on this last_vcpu_ran thing...)
+>
+> On 11/05/2020 17:38, Alexandru Elisei wrote:
+>> On 4/22/20 1:00 PM, Marc Zyngier wrote:
+>>> From: Christoffer Dall <christoffer.dall@arm.com>
+>>>
+>>> As we are about to reuse our stage 2 page table manipulation code for
+>>> shadow stage 2 page tables in the context of nested virtualization, we
+>>> are going to manage multiple stage 2 page tables for a single VM.
+>>>
+>>> This requires some pretty invasive changes to our data structures,
+>>> which moves the vmid and pgd pointers into a separate structure and
+>>> change pretty much all of our mmu code to operate on this structure
+>>> instead.
+>>>
+>>> The new structure is called struct kvm_s2_mmu.
+>>>
+>>> There is no intended functional change by this patch alone.
+>>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+>>> index 7dd8fefa6aecd..664a5d92ae9b8 100644
+>>> --- a/arch/arm64/include/asm/kvm_host.h
+>>> +++ b/arch/arm64/include/asm/kvm_host.h
+>>> @@ -63,19 +63,32 @@ struct kvm_vmid {
+>>>  	u32    vmid;
+>>>  };
+>>>  
+>>> -struct kvm_arch {
+>>> +struct kvm_s2_mmu {
+>>>  	struct kvm_vmid vmid;
+>>>  
+>>> -	/* stage2 entry level table */
+>>> -	pgd_t *pgd;
+>>> -	phys_addr_t pgd_phys;
+>>> -
+>>> -	/* VTCR_EL2 value for this VM */
+>>> -	u64    vtcr;
+>>> +	/*
+>>> +	 * stage2 entry level table
+>>> +	 *
+>>> +	 * Two kvm_s2_mmu structures in the same VM can point to the same pgd
+>>> +	 * here.  This happens when running a non-VHE guest hypervisor which
+>>> +	 * uses the canonical stage 2 page table for both vEL2 and for vEL1/0
+>>> +	 * with vHCR_EL2.VM == 0.
+>> It makes more sense to me to say that a non-VHE guest hypervisor will use the
+>> canonical stage *1* page table when running at EL2
+> Can KVM say anything about stage1? Its totally under the the guests control even at vEL2...
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.8
-
-Thanks!
-
-[1/1] ASoC: rockchip-i2s: add description for rk3308
-      commit: ab436c974e08d9254999d7a84d86b1d4c1749230
-
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.
-
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
-
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
-
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+It just occurred to me that "canonical stage 2 page table" refers to the L0
+hypervisor stage 2, not to the L1 hypervisor stage 2. If you don't mind my
+suggestion, perhaps the comment can be slightly improved to avoid any confusion?
+Maybe something along the lines of "[..] This happens when running a non-VHE guest
+hypervisor, in which case we use the canonical stage 2 page table for both vEL2
+and for vEL1/0 with vHCR_EL2.VM == 0".
 
 Thanks,
-Mark
+Alex
 
 _______________________________________________
 linux-arm-kernel mailing list
