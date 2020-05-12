@@ -2,61 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87E551CFA48
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:14:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D03D1CFA50
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:14:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OxNi2AP84vj4B8fmC+uuayWOLrl6e9lSfEollGJp4Ps=; b=tzNdeFw4gO7PR6
-	1gxQWQydva6hO3UccqKW+7u4sjB6YRTYO+ALqmmRKpaLrIBz3sZjrrl/u7cx5WyDif+PZgi/2I2T1
-	x3fLpWfKqtTmKgiVeX7OL7nIebgD14EWbG8pbxNy3OWaKTWjMiuqgnO4d72kAlkdDZPtCwr2t286P
-	BNWy/xEmA8/RVFZ2wlGQQJo85GVnWTf9CrBusRQE3FjtkPHQlP4MiJKadZesFDqS6eKDgtfK2bfiv
-	hKoDLqNYLuDmhgZXsUBagu8psMd1gL1AtpIx/OYwT4a67LCegJ6rnfb8Z1+rL83vzTO92qXN6gESL
-	cfzjP1433sY95C3oDr9w==;
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5RoI4r/TBA310iXgdJ0iDhlcWUqqUrXE0Y4LEN+u1v0=; b=i30ZZ+NV1eADuq
+	VaN25mM+r5i08t9CXAUdBK4yf6CaOTTO12tMqYhRfKLYQs3Ar9PjoNoBNRK4r9sguTX02Hf4bYGgr
+	b9r4E+qnFhG1d/mNAGH6BEnxzu/sWIEbx8/MzxiyHwQEkinDZxJySqQZwXPRE/FlToZ71Zj4PZirJ
+	/pgk7NfuICfrMMk9TrhJ3yUh4vpQrlU1V35cGdLaCYzZbFf4vYWgJNiCTQZ/MKDdBYPCH9lWp0ht3
+	MEd1BWuc0wWKmsYP432T0Id7uS1YJspGVFJgxZOUuInuBhpngYyxL+iykE8oLZ4FLLPOOuCNzkuFI
+	RLovxB+gj443YlsvKbYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYXXb-0003sp-Fx; Tue, 12 May 2020 16:13:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYXXI-0003nX-CN
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 16:13:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 595BC1FB;
- Tue, 12 May 2020 09:13:39 -0700 (PDT)
-Received: from [192.168.0.14] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 09D253F305;
- Tue, 12 May 2020 09:13:36 -0700 (PDT)
-Subject: Re: [PATCH 03/26] KVM: arm64: Factor out stage 2 page table data from
- struct kvm
-To: Alexandru Elisei <alexandru.elisei@arm.com>
-References: <20200422120050.3693593-1-maz@kernel.org>
- <20200422120050.3693593-4-maz@kernel.org>
- <a7c8207c-9061-ad0e-c9f8-64c995e928b6@arm.com>
- <76d811eb-b304-c49f-1f21-fe9d95112a28@arm.com>
- <5134e123-18ec-9b69-2e0a-b83798e01507@arm.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <cc50e08b-0d7e-83b6-88ee-6f8726dcd9bb@arm.com>
-Date: Tue, 12 May 2020 17:13:35 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jYXYD-0004Ji-R2; Tue, 12 May 2020 16:14:37 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYXXz-0004Ht-5Z; Tue, 12 May 2020 16:14:25 +0000
+Received: from paulmck-ThinkPad-P72.home (unknown [50.39.105.78])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8CC1F206B8;
+ Tue, 12 May 2020 16:14:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589300062;
+ bh=roxQpTDUzjw/bF+Lrg3dJrcZOOdve3wOlduwR1ltd4o=;
+ h=Date:From:To:Cc:Subject:Reply-To:References:In-Reply-To:From;
+ b=L1OgTNMV52ztTM9AQJ3QiF5KL08RFSOYjoa8LElKtKo5TDud8JmJlOKnqkFPTRV6/
+ myqjcqOdtysnVr0uIU/9t5qtxY40RmKthcmBhfecwB77z3QwtevLhTy2z6V1EzMWVS
+ tX81MJ1d5UqS9rG7fnaLzh5hrppDRXNAWAnvHNFA=
+Received: by paulmck-ThinkPad-P72.home (Postfix, from userid 1000)
+ id 758DC3522FA4; Tue, 12 May 2020 09:14:22 -0700 (PDT)
+Date: Tue, 12 May 2020 09:14:22 -0700
+From: "Paul E. McKenney" <paulmck@kernel.org>
+To: Dmitry Vyukov <dvyukov@google.com>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+Message-ID: <20200512161422.GG2869@paulmck-ThinkPad-P72>
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+ <20200511180527.GZ2869@paulmck-ThinkPad-P72>
+ <1589250993.19238.22.camel@mtksdccf07>
+ <CACT4Y+b6ZfmZG3YYC_TkoeGaAQjSEKvF4dZ9vHzTx5iokD4zTQ@mail.gmail.com>
+ <20200512142541.GD2869@paulmck-ThinkPad-P72>
+ <CACT4Y+ZfzLhcG2Wy_iEMB=hJ5k=ib+X-m29jDG2Jcs7S-TPX=w@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <5134e123-18ec-9b69-2e0a-b83798e01507@arm.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <CACT4Y+ZfzLhcG2Wy_iEMB=hJ5k=ib+X-m29jDG2Jcs7S-TPX=w@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_091340_511384_5904D2E0 
-X-CRM114-Status: GOOD (  25.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_091423_256977_7C81686F 
+X-CRM114-Status: GOOD (  45.41  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,141 +82,413 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, kvm@vger.kernel.org,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Jintack Lim <jintack@cs.columbia.edu>, Marc Zyngier <maz@kernel.org>,
- Christoffer Dall <christoffer.dall@arm.com>, Dave Martin <Dave.Martin@arm.com>,
- George Cherian <gcherian@marvell.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
- Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Reply-To: paulmck@kernel.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>,
+ wsd_upstream <wsd_upstream@mediatek.com>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>, linux-mediatek@lists.infradead.org,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Alex,
-
-On 12/05/2020 16:47, Alexandru Elisei wrote:
-> On 5/12/20 12:17 PM, James Morse wrote:
->> On 11/05/2020 17:38, Alexandru Elisei wrote:
->>> On 4/22/20 1:00 PM, Marc Zyngier wrote:
->>>> From: Christoffer Dall <christoffer.dall@arm.com>
->>>>
->>>> As we are about to reuse our stage 2 page table manipulation code for
->>>> shadow stage 2 page tables in the context of nested virtualization, we
->>>> are going to manage multiple stage 2 page tables for a single VM.
->>>>
->>>> This requires some pretty invasive changes to our data structures,
->>>> which moves the vmid and pgd pointers into a separate structure and
->>>> change pretty much all of our mmu code to operate on this structure
->>>> instead.
->>>>
->>>> The new structure is called struct kvm_s2_mmu.
->>>>
->>>> There is no intended functional change by this patch alone.
->>>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
->>>> index 7dd8fefa6aecd..664a5d92ae9b8 100644
->>>> --- a/arch/arm64/include/asm/kvm_host.h
->>>> +++ b/arch/arm64/include/asm/kvm_host.h
->>>> @@ -63,19 +63,32 @@ struct kvm_vmid {
->>>>  	u32    vmid;
->>>>  };
->>>>  
->>>> -struct kvm_arch {
->>>> +struct kvm_s2_mmu {
->>>>  	struct kvm_vmid vmid;
->>>>  
->>>> -	/* stage2 entry level table */
->>>> -	pgd_t *pgd;
->>>> -	phys_addr_t pgd_phys;
->>>> -
->>>> -	/* VTCR_EL2 value for this VM */
->>>> -	u64    vtcr;
->>>> +	/*
->>>> +	 * stage2 entry level table
->>>> +	 *
->>>> +	 * Two kvm_s2_mmu structures in the same VM can point to the same pgd
->>>> +	 * here.  This happens when running a non-VHE guest hypervisor which
->>>> +	 * uses the canonical stage 2 page table for both vEL2 and for vEL1/0
->>>> +	 * with vHCR_EL2.VM == 0.
-
->>> It makes more sense to me to say that a non-VHE guest hypervisor will use the
->>> canonical stage *1* page table when running at EL2
-
->> Can KVM say anything about stage1? Its totally under the the guests control even at vEL2...
-
-> It is. My interpretation of the comment was that if the guest doesn't have virtual
-> stage 2 enabled (we're not running a guest of the L1 hypervisor), then the L0 host
-> can use the same L0 stage 2 tables because we're running the same guest (the L1
-> VM), regardless of the actual exception level for the guest.
-
-I think you're right, but I can't see where stage 1 comes in to it!
-
-
-> If I remember
-> correctly, KVM assigns different vmids for guests running at vEL1/0 and vEL2 with
-> vHCR_EL2.VM == 0 because the translation regimes are different, but keeps the same
-> translation tables.
-
-Interesting. Is that because vEL2 really has ASIDs so it needs its own VMID space?
-
-
-
->>> (the "Non-secure EL2 translation regime" as ARM DDI 0487F.b calls it on page D5-2543).
->>> I think that's
->>> the only situation where vEL2 and vEL1&0 will use the same L0 stage 2 tables. It's
->>> been quite some time since I reviewed the initial version of the NV patches, did I
->>> get that wrong?
->>
->>>> +	 */
->>>> +	pgd_t		*pgd;
->>>> +	phys_addr_t	pgd_phys;
->>>>  
->>>>  	/* The last vcpu id that ran on each physical CPU */
->>>>  	int __percpu *last_vcpu_ran;
-
->>> It makes sense for the other fields to be part of kvm_s2_mmu, but I'm struggling
->>> to figure out why last_vcpu_ran is here. Would you mind sharing the rationale? I
->>> don't see this change in v1 or v2 of the NV series.
-
->> Marc may have a better rationale. My thinking was because kvm_vmid is in here too.
->>
->> last_vcpu_ran exists to prevent KVM accidentally emulating CNP without the opt-in. (we
->> call it defacto CNP).
->>
->> The guest may expect to be able to use asid-4 with different page tables on different
-
-> I'm afraid I don't know what asid-4 is.
-
-Sorry - 4 was just a random number![0]
-'to use the same asid number on different vcpus'.
-
-
->> vCPUs, assuming the TLB isn't shared. But if KVM is switching between those vCPU on one
->> physical CPU, the TLB is shared, ... the VMID and ASID are the same, but the page tables
->> are not. Not fun to debug!
->>
->>
->> NV makes this problem per-stage2, because each stage2 has its own VMID, we need to track
->> the vcpu_id that last ran this stage2 on this physical CPU. If its not the same, we need
->> to blow away this VMIDs TLB entries.
->>
->> The workaround lives in virt/kvm/arm/arm.c::kvm_arch_vcpu_load()
+On Tue, May 12, 2020 at 05:50:28PM +0200, Dmitry Vyukov wrote:
+> On Tue, May 12, 2020 at 4:25 PM Paul E. McKenney <paulmck@kernel.org> wrote:
+> >
+> > On Tue, May 12, 2020 at 03:56:17PM +0200, Dmitry Vyukov wrote:
+> > > On Tue, May 12, 2020 at 4:36 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > >
+> > > > On Mon, 2020-05-11 at 11:05 -0700, Paul E. McKenney wrote:
+> > > > > On Mon, May 11, 2020 at 10:31:11AM +0800, Walter Wu wrote:
+> > > > > > This feature will record first and last call_rcu() call stack and
+> > > > > > print two call_rcu() call stack in KASAN report.
+> > > > >
+> > > > > Suppose that a given rcu_head structure is passed to call_rcu(), then
+> > > > > the grace period elapses, the callback is invoked, and the enclosing
+> > > > > data structure is freed.  But then that same region of memory is
+> > > > > immediately reallocated as the same type of structure and again
+> > > > > passed to call_rcu(), and that this cycle repeats several times.
+> > > > >
+> > > > > Would the first call stack forever be associated with the first
+> > > > > call_rcu() in this series?  If so, wouldn't the last two usually
+> > > > > be the most useful?  Or am I unclear on the use case?
+> > >
+> > > 2 points here:
+> > >
+> > > 1. With KASAN the object won't be immediately reallocated. KASAN has
+> > > 'quarantine' to delay reuse of heap objects. It is assumed that the
+> > > object is still in quarantine when we detect a use-after-free. In such
+> > > a case we will have proper call_rcu stacks as well.
+> > > It is possible that the object is not in quarantine already and was
+> > > reused several times (quarantine is not infinite), but then KASAN will
+> > > report non-sense stacks for allocation/free as well. So wrong call_rcu
+> > > stacks are less of a problem in such cases.
+> > >
+> > > 2. We would like to memorize 2 last call_rcu stacks regardless, but we
+> > > just don't have a good place for the index (bit which of the 2 is the
+> > > one to overwrite). Probably could shove it into some existing field,
+> > > but then will require atomic operations, etc.
+> > >
+> > > Nobody knows how well/bad it will work. I think we need to get the
+> > > first version in, deploy on syzbot, accumulate some base of example
+> > > reports and iterate from there.
+> >
+> > If I understood the stack-index point below, why not just move the
+> > previous stackm index to clobber the previous-to-previous stack index,
+> > then put the current stack index into the spot thus opened up?
 > 
-> Makes sense, thank you for explaining that.
+> We don't have any index in this change (don't have memory for such index).
+> The pseudo code is"
+> 
+> u32 aux_stacks[2]; // = {0,0}
+> 
+> if (aux_stacks[0] != 0)
+>     aux_stacks[0] = stack;
+> else
+>    aux_stacks[1] = stack;
 
-Great,
+I was thinking in terms of something like this:
 
+u32 aux_stacks[2]; // = {0,0}
 
-Thanks,
+if (aux_stacks[0] != 0) {
+    aux_stacks[0] = stack;
+} else {
+   if (aux_stacks[1])
+   	aux_stacks[0] = aux_stacks[1];
+   aux_stacks[1] = stack;
+}
 
-James
+Whether this actually makes sense in real life, I have no idea.
+The theory is that you want the last two stacks.  However, if these
+elements get cleared at kfree() time, then I could easily believe that
+the approach you already have (first and last) is the way to go.
 
+Just asking the question, not arguing for a change!
 
-[0] https://xkcd.com/221/
+							Thanx, Paul
+
+> > > > The first call stack doesn't forever associate with first call_rcu(),
+> > > > if someone object freed and reallocated, then the first call stack will
+> > > > replace with new object.
+> > > >
+> > > > > > When call_rcu() is called, we store the call_rcu() call stack into
+> > > > > > slub alloc meta-data, so that KASAN report can print rcu stack.
+> > > > > >
+> > > > > > It doesn't increase the cost of memory consumption. Because we don't
+> > > > > > enlarge struct kasan_alloc_meta size.
+> > > > > > - add two call_rcu() call stack into kasan_alloc_meta, size is 8 bytes.
+> > > > > > - remove free track from kasan_alloc_meta, size is 8 bytes.
+> > > > > >
+> > > > > > [1]https://bugzilla.kernel.org/show_bug.cgi?id=198437
+> > > > > > [2]https://groups.google.com/forum/#!searchin/kasan-dev/better$20stack$20traces$20for$20rcu%7Csort:date/kasan-dev/KQsjT_88hDE/7rNUZprRBgAJ
+> > > > > >
+> > > > > > Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> > > > > > Suggested-by: Dmitry Vyukov <dvyukov@google.com>
+> > > > > > Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+> > > > > > Cc: Dmitry Vyukov <dvyukov@google.com>
+> > > > > > Cc: Alexander Potapenko <glider@google.com>
+> > > > > > Cc: Andrew Morton <akpm@linux-foundation.org>
+> > > > > > Cc: Paul E. McKenney <paulmck@kernel.org>
+> > > > > > Cc: Josh Triplett <josh@joshtriplett.org>
+> > > > > > Cc: Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+> > > > > > Cc: Lai Jiangshan <jiangshanlai@gmail.com>
+> > > > > > Cc: Joel Fernandes <joel@joelfernandes.org>
+> > > > > > ---
+> > > > > >  include/linux/kasan.h |  2 ++
+> > > > > >  kernel/rcu/tree.c     |  3 +++
+> > > > > >  lib/Kconfig.kasan     |  2 ++
+> > > > > >  mm/kasan/common.c     |  4 ++--
+> > > > > >  mm/kasan/generic.c    | 29 +++++++++++++++++++++++++++++
+> > > > > >  mm/kasan/kasan.h      | 19 +++++++++++++++++++
+> > > > > >  mm/kasan/report.c     | 21 +++++++++++++++++----
+> > > > > >  7 files changed, 74 insertions(+), 6 deletions(-)
+> > > > > >
+> > > > > > diff --git a/include/linux/kasan.h b/include/linux/kasan.h
+> > > > > > index 31314ca7c635..23b7ee00572d 100644
+> > > > > > --- a/include/linux/kasan.h
+> > > > > > +++ b/include/linux/kasan.h
+> > > > > > @@ -174,11 +174,13 @@ static inline size_t kasan_metadata_size(struct kmem_cache *cache) { return 0; }
+> > > > > >
+> > > > > >  void kasan_cache_shrink(struct kmem_cache *cache);
+> > > > > >  void kasan_cache_shutdown(struct kmem_cache *cache);
+> > > > > > +void kasan_record_aux_stack(void *ptr);
+> > > > > >
+> > > > > >  #else /* CONFIG_KASAN_GENERIC */
+> > > > > >
+> > > > > >  static inline void kasan_cache_shrink(struct kmem_cache *cache) {}
+> > > > > >  static inline void kasan_cache_shutdown(struct kmem_cache *cache) {}
+> > > > > > +static inline void kasan_record_aux_stack(void *ptr) {}
+> > > > > >
+> > > > > >  #endif /* CONFIG_KASAN_GENERIC */
+> > > > > >
+> > > > > > diff --git a/kernel/rcu/tree.c b/kernel/rcu/tree.c
+> > > > > > index 06548e2ebb72..de872b6cc261 100644
+> > > > > > --- a/kernel/rcu/tree.c
+> > > > > > +++ b/kernel/rcu/tree.c
+> > > > > > @@ -57,6 +57,7 @@
+> > > > > >  #include <linux/slab.h>
+> > > > > >  #include <linux/sched/isolation.h>
+> > > > > >  #include <linux/sched/clock.h>
+> > > > > > +#include <linux/kasan.h>
+> > > > > >  #include "../time/tick-internal.h"
+> > > > > >
+> > > > > >  #include "tree.h"
+> > > > > > @@ -2694,6 +2695,8 @@ __call_rcu(struct rcu_head *head, rcu_callback_t func)
+> > > > > >             trace_rcu_callback(rcu_state.name, head,
+> > > > > >                                rcu_segcblist_n_cbs(&rdp->cblist));
+> > > > > >
+> > > > > > +   kasan_record_aux_stack(head);
+> > > > >
+> > > > > Just for the record, at this point we have not yet queued the callback.
+> > > > > We have also not yet disabled interrupts.  Which might be OK, but I
+> > > > > figured I should call out the possibility of moving this down a few
+> > > > > lines to follow the local_irq_save().
+> > > > >
+> > > >
+> > > > We will intend to do it.
+> > >
+> > > I will sleep better if we move it up :)
+> > > It qualifies a "debug check", which are generally done on entrance to
+> > > the function. Or are these all debug checks up to this point?
+> > > But if the callback did not leak anywhere up to this point and we will
+> > > maintain it that way, then formally it is fine.
+> >
+> > There are debug checks, then initialization of presumed private
+> > structures, disabling of interrupts, more check that are now safe given
+> > that we are pinned to a specific CPU, and so on.
+> >
+> > I am OK with it being at the beginning of the function.
+> >
+> > > > > If someone incorrectly invokes concurrently invokes call_rcu() on this
+> > > > > same region of memory, possibly from an interrupt handler, we are OK
+> > > > > corrupting the stack traces, right?
+> > > > >
+> > > >
+> > > > Yes, and the wrong invoking call_rcu should be recorded.
+> > > >
+> > > > > But what happens if a given structure has more than one rcu_head
+> > > > > structure?  In that case, RCU would be just fine with it being
+> > > > > concurrently passed to different call_rcu() invocations as long as the
+> > > > > two invocations didn't both use the same rcu_head structure.  (In that
+> > > > > case, they had best not be both freeing the object, and if even one of
+> > > > > them is freeing the object, coordination is necessary.)
+> > > > >
+> > > > > If this is a problem, one approach would be to move the
+> > > > > kasan_record_aux_stack(head) call to kfree_rcu().  After all, it is
+> > > > > definitely illegal to pass the same memory to a pair of kfree_rcu()
+> > > > > invocations!  ;-)
+> > > > >
+> > > >
+> > > > The function of kasan_record_aux_stack(head) is simple, it is only to
+> > > > record call stack by the 'head' object.
+> > >
+> > > I would say "corrupting" stacks on some races is fine-ish. In the end
+> > > we are just storing an u32 stack id.
+> > > On syzbot we generally have multiple samples of the same crash, so
+> > > even if one is "corrupted" there may be others that are not corrupted.
+> > > Just protecting from this looks too complex and expensive. And in the
+> > > end there is not much we can do anyway.
+> > >
+> > > Recording all call_rcu stacks (not just kfree_rcu) is intentional.  I
+> > > think it may be useful to even extend to recording workqueue and timer
+> > > stacks as well.
+> >
+> > Given the u32 nature of the stack ID, I agree that there is no point
+> > in excluding call_rcu().  At least until such time as we start getting
+> > false positives due to multiple rcu_head structures in the same structure.
+> >
+> >                                                       Thanx, Paul
+> >
+> > > > > > +
+> > > > > >     /* Go handle any RCU core processing required. */
+> > > > > >     if (IS_ENABLED(CONFIG_RCU_NOCB_CPU) &&
+> > > > > >         unlikely(rcu_segcblist_is_offloaded(&rdp->cblist))) {
+> > > > > > diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+> > > > > > index 81f5464ea9e1..56a89291f1cc 100644
+> > > > > > --- a/lib/Kconfig.kasan
+> > > > > > +++ b/lib/Kconfig.kasan
+> > > > > > @@ -58,6 +58,8 @@ config KASAN_GENERIC
+> > > > > >       For better error detection enable CONFIG_STACKTRACE.
+> > > > > >       Currently CONFIG_KASAN_GENERIC doesn't work with CONFIG_DEBUG_SLAB
+> > > > > >       (the resulting kernel does not boot).
+> > > > > > +     Currently CONFIG_KASAN_GENERIC will print first and last call_rcu()
+> > > > > > +     call stack. It doesn't increase the cost of memory consumption.
+> > > > > >
+> > > > > >  config KASAN_SW_TAGS
+> > > > > >     bool "Software tag-based mode"
+> > > > > > diff --git a/mm/kasan/common.c b/mm/kasan/common.c
+> > > > > > index 2906358e42f0..8bc618289bb1 100644
+> > > > > > --- a/mm/kasan/common.c
+> > > > > > +++ b/mm/kasan/common.c
+> > > > > > @@ -41,7 +41,7 @@
+> > > > > >  #include "kasan.h"
+> > > > > >  #include "../slab.h"
+> > > > > >
+> > > > > > -static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > > > > > +depot_stack_handle_t kasan_save_stack(gfp_t flags)
+> > > > > >  {
+> > > > > >     unsigned long entries[KASAN_STACK_DEPTH];
+> > > > > >     unsigned int nr_entries;
+> > > > > > @@ -54,7 +54,7 @@ static inline depot_stack_handle_t save_stack(gfp_t flags)
+> > > > > >  static inline void set_track(struct kasan_track *track, gfp_t flags)
+> > > > > >  {
+> > > > > >     track->pid = current->pid;
+> > > > > > -   track->stack = save_stack(flags);
+> > > > > > +   track->stack = kasan_save_stack(flags);
+> > > > > >  }
+> > > > > >
+> > > > > >  void kasan_enable_current(void)
+> > > > > > diff --git a/mm/kasan/generic.c b/mm/kasan/generic.c
+> > > > > > index 56ff8885fe2e..b86880c338e2 100644
+> > > > > > --- a/mm/kasan/generic.c
+> > > > > > +++ b/mm/kasan/generic.c
+> > > > > > @@ -325,3 +325,32 @@ DEFINE_ASAN_SET_SHADOW(f2);
+> > > > > >  DEFINE_ASAN_SET_SHADOW(f3);
+> > > > > >  DEFINE_ASAN_SET_SHADOW(f5);
+> > > > > >  DEFINE_ASAN_SET_SHADOW(f8);
+> > > > > > +
+> > > > > > +void kasan_record_aux_stack(void *addr)
+> > > > > > +{
+> > > > > > +   struct page *page = kasan_addr_to_page(addr);
+> > > > > > +   struct kmem_cache *cache;
+> > > > > > +   struct kasan_alloc_meta *alloc_info;
+> > > > > > +   void *object;
+> > > > > > +
+> > > > > > +   if (!(page && PageSlab(page)))
+> > > > > > +           return;
+> > > > > > +
+> > > > > > +   cache = page->slab_cache;
+> > > > > > +   object = nearest_obj(cache, page, addr);
+> > > > > > +   alloc_info = get_alloc_info(cache, object);
+> > > > > > +
+> > > > > > +   if (!alloc_info->rcu_stack[0])
+> > > > > > +           /* record first call_rcu() call stack */
+> > > > > > +           alloc_info->rcu_stack[0] = kasan_save_stack(GFP_NOWAIT);
+> > > > > > +   else
+> > > > > > +           /* record last call_rcu() call stack */
+> > > > > > +           alloc_info->rcu_stack[1] = kasan_save_stack(GFP_NOWAIT);
+> > > > > > +}
+> > > > > > +
+> > > > > > +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> > > > > > +                                           u8 idx)
+> > > > > > +{
+> > > > > > +   return container_of(&alloc_info->rcu_stack[idx],
+> > > > > > +                                           struct kasan_track, stack);
+> > > > > > +}
+> > > > > > diff --git a/mm/kasan/kasan.h b/mm/kasan/kasan.h
+> > > > > > index e8f37199d885..1cc1fb7b0de3 100644
+> > > > > > --- a/mm/kasan/kasan.h
+> > > > > > +++ b/mm/kasan/kasan.h
+> > > > > > @@ -96,15 +96,28 @@ struct kasan_track {
+> > > > > >     depot_stack_handle_t stack;
+> > > > > >  };
+> > > > > >
+> > > > > > +#ifdef CONFIG_KASAN_GENERIC
+> > > > > > +#define SIZEOF_PTR sizeof(void *)
+> > > > > > +#define KASAN_NR_RCU_CALL_STACKS 2
+> > > > > > +#else /* CONFIG_KASAN_GENERIC */
+> > > > > >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > > >  #define KASAN_NR_FREE_STACKS 5
+> > > > > >  #else
+> > > > > >  #define KASAN_NR_FREE_STACKS 1
+> > > > > >  #endif
+> > > > > > +#endif /* CONFIG_KASAN_GENERIC */
+> > > > > >
+> > > > > >  struct kasan_alloc_meta {
+> > > > > >     struct kasan_track alloc_track;
+> > > > > > +#ifdef CONFIG_KASAN_GENERIC
+> > > > > > +   /*
+> > > > > > +    * call_rcu() call stack is stored into struct kasan_alloc_meta.
+> > > > > > +    * The free stack is stored into freed object.
+> > > > > > +    */
+> > > > > > +   depot_stack_handle_t rcu_stack[KASAN_NR_RCU_CALL_STACKS];
+> > > > > > +#else
+> > > > > >     struct kasan_track free_track[KASAN_NR_FREE_STACKS];
+> > > > > > +#endif
+> > > > > >  #ifdef CONFIG_KASAN_SW_TAGS_IDENTIFY
+> > > > > >     u8 free_pointer_tag[KASAN_NR_FREE_STACKS];
+> > > > > >     u8 free_track_idx;
+> > > > > > @@ -159,16 +172,22 @@ void kasan_report_invalid_free(void *object, unsigned long ip);
+> > > > > >
+> > > > > >  struct page *kasan_addr_to_page(const void *addr);
+> > > > > >
+> > > > > > +depot_stack_handle_t kasan_save_stack(gfp_t flags);
+> > > > > > +
+> > > > > >  #if defined(CONFIG_KASAN_GENERIC) && \
+> > > > > >     (defined(CONFIG_SLAB) || defined(CONFIG_SLUB))
+> > > > > >  void quarantine_put(struct kasan_free_meta *info, struct kmem_cache *cache);
+> > > > > >  void quarantine_reduce(void);
+> > > > > >  void quarantine_remove_cache(struct kmem_cache *cache);
+> > > > > > +struct kasan_track *kasan_get_aux_stack(struct kasan_alloc_meta *alloc_info,
+> > > > > > +                   u8 idx);
+> > > > > >  #else
+> > > > > >  static inline void quarantine_put(struct kasan_free_meta *info,
+> > > > > >                             struct kmem_cache *cache) { }
+> > > > > >  static inline void quarantine_reduce(void) { }
+> > > > > >  static inline void quarantine_remove_cache(struct kmem_cache *cache) { }
+> > > > > > +static inline struct kasan_track *kasan_get_aux_stack(
+> > > > > > +                   struct kasan_alloc_meta *alloc_info, u8 idx) { return NULL; }
+> > > > > >  #endif
+> > > > > >
+> > > > > >  #ifdef CONFIG_KASAN_SW_TAGS
+> > > > > > diff --git a/mm/kasan/report.c b/mm/kasan/report.c
+> > > > > > index 80f23c9da6b0..f16a1a210815 100644
+> > > > > > --- a/mm/kasan/report.c
+> > > > > > +++ b/mm/kasan/report.c
+> > > > > > @@ -105,9 +105,13 @@ static void end_report(unsigned long *flags)
+> > > > > >     kasan_enable_current();
+> > > > > >  }
+> > > > > >
+> > > > > > -static void print_track(struct kasan_track *track, const char *prefix)
+> > > > > > +static void print_track(struct kasan_track *track, const char *prefix,
+> > > > > > +                                           bool is_callrcu)
+> > > > > >  {
+> > > > > > -   pr_err("%s by task %u:\n", prefix, track->pid);
+> > > > > > +   if (is_callrcu)
+> > > > > > +           pr_err("%s:\n", prefix);
+> > > > > > +   else
+> > > > > > +           pr_err("%s by task %u:\n", prefix, track->pid);
+> > > > > >     if (track->stack) {
+> > > > > >             unsigned long *entries;
+> > > > > >             unsigned int nr_entries;
+> > > > > > @@ -187,11 +191,20 @@ static void describe_object(struct kmem_cache *cache, void *object,
+> > > > > >     if (cache->flags & SLAB_KASAN) {
+> > > > > >             struct kasan_track *free_track;
+> > > > > >
+> > > > > > -           print_track(&alloc_info->alloc_track, "Allocated");
+> > > > > > +           print_track(&alloc_info->alloc_track, "Allocated", false);
+> > > > > >             pr_err("\n");
+> > > > > >             free_track = kasan_get_free_track(cache, object, tag);
+> > > > > > -           print_track(free_track, "Freed");
+> > > > > > +           print_track(free_track, "Freed", false);
+> > > > > >             pr_err("\n");
+> > > > > > +
+> > > > > > +           if (IS_ENABLED(CONFIG_KASAN_GENERIC)) {
+> > > > > > +                   free_track = kasan_get_aux_stack(alloc_info, 0);
+> > > > > > +                   print_track(free_track, "First call_rcu() call stack", true);
+> > > > > > +                   pr_err("\n");
+> > > > > > +                   free_track = kasan_get_aux_stack(alloc_info, 1);
+> > > > > > +                   print_track(free_track, "Last call_rcu() call stack", true);
+> > > > > > +                   pr_err("\n");
+> > > > > > +           }
+> > > > > >     }
+> > > > > >
+> > > > > >     describe_object_addr(cache, object, addr);
+> > > > > > --
+> > > > > I> 2.18.0
+> > > >
+> > > > --
+> > > > You received this message because you are subscribed to the Google Groups "kasan-dev" group.
+> > > > To unsubscribe from this group and stop receiving emails from it, send an email to kasan-dev+unsubscribe@googlegroups.com.
+> > > > To view this discussion on the web visit https://groups.google.com/d/msgid/kasan-dev/1589250993.19238.22.camel%40mtksdccf07.
 
 _______________________________________________
 linux-arm-kernel mailing list
