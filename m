@@ -2,86 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B5AB61CF55B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:14:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 534291CF56D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:16:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Lnkf5/dL211jJgiij0UWUQmLUxNtgTEteW3VELZSbBY=; b=nay
-	8MjwuNGuKhsJxuIB4TXi7OMkxH3446YTWDZJUbm2tBL/W4YzM2uDhys28k88CxO5QgIRVHuzGUfPN
-	B1bfAvvQr5PdOJKFjQZjfjzk9Y+BuXQwO1r+ZnrU2ROQG3nlMneDog4wkIIaORYMsedABhQBW5Wqe
-	6gL+v/XC4fFPHxlG9kTLIsAVThZmH1BbZ5owk9DfjJsFns1ZXssDS6DEcjWkZtn6Wn6LVqEFUSSGL
-	jq7KbMpnFl9zzg22XGwVGsk3YtNIQXhCZ2ML9z0E+TwuOSBSVXSJ58frRAgU/BK226yqIdZTBmnY3
-	xwW2oGBMglG/zJ/7PIlNEMzVMHZlB7g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FyAjgraCioOW1CnfHtChRj5UeCUeylXGuPiPegClXgk=; b=sPRVSTb1A21hYn
+	P/d3ElVXcCu7Lduz8qLdnpZYoHS60H/U33Gz5RFYMA1rFMYhDb/dSabzM2EQFShsjlXfKGx4fMcug
+	Fj/yIkJllE56JT2p25gbZjWiDKAsSyVzgG8nuRdrGO3E+zjmRNTeTzk1M2Sa8rKX3Jof8JkWzDl8i
+	ltuT6Og/HJtvaaw4IamyPdNYNaoI6zsR2tsWmTF6c2GGfgBa0y95gEwihfiEWi2UwpjWlO3+WUoPV
+	AmV8cIhLZ5Hqdp2N9QEHNVqjhjHmB1/gtG+8abOTuCEfQyE80RVKLwV9RMEJ+C2zgDKy0iMjz1tRh
+	tStbZX67HQOMGRP6inJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUk5-0000hY-9P; Tue, 12 May 2020 13:14:41 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jYUmB-0003n6-TR; Tue, 12 May 2020 13:16:51 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUjx-0000gH-Aq
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:14:34 +0000
-Received: by mail-wm1-x344.google.com with SMTP id e26so21691817wmk.5
+ id 1jYUm3-0003mS-8N
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:16:44 +0000
+Received: by mail-ed1-f66.google.com with SMTP id s19so719493edt.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 06:14:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=ucIamOxWoiikiTT7OyOk1rVSeBavTDD4mVIWBfGQ0Tg=;
- b=HhvGzsjgUcWS4ZqZpMHWKZ6oPMKgpOt/PCYx6PHdLARn1pl00Negjb8wMAe4LiENqa
- cvvCgPgIgXvxRAOJUDj7etyWlGa4OaRWWDV3azcbY99r6J2ubJUpENBOJpwniqb2C8wv
- 0T6b/pFIazBufnzGCG7SFiHa4hg9iyktA2jRg/eSZ6txf1VRN9UDdShnlx9ifd7nqnYc
- ymhZ7gkbtUU4kI8m2cZ0ZfpW7dwvxgFxrXVHMd5aUz2s/IVMQAJpMtz3YeYYGrY3sCFh
- nAhUHWwBFUJaNOLcLRK1kHGfPj8bp2NROzB3CUiGno1WahODSUDWnWKNz2QwOKGnLnaF
- I1cg==
+ Tue, 12 May 2020 06:16:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ucIamOxWoiikiTT7OyOk1rVSeBavTDD4mVIWBfGQ0Tg=;
- b=W3RFTRfyTCAXnPFMS60MnPiajKf+93XSlIU4Hr59a9KlomOOzSwa1PzzqDW7oBXN9z
- rlRDIgK6I+gh/GHh5sHU+wDIUDyHuWSrOrDK7j5/t6zATlwRr9Jo54+cfcO/M/cbQ9yB
- 6VJgcFNXxeQYbO733HlXCQ5UER31avGO4FUpxZQ4qAsXQ6Qr02r3E/gHuzJ0MNlrrUQs
- bCIZPj7JX/Nh8kha453sF7LMTLLoekmGdRkZNFC8tX+rfpOTCdUQbW+6qyPzmbEQWbk8
- 0J3Ii67CZNAzMdAJLsb5hT0F1K/bmcXXkkwHKxr6MHm9GpnYaUrF9XbEBGrfRtEvMnGx
- g8fA==
-X-Gm-Message-State: AGi0Pubs2ynRuDuKO0CutXZ7tAc2yqza1Jw2nUIBrDBamXa+CFySan5X
- 4ioDmQVTm+2jhnD/xL6vaL2ruw==
-X-Google-Smtp-Source: APiQypJLgHGkWpi4Lcz/tiolMUMUWnpODhX3I8i/kPzrgclwoULRyPhWPJAIGGotuugAy+3zWXhlQQ==
-X-Received: by 2002:a1c:9e51:: with SMTP id h78mr39840046wme.177.1589289271434; 
- Tue, 12 May 2020 06:14:31 -0700 (PDT)
-Received: from lmecxl0524.home
- (2a01cb058702ff00bc4b798f4f30d41e.ipv6.abo.wanadoo.fr.
- [2a01:cb05:8702:ff00:bc4b:798f:4f30:d41e])
- by smtp.gmail.com with ESMTPSA id p9sm16480524wrj.29.2020.05.12.06.14.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 06:14:30 -0700 (PDT)
-From: Etienne Carriere <etienne.carriere@linaro.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2] dt-bindings: nvmem: stm32: new property for data access
-Date: Tue, 12 May 2020 15:13:34 +0200
-Message-Id: <20200512131334.1750-1-etienne.carriere@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=NIwzJl9fpDrjOBLjiihFDvWgheTrbFtBuLTM/ySrEf0=;
+ b=e7AuNKJyxGzfuqdJYSPFbMBL5t7paG91x3EqU9+xeunZfNHmduta82bpZ7z1zGVdj2
+ +2nLb3KDcjD+gA/d+cSgqq04Eo3ncbRM9xTA/mgl30fbHInR3bhOrLs5zkiLKq7km95j
+ 9HZBKp/Pm+ggWdcwgPzGUAJPnMnlHZFX4M/fnZdjE2KqeszKnYYxJz2QgKmVm4XL8swj
+ lGDv4TlJV8wpwib2d6n+RGaJPHD30/gkj4tt21Of9GahnmxgLm6uboSfVOOC9yYg8Z5p
+ KWjo7dlFAluu2mvDW02SuVKc8W17hnrxiKgSgcRvd3RWY2Y1Q5pBhiUVO6rJIZTuYzs5
+ Y97w==
+X-Gm-Message-State: AGi0PuZMlLng+LjnG70ftX+9zzuSgheyxzs159OaHNNAQii4BFe6DfWK
+ eUoeVfHf0Z6ypSI/QpoHaoc=
+X-Google-Smtp-Source: APiQypKTjaJ85/GzsRb13MsiaK4dm1XvENOhWOccmQ5NP1MCWiE2Pzk3YZiLUFGIowz6AxyTfcUsRg==
+X-Received: by 2002:a50:cd57:: with SMTP id d23mr13372694edj.181.1589289401350; 
+ Tue, 12 May 2020 06:16:41 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.237])
+ by smtp.googlemail.com with ESMTPSA id n9sm1620876ejs.0.2020.05.12.06.16.40
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 12 May 2020 06:16:40 -0700 (PDT)
+Date: Tue, 12 May 2020 15:16:38 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Bernard Zhao <bernard@vivo.com>
+Subject: Re: [PATCH v3] memory/samsung: reduce protected code area in IRQ
+Message-ID: <20200512131638.GA18782@kozik-lap>
+References: <20200512123149.40162-1-bernard@vivo.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200512123149.40162-1-bernard@vivo.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_061433_374651_FE4992C0 
-X-CRM114-Status: GOOD (  11.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_061643_299178_91A06592 
+X-CRM114-Status: GOOD (  12.13  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [209.85.208.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [k.kozlowski.k[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.66 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,87 +87,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Etienne Carriere <etienne.carriere@st.com>, devicetree@vger.kernel.org,
- alexandre.torgue@st.com, robh+dt@kernel.org, srinivas.kandagatla@linaro.org,
- mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: opensource.kernel@vivo.com, linux-samsung-soc@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Kukjin Kim <kgene@kernel.org>, Lukasz Luba <lukasz.luba@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Etienne Carriere <etienne.carriere@st.com>
+On Tue, May 12, 2020 at 05:31:49AM -0700, Bernard Zhao wrote:
+> This change will speed-up a bit this IRQ processing and there
+> is no need to protect return value or printing.
+> 
+> Signed-off-by: Bernard Zhao <bernard@vivo.com>
+> ---
+> Changes since v1:
+> *change release lock before the if statement.
+> *revert dmc->df->lock mutex lock to protect function
+> exynos5_dmc_perf_events_check
+> 
+> Changes since v2:
+> *Improve subject and commit message
+> 
+> Link for V1:
+> *https://lore.kernel.org/patchwork/patch/1238888/
+> ---
+>  drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
 
-Introduce boolean property st,non-secure-otp for OTP data located
-in a factory programmed area that only secure firmware can access
-by default and that shall be reachable from the non-secure world.
+Thanks, applied.
 
-This change also allows additional properties for NVMEM nodes that
-were forbidden prior this change.
-
-Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
----
-Changes since v1:
-  Change nvmem.yaml to allow additional properties in NVMEM nodes.
-
-Link to v1:
-  https://lore.kernel.org/patchwork/patch/1239028/
-
- .../devicetree/bindings/nvmem/nvmem.yaml        |  2 --
- .../bindings/nvmem/st,stm32-romem.yaml          | 17 +++++++++++++++++
- 2 files changed, 17 insertions(+), 2 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.yaml b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
-index 65980224d550..b459f9dba6c9 100644
---- a/Documentation/devicetree/bindings/nvmem/nvmem.yaml
-+++ b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
-@@ -67,8 +67,6 @@ patternProperties:
-     required:
-       - reg
- 
--    additionalProperties: false
--
- examples:
-   - |
-       #include <dt-bindings/gpio/gpio.h>
-diff --git a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-index d84deb4774a4..c11c99f085d7 100644
---- a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-+++ b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-@@ -24,6 +24,18 @@ properties:
-       - st,stm32f4-otp
-       - st,stm32mp15-bsec
- 
-+patternProperties:
-+  "^.*@[0-9a-f]+$":
-+    type: object
-+
-+    properties:
-+      st,non-secure-otp:
-+        description: |
-+          This property explicits a factory programmed area that both secure
-+          and non-secure worlds can access. It is needed when, by default, the
-+          related area can only be reached by the secure world.
-+        type: boolean
-+
- required:
-   - "#address-cells"
-   - "#size-cells"
-@@ -41,6 +53,11 @@ examples:
-       calib@22c {
-         reg = <0x22c 0x2>;
-       };
-+
-+      mac_addr@e4 {
-+        reg = <0xe4 0x8>;
-+        st,non-secure-otp;
-+      };
-     };
- 
- ...
--- 
-2.17.1
+Best regards,
+Krzysztof
 
 
 _______________________________________________
