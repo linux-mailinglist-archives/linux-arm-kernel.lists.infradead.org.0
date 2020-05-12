@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54EAC1CF4B9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:48:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 518221CF4BB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:48:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Subject:To:From
 	:Date:Message-ID:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=MT4UKDvpXI0oKQN33rt6Dcj0/6hinbD6Ar4ZXXCihX8=; b=rWnzToBDv6ea0W
-	zUUM/xuXaxqBwLNFlNFHwD+N6bZrsGNo796SSWJ+uF6mIxNj3+PZ2R8be6Mu2xyeEsx/XcinsMDs5
-	44at+WZRgmMVJ12CpzAo2J7/2pfradnGFLsgevlQkDrrNwhuXFVJ/gCyK70A66y03NEt7QUi9TzkK
-	CU+vJGC679X3LETZOT+y4vpcjM2i0D0f2cbMs9VHGohHvkA4OpFP9IoOs0Yy8f5MraBursSoXSiBe
-	jw9pKaZNKgzg2OhdtJwRBuV6sBVkTWhJ1WTpbMEqk0DtkSd8lcPtPOk3f4bZ8oj317On4PUXR1Qyj
-	x0HEQtzOI6/F0djUhK2A==;
+	List-Owner; bh=WKj7xIlbzvFlUZXtMSKYw8TjoOwZGNMPGLjNh1WEGAo=; b=mitasZ/RBMhmdz
+	tB4CRGgYeIP6x5A+dkEkHjU6xKa+wq17GSdq2jaqmt7hoaia+b54xU6kBSdkjOXYSt74z5Zl1dl7Y
+	DNrzvr3w/E7+v3jxnU/w2rYwhyWFDj4qIT3gZ5J/CZdP2h/om6BnlsAtT69bM7dH3nTsMHKJESjNo
+	cuY7en/dDpkF3NGSP7jjXELseCAtK1gDTBqBiif/XJ7mq6r3zZJNKanyrx/Dhs/4ZerC++v4G79VK
+	/+5DUaZH1eQv66Q9v34/060YMnAWe2o8d1sKs+zl/plaW9wNaiuqBiHzKDZCCVhjzVQ/xiJMtKPql
+	MH8mZTDDo5hoHelAzeZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUKD-0007r4-CT; Tue, 12 May 2020 12:47:57 +0000
+	id 1jYUKP-00087G-Bx; Tue, 12 May 2020 12:48:09 +0000
 Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUJK-0007EQ-3x
+ id 1jYUJK-0007ER-3w
  for linux-arm-kernel@bombadil.infradead.org; Tue, 12 May 2020 12:47:02 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=merlin.20170209; h=Content-Type:MIME-Version:References:
  Subject:Cc:To:From:Date:Message-ID:Sender:Reply-To:Content-Transfer-Encoding:
  Content-ID:Content-Description:In-Reply-To;
- bh=ngZs8drZ7QXRvmUeJGP4y1pSY454qouM1a6376s95vs=; b=ZXKExd2ZH/XmhPLQHFbAQkMSxn
- dtYYboA1nY3FF0+yBsWq4FobSf6GFGhLCUnrmPQKSwpiQXmIV3cV2L6rZcbI9u2qE3py6oq7zbcbs
- hk1tIwy76YSm8bbl/m3NhC+y3YCZNGRA/jO6FkHQ18bXcaNMQNxCkd2EDNP0UwD/tgvsXZEbcAs0B
- CXp1eX2wUz3BoeuMCPyAcyKmqoSNwbfC6FXLY6/zsfjiD3Y3IzSFTf2DixAOYpO/QPt8EVYqB93h8
- kKe1Y0411ra2oOuYlKZR5XuqE3bLWJIkCZL7Go7oBqH84dQmlS85SxJMUpI/kgZwb1+0CdRMW+dRK
- IxNP2Jow==;
+ bh=CYYpiqrbBLgooKXOpvi8wy4NrFYsaxk2WuAfbe/cgCE=; b=W6os7/RwiqUdE+aykxc8eGzgyH
+ fS7bISumtHbFPFrf4M7xtKFo5FeqDVH6JQa4Xq6qSDNjl2frm/JUmDi97d1mL3x0l8u4NpOaFnKW3
+ gx9+Pii5OQt83bS5JqZXK567UF1kC1lE2NVZudxzeS5r41/T5dV77e3KLsEfImeS0gkKs9a735SpY
+ C5xF7Yk/YgDkA2IxcKBxDOqSYS3XQjmAAWLYr5X7OWnoNvggJxTIy+E/eZdz38Yofpf0WjbWT5Qdj
+ SNwkmL2X79pGemtlg7hfMaUy6cW4S8JZDXl9TNeckLoQ/C+9sS1wyvLcOgzSYu85nlycGfTJPkA1j
+ dVv7v0uQ==;
 Received: from j217100.upc-j.chello.nl ([24.132.217.100]
  helo=noisy.programming.kicks-ass.net)
  by merlin.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUJF-0003GZ-ID; Tue, 12 May 2020 12:46:57 +0000
+ id 1jYUJF-0003Ga-Hf; Tue, 12 May 2020 12:46:57 +0000
 Received: from hirez.programming.kicks-ass.net
  (hirez.programming.kicks-ass.net [192.168.1.225])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 44CCC304DB2;
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id 476FC3062BA;
  Tue, 12 May 2020 14:46:53 +0200 (CEST)
 Received: by hirez.programming.kicks-ass.net (Postfix, from userid 0)
- id 2DA2820962E55; Tue, 12 May 2020 14:46:53 +0200 (CEST)
-Message-ID: <20200512124450.903534446@infradead.org>
+ id 3408D20962E57; Tue, 12 May 2020 14:46:53 +0200 (CEST)
+Message-ID: <20200512124450.981890259@infradead.org>
 User-Agent: quilt/0.66
-Date: Tue, 12 May 2020 14:41:01 +0200
+Date: Tue, 12 May 2020 14:41:02 +0200
 From: Peter Zijlstra <peterz@infradead.org>
 To: Will Deacon <will@kernel.org>, Marc Zyngier <maz@kernel.org>,
  Mark Rutland <mark.rutland@arm.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Leo Yan <leo.yan@linaro.org>
-Subject: [PATCH 3/5] arm64: perf: Only advertise cap_user_time for arch_timer
+Subject: [PATCH 4/5] perf: Add perf_event_mmap_page::cap_user_time_short ABI
 References: <20200512124058.833263033@infradead.org>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,59 +76,73 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When sched_clock is running on anything other than arch_timer, don't
-advertise cap_user_time*.
+In order to support short clock counters, provide an ABI extention.
 
-Requested-by: Will Deacon <will@kernel.org>
+As a whole:
+
+    u64 time, delta, cyc = read_cycle_counter();
+
++   if (cap_user_time_short)
++	cyc = time_cycle + ((cyc - time_cycle) & time_mask);
+
+    delta = mul_u64_u32_shr(cyc, time_mult, time_shift);
+
+    if (cap_user_time_zero)
+	time = time_zero + delta;
+
+    delta += time_offset;
+
 Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
 ---
- arch/arm64/kernel/perf_event.c |   19 +++++++++++++------
- 1 file changed, 13 insertions(+), 6 deletions(-)
+ include/uapi/linux/perf_event.h |   23 ++++++++++++++++++++---
+ 1 file changed, 20 insertions(+), 3 deletions(-)
 
---- a/arch/arm64/kernel/perf_event.c
-+++ b/arch/arm64/kernel/perf_event.c
-@@ -13,6 +13,8 @@
- #include <asm/sysreg.h>
- #include <asm/virt.h>
+--- a/include/uapi/linux/perf_event.h
++++ b/include/uapi/linux/perf_event.h
+@@ -532,9 +532,10 @@ struct perf_event_mmap_page {
+ 				cap_bit0_is_deprecated	: 1, /* Always 1, signals that bit 0 is zero */
  
-+#include <clocksource/arm_arch_timer.h>
+ 				cap_user_rdpmc		: 1, /* The RDPMC instruction can be used to read counts */
+-				cap_user_time		: 1, /* The time_* fields are used */
++				cap_user_time		: 1, /* The time_{shift,mult,offset} fields are used */
+ 				cap_user_time_zero	: 1, /* The time_zero field is used */
+-				cap_____res		: 59;
++				cap_user_time_short	: 1, /* the time_{cycle,mask} fields are used */
++				cap_____res		: 58;
+ 		};
+ 	};
+ 
+@@ -593,13 +594,29 @@ struct perf_event_mmap_page {
+ 	 *               ((rem * time_mult) >> time_shift);
+ 	 */
+ 	__u64	time_zero;
 +
- #include <linux/acpi.h>
- #include <linux/clocksource.h>
- #include <linux/kvm_host.h>
-@@ -1169,16 +1171,15 @@ void arch_perf_update_userpage(struct pe
- 	struct clock_read_data *rd;
- 	unsigned int seq;
- 
--	/*
--	 * Internal timekeeping for enabled/running/stopped times
--	 * is always computed with the sched_clock.
--	 */
--	userpg->cap_user_time = 1;
--	userpg->cap_user_time_zero = 1;
-+	userpg->cap_user_time = 0;
-+	userpg->cap_user_time_zero = 0;
- 
- 	do {
- 		rd = sched_clock_read_begin(&seq);
- 
-+		if (rd->read_sched_clock != arch_timer_read_counter)
-+			return;
+ 	__u32	size;			/* Header size up to __reserved[] fields. */
++	__u32	__reserved_1;
 +
- 		userpg->time_mult = rd->mult;
- 		userpg->time_shift = rd->shift;
- 		userpg->time_zero = rd->epoch_ns;
-@@ -1207,4 +1208,10 @@ void arch_perf_update_userpage(struct pe
- 		userpg->time_mult >>= 1;
- 	}
- 
 +	/*
-+	 * Internal timekeeping for enabled/running/stopped times
-+	 * is always computed with the sched_clock.
++	 * If cap_usr_time_short, the hardware clock is less than 64bit wide
++	 * and we must compute the 'cyc' value, as used by cap_usr_time, as:
++	 *
++	 *   cyc = time_cycles + ((cyc - time_cycles) & time_mask)
++	 *
++	 * NOTE: this form is explicitly chosen such that cap_usr_time_short
++	 *       is a correction on top of cap_usr_time, and code that doesn't
++	 *       know about cap_usr_time_short still works under the assumption
++	 *       the counter doesn't wrap.
 +	 */
-+	userpg->cap_user_time = 1;
-+	userpg->cap_user_time_zero = 1;
- }
++	__u64	time_cycles;
++	__u64	time_mask;
+ 
+ 		/*
+ 		 * Hole for extension of the self monitor capabilities
+ 		 */
+ 
+-	__u8	__reserved[118*8+4];	/* align to 1k. */
++	__u8	__reserved[116*8];	/* align to 1k. */
+ 
+ 	/*
+ 	 * Control data for the mmap() data buffer.
 
 
 
