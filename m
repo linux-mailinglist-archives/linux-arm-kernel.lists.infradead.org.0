@@ -2,85 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 744E01CF5CD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:28:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B08DF1CF5FA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:39:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OHAQZUwxaiJRCHhRgS1T6vKvOK2p5D4JpYaRer0CeSU=; b=BcJZgORy5LnyD2
-	07SLQDmAXqFaVh0jECmkV2n9mKH+m3c0qdPD86wcc7rgbmLxzTtqvXcUfDY36OZscYB5Dny8GZEYP
-	ft3ths5N5t9Vfm86jBHBiq/dLwjum5zVt61/WdXq4BtHgBrNP2/azjXcWkUi8l/bgjAldlH/XNJ7D
-	xZOrJvFOT2tze6ng/kb0nyi+FQvU3AD4B9+rwOO27UbKGYGvraYKbclfQ24L+zwgBrJXAiGmUDHv+
-	YcKdmIoF+hQ7yw5CuxIpVH+Cij0ewspaDnuQ7QZGe/UZto7OmEzo94gx21GNhMqHe/VICqYpABIAi
-	T4eRNU02NywdE9izqrDw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DlqW9BqjHkFYDX5yl9Ok626VQOCzFS8sT+6+8uXFbpU=; b=HXHEfbIBoD+OUIiSzDAWpnRCB
+	spTXiSpWttOX1btpSY1EA/n4ZSsCSDLMwR6ZKdWLUbdbe2GgW4eKv/KWp/iyxXVbSzldIZO/iVaQB
+	8fgkZ322SOT3c4VYhi3GEgrsP2W1mjYVCWCPLVUAOh31ZVJBDq2DzLZzIqfR7OHEoykwrpp+tutNz
+	OJeWcPmU1y5OeTf20WsQuKhPRVcKTrpiiNLqBRqOPaIwEQyIx/dgV3rVMMZvRGU5xEvrikF3r5L4w
+	W+AgEqm81WLTkr1svfrmB/8UtUzp0TTrIReGoadnqOAu1u0WtYYdIwfxvsxtuY82L5M+BRFO/hJzm
+	auJlEt/bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUxd-0003YY-VQ; Tue, 12 May 2020 13:28:42 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUwc-0002he-Pb
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:27:40 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04CDMIfc025657; Tue, 12 May 2020 15:27:31 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=+QVbU7pKjwzPGFYYPGKUWMEDgUaEdm0KEavReVltEBo=;
- b=jE6drnut+pDhoj5a0iOHjZNlYrBKoU2KqGec8sjwv6QP9/V9fI924spx58KBmr+glQ6n
- g/Q5mLrb0U+2idE/ZpEfWe2PzqKSsCIrbr2Rfd79CJ0OC8y0HuJYL8Z/9Ef5Ylpzdkns
- 1mWYzn5vyj02ohs8sBIlpTPG4UtfA5nReA2r35eW0LAg9RT/aNiJwhQsl8jcllYsSswK
- w5HPWbDlF3gETOMTpiH/9Mt2ScIcSMn+X939sJaND0HL47V5G+MgMeHcswDu7KDw88sy
- uqlC1gAv+pbSQjUMcy2i4PABy2PfysrUtZhcmsdPOSvQ/4QsLdOQ9b+Lg0Iook36HAbE yw== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 30wj9wgrnm-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 12 May 2020 15:27:31 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id B2FDB100038;
- Tue, 12 May 2020 15:27:30 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A60FB2C38D2;
- Tue, 12 May 2020 15:27:30 +0200 (CEST)
-Received: from localhost (10.75.127.47) by SFHDAG5NODE3.st.com (10.75.127.15)
- with Microsoft SMTP Server (TLS) id 15.0.1473.3;
- Tue, 12 May 2020 15:27:30 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <jic23@kernel.org>
-Subject: [PATCH] iio: adc: stm32-adc: fix a wrong error message when probing
- interrupts
-Date: Tue, 12 May 2020 15:27:05 +0200
-Message-ID: <1589290025-23857-1-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
+	id 1jYV7i-0001CS-AD; Tue, 12 May 2020 13:39:06 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYV7Z-0001BX-H4; Tue, 12 May 2020 13:38:59 +0000
+Received: from localhost (p54B332DE.dip0.t-ipconnect.de [84.179.50.222])
+ by pokefinder.org (Postfix) with ESMTPSA id 1A6642C1F86;
+ Tue, 12 May 2020 15:38:53 +0200 (CEST)
+Date: Tue, 12 May 2020 15:38:52 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: qii.wang@mediatek.com
+Subject: Re: [PATCH] i2c: mediatek: Add i2c ac-timing adjust support
+Message-ID: <20200512133852.GE13516@ninjato>
+References: <1585223676-30809-1-git-send-email-qii.wang@mediatek.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG5NODE3.st.com
- (10.75.127.15)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-12_03:2020-05-11,
- 2020-05-12 signatures=0
+In-Reply-To: <1585223676-30809-1-git-send-email-qii.wang@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_062739_312357_D8E3DF40 
-X-CRM114-Status: GOOD (  18.76  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200512_063857_717704_1230E2C9 
+X-CRM114-Status: GOOD (  11.47  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,134 +55,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: olivier.moysan@st.com, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: srv_heupstream@mediatek.com, leilk.liu@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5800516323624436797=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A wrong error message is printed out currently, like on STM32MP15:
-- stm32-adc-core 48003000.adc: IRQ index 2 not found.
 
-This is seen since commit 7723f4c5ecdb ("driver core: platform: Add an
-error message to platform_get_irq*()").
-The STM32 ADC core driver wrongly requests up to 3 interrupt lines. It
-should request only the necessary IRQs, based on the compatible:
-- stm32f4/h7 ADCs share a common interrupt
-- stm32mp1, has one interrupt line per ADC.
-So add the number of required interrupts to the compatible data.
+--===============5800516323624436797==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="10jrOL3x2xqLmOsH"
+Content-Disposition: inline
 
-Fixes: d58c67d1d851 ("iio: adc: stm32-adc: add support for STM32MP1")
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- drivers/iio/adc/stm32-adc-core.c | 34 ++++++++++++++--------------------
- 1 file changed, 14 insertions(+), 20 deletions(-)
+--10jrOL3x2xqLmOsH
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
-index ebe5dbc..3586369 100644
---- a/drivers/iio/adc/stm32-adc-core.c
-+++ b/drivers/iio/adc/stm32-adc-core.c
-@@ -65,12 +65,14 @@ struct stm32_adc_priv;
-  * @clk_sel:	clock selection routine
-  * @max_clk_rate_hz: maximum analog clock rate (Hz, from datasheet)
-  * @has_syscfg: SYSCFG capability flags
-+ * @num_irqs:	number of interrupt lines
-  */
- struct stm32_adc_priv_cfg {
- 	const struct stm32_adc_common_regs *regs;
- 	int (*clk_sel)(struct platform_device *, struct stm32_adc_priv *);
- 	u32 max_clk_rate_hz;
- 	unsigned int has_syscfg;
-+	unsigned int num_irqs;
- };
- 
- /**
-@@ -375,21 +377,15 @@ static int stm32_adc_irq_probe(struct platform_device *pdev,
- 	struct device_node *np = pdev->dev.of_node;
- 	unsigned int i;
- 
--	for (i = 0; i < STM32_ADC_MAX_ADCS; i++) {
-+	/*
-+	 * Interrupt(s) must be provided, depending on the compatible:
-+	 * - stm32f4/h7 shares a common interrupt line.
-+	 * - stm32mp1, has one line per ADC
-+	 */
-+	for (i = 0; i < priv->cfg->num_irqs; i++) {
- 		priv->irq[i] = platform_get_irq(pdev, i);
--		if (priv->irq[i] < 0) {
--			/*
--			 * At least one interrupt must be provided, make others
--			 * optional:
--			 * - stm32f4/h7 shares a common interrupt.
--			 * - stm32mp1, has one line per ADC (either for ADC1,
--			 *   ADC2 or both).
--			 */
--			if (i && priv->irq[i] == -ENXIO)
--				continue;
--
-+		if (priv->irq[i] < 0)
- 			return priv->irq[i];
--		}
- 	}
- 
- 	priv->domain = irq_domain_add_simple(np, STM32_ADC_MAX_ADCS, 0,
-@@ -400,9 +396,7 @@ static int stm32_adc_irq_probe(struct platform_device *pdev,
- 		return -ENOMEM;
- 	}
- 
--	for (i = 0; i < STM32_ADC_MAX_ADCS; i++) {
--		if (priv->irq[i] < 0)
--			continue;
-+	for (i = 0; i < priv->cfg->num_irqs; i++) {
- 		irq_set_chained_handler(priv->irq[i], stm32_adc_irq_handler);
- 		irq_set_handler_data(priv->irq[i], priv);
- 	}
-@@ -420,11 +414,8 @@ static void stm32_adc_irq_remove(struct platform_device *pdev,
- 		irq_dispose_mapping(irq_find_mapping(priv->domain, hwirq));
- 	irq_domain_remove(priv->domain);
- 
--	for (i = 0; i < STM32_ADC_MAX_ADCS; i++) {
--		if (priv->irq[i] < 0)
--			continue;
-+	for (i = 0; i < priv->cfg->num_irqs; i++)
- 		irq_set_chained_handler(priv->irq[i], NULL);
--	}
- }
- 
- static int stm32_adc_core_switches_supply_en(struct stm32_adc_priv *priv,
-@@ -824,6 +815,7 @@ static const struct stm32_adc_priv_cfg stm32f4_adc_priv_cfg = {
- 	.regs = &stm32f4_adc_common_regs,
- 	.clk_sel = stm32f4_adc_clk_sel,
- 	.max_clk_rate_hz = 36000000,
-+	.num_irqs = 1,
- };
- 
- static const struct stm32_adc_priv_cfg stm32h7_adc_priv_cfg = {
-@@ -831,6 +823,7 @@ static const struct stm32_adc_priv_cfg stm32h7_adc_priv_cfg = {
- 	.clk_sel = stm32h7_adc_clk_sel,
- 	.max_clk_rate_hz = 36000000,
- 	.has_syscfg = HAS_VBOOSTER,
-+	.num_irqs = 1,
- };
- 
- static const struct stm32_adc_priv_cfg stm32mp1_adc_priv_cfg = {
-@@ -838,6 +831,7 @@ static const struct stm32_adc_priv_cfg stm32mp1_adc_priv_cfg = {
- 	.clk_sel = stm32h7_adc_clk_sel,
- 	.max_clk_rate_hz = 40000000,
- 	.has_syscfg = HAS_VBOOSTER | HAS_ANASWVDD,
-+	.num_irqs = 2,
- };
- 
- static const struct of_device_id stm32_adc_of_match[] = {
--- 
-2.7.4
+Hi Qii Wang,
 
+On Thu, Mar 26, 2020 at 07:54:36PM +0800, qii.wang@mediatek.com wrote:
+> From: Qii Wang <qii.wang@mediatek.com>
+>=20
+> This patch adds a algorithm to calculate some ac-timing parameters
+> which can fully meet I2C Spec.
+>=20
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+
+Could you rebase this on top of i2c/for-next or v5.7-rcX? Because of
+commit 90224e6468e1 ("i2c: drivers: Use generic definitions for bus
+frequencies") which was added two days before your patch was sent out.
+
+Otherwise mostly minor nits.
+
+> +static int mtk_i2c_max_step_cnt(unsigned int target_speed)
+> +{
+> +	if (target_speed > MAX_FS_MODE_SPEED)
+> +		return MAX_HS_STEP_CNT_DIV;
+> +	else
+> +		return MAX_STEP_CNT_DIV;
+> +}
+
+Maybe ternary operator here? Your choice.
+
+And my code checkers complained:
+
+    CPPCHECK
+drivers/i2c/busses/i2c-mt65xx.c:591:11: warning: Redundant assignment of 's=
+da_max' to itself. [selfAssignment]
+  sda_max =3D sda_max;
+          ^
+drivers/i2c/busses/i2c-mt65xx.c:597:11: warning: Redundant assignment of 's=
+da_min' to itself. [selfAssignment]
+  sda_min =3D sda_min;
+
+Last question: You seem to be the one doing major updates to this
+driver. Thanks for that! Are you maybe interested in becoming the
+maintainer for this driver? I think there won't be much patches to
+review and reports to handle but it will speed up processing for me.
+
+All the best,
+
+   Wolfram
+
+
+--10jrOL3x2xqLmOsH
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl66pugACgkQFA3kzBSg
+Kba3FQ//feg8sBvAPAGQ1c3TSFF7+uw13pr2B3K6UysUq9MRXolh+3dXFzkWXahk
+YXtv9nHURBVjj+2SnDD2ZwnD9x1UGyxPug6Sp62VJMS80rjYvsL3/8s58srZeHsI
+MoO68IX50ZMvaJip6LPoNk8Sw9Pl4RhK1Q6hejBsihdf27cWXt/W4jNVBlENaw5u
+mIhZR2faLpWYIVwI/7+tFVJWqp5fn8zh28/7YNi3B0+NJexDi+z+lRSuD17s4VV7
+63S6JpAzZm9VOW8myXtcyMV+nVAyBhgxQ3O/WybHAgaceOcjZJuTYd1rYTAznZGd
+UAdcdrfAnQnnVnLYtFsqtCNWtqrxwvV2fktTT6O01d1YNwSvKGYD7csCo8rB4kQZ
+TctS7orhQi8YbhRTZAZoGmVOChgsQ/nwy3ik8BaC/vcziXkQ+OpsXsNYz23nNmvh
+YgugC/ueHcklhIxhinDJx4R1NSVrpuqRSFHceX/7ez64lRtAGlm7A8zdcOBy3I3j
+oAWgUgd0b6OLnW0j0E8rJAGQJ9ub58VLFAfaZH0GVpxtXkYQ6npgVxzjwwwj+ONX
+rC+pocqPujlCKBidHpJh+obmCUMlalkm3W4EMlEp1Mz/yAZ6JKDnC60YzfJtUStz
+GiCto6g4vEd8j+KeH0eVABf5LQoE7ia1SC3f4eg0pfU1juidIww=
+=LYkG
+-----END PGP SIGNATURE-----
+
+--10jrOL3x2xqLmOsH--
+
+
+--===============5800516323624436797==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5800516323624436797==--
+
