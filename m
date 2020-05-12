@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34A0F1CFB0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:40:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2B111CFB15
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:41:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5Np5J8SjXtiFX1zgCSY6dHtLJCA62oXNZjTcCJOWubc=; b=BjG1Pc/MdhV1GPGjfe5Eu5WxB1
-	tRKQmfU1vDOcnB57xfLcBoUlHDm+ffxgbLDhaAAi2Qogjwws4BdQrKrCs65hs7LvV5wFNvfAEwlaB
-	rEaS0QViQrIOR/GuP6B8gmNwdmcHX8u7J++ybgnD4KeSeSoapmC/J1NGVoMTk4luq6Cxq1ruuqlqt
-	1vJ7w4HvSpBaRVy+VUZLkq9/FUUIY+hUmHSVZiugC9/fnC66paM6K4RiGwgaeUNIly2lSMANs2Hgi
-	IByYas8Y9MLluZbQ8ntYgtN0NKulHibwWpLFllQQnTRmg+Q6XMJ3LKiOXu9xL8i/7+qgOeWFbh0s7
-	kmhYXqbg==;
+	bh=91cuUI9bPidSPvVcaDTi2wpEz12UlTMisjRDCeYso74=; b=ZcY4E0MXHmyoe+7G9YWoC/nZTH
+	zoh99vH/9LqaaMSAqycN5sHNc9EOoKxEJOluNRE1j+6FiPGuZuq3JlOSL3Mq/VrCATSlgqbDFlvoP
+	xO1vY5ToRQw6+GaDd8xKzTPlxZZIgTfbzPuGTHA5fwwvgTrenq6WuxaXA+0mK81mqmrQ79jgfYY71
+	/hblqbwU8bdwBkGXXD4+Z6dx+9HUvK5QbixFX8Oj5v3BmI5Nf7jDWqF7bMegGHS7VwzKXDJVfvM1F
+	TnPz0hLhL42HJSI3pEgwAubtusTb78Biwl4+5U2D11Y675zXPUEmmf5QL/WYnAl8sl8ayoCzIOG6l
+	2Z91ToKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYXxV-0001jL-PE; Tue, 12 May 2020 16:40:45 +0000
+	id 1jYXyE-0004eM-6M; Tue, 12 May 2020 16:41:30 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYXum-0007ve-Ba
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 16:37:58 +0000
+ id 1jYXun-0007si-Db
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 16:37:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3A648D6E;
- Tue, 12 May 2020 09:37:56 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 26EE011B3;
+ Tue, 12 May 2020 09:37:57 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4D2873F305;
- Tue, 12 May 2020 09:37:55 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6EDD23F305;
+ Tue, 12 May 2020 09:37:56 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: mtk.manpages@gmail.com
-Subject: [PATCH 11/14] prctl.2: Add PR_SPEC_DISABLE_NOEXEC for
- SPECULATION_CTRL prctls
-Date: Tue, 12 May 2020 17:36:56 +0100
-Message-Id: <1589301419-24459-12-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH 12/14] prctl.2: Clarify the unsupported hardware case of EINVAL
+Date: Tue, 12 May 2020 17:36:57 +0100
+Message-Id: <1589301419-24459-13-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
 References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_093756_456071_87641F83 
-X-CRM114-Status: UNSURE (   9.36  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200512_093757_542189_45BB05E2 
+X-CRM114-Status: GOOD (  10.36  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,75 +63,43 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
- Waiman Long <longman@redhat.com>
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the PR_SPEC_DISABLE_NOEXEC mode added in Linux 5.1
-for the PR_SPEC_STORE_BYPASS "misfeature" of
-PR_SET_SPECULATION_CTRL and PR_GET_SPECULATION_CTRL.
+prctls that are architecture-specific won't work on other
+architectures, and arch-specific prctls that manipulate optional
+hardware features likewise won't work if that hardware feature is
+not present.
+
+The established pattern seems to be to treat such prctls as if they
+are unimplemented, when attempted on the wrong hardware.
+
+Cover these cases with some generic weasel words in the closet
+existing EINVAL clause.
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Cc: Waiman Long <longman@redhat.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
 ---
- man2/prctl.2 | 22 ++++++++++++++++++++--
- 1 file changed, 20 insertions(+), 2 deletions(-)
+ man2/prctl.2 | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/man2/prctl.2 b/man2/prctl.2
-index 66417cf..2361b44 100644
+index 2361b44..7f511d2 100644
 --- a/man2/prctl.2
 +++ b/man2/prctl.2
-@@ -1187,6 +1187,12 @@ The speculation feature is disabled, mitigation is enabled.
- Same as
- .B PR_SPEC_DISABLE
- but cannot be undone.
-+.TP
-+.BR PR_SPEC_DISABLE_NOEXEC " (since Linux 5.1)"
-+Same as
-+.BR PR_SPEC_DISABLE ,
-+but but the state will be cleared on
-+.BR execve (2).
- .RE
- .IP
- If all bits are 0,
-@@ -1251,6 +1257,17 @@ with the same value for
- .I arg2
- will fail with the error
- .BR EPERM .
-+.\" commit 71368af9027f18fe5d1c6f372cfdff7e4bde8b48
-+.TP
-+.BR PR_SPEC_DISABLE_NOEXEC " (since Linux 5.1)"
-+Same as
-+.BR PR_SPEC_DISABLE ,
-+but but the state will be cleared on
-+.BR execve (2).
-+Currently only supported for
-+.I arg2
-+equal to
-+.B PR_SPEC_STORE_BYPASS.
- .RE
- .IP
- Any unsupported value in
-@@ -1898,11 +1915,12 @@ was
- .BR PR_SET_SPECULATION_CTRL
- and
- .IR arg3
--is neither
-+is not
- .BR PR_SPEC_ENABLE ,
- .BR PR_SPEC_DISABLE ,
-+.BR PR_SPEC_FORCE_DISABLE ,
- nor
--.BR PR_SPEC_FORCE_DISABLE .
-+.BR PR_SPEC_DISABLE_NOEXEC .
- .SH VERSIONS
- The
- .BR prctl ()
+@@ -1616,7 +1616,8 @@ is an invalid address.
+ .B EINVAL
+ The value of
+ .I option
+-is not recognized.
++is not recognized,
++or not supported on this system.
+ .TP
+ .B EINVAL
+ .I option
 -- 
 2.1.4
 
