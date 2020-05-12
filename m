@@ -2,87 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B29BE1D02EA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 01:10:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D5281D0300
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 01:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0t4SrEXvsWpSoNXGxhxtquXhdSGQk2tAzwedywW0UFY=; b=sUGkOvJWlRSW6S
-	TkWU3qsMeMb1k5hmMf24EdoBFz+yj5TMf0x/oeMea8dmYobGOhL9L0bA5pstRWRZlM8mNlqLVg+Mc
-	b+YMJfIyUselk8/ywzcUPeKiC5zxrEEdR+x+Bdjdi+TkkKKZVwQQfLRknDWP2dekYu5oQt/r0nUiy
-	wO59J4D/ZYLJk0h1vtV/QepQja3/cA2nYMQm761U7DG9er5m/1GfEtxBoucDKipV8F1xomeFu1Sin
-	fs6F5PbmgW5nLCaST9cM9F1eCYlaYIbZnisndzfBo/NHYEquim7p7H/E9OssxAxDKyJ39c3DbKqJ4
-	Td/su5dOrQUxPfV+N4vg==;
+	List-Owner; bh=ubaGIM+Yqt+jvTxeZJCNZ/77MRYR/t78O6Kw/KzUfjU=; b=fzs+xeRx98E+jY
+	IF+zk7IhJ11FT6qjzt5tjsKTHVaYS13ccQA8ISPwZLniEPyUMO5mpnrJoGq6I1K12M5uf3iO1MasR
+	Gz39CP7bPFfqBR2h+4gh/QO+o7N9bTO+Zzkos0WnrSVMdaPnYLNUTJrwz0XWxvFNA8/BaAUm4rPIh
+	1b+OLjZIxEFOLnYD+1r8N1aQnzdCoaCo8ChPGi9F2jJofpA0RYEDPUZeN1hhXtYjtBGf2tlHiuiuj
+	dz0XYNYYlRZQrg08595l71KUtztBmpcAORAFXuDGeTCetgSEpBk3lU11a/PYU++apR1qX22K3uicP
+	/fD/mHYrIKUc3BJyLwIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYe2W-0000KI-Q3; Tue, 12 May 2020 23:10:20 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jYeH1-0002sZ-Aq; Tue, 12 May 2020 23:25:19 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYe2A-0000Je-99
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 23:09:59 +0000
-Received: by mail-oi1-f194.google.com with SMTP id 19so19792025oiy.8
+ id 1jYeGr-0002BX-FJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 23:25:11 +0000
+Received: by mail-pf1-x443.google.com with SMTP id y18so335047pfl.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 16:09:57 -0700 (PDT)
+ Tue, 12 May 2020 16:25:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to;
+ bh=FpcFfkc/yG9vq9eXWklG8CGjwtKug3YGgFN39WyeyGc=;
+ b=pWipj/rYO4TE/WgccVGCKMhCO9dOQMqbFgFILxy9bPyfdAGU1AtXDDAPLFE5d8BWYI
+ y8h0guWLroeHHFvshFPgfDBEmOBlBrNj/JhqWtissEv8GDGrkVAGwfcj/J+til5ld39Q
+ thnBvYCXu26hayF9UigwA4E9gGpRbfhzbNfY/sY6qG4jAQD+dccELCfuxT/jEOuK3mGm
+ elBCMpGuoEH9Rv6OALCkus/pHOOWd8KbSHckTf5EJDK0m38v+T6292Y/4FG6gZAmN3QS
+ UamcfP8ImTECWAyv7V7C5ACDg9cHr4B4WH7xilGOx3JOD2eacTv87TnouwuuY5P6NUZ8
+ sDtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=TjYd3leSKKn51ZfY7qRcr7llrPytDm0GdCIEZD2j8C0=;
- b=H7T8CK/cWDvmNg/AqRsfn+KpLtLlFl//6YGOmq92+ujdSiXZAjr33nTHqY+bIvDN5o
- g61JUi+6KmMlbJKI1nUmhgYuGsBLn08GqUwJgDbjy+cA5QPA79Cd+5/2LAJqxl0IX1YA
- tTEadlN2YLFszQWi9/ObCNMBhGjVw/yQqT50hK6qXMcesvyeMFL7dugRFXzgVUWwdNXn
- 29JVDQfLwYJUxCI6+Y5NQhdLwbIben+TIorSVi6A/tJi7qtAGTWzb6j8MRqd8GVHR554
- bcB6O/gYBNzH+bPJbLJkUp0Ay/XygSpKVMxr3UZzqrnsYx1iP0t09zTvbXh8QBn1Yt7+
- D2jg==
-X-Gm-Message-State: AGi0PuZJj77p5/T6j0XlnkQYUBxeHBeSgZdU61o+BCKzEO1+7uM/37TW
- QXvB8tEoKbP/f+XoWyGFew==
-X-Google-Smtp-Source: APiQypIp6z6XpDyeSpU/MQIh4PPKcXp8UTWOTpvjD0Pwk05Fb3joF3Y1t4vigT4+SMH68vOz8q6/qQ==
-X-Received: by 2002:aca:c68b:: with SMTP id w133mr23020989oif.27.1589324996924; 
- Tue, 12 May 2020 16:09:56 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id 34sm385316otq.67.2020.05.12.16.09.54
+ h=x-gm-message-state:date:from:to:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to;
+ bh=FpcFfkc/yG9vq9eXWklG8CGjwtKug3YGgFN39WyeyGc=;
+ b=fVbPCML3YtnQjR8OYBHgW16Cgs+gyYYbsDDy4yRIWK8JrR4gxim8IJkVF/VVgbYyG2
+ M5TmQwLPyu2c0Za4LSFjhs1H4+Cke5sbLbKTF+TIjiRDw7cHRSaWrCZTt7xIsxP/eOCy
+ namyYOeydCviMyaoE8jcwLeNVVUNeFX76GySNCLx0BA9hthRfk8cru5S1ANpQhZop6m+
+ atA5rJplIr+nEFk5G1gAJWi/s8yCuONLPS+ltP8Wf/iUZNueL0qRf5KCDKwdLtzl0iOj
+ 0shvbyYjPnb6vdV8VpORSm5i4QqIRrGTGxcGho2hJ4ag6V5ZMTD4shxglnLii6yok638
+ fZdQ==
+X-Gm-Message-State: AOAM533OYwXm6ZFXqOROmYdI8sr25ofIhI5Y/m+uT7coY+x8avuaVYGU
+ Mkqk+TU9+BSIn96Oenmu45k=
+X-Google-Smtp-Source: ABdhPJzLZlncWatTS+oNiA4vxd3oVeXcykQQb3eNLFClvMbGM8HbwrjGaxKq48Gne8Qhoh171ik1lA==
+X-Received: by 2002:a63:77c6:: with SMTP id
+ s189mr12368295pgc.267.1589325908104; 
+ Tue, 12 May 2020 16:25:08 -0700 (PDT)
+Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
+ by smtp.gmail.com with ESMTPSA id m4sm94819pje.47.2020.05.12.16.25.07
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 16:09:56 -0700 (PDT)
-Received: (nullmailer pid 16218 invoked by uid 1000);
- Tue, 12 May 2020 23:09:54 -0000
-Date: Tue, 12 May 2020 18:09:54 -0500
-From: Rob Herring <robh@kernel.org>
-To: Prakhar Srivastava <prsriva@linux.microsoft.com>
-Subject: Re: [RFC][PATCH 1/2] Add a layer of abstraction to use the memory
- reserved by device tree for ima buffer pass.
-Message-ID: <20200512230954.GB2654@bogus>
-References: <20200504203829.6330-1-prsriva@linux.microsoft.com>
- <20200504203829.6330-2-prsriva@linux.microsoft.com>
+ Tue, 12 May 2020 16:25:07 -0700 (PDT)
+Date: Tue, 12 May 2020 16:25:05 -0700
+From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+To: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>,
+ linux-sunxi@googlegroups.com, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
+ Luca Weiss <luca@z3ntu.xyz>, Tomas Novotny <tomas@novotny.cz>,
+ linux-input@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 1/4] dt-bindings: input: gpio-vibrator: Don't require
+ enable-gpios
+Message-ID: <20200512232505.GF89269@dtor-ws>
+References: <20200512222205.1456300-1-megous@megous.com>
+ <20200512222205.1456300-2-megous@megous.com>
+ <20200512225212.GE89269@dtor-ws>
+ <20200512230557.zvdgwhbqygc2fufv@core.my.home>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200504203829.6330-2-prsriva@linux.microsoft.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200512230557.zvdgwhbqygc2fufv@core.my.home>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_160958_319451_451AC471 
-X-CRM114-Status: GOOD (  13.08  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200512_162509_574082_E357E672 
+X-CRM114-Status: GOOD (  18.37  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
+ provider [dmitry.torokhov[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,45 +111,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, mark.rutland@arm.com,
- gregkh@linuxfoundation.org, benh@kernel.crashing.org, bhsharma@redhat.com,
- tao.li@vivo.com, zohar@linux.ibm.com, paulus@samba.org,
- vincenzo.frascino@arm.com, will@kernel.org, nramas@linux.microsoft.com,
- frowand.list@gmail.com, masahiroy@kernel.org, jmorris@namei.org,
- takahiro.akashi@linaro.org, linux-arm-kernel@lists.infradead.org,
- catalin.marinas@arm.com, serge@hallyn.com, devicetree@vger.kernel.org,
- pasha.tatashin@soleen.com, hsinyi@chromium.org, tusharsu@linux.microsoft.com,
- tglx@linutronix.de, allison@lohutok.net, christophe.leroy@c-s.fr,
- mbrugger@suse.com, balajib@linux.microsoft.com, dmitry.kasatkin@gmail.com,
- linux-kernel@vger.kernel.org, linux-security-module@vger.kernel.org,
- james.morse@arm.com, mpe@ellerman.id.au, linux-integrity@vger.kernel.org,
- linuxppc-dev@lists.ozlabs.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 04, 2020 at 01:38:28PM -0700, Prakhar Srivastava wrote:
-> Introduce a device tree layer for to read and store ima buffer
-> from the reserved memory section of a device tree.
-
-But why do I need 'a layer of abstraction'? I don't like them.
-
-> Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
-> ---
->  drivers/of/Kconfig  |   6 ++
->  drivers/of/Makefile |   1 +
->  drivers/of/of_ima.c | 165 ++++++++++++++++++++++++++++++++++++++++++++
-
-Who are the users of this code and why does it need to be here? Most 
-code for specific bindings are not in drivers/of/ but with the user. It 
-doesn't sound like there's more than 1 user.
-
->  include/linux/of.h  |  34 +++++++++
->  4 files changed, 206 insertions(+)
->  create mode 100644 drivers/of/of_ima.c
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBNYXkgMTMsIDIwMjAgYXQgMDE6MDU6NTdBTSArMDIwMCwgT25kxZllaiBKaXJtYW4g
+d3JvdGU6Cj4gT24gVHVlLCBNYXkgMTIsIDIwMjAgYXQgMDM6NTI6MTJQTSAtMDcwMCwgRG1pdHJ5
+IFRvcm9raG92IHdyb3RlOgo+ID4gT24gV2VkLCBNYXkgMTMsIDIwMjAgYXQgMTI6MjI6MDJBTSAr
+MDIwMCwgT25kcmVqIEppcm1hbiB3cm90ZToKPiA+ID4gSXQgaXMgcG9zc2libGUgdG8gdHVybiB0
+aGUgbW90b3Igb24vb2ZmIGp1c3QgYnkgZW5hYmxpbmcvZGlzYWJsaW5nCj4gPiA+IHRoZSB2Y2Mt
+c3VwcGx5Lgo+ID4gPiAKPiA+ID4gU2lnbmVkLW9mZi1ieTogT25kcmVqIEppcm1hbiA8bWVnb3Vz
+QG1lZ291cy5jb20+Cj4gPiA+IEFja2VkLWJ5OiBSb2IgSGVycmluZyA8cm9iaEBrZXJuZWwub3Jn
+Pgo+ID4gPiAtLS0KPiA+ID4gIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9pbnB1
+dC9ncGlvLXZpYnJhdG9yLnlhbWwgfCAxIC0KPiA+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxIGRlbGV0
+aW9uKC0pCj4gPiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2lucHV0L2dwaW8tdmlicmF0b3IueWFtbCBiL0RvY3VtZW50YXRpb24vZGV2aWNl
+dHJlZS9iaW5kaW5ncy9pbnB1dC9ncGlvLXZpYnJhdG9yLnlhbWwKPiA+ID4gaW5kZXggMjM4NDQ2
+NWVhYTE5Li5jNzAwYjY0MGJkNTMgMTAwNjQ0Cj4gPiA+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy9pbnB1dC9ncGlvLXZpYnJhdG9yLnlhbWwKPiA+ID4gKysrIGIvRG9j
+dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2lucHV0L2dwaW8tdmlicmF0b3IueWFtbAo+
+ID4gPiBAQCAtMjQsNyArMjQsNiBAQCBwcm9wZXJ0aWVzOgo+ID4gPiAgCj4gPiA+ICByZXF1aXJl
+ZDoKPiA+ID4gICAgLSBjb21wYXRpYmxlCj4gPiA+IC0gIC0gZW5hYmxlLWdwaW9zCj4gPiAKPiA+
+IEhtbSB3ZSBuZWVkIGF0IGxlYXN0IG9uZSBvZiB0aGUgMiAoZ3BpbyBhbmQgc3VwcGx5KS4gU2hv
+dWxkIHdlIGVuY29kZSBpdAo+ID4gaW4gdGhlIGJpbmRpbmc/Cj4gCj4gTm90IHN1cmUgaG93IHRv
+IGVuY29kZSBlaXRoZXIgb25lIG9yIHRoZSBvdGhlciBwcm9wZXJ0eSBiZWluZyByZXF1aXJlZCwg
+YnV0Cj4gbm90IGJvdGggYXQgb25jZS4KPiAKPiBNYXliZSBJIGNhbiBhZGQgYSBzdXBwbHktdmli
+cmF0b3IgY29tcGF0aWJsZSB0byB0aGUgZHJpdmVyIGFuZCBiaW5kaW5nIGFuZAo+IG1ha2UgcmVx
+dWlyZW1lbnRzIGRlcGVuZGVudCBvbiB0aGUgY29tcGF0aWJsZT8KClJvYiBpcyBvdXIgYmluZGlu
+Z3Mgb3ZlcmxvcmQuLi4gSSdsbCBkZWZlciB0byBoaW0gaGVyZS4KClRoYW5rcy4KCi0tIApEbWl0
+cnkKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
