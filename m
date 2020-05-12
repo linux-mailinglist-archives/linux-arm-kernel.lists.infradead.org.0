@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB7B71CEAD7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:34:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6FA31CEAD8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:35:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9XjVvMPsd1Uueecqk3h1wmbXjVT9qA5RQGvmSbmDXEk=; b=HWk
-	MjuyP/DTXW51R/8ZgkAAgTC94WpdMvpefAf7vNLxbV/AtnbcY76KSOZMDWqYZTFVVbofsXeyI3RDQ
-	uuVcr9p55Am3Z+5R78QzIIJvZesRrP86uflzvhHiQXYTRoSeK5HHcetFMMlMbiMKhvolkCH3yUSoB
-	8nzJIFmNyExmp5/8B/eO3vJUXD2XGEJ6oI7EBXbKd9TfODEt8mbk9KKrVvqUC701FjB6PXBuSV5lg
-	7b1ThDFXfNCPg/wQxDv4QLwGHwoA2JG6FAIBOVTuFFMmRxxG7jN9fxWgXIBtAJvQeNRjduIa7mi07
-	7mn3ZaGIIYwzU+CopsobAtAaP4U5Erg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=paAi2G5gzy5UQRhYCDoccuFRP2Okdqq7cE6Q3dJcP2Y=; b=ocjZLV/Rj7nbF1FqMRBy5Yl6gB
+	+K7PNB3j6CUw+ryAwdRasKG82+G31Q5RMINmCLjjLz4OmH5sOWJJzS3HMNPLZ28zgMo7QctY3+olr
+	TshZMmcW6iktp3Uf+nKqcmK6EesA+ud5HAsoj9j8xOz3W8FqMI4oGWK6nyDK+3hDjrh2IxdGUWJLb
+	2rw100JHNBiJuiPPsdcI0JlbGRwDrJk/wk17rBKRYOUC+ysZYMOIPDPWasGV7MTit69KAQwxx8m37
+	QSe33YBafse3uNJ9JvKMGOhEtpqqX5VXIEghOTlHjEU3eWfzYyV3LIa2xvXrxWVG5vTr8S6CTQ+94
+	3Kaec1rw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYKkk-00046p-E7; Tue, 12 May 2020 02:34:42 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1jYKku-0004Fb-KH; Tue, 12 May 2020 02:34:52 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYKkb-00046F-0N
+ id 1jYKkb-00046G-JN
  for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:34:34 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 76467200E51;
- Tue, 12 May 2020 04:34:30 +0200 (CEST)
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 66B0D1A0E78;
+ Tue, 12 May 2020 04:34:32 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A68B5200E53;
- Tue, 12 May 2020 04:34:26 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 963721A0E75;
+ Tue, 12 May 2020 04:34:28 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 85D2B402B7;
- Tue, 12 May 2020 10:34:21 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 11A5640293;
+ Tue, 12 May 2020 10:34:22 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: dts: imx51: Add src node interrupt
-Date: Tue, 12 May 2020 10:25:06 +0800
-Message-Id: <1589250307-29662-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] ARM: dts: imx53: Add src node interrupt
+Date: Tue, 12 May 2020 10:25:07 +0800
+Message-Id: <1589250307-29662-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1589250307-29662-1-git-send-email-Anson.Huang@nxp.com>
+References: <1589250307-29662-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_193433_183978_2F542D27 
-X-CRM114-Status: UNSURE (   7.74  )
+X-CRM114-CacheID: sfid-20200511_193433_769569_3825B24A 
+X-CRM114-Status: UNSURE (   8.15  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -53,7 +56,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -79,17 +82,17 @@ it for SRC node.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx51.dtsi | 1 +
+ arch/arm/boot/dts/imx53.dtsi | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/imx51.dtsi b/arch/arm/boot/dts/imx51.dtsi
-index 92fbb90..3f1e913 100644
---- a/arch/arm/boot/dts/imx51.dtsi
-+++ b/arch/arm/boot/dts/imx51.dtsi
-@@ -442,6 +442,7 @@
- 			src: src@73fd0000 {
- 				compatible = "fsl,imx51-src";
- 				reg = <0x73fd0000 0x4000>;
+diff --git a/arch/arm/boot/dts/imx53.dtsi b/arch/arm/boot/dts/imx53.dtsi
+index 8536f59..0d06dbd 100644
+--- a/arch/arm/boot/dts/imx53.dtsi
++++ b/arch/arm/boot/dts/imx53.dtsi
+@@ -591,6 +591,7 @@
+ 			src: src@53fd0000 {
+ 				compatible = "fsl,imx53-src", "fsl,imx51-src";
+ 				reg = <0x53fd0000 0x4000>;
 +				interrupts = <75>;
  				#reset-cells = <1>;
  			};
