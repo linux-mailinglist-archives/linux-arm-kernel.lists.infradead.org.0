@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3726B1CF7CE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2501A1CF7CC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:49:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2NeARtuPNCpHLj/87KHUGH8qp/0aT2dvc9JJnqFg2Uk=; b=i6WtjLt/m6eZnS
-	1/w7IyEOIZ4I4L5TprXvNssorthXv6JuSjQKDaxSVsbfVJurIfN4XHrc/QEz8FCPUpAFNWeUdYPmF
-	u7P6UKiWjT5qDWkIF0IpiMNY2cNk8layKaIdk6XpMqyTzAEwMVDBQRr2j4fGyUmixBCx2G9o8zLOk
-	vG5ewIhp9waXJA5jSDbre+enBJ9jUsb+KyWts3HbmljJJz/R+RPV86T6OQZbgZb3E1MFnkE0Kh1vU
-	ZxZR8b7tq+44ehCMPFHMRYY2qOwN3PNRNX1M5vWdld5b7Wzw6cVN15/mMNn+GbC9c/Q+Wj+DxyCM7
-	Wvbxb795Hr4iNyQAYY3A==;
+	List-Owner; bh=AeC54esBc12u6Kzpw30MDg1jAiAznUKGOE4T49F4kBw=; b=c6YmTj1/X1xoe5
+	+3qcNo2hHoPWYfn3H1TP3UEX2zsfiYKIIJUIaMPdeXV6MmmAXNXsWPqiE1QO7i2nx+jBfAztd4UDd
+	d3jvyL87L85ZIm9wIqkD77AWe3GHYgfwRANKnX5vsTKfMQdPlzbk0BoxbeeFo1G4SxEHg/KA8r92Y
+	Mcbxa8YE6/UxU2DycY1DU+wsYNrHzmzjibCjPS8tw7Z18HdQLuyLr4BjsSWeb3SFvB82cFEuOhBPj
+	D5cOB67nTx0X1L2flrfr/g17Or37AjgM1yk3OVZ5vT0mtgQd4Dpvb/jd8pTVjhEJkqNwvvwgaDPHo
+	U6ve9OUgvLce01h1c9Pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYWDW-0006IJ-CL; Tue, 12 May 2020 14:49:10 +0000
+	id 1jYWDG-00069l-02; Tue, 12 May 2020 14:48:54 +0000
 Received: from mx2.suse.de ([195.135.220.15])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYWD6-00068I-Pp
+ id 1jYWD6-00068K-Po
  for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:48:46 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 93249ACCE;
- Tue, 12 May 2020 14:48:43 +0000 (UTC)
+ by mx2.suse.de (Postfix) with ESMTP id 0E9E4ACC3;
+ Tue, 12 May 2020 14:48:44 +0000 (UTC)
 From: Mian Yousaf Kaukab <ykaukab@suse.de>
 To: swarren@wwwdotorg.org,
 	robh+dt@kernel.org,
 	robin.murphy@arm.com
-Subject: [PATCH 2/4] dt-bindings: sram: add documentation for reserved-only
- flag
-Date: Tue, 12 May 2020 16:48:01 +0200
-Message-Id: <20200512144803.24344-2-ykaukab@suse.de>
+Subject: [PATCH 3/4] arm64: tegra186: add reserved-only flag in sysram node
+Date: Tue, 12 May 2020 16:48:02 +0200
+Message-Id: <20200512144803.24344-3-ykaukab@suse.de>
 X-Mailer: git-send-email 2.25.0
 In-Reply-To: <20200512144803.24344-1-ykaukab@suse.de>
 References: <20200512144803.24344-1-ykaukab@suse.de>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_074844_985914_364C7590 
-X-CRM114-Status: UNSURE (   9.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200512_074844_988927_F2499E83 
+X-CRM114-Status: GOOD (  12.65  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -71,40 +69,28 @@ Cc: devicetree@vger.kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
  jonathanh@nvidia.com, talho@nvidia.com, thierry.reding@gmail.com,
  linux-tegra@vger.kernel.org, afaerber@suse.de,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add documentation for the new optional flag added for SRAM driver.
-
-Signed-off-by: Mian Yousaf Kaukab <ykaukab@suse.de>
----
- Documentation/devicetree/bindings/sram/sram.yaml | 6 ++++++
- 1 file changed, 6 insertions(+)
-
-diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
-index 19d116ff9ddc..4bcc309fa841 100644
---- a/Documentation/devicetree/bindings/sram/sram.yaml
-+++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -55,6 +55,12 @@ properties:
-       as write combining. WC is used by default.
-     type: boolean
- 
-+  reserved-only:
-+    description:
-+      The flag indicating, that only SRAM reserved regions have to be remapped.
-+      remapping type is selected depending upon no-memory-wc as usual.
-+    type: boolean
-+
- patternProperties:
-   "^([a-z]*-)?sram(-section)?@[a-f0-9]+$":
-     type: object
--- 
-2.25.0
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+YnBtcCBkcml2ZXIgaGFzIHJlc2VydmVkIHJlZ2lvbnMgaW4gc3lzcmFtLiBTaW5jZSBzeXNyYW0g
+aXMgb25seSB1c2VkCmJ5IHRoZSBicG1wIGRyaXZlciwgYWRkIOKAmHJlc2VydmVkLW9ubHnigJkg
+ZmxhZyB0byB0aGUgc3lzcmFtIG5vZGUgc28KdGhhdCBvbmx5IHJlZ2lvbnMgdXNlZCBieSB0aGUg
+YnBtcCBkcml2ZXIgYXJlIHJlbWFwcGVkLiBPdGhlciByZWdpb25zCm9mIHRoZSBzeXNyYW0gbWF5
+IG5vdCBiZSBhY2Nlc3NpYmxlIHRvIHRoZSBrZXJuZWwgYW5kIGEgc3BlY3VsYXRpdmUKYWNjZXNz
+IHRvIHRoZW0gY2FuIGNhdXNlIFNFcnJvci4KClNpZ25lZC1vZmYtYnk6IE1pYW4gWW91c2FmIEth
+dWthYiA8eWthdWthYkBzdXNlLmRlPgotLS0KIGFyY2gvYXJtNjQvYm9vdC9kdHMvbnZpZGlhL3Rl
+Z3JhMTg2LmR0c2kgfCAxICsKIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQoKZGlmZiAt
+LWdpdCBhL2FyY2gvYXJtNjQvYm9vdC9kdHMvbnZpZGlhL3RlZ3JhMTg2LmR0c2kgYi9hcmNoL2Fy
+bTY0L2Jvb3QvZHRzL252aWRpYS90ZWdyYTE4Ni5kdHNpCmluZGV4IDU4MTAwZmI5Y2Q4Yi4uMDdj
+ZTdlN2IyNzBjIDEwMDY0NAotLS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL252aWRpYS90ZWdyYTE4
+Ni5kdHNpCisrKyBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvbnZpZGlhL3RlZ3JhMTg2LmR0c2kKQEAg
+LTEyMTksNiArMTIxOSw3IEBAIHN5c3JhbUAzMDAwMDAwMCB7CiAJCSNhZGRyZXNzLWNlbGxzID0g
+PDI+OwogCQkjc2l6ZS1jZWxscyA9IDwyPjsKIAkJcmFuZ2VzID0gPDAgMHgwIDB4MCAweDMwMDAw
+MDAwIDB4MCAweDUwMDAwPjsKKwkJcmVzZXJ2ZWQtb25seTsKIAogCQljcHVfYnBtcF90eDogc2ht
+ZW1ANGUwMDAgewogCQkJY29tcGF0aWJsZSA9ICJudmlkaWEsdGVncmExODYtYnBtcC1zaG1lbSI7
+Ci0tIAoyLjI1LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
