@@ -2,67 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D98801CEA7B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:04:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3D661CEA80
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:04:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5M/lCRjrBBnn8GBaFJ5m5XZc2wGaWyNXvhHS40PjU0A=; b=QEUcsn+sCsFaDx
-	EMZtrwAhU81wyv/xvkIq4NLDmr+98J2sULW+ft6dJLGjvOjvgGi4SnqjbMJMqJfdXjvZj1qZkIeem
-	uaFJ1k0Nxs9gI1gk9HRMi9vIDTdMgSKSEPaFqMi2kiwqOLHJJqGWO3KeM2vIDe1UfcLckg+0UnUHc
-	6PkAWHcBQHhxaPhdSJEr0PE2E9SlCgubF3ara84JyG7gDQOd8rVjRd8PHTITjIx6/YhdJVxTXuGpj
-	LpPhBSmBE36BLkrXupCYgmH0TxsOTRB9HzbwqXiy99yKUvmfbTkuVYgtLdVAC6e42LNAF0vbXQDF6
-	iDKvBxYESOssg3oucnzw==;
+	List-Owner; bh=RFuojZMYzP3t1kuVQC/Mh2gO30XtRp5IFudq7jcALOA=; b=GmG92Ul2GsvgTy
+	VzJtlFEOJ3dUFcDQvLLvnwl53wn/7ynGKCu2qD/znSQeMOwXsAiPAZqrW7+oyhuA1yLo7t8mT5VJy
+	9HGwXIb16ymbjuxhbstrG9ukUeUSuAWU0cpM6SCbTSUZwiUClNX1gdayL2LNXXqw289awEw/g8pYb
+	NofAe+4JuQEyT5bknCFgZaGqkPmBfMctSlXFjrIbOidCmbwT7411P7krvJodq8YWG2djJHdufYhki
+	7lUXToKVMon9STdTXZxWJK/bFP+kYJRpduigNYUZ/1oaDrfq4UiPo9+MW0Pw7/mplBIxWVpJyxx6w
+	ZtbGR/Ju41lsuRsLoxwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYKGz-0000u2-4F; Tue, 12 May 2020 02:03:57 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1jYKHS-00017R-B3; Tue, 12 May 2020 02:04:26 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYKGo-0000tZ-RA
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:03:48 +0000
-Received: by mail-oi1-f194.google.com with SMTP id v128so108648oia.7
+ id 1jYKH5-000169-HW
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:04:05 +0000
+Received: by mail-ot1-f67.google.com with SMTP id z17so9291163oto.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 11 May 2020 19:03:46 -0700 (PDT)
+ Mon, 11 May 2020 19:04:03 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SKTqH2487aYveoMwIVxq6ys5R52y2QbI8FHInFwCoT4=;
- b=jqkBnm6uz59pVff+bWsF5ZSspRob5h6duWd3vy72cX8BO34eNlIxk63jKBtXcVKYhU
- if/xio8/GTJZUBe3ki8CD86xESJZgNBpb1dm84ubFWAoJ12uU4TutfX+Ge5yuEAg3EYG
- 8kmbrRYdyW9mIGT48+XYbtFcoq9A62bGlmogH/6Uh3xf58zxU1TtybzL/fiA7jqL3dCj
- hjdmTVnGr/+yU+gqcahSbxkPOljozm3u+PEw96S2C4R2FM313oyHduwAqUwFsagS1jox
- g3o2sJSAT74YopMh99cL1pdTFy6zOdwDFfoT33MgeEMYUA6vfmR0qWqk1xxQuex+StcK
- 53lw==
-X-Gm-Message-State: AGi0PubXKUluW4GoPc19wibH33o1NNdK4ogh4uBMAjHbj+4G+BbBX7jx
- y/v93CinbCvpFLL+/oQOiQ==
-X-Google-Smtp-Source: APiQypKThoh2f0v295jotzN8wWr1UIn40NjN0R+gI2MP9rKPJO9N+mWi5TbzOR3yOCKuun401ZoJVw==
-X-Received: by 2002:aca:ba05:: with SMTP id k5mr21268052oif.35.1589249025962; 
- Mon, 11 May 2020 19:03:45 -0700 (PDT)
+ bh=NDu4mmV11tyVPsQh5Aoz3L4z3EhAcUk4qA1JhtuLKlg=;
+ b=l5b0+/K14h+qvfivw6MglTdgaqSA0IRYi6UGEa9e491nxody0/Ubuw67t4IZq35z5v
+ HjiaYWo8Boy6YBWOTlB5CWQTOclzDqj7ahP3bMhZ8VU0zSTxbwXYhoFK9VFfJ16gtEGL
+ tMWidpKykPM2A6nqRFFmxRRBa65MGhbXI0FxiMuRBHbcTONmIhIN+AVUPHvuY0ox1gR1
+ fVQZlTdyXNmafPfWkkvsP5So4D+KfZpnbGPGp3I81m9hdvT1Ca6m284F4XFiIRJUXiP1
+ hzmk/v0n3dIQNQHKsVNLl/J64hVktWUaDIi9+4Apc8hpC81O4+00oArfweYfI7Mctu7a
+ T7ag==
+X-Gm-Message-State: AGi0Pua7WhMCF+/SIe5se1azknd4PGxnUiAVACsUcJ2PreBph0aWUiSU
+ Y7XHJiOoEYTsremBr54bHw==
+X-Google-Smtp-Source: APiQypJkVVYlpiJlep8gi7WUwcLRNXzQDKQDB/F8V0m7Gmj0RuB3DwwvNOM5CnokbIqtZlU73PSD5g==
+X-Received: by 2002:a05:6830:2439:: with SMTP id
+ k25mr14529338ots.76.1589249042366; 
+ Mon, 11 May 2020 19:04:02 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id i196sm5230653oib.8.2020.05.11.19.03.44
+ by smtp.gmail.com with ESMTPSA id s73sm5107068oih.14.2020.05.11.19.04.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 19:03:44 -0700 (PDT)
-Received: (nullmailer pid 29821 invoked by uid 1000);
- Tue, 12 May 2020 02:03:44 -0000
-Date: Mon, 11 May 2020 21:03:44 -0500
+ Mon, 11 May 2020 19:04:01 -0700 (PDT)
+Received: (nullmailer pid 30407 invoked by uid 1000);
+ Tue, 12 May 2020 02:04:01 -0000
+Date: Mon, 11 May 2020 21:04:01 -0500
 From: Rob Herring <robh@kernel.org>
 To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Re: [PATCH 1/3] dt-bindings: phy: Convert UniPhier PCIe-PHY
+Subject: Re: [PATCH 2/3] dt-bindings: phy: Convert UniPhier USB2-PHY
  controller to json-schema
-Message-ID: <20200512020344.GA29755@bogus>
+Message-ID: <20200512020401.GA30368@bogus>
 References: <1588055690-13200-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <1588055690-13200-2-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1588055690-13200-1-git-send-email-hayashi.kunihiko@socionext.com>
+In-Reply-To: <1588055690-13200-2-git-send-email-hayashi.kunihiko@socionext.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_190346_882767_BF05C821 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20200511_190403_738587_39CA6F1E 
+X-CRM114-Status: UNSURE (   9.87  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -70,7 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit [robherring2[at]gmail.com]
@@ -79,8 +81,9 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  provider [robherring2[at]gmail.com]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,16 +106,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 28 Apr 2020 15:34:48 +0900, Kunihiko Hayashi wrote:
-> Convert the UniPhier PCIe-PHY controller to DT schema format.
+On Tue, 28 Apr 2020 15:34:49 +0900, Kunihiko Hayashi wrote:
+> Convert the UniPhier USB2-PHY conroller to DT schema format.
 > 
 > Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
 > ---
->  .../bindings/phy/socionext,uniphier-pcie-phy.yaml  | 77 ++++++++++++++++++++++
->  .../devicetree/bindings/phy/uniphier-pcie-phy.txt  | 36 ----------
->  2 files changed, 77 insertions(+), 36 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/socionext,uniphier-pcie-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/uniphier-pcie-phy.txt
+>  .../bindings/phy/socionext,uniphier-usb2-phy.yaml  | 85 ++++++++++++++++++++++
+>  .../devicetree/bindings/phy/uniphier-usb2-phy.txt  | 45 ------------
+>  2 files changed, 85 insertions(+), 45 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/phy/socionext,uniphier-usb2-phy.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/phy/uniphier-usb2-phy.txt
 > 
 
 Applied, thanks!
