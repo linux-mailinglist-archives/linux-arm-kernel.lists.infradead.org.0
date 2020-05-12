@@ -2,71 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FC091CF22A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:14:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 31C7E1CF258
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:28:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W5e0OUkAWO23OWOpemWYPHl4obKHbvd0B2dSyot54co=; b=MLVU8zV+ZcHQfaQVQu1Tpu8wp
-	4u6x6GddJmoWeCpIiRpIvCG8G4XOjh/QOBU6mbIlnGdaQ3XbJAunxESqF0mAzhIQgaaTGFk4Na79J
-	cEsCahLNClPOqq4ZTteI0whcyuhyIL0VzX38Un8f8rDOhXlp/jx+32N1pf+35CgV/xpr7GbCNzzx9
-	l2MPPCaIL3X5AF5YnuwCtwKK62bETzf6PxRMsi+P0rTcaGaNnLCWY7+cLuPOtzc1Ky3sMywSjr2IO
-	fcjYn2Vm9bcLm4U6+VMT4xj4SQx5wPNHy6pugdbvgHPt3VZ406pKDJJBqakgcQ/uOwq4X8RDyPArd
-	et4IlMzSw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Subject:
+	References:In-Reply-To:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=CBcKfqeNzynxo8T7W0ZeO5lkWOZ0PH2kLMMv55LJJYw=; b=PKo3ScB+BvUGFy
+	rNVbUDu9yKwJ6Clh64TutcvdNyuWVdayhzcxSTLi/1vukhWnlYerS5bAan+3KFQISTAobxrbIzZpL
+	7L/B+xO4ph4miNsbwQby5QBhJDSKEffbgnELSvgR002dOJe9jrerXPfyhQfO7MYiQl07fDlst/zOE
+	+pcVhD+XtRu6XU8XYSat2EFiFV91NaEAc+j+hG8ZqUnMlF2YO8NvXu4zKgUWHtegiYUJ9EJRlySl3
+	oatJ2VvYHY3TiA57P5rEHq7pe0s7N7h0GbGnhRsjq7mYblMTBzMRtkyjEn4s5S/DmXwaHN7HnyGOn
+	1dci6HUhWHHKiMz2dzAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYRvb-0006Gy-4I; Tue, 12 May 2020 10:14:23 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jYS9G-0006ZZ-J2; Tue, 12 May 2020 10:28:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYRvS-0006G9-13
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 10:14:15 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id C703479D73E2140BD683;
- Tue, 12 May 2020 11:14:04 +0100 (IST)
-Received: from [127.0.0.1] (10.210.169.134) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1913.5; Tue, 12 May
- 2020 11:14:03 +0100
-Subject: Re: [PATCH RFC v3 00/12] perf pmu-events: Support event aliasing for
- system PMUs
-To: Joakim Zhang <qiangqing.zhang@nxp.com>, "peterz@infradead.org"
- <peterz@infradead.org>, "mingo@redhat.com" <mingo@redhat.com>,
- "acme@kernel.org" <acme@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "alexander.shishkin@linux.intel.com"
- <alexander.shishkin@linux.intel.com>, "jolsa@redhat.com" <jolsa@redhat.com>,
- "namhyung@kernel.org" <namhyung@kernel.org>
-References: <1588852671-61996-1-git-send-email-john.garry@huawei.com>
- <DB8PR04MB6795D56E9EC43949E5F40465E6BE0@DB8PR04MB6795.eurprd04.prod.outlook.com>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <2642e2a6-9e44-79c4-2bf5-498cedd897a4@huawei.com>
-Date: Tue, 12 May 2020 11:13:11 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
-MIME-Version: 1.0
-In-Reply-To: <DB8PR04MB6795D56E9EC43949E5F40465E6BE0@DB8PR04MB6795.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-Originating-IP: [10.210.169.134]
-X-ClientProxiedBy: lhreml733-chm.china.huawei.com (10.201.108.84) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+ id 1jYS98-0006Z1-Fx
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 10:28:23 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 36D03206A3;
+ Tue, 12 May 2020 10:28:21 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589279301;
+ bh=zpiNmb4UCtavZMNo6BKDHyMlep5F58zW98wc3jsNU58=;
+ h=Date:From:To:Cc:In-Reply-To:References:Subject:From;
+ b=ihzpMPLAN81AlB25/9+LOE8ebLXxL9p8Pg4XBABQl/FDbwirChiSg0NqiDbyUICtM
+ CGM3YqXUwIwt0UNR/9lK5dRG+l4pBg5YaLuyq113Cjw8m0Y1V1cZAX+J0g7yVWJ43j
+ y8SHmOZ37Vf+QufDa9IByqy9+ylQ/+DwQk6gn05c=
+Date: Tue, 12 May 2020 11:28:19 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>
+In-Reply-To: <1587720562-15293-1-git-send-email-hayashi.kunihiko@socionext.com>
+References: <1587720562-15293-1-git-send-email-hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH v2] dt-bindings: spi: Convert UniPhier SPI controller to
+ json-schema
+Message-Id: <158927929911.28665.8593031021251686663.b4-ty@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_031414_263827_529D7732 
-X-CRM114-Status: GOOD (  12.69  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_032822_553965_0F727C63 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [185.176.76.210 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,41 +77,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "irogers@google.com" <irogers@google.com>,
- "ak@linux.intel.com" <ak@linux.intel.com>, "will@kernel.org" <will@kernel.org>,
- Linuxarm <linuxarm@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Zhangshaokun <zhangshaokun@hisilicon.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-spi@vger.kernel.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, 24 Apr 2020 18:29:22 +0900, Kunihiko Hayashi wrote:
+> Convert UniPhier SPI controller binding to DT schema format.
 
-> I have an aside question, do you have any idea? Thanks a lot!
-> 
-> For DDR PMU, I want to add bandwidth usage metric, but it depends on DDR controller clock frequency.
-> For example, we have i.MX8MM LPDDR4 board which DDR controller clock is 800MHZ, and i.MX8MM DDR4 board which DDR controller is 600MHZ, but the SoC is the same.
-> 
-> So they can share all JSON metrics with identifier "i.mx8mm", except bandwidth metric. 
+Applied to
 
-what is the bandwidth metric? how is it supposed to be calculated?
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.8
 
-If I add separate JOSN metrics files for identifier "i.mx8mm-lpddr4" and 
-identifier "i.mx8mm-ddr4", then it's going to be very redundant, since 
-most metrics are same just the identifier is different.
-> 
-> Do you know how perf tool handle such case?
+Thanks!
 
-jirka is supporting user-defined metric here:
-https://lore.kernel.org/lkml/20200511205307.3107775-1-jolsa@kernel.org/
+[1/1] spi: Convert UniPhier SPI controller to json-schema
+      commit: 5483ef03e075c1625c66ba728b55ef67f7cb3ed1
 
-So maybe you can use that somehow with separate scripts.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.
+
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
 Thanks,
-John
+Mark
 
 _______________________________________________
 linux-arm-kernel mailing list
