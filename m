@@ -2,84 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 127AA1CFCBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 20:00:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB20A1CFCDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 20:11:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3C7U/xGHtml0p47sBkOFp187udXeXhtZai1n4n4eoS0=; b=RNXo7nHUZ7x9K3
-	uYfuNQUAJf0+gJp+ScXOFnY79CJyuCyRlx5bdIr7/UgOlFNlNcNN5Dy5iwZJeGzhmUYyzZQdap4ln
-	HkOmPhy9U+gR4rd3dG+qAInQ26pgqQhfE56Y4Q7T9Htt6nEylIqmdMM+IXfs5hdP/Nk5VcAjyegPO
-	bHv4Mj0U4DOBLTsD28rHXrSjRHk5yCMB+k6yfNkBdGDvtbMIHaPwwIp+u34NHVekskuDlfSQdT5ye
-	HUOy6YLhaVWC+m5lrxxPZv0EapZPaIUCSIoFsR/72uLw+cynz3yZWCvVclK9o4UTrM9Ll31hXt9Ot
-	9PzRXOLX6+uTdESwgSPA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=c9xMIe2UpqAcLp0dQ0HNpx15xYQDUSGf2di7CpLweuE=; b=Ty60p2+F6NpCKXWTPLjYFM2eG
+	5XVh86ckUJ6JIUrdJl+2cMWWcXmcdvcMQHjCwGlqi5Oeyl0HQ7mcszYLuwkAVKyhUTLutzyn0xGiG
+	4MLfBl0rRlbADp6EUaGA8Oa4yA2nMeoS0OgPK4mHTubWvI3nyILj18UmxmTZQMrlm2VgzUfyXtvr/
+	HEhv6osyMTtRxblh7LHxUyeplY5nyzG4JPddUceLNgKaDR5mPCPNmPUO5y/Khl85ibQzFLsNLmM2T
+	k2477tq28PomiJLiADRn+atZSV9nfgDtEiYe/BjIQl1+k95Zc1E3DfDDuw4divEOeVQHGuQLJ/PUF
+	Hmek0OvKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYZCw-0008Bp-J1; Tue, 12 May 2020 18:00:46 +0000
-Received: from mail-il1-x144.google.com ([2607:f8b0:4864:20::144])
+	id 1jYZN1-0007wE-9Q; Tue, 12 May 2020 18:11:11 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYZCo-0008Ah-4W
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 18:00:39 +0000
-Received: by mail-il1-x144.google.com with SMTP id b18so5171745ilf.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 11:00:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cLEAYLVD6JreucQil+ujhm8FErflJCkoe7KXXK012mc=;
- b=JpAw+cFGmfHBajujn/xovuM0dYlazaSRxJ4KOtDR8DxkxTDdhtE1+ux/9NOdXlkDvb
- Yj5I98DG6givG6zWx5FND6O4IbR9RmMma41huxQDdrAFggw14jKpQ6A8aCQjY5lNRLaJ
- TtOlnoUqEuX2PFLxUBkT45aJ2ipRGUiirEJKSQ8+dIFJ57Bmx6oE6c8Vhs02VfxbT7mR
- JfL9SB7n3gHK8JbOhQmkzLxnr/v0qljAoDLqHHpHq57tY72JlfgJJ3aykj1tLeQtIDDf
- OOfoPyKWJWz1awCXqduOmpzQDGDJriVLYqiGyOEOK2s0Ek0MioR+r97kcvvl5CTgCUBu
- BnBA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cLEAYLVD6JreucQil+ujhm8FErflJCkoe7KXXK012mc=;
- b=s0Kh1Xiai7fWKUUpjk4wdVFOgeOmNQua49ydbc+T3gIB77KKimM3Un8AeQqV0zZ+Qg
- 9Ouz1QZw/hnVBjQfTCWxkcBMyimFc2S/zA52XD34RG1uUnT2Yul+vOTVmiud7t0Co7ME
- mdt5cLc04wEdtX0MGNrn60opQ3P9cjH0+7PxbLGSkGJUrrdr6puoTo/fMmj/Ja/7zGHJ
- VbQSpSDmygbfa2kyp4ZWCcCIMS6Wjk9fKUiNkIeyjrKHxRXJSIKTzBZXUhHhREnEB0YE
- rpl5QjBzOyahn4pIAo282WgXgaDEwj+68OaIL5EkutGcH5H2wVBWEwnvg+rQwL3okPFW
- 8MpQ==
-X-Gm-Message-State: AGi0PuZXnnMeHIJKebHzzHRuKRyokQK9+7PGBSYZN1S9MlDZiAnhMCIs
- Loi9s1X5Yy+54VkKwiZVNEoF+b1ATVMMUBzV4Unjvw==
-X-Google-Smtp-Source: APiQypImINfWk/azU+gh8VqSVBC+bjXOzMV58x6QAkL+twgu0FTJCnw6HhztAFigezzRtYkv2vWuAeZSEaiXI9PcO8g=
-X-Received: by 2002:a92:390f:: with SMTP id g15mr1559060ila.72.1589306432104; 
- Tue, 12 May 2020 11:00:32 -0700 (PDT)
+ id 1jYZMr-0007uq-IS
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 18:11:04 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589307060; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=OO3R9jYg4r1wAHoA8hhGY1+VCtV/dK//JXy3OK5Qw9E=;
+ b=tzPwkY/XPLzqyg7YJGLwFv46i0MD3+1lZgFVTbJQZhJ5OfgS0ts52puYTqVDkM2G5Dx2E/WP
+ WtyhJZ7ceRcLwOYU1ZSl944SUtxA0rNoNwJOA8lZejsWiw7brx0YERkpf54qvlK2aVcPNdVQ
+ Jbf7jdCTPBVK1dz+pxAIg33cbME=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ebae6b3.7f2f9c63a4c8-smtp-out-n02;
+ Tue, 12 May 2020 18:10:59 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 4119CC433BA; Tue, 12 May 2020 18:10:58 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=ham autolearn_force=no version=3.4.0
+Received: from [192.168.8.150] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 1684BC433F2;
+ Tue, 12 May 2020 18:10:57 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 1684BC433F2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v2 4/4] scsi: ufs-mediatek: customize WriteBooster flush
+ policy
+To: "Martin K. Petersen" <martin.petersen@oracle.com>
+References: <20200509093716.21010-1-stanley.chu@mediatek.com>
+ <20200509093716.21010-5-stanley.chu@mediatek.com>
+ <635f91f6-3a27-ffdd-4021-67705d4063fc@codeaurora.org>
+ <yq1v9l115us.fsf@oracle.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <7d5f53eb-f642-3c8b-edf6-d4693ecb49a4@codeaurora.org>
+Date: Tue, 12 May 2020 11:10:56 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <20200507053547.13707-1-calvin.johnson@oss.nxp.com>
-In-Reply-To: <20200507053547.13707-1-calvin.johnson@oss.nxp.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 12 May 2020 12:00:21 -0600
-Message-ID: <CANLsYkzeHpZygbQtz8Ed7dEaVMz362ftHQJ50DrBYR=+72NpJQ@mail.gmail.com>
-Subject: Re: [PATCH] coresight: cti: remove incorrect NULL return check
-To: Calvin Johnson <calvin.johnson@oss.nxp.com>, 
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+In-Reply-To: <yq1v9l115us.fsf@oracle.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_110038_179544_968AC4F2 
-X-CRM114-Status: GOOD (  20.03  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_111101_673434_3472F219 
+X-CRM114-Status: GOOD (  14.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:144 listed in]
- [list.dnswl.org]
+ no trust [104.130.122.27 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +98,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, linux.cj@gmail.com,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
+ jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com,
+ Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Greg,
+On 5/12/2020 9:21 AM, Martin K. Petersen wrote:
+> 
+> Hi Asutosh!
+> 
+>> Patchset looks good to me.
+>>
+>> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+> 
+> When you want to approve an entire series, please respond to the cover
+> letter email. Otherwise the kernel.org tooling will only record the tag
+> for the individual patch you are responding to. In this case only patch
+> 4 got tagged as reviewed in patchwork.
+> 
 
-On Wed, 6 May 2020 at 23:36, Calvin Johnson <calvin.johnson@oss.nxp.com> wrote:
->
-> fwnode_find_reference() doesn't return NULL and hence that check
-> should be avoided.
->
-> Signed-off-by: Calvin Johnson <calvin.johnson@oss.nxp.com>
-> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-
-I just noticed you were not CC'ed on the original conversation Calvin
-and I had and as such you probably don't know what to do with this
-patch.  Please see if you can pick it up as a fix for 5.7.  If that is
-not possible I will queue it up for inclusion in the 5.8 cycle.
+Hi Martin
+Sure - I'll keep this in mind.
 
 Thanks,
-Mathieu
+Asutosh
 
-> ---
->
->  drivers/hwtracing/coresight/coresight-cti-platform.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/hwtracing/coresight/coresight-cti-platform.c b/drivers/hwtracing/coresight/coresight-cti-platform.c
-> index b44d83142b62..2fdaeec80ee5 100644
-> --- a/drivers/hwtracing/coresight/coresight-cti-platform.c
-> +++ b/drivers/hwtracing/coresight/coresight-cti-platform.c
-> @@ -120,7 +120,7 @@ static int cti_plat_create_v8_etm_connection(struct device *dev,
->
->         /* Can optionally have an etm node - return if not  */
->         cs_fwnode = fwnode_find_reference(root_fwnode, CTI_DT_CSDEV_ASSOC, 0);
-> -       if (IS_ERR_OR_NULL(cs_fwnode))
-> +       if (IS_ERR(cs_fwnode))
->                 return 0;
->
->         /* allocate memory */
-> @@ -393,7 +393,7 @@ static int cti_plat_create_connection(struct device *dev,
->                 /* associated device ? */
->                 cs_fwnode = fwnode_find_reference(fwnode,
->                                                   CTI_DT_CSDEV_ASSOC, 0);
-> -               if (!IS_ERR_OR_NULL(cs_fwnode)) {
-> +               if (!IS_ERR(cs_fwnode)) {
->                         assoc_name = cti_plat_get_csdev_or_node_name(cs_fwnode,
->                                                                      &csdev);
->                         fwnode_handle_put(cs_fwnode);
-> --
-> 2.17.1
->
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
