@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E3931CF1C8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6DD7A1CF1CA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:40:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vJnCBCCw7kDkIbqG65PDwT57Ei0Hyh4z3IYzWFHoktU=; b=iipmHn3E8FXnOn
-	kYg3EhHl/oIqeYrPKbdaMYRzdiqxfY1gn163DE6zC4o9CLd9dMNUchpom2Iy1uwSpLqka7dULkGqe
-	mzxj4dA9qLGEc5HRQJxs/Q68Q5ugk93pY5B0qlWNLxx2UiiEt1OZKAnEQ8nFgEQr0r7eiG6PHg8zc
-	iYOjkB3Tkr06GsSC0OuO27wW0Ux9huLEJkPw3rrgJJJKmKAIazukOYs+h6D+sUOe2uSSoXpv7dmIU
-	5NBVl+ig6FQzlkWUFv3OI43ySjgYbHss9+a7DaU37THzmF/qjBIt7zKi4GajaZAKUU+XWxnxIVM1W
-	5L6n8am4A76SkD9iyRGg==;
+	List-Owner; bh=2zci4aKd8TwRQZY/U1FurfQxwyyhFm2JCQ67r7CM65Y=; b=J+gnH8qgDDRjj4
+	m5X38f89BXsUF19RGWUrtQfSXIA1/iejGHfnlcsFCqIVdGBdmWo3kHovaLpI1vXrm99BBzwjR5kn0
+	QaVtYuhOdGO/yYEadOwc6+I5oksCQ+Gpn3IXSeKIzACP00dE6QveeoSXzLV3ygKrYIevfhIiDaxL1
+	hu/2TRyFl5JLBGuqx2qozbM4+yppO5drjjJafyeAfJV7VhYslqp7tExRtRWkvCXvbWIvMj0C75Xlu
+	KeBf1iOrUEtB89rUunD8oalKdI77HJb2BPFbopIVj1NtiKKEkDKMiHIzb0nkvWsaLsTJQ8euycsza
+	BGLGasUytumhMGUyRyHw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYROF-0000sS-3b; Tue, 12 May 2020 09:39:55 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jYROc-0001Bj-01; Tue, 12 May 2020 09:40:18 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYRNk-0000eL-Tj
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:39:27 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l17so947071wrr.4
+ id 1jYRNm-0000ep-Bd
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:39:28 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y3so14507537wrt.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 02:39:24 -0700 (PDT)
+ Tue, 12 May 2020 02:39:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=rLSzS4IRRTC22sAo/0YCE5/fM6LeScWipcURZcTuUlk=;
- b=y2B0A32PUd58AQ/WKXzX5pDORK4KvHRz/yZKB1FLLnYF9nhSva0hElj+TsiNjT1/ad
- rRgQu2MmCufUtCt5ve4SnEmVg6CfKQ3CgB5Hd5hTjkjXxX+GAoF73IQw3+ZxSfelF4hd
- ccjl4Yx1ifiMwE6fQ9rJgZDzVObLxaRmYDm5EgcPk1GtIgKEFQ1NOA0wDFWYqgoiUM2w
- F2LlkR9n7JihUEFu55Biu16I/OFvF64tB4gqNxBWbjn6J5MJW/OGEAJrZN3chha8BcNE
- hc78aZ+F4/knVF5E4LWMuPhoPpV5kUBbPfuPorXquIF9+CS8S89lJvEZCXgFd7slT9V6
- N61w==
+ bh=exntrZVDrpNC4LfoF62zE8ED3Dungiic5pvW3+dqcrE=;
+ b=YI54zt1AshCXbR/9J2FQ3jVLetO9S//XLD3qA1usyzaunxBpK5g6XQVzQvE3dRcAoj
+ Nzbsch3Yzon5rMLclMlvOZbTrlyn2AENSVtwzVsKA5aigV+aSt2PagG0vq75UflInWjO
+ VyA2LMJ9bSn5/eEQxYGfcEh7EFRFcUh8rRyJlCp5tR4UdNOUwx25toWUgyeyxs19TXEh
+ cQnXabZm+r2RMlGcIjEL0fK5m9xTDItuCLJy3u6qwJuWqPsj2gjUIJ/zBrhq9qp+D3kC
+ DPpHNHurfHQDE2szd/rsSYRpn2u+SRxeXhVqrkzcPRN/eDk1IC6aOhLkisA6foT2SxOR
+ 88ww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=rLSzS4IRRTC22sAo/0YCE5/fM6LeScWipcURZcTuUlk=;
- b=MgB96x2YhCaCMtLjttwQFXr9EI7VjdQ9rAH77SpLePv4rcrVWxGiPW0aOpPc2IMU3D
- kcV8CkfmJysPGHzoexup5xkWBq43uMP6+9rZorK57z37PHhcl7GQO8aEv94b/7TCBMNT
- uJ8D+E61Wjvg8WsBRE81zLVflJ1q+EQz4+4eh82kvOd2x9T7hf0pK9w+ZKc7i1NLFhrL
- KwSppwOTb12uq2Cch9OFle5L+95XVwB06a7lebAUqeZP796f7tAz/LOHm4B+0q0yFQcr
- mRI3nmCHL/fcqbC1EWznDz7UHARvGPEM26n8vQXL0ZDH4fJzZGxQCFe/pAKtWUqH5uAO
- g/fw==
-X-Gm-Message-State: AGi0Pubx8eQtXzhPPozCrIfQJej6OyvSSPHwSTAPfL/guAFcugwP6yhB
- NDmM13ygiqhaIzB4e+tgeLazFQ==
-X-Google-Smtp-Source: APiQypKKQHEGoCykK41hPOsxclt/B7topaIHxJVk5eWKIkntIUzG/53aJNNsA05ov3iD0HzY1V8+2g==
-X-Received: by 2002:a5d:6ca7:: with SMTP id a7mr23970573wra.391.1589276363221; 
- Tue, 12 May 2020 02:39:23 -0700 (PDT)
+ bh=exntrZVDrpNC4LfoF62zE8ED3Dungiic5pvW3+dqcrE=;
+ b=rQqtTKXdPVo6Eoq3FFof6hAdtDwHgqK1IVhJODy/fosM8ucmnTCqz1cq+re9sBth/Y
+ V8n+r155eG/N62mEWenXa+K8+FlzyRRQa0rFPBCSEa35vWJ4EiCJhfTDda6zkgpSVnzX
+ g0pK6uhBfU4goVvx8NNswSJyMfxgZ8M+WvqnVutc1Udr0mcoVKkfYpMY6QCOtSh+noep
+ ++REk6CoJ9/43m3x3kkHcMvpln9D9naUyGwHH5wULld0af0WAiJPGzuZNPbLWos4ZqNf
+ fc1iufWdpegcidmNSs2NVdPL0ZYy+HmGfT3KBeTaObQvI/ZRh4sVvFcJ75tNPC7oitFC
+ lEJA==
+X-Gm-Message-State: AGi0PuanVlZ3/9SgXe8PltKju5J6oTKcWZiHlQ+qCcUyo9/2XXwKkO3U
+ EipD15/E8Js/0Qwf65HsP1n1Rw==
+X-Google-Smtp-Source: APiQypICdYm6q0coCTYrsv14gsmy5w38/NkkWNMU1pnmoJaS64rsgzMhP/NsIK7fGIEASWdkxrRSyQ==
+X-Received: by 2002:a5d:42c9:: with SMTP id t9mr24850040wrr.246.1589276364767; 
+ Tue, 12 May 2020 02:39:24 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
  by smtp.gmail.com with ESMTPSA id
- 81sm14037092wme.16.2020.05.12.02.39.22
+ 81sm14037092wme.16.2020.05.12.02.39.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 02:39:22 -0700 (PDT)
+ Tue, 12 May 2020 02:39:24 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 1/2] arm64: dts: meson-g12b: move G12B thermal nodes to
- meson-g12b.dtsi
-Date: Tue, 12 May 2020 11:39:15 +0200
-Message-Id: <20200512093916.19676-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/2] arm64: dts: meson-sm1: add cpu thermal nodes
+Date: Tue, 12 May 2020 11:39:16 +0200
+Message-Id: <20200512093916.19676-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200512093916.19676-1-narmstrong@baylibre.com>
 References: <20200512093916.19676-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_023924_958375_CA24D29D 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200512_023926_395241_A0B84CED 
+X-CRM114-Status: GOOD (  11.53  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,55 +101,52 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The G12B thermal nodes should be in the meson-g12b.dtsi file.
+Add thermal nodes for the Amlogic SM1 SoCs based on the G12A and G12B
+thermal nodes.
 
-Fixes: 195f140318a9 ("arm64: dts: meson: g12b: add cooling properties")
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12.dtsi  | 23 ---------------------
- arch/arm64/boot/dts/amlogic/meson-g12b.dtsi | 22 ++++++++++++++++++++
- 2 files changed, 22 insertions(+), 23 deletions(-)
+ arch/arm64/boot/dts/amlogic/meson-sm1.dtsi | 24 ++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-index 783e5a397f86..e932205badea 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12.dtsi
-@@ -355,29 +355,6 @@
- 	};
- };
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+index d4ec735fb1a5..71317f5aada1 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+@@ -56,6 +56,7 @@
+ 			reg = <0x0 0x0>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
  
--&cpu_thermal {
--	cooling-maps {
--		map0 {
--			trip = <&cpu_passive>;
--			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
--		};
--		map1 {
--			trip = <&cpu_hot>;
--			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
--					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
--		};
--	};
--};
--
- &ethmac {
- 	power-domains = <&pwrc PWRC_G12A_ETH_ID>;
- };
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
-index 6dbc3968045b..9b8548e5f6e5 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b.dtsi
-@@ -113,3 +113,25 @@
- 	compatible = "amlogic,g12b-clkc";
+ 		cpu1: cpu@1 {
+@@ -64,6 +65,7 @@
+ 			reg = <0x0 0x1>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		cpu2: cpu@2 {
+@@ -72,6 +74,7 @@
+ 			reg = <0x0 0x2>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		cpu3: cpu@3 {
+@@ -80,6 +83,7 @@
+ 			reg = <0x0 0x3>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&l2>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		l2: l2-cache0 {
+@@ -466,6 +470,26 @@
+ 	compatible = "amlogic,sm1-clkc";
  };
  
 +&cpu_thermal {
@@ -158,23 +154,24 @@ index 6dbc3968045b..9b8548e5f6e5 100644
 +		map0 {
 +			trip = <&cpu_passive>;
 +			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++					<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 +		};
++
 +		map1 {
 +			trip = <&cpu_hot>;
 +			cooling-device = <&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu102 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
-+					 <&cpu103 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++					<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&cpu2 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++					<&cpu3 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
 +		};
 +	};
 +};
++
+ &ethmac {
+ 	power-domains = <&pwrc PWRC_SM1_ETH_ID>;
+ };
 -- 
 2.22.0
 
