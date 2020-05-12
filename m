@@ -2,59 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B64C41CF315
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:09:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F10231CF320
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:11:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/GMwxSa9TV8fFTMxDoXB9Kkfrw2vWti3KqReQAnzOgQ=; b=cjCrVSX4qdE/dZ
-	dHXLjS3RYqcNE3KYPYuv0ULjgxjAhklE1N1BXrbcHR+9SEKOt5OwttuFfzGjpvExxy8kL4Q0cL3aE
-	k7MsYOnrU258YMVW7uo3eGafaW+/3GtOawFSsa2sm2WJu8m9C+xd9U5lkYS0hU/Q+R4dJTdZyDcmp
-	poI7kWuhsWHEIB/9r1QwVlbiq7XxPpB37iGjyut3YZnN1gY7zwok6uRtzLK922F54r7FkO9AAoUrv
-	jMIvg0mrUrsj7tjR6XOTtG3LJJ999KnbMNfbP8p+crgOSi9LCdSZffmWlrcExgY64zoe7ZEQ3r4Qk
-	ZuSOhR4+KCpFvC3M7A+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sLIEMI28NftzIudibaO4Pp1uQABlOHmlXwTT1YFiAm4=; b=qJ861Pl0CyEJR72HdsSL4fERc
+	U6Azsd0nMIyuqAv/+2yg2uMInnqhLePDio79beJ2C8P+jMM4yJTmaC5MIEblDZNFC/pMyhNPP8c1Q
+	/WC9C7Z9CevPbpBKSs8BXOVKcVo5reXv1o577/V2bKzRx79zgr7qCJQvFEGx1m4EVSi6Bd/jLqxqo
+	OB7ulJcs2Eyak7NShe8NvPhHGRaPry1Z9oKGNoX93PyErDmzh5olOSE6lhRXuEScK2wNwO7+TxjBd
+	M88ogQvz6IFroW4csr3Qfxuh9iPO4vWijhwENHK1zvrkNry4mfUFyTF+vRTIvG69zbhaCoUXP0DPB
+	4k7rXUloQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYSmS-0004S7-27; Tue, 12 May 2020 11:09:00 +0000
-Received: from mail-m17613.qiye.163.com ([59.111.176.13])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYSmH-0004RH-Dn
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 11:08:51 +0000
-Received: from ubuntu.localdomain (unknown [157.0.31.122])
- by mail-m17613.qiye.163.com (Hmail) with ESMTPA id 06A8A482D55;
- Tue, 12 May 2020 19:08:39 +0800 (CST)
-From: Bernard Zhao <bernard@vivo.com>
-To: Lukasz Luba <lukasz.luba@arm.com>, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-pm@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH v2] memory/samsung: reduce unnecessary mutex lock area
-Date: Tue, 12 May 2020 04:08:27 -0700
-Message-Id: <20200512110827.39475-1-bernard@vivo.com>
-X-Mailer: git-send-email 2.26.2
+	id 1jYSop-0007Fh-SZ; Tue, 12 May 2020 11:11:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYSoh-0007FC-GJ; Tue, 12 May 2020 11:11:20 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9E0930E;
+ Tue, 12 May 2020 04:11:18 -0700 (PDT)
+Received: from [10.37.12.83] (unknown [10.37.12.83])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BB2703F71E;
+ Tue, 12 May 2020 04:11:08 -0700 (PDT)
+Subject: Re: [PATCH v7 03/15] PM / EM: update callback structure and add
+ device pointer
+To: Quentin Perret <qperret@google.com>
+References: <20200511111912.3001-1-lukasz.luba@arm.com>
+ <20200511111912.3001-4-lukasz.luba@arm.com>
+ <20200511115722.GA13741@google.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <a2c20b82-58e3-a2ef-2d8d-edbaf05277ec@arm.com>
+Date: Tue, 12 May 2020 12:11:06 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-X-HM-Spam-Status: e1kfGhgUHx5ZQUtXWQgYFAkeWUFZT1VITEtCQkJDSkhLTEJDSFlXWShZQU
- hPN1dZLVlBSVdZCQ4XHghZQVk1NCk2OjckKS43PlkG
-X-HM-Sender-Digest: e1kMHhlZQR0aFwgeV1kSHx4VD1lBWUc6Nj46LCo*UTg8GTJWFAI1Sk1P
- OjYKCRNVSlVKTkNCSUNKTElJSUNDVTMWGhIXVRkeCRUaCR87DRINFFUYFBZFWVdZEgtZQVlKTkxV
- S1VISlVKSUlZV1kIAVlBSUlPTjcG
-X-HM-Tid: 0a720892839793bakuws06a8a482d55
+In-Reply-To: <20200511115722.GA13741@google.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_040849_618809_38FE7E6F 
-X-CRM114-Status: UNSURE (   7.66  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200512_041119_585938_150368EE 
+X-CRM114-Status: GOOD (  16.73  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [59.111.176.13 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [59.111.176.13 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -68,52 +65,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com, Bernard Zhao <bernard@vivo.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, juri.lelli@redhat.com, peterz@infradead.org,
+ viresh.kumar@linaro.org, liviu.dudau@arm.com, dri-devel@lists.freedesktop.org,
+ bjorn.andersson@linaro.org, bsegall@google.com,
+ alyssa.rosenzweig@collabora.com, festevam@gmail.com, mka@chromium.org,
+ robh@kernel.org, amit.kucheria@verdurent.com, lorenzo.pieralisi@arm.com,
+ khilman@kernel.org, agross@kernel.org, daniel.lezcano@linaro.org,
+ steven.price@arm.com, cw00.choi@samsung.com, mingo@redhat.com,
+ linux-imx@nxp.com, rui.zhang@intel.com, mgorman@suse.de, orjan.eide@arm.com,
+ daniel@ffwll.ch, linux-pm@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ s.hauer@pengutronix.de, rostedt@goodmis.org,
+ linux-mediatek@lists.infradead.org, matthias.bgg@gmail.com,
+ linux-omap@vger.kernel.org, Dietmar.Eggemann@arm.com,
+ linux-arm-kernel@lists.infradead.org, airlied@linux.ie,
+ tomeu.vizoso@collabora.com, sboyd@kernel.org, rdunlap@infradead.org,
+ rjw@rjwysocki.net, linux-kernel@vger.kernel.org, b.zolnierkie@samsung.com,
+ kernel@pengutronix.de, sudeep.holla@arm.com, patrick.bellasi@matbug.net,
+ shawnguo@kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Maybe dmc->df->lock seems not needed to protect "if (ret)
-& dev_warn" branch. Maybe this change speed up the code a bit.
+Hi Quentin,
 
-Signed-off-by: Bernard Zhao <bernard@vivo.com>
-----
-Changes since v1:
-*change release lock before the if statement.
-*revert dmc->df->lock mutex lock to protect function
-exynos5_dmc_perf_events_check
-Link for V1:
-*https://lore.kernel.org/patchwork/patch/1238888/
----
- drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
+On 5/11/20 12:57 PM, Quentin Perret wrote:
+> On Monday 11 May 2020 at 12:19:00 (+0100), Lukasz Luba wrote:
+>> diff --git a/drivers/cpufreq/scmi-cpufreq.c b/drivers/cpufreq/scmi-cpufreq.c
+>> index 61623e2ff149..11ee24e06d12 100644
+>> --- a/drivers/cpufreq/scmi-cpufreq.c
+>> +++ b/drivers/cpufreq/scmi-cpufreq.c
+>> @@ -103,17 +103,12 @@ scmi_get_sharing_cpus(struct device *cpu_dev, struct cpumask *cpumask)
+>>   }
+>>   
+>>   static int __maybe_unused
+>> -scmi_get_cpu_power(unsigned long *power, unsigned long *KHz, int cpu)
+>> +scmi_get_cpu_power(unsigned long *power, unsigned long *KHz,
+>> +		   struct device *cpu_dev)
+>>   {
+>> -	struct device *cpu_dev = get_cpu_device(cpu);
+>>   	unsigned long Hz;
+>>   	int ret, domain;
+>>   
+>> -	if (!cpu_dev) {
+>> -		pr_err("failed to get cpu%d device\n", cpu);
+>> -		return -ENODEV;
+>> -	}
+>> -
+>>   	domain = handle->perf_ops->device_domain_id(cpu_dev);
+>>   	if (domain < 0)
+>>   		return domain;
+>> @@ -200,7 +195,7 @@ static int scmi_cpufreq_init(struct cpufreq_policy *policy)
+>>   
+>>   	policy->fast_switch_possible = true;
+>>   
+>> -	em_register_perf_domain(policy->cpus, nr_opp, &em_cb);
+> 
+> So this one has no users after this patch right? I suppose you could
+> squash patch 05 in this one. But no big deal.
 
-diff --git a/drivers/memory/samsung/exynos5422-dmc.c b/drivers/memory/samsung/exynos5422-dmc.c
-index 22a43d662833..25196d6268e2 100644
---- a/drivers/memory/samsung/exynos5422-dmc.c
-+++ b/drivers/memory/samsung/exynos5422-dmc.c
-@@ -1346,15 +1346,13 @@ static irqreturn_t dmc_irq_thread(int irq, void *priv)
- 	struct exynos5_dmc *dmc = priv;
- 
- 	mutex_lock(&dmc->df->lock);
--
- 	exynos5_dmc_perf_events_check(dmc);
--
- 	res = update_devfreq(dmc->df);
-+	mutex_unlock(&dmc->df->lock);
-+
- 	if (res)
- 		dev_warn(dmc->dev, "devfreq failed with %d\n", res);
- 
--	mutex_unlock(&dmc->df->lock);
--
- 	return IRQ_HANDLED;
- }
- 
--- 
-2.26.2
+Yes, it was tricky to me to decide the splits suggested by Daniel and
+this is the example. I had to introduce the em_dev_register_perf_domain
+and make clients of it before I remove the old em_register_perf_domain
+completely. I agree it could also go with the patch 5, but it does not
+harm to be here.
 
+> 
+> Acked-by: Quentin Perret <qperret@google.com>
+
+Thank you for this ACKs and the earlier.
+
+Regards,
+Lukasz
+
+> 
+>> +	em_dev_register_perf_domain(cpu_dev, nr_opp, &em_cb, policy->cpus);
+>>   
+>>   	return 0;
 
 _______________________________________________
 linux-arm-kernel mailing list
