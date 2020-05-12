@@ -2,69 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6A311CF822
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:58:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E238D1CF844
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 17:02:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lQBSpQXnRJ/iHOE9Qevvdsbn+MYlxqCYvv3Q3Xbds8I=; b=OGVXik1hsrN1vb
-	/BKS3p37zGOsIdzlnu+27Q/njzBlpbccGp6B34IdM1unsAKu7ItVkCUEnuwt/YQnlaM6EXPgHpSMY
-	c6pM5NDOqa/zyppH/vD78yAOESmDLKy1fnhAj8unZbkoBkiQyCCecrkp03AZt4N+hLs0VlE4ooYQw
-	HnMr9BK0wsJVJxx4Q9aWsJ6Rchqi7fMLCtrRvSb+Av++Bz4w96ICNqjaCoaJaWUGknxrmz1xPqvcl
-	lFQVrwguXyXvWUnix3SFbLYa2OHzxQKWQYuuFxB+rkni15vgQINRyBbfMQdNYAiq+ogexH6+YrF7j
-	gIeOucxaGYm3yr8U7fhQ==;
+	List-Owner; bh=N4dFTvtvxtb59/hYyRBopZJlOB/R0c9TfaX6kZUBAoI=; b=gmkaX4SBm6MoGi
+	xeLlQ7YPv3AL/FYOmBtEER/+Q7PrkGdoPXh2QxmN2Cx5qkSaJlfL7KlJsmpRsCmOeRkqI9D05WN69
+	5ZKcsoW22JJj0ibIisdIDRlFplaYpnYSRfVu49yWVK5iLFANBuaclauQy6v59cfl80/khqB7e1raB
+	28VyHWuxSOoA/ozh1ybDHdR3zEr4NhprT4IAoXhzaegid+yklcutV5ABsIhi/MkkzFWKyRaqoBqWl
+	iU76DyCOmbH7IUn+RZdovs03OU9qhnrrFKnWdOH9RNCYBSPJscB8+7t+9u0fmVmwwiyjJvAIYc3Bi
+	f10GHyrbbMJtilU5f0VQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYWM1-0005oX-E8; Tue, 12 May 2020 14:57:57 +0000
+	id 1jYWQo-0001DV-3z; Tue, 12 May 2020 15:02:54 +0000
 Received: from mail-oi1-f193.google.com ([209.85.167.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYWLo-0005o4-D2
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:57:45 +0000
-Received: by mail-oi1-f193.google.com with SMTP id c124so18239723oib.13
+ id 1jYWOm-0000zN-84
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 15:00:49 +0000
+Received: by mail-oi1-f193.google.com with SMTP id a2so18272955oia.11
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 07:57:42 -0700 (PDT)
+ Tue, 12 May 2020 08:00:48 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0RjlmR6YuJe5OFTdNqr/waaHWAV5lpqikYC4DfnGsDg=;
- b=B0RWHyVfMduzAGUrgFw8VzwM/MRIO5spNSS1fncrn+fer0URcbrld1fc6uOyZNHATE
- H1QFRsr9zokM63Z8xvMWNq4j/570euKO2MIWE2UNkS1XsFs0GkU/yJ+7rZVzXV1NfdRf
- UBPwVtRRjuTeUigZXpzAKSaUM9LG2F0r2YCvAASHbFOGYSODvEJdexakKw4rNHTzVwKJ
- Wilcw1XFV6JPWrBP8OdzphSv9uEN5/YtJ06CQUZya5G5v5tAcFWpdZDLn4eB5XO8QGHC
- 5zjpYUmfa3vMUf9IH2xXt0c+uqEZs3IginGS6phd5exQ5a3dZ9cbTSDt8AwvntTnWCtL
- p3BQ==
-X-Gm-Message-State: AGi0PuZvzEQx58IYQ2FgowUZn2ee79jEIr82TjistuqyMtWrx2lsaEJI
- 4SOrJ+kaaYtNtxrXN2N0DQ==
-X-Google-Smtp-Source: APiQypK611Fjk8XOJF2hXT2tzKw9uv0/tp3+vM3Z12fb7KSgcfstQYqV42iyNBPHT0pWjJ1kOCMV3A==
-X-Received: by 2002:aca:816:: with SMTP id 22mr22840562oii.51.1589295462251;
- Tue, 12 May 2020 07:57:42 -0700 (PDT)
+ bh=K2qEAhn3BL894xmtaV/upHqpgOLZLhF17B7mhH3SLdw=;
+ b=JlkkNHUYkIpGQbw+uyQxF1vrhUJsEqOYiCLFQyqZBxyEuiMcLEuiN6pvw8OWost/E8
+ cAUOhrYaerU/RziRBH1FvwTLUW59bsvYGD8KbDX6KUeaUxqpABuXVjkBzlkz435bQf8Y
+ YQlcTuX8TioB6dwfkPJ7SQcMpEke4/Gaky2guJH57tD530/f1YPtguIl+7D60M76kmTp
+ Aw8jr58e5gjLtEE4mBvZL4RX5pKZ2mS9t9xUZ42O/Mk88YJtu4iEZUs8NkSRTpQxxpJy
+ GDa4NgYmOoRrCWSPyOPr46VtqotviiOhmdaolzB9tuAzo8tN0piM2HNGdk7ho5QEoTIT
+ OxCg==
+X-Gm-Message-State: AGi0PuZCgkju0NBtaBoYO/qDZRqER/8htQkGEVt2XXHmnEOOd/XE5wox
+ cxxNrCEH3S9ywtC5LWFyDQ==
+X-Google-Smtp-Source: APiQypKZIkofztkq59hpBx1iHRg0VN9CZze8uMwIbm08YX4fu5XJHMAkcofCOlv4ErOSk8Lh5NqzAg==
+X-Received: by 2002:a05:6808:8ed:: with SMTP id
+ d13mr22974291oic.149.1589295647581; 
+ Tue, 12 May 2020 08:00:47 -0700 (PDT)
 Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m27sm220241oom.22.2020.05.12.07.57.41
+ by smtp.gmail.com with ESMTPSA id c25sm3476892otp.50.2020.05.12.08.00.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 07:57:41 -0700 (PDT)
-Received: (nullmailer pid 4113 invoked by uid 1000);
- Tue, 12 May 2020 14:57:40 -0000
-Date: Tue, 12 May 2020 09:57:40 -0500
+ Tue, 12 May 2020 08:00:46 -0700 (PDT)
+Received: (nullmailer pid 8751 invoked by uid 1000);
+ Tue, 12 May 2020 15:00:46 -0000
+Date: Tue, 12 May 2020 10:00:46 -0500
 From: Rob Herring <robh@kernel.org>
-To: Anson Huang <anson.huang@nxp.com>
-Subject: Re: [PATCH V4 1/5] dt-bindings: clock: Convert i.MX6Q clock to
- json-schema
-Message-ID: <20200512145740.GB25671@bogus>
-References: <1588207921-20604-1-git-send-email-Anson.Huang@nxp.com>
- <158865854354.11125.10611865219975766594@swboyd.mtv.corp.google.com>
- <DB3PR0402MB39164125CABC889C5DEE5D8AF5A70@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Subject: Re: [PATCH v2] dt-bindings: thermal: Convert UniPhier thermal
+ monitor to json-schema
+Message-ID: <20200512150046.GA8622@bogus>
+References: <1588215934-13252-1-git-send-email-hayashi.kunihiko@socionext.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <DB3PR0402MB39164125CABC889C5DEE5D8AF5A70@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <1588215934-13252-1-git-send-email-hayashi.kunihiko@socionext.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_075744_444770_F4170497 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20200512_080048_285782_E26C8F47 
+X-CRM114-Status: GOOD (  10.94  )
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -95,45 +94,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- Stephen Boyd <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Amit Kucheria <amit.kucheria@verdurent.com>,
+ linux-pm@vger.kernel.org, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Rob Herring <robh+dt@kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 05, 2020 at 11:32:42AM +0000, Anson Huang wrote:
-> Hi, Stephen
+On Thu, 30 Apr 2020 12:05:34 +0900, Kunihiko Hayashi wrote:
+> Convert the UniPhier thermal monitor binding to DT schema format.
 > 
+> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+> ---
 > 
-> > Subject: Re: [PATCH V4 1/5] dt-bindings: clock: Convert i.MX6Q clock to
-> > json-schema
-> > 
-> > Quoting Anson Huang (2020-04-29 17:51:57)
-> > > Convert the i.MX6Q clock binding to DT schema format using json-schema.
-> > >
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > ---
-> > 
-> > Please send a cover letter next time. Who is going to apply these patches? I
-> > hope Rob? If you need an acked-by feel free to have mine!
+> Changes since v1:
+> - Add maxItems to "socionext,tmod-calibration" property
+> - Fix indents in examples
 > 
-> OK, will have a cover letter next time for patch series.
+> .../thermal/socionext,uniphier-thermal.yaml        | 59 ++++++++++++++++++++
+>  .../bindings/thermal/uniphier-thermal.txt          | 65 ----------------------
+>  2 files changed, 59 insertions(+), 65 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/thermal/socionext,uniphier-thermal.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/thermal/uniphier-thermal.txt
 > 
-> Hi, Rob
-> 	Are you going to apply this patch series? If no, can you advise who can apply it, thanks.
 
-Yes, respin fixing interrupts in all the patches.
-
-Rob
+Applied, thanks!
 
 _______________________________________________
 linux-arm-kernel mailing list
