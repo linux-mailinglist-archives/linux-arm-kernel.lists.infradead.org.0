@@ -2,100 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C73B1CF3EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:03:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09AB61CF3EB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:01:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=94s5yptZDLwSHb8kSi6BOe+TQhuGmotlHqv3KFXLxnA=; b=SByZs+kfsRKxQ1
-	edxuyRnZp9DwJSqXAZ6HzDPWzoihxXYtqwloliwVzxLhBokHVhzmZtJRY898uRLblvWzzRMLJxJE/
-	o9SPrJGJZqr1Y7Q9Hws942J47bINiMu9KTNi0ANFGitzKEZ49sc5d2w9B6sWqwcJjjYhBNLPUc7Mb
-	g1NM8L0EdRF5XSW2DmDSUjXb8fvPErBXadBNY8JZ4TY9wP7sBX3zFjXGuVVliyMn/xz1TlTD772wz
-	8ThbuBGPotiRV+FRXeFhvBYLYnCIfHQjOJ2VSwabbXhWqMpJgOO+AM8YgzF8MI9Nju8oUmE3kttl/
-	YiVg5MqMD1eZVN5Hh9sg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+Io8w8fzJzZj+R37+YAF1dxclgRZ9nmolnZ4XRVWQ34=; b=cK6aLda18n0ZoICIL3k2p6Ew8
+	3BPSOTvbgzMAIk+FCctpf/NntGpd4fdaWBRl9vVo4qhG+74cps6Ud+Lzq1YKCdk+zgBfeXKG8ES9c
+	FgJ7zmFauoV4pQMQOo1uYQJGFhOPWEX3MCwi/1+BAjJj7E1hbaKjsKvMEMpXUGympP65RALsynAAX
+	QJsP7+eD+nXtrpruQgZHvPAEnIXmdRD97Mst/OVrh49ghPKqX62LeJTHgXzCFk/TDAx/oXk0JoQjW
+	AQp/SflXV0Ez+nOBMvwWyvCYVPRrm2x6ks+Xg0pH4MfM6RRQGtuBcMH9axP8TT0qkRZDtqU7bfFrp
+	UaasS0f1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYTdA-0001EF-3p; Tue, 12 May 2020 12:03:28 +0000
-Received: from out02.mta.xmission.com ([166.70.13.232])
+	id 1jYTaw-0000aB-E7; Tue, 12 May 2020 12:01:10 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYTd1-0001DZ-52; Tue, 12 May 2020 12:03:20 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out02.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.90_1)
- (envelope-from <ebiederm@xmission.com>)
- id 1jYTcs-0000tl-L0; Tue, 12 May 2020 06:03:10 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1jYTcr-0007id-TX; Tue, 12 May 2020 06:03:10 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: David Hildenbrand <david@redhat.com>
-References: <20200501165701.24587-1-james.morse@arm.com>
- <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
- <8736892l92.fsf@x220.int.ebiederm.org>
- <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
- <87h7wmtna1.fsf@x220.int.ebiederm.org>
- <4d5f69b6-fdfd-a461-0ac9-6d05636508f1@redhat.com>
-Date: Tue, 12 May 2020 06:59:38 -0500
-In-Reply-To: <4d5f69b6-fdfd-a461-0ac9-6d05636508f1@redhat.com> (David
- Hildenbrand's message of "Tue, 12 May 2020 09:45:16 +0200")
-Message-ID: <87sgg5s6s5.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1jYTao-0000Zm-Pw
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 12:01:04 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E3FF12072B;
+ Tue, 12 May 2020 12:01:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589284862;
+ bh=+19p5XIcv3Fn8caYpHgMAXmURP1D09S+oPCvaWwp5Gg=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=pdH9g8V1Wnza/+RRyA0E3HwWZfJuCA+O0RftPzXYidnRyEOmrg+fqVeFnT15HYN5E
+ ao+bvWJv0ZYbdtEdWoQQuVRYU2KT2eY86F+B0XR3uxEwtaeu4QX3m1pS8i7MA30Bwi
+ RFK73wwaeCQHOsM0YJ3lmZg+4a0fwVQEDHE0Mh4k=
+Date: Tue, 12 May 2020 13:00:59 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: kconfig: Update and comment GCC version check for
+ kernel BTI
+Message-ID: <20200512120059.GF5110@sirena.org.uk>
+References: <20200512115458.4985-1-will@kernel.org>
 MIME-Version: 1.0
-X-XM-SPF: eid=1jYTcr-0007id-TX; ; ; mid=<87sgg5s6s5.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX1/rnctvPahPVR1lDa2sHTDjDmoQMCyCAbM=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa07.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG autolearn=disabled
- version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.4981]
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa07 0; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: ; sa07 0; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;David Hildenbrand <david@redhat.com>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 286 ms - load_scoreonly_sql: 0.06 (0.0%),
- signal_user_changed: 11 (3.7%), b_tie_ro: 9 (3.3%), parse: 1.37 (0.5%),
- extract_message_metadata: 3.1 (1.1%), get_uri_detail_list: 0.78
- (0.3%), tests_pri_-1000: 3.5 (1.2%), tests_pri_-950: 1.24 (0.4%),
- tests_pri_-900: 1.00 (0.3%), tests_pri_-90: 81 (28.1%), check_bayes:
- 79 (27.4%), b_tokenize: 8 (2.8%), b_tok_get_all: 6 (2.1%),
- b_comp_prob: 3.0 (1.0%), b_tok_touch_all: 57 (20.0%), b_finish: 1.04
- (0.4%), tests_pri_0: 166 (58.0%), check_dkim_signature: 0.51 (0.2%),
- check_dkim_adsp: 3.1 (1.1%), poll_dns_idle: 0.62 (0.2%), tests_pri_10:
- 2.2 (0.8%), tests_pri_500: 8 (2.9%), rewrite_mail: 0.00 (0.0%)
-Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
+In-Reply-To: <20200512115458.4985-1-will@kernel.org>
+X-Cookie: The only perfect science is hind-sight.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_050319_192332_393FA3D2 
-X-CRM114-Status: UNSURE (   7.00  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200512_050102_861692_9898D85C 
+X-CRM114-Status: GOOD (  12.14  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.232 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [166.70.13.232 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,40 +77,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
- James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3264054940793631942=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-David Hildenbrand <david@redhat.com> writes:
->> 
->> Maybe we have enough information to fixup the loaded kexec image
->> in the kexec_file_load case, we certainly don't in the ordinary
->> kexec_load case.
->
-> Yes, that's also what I mentioned in my reply to Baoquan.
->
->> 
->> For now I want to stick to the simplest thing we can do which is either
->> blocking the memory hotplug operation (if that is possible) or
->> dropping the loaded kexec image.
->
-> Yes, the latter is the best for now. It's simple.
->
-> I am suggesting to add explicit callbacks to
-> add_memory()/remove_memory(), and calling the invalidation from there -
-> because I see various issues with the memory notifier approach (racy,
-> false positives, never called if memory is not onlined).
 
-Ok so we are in agreement.  Correct patch.  Wrong trigger condition.
+--===============3264054940793631942==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="qftxBdZWiueWNAVY"
+Content-Disposition: inline
 
-Eric
 
+--qftxBdZWiueWNAVY
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Tue, May 12, 2020 at 12:54:58PM +0100, Will Deacon wrote:
+> Some versions of GCC are known to suffer from a BTI code generation bug,
+> meaning that CONFIG_CC_HAS_BRANCH_PROT_PAC_RET_BTI cannot be solely used
+> to determine whether or not we can compile with kernel with BTI enabled.
+>=20
+> Update the BTI Kconfig entry to refer to the relevant GCC bugzilla entry
+> (https://gcc.gnu.org/bugzilla/show_bug.cgi?id=3D94697) and update the che=
+ck
+> now that the fix has been merged into GCC release 10.1.
+
+Acked-by: Mark Brown <broonie@kernel.org>
+
+There wasn't a GCC 10.0 release, I was a little surprised at the
+numbering of the initial GCC 10 release.
+
+--qftxBdZWiueWNAVY
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl66j/sACgkQJNaLcl1U
+h9AR4Qf9F1XxE+Vn56m2unciMxlXr0EAz8M39EVa7HnGDcyTpVVF+x6QwCn/9h6K
+PdvR8LmyNzPhjQn1FbZDj4n0E7VXIP+/Lblb7JAhsb8C+DKjQVQPi/08Q60EAsEg
+zVF1eBMkZuTzxuQzu7luX89+8LR3hFw4Qx5MaRumsCLQCmG9Hd7tnVMNOqyoAR34
+pUKyIfnP6S/qVpBFpiNYpNLMj0UxcO/BWAvWryERVqeSPsIUhOvfIUay3gNgz1bU
+Y3uQQgZ8ryEmlgktAk3nWnrOcTLPXRqBwf4TFHGLVSlMR2cB2Jvu/Gw14vu0BLij
+9Bei3S4uNdzoBZ+8ePvuujBz+7lPxw==
+=U/Qc
+-----END PGP SIGNATURE-----
+
+--qftxBdZWiueWNAVY--
+
+
+--===============3264054940793631942==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3264054940793631942==--
+
