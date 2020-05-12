@@ -2,112 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90B791CFE98
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 21:45:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7A011CFEB2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 21:50:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a9+qjO/nzt8At8pdAgoYob35Gz2DCZr3mtlzrSVQzqo=; b=CPvB04Ai+vw9f4
-	ZCoIRoJRTemXT6IhXtz8Bb9ZHqnvHzAaqzRkQ0BbpJ7MZRiDlKXPl6RhJBlb50Bo77eAAzdySjddZ
-	K7hOAobsoJImnMY/6IukdT1zgsgOuaocl1tujlxBvr3Wy4I8tJcL3a0CyOzl6ZiT5YACgULiwtk30
-	YACUsii+/AIZrE5yH4EbDjVyiT4WLlq47EoPfbYgwctFX7cE3y+80WK32qrJJn3fOABkuI4RDyetZ
-	u+5pqgxNRoGIQaJUyU4aSlThqdbCe2oIh9Iz1bPUHxNtqwa7bLwrFb3Wg+wa3HTXpK2P3uUb8/gns
-	SZoZAgf3Pdmbgm4mLsGg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ee+6OQrg66KxaNUyyJBKNYjW7EkFd6aXDgkzJC30JZc=; b=VFqwOGINNaqEBX
+	QLf93yg4A+SqDklRTYScHQKoVOfhs8vgyKweJum4UGQEnWVgwUJW3IzaN9LqiYHVBTmD6gDLXuS4E
+	XzFB9gwiprJY4/TjggHPDyFqjRXjiSVFn9IGUn5fxL/iadw0oREuMKukifGiy4XOrk9Tu5EcMoVEC
+	/Fnkmx0pN+GCueM0UzEqUuGeC/fLVoqLqmkN2jKlVsDawjw3uavX/udORGYR29F7I6LLkoDfYMI/n
+	lbg1XRcEw4XLB42+2/79QM3BvBkvU8QI8PJfRXqvimfd2dE32pu6lhr8IY4YwRJTwxBUi3+wT/OiM
+	cyrKKZ8yIwpxIATvsKrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYaqU-0001Go-Cy; Tue, 12 May 2020 19:45:42 +0000
-Received: from avon.wwwdotorg.org ([104.237.132.123])
+	id 1jYav6-0004DZ-PQ; Tue, 12 May 2020 19:50:28 +0000
+Received: from mout.kundenserver.de ([212.227.126.187])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYaqK-0001Ev-LV
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 19:45:34 +0000
-Received: from [10.2.57.154] (searspoint.nvidia.com [216.228.112.21])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by avon.wwwdotorg.org (Postfix) with ESMTPSA id C66151C044A;
- Tue, 12 May 2020 13:45:29 -0600 (MDT)
-X-Virus-Status: Clean
-X-Virus-Scanned: clamav-milter 0.102.2 at avon.wwwdotorg.org
-Subject: Re: [PATCH 2/4] dt-bindings: sram: add documentation for
- reserved-only flag
-To: Mian Yousaf Kaukab <ykaukab@suse.de>
-References: <20200512144803.24344-1-ykaukab@suse.de>
- <20200512144803.24344-2-ykaukab@suse.de>
-From: Stephen Warren <swarren@wwwdotorg.org>
-Autocrypt: addr=swarren@wwwdotorg.org; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <52f099e4-5c03-2141-f049-cd3adeb04c5b@wwwdotorg.org>
-Date: Tue, 12 May 2020 13:45:28 -0600
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jYauz-0004Co-JI
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 19:50:23 +0000
+Received: from mail-qk1-f169.google.com ([209.85.222.169]) by
+ mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1MyK9U-1jBG6P1YUO-00ygF4 for <linux-arm-kernel@lists.infradead.org>; Tue,
+ 12 May 2020 21:50:17 +0200
+Received: by mail-qk1-f169.google.com with SMTP id n14so14969746qke.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 12:50:16 -0700 (PDT)
+X-Gm-Message-State: AOAM530x8RIFLxBsZV8bxAbSX66WqVMGRSekju+WVZokISWw3yWs0xak
+ be80AmIl7uJzxlVNrZ+O/J3D1/njQa2ryEzc4Dg=
+X-Google-Smtp-Source: ABdhPJwKJd3U0klcU7IDRjkuleiIc4wPNOMiOc0saxTFEWTaSUun13tPHi7rCexv4xkXDUCA3EAbyG/iGjnOgQ+uULY=
+X-Received: by 2002:a37:bc7:: with SMTP id 190mr2657025qkl.286.1589313016016; 
+ Tue, 12 May 2020 12:50:16 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200512144803.24344-2-ykaukab@suse.de>
-Content-Language: en-GB
+References: <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
+ <20200414151748.GA5624@afzalpc>
+ <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
+ <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
+ <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ <20200504091018.GA24897@afzalpc>
+ <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+ <20200511142113.GA31707@afzalpc>
+ <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
+ <20200512104758.GA12980@afzalpc>
+In-Reply-To: <20200512104758.GA12980@afzalpc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 12 May 2020 21:49:59 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+Message-ID: <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+Subject: Re: ARM: static kernel in vmalloc space
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+X-Provags-ID: V03:K1:7r4DKUu9SULWSnzvWVGFU22Vfza6vBRPyMDLsRSCIAuGV8JEWHW
+ b0nmjtdB4/Ck5qyJHeIcwz1hyWOCPbC1SkiOWzDSUv4zgt3Lfv+Y97pudL0/w3I6ih/SZg5
+ 5vil0rTKO5BKAxCC0brXn2g3uP74myD6L0E24OO6/43OxE4+Gch3eTwgwSoo4myZVlShPnZ
+ fDYIxZPMhx1FRyh1a6XRQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ynyngGcTjVc=:uRZ2odVKYWibpUbT+AeD6D
+ GJ7t2KBiIeGEe+9vNcGM9Je7o7UhrdYML/gPGWa65JUEmwrRb7PcCTFTxTJM5hadUOp8ehBYf
+ BecII/2XEa1w33CUOoJrH1H70u2afTr6+B+pL0L6UQQ17KmRCraD0ZnHq6zcFjslUMZAsYlCB
+ E8FWeIKegJKybr4ErMeJrUVSCMBFexyp0/Gg7lJSv0CZklPMpc8WuMfHc3G6XUKXr9zTP+KQU
+ qg7iphDV/uiGxF6pJX8g+yOkkDUQ0TIFiEUbOSxI6mqDp3KTKHXKeKDjbdhk/BkrWmLdW7Ch2
+ rB96XTrLQ+N2gWNbGl6E4Er0Q0VY2hBBIQoNpSmxPZv+Z0bcHfxTjBQGOO6rVLXm7tm/X2aCV
+ rEkg4N/OHSckQ/5F23oYG1ER92iLg9meXi6sPDwZ8CCtZX3/wyEc5uR9jidzOZynBX5jWvVZa
+ O1KO1v7fj0jibHhwcvnlVdPC9i/D4RviDVQKcboq/iw1oJnK62F4B/MH/uKSCrQEA6Rvj3az+
+ Mu5LVLp58NPDJ8OM4PaVELw8MKBPDjmyXL0OZz5Rb3EBTyvA55/UtVRL/3mykaj6fRDq5CjEU
+ 9evVOhIrAlea1HYmXPAipgcvk8P9fRhbNnEGL6L2EgZNQGl8PoCg0HMbMd83Nac6I8UTSIda7
+ 0qlVavbuuKhxTPvGD6b+mG7HRe5hM5iE/e9e3YyLhQ/ez800QomtZwQSAF4y1g9rXXmOuVHXO
+ WEVeZUT0vfFfmRZxIchz8ET7g88qDOoyvQdJ4yHqFJjyZSb/friB/rB5Lj2Wsvmo6KomnAzqc
+ PmjfirUn/wROljOTAU889PiZgxVrkY4RT6sizOa5nI76M4hMMY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_124532_784220_17068A63 
-X-CRM114-Status: GOOD (  13.29  )
+X-CRM114-CacheID: sfid-20200512_125021_929941_5DCD9318 
+X-CRM114-Status: GOOD (  15.30  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.187 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.187 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -119,36 +96,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, arnd@arndb.de, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, jonathanh@nvidia.com,
- talho@nvidia.com, thierry.reding@gmail.com, linux-tegra@vger.kernel.org,
- robin.murphy@arm.com, afaerber@suse.de, linux-arm-kernel@lists.infradead.org
+Cc: Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/12/20 8:48 AM, Mian Yousaf Kaukab wrote:
-> Add documentation for the new optional flag added for SRAM driver.
+On Tue, May 12, 2020 at 12:48 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+>
+> On Mon, May 11, 2020 at 05:29:29PM +0200, Arnd Bergmann wrote:
+>
+> > What do you currently do with the module address space?
+>
+> In the current setup, module address space was untouched, i.e. virtual
+> address difference b/n text & module space is far greater than 32MB, at
+> least > (2+768+16)MB and modules can't be loaded unless ARM_MODULE_PLTS
+> is enabled (this was checked now)
+>
+> > easiest way is to just always put modules into vmalloc space, as we already
+> > do with CONFIG_ARM_MODULE_PLTS when the special area gets full,
+> > but that could be optimized once the rest works.
+>
+> Okay
 
-> diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+Any idea which bit you want to try next? Creating a raw_copy_{from,to}_user()
+based on get_user_pages()/kmap_atomic()/memcpy() is probably a good
+next thing to do. I think it can be done one page at a time with only
+checking for
+get_fs(), access_ok(), and page permissions, while get_user()/put_user()
+need to handle a few more corner cases.
 
-> +  reserved-only:
-> +    description:
-> +      The flag indicating, that only SRAM reserved regions have to be remapped.
-> +      remapping type is selected depending upon no-memory-wc as usual.
-> +    type: boolean
-
-This feels a bit like a SW flag rather than a HW description, so I'm not
-sure it's appropriate to put it into DT.
-
-Are there any cases where the SW should map all of the SRAM, i.e. where
-we wouldn't expect to set reserved-only? I'd expect reserved-only to be
-the default, and perhaps only, mode of operation for the SRAM driver. If
-we can't do that because some SW currently expects to be able to map
-arbitrary portions of the SRAM, shouldn't that SW be fixed to tell the
-SRAM driver which parts it's using, hence still allowing the driver to
-only map in-use portions?
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
