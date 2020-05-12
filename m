@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 975261D0245
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:26:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 262F81D0249
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:26:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=j3Mplw9bR8XrVXQ9UUNZDbJ58Hwzenibun3HqWlqWAE=; b=sR6hIl/jNdnOZM
-	O1pDAc5rgRX12L530rdvJRZbuw8X3F4mh3p7gF0JZAcRD/qFP++UK8obAl35d+Dv2bKWzp1zLXQfc
-	C6ckBIUfIKGpXPh/UjJnQmv8iO71sPPX5q8fEZkYLtsMCjzpNXh1Z6hQMsSGrUniC2DVCPD+iaSI3
-	tjh2kvHA9CJnqzovchMSUflPSbxmLMEc5sgV16u4rJm+nEXUBW+R6R0cq/i1mA/S0HU6SsOsD0mlt
-	EynwDKssekmEOZPAh6AYOxwqzmRBLvm5XdEMH5mWpa+RF1rUAFOlR/hPct3CI4wJ0Kpwo5pVv7VIM
-	Z16sOzvSRron/wtK9NXQ==;
+	List-Owner; bh=HJi4X3Qlx0L4CaHMn+Mri9nqHeyPJouVuFOQ/4YKsm4=; b=SXQ3IOprsMMbvn
+	OK3qq/UXIPBZoJ3f09hGHf056A/aMKK4/meBOJQXGFyGp5v6H7WWzyNXbCJ2GHrVMEW0cpiOENksD
+	iz5WP9IkJnnC/mHJgdyq/iTsqAdkIoEPTo3k08EudpZrkB1/tOySjE47gPH562LNny6mBoFNL7jll
+	6pMoiIQE8Igp7WfAmMbeOyRUdgUzYNmbjE57rBi9VPwKFsKIn2K7GtdE6suF5y9BHuECEt2Trv1Cv
+	boWPWkSANWqVlhgJm3ArG+ct8BR7fYxiSOh44hWZX8BK1+yOVjiv0zZTdlXdtWwHtrJTFFZTN4zrG
+	QwA8nF/yiQv/06QL+eBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYdMB-0007bG-8w; Tue, 12 May 2020 22:26:35 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jYdMS-0007r7-W3; Tue, 12 May 2020 22:26:53 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYdKL-0003eL-IH; Tue, 12 May 2020 22:24:43 +0000
-Received: by mail-wm1-x342.google.com with SMTP id e26so24132055wmk.5;
- Tue, 12 May 2020 15:24:41 -0700 (PDT)
+ id 1jYdKM-0003fQ-Jm; Tue, 12 May 2020 22:24:44 +0000
+Received: by mail-wm1-x343.google.com with SMTP id g14so10386855wme.1;
+ Tue, 12 May 2020 15:24:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=fWp37uKUDpwomXWa/aIQXLmU2FLlzJyWeA81xl/sOwk=;
- b=tC62i/6xkzIkxqgPl9BJqQyxGIvTg5pd3zHGsIWyYc1BB2pk+poW0X33w5qgL8af3U
- MoQ2pX+pua0szFl29Qhlmsea5fayxALBOtqBV7+8GGbNLq6qKJzGOVtYKLk0LHzt8J1o
- svg9uEpuoNrqkCK0e7sH2caNhMztgiWR9sFgPXSPuVZY1LFm+hLsYzRRjnw1SBolXJ+W
- l9VuNS+WuUvSFJTBFFl6F65Z++OVIyl0EPTvNXmDLYeEMhJePd4JBBPThfQ8VRak/Ef9
- ytG6OOgWMbshtPdYywM1cc8tiH4sjPqCN0oLBzBID9TOqM1i2O1a45bV2YkXsHaCkB6P
- s0tA==
+ bh=T6/lnxUNaPxPPXlTLJRj6AhR7vTkkb3EZ8aqBlM0OWk=;
+ b=SrTd/ro7AvaEauxrrPTxDh3wvmrjWHigYFTwI6OCAchA0LTOoEpBuyhjdECOi3W5JP
+ nloq0YQb4LVaFJ6VN6jMc4vp45mu2GK2NfcpiPSB7PZcjFY/G4TJ/29TgVI+riddVEoL
+ zUHupnteXosHUlb6g5tBM3MRUBRaAsYsPgJw5YGIK6TJcOeGeHWH2noAhwAjEgJ7xuNp
+ NNWp6qZDm9EDrFYn8eWry4sxi1E95y7tlM33Mvgvv9fYzK+5509XDCTKjRnTh53apiu2
+ Uz9wc7CXgR42yew0ceWmexHuk4qJEcsX4qtzfW0GyiDsj0ePezsQiGlpEqBQz3rQxeQC
+ ZpSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=fWp37uKUDpwomXWa/aIQXLmU2FLlzJyWeA81xl/sOwk=;
- b=D/A3DbGBskysqVtyvMbZZGGUJiEWtNtb7B1F4Y+QNiSOuxMiVPw0Kul5Lg5fwTz6Ty
- 8RAtmDRCaSTG0aTXoK/5NHFYcrldBXN+EGR73H51NVQdo8THYE4KnjizwqYPD3C2Gys9
- YUg9YRX8lo9eJaHEDWxwiubbkn0dJUkriX+fPSe8jPCK02IfcRcK3nwxPUtyXB9Odf97
- 2tJXiyrl6tgDzQL3bTUEggzxtg0Cwihh1PsMZQ79VEVC6CMVB4a8FCyf4Wr/Vf1fFo8h
- 5hGF2mJMtAWzgTeeJXlE1aOC+RBFX6inx6dGVrNt5RrybrFjGOAaSyVD9ZdZoA6VAWvV
- ISxA==
-X-Gm-Message-State: AGi0PubHB0S4fV8B2BOerU5BrAmlPyj8ZXYAmtpilQCH8EfxrTW4VzQW
- rIBVwryRIPlBkm/+rcmWF9o=
-X-Google-Smtp-Source: APiQypI8HaPJS6tn/3p1+VJ3j0duckvAyujR9VAElNDzCa/9oefAMAjeT0RqFgb8MsChyKF/SDPM9g==
-X-Received: by 2002:a1c:f416:: with SMTP id z22mr39644193wma.32.1589322279649; 
- Tue, 12 May 2020 15:24:39 -0700 (PDT)
+ bh=T6/lnxUNaPxPPXlTLJRj6AhR7vTkkb3EZ8aqBlM0OWk=;
+ b=eErfbnQ+0QxJmAserSkAvDjD2wtWmjANQloBMDXYxc6cFfMgJFbxT3ScL7aLacWdFq
+ YNeyTpuw2zUrxxOFLMMH8jo20mTCTgm8hXGe7TUA5Oeuje190P2sIgusSARDy0VC7LvP
+ 6+b7a4I3Mk09ETNTE2Zo8jtMl/q0n/AVsetU4FkZWlxnZwHFjVSILc4B0gsuFnAnGh7o
+ I/NJ+F77Q9ozMVYDPXs0bDdKe55E/KMoM67VKyH7hds34khFy0uzqHAOSQp6AUxk4/4Y
+ I2souB7myZ1Qeb4Adcv0lpvcLUG4yBEfLEwzLL9s3iL3IS7Kfpw5EJ6YJrXJIDZ5y909
+ Y08g==
+X-Gm-Message-State: AGi0Pua+nxCYhIuWZ11/3LwFqljiRJzFyhcutDdE5eljMBJoikpNxkyn
+ G70Ej7vmN9IyXiEl3fkQ520=
+X-Google-Smtp-Source: APiQypIFFG9NZZdOzQj9vGlbbtC4ygVpYGhkLOO2LmO2sp/3GaDT2eT9UR+jUxCZfNfk8KIGsqyO7A==
+X-Received: by 2002:a1c:f211:: with SMTP id s17mr43022273wmc.168.1589322280765; 
+ Tue, 12 May 2020 15:24:40 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F137132E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3713:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id b2sm21758758wrm.30.2020.05.12.15.24.38
+ by smtp.googlemail.com with ESMTPSA id b2sm21758758wrm.30.2020.05.12.15.24.39
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:24:39 -0700 (PDT)
+ Tue, 12 May 2020 15:24:40 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: kishon@ti.com, robh+dt@kernel.org, vkoul@kernel.org,
  devicetree@vger.kernel.org, linux-amlogic@lists.infradead.org
-Subject: [PATCH v2 5/6] phy: amlogic: meson8b-usb2: unset the IDDQ bit during
- PHY power-on
-Date: Wed, 13 May 2020 00:24:23 +0200
-Message-Id: <20200512222424.549351-6-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v2 6/6] phy: amlogic: meson8b-usb2: Add a compatible string
+ for Meson8m2
+Date: Wed, 13 May 2020 00:24:24 +0200
+Message-Id: <20200512222424.549351-7-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200512222424.549351-1-martin.blumenstingl@googlemail.com>
 References: <20200512222424.549351-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_152441_644079_0467A841 
-X-CRM114-Status: GOOD (  13.12  )
+X-CRM114-CacheID: sfid-20200512_152442_666052_18A466F9 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -110,89 +110,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The vendor driver unsets the set_iddig bit during power-on as well and
-sets it when suspending the PHY. I did not notice this in the vendor
-driver first, because it's part of the dwc_otg driver there (instead of
-their PHY code). While here, also add all other REG_DBG_UART register
-bit definitions.
+The 3.10 vendor kernel sets the ACA_ENABLE bit on Meson8b, Meson8m2 and
+GXBB, but not on Meson8. Add a compatible string for Meson8m2 which also
+sets that bit.
+While here, also update the Kconfig text and MODULE_DESCRIPTION.
 
 Tested-by: Thomas Graichen <thomas.graichen@gmail.com>
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/phy/amlogic/phy-meson8b-usb2.c | 44 +++++++++++++++++++-------
- 1 file changed, 32 insertions(+), 12 deletions(-)
+ drivers/phy/amlogic/Kconfig            | 2 +-
+ drivers/phy/amlogic/phy-meson8b-usb2.c | 6 +++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
 
+diff --git a/drivers/phy/amlogic/Kconfig b/drivers/phy/amlogic/Kconfig
+index 3495b23af797..5ec53874d1ea 100644
+--- a/drivers/phy/amlogic/Kconfig
++++ b/drivers/phy/amlogic/Kconfig
+@@ -3,7 +3,7 @@
+ # Phy drivers for Amlogic platforms
+ #
+ config PHY_MESON8B_USB2
+-	tristate "Meson8, Meson8b and GXBB USB2 PHY driver"
++	tristate "Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver"
+ 	default ARCH_MESON
+ 	depends on OF && (ARCH_MESON || COMPILE_TEST)
+ 	depends on USB_SUPPORT
 diff --git a/drivers/phy/amlogic/phy-meson8b-usb2.c b/drivers/phy/amlogic/phy-meson8b-usb2.c
-index 7236b8885f07..436dfa1a8a04 100644
+index 436dfa1a8a04..03c061dd5f0d 100644
 --- a/drivers/phy/amlogic/phy-meson8b-usb2.c
 +++ b/drivers/phy/amlogic/phy-meson8b-usb2.c
-@@ -78,6 +78,17 @@
- 	#define REG_ADP_BC_ACA_PIN_FLOAT		BIT(26)
+@@ -302,6 +302,10 @@ static const struct of_device_id phy_meson8b_usb2_of_match[] = {
+ 		.compatible = "amlogic,meson8b-usb2-phy",
+ 		.data = &phy_meson8b_usb2_match_data
+ 	},
++	{
++		.compatible = "amlogic,meson8m2-usb2-phy",
++		.data = &phy_meson8b_usb2_match_data
++	},
+ 	{
+ 		.compatible = "amlogic,meson-gxbb-usb2-phy",
+ 		.data = &phy_meson8b_usb2_match_data
+@@ -320,5 +324,5 @@ static struct platform_driver phy_meson8b_usb2_driver = {
+ module_platform_driver(phy_meson8b_usb2_driver);
  
- #define REG_DBG_UART					0x10
-+	#define REG_DBG_UART_BYPASS_SEL			BIT(0)
-+	#define REG_DBG_UART_BYPASS_DM_EN		BIT(1)
-+	#define REG_DBG_UART_BYPASS_DP_EN		BIT(2)
-+	#define REG_DBG_UART_BYPASS_DM_DATA		BIT(3)
-+	#define REG_DBG_UART_BYPASS_DP_DATA		BIT(4)
-+	#define REG_DBG_UART_FSV_MINUS			BIT(5)
-+	#define REG_DBG_UART_FSV_PLUS			BIT(6)
-+	#define REG_DBG_UART_FSV_BURN_IN_TEST		BIT(7)
-+	#define REG_DBG_UART_LOOPBACK_EN_B		BIT(8)
-+	#define REG_DBG_UART_SET_IDDQ			BIT(9)
-+	#define REG_DBG_UART_ATE_RESET			BIT(10)
- 
- #define REG_TEST					0x14
- 	#define REG_TEST_DATA_IN_MASK			GENMASK(3, 0)
-@@ -172,20 +183,24 @@ static int phy_meson8b_usb2_power_on(struct phy *phy)
- 	regmap_update_bits(priv->regmap, REG_CTRL, REG_CTRL_SOF_TOGGLE_OUT,
- 			   REG_CTRL_SOF_TOGGLE_OUT);
- 
--	if (priv->dr_mode == USB_DR_MODE_HOST &&
--	    priv->match->host_enable_aca) {
--		regmap_update_bits(priv->regmap, REG_ADP_BC,
--				   REG_ADP_BC_ACA_ENABLE,
--				   REG_ADP_BC_ACA_ENABLE);
-+	if (priv->dr_mode == USB_DR_MODE_HOST) {
-+		regmap_update_bits(priv->regmap, REG_DBG_UART,
-+				   REG_DBG_UART_SET_IDDQ, 0);
- 
--		udelay(ACA_ENABLE_COMPLETE_TIME);
-+		if (priv->match->host_enable_aca) {
-+			regmap_update_bits(priv->regmap, REG_ADP_BC,
-+					   REG_ADP_BC_ACA_ENABLE,
-+					   REG_ADP_BC_ACA_ENABLE);
- 
--		regmap_read(priv->regmap, REG_ADP_BC, &reg);
--		if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
--			dev_warn(&phy->dev, "USB ID detect failed!\n");
--			clk_disable_unprepare(priv->clk_usb);
--			clk_disable_unprepare(priv->clk_usb_general);
--			return -EINVAL;
-+			udelay(ACA_ENABLE_COMPLETE_TIME);
-+
-+			regmap_read(priv->regmap, REG_ADP_BC, &reg);
-+			if (reg & REG_ADP_BC_ACA_PIN_FLOAT) {
-+				dev_warn(&phy->dev, "USB ID detect failed!\n");
-+				clk_disable_unprepare(priv->clk_usb);
-+				clk_disable_unprepare(priv->clk_usb_general);
-+				return -EINVAL;
-+			}
- 		}
- 	}
- 
-@@ -196,6 +211,11 @@ static int phy_meson8b_usb2_power_off(struct phy *phy)
- {
- 	struct phy_meson8b_usb2_priv *priv = phy_get_drvdata(phy);
- 
-+	if (priv->dr_mode == USB_DR_MODE_HOST)
-+		regmap_update_bits(priv->regmap, REG_DBG_UART,
-+				   REG_DBG_UART_SET_IDDQ,
-+				   REG_DBG_UART_SET_IDDQ);
-+
- 	clk_disable_unprepare(priv->clk_usb);
- 	clk_disable_unprepare(priv->clk_usb_general);
- 
+ MODULE_AUTHOR("Martin Blumenstingl <martin.blumenstingl@googlemail.com>");
+-MODULE_DESCRIPTION("Meson8, Meson8b and GXBB USB2 PHY driver");
++MODULE_DESCRIPTION("Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY driver");
+ MODULE_LICENSE("GPL");
 -- 
 2.26.2
 
