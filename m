@@ -2,85 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35F731D0184
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:03:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 521261D018D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:04:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FzeadpkPlnVBAEj7ARD1OPDCH9EDZIjf41nVKjJIh3U=; b=X4VaAFHfJDktgS
-	zYhxyZlr2IxKRPRaeUk1iXxwsAEY2xHUalqeqIkIOLoKYXW+Ss0PU8B+YzXji/2IjTvHTStCA59gK
-	DvXqse4ckNov2r9L0gCJUrjPJKnlSSAtlLT11tCpWDo0r9HNqjt9H4q2gtSA6UPGyJoVPye5GIwiq
-	6frBhu28Y9pSgFKS+WhJApOrBRpgL2fpFkAsrgyaG0YJSoADc45ZPp89Il1uSmbHGTOLCRcW9HIie
-	EVwsrfNPfjGN4/nZs0dzptJreRwU2vmKa1v/B+LHe4kQVGjCdcvgm5kWqP/J0U2I7wDnHQzj7sAWP
-	AIvoZZ6v9REaLy54NQHQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
+	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+	List-Owner; bh=SOtgUU54A5NHc90iDEuCRmU2jMGZpEXBkpI7241rXqU=; b=tnCaqAGfumyR1x
+	pzbTjVYXA99X09cBISUj19qUPhvlUsLm5qCg6oOhZ8ffoopThGUx+R8mTGo6mmwJVOBIwZFvjE3Vi
+	a1N2UuVHptOB2q9/5rmALyDqJzPH4a2TsgZlG6llUeavPKSJlvQSkXGwjqcM9DMFuzkrVZw3lJqtk
+	eeop+kiAIb0KOH8al/Wdcvb1yewghK26u8f9qzO7eXlRSV/6RptTb28xon760Uhx6zwvmakYGM9N3
+	wZVs7OKNLuTcFgBzouShnIVpd5FhUbLx/t1wUXwO7aEdZR0LKZ1Hsdc9vjz/TNv81tPgbcLm4bGlA
+	1VXmL0ZWhPQH4aZzscrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYczp-0006YC-Aw; Tue, 12 May 2020 22:03:29 +0000
-Received: from mail-ot1-f65.google.com ([209.85.210.65])
+	id 1jYd0G-0006r9-EW; Tue, 12 May 2020 22:03:56 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYczd-0006Ux-Al; Tue, 12 May 2020 22:03:20 +0000
-Received: by mail-ot1-f65.google.com with SMTP id j4so11821290otr.11;
- Tue, 12 May 2020 15:03:17 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=MUwPbwoCw7AWkOjfbYkkLEEsldhhBednze2KVALn6gg=;
- b=UmfEoYC7qdydmeVho7sx829ojFAsk6iS16zv6qe32JrHvgaEQVVmxpq2nqCGqODi9i
- icbCaKLPI8aiGT2fglvNq5PNNlOn4P3gHwXria92iOPgjaePTWHjQxDrjbDwBN2SeASV
- 5PhqbXia6roNbPJ/Drx882lNIUIpZZp5Lv+ZLSYXk4sgct0NzZ4zYQXFDGU3cLkdZTlc
- FGGQyYsSbSsealKv145REkD0iCRkH8nHkXoe5vrrmE1Te++tLGXB9jvogjbtHFtP8MFb
- KFaiurUW06ZKXXgnqpraT33iS3hqho5dpqOmYigcxq6G9oo2AgrGqZol2gMnQXaXNt5J
- mbYg==
-X-Gm-Message-State: AGi0Pua07+1+dxjTa+TpAmVWZHFUk0Q6Zf6v+1PpnyTierHFHbqnGFOM
- 1zJqPrjmqltgmuhahRHB2A==
-X-Google-Smtp-Source: APiQypJgSZbfY16yL5q4Va7ckktZ2np41KwS/08QmNxY59XKZdbVclDoACFX2ieFTq/+LTS07P9ekg==
-X-Received: by 2002:a9d:6847:: with SMTP id c7mr17918699oto.159.1589320996371; 
- Tue, 12 May 2020 15:03:16 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id j47sm2689110oof.11.2020.05.12.15.03.15
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:03:15 -0700 (PDT)
-Received: (nullmailer pid 13443 invoked by uid 1000);
- Tue, 12 May 2020 22:03:14 -0000
-Date: Tue, 12 May 2020 17:03:14 -0500
-From: Rob Herring <robh@kernel.org>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Subject: Re: [PATCH 1/6] dt-bindings: phy: meson8b-usb2: Convert to json-schema
-Message-ID: <20200512220314.GA28996@bogus>
-References: <20200502114752.1048500-1-martin.blumenstingl@googlemail.com>
- <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
+ id 1jYczf-0006Vs-Nl; Tue, 12 May 2020 22:03:21 +0000
+Received: from localhost (mobile-166-175-190-200.mycingular.net
+ [166.175.190.200])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id BF5D920769;
+ Tue, 12 May 2020 22:03:18 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589320999;
+ bh=H/9k3jaaNnH8bx+1JIjRAmzzB0ogi2gQcBEM2wvsSRo=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:From;
+ b=ms1sJuNUMOhtJ39GvZjwVsRtlwNWtV1F8dP12i7NgmMzB3UiibL9NCFNGnlcqaGQO
+ wZLbuuVmt/mhhvtgYMwn9N+PNqB6mzmWriUU/neyZ4z1uu8uHCtrGz4tsdDVlYOlzp
+ OLmSx3oZ+zQVvDMDd0bfkRKwF2qlkz5YIRWp5VRQ=
+Date: Tue, 12 May 2020 17:03:17 -0500
+From: Bjorn Helgaas <helgaas@kernel.org>
+To: Prabhakar Kushwaha <pkushwaha@marvell.com>
+Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
+Message-ID: <20200512220317.GA285526@bjorn-Precision-5520>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200502114752.1048500-2-martin.blumenstingl@googlemail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_150317_366454_6B79CED5 
-X-CRM114-Status: GOOD (  16.38  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200512_150319_811362_51602C1E 
+X-CRM114-Status: GOOD (  26.50  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.65 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.65 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,110 +74,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, narmstrong@baylibre.com,
- hexdump0815@googlemail.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- vkoul@kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: gkulkarni@marvell.com, linux-pci@vger.kernel.org, will@kernel.org,
+ bhsharma@redhat.com, prabhakar.pkin@gmail.com, kexec@lists.infradead.org,
+ maz@kernel.org, robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, May 02, 2020 at 01:47:47PM +0200, Martin Blumenstingl wrote:
-> Now that we have the DT validation in place, let's convert the device
-> tree bindings for the Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2
-> PHY over to a YAML schema.
+[+cc linux-pci]
+
+On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
+> An SMMU Stream table is created by the primary kernel. This table is
+> used by the SMMU to perform address translations for device-originated
+> transactions. Any crash (if happened) launches the kdump kernel which
+> re-creates the SMMU Stream table. New transactions will be translated
+> via this new table.
 > 
-> While here, also add the fallback compatible string
-> "amlogic,meson-gxbb-usb2-phy" which is already used in
-> arch/arm/boot/dts/meson{,8,8b}.dtsi.
+> There are scenarios, where devices are still having old pending
+> transactions (configured in the primary kernel). These transactions
+> come in-between Stream table creation and device-driver probe.
+> As new stream table does not have entry for older transactions,
+> it will be aborted by SMMU.
 > 
-> Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> Similar observations were found with PCIe-Intel 82576 Gigabit
+> Network card. It sends old Memory Read transaction in kdump kernel.
+> Transactions configured for older Stream table entries, that do not
+> exist any longer in the new table, will cause a PCIe Completion Abort.
+
+That sounds like exactly what we want, doesn't it?
+
+Or do you *want* DMA from the previous kernel to complete?  That will
+read or scribble on something, but maybe that's not terrible as long
+as it's not memory used by the kdump kernel.
+
+> Returned PCIe completion abort further leads to AER Errors from APEI
+> Generic Hardware Error Source (GHES) with completion timeout.
+> A network device hang is observed even after continuous
+> reset/recovery from driver, Hence device is no more usable.
+
+The fact that the device is no longer usable is definitely a problem.
+But in principle we *should* be able to recover from these errors.  If
+we could recover and reliably use the device after the error, that
+seems like it would be a more robust solution that having to add
+special cases in every IOMMU driver.
+
+If you have details about this sort of error, I'd like to try to fix
+it because we want to recover from that sort of error in normal
+(non-crash) situations as well.
+
+> So, If we are in a kdump kernel try to copy SMMU Stream table from
+> primary/old kernel to preserve the mappings until the device driver
+> takes over.
+> 
+> Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
 > ---
->  .../phy/amlogic,meson8b-usb2-phy.yaml         | 61 +++++++++++++++++++
->  .../bindings/phy/meson8b-usb2-phy.txt         | 28 ---------
->  2 files changed, 61 insertions(+), 28 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
->  delete mode 100644 Documentation/devicetree/bindings/phy/meson8b-usb2-phy.txt
+> Changes for v2: Used memremap in-place of ioremap
 > 
-> diff --git a/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> new file mode 100644
-> index 000000000000..c2fe8c08d99e
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/phy/amlogic,meson8b-usb2-phy.yaml
-> @@ -0,0 +1,61 @@
-> +# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: "http://devicetree.org/schemas/phy/amlogic,meson8b-usb2-phy.yaml#"
-> +$schema: "http://devicetree.org/meta-schemas/core.yaml#"
+> V2 patch has been sanity tested. 
+> 
+> V1 patch has been tested with
+> A) PCIe-Intel 82576 Gigabit Network card in following
+> configurations with "no AER error". Each iteration has
+> been tested on both Suse kdump rfs And default Centos distro rfs.
+> 
+>  1)  with 2 level stream table 
+>        ----------------------------------------------------
+>        SMMU               |  Normal Ping   | Flood Ping
+>        -----------------------------------------------------
+>        Default Operation  |  100 times     | 10 times
+>        -----------------------------------------------------
+>        IOMMU bypass       |  41 times      | 10 times
+>        -----------------------------------------------------
+> 
+>  2)  with Linear stream table. 
+>        -----------------------------------------------------
+>        SMMU               |  Normal Ping   | Flood Ping
+>        ------------------------------------------------------
+>        Default Operation  |  100 times     | 10 times
+>        ------------------------------------------------------
+>        IOMMU bypass       |  55 times      | 10 times
+>        -------------------------------------------------------
+> 
+> B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
+> SSD card with 2 level stream table using "fio" in mixed read/write and
+> only read configurations. It is tested for both Default Operation and
+> IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
+> default Centos ditstro rfs.
+> 
+> This patch is not full proof solution. Issue can still come
+> from the point device is discovered and driver probe called. 
+> This patch has reduced window of scenario from "SMMU Stream table 
+> creation - device-driver" to "device discovery - device-driver".
+> Usually, device discovery to device-driver is very small time. So
+> the probability is very low. 
+> 
+> Note: device-discovery will overwrite existing stream table entries 
+> with both SMMU stage as by-pass.
+> 
+> 
+>  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
+>  1 file changed, 35 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 82508730feb7..d492d92c2dd7 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
+>  			break;
+>  		case STRTAB_STE_0_CFG_S1_TRANS:
+>  		case STRTAB_STE_0_CFG_S2_TRANS:
+> -			ste_live = true;
+> +			/*
+> +			 * As kdump kernel copy STE table from previous
+> +			 * kernel. It still may have valid stream table entries.
+> +			 * Forcing entry as false to allow overwrite.
+> +			 */
+> +			if (!is_kdump_kernel())
+> +				ste_live = true;
+>  			break;
+>  		case STRTAB_STE_0_CFG_ABORT:
+>  			BUG_ON(!disable_bypass);
+> @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>  		return -ENOMEM;
+>  	}
+>  
+> +	if (is_kdump_kernel())
+> +		return 0;
 > +
-> +title: Amlogic Meson8, Meson8b, Meson8m2 and GXBB USB2 PHY
+>  	for (i = 0; i < cfg->num_l1_ents; ++i) {
+>  		arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
+>  		strtab += STRTAB_L1_DESC_DWORDS << 3;
+> @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
+>  	return 0;
+>  }
+>  
+> +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
+> +			       struct arm_smmu_strtab_cfg *cfg, u32 size)
+> +{
+> +	struct arm_smmu_strtab_cfg rdcfg;
 > +
-> +maintainers:
-> +  - Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+> +	rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
+> +	rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
+> +					      + ARM_SMMU_STRTAB_BASE_CFG);
 > +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - items:
-> +          - enum:
-> +            - amlogic,meson8-usb2-phy
-> +            - amlogic,meson8b-usb2-phy
-
-Needs 2 more spaces indent.
-
-> +          - const: amlogic,meson-mx-usb2-phy
-> +      - const: amlogic,meson-gxbb-usb2-phy
+> +	rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
+> +	rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
 > +
-> +  reg:
-> +    maxItems: 1
+> +	memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
 > +
-> +  clocks:
-> +    minItems: 2
+> +	cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
+> +}
 > +
-> +  clock-names:
-> +    items:
-> +      - const: usb_general
-> +      - const: usb
+>  static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>  {
+>  	void *strtab;
+> @@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
+>  	reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
+>  	cfg->strtab_base_cfg = reg;
+>  
+> +	if (is_kdump_kernel())
+> +		arm_smmu_copy_table(smmu, cfg, l1size);
 > +
-> +  resets:
-> +    minItems: 1
+>  	return arm_smmu_init_l1_strtab(smmu);
+>  }
+>  
+> @@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
+>  	reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
+>  	cfg->strtab_base_cfg = reg;
+>  
+> +	if (is_kdump_kernel()) {
+> +		arm_smmu_copy_table(smmu, cfg, size);
+> +		return 0;
+> +	}
 > +
-> +  "#phy-cells":
-> +    const: 0
-> +
-> +  phy-supply:
-> +     description:
-
-Wrong indentation.
-
-> +       Phandle to a regulator that provides power to the PHY. This
-> +       regulator will be managed during the PHY power on/off sequence.
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +  - clocks
-> +  - clock-names
-> +  - "#phy-cells"
-
-Add:
-
-additionalProperties: false
-
-> +
-> +examples:
-> +  - |
-> +    usb-phy@c0000000 {
-> +      compatible = "amlogic,meson-gxbb-usb2-phy";
-> +      reg = <0xc0000000 0x20>;
-> +      resets = <&reset_usb_phy>;
-> +      clocks = <&clk_usb_general>, <&reset_usb>;
-> +      clock-names = "usb_general", "usb";
-> +      phy-supply = <&usb_vbus>;
-> +      #phy-cells = <0>;
-> +    };
+>  	arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
+>  	return 0;
+>  }
+> -- 
+> 2.18.2
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
