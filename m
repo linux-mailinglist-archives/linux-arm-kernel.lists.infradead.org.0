@@ -2,82 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2FCCC1CF5CA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:28:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2BF181CF5C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:27:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pFTII/yfjmiJHaCmF5QKwV9fIR/VFEiJFLxdv6sx3Go=; b=XBsYjJq1Yybdcf
-	FUuQIeMtnohykn5907WcoYLjiyc5Vjbk0LwTstTsxhfFg2IeCW0rZeFSNvRWHa7PMwUmDYXy77lWY
-	wETZHvzNAVAUg0JmI6QBEZ/XcdUZxchYIordCg7H06VNzk1pYwEVGYOlpPC9OKVKUWOTRuBB+RG4m
-	HHwn9Pbt6SaJ5OfL7Of0twCJcS/lrMpCROVNk+3McPQhvwaEvtrZVeZ7LD7l9y+zxCuIFAjFFFfml
-	Lys+AZsjdE33xhdhIyqh36ESZKBmmf4oSNLevXaLzR2P1KEFpgnV6y32JWOR9m7HuxHkpe1vaTplw
-	H/gU4e31AxbApW1FsW8w==;
+	List-Owner; bh=jr8urDve1L8kzOQlxAP3YCg0Hit0NXVJZ8GCPZVIRhA=; b=M8ojszPU1Lltfz
+	GSxcxwezXkNacwbsqCj8o99fwkbktxwY/CfZunj2eIH05IHRP52BeW55lZm+ieNMlwwk7SSAwMmQj
+	leye4PtZMzf7kz2XWGkrV7h6xuekyUr5P9uxkWzIT1lN8bUPXnwbROMGUUvTB4hvVuZ3E1q76Pci7
+	p4PODDGvpCV+EDpzdfcBjmxfncaYyur3mWufkVTRAw7clQe5KlhiZQfnZUoOuaePMmqxLTNOeNWTN
+	pCIrLzRGoybE7V9MmgRUvWqSftyo6CnEkg/PJ1g3FKqfX9h4ysWQ8Ym3AWgLcg42l2lXl7P+SE7V5
+	jccaR092oFXyfa+Cxd6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUx1-0002yV-RI; Tue, 12 May 2020 13:28:03 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jYUwn-0002i1-GG; Tue, 12 May 2020 13:27:49 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUvQ-0001XB-TQ
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:26:27 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l11so9463511wru.0
+ id 1jYUvS-0001Yc-G1
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:26:28 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e16so15376420wra.7
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 06:26:24 -0700 (PDT)
+ Tue, 12 May 2020 06:26:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=Y7Fjt5IgWK4L8ZaTfnqiN9Z1czwHhj1bMsFl3W8CxoM=;
- b=LYWONKXkLYB8oqnPo0mSL3quCSffayNM7ZRqyhSMZGNO3RR7xd6W33u3XKbffAP84F
- bmxfJocnhaAXUbCEnisuphi/rhJqyI+3RFf3R0zDST/RIEc7O2dRLeoA/nhW4AgPjF0b
- fRqhH6w7XeDRNkPK/SeySJ86EnInMrQkfzuBVL9RKyPa5NWXW61VDDc60PwnMaFHcuCY
- Z1HNtAXEyws4omu6YIonZyIBhWxscrWnU7S5NUeqInP6hp0oEwIwO7BoHJwZkPeZM23c
- ft4PazpF0vPCAr4mmLc4T4AbUq6H4omRSUQZX1KG1wHqHQwox0dPdkq2B+JD07kb4713
- bTOQ==
+ bh=OOA2tjrCMzpEGVQ4wsZGsx+qQve4HNZ307qi+80/974=;
+ b=tFn1g6VnvjqXPa5wWer0AZBSgCntLE7a3TDJber7TVz1ksZz0vw9pfhNaKabsusts3
+ Q4u3+Y5oY5lvmSGLH9CJQ6iSHnMcGwSbDi5N3mV6iaXU3iwtcRge+GOCgHJTPwx0Dunt
+ 2WFUIUd54IjSQ9oSGEb5gWVJfC/jZJ4qc9HgNV0GYgD+1BXgina5rNgxqjWB/aEYVW5+
+ 7le4q61yeaatKEThlrAGb+ERtdyhtKTxWq8CMOPXoSKqAyWd9kFZ6ufh5iuxUIRomUzA
+ PmDi5o+TmXmttNyl87E1DKIAW4CJtNXTrTnaFSIGPzR94ZZjgoBRGo+8WdBKfJvQHsR5
+ byRQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=Y7Fjt5IgWK4L8ZaTfnqiN9Z1czwHhj1bMsFl3W8CxoM=;
- b=ZYzVWgd9nz9KBrSjJdAvQH3hsRv5JfasGu+AzQjHB+IMy9drswmLYWibNknz5KT/AV
- uMPpQgOqu03Xo52wlO+XR5RldojjRvzhOvATbJOa/0AYlrEGXArdmMuzQONc14HSsW9b
- K2coLTrnvM0CmpIL4mrpR0DbEo6cQvqa1b9t/1eKUECQZFs+1X0WlLUR0+f77MGfn2l/
- N8VLGZ63uOk9VHazwhf/K/WxzeHo94z8vC8bdlR7uMY6vkSUNSEr9ZyjqGweCyQ2kLAJ
- xXtzSCPW5QGRmGTh41+wvi0Ttu1gndvH5bUE/C0nASOpdJgVEmt5juR0OzJCFUjueDTF
- 2JNA==
-X-Gm-Message-State: AGi0Pua3mP3G0db5qrOTdzmUWMQCQw7wRDhPp8TOXb2dm1danIXJ6Ik7
- dSVdg4ghnDFxckhUQAkCKXRSyA==
-X-Google-Smtp-Source: APiQypKYFDg7ilAgTtvn5GrhpXky9/qr6Vck6lVct7tBjG3jzCg6ZL0Ikwa6qJeUUEz17lgO3oxEhw==
-X-Received: by 2002:adf:f00e:: with SMTP id j14mr18750036wro.252.1589289983524; 
- Tue, 12 May 2020 06:26:23 -0700 (PDT)
+ bh=OOA2tjrCMzpEGVQ4wsZGsx+qQve4HNZ307qi+80/974=;
+ b=EqcOXv9f/xWxCZQ2Df96SAobp/ybIF6+/Yu7iQBhq6suyyOgGRflsKLSiAvPHtL6CA
+ s0fyvK657nvdf6rXjixp8XxJxyRael3zQ34NDhicOzHADS47u+Vtwzd8ppzEb1uFh3i9
+ TBL9GAli2Z7M+vSLIx52YxlKxd6hwm5tfAvf3A7A/m8jNgVphLgQ/OTMKB6gnVv8axX3
+ ek3cwhkwbzOfmYse6a79qfdHNd8LuHMUZsvNINhSIsEM9SZ1q04uiCJLQmVJ1KQwyQV6
+ VEjA/orUMT+pPXDSvKX1+BeRz1Ii1FMMVb5eKRrrF+uprynUYPIz8Pe76RtM5Gs7lIne
+ jepg==
+X-Gm-Message-State: AGi0Puams9LR1+ydKxeOexRFKXVQpSjiJ5BjpUNVFejBXmWIrjq57Ejl
+ /5XaxMRdbY9jkMJGynjI3JaTBQ==
+X-Google-Smtp-Source: APiQypLPHEVWduy/3LzWWOhygupngnUuDQ/k1GFsn734lHfe0CkKPw+iJ6B+0gL3o0nrI8H96uujxg==
+X-Received: by 2002:a5d:400f:: with SMTP id n15mr13811365wrp.419.1589289984995; 
+ Tue, 12 May 2020 06:26:24 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
  by smtp.gmail.com with ESMTPSA id
- g15sm14441844wro.71.2020.05.12.06.26.22
+ g15sm14441844wro.71.2020.05.12.06.26.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 06:26:22 -0700 (PDT)
+ Tue, 12 May 2020 06:26:24 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: srinivas.kandagatla@linaro.org
-Subject: [PATCH v2 4/6] nvmem: add support for the Khadas MCU Programmable
- User Memory
-Date: Tue, 12 May 2020 15:26:11 +0200
-Message-Id: <20200512132613.31507-5-narmstrong@baylibre.com>
+To: lee.jones@linaro.org, srinivas.kandagatla@linaro.org, rui.zhang@intel.com,
+ daniel.lezcano@linaro.org, amit.kucheria@verdurent.com
+Subject: [PATCH v2 5/6] MAINTAINERS: add myself as maintainer for Khadas MCU
+ drivers
+Date: Tue, 12 May 2020 15:26:12 +0200
+Message-Id: <20200512132613.31507-6-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200512132613.31507-1-narmstrong@baylibre.com>
 References: <20200512132613.31507-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_062625_000144_BDC51421 
-X-CRM114-Status: GOOD (  19.32  )
+X-CRM114-CacheID: sfid-20200512_062626_555368_368D6C69 
+X-CRM114-Status: GOOD (  11.22  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -103,190 +104,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The new Khadas VIM2, VIM3 and Edge boards embeds an on-board microcontroller
-offering a 56bytes User Programmable NVMEM array.
-
-This array needs a password to be writable, thus a password sysfs file
-has been added on the device node to unlock the NVMEM.
-
-The default 6bytes password id: "Khadas"
-
-This implements the user NVMEM devices as cell of the Khadas MCU MFD driver.
+Add the HWMON and NVMEM drivers along the MFD drivers and header
+as Maintained by myself.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/nvmem/Kconfig               |   8 ++
- drivers/nvmem/Makefile              |   2 +
- drivers/nvmem/khadas-mcu-user-mem.c | 128 ++++++++++++++++++++++++++++
- 3 files changed, 138 insertions(+)
- create mode 100644 drivers/nvmem/khadas-mcu-user-mem.c
+ MAINTAINERS | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/drivers/nvmem/Kconfig b/drivers/nvmem/Kconfig
-index d7b7f6d688e7..92cd4f6aa931 100644
---- a/drivers/nvmem/Kconfig
-+++ b/drivers/nvmem/Kconfig
-@@ -67,6 +67,14 @@ config JZ4780_EFUSE
- 	  To compile this driver as a module, choose M here: the module
- 	  will be called nvmem_jz4780_efuse.
+diff --git a/MAINTAINERS b/MAINTAINERS
+index b816a453b10e..609baa78d810 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -9431,6 +9431,16 @@ F:	include/linux/kdb.h
+ F:	include/linux/kgdb.h
+ F:	kernel/debug/
  
-+config NVMEM_KHADAS_MCU_USER_MEM
-+	tristate "Khadas MCU User programmable memory support"
-+	depends on MFD_KHADAS_MCU
-+	depends on REGMAP
-+	help
-+	  This is a driver for the MCU User programmable memory
-+	  available on the Khadas VIM and Edge boards.
++KHADAS MCU MFD DRIVER
++M:	Neil Armstrong <narmstrong@baylibre.com>
++L:	linux-amlogic@lists.infradead.org
++S:	Maintained
++F:	Documentation/devicetree/bindings/mfd/khadas,mcu.yaml
++F:	drivers/mfd/khadas-mcu.c
++F:	include/linux/mfd/khadas-mcu.h
++F:	drivers/hwmon/khadas-mcu-fan.c
++F:	drivers/nvmem/khadas-mcu-user-mem.c
 +
- config NVMEM_LPC18XX_EEPROM
- 	tristate "NXP LPC18XX EEPROM Memory Support"
- 	depends on ARCH_LPC18XX || COMPILE_TEST
-diff --git a/drivers/nvmem/Makefile b/drivers/nvmem/Makefile
-index a7c377218341..0516a309542d 100644
---- a/drivers/nvmem/Makefile
-+++ b/drivers/nvmem/Makefile
-@@ -17,6 +17,8 @@ obj-$(CONFIG_NVMEM_IMX_OCOTP_SCU)	+= nvmem-imx-ocotp-scu.o
- nvmem-imx-ocotp-scu-y		:= imx-ocotp-scu.o
- obj-$(CONFIG_JZ4780_EFUSE)		+= nvmem_jz4780_efuse.o
- nvmem_jz4780_efuse-y		:= jz4780-efuse.o
-+obj-$(CONFIG_NVMEM_KHADAS_MCU_USER_MEM)	+= nvmem-khadas-mcu-user-mem.o
-+nvmem-khadas-mcu-user-mem-y	:= khadas-mcu-user-mem.o
- obj-$(CONFIG_NVMEM_LPC18XX_EEPROM)	+= nvmem_lpc18xx_eeprom.o
- nvmem_lpc18xx_eeprom-y	:= lpc18xx_eeprom.o
- obj-$(CONFIG_NVMEM_LPC18XX_OTP)	+= nvmem_lpc18xx_otp.o
-diff --git a/drivers/nvmem/khadas-mcu-user-mem.c b/drivers/nvmem/khadas-mcu-user-mem.c
-new file mode 100644
-index 000000000000..a1d5ae9a030c
---- /dev/null
-+++ b/drivers/nvmem/khadas-mcu-user-mem.c
-@@ -0,0 +1,128 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Driver for Khadas MCU User programmable Memory
-+ *
-+ * Copyright (C) 2020 BayLibre SAS
-+ * Author(s): Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+
-+#include <linux/clk.h>
-+#include <linux/module.h>
-+#include <linux/nvmem-provider.h>
-+#include <linux/mfd/khadas-mcu.h>
-+#include <linux/regmap.h>
-+#include <linux/of.h>
-+#include <linux/platform_device.h>
-+
-+static int khadas_mcu_user_mem_read(void *context, unsigned int offset,
-+			    void *val, size_t bytes)
-+{
-+	struct khadas_mcu *khadas_mcu = context;
-+
-+	return regmap_bulk_read(khadas_mcu->map,
-+				KHADAS_MCU_USER_DATA_0_REG + offset,
-+				val, bytes);
-+}
-+
-+static int khadas_mcu_user_mem_write(void *context, unsigned int offset,
-+			     void *val, size_t bytes)
-+{
-+	struct khadas_mcu *khadas_mcu = context;
-+
-+	return regmap_bulk_write(khadas_mcu->map,
-+				KHADAS_MCU_USER_DATA_0_REG + offset,
-+				val, bytes);
-+}
-+
-+static ssize_t password_store(struct device *dev, struct device_attribute *attr,
-+			     const char *buf, size_t count)
-+{
-+	struct khadas_mcu *khadas_mcu = dev_get_drvdata(dev);
-+	int i, ret;
-+
-+	if (count < 6)
-+		return -EINVAL;
-+
-+	ret = regmap_write(khadas_mcu->map, KHADAS_MCU_PASSWD_START_REG, 1);
-+	if (ret)
-+		return ret;
-+
-+	for (i = 0 ; i < 6 ; ++i) {
-+		ret = regmap_write(khadas_mcu->map,
-+				   KHADAS_MCU_CHECK_USER_PASSWD_REG,
-+				   buf[i]);
-+		if (ret)
-+			goto out;
-+	}
-+
-+	ret = regmap_write(khadas_mcu->map, KHADAS_MCU_PASSWD_START_REG, 0);
-+	if (ret)
-+		return ret;
-+
-+	return count;
-+out:
-+	regmap_write(khadas_mcu->map, KHADAS_MCU_PASSWD_START_REG, 0);
-+
-+	return ret;
-+}
-+
-+static DEVICE_ATTR_WO(password);
-+
-+static struct attribute *khadas_mcu_user_mem_sysfs_attributes[] = {
-+	&dev_attr_password.attr,
-+	NULL,
-+};
-+
-+static const struct attribute_group khadas_mcu_user_mem_sysfs_attr_group = {
-+	.attrs = khadas_mcu_user_mem_sysfs_attributes,
-+};
-+
-+static int khadas_mcu_user_mem_probe(struct platform_device *pdev)
-+{
-+	struct khadas_mcu *khadas_mcu = dev_get_drvdata(pdev->dev.parent);
-+	struct device *dev = &pdev->dev;
-+	struct nvmem_device *nvmem;
-+	struct nvmem_config *econfig;
-+
-+	econfig = devm_kzalloc(dev, sizeof(*econfig), GFP_KERNEL);
-+	if (!econfig)
-+		return -ENOMEM;
-+
-+	econfig->dev = pdev->dev.parent;
-+	econfig->name = dev_name(pdev->dev.parent);
-+	econfig->stride = 1;
-+	econfig->word_size = 1;
-+	econfig->reg_read = khadas_mcu_user_mem_read;
-+	econfig->reg_write = khadas_mcu_user_mem_write;
-+	econfig->size = 56;
-+	econfig->priv = khadas_mcu;
-+
-+	platform_set_drvdata(pdev, khadas_mcu);
-+
-+	nvmem = devm_nvmem_register(&pdev->dev, econfig);
-+	if (IS_ERR(nvmem))
-+		return PTR_ERR(nvmem);
-+
-+	return sysfs_create_group(&pdev->dev.kobj,
-+				  &khadas_mcu_user_mem_sysfs_attr_group);
-+}
-+
-+static const struct platform_device_id khadas_mcu_user_mem_id_table[] = {
-+	{ .name = "khadas-mcu-user-mem", },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(platform, khadas_mcu_user_mem_id_table);
-+
-+static struct platform_driver khadas_mcu_user_mem_driver = {
-+	.probe = khadas_mcu_user_mem_probe,
-+	.driver = {
-+		.name = "khadas-mcu-user-mem",
-+	},
-+	.id_table = khadas_mcu_user_mem_id_table,
-+};
-+
-+module_platform_driver(khadas_mcu_user_mem_driver);
-+
-+MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
-+MODULE_DESCRIPTION("Khadas MCU User MEM driver");
-+MODULE_LICENSE("GPL v2");
+ KMEMLEAK
+ M:	Catalin Marinas <catalin.marinas@arm.com>
+ S:	Maintained
 -- 
 2.22.0
 
