@@ -2,49 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 622461CEAA1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:14:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ED251CEAB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:18:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=IEcDHmwB3wTZWQTr6vZQTMDxrYsOGorJVpNWIJ71n2k=; b=iIg
-	Xpt4ug5L210Q2QGJM7s0nMJd/5voRSBXimOq+TVRj1c9ZiaJZ7ReUO7/Q2NQKRh8t5L3aqM0RZC08
-	eFbQ6p/pog6zr6tbU6uGmuBaJzv3wlK1Opf21dASSskdzRnx2Ii+e4jgJqGVe14ToL4LSlmxmfmwA
-	vJtjfjkU6LKWESRd5e+34rZ1LgVW6mI/K6zdqkAYOUDaWoKlfk2R6LxF4AukhnzEQu/9GzZx7qlC2
-	Cn1sfPOJeoKP2iy+L3kN5UJr/IK2XOpHfHsIMe9SssX4Wjlmaz0owihQAxc2zS524jJz6B+C255YY
-	hohuDp1oz1WzfJtqUXMOEj/QGbvZ/Ag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Z02MbWq0+W53dKmgBzN7wOZnoILclS02G684V8UjfxE=; b=DORghenU2qqK4JZBh+WvrGMCj
+	aeVmgrETQXBZfck2BrwmsWDq2Oy0G+EJJOJvndjAid0ACMaQIzmvqj7bSSPdyS+NhCAfPgJUXCXSI
+	ca9lNv4YdcP6t1QSxWH478iUtPjIWc+Gq8FD7rmR6IGKOD86Z0aguyHcrf5Nvjuas00dCKOtueG04
+	l7SwSE7fhHV6/VVu9MvWhTPPpYm7kjwm9h+ZTLZ00HfFeiMZ3okTdHU7Fzu1HSfVpTp+Umbv2ZKBw
+	T3aD77Cs+Lljj83ED6+9lSxxfsHgNqLX/aKdofjX63QvrE/B9VsAURTE4oxxqOu2HE+YsjxwyICIx
+	p1iuivgOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYKQt-0007hk-Vm; Tue, 12 May 2020 02:14:11 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1jYKVO-0002WR-DH; Tue, 12 May 2020 02:18:50 +0000
+Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYKQl-0007h2-LF
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:14:05 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D777C1FB;
- Mon, 11 May 2020 19:14:02 -0700 (PDT)
-Received: from p8cg001049571a15.arm.com (unknown [10.163.73.104])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4DC573F71E;
- Mon, 11 May 2020 19:14:00 -0700 (PDT)
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64/cpufeature: Add ID_AA64MMFR0_PARANGE_MASK
-Date: Tue, 12 May 2020 07:43:26 +0530
-Message-Id: <1589249606-27177-1-git-send-email-anshuman.khandual@arm.com>
-X-Mailer: git-send-email 2.7.4
+ id 1jYKVE-0002Vb-Q8
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:18:42 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 12 May 2020 11:18:38 +0900
+Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 4E8B9180BB6;
+ Tue, 12 May 2020 11:18:38 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Tue, 12 May 2020 11:18:38 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id EDACE1A01BB;
+ Tue, 12 May 2020 11:18:37 +0900 (JST)
+Received: from [10.213.31.213] (unknown [10.213.31.213])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 67C7D120133;
+ Tue, 12 May 2020 11:18:37 +0900 (JST)
+Subject: Re: [PATCH net] dt-bindings: net: Convert UniPhier AVE4 controller to
+ json-schema
+To: Rob Herring <robh@kernel.org>
+References: <1588055482-13012-1-git-send-email-hayashi.kunihiko@socionext.com>
+ <20200512020126.GA22178@bogus>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Message-ID: <600b83e2-8063-b8ca-5406-7bf854c45ab3@socionext.com>
+Date: Tue, 12 May 2020 11:18:36 +0900
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
+MIME-Version: 1.0
+In-Reply-To: <20200512020126.GA22178@bogus>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_191403_778676_6D27313B 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200511_191840_962610_2A017563 
+X-CRM114-Status: GOOD (  16.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -58,115 +70,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Anshuman Khandual <anshuman.khandual@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This replaces multiple open encoding (0x7) with ID_AA64MMFR0_PARANGE_MASK
-thus cleaning the clutter. It modifies an existing ID_AA64MMFR0 helper and
-introduces a new one i.e id_aa64mmfr0_iparange() and id_aa64mmfr0_parange()
-respectively.
+Hi Rob,
 
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: James Morse <james.morse@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
-Cc: kvmarm@lists.cs.columbia.edu
+On 2020/05/12 11:01, Rob Herring wrote:
+> On Tue, Apr 28, 2020 at 03:31:22PM +0900, Kunihiko Hayashi wrote:
+>> Convert the UniPhier AVE4 controller binding to DT schema format.
+>> This changes phy-handle property to required.
+>>
+>> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+>> ---
 
-Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+(snip)
+
+>> +  phy-mode:
+>> +    $ref: ethernet-controller.yaml#/properties/phy-mode
+>> +
+>> +  phy-handle:
+>> +    $ref: ethernet-controller.yaml#/properties/phy-handle
+> 
+> No need for these $ref, the 1st reference did this. Just:
+> 
+> phy-mode: true
+
+Okay, "phy-handle" also replaces with "true".
+I'll fix it in v2.
+
+Thank you,
+  
 ---
-This applies after (https://patchwork.kernel.org/patch/11541893/).
-
- arch/arm64/include/asm/cpufeature.h | 11 ++++++++++-
- arch/arm64/kernel/cpufeature.c      |  5 ++---
- arch/arm64/kvm/reset.c              |  9 +++++----
- 3 files changed, 17 insertions(+), 8 deletions(-)
-
-diff --git a/arch/arm64/include/asm/cpufeature.h b/arch/arm64/include/asm/cpufeature.h
-index 1291ad5a9ccb..320cfc5b6025 100644
---- a/arch/arm64/include/asm/cpufeature.h
-+++ b/arch/arm64/include/asm/cpufeature.h
-@@ -706,8 +706,17 @@ void arm64_set_ssbd_mitigation(bool state);
- 
- extern int do_emulate_mrs(struct pt_regs *regs, u32 sys_reg, u32 rt);
- 
--static inline u32 id_aa64mmfr0_parange_to_phys_shift(int parange)
-+#define ID_AA64MMFR0_PARANGE_MASK 0x7
-+
-+static inline u32 id_aa64mmfr0_parange(u64 mmfr0)
- {
-+	return mmfr0 & ID_AA64MMFR0_PARANGE_MASK;
-+}
-+
-+static inline u32 id_aa64mmfr0_iparange(u64 mmfr0)
-+{
-+	int parange = id_aa64mmfr0_parange(mmfr0);
-+
- 	switch (parange) {
- 	case 0: return 32;
- 	case 1: return 36;
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 30917fe7942a..2c62f7c64a3c 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -2185,7 +2185,7 @@ static void verify_sve_features(void)
- void verify_hyp_capabilities(void)
- {
- 	u64 safe_mmfr1, mmfr0, mmfr1;
--	int parange, ipa_max;
-+	int ipa_max;
- 	unsigned int safe_vmid_bits, vmid_bits;
- 
- 	safe_mmfr1 = read_sanitised_ftr_reg(SYS_ID_AA64MMFR1_EL1);
-@@ -2201,8 +2201,7 @@ void verify_hyp_capabilities(void)
- 	}
- 
- 	/* Verify IPA range */
--	parange = mmfr0 & 0x7;
--	ipa_max = id_aa64mmfr0_parange_to_phys_shift(parange);
-+	ipa_max = id_aa64mmfr0_iparange(mmfr0);
- 	if (ipa_max < get_kvm_ipa_limit()) {
- 		pr_crit("CPU%d: IPA range mismatch\n", smp_processor_id());
- 		cpu_die_early();
-diff --git a/arch/arm64/kvm/reset.c b/arch/arm64/kvm/reset.c
-index 841b492ff334..2e4da75d79ea 100644
---- a/arch/arm64/kvm/reset.c
-+++ b/arch/arm64/kvm/reset.c
-@@ -347,10 +347,10 @@ u32 get_kvm_ipa_limit(void)
- 
- void kvm_set_ipa_limit(void)
- {
--	unsigned int ipa_max, pa_max, va_max, parange;
-+	unsigned int ipa_max, pa_max, va_max;
- 
--	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) & 0x7;
--	pa_max = id_aa64mmfr0_parange_to_phys_shift(parange);
-+	pa_max = id_aa64mmfr0_iparange(read_sanitised_ftr_reg
-+						(SYS_ID_AA64MMFR0_EL1));
- 
- 	/* Clamp the IPA limit to the PA size supported by the kernel */
- 	ipa_max = (pa_max > PHYS_MASK_SHIFT) ? PHYS_MASK_SHIFT : pa_max;
-@@ -411,7 +411,8 @@ int kvm_arm_setup_stage2(struct kvm *kvm, unsigned long type)
- 		phys_shift = KVM_PHYS_SHIFT;
- 	}
- 
--	parange = read_sanitised_ftr_reg(SYS_ID_AA64MMFR0_EL1) & 7;
-+	parange = id_aa64mmfr0_parange(read_sanitised_ftr_reg
-+						(SYS_ID_AA64MMFR0_EL1));
- 	if (parange > ID_AA64MMFR0_PARANGE_MAX)
- 		parange = ID_AA64MMFR0_PARANGE_MAX;
- 	vtcr |= parange << VTCR_EL2_PS_SHIFT;
--- 
-2.20.1
-
+Best Regards
+Kunihiko Hayashi
 
 _______________________________________________
 linux-arm-kernel mailing list
