@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D50671CF555
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:13:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5AB61CF55B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:14:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=UvTdR2rBv3Kj0E0ZltD8HJEXiRa+pb2FZ7vJAn6McPg=; b=H9YHgjEw3rfTWa
-	HnvpqZe/fCzJ+sX+sohHO3TyauzBY2w2BRTeFxow+Nbv+EK2pEL37is1w+UAk7NfuZ0cEn9iDr/G3
-	Ex5MnklkfyZOQ19myz6aBJs8Re730hdoHCixByxsFaUaCxIIZQ+GyHpDVOdjNOC/Kd3ngmme2DWXu
-	v9zaKlCoyBEDebwbq5iJj72P71ITtaBQsE565odNPEAdtPxetJpKGRfy9c483nECW/JMKabi/M4mC
-	x8CZX+tt1d4xGHsD20IgtlJu9rTqrnfPbo9pIjaWz+8hgkYIB6zUw7y0dgsBIa4u28r16muCpPpZJ
-	QoTImNCwmZReeTq+hbpw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Lnkf5/dL211jJgiij0UWUQmLUxNtgTEteW3VELZSbBY=; b=nay
+	8MjwuNGuKhsJxuIB4TXi7OMkxH3446YTWDZJUbm2tBL/W4YzM2uDhys28k88CxO5QgIRVHuzGUfPN
+	B1bfAvvQr5PdOJKFjQZjfjzk9Y+BuXQwO1r+ZnrU2ROQG3nlMneDog4wkIIaORYMsedABhQBW5Wqe
+	6gL+v/XC4fFPHxlG9kTLIsAVThZmH1BbZ5owk9DfjJsFns1ZXssDS6DEcjWkZtn6Wn6LVqEFUSSGL
+	jq7KbMpnFl9zzg22XGwVGsk3YtNIQXhCZ2ML9z0E+TwuOSBSVXSJ58frRAgU/BK226yqIdZTBmnY3
+	xwW2oGBMglG/zJ/7PIlNEMzVMHZlB7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUiP-0000Gr-2V; Tue, 12 May 2020 13:12:57 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1jYUk5-0000hY-9P; Tue, 12 May 2020 13:14:41 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUiG-0000C8-JQ
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:12:49 +0000
-Received: by mail-lj1-x241.google.com with SMTP id l19so13598493lje.10
+ id 1jYUjx-0000gH-Aq
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:14:34 +0000
+Received: by mail-wm1-x344.google.com with SMTP id e26so21691817wmk.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 06:12:47 -0700 (PDT)
+ Tue, 12 May 2020 06:14:32 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :content-transfer-encoding:user-agent;
- bh=x4QoL4i05TKgWMM+1LyVNxxvylPGStkJzsuQ89LMgxY=;
- b=nrx+Fp7aDIIrY8QwnIUjLXbVoFDDUNd1LNLjAe+DfecmbGEsTwFruBhXNCZnlXABfA
- aJmA8E7KF2xlVlaoBKDXfwaPYyis+K+tuKVTB3DWNrdwihxqR0FHN9Jlkg+n2F2f3PCY
- Ng5LMqqw/sRBn0AjHq9DV3MfAk+ysNWzu9HxkDNVeJBVHls6fls/Yi9ugmQ1ZV4KgQc0
- aedgSyBB1dyisuVNIiH3nA3Ofi76vzDRrBb7mHoBypTPflCdg3bfaQVXOcgU4qrwxct7
- nG4N6qfK7ZaZAjqOZs0xp1FzMemIjvA/K/++8wEuwa/7M7/OJF/f8aYFzUg3s1hLqq0M
- R3rA==
+ h=from:to:cc:subject:date:message-id;
+ bh=ucIamOxWoiikiTT7OyOk1rVSeBavTDD4mVIWBfGQ0Tg=;
+ b=HhvGzsjgUcWS4ZqZpMHWKZ6oPMKgpOt/PCYx6PHdLARn1pl00Negjb8wMAe4LiENqa
+ cvvCgPgIgXvxRAOJUDj7etyWlGa4OaRWWDV3azcbY99r6J2ubJUpENBOJpwniqb2C8wv
+ 0T6b/pFIazBufnzGCG7SFiHa4hg9iyktA2jRg/eSZ6txf1VRN9UDdShnlx9ifd7nqnYc
+ ymhZ7gkbtUU4kI8m2cZ0ZfpW7dwvxgFxrXVHMd5aUz2s/IVMQAJpMtz3YeYYGrY3sCFh
+ nAhUHWwBFUJaNOLcLRK1kHGfPj8bp2NROzB3CUiGno1WahODSUDWnWKNz2QwOKGnLnaF
+ I1cg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:content-transfer-encoding:user-agent;
- bh=x4QoL4i05TKgWMM+1LyVNxxvylPGStkJzsuQ89LMgxY=;
- b=lcN+AL9BokZlElIHHv96zioIwJI8bRiMgciF+eaabBc+ec6JpCugmE0pa2P1FdXa9A
- YBS22ZqM4TYYMSVm80bjawo3FeCODd5dI6cna3ujEn+h9rbB+pnW3q0uVzqU2/IF2keU
- ERNw7iDVMyZOx+L/3uSCQx0VNYszYq9iGILS5fCIB+LsaoeLZ7doar2diQX0GJn+WaSh
- MtBgE/fKDlghDvTfoGVqE9Y+ao+bd45QGhbXuNW9ydLbUEg2MBNOPeJbT7LfZA/yWRoz
- RKV7TiiyE3/GTa/r2qclduGgOBmre/5hGbBUfDyyXrEKQUfU+eAJn2D/xJbqq7GerRtu
- vOVg==
-X-Gm-Message-State: AOAM530dqVEqJZ/KqNnj1CFGVfV/HpMd+cxPnC8GcRlSfchvZD4ssQXW
- pgjIM7hLen7RX42PASIIDwIkLA==
-X-Google-Smtp-Source: ABdhPJy0YMoO9u2zm/VACcBRZczdnhx/61vufXkw/2C8CQY/GdstDCr98wXZtYvH5Sihw6HrCM8Yjw==
-X-Received: by 2002:a2e:9048:: with SMTP id n8mr14151768ljg.122.1589289165890; 
- Tue, 12 May 2020 06:12:45 -0700 (PDT)
-Received: from jade (81-236-179-152-no272.tbcn.telia.com. [81.236.179.152])
- by smtp.gmail.com with ESMTPSA id j22sm12745293ljh.107.2020.05.12.06.12.44
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ucIamOxWoiikiTT7OyOk1rVSeBavTDD4mVIWBfGQ0Tg=;
+ b=W3RFTRfyTCAXnPFMS60MnPiajKf+93XSlIU4Hr59a9KlomOOzSwa1PzzqDW7oBXN9z
+ rlRDIgK6I+gh/GHh5sHU+wDIUDyHuWSrOrDK7j5/t6zATlwRr9Jo54+cfcO/M/cbQ9yB
+ 6VJgcFNXxeQYbO733HlXCQ5UER31avGO4FUpxZQ4qAsXQ6Qr02r3E/gHuzJ0MNlrrUQs
+ bCIZPj7JX/Nh8kha453sF7LMTLLoekmGdRkZNFC8tX+rfpOTCdUQbW+6qyPzmbEQWbk8
+ 0J3Ii67CZNAzMdAJLsb5hT0F1K/bmcXXkkwHKxr6MHm9GpnYaUrF9XbEBGrfRtEvMnGx
+ g8fA==
+X-Gm-Message-State: AGi0Pubs2ynRuDuKO0CutXZ7tAc2yqza1Jw2nUIBrDBamXa+CFySan5X
+ 4ioDmQVTm+2jhnD/xL6vaL2ruw==
+X-Google-Smtp-Source: APiQypJLgHGkWpi4Lcz/tiolMUMUWnpODhX3I8i/kPzrgclwoULRyPhWPJAIGGotuugAy+3zWXhlQQ==
+X-Received: by 2002:a1c:9e51:: with SMTP id h78mr39840046wme.177.1589289271434; 
+ Tue, 12 May 2020 06:14:31 -0700 (PDT)
+Received: from lmecxl0524.home
+ (2a01cb058702ff00bc4b798f4f30d41e.ipv6.abo.wanadoo.fr.
+ [2a01:cb05:8702:ff00:bc4b:798f:4f30:d41e])
+ by smtp.gmail.com with ESMTPSA id p9sm16480524wrj.29.2020.05.12.06.14.30
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 06:12:45 -0700 (PDT)
-Date: Tue, 12 May 2020 15:12:43 +0200
-From: Jens Wiklander <jens.wiklander@linaro.org>
-To: arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL] tee subsystem client uuid for v5.8
-Message-ID: <20200512131243.GA10028@jade>
-MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ Tue, 12 May 2020 06:14:30 -0700 (PDT)
+From: Etienne Carriere <etienne.carriere@linaro.org>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH v2] dt-bindings: nvmem: stm32: new property for data access
+Date: Tue, 12 May 2020 15:13:34 +0200
+Message-Id: <20200512131334.1750-1-etienne.carriere@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_061248_645662_6566DE77 
-X-CRM114-Status: GOOD (  11.57  )
+X-CRM114-CacheID: sfid-20200512_061433_374651_FE4992C0 
+X-CRM114-Status: GOOD (  11.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,37 +93,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tee-dev@lists.linaro.org,
- Vesa =?utf-8?B?SsOkw6Rza2Vsw6RpbmVu?= <vesa.jaaskelainen@vaisala.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Etienne Carriere <etienne.carriere@st.com>, devicetree@vger.kernel.org,
+ alexandre.torgue@st.com, robh+dt@kernel.org, srinivas.kandagatla@linaro.org,
+ mcoquelin.stm32@gmail.com, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGVsbG8gYXJtLXNvYyBtYWludGFpbmVycywKClBsZWFzZSBwdWxsIHRoZXNlIHBhdGNoZXMgZW5h
-YmxpbmcgR2xvYmFsIFBsYXRmb3JtIGNsaWVudCBVVUlEIGdlbmVyYXRpb24KZm9yIHRoZSBPUC1U
-RUUgZHJpdmVyLgoKVGhhbmtzLApKZW5zCgpUaGUgZm9sbG93aW5nIGNoYW5nZXMgc2luY2UgY29t
-bWl0IGFlODNkMGI0MTZkYjAwMmZlOTU2MDFlN2Y5N2Y2NGI1OTUxNGQ5MzY6CgogIExpbnV4IDUu
-Ny1yYzIgKDIwMjAtMDQtMTkgMTQ6MzU6MzAgLTA3MDApCgphcmUgYXZhaWxhYmxlIGluIHRoZSBH
-aXQgcmVwb3NpdG9yeSBhdDoKCiAgZ2l0Oi8vZ2l0LmxpbmFyby5vcmcvcGVvcGxlL2plbnMud2lr
-bGFuZGVyL2xpbnV4LXRlZS5naXQgdGFncy90ZWUtbG9naW4tZm9yLTUuOAoKZm9yIHlvdSB0byBm
-ZXRjaCBjaGFuZ2VzIHVwIHRvIGM1YjQzMTJiZWE1ZDVlNWUzZDRmMGFmNjQwZTJlZjhhMWMxYmIx
-Njc6CgogIHRlZTogb3B0ZWU6IEFkZCBzdXBwb3J0IGZvciBzZXNzaW9uIGxvZ2luIGNsaWVudCBV
-VUlEIGdlbmVyYXRpb24gKDIwMjAtMDUtMTEgMTQ6MTE6MzMgKzAyMDApCgotLS0tLS0tLS0tLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCkFkZHMg
-dXRpbGl0eSBmdW5jdGlvbiBpbiBURUUgc3Vic3lzdGVtIGZvciBjbGllbnQgVVVJRCBnZW5lcmF0
-aW9uLiBUaGlzCmZ1bmN0aW9uIGlzIGFsc28gdXNlZCBpbiB0aGUgb3B0ZWUgZHJpdmVyLgoKLS0t
-LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0t
-LS0tLQpWZXNhIErDpMOkc2tlbMOkaW5lbiAoMik6CiAgICAgIHRlZTogYWRkIHN1cHBvcnQgZm9y
-IHNlc3Npb24ncyBjbGllbnQgVVVJRCBnZW5lcmF0aW9uCiAgICAgIHRlZTogb3B0ZWU6IEFkZCBz
-dXBwb3J0IGZvciBzZXNzaW9uIGxvZ2luIGNsaWVudCBVVUlEIGdlbmVyYXRpb24KCiBkcml2ZXJz
-L3RlZS9LY29uZmlnICAgICAgfCAgIDEgKwogZHJpdmVycy90ZWUvb3B0ZWUvY2FsbC5jIHwgICA2
-ICstCiBkcml2ZXJzL3RlZS90ZWVfY29yZS5jICAgfCAxNTIgKysrKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKysKIGluY2x1ZGUvbGludXgvdGVlX2Rydi5oICB8ICAx
-NiArKysrKwogNCBmaWxlcyBjaGFuZ2VkLCAxNzQgaW5zZXJ0aW9ucygrKSwgMSBkZWxldGlvbigt
-KQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+From: Etienne Carriere <etienne.carriere@st.com>
+
+Introduce boolean property st,non-secure-otp for OTP data located
+in a factory programmed area that only secure firmware can access
+by default and that shall be reachable from the non-secure world.
+
+This change also allows additional properties for NVMEM nodes that
+were forbidden prior this change.
+
+Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
+---
+Changes since v1:
+  Change nvmem.yaml to allow additional properties in NVMEM nodes.
+
+Link to v1:
+  https://lore.kernel.org/patchwork/patch/1239028/
+
+ .../devicetree/bindings/nvmem/nvmem.yaml        |  2 --
+ .../bindings/nvmem/st,stm32-romem.yaml          | 17 +++++++++++++++++
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/nvmem/nvmem.yaml b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
+index 65980224d550..b459f9dba6c9 100644
+--- a/Documentation/devicetree/bindings/nvmem/nvmem.yaml
++++ b/Documentation/devicetree/bindings/nvmem/nvmem.yaml
+@@ -67,8 +67,6 @@ patternProperties:
+     required:
+       - reg
+ 
+-    additionalProperties: false
+-
+ examples:
+   - |
+       #include <dt-bindings/gpio/gpio.h>
+diff --git a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
+index d84deb4774a4..c11c99f085d7 100644
+--- a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
++++ b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
+@@ -24,6 +24,18 @@ properties:
+       - st,stm32f4-otp
+       - st,stm32mp15-bsec
+ 
++patternProperties:
++  "^.*@[0-9a-f]+$":
++    type: object
++
++    properties:
++      st,non-secure-otp:
++        description: |
++          This property explicits a factory programmed area that both secure
++          and non-secure worlds can access. It is needed when, by default, the
++          related area can only be reached by the secure world.
++        type: boolean
++
+ required:
+   - "#address-cells"
+   - "#size-cells"
+@@ -41,6 +53,11 @@ examples:
+       calib@22c {
+         reg = <0x22c 0x2>;
+       };
++
++      mac_addr@e4 {
++        reg = <0xe4 0x8>;
++        st,non-secure-otp;
++      };
+     };
+ 
+ ...
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
