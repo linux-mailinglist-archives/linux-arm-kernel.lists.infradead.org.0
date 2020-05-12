@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12FE01D0050
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:13:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 611861D0076
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:13:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mq0HTidGniHZyAO2h865mB8rxy0ZvTyOAaVgCkekALY=; b=AZdO3pltwgctlk
-	O/3rhAahA3GHZGSyNKe15zLrQQSEJbWwDyh7H6UJWirCDFFn3PXi8fjDhhihxNzTh46lBeVyRbl6e
-	UTRpUtxLuZNuCMJ4ZT2NcbHIYldTu7NhJ/dHCnJnOxKuNvtsejq3HuzB5cG4E+XBcxVNA8tP4GVOo
-	jYGb5wcbFiajeE54fpHQ+ov5Uh1h2R97VU95f/czf+Pzsxl+I48mqNGpDTaySWCEP4K0ZzIUhyXXh
-	bMfQqTUesBIi6MyWBkVK/uChGjHgeT8T22uUSm1/QFW/soTjrLBpGWWNBQ7INOrmWkIJAgbCZ/xBK
-	mEBVCGzXIhp/3+P4XfSw==;
+	List-Owner; bh=7InWZS5pSKgvQ7/jnl8xTPK6XGAT08ppzfSyT2zaB8I=; b=cBB2WrDq+XiTZW
+	NAbZuJVpodRJExGsDYDY5lJsiw73DdVbEQyMBWam77FPLUINaw1NCva53WruyzAxC0EhdYo4oSgkb
+	ovkvBCRsJ7HL1SsNBs2aGvhZ3kGlLZNH5zYXgH0l9yi8e/MHBcILH1chYYviC1QrW1lyAkyrRhlQE
+	FGIt/dlACMkkPKQXbvoKTAiHHe9xoxrOLVm+HPBHvpfwJRuRpcERduE1469dfNUOPw9GULDWEfeYl
+	7GcFmm5ui4DZyrABf11o5A5F3RZgGy+2DItooKr7Wc3Z2jl5cEMB49WUCkSha/tkvMswMcAfhmvX1
+	SZ3JzS+d8xePxDjFebaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYcCv-00067S-FQ; Tue, 12 May 2020 21:12:57 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jYcDb-0006er-7C; Tue, 12 May 2020 21:13:39 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYcBO-0004r2-8j; Tue, 12 May 2020 21:11:23 +0000
-Received: by mail-wm1-x342.google.com with SMTP id n5so10628818wmd.0;
- Tue, 12 May 2020 14:11:21 -0700 (PDT)
+ id 1jYcBP-0004rw-5T; Tue, 12 May 2020 21:11:24 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e1so3774300wrt.5;
+ Tue, 12 May 2020 14:11:23 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=QCz00tmEMOWf1BfX6wm6Ux86AFt3zQvcnwyO0soJUcY=;
- b=EQtUaySOiER3DZmqgJUZlvsEXfJQvIODFcA0vQdu43vOD4gOXWk5qpBubi8TfBg1cf
- ppcyXlTMr9NvEYgcZoRg4JZwZzDoHNhIk6pGygdUUgaQRNt2TOikOQD45CgNEtMlPrzm
- /A1gs9ZmHnK8vmkSo7dPUREqq93sMcJNpiT5GbYYnkTFfI3dGq+oeY/KNB87+SlvBaK3
- kmV9bqKwxmaNocUDjf3XDmCBz6mlK4PgSxnmdGcIFHGHeKt83Uhlzn7p51vejpJmXvaT
- aE3dmGINyBFgD2HngZ1zI1z3JNM1Xrv1aVoUSwjRANzsoWq2cTjvMYPURsSWSwHW/kQI
- eIRA==
+ bh=pjlQaP6Pg6Yvwq7DW912bqutMrQVbTNiK7xq5gHpuE0=;
+ b=roj0ycigj6tQpVmbhT3jMy7/bvzkqodh/XKde1bJcDq8Su5gcZDcm7zLr8gdt1bPAk
+ g6x90DldhUlWdT1PBS48kD5RXetpXcNc/eHbsfufeiGHipzX0E9wjr+TphFWQnr7SDpb
+ Xm7K9cF+fp2IDhkP9lNym+BixHnCNStlxvFAqVJFvw6emDyQ8VT5GEScIX+vwtIQCtX6
+ JNfzeR6qGKqrY4zUi2lMyQnWve+b2zgGtJkscILNbP+VxR1I2hFQO24nrHSt/G7eIapF
+ ApuothyXDI9r84McHgKdSCJGozqmmGcc+BRDGBYXZuFrvrWvu48XpMTyalcsBo2dctp2
+ Dytw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=QCz00tmEMOWf1BfX6wm6Ux86AFt3zQvcnwyO0soJUcY=;
- b=GSAX3NFbkw5X+VOgyvAcriqmx94R8OaAmigsAbL5R+bscTNRg2YFGc1f9pwcsIV0Ht
- B5in8nEAHdkiSJUz6POGaOhTK2rDgf2S2pyGkvylXCe6SjjGZ9RpGWw0om+E6C8CXL4F
- 4H4K2tf+QK1HVqi99Cc14AaZkAi2mGfblGM5TQwXPaliJOOp3gKAHzncUtiuC27Mq0h8
- BfYotS/pptzPNJMUBGOwVnn8uqFGXLhrfaAAzGruatx8dQ4+4lx7y8EySJ/oiP5wrKBa
- j6zl/8w0RT69tCZkS4L+3OAUbxqX/s9UcDHmIA7zyhPZEuBKiHtXXRAuH2yyL6QPsADq
- 4EmA==
-X-Gm-Message-State: AGi0PuYWfMKBi4H1GHQxwQlcREasQMEHVvvN1Igb866nyzbyC+ds+mUg
- ogvAljMQkJSBq4cdmBVreA+j0DwY
-X-Google-Smtp-Source: APiQypIwG6YlDqv9Ym1mV9sH/sUllSp3MG0tyRa6e+gg0yIgvWrhNsgaj8VAtpPtWCH8XSAGGhc1aA==
-X-Received: by 2002:a05:600c:2046:: with SMTP id
- p6mr39502551wmg.177.1589317880711; 
- Tue, 12 May 2020 14:11:20 -0700 (PDT)
+ bh=pjlQaP6Pg6Yvwq7DW912bqutMrQVbTNiK7xq5gHpuE0=;
+ b=hEdfhUtYXG+gtVTla1W3WVFQQrBfDPRlCoeE6uqVrBxjsV6bdkMJwBxXs62Z9TACkP
+ PAKgNQbKG4p0tpkWOJKNC7LiGdhh9+E1wy4c9SGw4V8OLzcTn5gUm80ysB4xtNw0nyqc
+ mLMcT38fP5KHs5Tbd8jvG3SameeH5bp+RkXgYlynFaDEaZhFu18HKWCnhjyRTV++rDrT
+ wa8Wsha1PgW8kDDrr3tW6Kf3IIgfMGYUNnVw8fZoiIzPJK1cBfYjDeb0X5vnXWojUIlY
+ g+4OuEygA5jBIZtdXAJieu5w+1/Q/B7Jlq4Ga8iYtYEee4XiRTWbuHYplDU3rm05FpKk
+ I1rA==
+X-Gm-Message-State: AOAM533bguzat8CezggPSOLdmTojdKFpaTsy72jDf1SxhJjz30Aagj+5
+ z99rkA+G4wNese2JvuNvGfE=
+X-Google-Smtp-Source: ABdhPJy8IBNIga3u76iZvWIyKVklYTAzmaNyRda+NSuJrgm3ui7QhnMf2uVqDc69Bo88OkngKLdAvg==
+X-Received: by 2002:a5d:4d81:: with SMTP id b1mr5282727wru.55.1589317881655;
+ Tue, 12 May 2020 14:11:21 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F137132E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3713:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id r3sm9724228wmh.48.2020.05.12.14.11.19
+ by smtp.googlemail.com with ESMTPSA id r3sm9724228wmh.48.2020.05.12.14.11.20
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 14:11:20 -0700 (PDT)
+ Tue, 12 May 2020 14:11:21 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
  linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
-Subject: [PATCH v3 4/8] net: stmmac: dwmac-meson8b: Move the documentation for
- the TX delay
-Date: Tue, 12 May 2020 23:10:59 +0200
-Message-Id: <20200512211103.530674-5-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v3 5/8] net: stmmac: dwmac-meson8b: Add the PRG_ETH0_ADJ_* bits
+Date: Tue, 12 May 2020 23:11:00 +0200
+Message-Id: <20200512211103.530674-6-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200512211103.530674-1-martin.blumenstingl@googlemail.com>
 References: <20200512211103.530674-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_141122_342385_60724B90 
-X-CRM114-Status: GOOD (  11.49  )
+X-CRM114-CacheID: sfid-20200512_141123_242488_EEF147D1 
+X-CRM114-Status: GOOD (  10.72  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -111,43 +109,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move the documentation for the TX delay above the PRG_ETH0_TXDLY_MASK
-definition. Future commits will add more registers also with
-documentation above their register bit definitions. Move the existing
-comment so it will be consistent with the upcoming changes.
+The PRG_ETH0_ADJ_* are used for applying the RGMII RX delay. The public
+datasheets only have very limited description for these registers, but
+Jianxin Pan provided more detailed documentation from an (unnamed)
+Amlogic engineer. Add the PRG_ETH0_ADJ_* bits along with the improved
+description.
 
+Suggested-by: Jianxin Pan <jianxin.pan@amlogic.com>
 Reviewed-by: Andrew Lunn <andrew@lunn.ch>
 Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c | 8 ++++----
- 1 file changed, 4 insertions(+), 4 deletions(-)
+ .../ethernet/stmicro/stmmac/dwmac-meson8b.c   | 21 +++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-index c9ec0cb68082..1d7526ee09dd 100644
+index 1d7526ee09dd..70075628c58e 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-meson8b.c
-@@ -33,6 +33,10 @@
- #define PRG_ETH0_CLK_M250_SEL_SHIFT	4
- #define PRG_ETH0_CLK_M250_SEL_MASK	GENMASK(4, 4)
+@@ -48,6 +48,27 @@
+ #define PRG_ETH0_INVERTED_RMII_CLK	BIT(11)
+ #define PRG_ETH0_TX_AND_PHY_REF_CLK	BIT(12)
  
-+/* TX clock delay in ns = "8ns / 4 * tx_dly_val" (where 8ns are exactly one
-+ * cycle of the 125MHz RGMII TX clock):
-+ * 0ns = 0x0, 2ns = 0x1, 4ns = 0x2, 6ns = 0x3
++/* Bypass (= 0, the signal from the GPIO input directly connects to the
++ * internal sampling) or enable (= 1) the internal logic for RXEN and RXD[3:0]
++ * timing tuning.
 + */
- #define PRG_ETH0_TXDLY_MASK		GENMASK(6, 5)
++#define PRG_ETH0_ADJ_ENABLE		BIT(13)
++/* Controls whether the RXEN and RXD[3:0] signals should be aligned with the
++ * input RX rising/falling edge and sent to the Ethernet internals. This sets
++ * the automatically delay and skew automatically (internally).
++ */
++#define PRG_ETH0_ADJ_SETUP		BIT(14)
++/* An internal counter based on the "timing-adjustment" clock. The counter is
++ * cleared on both, the falling and rising edge of the RX_CLK. This selects the
++ * delay (= the counter value) when to start sampling RXEN and RXD[3:0].
++ */
++#define PRG_ETH0_ADJ_DELAY		GENMASK(19, 15)
++/* Adjusts the skew between each bit of RXEN and RXD[3:0]. If a signal has a
++ * large input delay, the bit for that signal (RXEN = bit 0, RXD[3] = bit 1,
++ * ...) can be configured to be 1 to compensate for a delay of about 1ns.
++ */
++#define PRG_ETH0_ADJ_SKEW		GENMASK(24, 20)
++
+ #define MUX_CLK_NUM_PARENTS		2
  
- /* divider for the result of m250_sel */
-@@ -248,10 +252,6 @@ static int meson8b_init_prg_eth(struct meson8b_dwmac *dwmac)
- 	switch (dwmac->phy_mode) {
- 	case PHY_INTERFACE_MODE_RGMII:
- 	case PHY_INTERFACE_MODE_RGMII_RXID:
--		/* TX clock delay in ns = "8ns / 4 * tx_dly_val" (where
--		 * 8ns are exactly one cycle of the 125MHz RGMII TX clock):
--		 * 0ns = 0x0, 2ns = 0x1, 4ns = 0x2, 6ns = 0x3
--		 */
- 		tx_dly_val = dwmac->tx_delay_ns >> 1;
- 		/* fall through */
- 
+ struct meson8b_dwmac;
 -- 
 2.26.2
 
