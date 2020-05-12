@@ -2,59 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6C641CF182
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:23:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 011C11CF1C6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:39:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=V8KI/NjUAhV5wqSiAEBwImKACAZs6GpxHAX0XX6dnag=; b=KBXyfF/lu5Vf3GAQkWNuqyWPJ
-	KFdnhPu2NMbe+etcJskYe02nROEZ1+6OOc7WH//VGNW4sVM9wIPfJSvJqQxTl12cU3dIpHl5+ujhp
-	GpRN/4GFd2eX56jwWuwJCromvhQyNRdhLCmC3D8v9U4Uniu2qQ2+YGwvIGTaGzRYNBokW5oTrJ1hv
-	Vp3QCorOlgfOdbmoQM5KrwmkQTH1+PALYQmMAPxbm5QtUyDXvlFUo5Zqr4k/TPU/BrJE0CBA4nD8N
-	XQHS9cc9kmqk6320MRacPuQmvQz9ikNbH+KUxhdUFWo2G60AXBd0AxKpfCWz7KSwK3rg9T3YKxnvX
-	HnQE6/BXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=X7qyOYdzD6SSFlA/YHrTkK+DZhgbp86x6sUAvS67+ng=; b=HHnq+JVIDLVd3Z
+	zI6daxleBmqWpHrQwSvIoBeWqMbLcgKElaCdgxrdW7jiIGYtWLlpH9KBMnqptDsmU7nQ47F/tZoxk
+	SASZ9z05v5GwPJF2Xz0qcsMXWr2oFL1jkpw/Tfx2y5XJF1IsqHTuJj0MG3V39blwacl4Mj10SyrvR
+	qhXDhhvh86zwrHQ53kBuHRsxsfVaAEtqrYjtEkMRxPTLktcUUvwLpo8eJ5J8D/okHCgqQ7YT7Qa9t
+	rHWd4TvxrZdI+r+OD3zWPB1w5D/Sr37yynzdtfVZGgihXup7YxJgIJA0F9SbhTFPTNaAXIC+bNv6m
+	/p1Ga24FachHZougXpAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYR87-0008Lj-5T; Tue, 12 May 2020 09:23:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYR7z-0008Kz-Uy
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:23:09 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F221A1045;
- Tue, 12 May 2020 02:23:06 -0700 (PDT)
-Received: from [10.37.12.83] (unknown [10.37.12.83])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65BAC3F305;
- Tue, 12 May 2020 02:23:05 -0700 (PDT)
-Subject: Re: [PATCH] memory/samsung: reduce unnecessary mutex lock area
-To: Krzysztof Kozlowski <krzk@kernel.org>
-References: <20200508131338.32956-1-bernard@vivo.com>
- <20200512065023.GA10741@kozik-lap>
- <e762ce12-eff0-d3a5-f083-2b592921de59@arm.com>
- <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
-From: Lukasz Luba <lukasz.luba@arm.com>
-Message-ID: <fd463b97-6db7-f7ba-c4bd-5c709a4898c0@arm.com>
-Date: Tue, 12 May 2020 10:23:03 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1jYRNx-0000fr-Dy; Tue, 12 May 2020 09:39:37 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYRNj-0000dx-Jp
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:39:25 +0000
+Received: by mail-wm1-x341.google.com with SMTP id m24so11377459wml.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 02:39:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Zgpqu0nvlNXje4P44wgJ/fTYplh7IoX+pXP6R2kTyUM=;
+ b=uzxHI4cI4r7ueJkfpnBdL3JzpvoW11LDPGiW6NfK1U9s8c2/BhOFPdFJjMwZ6ryp+U
+ 1tU+DHdfOsMJQle6OpB0KoaUQHeyVEdbxV0BUVeHnfQVrsbYAS/6IzYrgTESjFYX4pqQ
+ 5/Dsf8ikXsKJcV491ahTN25F6sw2KPdozOs6+pO2ITbRI9Mm52K3zL744WjWTdvJG0hV
+ YejSR9syq8/27XceTE9AdEzoCBtZW5B5g3cHdVmxzu8Rc0QoC/j25fJBFHt0A6NhSWOP
+ IgHs7vrjfl1oPq0ouyWYrdBtpp+skiLEC3zJlbzZj0/f59jQ7iWsW5pKVjNBuR8ZmxVA
+ UrPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Zgpqu0nvlNXje4P44wgJ/fTYplh7IoX+pXP6R2kTyUM=;
+ b=iEvTZ2Y87ZX5VdcYrkPNSt9OW7DQ6nenaEk5wXYjaBGwnlklmB4rTMuljcSUmaAC3M
+ IMfrgLedR9icgHWF+d1qnsMCVlZJ3YbNJoXjzyePoKLkmxuMbqzyGVhFJYf1Ta6nmcpx
+ Hljll0x2ZgYeNhWFyZf/JvjGhrh/2h9b2MwNXvYPWhrE8fNA3wP9vfthTIgsRwSP6qqU
+ lX/w/1sIlsqbcKOVWbZEI5fJe5Ovv6Nm/n5Y/pSzc+SPLmZ+0l2kJ64bnm6x04K3MoXK
+ I+FOL/SKtUFYxhGNO/E3Myo3ZMXRsr2IhQEUQRC1X261XvbgYhXPC1e7+ZswFa3zgRiB
+ CnMQ==
+X-Gm-Message-State: AGi0PuaSRTXB8JkvMlKQGGuLbpLY+Sk/dFppmNpn6DfXwHSjkTJ2BEIS
+ eOjHYmRlXAtYk8KClvIsMi+u7A==
+X-Google-Smtp-Source: APiQypKf2iz/NXq0roCfN6pjhAVz0wejgec/5x0siuuEH16JGsJRfDvKR1I8FJOnJ4nNNidj130K1Q==
+X-Received: by 2002:a1c:1c6:: with SMTP id 189mr5058963wmb.47.1589276361349;
+ Tue, 12 May 2020 02:39:21 -0700 (PDT)
+Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
+ by smtp.gmail.com with ESMTPSA id
+ 81sm14037092wme.16.2020.05.12.02.39.20
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 12 May 2020 02:39:20 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH 0/2] arm64: dts: meson-sm1: add thermal nodes
+Date: Tue, 12 May 2020 11:39:14 +0200
+Message-Id: <20200512093916.19676-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-In-Reply-To: <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_022308_046375_FAEE4879 
-X-CRM114-Status: GOOD (  21.37  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_023923_698059_77A36213 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,79 +93,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-pm@vger.kernel.org, Bernard Zhao <bernard@vivo.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+SM1 Thermal is missing and broken since the G12A/G12B thermal enablement,
+fix this here by moving the g12b thermal nodes to meson-g12b.dtsi
+and adding the proper sm1 thermal nodes.
 
+Neil Armstrong (2):
+  arm64: dts: meson-g12b: move G12B thermal nodes to meson-g12b.dtsi
+  arm64: dts: meson-sm1: add cpu thermal nodes
 
-On 5/12/20 10:05 AM, Krzysztof Kozlowski wrote:
-> On Tue, 12 May 2020 at 10:47, Lukasz Luba <lukasz.luba@arm.com> wrote:
->>
->> Hi Krzysztof,
->>
->> I am sorry, I was a bit busy recently.
->>
->> On 5/12/20 7:50 AM, Krzysztof Kozlowski wrote:
->>> On Fri, May 08, 2020 at 06:13:38AM -0700, Bernard Zhao wrote:
->>>> Maybe dmc->df->lock is unnecessary to protect function
->>>> exynos5_dmc_perf_events_check(dmc). If we have to protect,
->>>> dmc->lock is more better and more effective.
->>>> Also, it seems not needed to protect "if (ret) & dev_warn"
->>>> branch.
->>>>
->>>> Signed-off-by: Bernard Zhao <bernard@vivo.com>
->>>> ---
->>>>    drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
->>>>    1 file changed, 2 insertions(+), 4 deletions(-)
->>>
->>> I checked the concurrent accesses and it looks correct.
->>>
->>> Lukasz, any review from your side?
->>
->> The lock from devfreq lock protects from a scenario when
->> concurrent access from devfreq framework uses internal dmc fields 'load'
->> and 'total' (which are set to 'busy_time', 'total_time').
->> The .get_dev_status can be called at any time (even due to thermal
->> devfreq cooling action) and reads above fields.
->> That's why the calculation of the new values inside dmc is protected.
-> 
-> I looked at this path (get_dev_status) and currently in devfreq it
-> will be only called from update_devfreq() -> get_target_freq()... at
-> least when looking at devfreq core and governors. On the other hand
-> you are right that this is public function and this call scenario
-> might change. It could be called directly from other paths sooner or
-> later.
+ arch/arm64/boot/dts/amlogic/meson-g12.dtsi  | 23 --------------------
+ arch/arm64/boot/dts/amlogic/meson-g12b.dtsi | 22 +++++++++++++++++++
+ arch/arm64/boot/dts/amlogic/meson-sm1.dtsi  | 24 +++++++++++++++++++++
+ 3 files changed, 46 insertions(+), 23 deletions(-)
 
-Indeed, I am currently changing this while I am adding devfreq devices
-to the Energy Model.
+-- 
+2.22.0
 
-> 
->> This patch should not be taken IMO. Maybe we can release lock before the
->> if statement, just to speed-up.
-> 
-> Yep.
-> 
-> Bernard, you can send just this part of the patch.
-
-Thank you Bernard and please submit the patch v2.
-
-> 
-> Best regards,
-> Krzysztof
-> 
-
-Thank you Krzysztof for your time spent on this.
-
-
-Regards,
-Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
