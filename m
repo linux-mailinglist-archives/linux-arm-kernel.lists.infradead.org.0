@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E37B1CF65F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:03:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 359C81CF662
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:03:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YGSNojI6iANcFkV+XaTkyYZw63g9d5zhsuJk1BANiTo=; b=r4MydrCLTRZrDa
-	8G455c1egavA/FV/He5NYjlTD85ht0WSDS6Yuu9qD/+mBTJm645CWB4HwsjtZ7I01oamHNeG+0krN
-	c4MHCBgR9GTcZY4QF37DMjCeL7UBhkFdYyzTu67Nqn8opyxeUyY+hdNEQx5WaMrI4jgjhQ/cUYHmE
-	YzB3RCZ8g0PxAb21A3nXez3TgsfqMwGZkZdlJDTxYh82mx7gwss1S8kfrlPK6uSoP4PJqqX8cZG/l
-	f2nBbDbjWXIOGblaw3hGAqN/bSWEODKuZhT7NN2cIJvdjO0yXt+RzI279KmDJhdkb534X2xy8xBV5
-	/wo+dMY8zMy2ajTqEBJA==;
+	List-Owner; bh=vfArdQb71pBNd3mKO13QpEHKBQMdeb8DQx1pVnpegOk=; b=hSa4u2TmsQYZEc
+	2razKHMzqT0LnzpC24B+0oGbWVl29Pay+cRMjAvsghDxz0OvnDqcEUG1+2utKVUI1zdjH338/GOnA
+	Ev7HiFjF3W3aduAHWmFRe6sKhidSOL73qKralBkRGTLxYz2Z1YfSnuibYPndS5DAB6DrzVPD051Zj
+	bF3DLsZw44j/5sQZkKl0AC/rbOyFrBhLsK3F7hqtYjrGVJjcstcOhHX+eNrqEEnobtFzbPhIyBd+m
+	b4VGrmpiSwuaW9M6o3JS53KPJQ1R/qdBoYiaaLjNlaSsF+79HtNubueMBlcwJeQa9hMm0Cj/6lt9+
+	yHNh9V2Z5PZ2V6/F9zsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYVV0-0000dc-Kh; Tue, 12 May 2020 14:03:10 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jYVVN-0000s3-JT; Tue, 12 May 2020 14:03:33 +0000
+Received: from mail-qv1-xf42.google.com ([2607:f8b0:4864:20::f42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYVUr-0000d7-Jx
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:03:03 +0000
-Received: by mail-pg1-x541.google.com with SMTP id l12so6190822pgr.10
+ id 1jYVV8-0000qM-Sq
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:03:20 +0000
+Received: by mail-qv1-xf42.google.com with SMTP id v15so2212654qvr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 07:03:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=KPYkLoC2C4Sk/B5wg5r+gTORkTgExyx51OnDHmLxSUM=;
- b=daSDd8Ykcoy3ZAgXDfNp4Qq7j5H15ZyalpHRs1vZcye7jWW948+4CnUfx5QZKxEMRS
- Ph2k67EtLEwvVEAhajcDTkiOmNkNlbtfCowAiI4ciquyj+VakuEd6nss0GnWvuyy1HaU
- My6VjjZg4Wm2A5yo36QDUijDCMnGv2ei+ptMcKRnmyWan+YOYREjwR8wttEz8mys8lLO
- t0zQvvWT8xCwxpmdG/xlSRsHnbl/awwZ6JSwhexTxDD9UEMfJ3bL2ct5/bR8AvxUsZWT
- YrwXMcRVUCCuAF/sjsE/0T1VmPGC7A0bTKISpMi4m1VHRUWL3vslSIurwXm+mI6TlAss
- POBw==
+ Tue, 12 May 2020 07:03:18 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=HdL0PoelnNwC+IbWuQ/qzw1k9SeDaMleYXr87Z/Ant4=;
+ b=QQawiJ16cJoOdX0v2O/nrybNFbweTZ9aWk/wAttBFTUWRgH/uywBEmgJJ3u+gYjdHG
+ dIPfgBZVU75hHbpayW0czEXxkxEh/A5qfr1ZsTdqgRWFiK9+8OC+AWGCyOzUQUcbVeLK
+ tHy1StevFR2QW2LRSkYwbXwSIJz8ZyEyRyjeRFgKDl9WCS++62M7d9VDQYbZW8ZQiy4N
+ 8cn2evMhjL/a4EoYxDJEVZ72F+pdtNbnWyP+hHtRCCHCvn4NdY1ndpZBrX98ivNdAmNm
+ UsrZjKOhnc6ozhKsb4K5sEE3WTthuFvFkcFoU1rmmii8PPNouLKmwZGVUUkRbQwXrbSb
+ tI1g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=KPYkLoC2C4Sk/B5wg5r+gTORkTgExyx51OnDHmLxSUM=;
- b=tyJmLLEuoGCZTBe13Ax2GAO/6Vv3zjyEk8RqUJKh22B3KNIBCgNk1tjiRzOWif6c7E
- BD8XULADSwPIY1CFU4BcdYZNV0+LP3FHqsUk8gv0Kfwmmvp8ZhHS4kvdeabCuGxwJj1U
- 9ZDm4iXgYqmA8jIHvHZGJuda5ENVYeRaPSvUzlP3Ncy07dgh7bFwC7ode9Yn/XPmbawY
- JAHpCNMwzniu+JL/pGhKE51SVFt8eYfA5Uj1zg66/QeI96VI9awatu/uSXubHijnKmUF
- yHDf6PJuRX2KNyM7g2Fv6CFZ0s22HDbmv8v3liiKRhSYiSv8gT5btN/3oVLj9V3IWDxh
- 7Eyg==
-X-Gm-Message-State: AGi0PubuOdLBhNTCys4t/eqKmOsOqIiPNlBEXFOVsm8DK9A8e/vczZ7H
- oAGlHxESYDlKp1uboSXCDK9QdA==
-X-Google-Smtp-Source: APiQypKllb4iXt3nc66JTP97CFDAti23azw7/y3W2VOej8f/d+P0OaTmD8JGFLP50XpX306Bk/r5DA==
-X-Received: by 2002:a63:d909:: with SMTP id r9mr18992558pgg.245.1589292180928; 
- Tue, 12 May 2020 07:03:00 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s ([2600:3c01::f03c:91ff:fe8a:bb03])
- by smtp.gmail.com with ESMTPSA id t12sm10581769pgm.37.2020.05.12.07.02.55
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 12 May 2020 07:03:00 -0700 (PDT)
-Date: Tue, 12 May 2020 22:03:01 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 2/5] arm64: perf: Implement correct cap_user_time
-Message-ID: <20200512140301.GC20352@leoy-ThinkPad-X240s>
-References: <20200512124058.833263033@infradead.org>
- <20200512124450.824507755@infradead.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HdL0PoelnNwC+IbWuQ/qzw1k9SeDaMleYXr87Z/Ant4=;
+ b=QjsvTxaWK2pOVtag68aN6A9MThCYGo8FbpJw2yHprDWq2s3tYePgV2sqjZi5yIAiAL
+ VMUg+ffNFg/88k9mxHVdmESbeiQummdVNRtywqL6y6aouq/7W0xQTYgcGQva98o8Z46c
+ j/MYomFIRKcuzBZDX0NdJtM1zGTgDJ1UhMxB6wYYI/HIdpBK7Qr3Etj/9Jx+8qf1Yh/Q
+ PD8del9pxt4uV3Mzp84E/ou0WhtkaEuTSMh9hv9ZlBAce4HwcCaecWp6F9+p0Jj95IIa
+ MSNmI/B42gkXxdIhCFr6FkQwAOZ1Cvg70LeEgRrHoopWCXrHfAFTcV1S2Z589RectgZ9
+ 80Tw==
+X-Gm-Message-State: AGi0PuYBtQxdg5IXavj1JV4txlm2Hut4RCAgt7tA1omVOj+fz+HGKb5n
+ AhK0C4xt5/9Rjlu3owhb4sbbMm+x5RfaIGlnhKrAsQ==
+X-Google-Smtp-Source: APiQypLeYRdXP9XHSuSKifMwGDuYtaRqyPQRWpx7Vs6/N1ChFkyDoVmidHX3CJDHhIV3yP+8cu5pPFKpdHj7jZgor0Y=
+X-Received: by 2002:ad4:4d06:: with SMTP id l6mr21334959qvl.34.1589292197432; 
+ Tue, 12 May 2020 07:03:17 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200512124450.824507755@infradead.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+YWNwTSoheJhc3nMdQi9m719F3PzpGo3TfRY3zAg9EwuQ@mail.gmail.com>
+ <CACT4Y+bO1Zg_jgFHbOWgp7fLAADOQ_-AZmjEHz0WG7=oyOt4Gg@mail.gmail.com>
+ <1589203771.21284.22.camel@mtksdccf07>
+ <CACT4Y+aOkuH6Dn+L+wv1qVOLgXyCY_Ck4hecAMw3DgyBgC9qHw@mail.gmail.com>
+ <1589254720.19238.36.camel@mtksdccf07>
+In-Reply-To: <1589254720.19238.36.camel@mtksdccf07>
+From: Dmitry Vyukov <dvyukov@google.com>
+Date: Tue, 12 May 2020 16:03:06 +0200
+Message-ID: <CACT4Y+aibZEBR-3bos3ox5Tuu48TnHC20mDDN0AkWeRUKrT0aw@mail.gmail.com>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+To: Walter Wu <walter-zh.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_070301_658825_03447C80 
-X-CRM114-Status: GOOD (  22.22  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200512_070318_965214_BAC0D8A4 
+X-CRM114-Status: GOOD (  16.41  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:f42 listed in]
  [list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [2600:3c01:0:0:f03c:91ff:fe8a:bb03 listed in] [zen.spamhaus.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,6 +88,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,117 +101,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, alexander.shishkin@linux.intel.com,
- Marc Zyngier <maz@kernel.org>, jolsa@redhat.com, daniel.lezcano@linaro.org,
- sboyd@codeaurora.org, linux-kernel@vger.kernel.org, acme@kernel.org,
- mingo@redhat.com, john.stultz@linaro.org,
- Catalin Marinas <catalin.marinas@arm.com>, tglx@linutronix.de,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: "Paul E . McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Peter,
+On Tue, May 12, 2020 at 5:38 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > Are you sure it will increase object size?
+> > I think we overlap kasan_free_meta with the object as well. The only
+> > case we don't overlap kasan_free_meta with the object are
+> > SLAB_TYPESAFE_BY_RCU || cache->ctor. But these are rare and it should
+> > only affect small objects with small redzones.
+> > And I think now we simply have a bug for these objects, we check
+> > KASAN_KMALLOC_FREE and then assume object contains free stack, but for
+> > objects with ctor, they still contain live object data, we don't store
+> > free stack in them.
+> > Such objects can be both free and still contain user data.
+> >
+>
+> Overlay kasan_free_meta. I see. but overlay it only when the object was
+> freed. kasan_free_meta will be used until free object.
+> 1). When put object into quarantine, it need kasan_free_meta.
+> 2). When the object exit from quarantine, it need kasan_free_meta
+>
+> If we choose to overlay kasan_free_meta, then the free stack will be
+> stored very late. It may has no free stack in report.
 
-On Tue, May 12, 2020 at 02:41:00PM +0200, Peter Zijlstra wrote:
-> As reported by Leo; the existing implementation is broken when the
-> clock and counter don't intersect at 0.
-> 
-> Use the sched_clock's struct clock_read_data information to correctly
-> implement cap_user_time and cap_user_time_zero.
-> 
-> Note that the ARM64 counter is architecturally only guaranteed to be
-> 56bit wide (implementations are allowed to be wider) and the existing
-> perf ABI cannot deal with wrap-around.
-> 
-> This implementation should also be faster than the old; seeing how we
-> don't need to recompute mult and shift all the time.
-> 
-> Reported-by: Leo Yan <leo.yan@linaro.org>
-> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-> ---
->  arch/arm64/kernel/perf_event.c |   36 +++++++++++++++++++++++++++---------
->  1 file changed, 27 insertions(+), 9 deletions(-)
-> 
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -19,6 +19,7 @@
->  #include <linux/of.h>
->  #include <linux/perf/arm_pmu.h>
->  #include <linux/platform_device.h>
-> +#include <linux/sched_clock.h>
->  #include <linux/smp.h>
->  
->  /* ARMv8 Cortex-A53 specific event types. */
-> @@ -1165,28 +1166,45 @@ device_initcall(armv8_pmu_driver_init)
->  void arch_perf_update_userpage(struct perf_event *event,
->  			       struct perf_event_mmap_page *userpg, u64 now)
->  {
-> -	u32 freq;
-> -	u32 shift;
-> +	struct clock_read_data *rd;
-> +	unsigned int seq;
->  
->  	/*
->  	 * Internal timekeeping for enabled/running/stopped times
->  	 * is always computed with the sched_clock.
->  	 */
-> -	freq = arch_timer_get_rate();
->  	userpg->cap_user_time = 1;
-> +	userpg->cap_user_time_zero = 1;
-> +
-> +	do {
-> +		rd = sched_clock_read_begin(&seq);
-> +
-> +		userpg->time_mult = rd->mult;
-> +		userpg->time_shift = rd->shift;
-> +		userpg->time_zero = rd->epoch_ns;
-> +
-> +		/*
-> +		 * This isn't strictly correct, the ARM64 counter can be
-> +		 * 'short' and then we get funnies when it wraps. The correct
-> +		 * thing would be to extend the perf ABI with a cycle and mask
-> +		 * value, but because wrapping on ARM64 is very rare in
-> +		 * practise this 'works'.
-> +		 */
-> +		userpg->time_zero -= (rd->epoch_cyc * rd->mult) >> rd->shift;
-> +
-> +	} while (sched_clock_read_retry(seq));
-> +
-> +	userpg->time_offset = userpg->time_zero - now;
->  
-> -	clocks_calc_mult_shift(&userpg->time_mult, &shift, freq,
-> -			NSEC_PER_SEC, 0);
->  	/*
->  	 * time_shift is not expected to be greater than 31 due to
->  	 * the original published conversion algorithm shifting a
->  	 * 32-bit value (now specifies a 64-bit value) - refer
->  	 * perf_event_mmap_page documentation in perf_event.h.
->  	 */
-> -	if (shift == 32) {
-> -		shift = 31;
-> +	if (userpg->shift == 32) {
+Sorry, I don't understand what you mean.
 
-Thanks a lot for the patch set, some typos:
+Why will it be stored too late?
+In __kasan_slab_free() putting into quarantine and recording free
+stack are literally adjacent lines of code:
 
-s/shift/time_shift
+static bool __kasan_slab_free(struct kmem_cache *cache, void *object,
+      unsigned long ip, bool quarantine)
+{
+    ...
+    kasan_set_free_info(cache, object, tag);
+    quarantine_put(get_free_info(cache, object), cache);
 
-> +		userpg->shift = 31;
 
-s/shift/time_shift
+Just to make sure, what I meant is that we add free_track to kasan_free_meta:
 
-Thanks,
-Leo
+struct kasan_free_meta {
+    struct qlist_node quarantine_link;
++  struct kasan_track free_track;
+};
 
->  		userpg->time_mult >>= 1;
->  	}
-> -	userpg->time_shift = (u16)shift;
-> -	userpg->time_offset = -now;
-> +
->  }
-> 
-> 
+And I think its life-time and everything should be exactly what we need.
+
+Also it should help to fix the problem with ctors: kasan_free_meta is
+already allocated on the side for such objects, and that's exactly
+what we need for objects with ctor's.
 
 _______________________________________________
 linux-arm-kernel mailing list
