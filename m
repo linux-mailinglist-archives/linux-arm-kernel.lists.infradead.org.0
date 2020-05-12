@@ -2,94 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A32A71D028D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:52:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B40221D02A7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 00:58:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yyyTdKUaCrs1UZmfpuySHoURNbM04b16mthyohiEmXY=; b=gpHTSILUA89oql
-	neHscEQOBGJIWT2TzSuK21+wlmIp4wrDQLVqjux8dOH40Z0FNrBqLWZ00afAzirMTiOTPgOu8XDAL
-	aBfDV+wkG4tyLANCxiTMqS26EatBN7WCLC6Uj5inn9ipTpPIBPviNN9cIWv6vJKJ4ZzfYeE+8QJm0
-	LQkbP3ZeMAdFBfx1lR0NWePKHIzeQUSY7taSH3QpNVmRNzLTOdHg8aZkl0K4+ZvSkO3cPv9PbwaDk
-	09LbCyw+99EsCRBrnPJyvZZ9e6+DC9jJt6xurhS1WajHK+k3RFUMaBdDBWsUoCNQ+6UhwCJjHLJtH
-	jnOnxl9ye37ieV9vQqIw==;
+	List-Owner; bh=Z+l98y39XmHT5d5yacKsMiMP1S0qcEWZVDY5pS/dfeo=; b=o0HVhRlnE7I6ek
+	5xFvLR04zJAIGun4hBAoOEdOuBJZ2Z/YQ7QLNkbR6Jz/tqKmu/M9OSO3TvzZONlSeK8q92gfVUJSO
+	bn0nRtOV8Jpa7YY/qU3/ZmWXJkH/cpaH3SAl9sTzWdxDrqBgsHxwfl6g6YmoUfG5V0dlSINcJG40n
+	UY5CzxGCKx3MOjz5do6nv4IMBLbXmf2lwkM0v3F0k0wKP/gaygAt+wMHFNtAAs4R3exKGl2JSNXMU
+	ti7Kuaa2KfXhjFyrmf7a+1BPy52kh0+LMRS9J37Yi4bZuNb0ZQuaGCzdKCUnUfaYpdevuv8qFVBEO
+	2K33PNr1Z9HV/rwqC0vA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYdlA-00072C-IJ; Tue, 12 May 2020 22:52:24 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jYdqy-0001sc-Tc; Tue, 12 May 2020 22:58:24 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYdl3-00071K-LE
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 22:52:19 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id t9so10272979pjw.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 15:52:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=L8tksuSDTqs67QtjinsHE4FheuuliIT8AjKoc4ucm54=;
- b=A+aCawbyEMDcOaXESvLqmbZABWw9O6EP2s1AngbXLV2jFIlhagWHaNG/zKjJM2RhFx
- zR4GIbUSqtZJSgejE1vf8+vegxIzPbGyVYxtbx7Sl6ZFU7jT0DgnrOAM/PpuOSJsUNex
- ociJ4yn2NMIxKt+ipD9wQM7WQ8Z8Ygwn/nKw56/uOd2ygIegOMO5lGFdn6ZFbNuhwQeq
- fqbZNZMncqohFrxIOZq7UENBmTJw+EzF/ChjImjT+PVEz6Zm2ogd4nnvSD5b3goCf5lm
- bu6L9fnzBNIH9phxEleqG+Q4AJiTnHttCCBooCe3hgtQy5Dm9JgzUAi44UmBHKWlzh3N
- qcwg==
+ id 1jYdqp-0001s1-PW; Tue, 12 May 2020 22:58:17 +0000
+Received: by mail-ot1-f65.google.com with SMTP id a68so3436015otb.10;
+ Tue, 12 May 2020 15:58:15 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=L8tksuSDTqs67QtjinsHE4FheuuliIT8AjKoc4ucm54=;
- b=Kwbts9ju1T1r4aQ+0xI74QhaJbDf5u69Qugxy0jpKUGx4O9qg8H7//cSY3RLu9E31u
- 7/UONpP7CJpiX0qfDnuwxmHuQQZGotzvQ87WzNejL1bvS38Ym0Yj9nbqX0v7ai1TQ8/3
- HWD9ZyK0cu2EHWFYAVpAaL7yeef+OuJru1Y5H5xdwAFiGb13OKfN5LHOjbuPqSiIIe18
- g6qrNl3s8V/I5WCB4ZD5kMmOVxhAPz5sDnxw5YLH5i4zUpo86896xT4H02RwHSuBHVLR
- P1CylAXpCodxpJsYquKhtLTKJJsB7sKsC5XzeDnTsxgliZBHHFhcsOJNDddMqybcsztu
- JmZQ==
-X-Gm-Message-State: AOAM531S7wX/K/I0YRjhCAYS5BU5mB/t7boiYoZJTQlnRt7Qd+WMcytK
- FCYvZWWia+ovqt+9iE8/A8wsw9ea
-X-Google-Smtp-Source: ABdhPJwDUrxJZKSLp+Xr6kWbTqL3Ofq02Ayex445wtfRyI6/RGyZxIFRJC7Rb3atq+Syq8sFipfKUw==
-X-Received: by 2002:a17:90a:344c:: with SMTP id
- o70mr5619516pjb.23.1589323935225; 
- Tue, 12 May 2020 15:52:15 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
- by smtp.gmail.com with ESMTPSA id z1sm13623932pjn.43.2020.05.12.15.52.14
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=cBiUIrWE+UaIH5tajkgyIKVaNp7k7WAC/qZUFSsrV2E=;
+ b=PU1D0Y7YRsuUVkBracmEyuRildm2JDhHafPSg36s1phREsFai3LoCy4D+4d8o0JFNZ
+ kfrurmjdTcaTaXx8itrfnDWVCFTy1US6uzUuwJlosRJu/PoJJ3fXp9WVyzbbL9ySNkX5
+ j0ACi5H3kc9lWjw69PqWFucADwaI9vhrfVY+jLK8Ok44OeEISXdxhfiHKO+CqVQw1TTE
+ abIjEAyAQ1tvTHM68zRf7U/E0fGzhYuHRKcl8Y6S8Dj0waV/8Z8cU4vEHHoGfkQq09/l
+ NY+Pm/qyGClb4fx4y4YscxXNcqpOiun765RN3My0fyHTM4jrYTwNSYm1HUCqsK/ZlJPx
+ ma5A==
+X-Gm-Message-State: AGi0Pubcg3exGqx1TVYvOLATx3PPZdnQ1A8QZSXTR6ltI1/LJOTpA/0x
+ LtQtFXsf8cUo3HDyMLzlHQ==
+X-Google-Smtp-Source: APiQypL7PdOIK7Is7Nz5WrJlgO2HUyJLl2vgiulZfCULhki8ejQCn9T9ykjPsFKJznmjeuGro1Uq+g==
+X-Received: by 2002:a05:6830:22f8:: with SMTP id
+ t24mr18122890otc.148.1589324294619; 
+ Tue, 12 May 2020 15:58:14 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id w62sm5632505oia.32.2020.05.12.15.58.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 15:52:14 -0700 (PDT)
-Date: Tue, 12 May 2020 15:52:12 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Ondrej Jirman <megous@megous.com>
-Subject: Re: [PATCH v2 1/4] dt-bindings: input: gpio-vibrator: Don't require
- enable-gpios
-Message-ID: <20200512225212.GE89269@dtor-ws>
-References: <20200512222205.1456300-1-megous@megous.com>
- <20200512222205.1456300-2-megous@megous.com>
+ Tue, 12 May 2020 15:58:13 -0700 (PDT)
+Received: (nullmailer pid 32342 invoked by uid 1000);
+ Tue, 12 May 2020 22:58:12 -0000
+Date: Tue, 12 May 2020 17:58:12 -0500
+From: Rob Herring <robh@kernel.org>
+To: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
+Subject: Re: [PATCH] docs: dt: fix broken links due to txt->yaml renames
+Message-ID: <20200512225812.GA28862@bogus>
+References: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200512222205.1456300-2-megous@megous.com>
+In-Reply-To: <967df5c3303b478b76199d4379fe40f5094f3f9b.1588584538.git.mchehab+huawei@kernel.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_155217_720219_9D4EEC83 
-X-CRM114-Status: GOOD (  15.09  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_155815_830254_B5A6CC93 
+X-CRM114-Status: GOOD (  12.36  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dmitry.torokhov[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.65 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,48 +92,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Rob Herring <robh@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- Luca Weiss <luca@z3ntu.xyz>, linux-sunxi@googlegroups.com,
- Rob Herring <robh+dt@kernel.org>, Tomas Novotny <tomas@novotny.cz>,
- linux-input@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, Olivier Moysan <olivier.moysan@st.com>,
+ =?UTF-8?Q?Heiko_St=C3=BCbner?= <heiko@sntech.de>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ David Airlie <airlied@linux.ie>, dri-devel@lists.freedesktop.org,
+ Sandy Huang <hjc@rock-chips.com>, Andrzej Hajda <a.hajda@samsung.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Jonathan Corbet <corbet@lwn.net>, linux-rockchip@lists.infradead.org,
+ linux-mips@vger.kernel.org, devicetree@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, Jyri Sarha <jsarha@ti.com>,
+ Mark Brown <broonie@kernel.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Arnaud Pouliquen <arnaud.pouliquen@st.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-bluetooth@vger.kernel.org, Daniel Vetter <daniel@ffwll.ch>,
+ netdev@vger.kernel.org, "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 12:22:02AM +0200, Ondrej Jirman wrote:
-> It is possible to turn the motor on/off just by enabling/disabling
-> the vcc-supply.
+On Mon, May 04, 2020 at 11:30:20AM +0200, Mauro Carvalho Chehab wrote:
+> There are some new broken doc links due to yaml renames
+> at DT. Developers should really run:
 > 
-> Signed-off-by: Ondrej Jirman <megous@megous.com>
-> Acked-by: Rob Herring <robh@kernel.org>
+> 	./scripts/documentation-file-ref-check
+> 
+> in order to solve those issues while submitting patches.
+> This tool can even fix most of the issues with:
+> 
+> 	./scripts/documentation-file-ref-check --fix
+> 
+> Signed-off-by: Mauro Carvalho Chehab <mchehab+huawei@kernel.org>
 > ---
->  Documentation/devicetree/bindings/input/gpio-vibrator.yaml | 1 -
->  1 file changed, 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/input/gpio-vibrator.yaml b/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
-> index 2384465eaa19..c700b640bd53 100644
-> --- a/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
-> +++ b/Documentation/devicetree/bindings/input/gpio-vibrator.yaml
-> @@ -24,7 +24,6 @@ properties:
->  
->  required:
->    - compatible
-> -  - enable-gpios
+> PS.: This patch is against today's linux-next.
 
-Hmm we need at least one of the 2 (gpio and supply). Should we encode it
-in the binding?
+That's not a base anyone can apply this patch against.
 
-Also, in the dirver code, I guess we need to switch to have regulator
-optional (so we are not given the dummy one) and bail if neither
-regulator nor GPIO is found.
-
-Thanks.
-
--- 
-Dmitry
+> 
+> 
+>  .../devicetree/bindings/display/bridge/sii902x.txt          | 2 +-
+>  .../devicetree/bindings/display/rockchip/rockchip-drm.yaml  | 2 +-
+>  .../devicetree/bindings/net/mediatek-bluetooth.txt          | 2 +-
+>  .../devicetree/bindings/sound/audio-graph-card.txt          | 2 +-
+>  .../devicetree/bindings/sound/st,sti-asoc-card.txt          | 2 +-
+>  Documentation/mips/ingenic-tcu.rst                          | 2 +-
+>  MAINTAINERS                                                 | 6 +++---
+>  7 files changed, 9 insertions(+), 9 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
