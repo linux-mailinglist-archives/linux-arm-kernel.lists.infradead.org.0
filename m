@@ -2,58 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B886C1CFC3D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 19:33:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C915B1CFC5E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 19:40:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3noF+blZon54BZiMNUyiD8twZdXgZs2IF76GJqBexn0=; b=ZFyvW3XZs/3BNa
-	GL0m7YymWZ3/7L1D9Rz4iP8DDluNqWGJ9ZWnzt/c6natt1f97W/Ekh736qYS7G6vyZqwdMQdQI4Sv
-	3RM+KR3QeBFthXzjK8WDr8vNttvdGYa4GZv38kkAtXNlUVpNn1d2NZHVmnQJWx/ZPEsFPkWTo/t+b
-	jxv4EXRhFOqc5kZULiF6BnuKR1tlipTzpFrpX4YGMIjn6BYKrZnw9GL1D8uitKPswSxUrMIeetOfh
-	a4tKyMLYiX/EG+hLcL9udYFuLBUJkBR/qtavGg8DS6c1a0+ITqbAW04EQDrkDamP5IxgVG1BVzUV0
-	QXoHUJqXpL1TzWHKp30A==;
+	List-Owner; bh=jJNw548w742+y3TN7W0J0xMeodmROS8xR/lTCH7CfNc=; b=SZXb7AUiTjCEW0
+	svujq1bpZyceF5nuNE6KUqtvhHtiWY6CPteTF+MQ9jhSmiPCX3KGYt6ueMxFb3cxvodx/pQOUlxwl
+	tOjzHvE34tPzXDZaIZNZUyi85OSgQ1ym+rvww5GKQ+df5v5RU5dmPX01uhxy9mzU7RwZeJVjERo6E
+	LV67by1DGaLQKGhUNmwnJ1NX9mRmkZ6JTnv6Y0ojxBPmFlGn2HAx7oPjttlWo1YGdmH5RWsHcf+Xo
+	Py3sqgLVNrzmgBSEyKGqX78TMcYlFy84vhlKwXDztaU0TEhfWiFCWOHkqAm5L779Sr0TLNtmR52Vk
+	VSzxbAxwGSmhhDB2MX3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYYmM-0004QR-As; Tue, 12 May 2020 17:33:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYYmC-0004Q6-Ux
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 17:33:10 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5129A1FB;
- Tue, 12 May 2020 10:33:08 -0700 (PDT)
-Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 018FD3F305;
- Tue, 12 May 2020 10:33:04 -0700 (PDT)
-Date: Tue, 12 May 2020 18:33:01 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Amit Kachhap <amit.kachhap@arm.com>
-Subject: Re: [PATCH v2 3/4] arm64: cpufeature: Modify address authentication
- cpufeature to exact
-Message-ID: <20200512173301.GB21213@C02TF0J2HF1T.local>
-References: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
- <1586842314-19527-4-git-send-email-amit.kachhap@arm.com>
- <20200506171350.GH2878@gaia>
- <426d96ef-6a89-6ee5-c0e0-383b297f7f9f@arm.com>
+	id 1jYYte-0001w6-7I; Tue, 12 May 2020 17:40:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYYtW-0001vO-VQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 17:40:44 +0000
+Received: from localhost.localdomain (236.31.169.217.in-addr.arpa
+ [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 49F55206B9;
+ Tue, 12 May 2020 17:40:41 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589305242;
+ bh=KNugUuSCtmSWA3oV1xUorvRj6aYlzYpaxuIWh3okW8U=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=1e8tsDo9Csi+i5JNdXQOGNU1QCBCpyHU84wVKNviR1nCgQLJdZH5kmZ92Ix/onOvg
+ R04O6LOiz+23HhjIfLhi81FTm1vmO4Z5F9Gi6SzmzNSMmBPq7nqOHVz6DLOJG2rgov
+ RZapUWDY2vKtmxortcRbUVo/QCiZoog2J1bJXVc8=
+From: Will Deacon <will@kernel.org>
+To: Mark Brown <broonie@kernel.org>, Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v2] arm64: bti: Fix support for userspace only BTI
+Date: Tue, 12 May 2020 18:40:36 +0100
+Message-Id: <158928497101.114591.14091490976224597416.b4-ty@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200512113950.29996-1-broonie@kernel.org>
+References: <20200512113950.29996-1-broonie@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <426d96ef-6a89-6ee5-c0e0-383b297f7f9f@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_103309_083169_3BB319C6 
-X-CRM114-Status: GOOD (  22.74  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_104043_034429_AA58B5CD 
+X-CRM114-Status: UNSURE (   8.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,72 +77,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Kristina Martsenko <kristina.martsenko@arm.com>,
- Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
- Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 08, 2020 at 09:51:53PM +0530, Amit Kachhap wrote:
-> On 5/6/20 10:43 PM, Catalin Marinas wrote:
-> > On Tue, Apr 14, 2020 at 11:01:53AM +0530, Amit Daniel Kachhap wrote:
-> > > This patch modifies the address authentication cpufeature type to EXACT
-> > > from earlier LOWER_SAFE as the different configurations added for Armv8.6
-> > > enhanced PAC have different behaviour and there is no tunable to enable the
-> > > lower safe versions. The safe value is set as 0.
-> > > 
-> > > After this change, if there is any variation in configurations in secondary
-> > > cpus from boot cpu then those cpus are marked tainted. The KVM guests may
-> > > completely disable address authentication if there is any such variations
-> > > detected.
-> > > 
-> > > Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
-> > > ---
-> > >   arch/arm64/kernel/cpufeature.c | 4 ++--
-> > >   1 file changed, 2 insertions(+), 2 deletions(-)
-> > > 
-> > > diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> > > index 08795025409c..599b03df2f93 100644
-> > > --- a/arch/arm64/kernel/cpufeature.c
-> > > +++ b/arch/arm64/kernel/cpufeature.c
-> > > @@ -154,9 +154,9 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
-> > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FCMA_SHIFT, 4, 0),
-> > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_JSCVT_SHIFT, 4, 0),
-> > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_API_SHIFT, 4, 0),
-> > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_API_SHIFT, 4, 0),
-> > >   	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
-> > > -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
-> > > +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_APA_SHIFT, 4, 0),
-> > >   	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
-> > >   	ARM64_FTR_END,
-> > 
-> > Is this sufficient? If we have the boot CPU already enabling the ptrauth
-> > and we get a secondary CPU with a different ISAR1 field that matches the
-> > address auth in cpufeature.c, we still allow it to boot. We no longer
-> > report the feature to the user system_supports_address_auth() is true
-> > while system_supports_generic_auth() would be false as it checks the
-> > sanitised feature registers.
-> 
-> Yes agreed. Generic authentication also needs EXACT cpufeature type.
+On Tue, 12 May 2020 12:39:50 +0100, Mark Brown wrote:
+> When setting PTE_MAYBE_GP we check system_supports_bti() but this is
+> true for systems where only CONFIG_BTI is set causing us to enable BTI
+> on some kernel text. Add an extra check for the kernel mode option,
+> using an ifdef due to line length.
 
-I'm still not sure that's sufficient. If we boot the primary CPU with
-ptrauth as detected in proc.S, we consider this a boot feature so all
-secondary CPUs must have it. Subsequent CPUs are currently checked via
-the arm64_features[] definitions and we allow them to boot if the ID is
-at least that of the boot CPU. How does this interact with the above
-FTR_EXACT changes?
+Applied to arm64 (for-next/bti), thanks!
 
-My concern is that we boot with PAC enabled on all CPUs but because of
-the FTR_EXACT, the sanitised ID registers no longer report the feature.
+[1/1] arm64: bti: Fix support for userspace only BTI
+      https://git.kernel.org/arm64/c/e70b3b544798
 
+Cheers,
 -- 
-Catalin
+Will
+
+https://fixes.arm64.dev
+https://next.arm64.dev
+https://will.arm64.dev
 
 _______________________________________________
 linux-arm-kernel mailing list
