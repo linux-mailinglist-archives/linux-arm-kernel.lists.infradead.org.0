@@ -2,62 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 830811CED49
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 08:51:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22C121CED8F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 09:04:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y8aPFPKz1z1/VseE7IX0PdQPDPyBfMKTsNe5idcO2CY=; b=LJgbIJ+ZRlfJBU
-	fbtKOFdddzi0LE6LG9F7nx5nmLVJpPRegbbtMXkX54IIB+N3Clo66Nq73eR0XfSymEYA8FIfut2Tn
-	+rkSGDxIPCEEHGq5kPZvAEjaRSIH7Pkye6I0qhmRoo0Kvst6Sy7eX9iBlcLe+JKc26Hx4vtcWkZH5
-	sDYbDNJdn8Z+tOJtwbXqxhY1SvvTAyZ0PSMBxpx1jpIyjrwJ+5FfiK/u+CIS63wS9ErAlYwJmUDOs
-	0bupE4DPu3EEfAQdx29/lk3G8ItrbKwlym8iKG1ssVovQA8dhL3ocPD62oG/AtFccw2h5FTipU3+B
-	Fof8LF3xXoNYI5EqbSUQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=N40LdK8fSQ7JiYSym92se4vL+0UJ9LP7snwrEXSOCMk=; b=peC
+	B3gugpvy9PDI6nLbfT0MWua/NNITw7VD062V3arMuaKdIX1/HTRvPZseqLOLY4CgFSMQAqJreUiUx
+	HNHW/eciGJd8gHA6CSvSgMeERHg1SB0aAiuZ6CK5tsrsu3nGr+oqEi5hDs2Enopi8UKtAwDFjkXBm
+	QL+hzFr1REGnLm2edxOV24oqlH6jfiZZ7UskZp8aX8vAXN7sL1dMOdk2I3OKwFTlvV05weoNyikAI
+	+CFTAAxl7Qoh35PjtsmVkNxtBt7mjrVWs6goaEG8Yuk7eVykYL23Zvwx+evQt32DVLryb0tVIMFl4
+	FUGvfIp/0uN2oNvfniPnIKJnojdHv5w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYOkl-0000S3-Il; Tue, 12 May 2020 06:50:59 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jYOxI-0007VV-2L; Tue, 12 May 2020 07:03:56 +0000
+Received: from mail-pj1-x1043.google.com ([2607:f8b0:4864:20::1043])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYOkX-0000I7-IC
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 06:50:48 +0000
-Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id B3CBC978DE20CE2B1017;
- Tue, 12 May 2020 14:50:34 +0800 (CST)
-Received: from [127.0.0.1] (10.74.221.148) by DGGEMS412-HUB.china.huawei.com
- (10.3.19.212) with Microsoft SMTP Server id 14.3.487.0; Tue, 12 May 2020
- 14:50:27 +0800
-Subject: Re: [PATCH] drivers/perf: hisi: Permit modular builds of HiSilicon
- uncore drivers
-To: Zhou Wang <wangzhou1@hisilicon.com>, Mark Rutland <mark.rutland@arm.com>, 
- Will Deacon <will@kernel.org>
-References: <1588820305-174479-1-git-send-email-wangzhou1@hisilicon.com>
-From: Shaokun Zhang <zhangshaokun@hisilicon.com>
-Message-ID: <1aefc6c3-5eaa-1a1b-6ff6-40981e877f2d@hisilicon.com>
-Date: Tue, 12 May 2020 14:50:26 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
- Thunderbird/45.1.1
-MIME-Version: 1.0
-In-Reply-To: <1588820305-174479-1-git-send-email-wangzhou1@hisilicon.com>
-X-Originating-IP: [10.74.221.148]
-X-CFilter-Loop: Reflected
+ id 1jYOx8-0007To-TA
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 07:03:48 +0000
+Received: by mail-pj1-x1043.google.com with SMTP id mq3so9066523pjb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 00:03:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=mipxNW7wlMfxMGzhO28Zqov8GTbtGeGtVOGitUJWy1g=;
+ b=jhsgIyTPnDqRWSwbXSvTHyprY40KS9vAbW6rcrOxqvOdnjjSCNpBTwLTElgpNEzgCv
+ B/hU4Z8wkqrvGJHq59AS0U9JQ6yXrwGMFmB8kBkBvf7nXAqmNJ0jZaejbMa5GQZuvEBS
+ eLoZmX4dAQxHnMwTz0F++g+Q9cMlfwGAGLMmpOWVa6HNkUWlnh6e16A5ZPiiELLtULyY
+ z563mUjwWwpWancdRnp0L6fRRlwklxrRA5iRY5cvzd2FlBcT9lSknFeoiEuJJfdTgctn
+ X/bMM/ECf64aLI5IcgeQibHurIkmnmOFetTDvjvalW3B8d+rNzxbwXeZHB3ykoTPHH3C
+ BXeQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=mipxNW7wlMfxMGzhO28Zqov8GTbtGeGtVOGitUJWy1g=;
+ b=cKEjVbjdAx+d9do0ls6MZBFyQ97qvHMcZlyxKld1mPxLmA6XoVZelwE4185oQvjiQT
+ c8w4AK5sKNCCoO+JVSAXVeQ4sOoKC6n2d4SwNm9wqBtfuXfIqL0jzCen9tvbnOeCpttD
+ HDqp3OBjiSD7KKLLWtLdgvUCqewTr5Wywl7I/UYW647p/KBJTs7ObKQg15MszSUEU1nF
+ FWzWWR8tJGt7FGMq0Rk66fSAK2GyVj50CzD9nSaTNOBA2spybLA9AxZDITBfvKzYdns3
+ 2v3gfNAMsKBDMXnqewSERmRNr5cmM2CClFZ9fcofqrSkay4O7TFz5vfWJk/JvM+zM6k/
+ ycSA==
+X-Gm-Message-State: AGi0Publ7hnT4DHGX75ASlIE3k9X1mZYdTulkuMBT3Bp52wSVwE09FEM
+ X9ws2HW1tq4r3vtSisWi7OE=
+X-Google-Smtp-Source: APiQypKGhdYXmj/mC8uQ3bBGAeu+OpMtK+0m3u5lxy4OVl4GniR0xQaSDQxS0oHIcUIBNStrnMsqkg==
+X-Received: by 2002:a17:90a:db53:: with SMTP id
+ u19mr25689708pjx.41.1589267023718; 
+ Tue, 12 May 2020 00:03:43 -0700 (PDT)
+Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
+ by smtp.gmail.com with ESMTPSA id 62sm11016369pfu.181.2020.05.12.00.03.39
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 12 May 2020 00:03:43 -0700 (PDT)
+From: dillon.minfei@gmail.com
+To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
+ thierry.reding@gmail.com, sam@ravnborg.org, airlied@linux.ie,
+ daniel@ffwll.ch, mturquette@baylibre.com, sboyd@kernel.org
+Subject: [PATCH v3 0/5] Enable ilitek ili9341 on stm32f429-disco board
+Date: Tue, 12 May 2020 15:03:32 +0800
+Message-Id: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_235046_807723_746BEE35 
-X-CRM114-Status: GOOD (  21.25  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_000346_941433_AA24A4D7 
+X-CRM114-Status: GOOD (  11.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:1043 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [dillon.minfei[at]gmail.com]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,320 +96,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxarm@huawei.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
+ dillon.minfei@gmail.com, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zhou,
+From: dillon min <dillon.minfei@gmail.com>
 
-Thanks you work.
+This patchset has following changes:
 
-Reviewed-by: Shaokun Zhang <zhangshaokun@hisilicon.com>
+V3:
+    merge original tiny/ili9341.c driver to panel/panel-ilitek-ili9341.c
+    to support serial spi & parallel rgb interface in one driver.
+    update ilitek,ili9341.yaml dts binding documentation.
+    update stm32f429-disco dts binding
 
-Shaokun
+V2: 
+    verify ilitek,ili9341.yaml with make O=../linux-stm32 dt_binding_check
+    DT_SCHEMA_FILES=Documentation/devicetree/bindings/display/panel/
+    ilitek,ili9341.yaml
 
-On 2020/5/7 10:58, Zhou Wang wrote:
-> This patch lets HiSilicon uncore PMU driver can be built as modules.
-> A common module and three specific uncore PMU driver modules will be built.
-> 
-> Export necessary functions in hisi_uncore_pmu module, and change
-> irq_set_affinity to irq_set_affinity_hint to pass compile.
-> 
-> Signed-off-by: Zhou Wang <wangzhou1@hisilicon.com>
-> Tested-by: Qi Liu <liuqi115@huawei.com>
-> ---
->  drivers/perf/Kconfig                          |  9 ++-------
->  drivers/perf/hisilicon/Kconfig                |  7 +++++++
->  drivers/perf/hisilicon/Makefile               |  3 ++-
->  drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c | 10 ++++++----
->  drivers/perf/hisilicon/hisi_uncore_hha_pmu.c  | 10 ++++++----
->  drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c  | 10 ++++++----
->  drivers/perf/hisilicon/hisi_uncore_pmu.c      | 23 +++++++++++++++++++++--
->  7 files changed, 50 insertions(+), 22 deletions(-)
->  create mode 100644 drivers/perf/hisilicon/Kconfig
-> 
-> diff --git a/drivers/perf/Kconfig b/drivers/perf/Kconfig
-> index 09ae8a9..a9261cf 100644
-> --- a/drivers/perf/Kconfig
-> +++ b/drivers/perf/Kconfig
-> @@ -79,13 +79,6 @@ config FSL_IMX8_DDR_PMU
->  	  can give information about memory throughput and other related
->  	  events.
->  
-> -config HISI_PMU
-> -       bool "HiSilicon SoC PMU"
-> -       depends on ARM64 && ACPI
-> -       help
-> -         Support for HiSilicon SoC uncore performance monitoring
-> -         unit (PMU), such as: L3C, HHA and DDRC.
-> -
->  config QCOM_L2_PMU
->  	bool "Qualcomm Technologies L2-cache PMU"
->  	depends on ARCH_QCOM && ARM64 && ACPI
-> @@ -129,4 +122,6 @@ config ARM_SPE_PMU
->  	  Extension, which provides periodic sampling of operations in
->  	  the CPU pipeline and reports this via the perf AUX interface.
->  
-> +source "drivers/perf/hisilicon/Kconfig"
-> +
->  endmenu
-> diff --git a/drivers/perf/hisilicon/Kconfig b/drivers/perf/hisilicon/Kconfig
-> new file mode 100644
-> index 0000000..c5d1b701
-> --- /dev/null
-> +++ b/drivers/perf/hisilicon/Kconfig
-> @@ -0,0 +1,7 @@
-> +# SPDX-License-Identifier: GPL-2.0-only
-> +config HISI_PMU
-> +	tristate "HiSilicon SoC PMU drivers"
-> +	depends on ARM64 && ACPI
-> +	  help
-> +	  Support for HiSilicon SoC L3 Cache performance monitor, Hydra Home
-> +	  Agent performance monitor and DDR Controller performance monitor.
-> diff --git a/drivers/perf/hisilicon/Makefile b/drivers/perf/hisilicon/Makefile
-> index c3a96ec..e837706 100644
-> --- a/drivers/perf/hisilicon/Makefile
-> +++ b/drivers/perf/hisilicon/Makefile
-> @@ -1,2 +1,3 @@
->  # SPDX-License-Identifier: GPL-2.0-only
-> -obj-$(CONFIG_HISI_PMU) += hisi_uncore_pmu.o hisi_uncore_l3c_pmu.o hisi_uncore_hha_pmu.o hisi_uncore_ddrc_pmu.o
-> +obj-$(CONFIG_HISI_PMU) += hisi_uncore_pmu.o hisi_uncore_l3c_pmu.o \
-> +			  hisi_uncore_hha_pmu.o hisi_uncore_ddrc_pmu.o
-> diff --git a/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c b/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-> index 453f1c6..15713fa 100644
-> --- a/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-> +++ b/drivers/perf/hisilicon/hisi_uncore_ddrc_pmu.c
-> @@ -394,8 +394,9 @@ static int hisi_ddrc_pmu_probe(struct platform_device *pdev)
->  	ret = perf_pmu_register(&ddrc_pmu->pmu, name, -1);
->  	if (ret) {
->  		dev_err(ddrc_pmu->dev, "DDRC PMU register failed!\n");
-> -		cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_DDRC_ONLINE,
-> -					    &ddrc_pmu->node);
-> +		cpuhp_state_remove_instance_nocalls(
-> +			CPUHP_AP_PERF_ARM_HISI_DDRC_ONLINE, &ddrc_pmu->node);
-> +		irq_set_affinity_hint(ddrc_pmu->irq, NULL);
->  	}
->  
->  	return ret;
-> @@ -406,8 +407,9 @@ static int hisi_ddrc_pmu_remove(struct platform_device *pdev)
->  	struct hisi_pmu *ddrc_pmu = platform_get_drvdata(pdev);
->  
->  	perf_pmu_unregister(&ddrc_pmu->pmu);
-> -	cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_DDRC_ONLINE,
-> -				    &ddrc_pmu->node);
-> +	cpuhp_state_remove_instance_nocalls(CPUHP_AP_PERF_ARM_HISI_DDRC_ONLINE,
-> +					    &ddrc_pmu->node);
-> +	irq_set_affinity_hint(ddrc_pmu->irq, NULL);
->  
->  	return 0;
->  }
-> diff --git a/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c b/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-> index 6a1dd72..882ffce 100644
-> --- a/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-> +++ b/drivers/perf/hisilicon/hisi_uncore_hha_pmu.c
-> @@ -406,8 +406,9 @@ static int hisi_hha_pmu_probe(struct platform_device *pdev)
->  	ret = perf_pmu_register(&hha_pmu->pmu, name, -1);
->  	if (ret) {
->  		dev_err(hha_pmu->dev, "HHA PMU register failed!\n");
-> -		cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_HHA_ONLINE,
-> -					    &hha_pmu->node);
-> +		cpuhp_state_remove_instance_nocalls(
-> +			CPUHP_AP_PERF_ARM_HISI_HHA_ONLINE, &hha_pmu->node);
-> +		irq_set_affinity_hint(hha_pmu->irq, NULL);
->  	}
->  
->  	return ret;
-> @@ -418,8 +419,9 @@ static int hisi_hha_pmu_remove(struct platform_device *pdev)
->  	struct hisi_pmu *hha_pmu = platform_get_drvdata(pdev);
->  
->  	perf_pmu_unregister(&hha_pmu->pmu);
-> -	cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_HHA_ONLINE,
-> -				    &hha_pmu->node);
-> +	cpuhp_state_remove_instance_nocalls(CPUHP_AP_PERF_ARM_HISI_HHA_ONLINE,
-> +					    &hha_pmu->node);
-> +	irq_set_affinity_hint(hha_pmu->irq, NULL);
->  
->  	return 0;
->  }
-> diff --git a/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c b/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-> index 1151e99..8dd1278 100644
-> --- a/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-> +++ b/drivers/perf/hisilicon/hisi_uncore_l3c_pmu.c
-> @@ -396,8 +396,9 @@ static int hisi_l3c_pmu_probe(struct platform_device *pdev)
->  	ret = perf_pmu_register(&l3c_pmu->pmu, name, -1);
->  	if (ret) {
->  		dev_err(l3c_pmu->dev, "L3C PMU register failed!\n");
-> -		cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_L3_ONLINE,
-> -					    &l3c_pmu->node);
-> +		cpuhp_state_remove_instance_nocalls(
-> +			CPUHP_AP_PERF_ARM_HISI_L3_ONLINE, &l3c_pmu->node);
-> +		irq_set_affinity_hint(l3c_pmu->irq, NULL);
->  	}
->  
->  	return ret;
-> @@ -408,8 +409,9 @@ static int hisi_l3c_pmu_remove(struct platform_device *pdev)
->  	struct hisi_pmu *l3c_pmu = platform_get_drvdata(pdev);
->  
->  	perf_pmu_unregister(&l3c_pmu->pmu);
-> -	cpuhp_state_remove_instance(CPUHP_AP_PERF_ARM_HISI_L3_ONLINE,
-> -				    &l3c_pmu->node);
-> +	cpuhp_state_remove_instance_nocalls(CPUHP_AP_PERF_ARM_HISI_L3_ONLINE,
-> +					    &l3c_pmu->node);
-> +	irq_set_affinity_hint(l3c_pmu->irq, NULL);
->  
->  	return 0;
->  }
-> diff --git a/drivers/perf/hisilicon/hisi_uncore_pmu.c b/drivers/perf/hisilicon/hisi_uncore_pmu.c
-> index 584de8f..97aff87 100644
-> --- a/drivers/perf/hisilicon/hisi_uncore_pmu.c
-> +++ b/drivers/perf/hisilicon/hisi_uncore_pmu.c
-> @@ -35,6 +35,7 @@ ssize_t hisi_format_sysfs_show(struct device *dev,
->  
->  	return sprintf(buf, "%s\n", (char *)eattr->var);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_format_sysfs_show);
->  
->  /*
->   * PMU event attributes
-> @@ -48,6 +49,7 @@ ssize_t hisi_event_sysfs_show(struct device *dev,
->  
->  	return sprintf(page, "config=0x%lx\n", (unsigned long)eattr->var);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_event_sysfs_show);
->  
->  /*
->   * sysfs cpumask attributes. For uncore PMU, we only have a single CPU to show
-> @@ -59,6 +61,7 @@ ssize_t hisi_cpumask_sysfs_show(struct device *dev,
->  
->  	return sprintf(buf, "%d\n", hisi_pmu->on_cpu);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_cpumask_sysfs_show);
->  
->  static bool hisi_validate_event_group(struct perf_event *event)
->  {
-> @@ -97,6 +100,7 @@ int hisi_uncore_pmu_counter_valid(struct hisi_pmu *hisi_pmu, int idx)
->  {
->  	return idx >= 0 && idx < hisi_pmu->num_counters;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_counter_valid);
->  
->  int hisi_uncore_pmu_get_event_idx(struct perf_event *event)
->  {
-> @@ -113,6 +117,7 @@ int hisi_uncore_pmu_get_event_idx(struct perf_event *event)
->  
->  	return idx;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_get_event_idx);
->  
->  static void hisi_uncore_pmu_clear_event_idx(struct hisi_pmu *hisi_pmu, int idx)
->  {
-> @@ -173,6 +178,7 @@ int hisi_uncore_pmu_event_init(struct perf_event *event)
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_event_init);
->  
->  /*
->   * Set the counter to count the event that we're interested in,
-> @@ -220,6 +226,7 @@ void hisi_uncore_pmu_set_event_period(struct perf_event *event)
->  	/* Write start value to the hardware event counter */
->  	hisi_pmu->ops->write_counter(hisi_pmu, hwc, val);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_set_event_period);
->  
->  void hisi_uncore_pmu_event_update(struct perf_event *event)
->  {
-> @@ -240,6 +247,7 @@ void hisi_uncore_pmu_event_update(struct perf_event *event)
->  		HISI_MAX_PERIOD(hisi_pmu->counter_bits);
->  	local64_add(delta, &event->count);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_event_update);
->  
->  void hisi_uncore_pmu_start(struct perf_event *event, int flags)
->  {
-> @@ -262,6 +270,7 @@ void hisi_uncore_pmu_start(struct perf_event *event, int flags)
->  	hisi_uncore_pmu_enable_event(event);
->  	perf_event_update_userpage(event);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_start);
->  
->  void hisi_uncore_pmu_stop(struct perf_event *event, int flags)
->  {
-> @@ -278,6 +287,7 @@ void hisi_uncore_pmu_stop(struct perf_event *event, int flags)
->  	hisi_uncore_pmu_event_update(event);
->  	hwc->state |= PERF_HES_UPTODATE;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_stop);
->  
->  int hisi_uncore_pmu_add(struct perf_event *event, int flags)
->  {
-> @@ -300,6 +310,7 @@ int hisi_uncore_pmu_add(struct perf_event *event, int flags)
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_add);
->  
->  void hisi_uncore_pmu_del(struct perf_event *event, int flags)
->  {
-> @@ -311,12 +322,14 @@ void hisi_uncore_pmu_del(struct perf_event *event, int flags)
->  	perf_event_update_userpage(event);
->  	hisi_pmu->pmu_events.hw_events[hwc->idx] = NULL;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_del);
->  
->  void hisi_uncore_pmu_read(struct perf_event *event)
->  {
->  	/* Read hardware counter and update the perf counter statistics */
->  	hisi_uncore_pmu_event_update(event);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_read);
->  
->  void hisi_uncore_pmu_enable(struct pmu *pmu)
->  {
-> @@ -329,6 +342,7 @@ void hisi_uncore_pmu_enable(struct pmu *pmu)
->  
->  	hisi_pmu->ops->start_counters(hisi_pmu);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_enable);
->  
->  void hisi_uncore_pmu_disable(struct pmu *pmu)
->  {
-> @@ -336,6 +350,7 @@ void hisi_uncore_pmu_disable(struct pmu *pmu)
->  
->  	hisi_pmu->ops->stop_counters(hisi_pmu);
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_disable);
->  
->  
->  /*
-> @@ -414,10 +429,11 @@ int hisi_uncore_pmu_online_cpu(unsigned int cpu, struct hlist_node *node)
->  	hisi_pmu->on_cpu = cpu;
->  
->  	/* Overflow interrupt also should use the same CPU */
-> -	WARN_ON(irq_set_affinity(hisi_pmu->irq, cpumask_of(cpu)));
-> +	WARN_ON(irq_set_affinity_hint(hisi_pmu->irq, cpumask_of(cpu)));
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_online_cpu);
->  
->  int hisi_uncore_pmu_offline_cpu(unsigned int cpu, struct hlist_node *node)
->  {
-> @@ -446,7 +462,10 @@ int hisi_uncore_pmu_offline_cpu(unsigned int cpu, struct hlist_node *node)
->  	perf_pmu_migrate_context(&hisi_pmu->pmu, cpu, target);
->  	/* Use this CPU for event counting */
->  	hisi_pmu->on_cpu = target;
-> -	WARN_ON(irq_set_affinity(hisi_pmu->irq, cpumask_of(target)));
-> +	WARN_ON(irq_set_affinity_hint(hisi_pmu->irq, cpumask_of(target)));
->  
->  	return 0;
->  }
-> +EXPORT_SYMBOL_GPL(hisi_uncore_pmu_offline_cpu);
-> +
-> +MODULE_LICENSE("GPL v2");
-> 
+V1:
+    add ili9341 drm panel driver
+    add ltdc, spi5 controller for stm32f429-disco
+    add ltdc, spi5 pin map for stm32f429-disco
+    add docs about ili9341
+    fix ltdc driver loading hang in clk set rate bug
+
+dillon min (5):
+  ARM: dts: stm32: Add pin map for ltdc, spi5 on stm32f429-disco board
+  dt-bindings: display: panel: Add ilitek ili9341 panel bindings
+  ARM: dts: stm32: enable ltdc binding with ili9341 on stm32429-disco
+    board
+  clk: stm32: Fix stm32f429 ltdc driver loading hang in clk set rate.
+    keep ltdc     clk running after kernel startup
+  drm/panel: Add ilitek ili9341 driver
+
+ .../bindings/display/panel/ilitek,ili9341.yaml     |  68 ++
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi             |  67 ++
+ arch/arm/boot/dts/stm32f429-disco.dts              |  39 ++
+ drivers/clk/clk-stm32f4.c                          |   5 +-
+ drivers/gpu/drm/panel/Kconfig                      |  12 +
+ drivers/gpu/drm/panel/Makefile                     |   1 +
+ drivers/gpu/drm/panel/panel-ilitek-ili9341.c       | 700 +++++++++++++++++++++
+ 7 files changed, 890 insertions(+), 2 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
+ create mode 100644 drivers/gpu/drm/panel/panel-ilitek-ili9341.c
+
+-- 
+2.7.4
 
 
 _______________________________________________
