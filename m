@@ -2,80 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30F5B1CF150
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:16:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59B2C1CF15D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:19:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HWbuflUpWzjbRQ+WO9La03Spko36T4jiEpUd+jxjY2k=; b=huVY/OyM7v6voh
-	qWI6NlQjx9Z5eWdkpYeHaaMauYxYlXi0xB4wtwAG587HDf5Q+FfB8/1Cmm+ftIx09ARTSbCodlQHA
-	g24khIkwhHsXSp35e1n4P7dNccvqBGWP9eFRAKbTd9nTHLM58T5zshyHIit2e/DMM6hyVjL4BuK2a
-	dtKDEnANsJ6QdBdUVljWgpaSFcC92UzzbTF0eZPJ3fX0h6MUhH4XADdfs4roJIeD49qbwDXkxtoF2
-	EKZcyv1pbX86LrWMlgGYF1XB4/XyuU38E4xhBww0KHnaOyXZDofhdoqzsI6DynyUV+twv1T7eRrst
-	E7gar0+vKQImWQ6nNFXA==;
+	List-Owner; bh=cCnyREA6xQIc3sIZRIs3yNr1B1wTMuOIajMNrKbUpiA=; b=LDKK6R2ZK3rl9N
+	OWWFmlUvvw1NHvf8QMmA8RgFhVW2Z8IDoHxEKUGl3sPg8UzF3A2wdQcQcT5oPWbn50crfzY3qq8sJ
+	uNcxzBSEj1LNqVeKH7F2s3DSN3EcEzoECrER3+OpZ/Vphc9HSUdV0arQCB2QOxKQdoIcT89ApLa9/
+	esl59eQkHq6u8ESJRuPI1/E4a09C/hn8qo4LFHmpFMzWxPHZzQXG0K6ViRIPfmqr7HfwSvAQJOiyd
+	Rkgdr9LnJdEkp9M5/0UfcBCae38WEi0XfBJtmiFou2+SljxgAkdlYHqzeovq54sJu4lHQXBpeFxYF
+	KRO47d6Pvs+aAGzM7uHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYR16-0003Yj-3G; Tue, 12 May 2020 09:16:00 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYQr9-00077O-E8
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:05:45 +0000
-Received: from mail-lf1-f54.google.com (mail-lf1-f54.google.com
- [209.85.167.54])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 35E9920714
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 09:05:41 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589274341;
- bh=HS+53ZodqD34omUaUnfZGaaf3rHBhijbLO2ygOHvWBs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=z5s6zPoUUzxvR8qdd57Vjpx+i5DWghLNc9KIZ5neo+iBD64HzEyZi8RxetyQ6FgAf
- p/3OXO0bk3sgpbGnbI5D8i6vos1yEge44MH1NFdXwmPDlDgqUHr3Ee8bPHRUxKlnUI
- xMjhjGCrlwmh7TZSetaFhmkh+6r9aiDJRhJaMysw=
-Received: by mail-lf1-f54.google.com with SMTP id 8so7193490lfp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 02:05:41 -0700 (PDT)
-X-Gm-Message-State: AOAM533nrAipO0DBj7ulGJ9vbBz0ZlH2PJjAuQkKurQsP3xkIsijii4F
- ki37WbbbaOT3yxaFQns8lWiUCM4kb0DJLZm2pJQ=
-X-Google-Smtp-Source: ABdhPJyrJVrAT8momuEFoaiqxBUOKAS3w1MEWaOBVANtVD6B7+0T1Wih7oQd+8Fm3Od1tfwC7O0GXietblUkp8+w3O8=
-X-Received: by 2002:a19:f00b:: with SMTP id p11mr13835301lfc.210.1589274339295; 
- Tue, 12 May 2020 02:05:39 -0700 (PDT)
+	id 1jYR4Y-0004kJ-2m; Tue, 12 May 2020 09:19:34 +0000
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYR4L-0004k1-Er; Tue, 12 May 2020 09:19:21 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id E8A75300261;
+ Tue, 12 May 2020 11:19:18 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id CBCD3203AA832; Tue, 12 May 2020 11:19:18 +0200 (CEST)
+Date: Tue, 12 May 2020 11:19:18 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v2 0/3] arm64: perf_event: Fix time offset prior to epoch
+Message-ID: <20200512091918.GH2978@hirez.programming.kicks-ass.net>
+References: <20200505135544.6003-1-leo.yan@linaro.org>
+ <20200511092200.GF2957@hirez.programming.kicks-ass.net>
+ <20200511092519.GA3001@hirez.programming.kicks-ass.net>
+ <20200512063812.GA20352@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
-References: <20200508131338.32956-1-bernard@vivo.com>
- <20200512065023.GA10741@kozik-lap>
- <e762ce12-eff0-d3a5-f083-2b592921de59@arm.com>
-In-Reply-To: <e762ce12-eff0-d3a5-f083-2b592921de59@arm.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 12 May 2020 11:05:28 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
-Message-ID: <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
-Subject: Re: [PATCH] memory/samsung: reduce unnecessary mutex lock area
-To: Lukasz Luba <lukasz.luba@arm.com>
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_020543_580453_C94D61E6 
-X-CRM114-Status: GOOD (  21.69  )
-X-Spam-Score: -5.4 (-----)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+Content-Disposition: inline
+In-Reply-To: <20200512063812.GA20352@leoy-ThinkPad-X240s>
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,62 +54,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: opensource.kernel@vivo.com,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-pm@vger.kernel.org, Bernard Zhao <bernard@vivo.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>, Enrico Weigelt <info@metux.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ "Ahmed S. Darwish" <a.darwish@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Namhyung Kim <namhyung@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
+ "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 May 2020 at 10:47, Lukasz Luba <lukasz.luba@arm.com> wrote:
->
-> Hi Krzysztof,
->
-> I am sorry, I was a bit busy recently.
->
-> On 5/12/20 7:50 AM, Krzysztof Kozlowski wrote:
-> > On Fri, May 08, 2020 at 06:13:38AM -0700, Bernard Zhao wrote:
-> >> Maybe dmc->df->lock is unnecessary to protect function
-> >> exynos5_dmc_perf_events_check(dmc). If we have to protect,
-> >> dmc->lock is more better and more effective.
-> >> Also, it seems not needed to protect "if (ret) & dev_warn"
-> >> branch.
-> >>
-> >> Signed-off-by: Bernard Zhao <bernard@vivo.com>
-> >> ---
-> >>   drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
-> >>   1 file changed, 2 insertions(+), 4 deletions(-)
-> >
-> > I checked the concurrent accesses and it looks correct.
-> >
-> > Lukasz, any review from your side?
->
-> The lock from devfreq lock protects from a scenario when
-> concurrent access from devfreq framework uses internal dmc fields 'load'
-> and 'total' (which are set to 'busy_time', 'total_time').
-> The .get_dev_status can be called at any time (even due to thermal
-> devfreq cooling action) and reads above fields.
-> That's why the calculation of the new values inside dmc is protected.
+On Tue, May 12, 2020 at 02:38:12PM +0800, Leo Yan wrote:
+> @@ -1165,28 +1166,26 @@ device_initcall(armv8_pmu_driver_init)
+>  void arch_perf_update_userpage(struct perf_event *event,
+>  			       struct perf_event_mmap_page *userpg, u64 now)
+>  {
+> +	struct clock_read_data *rd;
+> +	unsigned int seq;
+>  
+>  	/*
+>  	 * Internal timekeeping for enabled/running/stopped times
+>  	 * is always computed with the sched_clock.
+>  	 */
+>  	userpg->cap_user_time = 1;
+> +	userpg->cap_user_time_zero = 1;
+>  
+> +	do {
+> +		rd = sched_clock_read_begin(&seq);
+> +
+> +		userpg->time_mult = rd->mult;
+> +		userpg->time_shift = rd->shift;
+> +		userpg->time_zero = rd->epoch_ns;
+> +
+> +		userpg->time_zero -= (rd->epoch_cyc * rd->mult) >> rd->shift;
 
-I looked at this path (get_dev_status) and currently in devfreq it
-will be only called from update_devfreq() -> get_target_freq()... at
-least when looking at devfreq core and governors. On the other hand
-you are right that this is public function and this call scenario
-might change. It could be called directly from other paths sooner or
-later.
+Damn, I think this is broken vs the counter wrapping.
 
-> This patch should not be taken IMO. Maybe we can release lock before the
-> if statement, just to speed-up.
+So what the sched_clock code does is:
 
-Yep.
+	cyc_to_ns((cyc - rd->epoch_cyc) & rd->sched_clock_mask, rd->mult, rd->shift)
 
-Bernard, you can send just this part of the patch.
+But because the perf interface assumes a simple linear relation, we
+can't express that properly.
 
-Best regards,
-Krzysztof
+Now, your arm64 counter is 56 bits, so wrapping is rare, but still, we
+should probably fix that. And that probably needs an ABI extention
+*sigh*.
+
+> +
+> +	} while (sched_clock_read_retry(seq));
+> +
+> +	userpg->time_offset = userpg->time_zero - now;
+>  }
 
 _______________________________________________
 linux-arm-kernel mailing list
