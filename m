@@ -2,91 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB20A1CFCDE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 20:11:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59AE51CFDB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 20:47:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=c9xMIe2UpqAcLp0dQ0HNpx15xYQDUSGf2di7CpLweuE=; b=Ty60p2+F6NpCKXWTPLjYFM2eG
-	5XVh86ckUJ6JIUrdJl+2cMWWcXmcdvcMQHjCwGlqi5Oeyl0HQ7mcszYLuwkAVKyhUTLutzyn0xGiG
-	4MLfBl0rRlbADp6EUaGA8Oa4yA2nMeoS0OgPK4mHTubWvI3nyILj18UmxmTZQMrlm2VgzUfyXtvr/
-	HEhv6osyMTtRxblh7LHxUyeplY5nyzG4JPddUceLNgKaDR5mPCPNmPUO5y/Khl85ibQzFLsNLmM2T
-	k2477tq28PomiJLiADRn+atZSV9nfgDtEiYe/BjIQl1+k95Zc1E3DfDDuw4divEOeVQHGuQLJ/PUF
-	Hmek0OvKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ani7Q5+z5J7JpqzR9GyqxbxinAlQUAXZmZ9LbXhrngc=; b=K6mikiV2ZVXqAg
+	svUoWS/ONkWJO754ZqB6ZD0oG4mmWw8gsROZ/8g7eYrZ91Ax5gHIeQ2XZO1xqhz3gtEyr7IQPEz6Q
+	AkspI8I4JNbfnl9/S/IMrIVaol6EsqDxkmu0FcchF/NE75rozxSRqLU7u7Y1Q9mHtM0GCtzCsURLp
+	BH0QfipANhiYihWNOdIPJaR/cU0tTStsyPlhD7oZzH62qptNQ4wa7FSRWlg+95Zm9ukJ6sSSI+8ip
+	gcjHX9BB6Mu/8Uf3kTsOfOPq0p6fLBs1KHotuNzEvBltkz5ZomvGMVSK8W2fb07qh60z1vhETuBmx
+	s8qLnnU36pjNGRW5r9yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYZN1-0007wE-9Q; Tue, 12 May 2020 18:11:11 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jYZw3-0004UL-3j; Tue, 12 May 2020 18:47:23 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYZMr-0007uq-IS
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 18:11:04 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1589307060; h=Content-Transfer-Encoding: Content-Type:
- In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
- Subject: Sender; bh=OO3R9jYg4r1wAHoA8hhGY1+VCtV/dK//JXy3OK5Qw9E=;
- b=tzPwkY/XPLzqyg7YJGLwFv46i0MD3+1lZgFVTbJQZhJ5OfgS0ts52puYTqVDkM2G5Dx2E/WP
- WtyhJZ7ceRcLwOYU1ZSl944SUtxA0rNoNwJOA8lZejsWiw7brx0YERkpf54qvlK2aVcPNdVQ
- Jbf7jdCTPBVK1dz+pxAIg33cbME=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5ebae6b3.7f2f9c63a4c8-smtp-out-n02;
- Tue, 12 May 2020 18:10:59 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 4119CC433BA; Tue, 12 May 2020 18:10:58 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
- autolearn=ham autolearn_force=no version=3.4.0
-Received: from [192.168.8.150] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested) (Authenticated sender: asutoshd)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 1684BC433F2;
- Tue, 12 May 2020 18:10:57 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 1684BC433F2
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=asutoshd@codeaurora.org
-Subject: Re: [PATCH v2 4/4] scsi: ufs-mediatek: customize WriteBooster flush
- policy
-To: "Martin K. Petersen" <martin.petersen@oracle.com>
-References: <20200509093716.21010-1-stanley.chu@mediatek.com>
- <20200509093716.21010-5-stanley.chu@mediatek.com>
- <635f91f6-3a27-ffdd-4021-67705d4063fc@codeaurora.org>
- <yq1v9l115us.fsf@oracle.com>
-From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Message-ID: <7d5f53eb-f642-3c8b-edf6-d4693ecb49a4@codeaurora.org>
-Date: Tue, 12 May 2020 11:10:56 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+ id 1jYZvq-0004RI-D7; Tue, 12 May 2020 18:47:12 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04CIl0aH042905;
+ Tue, 12 May 2020 13:47:00 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589309220;
+ bh=gdpZbVGnmu82Ltylj7zMGAjghfqs8C0XbDqrJcvjIUw=;
+ h=Date:From:To:CC:Subject:References:In-Reply-To;
+ b=GTrAAg1hJh7itOcW4SLu7lNpvXjddphXZysRjzEGFdlWjJXVRzwSncAD1hGESqoOq
+ Yqx1WqS6Om6TRq4h94nigWX4VYc7/sUadEfEmgQ1OEUYxPV/nkFZurLYx+A6PIN0DO
+ aB9Jjte/G2GkHBhyp1KqKrwyEGu8J6jJxMvMBxdg=
+Received: from DFLE109.ent.ti.com (dfle109.ent.ti.com [10.64.6.30])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04CIl0WC011391
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 12 May 2020 13:47:00 -0500
+Received: from DFLE109.ent.ti.com (10.64.6.30) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Tue, 12
+ May 2020 13:47:00 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE109.ent.ti.com
+ (10.64.6.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Tue, 12 May 2020 13:47:00 -0500
+Received: from localhost (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04CIkxg4112061;
+ Tue, 12 May 2020 13:46:59 -0500
+Date: Wed, 13 May 2020 00:16:58 +0530
+From: Pratyush Yadav <p.yadav@ti.com>
+To: <Tudor.Ambarus@microchip.com>
+Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
+Message-ID: <20200512184656.ksudjyeqbwv6jze6@ti.com>
+References: <20200424184410.8578-1-p.yadav@ti.com>
+ <144878625.o7txgtY6sz@192.168.0.120>
+ <49abc8f3-5bb5-bc6d-b2ec-f14b115c58dc@ti.com>
+ <2352513.UHBGRE98Z5@192.168.0.120>
 MIME-Version: 1.0
-In-Reply-To: <yq1v9l115us.fsf@oracle.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <2352513.UHBGRE98Z5@192.168.0.120>
+User-Agent: NeoMutt/20171215
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_111101_673434_3472F219 
-X-CRM114-Status: GOOD (  14.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200512_114710_567965_85999352 
+X-CRM114-Status: GOOD (  18.40  )
+X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,41 +92,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
- jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com,
- Stanley Chu <stanley.chu@mediatek.com>, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+Cc: alexandre.belloni@bootlin.com, vigneshr@ti.com, richard@nod.at,
+ broonie@kernel.org, nsekhar@ti.com, linux-kernel@vger.kernel.org,
+ Ludovic.Desroches@microchip.com, boris.brezillon@collabora.com,
+ linux-mtd@lists.infradead.org, miquel.raynal@bootlin.com,
+ linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 5/12/2020 9:21 AM, Martin K. Petersen wrote:
+On 12/05/20 11:29AM, Tudor.Ambarus@microchip.com wrote:
+> Hi, Vignesh,
 > 
-> Hi Asutosh!
+> > > The software reset procedure can't protect you from unexpected 
+> > > resets, but
+> > > the hardware with its optional reset pin can. Pratyush to confirm.
+> > > 
+> > > cut
+> > > 
+> > >>> Not recovering from unexpected resets is unacceptable. One should always
+> > >>> prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8
+> > >>> with
+> > >>> the presence of the optional RESET pin.
+> > >> 
+> > >> Totally agree with you on that one, but we know what happens in
+> > >> practice...
+> > > 
+> > > What I proposed is to condition the entering in the state-full modes with
+> > > the presence of the optional RESET pin. We would introduce an optional
+> > > device tree property for the RESET pin. If hardware doesn't implement the
+> > > optional RESET# signal, then we will not enter in the state-full modes.
+> > 
+> > Are you asking for dedicated SW controllable reset line or just an
+> > indication from DT that OSPI reset line is connected to board level
+> > soft/hard reset lines?
 > 
->> Patchset looks good to me.
->>
->> Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
-> 
-> When you want to approve an entire series, please respond to the cover
-> letter email. Otherwise the kernel.org tooling will only record the tag
-> for the individual patch you are responding to. In this case only patch
-> 4 got tagged as reviewed in patchwork.
-> 
+> I don't see a need for the reset line to be SW controllable, a simple 
+> indication from the device tree should be enough.
 
-Hi Martin
-Sure - I'll keep this in mind.
-
-Thanks,
-Asutosh
+We already have the property "broken-flash-reset". Should we re-use it 
+or should we have a opt-in property instead of an opt-out one?
+ 
+> > 
+> > Mandating SW controllable RESET line is bit of a stretch IMO... Board
+> > design may not allow wasting dedicated pin due to lack of GPIOs perhaps..
+> > 
+> > For eg.: TI EVM has OSPI reset line connected to board level reset out.
+> > This ensures any soft/warm/hard CPU reset will trigger OSPI Flash reset,
+> > but there is no SW control that allows OSPI flash alone to be reset.
+> > Isn't such a reset mechanism sufficient?
+> > 
+> 
+> I think it is, yes.
 
 -- 
-The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
-Linux Foundation Collaborative Project
+Regards,
+Pratyush Yadav
+Texas Instruments India
 
 _______________________________________________
 linux-arm-kernel mailing list
