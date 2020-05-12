@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C51F51D0000
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:00:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 904FC1D0002
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:00:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2ODC2o4UUMf/zkAHs1lDrIMH2Ddob9xBzBKsSPl2D0s=; b=MW+
-	dFxlwlzCjnNPHxvzqpha7BYFqhDGiUCIGo7+8c/ga3+06C2gl3Qd0jLmm8nihiZfHqtRFrIjauutK
-	Dsvabzs6ouTVRjUQZN0dNL49ClJorp/PLWQscf0jeDbGBxfrNBN0IqNBKJHftUlJXb/2wcisNUrph
-	HbPb9HUNYFurQu2A111V/3VttRLVVwKXaWQ/GrI37Vw5SnqDK9GWBdvuhHvRNIKoQkvsGJwoQgdkz
-	4ycEDUsH8daptUHvyrgmlKMb/QBl7VDMwqf1ZV2jZIHM5uTpLy0wZ/yEE+UrgMKp4lcsIt1uJlbF0
-	kcwvpdVVIP9DZORYm08NXNKNrJzXqjg==;
+	References:List-Owner; bh=qKMxr8hkaHBsFn0IGczQugCCJPvjn3v22D9t4ny+Wcg=; b=JYQ
+	j006ZbWsW3o9iCfNKX27jiTCwEXPWw1ECt0CFMQPUcNDg0BHotajBE7IjFM6AyYs1v5CAZNEB4nhC
+	z8+iRa+w1bv8dFjij4jVuViVT9m/DfPQPnRJcyYfPEJYpDu/FwKvsTFcI5zu7/gm7VEz8JyFsdThM
+	6ET/hrX+r/hXgwnUtJ4nfRl1bwKEdKBGn+lvwaw4oAeKeM1otUgOg/22myeHUJSlNRN7mAkSetVHv
+	zAOWbD/v1gDUL7WZH+umbxpHD1VBxYT54Do5HEo1wmMllbNF4pidENzBaRbk2BczDgE+xwSLbebZO
+	qoWsTwMA7GhFzXf0/tN9ZjQZeVXwSWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYc0M-0004Ui-EO; Tue, 12 May 2020 20:59:58 +0000
+	id 1jYc0i-00064h-M2; Tue, 12 May 2020 21:00:20 +0000
 Received: from lists.gateworks.com ([108.161.130.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYc0F-0004U9-Ag
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 20:59:52 +0000
+ id 1jYc0R-0004hI-PR
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 21:00:05 +0000
 Received: from 068-189-091-139.biz.spectrum.com ([68.189.91.139]
  helo=tharvey.pdc.gateworks.com)
  by lists.gateworks.com with esmtp (Exim 4.82)
  (envelope-from <tharvey@gateworks.com>)
- id 1jYc2a-0007Ai-WC; Tue, 12 May 2020 21:02:17 +0000
+ id 1jYc2u-0007As-IA; Tue, 12 May 2020 21:02:36 +0000
 From: Tim Harvey <tharvey@gateworks.com>
 To: Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
  Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH] ARM: dts: imx6qdl-gw560x: add lsm9ds1 iio imu/magn support
-Date: Tue, 12 May 2020 13:59:37 -0700
-Message-Id: <1589317177-8703-1-git-send-email-tharvey@gateworks.com>
+Subject: [PATCH] ARM: dts: imx6qdl-gw5904: add lsm9ds1 iio imu/magn support
+Date: Tue, 12 May 2020 13:59:56 -0700
+Message-Id: <1589317196-8864-1-git-send-email-tharvey@gateworks.com>
 X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_135951_408853_FC6EDA94 
-X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-CacheID: sfid-20200512_140003_880625_7A2218ED 
+X-CRM114-Status: UNSURE (   9.81  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -72,16 +72,16 @@ magnetometer device in the lsm9ds1.
 
 Signed-off-by: Tim Harvey <tharvey@gateworks.com>
 ---
- arch/arm/boot/dts/imx6qdl-gw560x.dtsi | 31 +++++++++++++++++++++++++++++++
+ arch/arm/boot/dts/imx6qdl-gw5904.dtsi | 31 +++++++++++++++++++++++++++++++
  1 file changed, 31 insertions(+)
 
-diff --git a/arch/arm/boot/dts/imx6qdl-gw560x.dtsi b/arch/arm/boot/dts/imx6qdl-gw560x.dtsi
-index e8e36df..69ca70d 100644
---- a/arch/arm/boot/dts/imx6qdl-gw560x.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-gw560x.dtsi
-@@ -295,6 +295,15 @@
- 		VDDIO-supply = <&reg_3p3v>;
- 	};
+diff --git a/arch/arm/boot/dts/imx6qdl-gw5904.dtsi b/arch/arm/boot/dts/imx6qdl-gw5904.dtsi
+index 6d21cc6..76d6cf5 100644
+--- a/arch/arm/boot/dts/imx6qdl-gw5904.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-gw5904.dtsi
+@@ -248,6 +248,15 @@
+ 	pinctrl-0 = <&pinctrl_i2c2>;
+ 	status = "okay";
  
 +	magn@1c {
 +		compatible = "st,lsm9ds1-magn";
@@ -89,13 +89,13 @@ index e8e36df..69ca70d 100644
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&pinctrl_mag>;
 +		interrupt-parent = <&gpio5>;
-+		interrupts = <9 IRQ_TYPE_EDGE_RISING>;
++		interrupts = <17 IRQ_TYPE_EDGE_RISING>;
 +	};
 +
- 	tca8418: keypad@34 {
- 		compatible = "ti,tca8418";
- 		pinctrl-names = "default";
-@@ -389,6 +398,16 @@
+ 	ltc3676: pmic@3c {
+ 		compatible = "lltc,ltc3676";
+ 		reg = <0x3c>;
+@@ -320,6 +329,16 @@
  			};
  		};
  	};
@@ -106,38 +106,31 @@ index e8e36df..69ca70d 100644
 +		st,drdy-int-pin = <1>;
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&pinctrl_imu>;
-+		interrupt-parent = <&gpio5>;
-+		interrupts = <6 IRQ_TYPE_LEVEL_HIGH>;
++		interrupt-parent = <&gpio4>;
++		interrupts = <18 IRQ_TYPE_LEVEL_HIGH>;
 +	};
  };
  
  &i2c3 {
-@@ -609,6 +628,12 @@
+@@ -501,6 +520,18 @@
  		>;
  	};
  
 +	pinctrl_imu: imugrp {
 +		fsl,pins = <
-+			MX6QDL_PAD_DISP0_DAT12__GPIO5_IO06	0x1b0b0
++			MX6QDL_PAD_DI0_PIN2__GPIO4_IO18		0x1b0b0
 +		>;
 +	};
 +
- 	pinctrl_keypad: keypadgrp {
- 		fsl,pins = <
- 			MX6QDL_PAD_DISP0_DAT17__GPIO5_IO11	0x0001b0b0 /* KEYPAD_IRQ# */
-@@ -616,6 +641,12 @@
- 		>;
- 	};
- 
 +	pinctrl_mag: maggrp {
 +		fsl,pins = <
-+			MX6QDL_PAD_DISP0_DAT15__GPIO5_IO09	0x1b0b0
++			MX6QDL_PAD_DISP0_DAT23__GPIO5_IO17	0x1b0b0
 +		>;
 +	};
 +
  	pinctrl_pcie: pciegrp {
  		fsl,pins = <
- 			MX6QDL_PAD_DISP0_DAT10__GPIO4_IO31	0x1b0b0    /* PCI_RST# */
+ 			MX6QDL_PAD_GPIO_0__GPIO1_IO00	0x1b0b0 /* PCIE RST */
 -- 
 2.7.4
 
