@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A55741CF7A4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:45:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A09C61CF7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:47:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=gat8xN37hUUZ9zKDYjm+JhuCJ/PB3TnJXnl03NRjsXs=; b=C/eggwJZxSujS1mM0NiTYWnB8
-	L2mt+w/9+pvKnZeq6gOpUZI0jdtihVPaL51/AdJ4vv8/RysHaV0XKKjHDuxj0nqa+Zb2JpV7vZP22
-	7x7RUnJKeVqNl/yvvHkdf3KuWetv/7uk+FWiHc98LBLswTYUcvOt82PuHPmYxJedXGkq2JvJzSrJc
-	12vknaeggIKmBZEhVFBoM70hlNuPWHPvtt5wGmH9Ma4Yb6twrckpcZmQ6pFy5bajYjoEEBkr7OJWc
-	2rVdCsfDiV/fAZe6Owl5tzTwOVofMU/uZdtp8vh5idnXPdXdmkPI4ruQfZbcN1AwhIaXlg78WTDZr
-	7iplIg+hQ==;
+	 bh=7YVpCIjre6/0EEbWZiQhK5+JHY8SSLonNLyxEvM1HS4=; b=ahSL6AaqLLOoZiQp72gJInRH2
+	2pDDmHi1SmK6Zz+8IniJUxGZcw/Lc2Xq/EfNoBoRTMuVFuxwi5uR6TZgqhIKWODabchWD4PoKwUyM
+	p0XkNnQj58bgk0fOzCBbVhvH2zB2ZYpaKuuRIeZ9FG8aqBLlKlwT2DKTJuj92btswiBxhj3PnFVdw
+	cGZhwMURZjOsYT6XFJzMepzGgcnN6+avqLp00tsrpWSSdvDEp8Tr+l2iwmvSXMTouV73BVVNKFgW2
+	5kGw+5OTGQqUTVUK27554haQ/FYmcJ3P2lHJi5DQ7Z5/3BJs1mJIPSu1WUMWIxPJuNUu2QUK0Bhxr
+	HTr8Le+fA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYW9s-0004f8-CU; Tue, 12 May 2020 14:45:24 +0000
+	id 1jYWBg-0005ht-VF; Tue, 12 May 2020 14:47:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYW9g-0003gy-RE; Tue, 12 May 2020 14:45:14 +0000
+ id 1jYWBX-0005hP-8O; Tue, 12 May 2020 14:47:08 +0000
 Received: from [10.44.0.192] (unknown [103.48.210.53])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E64CB206A3;
- Tue, 12 May 2020 14:45:03 +0000 (UTC)
-Subject: Re: [PATCH 16/31] m68knommu: use asm-generic/cacheflush.h
+ by mail.kernel.org (Postfix) with ESMTPSA id 5779E206A3;
+ Tue, 12 May 2020 14:46:58 +0000 (UTC)
+Subject: Re: [PATCH 29/31] binfmt_flat: use flush_icache_user_range
 To: Christoph Hellwig <hch@lst.de>, Andrew Morton
  <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
 References: <20200510075510.987823-1-hch@lst.de>
- <20200510075510.987823-17-hch@lst.de>
+ <20200510075510.987823-30-hch@lst.de>
 From: Greg Ungerer <gerg@linux-m68k.org>
-Message-ID: <fb98853b-c02a-a682-443e-2ae62d0502d9@linux-m68k.org>
-Date: Wed, 13 May 2020 00:44:59 +1000
+Message-ID: <484af2c0-2450-b40a-8322-e691495c45aa@linux-m68k.org>
+Date: Wed, 13 May 2020 00:46:55 +1000
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <20200510075510.987823-17-hch@lst.de>
+In-Reply-To: <20200510075510.987823-30-hch@lst.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_074512_903860_725493CE 
-X-CRM114-Status: GOOD (  14.33  )
+X-CRM114-CacheID: sfid-20200512_074707_319074_248D2CC4 
+X-CRM114-Status: GOOD (  15.43  )
 X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-4.8 points)
@@ -83,9 +83,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi Christoph,
 
-On 10/5/20 5:54 pm, Christoph Hellwig wrote:
-> m68knommu needs almost no cache flushing routines of its own.  Rely on
-> asm-generic/cacheflush.h for the defaults.
+On 10/5/20 5:55 pm, Christoph Hellwig wrote:
+> load_flat_file works on user addresses.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
@@ -95,47 +94,24 @@ Regards
 Greg
 
 
+
 > ---
->   arch/m68k/include/asm/cacheflush_no.h | 19 ++-----------------
->   1 file changed, 2 insertions(+), 17 deletions(-)
+>   fs/binfmt_flat.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/arch/m68k/include/asm/cacheflush_no.h b/arch/m68k/include/asm/cacheflush_no.h
-> index 11e9a9dcbfb24..2731f07e7be8c 100644
-> --- a/arch/m68k/include/asm/cacheflush_no.h
-> +++ b/arch/m68k/include/asm/cacheflush_no.h
-> @@ -9,25 +9,8 @@
->   #include <asm/mcfsim.h>
+> diff --git a/fs/binfmt_flat.c b/fs/binfmt_flat.c
+> index 831a2b25ba79f..6f0aca5379da2 100644
+> --- a/fs/binfmt_flat.c
+> +++ b/fs/binfmt_flat.c
+> @@ -854,7 +854,7 @@ static int load_flat_file(struct linux_binprm *bprm,
+>   #endif /* CONFIG_BINFMT_FLAT_OLD */
+>   	}
 >   
->   #define flush_cache_all()			__flush_cache_all()
-> -#define flush_cache_mm(mm)			do { } while (0)
-> -#define flush_cache_dup_mm(mm)			do { } while (0)
-> -#define flush_cache_range(vma, start, end)	do { } while (0)
-> -#define flush_cache_page(vma, vmaddr)		do { } while (0)
->   #define flush_dcache_range(start, len)		__flush_dcache_all()
-> -#define ARCH_IMPLEMENTS_FLUSH_DCACHE_PAGE 0
-> -#define flush_dcache_page(page)			do { } while (0)
-> -#define flush_dcache_mmap_lock(mapping)		do { } while (0)
-> -#define flush_dcache_mmap_unlock(mapping)	do { } while (0)
->   #define flush_icache_range(start, len)		__flush_icache_all()
-> -#define flush_icache_page(vma,pg)		do { } while (0)
-> -#define flush_icache_user_range(vma,pg,adr,len)	do { } while (0)
-> -#define flush_cache_vmap(start, end)		do { } while (0)
-> -#define flush_cache_vunmap(start, end)		do { } while (0)
-> -
-> -#define copy_to_user_page(vma, page, vaddr, dst, src, len) \
-> -	memcpy(dst, src, len)
-> -#define copy_from_user_page(vma, page, vaddr, dst, src, len) \
-> -	memcpy(dst, src, len)
+> -	flush_icache_range(start_code, end_code);
+> +	flush_icache_user_range(start_code, end_code);
 >   
->   void mcf_cache_push(void);
->   
-> @@ -98,4 +81,6 @@ static inline void cache_clear(unsigned long paddr, int len)
->   	__clear_cache_all();
->   }
->   
-> +#include <asm-generic/cacheflush.h>
-> +
->   #endif /* _M68KNOMMU_CACHEFLUSH_H */
+>   	/* zero the BSS,  BRK and stack areas */
+>   	if (clear_user((void __user *)(datapos + data_len), bss_len +
 > 
 
 _______________________________________________
