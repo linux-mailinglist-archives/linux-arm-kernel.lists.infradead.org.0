@@ -2,54 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9DA9D1CF309
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:04:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7ADD1CF30B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:05:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=o+lJvkc5YsbSJCGMnryP2Gc6x35vllV+BKRYZ65XoM8=; b=tIuq2h360mFrGo
-	Gjjry1im4GbgKP+M5bQZnB8Cnh035OE543O7d5LRclJibEscLH7GIdAN99swgOlgGa8TslsqBB1Ig
-	tUc2v8adA6kIupZKCs19AOL9QI4xtcFd5eWehMkqRu/PJyyVM6k7beo1yGlDFddN6+ukJHLK8DDXP
-	anbun+jOQGUi6uzrEGf0g47xS6V7hyGzfStw7dPUiJhN61XBSiYw7fhE0fcW00xcXt34zz1zG4kvI
-	fqhCPET69HeeEQNOPSJdrLLsvWXb/3tCw1hARovPmESuifYybRWyQT0pfLJt9YO4kD1d8BvwtbGhG
-	2hPahx7jTj6mhITKYBuw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/+M2cDTzwRmE7IHVIeHXkyximo898hkLabPNwcmamMc=; b=i/VJ89X0iS8hG1zTG8GBNo1QS
+	6kG65PhgGYl4VReckkrHVlKypDHGnoQOrbRFQRmdrgKQajpqAoiojpqNQHnZROpOVFvj2+vmwdo1S
+	OUEnozCPJsPOCZp2pou5ofwv/gj5YGD3kd3/kYx9lWKY04DMITjbTEN2agFy4ugMmibqI+BY7CEsx
+	F+3boMTNxXi2ugvT0LIr37Xx0Ezbp/hBUnf5MNTzHnFON/gz5h2Z1cS6DkthMlizuBWJosEHLn6X7
+	bRvX8A8ZwmDCneaUs9p9Yab0fR+SQOjk0VV3v06h889W8h4w+GJHsvBehxC+TSiIYhbqdo4avpUk8
+	48fPX6LHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYShr-0000yy-A6; Tue, 12 May 2020 11:04:15 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYShj-0000yG-Ec
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 11:04:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6EF4B30E;
- Tue, 12 May 2020 04:04:04 -0700 (PDT)
-Received: from bogus (e103737-lin.cambridge.arm.com [10.1.197.49])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6F5E83F71E;
- Tue, 12 May 2020 04:04:03 -0700 (PDT)
-Date: Tue, 12 May 2020 12:03:57 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: ARM SoC Team <arm@kernel.org>, SoC Team <soc@kernel.org>,
- ALKML <linux-arm-kernel@lists.infradead.org>
-Subject: [GIT PULL] firmware: arm_scmi: updates for v5.8
-Message-ID: <20200512110357.GA26454@bogus>
+	id 1jYSis-0002or-11; Tue, 12 May 2020 11:05:18 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYSig-0001wB-HD
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 11:05:07 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 62D52206A3;
+ Tue, 12 May 2020 11:05:04 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589281504;
+ bh=FxQbeHzH87z7YqHq+pWRfh+Kr83b9qMjmrmptxIb/1c=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=nqhA5x5cPAN+u/hfaCwJq6umWE9S2at4LRjSqAOzMEi2SU2my3u00mpGc9WzWqa1L
+ Ivu1lIwoV7jmetNKkL41BY24YxO1KxW1rNZwwuJFNgWfA8zF4q44cELlJNiGdGal3g
+ +jzErhr9ZFChQGlw9QVE/e6lcIwb99vROp+ddlJ4=
+Date: Tue, 12 May 2020 12:05:02 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH] arm64: bti: Fix support for userspace only BTI
+Message-ID: <20200512110502.GC5110@sirena.org.uk>
+References: <20200512092155.56931-1-broonie@kernel.org>
+ <20200512103908.GB3021@willie-the-truck>
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200512103908.GB3021@willie-the-truck>
+X-Cookie: The only perfect science is hind-sight.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_040407_534044_D62DDEB2 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_040506_601991_0FA196D4 
+X-CRM114-Status: GOOD (  12.41  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,85 +77,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, Sudeep Holla <sudeep.holla@arm.com>,
- Arnd Bergmann <arnd@arndb.de>, Kevin Hilman <khilman@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8801114428626413909=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM SoC Team,
 
-Please pull !
+--===============8801114428626413909==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Y5rl02BVI9TCfPar"
+Content-Disposition: inline
 
-Regards,
-Sudeep
 
--->8
+--Y5rl02BVI9TCfPar
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+On Tue, May 12, 2020 at 11:39:09AM +0100, Will Deacon wrote:
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+> Might be worth a comment here in case somebody tries to "clean this up"
+> later on!
 
-are available in the Git repository at:
+> > +#ifdef CONFIG_ARM64_BTI_KERNEL
+> >  #define PTE_MAYBE_GP		(system_supports_bti() ? PTE_GP : 0)
+> > +#else
+> > +#define PTE_MAYBE_GP		0
+> > +#endif
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/sudeep.holla/linux.git tags/scmi-updates-5.8
+Sure.
 
-for you to fetch changes up to 5a897e3ab42942e0fff51738357b1e0f91690dcf:
+> I also notice we have a funny check in the vdso code:
 
-  firmware: arm_scmi: fix psci dependency (2020-05-07 16:28:56 +0100)
+>   if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL) && system_supports_bti())
 
-----------------------------------------------------------------
-ARM SCMI/SCPI updates for v5.8
+> but why do we care about CONFIG_ARM64_BTI_KERNEL for the vdso pages?
 
-1. Addition of ARM SMC/HVC as SCMI transport type with required
-   abstraction already in place
-2. Initial infrastructure support to add SCMI notifications from
-   platform to agents
-3. Miscellaneous fix adding header include guards
+To enable BTI for the vDSO we need the vDSO to be built with BTI
+annotations.  Currently the CFLAGS are the same for the vDSO and the
+kernel, we could arrange to allow them to differ but since the most
+likely reason why the user has userspace but not kernel BTI is that
+their compiler isn't suitable it seemed like disproportionate effort
+for a most likely small audience.
 
-----------------------------------------------------------------
-Cristian Marussi (5):
-      firmware: arm_scmi: Add notifications support in transport layer
-      firmware: arm_scmi: Rename .clear_notification() transport_ops
-      firmware: arm_scmi: Clear channel on reception of unexpected responses
-      firmware: arm_scmi: Clear channel for delayed responses
-      firmware: arm_scmi: Fix handling of unexpected delayed responses
+--Y5rl02BVI9TCfPar
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Peng Fan (2):
-      dt-bindings: arm: Add smc/hvc transport for SCMI
-      firmware: arm_scmi: Add smc/hvc transport
+-----BEGIN PGP SIGNATURE-----
 
-Sudeep Holla (11):
-      firmware: arm_scmi: Make mutex channel specific
-      firmware: arm_scmi: Drop empty stub for smc_mark_txdone
-      firmware: arm_scmi: Check shmem property for channel availablity
-      firmware: arm_scmi: Drop checking for shmem property in parent node
-      firmware: arm_scmi: Add include guard to linux/scmi_protocol.h
-      firmware: arm_scpi: Add include guard to linux/scpi_protocol.h
-      firmware: arm_scmi: Add receive buffer support for notifications
-      firmware: arm_scmi: Update protocol commands and notification list
-      firmware: arm_scmi: Add support for notifications message processing
-      firmware: arm_scmi: Fix return error code in smc_send_message
-      firmware: arm_scmi: fix psci dependency
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl66gt0ACgkQJNaLcl1U
+h9DfRwf+LeNxyFEN4ORntAZEGtm6+2enfFtbsoklIv95dUOkvv6iuck/nJeowCtF
+O3L+7rN6VFR8zIQ03u1g0ddSWw8UEDb9PUa6wRHp0gHOPEDQUld104wwXgx86gNS
+2sGSUlsa7pJ03L+VUWtn08y8fm1A8LEMqpj3NSFcpAol4D86Gbu2pCQO94pNfGAY
+k95pLMuR/DNTmv7QXDuOruJHyjJlCeV15dcIs39FyKJjRFLedr//thGGe5WmDLpC
+w2B04hHmQF6pQuM20tiJLc4yTPCRF2YcJ8+bjauhRFVsBzKb696Et02F2vT/zn4U
+dKDtPNnCMWvC2qC83CPqC5E/c7MN3Q==
+=6OIl
+-----END PGP SIGNATURE-----
 
- Documentation/devicetree/bindings/arm/arm,scmi.txt |   3 +-
- drivers/firmware/arm_scmi/Makefile                 |   4 +-
- drivers/firmware/arm_scmi/base.c                   |   7 +
- drivers/firmware/arm_scmi/common.h                 |  11 ++
- drivers/firmware/arm_scmi/driver.c                 | 133 ++++++++++++++----
- drivers/firmware/arm_scmi/mailbox.c                |  17 +++
- drivers/firmware/arm_scmi/perf.c                   |   5 +
- drivers/firmware/arm_scmi/power.c                  |   6 +
- drivers/firmware/arm_scmi/sensors.c                |   4 +
- drivers/firmware/arm_scmi/shmem.c                  |  15 ++
- drivers/firmware/arm_scmi/smc.c                    | 153 +++++++++++++++++++++
- include/linux/scmi_protocol.h                      |   6 +
- include/linux/scpi_protocol.h                      |   6 +
- 13 files changed, 340 insertions(+), 30 deletions(-)
- create mode 100644 drivers/firmware/arm_scmi/smc.c
+--Y5rl02BVI9TCfPar--
+
+
+--===============8801114428626413909==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8801114428626413909==--
+
