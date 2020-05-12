@@ -2,86 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91F3A1CE8E5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 01:13:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E93651CE98E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 02:20:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HzwBNAS3YJfcS63uv93Yb5QwNrKDliczRGubyHkC20M=; b=K+kP6blvVoez4V
-	0t6i+0QGLbMKfXd5aBk/OjnEDFExWArplZT77sZRMTjKReuhwO+qUFnXETpYFDI/XsZpdzXsLEFdG
-	jtBr8x9Y9XCDw+X/srDTWzNhAh7uY7F4CqzHkkKcD+DERyQ0i9x5UdzrwmG4n/OZwWcgYZsneoEP9
-	crXFvBLTtf6r0xROVSpvxiqfdlVtmiyqhtZJ7/0TMvhR/3lquerD0ynOiKjEKMGhTDO4uoP1BvKJO
-	NpIqDpP7OIcGfxuTd0fAeSw0yFwG9IHErMktEKVwPkKcS0Hqh7QoAz9x5bkPSgyhxS+ZDnCRNV6ZO
-	smXA7O3gRuDuAdXurTTg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ved1v/RGslFw2TNwnAsfyd8gLejWGJrFFI/YroNNK20=; b=iySf2FhAhjx6iW
+	1/fdZ/2rbeqzsnJVxMrfXx4YFFjpJMkhTE5krfn6CcGz5uIs3IMWF8NL/zs1j5b0veZgnx88ittML
+	MGnU01FjY0unxiZ1F/2kQFgPup2Wxy4tYmrRJ3CzwtkZcRyjMYUGpR4WW9u4FjbLO4c3s5og5a1q0
+	Lbgx0RJQuUKo78rlUuWGmkC8oZfhFVjgm+XMlq6kFICbEPHbjj8rpeHS3QdR0ReqrW08jREa1C71S
+	GmLXgTAZqauwhBEJxrPafT6NQutEP9kTS5ZBQBGGAPKiV0BmCdM7LvdwyH2rw0dPgkmkn/gXjDXRf
+	A5awZIjxs1xb1cJbx0Pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYHbg-00071Z-UY; Mon, 11 May 2020 23:13:08 +0000
-Received: from mail-oo1-f65.google.com ([209.85.161.65])
+	id 1jYIeE-0005KU-C5; Tue, 12 May 2020 00:19:50 +0000
+Received: from ex13-edg-ou-001.vmware.com ([208.91.0.189])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYHbY-00070H-KU; Mon, 11 May 2020 23:13:01 +0000
-Received: by mail-oo1-f65.google.com with SMTP id c187so938926ooc.2;
- Mon, 11 May 2020 16:12:57 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=YDsjgW4MArlBA1SB+uZg3khyj2WK0GRuGD4JKeBynv8=;
- b=jY12Na3ADfUQtCwzsZ9W0JxU4xAhUsWkjfYPgEFQfhyulVFxEq0T11HcWl+HtcCF8d
- eUyD9e+ktOYMLP54/0HNFvxQieAcVmkxZYeEVplWQhDoVrrxNdUp1vuXb3YOreVpnBkv
- XTnxwLDkL+0voQpMvTHEyh4qpB+GWxUsoE+uFZUL7HDS4K3ZwguCdEmImn6d15mNlD54
- 7qMGk49MCKrL6PaMZ3Hfc8U91Gpz/4dSIVAaiC80Ib9e13mMYZ2jB2YP0OY+gNLmCI5E
- DiCRgaGo/C6R7VU5OVfxOnDMCTrOonbqHVZghWHxaDqEfLBzH4XL1LMiUJV/MlvSD9yg
- JMKA==
-X-Gm-Message-State: AGi0Pubb2+6KNUVju4N5bMkFb7iyDmysSD5sH2nXsxrV3YAIiAuRsQei
- W0Jyx6AGSbbh/ehsp3VMEw==
-X-Google-Smtp-Source: APiQypJYcIJELa5zMY/ISbRUVZAa+Q7Ic4+PGG1ZB0L0pvzkPLwl0FKURFdszYQ9BrNGvh3O0VOGQw==
-X-Received: by 2002:a4a:af0d:: with SMTP id w13mr3249600oon.77.1589238776873; 
- Mon, 11 May 2020 16:12:56 -0700 (PDT)
-Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id m65sm2138476oib.49.2020.05.11.16.12.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 11 May 2020 16:12:56 -0700 (PDT)
-Received: (nullmailer pid 11706 invoked by uid 1000);
- Mon, 11 May 2020 23:12:55 -0000
-Date: Mon, 11 May 2020 18:12:55 -0500
-From: Rob Herring <robh@kernel.org>
-To: Chen-Yu Tsai <wens@kernel.org>
-Subject: Re: [PATCH v2 1/3] dt-bindings: leds: common: Drop enumeration for
- linux,default-triggers
-Message-ID: <20200511231255.GA24112@bogus>
-References: <20200427073132.29997-1-wens@kernel.org>
- <20200427073132.29997-2-wens@kernel.org>
+ id 1jYIe5-0005Jk-EP
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 00:19:43 +0000
+Received: from sc9-mailhost3.vmware.com (10.113.161.73) by
+ EX13-EDG-OU-001.vmware.com (10.113.208.155) with Microsoft SMTP Server id
+ 15.0.1156.6; Mon, 11 May 2020 17:19:27 -0700
+Received: from [0.0.0.0] (oddjob.vmware.com [10.253.4.32])
+ by sc9-mailhost3.vmware.com (Postfix) with ESMTP id 53A74404D5;
+ Mon, 11 May 2020 17:19:26 -0700 (PDT)
+Subject: Re: [Linux-graphics-maintainer] [PATCH v3 15/25] drm: vmwgfx: fix
+ common struct sg_table related issues
+To: Marek Szyprowski <m.szyprowski@samsung.com>,
+ <dri-devel@lists.freedesktop.org>, <iommu@lists.linux-foundation.org>,
+ <linaro-mm-sig@lists.linaro.org>, <linux-kernel@vger.kernel.org>
+References: <20200505083926.28503-1-m.szyprowski@samsung.com>
+ <20200505084614.30424-1-m.szyprowski@samsung.com>
+ <CGME20200505084632eucas1p231212e9cea88e755da8eaf1fb012d2c6@eucas1p2.samsung.com>
+ <20200505084614.30424-15-m.szyprowski@samsung.com>
+From: Roland Scheidegger <sroland@vmware.com>
+Message-ID: <8adef36a-1f35-e8df-3b7b-2f994a204be1@vmware.com>
+Date: Tue, 12 May 2020 02:19:25 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Firefox/68.0 Thunderbird/68.2.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200427073132.29997-2-wens@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200505084614.30424-15-m.szyprowski@samsung.com>
+Content-Language: de-DE
+Received-SPF: None (EX13-EDG-OU-001.vmware.com: sroland@vmware.com does not
+ designate permitted sender hosts)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_161300_673068_32DB8568 
-X-CRM114-Status: GOOD (  15.01  )
-X-Spam-Score: 0.8 (/)
+X-CRM114-CacheID: sfid-20200511_171941_485627_9AA0C8F4 
+X-CRM114-Status: GOOD (  18.22  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.8 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.161.65 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit [robherring2[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robherring2[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.161.65 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [208.91.0.189 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,72 +71,87 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Heiko Stuebner <heiko@sntech.de>,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- Chen-Yu Tsai <wens@csie.org>, Dan Murphy <dmurphy@ti.com>,
- Pavel Machek <pavel@ucw.cz>, linux-leds@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org,
- Jacek Anaszewski <jacek.anaszewski@gmail.com>
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Airlie <airlied@linux.ie>,
+ VMware Graphics <linux-graphics-maintainer@vmware.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Apr 27, 2020 at 03:31:30PM +0800, Chen-Yu Tsai wrote:
-> From: Chen-Yu Tsai <wens@csie.org>
-> 
-> The bindings currently list a very small subset of valid triggers for
-> LEDs. Since many drivers or subsystems in Linux register custom
-> triggers, the list would become very hard to maintain.
+I'm not exactly an expert on this, but looks alright to me.
+Acked-by: Roland Scheidegger <sroland@vmware.com>
 
-The idea was we'll consolidate around standardized names and that new 
-users should use 'function' instead.
-
-There was discussion around this when adding 'function'.
-
+Am 05.05.20 um 10:46 schrieb Marek Szyprowski:
+> The Documentation/DMA-API-HOWTO.txt states that dma_map_sg returns the
+> numer of the created entries in the DMA address space. However the
+> subsequent calls to dma_sync_sg_for_{device,cpu} and dma_unmap_sg must be
+> called with the original number of the entries passed to dma_map_sg. The
+> sg_table->nents in turn holds the result of the dma_map_sg call as stated
+> in include/linux/scatterlist.h. A common mistake was to ignore a result
+> of the dma_map_sg function and don't use the sg_table->orig_nents at all.
 > 
-> Instead, just drop the list and allow free form strings.
+> To avoid such issues, lets use common dma-mapping wrappers operating
+> directly on the struct sg_table objects and adjust references to the
+> nents and orig_nents respectively.
 > 
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 > ---
->  .../devicetree/bindings/leds/common.yaml      | 21 +------------------
->  1 file changed, 1 insertion(+), 20 deletions(-)
+> For more information, see '[PATCH v3 00/25] DRM: fix struct sg_table nents
+> vs. orig_nents misuse' thread: https://lkml.org/lkml/2020/5/5/187
+> ---
+>  drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c | 17 ++++-------------
+>  1 file changed, 4 insertions(+), 13 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/leds/common.yaml b/Documentation/devicetree/bindings/leds/common.yaml
-> index 4c270fde4567..3b3cdab3fc15 100644
-> --- a/Documentation/devicetree/bindings/leds/common.yaml
-> +++ b/Documentation/devicetree/bindings/leds/common.yaml
-> @@ -79,26 +79,7 @@ properties:
->      description:
->        This parameter, if present, is a string defining the trigger assigned to
->        the LED.
-> -    allOf:
-> -      - $ref: /schemas/types.yaml#definitions/string
-> -    enum:
-> -        # LED will act as a back-light, controlled by the framebuffer system
-> -      - backlight
-> -        # LED will turn on (but for leds-gpio see "default-state" property in
-> -        # Documentation/devicetree/bindings/leds/leds-gpio.yaml)
-> -      - default-on
-> -        # LED "double" flashes at a load average based rate
-> -      - heartbeat
-> -        # LED indicates disk activity
-> -      - disk-activity
-> -        # LED indicates IDE disk activity (deprecated), in new implementations
-> -        # use "disk-activity"
-> -      - ide-disk
-> -        # LED flashes at a fixed, configurable rate
-> -      - timer
-> -        # LED alters the brightness for the specified duration with one software
-> -        # timer (requires "led-pattern" property)
-> -      - pattern
-> +    $ref: /schemas/types.yaml#definitions/string
+> diff --git a/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c b/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
+> index bf0bc46..e50ae8b 100644
+> --- a/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
+> +++ b/drivers/gpu/drm/vmwgfx/vmwgfx_ttm_buffer.c
+> @@ -362,8 +362,7 @@ static void vmw_ttm_unmap_from_dma(struct vmw_ttm_tt *vmw_tt)
+>  {
+>  	struct device *dev = vmw_tt->dev_priv->dev->dev;
 >  
->    led-pattern:
->      description: |
-> -- 
-> 2.26.0
+> -	dma_unmap_sg(dev, vmw_tt->sgt.sgl, vmw_tt->sgt.nents,
+> -		DMA_BIDIRECTIONAL);
+> +	dma_unmap_sgtable(dev, vmw_tt->sgt, DMA_BIDIRECTIONAL);
+>  	vmw_tt->sgt.nents = vmw_tt->sgt.orig_nents;
+>  }
+>  
+> @@ -383,16 +382,8 @@ static void vmw_ttm_unmap_from_dma(struct vmw_ttm_tt *vmw_tt)
+>  static int vmw_ttm_map_for_dma(struct vmw_ttm_tt *vmw_tt)
+>  {
+>  	struct device *dev = vmw_tt->dev_priv->dev->dev;
+> -	int ret;
+> -
+> -	ret = dma_map_sg(dev, vmw_tt->sgt.sgl, vmw_tt->sgt.orig_nents,
+> -			 DMA_BIDIRECTIONAL);
+> -	if (unlikely(ret == 0))
+> -		return -ENOMEM;
+>  
+> -	vmw_tt->sgt.nents = ret;
+> -
+> -	return 0;
+> +	return dma_map_sgtable(dev, vmw_tt->sgt, DMA_BIDIRECTIONAL);
+>  }
+>  
+>  /**
+> @@ -449,10 +440,10 @@ static int vmw_ttm_map_dma(struct vmw_ttm_tt *vmw_tt)
+>  		if (unlikely(ret != 0))
+>  			goto out_sg_alloc_fail;
+>  
+> -		if (vsgt->num_pages > vmw_tt->sgt.nents) {
+> +		if (vsgt->num_pages > vmw_tt->sgt.orig_nents) {
+>  			uint64_t over_alloc =
+>  				sgl_size * (vsgt->num_pages -
+> -					    vmw_tt->sgt.nents);
+> +					    vmw_tt->sgt.orig_nents);
+>  
+>  			ttm_mem_global_free(glob, over_alloc);
+>  			vmw_tt->sg_alloc_size -= over_alloc;
 > 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
