@@ -2,85 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 416B81CEE59
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 09:38:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 857681CEE6C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 09:46:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=ZynOXOnX+Gl3AdV8KHidkya3W7h8+KO6goMP0uPv9FM=; b=o4zrnW11fJsJTcon9UEPBwjsz3
-	iCzMWni7hkPv/z1b/c17rSU8Uv7PAE3JIWboXMq6KIUPxNHLaLZ26pqNie4ZSYYo7pdUhPnpWc7cB
-	nGTDZHgPb92REC2k9RYZveMPcZIIGUMxFyJdVF7hqOxRKshQ0/1TK7PVSuC8uSFxW1+KCiFnXkyg3
-	LRo3FB3bG8Vzime0rIE282q34CKOeq38yr51jVz9DXXW3kvXFSDxzFlCVads+tgxIqILm2yA33DDV
-	zttCMmbRBaS77To/dLJMKmy+Ot4VoshYjdALRObeR3VOjmUIHyt5r2Hvx9olw/1zmZZ8DvoDPpR+E
-	XK8uertg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LjvPWnO305Fe2QwH5Ys+34W0XYMW9sBI7435Fafs/cg=; b=NSiDLothbyQw/B
+	/6lGMlnS4nbYBKIgmxzwuxbZSgzYAfC4gWkFwXEqCWx7aGdoi9ZgTHPGR9l12cpSKeGhiULwSN8kx
+	tMP0368vP0KZdOvaa5OoRl27FvqqaI2AKTq1uSBwQ2/jD/Ec8PYByJC+u4uAZmuC5fMogr3A1fV4X
+	KB6XD3ZbOjffmrIXeuy3VAr8cmqr/B4JC7fXLuWAyToALyV/jRd8nqZizHYUmXGCPOHx+Afk4LAg7
+	o9nqLkZYxFoskQQIEIsOlTAFHoNWYX/sm28dHpWtPRXYJCDYd0qQMqQdHiNla98STZ3sDl7YnUKry
+	psJtxDS1sQuUSZ5xHlOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYPUQ-0002oE-6M; Tue, 12 May 2020 07:38:10 +0000
-Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
+	id 1jYPby-0000sA-9W; Tue, 12 May 2020 07:45:58 +0000
+Received: from us-smtp-1.mimecast.com ([207.211.31.81]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYPTP-00024n-Fa
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 07:37:09 +0000
-Received: by mail-pj1-x1044.google.com with SMTP id a7so9002592pju.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 00:37:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=K+68zUT9ct7q6l7uIUZCLkOn4a7L9BomhNQ5jVg2Zxo=;
- b=dNh34QvshqjNp7DtA3MlOG2kBZxosBMZGl53Z/ldH18Yw5yg6Bcz+2gc/kgnq1Nd5y
- mIaBZTMnY7As80pi/E5gGV/PPR7kubeWI48JIFO6qcfDk13S+dMj5RItEcIsveEQFkLd
- eOi9fcmjAc0frIerTCer7F67YR1NhDS90OdLbshs3UeqTBIB2OhQLHOn8uykYTe+xC1S
- 4UX2nIG6VldRDHeKMkKUW+Z+HMq/j8hxXvbgl/api+IT5rUVh7xtjsnU+xE9yZYPukBZ
- +n3pNfceWro8BjxsTesATA3SbdRFwATUv/jIRQUM/JpMC/69kFtz4L5lafJQTMxDIgn0
- NMBg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=K+68zUT9ct7q6l7uIUZCLkOn4a7L9BomhNQ5jVg2Zxo=;
- b=abQx9oYUEsq7MH+VwoXyBkaNB28AEgVvGLkElzn/DQar0JUc5kR8Ok+4MxCY0W+W5/
- Jb5VkE4NsXh+wXc7VYPIC0WjJX5w6uzWFnX12e5BztVfG5ZNMI3IiyTWvynkEQ+4j8ts
- 3BfqoGHorPo6NlO/dfcqY9IokGRKx7sG/raKUhXV368NdfH5WSrKUy4aT9ctZTdJOo3L
- MOhf5UockGT6zv+gUW5Ry7OBEUcZmnDOSmZ+WW7cHqGZDGTYSv7IflB/foSUjnw2seVr
- tWJLcojWMonHWyaxcgTP4Fbpq+4HjzZA2B1YtgMJU1HQ56QAJlDfOqwZxD3VDOukra5Z
- /sZg==
-X-Gm-Message-State: AGi0PuYdwtb0xFyzNQusBiQU3IHOnmcrGiMJ2IGfS/Le66fz9wgPMA5S
- cvUPVDhocXmdILnE7H9JIbU=
-X-Google-Smtp-Source: APiQypIIHFRhIkvjAwcUxwC+9xmufAvKnXQChJcabuuo7RX0G98cZV0dD+L+0+qw56P7H8SyGS0nRA==
-X-Received: by 2002:a17:90a:8807:: with SMTP id
- s7mr17888970pjn.157.1589269026260; 
- Tue, 12 May 2020 00:37:06 -0700 (PDT)
-Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
- by smtp.gmail.com with ESMTPSA id 5sm11732471pjf.19.2020.05.12.00.37.02
- (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 12 May 2020 00:37:05 -0700 (PDT)
-From: dillon.minfei@gmail.com
-To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
- broonie@kernel.org, p.zabel@pengutronix.de
-Subject: [PATCH v2 3/3] spi: stm32: Add SPI_SIMPLEX_RX,
- SPI_3WIRE_RX support for stm32f4
-Date: Tue, 12 May 2020 15:36:50 +0800
-Message-Id: <1589269010-18472-4-git-send-email-dillon.minfei@gmail.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1589269010-18472-1-git-send-email-dillon.minfei@gmail.com>
-References: <1589269010-18472-1-git-send-email-dillon.minfei@gmail.com>
+ id 1jYPbV-0000qd-87
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 07:45:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589269524;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references:autocrypt:autocrypt;
+ bh=VpYIdgE2aT2epS50aynusR7phmNN8fmQUTMnMqybTKI=;
+ b=cn/nJCb2mxAsqkDOTzXVgbvxnrZEWEPskKS9xwVqa0tpfMlq7EiAh7o2aLkO2DfpLdWpGk
+ CITBXpvnfFjxVelR1/ZaNmD5IjDDshRZqSROYZaMmrGPyyBy2U4Q4nMU8u6pRj16mvQLLW
+ MyKAZGLlRJsZljf9NBze51GPAeGoAng=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-357-suXza-JDNgqFPqO0i8Ltuw-1; Tue, 12 May 2020 03:45:23 -0400
+X-MC-Unique: suXza-JDNgqFPqO0i8Ltuw-1
+Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
+ [10.5.11.22])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id B51B8107ACF3;
+ Tue, 12 May 2020 07:45:21 +0000 (UTC)
+Received: from [10.36.113.77] (ovpn-113-77.ams2.redhat.com [10.36.113.77])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 73E1D1002394;
+ Tue, 12 May 2020 07:45:17 +0000 (UTC)
+Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+References: <20200501165701.24587-1-james.morse@arm.com>
+ <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
+ <8736892l92.fsf@x220.int.ebiederm.org>
+ <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
+ <87h7wmtna1.fsf@x220.int.ebiederm.org>
+From: David Hildenbrand <david@redhat.com>
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+Organization: Red Hat GmbH
+Message-ID: <4d5f69b6-fdfd-a461-0ac9-6d05636508f1@redhat.com>
+Date: Tue, 12 May 2020 09:45:16 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+MIME-Version: 1.0
+In-Reply-To: <87h7wmtna1.fsf@x220.int.ebiederm.org>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_003707_638476_001CCDBA 
-X-CRM114-Status: GOOD (  17.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_004529_373032_E1BFFC0A 
+X-CRM114-Status: GOOD (  21.94  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
- [list.dnswl.org]
+ no trust [207.211.31.81 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.81 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -89,6 +130,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,140 +142,120 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dillonhua@gmail.com,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- dillon.minfei@gmail.com, linux-stm32@st-md-mailman.stormreply.com,
+Cc: Baoquan He <bhe@redhat.com>, kexec@lists.infradead.org, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, Dave Young <dyoung@redhat.com>,
  linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: dillon min <dillon.minfei@gmail.com>
+>>> Phrasing it that way is non-sense.  What is important is memory
+>>> available in the system.  A memory map is just a reflection upon that,
+>>> a memory map is not the definition of truth.
+>>>
+>>> So if this notifier reflects when memory is coming and going on the
+>>> system this is a reasonable approach.  
+>>>
+>>> Do these notifiers might fire for special kinds of memory that should
+>>> only be used for very special purposes?
+>>>
+>>> This change with the addition of some filters say to limit taking action
+>>> to MEM_ONLINE and MEM_OFFLINE looks reasonable to me.  Probably also
+>>> filtering out special kinds of memory that is not gernally useful.
+>>
+>> There are cases, where this notifier will not get called (e.g., hotplug
+>> a DIMM and don't online it) or will get called, although nothing changed
+>> (offline+re-online to a different zone triggered by user space). AFAIK,
+>> nothing in kexec (*besides kdump) cares about online vs. offline memory.
+>> This is why this feels wrong.
+> 
+> So what precisely does offline and online of memory mean in this context?
+> Is it turning the memory on and off?  (which is the obvious meaning)
+> Or is offline and online letting the ordinary kernel use a chunk
+> of memory and not use a chunk of memory and the memory remains running
+> the entire time?
+> 
 
-in l3gd20 driver startup, there is a setup failed error return from
-stm32 spi driver
+A DIMM is partitioned into fixed-size memory blocks. Each memory block
+is represented in /sys/device/system/memory/memoryX/.
 
-    "
-    [    2.687630] st-gyro-spi spi0.0: supply vdd not found, using dummy
-    regulator
-    [    2.696869] st-gyro-spi spi0.0: supply vddio not found, using dummy
-    regulator
-    [    2.706707] spi_stm32 40015000.spi: SPI transfer setup failed
-    [    2.713741] st-gyro-spi spi0.0: SPI transfer failed: -22
-    [    2.721096] spi_master spi0: failed to transfer one message from queue
-    [    2.729268] iio iio:device0: failed to read Who-Am-I register.
-    [    2.737504] st-gyro-spi: probe of spi0.0 failed with error -22
-    "
+There, it can be onlined of offlined. onlining/offlining a memory block
+simply defines
+- if the memory will be used by the buddy
+- how the memory will be used by the buddy (e.g., ZONE_NORMAL vs.
+  ZONE_MOVABLE)
+nothing else (esp. no hardware is switched on/off).
 
-after debug into spi-stm32 driver, st-gyro-spi split two steps to read
-l3gd20 id
+e.g.,
 
-first: send command to l3gd20 with read id command in tx_buf,
-       rx_buf is null.
-second: read id with tx_buf is null, rx_buf not null.
+echo "online_movable" > /sys/devices/system/memory/memory9/state
+echo "offline" > /sys/devices/system/memory/memory9/state
+echo "online_kernel" > /sys/devices/system/memory/memory9/state
 
-so, for second step, stm32 driver recongise this process is SPI_SIMPLE_RX
-from stm32_spi_communication_type, but there is no related process for this
-type in stm32f4_spi_set_mode, then we get error from
-stm32_spi_transfer_one_setup.
+When hotplugging memory, all memory blocks are either onlined directly
+from the kernel, or userspace has to do it manually via e.g., udev
+rules. The latter is common is distributions.
 
-we can use two method to fix this bug.
-1, use stm32 spi's "In unidirectional receive-only mode (BIDIMODE=0 and
-   RXONLY=1)". but as our code running in sdram, the read latency is
-   too large to get so many receive overrun error in interrupts handler.
+Before hotunplugging memory, all memory blocks have to be offline. This
+means
+- memory was never onlined
+- memory was offlined by user space manually
+- memory will be offlined automatically when unplugging the dimm
 
-2, use stm32 spi's "In full-duplex (BIDIMODE=0 and RXONLY=0)", as
-   tx_buf is null, we must add dummy data sent out before read data.
-   so, add stm32f4_spi_tx_dummy to handle this situation.
+Of course, offlining of some memory blocks might fail (esp. in case of
+ZONE_NORMAL when they contain unmovable allocations). Then, the memory
+cannot get hotunplugged.
 
-Signed-off-by: dillon min <dillon.minfei@gmail.com>
----
- drivers/spi/spi-stm32.c | 29 +++++++++++++++++++++++++----
- 1 file changed, 25 insertions(+), 4 deletions(-)
+The representation in /proc/iomem and /sys/firmware/memmap is
+independent of the state (online/offline) of a memory block.
 
-diff --git a/drivers/spi/spi-stm32.c b/drivers/spi/spi-stm32.c
-index 44ac6eb3..bcf1ba7 100644
---- a/drivers/spi/spi-stm32.c
-+++ b/drivers/spi/spi-stm32.c
-@@ -388,6 +388,13 @@ static int stm32h7_spi_get_fifo_size(struct stm32_spi *spi)
- 	return count;
- }
- 
-+static void stm32f4_spi_tx_dummy(struct stm32_spi *spi)
-+{
-+	if (spi->cur_bpw == 16)
-+		writew_relaxed(0x5555, spi->base + STM32F4_SPI_DR);
-+	else
-+		writeb_relaxed(0x55, spi->base + STM32F4_SPI_DR);
-+}
- /**
-  * stm32f4_spi_get_bpw_mask - Return bits per word mask
-  * @spi: pointer to the spi controller data structure
-@@ -811,7 +818,9 @@ static irqreturn_t stm32f4_spi_irq_event(int irq, void *dev_id)
- 		mask |= STM32F4_SPI_SR_TXE;
- 	}
- 
--	if (!spi->cur_usedma && spi->cur_comm == SPI_FULL_DUPLEX) {
-+	if (!spi->cur_usedma && (spi->cur_comm == SPI_FULL_DUPLEX ||
-+				 spi->cur_comm == SPI_SIMPLEX_RX ||
-+				 spi->cur_comm == SPI_3WIRE_RX)) {
- 		/* TXE flag is set and is handled when RXNE flag occurs */
- 		sr &= ~STM32F4_SPI_SR_TXE;
- 		mask |= STM32F4_SPI_SR_RXNE | STM32F4_SPI_SR_OVR;
-@@ -850,8 +859,10 @@ static irqreturn_t stm32f4_spi_irq_event(int irq, void *dev_id)
- 		stm32f4_spi_read_rx(spi);
- 		if (spi->rx_len == 0)
- 			end = true;
--		else /* Load data for discontinuous mode */
-+		else if (spi->tx_buf)/* Load data for discontinuous mode */
- 			stm32f4_spi_write_tx(spi);
-+		else if (spi->cur_comm == SPI_SIMPLEX_RX)
-+			stm32f4_spi_tx_dummy(spi);
- 	}
- 
- end_irq:
-@@ -1151,7 +1162,9 @@ static int stm32f4_spi_transfer_one_irq(struct stm32_spi *spi)
- 	/* Enable the interrupts relative to the current communication mode */
- 	if (spi->cur_comm == SPI_SIMPLEX_TX || spi->cur_comm == SPI_3WIRE_TX) {
- 		cr2 |= STM32F4_SPI_CR2_TXEIE;
--	} else if (spi->cur_comm == SPI_FULL_DUPLEX) {
-+	} else if (spi->cur_comm == SPI_FULL_DUPLEX ||
-+				spi->cur_comm == SPI_SIMPLEX_RX ||
-+				spi->cur_comm == SPI_3WIRE_RX) {
- 		/* In transmit-only mode, the OVR flag is set in the SR register
- 		 * since the received data are never read. Therefore set OVR
- 		 * interrupt only when rx buffer is available.
-@@ -1170,6 +1183,8 @@ static int stm32f4_spi_transfer_one_irq(struct stm32_spi *spi)
- 	/* starting data transfer when buffer is loaded */
- 	if (spi->tx_buf)
- 		stm32f4_spi_write_tx(spi);
-+	else if (spi->cur_comm == SPI_SIMPLEX_RX)
-+		stm32f4_spi_tx_dummy(spi);
- 
- 	spin_unlock_irqrestore(&spi->lock, flags);
- 
-@@ -1462,10 +1477,16 @@ static int stm32f4_spi_set_mode(struct stm32_spi *spi, unsigned int comm_type)
- 		stm32_spi_set_bits(spi, STM32F4_SPI_CR1,
- 					STM32F4_SPI_CR1_BIDIMODE |
- 					STM32F4_SPI_CR1_BIDIOE);
--	} else if (comm_type == SPI_FULL_DUPLEX) {
-+	} else if (comm_type == SPI_FULL_DUPLEX ||
-+				comm_type == SPI_SIMPLEX_RX) {
- 		stm32_spi_clr_bits(spi, STM32F4_SPI_CR1,
- 					STM32F4_SPI_CR1_BIDIMODE |
- 					STM32F4_SPI_CR1_BIDIOE);
-+	} else if (comm_type == SPI_3WIRE_RX) {
-+		stm32_spi_set_bits(spi, STM32F4_SPI_CR1,
-+					STM32F4_SPI_CR1_BIDIMODE);
-+		stm32_spi_clr_bits(spi, STM32F4_SPI_CR1,
-+					STM32F4_SPI_CR1_BIDIOE);
- 	} else {
- 		return -EINVAL;
- 	}
+> 
+>> add_memory()/try_remove_memory() is the place where:
+>> - Memblocks are created/deleted (if the memblock allocator is still
+>>   alive)
+>> - Memory resources are created/deleted (e.g., reflected in /proc/iomem)
+>> - Firmware memmap entries are created/deleted (/sys/firmware/memmap)
+>>
+>> My idea would be to add something like
+>> kexec_map_add()/kexec_map_remove() where we have
+>> firmware_map_add_hotplug()/firmware_map_remove(). From there, we can
+>> unload the kexec image like done in this patch.
+> 
+> I don't see the connection with a firmware_map.  Maybe that is how it is
+> thought about in the code but in principle the firmware can not exist
+> or completely ignore memory hotplug.
+
+The firmware_map callbacks simply update /sys/firmware/memmap in case
+that interface is configured into the kernel (mostly x86 only), nothing
+else. We just want similar callbacks to update kexec' representation.
+
+> 
+>> And these callbacks might come in handy for fixing up the kexec initial
+>> memmap in case of kexec_file_load(). AFAIKS on x86_64:
+> 
+> Maybe we have enough information to fixup the loaded kexec image
+> in the kexec_file_load case, we certainly don't in the ordinary
+> kexec_load case.
+
+Yes, that's also what I mentioned in my reply to Baoquan.
+
+> 
+> For now I want to stick to the simplest thing we can do which is either
+> blocking the memory hotplug operation (if that is possible) or
+> dropping the loaded kexec image.
+
+Yes, the latter is the best for now. It's simple.
+
+I am suggesting to add explicit callbacks to
+add_memory()/remove_memory(), and calling the invalidation from there -
+because I see various issues with the memory notifier approach (racy,
+false positives, never called if memory is not onlined).
+
 -- 
-2.7.4
+Thanks,
+
+David / dhildenb
 
 
 _______________________________________________
