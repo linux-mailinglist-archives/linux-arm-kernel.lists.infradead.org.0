@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7F3281CFB05
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:40:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A24D1CFB02
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 18:39:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bfPwrWJSMrcCt6Row6eTot7WLoX1IjC1El/eJOeudZM=; b=ig6dbd20Uyjd+Lpz3spP4Kj7dK
-	337rOK5thDY2h+SjvcoTNrzDPiCKmBoBZzQh2fmBg9OTwNRc1IWJyERn2PO7B08PlA78/uavPckaN
-	zwJIGCa7WfQ85UVgIpjx64LcppQgrvaXWEHr1K2ThboyNzek4c+MqE23+7aqBwlDY7lUsmcdGrH9f
-	B+JDTdektXp69vrD5xySnpuwldeNTQVtQokFp/wIDr3U8zPXVjTrsp+OrRd7UpTvZuls/XPXcGgTC
-	DAD+OroVnnV3lZ2DH/O4BH+Z23P6M6w0nIdt+gxx8bOeb1e/12WkNV80MS6XbUlb9/Dt9lL8W1svy
-	KhnEznzg==;
+	bh=GUVNE8tVxv9GqdcCkL0YGXu+lmpWMj9FhEFeO35Izp0=; b=LxdxfH/653LCzGKG7KZ7evFZct
+	2Opw86eKi+YU9Ma2ciF5JPLLkgt7EAJHFBDWErMsOzA2xufQoY9SOiVZQnvLVY9LsBZ+zAG3SEfG/
+	WSRjcRrDLHpY9lPUik8Jr/hO2CIcVyVoFHLqwaGlLgIV90BRLclwV7o2N+jwcvn3jti4jb+Kysf2+
+	VN9so1qV9lBkzsm3jrcwSMh7ednsbyhmx4cQgpLO2cQdqMxmTyrT63/whPtP+XmUy0nxUl2Ixlqj3
+	g60Tkn1S7XoGPOeoVU/4TjrdSkIL1FZIrfvuLcHQEzUyyq2Oap12JDgCJCV3xbwOh/k3sj5NFvuK5
+	rw36uxIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYXwk-00019r-FS; Tue, 12 May 2020 16:39:58 +0000
+	id 1jYXwB-0000hR-DF; Tue, 12 May 2020 16:39:23 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYXui-0007v0-U3
+ id 1jYXuj-0007ve-RL
  for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 16:37:55 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1CA6711D4;
- Tue, 12 May 2020 09:37:52 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A1F212FC;
+ Tue, 12 May 2020 09:37:53 -0700 (PDT)
 Received: from e103592.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2E5883F305;
- Tue, 12 May 2020 09:37:51 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 50A783F305;
+ Tue, 12 May 2020 09:37:52 -0700 (PDT)
 From: Dave Martin <Dave.Martin@arm.com>
 To: mtk.manpages@gmail.com
-Subject: [PATCH 07/14] prctl.2: Document removal of Intel MPX prctls
-Date: Tue, 12 May 2020 17:36:52 +0100
-Message-Id: <1589301419-24459-8-git-send-email-Dave.Martin@arm.com>
+Subject: [PATCH 08/14] prctl.2: Work around bogus constant "maxsig" in
+ PR_SET_PDEATHSIG
+Date: Tue, 12 May 2020 17:36:53 +0100
+Message-Id: <1589301419-24459-9-git-send-email-Dave.Martin@arm.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
 References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_093753_048906_2242E690 
-X-CRM114-Status: UNSURE (   9.26  )
+X-CRM114-CacheID: sfid-20200512_093753_968198_284B214E 
+X-CRM114-Status: UNSURE (   9.57  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -64,8 +65,6 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>,
- Dave Hansen <dave.hansen@linux.intel.com>,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -73,44 +72,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Intel MPX API was removed from Linux 5.4.  See Linux
-commit f240652b6032 ("x86/mpx: Remove MPX APIs")
+The description of PR_SET_PDEATHSIG refers to "maxsig", which is
+apparently intended to stand for the maximum defined signal number.
 
-Document this change.
+maxsig seems not to be a thing, even in the kernel.
+
+Reword to use the standard constant NSIG.  (Discussion of SIGRTMIN
+and SIGRTMAX seems out of scope here, and anyway is not relevant to
+the kernel.)
 
 Signed-off-by: Dave Martin <Dave.Martin@arm.com>
-Cc: Dave Hansen <dave.hansen@linux.intel.com>
-Cc: Thomas Gleixner <tglx@linutronix.de>
 ---
- man2/prctl.2 | 8 +++++++-
- 1 file changed, 7 insertions(+), 1 deletion(-)
+ man2/prctl.2 | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
 diff --git a/man2/prctl.2 b/man2/prctl.2
-index 7a3fc5c..a84fb1d 100644
+index a84fb1d..1e04859 100644
 --- a/man2/prctl.2
 +++ b/man2/prctl.2
-@@ -784,7 +784,7 @@ option enabled.
- .RE
- .\" prctl PR_MPX_ENABLE_MANAGEMENT
- .TP
--.BR PR_MPX_ENABLE_MANAGEMENT ", " PR_MPX_DISABLE_MANAGEMENT " (since Linux 3.19) "
-+.BR PR_MPX_ENABLE_MANAGEMENT ", " PR_MPX_DISABLE_MANAGEMENT " (since Linux 3.19, removed in Linux 5.4; only on x86) "
- .\" commit fe3d197f84319d3bce379a9c0dc17b1f48ad358c
- .\" See also http://lwn.net/Articles/582712/
- .\" See also https://gcc.gnu.org/wiki/Intel%20MPX%20support%20in%20the%20GCC%20compiler
-@@ -859,6 +859,12 @@ had been called.
+@@ -955,7 +955,9 @@ will operate in the privilege-restricting mode described above.
+ .BR PR_SET_PDEATHSIG " (since Linux 2.1.57)"
+ Set the parent-death signal
+ of the calling process to \fIarg2\fP (either a signal value
+-in the range 1..maxsig, or 0 to clear).
++in the range 1 ..
++.BR NSIG " \-"
++1, or 0 to clear).
+ This is the signal that the calling process will get when its
+ parent dies.
  .IP
- For further information on Intel MPX, see the kernel source file
- .IR Documentation/x86/intel_mpx.txt .
-+.IP
-+.\" commit f240652b6032b48ad7fa35c5e701cc4c8d697c0b
-+.\" See also https://lkml.kernel.org/r/20190705175321.DB42F0AD@viggo.jf.intel.com
-+Due to a lack of toolchain support,
-+.BR PR_MPX_ENABLE_MANAGEMENT " and " PR_MPX_DISABLE_MANAGEMENT
-+are not supported by Linux 5.4 or later.
- .\" prctl PR_SET_NAME
- .TP
- .BR PR_SET_NAME " (since Linux 2.6.9)"
 -- 
 2.1.4
 
