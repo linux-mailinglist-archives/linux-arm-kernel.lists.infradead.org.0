@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 483DC1D0040
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B0AD1D0043
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 23:12:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=h4ZRrkoueSpIA2g04cDSafCs5amA+AMZzfdz5BvjY2Q=; b=UtiBmyQ+613o25
-	pQ9ky8EfdFNrfwYM3z88niVA1KxSnRXfEIcqwX8l1DezfgAgV+CRwzgHlZV1kBRLOBC4cu6V16X85
-	RonyUbeZtWGqvw+wg/iNNpePTU/LV1JT80affc/MiaBuKheD8VuLVixmbDaHdPibMuPXxxd5Is1qm
-	66ytczZTHbf61v4nkO/vqpbuziiNosH/T3HSnkf+XByB3QIhxrDwMXODVbwk/fwjeU+Soj7dzrNDl
-	cDzMr6FHKmXg98Rr/xkpziyk/uXV22JexjngVUF01PeKnkzRemBgtBnKLyiQF12W054diJRpxoTd6
-	zAirVUAe1SxyHAcS476Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oyVfpAZSDVz2ODm0zRp3cFoMBucyYUePYBq55igYf3I=; b=M3JinvF2eArTn+
+	uxycJBZVQWjzdw0brioE0y3pNfKUh2/3hoiEml3YWQVET39RsCoMo5W/4y1QkgdsR6VHILXl75Hvg
+	b7YTFfC977lt1/9BD9rZWmJv+WpCwwY4FZPybRnLlrJ/op0rV0vE3cws7eAn8lq8UnnSKOx+o0s58
+	3crO86N5BoOtrij7nRqnfdOr2qwC58tv0zp8WPe4bJqFg4HhwwAbmpSzbQTZ3QDKQXKU9KpYZDSho
+	O/6OmF9xaiIFJgONOIGhiPzGnYEnViLki9Urlkpk4XMpswdYlzkSPECBr3ws3KErZjvXpEfIlNVJF
+	PqpYkeaqBu0FLinnThOg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYcBY-0004rn-GE; Tue, 12 May 2020 21:11:32 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jYcBz-000571-9W; Tue, 12 May 2020 21:11:59 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYcBK-0004pY-96; Tue, 12 May 2020 21:11:20 +0000
-Received: by mail-wr1-x444.google.com with SMTP id j5so17727621wrq.2;
- Tue, 12 May 2020 14:11:17 -0700 (PDT)
+ id 1jYcBL-0004pg-8p; Tue, 12 May 2020 21:11:20 +0000
+Received: by mail-wm1-x341.google.com with SMTP id n5so10628596wmd.0;
+ Tue, 12 May 2020 14:11:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HUo/x8U4+0mYzSmYS/9FaeLoX4GWLY2yc9psegkmkLk=;
- b=UvQF7HB3rdUXi4f4A35IeSasJbDNhF+T3r4ovNcEYIzgzrTmkwgqlDcbxexvs4dk1t
- jKLSUW2kj6LvcWoISqQxBCKqiiLGUBSC7aE66nCussXrdrU9Z8mO1/6XGk1D2P6R6pkG
- s/l92Dc06Jqkn4t69RBMD71ZL+NZceikTD9cBB0gwq3P92DbBEOt2qXFOzYds77KqtU5
- 5LZMEOMdG6xXeLZYV3zXSI2Ur1I/eFNhdjN4l3PIkHC6RGhzI7CPgV4mu2xcOh6r29s1
- OySJRT1q8swp6ez0Ofupv5R8jrqmtychKMWzi7B0eH8vcISvwAN+IiO2l0vXqU19Xpsk
- 5LAw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Kh7p8rdrTbAMmI3jWtK1rZ9CbIg2ia2rDs/YlOsgpNA=;
+ b=cPIFoUvmGIxlPukGMQ7uGcHJho6BH2jGg4P+6CrUS2FvkuvBR2XBMGSKjdAN7h5ivW
+ qYQPhCP3eojUqRSNOJaGa+3BBZXPvdg1NFwRq75U30hEhpvkTj2gY54W7a2GdmFmOm7N
+ zmEbNjJIscccItBYwFKUuKPWZIyBjM2r4aFer6ZssxucBg2hci+WpPC2jq4HOmK9eZRk
+ /NDY+PKGUgaah856aF+GXpuz3xL8nRZOhhMgz4A3rEZajuzbTPxjRjEmkgD1EpNorQS5
+ R/jG+yKs5kQi53KQMbB4/IbHqdmwbOFixz0i0nZNQwbwzXpWp9d/KUK2agPPEU3o7p+g
+ uQ9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=HUo/x8U4+0mYzSmYS/9FaeLoX4GWLY2yc9psegkmkLk=;
- b=tub+DSVaSj2ZohbfakGbpsqb1tjMWCt79Rm0Gsi3iEBzFRvfmbQIiGQWMyxHaSUWJ3
- iKU4D0Wpw4nEKAUZYa4tCX+ZiyeylWXx4cVVQaXgNTA4CP+QhFak+01xeRylEg4AkAds
- XsgyebzlwLtmTwG2nd3TjoHeqS+q20FFaYDpSY8x/aH09lToqUgB/WLRznaVFSfrXiqJ
- fEtLVMGGOVHGxYlRQoWxxr24KA4klpNIlFo4vpD6rIDVe+L6pFKJ1ROAjF7JWGx44iCj
- yp0hpY3Iur2pwrX6Us6Xy0n0LyUmUJS5+u/xDJAkZjNTRov61p05Uo6Wtn4QBVZ6/n+S
- Q48w==
-X-Gm-Message-State: AGi0PuawWMjXHw8FKF4MhyqJdGBRXZJoeUXlAKp+Fy9pbwRb4Nmfcv2+
- 0CGpXcvcIu93tUOiO/xSsCQ=
-X-Google-Smtp-Source: APiQypICeedar9LlrtciOb0WCCyUvBbEPvqZ7/kBdZ7nmKmgKGrJtVXh3i4qBkJ6K+EYzRC+5Sb6sQ==
-X-Received: by 2002:a5d:5710:: with SMTP id a16mr17949293wrv.209.1589317876680; 
- Tue, 12 May 2020 14:11:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=Kh7p8rdrTbAMmI3jWtK1rZ9CbIg2ia2rDs/YlOsgpNA=;
+ b=O/YuHSIaxjru78A3LjaqPq9BvbKD9l6mR3AiYMzJkwBIoaSV8HprhE3oBXxUkrTPlz
+ hEUXBKG+HkM7m9ZOKVCm22wgRwR3jo4tcQmXYcZFp5D20hoKsqUfBIprqj90ZpfxC+Gw
+ 5Mz3PQo8/MtufCdPjNuU15xAaZK3PbTiFnlhXqT+VPsnpyvaWwlkHFHKHvxPF8eVORm+
+ lG7dPePLHaJFKsIuRa+C2yvhnvXNLi6j6TAKhM3+mkvw1Amn1owT3LULa5fIwBCrLKqM
+ FMjWn7CO7bLdJ7Dd6Fes11MvwhVbxIUf3Hv6uKZ0FCURohTjEAHHSq7uAfnlejXOIgmH
+ C2XA==
+X-Gm-Message-State: AGi0PuYgdcFpCGEloo5zJJNKP50ZCEUu9qeqSf5Ncrg86G1SM1JtbXaa
+ XHMcolAlEX5xf0NuMHrojYZmyMoj
+X-Google-Smtp-Source: APiQypLgwKpieVSrD5/RT1U58B8Yxn1gsc38huXEUnq0btI1b4UmRyYIc59I/TBi1DMhTgv49hJcBQ==
+X-Received: by 2002:a1c:1d12:: with SMTP id d18mr25183480wmd.109.1589317877769; 
+ Tue, 12 May 2020 14:11:17 -0700 (PDT)
 Received: from localhost.localdomain
  (p200300F137132E00428D5CFFFEB99DB8.dip0.t-ipconnect.de.
  [2003:f1:3713:2e00:428d:5cff:feb9:9db8])
- by smtp.googlemail.com with ESMTPSA id r3sm9724228wmh.48.2020.05.12.14.11.15
+ by smtp.googlemail.com with ESMTPSA id r3sm9724228wmh.48.2020.05.12.14.11.16
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 14:11:16 -0700 (PDT)
+ Tue, 12 May 2020 14:11:17 -0700 (PDT)
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 To: robh+dt@kernel.org, andrew@lunn.ch, f.fainelli@gmail.com,
  linux-amlogic@lists.infradead.org, devicetree@vger.kernel.org
-Subject: [PATCH v3 0/8] dwmac-meson8b Ethernet RX delay configuration
-Date: Tue, 12 May 2020 23:10:55 +0200
-Message-Id: <20200512211103.530674-1-martin.blumenstingl@googlemail.com>
+Subject: [PATCH v3 1/8] dt-bindings: net: meson-dwmac: Add the amlogic,
+ rx-delay-ns property
+Date: Tue, 12 May 2020 23:10:56 +0200
+Message-Id: <20200512211103.530674-2-martin.blumenstingl@googlemail.com>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200512211103.530674-1-martin.blumenstingl@googlemail.com>
+References: <20200512211103.530674-1-martin.blumenstingl@googlemail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_141118_347955_0EDFA470 
-X-CRM114-Status: GOOD (  18.16  )
+X-CRM114-CacheID: sfid-20200512_141119_307736_DE76E81F 
+X-CRM114-Status: GOOD (  10.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -107,95 +110,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The Ethernet TX performance has been historically bad on Meson8b and
-Meson8m2 SoCs because high packet loss was seen. I found out that this
-was related (yet again) to the RGMII TX delay configuration.
-In the process of discussing the big picture (and not just a single
-patch) [0] with Andrew I discovered that the IP block behind the
-dwmac-meson8b driver actually seems to support the configuration of the
-RGMII RX delay (at least on the Meson8b SoC generation).
+The PRG_ETHERNET registers on Meson8b and newer SoCs can add an RX
+delay. Add a property with the known supported values so it can be
+configured according to the board layout.
 
-Since I sent the first RFC I got additional documentation from Jianxin
-(many thanks!). Also I have discovered some more interesting details:
-- Meson8b Odroid-C1 requires an RX delay (by either the PHY or the MAC)
-  Based on the vendor u-boot code (not upstream) I assume that it will
-  be the same for all Meson8b and Meson8m2 boards
-- Khadas VIM2 seems to have the RX delay built into the PCB trace
-  length. When I enable the RX delay on the PHY or MAC I can't get any
-  data through. I expect that we will have the same situation on all
-  GXBB, GXM, AXG, G12A, G12B and SM1 boards. Further clarification is
-  needed here though (since I can't visually see these lengthened
-  traces on the PCB). This will be done before sending patches for
-  these boards.
+Reviewed-by: Andrew Lunn <andrew@lunn.ch>
+Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+---
+ .../bindings/net/amlogic,meson-dwmac.yaml           | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-
-Dependencies for this series:
-There is a soft dependency for patch #2 on commit f22531438ff42c
-"dt-bindings: net: dwmac: increase 'maxItems' for 'clocks',
-'clock-names' properties" which is currently in Rob's -next tree.
-That commit is needed to make the dt-bindings schema validation
-pass for patch #2. That patch has been for ~4 weeks in Robs tree,
-so I assume that is not going to be dropped.
-
-
-Changes since RFC v2 at [2]:
-- dropped $ref: /schemas/types.yaml#definitions/uint32 from the
-  "amlogic,rx-delay-ns" in patch #1 ("Don't need to define the
-  type when in standard units." says Rob - thanks, I learned
-  something new). Also use "default: 0" for for this property
-  instead of explaining it in the description text.
-- added a note to the cover-letter about a hidden dependency for
-  dt-binding schema validation in patch #2
-- Added Andrew's Reviewed-by to patches 1-7. Thank you again for
-  the quick and detailed reviews, I appreciate this!
-- error out if the (optional) timing-adjustment clock is missing
-  but we're asked to enable the RGMII RX delay. The MAC won't
-  work in this specific case and either the RX delay has to be
-  provided by the PHY or the timing-adjustment clock has to be
-  added.
-- dropped the dts patches (#9-11) which were only added to give
-  an overview how this is going to be used. those will be sent
-  separately
-- dropped the RFC prefix
-
-Changes since RFC v1 at [1]:
-- add support for the timing adjustment clock input (dt-bindings and
-  in the driver) thanks to the input from the unnamed Ethernet engineer
-  at Amlogic. This is the missing link between the fclk_div2 clock and
-  the Ethernet controller on Meson8b (no traffic would flow if that
-  clock was disabled)
-- add support fot the amlogic,rx-delay-ns property. The only supported
-  values so far are 0ns and 2ns. The registers seem to allow more
-  precise timing adjustments, but I could not make that work so far.
-- add more register documentation (for the new RX delay bits) and
-  unified the placement of existing register documentation. Again,
-  thanks to Jianxin and the unnamed Ethernet engineer at Amlogic
-- DO NOT MERGE: .dts patches to show the conversion of the Meson8b
-  and Meson8m2 boards to "rgmii-id". I didn't have time for all arm64
-  patches yet, but these will switch to phy-mode = "rgmii-txid" with
-  amlogic,rx-delay-ns = <0> (because the delay seems to be provided by
-  the PCB trace length).
-
-
-[0] https://patchwork.kernel.org/patch/11309891/
-[1] https://patchwork.kernel.org/cover/11310719/
-[2] https://patchwork.kernel.org/cover/11518257/
-
-
-Martin Blumenstingl (8):
-  dt-bindings: net: meson-dwmac: Add the amlogic,rx-delay-ns property
-  dt-bindings: net: dwmac-meson: Document the "timing-adjustment" clock
-  net: stmmac: dwmac-meson8b: use FIELD_PREP instead of open-coding it
-  net: stmmac: dwmac-meson8b: Move the documentation for the TX delay
-  net: stmmac: dwmac-meson8b: Add the PRG_ETH0_ADJ_* bits
-  net: stmmac: dwmac-meson8b: Fetch the "timing-adjustment" clock
-  net: stmmac: dwmac-meson8b: Make the clock enabling code re-usable
-  net: stmmac: dwmac-meson8b: add support for the RX delay configuration
-
- .../bindings/net/amlogic,meson-dwmac.yaml     |  23 ++-
- .../ethernet/stmicro/stmmac/dwmac-meson8b.c   | 146 ++++++++++++++----
- 2 files changed, 134 insertions(+), 35 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml b/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
+index ae91aa9d8616..66074314e57a 100644
+--- a/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
++++ b/Documentation/devicetree/bindings/net/amlogic,meson-dwmac.yaml
+@@ -67,6 +67,19 @@ allOf:
+             PHY and MAC are adding a delay).
+             Any configuration is ignored when the phy-mode is set to "rmii".
+ 
++        amlogic,rx-delay-ns:
++          enum:
++            - 0
++            - 2
++          default: 0
++          description:
++            The internal RGMII RX clock delay (provided by this IP block) in
++            nanoseconds. When phy-mode is set to "rgmii" then the RX delay
++            should be explicitly configured. When the phy-mode is set to
++            either "rgmii-id" or "rgmii-rxid" the RX clock delay is already
++            provided by the PHY. Any configuration is ignored when the
++            phy-mode is set to "rmii".
++
+ properties:
+   compatible:
+     additionalItems: true
 -- 
 2.26.2
 
