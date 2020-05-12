@@ -2,84 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9BA321CF207
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:59:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71E591CF20E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:01:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1zjNw4cTNFMGQuQdJWGGWx1VS6geYWuAaU+cxuCnSH8=; b=k/YD2prqLlinSX
-	Mp6Pu572FX0hYCwU7iWzug7ybFwAmhQRP/8qxXhV4mKUn4v6K8SY0avNTga9uCXayC+ycnzNbg45G
-	CKV5MkKuFpVvFfQx6Vy/TzKn3dHGsCFdbFGNPS9AmhECiOxOqXY9tU5EWW1+nlRU/YlXKAiHFQX9V
-	cI1jHtOcaXhgZay/Bw8T2cL8S6liViEoR9qz29GJKWrzAi6z5F7Lif1ZQRyr1Pf4mqpXpGpA45StA
-	Q9qQPcHdo8Z1ZBZjmkrNkJN4HaYxZ+IT1Rc4WKpiEKL6sWe6xSTD/R7UkClbSlXQFDmLIzT0FUGKb
-	1IYmfy3+sBFUax+fZNDw==;
+	List-Owner; bh=tP64gFWWNSqtTgqzL4DabL0yWvo2fERfzniY6qy6yoc=; b=acKBZzTt39R3Vx
+	3z4EFv55ltTlP9aMjB28/kWzLr6ML9llHxIRgkUyAnubbVCY2h5QmZGclR55DGoudkqII92/4JH2l
+	xLjIpezmBtb1dslDyYJY8oP4ivKgU6YYq/Gh1oeRkO5kW1n5HH6IhrH8xxmR8Azwoerr9wHmdBMSU
+	V2gZNNyPHQ+hCTdfDJFY/Xy2tne5b+ruDwfCDNFJtrSuSfdrwWMOkUuk7r3kPzyK65eP7H5cEHW/q
+	M1Ntq7+ngMOhfTNSwgxMPsWd2tGv2Tigd+kA3a5xkjHGGDo57WiUOBUqIuB1++wiKcEmoBv0xOaQC
+	fzDLgoqdJIP5Z/UsMesw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYRgx-0005My-Kr; Tue, 12 May 2020 09:59:15 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYRgm-0005Kn-CF
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:59:08 +0000
-Received: by mail-lf1-x141.google.com with SMTP id s9so10046586lfp.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 02:59:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=WXd5QHwJ1tPi5716Xcmxn3FGS3giieue5uSgZlXtiWg=;
- b=eF4UZfPdwxY2kcJ3SbBcXESksctSLMe0oyp3Dqb6rpox9rfOdE5TWSXlhLeZ7WVuJu
- K9EZyurUt4GoHXQGQJ/s/OIEAI31LdtzoB4OLI3c504mIW9b3C07x0rNyN/WpEEkui5z
- VayR7QZBrGhhSxZ7mnv/UaXebyvcd/obTk6ROY/uR8l1vWjvlXye4pt4sY7vBX1vTxHl
- lQlCW8H2SUcm6avA6W8stsSGIosReXoSyNmTLwiN8IH+JEk8cfxsp0MNEE4UFeELbKri
- KVXEW3tiDJ6y1cjGXzsEfdg4CZr29OfRHfERGPeFut8XyeYZP8PWMVEK0wlzjsF6ZOtf
- WWuw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=WXd5QHwJ1tPi5716Xcmxn3FGS3giieue5uSgZlXtiWg=;
- b=F0glu0leWv7z7vtAggz76b5/arjRvf1JZ7/HOujifUbF2Y+DOjol8ZPTCy9G7KN9c7
- yswSF2rMAZg/NQX8gDpxAiHO+B5oXwBiMmlbqel3Q88SnCG0/M5W6ID5InORQnUJlJnL
- 9SwAiE4dEKgWYp71HzjSQX30UWJdk3qS0VjKlXTDSa5zcsDsuEybmN88uUWxmG2oiNo8
- WqvIM7clyD0IqxlnM1TLizSn53B7DoP3/LQtV3fN++hFGqCCbN7CyIFkrA1BSpp0GuqY
- siHNwOzI/V8V3YVQ3ydp+qq83D9qi6GlaArd7euNaiB5ygZlrJjbuvcH4kgCvpDt/N/D
- ANvg==
-X-Gm-Message-State: AOAM531FKHIISv1AhrMJEjePw1kHlPJZj6w7tz7GYDKiK5Dytsl+R2UC
- LSgOvJwH9zG4kaJbdqA443cfPJWFzytKnTnhLfpiToTAEbI=
-X-Google-Smtp-Source: ABdhPJyBq7To18Sh0+GIDcFRF81NKkhoFYKeSr+78ZnK/tfcB+M6Xqf+HgiWU5Chhbq4xITdhpfrF18M/MgtiTWvtZ0=
-X-Received: by 2002:ac2:555b:: with SMTP id l27mr14203108lfk.170.1589277541973; 
- Tue, 12 May 2020 02:59:01 -0700 (PDT)
+	id 1jYRjI-0008Ap-RY; Tue, 12 May 2020 10:01:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYRj9-00089e-S9
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 10:01:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5BF391FB;
+ Tue, 12 May 2020 03:01:28 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.28.99])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E94313F71E;
+ Tue, 12 May 2020 03:01:23 -0700 (PDT)
+Date: Tue, 12 May 2020 11:01:14 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH v2 0/3] arm64: perf_event: Fix time offset prior to epoch
+Message-ID: <20200512100114.GA60359@C02TD0UTHF1T.local>
+References: <20200505135544.6003-1-leo.yan@linaro.org>
+ <20200511092200.GF2957@hirez.programming.kicks-ass.net>
+ <20200511092519.GA3001@hirez.programming.kicks-ass.net>
+ <20200512063812.GA20352@leoy-ThinkPad-X240s>
+ <20200512091918.GH2978@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-References: <20200508134527.26555-1-etienne.carriere@linaro.org>
- <CAL_JsqJVaWDYZWwRwotSQyaL5bOugM3judxipS9oKveV3FdK8w@mail.gmail.com>
-In-Reply-To: <CAL_JsqJVaWDYZWwRwotSQyaL5bOugM3judxipS9oKveV3FdK8w@mail.gmail.com>
-From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Tue, 12 May 2020 11:58:50 +0200
-Message-ID: <CAN5uoS8GzbFyQq=kjZuxNwBDJ8cn9q-sq8C=VLN5UWWD0HXWaA@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: nvmem: stm32: new property for data access
-To: Rob Herring <robh+dt@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20200512091918.GH2978@hirez.programming.kicks-ass.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_025904_587688_88724C9E 
-X-CRM114-Status: GOOD (  15.59  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200512_030131_957329_D11D0C08 
+X-CRM114-Status: GOOD (  16.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,81 +65,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Etienne Carriere <etienne.carriere@st.com>, devicetree@vger.kernel.org,
- Alexandre Torgue <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Fabrice Gasnier <fabrice.gasnier@st.com>,
- linux-stm32@st-md-mailman.stormreply.com,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Enrico Weigelt <info@metux.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Jiri Olsa <jolsa@redhat.com>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Paul Cercueil <paul@crapouillou.net>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ "Ahmed S. Darwish" <a.darwish@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Leo Yan <leo.yan@linaro.org>,
+ Namhyung Kim <namhyung@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ "Ben Dooks \(Codethink\)" <ben.dooks@codethink.co.uk>,
+ Allison Randal <allison@lohutok.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Rob,
-
-
-On Tue, 12 May 2020 at 03:51, Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Fri, May 8, 2020 at 8:47 AM Etienne Carriere
-> <etienne.carriere@linaro.org> wrote:
-> >
-> > From: Etienne Carriere <etienne.carriere@st.com>
-> >
-> > Introduce boolean property st,non-secure-otp for OTP data located
-> > in a factory programmed area that only secure firmware can access
-> > by default and that shall be reachable from the non-secure world.
-> >
-> > Signed-off-by: Etienne Carriere <etienne.carriere@st.com>
-> > ---
-> >  .../bindings/nvmem/st,stm32-romem.yaml          | 17 +++++++++++++++++
-> >  1 file changed, 17 insertions(+)
-> >
-> > diff --git a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-> > index d84deb4774a4..c11c99f085d7 100644
-> > --- a/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-> > +++ b/Documentation/devicetree/bindings/nvmem/st,stm32-romem.yaml
-> > @@ -24,6 +24,18 @@ properties:
-> >        - st,stm32f4-otp
-> >        - st,stm32mp15-bsec
-> >
-> > +patternProperties:
-> > +  "^.*@[0-9a-f]+$":
-> > +    type: object
+On Tue, May 12, 2020 at 11:19:18AM +0200, Peter Zijlstra wrote:
+> On Tue, May 12, 2020 at 02:38:12PM +0800, Leo Yan wrote:
+> > @@ -1165,28 +1166,26 @@ device_initcall(armv8_pmu_driver_init)
+> >  void arch_perf_update_userpage(struct perf_event *event,
+> >  			       struct perf_event_mmap_page *userpg, u64 now)
+> >  {
+> > +	struct clock_read_data *rd;
+> > +	unsigned int seq;
+> >  
+> >  	/*
+> >  	 * Internal timekeeping for enabled/running/stopped times
+> >  	 * is always computed with the sched_clock.
+> >  	 */
+> >  	userpg->cap_user_time = 1;
+> > +	userpg->cap_user_time_zero = 1;
+> >  
+> > +	do {
+> > +		rd = sched_clock_read_begin(&seq);
 > > +
-> > +    properties:
-> > +      st,non-secure-otp:
-> > +        description: |
-> > +          This property explicits a factory programmed area that both secure
-> > +          and non-secure worlds can access. It is needed when, by default, the
-> > +          related area can only be reached by the secure world.
-> > +        type: boolean
+> > +		userpg->time_mult = rd->mult;
+> > +		userpg->time_shift = rd->shift;
+> > +		userpg->time_zero = rd->epoch_ns;
 > > +
-> >  required:
-> >    - "#address-cells"
-> >    - "#size-cells"
-> > @@ -41,6 +53,11 @@ examples:
-> >        calib@22c {
-> >          reg = <0x22c 0x2>;
-> >        };
-> > +
-> > +      mac_addr@e4 {
-> > +        reg = <0xe4 0x8>;
-> > +        st,non-secure-otp;
->
-> This fails validation. You need to drop 'additionalProperties' in nvmem.yaml.
+> > +		userpg->time_zero -= (rd->epoch_cyc * rd->mult) >> rd->shift;
+> 
+> Damn, I think this is broken vs the counter wrapping.
+> 
+> So what the sched_clock code does is:
+> 
+> 	cyc_to_ns((cyc - rd->epoch_cyc) & rd->sched_clock_mask, rd->mult, rd->shift)
+> 
+> But because the perf interface assumes a simple linear relation, we
+> can't express that properly.
+> 
+> Now, your arm64 counter is 56 bits, so wrapping is rare, but still, we
+> should probably fix that. And that probably needs an ABI extention
+> *sigh*.
 
-My apologies. I guess I did not test `dt_binding_check` on this change.
-I'll send a v2.
+FWIW, its's /at least/ 56 bits wide, and the ARM ARM says that it
+shouldn't wrap in fewer than 40 years, so no correct implementation
+should wrap before the 2050s.
 
-Regards,
-Etienne
+If it's wider than 56 bits, the 56-bit portion could wrap more quickly
+than that, so we should probably always treat it as 64-bits.
 
->
-> Rob
+From ARMv8.6 it's always 64 bits wide @ a nominal 1GHz, and a 64-bit
+wrap will take ~584.9 years (with a 56-bit wrap taking ~834 days).
+
+See D11.1.2 "The system counter" in the latest ARM ARM (0487F.b):
+
+https://static.docs.arm.com/ddi0487/fb/DDI0487F_b_armv8_arm.pdf?_ga=2.83012310.1749782910.1589218924-1447552059.1588172444
+
+https://developer.arm.com/docs/ddi0487/latest
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
