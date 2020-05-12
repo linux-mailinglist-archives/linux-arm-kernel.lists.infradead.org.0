@@ -2,63 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1ED251CEAB3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:18:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A8571CEAB7
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 04:20:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Z02MbWq0+W53dKmgBzN7wOZnoILclS02G684V8UjfxE=; b=DORghenU2qqK4JZBh+WvrGMCj
-	aeVmgrETQXBZfck2BrwmsWDq2Oy0G+EJJOJvndjAid0ACMaQIzmvqj7bSSPdyS+NhCAfPgJUXCXSI
-	ca9lNv4YdcP6t1QSxWH478iUtPjIWc+Gq8FD7rmR6IGKOD86Z0aguyHcrf5Nvjuas00dCKOtueG04
-	l7SwSE7fhHV6/VVu9MvWhTPPpYm7kjwm9h+ZTLZ00HfFeiMZ3okTdHU7Fzu1HSfVpTp+Umbv2ZKBw
-	T3aD77Cs+Lljj83ED6+9lSxxfsHgNqLX/aKdofjX63QvrE/B9VsAURTE4oxxqOu2HE+YsjxwyICIx
-	p1iuivgOw==;
+	 bh=eoyO4F2ggIUA31lQ4+kcj2sorTPbi5fBTdU1BZJxPvo=; b=fcHDxnTQX559IZw+gKVt4fL9c
+	lPo3XW3koksIAgKImCKLusCerdBT9ALA5TtwmMtF9TE3k8c3/cyzD5oNR11wF7hFkGLJuz+9h9zsv
+	d2xpKATIbbMGyq2zi+ELfshaeH7tpZGMivE4zvHpA5aLbX/tUl8zNolY2mXrUlTm1yOzrY4rrya1N
+	CkleGSQHTucMUTenn3G6eFg0DPxTFknLE3zO0BfwJRW8so+DWssRAm617VjGlJumGHfwJoDv/nXiF
+	qYGS/5zsbDYCsWoBefOUXl8pGQHwnc/Jdy5BlUFQ7CGz/PQBrLXI1UuFwrK632tY1kNkhxsvos4MH
+	j6W4RY1NQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYKVO-0002WR-DH; Tue, 12 May 2020 02:18:50 +0000
-Received: from mx.socionext.com ([202.248.49.38])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYKVE-0002Vb-Q8
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:18:42 +0000
-Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
- by mx.socionext.com with ESMTP; 12 May 2020 11:18:38 +0900
-Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by kinkan-ex.css.socionext.com (Postfix) with ESMTP id 4E8B9180BB6;
- Tue, 12 May 2020 11:18:38 +0900 (JST)
-Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
- Tue, 12 May 2020 11:18:38 +0900
-Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by kinkan.css.socionext.com (Postfix) with ESMTP id EDACE1A01BB;
- Tue, 12 May 2020 11:18:37 +0900 (JST)
-Received: from [10.213.31.213] (unknown [10.213.31.213])
- by yuzu.css.socionext.com (Postfix) with ESMTP id 67C7D120133;
- Tue, 12 May 2020 11:18:37 +0900 (JST)
-Subject: Re: [PATCH net] dt-bindings: net: Convert UniPhier AVE4 controller to
- json-schema
-To: Rob Herring <robh@kernel.org>
-References: <1588055482-13012-1-git-send-email-hayashi.kunihiko@socionext.com>
- <20200512020126.GA22178@bogus>
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Message-ID: <600b83e2-8063-b8ca-5406-7bf854c45ab3@socionext.com>
-Date: Tue, 12 May 2020 11:18:36 +0900
+	id 1jYKWy-0002ys-Im; Tue, 12 May 2020 02:20:28 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYKWc-0002xZ-F1
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 02:20:09 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589250008; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=k2YIPX12MuXHG4Ed0EuQtB9gnhkLejakrxn5AILaJgM=;
+ b=Okx2SuHMmAWz+ixky2j9AyrGJgdrN43YwXzzSfLZfNnAgYsRGEG82A0ccj1AWfFtoxB+BFC7
+ ef1KhrWbnC5XBs7QPHrdVzjCGSUE23h0/Vf7OJNl7IrfQtZYyNlpCt3khUzTbbDaEg8jCVzz
+ THv8yKwg+I6A/SYJ35TrGYZcTUQ=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n01.prod.us-east-1.postgun.com with SMTP id
+ 5eba07c26bc4a32798d10639 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Tue, 12 May 2020 02:19:46
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 693C1C432C2; Tue, 12 May 2020 02:19:45 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [192.168.8.150] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 4DE55C433CB;
+ Tue, 12 May 2020 02:19:43 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 4DE55C433CB
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v2 4/4] scsi: ufs-mediatek: customize WriteBooster flush
+ policy
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ jejb@linux.ibm.com
+References: <20200509093716.21010-1-stanley.chu@mediatek.com>
+ <20200509093716.21010-5-stanley.chu@mediatek.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <635f91f6-3a27-ffdd-4021-67705d4063fc@codeaurora.org>
+Date: Mon, 11 May 2020 19:19:42 -0700
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200512020126.GA22178@bogus>
+In-Reply-To: <20200509093716.21010-5-stanley.chu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200511_191840_962610_2A017563 
-X-CRM114-Status: GOOD (  16.94  )
+X-CRM114-CacheID: sfid-20200511_192008_515862_FAB1ED7E 
+X-CRM114-Status: GOOD (  17.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,44 +100,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Rob,
-
-On 2020/05/12 11:01, Rob Herring wrote:
-> On Tue, Apr 28, 2020 at 03:31:22PM +0900, Kunihiko Hayashi wrote:
->> Convert the UniPhier AVE4 controller binding to DT schema format.
->> This changes phy-handle property to required.
->>
->> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
->> ---
-
-(snip)
-
->> +  phy-mode:
->> +    $ref: ethernet-controller.yaml#/properties/phy-mode
->> +
->> +  phy-handle:
->> +    $ref: ethernet-controller.yaml#/properties/phy-handle
+On 5/9/2020 2:37 AM, Stanley Chu wrote:
+> Change the WriteBooster policy to keep VCC on during
+> runtime suspend if available WriteBooster buffer is less
+> than 80%.
 > 
-> No need for these $ref, the 1st reference did this. Just:
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>   drivers/scsi/ufs/ufs-mediatek.c | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> phy-mode: true
+> diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
+> index 56620f7d88ce..94e97701f456 100644
+> --- a/drivers/scsi/ufs/ufs-mediatek.c
+> +++ b/drivers/scsi/ufs/ufs-mediatek.c
+> @@ -271,6 +271,7 @@ static int ufs_mtk_init(struct ufs_hba *hba)
+>   
+>   	/* Enable WriteBooster */
+>   	hba->caps |= UFSHCD_CAP_WB_EN;
+> +	hba->vps->wb_flush_threshold = UFS_WB_BUF_REMAIN_PERCENT(80);
+>   
+>   	/*
+>   	 * ufshcd_vops_init() is invoked after
+> 
 
-Okay, "phy-handle" also replaces with "true".
-I'll fix it in v2.
+Patchset looks good to me.
 
-Thank you,
-  
----
-Best Regards
-Kunihiko Hayashi
+Reviewed-by: Asutosh Das <asutoshd@codeaurora.org>
+
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
