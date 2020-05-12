@@ -2,136 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8194A1CF359
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:30:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B470F1CF36A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 13:34:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U3k0cFoSa8kYlijbveGHPCGSzSpdl6iV4T4unYULnjI=; b=i4Glvisq9q5Q27
-	A8PqgEbTHNCb+F3GeyyrmYwtw2X6Y3WcfaX7dw7NvDSnEj/eRS3+bgdpgSpIQqE+vCF5q+qfFJyiE
-	Mo9M8wQpZV7j+MBF9R/fR9R7R+r2Dg0GjnpvGWLrP7Pzim9KR+9ObK5syF7Lfub0ydRJkjdVWY/cz
-	Pbk7RJSMgSbwdbOKJlKsu+cirO0Ecbdf+OvitFt1ATPEtggKHLFNcy3SdZRU+8Kf3rfDV5i98UD80
-	lqKkYZm0+KVBSGG3cgjkywvnfUqo0Rc84PHiyH1hkJrZIqdEMAYJss7I9MZxCsk7qlW98JfZSNPS3
-	8+PpY5z3v5TG5imOfOyQ==;
+	List-Owner; bh=JN0Ii6051JtLoJFIXsGeHIv+O3gklhuf9STxLpYSl7I=; b=VQ8jNbpIxXpzk2
+	3ztRHN+Qyd1HxtW/R5VP2hKlrG9WWe1HY6Kw+Reiwkn2CJdd7ql72IpJFiMtkwkK5qTi0PRexdZL6
+	LYuMktZmquV3gmLlI7sp7HiVr8V2+oVI1ewZ6aJIdaR1QQDqVHYzH9i0XT9ZvSp5hYSyD8R55T4Zl
+	eURs7zyb7Cw5nPMKyoy6jJ24yOQszimq297zm08ZVjlOuIzqGhKTTYs+TVWf8LMCLtXHpksT1sARO
+	C1ezEwW+T1/v42mrnV/KV/XF8TaTDHBl23G9gIM4x2VNHNoiM4BGiGwNpFu1y5BW48uZGjqBYYnNR
+	hLHnuoIOW04PPJI5QYjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYT7P-00047R-0J; Tue, 12 May 2020 11:30:39 +0000
-Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+	id 1jYTAz-0005by-2x; Tue, 12 May 2020 11:34:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYT70-0003wc-2X; Tue, 12 May 2020 11:30:15 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589283014; x=1620819014;
- h=from:to:cc:subject:date:message-id:references:
- in-reply-to:content-id:content-transfer-encoding: mime-version;
- bh=dxXmUhUPpxBKko4J3joFmmQRuvEUizeiEmBAqHTdng0=;
- b=JsXJcElVuoPFTBcSII7WOMh90Yu7c2wO5pZPrpkL3E63TCuOC1ibSTJZ
- X14KCLVd3fEYpvmp2KiwUUWDh+O9EFaj/Bsah3YAYBL1LOZmHBHErJUw3
- kkYQAHt+xvGx6+nAUzD0cc/2iU86fqUblHAykqT75h5KDqsUP/2NTxcXN
- Er6QzjXIPymSP5Bf+uIFJ4Y9ReWZ94lTMuKMXfitI6n7F1a/Q7Z7Uckew
- ADpNdumQ8jZLASUfbfuNEEs/5BHT7uxah64Aw4ZadSGMEMbmgVA4ngUca
- E0cY0ptSQCrcxFJT9opyiHhtLfHqX/694qr7Bb4HIg3XqWjnfu2u1CcxG w==;
-IronPort-SDR: 5M8CTnBYortKXeUXnXoaWD43z8iq4uXFSiMmFNKQUa0HYmvyHUtNioYCYEmd8JhlWEvtNftJH4
- SrqbDPwYCgVgK60V47+5j9n0Eq674akHwdDbaMaSbkuMyx9l8JaLa7i0QVxtVbPOwK1AgJ3Xtj
- siQWsTSoESVTtRmFtqoDDHj4iwX9VfW1JgQ3MdG/mh2d/98k40YIzi/fFgIaTtkO9cTa/uaTCe
- g1ZUOOi5mVJSit2nkdck789HegZFbz1Gqcy9XlFyYyh4CmVKqONE6d7m9ah+BtP6WvNhX/ViSv
- n84=
-X-IronPort-AV: E=Sophos;i="5.73,383,1583218800"; d="scan'208";a="75610674"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 12 May 2020 04:29:57 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 12 May 2020 04:29:58 -0700
-Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Tue, 12 May 2020 04:29:55 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=aC5x1LyfSHAa+XdkBuQ7lJZutuTazpgDZ8vCaUpJBR4f7d+HMrTyF93gc582X1vciVjuLxsvrD2bvaA9R4Tij01e0IIrkjdCWJo0lAbgr/QEOKw48dQoCbxPsuBjg3B3gEwmNdQFCkJkGn3+u0JkVPMX87Pf9vxth/apcOFLet+gQGmhq65YTtIVmuzkE/9mNe4TgbtoLGJSsmt5A2dVk73/xq1yJoZOfxHj18fpTRt3xW3xCkS5JZjZ/JA5kz6c8xFMQGIYXK7rszAIEBIzWHPfBhRQggU+nKxMCeDPbf00djokbgtdC3xcIXZL4GTUFuY27xDPl445vIaToBsztg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dxXmUhUPpxBKko4J3joFmmQRuvEUizeiEmBAqHTdng0=;
- b=CVy574zK5msFvTX0B+Tf9fnwpX/0THhSlnlMAaAZfFETAi2MkCqsQNVYKZkN4b0UEn9LNjR+1khilZRcxafy1CCrvD6xauSMs2ny+FJmyMNAMVUWKyoNPi3HjDsfMM4J4IIRocPr+o52xBEVN9NBSrugOZnJKEG+b8DnLOvXSUMEfArzfq7XiO4RAgd0JptiybVwdaf+tw+qW5gSS2Dhv8HhGytlRhZmajUhiSrNMc1XV/dhlXdrlghqiDBTezTLIFodzavb1Pcqjh+qIb0/bos3E9cuP3nfnpT+LBwzWe8Ji4Eq+d1gBGcR0cXsGdubKaNFm+5ol3haPnVSwM49ag==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=dxXmUhUPpxBKko4J3joFmmQRuvEUizeiEmBAqHTdng0=;
- b=o8ubR84TsqTKlrbeH5Qboe10KvxqaqEfwJBXK+bJSfLwdjqAU8OgMstkKZBW1flx1sRPY7Jx2elm6YrnerAS7DM25jnS0ny3UJ4tF3eCqDyupwLz9QUbtvauFfeZlNgcrtrRAVZdJWDOJi9sPBUGIie8H2SRpm0HzChxV3AHRQw=
-Received: from BY5PR11MB4419.namprd11.prod.outlook.com (2603:10b6:a03:1c8::13)
- by BY5PR11MB4273.namprd11.prod.outlook.com (2603:10b6:a03:1c9::32)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Tue, 12 May
- 2020 11:29:52 +0000
-Received: from BY5PR11MB4419.namprd11.prod.outlook.com
- ([fe80::d847:5d58:5325:c536]) by BY5PR11MB4419.namprd11.prod.outlook.com
- ([fe80::d847:5d58:5325:c536%7]) with mapi id 15.20.2979.033; Tue, 12 May 2020
- 11:29:51 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <linux-mtd@lists.infradead.org>
-Subject: Re: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
-Thread-Topic: [PATCH v4 00/16] mtd: spi-nor: add xSPI Octal DTR support
-Thread-Index: AQHWJ3Khn/aolf/mv0usqjltSIxTLg==
-Date: Tue, 12 May 2020 11:29:51 +0000
-Message-ID: <2352513.UHBGRE98Z5@192.168.0.120>
-References: <20200424184410.8578-1-p.yadav@ti.com>
- <144878625.o7txgtY6sz@192.168.0.120>
- <49abc8f3-5bb5-bc6d-b2ec-f14b115c58dc@ti.com>
-In-Reply-To: <49abc8f3-5bb5-bc6d-b2ec-f14b115c58dc@ti.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: lists.infradead.org; dkim=none (message not signed)
- header.d=none;lists.infradead.org; dmarc=none action=none
- header.from=microchip.com;
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a709c7c3-0de1-4d26-de04-08d7f667c97e
-x-ms-traffictypediagnostic: BY5PR11MB4273:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB4273E99AF8E2073EAD9CE1DCF0BE0@BY5PR11MB4273.namprd11.prod.outlook.com>
-x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0401647B7F
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: 4Gv0WOjS+9tYsBLjdISMnxZsyY9Jv77VM6xy06AZZ2r/iQweAreCiYPj1OD0Y1KVSgxXez0ct8CfAwH4VGxWsy/Y6ywKy4lle/0BoGtmwE2n89iOdB432vGOQqUOi7LKvFFRujIhfPxnnNg/mH1UUa+W58+xPayZGnJZ5+6GrS5ov4GEVL5wYCqyj9XYI8GTBw0iOycX5tadsrSs4LQ6bpH2TmkUmG93hFs7v9TbnCNYPCkaJW5ss/dRs4XRb8JGVZI1tfxFoyL83TjAu4W4XaRaywtvIZwraDNgTDUd/837dHa2iVTvi66Sgn20jWz3gbsjLcq3dE5nku3aSAKD93Ze9F/rDpHZt38j4JzreiKi1/t23jatdq240cicqNIZjhALrwbcPi/jQ1+MUClLJ+/P2SKq5KQ5Sqovgew0FUy+gmR5R+8D0URZHZk1MWN/U/1a/9ExNazNJrgd/u+tgrCB0UZCXxq1Iqze/a0kKKklwMpip8sfQvsVKV8kzRnTdfiDcrqdD3g10OaBfqD3Bg==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:BY5PR11MB4419.namprd11.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(376002)(39860400002)(366004)(346002)(136003)(396003)(33430700001)(6512007)(9686003)(6506007)(8676002)(53546011)(54906003)(6486002)(316002)(26005)(186003)(2906002)(14286002)(5660300002)(33656002)(86362001)(71200400001)(478600001)(4326008)(8936002)(7416002)(6916009)(33440700001)(66946007)(64756008)(66556008)(66446008)(66476007)(91956017)(76116006);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: 0z/9iDby6r1RomoUT3gx21JWxqrI3EYVWQLLFJi8jVtrhXxxYhJos+kiyjBaBuEbINB7Yut+1BS7RYLATStFiQVB9Hin/yGEDQyngsglkEtxCWTVWVi4YKOGQuoGnb8vuUit3LGMWu+PqKJDElC6o+7yDUXIlDZpl+VhBVhekW5ZKRH+BQ49coEQQAwSekBerkdd2FHBG53rPS7ajcOoTPhYgQOnJ8dQHomtZWqg66ncY370sDG7HP/7JksGO+tF0k9iu4FUY7ouza4eHorXs1HPwyH/2AyYa7HWSAogyeskJYgVLBC5ve4+MgY0s6xh+Bt22Q+8vqguJOTtvs/4VMAP1F8bzIB02UuUT6uaOfSCMnH6fqXBVH9gDW5BocI20gY5pNGobcCosEpocvCPajZR/Vy8jes95mJN+xFTgJPxQLAM+jC5Iyh4UOxEbfPpuxYSptFI4+zPWMpaxHRwvlEA68SdrYIYg0eG40A1Wa4=
-Content-ID: <44CDA89EFFB0AE4D9EC0B1C246CED218@namprd11.prod.outlook.com>
+ id 1jYTAk-0005aF-2f; Tue, 12 May 2020 11:34:08 +0000
+X-UUID: bcdf865e206444c1b94b77a7c14a1bf6-20200512
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=gYtKISy5CfAfS11vOn7jp+933wg8sWUwDhiuvPMr3cY=; 
+ b=puf0yWSM67N/TMKvrB8/WvYybedTUab/o4a47sOJeIUIYGz3FjE/zGwVNGYE+FkZybcAro0JK6ez4t21+OL0IqZrZVA4pK2GkSEHxXzHxXHTqoc8wVn1Cob+n9EEjhWdP3buDIwB04UDl78KILmAMrmO9m1KG3+dh7heI5c9oqE=;
+X-UUID: bcdf865e206444c1b94b77a7c14a1bf6-20200512
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 649844668; Tue, 12 May 2020 03:33:55 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Tue, 12 May 2020 04:34:00 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N2.mediatek.inc
+ (172.27.4.87) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
+ Tue, 12 May 2020 19:33:55 +0800
+Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Tue, 12 May 2020 19:33:56 +0800
+Message-ID: <1589283161.8804.331.camel@mhfsdcap03>
+Subject: Re: [V5, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
+Date: Tue, 12 May 2020 19:32:41 +0800
+In-Reply-To: <20200512085832.GI11272@paasikivi.fi.intel.com>
+References: <20200502161727.30463-3-dongchun.zhu@mediatek.com>
+ <20200506151352.GZ9190@paasikivi.fi.intel.com>
+ <1588855524.8804.168.camel@mhfsdcap03>
+ <20200507131220.GC9190@paasikivi.fi.intel.com>
+ <CAAFQd5DO9FGx9OF2RpcSprg0oLiVuS90w2qLAHCOSc3w6tKUWw@mail.gmail.com>
+ <1588907288.8804.188.camel@mhfsdcap03>
+ <20200508211319.GJ9190@paasikivi.fi.intel.com>
+ <1588991026.8804.235.camel@mhfsdcap03>
+ <CAAFQd5DZBEUJUq65WT7i_QjAtgxjhxmfdsjQoyG2UZy8zBih+A@mail.gmail.com>
+ <1589254403.8804.306.camel@mhfsdcap03>
+ <20200512085832.GI11272@paasikivi.fi.intel.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a709c7c3-0de1-4d26-de04-08d7f667c97e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 12 May 2020 11:29:51.6335 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: z468bkByZ2ePhuJQZSoQnWSjgQw18GCKblKph7YUtgNcrIkd4qfNYzyvlkusdQlQo+RfuO6hymhUdA/Yok6xr7p3AkyyGTNx11Oj901DsjM=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4273
+X-TM-SNTS-SMTP: 755C8DCD69677F5587F2CEB84A3317C4F6D165D7560D5A48C2ADD67EEADEC3A42000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_043014_176763_AD8F3E0E 
-X-CRM114-Status: GOOD (  19.85  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200512_043406_138144_52B07709 
+X-CRM114-Status: GOOD (  37.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.150.166 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -141,6 +80,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -152,99 +93,182 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, vigneshr@ti.com, richard@nod.at,
- broonie@kernel.org, nsekhar@ti.com, linux-kernel@vger.kernel.org,
- Ludovic.Desroches@microchip.com, boris.brezillon@collabora.com,
- miquel.raynal@bootlin.com, linux-spi@vger.kernel.org, p.yadav@ti.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark
+ Rutland <mark.rutland@arm.com>, Nicolas Boichat <drinkcat@chromium.org>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, Shengnan
+ Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=A3=E7=94=B7=29?=
+ <shengnan.wang@mediatek.com>, Tomasz Figa <tfiga@chromium.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ dongchun.zhu@mediatek.com, Louis Kuo <louis.kuo@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU DRIVERS
+ <iommu@lists.linux-foundation.org>, Joerg  Roedel <joro@8bytes.org>,
+ " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Vignesh,
+Hi Sakari,
 
-On Tuesday, May 12, 2020 12:49:07 PM EEST Vignesh Raghavendra wrote:
-> EXTERNAL EMAIL: Do not click links or open attachments unless you know the
-> content is safe
-> On 12/05/20 11:46 am, Tudor.Ambarus@microchip.com wrote:
-> > Hi, Boris, Pratyush,
-> > 
-> > I stripped case 2/, we'll not treat it for now.
-> > 
-> > On Monday, May 11, 2020 12:27:12 PM EEST Boris Brezillon wrote:
-> >> EXTERNAL EMAIL: Do not click links or open attachments unless you know
-> >> the
-> >> content is safe
-> >> 
-> >> On Mon, 11 May 2020 09:00:35 +0000
-> >> 
-> >> <Tudor.Ambarus@microchip.com> wrote:
-> >>> Hi, Pratyush, Boris,
-> >>> 
-> >>> On Friday, April 24, 2020 9:43:54 PM EEST Pratyush Yadav wrote:
-> >>>> This series adds support for octal DTR flashes in the spi-nor
-> >>>> framework,
-> >>> 
-> >>> I'm still learning about this, but I can give you my 2 cents as of now,
-> >>> to
-> >>> open the discussion. Enabling 2-2-2, 4-4-4, and 8-8-8 modes is dangerous
-> >>> because the flash may not recover from unexpected resets. Entering one
-> >>> of
-> >>> these modes can be:
-> >>> 1/ volatile selectable, the device return to the 1-1-1 protocol after
-> >>> the
-> >>> next power-on. I guess this is conditioned by the optional RESET pin,
-> >>> but
-> >>> I'll have to check. Also the flash can return to the 1-1-1 mode using
-> >>> the
-> >>> software reset or through writing to its Configuration Register, without
-> >>> power-on or power- off.
-> >> 
-> >> My understanding is that there's no standard software reset procedure
-> >> that guarantees no conflict with existing 1S commands, so even the
-> >> software reset approach doesn't work here.
-> > 
-> > The software reset procedure can't protect you from unexpected resets, but
-> > the hardware with its optional reset pin can. Pratyush to confirm.
-> > 
-> > cut
-> > 
-> >>> Not recovering from unexpected resets is unacceptable. One should always
-> >>> prefer option 1/ and condition the entering in 2-2-2, 4-4-4 and 8-8-8
-> >>> with
-> >>> the presence of the optional RESET pin.
-> >> 
-> >> Totally agree with you on that one, but we know what happens in
-> >> practice...
-> > 
-> > What I proposed is to condition the entering in the state-full modes with
-> > the presence of the optional RESET pin. We would introduce an optional
-> > device tree property for the RESET pin. If hardware doesn't implement the
-> > optional RESET# signal, then we will not enter in the state-full modes.
+On Tue, 2020-05-12 at 11:58 +0300, Sakari Ailus wrote:
+> Hi Dongchun,
 > 
-> Are you asking for dedicated SW controllable reset line or just an
-> indication from DT that OSPI reset line is connected to board level
-> soft/hard reset lines?
-
-I don't see a need for the reset line to be SW controllable, a simple 
-indication from the device tree should be enough.
-
+> On Tue, May 12, 2020 at 11:33:23AM +0800, Dongchun Zhu wrote:
+> > Hi Tomasz,
+> > 
+> > On Mon, 2020-05-11 at 20:20 +0200, Tomasz Figa wrote:
+> > > Hi Dongchun,
+> > > 
+> > > On Sat, May 9, 2020 at 4:25 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
+> > > >
+> > > > Hi Sakari,
+> > > >
+> > > > On Sat, 2020-05-09 at 00:13 +0300, Sakari Ailus wrote:
+> > > > > Hi Dongchun,
+> > > > >
+> > > > > On Fri, May 08, 2020 at 11:08:08AM +0800, Dongchun Zhu wrote:
+> > > > > > Hi Sakari, Tomasz,
+> > > > > >
+> > > > > > Thanks for the review.
+> > > > > >
+> > > > > > On Thu, 2020-05-07 at 15:46 +0200, Tomasz Figa wrote:
+> > > > > > > Hi Sakari, Dongchun,
+> > > > > > >
+> > > > > > > On Thu, May 7, 2020 at 3:12 PM Sakari Ailus
+> > > > > > > <sakari.ailus@linux.intel.com> wrote:
+> > > > > > > >
+> > > > > > > > HI Dongchun,
+> > > > > > > >
+> > > > > > > > On Thu, May 07, 2020 at 08:45:24PM +0800, Dongchun Zhu wrote:
+> > > > > > > > > Hi Sakari,
+> > > > > > > > >
+> > > > > > > > > Thanks for the review.
+> > > > > > > > >
+> > > > > > > > > On Wed, 2020-05-06 at 18:13 +0300, Sakari Ailus wrote:
+> > > > > > > > > > Hi Dongchun,
+> > > > > > > > > >
+> > > > > > > > > > On Sun, May 03, 2020 at 12:17:27AM +0800, Dongchun Zhu wrote:
+> > > > > > > > > > > Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
+> > > > > > > > > > > control to set the desired focus via IIC serial interface.
+> > > > > > > > > > >
+> > > > > > > > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > > > > > > > > > ---
+> > > > > > > > > > >  MAINTAINERS                |   1 +
+> > > > > > > > > > >  drivers/media/i2c/Kconfig  |  11 ++
+> > > > > > > > > > >  drivers/media/i2c/Makefile |   1 +
+> > > > > > > > > > >  drivers/media/i2c/dw9768.c | 440 +++++++++++++++++++++++++++++++++++++++++++++
+> > > > > > > > > > >  4 files changed, 453 insertions(+)
+> > > > > > > > > > >  create mode 100644 drivers/media/i2c/dw9768.c
+> > > > > > > > > > >
+> > > > > > > > > > > diff --git a/MAINTAINERS b/MAINTAINERS
+> > > > > > > > > > > index 8d72c41..c92dc99 100644
+> > > > > > > > > > > --- a/MAINTAINERS
+> > > > > > > > > > > +++ b/MAINTAINERS
+> > > > > > > > > > > @@ -5157,6 +5157,7 @@ L:  linux-media@vger.kernel.org
+> > > > > > > > > > >  S:       Maintained
+> > > > > > > > > > >  T:       git git://linuxtv.org/media_tree.git
+> > > > > > > > > > >  F:       Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
+> > > > > > > > > > > +F:       drivers/media/i2c/dw9768.c
+> > > > > > > > > > >
+> > > > > > > > > > >  DONGWOON DW9807 LENS VOICE COIL DRIVER
+> > > > > > > > > > >  M:       Sakari Ailus <sakari.ailus@linux.intel.com>
+> > > > > > > > > > > diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
+> > > > > > > > > > > index 125d596..6a3f9da 100644
+> > > > > > > > > > > --- a/drivers/media/i2c/Kconfig
+> > > > > > > > > > > +++ b/drivers/media/i2c/Kconfig
+> > > > > > > > > > > @@ -1040,6 +1040,17 @@ config VIDEO_DW9714
+> > > > > > > > > > >     capability. This is designed for linear control of
+> > > > > > > > > > >     voice coil motors, controlled via I2C serial interface.
+> > > > > > > > > > >
+> > > > > > > > > > > +config VIDEO_DW9768
+> > > > > > > > > > > + tristate "DW9768 lens voice coil support"
+> > > > > > > > > > > + depends on I2C && VIDEO_V4L2 && MEDIA_CONTROLLER
+> > > > > > > > > > > + depends on VIDEO_V4L2_SUBDEV_API
+> > > > > > > > > >
+> > > > > > > > > > Please check how this works in the media tree master branch now --- it's
+> > > > > > > > > > largely select based.
+> > > > > > > > > >
+> > > > > > > > >
+> > > > > > > > > The actuator driver uses some structures that require the
+> > > > > > > > > VIDEO_V4L2_SUBDEV_API code, so here we add VIDEO_V4L2_SUBDEV_API
+> > > > > > > > > dependency to avoid possible build error when it's not enabled.
+> > > > > > > >
+> > > > > > > > Please make sure this works with current media tree master. Right now it
+> > > > > > > > does not.
+> > > > > > > >
+> > > > > > >
+> > > > > > > Dongchun, as Sakari said, please make sure to base the patches on the
+> > > > > > > master branch of the media tree.
+> > > > > > > (https://git.linuxtv.org/media_tree.git/). The approach for Kconfig
+> > > > > > > dependency selection there seems to have changed recently.
+> > > > > > >
+> > > > > >
+> > > > > > I searched the patches on the media tree master branch.
+> > > > > > It seems that we need to remove the VIDEO_V4L2_SUBDEV_API dependency in
+> > > > > > Kconfig, and add #ifdef CONFIG_VIDEO_V4L2_SUBDEV_API to include
+> > > > > > v4l2-subdev code.
+> > > > > > The change mainly is to make build pass, and don't return ENOTTY if
+> > > > > > SUBDEV_API is not set.
+> > > > > > Am I right?
+> > > > >
+> > > > > Please see Kconfig entries for other similar drivers from Dongwoon.
+> > > > >
+> > > >
+> > > > Sorry for the mistake :-)
+> > > > Just found the current media tree master branch code...
+> > > > I would update Kconfig entries in next release by referring to:
+> > > > https://git.linuxtv.org/media_tree.git/tree/drivers/media/i2c/Kconfig
+> > > 
+> > > Sorry for last minute comments again. We had a short discussion
+> > > offline with Sakari and we think there are some changes needed to this
+> > > driver, namely:
+> > > 
+> > > 1) The hardware being driven in our case is a gt9769, which could be
+> > > compatible with dw9768, but it's still a different implementation and
+> > > could have slightly different characteristics. Thus we think the
+> > > driver name and compatible strings should be renamed from
+> > > dongwoon,dw9768 to giantec,gt9769. In the future, if there is a device
 > 
-> Mandating SW controllable RESET line is bit of a stretch IMO... Board
-> design may not allow wasting dedicated pin due to lack of GPIOs perhaps..
+> Sorry, I actually meant just the compatible string --- Dongwoon is likely
+> the original manufacturer. Therefore I'd name the driver according to that,
+> and just add a second compatible string for the Giantec device.
 > 
-> For eg.: TI EVM has OSPI reset line connected to board level reset out.
-> This ensures any soft/warm/hard CPU reset will trigger OSPI Flash reset,
-> but there is no SW control that allows OSPI flash alone to be reset.
-> Isn't such a reset mechanism sufficient?
+> Either works for me though.
 > 
 
-I think it is, yes.
+Just checked the legacy lens driver based on Mediatek architecture.
+I found that both DW9718 and DW9719 have been using some configuration
+registers to initialize VCM.
+Unlickily, I cannot see any upstream patches about these two lens
+drivers on the community.
 
-Cheers,
-ta
+For your suggestion, I think it is okay.
+In fact, I just synced with Giantec FAE.
+Dongwoon Anatech and Giantec are two different driver companies.
+Their most VCM driver products are compatible with each other.
+In fact, they have a mapping table of DW & GT.
+For user, the actuator driver is common, such as DW9768 and GT9769.
+However, algorithms inside the chip from different Manufactures differs.
 
+For GT9769/DW9768, there is one read-only register 0x00 that could be
+read out to distinguish VCM IC Manufacture ID.
+The default value 0xE1 represents Giantec.
+
+Finally I would add one more compatible for Giantec in next release.
+Like this:
+static const struct of_device_id dw9768_of_table[] = {
+   { .compatible = "dongwoon,dw9768" },
+   { .compatible = "giantec,gt9769" },
+   {}
+};
+MODULE_DEVICE_TABLE(of, dw9768_of_table);
 
 _______________________________________________
 linux-arm-kernel mailing list
