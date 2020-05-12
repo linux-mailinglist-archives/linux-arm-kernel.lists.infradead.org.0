@@ -2,72 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE8381CEFDA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 10:59:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 329A01CF07F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:01:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nzQqfJ+EF2XSnkY9GE8aWjuvtSOJfFf2xmVQ8YIMq/A=; b=Z1ST/MPPeiGD7G
-	BccRqycRIIUCkbDIfruP8ZHqD/TieAq0zk1i94SIARFqGFP5Qru8E9Vz1KtnGnX9WgWv5tidn/qvL
-	xdB4p96AoW7KM1d34PpOfCRvr/06QxKGRnolu8Zbl0SnIYBr9v5VF2XiBU6vP0rvNgghGAxG8llQu
-	PBoXuRfMhLirlZvM82YhvbejE41eo9y98MgE+vw9hE8YTWEwzHvtg+eV4dSyjNrkzekOT/5FrzRkT
-	8v1qm9Pki4fS7PethPtSP4KupOAA6h0aBE+UpgFLWDXDO4CIT/ufaW6Nxfd9mTjcgIB7P7cZ+Zi3J
-	pRhYL4irj1+7ldwK3qUg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=wU0swMtjyOOlfl0XFvVvkqvYvZpdUepipFQsbbQrOiI=; b=BVZhS5b/4xfJVyLjkLz7I5T6Au
+	s8+/4LA2TfSleUratbmixI+/+4Pg7nII18zbLLwyyuJ93EBnC3r6gaZ01C4kXAXZHdx7diBoEUuPs
+	6fmr3UOeBPs9oRk/AYroH5yptO6W0cDjxGoQWiFF1lxfIeefpn6WZnfnvD2ClK0n1b+BlUy3gmkZW
+	4YUojvu4U/YY618hhjtydJBLM9ncbF3rM7cAwtikFNgHfZUskIv7O8k7HHgNalGlSr4gNCxnuRQ1T
+	YAXNV2STlZqm9Ai+leQiz0Rf65ngSzfFn2m63Ce1KMax5R5Ws6DcqvZwoPx846CVJAOyuVZ0rqHkg
+	XAV622Fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYQkb-00075f-R1; Tue, 12 May 2020 08:58:57 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jYQnM-00028p-Cl; Tue, 12 May 2020 09:01:48 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYQkI-000755-Nk; Tue, 12 May 2020 08:58:40 +0000
-IronPort-SDR: LQ4sHSm8FKFYIrjdoZVfJaZxnLO49Edq8N3MBAjb3A+LMswU4OoNvxeVb3DfX1PUaFc+96jLGc
- vXv9JCEXDk5w==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 12 May 2020 01:58:38 -0700
-IronPort-SDR: mbALTggVDa0a39QMG47umt49d2JUpyQD+6z3TyGCkjFdzl22VLsup2cGbdp5ICq/recQnaKmNS
- JN5exQ5tdubw==
-X-IronPort-AV: E=Sophos;i="5.73,383,1583222400"; d="scan'208";a="286578828"
-Received: from paasikivi.fi.intel.com ([10.237.72.42])
- by fmsmga004-auth.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 12 May 2020 01:58:34 -0700
-Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
- id 44834205FC; Tue, 12 May 2020 11:58:32 +0300 (EEST)
-Date: Tue, 12 May 2020 11:58:32 +0300
-From: Sakari Ailus <sakari.ailus@linux.intel.com>
-To: Dongchun Zhu <dongchun.zhu@mediatek.com>
-Subject: Re: [V5, 2/2] media: i2c: dw9768: Add DW9768 VCM driver
-Message-ID: <20200512085832.GI11272@paasikivi.fi.intel.com>
-References: <20200502161727.30463-3-dongchun.zhu@mediatek.com>
- <20200506151352.GZ9190@paasikivi.fi.intel.com>
- <1588855524.8804.168.camel@mhfsdcap03>
- <20200507131220.GC9190@paasikivi.fi.intel.com>
- <CAAFQd5DO9FGx9OF2RpcSprg0oLiVuS90w2qLAHCOSc3w6tKUWw@mail.gmail.com>
- <1588907288.8804.188.camel@mhfsdcap03>
- <20200508211319.GJ9190@paasikivi.fi.intel.com>
- <1588991026.8804.235.camel@mhfsdcap03>
- <CAAFQd5DZBEUJUq65WT7i_QjAtgxjhxmfdsjQoyG2UZy8zBih+A@mail.gmail.com>
- <1589254403.8804.306.camel@mhfsdcap03>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589254403.8804.306.camel@mhfsdcap03>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+ id 1jYQmj-000275-PL
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:01:11 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200512090108euoutp022ceccd1038aabbefc8f0df9f6547e659~OPFhLUCuq0455404554euoutp02r
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 09:01:08 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20200512090108euoutp022ceccd1038aabbefc8f0df9f6547e659~OPFhLUCuq0455404554euoutp02r
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1589274068;
+ bh=CVX0hiMXr2wjumHRzuMCI3rD0yXn5P1mGLiSnhpj7Nc=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=dTQ9zy4M5SFYxvWO6leTG4/IZ5zO8g8EO9JXnQ+wrdfWrRErhWKCTSzB538b6mE2y
+ tMDBDLKUflEwzZzkoKOfutsH43mIo7Hd7QESWK73hKlVLwf+UdJQdah0RFVoRlHPML
+ nGc+NFnKqACR9Pki0AlP3F3sIHL4Ubvx2iptlV3Q=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20200512090108eucas1p22fc39f6d891980ab6599dbe89f996b43~OPFg2FCIZ2564425644eucas1p2C;
+ Tue, 12 May 2020 09:01:08 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id CD.12.60679.3D56ABE5; Tue, 12
+ May 2020 10:01:08 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0~OPFgjM79z1613916139eucas1p1S;
+ Tue, 12 May 2020 09:01:07 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20200512090107eusmtrp142855ef2916bc5564e1a45f18e163b05~OPFgijDhQ0183401834eusmtrp1J;
+ Tue, 12 May 2020 09:01:07 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-6d-5eba65d38a59
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 5C.E2.07950.3D56ABE5; Tue, 12
+ May 2020 10:01:07 +0100 (BST)
+Received: from AMDC2765.digital.local (unknown [106.120.51.73]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200512090107eusmtip1b2037aa85d846147c42bf55aa7eae1c6~OPFf5hCsF0782807828eusmtip1S;
+ Tue, 12 May 2020 09:01:07 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
+ linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
+Subject: [PATCH v4 01/38] dma-mapping: add generic helpers for mapping
+ sgtable objects
+Date: Tue, 12 May 2020 11:00:21 +0200
+Message-Id: <20200512090058.14910-1-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20200512085710.14688-1-m.szyprowski@samsung.com>
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFlrCKsWRmVeSWpSXmKPExsWy7djPc7pXUnfFGXxrZ7ToPXeSyWLjjPWs
+ Fv+3TWS2uPL1PZvFytVHmSwW7Le2+HLlIZPFpsfXWC0u75rDZrH2yF12i4MfnrA6cHusmbeG
+ 0WPvtwUsHtu/PWD1uN99nMlj85J6j9v/HjN7TL6xnNFj980GNo++LasYPT5vkgvgiuKySUnN
+ ySxLLdK3S+DKaNy8g6nguGrF5edzmRoY78l1MXJySAiYSDQ96mTsYuTiEBJYwSjRu3MqE4Tz
+ hVHi3rUNzBDOZ0aJHc39jDAtnf+vQrUsZ5RYNGErO0gCrGXmPycQm03AUKLrbRcbiC0i0Moo
+ caKXB8RmFpjBJHH0dSmILSwQIbHo4QWwoSwCqhL7Ds5nBbF5BWwlmvp7oZbJS6zecIAZxOYU
+ sJPofPiDHSK+jl1i53Z/CNtFovlcPwuELSzx6vgWqBoZidOTe1hADpUQaGaUeHhuLTuE08Mo
+ cblpBtQGa4k7534BXcoBdJ2mxPpd+hBhR4ldx5+wg4QlBPgkbrwVhLifT2LStunMEGFeiY42
+ IYhqNYlZx9fBrT144RJUiYfEgUtRkNCZyCjxe4HOBEb5WQirFjAyrmIUTy0tzk1PLTbKSy3X
+ K07MLS7NS9dLzs/dxAhMO6f/Hf+yg3HXn6RDjAIcjEo8vAYGO+OEWBPLiitzDzFKcDArifC2
+ ZAKFeFMSK6tSi/Lji0pzUosPMUpzsCiJ8xovehkrJJCeWJKanZpakFoEk2Xi4JRqYLQQ05pi
+ 1ySsm5x2QfVjkKD6PrGs+x4OSTW8T3fo97Veyj/Hwqr6/KS6W03visDHz88/Xq0o1vBIIL61
+ SU7jnjPXfpl38cuzriXvPuf0sLTAPK03s+XD3tVlVn2KbT6PQ5vX1q12fllt9sqnOHXLvItd
+ TWtyYy653tQT623id1mwXXafb36hEktxRqKhFnNRcSIA84/nVzcDAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupkkeLIzCtJLcpLzFFi42I5/e/4Xd3LqbviDD4s0rHoPXeSyWLjjPWs
+ Fv+3TWS2uPL1PZvFytVHmSwW7Le2+HLlIZPFpsfXWC0u75rDZrH2yF12i4MfnrA6cHusmbeG
+ 0WPvtwUsHtu/PWD1uN99nMlj85J6j9v/HjN7TL6xnNFj980GNo++LasYPT5vkgvgitKzKcov
+ LUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DLaNy8g6nguGrF
+ 5edzmRoY78l1MXJySAiYSHT+v8rYxcjFISSwlFHiy+qJjBAJGYmT0xpYIWxhiT/Xutggij4x
+ SqxdcpMJJMEmYCjR9RYiISLQySgxrfsjO4jDLDCPSWLRw0NADgeHsECYxJbdHCANLAKqEvsO
+ zgebyitgK9HU3wu1TV5i9YYDzCA2p4CdROfDH+wgthBQzcO+W6wTGPkWMDKsYhRJLS3OTc8t
+ NtIrTswtLs1L10vOz93ECIyGbcd+btnB2PUu+BCjAAejEg9vh9HOOCHWxLLiytxDjBIczEoi
+ vC2ZQCHelMTKqtSi/Pii0pzU4kOMpkBHTWSWEk3OB0ZqXkm8oamhuYWlobmxubGZhZI4b4fA
+ wRghgfTEktTs1NSC1CKYPiYOTqkGRu/olx++8ud2FykYSVVznPJTMt95RLdK7sovhzUBNzID
+ HhTFlpatllu3Z0uRxKG7fDzz5jNUvypSYP73+Sc7y1vVm9PuJS/RVdzBd6grodS+9Pw8zS77
+ ae+VrO3uXFW+1ZJ4K0HHituMc2X4Fl6O596Mx7a0a2ruW7Yudr4LE88S3jVrpgW6KLEUZyQa
+ ajEXFScCAIf2MGacAgAA
+X-CMS-MailID: 20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0
+X-Msg-Generator: CA
+X-RootMTR: 20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0
+References: <20200512085710.14688-1-m.szyprowski@samsung.com>
+ <CGME20200512090107eucas1p13a38ce5ce4c15cd0033acaea7b26c9b0@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_015838_787482_9CF05304 
-X-CRM114-Status: GOOD (  35.91  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200512_020109_957590_258EFFD5 
+X-CRM114-Status: GOOD (  17.13  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.12 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,155 +139,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Nicolas Boichat <drinkcat@chromium.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- linux-devicetree <devicetree@vger.kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
- Shengnan Wang =?utf-8?B?KOeOi+Wco+eUtyk=?= <shengnan.wang@mediatek.com>,
- Tomasz Figa <tfiga@chromium.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Louis Kuo <louis.kuo@mediatek.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- Cao Bing Bu <bingbu.cao@intel.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg  Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dongchun,
+struct sg_table is a common structure used for describing a memory
+buffer. It consists of a scatterlist with memory pages and DMA addresses
+(sgl entry), as well as the number of scatterlist entries: CPU pages
+(orig_nents entry) and DMA mapped pages (nents entry).
 
-On Tue, May 12, 2020 at 11:33:23AM +0800, Dongchun Zhu wrote:
-> Hi Tomasz,
-> 
-> On Mon, 2020-05-11 at 20:20 +0200, Tomasz Figa wrote:
-> > Hi Dongchun,
-> > 
-> > On Sat, May 9, 2020 at 4:25 AM Dongchun Zhu <dongchun.zhu@mediatek.com> wrote:
-> > >
-> > > Hi Sakari,
-> > >
-> > > On Sat, 2020-05-09 at 00:13 +0300, Sakari Ailus wrote:
-> > > > Hi Dongchun,
-> > > >
-> > > > On Fri, May 08, 2020 at 11:08:08AM +0800, Dongchun Zhu wrote:
-> > > > > Hi Sakari, Tomasz,
-> > > > >
-> > > > > Thanks for the review.
-> > > > >
-> > > > > On Thu, 2020-05-07 at 15:46 +0200, Tomasz Figa wrote:
-> > > > > > Hi Sakari, Dongchun,
-> > > > > >
-> > > > > > On Thu, May 7, 2020 at 3:12 PM Sakari Ailus
-> > > > > > <sakari.ailus@linux.intel.com> wrote:
-> > > > > > >
-> > > > > > > HI Dongchun,
-> > > > > > >
-> > > > > > > On Thu, May 07, 2020 at 08:45:24PM +0800, Dongchun Zhu wrote:
-> > > > > > > > Hi Sakari,
-> > > > > > > >
-> > > > > > > > Thanks for the review.
-> > > > > > > >
-> > > > > > > > On Wed, 2020-05-06 at 18:13 +0300, Sakari Ailus wrote:
-> > > > > > > > > Hi Dongchun,
-> > > > > > > > >
-> > > > > > > > > On Sun, May 03, 2020 at 12:17:27AM +0800, Dongchun Zhu wrote:
-> > > > > > > > > > Add a V4L2 sub-device driver for DW9768 voice coil motor, providing
-> > > > > > > > > > control to set the desired focus via IIC serial interface.
-> > > > > > > > > >
-> > > > > > > > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > > > > > > > > > ---
-> > > > > > > > > >  MAINTAINERS                |   1 +
-> > > > > > > > > >  drivers/media/i2c/Kconfig  |  11 ++
-> > > > > > > > > >  drivers/media/i2c/Makefile |   1 +
-> > > > > > > > > >  drivers/media/i2c/dw9768.c | 440 +++++++++++++++++++++++++++++++++++++++++++++
-> > > > > > > > > >  4 files changed, 453 insertions(+)
-> > > > > > > > > >  create mode 100644 drivers/media/i2c/dw9768.c
-> > > > > > > > > >
-> > > > > > > > > > diff --git a/MAINTAINERS b/MAINTAINERS
-> > > > > > > > > > index 8d72c41..c92dc99 100644
-> > > > > > > > > > --- a/MAINTAINERS
-> > > > > > > > > > +++ b/MAINTAINERS
-> > > > > > > > > > @@ -5157,6 +5157,7 @@ L:  linux-media@vger.kernel.org
-> > > > > > > > > >  S:       Maintained
-> > > > > > > > > >  T:       git git://linuxtv.org/media_tree.git
-> > > > > > > > > >  F:       Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.yaml
-> > > > > > > > > > +F:       drivers/media/i2c/dw9768.c
-> > > > > > > > > >
-> > > > > > > > > >  DONGWOON DW9807 LENS VOICE COIL DRIVER
-> > > > > > > > > >  M:       Sakari Ailus <sakari.ailus@linux.intel.com>
-> > > > > > > > > > diff --git a/drivers/media/i2c/Kconfig b/drivers/media/i2c/Kconfig
-> > > > > > > > > > index 125d596..6a3f9da 100644
-> > > > > > > > > > --- a/drivers/media/i2c/Kconfig
-> > > > > > > > > > +++ b/drivers/media/i2c/Kconfig
-> > > > > > > > > > @@ -1040,6 +1040,17 @@ config VIDEO_DW9714
-> > > > > > > > > >     capability. This is designed for linear control of
-> > > > > > > > > >     voice coil motors, controlled via I2C serial interface.
-> > > > > > > > > >
-> > > > > > > > > > +config VIDEO_DW9768
-> > > > > > > > > > + tristate "DW9768 lens voice coil support"
-> > > > > > > > > > + depends on I2C && VIDEO_V4L2 && MEDIA_CONTROLLER
-> > > > > > > > > > + depends on VIDEO_V4L2_SUBDEV_API
-> > > > > > > > >
-> > > > > > > > > Please check how this works in the media tree master branch now --- it's
-> > > > > > > > > largely select based.
-> > > > > > > > >
-> > > > > > > >
-> > > > > > > > The actuator driver uses some structures that require the
-> > > > > > > > VIDEO_V4L2_SUBDEV_API code, so here we add VIDEO_V4L2_SUBDEV_API
-> > > > > > > > dependency to avoid possible build error when it's not enabled.
-> > > > > > >
-> > > > > > > Please make sure this works with current media tree master. Right now it
-> > > > > > > does not.
-> > > > > > >
-> > > > > >
-> > > > > > Dongchun, as Sakari said, please make sure to base the patches on the
-> > > > > > master branch of the media tree.
-> > > > > > (https://git.linuxtv.org/media_tree.git/). The approach for Kconfig
-> > > > > > dependency selection there seems to have changed recently.
-> > > > > >
-> > > > >
-> > > > > I searched the patches on the media tree master branch.
-> > > > > It seems that we need to remove the VIDEO_V4L2_SUBDEV_API dependency in
-> > > > > Kconfig, and add #ifdef CONFIG_VIDEO_V4L2_SUBDEV_API to include
-> > > > > v4l2-subdev code.
-> > > > > The change mainly is to make build pass, and don't return ENOTTY if
-> > > > > SUBDEV_API is not set.
-> > > > > Am I right?
-> > > >
-> > > > Please see Kconfig entries for other similar drivers from Dongwoon.
-> > > >
-> > >
-> > > Sorry for the mistake :-)
-> > > Just found the current media tree master branch code...
-> > > I would update Kconfig entries in next release by referring to:
-> > > https://git.linuxtv.org/media_tree.git/tree/drivers/media/i2c/Kconfig
-> > 
-> > Sorry for last minute comments again. We had a short discussion
-> > offline with Sakari and we think there are some changes needed to this
-> > driver, namely:
-> > 
-> > 1) The hardware being driven in our case is a gt9769, which could be
-> > compatible with dw9768, but it's still a different implementation and
-> > could have slightly different characteristics. Thus we think the
-> > driver name and compatible strings should be renamed from
-> > dongwoon,dw9768 to giantec,gt9769. In the future, if there is a device
+It turned out that it was a common mistake to misuse nents and orig_nents
+entries, calling DMA-mapping functions with a wrong number of entries or
+ignoring the number of mapped entries returned by the dma_map_sg
+function.
 
-Sorry, I actually meant just the compatible string --- Dongwoon is likely
-the original manufacturer. Therefore I'd name the driver according to that,
-and just add a second compatible string for the Giantec device.
+To avoid such issues, lets introduce a common wrappers operating directly
+on the struct sg_table objects, which take care of the proper use of
+the nents and orig_nents entries.
 
-Either works for me though.
+Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+---
+For more information, see '[PATCH v4 00/38] DRM: fix struct sg_table nents
+vs. orig_nents misuse' thread:
+https://lore.kernel.org/dri-devel/20200512085710.14688-1-m.szyprowski@samsung.com/T/
+---
+ include/linux/dma-mapping.h | 79 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 79 insertions(+)
 
+diff --git a/include/linux/dma-mapping.h b/include/linux/dma-mapping.h
+index b43116a..88f01cc 100644
+--- a/include/linux/dma-mapping.h
++++ b/include/linux/dma-mapping.h
+@@ -609,6 +609,85 @@ static inline void dma_sync_single_range_for_device(struct device *dev,
+ 	return dma_sync_single_for_device(dev, addr + offset, size, dir);
+ }
+ 
++/**
++ * dma_map_sgtable - Map the given buffer for the DMA operations
++ * @dev:	The device to perform a DMA operation
++ * @sgt:	The sg_table object describing the buffer
++ * @dir:	DMA direction
++ * @attrs:	Optional DMA attributes for the map operation
++ *
++ * Maps a buffer described by a scatterlist stored in the given sg_table
++ * object for the @dir DMA operation by the @dev device. After success
++ * the ownership for the buffer is transferred to the DMA domain. One has
++ * to call dma_sync_sgtable_for_cpu() or dma_unmap_sgtable() to move the
++ * ownership of the buffer back to the CPU domain before touching the
++ * buffer by the CPU.
++ * Returns 0 on success or -EINVAL on error during mapping the buffer.
++ */
++static inline int dma_map_sgtable(struct device *dev, struct sg_table *sgt,
++		enum dma_data_direction dir, unsigned long attrs)
++{
++	int n = dma_map_sg_attrs(dev, sgt->sgl, sgt->orig_nents, dir, attrs);
++
++	if (n > 0) {
++		sgt->nents = n;
++		return 0;
++	}
++	return -EINVAL;
++}
++
++/**
++ * dma_unmap_sgtable - Unmap the given buffer for the DMA operations
++ * @dev:	The device to perform a DMA operation
++ * @sgt:	The sg_table object describing the buffer
++ * @dir:	DMA direction
++ * @attrs:	Optional DMA attributes for the map operation
++ *
++ * Unmaps a buffer described by a scatterlist stored in the given sg_table
++ * object for the @dir DMA operation by the @dev device. After this function
++ * the ownership of the buffer is transferred back to the CPU domain.
++ */
++static inline void dma_unmap_sgtable(struct device *dev, struct sg_table *sgt,
++		enum dma_data_direction dir, unsigned long attrs)
++{
++	dma_unmap_sg_attrs(dev, sgt->sgl, sgt->orig_nents, dir, attrs);
++}
++
++/**
++ * dma_sync_sgtable_for_cpu - Synchronize the given buffer for the CPU access
++ * @dev:	The device to perform a DMA operation
++ * @sgt:	The sg_table object describing the buffer
++ * @dir:	DMA direction
++ *
++ * Performs the needed cache synchronization and moves the ownership of the
++ * buffer back to the CPU domain, so it is safe to perform any access to it
++ * by the CPU. Before doing any further DMA operations, one has to transfer
++ * the ownership of the buffer back to the DMA domain by calling the
++ * dma_sync_sgtable_for_device().
++ */
++static inline void dma_sync_sgtable_for_cpu(struct device *dev,
++		struct sg_table *sgt, enum dma_data_direction dir)
++{
++	dma_sync_sg_for_cpu(dev, sgt->sgl, sgt->orig_nents, dir);
++}
++
++/**
++ * dma_sync_sgtable_for_device - Synchronize the given buffer for the DMA
++ * @dev:	The device to perform a DMA operation
++ * @sgt:	The sg_table object describing the buffer
++ * @dir:	DMA direction
++ *
++ * Performs the needed cache synchronization and moves the ownership of the
++ * buffer back to the DMA domain, so it is safe to perform the DMA operation.
++ * Once finished, one has to call dma_sync_sgtable_for_cpu() or
++ * dma_unmap_sgtable().
++ */
++static inline void dma_sync_sgtable_for_device(struct device *dev,
++		struct sg_table *sgt, enum dma_data_direction dir)
++{
++	dma_sync_sg_for_device(dev, sgt->sgl, sgt->orig_nents, dir);
++}
++
+ #define dma_map_single(d, a, s, r) dma_map_single_attrs(d, a, s, r, 0)
+ #define dma_unmap_single(d, a, s, r) dma_unmap_single_attrs(d, a, s, r, 0)
+ #define dma_map_sg(d, s, n, r) dma_map_sg_attrs(d, s, n, r, 0)
 -- 
-Regards,
+1.9.1
 
-Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
