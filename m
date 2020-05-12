@@ -2,76 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BF181CF5C6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:27:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 836911CF5CC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 15:28:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jr8urDve1L8kzOQlxAP3YCg0Hit0NXVJZ8GCPZVIRhA=; b=M8ojszPU1Lltfz
-	GSxcxwezXkNacwbsqCj8o99fwkbktxwY/CfZunj2eIH05IHRP52BeW55lZm+ieNMlwwk7SSAwMmQj
-	leye4PtZMzf7kz2XWGkrV7h6xuekyUr5P9uxkWzIT1lN8bUPXnwbROMGUUvTB4hvVuZ3E1q76Pci7
-	p4PODDGvpCV+EDpzdfcBjmxfncaYyur3mWufkVTRAw7clQe5KlhiZQfnZUoOuaePMmqxLTNOeNWTN
-	pCIrLzRGoybE7V9MmgRUvWqSftyo6CnEkg/PJ1g3FKqfX9h4ysWQ8Ym3AWgLcg42l2lXl7P+SE7V5
-	jccaR092oFXyfa+Cxd6w==;
+	List-Owner; bh=eWf1soy55UqTZsnYiX7wypq3BlyNBZ9UCBQcN7FLoNI=; b=sjWbs2xn6yqRFh
+	Va8r4rFJBEEdi3vH2o+5RcWo629J/UkxX+som1e7U0vz3wTvsw5iAGj+DBe5Q4XNSRzIFcQGVFTHC
+	R56PVv7Zj/iYUsOuyg1SHsMRe99wFLOAta8q8438hO0d82MSI/5T1bgUI6jm2+r/tEY1R2WF/I8sc
+	CFDCwLkZ3MwlMspabVjQC2/Z1he5Q3AAbJopdgKywF/PqjOraPrCRe/kY8JNRJemVmh3X8PNMpsjC
+	c3aAzbxp8Bgkjx2IynxqSkczGEo0p6wCrfWTkOJZLMtLPCtcfE9eh+IGcpWfxlP5xG1THQ/gNr+0v
+	wAyxsy95dOi5YOBu4C/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYUwn-0002i1-GG; Tue, 12 May 2020 13:27:49 +0000
+	id 1jYUxO-0003Jk-7M; Tue, 12 May 2020 13:28:26 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYUvS-0001Yc-G1
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:26:28 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e16so15376420wra.7
+ id 1jYUvU-0001a6-93
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 13:26:29 +0000
+Received: by mail-wr1-x444.google.com with SMTP id i15so15337589wrx.10
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 06:26:26 -0700 (PDT)
+ Tue, 12 May 2020 06:26:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=OOA2tjrCMzpEGVQ4wsZGsx+qQve4HNZ307qi+80/974=;
- b=tFn1g6VnvjqXPa5wWer0AZBSgCntLE7a3TDJber7TVz1ksZz0vw9pfhNaKabsusts3
- Q4u3+Y5oY5lvmSGLH9CJQ6iSHnMcGwSbDi5N3mV6iaXU3iwtcRge+GOCgHJTPwx0Dunt
- 2WFUIUd54IjSQ9oSGEb5gWVJfC/jZJ4qc9HgNV0GYgD+1BXgina5rNgxqjWB/aEYVW5+
- 7le4q61yeaatKEThlrAGb+ERtdyhtKTxWq8CMOPXoSKqAyWd9kFZ6ufh5iuxUIRomUzA
- PmDi5o+TmXmttNyl87E1DKIAW4CJtNXTrTnaFSIGPzR94ZZjgoBRGo+8WdBKfJvQHsR5
- byRQ==
+ bh=itZ8nYpO9rVwAB+XOSiZ1Zaz+WlUMeN8KYJbRrgai8w=;
+ b=s5XV7mjGrnG0C7b3JFLWA/serjUzf8eM5Sv6bPOzzXrvy+bBn5NGBA9t3ERPFyJuv2
+ SJow9GGfQvqbEJVESTH5XaRi90qYMpkAc+33nM7/TD7ZR1hX6v4OJx27XmVk0E2Ua+0d
+ OqhN5SQaS1ajL2aQAdCfmyj6fWL1oVA/nBjIhPvI+Aj7x30jz7wxC2/JcETHuxaAcBB5
+ L8ywmE6m4FE94yCLZXU+LyWBxWS25UJ7Yj6YtCist9nBGE0fUFb/fO7lTzHvgMgJr8k6
+ 5aV2w0izr+/SeOV1SgeR5tFhJsdUfk0n7g/S3Kdy+4sfHzBCmohoIfu8Us6qrTf3KT9/
+ 8JiA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=OOA2tjrCMzpEGVQ4wsZGsx+qQve4HNZ307qi+80/974=;
- b=EqcOXv9f/xWxCZQ2Df96SAobp/ybIF6+/Yu7iQBhq6suyyOgGRflsKLSiAvPHtL6CA
- s0fyvK657nvdf6rXjixp8XxJxyRael3zQ34NDhicOzHADS47u+Vtwzd8ppzEb1uFh3i9
- TBL9GAli2Z7M+vSLIx52YxlKxd6hwm5tfAvf3A7A/m8jNgVphLgQ/OTMKB6gnVv8axX3
- ek3cwhkwbzOfmYse6a79qfdHNd8LuHMUZsvNINhSIsEM9SZ1q04uiCJLQmVJ1KQwyQV6
- VEjA/orUMT+pPXDSvKX1+BeRz1Ii1FMMVb5eKRrrF+uprynUYPIz8Pe76RtM5Gs7lIne
- jepg==
-X-Gm-Message-State: AGi0Puams9LR1+ydKxeOexRFKXVQpSjiJ5BjpUNVFejBXmWIrjq57Ejl
- /5XaxMRdbY9jkMJGynjI3JaTBQ==
-X-Google-Smtp-Source: APiQypLPHEVWduy/3LzWWOhygupngnUuDQ/k1GFsn734lHfe0CkKPw+iJ6B+0gL3o0nrI8H96uujxg==
-X-Received: by 2002:a5d:400f:: with SMTP id n15mr13811365wrp.419.1589289984995; 
- Tue, 12 May 2020 06:26:24 -0700 (PDT)
+ bh=itZ8nYpO9rVwAB+XOSiZ1Zaz+WlUMeN8KYJbRrgai8w=;
+ b=tbdIBK6QXq0zHX/OKlEf1EQgSm31P90nFG7n3s5HPB1Ei/KYoFAnQFcq6x4XlQznFw
+ 1TOFbKzXJt50p5WlBhIMHs35T2FvHpD1PwOvWvekAVdVX9mJK/PS3MmyvQp+TrcQA9U+
+ FXSZSP3oFfA89EMSmYiWZKjj/F/sBvWyMwSwEQpgmWHwfH80bOi7Qhe6AAjwcnNOr1b+
+ CJDdRdqg1kGPNx3W52BEuAx7VOFADB/wXkNQxRlRw5ZkXNu0esQbRymzWgs+pAbxE4wv
+ mdW+AtUSjHlsaNRJjTONU8lC+ccYKPkK4ubFTOtXJvR66B9S/k9LfRcekrTItQGfKBCM
+ Ro1g==
+X-Gm-Message-State: AOAM5339h/bQaGJg+VX0FHyNyR+9DpXvjnqOp6oGnc3y/BvZxhlBoBv7
+ ed20XzTFiwPytAfjJMSIC3qzcA==
+X-Google-Smtp-Source: ABdhPJygO+LIUhXBZipYlpV1NjUWfdUnA48iHtMRa0nv+p1cN8d+bHqiZL+GB9Ig3+I8VNBJDIQMug==
+X-Received: by 2002:adf:de05:: with SMTP id b5mr1650574wrm.299.1589289986709; 
+ Tue, 12 May 2020 06:26:26 -0700 (PDT)
 Received: from localhost.localdomain ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
  by smtp.gmail.com with ESMTPSA id
- g15sm14441844wro.71.2020.05.12.06.26.23
+ g15sm14441844wro.71.2020.05.12.06.26.25
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 12 May 2020 06:26:24 -0700 (PDT)
+ Tue, 12 May 2020 06:26:26 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
-To: lee.jones@linaro.org, srinivas.kandagatla@linaro.org, rui.zhang@intel.com,
- daniel.lezcano@linaro.org, amit.kucheria@verdurent.com
-Subject: [PATCH v2 5/6] MAINTAINERS: add myself as maintainer for Khadas MCU
- drivers
-Date: Tue, 12 May 2020 15:26:12 +0200
-Message-Id: <20200512132613.31507-6-narmstrong@baylibre.com>
+To: khilman@baylibre.com
+Subject: [PATCH v2 6/6] arm64: dts: meson-khadas-vim3: add Khadas MCU nodes
+Date: Tue, 12 May 2020 15:26:13 +0200
+Message-Id: <20200512132613.31507-7-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20200512132613.31507-1-narmstrong@baylibre.com>
 References: <20200512132613.31507-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_062626_555368_368D6C69 
-X-CRM114-Status: GOOD (  11.22  )
+X-CRM114-CacheID: sfid-20200512_062628_377482_53577AF8 
+X-CRM114-Status: GOOD (  12.59  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -104,35 +102,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the HWMON and NVMEM drivers along the MFD drivers and header
-as Maintained by myself.
+Add the Khadas MCU node with active FAN thermal nodes for all the
+Khadas VIM3 variants.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- MAINTAINERS | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ .../boot/dts/amlogic/meson-khadas-vim3.dtsi   | 23 +++++++++++++++++++
+ 1 file changed, 23 insertions(+)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index b816a453b10e..609baa78d810 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -9431,6 +9431,16 @@ F:	include/linux/kdb.h
- F:	include/linux/kgdb.h
- F:	kernel/debug/
+diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
+index 094ecf2222bb..3325e54ea690 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
+@@ -183,6 +183,23 @@
+ 	hdmi-phandle = <&hdmi_tx>;
+ };
  
-+KHADAS MCU MFD DRIVER
-+M:	Neil Armstrong <narmstrong@baylibre.com>
-+L:	linux-amlogic@lists.infradead.org
-+S:	Maintained
-+F:	Documentation/devicetree/bindings/mfd/khadas,mcu.yaml
-+F:	drivers/mfd/khadas-mcu.c
-+F:	include/linux/mfd/khadas-mcu.h
-+F:	drivers/hwmon/khadas-mcu-fan.c
-+F:	drivers/nvmem/khadas-mcu-user-mem.c
++&cpu_thermal {
++	trips {
++		cpu_active: cpu-active {
++			temperature = <80000>; /* millicelsius */
++			hysteresis = <2000>; /* millicelsius */
++			type = "active";
++		};
++	};
 +
- KMEMLEAK
- M:	Catalin Marinas <catalin.marinas@arm.com>
- S:	Maintained
++	cooling-maps {
++		map {
++			trip = <&cpu_active>;
++			cooling-device = <&khadas_mcu THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++		};
++	};
++};
++
+ &ext_mdio {
+ 	external_phy: ethernet-phy@0 {
+ 		/* Realtek RTL8211F (0x001cc916) */
+@@ -222,6 +239,12 @@
+ 	pinctrl-0 = <&i2c_ao_sck_pins>, <&i2c_ao_sda_pins>;
+ 	pinctrl-names = "default";
+ 
++	khadas_mcu: system-controller@18 {
++		compatible = "khadas,mcu";
++		reg = <0x18>;
++		#cooling-cells = <2>;
++	};
++
+ 	gpio_expander: gpio-controller@20 {
+ 		compatible = "ti,tca6408";
+ 		reg = <0x20>;
 -- 
 2.22.0
 
