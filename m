@@ -2,52 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F41891CF2AF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:39:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9280C1CF2B2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:40:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SpmBjhR6mDEdWi1ef1/HHTYiaSqClKlz6zMtX4/9XRM=; b=GLz3GeG53Zs87J
-	yfi/oVjR7IkWoXSToZLxI2JxqQybuLxirL3rAgIMLaYtER/2eecNoE4e4UdgUhqu9ClVQgz6iHbe5
-	AXjcIbgIIxLmGKBB7DS2dZfv92d+61OyfCND4mvaEdQT10oM6t5+dvY9HDC8z8xDaVyRLopMqro8D
-	T6NWeEmAVrP2YOTAQnvJL0aB3/YkjKJhPwoYyJgFhYpeoSyLaz8K9ILEyX1KIE7Ry0r+O3a0jjgjr
-	oMd7M1BldLPZk1NMLtOYyylou1OXeJFCoHvDXFkinyCLAEyGFzLW7UNAiMbIsu/YNvUxKHQIp3KOB
-	2qwRd5Qs0Kebv7OVZnOA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=O76RJ+CiGKxgVAXU5eZh0D3WOxjWyRwj3YA1uVf/iEs=; b=f+Rld756miZctjk7Njhy5ghMb
+	LNPmE4ABfGQ8v8EnRIE4jdLliXpf3tF5zRnlK6A/BP+Fz09CDPdS2htQZYmdzW7y3xMNtvovjl4/V
+	n8MoHFNzzJnnDzg764TkJSEo9E9x67d8Kc9SxwATIdOPKdki/DTgnNYIpeEDEeep3+dX72OakV8Nl
+	QjMHimMpFMgoxOPKQDNnmhPYmBzq9OSa4jCx1vKkRMglciEH74kTntPXbGW0CySMLxYgmWrgjWeeB
+	AnxGgyhfpBQL+Sm9zB1iger1b5mhTcIfjUJhiXTnzsYciFjonhqA36SViJA+Oo3Xkv5HUwWHLxWhl
+	TEHHafkkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYSJl-0008EG-Dk; Tue, 12 May 2020 10:39:21 +0000
+	id 1jYSKj-00009u-SA; Tue, 12 May 2020 10:40:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYSJe-0008Ds-8P
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 10:39:15 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id CE334206DD;
- Tue, 12 May 2020 10:39:12 +0000 (UTC)
+ id 1jYSKS-00005t-JY
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 10:40:06 +0000
+Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
+ [51.254.78.96])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 704F5206DD;
+ Tue, 12 May 2020 10:39:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589279953;
- bh=67Q9fnQD3iRgc2Hqw38NJ/V+neTBan8Gtp9IuNhAMeE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=E5CJxnHJkH9rwGNsGTJ9jRYQHcFVjBm2Ox+5C68XCwaWgqBTqjE5Ui5VSN2mj7mHc
- n642XAw2Y2CkHThua18kYkakLdLI/kiTm/wEc8dvTVd8VvtPmqB+llSLYhKAiTkh2u
- K8kEwKal873f3DEnSn3tbYE0LsrlY7zhMp4Af8+o=
-Date: Tue, 12 May 2020 11:39:09 +0100
-From: Will Deacon <will@kernel.org>
-To: Mark Brown <broonie@kernel.org>
-Subject: Re: [PATCH] arm64: bti: Fix support for userspace only BTI
-Message-ID: <20200512103908.GB3021@willie-the-truck>
-References: <20200512092155.56931-1-broonie@kernel.org>
+ s=default; t=1589279999;
+ bh=4u2DdZnbBOfH5sHqCv28xYPkeReFp8gr/JDYY65Yi48=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=DH7HX+hu1vbOs62ildJh2vK9t5KtpaxktDPdEB2tlwDGMYkOHWB0chJU3wK/ybod+
+ 00KZ8Y8NlXgVSt7iCdPyn4FUppYC6i8BgaHGniYIk9O+v++8uFsAvJdnscAAUkxFIs
+ wFKe1QtNCeHngIo2hJJCTyHLv3lcBRKywcaxXsFY=
+Received: from disco-boy.misterjones.org ([51.254.78.96] helo=www.loen.fr)
+ by disco-boy.misterjones.org with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <maz@kernel.org>)
+ id 1jYSKL-00BcWZ-MH; Tue, 12 May 2020 11:39:57 +0100
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200512092155.56931-1-broonie@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Date: Tue, 12 May 2020 11:39:57 +0100
+From: Marc Zyngier <maz@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] arm64/cpufeature: Add ID_AA64MMFR0_PARANGE_MASK
+In-Reply-To: <1589249606-27177-1-git-send-email-anshuman.khandual@arm.com>
+References: <1589249606-27177-1-git-send-email-anshuman.khandual@arm.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <b01bb1772b291e23ea82ff5855ee7e12@kernel.org>
+X-Sender: maz@kernel.org
+X-SA-Exim-Connect-IP: 51.254.78.96
+X-SA-Exim-Rcpt-To: anshuman.khandual@arm.com,
+ linux-arm-kernel@lists.infradead.org, catalin.marinas@arm.com, will@kernel.org,
+ james.morse@arm.com, linux-kernel@vger.kernel.org,
+ kvmarm@lists.cs.columbia.edu
+X-SA-Exim-Mail-From: maz@kernel.org
+X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
+ SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_033914_316066_3FB1A63C 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20200512_034004_682671_6B791D16 
+X-CRM114-Status: GOOD (  15.17  )
 X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.4 points)
@@ -76,50 +90,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 10:21:55AM +0100, Mark Brown wrote:
-> When setting PTE_MAYBE_GP we check system_supports_bti() but this is
-> true for systems where only CONFIG_BTI is set causing us to enable BTI
-> on some kernel text. Add an extra check for the kernel mode option,
-> using an ifdef due to line length.
+Anshuman,
+
+On 2020-05-12 03:13, Anshuman Khandual wrote:
+> This replaces multiple open encoding (0x7) with 
+> ID_AA64MMFR0_PARANGE_MASK
+> thus cleaning the clutter. It modifies an existing ID_AA64MMFR0 helper 
+> and
+> introduces a new one i.e id_aa64mmfr0_iparange() and 
+> id_aa64mmfr0_parange()
+> respectively.
 > 
-> Fixes: c8027285e366 (arm64: Set GP bit in kernel page tables to enable BTI for the kernel)
-> Signed-off-by: Mark Brown <broonie@kernel.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: Will Deacon <will@kernel.org>
+> Cc: Marc Zyngier <maz@kernel.org>
+> Cc: James Morse <james.morse@arm.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> Cc: kvmarm@lists.cs.columbia.edu
+> 
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 > ---
->  arch/arm64/include/asm/pgtable-prot.h | 4 ++++
->  1 file changed, 4 insertions(+)
+> This applies after (https://patchwork.kernel.org/patch/11541893/).
 > 
-> diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
-> index 310690332896..3f07a044bdfb 100644
-> --- a/arch/arm64/include/asm/pgtable-prot.h
-> +++ b/arch/arm64/include/asm/pgtable-prot.h
-> @@ -32,7 +32,11 @@ extern bool arm64_use_ng_mappings;
->  #define PTE_MAYBE_NG		(arm64_use_ng_mappings ? PTE_NG : 0)
->  #define PMD_MAYBE_NG		(arm64_use_ng_mappings ? PMD_SECT_NG : 0)
->
+>  arch/arm64/include/asm/cpufeature.h | 11 ++++++++++-
+>  arch/arm64/kernel/cpufeature.c      |  5 ++---
+>  arch/arm64/kvm/reset.c              |  9 +++++----
+>  3 files changed, 17 insertions(+), 8 deletions(-)
+> 
+> diff --git a/arch/arm64/include/asm/cpufeature.h
+> b/arch/arm64/include/asm/cpufeature.h
+> index 1291ad5a9ccb..320cfc5b6025 100644
+> --- a/arch/arm64/include/asm/cpufeature.h
+> +++ b/arch/arm64/include/asm/cpufeature.h
+> @@ -706,8 +706,17 @@ void arm64_set_ssbd_mitigation(bool state);
+> 
+>  extern int do_emulate_mrs(struct pt_regs *regs, u32 sys_reg, u32 rt);
+> 
+> -static inline u32 id_aa64mmfr0_parange_to_phys_shift(int parange)
+> +#define ID_AA64MMFR0_PARANGE_MASK 0x7
 
-Might be worth a comment here in case somebody tries to "clean this up"
-later on!
+I still disagree with this 7. Per the letter of the architecture, it
+is wrong and should be 0xf, just like any other property described
+in an ID register.
 
-> +#ifdef CONFIG_ARM64_BTI_KERNEL
->  #define PTE_MAYBE_GP		(system_supports_bti() ? PTE_GP : 0)
-> +#else
-> +#define PTE_MAYBE_GP		0
-> +#endif
+> +
+> +static inline u32 id_aa64mmfr0_parange(u64 mmfr0)
+>  {
+> +	return mmfr0 & ID_AA64MMFR0_PARANGE_MASK;
+> +}
+> +
+> +static inline u32 id_aa64mmfr0_iparange(u64 mmfr0)
 
-I also notice we have a funny check in the vdso code:
+There is also no such thing as an IPA range in the architecture.
+Everything is PA. The only thing that actually describe an IPA
+range is what KVM makes of it.
 
-  if (IS_ENABLED(CONFIG_ARM64_BTI_KERNEL) && system_supports_bti())
+Overall, this patch confuses me more than anything else. I'd rather
+you fix ID_AA64MMFR0_PARANGE_MASK to have the right value and be
+done with it.
 
-but why do we care about CONFIG_ARM64_BTI_KERNEL for the vdso pages?
-
-Will
+         M.
+-- 
+Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
