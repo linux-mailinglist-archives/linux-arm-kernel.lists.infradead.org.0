@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 565F91CF2F9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:58:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32E801CF2F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 12:58:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tYi/4W6Wr23YK3gqaQbh4zj/ZhZyAQiuYU0yOxoYxIE=; b=D/dGYVALznyg7g
-	WCmYZ5ii1vdxMN9CoQXIQQK1n2DLVemEP5OLEMzlB9sF9sbugY9JNRFVny6TBQ1L0JytpdPskimJi
-	fmy2MkopXQqG1x2DozpFIP9saO0zpP10apStxe8SyJpleobGbgAt89rYUA55TAKt+CqTE1wtv9DCA
-	FqK8Em+pPYMnNQK/PtIhwf7hcSaoR8JDsL5B+bwX7a0DbqgXYV/w/RsFKbuNQzB5y+4h9PV4nkbzo
-	wzZdm17bIGHku+r4c5GEJaohG5jnfwGY9qD488ypu6IJL3m72k3kBvSKguBncqx6fgFsdKoIofpZ6
-	6CHPznjwVPNBAbRin00Q==;
+	List-Owner; bh=nMwteibxdnHVwvX/mOzBABdcOplC6EDvA+mWZ4hU9lo=; b=NCupv0QlDKB48R
+	2XbrssnelYqQsNIPyq+VQWDGPh3GIUEJUc3+DNmZEURBmKaHK1dJW63IiAsbULd9ZKtKUGNzuewBS
+	bXQ46sAL4Ce1/Dmz4DGc1Jonqs9419q7Ust5LAEtBW1VYFEEF9U9ObYifI7F3JSttZG2aY0zGsAts
+	S0pu14Sz7uf3l6G+MMwjaumcPpXP3hTMbge+H6mf1B55keUELFJHFXuXBOQce7j3vNmsQ00LC1zje
+	fYyACrJwdDdrIpiUCsXU62e0BrHUBF6GDNtyJNQH+geBEvyAy+/O7ASNM9CpQexAUlqUH+r6VDfqQ
+	xtoEnmr7qxuSm6GGL/VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYScb-0005cT-Rq; Tue, 12 May 2020 10:58:49 +0000
+	id 1jYScH-0005IH-Sf; Tue, 12 May 2020 10:58:29 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYSbq-00055Q-9p; Tue, 12 May 2020 10:58:03 +0000
-X-UUID: cbd941b8b8194d3ba0099579d4178b79-20200512
+ id 1jYSbo-00055K-W8; Tue, 12 May 2020 10:58:02 +0000
+X-UUID: c7ffb933f7a341759a084e31fb553b9d-20200512
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
  s=dk; 
  h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=WOoU1J20WnftJm5Uc9Ijpskv9v6giRhPTTZph1ObLMg=; 
- b=VO84Uakq8sXEycU/82wnvka9mCVrsyNXVd+UeFFoLMeiXFkqbO8nmEtkVLVmJkV2G3lEKebE+oCqk9P5qAZJtW4CcobF6M5tS1vRDbJN7WiFqo0niwnil60rTkwVfmyvG1Rf1rGEtmbFcniepvGBlQUIlI0O9IaF7NlMy3m6NqQ=;
-X-UUID: cbd941b8b8194d3ba0099579d4178b79-20200512
+ bh=IKn33P9Cpgwi7sGItZ+ecq2Xst+yvAek6OLFdWPgstE=; 
+ b=E0Oj4jyaFKBvi3Z7TKcUExZET0Hp1WFKSQqkEabtLC9ugEMvn5csM//v/8uBcaIo44YqURZ3IGm2sy+t+cawWJuAHHGI+IVwCYeA2UxEiTpdHnitTes0hDd27SjPmM3knN67fF6xENktXk3gj8M2TZGKGXYJE45hQBmwA4IT6Zk=;
+X-UUID: c7ffb933f7a341759a084e31fb553b9d-20200512
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1669141065; Tue, 12 May 2020 02:57:47 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
+ with ESMTP id 340804751; Tue, 12 May 2020 02:57:47 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Tue, 12 May 2020 03:47:51 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
  15.0.1497.2; Tue, 12 May 2020 18:47:51 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
@@ -46,18 +46,18 @@ From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
  <asutoshd@codeaurora.org>
-Subject: [PATCH v1 3/4] scsi: ufs: Fix index of attributes query for
- WriteBooster feature
-Date: Tue, 12 May 2020 18:47:49 +0800
-Message-ID: <20200512104750.8711-4-stanley.chu@mediatek.com>
+Subject: [PATCH v1 4/4] scsi: ufs: Fix WriteBooster flush during runtime
+ suspend
+Date: Tue, 12 May 2020 18:47:50 +0800
+Message-ID: <20200512104750.8711-5-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20200512104750.8711-1-stanley.chu@mediatek.com>
 References: <20200512104750.8711-1-stanley.chu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_035802_362384_1F9E91C2 
-X-CRM114-Status: GOOD (  11.89  )
+X-CRM114-CacheID: sfid-20200512_035801_045861_708BE260 
+X-CRM114-Status: GOOD (  14.88  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,143 +97,107 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For WriteBooster feature related attributes, the index used by
-query shall be LUN ID if LU Dedicated buffer mode is enabled.
+Currently UFS host driver promises VCC supply if UFS device
+needs to do WriteBooster flush during runtime suspend.
+
+However the UFS specification mentions,
+
+"While the flushing operation is in progress, the device is
+in Active power mode."
+
+Therefore UFS host driver needs to promise more: Keep UFS
+device as "Active power mode", otherwise UFS device shall not
+do any flush if device enters Sleep or PowerDown power mode.
+
+Fix this by not changing device power mode if WriteBooster
+flush is required in ufshcd_suspend().
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 ---
- drivers/scsi/ufs/ufs-sysfs.c | 13 +++++++++++--
- drivers/scsi/ufs/ufshcd.c    | 16 ++++++++++------
- drivers/scsi/ufs/ufshcd.h    |  2 +-
- 3 files changed, 22 insertions(+), 9 deletions(-)
+ drivers/scsi/ufs/ufs.h    |  1 -
+ drivers/scsi/ufs/ufshcd.c | 39 +++++++++++++++++++--------------------
+ 2 files changed, 19 insertions(+), 21 deletions(-)
 
-diff --git a/drivers/scsi/ufs/ufs-sysfs.c b/drivers/scsi/ufs/ufs-sysfs.c
-index a0b3763e1dc2..2d71d232a69d 100644
---- a/drivers/scsi/ufs/ufs-sysfs.c
-+++ b/drivers/scsi/ufs/ufs-sysfs.c
-@@ -637,7 +637,7 @@ static ssize_t _name##_show(struct device *dev,				\
- 	int ret;							\
- 	struct ufs_hba *hba = dev_get_drvdata(dev);			\
- 	if (ufshcd_is_wb_flags(QUERY_FLAG_IDN##_uname))			\
--		index = ufshcd_wb_get_flag_index(hba);			\
-+		index = ufshcd_wb_get_query_index(hba);			\
- 	pm_runtime_get_sync(hba->dev);					\
- 	ret = ufshcd_query_flag(hba, UPIU_QUERY_OPCODE_READ_FLAG,	\
- 		QUERY_FLAG_IDN##_uname, index, &flag);			\
-@@ -680,6 +680,12 @@ static const struct attribute_group ufs_sysfs_flags_group = {
- 	.attrs = ufs_sysfs_device_flags,
+diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
+index b3135344ab3f..9e4bc2e97ada 100644
+--- a/drivers/scsi/ufs/ufs.h
++++ b/drivers/scsi/ufs/ufs.h
+@@ -577,7 +577,6 @@ struct ufs_dev_info {
+ 	u32 d_ext_ufs_feature_sup;
+ 	u8 b_wb_buffer_type;
+ 	u32 d_wb_alloc_units;
+-	bool keep_vcc_on;
+ 	u8 b_presrv_uspc_en;
  };
  
-+static inline bool ufshcd_is_wb_attrs(enum attr_idn idn)
-+{
-+	return ((idn >= QUERY_ATTR_IDN_WB_FLUSH_STATUS) &&
-+		(idn <= QUERY_ATTR_IDN_CURR_WB_BUFF_SIZE));
-+}
-+
- #define UFS_ATTRIBUTE(_name, _uname)					\
- static ssize_t _name##_show(struct device *dev,				\
- 	struct device_attribute *attr, char *buf)			\
-@@ -687,9 +693,12 @@ static ssize_t _name##_show(struct device *dev,				\
- 	struct ufs_hba *hba = dev_get_drvdata(dev);			\
- 	u32 value;							\
- 	int ret;							\
-+	u8 index = 0;							\
-+	if (ufshcd_is_wb_attrs(QUERY_ATTR_IDN##_uname))			\
-+		index = ufshcd_wb_get_query_index(hba);			\
- 	pm_runtime_get_sync(hba->dev);					\
- 	ret = ufshcd_query_attr(hba, UPIU_QUERY_OPCODE_READ_ATTR,	\
--		QUERY_ATTR_IDN##_uname, 0, 0, &value);			\
-+		QUERY_ATTR_IDN##_uname, index, 0, &value);		\
- 	pm_runtime_put_sync(hba->dev);					\
- 	if (ret)							\
- 		return -EINVAL;						\
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index b298bdd3e697..169a3379e468 100644
+index 169a3379e468..2d0aff8ac260 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -5212,7 +5212,7 @@ static int ufshcd_wb_ctrl(struct ufs_hba *hba, bool enable)
- 	else
- 		opcode = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+@@ -8101,8 +8101,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba *hba)
+ 	    !hba->dev_info.is_lu_power_on_wp) {
+ 		ufshcd_setup_vreg(hba, false);
+ 	} else if (!ufshcd_is_ufs_dev_active(hba)) {
+-		if (!hba->dev_info.keep_vcc_on)
+-			ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
++		ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
+ 		if (!ufshcd_is_link_active(hba)) {
+ 			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq);
+ 			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq2);
+@@ -8172,6 +8171,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ 	enum ufs_pm_level pm_lvl;
+ 	enum ufs_dev_pwr_mode req_dev_pwr_mode;
+ 	enum uic_link_state req_link_state;
++	bool keep_curr_dev_pwr_mode = false;
  
--	index = ufshcd_wb_get_flag_index(hba);
-+	index = ufshcd_wb_get_query_index(hba);
- 	ret = ufshcd_query_flag_retry(hba, opcode,
- 				      QUERY_FLAG_IDN_WB_EN, index, NULL);
- 	if (ret) {
-@@ -5238,7 +5238,7 @@ static int ufshcd_wb_toggle_flush_during_h8(struct ufs_hba *hba, bool set)
- 	else
- 		val = UPIU_QUERY_OPCODE_CLEAR_FLAG;
+ 	hba->pm_op_in_progress = 1;
+ 	if (!ufshcd_is_shutdown_pm(pm_op)) {
+@@ -8226,28 +8226,27 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+ 			/* make sure that auto bkops is disabled */
+ 			ufshcd_disable_auto_bkops(hba);
+ 		}
++
+ 		/*
+-		 * With wb enabled, if the bkops is enabled or if the
+-		 * configured WB type is 70% full, keep vcc ON
+-		 * for the device to flush the wb buffer
++		 * If device needs to do BKOP or WB buffer flush, keep device
++		 * power mode as "active power mode" and its VCC supply.
+ 		 */
+-		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
+-		    ufshcd_wb_keep_vcc_on(hba))
+-			hba->dev_info.keep_vcc_on = true;
+-		else
+-			hba->dev_info.keep_vcc_on = false;
+-	} else {
+-		hba->dev_info.keep_vcc_on = false;
++		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
++			ufshcd_wb_keep_vcc_on(hba);
+ 	}
  
--	index = ufshcd_wb_get_flag_index(hba);
-+	index = ufshcd_wb_get_query_index(hba);
- 	return ufshcd_query_flag_retry(hba, val,
- 				QUERY_FLAG_IDN_WB_BUFF_FLUSH_DURING_HIBERN8,
- 				index, NULL);
-@@ -5261,7 +5261,7 @@ static int ufshcd_wb_buf_flush_enable(struct ufs_hba *hba)
- 	if (!ufshcd_is_wb_allowed(hba) || hba->wb_buf_flush_enabled)
- 		return 0;
+-	if ((req_dev_pwr_mode != hba->curr_dev_pwr_mode) &&
+-	    ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
+-	    !ufshcd_is_runtime_pm(pm_op))) {
+-		/* ensure that bkops is disabled */
+-		ufshcd_disable_auto_bkops(hba);
+-		ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
+-		if (ret)
+-			goto enable_gating;
++	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
++		if ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
++		    !ufshcd_is_runtime_pm(pm_op)) {
++			/* ensure that bkops is disabled */
++			ufshcd_disable_auto_bkops(hba);
++		}
++
++		if (!keep_curr_dev_pwr_mode) {
++			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
++			if (ret)
++				goto enable_gating;
++		}
+ 	}
  
--	index = ufshcd_wb_get_flag_index(hba);
-+	index = ufshcd_wb_get_query_index(hba);
- 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_SET_FLAG,
- 				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN,
- 				      index, NULL);
-@@ -5283,7 +5283,7 @@ static int ufshcd_wb_buf_flush_disable(struct ufs_hba *hba)
- 	if (!ufshcd_is_wb_allowed(hba) || !hba->wb_buf_flush_enabled)
- 		return 0;
- 
--	index = ufshcd_wb_get_flag_index(hba);
-+	index = ufshcd_wb_get_query_index(hba);
- 	ret = ufshcd_query_flag_retry(hba, UPIU_QUERY_OPCODE_CLEAR_FLAG,
- 				      QUERY_FLAG_IDN_WB_BUFF_FLUSH_EN,
- 				      index, NULL);
-@@ -5303,10 +5303,12 @@ static bool ufshcd_wb_presrv_usrspc_keep_vcc_on(struct ufs_hba *hba,
- {
- 	u32 cur_buf;
- 	int ret;
-+	u8 index;
- 
-+	index = ufshcd_wb_get_query_index(hba);
- 	ret = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_READ_ATTR,
- 					      QUERY_ATTR_IDN_CURR_WB_BUFF_SIZE,
--					      0, 0, &cur_buf);
-+					      index, 0, &cur_buf);
- 	if (ret) {
- 		dev_err(hba->dev, "%s dCurWriteBoosterBufferSize read failed %d\n",
- 			__func__, ret);
-@@ -5329,6 +5331,7 @@ static bool ufshcd_wb_keep_vcc_on(struct ufs_hba *hba)
- {
- 	int ret;
- 	u32 avail_buf;
-+	u8 index;
- 
- 	if (!ufshcd_is_wb_allowed(hba))
- 		return false;
-@@ -5343,9 +5346,10 @@ static bool ufshcd_wb_keep_vcc_on(struct ufs_hba *hba)
- 	 * buffer (dCurrentWriteBoosterBufferSize). There's no point in
- 	 * keeping vcc on when current buffer is empty.
- 	 */
-+	index = ufshcd_wb_get_query_index(hba);
- 	ret = ufshcd_query_attr_retry(hba, UPIU_QUERY_OPCODE_READ_ATTR,
- 				      QUERY_ATTR_IDN_AVAIL_WB_BUFF_SIZE,
--				      0, 0, &avail_buf);
-+				      index, 0, &avail_buf);
- 	if (ret) {
- 		dev_warn(hba->dev, "%s dAvailableWriteBoosterBufferSize read failed %d\n",
- 			 __func__, ret);
-diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 23a434c03c2a..ab0d180dad6c 100644
---- a/drivers/scsi/ufs/ufshcd.h
-+++ b/drivers/scsi/ufs/ufshcd.h
-@@ -861,7 +861,7 @@ static inline bool ufshcd_keep_autobkops_enabled_except_suspend(
- 	return hba->caps & UFSHCD_CAP_KEEP_AUTO_BKOPS_ENABLED_EXCEPT_SUSPEND;
- }
- 
--static inline u8 ufshcd_wb_get_flag_index(struct ufs_hba *hba)
-+static inline u8 ufshcd_wb_get_query_index(struct ufs_hba *hba)
- {
- 	if (hba->dev_info.b_wb_buffer_type == WB_BUF_MODE_LU_DEDICATED)
- 		return hba->dev_info.wb_dedicated_lu;
+ 	flush_work(&hba->eeh_work);
 -- 
 2.18.0
 _______________________________________________
