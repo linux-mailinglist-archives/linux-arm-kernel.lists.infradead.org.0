@@ -2,43 +2,43 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 464CD1CFF9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 22:40:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 054B01CFF9B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 22:40:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z3JILmCwbtyEcmBUkntqe9lk90P/5rDGnDfZ1KWNdy4=; b=ArT8iXaMDXpNId
-	9qEb0sBOFLVt2VzVYv2Ut72ced6VkyVc7EcJ4m0LxAnzgSFboDeQOuw+azdM9aYtXBjiCoX2FAIm+
-	kkPZgfhxb3ZIrXqJSMs0WE16n5vGMgFByCkhfTJOvh4foTKUJeeli7652na38tj3GqP75xAah8uo5
-	iKjOO4Zbl3X61cFfb/gYa70F9v76wf8bIMAl+PRP89GZCtFJ4uOy1NZKrQZR6ZA1Cl9TCZujEiw1q
-	bXZPH/eccs3VUm9+EEevcyGfSlj6Vpq1aoQnanDOMzegf3NLnBY1iu9Ftf243sc4h/opR6yOvUmov
-	ewGpzlLTEn0Ibn5+lGzQ==;
+	List-Owner; bh=XWXaeVmAFUqAO//SDCJCnU8kDTpbcmqbNta5x6NOs9k=; b=d9uVBm0d8dHfmS
+	SFhCMoW2KAy45nwt7nF8Aqo7fQxc2RbNIFTex9Bl/QYgkmx3+5RDv+jMVeA2lIN3thzgoQib82cV0
+	y8KYZ23z4/9NYjw7Pz/KSUogaPIIRLM7lZtj8W4ByLzqwuSXqrBVFraB7sHyjFHuE/3CJY6wD+395
+	UZOSVE+9T28oJgS/HgbErze8M3TeIH3QLnw8MXZqhvhxIPcdv2XD+yY3fFZ0+9v7l71EyiIHZtwZB
+	ftmhQGa1o+OXsO0045G/Angd139wgTgnx+qeH6fhShmWV5/k856PDijfRnKFcI4fT+/wOalrP6Fg1
+	naRj7spG051IAZ2HDffA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYbhO-0007rU-6h; Tue, 12 May 2020 20:40:22 +0000
+	id 1jYbhb-00029f-FC; Tue, 12 May 2020 20:40:35 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYbgD-0007Af-8J
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 20:39:10 +0000
+ id 1jYbgF-0007Cr-CI
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 20:39:12 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 58BC38047;
- Tue, 12 May 2020 20:39:57 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 8183A812F;
+ Tue, 12 May 2020 20:39:59 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 3/6] soc: ti: omap-prm: Configure sgx power domain for am3 and
- am4
-Date: Tue, 12 May 2020 13:38:49 -0700
-Message-Id: <20200512203852.29499-4-tony@atomide.com>
+Subject: [PATCH 4/6] soc: ti: omap-prm: Configure omap4 and 5 l4_abe power
+ domain
+Date: Tue, 12 May 2020 13:38:50 -0700
+Message-Id: <20200512203852.29499-5-tony@atomide.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200512203852.29499-1-tony@atomide.com>
 References: <20200512203852.29499-1-tony@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_133909_392629_C93B7A73 
-X-CRM114-Status: UNSURE (   9.40  )
+X-CRM114-CacheID: sfid-20200512_133911_501136_1F8A810D 
+X-CRM114-Status: UNSURE (   7.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -69,42 +69,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Let's configure only sgx power domain for am3 and am4 to start with.
+Let's add omap4 and 5 l4_abe interconnect instance for the power
+domain.
 
 Signed-off-by: Tony Lindgren <tony@atomide.com>
 ---
- drivers/soc/ti/omap_prm.c | 12 ++++++++++--
- 1 file changed, 10 insertions(+), 2 deletions(-)
+ drivers/soc/ti/omap_prm.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
 --- a/drivers/soc/ti/omap_prm.c
 +++ b/drivers/soc/ti/omap_prm.c
-@@ -191,7 +191,11 @@ static const struct omap_prm_data am3_prm_data[] = {
- 	{ .name = "per", .base = 0x44e00c00, .rstctrl = 0x0, .rstmap = am3_per_rst_map, .flags = OMAP_PRM_HAS_RSTCTRL, .clkdm_name = "pruss_ocp" },
- 	{ .name = "wkup", .base = 0x44e00d00, .rstctrl = 0x0, .rstst = 0xc, .rstmap = am3_wkup_rst_map, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
- 	{ .name = "device", .base = 0x44e00f00, .rstctrl = 0x0, .rstst = 0x8, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
--	{ .name = "gfx", .base = 0x44e01100, .rstctrl = 0x4, .rstst = 0x14, .rstmap = rst_map_0, .clkdm_name = "gfx_l3" },
-+	{
-+		.name = "gfx", .base = 0x44e01100,
-+		.pwrstctrl = 0, .pwrstst = 0x10, .dmap = &omap_prm_noinact,
-+		.rstctrl = 0x4, .rstst = 0x14, .rstmap = rst_map_0, .clkdm_name = "gfx_l3",
-+	},
- 	{ },
- };
+@@ -150,6 +150,10 @@ static const struct omap_rst_map rst_map_012[] = {
  
-@@ -207,7 +211,11 @@ static const struct omap_rst_map am4_device_rst_map[] = {
- };
- 
- static const struct omap_prm_data am4_prm_data[] = {
--	{ .name = "gfx", .base = 0x44df0400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_0, .clkdm_name = "gfx_l3" },
+ static const struct omap_prm_data omap4_prm_data[] = {
+ 	{ .name = "tesla", .base = 0x4a306400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
 +	{
-+		.name = "gfx", .base = 0x44df0400,
-+		.pwrstctrl = 0, .pwrstst = 0x4, .dmap = &omap_prm_onoff_noauto,
-+		.rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_0, .clkdm_name = "gfx_l3",
++		.name = "abe", .base = 0x4a306500,
++		.pwrstctrl = 0, .pwrstst = 0x4, .dmap = &omap_prm_all,
 +	},
- 	{ .name = "per", .base = 0x44df0800, .rstctrl = 0x10, .rstst = 0x14, .rstmap = am4_per_rst_map, .clkdm_name = "pruss_ocp" },
- 	{ .name = "wkup", .base = 0x44df2000, .rstctrl = 0x10, .rstst = 0x14, .rstmap = am3_wkup_rst_map, .flags = OMAP_PRM_HAS_NO_CLKDM },
- 	{ .name = "device", .base = 0x44df4000, .rstctrl = 0x0, .rstst = 0x4, .rstmap = am4_device_rst_map, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
+ 	{ .name = "core", .base = 0x4a306700, .rstctrl = 0x210, .rstst = 0x214, .clkdm_name = "ducati", .rstmap = rst_map_012 },
+ 	{ .name = "ivahd", .base = 0x4a306f00, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_012 },
+ 	{ .name = "device", .base = 0x4a307b00, .rstctrl = 0x0, .rstst = 0x4, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
+@@ -158,6 +162,10 @@ static const struct omap_prm_data omap4_prm_data[] = {
+ 
+ static const struct omap_prm_data omap5_prm_data[] = {
+ 	{ .name = "dsp", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
++	{
++		.name = "abe", .base = 0x4ae06500,
++		.pwrstctrl = 0, .pwrstst = 0x4, .dmap = &omap_prm_nooff,
++	},
+ 	{ .name = "core", .base = 0x4ae06700, .rstctrl = 0x210, .rstst = 0x214, .clkdm_name = "ipu", .rstmap = rst_map_012 },
+ 	{ .name = "iva", .base = 0x4ae07200, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_012 },
+ 	{ .name = "device", .base = 0x4ae07c00, .rstctrl = 0x0, .rstst = 0x4, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
 -- 
 2.26.2
 
