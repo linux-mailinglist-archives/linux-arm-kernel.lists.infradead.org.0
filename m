@@ -2,68 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EF2B1CF17A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:22:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6C641CF182
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 11:23:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=qJoCs8GFCfujvajHOhWsm2cHxqbivmsYPIQPZSgaJpY=; b=d0biqRqVK5t8xz
-	U7nvF1M04dh7P9Ad9UTrQdunrI+PeNpRPSJZ9Q59WlJZIU9WCUwJU549Pyx7P9KyUiJ7dyXq9YFD+
-	ALXT6GqY5LFxpa8NMDZeEJ5Y46Fc/9d1daPsJgmrNjJKWA9l+hddeUtViSlmk7sSvifLWvHlQSzpJ
-	JDLO0tiRvFNNANga7p2EMVIQESabQF2iPQqTlE0lOJsLzzjR8CPu/Yx/9LRjt9SsZYw/tR8N4y09O
-	vXdNvInMx1aFlzdH8Lws86pXd5IrLenItyJk62YQg4Rhpowru1qx1SgvW9j5ttWvvrlbOgiyNbLTz
-	TPjeqP6vy/6evt8sD+8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=V8KI/NjUAhV5wqSiAEBwImKACAZs6GpxHAX0XX6dnag=; b=KBXyfF/lu5Vf3GAQkWNuqyWPJ
+	KFdnhPu2NMbe+etcJskYe02nROEZ1+6OOc7WH//VGNW4sVM9wIPfJSvJqQxTl12cU3dIpHl5+ujhp
+	GpRN/4GFd2eX56jwWuwJCromvhQyNRdhLCmC3D8v9U4Uniu2qQ2+YGwvIGTaGzRYNBokW5oTrJ1hv
+	Vp3QCorOlgfOdbmoQM5KrwmkQTH1+PALYQmMAPxbm5QtUyDXvlFUo5Zqr4k/TPU/BrJE0CBA4nD8N
+	XQHS9cc9kmqk6320MRacPuQmvQz9ikNbH+KUxhdUFWo2G60AXBd0AxKpfCWz7KSwK3rg9T3YKxnvX
+	HnQE6/BXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYR75-00081q-F0; Tue, 12 May 2020 09:22:11 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYR6x-00081Q-9D
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:22:04 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 55CE320714;
- Tue, 12 May 2020 09:22:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589275322;
- bh=9ssLo9wzeqya8oOBIE8Gj0vHMP4Ufl6hFUWoX/UARAw=;
- h=From:To:Cc:Subject:Date:From;
- b=axhWyR0kluBnRuDpTJoG9lURKqPngAPgU1fPyKB9dKK9vz3UqGsXWtfBbdHUoCiho
- Q/8aOuUjeVb9YiHhPsOpMXYcJjF/ZvdU/Gt0JO+/yHgF0sPzVgqiISH3RKcKaIjrdy
- gq2316i1iLqsUgb5RhWqB+uovdq+dmWZgeiI1CRs=
-From: Mark Brown <broonie@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH] arm64: bti: Fix support for userspace only BTI
-Date: Tue, 12 May 2020 10:21:55 +0100
-Message-Id: <20200512092155.56931-1-broonie@kernel.org>
-X-Mailer: git-send-email 2.20.1
+	id 1jYR87-0008Lj-5T; Tue, 12 May 2020 09:23:15 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYR7z-0008Kz-Uy
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 09:23:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F221A1045;
+ Tue, 12 May 2020 02:23:06 -0700 (PDT)
+Received: from [10.37.12.83] (unknown [10.37.12.83])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 65BAC3F305;
+ Tue, 12 May 2020 02:23:05 -0700 (PDT)
+Subject: Re: [PATCH] memory/samsung: reduce unnecessary mutex lock area
+To: Krzysztof Kozlowski <krzk@kernel.org>
+References: <20200508131338.32956-1-bernard@vivo.com>
+ <20200512065023.GA10741@kozik-lap>
+ <e762ce12-eff0-d3a5-f083-2b592921de59@arm.com>
+ <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
+From: Lukasz Luba <lukasz.luba@arm.com>
+Message-ID: <fd463b97-6db7-f7ba-c4bd-5c709a4898c0@arm.com>
+Date: Tue, 12 May 2020 10:23:03 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
+In-Reply-To: <CAJKOXPekrkyDf2TMCnX7Nvbdaj-JQwuyqrsurFM4moALqVx8Sw@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_022203_343640_AC3135E6 
-X-CRM114-Status: UNSURE (   9.29  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200512_022308_046375_FAEE4879 
+X-CRM114-Status: GOOD (  21.37  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,42 +66,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: opensource.kernel@vivo.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-pm@vger.kernel.org, Bernard Zhao <bernard@vivo.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When setting PTE_MAYBE_GP we check system_supports_bti() but this is
-true for systems where only CONFIG_BTI is set causing us to enable BTI
-on some kernel text. Add an extra check for the kernel mode option,
-using an ifdef due to line length.
 
-Fixes: c8027285e366 (arm64: Set GP bit in kernel page tables to enable BTI for the kernel)
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- arch/arm64/include/asm/pgtable-prot.h | 4 ++++
- 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/include/asm/pgtable-prot.h b/arch/arm64/include/asm/pgtable-prot.h
-index 310690332896..3f07a044bdfb 100644
---- a/arch/arm64/include/asm/pgtable-prot.h
-+++ b/arch/arm64/include/asm/pgtable-prot.h
-@@ -32,7 +32,11 @@ extern bool arm64_use_ng_mappings;
- #define PTE_MAYBE_NG		(arm64_use_ng_mappings ? PTE_NG : 0)
- #define PMD_MAYBE_NG		(arm64_use_ng_mappings ? PMD_SECT_NG : 0)
- 
-+#ifdef CONFIG_ARM64_BTI_KERNEL
- #define PTE_MAYBE_GP		(system_supports_bti() ? PTE_GP : 0)
-+#else
-+#define PTE_MAYBE_GP		0
-+#endif
- 
- #define PROT_DEFAULT		(_PROT_DEFAULT | PTE_MAYBE_NG)
- #define PROT_SECT_DEFAULT	(_PROT_SECT_DEFAULT | PMD_MAYBE_NG)
--- 
-2.20.1
+On 5/12/20 10:05 AM, Krzysztof Kozlowski wrote:
+> On Tue, 12 May 2020 at 10:47, Lukasz Luba <lukasz.luba@arm.com> wrote:
+>>
+>> Hi Krzysztof,
+>>
+>> I am sorry, I was a bit busy recently.
+>>
+>> On 5/12/20 7:50 AM, Krzysztof Kozlowski wrote:
+>>> On Fri, May 08, 2020 at 06:13:38AM -0700, Bernard Zhao wrote:
+>>>> Maybe dmc->df->lock is unnecessary to protect function
+>>>> exynos5_dmc_perf_events_check(dmc). If we have to protect,
+>>>> dmc->lock is more better and more effective.
+>>>> Also, it seems not needed to protect "if (ret) & dev_warn"
+>>>> branch.
+>>>>
+>>>> Signed-off-by: Bernard Zhao <bernard@vivo.com>
+>>>> ---
+>>>>    drivers/memory/samsung/exynos5422-dmc.c | 6 ++----
+>>>>    1 file changed, 2 insertions(+), 4 deletions(-)
+>>>
+>>> I checked the concurrent accesses and it looks correct.
+>>>
+>>> Lukasz, any review from your side?
+>>
+>> The lock from devfreq lock protects from a scenario when
+>> concurrent access from devfreq framework uses internal dmc fields 'load'
+>> and 'total' (which are set to 'busy_time', 'total_time').
+>> The .get_dev_status can be called at any time (even due to thermal
+>> devfreq cooling action) and reads above fields.
+>> That's why the calculation of the new values inside dmc is protected.
+> 
+> I looked at this path (get_dev_status) and currently in devfreq it
+> will be only called from update_devfreq() -> get_target_freq()... at
+> least when looking at devfreq core and governors. On the other hand
+> you are right that this is public function and this call scenario
+> might change. It could be called directly from other paths sooner or
+> later.
 
+Indeed, I am currently changing this while I am adding devfreq devices
+to the Energy Model.
+
+> 
+>> This patch should not be taken IMO. Maybe we can release lock before the
+>> if statement, just to speed-up.
+> 
+> Yep.
+> 
+> Bernard, you can send just this part of the patch.
+
+Thank you Bernard and please submit the patch v2.
+
+> 
+> Best regards,
+> Krzysztof
+> 
+
+Thank you Krzysztof for your time spent on this.
+
+
+Regards,
+Lukasz
 
 _______________________________________________
 linux-arm-kernel mailing list
