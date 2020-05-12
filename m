@@ -2,70 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09AB61CF3EB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:01:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BA421CF3F6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 14:04:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+Io8w8fzJzZj+R37+YAF1dxclgRZ9nmolnZ4XRVWQ34=; b=cK6aLda18n0ZoICIL3k2p6Ew8
-	3BPSOTvbgzMAIk+FCctpf/NntGpd4fdaWBRl9vVo4qhG+74cps6Ud+Lzq1YKCdk+zgBfeXKG8ES9c
-	FgJ7zmFauoV4pQMQOo1uYQJGFhOPWEX3MCwi/1+BAjJj7E1hbaKjsKvMEMpXUGympP65RALsynAAX
-	QJsP7+eD+nXtrpruQgZHvPAEnIXmdRD97Mst/OVrh49ghPKqX62LeJTHgXzCFk/TDAx/oXk0JoQjW
-	AQp/SflXV0Ez+nOBMvwWyvCYVPRrm2x6ks+Xg0pH4MfM6RRQGtuBcMH9axP8TT0qkRZDtqU7bfFrp
-	UaasS0f1g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gS/zZ8drceq/yzgb/0YydAO4cy8Ge6DfKYssm4uZfmY=; b=I4uWAHMKOMiBNG
+	UWv0q2cQPYdLBp7BK5HViSMacKF9okXEArVGjn6sELgn8DZfC/S9riSJnHp3S94RRNsKm2KUbwwOQ
+	KvqwyyL41LoDFasgPcv9gkiORbWKDJE49wXM4I1sEt/tZ8h86QX9KcXOeDYSC6T/nNKRwqjlNFz+q
+	GBSCOzoLUC62TuFdxU+XlmL1ul0XPTgIVyBpYw5S55utADQbaaiXOJ/JXbCT+KOydfyDlaKxyKdzB
+	3t9fPvPJN/xYWAN/7DFW9MfA75iofkgrUGhHAdEFmdUny3O3wLiFTGkHpRNaNdUVOYRWINGrxLUzF
+	7oxi4X+Q8PbR47JF8k9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYTaw-0000aB-E7; Tue, 12 May 2020 12:01:10 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYTao-0000Zm-Pw
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 12:01:04 +0000
-Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E3FF12072B;
- Tue, 12 May 2020 12:01:01 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589284862;
- bh=+19p5XIcv3Fn8caYpHgMAXmURP1D09S+oPCvaWwp5Gg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=pdH9g8V1Wnza/+RRyA0E3HwWZfJuCA+O0RftPzXYidnRyEOmrg+fqVeFnT15HYN5E
- ao+bvWJv0ZYbdtEdWoQQuVRYU2KT2eY86F+B0XR3uxEwtaeu4QX3m1pS8i7MA30Bwi
- RFK73wwaeCQHOsM0YJ3lmZg+4a0fwVQEDHE0Mh4k=
-Date: Tue, 12 May 2020 13:00:59 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH] arm64: kconfig: Update and comment GCC version check for
- kernel BTI
-Message-ID: <20200512120059.GF5110@sirena.org.uk>
-References: <20200512115458.4985-1-will@kernel.org>
+	id 1jYTeU-0001gp-Rp; Tue, 12 May 2020 12:04:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYTeK-0001fs-1b
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 12:04:42 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 073B130E;
+ Tue, 12 May 2020 05:04:38 -0700 (PDT)
+Received: from [192.168.0.14] (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9F7063F71E;
+ Tue, 12 May 2020 05:04:36 -0700 (PDT)
+Subject: Re: [PATCH 08/26] KVM: arm64: Use TTL hint in when invalidating
+ stage-2 translations
+To: Andrew Scull <ascull@google.com>
+References: <20200422120050.3693593-1-maz@kernel.org>
+ <20200422120050.3693593-9-maz@kernel.org>
+ <20200507151321.GH237572@google.com>
+From: James Morse <james.morse@arm.com>
+Message-ID: <63e16fdd-fe1b-07d3-23b7-cd99170fdd59@arm.com>
+Date: Tue, 12 May 2020 13:04:31 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-In-Reply-To: <20200512115458.4985-1-will@kernel.org>
-X-Cookie: The only perfect science is hind-sight.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200507151321.GH237572@google.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_050102_861692_9898D85C 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200512_050440_522583_4659A6B3 
+X-CRM114-Status: GOOD (  12.23  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,66 +66,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3264054940793631942=="
+Cc: Catalin Marinas <catalin.marinas@arm.com>, kvm@vger.kernel.org,
+ Marc Zyngier <maz@kernel.org>, Dave Martin <Dave.Martin@arm.com>,
+ George Cherian <gcherian@marvell.com>,
+ "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ Andre Przywara <andre.przywara@arm.com>, Will Deacon <will@kernel.org>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Andrew,
 
---===============3264054940793631942==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qftxBdZWiueWNAVY"
-Content-Disposition: inline
+On 07/05/2020 16:13, Andrew Scull wrote:
+>> @@ -176,7 +177,7 @@ static void clear_stage2_pud_entry(struct kvm_s2_mmu *mmu, pud_t *pud, phys_addr
+>>  	pmd_t *pmd_table __maybe_unused = stage2_pmd_offset(kvm, pud, 0);
+>>  	VM_BUG_ON(stage2_pud_huge(kvm, *pud));
+>>  	stage2_pud_clear(kvm, pud);
+>> -	kvm_tlb_flush_vmid_ipa(mmu, addr);
+>> +	kvm_tlb_flush_vmid_ipa(mmu, addr, S2_NO_LEVEL_HINT);
+>>  	stage2_pmd_free(kvm, pmd_table);
+>>  	put_page(virt_to_page(pud));
+>>  }
+>> @@ -186,7 +187,7 @@ static void clear_stage2_pmd_entry(struct kvm_s2_mmu *mmu, pmd_t *pmd, phys_addr
+>>  	pte_t *pte_table = pte_offset_kernel(pmd, 0);
+>>  	VM_BUG_ON(pmd_thp_or_huge(*pmd));
+>>  	pmd_clear(pmd);
+>> -	kvm_tlb_flush_vmid_ipa(mmu, addr);
+>> +	kvm_tlb_flush_vmid_ipa(mmu, addr, S2_NO_LEVEL_HINT);
+>>  	free_page((unsigned long)pte_table);
+>>  	put_page(virt_to_page(pmd));
+>>  }
+> 
+> Going by the names, is it possible to give a better level hint for these
+> cases?
 
+There is no leaf entry being invalidated here. After clearing the range, we found we'd
+emptied (and invalidated) a whole page of mappings:
+|	if (stage2_pmd_table_empty(kvm, start_pmd))
+|		clear_stage2_pud_entry(mmu, pud, start_addr);
 
---qftxBdZWiueWNAVY
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Now we want to remove the link to the empty page so we can free it. We are changing the
+structure of the tables, not what gets mapped.
 
-On Tue, May 12, 2020 at 12:54:58PM +0100, Will Deacon wrote:
-> Some versions of GCC are known to suffer from a BTI code generation bug,
-> meaning that CONFIG_CC_HAS_BRANCH_PROT_PAC_RET_BTI cannot be solely used
-> to determine whether or not we can compile with kernel with BTI enabled.
->=20
-> Update the BTI Kconfig entry to refer to the relevant GCC bugzilla entry
-> (https://gcc.gnu.org/bugzilla/show_bug.cgi?id=3D94697) and update the che=
-ck
-> now that the fix has been merged into GCC release 10.1.
-
-Acked-by: Mark Brown <broonie@kernel.org>
-
-There wasn't a GCC 10.0 release, I was a little surprised at the
-numbering of the initial GCC 10 release.
-
---qftxBdZWiueWNAVY
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl66j/sACgkQJNaLcl1U
-h9AR4Qf9F1XxE+Vn56m2unciMxlXr0EAz8M39EVa7HnGDcyTpVVF+x6QwCn/9h6K
-PdvR8LmyNzPhjQn1FbZDj4n0E7VXIP+/Lblb7JAhsb8C+DKjQVQPi/08Q60EAsEg
-zVF1eBMkZuTzxuQzu7luX89+8LR3hFw4Qx5MaRumsCLQCmG9Hd7tnVMNOqyoAR34
-pUKyIfnP6S/qVpBFpiNYpNLMj0UxcO/BWAvWryERVqeSPsIUhOvfIUay3gNgz1bU
-Y3uQQgZ8ryEmlgktAk3nWnrOcTLPXRqBwf4TFHGLVSlMR2cB2Jvu/Gw14vu0BLij
-9Bei3S4uNdzoBZ+8ePvuujBz+7lPxw==
-=U/Qc
------END PGP SIGNATURE-----
-
---qftxBdZWiueWNAVY--
+I think this is why we need the un-hinted behaviour, to invalidate "any level of the
+translation table walk required to translate the specified IPA". Otherwise the hardware
+can look for a leaf at the indicated level, find none, and do nothing.
 
 
---===============3264054940793631942==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+This is sufficiently horrible, its possible I've got it completely wrong! (does it make
+sense?)
+
+
+Thanks,
+
+James
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3264054940793631942==--
-
