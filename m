@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F59F1CED95
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 09:04:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24C0F1CED98
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 09:04:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Iwx1halGIYSrrZttEX+Va7P9jIuXu5ikNPRBwU1/Wj8=; b=UeUuG8CRgeRkts1GKiFWfpCvIN
-	1MAth7XsWcM2DdGHZa4TPGSC/9BuSl6nHZf7+5JTugHp9GnlzQxXU1E0DadaNVQZQxFNo60CHV4/s
-	QTHbmXDTMRuFHUzOm1htvzkLqplu3hqkFcW2X5C6R/Z4SARMCGhRTKR1zxIL7UMwHdgUVV0wxZSjD
-	dIg5V/Cs7P+00E/mP0k8KQgl2bZl0hp1kqGoBe8HI6j+28KGk4rGBMZG2a0EnehRLiQsfYUsjHsAQ
-	PRlood/V49XdUJ2DE388jt1IgBEEq7xdvAcIIc6ktdrqpUJcaMm+UzxDNVeDPV3zT0U28Y+sDmwdN
-	7asuRpzA==;
+	bh=+aXPzk6AGaaQKF+mvQslMok9MLX9C7eRmaoqHy+PM50=; b=oTRTJblyYsYzZyUcrFNuV8gY/T
+	oTEoZrHhyEknm5icwX2FTLYVQNlhd853Ypp8F04qhpiUgzPyE3NIfBIBR+l5B0j+pyUPxLoY4/i3l
+	rVOwCVEO1dfVlcZ5DkjdNG8zaKzDVTHr0mFMMhylCLfkHMiy6r/UulvG/lmt6rCIY3r3K/XIAblm3
+	4gzJg/OIw1Jn6qeWcEgwc2O5/Lwh5e8WF8EYAbctn7JluzbHKq8L5o0XWyJXEgyPdmTL+tGF69++p
+	YcpNLtApdIg7/aRF3dZjHRNLPf5UDiLPt0OFr/Oo3rbuyWYIEPqjmvduPIxz7Vt86paF2GL43xiEP
+	+1x3xajQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYOxo-0007ve-IZ; Tue, 12 May 2020 07:04:28 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jYOy4-0008Ch-8N; Tue, 12 May 2020 07:04:44 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYOxF-0007Ys-Ht
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 07:03:55 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d184so5947648pfd.4
+ id 1jYOxO-0007jZ-7T
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 07:04:03 +0000
+Received: by mail-pg1-x543.google.com with SMTP id 9so191381pgr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 00:03:53 -0700 (PDT)
+ Tue, 12 May 2020 00:04:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=o//dTfJVTpsa5Zo7nPNQBSOusaLkGD86FZMNihxJfus=;
- b=gHte5rVUD6y77Xe/TFwjDfYe9ap4bclJIR3xqi1I4zZijHaTmhe0Gim+Ke3EaFnJXe
- XJUjPVATgmdLPBcdDcR2qvWe2tRzSWZuFX3VmGuLTvYRJYbWD4+vqJebdZlZ0s+4uF/q
- EOsHEQv66zGagOhM3QAwtb5vCkNRPX9YPjRBJiOCej/P6J6Acyko6XtZNeWvFM1CbH2I
- VSToK4mNIq0e1Y1inpqYK+SmtdgxbaFKQe+EzRBulSqHa2pf3fwoMz5qa+5MZbIeK3uV
- YvPxu4ZQgWH6ZHmBADxC/MtYhY7NVcdmzOg40KLgnYVFrmHg+4htNhrzMAMfu+zc8Uei
- VoyA==
+ bh=KnWhTxSokldqb010DnL4ORytzuGapXn7Hq520J7Za+c=;
+ b=IjYwOS6yRJWzajwfxnyfRcGRgJufp90e2oizEGjmBih5am4Peqs//yI9PBpIboOzU2
+ CZO7EDNpWbHzsF18edURJPTllwO9BZ79aBFYNtwcsZc6DFIZn8+alqC2s201mzhMJIkp
+ 3TcZmcgqnP3O5Sm7JeURdw7TyVUFJLRHTd4KqVs/bfP71TM6mTago+ifRJxbMabCZ5RU
+ J7Rr93CevBl/XszLMpKAZXHFq488StrTbq+2a4M6QafQj1cDTCotx7X+cLzxoodu9eff
+ fQnABVAI8DBaYWFsxbNkWlX8fqB/s7u68B+d7DEwdHDMFVEM8vQPZzyRaKh7wm1EUakk
+ jn9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=o//dTfJVTpsa5Zo7nPNQBSOusaLkGD86FZMNihxJfus=;
- b=K64g3iWa3JDb8QEA6g9tEnges+3fosgG/+Ifz41X3Y0EV0twXMGCUMKRMHHC5Klgbt
- VX3Vu8osLRVkirylMlb/9ckPyqaVtFQa0r3U8r+7dRZ3soPrOYW90GYFML0aUY0vGYuT
- G/p/5ZFyH9CjFc4jsQphAXujCYb7frQbT9bsbdrkvbmh37qLUjVEWnV4JP1t6xhSNo+N
- YjFisc8QfJCbOXpxNSbwxqdqD/Kj3PEtq7slDV+4CgXkKKTqV0UHy0AXILEIVUuIcLvf
- il0799xu/J31lQq+tVqiUwWXfWtL1rP/CMb37cr9NTgrJe2TrdlfhH4xu4yH6XwuEdNB
- rDKg==
-X-Gm-Message-State: AOAM530WMBxCiOpOmrDVXq7UxGDYlY/s6PCgM9xprpEZxcz6o5/Qin58
- 3f3Mwt0IH3wE+YQ4oxuyajs=
-X-Google-Smtp-Source: ABdhPJyvQqwVfnqNh+p34cdkk3VkqZVcQx818ZVzyde7cIL1JuJ8VM2Siydwch4p+f1lnq+Vtm0N7A==
-X-Received: by 2002:a63:3c19:: with SMTP id j25mr9279778pga.434.1589267032602; 
- Tue, 12 May 2020 00:03:52 -0700 (PDT)
+ bh=KnWhTxSokldqb010DnL4ORytzuGapXn7Hq520J7Za+c=;
+ b=ZYakGZLHf8+V9vx58Yq3iFKYBb4v1J4vFwu/dyI0v0gd3j7tAbipxB9ZyEKiN8XSit
+ ubCpHUiqOr5uxVsSev0F5sHfNU3yApcamLd1rF2YFe07spvk05tbOfPh6WVPFoMLe9Ql
+ mzUAHtUuzu4ZtvNmvarvfO1yQveUFZ4CAxdOrN83fcsNbdpDaMKHgSxWglrjOUoqz+kB
+ RirhA9cLbwmcs/zVF/xyltiR0aXPX7KWGXZvpK2QvGJnweGYkcEXEpApM7xl038R6ItG
+ Rt1r9WEPRfm9oXeZuOkcZF+6QSnG+6DZCvYNopJ4IRJTCYGCk4XPbx8QDuvVmx30RURY
+ L0jQ==
+X-Gm-Message-State: AGi0PuZnppuNP8mISag8ruUyuuteU6e8TwMr/BgsbozJjqOkNbXsBw6e
+ Z1GDt37EpVK5mh803xOo+CE=
+X-Google-Smtp-Source: APiQypJgzsQrvrMxxxS1gIKRvHu2KK37xvZy80d20Mc2DmCk4cb+KwcWxqzPiseDTD0DXbnIzfEGlQ==
+X-Received: by 2002:a63:9801:: with SMTP id q1mr19050050pgd.447.1589267041774; 
+ Tue, 12 May 2020 00:04:01 -0700 (PDT)
 Received: from fmin-OptiPlex-7060.nreal.work ([103.206.190.146])
- by smtp.gmail.com with ESMTPSA id 62sm11016369pfu.181.2020.05.12.00.03.48
+ by smtp.gmail.com with ESMTPSA id 62sm11016369pfu.181.2020.05.12.00.03.52
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 12 May 2020 00:03:52 -0700 (PDT)
+ Tue, 12 May 2020 00:04:01 -0700 (PDT)
 From: dillon.minfei@gmail.com
 To: robh+dt@kernel.org, mcoquelin.stm32@gmail.com, alexandre.torgue@st.com,
  thierry.reding@gmail.com, sam@ravnborg.org, airlied@linux.ie,
  daniel@ffwll.ch, mturquette@baylibre.com, sboyd@kernel.org
-Subject: [PATCH v3 2/5] dt-bindings: display: panel: Add ilitek ili9341 panel
- bindings
-Date: Tue, 12 May 2020 15:03:34 +0800
-Message-Id: <1589267017-17294-3-git-send-email-dillon.minfei@gmail.com>
+Subject: [PATCH v3 3/5] ARM: dts: stm32: enable ltdc binding with ili9341 on
+ stm32429-disco board
+Date: Tue, 12 May 2020 15:03:35 +0800
+Message-Id: <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
 References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_000353_601420_97BB91F7 
-X-CRM114-Status: GOOD (  12.84  )
+X-CRM114-CacheID: sfid-20200512_000402_295097_B9855AC1 
+X-CRM114-Status: GOOD (  12.41  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -112,7 +112,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: dillon min <dillon.minfei@gmail.com>
 
-Add documentation for "ilitek,ili9341" panel.
+Enable the ltdc & ili9341 on stm32429-disco board.
 
 Signed-off-by: dillon min <dillon.minfei@gmail.com>
 ---
@@ -120,92 +120,71 @@ Signed-off-by: dillon min <dillon.minfei@gmail.com>
 Changes:
 
 V3:
-    change compatible to st,sf-tc240t-9370-t, match #vendor,#lcd_module style
+    change dts binding compatible to "st,sf-tc240t-9370-t"
 
 V2:
-    verifyied with make dt_binding_check
-
-V1:
     none
 
-.../bindings/display/panel/ilitek,ili9341.yaml     | 68 ++++++++++++++++++++++
- 1 file changed, 68 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
+v1:
+    none
 
-diff --git a/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-new file mode 100644
-index 0000000..9f694d8
---- /dev/null
-+++ b/Documentation/devicetree/bindings/display/panel/ilitek,ili9341.yaml
-@@ -0,0 +1,68 @@
-+# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/display/panel/ilitek,ili9341.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+arch/arm/boot/dts/stm32f429-disco.dts | 39 +++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+
+diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+index 30c0f67..4475e40 100644
+--- a/arch/arm/boot/dts/stm32f429-disco.dts
++++ b/arch/arm/boot/dts/stm32f429-disco.dts
+@@ -49,6 +49,8 @@
+ #include "stm32f429.dtsi"
+ #include "stm32f429-pinctrl.dtsi"
+ #include <dt-bindings/input/input.h>
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/gpio/gpio.h>
+ 
+ / {
+ 	model = "STMicroelectronics STM32F429i-DISCO board";
+@@ -127,3 +129,40 @@
+ 	pinctrl-names = "default";
+ 	status = "okay";
+ };
 +
-+title: Ilitek-9341 Display Panel
++&ltdc {
++	status = "okay";
++	pinctrl-0 = <&ltdc_pins_f429_disco>;
++	pinctrl-names = "default";
 +
-+maintainers:
-+  - Dillon Min <dillon.minfei@gmail.com>
++	port {
++		ltdc_out_rgb: endpoint {
++			remote-endpoint = <&panel_in_rgb>;
++		};
++	};
++};
 +
-+description: |
-+  Ilitek ILI9341 TFT panel driver with SPI control bus
-+  This is a driver for 320x240 TFT panels, accepting a rgb input
-+  streams with 16 bits or 18 bits.
-+
-+allOf:
-+  - $ref: panel-common.yaml#
-+
-+properties:
-+  compatible:
-+    items:
-+      - enum:
-+          # ili9341 240*320 Color on stm32f429-disco board
-+        - st,sf-tc240t-9370-t
-+      - const: ilitek,ili9341
-+
-+  reg: true
-+
-+  dc-gpios:
-+    maxItems: 1
-+    description: Display data/command selection (D/CX)
-+
-+  spi-3wire: true
-+
-+  spi-max-frequency:
-+    const: 10000000
-+
-+  port: true
-+
-+additionalProperties: false
-+
-+required:
-+  - compatible
-+  - reg
-+  - dc-gpios
-+  - port
-+
-+examples:
-+  - |+
-+    spi {
-+        #address-cells = <1>;
-+        #size-cells = <0>;
-+        panel: display@0 {
-+                 compatible = "st,sf-tc240t-9370-t", "ilitek,ili9341";
-+                 reg = <0>;
-+                 spi-3wire;
-+                 spi-max-frequency = <10000000>;
-+                 dc-gpios = <&gpiod 13 0>;
-+                 port {
-+                         panel_in: endpoint {
-+                           remote-endpoint = <&display_out>;
-+                      };
-+                 };
-+             };
-+        };
-+...
-+
++&spi5 {
++	status = "okay";
++	pinctrl-0 = <&spi5_pins>;
++	pinctrl-names = "default";
++	#address-cells = <1>;
++	#size-cells = <0>;
++	cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
++	dmas = <&dma2 3 2 0x400 0x0>,
++	       <&dma2 4 2 0x400 0x0>;
++	dma-names = "rx", "tx";
++	display: display@0{
++		/* Connect panel-ilitek-9341 to stm32 via ltdc*/
++		compatible = "st,sf-tc240t-9370-t";
++		reg = <0>;
++		spi-3wire;
++		spi-max-frequency = <10000000>;
++		dc-gpios = <&gpiod 13 0>;
++		port {
++			panel_in_rgb: endpoint {
++			remote-endpoint = <&ltdc_out_rgb>;
++			};
++		};
++	};
++};
 -- 
 2.7.4
 
