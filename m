@@ -2,84 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F22B91CF68E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:11:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6BB71CF696
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 16:12:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CAwS6rk3gJn+FBjjHrojqMX+aygwHuMsJBWT9Jx0gwk=; b=A4LAcFfFjxrfjq
-	dmLwMhfxuob/mwUiIBjuKIEwOkla3HFKXKCzIRKt3jbeaO+/Hga4Dkyp/0lUteotp/YwO4mwG2uyd
-	uWFW8lSRRM+qPOvF1wfzB0fpCgXPVJkdxPu6CXj5xLCLxj3tchw4pd34vmd4gStzV46+qRt2I7ZWi
-	n4/MHEi6AQ8szbuSFJuGALeEJ3znYZqLgwab0ZfvGIMra7rYWgBVEYl94rZ/xRIX2Ts8ltT9/fzEN
-	wB5tYu3dJ/YHEraYu4CM6vXDbFUmvlbxjKYNTGTaC59AsD0u2/8SG7tTcBkmz+htJE5sXXOqlI2XP
-	rfLo7mm7BQTuU8m01EoQ==;
+	List-Owner; bh=i58MhnaspF9cxQQyRC12DQxM2j5kYC2CK4Jpq1hXmhY=; b=Ai2CQYlCQ4sw5F
+	JlM5iJs5jy8LLrF8CQmb6RkIlWpJHVnHCj+Rpx6Q9YZ1fVcuFwBH2/PfxALqWPPL1k/3PNqv6NXr3
+	RBfi7tDghZJUiQkWNr4MNfz5fbQDh0xWJ4vZK8bEXgfs8/effn3m31iJotSZ2jpWd/OMq7JYz3NEw
+	pz1slXWSJYBihjoGgVGb95Oe18b1zQ5+mKNRUXcfp48CKL9/z3UJCYg3EmA9bZaK2uSO6H3Ty1dqO
+	8orTHawpyVoQtKpsfGIF6ppD1WNwATwAXe3ovzBDBc7faFpN+LXyXFxNbdo0u+Zb7xFJvgEm5nPTm
+	3UTDUgFvbRX4FbeClcIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYVdA-0006rC-P6; Tue, 12 May 2020 14:11:36 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jYVeB-0007QM-LS; Tue, 12 May 2020 14:12:39 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([207.211.31.120]
+ helo=us-smtp-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYVd3-0006qq-GV
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:11:30 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x2so6423033pfx.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 07:11:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=oNVTKHh3BRkv6kZOADjLrXd170DS/xHoo09T4Nrhheo=;
- b=MWVm3yEZ9mSSxyQajWzj0yf8qSW+nGL9S0s54ewsyJafx/WvQOyxCLQrBhyMSZvQBI
- 9+5RU5hwl89M8YOWDSjt6f4/MVsC+3kDOJDBDSARox31Kuxn7jHLGyglVlxsea788sgT
- V4vV/qQUdgXTMbsUQSODcwoGY1kuJHDkqWORfkxfPc4M4FzqtyUq4sIAR8OwJlhf5/uC
- xSY/yQqzxK882W9rEvO4OqiH00Gf0eB5n6mez1V5YaXklkw/Z/WYAd9gRZ+27eHIN+fY
- dVUnnUPWj9ivdPH1C988u0jzs2ft6j2po5LglaDe6xSyIs3Cvx/FTFRKO/efDUDp/D4g
- ySLg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=oNVTKHh3BRkv6kZOADjLrXd170DS/xHoo09T4Nrhheo=;
- b=LzrlI/fC7aievApU9hMRLXZT8eN2w5yMETKNN9vkrGPUmRmz5Inz5xymPVMwaGhGo6
- JUkB56doy3OAe7WcCd/jguDP4qFnRmf333HgEgjCLsQZX3mOBMwP64QeK5DeAF9+997s
- sg1Z9AQObMqcXNPFw9Y8Ef2RRjrzfly0evTXV4ZMIM+B7lO6xaY7ACPn/wedpm10nQ1j
- 7oDOaNofxE6hF3vmwr8DejViVCLD+WqqQt4jzRT2CKRTQe5pOI/nvkLVjwYFJ2BELF3i
- EHpNeB0bCeUaFbBiONjrQK79HbBb4KxOrUO4g01qd1jI0Q54wzwuP0gEv+xIgMlV8Y2c
- cBmg==
-X-Gm-Message-State: AGi0Pub3BSmh5WXA1DvUgjN12KLYUecyHsEDIW8ZtB6cB2f6q8scKdXb
- ixlAImhmFf+zbwEg8gfL8XoVlw==
-X-Google-Smtp-Source: APiQypLB7DTmaAG8KF0rhekx3BS1ffHO8/I3uQtsFt8SfpFqBrT4+h+i1IuZBPTlHiysq1JCJ20Wtw==
-X-Received: by 2002:a63:ef02:: with SMTP id u2mr19767305pgh.21.1589292688279; 
- Tue, 12 May 2020 07:11:28 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s ([2600:3c01::f03c:91ff:fe8a:bb03])
- by smtp.gmail.com with ESMTPSA id s199sm12383422pfs.124.2020.05.12.07.11.21
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 12 May 2020 07:11:27 -0700 (PDT)
-Date: Tue, 12 May 2020 22:11:26 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 5/5] arm64: perf: Add cap_user_time_short
-Message-ID: <20200512141126.GD20352@leoy-ThinkPad-X240s>
-References: <20200512124058.833263033@infradead.org>
- <20200512124451.061059334@infradead.org>
+ id 1jYVde-0007BG-RN
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 14:12:08 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589292725;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=n70UbOUvJa9P4RPgTvmULexgnX+jCFgCJ+13wy5Dy+Q=;
+ b=V8F6lOXuNV8kvLRz4PPKCejCwMZwBpJQ1HzDZvO6PdEdei1V0U+HYf/UYk1c/f9tFtRy20
+ wTSLylwn7YPYd4+pm1CpP/cHtnXGEXD1V+xrdSUYVm7h9CklYu9D/KF/b/Xv1SGP0GRfaN
+ UHzSlmt9xNU29M++849CImexiyLRz7k=
+Received: from mimecast-mx01.redhat.com (mimecast-mx01.redhat.com
+ [209.132.183.4]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-239-zpf1rqexMOe-syUUIUv8rw-1; Tue, 12 May 2020 10:11:58 -0400
+X-MC-Unique: zpf1rqexMOe-syUUIUv8rw-1
+Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
+ [10.5.11.13])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mimecast-mx01.redhat.com (Postfix) with ESMTPS id 46D2B8005B7;
+ Tue, 12 May 2020 14:11:57 +0000 (UTC)
+Received: from localhost (ovpn-12-40.pek2.redhat.com [10.72.12.40])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id CE5977840A;
+ Tue, 12 May 2020 14:11:50 +0000 (UTC)
+Date: Tue, 12 May 2020 22:11:48 +0800
+From: Baoquan He <bhe@redhat.com>
+To: David Hildenbrand <david@redhat.com>
+Subject: Re: [PATCH] kexec: Discard loaded image on memory hotplug
+Message-ID: <20200512141148.GL5029@MiWiFi-R3L-srv>
+References: <20200501165701.24587-1-james.morse@arm.com>
+ <40b07632-b044-d1cd-96a2-81eec3da93e7@redhat.com>
+ <8736892l92.fsf@x220.int.ebiederm.org>
+ <a1c162fe-74de-c5ca-dadf-d451e970fdea@redhat.com>
+ <20200511112755.GB4922@MiWiFi-R3L-srv>
+ <04c8edd0-5c67-3ba7-5f87-c16a47b2af5c@redhat.com>
+ <20200512103402.GK5029@MiWiFi-R3L-srv>
+ <265d463c-1b2f-ca97-391d-8d1f9d60f16a@redhat.com>
 MIME-Version: 1.0
+In-Reply-To: <265d463c-1b2f-ca97-391d-8d1f9d60f16a@redhat.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 Content-Disposition: inline
-In-Reply-To: <20200512124451.061059334@infradead.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_071129_548482_137FD8EB 
-X-CRM114-Status: GOOD (  17.23  )
-X-Spam-Score: 3.4 (+++)
+X-CRM114-CacheID: sfid-20200512_071206_965563_17DF623D 
+X-CRM114-Status: GOOD (  28.06  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (3.4 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
- [2600:3c01:0:0:f03c:91ff:fe8a:bb03 listed in] [zen.spamhaus.org]
+ no trust [207.211.31.120 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [207.211.31.120 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -89,6 +87,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,71 +99,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, alexander.shishkin@linux.intel.com,
- Marc Zyngier <maz@kernel.org>, jolsa@redhat.com, daniel.lezcano@linaro.org,
- sboyd@codeaurora.org, linux-kernel@vger.kernel.org, acme@kernel.org,
- mingo@redhat.com, john.stultz@linaro.org,
- Catalin Marinas <catalin.marinas@arm.com>, tglx@linutronix.de,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: kexec@lists.infradead.org, linux-mm@kvack.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Dave Young <dyoung@redhat.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 02:41:03PM +0200, Peter Zijlstra wrote:
-> This completes the ARM64 cap_user_time support.
+On 05/12/20 at 12:54pm, David Hildenbrand wrote:
+> >> kexec_load():
+> >>
+> >> 1. kexec-tools could have placed kexec images on memory that will be
+> >> removed.
+> >>
+> >> 2. the memory map of the guest is stale (esp., might still contain
+> >> hotunplugged memory). /sys/firmware/memmap and /proc/iomem will be
+> >> updated, so kexec-tools can fix this up.
+> > 
+> > With my understanding, this is a corner case. Before James's last
+> > patchset, I even hadn't realized this is a problem. Because we usually
+> > load kexec image, next trigger a kexec rebooting. Wondering if James
+> > just found out a potential issue, or he really met this problem. Surely,
 > 
-> Signed-off-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-> ---
->  arch/arm64/kernel/perf_event.c |   12 +++++++-----
->  1 file changed, 7 insertions(+), 5 deletions(-)
+> Should be as easy as hotplugging a dimm, loading "kexec -c", unplugging
+> the dimm, triggering "kexec -e" if I am not wrong.
+
+Hmm, kexec rebooting is also one kind of rebooting, we may not want to
+hot plug memory during that time. But, yes, just in case.
+
 > 
-> --- a/arch/arm64/kernel/perf_event.c
-> +++ b/arch/arm64/kernel/perf_event.c
-> @@ -1173,6 +1173,7 @@ void arch_perf_update_userpage(struct pe
->  
->  	userpg->cap_user_time = 0;
->  	userpg->cap_user_time_zero = 0;
-> +	userpg->cap_user_time_short = 0;
->  
->  	do {
->  		rd = sched_clock_read_begin(&seq);
-> @@ -1183,13 +1184,13 @@ void arch_perf_update_userpage(struct pe
->  		userpg->time_mult = rd->mult;
->  		userpg->time_shift = rd->shift;
->  		userpg->time_zero = rd->epoch_ns;
-> +		userpg->time_cycle = rd->epoch_cyc;
-
-s/time_cycle/time_cycles, maybe consider to change the naming to
-'time_cycle'.
-
-This patch set looks good to me after I tested it on Arm64 board.
-
-Thanks,
-Leo
-
-> +		userpg->time_mask = rd->sched_clock_mask;
->  
->  		/*
-> -		 * This isn't strictly correct, the ARM64 counter can be
-> -		 * 'short' and then we get funnies when it wraps. The correct
-> -		 * thing would be to extend the perf ABI with a cycle and mask
-> -		 * value, but because wrapping on ARM64 is very rare in
-> -		 * practise this 'works'.
-> +		 * Subtract the cycle base, such that software that
-> +		 * doesn't know about cap_user_time_short still 'works'
-> +		 * assuming no wraps.
->  		 */
->  		userpg->time_zero -= (rd->epoch_cyc * rd->mult) >> rd->shift;
->  
-> @@ -1214,4 +1215,5 @@ void arch_perf_update_userpage(struct pe
->  	 */
->  	userpg->cap_user_time = 1;
->  	userpg->cap_user_time_zero = 1;
-> +	userpg->cap_user_time_short = 1;
->  }
+> > we should fix it when have identified it, even though it's a corner
+> > case.
+> > 
+> > And we suggested adding service of loading kexec to fix this. We
+> > suggest this because kdump also need to recollect the memory regions
+> > so that it can pass them into 2nd kernel and dump the newly added
+> > memory region, or not dump the already removed memory region. 
+> > Kdump kernel won't get problem during boot or running caused by the
+> > hot added/removed memory as kexec kernel does, however, on failing to
+> > achieve expected result, kdump and kexec have the same problem. I don't
+> > see why kdump can be reloaded by memory adding/removing uevent triggering,
+> > but kexec can't. If have to unload kexec image, does kdump image need
+> > be unloaded?
 > 
+> I think that approach is racy and might easily trigger a crash when
+> "kexec -e" is called at the wrong time during memory unplug. See below
+> why kdump is different. Triggering unloading in the kernel does not
+> conflict with that approach and even seems to fit into the picture, no?
 > 
+> 1. Memory gets hot(un)plugged
+> 2. The kernel unloads the kexec image while processing the hot(un)plug
+>    to make sure nothing will go wrong.
+> 3. User space gets notified and triggers reloading of kexec.
+> 
+> That sounds like a sane approach to me, no? If there is no 3., nothing
+> will break. If there is a "kexec -e" before 3 finished, nothing will
+> break. As we discussed, we might be able to special-case
+> kexec_file_load() and not unload, but simply fixup.
+> 
+> Note that kdump is slightly different. In case memory gets hotplugged
+> and kdump is not reloaded, that memory will simply not get dumped. In
+> case memory gets hotunplugged and kdump is not reloaded, that memory
+> will be skipped by makedumpfile (realizes memory is gone when parsing
+> the sparse sections, trying to find the memmap). In contrast to kexec,
+> there is no kernel crash.
+> 
+> > 
+> > Here my main concern is if it will complicate kexec code. While
+> > reloading it via systemd service won't. No matther if it's making kexec
+> > disable memory hotplug, or making memory hotplug disabling kexec, it
+> > seems to couple kexec with other feature/subcomponent. Anyway, we have
+> > added a kexec loading service, any memory adding/removing uevent will
+> > trigger the reloading. This patch won't impact anything, even though
+> > it doesn't make sense to us, so have no objection to this.
+> 
+> I don't consider unloading in the kernel a lot of complexity. And it
+> seems to be the right thing to do to avoid crashes, especially if user
+> space will not reload itself.
+> 
+> > 
+> > Another thing is below patch. Another case of complicating kexec because
+> > of specific use case, please feel free to help review and add comment.
+> > I am wondering if we can make it in user space too. E.g for oracle DB,
+> > we limit the memory allocation within the movable nodes for memory
+> > hotplugging, we can also add memmap= or mem= to kexec-ed kernel to protect
+> > those memory regions inside the nodes, then restore the data from the nodes.
+> > Not sure if VM data can be put in MOVABLE zone only.
+> > 
+> > [RFC 00/43] PKRAM: Preserved-over-Kexec RAM
+> 
+> I've seen that patch set and it is on my todo list, not sure when I'll
+> have time to look into it. From a quick glimpse, I had the feeling that
+> it was not dealing with memory hot(un)plug, most probably because
+> concurrent memory hot(un)plug is not the target use case.
+
+Not, it's not about hot plug. Hope you can help check if restoring VM data in
+kexec-ed kernel have to be done like that from virt dev's point of view.
+Please feel free to add other virt expert you know who is familiar with that
+to the list to help review.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
