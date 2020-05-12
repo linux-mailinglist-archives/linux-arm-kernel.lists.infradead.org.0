@@ -2,89 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A7A011CFEB2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 21:50:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 703361CFF4F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 12 May 2020 22:34:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ee+6OQrg66KxaNUyyJBKNYjW7EkFd6aXDgkzJC30JZc=; b=VFqwOGINNaqEBX
-	QLf93yg4A+SqDklRTYScHQKoVOfhs8vgyKweJum4UGQEnWVgwUJW3IzaN9LqiYHVBTmD6gDLXuS4E
-	XzFB9gwiprJY4/TjggHPDyFqjRXjiSVFn9IGUn5fxL/iadw0oREuMKukifGiy4XOrk9Tu5EcMoVEC
-	/Fnkmx0pN+GCueM0UzEqUuGeC/fLVoqLqmkN2jKlVsDawjw3uavX/udORGYR29F7I6LLkoDfYMI/n
-	lbg1XRcEw4XLB42+2/79QM3BvBkvU8QI8PJfRXqvimfd2dE32pu6lhr8IY4YwRJTwxBUi3+wT/OiM
-	cyrKKZ8yIwpxIATvsKrw==;
+	List-Owner; bh=Gk3ce4DtRZsfR6BrMHis/l0ZhfYAyGlFwfDEoYQkZ7E=; b=DcOH/lcKRKEemX
+	bRe5Nxsf3U3lYbEnGceIu8Rno29H/ab1Kp72AEEAZVPJm5SM/MDiwFhWgaGBMR3cTmSBgkcXBDgiL
+	yHZ81FvHwd3WR7iyb6VaOPW9YxVX5E8/DwSNDnCPZU73gvgP+79jN93RjIuXmXtOF6TRx73TfC4kE
+	22V+V+TlCpn7GIGdbbQM+Q2swIeWLLWt6OWy3WQHC5qLb4wXcuD0IXmlBJTg4N7l0q9d4ZEsc2rzL
+	q1/exrXHjSo3MPFWfqFmaIatJIFgSqcOS+wk7EWYX/aJxlZtwysCs8tPIk/xvJPwbZ+MFgWwPuxYx
+	Twvk2ocSNyyXuvAD2+8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYav6-0004DZ-PQ; Tue, 12 May 2020 19:50:28 +0000
-Received: from mout.kundenserver.de ([212.227.126.187])
+	id 1jYbbM-0003Pc-Hu; Tue, 12 May 2020 20:34:08 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYauz-0004Co-JI
- for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 19:50:23 +0000
-Received: from mail-qk1-f169.google.com ([209.85.222.169]) by
- mrelayeu.kundenserver.de (mreue009 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MyK9U-1jBG6P1YUO-00ygF4 for <linux-arm-kernel@lists.infradead.org>; Tue,
- 12 May 2020 21:50:17 +0200
-Received: by mail-qk1-f169.google.com with SMTP id n14so14969746qke.8
+ id 1jYbbE-0003Oo-Og
+ for linux-arm-kernel@lists.infradead.org; Tue, 12 May 2020 20:34:02 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20200512203355euoutp011c6e0367f98fc399cda2948e49543092~OYiZVaQKY1647116471euoutp01Q
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 12:50:16 -0700 (PDT)
-X-Gm-Message-State: AOAM530x8RIFLxBsZV8bxAbSX66WqVMGRSekju+WVZokISWw3yWs0xak
- be80AmIl7uJzxlVNrZ+O/J3D1/njQa2ryEzc4Dg=
-X-Google-Smtp-Source: ABdhPJwKJd3U0klcU7IDRjkuleiIc4wPNOMiOc0saxTFEWTaSUun13tPHi7rCexv4xkXDUCA3EAbyG/iGjnOgQ+uULY=
-X-Received: by 2002:a37:bc7:: with SMTP id 190mr2657025qkl.286.1589313016016; 
- Tue, 12 May 2020 12:50:16 -0700 (PDT)
+ Tue, 12 May 2020 20:33:55 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20200512203355euoutp011c6e0367f98fc399cda2948e49543092~OYiZVaQKY1647116471euoutp01Q
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1589315635;
+ bh=wnAc6t9J+MLeu4DXX/UMTG7FIxfuzBk4sujw+pbXYuI=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=vFcP7z7iNFqcPY/EoZ5ceEWyjH1xwGyPTsFs44xdrk9/usQK/cCqb6wNTikhe/cz3
+ VRuU1QMd4IzJN8gNMfXAO/FSr7WAEwp3UEQA958LHOtJuBsPdJUyXn7cor0p/GkEeY
+ qrecZ9OJZgAZ759EqpgSB1rwj676W+1IKU9G/b1E=
+Received: from eusmges2new.samsung.com (unknown [203.254.199.244]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20200512203354eucas1p1ccad241d082e172806147e8051ca5cd5~OYiY_s_Nd1765817658eucas1p1P;
+ Tue, 12 May 2020 20:33:54 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges2new.samsung.com (EUCPMTA) with SMTP id 59.BC.60679.2380BBE5; Tue, 12
+ May 2020 21:33:54 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200512203354eucas1p1ec0713551239b5437374232a3558db8e~OYiYXwwvs1766317663eucas1p1P;
+ Tue, 12 May 2020 20:33:54 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20200512203354eusmtrp29c5130625112f643794304998f69d654~OYiYXBRxv1599815998eusmtrp2e;
+ Tue, 12 May 2020 20:33:54 +0000 (GMT)
+X-AuditID: cbfec7f4-0cbff7000001ed07-4a-5ebb08320b1c
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id C1.CA.07950.2380BBE5; Tue, 12
+ May 2020 21:33:54 +0100 (BST)
+Received: from [106.210.88.143] (unknown [106.210.88.143]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20200512203353eusmtip24e27fc61e27b356e67372df3a9c99d61~OYiXny--L2981929819eusmtip2U;
+ Tue, 12 May 2020 20:33:53 +0000 (GMT)
+Subject: Re: [PATCH v4 38/38] videobuf2: use sgtable-based scatterlist wrappers
+To: "Ruhl, Michael J" <michael.j.ruhl@intel.com>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "linaro-mm-sig@lists.linaro.org" <linaro-mm-sig@lists.linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <f6242137-82a5-0e33-f1a2-9e73dc679aa9@samsung.com>
+Date: Tue, 12 May 2020 22:33:54 +0200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-References: <CAK8P3a1JS3_2fWrhNTZx0eTWjJa-GTb4AscTPqydpSP5EB15Yw@mail.gmail.com>
- <20200414151748.GA5624@afzalpc>
- <CAK8P3a0JW9x-Wk9Ec3+zLjPHbWAvPQx8MF-xe-PnWUgEjRAuTg@mail.gmail.com>
- <20200415135407.GA6553@afzalpc> <20200503145017.GA5074@afzalpc>
- <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
- <20200504091018.GA24897@afzalpc>
- <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
- <20200511142113.GA31707@afzalpc>
- <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
- <20200512104758.GA12980@afzalpc>
-In-Reply-To: <20200512104758.GA12980@afzalpc>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 12 May 2020 21:49:59 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
-Message-ID: <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
-Subject: Re: ARM: static kernel in vmalloc space
-To: afzal mohammed <afzal.mohd.ma@gmail.com>
-X-Provags-ID: V03:K1:7r4DKUu9SULWSnzvWVGFU22Vfza6vBRPyMDLsRSCIAuGV8JEWHW
- b0nmjtdB4/Ck5qyJHeIcwz1hyWOCPbC1SkiOWzDSUv4zgt3Lfv+Y97pudL0/w3I6ih/SZg5
- 5vil0rTKO5BKAxCC0brXn2g3uP74myD6L0E24OO6/43OxE4+Gch3eTwgwSoo4myZVlShPnZ
- fDYIxZPMhx1FRyh1a6XRQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ynyngGcTjVc=:uRZ2odVKYWibpUbT+AeD6D
- GJ7t2KBiIeGEe+9vNcGM9Je7o7UhrdYML/gPGWa65JUEmwrRb7PcCTFTxTJM5hadUOp8ehBYf
- BecII/2XEa1w33CUOoJrH1H70u2afTr6+B+pL0L6UQQ17KmRCraD0ZnHq6zcFjslUMZAsYlCB
- E8FWeIKegJKybr4ErMeJrUVSCMBFexyp0/Gg7lJSv0CZklPMpc8WuMfHc3G6XUKXr9zTP+KQU
- qg7iphDV/uiGxF6pJX8g+yOkkDUQ0TIFiEUbOSxI6mqDp3KTKHXKeKDjbdhk/BkrWmLdW7Ch2
- rB96XTrLQ+N2gWNbGl6E4Er0Q0VY2hBBIQoNpSmxPZv+Z0bcHfxTjBQGOO6rVLXm7tm/X2aCV
- rEkg4N/OHSckQ/5F23oYG1ER92iLg9meXi6sPDwZ8CCtZX3/wyEc5uR9jidzOZynBX5jWvVZa
- O1KO1v7fj0jibHhwcvnlVdPC9i/D4RviDVQKcboq/iw1oJnK62F4B/MH/uKSCrQEA6Rvj3az+
- Mu5LVLp58NPDJ8OM4PaVELw8MKBPDjmyXL0OZz5Rb3EBTyvA55/UtVRL/3mykaj6fRDq5CjEU
- 9evVOhIrAlea1HYmXPAipgcvk8P9fRhbNnEGL6L2EgZNQGl8PoCg0HMbMd83Nac6I8UTSIda7
- 0qlVavbuuKhxTPvGD6b+mG7HRe5hM5iE/e9e3YyLhQ/ez800QomtZwQSAF4y1g9rXXmOuVHXO
- WEVeZUT0vfFfmRZxIchz8ET7g88qDOoyvQdJ4yHqFJjyZSb/friB/rB5Lj2Wsvmo6KomnAzqc
- PmjfirUn/wROljOTAU889PiZgxVrkY4RT6sizOa5nI76M4hMMY=
+In-Reply-To: <14063C7AD467DE4B82DEDB5C278E8663010E210FAC@FMSMSX108.amr.corp.intel.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SfyyUcRzu+773vveSs9fRfCax3cqWLUVt3k2MVdvbVqv80aaNOnmHdYfu
+ TaoxJpOOykjpRpRWuejH3XGclu6K82NJkemHJP4hxjiWH5HzUv57nufzfPY8n+1D4dJpwoOK
+ TzjHqRLkChnpKKptnu3YEUA1RO1qMQUw1zpaMeZF8TOC6Z4eJ5nKJ00Y8+FOn4gpbwxibN0D
+ GKMb7CGYLlMJyeQ9ryGYh7oFjOk0+jI3x2bFjHliiAh1ZqvuViG24uUwxuq0V0nWOPODYPtz
+ rRirf5DOfl0cxNnC3keIbficQbKDc8Mke92gReyUzottm54SH5WccNwbwyniz3OqnSGnHONs
+ 83lYUrbnheq+ESwD9burkQMF9B54YnlLqJEjJaUfIzCPvhELxIbgxuRTkUCmEEzO3EZrK9nW
+ biQMHiH4dGUeE8g4glaDHre7XOljMJKlwe0DN7oZg/HK+pUUnK7CYWEhR2x3kbQ/qMfUpB1L
+ 6BBo1WZidiyit8FMftZK3iY6Etor9EjwuEDrnaHlUhTlQB+HUutWu4zT3mAcK8EF7A5fhspW
+ GgF9j4Lq0pbV3vvhVV0lLmBXGLEaxAL2hKX6tYXLCAY6qsUCyUPQlVm8uh0E3zrmSHsyTm+H
+ Z6adghwGXbYiZJeBdobeMRehhDMU1N7GBVkCOdlSwe0DGuvTf7Hmzo94PpJp1l2mWXeOZt05
+ mv+55UikRe5cMq+M5fiABC7Fj5cr+eSEWL/TiUodWn7G9kWrrQ6ZFqItiKaQzEmyIc0UJSXk
+ 5/mLSgsCCpe5SbLi66Okkhj5xUucKvGkKlnB8Ra0mRLJ3CW77w9HSulY+TnuDMclcaq1KUY5
+ eGSgjepRW2TBUE9RRFqToiLcwdu7SrNvafBgdPCFI301KRNMRHpgoVvw218DE8bG6iUy8efI
+ w67MTB8o2NSGDvncsp5Ujr82O2FlltCfWmNKcUiua07YaPiB1KQ5Zb8uderPluzD/LvK3zFG
+ 17NcbmnScAthVrw/Thi8sgK/6zkvmYiPk/v74ipe/hdBiun/iAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpnleLIzCtJLcpLzFFi42I5/e/4PV0jjt1xBrtmcFv0njvJZLFxxnpW
+ iytf37NZrFx9lMni4sy7LBYL9ltbfLnykMli0+NrrBaXd81hs+jZsJXVYtmmP0wWF7ZrWUx5
+ +5Pd4uCHJ6wOfB5r5q1h9Fi85yWTx6ZVnWwe2789YPW4332cyWPzknqP2/8eM3tMvrGc0WP3
+ zQY2j8e/XrJ59G1ZxejxeZOcx6mvn9kDeKP0bIryS0tSFTLyi0tslaINLYz0DC0t9IxMLPUM
+ jc1jrYxMlfTtbFJSczLLUov07RL0Mr787mEqaJOpWHv3FVMD433xLkZODgkBE4m241cYuxi5
+ OIQEljJK3NyzmBkiISNxcloDK4QtLPHnWhcbRNFbRomvDZvBioQFAiVetcxiBkmICBxjktjR
+ 9owJxGEWWMcs8b3xOTtEC1DmxfufjCAtbAKGEl1vQWZxcvAK2EmcXNXEBGKzCKhKfJvQAlYj
+ KhArsfpaKyNEjaDEyZlPWLoYOTg4BcIk5h5XAQkzC5hJzNv8kBnClpfY/nYOlC0ucevJfKYJ
+ jEKzkHTPQtIyC0nLLCQtCxhZVjGKpJYW56bnFhvpFSfmFpfmpesl5+duYgQmgm3Hfm7Zwdj1
+ LvgQowAHoxIPb0T9rjgh1sSy4srcQ4wSHMxKIrwtmTvjhHhTEiurUovy44tKc1KLDzGaAv02
+ kVlKNDkfmKTySuINTQ3NLSwNzY3Njc0slMR5OwQOxggJpCeWpGanphakFsH0MXFwSjUwNm3l
+ /NjmYWpvPWe3RtE5l5/PXaMSlHe8Phi5QIVHqIbh8jrPgDxGLr6C913Plnx3yQl9VauyYyHj
+ D+bN7+Zt4F0qO1H1z4pGNb22+tTbRpzzV06dp7Zg+96NE668PJztt8Vc6/qyzusMWU97LRbc
+ vf1BI87IPinqQOMTUfld7lxpaddntH+bocRSnJFoqMVcVJwIAH0Po9kaAwAA
+X-CMS-MailID: 20200512203354eucas1p1ec0713551239b5437374232a3558db8e
+X-Msg-Generator: CA
+X-RootMTR: 20200512090130eucas1p2eb86c5d34be56bbc81032bc0b6927d1e
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20200512090130eucas1p2eb86c5d34be56bbc81032bc0b6927d1e
+References: <20200512085710.14688-1-m.szyprowski@samsung.com>
+ <20200512090058.14910-1-m.szyprowski@samsung.com>
+ <CGME20200512090130eucas1p2eb86c5d34be56bbc81032bc0b6927d1e@eucas1p2.samsung.com>
+ <20200512090058.14910-38-m.szyprowski@samsung.com>
+ <14063C7AD467DE4B82DEDB5C278E8663010E210FAC@FMSMSX108.amr.corp.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_125021_929941_5DCD9318 
-X-CRM114-Status: GOOD (  15.30  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200512_133401_006208_1E0F9ACA 
+X-CRM114-Status: GOOD (  17.26  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.187 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.187 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [210.118.77.11 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,39 +148,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Pawel Osciak <pawel@osciak.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>, Hans Verkuil <hverkuil-cisco@xs4all.nl>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ Robin Murphy <robin.murphy@arm.com>, Christoph Hellwig <hch@lst.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 12:48 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
->
-> On Mon, May 11, 2020 at 05:29:29PM +0200, Arnd Bergmann wrote:
->
-> > What do you currently do with the module address space?
->
-> In the current setup, module address space was untouched, i.e. virtual
-> address difference b/n text & module space is far greater than 32MB, at
-> least > (2+768+16)MB and modules can't be loaded unless ARM_MODULE_PLTS
-> is enabled (this was checked now)
->
-> > easiest way is to just always put modules into vmalloc space, as we already
-> > do with CONFIG_ARM_MODULE_PLTS when the special area gets full,
-> > but that could be optimized once the rest works.
->
-> Okay
+Hi Michael,
 
-Any idea which bit you want to try next? Creating a raw_copy_{from,to}_user()
-based on get_user_pages()/kmap_atomic()/memcpy() is probably a good
-next thing to do. I think it can be done one page at a time with only
-checking for
-get_fs(), access_ok(), and page permissions, while get_user()/put_user()
-need to handle a few more corner cases.
+On 12.05.2020 19:52, Ruhl, Michael J wrote:
+>> -----Original Message-----
+>> From: dri-devel <dri-devel-bounces@lists.freedesktop.org> On Behalf Of
+>> Marek Szyprowski
+>> Sent: Tuesday, May 12, 2020 5:01 AM
+>> To: dri-devel@lists.freedesktop.org; iommu@lists.linux-foundation.org;
+>> linaro-mm-sig@lists.linaro.org; linux-kernel@vger.kernel.org
+>> Cc: Pawel Osciak <pawel@osciak.com>; Bartlomiej Zolnierkiewicz
+>> <b.zolnierkie@samsung.com>; David Airlie <airlied@linux.ie>; linux-
+>> media@vger.kernel.org; Hans Verkuil <hverkuil-cisco@xs4all.nl>; Mauro
+>> Carvalho Chehab <mchehab@kernel.org>; Robin Murphy
+>> <robin.murphy@arm.com>; Christoph Hellwig <hch@lst.de>; linux-arm-
+>> kernel@lists.infradead.org; Marek Szyprowski
+>> <m.szyprowski@samsung.com>
+>> Subject: [PATCH v4 38/38] videobuf2: use sgtable-based scatterlist wrappers
+>>
+>> Use recently introduced common wrappers operating directly on the struct
+>> sg_table objects and scatterlist page iterators to make the code a bit
+>> more compact, robust, easier to follow and copy/paste safe.
+>>
+>> No functional change, because the code already properly did all the
+>> scaterlist related calls.
+>>
+>> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+>> ---
+>> For more information, see '[PATCH v4 00/38] DRM: fix struct sg_table nents
+>> vs. orig_nents misuse' thread:
+>> https://lore.kernel.org/dri-devel/20200512085710.14688-1-
+>> m.szyprowski@samsung.com/T/
+>> ---
+>> .../media/common/videobuf2/videobuf2-dma-contig.c  | 41 ++++++++++----
+>> --------
+>> drivers/media/common/videobuf2/videobuf2-dma-sg.c  | 32 +++++++--------
+>> --
+>> drivers/media/common/videobuf2/videobuf2-vmalloc.c | 12 +++----
+>> 3 files changed, 34 insertions(+), 51 deletions(-)
+>>
+>> diff --git a/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+>> b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+>> index d3a3ee5..bf31a9d 100644
+>> --- a/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+>> +++ b/drivers/media/common/videobuf2/videobuf2-dma-contig.c
+>> @@ -48,16 +48,15 @@ struct vb2_dc_buf {
+>>
+>> static unsigned long vb2_dc_get_contiguous_size(struct sg_table *sgt)
+>> {
+>> -	struct scatterlist *s;
+>> 	dma_addr_t expected = sg_dma_address(sgt->sgl);
+>> -	unsigned int i;
+>> +	struct sg_dma_page_iter dma_iter;
+>> 	unsigned long size = 0;
+>>
+>> -	for_each_sg(sgt->sgl, s, sgt->nents, i) {
+>> -		if (sg_dma_address(s) != expected)
+>> +	for_each_sgtable_dma_page(sgt, &dma_iter, 0) {
+>> +		if (sg_page_iter_dma_address(&dma_iter) != expected)
+>> 			break;
+>> -		expected = sg_dma_address(s) + sg_dma_len(s);
+>> -		size += sg_dma_len(s);
+>> +		expected += PAGE_SIZE;
+>> +		size += PAGE_SIZE;
+> This code in drm_prime_t_contiguous_size and here.  I seem to remember seeing
+> the same pattern in other drivers.
+>
+> Would it worthwhile to make this a helper as well?
+I think I've identified such patterns in all DRM drivers and replaced 
+with a common helper. So far I have no idea where to put such helper to 
+make it available for media/videobuf2, so those a few lines are indeed 
+duplicated here.
+> Also, isn't the sg_dma_len() the actual length of the chunk we are looking at?
+>
+> If its I not PAGE_SIZE (ie. dma chunk is 4 * PAGE_SIZE?), does your loop/calculation still work?
 
-        Arnd
+scaterlist page iterators (for_each_sg_page/for_each_sg_dma_page and 
+their sgtable variants) always operates on PAGE_SIZE units. They 
+correctly handle larger sg_dma_len().
+
+
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
+
 
 _______________________________________________
 linux-arm-kernel mailing list
