@@ -2,62 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFD381D0551
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 05:17:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06EC31D0571
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 05:20:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w/GSX7cCKdcmg5FbrvxZG9hwfqxasCyVijOVeAL5WeE=; b=BNOXfEcfvl8BzPxplRm3yPLY7
-	sU5hDLEL2vac9aAYen+OizpIAHlQAu9NCTBBC9vh2C5FpYJSFHfjhALk28ZksQq7r2Q4VUCjL5K5P
-	gYljUVlUyumwMJXcxNbSw/etctgwNKZV3qFeRf1jDtMYQmnVL8bwGx3b71RTdIxCQtlD3YwgpD344
-	7bLotxUTSIs2NdLbvV/UgtvgCmhw63AxzSeIutTrIk2qQykS5qxHUTNgcSJ9xzti+vlZOSHKlVUxO
-	eHKkQz/nADgTzdy0BBe0clvmLGNGu3eK8MpYznGzZZrDVksPMWj3tuKb1+AM7w0wwStzlvJYMUXw5
-	4Arfn91fg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
+	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sn14Wkne2pgpvYxV7+omylPM/Njn9vYj6pey5N9o7e4=; b=of8CbmHXKF/mt9
+	vpIIUcdG1cGc95qjNZbAuDB83aLduJfdg3hOdzcfTFCCJOxDg3h1LzUhUkwNH2AMw7m4phsB7E+U1
+	N6JnEwMpcidkZaRqazSKwUFU8tRbYpFgB69bbLhwmJr+Tro9pbPdcrgY9r3RigC1xS1TYbYhVxpjS
+	ea/ExWbw4TrQ6meQr9BXbPrrk1gBvJZWDayABRXlJbwMGznJLaiRu5iGwVzMXXJ7xfL32vbWO8rZW
+	L5RWvdK2xkMA2j/3PMqU3hx7hNWihLqrd5LRLeCxHesyMHqz3h9w/T+ND41nk+j8GVMJvqiq7rKFD
+	HKNZ2+BimMZPinUiMIrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYhtD-0000pk-CD; Wed, 13 May 2020 03:16:59 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1jYhw9-0001gT-02; Wed, 13 May 2020 03:20:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYht4-0000ot-0E
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 03:16:51 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 2437A48CDD2EC4FFADEA;
- Wed, 13 May 2020 11:16:36 +0800 (CST)
-Received: from [127.0.0.1] (10.166.213.93) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.487.0; Wed, 13 May 2020
- 11:16:34 +0800
-Subject: Re: [PATCH v2] ACPI/IORT: Fix PMCG node always look for a single ID
- mapping.
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-References: <1589327760-5464-1-git-send-email-tuanphan@os.amperecomputing.com>
-From: Hanjun Guo <guohanjun@huawei.com>
-Message-ID: <6f9996d3-18f1-0432-0e59-adc2cf086c9c@huawei.com>
-Date: Wed, 13 May 2020 11:16:33 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.6.0
+ id 1jYhw0-0001dT-DQ; Wed, 13 May 2020 03:19:53 +0000
+Received: from paulmck-ThinkPad-P72.home (unknown [50.39.105.78])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4CA0420714;
+ Wed, 13 May 2020 03:19:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589339991;
+ bh=3evM/3WoUY87UjYJg6kocy7JRyvcnZJAhsOd5UgvkMQ=;
+ h=Date:From:To:Cc:Subject:Reply-To:References:In-Reply-To:From;
+ b=kdXcrlFVRId5W4tSKz2O+7bJSB24kuk9EK2RoEBms3JY4jhtAH4wBk2NsC/fRBGq+
+ Y4Vkyn2Yu/0NnQy3N3V0LHNZIbyxfMJdFmAcjqNo9jQqJYpn+TCbdNVRvzlSi43+Uo
+ zbhmsSWI4UQWFdk6BmTRCRPg7o/LaluyBQfj/GVE=
+Received: by paulmck-ThinkPad-P72.home (Postfix, from userid 1000)
+ id 349373523471; Tue, 12 May 2020 20:19:51 -0700 (PDT)
+Date: Tue, 12 May 2020 20:19:51 -0700
+From: "Paul E. McKenney" <paulmck@kernel.org>
+To: Walter Wu <walter-zh.wu@mediatek.com>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+Message-ID: <20200513031951.GO2869@paulmck-ThinkPad-P72>
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+ <20200511180527.GZ2869@paulmck-ThinkPad-P72>
+ <1589250993.19238.22.camel@mtksdccf07>
+ <CACT4Y+b6ZfmZG3YYC_TkoeGaAQjSEKvF4dZ9vHzTx5iokD4zTQ@mail.gmail.com>
+ <20200512142541.GD2869@paulmck-ThinkPad-P72>
+ <CACT4Y+ZfzLhcG2Wy_iEMB=hJ5k=ib+X-m29jDG2Jcs7S-TPX=w@mail.gmail.com>
+ <20200512161422.GG2869@paulmck-ThinkPad-P72>
+ <CACT4Y+aWNDntO6+Rhn0a-4N1gLOTe5UzYB9m5TnkFxG_L15cXA@mail.gmail.com>
+ <1589335531.19238.52.camel@mtksdccf07>
 MIME-Version: 1.0
-In-Reply-To: <1589327760-5464-1-git-send-email-tuanphan@os.amperecomputing.com>
-Content-Language: en-GB
-X-Originating-IP: [10.166.213.93]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <1589335531.19238.52.camel@mtksdccf07>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_201650_214465_D86BD156 
-X-CRM114-Status: GOOD (  15.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200512_201952_495389_FED630F7 
+X-CRM114-Status: GOOD (  31.46  )
+X-Spam-Score: -5.4 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.190 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.2 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,62 +85,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, "Rafael J.
- Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- patches@amperecomputing.com, linux-arm-kernel@lists.infradead.org,
- Len Brown <lenb@kernel.org>
+Reply-To: paulmck@kernel.org
+Cc: wsd_upstream <wsd_upstream@mediatek.com>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>, linux-mediatek@lists.infradead.org,
+ Alexander Potapenko <glider@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/5/13 7:56, Tuan Phan wrote:
-> PMCG node can have zero ID mapping if its overflow interrupt
-> is wire based. The code to parse PMCG node can not assume it will
-> have a single ID mapping.
+On Wed, May 13, 2020 at 10:05:31AM +0800, Walter Wu wrote:
+> On Tue, 2020-05-12 at 18:22 +0200, Dmitry Vyukov wrote:
+> > On Tue, May 12, 2020 at 6:14 PM Paul E. McKenney <paulmck@kernel.org> wrote:
+> > > > > > > > > This feature will record first and last call_rcu() call stack and
+> > > > > > > > > print two call_rcu() call stack in KASAN report.
+> > > > > > > >
+> > > > > > > > Suppose that a given rcu_head structure is passed to call_rcu(), then
+> > > > > > > > the grace period elapses, the callback is invoked, and the enclosing
+> > > > > > > > data structure is freed.  But then that same region of memory is
+> > > > > > > > immediately reallocated as the same type of structure and again
+> > > > > > > > passed to call_rcu(), and that this cycle repeats several times.
+> > > > > > > >
+> > > > > > > > Would the first call stack forever be associated with the first
+> > > > > > > > call_rcu() in this series?  If so, wouldn't the last two usually
+> > > > > > > > be the most useful?  Or am I unclear on the use case?
+> > > > > >
+> > > > > > 2 points here:
+> > > > > >
+> > > > > > 1. With KASAN the object won't be immediately reallocated. KASAN has
+> > > > > > 'quarantine' to delay reuse of heap objects. It is assumed that the
+> > > > > > object is still in quarantine when we detect a use-after-free. In such
+> > > > > > a case we will have proper call_rcu stacks as well.
+> > > > > > It is possible that the object is not in quarantine already and was
+> > > > > > reused several times (quarantine is not infinite), but then KASAN will
+> > > > > > report non-sense stacks for allocation/free as well. So wrong call_rcu
+> > > > > > stacks are less of a problem in such cases.
+> > > > > >
+> > > > > > 2. We would like to memorize 2 last call_rcu stacks regardless, but we
+> > > > > > just don't have a good place for the index (bit which of the 2 is the
+> > > > > > one to overwrite). Probably could shove it into some existing field,
+> > > > > > but then will require atomic operations, etc.
+> > > > > >
+> > > > > > Nobody knows how well/bad it will work. I think we need to get the
+> > > > > > first version in, deploy on syzbot, accumulate some base of example
+> > > > > > reports and iterate from there.
+> > > > >
+> > > > > If I understood the stack-index point below, why not just move the
+> > > > > previous stackm index to clobber the previous-to-previous stack index,
+> > > > > then put the current stack index into the spot thus opened up?
+> > > >
+> > > > We don't have any index in this change (don't have memory for such index).
+> > > > The pseudo code is"
+> > > >
+> > > > u32 aux_stacks[2]; // = {0,0}
+> > > >
+> > > > if (aux_stacks[0] != 0)
+> > > >     aux_stacks[0] = stack;
+> > > > else
+> > > >    aux_stacks[1] = stack;
+> > >
+> > > I was thinking in terms of something like this:
+> > >
+> > > u32 aux_stacks[2]; // = {0,0}
+> > >
+> > > if (aux_stacks[0] != 0) {
+> > >     aux_stacks[0] = stack;
+> > > } else {
+> > >    if (aux_stacks[1])
+> > >         aux_stacks[0] = aux_stacks[1];
+> > >    aux_stacks[1] = stack;
+> > > }
+> > >
+> > > Whether this actually makes sense in real life, I have no idea.
+> > > The theory is that you want the last two stacks.  However, if these
+> > > elements get cleared at kfree() time, then I could easily believe that
+> > > the approach you already have (first and last) is the way to go.
+> > >
+> > > Just asking the question, not arguing for a change!
+> > 
+> > Oh, this is so obvious... in hindsight! :)
+> > 
+> > Walter, what do you think?
+> > 
 > 
-> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
-
-It's better to add
-
-Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
-
-> ---
-> Changes in v2:
-> - Used pmcg node to detect wired base overflow interrupt.
->   
->   drivers/acpi/arm64/iort.c | 5 +++++
->   1 file changed, 5 insertions(+)
+> u32 aux_stacks[2]; // = {0,0}
 > 
-> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> index ed3d2d1..11a4e8e 100644
-> --- a/drivers/acpi/arm64/iort.c
-> +++ b/drivers/acpi/arm64/iort.c
-> @@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
->   static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->   {
->   	struct acpi_iort_smmu_v3 *smmu;
-> +	struct acpi_iort_pmcg *pmcg;
->   
->   	switch (node->type) {
->   	case ACPI_IORT_NODE_SMMU_V3:
-> @@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->   
->   		return smmu->id_mapping_index;
->   	case ACPI_IORT_NODE_PMCG:
-> +		pmcg = (struct acpi_iort_pmcg *)node->node_data;
-> +		if (pmcg->overflow_gsiv)
-> +			return -EINVAL;
-> +
->   		return 0;
->   	default:
->   		return -EINVAL;
+> if (aux_stacks[0] != 0) {
+>      aux_stacks[0] = stack;
+> } else {
+>     if (aux_stacks[1])
+>          aux_stacks[0] = aux_stacks[1];
+>     aux_stacks[1] = stack;
+> }
+> 
+> Hmm...why I think it will always cover aux_stacks[0] after aux_stacks[0]
+> has stack, it should not record last two stacks?
+> 
+> How about this:
+> 
+> u32 aux_stacks[2]; // = {0,0}
+> 
+> if (aux_stacks[1])
+>     aux_stacks[0] = aux_stacks[1];
+> aux_stacks[1] = stack;
 
-With my comments addressed,
+Even better!  ;-)
 
-Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
+							Thanx, Paul
 
+> > I would do this. I think latter stacks are generally more interesting
+> > wrt shedding light on a bug. The first stack may even be "statically
+> > known" (e.g. if object is always queued into a workqueue for some lazy
+> > initialization during construction).
+> 
+> I think it make more sense to record latter stack, too.
+> 
+> Thanks for your and Paul's suggestion.
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
