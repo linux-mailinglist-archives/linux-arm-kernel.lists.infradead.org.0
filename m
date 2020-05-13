@@ -2,76 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A37291D1B4E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 18:41:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 694BA1D1B77
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 18:45:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g0LfA4EghMNP0YK6H6dfuOqMcNURncxciL/bsj6nNCQ=; b=HKZSTRMuqSGdfJ
-	2/poxB9sBIC46zgHRAxOuLEwurMeC/TMosi1TnvxF2PbaukQgbpmucRUYeLN6D42Au/SdgUd0BBCw
-	ENva8Mg6F8AbQpgE7+PRScuZ3Jd0kK2NDtR/ExbxhuY4wMMGZmZKtKHBH6KxkG+NWQSWIho53746V
-	IVHxaG+JUxyhrJvhRTWQFYJ4wgS6ov8ZdUS7poEnJXo9NTcKUX9Lj9xzZHl+MVcf4jWTsKJbY6Vcj
-	cxpW5E7YCa2gSfKgOTWXh367Wx03jK60tO7WUA+J3tzCJ8vOVTFlk+gGljBeMbM8Aj3obVjpsqI2H
-	5nLCslX+Fxgn7VY6XAwg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=NY0rQmRo5kfHn4ZH1/N8Px+YXn3JvN9PAPDZ6AWtgMA=; b=JfGtiB0xtvamh3oxGqzobW/Et
+	NWEDQ0Iel0/nqL1BkW7nKj1vxd8PiDg2QK2dzZn4hn01wu7FykniRU65XJbOknD7xg2dwXeOBvYy8
+	gM1QamQjSyAjW+GcEl+QBJAHluxylxE/r1gBr1k8vI6pM1c3bW+2KidEPY++TFpf2njg4RAapSHBH
+	Lu2LZjn5NodkpFkqOaiRI5z7e97iFLZRsc4y17cBNNJzDgIYsAzBHKNEAaFb5MDrVPhzTNQvbzDaY
+	7NloTUPdjdoGVzrD3gqphtDL1Np2BrEstnQXKnqNRN/KXu4iyMWZBWEUQsIYtU0BQ6vcJL0HPIK7v
+	eAoLSIPUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYuRU-0005aB-50; Wed, 13 May 2020 16:41:12 +0000
-Received: from mail-qt1-x842.google.com ([2607:f8b0:4864:20::842])
+	id 1jYuVs-0001It-PE; Wed, 13 May 2020 16:45:44 +0000
+Received: from mail-qk1-x741.google.com ([2607:f8b0:4864:20::741])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYuRL-0005Yq-Sw; Wed, 13 May 2020 16:41:05 +0000
-Received: by mail-qt1-x842.google.com with SMTP id l1so341144qtp.6;
- Wed, 13 May 2020 09:41:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Of6DuVfllLEJKZni4Ai4vipcUdfNzlQ6+FZgLgcsMF8=;
- b=ehOQ0f61ejewm2g+6SEOb8DS6voX1jKlEAKsoRPlJRIIFmbPMjaaoPGNrQLjj3ZK4w
- hepeE8/r99wWaPmbogTTG7Ujhx8Di0mHpuuPhQE2unfc1UhiQiu6Q3QrZIpmOMuv6E97
- F+xMDkcQOEEjl0OQOqReOKAB2mWDFPN2LEFmfLNwdfXI4RA8iuoL+aBebyrP0d7h1tvs
- XpEa5UoXed4Q8b2c1IDNtjFndFuYyMQZzCznKxs5pofbHgpMmu3aOmTehGln+XUVUmN0
- jOaeqf/ZGDI+PVcrkjgJC0H0KMdQX3JTkTYYECXWD+Mdugahf5Jz5tZpneOUtIIEWU8a
- BcAA==
+ id 1jYuVk-0001IQ-5O
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 16:45:37 +0000
+Received: by mail-qk1-x741.google.com with SMTP id z80so12516356qka.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 May 2020 09:45:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:from:to:cc:references:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=oodbg6X4hPZHtBvXjZAsYciMiFkPyRUpeqTjF2PiB2M=;
+ b=VKMWihnAb/wGKOJXGQV2TIK1soF3Qg6UEXAcMtlaSZQPjchCIG9iCObFojDKeXhgI1
+ E5NmgwMT/zXv5KUCqCHddu7YvL4PzxeRlDwxHwpthBPBbsof1h7W0EJvTtxW80m9qubw
+ VFEg3Dzs8Ix3ZFODWbrVb+ex/aAr2x8cABXXvvz4H1BS3j/NfsgD4rFpawQnxjpgoVHV
+ uUGO6gCYUIKfJSjkE4NVWbB0u9cECHyPz/pCs85ZlTSk+3DfsJTE55JH9tlPxAtmF7MN
+ qxJZT8CTJpKLGIxsvPcGwI5pqKJ21uDU/BAXqm992bVbjC5wtYXsH9SMhBvorNlat/i5
+ 34zQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Of6DuVfllLEJKZni4Ai4vipcUdfNzlQ6+FZgLgcsMF8=;
- b=ZHHpKHM3BKKOoBF7rOlq2DNsGzIn8CN+ds0JrZOgEfQ9l95Nf/T6tzf9tSyxx6dwpj
- HCoIr8FJWmPqigQrsUT/co9+sKufdfojRLmnr8KrdYM0f991LybH3Ct/0/eOLrv17caa
- LFZM+5PJxThAWELSzEN62I6N5Jm4FteApdzxgNO+8q9HcJwwmvKJRPD//iw5oXueY7Hd
- gkA8iiG3H3SLArVsg96NxXOomgMbMzW5qyObwESUD8y0OXIRPOHZtKxFUQzu6Ko3wBeb
- 97UToxHqv7b2mbcH2okhKlw3zke0J4cqr9X82dJ8fGQ0UYAQw7sIV1tk/Dsm4LiJGUTL
- jaFg==
-X-Gm-Message-State: AGi0PuYklqgWQ+enJ7B4emTvVNBb8MAjVI01a4bUEfIiRmED3/gg7/KG
- 0UdlgntLEL57bhXlrsBCRUN/YUfJz1ytnFd0w5M=
-X-Google-Smtp-Source: APiQypKQF8wuPkIB/Ht0f9sQIUQaXRfVgczFyL9sDMRdp1ebZgYPB8wvKrKrbVS6PA73SGgLiaV98lH5IaSqDqzX4fc=
-X-Received: by 2002:ac8:739a:: with SMTP id t26mr27687484qtp.311.1589388061575; 
- Wed, 13 May 2020 09:41:01 -0700 (PDT)
+ h=x-gm-message-state:subject:from:to:cc:references:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=oodbg6X4hPZHtBvXjZAsYciMiFkPyRUpeqTjF2PiB2M=;
+ b=G0FFcFFIckGst8LCRe3bPyYql+vYhtgUtitDouo0EMHi4rH2XE0AIqm93S62pHSyPu
+ FvU8cfLRSq0uN23bT77/SZA+I4iyDPWQIY1A+WmzoLImNuPBl4W2AWzH6Av0csNtg7EW
+ tQDcIIHR4J8auFKzL6h7lZYmWaXEU0GWW/NLgfiKoaryCZTAR/VhLvFo66z7eO5cy0uP
+ W7i++ZkJu0Vb+t1M5lXpqYaC2y8oZEyE+s73rvXEcg+K8Z/13bIWqOLHncN3QrR0t4V1
+ Hrg3UvY4Mmu38QUtJwbpuM1Ut/Tbo7MATgqySlirmzYowlqJMQwJl+qZFGqImzTKWJTK
+ LAQQ==
+X-Gm-Message-State: AOAM530VuABx1WdkcJUPBkxY7228L1eFtPlnSzUwMLh7Vdu2RRtn9caJ
+ xv+l+hL3JHnbYlZGNoAQQjqL3wpCXjAZkA==
+X-Google-Smtp-Source: ABdhPJyllsykuPwPyFp0vCVqR2vDAMZCv41cgMv9iBgJBtzfu2QWJWRgkCMlJNwm7y33iH394jmsyA==
+X-Received: by 2002:a05:620a:b19:: with SMTP id
+ t25mr537021qkg.428.1589388334758; 
+ Wed, 13 May 2020 09:45:34 -0700 (PDT)
+Received: from [192.168.0.185] ([191.251.12.44])
+ by smtp.gmail.com with ESMTPSA id i59sm108971qtb.58.2020.05.13.09.45.29
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 May 2020 09:45:33 -0700 (PDT)
+Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
+From: Luis Machado <luis.machado@linaro.org>
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-20-catalin.marinas@arm.com>
+ <a7569985-eb85-497b-e3b2-5dce0acb1332@linaro.org>
+ <20200513104849.GC2719@gaia>
+ <3d2621ac-9d08-53ea-6c22-c62532911377@linaro.org>
+ <20200513141147.GD2719@gaia>
+ <eec9ddae-8aa0-6cd1-9a23-16b06bb457c5@linaro.org>
+Message-ID: <e7f995d6-d48b-1ea2-c9e6-d2533e8eadd5@linaro.org>
+Date: Wed, 13 May 2020 13:45:27 -0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <20200501152335.1805790-1-enric.balletbo@collabora.com>
- <20200501152335.1805790-8-enric.balletbo@collabora.com>
-In-Reply-To: <20200501152335.1805790-8-enric.balletbo@collabora.com>
-From: Enric Balletbo Serra <eballetbo@gmail.com>
-Date: Wed, 13 May 2020 18:40:50 +0200
-Message-ID: <CAFqH_53h=3OXzwLnw1XT3rHYkMPOPNFBdQdPeFmNubN9qq_Twg@mail.gmail.com>
-Subject: Re: [PATCH v4 7/7] drm/mediatek: mtk_dsi: Create connector for bridges
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+In-Reply-To: <eec9ddae-8aa0-6cd1-9a23-16b06bb457c5@linaro.org>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_094103_938762_D0A5F049 
-X-CRM114-Status: GOOD (  18.38  )
+X-CRM114-CacheID: sfid-20200513_094536_207579_D918A255 
+X-CRM114-Status: GOOD (  34.70  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:842 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:741 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [eballetbo[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -91,101 +106,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chun-Kuang Hu <chunkuang.hu@kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
- David Airlie <airlied@linux.ie>, linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Philipp Zabel <p.zabel@pengutronix.de>, Hsin-Yi Wang <hsinyi@chromium.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Collabora Kernel ML <kernel@collabora.com>, Sam Ravnborg <sam@ravnborg.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Alan Hayward <Alan.Hayward@arm.com>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Chun-Kuang,
+On 5/13/20 12:09 PM, Luis Machado wrote:
+> On 5/13/20 11:11 AM, Catalin Marinas wrote:
+>> On Wed, May 13, 2020 at 09:52:52AM -0300, Luis Machado wrote:
+>>> On 5/13/20 7:48 AM, Catalin Marinas wrote:
+>>>> On Tue, May 12, 2020 at 04:05:15PM -0300, Luis Machado wrote:
+>>>>> On 4/21/20 11:25 AM, Catalin Marinas wrote:
+>>>>>> Add support for bulk setting/getting of the MTE tags in a tracee's
+>>>>>> address space at 'addr' in the ptrace() syscall prototype. 'data' 
+>>>>>> points
+>>>>>> to a struct iovec in the tracer's address space with iov_base
+>>>>>> representing the address of a tracer's buffer of length iov_len. The
+>>>>>> tags to be copied to/from the tracer's buffer are stored as one 
+>>>>>> tag per
+>>>>>> byte.
+>>>>>>
+>>>>>> On successfully copying at least one tag, ptrace() returns 0 and 
+>>>>>> updates
+>>>>>> the tracer's iov_len with the number of tags copied. In case of 
+>>>>>> error,
+>>>>>> either -EIO or -EFAULT is returned, trying to follow the ptrace() man
+>>>>>> page.
+>>>>>>
+>>>>>> Note that the tag copying functions are not performance critical,
+>>>>>> therefore they lack optimisations found in typical memory copy 
+>>>>>> routines.
+>>>>>>
+>>>>>> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+>>>>>> Cc: Will Deacon <will@kernel.org>
+>>>>>> Cc: Alan Hayward <Alan.Hayward@arm.com>
+>>>>>> Cc: Luis Machado <luis.machado@linaro.org>
+>>>>>> Cc: Omair Javaid <omair.javaid@linaro.org>
+>>>>>
+>>>>> I started working on MTE support for GDB and I'm wondering if we've 
+>>>>> already
+>>>>> defined a way to check for runtime MTE support (as opposed to a 
+>>>>> HWCAP2-based
+>>>>> check) in a traced process.
+>>>>>
+>>>>> Originally we were going to do it via empty-parameter ptrace calls, 
+>>>>> but you
+>>>>> had mentioned something about a proc-based method, if I'm not 
+>>>>> mistaken.
+>>>>
+>>>> We could expose more information via proc_pid_arch_status() but that
+>>>> would be the tagged address ABI and tag check fault mode and intended
+>>>> for human consumption mostly. We don't have any ptrace interface that
+>>>> exposes HWCAPs. Since the gdbserver runs on the same machine as the
+>>>> debugged process, it can check the HWCAPs itself, they are the same for
+>>>> all processes.
+>>>
+>>> Sorry, I think i haven't made it clear. I already have access to 
+>>> HWCAP2 both
+>>> from GDB's and gdbserver's side. But HWCAP2 only indicates the 
+>>> availability
+>>> of a particular feature in a CPU, it doesn't necessarily means the 
+>>> traced
+>>> process is actively using MTE, right?
+>>
+>> Right, but "actively" is not well defined either. The only way to tell
+>> whether a process is using MTE is to look for any PROT_MTE mappings. You
+>> can access these via /proc/<pid>/maps. In theory, one can use MTE
+>> without enabling the tagged address ABI or even tag checking (i.e. no
+>> prctl() call).
+>>
+> 
+> I see the problem. I was hoping for a more immediate form of runtime 
+> check. One debuggers would validate and enable all the tag checks and 
+> register access at process attach/startup.
+> 
+> With that said, checking for PROT_MTE in /proc/<pid>/maps may still be 
+> useful, but a process with no immediate PROT_MTE maps doesn't mean such 
+> process won't attempt to use PROT_MTE later on. I'll have to factor that 
+> in, but I think it'll work.
+> 
+> I guess HWCAP2_MTE will be useful after all. We can just assume that 
+> whenever we have HWCAP2_MTE, we can fetch MTE registers and check for 
+> PROT_MTE.
+> 
+>>> So GDB/gdbserver would need runtime checks to be able to tell if a 
+>>> process
+>>> is using MTE, in which case the tools will pay attention to tags and
+>>> additional MTE-related registers (sctlr and gcr) we plan to make 
+>>> available
+>>> to userspace.
+>>
+>> I'm happy to expose GCR_EL1.Excl and the SCTLR_EL1.TCF0 bits via ptrace
+>> as a thread state. The tags, however, are a property of the memory range
+>> rather than a per-thread state. That's what makes it different from
+>> other register-based features like SVE.
+> 
+> That's my understanding as well. I'm assuming, based on our previous 
+> discussion, that we'll have those couple registers under a regset (maybe 
+> NT_ARM_MTE).
+> 
+>>
+>>> The original proposal was to have GDB send PTRACE_PEEKMTETAGS with a 
+>>> NULL
+>>> address and check the result. Then GDB would be able to decide if the
+>>> process is using MTE or not.
+>>
+>> We don't store this information in the kernel as a bool and I don't
+>> think it would be useful either. I think gdb, when displaying memory,
+>> should attempt to show tags as well if the corresponding range was
+>> mapped with PROT_MTE. Just probing whether a thread ever used MTE
+>> doesn't help since you need to be more precise on which address supports
+>> tags.
+> 
+> Thanks for making this clear. Checking with ptrace won't work then. It 
+> seems like /proc/<pid>/maps is the way to go.
+> 
+>>
+>>>> BTW, in my pre-v4 patches (hopefully I'll post v4 this week), I changed
+>>>> the ptrace tag access slightly to return an error (and no tags copied)
+>>>> if the page has not been mapped with PROT_MTE. The other option would
+>>>> have been read-as-zero/write-ignored as per the hardware behaviour.
+>>>> Either option is fine by me but I thought the write-ignored part would
+>>>> be more confusing for the debugger. If you have any preference here,
+>>>> please let me know.
+>>>
+>>> I think erroring out is a better alternative, as long as the debugger 
+>>> can
+>>> tell what the error means, like, for example, "this particular address
+>>> doesn't make use of tags".
+>>
+>> And you could use this for probing whether the range has tags or not.
+>> With my current patches it returns -EFAULT but happy to change this to
+>> -EOPNOTSUPP or -EINVAL. Note that it only returns an error if no tags
+>> copied. If gdb asks for a range of two pages and only the first one has
+>> PROT_MTE, it will return 0 and set the number of tags copied equivalent
+>> to the first page. A subsequent call would return an error.
+>>
+>> In my discussion with Dave on the documentation patch, I thought retries
+>> wouldn't be needed but in the above case it may be useful to get an
+>> error code. That's unless we change the interface to return an error and
+>> also update the user iovec structure.
+>>
+> 
+> Let me think about this for a bit. I'm trying to factor in the 
+> /proc/<pid>/maps contents. If debuggers know which pages have PROT_MTE 
+> set, then we can teach the tools not to PEEK/POKE tags from/to those 
+> memory ranges, which simplifies the error handling a bit.
 
-Missatge de Enric Balletbo i Serra <enric.balletbo@collabora.com> del
-dia dv., 1 de maig 2020 a les 17:25:
->
-> Use the drm_bridge_connector helper to create a connector for pipelines
-> that use drm_bridge. This allows splitting connector operations across
-> multiple bridges when necessary, instead of having the last bridge in
-> the chain creating the connector and handling all connector operations
-> internally.
->
-> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-> Acked-by: Sam Ravnborg <sam@ravnborg.org>
+I was checking the output of /proc/<pid>/maps and it doesn't seem to 
+contain flags against which i can match PROT_MTE. It seems 
+/proc/<pid>/smaps is the one that contains the flags (mt) for MTE. Am i 
+missing something?
 
-A gentle ping on this, I think that this one is the only one that
-still needs a review in the series.
-
-Thanks,
- Enric
-
-> ---
->
-> Changes in v4: None
-> Changes in v3:
-> - Move the bridge.type line to the patch that adds drm_bridge support. (Laurent Pinchart)
->
-> Changes in v2: None
->
->  drivers/gpu/drm/mediatek/mtk_dsi.c | 13 ++++++++++++-
->  1 file changed, 12 insertions(+), 1 deletion(-)
->
-> diff --git a/drivers/gpu/drm/mediatek/mtk_dsi.c b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> index 4f3bd095c1ee..471fcafdf348 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_dsi.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_dsi.c
-> @@ -17,6 +17,7 @@
->
->  #include <drm/drm_atomic_helper.h>
->  #include <drm/drm_bridge.h>
-> +#include <drm/drm_bridge_connector.h>
->  #include <drm/drm_mipi_dsi.h>
->  #include <drm/drm_of.h>
->  #include <drm/drm_panel.h>
-> @@ -183,6 +184,7 @@ struct mtk_dsi {
->         struct drm_encoder encoder;
->         struct drm_bridge bridge;
->         struct drm_bridge *next_bridge;
-> +       struct drm_connector *connector;
->         struct phy *phy;
->
->         void __iomem *regs;
-> @@ -977,10 +979,19 @@ static int mtk_dsi_encoder_init(struct drm_device *drm, struct mtk_dsi *dsi)
->          */
->         dsi->encoder.possible_crtcs = 1;
->
-> -       ret = drm_bridge_attach(&dsi->encoder, &dsi->bridge, NULL, 0);
-> +       ret = drm_bridge_attach(&dsi->encoder, &dsi->bridge, NULL,
-> +                               DRM_BRIDGE_ATTACH_NO_CONNECTOR);
->         if (ret)
->                 goto err_cleanup_encoder;
->
-> +       dsi->connector = drm_bridge_connector_init(drm, &dsi->encoder);
-> +       if (IS_ERR(dsi->connector)) {
-> +               DRM_ERROR("Unable to create bridge connector\n");
-> +               ret = PTR_ERR(dsi->connector);
-> +               goto err_cleanup_encoder;
-> +       }
-> +       drm_connector_attach_encoder(dsi->connector, &dsi->encoder);
-> +
->         return 0;
->
->  err_cleanup_encoder:
-> --
-> 2.26.2
->
->
-> _______________________________________________
-> Linux-mediatek mailing list
-> Linux-mediatek@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-mediatek
+Is this the only place debuggers can check for PROT_MTE? If so, that's 
+unfortunate. /proc/<pid>/smaps doesn't seem to be convenient for parsing.
 
 _______________________________________________
 linux-arm-kernel mailing list
