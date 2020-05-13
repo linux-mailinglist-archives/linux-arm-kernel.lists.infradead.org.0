@@ -2,90 +2,141 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C54C81D1080
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 13:03:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBCDD1D1099
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 13:07:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MG89l6u0LKmaVP/IA/O3ZGIhMQMHHoPNJGM1xpmikog=; b=aaK2IvIy1EKXkE
-	/9EueugyjCHHNWpDyjka9JpCFfHz+rjNparSQNozPPg5rna+myO6UXk96gnfdqV4z5Sfdfz/7vneY
-	KJjgnNGBI9lOMIjAoal73aH7XnSkJZXy3o1DS4jn6ri6LvZWuB0afT0umBtEybgVCyoHH+1a4MZHG
-	Asd7Y73X6pw957B2iarcXjS1S/3G5FZRi+BAb3zaz+Mb1zhsXvOzxc1XMgXMfo/ByFFU4xghMiUcR
-	V7933He529TL/KzD3qjglBXFHEmdErYZdOf35iL8XBGDn00lQ/rkUFopfoEzL4efx75U79gRQGhQq
-	Dfy8icT/GB8Y6ap9wyRQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ZUrgknRJ/eExXXSt+mAVkZBXJZglfDPlo9v8YQCM2WA=; b=VT6pV40/919l4Q
+	o02KD4r4lSxAsHE562/CSyPbJ3Eu5dIT6T1MFa073Dk2Jybk1e+mfcDvH6INcBY7AEJXmWPz3xx6a
+	tY//NXu+wSm3Gtzm0iRnExnaS3u0GGNKpLnASZWXX3pj54XhTdVYHCKDxqFSvLSAtEDrk6NkD+You
+	EMcmSlkbwgyw+ShAKrxp56THJSttPNfqIcjC4ZgX0tF/XjF5kl/hERgw4qlOVJlYr4PaBy9G07LsE
+	e04Xu+iXzbR3TEPBI+xnKEYDB50t4l3sE3JxG08euLQx64qFYHUAC31zWtWrSsEf7bD2KhQBMTA9W
+	F2e96lGGh1L2Cauty7qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYpAm-0006Nm-KF; Wed, 13 May 2020 11:03:36 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jYpEb-00015D-7p; Wed, 13 May 2020 11:07:33 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYpAg-0006Ml-78
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 11:03:31 +0000
-Received: by mail-wr1-x442.google.com with SMTP id 50so19810555wrc.11
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 04:03:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=cc:subject:to:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Nh7DyJO+DcViOqeU3sNNSJYNP3Q1t6sUi1HzAPYYVu4=;
- b=XC7R3Z8D2P+2DjVhpBCDocDEHgLNV3dVkUCrmrki+JJqmjTbn/6Pz5XjCJYfmI9eDq
- n0hXdb5hqlm3kmJp8aL5CW2hBe28Ndr8jS5TAlMOc73gKJ61KGv6Tbmgy8hf7RCzj2tJ
- 7CfJjPwYGl3jrTd/3h1lS2FDI+0dJr3DvcxiZz6idvQYQR5Lt6WbVOD8uag6anI7OqSh
- mVbIIa3ic/93ck98KrmshiOfl6uBhXSX+mRaev+DC+bRTZiqa9dwQVa5j+78gOXpx4hx
- m8NYDA8SKQJMyJkmqcuBpt/NAEmsgkEB0cn5naYstVDYLV5ZE99fPcPIM11I22e8F7Y0
- ju6g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:cc:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Nh7DyJO+DcViOqeU3sNNSJYNP3Q1t6sUi1HzAPYYVu4=;
- b=Wvm9y3WTPN9o9YO3G0DS7UUTCEuhPeEEO3Dh5waOOw/afubQ083Gx9KFwKldzrHGal
- lycj9QpGN4+ADD7QW3ZmKqipKZ2MuNORozY045Zmiu0lopU3bBUaAjzBd88gVjR4DV1H
- bN68nYCPjF1hr+U8b0GXfjmrrQviGSQgBbkxbK6ZJoh4MS7KevJPvVBNluzHDaBhmqlZ
- ecX/m+3wRy2STPMn/0j3syoNspfucatAUxrbkAVH9Fp1m+7e/w+QuffbjUQUJBSnfMRa
- KAjNFMLovR+E5Cp6DGS6z5+XpDg7C+dZ17x3tbk7XF9RD8vwNM5FQX4XNw1/twaCDc28
- pOBg==
-X-Gm-Message-State: AGi0PuZAplbwGKN/aR9BZU4n5E29RnnWLonGRS8Rzw/SN3g6QNyMke1I
- 7lO6J0RfwACGDRSx2RzMa7anuZFO
-X-Google-Smtp-Source: APiQypLtpJHo8ffwbbRkV/avsRbKUL1xHjzoj2MxEP2X+KQPOSe2utWuS8fB9xpuBPcH+EAxWl8lEw==
-X-Received: by 2002:adf:a74b:: with SMTP id e11mr28414461wrd.99.1589367808517; 
- Wed, 13 May 2020 04:03:28 -0700 (PDT)
-Received: from ?IPv6:2001:a61:2482:101:a081:4793:30bf:f3d5?
- ([2001:a61:2482:101:a081:4793:30bf:f3d5])
- by smtp.gmail.com with ESMTPSA id s2sm4208877wme.33.2020.05.13.04.03.27
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 04:03:28 -0700 (PDT)
-Subject: Re: [PATCH 04/14] prctl.2: srcfix add comments for navigation
-To: Dave Martin <Dave.Martin@arm.com>
-References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
- <1589301419-24459-5-git-send-email-Dave.Martin@arm.com>
- <8b882b6e-376b-111d-3c3c-7a042b0e91b5@gmail.com>
- <20200513105620.GE21779@arm.com>
-From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Message-ID: <9770249d-0d5a-1b02-4de1-bbb6343b5829@gmail.com>
-Date: Wed, 13 May 2020 13:03:27 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-MIME-Version: 1.0
-In-Reply-To: <20200513105620.GE21779@arm.com>
+ id 1jYpEM-00013q-Uq
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 11:07:21 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589368038; x=1620904038;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-id:content-transfer-encoding: mime-version;
+ bh=CN1TZ08r3nuyq0pS1FoxuygVXDcVwaIRZjM1ujF1RyQ=;
+ b=a1XMAsDoIjf5FJr9e8nvvtsIp5gRQ7FrZW7r/zwbMvA0Gk9anuaukf+i
+ UZN4ZODbNA9NI6hirWT2sbvsdBn57ms4Fotr8X/5Y41f///95lILyQ37l
+ uWfWIIf1Z5FwAbNKX2l4N1Pbsq8oai9PR0TaxCHMCGYGvg4cEkFyPaN7e
+ ZWrqtmLDJZNcV0CbX4E0JOC0TwWuBOdTJWCXfzbH0dIZsmypt2RwVbqjJ
+ Ft+cFfgc9LqI/kgc9BqvmVBiF8vKD3lc9nNfSaLIykPOVKrDWDNtRKTOk
+ XI6WoTqr1txgEDbT9nPWn83yD+TywMzN+RPNMl3wjY6VjgfdSGOHfdnuS w==;
+IronPort-SDR: bSt1y5g9hd82+0lAcwRJKt7V61CYoZ4HYnxQq5e9hYBIUmra0bMF3+90A8LRP4uCuXNo7udIbU
+ /YoAJ1w6eYCPw37sb8E3CtE1Y6MZ8BFwFI1sVs8/EAPHWwxMdHXKYIh9+yhcLqbHJVbQmud7mz
+ fbpQEKO8Gkmw+zjyShRiJgqgNyMy/QkBof47QSHpsSghc977Dpa8oITmWH4awCzhY+r3/kXbfj
+ jZf8MrVOiLM0BJB/KzU9TozPzSNQVvYw244V+r93qDo73+OXoF6zNdO5yRPsk8ENLdebk5vjF2
+ Guk=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="79428776"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 04:07:10 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 04:07:11 -0700
+Received: from NAM12-DM6-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 13 May 2020 04:07:10 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ESgjQwHJOcg4rg4hRoQyH4fXeLWG5dOPnUdivkVNZcyUjGnW5NmUcDJajGtOhKcvhHcWDdct3EVGCn4q9kervDHoR8B9R5efMBOdtCSEqvbAHob9wGqUjJo/tUeYeNtyHe2+ahXPN/YYoUXafzyNcX6nRrjAZ668HcmsOJwlhOgwjj/8kWiyPFhXTX+JvZfQB9SwoW0bDaFRa0SZNfbCkTu2lI5o6CmNwvetGQGlH7fCnqWir0Hl/fubXczfbdVXCe5P9RI1Dsk89nZSuobg9tY1JafvqLRrmyYpAjaQqOStwWyeGLXrIVH5et8YepEuBFhI0WhIM8QyKCZooFG0zA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CN1TZ08r3nuyq0pS1FoxuygVXDcVwaIRZjM1ujF1RyQ=;
+ b=aF4LQEv7jBh57ePXg4N3WNT8QHwZfI/ooMg8ynuXDEUCPQARQ1ozQ6dhe0ArGtSF9t5QyD7HOjozKvLahKrmkwJh1ZYC1L7+gLF1KQkBos2iwvu/85C9w6szVTgAcXBSvDNcBGwKBEff6YRus/WlhAJ03HBjAp7A5ACLeWnLZwmaK9yHdK41ZoAPQY9wYh5oe+z6dKNLrgJDVYeW26pYTTF/fs7SgB4wUOcLe/1lcu+FgfobwA2GWcwk7aGOEURDzx+E6NnqsBtcvSS87YmL/iI5irYdQ7dQaQeGiVxXCIcx3KjlEQrAmE0uCQaXocR/v1wGpJpSWhR4r1nx1N/g9w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=CN1TZ08r3nuyq0pS1FoxuygVXDcVwaIRZjM1ujF1RyQ=;
+ b=rNcaAXgGvxr6VcYgFkl0aEPox4qv8MfIyXNFekRwwnO5QbQXNKwYc2SuZ8xq+5k46FA95wJeaAqWhjQCAYEu5F3AS9IWeU5ASGiCllScw7kll+fPlLWHvxzm5w1UBAWQ7FGxnMRst45QOe2+feGOS3fJLao4iKm9EqWHXL6l5DQ=
+Received: from CY4PR11MB1688.namprd11.prod.outlook.com (2603:10b6:903:25::23)
+ by CY4PR11MB1752.namprd11.prod.outlook.com (2603:10b6:903:11a::14)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.28; Wed, 13 May
+ 2020 11:07:07 +0000
+Received: from CY4PR11MB1688.namprd11.prod.outlook.com
+ ([fe80::d414:b3d8:74c7:7488]) by CY4PR11MB1688.namprd11.prod.outlook.com
+ ([fe80::d414:b3d8:74c7:7488%9]) with mapi id 15.20.2979.033; Wed, 13 May 2020
+ 11:07:07 +0000
+From: <Codrin.Ciubotariu@microchip.com>
+To: <wsa@the-dreams.de>
+Subject: Re: Re: [RFC PATCH] i2c: at91: Fix pinmux after devm_gpiod_get() for
+ bus recovery
+Thread-Topic: Re: [RFC PATCH] i2c: at91: Fix pinmux after devm_gpiod_get() for
+ bus recovery
+Thread-Index: AQHWEvR+GtAbavRk40KvRq7DN8dZF6iZuWYAgAxN9wA=
+Date: Wed, 13 May 2020 11:07:07 +0000
+Message-ID: <c7a35978-03dd-3c73-6e7d-15ed40b5c57c@microchip.com>
+References: <20200415070643.23663-1-codrin.ciubotariu@microchip.com>
+ <20200505151256.GF2468@ninjato>
+In-Reply-To: <20200505151256.GF2468@ninjato>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
+authentication-results: the-dreams.de; dkim=none (message not signed)
+ header.d=none;the-dreams.de; dmarc=none action=none
+ header.from=microchip.com;
+x-originating-ip: [84.232.220.208]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7e7c7028-1124-4569-e1bf-08d7f72dc677
+x-ms-traffictypediagnostic: CY4PR11MB1752:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <CY4PR11MB1752EC8E5F377C5FA360828EE7BF0@CY4PR11MB1752.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 0402872DA1
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: wAmBeAGCdbD7kzNN08huq96PiWzXEUafrhkc31gTmFAEn24Zi9Wttuz/1R7MIFxuNVUOmHFi8qxSat2t0dU0/R5e2VEAmSR9udzazPEhoMGjHj4GEl80BH3P/IMeRDU51pCGMDiwXMmRRmB2lT7p3eGIP0vRcU/BKURsGsglq83NsqnOwggZZXbqATUilFjLG7u9NY0vN5+WiR9KApIqfkKK0UrO9n1xd/RFwfg+8D7quaiqOppcFfpIIGdfhBU1m0oH6SECVxIS3stURueTZmWB/XUMdxSJybtT1GTAM+rUIKbp6z79uITzFWCel7st5twKgezX2wv9bZfe+RbEeqQ1z6R1S/y3shLDPksOXnfsUK8jaj8VsuEHTUpNsYfVd93NSoUKCE7fR25pAktvkwqPUlNrkl87TWPYFHwYE7wjTwSwelfWxvNop5TMNJ/zQSJ1SOcUN1OqXzqjO/GuMTsayoQws2Zl6r7KFmix+VAIjzhyE3lF1vB3dMBTAmi0tWWMZebsBNyXGeWdZmdvyBtDw8mLBv6UIo++8tLKZ6yGJ8u3DhfbHJV5a428jSzR
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:CY4PR11MB1688.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(346002)(376002)(39860400002)(136003)(366004)(396003)(33430700001)(8936002)(54906003)(8676002)(53546011)(26005)(186003)(31686004)(6916009)(316002)(5660300002)(33440700001)(478600001)(71200400001)(7416002)(6506007)(2616005)(36756003)(66446008)(6486002)(66476007)(6512007)(86362001)(76116006)(31696002)(2906002)(66946007)(64756008)(4326008)(66556008)(91956017)(43740500002);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: Lh9m/UgIAMSKnyyyZQOwsPe708RDcsqtwMB9CgBX9ibeHLWpQCD/5MjJdYWhAW/BbMYBeCMPH/IF5SfUA2UtLFcL/sCrHWLsI3kzpFT9BJzVgk5mSHSa/jwdQsT9+EvaDUAplaM+yrbpMcPHCjU4bqvUbhGxNrfxgNo4W7hI/eSDQb1Ot4lqb0pOwo3soKKQJhjNgY4GK662lGgypFjRyKZhv5E89FjQ+XRVFjtd51Mdpmk+M2SC8oVdVcLHtrXbYHJ0e5nVTD8YDBU0vWcS5K4lCupJ5OW8GAsO/6CrJYemdTDhnkysytaP9cVzFuZDynB6GosdVZlDRVJefITvUkRLHDM+DuxCqFHQSfsoQiQoWjZf7YfErlxbsAXAHy+X0OojP/yM1Hm5UZRqkq28ehaNjaMUs3PHL7WwV5rRP1pngZZ/hp/Rzar9NxRzfM+QfnhSl7nAvekZIldJEiQSqPw6BqcEvCyZyyO+fYdMg3t4kPvy4bMeXZScHHpvw83N
+Content-ID: <F5A71579395B20448F9FB36722E0C959@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7e7c7028-1124-4569-e1bf-08d7f72dc677
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2020 11:07:07.0519 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 3eMS1Kv4UtX3thuxxvsW5NNZtKuuhH0+lmqeGHhonXL2J+00FiNLqChhdPeVmdx8j85EaBlR/HnyjMiisI2j1w71tKZMn5KkyV1Xm4ie4zU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR11MB1752
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_040330_258245_C2236892 
-X-CRM114-Status: GOOD (  23.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_040719_006562_EB3553F0 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mtk.manpages[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -105,77 +156,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- mtk.manpages@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: alan@softiron.com, kamel.bouhara@bootlin.com, alexandre.belloni@bootlin.com,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ linux-i2c@vger.kernel.org, linux@armlinux.org.uk,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dave,
-
-On 5/13/20 12:56 PM, Dave Martin wrote:
-> On Wed, May 13, 2020 at 12:09:27PM +0200, Michael Kerrisk (man-pages) wrote:
->> Hi Dave,
+On 05.05.2020 18:12, Wolfram Sang wrote:
+> On Wed, Apr 15, 2020 at 10:06:43AM +0300, Codrin Ciubotariu wrote:
+>> devm_gpiod_get() usually calls gpio_request_enable() for non-strict pinmux
+>> drivers. These puts the pins in GPIO mode, whithout notifying the pinctrl
+>> driver. At this point, the I2C bus no longer owns the pins. To mux the
+>> pins back to the I2C bus, we use the pinctrl driver to change the state
+>> of the pins to GPIO, before using devm_gpiod_get(). After the pins are
+>> received as GPIOs, we switch theer pinctrl state back to the default
+>> one,
 >>
->> On 5/12/20 6:36 PM, Dave Martin wrote:
->>> The prctl.2 source is unnecessarily hard to navigate, not least
->>> because prctl option flags are traditionally named PR_* and so look
->>> just like prctl names.
->>>
->>> For each actual prctl, add a comment of the form
->>>
->>> 	.\" prctl PR_FOO
->>>
->>> to make it move obvious where each top-level prctl starts.
->>>
->>> Of course, we could add some clever macros, but let's not confuse
->>> dumb parsers.
->>
->> A patch like this, which makes sweeping changes across the page,
->> should be best placed at the end of a series, I think.
->> The reason is that if I fail to apply this patch (and I am a
->> little dubious about it), then probably the rest of the patches
->> in the series won't apply. (Furthermore, it also forced me to
->> apply patch 02 already, which I wanted to reflect on a little.)
+>> Fixes: d3d3fdcc4c90 ("i2c: at91: implement i2c bus recovery")
+>> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
 > 
-> Agreed, I'll try to do that in future.
+> Applied to for-current, thanks!
+
+Just looked at this patch and noticed that I should change the pinctrl 
+state back to default if we can't get the gpio pins. I will submit a 
+patch to fix this.
+
 > 
->> That said, I'll apply it, so that the remaining patches
->> apply cleanly. I'll consider later whether to keep this
->> change. For example, I wonder if a visually distinctive 
->> source line that is always the same would be better than
->> these comments that repeat the PR_* names. For example, 
->> something like
->>
->> .\" ==========================
->>
->> I'll circle back to this later.
+> This will do for 5.7. For 5.8 or 5.9, I can imagine to take the two
+> pinctrl_state pointers into bus_recovery_info and handle all this in the
+> core. I will try this later this week if noone is super-eager to try it
+> out before.
 > 
-> I'd prefer to keep the name if we can, since navigating by search is
-> otherwise bothersome due to false hits.
-> 
-> Could we do both, say:
-> 
-> .\" === PR_FOO ===
 
-Okay -- I'll give that some thought.
+By 'all this' you mean to move the entire function in the core, right? 
+Having just these two pointers bus_recinovery_info won't help much. I 
+can try it, if you haven't already started...
 
-> If you prefer to reject this patch, I'm happy to rebase and repost the
-> series as appropriate.
-> 
-> In any case, this one is nice to have rather than essential.
+Best regards,
+Codrin
 
-For now, the patch is already committed and pushed.
-
-Cheers,
-
-Michael
-
--- 
-Michael Kerrisk
-Linux man-pages maintainer; http://www.kernel.org/doc/man-pages/
-Linux/UNIX System Programming Training: http://man7.org/training/
 
 _______________________________________________
 linux-arm-kernel mailing list
