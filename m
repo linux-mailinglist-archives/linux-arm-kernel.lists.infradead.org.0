@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5138C1D1272
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:15:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 06F6D1D127D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:17:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=sdZJYW9C++acXPl6Nt3ANhRbY5JY9S27tFWNnhge+yE=; b=f5HO4D9NT7Xj8P
-	TU2SM3M2PxLphZafExn9gOGn0NV2uZwZwUMjGZqKMlIA/gfEIxrQ5y8ltfggQiHwKDKp2MD5z1t5Y
-	ZI8UOvod9YaLk/lw78lnjat4ev0rcgI4qsYnl092SkP592FRfoQYi2/mRNMJBShF4kih5B5cFjSP0
-	iuJvzKxET8Cj5F0zrIleFhSCJZK3cgg2zPttliRzYd3DeZyynAHJTXtc4whzuQP67qLSyqXZprYOt
-	dCYzG8Po3T5Mm6AY2oGrbUXtpp9NY97unu7aVVAjEjnzVX0q22UbX6rbGu+DMfRgZ/QOubL2hm4k3
-	aQ35j5omSqzzjJZ+wwAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=uJM8aFXItP0wTzmVkJx32eumOmL6fkWVLCD+j0fv38w=; b=qzumPauZRpuTDPyH+uFI76Uso
+	iEDDTzj8JHHvC8PGqH0TbFt0QyE59IA0I+f6GCK+08gat1+ds8MBl8y2vFndBwkXWnqhaF///X9pS
+	9OsDiqQWxiTCGicv+r8QMDom9POZskdeGJwSpsSBw1/A+3JYrcTFSOarXTND8JXAVYAiP8uDEhh6H
+	O7eXAlPrBSS6RjGw6nU+2uIWN+irkqn3BeSvJrrk3WLfyb4kPyCW7kLSJovn2woQp9l48P3L3Anax
+	wLA7TSL9+MtisJV1kLOF74QWnMvWiBgemFUup6PFhvEWhf570HptrUI4epSV7eEZDoEBIVc3qtJKg
+	pFoum8qlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYqIg-00087p-45; Wed, 13 May 2020 12:15:50 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYqIZ-00087L-Eo
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 12:15:44 +0000
-Received: from disco-boy.misterjones.org (disco-boy.misterjones.org
- [51.254.78.96])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 06B57206D6;
- Wed, 13 May 2020 12:15:43 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589372143;
- bh=OFXMCfgg4QqvOju+IW8sguzu0zPnRXnwQP6ptWcD06o=;
- h=From:To:Cc:Subject:Date:From;
- b=V7AbQPKgWJK6PakqeqU1LoITqszt4ASQ0z0pTXUY0NNsOaMoL9t0daWUpgx4oLM0Y
- 2ht5Hbpe+SAGdYjs1pamcS00ro46OAHdHHR0JUoJe1EmRtvmlrhAYJYvBroFwq2sIl
- c2rj3Urk/Mqqdmgzmt2UAuD0Kjsmsplvns3EUbJM=
-Received: from 78.163-31-62.static.virginmediabusiness.co.uk ([62.31.163.78]
- helo=why.lan) by disco-boy.misterjones.org with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <maz@kernel.org>)
- id 1jYqIX-00BxoR-Df; Wed, 13 May 2020 13:15:41 +0100
-From: Marc Zyngier <maz@kernel.org>
-To: kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] KVM: arm64: Simplify __kvm_timer_set_cntvoff implementation
-Date: Wed, 13 May 2020 13:15:37 +0100
-Message-Id: <20200513121537.77546-1-maz@kernel.org>
-X-Mailer: git-send-email 2.26.2
+	id 1jYqK1-0000Ae-Ve; Wed, 13 May 2020 12:17:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYqJt-0000A0-OL
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 12:17:07 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0746D30E;
+ Wed, 13 May 2020 05:17:05 -0700 (PDT)
+Received: from [10.57.36.85] (unknown [10.57.36.85])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CF3BF3F71E;
+ Wed, 13 May 2020 05:17:03 -0700 (PDT)
+Subject: Re: [PATCH v2] iommu/arm-smmu-v3: Don't reserve implementation
+ defined register space
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ iommu@lists.linux-foundation.org, linux-arm-kernel@lists.infradead.org
+References: <20200513110255.597203-1-jean-philippe@linaro.org>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <cb1d150c-c83a-39ed-29df-599cec7b9201@arm.com>
+Date: Wed, 13 May 2020 13:17:02 +0100
+User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 62.31.163.78
-X-SA-Exim-Rcpt-To: kvm@vger.kernel.org, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org, james.morse@arm.com,
- julien.thierry.kdev@gmail.com, suzuki.poulose@arm.com
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on disco-boy.misterjones.org);
- SAEximRunCond expanded to false
+In-Reply-To: <20200513110255.597203-1-jean-philippe@linaro.org>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_051543_537558_EBFAF3CD 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200513_051705_878841_B981AE85 
+X-CRM114-Status: GOOD (  21.92  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,79 +65,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: joro@8bytes.org, lorenzo.pieralisi@arm.com, will@kernel.org,
+ tuanphan@amperemail.onmicrosoft.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Now that this function isn't constrained by the 32bit PCS,
-let's simplify it by taking a single 64bit offset instead
-of two 32bit parameters.
+On 2020-05-13 12:02 pm, Jean-Philippe Brucker wrote:
+> Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
+> inside the first 64kB region of the SMMU. Since PMCG are managed by a
+> separate driver, this layout causes resource reservation conflicts
+> during boot.
+> 
+> To avoid this conflict, don't reserve the MMIO regions that are
+> implementation defined. Although devm_ioremap_resource() still works on
+> full pages under the hood, this way we benefit from resource conflict
+> checks.
 
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- arch/arm64/include/asm/kvm_asm.h |  2 +-
- virt/kvm/arm/arch_timer.c        | 12 +-----------
- virt/kvm/arm/hyp/timer-sr.c      |  3 +--
- 3 files changed, 3 insertions(+), 14 deletions(-)
+Reviewed-by: Robin Murphy <robin.murphy@arm.com>
 
-diff --git a/arch/arm64/include/asm/kvm_asm.h b/arch/arm64/include/asm/kvm_asm.h
-index 7c7eeeaab9fa..59e314f38e43 100644
---- a/arch/arm64/include/asm/kvm_asm.h
-+++ b/arch/arm64/include/asm/kvm_asm.h
-@@ -64,7 +64,7 @@ extern void __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa);
- extern void __kvm_tlb_flush_vmid(struct kvm *kvm);
- extern void __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu);
- 
--extern void __kvm_timer_set_cntvoff(u32 cntvoff_low, u32 cntvoff_high);
-+extern void __kvm_timer_set_cntvoff(u64 cntvoff);
- 
- extern int kvm_vcpu_run_vhe(struct kvm_vcpu *vcpu);
- 
-diff --git a/virt/kvm/arm/arch_timer.c b/virt/kvm/arm/arch_timer.c
-index 93bd59b46848..487eba9f87cd 100644
---- a/virt/kvm/arm/arch_timer.c
-+++ b/virt/kvm/arm/arch_timer.c
-@@ -451,17 +451,7 @@ static void timer_restore_state(struct arch_timer_context *ctx)
- 
- static void set_cntvoff(u64 cntvoff)
- {
--	u32 low = lower_32_bits(cntvoff);
--	u32 high = upper_32_bits(cntvoff);
--
--	/*
--	 * Since kvm_call_hyp doesn't fully support the ARM PCS especially on
--	 * 32-bit systems, but rather passes register by register shifted one
--	 * place (we put the function address in r0/x0), we cannot simply pass
--	 * a 64-bit value as an argument, but have to split the value in two
--	 * 32-bit halves.
--	 */
--	kvm_call_hyp(__kvm_timer_set_cntvoff, low, high);
-+	kvm_call_hyp(__kvm_timer_set_cntvoff, cntvoff);
- }
- 
- static inline void set_timer_irq_phys_active(struct arch_timer_context *ctx, bool active)
-diff --git a/virt/kvm/arm/hyp/timer-sr.c b/virt/kvm/arm/hyp/timer-sr.c
-index ff76e6845fe4..fb5c0be33223 100644
---- a/virt/kvm/arm/hyp/timer-sr.c
-+++ b/virt/kvm/arm/hyp/timer-sr.c
-@@ -10,9 +10,8 @@
- 
- #include <asm/kvm_hyp.h>
- 
--void __hyp_text __kvm_timer_set_cntvoff(u32 cntvoff_low, u32 cntvoff_high)
-+void __hyp_text __kvm_timer_set_cntvoff(u64 cntvoff)
- {
--	u64 cntvoff = (u64)cntvoff_high << 32 | cntvoff_low;
- 	write_sysreg(cntvoff, cntvoff_el2);
- }
- 
--- 
-2.20.1
+Although in case there's any other cause to resend, a couple of nits below.
 
+> Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+> v1->v2: simplify following Robin's comments
+> https://lore.kernel.org/linux-iommu/20200506174629.1504153-1-jean-philippe@linaro.org/
+> ---
+>   drivers/iommu/arm-smmu-v3.c | 35 +++++++++++++++++++++++++++++++----
+>   1 file changed, 31 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+> index 82508730feb7a1..af21d24a09e888 100644
+> --- a/drivers/iommu/arm-smmu-v3.c
+> +++ b/drivers/iommu/arm-smmu-v3.c
+> @@ -171,6 +171,8 @@
+>   #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
+>   #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
+>   
+> +#define ARM_SMMU_REG_SZ			0xe00
+
+Since it's not necessarily self-explanatory at a glance, might this 
+deserve a comment to clarify that it's the start of the first IMP-DEF 
+region in the register map, and all the architectural registers that we 
+care about lie below it?
+
+> +
+>   /* Common MSI config fields */
+>   #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
+>   #define MSI_CFG2_SH			GENMASK(5, 4)
+> @@ -628,6 +630,7 @@ struct arm_smmu_strtab_cfg {
+>   struct arm_smmu_device {
+>   	struct device			*dev;
+>   	void __iomem			*base;
+> +	void __iomem			*page1;
+>   
+>   #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
+>   #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
+> @@ -733,9 +736,8 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
+>   static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
+>   						 struct arm_smmu_device *smmu)
+>   {
+> -	if ((offset > SZ_64K) &&
+> -	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
+> -		offset -= SZ_64K;
+> +	if (offset > SZ_64K)
+> +		return smmu->page1 + offset - SZ_64K;
+>   
+>   	return smmu->base + offset;
+>   }
+> @@ -4021,6 +4023,18 @@ err_reset_pci_ops: __maybe_unused;
+>   	return err;
+>   }
+>   
+> +static void __iomem *arm_smmu_ioremap(struct device *dev, resource_size_t start,
+> +				      resource_size_t size)
+> +{
+> +	struct resource res = {
+> +		.flags = IORESOURCE_MEM,
+> +		.start = start,
+> +		.end = start + size - 1,
+
+There doesn't seem to be much point in pretending size is a variable 
+argument; I'd have just encoded ARM_SMMU_REG_SZ directly here.
+
+Thanks,
+Robin.
+
+> +	};
+> +
+> +	return devm_ioremap_resource(dev, &res);
+> +}
+> +
+>   static int arm_smmu_device_probe(struct platform_device *pdev)
+>   {
+>   	int irq, ret;
+> @@ -4056,10 +4070,23 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+>   	}
+>   	ioaddr = res->start;
+>   
+> -	smmu->base = devm_ioremap_resource(dev, res);
+> +	/*
+> +	 * Don't map the IMPLEMENTATION DEFINED regions, since they may contain
+> +	 * the PMCG registers which are reserved by the PMU driver.
+> +	 */
+> +	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_REG_SZ);
+>   	if (IS_ERR(smmu->base))
+>   		return PTR_ERR(smmu->base);
+>   
+> +	if (arm_smmu_resource_size(smmu) > SZ_64K) {
+> +		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
+> +					       ARM_SMMU_REG_SZ);
+> +		if (IS_ERR(smmu->page1))
+> +			return PTR_ERR(smmu->page1);
+> +	} else {
+> +		smmu->page1 = smmu->base;
+> +	}
+> +
+>   	/* Interrupt lines */
+>   
+>   	irq = platform_get_irq_byname_optional(pdev, "combined");
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
