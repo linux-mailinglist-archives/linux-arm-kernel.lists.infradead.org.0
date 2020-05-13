@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 882701D03E0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 02:43:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 656D61D03D7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 02:40:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lRGNNS9H+X3AleovnuU4KWXg/DrRSRxmGujBt5xCBd4=; b=CUM
-	GA/J4ktfjvP2IsdIFWPqOBHsFMvQjXUsQTbjfU0RrNtTxchvs33Tlg/+XRGO1axZRjyj3VLlMVC+9
-	3EZAiob6cTgLmxwHhD3zaYA5UGkhav/qnFLKQz/VMx4ygL0e7aYwNgVtICbjp+1g4bzgfT+/c72W7
-	ZplHyaSXod5NEDNkBbTlb+snWTmqgZMTDk9bMt3mJQdOzclMQMY0JpuBeyqVSP8bwjQgbhJvyBzy4
-	aOBcvLjNRJJIF418Xoyvc3M5oFR/QDGl1RuXH/jxyk35AMt9aBmkpyzMSglpO8erEsnX9R/M0jQLH
-	QyJnaQ8KdCTmTuog4DcFKR6vZQxZTrw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=lRGNNS9H+X3AleovnuU4KWXg/DrRSRxmGujBt5xCBd4=; b=D0vpnt/M8RpiAvVx3zr89AL9E3
+	lf0zzoieRSZ+pXEwXvXOySGX32uPpHdlE4BrPoNY3ibFRXyBoU8qq4fvFmHZrUpcn11UHauFspNEv
+	SBFsizhvnLYnSgOieOtAEDsgxGQsbV0KXST6vCmXn4CWafiC0W+y8QI3FxvrNkd+6KSSb5XH/6V9q
+	QZ3Q2XNebHn847+CQzYMOPoVTYH/IX9AipuYkGGT0DdAcN7t4Ft+wFhZxQTDc7/sLMzjpYZ4KcfwL
+	qM+iyNF0RR75RzHWhM4gyrQOJfKuVZfLDSug9yCcp8Glmc0jK+E5gBkJXg5aK/NOpI4scSpN7m7UG
+	78XU+qBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYfUC-0000CR-L4; Wed, 13 May 2020 00:43:00 +0000
-Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
+	id 1jYfS4-0006iT-BD; Wed, 13 May 2020 00:40:48 +0000
+Received: from alexa-out-sd-01.qualcomm.com ([199.106.114.38])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYfRC-0003qz-54
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 00:39:56 +0000
-Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
- by alexa-out-sd-02.qualcomm.com with ESMTP; 12 May 2020 17:39:48 -0700
+ id 1jYfR9-0003oT-3U
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 00:39:52 +0000
+Received: from unknown (HELO ironmsg02-sd.qualcomm.com) ([10.53.140.142])
+ by alexa-out-sd-01.qualcomm.com with ESMTP; 12 May 2020 17:39:47 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg03-sd.qualcomm.com with ESMTP; 12 May 2020 17:39:47 -0700
+ by ironmsg02-sd.qualcomm.com with ESMTP; 12 May 2020 17:39:47 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id 437E94D95; Tue, 12 May 2020 17:39:47 -0700 (PDT)
+ id 5279549C2; Tue, 12 May 2020 17:39:47 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 Subject: [RESEND PATCH v14 00/11] Convert PWM period and duty cycle to u64
-Date: Tue, 12 May 2020 17:39:33 -0700
-Message-Id: <cover.1589330178.git.gurus@codeaurora.org>
+Date: Tue, 12 May 2020 17:39:34 -0700
+Message-Id: <cover.1588616856.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
+In-Reply-To: <cover.1589330178.git.gurus@codeaurora.org>
+References: <cover.1589330178.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_173954_256470_25C18CDE 
-X-CRM114-Status: GOOD (  16.74  )
+X-CRM114-CacheID: sfid-20200512_173951_188807_C78634FE 
+X-CRM114-Status: GOOD (  17.14  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [199.106.114.39 listed in list.dnswl.org]
+ medium trust [199.106.114.38 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
