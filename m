@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4908F1D22B8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 01:07:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF2421D22BE
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 01:08:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nTmi/FB2kvPnUR/2+JHTnnzfp9Uwv/Znz0x6RCGtHlo=; b=Qdwcpud9MOVKkQ
-	CWNWN2ZbNMFauu9lkCB4VYvuMvP8TdVlqo+k7OyUlPI5jkXTlnnpQqRA3E6CWdAjviacnfUPO3ERe
-	6Ch3aN98gzSAXR3pisypcsphtXpIRNnMoF6jDSv7KUCkiErRCMys2YLQ0CtFJFAGHJxL1XxL4JCdN
-	9nmZ36Xf5WMEdxLF8Kn3qittPOGkP57LyR3JEEgP1PtCcnz61yA2SXvqoTF9+zZGDbCaNCzwEXwMz
-	U9zUAb7jmt9zeaNCrTstFzJlfkLMtyGnSpqv8cYwBKqtpBqz3kaxdAQoIvBff4Z1hnOhTt7B0XWqH
-	mUklP7yiC78oRAynztOA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YW7Kw/8mz8ondKffqoSMluqYapT3fVPQIhW1PMYcIvA=; b=hu42LW/slZOb5R
+	9E19sJZlVBKO2RyWAQhl8Dpry6QDFc6dJFdLkBDXGqGDokckrA+VlrZn3Q1azXaFhW4WpWSGxvbFx
+	yv95ksLOHXtJqPydCRbe9eBXv0P4tkLF5v9JtwOoAFU5wO7SQSDSq+YgLJ9D8BOfgRChsOQ6KFL3Q
+	o2Z91umey+va+YS0xnrCZnlZTvLgpZW6CBWSI6LF1+vfPaIXS94jdzKVlDEciTLppeBXRkOiAlDLQ
+	VKdkB72EYLZZh23wUu8Z/ce4ikL3UgBenzwZCEPMTO881dHpeGDc2WkdkqdTaqVPZnOiLpRh8zqbi
+	TKc/GIHYHDcm+J/j3/JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ0Sv-00078b-EU; Wed, 13 May 2020 23:07:05 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jZ0UR-0007S0-CE; Wed, 13 May 2020 23:08:39 +0000
+Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ0Sn-00077u-UP
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 23:06:59 +0000
-Received: by mail-pf1-x442.google.com with SMTP id 145so395642pfw.13
+ id 1jZ0UH-0007Rb-Ne
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 23:08:31 +0000
+Received: by mail-vs1-xe44.google.com with SMTP id l25so860886vso.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 16:06:57 -0700 (PDT)
+ Wed, 13 May 2020 16:08:29 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yMogoehN6gd8yEcUzfto82bogvcHTiAGCMH4pO/0ves=;
- b=TVjmeJRT30wG3o5oee/nQvtjayTS9UEmO1IKTN3/YROyngl0ARUX+gqTeIneHeojqM
- gYBxNYwyp5blo8Rorot/HCMhVM8Rsy7slg+/x8RdQoCiT11cFofCu+3DTSKptK731mBX
- yq4/rABaceMa8DkAadYUlzIg9W0ocTQiCTsT8=
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qrc+zALKhm7UR0okg2VxygijLhPHdyDYt6UnXc1+qEk=;
+ b=Qh7lvFu7Q7FSluMhlA+8KOS62pXg1rxQC1Ogk+ACNtMIaCyE9ShN6VB9f9gGDvteW4
+ gypT5Ev3vDl69jha5hOD76TZn8yRrjhUMxAWk1zqNUDl4SXtliMPJmL50nvFC0c/bC3V
+ lRIsq85AmTyx2GxwUTqokmeiKV/xXeYZWSBXw=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=yMogoehN6gd8yEcUzfto82bogvcHTiAGCMH4pO/0ves=;
- b=scuRZueUHzVn3569IlqtrsHXgXe4extq9IpeUPxxn68WzxavfQki9aJ3JbFLg+aV/j
- ke7hZgc+jZFsuUf+4RKx17AdURTTyWoIn7l7blk9YVuXTrrU39LmeN37lPbGqgnAWvGl
- joOZiwG5DS/4NMHE84E6kDU7fcxFDVogg74D2kotCguCVd5zPeqLZmwZljMgZJwVnoet
- PlbOhAu2RXdGyBw5yKQUFlWJPm4CB9TTHabWAFNNdjVJjzHCGO5oq8AlrLqJbs+4J5VN
- y5PWHyR6Rc94m2vjn83aC0MLDWaK8ImL7T8BlSe7tUYhXpOqCSfY1Ls8RA2PRKC52rBl
- P+1A==
-X-Gm-Message-State: AOAM531EiKdGv6qEXiB/xFwOLKlPMmjHwjeLY802FAdFtnu/1F3QbQR9
- a6KHWRji4U3wBPS2H/Bge7ZVug==
-X-Google-Smtp-Source: ABdhPJzzVabiFt1inZIi4trNKtrwiawtGgHCOPmCLYH5yl1Fukr15nZDmHm+dhqQ3Y059dh1zVOT2w==
-X-Received: by 2002:a63:3545:: with SMTP id c66mr1444745pga.82.1589411216357; 
- Wed, 13 May 2020 16:06:56 -0700 (PDT)
-Received: from tictac2.mtv.corp.google.com
- ([2620:15c:202:1:24fa:e766:52c9:e3b2])
- by smtp.gmail.com with ESMTPSA id d184sm513936pfc.130.2020.05.13.16.06.55
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 16:06:55 -0700 (PDT)
-From: Douglas Anderson <dianders@chromium.org>
-To: Jason Wessel <jason.wessel@windriver.com>,
- Daniel Thompson <daniel.thompson@linaro.org>
-Subject: [PATCH] arm64: Call debug_traps_init() from trap_init() to help early
- kgdb
-Date: Wed, 13 May 2020 16:06:37 -0700
-Message-Id: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
-X-Mailer: git-send-email 2.26.2.645.ge9eca65c58-goog
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qrc+zALKhm7UR0okg2VxygijLhPHdyDYt6UnXc1+qEk=;
+ b=FJkzK+PqCCDDrHMdwRl8JdSJRV3dPMsLGi0GDZHE6Auk8uQzlaUNA+wu16bxTeTsj3
+ ulYezg3y/jyQHgulZF9DxT31yTv1nm3GVsPVoT9UF9OVZ7k0L7jYrj7ZPsC06QzqMGd7
+ v38a7hGJJjGC3SbDdFRpuueHmFCx5cT/EjAIsup16Kd5Yb+zUoismjYGYEC/ji8XQDyR
+ nHqNdEstsa+zTNSaxEl7luqlSG/sn7v2bTgWIn/q8bV25d/Ok6BghfKmaXcPCid8Fxr8
+ hsgnSm91qZ9VxtCPcHuv8ETXLz5WLFtO523rVPEvu8gQ+V61vgubUiyaqTigNC53VA0n
+ Yr9g==
+X-Gm-Message-State: AOAM531o2LcBXQkefmmqzGSQVTOeaZTQbueq4R0vysGjlHLIHAS5iXHx
+ /JncLQrArTYRI6Nn3ft+riXcdH9nM1Q=
+X-Google-Smtp-Source: ABdhPJxyhM+OvlP51DAw4/7/vr08uuPMRo1ZZtLes+l0VFpXO/lHJ290oyId4yCxSvFduX25RM/1MA==
+X-Received: by 2002:a67:941:: with SMTP id 62mr1508292vsj.146.1589411308573;
+ Wed, 13 May 2020 16:08:28 -0700 (PDT)
+Received: from mail-vs1-f46.google.com (mail-vs1-f46.google.com.
+ [209.85.217.46])
+ by smtp.gmail.com with ESMTPSA id u13sm295374vsg.12.2020.05.13.16.08.26
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 May 2020 16:08:28 -0700 (PDT)
+Received: by mail-vs1-f46.google.com with SMTP id 1so849623vsl.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 May 2020 16:08:26 -0700 (PDT)
+X-Received: by 2002:a1f:9605:: with SMTP id y5mr1422470vkd.75.1589411305040;
+ Wed, 13 May 2020 16:08:25 -0700 (PDT)
 MIME-Version: 1.0
+References: <20200428211351.85055-1-dianders@chromium.org>
+ <20200428141218.v3.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid>
+ <20200511145908.GA22040@willie-the-truck>
+ <CAD=FV=W1F-B7SUwxebhhH2HS+fN4sYv4RHvvKud5a+00J0T=SA@mail.gmail.com>
+ <20200512073552.GA1538@willie-the-truck>
+ <CAD=FV=WuKS7c4WNiLKm+bjRF8Rd7wM1y7THWzJhVhUyExNiiVg@mail.gmail.com>
+ <20200513061745.GB17433@willie-the-truck>
+In-Reply-To: <20200513061745.GB17433@willie-the-truck>
+From: Doug Anderson <dianders@chromium.org>
+Date: Wed, 13 May 2020 16:08:13 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=U+JiK1_Lka1PB9DWTsKOowhL+Q+i1yK7=T-4E+zue36g@mail.gmail.com>
+Message-ID: <CAD=FV=U+JiK1_Lka1PB9DWTsKOowhL+Q+i1yK7=T-4E+zue36g@mail.gmail.com>
+Subject: Re: [PATCH v3 05/11] arm64: Add call_break_hook() to early_brk64()
+ for early kgdb
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_160658_003602_FDBF0FAF 
-X-CRM114-Status: GOOD (  20.24  )
+X-CRM114-CacheID: sfid-20200513_160829_773319_18628742 
+X-CRM114-Status: GOOD (  30.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -95,132 +107,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, sumit.garg@linaro.org,
- "Paul E. McKenney" <paulmck@kernel.org>, Will Deacon <will@kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Frank Rowand <frowand.list@gmail.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>, Jonathan Corbet <corbet@lwn.net>,
+ jinho lim <jordan.lim@samsung.com>, Andy Gross <agross@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-serial@vger.kernel.org,
+ kgdb-bugreport@lists.sourceforge.net, Dave Martin <Dave.Martin@arm.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, Jiri Slaby <jslaby@suse.com>,
+ Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
+ Thomas Gleixner <tglx@linutronix.de>, Ingo Molnar <mingo@redhat.com>,
+ Allison Randal <allison@lohutok.net>, Sumit Garg <sumit.garg@linaro.org>,
  Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Enrico Weigelt <info@metux.net>, kgdb-bugreport@lists.sourceforge.net,
- jinho lim <jordan.lim@samsung.com>, Douglas Anderson <dianders@chromium.org>,
- linux-kernel@vger.kernel.org, Alexios Zavras <alexios.zavras@intel.com>,
- James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Zenghui Yu <yuzenghui@huawei.com>,
- linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
- liwei391@huawei.com, Dave Martin <Dave.Martin@arm.com>,
- Allison Randal <allison@lohutok.net>, Masami Hiramatsu <mhiramat@kernel.org>
+ LKML <linux-kernel@vger.kernel.org>, James Morse <james.morse@arm.com>,
+ "Eric W. Biederman" <ebiederm@xmission.com>,
+ Jason Wessel <jason.wessel@windriver.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A new kgdb feature will soon land (kgdb_earlycon) that lets us run
-kgdb much earlier.  In order for everything to work properly it's
-important that the break hook is setup by the time we process
-"kgdbwait".
+Hi,
 
-Right now the break hook is setup in debug_traps_init() and that's
-called from arch_initcall().  That's a bit too late since
-kgdb_earlycon really needs things to be setup by the time the system
-calls dbg_late_init().
+On Tue, May 12, 2020 at 11:17 PM Will Deacon <will@kernel.org> wrote:
+>
+> Hey Doug,
+>
+> On Tue, May 12, 2020 at 08:27:50AM -0700, Doug Anderson wrote:
+> > On Tue, May 12, 2020 at 12:36 AM Will Deacon <will@kernel.org> wrote:
+> > > On Mon, May 11, 2020 at 03:45:02PM -0700, Doug Anderson wrote:
+> > > > On Mon, May 11, 2020 at 7:59 AM Will Deacon <will@kernel.org> wrote:
+> > > > > On Tue, Apr 28, 2020 at 02:13:45PM -0700, Douglas Anderson wrote:
+> > > > > > diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+> > > > > > index cf402be5c573..a8173f0c1774 100644
+> > > > > > --- a/arch/arm64/kernel/traps.c
+> > > > > > +++ b/arch/arm64/kernel/traps.c
+> > > > > > @@ -1044,6 +1044,9 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
+> > > > > >       if ((comment & ~KASAN_BRK_MASK) == KASAN_BRK_IMM)
+> > > > > >               return kasan_handler(regs, esr) != DBG_HOOK_HANDLED;
+> > > > > >  #endif
+> > > > > > +     if (call_break_hook(regs, esr) == DBG_HOOK_HANDLED)
+> > > > > > +             return 0;
+> > > > >
+> > > > > I think this just means we're not running debug_traps_init() early enough,
+> > > > > and actually the KASAN early handler is unnecessary too.
+> > > > >
+> > > > > If we call debug_traps_init() directly from setup_arch() and drop the
+> > > > > arch_initcall(), can we then drop early_brk64 entirely?
+> > > >
+> > > > It seems to work in my testing.  ...but the worry I have is the
+> > > > comment right before trap_init().  It says:
+> > > >
+> > > > /* This registration must happen early, before debug_traps_init(). */
+> > >
+> > > I /think/ the reason for this is because debug_traps_init() replaces the
+> > > BRK vector, so if that runs before the break hooks have been registered
+> > > for e.g. BUG() then BUG() won't work during that window. Hmm, so dropping
+> > > early_brk64 is problematic after all. Damn.
+> > >
+> > > Is trap_init() early enough for you? If so, we could call debug_traps_init()
+> > > from traps_init() after registering the break hooks.
+> >
+> > "Early enough" is a subjective term, of course.  The earlier we can
+> > init, the earlier we can drop into the debugger.  ...but, of course,
+> > everyone thinks their feature is the most important and should be
+> > first, so let's see...
+> >
+> > Certainly if we waited until trap_init() it wouldn't be early enough
+> > to set "ARCH_HAS_EARLY_DEBUG".  Setting that means that debugging is
+> > ready when early params are parsed and those happen at the start of
+> > setup_arch().  The call to trap_init() happens a bit later.
+> >
+> > If we decide that we just don't care about getting
+> > "ARCH_HAS_EARLY_DEBUG" to work then the earliest we'll be able to
+> > break into the debugger (via kgdbwait) is dbg_late_init().  That
+> > _does_ happen after trap_init() so your solution would work.
+> >
+> > As a person who spends most of his time in driver land, it wouldn't be
+> > the end of the world to wait for dbg_late_init().  That's still much
+> > earlier than most code I'd ever debug.  ...and, bonus points is that
+> > if we hit a crash any time after earlyparams we _will_ still drop into
+> > the debugger.  It's only breakpoints that won't be available until
+> > dbg_late_init().
+> >
+> >
+> > tl;dr:
+> >
+> > * If we care about "kgdbwait" and breakpoints working as early as
+> > possible then we need my patch.
+> >
+> > * If we are OK w/ a slightly later "kgdbwait" then I think we can move
+> > debug_traps_init() to trap_init() and get rid of the early version.
+> >
+> >
+> > Please let me know which way you'd like to proceed.
+>
+> Let's go with the trap_init() approach for now, and we can revisit it later
+> if somebody has a compelling reason to initialise things earlier. However,
+> I don't think you can remove early_brk64(), as it's needed for BUG() to
+> work correctly.
 
-We could fix this by adding call_break_hook() into early_brk64() and
-that works fine.  However, it's a little ugly.  Instead, let's just
-add a call to debug_traps_init() straight from trap_init().  There's
-already a documented dependency between trap_init() and
-debug_traps_init() and this makes the dependency more obvious rather
-than just relying on a comment.
+Posted at:
 
-NOTE: this solution isn't early enough to let us select the
-"ARCH_HAS_EARLY_DEBUG" KConfig option that is introduced by the
-kgdb_earlycon patch series.  That would only be set if we could do
-breakpoints when early params are parsed.  This patch only enables
-"late early" breakpoints, AKA breakpoints when dbg_late_init() is
-called.  It's expected that this should be fine for most people.
+https://lore.kernel.org/r/20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid
 
-It should also be noted that if you crash you can still end up in kgdb
-earlier than debug_traps_init().  Since you don't need breakpoints to
-debug a crash that's fine.
+I'll also reply to the v4 version of this patch to point at it.
 
-Suggested-by: Will Deacon <will@kernel.org>
-Signed-off-by: Douglas Anderson <dianders@chromium.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
-This replaces the patch ("arm64: Add call_break_hook() to
-early_brk64() for early kgdb") in my recent kgdb series [1].  If I end
-up re-posting that series again I'll include this patch as a
-replacement, but I'm sending it separately to avoid spamming a pile of
-people another time with a 12-patch series.
-
-Note that, because it doesn't select the "ARCH_HAS_EARLY_DEBUG"
-KConfig option it could be landed standalone.  However, it's still
-probably better to land together with that patch series.
-
-If the kgdb_earlycon patch series lands without this patch then
-kgdbwait + kgdb_earlycon won't work well on arm64, but there would be
-no other bad side effects.
-
-If this patch lands without the kgdb_earlycon patch series then there
-will be no known problems.
-
-[1] https://lore.kernel.org/r/20200507130644.v4.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid
-
- arch/arm64/include/asm/debug-monitors.h | 2 ++
- arch/arm64/kernel/debug-monitors.c      | 4 +---
- arch/arm64/kernel/traps.c               | 2 +-
- 3 files changed, 4 insertions(+), 4 deletions(-)
-
-diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-index 7619f473155f..e5ceea213e39 100644
---- a/arch/arm64/include/asm/debug-monitors.h
-+++ b/arch/arm64/include/asm/debug-monitors.h
-@@ -125,5 +125,7 @@ static inline int reinstall_suspended_bps(struct pt_regs *regs)
- 
- int aarch32_break_handler(struct pt_regs *regs);
- 
-+void debug_traps_init(void);
-+
- #endif	/* __ASSEMBLY */
- #endif	/* __ASM_DEBUG_MONITORS_H */
-diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-index 48222a4760c2..15e80c876d46 100644
---- a/arch/arm64/kernel/debug-monitors.c
-+++ b/arch/arm64/kernel/debug-monitors.c
-@@ -376,15 +376,13 @@ int aarch32_break_handler(struct pt_regs *regs)
- }
- NOKPROBE_SYMBOL(aarch32_break_handler);
- 
--static int __init debug_traps_init(void)
-+void __init debug_traps_init(void)
- {
- 	hook_debug_fault_code(DBG_ESR_EVT_HWSS, single_step_handler, SIGTRAP,
- 			      TRAP_TRACE, "single-step handler");
- 	hook_debug_fault_code(DBG_ESR_EVT_BRK, brk_handler, SIGTRAP,
- 			      TRAP_BRKPT, "ptrace BRK handler");
--	return 0;
- }
--arch_initcall(debug_traps_init);
- 
- /* Re-enable single step for syscall restarting. */
- void user_rewind_single_step(struct task_struct *task)
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index cf402be5c573..8408e8670f2e 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -1047,11 +1047,11 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
- 	return bug_handler(regs, esr) != DBG_HOOK_HANDLED;
- }
- 
--/* This registration must happen early, before debug_traps_init(). */
- void __init trap_init(void)
- {
- 	register_kernel_break_hook(&bug_break_hook);
- #ifdef CONFIG_KASAN_SW_TAGS
- 	register_kernel_break_hook(&kasan_break_hook);
- #endif
-+	debug_traps_init();
- }
--- 
-2.26.2.645.ge9eca65c58-goog
-
+-Doug
 
 _______________________________________________
 linux-arm-kernel mailing list
