@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C179C1D18A3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:04:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE52C1D189D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:04:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Vc+5oni/yySwUtUzM/FIuDQG4Fn+8rtNCgZlyd4nXQI=; b=QY+lfY+NLz7PRO
-	ml0GtswzGkgWbMFpSD69yDOZCOFuSVTc9r07Q/u/3KqFYcugpRfXFmZjY9U/gev/ft1ZrwApoGWM4
-	HAasMiObetQeaZZZq8UMre8DQ8NEEeH681Vu+sOexdavWZat2m9sxQufv3FqACKro1TIUeqDJM3bk
-	9+r2slnZTC3g84a6gU2OSh+fPnRfasuW9lpSCwrYoy6wuXETJSDXzDKZOBuwVQpwUmZUEl2Z+n/jT
-	4ADywbIyL3wJWEpLtHxKQVYzOvZc05Y9VqFFe8gl3VBo3G9t527swJkp42Acni12L1NPFSrvRphQb
-	D/p+YfmeJ4AtilK28WHw==;
+	List-Owner; bh=au+TJj8HnRuHKM4lPJRyOZTLqxvZtmMFUPCdBYW6Tn0=; b=YkU2bc5/ufdfY/
+	4UIIJQvf+XHm6SglWusqhxJP59rVHYSmtaTfzcoJVaKiE0GFKvrpZY8ZKYt93MtUc4HivoBBy2IxL
+	MlaH6XYjkdrggRX1sTZpQjydKukKL7VUXNRVxpc7UP19X6cL+ANmGna7Yyyi5xJX8ikQJ541Asx2w
+	K5a/i7m47nlVQUHBr3O1gVDwjT52JCX9fV+4sICAQC5eImW5VEYak7qVDm1rICNhSmIPq5xREAuUs
+	Bz9OSU1USHZzSkRQdMlRiokagC7vgkZ9e+1y2Piwauq+iPcqLuKKCkv4bAZ+ZlUE0eOYEg02NtzcN
+	6WHegoh8f9xydak4kvYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYsw4-0002DP-HZ; Wed, 13 May 2020 15:04:40 +0000
+	id 1jYsvJ-0001Ny-By; Wed, 13 May 2020 15:03:53 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYsre-0004Nx-MM
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:00:08 +0000
+ id 1jYsrc-00044M-PC
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:00:06 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04DEwKAm014273; Wed, 13 May 2020 16:59:56 +0200
+ 04DEwTsU014529; Wed, 13 May 2020 16:59:57 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=ESEUfqvz9YnklAP6u66uze+yLAip+yjj8ZHTnTxLVQA=;
- b=oSeKdbtBsR3pyqIaYGozSEZLtRsNmf8qZ57L7VB533+8IqP/ioqn4hls8ky5MZm2//Pc
- sfYwXsY3ZB3/J3IWQkucHlw8ctskuYKUsg8zYY5FAbb4fIooWKeB7Fla088lCLqZYT4L
- j1zngVwn7HKMAJxGKYOj0futBuP9sn53cf6SbZPfkpu0duJRcdldRtV0HqFlOg/bqniD
- zEKXhtJ1eChMmpwHliJqz5S21JmBtD+A0Xbcm6QVwd06oFoKMzD2b15Dgb6NOjExjBti
- p2mFoONyQdweicRBhMIAL573so8aKfte5bmmmKAi/AX4YS2829R0/0tixBEtt1Au7HI2 sg== 
+ bh=ZBFbrec77VlhVdOpdB9DYkx4tcvKD68mo+Z0BcORXI8=;
+ b=WGYdM0pCE2kRVJAEZogMtm72v2ZoJbYAK6/VIz7zokZTLN2185I9cJFQkchWDdbe/vl2
+ TL0IhmiWbTNq3kO3C4epdrvHtjXmma3u/kvbz08EtcDSEl0Fe8keld+agML3OeD6rLBO
+ RckxLSxLKYOkAkG1EQEiG9vC8gOF9CM03OvIzgYeDX1TC31zPrr4LvsSyh14z88Kvf2C
+ e+GV8T4jaRSLiErAM+00Si6ykVZyNeCur1pBiQNaF69HDAxf93eUibR8oY92qQgXws28
+ KdYZWAGqBDwir5h7s9nm6VsuHmuV9gcI4apsF0OJBggHyPttZmDTUufEM+bOLDJxT8kJ Bg== 
 Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3100vpdfy0-1
+ by mx07-00178001.pphosted.com with ESMTP id 3100vpdfy6-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 13 May 2020 16:59:56 +0200
+ Wed, 13 May 2020 16:59:57 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id E679310002A;
- Wed, 13 May 2020 16:59:55 +0200 (CEST)
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0B4D310002A;
+ Wed, 13 May 2020 16:59:57 +0200 (CEST)
 Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D8DC52D3006;
- Wed, 13 May 2020 16:59:55 +0200 (CEST)
-Received: from localhost (10.75.127.49) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 13 May 2020 16:59:55
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id F07632D3006;
+ Wed, 13 May 2020 16:59:56 +0200 (CEST)
+Received: from localhost (10.75.127.48) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 13 May 2020 16:59:56
  +0200
 From: Benjamin Gaignard <benjamin.gaignard@st.com>
 To: <linus.walleij@linaro.org>, <robh+dt@kernel.org>,
  <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
  <gregkh@linuxfoundation.org>
-Subject: [PATCH 13/15] ARM: dts: stm32: update led nodes names for
- stm32f746-eval
-Date: Wed, 13 May 2020 16:59:33 +0200
-Message-ID: <20200513145935.22493-14-benjamin.gaignard@st.com>
+Subject: [PATCH 14/15] dt-bindings: pinctrl: stm32: Add missing interrupts
+ property
+Date: Wed, 13 May 2020 16:59:34 +0200
+Message-ID: <20200513145935.22493-15-benjamin.gaignard@st.com>
 X-Mailer: git-send-email 2.15.0
 In-Reply-To: <20200513145935.22493-1-benjamin.gaignard@st.com>
 References: <20200513145935.22493-1-benjamin.gaignard@st.com>
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.49]
-X-ClientProxiedBy: SFHDAG8NODE3.st.com (10.75.127.24) To SFHDAG3NODE3.st.com
+X-Originating-IP: [10.75.127.48]
+X-ClientProxiedBy: SFHDAG3NODE2.st.com (10.75.127.8) To SFHDAG3NODE3.st.com
  (10.75.127.9)
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
  definitions=2020-05-13_06:2020-05-13,
  2020-05-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_080007_201036_113E54EF 
-X-CRM114-Status: GOOD (  14.26  )
+X-CRM114-CacheID: sfid-20200513_080005_289382_EE4831D8 
+X-CRM114-Status: GOOD (  12.09  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -107,26 +107,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update led nodes names to be aligned with yaml description
+Driver use interrupt-parent field so update the bindings to allow it.
 
 Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
 ---
- arch/arm/boot/dts/stm32mp15xx-dkx.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-index d946e0a02f5c..aa47be06cd7a 100644
---- a/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-+++ b/arch/arm/boot/dts/stm32mp15xx-dkx.dtsi
-@@ -62,7 +62,7 @@
+diff --git a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+index 46a0478cb924..5abdabafb8a0 100644
+--- a/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
++++ b/Documentation/devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml
+@@ -36,6 +36,9 @@ properties:
+   pins-are-numbered: true
+   hwlocks: true
  
- 	led {
- 		compatible = "gpio-leds";
--		blue {
-+		led-blue {
- 			label = "heartbeat";
- 			gpios = <&gpiod 11 GPIO_ACTIVE_HIGH>;
- 			linux,default-trigger = "heartbeat";
++  interrupts:
++    maxItems: 1
++
+   st,syscfg:
+     allOf:
+       - $ref: "/schemas/types.yaml#/definitions/phandle-array"
 -- 
 2.15.0
 
