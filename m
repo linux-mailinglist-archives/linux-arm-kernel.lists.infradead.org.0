@@ -2,59 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E19CE1D180C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:56:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F07D31D1884
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:01:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qoNcJV167+qIORZq5skNtK8PzNI0f9RUzRsJppSLv4w=; b=VtnF10tiGms9nU
-	pS6bZKIUG3UYTJ1piivF2vXV/TUDCMPzK6qzYxHp9uSDF1Nr9l2inHxRXOz4+nZIYznMubwCv90gZ
-	2Htl1Z0Y3N0Pz1fDpIzGMLfUjrOJ8qGrWFkDxRTK7B0EviF7j0Dr8663O4v5PZWJOXC/xXa+CaiI9
-	LorbDGIMm7iGmucv3l5K36cUJymjDZHbXYYkhr8sanfTLQZpo00AWCTyUzp6EMedq3E1ydE8qSfgs
-	Bg+ZylI9o/x2H79LHjWV3jTZDo4A0OW6Cec4qu5rtz0Uh2wByakNRbWhXAPLjTiXp9dFF7weAR+fR
-	KW0tr8d7A+CuknezGD2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lX4Ij7aCvHoASb4rOHt4xE//NkpV87pxgK7/p+ZoTMs=; b=gKGZwH46Oyyd+u
+	jfaoB0DxYJQHJzpS6wyW6Z+SbYXIO3D50wY1jpO3SCZjj8vIIEyzO7vADWX+lqmRWopWJN7VoH/VC
+	1zbKZIw1HZBl9yVPeKi62dP9VW5cx5Bhsiz1aisPC9WbV9akRaBKBiwkyGSQow5lZQaZ9wEilkR+r
+	ZJPGYT/FAiX5tKW6UyNLzVTfhA1HOUahhtDF++QtI5gXFhp7KzhdQXqsQOai7kORVKJfyphJkggYv
+	ePJFbxvB0T3jZQItFu8YeJV26rA3PZkb2rli29XQsdTkKR1DT8G0tdY92pmwlxbtacBpMD6E8rzEY
+	ZvxZt85yl3cEL1qpzF7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYsoN-0003I3-Kh; Wed, 13 May 2020 14:56:43 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jYstG-0007Xg-Ep; Wed, 13 May 2020 15:01:46 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYso8-0003EJ-IE
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:56:30 +0000
-Received: from localhost (unknown [106.200.233.149])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8B1EE221E6;
- Wed, 13 May 2020 14:56:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589381788;
- bh=8SmbnrZ5qW6mVaqqlcGDrJ3tZhpY+ZYEC2ysujal7jE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=l4mRGFNZDs1RO7j/ngnkH16aePO1WvI/3rJkpo0/bOqGBn+zq90/znJcuC3NGZKTu
- qNSI7KkiyyzXV4E6Yg1UrgZMXzyeIrvdG/iStQWx+x7Wz+aQnWosrPzMIp73qeck4f
- eRdMLpxjBQ3RWdNMW0mCsJ6Abq7tMpCUQi1rnv5U=
-Date: Wed, 13 May 2020 20:26:24 +0530
-From: Vinod Koul <vkoul@kernel.org>
-To: "Gustavo A. R. Silva" <gustavoars@kernel.org>
-Subject: Re: [PATCH] dmaengine: at_xdmac: Replace zero-length array with
- flexible-array
-Message-ID: <20200513145624.GM14092@vkoul-mobl>
-References: <20200507190046.GA15298@embeddedor>
+ id 1jYsrU-0003s6-Ed
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:59:58 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04DEv03a016527; Wed, 13 May 2020 16:59:43 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=ZgpAUyUBhezUtCmK/K3PuawVI1AJV9N0ktEyTGWGChE=;
+ b=FCEurBkqNDjhkxHwJgxnJZlZ+ky03QXvODmzl5OqMiNV8vu1MwZcc5EAHSqgftOwlnpt
+ cYS9N5oKrLTT/b3plyMtMKqsnRWr0SmP+E5pLQZqf665qsSJ57C8z7V1qv47mJK6In/3
+ nIDZoRk1HxCmWKddNbn0TIgz9ofQQKVHldNMaLMMH8dM+VbfJiNXA4oCt6+GJKBfKja1
+ ngMpB2LFEyPDjhVdWVMen2ZmdircFUhnXbXBY6dOrFEzGupCwnQyYFsr8vZt0udxjl+/
+ rWrb52J1lhP2iUpmQV+Bqp928hFlqcTi7AyJthG/pXzCapxpF5X0w1ZF922L7GpZfFXh xQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3100vydgkn-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Wed, 13 May 2020 16:59:43 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 92BD010002A;
+ Wed, 13 May 2020 16:59:41 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7D0852D3004;
+ Wed, 13 May 2020 16:59:41 +0200 (CEST)
+Received: from localhost (10.75.127.51) by SFHDAG3NODE3.st.com (10.75.127.9)
+ with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 13 May 2020 16:59:40
+ +0200
+From: Benjamin Gaignard <benjamin.gaignard@st.com>
+To: <linus.walleij@linaro.org>, <robh+dt@kernel.org>,
+ <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
+ <gregkh@linuxfoundation.org>
+Subject: [PATCH 00/15] Fix STM32 DT issues on v5.7-rc4
+Date: Wed, 13 May 2020 16:59:20 +0200
+Message-ID: <20200513145935.22493-1-benjamin.gaignard@st.com>
+X-Mailer: git-send-email 2.15.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200507190046.GA15298@embeddedor>
+X-Originating-IP: [10.75.127.51]
+X-ClientProxiedBy: SFHDAG8NODE1.st.com (10.75.127.22) To SFHDAG3NODE3.st.com
+ (10.75.127.9)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-13_06:2020-05-13,
+ 2020-05-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_075628_616725_DE1DEB69 
-X-CRM114-Status: GOOD (  14.33  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200513_075956_792936_945FFD57 
+X-CRM114-Status: GOOD (  13.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -64,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,54 +94,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
+ linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 07-05-20, 14:00, Gustavo A. R. Silva wrote:
-> The current codebase makes use of the zero-length array language
-> extension to the C90 standard, but the preferred mechanism to declare
-> variable-length types such as these ones is a flexible array member[1][2],
-> introduced in C99:
-> 
-> struct foo {
->         int stuff;
->         struct boo array[];
-> };
-> 
-> By making use of the mechanism above, we will get a compiler warning
-> in case the flexible array does not occur last in the structure, which
-> will help us prevent some kind of undefined behavior bugs from being
-> inadvertently introduced[3] to the codebase from now on.
-> 
-> Also, notice that, dynamic memory allocations won't be affected by
-> this change:
-> 
-> "Flexible array members have incomplete type, and so the sizeof operator
-> may not be applied. As a quirk of the original implementation of
-> zero-length arrays, sizeof evaluates to zero."[1]
-> 
-> sizeof(flexible-array-member) triggers a warning because flexible array
-> members have incomplete type[1]. There are some instances of code in
-> which the sizeof operator is being incorrectly/erroneously applied to
-> zero-length arrays and the result is zero. Such instances may be hiding
-> some bugs. So, this work (flexible-array member conversions) will also
-> help to get completely rid of those sorts of issues.
-> 
-> This issue was found with the help of Coccinelle.
-> 
-> [1] https://gcc.gnu.org/onlinedocs/gcc/Zero-Length.html
-> [2] https://github.com/KSPP/linux/issues/21
-> [3] commit 76497732932f ("cxgb3/l2t: Fix undefined behaviour")
+This series fixes issues hight lighted by dtbs_check on STM32 devicetrees.
+The patches has been developped on top of v5.7-rc4 tag.
 
-Applied, thanks
+Benjamin Gaignard (15):
+  ARM: dts: stm32: remove useless interrupt-names property on stm32f429
+  ARM: dts: stm32: update pwm pinctrl node names for stm32f4
+  ARM: dts: stm32: update led nodes names for stm32f249-disco
+  ARM: dts: stm32: update led nodes names for stm32f469-disco
+  ARM: dts: stm32: remove useless interrupt-names property on stm32f746
+  ARM: dts: stm32: update led nodes names for stm32f429-eval
+  ARM: dts: stm32: update led nodes names for stm32f769-disco
+  ARM: dts: stm32: update led nodes names for stm32f746-eval
+  ARM: dts: stm32: remove useless interrupt-names property on stm32f743
+  ARM: dts: stm32: Update nodes names for stm32h743 pinctrl
+  ARM: dts: stm32: Update nodes names for stm32mp15 pinctrl
+  ARM: dts: stm32: Add missing #address and #size cells on spi node for
+    stm32mp151
+  ARM: dts: stm32: update led nodes names for stm32f746-eval
+  dt-bindings: pinctrl: stm32: Add missing interrupts property
+  dt-bindings: usb: dwc2: Fix issues for stm32mp15x SoC
+
+ .../devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml          |  3 +++
+ Documentation/devicetree/bindings/usb/dwc2.yaml                |  6 ++++--
+ arch/arm/boot/dts/stm32429i-eval.dts                           |  8 ++++----
+ arch/arm/boot/dts/stm32746g-eval.dts                           |  8 ++++----
+ arch/arm/boot/dts/stm32f4-pinctrl.dtsi                         |  4 ++--
+ arch/arm/boot/dts/stm32f429-disco.dts                          |  4 ++--
+ arch/arm/boot/dts/stm32f429.dtsi                               |  1 -
+ arch/arm/boot/dts/stm32f469-disco.dts                          |  8 ++++----
+ arch/arm/boot/dts/stm32f746.dtsi                               |  1 -
+ arch/arm/boot/dts/stm32f769-disco.dts                          |  4 ++--
+ arch/arm/boot/dts/stm32h743-pinctrl.dtsi                       | 10 +++++-----
+ arch/arm/boot/dts/stm32h743.dtsi                               |  1 -
+ arch/arm/boot/dts/stm32mp15-pinctrl.dtsi                       |  6 +++---
+ arch/arm/boot/dts/stm32mp151.dtsi                              |  2 ++
+ arch/arm/boot/dts/stm32mp15xx-dkx.dtsi                         |  2 +-
+ 15 files changed, 36 insertions(+), 32 deletions(-)
 
 -- 
-~Vinod
+2.15.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
