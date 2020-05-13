@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C3981D1427
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:10:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 052101D142D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:11:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZEgq5Ww/TL+b2kwqtLb/xUT3UD+upOObxlwI0rndXNA=; b=eXxXYRit/wtc1y
-	9LFvUuiEeEy9BtG7PcdUCIQ7i1DDhepjhi2KakO8xPOybgUnArcQu0rkNrWZnA8YYszl9d8npwP2f
-	HEv5m04h5xhr7xjpSczFPVhV3oWkuCcJVVyf0IsyQ6IF8B/zGfJK277o8AYr+jB5k6Ak5kOw4WDrF
-	ARQibhI+WhXmWhR7OiS7l9rpIN2Eh4vKNE8ZPMJqUml/KrQdRCzDWV9/1FA2DUDNANsSbLO4PdwPu
-	9lh+xj67S0DKLI06ZonPKkvvbyZ3zbYnNkVBgqjxMahkmUSeK43Zry0423QEkJKVDnAkhbWG0kKfN
-	tspnKL19gVkZaSh0jidw==;
+	List-Owner; bh=GYyDh9MYGjt0nmzGYC2S2yLJJSW68j9mIkK2Qh89OM0=; b=bU5wru69NaE2hJ
+	PDCPw4YCQf8Ahf7BwJjV/1+XML0jEMrdMJBHNNxwOpufmr8QcWFMuZcr10qLHcenaWjO9DUhcE9W/
+	QtvYajuH2VVLpmukNtW+RPiucDC4JrmSAHiCPOeDNg/RGg6iE5sqn4NipUG3eNhW8nOJ3wJgnwSrS
+	IzTBWsBO6adcK4KodGhAjA16HqQpsEdtMYn2uvpDCRnEg3GZdJ8KFLW6BgWsxPgrUimMd/0sqiINH
+	t4P2PBDr7zTpLKhs45waiVpDG77coD134cbVzL7mojXIrCg/5mU0RL+biAiDi70mTsWtLXUWEt8qP
+	CURpoOOekl/UfeqFoheQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYr9a-0008B6-Nl; Wed, 13 May 2020 13:10:30 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1jYrAI-0000Uv-CB; Wed, 13 May 2020 13:11:14 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYr8A-0004dE-Th
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:09:04 +0000
+ id 1jYr8F-0004cd-2J
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:09:08 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589375342; x=1620911342;
+ t=1589375346; x=1620911346;
  h=from:to:cc:subject:date:message-id:in-reply-to:
  references:mime-version:content-transfer-encoding;
- bh=/Is4lRNYSiquyResjIg3T8wiw24hPoKYdLEtowPC0kg=;
- b=YBJs7QnHpD9oy5ZX40mRkbfuKEMUNPoXK0Ydmd41p5Y1WKTeQ9aFdBeK
- zV/1pHGD1zU83kKYD8qb88WsdAquu6U4XTp/gWZq23dSIjEOhTdvyf5vz
- utN+3n4B25E54Q4gMV3a5te5NROYLgGJTafLuU1QY43JCMboKWpl9Imtw
- AC89CrRU89DS0Y/AGILhig0HL7TibOoP41LekqyhiYLpM9L2fX0bU8IC0
- dORy7nHwd6HdUvmbjfCCZoskkVNEVPpO/UumvSYnUTl4R+6FD8KEO3n2F
- PrXBF91ZYopajKpeuA6Up80yxEcsSpaP08oe/R6rhhENJzgstHFsd8HL4 Q==;
-IronPort-SDR: 75D4jjDICZ0KPTl1UtCcW9v1pG/9kSDua3FNKu6/RyNLCaHt7q4MshxmBU5tJ7TqvPJ1on5PRh
- Sq0jw3yQGcIVxnBvJ8g2H+Rt/3uJS7mQoxzyyw7jhyp9P9NQlEJ61J7MIIWKp4L4HxCMGRu3Hf
- 7KNqfsYMtx4r5zzmT5DOBOzdJBhVDd7YnDOjelBjnSDXn5wmHjrPb7lLBZHWvz28vfMpT+RQMu
- skQC4EGfKcsNwjcee9UmFkpeefAxCA3OsTm6OTEmmwrZueoTRbUzwqAmIbqSgJWytEaij8oTJt
- l28=
-X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="79438679"
+ bh=V1OANcDGi3Zb91vsck9iJpexMcTamnhCI2LiIcyTydQ=;
+ b=c2EhIPZr/YfmMOQVG/+7EYwm02ivP1CkcsgkP3ZUKgUXuDZ/5C2atORb
+ ZCUv1Yl0H9/J5YMjObOnIE46eOdHmSzpKNxVUArv8g/l+JSoyIl5geKdT
+ OgHAccC9n5IMOTn47JKKqU+SNa5UwD04EwK9hSCc4AjGxdQC21qwT+NoV
+ Mn73QCx1/wET/P+pRsVcdo+QOou1x6UvYXw5ThPsTbPz/rlN5dwVBdOq/
+ +JZfpV/dGhSLTuwBfvUER5N8Ncgh2Gt6qTetTWuIx7yZ+COzGqvYKZ972
+ OTmvs9XjDksNx6znxxW9Kr9xBQcYBgZKA3lZHod3WI3lrhJqyb1tmn3aW A==;
+IronPort-SDR: +6yZhiMfqJQ38vJrskCsDMyrAr18DNmhZ3317VdPR7QUzEaMe4qimJp20CkWP8Bj9mzJCC42Q3
+ CVr3uFHSqn/rfsSuhh/f7GADhQ7TNdN64qyaGiUp5diAs3V6ZmkLA3VGgxPMNRL57HPCxcPgHy
+ AGXKL6ZD33hHcCI0zLk9MgkT9sM/sD7LJMTTa3sUNxa3PmGyn1X712gZao6FOAbRIwLTJhacxO
+ d1fS7k0335S56Tan42EQEHuwZViwJJET6rY7jMwwSYWh/cMfPj1mLNUqIrmWPE9Xcktq/MWl9V
+ jvs=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="76497730"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 May 2020 06:09:01 -0700
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 06:09:05 -0700
 Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 13 May 2020 06:09:01 -0700
+ 15.1.1713.5; Wed, 13 May 2020 06:09:06 -0700
 Received: from soft-dev15.microsemi.net (10.10.115.15) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 06:08:59 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 06:09:01 -0700
 From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Sebastian Reichel <sre@kernel.org>, SoC Team <soc@kernel.org>, Rob Herring
- <robh+dt@kernel.org>
-Subject: [PATCH 3/5] dt-bindings: reset: ocelot: Add documentation for
- 'microchip, reset-switch-core' property
-Date: Wed, 13 May 2020 15:08:40 +0200
-Message-ID: <20200513130842.24847-4-lars.povlsen@microchip.com>
+To: Sebastian Reichel <sre@kernel.org>, SoC Team <soc@kernel.org>
+Subject: [PATCH 4/5] power: reset: ocelot: Add support for reset switch on
+ load time
+Date: Wed, 13 May 2020 15:08:41 +0200
+Message-ID: <20200513130842.24847-5-lars.povlsen@microchip.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200513130842.24847-1-lars.povlsen@microchip.com>
 References: <20200513130842.24847-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_060903_021543_5297DDF5 
-X-CRM114-Status: UNSURE (   9.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200513_060907_142631_2219A7EB 
+X-CRM114-Status: GOOD (  15.40  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,36 +103,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This documents the 'microchip,reset-switch-core' property in the
-ocelot-reset driver.
+This patch add support for resetting the networking switch core at
+reset driver load time. It is useful in order to bring the switch core
+in a known state after a reboot or after a bootloader may have been
+using the switch for network access.
 
 Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
 ---
- .../devicetree/bindings/power/reset/ocelot-reset.txt        | 6 ++++++
- 1 file changed, 6 insertions(+)
+ drivers/power/reset/ocelot-reset.c | 40 ++++++++++++++++++++++++++++--
+ 1 file changed, 38 insertions(+), 2 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/power/reset/ocelot-reset.txt b/Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
-index 4d530d8154848..20fff03753ad2 100644
---- a/Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
-+++ b/Documentation/devicetree/bindings/power/reset/ocelot-reset.txt
-@@ -9,9 +9,15 @@ microchip Sparx5 armv8 SoC's.
- Required Properties:
-  - compatible: "mscc,ocelot-chip-reset" or "microchip,sparx5-chip-reset"
-
-+Optional properties:
-+- microchip,reset-switch-core : Perform a switch core reset at the
-+  time of driver load. This is may be used to initialize the switch
-+  core to a known state (before other drivers are loaded).
+diff --git a/drivers/power/reset/ocelot-reset.c b/drivers/power/reset/ocelot-reset.c
+index f74e1dbb4ba36..a203c42e99d42 100644
+--- a/drivers/power/reset/ocelot-reset.c
++++ b/drivers/power/reset/ocelot-reset.c
+@@ -29,6 +29,7 @@ struct ocelot_reset_context {
+ 	struct notifier_block restart_handler;
+ };
+ 
++#define SOFT_SWC_RST  BIT(1)
+ #define SOFT_CHIP_RST BIT(0)
+ 
+ #define ICPU_CFG_CPU_SYSTEM_CTRL_GENERAL_CTRL	0x24
+@@ -37,6 +38,32 @@ struct ocelot_reset_context {
+ #define IF_SI_OWNER_SIBM			1
+ #define IF_SI_OWNER_SIMC			2
+ 
++static int ocelot_switch_core_reset(const struct ocelot_reset_context *ctx)
++{
 +
- Example:
- 	reset@1070008 {
- 		compatible = "mscc,ocelot-chip-reset";
- 		reg = <0x1070008 0x4>;
-+		microchip,reset-switch-core;
- 	};
-
---
++	const char *driver = "ocelot-reset";
++	int timeout;
++
++	pr_notice("%s: Resetting Switch Core\n", driver);
++
++	/* Make sure the core is PROTECTED from reset */
++	regmap_update_bits(ctx->cpu_ctrl, ctx->props->protect_reg,
++			   ctx->props->vcore_protect,
++			   ctx->props->vcore_protect);
++
++	writel(SOFT_SWC_RST, ctx->base);
++	for (timeout = 0; timeout < 100; timeout++) {
++		if ((readl(ctx->base) & SOFT_SWC_RST) == 0) {
++			pr_debug("%s: Switch Core Reset complete.\n", driver);
++			return 0;
++		}
++		udelay(1);
++	}
++
++	pr_warn("%s: Switch Core Reset timeout!\n", driver);
++	return -ENXIO;
++}
++
+ static int ocelot_restart_handle(struct notifier_block *this,
+ 				 unsigned long mode, void *cmd)
+ {
+@@ -66,7 +93,6 @@ static int ocelot_reset_probe(struct platform_device *pdev)
+ {
+ 	struct ocelot_reset_context *ctx;
+ 	struct resource *res;
+-
+ 	struct device *dev = &pdev->dev;
+ 	int err;
+ 
+@@ -87,6 +113,11 @@ static int ocelot_reset_probe(struct platform_device *pdev)
+ 		return PTR_ERR(ctx->cpu_ctrl);
+ 	}
+ 
++	/* Optionally, call switch reset function */
++	if (of_property_read_bool(pdev->dev.of_node,
++				  "microchip,reset-switch-core"))
++		ocelot_switch_core_reset(ctx);
++
+ 	ctx->restart_handler.notifier_call = ocelot_restart_handle;
+ 	ctx->restart_handler.priority = 192;
+ 	err = register_restart_handler(&ctx->restart_handler);
+@@ -128,4 +159,9 @@ static struct platform_driver ocelot_reset_driver = {
+ 		.of_match_table = ocelot_reset_of_match,
+ 	},
+ };
+-builtin_platform_driver(ocelot_reset_driver);
++
++static int __init reset_init(void)
++{
++	return platform_driver_register(&ocelot_reset_driver);
++}
++postcore_initcall(reset_init);
+-- 
 2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
