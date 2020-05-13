@@ -2,135 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD14F1D0DA2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 11:55:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E466A1D0ED8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:03:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=D29dR2oEiB1i/tYx6Ny0RXBWMprvx8XrY5op/SWTShI=; b=hwenMiyftyL0OH
-	cBDmHOt5wl+2l9hpSzV3Lh+2QC3RbmK6E7oigc1B/FXIt8bZ3+BwpVzfd9xVuUVfI7Cgp9i40Hr+0
-	qCTYvp7IbnWf0nQRf/jDuni67de2CQgjMpJfyL+mYbqwYZAegbl6DzvJ1iAEJ0MyiPUagYIs5EVCA
-	8jkcD6kLiqxe6FTpbwRC+m5ez2QaDn37WaLLH3zuOJvKiUp4GPsVjRFCeX3QQs+2eurM8L2e0rita
-	g7GwCpjIVVIdD/CbltMGqAsq4GJaBu++Dt+iwPdxDsIWapD2t6Is0a04bDt61VeMINBR1xIlUN6Ar
-	gHcp/XWkZNMUn+nam9aA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=V7Ix4lwDmQIhC1a8dz0nUzcPOG8bjAZHVfgmAz6jUr0=; b=n3bAdbxHweXKcq
+	5KYLMHjKV3BVzbNH+ZTtjY/9NCzl+M7DYS3TYxm9EnWmIcxaw9oTI8SPL6ZiFwGU253CpAWDF6UaE
+	w1N4klbRxMymMESWoJzeFL86BIP+mBJTEAuTCBdK+3NiWPhfuLKr8UYAr6fA1KhgMtxDplHc98dJ9
+	q28xOX21/jwU9UDajuzddceSKDyn5hTxuOwwzWvtnz7Z7eBsafTGaOzYjg0i5g2Di5oa7bnJtKeBb
+	PDBxZiwGl4aOTGJyjVw/nYBlDtw6PNPzd7rkytA5quNmCnZ9ZsbfMwSS7vdCFPVpqAA1UkcMspTRi
+	6hQix2RhwDTvuvDxFU4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYo6j-0006jr-SI; Wed, 13 May 2020 09:55:21 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jYoE6-0002Li-Rj; Wed, 13 May 2020 10:02:58 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYo6b-0006BK-On
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 09:55:15 +0000
-Received: by mail-wr1-x444.google.com with SMTP id l18so20065053wrn.6
+ id 1jYoDy-0002Ku-Sb
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:02:52 +0000
+Received: by mail-lf1-x144.google.com with SMTP id h26so13113259lfg.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 02:55:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:subject:to:cc:autocrypt:organization:message-id:date
- :user-agent:mime-version:content-language:content-transfer-encoding;
- bh=0/6+M/G1GVlfy5yA6uPVUor1jsLYSluIQPHWs78Q8oI=;
- b=oO4OijU4LnNNtOiRlbtEy5sdCHQ/XAV/yt36DPE8SUBkHRruUpYmRJfY49iXGVyRlz
- lURvzBTetf0lGLGpD13uspKDsscLETzhXJ6edUw5D12Q+F/9VgalcaghiXIXjlfE3NYU
- KSD1eNZoGLKzch8HRtcolSM4l35tAS/4YAhzQIYRU0eexzILRpCwuaiNr90AOAqKWeih
- dCGLlCA/yYbtSbceHIoL6jeFZLeDEBzwopIk6KgIXWWq9Ywm1k/oThPI0PYACr+j0Btd
- 6I5Y/xJ/GhxXsiwtysGHUKZBaxGJ8wyo1yabZ7lG8aP5bl4s36izpwJppiQ8kVOOT1o6
- yBag==
+ Wed, 13 May 2020 03:02:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=2aCxmJXofWWXF7Hc0yY8XDq7DjFWltNq1d94lnkIpsc=;
+ b=FiM4i2KZIvyApC6+NTNxDEVrlPFXsYzw6RVLZXT4qflN6pIIA0k8LCKBZsRqYOBtf8
+ OoPskUmWqZTXpWeUbxdlLrpclL0TGUJUsYBxFTSXoOXyriXxXnF3IWjoatIFXluJLogV
+ xhhINKLRwcvGlIuPlqW6Bjzk7/ua+XGA/3cHWGToX3l6EdzQ6n2BQfqE48HXHH9+qXZc
+ wfbYsFb2PBCyKpU3yZv12c+hALk4nMBzt4Z9UaeeDNsjMkQlGyXUC5YQE+XjcorZDSsU
+ iDOQN1RVuNbVyzQ9BNZw+AF4Dn8tbWdgswN6lQAptsOvBQhJWIK20Cp+XRGrP558LOu1
+ KW5g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:subject:to:cc:autocrypt:organization
- :message-id:date:user-agent:mime-version:content-language
- :content-transfer-encoding;
- bh=0/6+M/G1GVlfy5yA6uPVUor1jsLYSluIQPHWs78Q8oI=;
- b=fCMTL7LXRcL7yKUCFQOVb+iJKCO03a5YuRNc1VT/vrRejZ8oUbOdrH1SBInl1IDTWr
- cnNL8WORYeDlla6evohipRzFprsVjKYx88lnHVT1pB3M+wwWI3SNCB6wmNNUFAHG7oep
- QA7AJFy7YkBiTQHDefny20iPj9sNle6NOobkNIBwjFxoQtz+WWFpGv5u1owDkAeXo8dm
- /rG/zvPC9ioL7iha03OYFqHfa2jq9NkQfhf7QSwzeBg03Ogdx3BT682NGNcjznnHzO9R
- kQQRjiADNIifCb3CnUq4oANnAJLtqdB4o8AL5lG8RKWqForX7aw07gboaqIHOHdVpAFi
- 2SYA==
-X-Gm-Message-State: AGi0PuZZ1Gtc0WIs2GevTRGkEq3BgTLhvwxa1pmukx3j0/Vi3JbpdmQK
- /KUCu856BeXEn9EBik+XgSU+NSepCLnCvA==
-X-Google-Smtp-Source: APiQypIqIh6JNa2ZJqhjFMWK41zu9sJ+C7IAdP7pjDtsVyuTJOHTETnYZiD3VBTsbCpkO4T0WptDww==
-X-Received: by 2002:a5d:5492:: with SMTP id h18mr29087427wrv.35.1589363708645; 
- Wed, 13 May 2020 02:55:08 -0700 (PDT)
-Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
- ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
- by smtp.gmail.com with ESMTPSA id k5sm24881492wrx.16.2020.05.13.02.55.07
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 02:55:07 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-Subject: [GIT PULL] oxnas fixes for 5.7
-To: soc@kernel.org, arm@kernel.org
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
- GTjuhvbleoQ5Cxjr+v+1ARGCH46MxFP5DwauzPekwJUD5QKZlaw/bURTLmS2id5wWi3lqVH4
- BVF2WzvGyyeV1o4RTCYDnZ9VLLylJ9bneEaIs/7cjCEbipGGFlfIML3sfqnIvMAxIMZrvcl9
- qPV2k+KQ7q+aXavU5W+yLNn7QtXUB530Zlk/d2ETgzQ5FLYYnUDAaRl+8JUTjc0CNOTpCeik
- 80TZcE6f8M76Xa6yU8VcNko94Ck7iB4vj70q76P/J7kt98hklrr85/3NU3oti3nrIHmHABEB
- AAHNKE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25nQGJheWxpYnJlLmNvbT7CwHsEEwEKACUC
- GyMGCwkIBwMCBhUIAgkKCwQWAgMBAh4BAheABQJXDO2CAhkBAAoJEBaat7Gkz/iubGIH/iyk
- RqvgB62oKOFlgOTYCMkYpm2aAOZZLf6VKHKc7DoVwuUkjHfIRXdslbrxi4pk5VKU6ZP9AKsN
- NtMZntB8WrBTtkAZfZbTF7850uwd3eU5cN/7N1Q6g0JQihE7w4GlIkEpQ8vwSg5W7hkx3yQ6
- 2YzrUZh/b7QThXbNZ7xOeSEms014QXazx8+txR7jrGF3dYxBsCkotO/8DNtZ1R+aUvRfpKg5
- ZgABTC0LmAQnuUUf2PHcKFAHZo5KrdO+tyfL+LgTUXIXkK+tenkLsAJ0cagz1EZ5gntuheLD
- YJuzS4zN+1Asmb9kVKxhjSQOcIh6g2tw7vaYJgL/OzJtZi6JlIXOwU0EVid/pAEQAND7AFhr
- 5faf/EhDP9FSgYd/zgmb7JOpFPje3uw7jz9wFb28Cf0Y3CcncdElYoBNbRlesKvjQRL8mozV
- 9RN+IUMHdUx1akR/A4BPXNdL7StfzKWOCxZHVS+rIQ/fE3Qz/jRmT6t2ZkpplLxVBpdu95qJ
- YwSZjuwFXdC+A7MHtQXYi3UfCgKiflj4+/ITcKC6EF32KrmIRqamQwiRsDcUUKlAUjkCLcHL
- CQvNsDdm2cxdHxC32AVm3Je8VCsH7/qEPMQ+cEZk47HOR3+Ihfn1LEG5LfwsyWE8/JxsU2a1
- q44LQM2lcK/0AKAL20XDd7ERH/FCBKkNVzi+svYJpyvCZCnWT0TRb72mT+XxLWNwfHTeGALE
- +1As4jIS72IglvbtONxc2OIid3tR5rX3k2V0iud0P7Hnz/JTdfvSpVj55ZurOl2XAXUpGbq5
- XRk5CESFuLQV8oqCxgWAEgFyEapI4GwJsvfl/2Er8kLoucYO1Id4mz6N33+omPhaoXfHyLSy
- dxD+CzNJqN2GdavGtobdvv/2V0wukqj86iKF8toLG2/Fia3DxMaGUxqI7GMOuiGZjXPt/et/
- qeOySghdQ7Sdpu6fWc8CJXV2mOV6DrSzc6ZVB4SmvdoruBHWWOR6YnMz01ShFE49pPucyU1h
- Av4jC62El3pdCrDOnWNFMYbbon3vABEBAAHCwn4EGAECAAkFAlYnf6QCGwICKQkQFpq3saTP
- +K7BXSAEGQECAAYFAlYnf6QACgkQd9zb2sjISdGToxAAkOjSfGxp0ulgHboUAtmxaU3viucV
- e2Hl1BVDtKSKmbIVZmEUvx9D06IijFaEzqtKD34LXD6fjl4HIyDZvwfeaZCbJbO10j3k7FJE
- QrBtpdVqkJxme/nYlGOVzcOiKIepNkwvnHVnuVDVPcXyj2wqtsU7VZDDX41z3X4xTQwY3SO1
- 9nRO+f+i4RmtJcITgregMa2PcB0LvrjJlWroI+KAKCzoTHzSTpCXMJ1U/dEqyc87bFBdc+DI
- k8mWkPxsccdbs4t+hH0NoE3Kal9xtAl56RCtO/KgBLAQ5M8oToJVatxAjO1SnRYVN1EaAwrR
- xkHdd97qw6nbg9BMcAoa2NMc0/9MeiaQfbgW6b0reIz/haHhXZ6oYSCl15Knkr4t1o3I2Bqr
- Mw623gdiTzotgtId8VfLB2Vsatj35OqIn5lVbi2ua6I0gkI6S7xJhqeyrfhDNgzTHdQVHB9/
- 7jnM0ERXNy1Ket6aDWZWCvM59dTyu37g3VvYzGis8XzrX1oLBU/tTXqo1IFqqIAmvh7lI0Se
- gCrXz7UanxCwUbQBFjzGn6pooEHJYRLuVGLdBuoApl/I4dLqCZij2AGa4CFzrn9W0cwm3HCO
- lR43gFyz0dSkMwNUd195FrvfAz7Bjmmi19DnORKnQmlvGe/9xEEfr5zjey1N9+mt3//geDP6
- clwKBkq0JggA+RTEAELzkgPYKJ3NutoStUAKZGiLOFMpHY6KpItbbHjF2ZKIU1whaRYkHpB2
- uLQXOzZ0d7x60PUdhqG3VmFnzXSztA4vsnDKk7x2xw0pMSTKhMafpxaPQJf494/jGnwBHyi3
- h3QGG1RjfhQ/OMTX/HKtAUB2ct3Q8/jBfF0hS5GzT6dYtj0Ci7+8LUsB2VoayhNXMnaBfh+Q
- pAhaFfRZWTjUFIV4MpDdFDame7PB50s73gF/pfQbjw5Wxtes/0FnqydfId95s+eej+17ldGp
- lMv1ok7K0H/WJSdr7UwDAHEYU++p4RRTJP6DHWXcByVlpNQ4SSAiivmWiwOt490+Ac7ATQRN
- WQbPAQgAvIoM384ZRFocFXPCOBir5m2J+96R2tI2XxMgMfyDXGJwFilBNs+fpttJlt2995A8
- 0JwPj8SFdm6FBcxygmxBBCc7i/BVQuY8aC0Z/w9Vzt3Eo561r6pSHr5JGHe8hwBQUcNPd/9l
- 2ynP57YTSE9XaGJK8gIuTXWo7pzIkTXfN40Wh5jeCCspj4jNsWiYhljjIbrEj300g8RUT2U0
- FcEoiV7AjJWWQ5pi8lZJX6nmB0lc69Jw03V6mblgeZ/1oTZmOepkagwy2zLDXxihf0GowUif
- GphBDeP8elWBNK+ajl5rmpAMNRoKxpN/xR4NzBg62AjyIvigdywa1RehSTfccQARAQABwsBf
- BBgBAgAJBQJNWQbPAhsMAAoJEBaat7Gkz/iuteIH+wZuRDqK0ysAh+czshtG6JJlLW6eXJJR
- Vi7dIPpgFic2LcbkSlvB8E25Pcfz/+tW+04Urg4PxxFiTFdFCZO+prfd4Mge7/OvUcwoSub7
- ZIPo8726ZF5/xXzajahoIu9/hZ4iywWPAHRvprXaim5E/vKjcTeBMJIqZtS4u/UK3EpAX59R
- XVxVpM8zJPbk535ELUr6I5HQXnihQm8l6rt9TNuf8p2WEDxc8bPAZHLjNyw9a/CdeB97m2Tr
- zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
- BSwxi7g3Mu7u5kUByanqHyA=
-Organization: Baylibre
-Message-ID: <95bf4813-93a1-735d-1d27-2cbe59986845@baylibre.com>
-Date: Wed, 13 May 2020 11:55:06 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2aCxmJXofWWXF7Hc0yY8XDq7DjFWltNq1d94lnkIpsc=;
+ b=Os/oB9389MhgpZJc0179wCDhiu+1XOnLxJd20BIWfbA8FopGe3/3yOOmOHXdoo6SXM
+ ++U5fW9a0VQyFi4hBiLZgSDJlZ1MhE+VgCvxpBOx0PXPKp2fQdi/rbnvXT5X6noBiZ64
+ X9DOZUgm6W/C3WCwEC5+u27xWfumW0BYUbtNZmViQvdH8qQVlLQYMtaZjsNhIFS70MwO
+ 6E671lxJFZk7b5+nFe5oHFn2NC3DJkQrnqsYXeWWlKCTSt0NlzpMvzaDg3En/NiN1Z/H
+ Mh83Y3apkBnvQqVrfZsK2AYT8qDms+mKDHbSxivmHl+yUokAYyP27XpgDsqboVI5CT9S
+ 5hiw==
+X-Gm-Message-State: AOAM533CXm8XG7gZs7PLEdxxkxoNjCoFDrr78+iQQMqmHPCZxoxTlb8Z
+ /65puUEh7UHISeyTJJp9niEdjETV3o0l7v9kjV4d6g==
+X-Google-Smtp-Source: ABdhPJx16S95QuKV1iQrjHSlON/GYRqUod0w3hMx4HOwmWPFryc++fQrBz+1QzK7p6ucn4AJzZma99Yb4MdTiDAon0k=
+X-Received: by 2002:ac2:44bb:: with SMTP id c27mr14866106lfm.40.1589364167487; 
+ Wed, 13 May 2020 03:02:47 -0700 (PDT)
 MIME-Version: 1.0
-Content-Language: en-US
+References: <1587726554-32018-1-git-send-email-sumit.garg@linaro.org>
+ <1587726554-32018-3-git-send-email-sumit.garg@linaro.org>
+ <20200425112950.3a4815b6@why>
+ <6fd3d96181ec53f735ef1b6a79d28da1@kernel.org>
+ <CAFA6WYPNNNZeX5zpadayfiZ7P_mHmiREpUd5LZ3Jp+TjGVqoEw@mail.gmail.com>
+ <ac57cb4bbb6507ee98f199d68a514503@kernel.org>
+ <CAFA6WYMheJxeKVC_YWN9owNJhcWTBsaOCvZXxq=GVj5ROJ0cvg@mail.gmail.com>
+ <20200430101322.420e4052@why>
+ <CAFA6WYO+NGLfNkOah4YzXx5XuaDh=QtWHgnMBwwMFY1zRt15GQ@mail.gmail.com>
+ <CAFA6WYPxiwxpJitX7fCSESUvQSa9Dq89GwL4e3w33ooetV=ysw@mail.gmail.com>
+ <CAFA6WYOn+DLf77C1+e5bq-NdT+o4=o32oPu2b3bxD_U+mLQ3WQ@mail.gmail.com>
+ <306aecc560a9503e500fbf1f512c6d30@kernel.org>
+ <CAFA6WYPHWP46TY_XdxVVrTr6AChU_1ATXu+p32vXCjkaXWPWOQ@mail.gmail.com>
+In-Reply-To: <CAFA6WYPHWP46TY_XdxVVrTr6AChU_1ATXu+p32vXCjkaXWPWOQ@mail.gmail.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Wed, 13 May 2020 15:32:36 +0530
+Message-ID: <CAFA6WYO3=BHX1exF+J=93ECnQFe3S5O4HrT4t14euw3t9PXE7A@mail.gmail.com>
+Subject: Re: [RFC Patch v1 2/4] irqchip/gic-v3: Add support to handle SGI as
+ pseudo NMI
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_025513_871523_55BE5FD6 
-X-CRM114-Status: GOOD (  13.05  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200513_030250_954364_DEF5BBBF 
+X-CRM114-Status: GOOD (  19.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -145,39 +103,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-oxnas@groups.io, linux-arm-kernel@lists.infradead.org
+Cc: Daniel Thompson <daniel.thompson@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>, Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Douglas Anderson <dianders@chromium.org>, julien.thierry.kdev@gmail.com,
+ Jason Wessel <jason.wessel@windriver.com>,
+ kgdb-bugreport@lists.sourceforge.net, Thomas Gleixner <tglx@linutronix.de>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Marc,
 
-Simple fix for mach-oxnas SMP code fixing a sparse warning.
+On Tue, 5 May 2020 at 17:03, Sumit Garg <sumit.garg@linaro.org> wrote:
+>
+> On Tue, 5 May 2020 at 15:38, Marc Zyngier <maz@kernel.org> wrote:
+> >
+> > On 2020-05-05 05:09, Sumit Garg wrote:
+> > > On Fri, 1 May 2020 at 18:33, Sumit Garg <sumit.garg@linaro.org> wrote:
+> >
+> > [...]
+> >
+> > > In case there are no major objections to this approach, I will post
+> > > complete v2 patch-set (alongwith Marc's patches) for detailed review.
+> >
+> > As this is still a work in progress (I'm currently wrestling with
+> > the stupid RPi driver), whatever you have is unlikely to apply on
+> > top of the final series.
+> >
+> > I'm not going to stop you from posting the patches, it is just that
+> > they will be obsolete by the end of the week...
+>
+> Thanks for the heads up. Will wait for your final series.
+>
 
-Neil
+Were you able to give a final shape to your SGIs related patch-set?
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+-Sumit
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/narmstrong/linux-oxnas.git tags/arm-soc-fixes-for-5.7
-
-for you to fetch changes up to bd84dff0217414d9f9b829a3b75b2487aff857b7:
-
-  ARM: oxnas: make ox820_boot_secondary static (2020-05-12 10:29:33 +0200)
-
-----------------------------------------------------------------
-- mach-oxnas: make ox820_boot_secondary static to fix sparse warning
-
-----------------------------------------------------------------
-Ma Feng (1):
-      ARM: oxnas: make ox820_boot_secondary static
-
- arch/arm/mach-oxnas/platsmp.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+> But while working on an NMI request, I noticed a hack in common gic
+> code [1] which basically enables all SGIs for every CPU by default.
+> This hack is quite similar to mine initial hack to set priority for a
+> particular SGI by default to act as pseudo NMI.
+>
+> Due to this hack I got following error message while configuring SGI as NMI:
+>
+> [    0.000000] GICv3: Cannot set NMI property of enabled IRQ 8
+> [    0.000000] genirq: Failed to setup NMI delivery: irq 8
+>
+> I think chained IRQs worked for you due to this hack only as it
+> doesn't seem to enable SGIs per CPU.
+>
+> IMO, as we shift to SGIs being standard interrupts, we should also
+> rely on standard interrupt framework to enable SGIs. So it seems the
+> correct way would be to use "request_percpu_irq()" and
+> "enable_percpu_irq()" for configuring SGIs as demonstrated in updated
+> commit here [2].
+>
+> Also, we should get rid of this hack as demonstrated via commit [3].
+>
+> Apart from above changes, there was a minor update needed for commit
+> "irqchip/gic-v3: Describe the SGI range" [4].
+>
+> I hope these updates are useful for you while preparing the final series.
+>
+> [1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/irqchip/irq-gic-common.c#n155
+> [2] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=e208979b5165d753d144db57e0cb8646fdedc495
+> [3] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=cd6d0d7cea14ac16156f0dbd297940df382f8cea
+> [4] https://git.linaro.org/people/sumit.garg/linux.git/commit/?h=kgdb-nmi&id=1180e9c54547ec05d96cc6b36c26005059c90d9a
+>
+> -Sumit
+>
+> >
+> > Thanks,
+> >
+> >          M.
+> > --
+> > Jazz is not dead. It just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
