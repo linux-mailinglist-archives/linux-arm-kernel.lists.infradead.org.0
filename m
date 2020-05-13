@@ -2,59 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 126171D173C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:13:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F3A11D174C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:16:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YXgLsL/pJ4R8mmPf6m/Gcf2l3UjMpcdulEyvZM2XfUQ=; b=HlvjQ7oA6I/+so
-	clL0waSSHIFwwzn8RLn7VPV9k4ctnFuFOEmI+gm3rLBoUpvmZ3X0GxVWoCrrA9R1h3iJgIg2j0t0q
-	Ai2PI36EB0n4AWQw/qHeAQkwNuZkPYdoImqOyf6agTG96qzQy/l07f7UbdtOfZSWqza7jD1SH0pCF
-	TbVD+v2Rx7Om1R7FmFqueFcmFOMfSVHgqOYNw9KtFmBbaTQzrNEJt2IPQGisVGLq9UmewyeIG2rMD
-	MpaIQlbIvE3s9wT4+IFKZoD43YTWcDpfwtCFsVrMWC2rDV5YfeCgpvhcwgQfOjWLBi1FNUOtBRDyb
-	RiJhxC+7q+zVboWOrO+w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SOsqEyoY5eBZKx+mb9gDod5sl6qo2X9pvSzXUgkS9pw=; b=GrXWl/AtAOwwQ0Vc7/dECbY5T
+	ihpChUV4XCnILGz6FZ2oSB8LS7OZX5WKyAob/0Wk2/JmD++K65F2dGmIUf0+tclcmbBLUF2TqySV+
+	yk0jmAGjiTinwyM5giO+cajluJ7xAhfQDrjkpL0v629yJAgF1tltKhsf9oBPicM/xE8JCQQVaT4XG
+	Yv7xJpwNnTs3vDREOiwTjhEcatWQy/hSefxPGxNycLca1u0vajhl0eSKy8N+Rl9W9iqlIBuvGOUma
+	j6ZJBUAaEcW2U5vgQTQyd3BTq8aowZt2G6bDsMFoRqfAGomERBOX5pnGWf6UJuRPp2LKw7JT6DTDK
+	+rJI3BzZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYs8O-0001r3-UJ; Wed, 13 May 2020 14:13:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYs79-000186-Ox
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:12:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 626EA31B;
- Wed, 13 May 2020 07:11:56 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 92A333F71E;
- Wed, 13 May 2020 07:11:54 -0700 (PDT)
-Date: Wed, 13 May 2020 15:11:48 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Luis Machado <luis.machado@linaro.org>
-Subject: Re: [PATCH v3 19/23] arm64: mte: Add PTRACE_{PEEK,POKE}MTETAGS support
-Message-ID: <20200513141147.GD2719@gaia>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-20-catalin.marinas@arm.com>
- <a7569985-eb85-497b-e3b2-5dce0acb1332@linaro.org>
- <20200513104849.GC2719@gaia>
- <3d2621ac-9d08-53ea-6c22-c62532911377@linaro.org>
+	id 1jYsBO-0006bc-5P; Wed, 13 May 2020 14:16:26 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYsB7-0006as-LV
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:16:11 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589379369; x=1620915369;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=UzkFgk4KxPXdtpumytvjaT9DH3n8QRgbvV1ZsZ7ca9s=;
+ b=UJogM0J71OFbu86bGuhubpX+0bTaBSWsD7hmKAJpzP4Yo93BxLT4KKaW
+ Zpuh+5eH6AiuCbF8jh8HN27c4dH5L0RXYChGrHcu2nPFxGGLC/UzQ1vOY
+ 7hXKY/3/Svhq7cOO/x3PvTcAG8GrkxP6HMETtP3StzjGuy5cOlz3ocwPU
+ JGfBQ+aJGrV3MFy1G9kFdqMPGj6p9+kKSXSC2pvSDsx2Onl4Ehpp/YdDs
+ AoFpZJnisfKSDlaBPFOH2VSGC3h6rQUWqM+IvAkacv5yjQ9a2Q0fYVkHT
+ 7nd5NuJ12bw/TXUmDvBO7sJabVBWQZXcg+JD8vZJK4XfD91jw7GVYf2EX g==;
+IronPort-SDR: BAhFBmj8YgfLl9K0CKFV6Il6Sh3mNN5rA25bxiNtKTAFHTSbtw1UbUhFshasWmVsDmrUmh34OF
+ 6V6JPqzxQ5e8fH9gJdbnXvkZS6ueKYbciyV84JBVSLybdKYySn2h39eApCA4yGMqbwSyCzbvRi
+ 1WXiyYmrxUPcL+c0JEmHlzOMbdn7wFxc14zIurUdvC/9by6sHYiDbdrj8O1lTqx48LSTISNCGK
+ 0mHXOw7MbZRfa8sRz171/iir+iS1yWQeYULipTTL777gBlA/OFTceROHJB1SQfarxYRdJrax7o
+ v7g=
+X-IronPort-AV: E=Sophos;i="5.73,388,1583218800"; d="scan'208";a="76511186"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 07:16:08 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 07:16:08 -0700
+Received: from [10.171.246.28] (10.10.115.15) by chn-vm-ex04.mchp-main.com
+ (10.10.85.152) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Wed, 13 May 2020 07:16:05 -0700
+Subject: Re: [PATCH v4 3/5] net: macb: fix macb_get/set_wol() when moving to
+ phylink
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <cover.1588763703.git.nicolas.ferre@microchip.com>
+ <4aeebe901fde6db70a5ca12b10e793dd2ee6ce60.1588763703.git.nicolas.ferre@microchip.com>
+ <20200513130536.GI1551@shell.armlinux.org.uk>
+From: Nicolas Ferre <nicolas.ferre@microchip.com>
+Organization: microchip
+Message-ID: <c0bc2167-e49e-1026-94e3-cb5931755389@microchip.com>
+Date: Wed, 13 May 2020 16:16:04 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <3d2621ac-9d08-53ea-6c22-c62532911377@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20200513130536.GI1551@shell.armlinux.org.uk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_071203_940848_4EF4290A 
-X-CRM114-Status: GOOD (  34.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_071609_717029_0A629B25 
+X-CRM114-Status: GOOD (  25.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,115 +97,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Omair Javaid <omair.javaid@linaro.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Alan Hayward <Alan.Hayward@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, f.fainelli@gmail.com,
+ antoine.tenart@bootlin.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, "David S.
+ Miller" <davem@davemloft.net>, harini.katakam@xilinx.com, Claudiu
+ Beznea <claudiu.beznea@microchip.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 09:52:52AM -0300, Luis Machado wrote:
-> On 5/13/20 7:48 AM, Catalin Marinas wrote:
-> > On Tue, May 12, 2020 at 04:05:15PM -0300, Luis Machado wrote:
-> > > On 4/21/20 11:25 AM, Catalin Marinas wrote:
-> > > > Add support for bulk setting/getting of the MTE tags in a tracee's
-> > > > address space at 'addr' in the ptrace() syscall prototype. 'data' points
-> > > > to a struct iovec in the tracer's address space with iov_base
-> > > > representing the address of a tracer's buffer of length iov_len. The
-> > > > tags to be copied to/from the tracer's buffer are stored as one tag per
-> > > > byte.
-> > > > 
-> > > > On successfully copying at least one tag, ptrace() returns 0 and updates
-> > > > the tracer's iov_len with the number of tags copied. In case of error,
-> > > > either -EIO or -EFAULT is returned, trying to follow the ptrace() man
-> > > > page.
-> > > > 
-> > > > Note that the tag copying functions are not performance critical,
-> > > > therefore they lack optimisations found in typical memory copy routines.
-> > > > 
-> > > > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > > > Cc: Will Deacon <will@kernel.org>
-> > > > Cc: Alan Hayward <Alan.Hayward@arm.com>
-> > > > Cc: Luis Machado <luis.machado@linaro.org>
-> > > > Cc: Omair Javaid <omair.javaid@linaro.org>
-> > > 
-> > > I started working on MTE support for GDB and I'm wondering if we've already
-> > > defined a way to check for runtime MTE support (as opposed to a HWCAP2-based
-> > > check) in a traced process.
-> > > 
-> > > Originally we were going to do it via empty-parameter ptrace calls, but you
-> > > had mentioned something about a proc-based method, if I'm not mistaken.
-> > 
-> > We could expose more information via proc_pid_arch_status() but that
-> > would be the tagged address ABI and tag check fault mode and intended
-> > for human consumption mostly. We don't have any ptrace interface that
-> > exposes HWCAPs. Since the gdbserver runs on the same machine as the
-> > debugged process, it can check the HWCAPs itself, they are the same for
-> > all processes.
+Russell,
+
+Thanks for the feedback.
+
+On 13/05/2020 at 15:05, Russell King - ARM Linux admin wrote:
+> On Wed, May 06, 2020 at 01:37:39PM +0200, nicolas.ferre@microchip.com wrote:
+>> From: Nicolas Ferre <nicolas.ferre@microchip.com>
+>>
+>> Keep previous function goals and integrate phylink actions to them.
+>>
+>> phylink_ethtool_get_wol() is not enough to figure out if Ethernet driver
+>> supports Wake-on-Lan.
+>> Initialization of "supported" and "wolopts" members is done in phylink
+>> function, no need to keep them in calling function.
+>>
+>> phylink_ethtool_set_wol() return value is not enough to determine
+>> if WoL is enabled for the calling Ethernet driver. Call it first
+>> but don't rely on its return value as most of simple PHY drivers
+>> don't implement a set_wol() function.
+>>
+>> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
+>> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+>> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+>> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
+>> Cc: Harini Katakam <harini.katakam@xilinx.com>
+>> Cc: Antoine Tenart <antoine.tenart@bootlin.com>
+>> ---
+>>   drivers/net/ethernet/cadence/macb_main.c | 18 ++++++++++--------
+>>   1 file changed, 10 insertions(+), 8 deletions(-)
+>>
+>> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
+>> index 53e81ab048ae..24c044dc7fa0 100644
+>> --- a/drivers/net/ethernet/cadence/macb_main.c
+>> +++ b/drivers/net/ethernet/cadence/macb_main.c
+>> @@ -2817,21 +2817,23 @@ static void macb_get_wol(struct net_device *netdev, struct ethtool_wolinfo *wol)
+>>   {
+>>        struct macb *bp = netdev_priv(netdev);
+>>
+>> -     wol->supported = 0;
+>> -     wol->wolopts = 0;
+>> -
+>> -     if (bp->wol & MACB_WOL_HAS_MAGIC_PACKET)
+>> +     if (bp->wol & MACB_WOL_HAS_MAGIC_PACKET) {
+>>                phylink_ethtool_get_wol(bp->phylink, wol);
+>> +             wol->supported |= WAKE_MAGIC;
+>> +
+>> +             if (bp->wol & MACB_WOL_ENABLED)
+>> +                     wol->wolopts |= WAKE_MAGIC;
+>> +     }
+>>   }
+>>
+>>   static int macb_set_wol(struct net_device *netdev, struct ethtool_wolinfo *wol)
+>>   {
+>>        struct macb *bp = netdev_priv(netdev);
+>> -     int ret;
+>>
+>> -     ret = phylink_ethtool_set_wol(bp->phylink, wol);
+>> -     if (!ret)
+>> -             return 0;
+>> +     /* Pass the order to phylink layer.
+>> +      * Don't test return value as set_wol() is often not supported.
+>> +      */
+>> +     phylink_ethtool_set_wol(bp->phylink, wol);
 > 
-> Sorry, I think i haven't made it clear. I already have access to HWCAP2 both
-> from GDB's and gdbserver's side. But HWCAP2 only indicates the availability
-> of a particular feature in a CPU, it doesn't necessarily means the traced
-> process is actively using MTE, right?
+> If this returns an error, does that mean WOL works or does it not?
 
-Right, but "actively" is not well defined either. The only way to tell
-whether a process is using MTE is to look for any PROT_MTE mappings. You
-can access these via /proc/<pid>/maps. In theory, one can use MTE
-without enabling the tagged address ABI or even tag checking (i.e. no
-prctl() call).
+In my use case (simple phy: "Micrel KSZ8081"), if I have the error 
+"-EOPNOTSUPP", it simply means that this phy driver doesn't have the 
+set_wol() function. But on the MAC side, I can perfectly wake-up on WoL 
+event as the phy acts as a pass-through.
 
-> So GDB/gdbserver would need runtime checks to be able to tell if a process
-> is using MTE, in which case the tools will pay attention to tags and
-> additional MTE-related registers (sctlr and gcr) we plan to make available
-> to userspace.
+> Note that if set_wol() is not supported, this will return -EOPNOTSUPP.
+> What about other errors?
 
-I'm happy to expose GCR_EL1.Excl and the SCTLR_EL1.TCF0 bits via ptrace
-as a thread state. The tags, however, are a property of the memory range
-rather than a per-thread state. That's what makes it different from
-other register-based features like SVE.
+True, I don't manage them. But for now this patch is a fix that only 
+reverts to previous behavior. In other terms, it only fixes the regression.
 
-> The original proposal was to have GDB send PTRACE_PEEKMTETAGS with a NULL
-> address and check the result. Then GDB would be able to decide if the
-> process is using MTE or not.
+But can I make the difference, and how, between?
+1/ the phy doesn't support WoL and could prevent the WoL to happen on 
+the MAC
+2/ the phy doesn't implement (yet) the set_wol() function, if MAC can 
+manage, it's fine
 
-We don't store this information in the kernel as a bool and I don't
-think it would be useful either. I think gdb, when displaying memory,
-should attempt to show tags as well if the corresponding range was
-mapped with PROT_MTE. Just probing whether a thread ever used MTE
-doesn't help since you need to be more precise on which address supports
-tags.
 
-> > BTW, in my pre-v4 patches (hopefully I'll post v4 this week), I changed
-> > the ptrace tag access slightly to return an error (and no tags copied)
-> > if the page has not been mapped with PROT_MTE. The other option would
-> > have been read-as-zero/write-ignored as per the hardware behaviour.
-> > Either option is fine by me but I thought the write-ignored part would
-> > be more confusing for the debugger. If you have any preference here,
-> > please let me know.
-> 
-> I think erroring out is a better alternative, as long as the debugger can
-> tell what the error means, like, for example, "this particular address
-> doesn't make use of tags".
+> If you want to just ignore the case where it's not supported, then
+> this looks like a sledge hammer to crack a nut.
 
-And you could use this for probing whether the range has tags or not.
-With my current patches it returns -EFAULT but happy to change this to
--EOPNOTSUPP or -EINVAL. Note that it only returns an error if no tags
-copied. If gdb asks for a range of two pages and only the first one has
-PROT_MTE, it will return 0 and set the number of tags copied equivalent
-to the first page. A subsequent call would return an error.
+Do you suggest that I just don't call phylink_ethtool_set_wol() at all?
 
-In my discussion with Dave on the documentation patch, I thought retries
-wouldn't be needed but in the above case it may be useful to get an
-error code. That's unless we change the interface to return an error and
-also update the user iovec structure.
+But what if the underlying phy does support WoL?
 
+Best regards,
 -- 
-Catalin
+Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
