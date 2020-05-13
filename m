@@ -2,89 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 552971D106A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 13:01:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 648931D109E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 13:08:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r4IhB+F8OmZ0kJAFnXMNeppuoI748F+l5r0SNwwgimE=; b=FJTPfxlOSueTty
-	26/bP38ob1Sa8XhgMmHhp9KZ4v3RBHU85DhSaONdS3plBFt9PRMD5M7HObUTywtZJF0o3+rHV5RJb
-	T/ZTJqeKf5N/w/6Bqx+tguGCQ40k2YkmLK+OyCB3BKzfq2aGJeGooAeAyyQ58erFAavO2+4cuhE5r
-	GDL3GgsehXk+pi6/Dnq5v90rV9kErb0YuXXvTNnK5d5dIvSf6hAL667tWQilBaaCW0dqBhukvkdaq
-	knjphmnkO/8vLaqGg0zP3dbjH8xsZ12jUtaQ7YvruzDVfru3iI6JdCVBP2EopvkAo7MnC/7AxQisI
-	TOP0YUdI4D/EKLNJ9mRA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=OJjbp2zWlms72x4E7ZFRuacIkKzlz/W95+ACLXdrPtY=; b=FYpw84MeMTv8gU
+	BTJLaKmNqfOWjHH3EPTuYrDBY6UolTHZyR15MRv9UqJPsv+yaVFacs23WZ6i6OqQ48GqIHKBCGOPn
+	djOuQeoL/npIZoE5cfcPlUZMS3dC6BmfPvPPlUOZl5OwZZQIRw0rDTMaDolOzZE83jyyWaAn+qMPl
+	zo5GP7fLdUMQ1zZkqLvqFLfhcsr2q+QjjHx75MW71urfRbTztoEHU7kVMIBMRjaszHr8nC4Urtnwz
+	6R2IXjzUf6kJ5DKx+cIEaxdOTzmvG4v/lg/RSE0gh8QEKvhPjJpE6REmY1IBOLYMcYF9AgrEN0JRm
+	sAMxqI1PKQ6RPZXW2TYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYp8d-0005eq-Sg; Wed, 13 May 2020 11:01:23 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1jYpEz-0001O5-Mt; Wed, 13 May 2020 11:07:57 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYp8V-0005dp-LY
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 11:01:17 +0000
-Received: by mail-wm1-x344.google.com with SMTP id e26so26064512wmk.5
+ id 1jYpEl-0001Lm-6G
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 11:07:46 +0000
+Received: by mail-wr1-x444.google.com with SMTP id e1so6425316wrt.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 04:01:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=cc:subject:to:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=7iidg7aCC8jgWSleEvIT2tYsa62o79JfzPXFekGKGM8=;
- b=frs1EdQbQSzttbYZeps+7acS/Ww65s9txJ3+/hAuL4U7wMVqodgsJ+6hT7raUUu+zs
- 8f+eyFyVPwH1/glbUYFCsGfXvV2/mk2I7Wec7j1Dmzen46H3XYa1Bvlzl5cRwKY+/jOb
- i/b1g81h7jybvKsNrDOCKWQjqBzxzEDoVvLW2R4q8yI+kX6IYsH/v5P0ule7mn8nP8Qx
- di7xeDNurjVAvqmj9n3w+Kcx/ihil7peyheqrl2UcyhYPwGawUfr5//kp+nnE6LqNKQT
- 70BTtDY9w3qB5hp2SvkC9Fx/4lR0sCsVCYoteR9sm52ZkrVG820nvbDfGzX15/wV+QvW
- L96w==
+ Wed, 13 May 2020 04:07:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=4kyjTfTHMVUTV+THehJYOS1UTUTs5x0t0xpjX4MdtCY=;
+ b=DEil9n0gXHGymALBWdas81BFDTL11HXaPejLvIufToKD+XdRHMpgiczE8uCg/IJKMk
+ o+Ho9++LbXsr35XpyqX4c4IJQFeMtyCfa25Z+NkqaczakuaLa1cgb/SuqfBlyqu6uIZt
+ LuAyrWw70W+TIUDw0tnkwSVEv8E3TEmZkifC9tCH35x+lsGOxkCmABqxj5LnZh0orEl9
+ nIEnrm4QxZoTh+mfb2TigA02rRa6ecGNneaJNG7znMXL4WYPOgGsciE2XnqqPHj7XGU2
+ UeDj3pweIS0VsnlznSbC/qYmY0zQMH4uf5UCs32Q0qeQG+QL0cM0f9w0i2oc2ys7GVnv
+ XfRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:cc:subject:to:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=7iidg7aCC8jgWSleEvIT2tYsa62o79JfzPXFekGKGM8=;
- b=hKxMfj/2dWP/49eXrBhIx5FRq4XVtBD73xPwNf4GnKfrM46GvpCsk4jzY5gxbKo0Nz
- URYBHGcwVy89PmAnjNYDvYwG8kdnqz1LcaRE0DM4tOArU2VPOyn3S2/XDxOs9a/Cy529
- nm+UasXxMgx1K1uEErZhOdzs4Atj6tpcLe28DJ0uewoDwKgm8eFRT30YzyNTW5/TZkoj
- Idr+utJgOcvRNUcXEsWbEBEs9kXngEGZoDtEpTh+TsVQsXn+hBLTlYaYE4Se/WouIkoR
- T8AH1mSBF3AIuPMVxOuQS6cbqJdIZBm1zS+PwlJXvivSOQP0sx8eiZSj8zArLye3SfaO
- Guhg==
-X-Gm-Message-State: AOAM531p/N75O9pCRy0pJunZ3EdNQuWycVGLwGfcBtBKc/4NAboSHf3P
- mRBwPL6L1NnXNp46SRnZUug=
-X-Google-Smtp-Source: ABdhPJy/PoJ3S0+LVkut0EAixnl+2hpekBMzQd3ZftzbEWYyBBv8GN0xcQDAGvMPq8TWU0R1XLN9bg==
-X-Received: by 2002:a1c:9d50:: with SMTP id g77mr8446120wme.56.1589367674052; 
- Wed, 13 May 2020 04:01:14 -0700 (PDT)
-Received: from ?IPv6:2001:a61:2482:101:a081:4793:30bf:f3d5?
- ([2001:a61:2482:101:a081:4793:30bf:f3d5])
- by smtp.gmail.com with ESMTPSA id s11sm26372204wrp.79.2020.05.13.04.01.13
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 04:01:13 -0700 (PDT)
-Subject: Re: [PATCH 13/14] prctl.2: Add SVE prctls (arm64)
-To: Dave Martin <Dave.Martin@arm.com>, Will Deacon <will@kernel.org>
-References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
- <1589301419-24459-14-git-send-email-Dave.Martin@arm.com>
- <20200513084351.GB18196@willie-the-truck> <20200513104635.GD21779@arm.com>
-From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Message-ID: <a01fc572-cac8-1932-c3e5-c70184417ca3@gmail.com>
-Date: Wed, 13 May 2020 13:01:12 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ bh=4kyjTfTHMVUTV+THehJYOS1UTUTs5x0t0xpjX4MdtCY=;
+ b=VEpebcwo12bq7P3E+tJxCXSjNdJKJL5S6TtssE/+VynKZapw4oT8lAfWZSF2ZUUrGn
+ LjLuunjUacRHHeOZwHYK9eKthVxdUmbhcyC9INCs26D7K3/LZd9ClebvM57yxmCx1XvT
+ 9gbLh060B9SclKAWuaQVGd4HU8LzfoDdYFn/2BdtpnNRMJtXgXTgZi1UXP14KJfGEc1Q
+ 2xUCG/Ds3C1Fblvn0irOLrrRvtLN8u27QBt8+uPkaK5IQ5sziHlWBJogjr2bdf8gH8b6
+ 8eFH1ns2bfRWmzSbkkF/nIREurEvbujbKIj+VTcK0pfpgB2lhfTlmcr+atXYifi/hHKB
+ RIrw==
+X-Gm-Message-State: AGi0PuaqUQVFcriSx0DeRBd+yShWHPMhIqnFRVXJ0KzB6v+otJWV7mhr
+ ERVemHqtCkViGfj5ABrSg4EEyQ==
+X-Google-Smtp-Source: APiQypKgqLRpEdbQmb0PocsKhfcvRtSmsH2tuQKK5KGLEZF0EGrIVAw4HabuB3b2XrZh4uTNbgbGow==
+X-Received: by 2002:adf:fa44:: with SMTP id y4mr17940958wrr.135.1589368061182; 
+ Wed, 13 May 2020 04:07:41 -0700 (PDT)
+Received: from localhost.localdomain
+ ([2001:171b:226e:c200:c43b:ef78:d083:b355])
+ by smtp.gmail.com with ESMTPSA id q144sm3023804wme.0.2020.05.13.04.07.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 04:07:40 -0700 (PDT)
+From: Jean-Philippe Brucker <jean-philippe@linaro.org>
+To: iommu@lists.linux-foundation.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v2] iommu/arm-smmu-v3: Don't reserve implementation defined
+ register space
+Date: Wed, 13 May 2020 13:02:57 +0200
+Message-Id: <20200513110255.597203-1-jean-philippe@linaro.org>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <20200513104635.GD21779@arm.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_040115_735742_45866C06 
-X-CRM114-Status: GOOD (  31.97  )
+X-CRM114-CacheID: sfid-20200513_040743_425805_4A122F12 
+X-CRM114-Status: GOOD (  14.15  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mtk.manpages[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -104,211 +97,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- mtk.manpages@gmail.com, linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, lorenzo.pieralisi@arm.com,
+ will@kernel.org, joro@8bytes.org, tuanphan@amperemail.onmicrosoft.com,
+ robin.murphy@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
+inside the first 64kB region of the SMMU. Since PMCG are managed by a
+separate driver, this layout causes resource reservation conflicts
+during boot.
 
-On 5/13/20 12:46 PM, Dave Martin wrote:
-> On Wed, May 13, 2020 at 09:43:52AM +0100, Will Deacon wrote:
->> Hi Dave,
->>
->> On Tue, May 12, 2020 at 05:36:58PM +0100, Dave Martin wrote:
->>> diff --git a/man2/prctl.2 b/man2/prctl.2
->>> index 7f511d2..dd16227 100644
->>> --- a/man2/prctl.2
->>> +++ b/man2/prctl.2
->>> @@ -1291,6 +1291,104 @@ call failing with the error
->>>  .BR ENXIO .
->>>  For further details, see the kernel source file
->>>  .IR Documentation/admin-guide/kernel-parameters.txt .
->>> +.\" prctl PR_SVE_SET_VL
->>> +.\" commit 2d2123bc7c7f843aa9db87720de159a049839862
->>> +.\" linux-5.6/Documentation/arm64/sve.rst
->>> +.TP
->>> +.BR PR_SVE_SET_VL " (since Linux 4.15, only on arm64)"
->>> +Configure the thread's SVE vector length,
->>> +as specified by
->>> +.IR arg2 .
->>> +Arguments
->>> +.IR arg3 ", " arg4 " and " arg5
->>> +are ignored.
->>
->> Bugger, did we forget to force these to zero? I guess we should write the
->> man-page first next time :(
+To avoid this conflict, don't reserve the MMIO regions that are
+implementation defined. Although devm_ioremap_resource() still works on
+full pages under the hood, this way we benefit from resource conflict
+checks.
 
-Quite...
+Fixes: 7d839b4b9e00 ("perf/smmuv3: Add arm64 smmuv3 pmu driver")
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+v1->v2: simplify following Robin's comments
+https://lore.kernel.org/linux-iommu/20200506174629.1504153-1-jean-philippe@linaro.org/
+---
+ drivers/iommu/arm-smmu-v3.c | 35 +++++++++++++++++++++++++++++++----
+ 1 file changed, 31 insertions(+), 4 deletions(-)
 
-> Not an accident, but there does seem to be some inconsistency in policy
-> among the various prctls here.
-
-The whole 5-args-for-prctl thing was a bit of a misdesign.
-
-The general preference is that, for new prctls, unused arguments 
-should be required to be zero. Historically, there was much
-inconsistency.
-
-> glibc explicitly has
-> 
-> 	extern int prctl (int __option, ...);
-> 
-> (and nobody has to write _exit(0, 0, 0, 0, 0, 0) after all.)
-> 
-> Is there some agreed rationale for requiring redundant arguments to be
-> supplied explicitly as zero?  For now there are likely to be few users
-> of this, so we _might_ get away with changing the behaviour here if it's
-> considered important enough.
-
-See above.
-
-> There is no forwards compatibility problem with this prctl though,
-> because there are spare bits in arg2 which can "turn on" additional
-> args if needed.
-> 
-> Also, it's implausible that PR_SVE_GET_VL will ever want an argument.
-> 
-> There are still 2 billion unallocated prctl numbers, so new prctls can
-> always be added if there's ever a need to work around these limitations,
-> but it seems extremely unlikely.
-> 
->>
->>> +.IP
->>> +The bits of
->>> +.I arg2
->>> +corresponding to
->>> +.B SVE_VL_LEN_MASK
->>
->> PR_SVE_LEN_MASK
-> 
-> Hmm, not sure how that happened.  Good spot!
-> 
-> I'll recheck that all the names are real when reposting.
-> 
->>> +must be set to the desired vector length in bytes.
->>> +In addition,
->>> +.I arg2
->>> +may include zero or more of the following flags:
->>> +.RS
->>> +.TP
->>> +.B PR_SVE_VL_INHERIT
->>> +Inherit the configured vector length across
->>> +.BR execve (2).
->>> +.TP
->>> +.B PR_SVE_SET_VL_ONEXEC
->>> +Defer the change until the next
->>> +.BR execve (2)
->>> +in this thread.
->>
->> (aside, it's weird that we didn't allocate (1<<16) for one of these flags)
-> 
-> The flag definitions are shared with ptrace: ptrace is the
-> SVE_PT_REGS_SVE format selection bit, which isn't relevant to the prctl.
-> 
-> Maybe it would have made more sense to keep the definitions completely
-> separate, but it's there now.
-> 
->>> +If
->>> +.B PR_SVE_VL_INHERIT
->>> +is also included in
->>> +.IR arg2 ,
->>> +it takes effect
->>> +.I after
->>> +this deferred change.
->>
->> I find this a bit hard to follow, since it's not clear to me whether the
->> INHERIT flag is effectively set before or after the next execve(). In other
->> words, if both PR_SVE_SET_VL_ONEXEC and PR_SVE_VL_INHERIT are specified,
->> is the vector length preserved or reset on the next execve()?
-> 
-> It makes no difference, because the ONEXEC handling takes priority over
-> the INHERIT handling. But either way INHERIT is never cleared by execve()
-> and will apply at subsequent execs().
-> 
-> Explaining all this properly seems out of scope here.  Maybe this should
-> be trimmed down rather than elaborated?  Or perhaps just explain it in
-> terms of what the kernel does instead of futile attempts to make it
-> intuitive?
-> 
-> Ultimately I'll probably write a separate page or pages for SVE and other
-> arm64 specifics.
-
-(okay.)
-
->>> +.RE
->>> +.IP
->>> +On success, the vector length and flags are set as requested,
->>> +and any deferred change that was pending immediately before the
->>> +.B PR_SVE_SET_VL
->>> +call is canceled.
->>
->> Huh, turns out 'canceled' is a valid US spelling. Fair enough, but it looks
->> wrong to me ;)
-> 
-> Yeah, I know, but the man pages do have a documented policy on this...
-> 
-> prctl.2 has a lot of authors, so having mixed spellings could get
-> particularly messy.
-
-Quite. Indeed, that was how things were when I took over as
-maintainer: a hodge-podge of British and American spellings,
-occasionally even in the same page. I decided we needed
-consistency, and though American is not my native spelling,
-it seemed the most appropriate convention.
-
->>
->>> +If
->>> +.B PR_SVE_SET_VL_ONEXEC
->>> +was included in
->>> +.IR arg2 ,
->>> +the returned value describes the configuration
->>> +scheduled to take effect at the next
->>> +.BR execve (2).
->>
->> "describes the configuration" how?
->>
->>> +Otherwise, the effect is immediate and
->>> +the returned value describes the new configuration.
->>> +The returned value is encoded in the same way as the return value of
->>> +.BR PR_SVE_GET_VL .
->>
->> Aha. Maybe move this bit up slightly?
-> 
-> Yes, I'll reorder that.
-> 
->>
->>> +.IP
->>> +If neither of the above flags is included in
->>
->> are included
-> 
-> Debatable.
-> 
-> The subject of the verb here is not "flags" (plural), but "neither of
-> the above flags" (which is more nuanced, though it can be interpreted
-> as singular).  Usage varies, and I don't consider this wrong.
-
-As far as I know, the grammarians are with you on this one,
-Dave, and if I was writing carefully, I'd do the same as you.
-But, the plural here is also frequent (and so common that I would
-hesitate to call it "wrong").
-
-[...]
-
-
-Cheers,
-
-Michael
-
-
+diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
+index 82508730feb7a1..af21d24a09e888 100644
+--- a/drivers/iommu/arm-smmu-v3.c
++++ b/drivers/iommu/arm-smmu-v3.c
+@@ -171,6 +171,8 @@
+ #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
+ #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
+ 
++#define ARM_SMMU_REG_SZ			0xe00
++
+ /* Common MSI config fields */
+ #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
+ #define MSI_CFG2_SH			GENMASK(5, 4)
+@@ -628,6 +630,7 @@ struct arm_smmu_strtab_cfg {
+ struct arm_smmu_device {
+ 	struct device			*dev;
+ 	void __iomem			*base;
++	void __iomem			*page1;
+ 
+ #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
+ #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
+@@ -733,9 +736,8 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
+ static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
+ 						 struct arm_smmu_device *smmu)
+ {
+-	if ((offset > SZ_64K) &&
+-	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
+-		offset -= SZ_64K;
++	if (offset > SZ_64K)
++		return smmu->page1 + offset - SZ_64K;
+ 
+ 	return smmu->base + offset;
+ }
+@@ -4021,6 +4023,18 @@ err_reset_pci_ops: __maybe_unused;
+ 	return err;
+ }
+ 
++static void __iomem *arm_smmu_ioremap(struct device *dev, resource_size_t start,
++				      resource_size_t size)
++{
++	struct resource res = {
++		.flags = IORESOURCE_MEM,
++		.start = start,
++		.end = start + size - 1,
++	};
++
++	return devm_ioremap_resource(dev, &res);
++}
++
+ static int arm_smmu_device_probe(struct platform_device *pdev)
+ {
+ 	int irq, ret;
+@@ -4056,10 +4070,23 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
+ 	}
+ 	ioaddr = res->start;
+ 
+-	smmu->base = devm_ioremap_resource(dev, res);
++	/*
++	 * Don't map the IMPLEMENTATION DEFINED regions, since they may contain
++	 * the PMCG registers which are reserved by the PMU driver.
++	 */
++	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_REG_SZ);
+ 	if (IS_ERR(smmu->base))
+ 		return PTR_ERR(smmu->base);
+ 
++	if (arm_smmu_resource_size(smmu) > SZ_64K) {
++		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
++					       ARM_SMMU_REG_SZ);
++		if (IS_ERR(smmu->page1))
++			return PTR_ERR(smmu->page1);
++	} else {
++		smmu->page1 = smmu->base;
++	}
++
+ 	/* Interrupt lines */
+ 
+ 	irq = platform_get_irq_byname_optional(pdev, "combined");
 -- 
-Michael Kerrisk
-Linux man-pages maintainer; http://www.kernel.org/doc/man-pages/
-Linux/UNIX System Programming Training: http://man7.org/training/
+2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
