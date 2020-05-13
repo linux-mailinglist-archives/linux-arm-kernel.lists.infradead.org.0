@@ -2,74 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FB2B1D13F9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:06:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 019421D1422
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:10:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDvuJEnzx+fE7o962eHf6+AxspfNkT3wGRtRFumgJxk=; b=eRKHw1Gv5F0nB8
-	wY+QyArKVzRHG9A3Eovt3qG0bJIiORfaAVGbiNhzDzcAjYVY0+icXFAvCzm8qPzWX99aq2DFgz05Q
-	ReKt4N6pBmmuT7PB1g/IG3zE7G52SUTZeKBgPs519GLCFn+jjkmBcoqGpMY3Ho2TCcTpJvtOiq3+u
-	Rr+9Ww8Xb3okMLfPoaPRwdYxmuf2Z/NRmuBDCmrUu6R8wSJYrshaxQvORPOz9V0su75D5Q+WFiyZE
-	bkFZVa/c86mr5iLMEa7mAFWEs6dKX2IQCVAuulncIW2ZAilsIAEI3etdt/LmsR5Qi3nBX9WUfl3cq
-	QNpx2HimI75AIOjTIR+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ucoraNngLipeU0RDcwTysndTkbvCMuhps1zalxvtC8M=; b=UiC5vYmsJ/ug52
+	eTDNShlGLE6/5Jm6FfUnC056tfpFqi/Kek3/MzVFGmlAx8S9xOhHr19jNX8Ir84KNNccbtBxHEM1k
+	XDQ7FHsPrLbJ2V/4/OM99TeSnoqgAFWQ0KuV5qRC7n3txzK63GgBSU0GKfHJLwHxACf5w5vxRc85D
+	zbqwVyQo/FmS8QoN3CWU8bWaDtyWULLfRQn99s28tM0bZo4xjv/1ze7x30h/1hGACCw2+npJ/sL3Z
+	umc85Nzh08vynGG8ilL2dsdvLpEVdGo3QrsU6E8RjeWolWEjYVWICkGisrzpN8IGGuXIZCImk+Ew6
+	QdmpRVjz/90SgegdFJGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYr5c-0003lx-Fu; Wed, 13 May 2020 13:06:24 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jYr92-0005Kv-65; Wed, 13 May 2020 13:09:56 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYr5T-0003fE-MR
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:06:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=XRZP4coENPaEASSZzra9te94FAUGfjbaaParyYkAyXQ=; b=GbyxsXPvGLFQdWaSkIykDFNq+
- AOCEtd+CfIfUyXZojobQ0zAcq/Kll3RZTqtp0oiYwJF8ZmnBjEQ2XfZC6PqXOoioyPa9b/1uTqAge
- Yey49kjiUtD/0lpqpUc2yL+WFGKeJGhhIFQ1CPFBWj+lh/POB2uDKbGvsz3Y1qWn8PE/mGFgAcDxN
- +WAsh4Hpd+hvANtZ4QTGyGVL/Y/Gv0BYwTtMXDP9NOdQwYTt3kIHYOem1w1LTtRamfiGkH9Uf/wAm
- En2KUP9S4+fBwIkmGze60p24+YjDZg5HqSizJ34a7jcVxavGywWXBPzQrhR9bTLG1E7OzTCA6aNMi
- 3EgpnDaGQ==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:57492)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jYr54-0004ZU-SY; Wed, 13 May 2020 14:05:51 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jYr4q-0007nH-QV; Wed, 13 May 2020 14:05:36 +0100
-Date: Wed, 13 May 2020 14:05:36 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: nicolas.ferre@microchip.com
-Subject: Re: [PATCH v4 3/5] net: macb: fix macb_get/set_wol() when moving to
- phylink
-Message-ID: <20200513130536.GI1551@shell.armlinux.org.uk>
-References: <cover.1588763703.git.nicolas.ferre@microchip.com>
- <4aeebe901fde6db70a5ca12b10e793dd2ee6ce60.1588763703.git.nicolas.ferre@microchip.com>
+ id 1jYr83-0004VI-L9
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:08:57 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589375335; x=1620911335;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=wEXDFyhD27FZDpCBx83MYF8BSCc7p0QLtEEMqVkQwfk=;
+ b=kVMNO2NsH2oPLucy4doYPWJG+Ohuyj4JXRWb8d5Ib5iM5lYOQkJRGw34
+ Mz6O9PAEIDhWb3Ld3Ar09UemY3j5CIX95zuEGUQy3CIcDs3uMFucBUS7z
+ PCZviQ42mDfqJwpdGTCb4P0jf4iJiC2Kv6PfmNCMyt/r64wruH2QRLeuT
+ ph/r6dTOLePkOwd6jSGpTNeF9wQQ5bgjqj1Sr/EES7LaxVsSM4oXM/hxW
+ /x9VNAblajw1UjEph8kG3TlZE/WFPXx5ptmiw4OOsGEQ/fEDzzOvB/JMD
+ U9iW7sS7CaNkWh8GPRP5fUC4HzCCU49Q1H8D7iZTkzYoIug0AxggM86S4 Q==;
+IronPort-SDR: u4GtpcwpQ8MLU6OB9FkxDseViNR3YvoIb2dMRW2aHsvK94tIS3YRC/H1aZ1aJGFh447eHJ6kxm
+ q0M9h2sHr59/QU8HxihFuIrdVG6L6VY1StWHUaXYcFnJ+0gUZ1kYwzulTdKX9mKoyjDNMzGlW1
+ WRoWOxUtL7Qf/vH9i/84trcmss+PxIw8QdVVYIiN1CrScjMZzqrrZF03S7HzRVRK8cubqsbNZk
+ Up62au2XJDvEMe26Udy40kwR9xIUIxKskgvj+ggSJFtYonedtPRoxzWJsNiom5nY35mxdL2tkf
+ n18=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="79438661"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 06:08:54 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 06:08:57 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 06:08:52 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Sebastian Reichel <sre@kernel.org>, SoC Team <soc@kernel.org>
+Subject: [PATCH 0/5] power: Adding support for Microchip Sparx5 SoC
+Date: Wed, 13 May 2020 15:08:37 +0200
+Message-ID: <20200513130842.24847-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4aeebe901fde6db70a5ca12b10e793dd2ee6ce60.1588763703.git.nicolas.ferre@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_060615_875467_936E52CA 
-X-CRM114-Status: GOOD (  22.62  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200513_060855_717586_CBDBFD03 
+X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -88,86 +90,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>, f.fainelli@gmail.com,
- antoine.tenart@bootlin.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, "David S. Miller" <davem@davemloft.net>,
- harini.katakam@xilinx.com, Claudiu Beznea <claudiu.beznea@microchip.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 06, 2020 at 01:37:39PM +0200, nicolas.ferre@microchip.com wrote:
-> From: Nicolas Ferre <nicolas.ferre@microchip.com>
-> 
-> Keep previous function goals and integrate phylink actions to them.
-> 
-> phylink_ethtool_get_wol() is not enough to figure out if Ethernet driver
-> supports Wake-on-Lan.
-> Initialization of "supported" and "wolopts" members is done in phylink
-> function, no need to keep them in calling function.
-> 
-> phylink_ethtool_set_wol() return value is not enough to determine
-> if WoL is enabled for the calling Ethernet driver. Call it first
-> but don't rely on its return value as most of simple PHY drivers
-> don't implement a set_wol() function.
-> 
-> Fixes: 7897b071ac3b ("net: macb: convert to phylink")
-> Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
-> Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
-> Cc: Claudiu Beznea <claudiu.beznea@microchip.com>
-> Cc: Harini Katakam <harini.katakam@xilinx.com>
-> Cc: Antoine Tenart <antoine.tenart@bootlin.com>
-> ---
->  drivers/net/ethernet/cadence/macb_main.c | 18 ++++++++++--------
->  1 file changed, 10 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/net/ethernet/cadence/macb_main.c b/drivers/net/ethernet/cadence/macb_main.c
-> index 53e81ab048ae..24c044dc7fa0 100644
-> --- a/drivers/net/ethernet/cadence/macb_main.c
-> +++ b/drivers/net/ethernet/cadence/macb_main.c
-> @@ -2817,21 +2817,23 @@ static void macb_get_wol(struct net_device *netdev, struct ethtool_wolinfo *wol)
->  {
->  	struct macb *bp = netdev_priv(netdev);
->  
-> -	wol->supported = 0;
-> -	wol->wolopts = 0;
-> -
-> -	if (bp->wol & MACB_WOL_HAS_MAGIC_PACKET)
-> +	if (bp->wol & MACB_WOL_HAS_MAGIC_PACKET) {
->  		phylink_ethtool_get_wol(bp->phylink, wol);
-> +		wol->supported |= WAKE_MAGIC;
-> +
-> +		if (bp->wol & MACB_WOL_ENABLED)
-> +			wol->wolopts |= WAKE_MAGIC;
-> +	}
->  }
->  
->  static int macb_set_wol(struct net_device *netdev, struct ethtool_wolinfo *wol)
->  {
->  	struct macb *bp = netdev_priv(netdev);
-> -	int ret;
->  
-> -	ret = phylink_ethtool_set_wol(bp->phylink, wol);
-> -	if (!ret)
-> -		return 0;
-> +	/* Pass the order to phylink layer.
-> +	 * Don't test return value as set_wol() is often not supported.
-> +	 */
-> +	phylink_ethtool_set_wol(bp->phylink, wol);
+This is an add-on series to the main SoC Sparx5 series
+(Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
 
-If this returns an error, does that mean WOL works or does it not?
+It adds reset support for Sparx5, using the ocelot reset driver.
 
-Note that if set_wol() is not supported, this will return -EOPNOTSUPP.
-What about other errors?
+It is expected that the DT patches are to be taken directly by the arm-soc
+maintainers.
 
-If you want to just ignore the case where it's not supported, then
-this looks like a sledge hammer to crack a nut.
+Lars Povlsen (5):
+  dt-bindings: reset: ocelot: Add Sparx5 support
+  power: reset: ocelot: Add support for Sparx5
+  dt-bindings: reset: ocelot: Add documentation for
+    'microchip,reset-switch-core' property
+  power: reset: ocelot: Add support for reset switch on load time
+  arm64: dts: sparx5: Add reset support
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+ .../bindings/power/reset/ocelot-reset.txt     | 13 ++-
+ MAINTAINERS                                   |  1 +
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     | 11 +++
+ drivers/power/reset/Kconfig                   |  3 +-
+ drivers/power/reset/ocelot-reset.c            | 95 ++++++++++++++++---
+ 5 files changed, 105 insertions(+), 18 deletions(-)
+
+--
+2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
