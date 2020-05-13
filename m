@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98C951D0F66
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:10:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8089E1D0F6A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:11:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LP3mr7ILuwVVJH6QwyypUwvXt2COYupz4Cx+Ml6feZ0=; b=d/C07xrJhysPnM
-	wLC7/+iiG7FGBfagpcGvAEwHq7bpcUlJEBnBwmZ4LKoF5jLekL78OpusIKBGARz/mwALskqVrwfbo
-	71g0jSrt5fpbwOPVnWnNmxFT/esmjOTBVxEdJQHsm9ReIA3glvfiYsUWJJrAqlIYZVcd7NhmafR8M
-	99RudBBRxsY8XzoNLFo61q+Hd8YjuJd4nmKQcsAegPaZDmb8J2sQRo5ObZ06fNqw4nc1pjhoRpdmh
-	zk+e5sHHOYeWjmdOaoCXvg/6eC8BVJhkRCPB2HNG/28JrHbDl0GcpMsekg+y8ej2qflmy5WGu6qGO
-	i2W/jp5g0wuZR3tGiYkg==;
+	List-Owner; bh=x8MMKdBfhHY6I+lZ5ukLlMSnASfuNyfs/LQv+tVFmMU=; b=BAif+OwShBR/AY
+	TUU0+hwc6k2yDq+26Pz6VCxukPcYwJzHdKSeFqMIMq2ISgUvEmK5kh/LGfM0oBJH/jKB9blf0pRaI
+	cEENhDt4PQp7+no0Xnj6E24uCQ5ZYIaFTxBqQB4MsKssHtN7GiLFrQc9f0VdltG/QW2/iRkdJWJNk
+	V02I+yn0yNSN39Npif/pcVDk2Rp96z0saQjyrFA9vFrCE7uq2XJZU088cDyExdKN9sQ+pKAwJ5Zij
+	jDGTYA7B5qOhkgfqvST82Xaph4jvwj2Nlbbgx41wKY1Ez24JgFTq8JQDShz1jH6fvmW1jOBPTuDVC
+	fqcb6fyOaBsh3p4ZnsMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYoLZ-00007m-7v; Wed, 13 May 2020 10:10:41 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jYoLy-0000NA-Ua; Wed, 13 May 2020 10:11:06 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYoLM-00006z-C4
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:10:33 +0000
-Received: by mail-wr1-x444.google.com with SMTP id v12so20104621wrp.12
+ id 1jYoLn-0000ME-Ue
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:10:57 +0000
+Received: by mail-wr1-x443.google.com with SMTP id i15so20103981wrx.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 03:10:28 -0700 (PDT)
+ Wed, 13 May 2020 03:10:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=cc:subject:to:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Kln4h5TjLT1rYbRFL6+I0gOBR5qgTfdeId+fz9C5vOA=;
- b=URlU1PHnV4AqNaLREDZ4zw9nB27Zcd+0jvX7P7KYiC/XaCp3ZGEERK7Sn31HBweRG/
- bm/CbcYSo3tkW9NOAIV1qc0IQuTSrkcE7Ed85lie6Czcn3KyVeWZqOJs90MMznoYjBTi
- eZUhDUTqKIWdg+Zk9udH+oZemYWMrD3YAbkOQ82EbOjIVU1nm2fa3wJsM1/PASSTAewa
- J2h0iCanTy6OPB9ap8+GLPWwxETK0/1XNLIMFYe/h3ZnoG3OLGsvc2SFr8Y93Ly+e7g/
- W6/9E5grAWoi9y6DgiEAJjeq/Yv2D5knCFtB6JnUu8PBo8dOFF1wEQwj1TT8fvDYtBNX
- Dc5Q==
+ bh=9yz3NiGSUqmdW5HKQ8E+J75PGv3sAxRug9OVZkiDIdQ=;
+ b=p1N/AXdZ5c2QPmrLgCWpfSn7MG2eLgBSC0oetlx751kILVaIvrai/Xs1df34KZ+8zg
+ PFyCs2bqpK1H6GErTo93PW8YejkkaofVf9bHxtA4cerPCiI+R/bQqy7fJePqh0BT3Huk
+ 72TxvjE3WWAtvRivqEcdGD8RzN1vzprx1iIRlevBKf+SRN+p1SJ3zLzYEwBz0gQNPcVo
+ s+0m0eV2Ks7vYRuaOjz0Td6xqLENUkosuZny7sZGqEUU3v68TEd0R2fej+lyVgDQElk5
+ rFC4iybR4ZYW7DC7mXe5CBB4grlF66g5BpTmN7KeXYC/nY5R9DTcud0T8UG9yFfW+Fb9
+ aLNA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:cc:subject:to:references:from:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Kln4h5TjLT1rYbRFL6+I0gOBR5qgTfdeId+fz9C5vOA=;
- b=Bi6AjsqjbL61N/MnR7WJbWRJ6W+BmdjOP2O0nYNWH02JXLZ5ls6Tf0f+8IQpF36KaS
- YGN8OuLTs1cD4e5Vg2D5oEcnqOeyJOznnvZ+qs2xqdB5OSq55DvhAl0QUVLGZpu7OE+Z
- T96i1wh1opGYo4yqnLcXzn3wYz1CoiHHGQZoTo68QkI2YmUSGlydAyByaEukwljQSAvI
- vYqpgqMLn+lcEx3Rz2hnRcwPlUzS30qAvns5YGmY5K1YN5HDS4a2kzxlDskAADXcNLGq
- jEcjl2Q2MVsKyCXrOOMP8pet2Ek+tNzkcaRnEPkCrnJYAJYyaCDWLseDrYf/+1rjJ6IM
- X62A==
-X-Gm-Message-State: AOAM533fnwsBYWR19t/j4KaPFEhvcXFVmf9IisNDxs1nc/uExVcqC2fM
- foNI2rOjXEF8306Nv97GDYFPuXca
-X-Google-Smtp-Source: ABdhPJxgL9tpiq55O6Q30AmJZjScEl1dYlzNP+lcolwTwgr1fIRNSmkDPrLcHqBTDr3NyxoOjncpag==
-X-Received: by 2002:a5d:6584:: with SMTP id q4mr9012757wru.12.1589364626822;
- Wed, 13 May 2020 03:10:26 -0700 (PDT)
+ bh=9yz3NiGSUqmdW5HKQ8E+J75PGv3sAxRug9OVZkiDIdQ=;
+ b=FYFCTyet0ZQZk8QxCOBJwA2zNwZ24rYZygbooSmmNzG20GKV+F7YzbD5Yay2JSRBH3
+ 1+NZ50JLE4znEjhpIIj52cHXWwKpmA/lGQ9mY5BOWjeD7Mt6FPKkmzLRE0gIuDzLH4J0
+ VnrJZqbdJ47w6cGBlDcZHNG42sOs/qcsi+CStp2Cn+XhqxZBX2DHXw3kuvkma8dKkd+a
+ iRCaWSaZ+T1pcv73/U/Qh6VJk5/FPXWeEMzOrkYZtCC1UYu7irzLduT3GOHt4+DHbQ+t
+ 6jhY2k5RZQ1NeWPuJEp3vQ6PYIS+4bJPGm1CsVGyxv9JRxoLzMie6pQLN1mMuuy5zAF2
+ hzLw==
+X-Gm-Message-State: AGi0PuaNTkzXaN5PRUx4EPS32M6JZwXnN+dAhVCv7/c6QThXMo6bheJb
+ AGP/0mDyYjn1phgsHqlk9HsCTrLl
+X-Google-Smtp-Source: APiQypLV7kgF3526XEUzSQHtExkVxzcWv7e6sb9HnjoVqcIpgy/CR5bjqm2vbnmfhrJ4UPyepy8x6g==
+X-Received: by 2002:a5d:4b4d:: with SMTP id w13mr31958954wrs.178.1589364654096; 
+ Wed, 13 May 2020 03:10:54 -0700 (PDT)
 Received: from ?IPv6:2001:a61:2482:101:a081:4793:30bf:f3d5?
  ([2001:a61:2482:101:a081:4793:30bf:f3d5])
- by smtp.gmail.com with ESMTPSA id q184sm35495597wma.25.2020.05.13.03.10.26
+ by smtp.gmail.com with ESMTPSA id w18sm27253393wro.33.2020.05.13.03.10.53
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 03:10:26 -0700 (PDT)
-Subject: Re: [PATCH 02/14] prctl.2: Add health warning
+ Wed, 13 May 2020 03:10:53 -0700 (PDT)
+Subject: Re: [PATCH 05/14] prctl.2: tfix listing order of prctls
 To: Dave Martin <Dave.Martin@arm.com>
 References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
- <1589301419-24459-3-git-send-email-Dave.Martin@arm.com>
+ <1589301419-24459-6-git-send-email-Dave.Martin@arm.com>
 From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
-Message-ID: <93c5bfe6-fbbe-93ca-ef9c-91228c99d31b@gmail.com>
-Date: Wed, 13 May 2020 12:10:25 +0200
+Message-ID: <1bb991f4-176a-a74e-01fc-c73b49ed77f5@gmail.com>
+Date: Wed, 13 May 2020 12:10:53 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.7.0
 MIME-Version: 1.0
-In-Reply-To: <1589301419-24459-3-git-send-email-Dave.Martin@arm.com>
+In-Reply-To: <1589301419-24459-6-git-send-email-Dave.Martin@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_031031_181218_A2C6FA7D 
-X-CRM114-Status: GOOD (  19.56  )
+X-CRM114-CacheID: sfid-20200513_031056_004718_FAAD6371 
+X-CRM114-Status: GOOD (  23.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -113,19 +113,22 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Dave,
 
 On 5/12/20 6:36 PM, Dave Martin wrote:
-> In reality, almost every prctl interferes with assumptions that the
-> compiler and C library / runtime rely on.  prctl() can therefore
-> make userspace explode in a variety ways that are likely to be hard
-> to debug.
+> The prctl list has historically been sorted by prctl name (ignoring
+> any SET_ or GET_ prefix) to make individual prctls easier to find.
+> Some noise seems to have crept in since.
 > 
-> This is not obvious to the uninitiated, so add a warning.
+> Sort the list back into order.  Similarly, reorder the list of
+> prctls specified to return non-zero values on success.
 
-Patch applied. But see my comments on patch 04. I may want to 
-circle back on this patch later, since the wording feels a 
-little strong to me (we simply must use prctl for some things, 
-and not all of those things break user-space/runtime as far 
-as I know). If you have some thoughts on softening the warning,
-let me know.
+This is a good patch. But see my comments on patch 04.
+I'd prefer a patch like this at the end of a series, 
+rather than in the middle of it.
+
+> Content movement only.  No semantic change.
+
+And explicitly noting that detail is very helpful to me.
+
+Patch applied.
 
 Cheers,
 
@@ -133,25 +136,188 @@ Michael
 
 > Signed-off-by: Dave Martin <Dave.Martin@arm.com>
 > ---
->  man2/prctl.2 | 5 +++++
->  1 file changed, 5 insertions(+)
+>  man2/prctl.2 | 138 +++++++++++++++++++++++++++++------------------------------
+>  1 file changed, 69 insertions(+), 69 deletions(-)
 > 
 > diff --git a/man2/prctl.2 b/man2/prctl.2
-> index 7932ada..a35b748 100644
+> index e5b2b4b..1611448 100644
 > --- a/man2/prctl.2
 > +++ b/man2/prctl.2
-> @@ -66,6 +66,11 @@ prctl \- operations on a process or thread
->  manipulates various aspects of the behavior
->  of the calling thread or process.
->  .PP
-> +Note that careless use of
-> +.BR prctl ()
-> +can confuse the userspace run-time environment,
-> +so these operations should be used with care (if at all).
-> +.PP
->  .BR prctl ()
->  is called with a first argument describing what to do
->  (with values defined in \fI<linux/prctl.h>\fP), and further
+> @@ -490,6 +490,52 @@ Pass \fBPR_FP_EXC_SW_ENABLE\fP to use FPEXC for FP exception enables,
+>  Return floating-point exception mode,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_IO_FLUSHER
+> +.TP
+> +.BR PR_SET_IO_FLUSHER " (since Linux 5.6)"
+> +If a user process is involved in the block layer or filesystem I/O path,
+> +and can allocate memory while processing I/O requests it must set
+> +\fIarg2\fP to 1.
+> +This will put the process in the IO_FLUSHER state,
+> +which allows it special treatment to make progress when allocating memory.
+> +If \fIarg2\fP is 0, the process will clear the IO_FLUSHER state, and
+> +the default behavior will be used.
+> +.IP
+> +The calling process must have the
+> +.BR CAP_SYS_RESOURCE
+> +capability.
+> +.IP
+> +.IR arg3 ,
+> +.IR arg4 ,
+> +and
+> +.IR arg5
+> +must be zero.
+> +.IP
+> +The IO_FLUSHER state is inherited by a child process created via
+> +.BR fork (2)
+> +and is preserved across
+> +.BR execve (2).
+> +.IP
+> +Examples of IO_FLUSHER applications are FUSE daemons, SCSI device
+> +emulation daemons, and daemons that perform error handling like multipath
+> +path recovery applications.
+> +.\" prctl PR_GET_IO_FLUSHER
+> +.TP
+> +.B PR_GET_IO_FLUSHER (Since Linux 5.6)
+> +Return (as the function result) the IO_FLUSHER state of the caller.
+> +A value of 1 indicates that the caller is in the IO_FLUSHER state;
+> +0 indicates that the caller is not in the IO_FLUSHER state.
+> +.IP
+> +The calling process must have the
+> +.BR CAP_SYS_RESOURCE
+> +capability.
+> +.IP
+> +.IR arg2 ,
+> +.IR arg3 ,
+> +.IR arg4 ,
+> +and
+> +.IR arg5
+> +must be zero.
+>  .\" prctl PR_SET_KEEPCAPS
+>  .TP
+>  .BR PR_SET_KEEPCAPS " (since Linux 2.2.18)"
+> @@ -1207,23 +1253,6 @@ call failing with the error
+>  .BR ENXIO .
+>  For further details, see the kernel source file
+>  .IR Documentation/admin-guide/kernel-parameters.txt .
+> -.\" prctl PR_SET_THP_DISABLE
+> -.TP
+> -.BR PR_SET_THP_DISABLE " (since Linux 3.15)"
+> -.\" commit a0715cc22601e8830ace98366c0c2bd8da52af52
+> -Set the state of the "THP disable" flag for the calling thread.
+> -If
+> -.I arg2
+> -has a nonzero value, the flag is set, otherwise it is cleared.
+> -Setting this flag provides a method
+> -for disabling transparent huge pages
+> -for jobs where the code cannot be modified, and using a malloc hook with
+> -.BR madvise (2)
+> -is not an option (i.e., statically allocated data).
+> -The setting of the "THP disable" flag is inherited by a child created via
+> -.BR fork (2)
+> -and is preserved across
+> -.BR execve (2).
+>  .\"
+>  .\" prctl PR_TASK_PERF_EVENTS_DISABLE
+>  .TP
+> @@ -1256,6 +1285,23 @@ renamed
+>  .\" commit cdd6c482c9ff9c55475ee7392ec8f672eddb7be6
+>  in Linux 2.6.32.
+>  .\"
+> +.\" prctl PR_SET_THP_DISABLE
+> +.TP
+> +.BR PR_SET_THP_DISABLE " (since Linux 3.15)"
+> +.\" commit a0715cc22601e8830ace98366c0c2bd8da52af52
+> +Set the state of the "THP disable" flag for the calling thread.
+> +If
+> +.I arg2
+> +has a nonzero value, the flag is set, otherwise it is cleared.
+> +Setting this flag provides a method
+> +for disabling transparent huge pages
+> +for jobs where the code cannot be modified, and using a malloc hook with
+> +.BR madvise (2)
+> +is not an option (i.e., statically allocated data).
+> +The setting of the "THP disable" flag is inherited by a child created via
+> +.BR fork (2)
+> +and is preserved across
+> +.BR execve (2).
+>  .\" prctl PR_GET_THP_DISABLE
+>  .TP
+>  .BR PR_GET_THP_DISABLE " (since Linux 3.15)"
+> @@ -1438,67 +1484,21 @@ system call on Tru64).
+>  for information on versions and architectures.)
+>  Return unaligned access control bits, in the location pointed to by
+>  .IR "(unsigned int\ *) arg2" .
+> -.\" prctl PR_SET_IO_FLUSHER
+> -.TP
+> -.BR PR_SET_IO_FLUSHER " (since Linux 5.6)"
+> -If a user process is involved in the block layer or filesystem I/O path,
+> -and can allocate memory while processing I/O requests it must set
+> -\fIarg2\fP to 1.
+> -This will put the process in the IO_FLUSHER state,
+> -which allows it special treatment to make progress when allocating memory.
+> -If \fIarg2\fP is 0, the process will clear the IO_FLUSHER state, and
+> -the default behavior will be used.
+> -.IP
+> -The calling process must have the
+> -.BR CAP_SYS_RESOURCE
+> -capability.
+> -.IP
+> -.IR arg3 ,
+> -.IR arg4 ,
+> -and
+> -.IR arg5
+> -must be zero.
+> -.IP
+> -The IO_FLUSHER state is inherited by a child process created via
+> -.BR fork (2)
+> -and is preserved across
+> -.BR execve (2).
+> -.IP
+> -Examples of IO_FLUSHER applications are FUSE daemons, SCSI device
+> -emulation daemons, and daemons that perform error handling like multipath
+> -path recovery applications.
+> -.\" prctl PR_GET_IO_FLUSHER
+> -.TP
+> -.B PR_GET_IO_FLUSHER (Since Linux 5.6)
+> -Return (as the function result) the IO_FLUSHER state of the caller.
+> -A value of 1 indicates that the caller is in the IO_FLUSHER state;
+> -0 indicates that the caller is not in the IO_FLUSHER state.
+> -.IP
+> -The calling process must have the
+> -.BR CAP_SYS_RESOURCE
+> -capability.
+> -.IP
+> -.IR arg2 ,
+> -.IR arg3 ,
+> -.IR arg4 ,
+> -and
+> -.IR arg5
+> -must be zero.
+>  .SH RETURN VALUE
+>  On success,
+> +.BR PR_CAP_AMBIENT + PR_CAP_AMBIENT_IS_SET ,
+> +.BR PR_CAPBSET_READ ,
+>  .BR PR_GET_DUMPABLE ,
+>  .BR PR_GET_FP_MODE ,
+> +.BR PR_GET_IO_FLUSHER ,
+>  .BR PR_GET_KEEPCAPS ,
+> +.BR PR_MCE_KILL_GET ,
+>  .BR PR_GET_NO_NEW_PRIVS ,
+> +.BR PR_GET_SECUREBITS ,
+> +.BR PR_GET_SPECULATION_CTRL ,
+>  .BR PR_GET_THP_DISABLE ,
+> -.BR PR_CAPBSET_READ ,
+>  .BR PR_GET_TIMING ,
+>  .BR PR_GET_TIMERSLACK ,
+> -.BR PR_GET_SECUREBITS ,
+> -.BR PR_GET_SPECULATION_CTRL ,
+> -.BR PR_MCE_KILL_GET ,
+> -.BR PR_CAP_AMBIENT + PR_CAP_AMBIENT_IS_SET ,
+> -.BR PR_GET_IO_FLUSHER ,
+>  and (if it returns)
+>  .BR PR_GET_SECCOMP
+>  return the nonnegative values described above.
 > 
 
 
