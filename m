@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C072A1D0FF5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:38:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BA5E1D0FF7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:38:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=mVvDJ6tUBT3bXtCUWxqvLND6ZV3hzTWSv2ThPXq37Gs=; b=Y8XotzF0av3HC96c95G1tdjNX2
-	AXcs1MJVecRiHGDijE7QwtNezVI1FiQM3dipAhD9THkgpfN0qIHonM9IOYdJjk1P/taNPnzOzih4g
-	ot0PKR+SVaYho1JdmDePBXp3rr3UykbxZutZ6EC0RUnW5u570tn8mdtX6yKDKlcdUB+xD720kLgsq
-	9/jJe7s1ITd0EyQ6XoyAOICo4m1zPab5eq0uiMRkfAmsdXriDqjgWlPGzB1Z9j8nG4UOzyFEYRVMx
-	MikmM9H3wqBkAyG1yEhH4GZ10UyDjZs5X10SD2LyTEQrx5vvcViVOak76jhvGZK4T0SAKJJDxaW+4
-	NLkQznzw==;
+	bh=ECMirxw7sBD/YfrUCRu5OGsH1ajMl2aoFdtrbpz8BY0=; b=s+8TLOcsSu201R8VxMGH0tgb0h
+	bPiaawFJIXYoVh7pKbBkZk22rHf/Fphw+ZbGtCCcgoFe/SdWbhAO21TIhfxJIwETt2sLR4cSGxw5h
+	U714oVBv6Lenn9ec6h/INab8Q59Sqj3SXepRMcQG9udRnxQ6n5bAV1wKCfNKJM9Bdi8SBFfINSbtV
+	rLLQeZ4jSToE69Gof2qhS8qyntHQ8UxHLd50zWEISgutg8boIJT/bzhGonkAPJZEa+nKlDdZWbmof
+	sKsmFesJW+VhrlFeoIWKYkipcjI4GWuAB4z3a0WgSkqcehWmwVOD78C1ts5wDAwDC5dw8758He1BG
+	47EavxtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYohM-0007Nb-04; Wed, 13 May 2020 10:33:12 +0000
+	id 1jYohY-0007Wd-4t; Wed, 13 May 2020 10:33:24 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYoez-0005GZ-Dl
+ id 1jYof0-0005SL-TV
  for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:30:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 165621FB;
- Wed, 13 May 2020 03:30:45 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65CEB11D4;
+ Wed, 13 May 2020 03:30:46 -0700 (PDT)
 Received: from donnerap.arm.com (donnerap.cambridge.arm.com [10.1.197.25])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D66463F305;
- Wed, 13 May 2020 03:30:43 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 496363F305;
+ Wed, 13 May 2020 03:30:45 -0700 (PDT)
 From: Andre Przywara <andre.przywara@arm.com>
 To: Rob Herring <robh@kernel.org>, Liviu Dudau <liviu.dudau@arm.com>,
  Sudeep Holla <sudeep.holla@arm.com>,
  Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-Subject: [PATCH v3 11/20] arm64: dts: arm: Fix ITS node names and #msi-cells
-Date: Wed, 13 May 2020 11:30:07 +0100
-Message-Id: <20200513103016.130417-12-andre.przywara@arm.com>
+Subject: [PATCH v3 12/20] arm64: dts: juno: usb: Use proper DT node name
+Date: Wed, 13 May 2020 11:30:08 +0100
+Message-Id: <20200513103016.130417-13-andre.przywara@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200513103016.130417-1-andre.przywara@arm.com>
 References: <20200513103016.130417-1-andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_033045_548367_CAF017EC 
-X-CRM114-Status: GOOD (  11.46  )
+X-CRM114-CacheID: sfid-20200513_033047_082753_A4C5AF6A 
+X-CRM114-Status: GOOD (  10.69  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,54 +64,42 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Marc Zyngier <maz@kernel.org>
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The GIC ITS nodes in the fastmodel DTS files were not fully binding
-compliant.
+The EHCI/OCHI DT binding requires to use "usb" as the node name stub.
 
-Use one of the allowed node names, also add the required #msi-cells
-property for the older model.
-
-Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+Replace the existing name with "usb" to comply with the binding.
 ---
- arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi | 3 ++-
- arch/arm64/boot/dts/arm/fvp-base-revc.dts        | 2 +-
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ arch/arm64/boot/dts/arm/juno-base.dtsi | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-index 906f51935b36..e4a3c7dbcc20 100644
---- a/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-+++ b/arch/arm64/boot/dts/arm/foundation-v8-gicv3.dtsi
-@@ -19,9 +19,10 @@
- 			<0x0 0x2c02f000 0x0 0x2000>;
- 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
- 
--		its: its@2f020000 {
-+		its: msi-controller@2f020000 {
- 			compatible = "arm,gic-v3-its";
- 			msi-controller;
-+			#msi-cells = <1>;
- 			reg = <0x20000 0x20000>;
+diff --git a/arch/arm64/boot/dts/arm/juno-base.dtsi b/arch/arm64/boot/dts/arm/juno-base.dtsi
+index dfb2fef37030..2b34661d426c 100644
+--- a/arch/arm64/boot/dts/arm/juno-base.dtsi
++++ b/arch/arm64/boot/dts/arm/juno-base.dtsi
+@@ -768,7 +768,7 @@
  		};
  	};
-diff --git a/arch/arm64/boot/dts/arm/fvp-base-revc.dts b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-index 66381d89c1ce..0cf96ceff431 100644
---- a/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-+++ b/arch/arm64/boot/dts/arm/fvp-base-revc.dts
-@@ -126,7 +126,7 @@
- 		      <0x0 0x2c02f000 0 0x2000>;	// GICV
- 		interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
  
--		its: its@2f020000 {
-+		its: msi-controller@2f020000 {
- 			#msi-cells = <1>;
- 			compatible = "arm,gic-v3-its";
- 			reg = <0x0 0x2f020000 0x0 0x20000>; // GITS
+-	ohci@7ffb0000 {
++	usb@7ffb0000 {
+ 		compatible = "generic-ohci";
+ 		reg = <0x0 0x7ffb0000 0x0 0x10000>;
+ 		interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>;
+@@ -776,7 +776,7 @@
+ 		clocks = <&soc_usb48mhz>;
+ 	};
+ 
+-	ehci@7ffc0000 {
++	usb@7ffc0000 {
+ 		compatible = "generic-ehci";
+ 		reg = <0x0 0x7ffc0000 0x0 0x10000>;
+ 		interrupts = <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
 -- 
 2.17.1
 
