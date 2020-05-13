@@ -2,108 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30ABA1D0B7A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 11:05:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D28D1D0B7B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 11:06:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JMgAvSmXfVr6SIUAmoVLGnmcpsVjwyZ+ko9ckvFwUvI=; b=MM5+xRyzwZ5R0a
-	JOAOifTf42AtbAsISVUoSM6jXzUdd6ov2l+cvNf/jOYluX6tdrR9g+Wtm5yLg/eVbwFZd1md/T+2e
-	NWzjFnTi6+JsJcKgR31WK2VhTi/42ogYqICmJefpLue44Ng4HpQRjz+3dephtr54RECFygCGxtD5K
-	StZOpnoRPJ7KAU5HJUZp7lvuDkmGdIgDbbt3PPS/APPzV62dgLPjJQhkOn63litvNlgTxiN82bO07
-	CyqcTa/nGNKqxY24XwoGFp4DhVa3slC1wXWNRhcXMMmmJ/McuX6nyKotqJz0hvw7MocVw2q1xfKGx
-	9dw35/SaymedbE4095vQ==;
+	List-Owner; bh=eJbxX8AS2w3mjN4RkuH79tZYCQDeBDmW1h2FCAbidhk=; b=rBp0fWiN4P5iKK
+	HaF7TI5M4N114sqWTbYrd5ibBhmF+7hrxFQ/e1B3BLpnemxT+bfnpo9SB+fp5wWf06vLN8yuJcloy
+	Jr2KOSDRCv/S9AknBIIY0U0X4onNC6lZT+yfGw/jxP6RIoBscizvoNEsyMwcqThAhz9Fzws452LfN
+	RTDNExjQA3i6ifbEgcRJnJ/h6EhvU9q/b44YgYGqTol4M4C7R3ZDCoSz68wCaPPY1Qayc3H4oaGNH
+	8tRX84iwbbwN93fB2eqP9hOkdaL8fJK4qB5feH3/7Z5ZJCU3emsWzBTxRGW4Rjxb23HMOjtBgvPLs
+	XxxkMjpZQ3cLVWCiFIpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYnKl-0007bq-Vg; Wed, 13 May 2020 09:05:47 +0000
-Received: from mail-eopbgr20046.outbound.protection.outlook.com ([40.107.2.46]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1jYnL6-0007sR-W4; Wed, 13 May 2020 09:06:08 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYnKc-0007aC-95
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 09:05:39 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NcBFV6WhewY/tbU3Is0Tnxu/jNoWLuNdR3wQw7dcrg0/v0nCln+AsxPA8Im7I7aWWh75pdRkahpfE7zXTaQpu30SFeE2HEcXBkQeOQK4Rhol0hhOdU9phlB17OZyiCpZb3Q5oGCGWZgjtYyoNtKz7zLHd1jWd737jdAjLhAw/1rsrs/cKqXpxAKeg3UPrG8WXtZypTdHq16AMPOUi5caRWW18qtN4hC6DVnJ3JAdC8w6/HQycmt84KJatIAdQyV/7tgtyppEfb90Wkc1pcEm/nUUzodgFJ6CDsshwkxCprK9KW0QpyME/HNsv5ZAVXkKVkH9+TLKlCR6uh5nnIl0AQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DSMlPGs/O07F0OqGvYGDcXIQRqOJK2nkRDayIya42rw=;
- b=hIvCnzdM7iN7NTPad0dDXXHKvdhPNQUNhORymOPFIxh0dorzzeI46UqQqw7L1/rUP3gDm2je0Q5Ii6m6IloxttMl6f1NqNQ222mDtoKXUuyQZSJiIJK4jIZguIvJiYwqz80qaUXfTeB9VONWotK9kPL9NYmpsn8rSyq1/3nZqdA27mH0jBZxEoVuYKRyNINfqtc0mensHlIRxWySNd9JLPSAk7+S3a22WBmIiqk6+lnZ4Y+TuYt1vT76wbsFeWrVlDVDEc7G06Obj7PnhuYcuvZTNg33vqGtbBlvMfojiqwgCQtpRxEZSiuz2RFv9R6GSdOBwvCrThSDdH5MQjkbcg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=DSMlPGs/O07F0OqGvYGDcXIQRqOJK2nkRDayIya42rw=;
- b=EFJ3em0OndJKN+e1QuCaWFocclPL4MAPjtZkRYVMu7L9hE+kR4SkoAev9FFCBPIEwZmb3zwU4fuHbi8RsY2QxKpn6c0SDHn50t3Q/y23N4g0b3WDaAVNtImdB4iKYIDaMSA4lCjENbNmdKY8bmXTYAZ0IJIpX3e78gKOamHEKak=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6765.eurprd04.prod.outlook.com (2603:10a6:803:126::20)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.34; Wed, 13 May
- 2020 09:05:33 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.3000.016; Wed, 13 May 2020
- 09:05:33 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: RE: [PATCH v7 RESEND 07/13] spi: imx: fix ERR009165
-Thread-Topic: [PATCH v7 RESEND 07/13] spi: imx: fix ERR009165
-Thread-Index: AQHWJ3cnZ0DWmxBZKkqSbDLRijv4Zqilos2AgAASCaA=
-Date: Wed, 13 May 2020 09:05:33 +0000
-Message-ID: <VE1PR04MB6638DE9AB1E51213DACCCA0F89BF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
- <1589218356-17475-8-git-send-email-yibin.gong@nxp.com>
- <20200513073359.GM5877@pengutronix.de>
-In-Reply-To: <20200513073359.GM5877@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: c8d3405c-33ce-4a6a-56f6-08d7f71ccb35
-x-ms-traffictypediagnostic: VE1PR04MB6765:|VE1PR04MB6765:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6765B5A59C96EAEC55D259DE89BF0@VE1PR04MB6765.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0402872DA1
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: khb+cMHEQCLWxbQ9giKB4nbXqtoM61CzbHjK1GRHQ74TBMDsQwqBuRRdemfr7CjAGQJzeiZMjnjfcmpTNM36RWj/JGZMUGt1aWTZApmWPZkjU7mUaQtgoKIzL9bup7v7iwrvtgovczs2hPhJMyNu/ndRnTeUKo/xZR2p+TR3lcaK4Xy2MWMnG9HQ74nZ09hj5nGePCbIyFJZG9OI85IqeEe4QpfwwxVsTzGJTM0YkHcFudHHlg3wH2u3mliEPvl1gcKqDUB8Rz2gMUxSoj9gBRfv7phpAu4vyY19nEJBta0jnOsEDvAV16kr8g1msSDrjcGA1pOOZ0r3L24r6iOSa0eTxFq7k/2AeNqrEcttD05CkYfmsWDKKj48iPz8+pMcSNji/AHt//VqoLaXmpfJULIUM+7tAX5WA+rnQIFbPQ/1A33hC+bodSzyxVtvgGjNhiHdXtnL9zuBzU7efQZ2o+nQveKxekpEyS/QCoROO9lUFULTloT+fGf8AQclmWGaiUep4uxa6BrLwdjdOz0Phw==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(136003)(396003)(366004)(39860400002)(346002)(376002)(33430700001)(6916009)(33656002)(66446008)(55016002)(64756008)(86362001)(54906003)(8676002)(66556008)(76116006)(5660300002)(66946007)(66476007)(6506007)(316002)(478600001)(186003)(7416002)(52536014)(4326008)(8936002)(26005)(9686003)(2906002)(71200400001)(33440700001)(7696005);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: rHbyuqL68E1ypyT1+2giYjmAVja/+KJSDDGTIusFxYXXFhtVc893rnIb4KT1oGjnhr8AKXOTigT9wyJr+oSP+mVyQWZAxeC30isQT6MWWvKePeUONUO0sNJ1tIIusLc7KHCBJKEircoHob9Hi0PZLldPSsBL93+kLiznCozKR6urWuQoiCdlFRN5qJVQwLS5J9FgSepguVUTnMpZk0D8/AzuGysOj4VWU74CG3kkjeTjC2FlZvICFjBdR1qhd3TYRfOD5q7JQsjnZn+p4VxLOuXTKAHFX9mr4EPP/5Ce/0XI9xDaDN1113hyZmwFxu81vBfBMc0JPu+W76/Ww8M/HrLuh+aDCIoHMero7em1h1vxwOFisFlanO4pJz6IKOhkMm3i+fFK9rTV5pnMCZ4ey68Ndt2YI69XOvPzexBurB97y777h4NgSs+bKrTIZ7CZ/9z/WKelnh8fXEOnQIzsAEm9vsDY2RAyBgShzHnVCts=
+ id 1jYnKr-0007mY-31
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 09:05:54 +0000
+X-UUID: 89e5d337d4444b9aa0970ffd28c85787-20200513
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=5D8WCKWhqtUmM0QZKWnoCy74fM9ScjwQw/X1UTYKKjQ=; 
+ b=EujlaFy5m20lUy8K644gzWZF6PcKjM4OVXTQivTdUy5lse8kQyCNMk1s54WcZ3EsKU7EYtu5O/IMoxLjc7whnNX6LgOz8OZdOEAX8kkpxAiBl+MbsFRi10XEecygkmG88a1L3DyuqLljeBna+0OxqyUfd2q1SsrfsDcxE2MK0tA=;
+X-UUID: 89e5d337d4444b9aa0970ffd28c85787-20200513
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2054897721; Wed, 13 May 2020 01:05:34 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 13 May 2020 02:05:44 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 13 May 2020 17:05:42 +0800
+Received: from [172.21.84.99] (172.21.84.99) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Wed, 13 May 2020 17:05:41 +0800
+Message-ID: <1589360744.14554.10.camel@mtksdccf07>
+Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Dmitry Vyukov <dvyukov@google.com>
+Date: Wed, 13 May 2020 17:05:44 +0800
+In-Reply-To: <CACT4Y+Zv3rCZs8z56NHM0hHWMwQr_2AT8nx0vUigzMG2v3Rt8Q@mail.gmail.com>
+References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
+ <CACT4Y+YWNwTSoheJhc3nMdQi9m719F3PzpGo3TfRY3zAg9EwuQ@mail.gmail.com>
+ <CACT4Y+bO1Zg_jgFHbOWgp7fLAADOQ_-AZmjEHz0WG7=oyOt4Gg@mail.gmail.com>
+ <1589203771.21284.22.camel@mtksdccf07>
+ <CACT4Y+aOkuH6Dn+L+wv1qVOLgXyCY_Ck4hecAMw3DgyBgC9qHw@mail.gmail.com>
+ <1589254720.19238.36.camel@mtksdccf07>
+ <CACT4Y+aibZEBR-3bos3ox5Tuu48TnHC20mDDN0AkWeRUKrT0aw@mail.gmail.com>
+ <1589334472.19238.44.camel@mtksdccf07>
+ <CACT4Y+Zv3rCZs8z56NHM0hHWMwQr_2AT8nx0vUigzMG2v3Rt8Q@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c8d3405c-33ce-4a6a-56f6-08d7f71ccb35
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2020 09:05:33.5410 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: Vfz5EV79WnHnTPTa0tXoQoJ9djZbxIGq1VhwL/onmcVqdwIBJP8NsKsj+1vqFiDXV5tuHCVhM5JN2/CHryEUtA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6765
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_020538_458493_F446DD77 
-X-CRM114-Status: GOOD (  16.83  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200513_020553_148860_3322D79C 
+X-CRM114-Status: GOOD (  25.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.2.46 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.2.46 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -112,6 +78,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,81 +91,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: "Paul E . McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
+ Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
+ kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
+ Joel Fernandes <joel@joelfernandes.org>,
+ Alexander Potapenko <glider@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>, Andrew
+ Morton <akpm@linux-foundation.org>, Linux
+ ARM <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020/05/13 Sascha Hauer <s.hauer@pengutronix.de> wrote:d
-> >  drivers/spi/spi-imx.c | 16 ++++++++--------
-> >  1 file changed, 8 insertions(+), 8 deletions(-)
+On Wed, 2020-05-13 at 08:51 +0200, 'Dmitry Vyukov' via kasan-dev wrote:
+> On Wed, May 13, 2020 at 3:48 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
+> > > > > Are you sure it will increase object size?
+> > > > > I think we overlap kasan_free_meta with the object as well. The only
+> > > > > case we don't overlap kasan_free_meta with the object are
+> > > > > SLAB_TYPESAFE_BY_RCU || cache->ctor. But these are rare and it should
+> > > > > only affect small objects with small redzones.
+> > > > > And I think now we simply have a bug for these objects, we check
+> > > > > KASAN_KMALLOC_FREE and then assume object contains free stack, but for
+> > > > > objects with ctor, they still contain live object data, we don't store
+> > > > > free stack in them.
+> > > > > Such objects can be both free and still contain user data.
+> > > > >
+> > > >
+> > > > Overlay kasan_free_meta. I see. but overlay it only when the object was
+> > > > freed. kasan_free_meta will be used until free object.
+> > > > 1). When put object into quarantine, it need kasan_free_meta.
+> > > > 2). When the object exit from quarantine, it need kasan_free_meta
+> > > >
+> > > > If we choose to overlay kasan_free_meta, then the free stack will be
+> > > > stored very late. It may has no free stack in report.
+> > >
+> > > Sorry, I don't understand what you mean.
+> > >
+> > > Why will it be stored too late?
+> > > In __kasan_slab_free() putting into quarantine and recording free
+> > > stack are literally adjacent lines of code:
+> > >
+> > > static bool __kasan_slab_free(struct kmem_cache *cache, void *object,
+> > >       unsigned long ip, bool quarantine)
+> > > {
+> > >     ...
+> > >     kasan_set_free_info(cache, object, tag);
+> > >     quarantine_put(get_free_info(cache, object), cache);
+> > >
+> > >
+> > > Just to make sure, what I meant is that we add free_track to kasan_free_meta:
+> > >
+> > > struct kasan_free_meta {
+> > >     struct qlist_node quarantine_link;
+> > > +  struct kasan_track free_track;
+> > > };
+> > >
 > >
-> > diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c index
-> > f4f28a4..70df8e6 100644
-> > --- a/drivers/spi/spi-imx.c
-> > +++ b/drivers/spi/spi-imx.c
-> > @@ -585,8 +585,8 @@ static int mx51_ecspi_prepare_transfer(struct
-> spi_imx_data *spi_imx,
-> >  	ctrl |= mx51_ecspi_clkdiv(spi_imx, t->speed_hz, &clk);
-> >  	spi_imx->spi_bus_clk = clk;
-> >
-> > -	if (spi_imx->usedma)
-> > -		ctrl |= MX51_ECSPI_CTRL_SMC;
-> > +	/* ERR009165: work in XHC mode as PIO */
-> > +	ctrl &= ~MX51_ECSPI_CTRL_SMC;
-> >
-> >  	writel(ctrl, spi_imx->base + MX51_ECSPI_CTRL);
-> >
-> > @@ -617,7 +617,7 @@ static void mx51_setup_wml(struct spi_imx_data
-> *spi_imx)
-> >  	 * and enable DMA request.
-> >  	 */
-> >  	writel(MX51_ECSPI_DMA_RX_WML(spi_imx->wml - 1) |
-> > -		MX51_ECSPI_DMA_TX_WML(spi_imx->wml) |
-> > +		MX51_ECSPI_DMA_TX_WML(0) |
-> >  		MX51_ECSPI_DMA_RXT_WML(spi_imx->wml) |
-> >  		MX51_ECSPI_DMA_TEDEN | MX51_ECSPI_DMA_RXDEN |
-> >  		MX51_ECSPI_DMA_RXTDEN, spi_imx->base + MX51_ECSPI_DMA);
-> @@ -1171,7
-> > +1171,11 @@ static int spi_imx_dma_configure(struct spi_master *master)
-> >  	tx.direction = DMA_MEM_TO_DEV;
-> >  	tx.dst_addr = spi_imx->base_phys + MXC_CSPITXDATA;
-> >  	tx.dst_addr_width = buswidth;
-> > -	tx.dst_maxburst = spi_imx->wml;
-> > +	/*
-> > +	 * For ERR009165 with tx_wml = 0 could enlarge burst size to fifo size
-> > +	 * to speed up fifo filling as possible.
-> > +	 */
-> > +	tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
+> > When I see above struct kasan_free_meta, I know why you don't understand
+> > my meaning, because I thought you were going to overlay the
+> > quarantine_link by free_track, but it seems like to add free_track to
+> > kasan_free_meta. Does it enlarge meta-data size?
 > 
-> In the next patch this is changed again to:
+> I would assume it should not increase meta-data size. In both cases we
+> store exactly the same information inside of the object: quarantine
+> link and free track.
+> I see it more as a question of code organization. We already have a
+> concept of "this data is placed inside of the freed object", we
+> already have a name for it (kasan_free_meta), we already have code to
+> choose where to place it, we already have helper functions to access
+> it. And your change effectively duplicates all of this to place the
+> free track.
 > 
-> +       if (spi_imx->devtype_data->tx_glitch_fixed)
-> +               tx.dst_maxburst = spi_imx->wml;
-> +       else
-> +               tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
+
+I want to make a summary. Which of the following is the approach we
+want? or if I have some misunderstandings, please help me to correct.
+Thanks.
+
+1) For different object, then it will has two ways.
+1.a) When object are LAB_TYPESAFE_BY_RCU || cache->ctor, then store free
+stack into free track of struct kasan_free_meta.
+2.b) Except 1.a), store free stack into freed object.
+
+or
+
+2) We always store free stack into free track of struct kasan_free_meta
+
+
+> > > And I think its life-time and everything should be exactly what we need.
+> > >
+> > > Also it should help to fix the problem with ctors: kasan_free_meta is
+> > > already allocated on the side for such objects, and that's exactly
+> > > what we need for objects with ctor's.
+> >
+> > I see.
 > 
-> So with tx_glitch_fixed we end up with tx.dst_maxburst being the same as two
-> patches before which is rather confusing. Better introduce tx_glitch_fixed in
-> this patch, or maybe even merge this patch and the next one.
-Sorry confused you, I should repleace 'tx_wml=0' in the above comments with ' TX_THRESHOLD=0', which means tx transfer dma have to wait all the tx data in tx fifo transferred with ERR009165 rather than generically 'tx_wml' (for example --half fifo size used as TX_THRESHOLD). Obviously TX_THRESHOLD=0 would down performance, so enlarge dst_maxburst to fifo size as PIO with ERR009165. After ERR009165 fixed at HW level. TX_THRESHOLD could be used as common 'spi_imx->wml' so change it back. Will add more detail information in v8.
 
 _______________________________________________
 linux-arm-kernel mailing list
