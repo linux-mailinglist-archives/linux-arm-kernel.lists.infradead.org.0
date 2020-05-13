@@ -2,85 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A1FB1D1C0F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:19:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2EB81D1C16
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:20:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V/CJqtsXiD8ZgUQmHngG1oHKH34KVrAQjXogYt7OOMA=; b=X6N5slaKGt4VF1
-	VxtnnNEU7thQjdzRPSY246PgP6lX2PklmTn1VStB4JUbR0NlcfYJs/1UHC83Mr/KTOMiSRv2vq8Su
-	WgAc+Jm+qx+kN1MjuTVv1rCZ9BRd46I45XtSo4UNFoPyUTNaW7LBK/pcIEf7xECLsrt+gY97S56id
-	8Cp8lZcqFGv2N/akniAgelJeQLcz0nVLkL94em8eJbZSiCh6qjHPi130ER+rpLCZkYDCfPGiWVx+m
-	XlKYiSLomONPHtpvWstG2YpQlf/aUEZrvQZFU7WKrJzt4bpVwKeNYqRn8I4ohwGyITcvqDUJ50C/A
-	qkfqIWNLsZ06JySmeH1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FQrjFS0Gb+/W5lVcwcZ8a1sq3tXTHOH9LQQX5pP2wK4=; b=SBzNnVbAEK5zcSk6GOqT0ZW3h
+	I7y2TjxTlwtlFzLRIK+N6AppWCLU7jbEg1Imgti3bVYVMSePykyMwYNLFuZHgu0N10m1KO+IMjRwC
+	l5ZwSYhu+dn5DG3vV8mtpfvYguwMsV9pxg67SYlDco6frhBJMLCpdOI1loSNN53dV6wFmrv6We6rz
+	0NJPcm4TlXZGHqXLZN7jLhCdU8Yk7ifuJ3wJfPXxaNJkYeDAV/LDj5R5ltx/ULK30ukDo5oskXJQE
+	hVuxURcsBZP9FfaLmTvU0MU7qhIfd67M96ezu51z9SNbPYVdwjktTy6Mz7keqied9LNoUBuvRqRWh
+	MuXCMDMjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYv2l-00068k-RT; Wed, 13 May 2020 17:19:43 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1jYv3Q-0000NZ-Es; Wed, 13 May 2020 17:20:24 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYv2e-000687-DY
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:19:37 +0000
-Received: by mail-pg1-x544.google.com with SMTP id r10so34866pgv.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 10:19:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=1W5H6dGOEkGWBgNOPpkRvp5ErWI1HdVM+iv3UwbY6Ys=;
- b=ZPo8mjFHFU3+3LCg5UAPIyHuQKwBqAvlznyue+P9a3sjagqcfWfgq5eUmdbmUb28Nl
- iwCp2/OAg7DjV7rIwzvMxnUlRICFVRwYgczrc50GcyN+PQHPXFZlM8TMqhn5GjtmRCIc
- Ysr/M+TpSiupQ2UWw0+IIVVDcNsnXpxzxI6SMMjxkN3ou/6qG5eEFFEBfNPTcDOha/vq
- iPjdKoYrmkbD8347Ie1Wc/bkx714WZGMlPdx+MEsGGf2fH5ensA015poiwWOeuYXxnVq
- XCn5iFjl/18Re052CDgLIkEm2rOxcKVfE2YgbwYtFzdW+XDXfKHnZDY+OVojPX+SWzp/
- 9J8A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=1W5H6dGOEkGWBgNOPpkRvp5ErWI1HdVM+iv3UwbY6Ys=;
- b=Ybwm2ZuMcp9PlBm4tJExAj7NDCnJl8IIPhFGYHNWpzTpgkMJ5SBoHexByY5lV2G0jl
- 3hhwpYIflycxn0JVuuawB21Tndi5/TGCoOgI8UcB8UpK1/BPMi6zgZtWjtks0A4qzrBV
- GLZL3rzhe432anF28fEQkdZiCMQH1XeT3C2D3rycrjXLP/7+T1vflXdvzEJuAsR47yt/
- cufeMDGS89zg6rJdSQoa3J2Gf+Toi5hVphwrGV7skj84gT3OK3n61FMhVQAyvfNhfA3a
- zsLTnDiTHhXBdpRvP1tFrNwPPQuU9nn3tvU44/e4sUGmkDrj8ppTmyd3UAszcfhBSMdF
- NQRw==
-X-Gm-Message-State: AOAM531ROiiUjYluGouAXfDhmvDm5Xh70fjQfhYBjexLGXFfeh26ANZt
- OmtAsC3HEYsNzQdeabNJEUU=
-X-Google-Smtp-Source: ABdhPJyspRTVExTYGHoYQ89DRv24IY2ZZKDrfDihL5ZohDzGqWHfpJ354kTb6N/sqyXWpf7AZ4VCMw==
-X-Received: by 2002:a63:b219:: with SMTP id x25mr363136pge.66.1589390374527;
- Wed, 13 May 2020 10:19:34 -0700 (PDT)
-Received: from dtor-ws ([2620:15c:202:201:3c2a:73a9:c2cf:7f45])
- by smtp.gmail.com with ESMTPSA id gz19sm15932422pjb.7.2020.05.13.10.19.33
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 10:19:33 -0700 (PDT)
-Date: Wed, 13 May 2020 10:19:31 -0700
-From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH] input: keyboard: imx_sc_key: Use
- devm_add_action_or_reset() to handle all cleanups
-Message-ID: <20200513171931.GI89269@dtor-ws>
-References: <1584082751-17047-1-git-send-email-Anson.Huang@nxp.com>
+ id 1jYv3G-0000K3-IK
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:20:16 +0000
+Received: from lelv0266.itg.ti.com ([10.180.67.225])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04DHKAds047544;
+ Wed, 13 May 2020 12:20:10 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589390410;
+ bh=mWmZmtnRgdmb8pVcRYCzUXIlC4PPbMEYeOODocw0Wtk=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=oUefQaD04F6GbefMgKr7lXZYq6luxR+EACLB3Pp4j5PkT+SDHE9oQ/WA6/gZrdQtQ
+ ohT6ThN8W8HUKMm5l1O8Cx0jDIa4UUa9YGZxFx4KfpFrTqlnPmEyY/HPoz18dmjPc1
+ fSItFfaJS323wc1CnxIh9lOcVl+ypNb0bRX51JDw=
+Received: from DLEE101.ent.ti.com (dlee101.ent.ti.com [157.170.170.31])
+ by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04DHKA6C101977
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Wed, 13 May 2020 12:20:10 -0500
+Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE101.ent.ti.com
+ (157.170.170.31) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 13
+ May 2020 12:20:09 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Wed, 13 May 2020 12:20:09 -0500
+Received: from [10.250.48.148] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04DHK959112693;
+ Wed, 13 May 2020 12:20:09 -0500
+Subject: Re: [PATCH 1/3] dt-bindings: remoteproc: Add bindings for C66x DSPs
+ on TI K3 SoCs
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <20200325201839.15896-1-s-anna@ti.com>
+ <20200325201839.15896-2-s-anna@ti.com> <20200427194915.GA10552@xps15>
+From: Suman Anna <s-anna@ti.com>
+Message-ID: <8a2a3c6a-7db5-9c57-7fcf-a52af901c911@ti.com>
+Date: Wed, 13 May 2020 12:20:09 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1584082751-17047-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <20200427194915.GA10552@xps15>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_101936_481538_E31EF593 
-X-CRM114-Status: UNSURE (   7.36  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_102014_747065_C35CA978 
+X-CRM114-Status: GOOD (  24.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dmitry.torokhov[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,6 +81,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,25 +93,239 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- linux-input@vger.kernel.org, festevam@gmail.com,
+Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
+ linux-remoteproc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Mar 13, 2020 at 02:59:11PM +0800, Anson Huang wrote:
-> Use devm_add_action_or_reset() to handle all cleanups of failure in
-> .probe and .remove, then .remove callback can be dropped.
+On 4/27/20 2:49 PM, Mathieu Poirier wrote:
+> Hi Suman,
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> I have started to review this set - comments will come over the next few days.
+> 
+> On Wed, Mar 25, 2020 at 03:18:37PM -0500, Suman Anna wrote:
+>> Some Texas Instruments K3 family of SoCs have one of more Digital Signal
+>> Processor (DSP) subsystems that are comprised of either a TMS320C66x
+>> CorePac and/or a next-generation TMS320C71x CorePac processor subsystem.
+>> Add the device tree bindings document for the C66x DSP devices on these
+>> SoCs. The added example illustrates the DT nodes for the first C66x DSP
+>> device present on the K3 J721E family of SoCs.
+>>
+>> Signed-off-by: Suman Anna <s-anna@ti.com>
+>> ---
+>>   .../bindings/remoteproc/ti,k3-dsp-rproc.yaml  | 180 ++++++++++++++++++
+>>   1 file changed, 180 insertions(+)
+>>   create mode 100644 Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+>>
+>> diff --git a/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml b/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+>> new file mode 100644
+>> index 000000000000..416e3abe7937
+>> --- /dev/null
+>> +++ b/Documentation/devicetree/bindings/remoteproc/ti,k3-dsp-rproc.yaml
+>> @@ -0,0 +1,180 @@
+>> +# SPDX-License-Identifier: (GPL-2.0-only or BSD-2-Clause)
+>> +%YAML 1.2
+>> +---
+>> +$id: http://devicetree.org/schemas/remoteproc/ti,k3-dsp-rproc.yaml#
+>> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+>> +
+>> +title: TI K3 DSP devices
+>> +
+>> +maintainers:
+>> +  - Suman Anna <s-anna@ti.com>
+>> +
+>> +description: |
+>> +  The TI K3 family of SoCs usually have one or more TI DSP Core sub-systems
+>> +  that are used to offload some of the processor-intensive tasks or algorithms,
+>> +  for achieving various system level goals.
+>> +
+>> +  These processor sub-systems usually contain additional sub-modules like
+>> +  L1 and/or L2 caches/SRAMs, an Interrupt Controller, an external memory
+>> +  controller, a dedicated local power/sleep controller etc. The DSP processor
+>> +  cores in the K3 SoCs are usually either a TMS320C66x CorePac processor or a
+>> +  TMS320C71x CorePac processor.
+>> +
+>> +  Each DSP Core sub-system is represented as a single DT node. Each node has a
+>> +  number of required or optional properties that enable the OS running on the
+>> +  host processor (Arm CorePac) to perform the device management of the remote
+>> +  processor and to communicate with the remote processor.
+>> +
+>> +properties:
+>> +  compatible:
+>> +    const: ti,j721e-c66-dsp
+>> +    description:
+>> +      Use "ti,j721e-c66-dsp" for C66x DSPs on K3 J721E SoCs
+>> +
+>> +  reg:
+>> +    description: |
+>> +      Should contain an entry for each value in 'reg-names'.
+>> +      Each entry should have the memory region's start address
+>> +      and the size of the region, the representation matching
+>> +      the parent node's '#address-cells' and '#size-cells' values.
+>> +    minItems: 3
+>> +    maxItems: 3
+>> +
+>> +  reg-names:
+>> +    description: |
+>> +      Should contain strings with the names of the specific internal
+>> +      internal memory regions, and should be defined in this order
+> 
+> The word "internal" is found twice in a row.
+> 
+>> +    maxItems: 3
+>> +    items:
+>> +      - const: l2sram
+>> +      - const: l1pram
+>> +      - const: l1dram
+>> +
+>> +  ti,sci:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle
+>> +    description:
+>> +      Should be a phandle to the TI-SCI System Controller node
+>> +
+>> +  ti,sci-dev-id:
+>> +    $ref: /schemas/types.yaml#/definitions/uint32
+>> +    description: |
+>> +      Should contain the TI-SCI device id corresponding to the DSP core.
+>> +      Please refer to the corresponding System Controller documentation
+>> +      for valid values for the DSP cores.
+>> +
+>> +  ti,sci-proc-ids:
+>> +    description: Should contain a single tuple of <proc_id host_id>.
+>> +    allOf:
+>> +      - $ref: /schemas/types.yaml#/definitions/uint32-matrix
+>> +      - maxItems: 1
+>> +        items:
+>> +          items:
+>> +            - description: TI-SCI processor id for the DSP core device
+>> +            - description: TI-SCI host id to which processor control
+>> +                           ownership should be transferred to
+>> +
+>> +  resets:
+>> +    description: |
+>> +      Should contain the phandle to the reset controller node
+>> +      managing the resets for this device, and a reset
+>> +      specifier. Please refer to the following reset bindings
+>> +      for the reset argument specifier,
+>> +      Documentation/devicetree/bindings/reset/ti,sci-reset.txt
+>> +
+>> +  firmware-name:
+>> +    description: |
+>> +      Should contain the name of the default firmware image
+>> +      file located on the firmware search path
+>> +
+>> +  mboxes:
+>> +    description: |
+>> +      OMAP Mailbox specifier denoting the sub-mailbox, to be used for
+>> +      communication with the remote processor. This property should match
+>> +      with the sub-mailbox node used in the firmware image. The specifier
+>> +      format is as per the bindings,
+>> +      Documentation/devicetree/bindings/mailbox/omap-mailbox.txt
+>> +
+>> +  memory-region:
+>> +    minItems: 2
+>> +    description: |
+>> +      phandle to the reserved memory nodes to be associated with the remoteproc
+>> +      device. There should be atleast two reserved memory nodes defined - the
+>> +      first one would be used for dynamic DMA allocations like vrings and vring
+>> +      buffers, and the remaining ones used for the firmware image sections. The
+>> +      reserved memory nodes should be carveout nodes, and should be defined as
+>> +      per the bindings in
+>> +      Documentation/devicetree/bindings/reserved-memory/reserved-memory.txt
+>> +
+>> +# Optional properties:
+>> +# --------------------
+>> +
+>> +  sram:
+>> +    $ref: /schemas/types.yaml#/definitions/phandle-array
+>> +    minItems: 1
+>> +    description: |
+>> +      pHandles to one or more reserved on-chip SRAM regions. The regions
+> 
+> s/pHandle/phandle
 
-Applied, thank you.
+Thanks Mathieu, will fix both of these in the next version.
 
--- 
-Dmitry
+regards
+Suman
+
+> 
+> Thanks,
+> Mathieu
+> 
+>> +      should be defined as child nodes of the respective SRAM node, and
+>> +      should be defined as per the generic bindings in,
+>> +      Documentation/devicetree/bindings/sram/sram.yaml
+>> +
+>> +required:
+>> + - compatible
+>> + - reg
+>> + - reg-names
+>> + - ti,sci
+>> + - ti,sci-dev-id
+>> + - ti,sci-proc-ids
+>> + - resets
+>> + - firmware-name
+>> + - mboxes
+>> + - memory-region
+>> +
+>> +additionalProperties: false
+>> +
+>> +examples:
+>> +  - |
+>> +
+>> +    //Example: J721E SoC
+>> +    /* DSP Carveout reserved memory nodes */
+>> +    reserved-memory {
+>> +        #address-cells = <2>;
+>> +        #size-cells = <2>;
+>> +        ranges;
+>> +
+>> +        c66_0_dma_memory_region: c66-dma-memory@a6000000 {
+>> +            compatible = "shared-dma-pool";
+>> +            reg = <0x00 0xa6000000 0x00 0x100000>;
+>> +            no-map;
+>> +        };
+>> +
+>> +        c66_0_memory_region: c66-memory@a6100000 {
+>> +            compatible = "shared-dma-pool";
+>> +            reg = <0x00 0xa6100000 0x00 0xf00000>;
+>> +            no-map;
+>> +        };
+>> +    };
+>> +
+>> +    cbass_main: interconnect@100000 {
+>> +        compatible = "simple-bus";
+>> +        #address-cells = <2>;
+>> +        #size-cells = <2>;
+>> +        ranges = <0x4d 0x80800000 0x4d 0x80800000 0x00 0x00800000>, /* C66_0 */
+>> +                 <0x4d 0x81800000 0x4d 0x81800000 0x00 0x00800000>; /* C66_1 */
+>> +
+>> +        /* J721E C66_0 DSP node */
+>> +        c66_0: dsp@4d80800000 {
+>> +            compatible = "ti,j721e-c66-dsp";
+>> +            reg = <0x4d 0x80800000 0x00 0x00048000>,
+>> +                  <0x4d 0x80e00000 0x00 0x00008000>,
+>> +                  <0x4d 0x80f00000 0x00 0x00008000>;
+>> +            reg-names = "l2sram", "l1pram", "l1dram";
+>> +            ti,sci = <&dmsc>;
+>> +            ti,sci-dev-id = <142>;
+>> +            ti,sci-proc-ids = <0x03 0xFF>;
+>> +            resets = <&k3_reset 142 1>;
+>> +            firmware-name = "j7-c66_0-fw";
+>> +            memory-region = <&c66_0_dma_memory_region>,
+>> +                            <&c66_0_memory_region>;
+>> +            mboxes = <&mailbox0_cluster3 &mbox_c66_0>;
+>> +        };
+>> +    };
+>> -- 
+>> 2.23.0
+>>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
