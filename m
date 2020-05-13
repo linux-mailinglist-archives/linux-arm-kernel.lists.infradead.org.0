@@ -2,81 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ED2F91D217C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 23:51:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E92251D21D2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 00:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5gsZM3/RiZWpd1tabm3cKDIYdcCKw2ADozhWNB/7hwI=; b=NS5CKsG4fsBuCw
-	v5y7mvPVwPi8VifQELBg5bSx8xrF6/VOYQLkkzLN3GEpjfWWQjoULD/Myip/w3ceMneSAukEWeSc9
-	aK2hoar5XqAq5QItPYfBz+8SBrJH4dR2bRr6rifNAHuZlVYiRifWhGM3Znpk0yOpbEfMiVkDyQSoQ
-	C4pNLpQnpGCORgLgO9tLFdIty9T7tt1wmZKOPMCPaMoakcUksg7Z5WZLQyD8tOFSdWofKkHufx3DW
-	xZyvzX65MAz9b5PVtDt3YmZ2TDC89+Aoo7ualGbv0O2+Cz+f9/O+hi3xJiuGDAiITyJJ+6+WR2DNK
-	mr4NPwzTjn8E/tMb2KrA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vFPk9aIJy+ka8xtbnpsA5M9ixijLzSaZJeUBrSgzy80=; b=LaYa+YCDIzbY3+cVSzkNIpMUh
+	F9/UIo0bOu6MabDiu8yDr7sxze5IpEA5Lo9ZTNqfcXirSOP9eUJjhc3LKuBdqCVyUxoU/gmmL3Nhq
+	Nzub0n2Oxa8eB13HNdQR+4MQO+K2r6+7Oi9ZixJJmL9TIJqPXxTF65cPwquiBOyAwaKTwQkbFO2v6
+	5nQcyMxqyOeqvUuVY///kWNZzEGF9UNMDJmgpvYb37/vMhnf83IEirp6wU1S1KYqBkAkBrFssy7DR
+	p/WJStIA1Nm2mv9EqkIkkeMzeAbS66zMobQw712q+WIr4RV/3QNKZMitE/l6abqNuk+atmyG7vtpy
+	dFBQxytaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYzHf-0000av-HM; Wed, 13 May 2020 21:51:23 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1jYzfc-0001j2-1m; Wed, 13 May 2020 22:16:08 +0000
+Received: from ssl.serverraum.org ([176.9.125.105])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYzHW-0000aA-OK
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 21:51:16 +0000
-Received: by mail-lj1-x242.google.com with SMTP id l19so1234420lje.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 14:51:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=anholt-net.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=c4GzEKN4UHscMkRfgK/KmlmDtv9fIM50sPFyVikryKQ=;
- b=O8JCadTsQl0Tyvlb72GDnj5fWwBBQal84Q4eYowAUSAU0My9xiciKbQ5opOHnfwl9N
- Qb5nQGHUjnL79yJetrBRfHA673D+DtgS7C/OXM/Jj+mCy4cl51SspGMJvwVFVu8mQw/d
- E0lrDdlhkaMITXDJ0+azix8pePd4EjeDt5g7yhokYKopEAlRvUP/8w/RAInfA6caXo+K
- ruac9LVx6zmyBPRvtCJoQCkeekvevefrJdyMNUMDpe0/sCo9HnlDe3w74ikeYyTigQIj
- aG+tjvBV7Sqetjfnq4VJ/fo8MRHFgz35H6NVpzXrbNEzRfRmIydljGEGOXoJVfCSbwOl
- 4D5A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=c4GzEKN4UHscMkRfgK/KmlmDtv9fIM50sPFyVikryKQ=;
- b=RLf2DyJKkSdKWiKvy1MNA36jZEP2POatHAWcnpiWSQcTwjQUKeDhd30HK70UE2pF8v
- IQnOhvtTKjqtD7cCVW7CEeaL1J/tqLGx0jZT704qGRtv86/Zwf9tfslrvr6pr00+sQpO
- qniJTAPkReV7kWOo0KwOWe8S6jblP2nnfV096NvDXNNUNHQCNVYwi+jWpKFkWA8fZw6b
- m0YqQltuqT7+lBszcXKF8PDmt8wpEuFlhIBm1KUfseq4UivQwbsGq8G6kkE3jOnZs9c3
- hd28R8V2NUr5Jp22XL6cajp+SwCNImMV/XlW7vosze9VBCxltdmPz1q+OEfyAKGcy6pS
- nn/Q==
-X-Gm-Message-State: AOAM530uOsqLmeXBEeWYxepN3sTDgRkGP3mOmfRsl3DS5hg8wmtjmFVC
- 4rSupdDNy6bRgOPbuVQwNfCWsADfHEw4glqMehnfTH/1
-X-Google-Smtp-Source: ABdhPJxvVYUU3pLt0Fm0zZnTD0agcvWiYXLQjHfcp4jZKWPnJaLBh2OjEP0dKl4uakuItjfjxNR6jFpY0iO1wNvpqZc=
-X-Received: by 2002:a2e:8047:: with SMTP id p7mr641481ljg.206.1589406671985;
- Wed, 13 May 2020 14:51:11 -0700 (PDT)
+ id 1jYzf9-0001W4-Tq
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 22:15:43 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id 5752922FEC;
+ Thu, 14 May 2020 00:15:22 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1589408125;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=IjMyCHfdnLjEuVo++xDGBWjambq+Fde/qc+KEJNfdSc=;
+ b=eKf0mnWxRhNAeHVKoNWCeiV9u0yLpbJAusnkLK3vNXKHhQeGeNYWKXQ++zSpwJbX38tbdU
+ 2EJap+54vaZnLGcacA4UH6AZs5fGtsgB2NmyXR2hFOrHme+LDvtC1sdogLUw19sHNQKzAs
+ BwssZiT/tIG61qYJfOLJ1Eowufi8hK0=
 MIME-Version: 1.0
-References: <20200513132114.6046-1-m.szyprowski@samsung.com>
- <CGME20200513133314eucas1p1a607b556e32887e7f5ca60eb09a476c6@eucas1p1.samsung.com>
- <20200513133245.6408-1-m.szyprowski@samsung.com>
- <20200513133245.6408-24-m.szyprowski@samsung.com>
-In-Reply-To: <20200513133245.6408-24-m.szyprowski@samsung.com>
-From: Eric Anholt <eric@anholt.net>
-Date: Wed, 13 May 2020 14:51:00 -0700
-Message-ID: <CADaigPV7sO1pKrspDya+3OLeX0b0mzkZdjb4ox+gQddsmfw0-w@mail.gmail.com>
-Subject: Re: [PATCH v5 24/38] drm: v3d: fix common struct sg_table related
- issues
-To: Marek Szyprowski <m.szyprowski@samsung.com>
+Date: Thu, 14 May 2020 00:15:22 +0200
+From: Michael Walle <michael@walle.cc>
+To: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v3 05/16] mfd: Add support for Kontron sl28cpld management
+ controller
+In-Reply-To: <CAL_JsqJBAghgdKmH1OfpH0B508st7Gx3GMtjufjZvBWM_c6GAQ@mail.gmail.com>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-6-michael@walle.cc> <20200511211359.GB3518@bogus>
+ <f0fafa63047f00e912013b137e4db15c@walle.cc>
+ <CAL_JsqJBAghgdKmH1OfpH0B508st7Gx3GMtjufjZvBWM_c6GAQ@mail.gmail.com>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <c170d7ad3874567e624bb827c1eac661@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_145114_852190_3507865B 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200513_151540_260300_E5F63CC1 
+X-CRM114-Status: GOOD (  23.12  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [176.9.125.105 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -91,46 +82,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, linux-kernel@vger.kernel.org,
- DRI Development <dri-devel@lists.freedesktop.org>,
- linaro-mm-sig@lists.linaro.org, iommu@lists.linux-foundation.org,
- Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
- Christoph Hellwig <hch@lst.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, Linux PWM List <linux-pwm@vger.kernel.org>,
+ Jean Delvare <jdelvare@suse.com>,
+ LINUX-WATCHDOG <linux-watchdog@vger.kernel.org>, "open list:GPIO
+ SUBSYSTEM" <linux-gpio@vger.kernel.org>, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, "moderated
+ list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Linux HWMON List <linux-hwmon@vger.kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Shawn Guo <shawnguo@kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 6:33 AM Marek Szyprowski
-<m.szyprowski@samsung.com> wrote:
->
-> The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
-> returns the number of the created entries in the DMA address space.
-> However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
-> dma_unmap_sg must be called with the original number of the entries
-> passed to the dma_map_sg().
->
-> struct sg_table is a common structure used for describing a non-contiguous
-> memory buffer, used commonly in the DRM and graphics subsystems. It
-> consists of a scatterlist with memory pages and DMA addresses (sgl entry),
-> as well as the number of scatterlist entries: CPU pages (orig_nents entry)
-> and DMA mapped pages (nents entry).
->
-> It turned out that it was a common mistake to misuse nents and orig_nents
-> entries, calling DMA-mapping functions with a wrong number of entries or
-> ignoring the number of mapped entries returned by the dma_map_sg()
-> function.
->
-> To avoid such issues, lets use a common dma-mapping wrappers operating
-> directly on the struct sg_table objects and use scatterlist page
-> iterators where possible. This, almost always, hides references to the
-> nents and orig_nents entries, making the code robust, easier to follow
-> and copy/paste safe.
->
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+Am 2020-05-12 23:59, schrieb Rob Herring:
+> On Mon, May 11, 2020 at 4:45 PM Michael Walle <michael@walle.cc> wrote:
+>> 
+>> Am 2020-05-11 23:13, schrieb Rob Herring:
+>> > On Thu, Apr 23, 2020 at 07:45:32PM +0200, Michael Walle wrote:
+>> >> +#define SL28CPLD_VERSION    0x03
+>> >> +#define SL28CPLD_WATCHDOG_BASE      0x04
+>> >> +#define SL28CPLD_HWMON_FAN_BASE     0x0b
+>> >> +#define SL28CPLD_PWM0_BASE  0x0c
+>> >> +#define SL28CPLD_PWM1_BASE  0x0e
+>> >> +#define SL28CPLD_GPIO0_BASE 0x10
+>> >> +#define SL28CPLD_GPIO1_BASE 0x15
+>> >> +#define SL28CPLD_GPO_BASE   0x1a
+>> >> +#define SL28CPLD_GPI_BASE   0x1b
+>> >> +#define SL28CPLD_INTC_BASE  0x1c
+>> >
+>> > If you want to use 'reg' in the binding, these are the numbers you
+>> > should be using rather than making up numbering!
+>> 
+>> My motivation is that I don't want to hardcode the internal addresses
+>> of the management controller in the device tree. For example if they
+>> will move around with a later update of the controller, so a driver 
+>> can
+>> be compatible with both the old and the new version. If they are in 
+>> the
+>> device tree, only one register layout is possible.
+> 
+> I don't understand, if the addresses change, then the above defines
+> have to change. So your driver is only compatible with 1 version. If
+> you change the CPLD, then that's a h/w change and your h/w description
+> (DT) should change. That can either be the compatible string changing
+> and updating the driver with new match data such as register offsets
+> or all the differences are in DT and there's no kernel change.
 
-Reviewed-by: Eric Anholt <eric@anholt.net>
+The CPLD and the board is designed in a way that it is possible to
+update and/or change its function (or parts of it). It must not be
+a hardware change, although I admit thats a bit of a grey area wether
+you treat it as hardware or "firmware". Anyway, yes you'd have to
+change the register offsets, but as this is code it might support
+different register offsets. For example you could dynamically add
+functionality, if there is a newer controller version while still
+being compatible with older versions.
+
+>> > However, I still don't think you need any child nodes. All the data in
+>> > the DT binding is right here in the driver already. There's no
+>> > advantage
+>> > to putting child nodes in DT, because this driver still has to be
+>> > updated if you add more nodes.
+>> 
+>> But then any phandle will reference the mfd device. And for example
+>> there
+>> are two different interrupt controllers, that is the INTC and the
+>> GPIO[01],
+>> which will then be combined into one device tree node, right?
+> 
+> You either have to add a cell for 'bank' or divide the 1st cell into a
+> bank and index. Both have been done before.
+
+But this won't work with watchdogs, correct? See
+https://lore.kernel.org/linux-devicetree/7acbb6d9b2240b1856136fa35c1318bf@walle.cc/
+
+> To go the other direction, AIUI you shouldn't need OF_MFD_CELL_REG
+> entries if you have the child devices in DT.
+
+This is a general problem IMHO. There are mfd drivers which have mfd
+cells and a device tree node associated with each cell. But it just
+works as long as there is only one sub device per unique compatible
+string. So you cannot have multiple mfd cells with the same
+compatible string.
+
+That being said, I can try to reimplement it using
+of_platform_populate() and its internal offset as its unit address.
+
+> Pick one way or the
+> other. It's ultimately a judgement call. For a one-off device, sub
+> devices in DT doesn't really buy you anything. If you have sub-blocks
+> showing up multiple devices, then sub devices makes sense. If there's
+> only 2-3 combinations, then it's a toss up.
+
+-michael
 
 _______________________________________________
 linux-arm-kernel mailing list
