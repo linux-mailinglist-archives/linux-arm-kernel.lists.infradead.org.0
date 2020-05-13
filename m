@@ -2,64 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 985331D1F0C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 21:26:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 861A61D1F3F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 21:31:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=QosgbfWuaLSzU6Ts2tFQgRcFUKO3jlm6eaX3ZKhh8XA=; b=GWWQwyL2LcR411Y1pieYamycv
-	EnDucHKIgi3/1mkWykfn8ftp6Xo7odIVBp0paxsM2P1cQpDgBa30CxCtTiYt/XYJrr3UPZkZW0OA/
-	1jtW91wnuvWLBtNui35J0LgwbyWPq9mIp6BbGJV8NrZS7Z4/LA1bfzueMNoX2usaTd2JLRMhQOpW5
-	BgkrLFcqM+KnzdWIsRWK/h2NWZjXdgn0kA8qT40OsBYc8Prc6A+jSYz+eNdZ8MT1FxgG07lIg35vB
-	EcMCCHYddeS5lrybeTeuSpsppfed64aN9FLOG7h0bQ5k6frq5lNqkF6cLewLM2npXx3hBu0BW+6gT
-	lAz1dZ/tQ==;
+	 bh=WCLpW3TZjI+iLBbd6U7UYZu/nzbhNPc8fJ3Gnkbk368=; b=nxweBaIDIW97Gk/CYPsjMtKJ4
+	XDqUEbdb+GBBQX6XrlHw0dDB6NNrFtqXTHgDu2KECjC98pfoEALbNL0qUh/+UGTl9MeI4F9tYmIFp
+	TeJj9HwbEOfMSIIWNwULFGUQd2pTVUJ5XIRVupQtjA+u6fZIjowOcQ9p/Y/vM6Fkp4YcjM3P/rUOU
+	wJ2Ubu1Vbtqn40+W0bLaaNH13AknUpdWjV1rLmQrm0MMvay19L1InE+mxonzyE1FE103TwkpQ1Nwc
+	7CrxsFEXyUtzRoCaEB9Re7osCfKNjdFWWSZE+wqOUCAdRmFP99iBI1vCNd4Na075NPq0aIGVNhEWX
+	0LTRAjNbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYx0s-0003BO-SC; Wed, 13 May 2020 19:25:54 +0000
-Received: from doppler.thel33t.co.uk ([185.153.207.61])
+	id 1jYx6T-0007e9-7z; Wed, 13 May 2020 19:31:41 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYx0k-0003AD-6i
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 19:25:48 +0000
-Received: from mail.solinno.uk (localhost [127.0.0.1])
- by doppler.thel33t.co.uk (Postfix) with ESMTP id BD21E20245;
- Wed, 13 May 2020 20:25:40 +0100 (BST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=solinno.co.uk; s=mail;
- t=1589397940; bh=I4fxPWoWa4iUfe2bsj9yjiAxjnJqPEQroqptPn34omM=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=ClqJ2ElAP6CwEjvmBiotxUwGUYbHRUFZUj5a8WsPB/t7v2Jxu3ex6zuoXPkKNTssC
- 0ycY3P4oQcF65BCFN0QWMUAvg5GHYCHQx5pKzPcMa4V8REas9tCdfb+T+k/LuWUxjt
- tWQk8G1iQKG36/Ag/1J+ulu8tEF0lQuXEGeKciMs=
+ id 1jYx6H-0007dE-OM
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 19:31:34 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589398292; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=Jp3WpGvzO6LMDEA2O3IfZQY0ziN9PbNzYX5Naj3D+N0=;
+ b=TCYAMkrw0azkql1GdmTHf9qZVXTnVZ6XxvIYEiTwvliOAyf/t7WAZaz7p4Y/2tuVl3JTiRTl
+ hi+C7zvg2d1C0Jvjh4LoWKVIqb2rTHzuRUtYD/OmEDQfIIP810GWxQTJrM5UoG8pqpby25GH
+ N8u8Zk4mNl22NE+rHjMJmVppWCQ=
+X-Mailgun-Sending-Ip: 104.130.122.27
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
+ by mxa.mailgun.org with ESMTP id 5ebc4b06.7f9c848ea810-smtp-out-n04;
+ Wed, 13 May 2020 19:31:18 -0000 (UTC)
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id B53DCC43636; Wed, 13 May 2020 19:31:17 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from [192.168.8.150] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 7383BC433F2;
+ Wed, 13 May 2020 19:31:15 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7383BC433F2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v1 4/4] scsi: ufs: Fix WriteBooster flush during runtime
+ suspend
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ jejb@linux.ibm.com
+References: <20200512104750.8711-1-stanley.chu@mediatek.com>
+ <20200512104750.8711-5-stanley.chu@mediatek.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <725d057c-2379-710e-287f-ac11a59c08bc@codeaurora.org>
+Date: Wed, 13 May 2020 12:31:14 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-Date: Wed, 13 May 2020 20:25:40 +0100
-From: Leigh Brown <leigh@solinno.co.uk>
-To: Marek Behun <marek.behun@nic.cz>
-Subject: Re: [PATCH mvebu-dt64] arm64: dts: armada-3720-turris-mox.dts: fix
- sdhci1 pins
-In-Reply-To: <20200513210825.0f8bc9ec@nic.cz>
-References: <20200513175648.GA7561@dumbo> <20200513210825.0f8bc9ec@nic.cz>
-User-Agent: Roundcube Webmail/1.4.3
-Message-ID: <e9c887dc72718aeff76b234f3dfacca8@solinno.co.uk>
-X-Sender: leigh@solinno.co.uk
+In-Reply-To: <20200512104750.8711-5-stanley.chu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_122546_537366_38E2AA38 
-X-CRM114-Status: GOOD (  13.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_123132_644525_A6C72551 
+X-CRM114-Status: GOOD (  28.81  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,56 +98,145 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Domenico Andreoli <domenico.andreoli@linux.com>,
- Gregory CLEMENT <gregory.clement@bootlin.com>, arm@kernel.org, soc@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgTWFyZWssCgpPbiAyMDIwLTA1LTEzIDIwOjA4LCBNYXJlayBCZWh1biB3cm90ZToKPiBIaSBE
-b21lbmljbywKPiAKPiBJIGFtIG5vdCBhd2FyZSBvZiBzdWNoIGJ1Zy4gVGhlIGxpbmsgZnJvbSB5
-b3UgbWVzc2FnZSBkb2VzIG5vdCB3b3JrIChpdAo+IHNheXMgTWVzc2FnZS1JRCA8MTY1ZmRlYjU1
-ODMwNjlkODkzNDM2ZTk1Y2FjNTQzNkBzb2xpbm5vLmNvLnVrPiBub3QKPiBmb3VuZCkuCgpUaGF0
-J3MgbXkgZG9tYWluIQoKPiBDb3VsZCB5b3UgcGxlYXNlIHJlc2VuZCB0aGUgbWVzc2FnZSBkZXNj
-cmliaW5nIHRoZSBwcm9ibGVtPwoKSSdtIGd1ZXNzaW5nIGl0J3MgdGhpcyBwcm9ibGVtIEkgcG9z
-dGVkOgoKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvcGlwZXJtYWlsL2xpbnV4LWFybS1rZXJu
-ZWwvMjAxOS1Ob3ZlbWJlci82OTY2NTguaHRtbAoKSSBjb25mZXNzIEkgZ2F2ZSB1cCBpbiB0aGUg
-ZW5kLiBJIHdpbGwgdHJ5IHRoaXMgcGF0Y2ggYW5kIHNlZSBpZiBpdCAKZml4ZXMgbXkgaXNzdWUu
-Cgo+IE1hcmVrCj4gCj4gT24gV2VkLCAxMyBNYXkgMjAyMCAxOTo1Njo0OCArMDIwMAo+IERvbWVu
-aWNvIEFuZHJlb2xpIDxkb21lbmljby5hbmRyZW9saUBsaW51eC5jb20+IHdyb3RlOgo+IAo+PiBG
-cm9tOiBEb21lbmljbyBBbmRyZW9saSA8ZG9tZW5pY28uYW5kcmVvbGlAbGludXguY29tPgo+PiAK
-Pj4gSW4gb3JkZXIgdG8gdXNlIHRoZSBzZGNhcmQgc2xvdCBvbiBUdXJyaXMgTU9YIGl0IGlzIG5l
-Y2Vzc2FyeSB0byBtdXgKPj4gdGhlIHNkaW8wIHBpbnMgaW4gdGhlIG5vcnRoLWJyaWRnZSwgd2hp
-Y2ggYXJlIGhlcmVpbiBhbHNvIGFkZGVkLgo+PiAKPj4gVGhpcyBmaXhlcyB0aGUgYm9vdCBwcm9i
-bGVtIHJlcG9ydGVkIGF0IFswXS4KPj4gCj4+IFNpZ25lZC1vZmYtYnk6IERvbWVuaWNvIEFuZHJl
-b2xpIDxkb21lbmljby5hbmRyZW9saUBsaW51eC5jb20+Cj4+IENjOiBHcmVnb3J5IENMRU1FTlQg
-PGdyZWdvcnkuY2xlbWVudEBib290bGluLmNvbT4KPj4gQ2M6ICJNYXJlayBCZWjDum4iIDxtYXJl
-ay5iZWh1bkBuaWMuY3o+Cj4+IENjOiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
-cmcKPj4gCj4+IFswXSAKPj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtYXJtLWtlcm5l
-bC8xNjVmZGViNTU4MzA2OWQ4OTM0MzZlOTVjYWM1NDM2QHNvbGlubm8uY28udWsvCj4+IAo+PiAt
-LS0KPj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzcyMC10dXJyaXMtbW94
-LmR0cyB8ICAgIDIgKy0KPj4gIGFyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzd4
-eC5kdHNpICAgICAgICAgICB8ICAgIDUgKysrKysKPj4gIDIgZmlsZXMgY2hhbmdlZCwgNiBpbnNl
-cnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4+IAo+PiBJbmRleDogYi9hcmNoL2FybTY0L2Jvb3Qv
-ZHRzL21hcnZlbGwvYXJtYWRhLTM3MjAtdHVycmlzLW1veC5kdHMKPj4gPT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQo+PiAt
-LS0gYS9hcmNoL2FybTY0L2Jvb3QvZHRzL21hcnZlbGwvYXJtYWRhLTM3MjAtdHVycmlzLW1veC5k
-dHMKPj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2FybWFkYS0zNzIwLXR1cnJp
-cy1tb3guZHRzCj4+IEBAIC0xNzMsNyArMTczLDcgQEAKPj4gCj4+ICAmc2RoY2kxIHsKPj4gIAlw
-aW5jdHJsLW5hbWVzID0gImRlZmF1bHQiOwo+PiAtCXBpbmN0cmwtMCA9IDwmc2Rpb19waW5zPjsK
-Pj4gKwlwaW5jdHJsLTAgPSA8JnNkaW8wX3BpbnMgJnNkaW9fcGlucz47Cj4+ICAJbm9uLXJlbW92
-YWJsZTsKPj4gIAlidXMtd2lkdGggPSA8ND47Cj4+ICAJbWFydmVsbCxwYWQtdHlwZSA9ICJzZCI7
-Cj4+IEluZGV4OiBiL2FyY2gvYXJtNjQvYm9vdC9kdHMvbWFydmVsbC9hcm1hZGEtMzd4eC5kdHNp
-Cj4+ID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09
-PT09PT09PT09PT09PT0KPj4gLS0tIGEvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2FybWFk
-YS0zN3h4LmR0c2kKPj4gKysrIGIvYXJjaC9hcm02NC9ib290L2R0cy9tYXJ2ZWxsL2FybWFkYS0z
-N3h4LmR0c2kKPj4gQEAgLTI0NCw2ICsyNDQsMTEgQEAKPj4gIAkJCQkJZ3JvdXBzID0gImVtbWNf
-bmIiOwo+PiAgCQkJCQlmdW5jdGlvbiA9ICJlbW1jIjsKPj4gIAkJCQl9Owo+PiArCj4+ICsJCQkJ
-c2RpbzBfcGluczogc2RpbzAtcGlucyB7Cj4+ICsJCQkJCWdyb3VwcyA9ICJzZGlvMCI7Cj4+ICsJ
-CQkJCWZ1bmN0aW9uID0gInNkaW8iOwo+PiArCQkJCX07Cj4+ICAJCQl9Owo+PiAKPj4gIAkJCW5i
-X3BtOiBzeXNjb25AMTQwMDAgewo+PiAKClJlZ2FyZHMsCgpMZWlnaC4KCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On 5/12/2020 3:47 AM, Stanley Chu wrote:
+> Currently UFS host driver promises VCC supply if UFS device
+> needs to do WriteBooster flush during runtime suspend.
+> 
+> However the UFS specification mentions,
+> 
+> "While the flushing operation is in progress, the device is
+> in Active power mode."
+> 
+> Therefore UFS host driver needs to promise more: Keep UFS
+> device as "Active power mode", otherwise UFS device shall not
+> do any flush if device enters Sleep or PowerDown power mode.
+> 
+> Fix this by not changing device power mode if WriteBooster
+> flush is required in ufshcd_suspend().
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> ---
+>   drivers/scsi/ufs/ufs.h    |  1 -
+>   drivers/scsi/ufs/ufshcd.c | 39 +++++++++++++++++++--------------------
+>   2 files changed, 19 insertions(+), 21 deletions(-)
+> 
+> diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
+> index b3135344ab3f..9e4bc2e97ada 100644
+> --- a/drivers/scsi/ufs/ufs.h
+> +++ b/drivers/scsi/ufs/ufs.h
+> @@ -577,7 +577,6 @@ struct ufs_dev_info {
+>   	u32 d_ext_ufs_feature_sup;
+>   	u8 b_wb_buffer_type;
+>   	u32 d_wb_alloc_units;
+> -	bool keep_vcc_on;
+>   	u8 b_presrv_uspc_en;
+>   };
+>   
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index 169a3379e468..2d0aff8ac260 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -8101,8 +8101,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba *hba)
+>   	    !hba->dev_info.is_lu_power_on_wp) {
+>   		ufshcd_setup_vreg(hba, false);
+>   	} else if (!ufshcd_is_ufs_dev_active(hba)) {
+> -		if (!hba->dev_info.keep_vcc_on)
+> -			ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
+> +		ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
+>   		if (!ufshcd_is_link_active(hba)) {
+>   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq);
+>   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq2);
+> @@ -8172,6 +8171,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>   	enum ufs_pm_level pm_lvl;
+>   	enum ufs_dev_pwr_mode req_dev_pwr_mode;
+>   	enum uic_link_state req_link_state;
+> +	bool keep_curr_dev_pwr_mode = false;
+>   
+>   	hba->pm_op_in_progress = 1;
+>   	if (!ufshcd_is_shutdown_pm(pm_op)) {
+> @@ -8226,28 +8226,27 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>   			/* make sure that auto bkops is disabled */
+>   			ufshcd_disable_auto_bkops(hba);
+>   		}
+> +
+Unnecessary newline, perhaps?
+>   		/*
+> -		 * With wb enabled, if the bkops is enabled or if the
+> -		 * configured WB type is 70% full, keep vcc ON
+> -		 * for the device to flush the wb buffer
+> +		 * If device needs to do BKOP or WB buffer flush, keep device
+> +		 * power mode as "active power mode" and its VCC supply.
+>   		 */
+> -		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
+> -		    ufshcd_wb_keep_vcc_on(hba))
+> -			hba->dev_info.keep_vcc_on = true;
+> -		else
+> -			hba->dev_info.keep_vcc_on = false;
+> -	} else {
+> -		hba->dev_info.keep_vcc_on = false;
+> +		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
+> +			ufshcd_wb_keep_vcc_on(hba);
+Should the device be in UFS_ACTIVE_PWR_MODE to perform auto-bkops?
+
+Also, is it needed to keep the device in UFS_ACTIVE_PWR_MODE , if flush 
+on hibern8 is enabled and the link is being put to hibern8 mode during 
+runtime-suspend? Perhaps that should also be factored in here?
+>   	}
+>   
+> -	if ((req_dev_pwr_mode != hba->curr_dev_pwr_mode) &&
+> -	    ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
+> -	    !ufshcd_is_runtime_pm(pm_op))) {
+> -		/* ensure that bkops is disabled */
+> -		ufshcd_disable_auto_bkops(hba);
+> -		ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
+> -		if (ret)
+> -			goto enable_gating;
+> +	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
+> +		if ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
+> +		    !ufshcd_is_runtime_pm(pm_op)) {
+> +			/* ensure that bkops is disabled */
+> +			ufshcd_disable_auto_bkops(hba);
+> +		}
+> +
+> +		if (!keep_curr_dev_pwr_mode) {
+> +			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
+
+Now, when the WB buffer is completely flushed out, the device should be 
+put back into UFS_SLEEP_PWR_MODE or UFS_POWERDOWN_PWR_MODE. Say, the 
+device buffer has to be flushed and during runtime-suspend, the device 
+is put to UFS_ACTIVE_PWR_MODE and Vcc is kept ON; the device doesn't 
+resume nor does the system enters suspend for a very long time, and with 
+AH8 and hibern8 disabled, there will be an unnecessary power drain for 
+that much time.
+
+How about a periodic interval checking of flush status if 
+keep_curr_dev_pwr_mode evaluates to be true?
+
+> +			if (ret)
+> +				goto enable_gating;
+> +		}
+>   	}
+>   
+>   	flush_work(&hba->eeh_work);
+> 
+
+
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
