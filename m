@@ -2,59 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421C21D19E2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:49:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ED571D19ED
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:51:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=apWXI8lGjU6jHrUjllHXSheMabfWYQlZzEJBZESBWhY=; b=KeI4b+t7mBWvyb
-	/IWraHDhlSxgjwMY9vGdtW1CrbjlPPAeR9bozGj23LbPdU05Yyi6wdEHKJpFM/5YI68GOXlqd7E7I
-	qddzAWHmnmqeaUSqW5tu3EYkv2tUyZa9uN7FvJaf6SL5teF62GKvSKg650POQO3ZCuGMPQlBTXKBu
-	AMgx3n/3XCbFq3c2ZbFXEhJZ4ZPwh2cIrJr2LwFLn6dbK4231elfQ5ftIBHTLFXg2UvdOkqghtdKn
-	3bcNeUk1VbRhbHq4wZIci8ZtDK3uBAz7WqySuKwZUt8roWaswa2PLHi2mG88uu6Fd7Y0eFvQl9Yms
-	Zptdm6PVmBGj51WzI6lg==;
+	List-Owner; bh=iz5ZoNpON168eYgRqUAveFF902Dq8fEpkghxhotCU7Y=; b=sZ42V/IjofTA2J
+	GqCUYXtBlrvsJ/gUUL0dOrEud/cr8MNH+TpcYIe7Oxweh/x13puUYHhzHcU/c89vMWxhE5KKuopG1
+	wWmBF2PRF0pZpWu2djhZ4LtP5c4yrWqmSv1SZ3gZRNIEgk3OvkkwW/SYRWTci49pblY0LOI0YYyB1
+	B7SiEJfdNkxdZqiy2CbblC2bO0ObEiB3eKDJl/lno53gPtIsdAiLiObu0ohZ+jkMfyH7n9Rp+h0r5
+	uEea922qGQBNJYrvghBtVMzlBeMuLt8E+H9/sq9lL5403ZEjyNb/YwnTPAatRo5OY/Bciqyho3Drm
+	2xnSWviDRgs7PRvQcfog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtd1-00033X-8U; Wed, 13 May 2020 15:49:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtcp-00032O-36
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:48:53 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE57B31B;
- Wed, 13 May 2020 08:48:49 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 649993F305;
- Wed, 13 May 2020 08:48:48 -0700 (PDT)
-Date: Wed, 13 May 2020 16:48:46 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
- documentation
-Message-ID: <20200513154845.GT21779@arm.com>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-24-catalin.marinas@arm.com>
- <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
- <20200504164617.GK30377@arm.com> <20200511164018.GC19176@gaia>
+	id 1jYtfL-00066Y-Mr; Wed, 13 May 2020 15:51:27 +0000
+Received: from mail-qt1-x832.google.com ([2607:f8b0:4864:20::832])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYtfC-00065u-Ca
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:51:19 +0000
+Received: by mail-qt1-x832.google.com with SMTP id o19so170279qtr.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 May 2020 08:51:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=rLEeAmSBwjT3ETZ4wrXG/Y/gbcP+c03guOC0q4Y8fXA=;
+ b=CxGZlnCeO8Z+6gWlkyNbL90JiSBlEzm6ThptrdmeTLYbrTmiUMlAF6eHDx9NV4zeGb
+ 6Rz3PQV5R2XN9pUf4xmN1IKVyaF3WVMHV2UboX5qGevLW946cEuuraERFw9eQEGrXbKC
+ ZEtxxPGYbrPUoeWB24ML8Lrx5iuNxW9EkzdqgnkAEasHh2uQH+0JMGCCrdUhLWCvQxBk
+ JnuFgJC9Q7HhNbdxW6kBxmZQg/NA4JNrsvfHwgltLePF6FTwiQ/6ToQYL4IHmpzv3H5S
+ y/cem8PayEiSqD2aA8SYbHiKZP+VpyM2Tnbb7hjAsHqXaRo4rS7TuE99ktMAowj5sh3E
+ V6OQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to;
+ bh=rLEeAmSBwjT3ETZ4wrXG/Y/gbcP+c03guOC0q4Y8fXA=;
+ b=d+REXFsjaySnIW/9R5T00khLUn1xW+wSz8nSG039J9LwSWukbnnqoCsjc12G6712ki
+ Ggvs3bnsuXrXY6WBLHZ1mKuF6aXTeU5QkaXTcJL69mWzhYI5AHWhNrr8P7kf52UJP7p9
+ UL9Xiez5YXZ9ZqnXlqifcBzIwvR62Ydj68pPv+fqbQUq8MD+ugj8tglv+j2LS5QXZUwa
+ DsNMgZ7wVPnWmyjGsDppH1V7RcpwxbF2oxxWwRYOgsQPowvag8vB4k/5pA1+3M0StciG
+ 95DVeKUz8tN+iedgwAYBfiqtTtRC4LMS6502Xng/00fahM2THhRzyPWfs415nbv2pxqq
+ jEbQ==
+X-Gm-Message-State: AGi0PuYOs65JArhTfL2hNuGIij6HfqqXYl0k8O95hXMJvAEBG9ESamNE
+ 3pKv+J9iGkTxKRUQbDSA9+g=
+X-Google-Smtp-Source: APiQypJBGgkxSgwM/jON7e/l0PAa64vx+SeoV9cMd7E3z4I3RW/6nSCOjOHbnOoiFOC7cea+rfzl7g==
+X-Received: by 2002:ac8:3664:: with SMTP id n33mr29399453qtb.363.1589385076554; 
+ Wed, 13 May 2020 08:51:16 -0700 (PDT)
+Received: from localhost ([2620:10d:c091:480::1:beb1])
+ by smtp.gmail.com with ESMTPSA id t88sm7645qtd.5.2020.05.13.08.51.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 08:51:15 -0700 (PDT)
+Date: Wed, 13 May 2020 11:51:14 -0400
+From: Tejun Heo <tj@kernel.org>
+To: Jan Stancek <jstancek@redhat.com>
+Subject: Re: =?utf-8?B?4p2MIEZBSUw=?= =?utf-8?Q?=3A?= Test report for
+ kernel?5.7.0-rc5-51f14e2.cki (arm-next)
+Message-ID: <20200513155114.GF16815@mtj.duckdns.org>
+References: <cki.495C39BD1A.T35Z6VDJPY@redhat.com>
+ <20200513060321.GA17433@willie-the-truck>
+ <1322199095.22739428.1589365183678.JavaMail.zimbra@redhat.com>
+ <1039472143.12305448.1589384415559.JavaMail.zimbra@redhat.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200511164018.GC19176@gaia>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1039472143.12305448.1589384415559.JavaMail.zimbra@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_084851_221130_E23F7A72 
-X-CRM114-Status: GOOD (  47.32  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_085118_423669_43F12A5C 
+X-CRM114-Status: GOOD (  13.60  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:832 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [htejun[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,225 +104,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: Veronika Kabatova <vkabatov@redhat.com>,
+ catalin marinas <catalin.marinas@arm.com>,
+ Memory Management <mm-qe@redhat.com>, LTP List <ltp@lists.linux.it>,
+ CKI Project <cki-project@redhat.com>, cgroups@vger.kernel.org,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 05:40:19PM +0100, Catalin Marinas wrote:
-> On Mon, May 04, 2020 at 05:46:17PM +0100, Dave P Martin wrote:
-> > On Thu, Apr 30, 2020 at 05:23:17PM +0100, Catalin Marinas wrote:
-> > > On Wed, Apr 29, 2020 at 05:47:05PM +0100, Dave P Martin wrote:
-> > > > On Tue, Apr 21, 2020 at 03:26:03PM +0100, Catalin Marinas wrote:
-> > > > > +- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
-> > > > > +  thread, asynchronously following one or multiple tag check faults,
-> > > > > +  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
-> > > > 
-> > > > For "current thread": that's a kernel concept.  For user-facing
-> > > > documentation, can we say "the offending thread" or similar?
-> > > > 
-> > > > For clarity, it's worth saying that the faulting address is not
-> > > > reported.  Or, we could be optimistic that someday this information will
-> > > > be available and say that si_addr is the faulting address if available,
-> > > > with 0 meaning the address is not available.
-> > > > 
-> > > > Maybe (void *)-1 would be better duff address, but I can't see it
-> > > > mattering much.  If there's already precedent for si_addr==0 elsewhere,
-> > > > it makes sense to follow it.
-> > > 
-> > > At a quick grep, I can see a few instances on other architectures where
-> > > si_addr==0. I'll add a comment here.
-> > 
-> > OK, cool
-> > 
-> > Except: what if we're in PR_MTE_TCF_ASYNC mode.  If the SIGSEGV handler
-> > triggers an asynchronous MTE fault itself, we could then get into a
-> > spin.  Hmm.
+On Wed, May 13, 2020 at 11:40:15AM -0400, Jan Stancek wrote:
+> In LTP issue above it was clear that memory controller is in use.
+> Here it looks like some lingering reference to cpuset controller
+> that can't be seen in sysfs.
 > 
-> How do we handle standard segfaults here? Presumably a signal handler
-> can trigger a SIGSEGV itself.
-
-This is similar to the problem is a data abort inside the data abort
-handler.  It can of course happen, but if you don't want this to be
-fatal then you code the handler carefully so this can't happen.
-
-> > I take it we drain any pending MTE faults when crossing EL boundaries?
+> It's triggered by podman tests actually:
+> 1. run podman tests
+> 2. mount -t cgroup -ocpuset cpuset /mnt/cpuset/ -> EBUSY
 > 
-> We clear the hardware bit on entry to EL1 from EL0 and set a TIF flag.
+> # mount | grep cgroup
+> cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,seclabel)
 > 
-> > In that case, an asynchronous MTE fault pending at sigreturn must have
-> > been caused by the signal handler.  We could make that particular case
-> > of MTE_AERR a force_sig.
+> # grep cpuset -r /sys/fs/cgroup/
+> /sys/fs/cgroup/cgroup.controllers:cpuset cpu io memory pids
 > 
-> We clear the TIF flag when delivering the signal. I don't think there is
-> a way for the kernel to detect when it is running in a signal handler.
-> sigreturn() is not mandatory either.
-
-I guess we can put up with this signal not being fatal then.
-
-If you have a SEGV handler at all, you're supposed to code it carefully.
-
-This brings us back to force_sig for SERR and a normal signal for AERR.
-That's probably OK.
-
+> And yet, v1 cgroup fails to mount:
 > 
-> > > > > +**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
-> > > > > +are only checked if the current thread tag checking mode is
-> > > > > +PR_MTE_TCF_SYNC.
-> > > > 
-> > > > Vague?  Can we make a precise statement about when the kernel will and
-> > > > won't check such accesses?  And aren't there limitations (like use of
-> > > > get_user_pages() etc.)?
-> > > 
-> > > We could make it slightly clearer by say "kernel accesses to the user
-> > > address space".
-> > 
-> > That's not the ambiguity.
-> > 
-> > My question is
-> > 
-> > 1) Does the kernel guarantee not to check tags on kernel accesses to
-> > user memory without PR_MTE_TCF_SYNC?
-> 
-> For ASYNC and NONE, yes, we can guarantee this.
-> 
-> > 2) Does the kernel guarantee to check tags on kernel accesses to user
-> > memory with PR_MTE_TCF_SYNC?
-> 
-> I'd say yes but it depends on how much knowledge one has about the
-> syscall implementation. If it's access to user address directly, it
-> would be checked. If it goes via get_user_pages(), it won't. Since the
-> user doesn't need to have knowledge of the kernel internals, you are
-> right that we don't guarantee this.
+> # mount -t cgroup -ocpuset cpuset /mnt/cpuset/
+> mount: /mnt/cpuset: cpuset already mounted or mount point busy.
 
-So, from userspace it's not guaranteed.
+While if a regression it may point to a newly introduced behavior, in
+general, dynamically reassigning cgroup controllers to a different version
+hierarchy after active use is not something fully supported. From cgroup2
+documentation:
 
-This is what I'd describe as "making best efforts", but not a guarantee.
+  A controller can be moved across hierarchies only after the controller is
+  no longer referenced in its current hierarchy. Because per-cgroup
+  controller states are destroyed asynchronously and controllers may have
+  lingering references, a controller may not show up immediately on the v2
+  hierarchy after the final umount of the previous hierarchy. Similarly, a
+  controller should be fully disabled to be moved out of the unified
+  hierarchy and it may take some time for the disabled controller to become
+  available for other hierarchies; furthermore, due to inter-controller
+  dependencies, other controllers may need to be disabled too.
 
-> > In practice, this note sounds to be more like a kernel implementation
-> > detail rather than advice to userspace.
-> > 
-> > Would it make sense to say something like:
-> > 
-> >  * PR_MTE_TCF_NONE: the kernel does not check tags for kernel accesses
-> >    to use memory done by syscalls in the thread.
-> > 
-> >  * PR_MTE_TCF_ASYNC: the kernel may check some tags for kernel accesses
-> >    to user memory done by syscalls.  (Should we guarantee that such
-> >    faults are reported synchronously on syscall exit?  In practice I
-> >    think they are.  Should we use SEGV_MTESERR in this case?  Perhaps
-> >    it's not worth making this a special case.)
-> 
-> Both NONE and ASYNC are now the same for kernel uaccess - not checked.
->
-> For background information, I decided against ASYNC uaccess checking
-> since (1) there are some cases where the kernel overreads
-> (strncpy_from_user) and (2) we don't normally generate SIGSEGV on
-> uaccess but rather return -EFAULT. The latter is not possible to contain
-> since we only learn about the fault asynchronously, usually after the
-> transfer.
+  While useful for development and manual configurations, moving controllers
+  dynamically between the v2 and other hierarchies is strongly discouraged
+  for production use. It is recommended to decide the hierarchies and
+  controller associations before starting using the controllers after system
+  boot.
 
-I may be missing something here.  Do we still rely on the hardware to
-detect tag mismatches in kernel accesses to user memory?  I was assuming
-we do some kind of explicit checking, but now I think that's nonsense
-(except for get_user_pages() etc.)
+Thanks.
 
-
-Since MTE is a new opt-in feature, I think we might have the option to
-report failures with SIGSEGV instead of -EFAULT.  This seems exactly to
-implement the concept of an asynchronous versus synchronous error. 
-
-The kernel may not normally do this, but software usually doesn't use
-raw syscalls.  In reality "syscalls" can trigger a SIGSEGV in the libc
-wrapper anyway.  From the caller's point of view the whole thing is a
-black box.
-
-Probably needs discussion with the bionic / glibc folks though (though
-likely this has been discussed already...)
-
-
-My concern is that the spirit of asynchrous checking in the architecture
-is that accesses _are_ checked, and we seem to be breaking that
-principle here.
-
-Although MTE's guarantees are statistical, based on small random numbers
-not matching, this imperfection is quite different from systematically
-not checking at all, ever, on certain major code paths.
-
-> 
-> >  * PR_MTE_TCF_SYNC: the kernel makes best efforts to check tags for
-> >    kernel accesses to user memory done by the syscalls, but does not
-> >    guarantee to check everything (or does it?  I thought we can't really
-> >    do that for some odd cases...)
-> 
-> It doesn't. I'll add some notes along the lines of your text above.
-
-OK
-
-> > > > > +excludes all tags other than 0. A user thread can enable specific tags
-> > > > > +in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
-> > > > > +flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
-> > > > > +in the ``PR_MTE_TAG_MASK`` bit-field.
-> > > > > +
-> > > > > +**Note**: The hardware uses an exclude mask but the ``prctl()``
-> > > > > +interface provides an include mask. An include mask of ``0`` (exclusion
-> > > > > +mask ``0xffff``) results in the CPU always generating tag ``0``.
-> > > > 
-> > > > Is there no way to make this default to 1 rather than having a magic
-> > > > meaning for 0?
-> > > 
-> > > We follow the hardware behaviour where 0xffff and 0xfffe give the same
-> > > result.
-> > 
-> > Exposing this through a purely software interface seems a bit odd:
-> > because the exclude mask is privileged-access-only, the architecture
-> > could amend it to assign a different meaning to 0xffff, providing this
-> > was an opt-in change.  Then we'd have to make a mess here.
-> 
-> You have a point. An include mask of 0 translates to an exclude mask of
-> 0xffff as per the current patches. If the hardware gains support for one
-> more bit (32 colours), old software running on new hardware may run into
-> unexpected results with an exclude mask of 0xffff.
-> 
-> > Can't we just forbid the nonsense value 0 here, or are there other
-> > reasons why that's problematic?
-> 
-> It was just easier to start with a default. I wonder whether we should
-> actually switch back to the exclude mask, as per the hardware
-> definition. This way 0 would mean all tags allowed. We can still
-> disallow 0xffff as an exclude mask.
-
-If the number of bits might grow, I guess we can make the exclude mask
-full-width.
-
-For example, the hardware can trivially exclude tags 16 and up, because
-they don't exist anyway.
-
-Similarly, the hardware can trivially include tags 16 and up: inclusion
-only means that the hardware is allowed to generate them, not that it
-guarantees to.
-
-The only configuration that doesn't make sense is "no tags allowed", so
-I'd argue for explicity blocking that, even if the architeture alises
-that encoding to something else.
-
-If we prefer 0 as a default value so that init inherits the correct
-value from the kernel without any special acrobatics, then we make it an
-exclude mask, with the semantics that the hardware is allowed to
-generate any of these tags, but does not have to be capable of
-generating all of them.
-
-Make sense?  This is bikeshedding from my end...
-
-
-Cheers
----Dave
+-- 
+tejun
 
 _______________________________________________
 linux-arm-kernel mailing list
