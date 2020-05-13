@@ -2,57 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3383B1D17C2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:38:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE56D1D17D5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:43:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wAkImB2SUd7UQy4l6rj6rr2L16zJrsatQe0G3aXzDt4=; b=MHzeEzN7M2ZJlu
-	jneu3shmpHj3lC7IlahcvyMcWDe9HDbVPojrBjmrvxd/2pTYkdvd/Vwzlyn8Tta8fA570MtN7fYWy
-	m3ZDiHtKnnCRGP2DL1zLJGayfJ9T0B6s3nLCF/kccd69ZkUJwrQ4W10NAPWdHCu/ejKC/Xe4nP9AR
-	zdY7FrzAayUYpD554EE6EIWOcjY7KuoL/BSwkSFhxG7GlJ1eog00I4nFZ/neqcSPKQv2MZaX7kND+
-	Uc+0pj798UcCwX9lGxEu2gJmUY22oAje+f2IQJYhS3NGfZgxhPw0epSLPEUMVkvg5c8/e4kMOiba7
-	WWa6TwUFqOaMkd71hXYQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=gVlAGikAzpHUWKvY5SdeT6/khrj8R1s4/1Me4yloNmE=; b=M45Hk60y1SAj1eTiuHZJvY/Bu
+	ep2CFG3GaJdrA7n93nSm9SB2gWsz4O5JQiVGZX3JRs55zZ2zU2ZsmN9zh19k2OLOqsuN1BTm3+F32
+	xIQvNXeoMQDy0A7RZ2hpYLq48Ij4LCB9IxkenvOroGS2NB/QSDSDE2q7zPI+HMNG0PWErzR66nwrW
+	8Da3BKmQ0feOVVIiytWTj+BIbn5FucbQJfWkmdXkOEnRUXYH91aLwbWJpiJV8j8WVNrqposPid9JE
+	/MnETzLoFDLzLHTznBwgRrUvWRR7vdi4JF+qYvLyv82sd2fFy1NjdwXHMZ0purISP4W0pMKaiBdo6
+	Rwl9R+H2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYsWc-0006tS-L4; Wed, 13 May 2020 14:38:22 +0000
-Received: from mx2.suse.de ([195.135.220.15])
+	id 1jYsbC-0001bl-PO; Wed, 13 May 2020 14:43:06 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYsWK-0006ko-HB
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:38:07 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx2.suse.de (Postfix) with ESMTP id 0F268ADF8;
- Wed, 13 May 2020 14:38:01 +0000 (UTC)
-Date: Wed, 13 May 2020 16:37:55 +0200
-From: Petr Mladek <pmladek@suse.com>
-To: Alper Nebi Yasak <alpernebiyasak@gmail.com>
-Subject: Re: [RFC PATCH v2 0/3] Prefer working VT console over SPCR and
- device-tree chosen stdout-path
-Message-ID: <20200513143755.GM17734@linux-b0ei>
-References: <20200430161438.17640-1-alpernebiyasak@gmail.com>
+ id 1jYsb4-0001bG-18
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:43:00 +0000
+Received: from localhost (p5486CF35.dip0.t-ipconnect.de [84.134.207.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D094A207D5;
+ Wed, 13 May 2020 14:42:56 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589380977;
+ bh=zHZKVOQrw4iw1BYZotmmbCpHSm3rHNSI8b2j1BlvFYA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=mvXJRT2oJSavng4jGGwzEFhHegydiclz8aPDt0QP1O1szj+96SM3Yk7nkkc8UZfYj
+ XXLax2E1kLirXPhiZwHSP8AQ1KkAhN0sygzJqxmioG4IGUY7q2t/sKRd37eAtrRVcW
+ HrdeG5laMpYZK9LOfM+nI0xX5K/T0d8jO+TIj6wE=
+Date: Wed, 13 May 2020 16:42:54 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Andrew Lunn <andrew@lunn.ch>
+Subject: Re: [PATCH] i2c: pxa: implement generic i2c bus recovery
+Message-ID: <20200513144254.GA7446@ninjato>
+References: <E1jYnlI-0002Nw-83@rmk-PC.armlinux.org.uk>
+ <20200513131843.GB499265@lunn.ch>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200430161438.17640-1-alpernebiyasak@gmail.com>
+In-Reply-To: <20200513131843.GB499265@lunn.ch>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_073804_879905_A2CABC72 
-X-CRM114-Status: GOOD (  23.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_074258_092672_B30A7A8D 
+X-CRM114-Status: GOOD (  11.27  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [195.135.220.15 listed in wl.mailspike.net]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,149 +76,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Feng Tang <feng.tang@intel.com>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Eric Biggers <ebiggers@google.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Nicolas Pitre <nico@fluxnic.net>, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Daniel Vetter <daniel.vetter@ffwll.ch>,
- Sergey Senozhatsky <sergey.senozhatsky@gmail.com>,
- Arvind Sankar <nivedita@alum.mit.edu>, Grzegorz Halat <ghalat@redhat.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- Lukas Wunner <lukas@wunner.de>, Andrew Morton <akpm@linux-foundation.org>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- Sam Ravnborg <sam@ravnborg.org>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Gregory Clement <gregory.clement@bootlin.com>,
+ Vladimir Vid <vladimir.vid@sartura.hr>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Rob Herring <robh+dt@kernel.org>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Content-Type: multipart/mixed; boundary="===============5213517439445978438=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 2020-04-30 19:14:34, Alper Nebi Yasak wrote:
-> I recently experienced some trouble with setting up an encrypted-root
-> system, my Chromebook Plus (rk3399-gru-kevin, ARM64) would appear to
-> hang where it should have asked for an encryption passphrase; and I
-> eventually figured out that the kernel preferred the serial port
-> (inaccessible to me) over the built-in working display/keyboard and was
-> probably asking there.
-> 
-> Running plymouth in the initramfs solves that specific problem, but
-> both the documentation and tty-related kconfig descriptions imply that
-> /dev/console should be tty0 if graphics are working, CONFIG_VT_CONSOLE
-> is enabled and no explicit console argument is given in the kernel
-> commandline.
-> 
-> However, I'm seeing different behaviour on systems with SPCR (as in QEMU
-> aarch64 virtual machines) and/or a device-tree chosen stdout-path node
-> (as in most arm/arm64 devices). On these machines, depending on the
-> console argument, the contents of the /proc/consoles file are:
 
-I dug many times into the history of the console registration code.
-The following table mostly confirms my expectations.
+--===============5213517439445978438==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="FCuugMFkClbJLl1L"
+Content-Disposition: inline
 
 
->                     |     "console=tty0"    |    (no console arg)   |
->   ------------------+-----------------------+-----------------------+
->   QEMU VM           | tty0     -WU (EC p  ) | ttyAMA0  -W- (EC   a) |
->   (w/ SPCR)         | ttyAMA0  -W- (E    a) |
->   |
+--FCuugMFkClbJLl1L
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-The SPCR handling is inconsistent over architectures, see
-https://lkml.kernel.org/r/20180830123849.26163-1-prarit@redhat.com
+On Wed, May 13, 2020 at 03:18:43PM +0200, Andrew Lunn wrote:
+> On Wed, May 13, 2020 at 10:33:12AM +0100, Russell King wrote:
+> > Implement generic GPIO-based I2C bus recovery for the PXA I2C driver.
+>=20
+> Hi Russell
+>=20
+> I assume this is going to be merged via i2c? So Wolfram Sang?  He is
+> not on To: or Cc:
 
-IMHO, arm developers decided that consoles defined by SPCR are always
-enabled when existing.
-
-In 1st column: tty0 is the preferred console because it is defined
-on the commandline.
-
-In 2nd column: tty0 is not enabled at all because another console was
-defined by SPCR. Note that ttySX and ttyX consoles are registered only
-as a fallback when there is no other console defined.
-
-The following code is responsible for the fallback, see register_console()
-
-	/*
-	 *	See if we want to use this console driver. If we
-	 *	didn't select a console we take the first one
-	 *	that registers here.
-	 */
-	if (!has_preferred) {
-		if (newcon->index < 0)
-			newcon->index = 0;
-		if (newcon->setup == NULL ||
-		    newcon->setup(newcon, NULL) == 0) {
-			newcon->flags |= CON_ENABLED;
-			if (newcon->device) {
-				newcon->flags |= CON_CONSDEV;
-				has_preferred = true;
-			}
-		}
-	}
+But I read the i2c list :) I know some maintainers request CC, but I am
+fine as long as it is on the list.
 
 
->   ------------------+-----------------------+-----------------------+
->   Chromebook Plus   | tty0     -WU (EC p  ) | ttyS2    -W- (EC p a) |
->   (w/ stdout-path)  |                       | tty0     -WU (E     ) |
+--FCuugMFkClbJLl1L
+Content-Type: application/pgp-signature; name="signature.asc"
 
-Hmm, of_console_check() explicitly ignores the console defined by
-stdout-path when there is a console on the commandline. This explains
-1st column.
+-----BEGIN PGP SIGNATURE-----
 
-I am not sure about 2nd column. My guess is that ttyX consoles are
-tried first. tty0 is registered as a fallback because there is no
-other console at the moment. ttyS2 is tried later and it is
-registered because it is in stdout-patch and there is no console
-in the command line. It is somehow consistent with  CONFIG_VT_CONSOLE
-description.
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl68B2oACgkQFA3kzBSg
+KbYAhg/+KOJpSs2n9SV0i9OsvjhuoQNKYIuQKFbNAyoFkDrIOxv473cx4JA89DeF
+FdwdSA5p0K3hqzXyb2Mp+NFTHW6BdHrkEROUbJnR5GkAdWW/lT7qjfrfRDaMvO71
+BGMn7mRwVb1eU0bzIsxZjMEQ7rDxREMn9FLmwfvlvE9CJ3tZkp0PU5vYQ7oR6481
++Syn6EusLFjH4Jb3HJdNI+6HVSe9wPSCul8E8vWgj9n9dXr78WMtAnKzpm+x1RZy
+gfaNVDQtMtWCX3wcdQCGegBumZ9H2CUJ56CIERdn3p4BmCUJX1sm5M+ZprhfLdeI
+9JHZIYi5rxLnbe737mntlHQ/BcJgkTRQgldPre9IE91a98QV/UL5v+4YXSGTa9TK
++BDs0oQFin7ZrOkq5330SsdPzs5CVDoYsjD2VYmy8k7DTLU2ArYmkusBTiRKwBnB
+SKFas7O+LVNEQyX+qJ+rmf2nqZGDBXKui02t7BQm+UoGq59Qw2PSVh9C2jinaRh3
+1auy5B1LN2pUXpiQnliwllO63bE+yVBBey3vPx/AkXh+Fu+a25h+N7F2lItIeWMo
+94/PHne8JInu29fkK/lKYDo71T8XpDIVEEqLG9iNAbTzInbXMB3CCDvoqj3IjhFa
+Uki43KWsNZ0RkqhCWGG0XZf1r6rhtbyXJIET6VwIXDeFYE1fjJU=
+=SnWv
+-----END PGP SIGNATURE-----
 
-Sadly, it is different logic than with SPCR :-(
-
-
->   ------------------+-----------------------+-----------------------+
->   Chromebook Plus   | tty0     -WU (EC p  ) | tty0     -WU (EC p  ) |
->   (w/o either)      |                       |                       |
->   ------------------+-----------------------+-----------------------+
-
-This variant is easy and everyone would probably expect this.
+--FCuugMFkClbJLl1L--
 
 
-Regarding the description of CONFIG_VT_CONSOLE option. I am afraid
-that it was created and true only before SPCR and device tree support
-was introduced.
-
-
-Now, it is really sad that SPCR and device tree have different
-behavior even across architectures. But I am afraid that we could
-not change it without breaking many setups.
-
-The only common rules are:
-
-   + The last console on the command line should always be the
-     preferred one when defined.
-
-   + Consoles defined by the device (SPCR, device tree) are used
-     when there is no commandline.
-
-   + ttyX or ttySX are used as a fallback when nothing else is defined.
-
-
-My suggestion is:
-
-   + Fix SPCR setting or device tree of your device when the defaults
-     are not as expected.
-
-   + Use command line to force your value when the defaults are not
-     as expected and you could not change them.
-
-
-I am afraid that we could not fix your problem on the kernel side. It
-would broke other setups that depend on the existing behavior.
-
-Best Regards,
-Petr
+--===============5213517439445978438==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5213517439445978438==--
+
