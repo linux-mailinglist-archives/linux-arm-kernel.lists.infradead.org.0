@@ -2,61 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 359171D1BCE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:02:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0087F1D1BC9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:02:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZhVw3znSAOpnSoKmjMh1pL2PAHkKre8j2nN1NlCJnto=; b=gFAH85OUjAgcIW
-	0vpHd3HGlaeA0R2ScBPAfo7jQJasHidpM+YxPUR8/WyLi833SYWgcuvMO8qNXiPOl1ZPP/5PaYin3
-	VqJqtlK1F6+N+rCElTM2K1sxkC2JY4owvhLxfDlpGxC4sszhLp7kSXtHdLFs+dVqOjCFfP1CeWqbM
-	cvJIJLkZ1GYEkNRrjQQOkzNYNWuBliYhIwn7NJZwsroejD2dI3lCjrkumBTs1R19HdyMl21YVwbN2
-	keVch30S8KuBFZ+SpYaIvlYZR/o2243fKAhdwOS23IH96mBRAQRFjCG5snQA8FoPYOyfLUofOe89P
-	FXe3vhVKG9f3qH7qRemg==;
+	List-Owner; bh=OS1pndfrOGi5UeoXZD5piQJ+1q5JRd9Xwg8RPhCg6gM=; b=A+BsR80OpIECkP
+	Esq/sCPOTHkHuvjc3PMMe2IYE3e95kgHRgaa3AUc2MXBPPA71wyByYb8vw9Gc5n5erfvPrtToAAFr
+	+xtF+7YyadpZXRiKPkrr0OaOcKmg9qHQn6TrTwTcetz9ShusRC0xftBTdUnrkQ2tJntlO/xkc3ipl
+	58H6igxLpIQJjYq8VoZ21Ics65yQ/ICQY6YCVQ/O5fQVOB9GuwMTjWc9Gvylvv3CAyVSE40R0eN1I
+	wRFwq0mdYECRwTPaVZdJkmodtlM+mhrXGYjyzMGDLMMKnWCO+zJnDKDeQAGVd6cXHy6mRLomZRCHz
+	Hw9iQ2IewLF9cDDEf7XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYum9-0002hb-1w; Wed, 13 May 2020 17:02:33 +0000
-Received: from smtp10.smtpout.orange.fr ([80.12.242.132]
- helo=smtp.smtpout.orange.fr)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYulW-0002IB-7D
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:01:55 +0000
-Received: from belgarion.home ([86.210.245.36]) by mwinf5d19 with ME
- id eH1a220030nqnCN03H1r6W; Wed, 13 May 2020 19:01:52 +0200
-X-ME-Helo: belgarion.home
-X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
-X-ME-Date: Wed, 13 May 2020 19:01:52 +0200
-X-ME-IP: 86.210.245.36
-From: Robert Jarzmik <robert.jarzmik@free.fr>
-To: Arnd Bergmann <arnd@arndb.de>, Miquel Raynal <miquel.raynal@bootlin.com>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- Mike Rapoport <mike@compulab.co.il>
-Subject: [PATCH 2/2] MAINTAINERS: pxa: remove Compulab arm/pxa support
-Date: Wed, 13 May 2020 19:01:32 +0200
-Message-Id: <20200513170132.1446-2-robert.jarzmik@free.fr>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200513170132.1446-1-robert.jarzmik@free.fr>
-References: <20200513170132.1446-1-robert.jarzmik@free.fr>
+	id 1jYulh-0002JU-SU; Wed, 13 May 2020 17:02:05 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYulV-0002Hu-4M
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:01:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CAED030E;
+ Wed, 13 May 2020 10:01:50 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.13])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC54E3F305;
+ Wed, 13 May 2020 10:01:48 -0700 (PDT)
+Date: Wed, 13 May 2020 18:01:38 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v3 02/20] arm64: dts: arm: Fix node address fields
+Message-ID: <20200513170128.GA27686@bogus>
+References: <20200513103016.130417-1-andre.przywara@arm.com>
+ <20200513103016.130417-3-andre.przywara@arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20200513103016.130417-3-andre.przywara@arm.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_100154_538927_22C3930B 
-X-CRM114-Status: GOOD (  11.00  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200513_100153_218321_7844E2EA 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.12.242.132 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [80.12.242.132 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [robert.jarzmik[at]free.fr]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,41 +64,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robert Jarzmik <robert.jarzmik@free.fr>,
- linux-mtd <linux-mtd@lists.infradead.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, devicetree@vger.kernel.org,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-These boards support is removed from the kernel, so remove the
-MAINTAINERS entry for them.
+On Wed, May 13, 2020 at 11:29:58AM +0100, Andre Przywara wrote:
+> The Arm Ltd. boards were using an outdated address convention in the DT
+> node names, by separating the high from the low 32-bits of an address by
+> a comma.
+>
+> Remove the comma from the node name suffix to be DT spec compliant.
+>
 
-Signed-off-by: Robert Jarzmik <robert.jarzmik@free.fr>
----
- MAINTAINERS | 5 -----
- 1 file changed, 5 deletions(-)
+As Robin pointed out before, this was the requirement back then. I assume
+it is no longer true.
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 091ec22c1a23..ad58388fa822 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1684,11 +1684,6 @@ S:	Maintained
- T:	git git://git.armlinux.org.uk/~rmk/linux-arm.git clkdev
- F:	drivers/clk/clkdev.c
- 
--ARM/COMPULAB CM-X270/EM-X270 and CM-X300 MACHINE SUPPORT
--M:	Mike Rapoport <mike@compulab.co.il>
--L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
--S:	Maintained
--
- ARM/CONEXANT DIGICOLOR MACHINE SUPPORT
- M:	Baruch Siach <baruch@tkos.co.il>
- L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
 -- 
-2.26.2
-
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
