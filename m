@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C2D71D20FB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 23:26:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E86DE1D20FF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 23:26:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=47Y7CJbBsNhuTLvfjzEhQz00f9qt1fq1eDxjl+gmEcU=; b=Nn89BVfTzx3+6W
-	JF+77/OsfcgXAXvSooCteAC1uQQouEqNzcNtKzVqg4Jt2X8Sqs9f3hgXyO/gz1k7l4EXDujZCnxkE
-	2bVD3LJ2HKkW7Ko8rDJi/JsI5uizDYiHeJnT5iWJaYAXflxbJIfY58AtPdozKbRLIWRDFpzJ1RIPL
-	xHb2CkId5JE3Np2KKc221AmKtoXWjWYzdCWP93fYb+uY5pknSxI5+wUEA+m/vIlmN+Pl5r8/lQ/7S
-	0P4MFPEp/G+nzvwatVyErk5hKElF/exEV2YbDNuRLynnV9/lfMhNslmFa/xSJR5lXXSqEtNXn4cE3
-	BouAWSO3SSElgaVk1W8A==;
+	List-Owner; bh=1UcxUQSOJs0Q9wmP4+qQNd3W9V/J6FTO2G+z3E0uiQU=; b=CPHIppi6HSex1N
+	ERh7274v4pcHtiTQaQkIysUJa6zMFABuNMO+YWQC/ZfWj8nNLU7wCFZO/mtRbodZV17oE3uxC/T7R
+	caG+m7q4Wh1cN4rnrJpX6nivyS+VHlYp03h1Yd4vz2+Ivn77gIpLGEArPuvjUVKHW1AwDKgi4JAVU
+	SztTd5DO0qL48DPrRAvyN5vTjpftrhNVi/5kMWrxKZ2LOVIC0D5Zj0SExKIUylcTWsEnSGLxi6zIX
+	zKBsuwPPx6P7xAqhX73U8D4G7J/q1cXtpQ9Oo5QN1RN/J4u336R/X5n8Nnpd6UGx5hhAtIhcjkmM7
+	K84ybgTDL78Hnv/XKTuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYyt9-00006b-IE; Wed, 13 May 2020 21:26:03 +0000
+	id 1jYytj-0000b6-Um; Wed, 13 May 2020 21:26:39 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYys6-0005Lf-Hu
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 21:25:01 +0000
+ id 1jYys9-0005N4-LE
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 21:25:03 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1589405096; bh=EGlnhGF9HFzfhNynA3a7K3hCeMUdwmy+scXIROM79hs=;
+ t=1589405097; bh=dAtOpoYajZP7C0pqSSKpj9PSQkj8wPGyufOsCnWHi+I=;
  h=From:To:Cc:Subject:Date:References:From;
- b=WKFWqdKGe/1UtrdK8Qxu+U/Xkc69HyrKL129zl+D9hMucBoLVpby0z4N0/Vbk8fDh
- kEvdYTTsJ3AOFUqTT7BM0+9kl41DX7U+3Z+SCwTaWFsoDZeJ8ECtvnYR4nom3k6sEz
- OIz6p1lX9YD5uOUqYBVVqzYbue4KiGI32nqhh5HA=
+ b=jwel8EOthc8Nk5hqZACkDug6Vh+fBrG5B+CM1pAJr5awcf+Vv60s7JQN/muNtC2p5
+ m4pgb1D2FllBTyO06nOCgwzfm9odoyqlaNMVbCK9rrnKV2Of0UHjRlXasxmjdrxgMZ
+ TSW+cChDYyqg/omHwxLV0dVwvNR++GbkrxTGpu6o=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com, Thierry Reding <thierry.reding@gmail.com>,
  Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Linus Walleij <linus.walleij@linaro.org>, Icenowy Zheng <icenowy@aosc.io>
-Subject: [PATCH v3 4/5] arm64: dts: sun50i-a64-pinephone: Enable LCD support
- on PinePhone
-Date: Wed, 13 May 2020 23:24:50 +0200
-Message-Id: <20200513212451.1919013-5-megous@megous.com>
+Subject: [PATCH v3 5/5] arm64: dts: sun50i-a64-pinephone: Add touchscreen
+ support
+Date: Wed, 13 May 2020 23:24:51 +0200
+Message-Id: <20200513212451.1919013-6-megous@megous.com>
 In-Reply-To: <20200513212451.1919013-1-megous@megous.com>
 References: <20200513212451.1919013-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_142458_763056_5D2B2677 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20200513_142501_881061_F42D4921 
+X-CRM114-Status: UNSURE (   8.84  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -80,109 +81,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Icenowy Zheng <icenowy@aosc.io>
+Pinephone has a Goodix GT917S capacitive touchscreen controller on
+I2C0 bus. Add support for it.
 
-PinePhone uses PWM backlight and a XBD599 LCD panel over DSI for
-display.
-
-Backlight levels curve was optimized by Martijn Braam using a
-lux meter.
-
-Add its device nodes.
-
-Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
-Signed-off-by: Martijn Braam <martijn@brixit.nl>
 Signed-off-by: Ondrej Jirman <megous@megous.com>
 ---
- .../allwinner/sun50i-a64-pinephone-1.1.dts    | 19 ++++++++++
- .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 35 +++++++++++++++++++
- 2 files changed, 54 insertions(+)
+ .../dts/allwinner/sun50i-a64-pinephone.dtsi   | 19 +++++++++++++++++++
+ 1 file changed, 19 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
-index 06a775c41664..3e99a87e9ce5 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone-1.1.dts
-@@ -9,3 +9,22 @@ / {
- 	model = "Pine64 PinePhone Braveheart (1.1)";
- 	compatible = "pine64,pinephone-1.1", "allwinner,sun50i-a64";
- };
-+
-+&backlight {
-+	power-supply = <&reg_ldo_io0>;
-+	/*
-+	 * PWM backlight circuit on this PinePhone revision was changed since
-+	 * 1.0, and the lowest PWM duty cycle that doesn't lead to backlight
-+	 * being off is around 20%. Duty cycle for the lowest brightness level
-+	 * also varries quite a bit between individual boards, so the lowest
-+	 * value here was chosen as a safe default.
-+	 */
-+	brightness-levels = <
-+		774  793  814  842
-+		882  935  1003 1088
-+		1192 1316 1462 1633
-+		1830 2054 2309 2596
-+		2916 3271 3664 4096>;
-+	num-interpolated-steps = <50>;
-+	default-brightness-level = <400>;
-+};
 diff --git a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-index cefda145c3c9..e60b57f8ac14 100644
+index e60b57f8ac14..6b2ff431cddb 100644
 --- a/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
 +++ b/arch/arm64/boot/dts/allwinner/sun50i-a64-pinephone.dtsi
-@@ -16,6 +16,13 @@ aliases {
- 		serial0 = &uart0;
- 	};
- 
-+	backlight: backlight {
-+		compatible = "pwm-backlight";
-+		pwms = <&r_pwm 0 50000 PWM_POLARITY_INVERTED>;
-+		enable-gpios = <&pio 7 10 GPIO_ACTIVE_HIGH>; /* PH10 */
-+		/* Backlight configuration differs per PinePhone revision. */
-+	};
-+
- 	chosen {
- 		stdout-path = "serial0:115200n8";
- 	};
-@@ -84,6 +91,30 @@ &dai {
+@@ -123,6 +123,25 @@ &ehci1 {
  	status = "okay";
  };
  
-+&de {
-+	status = "okay";
-+};
-+
-+&dphy {
-+	status = "okay";
-+};
-+
-+&dsi {
-+	vcc-dsi-supply = <&reg_dldo1>;
-+	#address-cells = <1>;
-+	#size-cells = <0>;
++&i2c0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&i2c0_pins>;
 +	status = "okay";
 +
-+	panel@0 {
-+		compatible = "xingbangda,xbd599", "sitronix,st7703";
-+		reg = <0>;
-+		reset-gpios = <&pio 3 23 GPIO_ACTIVE_LOW>; /* PD23 */
-+		iovcc-supply = <&reg_dldo2>;
-+		vcc-supply = <&reg_ldo_io0>;
-+		backlight = <&backlight>;
++	touchscreen@5d {
++		compatible = "goodix,gt917s", "goodix,gt911";
++		reg = <0x5d>;
++		interrupt-parent = <&pio>;
++		interrupts = <7 4 IRQ_TYPE_LEVEL_HIGH>; /* PH4 */
++		irq-gpios = <&pio 7 4 GPIO_ACTIVE_HIGH>; /* PH4 */
++		reset-gpios = <&pio 7 11 GPIO_ACTIVE_HIGH>; /* PH11 */
++		AVDD28-supply = <&reg_ldo_io0>;
++		VDDIO-supply = <&reg_ldo_io0>;
++		touchscreen-size-x = <720>;
++		touchscreen-size-y = <1440>;
 +	};
 +};
 +
- &ehci0 {
- 	status = "okay";
- };
-@@ -188,6 +219,10 @@ &r_pio {
- 	 */
- };
- 
-+&r_pwm {
-+	status = "okay";
-+};
-+
- &r_rsb {
+ &i2c1 {
  	status = "okay";
  
 -- 
