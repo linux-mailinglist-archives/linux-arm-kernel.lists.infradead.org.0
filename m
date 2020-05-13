@@ -2,58 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B83E1D1C40
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:28:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 91FBD1D1C81
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 19:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BqcjJDBxcrlJlUWkir17chcLBeY3xdmGEzLkZAnn+ek=; b=qS0v5Yqip3l/sP
-	GK4xHyoGQE9pDy3GIbewk20ytvOd04FNCjc8RX5L7WCUxHLqQyHKg2NVnDA6zc0rNlrDzXDiOR/1r
-	GWdGYRUhkMfT31M+9keDdafhVXxWpMOvZhCfN3XQUA0b76JwAVptPMVyIM8tDjZFsxxg+koTqzujl
-	x4ZG0BHyFbww3uEshoPAYLMDNcfCNxY57HSeBZsBFDZH0J0Gl69EU1Jp6lXUN7f4R4vxlcuOX2jNX
-	eHqhJF0AQ/lF2iKAz9JHaIdx6zZdZBcyGuRpZ1FFtr7qyNgEQral9yJ8FJIOBKqUuXSOdtUFys7WS
-	ACDpIf978w0ULf6Naohg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nr9r8NVq7J/+Wrhmb1Pfd+cUQdRPT2Ic4LXKatfsmuY=; b=aqDf9peAq6ZbADdZqx2SCa4x5
+	XQmbnhPSN+fktoFLr4aijv2SlWrFI5tk5X/VTuxZ6lS2MT8LhZ4mll/xBX4QICT6Ad6kZau4xJaQ5
+	7+KZokb2KAuUXXVpxSSsiU+N1OV2UgTtqn5DJ/KJq0cvMVnrjh79TXyiGRFXBSHuDfLWJmx07iOVq
+	NDXd+HlCyZg/gM+SpAIOq48rlaJFYNgOUz98nhEr2hJba6ali0XYd2d8XWy6dDMw96VsK1Uv3FHXW
+	Y824Wl2Lf4dvBl1aF6EcfSN/xM86COq0a+/F9Pj5pfuOi1i9oN1B66KUFGwBtmdn5E4/UsYyj8Wtm
+	Ku+VrsLCg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYvAn-0005TT-80; Wed, 13 May 2020 17:28:01 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYvAd-0005T9-4v
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:27:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4AA7F30E;
- Wed, 13 May 2020 10:27:49 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EE1453F305;
- Wed, 13 May 2020 10:27:47 -0700 (PDT)
-Date: Wed, 13 May 2020 18:27:45 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Peter Collingbourne <pcc@google.com>
-Subject: Re: [PATCH v3] arm64: Expose original FAR_EL1 value in sigcontext
-Message-ID: <20200513172745.GX21779@arm.com>
-References: <20200325174001.234803-1-pcc@google.com>
- <20200327191915.257116-1-pcc@google.com>
- <20200504101930.GG30377@arm.com>
- <CAMn1gO4j3T5HjhZ32-mtMoXoKJkUKPxG_FWVdAFx6nOCOw3r_A@mail.gmail.com>
+	id 1jYvPe-0006oj-Pn; Wed, 13 May 2020 17:43:22 +0000
+Received: from mail-dm6nam12on2041.outbound.protection.outlook.com
+ ([40.107.243.41] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYvPW-0006nx-Hl
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 17:43:15 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=bTPKDMiCEy6GL2JjQMGwZVPc14LEZy4ZjGVFKNAXCGaB7iU02GwjxPVtBMHkAe86zDIkh8+14LH+It/H1jZ2KR1X63ptVF4l9XKIWpU3WDEPK4SpOBb3SPH3yM5d7r0D5K3JHQMNq0hW8QUdcECaLawo9jhyuahIx+2ead4BNHsiGwBtTRVNVpSne1rDYuA2jhtSXZTlp3bp8CKK2R/sjGRSxQXkRNGgIWnolxxC7EnZsM+S+baQSNc9K9yBUEUZh3w03r+ETQhUtaM/5ubQnFN3NLTJFdewKEaj+qUFXbPz2sFjzRnfwvswXH71mzJAR5w9zmp9eBNcxco9aBel7Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Z1DfoWz7F4vbMNNDsJudkCNRhSxtdthZCkwzpo3379g=;
+ b=eWbWQdRL2bn/EwjD1Kvrgp3vCrHo0DDQJWbeHmddjxO+NCNWAzhswdTdkqFnbQFyeWvgW6vaCZFhcYNxOp6jNDIGjYWCAws40wXVOPEm5T3eMc1XB0mcXJvGEynB4z0ZEmTLf3yDo4nirJoQXT94s7x4o8vZtckRloD74K/dTJM+hLBgPwfMnvsWlvPD9R731HMWjY+RO2Zyt9YlXpl2tnFqM9Ip5uJeYTYvFE9tznVBW4iUAM15DGzPU+EK/j25O7G3zYC5juFtiZHxemDdt+KL/NOmPo8oIQH1TWYX0m+h3lruJMkVuUU10yteYTR883mZFlRVeqLj+kfXb1huAQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=wanadoo.fr smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Z1DfoWz7F4vbMNNDsJudkCNRhSxtdthZCkwzpo3379g=;
+ b=RAeLCaiUz9P57oWeqhlY+7mRAbrCEPyy+Kl8mX798h39f57yygJ7aguNsn/E9i4xbNHQX+geMiq7LzzGGrqb7oIGvGZCcR7agznC+L6updYDZ3d6ymAjDMI2ELQKzoC8dnPUIRsBXXQCukdpq+9yKtkckKAf2iGZX5Z7Bb3Rlrk=
+Received: from MN2PR10CA0001.namprd10.prod.outlook.com (2603:10b6:208:120::14)
+ by BY5PR02MB6177.namprd02.prod.outlook.com (2603:10b6:a03:1b0::18)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.24; Wed, 13 May
+ 2020 17:43:09 +0000
+Received: from BL2NAM02FT044.eop-nam02.prod.protection.outlook.com
+ (2603:10b6:208:120:cafe::15) by MN2PR10CA0001.outlook.office365.com
+ (2603:10b6:208:120::14) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20 via Frontend
+ Transport; Wed, 13 May 2020 17:43:09 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; wanadoo.fr; dkim=none (message not signed)
+ header.d=none;wanadoo.fr; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ BL2NAM02FT044.mail.protection.outlook.com (10.152.77.35) with Microsoft SMTP
+ Server id 15.20.2979.29 via Frontend Transport; Wed, 13 May 2020 17:43:09
+ +0000
+Received: from [149.199.38.66] (port=60787 helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.90)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1jYvP9-0007Yn-0n; Wed, 13 May 2020 10:42:51 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <jolly.shah@xilinx.com>)
+ id 1jYvPQ-0000dM-RP; Wed, 13 May 2020 10:43:08 -0700
+Received: from xsj-pvapsmtp01 (smtp-fallback.xilinx.com [149.199.38.66] (may
+ be forged))
+ by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id 04DHh0GP012428; 
+ Wed, 13 May 2020 10:43:00 -0700
+Received: from [10.23.124.238] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <jollys@xilinx.com>)
+ id 1jYvPI-0000bN-BF; Wed, 13 May 2020 10:43:00 -0700
+Subject: Re: [PATCH] firmware: xilinx: Fix an error handling path in
+ 'zynqmp_firmware_probe()'
+To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ michal.simek@xilinx.com, rajan.vaja@xilinx.com, jolly.shah@xilinx.com,
+ gregkh@linuxfoundation.org, tejas.patel@xilinx.com,
+ manish.narani@xilinx.com, ravi.patel@xilinx.com
+References: <20200510130357.233364-1-christophe.jaillet@wanadoo.fr>
+From: Jolly Shah <jolly.shah@xilinx.com>
+Message-ID: <248faa4d-4f85-343b-16ab-fac3f4761dc7@xilinx.com>
+Date: Wed, 13 May 2020 10:42:59 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:68.0)
+ Gecko/20100101 Thunderbird/68.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAMn1gO4j3T5HjhZ32-mtMoXoKJkUKPxG_FWVdAFx6nOCOw3r_A@mail.gmail.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200510130357.233364-1-christophe.jaillet@wanadoo.fr>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; CTRY:US; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:xsj-pvapsmtpgw01; PTR:unknown-60-83.xilinx.com; CAT:NONE;
+ SFTY:;
+ SFS:(39860400002)(136003)(396003)(376002)(346002)(46966005)(33430700001)(47076004)(36756003)(33440700001)(478600001)(426003)(336012)(70586007)(70206006)(356005)(81166007)(2906002)(4326008)(82310400002)(82740400003)(9786002)(8676002)(316002)(8936002)(31696002)(6636002)(186003)(26005)(44832011)(53546011)(31686004)(5660300002)(2616005)(42866002)(43740500002);
+ DIR:OUT; SFP:1101; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: bd8f83e6-49c3-4490-3b22-08d7f76519c9
+X-MS-TrafficTypeDiagnostic: BY5PR02MB6177:
+X-Microsoft-Antispam-PRVS: <BY5PR02MB617714659A5990B5B84D92E4B8BF0@BY5PR02MB6177.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 0402872DA1
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: fO+zwL7Y/odOKyKzymdC0jBm5uxSUpkKqfmL8YxRiDLdJDuK3P/tk97DMTVsD3ZXVnujzOXDg4MROKZXoyaFqbCcUp1rwV35fWK/+thyHUi1EtcuMC7aHOcKCnIySBUI7MybnsWcuLWDysef/pXAaxQBbbUc5vufsyMhlu5gyz/2A7KGKNTl2FTEhHuNtef5s00vbVsHWSqF/+Av8lQ+v14rAGIhxVDd5A696ATIuHCGqE9nKd5Po+HEdvxEGiV7Mk1/gY4F0WwrYFBmD1gO2TKl0MvQIlQgC76ac6P7AbnW5jSTB80bCdNKg+PQlpsFlQjjvq9eN3rpR5iSdYlTK0x35SBs8GNWNK3LO7vga6+WXiid6He2LHruUXPpLPiDXX+7rpGN9vkDm2q5GofFpNjjfVSvCpUy3IpTMpOGUVDr9F9FOj8S9I0W9vZdh24PruPWUCN2CAKjT6FczzXbh1QXQVCkpGTBB/d0E5DUcn6nnKmHKsynbTdIlRmKjkq5XvyJoZHbwRz2eJpLLhRm9SgFhA3+xI2fGFqKjxerc4lkiWzIm/cBXLBFVw6vQsmqOaM7wY3KHVy2KilCf2Ir4m/xXbOPzZ7CGs/QUUb5nMx9DalP2k44QKL8PK9AZqiU
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 May 2020 17:43:09.2510 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: bd8f83e6-49c3-4490-3b22-08d7f76519c9
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR02MB6177
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_102751_277246_EA3E254A 
-X-CRM114-Status: GOOD (  35.44  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_104314_591236_3E53F56B 
+X-CRM114-Status: GOOD (  22.74  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.243.41 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.243.41 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,156 +147,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Kostya Serebryany <kcc@google.com>,
- Evgenii Stepanov <eugenis@google.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Richard Henderson <rth@twiddle.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 10:55:02AM -0700, Peter Collingbourne wrote:
-> On Mon, May 4, 2020 at 3:19 AM Dave Martin <Dave.Martin@arm.com> wrote:
-> >
-> > On Fri, Mar 27, 2020 at 12:19:15PM -0700, Peter Collingbourne wrote:
-> > > The kernel currently clears the tag bits (i.e. bits 56-63) in the fault
-> > > address exposed via siginfo.si_addr and sigcontext.fault_address. However,
-> > > the tag bits may be needed by tools in order to accurately diagnose
-> > > memory errors, such as HWASan [1] or future tools based on the Memory
-> > > Tagging Extension (MTE).
-> > >
-> > > We should not stop clearing these bits in the existing fault address
-> > > fields, because there may be existing userspace applications that are
-> > > expecting the tag bits to be cleared. Instead, create a far_context in
-> > > sigcontext (similar to the existing esr_context), and store the original
-> > > value of FAR_EL1 (including the tag bits) there.
-> > >
-> > > [1] http://clang.llvm.org/docs/HardwareAssistedAddressSanitizerDesign.html
-> > >
-> > > Signed-off-by: Peter Collingbourne <pcc@google.com>
-> > > ---
-> > > v3:
-> > > - add documentation to tagged-pointers.rst
-> > > - update comments in sigcontext.h
-> > >
-> > > v2:
-> > > - revert changes to hw_breakpoint.c
-> > > - rename set_thread_esr to set_thread_far_esr
-> > >
-> > >  Documentation/arm64/tagged-pointers.rst  | 17 +++++----
-> > >  arch/arm64/include/asm/exception.h       |  2 +-
-> > >  arch/arm64/include/asm/processor.h       |  2 +-
-> > >  arch/arm64/include/uapi/asm/sigcontext.h | 21 +++++++----
-> > >  arch/arm64/kernel/entry-common.c         |  2 --
-> > >  arch/arm64/kernel/signal.c               | 20 ++++++++++-
-> > >  arch/arm64/mm/fault.c                    | 45 ++++++++++++++----------
-> > >  7 files changed, 74 insertions(+), 35 deletions(-)
-> >
-> > [...]
-> >
-> > > diff --git a/arch/arm64/include/uapi/asm/sigcontext.h b/arch/arm64/include/uapi/asm/sigcontext.h
-> > > index 8b0ebce92427..6782394633cb 100644
-> > > --- a/arch/arm64/include/uapi/asm/sigcontext.h
-> > > +++ b/arch/arm64/include/uapi/asm/sigcontext.h
-> > > @@ -44,11 +44,12 @@ struct sigcontext {
-> > >   *
-> > >   *   0x210           fpsimd_context
-> > >   *    0x10           esr_context
-> > > + *    0x10           far_context
-> > >   *   0x8a0           sve_context (vl <= 64) (optional)
-> > >   *    0x20           extra_context (optional)
-> > >   *    0x10           terminator (null _aarch64_ctx)
-> > >   *
-> > > - *   0x510           (reserved for future allocation)
-> > > + *   0x500           (reserved for future allocation)
-> > >   *
-> > >   * New records that can exceed this space need to be opt-in for userspace, so
-> > >   * that an expanded signal frame is not generated unexpectedly.  The mechanism
-> > > @@ -94,17 +95,25 @@ struct esr_context {
-> > >       __u64 esr;
-> > >  };
-> > >
-> > > +/* FAR_EL1 context */
-> > > +#define FAR_MAGIC    0x46415201
-> > > +
-> > > +struct far_context {
-> > > +     struct _aarch64_ctx head;
-> > > +     __u64 far;
-> > > +};
-> > > +
-> > >  /*
-> > >   * extra_context: describes extra space in the signal frame for
-> > >   * additional structures that don't fit in sigcontext.__reserved[].
-> > >   *
-> > >   * Note:
-> > >   *
-> > > - * 1) fpsimd_context, esr_context and extra_context must be placed in
-> > > - * sigcontext.__reserved[] if present.  They cannot be placed in the
-> > > - * extra space.  Any other record can be placed either in the extra
-> > > - * space or in sigcontext.__reserved[], unless otherwise specified in
-> > > - * this file.
-> > > + * 1) fpsimd_context, esr_context, far_context and extra_context must be
-> > > + * placed in sigcontext.__reserved[] if present.  They cannot be placed
-> > > + * in the extra space.  Any other record can be placed either in the
-> > > + * extra space or in sigcontext.__reserved[], unless otherwise specified
-> > > + * in this file.
-> >
-> > This is for backwards compatibility only.  We don't need this constraint
-> > for any new field, so you can probably leave the paragraph as-is.
-> >
-> > Removing this would mean constraint would mean that userspace must be
-> > prepared to traverse extra_context when looking for far_context.  But
-> > really we want modern userspace to do this anyway, since it reduces
-> > backwards compatibilty worries when adding more new records in the
-> > future.
+Reviewed-by: Jolly Shah <jolly.shah@xilinx.com>
+
+ > ------Original Message------
+ > From: Christophe Jaillet <christophe.jaillet@wanadoo.fr>
+ > Sent:  Sunday, May 10, 2020 6:03AM
+ > To: Michal Simek <michal.simek@xilinx.com>, Rajan Vaja 
+<rajan.vaja@xilinx.com>, Jolly Shah <jolly.shah@xilinx.com>, 'Greg Kh' 
+<gregkh@linuxfoundation.org>, Tejas Patel <tejas.patel@xilinx.com>, 
+Manish Narani <manish.narani@xilinx.com>, Ravi Patel <ravi.patel@xilinx.com>
+ > Cc: Linux-arm-kernel@lists.infradead.org 
+<linux-arm-kernel@lists.infradead.org>, Linux-kernel@vger.kernel.org 
+<linux-kernel@vger.kernel.org>, Kernel-janitors 
+<kernel-janitors@vger.kernel.org>, Christophe Jaillet 
+<christophe.jaillet@wanadoo.fr>
+ > Subject: [PATCH] firmware: xilinx: Fix an error handling path in 
+'zynqmp_firmware_probe()'
+ >
+> If 'mfd_add_devices()' fails, we must undo 'zynqmp_pm_api_debugfs_init()'
+> otherwise some debugfs directory and files will be left.
 > 
-> My original reason for updating this comment was that I figured that
-> this record was small enough that we could just always include it in
-> __reserved.
+> Just move the call to 'zynqmp_pm_api_debugfs_init()' a few lines below to
+> fix the issue.
 > 
-> But thinking about this a bit more, it doesn't seem that just wanting
-> userspace to read extra_context will guarantee that it will do so. In
-> practice, it would be easy to write userspace code that works right
-> now but doesn't read extra_context correctly (either because
-> extra_context wasn't considered at all, or because the code purporting
-> to read the record from extra_context contains a latent bug because it
-> wasn't exercised). Since we may be practically constrained from moving
-> the record anyway, we might as well document it and allow the
-> userspace code to be a little simpler.
+> Fixes: e23d9c6d0d49 ("drivers: soc: xilinx: Add ZynqMP power domain driver")
+> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+> ---
+> Not related to this fix, but I think that:
+>     - a call to 'of_platform_depopulate()' is missing in the remove function
+>     - we shouldn't return of_platform_populate(); directly because we
+>       don't have the opportunity to call 'mfd_remove_devices()' as done in
+>       the remove function, and 'of_platform_depopulate()' for what have
+>       been populated yet
 > 
-> I guess one alternative is that we always place this record in
-> extra_context, which would force userspace to read it correctly. That
-> has something of the opposite problem (userspace code could be written
-> to only expect the record in extra_context), but at least we're less
-> constrained there, and it's more likely that the code would be parsing
-> __reserved correctly since it would need to do so in order to find
-> extra_context.
+> I'm not familiar with this API, so I just point it out to get feedback.
+
+Agree. This needs to be fixed.
+
+Thanks,
+Jolly Shah
+
+
+> ---
+>   drivers/firmware/xilinx/zynqmp.c | 4 ++--
+>   1 file changed, 2 insertions(+), 2 deletions(-)
 > 
-> Anyway, I've reverted the comment change for now in v4, but let me
-> know what you think.
-
-Apologies for the delay in responding -- I think it does make sense to
-reserve space in __reserved[] for the new record, the the location you
-suggested for it is sensible.
-
-__reserved[] is a scarce resource, and should only be burned on "small"
-records, but far_context is small.
-
-
-here's another reason too, which is that we don't want to needlessly
-block new software from using this field without allocating larger
-stacks -- not least because they just won't, and the problem won't
-bite them until much later.
-
-
-Hope that helps clarify things.
-
-Cheers
----Dave
+> diff --git a/drivers/firmware/xilinx/zynqmp.c b/drivers/firmware/xilinx/zynqmp.c
+> index 8095fa84d5d7..8d1ff2454e2e 100644
+> --- a/drivers/firmware/xilinx/zynqmp.c
+> +++ b/drivers/firmware/xilinx/zynqmp.c
+> @@ -1235,8 +1235,6 @@ static int zynqmp_firmware_probe(struct platform_device *pdev)
+>   	pr_info("%s Trustzone version v%d.%d\n", __func__,
+>   		pm_tz_version >> 16, pm_tz_version & 0xFFFF);
+>   
+> -	zynqmp_pm_api_debugfs_init();
+> -
+>   	ret = mfd_add_devices(&pdev->dev, PLATFORM_DEVID_NONE, firmware_devs,
+>   			      ARRAY_SIZE(firmware_devs), NULL, 0, NULL);
+>   	if (ret) {
+> @@ -1244,6 +1242,8 @@ static int zynqmp_firmware_probe(struct platform_device *pdev)
+>   		return ret;
+>   	}
+>   
+> +	zynqmp_pm_api_debugfs_init();
+> +
+>   	return of_platform_populate(dev->of_node, NULL, NULL, dev);
+>   }
+>   
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
