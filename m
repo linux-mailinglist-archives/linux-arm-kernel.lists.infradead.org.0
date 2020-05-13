@@ -2,73 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A24501D1658
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:47:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B49A1D165A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:47:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ab62Zomrt4Q/wToMz6gt53JH+sflVPd7T03Va/0GAic=; b=AXweMPT75+iZ5s
-	In8nBiZ6KiczNa9lUWArJNii36TLuaJpVRY9jjaM891agDR7Ad4x8JhakJoyqANGw9aKWssFy6jbt
-	gT+iYaYm0Qest5X/nmoD0MomYNods7x3nRYfNeO8706pGXCRd3Eg3caLdGtJarZOWrI4HZtr07uJL
-	FC8h0BcTIAfgZwm8wBMx5GG8Es1o7yxLZR2DTxjAwLSaQYrCxYtt+jTWwtJUu6owMhzu0Fi7ebnyJ
-	/wWB7Au8JOPsAwlgCCZmbHQKLKJd4zeX+4sqOAvA8URxVl/5Ah5Ia3AtQDgD39qGWdpuRfuRgxi5m
-	lkJo+nWt2muf64vRFihA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=n0pUc5AAiaxBh+fKMILsDh5RKPHmF/1cFX1kjFtDLEc=; b=e5L2gfVQnEFPMf
+	VoVFsWLYnTPzL5vbvs0C1gVKPSQ5MTgxEoC4jGIlpNslgBlbM63UH+eXh0DE6ucA42r6fP/vCsioO
+	NxqVPwHtQqsPW3z3XXTFVSh8KY00RxQsfJjcBQPrY6eXhoaBTKF22gqHsiW0BJBCJLoguS6y+cJnT
+	50g07RSQ4pdhhP3e9yv37OtDZxGsG/7EdcHvs3rHedNv/GFVeKvF6owWjhKqaQIU0qdktH8JjFsDF
+	LegwMt7BDOkDLzN6ctS54U70EK1LsAYyaXjbbXbJKZFMqV3Ib9VyGTPisKOjPGKVjs0vzg0uAoVzz
+	uwA3PD68+Hj55ClyqchQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYrjD-0003ki-Lm; Wed, 13 May 2020 13:47:19 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1jYrjT-00042Q-CR; Wed, 13 May 2020 13:47:35 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrZq-0007by-H0
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:37:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=CT8QafuNU7nLW58gRG75IH2d/SNOoLj5Pkh6RsDK2u0=; b=DB1u96VASarFExlYVvTN2K4FF
- YcWgO4N/Pv/7rjUwfqYgwZzwFq83aUexyQlS0nCAYIIXLmIB+NxaVmv4qU+wi8Gg9CjGaX/JyUX5f
- KfEkgGylGwbYY1gc5y+4a3myt/YWd09VH4dnEhbYWl3ZT3wAo9hJCw51Q2bm/7feFrrai2HMkHBSV
- +rhzet+/uD9KCl+EkC/RpgUKU27k9nbKLwfvMorD16UTwETE/H3U/9TiQTJjqZsPm2BYynJ5ALsfz
- smTKoZptXIo9MJ7w/bvIachtZYcbNozvC47ygP4FLFac2zgGFgVCjdEgoiydosTgWsg4SosQaQv7o
- K2jOKiUZg==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:59948)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1jYrZe-0004jS-7F; Wed, 13 May 2020 14:37:26 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1jYrZb-0007oW-Ux; Wed, 13 May 2020 14:37:23 +0100
-Date: Wed, 13 May 2020 14:37:23 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Andrew Lunn <andrew@lunn.ch>
-Subject: Re: [PATCH] i2c: pxa: implement generic i2c bus recovery
-Message-ID: <20200513133722.GJ1551@shell.armlinux.org.uk>
-References: <E1jYnlI-0002Nw-83@rmk-PC.armlinux.org.uk>
- <20200513131843.GB499265@lunn.ch>
+ id 1jYrds-0005Ac-VR
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:41:55 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589377308; x=1620913308;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=Ljm8FnjZM8LY8xetHtTmei+qyvIsUSSDg5bKQj+0eQ0=;
+ b=wgfMihJE7uQWMJeESA3BI0u9CY5WRvS/0mQO6oi6o5Eg9DE6/yz/Z8dw
+ sFYu0eVwtcrCfDYVtosXO/eAkNYz1OJ3qZgmCpBueqjoY7m5yc68NGNI/
+ LMJ2rhtrpEHllVPbU9NXEgCE4COOcK3tJL6rI70wJe+d1mx3P9DGoAbX+
+ N8TrvZtMfwJ1e/k0DYf+2jJIsYIAAXmqejti4Xf91/+mXFJ7OpcrKxXqD
+ 6SUhJypCrJ1QYEF6+L+y6P95WCHmTkan8XTOKs9iCdPjduq1Adjmh7qJm
+ tvTY3ma683hXwbSjGxD6CtoEvvOQqOvRrYpk7fUtVCto219wySmUbqzji g==;
+IronPort-SDR: 2uLuxLcwbwuCg9ZVdYVZrouOLP901++0WbRqO6zMCR7luuHQE7Q5QuEc5Mo7b7xPMeLj8sL3sh
+ Nn3NzBQ7Hw5atCOsK68D3mDKxUKS1Mo7xIChiyL9W4eLAnxI6JIYxSFBu/NaeIV7Q5LIJpT3kf
+ 6Bd6KthtC7PUkKRXoKY/Qgliva20tyHHnAE/ES7ZeZvSdthJBsP4cW/TqudgAytiH7IVH3CLlT
+ E7tjkCJ0CevPJ52DUAajhHAMV/mMDBCt/F7bTBjXPSFCe/ztmq7ZYRhiRgls84pZ5xcwk/aW+9
+ i9U=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="79444197"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 06:41:47 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 06:41:50 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 06:41:48 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Guenter Roeck <linux@roeck-us.net>, SoC Team <soc@kernel.org>
+Subject: [PATCH 0/3] hwmon: Adding support for Microchip Sparx5 SoC
+Date: Wed, 13 May 2020 15:41:37 +0200
+Message-ID: <20200513134140.25357-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200513131843.GB499265@lunn.ch>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_063738_784359_BAC95783 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200513_064149_038974_EA0989A1 
+X-CRM114-Status: UNSURE (   8.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -87,34 +90,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Vladimir Vid <vladimir.vid@sartura.hr>, Rob Herring <robh+dt@kernel.org>,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
+Cc: linux-hwmon@vger.kernel.org, devicetree@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 03:18:43PM +0200, Andrew Lunn wrote:
-> On Wed, May 13, 2020 at 10:33:12AM +0100, Russell King wrote:
-> > Implement generic GPIO-based I2C bus recovery for the PXA I2C driver.
-> 
-> Hi Russell
-> 
-> I assume this is going to be merged via i2c? So Wolfram Sang?  He is
-> not on To: or Cc:
+This is an add-on series to the main SoC Sparx5 series
+(Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
 
-Yes, just as my other patches I've posted to the linux-i2c list that
-Wolfram has picked up.  I think he works from patchwork.
+It is expected that the DT patches are to be taken directly by the arm-soc
+maintainers.
 
-I assume Wolfram doesn't want to be Cc'd, as per the current setup in
-MAINTAINERS.  If that's not the case, MAINTAINERS needs to be fixed.
+Lars Povlsen (3):
+  dt-bindings: hwmon: Add Sparx5 temperature sensor
+  arm64: dts: sparx5: Add hwmon temperature sensor
+  hwmon: sparx5: Add Sparx5 SoC temperature driver
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
+ .../bindings/hwmon/microchip,sparx5-temp.yaml |  39 +++++
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     |   6 +
+ drivers/hwmon/Kconfig                         |  10 ++
+ drivers/hwmon/Makefile                        |   2 +-
+ drivers/hwmon/sparx5-temp.c                   | 154 ++++++++++++++++++
+ 5 files changed, 210 insertions(+), 1 deletion(-)
+ create mode 100644 Documentation/devicetree/bindings/hwmon/microchip,sparx5-temp.yaml
+ create mode 100644 drivers/hwmon/sparx5-temp.c
+
+--
+2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
