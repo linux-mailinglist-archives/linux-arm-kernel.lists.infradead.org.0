@@ -2,64 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C224C1D134C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29B121D1352
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:55:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=zAJLENXj5GHAV68uR4HgdsrHyDiP0LmBYydO2THJh+M=; b=RUq
-	Bzv9uRO9gLLAalcPvCJX0h5VXObQn+zf5iIfLIrH7//gAqMKQb0G2j90beuBRLIS9sscmgXy6mdsy
-	8prXBuiZRQt1nCMiIIsyu4bYMNPh6ySCD6yFTt3KncIBUyOKLDRxZ7EwAvLkn0KzJBAhRLD9rUxYp
-	zqnSTbMROk5G9jTzRynqJ9YEBIu0hqhz32+iYnRXQq1q+V0sdPJVUWVhPAaV9AHNSoZAwgXcsIMGU
-	GXZF+M/XQ84ArOWxwCHlgQHTCnJIQCq/i0dguOCWBzBp/Ox3w1qW6S7iP1dWVfQanUHykxv4Y89Qr
-	sPKjra555WzPm3gRMguAsJNsimxpzXQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5gciucPPyjCfsd7QeG5asfzefbqUKZFOAnAXdpM2wy0=; b=GwqWEje5PG5jBZ
+	LfnPRP+dVESXUlFrH3EQ6302M1LsO/tDAEAkgTBslZIFurTuVWyaMylKfAbKYNeRlUYQ9eMXjSwoW
+	T24W9YjkBM5oeWeYZsxguLNPy38CF2KiYatGK5URmrx6SrfFpQfUvOnSGTh3b0QnzaqoSmoZ0jJiP
+	AnuAsVBpjHvcLNs/NHCmMf6yoizO8BANZxYr2EBk8mfTzv1QWbbi8T3p88YRNLBi2Rwmnt+SDdEaU
+	0MYvgdiywed3zHWvJ5AIszqYP6qX/3vK7GGezAkZzhV6cHrnKDh1nGGkZ/uehrW9+fme2klRN/68S
+	xeCLPJnTvAUcytCXhypg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYquE-0006Vd-Cz; Wed, 13 May 2020 12:54:38 +0000
-Received: from mailomta2-re.btinternet.com ([213.120.69.95]
- helo=re-prd-fep-048.btinternet.com)
+	id 1jYqv3-0000rI-Hj; Wed, 13 May 2020 12:55:29 +0000
+Received: from smtp11.smtpout.orange.fr ([80.12.242.133]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYqu2-0006TK-BU; Wed, 13 May 2020 12:54:28 +0000
-Received: from re-prd-rgout-003.btmx-prd.synchronoss.net ([10.2.54.6])
- by re-prd-fep-048.btinternet.com with ESMTP id
- <20200513125415.BCRW8887.re-prd-fep-048.btinternet.com@re-prd-rgout-003.btmx-prd.synchronoss.net>;
- Wed, 13 May 2020 13:54:15 +0100
-Authentication-Results: btinternet.com;
- auth=pass (LOGIN) smtp.auth=j.oldman998@btinternet.com
-X-Originating-IP: [31.53.141.224]
-X-OWM-Source-IP: 31.53.141.224 (GB)
-X-OWM-Env-Sender: j.oldman998@btinternet.com
-X-VadeSecure-score: verdict=clean score=0/300, class=clean
-X-RazorGate-Vade: gggruggvucftvghtrhhoucdtuddrgeduhedrleeggdehjecutefuodetggdotefrodftvfcurfhrohhfihhlvgemuceutffkvffkuffjvffgnffgvefqofdpqfgfvfenuceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofestddtredtredttdenucfhrhhomheplfhohhhnucfqlhgumhgrnhcuoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqnecuggftrfgrthhtvghrnhepgeeftdfhfeeuiefhgfekfeethedutddtfeduteevleevfedvfefhjeeijefhgffgnecukfhppeefuddrheefrddugedurddvvdegnecuvehluhhsthgvrhfuihiivgeptdenucfrrghrrghmpehhvghlohephhgvnhhrhidrhhhomhgvpdhinhgvthepfedurdehfedrudeguddrvddvgedpmhgrihhlfhhrohhmpeeojhhohhhnrdholhgumhgrnhesphholhgvhhhilhhlrdgtohdruhhkqedprhgtphhtthhopeeosggtmhdqkhgvrhhnvghlqdhfvggvuggsrggtkhdqlhhishhtsegsrhhorggutghomhdrtghomheqpdhrtghpthhtohepoeguvghvvghlsegurhhivhgvrhguvghvrdhoshhuohhslhdrohhrgheqpdhrtghpthhtohepoehgrhgvghhkhheslhhinhhugihfohhunhgurghtihhonhdrohhrgheqpdhrtghpthhtohepoehjohhhnhdrohhlughmrghnsehpohhlvghhihhllhdrtghordhukheqpdhrtghpthhtohepoehlihhnuhigqdgrrhhmqdhkvghrnhgvlheslhhishhtshdr
- ihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhkvghrnhgvlhesvhhgvghrrdhkvghrnhgvlhdrohhrgheqpdhrtghpthhtohepoehlihhnuhigqdhrphhiqdhkvghrnhgvlheslhhishhtshdrihhnfhhrrgguvggrugdrohhrgheqpdhrtghpthhtohepoehnshgrvghniihjuhhlihgvnhhnvgesshhushgvrdguvgeq
-X-RazorGate-Vade-Verdict: clean 0
-X-RazorGate-Vade-Classification: clean
-Received: from henry.home (31.53.141.224) by
- re-prd-rgout-003.btmx-prd.synchronoss.net (5.8.340) (authenticated as
- j.oldman998@btinternet.com)
- id 5E3A16DE1046F7AE; Wed, 13 May 2020 13:54:15 +0100
-From: John Oldman <john.oldman@polehill.co.uk>
-To: nsaenzjulienne@suse.de
-Subject: [PATCH V4] staging: vc04_services: Block comment alignment
-Date: Wed, 13 May 2020 13:54:05 +0100
-Message-Id: <20200513125405.28242-1-john.oldman@polehill.co.uk>
-X-Mailer: git-send-email 2.17.1
+ id 1jYqup-0000lq-UF
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 12:55:18 +0000
+Received: from belgarion ([80.214.67.31]) by mwinf5d46 with ME
+ id eCv12200V0gURQY03Cv26X; Wed, 13 May 2020 14:55:11 +0200
+X-ME-Helo: belgarion
+X-ME-Auth: amFyem1pay5yb2JlcnRAb3JhbmdlLmZy
+X-ME-Date: Wed, 13 May 2020 14:55:11 +0200
+X-ME-IP: 80.214.67.31
+From: Robert Jarzmik <robert.jarzmik@free.fr>
+To: Miquel Raynal <miquel.raynal@bootlin.com>
+Subject: Re: [PATCH 0/3] mtd: rawnand: Get rid of the cmx270 driver
+In-Reply-To: <20200508121041.64f91276@xps13> (Miquel Raynal's message of "Fri, 
+ 8 May 2020 12:10:41 +0200")
+References: <20200429223134.789322-1-boris.brezillon@collabora.com>
+ <20200508121041.64f91276@xps13>
+User-Agent: Gnus/5.130008 (Ma Gnus v0.8) Emacs/26 (gnu/linux)
+X-URL: http://belgarath.falguerolles.org/
+Date: Wed, 13 May 2020 14:55:01 +0200
+Message-ID: <87lflwngey.fsf@belgarion.home>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_055426_672348_EB2A4BAD 
-X-CRM114-Status: GOOD (  10.16  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20200513_055516_274886_8D3A4DFF 
+X-CRM114-Status: GOOD (  17.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [213.120.69.95 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.133 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.133 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 1.0 FORGED_SPF_HELO        No description available.
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robert.jarzmik[at]free.fr]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,92 +69,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devel@driverdev.osuosl.org, gregkh@linuxfoundation.org,
- linux-kernel@vger.kernel.org, John Oldman <john.oldman@polehill.co.uk>,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Vignesh Raghavendra <vigneshr@ti.com>, Arnd Bergmann <arnd@arndb.de>,
+ Tudor Ambarus <tudor.ambarus@microchip.com>,
+ Richard Weinberger <richard@nod.at>, Haojian Zhuang <haojian.zhuang@gmail.com>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Mike Rapoport <mike@compulab.co.il>,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Coding style issue reported by checkpatch.pl
-This patch clears the checkpatch.pl "Block comments should align
-the * on each line" warning.
-Also cleared /****** and blank line.
+Miquel Raynal <miquel.raynal@bootlin.com> writes:
 
-Signed-off-by: John Oldman <john.oldman@polehill.co.uk>
----
-v1: Initial attempt.
-v2: Resubmitted with shorter comment line, as suggested by Greg KH.
-v3: Resubmitted with descriptiuon text moved into the comment area.
-v4: Resubmitted with /****** and blank lines removed.
+> Hi Robert,
 
- .../interface/vchiq_arm/vchiq_connected.c     | 33 +++++++------------
- 1 file changed, 11 insertions(+), 22 deletions(-)
+Mi Miquel,
 
-diff --git a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-index 1640906e3929..79b75efa6868 100644
---- a/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-+++ b/drivers/staging/vc04_services/interface/vchiq_arm/vchiq_connected.c
-@@ -14,12 +14,7 @@ static   VCHIQ_CONNECTED_CALLBACK_T g_deferred_callback[MAX_CALLBACKS];
- static   int                        g_once_init;
- static   struct mutex               g_connected_mutex;
- 
--/****************************************************************************
--*
--* Function to initialize our lock.
--*
--***************************************************************************/
--
-+/* Function to initialize our lock */
- static void connected_init(void)
- {
- 	if (!g_once_init) {
-@@ -28,15 +23,12 @@ static void connected_init(void)
- 	}
- }
- 
--/****************************************************************************
--*
--* This function is used to defer initialization until the vchiq stack is
--* initialized. If the stack is already initialized, then the callback will
--* be made immediately, otherwise it will be deferred until
--* vchiq_call_connected_callbacks is called.
--*
--***************************************************************************/
--
-+/*
-+ * This function is used to defer initialization until the vchiq stack is
-+ * initialized. If the stack is already initialized, then the callback will
-+ * be made immediately, otherwise it will be deferred until
-+ * vchiq_call_connected_callbacks is called.
-+ */
- void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
- {
- 	connected_init();
-@@ -63,13 +55,10 @@ void vchiq_add_connected_callback(VCHIQ_CONNECTED_CALLBACK_T callback)
- 	mutex_unlock(&g_connected_mutex);
- }
- 
--/****************************************************************************
--*
--* This function is called by the vchiq stack once it has been connected to
--* the videocore and clients can start to use the stack.
--*
--***************************************************************************/
--
-+/*
-+ * This function is called by the vchiq stack once it has been connected to
-+ * the videocore and clients can start to use the stack.
-+ */
- void vchiq_call_connected_callbacks(void)
- {
- 	int i;
+>> I hope someone still has a board to test that.
+No, unfortunately I don't have this board, nor do I know of anyone having
+one. It's the second time I see patches on cmx270, and the question to whether
+we shoud keep this board in kernel is still in my mind ... given that cm-x300 is
+fully supported and testable, and no one I know has a cm-x2700 ...
+
+Now for your series, I have 2 comments :
+ - dsb() : can you explain the rationale of each of the 3 instances I saw
+ please.
+ - the +2 IOMEM offset
+   I don't like it at all. I don't mind the offset, I disklike the use of
+   readb() or readw() where before there was a readl().. Same thing for writeb()
+   against writel().
+
+   The bus semantics are not the same, the alignment is not the same as well
+   (and PXA is very old and doesn't cope well with alignment), and without a
+   proper board to test, I would be very wary to have that change.
+
+Cheers.
+
 -- 
-2.17.1
-
+Robert
 
 _______________________________________________
 linux-arm-kernel mailing list
