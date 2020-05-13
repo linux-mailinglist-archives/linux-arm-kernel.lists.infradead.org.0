@@ -2,87 +2,109 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E3541D0907
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 08:51:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A079F1D0919
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 08:55:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LDuNco7QpaOwJqp2HYbo2RQ18gn11/Sx5jEHMA3ABcI=; b=VPCpjeWXyxZpMz
-	BYQQ5oN9Nl48aLwVqvtMQ856KiPhxHEONXj8cJjqM34xXFBqyNASV1I/ZffX9USrdLk0s+DUZ+0uV
-	7LmIcWX1C7Fk7DFeI0r4xcR9yGBWhw1cgymaicvE8LGx9sik9aVKAKtXsUxvr+Sby0It1gSVZoZgN
-	pS49I/afmSkL38Hgz8DOeyGze7ePyzHYAKsqtfotkVgA5Jt/2tkTCfhY+2hTpcmPqkf5K4Aid1ALm
-	WpNhfuymlQSdaG/goJ6pwFN4nWMrkQRW/AlIRZAReHZISnvK867g7twz3dVMp20yc3OaSRj/8hzgv
-	V8ATucoIM7qb2VZ1Lhug==;
+	List-Owner; bh=dfRe3a1B4Z89TZzall94ry9tMkBllRv/KV9UHQ+5L98=; b=QgHV0PG+aZriL8
+	Fmpje8Tae83KepLKjF+68P3X9IlfGTMXcDXOCQYTxOBXp9PK2w+ee8+1S9/jOqQvzceYYkLxWLKHU
+	n2do/dQ23hUAsRWDrNRwB8B38RufVnWGrLgxMzGhMWXgHVC3CNpj5xBOj3tQzALjK55Tq4IwApWBE
+	K/rLMEEArGwIZHIxw/d8WLIaKB4OIxB5CJvHFcBaweGYPWN5X9n9Goh5LlnzGdNNHJEJf/wiRBPld
+	fHDnftOFntXui0qpnl8kRkjvvx0hQ5YgPuSoUz3MFyNl4QZkU5ZkrJdlp32wOnfimc2amUorrfi/X
+	gKQHCI8ocRIs6hIyxO8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYlF6-0008A2-L1; Wed, 13 May 2020 06:51:48 +0000
-Received: from mail-qv1-xf41.google.com ([2607:f8b0:4864:20::f41])
+	id 1jYlIy-0003D5-Mr; Wed, 13 May 2020 06:55:48 +0000
+Received: from mail-eopbgr10085.outbound.protection.outlook.com ([40.107.1.85]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYlEz-00089J-5l
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 06:51:42 +0000
-Received: by mail-qv1-xf41.google.com with SMTP id ep1so7731265qvb.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 12 May 2020 23:51:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=e6QbSlNOUjKcG/ZMZ3XtXHK+IfmeCzylC8Xkh73q0Aw=;
- b=MVQ6mRj0yNs3gHcYY1RhK7VD4fpo64JAOOyD3f9QApNHT5ECfY+bzA0iu4QBJTzYGj
- sA7TY7dhSyq2eZ3vCVhqHAasszCcpxlanbJ4PJmu+fgoh6Jc0ib1eNbQCgx51n87cV1N
- MOer2/trIkbKluf0nZZ5UsxSJZFCjjGMX3ntmF0SGx2sfsHqQ9Xw7ZdryxDMzlPnJvxi
- +6Oc1Ex9QvdOZvGWuqY3FBHWZjufRAUNJNetSevZIZO+CkK4J1WPd4yTXRIohwE55qZt
- nKVakGPU/7m2ky+3FKJ3ne82FeecYwDpaVUs1bWJowijAAVPkaIPhV6imjhEENxutcLW
- Q3fA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=e6QbSlNOUjKcG/ZMZ3XtXHK+IfmeCzylC8Xkh73q0Aw=;
- b=IMuIVlBfv9wh7qWOppJGS+udhkVlgrMXezFgJj2RznGXOUUIFHaMkFW8XgedEmD7TC
- Kw8bJ5Wj4uEY0Bkixrr87KOQo7VjU/mnuJ7pxzk35LMk0ufmvglTgyinZYhIL/7E8NtU
- 6SLuicNkxahcd3tNLEqqsYZbJntmke569NIhxdrqnYQZwvNGuL8fKSs6iciUwwIJfL6N
- o77ylQklan17oXD0K/WaXnuRWoCeKMyR3M5PtZWxJQeFToHlFFSxgYHOrTXMkgpXUzua
- CRfIefNRYpE3bFnRCx+0/j69ddYQrEnPh7qDhl5zH6JhG31Byoy9WZ+jeqZtUTWFDCd2
- U+mA==
-X-Gm-Message-State: AOAM532lT6Qp+SkeBGsyIqi56kShCEvJeFwydIbEN0K7ReUtJe/Vm1pE
- 4+/4uM7ICBGYRpHZt6ZHHoR+UeZk+NFO63u/h6yUaw==
-X-Google-Smtp-Source: ABdhPJzBnUTR6RvAjncvdb7vGMZz94R3H7YmuTqlHzue8QlAYuySzcqHBeO3N/Rhg2Akb9/rP06VmQA6b5coJoEpJ4o=
-X-Received: by 2002:a0c:f153:: with SMTP id y19mr909681qvl.22.1589352699379;
- Tue, 12 May 2020 23:51:39 -0700 (PDT)
+ id 1jYlIq-0003C8-P2
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 06:55:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=RrXyYq3/ceNKiRxD8ZV9eFMh7VwrKsCDfRapuDwbBroGXk8p9s8/mqDHuQ054/NNsYWpytMHiWg55yrk7vb6OidU3hm0Gd6N7LK2EkR5f0UQ2AVGG2XWRFkHBWsiaLS3gNuovgQcuY+2EueUwszl5r7Pk7acMwQlflwPduDutVG4PvH86UrZLx9+a55GJYbRpHmmSLf0pHuSfgl8hceQFF1KjmL39X2H2A9V/KiKZd//uZp/PAdioai3OMvFLht1/zEK9WtZ6xjenN1tNNZEZlyUlMMdn65NCmgfDL9FgOzz5+eRDTdoGdkuj4hZzrKlxmqMGxWLdgzWxooQUynrIw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5c2Yzw4kRMjBQ8JYRZ1YuBfjY8Idal0B9Izj7kqlOUg=;
+ b=dATQjH8kthuGhaTrSeDdWEh0UeYwjmGG/8YUHoK99To7OljumtRc2E+FvpdjnXphjVnX1EoWeuNz4m4SCsV5ItTc11B/0ux6iToUpMiK7Zem3iyMGNdDSpjkKqd7Wj4gVJryRJBQCsbIQ1Hx5ScJQkWhwLkgf+iFNMvTS+jm4smcYAj9ydau3vzMwc8KIqXXsq3tUaKl9pOHnTLntb9Wiim6aKvso06Jb/rH12uCl3WWRLQuwV+P0MVO+BTYAjasqNGRXUd4TCMe4PQEGxKc/58mwtjv/J73cqZf9THVM1lwAFglpqpxAv0br8lZSG+zjZHN6qbDs3B0CyuP4N8yng==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=5c2Yzw4kRMjBQ8JYRZ1YuBfjY8Idal0B9Izj7kqlOUg=;
+ b=H3f4+nIZtY0G5u+KWvyBL1t6P5juPTq+ODIhvhycnCQA3mTQOOGYTgtQWD5kHT/9ti0iUjaV7TBwDrJqdh6QwTtbInpuRyWuVuFV2jEJjL7E7RiHCdmIBNxGruERzuariKOsM3hQqAw2VzqYzfYGo35QjCvs3h/vjcKNLLv7e6A=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (2603:10a6:8:10::18)
+ by DB3PR0402MB3769.eurprd04.prod.outlook.com (2603:10a6:8:f::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.34; Wed, 13 May
+ 2020 06:55:35 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::1dab:b68c:e028:acb3%6]) with mapi id 15.20.2979.033; Wed, 13 May 2020
+ 06:55:35 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Rob Herring <robh@kernel.org>
+Subject: RE: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+Thread-Topic: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+Thread-Index: AQHWDtWuHhuFKGSv1ECuhQdSmjVzK6iCZy4AgAFNxdCAIhNSMA==
+Date: Wed, 13 May 2020 06:55:34 +0000
+Message-ID: <DB3PR0402MB39167476CE5FA107505A78C5F5BF0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1586480844-19227-1-git-send-email-Anson.Huang@nxp.com>
+ <20200420183512.GA5483@bogus>
+ <DB3PR0402MB3916B60832507A72F39750EAF5D50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916B60832507A72F39750EAF5D50@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [92.121.68.129]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: e591871a-57d0-427b-c039-08d7f70aa2ee
+x-ms-traffictypediagnostic: DB3PR0402MB3769:|DB3PR0402MB3769:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3769A305ED54C1760B2B2C1FF5BF0@DB3PR0402MB3769.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2733;
+x-forefront-prvs: 0402872DA1
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: Q9XtqJBZ0j4IBcYfJEbBmotp6dKCj7EjRMQJLbbGEfT1jD2Rn/7k04G2Ud0iubX3xldSwWM1P72aDpSWsp+fMcZiQcqDKf4cVaUTOOtBPAKNMFYRBNw560TrjJRMa+fPDOXkJP8MyDtSJ+Xo4ZW88RN7csIfdhJ/y1UgnYjU0liqdbzAlzACR0ChDbpOW1jUhKTNdgo0VsVjOnW/FivD8l3rofYeDdsUF2Hm0txlL5mNLX9KbFzyjt7h+d6UQd6TDM0H5EYHxn9uRQn6qF9q7BwBv9J/ZOXGAMr6L0hb46bU2qOOd3SHr+g8E4Cpa6m3P38hZlQk8KoDcItGZflnoTKpXuUzs836h2akacZm4gpuAQ3IEFSMwflN3iUs/p/EAdChtAO3rQSRSF6HxfGAoUI5ooNYvOKkdpTaV4Ow0/df86EupI+6MWeoi8NoT9o/YYw+HI8XzO1D5w5h2TYVjLOGgTlyMbmc4D37vasbMoI33tDrCXgYlhX+3/3EjFIWKal3gpz1ryAGyVxqthBkWw==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:DB3PR0402MB3916.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(366004)(346002)(39860400002)(376002)(136003)(33430700001)(6916009)(55016002)(4326008)(8936002)(52536014)(5660300002)(66476007)(66946007)(478600001)(66556008)(66446008)(33440700001)(76116006)(33656002)(64756008)(54906003)(316002)(9686003)(71200400001)(7696005)(186003)(26005)(86362001)(8676002)(7416002)(2906002)(44832011)(6506007);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: LW4c1UDqc6VBmvvTnwL+FTUtMrVAQvf3LNO+iehSQhrpig8uc/lyINhccsdaERLmzFh+9XLR63msbPcPel5Csd81wDPix4Myvi0QBhJ27gH0T/iRJ3GnOuemVfysAEqMEmiuBwr3zUetMWFoOoLc5g4aDt68lvXqzseg9sLW/gvUtflS5Aswtr1U13sKIvvbi0QEUkcZ75u1VBtPw0w7fyGxOdAj8PacxH5F/uNxJSYPEQnrg1RbD6Rxbfx7apdmQ7n68LZ0dBmFYHuW+Rk8Xj23BlW7EQYoB5g79vtQkzzop0YPGRevFWcXYzE1TOkC0Ytu/wxu1TPR2hXEQIllxKM+bWnjUVzoLXs3kEuXofXb4Hl+6ITcg0KwGOPlj2CjiihDDki2KXYf+S0AZD8vOJ0PvCI2Sgc8gFFIVdAGZC+E6D7agXdroxcQVyPH8IBeJuO1XJ8Dul+QvSiGOK2Js+ux/m05pXzb2ZMq4wC7iu4=
 MIME-Version: 1.0
-References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
- <CACT4Y+YWNwTSoheJhc3nMdQi9m719F3PzpGo3TfRY3zAg9EwuQ@mail.gmail.com>
- <CACT4Y+bO1Zg_jgFHbOWgp7fLAADOQ_-AZmjEHz0WG7=oyOt4Gg@mail.gmail.com>
- <1589203771.21284.22.camel@mtksdccf07>
- <CACT4Y+aOkuH6Dn+L+wv1qVOLgXyCY_Ck4hecAMw3DgyBgC9qHw@mail.gmail.com>
- <1589254720.19238.36.camel@mtksdccf07>
- <CACT4Y+aibZEBR-3bos3ox5Tuu48TnHC20mDDN0AkWeRUKrT0aw@mail.gmail.com>
- <1589334472.19238.44.camel@mtksdccf07>
-In-Reply-To: <1589334472.19238.44.camel@mtksdccf07>
-From: Dmitry Vyukov <dvyukov@google.com>
-Date: Wed, 13 May 2020 08:51:27 +0200
-Message-ID: <CACT4Y+Zv3rCZs8z56NHM0hHWMwQr_2AT8nx0vUigzMG2v3Rt8Q@mail.gmail.com>
-Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
-To: Walter Wu <walter-zh.wu@mediatek.com>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: e591871a-57d0-427b-c039-08d7f70aa2ee
+X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2020 06:55:35.0464 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FZNozB8sYIG2UzAi6yIQ3dYvBNBmddacCaP9p+Lab+NuAnFRUBG/OqCiRPOyAA2u81jhqvjQ9P0KdwiZFjFkhA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3769
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_235141_237949_BBA8A926 
-X-CRM114-Status: GOOD (  24.13  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200512_235540_815215_E07DFB68 
+X-CRM114-Status: GOOD (  19.50  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:f41 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.1.85 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.1.85 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,8 +112,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,86 +123,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Paul E . McKenney" <paulmck@kernel.org>, Linux-MM <linux-mm@kvack.org>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
- kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
- Joel Fernandes <joel@joelfernandes.org>,
- Alexander Potapenko <glider@google.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "amit.kucheria@verdurent.com" <amit.kucheria@verdurent.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "daniel.lezcano@linaro.org" <daniel.lezcano@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "rui.zhang@intel.com" <rui.zhang@intel.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 3:48 AM Walter Wu <walter-zh.wu@mediatek.com> wrote:
-> > > > Are you sure it will increase object size?
-> > > > I think we overlap kasan_free_meta with the object as well. The only
-> > > > case we don't overlap kasan_free_meta with the object are
-> > > > SLAB_TYPESAFE_BY_RCU || cache->ctor. But these are rare and it should
-> > > > only affect small objects with small redzones.
-> > > > And I think now we simply have a bug for these objects, we check
-> > > > KASAN_KMALLOC_FREE and then assume object contains free stack, but for
-> > > > objects with ctor, they still contain live object data, we don't store
-> > > > free stack in them.
-> > > > Such objects can be both free and still contain user data.
-> > > >
-> > >
-> > > Overlay kasan_free_meta. I see. but overlay it only when the object was
-> > > freed. kasan_free_meta will be used until free object.
-> > > 1). When put object into quarantine, it need kasan_free_meta.
-> > > 2). When the object exit from quarantine, it need kasan_free_meta
-> > >
-> > > If we choose to overlay kasan_free_meta, then the free stack will be
-> > > stored very late. It may has no free stack in report.
-> >
-> > Sorry, I don't understand what you mean.
-> >
-> > Why will it be stored too late?
-> > In __kasan_slab_free() putting into quarantine and recording free
-> > stack are literally adjacent lines of code:
-> >
-> > static bool __kasan_slab_free(struct kmem_cache *cache, void *object,
-> >       unsigned long ip, bool quarantine)
-> > {
-> >     ...
-> >     kasan_set_free_info(cache, object, tag);
-> >     quarantine_put(get_free_info(cache, object), cache);
-> >
-> >
-> > Just to make sure, what I meant is that we add free_track to kasan_free_meta:
-> >
-> > struct kasan_free_meta {
-> >     struct qlist_node quarantine_link;
-> > +  struct kasan_track free_track;
-> > };
-> >
->
-> When I see above struct kasan_free_meta, I know why you don't understand
-> my meaning, because I thought you were going to overlay the
-> quarantine_link by free_track, but it seems like to add free_track to
-> kasan_free_meta. Does it enlarge meta-data size?
+Hi, Rob
 
-I would assume it should not increase meta-data size. In both cases we
-store exactly the same information inside of the object: quarantine
-link and free track.
-I see it more as a question of code organization. We already have a
-concept of "this data is placed inside of the freed object", we
-already have a name for it (kasan_free_meta), we already have code to
-choose where to place it, we already have helper functions to access
-it. And your change effectively duplicates all of this to place the
-free track.
-
-> > And I think its life-time and everything should be exactly what we need.
+> Subject: RE: [PATCH V2] dt-bindings: thermal: Convert i.MX to json-schema
+> 
+> Hi, Rob
+> 
+> 
+> > Subject: Re: [PATCH V2] dt-bindings: thermal: Convert i.MX to
+> > json-schema
 > >
-> > Also it should help to fix the problem with ctors: kasan_free_meta is
-> > already allocated on the side for such objects, and that's exactly
-> > what we need for objects with ctor's.
->
-> I see.
+> > On Fri, Apr 10, 2020 at 09:07:24AM +0800, Anson Huang wrote:
+> > > Convert the i.MX thermal binding to DT schema format using
+> > > json-schema
+> > >
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > ---
+> > > Changes since V1:
+> > > 	- make clock property optional.
+> > > ---
+> > >  .../devicetree/bindings/thermal/imx-thermal.txt    | 61 --------------
+> > >  .../devicetree/bindings/thermal/imx-thermal.yaml   | 96
+> > ++++++++++++++++++++++
+> > >  2 files changed, 96 insertions(+), 61 deletions(-)  delete mode
+> > > 100644 Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> > >  create mode 100644
+> > > Documentation/devicetree/bindings/thermal/imx-thermal.yaml
+> > >
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> > > b/Documentation/devicetree/bindings/thermal/imx-thermal.txt
+> > > deleted file mode 100644
+> > > index 823e417..0000000
+> > > +
+> > > +title: NXP i.MX Thermal Binding
+> > > +
+> > > +maintainers:
+> > > +  - Anson Huang <Anson.Huang@nxp.com>
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    oneOf:
+> > > +      - items:
+> > > +          - enum:
+> > > +              - fsl,imx6q-tempmon
+> > > +              - fsl,imx6sx-tempmon
+> > > +              - fsl,imx7d-tempmon
+> > > +
+> > > +  interrupts:
+> > > +    description: |
+> > > +      The interrupt output of the controller, the IRQ will be triggered
+> > > +      when temperature is higher than high threshold.
+> > > +    maxItems: 1
+> > > +
+> > > +  nvmem-cells:
+> > > +    description: |
+> > > +      Phandle to the calibration cells provided by ocotp for calibration
+> > > +      data and temperature grade.
+> > > +    maxItems: 2
+> > > +
+> > > +  nvmem-cell-names:
+> > > +    maxItems: 2
+> > > +    items:
+> > > +      - const: calib
+> > > +      - const: temp_grade
+> > > +
+> > > +  fsl,tempmon:
+> > > +    $ref: '/schemas/types.yaml#/definitions/phandle'
+> > > +    description: |
+> > > +      Phandle pointer to system controller that contains TEMPMON
+> > control
+> > > +      registers, e.g. ANATOP on imx6q.
+> >
+> > Really, this should have been a child of the system controller. Not
+> > too late to do that, but you'd need to keep this for compatibility.
+> 
+> Sorry, I don't quite get your point, can you provide more details or example,
+> thanks.
+
+I guess you meant the tempmon node should be put inside anatop node? Then
+DT files also needs to be changed? Right? 
+
+ anatop: anatop@20c8000 {
+         compatible = "fsl,imx6sx-anatop", "fsl,imx6q-anatop",
+         "syscon", "simple-mfd";
+         reg = <0x020c8000 0x1000>;
+         interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>,
+                   <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>,
+                   <GIC_SPI 127 IRQ_TYPE_LEVEL_HIGH>;
+ ...
+ };
+
+ tempmon: tempmon {
+         compatible = "fsl,imx6sx-tempmon", "fsl,imx6q-tempmon";
+         interrupt-parent = <&gpc>;
+         interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
+         fsl,tempmon = <&anatop>;
+         nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
+         nvmem-cell-names = "calib", "temp_grade";
+         clocks = <&clks IMX6SX_CLK_PLL3_USB_OTG>;
+  };
+
+Thanks,
+Anson
 
 _______________________________________________
 linux-arm-kernel mailing list
