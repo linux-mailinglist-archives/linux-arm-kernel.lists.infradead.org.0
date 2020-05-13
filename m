@@ -2,77 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B20F41D2210
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 00:32:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4908F1D22B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 01:07:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Y+4IRVx9FeywA3XYilZOTUpnIZzL85D99m+emgL7t6s=; b=tWYIEqgHmokKRlfc07PgARyfb
-	kJtMfzogW5tSvl4V7YCinKQqNb1AxVegc5GAYPsc7rpJorq77CE5CVaL09dunV1AtOI/awQhcOip8
-	M7LIumv2SCNuycihCOhks01NJ3aNZOl3wsXudN00wrCYn1RQDpe8yvPTvRHw2lxh0fHxsNIwJJx2r
-	1dlTiVc4OcUjGSjTTkYOL0qbHJy00VLyyuAPV+RSJVuIJ8t4viuTBWqHEgfR7YjTnM5jYkTn3ugNy
-	wvj6cBZRoXXwyYY+urUzADJOVVba+/ecv0EWZdYLQwoBwH6SeRrZ29Yl89cgSorbtI3SI38l5odFN
-	+E7Gw9tzQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nTmi/FB2kvPnUR/2+JHTnnzfp9Uwv/Znz0x6RCGtHlo=; b=Qdwcpud9MOVKkQ
+	CWNWN2ZbNMFauu9lkCB4VYvuMvP8TdVlqo+k7OyUlPI5jkXTlnnpQqRA3E6CWdAjviacnfUPO3ERe
+	6Ch3aN98gzSAXR3pisypcsphtXpIRNnMoF6jDSv7KUCkiErRCMys2YLQ0CtFJFAGHJxL1XxL4JCdN
+	9nmZ36Xf5WMEdxLF8Kn3qittPOGkP57LyR3JEEgP1PtCcnz61yA2SXvqoTF9+zZGDbCaNCzwEXwMz
+	U9zUAb7jmt9zeaNCrTstFzJlfkLMtyGnSpqv8cYwBKqtpBqz3kaxdAQoIvBff4Z1hnOhTt7B0XWqH
+	mUklP7yiC78oRAynztOA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYzv5-0002Gt-U1; Wed, 13 May 2020 22:32:07 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1jZ0Sv-00078b-EU; Wed, 13 May 2020 23:07:05 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYzuy-0002GD-5n
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 22:32:02 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04DMVpi5022860;
- Wed, 13 May 2020 17:31:51 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589409111;
- bh=wpC4NeO+HpUXSvG9zpusitUlas7P/Sa0nfDeG97/ReQ=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=kQe1A1lPTW7cz3S9FMQ4egy1jfAwoMPDZTDOYGLRrUrEA9YZTvdeqq52s42T67X3F
- 1v63wdd6nVBNdx937FZD45+wRoeyPzpFWXBLFCImcrbe8UqM6b3kZMYAhr7ggpj0yu
- rnSgztxaYK7n/MWhk04LzVZ3+WCybYTF34w4/vZM=
-Received: from DFLE103.ent.ti.com (dfle103.ent.ti.com [10.64.6.24])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04DMVpbk113101
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Wed, 13 May 2020 17:31:51 -0500
-Received: from DFLE115.ent.ti.com (10.64.6.36) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 13
- May 2020 17:31:51 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 13 May 2020 17:31:51 -0500
-Received: from [10.250.48.148] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04DMVpjG127310;
- Wed, 13 May 2020 17:31:51 -0500
-Subject: Re: [PATCH 3/3] remoteproc/k3-dsp: Add support for L2RAM loading on
- C66x DSPs
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-References: <20200325201839.15896-1-s-anna@ti.com>
- <20200325201839.15896-4-s-anna@ti.com> <20200428195855.GC10552@xps15>
- <CANLsYkwgCJrDu-Y5iyG0maCVqFqDXW_0vD4Sv2e+-dwryTNaRA@mail.gmail.com>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <23097792-5166-09f1-9343-0b5626a9cb03@ti.com>
-Date: Wed, 13 May 2020 17:31:50 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jZ0Sn-00077u-UP
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 23:06:59 +0000
+Received: by mail-pf1-x442.google.com with SMTP id 145so395642pfw.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 May 2020 16:06:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=yMogoehN6gd8yEcUzfto82bogvcHTiAGCMH4pO/0ves=;
+ b=TVjmeJRT30wG3o5oee/nQvtjayTS9UEmO1IKTN3/YROyngl0ARUX+gqTeIneHeojqM
+ gYBxNYwyp5blo8Rorot/HCMhVM8Rsy7slg+/x8RdQoCiT11cFofCu+3DTSKptK731mBX
+ yq4/rABaceMa8DkAadYUlzIg9W0ocTQiCTsT8=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=yMogoehN6gd8yEcUzfto82bogvcHTiAGCMH4pO/0ves=;
+ b=scuRZueUHzVn3569IlqtrsHXgXe4extq9IpeUPxxn68WzxavfQki9aJ3JbFLg+aV/j
+ ke7hZgc+jZFsuUf+4RKx17AdURTTyWoIn7l7blk9YVuXTrrU39LmeN37lPbGqgnAWvGl
+ joOZiwG5DS/4NMHE84E6kDU7fcxFDVogg74D2kotCguCVd5zPeqLZmwZljMgZJwVnoet
+ PlbOhAu2RXdGyBw5yKQUFlWJPm4CB9TTHabWAFNNdjVJjzHCGO5oq8AlrLqJbs+4J5VN
+ y5PWHyR6Rc94m2vjn83aC0MLDWaK8ImL7T8BlSe7tUYhXpOqCSfY1Ls8RA2PRKC52rBl
+ P+1A==
+X-Gm-Message-State: AOAM531EiKdGv6qEXiB/xFwOLKlPMmjHwjeLY802FAdFtnu/1F3QbQR9
+ a6KHWRji4U3wBPS2H/Bge7ZVug==
+X-Google-Smtp-Source: ABdhPJzzVabiFt1inZIi4trNKtrwiawtGgHCOPmCLYH5yl1Fukr15nZDmHm+dhqQ3Y059dh1zVOT2w==
+X-Received: by 2002:a63:3545:: with SMTP id c66mr1444745pga.82.1589411216357; 
+ Wed, 13 May 2020 16:06:56 -0700 (PDT)
+Received: from tictac2.mtv.corp.google.com
+ ([2620:15c:202:1:24fa:e766:52c9:e3b2])
+ by smtp.gmail.com with ESMTPSA id d184sm513936pfc.130.2020.05.13.16.06.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 16:06:55 -0700 (PDT)
+From: Douglas Anderson <dianders@chromium.org>
+To: Jason Wessel <jason.wessel@windriver.com>,
+ Daniel Thompson <daniel.thompson@linaro.org>
+Subject: [PATCH] arm64: Call debug_traps_init() from trap_init() to help early
+ kgdb
+Date: Wed, 13 May 2020 16:06:37 -0700
+Message-Id: <20200513160501.1.I0b5edf030cc6ebef6ab4829f8867cdaea42485d8@changeid>
+X-Mailer: git-send-email 2.26.2.645.ge9eca65c58-goog
 MIME-Version: 1.0
-In-Reply-To: <CANLsYkwgCJrDu-Y5iyG0maCVqFqDXW_0vD4Sv2e+-dwryTNaRA@mail.gmail.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_153200_324844_88A66C9F 
-X-CRM114-Status: GOOD (  33.01  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200513_160658_003602_FDBF0FAF 
+X-CRM114-Status: GOOD (  20.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,218 +95,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lokesh Vutla <lokeshvutla@ti.com>,
- linux-remoteproc <linux-remoteproc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>, Rob Herring <robh+dt@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, sumit.garg@linaro.org,
+ "Paul E. McKenney" <paulmck@kernel.org>, Will Deacon <will@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Enrico Weigelt <info@metux.net>, kgdb-bugreport@lists.sourceforge.net,
+ jinho lim <jordan.lim@samsung.com>, Douglas Anderson <dianders@chromium.org>,
+ linux-kernel@vger.kernel.org, Alexios Zavras <alexios.zavras@intel.com>,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Zenghui Yu <yuzenghui@huawei.com>,
+ linux-arm-kernel@lists.infradead.org, Thomas Gleixner <tglx@linutronix.de>,
+ liwei391@huawei.com, Dave Martin <Dave.Martin@arm.com>,
+ Allison Randal <allison@lohutok.net>, Masami Hiramatsu <mhiramat@kernel.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
+A new kgdb feature will soon land (kgdb_earlycon) that lets us run
+kgdb much earlier.  In order for everything to work properly it's
+important that the break hook is setup by the time we process
+"kgdbwait".
 
-On 4/28/20 3:09 PM, Mathieu Poirier wrote:
-> On Tue, 28 Apr 2020 at 13:58, Mathieu Poirier
-> <mathieu.poirier@linaro.org> wrote:
->>
->> On Wed, Mar 25, 2020 at 03:18:39PM -0500, Suman Anna wrote:
->>> The resets for the DSP processors on K3 SoCs are managed through the
->>> Power and Sleep Controller (PSC) module. Each DSP typically has two
->>> resets - a global module reset for powering on the device, and a local
->>> reset that affects only the CPU while allowing access to the other
->>> sub-modules within the DSP processor sub-systems.
->>>
->>> The C66x DSPs have two levels of internal RAMs that can be used to
->>> boot from, and the firmware loading into these RAMs require the
->>> local reset to be asserted with the device powered on/enabled using
->>> the module reset. Enhance the K3 DSP remoteproc driver to add support
->>> for loading into the internal RAMs. The local reset is deasserted on
->>> SoC power-on-reset, so logic has to be added in probe in remoteproc
->>> mode to balance the remoteproc state-machine.
->>>
->>> Note that the local resets are a no-op on C71x cores, and the hardware
->>> does not supporting loading into its internal RAMs.
->>>
->>> Signed-off-by: Suman Anna <s-anna@ti.com>
->>> ---
->>>   drivers/remoteproc/ti_k3_dsp_remoteproc.c | 82 +++++++++++++++++++++++
->>>   1 file changed, 82 insertions(+)
->>>
->>> diff --git a/drivers/remoteproc/ti_k3_dsp_remoteproc.c b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
->>> index fd0d84f46f90..7b712ef74611 100644
->>> --- a/drivers/remoteproc/ti_k3_dsp_remoteproc.c
->>> +++ b/drivers/remoteproc/ti_k3_dsp_remoteproc.c
->>> @@ -175,6 +175,9 @@ static int k3_dsp_rproc_reset(struct k3_dsp_rproc *kproc)
->>>                return ret;
->>>        }
->>>
->>> +     if (kproc->data->uses_lreset)
->>> +             return ret;
->>> +
->>>        ret = kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
->>>                                                    kproc->ti_sci_id);
->>>        if (ret) {
->>> @@ -192,6 +195,9 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
->>>        struct device *dev = kproc->dev;
->>>        int ret;
->>>
->>> +     if (kproc->data->uses_lreset)
->>> +             goto lreset;
->>> +
->>>        ret = kproc->ti_sci->ops.dev_ops.get_device(kproc->ti_sci,
->>>                                                   kproc->ti_sci_id);
->>>        if (ret) {
->>> @@ -199,6 +205,7 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
->>>                return ret;
->>>        }
->>>
->>> +lreset:
->>>        ret = reset_control_deassert(kproc->reset);
->>>        if (ret) {
->>>                dev_err(dev, "local-reset deassert failed, ret = %d\n", ret);
->>> @@ -210,6 +217,63 @@ static int k3_dsp_rproc_release(struct k3_dsp_rproc *kproc)
->>>        return ret;
->>>   }
->>>
->>> +/*
->>> + * The C66x DSP cores have a local reset that affects only the CPU, and a
->>> + * generic module reset that powers on the device and allows the DSP internal
->>> + * memories to be accessed while the local reset is asserted. This function is
->>> + * used to release the global reset on C66x DSPs to allow loading into the DSP
->>> + * internal RAMs. The .prepare() ops is invoked by remoteproc core before any
->>> + * firmware loading, and is followed by the .start() ops after loading to
->>> + * actually let the C66x DSP cores run. The local reset on C71x cores is a
->>> + * no-op and the global reset cannot be released on C71x cores until after
->>> + * the firmware images are loaded, so this function does nothing for C71x cores.
->>> + */
->>> +static int k3_dsp_rproc_prepare(struct rproc *rproc)
->>> +{
->>> +     struct k3_dsp_rproc *kproc = rproc->priv;
->>> +     struct device *dev = kproc->dev;
->>> +     int ret;
->>> +
->>> +     /* local reset is no-op on C71x processors */
->>> +     if (!kproc->data->uses_lreset)
->>> +             return 0;
->>
->> In k3_dsp_rproc_release() the condition is "if (kproc->data->uses_lreset)" and
->> here it is the opposite, which did a good job at getting me confused.
+Right now the break hook is setup in debug_traps_init() and that's
+called from arch_initcall().  That's a bit too late since
+kgdb_earlycon really needs things to be setup by the time the system
+calls dbg_late_init().
 
-Do you prefer I add a comment there? It needs to bail out there since 
-the get_device portion would be executed here.
+We could fix this by adding call_break_hook() into early_brk64() and
+that works fine.  However, it's a little ugly.  Instead, let's just
+add a call to debug_traps_init() straight from trap_init().  There's
+already a documented dependency between trap_init() and
+debug_traps_init() and this makes the dependency more obvious rather
+than just relying on a comment.
 
->>
->> Taking a step back, I assume c71 DSPs will have their own k3_dsp_dev_data where
->> the users_lreset flag will be false.  
+NOTE: this solution isn't early enough to let us select the
+"ARCH_HAS_EARLY_DEBUG" KConfig option that is introduced by the
+kgdb_earlycon patch series.  That would only be set if we could do
+breakpoints when early params are parsed.  This patch only enables
+"late early" breakpoints, AKA breakpoints when dbg_late_init() is
+called.  It's expected that this should be fine for most people.
 
-Yes.
+It should also be noted that if you crash you can still end up in kgdb
+earlier than debug_traps_init().  Since you don't need breakpoints to
+debug a crash that's fine.
 
-In that case I think it would make the
->> code easier to understand if the k3_dsp_rproc_ops was declared without the
->> .prepare and .unprepare.  In probe(), if data->uses_lreset is true then
->> k3_dsp_rproc_prepare() and k3_dsp_rproc_unprepare() are set.
+Suggested-by: Will Deacon <will@kernel.org>
+Signed-off-by: Douglas Anderson <dianders@chromium.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+This replaces the patch ("arm64: Add call_break_hook() to
+early_brk64() for early kgdb") in my recent kgdb series [1].  If I end
+up re-posting that series again I'll include this patch as a
+replacement, but I'm sending it separately to avoid spamming a pile of
+people another time with a 12-patch series.
 
-Yeah, ok, that will avoid the confusion and limit the 
-prepare()/unprepare() only for C66 DSPs.
+Note that, because it doesn't select the "ARCH_HAS_EARLY_DEBUG"
+KConfig option it could be landed standalone.  However, it's still
+probably better to land together with that patch series.
 
->>
-> 
-> I forgot... Since this is a C71 related change, was there a reason to
-> lump it with the C66 set?  If not I would simply move that to the C71
-> work.
+If the kgdb_earlycon patch series lands without this patch then
+kgdbwait + kgdb_earlycon won't work well on arm64, but there would be
+no other bad side effects.
 
-OK, I can remove this logic here, and add the prepare()/unprepare() 
-conditionally for C66x in the C71 patch.
+If this patch lands without the kgdb_earlycon patch series then there
+will be no known problems.
 
-> 
->> I am done reviewing this set.
+[1] https://lore.kernel.org/r/20200507130644.v4.5.I22067ad43e77ddfd4b64c2d49030628480f9e8d9@changeid
 
-Thanks for all the review comments.
+ arch/arm64/include/asm/debug-monitors.h | 2 ++
+ arch/arm64/kernel/debug-monitors.c      | 4 +---
+ arch/arm64/kernel/traps.c               | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
 
-regards
-Suman
-
->>
->> Thanks,
->> Mathieu
->>
->>> +
->>> +     ret = kproc->ti_sci->ops.dev_ops.get_device(kproc->ti_sci,
->>> +                                                 kproc->ti_sci_id);
->>> +     if (ret)
->>> +             dev_err(dev, "module-reset deassert failed, cannot enable internal RAM loading, ret = %d\n",
->>> +                     ret);
->>> +
->>> +     return ret;
->>> +}
->>> +
->>> +/*
->>> + * This function implements the .unprepare() ops and performs the complimentary
->>> + * operations to that of the .prepare() ops. The function is used to assert the
->>> + * global reset on applicable C66x cores. This completes the second portion of
->>> + * powering down the C66x DSP cores. The cores themselves are only halted in the
->>> + * .stop() callback through the local reset, and the .unprepare() ops is invoked
->>> + * by the remoteproc core after the remoteproc is stopped to balance the global
->>> + * reset.
->>> + */
->>> +static int k3_dsp_rproc_unprepare(struct rproc *rproc)
->>> +{
->>> +     struct k3_dsp_rproc *kproc = rproc->priv;
->>> +     struct device *dev = kproc->dev;
->>> +     int ret;
->>> +
->>> +     /* local reset is no-op on C71x processors */
->>> +     if (!kproc->data->uses_lreset)
->>> +             return 0;
->>> +
->>> +     ret = kproc->ti_sci->ops.dev_ops.put_device(kproc->ti_sci,
->>> +                                                 kproc->ti_sci_id);
->>> +     if (ret)
->>> +             dev_err(dev, "module-reset assert failed, ret = %d\n", ret);
->>> +
->>> +     return ret;
->>> +}
->>> +
->>>   /*
->>>    * Power up the DSP remote processor.
->>>    *
->>> @@ -353,6 +417,8 @@ static void *k3_dsp_rproc_da_to_va(struct rproc *rproc, u64 da, size_t len)
->>>   }
->>>
->>>   static const struct rproc_ops k3_dsp_rproc_ops = {
->>> +     .prepare        = k3_dsp_rproc_prepare,
->>> +     .unprepare      = k3_dsp_rproc_unprepare,
->>>        .start          = k3_dsp_rproc_start,
->>>        .stop           = k3_dsp_rproc_stop,
->>>        .kick           = k3_dsp_rproc_kick,
->>> @@ -644,6 +710,22 @@ static int k3_dsp_rproc_probe(struct platform_device *pdev)
->>>                goto disable_clk;
->>>        }
->>>
->>> +     /*
->>> +      * ensure the DSP local reset is asserted to ensure the DSP doesn't
->>> +      * execute bogus code in .prepare() when the module reset is released.
->>> +      */
->>> +     if (data->uses_lreset) {
->>> +             ret = reset_control_status(kproc->reset);
->>> +             if (ret < 0) {
->>> +                     dev_err(dev, "failed to get reset status, status = %d\n",
->>> +                             ret);
->>> +                     goto release_mem;
->>> +             } else if (ret == 0) {
->>> +                     dev_warn(dev, "local reset is deasserted for device\n");
->>> +                     k3_dsp_rproc_reset(kproc);
->>> +             }
->>> +     }
->>> +
->>>        ret = rproc_add(rproc);
->>>        if (ret) {
->>>                dev_err(dev, "failed to add register device with remoteproc core, status = %d\n",
->>> --
->>> 2.23.0
->>>
+diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
+index 7619f473155f..e5ceea213e39 100644
+--- a/arch/arm64/include/asm/debug-monitors.h
++++ b/arch/arm64/include/asm/debug-monitors.h
+@@ -125,5 +125,7 @@ static inline int reinstall_suspended_bps(struct pt_regs *regs)
+ 
+ int aarch32_break_handler(struct pt_regs *regs);
+ 
++void debug_traps_init(void);
++
+ #endif	/* __ASSEMBLY */
+ #endif	/* __ASM_DEBUG_MONITORS_H */
+diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+index 48222a4760c2..15e80c876d46 100644
+--- a/arch/arm64/kernel/debug-monitors.c
++++ b/arch/arm64/kernel/debug-monitors.c
+@@ -376,15 +376,13 @@ int aarch32_break_handler(struct pt_regs *regs)
+ }
+ NOKPROBE_SYMBOL(aarch32_break_handler);
+ 
+-static int __init debug_traps_init(void)
++void __init debug_traps_init(void)
+ {
+ 	hook_debug_fault_code(DBG_ESR_EVT_HWSS, single_step_handler, SIGTRAP,
+ 			      TRAP_TRACE, "single-step handler");
+ 	hook_debug_fault_code(DBG_ESR_EVT_BRK, brk_handler, SIGTRAP,
+ 			      TRAP_BRKPT, "ptrace BRK handler");
+-	return 0;
+ }
+-arch_initcall(debug_traps_init);
+ 
+ /* Re-enable single step for syscall restarting. */
+ void user_rewind_single_step(struct task_struct *task)
+diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+index cf402be5c573..8408e8670f2e 100644
+--- a/arch/arm64/kernel/traps.c
++++ b/arch/arm64/kernel/traps.c
+@@ -1047,11 +1047,11 @@ int __init early_brk64(unsigned long addr, unsigned int esr,
+ 	return bug_handler(regs, esr) != DBG_HOOK_HANDLED;
+ }
+ 
+-/* This registration must happen early, before debug_traps_init(). */
+ void __init trap_init(void)
+ {
+ 	register_kernel_break_hook(&bug_break_hook);
+ #ifdef CONFIG_KASAN_SW_TAGS
+ 	register_kernel_break_hook(&kasan_break_hook);
+ #endif
++	debug_traps_init();
+ }
+-- 
+2.26.2.645.ge9eca65c58-goog
 
 
 _______________________________________________
