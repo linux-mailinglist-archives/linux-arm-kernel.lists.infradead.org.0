@@ -2,62 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D4E01D14D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:28:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A2C51D14F6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 15:32:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=XMwuJDRIn955PY2hZZ1JJApn60/Ee4MnjvrUz8e+p7I=; b=o/iCy6GEnK+NkuUQabUxSjh+i
-	zdxjx1tn0AUPWkDC3M2+AX9Q+/i9H7ASEIT7d4hIuG00ZWfekPkKmPVYusuk9fU8DVQdm4R8X8n23
-	+sFD98hs2b4Y6/hCdebg7Nl3BwxvDRxymI3SZ5yzZTeamCAD1vjol6TxPgNBGVCx16hX2izkc8Csc
-	shVaCGFr9v2xuDGb6CD+wrAR3oPFIR6E0lqDsl1sbZuaHqK3zda0H++lyFsrqqyGHIrYwdJy+Ny3O
-	Tbc3+X4+Rqg82RFRbJykYqWooTldG5FTB7nVzpG4Pu4zMtULeEe4JndD5nsWlM4xsX0oq8IRn8MKq
-	bpCiFaoOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JXb9zvtvH2taZDoUznN+P02vjRY765RGGCv0LTonrYU=; b=YO5r+gfbvBvbRc
+	Mr0p3td6U8G9nb/X87yde8jyTeLwhHFyydX7TRhU4QKhvBXZ6IeBaKduTNIo2lzO6QH4ZsQtW8FAN
+	RGaAlFIYFFlP4Q1azZrTVFyRv8ebRFdhxZKLxs3oDUVEtg7y5+dZS/I3r2UaVfCHTod1hzJDg963s
+	hqnge/3OQkJcSlb7IhPDLB/X25cptS7MteHTY2r3P1Zsm13jlaoj9gV5o25tSqkHjSd/nPzuBZdzD
+	gY6WzyiHZZNYGmmSKQk400mPB9ch06X+UoJ/xmmEDomKCrAXoiFmOISHUN68W1ikTGPACgDAkdNNh
+	sINqeuDriGRFMGnRRr5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYrQg-0005WX-Gd; Wed, 13 May 2020 13:28:10 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrQU-0005Va-4k
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:27:59 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D01F230E;
- Wed, 13 May 2020 06:27:56 -0700 (PDT)
-Received: from [10.57.36.85] (unknown [10.57.36.85])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 101FC3F71E;
- Wed, 13 May 2020 06:27:54 -0700 (PDT)
-Subject: Re: [PATCH v4 03/38] iommu: add generic helper for mapping sgtable
- objects
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- dri-devel@lists.freedesktop.org, iommu@lists.linux-foundation.org,
- linaro-mm-sig@lists.linaro.org, linux-kernel@vger.kernel.org
-References: <20200512085710.14688-1-m.szyprowski@samsung.com>
- <20200512090058.14910-1-m.szyprowski@samsung.com>
- <CGME20200512090108eucas1p2168167ab5e1de09df0d5def83f64dbfe@eucas1p2.samsung.com>
- <20200512090058.14910-3-m.szyprowski@samsung.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <a5f6922a-686e-d36d-e706-e36d02bff141@arm.com>
-Date: Wed, 13 May 2020 14:27:52 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jYrUJ-0000Gx-Oa; Wed, 13 May 2020 13:31:55 +0000
+Received: from esa5.microchip.iphmx.com ([216.71.150.166])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYrU3-0000EZ-Dn
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 13:31:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589376700; x=1620912700;
+ h=from:to:cc:subject:date:message-id:mime-version:
+ content-transfer-encoding;
+ bh=t4aCbU2kHB3bhhe/yGQIKD1b0a2xuEV7ZDV6usSs6jg=;
+ b=DXrcmJp8g4r6YWmyyITJ38zBfKjNchded1hhEvtmv4bIJwxz76Xc3dJN
+ ulOvRlKZ+a4YeIlxqRYY7/XtfsN3mXtAKFILPIbNW2yrBWm0JYI/4mHsV
+ Q/cjqRq4f5cobuo4cjfweX9Dcxh8cmpknQQy34VLco7tfmDHaUfdnvqDM
+ 88Cx3C+JK3uaUmc0t1IrUViv/NTRXNrX76gw8xHoA7JUSmE/bRwsfPcOZ
+ bl8MHMxNdY2qKKrDFKjzJjqEA2jo2pwSphZ0DXyKRVsuAeHmn5jeC/xNR
+ 88A3VueTgNnG4zZcthg4aPwp77oEddwtTEXzR/xsJhgyDjF32cyldYTOB w==;
+IronPort-SDR: bUWPzFdWKX2/k51R9GST6UyKSuQiwjQpNUP4sqAL0kaIvI/PVupWW5wInfBl3DCG/OalO0JfXs
+ xplVwZwEwkQsQKeqND3sE0Gzq9C8M6o2QgCm4wNj36JW/bDwvDJLifefNkpBRrnszpXEtmrS53
+ upstPfDAcPqWqFlxCHwC2ma66TRhknZvnmdzHQOQvw1YTFywC8rFsOri6R/cUs+ghKQSXUduVU
+ MrrUW+Qd2MO1823QRxdvuzSfpo4IgMuQSGtFcV4RImTP3doQjndbb5j0ZcI6WTH6ZQtehDatRs
+ evg=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="75770577"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa5.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 06:31:34 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 06:31:35 -0700
+Received: from soft-dev15.microsemi.net (10.10.115.15) by
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 06:31:33 -0700
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Adrian Hunter
+ <adrian.hunter@intel.com>, SoC Team <soc@kernel.org>
+Subject: [PATCH 0/3] mmc: Adding support for Microchip Sparx5 SoC
+Date: Wed, 13 May 2020 15:31:19 +0200
+Message-ID: <20200513133122.25121-1-lars.povlsen@microchip.com>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <20200512090058.14910-3-m.szyprowski@samsung.com>
-Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_062758_226633_1D6387F2 
-X-CRM114-Status: GOOD (  20.01  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_063139_480282_F29350BD 
+X-CRM114-Status: GOOD (  10.05  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ medium trust [216.71.150.166 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,69 +90,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- David Airlie <airlied@linux.ie>, Joerg Roedel <joro@8bytes.org>,
- Daniel Vetter <daniel@ffwll.ch>, Christoph Hellwig <hch@lst.de>,
+Cc: devicetree@vger.kernel.org, linux-mmc@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>,
  linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-12 10:00 am, Marek Szyprowski wrote:
-> struct sg_table is a common structure used for describing a memory
-> buffer. It consists of a scatterlist with memory pages and DMA addresses
-> (sgl entry), as well as the number of scatterlist entries: CPU pages
-> (orig_nents entry) and DMA mapped pages (nents entry).
-> 
-> It turned out that it was a common mistake to misuse nents and orig_nents
-> entries, calling mapping functions with a wrong number of entries.
-> 
-> To avoid such issues, lets introduce a common wrapper operating directly
-> on the struct sg_table objects, which take care of the proper use of
-> the nents and orig_nents entries.
+This is an add-on series to the main SoC Sparx5 series
+(Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>).
 
-Modulo Joerg's comments,
+It adds eMMC support for Sparx5, by adding a driver for the SoC SDHCI
+controller, DT configuration and DT binding documentation.
 
-Reviewed-by: Robin Murphy <robin.murphy@arm.com>
+Lars Povlsen (3):
+  dt-bindings: mmc: Add Sparx5 SDHCI controller bindings
+  sdhci: sparx5: Add Sparx5 SoC eMMC driver
+  arm64: dts: sparx5: Add Sparx5 eMMC support
 
-> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
-> ---
-> For more information, see '[PATCH v4 00/38] DRM: fix struct sg_table nents
-> vs. orig_nents misuse' thread:
-> https://lore.kernel.org/dri-devel/20200512085710.14688-1-m.szyprowski@samsung.com/T/
-> ---
->   include/linux/iommu.h | 16 ++++++++++++++++
->   1 file changed, 16 insertions(+)
-> 
-> diff --git a/include/linux/iommu.h b/include/linux/iommu.h
-> index 7cfd2dd..ba662ba 100644
-> --- a/include/linux/iommu.h
-> +++ b/include/linux/iommu.h
-> @@ -478,6 +478,22 @@ extern size_t iommu_map_sg_atomic(struct iommu_domain *domain,
->   extern void iommu_set_fault_handler(struct iommu_domain *domain,
->   			iommu_fault_handler_t handler, void *token);
->   
-> +/**
-> + * iommu_map_sgtable - Map the given buffer to the IOMMU domain
-> + * @domain:	The IOMMU domain to perfor
-> + * @iova:	The start addrees to map the buffer
-> + * @sgt:	The sg_table object describing the buffer
-> + * @prot:	IOMMU protection bits
-> + *
-> + * Create a mapping at @iova for the buffer described by a scatterlist
-> + * stored in the given sg_table object in the provided IOMMU domain.
-> + */
-> +static inline size_t iommu_map_sgtable(struct iommu_domain *domain,
-> +			unsigned long iova, struct sg_table *sgt, int prot)
-> +{
-> +	return iommu_map_sg(domain, iova, sgt->sgl, sgt->orig_nents, prot);
-> +}
-> +
->   extern void iommu_get_resv_regions(struct device *dev, struct list_head *list);
->   extern void iommu_put_resv_regions(struct device *dev, struct list_head *list);
->   extern void generic_iommu_put_resv_regions(struct device *dev,
-> 
+ .../mmc/microchip,dw-sparx5-sdhci.yaml        |  57 +++
+ arch/arm64/boot/dts/microchip/sparx5.dtsi     |  24 ++
+ .../boot/dts/microchip/sparx5_pcb125.dts      |  23 ++
+ .../boot/dts/microchip/sparx5_pcb134_emmc.dts |  23 ++
+ .../boot/dts/microchip/sparx5_pcb135_emmc.dts |  23 ++
+ drivers/mmc/host/Kconfig                      |  13 +
+ drivers/mmc/host/Makefile                     |   1 +
+ drivers/mmc/host/sdhci-of-sparx5.c            | 348 ++++++++++++++++++
+ 8 files changed, 512 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/mmc/microchip,dw-sparx5-sdhci.yaml
+ create mode 100644 drivers/mmc/host/sdhci-of-sparx5.c
+
+--
+2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
