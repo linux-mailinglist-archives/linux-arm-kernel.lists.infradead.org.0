@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7DC31D09D1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 09:20:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CDCA1D09DA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 09:21:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7FbgIVqSHDSYJCbSIZO3RNgqzCp3o4szENui5RUgnOM=; b=ihviGupeHzLvCd
-	jt8nGZQnDvV0CSPeEXV9XcyXj60tRWMlvzxx3BD2l+DWD612OYHV3ALHkE+I8Nc0RWPxOL0uDTYHy
-	UtTr4k+c6svP7oZ2VlrgWFHNZ/qoDJKmpNz58ZnVByarwUpb7L1d0MBknNYtN4uRbbTwFHPAV6mCE
-	loIF9dlBfNIQDxWXrxNJfI3vZDCZJw6fdYgtw2tzZkKUKGKyWZa5zS1Fdl81Rksx2IuRGPNbLiAbm
-	8CB2O9AsYwgiSYyuYanuUxspXGsEdim0eGGoCFqlRpwRuQi5cXs96ld9txwtmnDkTRU8oF6l6c9eA
-	HDZiZyxGGI8fKWwXMfKw==;
+	List-Owner; bh=V+Hw8lRqefNgrjesvJkKqIZlp3hWjc7u5DpZZ3CrZ5Q=; b=ZzhlrYFLbHfWMa
+	jeG3lj+0Rma1ulWvmNe5abNnqnGftAnXIO6etyNf50P69qwRlnFtUCrlu8sUO6LqmQEL17MHQoR6z
+	eA8xlBjBV+5YtEr3Hl4uM1BPJ9bkwvCf7zQkXn6DVd+mVpIP0drIUbkdHQDkBn6fwJTJ9uo1HlqVz
+	Xw+3e5o+04LBgJnxXc33/UIfvYrjfEc4nWyckpfJlWTZoXMWIY6wCMbSZBezmS6R4iLHuDsFDzPxI
+	O3rBTXd3eXLtFWGdjNJUDnm4NXx4gO9RyY7aUNVyuFP3A+zKPI+cSV/GaLfwYiEJj9rtl5BirGLiL
+	YSw6i1lonlUeOstI6zFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYlgv-0003Yc-CT; Wed, 13 May 2020 07:20:33 +0000
+	id 1jYliA-0003qL-ML; Wed, 13 May 2020 07:21:50 +0000
 Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYlgl-0003Y3-N3
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 07:20:25 +0000
+ id 1jYlhz-0003pz-HU
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 07:21:40 +0000
 Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
  by metis.ext.pengutronix.de with esmtps
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <sha@pengutronix.de>)
- id 1jYlgb-0000qH-Qw; Wed, 13 May 2020 09:20:13 +0200
+ id 1jYlhs-00012g-PP; Wed, 13 May 2020 09:21:32 +0200
 Received: from sha by ptx.hi.pengutronix.de with local (Exim 4.92)
  (envelope-from <sha@pengutronix.de>)
- id 1jYlgb-0008CI-1k; Wed, 13 May 2020 09:20:13 +0200
-Date: Wed, 13 May 2020 09:20:13 +0200
+ id 1jYlhs-0008Jd-7d; Wed, 13 May 2020 09:21:32 +0200
+Date: Wed, 13 May 2020 09:21:32 +0200
 From: Sascha Hauer <s.hauer@pengutronix.de>
 To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH v7 RESEND 00/13] add ecspi ERR009165 for i.mx6/7 soc family
-Message-ID: <20200513072012.GB15934@pengutronix.de>
+Subject: Re: [PATCH v7 RESEND 07/13] spi: imx: fix ERR009165
+Message-ID: <20200513072132.GL5877@pengutronix.de>
 References: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
+ <1589218356-17475-8-git-send-email-yibin.gong@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
+In-Reply-To: <1589218356-17475-8-git-send-email-yibin.gong@nxp.com>
 X-Sent-From: Pengutronix Hildesheim
 X-URL: http://www.pengutronix.de/
 X-IRC: #ptxdist @freenode
 X-Accept-Language: de,en
 X-Accept-Content-Type: text/plain
-X-Uptime: 09:15:45 up 83 days, 14:46, 109 users,  load average: 0.44, 0.27,
- 0.28
+X-Uptime: 08:06:09 up 83 days, 13:36, 88 users,  load average: 0.20, 0.23, 0.18
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
 X-SA-Exim-Mail-From: sha@pengutronix.de
@@ -54,8 +54,8 @@ X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
  SAEximRunCond expanded to false
 X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_002023_753810_D95908DF 
-X-CRM114-Status: GOOD (  13.82  )
+X-CRM114-CacheID: sfid-20200513_002139_579843_480D752E 
+X-CRM114-Status: GOOD (  22.17  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,29 +86,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 01:32:23AM +0800, Robin Gong wrote:
-> There is ecspi ERR009165 on i.mx6/7 soc family, which cause FIFO
-> transfer to be send twice in DMA mode. Please get more information from:
-> https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf. The workaround is adding
-> new sdma ram script which works in XCH  mode as PIO inside sdma instead
-> of SMC mode, meanwhile, 'TX_THRESHOLD' should be 0. The issue should be
-> exist on all legacy i.mx6/7 soc family before i.mx6ul.
-> NXP fix this design issue from i.mx6ul, so newer chips including i.mx6ul/
-> 6ull/6sll do not need this workaroud anymore. All other i.mx6/7/8 chips
-> still need this workaroud. This patch set add new 'fsl,imx6ul-ecspi'
-> for ecspi driver and 'ecspi_fixed' in sdma driver to choose if need errata
-> or not.
-> The first two reverted patches should be the same issue, though, it
-> seems 'fixed' by changing to other shp script. Hope Sean or Sascha could
-> have the chance to test this patch set if could fix their issues.
-> Besides, enable sdma support for i.mx8mm/8mq and fix ecspi1 not work
-> on i.mx8mm because the event id is zero.
+On Tue, May 12, 2020 at 01:32:30AM +0800, Robin Gong wrote:
+> Change to XCH  mode even in dma mode, please refer to the below
+> errata:
+> https://www.nxp.com/docs/en/errata/IMX6DQCE.pdf
 
-It's not nice to break SPI support when the new firmware is not present
-and I think we can do better. Wouldn't it be possible to fall back to PIO
-in this case?
+This patch is the one bisecting will end up with when somebody uses an
+older SDMA firmware or the ROM scripts. It should have a better
+description what happens and what should be done about it.
 
 Sascha
+
+> 
+> Signed-off-by: Robin Gong <yibin.gong@nxp.com>
+> Acked-by: Mark Brown <broonie@kernel.org>
+> ---
+>  drivers/spi/spi-imx.c | 16 ++++++++--------
+>  1 file changed, 8 insertions(+), 8 deletions(-)
+> 
+> diff --git a/drivers/spi/spi-imx.c b/drivers/spi/spi-imx.c
+> index f4f28a4..70df8e6 100644
+> --- a/drivers/spi/spi-imx.c
+> +++ b/drivers/spi/spi-imx.c
+> @@ -585,8 +585,8 @@ static int mx51_ecspi_prepare_transfer(struct spi_imx_data *spi_imx,
+>  	ctrl |= mx51_ecspi_clkdiv(spi_imx, t->speed_hz, &clk);
+>  	spi_imx->spi_bus_clk = clk;
+>  
+> -	if (spi_imx->usedma)
+> -		ctrl |= MX51_ECSPI_CTRL_SMC;
+> +	/* ERR009165: work in XHC mode as PIO */
+> +	ctrl &= ~MX51_ECSPI_CTRL_SMC;
+>  
+>  	writel(ctrl, spi_imx->base + MX51_ECSPI_CTRL);
+>  
+> @@ -617,7 +617,7 @@ static void mx51_setup_wml(struct spi_imx_data *spi_imx)
+>  	 * and enable DMA request.
+>  	 */
+>  	writel(MX51_ECSPI_DMA_RX_WML(spi_imx->wml - 1) |
+> -		MX51_ECSPI_DMA_TX_WML(spi_imx->wml) |
+> +		MX51_ECSPI_DMA_TX_WML(0) |
+>  		MX51_ECSPI_DMA_RXT_WML(spi_imx->wml) |
+>  		MX51_ECSPI_DMA_TEDEN | MX51_ECSPI_DMA_RXDEN |
+>  		MX51_ECSPI_DMA_RXTDEN, spi_imx->base + MX51_ECSPI_DMA);
+> @@ -1171,7 +1171,11 @@ static int spi_imx_dma_configure(struct spi_master *master)
+>  	tx.direction = DMA_MEM_TO_DEV;
+>  	tx.dst_addr = spi_imx->base_phys + MXC_CSPITXDATA;
+>  	tx.dst_addr_width = buswidth;
+> -	tx.dst_maxburst = spi_imx->wml;
+> +	/*
+> +	 * For ERR009165 with tx_wml = 0 could enlarge burst size to fifo size
+> +	 * to speed up fifo filling as possible.
+> +	 */
+> +	tx.dst_maxburst = spi_imx->devtype_data->fifo_size;
+>  	ret = dmaengine_slave_config(master->dma_tx, &tx);
+>  	if (ret) {
+>  		dev_err(spi_imx->dev, "TX dma configuration failed with %d\n", ret);
+> @@ -1265,10 +1269,6 @@ static int spi_imx_sdma_init(struct device *dev, struct spi_imx_data *spi_imx,
+>  {
+>  	int ret;
+>  
+> -	/* use pio mode for i.mx6dl chip TKT238285 */
+> -	if (of_machine_is_compatible("fsl,imx6dl"))
+> -		return 0;
+> -
+>  	spi_imx->wml = spi_imx->devtype_data->fifo_size / 2;
+>  
+>  	/* Prepare for TX DMA: */
+> -- 
+> 2.7.4
+> 
+> 
 
 -- 
 Pengutronix e.K.                           |                             |
