@@ -2,53 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1747C1D19AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:42:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A0D01D19AF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:43:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:To:Subject
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Ec7sEL0zTN4PbeQWAfkP9BWkZbEli2nD6Edu2zsf4DA=; b=GgCdmM1yOlaQJJ
-	t9e71Hpo46mwYsjQSnM8AcjsKO8GkJrxfwLqZuzdnnAuPU5SsquN1m6Za9HFHDSSSIlthU11X5WFu
-	G6mgUYCF5aA0PQTmSScrl3VhZX5Mxm0QLZArWGTAVnhMeqWIMUslO4OLuSyDZ+cAszijTAawtmCND
-	YgLIotCWp3/27ls4hHSa8GPtUDZQAxRslwkaYeJfgkE6YHXVZDNgBa/7IEMoi311yGUwHn3lWXVnL
-	o4aI0n1YMgFCWtF11gB5xfPvGHB3HaDxJYPqPjBEzs5LiJ+u+B+9fK+Kb0odOAeUMF9Y3jHGIFHTx
-	A9wTXu4em/6BH3a7+d8g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iV5IomiSyAZl3eGxm9ByToGgJj1qwj2LaQrMaeKYHMc=; b=rZrzuvzKKfZ2TqqbWe5r/E5Zh
+	OZnQV3nvZq5lwrmGx2VGvOHaJ7DfNAUQxBgaZbeSNDjqyQ1ewnkDaNEJA5hwocyNO4EcrTR5CRrWY
+	UnHCqesGuN5vtmdNCf2dqwHbGfggBUOA2COk69ahzf/C8pWjVeGgRe8cl8xGpCKL9NQdlXi7oUh8e
+	DGoRBiZaVS/Kvj+3eQ/HnD94SSEL5tiD+qBr0UUmQ5PAQFRPVPLex+CviRAEEPoE1JpO1WgqfL00U
+	gamUxC3EjOi9NDaPsYbmpymBLRCkkxmu18thzp7NHIMEt82sKxTbNYajXn5XA3DLkWRnk80OmiqqH
+	bEUQZPZnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtWR-0006p0-Mq; Wed, 13 May 2020 15:42:15 +0000
-Received: from relay6-d.mail.gandi.net ([217.70.183.198])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtWH-0006nJ-IL
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:42:07 +0000
-X-Originating-IP: 84.210.220.251
-Received: from [192.168.1.123] (cm-84.210.220.251.getinternet.no
- [84.210.220.251]) (Authenticated sender: fredrik@strupe.net)
- by relay6-d.mail.gandi.net (Postfix) with ESMTPSA id 57A3BC0002;
- Wed, 13 May 2020 15:41:59 +0000 (UTC)
-From: Fredrik Strupe <fredrik@strupe.net>
-Subject: [RFC PATCH] arm: Don't trap conditional UDF instructions
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Message-ID: <b2042f19-9477-272c-0989-d6cab1572cca@strupe.net>
-Date: Wed, 13 May 2020 17:41:58 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jYtXD-0007D6-Gx; Wed, 13 May 2020 15:43:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYtWr-00076y-Lb
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:42:43 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 05EEA31B;
+ Wed, 13 May 2020 08:42:38 -0700 (PDT)
+Received: from [10.57.23.206] (unknown [10.57.23.206])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8E0123F305;
+ Wed, 13 May 2020 08:42:29 -0700 (PDT)
+Subject: Re: [PATCH v2 3/4] arm64: cpufeature: Modify address authentication
+ cpufeature to exact
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <1586842314-19527-1-git-send-email-amit.kachhap@arm.com>
+ <1586842314-19527-4-git-send-email-amit.kachhap@arm.com>
+ <20200506171350.GH2878@gaia> <426d96ef-6a89-6ee5-c0e0-383b297f7f9f@arm.com>
+ <20200512173301.GB21213@C02TF0J2HF1T.local>
+From: Amit Kachhap <amit.kachhap@arm.com>
+Message-ID: <ba6de270-fd9c-d623-69a1-f3340898336f@arm.com>
+Date: Wed, 13 May 2020 21:12:03 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
+In-Reply-To: <20200512173301.GB21213@C02TF0J2HF1T.local>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_084205_875793_341FF807 
-X-CRM114-Status: GOOD (  19.29  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200513_084241_840070_E87FF2F7 
+X-CRM114-Status: GOOD (  25.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.198 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [217.70.183.198 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -62,179 +67,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Oleg Nesterov <oleg@redhat.com>, Russell King <linux@armlinux.org.uk>,
- Richard Fontana <rfontana@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Enrico Weigelt <info@metux.net>, Allison Randal <allison@lohutok.net>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, Kees Cook <keescook@chromium.org>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Kristina Martsenko <kristina.martsenko@arm.com>,
+ Mark Brown <broonie@kernel.org>, James Morse <james.morse@arm.com>,
+ Vincenzo Frascino <Vincenzo.Frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
 
-This is more of a question than a patch, but I hope the attached patch makes
-the issue a bit clearer.
 
-The arm port of Linux supports hooking/trapping of undefined instructions. Some
-parts of the code use this to trap UDF instructions with certain immediates in
-order to use them for other purposes, like 'UDF #16' which is equivalent to a
-BKPT instruction in A32.
+On 5/12/20 11:03 PM, Catalin Marinas wrote:
+> On Fri, May 08, 2020 at 09:51:53PM +0530, Amit Kachhap wrote:
+>> On 5/6/20 10:43 PM, Catalin Marinas wrote:
+>>> On Tue, Apr 14, 2020 at 11:01:53AM +0530, Amit Daniel Kachhap wrote:
+>>>> This patch modifies the address authentication cpufeature type to EXACT
+>>>> from earlier LOWER_SAFE as the different configurations added for Armv8.6
+>>>> enhanced PAC have different behaviour and there is no tunable to enable the
+>>>> lower safe versions. The safe value is set as 0.
+>>>>
+>>>> After this change, if there is any variation in configurations in secondary
+>>>> cpus from boot cpu then those cpus are marked tainted. The KVM guests may
+>>>> completely disable address authentication if there is any such variations
+>>>> detected.
+>>>>
+>>>> Signed-off-by: Amit Daniel Kachhap <amit.kachhap@arm.com>
+>>>> ---
+>>>>    arch/arm64/kernel/cpufeature.c | 4 ++--
+>>>>    1 file changed, 2 insertions(+), 2 deletions(-)
+>>>>
+>>>> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+>>>> index 08795025409c..599b03df2f93 100644
+>>>> --- a/arch/arm64/kernel/cpufeature.c
+>>>> +++ b/arch/arm64/kernel/cpufeature.c
+>>>> @@ -154,9 +154,9 @@ static const struct arm64_ftr_bits ftr_id_aa64isar1[] = {
+>>>>    	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_FCMA_SHIFT, 4, 0),
+>>>>    	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_JSCVT_SHIFT, 4, 0),
+>>>>    	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+>>>> -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_API_SHIFT, 4, 0),
+>>>> +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_API_SHIFT, 4, 0),
+>>>>    	ARM64_FTR_BITS(FTR_VISIBLE_IF_IS_ENABLED(CONFIG_ARM64_PTR_AUTH),
+>>>> -		       FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+>>>> +		       FTR_STRICT, FTR_EXACT, ID_AA64ISAR1_APA_SHIFT, 4, 0),
+>>>>    	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR1_DPB_SHIFT, 4, 0),
+>>>>    	ARM64_FTR_END,
+>>>
+>>> Is this sufficient? If we have the boot CPU already enabling the ptrauth
+>>> and we get a secondary CPU with a different ISAR1 field that matches the
+>>> address auth in cpufeature.c, we still allow it to boot. We no longer
+>>> report the feature to the user system_supports_address_auth() is true
+>>> while system_supports_generic_auth() would be false as it checks the
+>>> sanitised feature registers.
+>>
+>> Yes agreed. Generic authentication also needs EXACT cpufeature type.
+> 
+> I'm still not sure that's sufficient. If we boot the primary CPU with
+> ptrauth as detected in proc.S, we consider this a boot feature so all
+> secondary CPUs must have it. Subsequent CPUs are currently checked via
+> the arm64_features[] definitions and we allow them to boot if the ID is
+> at least that of the boot CPU. How does this interact with the above
+> FTR_EXACT changes?
 
-Moreover, most of the undef hooks on UDF instructions assume that UDF is
-conditional and mask out the condition prefix during matching. The attached
-patch shows the locations where this happens. However, the Arm architecture
-reference manual explicitly states that UDF is *not* conditional, making
-any instruction encoding with a condition prefix other than 0xe (always
-execute) unallocated.
+Unfortunately FTR_EXACT does not effect the bootflow directly but marks
+the cpu TAINTED and goes ahead.
 
-My question is whether trapping invalid UDF instructions is intentional or
-rather a bug resulting from an oversight. While the unallocated instructions
-are not used for anything else and trapping them in addition to the legal UDF
-probably doesn't hurt, it seems to be slightly inconsistent with the ISA
-specification.
+> 
+> My concern is that we boot with PAC enabled on all CPUs but because of
+> the FTR_EXACT, the sanitised ID registers no longer report the feature.
+> 
 
-Sort of related, when looking for these kind of traps I came over the following
-code in arch/arm/probes/uprobes/core.c:
+You are right that PAC is enabled in hardware but un-reported to user in 
+this case.
 
-    bpinsn = UPROBE_SWBP_ARM_INSN & 0x0fffffff;
-    if (insn >= 0xe0000000)
-        bpinsn |= 0xe0000000;  /* Unconditional instruction */
-    else
-        bpinsn |= insn & 0xf0000000;  /* Copy condition from insn */
+The issue here is in feature_matches() which only validates with the
+entry->min_field_value. If we can modify this value to boot cpu value
+for FTR_EXACT type then this cpu will fail to online.
+May be we can introduce a new structure or make arm64_feature[] writable 
+for this.
 
-    auprobe->bpinsn = bpinsn;
+Something like below code.
+-------------------------------------------------------------------------
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 3ae35aadbc20..967928568edf 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -103,6 +103,8 @@ DECLARE_BITMAP(boot_capabilities, ARM64_NPATCHABLE);
+  bool arm64_use_ng_mappings = false;
+  EXPORT_SYMBOL(arm64_use_ng_mappings);
 
-Where UPROBE_SWBP_ARM_INSN is equal to the encoding of 'UDF #25'. I might be
-mistaken, but it seems like the condition of the UDF instruction is set from
-another instruction with the expectation that it will execute conditionally,
-which is not the case in practice.
++u8 min_cap_value[ARM64_NCAPS];
++
+  /*
+   * Flag to indicate if we have computed the system wide
+   * capabilities based on the boot time active CPUs. This
+@@ -616,6 +618,17 @@ static void __init sort_ftr_regs(void)
+                 BUG_ON(arm64_ftr_regs[i].sys_id < arm64_ftr_regs[i - 
+1].sys_id);
+  }
 
-While the above code is not directly related to the code in the patch and
-possibly a more clear-cut bug, it might indicate that the conditional UDF
-hooks also stem from a slight misunderstanding.
-
-So just to reiterate the question: is trapping UDF instructions with invalid
-condition prefixes considered a bug or not?
-
-Thanks,
-Fredrik
-
----
-UDF instructions with a conditional prefix other than 0xe (always
-execute) are unallocated as opposed to permanently undefined. They
-should therefore not be used for instruction hooking/trapping.
-
-Signed-off-by: Fredrik Strupe <fredrik@strupe.net>
----
- arch/arm/kernel/ptrace.c       |  6 +++---
- arch/arm/probes/kprobes/core.c |  2 +-
- arch/arm/probes/kprobes/core.h |  2 +-
- arch/arm/probes/uprobes/core.c | 16 +++++++---------
- 4 files changed, 12 insertions(+), 14 deletions(-)
-
-diff --git a/arch/arm/kernel/ptrace.c b/arch/arm/kernel/ptrace.c
-index b606cded90cd..a425691a41ad 100644
---- a/arch/arm/kernel/ptrace.c
-+++ b/arch/arm/kernel/ptrace.c
-@@ -50,7 +50,7 @@
-  * reference manual guarantees that the following instruction space
-  * will produce an undefined instruction exception on all CPUs:
-  *
-- *  ARM:   xxxx 0111 1111 xxxx xxxx xxxx 1111 xxxx
-+ *  ARM:   1110 0111 1111 xxxx xxxx xxxx 1111 xxxx
-  *  Thumb: 1101 1110 xxxx xxxx
-  */
- #define BREAKINST_ARM	0xe7f001f0
-@@ -211,8 +211,8 @@ static int break_trap(struct pt_regs *regs, unsigned int instr)
- }
++static void __init update_cpu_capability_min(u32 sys_reg, s64 new)
++{
++       const struct arm64_cpu_capabilities *caps = arm64_features;
++       for (; caps->matches; caps++) {
++               if (caps->sys_reg == sys_reg) {
++                       if (caps->min_field_value)
++                               min_cap_value[caps->capability] = new;
++               }
++       }
++}
++
+  /*
+   * Initialise the CPU feature register from Boot CPU values.
+   * Also initiliases the strict_mask for the register.
+@@ -649,6 +662,8 @@ static void __init init_cpu_ftr_reg(u32 sys_reg, u64 
+new)
+                         reg->user_val = arm64_ftr_set_value(ftrp,
+                                                             reg->user_val,
  
- static struct undef_hook arm_break_hook = {
--	.instr_mask	= 0x0fffffff,
--	.instr_val	= 0x07f001f0,
-+	.instr_mask	= 0xffffffff,
-+	.instr_val	= 0xe7f001f0,
- 	.cpsr_mask	= PSR_T_BIT,
- 	.cpsr_val	= 0,
- 	.fn		= break_trap,
-diff --git a/arch/arm/probes/kprobes/core.c b/arch/arm/probes/kprobes/core.c
-index 90b5bc723c83..77b8baa6638f 100644
---- a/arch/arm/probes/kprobes/core.c
-+++ b/arch/arm/probes/kprobes/core.c
-@@ -525,7 +525,7 @@ static struct undef_hook kprobes_thumb32_break_hook = {
- #else  /* !CONFIG_THUMB2_KERNEL */
- 
- static struct undef_hook kprobes_arm_break_hook = {
--	.instr_mask	= 0x0fffffff,
-+	.instr_mask	= 0xffffffff,
- 	.instr_val	= KPROBE_ARM_BREAKPOINT_INSTRUCTION,
- 	.cpsr_mask	= MODE_MASK,
- 	.cpsr_val	= SVC_MODE,
-diff --git a/arch/arm/probes/kprobes/core.h b/arch/arm/probes/kprobes/core.h
-index c3db468650ce..ee77ae553690 100644
---- a/arch/arm/probes/kprobes/core.h
-+++ b/arch/arm/probes/kprobes/core.h
-@@ -18,7 +18,7 @@
-  * These undefined instructions must be unique and
-  * reserved solely for kprobes' use.
-  */
--#define KPROBE_ARM_BREAKPOINT_INSTRUCTION	0x07f001f8
-+#define KPROBE_ARM_BREAKPOINT_INSTRUCTION	0xe7f001f8
- #define KPROBE_THUMB16_BREAKPOINT_INSTRUCTION	0xde18
- #define KPROBE_THUMB32_BREAKPOINT_INSTRUCTION	0xf7f0a018
- 
-diff --git a/arch/arm/probes/uprobes/core.c b/arch/arm/probes/uprobes/core.c
-index c4b49b322e8a..f574356284f4 100644
---- a/arch/arm/probes/uprobes/core.c
-+++ b/arch/arm/probes/uprobes/core.c
-@@ -22,8 +22,7 @@
- 
- bool is_swbp_insn(uprobe_opcode_t *insn)
- {
--	return (__mem_to_opcode_arm(*insn) & 0x0fffffff) ==
--		(UPROBE_SWBP_ARM_INSN & 0x0fffffff);
-+	return __mem_to_opcode_arm(*insn) == UPROBE_SWBP_ARM_INSN;
- }
- 
- int set_swbp(struct arch_uprobe *auprobe, struct mm_struct *mm,
-@@ -186,10 +185,9 @@ static int uprobe_trap_handler(struct pt_regs *regs, unsigned int instr)
- 	unsigned long flags;
- 
- 	local_irq_save(flags);
--	instr &= 0x0fffffff;
--	if (instr == (UPROBE_SWBP_ARM_INSN & 0x0fffffff))
-+	if (instr == UPROBE_SWBP_ARM_INSN)
- 		uprobe_pre_sstep_notifier(regs);
--	else if (instr == (UPROBE_SS_ARM_INSN & 0x0fffffff))
-+	else if (instr == UPROBE_SS_ARM_INSN)
- 		uprobe_post_sstep_notifier(regs);
- 	local_irq_restore(flags);
- 
-@@ -202,16 +200,16 @@ unsigned long uprobe_get_swbp_addr(struct pt_regs *regs)
- }
- 
- static struct undef_hook uprobes_arm_break_hook = {
--	.instr_mask	= 0x0fffffff,
--	.instr_val	= (UPROBE_SWBP_ARM_INSN & 0x0fffffff),
-+	.instr_mask	= 0xffffffff,
-+	.instr_val	= UPROBE_SWBP_ARM_INSN,
- 	.cpsr_mask	= MODE_MASK,
- 	.cpsr_val	= USR_MODE,
- 	.fn		= uprobe_trap_handler,
- };
- 
- static struct undef_hook uprobes_arm_ss_hook = {
--	.instr_mask	= 0x0fffffff,
--	.instr_val	= (UPROBE_SS_ARM_INSN & 0x0fffffff),
-+	.instr_mask	= 0xffffffff,
-+	.instr_val	= UPROBE_SS_ARM_INSN,
- 	.cpsr_mask	= MODE_MASK,
- 	.cpsr_val	= USR_MODE,
- 	.fn		= uprobe_trap_handler,
--- 
-2.20.1
+ftrp->safe_val);
++               if (ftrp->type == FTR_EXACT)
++                       update_cpu_capability_min(sys_reg, ftr_new);
+         }
 
+         val &= valid_mask;
+@@ -1021,8 +1036,10 @@ static bool
+  feature_matches(u64 reg, const struct arm64_cpu_capabilities *entry)
+  {
+         int val = cpuid_feature_extract_field(reg, entry->field_pos, 
+entry->sign);
+-
+-       return val >= entry->min_field_value;
++       if (min_cap_value[entry->capability])
++               return val >= min_cap_value[entry->capability];
++       else
++               return val >= entry->min_field_value;
+  }
+
+  static bool
+
+-------------------------------------------------------------------------
 
 _______________________________________________
 linux-arm-kernel mailing list
