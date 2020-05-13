@@ -2,68 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 06EC31D0571
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 05:20:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2CB661D0624
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 06:50:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:
-	References:Message-ID:Subject:To:From:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sn14Wkne2pgpvYxV7+omylPM/Njn9vYj6pey5N9o7e4=; b=of8CbmHXKF/mt9
-	vpIIUcdG1cGc95qjNZbAuDB83aLduJfdg3hOdzcfTFCCJOxDg3h1LzUhUkwNH2AMw7m4phsB7E+U1
-	N6JnEwMpcidkZaRqazSKwUFU8tRbYpFgB69bbLhwmJr+Tro9pbPdcrgY9r3RigC1xS1TYbYhVxpjS
-	ea/ExWbw4TrQ6meQr9BXbPrrk1gBvJZWDayABRXlJbwMGznJLaiRu5iGwVzMXXJ7xfL32vbWO8rZW
-	L5RWvdK2xkMA2j/3PMqU3hx7hNWihLqrd5LRLeCxHesyMHqz3h9w/T+ND41nk+j8GVMJvqiq7rKFD
-	HKNZ2+BimMZPinUiMIrw==;
+	List-Owner; bh=nTBjL9zEdGlSCFnB6oBkM2KrwlFI8rWVF/w2n1ePRsY=; b=ZhX7uxc9UYijCV
+	tW0NPXDUibP5ZWq+eOo5Qczz2/ZGjoeJBKIFN4j7h5bgL4Mqt04mqRr8Y3IWDoUYJjHQTrKCJxSKt
+	DZHSrxZgYKNyTJ0u0XU6IjCSSBarNWt0NgCb35moqv2IiQJQkHrks2MJ/eyL2CbsLhldAC/Es5hTL
+	lB49ZZUb0U6HIfJxOHLoLxBjLKzBeJLV967SSoDoHiqN3zgQSbINMm4iy4lMFPFuOcJpa65XUfM7a
+	MRzOZcwJpvrfdWNKRTA8Xyk4WYsmfOkiMUGxobdc6mTqXG8NQAmXVFEqKW14os/NzScwis+/DAcwU
+	2+1I35RYLkg5ZaobkEoQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYhw9-0001gT-02; Wed, 13 May 2020 03:20:01 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jYjLT-0002zG-0E; Wed, 13 May 2020 04:50:15 +0000
+Received: from mail-il1-x142.google.com ([2607:f8b0:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYhw0-0001dT-DQ; Wed, 13 May 2020 03:19:53 +0000
-Received: from paulmck-ThinkPad-P72.home (unknown [50.39.105.78])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4CA0420714;
- Wed, 13 May 2020 03:19:51 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589339991;
- bh=3evM/3WoUY87UjYJg6kocy7JRyvcnZJAhsOd5UgvkMQ=;
- h=Date:From:To:Cc:Subject:Reply-To:References:In-Reply-To:From;
- b=kdXcrlFVRId5W4tSKz2O+7bJSB24kuk9EK2RoEBms3JY4jhtAH4wBk2NsC/fRBGq+
- Y4Vkyn2Yu/0NnQy3N3V0LHNZIbyxfMJdFmAcjqNo9jQqJYpn+TCbdNVRvzlSi43+Uo
- zbhmsSWI4UQWFdk6BmTRCRPg7o/LaluyBQfj/GVE=
-Received: by paulmck-ThinkPad-P72.home (Postfix, from userid 1000)
- id 349373523471; Tue, 12 May 2020 20:19:51 -0700 (PDT)
-Date: Tue, 12 May 2020 20:19:51 -0700
-From: "Paul E. McKenney" <paulmck@kernel.org>
-To: Walter Wu <walter-zh.wu@mediatek.com>
-Subject: Re: [PATCH v2 1/3] rcu/kasan: record and print call_rcu() call stack
-Message-ID: <20200513031951.GO2869@paulmck-ThinkPad-P72>
-References: <20200511023111.15310-1-walter-zh.wu@mediatek.com>
- <20200511180527.GZ2869@paulmck-ThinkPad-P72>
- <1589250993.19238.22.camel@mtksdccf07>
- <CACT4Y+b6ZfmZG3YYC_TkoeGaAQjSEKvF4dZ9vHzTx5iokD4zTQ@mail.gmail.com>
- <20200512142541.GD2869@paulmck-ThinkPad-P72>
- <CACT4Y+ZfzLhcG2Wy_iEMB=hJ5k=ib+X-m29jDG2Jcs7S-TPX=w@mail.gmail.com>
- <20200512161422.GG2869@paulmck-ThinkPad-P72>
- <CACT4Y+aWNDntO6+Rhn0a-4N1gLOTe5UzYB9m5TnkFxG_L15cXA@mail.gmail.com>
- <1589335531.19238.52.camel@mtksdccf07>
+ id 1jYjLB-0002xF-5X
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 04:49:58 +0000
+Received: by mail-il1-x142.google.com with SMTP id j3so2358192ilk.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 12 May 2020 21:49:54 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7avQntptbSyfVNcjEHEawGHu0ZA5SFwdwGmNt7UNNE4=;
+ b=VZXeZxeSkNdl8aWyx4AKhpe+/+yWw4K1AFsNSfSLvZIPTWB9V3k7ygHClGGUvzus2W
+ 8Kjj1xRmgufSy5p3p5oBvoY8dwp+Ev2OJRUgQQo0Q55Br3c4Y24CxHrlhnISy8mHK51X
+ xWjqOBLcJsvmosULWYiVc0Zjoq/UJildgMh+w=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7avQntptbSyfVNcjEHEawGHu0ZA5SFwdwGmNt7UNNE4=;
+ b=jFt46N8f0FZUiPo08/6P5OHSsTQQub9U8ctQvnPfU7Hp8W0tY9c/GuvVq5RzKZX1lR
+ d2a+sLR1ReWKhwBmblKtO1hxKa34VEBSjENfOUznMzaKPEnXz7Swhehv6t8aElSGSPLT
+ /tuk+8P3lNcY275fVaQ2EC6oXZpofzSU0F1ogoLeHucDbP6BeMheb8P8SzWeE8q7GbBW
+ gEL1IqTqSX+veCvfRgAMm0MV0BTuq7UgWB0mCo1f8viQOV36JRGL3g6D5+ztyrCUJD4a
+ AOGia3d2F7jh2NIOafT5Sknb/G6pHZ8o26V2Z7EZA2yk7OXo18CtKV24arbOIiKQVAc7
+ jOCw==
+X-Gm-Message-State: AGi0PubkFoldwei2aNSUSo/1YSLUXp2MRPqEV5f5Cz8FwywnXur5PGbu
+ i6QVM/i3uENi32tF6G/MHk8aqw20jdCZdtuF7+iTgw==
+X-Google-Smtp-Source: APiQypLW4XrYA+YX10To7LSSFdH/pr6GwbWp+XKOzx9CNfSJM6J+CCr0iqX9Ux4YXkSF3w5tC6rtWCABka5M+lXvzeY=
+X-Received: by 2002:a92:1949:: with SMTP id e9mr25726680ilm.106.1589345393815; 
+ Tue, 12 May 2020 21:49:53 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1589335531.19238.52.camel@mtksdccf07>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <20200401201736.2980433-1-enric.balletbo@collabora.com>
+In-Reply-To: <20200401201736.2980433-1-enric.balletbo@collabora.com>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Wed, 13 May 2020 12:49:27 +0800
+Message-ID: <CAJMQK-hsneV5FdyTHBvLV4pxfGWC=c8mLsH_c5KSq2LsCLGEww@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] soc: mediatek: Enable mmsys driver by default if
+ Mediatek arch is selected
+To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_201952_495389_FED630F7 
-X-CRM114-Status: GOOD (  31.46  )
-X-Spam-Score: -5.4 (-----)
+X-CRM114-CacheID: sfid-20200512_214957_233678_2A0515FB 
+X-CRM114-Status: GOOD (  11.42  )
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.4 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,131 +89,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: paulmck@kernel.org
-Cc: wsd_upstream <wsd_upstream@mediatek.com>, Linux-MM <linux-mm@kvack.org>,
- Lai Jiangshan <jiangshanlai@gmail.com>, Josh Triplett <josh@joshtriplett.org>,
- kasan-dev <kasan-dev@googlegroups.com>, LKML <linux-kernel@vger.kernel.org>,
- Joel Fernandes <joel@joelfernandes.org>, linux-mediatek@lists.infradead.org,
- Alexander Potapenko <glider@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, Stephen Boyd <sboyd@kernel.org>,
+ lkml <linux-kernel@vger.kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Matthias Brugger <mbrugger@suse.com>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, matthias.bgg@kernel.org,
+ CK Hu <ck.hu@mediatek.com>, Collabora Kernel ML <kernel@collabora.com>,
+ linux-clk@vger.kernel.org, ulrich.hecht+renesas@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 10:05:31AM +0800, Walter Wu wrote:
-> On Tue, 2020-05-12 at 18:22 +0200, Dmitry Vyukov wrote:
-> > On Tue, May 12, 2020 at 6:14 PM Paul E. McKenney <paulmck@kernel.org> wrote:
-> > > > > > > > > This feature will record first and last call_rcu() call stack and
-> > > > > > > > > print two call_rcu() call stack in KASAN report.
-> > > > > > > >
-> > > > > > > > Suppose that a given rcu_head structure is passed to call_rcu(), then
-> > > > > > > > the grace period elapses, the callback is invoked, and the enclosing
-> > > > > > > > data structure is freed.  But then that same region of memory is
-> > > > > > > > immediately reallocated as the same type of structure and again
-> > > > > > > > passed to call_rcu(), and that this cycle repeats several times.
-> > > > > > > >
-> > > > > > > > Would the first call stack forever be associated with the first
-> > > > > > > > call_rcu() in this series?  If so, wouldn't the last two usually
-> > > > > > > > be the most useful?  Or am I unclear on the use case?
-> > > > > >
-> > > > > > 2 points here:
-> > > > > >
-> > > > > > 1. With KASAN the object won't be immediately reallocated. KASAN has
-> > > > > > 'quarantine' to delay reuse of heap objects. It is assumed that the
-> > > > > > object is still in quarantine when we detect a use-after-free. In such
-> > > > > > a case we will have proper call_rcu stacks as well.
-> > > > > > It is possible that the object is not in quarantine already and was
-> > > > > > reused several times (quarantine is not infinite), but then KASAN will
-> > > > > > report non-sense stacks for allocation/free as well. So wrong call_rcu
-> > > > > > stacks are less of a problem in such cases.
-> > > > > >
-> > > > > > 2. We would like to memorize 2 last call_rcu stacks regardless, but we
-> > > > > > just don't have a good place for the index (bit which of the 2 is the
-> > > > > > one to overwrite). Probably could shove it into some existing field,
-> > > > > > but then will require atomic operations, etc.
-> > > > > >
-> > > > > > Nobody knows how well/bad it will work. I think we need to get the
-> > > > > > first version in, deploy on syzbot, accumulate some base of example
-> > > > > > reports and iterate from there.
-> > > > >
-> > > > > If I understood the stack-index point below, why not just move the
-> > > > > previous stackm index to clobber the previous-to-previous stack index,
-> > > > > then put the current stack index into the spot thus opened up?
-> > > >
-> > > > We don't have any index in this change (don't have memory for such index).
-> > > > The pseudo code is"
-> > > >
-> > > > u32 aux_stacks[2]; // = {0,0}
-> > > >
-> > > > if (aux_stacks[0] != 0)
-> > > >     aux_stacks[0] = stack;
-> > > > else
-> > > >    aux_stacks[1] = stack;
-> > >
-> > > I was thinking in terms of something like this:
-> > >
-> > > u32 aux_stacks[2]; // = {0,0}
-> > >
-> > > if (aux_stacks[0] != 0) {
-> > >     aux_stacks[0] = stack;
-> > > } else {
-> > >    if (aux_stacks[1])
-> > >         aux_stacks[0] = aux_stacks[1];
-> > >    aux_stacks[1] = stack;
-> > > }
-> > >
-> > > Whether this actually makes sense in real life, I have no idea.
-> > > The theory is that you want the last two stacks.  However, if these
-> > > elements get cleared at kfree() time, then I could easily believe that
-> > > the approach you already have (first and last) is the way to go.
-> > >
-> > > Just asking the question, not arguing for a change!
-> > 
-> > Oh, this is so obvious... in hindsight! :)
-> > 
-> > Walter, what do you think?
-> > 
-> 
-> u32 aux_stacks[2]; // = {0,0}
-> 
-> if (aux_stacks[0] != 0) {
->      aux_stacks[0] = stack;
-> } else {
->     if (aux_stacks[1])
->          aux_stacks[0] = aux_stacks[1];
->     aux_stacks[1] = stack;
-> }
-> 
-> Hmm...why I think it will always cover aux_stacks[0] after aux_stacks[0]
-> has stack, it should not record last two stacks?
-> 
-> How about this:
-> 
-> u32 aux_stacks[2]; // = {0,0}
-> 
-> if (aux_stacks[1])
->     aux_stacks[0] = aux_stacks[1];
-> aux_stacks[1] = stack;
-
-Even better!  ;-)
-
-							Thanx, Paul
-
-> > I would do this. I think latter stacks are generally more interesting
-> > wrt shedding light on a bug. The first stack may even be "statically
-> > known" (e.g. if object is always queued into a workqueue for some lazy
-> > initialization during construction).
-> 
-> I think it make more sense to record latter stack, too.
-> 
-> Thanks for your and Paul's suggestion.
-> 
-> 
+On Thu, Apr 2, 2020 at 4:17 AM Enric Balletbo i Serra
+<enric.balletbo@collabora.com> wrote:
+>
+> The mmsys driver supports only MT8173 device for now, but like other system
+> controllers is an important piece for other Mediatek devices. Actually
+> it depends on the mt8173 clock specific driver but that dependency is
+> not real as it can build without the clock driver. Instead of depends on
+> a specific model, make the driver depends on the generic ARCH_MEDIATEK and
+> enable by default so other Mediatek devices can start using it without
+> flood the Kconfig.
+>
+> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Tested-by: Hsin-Yi Wang <hsinyi@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
