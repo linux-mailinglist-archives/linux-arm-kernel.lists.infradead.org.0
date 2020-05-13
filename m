@@ -2,89 +2,40 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABB031D18A2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:04:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 77EDA1D18AB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:05:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=v2f8ik1k7sNHJR8XjNZPgPcMZpEVYBQT6IGcctUqcwc=; b=fHjAtAzibFVlDW
-	JcJIkIToWRCXPSF0pCYqM7fnWPGH5YCDkBGT0fFJlNRfo1+tOb3KhVHbb4NZIOsn+H6Kpm1f5f0DY
-	AOuk75Rhlp63Pexvlh6qU+hTIJLhbcnq8j2xKqueIhN/CG7mR2FfsSUPU8veVIns3oXmW4bwrzfVO
-	oofxD4QNhW4NSsXSXJuaV43fYHDYgWSypUqvPqpQLX4sP92wBgPB439gb/x8b5NkKZyIOe7ARZObD
-	6B94xOKGnf696yuk2w22aehsy24LmHbdipKTKGLp2zl8dsY1b6v+Tma3+Pf5lcD5rN1NPn+nPxcIO
-	+51FWG4C5jANwkU9Offg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P5TN2MKQvICbBYjjN9M59bAvAmoxTm7f2SLhTnU/Mfg=; b=HpaNaD1M3ovIvN
+	eLtoMQERCbWOA2u81gatpoxZe9jfsdRNAbgMFujOJIpdhh9BS8TLde924lG3ollc61Irm04QPjAB/
+	KO3yh6XeYo6K42Y0kiDDbtNwbJyEkDFAT4+k3JIo7MpLZtTs71C99epRVr6oPQi5hdbq1aXNdcijz
+	rdGb6q5EMHtt0DJPMmNEIVzcniFK7Gn24WpluHBhyRqBHExEJ8gh6UkMG2Q8bThNtFkLst/jsuyFN
+	fdvVGj/4BuUE+3XQEteCBR/gZna42PQlrM2bTh8eQ8jno/9rmUKO9JAsaPPmpUuturGHOb1bbbQ2N
+	TnEdHKsFZ0Ruu4BJ184w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYsvo-0001vB-Op; Wed, 13 May 2020 15:04:24 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYsrg-0004Pl-7m
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:00:10 +0000
-Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04DEwJv0008668; Wed, 13 May 2020 16:59:58 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=QTCaThy3GVFCYOhCkPvOzFwaT3nv8roy2DLEbs0qBbo=;
- b=c+3ilERflSrBijQAJJe6KdPE0lLVj+4f4Lcx5gSA2cUC/2uEPNyJFLy00GETTt6p7y5f
- fHKSf6vukoNpXa6w+E2JH8mssiWxFPrxm6618QjqKBXlBCMgd3dvH1raB09XvRMzQBJa
- vagqwuh5vSiblFFvojO19IL/qMnTVrHMrFX5AoGZD1lIGkkKZDHyonrP1nbDbcrrzWzG
- nYD5XZMCuTeSOseoVNpt8Xg+Hk8No/PAIJByhcmB21+E9LgFT/3AOM/s9oC7JjfPILHW
- 3QNFfk9Jk3Si/44+ky826t7QZWG4n5MyGuohjaZWC1kdQ2wfrowb825vOWlNE9VSHT42 IA== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3100vqdeb4-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 13 May 2020 16:59:58 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 1BE9310002A;
- Wed, 13 May 2020 16:59:58 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node3.st.com [10.75.127.9])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 084EC2D3006;
- Wed, 13 May 2020 16:59:58 +0200 (CEST)
-Received: from localhost (10.75.127.50) by SFHDAG3NODE3.st.com (10.75.127.9)
- with Microsoft SMTP Server (TLS) id 15.0.1347.2; Wed, 13 May 2020 16:59:57
- +0200
-From: Benjamin Gaignard <benjamin.gaignard@st.com>
-To: <linus.walleij@linaro.org>, <robh+dt@kernel.org>,
- <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
- <gregkh@linuxfoundation.org>
-Subject: [PATCH 15/15] dt-bindings: usb: dwc2: Fix issues for stm32mp15x SoC
-Date: Wed, 13 May 2020 16:59:35 +0200
-Message-ID: <20200513145935.22493-16-benjamin.gaignard@st.com>
-X-Mailer: git-send-email 2.15.0
-In-Reply-To: <20200513145935.22493-1-benjamin.gaignard@st.com>
-References: <20200513145935.22493-1-benjamin.gaignard@st.com>
+	id 1jYswm-0002q9-Jj; Wed, 13 May 2020 15:05:24 +0000
+Received: from [2601:1c0:6280:3f0:897c:6038:c71d:ecac]
+ by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYsss-0007Ms-QN; Wed, 13 May 2020 15:01:22 +0000
+Subject: Re: [PATCH 2/3] pinctrl: mchp-sgpio: Add pinctrl driver for Microsemi
+ Serial GPIO
+To: Lars Povlsen <lars.povlsen@microchip.com>, SoC Team <soc@kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>
+References: <20200513141134.25819-1-lars.povlsen@microchip.com>
+ <20200513141134.25819-3-lars.povlsen@microchip.com>
+From: Randy Dunlap <rdunlap@infradead.org>
+Message-ID: <fb104436-69c1-3f5a-85d9-af0aee35547f@infradead.org>
+Date: Wed, 13 May 2020 08:01:21 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-X-Originating-IP: [10.75.127.50]
-X-ClientProxiedBy: SFHDAG6NODE3.st.com (10.75.127.18) To SFHDAG3NODE3.st.com
- (10.75.127.9)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-13_06:2020-05-13,
- 2020-05-13 signatures=0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_080008_622819_F5F5A1C0 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -0.9 (/)
-X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+In-Reply-To: <20200513141134.25819-3-lars.povlsen@microchip.com>
+Content-Language: en-US
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,50 +47,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Benjamin Gaignard <benjamin.gaignard@st.com>,
- linux-usb@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-gpio@vger.kernel.org, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Correct the compatible list for stm32mp15x SoC.
-Fix the name of the stm32mp15x dedicated supply to be aligned with
-what the driver use.
+On 5/13/20 7:11 AM, Lars Povlsen wrote:
+> diff --git a/drivers/pinctrl/Kconfig b/drivers/pinctrl/Kconfig
+> index 834c59950d1cf..2b0e9021fd7e0 100644
+> --- a/drivers/pinctrl/Kconfig
+> +++ b/drivers/pinctrl/Kconfig
+> @@ -396,6 +396,23 @@ config PINCTRL_OCELOT
+>  	select OF_GPIO
+>  	select REGMAP_MMIO
+> 
+> +config PINCTRL_MSCC_SGPIO
+> +	bool "Pinctrl driver for Microsemi Serial GPIO"
+> +	depends on OF
+> +	depends on HAS_IOMEM
+> +	select GPIOLIB
+> +	select GENERIC_PINCONF
+> +	select GENERIC_PINCTRL_GROUPS
+> +	select GENERIC_PINMUX_FUNCTIONS
+> +	select OF_GPIO
+> +	help
+> +          Support for the VCoreIII SoC serial GPIO device. By using a
 
-Signed-off-by: Benjamin Gaignard <benjamin.gaignard@st.com>
----
- Documentation/devicetree/bindings/usb/dwc2.yaml | 6 ++++--
- 1 file changed, 4 insertions(+), 2 deletions(-)
+Line above should be indented with one tab + 2 spaces...
+like the lines below.
 
-diff --git a/Documentation/devicetree/bindings/usb/dwc2.yaml b/Documentation/devicetree/bindings/usb/dwc2.yaml
-index 0d6d850a7f17..1357b861310d 100644
---- a/Documentation/devicetree/bindings/usb/dwc2.yaml
-+++ b/Documentation/devicetree/bindings/usb/dwc2.yaml
-@@ -44,7 +44,9 @@ properties:
-       - const: st,stm32f4x9-hsotg
-       - const: st,stm32f7-hsotg
-       - const: st,stm32mp15-fsotg
--      - const: st,stm32mp15-hsotg
-+      - items:
-+          - const: st,stm32mp15-hsotg
-+          - const: snps,dwc2
-       - const: samsung,s3c6400-hsotg
- 
-   reg:
-@@ -90,7 +92,7 @@ properties:
-   vusb_a-supply:
-     description: phandle to voltage regulator of analog section.
- 
--  vusb33d-supply:
-+  usb33d-supply:
-     description: reference to the VBUS and ID sensing comparators supply, in
-       order to perform OTG operation, used on STM32MP15 SoCs.
- 
+> +	  serial interface, the SIO controller significantly extends
+> +	  the number of available GPIOs with a minimum number of
+> +	  additional pins on the device. The primary purpose of the
+> +	  SIO controller is to connect control signals from SFP
+> +	  modules and to act as an LED controller.
+> +
+
+thanks.
 -- 
-2.15.0
+~Randy
 
 
 _______________________________________________
