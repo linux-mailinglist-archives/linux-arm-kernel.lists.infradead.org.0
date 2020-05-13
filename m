@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37CBB1D03DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 02:42:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DB771D03DF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 02:42:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=whHZoorzqK/gCvu1cq1EEkfmullQtjf5jM2O0bTqqAk=; b=TSd3PnmJskiYmDGpvIZ2GAiSuT
-	GOkPMJmVb8/mpQzLNVyAe0MuWDf6olSDj0VzsP+qKoxr7puyjxfizC/Xo8LuBJV4hwyHJ48m0NzvW
-	s+W8SDL+KfPEXNKfC85fHQiMQfPs/UDwE61//WrSk4PpEbcmPWZZrnFKzROAbNguvx3f5Y8uHCxcv
-	0sKnrHu8JNv4/QaRP6rLpYVqvW2Ikj+KTB7Z47m4FRJuPZWm00eqz0mYrQEOCqb4GlLjuiDXr0FfD
-	wB3KGjXtfl/Re8AqCjteA+POjwwOfrmlcmdY6glgGS9E9U3SjAOqNUvHzigKWKOkgrTducZEnfc7y
-	PTgZoyVQ==;
+	bh=8+5+Uhga+8QSIOxu7qqBB3SHn9WdFae7bIntDbDPo3g=; b=RKMyjy9b9X1m+38ox9FRgk+vN1
+	q2DhI2X5QTWKE72ffvisxOPvBsQzF+OUf32vLWxWyGQ/DCXxEZHogSljYXWPUjJsiR9TKXeY59UJb
+	RkbRILEXo5RHXpXVy5MhuO0oOgk6TQhM0Yixamh/FrUtMiGOYqb/qcrONYdS7emj2uckmSeXvFGVJ
+	iiWhHktR1nV3GZDbvD0KhOzreg9Yevf/sr77Kc8QEyXJeEv1dJqijs2ehnMKeP6weQLPkccF/KsE5
+	eKex0tgWO06cwpjzb9UiYZ3dUliEz0wb38rF3tXFxTzS1zNEl3d3+Q3LGq/vI5++CddnyCOOWNaGf
+	wVWW/jMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYfT9-0007fI-Gf; Wed, 13 May 2020 00:41:55 +0000
+	id 1jYfTw-0008Qj-FN; Wed, 13 May 2020 00:42:44 +0000
 Received: from alexa-out-sd-02.qualcomm.com ([199.106.114.39])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYfRB-0003oF-Jd
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 00:39:55 +0000
-Received: from unknown (HELO ironmsg03-sd.qualcomm.com) ([10.53.140.143])
+ id 1jYfRD-0003oF-Cw
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 00:39:56 +0000
+Received: from unknown (HELO ironmsg04-sd.qualcomm.com) ([10.53.140.144])
  by alexa-out-sd-02.qualcomm.com with ESMTP; 12 May 2020 17:39:48 -0700
 Received: from gurus-linux.qualcomm.com ([10.46.162.81])
- by ironmsg03-sd.qualcomm.com with ESMTP; 12 May 2020 17:39:47 -0700
+ by ironmsg04-sd.qualcomm.com with ESMTP; 12 May 2020 17:39:47 -0700
 Received: by gurus-linux.qualcomm.com (Postfix, from userid 383780)
- id C499C4D8E; Tue, 12 May 2020 17:39:47 -0700 (PDT)
+ id D558C49C2; Tue, 12 May 2020 17:39:47 -0700 (PDT)
 From: Guru Das Srinagesh <gurus@codeaurora.org>
 To: linux-pwm@vger.kernel.org, Thierry Reding <thierry.reding@gmail.com>,
  =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-Subject: [RESEND PATCH v14 07/11] pwm: sifive: Use 64-bit division macro
-Date: Tue, 12 May 2020 17:39:41 -0700
-Message-Id: <63d1a5f93e792c6eea2040a91980ec3d7f39eeca.1589330178.git.gurus@codeaurora.org>
+Subject: [RESEND PATCH v14 08/11] pwm: sun4i: Use nsecs_to_jiffies to avoid a
+ division
+Date: Tue, 12 May 2020 17:39:42 -0700
+Message-Id: <93595b4e546184b80cd7959e78e8e3f2c5ef61a3.1589330178.git.gurus@codeaurora.org>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <cover.1589330178.git.gurus@codeaurora.org>
 References: <cover.1589330178.git.gurus@codeaurora.org>
 In-Reply-To: <cover.1589330178.git.gurus@codeaurora.org>
 References: <cover.1589330178.git.gurus@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_173953_714575_294F03B0 
-X-CRM114-Status: GOOD (  11.08  )
+X-CRM114-CacheID: sfid-20200512_173955_501136_457566B8 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -2.0 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.0 points)
@@ -80,29 +81,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Since the PWM framework is switching struct pwm_args.period's datatype
-to u64, prepare for this transition by using DIV64_U64_ROUND_CLOSEST to
-handle a 64-bit divisor.
+Since the PWM framework is switching struct pwm_state.period's datatype
+to u64, prepare for this transition by using nsecs_to_jiffies() which
+does away with the need for a division operation.
 
 Signed-off-by: Guru Das Srinagesh <gurus@codeaurora.org>
-Acked-by: Palmer Dabbelt <palmerdabbelt@google.com>
+Acked-by: Chen-Yu Tsai <wens@csie.org>
 ---
- drivers/pwm/pwm-sifive.c | 2 +-
+ drivers/pwm/pwm-sun4i.c | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/pwm/pwm-sifive.c b/drivers/pwm/pwm-sifive.c
-index cc63f9b..62de0bb 100644
---- a/drivers/pwm/pwm-sifive.c
-+++ b/drivers/pwm/pwm-sifive.c
-@@ -181,7 +181,7 @@ static int pwm_sifive_apply(struct pwm_chip *chip, struct pwm_device *pwm,
- 	 * consecutively
- 	 */
- 	num = (u64)duty_cycle * (1U << PWM_SIFIVE_CMPWIDTH);
--	frac = DIV_ROUND_CLOSEST_ULL(num, state->period);
-+	frac = DIV64_U64_ROUND_CLOSEST(num, state->period);
- 	/* The hardware cannot generate a 100% duty cycle */
- 	frac = min(frac, (1U << PWM_SIFIVE_CMPWIDTH) - 1);
+diff --git a/drivers/pwm/pwm-sun4i.c b/drivers/pwm/pwm-sun4i.c
+index 5c677c5..1694e69 100644
+--- a/drivers/pwm/pwm-sun4i.c
++++ b/drivers/pwm/pwm-sun4i.c
+@@ -285,7 +285,7 @@ static int sun4i_pwm_apply(struct pwm_chip *chip, struct pwm_device *pwm,
+ 	val = (duty & PWM_DTY_MASK) | PWM_PRD(period);
+ 	sun4i_pwm_writel(sun4i_pwm, val, PWM_CH_PRD(pwm->hwpwm));
+ 	sun4i_pwm->next_period[pwm->hwpwm] = jiffies +
+-		usecs_to_jiffies(cstate.period / 1000 + 1);
++		nsecs_to_jiffies(cstate.period + 1000);
  
+ 	if (state->polarity != PWM_POLARITY_NORMAL)
+ 		ctrl &= ~BIT_CH(PWM_ACT_STATE, pwm->hwpwm);
 -- 
 The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
 a Linux Foundation Collaborative Project
