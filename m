@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7936A1D135D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:56:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EFE601D136C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 14:56:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=YA+FQntG0Lkp7133O5sZPexMbuO4BBjhlwVbZSbdFsY=; b=JJ9rkASTADtS3n
-	EMadIA/ISKQyxyuOhtE3aRPQgJf7eSSGSuR5gU0zQ4lrnmq4mVfWBxH6Ofj2R/D763rZe4c/G0kmR
-	xLevb04Xwd6KNhQ8OoIzWGhH4oFODnQWCO27xBv6lryTux/yb5P2voQZItheiHh60rBeiLFLFPgZf
-	C06rhEiIPs/5Mk+XJH2LPKVYJU1barthsby3dby4lkS4xV3YuRqnlI7CuHjA4c6z2Ulld/QGG6nr6
-	G8aKyAqfEUZHWn+faP7afJBoLDpUk9ky3LVz3SsgukSp26AAojALrhQRTEK4/E7KBNy8CduPEwukq
-	TK9smNMCVOHAjJFh6hHA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8iI8AFAHcd/MXU5Tnkt7xAjk9jqQCWUQQaJ5emQuGM8=; b=jvhU6SpujQxzLM
+	Xo4KTTFEbJjlrgDdagxzFD5cdD+6CNoprCfbBvmePr0SGCJWcb7zEP1gxGXqssUdOV58eAGZ+FibI
+	g0nsnZ3uunwoP8m9nmFBba0+1QoXBSnJzAXokBio1GNsURBn75+zsnJVfAb2DMkr2d5HUyCJk82al
+	s5cMeMvDT2PBW9LrLaMkqA7NrBXsTLHREQahEaglW/mRIP88llBWj+AG5gvYcRvG7sYmIi3N3XUmd
+	MP5DJWFqd73dFTeJTjSRR4+Y8agvGwaXymEuKu7ex3YrWEjdnGShRzIBZdDWqgQikD78S/LlIap+t
+	PvZ3CFsxenhozD4+OIiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYqvh-0001L4-74; Wed, 13 May 2020 12:56:09 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1jYqw3-0001Y9-Ec; Wed, 13 May 2020 12:56:31 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYqvX-0001Js-FX
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 12:56:01 +0000
+ id 1jYqvg-0001QK-J5
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 12:56:09 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589374559; x=1620910559;
- h=from:to:cc:subject:date:message-id:mime-version:
- content-transfer-encoding;
- bh=71agoK2Lf2NcrvRKduazxlxfbvYG5gjDX3+0wemNjCw=;
- b=URUivyVsnBWD5nQtlpaDFjBN75KtPIcvhJs6ryMT66UHfpnVJiWA1UUr
- aARYFBzSUcDpfb5IWBmcrxmsyzjvrlspnADW7WdIuRSYuiMFBKw91ea3R
- Lg8BhxNX4CkXWkDiUvuNtYYBFiFaWCG46w2MBnoXBQ9i41utx7AtoBYmk
- gAmxv8AWBmKJn2xPQH0dXIhIqyt2/1btFd+5ttde0yEWa+skJ6UVoJMut
- fFVvC2e/KArEeoI9axZmi7QCph2A7CqCbFwvOxvwWGScm+dMCgSK9WL96
- ANeRS0jT+/bEZCp5rNkDWmD2UTSf8jxk+xpchOT+ujasleoXcGY6a+kbp g==;
-IronPort-SDR: 3Bbqq+3ueyuEU0vcFJ63If04Fklj8PCnVSsmtda/MfpzXzLeqBZv06fQHy9pyyPmCnNbtRr+0a
- WKD8Sfn8OkWwYsBSil4fsWOrrGRJoDowIhYPnCMK08AvJmX7pZ/EXNgGSYq79ci5/nEx5RWj70
- mwSIziKMbOkRgj/N237z1EX/Kkra6yNHUeCsDuY7rS9uKCqDBBXbGr8dzn9k6No+gjmoT8Cw3I
- R7cuwk+XjmQNHshM9gm7mEbUFj8srYBXqe4n0XXL58LCAGSjnt3RhOmuz/UFFD9kWdP7Pu2Cdt
- iUk=
-X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="76494509"
+ t=1589374568; x=1620910568;
+ h=from:to:cc:subject:date:message-id:in-reply-to:
+ references:mime-version:content-transfer-encoding;
+ bh=tWUrw/osLjvb/c0rlAloWSn6upuy4DQgjffgP9JdqBU=;
+ b=gjrNPak5xh0dzqyHE4CO8zYtHJuHCRxHve+svQD700dq2W6398EfT6MZ
+ 5X+3van8eabVEwD1w9SeAaq9/lSdf8qkuUa3u1R2J21T+0teIXEL8UE9y
+ OxLXp98wd+oRTajDxqFwHrYAYs5GfPHEIL7wZ6GOX1K/9zTJePEdE6m2c
+ pSlj5Pn/ODGmrz2FAz1Hc1kUa8YwbH3k1ljXQw8n0MKVDTHFWJl7lQlVq
+ j1Q7HhhRBPXe44upTqb8c8BOB3DILY33A4Cfjg7id3p+w3+vS898eJyll
+ svyZwxbwWz9CiLYpfFN8k5VwjPnUMLn49PIeenhZpqPjlY46JdA3rVYiX g==;
+IronPort-SDR: 5GHqSiFtKgWIC8va82L+s6NuvHwV62gTUokLdXnoPAjLf5/HA5uwPqmcP00xXoVlF0HErxDLTG
+ 9aLm3xM6vdtFRug26VdhIpctNXmcVVZ/IfHQL43hxYe3FijQxx6p+g6diKrDY4WJgjxUgydAmQ
+ m1Rkuu5XoerHhbojxsEY/QGTsPcpUhhDi77/5WeWsgE46h+bjosOvGqQ5RhOXeMnwdPTysupA4
+ c0QvLKjHNmh1h0HP1r6VIPqUZxvZK64FulwW5Z3tR5rtef98cJW0byFBlYHWJehBKrOStYPJ0E
+ scM=
+X-IronPort-AV: E=Sophos;i="5.73,387,1583218800"; d="scan'208";a="79436238"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 May 2020 05:55:55 -0700
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 05:56:06 -0700
 Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 13 May 2020 05:55:57 -0700
+ 15.1.1713.5; Wed, 13 May 2020 05:56:08 -0700
 Received: from soft-dev15.microsemi.net (10.10.115.15) by
  chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 05:55:52 -0700
+ 15.1.1713.5 via Frontend Transport; Wed, 13 May 2020 05:56:02 -0700
 From: Lars Povlsen <lars.povlsen@microchip.com>
 To: SoC Team <soc@kernel.org>, Arnd Bergmann <arnd@arndb.de>, Stephen Boyd
  <sboyd@kernel.org>, Linus Walleij <linus.walleij@linaro.org>
-Subject: [PATCH 00/14] Adding support for Microchip Sparx5 SoC
-Date: Wed, 13 May 2020 14:55:18 +0200
-Message-ID: <20200513125532.24585-1-lars.povlsen@microchip.com>
+Subject: [PATCH 01/14] pinctrl: ocelot: Should register GPIO's even if not irq
+ controller
+Date: Wed, 13 May 2020 14:55:19 +0200
+Message-ID: <20200513125532.24585-2-lars.povlsen@microchip.com>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200513125532.24585-1-lars.povlsen@microchip.com>
+References: <20200513125532.24585-1-lars.povlsen@microchip.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_055559_521402_A4633E16 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20200513_055608_652960_0BF563AA 
+X-CRM114-Status: GOOD (  12.45  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -90,8 +93,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Steen Hegelund <Steen.Hegelund@microchip.com>,
- linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org,
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Steen Hegelund <Steen.Hegelund@microchip.com>, linux-clk@vger.kernel.org,
+ linux-kernel@vger.kernel.org,
  Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
  linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Olof Johansson <olof@lixom.net>, Michael
@@ -101,69 +106,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch series adds support for Microchip Sparx5 SoC, the CPU
-system of a advanced, TSN capable gigabit switch. The CPU is an armv8
-x 2 CPU core (A53).
+This fixes the situation where the GPIO controller is not used as an
+interrupt controller as well.
 
-Although this is an ARM core, it shares some peripherals with the
-Microsemi Ocelot SoC.
+Previously, the driver would silently fail to register even the
+GPIO's. With this change, the driver will only register as an
+interrupt controller if a parent interrupt is provided.
 
-This is the first official revision of the series.
+Reviewed-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Lars Povlsen <lars.povlsen@microchip.com>
+---
+ drivers/pinctrl/pinctrl-ocelot.c | 30 +++++++++++++++---------------
+ 1 file changed, 15 insertions(+), 15 deletions(-)
 
-Lars Povlsen (14):
-  pinctrl: ocelot: Should register GPIO's even if not irq controller
-  pinctrl: ocelot: Remove instance number from pin functions
-  pinctrl: ocelot: Fix GPIO interrupt decoding on Jaguar2
-  arm64: sparx5: Add support for Microchip 2xA53 SoC
-  dt-bindings: arm: sparx5: Add documentation for Microchip Sparx5 SoC
-  arm64: dts: sparx5: Add basic cpu support
-  dt-bindings: pinctrl: ocelot: Add Sparx5 SoC support
-  arm64: dts: sparx5: Add pinctrl support
-  pinctrl: ocelot: Add Sparx5 SoC support
-  dt-bindings: clock: sparx5: Add Sparx5 SoC DPLL clock
-  dt-bindings: clock: sparx5: Add bindings include file
-  clk: sparx5: Add Sparx5 SoC DPLL clock driver
-  arm64: dts: sparx5: Add Sparx5 SoC DPLL clock
-  arm64: dts: sparx5: Add i2c devices, i2c muxes
-
- .../bindings/arm/microchip,sparx5.yaml        |  87 +++
- .../bindings/clock/microchip,sparx5-dpll.yaml |  46 ++
- .../bindings/pinctrl/mscc,ocelot-pinctrl.txt  |   4 +-
- MAINTAINERS                                   |   9 +
- arch/arm64/Kconfig.platforms                  |  14 +
- arch/arm64/boot/dts/Makefile                  |   1 +
- arch/arm64/boot/dts/microchip/Makefile        |   4 +
- arch/arm64/boot/dts/microchip/sparx5.dtsi     | 202 +++++++
- .../boot/dts/microchip/sparx5_pcb125.dts      |  21 +
- .../boot/dts/microchip/sparx5_pcb134.dts      |  17 +
- .../dts/microchip/sparx5_pcb134_board.dtsi    | 252 ++++++++
- .../boot/dts/microchip/sparx5_pcb134_emmc.dts |  17 +
- .../boot/dts/microchip/sparx5_pcb135.dts      |  17 +
- .../dts/microchip/sparx5_pcb135_board.dtsi    |  92 +++
- .../boot/dts/microchip/sparx5_pcb135_emmc.dts |  17 +
- .../boot/dts/microchip/sparx5_pcb_common.dtsi |  19 +
- drivers/clk/Makefile                          |   1 +
- drivers/clk/clk-sparx5.c                      | 269 +++++++++
- drivers/pinctrl/pinctrl-ocelot.c              | 558 +++++++++++++++---
- include/dt-bindings/clock/microchip,sparx5.h  |  23 +
- 20 files changed, 1587 insertions(+), 83 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/arm/microchip,sparx5.yaml
- create mode 100644 Documentation/devicetree/bindings/clock/microchip,sparx5-dpll.yaml
- create mode 100644 arch/arm64/boot/dts/microchip/Makefile
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5.dtsi
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb125.dts
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134.dts
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_board.dtsi
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb134_emmc.dts
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135.dts
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_board.dtsi
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb135_emmc.dts
- create mode 100644 arch/arm64/boot/dts/microchip/sparx5_pcb_common.dtsi
- create mode 100644 drivers/clk/clk-sparx5.c
- create mode 100644 include/dt-bindings/clock/microchip,sparx5.h
-
---
+diff --git a/drivers/pinctrl/pinctrl-ocelot.c b/drivers/pinctrl/pinctrl-ocelot.c
+index ed8eac6c14944..d4ac65b1efc0b 100644
+--- a/drivers/pinctrl/pinctrl-ocelot.c
++++ b/drivers/pinctrl/pinctrl-ocelot.c
+@@ -751,21 +751,21 @@ static int ocelot_gpiochip_register(struct platform_device *pdev,
+ 	gc->of_node = info->dev->of_node;
+ 	gc->label = "ocelot-gpio";
+ 
+-	irq = irq_of_parse_and_map(pdev->dev.of_node, 0);
+-	if (irq <= 0)
+-		return irq;
+-
+-	girq = &gc->irq;
+-	girq->chip = &ocelot_irqchip;
+-	girq->parent_handler = ocelot_irq_handler;
+-	girq->num_parents = 1;
+-	girq->parents = devm_kcalloc(&pdev->dev, 1, sizeof(*girq->parents),
+-				     GFP_KERNEL);
+-	if (!girq->parents)
+-		return -ENOMEM;
+-	girq->parents[0] = irq;
+-	girq->default_type = IRQ_TYPE_NONE;
+-	girq->handler = handle_edge_irq;
++	irq = irq_of_parse_and_map(gc->of_node, 0);
++	if (irq) {
++		girq = &gc->irq;
++		girq->chip = &ocelot_irqchip;
++		girq->parent_handler = ocelot_irq_handler;
++		girq->num_parents = 1;
++		girq->parents = devm_kcalloc(&pdev->dev, 1,
++					     sizeof(*girq->parents),
++					     GFP_KERNEL);
++		if (!girq->parents)
++			return -ENOMEM;
++		girq->parents[0] = irq;
++		girq->default_type = IRQ_TYPE_NONE;
++		girq->handler = handle_edge_irq;
++	}
+ 
+ 	ret = devm_gpiochip_add_data(&pdev->dev, gc, info);
+ 	if (ret)
+-- 
 2.26.2
+
 
 _______________________________________________
 linux-arm-kernel mailing list
