@@ -2,83 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B71271D0EEB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:03:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB62D1D0F5A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:09:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IVhatwuSy43qaJaA09dUAA/oxKYNCWTBuk/ggh06EIg=; b=ifhR+MGYD37iV8
-	/j6LGaut0iCrT6gRTXT78t5pLCslFEVxIVrmF+YXdZO/bQhNBSh1VzBnZBy3YCeVIW90bxaNXQlYy
-	xHWgpAhzHmCy2vhCO1n/zrMMsyXLS4CGpjRY4NnZGITBFjJbwXUcHpm96p9t8/XzC94OH3+r3uqHK
-	ioHCO+paB/EkXO44HUUPJJuVig1UuTAT+0YmxTNZHE4F+f/Y39pVIR1go1j+7Pom73SRRT236EIX7
-	PxqyluH1zBp3cGaYdTT6whseKi2lVrv4awmExG0jZdC2Pyl8hSfkKz66D4Q4glANkUINbAkKQ+frR
-	ApB0tuUrqLDrkWvE6N5Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=njDHS7wcQsxmScpDMssPZO9pQGOyq4lXo/d42MaNykI=; b=Eeskfzvht5hcvZ
+	u51gUSLmYIMvG5XcHHqVj+PM2DO0LVEDQ4VWmgmuCCmrb03Tj3pQjHg8aMItz3BHyc8Jk1YrAR3nT
+	UtNit1lOGWx3jM2Zocdm4rhz5t0kJhEeoQfHd0ZB6eXbmdacRZd29+Hm3SosKk9PNq5IQkKRlbOXC
+	h47v6uKUT+EADUjJVaKkStIgrOl5TQTmv2FhdL6M8GWi2k++5V6pMJioIzfW5ULaKcPurkKtHqgwK
+	ipPfnWfyuGnX8JhasBCkQwhCOoLQbEpivmMJffeAZT5NbM8GGn54HU1XO9cmBxK2HolmHskI7FlqX
+	hBm/5caryoTPWdu8t/YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYoEP-0002Yl-1T; Wed, 13 May 2020 10:03:17 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1jYoKb-0005rE-4t; Wed, 13 May 2020 10:09:41 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYoE5-0002OT-Qx
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:02:59 +0000
-Received: by mail-wm1-x343.google.com with SMTP id z72so18171859wmc.2
+ id 1jYoKR-0005qS-VO
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:09:34 +0000
+Received: by mail-wr1-x441.google.com with SMTP id v12so20101093wrp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 03:02:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=m6npkSNSQsVCsMpMcC0lz1k4am3Pd5ep45Q5fu5Nptw=;
- b=AYJ8yd5N0EziUK34rRkqe3n2lzmslSv1/nfE+XR/DtpZRU8XpoyvW6pEuqqCirYFXb
- xFrebzvk8h2134/CD/HNPAsQm/b3oyUuY0GNWe1f/cdi/20gIXMGsrFdgNX6btOisC3A
- dgKrBY2KJ98UVkFdaZ7BJ6fCeTucEcTgqy3yd4bcPJ0BV4/x/RNswH2aeF1MqZ/n2NUE
- qOxnglQUTifg9rR+5NA0neYYjlmf39IbTS9Ot+hHbm9APZaxzB1GkokWz0/OTyx95RwW
- TBg22xIDAEOO8pobXPQX9Vm+1PhjpnT9XwhKAOnlYYWAuUfT/JcfZ5Fv568FuLSQVSzs
- qEbg==
+ Wed, 13 May 2020 03:09:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=cc:subject:to:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=+GjY72yA1xPGwnDbUNI8eLmRDugqmcvDfX06Ol9JGdg=;
+ b=DDBZrC6nw7sl8U5W6rO2kKDJVkq0Rj8nt64GVIuCuLgI2Ia8cgv3m/P8J4ZbUx5Hsy
+ eofjYRiC40PWZg9IcxzP3CWEoob6vpG3gzYDWYQNA5XXNDmD5qSLZ95Yv6+GewD6XDqQ
+ wQNm0ysNBms53VpW5cMgTZ9p+UXw+h3IYkdVajZRA/LEw8I6h9+ng/MTKsm1tLKt3X/E
+ 0qnlSC09UBmKZsnsTdQcQ+aOf72gKa/qFY+U6n5QVwCAqL0+rye6w3sSgCM9I5uQ0Rez
+ oUbG5F4ItfSlaidHQYrCdXhuVJnLZ+TEtOF+O2NuXT2kedFkPgMiojlSN3yvQoW/xoyO
+ Vcaw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=m6npkSNSQsVCsMpMcC0lz1k4am3Pd5ep45Q5fu5Nptw=;
- b=NxIvq4aPjA2hnrHZnN612oj8IP4oOa4qlir7GDYKYvVDp33tAgCp9BfMwEnJKchXtn
- xcA+Te/S03pZwwBsTeojVh9W8H3RVlXiw0O6d/aaefAKdiQAUZKk+rfIkqEstT45UG7G
- d8GCO+zFlPLlYuDxQNYHup6mVbWqHXtRjkAm4kAkRfzKfsYpONY7wHN7jGFrupS5GIpm
- LpX1XtAr7xYAI8/pPp5ysFBFQ2FRTQ60E4TKKwqZaOPnDh8lGvpjzrlyGBWS1X6mZBXm
- mEofGhAOAGMYiRqH6H0Gb3LZ5jKIH/1czDpPRcfQCV+pXLs8xdy5D4GqJZnMSr68QEDa
- lm0A==
-X-Gm-Message-State: AGi0PuYPI8N3/dm3vVqy/R+IRsIvqKgH/a70pcIlxqq5Oo61jw7QTbIP
- RufTJMi8gcTIyP3aglbV25yd9w==
-X-Google-Smtp-Source: APiQypJ0rQ7lzqYNr+yDzxDGOcMWgdTnjGTWl7ny9DhlK1VnGjq47izadjU9R0DB/xGz2lI8/ESxVA==
-X-Received: by 2002:a1c:f211:: with SMTP id s17mr45903196wmc.168.1589364175644; 
- Wed, 13 May 2020 03:02:55 -0700 (PDT)
-Received: from myrica ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id b2sm24029735wrm.30.2020.05.13.03.02.54
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 03:02:55 -0700 (PDT)
-Date: Wed, 13 May 2020 12:02:45 +0200
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-To: Robin Murphy <robin.murphy@arm.com>
-Subject: Re: [PATCH] iommu/arm-smmu-v3: Don't reserve implementation defined
- register space
-Message-ID: <20200513100245.GA214296@myrica>
-References: <20200506174629.1504153-1-jean-philippe@linaro.org>
- <2c5b52c0-8be0-9c22-ed27-3a2acd2b570c@arm.com>
+ h=x-gm-message-state:cc:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=+GjY72yA1xPGwnDbUNI8eLmRDugqmcvDfX06Ol9JGdg=;
+ b=dzlPt57Y8lv0ElA0SRH2hniV/HSuPzW8w6SqTF3lsaOLidbWIoHX8FM3q9pbQautFp
+ TJHQZQf37Eua/XwYbKbzQ3qzDdFM/Ydc3If6CUwyWNm99z54EmxdaA6JDtkiixUeUHsu
+ 3fF4PrmIauaGhmkVLo/M2LHImdWWNSc5ecaYeqZ1Ae4/31XTfmtOY6NidpVarjcmP8GJ
+ udzsWL9sLm2xmBh+it4YjMYEaBLzW0h9EXkCtM264AcFuQpLQG2LF/sxdh/ESQW2L0fi
+ TYutNqcqe4ULfk4Xlcx94N+DoKFrxoPFRJq3e2ZxU+L53aneBQb+rzhulhyQtpuLFDg0
+ wx9A==
+X-Gm-Message-State: AGi0PuYlIk8LQwy9dJE8/xl7p67wiiU52dbu2brnYv3LH7tKJFEyz0JW
+ IcxB3knTklFbSJvnAUrQNqM3rI0H
+X-Google-Smtp-Source: APiQypLl/9H8IiSaNNGBhPLPWFimQZnlEOO2PRCYwukvlQXJayB1ovAAcazK/uXzaluUbZSePYST6g==
+X-Received: by 2002:adf:e489:: with SMTP id i9mr22006059wrm.373.1589364568580; 
+ Wed, 13 May 2020 03:09:28 -0700 (PDT)
+Received: from ?IPv6:2001:a61:2482:101:a081:4793:30bf:f3d5?
+ ([2001:a61:2482:101:a081:4793:30bf:f3d5])
+ by smtp.gmail.com with ESMTPSA id j1sm14949741wrm.40.2020.05.13.03.09.27
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 13 May 2020 03:09:28 -0700 (PDT)
+Subject: Re: [PATCH 04/14] prctl.2: srcfix add comments for navigation
+To: Dave Martin <Dave.Martin@arm.com>
+References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
+ <1589301419-24459-5-git-send-email-Dave.Martin@arm.com>
+From: "Michael Kerrisk (man-pages)" <mtk.manpages@gmail.com>
+Message-ID: <8b882b6e-376b-111d-3c3c-7a042b0e91b5@gmail.com>
+Date: Wed, 13 May 2020 12:09:27 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <2c5b52c0-8be0-9c22-ed27-3a2acd2b570c@arm.com>
+In-Reply-To: <1589301419-24459-5-git-send-email-Dave.Martin@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_030257_939936_7C8DC04F 
-X-CRM114-Status: GOOD (  27.02  )
+X-CRM114-CacheID: sfid-20200513_030932_042726_298CCEEC 
+X-CRM114-Status: GOOD (  33.58  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [mtk.manpages[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,168 +103,432 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, will@kernel.org,
- linux-arm-kernel@lists.infradead.org, tuanphan@amperemail.onmicrosoft.com
+Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
+ mtk.manpages@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 08:03:05PM +0100, Robin Murphy wrote:
-> On 2020-05-06 6:46 pm, Jean-Philippe Brucker wrote:
-> > Some SMMUv3 implementation embed the Perf Monitor Group Registers (PMCG)
-> > inside the first 64kB region of the SMMU. Since PMCG are managed by a
-> > separate driver, this layout causes resource reservation conflicts
-> > during boot.
-> > 
-> > To avoid this conflict, only reserve the MMIO region we actually use:
-> > the first 0xe0 bytes of page 0 and the first 0xd0 bytes of page 1.
-> > Although devm_ioremap() still works on full pages under the hood, this
-> > way we benefit from resource conflict checks.
-> > 
-> > Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
-> > ---
-> > A nicer (and hopefully working) solution to the problem dicussed here:
-> > https://lore.kernel.org/linux-iommu/20200421155745.19815-1-jean-philippe@linaro.org/
-> > ---
-> >   drivers/iommu/arm-smmu-v3.c | 50 +++++++++++++++++++++++++++++++++----
-> >   1 file changed, 45 insertions(+), 5 deletions(-)
-> > 
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index 82508730feb7a1..fc85cdd5b62cca 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -171,6 +171,9 @@
-> >   #define ARM_SMMU_PRIQ_IRQ_CFG1		0xd8
-> >   #define ARM_SMMU_PRIQ_IRQ_CFG2		0xdc
-> > +#define ARM_SMMU_PAGE0_REG_SZ		0xe0
-> > +#define ARM_SMMU_PAGE1_REG_SZ		0xd0
-> 
-> I wonder if we shouldn't still claim all the way up to 0xdff for good
-> measure, since the IMP-DEF areas only start appearing beyond that.
+Hi Dave,
 
-Works for me, the 0xe0 limit was arbitrary. I'll set both reg sizes to
-0xe00.
+On 5/12/20 6:36 PM, Dave Martin wrote:
+> The prctl.2 source is unnecessarily hard to navigate, not least
+> because prctl option flags are traditionally named PR_* and so look
+> just like prctl names.
+> 
+> For each actual prctl, add a comment of the form
+> 
+> 	.\" prctl PR_FOO
+> 
+> to make it move obvious where each top-level prctl starts.
+> 
+> Of course, we could add some clever macros, but let's not confuse
+> dumb parsers.
 
-> > +
-> >   /* Common MSI config fields */
-> >   #define MSI_CFG0_ADDR_MASK		GENMASK_ULL(51, 2)
-> >   #define MSI_CFG2_SH			GENMASK(5, 4)
-> > @@ -628,6 +631,7 @@ struct arm_smmu_strtab_cfg {
-> >   struct arm_smmu_device {
-> >   	struct device			*dev;
-> >   	void __iomem			*base;
-> > +	void __iomem			*page1;
-> >   #define ARM_SMMU_FEAT_2_LVL_STRTAB	(1 << 0)
-> >   #define ARM_SMMU_FEAT_2_LVL_CDTAB	(1 << 1)
-> > @@ -733,11 +737,14 @@ static struct arm_smmu_option_prop arm_smmu_options[] = {
-> >   static inline void __iomem *arm_smmu_page1_fixup(unsigned long offset,
-> >   						 struct arm_smmu_device *smmu)
-> >   {
-> > -	if ((offset > SZ_64K) &&
-> > -	    (smmu->options & ARM_SMMU_OPT_PAGE0_REGS_ONLY))
-> > -		offset -= SZ_64K;
-> > +	void __iomem *base = smmu->base;
-> > -	return smmu->base + offset;
-> > +	if (offset > SZ_64K) {
-> > +		offset -= SZ_64K;
-> > +		if (smmu->page1)
-> > +			base = smmu->page1;
-> > +	}
-> > +	return base + offset;
-> >   }
-> 
-> Why not just assign page1 = base in the Cavium case and let this simply be:
-> 
-> 	if (offset > SZ_64K)
-> 		return smmu->page1 + offset - SZ_64K;
-> 	return smmu->base + offset;
-> 
-> Then it's only one step further to get rid of the fixup and use page1
-> directly where relevant, but that could be a cleanup on top, since we
-> probably want a minimal change here for the sake of backporting (I believe
-> this deserves to go to stable, now that MMU-600 hardware is reaching the
-> field and will go wonky otherwise).
+A patch like this, which makes sweeping changes across the page,
+should be best placed at the end of a series, I think.
+The reason is that if I fail to apply this patch (and I am a
+little dubious about it), then probably the rest of the patches
+in the series won't apply. (Furthermore, it also forced me to
+apply patch 02 already, which I wanted to reflect on a little.)
 
-Yes looks much better. As it is the SMMUv3 driver isn't really wrong, but
-I'll still add a Fixes: tag to ease backporting.
+That said, I'll apply it, so that the remaining patches
+apply cleanly. I'll consider later whether to keep this
+change. For example, I wonder if a visually distinctive 
+source line that is always the same would be better than
+these comments that repeat the PR_* names. For example, 
+something like
 
-> 
-> >   static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
-> > @@ -4021,6 +4028,28 @@ err_reset_pci_ops: __maybe_unused;
-> >   	return err;
-> >   }
-> > +static void __iomem *arm_smmu_ioremap(struct device *dev,
-> > +				      resource_size_t start,
-> > +				      resource_size_t size)
-> > +{
-> > +	void __iomem *dest_ptr;
-> > +	struct resource *res;
-> > +
-> > +	res = devm_request_mem_region(dev, start, size, dev_name(dev));
-> > +	if (!res) {
-> > +		dev_err(dev, "can't request SMMU region %pa\n", &start);
-> > +		return IOMEM_ERR_PTR(-EINVAL);
-> > +	}
-> > +
-> > +	dest_ptr = devm_ioremap(dev, start, size);
-> > +	if (!dest_ptr) {
-> > +		dev_err(dev, "ioremap failed for SMMU region %pR\n", res);
-> > +		devm_release_mem_region(dev, start, size);
-> > +		dest_ptr = IOMEM_ERR_PTR(-ENOMEM);
-> > +	}
-> > +	return dest_ptr;
-> > +}
-> 
-> Would it be any less complicated to stick with devm_ioremap_resource() and
-> fix up the resource itself for each call, rather than open-coding it?
+.\" ==========================
 
-Much better as well.
-
-> > +
-> >   static int arm_smmu_device_probe(struct platform_device *pdev)
-> >   {
-> >   	int irq, ret;
-> > @@ -4056,10 +4085,21 @@ static int arm_smmu_device_probe(struct platform_device *pdev)
-> >   	}
-> >   	ioaddr = res->start;
-> > -	smmu->base = devm_ioremap_resource(dev, res);
-> > +	/*
-> > +	 * Only map what we need, because the IMPLEMENTATION DEFINED registers
-> > +	 * may be used for the PMCGs, which are reserved by the PMU driver.
-> > +	 */
-> > +	smmu->base = arm_smmu_ioremap(dev, ioaddr, ARM_SMMU_PAGE0_REG_SZ);
-> >   	if (IS_ERR(smmu->base))
-> >   		return PTR_ERR(smmu->base);
-> > +	if (arm_smmu_resource_size(smmu) > SZ_64K) {
-> > +		smmu->page1 = arm_smmu_ioremap(dev, ioaddr + SZ_64K,
-> > +					       ARM_SMMU_PAGE1_REG_SZ);
-> > +		if (IS_ERR(smmu->page1))
-> > +			return PTR_ERR(smmu->page1);
-> > +	}
-> 
-> As above,
-> 
-> 	} else {
-> 		smmu->page1 = smmu->base;
-> 	}
-> 
-> Either way, those are just cleanliness nitpicks; I've no real objection to
-> the patch in its current state. Getting MMU-600 systems un-broken at all is
-> more important, there will always be time for cleanup :)
-
-Thanks for the review, I'll test and resend.
+I'll circle back to this later.
 
 Thanks,
-Jean
 
+Michael
+
+
+> Signed-off-by: Dave Martin <Dave.Martin@arm.com>
+> ---
+>  man2/prctl.2 | 48 ++++++++++++++++++++++++++++++++++++++++++++++++
+>  1 file changed, 48 insertions(+)
 > 
-> Robin.
+> diff --git a/man2/prctl.2 b/man2/prctl.2
+> index 9736434..e5b2b4b 100644
+> --- a/man2/prctl.2
+> +++ b/man2/prctl.2
+> @@ -77,6 +77,7 @@ is called with a first argument describing what to do
+>  arguments with a significance depending on the first one.
+>  The first argument can be:
+>  .\"
+> +.\" prctl PR_CAP_AMBIENT
+>  .TP
+>  .BR PR_CAP_AMBIENT " (since Linux 4.3)"
+>  .\" commit 58319057b7847667f0c9585b9de0e8932b0fdb08
+> @@ -130,6 +131,7 @@ library in the form of
+>  .BR cap_set_ambient (3),
+>  and
+>  .BR cap_reset_ambient (3).
+> +.\" prctl PR_CAPBSET_READ
+>  .TP
+>  .BR PR_CAPBSET_READ " (since Linux 2.6.25)"
+>  Return (as the function result) 1 if the capability specified in
+> @@ -152,6 +154,7 @@ A higher-level interface layered on top of this operation is provided in the
+>  .BR libcap (3)
+>  library in the form of
+>  .BR cap_get_bound (3).
+> +.\" prctl PR_CAPBSET_DROP
+>  .TP
+>  .BR PR_CAPBSET_DROP " (since Linux 2.6.25)"
+>  If the calling thread has the
+> @@ -178,6 +181,7 @@ A higher-level interface layered on top of this operation is provided in the
+>  .BR libcap (3)
+>  library in the form of
+>  .BR cap_drop_bound (3).
+> +.\" prctl PR_SET_CHILD_SUBREAPER
+>  .TP
+>  .BR PR_SET_CHILD_SUBREAPER " (since Linux 3.4)"
+>  .\" commit ebec18a6d3aa1e7d84aab16225e87fd25170ec2b
+> @@ -224,11 +228,13 @@ Some
+>  frameworks (e.g.,
+>  .BR systemd (1))
+>  employ a subreaper process for similar reasons.
+> +.\" prctl PR_GET_CHILD_SUBREAPER
+>  .TP
+>  .BR PR_GET_CHILD_SUBREAPER " (since Linux 3.4)"
+>  Return the "child subreaper" setting of the caller,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_DUMPABLE
+>  .TP
+>  .BR PR_SET_DUMPABLE " (since Linux 2.3.20)"
+>  Set the state of the "dumpable" attribute,
+> @@ -297,6 +303,7 @@ the ownership of files in the process's
+>  .IR /proc/[pid]
+>  directory is affected as described in
+>  .BR proc (5).
+> +.\" prctl PR_GET_DUMPABLE
+>  .TP
+>  .BR PR_GET_DUMPABLE " (since Linux 2.3.20)"
+>  Return (as the function result) the current state of the calling
+> @@ -304,6 +311,7 @@ process's dumpable attribute.
+>  .\" Since Linux 2.6.13, the dumpable flag can have the value 2,
+>  .\" but in 2.6.13 PR_GET_DUMPABLE simply returns 1 if the dumpable
+>  .\" flags has a nonzero value.  This was fixed in 2.6.14.
+> +.\" prctl PR_SET_ENDIAN
+>  .TP
+>  .BR PR_SET_ENDIAN " (since Linux 2.6.18, PowerPC only)"
+>  Set the endian-ness of the calling process to the value given
+> @@ -314,11 +322,13 @@ in \fIarg2\fP, which should be one of the following:
+>  or
+>  .B PR_ENDIAN_PPC_LITTLE
+>  (PowerPC pseudo little endian).
+> +.\" prctl PR_GET_ENDIAN
+>  .TP
+>  .BR PR_GET_ENDIAN " (since Linux 2.6.18, PowerPC only)"
+>  Return the endian-ness of the calling process,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_FP_MODE
+>  .TP
+>  .BR PR_SET_FP_MODE " (since Linux 4.0, only on MIPS)"
+>  .\" commit 9791554b45a2acc28247f66a5fd5bbc212a6b8c8
+> @@ -425,6 +435,7 @@ The arguments
+>  and
+>  .IR arg5
+>  are ignored.
+> +.\" prctl PR_GET_FP_MODE
+>  .TP
+>  .BR PR_GET_FP_MODE " (since Linux 4.0, only on MIPS)"
+>  Return (as the function result)
+> @@ -442,6 +453,7 @@ The arguments
+>  and
+>  .IR arg5
+>  are ignored.
+> +.\" prctl PR_SET_FPEMU
+>  .TP
+>  .BR PR_SET_FPEMU " (since Linux 2.4.18, 2.5.9, only on ia64)"
+>  Set floating-point emulation control bits to \fIarg2\fP.
+> @@ -452,11 +464,13 @@ to silently emulate floating-point operation accesses, or
+>  to not emulate floating-point operations and send
+>  .B SIGFPE
+>  instead.
+> +.\" prctl PR_GET_FPEMU
+>  .TP
+>  .BR PR_GET_FPEMU " (since Linux 2.4.18, 2.5.9, only on ia64)"
+>  Return floating-point emulation control bits,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_FPEXC
+>  .TP
+>  .BR PR_SET_FPEXC " (since Linux 2.4.21, 2.5.32, only on PowerPC)"
+>  Set floating-point exception mode to \fIarg2\fP.
+> @@ -470,11 +484,13 @@ Pass \fBPR_FP_EXC_SW_ENABLE\fP to use FPEXC for FP exception enables,
+>  \fBPR_FP_EXC_NONRECOV\fP for async nonrecoverable exception mode,
+>  \fBPR_FP_EXC_ASYNC\fP for async recoverable exception mode,
+>  \fBPR_FP_EXC_PRECISE\fP for precise exception mode.
+> +.\" prctl PR_GET_FPEXC
+>  .TP
+>  .BR PR_GET_FPEXC " (since Linux 2.4.21, 2.5.32, only on PowerPC)"
+>  Return floating-point exception mode,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_KEEPCAPS
+>  .TP
+>  .BR PR_SET_KEEPCAPS " (since Linux 2.2.18)"
+>  Set the state of the calling thread's "keep capabilities" flag.
+> @@ -485,6 +501,7 @@ must be either 0 (clear the flag)
+>  or 1 (set the flag).
+>  The "keep capabilities" value will be reset to 0 on subsequent calls to
+>  .BR execve (2).
+> +.\" prctl PR_GET_KEEPCAPS
+>  .TP
+>  .BR PR_GET_KEEPCAPS " (since Linux 2.2.18)"
+>  Return (as the function result) the current state of the calling thread's
+> @@ -492,6 +509,7 @@ Return (as the function result) the current state of the calling thread's
+>  See
+>  .BR capabilities (7)
+>  for a description of this flag.
+> +.\" prctl PR_MCE_KILL
+>  .TP
+>  .BR PR_MCE_KILL " (since Linux 2.6.32)"
+>  Set the machine check memory corruption kill policy for the calling thread.
+> @@ -532,6 +550,7 @@ The policy is inherited by children.
+>  The remaining unused
+>  .BR prctl ()
+>  arguments must be zero for future compatibility.
+> +.\" prctl PR_MCE_KILL_GET
+>  .TP
+>  .BR PR_MCE_KILL_GET " (since Linux 2.6.32)"
+>  Return (as the function result)
+> @@ -539,6 +558,7 @@ the current per-process machine check kill policy.
+>  All unused
+>  .BR prctl ()
+>  arguments must be zero.
+> +.\" prctl PR_SET_MM
+>  .TP
+>  .BR PR_SET_MM " (since Linux 3.3)"
+>  .\" commit 028ee4be34a09a6d48bdf30ab991ae933a7bc036
+> @@ -716,6 +736,7 @@ This feature is available only if the kernel is built with the
+>  .BR CONFIG_CHECKPOINT_RESTORE
+>  option enabled.
+>  .RE
+> +.\" prctl PR_MPX_ENABLE_MANAGEMENT
+>  .TP
+>  .BR PR_MPX_ENABLE_MANAGEMENT ", " PR_MPX_DISABLE_MANAGEMENT " (since Linux 3.19) "
+>  .\" commit fe3d197f84319d3bce379a9c0dc17b1f48ad358c
+> @@ -791,6 +812,7 @@ had been called.
+>  .IP
+>  For further information on Intel MPX, see the kernel source file
+>  .IR Documentation/x86/intel_mpx.txt .
+> +.\" prctl PR_SET_NAME
+>  .TP
+>  .BR PR_SET_NAME " (since Linux 2.6.9)"
+>  Set the name of the calling thread,
+> @@ -819,6 +841,7 @@ in the buffer pointed to by
+>  .IR "(char\ *) arg2" .
+>  The buffer should allow space for up to 16 bytes;
+>  the returned string will be null-terminated.
+> +.\" prctl PR_SET_NO_NEW_PRIVS
+>  .TP
+>  .BR PR_SET_NO_NEW_PRIVS " (since Linux 3.5)"
+>  Set the calling thread's
+> @@ -862,6 +885,7 @@ For more information, see the kernel source file
+>  before Linux 4.13).
+>  See also
+>  .BR seccomp (2).
+> +.\" prctl PR_GET_NO_NEW_PRIVS
+>  .TP
+>  .BR PR_GET_NO_NEW_PRIVS " (since Linux 3.5)"
+>  Return (as the function result) the value of the
+> @@ -873,6 +897,7 @@ behavior.
+>  A value of 1 indicates
+>  .BR execve (2)
+>  will operate in the privilege-restricting mode described above.
+> +.\" prctl PR_SET_PDEATHSIG
+>  .TP
+>  .BR PR_SET_PDEATHSIG " (since Linux 2.1.57)"
+>  Set the parent-death signal
+> @@ -922,11 +947,13 @@ or a binary that has associated capabilities (see
+>  .BR capabilities (7));
+>  otherwise, this value is preserved across
+>  .BR execve (2).
+> +.\" prctl PR_GET_PDEATHSIG
+>  .TP
+>  .BR PR_GET_PDEATHSIG " (since Linux 2.3.15)"
+>  Return the current value of the parent process death signal,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_PTRACER
+>  .TP
+>  .BR PR_SET_PTRACER " (since Linux 3.4)"
+>  .\" commit 2d514487faf188938a4ee4fb3464eeecfbdcf8eb
+> @@ -959,6 +986,7 @@ For further information, see the kernel source file
+>  (or
+>  .IR Documentation/security/Yama.txt
+>  before Linux 4.13).
+> +.\" prctl PR_SET_SECCOMP
+>  .TP
+>  .BR PR_SET_SECCOMP " (since Linux 2.6.23)"
+>  .\" See http://thread.gmane.org/gmane.linux.kernel/542632
+> @@ -1035,6 +1063,7 @@ For further information, see the kernel source file
+>  (or
+>  .IR Documentation/prctl/seccomp_filter.txt
+>  before Linux 4.13).
+> +.\" prctl PR_GET_SECCOMP
+>  .TP
+>  .BR PR_GET_SECCOMP " (since Linux 2.6.23)"
+>  Return (as the function result)
+> @@ -1061,18 +1090,21 @@ field of the
+>  file provides a method of obtaining the same information,
+>  without the risk that the process is killed; see
+>  .BR proc (5).
+> +.\" prctl PR_SET_SECUREBITS
+>  .TP
+>  .BR PR_SET_SECUREBITS " (since Linux 2.6.26)"
+>  Set the "securebits" flags of the calling thread to the value supplied in
+>  .IR arg2 .
+>  See
+>  .BR capabilities (7).
+> +.\" prctl PR_GET_SECUREBITS
+>  .TP
+>  .BR PR_GET_SECUREBITS " (since Linux 2.6.26)"
+>  Return (as the function result)
+>  the "securebits" flags of the calling thread.
+>  See
+>  .BR capabilities (7).
+> +.\" prctl PR_GET_SPECULATION_CTRL
+>  .TP
+>  .BR PR_GET_SPECULATION_CTRL " (since Linux 4.17)"
+>  Return (as the function result)
+> @@ -1119,6 +1151,7 @@ and
+>  .I arg5
+>  arguments must be specified as 0; otherwise the call fails with the error
+>  .BR EINVAL .
+> +.\" prctl PR_SET_SPECULATION_CTRL
+>  .TP
+>  .BR PR_SET_SPECULATION_CTRL " (since Linux 4.17)"
+>  .\" commit b617cfc858161140d69cc0b5cc211996b557a1c7
+> @@ -1174,6 +1207,7 @@ call failing with the error
+>  .BR ENXIO .
+>  For further details, see the kernel source file
+>  .IR Documentation/admin-guide/kernel-parameters.txt .
+> +.\" prctl PR_SET_THP_DISABLE
+>  .TP
+>  .BR PR_SET_THP_DISABLE " (since Linux 3.15)"
+>  .\" commit a0715cc22601e8830ace98366c0c2bd8da52af52
+> @@ -1191,6 +1225,7 @@ The setting of the "THP disable" flag is inherited by a child created via
+>  and is preserved across
+>  .BR execve (2).
+>  .\"
+> +.\" prctl PR_TASK_PERF_EVENTS_DISABLE
+>  .TP
+>  .BR PR_TASK_PERF_EVENTS_DISABLE " (since Linux 2.6.31)"
+>  Disable all performance counters attached to the calling process,
+> @@ -1207,6 +1242,7 @@ Originally called
+>  renamed (retaining the same numerical value)
+>  in Linux 2.6.32.
+>  .\"
+> +.\" prctl PR_TASK_PERF_EVENTS_ENABLE
+>  .TP
+>  .BR PR_TASK_PERF_EVENTS_ENABLE " (since Linux 2.6.31)"
+>  The converse of
+> @@ -1220,11 +1256,13 @@ renamed
+>  .\" commit cdd6c482c9ff9c55475ee7392ec8f672eddb7be6
+>  in Linux 2.6.32.
+>  .\"
+> +.\" prctl PR_GET_THP_DISABLE
+>  .TP
+>  .BR PR_GET_THP_DISABLE " (since Linux 3.15)"
+>  Return (as the function result) the current setting of the "THP disable"
+>  flag for the calling thread:
+>  either 1, if the flag is set, or 0, if it is not.
+> +.\" prctl PR_GET_TID_ADDRESS
+>  .TP
+>  .BR PR_GET_TID_ADDRESS " (since Linux 3.5)"
+>  .\" commit 300f786b2683f8bb1ec0afb6e1851183a479c86d
+> @@ -1246,6 +1284,7 @@ system call does not have a compat implementation for
+>  the AMD64 x32 and MIPS n32 ABIs,
+>  and the kernel writes out a pointer using the kernel's pointer size,
+>  this operation expects a user-space buffer of 8 (not 4) bytes on these ABIs.
+> +.\" prctl PR_SET_TIMERSLACK
+>  .TP
+>  .BR PR_SET_TIMERSLACK " (since Linux 2.6.28)"
+>  .\" See https://lwn.net/Articles/369549/
+> @@ -1316,10 +1355,12 @@ can be examined and changed via the file
+>  .IR /proc/[pid]/timerslack_ns .
+>  See
+>  .BR proc (5).
+> +.\" prctl PR_GET_TIMERSLACK
+>  .TP
+>  .BR PR_GET_TIMERSLACK " (since Linux 2.6.28)"
+>  Return (as the function result)
+>  the "current" timer slack value of the calling thread.
+> +.\" prctl PR_SET_TIMING
+>  .TP
+>  .BR PR_SET_TIMING " (since Linux 2.6.0)"
+>  .\" Precisely: Linux 2.6.0-test4
+> @@ -1338,11 +1379,13 @@ is not currently implemented
+>  .\" PR_TIMING_TIMESTAMP doesn't do anything in 2.6.26-rc8,
+>  .\" and looking at the patch history, it appears
+>  .\" that it never did anything.
+> +.\" prctl PR_GET_TIMING
+>  .TP
+>  .BR PR_GET_TIMING " (since Linux 2.6.0)"
+>  .\" Precisely: Linux 2.6.0-test4
+>  Return (as the function result) which process timing method is currently
+>  in use.
+> +.\" prctl PR_SET_TSC
+>  .TP
+>  .BR PR_SET_TSC " (since Linux 2.6.26, x86 only)"
+>  Set the state of the flag determining whether the timestamp counter
+> @@ -1356,12 +1399,14 @@ to allow it to be read, or
+>  to generate a
+>  .B SIGSEGV
+>  when the process tries to read the timestamp counter.
+> +.\" prctl PR_GET_TSC
+>  .TP
+>  .BR PR_GET_TSC " (since Linux 2.6.26, x86 only)"
+>  Return the state of the flag determining whether the timestamp counter
+>  can be read,
+>  in the location pointed to by
+>  .IR "(int\ *) arg2" .
+> +.\" prctl PR_SET_UNALIGN
+>  .TP
+>  .B PR_SET_UNALIGN
+>  (Only on: ia64, since Linux 2.3.48; parisc, since Linux 2.6.15;
+> @@ -1385,6 +1430,7 @@ flag in
+>  operation of the
+>  .BR setsysinfo ()
+>  system call on Tru64).
+> +.\" prctl PR_GET_UNALIGN
+>  .TP
+>  .B PR_GET_UNALIGN
+>  (See
+> @@ -1392,6 +1438,7 @@ system call on Tru64).
+>  for information on versions and architectures.)
+>  Return unaligned access control bits, in the location pointed to by
+>  .IR "(unsigned int\ *) arg2" .
+> +.\" prctl PR_SET_IO_FLUSHER
+>  .TP
+>  .BR PR_SET_IO_FLUSHER " (since Linux 5.6)"
+>  If a user process is involved in the block layer or filesystem I/O path,
+> @@ -1420,6 +1467,7 @@ and is preserved across
+>  Examples of IO_FLUSHER applications are FUSE daemons, SCSI device
+>  emulation daemons, and daemons that perform error handling like multipath
+>  path recovery applications.
+> +.\" prctl PR_GET_IO_FLUSHER
+>  .TP
+>  .B PR_GET_IO_FLUSHER (Since Linux 5.6)
+>  Return (as the function result) the IO_FLUSHER state of the caller.
 > 
-> > +
-> >   	/* Interrupt lines */
-> >   	irq = platform_get_irq_byname_optional(pdev, "combined");
-> > 
+
+
+-- 
+Michael Kerrisk
+Linux man-pages maintainer; http://www.kernel.org/doc/man-pages/
+Linux/UNIX System Programming Training: http://man7.org/training/
 
 _______________________________________________
 linux-arm-kernel mailing list
