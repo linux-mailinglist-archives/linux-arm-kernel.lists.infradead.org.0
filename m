@@ -2,122 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A2051D19DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:48:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 421C21D19E2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:49:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:
-	Content-Type:In-Reply-To:References:Message-ID:Date:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xUxFRCMmuKIA4SBDKmCbVYlo6VlIQmOwAaILEfvjXvY=; b=dq1d/KkLhpchr0YYP2LOqxXVW
-	Rzyyger6iAfP1024filWS1WS9Y/XfMDKNwiTincLW1dd+OlOzQjNr/9+m6cw7oI66Xu+egY9vuI4q
-	cwQReVWkrl6szSFXTyba7sSOvmnVJ63m2bF04pkn49iOhJe02ntVz1WYnIDNEhhWhlh05HJfrz6Sv
-	xODJ3Xo9ed3KhrHRsUQosSyjaoshpnNb5m7552swHXUF9dDnn7/l2+e1h19D0SXXa6aog5Tb1ACPk
-	VFZsbOEPzD8uqCatzP+zLviMFvrbdIJbyPlrlSbjVEHf5jrWUY9WN+PoLaOQ67wQQuvbXRNZp27QY
-	OssEE6SKg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=apWXI8lGjU6jHrUjllHXSheMabfWYQlZzEJBZESBWhY=; b=KeI4b+t7mBWvyb
+	/IWraHDhlSxgjwMY9vGdtW1CrbjlPPAeR9bozGj23LbPdU05Yyi6wdEHKJpFM/5YI68GOXlqd7E7I
+	qddzAWHmnmqeaUSqW5tu3EYkv2tUyZa9uN7FvJaf6SL5teF62GKvSKg650POQO3ZCuGMPQlBTXKBu
+	AMgx3n/3XCbFq3c2ZbFXEhJZ4ZPwh2cIrJr2LwFLn6dbK4231elfQ5ftIBHTLFXg2UvdOkqghtdKn
+	3bcNeUk1VbRhbHq4wZIci8ZtDK3uBAz7WqySuKwZUt8roWaswa2PLHi2mG88uu6Fd7Y0eFvQl9Yms
+	Zptdm6PVmBGj51WzI6lg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtcb-0002oE-JF; Wed, 13 May 2020 15:48:37 +0000
-Received: from mail-eopbgr140075.outbound.protection.outlook.com
- ([40.107.14.75] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtcP-0002nh-M4
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:48:28 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=I1U34UP5M0MUn9oXy0j9QPFU/qbxOG6vXMCbZk0kdpH+RicRYVVT9TDy8sXEUbJroXhIUdxw1NCW0n07qgqiYiN3wlN6p6wSamW3qVKIXpjB4dQyACYSsc87lcr2Vh58v4liGo/KjY7bZEQzDF/V/PTpyDmEIs+YvT15+zMyuszd9TrOk+ih9+r+/5i+h8VL+XOxtAHMm3YyCiYIiENrTL8eHqGXhXy9qVnHKn86pFLl2PwW1MC5agPk3auuD+6L6UyWKv1fvORJEz5XCbl3okL8h1vuAqjuxSf/NfxjuclA7JO1JBVDERczNhi+SXET1jOgjPQB6FGEn4kLrBcO+A==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HJKWGi8K1AoaMsEqCEf3yLrQ4uYdt7gD+wRZoEs5tqU=;
- b=KLZhepLhrMFGS553lbusqf6/2d4xzGRUNOaoy8GsFmvV7mYVu62iwjwau+3hkzTRVOPs8+XUcXXabSG+6JNMzk94lNWGMHbhW/aYMBL0n973qfsA46gD0dfmhhz+LC70gAAXwgb1lEqWWmHeqwJ9oiE8i8OM2YXGy34eLNYU+J6XEaXDFa3VEJvRZVOYFaEKxNAzAEbkg/7iE71CG323W/ph3Vd/RFCCrX1GNs2Wz7EAJRWkhQ3t9Qrm4cCqqEfpPR3TRe3+gg99u/Lq6/aMzrl2PKwvdAgsmTNY/6gDuxmgaFF/y1XFHWW07Vmp+a6NFnSwdb3hF6+VZRvVQew4Uw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=HJKWGi8K1AoaMsEqCEf3yLrQ4uYdt7gD+wRZoEs5tqU=;
- b=CwdKCPTLhR6bzTjSzF8ehFctl5KjWJ2KKeJ/il+8cRi2Y/CMc0DmvekCAForwriSY1LvFG4+GVxZSN4J5xKymP59LSTjvBEH5l4rw5nQ7v09U18/F2LcO3SCzzafafjM2aiiDScRRyiejMAOiFm7OLlIjTPetDvqbDOjfB9UkZ4=
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
- by VE1PR04MB6654.eurprd04.prod.outlook.com (2603:10a6:803:129::33)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.33; Wed, 13 May
- 2020 15:48:22 +0000
-Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
- ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.3000.016; Wed, 13 May 2020
- 15:48:22 +0000
-From: Robin Gong <yibin.gong@nxp.com>
-To: Sascha Hauer <s.hauer@pengutronix.de>
-Subject: RE: [PATCH v7 RESEND 07/13] spi: imx: fix ERR009165
-Thread-Topic: [PATCH v7 RESEND 07/13] spi: imx: fix ERR009165
-Thread-Index: AQHWJ3cnZ0DWmxBZKkqSbDLRijv4Zqiln1IAgAATtwCAAASDgIAAAJXwgAAIeACAAB4RQA==
-Date: Wed, 13 May 2020 15:48:22 +0000
-Message-ID: <VE1PR04MB663876FA31A281A388F2BBEB89BF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
- <1589218356-17475-8-git-send-email-yibin.gong@nxp.com>
- <20200513072132.GL5877@pengutronix.de>
- <VE1PR04MB6638F5096376BA0AF204C64189BF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200513084815.GP5877@pengutronix.de>
- <VE1PR04MB6638857DD94A05DC7252E69589BF0@VE1PR04MB6638.eurprd04.prod.outlook.com>
- <20200513092038.GR5877@pengutronix.de>
-In-Reply-To: <20200513092038.GR5877@pengutronix.de>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: yes
-X-MS-TNEF-Correlator: 
-authentication-results: pengutronix.de; dkim=none (message not signed)
- header.d=none;pengutronix.de; dmarc=none action=none header.from=nxp.com;
-x-originating-ip: [183.192.237.11]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: db82b458-7f95-496d-ad76-08d7f755111b
-x-ms-traffictypediagnostic: VE1PR04MB6654:|VE1PR04MB6654:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VE1PR04MB6654F024D6DE898C9175AB6C89BF0@VE1PR04MB6654.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:3173;
-x-forefront-prvs: 0402872DA1
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: N9SQOXlZSIUpGLuAmAE7x3FDiDFlMcrdZKhvSOl8Mxcc2HWLbkJ23uqaK3rmmiWDY9+BYoT6I74EXcwbe348WIUeKBhnGwnWQTIa04DnhrrQIB3fxHVEtG6KQPv9bNo6v2oWSgSnAGYUmw8oM4YrEXno3yiCbPaHInnyJ+Owihl7PYrdmWdqiJ96ZSiTTMfdYJFJ/PONiKtRbHLb356xALk5/IR6l51dcjy53uwZpGV5Bk4aM9uD8QMbdF76/xi0o+edHiDqAuJCo2E6qYp9jiCyVU2FFqo5TbSE983l4uJ8is+qkU7iTTFC32WZQZ5gnlil6XhoRO8ZVwHPK0Li4VpjoLZ032ADHYLYg15ZzyKsE1v2c/pD3Vh9KxQayIkCKPBOsd3Og3idHFQ/dQ6eKXRe0myK9q7NqBsg/koZXGKcDGps63Rgc/Fyzv0eN82oIzY4aIdarYXC5kpimMOfTGQPs1DiA1gIDgJ813cVOvWMh7mHa62tA8igQ0FHy0y/WLOoqE8E8aSogwttCcPv5w==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(4636009)(396003)(39860400002)(346002)(136003)(366004)(376002)(33430700001)(316002)(8676002)(66476007)(8936002)(66446008)(2906002)(4326008)(6916009)(66556008)(64756008)(54906003)(186003)(66616009)(33656002)(478600001)(26005)(7696005)(33440700001)(4744005)(71200400001)(7416002)(55016002)(53546011)(6506007)(76116006)(99936003)(9686003)(66946007)(5660300002)(86362001)(52536014);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: c3DzGH7tD7e+1nsm8kjAdusa7imUmzga/YOeHM4x6YyC9o4PD6/CKcSG69hQ6s6nP9OAfnz8N72F7LeZe6NdZ5rfruXK+98zYULWABdLpb+zueogOddb7GetNKbJ/FeMEA2vV/HdeVrWpRNc24PqzHrSOfdBAD5ri6XNR5N3AalPzPXPk8sVbOH1yOQt3AzfEjaFiAHm9dPsdDQxBBpgtsVrpzlmh4KymRbsNXXeRfqWomcDfQrCDMHc5YzKsvi1IoCt/dluyDCjEOnUiAYR8pcP0vcGkreFlydZohsbPWZC8rUCtOBGll1oLNVjqKBTdMdyhZdS3pog5dsaCnJ8yvLyel3hKa5UPYzZ/G9X56uFRBdYfgd4kVZaVsHsp65S5ujFJL/Jt/Hpvlvfh4jvUoK/er3s/bqTyon3vtXz94PF10kriYXOZIXI0K1kpgHoQAoCU8J/JBKajLAG/s2t0WY/wQfQeqFH2ggIK+k+1osHIqYAuGKhhyYJT42/BO/j
-Content-Type: multipart/mixed;
- boundary="_002_VE1PR04MB663876FA31A281A388F2BBEB89BF0VE1PR04MB6638eurp_"
+	id 1jYtd1-00033X-8U; Wed, 13 May 2020 15:49:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYtcp-00032O-36
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:48:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CE57B31B;
+ Wed, 13 May 2020 08:48:49 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 649993F305;
+ Wed, 13 May 2020 08:48:48 -0700 (PDT)
+Date: Wed, 13 May 2020 16:48:46 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Catalin Marinas <catalin.marinas@arm.com>
+Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
+ documentation
+Message-ID: <20200513154845.GT21779@arm.com>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-24-catalin.marinas@arm.com>
+ <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
+ <20200504164617.GK30377@arm.com> <20200511164018.GC19176@gaia>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: db82b458-7f95-496d-ad76-08d7f755111b
-X-MS-Exchange-CrossTenant-originalarrivaltime: 13 May 2020 15:48:22.5313 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: tPscbgD7Sai+Gzc2L0g/wIjb1th/Eve8EkAFzzIRINg6IgJ+suSsTj8lrZsJfKIy1LKnyKCQ3a+OCLTkvtmlqQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6654
+Content-Disposition: inline
+In-Reply-To: <20200511164018.GC19176@gaia>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_084826_629841_AE76B790 
-X-CRM114-Status: GOOD (  24.54  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200513_084851_221130_E23F7A72 
+X-CRM114-Status: GOOD (  47.32  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [40.107.14.75 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [40.107.14.75 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,129 +66,227 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-spi@vger.kernel.org" <linux-spi@vger.kernel.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "martin.fuzzey@flowbird.group" <martin.fuzzey@flowbird.group>,
- "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
- "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
- "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---_002_VE1PR04MB663876FA31A281A388F2BBEB89BF0VE1PR04MB6638eurp_
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: quoted-printable
+On Mon, May 11, 2020 at 05:40:19PM +0100, Catalin Marinas wrote:
+> On Mon, May 04, 2020 at 05:46:17PM +0100, Dave P Martin wrote:
+> > On Thu, Apr 30, 2020 at 05:23:17PM +0100, Catalin Marinas wrote:
+> > > On Wed, Apr 29, 2020 at 05:47:05PM +0100, Dave P Martin wrote:
+> > > > On Tue, Apr 21, 2020 at 03:26:03PM +0100, Catalin Marinas wrote:
+> > > > > +- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
+> > > > > +  thread, asynchronously following one or multiple tag check faults,
+> > > > > +  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
+> > > > 
+> > > > For "current thread": that's a kernel concept.  For user-facing
+> > > > documentation, can we say "the offending thread" or similar?
+> > > > 
+> > > > For clarity, it's worth saying that the faulting address is not
+> > > > reported.  Or, we could be optimistic that someday this information will
+> > > > be available and say that si_addr is the faulting address if available,
+> > > > with 0 meaning the address is not available.
+> > > > 
+> > > > Maybe (void *)-1 would be better duff address, but I can't see it
+> > > > mattering much.  If there's already precedent for si_addr==0 elsewhere,
+> > > > it makes sense to follow it.
+> > > 
+> > > At a quick grep, I can see a few instances on other architectures where
+> > > si_addr==0. I'll add a comment here.
+> > 
+> > OK, cool
+> > 
+> > Except: what if we're in PR_MTE_TCF_ASYNC mode.  If the SIGSEGV handler
+> > triggers an asynchronous MTE fault itself, we could then get into a
+> > spin.  Hmm.
+> 
+> How do we handle standard segfaults here? Presumably a signal handler
+> can trigger a SIGSEGV itself.
 
-On 2020/05/13 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> On Wed, May 13, 2020 at 08:52:39AM +0000, Robin Gong wrote:
-> > On 2020/05/13 16:48 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> > > On Wed, May 13, 2020 at 08:38:26AM +0000, Robin Gong wrote:
-> > > > On 2020/05/13 Sascha Hauer <s.hauer@pengutronix.de> wrote:
-> > > > > This patch is the one bisecting will end up with when somebody
-> > > > > uses an older SDMA firmware or the ROM scripts. It should have a
-> > > > > better description what happens and what should be done about it.
-> > > > Emm..That's true. Timeout will be caught in such case, hence,
-> > > > maybe we can
-> > > fall back it to pio always.
-> > >
-> > > With my patch applied sdma_load_context() will fail. I don't know
-> > > how exactly this hits into the SPI driver, but it won't be a timeout.
-> > Thanks for your quick test, assume you use ROM firmware, right?
->=20
-> Yes.
-Would you please have a try with the attached patch which is based this pat=
-ch set?
+This is similar to the problem is a data abort inside the data abort
+handler.  It can of course happen, but if you don't want this to be
+fatal then you code the handler carefully so this can't happen.
 
---_002_VE1PR04MB663876FA31A281A388F2BBEB89BF0VE1PR04MB6638eurp_
-Content-Type: application/octet-stream;
-	name="0014-spi-imx-fallback-to-PIO-if-dma-setup-failure.patch"
-Content-Description: 0014-spi-imx-fallback-to-PIO-if-dma-setup-failure.patch
-Content-Disposition: attachment;
-	filename="0014-spi-imx-fallback-to-PIO-if-dma-setup-failure.patch";
-	size=3274; creation-date="Wed, 13 May 2020 15:46:25 GMT";
-	modification-date="Wed, 13 May 2020 15:46:25 GMT"
-Content-Transfer-Encoding: base64
+> > I take it we drain any pending MTE faults when crossing EL boundaries?
+> 
+> We clear the hardware bit on entry to EL1 from EL0 and set a TIF flag.
+> 
+> > In that case, an asynchronous MTE fault pending at sigreturn must have
+> > been caused by the signal handler.  We could make that particular case
+> > of MTE_AERR a force_sig.
+> 
+> We clear the TIF flag when delivering the signal. I don't think there is
+> a way for the kernel to detect when it is running in a signal handler.
+> sigreturn() is not mandatory either.
 
-RnJvbSBiNGY5ODYwYmU4Y2M4Yjk2NzI2MjZiYWE2MmE0Y2VjODljZjI5ZTg3IE1vbiBTZXAgMTcg
-MDA6MDA6MDAgMjAwMQpGcm9tOiBSb2JpbiBHb25nIDx5aWJpbi5nb25nQG54cC5jb20+CkRhdGU6
-IFRodSwgMTQgTWF5IDIwMjAgMDc6MTg6MzMgKzA4MDAKU3ViamVjdDogW1BBVENIIHY3IFJFU0VO
-RCAxNC8xNF0gc3BpOiBpbXg6IGZhbGxiYWNrIHRvIFBJTyBpZiBkbWEgc2V0dXAKIGZhaWx1cmUK
-CkZhbGxiYWNrIHRvIFBJTyBpbiBjYXNlIGRtYSBzZXR1cCBmYWlsZWQuIEZvciBleGFtcGxlLCBz
-ZG1hIGZpcm13YXJlIG5vdAp1cGRhdGVkIGJ1dCBFUlIwMDkxNjUgd29ya2Fyb3VkIGFkZGVkIGlu
-IGtlcm5lbC4KClNpZ25lZC1vZmYtYnk6IFJvYmluIEdvbmcgPHlpYmluLmdvbmdAbnhwLmNvbT4K
-LS0tCiBkcml2ZXJzL3NwaS9zcGktaW14LmMgfCAzMSArKysrKysrKysrKysrKysrKysrKysrKysr
-KystLS0tCiAxIGZpbGUgY2hhbmdlZCwgMjcgaW5zZXJ0aW9ucygrKSwgNCBkZWxldGlvbnMoLSkK
-CmRpZmYgLS1naXQgYS9kcml2ZXJzL3NwaS9zcGktaW14LmMgYi9kcml2ZXJzL3NwaS9zcGktaW14
-LmMKaW5kZXggYTU3ZWRjYi4uNTY1MDVjYiAxMDA2NDQKLS0tIGEvZHJpdmVycy9zcGkvc3BpLWlt
-eC5jCisrKyBiL2RyaXZlcnMvc3BpL3NwaS1pbXguYwpAQCAtNzIsNiArNzIsNyBAQCBzdHJ1Y3Qg
-c3BpX2lteF9kZXZ0eXBlX2RhdGEgewogCXZvaWQgKCpyZXNldCkoc3RydWN0IHNwaV9pbXhfZGF0
-YSAqKTsKIAl2b2lkICgqc2V0dXBfd21sKShzdHJ1Y3Qgc3BpX2lteF9kYXRhICopOwogCXZvaWQg
-KCpkaXNhYmxlKShzdHJ1Y3Qgc3BpX2lteF9kYXRhICopOworCXZvaWQgKCpkaXNhYmxlX2RtYSko
-c3RydWN0IHNwaV9pbXhfZGF0YSAqKTsKIAlib29sIGhhc19kbWFtb2RlOwogCWJvb2wgaGFzX3Ns
-YXZlbW9kZTsKIAl1bnNpZ25lZCBpbnQgZmlmb19zaXplOwpAQCAtNDk2LDYgKzQ5NywxMSBAQCBz
-dGF0aWMgdm9pZCBteDUxX2Vjc3BpX3RyaWdnZXIoc3RydWN0IHNwaV9pbXhfZGF0YSAqc3BpX2lt
-eCkKIAl3cml0ZWwocmVnLCBzcGlfaW14LT5iYXNlICsgTVg1MV9FQ1NQSV9DVFJMKTsKIH0KIAor
-c3RhdGljIHZvaWQgbXg1MV9kaXNhYmxlX2RtYShzdHJ1Y3Qgc3BpX2lteF9kYXRhICpzcGlfaW14
-KQoreworCXdyaXRlbCgwLCBzcGlfaW14LT5iYXNlICsgTVg1MV9FQ1NQSV9ETUEpOworfQorCiBz
-dGF0aWMgdm9pZCBteDUxX2Vjc3BpX2Rpc2FibGUoc3RydWN0IHNwaV9pbXhfZGF0YSAqc3BpX2lt
-eCkKIHsKIAl1MzIgY3RybDsKQEAgLTEwMDgsNiArMTAxNCw3IEBAIHN0YXRpYyBzdHJ1Y3Qgc3Bp
-X2lteF9kZXZ0eXBlX2RhdGEgaW14NTFfZWNzcGlfZGV2dHlwZV9kYXRhID0gewogCS5yeF9hdmFp
-bGFibGUgPSBteDUxX2Vjc3BpX3J4X2F2YWlsYWJsZSwKIAkucmVzZXQgPSBteDUxX2Vjc3BpX3Jl
-c2V0LAogCS5zZXR1cF93bWwgPSBteDUxX3NldHVwX3dtbCwKKwkuZGlzYWJsZV9kbWEgPSBteDUx
-X2Rpc2FibGVfZG1hLAogCS5maWZvX3NpemUgPSA2NCwKIAkuaGFzX2RtYW1vZGUgPSB0cnVlLAog
-CS5keW5hbWljX2J1cnN0ID0gdHJ1ZSwKQEAgLTEwMjIsNiArMTAyOSw3IEBAIHN0YXRpYyBzdHJ1
-Y3Qgc3BpX2lteF9kZXZ0eXBlX2RhdGEgaW14NTNfZWNzcGlfZGV2dHlwZV9kYXRhID0gewogCS5w
-cmVwYXJlX3RyYW5zZmVyID0gbXg1MV9lY3NwaV9wcmVwYXJlX3RyYW5zZmVyLAogCS50cmlnZ2Vy
-ID0gbXg1MV9lY3NwaV90cmlnZ2VyLAogCS5yeF9hdmFpbGFibGUgPSBteDUxX2Vjc3BpX3J4X2F2
-YWlsYWJsZSwKKwkuZGlzYWJsZV9kbWEgPSBteDUxX2Rpc2FibGVfZG1hLAogCS5yZXNldCA9IG14
-NTFfZWNzcGlfcmVzZXQsCiAJLmZpZm9fc2l6ZSA9IDY0LAogCS5oYXNfZG1hbW9kZSA9IHRydWUs
-CkBAIC0xNDMwLDYgKzE0MzgsNyBAQCBzdGF0aWMgaW50IHNwaV9pbXhfZG1hX3RyYW5zZmVyKHN0
-cnVjdCBzcGlfaW14X2RhdGEgKnNwaV9pbXgsCiAJCQkJRE1BX1BSRVBfSU5URVJSVVBUIHwgRE1B
-X0NUUkxfQUNLKTsKIAlpZiAoIWRlc2NfdHgpIHsKIAkJZG1hZW5naW5lX3Rlcm1pbmF0ZV9hbGwo
-bWFzdGVyLT5kbWFfdHgpOworCQlkbWFlbmdpbmVfdGVybWluYXRlX2FsbChtYXN0ZXItPmRtYV9y
-eCk7CiAJCXJldHVybiAtRUlOVkFMOwogCX0KIApAQCAtMTU0Myw2ICsxNTUyLDcgQEAgc3RhdGlj
-IGludCBzcGlfaW14X3RyYW5zZmVyKHN0cnVjdCBzcGlfZGV2aWNlICpzcGksCiAJCQkJc3RydWN0
-IHNwaV90cmFuc2ZlciAqdHJhbnNmZXIpCiB7CiAJc3RydWN0IHNwaV9pbXhfZGF0YSAqc3BpX2lt
-eCA9IHNwaV9tYXN0ZXJfZ2V0X2RldmRhdGEoc3BpLT5tYXN0ZXIpOworCWludCByZXQ7CiAKIAkv
-KiBmbHVzaCByeGZpZm8gYmVmb3JlIHRyYW5zZmVyICovCiAJd2hpbGUgKHNwaV9pbXgtPmRldnR5
-cGVfZGF0YS0+cnhfYXZhaWxhYmxlKHNwaV9pbXgpKQpAQCAtMTU1MSwxMCArMTU2MSwyMyBAQCBz
-dGF0aWMgaW50IHNwaV9pbXhfdHJhbnNmZXIoc3RydWN0IHNwaV9kZXZpY2UgKnNwaSwKIAlpZiAo
-c3BpX2lteC0+c2xhdmVfbW9kZSkKIAkJcmV0dXJuIHNwaV9pbXhfcGlvX3RyYW5zZmVyX3NsYXZl
-KHNwaSwgdHJhbnNmZXIpOwogCi0JaWYgKHNwaV9pbXgtPnVzZWRtYSkKLQkJcmV0dXJuIHNwaV9p
-bXhfZG1hX3RyYW5zZmVyKHNwaV9pbXgsIHRyYW5zZmVyKTsKLQllbHNlCi0JCXJldHVybiBzcGlf
-aW14X3Bpb190cmFuc2ZlcihzcGksIHRyYW5zZmVyKTsKKwkvKgorCSAqIGZhbGxiYWNrIFBJTyBt
-b2RlIGlmIGRtYSBzZXR1cCBlcnJvciBoYXBwZW4sIGZvciBleGFtcGxlIHNkbWEKKwkgKiBmaXJt
-d2FyZSBtYXkgbm90IGJlIHVwZGF0ZWQgYXMgRVJSMDA5MTY1IHJlcXVpcmVkLgorCSAqLworCWlm
-IChzcGlfaW14LT51c2VkbWEpIHsKKwkJcmV0ID0gc3BpX2lteF9kbWFfdHJhbnNmZXIoc3BpX2lt
-eCwgdHJhbnNmZXIpOworCQlpZiAocmV0ICE9IC1FSU5WQUwpCisJCQlyZXR1cm4gcmV0OworCisJ
-CXNwaV9pbXgtPmRldnR5cGVfZGF0YS0+ZGlzYWJsZV9kbWEoc3BpX2lteCk7CisKKwkJc3BpX2lt
-eC0+dXNlZG1hID0gZmFsc2U7CisJCXNwaV9pbXgtPmR5bmFtaWNfYnVyc3QgPSBzcGlfaW14LT5k
-ZXZ0eXBlX2RhdGEtPmR5bmFtaWNfYnVyc3Q7CisJCWRldl9pbmZvKCZzcGktPmRldiwgIkZhbGxi
-YWNrIHRvIFBJTyBtb2RlXG4iKTsKKwl9CisKKwlyZXR1cm4gc3BpX2lteF9waW9fdHJhbnNmZXIo
-c3BpLCB0cmFuc2Zlcik7CiB9CiAKIHN0YXRpYyBpbnQgc3BpX2lteF9zZXR1cChzdHJ1Y3Qgc3Bp
-X2RldmljZSAqc3BpKQotLSAKMi43LjQKCg==
+I guess we can put up with this signal not being fatal then.
 
---_002_VE1PR04MB663876FA31A281A388F2BBEB89BF0VE1PR04MB6638eurp_
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+If you have a SEGV handler at all, you're supposed to code it carefully.
+
+This brings us back to force_sig for SERR and a normal signal for AERR.
+That's probably OK.
+
+> 
+> > > > > +**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
+> > > > > +are only checked if the current thread tag checking mode is
+> > > > > +PR_MTE_TCF_SYNC.
+> > > > 
+> > > > Vague?  Can we make a precise statement about when the kernel will and
+> > > > won't check such accesses?  And aren't there limitations (like use of
+> > > > get_user_pages() etc.)?
+> > > 
+> > > We could make it slightly clearer by say "kernel accesses to the user
+> > > address space".
+> > 
+> > That's not the ambiguity.
+> > 
+> > My question is
+> > 
+> > 1) Does the kernel guarantee not to check tags on kernel accesses to
+> > user memory without PR_MTE_TCF_SYNC?
+> 
+> For ASYNC and NONE, yes, we can guarantee this.
+> 
+> > 2) Does the kernel guarantee to check tags on kernel accesses to user
+> > memory with PR_MTE_TCF_SYNC?
+> 
+> I'd say yes but it depends on how much knowledge one has about the
+> syscall implementation. If it's access to user address directly, it
+> would be checked. If it goes via get_user_pages(), it won't. Since the
+> user doesn't need to have knowledge of the kernel internals, you are
+> right that we don't guarantee this.
+
+So, from userspace it's not guaranteed.
+
+This is what I'd describe as "making best efforts", but not a guarantee.
+
+> > In practice, this note sounds to be more like a kernel implementation
+> > detail rather than advice to userspace.
+> > 
+> > Would it make sense to say something like:
+> > 
+> >  * PR_MTE_TCF_NONE: the kernel does not check tags for kernel accesses
+> >    to use memory done by syscalls in the thread.
+> > 
+> >  * PR_MTE_TCF_ASYNC: the kernel may check some tags for kernel accesses
+> >    to user memory done by syscalls.  (Should we guarantee that such
+> >    faults are reported synchronously on syscall exit?  In practice I
+> >    think they are.  Should we use SEGV_MTESERR in this case?  Perhaps
+> >    it's not worth making this a special case.)
+> 
+> Both NONE and ASYNC are now the same for kernel uaccess - not checked.
+>
+> For background information, I decided against ASYNC uaccess checking
+> since (1) there are some cases where the kernel overreads
+> (strncpy_from_user) and (2) we don't normally generate SIGSEGV on
+> uaccess but rather return -EFAULT. The latter is not possible to contain
+> since we only learn about the fault asynchronously, usually after the
+> transfer.
+
+I may be missing something here.  Do we still rely on the hardware to
+detect tag mismatches in kernel accesses to user memory?  I was assuming
+we do some kind of explicit checking, but now I think that's nonsense
+(except for get_user_pages() etc.)
+
+
+Since MTE is a new opt-in feature, I think we might have the option to
+report failures with SIGSEGV instead of -EFAULT.  This seems exactly to
+implement the concept of an asynchronous versus synchronous error. 
+
+The kernel may not normally do this, but software usually doesn't use
+raw syscalls.  In reality "syscalls" can trigger a SIGSEGV in the libc
+wrapper anyway.  From the caller's point of view the whole thing is a
+black box.
+
+Probably needs discussion with the bionic / glibc folks though (though
+likely this has been discussed already...)
+
+
+My concern is that the spirit of asynchrous checking in the architecture
+is that accesses _are_ checked, and we seem to be breaking that
+principle here.
+
+Although MTE's guarantees are statistical, based on small random numbers
+not matching, this imperfection is quite different from systematically
+not checking at all, ever, on certain major code paths.
+
+> 
+> >  * PR_MTE_TCF_SYNC: the kernel makes best efforts to check tags for
+> >    kernel accesses to user memory done by the syscalls, but does not
+> >    guarantee to check everything (or does it?  I thought we can't really
+> >    do that for some odd cases...)
+> 
+> It doesn't. I'll add some notes along the lines of your text above.
+
+OK
+
+> > > > > +excludes all tags other than 0. A user thread can enable specific tags
+> > > > > +in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
+> > > > > +flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
+> > > > > +in the ``PR_MTE_TAG_MASK`` bit-field.
+> > > > > +
+> > > > > +**Note**: The hardware uses an exclude mask but the ``prctl()``
+> > > > > +interface provides an include mask. An include mask of ``0`` (exclusion
+> > > > > +mask ``0xffff``) results in the CPU always generating tag ``0``.
+> > > > 
+> > > > Is there no way to make this default to 1 rather than having a magic
+> > > > meaning for 0?
+> > > 
+> > > We follow the hardware behaviour where 0xffff and 0xfffe give the same
+> > > result.
+> > 
+> > Exposing this through a purely software interface seems a bit odd:
+> > because the exclude mask is privileged-access-only, the architecture
+> > could amend it to assign a different meaning to 0xffff, providing this
+> > was an opt-in change.  Then we'd have to make a mess here.
+> 
+> You have a point. An include mask of 0 translates to an exclude mask of
+> 0xffff as per the current patches. If the hardware gains support for one
+> more bit (32 colours), old software running on new hardware may run into
+> unexpected results with an exclude mask of 0xffff.
+> 
+> > Can't we just forbid the nonsense value 0 here, or are there other
+> > reasons why that's problematic?
+> 
+> It was just easier to start with a default. I wonder whether we should
+> actually switch back to the exclude mask, as per the hardware
+> definition. This way 0 would mean all tags allowed. We can still
+> disallow 0xffff as an exclude mask.
+
+If the number of bits might grow, I guess we can make the exclude mask
+full-width.
+
+For example, the hardware can trivially exclude tags 16 and up, because
+they don't exist anyway.
+
+Similarly, the hardware can trivially include tags 16 and up: inclusion
+only means that the hardware is allowed to generate them, not that it
+guarantees to.
+
+The only configuration that doesn't make sense is "no tags allowed", so
+I'd argue for explicity blocking that, even if the architeture alises
+that encoding to something else.
+
+If we prefer 0 as a default value so that init inherits the correct
+value from the kernel without any special acrobatics, then we make it an
+exclude mask, with the semantics that the hardware is allowed to
+generate any of these tags, but does not have to be capable of
+generating all of them.
+
+Make sense?  This is bikeshedding from my end...
+
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---_002_VE1PR04MB663876FA31A281A388F2BBEB89BF0VE1PR04MB6638eurp_--
-
