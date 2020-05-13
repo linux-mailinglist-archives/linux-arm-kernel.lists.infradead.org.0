@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9740A1D1945
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:24:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75E6F1D194E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:25:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WvHMjeIEUBoB2Hsr5xKmi04k+oq1DEv2pewjrxkNdb0=; b=mwY5yXdZzIM3cZ
-	oGCT03vaoIZCBDBnaBXMAKG68rL+Y2j90GFPPLW/UqsorTBbMwHm8ja0f8CxstQGcZhihJgp8fRKE
-	TIDTpXwGZfNlDPaRiQzK0dXSiiS38KaEXF6PjI1/qZ9TAQpoyGtRw4KaM3+Yl57R9bwISRFJ/bYT0
-	M3rF5ACb9r8UNfTLF33aHnD0gjxIdrX+e79hJXysi25GkP5MJIQjNA7qe7d8XMzF8syAvddPX2cdT
-	qtGHD5tZvK3YrnKZcxyRCfZFSEv8hihfiUrTAtzOA6VE1eJ6+SS6kyWwPciZ2nyQfe6fquuy+wkTa
-	p2F9svM1ZJnXILR79SRQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=b7VhHgxCPsA3v5TDtWV9UMqhC2q8mFnVRE684w1bgpQ=; b=CJz0ZlCik3FIALlrTaNNd1qhg
+	mF7f3tNUamfYBSPh2GnHQTYLHXlrLpiHqQP+4ClSQ7UeAoiCPaaIrjLoTOJhpu/InsSp3rhC4ZK1i
+	8yJA509owPGibHSEe0FT2Ftv2K38SjK6QrpigBwBuurxh9Xj9CRINhJ2uO1KN4wp6KMPXPBr/W5Jz
+	BVucREPkbCCQFnXUX1l4HU5lnwJGTz0qO0JnJeyuYLdureOsRDbR6Jn98RaiDjNofO1vyZ+1g9gAn
+	+ghUAYbK75RluV6O7l2E50I6RAe8bDWEFw9YqTg78OV4g1Bj3D4VTkp0QUljYqSv6LRGO1z5r0cqF
+	n9nAojVvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtFD-0001kV-1w; Wed, 13 May 2020 15:24:27 +0000
-Received: from mga14.intel.com ([192.55.52.115])
+	id 1jYtGJ-0004Qe-1z; Wed, 13 May 2020 15:25:35 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtF1-0001jn-W8
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:24:17 +0000
-IronPort-SDR: qgasKBz1jKesJZkglr7s+4b7dNP2keAkG7ahCobN4Wx5DA6L3tdipt6bAhfH3ozgV3w6aBq/Zx
- RXNQdXiR/2EA==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga007.jf.intel.com ([10.7.209.58])
- by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 13 May 2020 08:24:14 -0700
-IronPort-SDR: LEYmL0D8h4/MJPzQww7+nG6ZMTyIUMdrpW620uivs8d1RMOvGn0hsKExHGUYjZoUgEhe4Gmdup
- YKNkAXzriOTw==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,388,1583222400"; d="scan'208";a="251288456"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga007.jf.intel.com with ESMTP; 13 May 2020 08:24:10 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jYtEz-006Rr3-Pi; Wed, 13 May 2020 18:24:13 +0300
-Date: Wed, 13 May 2020 18:24:13 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Tali Perry <tali.perry1@gmail.com>
-Subject: Re: [PATCH v10 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
- driver
-Message-ID: <20200513152413.GQ185537@smile.fi.intel.com>
-References: <20200510102330.66715-1-tali.perry1@gmail.com>
- <20200510102330.66715-3-tali.perry1@gmail.com>
- <20200511091759.GE185537@smile.fi.intel.com>
- <CAHb3i=tERsM+gwmQN1+vjnML9o5NxRK=uBokEUsd-Ljyje4s3A@mail.gmail.com>
+ id 1jYtG9-0004Pu-Lf
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:25:26 +0000
+Received: from localhost (fw-tnat.cambridge.arm.com [217.140.96.140])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id F0F49207EA;
+ Wed, 13 May 2020 15:25:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589383525;
+ bh=JZ6KBeyc0c1ysIq6NiWDBm2SdY9Yc8IcQUMTbYv1NTc=;
+ h=Date:From:To:List-Id:Cc:Subject:References:In-Reply-To:From;
+ b=exPOmNweORvuk4GCwiXmP6kQVux8zd5rmTY5lAlGSHS14tqf7zRXoVrYb2xmlDc/X
+ in3cTwkiSdLgbxLPY7aGNyxYPDI0Qaykwhi2njJWTgI/p/MBsr7GopfP+v3IxgGep0
+ VahtTi8gxBber8YeO88QNh7jiq6ryJUV5/89q4fQ=
+Date: Wed, 13 May 2020 16:25:22 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Lars Povlsen <lars.povlsen@microchip.com>
+Subject: Re: [PATCH 06/10] dt-bindings: spi: spi-dw-mchp: Add Sparx5 support
+Message-ID: <20200513152522.GM4803@sirena.org.uk>
+References: <20200513140031.25633-1-lars.povlsen@microchip.com>
+ <20200513140031.25633-7-lars.povlsen@microchip.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAHb3i=tERsM+gwmQN1+vjnML9o5NxRK=uBokEUsd-Ljyje4s3A@mail.gmail.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <20200513140031.25633-7-lars.povlsen@microchip.com>
+X-Cookie: Long life is in store for you.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_082416_048671_52B089E0 
-X-CRM114-Status: GOOD (  16.89  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20200513_082525_728861_35CE273A 
+X-CRM114-Status: GOOD (  13.28  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.115 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,81 +77,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree <devicetree@vger.kernel.org>, Tomer Maimon <tmaimon77@gmail.com>,
- Nancy Yuen <yuenn@google.com>, avifishman70@gmail.com,
- Patrick Venture <venture@google.com>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
- Brendan Higgins <brendanhiggins@google.com>, ofery@google.com,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, kfting@nuvoton.com,
- Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Benjamin Fair <benjaminfair@google.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ SoC Team <soc@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============3058754885054777653=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, May 11, 2020 at 02:28:50PM +0300, Tali Perry wrote:
-> On Mon, May 11, 2020 at 12:18 PM Andy Shevchenko
-> <andriy.shevchenko@linux.intel.com> wrote:
-> > On Sun, May 10, 2020 at 01:23:29PM +0300, Tali Perry wrote:
 
-...
-
-> > > +#if IS_ENABLED(CONFIG_DEBUG_FS)
-> >
-> > Why?
-> 
-> We wanted to add an optional feature to track i2c slave status.
-> the NPCM has 16 channels handling multiple devices each. Some of the devices
-> are polled periodically, and might power down.
-> The user wanted to implement a health monitoring option
-> to occasionally check the status of the buses (how many timeouts, recovery etc.)
-> This feature is optional and depends on CONFIG_DEBUG_FS The counters are exposed
-> to user through the file system.
-
-What I meant is why do you need an #ifdef?
+--===============3058754885054777653==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Aaj1jBvBEV7KRjLi"
+Content-Disposition: inline
 
 
-...
+--Aaj1jBvBEV7KRjLi
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-> > > +#define I2C_NUM_OF_ADDR 10
-> >
-> > Is it 10-bit address support or what?
-> >
-> 
-> No, the NPCM has an option to respond to multiple slave addresses
-> (10 own slave addresses)
+On Wed, May 13, 2020 at 04:00:27PM +0200, Lars Povlsen wrote:
+> This add DT bindings for the Sparx5 SPI driver.
 
-Perhaps more descriptive name then?
+It makes life much easier if you add new features to the bindings before
+doing any conversions to YAML, YAML binding conversions can take a long
+time to get reviewed and really slow things up.
 
-...
+> +          - description: Direct mapped SPI read area. If provided, the
+> +              driver will register spi_mem_op's to take advantage of it.
 
-> > > +     // Repeat the following sequence until SDA is released
-> > > +     do {
-> > > +             // Issue a single SCL toggle
-> > > +             iowrite8(NPCM_I2CCST_TGSCL, bus->reg + NPCM_I2CCST);
-> > > +             udelay(20);
-> > > +             // If SDA line is inactive (high), stop
-> > > +             if (npcm_i2c_get_SDA(_adap)) {
-> > > +                     done = true;
-> > > +                     status = 0;
-> > > +             }
-> > > +     } while (!done && iter--);
-> >
-> > readx_poll_timeout() ?
-> 
-> Not exactly, readx_poll_timeout includes only a read operation, here there is a
-> write in the middle. (iowrite8)
+The implementation detail about what the driver does with this is not
+relevant to the binding.
 
-Ah, indeed. Perhaps time to add writex_poll_timeout() ?
+> +  interface-mapping-mask:
+> +    description: |
+> +      On the Sparx5 variant, two different busses are connected to the
+> +      controller. This property is a mask per chip-select, indicating
+> +      whether the CS should go to one or the other interface.
+> +    $ref: /schemas/types.yaml#/definitions/uint32
+> +    default: 0
+> +    maxItems: 1
 
--- 
-With Best Regards,
-Andy Shevchenko
+Is this not a property that should go on devices?  It looks like this
+needs some namespacing too.
+
+--Aaj1jBvBEV7KRjLi
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl68EWEACgkQJNaLcl1U
+h9Cjbwf/U7xpXTxoD0nolU0E+Fmr0rN5BF6FHkUc4Px3O/NbjgjzNDCx+nCiIdQe
+YxLeXUDPqHdCHRLVrHzmFeVSY+TwWQLxBn8TACYuNweVIuX5i3LJbRdiZ+9eQyVj
+qOLW8LlNrY6rFijK5CXqMg7sr8ufPSGBKfEd7fvhDYfVw4Dp5AAMQ2J5/7Obw9RO
+VbBGj8gmGCUmqo/9M221ZRYeb8qbf66kyWmSaNLtw55/NvCJyoforDBUSRUg/L8/
+Hhrxy2FUnx3JJxvG7EbBA/4i/KasA89IySEG0C2xomFbVvwdM0lJKivC1QPF5WRI
+nC+tuH4D96wOc+iZ5aP+vHwXjJSpnQ==
+=vw8U
+-----END PGP SIGNATURE-----
+
+--Aaj1jBvBEV7KRjLi--
 
 
+--===============3058754885054777653==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3058754885054777653==--
+
