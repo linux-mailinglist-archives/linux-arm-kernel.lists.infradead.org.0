@@ -2,85 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 775291D193C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:22:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9740A1D1945
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 17:24:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
-	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=K3h53/K7hmsTEhUIZW/E7BMJ98QwyK0zZtDVuQRnm2s=; b=oVQsfsQ8Vfc5YAYACJ5eQsI0r
-	XJnwGVAMuIoJ4zAfIO/+rIpkPLZ1nLT+HviXgGOMZgydXAzXGOleezGSfkF04PYGUld/vkMOxk+dY
-	gXCkqYPgOH9D0lE/r37BpnwJhZ5m9zs0PMIPiizwp3dQ16/XuFOzks5rUlI6IZN4Sea91lyqKEpwk
-	ecKvCWQ4/WF7dIacdznIkBmNhU22rM/NcpHagYmfoBKrTVzuNYMIr2Nlhez8UvCH4zFKqyh+3J8dN
-	fex6Y5YtsSMMZdTyRdQ3aJPP2F6KAJanV3uX5EvE6hKLT2igoB3en7qP+O28yKbON6Dpal9v5Q74F
-	J37XIzosQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvHMjeIEUBoB2Hsr5xKmi04k+oq1DEv2pewjrxkNdb0=; b=mwY5yXdZzIM3cZ
+	oGCT03vaoIZCBDBnaBXMAKG68rL+Y2j90GFPPLW/UqsorTBbMwHm8ja0f8CxstQGcZhihJgp8fRKE
+	TIDTpXwGZfNlDPaRiQzK0dXSiiS38KaEXF6PjI1/qZ9TAQpoyGtRw4KaM3+Yl57R9bwISRFJ/bYT0
+	M3rF5ACb9r8UNfTLF33aHnD0gjxIdrX+e79hJXysi25GkP5MJIQjNA7qe7d8XMzF8syAvddPX2cdT
+	qtGHD5tZvK3YrnKZcxyRCfZFSEv8hihfiUrTAtzOA6VE1eJ6+SS6kyWwPciZ2nyQfe6fquuy+wkTa
+	p2F9svM1ZJnXILR79SRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYtDW-0001PK-NI; Wed, 13 May 2020 15:22:42 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1jYtFD-0001kV-1w; Wed, 13 May 2020 15:24:27 +0000
+Received: from mga14.intel.com ([192.55.52.115])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYtDK-0001OC-9E
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:22:34 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04DFMQ0p077086
- for <linux-arm-kernel@lists.infradead.org>; Wed, 13 May 2020 10:22:26 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589383346;
- bh=aOnQL9ElSS4Mylkv7IA4wtNjH8cOXFY0YY6SrC2x7S0=;
- h=Subject:From:To:CC:References:Date:In-Reply-To;
- b=IEMf5Z1+VZgTAnkmgbxLYgqk5+jtpvSYC83uSnbEyeW6ybKhXPP9N2Fjc9VPbj/4B
- ++6MlWam5svq/VRkqPoropLBeHOIvlxN4OFvtMcxg/IC0nB3LJDZWn2Ty4CSKvrbVk
- Fuh6x9dMMF1ubMLTXZysHKxhkZa7JPZnLDkn49yw=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04DFMQjl063242
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL)
- for <linux-arm-kernel@lists.infradead.org>; Wed, 13 May 2020 10:22:26 -0500
-Received: from DFLE104.ent.ti.com (10.64.6.25) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Wed, 13
- May 2020 10:22:26 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE104.ent.ti.com
- (10.64.6.25) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Wed, 13 May 2020 10:22:25 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04DFMJuj100332;
- Wed, 13 May 2020 10:22:23 -0500
-Subject: Re: [RESEND PATCHv4] arm64: dts: ti: k3-j721e-main: Add main domain
- watchdog entries
-From: Tero Kristo <t-kristo@ti.com>
-To: <linux-arm-kernel@lists.infradead.org>
-References: <20200427103919.431-1-t-kristo@ti.com>
-Message-ID: <0bd1459a-ae41-2232-38ac-daf08655f320@ti.com>
-Date: Wed, 13 May 2020 18:22:18 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.4.1
+ id 1jYtF1-0001jn-W8
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 15:24:17 +0000
+IronPort-SDR: qgasKBz1jKesJZkglr7s+4b7dNP2keAkG7ahCobN4Wx5DA6L3tdipt6bAhfH3ozgV3w6aBq/Zx
+ RXNQdXiR/2EA==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga007.jf.intel.com ([10.7.209.58])
+ by fmsmga103.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 13 May 2020 08:24:14 -0700
+IronPort-SDR: LEYmL0D8h4/MJPzQww7+nG6ZMTyIUMdrpW620uivs8d1RMOvGn0hsKExHGUYjZoUgEhe4Gmdup
+ YKNkAXzriOTw==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,388,1583222400"; d="scan'208";a="251288456"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by orsmga007.jf.intel.com with ESMTP; 13 May 2020 08:24:10 -0700
+Received: from andy by smile with local (Exim 4.93)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1jYtEz-006Rr3-Pi; Wed, 13 May 2020 18:24:13 +0300
+Date: Wed, 13 May 2020 18:24:13 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: Tali Perry <tali.perry1@gmail.com>
+Subject: Re: [PATCH v10 2/3] i2c: npcm7xx: Add Nuvoton NPCM I2C controller
+ driver
+Message-ID: <20200513152413.GQ185537@smile.fi.intel.com>
+References: <20200510102330.66715-1-tali.perry1@gmail.com>
+ <20200510102330.66715-3-tali.perry1@gmail.com>
+ <20200511091759.GE185537@smile.fi.intel.com>
+ <CAHb3i=tERsM+gwmQN1+vjnML9o5NxRK=uBokEUsd-Ljyje4s3A@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200427103919.431-1-t-kristo@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <CAHb3i=tERsM+gwmQN1+vjnML9o5NxRK=uBokEUsd-Ljyje4s3A@mail.gmail.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_082233_582003_A051512E 
-X-CRM114-Status: GOOD (  17.71  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200513_082416_048671_52B089E0 
+X-CRM114-Status: GOOD (  16.89  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.115 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,60 +76,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com
+Cc: devicetree <devicetree@vger.kernel.org>, Tomer Maimon <tmaimon77@gmail.com>,
+ Nancy Yuen <yuenn@google.com>, avifishman70@gmail.com,
+ Patrick Venture <venture@google.com>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>, Wolfram Sang <wsa@the-dreams.de>,
+ Brendan Higgins <brendanhiggins@google.com>, ofery@google.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, kfting@nuvoton.com,
+ Rob Herring <robh+dt@kernel.org>, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Benjamin Fair <benjaminfair@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/04/2020 13:39, Tero Kristo wrote:
-> Add DT entries for main domain watchdog0 and 1 instances.
-> 
-> Signed-off-by: Tero Kristo <t-kristo@ti.com>
-> ---
-> Resending this to ARM mailing list, was earlier delivered only with the
-> main watchdog series itself. The driver side + binding are in linux-next
-> already so planning to pick this up myself towards 5.8.
+On Mon, May 11, 2020 at 02:28:50PM +0300, Tali Perry wrote:
+> On Mon, May 11, 2020 at 12:18 PM Andy Shevchenko
+> <andriy.shevchenko@linux.intel.com> wrote:
+> > On Sun, May 10, 2020 at 01:23:29PM +0300, Tali Perry wrote:
 
-Queued up for 5.8, thanks.
+...
 
--Tero
+> > > +#if IS_ENABLED(CONFIG_DEBUG_FS)
+> >
+> > Why?
+> 
+> We wanted to add an optional feature to track i2c slave status.
+> the NPCM has 16 channels handling multiple devices each. Some of the devices
+> are polled periodically, and might power down.
+> The user wanted to implement a health monitoring option
+> to occasionally check the status of the buses (how many timeouts, recovery etc.)
+> This feature is optional and depends on CONFIG_DEBUG_FS The counters are exposed
+> to user through the file system.
 
-> 
->   arch/arm64/boot/dts/ti/k3-j721e-main.dtsi | 18 ++++++++++++++++++
->   1 file changed, 18 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> index 0b9d14b838a1..aa525bc321f1 100644
-> --- a/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> +++ b/arch/arm64/boot/dts/ti/k3-j721e-main.dtsi
-> @@ -963,4 +963,22 @@
->   
->   		status = "disabled";
->   	};
-> +
-> +	watchdog0: watchdog@2200000 {
-> +		compatible = "ti,j7-rti-wdt";
-> +		reg = <0x0 0x2200000 0x0 0x100>;
-> +		clocks = <&k3_clks 252 1>;
-> +		power-domains = <&k3_pds 252 TI_SCI_PD_EXCLUSIVE>;
-> +		assigned-clocks = <&k3_clks 252 1>;
-> +		assigned-clock-parents = <&k3_clks 252 5>;
-> +	};
-> +
-> +	watchdog1: watchdog@2210000 {
-> +		compatible = "ti,j7-rti-wdt";
-> +		reg = <0x0 0x2210000 0x0 0x100>;
-> +		clocks = <&k3_clks 253 1>;
-> +		power-domains = <&k3_pds 253 TI_SCI_PD_EXCLUSIVE>;
-> +		assigned-clocks = <&k3_clks 253 1>;
-> +		assigned-clock-parents = <&k3_clks 253 5>;
-> +	};
->   };
-> 
+What I meant is why do you need an #ifdef?
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+
+...
+
+> > > +#define I2C_NUM_OF_ADDR 10
+> >
+> > Is it 10-bit address support or what?
+> >
+> 
+> No, the NPCM has an option to respond to multiple slave addresses
+> (10 own slave addresses)
+
+Perhaps more descriptive name then?
+
+...
+
+> > > +     // Repeat the following sequence until SDA is released
+> > > +     do {
+> > > +             // Issue a single SCL toggle
+> > > +             iowrite8(NPCM_I2CCST_TGSCL, bus->reg + NPCM_I2CCST);
+> > > +             udelay(20);
+> > > +             // If SDA line is inactive (high), stop
+> > > +             if (npcm_i2c_get_SDA(_adap)) {
+> > > +                     done = true;
+> > > +                     status = 0;
+> > > +             }
+> > > +     } while (!done && iter--);
+> >
+> > readx_poll_timeout() ?
+> 
+> Not exactly, readx_poll_timeout includes only a read operation, here there is a
+> write in the middle. (iowrite8)
+
+Ah, indeed. Perhaps time to add writex_poll_timeout() ?
+
+-- 
+With Best Regards,
+Andy Shevchenko
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
