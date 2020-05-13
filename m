@@ -2,57 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B94F41D1021
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:47:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 846E31D1031
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 12:48:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rIC+BI4LNlgeRX8w/n4BchUUkXzw0JcuC+zfBJrHChk=; b=gRJ6x5QGPjmJRp
-	jGU86ZfIHmL7hA89fvnHgP06RbRRKWNo+cXBhj6itPIrj0z0/0Lqt2ylVJa3EI9ImUB0hMwauo6/t
-	HLtMtuLWMWpg5pkqJiZ+cU1qQbdU8//SHLdGjuWFBh8LIe6LCLedHTYiEgZurJLqFv39XFESZ60Nr
-	bN7VIddotXoorxQSDFb5AL+bDYx08neb2TOahiaOqBvG+eJ9IWicG/BxRuxSj6O1fO6+lH4ldq0c8
-	Hy4GZLB61RhCvAzAvU5/z7HsWRF+GruFYEGT7Dz+lYHEnZQaTKmXWLSDaSjteme+7exYPUGZSQjJS
-	xuiszgbJrNCuQcfFifcw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7bteTTt7lE6jOWPVlGrct/rbuy5DdzFdDXbxL14x1z0=; b=gihLVReXBQZn6k
+	5QSyeuTmbqKr1W4Ma87EA/TFxBhxioN+qcMcCL+0BghPuYU7Vb6RLgKmSsaEauRwhVUkc001RZfun
+	A7V59arCVvEx5l21qwJzqf36vSC7D8u8fOsFx/IxPLWM7+LYa6vpVQRMeLGi9yoeyyX77iDMu10/9
+	qgAxw0aCMP6lN3gTZlBZ52CRcceWTCMGZDfxX+6CkVM39XZ3koy6NTWOtSvdY90n/kxxRcxmuCpGA
+	Dn8eyHC26hVLZAvlUPZz3A8Yq+pXZU73OSzcccSw1xXg+ySw4MCRRxHQJr+xhIMrZ6lpdYXcQxjr5
+	491cSqj+P2JPJLJsIkkQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYoue-0003aa-Kq; Wed, 13 May 2020 10:46:56 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYouO-0003WQ-Cf
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:46:47 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B94F71FB;
- Wed, 13 May 2020 03:46:39 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D311B3F71E;
- Wed, 13 May 2020 03:46:38 -0700 (PDT)
-Date: Wed, 13 May 2020 11:46:36 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 13/14] prctl.2: Add SVE prctls (arm64)
-Message-ID: <20200513104635.GD21779@arm.com>
-References: <1589301419-24459-1-git-send-email-Dave.Martin@arm.com>
- <1589301419-24459-14-git-send-email-Dave.Martin@arm.com>
- <20200513084351.GB18196@willie-the-truck>
+	id 1jYowR-0004q9-1i; Wed, 13 May 2020 10:48:47 +0000
+Received: from plasma4.jpberlin.de ([80.241.57.33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jYowB-0004l6-8W
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 10:48:33 +0000
+Received: from spamfilter03.heinlein-hosting.de
+ (spamfilter03.heinlein-hosting.de [80.241.56.117])
+ by plasma.jpberlin.de (Postfix) with ESMTP id C016CBA8EC;
+ Wed, 13 May 2020 12:48:23 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from plasma.jpberlin.de ([80.241.56.68])
+ by spamfilter03.heinlein-hosting.de (spamfilter03.heinlein-hosting.de
+ [80.241.56.117]) (amavisd-new, port 10030)
+ with ESMTP id HUsxvJ6SJwrN; Wed, 13 May 2020 12:48:22 +0200 (CEST)
+Received: from webmail.opensynergy.com (unknown [217.66.60.5])
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (256/256 bits))
+ (Client CN "webmail.opensynergy.com",
+ Issuer "GeoTrust EV RSA CA 2018" (not verified))
+ (Authenticated sender: opensynergy@jpberlin.de)
+ by plasma.jpberlin.de (Postfix) with ESMTPSA id 101EFB9F3B;
+ Wed, 13 May 2020 12:48:22 +0200 (CEST)
+Received: from [10.51.0.60] (10.25.255.1) by MXS02.open-synergy.com
+ (10.25.10.18) with Microsoft SMTP Server (TLS) id 14.3.487.0; Wed, 13 May
+ 2020 12:48:21 +0200
+Subject: Re: [PATCH v4] Add virtio SCMI device specification
+To: <virtio-comment@lists.oasis-open.org>
+References: <20200317192053.15665-1-peter.hilber@opensynergy.com>
+ <20200424085114.9129-1-peter.hilber@opensynergy.com>
+From: Peter Hilber <peter.hilber@opensynergy.com>
+Autocrypt: addr=peter.hilber@opensynergy.com; prefer-encrypt=mutual; keydata=
+ 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
+ lbekkuPTQs/m
+Message-ID: <d0034b91-8f8a-3316-b67f-4e5abde73629@opensynergy.com>
+Date: Wed, 13 May 2020 12:48:20 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200513084351.GB18196@willie-the-truck>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20200424085114.9129-1-peter.hilber@opensynergy.com>
+Content-Language: en-US
+X-Originating-IP: [10.25.255.1]
+X-Rspamd-Queue-Id: C016CBA8EC
+X-Rspamd-Score: -5.48 / 15.00 / 200.00
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_034640_517545_7A6AD444 
-X-CRM114-Status: GOOD (  35.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_034831_631375_8DE8DA5B 
+X-CRM114-Status: GOOD (  13.07  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.57.33 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,285 +124,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-man@vger.kernel.org,
- mtk.manpages@gmail.com, linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: virtio-dev@lists.oasis-open.org, Souvik.Chakravarty@arm.com,
+ jean-philippe@linaro.org, Sudeep.Holla@arm.com, alex.bennee@linaro.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, May 13, 2020 at 09:43:52AM +0100, Will Deacon wrote:
-> Hi Dave,
-> 
-> On Tue, May 12, 2020 at 05:36:58PM +0100, Dave Martin wrote:
-> > diff --git a/man2/prctl.2 b/man2/prctl.2
-> > index 7f511d2..dd16227 100644
-> > --- a/man2/prctl.2
-> > +++ b/man2/prctl.2
-> > @@ -1291,6 +1291,104 @@ call failing with the error
-> >  .BR ENXIO .
-> >  For further details, see the kernel source file
-> >  .IR Documentation/admin-guide/kernel-parameters.txt .
-> > +.\" prctl PR_SVE_SET_VL
-> > +.\" commit 2d2123bc7c7f843aa9db87720de159a049839862
-> > +.\" linux-5.6/Documentation/arm64/sve.rst
-> > +.TP
-> > +.BR PR_SVE_SET_VL " (since Linux 4.15, only on arm64)"
-> > +Configure the thread's SVE vector length,
-> > +as specified by
-> > +.IR arg2 .
-> > +Arguments
-> > +.IR arg3 ", " arg4 " and " arg5
-> > +are ignored.
-> 
-> Bugger, did we forget to force these to zero? I guess we should write the
-> man-page first next time :(
-
-Not an accident, but there does seem to be some inconsistency in policy
-among the various prctls here.
-
-glibc explicitly has
-
-	extern int prctl (int __option, ...);
-
-(and nobody has to write _exit(0, 0, 0, 0, 0, 0) after all.)
-
-Is there some agreed rationale for requiring redundant arguments to be
-supplied explicitly as zero?  For now there are likely to be few users
-of this, so we _might_ get away with changing the behaviour here if it's
-considered important enough.
-
-There is no forwards compatibility problem with this prctl though,
-because there are spare bits in arg2 which can "turn on" additional
-args if needed.
-
-Also, it's implausible that PR_SVE_GET_VL will ever want an argument.
-
-There are still 2 billion unallocated prctl numbers, so new prctls can
-always be added if there's ever a need to work around these limitations,
-but it seems extremely unlikely.
-
-> 
-> > +.IP
-> > +The bits of
-> > +.I arg2
-> > +corresponding to
-> > +.B SVE_VL_LEN_MASK
-> 
-> PR_SVE_LEN_MASK
-
-Hmm, not sure how that happened.  Good spot!
-
-I'll recheck that all the names are real when reposting.
-
-> > +must be set to the desired vector length in bytes.
-> > +In addition,
-> > +.I arg2
-> > +may include zero or more of the following flags:
-> > +.RS
-> > +.TP
-> > +.B PR_SVE_VL_INHERIT
-> > +Inherit the configured vector length across
-> > +.BR execve (2).
-> > +.TP
-> > +.B PR_SVE_SET_VL_ONEXEC
-> > +Defer the change until the next
-> > +.BR execve (2)
-> > +in this thread.
-> 
-> (aside, it's weird that we didn't allocate (1<<16) for one of these flags)
-
-The flag definitions are shared with ptrace: ptrace is the
-SVE_PT_REGS_SVE format selection bit, which isn't relevant to the prctl.
-
-Maybe it would have made more sense to keep the definitions completely
-separate, but it's there now.
-
-> > +If
-> > +.B PR_SVE_VL_INHERIT
-> > +is also included in
-> > +.IR arg2 ,
-> > +it takes effect
-> > +.I after
-> > +this deferred change.
-> 
-> I find this a bit hard to follow, since it's not clear to me whether the
-> INHERIT flag is effectively set before or after the next execve(). In other
-> words, if both PR_SVE_SET_VL_ONEXEC and PR_SVE_VL_INHERIT are specified,
-> is the vector length preserved or reset on the next execve()?
-
-It makes no difference, because the ONEXEC handling takes priority over
-the INHERIT handling. But either way INHERIT is never cleared by execve()
-and will apply at subsequent execs().
-
-Explaining all this properly seems out of scope here.  Maybe this should
-be trimmed down rather than elaborated?  Or perhaps just explain it in
-terms of what the kernel does instead of futile attempts to make it
-intuitive?
-
-Ultimately I'll probably write a separate page or pages for SVE and other
-arm64 specifics.
-
-> > +.RE
-> > +.IP
-> > +On success, the vector length and flags are set as requested,
-> > +and any deferred change that was pending immediately before the
-> > +.B PR_SVE_SET_VL
-> > +call is canceled.
-> 
-> Huh, turns out 'canceled' is a valid US spelling. Fair enough, but it looks
-> wrong to me ;)
-
-Yeah, I know, but the man pages do have a documented policy on this...
-
-prctl.2 has a lot of authors, so having mixed spellings could get
-particularly messy.
-
-> 
-> > +If
-> > +.B PR_SVE_SET_VL_ONEXEC
-> > +was included in
-> > +.IR arg2 ,
-> > +the returned value describes the configuration
-> > +scheduled to take effect at the next
-> > +.BR execve (2).
-> 
-> "describes the configuration" how?
-> 
-> > +Otherwise, the effect is immediate and
-> > +the returned value describes the new configuration.
-> > +The returned value is encoded in the same way as the return value of
-> > +.BR PR_SVE_GET_VL .
-> 
-> Aha. Maybe move this bit up slightly?
-
-Yes, I'll reorder that.
-
-> 
-> > +.IP
-> > +If neither of the above flags is included in
-> 
-> are included
-
-Debatable.
-
-The subject of the verb here is not "flags" (plural), but "neither of
-the above flags" (which is more nuanced, though it can be interpreted
-as singular).  Usage varies, and I don't consider this wrong.
-
-> > +.IR arg2 ,
-> > +a subsequent
-> > +.BR execve (2)
-> > +resets the vector length to the default value configured in
-> > +.IR /proc/sys/abi/sve_default_vector_length .
-> > +.IP
-> > +The actual vector length configured by this operation
-> > +is the greatest vector length supported by the platform
-> > +that does not exceed
-> > +.I arg2
-> > +&
-> > +.BR PR_SVE_VL_LEN_MASK .
-> > +.IP
-> > +The configuration (including any pending deferred change)
-> > +is inherited across
-> > +.BR fork (2)
-> > +and
-> > +.BR clone (2).
-> > +.\" prctl PR_SVE_GET_VL
-> > +.TP
-> > +.BR PR_SVE_GET_VL " (since Linux 4.15, only on arm64)"
-> > +Get the thread's current SVE vector length configuration,
-> > +as configured by
-> > +.BR PR_SVE_SET_VL .
-> 
-> It doesn't *have* to be configured by PR_SVE_SET_VL though, right?
-
-No, "as" here is trying to mean that PR_SVE_SET_VL illustrates how the
-vl can be set, not that it is the only way.
-
-Maybe just delete that clause?  I'm not sure it adds much.
-
-> > +.IP
-> > +If successful, the return value describes the
-> > +.I current
-> > +configuration.
-> 
-> (aside: prctl() returns int, so we can't ever allocate past bit 30 in arg2.
-> Might be worth a note somewhere in the kernel).
-
-Agreed.  The chance of adding more bits seemed negligible, but dropping
-a comment in would probably be a good idea.
-
-Maybe we could redocument PR_SVE_SET_VL's arg2 as an int.  Passing an
-int must survive the variadic argument marshaling of the glibc prctl()
-wrapper, otherwise passing the existing #defines without an explicit
-case to long would already break.
-
-I'll probably just add the comment for now though.
-
-> > +The bits corresponding to
-> > +.B PR_SVE_VL_LEN_MASK
-> > +contain the currently configured vector length in bytes.
-> > +The bit corresponding to
-> > +.B PR_SVE_VL_INHERIT
-> > +indicates whether the vector length will be inherited
-> > +across
-> > +.BR execve (2).
-> > +.IP
-> > +Note that there is no way determine whether there is
-> 
-> to determine
-
-Ack
-
-> > +a pending vector length change that has not yet taken effect.
-> > +.IP
-> > +Providing that the kernel and platform support SVE,
-> > +this operation always succeeds.
-> >  .\"
-> >  .\" prctl PR_TASK_PERF_EVENTS_DISABLE
-> >  .TP
-> > @@ -1534,6 +1632,8 @@ On success,
-> >  .BR PR_GET_NO_NEW_PRIVS ,
-> >  .BR PR_GET_SECUREBITS ,
-> >  .BR PR_GET_SPECULATION_CTRL ,
-> > +.BR PR_SVE_GET_VL ,
-> > +.BR PR_SVE_SET_VL ,
-> >  .BR PR_GET_THP_DISABLE ,
-> >  .BR PR_GET_TIMING ,
-> >  .BR PR_GET_TIMERSLACK ,
-> > @@ -1817,6 +1917,18 @@ and unused arguments to
-> >  .BR prctl ()
-> >  are not 0.
-> >  .TP
-> > +.B EINVAL
-> > +.I option
-> > +was
-> > +.B PR_SVE_SET_VL
-> > +and
-> > +.I arg2
-> > +contains invalid flags, or
-> > +.I arg2
-> > +&
-> > +.B SVE_VL_LEN_MASK
-> > +is not a valid vector length.
-> > +.TP
-> 
-> PR_SVE_GET_VL can return -EINVAL if SVE is not supported.
-
-See the earlier patch about the "unsupported hardware case of EINVAL".
-
-This affects many prctls, is "obvious" and we'd just have to document
-the same thing over and over again...
-
-
-Thanks for the review.  Perhaps I was slightly oo hasty about having got
-it half right!
-
----Dave
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMjQuMDQuMjAgMTA6NTEsIFBldGVyIEhpbGJlciB3cm90ZToKPiBUaGlzIHBhdGNoIHByb3Bv
+c2VzIGEgbmV3IHZpcnRpbyBkZXZpY2UgZm9yIHRoZSBBcm0gU0NNSSBwcm90b2NvbC4KPiAKPiBU
+aGUgZGV2aWNlIHByb3ZpZGVzIGEgc2ltcGxlIHRyYW5zcG9ydCBmb3IgdGhlIEFybSBTQ01JIHBy
+b3RvY29sWzFdLiBUaGUKPiAqUyp5c3RlbSAqQypvbnRyb2wgYW5kICpNKmFuYWdlbWVudCAqSSpu
+dGVyZmFjZSBwcm90b2NvbCBhbGxvd3Mgc3BlYWtpbmcKPiB0byBzeXN0ZW0gY29udHJvbGxlcnMg
+dGhhdCBhbGxvdyBvcmNoZXN0cmF0aW5nIHRoaW5ncyBsaWtlIHBvd2VyCj4gbWFuYWdlbWVudCwg
+c3lzdGVtIHN0YXRlIG1hbmFnZW1lbnQgYW5kIHNlbnNvciBhY2Nlc3MuIFRoZSBTQ01JIHByb3Rv
+Y29sCj4gaXMgdXNlZCBvbiBTb0NzIHdoZXJlIG11bHRpcGxlIGNvcmVzIGFuZCBjby1wcm9jZXNz
+b3JzIG5lZWQgYWNjZXNzIHRvCj4gdGhlc2UgcmVzb3VyY2VzLgo+IAo+IFRoZSB2aXJ0aW8gdHJh
+bnNwb3J0IGFsbG93cyBtYWtpbmcgdXNlIG9mIHRoaXMgcHJvdG9jb2wgaW4gdmlydHVhbGl6ZWQK
+PiBzeXN0ZW1zLgo+IAo+IFsxXSBodHRwczovL2RldmVsb3Blci5hcm0uY29tL2RvY3MvZGVuMDA1
+Ni9iCj4gCj4gU2lnbmVkLW9mZi1ieTogUGV0ZXIgSGlsYmVyIDxwZXRlci5oaWxiZXJAb3BlbnN5
+bmVyZ3kuY29tPgo+IC0tLQo+IAo+IE5vdGVzOgo+ICAgICBDaGFuZ2VzIGZvciB2NDoKPiAgICAg
+Cj4gICAgIC0gQWRkIG1vcmUgcmVxdWlyZW1lbnRzIG9uIHNoYXJlZCBtZW1vcnkgcmVnaW9ucyBh
+ZnRlciBmZWVkYmFjayBmcm9tCj4gICAgICAgQWxleCBCZW5uw6llLgoKSSBoYWQgYW4gb2ZmLWxp
+c3QgZGlzY3Vzc2lvbiBhYm91dCBjb25jdXJyZW50IGFjY2VzcyB0byBTQ01JIHNoYXJlZAptZW1v
+cnkgcmVnaW9ucyB3aXRoIHRoZSBBcm0gU0NNSSBzcGVjWzFdIG1haW50YWluZXIgeWVzdGVyZGF5
+LiBBbgp1cGNvbWluZyBuZXcgdmVyc2lvbiBvZiB0aGUgQXJtIFNDTUkgc3BlYyB3aWxsIHByb3Zp
+ZGUgYSBnZW5lcmljLCBtb3JlCnBvd2VyZnVsIHdheSB0byBoYW5kbGUgY29uY3VycmVudCBhY2Nl
+c3MgdG8gc2hhcmVkIG1lbW9yeS4KClRoZXJlZm9yZSwgSSBwbGFuIHRvIGFnYWluIGRyb3AgdGhl
+IHJlcXVpcmVtZW50cyBpbnRyb2R1Y2VkIGluIHY0IGluIHRoZQp1cGNvbWluZyB2aXJ0aW8gU0NN
+SSBzcGVjIHBhdGNoIHY1LgoKQmVzdCByZWdhcmRzLAoKUGV0ZXIKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
