@@ -2,82 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 094191D16FD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:05:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CB7FA1D1713
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 16:07:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=LGxRpC9UukpQsDabzFt/f2/1g+a+PdslQe6szbYmGKY=; b=Qzpd+k4bfZRIyQD4YF8KjRUvN
-	LGYdpPEhrVrxLuLvIiChUXzQaoVmu9i6LQQyZUbgfHwsPpqwWFLw7YQ8jL9jvwQmG+0vju8rETR+M
-	jdVyerK6lPTEBh+s0F6TFAUHbIPlwQabBv8zROpqjinjlSg1zmrJ0puOVD2w+lBG3IswSLnz3Ky3Z
-	chTXTzKsmG4NL0gVHXbUhXyyA556/BoPL5D3NNWxxJp/gAYqfHYA5SztQ0ZgLyRxeQNsWYjITQKSK
-	e1L9dri82a7EkHs2CMrgY6oPJr8nZho+cBfMRoaV7ZxZrGkLV6tQFrJLpW7ajMbNLivrwFn5i4+sQ
-	s88VCL1Jg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=JxdFZSsWQlel8pSdnWeJU5gxE4+T1YAukNoGWYiB4E4=; b=D8D84UNXJbXexd
+	m7RDv/JkBtKVOWtkEyZpnJaPiA8aZjOD3iSLmf0rpZiMosgru3EgxcllIXRYtv2mCxUOM/v9JfhT0
+	KrSf9Qq3VIgHkt7a3E0yv4GIthqssz6PyM7uu8ACQLiKHkeZjxJE3rIJNwZzbIlMqTDZjJ7i+mcND
+	7VGyBnI0+jPipSlqdYIllUSjhECVoJvuGuH5DpjRfL9QJkzB0dRLFJO59IjjOmyCiLof6XV93UrFq
+	07geFjyEAH5akGyfK6cQ9mXMW/P6UCsMBgQJmmzf7+tZklm+7Adf9hwb6MdsejcQ12qHzrprYt51h
+	gu1+T42sDOYUG5A7ZZIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYs0X-0001N4-17; Wed, 13 May 2020 14:05:13 +0000
+	id 1jYs30-0004vv-O0; Wed, 13 May 2020 14:07:46 +0000
 Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYrzc-0000xC-9T
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:04:28 +0000
+ id 1jYs2j-0004vX-28
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 14:07:30 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id C01175C01DB;
- Wed, 13 May 2020 10:04:12 -0400 (EDT)
+ by mailout.nyi.internal (Postfix) with ESMTP id 354205C01A4;
+ Wed, 13 May 2020 10:07:28 -0400 (EDT)
 Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Wed, 13 May 2020 10:04:12 -0400
+ by compute4.internal (MEProxy); Wed, 13 May 2020 10:07:28 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=rucgadYP+zr7hZmIV0f/NYqhGDe
- nFVL4g5CHka+BybE=; b=asBCszVu7JixrlcUxaFhjWwT5wPSEHdlLvy8MlaEla7
- 5KlD6BYaYH9n8waH6sa0uN+g2LH/XTl6OHGoY1aIXtera2y7CUYiBeu/jeRoNkXM
- qD0LoAbI/ZTH5UMwGbcV0TQewZWfRkV/BaqZ5BufEM6sApOzoON6DFRAMkBtNXWV
- S5JpCQRV8Xqq1ejY0GbPhAT1IYfw3DxfGe+6TrsJujSGefSfrQBwFd8Z6zs5Dtrj
- BrEnK9KgyeW4D75ojojgjQFvG5IHVhpSYLdjcbzsfE/bGwgzx4GSpdGLdlejxvLB
- 1KaDbwaIOpcSdbXwnqT1Pzp6QZuavm8zgznLZQgCT5g==
+ from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm2; bh=lKdeG/SS5K17qzibBRTuO63YA/
+ 4VCH6EVTjUZm7Nekk=; b=oQs+HaW0z7SPEUSTpSgGWKSx49idmw59YLaFuTT2Uq
+ 876Wox/otMTgoBMIUjfDxbSWEHtp8IAVhp2XZBnJSugDsWXM4V57b63xbxRhkfPD
+ j90/QZKBJWQ3uub0n7tnmQ2Xn0bll59FnbwLVkXsPrpHKLCr4ZU/Q6FGm8ctajZc
+ NbKeaKj1HNgrhFG2uveEtD++WJNEMiRRzJlQNZFtOIp6KFSQ076qhXkvfpRKd76k
+ 3GNcx9TzCYtwU0qV01ijTzfzXWqLwawsta9RoF3w7LrU9rKRhxmbQcdIYCMhaVkd
+ qm5W0VAs7yN4c9VYjBmjyAKsdjD2ZsB9DRW14UcaXGdw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=rucgad
- YP+zr7hZmIV0f/NYqhGDenFVL4g5CHka+BybE=; b=p+8OmjbkmXLAIG6ZFkkC52
- svv0AwclhZJMQb80RgxwbDj0sDh5bEIUZ58h9ryfuBLMXIJbetsaXPnBjQdnSKIR
- 9Dy6yHPVz07Qs1Q0xB7lBS4iU1zmZva4MI9AqLYHuea8XvC9+67HuEzY6e9ElxuI
- BByAd27dLHBNix7++cVuWSYCve0Nuw6rt/m0jfsKveuZoKk8PNFuodRtLUFIQekL
- L0cpXWwa9OiBj6SRFsjGkWGlgNoRS5qRrGf0j4d84Fb/y0QnemSOw+dhifqJymPq
- fUu4V5E50dIUtYVccDmNRiH7HhMqeDNLXrTKH0kMgQrLWEuQLZF1GcYgfd0bkzfA
- ==
-X-ME-Sender: <xms:W_67Xi04sx-GwCW9d6QCEpBBGI4I1wjOLe195cXeA99yJdXRP8V0tA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrleeggdejudcutefuodetggdotefrodftvf
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=lKdeG/SS5K17qzibB
+ RTuO63YA/4VCH6EVTjUZm7Nekk=; b=JoHC7/tmMCJpkMUFyme90FikR6GScx/v2
+ BtZACc47bi3oS+lp8b9e9UFpDlfK3o1l9uaf0QqVR8yX7BOed65Qdkb6WIL59CBM
+ 8LOCN5WFJ6ssYiqfgA2vx9IePdfEUvoM4jD04byqpcqKs6L3bRhg77JvKChNQKXI
+ F2T14ot9jzxCkUFGMU12SKtvacAwmu5nK/aBxlJba20gbY131dXF1VHH9Oc0QxqN
+ OWJTcd5lJQeq1HYQEm24RR2qvFKXkwZVymykOP94jT2m0GlQZWP2l2oCybxwhgQO
+ FLy+4fzW8KfaBd4Jn2O5t6Ohgq7bv3b6O5LvpPfZxu1PfotPdocYw==
+X-ME-Sender: <xms:H_-7XqgUcAvKaT0Q8C2fawAX_l80x6X8r8X_LmFnuwtr_39RSZo6oA>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrleeggdejvdcutefuodetggdotefrodftvf
  curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
  uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtudenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeduvdduhfekkeehgffftefflefgffdtheffudffgeevteffheeuiedvvdejvdfg
- veenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
- grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:W_67XlF1OZs-ResO-N4Bsww2WlZkPsVyFUT2sJxuN4akDnFPQMV1tA>
- <xmx:W_67Xq4R6hJEM6ZvxoLsVyYFY0k8lcbcc7MKJUzIH2Nsg5CC5B-CuQ>
- <xmx:W_67Xj1H1842fQeXlTO2UpVkQUnQbHcnwAD1mwlISTuW8g-G4LxGng>
- <xmx:XP67XpgxPZOymfF-wrLVs3yueOPtnIPptY5_WEVgAzd1e3yQ-8Rxzw>
+ fjughrpefhvffufffkofgggfestdekredtredttdenucfhrhhomhepofgrgihimhgvucft
+ ihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtthgvrh
+ hnpeejffehuddvvddvlefhgeelleffgfeijedvhefgieejtdeiueetjeetfeeukeejgeen
+ ucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
+X-ME-Proxy: <xmx:H_-7XrDXHZSboH3oszh-T19XWEjPYwYMHUuTs7jcPczYqwlnfWonXA>
+ <xmx:H_-7XiFOHU7LhGZZWuxdh1W1QFv8-uPmDyxtRe62YGJ5Bb_hMYS3fA>
+ <xmx:H_-7XjRW-3__U6yI1vJ-4pyF0vJXDacXO5GwRIc5N38DddK3gf8x3g>
+ <xmx:IP-7XunzK8-NcvXjT1qiwP1OsIYUdfKWMJSpg9e58Yp05IHy-lsWrg>
 Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
  [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 360CB3280063;
- Wed, 13 May 2020 10:04:11 -0400 (EDT)
-Date: Wed, 13 May 2020 16:04:09 +0200
+ by mail.messagingengine.com (Postfix) with ESMTPA id B2FA83280059;
+ Wed, 13 May 2020 10:07:26 -0400 (EDT)
 From: Maxime Ripard <maxime@cerno.tech>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v3 3/5] iommu: Add Allwinner H6 IOMMU driver
-Message-ID: <20200513140409.lwyusjelp3zg6x34@gilmour.lan>
-References: <cover.70f96f9afd2e04161ebece593ae6cd7e17eca41b.1588673353.git-series.maxime@cerno.tech>
- <dcccd40c46982b6ab2fc1c5bc199d045798fbe8e.1588673353.git-series.maxime@cerno.tech>
- <20200513095304.GK9820@8bytes.org>
+To: Joerg Roedel <joro@8bytes.org>, Chen-Yu Tsai <wens@csie.org>,
+ Maxime Ripard <mripard@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>
+Subject: [PATCH v4 0/5] iommu: Add Allwinner H6 IOMMU driver
+Date: Wed, 13 May 2020 16:07:19 +0200
+Message-Id: <cover.b27dedd61e008ffcf55a028ccddda3bb4d21dfc8.1589378833.git-series.maxime@cerno.tech>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-In-Reply-To: <20200513095304.GK9820@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_070416_785606_FB550CEF 
-X-CRM114-Status: GOOD (  17.72  )
+X-CRM114-CacheID: sfid-20200513_070729_238082_081EC1AA 
+X-CRM114-Status: GOOD (  14.16  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -85,10 +83,10 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
  low trust [66.111.4.29 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.29 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [66.111.4.29 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -108,160 +106,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- iommu@lists.linux-foundation.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============3126778705603851742=="
+Cc: devicetree@vger.kernel.org, iommu@lists.linux-foundation.org,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi,
 
---===============3126778705603851742==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="7cwu37v5te4qr6u5"
-Content-Disposition: inline
+Here's a series adding support for the IOMMU introduced in the Allwinner
+H6. The driver from Allwinner hints at more SoCs using it in the future
+(with more masters), so we can bet on that IOMMU becoming pretty much
+standard in new SoCs from Allwinner.
 
+One thing I wasn't really sure about was how to expose the statistics
+reported by the IOMMU PMU (TLB hit rates, latencies, and so on). The
+Allwinner driver exposes them through custom sysfs files, while they would
+be best represented through perf I guess? Anyway, I'm planning to support
+them later on.
 
---7cwu37v5te4qr6u5
-Content-Type: text/plain; charset=iso-8859-1
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+Patches 1 and 3 should go through the IOMMU tree, 2 and 5 through drm-misc
+and 4 through arm-soc.
 
-Hi J=F6rg,
-
-On Wed, May 13, 2020 at 11:53:04AM +0200, Joerg Roedel wrote:
-> On Tue, May 05, 2020 at 12:09:32PM +0200, Maxime Ripard wrote:
-> > +static u32 *sun50i_dte_get_page_table(struct sun50i_iommu_domain *sun5=
-0i_domain,
-> > +				      dma_addr_t iova, gfp_t gfp)
-> > +{
-> > +	struct sun50i_iommu *iommu =3D sun50i_domain->iommu;
-> > +	unsigned long flags;
-> > +	u32 *page_table;
-> > +	u32 *dte_addr;
-> > +	u32 old_dte;
-> > +	u32 dte;
-> > +
-> > +	dte_addr =3D &sun50i_domain->dt[sun50i_iova_get_dte_index(iova)];
-> > +	dte =3D *dte_addr;
-> > +	if (sun50i_dte_is_pt_valid(dte)) {
-> > +		phys_addr_t pt_phys =3D sun50i_dte_get_pt_address(dte);
-> > +		return (u32 *)phys_to_virt(pt_phys);
-> > +	}
-> > +
-> > +	page_table =3D sun50i_iommu_alloc_page_table(iommu, gfp);
-> > +	if (IS_ERR(page_table))
-> > +		return page_table;
-> > +
-> > +	dte =3D sun50i_mk_dte(virt_to_phys(page_table));
-> > +	old_dte =3D cmpxchg(dte_addr, 0, dte);
-> > +	if (old_dte) {
-> > +		phys_addr_t installed_pt_phys =3D
-> > +			sun50i_dte_get_pt_address(old_dte);
-> > +		u32 *installed_pt =3D phys_to_virt(installed_pt_phys);
-> > +		u32 *drop_pt =3D page_table;
-> > +
-> > +		page_table =3D installed_pt;
-> > +		dte =3D old_dte;
-> > +		sun50i_iommu_free_page_table(iommu, drop_pt);
-> > +	}
-> > +
-> > +	sun50i_table_flush(sun50i_domain, page_table, PT_SIZE);
-> > +	sun50i_table_flush(sun50i_domain, dte_addr, 1);
-> > +
-> > +	spin_lock_irqsave(&iommu->iommu_lock, flags);
-> > +	sun50i_iommu_ptw_invalidate(iommu, iova);
-> > +	spin_unlock_irqrestore(&iommu->iommu_lock, flags);
->=20
-> Why is that needed, does the PTW also cache non-present entries?
-
-The documentation is pretty sparse, so I was conservative again. I've remov=
-ed it
-and it seems to be working fine in all the cases I could test, so I guess w=
-e're
-fine without it :)
-
-> > +static int sun50i_iommu_add_device(struct device *dev)
-> > +{
-> > +	struct sun50i_iommu *iommu;
-> > +	struct iommu_group *group;
-> > +
-> > +	iommu =3D sun50i_iommu_from_dev(dev);
-> > +	if (!iommu)
-> > +		return -ENODEV;
-> > +
-> > +	group =3D iommu_group_get_for_dev(dev);
-> > +	if (IS_ERR(group))
-> > +		return PTR_ERR(group);
-> > +
-> > +	iommu_group_put(group);
-> > +
-> > +	return 0;
-> > +}
-> > +
-> > +static void sun50i_iommu_remove_device(struct device *dev)
-> > +{
-> > +	iommu_group_remove_device(dev);
-> > +}
->=20
->=20
-> These two call-backs have been renamed in the iommu-tree to
-> probe_device() and release_device() with slightly different semantics
-> and function signatures. I think for this driver they should look like
-> this:
->=20
-> 	static struct iommu_device *sun50i_iommu_probe_device(struct device *dev)
-> 	{
-> 		struct sun50i_iommu *iommu;
->=20
-> 		iommu =3D sun50i_iommu_from_dev(dev);
-> 		if (!iommu)
-> 			return ERR_PTR(-ENODEV);
->=20
-> 		return &iommu->iommu;
-> 	}
->=20
-> 	static void sun50i_iommu_release_device(struct device *dev)
-> 	{
-> 	}
->=20
-> Can you pleas rebase these patches to the 'core' branch of the
-> iommu-tree and use these new call-backs?
->=20
-> The rest of your driver looks good to me. Good work!
-
-I've rebased it on next, and it indeed works with your suggestion. I'll res=
-end a
-new version in a short while.
-
-Thanks!
+Let me know what you think,
 Maxime
 
---7cwu37v5te4qr6u5
-Content-Type: application/pgp-signature; name="signature.asc"
+Changes from v3:
+  - Rebased on next
+  - Removed PTW flush on map / unmap
+  - Added Rob's reviewed-by
 
------BEGIN PGP SIGNATURE-----
+Changes from v2:
+  - Rebased on 5.7
+  - Add dt bindings patch
+  - Allow the identity domain to be allocated
+  - Add an unlikely to the check on whether a PTE already exists in map
+  - Remove locking and adjust the PT installation to use an atomic
+    operation instead
+  - Switch to iotlb_sync / flush_iotlb_all callback instead of flushing by
+    ourselves.
 
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXrv+WAAKCRDj7w1vZxhR
-xYrBAQC+YD0NIkjHgPwj+G0aUBaG4DNhly5cY51+A2aK5pgoWgD9FwowBSMX4Hz7
-OopK7521Lh6pGDcHqsKXkSKPHblwZwo=
-=joor
------END PGP SIGNATURE-----
+Changes from v1:
+  - Add a patch to configure the IOMMU on the virtual DRM device
+  - Rework the domain allocation / freeing
+  - Remove the runtime_pm handling to power up the device and rely on
+    refcounting
+  - use map gfp argument for kmem cache allocation
+  - Removed unused macros
+  - Switched from BIT(0) to 1 for the page table entry valid flag to make
+    it more obvious that it's over multiple bits.
+  - Switch to module_initcall
+  - Make accesses to the fwspec more consistant
+  - Removed dev_info logs
+  - Reworked invalidation / flushing
+  - Allow for compilation with COMPILE_TEST
 
---7cwu37v5te4qr6u5--
+Maxime Ripard (5):
+  dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
+  dt-bindings: display: sun8i-mixer: Allow for an iommu property
+  iommu: Add Allwinner H6 IOMMU driver
+  arm64: dts: allwinner: h6: Add IOMMU
+  drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
 
+ Documentation/devicetree/bindings/display/allwinner,sun8i-a83t-de2-mixer.yaml |    3 +-
+ Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml        |   61 ++++-
+ arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi                                  |   10 +-
+ drivers/gpu/drm/sun4i/sun8i_mixer.c                                           |   13 +-
+ drivers/iommu/Kconfig                                                         |    9 +-
+ drivers/iommu/Makefile                                                        |    1 +-
+ drivers/iommu/sun50i-iommu.c                                                  | 1027 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 7 files changed, 1124 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/iommu/allwinner,sun50i-h6-iommu.yaml
+ create mode 100644 drivers/iommu/sun50i-iommu.c
 
---===============3126778705603851742==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+base-commit: e098d7762d602be640c53565ceca342f81e55ad2
+-- 
+git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3126778705603851742==--
-
