@@ -2,46 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5FF601D20F6
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 23:25:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E1D91D20F9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 13 May 2020 23:25:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Fh3YnaQUhfvs3Yg4wha5nfGe1UZ9ajV7grlrwdY+5Fk=; b=eZ3JrwOfYq86vm
-	ZNCnmrJfEBjmcQA8CUXB84mVkSjAKu/3H2MJ1CWkFriiZgJ2VQXKH5k3L7rivNH8oHCeZFHNWxroQ
-	2ELeVXZKYFkcSEYqOt75vs68aVRta+MFDIYxcH3iLJiwqqBVKP/BOcTvoGgjdn8IbNk7W+OBl6OCO
-	TcSxjKIA9cxOVfhacQ2yX/VUYh2K1Z3p4q2fovqHCkf8T+agnwFv0ThOGDH36hvsgc7L28VG2Mbz7
-	cDCP+JbDaeqbrHajCowtSMapUamF9m5R/6PQwMip3GXRfW3y4+CZzzQhN6ROicMKiJjq6ulD+Xh3U
-	oL45FQekRzQURcN6eA0g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9D+/2LOnEmtKUzqBpURC53aU5lfGLwSKiB6J3WQd3Ns=; b=JO1zfDv2DR0wtw
+	+Cs99/Yl5VZ6CnHVaNP6jmb2jfgHaUjSAiCZu4lnD2EsWLfvy8sQgw3Pkm+CpSvn6Ae64qtyY1wyG
+	UN7s8J2y1zIfL8QPyyS+GqpA2zt+YYqCGwn1DZ5PUTDhdPsFoRxizc2RF2dPEQv9FBik32y0Ub0tb
+	0mJCr5TUpFI+lfPwTvHPRXwj8L1enW9ycrKPmVFY6eAOfswKnOF50b2Y7n209+lJ/P38kEXFzTTXS
+	0aG7SP6nMHwO6A28Pa+a2gPCuLRhX1sCEoo3BrrjIQSpuh72a8qvxci/DgWKsa2pUUEDtCgFoWZrT
+	LvoDB7fDEiK2Tx4z4UFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYysf-0007y8-7D; Wed, 13 May 2020 21:25:33 +0000
+	id 1jYysy-0008DH-4f; Wed, 13 May 2020 21:25:52 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYys6-0005L6-6R
- for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 21:25:00 +0000
+ id 1jYys6-0005LJ-6S
+ for linux-arm-kernel@lists.infradead.org; Wed, 13 May 2020 21:25:01 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1589405095; bh=vP1dm4GPwt9nOrSXUHYZrlnzV+QSD/t/nvTNldUmjRI=;
- h=From:To:Cc:Subject:Date:From;
- b=AGAtow/+Ns2CtpuJASys9AiJwXRyXtcsBjbwnwXu4bag20du1XxyFuFHDrpYchGlo
- NiC7NU6/u9eN7M+v2qu6Bz1jd4pU4R44lCUgURa6vC8Vuzo0KD7k4xgwHXncLQOgGX
- t4b4TbkM6HRmS9Jm72MKnKTw/OkLwGm9ILrmaHrE=
+ t=1589405095; bh=Ap6uK8wlRlwEQ6ApFkn0vpW/EZbdw2PESAGeDr+TkRw=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=JS4QEg9gGvHX5mB6d9B2VoKl9rJ/eEHbteW48SZGf3jaO8PiYkrltWf7IoEdF8v9D
+ 1AzjXK/tWow3XK+s2LJM4PKqx/eZSupVDWcMRH0m5y2ThrEk8wDjKx4mMThzAXNN4J
+ 1iTQScpJH7ias8EAfKZMtDNhG9iSMngH3veLUK3E=
 From: Ondrej Jirman <megous@megous.com>
 To: linux-sunxi@googlegroups.com, Thierry Reding <thierry.reding@gmail.com>,
  Sam Ravnborg <sam@ravnborg.org>, David Airlie <airlied@linux.ie>,
  Daniel Vetter <daniel@ffwll.ch>, Rob Herring <robh+dt@kernel.org>,
  Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Linus Walleij <linus.walleij@linaro.org>, Icenowy Zheng <icenowy@aosc.io>
-Subject: [PATCH v3 0/5] Add support for PinePhone LCD panel
-Date: Wed, 13 May 2020 23:24:46 +0200
-Message-Id: <20200513212451.1919013-1-megous@megous.com>
+Subject: [PATCH v3 1/5] dt-bindings: vendor-prefixes: Add Xingbangda
+Date: Wed, 13 May 2020 23:24:47 +0200
+Message-Id: <20200513212451.1919013-2-megous@megous.com>
+In-Reply-To: <20200513212451.1919013-1-megous@megous.com>
+References: <20200513212451.1919013-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_142458_576255_99278295 
-X-CRM114-Status: GOOD (  17.91  )
+X-CRM114-CacheID: sfid-20200513_142458_591657_22618232 
+X-CRM114-Status: UNSURE (   8.02  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -77,84 +80,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patchset adds support for the LCD panel of PinePhone.
+From: Icenowy Zheng <icenowy@aosc.io>
 
-The first 3 patches are for the panel itself, and the last 2 patches are
-for enabling it on PinePhone.
+Shenzhen Xingbangda Display Technology Co., Ltd is a company which
+produces LCD modules. It supplies the LCD panels for the PinePhone.
 
-I've tested this on PinePhone 1.0 and 1.2.
+Add the vendor prefix of it.
 
-Please take a look.
+Signed-off-by: Icenowy Zheng <icenowy@aosc.io>
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
-thank you and regards,
-  Ondrej Jirman
-
-
-Changes in v3:
-- Panel driver renamed to the name of the LCD controller
-- Re-organize the driver slightly to more easily support more panels
-  based on the same controller.
-- Add patch to enable the touchscreen to complete the LCD support
-  on PinePhone.
-- Dropped the "DSI fix" patch (the driver seems to work for me without it)
-- Improved brightness levels handling:
-  - PinePhone 1.0 uses default levels generated by the driver
-  - On PinePhone 1.1 duty cycles < 20% lead to black screen, so
-    default levels can't be used. Martijn Braam came up with a
-    list of duty cycle values that lead to perception of linear
-    brigtness level <-> light intensity on PinePhone 1.1
-- There was some feedback on v2 about this being similar to st7701.
-  It's only similar in name. Most of the "user commands" are different,
-  so I opted to keep this in a new driver instead of creating st770x.
-  
-  Anyone who likes to check the differences, here are datasheets:
-
-  - https://megous.com/dl/tmp/ST7703_DS_v01_20160128.pdf
-  - https://megous.com/dl/tmp/ST7701.pdf
-
-Changes in v2:
-- DT Example fix.
-- DT Format fix.
-- Raised copyright info to 2020.
-- Sort panel operation functions.
-- Sort inclusion.
-
-
--- For phone owners: --
-
-There's an open question on how to set the backlight brightness values
-on post 1.0 revision phone, since lower duty cycles (< 10-20%) lead
-to backlight being black. It would be nice if more people can test
-the various backlight levels on 1.1 and 1.2 revision with this change
-in dts:
-
-       brightness-levels = <0 1000>;
-       num-interpolated-steps = <1000>;
-
-and report at what brightness level the backlight turns on. So far it
-seems this has a wide range. Lowest useable duty cycle for me is ~7%
-on 1.2 and for Martijn ~20% on 1.1.
-
-Icenowy Zheng (4):
-  dt-bindings: vendor-prefixes: Add Xingbangda
-  dt-bindings: panel: Add binding for Xingbangda XBD599 panel
-  drm: panel: Add Xingbangda XBD599 panel (ST7703 controller)
-  arm64: dts: sun50i-a64-pinephone: Enable LCD support on PinePhone
-
-Ondrej Jirman (1):
-  arm64: dts: sun50i-a64-pinephone: Add touchscreen support
-
- .../display/panel/sitronix,st7703.yaml        |  63 +++
- .../devicetree/bindings/vendor-prefixes.yaml  |   2 +
- .../allwinner/sun50i-a64-pinephone-1.1.dts    |  19 +
- .../dts/allwinner/sun50i-a64-pinephone.dtsi   |  54 +++
- drivers/gpu/drm/panel/Kconfig                 |  10 +
- drivers/gpu/drm/panel/Makefile                |   1 +
- drivers/gpu/drm/panel/panel-sitronix-st7703.c | 386 ++++++++++++++++++
- 7 files changed, 535 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/display/panel/sitronix,st7703.yaml
- create mode 100644 drivers/gpu/drm/panel/panel-sitronix-st7703.c
-
+diff --git a/Documentation/devicetree/bindings/vendor-prefixes.yaml b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+index 442579a4c837..7504440dba36 100644
+--- a/Documentation/devicetree/bindings/vendor-prefixes.yaml
++++ b/Documentation/devicetree/bindings/vendor-prefixes.yaml
+@@ -1139,6 +1139,8 @@ patternProperties:
+     description: Xiaomi Technology Co., Ltd.
+   "^xillybus,.*":
+     description: Xillybus Ltd.
++  "^xingbangda,.*":
++    description: Shenzhen Xingbangda Display Technology Co., Ltd
+   "^xinpeng,.*":
+     description: Shenzhen Xinpeng Technology Co., Ltd
+   "^xlnx,.*":
 -- 
 2.26.2
 
