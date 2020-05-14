@@ -2,84 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 654A71D238F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:22:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1796E1D2392
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:23:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=H6ZSepC/F+TvudZ2D6/aG4Ir3tT2uISktq/Em8Q2B5M=; b=O4JiTDjzfesXoz
-	VViuPKQJXNYq2qAlizC6L42QkasXh7RA0ExzRc53Ut1Rc/6zftpr1L/uo+8nnQ/PyYeYtGmidqnIU
-	3qEwV6PvXc49cP8p2Y5ejj2Tfcqw1rHlS63zCsLzOWU3k577ewRQLvOBeT02loPn/+GlZowwxL6Aw
-	aXuuGC4cmCgF1wYYWhjfU0HxljliB1rpAi7+ftY1Eto14XbgrCBQlbeSFtrmCQlsmlJGyH0X2DztJ
-	60tcSh6F+e8jPDlNEvGCsQoL+dRoxEuSaxRkO7+ksD/b3KopkzdcNHu/F1dCzpmmX0p2Y8zZVosYL
-	4qs4V+qU/DmNw06lbtKw==;
+	List-Owner; bh=+ve6Bm2wjgBQ2mW4lqWgBi7oVXTBJx3nd44M2i79cFw=; b=hlK0x/inmKzvmG
+	Q7vQQvsMmz3fsLU8fcfg2Ueyx8a4LF6w9a9nSMFayfSLnjGHIHJXVgtLbClb/DylMkPFHlwOv7WY3
+	nzrwWQvHPSPpVXZuIg8hF+xXRe3nxaMkqaiD2soGxUhFFesdtbHyEkubW7xY6JcVaeU1MYEL/WlVS
+	Rq2SPOnb6THRWSi2etvn6UZhSVI4Td1NO8nlJar62qMTBl7HGeWD24bCCIYhoWOIVaqvqgnkguyOF
+	/gKenvGsfd7lBv9D6KvpWmLXV9t73kQJfPCebYZ/lGaSlBZun3vfhZGibSDoBS1Kxg+357P5u4GS2
+	zLW0/JwWqpApp2UaKUFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ1ds-0005wn-F9; Thu, 14 May 2020 00:22:28 +0000
-Received: from mail-ua1-x943.google.com ([2607:f8b0:4864:20::943])
+	id 1jZ1f6-0006Pq-JZ; Thu, 14 May 2020 00:23:44 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ1dc-0005v2-Rz
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:22:14 +0000
-Received: by mail-ua1-x943.google.com with SMTP id 36so497471uaf.9
+ id 1jZ1ew-0006P0-FI
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:23:36 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id g2so955697vsb.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 17:22:12 -0700 (PDT)
+ Wed, 13 May 2020 17:23:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ar6IwW9xd9CUZqFR53TmmUgiYezSnsTH5c4aEJicFwY=;
- b=Ef/7kJ1OgQsBcYpqbjKZ80BhEPfGQ8T9NYpeCZF59s3/0hMpMXJml0o+s1v92bHvKY
- QDlxZ4CnYPvspa+kIKFiyrzrTdxHTL207udAMd/8wY3VIp6nrIh6R2lN3X1eDX2PeoVO
- qoJUGpC8qzQpxqEOhoWeJs6B7skgnSLpXzZKY=
+ :cc; bh=+DNHtoGN8AEBU2XRBN2d1pQMaWosnFgb+E454pWapuo=;
+ b=hqEKtvQG5x4boOpMaDZ44lycvpN66hkdKuNeDQ0tCjH0g5wOLUw17Dtcq+EqvLhSVd
+ 2SOSmEn7GzfaIuaaWi1xblgxsLC0YsEBbsji3COXyd4KmUmEsQCx7nEtXWz1+SQMFtct
+ zUz5+AuJ8JIgviULQP0sgLBVTlhkpMb8ehXPo=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ar6IwW9xd9CUZqFR53TmmUgiYezSnsTH5c4aEJicFwY=;
- b=ouijSxk+/jlc4HdIFsN1N8rihhc+T1vt7vmvF+6cWkO6CVBs6yhElYNt/CVhc2fSWp
- wF+zUVcMN7JPmBUdoUBpVk1xfCJytyt3gsFeLUAKg3UhbHVN9BQQ0spIMCEu8jRfz0EL
- VSSDtKIW/qbCFyMPBq0CCEVfFtowsy6lQt83N24EWqVZ7Z+EDdzsE5zUcW7vE6TycIJ0
- 1HDXuf8773gcljuTkXr4ph72Mllv6rx0L9phjNg6lhFCcyMpN/hMHcfTicdcFODcPoNz
- u/xgUge1FEu5si1pEtwm0VO/s5TCnoqepi0WSc9/93o2TK9xIbaPE9NEHNGKeZE0M7HN
- w6tw==
-X-Gm-Message-State: AOAM532C5x5ojS0WpIvRQqASmrUzqES+lE0XC1TedYglZCwrDmPtU+KP
- U0OuWKcMQuHp7Bw0t5Z8JhQq5Qf1tuo=
-X-Google-Smtp-Source: ABdhPJwU0BGC+CSdj6aIvDQV/g068kryIrXhVbx7Z6wjn/LJSNNe0WLYvzA+ArUb1BW2OwIDkzGdpg==
-X-Received: by 2002:ab0:40e5:: with SMTP id i92mr1870272uad.5.1589415731132;
- Wed, 13 May 2020 17:22:11 -0700 (PDT)
-Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com.
- [209.85.217.48])
- by smtp.gmail.com with ESMTPSA id t141sm309514vke.26.2020.05.13.17.22.09
+ bh=+DNHtoGN8AEBU2XRBN2d1pQMaWosnFgb+E454pWapuo=;
+ b=bUJWNPXhH7mAVCOH6yBbBZwzaIrFk91W/fSqIqCsVl8pLttoghgX9k1hbaCvMvBqLT
+ tW0xdllE4LDmVRaOLA5TR+Du19UnZVgEaFATY1a3acjHDJIp2H65u1tNP0Uie2uzGdHN
+ mgPMilDLRhn8BMO/z+vg/oKYRfdOzt9fYptYF/JYBxOs01wzZlzGDzu1bc5+VcVpAxK2
+ 7MbaOX6sgmCPaSg6IsJ65O6O9uVdz7qHTfuD3cVTH0zBRu5htx8ZJPSqIKLeNw2KP27A
+ 7F8PjQlqmIbf3fH7DFETVKUU2oCH0V/ggy4HCFDeMt1cXXo4cup5eq8yEm59YT0b6nlq
+ mkAg==
+X-Gm-Message-State: AOAM530f5J3MU4Tr/qZJnNq/zsZ8xyuXCQCftYPJz87Di2ciYUslrWQW
+ gYryiWyXhC9LaBJfaML1aRxZMWZPIik=
+X-Google-Smtp-Source: ABdhPJxdqrnioROFR19MQGQJ6DYELTAD03NPeNfueOrZrEEJjDcJk0DOrdTXJC1w+KP7+I710tBVlA==
+X-Received: by 2002:a67:f60f:: with SMTP id k15mr1541723vso.92.1589415813026; 
+ Wed, 13 May 2020 17:23:33 -0700 (PDT)
+Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com.
+ [209.85.222.51])
+ by smtp.gmail.com with ESMTPSA id v1sm329337uao.18.2020.05.13.17.23.31
  for <linux-arm-kernel@lists.infradead.org>
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 17:22:09 -0700 (PDT)
-Received: by mail-vs1-f48.google.com with SMTP id l25so942904vso.6
+ Wed, 13 May 2020 17:23:31 -0700 (PDT)
+Received: by mail-ua1-f51.google.com with SMTP id k13so490623uap.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 17:22:09 -0700 (PDT)
-X-Received: by 2002:a67:f5d6:: with SMTP id t22mr1506572vso.73.1589415729146; 
- Wed, 13 May 2020 17:22:09 -0700 (PDT)
+ Wed, 13 May 2020 17:23:31 -0700 (PDT)
+X-Received: by 2002:ab0:69cc:: with SMTP id u12mr1898920uaq.22.1589415810804; 
+ Wed, 13 May 2020 17:23:30 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200509214159.19680-1-liwei391@huawei.com>
- <20200509214159.19680-4-liwei391@huawei.com>
-In-Reply-To: <20200509214159.19680-4-liwei391@huawei.com>
+ <20200509214159.19680-5-liwei391@huawei.com>
+In-Reply-To: <20200509214159.19680-5-liwei391@huawei.com>
 From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 13 May 2020 17:21:58 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Xkhs6eivpp7+r0qyfgbBgpSiHpwNY8o=JDBwYSBWadJA@mail.gmail.com>
-Message-ID: <CAD=FV=Xkhs6eivpp7+r0qyfgbBgpSiHpwNY8o=JDBwYSBWadJA@mail.gmail.com>
-Subject: Re: [PATCH 3/4] arm64: kgdb: Fix single-stepping into the irq handler
- wrongly
+Date: Wed, 13 May 2020 17:23:19 -0700
+X-Gmail-Original-Message-ID: <CAD=FV=Vb6=f=fr83-k0YH86k4v4G5LcfOGcks7RM9VxzxOnXsQ@mail.gmail.com>
+Message-ID: <CAD=FV=Vb6=f=fr83-k0YH86k4v4G5LcfOGcks7RM9VxzxOnXsQ@mail.gmail.com>
+Subject: Re: [PATCH 4/4] arm64: kgdb: Set PSTATE.SS to 1 to reenable
+ single-step
 To: Wei Li <liwei391@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_172212_906122_6A3B22F8 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20200513_172334_509575_AD63DE36 
+X-CRM114-Status: GOOD (  21.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:943 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -119,58 +119,21 @@ Hi,
 
 On Sat, May 9, 2020 at 6:49 AM Wei Li <liwei391@huawei.com> wrote:
 >
-> After the single-step exception handling oops is fixed, when we execute
-> single-step in kdb/kgdb, we may see it jumps to the irq_handler (where
-> PSTATE.D is cleared) instead of the next instruction.
+> After fixing wrongly single-stepping into the irq handler, when we execute
+> single-step in kdb/kgdb, we can see only the first step can work.
 >
-> Add the prepare and cleanup work for single-step when enabling and
-> disabling to maintain the PSTATE.I and PSTATE.D carefully.
+> Refer to the ARM Architecture Reference Manual (ARM DDI 0487E.a) D2.12,
+> i think PSTATE.SS=1 should be set each step for transferring the PE to the
+> 'Active-not-pending' state. The problem here is PSTATE.SS=1 is not set
+> since the second single-step.
+>
+> After the first single-step, the PE transferes to the 'Inactive' state,
+> with PSTATE.SS=0 and MDSCR.SS=1, thus PSTATE.SS won't be set to 1 due to
+> kernel_active_single_step()=true. Then the PE transferes to the
+> 'Active-pending' state when ERET and returns to the debugger by step
+> exception.
 >
 > Before this patch:
-> * kdb:
-> Entering kdb (current=0xffff8000119e2dc0, pid 0) on processor 0 due to Keyboard Entry
-> [0]kdb> bp printk
-> Instruction(i) BP #0 at 0xffff8000101486cc (printk)
->     is enabled   addr at ffff8000101486cc, hardtype=0 installed=0
->
-> [0]kdb> g
->
-> / # echo h > /proc/sysrq-trigger
->
-> Entering kdb (current=0xffff0000fada65c0, pid 267) on processor 0 due to Breakpoint @ 0xffff8000101486cc
-> [0]kdb> ss
->
-> Entering kdb (current=0xffff0000fada65c0, pid 267) on processor 0 due to SS trap @ 0xffff800010082ab8
-> [0]kdb> 0xffff800010082ab8
-> 0xffff800010082ab8 = 0xffff800010082ab8 (el1_irq+0x78)
-> [0]kdb>
->
->    0xffff800010082ab0 <+112>:   nop
->    0xffff800010082ab4 <+116>:   msr     daifclr, #0xd
->    0xffff800010082ab8 <+120>:   adrp    x1, 0xffff8000113a7000 <cpu_ops+1288>
->    0xffff800010082abc <+124>:   ldr     x1, [x1, #1408]
->
-> * kgdb:
-> (gdb) target remote 127.1:23002
-> Remote debugging using 127.1:23002
-> arch_kgdb_breakpoint () at /home/liwei/main_code/linux/arch/arm64/include/asm/kgdb.h:21
-> 21              asm ("brk %0" : : "I" (KGDB_COMPILED_DBG_BRK_IMM));
-> (gdb) b printk
-> Breakpoint 1 at 0xffff8000101486cc: file /home/liwei/main_code/linux/kernel/printk/printk.c, line 2076.
-> (gdb) c
-> Continuing.
-> [New Thread 287]
-> [Switching to Thread 283]
->
-> Thread 177 hit Breakpoint 1, printk (fmt=0xffff80001130c9d8 "\001\066sysrq: HELP : ")
->     at /home/liwei/main_code/linux/kernel/printk/printk.c:2076
-> 2076    {
-> (gdb) stepi
-> el1_irq () at /home/liwei/main_code/linux/arch/arm64/kernel/entry.S:608
-> 608             irq_handler
-> (gdb)
->
-> After this patch:
 > * kdb:
 > Entering kdb (current=0xffff8000119d2dc0, pid 0) on processor 0 due to Keyboard Entry
 > [0]kdb> bp printk
@@ -181,11 +144,17 @@ On Sat, May 9, 2020 at 6:49 AM Wei Li <liwei391@huawei.com> wrote:
 >
 > / # echo h > /proc/sysrq-trigger
 >
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 0 due to Breakpoint @ 0xffff80001014874c
-> [0]kdb> ss
+> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to Breakpoint @ 0xffff80001014874c
+> [3]kdb> ss
 >
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 0 due to SS trap @ 0xffff800010148750
-> [0]kdb>
+> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
+> [3]kdb> ss
+>
+> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
+> [3]kdb> ss
+>
+> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
+> [3]kdb>
 >
 > * kgdb:
 > (gdb) target remote 127.1:23002
@@ -204,40 +173,115 @@ On Sat, May 9, 2020 at 6:49 AM Wei Li <liwei391@huawei.com> wrote:
 > 2076    {
 > (gdb) stepi
 > 0xffff800010148750      2076    {
+> (gdb) stepi
+> 0xffff800010148750      2076    {
+> (gdb) stepi
+> 0xffff800010148750      2076    {
+> (gdb)
+>
+> After this patch:
+> * kdb:
+> Entering kdb (current=0xffff8000119d2dc0, pid 0) on processor 0 due to Keyboard Entry
+> [0]kdb> bp printk
+> Instruction(i) BP #0 at 0xffff80001014874c (printk)
+>     is enabled   addr at ffff80001014874c, hardtype=0 installed=0
+>
+> [0]kdb> g
+>
+> / # echo h > /proc/sysrq-trigger
+>
+> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to Breakpoint @ 0xffff80001014874c
+> [2]kdb> ss
+>
+> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148750
+> [2]kdb> ss
+>
+> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148754
+> [2]kdb> ss
+>
+> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148758
+> [2]kdb>
+>
+> * kgdb:
+> (gdb) target remote 127.1:23002
+> Remote debugging using 127.1:23002
+> arch_kgdb_breakpoint () at /home/liwei/main_code/linux/arch/arm64/include/asm/kgdb.h:21
+> 21              asm ("brk %0" : : "I" (KGDB_COMPILED_DBG_BRK_IMM));
+> (gdb) b printk
+> Breakpoint 1 at 0xffff80001014874c: file /home/liwei/main_code/linux/kernel/printk/printk.c, line 2076.
+> (gdb) c
+> Continuing.
+> [New Thread 281]
+> [New Thread 280]
+> [Switching to Thread 281]
+>
+> Thread 174 hit Breakpoint 1, printk (fmt=0xffff8000112fc138 "\001\066sysrq: HELP : ")
+>     at /home/liwei/main_code/linux/kernel/printk/printk.c:2076
+> 2076    {
+> (gdb) stepi
+> 0xffff800010148750      2076    {
+> (gdb) stepi
+> 2080            va_start(args, fmt);
+> (gdb) stepi
+> 0xffff800010148758      2080            va_start(args, fmt);
 > (gdb)
 >
 > Fixes: 44679a4f142b ("arm64: KGDB: Add step debugging support")
 > Signed-off-by: Wei Li <liwei391@huawei.com>
 > ---
->  arch/arm64/kernel/kgdb.c | 13 +++++++++++--
->  1 file changed, 11 insertions(+), 2 deletions(-)
+>  arch/arm64/include/asm/debug-monitors.h | 2 ++
+>  arch/arm64/kernel/debug-monitors.c      | 2 +-
+>  arch/arm64/kernel/kgdb.c                | 3 ++-
+>  3 files changed, 5 insertions(+), 2 deletions(-)
 >
-> diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
-> index 1a157ca33262..3910ac06c261 100644
-> --- a/arch/arm64/kernel/kgdb.c
-> +++ b/arch/arm64/kernel/kgdb.c
-> @@ -100,6 +100,8 @@ struct dbg_reg_def_t dbg_reg_def[DBG_MAX_REG_NUM] = {
->         { "fpcr", 4, -1 },
+> diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
+> index b62469f3475b..a48b507c89ee 100644
+> --- a/arch/arm64/include/asm/debug-monitors.h
+> +++ b/arch/arm64/include/asm/debug-monitors.h
+> @@ -78,6 +78,8 @@ struct step_hook {
+>         int (*fn)(struct pt_regs *regs, unsigned int esr);
 >  };
 >
-> +static DEFINE_PER_CPU(unsigned long, kgdb_ss_flags);
+> +void set_regs_spsr_ss(struct pt_regs *regs);
 > +
->  char *dbg_get_reg(int regno, void *mem, struct pt_regs *regs)
+>  void register_user_step_hook(struct step_hook *hook);
+>  void unregister_user_step_hook(struct step_hook *hook);
+>
+> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
+> index 25ce6b5a52d2..7a58233677de 100644
+> --- a/arch/arm64/kernel/debug-monitors.c
+> +++ b/arch/arm64/kernel/debug-monitors.c
+> @@ -141,7 +141,7 @@ postcore_initcall(debug_monitors_init);
+>  /*
+>   * Single step API and exception handling.
+>   */
+> -static void set_regs_spsr_ss(struct pt_regs *regs)
+> +void set_regs_spsr_ss(struct pt_regs *regs)
 >  {
->         if (regno >= DBG_MAX_REG_NUM || regno < 0)
-> @@ -200,8 +202,11 @@ int kgdb_arch_handle_exception(int exception_vector, int signo,
->                 /*
->                  * Received continue command, disable single step
->                  */
-> -               if (kernel_active_single_step())
-> +               if (kernel_active_single_step()) {
-> +                       kernel_cleanup_single_step(per_cpu(kgdb_ss_flags,
-> +                                       raw_smp_processor_id()), linux_regs);
+>         regs->pstate |= DBG_SPSR_SS;
+>  }
+> diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
+> index 3910ac06c261..093ad9d2e5e6 100644
+> --- a/arch/arm64/kernel/kgdb.c
+> +++ b/arch/arm64/kernel/kgdb.c
+> @@ -230,7 +230,8 @@ int kgdb_arch_handle_exception(int exception_vector, int signo,
+>                         kernel_prepare_single_step(&per_cpu(kgdb_ss_flags,
+>                                         raw_smp_processor_id()), linux_regs);
+>                         kernel_enable_single_step(linux_regs);
+> -               }
+> +               } else
+> +                       set_regs_spsr_ss(linux_regs);
 
-I don't think you need the raw_ version of smp_processor_id(), do you?
+One slight nit is that my personal preference is that if one half of
+an "if/else" needs braces then both halves should have braces.  I
+don't know what Catalin and Will's policies are, though.
 
+Other than that, this seems right to me.  I will leave it to the
+Catalin and Will folks to say if they'd rather have this call made
+from a different place or if they're happy with where you've put it.
 
--Doug
+Reviewed-by: Douglas Anderson <dianders@chromium.org>
+Tested-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
