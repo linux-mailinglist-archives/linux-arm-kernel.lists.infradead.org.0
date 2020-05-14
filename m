@@ -2,78 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 392031D28A3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:18:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E9A41D28BF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:28:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KwJaANZ1Gx3uTqNPMZvckhat8jUarD2RjENdcDLQ/Oo=; b=Wp5E+RGX681jct
-	S0HNSbLURLDny67ZY3VIY7TxNYVCtUS4xkoGECvvIbbKtiDl0ev5xcSCeoC7ipTqQElURWpOSD+6Q
-	FDt8CNhjGygNmHQGTQB77DqXFmiZtpZbF9oWI8qXNLW2GjB8mmKnqWGwkbv1M5Ej4Xtod3/hkX6IP
-	wugi8iiO31vdKocplgPJ6bmjNzX+30UsVDqJr98KaA7vPEYaiGh5NvfEl4VXtV+T/LjGakV/8woFP
-	bu942htTAj3LvkyJRx0CoPe1vS8VVMTS5oKWsuOLSxBdavUfQa3CAvVesRJaVxhwdJygQsl9vets1
-	mctBdCD4y3EgclnRkA8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Content-Type:To:
+	Subject:Message-ID:Date:From:In-Reply-To:References:MIME-Version:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KfAN8+7fHvqJcHyUPR7kJdnjJxcZbxH5f4dkl229vKk=; b=pQPvGNWxn7wSskXEzBz2YSqtZ
+	Sr0w8Qx1XKii6gCVCp14ysLVU/Pvu7F3ECcoQjD8sCn8gc6SYL7UKuFnHiGIhNDNf1iiPews9HeEi
+	Yne52nPfXc/QUEhSziBV1QGbhDcADYDMGFTVySEFXyQFed1R3qbgF2RfK80S95s9m/MeqUvLnV9x7
+	qDkly/qum4Q6aD6yUKdy4mFLJTuhrKAymN9raIMtBaJwfDlfAssq3v0kfPUm6nKR13tr/xpnSlmzw
+	t0qDweoTsExE8c55ni4XIY9DgiKJs71RP1nNUmjPF8hQ1i7UYrOXWl6ZEiFl97iw5CbANuZKoAHBQ
+	5+volnwLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ87v-0005wI-J3; Thu, 14 May 2020 07:17:55 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jZ8Hd-0003Wm-5Q; Thu, 14 May 2020 07:27:57 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ87k-0005vU-64; Thu, 14 May 2020 07:17:46 +0000
-Received: by mail-wr1-x442.google.com with SMTP id s8so2443915wrt.9;
- Thu, 14 May 2020 00:17:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ id 1jZ8HV-0003WD-Kx
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:27:51 +0000
+Received: by mail-lf1-x144.google.com with SMTP id z22so1762731lfd.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 00:27:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jmzetvavXvcOGuJVEzRYnf5K2QeLDOXdyYxWz3T2aCI=;
- b=ii0AH60K4tHsEjPDAdTHSod+qA/4adVqaI+XoRMsccgmR0qnXvgrQQHNwet0hrI767
- RJbBQLpvG8YKUZkd5J/W2M+jjsfEqbgZshfUMYu4UVTbFVZ+IBxy/0jcQQuJ+DbfGMJE
- EgOEZ3W5QfSd02bLVGPVQu7Omuk71riUc1eo8uYB+UxkUeFW/Jt41+/F2mrR3FdVMiP8
- iMXR5RWCMjQcSbEHMXQaAZsVsdValvG8mF90PpfL2Dcy3tWSU/Ms59Plf8mA6vjf4mr/
- 5DpjEwCejG8WEnnqfxJySHKJ1CMo1t1+yipG8vGHIfTUW/NJgeG6RoWp8K/R/c/RpFgT
- +tng==
+ :cc; bh=OvIg8OTmvpD4AIra61gchuv+YQzJPkLcRjdOE9A6l2A=;
+ b=T58w69kBOxFktle1yYsy3hLN3gMn/osjm5YR8FTXl4uYp8PjKu2TZzOiHNgCx36vrE
+ Wl/ZIQZLvdR8y6+piwx3KEwGBHD8kyjMwzas/eYyJaxuJxY8/KGnPz4HlvtDAulI9I15
+ lGRt7VR2EK+bxqp2oZhR93/egU4OCxQtySGt6pV8RF67V5Vj3IcxPdw3Km1KhdoaRiaq
+ bSo22sNuywieNiZ1fpmYK7epfyyHEaUnQ1U7yB7K1aXP/AJXWde5jIFrUkDbeeALECIL
+ u0FuTV6q/ZfQm1Z7KARSGRX7zu3oek6QkvyBvFcfjjmEMIagj6XaGUbGVW2NX71/UJ7h
+ Omtg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jmzetvavXvcOGuJVEzRYnf5K2QeLDOXdyYxWz3T2aCI=;
- b=iF4fyj4Cyp/vCNd5q+xd8XWzBwSvOJahAzmOSn4NEd9LvFULS4x5kkPXDP9KZrEPMg
- V6AtQPCiJbuzzWa2SRHrJrnr/NAZTQn51ah3RBvr9dCbo5lukz5xmHS7q43bsaJsG2ce
- K9whp3zMUCSNyMJZ6qm5xOgKQ27IwvKMKNP4K22L6eGF4EZGph+73y7rxr8dIPJaaPyk
- EWpXZ6XJR0v02ZJ+eTHgrijE8fF+xmuGNkZNtQ8L3I/+pj5UjYBv+4wEyu+Yi7k9EY3u
- rbDyoMmk1hRI7hfMOr8DJD8O9H6DmFW4FOoRocTFFhH57Lcy23207ORkBa+o+3R4eHtR
- MGdg==
-X-Gm-Message-State: AOAM530dOOYq+wKSaUyQYTXsmMk7uBCL146KsXoaBljF64E7MDQHLTNB
- al90jaN7xNuOQpJY/G/H8Md236uSYolcU3Q90zY=
-X-Google-Smtp-Source: ABdhPJy5r3s1za+9ldV+xnzjGxD9Yj/APGAfPOtIH+9LDb+ghNI64E4Y//pZ0VV3xTPKGo+uXC7ujBb6/4jJJ2A3kQE=
-X-Received: by 2002:adf:d4ce:: with SMTP id w14mr3551682wrk.232.1589440659122; 
- Thu, 14 May 2020 00:17:39 -0700 (PDT)
+ bh=OvIg8OTmvpD4AIra61gchuv+YQzJPkLcRjdOE9A6l2A=;
+ b=iuiwR42NrFPPFSs9y4B13qtgQKplA2g0uHvKg6yfNOYX0oK/1SnZCxUi41HdNMf/Xn
+ yXuYeVtZZBXcDmfVlLPm+NZEAOoj7j8faZjzYeUcAzi35k46+Lha+UXd6PSSAuNj/yxE
+ VskrpU7ccq3TuAiiamVlBH2o+kmCp737PXCUELLbLWATGKn7/c3xaD6+NLNwQIOW+cAS
+ hSGbgZe/I8LhA5Xm0a4B9m6ZxqhwNi0ebrbEyDCvbWJW3/hsF98+yhLJSrQYInBV+T/Z
+ s1L+8qvzoaq2hWsfpfIs5FDRKEHj1CRadHaVOap5oe2Hln1vkrT8a7qnb6dk+KPNhTV8
+ 9XhQ==
+X-Gm-Message-State: AOAM533nGgAAwYbxBsArQJaTVDTvVrSVwYJzIRGMia6fT7Fz+BQ0Cpa+
+ 7PGXwiCSkhhFfvYqrZXRn7cI6Nxa4U9MA4XX9/Cnyw==
+X-Google-Smtp-Source: ABdhPJzL0WsvMihqen9758VYmk6yEgm/ZN9/XilvuCWzmgJOy/SB9sZscduKIMjRAKM98dv/ishZnbn+Lr4DfqPaa0A=
+X-Received: by 2002:a19:ccce:: with SMTP id c197mr2356496lfg.59.1589441267234; 
+ Thu, 14 May 2020 00:27:47 -0700 (PDT)
 MIME-Version: 1.0
-References: <1589251566-32126-1-git-send-email-pkushwaha@marvell.com>
- <20200512220317.GA285526@bjorn-Precision-5520>
-In-Reply-To: <20200512220317.GA285526@bjorn-Precision-5520>
-From: Prabhakar Kushwaha <prabhakar.pkin@gmail.com>
-Date: Thu, 14 May 2020 12:47:02 +0530
-Message-ID: <CAJ2QiJLV3pudhWPSERAz1s+kUj0VyU7c2N3XqXg--_kObK3D=g@mail.gmail.com>
-Subject: Re: [PATCH][v2] iommu: arm-smmu-v3: Copy SMMU table for kdump kernel
-To: Bjorn Helgaas <helgaas@kernel.org>, Robin Murphy <robin.murphy@arm.com>, 
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>, 
- kexec mailing list <kexec@lists.infradead.org>, linux-pci@vger.kernel.org
+References: <1588758017-30426-1-git-send-email-sumit.garg@linaro.org>
+ <1588758017-30426-3-git-send-email-sumit.garg@linaro.org>
+ <ef2093f96eae7e9e6785f2c0ad00604d8adfd3be.camel@linux.intel.com>
+In-Reply-To: <ef2093f96eae7e9e6785f2c0ad00604d8adfd3be.camel@linux.intel.com>
+From: Sumit Garg <sumit.garg@linaro.org>
+Date: Thu, 14 May 2020 12:57:35 +0530
+Message-ID: <CAFA6WYPr1iL-uJgSRu_61uv=2DhuEdDVdQLDuyPEOOK2jEgvyg@mail.gmail.com>
+Subject: Re: [PATCH v4 2/4] KEYS: trusted: Introduce TEE based Trusted Keys
+To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+Content-Type: multipart/mixed; boundary="00000000000021218505a596a2dc"
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_001744_258453_1283364A 
-X-CRM114-Status: GOOD (  19.82  )
+X-CRM114-CacheID: sfid-20200514_002749_692117_D2FF8479 
+X-CRM114-Status: GOOD (  17.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [prabhakar.pkin[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -93,522 +93,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Bhupesh Sharma <bhsharma@redhat.com>,
- Prabhakar Kushwaha <pkushwaha@marvell.com>, Will Deacon <will@kernel.org>,
- Ganapatrao Prabhakerrao Kulkarni <gkulkarni@marvell.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>, op-tee@lists.trustedfirmware.org,
+ Jonathan Corbet <corbet@lwn.net>, James Bottomley <jejb@linux.ibm.com>,
+ Janne Karhunen <janne.karhunen@gmail.com>,
+ Linux Doc Mailing List <linux-doc@vger.kernel.org>,
+ James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
+ linux-security-module@vger.kernel.org,
+ "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
+ Markus Wamser <Markus.Wamser@mixed-mode.de>,
+ Casey Schaufler <casey@schaufler-ca.com>, linux-integrity@vger.kernel.org,
+ Jens Wiklander <jens.wiklander@linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Serge E. Hallyn" <serge@hallyn.com>
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks Bjorn for replying on this thread.
+--00000000000021218505a596a2dc
+Content-Type: text/plain; charset="UTF-8"
 
-On Wed, May 13, 2020 at 3:33 AM Bjorn Helgaas <helgaas@kernel.org> wrote:
+On Thu, 14 May 2020 at 05:58, Jarkko Sakkinen
+<jarkko.sakkinen@linux.intel.com> wrote:
 >
-> [+cc linux-pci]
->
-> On Mon, May 11, 2020 at 07:46:06PM -0700, Prabhakar Kushwaha wrote:
-> > An SMMU Stream table is created by the primary kernel. This table is
-> > used by the SMMU to perform address translations for device-originated
-> > transactions. Any crash (if happened) launches the kdump kernel which
-> > re-creates the SMMU Stream table. New transactions will be translated
-> > via this new table..
+> On Wed, 2020-05-06 at 15:10 +0530, Sumit Garg wrote:
+> > Add support for TEE based trusted keys where TEE provides the functionality
+> > to seal and unseal trusted keys using hardware unique key.
 > >
-> > There are scenarios, where devices are still having old pending
-> > transactions (configured in the primary kernel). These transactions
-> > come in-between Stream table creation and device-driver probe.
-> > As new stream table does not have entry for older transactions,
-> > it will be aborted by SMMU.
+> > Refer to Documentation/tee.txt for detailed information about TEE.
 > >
-> > Similar observations were found with PCIe-Intel 82576 Gigabit
-> > Network card. It sends old Memory Read transaction in kdump kernel.
-> > Transactions configured for older Stream table entries, that do not
-> > exist any longer in the new table, will cause a PCIe Completion Abort.
+> > Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 >
-> That sounds like exactly what we want, doesn't it?
+> The implementation looks solid but how or who could possibly test this?
 >
-> Or do you *want* DMA from the previous kernel to complete?  That will
-> read or scribble on something, but maybe that's not terrible as long
-> as it's not memory used by the kdump kernel.
+> I do posses (personally, not from employer) bunch of ARM boards but my
+> TZ knowledge is somewhat limited (e.g. how can I get something running
+> in TZ).
 >
 
-Yes, Abort should happen. But it should happen in context of driver.
-But current abort is happening because of SMMU and no driver/pcie
-setup present at this moment.
+Although, it should be fairly easy to test this implementation on an
+ARM board which supports OP-TEE. But since you are new to ARM
+TrustZone world, I would suggest you get used to OP-TEE on Qemu based
+setup. You could find pretty good documentation for this here [1] but
+for simplicity let me document steps here to test this trusted keys
+feature from scratch:
 
-Solution of this issue should be at 2 place
-a) SMMU level: I still believe, this patch has potential to overcome
-issue till finally driver's probe takeover.
-b) Device level: Even if something goes wrong. Driver/device should
-able to recover.
+# Install prerequisites as mentioned here [2]
 
+# Get the source code
+$ mkdir -p <optee-project>
+$ cd <optee-project>
+$ repo init -u https://github.com/OP-TEE/manifest.git -m qemu_v8.xml
+$ repo sync -j4 --no-clone-bundle
 
-> > Returned PCIe completion abort further leads to AER Errors from APEI
-> > Generic Hardware Error Source (GHES) with completion timeout.
-> > A network device hang is observed even after continuous
-> > reset/recovery from driver, Hence device is no more usable.
+# Get the toolchain
+$ cd <optee-project>/build
+$ make -j2 toolchains
+
+# As trusted keys work is based on latest tpmdd/master, so we can
+change Linux base as follows:
+$ cd <optee-project>/linux
+$ git remote add tpmdd git://git.infradead.org/users/jjs/linux-tpmdd.git
+$ git pull tpmdd
+$ git checkout -b tpmdd-master remotes/tpmdd/master
+# Cherry-pick and apply TEE features patch-set from this PR[3]
+# Apply this Linux trusted keys patch-set.
+
+# Now move on to build the source code
+$ cd <optee-project>/build
+# Apply attached "keyctl_change" patch
+$ patch -p1 < keyctl_change
+$ make -j`nproc`
+CFG_IN_TREE_EARLY_TAS=trusted_keys/f04a0fe7-1f5d-4b9b-abf7-619b85b4ce8c
+
+# Run QEMU setup
+$ make run-only
+# Type "c" on QEMU console to continue boot
+
+# Now there should be two virtual consoles up, one for OP-TEE and
+other for Linux
+# On Linux console, you can play with "keyctl" utility to have trusted
+and encrypted keys based on TEE.
+
+Do let me know in case you are stuck while following the above steps.
+
+[1] https://optee.readthedocs.io/en/latest/building/devices/qemu.html#qemu-v8
+[2] https://optee.readthedocs.io/en/latest/building/prerequisites.html#prerequisites
+[3] https://lkml.org/lkml/2020/5/4/1062
+
+-Sumit
+
+> /Jarkko
 >
-> The fact that the device is no longer usable is definitely a problem.
-> But in principle we *should* be able to recover from these errors.  If
-> we could recover and reliably use the device after the error, that
-> seems like it would be a more robust solution that having to add
-> special cases in every IOMMU driver.
->
-> If you have details about this sort of error, I'd like to try to fix
-> it because we want to recover from that sort of error in normal
-> (non-crash) situations as well.
->
-Completion abort case should be gracefully handled.  And device should
-always remain usable.
 
-There are 2 scenario which I am testing with Ethernet card PCIe-Intel
-82576 Gigabit Network card.
+--00000000000021218505a596a2dc
+Content-Type: application/octet-stream; name=keyctl_change
+Content-Disposition: attachment; filename=keyctl_change
+Content-Transfer-Encoding: base64
+Content-ID: <f_ka6g56md0>
+X-Attachment-Id: f_ka6g56md0
 
-I)  Crash testing using kdump root file system: De-facto scenario
-    -  kdump file system does not have Ethernet driver
-    -  A lot of AER prints [1], making it impossible to work on shell
-of kdump root file system.
-    -  Note kdump shell allows to use makedumpfile, vmcore-dmesg applications.
-
-II) Crash testing using default root file system: Specific case to
-test Ethernet driver in second kernel
-   -  Default root file system have Ethernet driver
-   -  AER error comes even before the driver probe starts.
-   -  Driver does reset Ethernet card as part of probe but no success.
-   -  AER also tries to recover. but no success.  [2]
-   -  I also tries to remove AER errors by using "pci=noaer" bootargs
-and commenting ghes_handle_aer() from GHES driver..
-          than different set of errors come which also never able to recover [3]
-
-As per my understanding, possible solutions are
- - Copy SMMU table i.e. this patch
-OR
- - Doing pci_reset_function() during enumeration phase.
-I also tried clearing "M" bit using pci_clear_master during
-enumeration but it did not help. Because driver re-set M bit causing
-same AER error again.
-
-
--pk
-
----------------------------------------------------------------------------------------------------------------------------
-[1] with bootargs having pci=noaer
-
-[   22.494648] {4}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 1
-[   22.512773] {4}[Hardware Error]: event severity: recoverable
-[   22.518419] {4}[Hardware Error]:  Error 0, type: recoverable
-[   22.544804] {4}[Hardware Error]:   section_type: PCIe error
-[   22.550363] {4}[Hardware Error]:   port_type: 0, PCIe end point
-[   22.556268] {4}[Hardware Error]:   version: 3.0
-[   22.560785] {4}[Hardware Error]:   command: 0x0507, status: 0x4010
-[   22.576852] {4}[Hardware Error]:   device_id: 0000:09:00.1
-[   22.582323] {4}[Hardware Error]:   slot: 0
-[   22.586406] {4}[Hardware Error]:   secondary_bus: 0x00
-[   22.591530] {4}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-[   22.608900] {4}[Hardware Error]:   class_code: 000002
-[   22.613938] {4}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-[   22.803534] pci 0000:09:00.1: AER: aer_status: 0x00004000,
-aer_mask: 0x00000000
-[   22.810838] pci 0000:09:00.1: AER:    [14] CmpltTO                (First)
-[   22.817613] pci 0000:09:00.1: AER: aer_layer=Transaction Layer,
-aer_agent=Requester ID
-[   22.847374] pci 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-[   22.866161] mpt3sas_cm0: 63 BIT PCI BUS DMA ADDRESSING SUPPORTED,
-total mem (8153768 kB)
-[   22.946178] pci 0000:09:00.0: AER: can't recover (no error_detected callback)
-[   22.995142] pci 0000:09:00.1: AER: can't recover (no error_detected callback)
-[   23.002300] pcieport 0000:00:09.0: AER: device recovery failed
-[   23.027607] pci 0000:09:00.1: AER: aer_status: 0x00004000,
-aer_mask: 0x00000000
-[   23.044109] pci 0000:09:00.1: AER:    [14] CmpltTO                (First)
-[   23.060713] pci 0000:09:00.1: AER: aer_layer=Transaction Layer,
-aer_agent=Requester ID
-[   23.068616] pci 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-[   23.122056] pci 0000:09:00.0: AER: can't recover (no error_detected callback)
-
-
-----------------------------------------------------------------------------------------------------------------------------
-[2] Normal bootargs.
-
-[   54.252454] {6}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 1
-[   54.265827] {6}[Hardware Error]: event severity: recoverable
-[   54.271473] {6}[Hardware Error]:  Error 0, type: recoverable
-[   54.281605] {6}[Hardware Error]:   section_type: PCIe error
-[   54.287163] {6}[Hardware Error]:   port_type: 0, PCIe end point
-[   54.296955] {6}[Hardware Error]:   version: 3.0
-[   54.301471] {6}[Hardware Error]:   command: 0x0507, status: 0x4010
-[   54.312520] {6}[Hardware Error]:   device_id: 0000:09:00.1
-[   54.317991] {6}[Hardware Error]:   slot: 0
-[   54.322074] {6}[Hardware Error]:   secondary_bus: 0x00
-[   54.327197] {6}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-[   54.333797] {6}[Hardware Error]:   class_code: 000002
-[   54.351312] {6}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-[   54.358001] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[   54.376852] pcieport 0000:00:09.0: AER: device recovery successful
-[   54.383034] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-aer_mask: 0x00000000
-[   54.390348] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-[   54.397144] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-aer_agent=Requester ID
-[   54.409555] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-[   54.551370] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[   54.705214] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[   54.758703] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[   54.865445] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[   54.888751] pcieport 0000:00:09.0: AER: device recovery successful
-[   54.894933] igb 0000:09:00.1: AER: aer_status: 0x00004000,
-aer_mask: 0x00000000
-[   54.902228] igb 0000:09:00.1: AER:    [14] CmpltTO                (First)
-[   54.916059] igb 0000:09:00.1: AER: aer_layer=Transaction Layer,
-aer_agent=Requester ID
-[   54.923972] igb 0000:09:00.1: AER: aer_uncor_severity: 0x00062011
-[   55.057272] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  274.571401] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  274.686138] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  274.786134] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  274.886141] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  397.792897] Workqueue: events aer_recover_work_func
-[  397.797760] Call trace:
-[  397.800199]  __switch_to+0xcc/0x108
-[  397.803675]  __schedule+0x2c0/0x700
-[  397.807150]  schedule+0x58/0xe8
-[  397.810283]  schedule_preempt_disabled+0x18/0x28
-[  397.810788] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  397.814887]  __mutex_lock.isra.9+0x288/0x5c8
-[  397.814890]  __mutex_lock_slowpath+0x1c/0x28
-[  397.830962]  mutex_lock+0x4c/0x68
-[  397.834264]  report_slot_reset+0x30/0xa0
-[  397.838178]  pci_walk_bus+0x68/0xc0
-[  397.841653]  pcie_do_recovery+0xe8/0x248
-[  397.845562]  aer_recover_work_func+0x100/0x138
-[  397.849995]  process_one_work+0x1bc/0x458
-[  397.853991]  worker_thread+0x150/0x500
-[  397.857727]  kthread+0x114/0x118
-[  397.860945]  ret_from_fork+0x10/0x18
-[  397.864525] INFO: task kworker/223:2:2939 blocked for more than 122 seconds.
-[  397.871564]       Not tainted 5.7.0-rc3+ #68
-[  397.875819] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs"
-disables this message.
-[  397.883638] kworker/223:2   D    0  2939      2 0x00000228
-[  397.889121] Workqueue: ipv6_addrconf addrconf_verify_work
-[  397.894505] Call trace:
-[  397.896940]  __switch_to+0xcc/0x108
-[  397.900419]  __schedule+0x2c0/0x700
-[  397.903894]  schedule+0x58/0xe8
-[  397.907023]  schedule_preempt_disabled+0x18/0x28
-[  397.910798] AER: AER recover: Buffer overflow when recovering AER
-for 0000:09:00:1
-[  397.911630]  __mutex_lock.isra.9+0x288/0x5c8
-[  397.923440]  __mutex_lock_slowpath+0x1c/0x28
-[  397.927696]  mutex_lock+0x4c/0x68
-[  397.931005]  rtnl_lock+0x24/0x30
-[  397.934220]  addrconf_verify_work+0x18/0x30
-[  397.938394]  process_one_work+0x1bc/0x458
-[  397.942390]  worker_thread+0x150/0x500
-[  397.946126]  kthread+0x114/0x118
-[  397.949345]  ret_from_fork+0x10/0x18
-
----------------------------------------------------------------------------------------------------------------------------------
-[3] with bootargs as pci=noaer and comment ghes_halder_aer() from AER driver
-
-[   69.037035] igb 0000:09:00.1 enp9s0f1: Reset adapter
-[   69.348446] {9}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 0
-[   69.356698] {9}[Hardware Error]: It has been corrected by h/w and
-requires no further action
-[   69.365121] {9}[Hardware Error]: event severity: corrected
-[   69.370593] {9}[Hardware Error]:  Error 0, type: corrected
-[   69.376064] {9}[Hardware Error]:   section_type: PCIe error
-[   69.381623] {9}[Hardware Error]:   port_type: 4, root port
-[   69.387094] {9}[Hardware Error]:   version: 3.0
-[   69.391611] {9}[Hardware Error]:   command: 0x0106, status: 0x4010
-[   69.397777] {9}[Hardware Error]:   device_id: 0000:00:09.0
-[   69.403248] {9}[Hardware Error]:   slot: 0
-[   69.407331] {9}[Hardware Error]:   secondary_bus: 0x09
-[   69.412455] {9}[Hardware Error]:   vendor_id: 0x177d, device_id: 0xaf84
-[   69.419055] {9}[Hardware Error]:   class_code: 000406
-[   69.424093] {9}[Hardware Error]:   bridge: secondary_status:
-0x6000, control: 0x0002
-[   72.118132] igb 0000:09:00.1 enp9s0f1: igb: enp9s0f1 NIC Link is Up
-1000 Mbps Full Duplex, Flow Control: RX
-[   73.995068] igb 0000:09:00.1: Detected Tx Unit Hang
-[   73.995068]   Tx Queue             <2>
-[   73.995068]   TDH                  <0>
-[   73.995068]   TDT                  <1>
-[   73.995068]   next_to_use          <1>
-[   73.995068]   next_to_clean        <0>
-[   73.995068] buffer_info[next_to_clean]
-[   73.995068]   time_stamp           <ffff9c1a>
-[   73.995068]   next_to_watch        <0000000097d42934>
-[   73.995068]   jiffies              <ffff9cd0>
-[   73.995068]   desc.status          <168000>
-[   75.987323] igb 0000:09:00.1: Detected Tx Unit Hang
-[   75.987323]   Tx Queue             <2>
-[   75.987323]   TDH                  <0>
-[   75.987323]   TDT                  <1>
-[   75.987323]   next_to_use          <1>
-[   75.987323]   next_to_clean        <0>
-[   75.987323] buffer_info[next_to_clean]
-[   75.987323]   time_stamp           <ffff9c1a>
-[   75.987323]   next_to_watch        <0000000097d42934>
-[   75.987323]   jiffies              <ffff9d98>
-[   75.987323]   desc.status          <168000>
-[   77.952661] {10}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 1
-[   77.971790] {10}[Hardware Error]: event severity: recoverable
-[   77.977522] {10}[Hardware Error]:  Error 0, type: recoverable
-[   77.983254] {10}[Hardware Error]:   section_type: PCIe error
-[   77.999930] {10}[Hardware Error]:   port_type: 0, PCIe end point
-[   78.005922] {10}[Hardware Error]:   version: 3.0
-[   78.010526] {10}[Hardware Error]:   command: 0x0507, status: 0x4010
-[   78.016779] {10}[Hardware Error]:   device_id: 0000:09:00.1
-[   78.033107] {10}[Hardware Error]:   slot: 0
-[   78.037276] {10}[Hardware Error]:   secondary_bus: 0x00
-[   78.066253] {10}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-[   78.072940] {10}[Hardware Error]:   class_code: 000002
-[   78.078064] {10}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-[   78.096202] igb 0000:09:00.1: Detected Tx Unit Hang
-[   78.096202]   Tx Queue             <2>
-[   78.096202]   TDH                  <0>
-[   78.096202]   TDT                  <1>
-[   78.096202]   next_to_use          <1>
-[   78.096202]   next_to_clean        <0>
-[   78.096202] buffer_info[next_to_clean]
-[   78.096202]   time_stamp           <ffff9c1a>
-[   78.096202]   next_to_watch        <0000000097d42934>
-[   78.096202]   jiffies              <ffff9e6a>
-[   78.096202]   desc.status          <168000>
-[   79.587406] {11}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 0
-[   79.595744] {11}[Hardware Error]: It has been corrected by h/w and
-requires no further action
-[   79.604254] {11}[Hardware Error]: event severity: corrected
-[   79.609813] {11}[Hardware Error]:  Error 0, type: corrected
-[   79.615371] {11}[Hardware Error]:   section_type: PCIe error
-[   79.621016] {11}[Hardware Error]:   port_type: 4, root port
-[   79.626574] {11}[Hardware Error]:   version: 3.0
-[   79.631177] {11}[Hardware Error]:   command: 0x0106, status: 0x4010
-[   79.637430] {11}[Hardware Error]:   device_id: 0000:00:09.0
-[   79.642988] {11}[Hardware Error]:   slot: 0
-[   79.647157] {11}[Hardware Error]:   secondary_bus: 0x09
-[   79.652368] {11}[Hardware Error]:   vendor_id: 0x177d, device_id: 0xaf84
-[   79.659055] {11}[Hardware Error]:   class_code: 000406
-[   79.664180] {11}[Hardware Error]:   bridge: secondary_status:
-0x6000, control: 0x0002
-[   79.987052] igb 0000:09:00.1: Detected Tx Unit Hang
-[   79.987052]   Tx Queue             <2>
-[   79.987052]   TDH                  <0>
-[   79.987052]   TDT                  <1>
-[   79.987052]   next_to_use          <1>
-[   79.987052]   next_to_clean        <0>
-[   79.987052] buffer_info[next_to_clean]
-[   79.987052]   time_stamp           <ffff9c1a>
-[   79.987052]   next_to_watch        <0000000097d42934>
-[   79.987052]   jiffies              <ffff9f28>
-[   79.987052]   desc.status          <168000>
-[   79.987056] igb 0000:09:00.1: Detected Tx Unit Hang
-[   79.987056]   Tx Queue             <3>
-[   79.987056]   TDH                  <0>
-[   79.987056]   TDT                  <1>
-[   79.987056]   next_to_use          <1>
-[   79.987056]   next_to_clean        <0>
-[   79.987056] buffer_info[next_to_clean]
-[   79.987056]   time_stamp           <ffff9e43>
-[   79.987056]   next_to_watch        <000000008da33deb>
-[   79.987056]   jiffies              <ffff9f28>
-[   79.987056]   desc.status          <514000>
-[   81.986688] igb 0000:09:00.1 enp9s0f1: Reset adapter
-[   81.986842] igb 0000:09:00.1: Detected Tx Unit Hang
-[   81.986842]   Tx Queue             <2>
-[   81.986842]   TDH                  <0>
-[   81.986842]   TDT                  <1>
-[   81.986842]   next_to_use          <1>
-[   81.986842]   next_to_clean        <0>
-[   81.986842] buffer_info[next_to_clean]
-[   81.986842]   time_stamp           <ffff9c1a>
-[   81.986842]   next_to_watch        <0000000097d42934>
-[   81.986842]   jiffies              <ffff9ff0>
-[   81.986842]   desc.status          <168000>
-[   81.986844] igb 0000:09:00.1: Detected Tx Unit Hang
-[   81.986844]   Tx Queue             <3>
-[   81.986844]   TDH                  <0>
-[   81.986844]   TDT                  <1>
-[   81.986844]   next_to_use          <1>
-[   81.986844]   next_to_clean        <0>
-[   81.986844] buffer_info[next_to_clean]
-[   81.986844]   time_stamp           <ffff9e43>
-[   81.986844]   next_to_watch        <000000008da33deb>
-[   81.986844]   jiffies              <ffff9ff0>
-[   81.986844]   desc.status          <514000>
-[   85.346515] {12}[Hardware Error]: Hardware error from APEI Generic
-Hardware Error Source: 0
-[   85.354854] {12}[Hardware Error]: It has been corrected by h/w and
-requires no further action
-[   85.363365] {12}[Hardware Error]: event severity: corrected
-[   85.368924] {12}[Hardware Error]:  Error 0, type: corrected
-[   85.374483] {12}[Hardware Error]:   section_type: PCIe error
-[   85.380129] {12}[Hardware Error]:   port_type: 0, PCIe end point
-[   85.386121] {12}[Hardware Error]:   version: 3.0
-[   85.390725] {12}[Hardware Error]:   command: 0x0507, status: 0x0010
-[   85.396980] {12}[Hardware Error]:   device_id: 0000:09:00.0
-[   85.402540] {12}[Hardware Error]:   slot: 0
-[   85.406710] {12}[Hardware Error]:   secondary_bus: 0x00
-[   85.411921] {12}[Hardware Error]:   vendor_id: 0x8086, device_id: 0x10c9
-[   85.418609] {12}[Hardware Error]:   class_code: 000002
-[   85.423733] {12}[Hardware Error]:   serial number: 0xff1b4580, 0x90e2baff
-[   85.826695] igb 0000:09:00.1 enp9s0f1: igb: enp9s0f1 NIC Link is Up
-1000 Mbps Full Duplex, Flow Control: RX
-
-
-
-
-
-> > So, If we are in a kdump kernel try to copy SMMU Stream table from
-> > primary/old kernel to preserve the mappings until the device driver
-> > takes over.
-> >
-> > Signed-off-by: Prabhakar Kushwaha <pkushwaha@marvell.com>
-> > ---
-> > Changes for v2: Used memremap in-place of ioremap
-> >
-> > V2 patch has been sanity tested.
-> >
-> > V1 patch has been tested with
-> > A) PCIe-Intel 82576 Gigabit Network card in following
-> > configurations with "no AER error". Each iteration has
-> > been tested on both Suse kdump rfs And default Centos distro rfs.
-> >
-> >  1)  with 2 level stream table
-> >        ----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        -----------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        -----------------------------------------------------
-> >        IOMMU bypass       |  41 times      | 10 times
-> >        -----------------------------------------------------
-> >
-> >  2)  with Linear stream table.
-> >        -----------------------------------------------------
-> >        SMMU               |  Normal Ping   | Flood Ping
-> >        ------------------------------------------------------
-> >        Default Operation  |  100 times     | 10 times
-> >        ------------------------------------------------------
-> >        IOMMU bypass       |  55 times      | 10 times
-> >        -------------------------------------------------------
-> >
-> > B) This patch is also tested with Micron Technology Inc 9200 PRO NVMe
-> > SSD card with 2 level stream table using "fio" in mixed read/write and
-> > only read configurations. It is tested for both Default Operation and
-> > IOMMU bypass mode for minimum 10 iterations across Centos kdump rfs and
-> > default Centos ditstro rfs.
-> >
-> > This patch is not full proof solution. Issue can still come
-> > from the point device is discovered and driver probe called.
-> > This patch has reduced window of scenario from "SMMU Stream table
-> > creation - device-driver" to "device discovery - device-driver".
-> > Usually, device discovery to device-driver is very small time. So
-> > the probability is very low.
-> >
-> > Note: device-discovery will overwrite existing stream table entries
-> > with both SMMU stage as by-pass.
-> >
-> >
-> >  drivers/iommu/arm-smmu-v3.c | 36 +++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 35 insertions(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-> > index 82508730feb7..d492d92c2dd7 100644
-> > --- a/drivers/iommu/arm-smmu-v3.c
-> > +++ b/drivers/iommu/arm-smmu-v3.c
-> > @@ -1847,7 +1847,13 @@ static void arm_smmu_write_strtab_ent(struct arm_smmu_master *master, u32 sid,
-> >                       break;
-> >               case STRTAB_STE_0_CFG_S1_TRANS:
-> >               case STRTAB_STE_0_CFG_S2_TRANS:
-> > -                     ste_live = true;
-> > +                     /*
-> > +                      * As kdump kernel copy STE table from previous
-> > +                      * kernel. It still may have valid stream table entries.
-> > +                      * Forcing entry as false to allow overwrite.
-> > +                      */
-> > +                     if (!is_kdump_kernel())
-> > +                             ste_live = true;
-> >                       break;
-> >               case STRTAB_STE_0_CFG_ABORT:
-> >                       BUG_ON(!disable_bypass);
-> > @@ -3264,6 +3270,9 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >               return -ENOMEM;
-> >       }
-> >
-> > +     if (is_kdump_kernel())
-> > +             return 0;
-> > +
-> >       for (i = 0; i < cfg->num_l1_ents; ++i) {
-> >               arm_smmu_write_strtab_l1_desc(strtab, &cfg->l1_desc[i]);
-> >               strtab += STRTAB_L1_DESC_DWORDS << 3;
-> > @@ -3272,6 +3281,23 @@ static int arm_smmu_init_l1_strtab(struct arm_smmu_device *smmu)
-> >       return 0;
-> >  }
-> >
-> > +static void arm_smmu_copy_table(struct arm_smmu_device *smmu,
-> > +                            struct arm_smmu_strtab_cfg *cfg, u32 size)
-> > +{
-> > +     struct arm_smmu_strtab_cfg rdcfg;
-> > +
-> > +     rdcfg.strtab_dma = readq_relaxed(smmu->base + ARM_SMMU_STRTAB_BASE);
-> > +     rdcfg.strtab_base_cfg = readq_relaxed(smmu->base
-> > +                                           + ARM_SMMU_STRTAB_BASE_CFG);
-> > +
-> > +     rdcfg.strtab_dma &= STRTAB_BASE_ADDR_MASK;
-> > +     rdcfg.strtab = memremap(rdcfg.strtab_dma, size, MEMREMAP_WB);
-> > +
-> > +     memcpy_fromio(cfg->strtab, rdcfg.strtab, size);
-> > +
-> > +     cfg->strtab_base_cfg = rdcfg.strtab_base_cfg;
-> > +}
-> > +
-> >  static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
-> >  {
-> >       void *strtab;
-> > @@ -3307,6 +3333,9 @@ static int arm_smmu_init_strtab_2lvl(struct arm_smmu_device *smmu)
-> >       reg |= FIELD_PREP(STRTAB_BASE_CFG_SPLIT, STRTAB_SPLIT);
-> >       cfg->strtab_base_cfg = reg;
-> >
-> > +     if (is_kdump_kernel())
-> > +             arm_smmu_copy_table(smmu, cfg, l1size);
-> > +
-> >       return arm_smmu_init_l1_strtab(smmu);
-> >  }
-> >
-> > @@ -3334,6 +3363,11 @@ static int arm_smmu_init_strtab_linear(struct arm_smmu_device *smmu)
-> >       reg |= FIELD_PREP(STRTAB_BASE_CFG_LOG2SIZE, smmu->sid_bits);
-> >       cfg->strtab_base_cfg = reg;
-> >
-> > +     if (is_kdump_kernel()) {
-> > +             arm_smmu_copy_table(smmu, cfg, size);
-> > +             return 0;
-> > +     }
-> > +
-> >       arm_smmu_init_bypass_stes(strtab, cfg->num_l1_ents);
-> >       return 0;
-> >  }
-> > --
-> > 2.18.2
-> >
+ZGlmZiAtLWdpdCBhL2NvbW1vbi5tayBiL2NvbW1vbi5tawppbmRleCBhZWI3YjQxLi42NjNlNTI4
+IDEwMDY0NAotLS0gYS9jb21tb24ubWsKKysrIGIvY29tbW9uLm1rCkBAIC0yMjksNiArMjI5LDcg
+QEAgQlIyX1BBQ0tBR0VfT1BURUVfVEVTVF9TREsgPz0gJChPUFRFRV9PU19UQV9ERVZfS0lUX0RJ
+UikKIEJSMl9QQUNLQUdFX09QVEVFX1RFU1RfU0lURSA/PSAkKE9QVEVFX1RFU1RfUEFUSCkKIEJS
+Ml9QQUNLQUdFX1NUUkFDRSA/PSB5CiBCUjJfVEFSR0VUX0dFTkVSSUNfR0VUVFlfUE9SVCA/PSAk
+KGlmICQoQ0ZHX05XX0NPTlNPTEVfVUFSVCksdHR5QU1BJChDRkdfTldfQ09OU09MRV9VQVJUKSx0
+dHlBTUEwKQorQlIyX1BBQ0tBR0VfS0VZVVRJTFMgOj0geQogCiAjIEFsbCBCUjJfKiB2YXJpYWJs
+ZXMgZnJvbSB0aGUgbWFrZWZpbGUgb3IgdGhlIGVudmlyb25tZW50IGFyZSBhcHBlbmRlZCB0bwog
+IyAuLi9vdXQtYnIvZXh0cmEuY29uZi4gQWxsIHZhbHVlcyBhcmUgcXVvdGVkICIuLi4iIGV4Y2Vw
+dCB5IGFuZCBuLgpkaWZmIC0tZ2l0IGEva2NvbmZpZ3MvcWVtdS5jb25mIGIva2NvbmZpZ3MvcWVt
+dS5jb25mCmluZGV4IDM2OGMxOGEuLjgzMmFiNzQgMTAwNjQ0Ci0tLSBhL2tjb25maWdzL3FlbXUu
+Y29uZgorKysgYi9rY29uZmlncy9xZW11LmNvbmYKQEAgLTIwLDMgKzIwLDUgQEAgQ09ORklHXzlQ
+X0ZTPXkKIENPTkZJR185UF9GU19QT1NJWF9BQ0w9eQogQ09ORklHX0hXX1JBTkRPTT15CiBDT05G
+SUdfSFdfUkFORE9NX1ZJUlRJTz15CitDT05GSUdfVFJVU1RFRF9LRVlTPXkKK0NPTkZJR19FTkNS
+WVBURURfS0VZUz15Cg==
+--00000000000021218505a596a2dc
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--00000000000021218505a596a2dc--
+
