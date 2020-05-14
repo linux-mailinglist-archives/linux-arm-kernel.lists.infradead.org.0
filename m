@@ -2,72 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C0F4A1D3F84
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 23:02:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7736B1D3FC2
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 23:12:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8otrhAcdnM22WIIYkAEGuq3UyF1eZcDxlq15F3qur1Y=; b=qUDHUCeSO6ZX11
-	hyL7Th/AVkoEUYhf5S0yhYuoVWTtEPatkJU7SUf0x20stuInq1lwfa0T5hODvELg7Tpg4+IGDQJn6
-	y7a4K/GX9Pg9rQSlO47suc+XXk+y5srN6f6qS1lVk1xQXU9ml4TNn8KfI6wBxYOx+sZk1poYTVOAN
-	DjqHrBDe/LdG38piXDJYzBlg2cxBkzt6B4al8jNlRbAdT4DAGH/gNpxQbAvOeePC7H4x0Wo0bsMOG
-	2t3bJNoCziYJ+r3+uo7vIVWazHLW+MTFtRKbXGLNQJsS3LgTcInB9yWJxOpzaqqVdhqIrdYW0upR3
-	GCbMt6DQ0RF5mPPo7vPw==;
+	List-Owner; bh=dSIZdzeZDEG39GlX8ndjq77Hpj4DMcdHGxrvVTzWpHw=; b=jSEX6KXidyEyop
+	sh+Ac/xpx2sTudmZ+QLdZugaQTD7nmqEdrkRyxzUkN11e5f1WI9pqcLAJ5hsjfhuXhqK8FQvhPp25
+	WgkNsLdKf4F/YLTPK0qYf0nBlPO+oDnjPO5j0BxY8v9Wl2tFlv18e65tcOdy3j8STQ876CxBGs87m
+	cSVD0q+67hd1qjOM+qvmaDexiX569fsfoY20pRFmxU6Th2Fl0+eVxZ8/UmLHvylIcOpQ+WjoFwZb2
+	SOWI8XPoxi/QqC64e9Y0FOo1zjqE3sBI+EmWgOMyxxO03s37kjaHV4eg4EKje9feIHXxQuePJ2tdy
+	FUyyPr4lA2pPI4Jru6dw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZL03-0002Yw-2M; Thu, 14 May 2020 21:02:39 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZL9e-00009A-V6; Thu, 14 May 2020 21:12:34 +0000
+Received: from mout.kundenserver.de ([212.227.126.131])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZKzs-0002Sk-Kt
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 21:02:29 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E4298206F1;
- Thu, 14 May 2020 21:02:27 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589490148;
- bh=BpiNhcYdcKddO8cs3Vt8IZUscWTK1/Is8oqrDfZkC6w=;
- h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=hyfFgR+GL76NQf566ZtlB+WOryIov5DSxhUL5b5JUGfd+iX0ldBn3aeIuHEmGYr5F
- EJi9Wz7J28FNtt08VJYBztNyXwTQJ6uHS1pGhU4g7jeCKpOQ1WCr4QwXnoluVb/vcF
- CFUnP5fIMuLO3vUY90BKaBpUzqs5HHWHXbnfeD0k=
+ id 1jZL9U-000081-OQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 21:12:26 +0000
+Received: from mail-qv1-f51.google.com ([209.85.219.51]) by
+ mrelayeu.kundenserver.de (mreue012 [212.227.15.129]) with ESMTPSA (Nemesis)
+ id 1Mhnnc-1ivaXz15pg-00dkhV for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 14 May 2020 23:12:19 +0200
+Received: by mail-qv1-f51.google.com with SMTP id g20so35042qvb.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 14:12:18 -0700 (PDT)
+X-Gm-Message-State: AOAM531DRfvY0NsP4m5alwOylpXxeI1UV2BX5lHJCVWhD8iKCA7utvD7
+ NmtWLt45yap9zmB/dssw+nQxL3aaJtXa/pIhc1s=
+X-Google-Smtp-Source: ABdhPJw+hOXAPKqhss7jyQwmscQ+zLP90XxY8njrxYkgNmAOyzRHjnKyJ1EnZ5pV37wBywYSy8Mi3+xNly2MaNrB+Gw=
+X-Received: by 2002:a0c:eb11:: with SMTP id j17mr396214qvp.197.1589490737968; 
+ Thu, 14 May 2020 14:12:17 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <1589267017-17294-5-git-send-email-dillon.minfei@gmail.com>
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-5-git-send-email-dillon.minfei@gmail.com>
-Subject: Re: [PATCH v3 4/5] clk: stm32: Fix stm32f429 ltdc driver loading hang
- in clk set rate. keep ltdc clk running after kernel startup
-From: Stephen Boyd <sboyd@kernel.org>
-To: airlied@linux.ie, alexandre.torgue@st.com, daniel@ffwll.ch,
- dillon.minfei@gmail.com, mcoquelin.stm32@gmail.com, mturquette@baylibre.com,
- robh+dt@kernel.org, sam@ravnborg.org, thierry.reding@gmail.com
-Date: Thu, 14 May 2020 14:02:27 -0700
-Message-ID: <158949014721.215346.12197373767247910756@swboyd.mtv.corp.google.com>
-User-Agent: alot/0.9
+References: <20200503145017.GA5074@afzalpc>
+ <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ <20200504091018.GA24897@afzalpc>
+ <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+ <20200511142113.GA31707@afzalpc>
+ <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
+ <20200512104758.GA12980@afzalpc>
+ <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+ <20200514111755.GA4997@afzalpc>
+ <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
+ <20200514162535.GP1551@shell.armlinux.org.uk>
+In-Reply-To: <20200514162535.GP1551@shell.armlinux.org.uk>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 14 May 2020 23:12:01 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a2KR+O5Ua5hsNgzLQV5-V1pat6JH_WM10Es-oUhXO2OgA@mail.gmail.com>
+Message-ID: <CAK8P3a2KR+O5Ua5hsNgzLQV5-V1pat6JH_WM10Es-oUhXO2OgA@mail.gmail.com>
+Subject: Re: ARM: static kernel in vmalloc space
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+X-Provags-ID: V03:K1:Mugvxjg3ad2WCo0Doze7cfzuCMd8+/7BuaMR2hF8zYiqFaJKOKV
+ H0PXsqhkZs84W5d6yfcNUxuYmbT/h/Kj54wqMeXFlLLIJeEK1AhmLo1l17CumZAhv0JX6Ci
+ OmRsB0cSIW8covsazYILvW/Uqq571cY3GC+unQR5MWUPi0XmV28dJJPT/U2jx2RT8F70e+J
+ DjZ7KYQwPINomRvlv9zXA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:beDmUpByIK4=:bmsVn4hJGAgHdV4x7jZE2+
+ td9rI5ES5OD4lW3jPIXQpLY6LNSkUpD/LogSnRc2YPM0LBCQDvvBh0uTQvQmQgQwfqIUJXOUD
+ zIKJGCc0/Oa3qoYFFtiqPj7ZUjjphR3V0h6SUdOrAWu0bg3boObe9d73JON1NN5GXLfE4vHwR
+ ryBJwgrIiUAGE0EW4DIYK3peGBWV60624Ufc+A1MgLcjPAE6AOY2VpNSa49KqhnoGS1VcDHsb
+ I1ixbFaD+gCU2EW0VNqazHPgsw1scKzivUjJ4Az1UlX65l8n0zyUZKl/MNlDYyfbjWwbe7HnV
+ V1EVPMzN8yKPf0naWnjrJzNJO5BSGrXYqPEhSe6KPb1t0zoa+oWTnY4GYHeAxiSfzVbVWB4dc
+ ZciH6C6X6/9rpwN/qr6dcwtFexqWppegkVXht7TVGmDTEc/NfifD4sZRtu9MKeAzeexLe7/c5
+ js4Roygb7YHWr2H6pdt6Bd9lJvJGU64TuwuLVOSj7AwfMM6HJzWCHEZuylcL9IOSmufXr1WNH
+ T+skbiYwMiFS2fB9NY9NAUN16JIDX/CK9Lm4OyWrZnd3MlTCcJzNRvwnwoAZyned1Qk+v79Sl
+ xwKTTSpWWDKExYk3TLbhZp52+aeB9qvbew4MTFs7PQEPWQaSvHHBWqr4HokUeLrr5s03I9w/S
+ 21k5+XvaHlyW/ryRD9pXD+f9Eh2xbqY1HwtUqvp67gIcgrI8IlEYUsuoTfl4fVhwkmAwZn1AP
+ G2LtfKsXZtZqALdIkCLwvsxZRMZqwPv4n5eBoWhXFV2ESoXtksY4toLmqgCoXZK6ZzvnrEO9m
+ nM7TYGcYDG8lBXCHKPS3oK09JjEc4ranA/KdI/NLd+kg/X3hBY=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_140228_704468_7C02F12B 
-X-CRM114-Status: GOOD (  14.38  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200514_141225_084294_9F54F3E4 
+X-CRM114-Status: GOOD (  12.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.126.131 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.126.131 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,64 +97,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, linux-stm32@st-md-mailman.stormreply.com,
- dillon.minfei@gmail.com, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: afzal mohammed <afzal.mohd.ma@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting dillon.minfei@gmail.com (2020-05-12 00:03:36)
-> From: dillon min <dillon.minfei@gmail.com>
-> 
-> as store stm32f4_rcc_register_pll return to the wrong offset of clks,
+On Thu, May 14, 2020 at 6:25 PM Russell King - ARM Linux admin
+<linux@armlinux.org.uk> wrote:
+> On Thu, May 14, 2020 at 02:41:11PM +0200, Arnd Bergmann wrote:
+> > On Thu, May 14, 2020 at 1:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
 
-Use () on functions, i.e. stm32f4_rcc_register_pll().
+> > It's clearly possible to do something very similar for older chips
+> > (v6 or v7 without LPAE, possibly even v5), it just gets harder
+> > while providing less benefit.
+>
+> Forget about doing this for anything without a PIPT cache - or you're
+> going to end up having to flush the data cache each time you enter or
+> exit the kernel.
 
-> so ltdc gate clk is null. need change clks[PLL_VCO_SAI] to clks[PLL_SAI]
+Right, let's forget I said anything about v5 or earlier ;-)
 
-And quote variables like 'clks[PLL_VCO_SAI]'
+I expected the non-aliasing VIPT caches to work the same as PIPT, can
+you clarify if there is something to be aware of for those? I see that some
+ARMv8 chips and most ARMv6 chips (not OMAP2 and Realview) are
+of that kind, and at we clearly don't want to break running on ARMv8 at
+least.
 
-> 
-> add CLK_IGNORE_UNUSED for ltdc to make sure clk not be freed by
-> clk_disable_unused
+Anyway my point was that it's best to only do it for LPAE anyway, everything
+else being a distraction, as the only non-LPAE SoCs I could find with
+support for over 2GB are some of the higher-end i.MX6 versions and the
+original highbank.
 
-clk_disable_unused() doesn't free anything. Why does ltdc not need to be
-turned off if it isn't used? Is it critical to system operation? Should
-it be marked with the critical clk flag then? The CLK_IGNORE_UNUSED flag
-is almost always wrong to use.
-
-> 
-> Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> ---
->  drivers/clk/clk-stm32f4.c | 5 +++--
->  1 file changed, 3 insertions(+), 2 deletions(-)
-> 
-> diff --git a/drivers/clk/clk-stm32f4.c b/drivers/clk/clk-stm32f4.c
-> index 18117ce..0ba73de 100644
-> --- a/drivers/clk/clk-stm32f4.c
-> +++ b/drivers/clk/clk-stm32f4.c
-> @@ -129,7 +129,8 @@ static const struct stm32f4_gate_data stm32f429_gates[] __initconst = {
->         { STM32F4_RCC_APB2ENR, 20,      "spi5",         "apb2_div" },
->         { STM32F4_RCC_APB2ENR, 21,      "spi6",         "apb2_div" },
->         { STM32F4_RCC_APB2ENR, 22,      "sai1",         "apb2_div" },
-> -       { STM32F4_RCC_APB2ENR, 26,      "ltdc",         "apb2_div" },
-> +       { STM32F4_RCC_APB2ENR, 26,      "ltdc",         "apb2_div",
-> +               CLK_IGNORE_UNUSED },
->  };
->  
->  static const struct stm32f4_gate_data stm32f469_gates[] __initconst = {
-> @@ -1757,7 +1758,7 @@ static void __init stm32f4_rcc_init(struct device_node *np)
->         clks[PLL_VCO_I2S] = stm32f4_rcc_register_pll("vco_in",
->                         &data->pll_data[1], &stm32f4_clk_lock);
->  
-> -       clks[PLL_VCO_SAI] = stm32f4_rcc_register_pll("vco_in",
-> +       clks[PLL_SAI] = stm32f4_rcc_register_pll("vco_in",
->                         &data->pll_data[2], &stm32f4_clk_lock);
->  
->         for (n = 0; n < MAX_POST_DIV; n++) {
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
