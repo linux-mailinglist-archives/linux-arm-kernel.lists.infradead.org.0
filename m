@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A15F1D2663
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:04:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 103311D2670
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:06:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6xJuqogjGj03ESd5vRbBE8YFQaiQvrjrGCC/spVJ86M=; b=mHqPNjyZ0L2ZSj
-	YkMWg36b5AM82btl3aI+lF9FnaLbpa3YetHXfsh1/WYfLQ5bA/cYPXbJcE1ZS4djgkxPbkBb8tNwM
-	DkXLHpa4vji1Tzrkok0aWDl3Vy5KbJswoh+jwvOp2BGDZFvz6ns6wi70eIkIHDBGEx0QmW/ZXDCxy
-	1VfoEuOwfjhmWa4osLVVTb1BaTcwaDLfFcc+KkUmZg8jqD/cIVOL+nTg2HrP/YGAGeHwPtOZmF7hy
-	0UNoHmqTLWXo0hmyVp6wpEe7gyLL0tEHlX8prkL0DLA0wv8c3TEx1pELFnzQSbxXNJ+U9crQOG0Z7
-	18jKqgMLSnwBWFGitWcw==;
+	List-Owner; bh=7FCj6+8sedQtbGYmQ3NkM/2WbBT4X0EFnJ2vBMcuPso=; b=S4p35FI0Flr/W+
+	0G9T5c8wI7yWZUfy7c5UcmDw/v4rXDv61dF34okizwQ8Oy39TEsmaig2R9PCgVSHd0Tb7snhKSEP4
+	50F96v0xyTbWkrNdO8Tywsv6qdagaoU+bazmY3G+lz1ssxUkA3YLL3BeRaNVw204jD3oskKTn2N3z
+	ob8fB1fUxJET7XQas7By8v0foFDHKTK9bFJJaTNfMvw5cVStxFuUhcwKhpVrASFO6GANo8oqNQ/3k
+	OVX9TmRLWOX4P3nyPNZ1xALRH6a6RiaqKKDEXPePwu2YKZ5Vfv528i2AVUJwhWYR48Im3jRsialeF
+	ZCIgmcFpNOeiIuKKl4pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ62p-0002TR-Hm; Thu, 14 May 2020 05:04:31 +0000
+	id 1jZ64z-0006pg-RT; Thu, 14 May 2020 05:06:45 +0000
 Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ61Y-0001hQ-0g
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:03:13 +0000
+ id 1jZ61d-0001hQ-70
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:03:19 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
  d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589432591; x=1620968591;
+ t=1589432597; x=1620968597;
  h=from:to:cc:subject:date:message-id:references:
  in-reply-to:content-transfer-encoding:mime-version;
- bh=uwKEtD8/jRPYcbdZfaS8zSHNukwdI+nicX5PxlTfCl0=;
- b=Qwzr+7U9X7K24LhmtaUE8wS4Lec4Je+vc7THj0Gne9A5XQCL7dgnVWeH
- il1c8+Kqvdi6PzqTekmwpwTucWUC4CItyZcRVYpfUNVfPv+2JnwNzgROy
- l9FNqHIcEA0rSofk1mB8POvnIO6plR5L1wssq1ctrhi/XKKQOLN75eX6x
- X8JopbtJJZRCPlHCBBUIcrxmPY8KfpsRKvfB8dkZoKHFWtRGcyY6xXSxD
- Vyb5tSNbc361dkz+QzTjtGDaq1Y/JaE9GP4Dk6jOEZW8SpTUt6lfZP5HG
- /B7kMOnEXBX3FUB2iUCVQnIbuhOeuNcecO7A4H7r7yi6TE5d8GjrcgNeV Q==;
-IronPort-SDR: nJz0MLT5Xq+oh0PO2Hi/+DskEDFrqbtVfDe7MjzS8x4bwYwN7ACJCeatUFPJVlPV4NBExVqY+R
- pUHInAlMVyKSM9OFvIW/M5/Pv6eUQ3GO8euHBN5HcHm9L+dIungJmQQarmFviUrrvDVXwk8ggd
- ZRbGqGHJUw+RwDurL6b4CU683rPctmEWxg758xx6h4j5Ar6MjNneOdKNnC3g19DwCT4q/VWuXI
- EsR2Pgw14eIu0v1M7IZLSEXBruw3FSTcOSVNicWE4MP4GBYiUnyYH4u1DIB7Nq7SI/csvhVywd
- Y6U=
-X-IronPort-AV: E=Sophos;i="5.73,390,1583218800"; d="scan'208";a="79551080"
+ bh=keval8Ak2cI8VNjnqr+OqC+3JhE6d2gAjjERJIPdvrs=;
+ b=K7NPL47G0EBQ6GRfSv4N2gp30eJibAWUzCdHpLcF1noSgVN9oQ77lQVz
+ F5LU3JaFVp3XBJ2oTy56GFWYuSn65RK7W6E13zRT7zV1ECqRKV3RmyU1n
+ w3fX8VtsTah1hi9sHDAUcZQboOmKxavB9E5mqSwqH6UTcqYTJQ4/p6Exu
+ SdT0U6JNQ5jKtc+uAxDgqfM9usFtHz1pqcEPSRDyLXwAG2lc4HC0i1S/x
+ hegGAA2cBfRn/X13TTgCenGe4d5wJpO37ss9Eb9sFdo8Y7XohKWbxaIES
+ gEXgfeK0Jrem7vHJM4yodjZBZTXYweTv9yP9xchWISg28fOvW4ltOg8TU A==;
+IronPort-SDR: KnDjjge9r/Ql+QAVESPlVeUPPvyAjTivxKbWT32S9H2wTLfl6rlCNEU8YARGH7Iqu6hpoXQdOj
+ lZK7I67Hsa/gkbZ/mufHslBPud/Q22ynVdZ09B+MQOtSarYW+Xz4fNuPU2xE4tEplSxT64Y5NB
+ 6zdT9cQiAVpRWdRRO+rhlTLg0FPIE5+RvMISt/972ILeclaaATLaV32MuTP5tAcAR5XkWCLPxq
+ WkUOs99CYmZnvn4T4EP2ofn6h/oT9JSdXrMIko7eNZroJ0rCH3kWaz/iVfPjRScqBIVhc6G1a4
+ tVI=
+X-IronPort-AV: E=Sophos;i="5.73,390,1583218800"; d="scan'208";a="79551082"
 Received: from smtpout.microchip.com (HELO email.microchip.com)
  ([198.175.253.82])
  by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 13 May 2020 22:03:11 -0700
+ 13 May 2020 22:03:12 -0700
 Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
  chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
@@ -55,12 +55,12 @@ Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.10.215.89) by
  cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
  Transport; Wed, 13 May 2020 22:03:14 -0700
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=NDbhdtpA5xxFtwqp3T8T1Qt9RHRPrPSfUuNkIMQNJ56aZXtGVEhi+5DXKYUjpU68TdfcqO90VUXrj2cG3RNh63v1DhcqFcBaLylFF9GfRlJedaiLVRmYA2KT1n9w0d57VNW0+qyD3ih7TONajYvIFQ46ICbT5LQ4QULSyjv9MmfWZyUZb7SqG9Os1mv/lEYqAaATW4vtHSMhGnGVHOjXpZwbOEh7LQ0fyH3dUApIZXVOriNRxvPH+GWkmlF0ScxHjstF9KDHkXnH1WOUkO3gTCWL4NcqPGFISR6jqLNT1RnrtNV2YqSXJfK+f8LeydmLhZkgWw9yVYW+vEo4BNaUfw==
+ b=TX3hEux/KZQ8HvKEZkKuLAUoOijNS66kYFtEs1Qs5Do735Aq1BcsJPa1OQUvWobXLdOmsbHVrN+DlhLeN9pc1yc3dMpUpzXBLyxgvH7C/fZF6lQJYw8vnwXQtQSwUa6J1sky4LWI+dUBRCMr6EPAh8EvfhsMckQXJXULaISMjCIsAsINTlTu0ut7O7NbtWWGx7u5bCEyyQK6wLwGbZX7JZBDJaurND5ysE/mKXUrK93cb754gopGBrCawcnlN7z1Yr0ZZDpEMCBvE34IFuLWy9jFTP7Ie6SI4GkT8LUgiLfEQTxzrjPNHqG0rFCgef8FDAkseWsZFECMsPl2LrpTJQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qj76Nd280d+F00QW7LmSHt+TBxuC6yQmfWgNj7ec0AI=;
- b=jCUmLyljMvOq4Bl2rmXcOdhz2UjbZVAZjZ5avsP1sK9/EScyJMwogYvZBszoXEMwaKKkqIlRpMCuRQvv7ScFVzU/i6ZV4CFBrI9gLb0sQpJm65me56n4deJd8uvr+ESkUYnkLlDibaozCHzdIJp1vtIHioVhb3iahp5Q7A/gc4MVDyao2nUcfwz/ttr1UdNbKpER7sKOvS0x16nYCXJ2ZAQ0TfPv8VhHGY4Ozcn1n5ROs1kWIEHrM7SUcIFnWWSq6cG1CJ342jOjMuowz+ItNFt76RwN/Irnihipii7Y/NI+KRsu+4erAuaHvrtqa09Yz9LXc5q03Lik9QxRXEVpww==
+ bh=0E5bcvuDkJ0xwx2KwFmsFoAeKEOgmlg1VETpKZbgueE=;
+ b=E9q+jqwSkNimJxXXdAVU37Pan0hQTjk4EOWKu80BjFJ0yHBc2zJpgvxN8Q9SX1jMucecHlENohyeNGr9TLsyEvfDdcMTnobW+N5VVcYJ+7HGBDF/ghpQcVdRWoJTHamrosRElPNE0qrCL/KJc4GPpZw3CgsrDngVX7vSEbsqrFPru9Wo4YK5828+WEhVM6KpZl4CGIAZsKQgXu7Km5NOR6NNiG6WsFeIrkSn5rsKvyocki1uGveKOjxcNfjtK0OiESFJAS5rrxyJDDlNPN9/Do4FdhxUhojE+TqNkeu2197z+fdM4UeN+/yARhgDP6PkkpCjgg+pxUSpA5C1EcR5FA==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=microchip.com; dmarc=pass action=none
  header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
@@ -68,27 +68,27 @@ DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=microchiptechnology.onmicrosoft.com;
  s=selector2-microchiptechnology-onmicrosoft-com;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=Qj76Nd280d+F00QW7LmSHt+TBxuC6yQmfWgNj7ec0AI=;
- b=CfLQzLX2y18hXACRwmpDQstBvq0g4eWW9VIXpa8njYeP5GdTS/253wEYCGD+YsTn6F1F7rWIoPg0hClHFbNnNFQSiVAEXCHFaV5qR7mzpaGU0ohHaxIcFC+w75TuAJkDi3eN2fDGQ9C8/UD/VxYryaB7g/dH+51OX/94Mgltwbo=
+ bh=0E5bcvuDkJ0xwx2KwFmsFoAeKEOgmlg1VETpKZbgueE=;
+ b=PpWh40vI77C7ZxuQfWbIb0+tZTQWPs7pRvAGdrB9FvTCjKzT+chBOcx8wg3ql/9itKeptq5fQTJagY9nJRPj+/lJfTL7MSNICtnRUUAGaaklIdgWAhlgbkHm9tBcU1638NV6rjCkS1vxe1KAkdgno1zyjUN1jtE25CNGmarRvW8=
 Received: from BY5PR11MB4419.namprd11.prod.outlook.com (2603:10b6:a03:1c8::13)
  by BY5PR11MB4483.namprd11.prod.outlook.com (2603:10b6:a03:1bc::15)
  with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.24; Thu, 14 May
- 2020 05:03:09 +0000
+ 2020 05:03:10 +0000
 Received: from BY5PR11MB4419.namprd11.prod.outlook.com
  ([fe80::d847:5d58:5325:c536]) by BY5PR11MB4419.namprd11.prod.outlook.com
  ([fe80::d847:5d58:5325:c536%7]) with mapi id 15.20.3000.022; Thu, 14 May 2020
- 05:03:09 +0000
+ 05:03:10 +0000
 From: <Tudor.Ambarus@microchip.com>
 To: <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
  <Nicolas.Ferre@microchip.com>
-Subject: [PATCH 05/16] ARM: dts: at91: sama5d2: Move flx1 definitions in the
+Subject: [PATCH 06/16] ARM: dts: at91: sama5d2: Move flx0 definitions in the
  SoC dtsi
-Thread-Topic: [PATCH 05/16] ARM: dts: at91: sama5d2: Move flx1 definitions in
+Thread-Topic: [PATCH 06/16] ARM: dts: at91: sama5d2: Move flx0 definitions in
  the SoC dtsi
-Thread-Index: AQHWKaz2EBruUKsjvkCe6lIEn8yUnA==
-Date: Thu, 14 May 2020 05:03:09 +0000
-Message-ID: <20200514050301.147442-6-tudor.ambarus@microchip.com>
+Thread-Index: AQHWKaz2vPixCxQLeE6hkHQUe+T1JQ==
+Date: Thu, 14 May 2020 05:03:10 +0000
+Message-ID: <20200514050301.147442-7-tudor.ambarus@microchip.com>
 References: <20200514050301.147442-1-tudor.ambarus@microchip.com>
 In-Reply-To: <20200514050301.147442-1-tudor.ambarus@microchip.com>
 Accept-Language: en-US
@@ -99,33 +99,33 @@ authentication-results: bootlin.com; dkim=none (message not signed)
  header.d=none;bootlin.com; dmarc=none action=none header.from=microchip.com;
 x-originating-ip: [94.177.32.156]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5c59111f-d2eb-4a0d-9c2e-08d7f7c418cd
+x-ms-office365-filtering-correlation-id: 8a05ca16-981b-4a12-1a03-08d7f7c41944
 x-ms-traffictypediagnostic: BY5PR11MB4483:
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BY5PR11MB448314E897F63F05DDE065B9F0BC0@BY5PR11MB4483.namprd11.prod.outlook.com>
+x-microsoft-antispam-prvs: <BY5PR11MB44837795E6126921C549EA6DF0BC0@BY5PR11MB4483.namprd11.prod.outlook.com>
 x-bypassexternaltag: True
-x-ms-oob-tlc-oobclassifiers: OLM:3968;
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
 x-forefront-prvs: 040359335D
 x-ms-exchange-senderadcheck: 1
 x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: pK5Dox+1/80E5H6JLHR9R3S1B+0XPRzYMkzN8N1D9p+FXweFeIifTnpqDUNCLVL1w7TJ9+TOlTJJnwJco3J7Qv0Htr94CWkPgMHVt5dFLdzNhMhgNufQRZZSUYEvKr0Hxu6Y+zazw2XTEioAWt10aWpWAP+5OlyNkRFzcRsx7GjVvC26FNhxSsnt92GbTuv5T95OCAbPc770qsq5td8AoKtdNxNF6aPxCP7vzfhywVelJwQHM38u04ZGNf78w5eoimavSPBdOtyF6Rd226YNc138ZCun4tO2uTmtpIzx0z41JQ8003z43HcRrhoMh6gpE3SrXxwVVLA2gZIC2LWjYlsyihub/U8cYad54gAlYj9xsJFw7tCUf7ZiNW7Xcj9cakIUqgvC9DTpeXOnElOsN+6Z3vjeYyUL41WXFn3iBkex1xT+y/xjDqi3MxPIJffz
+x-microsoft-antispam-message-info: ZG58cRKPBv8LL2SR1QTeTax3pmPcyc//88nBPriDpFRoMkJOKuFwn+EGNPICGka0t5CcqsmfHnGeBs7R0hlLWa3wlVYqby4s7RhH+1E7ePCV4t28fzFrRmLOgdMeeDzCXDtl0mzjX66QYoulC8koSnZm9okdncV1l4Go6S+euNEg0lDq2qJq1wAlv+HfpsLyGnjsPknKXrxz0IhRRTsPMgalUdhS8afbLGxYzX37i93pHzqUqS9BqawvsiLsCdEgTOwztPBQDnk0kG01ZaT6WbZKRJqCu8PtwrTIfz80EAy3uuYgq2yZiGU9yiGbYIl/v50abNznRn3MdUtM7BYfJlBKVOz0Ku8io9xh1o8CKFM/I3vGsL837Y/v2EWWoM8CfrU/u9P1UVIIMh2TzHdpiGYeXerhgpN8bB+EOFlemOqdH6a+ps+7X2pOEGQ7kFSO
 x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
  IPV:NLI; SFV:NSPM; H:BY5PR11MB4419.namprd11.prod.outlook.com; PTR:; CAT:NONE;
  SFTY:;
  SFS:(376002)(366004)(346002)(396003)(136003)(39860400002)(6506007)(76116006)(6486002)(26005)(66446008)(8676002)(6512007)(86362001)(66946007)(2616005)(64756008)(8936002)(478600001)(66476007)(66556008)(186003)(1076003)(4326008)(2906002)(71200400001)(6636002)(54906003)(316002)(107886003)(5660300002)(36756003)(110136005);
  DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: zaJHXW0GCur6fyqDiBzbeb+o6of5zpe+04+yUumHArpCbfFGamlW59wJQI210+TrlsoeDGD8CyVg/ihMXkBn+cPtjL+vqYUo1jS+6pLieUSzGmLDKTV9KSsVYiacTJ4Q3fEjdut4bfpBlk5vEZ1rV+sDtMQDRjTpvSKx7jC/Qh6b2hc9ltG/jefHBEptIkJBtYb4dHKw09vW5OcEkoNDOb8jZvUzTLUS1Whp8umR78hQo+lq4BYzXt0IK1oHtr5GkZ2XCn6+SYk5LoamBrGNS0xrfoe9pC9bTMxAX6SB5U8YSMQBaGH4tqtsYzM9043zDshvxl8lWMMa+6dzeuh0+3BcTqNQ1bvuDCjY4zQBN3U0m534Wlttv3dLViZKCVwmHgJ1Q5ZvyrqTd2gZQ1qQFrxrgYuarlkTLzviCxXAf3mbNtRYTdgFSB96amQKcyvOAuF3aePifbEIAKgTMhjsNn/fioW+TFSVagFrPf8Y0C8=
+x-ms-exchange-antispam-messagedata: PySiViPLnFm6XxmYacWgFsvzGU2aEL+BPcZaRYK0iWFwkqMLnSk2ZDjWtxB0qL2DBie2XKKY4l0yxYm44VjnPlzAB+MGIfmoO01cS7F1fuf/Z3JilGoPLNrLYPCiBM5W+Qy48oVZefskHioHJ612yt0mw7adlYFoHLCFacijiGDu/2it/n/VRhog+ycTL2IdQ6jJ7XDmXMNOZUwhBYTW+QV/KFTaKtnwdAWHQ+E7MoMtoYA5p74G/JPWHHtePhBSqIxFVE/8g1FD7okrqJ9TPYYUs0ZKBxlX9Z8DYMKxfPMP2RCs8+Ydq5GiPbZAiOPYEDj9Cpi793kdIKjfdx0KUocpeJPuvLNdnR7gFSubIWsQTfaueYv5eXbHzeQ8bqN+KcAF/qR1rX3aE6MzXQxFSYT4sSJl/GWLyjMLMf6ou/nr64nGBdlKW8PUuIkUXdBQSGKW/eecjCp4B1MfSZFn2rAh+9wlOtNaKPVDm4djLA4=
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5c59111f-d2eb-4a0d-9c2e-08d7f7c418cd
-X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2020 05:03:09.6534 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8a05ca16-981b-4a12-1a03-08d7f7c41944
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2020 05:03:10.3829 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: FmEnrkcp2tFguz+iv1AJjqsTM+uHO3Y7Zg6ys200uopLAqE8/XOHlZ2FbmsFLgy7TGxmfdsGFfm4U6TaOhaIzznzCF26tySZLUtqDHZFDWE=
+X-MS-Exchange-CrossTenant-userprincipalname: hkvfNg+f2a6H74vaaZ6HjCE4GITMgVq9kTCHdmE3dJPmJT+P2Ol9hf9ZQqRi/qsmsHpJqQFELN+1Ac4DQhkIinAy4denGe74Eqia+pM8Qfs=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4483
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_220312_126963_1B099875 
-X-CRM114-Status: GOOD (  11.61  )
+X-CRM114-CacheID: sfid-20200513_220317_345636_E0CF9A05 
+X-CRM114-Status: GOOD (  11.80  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -167,101 +167,188 @@ The Flexcom IP is part of the sama5d2 SoC. Move the flx0 node together
 with its function definitions in sama5d2.dtsi. Boards will just fill
 the pins and enable the desired functions.
 
-Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
----
- arch/arm/boot/dts/at91-sama5d27_som1_ek.dts |  7 -----
- arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi | 12 ---------
- arch/arm/boot/dts/sama5d2.dtsi              | 29 +++++++++++++++++++++
- 3 files changed, 29 insertions(+), 19 deletions(-)
+There is a single functional change in this patch. With the move of the
+flx0 uart5 definition in the SoC dtsi, the uart5 from
+at91-sama5d27_wlsom1_ek.dts inherits the following optional property:
+atmel,fifo-size = <32>;
+This particular change was tested by Codrin.
 
-diff --git a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-index abbf14e29d85..a0deff15fb9a 100644
---- a/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-+++ b/arch/arm/boot/dts/at91-sama5d27_som1_ek.dts
-@@ -126,20 +126,13 @@
+Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+Tested-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+---
+ arch/arm/boot/dts/at91-kizbox3_common.dtsi    | 13 ------
+ arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts | 12 ------
+ arch/arm/boot/dts/at91-sama5d2_icp.dts        |  6 ---
+ arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts     |  7 ----
+ arch/arm/boot/dts/at91-sama5d2_xplained.dts   |  7 +---
+ arch/arm/boot/dts/sama5d2.dtsi                | 40 +++++++++++++++++++
+ 6 files changed, 41 insertions(+), 44 deletions(-)
+
+diff --git a/arch/arm/boot/dts/at91-kizbox3_common.dtsi b/arch/arm/boot/dts/at91-kizbox3_common.dtsi
+index 4351a8d32225..7c3076e245ef 100644
+--- a/arch/arm/boot/dts/at91-kizbox3_common.dtsi
++++ b/arch/arm/boot/dts/at91-kizbox3_common.dtsi
+@@ -299,21 +299,8 @@
+ 	status = "disabled";
+ 
+ 	uart5: serial@200  {
+-		compatible = "atmel,at91sam9260-usart";
+-		reg = <0x200 0x400>;
+-		interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
+-		dmas = <&dma0
+-			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1)
+-			| AT91_XDMAC_DT_PERID(11))>,
+-		       <&dma0
+-			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1)
+-			| AT91_XDMAC_DT_PERID(12))>;
+-		dma-names = "tx", "rx";
+-		clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
+-		clock-names = "usart";
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_flx0_default>;
+-		atmel,fifo-size = <32>;
+ 		atmel,use-dma-rx;
+ 		atmel,use-dma-tx;
+ 		status = "disabled";
+diff --git a/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts b/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
+index 6b8461278950..6b38fa3f5568 100644
+--- a/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
++++ b/arch/arm/boot/dts/at91-sama5d27_wlsom1_ek.dts
+@@ -77,18 +77,6 @@
+ 	status = "okay";
+ 
+ 	uart5: serial@200 {
+-		compatible = "atmel,at91sam9260-usart";
+-		reg = <0x200 0x200>;
+-		interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
+-		dmas = <&dma0
+-			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
+-			 AT91_XDMAC_DT_PERID(11))>,
+-		       <&dma0
+-			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
+-			 AT91_XDMAC_DT_PERID(12))>;
+-		dma-names = "tx", "rx";
+-		clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
+-		clock-names = "usart";
+ 		pinctrl-0 = <&pinctrl_flx0_default>;
+ 		pinctrl-names = "default";
+ 		atmel,use-dma-rx;
+diff --git a/arch/arm/boot/dts/at91-sama5d2_icp.dts b/arch/arm/boot/dts/at91-sama5d2_icp.dts
+index 23f413afb333..4a01ab8e7e70 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_icp.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_icp.dts
+@@ -105,15 +105,9 @@
+ 	status = "okay";
+ 
+ 	spi2: spi@400 {
+-		compatible = "atmel,at91rm9200-spi";
+-		reg = <0x400 0x200>;
+-		interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
+-		clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
+-		clock-names = "spi_clk";
+ 		cs-gpios = <&pioA PIN_PC0 GPIO_ACTIVE_LOW>;
+ 		pinctrl-names = "default";
+ 		pinctrl-0 = <&pinctrl_mikrobus2_spi &pinctrl_ksz_spi_cs>;
+-		atmel,fifo-size = <16>;
+ 		status = "okay";
+ 		#address-cells = <1>;
+ 		#size-cells = <0>;
+diff --git a/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts b/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
+index 32435ce1dab2..8ad3a9c6c536 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_ptc_ek.dts
+@@ -191,20 +191,13 @@
  				status = "okay";
  
- 				i2c3: i2c@600 {
+ 				i2c2: i2c@600 {
 -					compatible = "atmel,sama5d2-i2c";
 -					reg = <0x600 0x200>;
--					interrupts = <20 IRQ_TYPE_LEVEL_HIGH 7>;
+-					interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
  					dmas = <0>, <0>;
  					dma-names = "tx", "rx";
- 					i2c-analog-filter;
- 					i2c-digital-filter;
- 					i2c-digital-filter-width-ns = <35>;
 -					#address-cells = <1>;
 -					#size-cells = <0>;
--					clocks = <&pmc PMC_TYPE_PERIPHERAL 20>;
- 					pinctrl-names = "default";
- 					pinctrl-0 = <&pinctrl_mikrobus_i2c>;
+-					clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
+ 					pinctrl-names = "default", "gpio";
+ 					pinctrl-0 = <&pinctrl_flx0_default>;
+ 					pinctrl-1 = <&pinctrl_flx0_gpio>;
+ 					sda-gpios = <&pioA PIN_PB28 GPIO_ACTIVE_HIGH>;
+ 					scl-gpios = <&pioA PIN_PB29 GPIO_ACTIVE_HIGH>;
 -					atmel,fifo-size = <16>;
  					status = "okay";
  				};
  			};
-diff --git a/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi b/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
-index bea3d60b9722..a06700e53e4c 100644
---- a/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
-+++ b/arch/arm/boot/dts/at91-sama5d27_wlsom1.dtsi
-@@ -36,18 +36,6 @@
- 	atmel,flexcom-mode = <ATMEL_FLEXCOM_MODE_USART>;
+diff --git a/arch/arm/boot/dts/at91-sama5d2_xplained.dts b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+index a5046f8257ad..da4442715ea5 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_xplained.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_xplained.dts
+@@ -327,14 +327,9 @@
+ 				status = "disabled"; /* conflict with ISC_D2 & ISC_D3 data pins */
  
- 	uart6: serial@200 {
--		compatible = "atmel,at91sam9260-usart";
--		reg = <0x200 0x200>;
--		interrupts = <20 IRQ_TYPE_LEVEL_HIGH 7>;
--		dmas = <&dma0
--			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
--			 AT91_XDMAC_DT_PERID(13))>,
--		       <&dma0
--			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
--			 AT91_XDMAC_DT_PERID(14))>;
--		dma-names = "tx", "rx";
--		clocks = <&pmc PMC_TYPE_PERIPHERAL 20>;
--		clock-names = "usart";
- 		pinctrl-0 = <&pinctrl_flx1_default>;
- 		pinctrl-names = "default";
- 	};
+ 				uart5: serial@200 {
+-					compatible = "atmel,at91sam9260-usart";
+-					reg = <0x200 0x200>;
+-					interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
+-					clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
+-					clock-names = "usart";
++					dmas = <0>, <0>;
+ 					pinctrl-names = "default";
+ 					pinctrl-0 = <&pinctrl_flx0_default>;
+-					atmel,fifo-size = <32>;
+ 					status = "okay";
+ 				};
+ 			};
 diff --git a/arch/arm/boot/dts/sama5d2.dtsi b/arch/arm/boot/dts/sama5d2.dtsi
-index 89064225e9aa..79ed7bd02df6 100644
+index 79ed7bd02df6..acb91908bd74 100644
 --- a/arch/arm/boot/dts/sama5d2.dtsi
 +++ b/arch/arm/boot/dts/sama5d2.dtsi
-@@ -645,6 +645,35 @@
+@@ -635,6 +635,46 @@
  				#size-cells = <1>;
- 				ranges = <0x0 0xf8038000 0x800>;
+ 				ranges = <0x0 0xf8034000 0x800>;
  				status = "disabled";
 +
-+				uart6: serial@200 {
++				uart5: serial@200 {
 +					compatible = "atmel,at91sam9260-usart";
 +					reg = <0x200 0x200>;
-+					interrupts = <20 IRQ_TYPE_LEVEL_HIGH 7>;
-+					clocks = <&pmc PMC_TYPE_PERIPHERAL 20>;
++					interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
++					clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
 +					clock-names = "usart";
 +					dmas = <&dma0
 +						(AT91_XDMAC_DT_MEM_IF(0) |
 +						 AT91_XDMAC_DT_PER_IF(1) |
-+						 AT91_XDMAC_DT_PERID(13))>,
++						 AT91_XDMAC_DT_PERID(11))>,
 +					       <&dma0
 +						(AT91_XDMAC_DT_MEM_IF(0) |
 +						 AT91_XDMAC_DT_PER_IF(1) |
-+						 AT91_XDMAC_DT_PERID(14))>;
++						 AT91_XDMAC_DT_PERID(12))>;
 +					dma-names = "tx", "rx";
++					atmel,fifo-size = <32>;
 +					status = "disabled";
 +				};
 +
-+				i2c3: i2c@600 {
++				spi2: spi@400 {
++					compatible = "atmel,at91rm9200-spi";
++					reg = <0x400 0x200>;
++					interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
++					clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
++					clock-names = "spi_clk";
++					atmel,fifo-size = <16>;
++					status = "disabled";
++				};
++
++				i2c2: i2c@600 {
 +					compatible = "atmel,sama5d2-i2c";
 +					reg = <0x600 0x200>;
-+					interrupts = <20 IRQ_TYPE_LEVEL_HIGH 7>;
++					interrupts = <19 IRQ_TYPE_LEVEL_HIGH 7>;
 +					#address-cells = <1>;
 +					#size-cells = <0>;
-+					clocks = <&pmc PMC_TYPE_PERIPHERAL 20>;
++					clocks = <&pmc PMC_TYPE_PERIPHERAL 19>;
 +					atmel,fifo-size = <16>;
 +					status = "disabled";
 +				};
  			};
  
- 			securam: sram@f8044000 {
+ 			flx1: flexcom@f8038000 {
 -- 
 2.23.0
 
