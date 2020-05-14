@@ -2,65 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE7B71D28E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:38:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6390F1D28EC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:40:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MV17dxlPBiUI0ZyvrJQQ/2T2LJB1v4rECYaHR9qffCE=; b=BwoKUymuN7HGFk
-	PKdzJccfY9QtArENOt3eCRi0fQHvB7A//mU+wcsQ1ybnjsuarwut95fRkXHDlkaWzxJF/xmjTsn1I
-	Xc3h8VBaubAwEQzmY5mjHIg0Occ0PLrcRLGwBbIJGyuWd5dbJgq9CVvcG6PQabMm7RYnuaigK+6ND
-	X/difdazwXj7i26wPsC3APPKbAmznDe8Mw9o1eaYgxGGSClCGEaccn2yEPgibZOe+uGlxbVIu72v/
-	UKlvuKvcO/zSU75eNu7MT+yB6ISV6c1wRVCauty4gCELQzMxJCoZQKe9HuePo9Z3EZJbPR78gorWL
-	APTpC57HT+whBAy7K+2w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Gd6BByMA58KZNOKafIf8W13RhcGeEmh1atCBQ6RYz5w=; b=itw8HtrVsCyB/S7prlhYKBn5x
+	4grsD35TqtBpirAj/JZbkl11FSTuV9GAMQJW0YpzNMtMPUyXz8WYl8W6y/2IqnXeQBymDuPPiwOxw
+	+2tzaZdnX/AAHresNLvNH/nmRzq1hcu4xGRMIAHqPq7jf2lRBa/oxkXBbzCB7xMjrYwjxJ+y4xm30
+	uowCsLaZmvyB7XdGC7qARnpEG1lTv8d4c9Vub85rgBThpdj69xitjUS6S4m2AN1SnEUKT5evXQo6R
+	jAG4PG/WqlFHe8wfKxgAm05yr35jYG3gh45Pos9Pr8xjrAhUS2uM9beI7Af9PhaiZbg25mcGNqDdI
+	beKB9PDNQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ8Rl-0002Kh-DX; Thu, 14 May 2020 07:38:25 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jZ8TN-0002oE-5A; Thu, 14 May 2020 07:40:05 +0000
+Received: from fllv0015.ext.ti.com ([198.47.19.141])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ8Ra-0002K4-Cb; Thu, 14 May 2020 07:38:17 +0000
-X-UUID: d428f2bf726544a38a74a8dcb992f71d-20200513
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=Gu/l0DNlkejQ0rUpWoRQ/vrndMfb7k6nSzqTJyc6dBU=; 
- b=smei3+ZhEDeuVl1cB8lN8evpqDIKW1ciFtvaGRRHX8dZVLjHc19ULeuP9B+SURoKHLJSjEPxN5RuAmQ6opLKMHlOrEd1f/FyJLBaImOsF5RWnvDY/flbdxkRm6/2z1Uv3AvwUvbEdGWec69tZZvCTua2jo4jh2OhNkIjVQ2+0CY=;
-X-UUID: d428f2bf726544a38a74a8dcb992f71d-20200513
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <michael.kao@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1663178612; Wed, 13 May 2020 23:38:12 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 00:38:08 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 15:38:08 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 14 May 2020 15:38:08 +0800
-Message-ID: <1589441889.11120.3.camel@mtksdccf07>
-Subject: Re: [v4,7/7] thermal: mediatek: use spinlock to protect PTPCORESEL
-From: Michael Kao <michael.kao@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Thu, 14 May 2020 15:38:09 +0800
-In-Reply-To: <20200323121537.22697-8-michael.kao@mediatek.com>
-References: <20200323121537.22697-1-michael.kao@mediatek.com>
- <20200323121537.22697-8-michael.kao@mediatek.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jZ8TB-0002nh-J7
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:39:54 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04E7doce052134;
+ Thu, 14 May 2020 02:39:50 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589441990;
+ bh=ryFOyIaFBEK0w40rlL9mZPW1Hpsa6/doKlcHGdfFZrs=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=HVU1KG3W920JxGoNxgLnFb89UftFKP1YpSOoq/+zqDnGYUng0P6/+PW9os/HNSUaO
+ 1nDUcHkWGvtH0CgWdd3PNvXAiRNQ3E8skYLfrzT5Tb9B/bE5w7HlGqjHe3Lx8GXbD5
+ lGiENlxoqnZqMnQfeSQ24jM2R2wnYRU1uwJQjTSM=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04E7doZS005715
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 14 May 2020 02:39:50 -0500
+Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 14
+ May 2020 02:39:49 -0500
+Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
+ (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Thu, 14 May 2020 02:39:49 -0500
+Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04E7dhPm014653;
+ Thu, 14 May 2020 02:39:46 -0500
+Subject: Re: [PATCH 1/6] dt-bindings: omap: Update PRM binding for genpd
+To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
+References: <20200512203852.29499-1-tony@atomide.com>
+ <20200512203852.29499-2-tony@atomide.com>
+From: Tero Kristo <t-kristo@ti.com>
+Message-ID: <352b8c4d-1233-e208-63ce-c116632546a9@ti.com>
+Date: Thu, 14 May 2020 10:39:43 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20200512203852.29499-2-tony@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_003816_193102_C5EB1CD8 
-X-CRM114-Status: GOOD (  14.65  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_003953_708182_0E4BE31B 
+X-CRM114-Status: GOOD (  17.70  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.141 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -70,8 +80,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,77 +92,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
- Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
- Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, Rob Herring <robh@kernel.org>,
+ linux-kernel@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
+ Santosh Shilimkar <ssantosh@kernel.org>, Suman Anna <s-anna@ti.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-03-23 at 20:15 +0800, Michael Kao wrote:
-> From: "michael.kao" <michael.kao@mediatek.com>
+On 12/05/2020 23:38, Tony Lindgren wrote:
+> The PRM (Power and Reset Module) has registers to enable and disable
+> power domains, so let's update the binding for that.
 > 
-> The driver of thermal and svs will use the
-> same register for the project which should select
-> bank before reading sensor value.
-> 
-> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
+> Cc: devicetree@vger.kernel.org
+> Cc: Rob Herring <robh@kernel.org>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
 > ---
->  drivers/thermal/mtk_thermal.c | 9 ++++-----
->  1 file changed, 4 insertions(+), 5 deletions(-)
+>   Documentation/devicetree/bindings/arm/omap/prm-inst.txt | 4 ++++
+>   1 file changed, 4 insertions(+)
 > 
-> diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
-> index 9eaca432920e..594ad4f0f8cd 100644
-> --- a/drivers/thermal/mtk_thermal.c
-> +++ b/drivers/thermal/mtk_thermal.c
-> @@ -22,6 +22,7 @@
->  #include <linux/thermal.h>
->  #include <linux/reset.h>
->  #include <linux/types.h>
-> +#include <linux/power/mtk_svs.h>
->  
->  /* AUXADC Registers */
->  #define AUXADC_CON1_SET_V	0x008
-> @@ -262,7 +263,7 @@ struct mtk_thermal {
->  	struct clk *clk_peri_therm;
->  	struct clk *clk_auxadc;
->  	/* lock: for getting and putting banks */
-> -	struct mutex lock;
-> +	unsigned long flags;
->  
->  	/* Calibration values */
->  	s32 adc_ge;
-> @@ -561,7 +562,7 @@ static void mtk_thermal_get_bank(struct mtk_thermal_bank *bank)
->  	u32 val;
->  
->  	if (mt->conf->need_switch_bank) {
-> -		mutex_lock(&mt->lock);
-> +		mt->flags = claim_mtk_svs_lock();
->  
->  		val = readl(mt->thermal_base + PTPCORESEL);
->  		val &= ~0xf;
-> @@ -581,7 +582,7 @@ static void mtk_thermal_put_bank(struct mtk_thermal_bank *bank)
->  	struct mtk_thermal *mt = bank->mt;
->  
->  	if (mt->conf->need_switch_bank)
-> -		mutex_unlock(&mt->lock);
-> +		release_mtk_svs_lock(mt->flags);
->  }
->  
->  /**
-> @@ -938,8 +939,6 @@ static int mtk_thermal_probe(struct platform_device *pdev)
->  	if (ret)
->  		return ret;
->  
-> -	mutex_init(&mt->lock);
-> -
->  	mt->dev = &pdev->dev;
->  
->  	auxadc = of_parse_phandle(np, "mediatek,auxadc", 0);
+> diff --git a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> --- a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> +++ b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
+> @@ -18,12 +18,16 @@ Required properties:
+>   		(base address and length)
+>   
+>   Optional properties:
+> +- #power-domain-cells:	Should be 0 if the PRM instance is a power domain.
+>   - #reset-cells:	Should be 1 if the PRM instance in question supports resets.
+> +- clocks: Functional and interface clocks managed by the power domain
+> +- clock-names: Names for the clocks using "fck" and "ick" naming
+
+Whats the purpose of the clocks for PRM? It looks like you are using 
+this with ABE domain on omap4/omap5, but why is this needed?
+
+-Tero
+
+>   
+>   Example:
+>   
+>   prm_dsp2: prm@1b00 {
+>   	compatible = "ti,dra7-prm-inst", "ti,omap-prm-inst";
+>   	reg = <0x1b00 0x40>;
+> +	#power-domain-cells = <0>;
+>   	#reset-cells = <1>;
+>   };
+> 
+
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
