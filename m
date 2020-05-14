@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 690711D32F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:34:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D9BC1D3306
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:34:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tIE2GIOe/NOtZjyrAWJyvTkq4NbQbcSpONF7L4xnp0w=; b=BJqlyHV+44jA2uksI9Tp8i60GT
-	NU3mxqiQ9CZLWnXU+nPiNqEJNZvXy5Ft7UZ//H43c1QUB5VBFZUROKpvWw6IfzyQY3K/ZIjgKkKhM
-	Tl50N6wTCZ8fFV7gqNP5gghE5Gh1ZGE1J5fpwsW2ByfXjkmR4/m+w2YAiYMN/EUvQryfvMMQrhzUJ
-	iENk49JF8Q8UWs8kMDhsf8S8QscyoCTOgqWqv3/hLWRyiTgPLhpn2ATneCQ7boqF53cKyJzagntRi
-	uuHNFKOfSWPDEQkYNEzXNdwold/nLCkE6IfDB3J6Bg4/CWA+gL8Y9AVztbaGRKywJ9bWHsHsdVOR0
-	sF3sB2Hg==;
+	bh=z1nl33ndpaku6x6a+OQYtHtVv7c3pE0kp60xKehqhgc=; b=jrYrWDn0J7o7ZJX5acC0gUgJSQ
+	lBahTSGExnyhoVMLs54sbKrDjb4wmr0OlTaPypM/jNUoNeiU8ph7HFaRZviPlDdF7IFVwfA/HNX+4
+	Y+Sb0hmivUY+6/SF1vZYQEVmNDvzpjAvCKsk/tsnWBmSbMF5z52XmOURbchTEmoxBys04hYoBHZ3Y
+	Mz37VpcnaC/B4qCUsrOIjL1yTDKqOBLTBN5feP9bOlizOlo6Z9YM+k4ZO5qH/JArev/aq2gjLQrte
+	af0kUfYL11tjAs20nhkcMgGRSYqHHFkw2YZjF2BjiIW63iwEtZeeRjYw3f1oifocp30L5CtD2vZ4v
+	EW/6nXSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZEw4-0000BL-LZ; Thu, 14 May 2020 14:34:08 +0000
+	id 1jZEwO-0000Nt-Bo; Thu, 14 May 2020 14:34:28 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZEuo-0007PP-LG
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:32:55 +0000
+ id 1jZEup-0007Ps-Oi
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:32:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 184C611D4;
- Thu, 14 May 2020 07:32:50 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E0421FB;
+ Thu, 14 May 2020 07:32:51 -0700 (PDT)
 Received: from seattle-bionic.arm.com.Home (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1F7883F71E;
- Thu, 14 May 2020 07:32:49 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 53DBA3F71E;
+ Thu, 14 May 2020 07:32:50 -0700 (PDT)
 From: Oliver Swede <oli.swede@arm.com>
 To: Will Deacon <will@kernel.org>,
 	Catalin Marinas <catalin.marinas@arm.com>
-Subject: [PATCH v3 03/13] arm64: Import latest version of Cortex Strings'
- memcmp
-Date: Thu, 14 May 2020 14:32:17 +0000
-Message-Id: <20200514143227.605-4-oli.swede@arm.com>
+Subject: [PATCH v3 04/13] arm64: Import latest version of Cortex Strings'
+ memmove
+Date: Thu, 14 May 2020 14:32:18 +0000
+Message-Id: <20200514143227.605-5-oli.swede@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200514143227.605-1-oli.swede@arm.com>
 References: <20200514143227.605-1-oli.swede@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_073250_779783_8C049A19 
-X-CRM114-Status: GOOD (  20.68  )
+X-CRM114-CacheID: sfid-20200514_073251_890015_DFDCA6C2 
+X-CRM114-Status: GOOD (  14.68  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -73,9 +73,9 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Sam Tebbs <sam.tebbs@arm.com>
 
-Import the latest version of Cortex Strings' memcmp function.
+Import the latest version of Cortex Strings' memmove function.
 
-The upstream source is src/aarch64/memcmp.S as of commit f77e4c932b4f
+The upstream source is src/aarch64/memmove.S as of commit 99b01ddb8e41
 in https://git.linaro.org/toolchain/cortex-strings.git.
 
 Signed-off-by: Sam Tebbs <sam.tebbs@arm.com>
@@ -83,20 +83,20 @@ Signed-off-by: Sam Tebbs <sam.tebbs@arm.com>
 Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 Signed-off-by: Oliver Swede <oli.swede@arm.com>
 ---
- arch/arm64/lib/memcmp.S | 333 ++++++++++++++--------------------------
- 1 file changed, 117 insertions(+), 216 deletions(-)
+ arch/arm64/lib/memmove.S | 232 +++++++++++++--------------------------
+ 1 file changed, 78 insertions(+), 154 deletions(-)
 
-diff --git a/arch/arm64/lib/memcmp.S b/arch/arm64/lib/memcmp.S
-index c0671e793ea9..580dd0b12ccb 100644
---- a/arch/arm64/lib/memcmp.S
-+++ b/arch/arm64/lib/memcmp.S
+diff --git a/arch/arm64/lib/memmove.S b/arch/arm64/lib/memmove.S
+index 02cda2e33bde..d0977d0ad745 100644
+--- a/arch/arm64/lib/memmove.S
++++ b/arch/arm64/lib/memmove.S
 @@ -1,13 +1,12 @@
  /* SPDX-License-Identifier: GPL-2.0-only */
  /*
 - * Copyright (C) 2013 ARM Ltd.
 - * Copyright (C) 2013 Linaro.
-+ * Copyright (c) 2013, 2018 Linaro Limited. All rights reserved.
-+ * Copyright (c) 2017 ARM Ltd. All rights reserved.
++ * Copyright (c) 2013 Linaro Limited. All rights reserved.
++ * Copyright (c) 2015 ARM Ltd. All rights reserved.
   *
 - * This code is based on glibc cortex strings work originally authored by Linaro
 - * be found @
@@ -109,342 +109,245 @@ index c0671e793ea9..580dd0b12ccb 100644
   */
  
  #include <linux/linkage.h>
-@@ -25,223 +24,125 @@
- *  x0 - a compare result, maybe less than, equal to, or greater than ZERO
- */
+@@ -25,165 +24,90 @@
+  * Returns:
+  *	x0 - dest
+  */
+-dstin	.req	x0
+-src	.req	x1
+-count	.req	x2
+-tmp1	.req	x3
+-tmp1w	.req	w3
+-tmp2	.req	x4
+-tmp2w	.req	w4
+-tmp3	.req	x5
+-tmp3w	.req	w5
+-dst	.req	x6
++/* Parameters and result.  */
++#define dstin	x0
++#define src	x1
++#define count	x2
++#define srcend	x3
++#define dstend	x4
++#define tmp1	x5
++#define A_l	x6
++#define A_h	x7
++#define B_l	x8
++#define B_h	x9
++#define C_l	x10
++#define C_h	x11
++#define D_l	x12
++#define D_h	x13
++#define E_l	count
++#define E_h	tmp1
  
-+#define L(l) .L ## l
-+
- /* Parameters and result.  */
--src1		.req	x0
--src2		.req	x1
--limit		.req	x2
--result		.req	x0
-+#define src1		x0
-+#define src2		x1
-+#define limit		x2
-+#define result		w0
+-A_l	.req	x7
+-A_h	.req	x8
+-B_l	.req	x9
+-B_h	.req	x10
+-C_l	.req	x11
+-C_h	.req	x12
+-D_l	.req	x13
+-D_h	.req	x14
++/* All memmoves up to 96 bytes are done by memcpy as it supports overlaps.
++   Larger backwards copies are also handled by memcpy. The only remaining
++   case is forward large copies.  The destination is aligned, and an
++   unrolled loop processes 64 bytes per iteration.
++*/
  
- /* Internal variables.  */
--data1		.req	x3
--data1w		.req	w3
--data2		.req	x4
--data2w		.req	w4
--has_nul		.req	x5
--diff		.req	x6
--endloop		.req	x7
--tmp1		.req	x8
--tmp2		.req	x9
--tmp3		.req	x10
--pos		.req	x11
--limit_wd	.req	x12
--mask		.req	x13
-+#define data1		x3
-+#define data1w		w3
-+#define data1h		x4
-+#define data2		x5
-+#define data2w		w5
-+#define data2h		x6
-+#define tmp1		x7
-+#define tmp2		x8
+-	.weak memmove
++    .weak memmove
+ SYM_FUNC_START_ALIAS(__memmove)
+ SYM_FUNC_START_PI(memmove)
+-	cmp	dstin, src
+-	b.lo	__memcpy
+-	add	tmp1, src, count
+-	cmp	dstin, tmp1
+-	b.hs	__memcpy		/* No overlap.  */
++	sub	tmp1, dstin, src
++	cmp	count, 96
++	ccmp	tmp1, count, 2, hi
++	b.hs	__memcpy
  
- SYM_FUNC_START_WEAK_PI(memcmp)
--	cbz	limit, .Lret0
--	eor	tmp1, src1, src2
--	tst	tmp1, #7
--	b.ne	.Lmisaligned8
--	ands	tmp1, src1, #7
--	b.ne	.Lmutual_align
--	sub	limit_wd, limit, #1 /* limit != 0, so no underflow.  */
--	lsr	limit_wd, limit_wd, #3 /* Convert to Dwords.  */
+-	add	dst, dstin, count
+-	add	src, src, count
+-	cmp	count, #16
+-	b.lo	.Ltail15  /*probably non-alignment accesses.*/
++	cbz	tmp1, 3f
++	add	dstend, dstin, count
++	add	srcend, src, count
+ 
+-	ands	tmp2, src, #15     /* Bytes to reach alignment.  */
+-	b.eq	.LSrcAligned
+-	sub	count, count, tmp2
 -	/*
--	* The input source addresses are at alignment boundary.
--	* Directly compare eight bytes each time.
+-	* process the aligned offset length to make the src aligned firstly.
+-	* those extra instructions' cost is acceptable. It also make the
+-	* coming accesses are based on aligned address.
 -	*/
--.Lloop_aligned:
--	ldr	data1, [src1], #8
--	ldr	data2, [src2], #8
--.Lstart_realigned:
--	subs	limit_wd, limit_wd, #1
--	eor	diff, data1, data2	/* Non-zero if differences found.  */
--	csinv	endloop, diff, xzr, cs	/* Last Dword or differences.  */
--	cbz	endloop, .Lloop_aligned
--
--	/* Not reached the limit, must have found a diff.  */
--	tbz	limit_wd, #63, .Lnot_limit
--
--	/* Limit % 8 == 0 => the diff is in the last 8 bytes. */
--	ands	limit, limit, #7
--	b.eq	.Lnot_limit
--	/*
--	* The remained bytes less than 8. It is needed to extract valid data
--	* from last eight bytes of the intended memory range.
--	*/
--	lsl	limit, limit, #3	/* bytes-> bits.  */
--	mov	mask, #~0
--CPU_BE( lsr	mask, mask, limit )
--CPU_LE( lsl	mask, mask, limit )
--	bic	data1, data1, mask
--	bic	data2, data2, mask
--
--	orr	diff, diff, mask
--	b	.Lnot_limit
--
--.Lmutual_align:
--	/*
--	* Sources are mutually aligned, but are not currently at an
--	* alignment boundary. Round down the addresses and then mask off
--	* the bytes that precede the start point.
--	*/
--	bic	src1, src1, #7
--	bic	src2, src2, #7
--	ldr	data1, [src1], #8
--	ldr	data2, [src2], #8
--	/*
--	* We can not add limit with alignment offset(tmp1) here. Since the
--	* addition probably make the limit overflown.
--	*/
--	sub	limit_wd, limit, #1/*limit != 0, so no underflow.*/
--	and	tmp3, limit_wd, #7
--	lsr	limit_wd, limit_wd, #3
--	add	tmp3, tmp3, tmp1
--	add	limit_wd, limit_wd, tmp3, lsr #3
--	add	limit, limit, tmp1/* Adjust the limit for the extra.  */
--
--	lsl	tmp1, tmp1, #3/* Bytes beyond alignment -> bits.*/
--	neg	tmp1, tmp1/* Bits to alignment -64.  */
--	mov	tmp2, #~0
--	/*mask off the non-intended bytes before the start address.*/
--CPU_BE( lsl	tmp2, tmp2, tmp1 )/*Big-endian.Early bytes are at MSB*/
--	/* Little-endian.  Early bytes are at LSB.  */
--CPU_LE( lsr	tmp2, tmp2, tmp1 )
--
--	orr	data1, data1, tmp2
--	orr	data2, data2, tmp2
--	b	.Lstart_realigned
--
--	/*src1 and src2 have different alignment offset.*/
--.Lmisaligned8:
--	cmp	limit, #8
--	b.lo	.Ltiny8proc /*limit < 8: compare byte by byte*/
--
--	and	tmp1, src1, #7
--	neg	tmp1, tmp1
--	add	tmp1, tmp1, #8/*valid length in the first 8 bytes of src1*/
--	and	tmp2, src2, #7
--	neg	tmp2, tmp2
--	add	tmp2, tmp2, #8/*valid length in the first 8 bytes of src2*/
--	subs	tmp3, tmp1, tmp2
--	csel	pos, tmp1, tmp2, hi /*Choose the maximum.*/
--
--	sub	limit, limit, pos
--	/*compare the proceeding bytes in the first 8 byte segment.*/
--.Ltinycmp:
--	ldrb	data1w, [src1], #1
--	ldrb	data2w, [src2], #1
--	subs	pos, pos, #1
--	ccmp	data1w, data2w, #0, ne  /* NZCV = 0b0000.  */
--	b.eq	.Ltinycmp
--	cbnz	pos, 1f /*diff occurred before the last byte.*/
--	cmp	data1w, data2w
--	b.eq	.Lstart_align
+-	tbz	tmp2, #0, 1f
+-	ldrb	tmp1w, [src, #-1]!
+-	strb	tmp1w, [dst, #-1]!
 -1:
--	sub	result, data1, data2
--	ret
+-	tbz	tmp2, #1, 2f
+-	ldrh	tmp1w, [src, #-2]!
+-	strh	tmp1w, [dst, #-2]!
+-2:
+-	tbz	tmp2, #2, 3f
+-	ldr	tmp1w, [src, #-4]!
+-	str	tmp1w, [dst, #-4]!
+-3:
+-	tbz	tmp2, #3, .LSrcAligned
+-	ldr	tmp1, [src, #-8]!
+-	str	tmp1, [dst, #-8]!
 -
--.Lstart_align:
--	lsr	limit_wd, limit, #3
--	cbz	limit_wd, .Lremain8
--
--	ands	xzr, src1, #7
--	b.eq	.Lrecal_offset
--	/*process more leading bytes to make src1 aligned...*/
--	add	src1, src1, tmp3 /*backwards src1 to alignment boundary*/
--	add	src2, src2, tmp3
--	sub	limit, limit, tmp3
--	lsr	limit_wd, limit, #3
--	cbz	limit_wd, .Lremain8
--	/*load 8 bytes from aligned SRC1..*/
--	ldr	data1, [src1], #8
--	ldr	data2, [src2], #8
--
--	subs	limit_wd, limit_wd, #1
--	eor	diff, data1, data2  /*Non-zero if differences found.*/
--	csinv	endloop, diff, xzr, ne
--	cbnz	endloop, .Lunequal_proc
--	/*How far is the current SRC2 from the alignment boundary...*/
--	and	tmp3, tmp3, #7
--
--.Lrecal_offset:/*src1 is aligned now..*/
--	neg	pos, tmp3
--.Lloopcmp_proc:
--	/*
--	* Divide the eight bytes into two parts. First,backwards the src2
--	* to an alignment boundary,load eight bytes and compare from
--	* the SRC2 alignment boundary. If all 8 bytes are equal,then start
--	* the second part's comparison. Otherwise finish the comparison.
--	* This special handle can garantee all the accesses are in the
--	* thread/task space in avoid to overrange access.
--	*/
--	ldr	data1, [src1,pos]
--	ldr	data2, [src2,pos]
--	eor	diff, data1, data2  /* Non-zero if differences found.  */
--	cbnz	diff, .Lnot_limit
--
--	/*The second part process*/
--	ldr	data1, [src1], #8
--	ldr	data2, [src2], #8
--	eor	diff, data1, data2  /* Non-zero if differences found.  */
--	subs	limit_wd, limit_wd, #1
--	csinv	endloop, diff, xzr, ne/*if limit_wd is 0,will finish the cmp*/
--	cbz	endloop, .Lloopcmp_proc
--.Lunequal_proc:
--	cbz	diff, .Lremain8
--
--/* There is difference occurred in the latest comparison. */
--.Lnot_limit:
--/*
--* For little endian,reverse the low significant equal bits into MSB,then
--* following CLZ can find how many equal bits exist.
--*/
--CPU_LE( rev	diff, diff )
--CPU_LE( rev	data1, data1 )
--CPU_LE( rev	data2, data2 )
--
--	/*
--	* The MS-non-zero bit of DIFF marks either the first bit
--	* that is different, or the end of the significant data.
--	* Shifting left now will bring the critical information into the
--	* top bits.
--	*/
--	clz	pos, diff
--	lsl	data1, data1, pos
--	lsl	data2, data2, pos
--	/*
--	* We need to zero-extend (char is unsigned) the value and then
--	* perform a signed subtraction.
--	*/
--	lsr	data1, data1, #56
--	sub	result, data1, data2, lsr #56
-+	subs	limit, limit, 8
-+	b.lo	L(less8)
-+
-+	ldr	data1, [src1], 8
-+	ldr	data2, [src2], 8
-+	cmp	data1, data2
-+	b.ne	L(return)
-+
-+	subs	limit, limit, 8
-+	b.gt	L(more16)
-+
-+	ldr	data1, [src1, limit]
-+	ldr	data2, [src2, limit]
-+	b	L(return)
-+
-+L(more16):
-+	ldr	data1, [src1], 8
-+	ldr	data2, [src2], 8
-+	cmp	data1, data2
-+	bne	L(return)
-+
-+	/* Jump directly to comparing the last 16 bytes for 32 byte (or less)
-+	   strings.  */
-+	subs	limit, limit, 16
-+	b.ls	L(last_bytes)
-+
-+	/* We overlap loads between 0-32 bytes at either side of SRC1 when we
-+	   try to align, so limit it only to strings larger than 128 bytes.  */
-+	cmp	limit, 96
-+	b.ls	L(loop16)
-+
-+	/* Align src1 and adjust src2 with bytes not yet done.  */
-+	and	tmp1, src1, 15
-+	add	limit, limit, tmp1
-+	sub	src1, src1, tmp1
-+	sub	src2, src2, tmp1
-+
-+	/* Loop performing 16 bytes per iteration using aligned src1.
-+	   Limit is pre-decremented by 16 and must be larger than zero.
-+	   Exit if <= 16 bytes left to do or if the data is not equal.  */
-+	.p2align 4
-+L(loop16):
-+	ldp	data1, data1h, [src1], 16
-+	ldp	data2, data2h, [src2], 16
-+	subs	limit, limit, 16
-+	ccmp	data1, data2, 0, hi
-+	ccmp	data1h, data2h, 0, eq
-+	b.eq	L(loop16)
-+
-+	cmp	data1, data2
-+	bne	L(return)
-+	mov	data1, data1h
-+	mov	data2, data2h
-+	cmp	data1, data2
-+	bne	L(return)
-+
-+	/* Compare last 1-16 bytes using unaligned access.  */
-+L(last_bytes):
-+	add	src1, src1, limit
-+	add	src2, src2, limit
-+	ldp	data1, data1h, [src1]
-+	ldp	data2, data2h, [src2]
-+	cmp	data1, data2
-+	bne	L(return)
-+	mov	data1, data1h
-+	mov	data2, data2h
-+	cmp	data1, data2
-+
-+	/* Compare data bytes and set return value to 0, -1 or 1.  */
-+L(return):
-+#ifndef __AARCH64EB__
-+	rev	data1, data1
-+	rev	data2, data2
-+#endif
-+	cmp	data1, data2
-+L(ret_eq):
-+	cset	result, ne
-+	cneg	result, result, lo
- 	ret
+-.LSrcAligned:
+-	cmp	count, #64
+-	b.ge	.Lcpy_over64
++	/* Align dstend to 16 byte alignment so that we don't cross cache line
++	   boundaries on both loads and stores.	 There are at least 96 bytes
++	   to copy, so copy 16 bytes unaligned and then align.	The loop
++	   copies 64 bytes per iteration and prefetches one iteration ahead.  */
  
--.Lremain8:
--	/* Limit % 8 == 0 =>. all data are equal.*/
--	ands	limit, limit, #7
--	b.eq	.Lret0
+-	/*
+-	* Deal with small copies quickly by dropping straight into the
+-	* exit block.
+-	*/
+-.Ltail63:
+-	/*
+-	* Copy up to 48 bytes of data. At this point we only need the
+-	* bottom 6 bits of count to be accurate.
+-	*/
+-	ands	tmp1, count, #0x30
+-	b.eq	.Ltail15
+-	cmp	tmp1w, #0x20
+-	b.eq	1f
+-	b.lt	2f
+-	ldp	A_l, A_h, [src, #-16]!
+-	stp	A_l, A_h, [dst, #-16]!
++	and	tmp1, dstend, 15
++	ldp	D_l, D_h, [srcend, -16]
++	sub	srcend, srcend, tmp1
++	sub	count, count, tmp1
++	ldp	A_l, A_h, [srcend, -16]
++	stp	D_l, D_h, [dstend, -16]
++	ldp	B_l, B_h, [srcend, -32]
++	ldp	C_l, C_h, [srcend, -48]
++	ldp	D_l, D_h, [srcend, -64]!
++	sub	dstend, dstend, tmp1
++	subs	count, count, 128
++	b.ls	2f
++	nop
+ 1:
+-	ldp	A_l, A_h, [src, #-16]!
+-	stp	A_l, A_h, [dst, #-16]!
+-2:
+-	ldp	A_l, A_h, [src, #-16]!
+-	stp	A_l, A_h, [dst, #-16]!
++	stp	A_l, A_h, [dstend, -16]
++	ldp	A_l, A_h, [srcend, -16]
++	stp	B_l, B_h, [dstend, -32]
++	ldp	B_l, B_h, [srcend, -32]
++	stp	C_l, C_h, [dstend, -48]
++	ldp	C_l, C_h, [srcend, -48]
++	stp	D_l, D_h, [dstend, -64]!
++	ldp	D_l, D_h, [srcend, -64]!
++	subs	count, count, 64
++	b.hi	1b
+ 
+-.Ltail15:
+-	tbz	count, #3, 1f
+-	ldr	tmp1, [src, #-8]!
+-	str	tmp1, [dst, #-8]!
+-1:
+-	tbz	count, #2, 2f
+-	ldr	tmp1w, [src, #-4]!
+-	str	tmp1w, [dst, #-4]!
++	/* Write the last full set of 64 bytes.	 The remainder is at most 64
++	   bytes, so it is safe to always copy 64 bytes from the start even if
++	   there is just 1 byte left.  */
+ 2:
+-	tbz	count, #1, 3f
+-	ldrh	tmp1w, [src, #-2]!
+-	strh	tmp1w, [dst, #-2]!
+-3:
+-	tbz	count, #0, .Lexitfunc
+-	ldrb	tmp1w, [src, #-1]
+-	strb	tmp1w, [dst, #-1]
 -
--.Ltiny8proc:
--	ldrb	data1w, [src1], #1
--	ldrb	data2w, [src2], #1
--	subs	limit, limit, #1
--
--	ccmp	data1w, data2w, #0, ne  /* NZCV = 0b0000. */
--	b.eq	.Ltiny8proc
--	sub	result, data1, data2
+-.Lexitfunc:
 -	ret
--.Lret0:
--	mov	result, #0
-+	.p2align 4
-+	/* Compare up to 8 bytes.  Limit is [-8..-1].  */
-+L(less8):
-+	adds	limit, limit, 4
-+	b.lo	L(less4)
-+	ldr	data1w, [src1], 4
-+	ldr	data2w, [src2], 4
-+	cmp	data1w, data2w
-+	b.ne	L(return)
-+	sub	limit, limit, 4
-+L(less4):
-+	adds	limit, limit, 4
-+	beq	L(ret_eq)
-+L(byte_loop):
-+	ldrb	data1w, [src1], 1
-+	ldrb	data2w, [src2], 1
-+	subs	limit, limit, 1
-+	ccmp	data1w, data2w, 0, ne	/* NZCV = 0b0000.  */
-+	b.eq	L(byte_loop)
-+	sub	result, data1w, data2w
- 	ret
- SYM_FUNC_END_PI(memcmp)
- EXPORT_SYMBOL_NOKASAN(memcmp)
+-
+-.Lcpy_over64:
+-	subs	count, count, #128
+-	b.ge	.Lcpy_body_large
+-	/*
+-	* Less than 128 bytes to copy, so handle 64 bytes here and then jump
+-	* to the tail.
+-	*/
+-	ldp	A_l, A_h, [src, #-16]
+-	stp	A_l, A_h, [dst, #-16]
+-	ldp	B_l, B_h, [src, #-32]
+-	ldp	C_l, C_h, [src, #-48]
+-	stp	B_l, B_h, [dst, #-32]
+-	stp	C_l, C_h, [dst, #-48]
+-	ldp	D_l, D_h, [src, #-64]!
+-	stp	D_l, D_h, [dst, #-64]!
+-
+-	tst	count, #0x3f
+-	b.ne	.Ltail63
+-	ret
+-
+-	/*
+-	* Critical loop. Start at a new cache line boundary. Assuming
+-	* 64 bytes per line this ensures the entire loop is in one line.
+-	*/
+-	.p2align	L1_CACHE_SHIFT
+-.Lcpy_body_large:
+-	/* pre-load 64 bytes data. */
+-	ldp	A_l, A_h, [src, #-16]
+-	ldp	B_l, B_h, [src, #-32]
+-	ldp	C_l, C_h, [src, #-48]
+-	ldp	D_l, D_h, [src, #-64]!
+-1:
+-	/*
+-	* interlace the load of next 64 bytes data block with store of the last
+-	* loaded 64 bytes data.
+-	*/
+-	stp	A_l, A_h, [dst, #-16]
+-	ldp	A_l, A_h, [src, #-16]
+-	stp	B_l, B_h, [dst, #-32]
+-	ldp	B_l, B_h, [src, #-32]
+-	stp	C_l, C_h, [dst, #-48]
+-	ldp	C_l, C_h, [src, #-48]
+-	stp	D_l, D_h, [dst, #-64]!
+-	ldp	D_l, D_h, [src, #-64]!
+-	subs	count, count, #64
+-	b.ge	1b
+-	stp	A_l, A_h, [dst, #-16]
+-	stp	B_l, B_h, [dst, #-32]
+-	stp	C_l, C_h, [dst, #-48]
+-	stp	D_l, D_h, [dst, #-64]!
++	ldp	E_l, E_h, [src, 48]
++	stp	A_l, A_h, [dstend, -16]
++	ldp	A_l, A_h, [src, 32]
++	stp	B_l, B_h, [dstend, -32]
++	ldp	B_l, B_h, [src, 16]
++	stp	C_l, C_h, [dstend, -48]
++	ldp	C_l, C_h, [src]
++	stp	D_l, D_h, [dstend, -64]
++	stp	E_l, E_h, [dstin, 48]
++	stp	A_l, A_h, [dstin, 32]
++	stp	B_l, B_h, [dstin, 16]
++	stp	C_l, C_h, [dstin]
++3:	ret
+ 
+-	tst	count, #0x3f
+-	b.ne	.Ltail63
+-	ret
+ SYM_FUNC_END_PI(memmove)
+ EXPORT_SYMBOL(memmove)
+ SYM_FUNC_END_ALIAS(__memmove)
 -- 
 2.17.1
 
