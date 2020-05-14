@@ -2,69 +2,108 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1EEB1D2518
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 04:24:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B9DA1D2559
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 05:14:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w8d4k7vOz6bxgeoi4qas3n3uLatqKJR+n2iLZQC54Jc=; b=XrW3OrtTwrIDXj
-	1WX9w3iJvwrWkQtc/YtNQuH3jLKnJStywatsNN8Ak9imLrVAZH4oBBd/xaVHmTw1BMuoEVSzjHHeA
-	MAQhwD/VikR2vlNMcUlvUAx1XCdGptUj2IYmncNzAqAx+bDCqjspv46sx87oEby+YVRSZYXfxG60W
-	wZxwpR91GzlEaqv1oAY9JskEis68NhSDfYXfU42LmBDasgnka+2mrtUYJxwMEjJcVW0FBPd+Av5VT
-	MXUc7aLruEopPF8XPNvcbtVwWmq2uIW2bwFTMIj1JPjCViYPv7/xUN+jksD8QlF3C/d2uyaPXf8/q
-	OLQc/iQP/+oPMEVAjnLQ==;
+	List-Owner; bh=ayBtsnEeFfJWOAeqVPneyyn+JlOGbxCtGAg/d9rG+YM=; b=Bo9aRnLG1m5G31
+	r1cXcR3Fz2d4Yss+pwKTG6RwpltfkdghS9vSteKbbkOZsNZnzGq3FdoZMasvHg3wpat6E3y91WFiJ
+	8iw4AphfmKrMS1FyS0M5G6tgS/rsQhf/bL5g7UyuDidStvgcAYwfkzkN0FdqVyCPhoxUshQnKOymH
+	jx5o47S2P53mKYfC/5Q1hgdTnkxBJMY9D777YqWlkUoTjXyAdzO1DcETbqxo/R9oy++a9iklYNyKl
+	lXzLpBQ9Ka5TxwrfLGFq9h7Un5anqtT8GbA1cn9E5vM5/sYELbYGMTvG8JdBp6ZBi4HMoGVh+WGSP
+	UjfKBWPelKkuHZbXbddg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ3Xb-00039N-Uc; Thu, 14 May 2020 02:24:07 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jZ4Jr-0000mB-Iw; Thu, 14 May 2020 03:13:59 +0000
+Received: from mail-eopbgr80054.outbound.protection.outlook.com ([40.107.8.54]
+ helo=EUR04-VI1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ3XQ-00038s-Uv; Thu, 14 May 2020 02:24:00 +0000
-X-UUID: 86c4d40b91454c62a911e7f2c012440d-20200513
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=gF/qkZSDBMNUmVBXvJwR6PHcG8SN91qI0JIPZWeq/hM=; 
- b=GlDa03V6dCLLPQe7PLDkkRpRI5IwPZRol6+f8uhkzLuZ3KUNMHDgBgDALr+Ip0XzHgyHb6v9Z+dBHHWjOrDBh+ps95Qgl4Ri763RIX9nDT9d3AW4sG9r3V3WCW+V+fccJkP4//4sluoadFLWwmE1nvCKc++5Gw1zhst71DkKky0=;
-X-UUID: 86c4d40b91454c62a911e7f2c012440d-20200513
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 835977989; Wed, 13 May 2020 18:23:53 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 13 May 2020 19:23:51 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 10:23:48 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 14 May 2020 10:23:48 +0800
-Message-ID: <1589423030.3197.94.camel@mtkswgap22>
-Subject: Re: [PATCH v1 4/4] scsi: ufs: Fix WriteBooster flush during runtime
- suspend
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
-Date: Thu, 14 May 2020 10:23:50 +0800
-In-Reply-To: <725d057c-2379-710e-287f-ac11a59c08bc@codeaurora.org>
-References: <20200512104750.8711-1-stanley.chu@mediatek.com>
- <20200512104750.8711-5-stanley.chu@mediatek.com>
- <725d057c-2379-710e-287f-ac11a59c08bc@codeaurora.org>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jZ4Jj-0000lc-Nq
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 03:13:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=dt1Yj4OF4fB9mBiaxHPbPGyxBIXoiYYjh6eGeGMskdKZcMqXnF5Z1WVCX400NDKsQ4FonIq1Bt2SS0FZyTyTh+qOaiQucqsVsUvDnazNhYuHVm1UfCYGiPN4peOFOZ1iAeI1OsiBjrxAuuFRhZLfPfq0Ujf9plbtk8FNUADAgPV6jmcHvcKC6BAIU1bxfsnWPxlhcP49+abQKrSbJiTmqAwSy2YCxIJw7TOgYdhN+xTj3O+QV4z6OJNPF0OChqv+E700GO9D7SzY17+BBk1IcBB9PrN+Pway1Crnk6gYLZnN4Zvce/vJeStNqWRYEvgho98Y8CJ7YQ45oDb1+TORwA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=E7/Isezmdd0F8/mq0CSIKYWBnkIU3hZCC/7aMkKv55k=;
+ b=Za+H9BpdAl/j2mYxcskQvCaizPRI66NKxrT97KKZHzPPscN9v7fW+Zfj9zNP7yebgs4yrl/ZTVaKu7voWnylJzAXP/f/tmM/NemTolpyZg2tAd0usfkAHXtSAqiRPmfX/q53TjZSHSkov0a0CKZNgaraAQr2irRoxH/YsA7546gjjocoaUuH3ntycJqkFgWW6YjqWzykhoN3RlzyICxIEkRL1pfSj9abDrg1WRpXDU+dUNQrQ695I4EeaM85L/g1jzGzFunr7CKbmGRHXKUvcT37Sq22epyWHb5uvZB8UzC0yHCnNn2hev0C8+5UZ5Im7zehTm8/LBdcnZIvl+wxdg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=E7/Isezmdd0F8/mq0CSIKYWBnkIU3hZCC/7aMkKv55k=;
+ b=CjoiHqR9qEVpD5UvXa2iFJXvskMnijMg3stCdFJUOoWzUO038/s3fBJLKXx1StaQ16107JNkH8ZmqfwZRreSWe7pGtpxreVw1EQ2u7MEj8aJ2ViwvtbZNMr4V4Q7xwJdp9aL+hSey+lkGet6FKBqrDcSm4yzo+pK1Xf52twKLj4=
+Received: from AM7PR04MB6885.eurprd04.prod.outlook.com (2603:10a6:20b:10d::24)
+ by AM7PR04MB7189.eurprd04.prod.outlook.com (2603:10a6:20b:116::23)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.30; Thu, 14 May
+ 2020 03:13:45 +0000
+Received: from AM7PR04MB6885.eurprd04.prod.outlook.com
+ ([fe80::fdc0:9eff:2931:d11b]) by AM7PR04MB6885.eurprd04.prod.outlook.com
+ ([fe80::fdc0:9eff:2931:d11b%5]) with mapi id 15.20.2979.033; Thu, 14 May 2020
+ 03:13:45 +0000
+From: "Y.b. Lu" <yangbo.lu@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: RE: [PATCH] ARM: dts: ls1021a: output PPS signal on FIPER2
+Thread-Topic: [PATCH] ARM: dts: ls1021a: output PPS signal on FIPER2
+Thread-Index: AQHWHEiBnWxAU4L90kC2ffOlL+Ll/KilxtUAgAE6YvA=
+Date: Thu, 14 May 2020 03:13:45 +0000
+Message-ID: <AM7PR04MB688584E51D49FD4A7761734DF8BC0@AM7PR04MB6885.eurprd04.prod.outlook.com>
+References: <20200427035655.18157-1-yangbo.lu@nxp.com>
+ <20200513082254.GE26997@dragon>
+In-Reply-To: <20200513082254.GE26997@dragon>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: kernel.org; dkim=none (message not signed)
+ header.d=none;kernel.org; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 8d960fd2-423a-45e0-7bad-08d7f7b4d002
+x-ms-traffictypediagnostic: AM7PR04MB7189:|AM7PR04MB7189:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM7PR04MB71893BEECF2E646CE8AF22F2F8BC0@AM7PR04MB7189.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:177;
+x-forefront-prvs: 040359335D
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: k7IylSFiEInMOQO/I7Hd8HYJdNiU1wUn63Z0025ic7oc5VFAYUfIk1Owpf3Bdscr6vj0LE6glHS6iEUxZ7EzfBAQzzMx7jaAs/hofxETPumWcCMJfQ0X2AyxVlM0MJ8vqc5+Odb++c3C3KNuk7yYejwlNw5ZLtO+Hgf1PMdDUO6q88jyJNeLxo2gNkYo69Y94OgG7OkQQCnEoG5k62d60+Mc9RXmCyayRdUHIXdxxrqebeiwvKT8YyDWiVAKL87Fu0HfFZZUyjZV9x5h3Ppr9PgfsePnT4vERNchS9lqGScb0f880gsEU50OJfCWusjsmlWv7pSsSsEAeKsRJSHZhUGyCsAD4XreupJhIcw3oucbORNm+c2MnRuVGQ4dhXvtuCbO945YK6ZtvMQVBHh7ezewgZTe8wgGVL6DI8XbdgaukLKmoo8UT8BIy8s0sPyY
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:AM7PR04MB6885.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(396003)(39860400002)(136003)(366004)(346002)(376002)(53546011)(6506007)(478600001)(2906002)(52536014)(26005)(186003)(86362001)(6916009)(316002)(54906003)(4326008)(71200400001)(66446008)(64756008)(8676002)(33656002)(8936002)(55016002)(5660300002)(66476007)(76116006)(66556008)(9686003)(7696005)(66946007);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: th5Rozy2LcWIicyEwcqlH0lRkTE3RZEiejToU36XsNsIpflLamPyNFzylQJbyESRoLbiddD6WNrn/LwjdGMQVPPu7qDuqGUiIj9TSNVwK0nxCTKcCpjTTqR0Ni6mEf5HAD9V10KRl9fl8nZe3niAqF1tKq50tF0j844nPNsFhAontiOZKsnv2fbDemU+GersQBxqYy7zrM2wNOAbk8WGP2WMd76mY/wqfkY2bk8as9VW1ZWx+YzsXZTNV8hB8I3F67/WS+8BOuSuZaDEYXJhsU/EJNg6+Zb4wFHQ3uxXA2wAH3+NCxwfS1U8HkyIHbs994I1IlycRvYwPuxBucTG4ZZ/gPchOK+qd/ogeuoVgTOTqYNqP2n1KjAWuGyUSAegPYJxffScE+qw/cIZAUqJFFhUtBhjH39si4gx83rvwmCcXgWpbZF/rb4ABonGN0RtDEaRuGVCyxLe3mjiCAbiVk/MFUxZsX7Hew6u5ipjKOg=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 8d960fd2-423a-45e0-7bad-08d7f7b4d002
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2020 03:13:45.1520 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 496USpxEL6x8EV6zqh0FVCg5lSZnXn+vAQAiqDio1OjLii7dMsFS9h4A4zOGRzI8/VQapERCxAs6sNsuKfrZ5g==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM7PR04MB7189
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_192357_003983_5AFDBAD6 
-X-CRM114-Status: GOOD (  26.61  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_201351_778212_F54DA788 
+X-CRM114-Status: GOOD (  15.14  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.8.54 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.8.54 listed in wl.mailspike.net]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -72,8 +111,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,186 +122,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- andy.teng@mediatek.com, jejb@linux.ibm.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, avri.altman@wdc.com,
- cang@codeaurora.org, linux-mediatek@lists.infradead.org,
- peter.wang@mediatek.com, alim.akhtar@samsung.com, matthias.bgg@gmail.com,
- bvanassche@acm.org, linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Richard Cochran <richardcochran@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Leo Li <leoyang.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Asutosh,
+Hi Shawn,
 
-On Wed, 2020-05-13 at 12:31 -0700, Asutosh Das (asd) wrote:
-> On 5/12/2020 3:47 AM, Stanley Chu wrote:
-> > Currently UFS host driver promises VCC supply if UFS device
-> > needs to do WriteBooster flush during runtime suspend.
-> > 
-> > However the UFS specification mentions,
-> > 
-> > "While the flushing operation is in progress, the device is
-> > in Active power mode."
-> > 
-> > Therefore UFS host driver needs to promise more: Keep UFS
-> > device as "Active power mode", otherwise UFS device shall not
-> > do any flush if device enters Sleep or PowerDown power mode.
-> > 
-> > Fix this by not changing device power mode if WriteBooster
-> > flush is required in ufshcd_suspend().
-> > 
-> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+> -----Original Message-----
+> From: Shawn Guo <shawnguo@kernel.org>
+> Sent: Wednesday, May 13, 2020 4:23 PM
+> To: Y.b. Lu <yangbo.lu@nxp.com>
+> Cc: linux-arm-kernel@lists.infradead.org; Leo Li <leoyang.li@nxp.com>;
+> Richard Cochran <richardcochran@gmail.com>
+> Subject: Re: [PATCH] ARM: dts: ls1021a: output PPS signal on FIPER2
+> 
+> On Mon, Apr 27, 2020 at 11:56:55AM +0800, Yangbo Lu wrote:
+> > Output PPS signal on FIPER2 (Fixed Period Interval Pulse)
+> > which is more desired by user.
+> >
+> > Signed-off-by: Yangbo Lu <yangbo.lu@nxp.com>
 > > ---
-> >   drivers/scsi/ufs/ufs.h    |  1 -
-> >   drivers/scsi/ufs/ufshcd.c | 39 +++++++++++++++++++--------------------
-> >   2 files changed, 19 insertions(+), 21 deletions(-)
-> > 
-> > diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
-> > index b3135344ab3f..9e4bc2e97ada 100644
-> > --- a/drivers/scsi/ufs/ufs.h
-> > +++ b/drivers/scsi/ufs/ufs.h
-> > @@ -577,7 +577,6 @@ struct ufs_dev_info {
-> >   	u32 d_ext_ufs_feature_sup;
-> >   	u8 b_wb_buffer_type;
-> >   	u32 d_wb_alloc_units;
-> > -	bool keep_vcc_on;
-> >   	u8 b_presrv_uspc_en;
-> >   };
-> >   
-> > diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-> > index 169a3379e468..2d0aff8ac260 100644
-> > --- a/drivers/scsi/ufs/ufshcd.c
-> > +++ b/drivers/scsi/ufs/ufshcd.c
-> > @@ -8101,8 +8101,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba *hba)
-> >   	    !hba->dev_info.is_lu_power_on_wp) {
-> >   		ufshcd_setup_vreg(hba, false);
-> >   	} else if (!ufshcd_is_ufs_dev_active(hba)) {
-> > -		if (!hba->dev_info.keep_vcc_on)
-> > -			ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
-> > +		ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
-> >   		if (!ufshcd_is_link_active(hba)) {
-> >   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq);
-> >   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq2);
-> > @@ -8172,6 +8171,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   	enum ufs_pm_level pm_lvl;
-> >   	enum ufs_dev_pwr_mode req_dev_pwr_mode;
-> >   	enum uic_link_state req_link_state;
-> > +	bool keep_curr_dev_pwr_mode = false;
-> >   
-> >   	hba->pm_op_in_progress = 1;
-> >   	if (!ufshcd_is_shutdown_pm(pm_op)) {
-> > @@ -8226,28 +8226,27 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
-> >   			/* make sure that auto bkops is disabled */
-> >   			ufshcd_disable_auto_bkops(hba);
-> >   		}
-> > +
-> Unnecessary newline, perhaps?
-
-Yap, I will remove it in next version.
-
-> >   		/*
-> > -		 * With wb enabled, if the bkops is enabled or if the
-> > -		 * configured WB type is 70% full, keep vcc ON
-> > -		 * for the device to flush the wb buffer
-> > +		 * If device needs to do BKOP or WB buffer flush, keep device
-> > +		 * power mode as "active power mode" and its VCC supply.
-> >   		 */
-> > -		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
-> > -		    ufshcd_wb_keep_vcc_on(hba))
-> > -			hba->dev_info.keep_vcc_on = true;
-> > -		else
-> > -			hba->dev_info.keep_vcc_on = false;
-> > -	} else {
-> > -		hba->dev_info.keep_vcc_on = false;
-> > +		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
-> > +			ufshcd_wb_keep_vcc_on(hba);
-> Should the device be in UFS_ACTIVE_PWR_MODE to perform auto-bkops?
+> >  arch/arm/boot/dts/ls1021a.dtsi | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/arch/arm/boot/dts/ls1021a.dtsi b/arch/arm/boot/dts/ls1021a.dtsi
+> > index 760a68c..b2ff27a 100644
+> > --- a/arch/arm/boot/dts/ls1021a.dtsi
+> > +++ b/arch/arm/boot/dts/ls1021a.dtsi
+> > @@ -772,7 +772,7 @@
+> >  			fsl,tmr-prsc    = <2>;
+> >  			fsl,tmr-add     = <0xaaaaaaab>;
+> >  			fsl,tmr-fiper1  = <999999995>;
+> > -			fsl,tmr-fiper2  = <99990>;
+> > +			fsl,tmr-fiper2  = <999999995>;
 > 
-> Also, is it needed to keep the device in UFS_ACTIVE_PWR_MODE , if flush 
-> on hibern8 is enabled and the link is being put to hibern8 mode during 
-> runtime-suspend? Perhaps that should also be factored in here?
+> Not sure code change matches patch subject and commit log.  The change
+> is about changing fsl,tmr-fiper2 setting from one value to another.
 
-Both auto-bkops and WriteBooster flush during Hibern8 need device power
-mode to be "Active Power Mode".
-
-For auto-bkops, the spec mentions,
-
-"If the background operations enable bit is set and the device is in
-Active power mode or Idle power mode, then the device is allowed to
-execute any internal operations."
-
-For WriteBooster flush during Hibern8, the spec mentions,
-
-"While the flushing operation is in progress, the device is in Active
-power mode."
-
-Therefore here we can use an unified "keep_curr_dev_pwr_mode" to
-indicate the same requirements of above both features.
-
-Besides, both operations may access flash array inside UFS device thus
-VCC supply shall be also kept.
-
-Before this patch, the original code will keep device power mode (stay
-in Active Power Mode) if hba->auto_bkops_enabled is set as true during
-runtime-suspend with UFSHCD_CAP_AUTO_BKOPS_SUSPEND capability is
-enabled. This patch will not change this decision, just add
-"WriteBooster flush during Hibern8" feature as another condition to do
-so.
-
-Thank you so much to remind me that "Link shall be put in Hibern8" is a
-necessary condition for "WriteBooster flush during Hibern8". I will add
-more checking for keep_curr_dev_pwr_mode to prevent unnecessary power
-drain.  
-
-> >   	}
-> >   
-> > -	if ((req_dev_pwr_mode != hba->curr_dev_pwr_mode) &&
-> > -	    ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
-> > -	    !ufshcd_is_runtime_pm(pm_op))) {
-> > -		/* ensure that bkops is disabled */
-> > -		ufshcd_disable_auto_bkops(hba);
-> > -		ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
-> > -		if (ret)
-> > -			goto enable_gating;
-> > +	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
-> > +		if ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
-> > +		    !ufshcd_is_runtime_pm(pm_op)) {
-> > +			/* ensure that bkops is disabled */
-> > +			ufshcd_disable_auto_bkops(hba);
-> > +		}
-> > +
-> > +		if (!keep_curr_dev_pwr_mode) {
-> > +			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
-> 
-> Now, when the WB buffer is completely flushed out, the device should be 
-> put back into UFS_SLEEP_PWR_MODE or UFS_POWERDOWN_PWR_MODE. Say, the 
-> device buffer has to be flushed and during runtime-suspend, the device 
-> is put to UFS_ACTIVE_PWR_MODE and Vcc is kept ON; the device doesn't 
-> resume nor does the system enters suspend for a very long time, and with 
-> AH8 and hibern8 disabled, there will be an unnecessary power drain for 
-> that much time.
-> 
-> How about a periodic interval checking of flush status if 
-> keep_curr_dev_pwr_mode evaluates to be true?
-
-This is a good point!
-
-The same thing also happens for auto-bkops. How about add a timer to
-leave runtime suspend if keep_curr_dev_pwr_mode is set as true? This is
-simple and also favors power. The timeout value could be adjustable
-according to the available WriteBooster buffer size.
-
-A periodic interval checking of flush status needs to re-activate link
-to communicate with the device. This would be tricky and the
-re-activation flow is just like runtime-resume.
-
-What would you think?
+The calculation refers to Documentation/devicetree/bindings/ptp/ptp-qoriq.txt. It looks complicated.
+But to be simple, to get 1PPS signal (period is 1s) on FIPER2, the value should be set as,
+fiper2 = <desired period> - <tclk-period> = 1000000000ns - 5ns = 999999995.
 
 Thanks.
-Stanley Chu
-
+> 
+> Shawn
+> 
+> >  			fsl,max-adj     = <499999999>;
+> >  			fsl,extts-fifo;
+> >  		};
+> > --
+> > 2.7.4
+> >
 
 _______________________________________________
 linux-arm-kernel mailing list
