@@ -2,58 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 254061D3744
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:04:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5F861D3797
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:07:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b8QJQhqkwN0O9lr3RzfMSuV1HrifH43i0E05tvnx6jk=; b=WsM4PSSSNtBqll
-	GP5T9Kw8Vuqp/VD3tbRNFpnFVqDj90P2ObXyQH5aElSZusfL49mhFCBKsdSMokXBeajS7V+T5jlZk
-	S+2uYDtlzelOWgv14ZLr09gX66gFnX7ob8X6Sg2Ygm9KPMPCPn5dRcbwlY911xt521QSLwBEPnaki
-	9BiJjFCg8GNr+CdorK3Ox2anXDKjVXTYTJA1qqUSwFVjTkOSsmPQncxcVctXIyFbQ7gJqRmRni48w
-	zpXmIpLAJFO8DVqz1TXR0WyTqML4TY3evy1lVMhDDefCzoppof2LDjZU0/CYRd1tymUaeV6wJ0hpV
-	HrFat4Ats7/ORQlRbQSA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=39BzQ3bhYAjZj9MVWmIvh2fcWTich0L2iN4192EL0mk=; b=bVwMlHOCZCYffZPL8c62ZAi2U
+	cdWYpehIPkgGQvhwh+rUU0IVCkgVkOFCR0JwCBxWzRrxrbsA/vBAMApki559YF1wLjYURlmDuBWBA
+	HLzUFYZGRSyNrgWTTHS8gJ+2IengBCIc4S8GeuDoQ3nlc0M0FuOOAiLoiExzLSguRdC5R3dvYjIg7
+	luKCutWo5hclEetaj+QU9WdLM8XJjCwhYvd6JtoEroLI6X5lXI0eKSx9pyzRLGr1YdpRpQUYMmjAM
+	53tOK/GuoVeIXZgktidCZ45szPJ1sfmge0t5Prt9xlr+zWxnBGdHe74Pb8/iKf1EVSsnPkk0G/viz
+	PGFSUHuVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZHGt-0001OC-Rk; Thu, 14 May 2020 17:03:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZHGm-0001NL-6U; Thu, 14 May 2020 17:03:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B40121042;
- Thu, 14 May 2020 10:03:36 -0700 (PDT)
-Received: from [192.168.2.22] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7198D3F71E;
- Thu, 14 May 2020 10:03:35 -0700 (PDT)
-Subject: Re: [PATCH v1 2/9] dmaengine: Actions: Add support for S700 DMA engine
-To: Amit Singh Tomar <amittomer25@gmail.com>, vkoul@kernel.org,
- afaerber@suse.de, manivannan.sadhasivam@linaro.org
-References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-3-git-send-email-amittomer25@gmail.com>
-From: =?UTF-8?Q?Andr=c3=a9_Przywara?= <andre.przywara@arm.com>
-Organization: ARM Ltd.
-Message-ID: <6d6d6523-7a9f-97a1-124c-cca8f10f1c2f@arm.com>
-Date: Thu, 14 May 2020 18:02:43 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jZHKI-00063L-NJ; Thu, 14 May 2020 17:07:18 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZHK3-00060Y-3t
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 17:07:10 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1589476026; h=Content-Transfer-Encoding: Content-Type:
+ In-Reply-To: MIME-Version: Date: Message-ID: From: References: Cc: To:
+ Subject: Sender; bh=M/yi92o3kNGCcpoKE1hRJo2YjuLewaLJcQLxkEjatR0=;
+ b=wX1vdAIsR9KE2VWFJ40kDtGc0j6WPAwwqf6UWmoLdImF4a7rmL5u4tQaxEo/pGT6CH1mOpuJ
+ +3fxv1hzAx1Mu3XoIOQNSCzgVwPS790ppzKs8fWIKQ8jbbRvbwGIIWnuLVpVrDIjQzMDvmSI
+ xE1iv2xIQGfAwwXMu7z3HsXjdsA=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n05.prod.us-east-1.postgun.com with SMTP id
+ 5ebd7aaad915e862f6d7942f (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Thu, 14 May 2020 17:06:50
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 62233C433F2; Thu, 14 May 2020 17:06:49 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
+ autolearn=ham autolearn_force=no version=3.4.0
+Received: from [192.168.8.150] (cpe-70-95-149-85.san.res.rr.com [70.95.149.85])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested) (Authenticated sender: asutoshd)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id D4AD7C432C2;
+ Thu, 14 May 2020 17:06:47 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org D4AD7C432C2
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=asutoshd@codeaurora.org
+Subject: Re: [PATCH v2 4/4] scsi: ufs: Fix WriteBooster flush during runtime
+ suspend
+To: Stanley Chu <stanley.chu@mediatek.com>, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, avri.altman@wdc.com, alim.akhtar@samsung.com,
+ jejb@linux.ibm.com
+References: <20200514150122.32110-1-stanley.chu@mediatek.com>
+ <20200514150122.32110-5-stanley.chu@mediatek.com>
+From: "Asutosh Das (asd)" <asutoshd@codeaurora.org>
+Message-ID: <a41771f3-b82e-9fc4-798a-99b0c6598699@codeaurora.org>
+Date: Thu, 14 May 2020 10:06:47 -0700
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <1589472657-3930-3-git-send-email-amittomer25@gmail.com>
+In-Reply-To: <20200514150122.32110-5-stanley.chu@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_100340_324572_651A7E8E 
-X-CRM114-Status: GOOD (  25.63  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200514_100706_538386_03C2ECB2 
+X-CRM114-Status: GOOD (  26.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,199 +100,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- cristian.ciocaltea@gmail.com
-Content-Type: text/plain; charset="us-ascii"
+Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
+ linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
+ matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
+ beanhuo@micron.com
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 14/05/2020 17:10, Amit Singh Tomar wrote:
-
-Hi,
-
-> DMA controller present on S700 SoC is compatible with the one on S900
-> (as most of registers are same), but it has different DMA descriptor
-> structure where registers "fcnt" and "ctrlb" uses different encoding.
+On 5/14/2020 8:01 AM, Stanley Chu wrote:
+> Currently UFS host driver promises VCC supply if UFS device
+> needs to do WriteBooster flush during runtime suspend.
 > 
-> For instance, on S900 "fcnt" starts at offset 0x0c and uses upper 12
-> bits whereas on S700, it starts at offset 0x1c and uses lower 12 bits.
+> However the UFS specification mentions,
 > 
-> This commit adds support for DMA controller present on S700.
+> "While the flushing operation is in progress, the device is
+> in Active power mode."
 > 
-> Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
+> Therefore UFS host driver needs to promise more: Keep UFS
+> device as "Active power mode", otherwise UFS device shall not
+> do any flush if device enters Sleep or PowerDown power mode.
+> 
+> Fix this by not changing device power mode if WriteBooster
+> flush is required in ufshcd_suspend().
+> 
+> Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 > ---
-> Changes since RFC:
-> 	* Added accessor function to get the frame lenght.
-> 	* Removed the SoC specific check in IRQ routine.
-> ---
->  drivers/dma/owl-dma.c | 50 +++++++++++++++++++++++++++++++++++++-------------
->  1 file changed, 37 insertions(+), 13 deletions(-)
+>   drivers/scsi/ufs/ufs.h    |  1 -
+>   drivers/scsi/ufs/ufshcd.c | 42 ++++++++++++++++++++-------------------
+>   2 files changed, 22 insertions(+), 21 deletions(-)
 > 
-> diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
-> index b0d80a2fa383..afa6c6f43d26 100644
-> --- a/drivers/dma/owl-dma.c
-> +++ b/drivers/dma/owl-dma.c
-> @@ -134,6 +134,11 @@ enum owl_dmadesc_offsets {
->  	OWL_DMADESC_SIZE
->  };
->  
-> +enum owl_dma_id {
-> +	S900_DMA,
-> +	S700_DMA,
-> +};
+> diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
+> index b3135344ab3f..9e4bc2e97ada 100644
+> --- a/drivers/scsi/ufs/ufs.h
+> +++ b/drivers/scsi/ufs/ufs.h
+> @@ -577,7 +577,6 @@ struct ufs_dev_info {
+>   	u32 d_ext_ufs_feature_sup;
+>   	u8 b_wb_buffer_type;
+>   	u32 d_wb_alloc_units;
+> -	bool keep_vcc_on;
+>   	u8 b_presrv_uspc_en;
+>   };
+>   
+> diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+> index 169a3379e468..b9f7744ca2b4 100644
+> --- a/drivers/scsi/ufs/ufshcd.c
+> +++ b/drivers/scsi/ufs/ufshcd.c
+> @@ -8101,8 +8101,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba *hba)
+>   	    !hba->dev_info.is_lu_power_on_wp) {
+>   		ufshcd_setup_vreg(hba, false);
+>   	} else if (!ufshcd_is_ufs_dev_active(hba)) {
+> -		if (!hba->dev_info.keep_vcc_on)
+> -			ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
+> +		ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
+>   		if (!ufshcd_is_link_active(hba)) {
+>   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq);
+>   			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq2);
+> @@ -8172,6 +8171,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>   	enum ufs_pm_level pm_lvl;
+>   	enum ufs_dev_pwr_mode req_dev_pwr_mode;
+>   	enum uic_link_state req_link_state;
+> +	bool keep_curr_dev_pwr_mode = false;
+>   
+>   	hba->pm_op_in_progress = 1;
+>   	if (!ufshcd_is_shutdown_pm(pm_op)) {
+> @@ -8227,27 +8227,29 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
+>   			ufshcd_disable_auto_bkops(hba);
+>   		}
+>   		/*
+> -		 * With wb enabled, if the bkops is enabled or if the
+> -		 * configured WB type is 70% full, keep vcc ON
+> -		 * for the device to flush the wb buffer
+> +		 * If device needs to do BKOP or WB buffer flush during
+> +		 * Hibern8, keep device power mode as "active power mode"
+> +		 * and VCC supply.
+>   		 */
+> -		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
+> -		    ufshcd_wb_keep_vcc_on(hba))
+> -			hba->dev_info.keep_vcc_on = true;
+> -		else
+> -			hba->dev_info.keep_vcc_on = false;
+> -	} else {
+> -		hba->dev_info.keep_vcc_on = false;
+> +		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
+> +			(((req_link_state == UIC_LINK_HIBERN8_STATE) ||
+> +			((req_link_state == UIC_LINK_ACTIVE_STATE) &&
+> +			ufshcd_is_auto_hibern8_enabled(hba))) &&
+> +			ufshcd_wb_keep_vcc_on(hba));
+>   	}
+>   
+This looks fine.
+But I still think the delayed check of flush status should be done to 
+turn-off Vcc when flush is complete.
+
+> -	if ((req_dev_pwr_mode != hba->curr_dev_pwr_mode) &&
+> -	    ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
+> -	    !ufshcd_is_runtime_pm(pm_op))) {
+> -		/* ensure that bkops is disabled */
+> -		ufshcd_disable_auto_bkops(hba);
+> -		ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
+> -		if (ret)
+> -			goto enable_gating;
+> +	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
+> +		if ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
+> +		    !ufshcd_is_runtime_pm(pm_op)) {
+> +			/* ensure that bkops is disabled */
+> +			ufshcd_disable_auto_bkops(hba);
+> +		}
 > +
->  /**
->   * struct owl_dma_lli - Link list for dma transfer
->   * @hw: hardware link list
-> @@ -200,6 +205,7 @@ struct owl_dma_vchan {
->   * @pchans: array of data for the physical channels
->   * @nr_vchans: the number of physical channels
->   * @vchans: array of data for the physical channels
-> + * @devid: device id based on OWL SoC
->   */
->  struct owl_dma {
->  	struct dma_device	dma;
-> @@ -214,6 +220,7 @@ struct owl_dma {
->  
->  	unsigned int		nr_vchans;
->  	struct owl_dma_vchan	*vchans;
-> +	enum owl_dma_id		devid;
->  };
->  
->  static void pchan_update(struct owl_dma_pchan *pchan, u32 reg,
-> @@ -308,6 +315,11 @@ static inline u32 llc_hw_ctrlb(u32 int_ctl)
->  	return ctl;
->  }
->  
-> +static inline u32 llc_hw_flen(struct owl_dma_lli *lli)
-
-Drop the inline, that's not needed. The compiler knows better.
-
-> +{
-> +	return lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
-> +}
-
-Please introduce this function in the previous patch already. Otherwise
-you replace code here that you introduced only there.
-
-> +
->  static void owl_dma_free_lli(struct owl_dma *od,
->  			     struct owl_dma_lli *lli)
->  {
-> @@ -354,6 +366,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
->  				  struct dma_slave_config *sconfig,
->  				  bool is_cyclic)
->  {
-> +	struct owl_dma *od = to_owl_dma(vchan->vc.chan.device);
->  	u32 mode, ctrlb;
->  
->  	mode = OWL_DMA_MODE_PW(0);
-> @@ -409,8 +422,14 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
->  	lli->hw[OWL_DMADESC_DADDR] = dst;
->  	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
->  	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
-> -	lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
-> -	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
-> +
-> +	if (od->devid == S700_DMA) {
-> +		lli->hw[OWL_DMADESC_FLEN] = len;
-> +		lli->hw[OWL_DMADESC_CTRLB] = 1 | ctrlb;
-> +	} else {
-> +		lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
-> +		lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
-
-Can you either add comments or use macros to explain what's going on
-here? What is the "1" about?
-
-> +	}
->  
->  	return 0;
->  }
-> @@ -572,7 +591,7 @@ static irqreturn_t owl_dma_interrupt(int irq, void *dev_id)
->  
->  		global_irq_pending = dma_readl(od, OWL_DMA_IRQ_PD0);
->  
-> -		if (chan_irq_pending && !(global_irq_pending & BIT(i)))	{
-> +		if (chan_irq_pending && !(global_irq_pending & BIT(i))) {
->  			dev_dbg(od->dma.dev,
->  				"global and channel IRQ pending match err\n");
->  
-> @@ -741,9 +760,9 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
->  		list_for_each_entry(lli, &txd->lli_list, node) {
->  			/* Start from the next active node */
->  			if (lli->phys == next_lli_phy) {
-> -				list_for_each_entry(lli, &txd->lli_list, node)
-> -					bytes += lli->hw[OWL_DMADESC_FLEN] &
-> -						 GENMASK(19, 0);
-> +				list_for_each_entry(lli, &txd->lli_list,
-> +						    node)
-
-Not needed line break?
-
-Cheers,
-Andre.
-
-
-> +					bytes += llc_hw_flen(lli);
->  				break;
->  			}
->  		}
-> @@ -774,7 +793,7 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
->  	if (vd) {
->  		txd = to_owl_txd(&vd->tx);
->  		list_for_each_entry(lli, &txd->lli_list, node)
-> -			bytes += lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
-> +			bytes += llc_hw_flen(lli);
->  	} else {
->  		bytes = owl_dma_getbytes_chan(vchan);
->  	}
-> @@ -1031,11 +1050,20 @@ static struct dma_chan *owl_dma_of_xlate(struct of_phandle_args *dma_spec,
->  	return chan;
->  }
->  
-> +static const struct of_device_id owl_dma_match[] = {
-> +	{ .compatible = "actions,s900-dma", .data = (void *)S900_DMA,},
-> +	{ .compatible = "actions,s700-dma", .data = (void *)S700_DMA,},
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, owl_dma_match);
-> +
->  static int owl_dma_probe(struct platform_device *pdev)
->  {
->  	struct device_node *np = pdev->dev.of_node;
->  	struct owl_dma *od;
->  	int ret, i, nr_channels, nr_requests;
-> +	const struct of_device_id *of_id =
-> +				of_match_device(owl_dma_match, &pdev->dev);
->  
->  	od = devm_kzalloc(&pdev->dev, sizeof(*od), GFP_KERNEL);
->  	if (!od)
-> @@ -1060,6 +1088,8 @@ static int owl_dma_probe(struct platform_device *pdev)
->  	dev_info(&pdev->dev, "dma-channels %d, dma-requests %d\n",
->  		 nr_channels, nr_requests);
->  
-> +	od->devid = (enum owl_dma_id)of_id->data;
-> +
->  	od->nr_pchans = nr_channels;
->  	od->nr_vchans = nr_requests;
->  
-> @@ -1192,12 +1222,6 @@ static int owl_dma_remove(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> -static const struct of_device_id owl_dma_match[] = {
-> -	{ .compatible = "actions,s900-dma", },
-> -	{ /* sentinel */ }
-> -};
-> -MODULE_DEVICE_TABLE(of, owl_dma_match);
-> -
->  static struct platform_driver owl_dma_driver = {
->  	.probe	= owl_dma_probe,
->  	.remove	= owl_dma_remove,
+> +		if (!keep_curr_dev_pwr_mode) {
+> +			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
+> +			if (ret)
+> +				goto enable_gating;
+> +		}
+>   	}
+>   
+>   	flush_work(&hba->eeh_work);
 > 
 
+
+-- 
+The Qualcomm Innovation Center, Inc. is a member of the Code Aurora Forum,
+Linux Foundation Collaborative Project
 
 _______________________________________________
 linux-arm-kernel mailing list
