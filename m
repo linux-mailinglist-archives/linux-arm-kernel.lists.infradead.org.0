@@ -2,73 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 629551D3624
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:12:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E43A41D3626
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:12:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=9DfSgdXSZYmuDvDRVLyYu+RGDF4l0Twq2L3joZtwgtw=; b=NCJ
-	SbSUsEI3PC3tX/PZvzgpf5TAiRK4w3a4rhqFBkZ8mmpQYwr9J++dSaxtb4CY6RkoqtItsIlmZJcYf
-	jTxDbodDF+6xRJarfHnfB7VV3mq91dmzLLTWsWqz/uxcKDlItVeo64ULViEpISmdEe1jqB6Ft/PTT
-	C+voXAVQ+iDxhwaVi9as3Dtv/7Tm0qU18f2Sn08FOA8oJogT7eykc8Z9W4vZVx6DotS2Ik1fsy8OJ
-	yBWvHinGXuiNYBqE9qFoTxhcgOoVHtDRZgaTajER/AxncoqGPeyektQ/aFiDLltkby1KReGEtOdK0
-	a2lnKrvOIGSV0TtsWi03vKP/IUgVFwA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=D89TRY47Zj7/ov9zm3oKKFWpuMamksChXbYcSrnyakI=; b=E/ANDeyMzct6/bxPpA4cU8ZtWR
+	P5mgUDfesCbGJ1u47sfMaO9JuSOw1kV2oqlciZ+ma+c1h2/0/91Sde7mi3yLfglUSj2E4Bm57iv4c
+	9Xx9F9/GH+JFWjaO1ao+Z7Y4u/z0orzn1M8D1Fy7hYYG05L7TdUsbLuBvriFXYzamrjCfKyopU7lF
+	+VoAqMGn+dp+BcGlKDnNEViBQ5t9538piWdcDLhJnKyJxoF3PJazaLPT1Y7r0zuVVGtg6iq1kerMG
+	DzYFeddoMYfXvXWgqwspsjNEA2DEazEfltnAZC3EL9ZGfeYUSL+lyGYEOSxpECgHDOCrI6fGd/sLC
+	oWwXjF9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZGT6-0004A3-Pe; Thu, 14 May 2020 16:12:20 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1jZGTV-0004aB-J5; Thu, 14 May 2020 16:12:45 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZGSV-0003zr-KM; Thu, 14 May 2020 16:11:45 +0000
-Received: by mail-pl1-x642.google.com with SMTP id k22so59846pls.10;
- Thu, 14 May 2020 09:11:41 -0700 (PDT)
+ id 1jZGSY-00040r-GP; Thu, 14 May 2020 16:11:48 +0000
+Received: by mail-pf1-x442.google.com with SMTP id x77so1517666pfc.0;
+ Thu, 14 May 2020 09:11:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=M7a+i0R5nhP32Wk9DGwcCMtUshq8zIaG1WDEzrR5hTs=;
- b=RW6t7CXKDxxV4hU0aMhi5WD6PpCRrNSLUcMk/uOopTZX0cOi9+eIvRkkq1sEyUrhXu
- pz45u96DKskq6dT7evGcMkHf6vl9tS9pAdWtsV1NnVc52p3YjX0MvgBapnhTXtEnpS9o
- DqcB16Q0x4TSDK9NtJgZO3oFRkdsF3Hd17yXQ02bTloMvArjY9zHosMFDutQgrn73IE6
- E8hG2Qrij9mIapAuye9jxOKnSFSJZqTOEiH2H1WOHe6issosQMAzy86bHrrhktyRLfNK
- nRLKilOfBtmXY135In+lbslNLdX6oqkfAZYoxOfJS40E+MPFCr5V9KOO1Pik6dMrNclK
- 7fEw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=APuaLgIC8QwM4HVjAlkT/Q/E4FOhXs/Y+oj3WvF1K8Q=;
+ b=mQGQsvBohAwHSmGMdJkoWBlfGJiVrUzdEnS9Jk2tgFVbIkdKIy+JDBVgw+T2lNnvII
+ IgRSmEQSUBMOCxXCS68zA+oJ4uLTPQQ0/CaUYwE8HysRc3ve6u8Nk44TKzkDAyr1+GvV
+ EHQrvk0VemZzCmfaa5NazBkf4K3LKMCZfDkVvUD4bUNZEMZKPFgZCIYQIZN/Cq4bojta
+ JfRVbsZaTJMpoJFqNZiPnkXUkA/vWYSZDKPTDv3RtNAghICy5Vhww1ENPs6OWbZ/vEpb
+ za5XiT9Mwim7TtWgysVWYnvNgBA3wzHIW0ma0JjpXj4Aq4RqE4NaTAtdGtlTeoEsWUN7
+ aQBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=M7a+i0R5nhP32Wk9DGwcCMtUshq8zIaG1WDEzrR5hTs=;
- b=nGVZihMlPr7fLn8kJrWIyJDxEdPANBvAQNgfQq4jJ04XTOPgkjUxZI3geL93KuFUBK
- jzmkly4za/+26s0IAIOkl1CYQxrDDlbefAVaLbnJP5/HewRYFSE2FIQamXzxRhFLQ1wV
- nsZ8lseppnwVhT4TRgDp3sbJzHGEs6eURdkmPjL+numEx4ZKJvZXnKGo2BG+/kwXj5tg
- ud8qoxKIFB9/O7kGqkUNpRePwLYYMtIToJKXD6GckJrXoUG1tGq1UujfOEz0GHXIkpjL
- AnKJom2laJB/9SPnzsM3tycH8n9gzOAKuWCVBdBoQSGhZ3VRJVs+brgPu5UXE2gl/N+8
- n4HQ==
-X-Gm-Message-State: AOAM532M+QNgiGmF7r0qClaKcb9P6zMXy2bog6CymU8Mk0CCgIbrFsIu
- rX4hlmyVBxtsu5dUjYT2WSg=
-X-Google-Smtp-Source: ABdhPJxezsGrvZTwHObXhpkyVg3ssjxFBhberaTvnpO925WVRBq91T+Qxa9/9aBCusqYKHwp55QYjw==
-X-Received: by 2002:a17:902:a515:: with SMTP id
- s21mr4359587plq.253.1589472701219; 
- Thu, 14 May 2020 09:11:41 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=APuaLgIC8QwM4HVjAlkT/Q/E4FOhXs/Y+oj3WvF1K8Q=;
+ b=HhDI2XAghkO95FoxhGHQ2nYsg7AjuJrYlWMM2UuyL1kKq0opcUbHodqpEP29ceIZbZ
+ k5oUPpckJysVsbB0yZDaVjBkSmcLXanC+v/ZlY8yacjSIl+tnwlEr4+XUy2gcqvuAtYY
+ h84xYTJgq9hqJVjd3d9tm56OVoCdma3iXG4yn+n++cvj2w8eZk2bdBkyEQiB5uo1cm9b
+ wfxmxOaeFEGeb2E4CIf3FvtqErDgXHPa8fC6yjRICbNOS3E+hBaHaZtTirgzeYGHy1we
+ WGKjH3Qp7z4cqOBrzckE2YPC6w+dM5YElqPiIKkiIYgabixa12b62NhURtdaOYh+Xddl
+ 6z4A==
+X-Gm-Message-State: AOAM531MHBwqU6nYzju3ja+MYxbXsFfmg82BdGKxebJpZHUoJK4216p4
+ 1eFqLzmv8L4Ud6wkKUJzJLI1Tgemq9P/5w==
+X-Google-Smtp-Source: ABdhPJwS6b90IBbLq7Bu8zFNMTmjukuliSI6GNd3G/1q7ScpIxaYaWmA/P2MaqU5yssWGQiS8XUVgg==
+X-Received: by 2002:aa7:8c47:: with SMTP id e7mr4890183pfd.98.1589472705523;
+ Thu, 14 May 2020 09:11:45 -0700 (PDT)
 Received: from localhost.localdomain ([106.215.24.137])
- by smtp.gmail.com with ESMTPSA id t5sm2331755pgp.80.2020.05.14.09.11.37
+ by smtp.gmail.com with ESMTPSA id t5sm2331755pgp.80.2020.05.14.09.11.41
  (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 14 May 2020 09:11:40 -0700 (PDT)
+ Thu, 14 May 2020 09:11:44 -0700 (PDT)
 From: Amit Singh Tomar <amittomer25@gmail.com>
-To: andre.przywara@arm.com, afaerber@suse.de, manivannan.sadhasivam@linaro.org
-Subject: [PATCH v1 0/9] Add MMC and DMA support for Actions S700
-Date: Thu, 14 May 2020 21:40:48 +0530
-Message-Id: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
+To: andre.przywara@arm.com, vkoul@kernel.org, afaerber@suse.de,
+ manivannan.sadhasivam@linaro.org
+Subject: [PATCH v1 1/9] dmaengine: Actions: get rid of bit fields from dma
+ descriptor
+Date: Thu, 14 May 2020 21:40:49 +0530
+Message-Id: <1589472657-3930-2-git-send-email-amittomer25@gmail.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
+References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_091143_664850_85DDAB9C 
-X-CRM114-Status: GOOD (  16.50  )
+X-CRM114-CacheID: sfid-20200514_091146_547870_ED43D493 
+X-CRM114-Status: GOOD (  17.12  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [amittomer25[at]gmail.com]
@@ -94,7 +99,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-actions@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
  cristian.ciocaltea@gmail.com
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -102,86 +108,157 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series(v1) have following changes from the previous series.
+At the moment, Driver uses bit fields to describe registers of the DMA
+descriptor structure that makes it less portable and maintainable, and
+Andre suugested(and even sketched important bits for it) to make use of
+array to describe this DMA descriptors instead. It gives the flexibility
+while extending support for other platform such as Actions S700.
 
-New patch(5/8) has been introduced that converts dma dt-binding
-for Actions OWL SoC from text format to yaml file.
+This commit removes the "owl_dma_lli_hw" (that includes bit-fields) and
+uses array to describe DMA descriptor.
 
-For patch(2/8) new accessor function is added to get the frame 
-lenght which is common to both S900 and S700. Apart from it
-SoC check is removed from irq routine as it is not needed.
+Suggested-by: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Amit Singh Tomar <amittomer25@gmail.com>
+---
+Changes since RFC:
+	* No change from RFC.
+---
+ drivers/dma/owl-dma.c | 77 ++++++++++++++++++++++-----------------------------
+ 1 file changed, 33 insertions(+), 44 deletions(-)
 
-Patch(4/8) which is an hack to prove our DMA and MMC works
-for S700 is now sent as *do not merge* patch.
+diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+index c683051257fd..b0d80a2fa383 100644
+--- a/drivers/dma/owl-dma.c
++++ b/drivers/dma/owl-dma.c
+@@ -120,30 +120,18 @@
+ #define BIT_FIELD(val, width, shift, newshift)	\
+ 		((((val) >> (shift)) & ((BIT(width)) - 1)) << (newshift))
  
-DMA is tested using dmatest with follwoing result:
-
-root@ubuntu:~# echo dma0chan1 > /sys/module/dmatest/parameters/channel
-root@ubuntu:~# echo 2000 > /sys/module/dmatest/parameters/timeout
-root@ubuntu:~# echo 1 > /sys/module/dmatest/parameters/iterations
-root@ubuntu:~# echo 1 > /sys/module/dmatest/parameters/run
-
-root@ubuntu:~# dmesg | tail
-[  303.362586] dmatest: Added 1 threads using dma0chan1
-[  317.258658] dmatest: Started 1 threads using dma0chan1
-[  317.259397] dmatest: dma0chan1-copy0: summary 1 tests, 0 failures 16129.03 iops 32258 KB/s (0)
-
-----------------------------------------------------------------
-
-The intention of previous series(RFC) is to enable uSD and DMA support for
-Cubieboard7 based on Actions S700 SoC, and on the way we found that
-it requires changes in dmaengine present on S700 as its different
-from what is present on S900.
-
-Patch(1/8) does provide a new way to describe DMA descriptor, idea is
-to remove the bit-fields as its less maintainable. It is only build
-tested and it would be great if this can be tested on S900 based
-hardware.
-
-Patch(2/8) adds S700 DMA engine support, there is new compatible
-string added for it, which means a changed bindings needed to submitted
-for this. I would plan to send it later the converted "owl-dma.yaml".
-
-Patch(4/8) disables the sps node as its memory range is conflicting
-pinctrl node and results in pinctrl proble failure.
-
-Rest of patches in the series adds DMA/MMC nodes for S700
-alone with binding constants and enables the uSD for Cubieboard7.
-
-This whole series is tested, by building/compiling Kernel on
-Cubieboard7-lite which was *almost* successful (OOM kicked in,
-while Linking due to less RAM present on hardware).
-
-Following is the mmc speed :
-
-ubuntu@ubuntu:~$ sudo hdparm -tT /dev/mmcblk0
-
-/dev/mmcblk0:
- Timing cached reads:   1310 MB in  2.00 seconds = 655.15 MB/sec
- Timing buffered disk reads:  62 MB in  3.05 seconds =  20.30 MB/sec
-
-Amit Singh Tomar (9):
-  dmaengine: Actions: get rid of bit fields from dma descriptor
-  dmaengine: Actions: Add support for S700 DMA engine
-  clk: actions: Add MMC clock-register reset bits
-  arm64: dts: actions: do not merge disable sps node from S700
-  dt-bindings: dmaengine: convert Actions Semi Owl SoCs bindings to yaml
-  arm64: dts: actions: Add DMA Controller for S700
-  dt-bindings: reset: s700: Add binding constants for mmc
-  arm64: dts: actions: Add MMC controller support for S700
-  arm64: dts: actions: Add uSD support for Cubieboard7
-
- Documentation/devicetree/bindings/dma/owl-dma.txt  |  47 ---------
- Documentation/devicetree/bindings/dma/owl-dma.yaml |  84 +++++++++++++++
- arch/arm64/boot/dts/actions/s700-cubieboard7.dts   |  41 ++++++++
- arch/arm64/boot/dts/actions/s700.dtsi              |  48 +++++++++
- drivers/clk/actions/owl-s700.c                     |   3 +
- drivers/dma/owl-dma.c                              | 117 ++++++++++++---------
- include/dt-bindings/reset/actions,s700-reset.h     |   3 +
- 7 files changed, 244 insertions(+), 99 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/dma/owl-dma.txt
- create mode 100644 Documentation/devicetree/bindings/dma/owl-dma.yaml
-
+-/**
+- * struct owl_dma_lli_hw - Hardware link list for dma transfer
+- * @next_lli: physical address of the next link list
+- * @saddr: source physical address
+- * @daddr: destination physical address
+- * @flen: frame length
+- * @fcnt: frame count
+- * @src_stride: source stride
+- * @dst_stride: destination stride
+- * @ctrla: dma_mode and linklist ctrl config
+- * @ctrlb: interrupt config
+- * @const_num: data for constant fill
+- */
+-struct owl_dma_lli_hw {
+-	u32	next_lli;
+-	u32	saddr;
+-	u32	daddr;
+-	u32	flen:20;
+-	u32	fcnt:12;
+-	u32	src_stride;
+-	u32	dst_stride;
+-	u32	ctrla;
+-	u32	ctrlb;
+-	u32	const_num;
++/* Describe DMA descriptor, hardware link list for dma transfer */
++enum owl_dmadesc_offsets {
++	OWL_DMADESC_NEXT_LLI = 0,
++	OWL_DMADESC_SADDR,
++	OWL_DMADESC_DADDR,
++	OWL_DMADESC_FLEN,
++	OWL_DMADESC_SRC_STRIDE,
++	OWL_DMADESC_DST_STRIDE,
++	OWL_DMADESC_CTRLA,
++	OWL_DMADESC_CTRLB,
++	OWL_DMADESC_CONST_NUM,
++	OWL_DMADESC_SIZE
+ };
+ 
+ /**
+@@ -153,7 +141,7 @@ struct owl_dma_lli_hw {
+  * @node: node for txd's lli_list
+  */
+ struct owl_dma_lli {
+-	struct  owl_dma_lli_hw	hw;
++	u32			hw[OWL_DMADESC_SIZE];
+ 	dma_addr_t		phys;
+ 	struct list_head	node;
+ };
+@@ -351,8 +339,9 @@ static struct owl_dma_lli *owl_dma_add_lli(struct owl_dma_txd *txd,
+ 		list_add_tail(&next->node, &txd->lli_list);
+ 
+ 	if (prev) {
+-		prev->hw.next_lli = next->phys;
+-		prev->hw.ctrla |= llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
++		prev->hw[OWL_DMADESC_NEXT_LLI] = next->phys;
++		prev->hw[OWL_DMADESC_CTRLA] |=
++					llc_hw_ctrla(OWL_DMA_MODE_LME, 0);
+ 	}
+ 
+ 	return next;
+@@ -365,8 +354,7 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+ 				  struct dma_slave_config *sconfig,
+ 				  bool is_cyclic)
+ {
+-	struct owl_dma_lli_hw *hw = &lli->hw;
+-	u32 mode;
++	u32 mode, ctrlb;
+ 
+ 	mode = OWL_DMA_MODE_PW(0);
+ 
+@@ -407,22 +395,22 @@ static inline int owl_dma_cfg_lli(struct owl_dma_vchan *vchan,
+ 		return -EINVAL;
+ 	}
+ 
+-	hw->next_lli = 0; /* One link list by default */
+-	hw->saddr = src;
+-	hw->daddr = dst;
+-
+-	hw->fcnt = 1; /* Frame count fixed as 1 */
+-	hw->flen = len; /* Max frame length is 1MB */
+-	hw->src_stride = 0;
+-	hw->dst_stride = 0;
+-	hw->ctrla = llc_hw_ctrla(mode,
+-				 OWL_DMA_LLC_SAV_LOAD_NEXT |
+-				 OWL_DMA_LLC_DAV_LOAD_NEXT);
++	lli->hw[OWL_DMADESC_CTRLA] = llc_hw_ctrla(mode,
++						  OWL_DMA_LLC_SAV_LOAD_NEXT |
++						  OWL_DMA_LLC_DAV_LOAD_NEXT);
+ 
+ 	if (is_cyclic)
+-		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
++		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_BLOCK);
+ 	else
+-		hw->ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
++		ctrlb = llc_hw_ctrlb(OWL_DMA_INTCTL_SUPER_BLOCK);
++
++	lli->hw[OWL_DMADESC_NEXT_LLI] = 0;
++	lli->hw[OWL_DMADESC_SADDR] = src;
++	lli->hw[OWL_DMADESC_DADDR] = dst;
++	lli->hw[OWL_DMADESC_SRC_STRIDE] = 0;
++	lli->hw[OWL_DMADESC_DST_STRIDE] = 0;
++	lli->hw[OWL_DMADESC_FLEN] = len | 1 << 20;
++	lli->hw[OWL_DMADESC_CTRLB] = ctrlb;
+ 
+ 	return 0;
+ }
+@@ -754,7 +742,8 @@ static u32 owl_dma_getbytes_chan(struct owl_dma_vchan *vchan)
+ 			/* Start from the next active node */
+ 			if (lli->phys == next_lli_phy) {
+ 				list_for_each_entry(lli, &txd->lli_list, node)
+-					bytes += lli->hw.flen;
++					bytes += lli->hw[OWL_DMADESC_FLEN] &
++						 GENMASK(19, 0);
+ 				break;
+ 			}
+ 		}
+@@ -785,7 +774,7 @@ static enum dma_status owl_dma_tx_status(struct dma_chan *chan,
+ 	if (vd) {
+ 		txd = to_owl_txd(&vd->tx);
+ 		list_for_each_entry(lli, &txd->lli_list, node)
+-			bytes += lli->hw.flen;
++			bytes += lli->hw[OWL_DMADESC_FLEN] & GENMASK(19, 0);
+ 	} else {
+ 		bytes = owl_dma_getbytes_chan(vchan);
+ 	}
 -- 
 2.7.4
 
