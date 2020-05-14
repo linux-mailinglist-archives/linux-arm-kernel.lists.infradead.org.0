@@ -2,91 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DACB31D38BB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:01:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16ED71D38DF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:06:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:To:References:Message-Id:
+	Date:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B+UYt2phHrD/rL43mCW6WcD/XfyBd45Vjp4ks1pegJ4=; b=DWl3aMGU5B3u8/
-	usLvg6mzs0gvvdu5RPDAFhk4BqEfFQV0bGQNjTMC4VY6wsTisqWofLINVrtkiSOsKp4u+xyjL1u/U
-	5hG8OevevAYwppGeST9n6EAkLfPYD/d7Mv2Bfv/IybjjjxD3EgzH2W1U4R2ryPMZfjZBAI+IZkpnM
-	5Lnj8FHa60wAQ6Os0ebt5jQAkqk2nr6ZtdrS3Duy6+q63RMf6KOu5OJ2Uawj0woWSIQsXklPDunYO
-	OnWvEYkkLMo/ejm6WNdzvXBjnnH4u09Vnb1TmOvfw/hle0TECTyF/zhwIuI54/rzrz6Q0Y3F03AI1
-	0I8GjaWKE2MAhnJon6pQ==;
+	List-Owner; bh=cph64WJ5VkOJo1QL4heHBcNI+Z3AM6aG9N8S3O8mBKc=; b=CIlWlUfCt9rHV/
+	oTdU/inm8dpK4URUmp5ITeCA87T0YcWAeCZ5SuFPDZreAIsX2V0SPjIxVBrmth6A1mgz7SFthQ6zH
+	YH+xQlckgTXTyqU1m33+clmZYCphpLV73sos69VLJ6ZtQ8nE6RmtFXWIojIM2gSb14jxKx1aNnG2G
+	fG2ExJXXBlSoFDrp+UXGtMHGAu413yNUsJrUA+38hliI8qkgsmp/RlGjRPgOosDmdalQuXI5xkgvV
+	xq0u9MxZsgLw6eNzqSZ8v/+GB7/nEp3URZQmsJkH1lUXtqbd/Vpv9emsGkAXDKKU5ZJrkUkkk8fOH
+	cf75RSWOtyg7Fu8L6+Kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZIAQ-000853-BH; Thu, 14 May 2020 18:01:10 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1jZIFk-0003Zl-HL; Thu, 14 May 2020 18:06:40 +0000
+Received: from mail-dm6nam12on2097.outbound.protection.outlook.com
+ ([40.107.243.97] helo=NAM12-DM6-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZIAF-00082k-E3
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:01:03 +0000
-Received: by mail-pg1-x543.google.com with SMTP id r10so1559305pgv.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 11:00:58 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Q+94btJD+GoatLukAXyT7lRAf/KVqdd70Ky4ApajaB4=;
- b=ZCGuNU5TwJwkF/qOaWwTaMbEfGJUVNBlxVt5Ffyrj97GNOAlY9WmxRf3FiwXWz/5sX
- HXTA1sKMNwSSo4SpXSTN2I8xxS4aFwuT/4DputdVW84PpQGDLp2xcwi2X7gdANMgTKzc
- QDDAxNhr5zHAwaIglP9S0WS20paeaPCr8GzyrP9kVF+8l8o0Dqx/M12H9XGx6Lhv9oz9
- CoUOCIdZxNEYNPiRzkv1xq+jzMEx/1rAuiXQy+lysVmeQsW0Xsp4aW/tjqCdHrSe0g6B
- oxMlwgBff+N2GXlYIlIMg5L/YnJfJ28Lc8kSwpl2idhREd6V32rO9I4Z8InED5gVbdWN
- zJ2A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Q+94btJD+GoatLukAXyT7lRAf/KVqdd70Ky4ApajaB4=;
- b=FW5Av9EwXir3ZBSZNMlHxNfFQPUO4ud0hANtrVNXUFOWl9oXoNQIVDYw6AAuSE1OQl
- U3wLLEI38mS8rAzEKPtjWvvdCSC5Ez5XE3CB+P4hFuZa8EwFedfJnf7IL+fgvJXsz1F3
- 3kdJdjLdIfGf881e1cFueBdsJhovxdzkyn0dxr9kkbao5I1DtlJ+4WhX2Vqk/GWFkM8C
- mRKuGeOHFH0MK+DAnp9pStEudxcgyNLLiXAWEFHa4ZfDt/k1PlLgcFgn53lHPK+B3wk8
- hqIANzr8kfKFAyYA5v709xlDVzfSlAV0MxGhLhYSm3o/81GZKX/sHaFQAJmtFls1ZM6R
- KPxw==
-X-Gm-Message-State: AOAM533/VixIhfLJ9p5r5P2Cb0R2kRuIRqSSEInuUBkt2PFTg9LOTNrO
- VCe8XWbtYwXApGMjfsJwURrbVzKV39c=
-X-Google-Smtp-Source: ABdhPJwVCSQFVIIffQCmw/NdSgP4/xj9cRLTxkvj99YAZ4LRBiKMEoP+sm/an/Cbf/dUrk1FT5FGcA==
-X-Received: by 2002:a63:e550:: with SMTP id z16mr4858799pgj.92.1589479258195; 
- Thu, 14 May 2020 11:00:58 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id y2sm2884597pfq.16.2020.05.14.11.00.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 May 2020 11:00:57 -0700 (PDT)
-Date: Thu, 14 May 2020 12:00:55 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCH] coresight: etm4x: Add support to disable trace unit
- power up
-Message-ID: <20200514180055.GA29384@xps15>
-References: <20200514105915.27516-1-saiprakash.ranjan@codeaurora.org>
+ id 1jZIFZ-0003Yh-NA
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:06:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=nZYDIa9RGcsygjERWaks79YU4vKGKCBS6W9WxURX6wzym8NnQ3ysalUFNLYoAYMY96mKCXZWe2IZFF6AVoeOnmCGarw1DXreTevwSxiiZtFY3EemPP654Z6SMfhqkLd7xOA7bx4yixmAKoUV4QdlKdCNyXUgztAAYZxxoTursSJf/QbQNTlzQUvrynTYMaaS3BHA0TPgdtXecnwM+xTzoeBT28BoxPVBBht8dnwtAabu1U652K7wwCaiRRrAH3MUOII1I7qCmJRm1ZE2FGfydu/iyi5GoisbiDv6fj7fDooC2gjS7ZeJCTDJbRGrKiuKp4f0mTnLtZmsXJ9p05o+fQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4KfRNUXVG1i7Vh/m4idbgjqZl6w++6Pk5t5TRDb2qmo=;
+ b=HVTAjIWYC58MbtdVOiGtxfhEW83zAyKGVlW5ELlC/ByzPizspPK8JSsCRHCOVJpy57p5fSQ3zoJfnepK93gw8qGuASeWzm+ZHkkksz35iIXG/+MyrNmI9J9T9b1P9qKIC1T/CMxGAgNdJgCrgQ7WgGvMSkWdGJdj41/yjwVgi1cqrWbbQl2uZqZTKGutMG6l4htk7OLRI0EM7bMdveBYTSy7vc8HIhJPVOoUig6iq0Um0oALFjDKot5cdwqno/NNWxAbbZFr5JWNVxMLR3ZwtoDcAeA8tXwYt171hlcKdGhSQegnCzKIA5UshG4Xx8Yci+em0dbEOiK9u3Rd7Nuu2g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=os.amperecomputing.com; dmarc=pass action=none
+ header.from=amperemail.onmicrosoft.com; dkim=pass
+ header.d=amperemail.onmicrosoft.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=os.amperecomputing.com; s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=4KfRNUXVG1i7Vh/m4idbgjqZl6w++6Pk5t5TRDb2qmo=;
+ b=cIak28l6V7HZeUhsj69IZTeiFwG46309u9halPRLZBcp4OCN8smt6n2qiHp8anXN6FY4m6WupHWEdA5RTY+uF2WXxagYrAg5+L8xPvZvwNQbHOAq+eVXskNiTpxwC0QSRInDPI5KHRvGcQPghsE+e8sOVW9OUd1jwFc/amDuMjY=
+Authentication-Results: arm.com; dkim=none (message not signed)
+ header.d=none;arm.com; dmarc=none action=none
+ header.from=amperemail.onmicrosoft.com;
+Received: from BYAPR01MB4598.prod.exchangelabs.com (2603:10b6:a03:8a::18) by
+ BYAPR01MB4325.prod.exchangelabs.com (2603:10b6:a03:99::28) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2979.35; Thu, 14 May 2020 18:06:24 +0000
+Received: from BYAPR01MB4598.prod.exchangelabs.com
+ ([fe80::296c:b848:8bf0:6f2c]) by BYAPR01MB4598.prod.exchangelabs.com
+ ([fe80::296c:b848:8bf0:6f2c%5]) with mapi id 15.20.2979.033; Thu, 14 May 2020
+ 18:06:24 +0000
+Subject: Re: [PATCH v3] ACPI/IORT: Fix PMCG node always look for a single ID
+ mapping.
+From: Tuan Phan <tuanphan@amperemail.onmicrosoft.com>
+In-Reply-To: <20200514092944.GA18032@e121166-lin.cambridge.arm.com>
+Date: Thu, 14 May 2020 11:06:19 -0700
+Message-Id: <1935E7D8-3807-40D0-A07B-28D5036F8489@amperemail.onmicrosoft.com>
+References: <1589415122-5899-1-git-send-email-tuanphan@os.amperecomputing.com>
+ <20200514092944.GA18032@e121166-lin.cambridge.arm.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+X-Mailer: Apple Mail (2.3608.80.23.2.2)
+X-ClientProxiedBy: CY4PR04CA0037.namprd04.prod.outlook.com
+ (2603:10b6:903:c6::23) To BYAPR01MB4598.prod.exchangelabs.com
+ (2603:10b6:a03:8a::18)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200514105915.27516-1-saiprakash.ranjan@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MS-Exchange-MessageSentRepresentingType: 1
+Received: from [192.168.0.173] (73.151.56.145) by
+ CY4PR04CA0037.namprd04.prod.outlook.com (2603:10b6:903:c6::23) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.3000.25 via Frontend Transport; Thu, 14 May 2020 18:06:21 +0000
+X-Mailer: Apple Mail (2.3608.80.23.2.2)
+X-Originating-IP: [73.151.56.145]
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 4f5975de-9f2d-457a-d92a-08d7f8318353
+X-MS-TrafficTypeDiagnostic: BYAPR01MB4325:|BYAPR01MB4325:
+X-MS-Exchange-Transport-Forked: True
+X-Microsoft-Antispam-PRVS: <BYAPR01MB43253E15B25C1FD3F3FD44D0E0BC0@BYAPR01MB4325.prod.exchangelabs.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6430;
+X-Forefront-PRVS: 040359335D
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam: BCL:0;
+X-Microsoft-Antispam-Message-Info: ud1S7jujg5xE2gchwOEt7ZuNoFqTavbZPE4/hPhH2KJgKaJEhcI2uDdfd9TpgiKd2H7fMh/fEM63PziBEP1THPBk5tS7FN4Py1aowZ1kh5EuqxDWMTTUZHIea6smPKZku0NS0KCf3J7HgGzW1s7gQScPFWO7LM+iyRRZQ9atGGNu6A30hnWAaXSXY8hO+ZUK7QbvSeQUJHfmiX9RHR4LhMmzNQ4Emiv6ZfbVVtK4f3a6Bvncmrep6OtBko8pMn1k0K47iYgwktzLvmhYpHdFEjB20ghAZeFYMJxKbw+5i1IxpXPYo0Ne2Cd1waJwraHYaCdofyot8myvF2bNlhgHysQoQyvo2XeQ9Od0BN4i3fICfPdSfUCsfcf+bazxsgJ85arSUkFEhnBJEKs1D/PHB0c8pNxeHFa4cQg0IMSZlmRQYtSlHAUn9cr4xcBe1jzV
+X-Forefront-Antispam-Report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BYAPR01MB4598.prod.exchangelabs.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(39850400004)(346002)(396003)(136003)(366004)(376002)(186003)(8676002)(52116002)(8936002)(478600001)(66946007)(4326008)(5660300002)(66556008)(83170400001)(33656002)(66476007)(2906002)(16526019)(6486002)(54906003)(42882007)(2616005)(7416002)(53546011)(6916009)(16576012)(26005)(316002)(956004);
+ DIR:OUT; SFP:1102; 
+X-MS-Exchange-AntiSpam-MessageData: ZkXXluDDzfJgpsv6Ctda8ZoK1rh57+sjk5viAMC4DqinVhmCATm+f4CWVtbotVJSrmaH3P+8L4rlGuw/1eJ4U2TPv0dgqrqXq/MbeAAXx6mnuLlK2+0RzXgkMDu2HpNcMMl5LmJpXeelo0FR/k8zRdXg68JrUNNDIf1yBT6nnDzFsoV5I/FBw8ISthCsFJCPur3jGpSdr+FD7wjV7m5drpSJzk3cqIT+B7fQ+O2GfrMAdfx+wyEnZohxB0GfaeKFjZ5c10ES4slMaG02/0vfgzj3NUiyVMQZWaozPXKbe4xHlIrHMD6p6jNvXnZTB0F+jXRAsrWCwha+/FFf7YuHGNSWnkjydAeICt24LKCHtfj5LjbvSasgNWcprtydEfCNAi7Y1IC7T5x6eC+RA1QLMmkkyk6XL5xRmNmcc+rBGLjat849/LtSMej3tMeVoVhfgRLuiftZLmnNJNKhapUJlvvDAddU4MISksnwwrZNAdo=
+X-OriginatorOrg: amperemail.onmicrosoft.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f5975de-9f2d-457a-d92a-08d7f8318353
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 14 May 2020 18:06:23.9690 (UTC)
+X-MS-Exchange-CrossTenant-FromEntityHeader: Hosted
+X-MS-Exchange-CrossTenant-Id: 3bc2b170-fd94-476d-b0ce-4229bdc904a7
+X-MS-Exchange-CrossTenant-MailboxType: HOSTED
+X-MS-Exchange-CrossTenant-UserPrincipalName: efurKfNZGId4TwV5hFMbo+l+etcOkaAhQbeqfdJzWA3Ta9g3KvyuX1aDugYUbGS7tS65J9VOMQuk5IVEpDLsIOOST6Nqdw4CoBRRywjbNlt2X5mZHsyQAdqj0aT+d9Ct
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR01MB4325
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_110059_636781_A9C76224 
-X-CRM114-Status: GOOD (  26.53  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_110629_816793_65B85558 
+X-CRM114-Status: GOOD (  14.04  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [40.107.243.97 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [tuanphan[at]amperemail.onmicrosoft.com]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.243.97 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 MSGID_FROM_MTA_HEADER  Message-Id was added by a relay
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,137 +131,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>, linux-arm-msm@vger.kernel.org,
- coresight@lists.linaro.org, linux-kernel@vger.kernel.org,
- Stephen Boyd <swboyd@chromium.org>, Tingwei Zhang <tingwei@codeaurora.org>,
- Leo Yan <leo.yan@linaro.org>, linux-arm-kernel@lists.infradead.org,
- Mike Leach <mike.leach@linaro.org>
+Cc: Hanjun Guo <guohanjun@huawei.com>, Robin Murphy <robin.murphy@arm.com>,
+ Neil Leeder <nleeder@codeaurora.org>,
+ Tuan Phan <tuanphan@os.amperecomputing.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>, linux-kernel@vger.kernel.org,
+ Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
+ linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
+ patches@amperecomputing.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Good morning Sai,
 
-On Thu, May 14, 2020 at 04:29:15PM +0530, Sai Prakash Ranjan wrote:
-> From: Tingwei Zhang <tingwei@codeaurora.org>
+
+> On May 14, 2020, at 2:29 AM, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com> wrote:
 > 
-> On some Qualcomm Technologies Inc. SoCs like SC7180, there
-> exists a hardware errata where the APSS (Application Processor
-> SubSystem)/CPU watchdog counter is stopped when ETM register
-> TRCPDCR.PU=1.
-
-Fun stuff...
-
-> Since the ETMs share the same power domain as
-> that of respective CPU cores, they are powered on when the
-> CPU core is powered on. So we can disable powering up of the
-> trace unit after checking for this errata via new property
-> called "qcom,tupwr-disable".
+> Please update the subject:
 > 
-> Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-
-Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-
-> ---
->  .../devicetree/bindings/arm/coresight.txt     |  6 ++++
->  drivers/hwtracing/coresight/coresight-etm4x.c | 29 ++++++++++++-------
-
-Please split in two patches.
-
->  2 files changed, 25 insertions(+), 10 deletions(-)
+> Subject: "ACPI/IORT: Fix PMCG node single ID mapping handling"
 > 
-> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> index 846f6daae71b..d2030128fe46 100644
-> --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> @@ -108,6 +108,12 @@ its hardware characteristcs.
->  	* arm,cp14: must be present if the system accesses ETM/PTM management
->  	  registers via co-processor 14.
->  
-> +	* qcom,tupwr-disable: boolean. Indicates that trace unit power up can
-> +	  be disabled on Qualcomm Technologies Inc. systems where ETMs are in
-> +	  the same power domain as their CPU cores. This property is required
-> +	  to identify such systems with hardware errata where the CPU watchdog
-> +	  counter is stopped when TRCPDCR.PU=1.
-> +
+> On Wed, May 13, 2020 at 05:12:02PM -0700, Tuan Phan wrote:
+>> PMCG node can have zero ID mapping if its overflow interrupt
+>> is wire based. The code to parse PMCG node can not assume it will
+>> have a single ID mapping.
+> 
+> "An IORT PMCG node can have no ID mapping if its overflow interrupt is
+> wire based therefore the code that parses the PMCG node can not assume
+> the node will always have a single mapping present at index 0.
+> 
+> Fix iort_get_id_mapping_index() by checking for an overflow interrupt
+> and mapping count."
 
-I think something like "qcom,skip-power-up" would be clearer. 
+Thanks for the correction. Will update it.
+> 
+>> Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
+>> Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
+>> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+>> ---
+>> v1 -> v2:
+>> - Use pmcg node to detect wired base overflow interrupt.
+>> 
+>> v2 -> v3:
+>> - Address Hanjun and Robin's comments.
+>> 
+>> drivers/acpi/arm64/iort.c | 5 +++++
+>> 1 file changed, 5 insertions(+)
+> 
+> Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> 
+>> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
+>> index ed3d2d1..12bb70e 100644
+>> --- a/drivers/acpi/arm64/iort.c
+>> +++ b/drivers/acpi/arm64/iort.c
+>> @@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
+>> static int iort_get_id_mapping_index(struct acpi_iort_node *node)
+>> {
+>> 	struct acpi_iort_smmu_v3 *smmu;
+>> +	struct acpi_iort_pmcg *pmcg;
+>> 
+>> 	switch (node->type) {
+>> 	case ACPI_IORT_NODE_SMMU_V3:
+>> @@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
+>> 
+>> 		return smmu->id_mapping_index;
+>> 	case ACPI_IORT_NODE_PMCG:
+>> +		pmcg = (struct acpi_iort_pmcg *)node->node_data;
+>> +		if (pmcg->overflow_gsiv || node->mapping_count == 0)
+>> +			return -EINVAL;
+>> +
+>> 		return 0;
+>> 	default:
+>> 		return -EINVAL;
+>> -- 
+>> 2.7.4
+>> 
 
-Also, a better choice of words is that TRCPDCR.PU does not have to be set on
-Qualcomm...
-
->  * Optional property for TMC:
->  
->  	* arm,buffer-size: size of contiguous buffer space for TMC ETR
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-> index fb0f5f4f3a91..6886b44f6947 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-> @@ -104,6 +104,11 @@ struct etm4_enable_arg {
->  	int rc;
->  };
->  
-> +static inline bool etm4_can_disable_tupwr(struct device *dev)
-> +{
-> +	return fwnode_property_present(dev_fwnode(dev), "qcom,tupwr-disable");
-> +}
-> +
-
-Please call fwnode_property_present() at initialisation time to set a new
-drvdata::skip_power_up variable.  From there just switch on that in
-etm4_enable/disable_hw().  
-
-Thanks,
-Mathieu
-
->  static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
->  {
->  	int i, rc;
-> @@ -196,12 +201,14 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
->  	writel_relaxed(config->vmid_mask0, drvdata->base + TRCVMIDCCTLR0);
->  	writel_relaxed(config->vmid_mask1, drvdata->base + TRCVMIDCCTLR1);
->  
-> -	/*
-> -	 * Request to keep the trace unit powered and also
-> -	 * emulation of powerdown
-> -	 */
-> -	writel_relaxed(readl_relaxed(drvdata->base + TRCPDCR) | TRCPDCR_PU,
-> -		       drvdata->base + TRCPDCR);
-> +	if (!etm4_can_disable_tupwr(etm_dev)) {
-> +		/*
-> +		 * Request to keep the trace unit powered and also
-> +		 * emulation of powerdown
-> +		 */
-> +		writel_relaxed(readl_relaxed(drvdata->base + TRCPDCR) | TRCPDCR_PU,
-> +			       drvdata->base + TRCPDCR);
-> +	}
->  
->  	/* Enable the trace unit */
->  	writel_relaxed(1, drvdata->base + TRCPRGCTLR);
-> @@ -476,10 +483,12 @@ static void etm4_disable_hw(void *info)
->  
->  	CS_UNLOCK(drvdata->base);
->  
-> -	/* power can be removed from the trace unit now */
-> -	control = readl_relaxed(drvdata->base + TRCPDCR);
-> -	control &= ~TRCPDCR_PU;
-> -	writel_relaxed(control, drvdata->base + TRCPDCR);
-> +	if (!etm4_can_disable_tupwr(etm_dev)) {
-> +		/* power can be removed from the trace unit now */
-> +		control = readl_relaxed(drvdata->base + TRCPDCR);
-> +		control &= ~TRCPDCR_PU;
-> +		writel_relaxed(control, drvdata->base + TRCPDCR);
-> +	}
->  
->  	control = readl_relaxed(drvdata->base + TRCPRGCTLR);
->  
-> -- 
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-> of Code Aurora Forum, hosted by The Linux Foundation
 
 _______________________________________________
 linux-arm-kernel mailing list
