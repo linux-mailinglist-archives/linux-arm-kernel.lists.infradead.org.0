@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D37BC1D2681
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:09:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDC4C1D2698
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:15:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vXjf4ApQFA4bE4iid3OjWWrPX3g0dLeqyxW7PPfHZ3U=; b=lZwwp8cP5wYfSS
-	IpqnZAZtGxX+xVB6CS/sttk2pNxO/V9vcHs6BTNJUsGDw/wub+nGFaxRfYcsIRQB+Cscr9FFO2vAK
-	8Ad+UEKzgkFB3DIxOFKoOyHpB2I6Vz8gP+NSaY65o7DpbSlkp6aoZgA/gwJgdj75HDDn0RZ1NCucf
-	B//RMLQ1Ev6Y0SWKWn1Inq2McldhNL0uT8kJ5PpjNYNjy5hyYsAFxQgI1q4o09XAKmXSGnFk9vsLI
-	Ukin3no/2v6L7gQyR4kepBBRu7UtVnOAhxVDgnY8v5EzU6AKNkwryfpovem3s6ekG7778oeCQStUU
-	qbmExyAPBOtQt7p8D+0g==;
+	List-Owner; bh=gTxOr6MMM4ENjrGTWMTQRohaow5oprj4hbWz1JhjiJg=; b=dycpiDUO0FwRxC
+	xIsvfB4fPoxq9puU5mIRf+rRfUM8MQ/fO/Advi1bH/0Ap9Ut5Ob0JvVi07V7dsRRPNrUKpUUPYF+B
+	T6alNfwbxZCLF8ZupDoUhAF3T1Tw4mFVnIL0a9Qya6u9oKfrcxc11t8/yCdVnE35F1qGW16h/teFI
+	wQ2AXmKv8GX4YsbulI0/DyggaM5UP0LeQdR5U2rrka+OtOmiqM/ofLauSZnHBYTDYf8dNksqaad08
+	z/qPiqPaYXgyowmetmvc5ZFWhE5TA43YP2apaEuQr79RH+7Ilsp903a06BQ3fmUk6VO7KM4gDMApc
+	IoaTIPI9Bks22/WwaJJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ67n-00014o-Rg; Thu, 14 May 2020 05:09:39 +0000
+	id 1jZ6DJ-0007dQ-2B; Thu, 14 May 2020 05:15:21 +0000
 Received: from mail-pj1-x1041.google.com ([2607:f8b0:4864:20::1041])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ63N-0003MP-Bw
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:05:09 +0000
-Received: by mail-pj1-x1041.google.com with SMTP id hi11so12042686pjb.3
+ id 1jZ6D6-0006yH-Pq
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:15:11 +0000
+Received: by mail-pj1-x1041.google.com with SMTP id t9so12078124pjw.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 22:05:05 -0700 (PDT)
+ Wed, 13 May 2020 22:15:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=Tj3wTZtbDhnHZV3JGD+uPMkyVs4DjgIgPsF9FB8nJ8k=;
- b=Es7gB+V2iRrBdGZENlfFP7ZPj71j6sUTsS8b5RJjQMyycpeN/dRq6+h1KC46rIh+dG
- e+y1nzHg3jqoLQh7i8c5I4c9EYPm60CBZJrrgjhCe2uf7IU1sulmF1wC1vnocmblc9Tl
- llsaiwqDsP0oYe1Rus7kOj4t2oH3xU3fVf2P3bU5JdHVmu0y0qBPea8bJhn/p14vdYNK
- yBxV1rVd/BEV1c2WW0RVMFcX92t/U5FnflbXkSTm0Q35KHD/6iqB7pVnOGvM8n9UJpGc
- +G1BKArwMEdLVLpJHsocK6RDgotJXXtlrWu/t2mFUIrTt90g9axtbXaRVvbFAZz9l5ye
- X7nQ==
+ bh=2yXsWHQlHZFO6uOvXrEaZ/pS+PzZxIKV+dtwFcRxe6w=;
+ b=WaEy+o54dBSzmlKivA2IuiMCd2bVGyN/8T4tkjvVvubQFLn97LTv0O/ySe1z/fH/u3
+ MdiddCBwUdTikQYAt7mfPDkzu9K9YRsM1a26eZ7vgwdrfxQv9Ly8One/CWbQuwXe2QWZ
+ d0wpkTf3Mt09I3QJARIvSlOGK8APyyQJweufAlgEfoyZZIzX+H4XMEuIHKwZR17+8Z8/
+ bi2lE6JgFaPYNKf+KBzn/yQpi6Zom8tNmikCY+c6swEltzuP43VRUoGOCOcl8nf6vKEK
+ 6DJYLSPYRQRB76ESJr8A6lis27zwZihNf3FK1kdonfvLWja9w4FSmZlr+nveVp58bUwL
+ 7EIg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=Tj3wTZtbDhnHZV3JGD+uPMkyVs4DjgIgPsF9FB8nJ8k=;
- b=SlicalwJJWmZrBWaKDguc8VTcaXIZ3EUhvD9iGckVzG7+2blmazEpg6xVkFsERFpEe
- M7KFJz9ioOt8HsV0Ss4NossKmvtP+W/hyIcAT6uZhOcuaujPL02BVPbo+ytaPrljZF69
- 1NnwqcNEaV1fLbtYOt3ro9nAoy6zpJsNOiAuG8A1RwyMoN57Wz9wSaNLhGLygkZs6DTP
- vPj+4O8TJk3mwTJcERTArlL5UnlGA3wss6Frz1rFg76deN2Xxp5cbum7VtLnoUACKDAd
- LywRliWXv2BEnbYQv2+AM0k7WcOWaeIm9+/GJHJE1ESd30ZajvrRw+gHn4pIe4wtYbTO
- xKmw==
-X-Gm-Message-State: AOAM533SctPXyEAmsi/qV9GPOOJth9mGEO7Hld3cNv8xJ3VHE+z0D8Tz
- qXH1SGls+FYR3iRdH8SJ1RD8kg==
-X-Google-Smtp-Source: ABdhPJxE+Ga0oiFVkwJhCJzgkI8UBbxRw3MDQH0DbdFOywzsoL1X/me7zuMcKuBheK34DoyGKQsEYg==
-X-Received: by 2002:a17:90a:c201:: with SMTP id
- e1mr5391158pjt.162.1589432704717; 
- Wed, 13 May 2020 22:05:04 -0700 (PDT)
+ bh=2yXsWHQlHZFO6uOvXrEaZ/pS+PzZxIKV+dtwFcRxe6w=;
+ b=FQdsuP206pwtGwqfL9dRumc8mKClXcjuoay9VizJrRzOKLcvA2zrLxAhjf+5fghHoH
+ IjWad09wyRvHekqYhGBYb7icGaxkR7zhGCKswu8fbzmwn45fblxiGrYno1ZjkCuBJCsV
+ FPq1a85MmJ6PLfnglt5jHhmjPbBBYQ6D+kKm9+Mhn+Xn52J+r0E/TL92A5FhUaYHOLOx
+ 5VoK8PzWDrXeccOmrTL/x26+zMhqzy+h28XFXKGzU0aJDfs4xqeLTDhWF4gPNOR4gugI
+ lL5eQQ+WXYP7l+akHAtrX1NvGcZb16dwuXVFW4gwnLy+DI3bNxWQh291Qku1B10HfD9s
+ 1Q3w==
+X-Gm-Message-State: AOAM532pnQPY1i1htwDfy5G8fblbQjp91FL7g0C3ZHcJZnkZ1MlDEKYR
+ 06UgPgeOzEFPzngS4bamh8My0g==
+X-Google-Smtp-Source: ABdhPJxxhy9EY2uDVHzZ5e3gf3ckUoHFy83l2BU7ClFXDzIPQkfzRRzKac281D9+vAEJfZiCrzq7bQ==
+X-Received: by 2002:a17:90b:f86:: with SMTP id
+ ft6mr7177214pjb.49.1589433307144; 
+ Wed, 13 May 2020 22:15:07 -0700 (PDT)
 Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
  [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 1sm1059453pgy.77.2020.05.13.22.05.03
+ by smtp.gmail.com with ESMTPSA id w14sm1084582pgo.75.2020.05.13.22.15.05
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 22:05:04 -0700 (PDT)
-Date: Wed, 13 May 2020 22:03:33 -0700
+ Wed, 13 May 2020 22:15:06 -0700 (PDT)
+Date: Wed, 13 May 2020 22:13:36 -0700
 From: Bjorn Andersson <bjorn.andersson@linaro.org>
 To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v2 05/12] remoteproc: stm32: Parse syscon that will
- manage M4 synchronisation
-Message-ID: <20200514050333.GK16107@builder.lan>
+Subject: Re: [PATCH v2 10/12] remoteproc: stm32: Introduce new parse fw ops
+ for synchronisation
+Message-ID: <20200514051336.GA396285@builder.lan>
 References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <20200424202505.29562-6-mathieu.poirier@linaro.org>
+ <20200424202505.29562-11-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200424202505.29562-6-mathieu.poirier@linaro.org>
+In-Reply-To: <20200424202505.29562-11-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_220505_518594_79562EE7 
-X-CRM114-Status: GOOD (  19.28  )
+X-CRM114-CacheID: sfid-20200513_221508_868141_9F57E5A0 
+X-CRM114-Status: GOOD (  20.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,10 +109,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 24 Apr 13:24 PDT 2020, Mathieu Poirier wrote:
+On Fri 24 Apr 13:25 PDT 2020, Mathieu Poirier wrote:
 
-> Get from the DT the syncon to probe the state of the remote processor
-> and the location of the resource table.
+> Introduce new parse firmware rproc_ops functions to be used when
+> synchonising with an MCU.
 > 
 > Mainly based on the work published by Arnaud Pouliquen [1].
 > 
@@ -120,57 +120,108 @@ On Fri 24 Apr 13:24 PDT 2020, Mathieu Poirier wrote:
 > 
 > Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 > Reviewed-by: Loic Pallardy <loic.pallardy@st.com>
-
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-
 > ---
->  drivers/remoteproc/stm32_rproc.c | 26 ++++++++++++++++++++++++++
->  1 file changed, 26 insertions(+)
+>  drivers/remoteproc/stm32_rproc.c | 51 +++++++++++++++++++++++++++++++-
+>  1 file changed, 50 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index 658439d4b00a..a285f338bed8 100644
+> index 86d23c35d805..b8ae8aed5585 100644
 > --- a/drivers/remoteproc/stm32_rproc.c
 > +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -70,6 +70,8 @@ struct stm32_rproc {
->  	struct reset_control *rst;
->  	struct stm32_syscon hold_boot;
->  	struct stm32_syscon pdds;
-> +	struct stm32_syscon m4_state;
-> +	struct stm32_syscon rsctbl;
->  	int wdg_irq;
->  	u32 nb_rmems;
->  	struct stm32_rproc_mem *rmems;
-> @@ -606,6 +608,30 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev,
->  
->  	*auto_boot = of_property_read_bool(np, "st,auto-boot");
->  
-> +	/*
-> +	 * See if we can check the M4 status, i.e if it was started
-> +	 * from the boot loader or not.
-> +	 */
-> +	err = stm32_rproc_get_syscon(np, "st,syscfg-m4-state",
-> +				     &ddata->m4_state);
-> +	if (err) {
-> +		/* remember this */
-> +		ddata->m4_state.map = NULL;
-> +		/* no coprocessor state syscon (optional) */
-> +		dev_warn(dev, "m4 state not supported\n");
-> +
-> +		/* no need to go further */
-> +		return 0;
-> +	}
-> +
-> +	/* See if we can get the resource table */
-> +	err = stm32_rproc_get_syscon(np, "st,syscfg-rsc-tbl",
-> +				     &ddata->rsctbl);
-> +	if (err) {
-> +		/* no rsc table syscon (optional) */
-> +		dev_warn(dev, "rsc tbl syscon not supported\n");
-> +	}
-> +
+> @@ -215,7 +215,34 @@ static int stm32_rproc_elf_load_rsc_table(struct rproc *rproc,
 >  	return 0;
 >  }
 >  
+> -static int stm32_rproc_parse_fw(struct rproc *rproc, const struct firmware *fw)
+> +static int stm32_rproc_sync_elf_load_rsc_table(struct rproc *rproc,
+> +					       const struct firmware *fw)
+> +{
+> +	struct resource_table *table = NULL;
+> +	struct stm32_rproc *ddata = rproc->priv;
+> +
+> +	if (ddata->rsc_va) {
+
+Does it really make sense to try to sync with a remote that doesn't have
+a resource table?
+
+> +		table = (struct resource_table *)ddata->rsc_va;
+> +		/* Assuming that the resource table fits in 1kB is fair */
+> +		rproc->cached_table = kmemdup(table, RSC_TBL_SIZE, GFP_KERNEL);
+
+It's unfortunate that we need to create a clone of the resource table
+that we found in ram, and then return the original memory when the core
+ask for the loaded table...
+
+I wonder if we somehow can avoid this in the core (i.e. skip overwriting
+table_ptr with the cached_table during stop)
+
+> +		if (!rproc->cached_table)
+> +			return -ENOMEM;
+> +
+> +		rproc->table_ptr = rproc->cached_table;
+> +		rproc->table_sz = RSC_TBL_SIZE;
+> +		return 0;
+> +	}
+> +
+> +	rproc->cached_table = NULL;
+> +	rproc->table_ptr = NULL;
+> +	rproc->table_sz = 0;
+> +
+> +	dev_warn(&rproc->dev, "no resource table found for this firmware\n");
+> +	return 0;
+> +}
+> +
+> +static int stm32_rproc_parse_memory_regions(struct rproc *rproc,
+> +					    const struct firmware *fw)
+>  {
+>  	struct device *dev = rproc->dev.parent;
+>  	struct device_node *np = dev->of_node;
+> @@ -268,9 +295,30 @@ static int stm32_rproc_parse_fw(struct rproc *rproc, const struct firmware *fw)
+>  		index++;
+>  	}
+>  
+> +	return 0;
+> +}
+> +
+> +static int stm32_rproc_parse_fw(struct rproc *rproc, const struct firmware *fw)
+> +{
+> +	int ret = stm32_rproc_parse_memory_regions(rproc, fw);
+> +
+> +	if (ret)
+> +		return ret;
+> +
+>  	return stm32_rproc_elf_load_rsc_table(rproc, fw);
+>  }
+>  
+> +static int stm32_rproc_sync_parse_fw(struct rproc *rproc,
+> +				     const struct firmware *fw)
+
+Rather than having a function parse_fw that is passed no fw and return
+some state that was setup in probe, how about just do this during probe?
+
+Regards,
+Bjorn
+
+> +{
+> +	int ret = stm32_rproc_parse_memory_regions(rproc, fw);
+> +
+> +	if (ret)
+> +		return ret;
+> +
+> +	return stm32_rproc_sync_elf_load_rsc_table(rproc, fw);
+> +}
+> +
+>  static irqreturn_t stm32_rproc_wdg(int irq, void *data)
+>  {
+>  	struct platform_device *pdev = data;
+> @@ -544,6 +592,7 @@ static struct rproc_ops st_rproc_ops = {
+>  static __maybe_unused struct rproc_ops st_rproc_sync_ops = {
+>  	.start		= stm32_rproc_sync_start,
+>  	.stop		= stm32_rproc_stop,
+> +	.parse_fw       = stm32_rproc_sync_parse_fw,
+>  };
+>  
+>  static const struct of_device_id stm32_rproc_match[] = {
 > -- 
 > 2.20.1
 > 
