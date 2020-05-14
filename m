@@ -2,135 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 492A71D3C0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:08:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92A361D3C25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:12:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CkCV6NGPCV80pzW+bUR7FvJJTmymvofF6KcBLuKfgTQ=; b=LIbJIyWQs08EXQ
-	sEF4akW8b15RyIwHX04uMH3xJUSpkeVkuhank7ojv/tYJeTtuQxUSrGrLlhFeBB/vsWc3LeE7MnVF
-	3L0WLwDoBWUwrTjKTANmITTd5aIygb9OpidB4QWtlZy/wJ/UN56KWwCtmFy8dib10NMlzRXERv/kC
-	mPCSPVfqwCi0PYvwcK14/1uBkT55tmxbDtnHJWeRMUITK9tnmTUd7Hv3RoIj/LtDzEPFNibRAc2ia
-	dRzgSTnBrkbABY82ArQ4bz1edw5m4ITAqNGV4bDQWSomGHvIYlvokaZm0Rp7+w/G7vlyLGj9p+UB8
-	xfOKdEjykwEhjuJyTXZA==;
+	List-Owner; bh=NO7i3vMruHXqzj3WzByrByFabeYilnrqlsmoo2vqScI=; b=C1MViGEHMJ8yPA
+	OE7s2xguE8CRMQbi5yE36to1gelRwEHl1999E0NvlE1qYR9Qa4N1rYybGiaPK4wGYU3a8WSKer5MH
+	+PErVJ0Lci4uldM+fbFgOrSHMeFqNefQM9Q9hnu3tf5Bc8DoeYOBpB0R+memUnoRvOXmCyRljTrmy
+	1z4ofDG6rUFvv0N0M9+dRrfyC1UPjlBY/C/UvkKYloatJWZ+CcbUP/7o2rELCfbfT8cvhNgsoXQDj
+	JRTGaSu8qrnbWZh/QW9H7p4H9hv7kv08NRpcvK52FzXtaQE3HQq3HE+vc02qVHWn0fw0bmR1E83Qb
+	2b2PKu5sqgy24geJO90g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJDS-0008AX-0r; Thu, 14 May 2020 19:08:22 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1jZJHc-0003GT-1t; Thu, 14 May 2020 19:12:40 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJCp-0007kX-O9
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:07:49 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20200514190741euoutp0197220430267aab16d1268d0ae0155c39~O_prXV5Xo1498914989euoutp01E
+ id 1jZJHQ-0003Eu-6w
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:12:32 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id 62so2693926vsi.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 19:07:41 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20200514190741euoutp0197220430267aab16d1268d0ae0155c39~O_prXV5Xo1498914989euoutp01E
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589483261;
- bh=ZtfxDhdLs90OyvVegf5gSIpg3nb7fV8VW4Z3SaViPnA=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=L72k8lV60AbOjZg4Ks2+xX2iK3uN69F1iHAeMmo4D7spNYxMf2Blvth3ZPDEEneU9
- il3Jyq0CqykA+cqzRud5bB9/6A4Sjrw+MdE4NgD1koZYJt30BBbe54oGaI5EUBhQxh
- omjPKPB4HL462umdcropg/8mf4yx1V6zd30p3i9s=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20200514190740eucas1p1b78f50aa2a8c350a702be990ef03efe9~O_pqww51q0232902329eucas1p1_;
- Thu, 14 May 2020 19:07:40 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id 7B.D4.61286.CF69DBE5; Thu, 14
- May 2020 20:07:40 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20200514190740eucas1p293129b2ef3ba706652a9327e55db9649~O_pqCM4Hi0297902979eucas1p21;
- Thu, 14 May 2020 19:07:40 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20200514190740eusmtrp1551cbba1be4f614ee676bbff1259ef18~O_pqBgBsy2577025770eusmtrp1o;
- Thu, 14 May 2020 19:07:40 +0000 (GMT)
-X-AuditID: cbfec7f2-f0bff7000001ef66-df-5ebd96fc26b3
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 16.BE.07950.BF69DBE5; Thu, 14
- May 2020 20:07:39 +0100 (BST)
-Received: from localhost (unknown [106.120.51.46]) by eusmtip2.samsung.com
- (KnoxPortal) with ESMTPA id
- 20200514190739eusmtip2b58bea1e9cfb3ef1c0fcca3c010eee29~O_pp2e-ro1760217602eusmtip2F;
- Thu, 14 May 2020 19:07:39 +0000 (GMT)
-From: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>
-To: Matt Mackall <mpm@selenic.com>, Herbert Xu
- <herbert@gondor.apana.org.au>, Arnd Bergmann <arnd@arndb.de>, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, Kukjin Kim <kgene@kernel.org>,
- Krzysztof Kozlowski <krzk@kernel.org>, Florian Fainelli
- <f.fainelli@gmail.com>, Markus Elfring <elfring@users.sourceforge.net>,
- Matthias Brugger <mbrugger@suse.com>, Stefan Wahren <wahrenst@gmx.net>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH 2/2] hwrng: exynos - Set the quality value
-Date: Thu, 14 May 2020 21:07:34 +0200
-Message-Id: <20200514190734.32746-3-l.stelmach@samsung.com>
-X-Mailer: git-send-email 2.25.0
-In-Reply-To: <20200514190734.32746-1-l.stelmach@samsung.com>
+ Thu, 14 May 2020 12:12:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=1LE3Op6W1pMVVmKhBNLCDSlKGpivMWVI6Y3FDIsX10s=;
+ b=hdhJP6EkEPN4CIH6D4KHLE7Hg+GJ+ap7GksmrIQCwncKT0WXcnpBJflfW9zqooy/CR
+ 1SyXzAEnzuGmhPNMPO8t6tBWaIpAn9Pgeqe0w2N77pECiKnK9O+sb03tun6Lbp7c8LVO
+ ZQ2W8WuLM+ptixrh3UzXJ4AkylwR1r1VLt6jrJ/JXMNkWp8rB/mWgsTv8PUaiF59avZ0
+ fiF4tgSoFNUKdWnTSo21eIESqvyQNcB8Av36iYz6e1XEGc8zqpgKOdGxboaFb7gLyXc3
+ +vZO6/Fj9xJTySrViGMj+gagg/9QH3dp1Noon3ZuMCGnzAKIBjgYPU6AppZLienNgYbw
+ TLjA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=1LE3Op6W1pMVVmKhBNLCDSlKGpivMWVI6Y3FDIsX10s=;
+ b=TSGlV+xOI/n19xVEHSxsSP7A4D2Dg5X0fYF8ebdmHI5G6PzII1dyDQaPeAlNFWqJNH
+ 1xkcVQFTmgc+PPgjJqgfsmk8cfQJeZrEn/MrkCsacTUcChSXMXOsusLTRBX/ly3sycUU
+ yglUorPN5TXl3uFVk0iAl7rhWhFIr3nOrb6TSNbIMOUgUgHscgFCsdtknfTW3aHsJQoz
+ Bv+plpLtejU89uULuBgsRsaU5Z0vUOfy2GCmdxFqVE6USLEFiSOcBZAmPELmBq1bC/qt
+ khu4nel8zKIZXd1ExHPBtCyr+23gHHSxxsb4vdtd+gmB07Ipj2pa6QcqCfc48z+ou+iU
+ YPnQ==
+X-Gm-Message-State: AOAM530FSF9P32kqv1DYoODBB748lqwu9PFWJliITqBFnLUmF5C+wcXs
+ y9HI7Ehh1FaqAXywFOvL4qIfE2jW9D4ARiQo/3VnYg==
+X-Google-Smtp-Source: ABdhPJyFDV7FfjuvogH4RjQMp/eTHNABRxGEE68tUKUm3krpWc2shmK46EO0auQqrgNrRsGZNJCioZodjIqF0MeMz/Q=
+X-Received: by 2002:a05:6102:242:: with SMTP id
+ a2mr4819381vsq.200.1589483546788; 
+ Thu, 14 May 2020 12:12:26 -0700 (PDT)
 MIME-Version: 1.0
-Organization: Samsung R&D Institute Poland
-X-Brightmail-Tracker: H4sIAAAAAAAAA01SfUzMcRjf934v9+vW1a+L9ayMuZVN81Jj7RstjM1vtuRPY+Lwk+htd73Q
- H6S63lC5K9UVWoXW2+XkKJGu00mrNiEqFHkpFIWUMt39zvjveZ7P2/NsD0PIEml3JiwyhldG
- KsLltIQ0tk13rZw9fyfEJz13JZ7TtInxtQI9hWvO3idxd8ZVAs+MmcU4uUxP49Oji3D2m48E
- 7u6uE+PnpgqEDW+eUvjVy2kR7mkspnFB910RLtEOU7jEmIXw28LrNB6rGkbY8iCD2OjK/ZrR
- IE73qpPmGnQvxFyZoZnmjPe8OENlBs01X6gWc9fLT3JZ9ZWIyxqpQ5y+/gnJJT1Mo7hJw+Id
- 0l2SgIN8eFgcr1wduE9y+MWcGUVni4/1F78jE1ESnYkcGGDXgrr0McpEEkbGViD4NN5LCs03
- BKcbau3IJIIecy76K7lUmUYJwFUEX/Jb7M17BHM1jTYWzW6C7MsPbMACVk2B9msOaQUINh7U
- Q8OUtXZl10FWVxNhrUnWC1L6p21bSdn10P7rnliIWwJFpzpscwc2AHo/zIgEjgu0Fw7bPJ1Z
- b6hO6rX7L4HkG0WENRhYMwMX6lNFgtEWaHh00X6DK4xa6u0Bi6BDe2ZezMzXJ0Gr8RO0ZxAY
- i3+SAmc9DHTN0FYOwS4HfeNqYbwJqt5PIUHqBM8+uwgrOIHGmE8IYymkp8oEtifUZjfZDd3h
- 7GgFykFy3X/H6P47QPcvqwQRlciNj1VFhPIq30g+fpVKEaGKjQxddSAqwoDm/7Ljt2XiFvr+
- aL8JsQySO0p98u6EyChFnOp4hAkBQ8gXSLfrb4fIpAcVxxN4ZdReZWw4rzIhD4aUu0nXlI7s
- kbGhihj+KM9H88q/qIhxcE9EwZOd5tkpr7Cg+Md1Hpszdo43D0b1LNNYAtt5Z9D7L9uWs9Zv
- oC8xendVJ11WcMvtytyU709uzdIUU9sh+cSJwSnLVkf906C76f2SchftkVOORRvaXFo6/d3F
- VI5f4GsiaDJP09Qz1OrWd7M/LGH6a57aM3xFq1PCj4Ux5xZPvA6Wk6rDCl9vQqlS/AGqd5uO
- kwMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFupnleLIzCtJLcpLzFFi42I5/e/4Pd3f0/bGGWxotbL4O+kYu8XGGetZ
- Ldb2HmWxON+5nNni17sj7BbNi9ezWXS/krHof/ya2eL8+Q3sFjcPrWC02PT4GqvF/Xs/mSwu
- 75rDZjHj/D4miwWTn7BaLNjWx2jxdOZmNot3q58wWhw/0cnsIOzx+9ckRo9Z98+yeeycdZfd
- Y/Gm/Wwe2w6oemxa1cnmsX/uGnaPzUvqPfq2rGL06Hu5gdFj/ZarLB5Np9pZPT5vkgvgjdKz
- KcovLUlVyMgvLrFVija0MNIztLTQMzKx1DM0No+1MjJV0rezSUnNySxLLdK3S9DLuPv3CGNB
- P3vF7TnPWBoYm9i6GDk5JARMJOavamftYuTiEBJYyijxbMlvpi5GDqCElMTKuekQNcISf651
- gdULCTxllHh8Rw/EZhNwlOhfegKsV0RgMqvEmz2tTCAJZoFyidaHT1hBbGEBK4m+c3uYQWwW
- AVWJlts/wQbxClhLnPx9gB1igbzE7MbTYHFOARuJ6y9+MUEss5a482UuK0S9oMTJmU9YQG5j
- FlCXWD9PCCTML6AlsabpOgvEWnmJ5q2zmScwCs1C0jELoWMWkqoFjMyrGEVSS4tz03OLjfSK
- E3OLS/PS9ZLzczcxAhPDtmM/t+xg7HoXfIhRgINRiYfXYOreOCHWxLLiytxDjBIczEoivH7r
- d8cJ8aYkVlalFuXHF5XmpBYfYjQFenMis5Rocj4waeWVxBuaGppbWBqaG5sbm1koifN2CByM
- ERJITyxJzU5NLUgtgulj4uCUamA0yDu9I/q3DtOHdw8nizxJWCC3YXNlQ9jxECu9IxZMR7PU
- wkNarYL+CZcUfwh94Ln33O/Px68LfFt2+JmU3W7O2buN3nktPq+yNi0v89Ldl2fey14OX+xV
- 2uDQ8iUz+tyjjqyMRxHXZQ22zelcGTJX6P3RSIY/5+07Dz2UvbhDcn3GHiGlOw/UlFiKMxIN
- tZiLihMBTXD5ViIDAAA=
-X-CMS-MailID: 20200514190740eucas1p293129b2ef3ba706652a9327e55db9649
-X-Msg-Generator: CA
-X-RootMTR: 20200514190740eucas1p293129b2ef3ba706652a9327e55db9649
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20200514190740eucas1p293129b2ef3ba706652a9327e55db9649
-References: <20200514190734.32746-1-l.stelmach@samsung.com>
- <CGME20200514190740eucas1p293129b2ef3ba706652a9327e55db9649@eucas1p2.samsung.com>
+References: <20200511133346.21706-1-ulf.hansson@linaro.org>
+ <20200514142015.GA23401@bogus>
+ <CAPDyKFoVo8L7eiGdEVNYR2DY7cszDuLkmX8O_SfyUKh73pbpMQ@mail.gmail.com>
+ <20200514172816.GA42669@bogus>
+In-Reply-To: <20200514172816.GA42669@bogus>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 14 May 2020 21:11:50 +0200
+Message-ID: <CAPDyKFrdrOnxFHaAR=cmMi2VfSudyHdjZ7vRZKhTQtepdkiXug@mail.gmail.com>
+Subject: Re: [PATCH] cpuidle: psci: Fixup execution order when entering a
+ domain idle state
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_120743_912550_04875261 
-X-CRM114-Status: GOOD (  14.00  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200514_121228_282708_DA3D668D 
+X-CRM114-Status: GOOD (  29.20  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [210.118.77.11 listed in wl.mailspike.net]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -138,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -151,29 +95,116 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?q?=C5=81ukasz=20Stelmach?= <l.stelmach@samsung.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-VGhlIHZhbHVlIGhhcyBiZWVuIGVzdGltYWRlZCBieSBvYnRhaW5pZyAxMDI0IGNodW5rcyBvZiBk
-YXRhIDEyOCBieXRlcwooMTAyNCBiaXRzKSBlYWNoIGZyb20gdGhlIGdlbmVyYXRvciBhbmQgZmlu
-ZGluZyBjaHVuayB3aXRoIG1pbmltYWwKZW50cm9weSB1c2luZyB0aGUgZW50KDEpIHRvb2wuIFRo
-ZSB2YWx1ZSB3YXMgNi4zMzI5MzcgYml0cyBvZiBlbnRyb3B5CmluIGVhY2ggOCBiaXRzIG9mIGRh
-dGEuCgpTaWduZWQtb2ZmLWJ5OiDFgXVrYXN6IFN0ZWxtYWNoIDxsLnN0ZWxtYWNoQHNhbXN1bmcu
-Y29tPgotLS0KIGRyaXZlcnMvY2hhci9od19yYW5kb20vZXh5bm9zLXRybmcuYyB8IDEgKwogMSBm
-aWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9jaGFyL2h3
-X3JhbmRvbS9leHlub3MtdHJuZy5jIGIvZHJpdmVycy9jaGFyL2h3X3JhbmRvbS9leHlub3MtdHJu
-Zy5jCmluZGV4IDhlMWZlM2Y4ZGQyZC4uZmY2NzM5MjcyYmY1IDEwMDY0NAotLS0gYS9kcml2ZXJz
-L2NoYXIvaHdfcmFuZG9tL2V4eW5vcy10cm5nLmMKKysrIGIvZHJpdmVycy9jaGFyL2h3X3JhbmRv
-bS9leHlub3MtdHJuZy5jCkBAIC0xMjMsNiArMTIzLDcgQEAgc3RhdGljIGludCBleHlub3NfdHJu
-Z19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQogCXRybmctPnJuZy5pbml0ID0g
-ZXh5bm9zX3RybmdfaW5pdDsKIAl0cm5nLT5ybmcucmVhZCA9IGV4eW5vc190cm5nX2RvX3JlYWQ7
-CiAJdHJuZy0+cm5nLnByaXYgPSAodW5zaWduZWQgbG9uZykgdHJuZzsKKwl0cm5nLT5ybmcucXVh
-bGl0eSA9IDgwMDsKIAogCXBsYXRmb3JtX3NldF9kcnZkYXRhKHBkZXYsIHRybmcpOwogCXRybmct
-PmRldiA9ICZwZGV2LT5kZXY7Ci0tIAoyLjI1LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On Thu, 14 May 2020 at 19:28, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Thu, May 14, 2020 at 05:41:37PM +0200, Ulf Hansson wrote:
+> > On Thu, 14 May 2020 at 16:20, Sudeep Holla <sudeep.holla@arm.com> wrote:
+> > >
+> > > On Mon, May 11, 2020 at 03:33:46PM +0200, Ulf Hansson wrote:
+> > > > Moving forward, platforms are going to need to execute specific "last-man"
+> > > > operations before a domain idle state can be entered.
+> > >
+> > > I need to dig the thread details, but I remember commenting on one of
+> > > the similar discussion. It was something to do with voting which wasn't
+> > > necessary at all. I am interested in the details here.
+> > >
+> > > > In one way or the other, these operations needs to be triggered while
+> > > > walking the  hierarchical topology via runtime PM and genpd, as it's at that
+> > > > point the last-man becomes known.
+> > > >
+> > > > Moreover, executing last-man operations needs to be done after the CPU PM
+> > > > notifications are sent through cpu_pm_enter(), as otherwise it's likely
+> > > > that some notifications would fail. Therefore, let's re-order the sequence
+> > > > in psci_enter_domain_idle_state(), so cpu_pm_enter() gets called prior
+> > > > pm_runtime_put_sync().
+> > > >
+> > >
+> > > More details on why notifications fail ?
+> >
+> > Well, at this moment this is more of a hypothetical issue as there is
+> > no last-man notification sent/used yet.
+> >
+>
+> Ah OK.
+>
+> > However, typically we would call cpu_cluster_pm_enter() in the path as
+> > when the psci_pd_power_off() is called (for psci PM domains), when a
+> > valid domain state has been found.
+> >
+>
+> Please don't use cpu_cluster_pm_enter. I thought the whole idea of genpd
+> will remove the notion of cluster and we will never need to use
+> cpu_cluster_pm_*
+>
+> > This means, we would violate the cpu_cluster_pm_enter() API, as it's
+> > clearly stated in its corresponding function header, that
+> > cpu_pm_enter() needs to be called first (and that's also how others
+> > are currently using it).
+> >
+>
+> Ah so, it was just for use of cpu_cluster_pm_* which I would like to
+> avoid. That was one of the motivation for using genpd I thought.
+>
+> > Note that, I am currently exploring whether we shall call
+> > cpu_cluster_pm_enter|exit() at all, or whether we can use some other
+> > new genpd mechanism to accomplish the similar thing.
+> >
+>
+> Good, you do think so.
+
+Okay, let's see where things go. I will keep you posted.
+
+> > >
+> > > > Fixes: ce85aef570df ("cpuidle: psci: Manage runtime PM in the idle path")
+> > > > Reported-by: Lina Iyer <ilina@codeaurora.org>
+> > > > Signed-off-by: Ulf Hansson <ulf.hansson@linaro.org>
+> > > > ---
+> > > >  drivers/cpuidle/cpuidle-psci.c | 8 +++++++-
+> > > >  1 file changed, 7 insertions(+), 1 deletion(-)
+> > > >
+> > > > diff --git a/drivers/cpuidle/cpuidle-psci.c b/drivers/cpuidle/cpuidle-psci.c
+> > > > index bae9140a65a5..d0fb585073c6 100644
+> > > > --- a/drivers/cpuidle/cpuidle-psci.c
+> > > > +++ b/drivers/cpuidle/cpuidle-psci.c
+> > > > @@ -58,6 +58,10 @@ static int psci_enter_domain_idle_state(struct cpuidle_device *dev,
+> > > >       u32 state;
+> > > >       int ret;
+> > > >
+> > > > +     ret = cpu_pm_enter();
+> > > > +     if (ret)
+> > > > +             return -1;
+> > > > +
+> > >
+> > > This change is ignoring the retention case psci_enter_state handles and
+> > > this may affect performance by doing unnecessary save/restore.
+> >
+> > This was already the case before. CPU_PM_CPU_IDLE_ENTER_PARAM() ends
+> > up always setting "is_retention" to 0, when __CPU_PM_CPU_IDLE_ENTER()
+> > is called.
+> >
+>
+> Ah OK, I recall now, sorry for the noise.
+
+No worries, thanks for reviewing.
+
+That said, are you fine with Rafel queuing this then?
+
+Kind regards
+Uffe
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
