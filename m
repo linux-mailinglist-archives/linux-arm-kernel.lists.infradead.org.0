@@ -2,55 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 750AF1D3514
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 17:29:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 78CE71D3525
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 17:33:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=z+JvcxcVEgv3P1L6t3vnWoXLJICEiTeDbFk+55/A17Y=; b=ELs8qbXRSamL8M
-	ULN/5bb8fEF0WDt+oUvxefNLMQdWFQJnBpCRo3bo6/9zijjj7cBYmU0nCwC5XWYGf2mRe5oPVrV0L
-	eNta3eQ5kAqltLKpt0hxVcFLBCD7+tcTdvqv5+n8JyE1KVEBJR6Eu3qqACT9ycDbW4HFXOICIc928
-	C8yXhXxlFmi+siDCQ+KFc7K972QBq++fO2O+VQgO2A6LYiSayRMu6QYjlvaN7V5iUBsrcXhNnGjY0
-	0ZNX7RuXtAoQuBZVEGYcqp5yUg+3D9RlVnocJujFI1/hfjM5FzGVlSWO1LXUHV9jU4sKNAeEegVDR
-	9BfpyM9mzbkTi5EBUGPw==;
+	List-Owner; bh=TZyrNU8HEVTRj3pulBepZ4WYSKspdl6AO3FrETwUwrU=; b=P9tKsnuyRcZxi2
+	J5mafbvzax66YPF+y2dBjnB5W5OHpSUu4uSHjlGITKLb2cX9NBUJxhMzWhDP6c1EkIoI/wAOkDLvK
+	ulRlyWCOlJTfFLM+nEfA9Zw3Hln91vXTZ1okgc9OJRYRE6GTQWfK9AyeU7ORgfKwn3H1QhbpjKLwT
+	uqFDAqbV4D8WZEsFi4FIfb1D8fCXouX32KvtXHi3lI6c9xPYXEDTDYyOTKRnUDIdi5Z2h8L9TDA7f
+	QzyQmvNWoKRbRyi+q111P9OUMIPCn6ziRnIsNu4OO4DFxFIu8Af1lC/luy0qe2eTuFWjpTZ9pdd3C
+	DtZDQ+D6Vq7SoIaRhfrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZFn9-0002gG-57; Thu, 14 May 2020 15:28:59 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZFn0-0002ez-Gq
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 15:28:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 67FDB1FB;
- Thu, 14 May 2020 08:28:49 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 495F93F71E;
- Thu, 14 May 2020 08:28:47 -0700 (PDT)
-Date: Thu, 14 May 2020 16:28:40 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Zhenyu Ye <yezhenyu2@huawei.com>
-Subject: Re: [RFC PATCH v3 2/2] arm64: tlb: Use the TLBI RANGE feature in arm64
-Message-ID: <20200514152840.GC1907@gaia>
-References: <20200414112835.1121-1-yezhenyu2@huawei.com>
- <20200414112835.1121-3-yezhenyu2@huawei.com>
+	id 1jZFrG-0005kK-7e; Thu, 14 May 2020 15:33:14 +0000
+Received: from mout.kundenserver.de ([212.227.17.10])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZFr3-0005jw-S9
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 15:33:03 +0000
+Received: from mail-qv1-f48.google.com ([209.85.219.48]) by
+ mrelayeu.kundenserver.de (mreue108 [212.227.15.145]) with ESMTPSA (Nemesis)
+ id 1N2E5Q-1j69Ar1n0o-013eei for <linux-arm-kernel@lists.infradead.org>; Thu,
+ 14 May 2020 17:32:59 +0200
+Received: by mail-qv1-f48.google.com with SMTP id z5so1876659qvw.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 08:32:58 -0700 (PDT)
+X-Gm-Message-State: AOAM533i0nt2OJUIlsFQvSnCrX0vkHnC928QEOdUfNCZH6MDLDdKG5R5
+ FNSP4QIwMNmgYiolneh2AGWUazHShlWc3Lt2zig=
+X-Google-Smtp-Source: ABdhPJzFhU3uR60qV+NCsNONeIzKaCGCy5L57CVbEj8kxjwZrZF3EKTRXtmeZ6RSyPcjRbe5um5gPB2eFj40u3fiQBo=
+X-Received: by 2002:a0c:a90f:: with SMTP id y15mr4980431qva.211.1589470378043; 
+ Thu, 14 May 2020 08:32:58 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200414112835.1121-3-yezhenyu2@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200503145017.GA5074@afzalpc>
+ <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ <20200504091018.GA24897@afzalpc>
+ <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+ <20200511142113.GA31707@afzalpc>
+ <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
+ <20200512104758.GA12980@afzalpc>
+ <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+ <20200514111755.GA4997@afzalpc>
+ <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
+ <20200514133545.GA5020@afzalpc>
+In-Reply-To: <20200514133545.GA5020@afzalpc>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 14 May 2020 17:32:41 +0200
+X-Gmail-Original-Message-ID: <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
+Message-ID: <CAK8P3a1PVwkAi8ycUAB-7EMk4nQ_qOu0rC5vJAQk_q9j5xvOJw@mail.gmail.com>
+Subject: Re: ARM: static kernel in vmalloc space
+To: afzal mohammed <afzal.mohd.ma@gmail.com>
+X-Provags-ID: V03:K1:yqrT+eiwhrTQyYwRAhAEIvQ9Owo18AleOEZuGJYVGCNoB1pZ/SV
+ rmRvjQLdCcsv3tP5c5miokk+uc9qHoK1FjsZI2sEE7HadrE9YYkXuukwxRNxsss4nZPrtqP
+ aao62bkvGsndgL3DrqurVjaLvrfU3Uv5577Etp+VNFOQETEelAERwbiA2VBrdQMrs771Bvm
+ unFdKGJx6C7+dy64hZAqg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:l0oD+M6pOYc=:LV1T0QgqGIVTtW6uwhhFGs
+ 2N3vM2lJzFu4RCODCHwG6kwr5tRAha5WZZZoJR9GNUCiNl3siV7/dkbCpCQsjrlsKdTYukZrm
+ lA6ixlgVvS1x3xs2y2/ABJdvF3b+MbHdfgZQKlxIorbChDNDVHSypPn/P4Ab9qeb5AeJHvPg5
+ oCSW17CEJyx22b/Ct1StT6+lG4QF4smEaiJ9mOOxcOtQ6On2kZPQczW6++XXXSYEUo7xOUxQK
+ 0mh2q9mcf1Dh3GFzavfeZkX+NvIunFCQ5vukcz+l7JlGxkLCm/DApyZ0/rcG2Zatgz7dkP08u
+ aVVa2eGyA9NT16oMeoa/Zo6MH7+NdU5N//zcYt6vO97+RNes+M+p/uvXMOFnfHh7JMo6ib1yH
+ aluje9gsmux32h9fJdUU8LD0mmM6R8LS8RfbzCFe/foIesj2fcravwUZxFYwA5CpZos7kj22t
+ 75FlSoE6fXO0jQcUPqgUGsIKgbaPm0nDalC8SyfTFKaAXvYUhccANbv33P3gmwprpPH8AnnPE
+ juW38eaiyA+8grdGy38UIssx3pzR2qpLIx5irjweBoT1WcIL/crk/+k2rtV/w9kjqzUdjOtcl
+ 4cg6QA5DiiQ42lrv+ssF4i7AFUhhXYv8qsd6nMzpWFUxUcqHho3+iwh8x7F7/VBm34zNNiw7q
+ ZfNkQVLBl3DpLybUTQDLfXMVkNt8DhVaXKZotHSs8x9K2zDD2J+975K3X6rcBgsFYNCoxEAQN
+ 1HHbDMc/obIvsrAMx/WuxZ9am2A9dSfhN9vhjMEbn8A5hI2OSy7Qk74edMSnblPGI2ycHxKMJ
+ 58md71EkKRdkYu5Wk+RmJ498JOJUXeoLU/mVsewCiGyZ/+tKBA=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_082850_651887_D918800C 
-X-CRM114-Status: GOOD (  23.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200514_083302_203897_E43418D2 
+X-CRM114-Status: GOOD (  25.97  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.10 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [212.227.17.10 listed in wl.mailspike.net]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,193 +97,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, suzuki.poulose@arm.com, maz@kernel.org,
- linux-kernel@vger.kernel.org, xiexiangyou@huawei.com, steven.price@arm.com,
- zhangshaokun@hisilicon.com, linux-mm@kvack.org, arm@kernel.org,
- prime.zeng@hisilicon.com, guohanjun@huawei.com, olof@lixom.net,
- kuhn.chenqun@huawei.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Russell King <linux@armlinux.org.uk>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Zhenyu,
+On Thu, May 14, 2020 at 3:35 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+> On Thu, May 14, 2020 at 02:41:11PM +0200, Arnd Bergmann wrote:
+> > On Thu, May 14, 2020 at 1:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+> > > 4. for user space to/from copy
+> > >  a. pin user pages
+> > >  b. kmap user page (can't corresponding lowmem be used instead ?)
+>
+> > - In the long run, there is no need for kmap()/kmap_atomic() after
+> >   highmem gets removed from the kernel, but for the next few years
+> >   we should still assume that highmem can be used, in order to support
+> >   systems like the 8GB highbank, armadaxp, keystone2 or virtual
+> >   machines. For lowmem pages (i.e. all pages when highmem is
+> >   disabled), kmap_atomic() falls back to page_address() anyway,
+> >   so there is no much overhead.
+>
+> Here i have some confusion - iiuc, VMSPLIT_4G_4G is meant to help
+> platforms having RAM > 768M and <= 4GB disable high memory and still
+> be able to access full RAM, so high memory shouldn't come into picture,
+> right ?. And for the above platforms it can continue current VMPSLIT
+> option (the default 3G/1G), no ?, as VMSPLIT_4G_4G can't help complete
+> 8G to be accessible from lowmem.
+>
+> So if we make VMSPLIT_4G_4G, depends on !HIGH_MEMORY (w/ mention of
+> caveat in Kconfig help that this is meant for platforms w/ <=4GB), then
+> we can do copy_{from,to}_user the same way currently do, and no need to
+> do the user page pinning & kmap, right ?
 
-On Tue, Apr 14, 2020 at 07:28:35PM +0800, Zhenyu Ye wrote:
-> diff --git a/arch/arm64/include/asm/tlb.h b/arch/arm64/include/asm/tlb.h
-> index b76df828e6b7..3a1816770bd1 100644
-> --- a/arch/arm64/include/asm/tlb.h
-> +++ b/arch/arm64/include/asm/tlb.h
-> @@ -38,7 +38,12 @@ static inline void tlb_flush(struct mmu_gather *tlb)
->  		return;
->  	}
->  
-> -	__flush_tlb_range(&vma, tlb->start, tlb->end, stride, last_level);
-> +	if (cpus_have_const_cap(ARM64_HAS_TLBI_RANGE))
-> +		__flush_tlb_range_directly(&vma, tlb->start, tlb->end,
-> +					   stride, last_level);
-> +	else
-> +		__flush_tlb_range(&vma, tlb->start, tlb->end,
-> +				  stride, last_level);
+No, that doesn't work: the current copy_from_user() relies on the user
+address space being a subset of the kernel address space, so it doesn't
+have to walk the page tables but just access the pointer and use
+the .text.fixup/__ex_table trick to trap any accesses to pages with the
+wrong permission or no backing.
 
-I think you could move such check in __flush_tlb_range() and avoid
-cpus_have_const_cap() in two places. More on this below.
+> ...
+> i think user page pinning is still required, but kmap can be avoided
+> by using lowmem corresponding to that page, right ?, or am i
+> completely wrong ?
 
-> diff --git a/arch/arm64/include/asm/tlbflush.h b/arch/arm64/include/asm/tlbflush.h
-> index bc3949064725..a482188ea563 100644
-> --- a/arch/arm64/include/asm/tlbflush.h
-> +++ b/arch/arm64/include/asm/tlbflush.h
-> @@ -59,6 +59,44 @@
->  		__ta;						\
->  	})
->  
-> +/*
-> + * This macro creates a properly formatted VA operand for the TLBI RANGE.
-> + * The value bit assignments are:
-> + *
-> + * +----------+------+-------+-------+-------+----------------------+
-> + * |   ASID   |  TG  | SCALE |  NUM  |  TTL  |        BADDR         |
-> + * +-----------------+-------+-------+-------+----------------------+
-> + * |63      48|47  46|45   44|43   39|38   37|36                   0|
-> + *
-> + * The address range is determined by below formula:
-> + * [BADDR, BADDR + (NUM + 1) * 2^(5*SCALE + 1) * PAGESIZE)
-> + *
-> + */
-> +#define __TLBI_VADDR_RANGE(addr, asid, tg, scale, num, ttl)	\
-> +	({							\
-> +		unsigned long __ta = (addr) >> PAGE_SHIFT;	\
-> +		__ta &= GENMASK_ULL(36, 0);			\
-> +		__ta |= (unsigned long)(ttl) << 37;		\
-> +		__ta |= (unsigned long)(num) << 39;		\
-> +		__ta |= (unsigned long)(scale) << 44;		\
-> +		__ta |= (unsigned long)(tg) << 46;		\
-> +		__ta |= (unsigned long)(asid) << 48;		\
-> +		__ta;						\
-> +	})
-> +
-> +#define TLB_RANGE_MASK_SHIFT 5
-> +#define TLB_RANGE_MASK GENMASK_ULL(TLB_RANGE_MASK_SHIFT - 1, 0)
-> +
-> +/*
-> + * __TG defines translation granule of the system, which is defined by
-> + * PAGE_SHIFT.  Used by TTL.
-> + *  - 4KB	: 1
-> + *  - 16KB	: 2
-> + *  - 64KB	: 3
-> + */
-> +#define __TG	((PAGE_SHIFT - 12) / 2 + 1)
+As long as one does not actually use highmem on a particular
+machine, kmap_atomic() is much cheaper than the get_user_pages()
+that is needed anyway:
 
-I don't think we need __TLBI_VADDR_RANGE to take a tg argument since
-it's always the same.
+static inline void *kmap_atomic_prot(struct page *page, pgprot_t prot)
+{
+        preempt_disable();
+        pagefault_disable();
+        if (!PageHighMem(page))
+                return page_address(page);
+        return kmap_atomic_high_prot(page, prot);
+}
+#define kmap_atomic(page)       kmap_atomic_prot(page, kmap_prot)
 
-> +
-> +
->  /*
->   *	TLB Invalidation
->   *	================
-> @@ -171,12 +209,83 @@ static inline void flush_tlb_page(struct vm_area_struct *vma,
->  	dsb(ish);
->  }
->  
-> +/* The maximum range size of one TLBI-RANGE instruction */
-> +#define MAX_TLBI_RANGE_SIZE	(1UL << 21)
+The preempt_disable()/pagefault_disable() are just adding to
+variables that are usually on the local L1 cache, and the
+page_address() is another multiply+add that you need in any
+case. In kernels that disable highmem, the expensive code path
+(kmap_atomic_high_prot) goes away entirely.
 
-Nitpick: call this MAX_TLBI_RANGE_PAGES as that's not an address range.
+As a micro-optimization, one could use page_address() directly
+instead of kmap_atomic() when highmem is disabled, but
+I doubt it makes much of a difference.
 
-It may be useful to have a macro for the range here, something like:
+> Only problem i see is Kernel compiled w/ VMSPLIT_4G_4G not suitable
+> for >4GB machines, but anyway iiuc, it is was not meant for those
+> machines. And it is not going to affect our current multiplatform
+> setup as LPAE is not defined in multi_v7.
 
-#define __TLBI_PAGES(num, scale)	((num + 1) << (5 * scale + 1))
+That was what I original thought as well, but I'd now prefer to
+allow highmem to coexist with vmsplit-4g-4g:
 
-and define MAX_TLBI_RANGE_PAGES in terms of this macro as
-__TLBI_PAGES(31, 3).
+Typical distros currently offer two kernels, with and without LPAE,
+and they probably don't want to add a third one for LPAE with
+either highmem or vmsplit-4g-4g. Having extra user address
+space and more lowmem is both going to help users that
+still have 8GB configurations.
 
-> +
-> +/*
-> + * This interface uses the *rvale1is* instruction to flush TLBs
-> + * in [start, end) directly.
-> + * This instruction is supported from ARM v8.4.
-> + */
-> +static inline void __flush_tlb_range_directly(struct vm_area_struct *vma,
-> +				unsigned long start, unsigned long end,
-> +				unsigned long stride, bool last_level)
-> +{
-> +	int num = 0;
-> +	int scale = 0;
-> +	unsigned long asid = ASID(vma->vm_mm);
-> +	unsigned long addr = 0;
-> +	unsigned long range_size;
-> +
-> +	start = round_down(start, stride);
-> +	end = round_up(end, stride);
-> +	range_size = (end - start) >> PAGE_SHIFT;
-> +
-> +	if (range_size > MAX_TLBI_RANGE_SIZE) {
-> +		flush_tlb_mm(vma->vm_mm);
-> +		return;
-> +	}
-> +
-> +	dsb(ishst);
-> +
-> +	/*
-> +	 * The minimum size of TLB RANGE is 2 PAGE;
-> +	 * Use normal TLB instruction to handle odd PAGEs
+If we want to limit the number of combinations, I'd prefer making
+vmsplit-4g-4g mandatory for all LPAE kernels and it is stable
+enough.
 
-Nitpick: no need to capitalise PAGE.
-
-> +	 */
-> +	if (range_size % 2 == 1) {
-> +		addr = __TLBI_VADDR(start, asid);
-> +		if (last_level) {
-> +			__tlbi(vale1is, addr);
-> +			__tlbi_user(vale1is, addr);
-> +		} else {
-> +			__tlbi(vae1is, addr);
-> +			__tlbi_user(vae1is, addr);
-> +		}
-> +		start += 1 << PAGE_SHIFT;
-> +		range_size -= 1;
-> +	}
-> +
-> +	range_size >>= 1;
-> +	while (range_size > 0) {
-> +		num = (range_size & TLB_RANGE_MASK) - 1;
-> +		if (num >= 0) {
-> +			addr = __TLBI_VADDR_RANGE(start, asid, __TG,
-> +						  scale, num, 0);
-> +			if (last_level) {
-> +				__tlbi(rvale1is, addr);
-> +				__tlbi_user(rvale1is, addr);
-> +			} else {
-> +				__tlbi(rvae1is, addr);
-> +				__tlbi_user(rvae1is, addr);
-> +			}
-> +			start += (num + 1) << (5 * scale + 1) << PAGE_SHIFT;
-
-You could use the __TLBI_PAGES macro I proposed above.
-
-> +		}
-> +		scale++;
-> +		range_size >>= TLB_RANGE_MASK_SHIFT;
-> +	}
-
-So, you start from scale 0 and increment it until you reach the maximum.
-I think (haven't done the maths on paper) you could also start from the
-top with something like scale = ilog2(range_size) / 5. Not sure it's
-significantly better though, maybe avoiding the loop 3 times if your
-range is 2MB (which happens with huge pages).
-
-Anyway, I think it would be more efficient if we combine the
-__flush_tlb_range() and the _directly one into the same function with a
-single loop for both. For example, if the stride is 2MB already, we can
-handle this with a single classic TLBI without all the calculations for
-the range operation. The hardware may also handle this better since the
-software already told it there can be only one entry in that 2MB range.
-So each loop iteration could figure which operation to use based on
-cpucaps, TLBI range ops, stride and reduce range_size accordingly.
-
--- 
-Catalin
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
