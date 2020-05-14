@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69B431D39FE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:53:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6C9211D3A06
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:54:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QxkHKlDAtgJBLIVYeYtXpIWt9MEp+/Nu8bREioQANU0=; b=okhRmINAviDTI+
-	ulAm8eqiQl9RZ8y0JAVh/ieIZcGS2ahIpacwEK8I44GCux8VHN7nRPwAuiBmwaXOA1kgngwlvXTcL
-	5X6//P2H/y83oJvCQA7EruDDG6BJeGu31W1REpepwMbRjs5LBk04vvtU7ANUoECY7c/vr4fFSub7Q
-	k5XoTDdw9vXjFGLgPMEtS/FQlb/UHLqWvQIbZxq/WjOsvYx9iE6AHKOhbGrqj8raPpbiyNRfu3QcY
-	uKvVWYDbKD+gI9r6JDmd+FzwL7zwl6NiXWsihGWOXMesc20RHamyx40sDtoH6mWB1PKfSwVj2BBt8
-	mcwBqPE14J9c+jovXu2g==;
+	List-Owner; bh=zLzSuEO8qB5kc9SeR+391ZXqi0vFclcUk7X1kfRfUcM=; b=Pahr14hgJfAV0a
+	b7sPQfD215+8U+IYuNL9MigrALRyF7XpiA/PcqasjU1FTYVv7U067eOXPOTmFRUwP28EtIqXCjPUN
+	08WocLaZFFtXK3j8DMGqXO+TDNJnLBhA3udqkuM3lfUzI4Qz9k8iOPTxpegmPT8uZ+7nlEhIAV7Ao
+	cCxo0H252lnScO2jpvhZ8oxl4iJXO8bOlV4ukLqq8Uq7fqtKukYdWlTNgLfrSSkjwG12QvyAqR+Yw
+	KsM4uRUjhGCdfYM46RTCBZnW64TyyhtcxN/mK40ILASuPC2AZW3BDHeG2PbwylAoSoQc5iQ00kpIu
+	ylZGJkljRPWbtBgqHKOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZIzC-0002CF-Db; Thu, 14 May 2020 18:53:38 +0000
+	id 1jZIzq-0002np-GJ; Thu, 14 May 2020 18:54:18 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZIyQ-0001U0-Bp
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:52:53 +0000
+ id 1jZIzO-0002aZ-BF
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:53:55 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 19E77206A5;
- Thu, 14 May 2020 18:52:49 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 1C21920767;
+ Thu, 14 May 2020 18:53:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589482369;
- bh=a4jLj5YoajADdtK8+YqM4haJAzib1te6w43IqWap+Bs=;
+ s=default; t=1589482430;
+ bh=sCPjoIJecCKKcl4sRs7D5KHmbz3FxC1giUdKL3F29A0=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=F+ZbK25Zsq4Hj4iZoFcyFs2mpXjzwAprdg6UZjRlFiRr+U/2zwlyX1ntg9sRI+YQ5
- ZOeEoZObmQ9uPQd8VU5B1h8aXHtEjfVj4jyRTJyRL2o3TIs3XC8H9GlRB9R+REpcR7
- Ao+95IlO1+JwDsp1AGqTMakA5JZx26H/etF2+mnw=
+ b=aMBU3NtQDPHgpwV1OOq3Xz7b/j9nA9d3jtwnDm26iouQYbEtDmrKebV2laNa6U+1V
+ pslo46m05pwcbLIdG6omdq7Mc15XX/T4w0WKnQKPPJoy0wO9j3v63OAulcTyudEX6c
+ vi2poaWusRprKQDuFU9BUAa7ktk1dYQRXrvUmizU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 5.6 48/62] ARM: futex: Address build warning
-Date: Thu, 14 May 2020 14:51:33 -0400
-Message-Id: <20200514185147.19716-48-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 5.4 31/49] sun6i: dsi: fix gcc-4.8
+Date: Thu, 14 May 2020 14:52:52 -0400
+Message-Id: <20200514185311.20294-31-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200514185147.19716-1-sashal@kernel.org>
-References: <20200514185147.19716-1-sashal@kernel.org>
+In-Reply-To: <20200514185311.20294-1-sashal@kernel.org>
+References: <20200514185311.20294-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_115251_550649_A0EA9D6E 
-X-CRM114-Status: GOOD (  16.50  )
+X-CRM114-CacheID: sfid-20200514_115350_407602_45D9B290 
+X-CRM114-Status: GOOD (  11.61  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,75 +79,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ dri-devel@lists.freedesktop.org,
+ Paul Kocialkowski <paul.kocialkowski@bootlin.com>,
+ Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thomas Gleixner <tglx@linutronix.de>
+From: Arnd Bergmann <arnd@arndb.de>
 
-[ Upstream commit 8101b5a1531f3390b3a69fa7934c70a8fd6566ad ]
+[ Upstream commit 3a3a71f97c30983f1627c2c550d43566e9b634d2 ]
 
-Stephen reported the following build warning on a ARM multi_v7_defconfig
-build with GCC 9.2.1:
+Older compilers warn about initializers with incorrect curly
+braces:
 
-kernel/futex.c: In function 'do_futex':
-kernel/futex.c:1676:17: warning: 'oldval' may be used uninitialized in this function [-Wmaybe-uninitialized]
- 1676 |   return oldval == cmparg;
-      |          ~~~~~~~^~~~~~~~~
-kernel/futex.c:1652:6: note: 'oldval' was declared here
- 1652 |  int oldval, ret;
-      |      ^~~~~~
+drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c: In function 'sun6i_dsi_encoder_enable':
+drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: missing braces around initializer [-Werror=missing-braces]
+  union phy_configure_opts opts = { 0 };
+        ^
+drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c:720:8: error: (near initialization for 'opts.mipi_dphy') [-Werror=missing-braces]
 
-introduced by commit a08971e9488d ("futex: arch_futex_atomic_op_inuser()
-calling conventions change").
+Use the GNU empty initializer extension to avoid this.
 
-While that change should not make any difference it confuses GCC which
-fails to work out that oldval is not referenced when the return value is
-not zero.
-
-GCC fails to properly analyze arch_futex_atomic_op_inuser(). It's not the
-early return, the issue is with the assembly macros. GCC fails to detect
-that those either set 'ret' to 0 and set oldval or set 'ret' to -EFAULT
-which makes oldval uninteresting. The store to the callsite supplied oldval
-pointer is conditional on ret == 0.
-
-The straight forward way to solve this is to make the store unconditional.
-
-Aside of addressing the build warning this makes sense anyway because it
-removes the conditional from the fastpath. In the error case the stored
-value is uninteresting and the extra store does not matter at all.
-
-Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
-Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-Link: https://lkml.kernel.org/r/87pncao2ph.fsf@nanos.tec.linutronix.de
+Fixes: bb3b6fcb6849 ("sun6i: dsi: Convert to generic phy handling")
+Reviewed-by: Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+Signed-off-by: Maxime Ripard <maxime@cerno.tech>
+Link: https://patchwork.freedesktop.org/patch/msgid/20200428215105.3928459-1-arnd@arndb.de
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- arch/arm/include/asm/futex.h | 9 +++++++--
- 1 file changed, 7 insertions(+), 2 deletions(-)
+ drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/arch/arm/include/asm/futex.h b/arch/arm/include/asm/futex.h
-index 83c391b597d45..fdc4ae3e7378d 100644
---- a/arch/arm/include/asm/futex.h
-+++ b/arch/arm/include/asm/futex.h
-@@ -164,8 +164,13 @@ arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
- 	preempt_enable();
- #endif
+diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+index f83522717488a..4f944ace665d5 100644
+--- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
++++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.c
+@@ -718,7 +718,7 @@ static void sun6i_dsi_encoder_enable(struct drm_encoder *encoder)
+ 	struct drm_display_mode *mode = &encoder->crtc->state->adjusted_mode;
+ 	struct sun6i_dsi *dsi = encoder_to_sun6i_dsi(encoder);
+ 	struct mipi_dsi_device *device = dsi->device;
+-	union phy_configure_opts opts = { 0 };
++	union phy_configure_opts opts = { };
+ 	struct phy_configure_opts_mipi_dphy *cfg = &opts.mipi_dphy;
+ 	u16 delay;
  
--	if (!ret)
--		*oval = oldval;
-+	/*
-+	 * Store unconditionally. If ret != 0 the extra store is the least
-+	 * of the worries but GCC cannot figure out that __futex_atomic_op()
-+	 * is either setting ret to -EFAULT or storing the old value in
-+	 * oldval which results in a uninitialized warning at the call site.
-+	 */
-+	*oval = oldval;
- 
- 	return ret;
- }
 -- 
 2.20.1
 
