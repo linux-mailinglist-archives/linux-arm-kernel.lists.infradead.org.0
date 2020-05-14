@@ -2,47 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69A441D3A0E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:55:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED60F1D3A3F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 20:55:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QyZLGgbW8+08mDJcJrFI+u63plD5DJ3I9UbLHDTGzso=; b=aoq5Q0DJ9x13le
-	VrkPsw7fcmrXAVGvVv2EVc8jAFzkR6lXg513eHa7Tbynrn0yG/kbYd7ggHbPJcosr0p+OH6rjxA/A
-	tJbPZcNFlO2scw9rs58f3hHoC/cLt3Tlboou/iPmcJXxAjUAwglQINVRyDqAVXFqdjEiaQOyI5LW9
-	bw7x+ZZSNg1MmLROv7BWGi8Q8OZuLzvy3yddJJnhWKK755BsWAXFR2mZuZcF5zPKSPRmi0AhcATVW
-	O1VgMyN+aayp3JxYv9ekqqjSk+K0WSpygLjioWi2gvaIQc1Qflzq8PxBaospVvT1DjmNUaxcZro2E
-	9A3vrDxHHdNRPntce9QA==;
+	List-Owner; bh=eKiyl+Z/BqSrKpsAkrL+gLda0I8SCvB9uBFVqDQXK2w=; b=d8gszmSUTIsucO
+	G6pWyAXCRTqFVNEfMGfBxqYW17CKbonu8777yYWga+GPIlifGj9T+yAg/SU4Z1EDAEfkLv5CGhBkb
+	g2CGUNSHNSDrFvzSlZZ45STkf7VYBjBCazakFUu+o+Hz4m0GR9fNYtPijlDbyRJ8vWD3HaN2ZbZ9m
+	Dqf6il80hDHGcBEQq+O9LTrVGFoo4V4+uh51cJxfUnF8Rvuj3yvcx+L2h0y6NbyoXxa5o0IvEXxPT
+	uEVqr54HvqtNeamnagDkO6v43/aSYddbRWyo+vA+e70VU5c5+CqyLOQYIxPkDjnKws3RS54XZwvKK
+	LvobhmfupM8D8/HffIWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJ0R-0003Qx-BA; Thu, 14 May 2020 18:54:55 +0000
+	id 1jZJ0r-0003bm-MX; Thu, 14 May 2020 18:55:21 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJ0I-0003Py-AJ
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:54:47 +0000
+ id 1jZJ0M-0003TD-0o
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 18:54:51 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 20DB6207BB;
- Thu, 14 May 2020 18:54:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 00066206F1;
+ Thu, 14 May 2020 18:54:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589482486;
- bh=vjdajjyLD04ftZ9sApe63FqXmLxOYnYh1OzMxe0xpIA=;
+ s=default; t=1589482489;
+ bh=M7pvGnvnXA7VoSIGQiVFsoWdv3eCoTkXxemX1i2yzuI=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=KYznE05no4Dd/vNWPWmBCB8A8nwFH26FLOa21sfIlcbRwSFG+SdSc3sgJMmK2WvIg
- HS7KNEyyiuhRvbmTazSM25uAih/Gv8sZQLuyYGDGCCIbcv+ZAf0pHIgUgtFxVV6mb5
- Ee1LryU2XJs3/lASd/n2MBCxPqXmsf2hcFMphNco=
+ b=W7HfcxaWLts/xf9FKwEJ978bvGAUNjYLEnkOlpGvHeM2gf2rm947eLfw1+d0VeM/i
+ Qsgf8sZlqI9+N4Uywi7BNJi/lI5WAMojq+rpTzGgJ0mUecc5t2NmDhH2mj4YrSNuKB
+ oJ+tWTsWgor+QIEumvUBdMk+BJWQKMWZLi3iMZB4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 25/31] stmmac: fix pointer check after
- utilization in stmmac_interrupt
-Date: Thu, 14 May 2020 14:54:07 -0400
-Message-Id: <20200514185413.20755-25-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 28/31] ARM: futex: Address build warning
+Date: Thu, 14 May 2020 14:54:10 -0400
+Message-Id: <20200514185413.20755-28-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200514185413.20755-1-sashal@kernel.org>
 References: <20200514185413.20755-1-sashal@kernel.org>
@@ -50,8 +49,8 @@ MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_115446_370580_E8ABF8D7 
-X-CRM114-Status: GOOD (  11.94  )
+X-CRM114-CacheID: sfid-20200514_115450_105819_C00528C8 
+X-CRM114-Status: GOOD (  16.50  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,57 +79,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, netdev@vger.kernel.org,
- "David S . Miller" <davem@davemloft.net>, Maxim Petrov <mmrmaximuzz@gmail.com>,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Stephen Rothwell <sfr@canb.auug.org.au>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxim Petrov <mmrmaximuzz@gmail.com>
+From: Thomas Gleixner <tglx@linutronix.de>
 
-[ Upstream commit f42234ffd531ca6b13d9da02faa60b72eccf8334 ]
+[ Upstream commit 8101b5a1531f3390b3a69fa7934c70a8fd6566ad ]
 
-The paranoidal pointer check in IRQ handler looks very strange - it
-really protects us only against bogus drivers which request IRQ line
-with null pointer dev_id. However, the code fragment is incorrect
-because the dev pointer is used before the actual check which leads
-to undefined behavior. Remove the check to avoid confusing people
-with incorrect code.
+Stephen reported the following build warning on a ARM multi_v7_defconfig
+build with GCC 9.2.1:
 
-Signed-off-by: Maxim Petrov <mmrmaximuzz@gmail.com>
-Signed-off-by: David S. Miller <davem@davemloft.net>
+kernel/futex.c: In function 'do_futex':
+kernel/futex.c:1676:17: warning: 'oldval' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1676 |   return oldval == cmparg;
+      |          ~~~~~~~^~~~~~~~~
+kernel/futex.c:1652:6: note: 'oldval' was declared here
+ 1652 |  int oldval, ret;
+      |      ^~~~~~
+
+introduced by commit a08971e9488d ("futex: arch_futex_atomic_op_inuser()
+calling conventions change").
+
+While that change should not make any difference it confuses GCC which
+fails to work out that oldval is not referenced when the return value is
+not zero.
+
+GCC fails to properly analyze arch_futex_atomic_op_inuser(). It's not the
+early return, the issue is with the assembly macros. GCC fails to detect
+that those either set 'ret' to 0 and set oldval or set 'ret' to -EFAULT
+which makes oldval uninteresting. The store to the callsite supplied oldval
+pointer is conditional on ret == 0.
+
+The straight forward way to solve this is to make the store unconditional.
+
+Aside of addressing the build warning this makes sense anyway because it
+removes the conditional from the fastpath. In the error case the stored
+value is uninteresting and the extra store does not matter at all.
+
+Reported-by: Stephen Rothwell <sfr@canb.auug.org.au>
+Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
+Link: https://lkml.kernel.org/r/87pncao2ph.fsf@nanos.tec.linutronix.de
 Signed-off-by: Sasha Levin <sashal@kernel.org>
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+ arch/arm/include/asm/futex.h | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index 9c7b1d8e82204..c41879a955b57 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3684,7 +3684,7 @@ static int stmmac_set_features(struct net_device *netdev,
- /**
-  *  stmmac_interrupt - main ISR
-  *  @irq: interrupt number.
-- *  @dev_id: to pass the net device pointer.
-+ *  @dev_id: to pass the net device pointer (must be valid).
-  *  Description: this is the main driver interrupt service routine.
-  *  It can call:
-  *  o DMA service routine (to manage incoming frame reception and transmission
-@@ -3708,11 +3708,6 @@ static irqreturn_t stmmac_interrupt(int irq, void *dev_id)
- 	if (priv->irq_wake)
- 		pm_wakeup_event(priv->device, 0);
+diff --git a/arch/arm/include/asm/futex.h b/arch/arm/include/asm/futex.h
+index ffebe7b7a5b74..91ca80035fc42 100644
+--- a/arch/arm/include/asm/futex.h
++++ b/arch/arm/include/asm/futex.h
+@@ -163,8 +163,13 @@ arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
+ 	preempt_enable();
+ #endif
  
--	if (unlikely(!dev)) {
--		netdev_err(priv->dev, "%s: invalid dev pointer\n", __func__);
--		return IRQ_NONE;
--	}
--
- 	/* Check if adapter is up */
- 	if (test_bit(STMMAC_DOWN, &priv->state))
- 		return IRQ_HANDLED;
+-	if (!ret)
+-		*oval = oldval;
++	/*
++	 * Store unconditionally. If ret != 0 the extra store is the least
++	 * of the worries but GCC cannot figure out that __futex_atomic_op()
++	 * is either setting ret to -EFAULT or storing the old value in
++	 * oldval which results in a uninitialized warning at the call site.
++	 */
++	*oval = oldval;
+ 
+ 	return ret;
+ }
 -- 
 2.20.1
 
