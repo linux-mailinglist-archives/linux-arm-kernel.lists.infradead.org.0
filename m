@@ -2,66 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B793C1D28D8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:35:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32A801D28DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:36:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=stNOvnN18Px2XjRIjMJrAdVphMvv2mwdL2gSzP7X7FY=; b=KpwtPP8aloRAUt
-	+TLNUdBTGIl6IX/7nxtxa5pWcwNHrbKvpePhv8HlUgoQ1Ou1wGnzwH9Q0v+pICKOMQMx6oVGZyR2A
-	z89z4BnLYN0lY6F2EWXwzIGjmIe44hbgnMBl5gOT4mVgrFQbnZTLvlexEsnqtkPHmXfrMX2BeOyTF
-	a7cVtRMiVMCYTryDhG1ZioRX0EANALsPoRwRi5kuAEMxxbYhGASM8wOkxp5r8YrNXoysCveFp+EOg
-	xcmaAogXep3zTMBEimL3qYB3YZaS8BxTZF0S0NGARIOce8K/Rju5iMonlcvKRuDnmPLZbPPdOqTX4
-	uAEa+o5Rw2aAlYKagMeg==;
+	List-Owner; bh=WkNzne8pcCX9D52Q2l53yU4L/nuTKkSPu38VVlm43Ps=; b=ZA372vB46ZVatc
+	lQL0+v3C6+RvXBjd13VpVITNekTjRSECfJOHGnae1K43ZnON9pu65ZvnuNViBffys88sAgikdxWhV
+	6LYXfR5aEcjHZxWzKD6WyBEX4kT5otPk7327s4Jpt0LCN9N6a7d1sx+roqJHppIP7RGZehFIvITzw
+	kgsyFXV7Q9IpzRnNBjGHLQ+QD5Inp7SdVx7UJI4aQJjT+Pk4hIdrdtFk3+TqzIQCjsNGOeuCY1AoZ
+	y86Bi7l46E7il4ptnmUyeOJXg7LBJzON2afNFXropkF0iyc5UUdWHdJylsEA7ASmLXhATJ+KKqcBE
+	y8tKcOtLisfKJ7SWa5tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ8Oi-0007Jf-7p; Thu, 14 May 2020 07:35:16 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jZ8Pu-0001jB-9g; Thu, 14 May 2020 07:36:30 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ8ON-0007I1-Pv; Thu, 14 May 2020 07:34:57 +0000
-X-UUID: b17acf61df3048af9143edd2974d90aa-20200513
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=/nREqLi1Ldl8sd0riITmmpWJKuTNyeKnEZWI4u7Mg0Y=; 
- b=bg9Pgjd9KHnY+znNILPTWZKAHNkxlugL4jlyX1guMYRskgMMgE8jl+Z+r8xM7pRv1NEVrIcjRn4BqJf2uQJ1Au8l+So/+zDkV+X5uR+UqUo8X1Kc3UcAJ/01yUKgXKWHE887B4wOsDD4XISz7fjLG+OXJ+Kekile5fcawNQIdZk=;
-X-UUID: b17acf61df3048af9143edd2974d90aa-20200513
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <min.guo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2071330438; Wed, 13 May 2020 23:34:51 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 00:34:46 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1497.2;
- Thu, 14 May 2020 15:34:44 +0800
-Received: from [10.17.3.153] (10.17.3.153) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Thu, 14 May 2020 15:34:44 +0800
-Message-ID: <1589441605.28160.27.camel@mhfsdcap03>
-Subject: Re: [PATCH] usb: musb: mediatek: add reset FADDR to zero in reset
- interrupt handle
-From: Min Guo <min.guo@mediatek.com>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Date: Thu, 14 May 2020 15:33:25 +0800
-In-Reply-To: <1589428872-29282-1-git-send-email-macpaul.lin@mediatek.com>
-References: <1589428872-29282-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jZ8Pj-0001iP-4L
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:36:20 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D1927206BE;
+ Thu, 14 May 2020 07:36:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589441778;
+ bh=IXHEXF16rU/BSTFK9nrncTfh3TEkux3JqpB15nAsJQA=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=XxirtXwsu8vpXp4zzU02/RsjtslmALTiUWbZRwJFPlsgFZ5FBknRCs1fNJcfyi308
+ C73AzidmlE2O+eXroCd+aQR4+7pOtgXzMr43MU3W0Yf19IahA6CHTkljDJfsgtJYap
+ H7X4dOo6J5M+loGaqtYZ33z4HpquU/5E/OElF1PA=
+Date: Thu, 14 May 2020 08:36:13 +0100
+From: Will Deacon <will@kernel.org>
+To: Anshuman Khandual <anshuman.khandual@arm.com>
+Subject: Re: [PATCH V2] arm64/cpuinfo: Move HWCAP name arrays alongside their
+ bit definitions
+Message-ID: <20200514073613.GB4280@willie-the-truck>
+References: <1588858150-26823-1-git-send-email-anshuman.khandual@arm.com>
+ <20200513150405.GS21779@arm.com>
+ <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 3929ED25672ED9116AC7BC7CCB30D4C22ADBA5D38237F4E1188FC580E959644C2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_003455_846515_6D66EAA0 
-X-CRM114-Status: GOOD (  11.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_003619_210957_7C6CCE1B 
+X-CRM114-Status: GOOD (  16.83  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -71,8 +67,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,47 +79,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Hans de Goede <hdegoede@redhat.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-mediatek@lists.infradead.org,
- Macpaul Lin <macpaul.lin@gmail.com>, Bin Liu <b-liu@ti.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Ard Biesheuvel <ardb@kernel.org>, Mark Brown <broonie@kernel.org>,
+ Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2020-05-14 at 12:01 +0800, Macpaul Lin wrote:
-> When receiving reset interrupt, FADDR need to be reset to zero in
-> periphearl mode. Otherwise ep0 cannot do enumeration when re-pluging USB
-> cable.
+On Thu, May 14, 2020 at 07:14:58AM +0530, Anshuman Khandual wrote:
+> On 05/13/2020 08:34 PM, Dave Martin wrote:
+> > On Thu, May 07, 2020 at 06:59:10PM +0530, Anshuman Khandual wrote:
+> >> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
+> >> index 0f00265248b5..589ac02e1ddd 100644
+> >> --- a/arch/arm64/include/asm/hwcap.h
+> >> +++ b/arch/arm64/include/asm/hwcap.h
+> >> @@ -8,18 +8,27 @@
+> >>  #include <uapi/asm/hwcap.h>
+> >>  #include <asm/cpufeature.h>
+> >>  
+> >> +#define COMPAT_HWCAP_SWP	(1 << 0)
+> >>  #define COMPAT_HWCAP_HALF	(1 << 1)
+> >>  #define COMPAT_HWCAP_THUMB	(1 << 2)
+> >> +#define COMPAT_HWCAP_26BIT	(1 << 3)
+> >>  #define COMPAT_HWCAP_FAST_MULT	(1 << 4)
+> >> +#define COMPAT_HWCAP_FPA	(1 << 5)
+> >>  #define COMPAT_HWCAP_VFP	(1 << 6)
+> >>  #define COMPAT_HWCAP_EDSP	(1 << 7)
+> >> +#define COMPAT_HWCAP_JAVA	(1 << 8)
+> >> +#define COMPAT_HWCAP_IWMMXT	(1 << 9)
+> >> +#define COMPAT_HWCAP_CRUNCH	(1 << 10)
+> >> +#define COMPAT_HWCAP_THUMBEE	(1 << 11)
+> >>  #define COMPAT_HWCAP_NEON	(1 << 12)
+> >>  #define COMPAT_HWCAP_VFPv3	(1 << 13)
+> >> +#define COMPAT_HWCAP_VFPV3D16	(1 << 14)
+> >>  #define COMPAT_HWCAP_TLS	(1 << 15)
+> >>  #define COMPAT_HWCAP_VFPv4	(1 << 16)
+> >>  #define COMPAT_HWCAP_IDIVA	(1 << 17)
+> >>  #define COMPAT_HWCAP_IDIVT	(1 << 18)
+> >>  #define COMPAT_HWCAP_IDIV	(COMPAT_HWCAP_IDIVA|COMPAT_HWCAP_IDIVT)
+> >> +#define COMPAT_HWCAP_VFPD32	(1 << 19)
+> >>  #define COMPAT_HWCAP_LPAE	(1 << 20)
+> >>  #define COMPAT_HWCAP_EVTSTRM	(1 << 21)
+> > 
+> > With the possible exception of SWP (does the swp emulation allow us to
+> > report this as supported?), I think all these weren't mentioned because
+> > they aren't included in ARMv8 and so can never be reported.
+> > 
+> > If we find ourselves reporting them, there's a bug somewhere.
+> > 
+> > So, can we just default all obsolete string entries to NULL?
+> > 
+> > When generating the cpuinfo strings we could WARN and just emit an empty
+> > string for that hwcap.
 > 
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> ---
->  drivers/usb/musb/mediatek.c |    6 ++++++
->  1 file changed, 6 insertions(+)
-> 
-> diff --git a/drivers/usb/musb/mediatek.c b/drivers/usb/musb/mediatek.c
-> index 6196b0e..eebeadd 100644
-> --- a/drivers/usb/musb/mediatek.c
-> +++ b/drivers/usb/musb/mediatek.c
-> @@ -208,6 +208,12 @@ static irqreturn_t generic_interrupt(int irq, void *__hci)
->  	musb->int_rx = musb_clearw(musb->mregs, MUSB_INTRRX);
->  	musb->int_tx = musb_clearw(musb->mregs, MUSB_INTRTX);
->  
-> +	if ((musb->int_usb & MUSB_INTR_RESET) && !is_host_active(musb)) {
-> +		/* ep0 FADDR must be 0 when (re)entering peripheral mode */
-> +		musb_ep_select(musb->mregs, 0);
-> +		musb_writeb(musb->mregs, MUSB_FADDR, 0);
-> +	}
-> +
->  	if (musb->int_usb || musb->int_tx || musb->int_rx)
->  		retval = musb_interrupt(musb);
->  
+> All these above will be a change in the existing user visible behavior on
+> the system and this patch never intended to create one.
 
-Acked-by:Min Guo <min.guo@mediatek.com>
+Why is it a change? We've never reported e.g. "java" on an arm64 kernel, so
+I agree with Dave that we shouldn't be adding this string. If it /ever/ ends
+up in userspace it's because something has gone horribly wrong. NULL would
+be much better. Couldn't you achieve that by simply omitting these entries?
+e.g. deleting things like:
+
+	[COMPAT_KERNEL_HWCAP(JAVA)]     = "java",
+
+completely (including the COMPAT_HWCAP_JAVA definition)?
+
+> Hence, I will just defer this to maintainers on whether we should change
+> existing /proc/cpuinfo output (including non-practically-possible ones on
+> ARMv8) or even treat swap emulation as SWP.
+
+SWP is fine because we emulate it and so userspace can use it. Removing that
+*would* be a change in behaviour. I don't think the compat ABI is broken
+here, so please don't change it without good reason.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
