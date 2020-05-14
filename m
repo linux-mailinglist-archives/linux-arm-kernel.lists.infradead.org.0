@@ -2,77 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 503AE1D322D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:08:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C18541D3247
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:10:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7zLesntDIs7weLds9+Qr7uU7n129Hjs0sMozViLugWA=; b=Rro4hJK8qtMBnB
-	nuPZfFD2DJPS6ls46b0xJpq63DNQcyATKyDiv3tXuC1V7m8GsqFHM+j07jY7XkHI8RWaZwllSYgUm
-	v8VePMT8gfCvFtdaLO2pEcZrfITRvHY8OUvGwUw1TesDgVb6eBBJoalKGrdmnbgSRNvGU1UNlWQk1
-	wU8HVoTfh+bZSJpI3c7wGEW8oqyZQu3XaavIlZEL5cQfhP4cgIXED1CTvCmmwsaPqspdjG5hibKtD
-	9MbIN9I4I3OaQWa88njXC0q9d9q47OTcPsuc3lMHB4pJOFGzm4m9Sus3Fxsxj1xduqYT4G9xg53QI
-	GKlymsz4xVs/844fG36Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=OGGU4CQkbPNVwEOnsESqTFbp5iFyRwrvxMKOO28ngOw=; b=Te+v9gy+q05bUP+tJi4QfkhdC
+	z6ir4KwJY1hgsXd2ZyUFeVFVwzQHQCw3fL6jCTtbyj1hCCrNP2cO1p7ULu6Y5EBxcm0I3uEn36MZd
+	O3lMF8JQKxRxBUeAwn8YEMJa+BT7mZhlUkQKZcu4+SP6dkEe6mzkJ6oV1O2Ke9xzrbGRlZ1ieP+2n
+	6dMrL9gXGdeGmvAaNyE3+PXCQdVZFte8sjjq+eYjTGtWaXh4+hFCEy/a/Rr5Br3iEozjSCnccaXB0
+	zNQ0tDUrNpqfCxHlF8oC2i1la2BfyK8jcQkdWhoGeRK5WIKwaIPAQofuFrvluFLdhb22Db98JxgW0
+	6kPLfYkNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZEXA-0004zK-23; Thu, 14 May 2020 14:08:24 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1jZEZ3-0007ic-D3; Thu, 14 May 2020 14:10:21 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZEWz-0004yw-N8
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:08:15 +0000
-Received: by mail-lj1-x244.google.com with SMTP id f18so3624512lja.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 07:08:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4tjpLfreP4k0pSGmLfKu7J4qVyl2PfcgR+DBUFuyQfI=;
- b=Dj7/g773oDlRsTiNUR7xo2qlLm/wu1orsMurVYbTiR6KmugblKgadVSe7mPERK4aCL
- vEPNEYTpo0FsOvkLTFcAR67KlJyF7Lm0tYMvWEFjNfuewnDqxPfak/mLCAwyBwyRj2ir
- q0by15fYjqzhJnUNE1ONVJGr3vLUxaVTcB05C/nT5aCMA95AP0XrrQXYs66hWza3MVLf
- R+msddyOYrqaHHXoL1h2Zg7FvdZ9e0msvkVGT4lgti3NVlNIlsRBi9Wq6iHo7+nPlyp+
- J4SOOLifvlUKFSIzHAfmGa1qomnjT8z0ZSZ1URkY4VQZLOT1r8zjI6FEv5Gh00Bgxe6d
- cS2g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4tjpLfreP4k0pSGmLfKu7J4qVyl2PfcgR+DBUFuyQfI=;
- b=rl+YneRyJO5doVYLyeID4pURXhzgFf76H5FCUQAwVNuoQ2NO6hq3p8dPfhTLGg4l0X
- fDRyFxs3y2jbSi+oWfUTgm6HoC09vulL60KQxgfrDTzwNe5hqu3BwF2UENmeXyDi1e9s
- Qrhi54GLXfYvx81akaBPvJnwZAFWjIcFqbDi1r1MlHhhUtzfIWVnu2IzK6MPNmfPtZyi
- FfOKUfZDYkjci8ULSURbkekwDvAwEnZAKgkfNeQyqivBHDHhlsTd8dR8isJnZd/XOeRV
- G96iyOXMA27mllnIJ+wCzxzJs0qbUTaLGp2fC9Qy8RsStpiWtvwfkL0v9+2ymz8pmkMe
- IvQg==
-X-Gm-Message-State: AOAM532SsY5YCoeKzDZFvgjsO4LsJGNoFnYQA35CEQ0NAwIMEn+AMSqU
- WRUtJmn9dCf5otWaixoqy/dQShjRZ96fxjstq+I0nA==
-X-Google-Smtp-Source: ABdhPJx5t1yZM5yB0Se02KNKlQ3Kf5olZkwfnoQ7/EcJOQjcx6eZpQDoXhQSKSv4wdy91TSKQPnH1L4MsQ9yfH5F0tc=
-X-Received: by 2002:a2e:531e:: with SMTP id h30mr2030382ljb.168.1589465290360; 
- Thu, 14 May 2020 07:08:10 -0700 (PDT)
+ id 1jZEYs-0007Aw-9f
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:10:12 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04EE3BuV021940; Thu, 14 May 2020 16:10:04 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=nGjr1Mu7bkzp2bxZhBiDxdZ++d1WWKpOhGKs+gral3M=;
+ b=Tq5YkrOS4LSWphjCakeNMmmhH06rm4W1vFs1ggV9DtufKvfk5Y3v1ebF47urfBqaEIvu
+ 9EDT1fYMFH9XeMRHOXzXPmHi6DDs2PQjs50X46K8+dLT2aWJbrwtu41mpPkXTVspPwYY
+ DvujEIxtq4i3el5pULfAP9w7oRlMpOd0hwg18pZ+1JXHfercoJ68fx+mUKzGE/vsJa0e
+ hZcIqlP2wjlM0eVow+1OZi1f+ixVkUtXPxl8Z6dJ9eG8pDzWcs2CHJkzM0WepTJ8NpYn
+ XgZVtwY3IioxxDIu+iiibtCPkpE/NqiBZN0k++bpODuRDykzg1hdj9F3pKJtV5EXcJF+ Ow== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3100vykuda-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 14 May 2020 16:10:04 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id CD25210002A;
+ Thu, 14 May 2020 16:10:03 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B967B2BF9CD;
+ Thu, 14 May 2020 16:10:03 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 14 May
+ 2020 16:09:56 +0200
+Subject: Re: [PATCH v2 2/3] ARM: dts: stm32: enable l3gd20 on stm32429-disco
+ board
+To: <dillon.minfei@gmail.com>, <robh+dt@kernel.org>,
+ <mcoquelin.stm32@gmail.com>, <broonie@kernel.org>, <p.zabel@pengutronix.de>
+References: <1589269010-18472-1-git-send-email-dillon.minfei@gmail.com>
+ <1589269010-18472-3-git-send-email-dillon.minfei@gmail.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <da9fbb80-571d-1217-4028-e413a0c7db84@st.com>
+Date: Thu, 14 May 2020 16:09:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-6-git-send-email-dillon.minfei@gmail.com>
- <CACRpkdbZoMDC-D12CByKJUZbu4shqixC=QrKwJUd8x=nyK7seQ@mail.gmail.com>
- <CAL9mu0LVsePqifEC+-FR+NxvuZT3UGpU86KhzaTqb7w_Px0z2g@mail.gmail.com>
-In-Reply-To: <CAL9mu0LVsePqifEC+-FR+NxvuZT3UGpU86KhzaTqb7w_Px0z2g@mail.gmail.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 14 May 2020 16:07:57 +0200
-Message-ID: <CACRpkdbcD7i+kNoJ9YP5XXTtLi12=yzW5OBNzet5oRdwPYz=dA@mail.gmail.com>
-Subject: Re: [PATCH v3 5/5] drm/panel: Add ilitek ili9341 driver
-To: dillon min <dillon.minfei@gmail.com>
+In-Reply-To: <1589269010-18472-3-git-send-email-dillon.minfei@gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG4NODE2.st.com (10.75.127.11) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-14_04:2020-05-14,
+ 2020-05-14 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_070813_760478_951FD2A2 
-X-CRM114-Status: GOOD (  15.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_071010_697659_CC54A9F2 
+X-CRM114-Status: GOOD (  20.95  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -93,72 +100,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Dave Airlie <airlied@linux.ie>, Michael Turquette <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-clk <linux-clk@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, dillonhua@gmail.com,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 12:22 PM dillon min <dillon.minfei@gmail.com> wrote:
+Hi Dillon
 
-> > > +       /* Gamma */
-> > > +       mipi_dbi_command(dbi, ILI9341_3GAMMA_EN, 0x00);
-> > > +       mipi_dbi_command(dbi, MIPI_DCS_SET_GAMMA_CURVE, 0x01);
-> > > +       mipi_dbi_command(dbi, ILI9341_PGAMMA,
-> > > +                        0x0f, 0x31, 0x2b, 0x0c, 0x0e, 0x08, 0x4e, 0xf1,
-> > > +                        0x37, 0x07, 0x10, 0x03, 0x0e, 0x09, 0x00);
-> > > +       mipi_dbi_command(dbi, ILI9341_NGAMMA,
-> > > +                        0x00, 0x0e, 0x14, 0x03, 0x11, 0x07, 0x31, 0xc1,
-> > > +                        0x48, 0x08, 0x0f, 0x0c, 0x31, 0x36, 0x0f);
-> >
-> > It seems to be copies of the stuff above, but why is there a different
-> > gamma if you use DBI?
+On 5/12/20 9:36 AM, dillon.minfei@gmail.com wrote:
+> From: dillon min <dillon.minfei@gmail.com>
+> 
+> L3gd20, st mems motion sensor, 3-axis digital output gyroscope,
+> connect to stm32f429 via spi5
+> 
+> Signed-off-by: dillon min <dillon.minfei@gmail.com>
+> ---
+> 
+> Hi Alexandre,
+> 
+> V2:
+>      1, insert blank line at stm32f420-disco.dts line 143
+>      2, add more description about l3gd20 in commit message
+> 
+> V1:
+>      enable l3gd20 dts binding on stm32f429-disco
+> 
+> thanks.
+> 
+> dillon,
+> 
+>   arch/arm/boot/dts/stm32f429-disco.dts | 25 +++++++++++++++++++++++++
+>   1 file changed, 25 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/stm32f429-disco.dts b/arch/arm/boot/dts/stm32f429-disco.dts
+> index 30c0f67..1bfb903 100644
+> --- a/arch/arm/boot/dts/stm32f429-disco.dts
+> +++ b/arch/arm/boot/dts/stm32f429-disco.dts
+> @@ -49,6 +49,8 @@
+>   #include "stm32f429.dtsi"
+>   #include "stm32f429-pinctrl.dtsi"
+>   #include <dt-bindings/input/input.h>
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/gpio/gpio.h>
+>   
+>   / {
+>   	model = "STMicroelectronics STM32F429i-DISCO board";
+> @@ -127,3 +129,26 @@
+>   	pinctrl-names = "default";
+>   	status = "okay";
+>   };
+> +
+> +&spi5 {
+> +	status = "okay";
+> +	pinctrl-0 = <&spi5_pins>;
+> +	pinctrl-names = "default";
+> +	#address-cells = <1>;
+> +	#size-cells = <0>;
+> +	cs-gpios = <&gpioc 1 GPIO_ACTIVE_LOW>;
+> +	dmas = <&dma2 3 2 0x400 0x0>,
+> +	       <&dma2 4 2 0x400 0x0>;
+> +	dma-names = "rx", "tx";
+> +
 
-> for dbi interface, currently i just copy the code from tiny/ili9341.c.
-> as so many boards use this driver now, like raspberry pi, etc
-> i'm afraid it's will not work after modification. so, just leave the
-> original code there.
+You added this spi5 node in this patch but also in the display series. I 
+will have issue to merge. Even if I could fix it easily, as you are 
+going to resend, the good practice could be to have several patches in 
+one series: one patch for spi5 controller, another for gyro and another 
+for display.
 
-OK if you move it to ili9341_config it will be clear which panels
-need this gamma and which panels need another gamma.
+And also same remark than Linus did in display series move DMA to soc 
+dtsi file please.
 
-I think there should be one ili9341_config for the new st,*
-variant and one for the old DBI variant.
 
-> anther question:
-> is there any panel driver have dbi & dpi or dpi & dsi supported? which
-> i mean support
-> two different panel interface in one driver.
-> thanks
-
-Usually you split the driver in three files becuase a driver can
-only list one initcall, and also it makes it modularized.
-
-There is nothing in-tree but look at my branch here:
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-nomadik.git/log/?h=ux500-skomer-v5.7-rc1
-
-You see how I split up the s6e63m0 driver in one SPI part
-and one DSI part:
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-nomadik.git/commit/?h=ux500-skomer-v5.7-rc1&id=6c0e1fb5df5fa8fa857dee65f6c0f54d06d158a7
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-nomadik.git/commit/?h=ux500-skomer-v5.7-rc1&id=cfbf562cc709b53b62f5fbc7fedf176ffa17b088
-
-The overall idea should work the same with DBI.
-
-Yours,
-Linus Walleij
-
-Yours,
-Linus Walleij
+> +	l3gd20: l3gd20@0 {
+> +		compatible = "st,l3gd20-gyro";
+> +		spi-max-frequency = <10000000>;
+> +		st,drdy-int-pin = <2>;
+> +		interrupt-parent = <&gpioa>;
+> +		interrupts = <1 IRQ_TYPE_EDGE_RISING>,
+> +				<2 IRQ_TYPE_EDGE_RISING>;
+> +		reg = <0>;
+> +		status = "okay";
+> +	};
+> +};
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
