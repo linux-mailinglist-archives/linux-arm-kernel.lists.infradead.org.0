@@ -2,95 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1796E1D2392
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40F61D2398
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:25:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+ve6Bm2wjgBQ2mW4lqWgBi7oVXTBJx3nd44M2i79cFw=; b=hlK0x/inmKzvmG
-	Q7vQQvsMmz3fsLU8fcfg2Ueyx8a4LF6w9a9nSMFayfSLnjGHIHJXVgtLbClb/DylMkPFHlwOv7WY3
-	nzrwWQvHPSPpVXZuIg8hF+xXRe3nxaMkqaiD2soGxUhFFesdtbHyEkubW7xY6JcVaeU1MYEL/WlVS
-	Rq2SPOnb6THRWSi2etvn6UZhSVI4Td1NO8nlJar62qMTBl7HGeWD24bCCIYhoWOIVaqvqgnkguyOF
-	/gKenvGsfd7lBv9D6KvpWmLXV9t73kQJfPCebYZ/lGaSlBZun3vfhZGibSDoBS1Kxg+357P5u4GS2
-	zLW0/JwWqpApp2UaKUFA==;
+	List-Owner; bh=Oj6tkVvPz7Hcb+iK1Gg1IIKpq4ObKrpwXQKGBUm+C54=; b=Pi1B9umYSdVcqo
+	1NQtRgJD+xT6hWDC9+/a12Uo30PrNLQPl1saH4SPffwZaE4JzW8cOGwJN0VCLR4KTbsGv+z8EO2Ur
+	lgF5NltN+1vaAToFHvwhxkdsgFtHznfYUmuGqiEB0UIumpf10BHU9pBkNlLm8VwFZZaklBUYmQuCO
+	mf6z4kwcY1NxAjlC4YH8b/whbfreUPwo77kSte0gUkjTRWtyJdCy0go1unf1z98FyBiYkDiPJeVGM
+	YWeUI726YTDyti6G1XIesqAC+nFaTXrB0uCppCVdQdLE8J56NtwMQ4VtaQOEH7OesDFOKG+s1EFuC
+	Olwrv/djkwrAyNWzppxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ1f6-0006Pq-JZ; Thu, 14 May 2020 00:23:44 +0000
-Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
+	id 1jZ1gw-0000vZ-L7; Thu, 14 May 2020 00:25:38 +0000
+Received: from mga03.intel.com ([134.134.136.65])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ1ew-0006P0-FI
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:23:36 +0000
-Received: by mail-vs1-xe41.google.com with SMTP id g2so955697vsb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 17:23:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=+DNHtoGN8AEBU2XRBN2d1pQMaWosnFgb+E454pWapuo=;
- b=hqEKtvQG5x4boOpMaDZ44lycvpN66hkdKuNeDQ0tCjH0g5wOLUw17Dtcq+EqvLhSVd
- 2SOSmEn7GzfaIuaaWi1xblgxsLC0YsEBbsji3COXyd4KmUmEsQCx7nEtXWz1+SQMFtct
- zUz5+AuJ8JIgviULQP0sgLBVTlhkpMb8ehXPo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=+DNHtoGN8AEBU2XRBN2d1pQMaWosnFgb+E454pWapuo=;
- b=bUJWNPXhH7mAVCOH6yBbBZwzaIrFk91W/fSqIqCsVl8pLttoghgX9k1hbaCvMvBqLT
- tW0xdllE4LDmVRaOLA5TR+Du19UnZVgEaFATY1a3acjHDJIp2H65u1tNP0Uie2uzGdHN
- mgPMilDLRhn8BMO/z+vg/oKYRfdOzt9fYptYF/JYBxOs01wzZlzGDzu1bc5+VcVpAxK2
- 7MbaOX6sgmCPaSg6IsJ65O6O9uVdz7qHTfuD3cVTH0zBRu5htx8ZJPSqIKLeNw2KP27A
- 7F8PjQlqmIbf3fH7DFETVKUU2oCH0V/ggy4HCFDeMt1cXXo4cup5eq8yEm59YT0b6nlq
- mkAg==
-X-Gm-Message-State: AOAM530f5J3MU4Tr/qZJnNq/zsZ8xyuXCQCftYPJz87Di2ciYUslrWQW
- gYryiWyXhC9LaBJfaML1aRxZMWZPIik=
-X-Google-Smtp-Source: ABdhPJxdqrnioROFR19MQGQJ6DYELTAD03NPeNfueOrZrEEJjDcJk0DOrdTXJC1w+KP7+I710tBVlA==
-X-Received: by 2002:a67:f60f:: with SMTP id k15mr1541723vso.92.1589415813026; 
- Wed, 13 May 2020 17:23:33 -0700 (PDT)
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com.
- [209.85.222.51])
- by smtp.gmail.com with ESMTPSA id v1sm329337uao.18.2020.05.13.17.23.31
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 13 May 2020 17:23:31 -0700 (PDT)
-Received: by mail-ua1-f51.google.com with SMTP id k13so490623uap.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 17:23:31 -0700 (PDT)
-X-Received: by 2002:ab0:69cc:: with SMTP id u12mr1898920uaq.22.1589415810804; 
- Wed, 13 May 2020 17:23:30 -0700 (PDT)
+ id 1jZ1gm-0000uQ-6j
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:25:29 +0000
+IronPort-SDR: 9QNcjs9bXsaAftfhhML8pZt2+zRY/lmDejgNRxmSo5+pGje+uiI8tFj9ABrOu03KggLbVBsoX2
+ XmlhoJK8WMFg==
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga003.jf.intel.com ([10.7.209.27])
+ by orsmga103.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 13 May 2020 17:25:26 -0700
+IronPort-SDR: LmigXyC+PKXEwMmfY0sVl4rNnEd46L+o3kglBun/40P0Ry5MzcqKSfH2nUh0qUui+AXBzt99h0
+ L6gOZAQubFMg==
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.73,389,1583222400"; d="scan'208";a="262661894"
+Received: from gliber-mobl1.ger.corp.intel.com ([10.249.38.41])
+ by orsmga003.jf.intel.com with ESMTP; 13 May 2020 17:25:20 -0700
+Message-ID: <07bb6080f8be9f6613f460e2d6e19f3d456e219c.camel@linux.intel.com>
+Subject: Re: [PATCH v4 1/4] KEYS: trusted: Add generic trusted keys framework
+From: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+To: Sumit Garg <sumit.garg@linaro.org>, zohar@linux.ibm.com, jejb@linux.ibm.com
+Date: Thu, 14 May 2020 03:25:14 +0300
+In-Reply-To: <1588758017-30426-2-git-send-email-sumit.garg@linaro.org>
+References: <1588758017-30426-1-git-send-email-sumit.garg@linaro.org>
+ <1588758017-30426-2-git-send-email-sumit.garg@linaro.org>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+User-Agent: Evolution 3.36.1-2 
 MIME-Version: 1.0
-References: <20200509214159.19680-1-liwei391@huawei.com>
- <20200509214159.19680-5-liwei391@huawei.com>
-In-Reply-To: <20200509214159.19680-5-liwei391@huawei.com>
-From: Doug Anderson <dianders@chromium.org>
-Date: Wed, 13 May 2020 17:23:19 -0700
-X-Gmail-Original-Message-ID: <CAD=FV=Vb6=f=fr83-k0YH86k4v4G5LcfOGcks7RM9VxzxOnXsQ@mail.gmail.com>
-Message-ID: <CAD=FV=Vb6=f=fr83-k0YH86k4v4G5LcfOGcks7RM9VxzxOnXsQ@mail.gmail.com>
-Subject: Re: [PATCH 4/4] arm64: kgdb: Set PSTATE.SS to 1 to reenable
- single-step
-To: Wei Li <liwei391@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_172334_509575_AD63DE36 
-X-CRM114-Status: GOOD (  21.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_172528_289253_E86F84EF 
+X-CRM114-Status: UNSURE (   8.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [134.134.136.65 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,186 +71,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
- LKML <linux-kernel@vger.kernel.org>, liwei1412@163.com,
- Masami Hiramatsu <mhiramat@kernel.org>,
- Jason Wessel <jason.wessel@windriver.com>, Will Deacon <will@kernel.org>,
- David Miller <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: tee-dev@lists.linaro.org, daniel.thompson@linaro.org,
+ op-tee@lists.trustedfirmware.org, corbet@lwn.net, janne.karhunen@gmail.com,
+ linux-doc@vger.kernel.org, jmorris@namei.org, linux-kernel@vger.kernel.org,
+ dhowells@redhat.com, linux-security-module@vger.kernel.org,
+ keyrings@vger.kernel.org, Markus.Wamser@mixed-mode.de, casey@schaufler-ca.com,
+ linux-integrity@vger.kernel.org, jens.wiklander@linaro.org,
+ linux-arm-kernel@lists.infradead.org, serge@hallyn.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Wed, 2020-05-06 at 15:10 +0530, Sumit Garg wrote:
+> Current trusted keys framework is tightly coupled to use TPM device as
+> an underlying implementation which makes it difficult for implementations
+> like Trusted Execution Environment (TEE) etc. to provide trusked keys
+> support in case platform doesn't posses a TPM device.
+> 
+> So this patch tries to add generic trusted keys framework where underlying
+> implemtations like TPM, TEE etc. could be easily plugged-in.
+> 
+> Suggested-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+> Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
 
-On Sat, May 9, 2020 at 6:49 AM Wei Li <liwei391@huawei.com> wrote:
->
-> After fixing wrongly single-stepping into the irq handler, when we execute
-> single-step in kdb/kgdb, we can see only the first step can work.
->
-> Refer to the ARM Architecture Reference Manual (ARM DDI 0487E.a) D2.12,
-> i think PSTATE.SS=1 should be set each step for transferring the PE to the
-> 'Active-not-pending' state. The problem here is PSTATE.SS=1 is not set
-> since the second single-step.
->
-> After the first single-step, the PE transferes to the 'Inactive' state,
-> with PSTATE.SS=0 and MDSCR.SS=1, thus PSTATE.SS won't be set to 1 due to
-> kernel_active_single_step()=true. Then the PE transferes to the
-> 'Active-pending' state when ERET and returns to the debugger by step
-> exception.
->
-> Before this patch:
-> * kdb:
-> Entering kdb (current=0xffff8000119d2dc0, pid 0) on processor 0 due to Keyboard Entry
-> [0]kdb> bp printk
-> Instruction(i) BP #0 at 0xffff80001014874c (printk)
->     is enabled   addr at ffff80001014874c, hardtype=0 installed=0
->
-> [0]kdb> g
->
-> / # echo h > /proc/sysrq-trigger
->
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to Breakpoint @ 0xffff80001014874c
-> [3]kdb> ss
->
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
-> [3]kdb> ss
->
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
-> [3]kdb> ss
->
-> Entering kdb (current=0xffff0000fa6948c0, pid 265) on processor 3 due to SS trap @ 0xffff800010148750
-> [3]kdb>
->
-> * kgdb:
-> (gdb) target remote 127.1:23002
-> Remote debugging using 127.1:23002
-> arch_kgdb_breakpoint () at /home/liwei/main_code/linux/arch/arm64/include/asm/kgdb.h:21
-> 21              asm ("brk %0" : : "I" (KGDB_COMPILED_DBG_BRK_IMM));
-> (gdb) b printk
-> Breakpoint 1 at 0xffff80001014874c: file /home/liwei/main_code/linux/kernel/printk/printk.c, line 2076.
-> (gdb) c
-> Continuing.
-> [New Thread 277]
-> [Switching to Thread 276]
->
-> Thread 171 hit Breakpoint 1, printk (fmt=0xffff8000112fc130 "\001\066sysrq: HELP : ")
->     at /home/liwei/main_code/linux/kernel/printk/printk.c:2076
-> 2076    {
-> (gdb) stepi
-> 0xffff800010148750      2076    {
-> (gdb) stepi
-> 0xffff800010148750      2076    {
-> (gdb) stepi
-> 0xffff800010148750      2076    {
-> (gdb)
->
-> After this patch:
-> * kdb:
-> Entering kdb (current=0xffff8000119d2dc0, pid 0) on processor 0 due to Keyboard Entry
-> [0]kdb> bp printk
-> Instruction(i) BP #0 at 0xffff80001014874c (printk)
->     is enabled   addr at ffff80001014874c, hardtype=0 installed=0
->
-> [0]kdb> g
->
-> / # echo h > /proc/sysrq-trigger
->
-> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to Breakpoint @ 0xffff80001014874c
-> [2]kdb> ss
->
-> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148750
-> [2]kdb> ss
->
-> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148754
-> [2]kdb> ss
->
-> Entering kdb (current=0xffff0000fa800040, pid 264) on processor 2 due to SS trap @ 0xffff800010148758
-> [2]kdb>
->
-> * kgdb:
-> (gdb) target remote 127.1:23002
-> Remote debugging using 127.1:23002
-> arch_kgdb_breakpoint () at /home/liwei/main_code/linux/arch/arm64/include/asm/kgdb.h:21
-> 21              asm ("brk %0" : : "I" (KGDB_COMPILED_DBG_BRK_IMM));
-> (gdb) b printk
-> Breakpoint 1 at 0xffff80001014874c: file /home/liwei/main_code/linux/kernel/printk/printk.c, line 2076.
-> (gdb) c
-> Continuing.
-> [New Thread 281]
-> [New Thread 280]
-> [Switching to Thread 281]
->
-> Thread 174 hit Breakpoint 1, printk (fmt=0xffff8000112fc138 "\001\066sysrq: HELP : ")
->     at /home/liwei/main_code/linux/kernel/printk/printk.c:2076
-> 2076    {
-> (gdb) stepi
-> 0xffff800010148750      2076    {
-> (gdb) stepi
-> 2080            va_start(args, fmt);
-> (gdb) stepi
-> 0xffff800010148758      2080            va_start(args, fmt);
-> (gdb)
->
-> Fixes: 44679a4f142b ("arm64: KGDB: Add step debugging support")
-> Signed-off-by: Wei Li <liwei391@huawei.com>
-> ---
->  arch/arm64/include/asm/debug-monitors.h | 2 ++
->  arch/arm64/kernel/debug-monitors.c      | 2 +-
->  arch/arm64/kernel/kgdb.c                | 3 ++-
->  3 files changed, 5 insertions(+), 2 deletions(-)
->
-> diff --git a/arch/arm64/include/asm/debug-monitors.h b/arch/arm64/include/asm/debug-monitors.h
-> index b62469f3475b..a48b507c89ee 100644
-> --- a/arch/arm64/include/asm/debug-monitors.h
-> +++ b/arch/arm64/include/asm/debug-monitors.h
-> @@ -78,6 +78,8 @@ struct step_hook {
->         int (*fn)(struct pt_regs *regs, unsigned int esr);
->  };
->
-> +void set_regs_spsr_ss(struct pt_regs *regs);
-> +
->  void register_user_step_hook(struct step_hook *hook);
->  void unregister_user_step_hook(struct step_hook *hook);
->
-> diff --git a/arch/arm64/kernel/debug-monitors.c b/arch/arm64/kernel/debug-monitors.c
-> index 25ce6b5a52d2..7a58233677de 100644
-> --- a/arch/arm64/kernel/debug-monitors.c
-> +++ b/arch/arm64/kernel/debug-monitors.c
-> @@ -141,7 +141,7 @@ postcore_initcall(debug_monitors_init);
->  /*
->   * Single step API and exception handling.
->   */
-> -static void set_regs_spsr_ss(struct pt_regs *regs)
-> +void set_regs_spsr_ss(struct pt_regs *regs)
->  {
->         regs->pstate |= DBG_SPSR_SS;
->  }
-> diff --git a/arch/arm64/kernel/kgdb.c b/arch/arm64/kernel/kgdb.c
-> index 3910ac06c261..093ad9d2e5e6 100644
-> --- a/arch/arm64/kernel/kgdb.c
-> +++ b/arch/arm64/kernel/kgdb.c
-> @@ -230,7 +230,8 @@ int kgdb_arch_handle_exception(int exception_vector, int signo,
->                         kernel_prepare_single_step(&per_cpu(kgdb_ss_flags,
->                                         raw_smp_processor_id()), linux_regs);
->                         kernel_enable_single_step(linux_regs);
-> -               }
-> +               } else
-> +                       set_regs_spsr_ss(linux_regs);
+I tend to agree how this is implemented and could merge it as such.
 
-One slight nit is that my personal preference is that if one half of
-an "if/else" needs braces then both halves should have braces.  I
-don't know what Catalin and Will's policies are, though.
+I'm just thinking if we could refine this patch in a way that instead of
+copying TRUSTED_DEBUG macro we could just replace pr_info() statements
+with pr_debug()?
 
-Other than that, this seems right to me.  I will leave it to the
-Catalin and Will folks to say if they'd rather have this call made
-from a different place or if they're happy with where you've put it.
+/Jarkko
 
-Reviewed-by: Douglas Anderson <dianders@chromium.org>
-Tested-by: Douglas Anderson <dianders@chromium.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
