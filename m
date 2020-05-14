@@ -2,92 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE1A81D3167
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:36:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 108521D318C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:43:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E9W1sJQt/AkGPQv8yrPnHpGoqDsCP8Uvp/Cdxi7xlfQ=; b=Kl/f/5xRRctjCf
-	SUDku4sPSTRDoVf91s7zVYLO7VBgMlLEVo/2MVJRuIrAY31J3NE1HP2lY/4y8oz6n7O9Py5lmn7To
-	mBxaFDV2S2R8OYUpFXoJ4/HFk3rlzVt30YNmPX7PuIa4y3PqjMQ8glIBiqiN7aQ+I1oclAtdp6OFH
-	jLVVYj/9zttWSd1cxMzO1dlMX5yFE30G2hnq1bCeJpxNB/z0f/VoINIiFND43xJiWmKlt+jTkOPF4
-	kT14nMKQOaqWHxGgqqZ8gYpVQQpSIykJd6a/YPo0QiUOhiAefaEBsDW5UqswkHyMgig+H2gI5NkR+
-	yyBnw9IMJ4iR1uxLOwbg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=PBma1Wz9LUyJcOquaNJcI77iu8bia87Puf2b1LgLMr8=; b=ukpxKSmViI3+S2VOe/WY91a+7
+	wUn1NqXSWQCPdKVvAuDMKFZem1W9jXLTezZ6zYZ0e5N5y1Zzt64OjUXYJNEfjOp1lqc6va6WcP6zR
+	2wJkgW/xH3fYq4G4/S1cAF9OJ13m0Fk53U+BX/ilPRRRCpvxRjjndpHVYM2Cs65w6v5Ih899jRpCj
+	bpl2yqb8/ecih2IfShEmZ1aGuVuQiD9zpGDDWK3M1XuyVrRxqPxyUhtf50eIcVNNpffWP6tg+NbYz
+	vB7Ucp7JqzQp4EIF6eIpOGOzZTu8kY5wqMG0dxEdYe99C+7VpRpsPqtWVmnEO5Gc8NHMMu8KBbJ5o
+	KXTnwYHcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZE1m-0007aD-Jq; Thu, 14 May 2020 13:35:58 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jZE8T-0002bL-9s; Thu, 14 May 2020 13:42:53 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZE1d-0007Zm-Tc
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 13:35:51 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 23so1315960pfy.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 06:35:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=dFH4YBbehMI5t5iqf9Q3qC3HSqGhIHfBCfuP+cdahd4=;
- b=QMSW1I6g69BXV603QaMHpeUSgDh97tVPbW+aOr8TNB1DROgfixI7vPwvLqnPQftRbu
- k/DPWZZCyDkAqkGMyKxaCuU0auNG8u3VNTsYoKg9i/6TfyufPw31JBq/HqrXhlY25q1O
- FEoyvdlBEbpmE+R9iw2Bk2PDZdoUDuaBcRV4+4KZrgKr2IdlZWue1/hOrdi/XGwFUh+L
- myzCQVsNAZHA17H/eqiUz6s17fy9GI9NvsMmjq2Mrnegh2/CXKfNxpd76zfde3+2XF4Y
- 9GlNZqEtCWPbdJmgW+qw8QzMoUZgkAfkbH8Vqoah21hxzL4zQOTpotm6U+rO26/XhNZe
- cxTQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=dFH4YBbehMI5t5iqf9Q3qC3HSqGhIHfBCfuP+cdahd4=;
- b=q4GsKl1NkFuRS9f2CbUHehkVgLyiDttEXTT7mSEvSpGlFbiCYNG8AEKTWZdzqCYx9l
- Ot+T/a1YuZkGi7ZXqa0pzWLc8ggxhncXoKgA9XB4bm8qQae56YB0nF4N1rzsgF3K8aGe
- xMGo3ctapodqcWhoEfBIoFmzUkYA10Au7v0cMe1xw+dtBxLfQM1vx2RhOHwiAB+TUmup
- lwtoyicF+MCOi0Era6Uq3LNkZYEuRJSJ4+s08DZQHHhlhC6CJlIzhe9r/Aw44bjeSpW5
- wICoDp5DZDWeS/rXPbaLDX2a+lkLN2Lca1+XwRF56Ly8jryJtsMcZJFvPwjvaLl44+lN
- B+ew==
-X-Gm-Message-State: AOAM531CsbZLAHNxvHzikRJJxcE0g4HR+Oj3XfgvcKl+OR0EaqBZVUG3
- 3PYhQGgztSi0A9Sg3lBQmLc=
-X-Google-Smtp-Source: ABdhPJyQMSiFyybpBsgKRX8zYbVXbAgjPZ/ufU3iqqpt6IQVzBBGvLrZ288ij1pt0DGhq+h93Zc31g==
-X-Received: by 2002:a62:ab16:: with SMTP id p22mr4250043pff.216.1589463348447; 
- Thu, 14 May 2020 06:35:48 -0700 (PDT)
-Received: from localhost ([49.207.51.148])
- by smtp.gmail.com with ESMTPSA id gb6sm4426799pjb.56.2020.05.14.06.35.47
- (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 14 May 2020 06:35:47 -0700 (PDT)
-Date: Thu, 14 May 2020 19:05:45 +0530
-From: afzal mohammed <afzal.mohd.ma@gmail.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: ARM: static kernel in vmalloc space
-Message-ID: <20200514133545.GA5020@afzalpc>
-References: <20200503145017.GA5074@afzalpc>
- <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
- <20200504091018.GA24897@afzalpc>
- <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
- <20200511142113.GA31707@afzalpc>
- <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
- <20200512104758.GA12980@afzalpc>
- <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
- <20200514111755.GA4997@afzalpc>
- <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
+ id 1jZE8H-0002ZD-JM
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 13:42:45 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 04EDgMxu028132; Thu, 14 May 2020 15:42:33 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=tD1qvdb0EwmAv9XocfBUyYNcHtOhYgnwwbYe5684NcY=;
+ b=lpZCseNN1q8B2O++L5FqZEfrupQp8UmuSICipi2VpYbbXdKqjviuS4uNBmOQ1Qk1/JYn
+ FC0+aT7IZOR+0AaKhzk+Ozpgl88d1a5y1MBWH1j0sjx/T8Vy7mAFxLIZkKAuH5DBT24e
+ w8vnJeOoFwf7/cYeADMBCKg6OvlIrAm70cghUtpnyO8Px5h4+ovsh1x/0sNyYzBPay55
+ GNVpTBzYrzgrxIYjV346YgPOw8M8x1YuBl3tdk9ASS/dhGkQVptEBfcXiG2r4Y/3xJqM
+ b1YktOvA+/Pa6WYvOrUBAuOptDbM+z10mLDDQLjERCoYWeW9MwohkWsITtdfWVTKKrAK eQ== 
+Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
+ by mx07-00178001.pphosted.com with ESMTP id 3100vnbg0g-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
+ Thu, 14 May 2020 15:42:33 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0CF2C100034;
+ Thu, 14 May 2020 15:42:33 +0200 (CEST)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EA8332BE24D;
+ Thu, 14 May 2020 15:42:32 +0200 (CEST)
+Received: from lmecxl0912.tpe.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 14 May
+ 2020 15:42:27 +0200
+Subject: Re: [PATCH 00/15] Fix STM32 DT issues on v5.7-rc4
+To: Benjamin Gaignard <benjamin.gaignard@st.com>, <linus.walleij@linaro.org>, 
+ <robh+dt@kernel.org>, <mcoquelin.stm32@gmail.com>,
+ <gregkh@linuxfoundation.org>
+References: <20200513145935.22493-1-benjamin.gaignard@st.com>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <caef6641-b7c2-881a-a331-3d05f6f4bba6@st.com>
+Date: Thu, 14 May 2020 15:42:18 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.7.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
-User-Agent: Mutt/1.9.3 (2018-01-21)
+In-Reply-To: <20200513145935.22493-1-benjamin.gaignard@st.com>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.47]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
+ definitions=2020-05-14_04:2020-05-14,
+ 2020-05-14 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_063549_956075_6DE201B4 
-X-CRM114-Status: GOOD (  17.16  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_064242_088036_5DAFD0C5 
+X-CRM114-Status: GOOD (  17.08  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [afzal.mohd.ma[at]gmail.com]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -108,70 +98,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <linux@armlinux.org.uk>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Benjamin
 
-On Thu, May 14, 2020 at 02:41:11PM +0200, Arnd Bergmann wrote:
-> On Thu, May 14, 2020 at 1:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
-
-> > 1. SoC w/ LPAE
-> > 2. TTBR1 (top 256MB) for static kernel, modules, io mappings, vmalloc,
-> >         kmap, fixmap & vectors
-
-> Right, these kind of go together because pre-LPAE cannot do the
-> same TTBR1 split, and they more frequently have conflicting
-> static mappings.
+On 5/13/20 4:59 PM, Benjamin Gaignard wrote:
+> This series fixes issues hight lighted by dtbs_check on STM32 devicetrees.
+> The patches has been developped on top of v5.7-rc4 tag.
 > 
-> It's clearly possible to do something very similar for older chips
-> (v6 or v7 without LPAE, possibly even v5), it just gets harder
-> while providing less benefit.
+> Benjamin Gaignard (15):
+>    ARM: dts: stm32: remove useless interrupt-names property on stm32f429
+>    ARM: dts: stm32: update pwm pinctrl node names for stm32f4
+>    ARM: dts: stm32: update led nodes names for stm32f249-disco
+>    ARM: dts: stm32: update led nodes names for stm32f469-disco
+>    ARM: dts: stm32: remove useless interrupt-names property on stm32f746
+>    ARM: dts: stm32: update led nodes names for stm32f429-eval
+>    ARM: dts: stm32: update led nodes names for stm32f769-disco
+>    ARM: dts: stm32: update led nodes names for stm32f746-eval
+>    ARM: dts: stm32: remove useless interrupt-names property on stm32f743
+>    ARM: dts: stm32: Update nodes names for stm32h743 pinctrl
+>    ARM: dts: stm32: Update nodes names for stm32mp15 pinctrl
+>    ARM: dts: stm32: Add missing #address and #size cells on spi node for
+>      stm32mp151
+>    ARM: dts: stm32: update led nodes names for stm32f746-eval
+>    dt-bindings: pinctrl: stm32: Add missing interrupts property
+>    dt-bindings: usb: dwc2: Fix issues for stm32mp15x SoC
 
-Yes, lets have it only for LPAE
+For dts(i) part, it looks good to me. I let Rob to review before taking 
+the whole series.
 
-> > 3. TTBR0 (low 3768MB) for user space & lowmem (kernel lowmem to have
+thanks
+alex
 
-> hardcoded 3840/256 split is likely the best compromise of all the
 
-hmm,i swallowed 72MB ;)
-
-> > 4. for user space to/from copy
-> >  a. pin user pages
-> >  b. kmap user page (can't corresponding lowmem be used instead ?)
-
-> - In the long run, there is no need for kmap()/kmap_atomic() after
->   highmem gets removed from the kernel, but for the next few years
->   we should still assume that highmem can be used, in order to support
->   systems like the 8GB highbank, armadaxp, keystone2 or virtual
->   machines. For lowmem pages (i.e. all pages when highmem is
->   disabled), kmap_atomic() falls back to page_address() anyway,
->   so there is no much overhead.
-
-Here i have some confusion - iiuc, VMSPLIT_4G_4G is meant to help
-platforms having RAM > 768M and <= 4GB disable high memory and still
-be able to access full RAM, so high memory shouldn't come into picture,
-right ?. And for the above platforms it can continue current VMPSLIT
-option (the default 3G/1G), no ?, as VMSPLIT_4G_4G can't help complete
-8G to be accessible from lowmem.
-
-So if we make VMSPLIT_4G_4G, depends on !HIGH_MEMORY (w/ mention of
-caveat in Kconfig help that this is meant for platforms w/ <=4GB), then
-we can do copy_{from,to}_user the same way currently do, and no need to
-do the user page pinning & kmap, right ?
-
-Only problem i see is Kernel compiled w/ VMSPLIT_4G_4G not suitable
-for >4GB machines, but anyway iiuc, it is was not meant for those
-machines. And it is not going to affect our current multiplatform
-setup as LPAE is not defined in multi_v7.
-
-Regards
-afzal
+> 
+>   .../devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml          |  3 +++
+>   Documentation/devicetree/bindings/usb/dwc2.yaml                |  6 ++++--
+>   arch/arm/boot/dts/stm32429i-eval.dts                           |  8 ++++----
+>   arch/arm/boot/dts/stm32746g-eval.dts                           |  8 ++++----
+>   arch/arm/boot/dts/stm32f4-pinctrl.dtsi                         |  4 ++--
+>   arch/arm/boot/dts/stm32f429-disco.dts                          |  4 ++--
+>   arch/arm/boot/dts/stm32f429.dtsi                               |  1 -
+>   arch/arm/boot/dts/stm32f469-disco.dts                          |  8 ++++----
+>   arch/arm/boot/dts/stm32f746.dtsi                               |  1 -
+>   arch/arm/boot/dts/stm32f769-disco.dts                          |  4 ++--
+>   arch/arm/boot/dts/stm32h743-pinctrl.dtsi                       | 10 +++++-----
+>   arch/arm/boot/dts/stm32h743.dtsi                               |  1 -
+>   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi                       |  6 +++---
+>   arch/arm/boot/dts/stm32mp151.dtsi                              |  2 ++
+>   arch/arm/boot/dts/stm32mp15xx-dkx.dtsi                         |  2 +-
+>   15 files changed, 36 insertions(+), 32 deletions(-)
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
