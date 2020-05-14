@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 525321D3E4A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:59:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2AF41D3E49
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:59:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hEGLYijhGnkeVS7OWR/bhXtWYlW5FkQAMpB46MyLepY=; b=kai9H+3y8tertO
-	A/EChzbKicN8zXvcfZ+c679IlAoaMA77K26PJ7nbOB9iCtR65f3XnrRQ7Paxly141ikQO1xLNGxvS
-	euHIPpF8iIs/mjpAaFC470r+S+4V4b2abnPXRUQad4FYUrFpvVOWFcwwL+yp0Xa/0oSNjUug6S4t3
-	Z7OFTs/hsQnbSbEI2NzlAZSDg6wE5TQUDtrWScj83dfelNavwrIQDPuu12dRpkX6I0UyyTp1t2l29
-	1I+/ICBySUskKsp68/28ihlM2MzF91UhlLKveWMIjVwgp9OBtwo45+5Di00imBPKBeOV4MGoaCrst
-	eFJpg+Cwrpy7OpDoX28g==;
+	List-Owner; bh=zul9FS5E9DKmTxI5kkxU8ZpmHTo0L5LLFuynmbTQNqk=; b=pNPckXFEwcDBmr
+	UYTEDTjva0da5WQzadVLVrY5Dsjsyuqkkaq+gqIGL1idhqdRHA6J5+9mkqEmi9vMKsFi9TGCDt20H
+	/s9t/9WmF4/xuza7loJKRI0+KR/0Fp4YzToG4AYRKrFbSWNjqxOUiC2LZg4oCHFfMJPJX3kMp1P5y
+	poOlSvdcdPuMrdVM3G0AwoSC92oi/OYcEI7VIQ7t2wcYtrpbOtZccgAUWwxra7sPhcNd6gLEO1OJU
+	yFZSTwWPSw4H7cSIZhspkDysnBJLOxoEXgAXg1/nvi3ySwdnylxk9ARPwvGmrb3ViYTazysLUguDm
+	Y+3X6Y38NmEnfaQ7WPTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZK0v-0001Zb-OM; Thu, 14 May 2020 19:59:29 +0000
+	id 1jZK0i-0001ON-3O; Thu, 14 May 2020 19:59:16 +0000
 Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZK0O-0001Am-4J
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:59:00 +0000
+ id 1jZK0J-0001BU-0z
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:58:58 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1589486338; h=Content-Transfer-Encoding: MIME-Version:
+ s=smtp; t=1589486334; h=Content-Transfer-Encoding: MIME-Version:
  References: In-Reply-To: Message-Id: Date: Subject: Cc: To: From:
- Sender; bh=4BMhupYJpODeOQiXNtxQqXSXYewQj0c5zkqBomiKNvA=;
- b=WN+wby/zsNJ+Q3yG39l1mwDHXg6mROayWYOb6g5/wNOFmkslJes9qfpOnUBjrR03q2SCXndK
- 6QnYtuaGeT+DFyl7W2Mk/x60f5SqQJmwzBmUmMZAdkZ/iCb5VleSmYF+kJWzwp7y7c+NvqK7
- N2/QQwAtxwpBCfDnci3OqBq7G9A=
+ Sender; bh=E3JOrY4A58gZsnsClzyUNWC3fBr+ONS0bBEOUGfz3Ts=;
+ b=efu3k+G2xJPeT2qs5QuaQ0mF1JofJmXmvk3xPUsvDK95w0i42aUxiUel7iurN04pKXoZ/Eyn
+ r0+axRfmmRRRRx0JDZ/DTiKxpRYEpcOuEAfS+OtgPkM/vGBTU0rj/j4/EmDNgYbOpibpcChQ
+ LGE9Qq4c9UqkdztPL2w5Q0SBFAQ=
 X-Mailgun-Sending-Ip: 104.130.122.26
 X-Mailgun-Sid: WyJiYzAxZiIsICJsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
  smtp-out-n03.prod.us-east-1.postgun.com with SMTP id
- 5ebda2e98ebbf95ecbdb4f23 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Thu, 14 May 2020 19:58:33
+ 5ebda2ee0404ab4a8d08e0ad (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Thu, 14 May 2020 19:58:38
  GMT
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id DCB41C43636; Thu, 14 May 2020 19:58:32 +0000 (UTC)
+ id E6846C43636; Thu, 14 May 2020 19:58:37 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -51,9 +51,9 @@ Received: from blr-ubuntu-311.qualcomm.com
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
  (No client certificate requested)
  (Authenticated sender: saiprakash.ranjan)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 5FE4AC433F2;
- Thu, 14 May 2020 19:58:28 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 5FE4AC433F2
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 9E486C433D2;
+ Thu, 14 May 2020 19:58:33 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 9E486C433D2
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org; spf=none
@@ -63,17 +63,17 @@ To: Mathieu Poirier <mathieu.poirier@linaro.org>,
  Suzuki K Poulose <suzuki.poulose@arm.com>,
  Mike Leach <mike.leach@linaro.org>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCHv2 1/2] coresight: etm4x: Add support to skip trace unit power
- up
-Date: Fri, 15 May 2020 01:27:55 +0530
-Message-Id: <7f2aeb36979ebfef30ea8356e6aa3111a611d6b5.1589485594.git.saiprakash.ranjan@codeaurora.org>
+Subject: [PATCHv2 2/2] dt-bindings: arm: coresight: Add support to skip trace
+ unit power up
+Date: Fri, 15 May 2020 01:27:56 +0530
+Message-Id: <b5f1161d7b007682d2526f88e31795572f920202.1589485594.git.saiprakash.ranjan@codeaurora.org>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <cover.1589485594.git.saiprakash.ranjan@codeaurora.org>
 References: <cover.1589485594.git.saiprakash.ranjan@codeaurora.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_125858_843694_A2BEA02D 
-X-CRM114-Status: GOOD (  16.93  )
+X-CRM114-CacheID: sfid-20200514_125855_065903_9BEB36A3 
+X-CRM114-Status: GOOD (  11.93  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -112,96 +112,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Tingwei Zhang <tingwei@codeaurora.org>
 
-On some Qualcomm Technologies Inc. SoCs like SC7180, there
-exists a hardware errata where the APSS (Application Processor
-SubSystem)/CPU watchdog counter is stopped when the trace unit
-power up ETM register is set (TRCPDCR.PU = 1). Since the ETMs
-share the same power domain as that of respective CPU cores,
-they are powered on when the CPU core is powered on. So we can
-skip powering up of trace unit after checking for this errata
-via new property called "qcom,skip-power-up".
+Add "qcom,skip-power-up" property to identify systems which can
+skip powering up of trace unit since they share the same power
+domain as their CPU core. This is required to identify such
+systems with hardware errata which stops the CPU watchdog counter
+when the power up bit is set (TRCPDCR.PU).
 
 Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
 Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 27 ++++++++++++-------
- drivers/hwtracing/coresight/coresight-etm4x.h |  3 +++
- 2 files changed, 20 insertions(+), 10 deletions(-)
+ Documentation/devicetree/bindings/arm/coresight.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index fb0f5f4f3a91..b38214326fa4 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -196,12 +196,14 @@ static int etm4_enable_hw(struct etmv4_drvdata *drvdata)
- 	writel_relaxed(config->vmid_mask0, drvdata->base + TRCVMIDCCTLR0);
- 	writel_relaxed(config->vmid_mask1, drvdata->base + TRCVMIDCCTLR1);
+diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+index 846f6daae71b..e4b2eda0b53b 100644
+--- a/Documentation/devicetree/bindings/arm/coresight.txt
++++ b/Documentation/devicetree/bindings/arm/coresight.txt
+@@ -108,6 +108,13 @@ its hardware characteristcs.
+ 	* arm,cp14: must be present if the system accesses ETM/PTM management
+ 	  registers via co-processor 14.
  
--	/*
--	 * Request to keep the trace unit powered and also
--	 * emulation of powerdown
--	 */
--	writel_relaxed(readl_relaxed(drvdata->base + TRCPDCR) | TRCPDCR_PU,
--		       drvdata->base + TRCPDCR);
-+	if (!drvdata->skip_power_up) {
-+		/*
-+		 * Request to keep the trace unit powered and also
-+		 * emulation of powerdown
-+		 */
-+		writel_relaxed(readl_relaxed(drvdata->base + TRCPDCR) | TRCPDCR_PU,
-+			       drvdata->base + TRCPDCR);
-+	}
- 
- 	/* Enable the trace unit */
- 	writel_relaxed(1, drvdata->base + TRCPRGCTLR);
-@@ -476,10 +478,12 @@ static void etm4_disable_hw(void *info)
- 
- 	CS_UNLOCK(drvdata->base);
- 
--	/* power can be removed from the trace unit now */
--	control = readl_relaxed(drvdata->base + TRCPDCR);
--	control &= ~TRCPDCR_PU;
--	writel_relaxed(control, drvdata->base + TRCPDCR);
-+	if (!drvdata->skip_power_up) {
-+		/* power can be removed from the trace unit now */
-+		control = readl_relaxed(drvdata->base + TRCPDCR);
-+		control &= ~TRCPDCR_PU;
-+		writel_relaxed(control, drvdata->base + TRCPDCR);
-+	}
- 
- 	control = readl_relaxed(drvdata->base + TRCPRGCTLR);
- 
-@@ -1429,6 +1433,9 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
- 			return -ENOMEM;
- 	}
- 
-+	if (fwnode_property_present(dev_fwnode(dev), "qcom,skip-power-up"))
-+		drvdata->skip_power_up = true;
++	* qcom,skip-power-up: boolean. Indicates that an implementation can
++	  skip powering up the trace unit. TRCPDCR.PU does not have to be set
++	  on Qualcomm Technologies Inc. systems since ETMs are in the same power
++	  domain as their CPU cores. This property is required to identify such
++	  systems with hardware errata where the CPU watchdog counter is stopped
++	  when TRCPDCR.PU is set.
 +
- 	/* Validity for the resource is already checked by the AMBA core */
- 	base = devm_ioremap_resource(dev, res);
- 	if (IS_ERR(base))
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
-index 4a695bf90582..72c9a55e67df 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.h
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.h
-@@ -407,6 +407,8 @@ struct etmv4_save_state {
-  * @config:	structure holding configuration parameters.
-  * @save_state:	State to be preserved across power loss
-  * @state_needs_restore: True when there is context to restore after PM exit
-+ * @skip_power_up: Indicates if an implementation can skip powering up
-+ *		   the trace unit.
-  */
- struct etmv4_drvdata {
- 	void __iomem			*base;
-@@ -454,6 +456,7 @@ struct etmv4_drvdata {
- 	struct etmv4_config		config;
- 	struct etmv4_save_state		*save_state;
- 	bool				state_needs_restore;
-+	bool				skip_power_up;
- };
+ * Optional property for TMC:
  
- /* Address comparator access types */
+ 	* arm,buffer-size: size of contiguous buffer space for TMC ETR
 -- 
 QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
 of Code Aurora Forum, hosted by The Linux Foundation
