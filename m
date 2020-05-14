@@ -2,95 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C41A1D3D8F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:34:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B1D4A1D3DEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:49:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:Date:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vepDDvRI5hT/rAr3t2W95Sd0Gk5J4xnR8ZpKH0g746U=; b=YQIXc4vrs+Cxya
-	9pb4VQaFZCgxAatouVuMzDKqYltgAmb10QDf1mAwbUrx7Z6A3QKiCBXgD/cs4G2XbuU1I8/nfVzwl
-	AxNOAeJnm/kC3gRPL4SPT26u+X54Y1DijNEa06vrK16COhLyw33OFdbfaaWlQRsNvqQF1rxwrvvvS
-	0+8giB16jENhQtvej34PZQzfzHOjL+IgzUgusLjAgwbvgpmK51eK0XhjVitE7YTWzL0b4vQp5KzcY
-	Xi6tTIXDuTA04Sk+pXs+dyD/zMiQT5C3FYkQC5gfX1rKVDnFgRYtN6jjh/xWmV1tEXNo78KAW0Ymf
-	3ZoX1GJgyJTOwdsu3hZw==;
+	List-Owner; bh=hlT/uhJP3lvNI4tI2YpKrHhhb5YggbftbU9PlvXlRmk=; b=Slwsvcc8Q8aWZ+
+	X6/oKj6XEdH1LI5MePBDYlKVnyRmesUbt3iIrPHIOHJw7R4NB79dVoP/jHXBSmuOZOh9VV/QvxVME
+	uegCRxRdnYgrOLeHRnDczyvZg1bO4WGFZBtLkBDMFjfj9Gzssh4DYMiNq/PFv+0F59ki6BgYnDyvu
+	VQ6U+p7rKowlTh2N8M0E4aGBb2yZCJ8akk02Cwu3NXB3c0Z5Fy+IGbADR+ehkVlxIQ4aegNEmFObC
+	UACQX38YWW5jkpUmVgsgqz+5QASZN1/leaXxMrhYZ9TwbBgAYE2V89HD+Jnd3JeZgrAz4pinHjxDV
+	ZXq4b22Yixr49TD7nS7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJck-00011w-L5; Thu, 14 May 2020 19:34:30 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1jZJr7-00026j-8m; Thu, 14 May 2020 19:49:21 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJca-00011B-Be
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:34:24 +0000
-Received: by mail-pl1-x644.google.com with SMTP id q16so364981plr.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 12:34:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:date:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=McFSJB7HsIwhycgIHB7X1kIeZAvcAuEmliX4NQltzFU=;
- b=pqQpJEReLZpYwUZQWIgGAUmcsgMkgpjAeLyW1/1iYNBAnvXpGrOHV8iAoPAOdLiFIG
- H1qrzRHwDoSP0yC1MNqUPh3qTgyJ+8oEqzzyzhXHr4SHnq9u9qXEnRWJjGgeqwilAVil
- P3qr+R30kQ4GnI2hOFrDAhnRbH8Y05mnE+Zi/cso7Vg21Q/66uEZ2a0LhMrhTX1dxQ9Y
- VPa2AmG3FkHaoJlinyYVc73/dmLpsnPJFseWsApiZ7kErQpMNRyIEqLvyCX3SHSY8R7/
- l6Lv3hdl8aumVCuaaKzPiJ+LmLO8/npeV488C0GG3amWHNKHiCZZS2WM/d/Jpa3vEmQe
- cvsQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:date:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=McFSJB7HsIwhycgIHB7X1kIeZAvcAuEmliX4NQltzFU=;
- b=s4l03GV986VVCf8fJfmrFKF1019n2FS/F6PzsfVhZR20FCb9sQKRa47tkVbGbjlxn2
- B/BlzsL+IcSmnAhmS4sejG+U7tBP07eu1ajpKtMCELQVG3Gu7y7BR8IBgW/fYSAznsAl
- FY8yi7xfwf2l3UGiO3jcNxy62+yKuba6wRz/I/sCPiJ08W4Uw1v4FMyTor8NWhgNp6f5
- OZtCkyLbjQms4NYnxhDRXipsqFblfSFA20TVOqfccMm/2mbwMK1XSh3UDO9NZvWF6rSu
- /neieGlAhhCh+Cwi/dVC1dQZ96vEVVEQeIdJNmtunGnU9o0Me3B8xMKl3vh3gJzRaKnc
- /u0g==
-X-Gm-Message-State: AOAM530OSUlKQ0vdtNuiSG8+XIAjN189Ge3hRrEtgJNKBqyQpxWUQvSL
- G0vnNpZTK7PaoP9nHkILOJNgUw==
-X-Google-Smtp-Source: ABdhPJwKVXS6X4qpAkvwaENwakprdx3N54UWjg/skU1suyXAI3EjF3LRZlARYv8qTSuTIMqgkhZ3MQ==
-X-Received: by 2002:a17:902:7c05:: with SMTP id
- x5mr114752pll.278.1589484859261; 
- Thu, 14 May 2020 12:34:19 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id v10sm16642902pjy.48.2020.05.14.12.34.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 May 2020 12:34:18 -0700 (PDT)
-From: bjorn.andersson@linaro.org
-X-Google-Original-From: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Date: Thu, 14 May 2020 12:32:49 -0700
-To: Thierry Reding <thierry.reding@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>, Will Deacon <will@kernel.org>
-Subject: Re: [RFC 0/2] iommu: arm-smmu: Add support for early direct mappings
-Message-ID: <20200514193249.GE279327@builder.lan>
-References: <20191209150748.2471814-1-thierry.reding@gmail.com>
- <20200228025700.GA856087@builder>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200228025700.GA856087@builder>
+ id 1jZJqz-00023f-Js
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:49:14 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 33386128CF131;
+ Thu, 14 May 2020 12:49:09 -0700 (PDT)
+Date: Thu, 14 May 2020 12:49:08 -0700 (PDT)
+Message-Id: <20200514.124908.1791254966123977524.davem@davemloft.net>
+To: vkoul@kernel.org
+Subject: Re: [PATCH] net: stmmac: fix num_por initialization
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20200514062836.190194-1-vkoul@kernel.org>
+References: <20200514062836.190194-1-vkoul@kernel.org>
+X-Mailer: Mew version 6.8 on Emacs 26.3
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Thu, 14 May 2020 12:49:09 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_123420_402299_4BDC4120 
-X-CRM114-Status: GOOD (  49.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_124913_652444_49BA13D0 
+X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,233 +63,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-tegra@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- Joerg Roedel <joro@8bytes.org>, iommu@lists.linux-foundation.org,
- linux-arm-kernel@lists.infradead.org
+Cc: rahulak@qti.qualcomm.com, alexandre.torgue@st.com,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ bjorn.andersson@linaro.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ netdev@vger.kernel.org, peppe.cavallaro@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 27 Feb 18:57 PST 2020, Bjorn Andersson wrote:
+From: Vinod Koul <vkoul@kernel.org>
+Date: Thu, 14 May 2020 11:58:36 +0530
 
-Rob, Will, we're reaching the point where upstream has enough
-functionality that this is becoming a critical issue for us.
+> Driver missed initializing num_por which is por values that driver
+> configures to hardware. In order to get this values, add a new structure
+> ethqos_emac_driver_data which holds por and num_por values and populate
+> that in driver probe.
+> 
+> Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
+> Reported-by: Rahul Ankushrao Kawadgave <rahulak@qti.qualcomm.com>
+> Signed-off-by: Vinod Koul <vkoul@kernel.org>
 
-E.g. Lenovo Yoga C630 is lacking this and a single dts patch to boot
-mainline with display, GPU, WiFi and audio working and the story is
-similar on several devboards.
-
-As previously described, the only thing I want is the stream mapping
-related to the display controller in place, either with the CB with
-translation disabled or possibly with a way to specify the framebuffer
-region (although this turns out to mess things up in the display
-driver...)
-
-I did pick this up again recently and concluded that by omitting the
-streams for the USB controllers causes an instability issue seen on one
-of the controller to disappear. So I would prefer if we somehow could
-have a mechanism to only pick the display streams and the context
-allocation for this.
-
-
-Can you please share some pointers/insights/wishes for how we can
-conclude on this subject?
-
-
-PS. The list of devices specified
-https://lore.kernel.org/linux-arm-msm/cover.1587407458.git.saiprakash.ranjan@codeaurora.org/
-covers this need as well, if that matters...
-
-Thanks,
-Bjorn
-
-> On Mon 09 Dec 07:07 PST 2019, Thierry Reding wrote:
-> 
-> > From: Thierry Reding <treding@nvidia.com>
-> > 
-> 
-> Sorry for the slow response on this, finally got the time to go through
-> this in detail and try it out on some Qualcomm boards.
-> 
-> > On some platforms, the firmware will setup hardware to read from a given
-> > region of memory. One such example is a display controller that is
-> > scanning out a splash screen from physical memory.
-> > 
-> 
-> This particular use case is the one that we need to figure out for
-> Qualcomm devices as well; on some devices it's a simple splash screen
-> (that on many devices can be disabled), but for others we have EFIFB
-> on the display and no (sane) means to disable this.
-> 
-> > During Linux' boot process, the ARM SMMU will configure all contexts to
-> > fault by default. This means that memory accesses that happen by an SMMU
-> > master before its driver has had a chance to properly set up the IOMMU
-> > will cause a fault. This is especially annoying for something like the
-> > display controller scanning out a splash screen because the faults will
-> > result in the display controller getting bogus data (all-ones on Tegra)
-> > and since it repeatedly scans that framebuffer, it will keep triggering
-> > such faults and spam the boot log with them.
-> > 
-> 
-> As my proposed patches indicated, the Qualcomm platform boots with
-> stream mapping setup for the hardware used by the bootloader, but
-> relying on the associated context banks not being enabled.
-> 
-> USFCFG in SCR0 is set and any faults resulting of this will trap into
-> secure world and the device will be reset.
-> 
-> > In order to work around such problems, scan the device tree for IOMMU
-> > masters and set up a special identity domain that will map 1:1 all of
-> > the reserved regions associated with them. This happens before the SMMU
-> > is enabled, so that the mappings are already set up before translations
-> > begin.
-> > 
-> > One thing that was pointed out earlier, and which I don't have a good
-> > idea on how to solve it, is that the early identity domain is not
-> > discarded. The assumption is that the standard direct mappings code of
-> > the IOMMU framework will replace the early identity domain once devices
-> > are properly attached to domains, but we don't have a good point in time
-> > when it would be safe to remove the early identity domain.
-> > 
-> > One option that I can think of would be to create an early identity
-> > domain for each master and inherit it when that master is attached to
-> > the domain later on, but that seems rather complicated from an book-
-> > keeping point of view and tricky because we need to be careful not to
-> > map regions twice, etc.
-> > 
-> 
-> The one concern I ran into with this approach (after resolving below
-> issues) is that when the display driver probes a new domain will be
-> created automatically and I get a stream of "Unhandled context fault" in
-> the log until the driver has mapped the framebuffer in the newly
-> allocated context.
-> 
-> This is normally not a problem, as we seem to be able to do this
-> initialization in a few frames, but for the cases where the display
-> driver probe defer this is a problem.
-> 
-> But at least these devices doesn't reboot, so this is way better than the
-> current state.
-> 
-> > Any good ideas on how to solve this? It'd also be interesting to see if
-> > there's a more generic way of doing this. I know that something like
-> > this isn't necessary on earlier Tegra SoCs with the custom Tegra SMMU
-> > because translations are only enabled when the devices are attached to a
-> > domain. I'm not sure about other IOMMUs, but in the absence of a struct
-> > device, I suspect that we can't really do anything really generic that
-> > would work across drivers.
-> > 
-> 
-> As I indicated above I managed to get this working on the boards we have
-> that uses the arm-smmu driver.
-> 
-> ## SDM845
-> Booting the SDM845 shows the following register stream mapping register
-> content:
->   SMR(0): 0x80080880 S2CR(0): 0x0
->   SMR(1): 0x80080c80 S2CR(1): 0x0
->   SMR(2): 0x800f00a0 S2CR(2): 0x1
->   SMR(3): 0x800f00c0 S2CR(3): 0x1
->   SMR(4): 0x800f00e0 S2CR(4): 0x2
->   SMR(5): 0x800f0100 S2CR(5): 0x2
->   SMR(6): 0x0 S2CR(6): 0x0
->   SMR(7): 0x0 S2CR(7): 0x0
->   SMR(8): 0x0 S2CR(8): 0x200ff
->   SMR(9): 0x0 S2CR(9): 0x200ff
->   ...
-> 
-> Here stream 0 and 1 (SID 0x880 and 0xc80) are the display streams, the
-> remainder are related to storage and USB - which afaict doesn't need to be
-> maintained.
-> 
-> As the display uses context bank 0, using this as the identity bank results in
-> a couple of occurrences of:
->   Unhandled context fault: fsr=0x402, iova=0x9da00000, fsynr=0x370020, cbfrsynra=0x880, cb=0
-> 
-> Which we survive, but as we reach arm_smmu_device_reset() to flush out the new
-> stream mapping we start by writing S2CR(0) = 0, then SMR(0) = 0x800810a0. So
-> until SMR(4) is written we're lacking a valid stream mapping for the display,
-> and hence if the screen does refresh in during time period the device reboots.
-> 
-> 
-> In addition to this, the iommu_iova_to_phys() you perform in the mapping loop
-> results in a large number of "translation fault!" printouts from
-> arm_smmu_iova_to_phys_hard().
-> 
-> ## SM8150
-> Boots with the following stream mapping:
->   SMR(0): 0x800006a0 S2CR(0): 0x0
->   SMR(1): 0x800006c0 S2CR(1): 0x0
->   SMR(2): 0x80000300 S2CR(2): 0x1
->   SMR(3): 0x84200800 S2CR(3): 0x2
->   SMR(4): 0x0 S2CR(4): 0x0
->   SMR(5): 0x0 S2CR(5): 0x0
->   SMR(6): 0x0 S2CR(6): 0x200ff
->   SMR(7): 0x0 S2CR(7): 0x200ff
->   ...
-> 
-> Here stream 3 (sid 0x800) is the display stream.
-> 
-> Mapping the various memory regions into the first context works fine, but
-> unless the display stream happens to be allocated to stream 3 (e.g. it always
-> ends up in slot 1 with my current DT) the board reboots shortly after we start
-> writing out the SMRs. I've not yet figured out why the board faults because of
-> the move to an earlier SMR index. (Perhaps because we clear the previously used
-> display SMR valid bit?)
-> 
-> 
-> ## Conclusions
-> Both of these platforms indicates that moving the stream mapping around is
-> going to cause issues, so inspired by my proposal I added below snippet right
-> before the call to arm_smmu_setup_identity(), in order to populate the stream
-> mapping selection.
-> 
-> 	for (i = 0; i < smmu->num_mapping_groups; i++) {
-> 		smr = arm_smmu_gr0_read(smmu, ARM_SMMU_GR0_SMR(i));
-> 		smmu->smrs[i].mask = FIELD_GET(ARM_SMMU_SMR_MASK, smr);
-> 		smmu->smrs[i].id = FIELD_GET(ARM_SMMU_SMR_ID, smr);
-> 		smmu->smrs[i].valid = !!(smr & ARM_SMMU_SMR_VALID);
-> 	}
-> 
-> With this both boards boots fine, but I know Will had reservations wrt trusting
-> these values. Perhaps we could use the read back values (with some sanity
-> checking) only for setting up identity mapping?
-> 
-> 
-> With this I also tested booting MSM8996 (the db820c board) and except for
-> spending about 75 seconds printing below error in the kernel log during boot
-> things seems to be functional.
-> 
-> [   96.670723] arm-smmu b40000.iommu: translation fault!
-> [   96.675038] arm-smmu b40000.iommu: PAR = 0x300000203
-> 
-> 
-> Removing the call to iommu_iova_to_phys() in the mapping loop (as I know
-> that I don't have any memory regions with multiple clients) solves the
-> log spamming and all three boards seems to be functional.
-> 
-> Regards,
-> Bjorn
-> 
-> > Thierry
-> > 
-> > Thierry Reding (2):
-> >   iommu: arm-smmu: Extract arm_smmu_of_parse()
-> >   iommu: arm-smmu: Add support for early direct mappings
-> > 
-> >  drivers/iommu/arm-smmu.c | 195 +++++++++++++++++++++++++++++++++++++--
-> >  drivers/iommu/arm-smmu.h |   2 +
-> >  2 files changed, 189 insertions(+), 8 deletions(-)
-> > 
-> > -- 
-> > 2.23.0
-> > 
-> > 
-> > _______________________________________________
-> > linux-arm-kernel mailing list
-> > linux-arm-kernel@lists.infradead.org
-> > http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Applied and queued up for -stable, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
