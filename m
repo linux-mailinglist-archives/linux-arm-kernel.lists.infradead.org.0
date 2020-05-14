@@ -2,43 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B3961D37DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:19:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5E5591D37E4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:20:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Ac7CgFBhyLmHvXRakRe6dJDOmAqExdE4NqxKhZoNEHQ=; b=dQkvxQ5M86XQ6D
-	GVdqVt3C+DI8Khw4V726pAu+84e6BxxJYdSwPurs8XDxtvDeYm1SGOt4XXeBceVKbAZK20xTAb/pO
-	zPAXYag9moDofZSv6uQY6QjOrhOGHyndqS2DvRv97gz99Mc6sp4zumHACFoS2o8w86iPdkf0dQ5ma
-	x0TMiBYX7vrt3vdZ+wPmzHFwXpo26AgCsD0x1XSmiqxTB9CWIUVZPBn/NhbpNAg6gwv04xUAFz5tE
-	JWJtHyu5xt2rSYqZbPWtWQfwN8deGdlIwZtT9Io5Jnk1f3aHDzw33Shbj5074+SBgG7lg2w96ZGOR
-	YS4JJQL18fsJOG2t736A==;
+	List-Owner; bh=vfZH+iAtCLtUzfe6uh71wj9Bc5CVqLCJNRQmcRAHuVQ=; b=PNguGLPojfEll/
+	zwWQOEtD0ghWfzoy43MxoM46i4yYs+SMOBA/h6jyhjNdqluC1u0iBK+FYCUsSMXRP6Y9MQssqWdW6
+	1yQhPUeKYizkT+/g0bHXlZq6cCZ8dReP0TlslOi5BAc17t8kboMeIRi3Z4PpV1kK3RO7evOiRA2Z/
+	hia7nBFKa17XyEQnkXpoPtZiAOvdg8LExznZKEqQZQbWu4GTAMFIz/l1A2rBKAQal473oaUsMXs5g
+	bfajsMAs3Z/7xkDivqoJF67+WdZ8mQvn64KxlSKs5xpdEn6+qipaMWT/7G6PvqktgmIdnZ1f3DTgj
+	ANkuO6Cpyl0Qd8SMHfEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZHWH-00074h-8B; Thu, 14 May 2020 17:19:41 +0000
+	id 1jZHXH-0002y9-B2; Thu, 14 May 2020 17:20:43 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZHTl-0004yr-CT; Thu, 14 May 2020 17:17:07 +0000
+ id 1jZHTo-00051D-3l; Thu, 14 May 2020 17:17:09 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 8E6B7240006;
- Thu, 14 May 2020 17:17:01 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 6A969240009;
+ Thu, 14 May 2020 17:17:03 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>
-Subject: [PATCH v5 04/21] dt-bindings: mtd: Deprecate OOB_FIRST mode
-Date: Thu, 14 May 2020 19:16:34 +0200
-Message-Id: <20200514171651.24851-5-miquel.raynal@bootlin.com>
+Subject: [PATCH v5 05/21] mtd: rawnand: Return an enum from
+ of_get_nand_ecc_algo()
+Date: Thu, 14 May 2020 19:16:35 +0200
+Message-Id: <20200514171651.24851-6-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200514171651.24851-1-miquel.raynal@bootlin.com>
 References: <20200514171651.24851-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_101705_580078_AA4F8E9E 
-X-CRM114-Status: GOOD (  11.03  )
+X-CRM114-CacheID: sfid-20200514_101708_298111_CD7A1512 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -72,44 +73,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This mode has never actually been used, it was introduced for a single
-driver and even this driver did not use it in the DT but only in the
-code. Now that this mode has been removed, let's trim the bindings
-definition to avoid carrying useless properties.
+There is an enumeration to list ECC algorithm, let's use it instead of
+returning an int.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
 ---
- Documentation/devicetree/bindings/mtd/atmel-nand.txt       | 3 +--
- Documentation/devicetree/bindings/mtd/nand-controller.yaml | 2 +-
- 2 files changed, 2 insertions(+), 3 deletions(-)
+ drivers/mtd/nand/raw/nand_base.c | 35 +++++++++++++++++---------------
+ 1 file changed, 19 insertions(+), 16 deletions(-)
 
-diff --git a/Documentation/devicetree/bindings/mtd/atmel-nand.txt b/Documentation/devicetree/bindings/mtd/atmel-nand.txt
-index 3aa297c97ab6..ead1826d0d51 100644
---- a/Documentation/devicetree/bindings/mtd/atmel-nand.txt
-+++ b/Documentation/devicetree/bindings/mtd/atmel-nand.txt
-@@ -143,8 +143,7 @@ Required properties:
- Optional properties:
- - atmel,nand-has-dma : boolean to support dma transfer for nand read/write.
- - nand-ecc-mode : String, operation mode of the NAND ecc mode, soft by default.
--  Supported values are: "none", "soft", "hw", "hw_syndrome", "hw_oob_first",
--  "soft_bch".
-+  Supported values are: "none", "soft", "hw", "hw_syndrome", "soft_bch".
- - atmel,has-pmecc : boolean to enable Programmable Multibit ECC hardware,
-   capable of BCH encoding and decoding, on devices where it is present.
- - atmel,pmecc-cap : error correct capability for Programmable Multibit ECC
-diff --git a/Documentation/devicetree/bindings/mtd/nand-controller.yaml b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-index d261b7096c69..d529f8587ba6 100644
---- a/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-+++ b/Documentation/devicetree/bindings/mtd/nand-controller.yaml
-@@ -49,7 +49,7 @@ patternProperties:
-       nand-ecc-mode:
-         allOf:
-           - $ref: /schemas/types.yaml#/definitions/string
--          - enum: [ none, soft, hw, hw_syndrome, hw_oob_first, on-die ]
-+          - enum: [ none, soft, hw, hw_syndrome, on-die ]
-         description:
-           Desired ECC engine, either hardware (most of the time
-           embedded in the NAND controller) or software correction
+diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
+index deb8c21a3cf1..e4296b67adbc 100644
+--- a/drivers/mtd/nand/raw/nand_base.c
++++ b/drivers/mtd/nand/raw/nand_base.c
+@@ -4997,17 +4997,20 @@ static const char * const nand_ecc_algos[] = {
+ 	[NAND_ECC_RS]		= "rs",
+ };
+ 
+-static int of_get_nand_ecc_algo(struct device_node *np)
++static enum nand_ecc_algo of_get_nand_ecc_algo(struct device_node *np)
+ {
++	enum nand_ecc_algo ecc_algo;
+ 	const char *pm;
+-	int err, i;
++	int err;
+ 
+ 	err = of_property_read_string(np, "nand-ecc-algo", &pm);
+ 	if (!err) {
+-		for (i = NAND_ECC_HAMMING; i < ARRAY_SIZE(nand_ecc_algos); i++)
+-			if (!strcasecmp(pm, nand_ecc_algos[i]))
+-				return i;
+-		return -ENODEV;
++		for (ecc_algo = NAND_ECC_HAMMING;
++		     ecc_algo < ARRAY_SIZE(nand_ecc_algos);
++		     ecc_algo++) {
++			if (!strcasecmp(pm, nand_ecc_algos[ecc_algo]))
++				return ecc_algo;
++		}
+ 	}
+ 
+ 	/*
+@@ -5015,15 +5018,14 @@ static int of_get_nand_ecc_algo(struct device_node *np)
+ 	 * for some obsoleted values that were specifying ECC algorithm.
+ 	 */
+ 	err = of_property_read_string(np, "nand-ecc-mode", &pm);
+-	if (err < 0)
+-		return err;
++	if (!err) {
++		if (!strcasecmp(pm, "soft"))
++			return NAND_ECC_HAMMING;
++		else if (!strcasecmp(pm, "soft_bch"))
++			return NAND_ECC_BCH;
++	}
+ 
+-	if (!strcasecmp(pm, "soft"))
+-		return NAND_ECC_HAMMING;
+-	else if (!strcasecmp(pm, "soft_bch"))
+-		return NAND_ECC_BCH;
+-
+-	return -ENODEV;
++	return NAND_ECC_UNKNOWN;
+ }
+ 
+ static int of_get_nand_ecc_step_size(struct device_node *np)
+@@ -5068,7 +5070,8 @@ static bool of_get_nand_on_flash_bbt(struct device_node *np)
+ static int nand_dt_init(struct nand_chip *chip)
+ {
+ 	struct device_node *dn = nand_get_flash_node(chip);
+-	int ecc_mode, ecc_algo, ecc_strength, ecc_step;
++	enum nand_ecc_algo ecc_algo;
++	int ecc_mode, ecc_strength, ecc_step;
+ 
+ 	if (!dn)
+ 		return 0;
+@@ -5090,7 +5093,7 @@ static int nand_dt_init(struct nand_chip *chip)
+ 	if (ecc_mode >= 0)
+ 		chip->ecc.mode = ecc_mode;
+ 
+-	if (ecc_algo >= 0)
++	if (ecc_algo != NAND_ECC_UNKNOWN)
+ 		chip->ecc.algo = ecc_algo;
+ 
+ 	if (ecc_strength >= 0)
 -- 
 2.20.1
 
