@@ -2,69 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 74D4B1D29E1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 10:21:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 386771D29FB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 10:25:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KTxF7b2z01Qdo5iqB64fEVmBSPRV83A23H7tZ2dsreA=; b=Q6Xcd7y6y5dI9j
-	ZvAIQw17Gz7/R0VkCzJJebq8ua9/k4HkbEo0ZHkFfag55qoPSvLTTHJJW0C0IfYAos63lmbdUh9eH
-	l6K4V4mx4mbFMraUZumZ9uJRGu4dYxd5oeBFwcFr/9EhRNeZcz19vYvuMSMK2GiU4Z/AxroPfykig
-	WSqYkf3DJHm+OqgbTJ/geqo7gv54JuiHOriFVoJ/gogZKvVDEb0yIo3gIaAZduAhOedmUi325N+LY
-	BBTX/rLYev6nq0mH6JNszzU0zcoZo4/plj4jJ0C28PSAdhZOwGX2NtVQqiTr2rj4fJYe6YydtQ3f0
-	ZpG9TwrVshwbKH9wE3iA==;
+	List-Owner; bh=mxQO0gIbXwx59oqGHnUHdvKCRLS/LHBC6s3e9GxKGsw=; b=E/Eu4x3FBjdXdx
+	4Vff+neFGxQQAcOOav139RUV/pBRtirP0MStDcn0u1n35gg7CY5EE0QwYi4VBwZ1f+aw5Oh+999ft
+	GitBenf5K3geo8/r6Cq+FCtJIu0GanaBlQHx8uHIgtyTwVNJKMzQAUrNoPFZIVyTr7nmyFV1ONt9K
+	DzoSX/bckTrDMV3ETHoMmhhCKXvAV/KhNcHEVxbeaRuljFNLcIgyAeNnoBJhcpz5M/9tRxxoeK3oF
+	BJjQkFAOH1EJNjIpDaBy7+NarnpHvvecI/a4ssvpfUnH6JgleiIOUn7hNWvTfOtAvneDu8Rk4wGPw
+	bBRggR8YV/+XCCIQnxKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ97U-0004kR-37; Thu, 14 May 2020 08:21:32 +0000
+	id 1jZ9Ag-0006Lc-C5; Thu, 14 May 2020 08:24:50 +0000
 Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ97L-0004jH-3q
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 08:21:24 +0000
-Received: by mail-lj1-x244.google.com with SMTP id a21so2472511ljj.11
+ id 1jZ9AX-0006LD-9y
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 08:24:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id b6so2568866ljj.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 01:21:22 -0700 (PDT)
+ Thu, 14 May 2020 01:24:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ylNyjxPU0jW9A5cG6J8lYn77ZbNao4PuP4byNxuwb40=;
- b=pL+XB6xDy0cGnanxPxZeCoXI+0/bH/MJrC9FZHLbSFeABMiSHzmaFy/I+vlbadTqdg
- moVU55iWLxpm1nnhHrCGKzA2uK7DqkWVrHrypLWkQ77O98C65VIQg4eWTACmBhqQAvbe
- pHSqklAJtsA1BGN8aJrEPgAzkjuaIRy0vNfWRPOiZ0Gx9pkVb9qjr26pYd9MiqLjtOJr
- 54QU9Kl6XwBPNiecFaQ5Q2UN0C0xobJnHAsuUb9l4eWMcWJxS8krPxWVDver5JV680GH
- IzpZdlsYOHiSkmT8GBGTZ0VfuqV8Pk7Uv4HSe7NIk0lkUADLNFPO/dZ01aPB2TJo4RoU
- he7w==
+ :cc; bh=Jkb8BxKnl71QcTSlAQifB2QDBHTd1utKf7Tuku0XIK4=;
+ b=iIm3W3vxPyvQT8hBr8kR8u+6yVBH0h6bfGPXKdobARfet5qpx6e2NJwbGUoVD4BTiz
+ kvpn1tyKA+LwVUJc8z8fF1ZwXlCreaNrldq4vaEDBNH9cKFjh4tAUHQkvEkgZrv38eDN
+ o2gz3Js+ZsuW3daffpbxtnkSsvbVGjH/1ch+B53s3SDAzYlJpVIgVSGq9BIdUF43U3J3
+ PYEdm9THYdzNqhqnu0YtajA3OhEFK2moz2+zytOAdmmOqgbfZNV8YpRwBfYf+FcYfKP1
+ slXNCbKogiAPZuvMbATklfcba8DSvlZ/NhggKTK4KlzEC8fEhJbI/SNZCFcSB3u8yrD/
+ oIKw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ylNyjxPU0jW9A5cG6J8lYn77ZbNao4PuP4byNxuwb40=;
- b=nGlnus6MIEnSvhFJTsu5jxECiGfmgyO8H0XJl3a0m4FOksAKOP2fd88XcjFxQQbmnq
- qaH+xcL9FAuW0m5+RGlVN9UCPhCnwMgmlfHdaIpBPUa0lxrWOXD2rbvQVJ7Pc4A2HxPb
- 8dcrJLWyp54zxMp+5FWM2zjOOwY62ki1vEgXcjnrcb7qH4csGZfQoDkgo4G/mYE8hJ4T
- 0d0eYHNiJFt3Ubr6iRID6YtfbbN+FIrGafgykmEK2JM9/QxnItKLgdYrSt8Rtk7CJl2t
- az3KgucGuBybZYNYRLgMGi4GbSDS9+6RupUd+dlYCDPzgSgPyawPTPzMr9SfNMs5kV7G
- KH5A==
-X-Gm-Message-State: AOAM532wagArCIl59bdrBo0wOMtMqM5hEJWX8cSZzGE6kBpJgXtWNkeZ
- cRQFxgsTvfhb3Mb/LMUSF5BBQeDm6Dk1r8i7PfZt6g==
-X-Google-Smtp-Source: ABdhPJyRERMIh+MQZPItj7QatuGXtUx06mgJ88uloHfqTCykxSiONeYCm+tNHIHuv9MC+hs2Hr0mPlFfLP8XGnr3zRA=
-X-Received: by 2002:a2e:531e:: with SMTP id h30mr1125043ljb.168.1589444480845; 
- Thu, 14 May 2020 01:21:20 -0700 (PDT)
+ bh=Jkb8BxKnl71QcTSlAQifB2QDBHTd1utKf7Tuku0XIK4=;
+ b=lyBj7Ep6MMsVAi86LXHvaJ0rSNg7AYxo3AZnbMCfBpiu2ixXKyqWq+rjRs719SgrMS
+ N2v6GV5CfjAoXNyAjzyfBu2ZbIgoYphdhsp+Ry0rDpziYB2F/ohqBWdUfq+oxallMPwH
+ 8gOSgPqzkf+9edBhRx6Q2lANHXEQP6aR/4keSQpBjSvcQSKT4bWK2WZDqYEUq0nuD2cn
+ x8UV7pQATs7oYXZuxabTBtM4Vr8y0HqSNZYwNF+5mmL/vuqyuf+uFZBOG4Jtwmt4wEuM
+ VfaLNC5gk2tJ/43F9Ac2zfryJig6iJm/BzbCpdPeq9VutcSlSIICSpEyV3MYmp+AgPdw
+ Nwbw==
+X-Gm-Message-State: AOAM5306+xpEys5zCs9gRHSrU0ccpkRK42kBfa6DiNKuo+T5oWMk4avo
+ +9f9MfkRrdeivgS3c9ypZJJhfawEWEM6zsr/NuWNnjZhOEc=
+X-Google-Smtp-Source: ABdhPJzbR0lONsL+LHNQ562bI+zZx3vzCrNYamk5GJI5zjbv9WVScZ7rOiUe3C6sarzGNmAWB4jF6RMUNqx0dbXgSxU=
+X-Received: by 2002:a2e:8805:: with SMTP id x5mr2073815ljh.223.1589444679816; 
+ Thu, 14 May 2020 01:24:39 -0700 (PDT)
 MIME-Version: 1.0
 References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-3-git-send-email-dillon.minfei@gmail.com>
-In-Reply-To: <1589267017-17294-3-git-send-email-dillon.minfei@gmail.com>
+ <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
+In-Reply-To: <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Thu, 14 May 2020 10:21:09 +0200
-Message-ID: <CACRpkdZUyRh0KZzRxsdfFU_L-F=Ns0j1d3eR-ermhx2Gb0Zrgg@mail.gmail.com>
-Subject: Re: [PATCH v3 2/5] dt-bindings: display: panel: Add ilitek ili9341
- panel bindings
+Date: Thu, 14 May 2020 10:24:28 +0200
+Message-ID: <CACRpkda5VjjBdbruXTi33QBNb=VU6vK2zDE8yyQXoWw7=NQFeg@mail.gmail.com>
+Subject: Re: [PATCH v3 3/5] ARM: dts: stm32: enable ltdc binding with ili9341
+ on stm32429-disco board
 To: dillon.minfei@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_012123_159877_0A3B376B 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200514_012441_345654_96508184 
+X-CRM114-Status: GOOD (  12.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,16 +108,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, May 12, 2020 at 9:03 AM <dillon.minfei@gmail.com> wrote:
+On Tue, May 12, 2020 at 9:04 AM <dillon.minfei@gmail.com> wrote:
 
 > From: dillon min <dillon.minfei@gmail.com>
 >
-> Add documentation for "ilitek,ili9341" panel.
+> Enable the ltdc & ili9341 on stm32429-disco board.
 >
 > Signed-off-by: dillon min <dillon.minfei@gmail.com>
 
-This looks good to me.
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+This mostly looks good but...
+
+> +&spi5 {
+> +       status = "okay";
+> +       pinctrl-0 = <&spi5_pins>;
+> +       pinctrl-names = "default";
+> +       #address-cells = <1>;
+> +       #size-cells = <0>;
+> +       cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
+> +       dmas = <&dma2 3 2 0x400 0x0>,
+> +              <&dma2 4 2 0x400 0x0>;
+> +       dma-names = "rx", "tx";
+
+These DMA assignments seem to be SoC things and should
+rather be in the DTS(I) file where &spi5 is defined, right?
+stm32f429.dtsi I suppose?
+
+It is likely the same no matter which device is using spi5.
 
 Yours,
 Linus Walleij
