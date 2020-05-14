@@ -2,92 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E485C1D30B2
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:09:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C1141D30C9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:13:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/xAJ3ScyTIOsA8llDarBnEr2zxZmcKMGjXPwf9e9LSo=; b=YoozdXhLMZNK5+oCVieORrF0i
-	TwGtKNYte3TlWKq0Oo5sInyAdUK4nuRf4R+8L+T5TSW+jChu1Z5zWjrxOTDFGyDVjfdcdeqfQTVCk
-	HJR+0sO3zQOG7RJGRHEqc7EHnyhtM/bj4A0xDODS7UhuggjlJh73YOQ03e7nXZocyJIL3JSdWL6yg
-	fHlxaCc/q+E/9gOdNxeSVlnHMUdPn5fzsRMwwjlGw91Sa/gXxc6CjsdC6JsCPRhFXp6D4VNgJAysk
-	a+DXop+flrFqNB4zUbSa80a0PhrJ/+cDzasCFpPrXcOzgwU/P7+IWXYag+SWmbGLuEjdpx6V66TyG
-	iGr0NYj9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kO66FaoJhu2jI+bTrJSn3NkJYsb2Eh5LJisUODqDSxk=; b=q5Z8k41q5DdCSE
+	hjoorgHSSCmKzK/1VX8KavygGjXRyOlfA1Bc19eoGYz68P2dTG1Pl8NHI2Bp9II9GnKGk64Z4VxqY
+	3hyBPYwaB8M+uMH3ujdkR8qKG5Q/987XWprgoGY4TX6DLjXq/5kI0LUsZQnEI9hlT3zhSu5LlKdaA
+	Fv9HdelllhHKV0uPxAlkK30MW9qNEWFWNAHeNyL7Uwcq/hkh1JDYjDQjGpiGBDou+PNWYSgUTFUu2
+	sxCInNNCjLORTNyybF/24/JVN7h44F55zQjs/yeCc5AgfPG6okdFQtOwli18ifZJutV7hqofLTVpA
+	dx2jDKXE/HBQPxrRh58Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZDc2-0002Cf-OR; Thu, 14 May 2020 13:09:22 +0000
-Received: from out4-smtp.messagingengine.com ([66.111.4.28])
+	id 1jZDfZ-00057S-5Y; Thu, 14 May 2020 13:13:01 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZDbt-0002BR-7T
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 13:09:16 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 385C05C026D;
- Thu, 14 May 2020 09:09:07 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 14 May 2020 09:09:07 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=X49GiuDf4PDo5pvDp+DDj6/4ujD
- zydI+cxg5rjxkb8Q=; b=PMerBt88FGdPWZPyvTAHbMuJPJC341fKMF5zRi+s8Yy
- sZ/jhoiFho0eotjCCkvOGfE3EjaA+h1BGB4VnqSLyxKdcAl6nSECocL0dRG240lq
- geze6iYR/nf74YzyrqtNNnTjhqbRkUV/UvFI/6asa2AAYUUUQZxrPlevbZ9dqBKg
- hkxumwuQ0a76LGI1Qe9OEIGV23M4/jles+c3qVaz+roiO9+k8FPNS88qaPUiltR4
- unHADLGOO7feMHaHDlHxe7zfm23BBmiNf/B062YQ9tg1L4C0JAYkjz2udGBQ7luO
- U9pZWgWAGnChEC0e6omE7QNSdnOmf/WuABIZ3TtFpQA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=X49Giu
- Df4PDo5pvDp+DDj6/4ujDzydI+cxg5rjxkb8Q=; b=B9P7z/rmXlEX8CrBMT5DbM
- ts901KvCWNbr71aaWaADAtx7EvkDKhq3KKjSQtGcYFsNx3/B7tnBXdU30sH+EfVw
- BZG6v1A4RSwqRXTyDqb5ne4sN9cOH/6GnueHAbiZQknBJt+wC+4NvfzjUZQCjK4b
- xkjrS7YL82gQWvFcTwV3Nsa31TFsn40hvr1Aug5NnPVHEB3DYAl5crDR3EghiyWg
- x6GYafx9/irgX0/LQikdzbq/jx1R5R/+nGFjhKsNIJLatUlpSzZCjqFMRJ7Jcxyj
- AKuT8Os4CC1Qpi8ILIUS9KBsILYNmW6PNjnyvueJlf8T5its0GPcr6E7x1911dVg
- ==
-X-ME-Sender: <xms:7kK9XuqXZVmzoOgqAGSvzonpQKadd_8xBmGKTLQh2quEw5oekYZ9Fw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrleeigdehjecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
- udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
- grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:7kK9XsoGbJbl7LISqne3Lv1MsLtKo0Ie8szc4RWVjI3JENzynBmb7g>
- <xmx:7kK9XjO4sH_omPfFJKa7yynl-MI9OuhJtfE6LWariLVqyUGuQZ_4OA>
- <xmx:7kK9Xt6ro3GOIJ9rIbp0jbLDVtiUps4BawGqnAyZYunheIqksT-aDA>
- <xmx:80K9Xg0hp1EhaAhLTnMC_e0UQ1wDwKMBo44WjMOJJoUA0w7VrV2zvA>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 39825328005A;
- Thu, 14 May 2020 09:09:02 -0400 (EDT)
-Date: Thu, 14 May 2020 15:09:00 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v4 0/5] iommu: Add Allwinner H6 IOMMU driver
-Message-ID: <20200514130900.k4gvr3zcajg3rouc@gilmour.lan>
-References: <cover.b27dedd61e008ffcf55a028ccddda3bb4d21dfc8.1589378833.git-series.maxime@cerno.tech>
- <20200514123855.GI18353@8bytes.org>
+ id 1jZDfQ-00055K-BC; Thu, 14 May 2020 13:12:53 +0000
+X-UUID: e1d1d613706c4103939aba86c25748ce-20200514
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
+ bh=cuoKK6jhD7pvYpNhFVneYUDj8vLgMGJ953l7rb/BFcs=; 
+ b=HjgMEGbvjGpUW/h1Yz5cFynS45sP70gYsnAg2cxOYhynHKFxg55dXuL324N7PEzs75rSL12cw3bYi74IhEC+ypu/GTrl2YT9s8cRDLnng0U4/DpWLW68MEytw2yICs36xl4RbWnOxpLcLui3X4EipiAKsr7r/IKHcpa4+nNiJ/0=;
+X-UUID: e1d1d613706c4103939aba86c25748ce-20200514
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <qii.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1166438794; Thu, 14 May 2020 05:12:37 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 14 May 2020 06:12:32 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 14 May 2020 21:12:30 +0800
+Received: from localhost.localdomain (10.17.3.153) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 14 May 2020 21:12:29 +0800
+From: Qii Wang <qii.wang@mediatek.com>
+To: <wsa@the-dreams.de>
+Subject: [PATCH v2 0/2] Add i2c ac-timing adjust support
+Date: Thu, 14 May 2020 21:09:03 +0800
+Message-ID: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
+X-Mailer: git-send-email 1.9.1
 MIME-Version: 1.0
-In-Reply-To: <20200514123855.GI18353@8bytes.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_060913_633037_CCFFA291 
-X-CRM114-Status: GOOD (  12.98  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200514_061252_391445_3489BA62 
+X-CRM114-Status: UNSURE (   6.28  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.28 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.28 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
+ encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -95,7 +70,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,86 +83,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- iommu@lists.linux-foundation.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6519378042347647584=="
+Cc: devicetree@vger.kernel.org, qii.wang@mediatek.com,
+ srv_heupstream@mediatek.com, leilk.liu@mediatek.com,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This series are based on 5.7-rc1, we provide two patches to support i2c ac-timing.
 
---===============6519378042347647584==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="nqnml6fovdrucnar"
-Content-Disposition: inline
+Main changes compared to v1:
+--add maintainer for mediatek i2c controller driver
+--fix warning of self-assignment
 
+Qii Wang (2):
+  MAINTAINERS: add maintainer for mediatek i2c controller driver
+  i2c: mediatek: Add i2c ac-timing adjust support
 
---nqnml6fovdrucnar
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+ MAINTAINERS                     |   7 +
+ drivers/i2c/busses/i2c-mt65xx.c | 328 +++++++++++++++++++++++++++++++++-------
+ 2 files changed, 284 insertions(+), 51 deletions(-)
 
-On Thu, May 14, 2020 at 02:38:55PM +0200, Joerg Roedel wrote:
-> On Wed, May 13, 2020 at 04:07:19PM +0200, Maxime Ripard wrote:
-> > Maxime Ripard (5):
-> >   dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
-> >   dt-bindings: display: sun8i-mixer: Allow for an iommu property
-> >   iommu: Add Allwinner H6 IOMMU driver
-> >   arm64: dts: allwinner: h6: Add IOMMU
-> >   drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
->=20
-> Applied all to the IOMMU tree, thanks. The code lives in the
-> arm/allwinner branch.
-
-Did you also merge the DTS and DRM patches?
-
-Ideally, they should be merged through other trees to avoid the conflicts as
-much as possible (arm-soc and drm-misc respectively).
-
-If it's an option, could you drop all of them but "dt-bindings: iommu: Add
-Allwinner H6 IOMMU bindings" and "iommu: Add Allwinner H6 IOMMU driver"?
-
-> Please use 'iommu/sun50i: <Capital Letter>...' as the pattern for your fu=
-ture
-> subject lines when changing the driver.
-
-I'll try to remember that, thanks! :)
-
-> I also have two fixes on-top which I will send out shortly and add to
-> that branch.
-
-Ugh. I'm not sure how the first one slipped through.. Sorry for that, I'm f=
-ine
-with both.
-
-Thanks!
-Maxime
-
---nqnml6fovdrucnar
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXr1C7AAKCRDj7w1vZxhR
-xXGkAP0Y56azc0zLB0nzAvlu6+1IBmkd/BHghzQYprbgXKwlHgEAq0vPPaxdykZf
-e5mP7oAXBQpOFWak0Bg5vMTZ6fX92Q0=
-=33ck
------END PGP SIGNATURE-----
-
---nqnml6fovdrucnar--
-
-
---===============6519378042347647584==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+--
+1.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6519378042347647584==--
-
