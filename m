@@ -2,44 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E5591D37E4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:20:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 836741D37EA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 19:21:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vfZH+iAtCLtUzfe6uh71wj9Bc5CVqLCJNRQmcRAHuVQ=; b=PNguGLPojfEll/
-	zwWQOEtD0ghWfzoy43MxoM46i4yYs+SMOBA/h6jyhjNdqluC1u0iBK+FYCUsSMXRP6Y9MQssqWdW6
-	1yQhPUeKYizkT+/g0bHXlZq6cCZ8dReP0TlslOi5BAc17t8kboMeIRi3Z4PpV1kK3RO7evOiRA2Z/
-	hia7nBFKa17XyEQnkXpoPtZiAOvdg8LExznZKEqQZQbWu4GTAMFIz/l1A2rBKAQal473oaUsMXs5g
-	bfajsMAs3Z/7xkDivqoJF67+WdZ8mQvn64KxlSKs5xpdEn6+qipaMWT/7G6PvqktgmIdnZ1f3DTgj
-	ANkuO6Cpyl0Qd8SMHfEg==;
+	List-Owner; bh=Nlu1VWAu72lQ4bUc6V8dSP20pvXWgUPF2Mlyhft4FX0=; b=LvX53+UavAzTP3
+	LIomUZkwoFLMmxSI9+760NyE/aZE2vCTCpgfzZNHsxqPaXerlRMCnWQkLu5mPxJbRmGt9dBGYGWn4
+	U2GdNzj0MJRdKOlq3+shasIrvXADgxXX6m//GRpN+wTQnkFoKbJ1dP+DwErQx5W8gV4FdPB5uhBmm
+	2e1HU3O7Dmtzw4MmhXj1+TyMVYF5VV+RNyeYlgks5p07K7KGsEnFOHNziAy5/2AFGe2mn0/kNEb+1
+	SI8RCU05NVIbgkK+zWBkpPX5ft6wfxTeDgvAhlanu7NRAE2YgZryc235gT5AzMu/AIl5Xd4PjRCPd
+	J2+3Djq9n6r9y4odWodg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZHXH-0002y9-B2; Thu, 14 May 2020 17:20:43 +0000
+	id 1jZHXp-0003Vm-Pz; Thu, 14 May 2020 17:21:17 +0000
 Received: from relay10.mail.gandi.net ([217.70.178.230])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZHTo-00051D-3l; Thu, 14 May 2020 17:17:09 +0000
+ id 1jZHTp-00053O-QM; Thu, 14 May 2020 17:17:11 +0000
 Received: from localhost.localdomain (unknown [91.224.148.103])
  (Authenticated sender: miquel.raynal@bootlin.com)
- by relay10.mail.gandi.net (Postfix) with ESMTPSA id 6A969240009;
- Thu, 14 May 2020 17:17:03 +0000 (UTC)
+ by relay10.mail.gandi.net (Postfix) with ESMTPSA id 9239A24000F;
+ Thu, 14 May 2020 17:17:06 +0000 (UTC)
 From: Miquel Raynal <miquel.raynal@bootlin.com>
 To: Richard Weinberger <richard@nod.at>, Vignesh Raghavendra <vigneshr@ti.com>,
  Tudor Ambarus <Tudor.Ambarus@microchip.com>
-Subject: [PATCH v5 05/21] mtd: rawnand: Return an enum from
- of_get_nand_ecc_algo()
-Date: Thu, 14 May 2020 19:16:35 +0200
-Message-Id: <20200514171651.24851-6-miquel.raynal@bootlin.com>
+Subject: [PATCH v5 06/21] mtd: rawnand: Add an invalid ECC mode to
+ discriminate with valid ones
+Date: Thu, 14 May 2020 19:16:36 +0200
+Message-Id: <20200514171651.24851-7-miquel.raynal@bootlin.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200514171651.24851-1-miquel.raynal@bootlin.com>
 References: <20200514171651.24851-1-miquel.raynal@bootlin.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_101708_298111_CD7A1512 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20200514_101710_000075_6FE85ADD 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.7 points)
@@ -63,7 +63,8 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: Tudor Ambarus <tudor.ambarus@microchip.com>,
  Julien Su <juliensu@mxic.com.tw>,
  Schrempf Frieder <frieder.schrempf@kontron.de>,
- Paul Cercueil <paul@crapouillou.net>, linux-mtd@lists.infradead.org,
+ Paul Cercueil <paul@crapouillou.net>,
+ Boris Brezillon <boris.brezillon@collabora.com>, linux-mtd@lists.infradead.org,
  Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
  Miquel Raynal <miquel.raynal@bootlin.com>,
  Mason Yang <masonccyang@mxic.com.tw>, Chuanhong Guo <gch981213@gmail.com>,
@@ -73,87 +74,43 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is an enumeration to list ECC algorithm, let's use it instead of
-returning an int.
+NAND ECC modes (or providers) have their own enumeration but, unlike
+their algorithms counterpart, there is no invalid or uninitialized
+value to discriminate between an error and having chosen a no-ECC
+situation. Add an "invalid" entry for this purpose.
 
 Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
 ---
- drivers/mtd/nand/raw/nand_base.c | 35 +++++++++++++++++---------------
- 1 file changed, 19 insertions(+), 16 deletions(-)
+ drivers/mtd/nand/raw/nand_base.c | 2 +-
+ include/linux/mtd/rawnand.h      | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/mtd/nand/raw/nand_base.c b/drivers/mtd/nand/raw/nand_base.c
-index deb8c21a3cf1..e4296b67adbc 100644
+index e4296b67adbc..c407fd15ad46 100644
 --- a/drivers/mtd/nand/raw/nand_base.c
 +++ b/drivers/mtd/nand/raw/nand_base.c
-@@ -4997,17 +4997,20 @@ static const char * const nand_ecc_algos[] = {
- 	[NAND_ECC_RS]		= "rs",
- };
+@@ -4976,7 +4976,7 @@ static int of_get_nand_ecc_mode(struct device_node *np)
+ 	if (err < 0)
+ 		return err;
  
--static int of_get_nand_ecc_algo(struct device_node *np)
-+static enum nand_ecc_algo of_get_nand_ecc_algo(struct device_node *np)
- {
-+	enum nand_ecc_algo ecc_algo;
- 	const char *pm;
--	int err, i;
-+	int err;
+-	for (i = 0; i < ARRAY_SIZE(nand_ecc_modes); i++)
++	for (i = NAND_ECC_NONE; i < ARRAY_SIZE(nand_ecc_modes); i++)
+ 		if (!strcasecmp(pm, nand_ecc_modes[i]))
+ 			return i;
  
- 	err = of_property_read_string(np, "nand-ecc-algo", &pm);
- 	if (!err) {
--		for (i = NAND_ECC_HAMMING; i < ARRAY_SIZE(nand_ecc_algos); i++)
--			if (!strcasecmp(pm, nand_ecc_algos[i]))
--				return i;
--		return -ENODEV;
-+		for (ecc_algo = NAND_ECC_HAMMING;
-+		     ecc_algo < ARRAY_SIZE(nand_ecc_algos);
-+		     ecc_algo++) {
-+			if (!strcasecmp(pm, nand_ecc_algos[ecc_algo]))
-+				return ecc_algo;
-+		}
- 	}
- 
- 	/*
-@@ -5015,15 +5018,14 @@ static int of_get_nand_ecc_algo(struct device_node *np)
- 	 * for some obsoleted values that were specifying ECC algorithm.
- 	 */
- 	err = of_property_read_string(np, "nand-ecc-mode", &pm);
--	if (err < 0)
--		return err;
-+	if (!err) {
-+		if (!strcasecmp(pm, "soft"))
-+			return NAND_ECC_HAMMING;
-+		else if (!strcasecmp(pm, "soft_bch"))
-+			return NAND_ECC_BCH;
-+	}
- 
--	if (!strcasecmp(pm, "soft"))
--		return NAND_ECC_HAMMING;
--	else if (!strcasecmp(pm, "soft_bch"))
--		return NAND_ECC_BCH;
--
--	return -ENODEV;
-+	return NAND_ECC_UNKNOWN;
- }
- 
- static int of_get_nand_ecc_step_size(struct device_node *np)
-@@ -5068,7 +5070,8 @@ static bool of_get_nand_on_flash_bbt(struct device_node *np)
- static int nand_dt_init(struct nand_chip *chip)
- {
- 	struct device_node *dn = nand_get_flash_node(chip);
--	int ecc_mode, ecc_algo, ecc_strength, ecc_step;
-+	enum nand_ecc_algo ecc_algo;
-+	int ecc_mode, ecc_strength, ecc_step;
- 
- 	if (!dn)
- 		return 0;
-@@ -5090,7 +5093,7 @@ static int nand_dt_init(struct nand_chip *chip)
- 	if (ecc_mode >= 0)
- 		chip->ecc.mode = ecc_mode;
- 
--	if (ecc_algo >= 0)
-+	if (ecc_algo != NAND_ECC_UNKNOWN)
- 		chip->ecc.algo = ecc_algo;
- 
- 	if (ecc_strength >= 0)
+diff --git a/include/linux/mtd/rawnand.h b/include/linux/mtd/rawnand.h
+index bc7c7d9adae9..4e0c75b1abc2 100644
+--- a/include/linux/mtd/rawnand.h
++++ b/include/linux/mtd/rawnand.h
+@@ -84,6 +84,7 @@ struct nand_chip;
+  * Constants for ECC_MODES
+  */
+ enum nand_ecc_mode {
++	NAND_ECC_INVALID,
+ 	NAND_ECC_NONE,
+ 	NAND_ECC_SOFT,
+ 	NAND_ECC_HW,
 -- 
 2.20.1
 
