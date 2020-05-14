@@ -2,62 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32A801D28DC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:36:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1C36A1D28E0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:37:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WkNzne8pcCX9D52Q2l53yU4L/nuTKkSPu38VVlm43Ps=; b=ZA372vB46ZVatc
-	lQL0+v3C6+RvXBjd13VpVITNekTjRSECfJOHGnae1K43ZnON9pu65ZvnuNViBffys88sAgikdxWhV
-	6LYXfR5aEcjHZxWzKD6WyBEX4kT5otPk7327s4Jpt0LCN9N6a7d1sx+roqJHppIP7RGZehFIvITzw
-	kgsyFXV7Q9IpzRnNBjGHLQ+QD5Inp7SdVx7UJI4aQJjT+Pk4hIdrdtFk3+TqzIQCjsNGOeuCY1AoZ
-	y86Bi7l46E7il4ptnmUyeOJXg7LBJzON2afNFXropkF0iyc5UUdWHdJylsEA7ASmLXhATJ+KKqcBE
-	y8tKcOtLisfKJ7SWa5tg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vNUskFFaVjK74ZCzv+HXlB2MbIrtj+M35HizMFBMT/s=; b=A53Bam+RbXmMte
+	rbV8B64+Fkhw8VBepd4Jj6qxtwKLIifbKT6EK3RZ9jMfM83DAN5h7XJAmt3p515UFLW96eH02pOa7
+	vj6nx4EkAhBxqai3I9WkdrNO3D59zWsZ4w7dsz39eRA8TDcsPgC5S+lQDyuuL47VXUQulx5ZGHAsm
+	3JdN1mFTyC2/NaIGL7p1gNiJch2ao8r7+bBtC4onKlQAQwPi0s2YYLYOC3Ld9usg6t9Vp9XBzdoMX
+	pICi/gdOUJ+mvuW+Db5SGA1Nx2/IezNi3TkMN+GJXW6MWKuoVjeZbxWm8feYScOJzQm0gOrDDu0iV
+	+s672XRir2AlOX2D2yHA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ8Pu-0001jB-9g; Thu, 14 May 2020 07:36:30 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZ8Qu-00022G-Al; Thu, 14 May 2020 07:37:32 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ8Pj-0001iP-4L
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:36:20 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1927206BE;
- Thu, 14 May 2020 07:36:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589441778;
- bh=IXHEXF16rU/BSTFK9nrncTfh3TEkux3JqpB15nAsJQA=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XxirtXwsu8vpXp4zzU02/RsjtslmALTiUWbZRwJFPlsgFZ5FBknRCs1fNJcfyi308
- C73AzidmlE2O+eXroCd+aQR4+7pOtgXzMr43MU3W0Yf19IahA6CHTkljDJfsgtJYap
- H7X4dOo6J5M+loGaqtYZ33z4HpquU/5E/OElF1PA=
-Date: Thu, 14 May 2020 08:36:13 +0100
-From: Will Deacon <will@kernel.org>
-To: Anshuman Khandual <anshuman.khandual@arm.com>
-Subject: Re: [PATCH V2] arm64/cpuinfo: Move HWCAP name arrays alongside their
- bit definitions
-Message-ID: <20200514073613.GB4280@willie-the-truck>
-References: <1588858150-26823-1-git-send-email-anshuman.khandual@arm.com>
- <20200513150405.GS21779@arm.com>
- <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
+ id 1jZ8Qm-00021n-9H
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:37:25 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04E7bKZV054213;
+ Thu, 14 May 2020 02:37:20 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1589441841;
+ bh=QGXAZUOwvDino56G8IWDdQ/NYT0jQ6NRH5b71pGNvrc=;
+ h=From:To:CC:Subject:Date;
+ b=cpS3n/GTSD1sKVTClUxFGXySVg4Fa/sMcsnTMldfYMfIpCPT2mDjZeB2SAYmLxHl0
+ 8DhFnfb66dYVlVkapr8lZ6Zudp+4OOQPnR7mNidJHU+brlDVLmCkJsJYF3l0CM+Nxp
+ UN13c9NS5lN8KTC2YICC/UmU/BCX7xd9l4EW4W3I=
+Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04E7bKIH002543
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Thu, 14 May 2020 02:37:20 -0500
+Received: from DLEE106.ent.ti.com (157.170.170.36) by DLEE113.ent.ti.com
+ (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Thu, 14
+ May 2020 02:37:20 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
+ Frontend Transport; Thu, 14 May 2020 02:37:20 -0500
+Received: from sokoban.ti.com (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04E7bIm6009731;
+ Thu, 14 May 2020 02:37:19 -0500
+From: Tero Kristo <t-kristo@ti.com>
+To: <ssantosh@kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH 1/1] soc: ti: omap-prm: use atomic iopoll instead of sleeping
+ one
+Date: Thu, 14 May 2020 10:37:18 +0300
+Message-ID: <20200514073718.17690-1-t-kristo@ti.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_003619_210957_7C6CCE1B 
-X-CRM114-Status: GOOD (  16.83  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200514_003724_408077_2E7950C5 
+X-CRM114-Status: GOOD (  10.96  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -79,84 +89,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Ard Biesheuvel <ardb@kernel.org>, Mark Brown <broonie@kernel.org>,
- Dave Martin <Dave.Martin@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: tony@atomide.com, linux-omap@vger.kernel.org, s-anna@ti.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 07:14:58AM +0530, Anshuman Khandual wrote:
-> On 05/13/2020 08:34 PM, Dave Martin wrote:
-> > On Thu, May 07, 2020 at 06:59:10PM +0530, Anshuman Khandual wrote:
-> >> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-> >> index 0f00265248b5..589ac02e1ddd 100644
-> >> --- a/arch/arm64/include/asm/hwcap.h
-> >> +++ b/arch/arm64/include/asm/hwcap.h
-> >> @@ -8,18 +8,27 @@
-> >>  #include <uapi/asm/hwcap.h>
-> >>  #include <asm/cpufeature.h>
-> >>  
-> >> +#define COMPAT_HWCAP_SWP	(1 << 0)
-> >>  #define COMPAT_HWCAP_HALF	(1 << 1)
-> >>  #define COMPAT_HWCAP_THUMB	(1 << 2)
-> >> +#define COMPAT_HWCAP_26BIT	(1 << 3)
-> >>  #define COMPAT_HWCAP_FAST_MULT	(1 << 4)
-> >> +#define COMPAT_HWCAP_FPA	(1 << 5)
-> >>  #define COMPAT_HWCAP_VFP	(1 << 6)
-> >>  #define COMPAT_HWCAP_EDSP	(1 << 7)
-> >> +#define COMPAT_HWCAP_JAVA	(1 << 8)
-> >> +#define COMPAT_HWCAP_IWMMXT	(1 << 9)
-> >> +#define COMPAT_HWCAP_CRUNCH	(1 << 10)
-> >> +#define COMPAT_HWCAP_THUMBEE	(1 << 11)
-> >>  #define COMPAT_HWCAP_NEON	(1 << 12)
-> >>  #define COMPAT_HWCAP_VFPv3	(1 << 13)
-> >> +#define COMPAT_HWCAP_VFPV3D16	(1 << 14)
-> >>  #define COMPAT_HWCAP_TLS	(1 << 15)
-> >>  #define COMPAT_HWCAP_VFPv4	(1 << 16)
-> >>  #define COMPAT_HWCAP_IDIVA	(1 << 17)
-> >>  #define COMPAT_HWCAP_IDIVT	(1 << 18)
-> >>  #define COMPAT_HWCAP_IDIV	(COMPAT_HWCAP_IDIVA|COMPAT_HWCAP_IDIVT)
-> >> +#define COMPAT_HWCAP_VFPD32	(1 << 19)
-> >>  #define COMPAT_HWCAP_LPAE	(1 << 20)
-> >>  #define COMPAT_HWCAP_EVTSTRM	(1 << 21)
-> > 
-> > With the possible exception of SWP (does the swp emulation allow us to
-> > report this as supported?), I think all these weren't mentioned because
-> > they aren't included in ARMv8 and so can never be reported.
-> > 
-> > If we find ourselves reporting them, there's a bug somewhere.
-> > 
-> > So, can we just default all obsolete string entries to NULL?
-> > 
-> > When generating the cpuinfo strings we could WARN and just emit an empty
-> > string for that hwcap.
-> 
-> All these above will be a change in the existing user visible behavior on
-> the system and this patch never intended to create one.
+The reset handling APIs for omap-prm can be invoked PM runtime which
+runs in atomic context. For this to work properly, switch to atomic
+iopoll version instead of the current which can sleep. Otherwise,
+this throws a "BUG: scheduling while atomic" warning. Issue is seen
+rather easily when CONFIG_PREEMPT is enabled.
 
-Why is it a change? We've never reported e.g. "java" on an arm64 kernel, so
-I agree with Dave that we shouldn't be adding this string. If it /ever/ ends
-up in userspace it's because something has gone horribly wrong. NULL would
-be much better. Couldn't you achieve that by simply omitting these entries?
-e.g. deleting things like:
+Signed-off-by: Tero Kristo <t-kristo@ti.com>
+---
+ drivers/soc/ti/omap_prm.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-	[COMPAT_KERNEL_HWCAP(JAVA)]     = "java",
+diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
+index 96c6f777519c..c9b3f9ebf0bb 100644
+--- a/drivers/soc/ti/omap_prm.c
++++ b/drivers/soc/ti/omap_prm.c
+@@ -256,10 +256,10 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
+ 		goto exit;
+ 
+ 	/* wait for the status to be set */
+-	ret = readl_relaxed_poll_timeout(reset->prm->base +
+-					 reset->prm->data->rstst,
+-					 v, v & BIT(st_bit), 1,
+-					 OMAP_RESET_MAX_WAIT);
++	ret = readl_relaxed_poll_timeout_atomic(reset->prm->base +
++						 reset->prm->data->rstst,
++						 v, v & BIT(st_bit), 1,
++						 OMAP_RESET_MAX_WAIT);
+ 	if (ret)
+ 		pr_err("%s: timedout waiting for %s:%lu\n", __func__,
+ 		       reset->prm->data->name, id);
+-- 
+2.17.1
 
-completely (including the COMPAT_HWCAP_JAVA definition)?
-
-> Hence, I will just defer this to maintainers on whether we should change
-> existing /proc/cpuinfo output (including non-practically-possible ones on
-> ARMv8) or even treat swap emulation as SWP.
-
-SWP is fine because we emulate it and so userspace can use it. Removing that
-*would* be a change in behaviour. I don't think the compat ABI is broken
-here, so please don't change it without good reason.
-
-Will
+--
+Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
 
 _______________________________________________
 linux-arm-kernel mailing list
