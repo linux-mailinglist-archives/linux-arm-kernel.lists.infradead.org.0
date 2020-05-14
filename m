@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACEEC1D2499
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 03:18:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F28B21D249A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 03:18:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Y5vPQIxKTXTEP4QVOLzErSNBeWeK8AJ6k71K1c/1Bdg=; b=AnP
-	rQLQC0mjQvDKceWQhK6vEjJupxT8eGJbYsGoekpS88jiKTnLLx10lxGIsq/h3bQ+Rm4imy30/E+xW
-	av0Pk+pk3kzLceC44VLA7uJwUgq6XM0qV5D6b89jKIhlSJSQStT2aI3hNhcGTOZno0DEYDNMc98FQ
-	Za8/BLJ4JOcJmMqvT/e46+AACvRmwC4seoYUgP3h5OPeJxbsIwEZPg3iBFRJm3iuhWXghHjJGaYMP
-	Je8k4vwNoPjE8lBZoIjXOzO/MbBkqL8nOzOYMDlSMP8hvzLC+ICTdyr5I7aBDh4Rq63Hgz8RACs8t
-	K+mEeQRvYXbCG/oneAGMzsTxiU7zMUg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=h+hzBWsPqCraufOszTd3y7Hdui7vXsyKCvx1Ot+j/NM=; b=P9PqfP1NNpS7nyIJAIvRgJ1HD8
+	T0myXDxS1Npen7Omr+0t+OCBB8sJYnypx89bY8SsXKecQ0M2TwO7KZ//02oCUhiQU7NALDZ5FFase
+	VaLJ26zDpzYMhzTofoogb98Y8oNRNLK+H4Pn210jsmkcKryVQsEHcnYa1aJCGpUh+FqGaY/JVupuM
+	oxid208w3W3GyN1ni4FkKir2CJpheDdLZFzihTp4s79p7byPf+R7UP24SOx84bhr3ST2CgYff7xSc
+	BjZukkry6a60eQCYqZHPCQ5bE1i/mmaCqUBaWQ8ceNugTcqhDMpsCZob07sTaU00fsL3PcrhGCC3r
+	qm3ul3Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ2W6-0003cX-4z; Thu, 14 May 2020 01:18:30 +0000
+	id 1jZ2WH-0003kf-Uo; Thu, 14 May 2020 01:18:41 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ2Vx-0003bg-NJ
+ id 1jZ2Vy-0003bj-D7
  for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 01:18:23 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 5E9931A15F1;
- Thu, 14 May 2020 03:18:18 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4E25B1A0194;
+ Thu, 14 May 2020 03:18:19 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 81F5F1A012E;
- Thu, 14 May 2020 03:18:14 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7CCCD1A0167;
+ Thu, 14 May 2020 03:18:15 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 70523402B4;
- Thu, 14 May 2020 09:18:09 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6F753402BB;
+ Thu, 14 May 2020 09:18:10 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
  kernel@pengutronix.de, festevam@gmail.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH 1/2] ARM: dts: imx6qdl: Use nvmem interface to get fuse data
-Date: Thu, 14 May 2020 09:08:47 +0800
-Message-Id: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 2/2] ARM: dts: imx6sl: Use nvmem interface to get fuse data
+Date: Thu, 14 May 2020 09:08:48 +0800
+Message-Id: <1589418528-26410-2-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
+References: <1589418528-26410-1-git-send-email-Anson.Huang@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_181821_897631_AF18C2B4 
-X-CRM114-Status: UNSURE (   9.21  )
+X-CRM114-CacheID: sfid-20200513_181822_575247_048211CB 
+X-CRM114-Status: UNSURE (   9.12  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -74,31 +77,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Although ocotp clock is always ON for i.MX6QDL, OCOTP can be
-accessed directly, but since i.MX6QDL nvmem interface is supported,
+Although ocotp clock is always ON for i.MX6SL, OCOTP can be
+accessed directly, but since i.MX6SL nvmem interface is supported,
 and fsl,tempmon-data is deprecated, use it instead of getting fuse
 data by reading ocotp directly, this makes all i.MX6 SoCs aligned.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm/boot/dts/imx6qdl.dtsi | 11 ++++++++++-
+ arch/arm/boot/dts/imx6sl.dtsi | 11 ++++++++++-
  1 file changed, 10 insertions(+), 1 deletion(-)
 
-diff --git a/arch/arm/boot/dts/imx6qdl.dtsi b/arch/arm/boot/dts/imx6qdl.dtsi
-index 98da446..1763c2b 100644
---- a/arch/arm/boot/dts/imx6qdl.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl.dtsi
-@@ -74,7 +74,8 @@
- 		interrupt-parent = <&gpc>;
+diff --git a/arch/arm/boot/dts/imx6sl.dtsi b/arch/arm/boot/dts/imx6sl.dtsi
+index 8230b45..fcb84fe 100644
+--- a/arch/arm/boot/dts/imx6sl.dtsi
++++ b/arch/arm/boot/dts/imx6sl.dtsi
+@@ -98,7 +98,8 @@
  		interrupts = <0 49 IRQ_TYPE_LEVEL_HIGH>;
+ 		interrupt-parent = <&gpc>;
  		fsl,tempmon = <&anatop>;
 -		fsl,tempmon-data = <&ocotp>;
 +		nvmem-cells = <&tempmon_calib>, <&tempmon_temp_grade>;
 +		nvmem-cell-names = "calib", "temp_grade";
- 		clocks = <&clks IMX6QDL_CLK_PLL3_USB_OTG>;
- 		#thermal-sensor-cells = <0>;
+ 		clocks = <&clks IMX6SL_CLK_PLL3_USB_OTG>;
  	};
-@@ -1171,6 +1172,14 @@
+ 
+@@ -961,6 +962,14 @@
  				cpu_speed_grade: speed-grade@10 {
  					reg = <0x10 4>;
  				};
@@ -112,7 +115,7 @@ index 98da446..1763c2b 100644
 +				};
  			};
  
- 			tzasc@21d0000 { /* TZASC1 */
+ 			audmux: audmux@21d8000 {
 -- 
 2.7.4
 
