@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6175B1D3E16
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:56:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEAB41D3E1E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:57:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hLykP69KsClYnS3FjB3hLhDII0JzhAsIt1PjgLd7BF0=; b=hme7sr8Ze5s2h1
-	H/skZn9QH/euDAGhHSC4uZ3PSvkbSOVwMKzReOe3oahf1XiCKs/oUrVesh1SL4dxeOlBW+eOlHigP
-	kY9+pnhjcNtjn6he64ZGntAYa8aSJYug7sFH+OmefTY8Z5topJghwiUwlNZHlxACoWc2AhecQqYxX
-	LJiFD74tFP8+rrOlknrxU07QKmPg8xKbYAjzI6Rliaj1D2YdHDQ8vEAc4BWWkSFIqqlNxghswVCJ8
-	eQCCiBC6lw2gI916w4aMnaooF4GTe4OIXUGmUBI1r0Ut6xA/XIzPnzfbRWJezkL7PYjtzar7JJR49
-	i55Q0Q4PduEEQCSy4qwg==;
+	List-Owner; bh=hrh2f/W9Uif3PnYZZHPq9YclAMcI7Z7mpW08FmpHJJY=; b=U7qWwMW3EM8/hP
+	VMdOv+CnFakhfaaDaI7q+fNgZ0f6bMdAQDMQq69GJxwi81ARC4WFDhLFD7Ytfo5i0CRNdFmVPepyT
+	0Gew/iqV/Eb3D+Nzv0kirLsiHMworD79bFt56sgpYtUwNJ7C0pOapPiiaBAAxo0fbXOVEaOs4oIjo
+	EZ/L9+XeV2seFxxpMknxKAFvPJetYP35vBVEiPZeIYIEV+8C38iOYWIVA9X2GtV3tUSk6Vt2+/wvz
+	/pczeOCc4qmnTHYeHh/uPisHR7cvzwq0qSvTh2a7lU5ZoNpwdDVHiQBbRg+VTReznTxb8oLTR6JwS
+	ciPq0nhQX0kDhbE+U0gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJyH-00080E-JS; Thu, 14 May 2020 19:56:45 +0000
+	id 1jZJyZ-0008B1-7Z; Thu, 14 May 2020 19:57:03 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJy6-0007zU-GR
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:56:35 +0000
+ id 1jZJyB-00082Y-1l
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:56:40 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 582422065C;
- Thu, 14 May 2020 19:56:33 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 93F962065D;
+ Thu, 14 May 2020 19:56:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589486193;
- bh=xVjSJtCrXrJZNhmEOcXSCASVEABirO3N/aoA9LEc/Zg=;
+ s=default; t=1589486198;
+ bh=GxE8ANtTfub60hMSFbauTD0SDXUv1h7GY8/7gYwkj1s=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=HP78RNTMVn/5visapTd3rZTrAsZKcdK1NEdMtZtMXVzMuOpskDTp4d5NSi6WvajwZ
- R8/POlAlFIBJWf9TUVoo3e6jsBHwvGeUeU9fRhbWJ0db/mIW4WtsHPxevLPzwU3cJt
- 72omBV9O/DKE6CEGL3SWD+qsBQTaeAuERoPBxofo=
+ b=lgNmKs8ZeUDv5XB7NX0ds36hRGZoVZieEig0mf4RgEgTJWjlQ6+m143PLJBuYH7wx
+ F05bfIZU6PCyTM5ZT28JE3VFQo8RYr73pSsG2RpJMSiGr2Tv3MSh4FqAMH5Rio/+J1
+ 4uTcZX2ZW9B+JDol6KOeKnqZDX9cUmkFUCGu2Oss=
 MIME-Version: 1.0
-In-Reply-To: <20200409064416.83340-2-sboyd@kernel.org>
+In-Reply-To: <20200409064416.83340-3-sboyd@kernel.org>
 References: <20200409064416.83340-1-sboyd@kernel.org>
- <20200409064416.83340-2-sboyd@kernel.org>
-Subject: Re: [PATCH v2 01/10] ARM: Remove redundant COMMON_CLK selects
+ <20200409064416.83340-3-sboyd@kernel.org>
+Subject: Re: [PATCH v2 02/10] ARM: Remove redundant CLKDEV_LOOKUP selects
 From: Stephen Boyd <sboyd@kernel.org>
 To: Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Date: Thu, 14 May 2020 12:56:32 -0700
-Message-ID: <158948619259.215346.17594962580629533303@swboyd.mtv.corp.google.com>
+Date: Thu, 14 May 2020 12:56:37 -0700
+Message-ID: <158948619792.215346.16103604948090575932@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_125634_565002_2FA6359F 
-X-CRM114-Status: UNSURE (   8.17  )
+X-CRM114-CacheID: sfid-20200514_125639_130850_E1AAAB37 
+X-CRM114-Status: UNSURE (   7.75  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,24 +78,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>, Alexander Shiyan <shc_work@mail.ru>, linux-clk@vger.kernel.org, Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>, Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>, Andreas Färber <afaerber@suse.de>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Tony Prisk <linux@prisktech.co.nz>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-UXVvdGluZyBTdGVwaGVuIEJveWQgKDIwMjAtMDQtMDggMjM6NDQ6MDcpCj4gVGhlIG11bGl0cGxh
-dGZvcm0gY29uZmlnIGFscmVhZHkgc2VsZWN0cyBDT01NT05fQ0xLLCBzbyBzZWxlY3RpbmcgaXQK
-PiBhZ2FpbiBpcyBub3QgdXNlZnVsLiBSZW1vdmUgdGhlc2Ugc2VsZWN0cyBmcm9tIEFSTSBwbGF0
-Zm9ybXMgdGhhdCBhcmUKPiBwYXJ0IG9mIHRoZSBtdWx0aXBsYXRmb3JtIGJ1aWxkLgo+IAo+IFJl
-dmlld2VkLWJ5OiAiQW5kcmVhcyBGw6RyYmVyIiA8YWZhZXJiZXJAc3VzZS5kZT4gIyBhY3Rpb25z
-Cj4gQWNrZWQtYnk6IE1hbml2YW5uYW4gU2FkaGFzaXZhbSA8bWFuaXZhbm5hbi5zYWRoYXNpdmFt
-QGxpbmFyby5vcmc+ICMgYWN0aW9ucwo+IENjOiBSdXNzZWxsIEtpbmcgPGxpbnV4QGFybWxpbnV4
-Lm9yZy51az4KPiBDYzogQWxleGFuZGVyIFNoaXlhbiA8c2hjX3dvcmtAbWFpbC5ydT4KPiBDYzog
-THVib21pciBSaW50ZWwgPGxrdW5kcmFrQHYzLnNrPgo+IENjOiA8bGludXgtYXJtLWtlcm5lbEBs
-aXN0cy5pbmZyYWRlYWQub3JnPgo+IENjOiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPgo+
-IFNpZ25lZC1vZmYtYnk6IFN0ZXBoZW4gQm95ZCA8c2JveWRAa2VybmVsLm9yZz4KPiAtLS0KCkFw
-cGxpZWQgdG8gY2xrLW5leHQKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Quoting Stephen Boyd (2020-04-08 23:44:08)
+> These platforms select COMMON_CLK indirectly through use of the
+> ARCH_MULTIPLATFORM config option that they depend on implicitly via some
+> V7/V6/V5 multi platform config option. The COMMON_CLK config option
+> already selects CLKDEV_LOOKUP so it's redundant to have this selected
+> again.
+> 
+> Cc: Tony Prisk <linux@prisktech.co.nz>
+> Cc: Russell King <linux@armlinux.org.uk>
+> Cc: <linux-arm-kernel@lists.infradead.org>
+> Cc: Arnd Bergmann <arnd@arndb.de>
+> Signed-off-by: Stephen Boyd <sboyd@kernel.org>
+> ---
+
+Applied to clk-next
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
