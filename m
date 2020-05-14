@@ -2,40 +2,41 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 156381D303A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 14:46:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23A801D303C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 14:46:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=C4welo8tvap4Z3jG/ND9E1pGfogydNiHMw25OLSGozA=; b=CJ4cE8mwH69fSD
-	DnxGmDkDuxAowUqelYfFtR6ihsZ21RKGum/WvCWa0LKMk8uLO1bhAbdZTBPRSmd1vv/PrRR/XOtfa
-	D3k/wUBrJhGVtTy1FLb+zY5gdxjWralRVLAECeXDL3jw6EixfhyQ5kHAaj6i4bspyI/epPd66FYAE
-	fTd2RX8T/SGZ2FOmfoyrwdAGcKrJlh9TG8dgmTUZIvKasBTRNrp6pT6TlMGuYv1SEARWhOeDiA2hv
-	6McA+DykRTk5169mmmsDze8GUPHZUJrWRl+lzfrzYdrp6BdLvskpNP3oDkwjBjPbDxoYpNJju411I
-	Akk3bIgZVSx7cNcaVehQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Mxcmv+n0Z3Pb9m4gD1Q8Q5uzKATkP6HjW+twzADb87Q=; b=lpJxwSH2/o3GZgV0OFGV62dERN
+	+s/xoW69mzD7QTUp8UjmvLsybIPLiWMnkG5rLj5w5ih94u7QZVSVpUiIlcG4Aid/cgsNh+hAqGFtm
+	ngQ/uF0dkOc5Ep8nhGXcZmzP+8Gn0inAESX5owwUcW+Jh7NLHxMFlsP+UKieSehT2hPIyPF/bIZ5h
+	5sJwDEkpzEEGprl+f4bUF1trn7BOiOMoBBMfkKBRMMmLV8LySkk9ywc6S1Wh0bwH5Gjd0htrxdfXa
+	crdDd9AgnrVJ2PmeRjBQo6JN6rwRnoJAgV8OlnD9cjpnXBacPKqL/S30b1HSXmjnqzUwvq5zIpiTG
+	aQQDO0cw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZDG2-0004Bn-Tr; Thu, 14 May 2020 12:46:38 +0000
+	id 1jZDGC-0004Jk-Vb; Thu, 14 May 2020 12:46:48 +0000
 Received: from 8bytes.org ([81.169.241.247] helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZDFs-0004AX-PX
+ id 1jZDFs-0004AY-PW
  for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 12:46:30 +0000
 Received: by theia.8bytes.org (Postfix, from userid 1000)
- id 9035C452; Thu, 14 May 2020 14:46:22 +0200 (CEST)
+ id AD2E5273; Thu, 14 May 2020 14:46:22 +0200 (CEST)
 From: Joerg Roedel <joro@8bytes.org>
 To: Maxime Ripard <mripard@kernel.org>
-Subject: [PATCH 1/2] iommu/sun50i: Fix compile warnings
-Date: Thu, 14 May 2020 14:46:20 +0200
-Message-Id: <20200514124621.25999-1-joro@8bytes.org>
+Subject: [PATCH 2/2] iommu/sun50i: Use __GFP_ZERO instead of memset()
+Date: Thu, 14 May 2020 14:46:21 +0200
+Message-Id: <20200514124621.25999-2-joro@8bytes.org>
 X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
+In-Reply-To: <20200514124621.25999-1-joro@8bytes.org>
+References: <20200514124621.25999-1-joro@8bytes.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_054629_475802_52E77C8A 
-X-CRM114-Status: UNSURE (   8.94  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200514_054629_467812_C12E7B0E 
+X-CRM114-Status: GOOD (  11.58  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -59,49 +60,45 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: jroedel@suse.de, joro@8bytes.org, iommu@lists.linux-foundation.org,
  linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
  Maxime Ripard <maxime@cerno.tech>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RnJvbTogSm9lcmcgUm9lZGVsIDxqcm9lZGVsQHN1c2UuZGU+CgpBIGZldyBjb21waWxlIHdhcm5p
-bmdzIHNob3cgdXAgd2hlbiBidWlsZGluZyB0aGlzIGRyaXZlcjoKCiAgQ0MgICAgICBkcml2ZXJz
-L2lvbW11L3N1bjUwaS1pb21tdS5vCmRyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11LmM6IEluIGZ1
-bmN0aW9uIOKAmHN1bjUwaV9kdGVfZ2V0X3BhZ2VfdGFibGXigJk6CmRyaXZlcnMvaW9tbXUvc3Vu
-NTBpLWlvbW11LmM6NDg2OjE2OiB3YXJuaW5nOiB1bnVzZWQgdmFyaWFibGUg4oCYZmxhZ3PigJkg
-Wy1XdW51c2VkLXZhcmlhYmxlXQogIDQ4NiB8ICB1bnNpZ25lZCBsb25nIGZsYWdzOwogICAgICB8
-ICAgICAgICAgICAgICAgIF5+fn5+CmRyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11LmM6IEluIGZ1
-bmN0aW9uIOKAmHN1bjUwaV9pb21tdV91bm1hcOKAmToKZHJpdmVycy9pb21tdS9zdW41MGktaW9t
-bXUuYzo1NTk6MjM6IHdhcm5pbmc6IHVudXNlZCB2YXJpYWJsZSDigJhpb21tdeKAmSBbLVd1bnVz
-ZWQtdmFyaWFibGVdCiAgNTU5IHwgIHN0cnVjdCBzdW41MGlfaW9tbXUgKmlvbW11ID0gc3VuNTBp
-X2RvbWFpbi0+aW9tbXU7CiAgICAgIHwgICAgICAgICAgICAgICAgICAgICAgIF5+fn5+CmRyaXZl
-cnMvaW9tbXUvc3VuNTBpLWlvbW11LmM6IEluIGZ1bmN0aW9uIOKAmHN1bjUwaV9pb21tdV9wcm9i
-ZV9kZXZpY2XigJk6CmRyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11LmM6NzQ5OjIyOiB3YXJuaW5n
-OiB1bnVzZWQgdmFyaWFibGUg4oCYZ3JvdXDigJkgWy1XdW51c2VkLXZhcmlhYmxlXQogIDc0OSB8
-ICBzdHJ1Y3QgaW9tbXVfZ3JvdXAgKmdyb3VwOwogICAgICB8ICAgICAgICAgICAgICAgICAgICAg
-IF5+fn5+CgpSZW1vdmUgdGhlIHVudXNlZCB2YXJpYWJsZXMuCgpDYzogTWF4aW1lIFJpcGFyZCA8
-bWF4aW1lQGNlcm5vLnRlY2g+ClNpZ25lZC1vZmYtYnk6IEpvZXJnIFJvZWRlbCA8anJvZWRlbEBz
-dXNlLmRlPgotLS0KIGRyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11LmMgfCAzIC0tLQogMSBmaWxl
-IGNoYW5nZWQsIDMgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy9pb21tdS9zdW41
-MGktaW9tbXUuYyBiL2RyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11LmMKaW5kZXggOTg5ZDg3YWE0
-NDI2Li5hNTJmNTJlZmY3YzggMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvaW9tbXUvc3VuNTBpLWlvbW11
-LmMKKysrIGIvZHJpdmVycy9pb21tdS9zdW41MGktaW9tbXUuYwpAQCAtNDgzLDcgKzQ4Myw2IEBA
-IHN0YXRpYyB1MzIgKnN1bjUwaV9kdGVfZ2V0X3BhZ2VfdGFibGUoc3RydWN0IHN1bjUwaV9pb21t
-dV9kb21haW4gKnN1bjUwaV9kb21haW4sCiAJCQkJICAgICAgZG1hX2FkZHJfdCBpb3ZhLCBnZnBf
-dCBnZnApCiB7CiAJc3RydWN0IHN1bjUwaV9pb21tdSAqaW9tbXUgPSBzdW41MGlfZG9tYWluLT5p
-b21tdTsKLQl1bnNpZ25lZCBsb25nIGZsYWdzOwogCXUzMiAqcGFnZV90YWJsZTsKIAl1MzIgKmR0
-ZV9hZGRyOwogCXUzMiBvbGRfZHRlOwpAQCAtNTU2LDcgKzU1NSw2IEBAIHN0YXRpYyBzaXplX3Qg
-c3VuNTBpX2lvbW11X3VubWFwKHN0cnVjdCBpb21tdV9kb21haW4gKmRvbWFpbiwgdW5zaWduZWQg
-bG9uZyBpb3ZhCiAJCQkJIHNpemVfdCBzaXplLCBzdHJ1Y3QgaW9tbXVfaW90bGJfZ2F0aGVyICpn
-YXRoZXIpCiB7CiAJc3RydWN0IHN1bjUwaV9pb21tdV9kb21haW4gKnN1bjUwaV9kb21haW4gPSB0
-b19zdW41MGlfZG9tYWluKGRvbWFpbik7Ci0Jc3RydWN0IHN1bjUwaV9pb21tdSAqaW9tbXUgPSBz
-dW41MGlfZG9tYWluLT5pb21tdTsKIAlwaHlzX2FkZHJfdCBwdF9waHlzOwogCWRtYV9hZGRyX3Qg
-cHRlX2RtYTsKIAl1MzIgKnB0ZV9hZGRyOwpAQCAtNzQ2LDcgKzc0NCw2IEBAIHN0YXRpYyBpbnQg
-c3VuNTBpX2lvbW11X2F0dGFjaF9kZXZpY2Uoc3RydWN0IGlvbW11X2RvbWFpbiAqZG9tYWluLAog
-c3RhdGljIHN0cnVjdCBpb21tdV9kZXZpY2UgKnN1bjUwaV9pb21tdV9wcm9iZV9kZXZpY2Uoc3Ry
-dWN0IGRldmljZSAqZGV2KQogewogCXN0cnVjdCBzdW41MGlfaW9tbXUgKmlvbW11OwotCXN0cnVj
-dCBpb21tdV9ncm91cCAqZ3JvdXA7CiAKIAlpb21tdSA9IHN1bjUwaV9pb21tdV9mcm9tX2Rldihk
-ZXYpOwogCWlmICghaW9tbXUpCi0tIAoyLjE3LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Joerg Roedel <jroedel@suse.de>
+
+Allocate zeroed memory so there is no need to memset it to 0 in the
+driver.
+
+Cc: Maxime Ripard <maxime@cerno.tech>
+Signed-off-by: Joerg Roedel <jroedel@suse.de>
+---
+ drivers/iommu/sun50i-iommu.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/drivers/iommu/sun50i-iommu.c b/drivers/iommu/sun50i-iommu.c
+index a52f52eff7c8..9c763d4a8e2a 100644
+--- a/drivers/iommu/sun50i-iommu.c
++++ b/drivers/iommu/sun50i-iommu.c
+@@ -616,11 +616,10 @@ static struct iommu_domain *sun50i_iommu_domain_alloc(unsigned type)
+ 	    iommu_get_dma_cookie(&sun50i_domain->domain))
+ 		goto err_free_domain;
+ 
+-	sun50i_domain->dt = (u32 *)__get_free_pages(GFP_KERNEL,
++	sun50i_domain->dt = (u32 *)__get_free_pages(GFP_KERNEL | __GFP_ZERO,
+ 						    get_order(DT_SIZE));
+ 	if (!sun50i_domain->dt)
+ 		goto err_put_cookie;
+-	memset(sun50i_domain->dt, 0, DT_SIZE);
+ 
+ 	refcount_set(&sun50i_domain->refcnt, 1);
+ 
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
