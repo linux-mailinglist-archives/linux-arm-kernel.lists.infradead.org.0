@@ -2,69 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D231D3EEB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 22:21:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62F6E1D3F27
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 22:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mzJQRS4gvGGUMPEY3ynTJ7cw9lEYGhyfyc94OUd3QQ4=; b=gWckd6ad1XX1g9
-	CjWvH8Jw+RCr5+YgQV6c9s8mgHndc2XRI5z/R52TuF/fZ/Msj+4LfUkCWxa7mYe/zOJZ44idKCqu1
-	iysjz8vPj25cHfn/KUoWJyVOS2T9xncetz9cyjaei86LDVKCX3ikDqylhYNi2u4UFlbB3loPIdS2d
-	aw8abaaE58BXmxGuSKjM2GLpw/lKhLShxAVm2ZPEEtUIX/6kF+LK+hyXkwwlq8wYTnoIlxcmbjmRB
-	U3E+1J6e466yHe/7B2y7iG7JeoRop3gLsAa9YQoOuFaPZiAB+Iq8CAj1YtDQNcu3pe1RZjoqm3po2
-	XKvIzpR60S4lXX89w8jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
+	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=mLbgCFdcWxr6UItJuySCvsGHgRbztgjvi9WrHhyI+uk=; b=t2uiQdXziXxo3KzLXPeflzpcU
+	aAtPJkQzj+3+uRzDOWEd9m+ndfztc5VANYfXJLp0zaj32ZoCRSTu/XWU1RaoLnOmz0mlasLHr4cBk
+	zFfQc+t6cHMXlTkU/ZHY4v4A970KP1f3WoWo4D2Pc9//T699aYot3ZK5K2K64KVyV8un3pfGC/557
+	231A+Hrv8h6SiGc/nlCdwsdOOjWI1j4C7V9mZnnWge0H9SXiXgB4CTvJE5FLAFE8Cd96QhOXlHH/M
+	6yj1EkwmoCnldAn7gYNXScshc9SEBkTl7eYPHqmRq4b1+lZxofrCzqO31sMCZ05SJHETE0bJNsMlw
+	t4V3GNdhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZKLx-0001pi-Pb; Thu, 14 May 2020 20:21:13 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::9])
+	id 1jZKk5-0001MU-K6; Thu, 14 May 2020 20:46:09 +0000
+Received: from ssl.serverraum.org ([2a01:4f8:151:8464::1:2])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZKLg-0001n5-TZ
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 20:21:01 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589487655;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=t8MuLBhVs0CMy4EvOYJ57JJKkaJSMB56O8oh0kRWzwM=;
- b=GoxLVI3HiQ8P1Fxv522AZ4fqlRC5ifNI/DowZq/Z34nIIgl7UWJ7VruIEzLWpBMYfa
- bfJGxecd4WsZdQdV0wIrW3x6ttlPotOubHEU9l1YdezYGNpM8aaRg0Ek3fPsJhqfZrwY
- xcBz7Su4tlZ19yPmtYUun6IhnRGotonraNjVHmd2+xhL14fBRqA7+UA60CbUySQodeow
- 14Zm2XvO8DEQfj8ACVwd8ze2TjwDnQBNM0scfhlYDyrbsIrCs0QwcqOfw6OtTUjMmsg/
- fzGXOEFBLZcNqhy1a0hDS5wtdsQSK6LSKejKeigbnM7OpuWPmrCl7V9a7tkcs3HfyMia
- WAWA==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPaJfSc9C1S"
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id u08bf3w4EKKsxtN
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Thu, 14 May 2020 22:20:54 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: =?utf-8?B?xYF1a2Fzeg==?= Stelmach <l.stelmach@samsung.com>
-Subject: Re: [PATCH 2/2] hwrng: exynos - Set the quality value
-Date: Thu, 14 May 2020 22:20:54 +0200
-Message-ID: <8196280.CLNGmrtAO5@tauon.chronox.de>
-In-Reply-To: <20200514190734.32746-3-l.stelmach@samsung.com>
-References: <20200514190734.32746-1-l.stelmach@samsung.com>
- <CGME20200514190740eucas1p293129b2ef3ba706652a9327e55db9649@eucas1p2.samsung.com>
- <20200514190734.32746-3-l.stelmach@samsung.com>
+ id 1jZKjt-0001CE-T9
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 20:46:03 +0000
+Received: from ssl.serverraum.org (web.serverraum.org [172.16.0.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ssl.serverraum.org (Postfix) with ESMTPSA id BF3CB22EEB;
+ Thu, 14 May 2020 22:45:53 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=walle.cc;
+ s=mail2016061301; t=1589489154;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=DMXKBlWL/MST7cL34EcyY2r7dUnEYA7BplVDp3fsnk0=;
+ b=vkg/zj/0PDSbf5X0pK+in32oGplSgPjZpIyY9VFe7AbF/2ZsjfhevzzkEFvlj0qRy3JA0c
+ 1CSKjkXkWnIGZ95mLlXpOIqKRhQvgXP6n4LMjJosWwuh08bDDGHGGq619bZyreTcqDdXnr
+ T5BtNH3gx2QelwgM2PzR7k5O5g5eGkA=
 MIME-Version: 1.0
+Date: Thu, 14 May 2020 22:45:53 +0200
+From: Michael Walle <michael@walle.cc>
+To: Mark Brown <broonie@kernel.org>
+Subject: Re: [PATCH v3 02/16] mfd: mfd-core: Don't overwrite the dma_mask of
+ the child device
+In-Reply-To: <20200428152543.GI5677@sirena.org.uk>
+References: <20200423174543.17161-1-michael@walle.cc>
+ <20200423174543.17161-3-michael@walle.cc>
+ <20200428124548.GS185537@smile.fi.intel.com>
+ <3cd3705a-4f48-6a46-e869-3ee11dc17323@arm.com>
+ <20200428142938.GX185537@smile.fi.intel.com>
+ <6ccad285-7b5f-3037-d4d5-ff4d9571b612@arm.com>
+ <20200428152543.GI5677@sirena.org.uk>
+User-Agent: Roundcube Webmail/1.4.4
+Message-ID: <8fb998f882938680d98f1c2f6f8254c1@walle.cc>
+X-Sender: michael@walle.cc
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_132057_097168_E6EC2A78 
-X-CRM114-Status: UNSURE (   7.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_134559_838326_D4076E0A 
+X-CRM114-Status: GOOD (  12.34  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5302:0:0:9 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a01:4f8:151:8464:0:0:1:2 listed in]
  [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -83,30 +86,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Markus Elfring <elfring@users.sourceforge.net>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-pwm@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>, Lee Jones <lee.jones@linaro.org>,
+ Jason Cooper <jason@lakedaemon.net>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Marc Zyngier <maz@kernel.org>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ =?UTF-8?Q?Uwe_Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>,
+ Guenter Roeck <linux@roeck-us.net>, devicetree@vger.kernel.org,
+ Jean Delvare <jdelvare@suse.com>, linux-watchdog@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>,
+ linux-arm-kernel@lists.infradead.org, linux-hwmon@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, linux-kernel@vger.kernel.org,
+ Li Yang <leoyang.li@nxp.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Robin Murphy <robin.murphy@arm.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gRG9ubmVyc3RhZywgMTQuIE1haSAyMDIwLCAyMTowNzozNCBDRVNUIHNjaHJpZWIgxYF1a2Fz
-eiBTdGVsbWFjaDoKCkhpIMWBdWthc3osCgo+IFRoZSB2YWx1ZSBoYXMgYmVlbiBlc3RpbWFkZWQg
-Ynkgb2J0YWluaWcgMTAyNCBjaHVua3Mgb2YgZGF0YSAxMjggYnl0ZXMKPiAoMTAyNCBiaXRzKSBl
-YWNoIGZyb20gdGhlIGdlbmVyYXRvciBhbmQgZmluZGluZyBjaHVuayB3aXRoIG1pbmltYWwKPiBl
-bnRyb3B5IHVzaW5nIHRoZSBlbnQoMSkgdG9vbC4gVGhlIHZhbHVlIHdhcyA2LjMzMjkzNyBiaXRz
-IG9mIGVudHJvcHkKPiBpbiBlYWNoIDggYml0cyBvZiBkYXRhLgoKRHRvIC0gc2VlIHRoZSBvdGhl
-ciBjb21tZW50LgoKQ2lhbwpTdGVwaGFuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Am 2020-04-28 17:25, schrieb Mark Brown:
+> On Tue, Apr 28, 2020 at 03:49:49PM +0100, Robin Murphy wrote:
+> 
+>> For better or worse, the platform bus is the dumping ground for random 
+>> crap,
+>> so we just have to deal with all the abstraction breakage that leaks 
+>> out of
+>> that.
+> 
+> The reason we're using the platform bus for this is that historically
+> people were creating buses which were essentially carbon copies of the
+> platform bus with the name changed and it was felt that rather than
+> duplicate code it was better to just use platform devices with no MMIO
+> ranges defined.  If there's some assumptions about DMA for platform
+> devices floating about somewhere it might be reasonable to revisit this
+> and create a non-DMA variant of platform devices since there is a
+> meaningful difference.
+
+Was there any conclusion? Should I keep or drop this patch in the next 
+version
+of this series?
+
+-- 
+-michael
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
