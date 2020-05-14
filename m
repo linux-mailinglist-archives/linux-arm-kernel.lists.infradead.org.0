@@ -2,87 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA68E1D2C7E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 12:22:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD1A71D2C8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 12:23:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VKb1fGXUy3xZHZ6xW6eUdRLjAxk0g3og+xsyJ0tQuzQ=; b=I2mXpJJj2GcZTM
-	kxqqple27Ud4nBOXCjYi7kDn4ke5GoOlvmMmfLrp6l2DN01dY7kT7YutjEvIyI3U1sKUd5JgF4NEJ
-	jSLfsrxZwuaon56O5Eb+nCA7pQc1JsLMNbfvm5FDukpAXKumqKDfe9bjZQishbRloPOh8Q/HSmzSB
-	uUPI/bGvo3dsS/QLMKOE4NAZpcMHbC+y9PYNq/tkYXFhkv5VyT5ToQ9lMT1XtY9oCG86WEAlMFuCk
-	lBTaBuRy+2Pafmy9Evq6K+XuhgyceUKWaHgDCEjWcChRn3voEl5mhRUFuJcPxlErjXgqaPNIVQIVP
-	K79W5LP6B3jP5F9s+tTw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sKeJ62rrMaebKH59XkaGtw8iDhw4mvd5OlFrVhR1VSE=; b=Cw3VNmbFGMrg6SRak6uHLKs73
+	svUMjXwXLCoifT3ysKfpNE45HiXAsreC//OFwDNcIfLWwLYj2dvbcpitkn5j94MmmrIwU0uhrCHAR
+	LDIIuTw1ofNfa2GbpC5JKakiRsznIYCC/SQqEHGraO7FFrX/xcfKVmGp3hFj71osWYpd0WUVmpbts
+	E1xXMxDCA5cISMQrfFesfrztJsffek6dzfRg+3VL1q1eiZf4fTTYSIVaHN2twj1g/KZaTda/2ihGd
+	xTekFUkWSE+jJaP2NUwk/9FCNuaJ4Z7Re1NjXyvzUDtlgf+B2roauXTVfimrlwiLw4AbrZwMXkDyg
+	3TTlSm5pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZB0u-000499-Dn; Thu, 14 May 2020 10:22:52 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1jZB1S-0004SP-B8; Thu, 14 May 2020 10:23:26 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZB0k-00048Q-EL
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 10:22:44 +0000
-Received: by mail-io1-xd43.google.com with SMTP id s10so1566615iog.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 03:22:42 -0700 (PDT)
+ id 1jZB1J-0004RY-1x; Thu, 14 May 2020 10:23:18 +0000
+Received: by mail-lf1-x142.google.com with SMTP id b26so2158450lfa.5;
+ Thu, 14 May 2020 03:23:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Xf8xZfCQkg2LX+UGX2pErkunT3kzFVgUMzef0Ov7X8U=;
- b=Ggcu6svRnfvNn9Dsd8MwVKxUpU+EtC/sdV/wX64b84Wf/BolKHyXwvu1WcAgSycmo9
- g6zPSumtiqkSeg/QcGT+3q4t78VLeVlwl6HKyh0KVqIqjLxX9yHiHiNON3YGciyWSWQd
- 14IfBehKyCyDuRwAhd/VzyyI1AhdUMeVd71fprDrTnkKhlpptgiHQSzWV3FEOHDk8iYI
- 6aYpNBaPF2de9HV+vW7A9rtyXE8KjxOjSMU8ayWbhT6HWBb+T/BQ+rVuMVAEJSEEhQG4
- fVsFK/jFbOjhOS46sttdZAMR0QWUWFNTxnFd3SlWG7nPg6GPegi8f6EWzz78dCL2i21L
- KGHg==
+ h=sender:from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=on2D6elu53pZj4wNtYf7fZ0iGgEMC4vnCrij0e0GY3Y=;
+ b=YWwJnh346DomNcO4odW5tj0MMLVzr9cRxcJo6n+Dt9fuMb4qneEfKEKUJHDnEy4yuN
+ 9cqWkmlSN93BhIYrTXcpa3kA/EtXoX8ZUxllaYJG2VuYBBbRA9Sab18ErkYrm5p02GXG
+ KuTLvxrKQOAgsQJ7k3ip3Zz2n2cK/aCqUjj+FRR97mP/BhNETq1YUnciIbbHPU2Fclq6
+ P0OJUdtkQMtwoWuV6zDzf6VUTxJlUEXBEwVROI/mQj5BQxuhH/dBkw/PrXszJn+a9ize
+ l0mbAGcNZXhgwGywmoULZ8LhWBH+iz0dxAP2/gXPR4N43j6OYq0flMpdSl4iyCvLetSb
+ wf7Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Xf8xZfCQkg2LX+UGX2pErkunT3kzFVgUMzef0Ov7X8U=;
- b=VtBWwCt57Dpdap4vhz+tvta8Owmu9Y2i7PrEbHv7bkoR1K1PXzq9xFwjcWmsLZwRNv
- +lJBH77tpiFB0a1G05FNQAv8M62san8xUvkn3b3QxHxCPwKDwPo+7BPWufT1rfjnwVPV
- u5sUttVlMEjDobThsgyCReudOLKL9xLK+lmKXjd6wV2NlZqiwP34Vns0aNNxIV6dEBbr
- 5fvL0/FwlBx7DGP0Ylsgv1eV8onNCdZ7jtV3TLpCKDM//HYgVx23Q6ZA4bU/oBL0YWrU
- IELv3esg9bIrzBYFcrwZrCspsSBWXE+c41z5maJ/3IZfj0Oizy08JbD6MHJgNLcOLBkO
- zOTg==
-X-Gm-Message-State: AOAM5314hCZX0OC6kJ00s32TqbAzSBUJn+Be5yx4bZxg/jX1mJUuA+dw
- r3jbRr3MdX/xs7D+RSWkH3GYO4NnSbdTZtaAHZ0=
-X-Google-Smtp-Source: ABdhPJzLEl/PjziUjet7dMbd/2CbLJOcw5zJWiYxYZkGfaovRzeKZG7aVXM98VUw+JMNfNfgJzzoNSJMrMDnaE2xHXw=
-X-Received: by 2002:a5e:a80e:: with SMTP id c14mr3426158ioa.3.1589451761445;
- Thu, 14 May 2020 03:22:41 -0700 (PDT)
+ h=x-gm-message-state:sender:from:to:cc:subject:in-reply-to:references
+ :date:message-id:mime-version;
+ bh=on2D6elu53pZj4wNtYf7fZ0iGgEMC4vnCrij0e0GY3Y=;
+ b=no7MbcjMLxz0oI9xTt08A/8u3MNGJbZOEnoAdiOR22jJLAHpBnzrcKHqoBP7scWLkJ
+ PMeUrlm1In/NbBmpYNQTq2c9KvlnaxSufR4tq7eAYBHqsvPyXN+6Sqt8QvTtfLQmx909
+ WN2wxEQHI+lUADAxPuFYkAULdeYaB8EanVtU/ym57NKshAeeUavtl+ZsU6elOT+8YF4m
+ SmrQ5C0ZNIDzMZQmI2ZbFwEU9CgVJbTs6J3bplNdB6J5BtT2jU2annsyZlZ35xdGRBCc
+ 9igPSXxJXidQSJuv6MhLy+SbYxkVxn43pi8i9sgBaCWdplgl3hfGP6Rn31Yu7ocwnsyE
+ F9Vg==
+X-Gm-Message-State: AOAM532c7YPg6+3sYGo8zpXG+m84nt5Z+AWXzu5m09hs26Y1dpVTSh03
+ 0czHKa4qGVZ0O1FUWd+e/80=
+X-Google-Smtp-Source: ABdhPJz0OX6tX5Djvgz/x/V2SQPdQDpdcaDSPFTtdAjVwURPzcOQ1sZlYNWA8qY/i2cUpwYwILXpBg==
+X-Received: by 2002:a19:e041:: with SMTP id g1mr2742299lfj.70.1589451795238;
+ Thu, 14 May 2020 03:23:15 -0700 (PDT)
+Received: from saruman (91-155-214-58.elisa-laajakaista.fi. [91.155.214.58])
+ by smtp.gmail.com with ESMTPSA id k9sm1231222lja.52.2020.05.14.03.23.13
+ (version=TLS1_2 cipher=ECDHE-ECDSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 14 May 2020 03:23:14 -0700 (PDT)
+From: Felipe Balbi <balbi@kernel.org>
+To: Neil Armstrong <narmstrong@baylibre.com>, kishon@ti.com,
+ khilman@baylibre.com, martin.blumenstingl@googlemail.com
+Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
+In-Reply-To: <87369rfo7l.fsf@kernel.org>
+References: <20200324102030.31000-1-narmstrong@baylibre.com>
+ <87369rfo7l.fsf@kernel.org>
+Date: Thu, 14 May 2020 13:23:09 +0300
+Message-ID: <87r1vm4xyq.fsf@kernel.org>
 MIME-Version: 1.0
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-6-git-send-email-dillon.minfei@gmail.com>
- <CACRpkdbZoMDC-D12CByKJUZbu4shqixC=QrKwJUd8x=nyK7seQ@mail.gmail.com>
-In-Reply-To: <CACRpkdbZoMDC-D12CByKJUZbu4shqixC=QrKwJUd8x=nyK7seQ@mail.gmail.com>
-From: dillon min <dillon.minfei@gmail.com>
-Date: Thu, 14 May 2020 18:22:03 +0800
-Message-ID: <CAL9mu0LVsePqifEC+-FR+NxvuZT3UGpU86KhzaTqb7w_Px0z2g@mail.gmail.com>
-Subject: Re: [PATCH v3 5/5] drm/panel: Add ilitek ili9341 driver
-To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_032242_486456_D3130CFC 
-X-CRM114-Status: GOOD (  32.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_032317_091939_46DD96D4 
+X-CRM114-Status: GOOD (  14.07  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
+ provider [balbif[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,310 +98,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Dave Airlie <airlied@linux.ie>, Michael Turquette <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- linux-clk <linux-clk@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>, Daniel Vetter <daniel@ffwll.ch>,
- Sam Ravnborg <sam@ravnborg.org>, linux-stm32@st-md-mailman.stormreply.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: multipart/mixed; boundary="===============6882177197309502986=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Linus,
+--===============6882177197309502986==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha256; protocol="application/pgp-signature"
 
-Thanks for reviewing.
+--=-=-=
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
 
-On Thu, May 14, 2020 at 4:14 PM Linus Walleij <linus.walleij@linaro.org> wrote:
->
-> Hi Dillon,
->
-> thanks for your patch! Overall this looks like a good start.
->
-> On Tue, May 12, 2020 at 9:04 AM <dillon.minfei@gmail.com> wrote:
->
-> > #define ILI9341_SLEEP_OUT            0x11   /* Sleep out register */
->
-> This is not a register, also just use MIPI_DCS_EXIT_SLEEP_MODE
-> in the code.
->
-Yes, i will try to reuse MIPI_DCS_xxx.
+Felipe Balbi <balbi@kernel.org> writes:
 
-> > +#define ILI9341_DFC                  0xb6   /* Display Function Control
-> > +                                            * register
-> > +                                            */
+> Neil Armstrong <narmstrong@baylibre.com> writes:
 >
-> This commenting style doesn't work, either just put it after /* the define */
-> and don't care if the line gets a bit long and checkpatch complains,
-> or
+>> The USB support was initialy done with a set of PHYs and dwc3-of-simple
+>> because the architecture of the USB complex was not understood correctly
+>> at the time (and proper documentation was missing...).
+>>
+>> But with the G12A family, the USB complex was correctly understood and
+>> implemented correctly.
+>> But seems the G12A architecture was derived for the GXL USB architecture,
+>> with minor differences and looks we can share most of the USB DWC3 glue
+>> driver.
+>>
+>> This patchset refactors and adds callbacks to handle the architecture
+>> difference while keeping the main code shared.
+>>
+>> The main difference is that on GXL/GXM the USB2 PHY control registers
+>> are mixed with the PHY registers (we already handle correctly), and
+>> the GLUE registers are allmost (99%) the same as G12A.
+>>
+>> But, the GXL/GXM HW is buggy, here are the quirks :
+>> - for the DWC2 controller to reset correctly, the GLUE mux must be switc=
+hed
+>>   to peripheral when the DWC2 controlle probes. For now it's handled by =
+simply
+>>   switching to device when probing the subnodes, but it may be not enough
+>> - when manually switching from Host to Device when the USB port is not
+>>   populated (should not happen with proper Micro-USB/USB-C OTG switch), =
+it
+>>   makes the DWC3 to crash. The only way to avoid that is to use the Host
+>>   Disconnect bit to disconnect the DWC3 controller from the port, but we=
+ can't
+>>   recover the Host functionnality unless resetting the DWC3 controller.
+>>   This bit is set when only manual switch is done, and a warning is prin=
+ted
+>>   on manual switching.
+>>
+>> The patches 1-8 should be applied first, then either waiting the next re=
+lease
+>> or if the usb maintainer can provide us a stable tag, we can use it to m=
+erge
+>> the DT and bindings.
 >
-> /*
->  * Put it above the define like this
->  */
-> #define FOO 0x00
->
-Ok, will change this comments.
+> it's unclear to me if this series is ready to be merged. Can someone
+> confirm? If it is, can you resend with all reviewed by tags in place?
 
-> > +/**
-> > + * struct ili9341_config - the system specific ILI9341 configuration
->
-> Nice with this per-system config, it makes the driver easy to maintain
-> for new users.
->
-Yes, will try to move more system related configurations to this part,
-instead of hard code.
+Are we getting a v2 for this?
 
-> > +static int ili9341_dpi_init(struct ili9341 *ili)
-> > +{
-> > +       ili9341_command(ili, 0xca, 0xc3, 0x08, 0x50);
->
-> This stuff is a bit hard to understand, don't you think?
->
-> But given that register 0xCA seems undocumented I don't
-> know if there is anything more you can do, so it is OK
-> I suppose.
->
-> > +       ili9341_command(ili, ILI9341_POWERB, 0x00, 0xc1, 0x30);
->
-> This command is described in the manual  page 196.
-> Version: V1.11
-> Document No.: ILI9341_DS_V1.11.pdf
-> https://dflund.se/~triad/ILI9341_v1.11.pdf
->
-Yes, "ili9341_command(ili, 0xca, 0xc3, 0x08, 0x50);" i ported from st's sdk.
-will use ILI9341_XXX to replace these magic numbers
+=2D-=20
+balbi
 
-> And this goes for all the below commands. Please add some more defines
-> from the datasheet and have less magic numbers in the driver.
->
-> > +       ili9341_command(ili, ILI9341_POWER_SEQ, 0x64, 0x03, 0x12, 0x81);
-> > +       ili9341_command(ili, ILI9341_DTCA, 0x85, 0x00, 0x78);
-> > +       ili9341_command(ili, ILI9341_POWERA, 0x39, 0x2c, 0x00, 0x34, 0x02);
-> > +       ili9341_command(ili, ILI9341_PRC, 0x20);
-> > +       ili9341_command(ili, ILI9341_DTCB, 0x00, 0x00);
-> > +       ili9341_command(ili, ILI9341_FRC, 0x00, 0x1b);
-> > +       ili9341_command(ili, ILI9341_DFC, 0x0a, 0xa2);
-> > +       ili9341_command(ili, ILI9341_POWER1, 0x10);
-> > +       ili9341_command(ili, ILI9341_POWER2, 0x10);
-> > +       ili9341_command(ili, ILI9341_VCOM1, 0x45, 0x15);
-> > +       ili9341_command(ili, ILI9341_VCOM2, 0x90);
-> > +       ili9341_command(ili, ILI9341_MAC, 0xc8);
-> > +       ili9341_command(ili, ILI9341_3GAMMA_EN, 0x00);
-> > +       ili9341_command(ili, ILI9341_RGB_INTERFACE, 0xc2);
-> > +       ili9341_command(ili, ILI9341_DFC, 0x0a, 0xa7, 0x27, 0x04);
-> > +       ili9341_command(ili, ILI9341_COLUMN_ADDR, 0x00, 0x00, 0x00, 0xef);
-> > +       ili9341_command(ili, ILI9341_PAGE_ADDR, 0x00, 0x00, 0x01, 0x3f);
-> > +       ili9341_command(ili, ILI9341_INTERFACE, 0x01, 0x00, 0x06);
-> > +       if (ili->input == ILI9341_INPUT_PRGB_18_BITS)
-> > +               ili9341_command(ili, ILI9341_PIXEL_FORMAT, 0x66);
-> > +       else
-> > +               ili9341_command(ili, ILI9341_PIXEL_FORMAT, 0x56);
-> > +       ili9341_command(ili, ILI9341_GRAM);
-> > +       msleep(200);
->
-> I think some of the above should not be hard coded but should instead
-> be stored in fields in struct ili9341_config. I know it can be a bit
-> tedious but it makes things much more clear.
->
-Ok, will go deeper to find out some register configuration move to
-system config like rgb bus 16/18 bits
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> > +       ili9341_command(ili, ILI9341_GAMMA, 0x01);
-> > +       ili9341_command(ili, ILI9341_PGAMMA, 0x0f, 0x29, 0x24, 0x0c, 0x0e,
-> > +                                               0x09, 0x4e, 0x78, 0x3c, 0x09,
-> > +                                               0x13, 0x05, 0x17, 0x11, 0x00);
-> > +       ili9341_command(ili, ILI9341_NGAMMA, 0x00, 0x16, 0x1b, 0x04, 0x11,
-> > +                                               0x07, 0x31, 0x33, 0x42, 0x05,
-> > +                                               0x0c, 0x0a, 0x28, 0x2f, 0x0f);
->
-> This should definately be in ili9341_config, as it is a screen property.
->
-> In the long run I would like these panels to support setting gamma
-> from userspace etc but it is a big tedious work to get that right
-> so hard-coding a default per-variant is fine.
->
-ok, will refer to panel-ilitek-ili9322 and panel-novatek-nt35510 driver.
+-----BEGIN PGP SIGNATURE-----
 
-> You can check in e.g. panel-novatek-nt35510.c how I encoded
-> such sequences in per-variant data.
->
-> > +static int ili9341_dpi_power_off(struct ili9341 *ili)
-> > +{
-> > +       /* Disable power */
-> > +       if (!IS_ERR(ili->vcc))
-> > +               return regulator_disable(ili->vcc);
-> > +
-> > +       return 0;
-> > +}
->
-> Usually you should also assert RESET when disabling
-> power.
->
-ok
+iQIzBAEBCAAdFiEElLzh7wn96CXwjh2IzL64meEamQYFAl69HA4ACgkQzL64meEa
+mQY4DhAAtHTcNLDu5ri1XuAeABlYEcezvODzuPM7Xg0my7l1TAURKXzAe0LV/LSB
+9FU5hFcfAPUD7JSDmyGey9foVoFKo0ZxOvXLTXCW7AFHq5UyphcWAa5dW7kjtrI7
+uqJ9VYc6gdQ6a/lEJXTdEuq8lLBt88hJkU8OPjzedp82in9fGXZg0mmwDePj3yVE
+6KAnwJG+9qKZ/t06kNY2POoQpyFGnjOruj+9K4kG1R/RXGrU1YV1Cq6+GZp/DNoj
+Z81nw30hMBIFmKrxMl9bx+/hXAQUPV0C01txbCkdCGVTtp/L7GB3RXWgEljIyPPw
+KiE2yF12BFeuOB2egjAIWVztPxlzh0W19f/2bAQPEhlHrfcu83SJDAdEfMx/pe+w
+aFVJhdTZz+GeJ7K1Oame/ddtzbuPTyUbZFo4c0qASictw1dXGir88hOBeRrzpjJ0
+d7cmNieizTfV8EoF0/FKN1NuwIie/k/dZiejZ28lukE8pZ2RUXxuBrrncmHk+Hrp
+iHTOjXsXTYJgVU4OxXFk9Q+B0YYgvpiAtrAS3Hpn3UQMX+KYd1RMELFSYtBLUGCG
+TZ9WJPGijn2G7rmvDy0sJtxhLsRoE9tx7tvr6HG5btz2fMdZmTnK6cW1nyIoP8kP
+ijmeyb1OUfQTkFoBIZUIPi5pTkuuqScPtsu7LAF+nP7HjD/+VYk=
+=8p6e
+-----END PGP SIGNATURE-----
+--=-=-=--
 
-> > +/* This is the only mode listed for parallel RGB in the datasheet */
-> > +static const struct drm_display_mode rgb_240x320_mode = {
-> > +       .clock = 6100,
-> > +       .hdisplay = 240,
-> > +       .hsync_start = 240 + 10,
-> > +       .hsync_end = 240 + 10 + 10,
-> > +       .htotal = 240 + 10 + 10 + 20,
-> > +       .vdisplay = 320,
-> > +       .vsync_start = 320 + 4,
-> > +       .vsync_end = 320 + 4 + 2,
-> > +       .vtotal = 320 + 4 + 2 + 2,
-> > +       .vrefresh = 60,
-> > +       .flags = 0,
-> > +       .width_mm = 65,
-> > +       .height_mm = 50,
->
-> The width and height should certainly be om the ili9341_config
-> as it is a per-panel property. You can just fill in in in
-> the below .get_modes() function. Or assign the whole
-> mode as part of the ili9341_config if that is easier.
->
-ok, lcd timing part will move to ili9341 config
 
-> > +       return drm_panel_add(&ili->panel);
-> > +}
-> > +
-> > +
-> > +
->
-> Surplus whitespace here.
-ok, will delete it.
-
->
-> > +       mipi_dbi_command(dbi, MIPI_DCS_SET_DISPLAY_OFF);
-> > +
-> > +       mipi_dbi_command(dbi, ILI9341_POWERB, 0x00, 0xc1, 0x30);
-> > +       mipi_dbi_command(dbi, ILI9341_POWER_SEQ, 0x64, 0x03, 0x12, 0x81);
->
-> Some of these are just copies of the above init sequence, so it makes
-> even more sense to just have these settings stored in
-> ili9341_config.
-ok.
-
->
-> > +       mipi_dbi_command(dbi, ILI9341_DTCA, 0x85, 0x00, 0x78);
-> > +       mipi_dbi_command(dbi, ILI9341_POWERA, 0x39, 0x2c, 0x00, 0x34, 0x02);
-> > +       mipi_dbi_command(dbi, ILI9341_PRC, 0x20);
-> > +       mipi_dbi_command(dbi, ILI9341_DTCB, 0x00, 0x00);
-> > +
-> > +       /* Power Control */
-> > +       mipi_dbi_command(dbi, ILI9341_POWER1, 0x23);
-> > +       mipi_dbi_command(dbi, ILI9341_POWER2, 0x10);
-> > +       /* VCOM */
-> > +       mipi_dbi_command(dbi, ILI9341_VCOM1, 0x3e, 0x28);
-> > +       mipi_dbi_command(dbi, ILI9341_VCOM2, 0x86);
-> > +
-> > +       /* Memory Access Control */
-> > +       mipi_dbi_command(dbi, MIPI_DCS_SET_PIXEL_FORMAT,
-> > +                               MIPI_DCS_PIXEL_FMT_16BIT);
-> > +
-> > +       /* Frame Rate */
-> > +       mipi_dbi_command(dbi, ILI9341_FRC, 0x00, 0x1b);
-> > +
-> > +       /* Gamma */
-> > +       mipi_dbi_command(dbi, ILI9341_3GAMMA_EN, 0x00);
-> > +       mipi_dbi_command(dbi, MIPI_DCS_SET_GAMMA_CURVE, 0x01);
-> > +       mipi_dbi_command(dbi, ILI9341_PGAMMA,
-> > +                        0x0f, 0x31, 0x2b, 0x0c, 0x0e, 0x08, 0x4e, 0xf1,
-> > +                        0x37, 0x07, 0x10, 0x03, 0x0e, 0x09, 0x00);
-> > +       mipi_dbi_command(dbi, ILI9341_NGAMMA,
-> > +                        0x00, 0x0e, 0x14, 0x03, 0x11, 0x07, 0x31, 0xc1,
-> > +                        0x48, 0x08, 0x0f, 0x0c, 0x31, 0x36, 0x0f);
->
-> It seems to be copies of the stuff above, but why is there a different
-> gamma if you use DBI?
-for dbi interface, currently i just copy the code from tiny/ili9341.c.
-as so many boards use this driver now, like raspberry pi, etc
-i'm afraid it's will not work after modification. so, just leave the
-original code there.
-
->
-> I suspect only one of them is really needed and it is not even
-> necessary to set if up in two places.
->
-as i know, dbi interface use spi to transfer video data and register
-set to panel.
-but dpi use rgb bus transfer video data, spi set register, they are
-two different type for drm.
-i can't register two different interface into drm at the same time.
-so, i use two path.
-
-for code management, they have some common part, like register init.
-power on/off process. i will try to reuse most common functions. to make code
-easier to be understand.
-
-anther question:
-is there any panel driver have dbi & dpi or dpi & dsi supported? which
-i mean support
-two different panel interface in one driver.
-thanks
-
-> > +out_enable:
-> > +       switch (dbidev->rotation) {
-> > +       default:
-> > +               addr_mode = ILI9341_MADCTL_MX;
-> > +               break;> +out_enable:
-> > +       switch (dbidev->rotation) {
-> > +       default:
-> > +               addr_mode = ILI9341_MADCTL_MX;
-> > +               break;
-> > +       case 90:
-> > +               addr_mode = ILI9341_MADCTL_MV;
-> > +               break;
-> > +       case 180:
-> > +               addr_mode = ILI9341_MADCTL_MY;
-> > +               break;
-> > +       case 270:
-> > +               addr_mode = ILI9341_MADCTL_MV | ILI9341_MADCTL_MY |
-> > +                           ILI9341_MADCTL_MX;
-> > +               break;
-> > +       }
-> > +       addr_mode |= ILI9341_MADCTL_BGR;
-> > +       mipi_dbi_command(dbi, MIPI_DCS_SET_ADDRESS_MODE, addr_mode);
-> > +       mipi_dbi_enable_flush(dbidev, crtc_state, plane_state);
-> > +       DRM_DEBUG_KMS("initialized display serial interface\n");
-> > +out_exit:
-> > +       drm_dev_exit(idx);
-> > +}
-> > +
->
-> > +       case 90:
-> > +               addr_mode = ILI9341_MADCTL_MV;
-> > +               break;
-> > +       case 180:
-> > +               addr_mode = ILI9341_MADCTL_MY;
-> > +               break;
-> > +       case 270:
-> > +               addr_mode = ILI9341_MADCTL_MV | ILI9341_MADCTL_MY |
-> > +                           ILI9341_MADCTL_MX;
-> > +               break;
-> > +       }
-> > +       addr_mode |= ILI9341_MADCTL_BGR;
-> > +       mipi_dbi_command(dbi, MIPI_DCS_SET_ADDRESS_MODE, addr_mode);
->
-> Since you use MIPI_DCS_* define here, check if this applies
-> to more of the commands above so you don't need custom
-> defines for them. e.g.
-> ILI9341_SLEEP_OUT 0x11 = MIPI_DCS_EXIT_SLEEP_MODE
-> and that isn't even a register right, it is just a command?
-> (Noted in the beginning.)
->
-ok, will try to reuse MIPI_DCS_xxx
-
-> Yours,
-> Linus Walleij
+--===============6882177197309502986==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6882177197309502986==--
+
