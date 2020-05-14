@@ -2,77 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D7971D29FD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 10:25:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90B0C1D2A03
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 10:26:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=PrDxRLO94e1OJgF0cg+qRLzPE7vmNkOpOXF+4mSxhv4=; b=FAB
-	rEgBA4d+6EnHbgJMfbRp+sivzqBU5asILOeySIGkNgurRgoNAcyZ5Je4c5x+QoOtVfdBjpXN0wbFa
-	HMG4ncClPGhNAvQGV3lrA/lAR0ki72q9slHOipOF3gZlWMZvpczYiVHCtZpjucoxgEapGS29tQ7XP
-	HxDKaN/YlV+hG5mfsUWI5Eo7fuSOCi883HmsyJPS5zNK7siKjGCzQU+pC4wUE1Jm+KlTCNDUe4FjU
-	6cOBC85FdR+zaYLhuMuDhi+BP5ylAKsa9HcDze7ArWglb6uQ5CX/hVWKvCm+SY0Pe8P1sYL8VLqCP
-	9RW5DSuch3KBXb2+cbC6Y2cuH3P0MmQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=TBvYy2F7lMciFkQnLSoCuh4pnJlHQtrUk1sW/0hhclo=; b=Z+AYaN+OLT4LE9
+	xBOqbO0ayUWq3TtHHAXYWr/UrVQmrz1HfvM3dDdbxba9jniumI9drbrxwEIyiVnVop1ZiTMGV0Ad7
+	WPLIkYQi0oeTVgFEiVoqOMzUY5b21t4EP7LlKUsuakaegSAp/NLC9I/aek8sOZruKqrjK7FYOU18J
+	12P0UI9C1AD5Ixmc2/X6E2fc+nL79St/e7FvKc5LA0SS1htyGHb5e3TtDpsIt8YzIjlUeb/CRZGzN
+	K3N+6w6BI/sjgt+pNgr35Xp1Jadk2+ZqfMa8YMMa3K9fpA0Pgp0OE8UG26yEkGgPSKmZV/9f1UcTj
+	J7Q2Xjw7OB/m1fdCJ3Tg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ9BP-0000dz-JO; Thu, 14 May 2020 08:25:35 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1jZ9CO-0000xf-Ps; Thu, 14 May 2020 08:26:36 +0000
+Received: from mail-lj1-x234.google.com ([2a00:1450:4864:20::234])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ9BG-0000dS-74
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 08:25:27 +0000
-Received: by mail-wr1-x442.google.com with SMTP id e16so2695451wra.7
+ id 1jZ9CG-0000x2-Bi
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 08:26:29 +0000
+Received: by mail-lj1-x234.google.com with SMTP id g1so2508152ljk.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 01:25:26 -0700 (PDT)
+ Thu, 14 May 2020 01:26:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=ZbgmSmFGHrTn1PgWbNozA+/Dhn/9LaUmkwFWI+wUR/I=;
- b=wO+FIfxEhhg0FIndKHw5mC+KR9nIXPmVUmFr2o2AT90th3322mJsYGDc1GHqdR3wRM
- E+4l8zjkhAWR5GPOxqEhB8oL1MWbe6eSkASr0dNjKZnYCH1PgGdG7qtIfmm049ekRJv8
- AYDH42N3eHwKyuwo/GZLQkOHG1KFXCto4mVVLNts7bpJHjUQhA9vXwidawYgBCeVQzQR
- b+Te5bSfQMmVnBj6z9+2tg1kmWg+bKOEle5xugMRZ5ubVI8G98jORAuwo2lqpR8HHMMH
- Eqk2se46TEeIAHzg0WD1p9c9uWi/3Ne7Twp7F8sfmTERRvOqj5Clw+ung56SMPs9tCrq
- mA9g==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=N3phpM5YkfSN9Y22XUbTQgtMEkMD9DwBcpg7oirfCws=;
+ b=z7yudwDjMr2DXZCRVZRmUNZ9xVRuVKT5e5qcwTFzKCY+2pl3XGwhoItFUz0Qusjps9
+ WyvGv2QiCa/AlTJ7PquBCwxloSb9OH4XyYfkCL/8mcATRnXFwxHmrH24KKOGDuV84GIU
+ HG4RkZCcEW+y/Dj94fJc+oGgTLiv8rS4i/Hkp65TPMV/BuiU7BbFae2n+Wfz1T8vQnvJ
+ fosgAF+twH+OENs9A6rqkzS6Y1/8u2nO0/jIsidJHPP9JAYTJjT+5w+25WVGM9DfcxN+
+ V8OV9JgPPNrmHx/ikLvegdQctTowQ0jBQsFWGdrc8hf+aCN/hE4X0V8DNfdu4vE4Ph0N
+ Z+XQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=ZbgmSmFGHrTn1PgWbNozA+/Dhn/9LaUmkwFWI+wUR/I=;
- b=m9cMUznw7mfToUZ4pDrKl4xBFM/JgylRrYoawBJ0IhGopCE2eDXo6reVzbErsvN47n
- Q7Bp+aReFrE1fgpmpceOnuVsQoZ/5UAKNJMyu6xGgqP/BQdfl5QDjoBxV21LGqkBTRNp
- IS8L/SJRQzEkx2h+tttVJkYxgef/C3owAVdzMAoyzb4/U40E1z4lHXU2wT6D75SBH1Kk
- P9Bw/HkKhpI6IoH1YcF/3hSWogwV8W+WhPTlSU3un8XYQuoDIW2MXckWYnBcWIrX4DQ5
- WbzL0w4zru7F6QrfPlNKXZ55ncf5SEAHZbTLi1Fc5ssO9TYbVa7hHavbgRB575DcCvDo
- qOyg==
-X-Gm-Message-State: AOAM530uLQOvEr82ROZw1TiV5fjrlzPtS1wZEGFt44HAWjoETbHXOUP3
- 3iPEhPOXUW35IZDxVHvWBPAkA2Eab/k3iw==
-X-Google-Smtp-Source: ABdhPJzxyGw1QivQbkc+cA1lizk0D/rln2dXXvS9C0IXtdTX5Z+I4vGLO+GUrVb89lJquwnukUo1jQ==
-X-Received: by 2002:a05:6000:1c5:: with SMTP id
- t5mr4344696wrx.229.1589444725034; 
- Thu, 14 May 2020 01:25:25 -0700 (PDT)
-Received: from lmecxl0524.lme.st.com
- (2a01cb058702ff00bc4b798f4f30d41e.ipv6.abo.wanadoo.fr.
- [2a01:cb05:8702:ff00:bc4b:798f:4f30:d41e])
- by smtp.gmail.com with ESMTPSA id w15sm13739673wmi.35.2020.05.14.01.25.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 14 May 2020 01:25:24 -0700 (PDT)
-From: Etienne Carriere <etienne.carriere@linaro.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] firmware: arm_scmi: fix SMCCC_RET_NOT_SUPPORTED management
-Date: Thu, 14 May 2020 10:24:28 +0200
-Message-Id: <20200514082428.27864-1-etienne.carriere@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=N3phpM5YkfSN9Y22XUbTQgtMEkMD9DwBcpg7oirfCws=;
+ b=BYtIkekNYOSOMkt5paTk8M+tRkw8gcdvHgsW4gpUTIz0pSJeaPgYZS5tWB3Lx4t/ld
+ Bc+mE+IUVYUsPn3ZKIMSasFgWMP+BOK3Tpl6wDm9ViN9Rt+nnGfPqFt7UlHK0urTqDjk
+ T62IcS7rsoBvEEnrBMRF+0taQHyak1TFAIRMf2giXxtB3L9W8lHEhypsvCsCb3eEfOlv
+ cmo0jEppiZEYC7hoZfU3tJXJoilSLTgYaUsmwNbajSRATOrsUOfeh116mqK9uPBVLmHX
+ mrUYHB11S+m7i89QhfubQhrSmLE4Mq0URfiJ2Nj1Izy5khZkP9Wfhkf8V7lW6l66ldMB
+ aP4Q==
+X-Gm-Message-State: AOAM5333H8ZDdy6MYhruGxzkWHXNDZwlMqYuwM8yCpFVXesn2qDBYRfX
+ 0IJO++0eTo4yJOuogXlVyZ6f+Bex3KtU4xCQ/uNtUg==
+X-Google-Smtp-Source: ABdhPJyu50COWpwddrm33sTCzSmiLPVui++vaQ4U72EfDUPz+0onMO02ezw5nSaAa+9khHe7GnCSUOkTGjYGvZ0FjRg=
+X-Received: by 2002:a2e:531e:: with SMTP id h30mr1138947ljb.168.1589444785904; 
+ Thu, 14 May 2020 01:26:25 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAL_JsqK5Gxf1xuNkttzpndYU-5ncpw0E_EiE6Uv3HMdpqRZQjQ@mail.gmail.com>
+In-Reply-To: <CAL_JsqK5Gxf1xuNkttzpndYU-5ncpw0E_EiE6Uv3HMdpqRZQjQ@mail.gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 14 May 2020 10:26:14 +0200
+Message-ID: <CACRpkdbr68mCWT9KxGPA16LU3kZRnE3kf-puCn0QZVZxZEC2BQ@mail.gmail.com>
+Subject: Re: [GIT PULL v2] VExpress modularization
+To: Rob Herring <robherring2@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_012526_255961_7EDF2ADB 
-X-CRM114-Status: GOOD (  12.12  )
+X-CRM114-CacheID: sfid-20200514_012628_403908_247341C6 
+X-CRM114-Status: UNSURE (   6.76  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:234 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,39 +91,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: etienne.carriere@linaro.org, linux-arm-kernel@lists.infradead.org,
- sudeep.holla@arm.com
-MIME-Version: 1.0
+Cc: Stephen Boyd <sboyd@kernel.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, SoC Team <soc@kernel.org>,
+ Sudeep Holla <Sudeep.Holla@arm.com>, Lee Jones <lee.jones@linaro.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix management of argument a0 output value of arm_smccc_1_1_invoke() that
-should consider only SMCCC_RET_NOT_SUPPORTED as reporting an unsupported
-function ID as correctly stated in the inline comment.
+On Wed, May 13, 2020 at 7:49 PM Rob Herring <robherring2@gmail.com> wrote:
 
-Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
----
- drivers/firmware/arm_scmi/smc.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+> Sudeep suggested I just send this series direct to you, so please pull.
 
-diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
-index 49bc4b0e8428..637ad439545f 100644
---- a/drivers/firmware/arm_scmi/smc.c
-+++ b/drivers/firmware/arm_scmi/smc.c
-@@ -115,7 +115,7 @@ static int smc_send_message(struct scmi_chan_info *cinfo,
- 	mutex_unlock(&scmi_info->shmem_lock);
- 
- 	/* Only SMCCC_RET_NOT_SUPPORTED is valid error code */
--	if (res.a0)
-+	if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
- 		return -EOPNOTSUPP;
- 	return 0;
- }
--- 
-2.17.1
+The series:
+Acked-by: Linus Walleij <linus.walleij@linaro.org>
 
+Nice work Rob!
+
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
