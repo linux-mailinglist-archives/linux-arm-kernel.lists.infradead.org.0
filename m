@@ -2,65 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 070081D2891
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:14:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71C281D289E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 09:16:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u9uZkMNjxil0JBq2EJOKfoaeQqzu/0XQ/XY+4OV3PK4=; b=MgXKVsrgF60Ahc
-	ad6ihbIiAfac3ydZa1CGhGSXDvBtU6LnBudJXxIVkSM64YqLBF2mooNGY+bAYH+/YK6L8caejXopU
-	MDj8aNjuAaJUFkaP+ORjez8D6wxaShpkDBe4nqp9Q80yc3J1c91SfAnWM5DQU5nixD1wwWTuHbsi0
-	cVaK8wnutAumDdVZvqBWEQwB4Y6NKFiWJHR9UW2vBVGLS1CekdBa4s7D2oR63Wx6v9798np7YPGvV
-	7Q443ODM83xkmjj0V9lRue7fWp4VeLF2qio1W5H/KimQ90oGcsX9ZJ6ZzkXQYk5Tvul1QVRCmYPyG
-	tqUoha7Yth5wBcR5Bf4Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FsrNTH66pY/X+72Tbx3RUSGisQa0DZfnsV4e0QV76kI=; b=o/mHzJQ29+9DK7
+	hMYgAafnW7S9jvhwRiKB3FA0mjvZCXr1P1xZ+d9JCZwkcJoDf+jdTOEMX2jE3tLDzkgKv+zMJ5tQI
+	X7p3YAXHZR9hj4qUlbnw1HjLMUTUxfAtIA6h9wJ9F+HaJTWIQd9j4xqZ49lwA8XnHgCrNKY0pfTtj
+	6YtBAAcpo9BL/zsNR0+mxWyfGxR5Kol6Yaibiz5yUDrAXZAJZu/Y3hqIUfJtOwX47ApbfWf8tArzi
+	12ZV5vv2yJigrtyILXp6o5HZBJWnIEQf5hNBG1+7ANo8DlMXf1K/LN5h/Aufqf/H+u94DnIyvq9Fq
+	/eYL+CySvatPN7YRYFhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ84G-0001LE-M5; Thu, 14 May 2020 07:14:08 +0000
-Received: from mga17.intel.com ([192.55.52.151])
+	id 1jZ86l-0005eP-JB; Thu, 14 May 2020 07:16:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ848-0001Kx-QV
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:14:02 +0000
-IronPort-SDR: qr7HWEewpIFRZYQLsfxT+yAvSiOmZry4VtGnfGBDxsuebHTbxzIJELtyNL8FP1O5kGPxjTgeoy
- LdOD5baUYxog==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga004.jf.intel.com ([10.7.209.38])
- by fmsmga107.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 14 May 2020 00:13:59 -0700
-IronPort-SDR: B8GN3ujyJsNd+GVllfR0SGmlkyeu+q+iu3u6g/fvRd987brTU8AfacOaTrWPIJ0qw0BxzbQD72
- MDBAg7NslIUg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,390,1583222400"; d="scan'208";a="409970557"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by orsmga004.jf.intel.com with ESMTP; 14 May 2020 00:13:57 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1jZ845-000IxI-5u; Thu, 14 May 2020 15:13:57 +0800
-Date: Thu, 14 May 2020 15:13:45 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: [arm-soc:for-next] BUILD SUCCESS
- 39572dd33b780e49077a0db038e4e38604719094
-Message-ID: <5ebcefa9.5NziSmWpIpJdnCxj%lkp@intel.com>
-User-Agent: Heirloom mailx 12.5 6/20/10
+ id 1jZ86d-0005du-GD
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 07:16:37 +0000
+Received: from localhost (83-86-89-107.cable.dynamic.v4.ziggo.nl
+ [83.86.89.107])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 80546206B6;
+ Thu, 14 May 2020 07:16:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589440594;
+ bh=x6XY+w06HhJq6OnCryR2C8r+d8634pKZTzl7OEtJ84I=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=fsVHPsSugeuQaqh74KM3vTh5YlMixAmucxuZV15thPoJJMrucj9GTrX+4SfuldnhB
+ 9l1LHA1eD+XBDjopMaSSsjMf2YIDC55sDJofhKonyQwyNCXX2L9+6xLEwnVOYrkmJu
+ HPyLWUmcgMwI4jj/qfiwZg1D0JFjzHw6/eb6nNR8=
+Date: Thu, 14 May 2020 09:16:31 +0200
+From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+To: Emil Velikov <emil.l.velikov@gmail.com>
+Subject: Re: [PATCH v2 00/10] drivers, provide a way to add sysfs groups easily
+Message-ID: <20200514071631.GA1566388@kroah.com>
+References: <20190731124349.4474-1-gregkh@linuxfoundation.org>
+ <20190731131045.GB147138@dtor-ws>
+ <20190802104633.GA14823@kroah.com>
+ <CACvgo52+Uqx4GJFwadJoFzzt5EMc69HcW-+K9uxv9t25TtSDBg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CACvgo52+Uqx4GJFwadJoFzzt5EMc69HcW-+K9uxv9t25TtSDBg@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_001400_869624_4302F6CD 
-X-CRM114-Status: UNSURE (   6.51  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.5 (/)
+X-CRM114-CacheID: sfid-20200514_001635_590115_7EA80D4A 
+X-CRM114-Status: GOOD (  26.62  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.5 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.151 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.8 LONGWORDS              Long string of long words
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,198 +75,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: platform-driver-x86@vger.kernel.org,
+ linux-fbdev <linux-fbdev@vger.kernel.org>, x86@kernel.org,
+ "H. Peter Anvin" <hpa@zytor.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "Linux-Kernel@Vger. Kernel. Org" <linux-kernel@vger.kernel.org>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Tony Prisk <linux@prisktech.co.nz>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>,
+ Florian Fainelli <f.fainelli@gmail.com>, Borislav Petkov <bp@alien8.de>,
+ linux-input@vger.kernel.org, Darren Hart <dvhart@infradead.org>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, LAKML <linux-arm-kernel@lists.infradead.org>,
+ Richard Gong <richard.gong@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-tree/branch: https://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git  for-next
-branch HEAD: 39572dd33b780e49077a0db038e4e38604719094  arm64: defconfig: add MEDIA_PLATFORM_SUPPORT
+On Wed, May 13, 2020 at 11:18:15PM +0100, Emil Velikov wrote:
+> Hi Greg,
+> 
+> On Fri, 2 Aug 2019 at 11:46, Greg Kroah-Hartman
+> <gregkh@linuxfoundation.org> wrote:
+> 
+> >
+> > I have now done this with patch 1/10.  Here's the pull info if any
+> > subsystem maintainer wants to suck this into their tree to provide the
+> > ability for drivers to add/remove attribute groups easily.
+> >
+> > This is part of my driver-core tree now, and will go to Linus for
+> > 5.4-rc1, along with a few platform drivers that have been acked by their
+> > various subsystem maintainers that convert them to use this new
+> > functionality.
+> >
+> > If anyone has any questions about this, please let me know.
+> >
+> > thanks,
+> >
+> > greg k-h
+> >
+> > -------------------
+> >
+> > The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+> >
+> >   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+> >
+> > are available in the Git repository at:
+> >
+> >   git://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git tags/dev_groups_all_drivers
+> >
+> > for you to fetch changes up to 23b6904442d08b7dbed7622ed33b236d41a3aa8b:
+> >
+> >   driver core: add dev_groups to all drivers (2019-08-02 12:37:53 +0200)
+> >
+> > ----------------------------------------------------------------
+> > dev_groups added to struct driver
+> >
+> > Persistent tag for others to pull this branch from
+> >
+> > This is the first patch in a longer series that adds the ability for the
+> > driver core to create and remove a list of attribute groups
+> > automatically when the device is bound/unbound from a specific driver.
+> >
+> > See:
+> >         https://lore.kernel.org/r/20190731124349.4474-2-gregkh@linuxfoundation.org
+> > for details on this patch, and examples of how to use it in other
+> > drivers.
+> >
+> > Signed-off-by: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+> >
+> > ----------------------------------------------------------------
+> > Dmitry Torokhov (1):
+> >       driver core: add dev_groups to all drivers
+> >
+> >  drivers/base/dd.c      | 14 ++++++++++++++
+> >  include/linux/device.h |  3 +++
+> >  2 files changed, 17 insertions(+)
+> > _______________________________________________
+> 
+> Was planning to re-spin DRM a series which uses .dev_groups, although
+> I cannot see the core patch.
+> Did the it get reverted or simply fell though the cracks?
 
-elapsed time: 483m
+Nope, it's in there:
+	23b6904442d0 ("driver core: add dev_groups to all drivers")
+which showed up in the 5.4 kernel release.
 
-configs tested: 171
-configs skipped: 54
+Lots of other subsystems have already been converted to use this, do you
+not see it in your tree?
 
-The following configs have been built successfully.
-More configs may be tested in the coming days.
+thanks,
 
-arm                                 defconfig
-arm                              allyesconfig
-arm                              allmodconfig
-arm64                            allyesconfig
-arm64                               defconfig
-arm64                            allmodconfig
-arm64                             allnoconfig
-arm                               allnoconfig
-sparc                            allyesconfig
-m68k                             allyesconfig
-h8300                     edosk2674_defconfig
-mips                     decstation_defconfig
-sh                          rsk7201_defconfig
-sh                               alldefconfig
-arm                            xcep_defconfig
-arm                         lubbock_defconfig
-m68k                       m5275evb_defconfig
-mips                        bcm63xx_defconfig
-mips                         db1xxx_defconfig
-mips                      malta_kvm_defconfig
-sh                          sdk7786_defconfig
-arm                            hisi_defconfig
-arm                          exynos_defconfig
-arm                            mps2_defconfig
-powerpc                  mpc866_ads_defconfig
-arm                       cns3420vb_defconfig
-mips                           mtx1_defconfig
-riscv                    nommu_virt_defconfig
-mips                        nlm_xlr_defconfig
-arm                         s3c2410_defconfig
-powerpc                      chrp32_defconfig
-arm                     eseries_pxa_defconfig
-xtensa                    xip_kc705_defconfig
-arm                           h3600_defconfig
-arm                         nhk8815_defconfig
-nios2                            alldefconfig
-arm                         cm_x2xx_defconfig
-arm                          pxa910_defconfig
-sh                            shmin_defconfig
-m68k                       m5208evb_defconfig
-arm                          prima2_defconfig
-arm                         mv78xx0_defconfig
-mips                      pic32mzda_defconfig
-mips                  mips_paravirt_defconfig
-arm                         orion5x_defconfig
-riscv                          rv32_defconfig
-powerpc                      ppc44x_defconfig
-mips                     loongson1b_defconfig
-arm                       aspeed_g5_defconfig
-sh                            migor_defconfig
-arm                         at91_dt_defconfig
-sh                           se7724_defconfig
-arc                             nps_defconfig
-arm                           sama5_defconfig
-sh                        sh7785lcr_defconfig
-mips                      fuloong2e_defconfig
-m68k                          atari_defconfig
-m68k                          sun3x_defconfig
-mips                        jmr3927_defconfig
-arm                        cerfcube_defconfig
-ia64                         bigsur_defconfig
-sh                          rsk7264_defconfig
-m68k                        m5407c3_defconfig
-sh                ecovec24-romimage_defconfig
-sh                            titan_defconfig
-i386                             allyesconfig
-i386                                defconfig
-i386                              debian-10.3
-i386                              allnoconfig
-ia64                             allmodconfig
-ia64                                defconfig
-ia64                              allnoconfig
-ia64                             allyesconfig
-m68k                             allmodconfig
-m68k                              allnoconfig
-m68k                           sun3_defconfig
-m68k                                defconfig
-nios2                               defconfig
-nios2                            allyesconfig
-openrisc                            defconfig
-c6x                              allyesconfig
-c6x                               allnoconfig
-openrisc                         allyesconfig
-nds32                               defconfig
-nds32                             allnoconfig
-csky                             allyesconfig
-csky                                defconfig
-alpha                               defconfig
-alpha                            allyesconfig
-xtensa                           allyesconfig
-h8300                            allyesconfig
-h8300                            allmodconfig
-xtensa                              defconfig
-arc                                 defconfig
-arc                              allyesconfig
-sh                               allmodconfig
-sh                                allnoconfig
-microblaze                        allnoconfig
-mips                             allyesconfig
-mips                              allnoconfig
-mips                             allmodconfig
-parisc                            allnoconfig
-parisc                              defconfig
-parisc                           allyesconfig
-parisc                           allmodconfig
-powerpc                             defconfig
-powerpc                          allyesconfig
-powerpc                          rhel-kconfig
-powerpc                          allmodconfig
-powerpc                           allnoconfig
-i386                 randconfig-a006-20200514
-i386                 randconfig-a005-20200514
-i386                 randconfig-a003-20200514
-i386                 randconfig-a001-20200514
-i386                 randconfig-a004-20200514
-i386                 randconfig-a002-20200514
-i386                 randconfig-a006-20200513
-i386                 randconfig-a005-20200513
-i386                 randconfig-a003-20200513
-i386                 randconfig-a001-20200513
-i386                 randconfig-a004-20200513
-i386                 randconfig-a002-20200513
-x86_64               randconfig-a012-20200514
-x86_64               randconfig-a016-20200514
-x86_64               randconfig-a015-20200514
-x86_64               randconfig-a013-20200514
-x86_64               randconfig-a014-20200514
-x86_64               randconfig-a011-20200514
-i386                 randconfig-a012-20200513
-i386                 randconfig-a016-20200513
-i386                 randconfig-a014-20200513
-i386                 randconfig-a011-20200513
-i386                 randconfig-a013-20200513
-i386                 randconfig-a015-20200513
-i386                 randconfig-a012-20200514
-i386                 randconfig-a016-20200514
-i386                 randconfig-a014-20200514
-i386                 randconfig-a011-20200514
-i386                 randconfig-a013-20200514
-i386                 randconfig-a015-20200514
-x86_64               randconfig-a006-20200513
-x86_64               randconfig-a005-20200513
-x86_64               randconfig-a003-20200513
-x86_64               randconfig-a004-20200513
-x86_64               randconfig-a001-20200513
-x86_64               randconfig-a002-20200513
-riscv                            allyesconfig
-riscv                             allnoconfig
-riscv                               defconfig
-riscv                            allmodconfig
-s390                             allyesconfig
-s390                              allnoconfig
-s390                             allmodconfig
-s390                                defconfig
-x86_64                              defconfig
-sparc                               defconfig
-sparc64                             defconfig
-sparc64                           allnoconfig
-sparc64                          allyesconfig
-sparc64                          allmodconfig
-um                               allmodconfig
-um                                allnoconfig
-um                               allyesconfig
-um                                  defconfig
-x86_64                                   rhel
-x86_64                         rhel-7.2-clear
-x86_64                                    lkp
-x86_64                              fedora-25
-x86_64                                  kexec
-x86_64                               rhel-7.6
-x86_64                    rhel-7.6-kselftests
-
----
-0-DAY CI Kernel Test Service, Intel Corporation
-https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+greg k-h
 
 _______________________________________________
 linux-arm-kernel mailing list
