@@ -2,80 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 265271D2838
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 08:53:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 689BA1D2836
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 08:53:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ySWwjOKv4cPiHUwTUJK87bXlNimNFbVWMnVfmjSB2Wk=; b=kbRGHrgmtEH/1I
-	MLV/3gyoeAT+4NVNXsLghSZOL/atasILw2/F/b5de5YSAhZiIr6+AOqiMaA5iiV6+lIRdVVymrkjl
-	6elxdabdqNzglrfVPyYS42B6XlnwdXgYijqqaj1/E1cSwhNQFT280VviqHZ8REbHFJvGU6YQoba6/
-	2akB+Ymuet9LE2Vrjoilg+4xMotxqsexlO7INa4vVHiFNGFTkiO83x4FofuJMx2Zfu/wowocAd2bT
-	8GOfcxwI1ZUwEWDtRy6gVUFPibNTlrJMz2fJMx8VsCQZFY0dhOgkAlIUBZTromlXLTTgBUM0PDTlv
-	+IvcZxf/NUFAJ0yTxYVA==;
+	List-Owner; bh=uBvcXQZfPTTNidSchgRVEnJ8T4j7TAo+1jISjeTgvDI=; b=YUJe4OUvP/zzwi
+	og+BDAr6QyxJdWk2J0LQao9nT7y1E+F+uJj671EVahr7WiNKsMGGhUAiG6SlDW7k7SWnZsSRFImb5
+	EC/Rcur0u+lyINwygqb46NIZJQ7Eb2vPcXWefQbrX34NQLFhHdDtDas+sOwU0lE4UEYVYq5+/meX4
+	zWtCrkHHzsqDIxMiLXASMWQiA7Va+T2MrSWtIe9gsOrqMVTU5auPsfq3tzfqZga/ZbZGA4tnzPLNt
+	HVFmiFtQXZpPGPXjrzrbe+bVg/Te5r5hY9Ta8fV6n4bqpT3VuFNUJC21WoP35zuIQlpQA8bodeclc
+	wtNcXQ1R37G9OhI+nEig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ7kO-000510-LA; Thu, 14 May 2020 06:53:36 +0000
-Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
+	id 1jZ7k7-0004q1-4c; Thu, 14 May 2020 06:53:19 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ7k2-0004q0-1O
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 06:53:16 +0000
-Received: by mail-vk1-xa41.google.com with SMTP id v192so503214vkd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 23:53:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=verdurent-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AD73/gyPw537Xp1vDJOYvLHr7JMtBDUrFsijP0WuRks=;
- b=RdSLSskx2Wvw3alRl86UnDw5dnN1+ZHo+jEuOiDqNYvb3EfRrfuQ1fjHd8pEofVcmx
- OSOsg5Ki+jgXdahzTq8BYmydYLkEp/D/1CWEiD9WIoLB/oyMT0/XdOe73UgI9Xo/PX8Z
- vAsKTrb1XOhLWFCweUDfv5clUyY9/Ct0OqoS4jylDHfwnX2dZaBf96hPr9UjJyc9qJ54
- LfhUMigof8LCnYdiDSe3krEkaZ0cdi5WNh7X76KkQjTeQbosgpRBGY0UM/FYTbyUC8gZ
- fAmJrAfp1zGCiCU5/M/YWEfBTBFrgSdaXqABtBbjTfwTGLLBBjxmcCGYThD0EubKLklL
- Y/WQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AD73/gyPw537Xp1vDJOYvLHr7JMtBDUrFsijP0WuRks=;
- b=oqiKZa3adDKQOlZvY4ahcscAnSnvYjzkYrUVvIRzS6feQRsk/O6pMKxeVCL/PltG26
- 8StW2pVUDvDpVbL6lUmjiRkT5Bw6WcCwM/16S1f1Iqf2ZTk2/6BUA/OazHYIMJIw6qVP
- Gbx+jYE/7GjZ27Sg4vVmZIpu+8HAqxsUwzq91oKIBn+p+3Yiu/1vuJmDpQfAU2uS++4J
- sYZyme22fnfb1+oiom9DRx/BYZtV3sFbJvLOkDoDH+9bsPxHtLLEW+NJHNxARcsR/iLN
- 30fAleT9iIn6IPIS6QW0JygUIv4dNp9sE6JTnOa9Tnh+gi4nX9HFAMizy0Hr+PUveAXX
- FPIQ==
-X-Gm-Message-State: AOAM531HL0o3A0PdrMr0ksC94Fq3aRKE0lAAPVVhF8WhlVs+45Cen0FW
- yGHphdy0dMkRSpQ2MDp+Q/wQtas41TgQ4sT/Tg1uiw==
-X-Google-Smtp-Source: ABdhPJwqOdHWX9G/Vc1PEWvZMXQ69dsTzV+tAJwC+UvjMCX5pJg7UnTD2qxWptjx7wEK5anGtRzdU/mrdZoXOnfLCtw=
-X-Received: by 2002:a1f:a786:: with SMTP id q128mr2448341vke.86.1589439192297; 
- Wed, 13 May 2020 23:53:12 -0700 (PDT)
+ id 1jZ7jy-0004pT-Dx; Thu, 14 May 2020 06:53:11 +0000
+X-UUID: 7befcf9a470443b0b89bf31fcf6df3b0-20200513
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=3KesiILI1kxdXuxYFJLvOe2N5zt5fySbHaeCUFW3ySw=; 
+ b=FeAcylxcmvbJb8uonYacGncisTg9hEa9QZdt9A87BRSDzjrE2bIWI5NX6VqLQRJ8x/gKKXvyxFmqlgHFppgx5vnKnpbFj7wTzhnzt5qP8J5SCEjpvmyb3/Kbiv6OHpuZbsvLCvpSuJjrauAEUcxtpij97UyuKfEcSUEua29JPu8=;
+X-UUID: 7befcf9a470443b0b89bf31fcf6df3b0-20200513
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <michael.kao@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 156385679; Wed, 13 May 2020 22:53:05 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Wed, 13 May 2020 23:53:01 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 14 May 2020 14:53:01 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Thu, 14 May 2020 14:53:01 +0800
+Message-ID: <1589439182.11120.1.camel@mtksdccf07>
+Subject: Re: [v4,7/7] thermal: mediatek: use spinlock to protect PTPCORESEL
+From: Michael Kao <michael.kao@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Thu, 14 May 2020 14:53:02 +0800
+In-Reply-To: <20200323121537.22697-8-michael.kao@mediatek.com>
+References: <20200323121537.22697-1-michael.kao@mediatek.com>
+ <20200323121537.22697-8-michael.kao@mediatek.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-References: <20200514062836.190194-1-vkoul@kernel.org>
-In-Reply-To: <20200514062836.190194-1-vkoul@kernel.org>
-From: Amit Kucheria <amit.kucheria@verdurent.com>
-Date: Thu, 14 May 2020 12:22:33 +0530
-Message-ID: <CAHLCerN_pxkqJojJLL5ztbYCeFZ9Mco6oM-=0mdmh5iSydxrUg@mail.gmail.com>
-Subject: Re: [PATCH] net: stmmac: fix num_por initialization
-To: Vinod Koul <vkoul@kernel.org>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_235314_169232_E0DBCCF4 
-X-CRM114-Status: GOOD (  17.31  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200513_235310_475718_424B8FCE 
+X-CRM114-Status: GOOD (  14.76  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,104 +83,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rahul Ankushrao Kawadgave <rahulak@qti.qualcomm.com>,
- Alexandre Torgue <alexandre.torgue@st.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- linux-stm32@st-md-mailman.stormreply.com, LKML <linux-kernel@vger.kernel.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jose Abreu <joabreu@synopsys.com>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- netdev@vger.kernel.org, Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>,
- lakml <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream@mediatek.com, linux-pm@vger.kernel.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>, linux-kernel@vger.kernel.org,
+ Eduardo Valentin <edubezval@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, hsinyi@chromium.org,
+ Zhang Rui <rui.zhang@intel.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 11:59 AM Vinod Koul <vkoul@kernel.org> wrote:
->
-> Driver missed initializing num_por which is por values that driver
-
-Nit: s/is/is one of the/ ?
-
-> configures to hardware. In order to get this values, add a new structure
-
-Nit: s/this/these
-
-> ethqos_emac_driver_data which holds por and num_por values and populate
-> that in driver probe.
->
-> Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
-> Reported-by: Rahul Ankushrao Kawadgave <rahulak@qti.qualcomm.com>
-> Signed-off-by: Vinod Koul <vkoul@kernel.org>
-
-Otherwise,
-
-Reviewed-by: Amit Kucheria <amit.kucheria@linaro.org>
-
+On Mon, 2020-03-23 at 20:15 +0800, Michael Kao wrote:
+> From: "michael.kao" <michael.kao@mediatek.com>
+> 
+> The driver of thermal and svs will use the
+> same register for the project which should select
+> bank before reading sensor value.
+> 
+> Signed-off-by: Michael Kao <michael.kao@mediatek.com>
 > ---
->  .../ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c | 17 +++++++++++++++--
->  1 file changed, 15 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> index e0a5fe83d8e0..bfc4a92f1d92 100644
-> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-qcom-ethqos.c
-> @@ -75,6 +75,11 @@ struct ethqos_emac_por {
->         unsigned int value;
->  };
->
-> +struct ethqos_emac_driver_data {
-> +       const struct ethqos_emac_por *por;
-> +       unsigned int num_por;
-> +};
-> +
->  struct qcom_ethqos {
->         struct platform_device *pdev;
->         void __iomem *rgmii_base;
-> @@ -171,6 +176,11 @@ static const struct ethqos_emac_por emac_v2_3_0_por[] = {
->         { .offset = RGMII_IO_MACRO_CONFIG2,     .value = 0x00002060 },
->  };
->
-> +static const struct ethqos_emac_driver_data emac_v2_3_0_data = {
-> +       .por = emac_v2_3_0_por,
-> +       .num_por = ARRAY_SIZE(emac_v2_3_0_por),
-> +};
-> +
->  static int ethqos_dll_configure(struct qcom_ethqos *ethqos)
->  {
->         unsigned int val;
-> @@ -442,6 +452,7 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
->         struct device_node *np = pdev->dev.of_node;
->         struct plat_stmmacenet_data *plat_dat;
->         struct stmmac_resources stmmac_res;
-> +       const struct ethqos_emac_driver_data *data;
->         struct qcom_ethqos *ethqos;
->         struct resource *res;
->         int ret;
-> @@ -471,7 +482,9 @@ static int qcom_ethqos_probe(struct platform_device *pdev)
->                 goto err_mem;
->         }
->
-> -       ethqos->por = of_device_get_match_data(&pdev->dev);
-> +       data = of_device_get_match_data(&pdev->dev);
-> +       ethqos->por = data->por;
-> +       ethqos->num_por = data->num_por;
->
->         ethqos->rgmii_clk = devm_clk_get(&pdev->dev, "rgmii");
->         if (IS_ERR(ethqos->rgmii_clk)) {
-> @@ -526,7 +539,7 @@ static int qcom_ethqos_remove(struct platform_device *pdev)
+>  drivers/thermal/mtk_thermal.c | 9 ++++-----
+>  1 file changed, 4 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/thermal/mtk_thermal.c b/drivers/thermal/mtk_thermal.c
+> index 9eaca432920e..594ad4f0f8cd 100644
+> --- a/drivers/thermal/mtk_thermal.c
+> +++ b/drivers/thermal/mtk_thermal.c
+> @@ -22,6 +22,7 @@
+>  #include <linux/thermal.h>
+>  #include <linux/reset.h>
+>  #include <linux/types.h>
+> +#include <linux/power/mtk_svs.h>
+>  
+>  /* AUXADC Registers */
+>  #define AUXADC_CON1_SET_V	0x008
+> @@ -262,7 +263,7 @@ struct mtk_thermal {
+>  	struct clk *clk_peri_therm;
+>  	struct clk *clk_auxadc;
+>  	/* lock: for getting and putting banks */
+> -	struct mutex lock;
+> +	unsigned long flags;
+>  
+>  	/* Calibration values */
+>  	s32 adc_ge;
+> @@ -561,7 +562,7 @@ static void mtk_thermal_get_bank(struct mtk_thermal_bank *bank)
+>  	u32 val;
+>  
+>  	if (mt->conf->need_switch_bank) {
+> -		mutex_lock(&mt->lock);
+> +		mt->flags = claim_mtk_svs_lock();
+>  
+>  		val = readl(mt->thermal_base + PTPCORESEL);
+>  		val &= ~0xf;
+> @@ -581,7 +582,7 @@ static void mtk_thermal_put_bank(struct mtk_thermal_bank *bank)
+>  	struct mtk_thermal *mt = bank->mt;
+>  
+>  	if (mt->conf->need_switch_bank)
+> -		mutex_unlock(&mt->lock);
+> +		release_mtk_svs_lock(mt->flags);
 >  }
->
->  static const struct of_device_id qcom_ethqos_match[] = {
-> -       { .compatible = "qcom,qcs404-ethqos", .data = &emac_v2_3_0_por},
-> +       { .compatible = "qcom,qcs404-ethqos", .data = &emac_v2_3_0_data},
->         { }
->  };
->  MODULE_DEVICE_TABLE(of, qcom_ethqos_match);
-> --
-> 2.25.4
->
+>  
+>  /**
+> @@ -938,8 +939,6 @@ static int mtk_thermal_probe(struct platform_device *pdev)
+>  	if (ret)
+>  		return ret;
+>  
+> -	mutex_init(&mt->lock);
+> -
+>  	mt->dev = &pdev->dev;
+>  
+>  	auxadc = of_parse_phandle(np, "mediatek,auxadc", 0);
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
