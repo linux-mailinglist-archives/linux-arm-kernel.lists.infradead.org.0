@@ -2,85 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C93ED1D2E32
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 13:24:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60FE41D2E7D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 13:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2gBEVH4tjDq3cmy727lQR7eilzVM1bnZg1PNqkEhFKs=; b=uQHGQGQbCq2WPw
-	+Tp9A55GIBGhNfllw29CmIWIrj25jCG6Y7GpbVS9YuuPfCC1kyDulc0SkU0z3lk3v2SFCh8vaeoei
-	f8F+hbDeN4wmzU/TalSy3AfcuEydC/h+7RLhZadOkq67VBIh9jRwLDQerw98G90QhlL18lYbSIL0v
-	QUv6oo8nd0X8LLo1ioT4WQaXlJK9QP9DOFkEyFKzmrgScp7HCah1+xf+S/3xYwDLmzD9bchSjyWhT
-	X+zd+Stokj0AsBOeAI1dnu4D0juHiTWXKBvXgbZiziY7TZrtBqVrvh9hTD6iyC2p03JnFfWnW3kGt
-	gk8lhB1nnDfW6dOfYxoQ==;
+	List-Owner; bh=DHfiltCyOSCcdsSqxwGbyfvGRulgzDyBo/EJLF73NE8=; b=clRQ5QdoJ2+R69
+	i4zJoB5mELj3e9jb39EyIA3BbHKQwtk6CfUB7RFOn1DNgd02QHn34ZtbRIAguUqHCqnB2/gFAHDJX
+	aUmpROJAnuKPSg/u33Z5EATZsDUNCZbKPqUTWkcDeJSF3lb4uo4iEzOSE/ebfnDZyJg5mudqRHBgo
+	XUpKkx+Uk7nt+PhJTDcDNHvyWHGVLOYwIc2dGgF+GNx6hi/25lN5sOps1baLY/8Uc3fP8xlYNtVzn
+	i5U1CVxbFxaXWHjiNetOIWdRtiuo9clcR4+w9EGNS9PNxX9YBXmN2vbMAbUdC0GUeB4Mfs7YFCLr6
+	thJbwv2j7AdbDR2qTpRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZBy2-00058O-Lw; Thu, 14 May 2020 11:23:58 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZBxu-00057p-EZ
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 11:23:51 +0000
-Received: by mail-lf1-x142.google.com with SMTP id 188so2276785lfa.10
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 04:23:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=52Rzrrj4E2al2tTGlHFyR6M/8l4BjJi9pTbsEHvkafw=;
- b=AQB8AjMyAZSGOL4e97UU90oVl9kAMguV5p4dTDDqcw0/yek+GT5FWuN2tscAVlKFEs
- EGzg8HjoW6dtHzhFbCevirz+96qH21ZW9fHpy2kzigcrKVJlygWbNXwPaiOUs6uFh063
- aPAdVZthuA7Y6Oqs1VLm4MDl2Ymqdb56dcWwjCBZ0og7DZpzl8xsqkqa05M1swjos7Gz
- BvCnthOJZ3OAhbZMPq0iz6CbKdHXINgpBnT6TT6KscyzM/JwxVG6ZXzKdHQmih4z9i43
- mHHs4GZHjvk6LTACjAngtXARfd2tJBCvG7KpSeW1akMKIkbng2rYc0JDaLTV5N6BoPB4
- oObw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=52Rzrrj4E2al2tTGlHFyR6M/8l4BjJi9pTbsEHvkafw=;
- b=Sd9ymeBpxL7knvGCAv9+XK7D88oGPWek4+TzCNdpBOV9t78wDwTx0Y0jbjaK/2EvNc
- 1jUkohz5jA8ktIYdB2jAbXYyKOXNY4GZR9i9iBxN3S8SkmCSUJrA/bM8WERvAVlp5Vd1
- tWIZLNoVeI6GcP7djXep10zQvf2E4l75kj0t9Vq2aq6gfinVMhO9WZdt8j7zGEuc2Kio
- EQOnw4jZO9WzLWA/5GXCfuW0HcOk+FEenGbaahyY5fB76GlBULkdZb37vtdL5Gfe8H0i
- 24D9B1Vp9IYtShHUVt/7UMLbR1cH/cpuA7jMGkOAUDe6Su3syMwaqb6fy15tzptcbHp8
- 7jpw==
-X-Gm-Message-State: AOAM531Z07rbvJqYIFTE5/j54IkSlvR7z2pFq1EuNHSpJE+vr7l72HKk
- 97YBJ2zvMOBRJvwbd65VhljwbrqXPiwiDp12k5mqCw==
-X-Google-Smtp-Source: ABdhPJyJHVIeFpsuP6hWyR4T3t3i5l95UvM1ck7qhqVExGI1lWc37GndFTYXCpQQGciey+GLFpqutzOT/FYhOL3syjg=
-X-Received: by 2002:ac2:44bb:: with SMTP id c27mr3095483lfm.40.1589455425658; 
- Thu, 14 May 2020 04:23:45 -0700 (PDT)
+	id 1jZCBS-0004O7-8B; Thu, 14 May 2020 11:37:50 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZCBA-0004J8-Ke
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 11:37:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7FC171042;
+ Thu, 14 May 2020 04:37:30 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A1B483F305;
+ Thu, 14 May 2020 04:37:28 -0700 (PDT)
+Date: Thu, 14 May 2020 12:37:22 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
+ documentation
+Message-ID: <20200514113722.GA1907@gaia>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-24-catalin.marinas@arm.com>
+ <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
+ <20200504164617.GK30377@arm.com> <20200511164018.GC19176@gaia>
+ <20200513154845.GT21779@arm.com>
 MIME-Version: 1.0
-References: <1588758017-30426-1-git-send-email-sumit.garg@linaro.org>
- <1588758017-30426-2-git-send-email-sumit.garg@linaro.org>
- <07bb6080f8be9f6613f460e2d6e19f3d456e219c.camel@linux.intel.com>
-In-Reply-To: <07bb6080f8be9f6613f460e2d6e19f3d456e219c.camel@linux.intel.com>
-From: Sumit Garg <sumit.garg@linaro.org>
-Date: Thu, 14 May 2020 16:53:34 +0530
-Message-ID: <CAFA6WYMciZ=qkG3N_9YWzt_DJr2dGwdAy9diMXCJSNjr2o5ONA@mail.gmail.com>
-Subject: Re: [PATCH v4 1/4] KEYS: trusted: Add generic trusted keys framework
-To: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
+Content-Disposition: inline
+In-Reply-To: <20200513154845.GT21779@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_042350_493423_72B9CB91 
-X-CRM114-Status: GOOD (  16.08  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_043732_779236_6838E6B2 
+X-CRM114-Status: GOOD (  49.47  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,62 +67,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "tee-dev @ lists . linaro . org" <tee-dev@lists.linaro.org>,
- Daniel Thompson <daniel.thompson@linaro.org>, op-tee@lists.trustedfirmware.org,
- Jonathan Corbet <corbet@lwn.net>, James Bottomley <jejb@linux.ibm.com>,
- Janne Karhunen <janne.karhunen@gmail.com>,
- Linux Doc Mailing List <linux-doc@vger.kernel.org>,
- James Morris <jmorris@namei.org>, Mimi Zohar <zohar@linux.ibm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>, dhowells@redhat.com,
- linux-security-module@vger.kernel.org,
- "open list:ASYMMETRIC KEYS" <keyrings@vger.kernel.org>,
- Markus Wamser <Markus.Wamser@mixed-mode.de>,
- Casey Schaufler <casey@schaufler-ca.com>, linux-integrity@vger.kernel.org,
- Jens Wiklander <jens.wiklander@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Serge E. Hallyn" <serge@hallyn.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 14 May 2020 at 05:55, Jarkko Sakkinen
-<jarkko.sakkinen@linux.intel.com> wrote:
->
-> On Wed, 2020-05-06 at 15:10 +0530, Sumit Garg wrote:
-> > Current trusted keys framework is tightly coupled to use TPM device as
-> > an underlying implementation which makes it difficult for implementations
-> > like Trusted Execution Environment (TEE) etc. to provide trusked keys
-> > support in case platform doesn't posses a TPM device.
+On Wed, May 13, 2020 at 04:48:46PM +0100, Dave P Martin wrote:
+> On Mon, May 11, 2020 at 05:40:19PM +0100, Catalin Marinas wrote:
+> > On Mon, May 04, 2020 at 05:46:17PM +0100, Dave P Martin wrote:
+> > > On Thu, Apr 30, 2020 at 05:23:17PM +0100, Catalin Marinas wrote:
+> > > > On Wed, Apr 29, 2020 at 05:47:05PM +0100, Dave P Martin wrote:
+> > > > > On Tue, Apr 21, 2020 at 03:26:03PM +0100, Catalin Marinas wrote:
+> > > > > > +- *Asynchronous* - The kernel raises a ``SIGSEGV``, in the current
+> > > > > > +  thread, asynchronously following one or multiple tag check faults,
+> > > > > > +  with ``.si_code = SEGV_MTEAERR`` and ``.si_addr = 0``.
+> > > > > 
+> > > > > For "current thread": that's a kernel concept.  For user-facing
+> > > > > documentation, can we say "the offending thread" or similar?
+> > > > > 
+> > > > > For clarity, it's worth saying that the faulting address is not
+> > > > > reported.  Or, we could be optimistic that someday this information will
+> > > > > be available and say that si_addr is the faulting address if available,
+> > > > > with 0 meaning the address is not available.
+> > > > > 
+> > > > > Maybe (void *)-1 would be better duff address, but I can't see it
+> > > > > mattering much.  If there's already precedent for si_addr==0 elsewhere,
+> > > > > it makes sense to follow it.
+> > > > 
+> > > > At a quick grep, I can see a few instances on other architectures where
+> > > > si_addr==0. I'll add a comment here.
+> > > 
+> > > OK, cool
+> > > 
+> > > Except: what if we're in PR_MTE_TCF_ASYNC mode.  If the SIGSEGV handler
+> > > triggers an asynchronous MTE fault itself, we could then get into a
+> > > spin.  Hmm.
+[...]
+> > > In that case, an asynchronous MTE fault pending at sigreturn must have
+> > > been caused by the signal handler.  We could make that particular case
+> > > of MTE_AERR a force_sig.
+> > 
+> > We clear the TIF flag when delivering the signal. I don't think there is
+> > a way for the kernel to detect when it is running in a signal handler.
+> > sigreturn() is not mandatory either.
+> 
+> I guess we can put up with this signal not being fatal then.
+> 
+> If you have a SEGV handler at all, you're supposed to code it carefully.
+> 
+> This brings us back to force_sig for SERR and a normal signal for AERR.
+> That's probably OK.
+
+I think we are in agreement now but please check the patches when I post
+the v4.
+
+> > > > > > +**Note**: Kernel accesses to user memory (e.g. ``read()`` system call)
+> > > > > > +are only checked if the current thread tag checking mode is
+> > > > > > +PR_MTE_TCF_SYNC.
+> > > > > 
+> > > > > Vague?  Can we make a precise statement about when the kernel will and
+> > > > > won't check such accesses?  And aren't there limitations (like use of
+> > > > > get_user_pages() etc.)?
+> > > > 
+> > > > We could make it slightly clearer by say "kernel accesses to the user
+> > > > address space".
+> > > 
+> > > That's not the ambiguity.
+> > > 
+> > > My question is
+> > > 
+> > > 1) Does the kernel guarantee not to check tags on kernel accesses to
+> > > user memory without PR_MTE_TCF_SYNC?
+[...]
+> > > 2) Does the kernel guarantee to check tags on kernel accesses to user
+> > > memory with PR_MTE_TCF_SYNC?
+[...]
+> > > In practice, this note sounds to be more like a kernel implementation
+> > > detail rather than advice to userspace.
+> > > 
+> > > Would it make sense to say something like:
+> > > 
+> > >  * PR_MTE_TCF_NONE: the kernel does not check tags for kernel accesses
+> > >    to use memory done by syscalls in the thread.
+> > > 
+> > >  * PR_MTE_TCF_ASYNC: the kernel may check some tags for kernel accesses
+> > >    to user memory done by syscalls.  (Should we guarantee that such
+> > >    faults are reported synchronously on syscall exit?  In practice I
+> > >    think they are.  Should we use SEGV_MTESERR in this case?  Perhaps
+> > >    it's not worth making this a special case.)
+> > 
+> > Both NONE and ASYNC are now the same for kernel uaccess - not checked.
 > >
-> > So this patch tries to add generic trusted keys framework where underlying
-> > implemtations like TPM, TEE etc. could be easily plugged-in.
-> >
-> > Suggested-by: Jarkko Sakkinen <jarkko.sakkinen@linux.intel.com>
-> > Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
->
-> I tend to agree how this is implemented and could merge it as such.
->
-> I'm just thinking if we could refine this patch in a way that instead of
-> copying TRUSTED_DEBUG macro we could just replace pr_info() statements
-> with pr_debug()?
+> > For background information, I decided against ASYNC uaccess checking
+> > since (1) there are some cases where the kernel overreads
+> > (strncpy_from_user) and (2) we don't normally generate SIGSEGV on
+> > uaccess but rather return -EFAULT. The latter is not possible to contain
+> > since we only learn about the fault asynchronously, usually after the
+> > transfer.
+> 
+> I may be missing something here.  Do we still rely on the hardware to
+> detect tag mismatches in kernel accesses to user memory?  I was assuming
+> we do some kind of explicit checking, but now I think that's nonsense
+> (except for get_user_pages() etc.)
 
-AFAIU, TRUSTED_DEBUG being a security sensitive operation is only
-meant to be used in development environments and should be strictly
-disabled in production environments. But it may not always be true
-with pr_debug() with CONFIG_DYNAMIC_DEBUG=y which allows the debug
-paths to be compiled into the kernel which can be enabled/disabled at
-runtime.
+For synchronous tag checking, we expect the uaccess (via the user
+address, e.g. copy_from_user()) to be checked by the hardware. If the
+access happens via a kernel mapping (get_user_pages()), the access is
+unchecked. There is no point in an explicit tag access+check from the
+kernel since the get_user_pages() accesses are not expected to generate
+faults anyway (once the pages have been returned). We also most likely
+lost the actual user address at the point of access, so not easy to
+infer the original tag.
 
-IMO we should keep this TRUSTED_DEBUG macro, so that users are aware
-of its security sensitive nature and need to explicitly enable it to
-debug.
+> Since MTE is a new opt-in feature, I think we might have the option to
+> report failures with SIGSEGV instead of -EFAULT.  This seems exactly to
+> implement the concept of an asynchronous versus synchronous error. 
 
--Sumit
+With synchronous checking, we return -EFAULT, smaller number of bytes
+etc. since no/less data was copied. With async, the uaccess would
+perform all the accesses, only that the user may get a SIGSEGV delivered
+on return from the syscall.
 
->
-> /Jarkko
->
+> The kernel may not normally do this, but software usually doesn't use
+> raw syscalls.  In reality "syscalls" can trigger a SIGSEGV in the libc
+> wrapper anyway.  From the caller's point of view the whole thing is a
+> black box.
+> 
+> Probably needs discussion with the bionic / glibc folks though (though
+> likely this has been discussed already...)
+
+The initial plan was to generate SIGSEGV on asynchronous faults for
+uaccess (on syscall return). This changed when we noticed (in version 3
+I think) that the kernel over-reads buffers in some cases
+(strncpy_from_user(), copy_mount_options()) and triggers false
+positives.
+
+We could fix the above two cases, though in different ways:
+strncpy_from_user() can align its source (user) address and would no
+longer be expected to trigger a fault if the string is correctly tagged.
+copy_mount_options(), OTOH, always reads 4K (not zero-terminated), so it
+will trip over some tag mismatch. The workaround is to contain the async
+tag check fault (with DSB before and after the access) and ignore it.
+
+However, are these the only two cases where the kernel over-reads user
+buffers? Without MTE, such faults on uaccess (page faults) were handled
+by the kernel transparently. We may now start delivering SIGSEGV every
+time some piece of uaccess kernel code changes and over-reads.
+
+> My concern is that the spirit of asynchrous checking in the
+> architecture is that accesses _are_ checked, and we seem to be
+> breaking that principle here.
+
+I agree with you on the principle but my concern is about the
+practicality of chasing any future code changes and plugging potentially
+fatal SIGSEGVs sent to the user.
+
+Maybe we need a way to log this so that user (admin) can do something
+about it like force synchronous. Or we could also toggle synchronous
+uaccesses irrespective of the user mode or expose this option as a
+prctl().
+
+Also, do we want some big knob (sysctl) to force some of these modes for
+all user processes: e.g. force-upgrade async to sync?
+
+> > > > > > +excludes all tags other than 0. A user thread can enable specific tags
+> > > > > > +in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
+> > > > > > +flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
+> > > > > > +in the ``PR_MTE_TAG_MASK`` bit-field.
+> > > > > > +
+> > > > > > +**Note**: The hardware uses an exclude mask but the ``prctl()``
+> > > > > > +interface provides an include mask. An include mask of ``0`` (exclusion
+> > > > > > +mask ``0xffff``) results in the CPU always generating tag ``0``.
+> > > > > 
+> > > > > Is there no way to make this default to 1 rather than having a magic
+> > > > > meaning for 0?
+> > > > 
+> > > > We follow the hardware behaviour where 0xffff and 0xfffe give the same
+> > > > result.
+> > > 
+> > > Exposing this through a purely software interface seems a bit odd:
+> > > because the exclude mask is privileged-access-only, the architecture
+> > > could amend it to assign a different meaning to 0xffff, providing this
+> > > was an opt-in change.  Then we'd have to make a mess here.
+> > 
+> > You have a point. An include mask of 0 translates to an exclude mask of
+> > 0xffff as per the current patches. If the hardware gains support for one
+> > more bit (32 colours), old software running on new hardware may run into
+> > unexpected results with an exclude mask of 0xffff.
+> > 
+> > > Can't we just forbid the nonsense value 0 here, or are there other
+> > > reasons why that's problematic?
+> > 
+> > It was just easier to start with a default. I wonder whether we should
+> > actually switch back to the exclude mask, as per the hardware
+> > definition. This way 0 would mean all tags allowed. We can still
+> > disallow 0xffff as an exclude mask.
+[...]
+> The only configuration that doesn't make sense is "no tags allowed", so
+> I'd argue for explicity blocking that, even if the architeture aliases
+> that encoding to something else.
+> 
+> If we prefer 0 as a default value so that init inherits the correct
+> value from the kernel without any special acrobatics, then we make it an
+> exclude mask, with the semantics that the hardware is allowed to
+> generate any of these tags, but does not have to be capable of
+> generating all of them.
+
+That's more of a question to the libc people and their preference.
+We have two options with suboptions:
+
+1. prctl() gets an exclude mask with 0xffff illegal even though the
+   hardware accepts it:
+   a) default exclude mask 0, allowing all tags to be generated by IRG
+   b) default exclude mask of 0xfffe so that only tag 0 is generated
+
+2. prctl() gets an include mask with 0 illegal:
+   a) default include mask is 0xffff, allowing all tags to be generated
+   b) default include mask 0f 0x0001 so that only tag 0 is generated
+
+We currently have (2) with mask 0 but could be changed to (2.b). If we
+are to follow the hardware description (which makes more sense to me but
+I don't write the C library), (1.a) is the most appropriate.
+
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
