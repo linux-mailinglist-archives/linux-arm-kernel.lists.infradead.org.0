@@ -2,55 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9EE681D2B70
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 11:30:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32EF01D2B78
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 11:31:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/pG6nAV1nuUvj9bVreIxVIvRS/KRMHUn6+4+A8chlY0=; b=QosuARF77m5J4u
-	w/jtCfTdAzUcF6tVwWASa5KpYPUDLBtqiYgx94zefo7XAwy2F7qQMHOh8XruKpR08LpQyM4/kcP94
-	qAgA+p3YCV32i/+WEopL8XbDGe1yb+1CJa5yVsamFoYjZGAF+QYZAb6icMmm+Wjr7vRq/zRqwBZDW
-	6OXp2BxuvWvRh3pIJb+1AdxHLuHG2rj+VeLXWHQAOYWbhGb2dnVJDFAmVj/fqxpoIQINqabqibXki
-	hxX4K3rkprhrWCO80BNHGE5xIHWTF+KrHT5e5a7UpC2tUB40OiZyaHxNsgElnbQ1gPpemktK6RKZQ
-	gJHjYk+djrLvUIxTRAxA==;
+	List-Owner; bh=zB9HegTAGzIxn8IU3AFf8gjgS80Qkamb5jluyjIfiHQ=; b=UAphY4bhEOsk+X
+	0eVvCvigo5gfidWAWnnylOhjcGO6GFWAniAFDNi48HKqZy4J3DXtogDy4iLFmVvLKXAMfkap8Whyf
+	6m1TrsyMesGYgC2MzndQ1eK3kp+RbKlYYdJhOjjTxsBWp9yiKSQvo5SG+MtDEehK4jFEfXyI4+L8s
+	HbzSl+2YSu/UPE9hmjdNCCs3rn206MMk93tA31Vx86WCNqrhtcWC9qgAE7I040eZspywuj6g5jIse
+	0VEygpwQawFd86+DM4Vx7mKY+IEpQnzvV/CnKmmCA8NjCgt07IPYTCGk4GQNtBcGcTM1QkWN8J2Vg
+	olHYSu3c1/xS9uZM9MgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZABn-0006fG-2V; Thu, 14 May 2020 09:30:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZABd-0006dG-CZ
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 09:29:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7F26531B;
- Thu, 14 May 2020 02:29:52 -0700 (PDT)
-Received: from e121166-lin.cambridge.arm.com (e121166-lin.cambridge.arm.com
- [10.1.196.255])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D47A93F71E;
- Thu, 14 May 2020 02:29:50 -0700 (PDT)
-Date: Thu, 14 May 2020 10:29:44 +0100
-From: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-To: Tuan Phan <tuanphan@os.amperecomputing.com>
-Subject: Re: [PATCH v3] ACPI/IORT: Fix PMCG node always look for a single ID
- mapping.
-Message-ID: <20200514092944.GA18032@e121166-lin.cambridge.arm.com>
-References: <1589415122-5899-1-git-send-email-tuanphan@os.amperecomputing.com>
+	id 1jZADE-0001td-M4; Thu, 14 May 2020 09:31:32 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZAD5-0001su-KA
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 09:31:25 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jZACz-0001LV-Mi; Thu, 14 May 2020 11:31:17 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1jZACy-0005WE-PV; Thu, 14 May 2020 11:31:16 +0200
+Date: Thu, 14 May 2020 11:31:16 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Fengping Yu <fengping.yu@mediatek.com>
+Subject: Re: [PATCH v7 1/3] dt-bindings: Add keypad devicetree documentation
+Message-ID: <20200514093116.coiz5ofsjmxhafma@pengutronix.de>
+References: <20200514061747.25466-1-fengping.yu@mediatek.com>
+ <20200514061747.25466-2-fengping.yu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589415122-5899-1-git-send-email-tuanphan@os.amperecomputing.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200514061747.25466-2-fengping.yu@mediatek.com>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 11:26:01 up 181 days, 44 min, 197 users, load average: 0.03, 0.10, 
+ 0.14
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_022953_466889_27DA4EC1 
-X-CRM114-Status: GOOD (  17.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200514_023123_661815_D20DEBA4 
+X-CRM114-Status: GOOD (  21.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,75 +75,153 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Robin Murphy <robin.murphy@arm.com>, Neil Leeder <nleeder@codeaurora.org>,
- Hanjun Guo <guohanjun@huawei.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- linux-kernel@vger.kernel.org,
- Shameer Kolothum <shameerali.kolothum.thodi@huawei.com>,
- linux-acpi@vger.kernel.org, Sudeep Holla <sudeep.holla@arm.com>,
- patches@amperecomputing.com, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Len Brown <lenb@kernel.org>
+Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
+ Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Please update the subject:
+Hi,
 
-Subject: "ACPI/IORT: Fix PMCG node single ID mapping handling"
-
-On Wed, May 13, 2020 at 05:12:02PM -0700, Tuan Phan wrote:
-> PMCG node can have zero ID mapping if its overflow interrupt
-> is wire based. The code to parse PMCG node can not assume it will
-> have a single ID mapping.
-
-"An IORT PMCG node can have no ID mapping if its overflow interrupt is
-wire based therefore the code that parses the PMCG node can not assume
-the node will always have a single mapping present at index 0.
-
-Fix iort_get_id_mapping_index() by checking for an overflow interrupt
-and mapping count."
-
-> Fixes: 24e516049360 ("ACPI/IORT: Add support for PMCG")
-> Reviewed-by: Hanjun Guo <guoahanjun@huawei.com>
-> Signed-off-by: Tuan Phan <tuanphan@os.amperecomputing.com>
+On 20-05-14 14:17, Fengping Yu wrote:
+> From: "fengping.yu" <fengping.yu@mediatek.com>
+> 
+> Add Mediatek matrix keypad dt-binding doc as yaml schema.
+> 
+> Signed-off-by: fengping.yu <fengping.yu@mediatek.com>
 > ---
-> v1 -> v2:
-> - Use pmcg node to detect wired base overflow interrupt.
+>  .../devicetree/bindings/input/mtk-kpd.yaml    | 102 ++++++++++++++++++
+>  1 file changed, 102 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/input/mtk-kpd.yaml
 > 
-> v2 -> v3:
-> - Address Hanjun and Robin's comments.
-> 
->  drivers/acpi/arm64/iort.c | 5 +++++
->  1 file changed, 5 insertions(+)
-
-Acked-by: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
-
-> diff --git a/drivers/acpi/arm64/iort.c b/drivers/acpi/arm64/iort.c
-> index ed3d2d1..12bb70e 100644
-> --- a/drivers/acpi/arm64/iort.c
-> +++ b/drivers/acpi/arm64/iort.c
-> @@ -414,6 +414,7 @@ static struct acpi_iort_node *iort_node_get_id(struct acpi_iort_node *node,
->  static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->  {
->  	struct acpi_iort_smmu_v3 *smmu;
-> +	struct acpi_iort_pmcg *pmcg;
->  
->  	switch (node->type) {
->  	case ACPI_IORT_NODE_SMMU_V3:
-> @@ -441,6 +442,10 @@ static int iort_get_id_mapping_index(struct acpi_iort_node *node)
->  
->  		return smmu->id_mapping_index;
->  	case ACPI_IORT_NODE_PMCG:
-> +		pmcg = (struct acpi_iort_pmcg *)node->node_data;
-> +		if (pmcg->overflow_gsiv || node->mapping_count == 0)
-> +			return -EINVAL;
+> diff --git a/Documentation/devicetree/bindings/input/mtk-kpd.yaml b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
+> new file mode 100644
+> index 000000000000..8f594fe0bfc2
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/input/mtk-kpd.yaml
+> @@ -0,0 +1,102 @@
+> +%YAML 1.2
+> +---
+> +version: 1
 > +
->  		return 0;
->  	default:
->  		return -EINVAL;
+> +$id: http://devicetree.org/schemas/input/mtk-keypad.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Mediatek's Keypad Controller device tree bindings
+> +
+> +maintainer:
+> +  - Fengping Yu <fengping.yu@mediatek.com>
+> +
+> +description: |
+> +  Mediatek's Keypad controller is used to interface a SoC with a matrix-type
+> +  keypad device. The keypad controller supports multiple row and column lines.
+> +  A key can be placed at each intersection of a unique row and a unique column.
+> +  The keypad controller can sense a key-press and key-release and report the
+> +  event using a interrupt to the cpu.
+> +
+> +properties:
+> +  compatible:
+> +      constraint: |
+
+enum or const ?
+
+> +        "mediatek,mt6779-keypad"
+> +        "mediatek, kp"
+> +
+> +    clock-names:
+> +	description: Names of the clocks listed in clocks property in the same order
+> +
+> +    clocks:
+> +	description: Must contain one entry, for the module clock
+> +	refs: devicetree/bindings/clocks/clock-bindings.txt for details.
+> +
+> +    interrupts:
+> +	description: A single interrupt specifier
+> +
+> +    linux,keymap:
+> +	description: The keymap for keys as described in the binding document
+> +	refs: devicetree/bindings/input/matrix-keymap.txt
+> +
+> +    pinctrl-0:
+> +	description: Specify pin control groups used for this controller
+> +	refs: devicetree/bindings/pinctrl/pinctrl-bindings.txt
+> +
+> +    pinctrl-names:
+> +	description: Names for optional pin modes
+> +
+> +    reg:
+> +	description: The base address of the Keypad register bank
+> +
+> +    wakeup-source:
+> +	description: use any event on keypad as wakeup event
+> +
+> +    keypad,num-columns:
+> +	description: Number of column lines connected to the keypad controller,
+> + 	it is not equal to PCB columns number, instead you should add required value
+> + 	for each IC
+> +
+> +    keypad,num-rows:
+> +	description: Number of row lines connected to the keypad controller, it is
+> + 	not equal to PCB rows number, instead you should add required value for each IC
+> +
+> +    mediatek,debounce-us:
+> +	description: Debounce interval in microseconds
+> +	maximum: 256000
+
+I think that you are missing the maxItems on all your properties so we
+can't make any validation. Also the indent looks wrong.
+
+> +
+> +
+> +required:
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - mediatek,debounce-us
+> +  - keypad,num-rows
+> +  - keypad,num-columns
+> +  - linux,keymap
+> +  - pinctrl
+> +  - clocks
+> +  - clock-names
+> +
+> +optional:
+> +  - wakeup-source:
+
+I think the optional can be dropped.
+
+> +examples:
+> +  - |
+> +
+> +    keypad: kp@10010000 {
+> +	compatible = "mediatek,kp";
+> +	reg = <0 0x10010000 0 0x1000>;
+> +	wakeup-source;
+> +	interrupts = <GIC_SPI 75 IRQ_TYPE_EDGE_FALLING>;
+> +	clocks = <&clk26m>;
+> +	clock-names = "kpd";
+> +    };
+> +
+> +    &keypad {
+> +	mediatek,debounce-us = <32000>;
+> +	keypad,num-rows = <8>;
+> +	keypad,num-columns = <9>;
+> +	linux,keymap = < MATRIX_KEY(0x00, 0x00, KEY_VOLUMEDOWN) >;
+> +	status = "okay";
+> +	pinctrl-names = "default";
+> +	pinctrl-0 = <&kpd_gpios_def_cfg>;
+> +    };
+
+Pls squash those nodes.
+
+Regards,
+  Marco
+
 > -- 
-> 2.7.4
-> 
+> 2.18.0
 
 _______________________________________________
 linux-arm-kernel mailing list
