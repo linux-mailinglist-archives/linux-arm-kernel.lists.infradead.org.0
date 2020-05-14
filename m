@@ -2,74 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD0B81D25AA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 06:12:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72DD11D2624
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 06:58:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W0haJee68Z9btvUBhMz0MpbCPzS7Yiy/sKl5+52WJXs=; b=EzWSMzZ631MI4Q
-	q72lCzKgX6Qy5i9w8oFYQ0r8j2kpDSMKoELBOSMdB1DOJ9CINzNASNyMvkjkQz48ZkBcSvlXQSaVd
-	XK41GjBclPTPoUSmyFROPefgPUB27Es5zORFoTcySJunTPzgeq04dTHRDHfZzYJj3C1AlLQgSDm2A
-	qLDbjPW4O+eQUTwJ2XR3qqI9av61KFSQBwYmblLKlm+O5ljbMt9DHOqVQbhUlQMMPo+aCfFcwZKdf
-	Zs8/qjxLl5RYsH3/EuQ/2HGdyNWN4iK2LPPbqB/8X3H4EQclJTnxS+deSyYcaejRhp+OrWiZC6Amu
-	zi5U6jpzPB1dfIBy4VBA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dtdnnKr1Gx87KxbOohi4XAzmFtZDhgWQPNASiZux8dY=; b=a7AdXG/2owDR/k
+	NEWxxHeESobAvuDEJT4+Lg9wz409vFmZ69IRXeWSEI7/u6MkajUEqdW3onDXq94SCymELe7uhWJv/
+	pKclC6jbL/ppx9QANw3TJJtWe+c74aQQAzV04GKDYeCmU2Kin/TauJT0NnWmBWVC8b2E1KpEB+prc
+	xgOv0Nfe/21KuiSlD8JSusmHn/xrbHc6fbRlqcsJhsVYiRN3TDXAXZ+UJRpOp0kfvrMTBVAgCNdkn
+	TtkQTCEbJAsFbXeVqWH2D276w/29u6ZW9AZuO4I0SbEODW7PYIyHGl5epOSYsK9QFyIuBq2ijRUWL
+	i7Q63Bx+q/rtWw651j0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ5Dt-0002xD-Nm; Thu, 14 May 2020 04:11:53 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jZ5xC-0005rM-S7; Thu, 14 May 2020 04:58:42 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ5Dl-0002vo-C1; Thu, 14 May 2020 04:11:46 +0000
-X-UUID: 27342437d645467c91b496b6b36dd4ec-20200513
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:Message-ID:Date:Subject:CC:To:From;
- bh=Vq25CpGWDu4hIaBmnMbm4KOdW3U78xl9MWNuHHP8T8w=; 
- b=nFstotdNa3SfFlRGyKRvIvFXNVdmnoEjdudl25XUI4akzKPpTw8ix0qR6NfaeJbn9tQCq+Sv/TWIHQjyGmogyAFLgFljRKPN0q8yJo7JB8UbzGseJ9dWOJbb71w8uKeCG2TPl/j9wgSt7nSgmjliu6ycZp4yqSYYSqzKflfVtYE=;
-X-UUID: 27342437d645467c91b496b6b36dd4ec-20200513
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <macpaul.lin@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 335795387; Wed, 13 May 2020 20:11:39 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Wed, 13 May 2020 21:01:36 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 12:01:20 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Thu, 14 May 2020 12:01:19 +0800
-From: Macpaul Lin <macpaul.lin@mediatek.com>
-To: Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>, 
- Hans de Goede <hdegoede@redhat.com>, Bin Liu <b-liu@ti.com>, "Greg
- Kroah-Hartman" <gregkh@linuxfoundation.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, <linux-usb@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-mediatek@lists.infradead.org>
-Subject: [PATCH] usb: musb: mediatek: add reset FADDR to zero in reset
- interrupt handle
-Date: Thu, 14 May 2020 12:01:12 +0800
-Message-ID: <1589428872-29282-1-git-send-email-macpaul.lin@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
+ id 1jZ5x6-0005qs-9S
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 04:58:37 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x77so798512pfc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 13 May 2020 21:58:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=Fy4YBkk4dKPrXz1Sz6in3rq8QZwklEzzdmUHwWz7Vts=;
+ b=q0CuyR167W+2BNBNi9zP/2Uo5HLrTYi02yqX2gsXiURJvGny1sZnBQuNVC6dB+Jenn
+ dZo0jdexaxmCbJxntzQ/rQy2sTYrHnzssTzyjed7H5gwHO623LSN8LsLakEmtj47rYRT
+ i1CDdwGC9jd5kU/aYeV0kVUSns/5vIOUKeo3yf/Bq6od7L5fq+tfAq6AT4tm5+Jc03xG
+ Hlo7QzEcyYCrZbt90ZrcrjBvV9d9kjnD+KPmpTwQpYOioy8QqwnkPf8ZPcuVwlEzw5I6
+ HACuCYW1LIqjhZh2oS5Rw+ibKfvsRuoFElx50bxhm7tFpljDv5VHFZdvXIttrYReFJRN
+ P8Ow==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=Fy4YBkk4dKPrXz1Sz6in3rq8QZwklEzzdmUHwWz7Vts=;
+ b=GgQsUmXiHUvTqnVw+0XFgTyg1wiQP8HAksiLsSPFkZfAkWZFQPxPvS7arP4/5WKUfB
+ FeQ7h/X2vhPqOkbAqJOmq+surfpG5l0XaekkhmJDUWAAv8EOF9eSgR5a4mxTvnQQsDql
+ MCmb/ss9RZ6IVT49DL+o+So7p+4akquzTCLU/3PBoYOovR7b5y96+q/bDhn4QiyamUWe
+ /50J2NCG/L0eBvJ+FVbvmiWBAgMH4GkHRBVbG+BYaPuqFm1jdZzCi9585O/ne3QB9bJK
+ 6UR2EPbnRHbRwRDVcQ28k4IwVL7TDVRH9OM8+Ez6NGCG6Ut/Gfmy5Du7Dt/Bf2xlrvVm
+ brwQ==
+X-Gm-Message-State: AOAM533CeKAGZRsV8IX9vNyT5R8LO0pLORmPAvsa7Cg2sK6LPzdPAt87
+ atVZveXpm5clSz71uu1JVetGZg==
+X-Google-Smtp-Source: ABdhPJxyjBQaF0IbDv+oDp7VWgasXey2FK6oPgo+5su8LZ7HawcQevb3Y0t9Ukgg2sHbL3dWhdsSNg==
+X-Received: by 2002:a63:7d3:: with SMTP id 202mr2403501pgh.279.1589432314389; 
+ Wed, 13 May 2020 21:58:34 -0700 (PDT)
+Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id x12sm1056388pfq.209.2020.05.13.21.58.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 13 May 2020 21:58:33 -0700 (PDT)
+Date: Wed, 13 May 2020 21:57:03 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v2 01/12] remoteproc: stm32: Decouple rproc from memory
+ translation
+Message-ID: <20200514045703.GG16107@builder.lan>
+References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
+ <20200424202505.29562-2-mathieu.poirier@linaro.org>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 7786936E7E97A400A420A3B5D83AA16F375A89018EEAA40ED48FEFC21FA816762000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200424202505.29562-2-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_211145_435823_D774C057 
-X-CRM114-Status: UNSURE (   7.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200513_215836_370114_E830BA79 
+X-CRM114-Status: GOOD (  15.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -77,8 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,41 +99,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Macpaul Lin <macpaul.lin@gmail.com>, Macpaul Lin <macpaul.lin@mediatek.com>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>
+Cc: ohad@wizery.com, alexandre.torgue@st.com, loic.pallardy@st.com,
+ arnaud.pouliquen@st.com, linux-remoteproc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When receiving reset interrupt, FADDR need to be reset to zero in
-periphearl mode. Otherwise ep0 cannot do enumeration when re-pluging USB
-cable.
+On Fri 24 Apr 13:24 PDT 2020, Mathieu Poirier wrote:
 
-Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
----
- drivers/usb/musb/mediatek.c |    6 ++++++
- 1 file changed, 6 insertions(+)
+> Remove the remote processor from the process of parsing the memory
+> ranges since there is no correlation between them.
+> 
+> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+> Reviewed-by: Loic Pallardy <loic.pallardy@st.com>
 
-diff --git a/drivers/usb/musb/mediatek.c b/drivers/usb/musb/mediatek.c
-index 6196b0e..eebeadd 100644
---- a/drivers/usb/musb/mediatek.c
-+++ b/drivers/usb/musb/mediatek.c
-@@ -208,6 +208,12 @@ static irqreturn_t generic_interrupt(int irq, void *__hci)
- 	musb->int_rx = musb_clearw(musb->mregs, MUSB_INTRRX);
- 	musb->int_tx = musb_clearw(musb->mregs, MUSB_INTRTX);
- 
-+	if ((musb->int_usb & MUSB_INTR_RESET) && !is_host_active(musb)) {
-+		/* ep0 FADDR must be 0 when (re)entering peripheral mode */
-+		musb_ep_select(musb->mregs, 0);
-+		musb_writeb(musb->mregs, MUSB_FADDR, 0);
-+	}
-+
- 	if (musb->int_usb || musb->int_tx || musb->int_rx)
- 		retval = musb_interrupt(musb);
- 
--- 
-1.7.9.5
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+
+> ---
+>  drivers/remoteproc/stm32_rproc.c | 8 ++++----
+>  1 file changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
+> index 0f9d02ca4f5a..91fd59af0ffe 100644
+> --- a/drivers/remoteproc/stm32_rproc.c
+> +++ b/drivers/remoteproc/stm32_rproc.c
+> @@ -127,10 +127,10 @@ static int stm32_rproc_mem_release(struct rproc *rproc,
+>  	return 0;
+>  }
+>  
+> -static int stm32_rproc_of_memory_translations(struct rproc *rproc)
+> +static int stm32_rproc_of_memory_translations(struct platform_device *pdev,
+> +					      struct stm32_rproc *ddata)
+>  {
+> -	struct device *parent, *dev = rproc->dev.parent;
+> -	struct stm32_rproc *ddata = rproc->priv;
+> +	struct device *parent, *dev = &pdev->dev;
+>  	struct device_node *np;
+>  	struct stm32_rproc_mem *p_mems;
+>  	struct stm32_rproc_mem_ranges *mem_range;
+> @@ -606,7 +606,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev)
+>  
+>  	rproc->auto_boot = of_property_read_bool(np, "st,auto-boot");
+>  
+> -	return stm32_rproc_of_memory_translations(rproc);
+> +	return stm32_rproc_of_memory_translations(pdev, ddata);
+>  }
+>  
+>  static int stm32_rproc_probe(struct platform_device *pdev)
+> -- 
+> 2.20.1
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
