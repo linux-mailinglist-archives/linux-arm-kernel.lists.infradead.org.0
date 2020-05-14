@@ -2,58 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1D991D24DE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 03:45:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 123AC1D24E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 03:46:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+7bpHPaK6B6nd3poyA4NpA9RyeGDRTA9PMBrNq6lkPY=; b=V1gyMP+fLrUI+S
-	we7TwkwdffkPdfENiJOUD5HToBUo1TJHI3zIZXIJVXZ5or6XIp4F1ZRJ2oRX3hzdLlueHEbqsoWvp
-	feGuUyOV04tG2IrkhhRyzX6ppZ0zPVIoinK2/W2Xqli6Bzz9ADREt+8npoKIuAQiDM9WgFfDk0HLh
-	uPw/Ox+/9u2AQ4yT9bPoRhcpC0ybXsMgREh0LsZcrfT5QCYkUK8Gj6xkSxadHgwPFdk40Ydd2ggZw
-	2ZWjSGXzA9W4KJbMo270QVBQX91bdrHlTvKitfQWf54yD7urzb1io0hvLqW8wf4gIvEiRj510xw3N
-	ejCTqTAKk4uGwpEbG34g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5qBfUNW9m4nRZpHTq9WsMkRzsedDPpruZksg5bIm8rc=; b=lROxJZmXPkSJu3
+	H7kawJlEKJun6hTRh8FBGWQomTxxuZ+Wrx17ALHCQUMHMPWL9I72mIRI+irDmy7M9Zur+rOKt3V6M
+	s7lwCGephVakJGBArtCyMDxJMoZ4mS4lwAFTvy/o3hO59Q2bUL3q06r91IRIuQY/xW/Z/nNc1KyJ6
+	XB30uKRQ7PVbVriRhMCq4ZXi8IwIQ4sw8+ImHUcUVzxXTVuR6z6MOO8P02qni2imuOYjzzP0UmIlX
+	1FyXgQOe1fUt5KBuNlNcAT1h0T3taqeHxVA7XszllLYuCvKLN15ZnHsutgQpcqyQed6ICxy7Zmpqa
+	ENyXIARoAyTYUMIAytgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ2wU-0005m4-IM; Thu, 14 May 2020 01:45:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ2wJ-0005jF-4Y
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 01:45:36 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6E3531B;
- Wed, 13 May 2020 18:45:33 -0700 (PDT)
-Received: from [10.163.73.129] (unknown [10.163.73.129])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 924303F305;
- Wed, 13 May 2020 18:45:30 -0700 (PDT)
-Subject: Re: [PATCH V2] arm64/cpuinfo: Move HWCAP name arrays alongside their
- bit definitions
-To: Dave Martin <Dave.Martin@arm.com>
-References: <1588858150-26823-1-git-send-email-anshuman.khandual@arm.com>
- <20200513150405.GS21779@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <0999fa28-3ee7-3f02-4def-a0c6013ec6dd@arm.com>
-Date: Thu, 14 May 2020 07:14:58 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <20200513150405.GS21779@arm.com>
+	id 1jZ2wo-0006BJ-F1; Thu, 14 May 2020 01:46:06 +0000
+Received: from mail-vi1eur05on2053.outbound.protection.outlook.com
+ ([40.107.21.53] helo=EUR05-VI1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZ2we-00064t-7C
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 01:45:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=mgPXSKxx74y2KvCkOmQQhMvPculjtWZvozpDjnNM65kWCp+HvM98Lx36cALRO4Trc9cED85zWzW0mCUJEkTcT4Nhx2oOp2NG+JgwPdHG6oPv0jQBUis8SI6ZJRdjlOSbc1cEdI6tNSVidSqfbnxzGW1Es4gFyr6sXm2k0nfvqkpfLHzW5MH2wfAIfTEXphVk0qJ70+2OG46xMRAcXSllGTvNpTxVkCkX6jR5PEpzjEgl8K64uBjIdjl4hmaO3RG2jvd+Gg7kqVSW6W8752TNiNqRn6ooKMpEPBWF1jzvnv88Bm33zmyBJAnGsbBBu/3mecU8HpFAicuM+93hOkXHTw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hlESU/QjztXvmBVWcNV0YCutjNpSIPIkPZJot00HCnc=;
+ b=nAtbI61lKruQupe10sLsZYeGL9n5dQCdOaolVgL6bLdeZlI2utSnD9Ff3Env+QsTN8pWeEg9II7HCPVsFlE8L5jOGMXcIto1NGy44UvmUR+otGYPXjuYdFdhUGHMVlaH8N8Axjmx/Pujntrd++tNf4HCZp29YX/8vBBYBeSakwNph7FArQHK/ejKCJmmJ2JQv0wLGMHHDxC5X564bJLFDVrT+ezaDs/NizexndX4Udb5j56HeCyEu8rH2A8Rx49QdAl2T2067FOvAvBshGmGj83CkHHCxWITaN/vigEMlXH57anvEl7uix9mxuN0R9PPn3zMNnE5wAEbzHNnl+fh2w==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hlESU/QjztXvmBVWcNV0YCutjNpSIPIkPZJot00HCnc=;
+ b=q89hZoGXMFWQVJ3kGdTa8JHOVPXB1EWyK38EEYqvae2lLoy2Lr42UyvT5NRaUo0vu9/c6/seGpUWCYhj96uRUuuHDMjhXT6R8yRjQpHXOmpzYT2ZyLj2dWdnOHqNcD0I7xQZUdgLDZlZoKC8tszrJq71kQ8OyfzfkloTCtfBp9M=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (2603:10a6:803:119::15)
+ by VE1PR04MB6413.eurprd04.prod.outlook.com (2603:10a6:803:11a::30)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2979.30; Thu, 14 May
+ 2020 01:45:51 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::d5f0:c948:6ab0:c2aa%4]) with mapi id 15.20.3000.016; Thu, 14 May 2020
+ 01:45:51 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Fabio Estevam <festevam@gmail.com>
+Subject: RE: [PATCH v7 RESEND 13/13] dmaengine: imx-sdma: add uart rom script
+Thread-Topic: [PATCH v7 RESEND 13/13] dmaengine: imx-sdma: add uart rom script
+Thread-Index: AQHWJ3c7z7ZHgVvFIUGSiBVcSGczHqimhdwAgABNxqA=
+Date: Thu, 14 May 2020 01:45:50 +0000
+Message-ID: <VE1PR04MB66382D7B4ADB48FBF437CA1989BC0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <1589218356-17475-1-git-send-email-yibin.gong@nxp.com>
+ <1589218356-17475-14-git-send-email-yibin.gong@nxp.com>
+ <CAOMZO5BB-bnKF6fQtw+1iGmojrmNHVQqeN3Fu8tHa_09ayjCgg@mail.gmail.com>
+In-Reply-To: <CAOMZO5BB-bnKF6fQtw+1iGmojrmNHVQqeN3Fu8tHa_09ayjCgg@mail.gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: gmail.com; dkim=none (message not signed)
+ header.d=none;gmail.com; dmarc=none action=none header.from=nxp.com;
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-ht: Tenant
+x-ms-office365-filtering-correlation-id: 80250c41-91ee-43ac-34bc-08d7f7a888aa
+x-ms-traffictypediagnostic: VE1PR04MB6413:|VE1PR04MB6413:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6413F9BAE4A3A08BBB57611E89BC0@VE1PR04MB6413.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:350;
+x-forefront-prvs: 040359335D
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: T7QFpTz0UB+X/Gpnn4iOxfM57Gt0F/HpKLh9O34dmw1iA6q3xbsihlA5aGeL/bbQ9tPyiBSGmLoh9LUhgFWiCnqiozvGGi9gcsxuQ32kipZT4zecEAtQEVtu7ZtekBByEA5e85ZvvO1tdzCMcOU91dZ4WTEO/rk8k+4ZAfGDByq50gr723hLaoXYRU30NXQupDaFKMJMt0yI2CZwoEwSX6WTTbeoLzfgftBfJC+HfqcY2fph85OiQQr+lezaDZExnYpgIjrfnXaWMegBaqFHbElmZ+KQpljmvNSyoR9iNav/bKW4rsI3jU/FLolDjgvohpSApk/1S2tSR8GT9irGIRM9D/0uHrm1ZwqERGxb8d1ek1hSbLcn7s91EjbuV8L16MiXcNz0XifPhQQcqcFlhkTwEuqg8CXALn97VT1mfXmtmOcjOEc4xvcbEb+4TZohBpUhWgqFRPm+O6nVvcH9j2BfIhMJxuVCuHr49SmHzFENnOKC+1huyjabOFkfRkY+E6KONpSP2Hc1k3XXPHcr1A==
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:VE1PR04MB6638.eurprd04.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(4636009)(136003)(366004)(39860400002)(396003)(346002)(376002)(33656002)(53546011)(6916009)(66946007)(54906003)(316002)(64756008)(66446008)(83080400001)(86362001)(8936002)(4326008)(7416002)(7696005)(66556008)(66476007)(6506007)(9686003)(76116006)(52536014)(8676002)(55016002)(2906002)(45080400002)(478600001)(71200400001)(966005)(5660300002)(4744005)(186003)(26005);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: SjoHd51kgvefUPbFCsyJZNhC8gWSuOukNNo0pVWQwtRSUkCktpnCq754XPAcSIw1sGL0WiItvEvKN3DBi/0yqCzS2hP1nn5C6SQoOSy5kyL9jM/CmBT0FHOA99F3ZT6G2Z2JzU9oJxYdegJ3AiCyt+r7PzpkpR5LcfDoXHcsCUwtsMaomCSEPAiKBHMNTRdyzD7hU81hVggzq8JJD7W/SgfW2QKZ6TH4x3EoQH2u1B8pSfJPLcdG6rS82foFfsWwld5tzbL25l4ZNQ1FjTJ5ly1KUM4NOyGxsis/zAhgGlDdwhUDeprS/zCCjMWJBR42VJLLxQmfY8uNiUgMCjkwQJuG+PJS0VcpZyh5XLKR7rv7JN6jY3HTOtu2Lxx6dY2nw0SKB4z/si5rSPHq58vdfzGQiRvACBCvmOrh8IZc5xfujx5T6PN82vLYJJtlsgX/ON1Limzfe/DSfO7+MNKZDpMU/aWn0urYfma+uoIjsIOrzYhCQuSaXnMZvtkOX7fi
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 80250c41-91ee-43ac-34bc-08d7f7a888aa
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2020 01:45:51.4627 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: TBrhOpD3TkUA5tiSqfxyw7VmX2wi+ZKXwkEQ8VqvnZaQOK983Va/r01wP+E+SHKArha39u88mEfT4g1jBBAlmQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6413
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_184535_267823_CB373943 
-X-CRM114-Status: GOOD (  18.90  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200513_184556_256657_FBE092D3 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [40.107.21.53 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.21.53 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,110 +123,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Mark Brown <broonie@kernel.org>, Will Deacon <will@kernel.org>,
- Ard Biesheuvel <ardb@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, "open list:OPEN
+ FIRMWARE AND FLATTENED DEVICE TREE BINDINGS" <devicetree@vger.kernel.org>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Will Deacon <will.deacon@arm.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ linux-spi <linux-spi@vger.kernel.org>, Vinod <vkoul@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Martin Fuzzey <martin.fuzzey@flowbird.group>,
+ =?utf-8?B?VXdlIEtsZWluZS1Lw7ZuaWc=?= <u.kleine-koenig@pengutronix.de>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX /
+ MXC ARM ARCHITECTURE" <linux-arm-kernel@lists.infradead.org>,
+ Lucas Stach <l.stach@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/13/2020 08:34 PM, Dave Martin wrote:
-> On Thu, May 07, 2020 at 06:59:10PM +0530, Anshuman Khandual wrote:
->> All HWCAP name arrays (i.e hwcap_str, compat_hwcap_str, compat_hwcap2_str)
->> that are scanned for /proc/cpuinfo output are detached from their bit fild
->> definitions making it difficult to corelate. This is also bit problematic
->> because during /proc/cpuinfo dump these arrays get traversed sequentially
->> assuming that they reflect and match HWCAP bit sequence, to test various
->> features for a given CPU.
->>
->> This moves all HWCAP name arrays near their bit definitions. But first it
->> defines all missing COMPAT_HWCAP_XXX that are present in the name string.
->>
->> Cc: Catalin Marinas <catalin.marinas@arm.com>
->> Cc: Will Deacon <will@kernel.org>
->> Cc: Mark Brown <broonie@kernel.org>
->> Cc: Ard Biesheuvel <ardb@kernel.org>
->> Cc: Mark Rutland <mark.rutland@arm.com>
->> Cc: Suzuki K Poulose <suzuki.poulose@arm.com>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Cc: linux-kernel@vger.kernel.org
->>
->> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
->> Acked-by: Mark Rutland <mark.rutland@arm.com>
->> ---
->> This applies on 5.7-rc4
->>
->> Changes in V2:
->>
->> - Defined COMPAT_KERNEL_HWCAP[2] and updated the name arrays per Mark
->> - Updated the commit message as required
->>
->> Changes in V1: (https://patchwork.kernel.org/patch/11532945/)
->>
->>  arch/arm64/include/asm/hwcap.h | 101 +++++++++++++++++++++++++++++++++
->>  arch/arm64/kernel/cpuinfo.c    |  90 -----------------------------
->>  2 files changed, 101 insertions(+), 90 deletions(-)
->>
->> diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
->> index 0f00265248b5..589ac02e1ddd 100644
->> --- a/arch/arm64/include/asm/hwcap.h
->> +++ b/arch/arm64/include/asm/hwcap.h
->> @@ -8,18 +8,27 @@
->>  #include <uapi/asm/hwcap.h>
->>  #include <asm/cpufeature.h>
->>  
->> +#define COMPAT_HWCAP_SWP	(1 << 0)
->>  #define COMPAT_HWCAP_HALF	(1 << 1)
->>  #define COMPAT_HWCAP_THUMB	(1 << 2)
->> +#define COMPAT_HWCAP_26BIT	(1 << 3)
->>  #define COMPAT_HWCAP_FAST_MULT	(1 << 4)
->> +#define COMPAT_HWCAP_FPA	(1 << 5)
->>  #define COMPAT_HWCAP_VFP	(1 << 6)
->>  #define COMPAT_HWCAP_EDSP	(1 << 7)
->> +#define COMPAT_HWCAP_JAVA	(1 << 8)
->> +#define COMPAT_HWCAP_IWMMXT	(1 << 9)
->> +#define COMPAT_HWCAP_CRUNCH	(1 << 10)
->> +#define COMPAT_HWCAP_THUMBEE	(1 << 11)
->>  #define COMPAT_HWCAP_NEON	(1 << 12)
->>  #define COMPAT_HWCAP_VFPv3	(1 << 13)
->> +#define COMPAT_HWCAP_VFPV3D16	(1 << 14)
->>  #define COMPAT_HWCAP_TLS	(1 << 15)
->>  #define COMPAT_HWCAP_VFPv4	(1 << 16)
->>  #define COMPAT_HWCAP_IDIVA	(1 << 17)
->>  #define COMPAT_HWCAP_IDIVT	(1 << 18)
->>  #define COMPAT_HWCAP_IDIV	(COMPAT_HWCAP_IDIVA|COMPAT_HWCAP_IDIVT)
->> +#define COMPAT_HWCAP_VFPD32	(1 << 19)
->>  #define COMPAT_HWCAP_LPAE	(1 << 20)
->>  #define COMPAT_HWCAP_EVTSTRM	(1 << 21)
+On 2020/05/14 5:07 Fabio Estevam <festevam@gmail.com> wrote: 
+> Hi Robin,
 > 
-> With the possible exception of SWP (does the swp emulation allow us to
-> report this as supported?), I think all these weren't mentioned because
-> they aren't included in ARMv8 and so can never be reported.
+> On Mon, May 11, 2020 at 6:33 AM Robin Gong <yibin.gong@nxp.com> wrote:
 > 
-> If we find ourselves reporting them, there's a bug somewhere.
+> > Please get latest sdma firmware from the below and put them into the
+> > path
+> > (/lib/firmware/imx/sdma/):
+> > https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgit.
+> >
+> kernel.org%2Fpub%2Fscm%2Flinux%2Fkernel%2Fgit%2Ffirmware%2Flinux-firm
+> w
+> >
+> are.git&amp;data=02%7C01%7Cyibin.gong%40nxp.com%7Cc38e0fc1fdc44557a
+> f8e
+> >
+> 08d7f7815cac%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C0%7C1%7C637250
+> 007291
+> >
+> 672980&amp;sdata=CnABtiTICTIf4ZQQ%2F8x9qP6HD9lDbRE%2BwXqcRhmKcd
+> 0%3D&am
+> > p;reserved=0
+> > /tree/imx/sdma
 > 
-> So, can we just default all obsolete string entries to NULL?
-> 
-> When generating the cpuinfo strings we could WARN and just emit an empty
-> string for that hwcap.
-
-All these above will be a change in the existing user visible behavior on
-the system and this patch never intended to create one. Hence, I will just
-defer this to maintainers on whether we should change existing /proc/cpuinfo
-output (including non-practically-possible ones on ARMv8) or even treat swap
-emulation as SWP.
-
-But IMHO, in case we decide to go for a /proc/cpuinfo change (which I would
-be happy implement), it should be applied over and above this patch which
-just preserved existing semantics and behavior.
-
-- Anshuman
-
+> "latest sdma firmware" is too vague. Better specify the commit ID of the
+> firmware where this is valid.
+Okay, will add it in v8.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
