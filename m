@@ -2,71 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EB05E1D34A6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 17:11:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 142D91D346D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 17:06:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ANmuYVmGUvWVqSyZd3R0ufCr07UmjFRQTpnwh2V+f8Q=; b=UjcTOeH9niqecA
-	hxspOkf+05DzwGcPjTUeWn+j4tz2d8zYRyjdnrLMENu3gxd6S79ezOMxCZ4vrYNkWEKb65oRN99nK
-	ogxOIbSaY6XBI5sqimWzo/B3SYSxhYgwRn4FZxQujwOInFxTG0xRRRtkue1vCKgqgeLgkH1v3BRzs
-	Pseu0C0u/RJwUB6Z9O/U1r0y8QeyIKVbXZwHgxOFK80ZOXBLMJDaMkO9ItOHy2Jhl7BIKd7QkSOUQ
-	pc3Y+jIqTswOG95cFAujvLfW/sb3CwACZlzjlAjFTlNXdnkPzmrOKTw55egc8p0N30rnJ2pRq3frB
-	wWYpJTFTinPkZ6Cgarrg==;
+	List-Owner; bh=d+Fyp0OwHDIlNsC+r+/BGgjFNa/LlzrTFvfTWSyBXvQ=; b=BOXUpC4ocNu9Cz
+	jwxWXzl0CbxBiNJsDHcAfj4rGQbcwGYzM6GQ8zWbvx6S7COQ72I9mneMPsm9cxcmtbcEHiuAeErda
+	KoA37On+dcisBAmQxf7Q4ynpXqji/23EUEu/ZhAUYGIrYWnGwk+SQsX0KZEIIulhvgSLvZsGbAXi+
+	g68LUBXuSSj0lCcHDEewAstYD4rXYe6ESVe7/ikVKTbl58he43mPkyHeSgaAdlPOQTJPQoNAKDx/k
+	mqTFnTIsnwgSPJho8HMcJCPwH/0E3kvpM/S44DA/8MI9N7UB0qg5ct8s2B0V4+yWtz6LqIzSuGKGj
+	N2sbdJ0fCJWqKlkOtb6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZFWR-0007az-Tw; Thu, 14 May 2020 15:11:43 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1jZFRe-0003Xj-Ea; Thu, 14 May 2020 15:06:46 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZFWE-0007a7-V3; Thu, 14 May 2020 15:11:37 +0000
-X-UUID: 0daa59a8d66145c78efbd4e6139d6186-20200514
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:Content-Type:MIME-Version:References:In-Reply-To:Message-ID:Date:Subject:CC:To:From;
- bh=bo0m4IuwC/3AaIjNIjRmx35SXEKkw+0nqdXJxel0Jmo=; 
- b=c31NXb2f/PPtqpSXR00lY03bttsAoNXWidgf+gq1tpejAmuGociOJhwngPfG4w8aFZ9nACraDQpLc0TJjEyrtVaeR9mxngqmAl/P1FGKt7LOqgCUGWeQoNfB65ugrykp6xM+XN2K/XDfZNsBcU6HgVNRFYe3FUA4uMq6gRhpCac=;
-X-UUID: 0daa59a8d66145c78efbd4e6139d6186-20200514
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 569562355; Thu, 14 May 2020 07:11:29 -0800
-Received: from mtkmbs05n2.mediatek.inc (172.21.101.140) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 08:01:23 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs05n2.mediatek.inc (172.21.101.140) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 23:01:21 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via
- Frontend Transport; Thu, 14 May 2020 23:01:21 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>, <jejb@linux.ibm.com>,
- <asutoshd@codeaurora.org>
-Subject: [PATCH v2 4/4] scsi: ufs: Fix WriteBooster flush during runtime
- suspend
-Date: Thu, 14 May 2020 23:01:22 +0800
-Message-ID: <20200514150122.32110-5-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20200514150122.32110-1-stanley.chu@mediatek.com>
-References: <20200514150122.32110-1-stanley.chu@mediatek.com>
+ id 1jZFRU-0003X1-VS
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 15:06:40 +0000
+Received: by mail-lf1-x142.google.com with SMTP id 188so2901922lfa.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 08:06:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=s6pQpCMudujfiAjUNY0Vi1g8QyE9NzQJQONui0Wm3WM=;
+ b=g3T9H3oQ9lDSC9YebE/7R2v3osY77/Pvq5h3Wqau24cmSPvO8DbK7aRZttXnHrOUAo
+ VgkpMqcGLtWerb2QFx7QQ9bsLAO/PsZ8b/NQdQzfdqcLuResZab+7dn9USjGOFiPfjHO
+ 9qkXYVl5DG/Jlkz6BRXkoiflzpMfd6LIoSR3dHOfgemCqpFgk09SxHd9UNG/5JC5Wfpk
+ ZNoP976TJEgSYLuStmsORP9g9l4OIczXeTeC3/eJRsVPMFu8pO7Pwl8b3YjkD74QCdrO
+ h41HBq2Hc4Td01KebCaExCtL0L55rrSUYwgtM8dETqStj3A3LI+Jz0S4RFNpUAeebMtz
+ /7Xg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=s6pQpCMudujfiAjUNY0Vi1g8QyE9NzQJQONui0Wm3WM=;
+ b=M0eo8Uve9b4F+sRNql9pUvu2oLOdxw9TLWRaZ2UwQVnL0n1MBX+jSTwU70XsCJPuDY
+ T31s0Esd7R7DEban53L+KVj89/XPsf/5OX8J1V6xbEaHzrtRoG0N4GUoKs9K0LpBsk8n
+ tsGsKbkhvYa+pUg40JdMPCrcsQ71zjTd6KP7wSpLQN1Xb49qyvBcT++K+QCW12Ur1nus
+ YJr29oU2LuhCnz2LiTvulNTSlIAeRvNzBuVr46gI9aO1ujxO4F1M36aM5eHqtxZ9hu4y
+ oTtOxTG614IjAjI0MszW3tRFaKYD5Wsm0Ze1Gm2L5J8xLCj/ftD749wtIeaXFinSDxhM
+ /N8Q==
+X-Gm-Message-State: AOAM531BzY7dLfCGwhNAq7ANZXDqj+qbJxnuacyHlmn/mKipYcN+tZSS
+ 7DjYLLl+6GwBsVW0DDSsTgYdHoQjrk7qg83whwkKbw==
+X-Google-Smtp-Source: ABdhPJyqNOeUwCze7pjStc+fCzjwPaJVk4A8NthXF4Ocusde3ddlkvHcyH91UjYcAtdf2Q05SfUOpl++RL/M/PRWzX4=
+X-Received: by 2002:ac2:5212:: with SMTP id a18mr3603745lfl.83.1589468793160; 
+ Thu, 14 May 2020 08:06:33 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20200514082428.27864-1-etienne.carriere@linaro.org>
+ <20200514142924.GC23401@bogus>
+In-Reply-To: <20200514142924.GC23401@bogus>
+From: Etienne Carriere <etienne.carriere@linaro.org>
+Date: Thu, 14 May 2020 17:06:22 +0200
+Message-ID: <CAN5uoS_bimZsFqwaODRRWeCe15JMepQa2z9J0+dq7qNfwxRsug@mail.gmail.com>
+Subject: Re: [PATCH] firmware: arm_scmi: fix SMCCC_RET_NOT_SUPPORTED management
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_081131_004971_C20D2B02 
-X-CRM114-Status: GOOD (  14.47  )
+X-CRM114-CacheID: sfid-20200514_080637_040816_5C24A87C 
+X-CRM114-Status: GOOD (  18.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 MIME_BASE64_TEXT       RAW: Message text disguised using base64
- encoding
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -74,8 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,121 +91,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, linux-kernel@vger.kernel.org, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, Stanley Chu <stanley.chu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: linux-kernel@vger.kernel.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently UFS host driver promises VCC supply if UFS device
-needs to do WriteBooster flush during runtime suspend.
+On Thu, 14 May 2020 at 16:29, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Thu, May 14, 2020 at 10:24:28AM +0200, Etienne Carriere wrote:
+> > Fix management of argument a0 output value of arm_smccc_1_1_invoke() that
+> > should consider only SMCCC_RET_NOT_SUPPORTED as reporting an unsupported
+> > function ID as correctly stated in the inline comment.
+> >
+>
+> I agree on the comment part, but ...
+>
+> > Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
+> > ---
+> >  drivers/firmware/arm_scmi/smc.c | 2 +-
+> >  1 file changed, 1 insertion(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/firmware/arm_scmi/smc.c b/drivers/firmware/arm_scmi/smc.c
+> > index 49bc4b0e8428..637ad439545f 100644
+> > --- a/drivers/firmware/arm_scmi/smc.c
+> > +++ b/drivers/firmware/arm_scmi/smc.c
+> > @@ -115,7 +115,7 @@ static int smc_send_message(struct scmi_chan_info *cinfo,
+> >       mutex_unlock(&scmi_info->shmem_lock);
+> >
+> >       /* Only SMCCC_RET_NOT_SUPPORTED is valid error code */
+> > -     if (res.a0)
+> > +     if (res.a0 == SMCCC_RET_NOT_SUPPORTED)
+> >               return -EOPNOTSUPP;
+>
+> Now this will return 0 for all values other than SMCCC_RET_NOT_SUPPORTED.
+> Is that what we need ? Or do you see non-zero res.a0 for a success case ?
+> If later, we need some fixing, otherwise it is safer to leave it as is
+> IMO.
 
-However the UFS specification mentions,
+Firmware following SMCCC v1.x for some OEM/SiP invocation may simply
+not modify invocation register argument a0 on invocation with a
+SCMI-SMC transport function ID.
+Resulting in res.a0 == scmi_info->func_id here. Which is, by SMCCC
+v1.x not an error.
 
-"While the flushing operation is in progress, the device is
-in Active power mode."
+From SMCCC v1.x only SMCCC_RET_NOT_SUPPORTED (-1 signed extended is a
+reserved ) is a generic return error whatever function ID value.
 
-Therefore UFS host driver needs to promise more: Keep UFS
-device as "Active power mode", otherwise UFS device shall not
-do any flush if device enters Sleep or PowerDown power mode.
+Or consider part of the SCMI-SMC transport API that output arg a0
+shall be 0 on success,
+SMCCC_RET_NOT_SUPPORTED if function ID is not supported
+and any non-zero value for non-generic **error** codes.
 
-Fix this by not changing device power mode if WriteBooster
-flush is required in ufshcd_suspend().
+etienne
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
----
- drivers/scsi/ufs/ufs.h    |  1 -
- drivers/scsi/ufs/ufshcd.c | 42 ++++++++++++++++++++-------------------
- 2 files changed, 22 insertions(+), 21 deletions(-)
+>
+> --
+> Regards,
+> Sudeep
 
-diff --git a/drivers/scsi/ufs/ufs.h b/drivers/scsi/ufs/ufs.h
-index b3135344ab3f..9e4bc2e97ada 100644
---- a/drivers/scsi/ufs/ufs.h
-+++ b/drivers/scsi/ufs/ufs.h
-@@ -577,7 +577,6 @@ struct ufs_dev_info {
- 	u32 d_ext_ufs_feature_sup;
- 	u8 b_wb_buffer_type;
- 	u32 d_wb_alloc_units;
--	bool keep_vcc_on;
- 	u8 b_presrv_uspc_en;
- };
- 
-diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 169a3379e468..b9f7744ca2b4 100644
---- a/drivers/scsi/ufs/ufshcd.c
-+++ b/drivers/scsi/ufs/ufshcd.c
-@@ -8101,8 +8101,7 @@ static void ufshcd_vreg_set_lpm(struct ufs_hba *hba)
- 	    !hba->dev_info.is_lu_power_on_wp) {
- 		ufshcd_setup_vreg(hba, false);
- 	} else if (!ufshcd_is_ufs_dev_active(hba)) {
--		if (!hba->dev_info.keep_vcc_on)
--			ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
-+		ufshcd_toggle_vreg(hba->dev, hba->vreg_info.vcc, false);
- 		if (!ufshcd_is_link_active(hba)) {
- 			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq);
- 			ufshcd_config_vreg_lpm(hba, hba->vreg_info.vccq2);
-@@ -8172,6 +8171,7 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 	enum ufs_pm_level pm_lvl;
- 	enum ufs_dev_pwr_mode req_dev_pwr_mode;
- 	enum uic_link_state req_link_state;
-+	bool keep_curr_dev_pwr_mode = false;
- 
- 	hba->pm_op_in_progress = 1;
- 	if (!ufshcd_is_shutdown_pm(pm_op)) {
-@@ -8227,27 +8227,29 @@ static int ufshcd_suspend(struct ufs_hba *hba, enum ufs_pm_op pm_op)
- 			ufshcd_disable_auto_bkops(hba);
- 		}
- 		/*
--		 * With wb enabled, if the bkops is enabled or if the
--		 * configured WB type is 70% full, keep vcc ON
--		 * for the device to flush the wb buffer
-+		 * If device needs to do BKOP or WB buffer flush during
-+		 * Hibern8, keep device power mode as "active power mode"
-+		 * and VCC supply.
- 		 */
--		if ((hba->auto_bkops_enabled && ufshcd_is_wb_allowed(hba)) ||
--		    ufshcd_wb_keep_vcc_on(hba))
--			hba->dev_info.keep_vcc_on = true;
--		else
--			hba->dev_info.keep_vcc_on = false;
--	} else {
--		hba->dev_info.keep_vcc_on = false;
-+		keep_curr_dev_pwr_mode = hba->auto_bkops_enabled ||
-+			(((req_link_state == UIC_LINK_HIBERN8_STATE) ||
-+			((req_link_state == UIC_LINK_ACTIVE_STATE) &&
-+			ufshcd_is_auto_hibern8_enabled(hba))) &&
-+			ufshcd_wb_keep_vcc_on(hba));
- 	}
- 
--	if ((req_dev_pwr_mode != hba->curr_dev_pwr_mode) &&
--	    ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
--	    !ufshcd_is_runtime_pm(pm_op))) {
--		/* ensure that bkops is disabled */
--		ufshcd_disable_auto_bkops(hba);
--		ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
--		if (ret)
--			goto enable_gating;
-+	if (req_dev_pwr_mode != hba->curr_dev_pwr_mode) {
-+		if ((ufshcd_is_runtime_pm(pm_op) && !hba->auto_bkops_enabled) ||
-+		    !ufshcd_is_runtime_pm(pm_op)) {
-+			/* ensure that bkops is disabled */
-+			ufshcd_disable_auto_bkops(hba);
-+		}
-+
-+		if (!keep_curr_dev_pwr_mode) {
-+			ret = ufshcd_set_dev_pwr_mode(hba, req_dev_pwr_mode);
-+			if (ret)
-+				goto enable_gating;
-+		}
- 	}
- 
- 	flush_work(&hba->eeh_work);
--- 
-2.18.0
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
