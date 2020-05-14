@@ -2,94 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09A4B1D3663
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:23:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 383531D366E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:26:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PbJFZnJOkzMagKzA6Pt2rpGIspbXWzovVXwwh9ZrPmI=; b=PdRpTg567GcgmKULx5MpvZ0gD
-	VCQp9JQORYbUQEqzqb6ZDWPIXnVw9kb8yO864lFhjBMb+4EDQnViU4A3XM2yy3T7bL6o0u7dY3mdG
-	8ahfa0NNlgFiDSNsai9DMRiiON+OyowuS2Kx/vyXg8GNrTT+5cGE7v826klSyQlSWcAvFb19telJB
-	0Gy843idgjxEuanWf/YXy4F5hWslXntBske/jJUyQia8oJLwae4OfhRCsnsyFtaGsuJtl0RwQyO/a
-	8HsotZXUfwxlOXew9WsVHuga73dwcc4oMQiu0Uqe6ZP3E5lwxtVTckIH0WRl4h5nGrdPG6IkFT535
-	YmcSHzA7Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2hMzaF9mbTH5BVN1x7OpVwxYl5wROcYZ+uD6KEYite0=; b=eD4H7gGgPfQFF9
+	Z0O3rYer9MQmc2TP8YZx4A6R/gyyX4jgh1QFeEIgeIuDN+Teu8lvXWw3kk6kSM1npLxmF/6hdae2u
+	5e4eagis+f8pejjKkVv3wWoyhN/zga/KCezXC/cZtC7WBBo5bHB+9yzI7W+gTkmyZYg4s5+p/Yi26
+	xVWLMndPSs8hGuePHCidzNbWMpg5DllXHsBlEso6X8pUSgnmKS/PBMEEYSMcJ6s7XYsUjKYZMnmYU
+	tGQ/PdKLUjDoTp5LjsEoMvsNkdkw57RdIa7VBVh0R4w/w+1yDbQ9FgSTHY88Sd4VYzjZ6EOsYZMbQ
+	lWmv1PWV35sbt24T+q9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZGdd-0005vt-MV; Thu, 14 May 2020 16:23:13 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1jZGgN-0000b0-Fh; Thu, 14 May 2020 16:26:03 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZGdB-0005qd-GU
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 16:22:50 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 963665C0212;
- Thu, 14 May 2020 12:22:42 -0400 (EDT)
-Received: from mailfrontend1 ([10.202.2.162])
- by compute4.internal (MEProxy); Thu, 14 May 2020 12:22:42 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=cerno.tech; h=
- date:from:to:cc:subject:message-id:references:mime-version
- :content-type:in-reply-to; s=fm2; bh=BBAPlSEHy7qfk456tIvoxyLmZFq
- Ly4UcCnDWEG14lto=; b=Yl/aIKqo4MPIc7QpZmLqew2xx3UMNUzD9BV+J+dmaOQ
- y2UQEJLuUAMouu92M3NUxkyMUMrAkcZxbu6eGRFmQsyEKTyTrudQ8j1QWzTg6ley
- uwky1kRZW7lyxLHTpEls3IwIn/l0Iif3xhcrkhyhl4JcClGUfM4ZQyJo8ktRBY2a
- TiQ7zDyRRrYDdstZPLhTO42CngCXE1WSrAkjS91b+HpAc3M4MYNK4fVtcEW2MTkC
- rcv/7kSZD7FjwP9fNsZ/yBVwP4q2b7A9J6UnIKAoJtc20ZXnEjONDJvu5MDo5GWq
- Z8kyYIxQKc5B9A5cYYeytdN8ZtfgN/MrY6fKPXXXtzQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm2; bh=BBAPlS
- EHy7qfk456tIvoxyLmZFqLy4UcCnDWEG14lto=; b=WOtOzTtkbEXrlLfpeXbIY4
- 4sB3pcXdz+ovlZEpBIeYHiarKEKF9SzbbLqpztSi0ZrSqrv4vjMrp+Z8u92sU4En
- C8o3muOawFpn4+5vjPdC4NkgfstnrhYDl59wNrTerIgFY568s59hkHIMWfmrKQcb
- b/mKZN82qsibYCn/E/FlBx4xiHKlFDX5MwX+ExvAnSLeVkb3f2NOZda+/mGnpVOw
- uNclSAh1q5wC4yjHm3PKQI2+0k1CItr86CsuLl+PuGnmtt5XpzvjYPYA84IHRtXN
- 5lJAxs1YUYNlRGRuIcDGtChpR86NCAw45pUjZ9LnnzhseS0ULx5Y8Mycnh2yQfxg
- ==
-X-ME-Sender: <xms:TXC9XpNDVcPyn68f-ks293yeNgPlPtzPyxTObRAoI-egFr8qGIep2w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduhedrleeigdelvdcutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpeffhffvuffkfhggtggujgesghdtreertddtvdenucfhrhhomhepofgrgihimhgv
- ucftihhprghrugcuoehmrgigihhmvgestggvrhhnohdrthgvtghhqeenucggtffrrghtth
- gvrhhnpeelkeeghefhuddtleejgfeljeffheffgfeijefhgfeufefhtdevteegheeiheeg
- udenucfkphepledtrdekledrieekrdejieenucevlhhushhtvghrufhiiigvpedtnecurf
- grrhgrmhepmhgrihhlfhhrohhmpehmrgigihhmvgestggvrhhnohdrthgvtghh
-X-ME-Proxy: <xmx:TXC9Xr_zfdP2leqWlSrUsY3yr_xIyeKY4qRFd6UK5n_0lueJrD8ioQ>
- <xmx:TXC9XoS6EoMGVFTa-s3BvO_emvkjxtlMuKwKEmfImqsXxWpTZ_UHYQ>
- <xmx:TXC9XltuH1G-4lKs5iO5viP83uvaV7km3tzxKbpNBs0cVwYsrJBtfw>
- <xmx:UnC9Xo5iA9Nm8bC-KW7sn6PAEqC6Vm78k-mxEydZzCz8egtAj7uMNw>
-Received: from localhost (lfbn-tou-1-1502-76.w90-89.abo.wanadoo.fr
- [90.89.68.76])
- by mail.messagingengine.com (Postfix) with ESMTPA id 2D873328005A;
- Thu, 14 May 2020 12:22:37 -0400 (EDT)
-Date: Thu, 14 May 2020 18:22:35 +0200
-From: Maxime Ripard <maxime@cerno.tech>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: Re: [PATCH v4 0/5] iommu: Add Allwinner H6 IOMMU driver
-Message-ID: <20200514162235.he2q7vx3dra5ck2l@gilmour.lan>
-References: <cover.b27dedd61e008ffcf55a028ccddda3bb4d21dfc8.1589378833.git-series.maxime@cerno.tech>
- <20200514123855.GI18353@8bytes.org>
- <20200514130900.k4gvr3zcajg3rouc@gilmour.lan>
- <20200514131647.GK18353@8bytes.org>
+ id 1jZGg6-0000Z5-Vc
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 16:25:51 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=JPLZxXuF7yodRZCXQ3CE5KPziLgfM5ayWE6A7Api2Yw=; b=FlwveDtae04WSkTVrnUsh/Uz2
+ rc+TJuHh3HuX+v4pWvszHH8plZHnisShvsa8yuPOuylYEkV8weNRvI+/A91lVTelbRrfkWFoY6DiZ
+ oor/RfX0HFp5tjonY0rRmqA0fViASjaJoULZguSioBF7jT+yHzoFOtRBtxWWAlac0eKPSsgjj4N+s
+ nJWWJmCWSuzdRzNOoWgRivuptGuWEPIhPB0RcJIVHSvQzgduoQUbK/nyWpXI/ca4uOz4cTkieTywQ
+ j0IoxY5po7/VCqkxtXQ4P8sE6p2MPc1mjspLACxenttU1woKLN8DGr7RfhBnI72XoaGtzy2p4gQrF
+ zDFXA639g==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:40240)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1jZGfw-0000fU-St; Thu, 14 May 2020 17:25:37 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1jZGfv-0000hD-S4; Thu, 14 May 2020 17:25:35 +0100
+Date: Thu, 14 May 2020 17:25:35 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: ARM: static kernel in vmalloc space
+Message-ID: <20200514162535.GP1551@shell.armlinux.org.uk>
+References: <20200503145017.GA5074@afzalpc>
+ <CAK8P3a3OC5UO72rTDWi6+XgmExJmkATEjscq8hns8Bng06OpcQ@mail.gmail.com>
+ <20200504091018.GA24897@afzalpc>
+ <CAK8P3a25sZ9B+AE=EJyJZSU91CkBLLR6p2nixw_=UAbczg3RiQ@mail.gmail.com>
+ <20200511142113.GA31707@afzalpc>
+ <CAK8P3a0=+aBJLTvHOskTv=tba_s5b5MzWrYG8mxH3iLNy4hfBw@mail.gmail.com>
+ <20200512104758.GA12980@afzalpc>
+ <CAK8P3a1DQWG1+ab2+vQ2XCAKYxPUjJk5g3W3094j-adDXSQfzQ@mail.gmail.com>
+ <20200514111755.GA4997@afzalpc>
+ <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20200514131647.GK18353@8bytes.org>
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a2PNZY-9L9+SFDLtrp731ZGo6Nbs-7jY6E2PwWXa0kfKw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_092245_935129_21FF4A2B 
-X-CRM114-Status: GOOD (  15.42  )
+X-CRM114-CacheID: sfid-20200514_092547_168873_D353F9BB 
+X-CRM114-Status: GOOD (  18.15  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [66.111.4.26 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ low trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,7 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -109,99 +95,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- iommu@lists.linux-foundation.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6872174411210302755=="
+Cc: afzal mohammed <afzal.mohd.ma@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, May 14, 2020 at 02:41:11PM +0200, Arnd Bergmann wrote:
+> On Thu, May 14, 2020 at 1:18 PM afzal mohammed <afzal.mohd.ma@gmail.com> wrote:
+> > On Tue, May 12, 2020 at 09:49:59PM +0200, Arnd Bergmann wrote:
+> >
+> > > Any idea which bit you want to try next?
+> >
+> > My plan has been to next post patches for the static kernel migration
+> > to vmalloc space (currently the code is rigid, taking easy route
+> > wherever possible & not of high quality) as that feature has an
+> > independent existence & adds value by itself.  And then start working
+> > on other steps towards VMSPLIT_4G_4G.
+> >
+> > Now that you mentioned about other things, i will slowly start those
+> > as well.
+> 
+> Sounds good.
+> 
+> > > Creating a raw_copy_{from,to}_user()
+> > > based on get_user_pages()/kmap_atomic()/memcpy() is probably a good
+> > > next thing to do. I think it can be done one page at a time with only
+> > > checking for
+> > > get_fs(), access_ok(), and page permissions, while get_user()/put_user()
+> > > need to handle a few more corner cases.
+> >
+> > Before starting w/ other things, i would like to align on the high
+> > level design,
+> >
+> > My understanding (mostly based on your comments) as follows,
+> > (i currently do not have a firm grip over these things, hope to have
+> > it once started w/ the implementation)
+> >
+> > 1. SoC w/ LPAE
+> > 2. TTBR1 (top 256MB) for static kernel, modules, io mappings, vmalloc,
+> >         kmap, fixmap & vectors
+> 
+> Right, these kind of go together because pre-LPAE cannot do the
+> same TTBR1 split, and they more frequently have conflicting
+> static mappings.
+> 
+> It's clearly possible to do something very similar for older chips
+> (v6 or v7 without LPAE, possibly even v5), it just gets harder
+> while providing less benefit.
 
---===============6872174411210302755==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="phtkiivizeocuqcp"
-Content-Disposition: inline
+Forget about doing this for anything without a PIPT cache - or you're
+going to end up having to flush the data cache each time you enter or
+exit the kernel.
 
-
---phtkiivizeocuqcp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi,
-
-On Thu, May 14, 2020 at 03:16:47PM +0200, Joerg Roedel wrote:
-> On Thu, May 14, 2020 at 03:09:00PM +0200, Maxime Ripard wrote:
-> > On Thu, May 14, 2020 at 02:38:55PM +0200, Joerg Roedel wrote:
-> > > On Wed, May 13, 2020 at 04:07:19PM +0200, Maxime Ripard wrote:
-> > > > Maxime Ripard (5):
-> > > >   dt-bindings: iommu: Add Allwinner H6 IOMMU bindings
-> > > >   dt-bindings: display: sun8i-mixer: Allow for an iommu property
-> > > >   iommu: Add Allwinner H6 IOMMU driver
-> > > >   arm64: dts: allwinner: h6: Add IOMMU
-> > > >   drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
-> > >=20
-> > > Applied all to the IOMMU tree, thanks. The code lives in the
-> > > arm/allwinner branch.
-> >=20
-> > Did you also merge the DTS and DRM patches?
-> >=20
-> > Ideally, they should be merged through other trees to avoid the conflic=
-ts as
-> > much as possible (arm-soc and drm-misc respectively).
-> >=20
-> > If it's an option, could you drop all of them but "dt-bindings: iommu: =
-Add
-> > Allwinner H6 IOMMU bindings" and "iommu: Add Allwinner H6 IOMMU driver"?
->=20
-> Okay, just to be on the safe side, I am going to drop:
->=20
-> 	dt-bindings: display: sun8i-mixer: Allow for an iommu property
-> 	arm64: dts: allwinner: h6: Add IOMMU
-> 	drm/sun4i: mixer: Call of_dma_configure if there's an IOMMU
->=20
-> from the iommu-tree?
-
-Yep, please :)
-
-> I took them because you are also maintaining the DRM driver, which
-> counted as an implicit ACK for me :)
-
-I also maintain the DTS patches for that matter, but we have a good number =
-of
-patches queued up for those files in those trees usually, so it's easier for
-everyone to avoid the conflicts and just merge them into separate trees whe=
-n we
-can.
-
-Thanks!
-Maxime
-
---phtkiivizeocuqcp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXr1wSgAKCRDj7w1vZxhR
-xQ1UAP9NNM9p3Y+kfFB3QB7uFNTQoj45RAJZ4+7liXO1OnMMYQD9FQkWyw3VFTeT
-i82PNurLgs71brOZ1Qfwy2UAvsBU8QE=
-=thRW
------END PGP SIGNATURE-----
-
---phtkiivizeocuqcp--
-
-
---===============6872174411210302755==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 10.2Mbps down 587kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6872174411210302755==--
-
