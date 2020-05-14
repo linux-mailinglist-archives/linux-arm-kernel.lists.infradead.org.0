@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1D4A1D3DEA
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:49:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1DC6B1D3E0E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:56:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
 	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hlT/uhJP3lvNI4tI2YpKrHhhb5YggbftbU9PlvXlRmk=; b=Slwsvcc8Q8aWZ+
-	X6/oKj6XEdH1LI5MePBDYlKVnyRmesUbt3iIrPHIOHJw7R4NB79dVoP/jHXBSmuOZOh9VV/QvxVME
-	uegCRxRdnYgrOLeHRnDczyvZg1bO4WGFZBtLkBDMFjfj9Gzssh4DYMiNq/PFv+0F59ki6BgYnDyvu
-	VQ6U+p7rKowlTh2N8M0E4aGBb2yZCJ8akk02Cwu3NXB3c0Z5Fy+IGbADR+ehkVlxIQ4aegNEmFObC
-	UACQX38YWW5jkpUmVgsgqz+5QASZN1/leaXxMrhYZ9TwbBgAYE2V89HD+Jnd3JeZgrAz4pinHjxDV
-	ZXq4b22Yixr49TD7nS7w==;
+	List-Owner; bh=4VhCxswPJQjENVnsWJGeJyaLMxaqvBKsGPXk1/BDcjA=; b=m6K7i2zb8radDD
+	/9fFJFR7jJAqp6uvqLYW0MP3HBJ7CbKRKcIGFWxAfKVrYFvqQT7lx9+fsrxig3AS+5qMJs9w9l3Zm
+	KpjitB8NDxGyZMMyiyTwbzpWwacCmDAPBLWJOfD4MHfA5951fjDErpooevFZASIjU4z91+cauichh
+	7lQfdKPCaX94/6ACgY2AC9bF6zQBRGms/R2Am+PSG7in/Vhs5SXpfq6hAPslZMpat1tntDg7b2ByC
+	ELzUAK9yvzLM2YMh4wWhbY4o6swyJQLmBBMUmcitkePpiSLMMrdiywlBrzVDhEoZf8JRNP9ZiK6fo
+	h6sbN9lqwTwaNHNIG8mA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJr7-00026j-8m; Thu, 14 May 2020 19:49:21 +0000
+	id 1jZJxl-0007iN-MV; Thu, 14 May 2020 19:56:13 +0000
 Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJqz-00023f-Js
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:49:14 +0000
+ id 1jZJxd-0007hs-Gm; Thu, 14 May 2020 19:56:06 +0000
 Received: from localhost (unknown [IPv6:2601:601:9f00:477::3d5])
  (using TLSv1 with cipher AES256-SHA (256/256 bits))
  (Client did not present a certificate)
  (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 33386128CF131;
- Thu, 14 May 2020 12:49:09 -0700 (PDT)
-Date: Thu, 14 May 2020 12:49:08 -0700 (PDT)
-Message-Id: <20200514.124908.1791254966123977524.davem@davemloft.net>
-To: vkoul@kernel.org
-Subject: Re: [PATCH] net: stmmac: fix num_por initialization
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id EE51E128D3256;
+ Thu, 14 May 2020 12:56:03 -0700 (PDT)
+Date: Thu, 14 May 2020 12:56:03 -0700 (PDT)
+Message-Id: <20200514.125603.1095750660571738939.davem@davemloft.net>
+To: brgl@bgdev.pl
+Subject: Re: [PATCH v3 00/15] mediatek: add support for MediaTek Ethernet MAC
 From: David Miller <davem@davemloft.net>
-In-Reply-To: <20200514062836.190194-1-vkoul@kernel.org>
-References: <20200514062836.190194-1-vkoul@kernel.org>
+In-Reply-To: <20200514075942.10136-1-brgl@bgdev.pl>
+References: <20200514075942.10136-1-brgl@bgdev.pl>
 X-Mailer: Mew version 6.8 on Emacs 26.3
 Mime-Version: 1.0
 X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
  (shards.monkeyblade.net [149.20.54.216]);
- Thu, 14 May 2020 12:49:09 -0700 (PDT)
+ Thu, 14 May 2020 12:56:04 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_124913_652444_49BA13D0 
-X-CRM114-Status: UNSURE (   7.01  )
+X-CRM114-CacheID: sfid-20200514_125605_555856_3A797F44 
+X-CRM114-Status: UNSURE (   5.94  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -63,29 +62,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: rahulak@qti.qualcomm.com, alexandre.torgue@st.com,
- linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
- bjorn.andersson@linaro.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- netdev@vger.kernel.org, peppe.cavallaro@st.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: edwin.peer@broadcom.com, devicetree@vger.kernel.org,
+ bgolaszewski@baylibre.com, stephane.leprovost@mediatek.com, arnd@arndb.de,
+ corbet@lwn.net, netdev@vger.kernel.org, sean.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, pedro.tsai@mediatek.com, fparent@baylibre.com,
+ robh+dt@kernel.org, linux-mediatek@lists.infradead.org,
+ andrew.perepech@mediatek.com, john@phrozen.org, matthias.bgg@gmail.com,
+ kuba@kernel.org, Mark-MC.Lee@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, hkallweit1@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Vinod Koul <vkoul@kernel.org>
-Date: Thu, 14 May 2020 11:58:36 +0530
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Thu, 14 May 2020 09:59:27 +0200
 
-> Driver missed initializing num_por which is por values that driver
-> configures to hardware. In order to get this values, add a new structure
-> ethqos_emac_driver_data which holds por and num_por values and populate
-> that in driver probe.
-> 
-> Fixes: a7c30e62d4b8 ("net: stmmac: Add driver for Qualcomm ethqos")
-> Reported-by: Rahul Ankushrao Kawadgave <rahulak@qti.qualcomm.com>
-> Signed-off-by: Vinod Koul <vkoul@kernel.org>
+> Next we do some cleanup of the mediatek ethernet drivers directory and update
+> the devres documentation with existing networking devres helpers.
 
-Applied and queued up for -stable, thanks.
+I don't agree with the new devres stuff.
+
+You have to be very careful with the ordering of when you map/unmap
+registers, free up anciliary resources, etc. in relationship to when
+the netdev unregister happens.
+
+Please submit this driver without these controversial devres changes,
+and then you can submit and discuss those changes separately later.
+
+Thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
