@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4789E1D3EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 22:21:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 22D231D3EEB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 22:21:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B98IbqNJFvn+ZnM4ER8jYQdwXHRt7TaPICOc3kduEBA=; b=P7fjO5Cj2N22ku
-	PiTIPyVP4BkhLk7wHbjmfp7CUAO8JtXFxa/6UCHpy3uxE74mpvtyzzwMXtCYRVIb4jlCwDj6MjJjM
-	s5v5xrCvAwT7AN+Kpb8uWkx0WjLMCdd1f1qPHjQSTHzY6vDjwgTXF657Mh1khCSa3S3hfiqcMvwVF
-	L4I1+rzVY8TNq02SmMLO8QuLtomTUICECTdHTlNmn62ugpbbhQoUH7EJX7fb1hDU1fgX+bBCLIrbB
-	WJj9vCEvrs4+lk/76TUnpLXdxlTxt/v5ai/KM7UUcMOSXetOztir6Tsb2yJi/BTdzGVo5u39mdliZ
-	vyFCoLVSZjE2PBimAt/g==;
+	List-Owner; bh=mzJQRS4gvGGUMPEY3ynTJ7cw9lEYGhyfyc94OUd3QQ4=; b=gWckd6ad1XX1g9
+	CjWvH8Jw+RCr5+YgQV6c9s8mgHndc2XRI5z/R52TuF/fZ/Msj+4LfUkCWxa7mYe/zOJZ44idKCqu1
+	iysjz8vPj25cHfn/KUoWJyVOS2T9xncetz9cyjaei86LDVKCX3ikDqylhYNi2u4UFlbB3loPIdS2d
+	aw8abaaE58BXmxGuSKjM2GLpw/lKhLShxAVm2ZPEEtUIX/6kF+LK+hyXkwwlq8wYTnoIlxcmbjmRB
+	U3E+1J6e466yHe/7B2y7iG7JeoRop3gLsAa9YQoOuFaPZiAB+Iq8CAj1YtDQNcu3pe1RZjoqm3po2
+	XKvIzpR60S4lXX89w8jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZKLZ-0001c4-DE; Thu, 14 May 2020 20:20:49 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::9])
+	id 1jZKLx-0001pi-Pb; Thu, 14 May 2020 20:21:13 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::9])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZKLP-0001b6-1T
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 20:20:43 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589487631;
+ id 1jZKLg-0001n5-TZ
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 20:21:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589487655;
  s=strato-dkim-0002; d=chronox.de;
  h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=5qEHN9Aos9wJSmrSmHepYAI40f0iVUfr9ovzdP/JcuY=;
- b=n94lMm1WK4/IcujLm6V6WNC53wCJs8UpVwAk/xnAEtF4yWXO6pFmhEOo24MDcVD8tf
- 06blpuOR6luiBiDqi4vKbscPQUczaCGKLSVA9ZDwNxwXmCRN3JPgREZNAne+HsW+lQ46
- w8LBr4N4Gf04NvmI7qC8/aIip36F1qzE54ZcJCKKKItH6oI0DJs775QyfnmU0saek0Jp
- zh5ikLldd+gh/rZ6mAGhAGsb3FOscKIqCIGGgpnMgRFP71PyCoT91rjf1qAKY2v65ZdM
- Uwmg1JF7Fvy0fLe2I+KtwvPdYekJM52v+9HIutdJK23zkbwCjlLmb3WdzZm1WGq7Aqcg
- bTAw==
+ bh=t8MuLBhVs0CMy4EvOYJ57JJKkaJSMB56O8oh0kRWzwM=;
+ b=GoxLVI3HiQ8P1Fxv522AZ4fqlRC5ifNI/DowZq/Z34nIIgl7UWJ7VruIEzLWpBMYfa
+ bfJGxecd4WsZdQdV0wIrW3x6ttlPotOubHEU9l1YdezYGNpM8aaRg0Ek3fPsJhqfZrwY
+ xcBz7Su4tlZ19yPmtYUun6IhnRGotonraNjVHmd2+xhL14fBRqA7+UA60CbUySQodeow
+ 14Zm2XvO8DEQfj8ACVwd8ze2TjwDnQBNM0scfhlYDyrbsIrCs0QwcqOfw6OtTUjMmsg/
+ fzGXOEFBLZcNqhy1a0hDS5wtdsQSK6LSKejKeigbnM7OpuWPmrCl7V9a7tkcs3HfyMia
+ WAWA==
 X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPaJfSc9C1S"
 X-RZG-CLASS-ID: mo00
 Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id u08bf3w4EKKQxtG
+ with ESMTPSA id u08bf3w4EKKsxtN
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
  (Client did not present a certificate);
- Thu, 14 May 2020 22:20:26 +0200 (CEST)
+ Thu, 14 May 2020 22:20:54 +0200 (CEST)
 From: Stephan Mueller <smueller@chronox.de>
 To: =?utf-8?B?xYF1a2Fzeg==?= Stelmach <l.stelmach@samsung.com>
-Subject: Re: [PATCH 1/2] hwrng: iproc-rng200 - Set the quality value
-Date: Thu, 14 May 2020 22:20:26 +0200
-Message-ID: <4493123.C11H8YMYNy@tauon.chronox.de>
-In-Reply-To: <20200514190734.32746-2-l.stelmach@samsung.com>
+Subject: Re: [PATCH 2/2] hwrng: exynos - Set the quality value
+Date: Thu, 14 May 2020 22:20:54 +0200
+Message-ID: <8196280.CLNGmrtAO5@tauon.chronox.de>
+In-Reply-To: <20200514190734.32746-3-l.stelmach@samsung.com>
 References: <20200514190734.32746-1-l.stelmach@samsung.com>
- <CGME20200514190738eucas1p2695c0d8af064ee702209ca03696ef438@eucas1p2.samsung.com>
- <20200514190734.32746-2-l.stelmach@samsung.com>
+ <CGME20200514190740eucas1p293129b2ef3ba706652a9327e55db9649@eucas1p2.samsung.com>
+ <20200514190734.32746-3-l.stelmach@samsung.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_132039_676011_EBC44626 
-X-CRM114-Status: UNSURE (   8.54  )
+X-CRM114-CacheID: sfid-20200514_132057_097168_E6EC2A78 
+X-CRM114-Status: UNSURE (   7.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -61,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5301:0:0:9 listed in]
+ no trust [2a01:238:20a:202:5302:0:0:9 listed in]
  [list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
@@ -100,20 +100,13 @@ Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QW0gRG9ubmVyc3RhZywgMTQuIE1haSAyMDIwLCAyMTowNzozMyBDRVNUIHNjaHJpZWIgxYF1a2Fz
+QW0gRG9ubmVyc3RhZywgMTQuIE1haSAyMDIwLCAyMTowNzozNCBDRVNUIHNjaHJpZWIgxYF1a2Fz
 eiBTdGVsbWFjaDoKCkhpIMWBdWthc3osCgo+IFRoZSB2YWx1ZSBoYXMgYmVlbiBlc3RpbWFkZWQg
 Ynkgb2J0YWluaWcgMTAyNCBjaHVua3Mgb2YgZGF0YSAxMjggYnl0ZXMKPiAoMTAyNCBiaXRzKSBl
 YWNoIGZyb20gdGhlIGdlbmVyYXRvciBhbmQgZmluZGluZyBjaHVuayB3aXRoIG1pbmltYWwKPiBl
-bnRyb3B5IHVzaW5nIHRoZSBlbnQoMSkgdG9vbC4gVGhlIHZhbHVlIHdhcyA2LjMyNzgyMCBiaXRz
-IG9mIGVudHJvcHkKPiBpbiBlYWNoIDggYml0cyBvZiBkYXRhLgoKSSBhbSBub3Qgc3VyZSB3ZSBz
-aG91bGQgdXNlIHRoZSBlbnQgdG9vbCB0byBkZWZpbmUgdGhlIGVudHJvcHkgbGV2ZWwuIEVudCAK
-c2VlbXMgdG8gdXNlIGEgdmVyeSBjb2Fyc2UgZW50cm9weSBlc3RpbWF0aW9uLgoKSSB3b3VsZCBm
-ZWVsIG1vcmUgY29tZm9ydGFibGUgd2hlbiB1c2luZyBvdGhlciBtZWFzdXJlcyBsaWtlIFNQODAw
-LTkwQiB3aGljaCAKZXZlbiBwcm92aWRlcyBhIHRvb2wgZm9yIHRoZSBhbmFseXNpcy4KCkkgdW5k
-ZXJzdGFuZCB0aGF0IGVudHJvcHkgZXN0aW1hdGVzLCB3ZWxsLCBhcmUgZXN0aW1hdGVzLiBCdXQg
-dGhlIGVudCBkYXRhIGlzIApjb21tb25seSBub3QgdmVyeSBjb25zZXJ2YXRpdmUuCgpbMV0gaHR0
-cHM6Ly9naXRodWIuY29tL3VzbmlzdGdvdi9TUDgwMC05MEJfRW50cm9weUFzc2Vzc21lbnQKCkNp
-YW8KU3RlcGhhbgoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+bnRyb3B5IHVzaW5nIHRoZSBlbnQoMSkgdG9vbC4gVGhlIHZhbHVlIHdhcyA2LjMzMjkzNyBiaXRz
+IG9mIGVudHJvcHkKPiBpbiBlYWNoIDggYml0cyBvZiBkYXRhLgoKRHRvIC0gc2VlIHRoZSBvdGhl
+ciBjb21tZW50LgoKQ2lhbwpTdGVwaGFuCgoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
