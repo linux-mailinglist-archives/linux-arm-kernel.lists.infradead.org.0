@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30EF11D2435
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:54:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D72701D2436
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 02:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,103 +11,103 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=eYW0RyqPIRfPzpIvCyByrX/V3+hEh/IqWEyF54UDBmI=; b=Lz2uIt8sN05Bzd5BHBB6hZTzXa
-	BzyeT5Q+SAjYax6cYUYuQYIyXkweK7NUr5OUvhnYQ/DbywADasBoIOMqtvp1YV63D0pUaZnqFipC9
-	gwQWuV1Y6PJc7mR7WOTY4O9NBxeuDQqdgIIysCV5HH+cy5z8PsjgjmKOOL3cgAI85m79gLDny9klX
-	aBIdrEpuLERPjEqedOtmMJ3Q/H78OpOWZL9cLooxZs7iZh3PvqkYKSrO/vfCG0Us4qMaOCdS4ukzO
-	az62jxjiTCfHYv6aKK+wvtt2cUdoi/LMW9VD9ZnjiXwP7Hh26MToMlSEA1gejtRHaQKlbI85UYsqr
-	0KvnS3MQ==;
+	bh=7M5Ya12hngZWA1eDHazU3MHeqOemP2uybkaRpwG+2rU=; b=h+X+7K3g4nvIr13R95Fgnh0HPf
+	YrM9YmwIs+22gQuHM/vOTG0brW0MorG1rxYplYo/Usl3rRV1YcPesIqSB2FQCsM51iLcG4Jq0T80n
+	daVktGtzefoICHJ5IbqeLiz1JzkbaabLk+rs9Z7VVDUO2br2B+KIr+UWaCzu4nXNA6bC5OjEwotLe
+	v0lvEundealbvZgCRia05+cVoxxa/Tw8mpNeg48lREEXq8+yEt0s6zSn02ct4hyld3F8uaun4T+cP
+	IFChSp8l0la1W52H8PvEy/jo+niRU4BLNAipx66FOVmxDJbfHeAIAKadZyIuNzt6Jggg8J3HQeNp5
+	NqdZhchw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ28G-0001Fr-Ji; Thu, 14 May 2020 00:53:52 +0000
+	id 1jZ28W-0001W8-ON; Thu, 14 May 2020 00:54:08 +0000
 Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ27P-0000jz-1s
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:53:00 +0000
+ id 1jZ27R-0000kl-C0
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 00:53:03 +0000
 Received: from epcas5p3.samsung.com (unknown [182.195.41.41])
  by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20200514005256epoutp0373516c87d9635502750d5061f285c353~Ovt1zSSNP0811808118epoutp03b
+ 20200514005259epoutp03ff08930bcf3a9577453824a35bd0b6dd~Ovt4DB3vI0808608086epoutp03e
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 14 May 2020 00:52:56 +0000 (GMT)
+ Thu, 14 May 2020 00:52:59 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20200514005256epoutp0373516c87d9635502750d5061f285c353~Ovt1zSSNP0811808118epoutp03b
+ 20200514005259epoutp03ff08930bcf3a9577453824a35bd0b6dd~Ovt4DB3vI0808608086epoutp03e
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1589417576;
- bh=aZlGHc5xTiWwAyuHWOUJ6KyldBblFcw6DUpelUfBEa8=;
+ s=mail20170921; t=1589417579;
+ bh=kDIy4u6dKypJDeZVrGE9ZKceZgeyPXJh8PvB97xxnQM=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XAGwyV+EK0jJkaYaOuOATxz0Og9S/HK7FVY9shlrszaJa8whOpmaJsqYgrPy/LSPR
- weCveoAvD81HLzSpD0m4DwTsicQSWbycQrhjNtrMczlZa+jrTDV+9EEStXrF9mzltp
- 9AvwON9qhfz45LsgcgJWFDn6H0ubT+TEcWFMNcbI=
+ b=M6mF41Y/BtfiekB8Pcgc6PuFg9Q79qhHnXtdISoM+7aWmDV90MvtjOeuGumyBF5r4
+ QjBGAfxh50HRY8I1n5VZ06Pq7Ti0CPE8z/Wq+8rPwK5na0daMVFi91DksXsUmzZkN7
+ irxJoDW0QgpL+CG4DGdFXt2OLz31tOQhxCcuL2F8=
 Received: from epsmges5p3new.samsung.com (unknown [182.195.42.75]) by
- epcas5p4.samsung.com (KnoxPortal) with ESMTP id
- 20200514005256epcas5p4b505d9649ce18325762618aec51307c7~Ovt1eyqxo0590005900epcas5p4C;
- Thu, 14 May 2020 00:52:56 +0000 (GMT)
+ epcas5p3.samsung.com (KnoxPortal) with ESMTP id
+ 20200514005258epcas5p3724cb2da48af76bb5a8a43dc904bca0a~Ovt3vNDKD1578415784epcas5p3v;
+ Thu, 14 May 2020 00:52:58 +0000 (GMT)
 Received: from epcas5p2.samsung.com ( [182.195.41.40]) by
  epsmges5p3new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 6F.6E.23389.8669CBE5; Thu, 14 May 2020 09:52:56 +0900 (KST)
+ D2.7E.23389.A669CBE5; Thu, 14 May 2020 09:52:58 +0900 (KST)
 Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas5p3.samsung.com (KnoxPortal) with ESMTPA id
- 20200514005256epcas5p3ccb5dcc7c96a5cdb9ee78baa8ec1e0d3~Ovt1MOmZ31579215792epcas5p3g;
- Thu, 14 May 2020 00:52:56 +0000 (GMT)
+ epcas5p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20200514005258epcas5p14733cec8b9ca92e518a8d5a0c27f3f0b~Ovt3PWUKk0561005610epcas5p10;
+ Thu, 14 May 2020 00:52:58 +0000 (GMT)
 Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
  epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20200514005256epsmtrp2b62267b832bfb80b95da4fe730197dff~Ovt1LCi-a1517815178epsmtrp2P;
- Thu, 14 May 2020 00:52:56 +0000 (GMT)
-X-AuditID: b6c32a4b-797ff70000005b5d-de-5ebc9668bdcc
+ 20200514005258epsmtrp2e3521a4d4c066e0c7deda812d688fdfd~Ovt3ObrY81522815228epsmtrp2F;
+ Thu, 14 May 2020 00:52:58 +0000 (GMT)
+X-AuditID: b6c32a4b-7adff70000005b5d-e5-5ebc966a2298
 Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
  epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- CD.C3.18461.8669CBE5; Thu, 14 May 2020 09:52:56 +0900 (KST)
+ 7F.C3.18461.A669CBE5; Thu, 14 May 2020 09:52:58 +0900 (KST)
 Received: from Jaguar.sa.corp.samsungelectronics.net (unknown
  [107.108.73.139]) by epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20200514005254epsmtip23012c0682b1f1e83ceeba407574e8b52~OvtzTUsvL0172201722epsmtip2M;
- Thu, 14 May 2020 00:52:54 +0000 (GMT)
+ 20200514005256epsmtip2145bd29b7cd6852b8b9df882a496eb46~Ovt1Tgrin3258132581epsmtip2t;
+ Thu, 14 May 2020 00:52:56 +0000 (GMT)
 From: Alim Akhtar <alim.akhtar@samsung.com>
 To: robh@kernel.org
-Subject: [PATCH v9 02/10] scsi: ufs: add quirk to disallow reset of
- interrupt aggregation
-Date: Thu, 14 May 2020 06:09:06 +0530
-Message-Id: <20200514003914.26052-3-alim.akhtar@samsung.com>
+Subject: [PATCH v9 03/10] scsi: ufs: add quirk to enable host controller
+ without hce
+Date: Thu, 14 May 2020 06:09:07 +0530
+Message-Id: <20200514003914.26052-4-alim.akhtar@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200514003914.26052-1-alim.akhtar@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpileLIzCtJLcpLzFFi42LZdlhTQzdj2p44g11bpSwezNvGZvHy51U2
- i0/rl7FazD9yjtXi/PkN7BY3txxlsdj0+BqrxeVdc9gsZpzfx2TRfX0Hm8Xy4/+YLP7v2cFu
- sXTrTUYHXo/Lfb1MHptWdbJ5bF5S79Fycj+Lx8ent1g8+rasYvT4vEnOo/1AN1MARxSXTUpq
- TmZZapG+XQJXxrbd79gKbvFUTDh+i7mB8TJXFyMnh4SAicTHuRPYuhi5OIQEdjNKnG9ayAjh
- fGKUuPKtB8r5xihx4/pmZpiW9dvuMkEk9jJKHJs1iwUkISTQwiRx56geiM0moC1xd/oWJhBb
- REBY4si3NkYQm1ngBpPEg5UuILawQLTE13e32UFsFgFViVldrawgNq+AjcT9numsEMvkJVZv
- OAC2mFPAVmLLl2NQ8VYOifMtEhC2i8Ta2esYIWxhiVfHt7BD2FISn9/tBfqNA8jOlujZZQwR
- rpFYOu8YC4RtL3HgyhwWkBJmAU2J9bv0Ia7kk+j9/YQJopNXoqNNCKJaVaL53VWoTmmJid3d
- UMd4SCzddRMaiBMYJf7c+c42gVF2FsLUBYyMqxglUwuKc9NTi00LjPNSy/WKE3OLS/PS9ZLz
- czcxgpOJlvcOxkcPPugdYmTiYDzEKMHBrCTC67d+d5wQb0piZVVqUX58UWlOavEhRmkOFiVx
- 3seNW+KEBNITS1KzU1MLUotgskwcnFINTJyx7maZ5i8ecMzqZX/6PmvKS7WLGd26S96JeodM
- rDebP+mv51chLodDtS0349f/YTX4vdsh2Fd949oQoxuiAjVVnbvfT2ETEGlp6H/wgO/wl/Xz
- 054b69fdcV0itGqie8J15Q9OosHrtr0K+FPbt+eCS+qHxdfb22W2+Wt658d9en42+rNyiPWt
- f2Ga9feP/Pkcnqv/vfHTU8+8yJOHGj2Sb+y8uGp5+fGZ03Ircj+JOejlMh+OdSxKtG3PCbab
- sasn8P/vC/Mrw1Y8vSzpmnl1kU+LkLq7S8nv2c4TE7O9Lv5/nZ2fsTHH4oBc4pq5ohVXp1qV
- /1frrQp0OsWZ9mD+ZJ0D26TtGFdrqs5UV2Ipzkg01GIuKk4EABwlMJWVAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrMLMWRmVeSWpSXmKPExsWy7bCSvG7GtD1xBg8+s1o8mLeNzeLlz6ts
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSaUwTURSFfTPTYWhSHIvEy6ppQAUVJIoZE1GMNZmESDAx/pCIVp1U2W0F
+ NwQqiNJaAoIbkqIGlOIC1BErIpS6rzWiaI0gChg1pkqLonGplsH477v3nvPOzc2jcKlGFEBt
+ ytjCqTIUaTJSTLRcC58+K+VQW/Lsn65ops/QQjLvvz8lGWfjKRFTc/2hiLHZmrwYO3+DYEz9
+ 3SKmq7WaZI7Y2jFG98xMMqdv/cYYd5vZi6m7aEdxErarVI+xpoYSkr1Qm88W3ekg2KHBFwRb
+ yjcg1mUKYfdadFgitUq8YAOXtimHU0UtXCveWPXOSmY1hWzbrRnGCtBd0CJvCui5cLG+kPCw
+ lL6CQG9O0iLxX3YicFXUIqH4iqDpvhb9c5TXHyWEwVUET3rtuFAUYdB79qOXR0XSM6DnMI95
+ eCLtC9e/Fo+6cfo5Bn1GuRZRlC+9Egy8ytMm6DAYvvB2VCKhF0Ab7/ASwibDmSYL7mFvOhb4
+ 4ZsiTxbQeyjo7ikkBZEcut32se184cMtfswcAC7HVdKTBXQq7G+dI7Rzoc5wkxB4EVieVBMe
+ CU6HQ2NrlLClD+h/DGCCUwL7iqWCOgwKHU/HnIFQrtOJBGbh4APj2BHLEFgO+ZWh4Kr/jx5H
+ qAH5c1nqdCWnjsmak8FtjVQr0tXZGcrI9ZnpJjT6SyLizehN3+dIK8IoZEVA4bKJkoTGK8lS
+ yQbF9h2cKnONKjuNU1tRIEXIJkn6NXyylFYqtnCpHJfFqf5NMco7oABbfGDgfPjqztxUeYWf
+ PnjSq7jQ2J1xbNKvc76f/OeF3RtXW/iWPvxyJFHWY4zC+vFd28ROB1LeLg0aGiAua6Jqlijr
+ oUA3v+Sb5VtXRczJkaROO559zcZXyU8Vxc5cwVu1d+vyHO2mUsullFh3ztTg/HVJPu7qmEWS
+ GFPc/vC8nt3ez97Mfj6BSD79SNPhrKmsEF96PBhtMKMZPoPjwyIMna5fvS0lmcuXbbfd7z+m
+ +ei/wm8uk98+1dk269Hk41SQsfxHZXPx1ub6O90JS43GsikhrzdPCa4D5syJFKNONhSf0yzP
+ bQ91G9a25HUVDQd2JOrXVH45cHnau/koPkQlI9QbFdERuEqt+AOsnPX1lAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrMLMWRmVeSWpSXmKPExsWy7bCSvG7WtD1xBldu8lk8mLeNzeLlz6ts
  Fp/WL2O1mH/kHKvF+fMb2C1ubjnKYrHp8TVWi8u75rBZzDi/j8mi+/oONovlx/8xWfzfs4Pd
  YunWm4wOvB6X+3qZPDat6mTz2Lyk3qPl5H4Wj49Pb7F49G1ZxejxeZOcR/uBbqYAjigum5TU
- nMyy1CJ9uwSujG2737EV3OKpmHD8FnMD42WuLkZODgkBE4n12+4ydTFycQgJ7GaUuPbrHCNE
- Qlri+sYJ7BC2sMTKf8/ZIYqamCRedRxkBUmwCWhL3J2+hQnEFgEqOvKtDayZWeAZk8Sph6Ug
- trBApMSLN4uZQWwWAVWJWV2tYL28AjYS93ums0IskJdYveEAWA2ngK3Eli/HwOJCQDXL1ixj
- nMDIt4CRYRWjZGpBcW56brFhgWFearlecWJucWleul5yfu4mRnA4a2nuYNy+6oPeIUYmDsZD
- jBIczEoivH7rd8cJ8aYkVlalFuXHF5XmpBYfYpTmYFES571RuDBOSCA9sSQ1OzW1ILUIJsvE
- wSnVwCQRrlkh5rroxqbVbhuONgvFCWtwxs7dttDkRMwNyas/uGQ1m212rhV6tXP2HdY/Xxk0
- v/Q+dhHPm/H3q7qwthcXp8AkcYb31TlL9f6KXC1jvBMpGK5wzTAqo4v11t+QHu4QZ/6OS5I3
- Jq1fO3PW7ecGshv3BeYzNGyWZH1+s7ec+cnDJ3XupWLrricav1k41/V2g/FX0db315dzLLz8
- et+5rpY873nfLHf3Hj8Y2Bduf3PTP1eFCrEVn42D4zWvsIYol/dErL4+x1dqNs/NI7Mu2TU+
- Omr2zLf40u7g/jmJ/T/iMn9ktPQGGdpVRp9eEizUvyHSrrdc/nsmn0isfb5o7MvesNuVmQ1c
- ZTpvlFiKMxINtZiLihMBecJRa9YCAAA=
-X-CMS-MailID: 20200514005256epcas5p3ccb5dcc7c96a5cdb9ee78baa8ec1e0d3
+ nMyy1CJ9uwSujFkvDrEVbJCraGr8wtTAeEqii5GTQ0LARGLiipksXYxcHEICuxkl7nY0MUIk
+ pCWub5zADmELS6z895wdoqiJSeL77/1gRWwC2hJ3p29hArFFgIqOfGsDizMLPGOSOPWwFMQW
+ FgiR2Lb7G9ggFgFViS+bn4HV8ArYSOzZ8g5qgbzE6g0HmEFsTgFbiS1fjrGC2EJANcvWLGOc
+ wMi3gJFhFaNkakFxbnpusWGBYV5quV5xYm5xaV66XnJ+7iZGcDhrae5g3L7qg94hRiYOxkOM
+ EhzMSiK8fut3xwnxpiRWVqUW5ccXleakFh9ilOZgURLnvVG4ME5IID2xJDU7NbUgtQgmy8TB
+ KdXAZBYq9CWkROPE5MSm4FPbJ1rdC1yr8mJihpvi9trKPyvV9VJ65r+8K6xvXLGigNXU43Ky
+ fJH3x9PcfTaXvmodbkm4G6x4NiftWnLJ7J0zFuYlPY4Utn4pxxIjnmd1pTvEML37wWbOvr7H
+ Bml3p8wJDHlWJ7i65UCAxYdNhUzye280H2D3EFfmOjn7tWPsOiOlwLXhVpd/vzTZM6H/9uQl
+ nruPPXh3kvnPVNMFGpM/TYn8/HLTirzFehzzrq379dS5V3htQMBe8Y/HpzHJ2hiLtTXvPHZ0
+ W5uigrYx2+u7khkbVd41SMT6Lnk7vzzy8KdZE1d88/+zTPxBl0f0qft+OmvZymY9SG1IXjRN
+ 1HYhkxJLcUaioRZzUXEiAIDAqmPWAgAA
+X-CMS-MailID: 20200514005258epcas5p14733cec8b9ca92e518a8d5a0c27f3f0b
 X-Msg-Generator: CA
 CMS-TYPE: 105P
-X-CMS-RootMailID: 20200514005256epcas5p3ccb5dcc7c96a5cdb9ee78baa8ec1e0d3
+X-CMS-RootMailID: 20200514005258epcas5p14733cec8b9ca92e518a8d5a0c27f3f0b
 References: <20200514003914.26052-1-alim.akhtar@samsung.com>
- <CGME20200514005256epcas5p3ccb5dcc7c96a5cdb9ee78baa8ec1e0d3@epcas5p3.samsung.com>
+ <CGME20200514005258epcas5p14733cec8b9ca92e518a8d5a0c27f3f0b@epcas5p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_175259_276813_CD968591 
-X-CRM114-Status: GOOD (  14.53  )
+X-CRM114-CacheID: sfid-20200513_175301_780492_CF330A4E 
+X-CRM114-Status: GOOD (  16.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -151,45 +151,139 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Some host controllers support interrupt aggregation but don't allow
-resetting counter and timer in software.
+Some host controllers don't support host controller enable via HCE.
 
+Reviewed-by: Can Guo <cang@codeaurora.org>
 Reviewed-by: Avri Altman <avri.altman@wdc.com>
 Signed-off-by: Seungwon Jeon <essuuj@gmail.com>
 Signed-off-by: Alim Akhtar <alim.akhtar@samsung.com>
 ---
- drivers/scsi/ufs/ufshcd.c | 3 ++-
- drivers/scsi/ufs/ufshcd.h | 6 ++++++
- 2 files changed, 8 insertions(+), 1 deletion(-)
+ drivers/scsi/ufs/ufshcd.c | 76 +++++++++++++++++++++++++++++++++++++--
+ drivers/scsi/ufs/ufshcd.h |  6 ++++
+ 2 files changed, 80 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
-index 3655b88fc862..0e9704da58bd 100644
+index 0e9704da58bd..ee30ed6cc805 100644
 --- a/drivers/scsi/ufs/ufshcd.c
 +++ b/drivers/scsi/ufs/ufshcd.c
-@@ -4884,7 +4884,8 @@ static irqreturn_t ufshcd_transfer_req_compl(struct ufs_hba *hba)
- 	 * false interrupt if device completes another request after resetting
- 	 * aggregation and before reading the DB.
- 	 */
--	if (ufshcd_is_intr_aggr_allowed(hba))
-+	if (ufshcd_is_intr_aggr_allowed(hba) &&
-+	    !(hba->quirks & UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR))
- 		ufshcd_reset_intr_aggr(hba);
+@@ -3534,6 +3534,52 @@ static int ufshcd_dme_link_startup(struct ufs_hba *hba)
+ 			"dme-link-startup: error code %d\n", ret);
+ 	return ret;
+ }
++/**
++ * ufshcd_dme_reset - UIC command for DME_RESET
++ * @hba: per adapter instance
++ *
++ * DME_RESET command is issued in order to reset UniPro stack.
++ * This function now deal with cold reset.
++ *
++ * Returns 0 on success, non-zero value on failure
++ */
++static int ufshcd_dme_reset(struct ufs_hba *hba)
++{
++	struct uic_command uic_cmd = {0};
++	int ret;
++
++	uic_cmd.command = UIC_CMD_DME_RESET;
++
++	ret = ufshcd_send_uic_cmd(hba, &uic_cmd);
++	if (ret)
++		dev_err(hba->dev,
++			"dme-reset: error code %d\n", ret);
++
++	return ret;
++}
++
++/**
++ * ufshcd_dme_enable - UIC command for DME_ENABLE
++ * @hba: per adapter instance
++ *
++ * DME_ENABLE command is issued in order to enable UniPro stack.
++ *
++ * Returns 0 on success, non-zero value on failure
++ */
++static int ufshcd_dme_enable(struct ufs_hba *hba)
++{
++	struct uic_command uic_cmd = {0};
++	int ret;
++
++	uic_cmd.command = UIC_CMD_DME_ENABLE;
++
++	ret = ufshcd_send_uic_cmd(hba, &uic_cmd);
++	if (ret)
++		dev_err(hba->dev,
++			"dme-reset: error code %d\n", ret);
++
++	return ret;
++}
  
- 	tr_doorbell = ufshcd_readl(hba, REG_UTP_TRANSFER_REQ_DOOR_BELL);
+ static inline void ufshcd_add_delay_before_dme_cmd(struct ufs_hba *hba)
+ {
+@@ -4251,7 +4297,7 @@ static inline void ufshcd_hba_stop(struct ufs_hba *hba, bool can_sleep)
+ }
+ 
+ /**
+- * ufshcd_hba_enable - initialize the controller
++ * ufshcd_hba_execute_hce - initialize the controller
+  * @hba: per adapter instance
+  *
+  * The controller resets itself and controller firmware initialization
+@@ -4260,7 +4306,7 @@ static inline void ufshcd_hba_stop(struct ufs_hba *hba, bool can_sleep)
+  *
+  * Returns 0 on success, non-zero value on failure
+  */
+-int ufshcd_hba_enable(struct ufs_hba *hba)
++static int ufshcd_hba_execute_hce(struct ufs_hba *hba)
+ {
+ 	int retry;
+ 
+@@ -4308,6 +4354,32 @@ int ufshcd_hba_enable(struct ufs_hba *hba)
+ 
+ 	return 0;
+ }
++
++int ufshcd_hba_enable(struct ufs_hba *hba)
++{
++	int ret;
++
++	if (hba->quirks & UFSHCI_QUIRK_BROKEN_HCE) {
++		ufshcd_set_link_off(hba);
++		ufshcd_vops_hce_enable_notify(hba, PRE_CHANGE);
++
++		/* enable UIC related interrupts */
++		ufshcd_enable_intr(hba, UFSHCD_UIC_MASK);
++		ret = ufshcd_dme_reset(hba);
++		if (!ret) {
++			ret = ufshcd_dme_enable(hba);
++			if (!ret)
++				ufshcd_vops_hce_enable_notify(hba, POST_CHANGE);
++			if (ret)
++				dev_err(hba->dev,
++					"Host controller enable failed with non-hce\n");
++		}
++	} else {
++		ret = ufshcd_hba_execute_hce(hba);
++	}
++
++	return ret;
++}
+ EXPORT_SYMBOL_GPL(ufshcd_hba_enable);
+ 
+ static int ufshcd_disable_tx_lcc(struct ufs_hba *hba, bool peer)
 diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
-index 071f0edf3f64..53096642f9a8 100644
+index 53096642f9a8..f8d08cb9caf7 100644
 --- a/drivers/scsi/ufs/ufshcd.h
 +++ b/drivers/scsi/ufs/ufshcd.h
-@@ -523,6 +523,12 @@ enum ufshcd_quirks {
- 	 * Clear handling for transfer/task request list is just opposite.
+@@ -529,6 +529,12 @@ enum ufshcd_quirks {
+ 	 * that the interrupt aggregation timer and counter are reset by s/w.
  	 */
- 	UFSHCI_QUIRK_BROKEN_REQ_LIST_CLR		= 1 << 6,
+ 	UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR		= 1 << 7,
 +
 +	/*
-+	 * This quirk needs to be enabled if host controller doesn't allow
-+	 * that the interrupt aggregation timer and counter are reset by s/w.
++	 * This quirks needs to be enabled if host controller cannot be
++	 * enabled via HCE register.
 +	 */
-+	UFSHCI_QUIRK_SKIP_RESET_INTR_AGGR		= 1 << 7,
++	UFSHCI_QUIRK_BROKEN_HCE				= 1 << 8,
  };
  
  enum ufshcd_caps {
