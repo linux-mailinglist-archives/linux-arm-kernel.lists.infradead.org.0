@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 108521D318C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:43:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C84201D31D0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 15:51:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PBma1Wz9LUyJcOquaNJcI77iu8bia87Puf2b1LgLMr8=; b=ukpxKSmViI3+S2VOe/WY91a+7
-	wUn1NqXSWQCPdKVvAuDMKFZem1W9jXLTezZ6zYZ0e5N5y1Zzt64OjUXYJNEfjOp1lqc6va6WcP6zR
-	2wJkgW/xH3fYq4G4/S1cAF9OJ13m0Fk53U+BX/ilPRRRCpvxRjjndpHVYM2Cs65w6v5Ih899jRpCj
-	bpl2yqb8/ecih2IfShEmZ1aGuVuQiD9zpGDDWK3M1XuyVrRxqPxyUhtf50eIcVNNpffWP6tg+NbYz
-	vB7Ucp7JqzQp4EIF6eIpOGOzZTu8kY5wqMG0dxEdYe99C+7VpRpsPqtWVmnEO5Gc8NHMMu8KBbJ5o
-	KXTnwYHcg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=t81MH8o5gcU9xDdT/u+q2gO/+Hf37dcaoH9TPn8SYao=; b=MVeIlMKVnlavxx
+	JkVFM9SsSQoSkeIBM/xU4AtnakP2S43mDjoSdSMM+c0A7vXiipUAu6b7rL8U8vmNH2qlDLugHa80Y
+	5iX5Ks+KA7hTAXlHYxLIheB4p4gcoztDFbglJyoaxXcWOXAZzTs3FhRcf69tLjaVPBgwUmyrJCorR
+	0NOhhFh0tTqYu8UgdsFK+wD4fDcZ8B9OVBUdB54fDDZzoEYNiXfcA/6pwpsR/RPbhVg2XVrmgc1aZ
+	uyFIXEztwhceZE+/jO82or8x+Wp3JPXEVdICl0gVc465VMbxVUKokge0rduvcNnYCeH0Cm7jiD7qP
+	hBZCcOVeqg0yYzO8RXlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZE8T-0002bL-9s; Thu, 14 May 2020 13:42:53 +0000
-Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+	id 1jZEH7-0001Ql-Au; Thu, 14 May 2020 13:51:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZE8H-0002ZD-JM
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 13:42:45 +0000
-Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04EDgMxu028132; Thu, 14 May 2020 15:42:33 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=tD1qvdb0EwmAv9XocfBUyYNcHtOhYgnwwbYe5684NcY=;
- b=lpZCseNN1q8B2O++L5FqZEfrupQp8UmuSICipi2VpYbbXdKqjviuS4uNBmOQ1Qk1/JYn
- FC0+aT7IZOR+0AaKhzk+Ozpgl88d1a5y1MBWH1j0sjx/T8Vy7mAFxLIZkKAuH5DBT24e
- w8vnJeOoFwf7/cYeADMBCKg6OvlIrAm70cghUtpnyO8Px5h4+ovsh1x/0sNyYzBPay55
- GNVpTBzYrzgrxIYjV346YgPOw8M8x1YuBl3tdk9ASS/dhGkQVptEBfcXiG2r4Y/3xJqM
- b1YktOvA+/Pa6WYvOrUBAuOptDbM+z10mLDDQLjERCoYWeW9MwohkWsITtdfWVTKKrAK eQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3100vnbg0g-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 14 May 2020 15:42:33 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id 0CF2C100034;
- Thu, 14 May 2020 15:42:33 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id EA8332BE24D;
- Thu, 14 May 2020 15:42:32 +0200 (CEST)
-Received: from lmecxl0912.tpe.st.com (10.75.127.47) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Thu, 14 May
- 2020 15:42:27 +0200
-Subject: Re: [PATCH 00/15] Fix STM32 DT issues on v5.7-rc4
-To: Benjamin Gaignard <benjamin.gaignard@st.com>, <linus.walleij@linaro.org>, 
- <robh+dt@kernel.org>, <mcoquelin.stm32@gmail.com>,
- <gregkh@linuxfoundation.org>
-References: <20200513145935.22493-1-benjamin.gaignard@st.com>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <caef6641-b7c2-881a-a331-3d05f6f4bba6@st.com>
-Date: Thu, 14 May 2020 15:42:18 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+ id 1jZEGz-0001QF-LB
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 13:51:43 +0000
+Received: from mail-ot1-f49.google.com (mail-ot1-f49.google.com
+ [209.85.210.49])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id AF59E20728
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 13:51:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589464300;
+ bh=U4WS7dpPUSnHoDDXd9I/RGkZKydgvH6uscT6wgd5yaA=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=10yB1NOW59ZFLk88tVol6JSCXSW16g5KS52gy+76Le+Tx7PliiJwrDveF5QUp3aAc
+ f61hKPaNOqkKM/2+UmfCiYuO4Jfs+HSy+dc4Gmiq0HieYQPdWNpKME8aLXz7MuovlT
+ /hy6GRU1SUPCaSfNSwajP+sQsgP/LEet6da+KIJY=
+Received: by mail-ot1-f49.google.com with SMTP id t3so2396586otp.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 06:51:40 -0700 (PDT)
+X-Gm-Message-State: AOAM533r6bTGijqzCF4Ehk6g5EXyk9+88c1W2MYeVo9czoqmSn+WsPQf
+ Y7klNSOmAxXOhXDVGCS2bLG6UBpsD1TGk77iXQ==
+X-Google-Smtp-Source: ABdhPJzQUESjwS7Ih36p4leA1o497JSOSd1+5C+3ygMzeFo3qlL7lPTUyx4LBbQ+Ukd+XPHe6ro8V61dxXyaOPE9BZM=
+X-Received: by 2002:a9d:1441:: with SMTP id h59mr3620806oth.192.1589464299942; 
+ Thu, 14 May 2020 06:51:39 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20200513145935.22493-1-benjamin.gaignard@st.com>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.47]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-14_04:2020-05-14,
- 2020-05-14 signatures=0
+References: <20200513132114.6046-1-m.szyprowski@samsung.com>
+ <CGME20200513133310eucas1p176c920345e7f05f670e26e330b358d7f@eucas1p1.samsung.com>
+ <20200513133245.6408-1-m.szyprowski@samsung.com>
+ <20200513133245.6408-19-m.szyprowski@samsung.com>
+In-Reply-To: <20200513133245.6408-19-m.szyprowski@samsung.com>
+From: Rob Herring <robh@kernel.org>
+Date: Thu, 14 May 2020 08:51:27 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqLwEB_YMzDDQ=nt0_Tq-BGGFEW64BagPN-FbDeOnLpYCA@mail.gmail.com>
+Message-ID: <CAL_JsqLwEB_YMzDDQ=nt0_Tq-BGGFEW64BagPN-FbDeOnLpYCA@mail.gmail.com>
+Subject: Re: [PATCH v5 19/38] drm: panfrost: fix common struct sg_table
+ related issues
+To: Marek Szyprowski <m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_064242_088036_5DAFD0C5 
-X-CRM114-Status: GOOD (  17.08  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200514_065141_749125_BC9AA984 
+X-CRM114-Status: GOOD (  17.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [62.209.51.94 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -87,6 +77,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,63 +89,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: Tomeu Vizoso <tomeu.vizoso@collabora.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ David Airlie <airlied@linux.ie>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>, linaro-mm-sig@lists.linaro.org,
+ Linux IOMMU <iommu@lists.linux-foundation.org>,
+ Daniel Vetter <daniel@ffwll.ch>, Robin Murphy <robin.murphy@arm.com>,
+ Christoph Hellwig <hch@lst.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Benjamin
+On Wed, May 13, 2020 at 8:33 AM Marek Szyprowski
+<m.szyprowski@samsung.com> wrote:
+>
+> The Documentation/DMA-API-HOWTO.txt states that the dma_map_sg() function
+> returns the number of the created entries in the DMA address space.
+> However the subsequent calls to the dma_sync_sg_for_{device,cpu}() and
+> dma_unmap_sg must be called with the original number of the entries
+> passed to the dma_map_sg().
+>
+> struct sg_table is a common structure used for describing a non-contiguous
+> memory buffer, used commonly in the DRM and graphics subsystems. It
+> consists of a scatterlist with memory pages and DMA addresses (sgl entry),
+> as well as the number of scatterlist entries: CPU pages (orig_nents entry)
+> and DMA mapped pages (nents entry).
+>
+> It turned out that it was a common mistake to misuse nents and orig_nents
+> entries, calling DMA-mapping functions with a wrong number of entries or
+> ignoring the number of mapped entries returned by the dma_map_sg()
+> function.
+>
+> To avoid such issues, lets use a common dma-mapping wrappers operating
+> directly on the struct sg_table objects and use scatterlist page
+> iterators where possible. This, almost always, hides references to the
+> nents and orig_nents entries, making the code robust, easier to follow
+> and copy/paste safe.
+>
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> Reviewed-by: Steven Price <steven.price@arm.com>
+> ---
+> For more information, see '[PATCH v5 00/38] DRM: fix struct sg_table nents
+> vs. orig_nents misuse' thread:
+> https://lore.kernel.org/linux-iommu/20200513132114.6046-1-m.szyprowski@samsung.com/T/
+> ---
+>  drivers/gpu/drm/panfrost/panfrost_gem.c | 4 ++--
+>  drivers/gpu/drm/panfrost/panfrost_mmu.c | 7 +++----
+>  2 files changed, 5 insertions(+), 6 deletions(-)
 
-On 5/13/20 4:59 PM, Benjamin Gaignard wrote:
-> This series fixes issues hight lighted by dtbs_check on STM32 devicetrees.
-> The patches has been developped on top of v5.7-rc4 tag.
-> 
-> Benjamin Gaignard (15):
->    ARM: dts: stm32: remove useless interrupt-names property on stm32f429
->    ARM: dts: stm32: update pwm pinctrl node names for stm32f4
->    ARM: dts: stm32: update led nodes names for stm32f249-disco
->    ARM: dts: stm32: update led nodes names for stm32f469-disco
->    ARM: dts: stm32: remove useless interrupt-names property on stm32f746
->    ARM: dts: stm32: update led nodes names for stm32f429-eval
->    ARM: dts: stm32: update led nodes names for stm32f769-disco
->    ARM: dts: stm32: update led nodes names for stm32f746-eval
->    ARM: dts: stm32: remove useless interrupt-names property on stm32f743
->    ARM: dts: stm32: Update nodes names for stm32h743 pinctrl
->    ARM: dts: stm32: Update nodes names for stm32mp15 pinctrl
->    ARM: dts: stm32: Add missing #address and #size cells on spi node for
->      stm32mp151
->    ARM: dts: stm32: update led nodes names for stm32f746-eval
->    dt-bindings: pinctrl: stm32: Add missing interrupts property
->    dt-bindings: usb: dwc2: Fix issues for stm32mp15x SoC
-
-For dts(i) part, it looks good to me. I let Rob to review before taking 
-the whole series.
-
-thanks
-alex
-
-
-> 
->   .../devicetree/bindings/pinctrl/st,stm32-pinctrl.yaml          |  3 +++
->   Documentation/devicetree/bindings/usb/dwc2.yaml                |  6 ++++--
->   arch/arm/boot/dts/stm32429i-eval.dts                           |  8 ++++----
->   arch/arm/boot/dts/stm32746g-eval.dts                           |  8 ++++----
->   arch/arm/boot/dts/stm32f4-pinctrl.dtsi                         |  4 ++--
->   arch/arm/boot/dts/stm32f429-disco.dts                          |  4 ++--
->   arch/arm/boot/dts/stm32f429.dtsi                               |  1 -
->   arch/arm/boot/dts/stm32f469-disco.dts                          |  8 ++++----
->   arch/arm/boot/dts/stm32f746.dtsi                               |  1 -
->   arch/arm/boot/dts/stm32f769-disco.dts                          |  4 ++--
->   arch/arm/boot/dts/stm32h743-pinctrl.dtsi                       | 10 +++++-----
->   arch/arm/boot/dts/stm32h743.dtsi                               |  1 -
->   arch/arm/boot/dts/stm32mp15-pinctrl.dtsi                       |  6 +++---
->   arch/arm/boot/dts/stm32mp151.dtsi                              |  2 ++
->   arch/arm/boot/dts/stm32mp15xx-dkx.dtsi                         |  2 +-
->   15 files changed, 36 insertions(+), 32 deletions(-)
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
