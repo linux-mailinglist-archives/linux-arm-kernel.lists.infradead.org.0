@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 476B41D32A8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:23:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B310F1D32BD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 16:25:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vvvQjWB+WKjBEK+ZVQegnhpYOiTb9GGvpwR4L05229I=; b=RXUd7nDxTVcb6i
-	e0PeqUXsTG8thr4bJO5cGw//lcxniFK1AvSLHBlLvZSzi99XGUihSv+TSfF6HO+8ShlZmebQzkI+V
-	8fU7rCnWOyITrSJnlRpyProig3HFFvzmMUD0dq7vniR6sgOWgMkuI5PhY1dQbKy5GqA96ntDC3fVH
-	AG9RTuDD2gu4c3MxEwVJlCjKmsN0aCOKOn6MZf12wZLsR0S9KSkYrATw0NcYmOnY7lUScTG7579CC
-	+K0TGfbkYVgKMgT7Z427RuT8Y6ABWJDHbdcShjGfjTanDtKhNZa72toX5cOWu7PXzssQa1lc7EluI
-	OyFM+jAXnkaVJFH12vqg==;
+	List-Owner; bh=ePs0bfQAfeLUDFs3zA+sODAPYQFmULNP2HxqzgLMv00=; b=f0nlBRQOHz5vyU
+	MTSTZRYaPaFA9TwAB9Kv88RvuF11S60Pky3xNMxcstsVuNxB8n3BB7bo2a1SvjJuVv0E31/HgSNhP
+	DqbrYDdGrC0228ZQ/+Gcok5TAUzQDiykKSum36yfQni1pt0xaLC07tkzhiCNcUmLqobFuW7u/pFCq
+	YRepMQEF9Or7ukSfbh3cP075W8Nv6pP51txyHSqVbPE62kh4OW0w/A/2AlDYrQgYwKKlBBI/O9tl6
+	0btmhoDwSNLzRRqEPsbYTgYKutFtk05TfyWfR0vEpfYy5Fb+vztCX6GwUzkXZS9ySnxnVGwV7uRzy
+	aUtYlobFkQ2tpUmIefGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZElB-0007Sx-Bo; Thu, 14 May 2020 14:22:53 +0000
-Received: from netrider.rowland.org ([192.131.102.5])
- by bombadil.infradead.org with smtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZEl2-0007Rf-11
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:22:45 +0000
-Received: (qmail 14203 invoked by uid 500); 14 May 2020 10:22:37 -0400
-Date: Thu, 14 May 2020 10:22:37 -0400
-From: Alan Stern <stern@rowland.harvard.edu>
-To: Macpaul Lin <macpaul.lin@mediatek.com>
-Subject: Re: [PATCH] usb: gadget: u_serial: fix coverity warning: negative
- index at array
-Message-ID: <20200514142237.GB12181@rowland.harvard.edu>
-References: <1589443500-3990-1-git-send-email-macpaul.lin@mediatek.com>
+	id 1jZEnC-0008EC-SV; Thu, 14 May 2020 14:24:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZEn2-0008DN-8F
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 14:24:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8CE441FB;
+ Thu, 14 May 2020 07:24:47 -0700 (PDT)
+Received: from bogus (unknown [10.37.8.154])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 636883F71E;
+ Thu, 14 May 2020 07:24:45 -0700 (PDT)
+Date: Thu, 14 May 2020 15:24:42 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Etienne Carriere <etienne.carriere@linaro.org>
+Subject: Re: [PATCH 2/2] firmware: psci: support SMCCC v1.2 for SMCCC conduit
+Message-ID: <20200514142442.GB23401@bogus>
+References: <20200514082109.27573-1-etienne.carriere@linaro.org>
+ <20200514082109.27573-2-etienne.carriere@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1589443500-3990-1-git-send-email-macpaul.lin@mediatek.com>
+In-Reply-To: <20200514082109.27573-2-etienne.carriere@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_072244_218781_3163FDF2 
-X-CRM114-Status: GOOD (  14.21  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20200514_072448_335932_C3F3A3E9 
+X-CRM114-Status: GOOD (  15.87  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [192.131.102.5 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,65 +63,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stan Lu <stan.lu@mediatek.com>, Felipe Balbi <balbi@kernel.org>,
- Mediatek WSD Upstream <wsd_upstream@mediatek.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org,
- =?utf-8?B?TWljaGHFgiBNaXJvc8WCYXc=?= <mirq-linux@rere.qmqm.pl>,
- Sergey Organov <sorganov@gmail.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-mediatek@lists.infradead.org, Macpaul Lin <macpaul.lin@gmail.com>,
+Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, maz@kernel.org,
+ linux-kernel@vger.kernel.org, steven.price@arm.com, alexios.zavras@intel.com,
+ Sudeep Holla <sudeep.holla@arm.com>, tglx@linutronix.de, will@kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 04:05:00PM +0800, Macpaul Lin wrote:
-> This issue has been reported by coverity scanner.
-> Replace "int portnum" by "unsigned int", this void negative index at
-> array.
-
-Can you please explain this more fully?  Why does coverity think the 
-code might use a negative array index?  Is there some possibility that 
-the portnum value might actually be negative?
-
-It's noticeable that your patch doesn't actually change any values, only 
-the type.  This means that if the code was buggy before, it's still 
-buggy.  Alternatively, if the code wasn't buggy before then coverity got 
-a false positive, so no change should be needed.
-
-Alan Stern
-
-> Signed-off-by: Stan Lu <stan.lu@mediatek.com>
-> Signed-off-by: Macpaul Lin <macpaul.lin@mediatek.com>
-> ---
->  drivers/usb/gadget/function/u_serial.c |    4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
+On Thu, May 14, 2020 at 10:21:09AM +0200, Etienne Carriere wrote:
+> Update PSCI driver to support SMCCC v1.2 reported by secure firmware
+> and indirectly make SMCCC conduit properly set when so. TF-A release
+> v2.3 implements and reports SMCCC v1.2 since commit [1].
 > 
-> diff --git a/drivers/usb/gadget/function/u_serial.c b/drivers/usb/gadget/function/u_serial.c
-> index 8167d37..53951f2 100644
-> --- a/drivers/usb/gadget/function/u_serial.c
-> +++ b/drivers/usb/gadget/function/u_serial.c
-> @@ -587,7 +587,7 @@ static int gs_start_io(struct gs_port *port)
->   */
->  static int gs_open(struct tty_struct *tty, struct file *file)
->  {
-> -	int		port_num = tty->index;
-> +	unsigned int	port_num = tty->index;
->  	struct gs_port	*port;
->  	int		status = 0;
+> Link: [1] https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=e34cc0cedca6e229847c232fe58d37fad2610ce9
+> Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
+> ---
+>  drivers/firmware/psci/psci.c | 14 ++++++++++----
+>  include/linux/psci.h         |  1 +
+>  2 files changed, 11 insertions(+), 4 deletions(-)
+> 
+> diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> index 2937d44b5df4..80cf73bea4b0 100644
+> --- a/drivers/firmware/psci/psci.c
+> +++ b/drivers/firmware/psci/psci.c
+> @@ -409,11 +409,17 @@ static void __init psci_init_smccc(void)
+>  	feature = psci_features(ARM_SMCCC_VERSION_FUNC_ID);
 >  
-> @@ -1211,7 +1211,7 @@ int gserial_alloc_line_no_console(unsigned char *line_num)
->  	struct gs_port			*port;
->  	struct device			*tty_dev;
->  	int				ret;
-> -	int				port_num;
-> +	unsigned int			port_num;
+>  	if (feature != PSCI_RET_NOT_SUPPORTED) {
+> -		u32 ret;
+> -		ret = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
+> -		if (ret == ARM_SMCCC_VERSION_1_1) {
+> +		ver = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
+> +
+> +		switch (ver) {
+> +		case ARM_SMCCC_VERSION_1_1:
+>  			psci_ops.smccc_version = SMCCC_VERSION_1_1;
+> -			ver = ret;
+> +			break;
+> +		case ARM_SMCCC_VERSION_1_2:
+> +			psci_ops.smccc_version = SMCCC_VERSION_1_2;
+> +			break;
+> +		default:
+> +			break;
+>  		}
+>  	}
 >  
->  	coding.dwDTERate = cpu_to_le32(9600);
->  	coding.bCharFormat = 8;
-> -- 
-> 1.7.9.5
+> diff --git a/include/linux/psci.h b/include/linux/psci.h
+> index a67712b73b6c..c7d99b7f34ed 100644
+> --- a/include/linux/psci.h
+> +++ b/include/linux/psci.h
+> @@ -24,6 +24,7 @@ bool psci_has_osi_support(void);
+>  enum smccc_version {
+>  	SMCCC_VERSION_1_0,
+>  	SMCCC_VERSION_1_1,
+> +	SMCCC_VERSION_1_2,
+
+I took approach to kill this completely [1] instead of having to keep
+expanding it for ever.
+
+-- 
+Regards,
+Sudeep
+
+[1] https://lore.kernel.org/linux-arm-kernel/20200506164411.3284-5-sudeep.holla@arm.com/
 
 _______________________________________________
 linux-arm-kernel mailing list
