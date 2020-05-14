@@ -2,83 +2,137 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A65C61D2680
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:09:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 159201D266C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 07:05:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+6OeWZtGA2CHElDkX5I0yAR8BblGlupjby5U4syorXk=; b=eDEWUVnxF1khPt
-	hPzqdqrjKrtRkz5mjZfOT4fYuTlfIrAQLKOp1f+vq+N8dXB4v9BQcm3qI36XxV33v4L+8DBZ3135C
-	NfZU2Tv5GzKGZIqf+aNELaipVkkShiLDnoQAN8CBzmVbnuRMWOghlkzL/BY8iiJvfCxD4XSMRTZNe
-	ZdbokviOx2zz7yGe+oRlOpdXmK7AneNnOOQKSkeRylJv0M58TI2X+LLsxMRqgRix7s33ZuTHyegyL
-	Th9zjV+Rxe99jFWMlM84BD7LLeEL+hnfQAYyWt7nwJKHzbdyY0llkCr/nhnp8y7NUtTuqMArbAKl1
-	594RPOAJuOEMtkoO7obg==;
+	List-Owner; bh=XIsRgAHcFEbSi6SV4pwIBSvzLvctirtdBMX67z8cad8=; b=oMlMBzlzm32msd
+	NyycrWsUx1ZR+FyBpO0OFs+txF6+ehKvvPuvL6i6stkqH3qGXSb2tG+aBpM6E1CxKglSZJI0KU8Vg
+	laSnOmyRZTfokdVgYGMvkCYiFu0lEus3MA3TvSzrA9wp6pZ4R6FVBjZ3iyEm4Oz4EPZVutEgnSF/r
+	5BOdVZCBbOe8hvvXLJzHi88HKLqGV0FwEAEno3kL+nxymSjDQuGPAegXtgXrBGSgJGmiO+/psAC11
+	zVEMMyUdLeBMthBjzn+anhVp00ZEO5St3I2FEeef6zJjXha9rDMhtJ1fCUcqfDe9XEnwIMfRacsY+
+	DuaInT5L0bi2Xrd2q/ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZ67V-0000pk-E2; Thu, 14 May 2020 05:09:21 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jZ643-00068O-HE; Thu, 14 May 2020 05:05:47 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZ630-0002nh-MG
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:04:44 +0000
-Received: by mail-pf1-x442.google.com with SMTP id n18so801631pfa.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 13 May 2020 22:04:38 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=aNdxFa4QrJqUAslQvvR1Ej1cwVVNap3hxsxBpwJX/qw=;
- b=lqCVdH0DG85s8XFJt9av2MXGj4T0fHmhnth6+GRm+5czdRqg8SzBo2fQ21tg1rxbfq
- ybLI+gAxenyU/ClGQd8AtxvFhpjbe1tbt6kJAnKL/bd0dS68CmkA7mq5eH9L9TSGDrMR
- VkkhDRMMe9q7JnDfleItdIjOZct4RM8rkFMF1Vau754MBefsmOgaaL2EC45dM9rMH+DX
- FQ5s8c6EdI5CuKqkwCjloSg/VfMW1NclEAcN9p/0fE0vK46R7hpg69BrKVKABEoEZbTm
- wFyI5aqlBVjQ7dxOJu3SullzfZWFlNhN7VvBOR5MZCUZmYap5y2gjqrU88xQDANavc5S
- ZF4w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=aNdxFa4QrJqUAslQvvR1Ej1cwVVNap3hxsxBpwJX/qw=;
- b=i0zxkD2gF6sB5FvapbAQ5t2lIGH3ae/KXjIwNHhFtdL4UCuYF8tW+W9ZW3RYh8Y6y6
- aj0aJjdFAK0hGMJh3KoFFlq+p4TN/S5kvk+YxoDmUDbMAbXwhTJlLxKo+2BF6/ZgZyR2
- zYSGNaqslQTmLgXklUC04ZulvWrRFPFoxBfulaniY+UVspPq61so6w6Tqi5vxmQXsyj2
- Q3uCOXKd3yZSwPfWCn3nAQyByiFYuNP714EGPcu3/u/MwMm9vmsA+2RMebRhzopa+0JA
- J/fP8cXl7x6Y9xdI0RJTPsZP2bVPzeCdytFQSAuZFjABa3DFAdnNDA9AVyaj8pss1zVl
- FheQ==
-X-Gm-Message-State: AOAM531CzombFRaywptpCAc0eg5AUyNnzBhIlnvlkTsuSfRSlTZBE1kB
- 91eoXVWfHG14ny71qBF05XrIlg==
-X-Google-Smtp-Source: ABdhPJwRiy8/1HoO7DTnCtfH18KWXNfvYdwz4V9uPRi2+kFUWIXvo1uANQsWfdxgpLZtpPG2rO77WA==
-X-Received: by 2002:aa7:8658:: with SMTP id a24mr2765320pfo.135.1589432678189; 
- Wed, 13 May 2020 22:04:38 -0700 (PDT)
-Received: from builder.lan (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id v3sm1073113pfv.186.2020.05.13.22.04.36
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 13 May 2020 22:04:37 -0700 (PDT)
-Date: Wed, 13 May 2020 22:03:07 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
-Subject: Re: [PATCH v2 04/12] remoteproc: stm32: Remove memory translation
- from DT parsing
-Message-ID: <20200514050307.GJ16107@builder.lan>
-References: <20200424202505.29562-1-mathieu.poirier@linaro.org>
- <20200424202505.29562-5-mathieu.poirier@linaro.org>
+ id 1jZ61a-0001in-7z
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 05:03:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589432594; x=1620968594;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=YF3g4adybpZHdlqXEtGY+uuRZSmAEWghP4WxB917IGM=;
+ b=xDTLv13HOAHXJgSYjfVc1CTRbYI8wgXET8OfFHyLkTge4Pmt7M6+ZfDj
+ GeJw62Fq6C/NhN3A2klqyEd0ktrdM5pe+nAPfG5D5YZAtPvRNzEzFH1W1
+ GvEHB3qrZBFlue188gYWYFLrECGPM/EUOtqmnyoT/OXfhnxdKfKxJwQ7k
+ BEQGxpk9goXjGWgv6Y4NxNT/guBcT5xNwKU8LAA3V26n9xh72+XwPIq6I
+ Nn519qszT7nFllG7s+zsHvnOrcmla9iUNGvOgmTMZUlkHC8vQZk9vtIjh
+ 0ZuO6W9G6042OGB+8OxBK42bEZVsztJeC5Kv/wMLYKNGTjCRkGW2rCane g==;
+IronPort-SDR: Lf6PugSVODdn6tQddiivnCB6doNGTa7FK0SK07LbRP0FjvcRHwHzwmcuaFCIrUnvYXMqkmRsTp
+ qhudlIwdmFNAm8lpAVMewkyI1b+mmZMSLqpChjbnE6jT2uYXdwDmpBBZ3WhZDB5stLJAegD3S3
+ +B1Fq35//UjWdtiMhj/gG68LLjP+S8nivE6rOyh9UazE+BfKERjnzSPYmVOSor19qGE5ooDUnS
+ jTlynNLRhFbAMez7vowk//ReGXN6finFt1ttFzrcBoxPUVet8XvDCwC5XpA3UFO0VGHtcJ1fT8
+ U+M=
+X-IronPort-AV: E=Sophos;i="5.73,390,1583218800"; d="scan'208";a="75222005"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 13 May 2020 22:03:10 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 13 May 2020 22:03:10 -0700
+Received: from NAM10-BN7-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 13 May 2020 22:03:13 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=i2+NSNfqAroqn4LnOYiYMxr+q84SIjYhsDXRijBgEqwKRGkExv6gbnfoUcY7A7jr7cczjp7AsETbpouEBzTRqqqonM0yDrMjOHuvwoB+BJNCBUSuwRm1XNOi1K1aGlIFSS3cfjfNavJfeNJUFbZK0gg/M1AD7zBhkt02dkhyDm4C9v/fY/gEWf44dY8uEdPVgxjuEEbSRFkoTRcvK9/96UT8hPd/d8X7ngzy/aHfCPushMn2urBBNVNqPc4u5rCAawJ5Td711HBGZiLD8R3JCYVQvo6WGsB4U3i/H8trwtXdSM4gXEqWUj2/8Ngme0p0ySTRsT+ClbfzcdAGmc1xzA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yg9wyYUyKd5/346TQ1xLkgfuOte3iuotlfXcD4kryfY=;
+ b=EZZSNgNQtpADMWKeijtQlkirnh++GgahejLiApdDMZuU/LoRqR7FDNI7J3RCH0rQYLYVGLPs7h4f46YHUcMfuhHS2bkgq7jtzGs26n8K6eITC2KkqePcN2i95iuW8BSuiISvxos8Ot6Od9SqOcKU90+zITlkJyr14sIriKI7+77eFMi0OVDkGLvWISvomPldsP1FBnrxx/N6FCdVyr4BzS2yq0JCZzVA5z+o0qwLc08N5gILaafaPPKizMTMe4uyzs6FgPE11xPrNqSLcl3uehihzdqXMf+/owzHlmF22CS7uMlOtUQn/VXsY6ph6LCqx0gk6MRGHlTMErKQA/24jw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=yg9wyYUyKd5/346TQ1xLkgfuOte3iuotlfXcD4kryfY=;
+ b=dS5mMcvnDpQGVUirptGjllo60eiOm5ZtHKIa6YCwVf417zl3yhzlqc+XrcSbc7fp4mYqhV0QgMPDdMv4Wd67W8AXca7hoc2e32AyOV3mNlH7iRQdVp0Fdr6POoMnWa9oVDWfryMysY4nUYRs5RyXdkmh632A62iZ+G4DX2qhQUI=
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com (2603:10b6:a03:1c8::13)
+ by BY5PR11MB4483.namprd11.prod.outlook.com (2603:10b6:a03:1bc::15)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.24; Thu, 14 May
+ 2020 05:03:09 +0000
+Received: from BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536]) by BY5PR11MB4419.namprd11.prod.outlook.com
+ ([fe80::d847:5d58:5325:c536%7]) with mapi id 15.20.3000.022; Thu, 14 May 2020
+ 05:03:09 +0000
+From: <Tudor.Ambarus@microchip.com>
+To: <alexandre.belloni@bootlin.com>, <Ludovic.Desroches@microchip.com>,
+ <Nicolas.Ferre@microchip.com>
+Subject: [PATCH 04/16] ARM: dts: at91: sama5d2: Move flx2 definitions in the
+ SoC dtsi
+Thread-Topic: [PATCH 04/16] ARM: dts: at91: sama5d2: Move flx2 definitions in
+ the SoC dtsi
+Thread-Index: AQHWKaz1HK4IqE9XAU+N0OUrJnCjXg==
+Date: Thu, 14 May 2020 05:03:08 +0000
+Message-ID: <20200514050301.147442-5-tudor.ambarus@microchip.com>
+References: <20200514050301.147442-1-tudor.ambarus@microchip.com>
+In-Reply-To: <20200514050301.147442-1-tudor.ambarus@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: bootlin.com; dkim=none (message not signed)
+ header.d=none;bootlin.com; dmarc=none action=none header.from=microchip.com;
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 627d3fb9-1b09-4a5c-4930-08d7f7c4185e
+x-ms-traffictypediagnostic: BY5PR11MB4483:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <BY5PR11MB4483A3F2AFA7BF2643299471F0BC0@BY5PR11MB4483.namprd11.prod.outlook.com>
+x-bypassexternaltag: True
+x-ms-oob-tlc-oobclassifiers: OLM:3968;
+x-forefront-prvs: 040359335D
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info: ujlPWhLZDWsxsWnw+IXeTv20lJj14OWHhNyZeEki48KrMDxxtjE2ZE8uaNF5x7Nz/6LcT9XrzoYaVZXc53tBcydvWfM/S4g4hv+22wdxIYu2KNsN1MWD195/Ascukj5D6dj7n684f95qPydLGGCzWt0c2AFYm2tV1DaY+/G7UFq8NvyStNKeCzHc6dwWW1hEe9TkI6M8lU2/a75+SQWlxqDAHcJILwGOa82B8nymKoWgh55ocxk62nXDj7WzECTnH5rjtoHOLz1r0nh7tW00ynjKjNhqInxlwt5rsF3eXea4yGunxn2RFuuYJe665tLo//5elhJERlP3/8L6teYCUwrK40uQud/gemkN5PpnVYWZNlonzFqnt17L1sHgCB1quqOj4GArU96YJuBbvsOOiHuI9zp7JWyUzj50mi0eLdmkLm8wqTNP6n9EAo4tsQno
+x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
+ IPV:NLI; SFV:NSPM; H:BY5PR11MB4419.namprd11.prod.outlook.com; PTR:; CAT:NONE;
+ SFTY:;
+ SFS:(376002)(366004)(346002)(396003)(136003)(39860400002)(6506007)(76116006)(6486002)(26005)(66446008)(8676002)(6512007)(86362001)(66946007)(2616005)(64756008)(8936002)(478600001)(66476007)(66556008)(186003)(1076003)(4326008)(2906002)(71200400001)(6636002)(54906003)(316002)(107886003)(5660300002)(36756003)(110136005);
+ DIR:OUT; SFP:1101; 
+x-ms-exchange-antispam-messagedata: vm5rt3TRLD7o9QavM5stxvr2M3medCEU3n0gmeRxWqQQzZ6odjDfGjcs4CAhFwSBu4O+Uyow46okZN7u3jPeG4k+bFuo63YMd6zSm9E2Q+vCKiChpoHXEPfGGimVQmpFcjBOdpZnGPbBcn+WdMl8ndWvdaE0XBZoAqINdGA+60EZM3XKQCPioYW+qAXGUYOVEwA4f0L0e/BjZWg7DxuixESvzg+k6D6V1tfve9lWLDso+jMcdEUGVInwjstQv/gPyHwre35jHmla4X7hMW7zkNU08e2omxVb6nFkTYv+5doTTRilsDj/HwcYyNgXSq9mouLRC9/saS2lx8V4QL0fSBV2XK/7DOYvYtkRFW4ylQdnus3tfDbTzKq/mmtZC90r34vJAlF3VGLFAFdkKeAROGmxSmqpztWP0ujB/CJiBkz2kA1AQyRc8Hhd8UX2zRDfASFhdBJsoQ2oLFUPFTgqrj0Bms2R2ArhqyhWqUI4Axo=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200424202505.29562-5-mathieu.poirier@linaro.org>
+X-MS-Exchange-CrossTenant-Network-Message-Id: 627d3fb9-1b09-4a5c-4930-08d7f7c4185e
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 May 2020 05:03:08.9248 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: r4qQSL9D1vYSkfwFoOQL49Kuew59Vr6mtXmVSPGGVhgxtAmzmKlr6UGTowZlTpkcBWL3Qq73H0Q11Eh2+71LGjCh2rF4BrZ3TKQY87yzbqM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR11MB4483
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200513_220442_747184_6EAD9C24 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200513_220314_345650_A9B0FE8B 
+X-CRM114-Status: GOOD (  10.94  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,59 +153,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ohad@wizery.com, alexandre.torgue@st.com, loic.pallardy@st.com,
- arnaud.pouliquen@st.com, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Tudor.Ambarus@microchip.com,
+ linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ Codrin.Ciubotariu@microchip.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 24 Apr 13:24 PDT 2020, Mathieu Poirier wrote:
+From: Tudor Ambarus <tudor.ambarus@microchip.com>
 
-> Other than one has to be done after the other, there is no correlation
-> between memory translation and DT parsing.  As move function
-> stm32_rproc_of_memory_translations() to stm32_rproc_probe() so that
-> stm32_rproc_parse_dt() can be extended to look for synchronisation
-> related binding in a clean way.
-> 
-> Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-> Reviewed-by: Loic Pallardy <loic.pallardy@st.com>
+The Flexcom IP is part of the sama5d2 SoC. Move the flx2 node together
+with its function definitions in sama5d2.dtsi. Boards will just fill
+the pins and enable the desired functions.
 
-Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Signed-off-by: Tudor Ambarus <tudor.ambarus@microchip.com>
+---
+ arch/arm/boot/dts/at91-sama5d2_icp.dts | 12 ------------
+ arch/arm/boot/dts/sama5d2.dtsi         | 18 ++++++++++++++++++
+ 2 files changed, 18 insertions(+), 12 deletions(-)
 
-> ---
->  drivers/remoteproc/stm32_rproc.c | 6 +++++-
->  1 file changed, 5 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/remoteproc/stm32_rproc.c b/drivers/remoteproc/stm32_rproc.c
-> index 57a426ea620b..658439d4b00a 100644
-> --- a/drivers/remoteproc/stm32_rproc.c
-> +++ b/drivers/remoteproc/stm32_rproc.c
-> @@ -606,7 +606,7 @@ static int stm32_rproc_parse_dt(struct platform_device *pdev,
->  
->  	*auto_boot = of_property_read_bool(np, "st,auto-boot");
->  
-> -	return stm32_rproc_of_memory_translations(pdev, ddata);
-> +	return 0;
->  }
->  
->  static int stm32_rproc_probe(struct platform_device *pdev)
-> @@ -634,6 +634,10 @@ static int stm32_rproc_probe(struct platform_device *pdev)
->  	if (ret)
->  		goto free_rproc;
->  
-> +	ret = stm32_rproc_of_memory_translations(pdev, ddata);
-> +	if (ret)
-> +		goto free_rproc;
-> +
->  	rproc->auto_boot = auto_boot;
->  	rproc->has_iommu = false;
->  	ddata->workqueue = create_workqueue(dev_name(dev));
-> -- 
-> 2.20.1
-> 
+diff --git a/arch/arm/boot/dts/at91-sama5d2_icp.dts b/arch/arm/boot/dts/at91-sama5d2_icp.dts
+index 8a4336e12a60..23f413afb333 100644
+--- a/arch/arm/boot/dts/at91-sama5d2_icp.dts
++++ b/arch/arm/boot/dts/at91-sama5d2_icp.dts
+@@ -160,18 +160,6 @@
+ 	status = "okay";
+ 
+ 	uart7: serial@200 {
+-		compatible = "atmel,at91sam9260-usart";
+-		reg = <0x200 0x200>;
+-		interrupts = <21 IRQ_TYPE_LEVEL_HIGH 7>;
+-		dmas = <&dma0
+-			(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
+-				AT91_XDMAC_DT_PERID(15))>,
+-				<&dma0
+-				(AT91_XDMAC_DT_MEM_IF(0) | AT91_XDMAC_DT_PER_IF(1) |
+-				AT91_XDMAC_DT_PERID(16))>;
+-		dma-names = "tx", "rx";
+-		clocks = <&pmc PMC_TYPE_PERIPHERAL 21>;
+-		clock-names = "usart";
+ 		pinctrl-0 = <&pinctrl_flx2_default>;
+ 		pinctrl-names = "default";
+ 		atmel,use-dma-rx;
+diff --git a/arch/arm/boot/dts/sama5d2.dtsi b/arch/arm/boot/dts/sama5d2.dtsi
+index 5e84cde8226a..89064225e9aa 100644
+--- a/arch/arm/boot/dts/sama5d2.dtsi
++++ b/arch/arm/boot/dts/sama5d2.dtsi
+@@ -794,6 +794,24 @@
+ 				#size-cells = <1>;
+ 				ranges = <0x0 0xfc010000 0x800>;
+ 				status = "disabled";
++
++				uart7: serial@200 {
++					compatible = "atmel,at91sam9260-usart";
++					reg = <0x200 0x200>;
++					interrupts = <21 IRQ_TYPE_LEVEL_HIGH 7>;
++					clocks = <&pmc PMC_TYPE_PERIPHERAL 21>;
++					clock-names = "usart";
++					dmas = <&dma0
++						(AT91_XDMAC_DT_MEM_IF(0) |
++						 AT91_XDMAC_DT_PER_IF(1) |
++						 AT91_XDMAC_DT_PERID(15))>,
++						<&dma0
++						(AT91_XDMAC_DT_MEM_IF(0) |
++						 AT91_XDMAC_DT_PER_IF(1) |
++						 AT91_XDMAC_DT_PERID(16))>;
++					dma-names = "tx", "rx";
++					status = "disabled";
++				};
+ 			};
+ 
+ 			flx3: flexcom@fc014000 {
+-- 
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
