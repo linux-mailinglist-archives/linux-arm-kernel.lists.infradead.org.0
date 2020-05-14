@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC09A1D3E27
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:57:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CBAC1D3E36
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 21:58:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:To:From:Subject:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JG7ACW6+AERUep4ys72R5XI1OhJuJHNzDHUT3C3SmZE=; b=OuBoUMyEnn3Fcz
-	8VkrwWnz8MbRxLiGFQOsY7zDGyje/Dp1t0Holi0AeyMTGUfPtnZuu9GT8O5u7tvS0qBIQjHq6hiTb
-	NTSdngN8HQBhLcgR76eRfE+ldr3u38vaTD7TC9wdTsXilUQBMED6legff0ewjtpSdUAvBnrH3jopi
-	U/A24SS/QOafBsMKXWJXRut33Af30Pio4BEQTLnJas+2h1OyCevhSThZUlLMCQjmP06tDB79GET35
-	+/4UabYh9JhRVPmqbYxjln3f8aU1uNj+K7/NM7imnGGDDqKE8CfrlnLzr9S5o8SM3fRxeh6tC+1oF
-	qUaJSwNo7UrvutqN4yRw==;
+	List-Owner; bh=gc9PDlEHiB0UCLCO3IIBZvpSZ9ZkTuxhM2hu1pS0UlM=; b=VRvJSSRbl/R5jM
+	uP5rFjyJmrmv/XmtTf4wP7NvXvvCLBJ52Qaq238czHzScBtgPJpW0gK5kSC7ocGCjDWeP932QIM55
+	icqxPstdL1VKD02nSGMFHMSw7HJQI7g2OO91Q1xN7oQt4IOu/ATdaGriCSLLb4Dkxs3nk/ujgYwQw
+	b9AR2pSngfu6UIFwBJ3y7Gi/Ad+kYDb5tDhXZ9l2AkC7fqrZeyvqD6XpsGa1eeXzQHJGogmqYyR+M
+	tkZX7R3b69NNLtf7np6Ggosc/wGcPRp4pfR1cLcRRDjLyZWlg5tu8BmbcDKEHDAXoQJTvhF2HVqXF
+	oKl9mWt6O+GMols4ILUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZJz6-0000Lp-OU; Thu, 14 May 2020 19:57:36 +0000
+	id 1jZJzP-0000eC-Dq; Thu, 14 May 2020 19:57:56 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZJyg-00009c-A8
- for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:57:14 +0000
+ id 1jZJz8-0000aw-Mi
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 19:57:39 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A12BD2065C;
- Thu, 14 May 2020 19:57:09 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3AF2E2065C;
+ Thu, 14 May 2020 19:57:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589486229;
- bh=tKWWpxgYPG4stldxvX9LV4nXlvk64bNtADCpumJxIS8=;
+ s=default; t=1589486258;
+ bh=9+FiLG+m7K/fE15NsdWiSNgCFSpJx0DMvea4x9+tPi8=;
  h=In-Reply-To:References:Subject:From:Cc:To:Date:From;
- b=DnV2pqjEmRyOCXZKQIEqug66EC+hc9asFPpTuLcTnyudVx0bDXotfl7Pz5utF4cYJ
- BX9CmERuev/Arisrw13igQHXER6LmTxuvq30R6Kl27kbGu12YpOGKNGTxasZuPMzNE
- nS9VDd2hzL5tfWX0Gast9VuE//fzVBrUApHzS1Y4=
+ b=BU0ljWvw3RMT5CbVNzna4kyqjgpYlluRGx7a0FcdyXSOVT44Q46SOhKPFOEUwM/9n
+ vIjvqBCA0mCr95rlEHkMs3LiQDtWzIQqwm1PevuwDrRJ90Zvr5vKZuoFDTGuIc6caB
+ 9mHYwNG5fI+q0TcFROZujx703aSf+XCu9xMmt5ts=
 MIME-Version: 1.0
-In-Reply-To: <20200409064416.83340-8-sboyd@kernel.org>
+In-Reply-To: <20200409064416.83340-9-sboyd@kernel.org>
 References: <20200409064416.83340-1-sboyd@kernel.org>
- <20200409064416.83340-8-sboyd@kernel.org>
-Subject: Re: [PATCH v2 07/10] clk: Allow the common clk framework to be
- selectable
+ <20200409064416.83340-9-sboyd@kernel.org>
+Subject: Re: [PATCH v2 08/10] ARM: mmp: Remove legacy clk code
 From: Stephen Boyd <sboyd@kernel.org>
 To: Michael Turquette <mturquette@baylibre.com>,
  Stephen Boyd <sboyd@kernel.org>
-Date: Thu, 14 May 2020 12:57:08 -0700
-Message-ID: <158948622898.215346.8325812794724480286@swboyd.mtv.corp.google.com>
+Date: Thu, 14 May 2020 12:57:37 -0700
+Message-ID: <158948625761.215346.15511536578781632283@swboyd.mtv.corp.google.com>
 User-Agent: alot/0.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_125710_472644_536C0DFE 
-X-CRM114-Status: GOOD (  11.02  )
+X-CRM114-CacheID: sfid-20200514_125738_766464_317765F9 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,60 +78,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Yoshinori Sato <ysato@users.sourceforge.jp>,
- Arnd Bergmann <arnd@arndb.de>, linux-sh@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-kernel@vger.kernel.org,
- Jiaxun Yang <jiaxun.yang@flygoat.com>,
- Aurelien Jacquiot <jacquiot.aurelien@gmail.com>,
- linux-m68k@lists.linux-m68k.org, Mark Brown <broonie@kernel.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, Mark Salter <msalter@redhat.com>,
- Russell King <linux@armlinux.org.uk>,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>, Guan Xuetao <gxt@pku.edu.cn>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-c6x-dev@linux-c6x.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Lubomir Rintel <lkundrak@v3.sk>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Stephen Boyd (2020-04-08 23:44:13)
-> Enable build testing and configuration control of the common clk
-> framework so that more code coverage and testing can be done on the
-> common clk framework across various architectures. This also nicely
-> removes the requirement that architectures must select the framework
-> when they don't use it in architecture code.
+Quoting Stephen Boyd (2020-04-08 23:44:14)
+> Remove all the legacy clk code that supports a non-common clk framework
+> implementation of 'struct clk' in mach-mmp. This code doesn't look to be
+> compiled anymore given that the MMP is fully supported in the
+> multi-platform config via ARCH_MULTIPLATFORM as of commit 377524dc4d77
+> ("ARM: mmp: move into ARCH_MULTIPLATFORM"). The ARCH_MULTIPLATFORM
+> config selects COMMON_CLK and therefore the Makefile rule can never
+> actually compile the code in these files.
 > 
-> There's one snag with doing this, and that's making sure that randconfig
-> builds don't select this option when some architecture or platform
-> implements 'struct clk' outside of the common clk framework. Introduce a
-> new config option 'HAVE_LEGACY_CLK' to indicate those platforms that
-> haven't migrated to the common clk framework and therefore shouldn't be
-> allowed to select this new config option. Also add a note that we hope
-> one day to remove this config entirely.
-> 
-> Based on a patch by Mark Brown <broonie@kernel.org>.
-> 
-> Cc: Mark Brown <broonie@kernel.org>
-> Cc: Geert Uytterhoeven <geert@linux-m68k.org>
-> Cc: Mark Salter <msalter@redhat.com>
-> Cc: Aurelien Jacquiot <jacquiot.aurelien@gmail.com>
-> Cc: Jiaxun Yang <jiaxun.yang@flygoat.com>
-> Cc: Guan Xuetao <gxt@pku.edu.cn>
+> Cc: Lubomir Rintel <lkundrak@v3.sk>
 > Cc: Russell King <linux@armlinux.org.uk>
-> Cc: Arnd Bergmann <arnd@arndb.de>
-> Cc: Yoshinori Sato <ysato@users.sourceforge.jp>
-> Cc: Rich Felker <dalias@libc.org>
-> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-> Cc: <linux-mips@vger.kernel.org>
-> Cc: <linux-c6x-dev@linux-c6x.org>
-> Cc: <linux-m68k@lists.linux-m68k.org>
 > Cc: <linux-arm-kernel@lists.infradead.org>
-> Cc: <linux-sh@vger.kernel.org>
-> Link: https://lore.kernel.org/r/1470915049-15249-1-git-send-email-broonie@kernel.org
+> Cc: Arnd Bergmann <arnd@arndb.de>
 > Signed-off-by: Stephen Boyd <sboyd@kernel.org>
 > ---
 
-Applied to clk-next
+Applied to clk-next + a fix for problem reported in -next
 
 _______________________________________________
 linux-arm-kernel mailing list
