@@ -2,78 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 673C71D3653
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:20:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 570331D365C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 14 May 2020 18:21:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xrkKHWE+rfjzybTjUwIHB16TSSXcQyuigadY4gfjHd8=; b=XQEP0I9FJCKxGH
-	wqhbK+Y9xSLQQUh0lbfgXuYuAao54AHl83QHxtSoCLnafGet/0eM1zOVGX1d+kPe7/gnJxVdZSksV
-	Lzpgtg0qZwv7U+wmznXrlTvM8smcY4rooFgCASP10lx9E7WJv4UeWNk1lovc8X84CxwnZuexFo0sG
-	PaSvnicsiov7cqdMUa+Y7lx3rs9muE9jh7J8F4KjSBLi+pMpaJpLaKQ89XXe7hUydtHR9zo2XNjj/
-	422cKxTRx8VLdy4T8wJdad/AxHn/UU+2htdeB/Y1QeDP5RSBPifGJVNOdbWMYJfa9fxV777xNPSPu
-	u3A8HPm/CaQDg10Gnv3Q==;
+	List-Owner; bh=wkD3+e+xTuLwWMD5ClZj6TljUpmcLS/s3U9aKbcBtAc=; b=n1Vr/sS2E8jLv3
+	6pH2ie7JiOQJNfi6xxO0vJfZdqwRi9Rg0F3dOJdJIkjMWu1fMNRglHZEvybuy2vFzcbvXncZxJucE
+	tS1tu/3i/+Sms/lO8BRR/CytpR1NmQ2tvacXKGQQ9gwlyYuFyUDrw167ue6oL423OMA3HPzt+uCWa
+	ZDBTNTwwibLsWt0G2a943x4aUyNPBb6MEpuS3HxYJ6Yh+3wtEPuQCuDQD/+cpzp6YisMfbMGpPQbx
+	Sl07Q9360zW9ncprJ8+tx1s7QnPECmTMEH1FlRxhpjH65x5vGymQBc0TzgYt7YNTZ48AIb3j4+IqC
+	cnAL+8+872os1ki6+iIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZGap-0002kM-FI; Thu, 14 May 2020 16:20:19 +0000
-Received: from mout.kundenserver.de ([212.227.126.131])
+	id 1jZGbx-0005Yy-Qe; Thu, 14 May 2020 16:21:29 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZGaT-0002jf-Qa; Thu, 14 May 2020 16:19:59 +0000
-Received: from mail-qv1-f45.google.com ([209.85.219.45]) by
- mrelayeu.kundenserver.de (mreue011 [212.227.15.129]) with ESMTPSA (Nemesis)
- id 1MFbFW-1jJHkL1e6o-00H5j2; Thu, 14 May 2020 18:19:55 +0200
-Received: by mail-qv1-f45.google.com with SMTP id r3so1798231qve.1;
- Thu, 14 May 2020 09:19:55 -0700 (PDT)
-X-Gm-Message-State: AOAM532bibWAuVm4gbb8wOsWCgsbqAya3CPaKZkzp+BAjsQ1EPEx1q2D
- oet3jYE2pIy0uL3Mv3tm4dyfAhVgsZI/0GbI20Q=
-X-Google-Smtp-Source: ABdhPJxCBrrGbxf18hL0yNxLoGEF8lWC0aBA5Q8WEtaHoSpSU8DBa8Zy7ECG2BoQv6ItHE4yhgTm89xpWpnDDwuH11g=
-X-Received: by 2002:a0c:eb11:: with SMTP id j17mr5595135qvp.197.1589473194138; 
- Thu, 14 May 2020 09:19:54 -0700 (PDT)
+ id 1jZGbi-0005Xv-1t
+ for linux-arm-kernel@lists.infradead.org; Thu, 14 May 2020 16:21:17 +0000
+Received: by mail-wm1-x343.google.com with SMTP id m12so26298101wmc.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 09:21:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=KV4BSoviEBOfIIyT+7Io9PqJ+AxGL6m4ncG0jX3R3Vg=;
+ b=iiHyiJ4q0+KsNNeDxvvCz9wtZO9sC8IuSU69MkWg6ukuylaAreG2+ufhhS2q0LvI4a
+ 9ZFBQEB3gresJbeadDdort7B7CJztVaOzd+imGLK9adisFs8l1EkEXwjPix6DMwXWpjX
+ /bCdQB8gtMafG88ExRQb7sOFOT2TnNJlqCmCoaS8LyHnYhBzplYGqcazpRuc/Byl/kdH
+ h8OE0uxsaWxjlIp/J8ewc/SWJUPpFj3CJfpjNNHOJYP6BbciN+6P7zMR4GQBICDm8oYj
+ m2m8J1vRn9sCMPHm5LZbqiU0px2GbT9jNPn6q/3jziLa6B8kfu211fXDrBPg+K08gUdF
+ P8BQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=KV4BSoviEBOfIIyT+7Io9PqJ+AxGL6m4ncG0jX3R3Vg=;
+ b=gwDixBnL6hsUHewbawhkMmesdRBhVhR2uxRBy5vgfgrJKX5khVcb/skugy2NUZc84w
+ cOivGQkfCoDzwMjIMFdjynqiw7oYR9pFGPTcsnJT1oPjpKkKCbwBFdMWH7kdO594zAsz
+ 2KDNsX9nos1Ve9qcyEnRG/RQsoLJD90DqyP6UhpbwaLQbPRt7/reAey83l8T4GJWX5LX
+ nReU7EkHlP0qe8UHHrHLHEanX5828/2/be4ERMywnqMF2Lw4HtAgzScjkjHMd4ylY5uZ
+ Z/xUitMNOsgxRZPxTiBKo0/bW6ucBVNB5FltHApQCNa3DVKRiit7RGCvCp0KlTq3GFta
+ Xzbw==
+X-Gm-Message-State: AGi0PuZemcj+ZW/1WWPDcJ3UE6pb9AVHeH+FHUGFdcCcIh1Qag9XuBdm
+ 6heU4QFaKwwFSnHnLhI7Ah1rDg==
+X-Google-Smtp-Source: APiQypKzrysBhAd4T+CnYHlYyQM0grnydFJdjF31clt1OcgBcXllaYep5/9TgtCb41lshr5MEdxP5g==
+X-Received: by 2002:a1c:ed04:: with SMTP id l4mr49969579wmh.93.1589473272074; 
+ Thu, 14 May 2020 09:21:12 -0700 (PDT)
+Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
+ [86.9.19.6])
+ by smtp.gmail.com with ESMTPSA id b14sm29577880wmb.18.2020.05.14.09.21.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 May 2020 09:21:11 -0700 (PDT)
+Date: Thu, 14 May 2020 17:21:09 +0100
+From: Daniel Thompson <daniel.thompson@linaro.org>
+To: Douglas Anderson <dianders@chromium.org>
+Subject: Re: [PATCH v4 00/12] kgdb: Support late serial drivers; enable early
+ debug w/ boot consoles
+Message-ID: <20200514162109.6qt5drd27hpilijh@holly.lan>
+References: <20200507200850.60646-1-dianders@chromium.org>
 MIME-Version: 1.0
-References: <20200514075942.10136-1-brgl@bgdev.pl>
- <20200514075942.10136-11-brgl@bgdev.pl>
-In-Reply-To: <20200514075942.10136-11-brgl@bgdev.pl>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 14 May 2020 18:19:37 +0200
-X-Gmail-Original-Message-ID: <CAK8P3a3=xgbvqrSpCK5h96eRH32AA7xnoK2ossvT0-cLFLzmXA@mail.gmail.com>
-Message-ID: <CAK8P3a3=xgbvqrSpCK5h96eRH32AA7xnoK2ossvT0-cLFLzmXA@mail.gmail.com>
-Subject: Re: [PATCH v3 10/15] net: ethernet: mtk-eth-mac: new driver
-To: Bartosz Golaszewski <brgl@bgdev.pl>
-X-Provags-ID: V03:K1:/qv+kAopY+TX+z1JBE/zsJSZOZuVL4KS0oIKC1hkLO/cXzma90j
- zH9BMTf1Zqr9MZk3vvFm3P/2/r0+f1OVxhyv31IQ+pOzEwWRgFlFJWy7Nu6ODHH3RI7jvJs
- mYT00BgOvL/Bz3EYaZtnPNWtIOo0H2Og+TY5k3k0HERpDwKP5BeDbJ00bnypzS8RUYdW9jd
- jfG8zLLgtWOSBdyRMU2PA==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:JTDoQpP0Uh8=:ZZ5a2SO5ao9ohprk32LYU9
- ga7worDmJEzLwXfktJkbk7L3acBPu4R/24EL0LHO7HKo4ju4JPHlnSaFlfvSRbwRFRJJbmVAO
- L+y4bEL6R1HOLuMK+cgx4kYSyvp01LEFiAyA4WrFKx8guhg5hf1mx8MeXIfoUJ+4v+Q7yDzdm
- HZnSLvNy8UN2Hsv0s9TUvNh4+jYia/Gs7jP6GfNbQW6Xq2k/vIqh3l/A8zxCjdFmZEhOu/+4O
- Na32uj+seYMCQM2wq7s/QD+d5p+AsgTmacXrqoMEtntcywZ5ljtmG+Ycsa43KzRPa8fV1yjCW
- OJglDHkW0wGufMjhCrLPtDLlSSnAD1ty20j2TPg4o4GivHohN5gzFPuOUNRN2OPZeNRC8eWqi
- uYqVyUhMZSIs50wEt3Ndo908Q7iSSgctf9hpcWuptqNBoygddxmtpDJe6UZKLvCOkW/zZdVeD
- 5VyuwqWa19/tFhaJ0eZEONkKus8bABwgAA9zgTBIQe2GqLng9nYZoIkzyxzP1FhsjJzzfmd0b
- moI+GcbBO7zyPgyYZ6njuWR3hdJaTJ/MadTMO80X2JS8CSY/86L1zmEyXkLtESGS+Asn437fj
- XYN8P9v35Hvr3R2trzCorLe0qgrQndxvvt3q2nQ48PVrmGmjnm679Jp2VGi0N+tp8ZLsVFYIv
- NeQC7d9FiXNHP3xqILvMik/jKgRK2bxH/Kuprr1tMPXxeM9mOrTLvBM/d3zmAbY59ruYtN5L/
- ltuG0xutSdNpmiJpQwsP2bwSXBlPClPtCw33DnJj0Gd+A6oMtTgdhtyBg8LwQHTzbpENja6Xd
- QI2LwZPpCcCigGR1NT7yXByiSROftlKcwZdjd9HKeR6YaQNt6g=
+Content-Disposition: inline
+In-Reply-To: <20200507200850.60646-1-dianders@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_091958_154564_92204251 
-X-CRM114-Status: GOOD (  24.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200514_092114_103700_468D292D 
+X-CRM114-Status: GOOD (  21.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.126.131 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [212.227.126.131 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,229 +98,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Edwin Peer <edwin.peer@broadcom.com>, DTML <devicetree@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Stephane Le Provost <stephane.leprovost@mediatek.com>,
- Jonathan Corbet <corbet@lwn.net>, Networking <netdev@vger.kernel.org>,
- Sean Wang <sean.wang@mediatek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Pedro Tsai <pedro.tsai@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
- Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
- Andrew Perepech <andrew.perepech@mediatek.com>,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Heiner Kallweit <hkallweit1@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-doc@vger.kernel.org,
+ catalin.marinas@arm.com, bjorn.andersson@linaro.org, hpa@zytor.com,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, will@kernel.org,
+ corbet@lwn.net, frowand.list@gmail.com, x86@kernel.org,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ jinho lim <jordan.lim@samsung.com>, agross@kernel.org,
+ Pawan Gupta <pawan.kumar.gupta@linux.intel.com>,
+ linux-arm-kernel@lists.infradead.org, linux-serial@vger.kernel.org,
+ kgdb-bugreport@lists.sourceforge.net, Dave Martin <Dave.Martin@arm.com>,
+ Masami Hiramatsu <mhiramat@kernel.org>, linux-arm-msm@vger.kernel.org,
+ jslaby@suse.com, Alexios Zavras <alexios.zavras@intel.com>, bp@alien8.de,
+ tglx@linutronix.de, mingo@redhat.com, Allison Randal <allison@lohutok.net>,
+ Juergen Gross <jgross@suse.com>, sumit.garg@linaro.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ jason.wessel@windriver.com, Andrew Morton <akpm@linux-foundation.org>,
+ Enrico Weigelt <info@metux.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 10:00 AM Bartosz Golaszewski <brgl@bgdev.pl> wrote:
+On Thu, May 07, 2020 at 01:08:38PM -0700, Douglas Anderson wrote:
+> <snip>
 >
-> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
->
-> This adds the driver for the MediaTek Ethernet MAC used on the MT8* SoC
-> family. For now we only support full-duplex.
->
-> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> My first attempt was to try to get the existing "ekgdboc" to work
+> earlier.  I tried that for a bit until I realized that it needed to
+> work at the tty layer and I couldn't find any serial drivers that
+> managed to register themselves to the tty layer super early at boot.
+> The only documented use of "ekgdboc" is "ekgdboc=kbd" and that's a bit
+> of a special snowflake.  Trying to get my serial driver and all its
+> dependencies to probe normally and register the tty driver super early
+> at boot seemed like a bad way to go.  In fact, all the complexity
+> needed to do something like this is why the system already has a
+> special concept of a "boot console" that lives only long enough to
+> transition to the normal console.
+> 
+> <snip>
+> 
+> The devices I had for testing were:
+> - arm32: rk3288-veyron-jerry
+> - arm64: rk3399-gru-kevin
+> - arm64: qcom-sc7180-trogdor (not mainline yet)
+> 
+> These are the devices I tested this series on.  I tried to test
+> various combinations of enabling/disabling various options and I
+> hopefully caught the corner cases, but I'd appreciate any extra
+> testing people can do.  Notably I didn't test on x86, but (I think) I
+> didn't touch much there so I shouldn't have broken anything.
 
-Looks very nice overall. Just a few things I noticed, and some ideas
-that may or may not make sense:
-
-> +/* This is defined to 0 on arm64 in arch/arm64/include/asm/processor.h but
-> + * this IP doesn't work without this alignment being equal to 2.
-> + */
-> +#ifdef NET_IP_ALIGN
-> +#undef NET_IP_ALIGN
-> +#endif
-> +#define NET_IP_ALIGN                           2
-
-Maybe you should just define your own macro instead of replacing
-the normal one then?
-
-> +static void mtk_mac_lock(struct mtk_mac_priv *priv)
-> +{
-> +       spin_lock_irqsave(&priv->lock, priv->lock_flags);
-> +}
-> +
-> +static void mtk_mac_unlock(struct mtk_mac_priv *priv)
-> +{
-> +       spin_unlock_irqrestore(&priv->lock, priv->lock_flags);
-> +}
-
-This looks wrong: you should not have shared 'flags' passed into
-spin_lock_irqsave(), and I don't even see a need to use the
-irqsave variant of the lock in the first place.
-
-Maybe start by open-coding the lock and remove the wrappers
-above.
-
-Then see if you can use a cheaper spin_lock_bh() or plain spin_lock()
-instead of irqsave.
-
-Finally, see if this can be done in a lockless way by relying on
-appropriate barriers and separating the writers into separate
-cache lines. From a brief look at the driver I think it can be done
-without too much trouble.
-
-> +static unsigned int mtk_mac_intr_read_and_clear(struct mtk_mac_priv *priv)
-> +{
-> +       unsigned int val;
-> +
-> +       regmap_read(priv->regs, MTK_MAC_REG_INT_STS, &val);
-> +       regmap_write(priv->regs, MTK_MAC_REG_INT_STS, val);
-> +
-> +       return val;
-> +}
-
-Do you actually need to read the register? That is usually a relatively
-expensive operation, so if possible try to use clear the bits when
-you don't care which bits were set.
-
-> +/* All processing for TX and RX happens in the napi poll callback. */
-> +static irqreturn_t mtk_mac_handle_irq(int irq, void *data)
-> +{
-> +       struct mtk_mac_priv *priv;
-> +       struct net_device *ndev;
-> +
-> +       ndev = data;
-> +       priv = netdev_priv(ndev);
-> +
-> +       if (netif_running(ndev)) {
-> +               mtk_mac_intr_mask_all(priv);
-> +               napi_schedule(&priv->napi);
-> +       }
-> +
-> +       return IRQ_HANDLED;
+I have tested a slightly earlier version using qemu and will test this
+set before it moves forwards.
 
 
-> +static int mtk_mac_netdev_start_xmit(struct sk_buff *skb,
-> +                                    struct net_device *ndev)
-> +{
-> +       struct mtk_mac_priv *priv = netdev_priv(ndev);
-> +       struct mtk_mac_ring *ring = &priv->tx_ring;
-> +       struct device *dev = mtk_mac_get_dev(priv);
-> +       struct mtk_mac_ring_desc_data desc_data;
-> +
-> +       desc_data.dma_addr = mtk_mac_dma_map_tx(priv, skb);
-> +       if (dma_mapping_error(dev, desc_data.dma_addr))
-> +               goto err_drop_packet;
-> +
-> +       desc_data.skb = skb;
-> +       desc_data.len = skb->len;
-> +
-> +       mtk_mac_lock(priv);
-> +       mtk_mac_ring_push_head_tx(ring, &desc_data);
-> +
-> +       if (mtk_mac_ring_full(ring))
-> +               netif_stop_queue(ndev);
-> +       mtk_mac_unlock(priv);
-> +
-> +       mtk_mac_dma_resume_tx(priv);
-> +
-> +       return NETDEV_TX_OK;
-> +
-> +err_drop_packet:
-> +       dev_kfree_skb(skb);
-> +       ndev->stats.tx_dropped++;
-> +       return NETDEV_TX_BUSY;
-> +}
+>  .../admin-guide/kernel-parameters.txt         |  20 ++
+>  Documentation/dev-tools/kgdb.rst              |  24 ++
+>  arch/arm64/Kconfig                            |   1 +
+>  arch/arm64/include/asm/debug-monitors.h       |   2 +
+>  arch/arm64/kernel/debug-monitors.c            |   2 +-
+>  arch/arm64/kernel/traps.c                     |   3 +
+>  arch/x86/Kconfig                              |   1 +
+>  drivers/tty/serial/8250/8250_early.c          |  23 ++
+>  drivers/tty/serial/amba-pl011.c               |  32 +++
+>  drivers/tty/serial/kgdboc.c                   | 268 ++++++++++++++++--
+>  drivers/tty/serial/qcom_geni_serial.c         |  32 +++
+>  include/linux/kgdb.h                          |   4 +
+>  kernel/debug/debug_core.c                     |  52 +++-
+>  lib/Kconfig.kgdb                              |  18 ++
+>  14 files changed, 436 insertions(+), 46 deletions(-)
 
-I would always add BQL flow control in new drivers, using
-netdev_sent_queue here...
+Any thoughts on how best to land these changes?
 
-> +static int mtk_mac_tx_complete_one(struct mtk_mac_priv *priv)
-> +{
-> +       struct mtk_mac_ring *ring = &priv->tx_ring;
-> +       struct mtk_mac_ring_desc_data desc_data;
-> +       int ret;
-> +
-> +       ret = mtk_mac_ring_pop_tail(ring, &desc_data);
-> +       if (ret)
-> +               return ret;
-> +
-> +       mtk_mac_dma_unmap_tx(priv, &desc_data);
-> +       dev_kfree_skb_irq(desc_data.skb);
-> +
-> +       return 0;
-> +}
+AFAICT the arm64 and 8250/amba-pl011/qcom_geni_serial code
+could be applied independently of the kgdb changes (though we must keep
+changes to drivers/tty/serial/kgdboc alongside the kgdb changes).
 
-... and netdev_completed_queue()  here.
+I can hoover them up but I'd need a solid set of acks and
+I don't think we've got that yet.
 
-> +static void mtk_mac_tx_complete_all(struct mtk_mac_priv *priv)
-> +{
-> +       struct mtk_mac_ring *ring = &priv->tx_ring;
-> +       struct net_device *ndev = priv->ndev;
-> +       int ret;
-> +
-> +       for (;;) {
-> +               mtk_mac_lock(priv);
-> +
-> +               if (!mtk_mac_ring_descs_available(ring)) {
-> +                       mtk_mac_unlock(priv);
-> +                       break;
-> +               }
-> +
-> +               ret = mtk_mac_tx_complete_one(priv);
-> +               if (ret) {
-> +                       mtk_mac_unlock(priv);
-> +                       break;
-> +               }
-> +
-> +               if (netif_queue_stopped(ndev))
-> +                       netif_wake_queue(ndev);
-> +
-> +               mtk_mac_unlock(priv);
-> +       }
-> +}
+I'd also be happy to ack where needed and let someone else pick it up
+(the other changes queued for kgdb this cycle are pretty small so we
+shouldn't see much conflict in kernel/debug/ ).
 
-It looks like most of the stuff inside of the loop can be pulled out
-and only done once here.
 
-> +static int mtk_mac_poll(struct napi_struct *napi, int budget)
-> +{
-> +       struct mtk_mac_priv *priv;
-> +       unsigned int status;
-> +       int received = 0;
-> +
-> +       priv = container_of(napi, struct mtk_mac_priv, napi);
-> +
-> +       status = mtk_mac_intr_read_and_clear(priv);
-> +
-> +       /* Clean up TX */
-> +       if (status & MTK_MAC_BIT_INT_STS_TNTC)
-> +               mtk_mac_tx_complete_all(priv);
-> +
-> +       /* Receive up to $budget packets */
-> +       if (status & MTK_MAC_BIT_INT_STS_FNRC)
-> +               received = mtk_mac_process_rx(priv, budget);
-> +
-> +       /* One of the counter reached 0x8000000 - update stats and reset all
-> +        * counters.
-> +        */
-> +       if (status & MTK_MAC_REG_INT_STS_MIB_CNT_TH) {
-> +               mtk_mac_update_stats(priv);
-> +               mtk_mac_reset_counters(priv);
-> +       }
-> +
-> +       if (received < budget)
-> +               napi_complete_done(napi, received);
-> +
-> +       mtk_mac_intr_unmask_all(priv);
-> +
-> +       return received;
-> +}
-
-I think you want to leave (at least some of) the interrupts masked
-if your budget is exhausted, to avoid generating unnecessary
-irqs.
-
-It may also be faster to not mask/unmask at all but just
-clear the interrupts that you have finished processing
-
-      Arnd
+Daniel.
 
 _______________________________________________
 linux-arm-kernel mailing list
