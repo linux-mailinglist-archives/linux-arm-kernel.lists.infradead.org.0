@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C890A1D42EF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 03:26:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C10A1D43F3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 05:16:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ST5AamJbYlE/oxcQifyzhnRW/rX7Z7yA8cFHJz79u1M=; b=nPCNZCDMTXiEra
-	Jhf4GLVc33orNWkHZCJ2OEI/pQQR0Ig2PgPkxXtqDQe9kBCDZ1uUIa9YycOuwCH4GI4emf75WLXff
-	GrWINqRAE0wDLMI6lmGpquI4zWxij8sH9EjnKKLBbg1glH8TInB4SAPQcEkqXcehisztXgE4hFeA+
-	RM0s8IzfUF5YNq2uRGwVsyrqCpMEkwjJFi221l2MYnL9tqrWrIQaeN1bnIXb4uyt6FwHg4cGZ3WRk
-	21TDHj1mKLKXBbXbq3GBM+pPwDYjt72Trwx23cFPQRZ756/ZV/iNhOh/nrXfPHQjQlYGDmEbO5ekr
-	HNiei/Na2KVU5KItjDIQ==;
+	List-Owner; bh=398255GgNFCC/vklQNq3whRMeMyZkEKgSYHYIF5lV9U=; b=mgDTQ1mZ7p1frh
+	dwDiFEokPcrn4qsOREa+NcxZNjyCL4pDHpurjxOrCwbaEn/d1GNIm25m72XQfj0hIEDeeElRWduEW
+	pMQ5qafdjrXlFBIOo57g15Myx1+J4w4d/KBf71mGPaO0a5SKbktRZsZNiybJ7UvELmBmw5hf/wGCX
+	m+JW0mvuQTdVHBF50IUeZXOBkFGxWC3udU4AwcBw1ICd538wnQKf957k//HFmwoGQsp1Vl06T3613
+	iQYfmPQ3v0cEg1ySf+vjk2KuOQM9AUG9uwT/0rn6Cwlqt+XXk17apLUZtwcQW+Yl1eP6rwm0RkVIn
+	02mnXiZ5SZ5++Ns11puQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZP7M-0006Yk-02; Fri, 15 May 2020 01:26:28 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jZQph-0002YD-2Q; Fri, 15 May 2020 03:16:21 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZP78-0006WP-3T; Fri, 15 May 2020 01:26:17 +0000
-X-UUID: c9947cc7022d41218a7f3a373f9a0e07-20200514
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=fqRhhH59jTJIvLK90VopqKiASNWrF23G1ykGc4EPhlE=; 
- b=npz3Blg4aa1IlPD0nrV+b36oFGbaJo9n4E1wAGASNNpJ/AFraajOUrj8cPciHxutWyhWrLBGZj2hy8G/fWuIvgBfTQifnAC+x2UYjPt4dTugy61losQlmuXTKoWym/xMHdg7nc9QVGpFuUc+xSdOSU7gvbGLEo1Ot8iVRr+8t/E=;
-X-UUID: c9947cc7022d41218a7f3a373f9a0e07-20200514
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1664807439; Thu, 14 May 2020 17:26:23 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 18:16:05 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 15 May 2020 09:15:58 +0800
-Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 15 May 2020 09:15:58 +0800
-Message-ID: <1589505358.3197.101.camel@mtkswgap22>
-Subject: Re: [PATCH v2 0/4] scsi: ufs: allow customizable WriteBooster flush
- policy
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: "Martin K. Petersen" <martin.petersen@oracle.com>
-Date: Fri, 15 May 2020 09:15:58 +0800
-In-Reply-To: <158950485295.8169.36549719949053326.b4-ty@oracle.com>
-References: <20200509093716.21010-1-stanley.chu@mediatek.com>
- <158950485295.8169.36549719949053326.b4-ty@oracle.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1jZQpZ-0002Xg-HZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 03:16:16 +0000
+Received: by mail-ot1-f67.google.com with SMTP id k110so837399otc.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 14 May 2020 20:16:12 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=QgDBRSIfDKSffvU3Ly32G5jTLXz9MN2w5S616tVyMLU=;
+ b=lIGdlu2RuE32BwjlvCRMFXo7tC2j8eA4nfduOGCoMaXOV3U7W+7mDsrerpRJzZRnRw
+ Lyz+yoRWfyyVaEdeQ+IJjFkkupMl5gxw9PhD3oWFUzswXQxHejTDTmITdYkSq4hFGNMB
+ GzDa9DwvYKc5WmZOtn3ukhRLEIOOVBRAR6caCMrFVMB3B6h4z8rcFLjqoXtMtD9b/+v6
+ xKlFEYy/SKix4KFjUUQWFYfeUHvadtBIOV+3wPAzabR1ybrPIvKez7qIB9qgMPaBEwMj
+ ZNTS/tK/hxGsFJKvYUEglVovZYEVXy65Ye4b3SYzgXBBdrbBEKW9J3HAWg07eFdkZf7N
+ C5BA==
+X-Gm-Message-State: AOAM531iRh4xT7z+xg4axb+aQCk4DI8q6rEJFwv2Dk8zB2jXaQJiTJ0C
+ eJ06p0itj96PX6Mim3msyQ==
+X-Google-Smtp-Source: ABdhPJx+6ePI0Wlmyprnwj0WCBtiFng+Cdgj8nqFHTl/IpFzGKFRD3I6mGeUX6CRzZ09lypHC5fZTg==
+X-Received: by 2002:a05:6830:1353:: with SMTP id
+ r19mr825668otq.248.1589512571587; 
+ Thu, 14 May 2020 20:16:11 -0700 (PDT)
+Received: from rob-hp-laptop (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id z75sm307134oia.22.2020.05.14.20.16.10
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 14 May 2020 20:16:10 -0700 (PDT)
+Received: (nullmailer pid 2805 invoked by uid 1000);
+ Fri, 15 May 2020 03:16:10 -0000
+Date: Thu, 14 May 2020 22:16:10 -0500
+From: Rob Herring <robh@kernel.org>
+To: Andre Przywara <andre.przywara@arm.com>
+Subject: Re: [PATCH v3 01/20] dt-bindings: arm: gic: Allow combining arm,
+ gic-400 compatible strings
+Message-ID: <20200515031610.GA2750@bogus>
+References: <20200513103016.130417-1-andre.przywara@arm.com>
+ <20200513103016.130417-2-andre.przywara@arm.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <20200513103016.130417-2-andre.przywara@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_182614_162128_C99BCB90 
-X-CRM114-Status: GOOD (  10.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_201613_582272_8DC7F58D 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [robherring2[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [robherring2[at]gmail.com]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,50 +96,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
- jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
- linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Liviu Dudau <liviu.dudau@arm.com>, Sudeep Holla <sudeep.holla@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Martin,
-
-On Thu, 2020-05-14 at 21:10 -0400, Martin K. Petersen wrote:
-> On Sat, 9 May 2020 17:37:12 +0800, Stanley Chu wrote:
+On Wed, 13 May 2020 11:29:57 +0100, Andre Przywara wrote:
+> The arm,gic-400 compatible is probably the best matching string for the
+> GIC in most modern SoCs, but was only introduced later into the kernel.
+> For historic reasons and to keep compatibility, some SoC DTs were thus
+> using a combination of this name and one of the older strings, which
+> currently the binding denies.
 > 
-> > This patch set tries to allow vendors to modify the WriteBooster flush policy.
-> > 
-> > In the same time, collect all customizable parameters to an unified structure to make UFS driver more clean.
-> > 
-> > v1 -> v2:
-> >   - Squash patch [3] and [4]
-> >   - Remove a dummy "new line" in patch [3]
-> >   - Fix commit message in patch [3]
-> > 
-> > [...]
+> Add a stanza to the DT binding to allow "arm,gic-400", followed by
+> either "arm,cortex-a15-gic" or "arm,cortex-a7-gic". This fixes binding
+> compliance for quite some SoC .dtsi files in the kernel tree.
 > 
-> Applied to 5.8/scsi-queue, thanks!
-> 
-> I had to combine patches 1 and 2. Otherwise you'd get compile
-> failures due to the fields moving inside the struct.
-> 
-> [1/4] scsi: ufs: Introduce ufs_hba_variant_params to group customizable parameters
->       https://git.kernel.org/mkp/scsi/c/90b8491c0033
-> [3/4] scsi: ufs: Customize flush threshold for WriteBooster
->       https://git.kernel.org/mkp/scsi/c/d14734ae3ae7
-> [4/4] scsi: ufs-mediatek: Customize WriteBooster flush policy
->       https://git.kernel.org/mkp/scsi/c/f48b285ae658
+> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
+> ---
+>  .../devicetree/bindings/interrupt-controller/arm,gic.yaml   | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
 
-Thanks so much for helping the patch squash.
+Applied, thanks!
 
-Thanks,
-Stanley Chu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
