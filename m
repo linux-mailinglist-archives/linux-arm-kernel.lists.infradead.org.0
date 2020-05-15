@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 371E71D4A7A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:07:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86E951D4A72
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:07:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ZDhQg4iaCGvt677m1kDaItOBo9tCUZVQPACsk93RSKQ=; b=Njvj6tCYXfr82MQyt7z47q3Z70
-	CKrNfxmt5dWKY8sqtP6HeISPWiHZOIOzYfFZ8uHTNujXUoy3x2ZA9yH2CNzHKfUygyCbk0rtorj4F
-	VFiWi9t8C4kkBsFc+pA7uYJNw73uL/5sJXIb+5ynYAMeBn9vBoKpCc92E6icq2ORoFzM9SVBX9gga
-	KbJTAzNKANohxyvkxQLHDxm4uhZL1plv+NgZHzqRJtnnLHVAzk+9XSRjmcDVQxP/xEqWo2JQ++Mh+
-	6P6GMQ/8mnMXFmTtTVFPYquzOquAZ2lz+GzqpOLmgCoifL23byVpVEdlyYb0MIMuoE3XIA1Hy+AeU
-	ZqlH8EuQ==;
+	bh=XKKuY/y9zMPryvMFsi8Rg1t1p81oLZ9a0yMSBhfGXVI=; b=j6agZCt39vCfz5WFPhxdB2aVHn
+	S2i12oOpfSXkkZpUB+FsPwFgWcShL/uQZO2j56zuQWydYEIP/MSETd8Cam3fccwyGgPv10ypExjie
+	GZQ7uGt4Zp0IR0mM1JqHJx7sGPXzD062PWbFCxHr7gQDe/extkjCOqjZunkRuEoxeNEnoMbncGXXr
+	Hc4xbaTOANRaRRSkSyJxzPDK92Vc8KbEPzLcPqZyfwzTZ939w6GfIHTp1jposVVjMGt32StmJCYoY
+	ysxbRIHAPTeWkoEKKFQLWhYPBmf4ItdhOw9JAu7xcRzMiIklU6ZUoSsYw16Lb7VhbhX4FWVwisSk3
+	FUC1lqWw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZXFl-0004ll-Iu; Fri, 15 May 2020 10:07:41 +0000
+	id 1jZXFI-0004Lv-A6; Fri, 15 May 2020 10:07:12 +0000
 Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZXEN-0003fz-Lw
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:06:19 +0000
+ id 1jZXEN-0003fx-Kj
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:06:18 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:ad37:48f9:900a:523e])
  by xavier.telenet-ops.be with bizsmtp
- id ey5w2200D1TfvYq01y5w6K; Fri, 15 May 2020 12:05:56 +0200
+ id ey5w2200E1TfvYq01y5w6L; Fri, 15 May 2020 12:05:56 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jZXE4-0008Qo-EM; Fri, 15 May 2020 12:05:56 +0200
+ id 1jZXE4-0008Qq-Ez; Fri, 15 May 2020 12:05:56 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jZXE4-0003pg-DE; Fri, 15 May 2020 12:05:56 +0200
+ id 1jZXE4-0003pj-Du; Fri, 15 May 2020 12:05:56 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 3/5] Renesas ARM SoC updates for v5.8 (take two)
-Date: Fri, 15 May 2020 12:05:45 +0200
-Message-Id: <20200515100547.14671-4-geert+renesas@glider.be>
+Subject: [GIT PULL 4/5] Renesas driver updates for v5.8 (take two)
+Date: Fri, 15 May 2020 12:05:46 +0200
+Message-Id: <20200515100547.14671-5-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200515100547.14671-1-geert+renesas@glider.be>
 References: <20200515100547.14671-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_030615_859366_DF179A05 
-X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-CacheID: sfid-20200515_030615_826826_33DAE6D5 
+X-CRM114-Status: UNSURE (   6.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -78,29 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit 135e7a156ae2c1a7a1f0c1d44bf2b3daece04bbf:
+The following changes since commit 2f71832755a9422f5a62a13ea3e805df7b173837:
 
-  ARM: shmobile: r8a7742: Basic SoC support (2020-04-28 10:13:58 +0200)
+  soc: renesas: rcar-rst: Add support for RZ/G1H (2020-04-30 10:01:39 +0200)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.8-tag2
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-drivers-for-v5.8-tag2
 
-for you to fetch changes up to 96866b1a1d32318b6bbc321a762bf79db1f4686e:
+for you to fetch changes up to cdc8abe763c99a6c2b854d7096eaf1ea21017a42:
 
-  ARM: debug-ll: Add support for r8a7742 (2020-05-04 14:28:21 +0200)
+  soc: renesas: Add Renesas R8A7742 config option (2020-05-04 14:27:20 +0200)
 
 ----------------------------------------------------------------
-Renesas ARM SoC updates for v5.8 (take two)
+Renesas driver updates for v5.8 (take two)
 
-  - Add debug-ll support for RZ/G1H.
+  - Add the main config option for the RZ/G1H SoC.
 
 ----------------------------------------------------------------
 Lad Prabhakar (1):
-      ARM: debug-ll: Add support for r8a7742
+      soc: renesas: Add Renesas R8A7742 config option
 
- arch/arm/Kconfig.debug | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+ drivers/soc/renesas/Kconfig | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
