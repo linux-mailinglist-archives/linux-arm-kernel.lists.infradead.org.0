@@ -2,69 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E91481D497D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:26:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 837B61D4988
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:28:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CYPT+XEuxVt0VTsorA4BTCz7Qgfai61RlkRwv5ELSO8=; b=Hyy015p2q48Mmunn1ITT4otku
-	Et7/ebCIFJXtaEjraLOom9Vb1m7e11EFbUvQNe5/kcBkHhKTe2rf9xGi/vpE+cAELEiiQiSoVxYqh
-	Z2J9PphZE48SlqV7PZ8Rzgkb6lDz74B1Hk3m9vhz49/EW2qyY66hZJApgVFDFOUvI62e4rKNWnOHI
-	LwvK+IpI/06WGcdxO5LpbcHUNxOdr3JYl7zkuqlfToI/AU0hXLtV5M1WoeAFpjtmWXoEv/p54Fkgr
-	j90ZTomu6t7dBNVooKsRHZKyfF8GDReS9ZRWDvvCPcnhBQamizdbcP7yIdybDo2gfvcu1nD0hTxwQ
-	pR33C0oBA==;
+	 bh=Py9D7tditO+lGqmo/fHDg/zfzr1c0QXrs3Qkb1NE5Xs=; b=Sab9/netM1cKEvN8Bv6v5OKl+
+	NuZuPJJB6vz7syGPd5yxvVX5gsd1o4Ap3TmdmUuUcd8l4v+IA5LP7eAzXFsZVmPzw4oD6EoMuAdBW
+	sM/S/PsPgMoSGYFt7b4ql1TXyQ5AixfbjOUdnGu2UgWzEn7RZOxtS41p+zgroqSzyYKDBoXdx/vMf
+	BmTfkcQbSC2/dWz90/+heCPzKrQZyxx5D/+s2DZ80XFzl4uZ87vFLQzuHm+QsggMl+lSzx9qgvGc1
+	4+Ra+ZtrluSU0/L75YB3UjDzxKw8XHD1TgSBUcRsmiX6ARXCsLKYdNj3VHiDN2xEYhj4jR08FDP/G
+	sf0b6U/Mg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWc8-0005iU-BO; Fri, 15 May 2020 09:26:44 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWc0-0005hM-2a
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:26:37 +0000
-Received: from localhost (p5486CC07.dip0.t-ipconnect.de [84.134.204.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 53824206F1;
- Fri, 15 May 2020 09:26:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589534795;
- bh=JONR1pyDiZUuVzDV4dMV5uAVGjvbIMtv5fbdNtZJQJI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KXai6YkiZMm63/30RRwO6O6lX2sos3XjZi1OeX33TJi8uY9uz5zoDHc9rxPrUpVh1
- UUd5IXcrHntKLeLmcELp+ER0FaptSqknwrifF6K/jdQHdh0/lVozMcaY5MVRF7XfVd
- pNcJBZzF1n1Qtu2AdbgBEnPjlP345J+ZOoopxIG8=
-Date: Fri, 15 May 2020 11:26:31 +0200
-From: Wolfram Sang <wsa@kernel.org>
-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-Subject: Re: [PATCH] i2c: at91: Restore pinctrl state if can't get scl/sda
- gpios
-Message-ID: <20200515092631.GB2077@ninjato>
-References: <20200513111322.111114-1-codrin.ciubotariu@microchip.com>
+	id 1jZWdp-00066P-9D; Fri, 15 May 2020 09:28:29 +0000
+Received: from mx.socionext.com ([202.248.49.38])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZWdd-00065M-Eq
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:28:21 +0000
+Received: from unknown (HELO kinkan-ex.css.socionext.com) ([172.31.9.52])
+ by mx.socionext.com with ESMTP; 15 May 2020 18:28:14 +0900
+Received: from mail.mfilter.local (m-filter-1 [10.213.24.61])
+ by kinkan-ex.css.socionext.com (Postfix) with ESMTP id E2B71180B60;
+ Fri, 15 May 2020 18:28:14 +0900 (JST)
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
+ Fri, 15 May 2020 18:28:14 +0900
+Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 580F41A15C4;
+ Fri, 15 May 2020 18:28:14 +0900 (JST)
+Received: from [10.213.29.28] (unknown [10.213.29.28])
+ by yuzu.css.socionext.com (Postfix) with ESMTP id 6BDE612013D;
+ Fri, 15 May 2020 18:28:13 +0900 (JST)
+Subject: Re: [PATCH 5/5] PCI: uniphier: Add error message when failed to get
+ phy
+To: Bjorn Helgaas <helgaas@kernel.org>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Jingoo Han <jingoohan1@gmail.com>,
+ Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>
+References: <1589518105-18368-6-git-send-email-hayashi.kunihiko@socionext.com>
+ <202005151454.wRtXzaiY%lkp@intel.com>
+From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+Message-ID: <e41c81f6-837a-e07a-458a-d388f373cb41@socionext.com>
+Date: Fri, 15 May 2020 18:28:12 +0900
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <20200513111322.111114-1-codrin.ciubotariu@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <202005151454.wRtXzaiY%lkp@intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_022636_139862_FBA5AFCE 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200515_022817_613394_7283E239 
+X-CRM114-Status: GOOD (  21.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,71 +75,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.belloni@bootlin.com, linus.walleij@linaro.org,
- linux-kernel@vger.kernel.org, ludovic.desroches@microchip.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0769289428006819585=="
+Cc: devicetree@vger.kernel.org, Masami Hiramatsu <masami.hiramatsu@linaro.org>,
+ linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 2020/05/15 15:51, kbuild test robot wrote:
+> Hi Kunihiko,
+> 
+> I love your patch! Perhaps something to improve:
+> 
+> [auto build test WARNING on pci/next]
+> [also build test WARNING on robh/for-next v5.7-rc5 next-20200514]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+> 
+> url:    https://github.com/0day-ci/linux/commits/Kunihiko-Hayashi/PCI-uniphier-Add-features-for-UniPhier-PCIe-host-controller/20200515-125031
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/helgaas/pci.git next
+> config: i386-allyesconfig (attached as .config)
+> compiler: gcc-7 (Ubuntu 7.5.0-6ubuntu2) 7.5.0
+> reproduce:
+>          # save the attached .config to linux build tree
+>          make ARCH=i386
+> 
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All warnings (new ones prefixed by >>, old ones prefixed by <<):
+> 
+> In file included from include/linux/device.h:15:0,
+> from include/linux/pci.h:37,
+> from drivers/pci/controller/dwc/pcie-uniphier.c:18:
+> drivers/pci/controller/dwc/pcie-uniphier.c: In function 'uniphier_pcie_probe':
+>>> drivers/pci/controller/dwc/pcie-uniphier.c:470:16: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long int' [-Wformat=]
+> dev_err(dev, "Failed to get phy (%d)n", PTR_ERR(priv->phy));
+> ^
+> include/linux/dev_printk.h:19:22: note: in definition of macro 'dev_fmt'
+> #define dev_fmt(fmt) fmt
+> ^~~
+>>> drivers/pci/controller/dwc/pcie-uniphier.c:470:3: note: in expansion of macro 'dev_err'
+> dev_err(dev, "Failed to get phy (%d)n", PTR_ERR(priv->phy));
+> ^~~~~~~
 
---===============0769289428006819585==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="dc+cDN39EJAMEtIO"
-Content-Disposition: inline
+This should be fixed. I'll fix it in v2.
 
+Thanks,
 
---dc+cDN39EJAMEtIO
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Wed, May 13, 2020 at 02:13:22PM +0300, Codrin Ciubotariu wrote:
-> If there is a strict pinmux or if simply the scl/sda gpios are missing,
-> the pins will remain in gpio mode, compromizing the I2C bus.
-> Change to the default state of the pins before returning the error.
->=20
-> Fixes: a53acc7ebf27 ("i2c: at91: Fix pinmux after devm_gpiod_get() for bu=
-s recovery")
-> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
-
-I squashed it into the other patch and applied it to for-current,
-thanks!
-
-
---dc+cDN39EJAMEtIO
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6+YEcACgkQFA3kzBSg
-KbZIIw//RKnTmZzSi3ZieTQnZ64Pv7lEIn6QAM9FBzNk0Pzk8s5maVdQCzWq4/Ho
-CPO1Dk/R1qWQxikxvyKx9sfqVOIXVVLiNs9lYFmMkdQPoALrVvbQicwimZFyUjNO
-8zE1/LXvhLLU4UeP0oM+3OsD4v+5AvQ6igq84Etx2hfHO65w463NpP+tv6ut6q8R
-Zc8UVpJTRf9NGYtk8h3AvThMT+R0KNaEOe445HNLVi8bUg+3cPpDExOrdMJcwqRl
-QykdNi18hi05ATx+PqWDzSQIbUnLGVeEYQ/U3X14AJkfI+mJ0lFtWzK2RkOgUSbg
-+m6JCs1/knFQOXE5hIc/S8RDX8Ags8uw1ztmcEvSQ4x8gSDtznWFHWkGo2g/2XeM
-ZkttSMuwfHGebvQwSSmHEJdfi4h5IHax0qgf6IjLYaygA0n9Am7FBij6SKVTecxB
-tgYroBOIX0FoJRvMxpF7TtIQQaK/IEPhotPt21ayT/worPk7Fj4pbBFBSBX9sPIg
-Ydf/8JvTivFgPv6vcT+KV6DxJ5KmWdyuGd3mzh8JnlvEvl5sL6powbU2z8/yPpaK
-2vBF2d1bdFy7kStu5McgvKROKCN+FVZBXOnNXOiHTYURQgpck1VqXuscl5xUkbci
-nzyNwMVQ48o5ptBOMmHMUSC1MTg5Mxyq+7B3x0ZipY2SmPXdk68=
-=Doda
------END PGP SIGNATURE-----
-
---dc+cDN39EJAMEtIO--
-
-
---===============0769289428006819585==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+---
+Best Regards
+Kunihiko Hayashi
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0769289428006819585==--
-
