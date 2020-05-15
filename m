@@ -2,70 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E5A41D4D0F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:51:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4BD451D4D20
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:58:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=++lG4UjgiSOPhNOtaXIVerbqzAM/kiE4/lCNK+bW/90=; b=r724P7lyuNa4AgYAMUyMbpKRW
-	mOsFdEPq2EDJQKvkqyMFpKw38ht2ePek0ffZf1YV2jlOqieOz2MV8DzzR4z+Ly2Rc72auaIfxSmrD
-	JredvFOgFcOI+1TRsgf5A1+lZwq48nctty1B/JqA8ZU+HRy0YzllRTVsGdoBdcrMHvFOvWlUor4QW
-	0PBD75Gwk0rZIZJtuhyKBYTF1XHgHVnuD316OASSeSHtQN+C/DVyYrQMl2DVZHhIrfpPVhk3JcO4C
-	hK2kFnhrYLlt9d1Hd0OKCHKN+jREi818X6GHb5L0vGa/34D/PRIkTR7Qk7IPDgNXqO2j+nH43ZASk
-	X6bD7G9jw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fjeNDVLDTW+bPVAiwPM2pyu1U2thIp9iDRxn3PBt4eI=; b=hQxPs8BqWZWdDN
+	5+/SdJuVfmr0tVT6o7OQPUY+mwmWugrYhnXAPbAVths7orCvlv8EUAPZwOYmzLzD5F5Mo0M3zelvQ
+	dBhJoEPVSQsnI8MXb2iANDAcMu1Wz2aQFqn/fuJsrcY0ZcCcO25v53uOjl6HaS/h3QX1HNwIJ8guO
+	LThftkIy8dl70SX/2bvaXQgJC1dAPNyB3Zw1AVaQrSj0+GLs8X2cJ5eaaLotBvO1GVenx8zm64NZt
+	pH4c3bDW0y81fQwlfWdKt+oV/KFq0Vr9y+vRIQJYpEIClrZEwCt/phW/VQxYD4v1p2Ip89XTG+/0J
+	k8u+/hb7dwyXqdpJP43A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYs4-0000rb-39; Fri, 15 May 2020 11:51:20 +0000
-Received: from lhrrgout.huawei.com ([185.176.76.210] helo=huawei.com)
+	id 1jZYyf-0004xF-Vw; Fri, 15 May 2020 11:58:09 +0000
+Received: from 8bytes.org ([2a01:238:4383:600:38bc:a715:4b6d:a889]
+ helo=theia.8bytes.org)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYru-0000pz-EE
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:51:12 +0000
-Received: from lhreml724-chm.china.huawei.com (unknown [172.18.7.108])
- by Forcepoint Email with ESMTP id 58A4C1273F1470C21441;
- Fri, 15 May 2020 12:51:04 +0100 (IST)
-Received: from [127.0.0.1] (10.47.1.24) by lhreml724-chm.china.huawei.com
- (10.201.108.75) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1913.5; Fri, 15 May
- 2020 12:51:01 +0100
-Subject: Re: [PATCH v3 0/2] irqchip/gic-v3-its: Balance LPI affinity across
- CPUs
-To: Marc Zyngier <maz@kernel.org>
-References: <20200316115433.9017-1-maz@kernel.org>
- <9171c554-50d2-142b-96ae-1357952fce52@huawei.com>
- <80b673a7-1097-c5fa-82c0-1056baa5309d@huawei.com>
- <f2971d1c-50f8-bf5a-8b16-8d84a631b0ba@huawei.com>
- <7c05b08b-2edc-7f97-0175-898e9772673e@huawei.com>
- <668f819c8747104814245cd6faebdd9a@kernel.org>
-From: John Garry <john.garry@huawei.com>
-Message-ID: <a22aaa72-4f5f-40d4-33e0-0aff8b65fdc2@huawei.com>
-Date: Fri, 15 May 2020 12:50:06 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:68.0) Gecko/20100101
- Thunderbird/68.1.2
+ id 1jZYyX-0004wb-Df
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:58:03 +0000
+Received: by theia.8bytes.org (Postfix, from userid 1000)
+ id 56097379; Fri, 15 May 2020 13:57:59 +0200 (CEST)
+Date: Fri, 15 May 2020 13:57:58 +0200
+From: Joerg Roedel <joro@8bytes.org>
+To: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Subject: Re: [PATCH 1/4] PCI/ATS: Only enable ATS for trusted devices
+Message-ID: <20200515115757.GT18353@8bytes.org>
+References: <20200515104359.1178606-1-jean-philippe@linaro.org>
+ <20200515104359.1178606-2-jean-philippe@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <668f819c8747104814245cd6faebdd9a@kernel.org>
-Content-Language: en-US
-X-Originating-IP: [10.47.1.24]
-X-ClientProxiedBy: lhreml709-chm.china.huawei.com (10.201.108.58) To
- lhreml724-chm.china.huawei.com (10.201.108.75)
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20200515104359.1178606-2-jean-philippe@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_045110_633986_8EE864C2 
-X-CRM114-Status: GOOD (  22.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_045801_755904_36DFD7F7 
+X-CRM114-Status: GOOD (  21.35  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [185.176.76.210 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [185.176.76.210 listed in wl.mailspike.net]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,119 +58,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Cooper <jason@lakedaemon.net>,
- "chenxiang \(M\)" <chenxiang66@hisilicon.com>, Will Deacon <will@kernel.org>,
- luojiaxing <luojiaxing@huawei.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ming Lei <ming.lei@redhat.com>, "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
- Thomas Gleixner <tglx@linutronix.de>, Robin Murphy <robin.murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: alex.williamson@redhat.com, ashok.raj@intel.com, linux-pci@vger.kernel.org,
+ robin.murphy@arm.com, iommu@lists.linux-foundation.org, bhelgaas@google.com,
+ will@kernel.org, dwmw2@infradead.org, linux-arm-kernel@lists.infradead.org,
+ baolu.lu@linux.intel.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Jean-Philippe,
 
+thanks for doing this!
 
-Hi Marc,
-
-> Absolutely. Life has got in the way, so let me page it back in...
-
-Great
-
->>
->> [PATCH 2/2] irqchip/gic-v3-its: Handle no overlap of non-managed irq
->>   affinity mask
->>
->> In selecting the target CPU for a non-managed interrupt, we may select
->> a
->> target CPU outside the requested affinity mask.
->>
->> This is because there may be no overlap of the ITS node mask and the
->> requested CPU affinity mask. The requested affinity mask may be coming
->> from userspace or some drivers which try to set irq affinity, see [0].
->>
->> In this case, just ignore the ITS node cpumask. This is a deviation
->> from
->> what Thomas described. Having said that, I am not sure if the
->> interrupt is ever bound to a node for us.
->>
->> [0]
->> https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/drivers/perf/hisilicon/hisi_uncore_pmu.c#n417
->>
->> ---
->>   drivers/irqchip/irq-gic-v3-its.c | 4 ----
->>   1 file changed, 4 deletions(-)
->>
->> diff --git a/drivers/irqchip/irq-gic-v3-its.c
->> b/drivers/irqchip/irq-gic-v3-its.c
->> index 2b18feb..12d5d4b4 100644
->> --- a/drivers/irqchip/irq-gic-v3-its.c
->> +++ b/drivers/irqchip/irq-gic-v3-its.c
->> @@ -1584,10 +1584,6 @@ static int its_select_cpu(struct irq_data *d,
->>   			cpumask_and(tmpmask, cpumask_of_node(node), aff_mask);
->>   			cpumask_and(tmpmask, tmpmask, cpu_online_mask);
->>
->> -			/* If that doesn't work, try the nodemask itself */
->> -			if (cpumask_empty(tmpmask))
->> -				cpumask_and(tmpmask, cpumask_of_node(node), cpu_online_mask);
->> -
->>   			cpu = cpumask_pick_least_loaded(d, tmpmask);
->>   			if (cpu < nr_cpu_ids)
->>   				goto out;
+On Fri, May 15, 2020 at 12:43:59PM +0200, Jean-Philippe Brucker wrote:
+> Add pci_ats_supported(), which checks whether a device has an ATS
+> capability, and whether it is trusted.  A device is untrusted if it is
+> plugged into an external-facing port such as Thunderbolt and could be
+> spoof an existing device to exploit weaknesses in the IOMMU
+> configuration.  PCIe ATS is one such weaknesses since it allows
+> endpoints to cache IOMMU translations and emit transactions with
+> 'Translated' Address Type (10b) that partially bypass the IOMMU
+> translation.
 > 
-> I'm really not sure. Shouldn't we then drop the wider search on
-> cpu_inline_mask, because userspace could have given us something
-> that we cannot deal with?
-
-It's not just userspace. Some drivers call irq_set_affinity{_hint}}() 
-also, with a non-overlapping affinity mask.
-
-We could just error these requests, but some drivers rely on this 
-behavior. Consider the uncore driver I mentioned above, which WARNs when 
-the affinity setting fails. So it tries to set the affinity with the 
-cpumask of the cluster associated with the device, but with D06's ITS 
-config, below, there may be no overlap.
-
+> The SMMUv3 and VT-d IOMMU drivers already disallow ATS and transactions
+> with 'Translated' Address Type for untrusted devices.  Add the check to
+> pci_enable_ats() to let other drivers (AMD IOMMU for now) benefit from
+> it.
 > 
-> What you are advocating for is a strict adherence to the provided
-> mask, and it doesn't seem to be what other architectures are providing.
-> I consider the userspace-provided affinity as a hint more that anything
-> else, as in this case the kernel does know better (routing the interrupt
-> to a foreign node might be costly, or even impossible, see the TX1
-> erratum).
-
-Right
-
+> By checking ats_cap, the pci_ats_supported() helper also returns whether
+> ATS was globally disabled with pci=noats, and could later include more
+> things, for example whether the whole PCIe hierarchy down to the
+> endpoint supports ATS.
 > 
->   From what I remember of the earlier discussion, you saw an issue on
-> a system with two sockets and a single ITS, with the node mask limited
-> to the first socket. Is that correct?
+> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> ---
+>  include/linux/pci-ats.h |  3 +++
+>  drivers/pci/ats.c       | 18 +++++++++++++++++-
+>  2 files changed, 20 insertions(+), 1 deletion(-)
+> 
+> diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
+> index d08f0869f1213e..f75c307f346de9 100644
+> --- a/include/linux/pci-ats.h
+> +++ b/include/linux/pci-ats.h
+> @@ -6,11 +6,14 @@
+>  
+>  #ifdef CONFIG_PCI_ATS
+>  /* Address Translation Service */
+> +bool pci_ats_supported(struct pci_dev *dev);
+>  int pci_enable_ats(struct pci_dev *dev, int ps);
+>  void pci_disable_ats(struct pci_dev *dev);
+>  int pci_ats_queue_depth(struct pci_dev *dev);
+>  int pci_ats_page_aligned(struct pci_dev *dev);
+>  #else /* CONFIG_PCI_ATS */
+> +static inline bool pci_ats_supported(struct pci_dev *d)
+> +{ return false; }
+>  static inline int pci_enable_ats(struct pci_dev *d, int ps)
+>  { return -ENODEV; }
+>  static inline void pci_disable_ats(struct pci_dev *d) { }
+> diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
+> index 390e92f2d8d1fc..15fa0c37fd8e44 100644
+> --- a/drivers/pci/ats.c
+> +++ b/drivers/pci/ats.c
+> @@ -30,6 +30,22 @@ void pci_ats_init(struct pci_dev *dev)
+>  	dev->ats_cap = pos;
+>  }
+>  
+> +/**
+> + * pci_ats_supported - check if the device can use ATS
+> + * @dev: the PCI device
+> + *
+> + * Returns true if the device supports ATS and is allowed to use it, false
+> + * otherwise.
+> + */
+> +bool pci_ats_supported(struct pci_dev *dev)
+> +{
+> +	if (!dev->ats_cap)
+> +		return false;
+> +
+> +	return !dev->untrusted;
 
-A bit more complicated: 2 sockets, 2 NUMA nodes per socket, and ITS 
-config as follows:
-D06ES  1x ITS with proximity node #0
+dev->untrusted is an 'unsigned int :1', so while this works I would
+prefer 'return (dev->untrusted == 0);' here, to be more type-safe.
 
-root@(none)$ dmesg | grep ITS
-[ 0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
+With that changed:
 
+Reviewed-by: Joerg Roedel <jroedel@suse.de>
 
-D06CS
-2x ITS with proximity node #0, #2
-
-estuary:/$ dmesg | grep ITS
-[    0.000000] SRAT: PXM 0 -> ITS 0 -> Node 0
-[    0.000000] SRAT: PXM 2 -> ITS 1 -> Node 2
-
-It complicates things.
-
-We could add extra intelligence to record if an node has an ITS 
-associated. In the case of that not being true, we would fallback on the 
-requested affin only (for case of no overlap). It gets a bit more messy 
-then.
-
-Thanks,
-John
+> +}
+> +EXPORT_SYMBOL_GPL(pci_ats_supported);
+> +
+>  /**
+>   * pci_enable_ats - enable the ATS capability
+>   * @dev: the PCI device
+> @@ -42,7 +58,7 @@ int pci_enable_ats(struct pci_dev *dev, int ps)
+>  	u16 ctrl;
+>  	struct pci_dev *pdev;
+>  
+> -	if (!dev->ats_cap)
+> +	if (!pci_ats_supported(dev))
+>  		return -EINVAL;
+>  
+>  	if (WARN_ON(dev->ats_enabled))
+> -- 
+> 2.26.2
 
 _______________________________________________
 linux-arm-kernel mailing list
