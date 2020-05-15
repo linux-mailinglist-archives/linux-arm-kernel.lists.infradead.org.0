@@ -2,68 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16AE51D5B57
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 23:18:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DA081D5BA8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 23:33:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Message-ID:
-	Subject:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=pNYuFwBWK72qPlTBkeOOZltUtFrPO4Eo1RkCEd9P6AU=; b=jXLmIO9ySZB5+9
-	mOHSGqfpAHO1teeKgENqZD7DQyzAQ02hOU7oY2Dv43T8gtJRVaQja9rEcUZ7co/AsA0SPLip3Jvyy
-	9aUPdL0JshRgPnKocwF6MGsavvyeEu+v5qYEb6uaCdWfcmgCande0/aBAMhUA44DM2+Lb/bB19Dhj
-	eP6c/IUujsEMZ/jkSRAgXzwsh6izLacVGeRSgb5nv9zpTidwGvyClY8XVhSlTBwUGylScX2BaXUoF
-	RQNl/H6WOnf8C8lsAsyKUs5+2dxy3dwyp5lX46y4u0tYGOhQ/KEonvQ3ca7wz9z1kjmS3YLKTYOgn
-	b8zjSOmBhIi27uqXlz6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f1ZFZWXpqGpH7zEzebjFuxPNKMLBb9S3ZdSY9sWDwUg=; b=fxFwpAvJqMLZu7
+	CBgltHkXySD42N7sJljJzxg4+fs2aJqbuRctTGy6oIhokEyDAZTe9jzMqkAKMHm2GjJ0ZA89AqGbZ
+	iVxvpFR9NipoU3D+BbFa4Mkt2MpLfdAEgqxf5MQey6k75Ph6dgACSmlWLTCIxLqnsJjPeBfWdBKZh
+	r3CiBizEjVB4cVPlJS6/7oHaLGgXglRakiHtRyPNGeDgux+S0osO5cbsh5j22Bfy2slMETUJ/ttYO
+	yZB5Tc0RVm1st3IpH01RYMrpdIYX86fjP6U/EI+pQlXTgjWoXokAlB+SbWIkjUPvUlsX2rz20MK4w
+	burPdRbu5oc9O+2gcd3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZhj3-0002o1-IQ; Fri, 15 May 2020 21:18:37 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1jZhxZ-0004i6-19; Fri, 15 May 2020 21:33:37 +0000
+Received: from szxga03-in.huawei.com ([45.249.212.189] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZhip-0002nA-Qz
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 21:18:28 +0000
-Received: from localhost (mobile-166-175-190-200.mycingular.net
- [166.175.190.200])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 99B7F205CB;
- Fri, 15 May 2020 21:18:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589577503;
- bh=ZQ43XWvnomP6iief7qgRRbmyG/Bi9bziKV7eLxey5z8=;
- h=Date:From:To:Cc:Subject:In-Reply-To:From;
- b=iYw1rXpYC7+iTiovQH69ZJN7ikDy6fxVEhYEdV1ssHJazsWRNLymxAPARP3cwPsrF
- MgKv6QPMsHDyZenI3gXiYZA2LWLuoVh7agD+i9unX1itmKntZUFYS9KRoZeKACj6y1
- SvAGo7FPYdfzQx+wZlqZKyL/uju5rWadJrrwKKik=
-Date: Fri, 15 May 2020 16:18:20 -0500
-From: Bjorn Helgaas <helgaas@kernel.org>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Subject: Re: [PATCH 1/4] PCI/ATS: Only enable ATS for trusted devices
-Message-ID: <20200515211820.GA545575@bjorn-Precision-5520>
+ id 1jZhxK-0004eH-6H
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 21:33:26 +0000
+Received: from dggemi406-hub.china.huawei.com (unknown [172.30.72.53])
+ by Forcepoint Email with ESMTP id 852FFDD090972E036997;
+ Sat, 16 May 2020 05:33:13 +0800 (CST)
+Received: from DGGEMI525-MBS.china.huawei.com ([169.254.6.251]) by
+ dggemi406-hub.china.huawei.com ([10.3.17.144]) with mapi id 14.03.0487.000;
+ Sat, 16 May 2020 05:33:06 +0800
+From: Song Bao Hua <song.bao.hua@hisilicon.com>
+To: "hch@lst.de" <hch@lst.de>, Robin Murphy <robin.murphy@arm.com>
+Subject: RE: Constantly map and unmap of streaming DMA buffers with IOMMU
+ backend might cause serious performance problem
+Thread-Topic: Constantly map and unmap of streaming DMA buffers with IOMMU
+ backend might cause serious performance problem
+Thread-Index: AdYqec9gnuD/5zUSTfGZehfpOCqtzP//6eGAgAArTwD//wxG4A==
+Date: Fri, 15 May 2020 21:33:05 +0000
+Message-ID: <B926444035E5E2439431908E3842AFD249F9F4@DGGEMI525-MBS.china.huawei.com>
+References: <B926444035E5E2439431908E3842AFD249F263@DGGEMI525-MBS.china.huawei.com>
+ <36d67d68-4381-c7a7-dcf1-6383bd9ae0ad@arm.com>
+ <20200515144522.GA25652@lst.de>
+In-Reply-To: <20200515144522.GA25652@lst.de>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.126.201.78]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515104359.1178606-2-jean-philippe@linaro.org>
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_141823_912665_5C5448AA 
-X-CRM114-Status: GOOD (  20.91  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20200515_143322_387048_609C23A4 
+X-CRM114-Status: GOOD (  19.28  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.189 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,102 +72,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alex.williamson@redhat.com, ashok.raj@intel.com, linux-pci@vger.kernel.org,
- joro@8bytes.org, robin.murphy@arm.com, iommu@lists.linux-foundation.org,
- bhelgaas@google.com, will@kernel.org, dwmw2@infradead.org,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: "davidm@hpl.hp.com" <davidm@hpl.hp.com>,
+ "ralf@oss.sgi.com" <ralf@oss.sgi.com>, Linuxarm <linuxarm@huawei.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "sailer@ife.ee.ethz.ch" <sailer@ife.ee.ethz.ch>,
+ "Jay.Estabrook@compaq.com" <Jay.Estabrook@compaq.com>,
+ "dagum@barrel.engr.sgi.com" <dagum@barrel.engr.sgi.com>,
+ "andrea@suse.de" <andrea@suse.de>, "grundler@cup.hp.com" <grundler@cup.hp.com>,
+ "jens.axboe@oracle.com" <jens.axboe@oracle.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 12:43:59PM +0200, Jean-Philippe Brucker wrote:
-> Add pci_ats_supported(), which checks whether a device has an ATS
-> capability, and whether it is trusted.  A device is untrusted if it is
-> plugged into an external-facing port such as Thunderbolt and could be
-> spoof an existing device to exploit weaknesses in the IOMMU
-> configuration.  PCIe ATS is one such weaknesses since it allows
-> endpoints to cache IOMMU translations and emit transactions with
-> 'Translated' Address Type (10b) that partially bypass the IOMMU
-> translation.
+> Subject: Re: Constantly map and unmap of streaming DMA buffers with
+> IOMMU backend might cause serious performance problem
 > 
-> The SMMUv3 and VT-d IOMMU drivers already disallow ATS and transactions
-> with 'Translated' Address Type for untrusted devices.  Add the check to
-> pci_enable_ats() to let other drivers (AMD IOMMU for now) benefit from
-> it.
+> On Fri, May 15, 2020 at 01:10:21PM +0100, Robin Murphy wrote:
+> >> Meanwhile, for the safety of buffers, lower-layer drivers need to make
+> certain the buffers have already been unmapped in iommu before those
+> buffers go back to buddy for other users.
+> >
+> > That sounds like it would only have benefit in a very small set of specific
+> > circumstances, and would be very difficult to generalise to buffers that
+> > are mapped via dma_map_page() or dma_map_single(). Furthermore, a
+> > high-level API that affects a low-level driver's interpretation of
+> > mid-layer API calls without the mid-layer's knowledge sounds like a hideous
+> > abomination of anti-design. If a mid-layer API lends itself to inefficiency
+> > at the lower level, it would seem a lot cleaner and more robust to extend
+> > *that* API for stateful buffer reuse. Failing that, it might possibly be
+> > appropriate to approach this at the driver level - many of the cleverer
+> > network drivers already implement buffer pools to recycle mapped SKBs
+> > internally, couldn't the "zip driver" simply try doing something like that
+> > for itself?
 > 
-> By checking ats_cap, the pci_ats_supported() helper also returns whether
-> ATS was globally disabled with pci=noats, and could later include more
-> things, for example whether the whole PCIe hierarchy down to the
-> endpoint supports ATS.
-> 
-> Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+> Exactly.  If you upper consumer of the DMA API keeps reusing the same
+> pages just map them once and use dma_sync_* to transfer ownership as
+> needed.
 
-Acked-by: Bjorn Helgaas <bhelgaas@google.com>
+The problem is that the lower-layer drivers don't know if upper consumer keeps reusing the same pages. They are running in different software layers.
+For example, Consumer is here in mm/zswap.c
+static int zswap_frontswap_store(unsigned type, pgoff_t offset,
+				struct page *page)
+{
+	...
+	/* compress */
+	dst = get_cpu_var(zswap_dstmem);
+	...
+	ret = crypto_comp_compress(tfm, src, PAGE_SIZE, dst, &dlen);
+	...
+}
 
-> ---
->  include/linux/pci-ats.h |  3 +++
->  drivers/pci/ats.c       | 18 +++++++++++++++++-
->  2 files changed, 20 insertions(+), 1 deletion(-)
-> 
-> diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
-> index d08f0869f1213e..f75c307f346de9 100644
-> --- a/include/linux/pci-ats.h
-> +++ b/include/linux/pci-ats.h
-> @@ -6,11 +6,14 @@
->  
->  #ifdef CONFIG_PCI_ATS
->  /* Address Translation Service */
-> +bool pci_ats_supported(struct pci_dev *dev);
->  int pci_enable_ats(struct pci_dev *dev, int ps);
->  void pci_disable_ats(struct pci_dev *dev);
->  int pci_ats_queue_depth(struct pci_dev *dev);
->  int pci_ats_page_aligned(struct pci_dev *dev);
->  #else /* CONFIG_PCI_ATS */
-> +static inline bool pci_ats_supported(struct pci_dev *d)
-> +{ return false; }
->  static inline int pci_enable_ats(struct pci_dev *d, int ps)
->  { return -ENODEV; }
->  static inline void pci_disable_ats(struct pci_dev *d) { }
-> diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
-> index 390e92f2d8d1fc..15fa0c37fd8e44 100644
-> --- a/drivers/pci/ats.c
-> +++ b/drivers/pci/ats.c
-> @@ -30,6 +30,22 @@ void pci_ats_init(struct pci_dev *dev)
->  	dev->ats_cap = pos;
->  }
->  
-> +/**
-> + * pci_ats_supported - check if the device can use ATS
-> + * @dev: the PCI device
-> + *
-> + * Returns true if the device supports ATS and is allowed to use it, false
-> + * otherwise.
-> + */
-> +bool pci_ats_supported(struct pci_dev *dev)
-> +{
-> +	if (!dev->ats_cap)
-> +		return false;
-> +
-> +	return !dev->untrusted;
-> +}
-> +EXPORT_SYMBOL_GPL(pci_ats_supported);
-> +
->  /**
->   * pci_enable_ats - enable the ATS capability
->   * @dev: the PCI device
-> @@ -42,7 +58,7 @@ int pci_enable_ats(struct pci_dev *dev, int ps)
->  	u16 ctrl;
->  	struct pci_dev *pdev;
->  
-> -	if (!dev->ats_cap)
-> +	if (!pci_ats_supported(dev))
->  		return -EINVAL;
->  
->  	if (WARN_ON(dev->ats_enabled))
-> -- 
-> 2.26.2
-> 
+But the lower-layer driver is in drivers/crypto/...
+
+Meanwhile, the lower-layer driver couldn't cache the pointers of buffer address coming from consumers to detect if the upper-layer is using the same page.
+Because the same page might come from different users or come from the different stages of the same user with different permissions.
+ 
+For example, consumer A uses the buffer as destination, then returns it to buddy, but consumer B gets the same buffer and uses it as source.
+
+Another possibility is
+Consumer A uses the buffer, returns it to buddy, after some time, it allocates a buffer again, but gets the same buffer from buddy like before.
+
+For the safety of the buffer, lower-layer driver must guarantee the buffer is unmapped when the buffer returns to buddy.
+
+I think only the upper-layer consumer knows if it is reusing the buffer. 
+
+Thanks
+Barry
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
