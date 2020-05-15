@@ -2,93 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23E8D1D4B13
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:33:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18AD71D4B24
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:39:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VTv2/4oPAmnOf/qRKUErjz/LGo97N2mBSqUl4a49s4U=; b=rWoxgurRQtLKME
-	1NvzS9Xgz9n/DMrom2Bc8gc7uJWlYiUUIqWSA+sERP8YWvPWBNLI3W0O3Mym70XxZWouPCIasceLP
-	Bbt9D3C04kL8i2xde7Ktxw066rWCr5vnFWf9eSrHz2loQyRDj8ER9DY8rbY1JBx6eLUw6wnTYUfGq
-	3pCmaubb+NIl8Pw6h8G0syVYCdnhctA80IPup/BpJR23D9EuW+V0Sb+1Tvt8TuKr6uy4cPlaBP1xa
-	fkIpvKtoZs0F1Wxe+MyIBwCnAjz+4+ZP1gacfRnKwovZol8LS4GZ8GcqpxKcI0hs0EutCV+FwtOaX
-	YFGeWBHPY/iy/tqdP4ug==;
+	List-Owner; bh=ANxoVZgzHj8gzAl/k0C6wLJdqgwlylbTysL9tyzjA5A=; b=XyZ5B26EEFn1+o
+	/4RxOS9psdr9lvRbefvIsGpEyMmpcT2GOzu5INRUxzxmttA+San8KFSk7VvpsFs6IKgVFOt9w/AnB
+	qGL9pxq606ld8T0ThhHdnnt7r3hEVC3+ZgyCP7j0oqjoTxTmd7p+sGUwzvF7vhMt6WIxazmGRQLV1
+	Bhn+/8jdipNnEJL3b/VF4nEoHNTd5/jmpiG+Yz8gPDs2Z1oSEBfozXnzREg8M3cbFd+7iHeGkRqh4
+	GisTv29StqW7hDP3l3ZYwrA4c9T+OCWFDFRqpbE45T11KPEccTQZlXD4MF0l1nywqAimtsbHkqbgW
+	kM1B62F6J2WbWdTsVMCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZXeY-0006hF-0Y; Fri, 15 May 2020 10:33:18 +0000
-Received: from mail-il1-x141.google.com ([2607:f8b0:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZXeL-0006g1-Od
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:33:10 +0000
-Received: by mail-il1-x141.google.com with SMTP id e8so1968087ilm.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 03:33:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=uxCT2XVxCtoNmTqiWhqBcEudlvFd9wfrP50N1uK7vP0=;
- b=CEpylQx8/jmoucaFxOo6aDvRXqpObt3GOf3QrRyhcuqdkgrNf1lSuUtWU6UwC8nV1S
- K+DOmwilg/Su+oxqQRNpuw5BhEJzEnUgmkfMeb1QnS2dglQiL3VeTsFf360Qb+lPaXbT
- 0nQQnlMc9696yhdUynH2cBEM6k1fMa3/3F3c2l8oJ27Z1IFD5oB4cjLYuvD4v7pLri3G
- 0xv6Bymoqgq33uYlm9zg8EA2fYhDFv34nSO0Th6tb8BoyWAg03s5OSGrP2Dr7GVzGUfS
- 4df6x/6gUqLeiPKccFIeBBtZeqnNF2UOUQ8eXik4yu/qS6URNVCNYGYQcHek958U0tWA
- pjGg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=uxCT2XVxCtoNmTqiWhqBcEudlvFd9wfrP50N1uK7vP0=;
- b=VaVlexMFbOmf9c2SycL865LItRHaBs6+owrVrkKIzmC9ugcixjEU2pFGScGBjkZOaq
- 9E85YVF07vlFMhGloYt0yXYXW2cyDRB7+Zg0dEy8D7NQeDB2ztIM7v4fM43XLG8NVxRW
- vLznHpj8jH0fy0oBdZgIGTZDNatmFeXcHQei2RjEN+0VEyBFrwpmhrxlXQnakjl2/RXZ
- ZEdOYp3juFW2sOZy165hPor5FbyBpX1M0Dg7qKnYETD0+uCj9HPow7/eBnBplQZYpTh1
- hcHhMbCcQKxNA/MSxVGp4IdbTuMWl6bJzCeVdAOMydfvD/ReHSQN+eGmvREKVlgCXWD/
- s2Sw==
-X-Gm-Message-State: AOAM533OZCYJgLqkpmqQnt86V2QOWRShtYqx/KHuK+wJzzwimn3kEAea
- d45SmuW3QoqnGtZEf018KzWhHGiN70bPhJAuW7Q=
-X-Google-Smtp-Source: ABdhPJzaWAkOj9ePr5WQ4WHJ7n0TNGqqxQVutiX22A22NsEmGBBEDDIzhAQZOVUh6ahtJoIJUaUjWwbwXnRetbDtAY0=
-X-Received: by 2002:a92:a1c9:: with SMTP id b70mr2367268ill.184.1589538784758; 
- Fri, 15 May 2020 03:33:04 -0700 (PDT)
+	id 1jZXk6-0001Lt-UH; Fri, 15 May 2020 10:39:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZXjv-0001LR-4W
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:38:52 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BF24B2F;
+ Fri, 15 May 2020 03:38:47 -0700 (PDT)
+Received: from gaia (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3B4033F71E;
+ Fri, 15 May 2020 03:38:46 -0700 (PDT)
+Date: Fri, 15 May 2020 11:38:40 +0100
+From: Catalin Marinas <catalin.marinas@arm.com>
+To: Dave Martin <Dave.Martin@arm.com>
+Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
+ documentation
+Message-ID: <20200515103839.GA22393@gaia>
+References: <20200421142603.3894-1-catalin.marinas@arm.com>
+ <20200421142603.3894-24-catalin.marinas@arm.com>
+ <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
+ <20200504164617.GK30377@arm.com> <20200511164018.GC19176@gaia>
+ <20200513154845.GT21779@arm.com> <20200514113722.GA1907@gaia>
 MIME-Version: 1.0
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
- <CACRpkda5VjjBdbruXTi33QBNb=VU6vK2zDE8yyQXoWw7=NQFeg@mail.gmail.com>
- <a4ebd7cd-5756-0683-135f-0f96be8a4a7b@st.com>
- <CAL9mu0Jt_xwo5pJfcx6G3grBuOaxLXvakpEjiB4gV3=bkiq2fg@mail.gmail.com>
- <818b93b4-4431-8338-cd90-ed125ecac615@st.com>
- <CAL9mu0L6d2V5qypPfOSeMdhc=DdHkcsaF4GysNG-vfDe5npkhw@mail.gmail.com>
- <2afd2853-e3bc-0c69-a0e5-8d4aa631a634@st.com>
-In-Reply-To: <2afd2853-e3bc-0c69-a0e5-8d4aa631a634@st.com>
-From: dillon min <dillon.minfei@gmail.com>
-Date: Fri, 15 May 2020 18:32:28 +0800
-Message-ID: <CAL9mu0J7s589e7weQ7vyi1iFCwPOmmyFHwqhwWfYwWVqJpN+Dw@mail.gmail.com>
-Subject: Re: [Linux-stm32] [PATCH v3 3/5] ARM: dts: stm32: enable ltdc binding
- with ili9341 on stm32429-disco board
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Content-Disposition: inline
+In-Reply-To: <20200514113722.GA1907@gaia>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_033305_797605_E8EE8C8D 
-X-CRM114-Status: GOOD (  23.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_033851_223716_2EF3E34C 
+X-CRM114-Status: GOOD (  22.65  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,131 +67,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Michael Turquette <mturquette@baylibre.com>, Dave Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
+ Will Deacon <will@kernel.org>, Szabolcs Nagy <szabolcs.nagy@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>,
+ Peter Collingbourne <pcc@google.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Benjamin,
+On Thu, May 14, 2020 at 12:37:22PM +0100, Catalin Marinas wrote:
+> On Wed, May 13, 2020 at 04:48:46PM +0100, Dave P Martin wrote:
+> > > > > On Wed, Apr 29, 2020 at 05:47:05PM +0100, Dave P Martin wrote:
+> > > > > > On Tue, Apr 21, 2020 at 03:26:03PM +0100, Catalin Marinas wrote:
+> > > > > > > +excludes all tags other than 0. A user thread can enable specific tags
+> > > > > > > +in the randomly generated set using the ``prctl(PR_SET_TAGGED_ADDR_CTRL,
+> > > > > > > +flags, 0, 0, 0)`` system call where ``flags`` contains the tags bitmap
+> > > > > > > +in the ``PR_MTE_TAG_MASK`` bit-field.
+> > > > > > > +
+> > > > > > > +**Note**: The hardware uses an exclude mask but the ``prctl()``
+> > > > > > > +interface provides an include mask. An include mask of ``0`` (exclusion
+> > > > > > > +mask ``0xffff``) results in the CPU always generating tag ``0``.
+> > > > > > 
+> > > > > > Is there no way to make this default to 1 rather than having a magic
+> > > > > > meaning for 0?
+> [...]
+> > The only configuration that doesn't make sense is "no tags allowed", so
+> > I'd argue for explicity blocking that, even if the architeture aliases
+> > that encoding to something else.
+> > 
+> > If we prefer 0 as a default value so that init inherits the correct
+> > value from the kernel without any special acrobatics, then we make it an
+> > exclude mask, with the semantics that the hardware is allowed to
+> > generate any of these tags, but does not have to be capable of
+> > generating all of them.
+> 
+> That's more of a question to the libc people and their preference.
+> We have two options with suboptions:
+> 
+> 1. prctl() gets an exclude mask with 0xffff illegal even though the
+>    hardware accepts it:
+>    a) default exclude mask 0, allowing all tags to be generated by IRG
+>    b) default exclude mask of 0xfffe so that only tag 0 is generated
+> 
+> 2. prctl() gets an include mask with 0 illegal:
+>    a) default include mask is 0xffff, allowing all tags to be generated
+>    b) default include mask 0f 0x0001 so that only tag 0 is generated
+> 
+> We currently have (2) with mask 0 but could be changed to (2.b). If we
+> are to follow the hardware description (which makes more sense to me but
+> I don't write the C library), (1.a) is the most appropriate.
 
-got it, thanks a lot.
+Thinking some more about this, as we are to expose the GCR_EL1.Excl via
+a ptrace interface as a regset, it makes more sense to move back to an
+exclude mask here with default 0. That would be option 1.a above.
 
-best regards
-
-Dillon
-
-On Fri, May 15, 2020 at 5:34 PM Benjamin GAIGNARD
-<benjamin.gaignard@st.com> wrote:
->
->
->
-> On 5/15/20 11:24 AM, dillon min wrote:
-> > Hi Benjamin,
-> >
-> > thanks for reply.
-> >
-> > On Fri, May 15, 2020 at 4:31 PM Benjamin GAIGNARD
-> > <benjamin.gaignard@st.com> wrote:
-> >>
-> >>
-> >> On 5/14/20 3:07 PM, dillon min wrote:
-> >>> Hi Alexandre,
-> >>>
-> >>> On Thu, May 14, 2020 at 8:53 PM Alexandre Torgue
-> >>> <alexandre.torgue@st.com> wrote:
-> >>>>
-> >>>> On 5/14/20 10:24 AM, Linus Walleij wrote:
-> >>>>> On Tue, May 12, 2020 at 9:04 AM <dillon.minfei@gmail.com> wrote:
-> >>>>>
-> >>>>>> From: dillon min <dillon.minfei@gmail.com>
-> >>>>>>
-> >>>>>> Enable the ltdc & ili9341 on stm32429-disco board.
-> >>>>>>
-> >>>>>> Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> >>>>> This mostly looks good but...
-> >>>>>
-> >>>>>> +&spi5 {
-> >>>>>> +       status = "okay";
-> >>>>>> +       pinctrl-0 = <&spi5_pins>;
-> >>>>>> +       pinctrl-names = "default";
-> >>>>>> +       #address-cells = <1>;
-> >>>>>> +       #size-cells = <0>;
-> >>>>>> +       cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
-> >>>>>> +       dmas = <&dma2 3 2 0x400 0x0>,
-> >>>>>> +              <&dma2 4 2 0x400 0x0>;
-> >>>>>> +       dma-names = "rx", "tx";
-> >>>>> These DMA assignments seem to be SoC things and should
-> >>>>> rather be in the DTS(I) file where &spi5 is defined, right?
-> >>>>> stm32f429.dtsi I suppose?
-> >>>> I agree with Linus, DMA have to be defined in SoC dtsi. And if a board
-> >>>> doesn't want to use it, we use the "delete-property".
-> >>> Yes, will move to Soc dtsi in next submits.
-> >>>
-> >>> i'm working on write a v4l2-m2m driver for dma2d of stm32 to support
-> >>> pixel conversion
-> >>> alpha blending between foreground and background graphics.
-> >>>
-> >>> as you know, some soc's engineer trying to add this function to drm system.
-> >>>
-> >>> do you know st's planning about soc's hardware accelerator driver on stm32mp?
-> >>> such as chrom-art, will add to drm subsystem via ioctl to access, or to v4l2,
-> >> On stm32mp we do not plan to use chrom-art in drm or v4l2 because it
-> >> does fit
-> >> with userland way of working. We use the GPU to do conversion, scaling,
-> >> blending
-> >> and composition in only one go.
-> >> As explain here [1] DRM subsytem it isn't a solution and v4l2-m2m isn't
-> >> used in any
-> >> mainline compositors like Weston or android surfaceflinger.
-> >>
-> >> Benjamin
-> >>
-> > After check stm32mp's datasheets, they don't have chrom-art ip inside. sorry for
-> > didn't check it yet.
-> >
-> > for stm32h7 series with chrom-art, jpeg hardware accelerator inside.
-> > does st has plan to
-> > setup a driver to support it ? i prefer v4l2-m2m should be easier to
-> > implement it.
-> > co work with dcmi, fbdev.
-> ST doesn't plan to create a driver for chrom-art because nothing in
-> mainline
-> userland could use it.
->
-> Benjamin
-> >
-> > thanks.
-> >
-> > best regards.
-> >
-> > Dillon
-> >> [1]
-> >> https://www.phoronix.com/scan.php?page=news_item&px=Linux-DRM-No-2D-Accel-API
-> >>> thanks.
-> >>>
-> >>>>> It is likely the same no matter which device is using spi5.
-> >>>>>
-> >>>>> Yours,
-> >>>>> Linus Walleij
-> >>>>>
-> >>> _______________________________________________
-> >>> Linux-stm32 mailing list
-> >>> Linux-stm32@st-md-mailman.stormreply.com
-> >>> https://st-md-mailman.stormreply.com/mailman/listinfo/linux-stm32
+-- 
+Catalin
 
 _______________________________________________
 linux-arm-kernel mailing list
