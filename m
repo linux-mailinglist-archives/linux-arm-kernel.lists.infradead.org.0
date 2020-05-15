@@ -2,77 +2,140 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 906A61D478B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:00:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E69831D47A7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:03:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Tfhe7qlkf/pne5YdP0jGeQ8yT0zlh26TKXOwzQmcv5g=; b=a5zBac0mPHU5Gy
-	QokhGWsnJKDR0t1WngAyO2ltN7kfh5iV+IlxjqD5bfnpeeA2hq/IBsJ6yUimcJrkf9o4wd1z051pc
-	yFiVen14zHqk6mVYfHWi2wf1a4a/hW/bkT1iiyRes2aFEtbTWqJKgVbRRVOJ5UO+ZcG8lo7T303oR
-	1X1S5pI0d6JdcOrQ/LU2HJjEFq3VUnwNgd4Bejv3KC+QjjCn0KUOWGNp4Kgx//hWXlfnJA5dVOmEe
-	g4yNGFOyPE7WHG95uCh9/Ih5iqEeIgS5578kTi4zyWh4zszXoG6Nwb7ihrNdF/5IgyV/d6HhIPWTB
-	jqTT5zLFie0+9KFp7b5w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fGSYe2J9+iKkIOeywAXKd6db5UfeFRa1WsVqEUd48m0=; b=MoY0Q+ATvhhWWHNJQw91zdjxw
+	niOvq/R4XGugZYAAdLQfYrge19/uxAmGnJAFwf1VUvOiUYyf6a/zO2tfRpYMvgoZdlOmlNoPXLgCN
+	R6QzoVRkw+xm+fyzBmeV3k3XJ3RfIBm8xzZyCk1/gnGvtTLjDVczTB0IpohragBe1ec3IyRJou4mI
+	hxxP+9BzXHA8OjalpAogHbP9kjCPLPHUZXvKiaHEtvhEyBru4AX7fv0StG3ixgFunsZ37y3LSb1ZG
+	/bvd/1zH2zkqRx7ccmr26WzJdwzRCFMnMPeJbJdCH+bMvflLM0vbQQlpdVdB7UvEORw9ayqAwx6PG
+	juoYcbHTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZVGB-0000TU-GU; Fri, 15 May 2020 07:59:59 +0000
-Received: from mo6-p03-ob.smtp.rzone.de ([2a01:238:20a:202:5303::9])
+	id 1jZVJh-0003ZJ-JT; Fri, 15 May 2020 08:03:37 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZVFz-0000Sz-7j
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:59:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589529585;
- s=strato-dkim-0002; d=goldelico.com;
- h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=bU5sZyM8w1KL+vZGRsgMWFgVeXL93IV+Cv0ulYGm/2A=;
- b=DyS5CtAzQP1P8x8pYM799rqpOv8S7mn7f6oSYE99QGkDC8G0dwW0lY70uJkVJh0den
- dxDiwBw8yobAhcEVMRvK7I3B41wCNsy+BdpeJXexwGoEHbv3ZdhWzlf2A4Gk0sCRs30p
- VU0Mdui9X0K4igbg/eObjSu5ac83pAoQmqzCraZ/Z+UR1LlGv7aCQMgaHTMtDC1Szv2a
- loYMDx8tUvJrB/OcntwYj82i01YXifcRfZdzoiJuvGkbHRFWp5+rIBwSf7cNHtZ+4NhE
- ssYT4E5nSsLgt+fjCz506/8V+pL60OGxm1HQ/FOg1LGfwDPX4WrwzuyXwHLf5ULreFMZ
- mJCQ==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/vtwDOvBTU="
-X-RZG-CLASS-ID: mo00
-Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id R0acebw4F7xbYgL
- (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
- ECDH bits, eq. 3072 bits RSA))
- (Client did not present a certificate);
- Fri, 15 May 2020 09:59:37 +0200 (CEST)
-Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
- pvrsgx.yaml for Imagination GPUs
-Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-In-Reply-To: <20200505155311.GA18025@bogus>
-Date: Fri, 15 May 2020 09:59:36 +0200
-Message-Id: <DD3BF759-4F3D-4147-9A80-DB6C18B13400@goldelico.com>
-References: <cover.1587760454.git.hns@goldelico.com>
- <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
- <20200505155311.GA18025@bogus>
-To: Rob Herring <robh@kernel.org>
-X-Mailer: Apple Mail (2.3124)
+ id 1jZVJX-0003YY-Go
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:03:29 +0000
+Received: by mail-wr1-x444.google.com with SMTP id w7so2338823wre.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 01:03:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:autocrypt:organization:message-id
+ :date:user-agent:mime-version:in-reply-to;
+ bh=XVSGhIAC2HtlFAdojNxulc+a74d8yyF8HOGROMv5rU8=;
+ b=tNIE0jPPEBRRnU5+qUTcyx+V3tk+NrgXIsfXA4Hy0kF9YD/GO0C1p2ucgXNOfSfvOt
+ vzu82p/mtNIo964uZLKN6TxsvMbDVdH2PpcWLPojUo3Vamd0A1cs0eFobsxJtPlpFhj2
+ vOu/tX2yMF3GhI3TgPiR+bld5Ca55Ge/yBYl6s0PbzDfgptHSbGehDKfrAtRpVoNDAw/
+ YXocRnmiD25huvgBFcAdU5PEEiTAXnywnHXxWaGSPPOYCT/zRlziQ4TuV02BUWTvYJPm
+ Zy9If7PGQb+RPoENPqFPgb0izfI7gMazpEcGleJsy/N+YD0BgY2+JZZl+Di1YcO7/Glc
+ 9K/g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to;
+ bh=XVSGhIAC2HtlFAdojNxulc+a74d8yyF8HOGROMv5rU8=;
+ b=MCaWygym587GGyccoPbeLVQUEYN4OOVj7Mg6hRBIOFtWbXk6h/d9RdEViX8RzWoYJ3
+ 3qwMxkvVV4iEt9bIT1tqchAwJ8GB+ZRLDIbzhIslFUztpv8qSiRm1Riqrp4HEyPaGvgD
+ SGfJ/WbRYOVlcYmN5nFsQJwD1IhDO4uASV5LJz9bn3B7LjK/yBoIB64IZmGmlF4NDqRt
+ 9MmuWl8cmV8JpDlF1dMHOrNF6M5iDRW61DW6mFxW9K7zwZqwx9JpjjgPIjv90tNSuStt
+ OL8CiE3zxC0rF+cMp6M8+1gPH9h5k2xy1IsW7FQsV225vADHoQtWJT/1v2gCjFcgaZD1
+ 8Vtw==
+X-Gm-Message-State: AOAM530on0/J/kqMqffhRnx5U+hSycnSzJXb/MwvnAPTZ+2zt3LFey31
+ Mqtm1uSmOpZ/PiqyKn1OQb38nA==
+X-Google-Smtp-Source: ABdhPJwNE6JJVIrDJlXFR6kjcyzrDNRzipl4JxUNB38+CjU4YrYhh549I7sMRCXdXzsrrC/Vjp5ogw==
+X-Received: by 2002:a5d:6943:: with SMTP id r3mr2750145wrw.113.1589529805269; 
+ Fri, 15 May 2020 01:03:25 -0700 (PDT)
+Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
+ ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
+ by smtp.gmail.com with ESMTPSA id i6sm2335992wrw.97.2020.05.15.01.03.22
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 15 May 2020 01:03:23 -0700 (PDT)
+Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
+To: Felipe Balbi <balbi@kernel.org>, kishon@ti.com, khilman@baylibre.com,
+ martin.blumenstingl@googlemail.com
+References: <20200324102030.31000-1-narmstrong@baylibre.com>
+ <87369rfo7l.fsf@kernel.org> <87r1vm4xyq.fsf@kernel.org>
+ <8404c7a0-fca7-9e28-b65a-312ed09ecdd3@baylibre.com>
+ <87wo5e3c53.fsf@kernel.org>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ BSwxi7g3Mu7u5kUByanqHyA=
+Organization: Baylibre
+Message-ID: <075fd5b1-7450-e833-2240-527aadbda2b4@baylibre.com>
+Date: Fri, 15 May 2020 10:03:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.4.1
+MIME-Version: 1.0
+In-Reply-To: <87wo5e3c53.fsf@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_005947_427377_DB269A64 
-X-CRM114-Status: UNSURE (   9.04  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_010327_562262_AC45A2D6 
+X-CRM114-Status: GOOD (  17.24  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5303:0:0:9 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -86,66 +149,165 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
- James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
- dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
- Paul Cercueil <paul@crapouillou.net>, linux-omap@vger.kernel.org,
- Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Tony Lindgren <tony@atomide.com>, Chen-Yu Tsai <wens@csie.org>,
- Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
- =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- Maxime Ripard <mripard@kernel.org>, linux-samsung-soc@vger.kernel.org,
- letux-kernel@openphoenux.org, linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
- linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
- Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6689536508899194566=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============6689536508899194566==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+ protocol="application/pgp-signature";
+ boundary="jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w"
 
-> Am 05.05.2020 um 17:53 schrieb Rob Herring <robh@kernel.org>:
-> 
-> On Fri, Apr 24, 2020 at 10:34:04PM +0200, H. Nikolaus Schaller wrote:
->> The Imagination PVR/SGX GPU is part of several SoC from
->> multiple vendors, e.g. TI OMAP, Ingenic JZ4780, Intel Poulsbo,
->> Allwinner A83 and others.
->> 
->> With this binding, we describe how the SGX processor is
->> interfaced to the SoC (registers and interrupt).
->> 
->> The interface also consists of clocks, reset, power but
->> information from data sheets is vague and some SoC integrators
->> (TI) deciced to use a PRCM wrapper (ti,sysc) which does
->> all clock, reset and power-management through registers
->> outside of the sgx register block.
->> 
->> Therefore all these properties are optional.
->> 
->> Tested by make dt_binding_check
->> 
->> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
->> ---
->> .../devicetree/bindings/gpu/img,pvrsgx.yaml   | 150 ++++++++++++++++++
->> 1 file changed, 150 insertions(+)
->> +    oneOf:
->> +      - description: SGX530-121 based SoC
->> +        items:
->> +          - enum:
->> +            - ti,omap3-sgx530-121 # BeagleBoard A/B/C, OpenPandora 600MHz and similar
-> 
-> Should be indented 2 more here and elsewhere where you have a list 
-> under a list.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w
+Content-Type: multipart/mixed; boundary="cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd";
+ protected-headers="v1"
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: Felipe Balbi <balbi@kernel.org>, kishon@ti.com, khilman@baylibre.com,
+ martin.blumenstingl@googlemail.com
+Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Message-ID: <075fd5b1-7450-e833-2240-527aadbda2b4@baylibre.com>
+Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
+References: <20200324102030.31000-1-narmstrong@baylibre.com>
+ <87369rfo7l.fsf@kernel.org> <87r1vm4xyq.fsf@kernel.org>
+ <8404c7a0-fca7-9e28-b65a-312ed09ecdd3@baylibre.com>
+ <87wo5e3c53.fsf@kernel.org>
+In-Reply-To: <87wo5e3c53.fsf@kernel.org>
 
-added for patch v8 series.
+--cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
-BR and thanks,
-Nikolaus
+On 14/05/2020 14:59, Felipe Balbi wrote:
+> Neil Armstrong <narmstrong@baylibre.com> writes:
+>=20
+>> Hi,
+>>
+>> On 14/05/2020 12:23, Felipe Balbi wrote:
+>>> Felipe Balbi <balbi@kernel.org> writes:
+>>>
+>>>> Neil Armstrong <narmstrong@baylibre.com> writes:
+>>>>
+>>>>> The USB support was initialy done with a set of PHYs and dwc3-of-si=
+mple
+>>>>> because the architecture of the USB complex was not understood corr=
+ectly
+>>>>> at the time (and proper documentation was missing...).
+>>>>>
+>>>>> But with the G12A family, the USB complex was correctly understood =
+and
+>>>>> implemented correctly.
+>>>>> But seems the G12A architecture was derived for the GXL USB archite=
+cture,
+>>>>> with minor differences and looks we can share most of the USB DWC3 =
+glue
+>>>>> driver.
+>>>>>
+>>>>> This patchset refactors and adds callbacks to handle the architectu=
+re
+>>>>> difference while keeping the main code shared.
+>>>>>
+>>>>> The main difference is that on GXL/GXM the USB2 PHY control registe=
+rs
+>>>>> are mixed with the PHY registers (we already handle correctly), and=
 
+>>>>> the GLUE registers are allmost (99%) the same as G12A.
+>>>>>
+>>>>> But, the GXL/GXM HW is buggy, here are the quirks :
+>>>>> - for the DWC2 controller to reset correctly, the GLUE mux must be =
+switched
+>>>>>   to peripheral when the DWC2 controlle probes. For now it's handle=
+d by simply
+>>>>>   switching to device when probing the subnodes, but it may be not =
+enough
+>>>>> - when manually switching from Host to Device when the USB port is =
+not
+>>>>>   populated (should not happen with proper Micro-USB/USB-C OTG swit=
+ch), it
+>>>>>   makes the DWC3 to crash. The only way to avoid that is to use the=
+ Host
+>>>>>   Disconnect bit to disconnect the DWC3 controller from the port, b=
+ut we can't
+>>>>>   recover the Host functionnality unless resetting the DWC3 control=
+ler.
+>>>>>   This bit is set when only manual switch is done, and a warning is=
+ printed
+>>>>>   on manual switching.
+>>>>>
+>>>>> The patches 1-8 should be applied first, then either waiting the ne=
+xt release
+>>>>> or if the usb maintainer can provide us a stable tag, we can use it=
+ to merge
+>>>>> the DT and bindings.
+>>>>
+>>>> it's unclear to me if this series is ready to be merged. Can someone=
+
+>>>> confirm? If it is, can you resend with all reviewed by tags in place=
+?
+>>>
+>>> Are we getting a v2 for this?
+>>>
+>>
+>> Yes, even a v3 with reviews on all patches:
+>> http://lkml.kernel.org/r/20200416121910.12723-1-narmstrong@baylibre.co=
+m
+>=20
+> In that case, can you check that I have applied everything correctly in=
+
+> testing/next?
+>=20
+> cheers
+>=20
+
+Looks fine,
+
+Thanks,
+Neil
+
+
+
+--cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd--
+
+--jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCgAdFiEEPVPGJshWBf4d9CyLd9zb2sjISdEFAl6+TMcACgkQd9zb2sjI
+SdEv8A//YD813zT/tMcFpTdMmROGnV1YRpi+t3M3BHYKemnko19eLGln54xRg9S5
+t/IhrOdS4BHCR/9yFNvUg1V/B6wPER4O35oeuMuQ/LUNwdVSpsr7evPTFC1ok6Ig
+cXaMLXPQMMHoqifBpMWO0SYpnLFKQlrwUrdJX6b2SBu5aPx12mF+QyeLgZiAAmwk
+K3QtJwB4PWhNRRAVIlRcSlBVT9S+SA19o2ZNRaiDtLsBPK9NVZplzmWSyXG0usjQ
+Wh1uavrCPpB9+EkWcx9dzAK8OHt9IvOccmeadINTCyzmRPK95kmFz5FNVuErBAT4
+ReFMVFsnxB6cZaevDu5Sa/9pjpft2FfDOFlmqm2EadBp2Fn2BlJmz+XCw+5cAgRW
+OzVBpW/DDcwJh8XKjbDv+Bh66XatSKb/FPqEJFAn+Eb3g1tInDLPYBBYTjGmH7R+
+GmBPYNNcLSoJwZRBgV/kUzLpUJYyfBKbVnsY+YmJ60SlLdDAc1SEuT2mNAWBRyF7
+9C9MRkaGm5Q3tXdU6bAwx4NI8xGV3Lx8N11puPzoYrG5VtwAm84seRHQbvu0mVyu
+YskE2vaJeuD6d+U017Eb43VXJnzfYs/zJlTzxnpKxjek+4N30+K8RUZ/eElU9ytc
+Wwot2OrSvqRVmTN7lzSvMG5cQI3iWVYJZKRcKhjEQEW1Y+rEsY8=
+=/b58
+-----END PGP SIGNATURE-----
+
+--jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w--
+
+
+--===============6689536508899194566==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6689536508899194566==--
+
