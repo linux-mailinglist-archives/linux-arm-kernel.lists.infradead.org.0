@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D48C1D5771
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:19:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 473961D5774
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:20:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6LUfFsQQXdTjVANPgz0+5Bb81Wg0nRQOLpl8hxxuvDw=; b=fmLRzMWjo1YqFe
-	dJNcWivbLVCNQLWceej4rp5djayHJQ+mg+CEm3pG5Npw+ypixT6w0+ML7aN5lLPv/XvK3oOoSbOx1
-	Rl3mz1AH7oHo1TqLSPgYXNxkeRArYWfK8WzHMaBCjLQbPAFhrs8+/cRqDD0ENoKopiDdBY3wqU3Iq
-	5SJP42Z/Mq2dkvCG1ciq5OiLCWKrSBjlbTd91ZLFNx5NKn5LICgvdCcUbkNkI/aN2JtjsI/iQc0wY
-	VH6FvbNtTlJsLiYJpH4CfPt6fJqZDTWM3JNSKR49gigxwC8hCrgxU6iNuyeIGG7GxYIQUr63fwzQc
-	rvF75FXBF8VHC41zgsGg==;
+	List-Owner; bh=T+ZuBAzXxdDKuuUlHKOO13Ba/qMmajS2cpN4F/VPOd4=; b=VqTGxL58MrYOsa
+	tEjrLfLXfl29tvZtRKSCnEM+qaNm2NWtEGPwkJwzN2q8/Eg7X8Qy5wmMQ92i7qcCoJWLe3T3WMvI9
+	ijAS6MinMukwF4oMGgGpjHtw/ECdat1tejeM66YHaKxN8VCVNod0GtyHS/HdfaJjJYmLXeDfR3fJv
+	/ws1xBWtpgYZv2VqnpA/MhZwreA82yhZXmfrIHV8GSZ+2etxgk3tX1ifAC/lWj3UPxfgcwrE4hbJP
+	H1kso0YzoiZLg4t44CT/mScz24e8HdVSkLPJ6DkJGK/rMSGvdo5XiPw1p4w5VhA57/PmIwa4r5d7p
+	MvCMlDeOg/R1ptjKGiFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZdzk-0004pc-Gx; Fri, 15 May 2020 17:19:36 +0000
+	id 1jZe05-0005A8-Hs; Fri, 15 May 2020 17:19:57 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZdwu-00025U-GO
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:16:42 +0000
+ id 1jZdww-00025U-O8
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:16:45 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 512231042;
- Fri, 15 May 2020 10:16:40 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6B1EB1042;
+ Fri, 15 May 2020 10:16:42 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A9C103F305;
- Fri, 15 May 2020 10:16:38 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8A82B3F305;
+ Fri, 15 May 2020 10:16:40 -0700 (PDT)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 09/26] arm64: mte: Tags-aware aware memcmp_pages()
- implementation
-Date: Fri, 15 May 2020 18:15:55 +0100
-Message-Id: <20200515171612.1020-10-catalin.marinas@arm.com>
+Subject: [PATCH v4 10/26] mm: Introduce arch_calc_vm_flag_bits()
+Date: Fri, 15 May 2020 18:15:56 +0100
+Message-Id: <20200515171612.1020-11-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200515171612.1020-1-catalin.marinas@arm.com>
 References: <20200515171612.1020-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_101640_606718_B87652DA 
-X-CRM114-Status: GOOD (  15.10  )
+X-CRM114-CacheID: sfid-20200515_101643_050209_6871B942 
+X-CRM114-Status: UNSURE (   9.29  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -64,99 +64,68 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: linux-arch@vger.kernel.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, Dave P Martin <Dave.Martin@arm.com>
+ Kevin Brodsky <Kevin.Brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
+ linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Dave P Martin <Dave.Martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the Memory Tagging Extension is enabled, two pages are identical
-only if both their data and tags are identical.
+From: Kevin Brodsky <Kevin.Brodsky@arm.com>
 
-Make the generic memcmp_pages() a __weak function and add an
-arm64-specific implementation which returns non-zero if any of the two
-pages contain valid MTE tags (PG_mte_tagged set). There isn't much
-benefit in comparing the tags of two pages since these are normally used
-for heap allocations and likely to differ anyway.
+Similarly to arch_calc_vm_prot_bits(), introduce a dummy
+arch_calc_vm_flag_bits() invoked from calc_vm_flag_bits(). This macro
+can be overridden by architectures to insert specific VM_* flags derived
+from the mmap() MAP_* flags.
 
-Co-developed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Signed-off-by: Kevin Brodsky <Kevin.Brodsky@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
+Cc: Andrew Morton <akpm@linux-foundation.org>
 ---
 
 Notes:
-    v4:
-    - Remove page tag comparison. This is not very useful to detect
-      identical pages as long as set_pte_at() can zero the tags on a page
-      without copy-on-write if mapped with PROT_MTE. This can be improved
-      if a real case appears but it's unlikely for heap pages to be
-      identical across multiple processes.
-    - Move the memcmp_pages() function to mte.c.
+    v2:
+    - Updated the comment above arch_calc_vm_prot_bits().
+    - Changed author since this patch had already been posted (internally).
 
- arch/arm64/kernel/mte.c | 26 ++++++++++++++++++++++++++
- mm/util.c               |  2 +-
- 2 files changed, 27 insertions(+), 1 deletion(-)
+ include/linux/mman.h | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm64/kernel/mte.c b/arch/arm64/kernel/mte.c
-index 65a2f8490d18..da2d70178a4b 100644
---- a/arch/arm64/kernel/mte.c
-+++ b/arch/arm64/kernel/mte.c
-@@ -5,6 +5,7 @@
- 
- #include <linux/bitops.h>
- #include <linux/mm.h>
-+#include <linux/string.h>
- #include <linux/thread_info.h>
- 
- #include <asm/cpufeature.h>
-@@ -23,6 +24,31 @@ void mte_sync_tags(pte_t *ptep, pte_t pte)
- 	mte_clear_page_tags(page_address(page), page_size(page));
+diff --git a/include/linux/mman.h b/include/linux/mman.h
+index 4b08e9c9c538..15c1162b9d65 100644
+--- a/include/linux/mman.h
++++ b/include/linux/mman.h
+@@ -74,13 +74,17 @@ static inline void vm_unacct_memory(long pages)
  }
  
-+int memcmp_pages(struct page *page1, struct page *page2)
-+{
-+	char *addr1, *addr2;
-+	int ret;
+ /*
+- * Allow architectures to handle additional protection bits
++ * Allow architectures to handle additional protection and flag bits
+  */
+ 
+ #ifndef arch_calc_vm_prot_bits
+ #define arch_calc_vm_prot_bits(prot, pkey) 0
+ #endif
+ 
++#ifndef arch_calc_vm_flag_bits
++#define arch_calc_vm_flag_bits(flags) 0
++#endif
 +
-+	addr1 = page_address(page1);
-+	addr2 = page_address(page2);
-+	ret = memcmp(addr1, addr2, PAGE_SIZE);
-+
-+	if (!system_supports_mte() || ret)
-+		return ret;
-+
-+	/*
-+	 * If the page content is identical but at least one of the pages is
-+	 * tagged, return non-zero to avoid KSM merging. If only one of the
-+	 * pages is tagged, set_pte_at() may zero or change the tags of the
-+	 * other page via mte_sync_tags().
-+	 */
-+	if (test_bit(PG_mte_tagged, &page1->flags) ||
-+	    test_bit(PG_mte_tagged, &page2->flags))
-+		return addr1 != addr2;
-+
-+	return ret;
-+}
-+
- void flush_mte_state(void)
- {
- 	if (!system_supports_mte())
-diff --git a/mm/util.c b/mm/util.c
-index 988d11e6c17c..662fb3da6d01 100644
---- a/mm/util.c
-+++ b/mm/util.c
-@@ -899,7 +899,7 @@ int get_cmdline(struct task_struct *task, char *buffer, int buflen)
- 	return res;
+ #ifndef arch_vm_get_page_prot
+ #define arch_vm_get_page_prot(vm_flags) __pgprot(0)
+ #endif
+@@ -131,7 +135,8 @@ calc_vm_flag_bits(unsigned long flags)
+ 	return _calc_vm_trans(flags, MAP_GROWSDOWN,  VM_GROWSDOWN ) |
+ 	       _calc_vm_trans(flags, MAP_DENYWRITE,  VM_DENYWRITE ) |
+ 	       _calc_vm_trans(flags, MAP_LOCKED,     VM_LOCKED    ) |
+-	       _calc_vm_trans(flags, MAP_SYNC,	     VM_SYNC      );
++	       _calc_vm_trans(flags, MAP_SYNC,	     VM_SYNC      ) |
++	       arch_calc_vm_flag_bits(flags);
  }
  
--int memcmp_pages(struct page *page1, struct page *page2)
-+int __weak memcmp_pages(struct page *page1, struct page *page2)
- {
- 	char *addr1, *addr2;
- 	int ret;
+ unsigned long vm_commit_limit(void);
 
 _______________________________________________
 linux-arm-kernel mailing list
