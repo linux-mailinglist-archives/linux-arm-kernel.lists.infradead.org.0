@@ -2,62 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C2DE1D46E8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:18:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 710DC1D46EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:19:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZT+O5zZYcad8Gi4sQoUg7jDgFBzIxEYfCbY4RwwTtro=; b=VG9K/aaECKMwOE
-	dmx+SdXL66NpTetEPW2Og9MkBPOjgae2cvCySrhPWUWL+LL5V8ZJkGX3I+NmaK6NoPWvex2hlCJYJ
-	RSd/t5JeTYhc/uyk1QQJ+Ny5iu0y1InRWLKzcjKbTvFcBAVlOBHI4gB30FMX+QjGInMxQWnx081QA
-	Dakt14KDqhfiDATSlRHphCr2lzPCd28liaE1wV4kK8ZbSB8ayQxYwdwtr5e8wWkWSNK9/X/1ZwPMj
-	1YiYq25Il7sIglRimS6bcu5ta5zdm7gRA80DMnwTKQqDe7G/HRFXT3gvAja/tW43ZVOdoA6dwtrPZ
-	wYcmX1tgPrq77YLcsHfA==;
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/3BQxxRM8tyDrnozmBiah9/cUG+IrbyHunUrVvhIpTE=; b=D1Cown9xoZecTH
+	ebDRjs1olB0sDoBdp0VpUHhKyyywXJfB2U8tnbSYJaSJQplZhOR8WtOb2/xetfaFelR7US7A43nmH
+	4XKp2kBLsH4GstrU8oFoGy5onMdQsT9KyuyGr9wkDwweejptRgiZ43Cf0aPWvDhyrvP4cq/CY+LLD
+	4T+9IZUGjL5FiFuMSKAiuB5DcorzY/JCYRjEKwnoCvodz5AAx2rEzGfJU1wI3G/wTIteZyG5ZYuhL
+	AtR+qhcIr2oUoZR2iN9rAnvMoAS86c7xP8wRXKOmm6mVPjruGjf8g2tSNnkLJIP5riEZFrdXnza+H
+	diF1XWwDUOPckyvJc5OA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZUba-0005Ux-E2; Fri, 15 May 2020 07:18:02 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1jZUcf-0005nV-JA; Fri, 15 May 2020 07:19:09 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::11])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZUbS-0005UG-OR
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:17:56 +0000
-Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 4546F540117AF32C657B;
- Fri, 15 May 2020 15:17:51 +0800 (CST)
-Received: from [10.57.101.250] (10.57.101.250) by
- DGGEMS407-HUB.china.huawei.com (10.3.19.207) with Microsoft SMTP Server id
- 14.3.487.0; Fri, 15 May 2020 15:17:43 +0800
-To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [GIT PULL] arm64: defconfig: hisilicon config updates for v5.8
-Message-ID: <5EBE4217.6000900@hisilicon.com>
-Date: Fri, 15 May 2020 15:17:43 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.2.0
-MIME-Version: 1.0
-X-Originating-IP: [10.57.101.250]
-X-CFilter-Loop: Reflected
+ id 1jZUcS-0005l8-De
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:19:01 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589527125;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=/LlQLnJSjr1dPjlAnAK+u/lQG0tGroGOnAwr3HRIIDg=;
+ b=pBwuM+bS37tPnPiPgRTjgQOlB2/DddwgW7AqPDMVE2Zm5t8pbJMf97G+hfKZhEN8PU
+ fp1FGEl9qPoT4l/uzeX1xE65PTbMgfJuJUWjOD6t3ZAqmDya5skiO8r2qoqWc3df6pfr
+ 2qRTJFVr/YLFFxhJpcKXB8DNs0eTdFdJmaX8gH3KX/SUeymTIS96bcduZhTmg5zItfDV
+ pBnDIN7UF4euSqIwdMBvqsb4przbXAEvUlELlJGYhfAPT+LEEtuBgSw8/hCLiSI/ZaCU
+ pI9gY4u8XUGMywE2twViG6QH1rqMSR2dKewolcZEgxRl+D3VCMA+VfjeX9bTlQIPS5rl
+ R56A==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/vtwDOvBTU="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
+ with ESMTPSA id R0acebw4F7IYYRg
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Fri, 15 May 2020 09:18:34 +0200 (CEST)
+Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
+ pvrsgx.yaml for Imagination GPUs
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <08B861A8-D4C2-48A6-9B05-B8CA43312834@goldelico.com>
+Date: Fri, 15 May 2020 09:18:33 +0200
+Message-Id: <D1D14684-2532-46A4-ADA0-2F88F4D2228E@goldelico.com>
+References: <cover.1587760454.git.hns@goldelico.com>
+ <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
+ <NMCE9Q.LWG45P20NBVJ@crapouillou.net>
+ <28138EC0-0FA5-4F97-B528-3442BF087C7A@goldelico.com>
+ <TEAR9Q.6HI5DFRO5U0I3@crapouillou.net>
+ <3D8B59D6-83E3-4FE6-9C99-E2E5616A8139@goldelico.com>
+ <8EER9Q.C206SXNSICP7@crapouillou.net>
+ <08B861A8-D4C2-48A6-9B05-B8CA43312834@goldelico.com>
+To: Paul Cercueil <paul@crapouillou.net>, Paul Burton <paulburton@kernel.org>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_001754_960559_62B2298A 
-X-CRM114-Status: UNSURE (   8.25  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200515_001857_053468_41ED2FAE 
+X-CRM114-Status: GOOD (  11.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [45.249.212.32 listed in wl.mailspike.net]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5302:0:0:11 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,55 +90,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>, Tangkunshan <tangkunshan@huawei.com>,
- Arnd Bergmann <arnd@arndb.de>, John Garry <john.garry@huawei.com>,
- Linuxarm <linuxarm@huawei.com>, Shameerali
- Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
- huangdaode <huangdaode@hisilicon.com>, "xuwei
- \(O\)" <xuwei5@huawei.com>, Jonathan Cameron <jonathan.cameron@huawei.com>,
- Olof Johansson <olof@lixom.net>,
- "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>, Zhangyi
- ac <zhangyi.ac@huawei.com>, Shiju Jose <shiju.jose@huawei.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
+ linux-mips@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
+ Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Tony Lindgren <tony@atomide.com>,
+ Chen-Yu Tsai <wens@csie.org>, Kukjin Kim <kgene@kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ =?iso-8859-1?Q?Beno=EEt_Cousson?= <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>,
+ OpenPVRSGX Linux Driver Group <openpvrsgx-devgroup@letux.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Ralf Baechle <ralf@linux-mips.org>, Daniel Vetter <daniel@ffwll.ch>,
+ kernel@pyra-handheld.com
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM-SoC team,
+Hi Paul & Paul,
 
-Please consider to pull the following changes.
-Thanks!
+> Am 03.05.2020 um 18:41 schrieb H. Nikolaus Schaller <hns@goldelico.com>:
+> =
 
-Best Regards,
-Wei
+> Hi Paul and Paul,
+> =
 
----
+>> Am 03.05.2020 um 16:18 schrieb Paul Cercueil <paul@crapouillou.net>:
+>> =
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+>> =
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+>> =
 
-are available in the Git repository at:
+>> Le dim. 3 mai 2020 =E0 15:31, H. Nikolaus Schaller <hns@goldelico.com> a=
+ =E9crit :
+>>> Hi Paul,
+>>>> Am 03.05.2020 um 14:52 schrieb Paul Cercueil <paul@crapouillou.net>:
+>>>>>> It's possible to forbid the presence of the 'clocks' property on som=
+e implementations, and require it on others.
+>>>>> To be precise we have to specify the exact number of clocks (between =
+0 and 4) for every architecture.
+>>>>> This also contradicts my dream to get rid of the architecture specifi=
+c components in the long run. My dream (because I can't tell how it can be =
+done) is that we can one day develop something which just needs compatible =
+=3D img,530 or imp,540 or img,544. Then we can't make the number clocks dep=
+end on the implementation any more.
+>>>> As we said before, the number of clocks is a property of the GPU and *=
+not* its integration into the SoC.
+>>> Well, it is a not very well documented property of the GPU. We have no =
+data sheet of the standalone GPU. Only several SoC data sheets which give s=
+ome indications.
+>> =
 
-  git://github.com/hisilicon/linux-hisi.git tags/hisi-arm64-defconfig-for-5.8
+>> Maybe we can nicely ask them?
+> =
 
-for you to fetch changes up to 528443e32a3d53000d30bb8be04a382b04e57470:
+> There is some (old) answer here:
+> =
 
-  arm64: defconfig: Enable UACCE/PCI PASID/SEC2/HPRE configs (2020-05-15 09:29:47 +0800)
+> https://github.com/MIPS/CI20_linux/blob/ci20-v3.18/arch/mips/boot/dts/jz4=
+780.dtsi#L63
+> =
 
-----------------------------------------------------------------
-ARM64: hisilicon: defconfig updates for 5.8
+>> I expect Paul Burton to have some contacts at ImgTec. Asking for a doc w=
+ould be too much, but maybe they can help a bit with the DT bindings.
+> =
 
-- Enable PCI PASID as built-in module and UACCE/SEC2/HPRE as
-  loadable modules to support UACCE use case for the D06CS board
+> Good idea! It is definitively worth to try. Therefore I have moved him fr=
+om CC: to To:
 
-----------------------------------------------------------------
-Zhou Wang (1):
-      arm64: defconfig: Enable UACCE/PCI PASID/SEC2/HPRE configs
+Do we already have an idea if we can get into contact and get help from Img=
+Tec for this topic or if we have to live with what we have?
 
- arch/arm64/configs/defconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+BR and thanks,
+Nikolaus
+
 
 _______________________________________________
 linux-arm-kernel mailing list
