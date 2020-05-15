@@ -2,95 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D81F1D42CA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 03:13:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C890A1D42EF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 03:26:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BR6xVMf2YNbq6YITxtnANbg4G4KF9JRSDiAlIyDxGYM=; b=XkiZbPH7RtJINC
-	wFRA3M4Gb3xpGoGzN9KSFol0PNX9bZP9HS6pr2KOHR71hXmNE2SE+yHrJ9oVQhGPWS0iLc6YC+MOc
-	Uz8J4tugfoYGnBgcB62IrdggG/33iZlk2HrJUtvzL0rKu8uQDzIbUrHsbnIu94I2hRn/BD2nPBNec
-	PKnBH54jppvOwp4WBAvVRiON1WLzkbocBwAe2IJPr1uR31eIwZTwMrk3fgyGtAfuEZ4vsfz1l1IuK
-	Ke450D6BeNovq3OpPo948E71dEORJhYblkk27VT8FWAaNvM2zIpoS/Mw7mqhTzLRXGDfUgv28qyuC
-	EKE0cc2hyTTVJy00FObg==;
+	List-Owner; bh=ST5AamJbYlE/oxcQifyzhnRW/rX7Z7yA8cFHJz79u1M=; b=nPCNZCDMTXiEra
+	Jhf4GLVc33orNWkHZCJ2OEI/pQQR0Ig2PgPkxXtqDQe9kBCDZ1uUIa9YycOuwCH4GI4emf75WLXff
+	GrWINqRAE0wDLMI6lmGpquI4zWxij8sH9EjnKKLBbg1glH8TInB4SAPQcEkqXcehisztXgE4hFeA+
+	RM0s8IzfUF5YNq2uRGwVsyrqCpMEkwjJFi221l2MYnL9tqrWrIQaeN1bnIXb4uyt6FwHg4cGZ3WRk
+	21TDHj1mKLKXBbXbq3GBM+pPwDYjt72Trwx23cFPQRZ756/ZV/iNhOh/nrXfPHQjQlYGDmEbO5ekr
+	HNiei/Na2KVU5KItjDIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZOuH-0005td-T8; Fri, 15 May 2020 01:12:57 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1jZP7M-0006Yk-02; Fri, 15 May 2020 01:26:28 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZOu4-0005sR-16; Fri, 15 May 2020 01:12:45 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04F13BU9130944;
- Fri, 15 May 2020 01:12:39 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2020-01-29;
- bh=iP+CAPe6xqTX3quF8Qdp4lFGocslpJ7Wa4UEt8Vsb1s=;
- b=r90k8XicwuZ0No3D35nhmnkNtqZpNxETjbkZn5qi0U7X2YRGMAYlTTLbi4HrdIT8Qelp
- i4fqXUzs3LMU3hDjYPGf6vcdjmD0eF87TWjmxn0s7HkP5nvCCONDqjAqh6PKBRWA/mnq
- QqQ71C5lvIzk9+1XMy9cGivk6eAY7gOucgp5ukcMrsXQEEeVe1bfAJ06NQ/SWx9oAANp
- /rbL7BSuVVRSE6/yDRGnWr3lYDoN4Fb/xrufw4NoHs/ELOPx0JYZivRdl4VQPMxF94cF
- TikeuAAvg6XbgtchKg9YM2auwvcWNqMdnxtpnPVreke05yn4GxiM3J158YYNM0xA7hoa Rw== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by userp2120.oracle.com with ESMTP id 3100xwxqbn-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 15 May 2020 01:12:39 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.42/8.16.0.42) with SMTP id 04F1474T014928;
- Fri, 15 May 2020 01:10:39 GMT
-Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
- by aserp3030.oracle.com with ESMTP id 3100yds35r-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 15 May 2020 01:10:38 +0000
-Received: from abhmp0015.oracle.com (abhmp0015.oracle.com [141.146.116.21])
- by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id 04F1AaQO014050;
- Fri, 15 May 2020 01:10:36 GMT
-Received: from ca-mkp.ca.oracle.com (/10.156.108.201)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 14 May 2020 18:10:36 -0700
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-To: jejb@linux.ibm.com, linux-scsi@vger.kernel.org, alim.akhtar@samsung.com,
- Stanley Chu <stanley.chu@mediatek.com>, asutoshd@codeaurora.org,
- avri.altman@wdc.com
+ id 1jZP78-0006WP-3T; Fri, 15 May 2020 01:26:17 +0000
+X-UUID: c9947cc7022d41218a7f3a373f9a0e07-20200514
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
+ s=dk; 
+ h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
+ bh=fqRhhH59jTJIvLK90VopqKiASNWrF23G1ykGc4EPhlE=; 
+ b=npz3Blg4aa1IlPD0nrV+b36oFGbaJo9n4E1wAGASNNpJ/AFraajOUrj8cPciHxutWyhWrLBGZj2hy8G/fWuIvgBfTQifnAC+x2UYjPt4dTugy61losQlmuXTKoWym/xMHdg7nc9QVGpFuUc+xSdOSU7gvbGLEo1Ot8iVRr+8t/E=;
+X-UUID: c9947cc7022d41218a7f3a373f9a0e07-20200514
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1664807439; Thu, 14 May 2020 17:26:23 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Thu, 14 May 2020 18:16:05 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1497.2; Fri, 15 May 2020 09:15:58 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
+ Transport; Fri, 15 May 2020 09:15:58 +0800
+Message-ID: <1589505358.3197.101.camel@mtkswgap22>
 Subject: Re: [PATCH v2 0/4] scsi: ufs: allow customizable WriteBooster flush
  policy
-Date: Thu, 14 May 2020 21:10:29 -0400
-Message-Id: <158950485295.8169.36549719949053326.b4-ty@oracle.com>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200509093716.21010-1-stanley.chu@mediatek.com>
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: "Martin K. Petersen" <martin.petersen@oracle.com>
+Date: Fri, 15 May 2020 09:15:58 +0800
+In-Reply-To: <158950485295.8169.36549719949053326.b4-ty@oracle.com>
 References: <20200509093716.21010-1-stanley.chu@mediatek.com>
+ <158950485295.8169.36549719949053326.b4-ty@oracle.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9621
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 bulkscore=0
- malwarescore=0 phishscore=0
- adultscore=0 suspectscore=0 mlxscore=0 mlxlogscore=999 spamscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-2004280000
- definitions=main-2005150007
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9621
- signatures=668687
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- cotscore=-2147483648 bulkscore=0
- phishscore=0 adultscore=0 mlxlogscore=999 lowpriorityscore=0
- impostorscore=0 spamscore=0 malwarescore=0 priorityscore=1501 mlxscore=0
- suspectscore=0 clxscore=1015 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005150007
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_181244_155855_6D95633B 
-X-CRM114-Status: GOOD (  13.95  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200514_182614_162128_C99BCB90 
+X-CRM114-Status: GOOD (  10.99  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -98,11 +71,8 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [156.151.31.85 listed in wl.mailspike.net]
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
  lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -114,45 +84,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: bvanassche@acm.org, "Martin K . Petersen" <martin.petersen@oracle.com>,
- andy.teng@mediatek.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
- linux-kernel@vger.kernel.org, cang@codeaurora.org,
+Cc: bvanassche@acm.org, linux-scsi@vger.kernel.org, andy.teng@mediatek.com,
+ jejb@linux.ibm.com, chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com,
+ linux-kernel@vger.kernel.org, avri.altman@wdc.com, cang@codeaurora.org,
  linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org,
- beanhuo@micron.com
+ alim.akhtar@samsung.com, matthias.bgg@gmail.com, beanhuo@micron.com,
+ linux-arm-kernel@lists.infradead.org, asutoshd@codeaurora.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 9 May 2020 17:37:12 +0800, Stanley Chu wrote:
+Hi Martin,
 
-> This patch set tries to allow vendors to modify the WriteBooster flush policy.
+On Thu, 2020-05-14 at 21:10 -0400, Martin K. Petersen wrote:
+> On Sat, 9 May 2020 17:37:12 +0800, Stanley Chu wrote:
 > 
-> In the same time, collect all customizable parameters to an unified structure to make UFS driver more clean.
+> > This patch set tries to allow vendors to modify the WriteBooster flush policy.
+> > 
+> > In the same time, collect all customizable parameters to an unified structure to make UFS driver more clean.
+> > 
+> > v1 -> v2:
+> >   - Squash patch [3] and [4]
+> >   - Remove a dummy "new line" in patch [3]
+> >   - Fix commit message in patch [3]
+> > 
+> > [...]
 > 
-> v1 -> v2:
->   - Squash patch [3] and [4]
->   - Remove a dummy "new line" in patch [3]
->   - Fix commit message in patch [3]
+> Applied to 5.8/scsi-queue, thanks!
 > 
-> [...]
+> I had to combine patches 1 and 2. Otherwise you'd get compile
+> failures due to the fields moving inside the struct.
+> 
+> [1/4] scsi: ufs: Introduce ufs_hba_variant_params to group customizable parameters
+>       https://git.kernel.org/mkp/scsi/c/90b8491c0033
+> [3/4] scsi: ufs: Customize flush threshold for WriteBooster
+>       https://git.kernel.org/mkp/scsi/c/d14734ae3ae7
+> [4/4] scsi: ufs-mediatek: Customize WriteBooster flush policy
+>       https://git.kernel.org/mkp/scsi/c/f48b285ae658
+> 
 
-Applied to 5.8/scsi-queue, thanks!
+Thanks so much for helping the patch squash.
 
-I had to combine patches 1 and 2. Otherwise you'd get compile
-failures due to the fields moving inside the struct.
-
-[1/4] scsi: ufs: Introduce ufs_hba_variant_params to group customizable parameters
-      https://git.kernel.org/mkp/scsi/c/90b8491c0033
-[3/4] scsi: ufs: Customize flush threshold for WriteBooster
-      https://git.kernel.org/mkp/scsi/c/d14734ae3ae7
-[4/4] scsi: ufs-mediatek: Customize WriteBooster flush policy
-      https://git.kernel.org/mkp/scsi/c/f48b285ae658
-
--- 
-Martin K. Petersen	Oracle Linux Engineering
-
+Thanks,
+Stanley Chu
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
