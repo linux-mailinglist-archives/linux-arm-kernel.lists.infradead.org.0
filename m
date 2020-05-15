@@ -2,86 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2CF721D4A29
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:57:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 138421D4A2D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:58:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tKDua0AeGYnaBN9YrBVfXwEyUf9pNGkqHMmQHhWJQvw=; b=OJ49+wxEU3Ts9y
-	1MtC+Y4DMkInkB6/FFkww8sgKLWc544oBD2yBDs+/pz2g5FdOZzD/YkHiyoATQLE3WELg9mRt3nWz
-	eMp3cpav4rj8qnhsDqP6Lqgnmy2qSmoCG1l8RbU8gcxo/p4CJFSDlFgGn4Um2uyTRyQNu3RNj5Kix
-	W7aY1uW4XQqw3vUEGz0E2iCLpt2xyvk1kOp9gSzWNKKiFGrZW/8ZLVKnquiJ8cfuWI8Gi8GV1hds1
-	jcEUpPOViePYdM1kHQSz3kqoYnhMLhUpWYpJXn8y9chguLxoXjxqgiItXXWU61V9kOs5Hbr0Pt6pM
-	RIM25JiVHe0a/MP+BT7Q==;
+	List-Owner; bh=bNNBhC6FErBSyZB+XDbOfi6AgAGm7+wevoxyODIafqI=; b=LYMeqxLpBQLjHi
+	yfGML260UAZAqdHo6o4wnYoQ6zR8FHgeFcceDoth1wD5s1CiXxxcAEfUxheDwy8Qmrl3aT6V4szJl
+	qiGp5egYHIht2kcGCHkf1XnbW87Pkd5F04GD+L2jOHhRUKlqcxY7RBtKnzpW0zbJp1mwrVUKFExjY
+	TbOa4f4KqvD2EYD/5WaK+l9PtyBeD5MD8Ec6eyDm5VEIiGKiXoAQxCAXtUAs+qsEJZXUC/EVEAN4l
+	pPi2Dz3E+HcDy/6KMJ90SL7/7LYlDElJrOi+Kip0z9V/IZJya4xXBJLxbAlyAXkDE1ksvMKeCM7mF
+	6hXowbDTxMfptaY953Hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZX69-0003RZ-1X; Fri, 15 May 2020 09:57:45 +0000
-Received: from mail-lj1-x22b.google.com ([2a00:1450:4864:20::22b])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZX5y-0003Q9-61
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:57:38 +0000
-Received: by mail-lj1-x22b.google.com with SMTP id g1so1566346ljk.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 02:57:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=nMOYfNEZkqpOwxdikoGlBP08jiU7JwSsPnMDuh6RRyE=;
- b=vvym3etztXXVkCTEQIqmvLL646Wn7PUlNmNteiiX6vD251ott7ib0iMU9IjQnQFeVI
- FygmI1w9w1/01lephMRKe6MOthQRKu5pYu1s0lcDU2/gPbfLXhYeRnp7USSWHbHlWs0B
- rVJ4Nqg/ZxXx10axnj/G1/srp7CmkxfmABm4ln+bf5dkgOS1LfL/BoHPOA8IHWCXAACr
- Biu0lPHJ+c6M9Wxt38SliC9NcBYeJ/587R++nAXrIfAKNyghAmcfIyJvyD2l2JBbr+Og
- IaFcU2fxuS2Vae73zPp70EBnZuF8vg0ydQEve2p8PA53EmtX+Yw5m2d0Sss0vLrODiib
- /Jew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nMOYfNEZkqpOwxdikoGlBP08jiU7JwSsPnMDuh6RRyE=;
- b=EcO5S6JFCHNdsg3tVhmhRmRrZDO2JZkG4tts4FPL0Hq1IZZVzdK4NOPnG7z5C3445B
- Oxx38R9N6ylTynbs78cG94tnzRDDV2ljct0az1hsfJUgVQMLqPNZThvvq2gGeeazszvZ
- 1clMOxQj9H5yJQT15wDIVlAE/a7zcgrn7rKKP8Pd/Xao3AlLKwnE3kclEH7c8H7XXGyv
- PQPZSu/P5+xqVl+3P8X6wJN+O70QdFagVivJpOq5MXYhGtBpEj2RumOEDur9fL97ZqYU
- +ZFqjAuhkjDzUnepSq+mdB+oc471yyT7mB1lN3TcVGu/KPv5ZArqT87G5eO9mQvbdWG7
- ShEQ==
-X-Gm-Message-State: AOAM530EfzuLW95ZkXHTUyFF3WiRBkQ+/DsovxQ8CNBWQFBYm+u+Kgzy
- 0VTNB9DmPTr0d4SVZLO9mY5LhxVTPR8SxIC1rk+x9g==
-X-Google-Smtp-Source: ABdhPJzunetbL+zFc/cF/yJgQXxIwApcv4HFPrGl6rmOuOSSwSlKzA8Z3vhz3J17EH6DBzXvxjZbuHqvjb10wXIVlaQ=
-X-Received: by 2002:a2e:3517:: with SMTP id z23mr1740322ljz.147.1589536650637; 
- Fri, 15 May 2020 02:57:30 -0700 (PDT)
+	id 1jZX6l-0003hU-8A; Fri, 15 May 2020 09:58:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZX6d-0003gc-Sg
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:58:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F5B92F;
+ Fri, 15 May 2020 02:58:14 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.6])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AAD183F71E;
+ Fri, 15 May 2020 02:58:12 -0700 (PDT)
+Date: Fri, 15 May 2020 10:58:02 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Daniel Lezcano <daniel.lezcano@linaro.org>
+Subject: Re: [PATCH v4 4/4] thermal: cpuidle: Register cpuidle cooling device
+Message-ID: <20200515095751.GA25267@bogus>
+References: <20200429103644.5492-1-daniel.lezcano@linaro.org>
+ <20200429103644.5492-4-daniel.lezcano@linaro.org>
+ <99b3bc79-f48a-3d51-a8ae-8b9ca4856d36@arm.com>
+ <04b5da25-d591-b08a-e554-6e084d7ea908@linaro.org>
+ <f3cee834-4946-10bd-a504-df6cf62d9e90@linaro.org>
 MIME-Version: 1.0
-References: <20200514082428.27864-1-etienne.carriere@linaro.org>
- <20200514142924.GC23401@bogus>
- <CAN5uoS_bimZsFqwaODRRWeCe15JMepQa2z9J0+dq7qNfwxRsug@mail.gmail.com>
- <20200515093424.GC23671@bogus>
-In-Reply-To: <20200515093424.GC23671@bogus>
-From: Etienne Carriere <etienne.carriere@linaro.org>
-Date: Fri, 15 May 2020 11:57:19 +0200
-Message-ID: <CAN5uoS9Ar5MZRufsf-x=xjm29VfpYAB2T-L=T-Q+-zPiJoKqQw@mail.gmail.com>
-Subject: Re: [PATCH] firmware: arm_scmi: fix SMCCC_RET_NOT_SUPPORTED management
-To: Sudeep Holla <sudeep.holla@arm.com>
+Content-Disposition: inline
+In-Reply-To: <f3cee834-4946-10bd-a504-df6cf62d9e90@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_025734_223469_420F36B7 
-X-CRM114-Status: GOOD (  10.56  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_025815_967268_F6756684 
+X-CRM114-Status: GOOD (  17.42  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:22b listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,32 +66,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ "open list:CPU IDLE TIME MANAGEMENT FRAMEWORK" <linux-pm@vger.kernel.org>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ open list <linux-kernel@vger.kernel.org>,
+ "open list:CPUIDLE DRIVER - ARM PSCI" <linux-arm-kernel@lists.infradead.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, rui.zhang@intel.com,
+ Lukasz Luba <lukasz.luba@arm.com>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> > Or consider part of the SCMI-SMC transport API that output arg a0
-> > shall be 0 on success, SMCCC_RET_NOT_SUPPORTED if function ID is not
-> > supported and any non-zero value for non-generic **error** codes.
-> >
+On Mon, May 04, 2020 at 08:00:01PM +0200, Daniel Lezcano wrote:
 >
-> I prefer that. Anyways I will check and if anything changes I will ping
-> back on this thread.
+> Hi,
+>
+> On 29/04/2020 23:01, Daniel Lezcano wrote:
+> > On 29/04/2020 22:02, Lukasz Luba wrote:
+> >>
+> >>
+> >> On 4/29/20 11:36 AM, Daniel Lezcano wrote:
+> >>> The cpuidle driver can be used as a cooling device by injecting idle
+> >>> cycles. The DT binding for the idle state added an optional
+> >>>
+> >>> When the property is set, register the cpuidle driver with the idle
+> >>> state node pointer as a cooling device. The thermal framework will do
+> >>> the association automatically with the thermal zone via the
+> >>> cooling-device defined in the device tree cooling-maps section.
+> >>>
+> >>> Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+> >>> ---
+> >>> =A0 - V4:
+> >>> =A0=A0=A0 - Do not check the return value as the function does no lon=
+ger
+> >>> return one
+> >>> ---
+> >
+> > [ ... ]
+> >
+> >> Reviewed-by: Lukasz Luba <lukasz.luba@arm.com>
+> >
+> > Thanks Lukasz for the review.
+> >
+> > Rafael, as Lorenzo and Sudeep are not responsive, could you consider ack
+> > this patch so I can merge the series through the thermal tree ?
+>
+> Gentle ping ... Sudeep, Lorenzo or Rafael ?
+>
 
-I don't have a strong opinion on whether considering or not 0 as
-success, for whatever the function ID used here for SCMI message
-notification.
-We can assume at least 0 is default returned in a0 when the function
-ID is used in SCMI SMC transport.
-Thanks for the feedback.
+Sorry for the delay. I ignore this as it was generic and I was fine with
+it. Didn't know you were waiting me, sorry for that.
 
-> --
-> Regards,
-> Sudeep
+FWIW:
+
+Acked-by: Sudeep Holla <sudeep.holla@arm.com>
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
