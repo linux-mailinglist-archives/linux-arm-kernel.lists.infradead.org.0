@@ -2,61 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC4E71D4C91
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:28:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 04F071D4C9A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:30:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5f7vLH66fw1OEPmYT0iDinaU+nrMRwFxMWL19sw2rOo=; b=pjZb1IcH4wBX7r
-	2Dfy9yBjoIx4mT9yBrvQFvcdSNLaiNO1TZLGYPYlQZaKDw8V11njlk7LEHVRNJ8ZpRM/pxaZDDJo5
-	Ib+Boqn9PRvmCTvkfWKX4K7uvGka8oyIiMQZXYXQeUViUnlY2AFeE/m3qzH577QkhfHSvDnZCg2CY
-	XFvbfFRoHqJZpSX3V5Ziw62WEiJQvj71iveyqv6K+b1Y4Q5wmfTCgyqxjyevYB7bZBp6I63B8KUKP
-	4ZeF0EcTzgmU4PAq9Rd4YJf7C11HATAseesC3aJIcYhKj0uDQHvlMaaLfYMlMzJUl4b4/HJlHVRd6
-	QWIoD0YamBIonS/x/69Q==;
+	List-Owner; bh=sW6oOPr6N+btJThipKst7cIcMgKmHNd9loQt9S9sWOI=; b=pcxdHcdvhwKQDl
+	duzWbvP21grPKuHaaDtmMhEySbAoBWwLMCe4Ln+/mh5QZlXrd2yOWirKEE+XzYdEw05XWv7PqUTGR
+	AJOer0hw0M9JCD9ALlfNSukFaul/Gaobcg9EUzukP0CjvLDJ+Bi9xSZ6O5eJmCa6sVcq6lYnEsQQG
+	swg68DjtyXKUmkpKUAiAt3n7WIZ3nbHziqxs/mvZIJ7vWH5MBJ6FesA1xcRK3MlMFQC8EtFC24f8n
+	pmq5KzqdwSB8+GMC9iQ9SiAzVtpxAd8xs6CkeorNm2wybUlfyCjX5158xcpi/hMrOXaDBtUtm6mR/
+	cMaEpowgooCiEZKNqVNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYVR-0005pW-U0; Fri, 15 May 2020 11:27:57 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYVJ-0005oz-BO
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:27:50 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56834D6E;
- Fri, 15 May 2020 04:27:48 -0700 (PDT)
-Received: from gaia (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AD4733F305;
- Fri, 15 May 2020 04:27:46 -0700 (PDT)
-Date: Fri, 15 May 2020 12:27:40 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Szabolcs Nagy <szabolcs.nagy@arm.com>
-Subject: Re: [PATCH v3 23/23] arm64: mte: Add Memory Tagging Extension
- documentation
-Message-ID: <20200515112740.GB22393@gaia>
-References: <20200421142603.3894-1-catalin.marinas@arm.com>
- <20200421142603.3894-24-catalin.marinas@arm.com>
- <20200429164705.GF30377@arm.com> <20200430162316.GJ2717@gaia>
- <20200504164617.GK30377@arm.com> <20200511164018.GC19176@gaia>
- <20200513154845.GT21779@arm.com> <20200514113722.GA1907@gaia>
- <20200515103839.GA22393@gaia> <20200515111359.GC27289@arm.com>
+	id 1jZYXl-0000IF-9x; Fri, 15 May 2020 11:30:21 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZYXV-0007HJ-KZ
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:30:09 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id o26so988513vsr.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 04:30:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=8ktIgdpUDXYhr4tMpXpfk9fbt7teNm/a/V8MPQX7Saw=;
+ b=xIJ+hGvMWZuCj0lEQr7vds9EGl/GHMtEkdLIVHntzKQB8496/Bha7rPIecLIhwPb5t
+ m2mSTGasqwnlpazDhvN9sXnlah6pTH59aYEsHJK1GW9/fTd/5YjxJcj4LW3K120wd8v9
+ h1Jq6eTt4OgYYiGzWzEBxhkD8GkbomSpd560cc44QKUQnufiCtIml1iSoMnc7jtYfh8j
+ /U2vHQvnTIB5/vSG9aYLwsQiGywN6pvQiqKVPk/Lk75As7jsgqhEaQIOKrQNMchhIdrW
+ seEMvXV2QmYcReh7TgBdaR6PDUic47/Cl/a4e8flA6hT6XLOA7qjGOtbhRhpp/rYUgVp
+ ZoQw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=8ktIgdpUDXYhr4tMpXpfk9fbt7teNm/a/V8MPQX7Saw=;
+ b=MDqmfmq75r87fwlrTdxAbbz+jegnBTFZdjQ0N1OzruMWv6u/9vgBTAQq42YJPr+mMa
+ /cfG/na6HlL+h+nEFZS7nc3k/fU3Fj7GRxwsleNBO5QuPpDJc0LM4ua7rU9cQZtRBUPq
+ 1giVNhaXCPBN5/yXLR1lq8MUbYSVn+7q8zqUQKDf58/fo+TRm5KGVTdqGXKlbZ/7dEYq
+ Jel+9RY2g366L8jn63DIAxENZnqw4zb0N3YnK55m7HdQoVWoNzArX7NL5EtgcHY/Ht0Z
+ PwLNqKdFqMEvJ3cikg+5D/gw/ziK0K6+RogkNdTT4TkxADiVhxC74vp3sQt63c9pv1cL
+ uxhQ==
+X-Gm-Message-State: AOAM530EC8zPi43I2C4KDBFj7K5xhouraLx9ejlKuXVnf9b7vX/UNunN
+ OUDHdU4/2slBiLnKd/rlMmRFOhWiwxirddezVtuLow==
+X-Google-Smtp-Source: ABdhPJy4kGs+w/U4e8EWAdRJDCldcb3ykamHfM9EW2/KxvxKbn2MgVc1eDswBiEaeH6vj6BYrIipGHHI3IorCHhMZTk=
+X-Received: by 2002:a05:6102:242:: with SMTP id
+ a2mr2041840vsq.200.1589542204535; 
+ Fri, 15 May 2020 04:30:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515111359.GC27289@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20200511133346.21706-1-ulf.hansson@linaro.org>
+ <20200514142015.GA23401@bogus>
+ <CAPDyKFoVo8L7eiGdEVNYR2DY7cszDuLkmX8O_SfyUKh73pbpMQ@mail.gmail.com>
+ <20200514172816.GA42669@bogus>
+ <CAPDyKFrdrOnxFHaAR=cmMi2VfSudyHdjZ7vRZKhTQtepdkiXug@mail.gmail.com>
+ <20200515102255.GA25927@bogus>
+In-Reply-To: <20200515102255.GA25927@bogus>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Fri, 15 May 2020 13:29:27 +0200
+Message-ID: <CAPDyKFrsfLExZHvNrJgqsJj8TTzj9jg5v=jEowBTdi26uyjZXg@mail.gmail.com>
+Subject: Re: [PATCH] cpuidle: psci: Fixup execution order when entering a
+ domain idle state
+To: Sudeep Holla <sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_042749_433030_639EE72C 
-X-CRM114-Status: GOOD (  22.09  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_043005_701858_54C381EC 
+X-CRM114-Status: GOOD (  12.81  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,68 +97,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Richard Earnshaw <Richard.Earnshaw@arm.com>,
- nd@arm.com, Will Deacon <will@kernel.org>,
- Andrey Konovalov <andreyknvl@google.com>,
- Kevin Brodsky <kevin.brodsky@arm.com>, linux-mm@kvack.org,
- Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Peter Collingbourne <pcc@google.com>, Dave Martin <Dave.Martin@arm.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>,
+ Linux PM <linux-pm@vger.kernel.org>, Stephen Boyd <sboyd@kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ "Rafael J . Wysocki" <rjw@rjwysocki.net>, Lina Iyer <ilina@codeaurora.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 12:14:00PM +0100, Szabolcs Nagy wrote:
-> The 05/15/2020 11:38, Catalin Marinas wrote:
-> > On Thu, May 14, 2020 at 12:37:22PM +0100, Catalin Marinas wrote:
-> > > We have two options with suboptions:
-> > > 
-> > > 1. prctl() gets an exclude mask with 0xffff illegal even though the
-> > >    hardware accepts it:
-> > >    a) default exclude mask 0, allowing all tags to be generated by IRG
-> > >    b) default exclude mask of 0xfffe so that only tag 0 is generated
-> > > 
-> > > 2. prctl() gets an include mask with 0 illegal:
-> > >    a) default include mask is 0xffff, allowing all tags to be generated
-> > >    b) default include mask 0f 0x0001 so that only tag 0 is generated
-> > > 
-> > > We currently have (2) with mask 0 but could be changed to (2.b). If we
-> > > are to follow the hardware description (which makes more sense to me but
-> > > I don't write the C library), (1.a) is the most appropriate.
-> > 
-> > Thinking some more about this, as we are to expose the GCR_EL1.Excl via
-> > a ptrace interface as a regset, it makes more sense to move back to an
-> > exclude mask here with default 0. That would be option 1.a above.
-> 
-> i think the libc has to do a prctl call to set
-> mte up and at that point it will use whatever
-> arguments necessary, so 1.a should work (just
-> like the other options).
-> 
-> likely libc will disable 0 for irg and possibly
-> one or two other fixed colors (which will have
-> specific use).
-> 
-> the difference i see between 1 vs 2 is forward
-> compatibility if the architecture changes (e.g.
-> adding more tag bits) but then likely new prctl
-> flag will be needed for handling that so it's
-> probably not an issue.
+On Fri, 15 May 2020 at 12:23, Sudeep Holla <sudeep.holla@arm.com> wrote:
+>
+> On Thu, May 14, 2020 at 09:11:50PM +0200, Ulf Hansson wrote:
+> >
+> > No worries, thanks for reviewing.
+> >
+>
+> You are welcome.
+>
+> > That said, are you fine with Rafel queuing this then?
+> >
+>
+> I am fine with that. However I told if you need fixes tags as there are
+> no users of the notification yet in the kernel. Though this is trivial,
+> but do we need this backported to stable kernel. I don't have strong
+> opinion and leave it to you and Rafael.
 
-Thanks Szabolcs. While we are at this, no-one so far asked for the
-GCR_EL1.RRND to be exposed to user (and this implies RGSR_EL1.SEED).
-Since RRND=1 guarantees a distribution "no worse" than that of RRND=0, I
-thought there isn't much point in exposing this configuration to the
-user. The only advantage of RRND=0 I see is that the kernel can change
-the seed randomly but, with only 4 bits per tag, it really doesn't
-matter much.
+I wanted to add the fixes tag, to make it obvious that there is an
+error being fixed.
 
-Anyway, mentioning it here in case anyone is surprised later about the
-lack of RRND configurability.
+On the other hand, no need to tag this for stable, nor to need to send
+it as fix for 5.7,
 
--- 
-Catalin
+>
+> Acked-by: Sudeep Holla <sudeep.holla@arm.com>
+
+Thanks!
+
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
