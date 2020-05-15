@@ -2,46 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7EE81D5775
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:20:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99E0F1D5776
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:20:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XKmFMDd5vsfq5kDZhfiXtnOGv4GkF+4jhH0Uc8fvA/U=; b=H9buMpO15zih0G
-	wn73oY/q5cy9Sc27mxK1z2EjSkfnWX841bF0hFrNJbM8/SdUyEWc6puU+OOE+h8UDHmpfCrOd94kM
-	Lm4NdSRpMVMq53W1KECJc/jLA0aRJVzYvc3ee49NyC9Usi1IbKTjLrAFn1rimkb5XpzeuB051L1u5
-	6unoWKZIqeAhj9FMGgoY+3XCHoe85U5UfZZy0oi3QdUXoZ18ialzc/tYUyTuLcNS8iJz9Z6zWAkIx
-	ogd6g4aXblMKrP2QTMHZNKUW4jT+HIy22GQL2pmGGdq2qIQ9m8vxJxR8h/HbNZYnadBg82hrUTbkF
-	eDiDaIClJcAdwIi0IzXw==;
+	List-Owner; bh=A3I11r4sL2CuBu9ZhoqlfCtI4Bkfw885jOssqEiSi3M=; b=bvgkNlxstxwmeU
+	HoU5tb6AufqaGbyLu4x7GKnBkULmRcBSgXSo1Nizfqe+NXvx04UtVym9MCOEEzpS4HUGF8whFxsrx
+	2HTMiHs1TNQnpkw7aEdNQXp5xsfntTMiAYKECHSTAiivfQ2W+YaVffoe6rp66b5FazOFrkJNYlVUm
+	YBBsk461qpNJ3qPdmKcHT4ZrLASF42L36CFgEZSf95R5EQ6GqvN6dwQfBY+6xz5sIIqL2lOlqwRZA
+	Py68AMLGjYdRutXSNn4Ig8W+0y9QoXnp/K/XCI14coo1aYnHvqLpft0rDRzSs6R2O8DdBMM5CDq9p
+	fyq0SwYIDtX1U1TcLz5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZe0a-0005MT-59; Fri, 15 May 2020 17:20:28 +0000
+	id 1jZe0n-00084g-Mk; Fri, 15 May 2020 17:20:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZdwy-0002Ja-Gb
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:16:47 +0000
+ id 1jZdx0-00025U-H9
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:16:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3FA261063;
- Fri, 15 May 2020 10:16:44 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 248401042;
+ Fri, 15 May 2020 10:16:46 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id A0FB03F305;
- Fri, 15 May 2020 10:16:42 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 771A23F305;
+ Fri, 15 May 2020 10:16:44 -0700 (PDT)
 From: Catalin Marinas <catalin.marinas@arm.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v4 11/26] arm64: mte: Add PROT_MTE support to mmap() and
- mprotect()
-Date: Fri, 15 May 2020 18:15:57 +0100
-Message-Id: <20200515171612.1020-12-catalin.marinas@arm.com>
+Subject: [PATCH v4 12/26] mm: Introduce arch_validate_flags()
+Date: Fri, 15 May 2020 18:15:58 +0100
+Message-Id: <20200515171612.1020-13-catalin.marinas@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20200515171612.1020-1-catalin.marinas@arm.com>
 References: <20200515171612.1020-1-catalin.marinas@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_101644_729200_9F39DE23 
-X-CRM114-Status: GOOD (  19.68  )
+X-CRM114-CacheID: sfid-20200515_101646_855203_CA286090 
+X-CRM114-Status: GOOD (  11.95  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -65,246 +64,96 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: linux-arch@vger.kernel.org, Szabolcs Nagy <szabolcs.nagy@arm.com>,
  Andrey Konovalov <andreyknvl@google.com>,
  Kevin Brodsky <kevin.brodsky@arm.com>, Peter Collingbourne <pcc@google.com>,
- linux-mm@kvack.org, Vincenzo Frascino <vincenzo.frascino@arm.com>,
- Will Deacon <will@kernel.org>, Dave P Martin <Dave.Martin@arm.com>
+ linux-mm@kvack.org, Andrew Morton <akpm@linux-foundation.org>,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ Dave P Martin <Dave.Martin@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-To enable tagging on a memory range, the user must explicitly opt in via
-a new PROT_MTE flag passed to mmap() or mprotect(). Since this is a new
-memory type in the AttrIndx field of a pte, simplify the or'ing of these
-bits over the protection_map[] attributes by making MT_NORMAL index 0.
+Similarly to arch_validate_prot() called from do_mprotect_pkey(), an
+architecture may need to sanity-check the new vm_flags.
 
-There are two conditions for arch_vm_get_page_prot() to return the
-MT_NORMAL_TAGGED memory type: (1) the user requested it via PROT_MTE,
-registered as VM_MTE in the vm_flags, and (2) the vma supports MTE,
-decided during the mmap() call (only) and registered as VM_MTE_ALLOWED.
+Define a dummy function always returning true. In addition to
+do_mprotect_pkey(), also invoke it from mmap_region() prior to updating
+vma->vm_page_prot to allow the architecture code to veto potentially
+inconsistent vm_flags.
 
-arch_calc_vm_prot_bits() is responsible for registering the user request
-as VM_MTE. The newly introduced arch_calc_vm_flag_bits() sets
-VM_MTE_ALLOWED if the mapping is MAP_ANONYMOUS. An MTE-capable
-filesystem (RAM-based) may be able to set VM_MTE_ALLOWED during its
-mmap() file ops call.
-
-In addition, update VM_DATA_DEFAULT_FLAGS to allow mprotect(PROT_MTE) on
-stack or brk area.
-
-The Linux mmap() syscall currently ignores unknown PROT_* flags. In the
-presence of MTE, an mmap(PROT_MTE) on a file which does not support MTE
-will not report an error and the memory will not be mapped as Normal
-Tagged. For consistency, mprotect(PROT_MTE) will not report an error
-either if the memory range does not support MTE. Two subsequent patches
-in the series will propose tightening of this behaviour.
-
-Co-developed-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Will Deacon <will@kernel.org>
+Cc: Andrew Morton <akpm@linux-foundation.org>
 ---
 
 Notes:
     v2:
-    - Add VM_MTE_ALLOWED to show_smap_vma_flags().
+    - Some comments updated.
 
- arch/arm64/include/asm/memory.h    | 18 +++++----
- arch/arm64/include/asm/mman.h      | 64 ++++++++++++++++++++++++++++++
- arch/arm64/include/asm/page.h      |  2 +-
- arch/arm64/include/asm/pgtable.h   |  7 +++-
- arch/arm64/include/uapi/asm/mman.h | 14 +++++++
- fs/proc/task_mmu.c                 |  4 ++
- include/linux/mm.h                 |  8 ++++
- 7 files changed, 108 insertions(+), 9 deletions(-)
- create mode 100644 arch/arm64/include/asm/mman.h
- create mode 100644 arch/arm64/include/uapi/asm/mman.h
+ include/linux/mman.h | 13 +++++++++++++
+ mm/mmap.c            |  9 +++++++++
+ mm/mprotect.c        |  6 ++++++
+ 3 files changed, 28 insertions(+)
 
-diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
-index 472c77a68225..770535b7ca35 100644
---- a/arch/arm64/include/asm/memory.h
-+++ b/arch/arm64/include/asm/memory.h
-@@ -129,14 +129,18 @@
+diff --git a/include/linux/mman.h b/include/linux/mman.h
+index 15c1162b9d65..09dd414b81b6 100644
+--- a/include/linux/mman.h
++++ b/include/linux/mman.h
+@@ -103,6 +103,19 @@ static inline bool arch_validate_prot(unsigned long prot, unsigned long addr)
+ #define arch_validate_prot arch_validate_prot
+ #endif
  
- /*
-  * Memory types available.
++#ifndef arch_validate_flags
++/*
++ * This is called from mmap() and mprotect() with the updated vma->vm_flags.
 + *
-+ * IMPORTANT: MT_NORMAL must be index 0 since vm_get_page_prot() may 'or' in
-+ *	      the MT_NORMAL_TAGGED memory type for PROT_MTE mappings. Note
-+ *	      that protection_map[] only contains MT_NORMAL attributes.
-  */
--#define MT_DEVICE_nGnRnE	0
--#define MT_DEVICE_nGnRE		1
--#define MT_DEVICE_GRE		2
--#define MT_NORMAL_NC		3
--#define MT_NORMAL		4
--#define MT_NORMAL_WT		5
--#define MT_NORMAL_TAGGED	6
-+#define MT_NORMAL		0
-+#define MT_NORMAL_TAGGED	1
-+#define MT_NORMAL_NC		2
-+#define MT_NORMAL_WT		3
-+#define MT_DEVICE_nGnRnE	4
-+#define MT_DEVICE_nGnRE		5
-+#define MT_DEVICE_GRE		6
- 
++ * Returns true if the VM_* flags are valid.
++ */
++static inline bool arch_validate_flags(unsigned long flags)
++{
++	return true;
++}
++#define arch_validate_flags arch_validate_flags
++#endif
++
  /*
-  * Memory types for Stage-2 translation
-diff --git a/arch/arm64/include/asm/mman.h b/arch/arm64/include/asm/mman.h
-new file mode 100644
-index 000000000000..c77a23869223
---- /dev/null
-+++ b/arch/arm64/include/asm/mman.h
-@@ -0,0 +1,64 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef __ASM_MMAN_H__
-+#define __ASM_MMAN_H__
-+
-+#include <uapi/asm/mman.h>
-+
-+/*
-+ * There are two conditions required for returning a Normal Tagged memory type
-+ * in arch_vm_get_page_prot(): (1) the user requested it via PROT_MTE passed
-+ * to mmap() or mprotect() and (2) the corresponding vma supports MTE. We
-+ * register (1) as VM_MTE in the vma->vm_flags and (2) as VM_MTE_ALLOWED. Note
-+ * that the latter can only be set during the mmap() call since mprotect()
-+ * does not accept MAP_* flags.
-+ */
-+static inline unsigned long arch_calc_vm_prot_bits(unsigned long prot,
-+						   unsigned long pkey)
-+{
-+	if (!system_supports_mte())
-+		return 0;
-+
-+	if (prot & PROT_MTE)
-+		return VM_MTE;
-+
-+	return 0;
-+}
-+#define arch_calc_vm_prot_bits arch_calc_vm_prot_bits
-+
-+static inline unsigned long arch_calc_vm_flag_bits(unsigned long flags)
-+{
-+	if (!system_supports_mte())
-+		return 0;
-+
-+	/*
-+	 * Only allow MTE on anonymous mappings as these are guaranteed to be
-+	 * backed by tags-capable memory. The vm_flags may be overridden by a
-+	 * filesystem supporting MTE (RAM-based).
-+	 */
-+	if (flags & MAP_ANONYMOUS)
-+		return VM_MTE_ALLOWED;
-+
-+	return 0;
-+}
-+#define arch_calc_vm_flag_bits arch_calc_vm_flag_bits
-+
-+static inline pgprot_t arch_vm_get_page_prot(unsigned long vm_flags)
-+{
-+	return (vm_flags & VM_MTE) && (vm_flags & VM_MTE_ALLOWED) ?
-+		__pgprot(PTE_ATTRINDX(MT_NORMAL_TAGGED)) :
-+		__pgprot(0);
-+}
-+#define arch_vm_get_page_prot arch_vm_get_page_prot
-+
-+static inline bool arch_validate_prot(unsigned long prot, unsigned long addr)
-+{
-+	unsigned long supported = PROT_READ | PROT_WRITE | PROT_EXEC | PROT_SEM;
-+
-+	if (system_supports_mte())
-+		supported |= PROT_MTE;
-+
-+	return (prot & ~supported) == 0;
-+}
-+#define arch_validate_prot arch_validate_prot
-+
-+#endif /* !__ASM_MMAN_H__ */
-diff --git a/arch/arm64/include/asm/page.h b/arch/arm64/include/asm/page.h
-index c01b52add377..673033e0393b 100644
---- a/arch/arm64/include/asm/page.h
-+++ b/arch/arm64/include/asm/page.h
-@@ -36,7 +36,7 @@ extern int pfn_valid(unsigned long);
+  * Optimisation macro.  It is equivalent to:
+  *      (x & bit1) ? bit2 : 0
+diff --git a/mm/mmap.c b/mm/mmap.c
+index f609e9ec4a25..d5fc93c2072e 100644
+--- a/mm/mmap.c
++++ b/mm/mmap.c
+@@ -1792,6 +1792,15 @@ unsigned long mmap_region(struct file *file, unsigned long addr,
+ 		vma_set_anonymous(vma);
+ 	}
  
- #endif /* !__ASSEMBLY__ */
- 
--#define VM_DATA_DEFAULT_FLAGS	VM_DATA_FLAGS_TSK_EXEC
-+#define VM_DATA_DEFAULT_FLAGS	(VM_DATA_FLAGS_TSK_EXEC | VM_MTE_ALLOWED)
- 
- #include <asm-generic/getorder.h>
- 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index 647a3f0c7874..f2cd59b01b27 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -665,8 +665,13 @@ static inline phys_addr_t pgd_page_paddr(pgd_t pgd)
- 
- static inline pte_t pte_modify(pte_t pte, pgprot_t newprot)
- {
-+	/*
-+	 * Normal and Normal-Tagged are two different memory types and indices
-+	 * in MAIR_EL1. The mask below has to include PTE_ATTRINDX_MASK.
-+	 */
- 	const pteval_t mask = PTE_USER | PTE_PXN | PTE_UXN | PTE_RDONLY |
--			      PTE_PROT_NONE | PTE_VALID | PTE_WRITE;
-+			      PTE_PROT_NONE | PTE_VALID | PTE_WRITE |
-+			      PTE_ATTRINDX_MASK;
- 	/* preserve the hardware dirty information */
- 	if (pte_hw_dirty(pte))
- 		pte = pte_mkdirty(pte);
-diff --git a/arch/arm64/include/uapi/asm/mman.h b/arch/arm64/include/uapi/asm/mman.h
-new file mode 100644
-index 000000000000..d7677ee84878
---- /dev/null
-+++ b/arch/arm64/include/uapi/asm/mman.h
-@@ -0,0 +1,14 @@
-+/* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
-+#ifndef _UAPI__ASM_MMAN_H
-+#define _UAPI__ASM_MMAN_H
++	/* Allow architectures to sanity-check the vm_flags */
++	if (!arch_validate_flags(vma->vm_flags)) {
++		error = -EINVAL;
++		if (file)
++			goto unmap_and_free_vma;
++		else
++			goto free_vma;
++	}
 +
-+#include <asm-generic/mman.h>
-+
-+/*
-+ * The generic mman.h file reserves 0x10 and 0x20 for arch-specific PROT_*
-+ * flags.
-+ */
-+/* 0x10 reserved for PROT_BTI */
-+#define PROT_MTE	 0x20		/* Normal Tagged mapping */
-+
-+#endif /* !_UAPI__ASM_MMAN_H */
-diff --git a/fs/proc/task_mmu.c b/fs/proc/task_mmu.c
-index 8d382d4ec067..2f26112ebb77 100644
---- a/fs/proc/task_mmu.c
-+++ b/fs/proc/task_mmu.c
-@@ -647,6 +647,10 @@ static void show_smap_vma_flags(struct seq_file *m, struct vm_area_struct *vma)
- 		[ilog2(VM_MERGEABLE)]	= "mg",
- 		[ilog2(VM_UFFD_MISSING)]= "um",
- 		[ilog2(VM_UFFD_WP)]	= "uw",
-+#ifdef CONFIG_ARM64_MTE
-+		[ilog2(VM_MTE)]		= "mt",
-+		[ilog2(VM_MTE_ALLOWED)]	= "",
-+#endif
- #ifdef CONFIG_ARCH_HAS_PKEYS
- 		/* These come out via ProtectionKey: */
- 		[ilog2(VM_PKEY_BIT0)]	= "",
-diff --git a/include/linux/mm.h b/include/linux/mm.h
-index 5a323422d783..132ca88e407d 100644
---- a/include/linux/mm.h
-+++ b/include/linux/mm.h
-@@ -336,6 +336,14 @@ extern unsigned int kobjsize(const void *objp);
- # define VM_MPX		VM_NONE
- #endif
+ 	vma_link(mm, vma, prev, rb_link, rb_parent);
+ 	/* Once vma denies write, undo our temporary denial count */
+ 	if (file) {
+diff --git a/mm/mprotect.c b/mm/mprotect.c
+index 494192ca954b..04b1d2cf0e74 100644
+--- a/mm/mprotect.c
++++ b/mm/mprotect.c
+@@ -603,6 +603,12 @@ static int do_mprotect_pkey(unsigned long start, size_t len,
+ 			goto out;
+ 		}
  
-+#if defined(CONFIG_ARM64_MTE)
-+# define VM_MTE		VM_HIGH_ARCH_0	/* Use Tagged memory for access control */
-+# define VM_MTE_ALLOWED	VM_HIGH_ARCH_1	/* Tagged memory permitted */
-+#else
-+# define VM_MTE		VM_NONE
-+# define VM_MTE_ALLOWED	VM_NONE
-+#endif
++		/* Allow architectures to sanity-check the new flags */
++		if (!arch_validate_flags(newflags)) {
++			error = -EINVAL;
++			goto out;
++		}
 +
- #ifndef VM_GROWSUP
- # define VM_GROWSUP	VM_NONE
- #endif
+ 		error = security_file_mprotect(vma, reqprot, prot);
+ 		if (error)
+ 			goto out;
 
 _______________________________________________
 linux-arm-kernel mailing list
