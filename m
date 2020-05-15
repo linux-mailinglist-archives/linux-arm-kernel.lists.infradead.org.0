@@ -2,68 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF3B41D4839
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:32:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B7D811D48CB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:50:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hqSARRnBXv1NnWEfOza9PFtvaeu7UH8vWySTl96zcpg=; b=Gpe8PFdaKWwOK7
-	ut9ZOoYe6gbJkyqX8h50jQHgtP4EyPL4KGBFqaaf33r03H086iYh7ivzgVq6l+fYlHuX/SN8HguRZ
-	9aYaTEnyMKHB2vcPh+YxEUxCd1L5uJq/aGBr1i5ocaDN5VQVUkPflB6axQDCr6LL3GewnTQx5uak2
-	/l6HpjWdUJmQ062yVa/OG82ST6c2ZrhblBZ3DxWrCQ/l6QHHTtcofNqIiT6OLzDtW3hTzHxGD+6SN
-	7X5FNRKShNPKO0TMrq8tTXbBzXQRnZ9gZikKeb7o24rLpa3vSF+QtVB++yD6s2rL/KL5wzyHFo2Ks
-	qMiPaflWRx5KBReBZmow==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=t8KIaSVVfjT2sbvYNo23lRiawcARvSvdJEG5vooTSm8=; b=CWG
+	SXXJ0IjMU38E6a86gWX0LBqJY6TTufQhsoS/o+pz9H3ANumXXw0pZLvKSJOXbIGGfkSg30wrBuhay
+	Hq0K9vZnI26gnVKy7pWLN6nNzGLpyjlXnqEOt60pm1rRhZ+KDWp76AWanE3OF4/PmRVZHY+s9Fvhz
+	CgHPvjzMBuL/pOsQnUh6QNck1g2VLFx1KPnS4pThN2SCls5zFFKARTk+e7pv0sS/UliOHgdCo0WtD
+	Jas2rrnDMyNm/uugirkZtXPZ5Ib3pDf0bicd3fp5WdOdrGqX7pk9OBrkweY4LOZs7gaWjdZ1XVG4f
+	uX7cbgWkLzzfqDZ3hlkLD5jcfFLy82w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZVlu-0007uv-C0; Fri, 15 May 2020 08:32:46 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::1])
+	id 1jZW37-0004J4-SQ; Fri, 15 May 2020 08:50:33 +0000
+Received: from mail-pj1-x1044.google.com ([2607:f8b0:4864:20::1044])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZVlh-0007ra-5y
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:32:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589531551;
- s=strato-dkim-0002; d=chronox.de;
- h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=cHEQOWUyIIldwmU2G5ztyzURhkG246vmV36B4A8PLNg=;
- b=kENrgC7m/Kpgq4j8ANtKS+MN4QHd1X5Fd+CUkBilHO5KjkgDbUN5te1VZhEnV0W4Sa
- yBYncnBkSM30eVmV5h4J9lBl16fb55ACLL7P9LPqa/syAmW8WmkYEWca9dDnexJTIlpt
- O+G97y8cmWa0iHCtqxpNVktz+CFuoeewTNEwrW19t4KNBnyNd4PCComcE7iCODj7JlPX
- Kq7H8xb9NFElBwtW2QsSSgQ9/uWceuG6PEUg/0LkmkgxyCnNvS2ovI4WUz82QSyFnWQ8
- vyafwZI1y3kBg+BM7+iiGJMzypUJctwiHTRpd7J/iw3IczyQfjR+nFcclLr/G4EORekK
- 4iPA==
-X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPaJfSc9C1S"
-X-RZG-CLASS-ID: mo00
-Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
- with ESMTPSA id u08bf3w4F8WN0ZL
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
- (Client did not present a certificate);
- Fri, 15 May 2020 10:32:23 +0200 (CEST)
-From: Stephan Mueller <smueller@chronox.de>
-To: Lukasz Stelmach <l.stelmach@samsung.com>
-Subject: Re: [PATCH 1/2] hwrng: iproc-rng200 - Set the quality value
-Date: Fri, 15 May 2020 10:32:22 +0200
-Message-ID: <2080864.23lDWg4Bvs@tauon.chronox.de>
-In-Reply-To: <dleftjtv0i88ji.fsf%l.stelmach@samsung.com>
-References: <4493123.C11H8YMYNy@tauon.chronox.de>
- <CGME20200514221852eucas1p2bea169d0b4467b0ec9e195c6ac58a08a@eucas1p2.samsung.com>
- <dleftjtv0i88ji.fsf%l.stelmach@samsung.com>
-MIME-Version: 1.0
+ id 1jZW2t-0004HB-Qy
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:50:27 +0000
+Received: by mail-pj1-x1044.google.com with SMTP id n15so665193pjt.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 01:50:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=35pGnu9GnHmW69MSaocb29vu4F27l0KIarsDVNEAZrs=;
+ b=oEMiYGL5xYdSwUbbROPHSSvspFlPc7bqNZ/JbC0U0BjLPi+CMfZWBKMmThyestpXFp
+ x3OytjiMX/9wG0pzJH2s+M3Eerx1ccG0LqK0aY4UhOc0NMA/Esppby1tXFNPqb0tfoDc
+ g83+G9OLah3vQuHZ5S4BHPEW71Or2e9hkPT7EXsdHBY08tJtyfAKM8IQnyN9XN5vwkrU
+ GBh6YbRWJzXzJQBYCeJ/KI+leuQqH7/FWAjSorIRgPRbBkUdnKRjzcGjxGb8ejEJLmzq
+ DkTTxH427s/24LMlD+Vd2S/4gY41q0UP954G7eQQ/PJhnF+GM9/VXFEPnBNHEbqh1V+d
+ XkEQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=35pGnu9GnHmW69MSaocb29vu4F27l0KIarsDVNEAZrs=;
+ b=QG3Yu9oYP+b5RnkA1s1NL/vk/dLv+5BFY/b50Yjy3S5AB9dMk9IjhKsiCpcIszk21s
+ uL6rg7AzZ6s3UDpWJ2+NgK20AG1puQ4eextjhzjU3FhoEswCzzayB2pMBVGFI3f9OhA3
+ /jDSDfmj4DNqGgNOwkiKS9YOnCpc5pDN3j9h4ynvqF30LGTTr6S63UNd1CJL+mKM0aIb
+ YPbinrBRYXUDLKUdTcczvoPmu2FCqGzU5VnDLFAUJlFwRevuGV7No04S77NkOLZlHQAz
+ FuqXWdwldGaNmizXKtZ9ZUNDjGiKpdgiuYLdH7u9NUHGy4fYSc922fcS0YbtQRFNzb3m
+ jK+Q==
+X-Gm-Message-State: AOAM53339vS/GuIELJKNU08IpiBkO53JdAo10ot+kBqF4OGQiMuMsQxf
+ ao7IjDa/E4I/pV2W0ZcKk6Aj2apFUIM=
+X-Google-Smtp-Source: ABdhPJzy3ACv3e268Hy3wb5kEp8Qj/ZA+t0tBYNukPc1d1rylTyF3iRyM7SUV+VraCazUBEIkJmPsQ==
+X-Received: by 2002:a17:90a:32a8:: with SMTP id
+ l37mr2399059pjb.13.1589532618502; 
+ Fri, 15 May 2020 01:50:18 -0700 (PDT)
+Received: from localhost.localdomain ([117.252.68.136])
+ by smtp.gmail.com with ESMTPSA id j5sm1364333pfa.37.2020.05.15.01.50.10
+ (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 15 May 2020 01:50:17 -0700 (PDT)
+From: Sumit Garg <sumit.garg@linaro.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [RFC] arm64: Enable perf events based hard lockup detector
+Date: Fri, 15 May 2020 14:19:53 +0530
+Message-Id: <1589532593-16428-1-git-send-email-sumit.garg@linaro.org>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_013233_814368_0192AEFE 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20200515_015021_247071_11C5A4AE 
+X-CRM114-Status: GOOD (  15.98  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5301:0:0:1 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:1044 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -82,50 +92,146 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Herbert Xu <herbert@gondor.apana.org.au>,
- Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com,
- Markus Elfring <elfring@users.sourceforge.net>,
- linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
+Cc: mark.rutland@arm.com, Sumit Garg <sumit.garg@linaro.org>,
+ daniel.thompson@linaro.org, peterz@infradead.org, catalin.marinas@arm.com,
+ jolsa@redhat.com, dianders@chromium.org, acme@kernel.org,
+ alexander.shishkin@linux.intel.com, mingo@redhat.com, namhyung@kernel.org,
+ tglx@linutronix.de, will@kernel.org, julien.thierry.kdev@gmail.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Am Freitag, 15. Mai 2020, 00:18:41 CEST schrieb Lukasz Stelmach:
+With the recent feature added to enable perf events to use pseudo NMIs
+as interrupts on platforms which support GICv3 or later, its now been
+possible to enable hard lockup detector (or NMI watchdog) on arm64
+platforms. So enable corresponding support.
 
-Hi Lukasz,
-> 
-> I am running tests using SP800-90B tools and the first issue I can see
-> is the warning that samples contain less than 1e6 bytes of data. I know
-> little about maths behind random number generators, but I have noticed
-> that the bigger chunk of data from an RNG I feed into either ent or ea_iid
-> the higher entropy they report. That is why I divided the data into 1024
-> bit chunks in the first place. To get worse results. With ea_iid they
-> get even worse (128 bytes of random data)
+One thing to note here is that normally lockup detector is initialized
+just after the early initcalls but PMU on arm64 comes up much later as
+device_initcall(). So we need to re-initialize lockup detection once
+PMU has been initialized.
 
-I read that you seem to just take the output data from the RNG. If this is 
-correct, I think we can stop right here. The output of an RNG is usually after 
-post-processing commonly provided by a cryptographic function.
+Signed-off-by: Sumit Garg <sumit.garg@linaro.org>
+---
 
-Thus, when processing the output of the RNG all what we measure here is the 
-quality of the cryptographic post-processing and not the entropy that may be 
-present in the data.
+This patch is dependent on perf NMI patch-set [1].
 
-What we need is to access the noise source and analyze this with the given 
-tool set. And yes, the analysis may require adjusting the data to a format 
-that can be consumed and analyzed by the statistical tests.
+[1] https://patchwork.kernel.org/cover/11047407/
 
-Ciao
-Stephan
+ arch/arm64/Kconfig             |  2 ++
+ arch/arm64/kernel/perf_event.c | 32 ++++++++++++++++++++++++++++++--
+ drivers/perf/arm_pmu.c         | 11 +++++++++++
+ include/linux/perf/arm_pmu.h   |  2 ++
+ 4 files changed, 45 insertions(+), 2 deletions(-)
 
+diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+index 40fb05d..36f75c2 100644
+--- a/arch/arm64/Kconfig
++++ b/arch/arm64/Kconfig
+@@ -160,6 +160,8 @@ config ARM64
+ 	select HAVE_NMI
+ 	select HAVE_PATA_PLATFORM
+ 	select HAVE_PERF_EVENTS
++	select HAVE_PERF_EVENTS_NMI if ARM64_PSEUDO_NMI
++	select HAVE_HARDLOCKUP_DETECTOR_PERF if PERF_EVENTS && HAVE_PERF_EVENTS_NMI
+ 	select HAVE_PERF_REGS
+ 	select HAVE_PERF_USER_STACK_DUMP
+ 	select HAVE_REGS_AND_STACK_ACCESS_API
+diff --git a/arch/arm64/kernel/perf_event.c b/arch/arm64/kernel/perf_event.c
+index 3ad5c8f..df57360 100644
+--- a/arch/arm64/kernel/perf_event.c
++++ b/arch/arm64/kernel/perf_event.c
+@@ -20,6 +20,8 @@
+ #include <linux/perf/arm_pmu.h>
+ #include <linux/platform_device.h>
+ #include <linux/smp.h>
++#include <linux/nmi.h>
++#include <linux/cpufreq.h>
+ 
+ /* ARMv8 Cortex-A53 specific event types. */
+ #define ARMV8_A53_PERFCTR_PREF_LINEFILL				0xC2
+@@ -1190,10 +1192,21 @@ static struct platform_driver armv8_pmu_driver = {
+ 
+ static int __init armv8_pmu_driver_init(void)
+ {
++	int ret;
++
+ 	if (acpi_disabled)
+-		return platform_driver_register(&armv8_pmu_driver);
++		ret = platform_driver_register(&armv8_pmu_driver);
+ 	else
+-		return arm_pmu_acpi_probe(armv8_pmuv3_init);
++		ret = arm_pmu_acpi_probe(armv8_pmuv3_init);
++
++	/*
++	 * Try to re-initialize lockup detector after PMU init in
++	 * case PMU events are triggered via NMIs.
++	 */
++	if (arm_pmu_irq_is_nmi())
++		lockup_detector_init();
++
++	return ret;
+ }
+ device_initcall(armv8_pmu_driver_init)
+ 
+@@ -1225,3 +1238,18 @@ void arch_perf_update_userpage(struct perf_event *event,
+ 	userpg->time_shift = (u16)shift;
+ 	userpg->time_offset = -now;
+ }
++
++#ifdef CONFIG_HARDLOCKUP_DETECTOR_PERF
++#define SAFE_MAX_CPU_FREQ	4000000000UL // 4 GHz
++u64 hw_nmi_get_sample_period(int watchdog_thresh)
++{
++	unsigned int cpu = smp_processor_id();
++	unsigned int max_cpu_freq;
++
++	max_cpu_freq = cpufreq_get_hw_max_freq(cpu);
++	if (max_cpu_freq)
++		return (u64)max_cpu_freq * 1000 * watchdog_thresh;
++	else
++		return (u64)SAFE_MAX_CPU_FREQ * watchdog_thresh;
++}
++#endif
+diff --git a/drivers/perf/arm_pmu.c b/drivers/perf/arm_pmu.c
+index f96cfc4..691dfc9 100644
+--- a/drivers/perf/arm_pmu.c
++++ b/drivers/perf/arm_pmu.c
+@@ -718,6 +718,17 @@ static int armpmu_get_cpu_irq(struct arm_pmu *pmu, int cpu)
+ 	return per_cpu(hw_events->irq, cpu);
+ }
+ 
++bool arm_pmu_irq_is_nmi(void)
++{
++	const struct pmu_irq_ops *irq_ops;
++
++	irq_ops = per_cpu(cpu_irq_ops, smp_processor_id());
++	if (irq_ops == &pmunmi_ops || irq_ops == &percpu_pmunmi_ops)
++		return true;
++	else
++		return false;
++}
++
+ /*
+  * PMU hardware loses all context when a CPU goes offline.
+  * When a CPU is hotplugged back in, since some hardware registers are
+diff --git a/include/linux/perf/arm_pmu.h b/include/linux/perf/arm_pmu.h
+index d9b8b76..a71f029 100644
+--- a/include/linux/perf/arm_pmu.h
++++ b/include/linux/perf/arm_pmu.h
+@@ -155,6 +155,8 @@ int arm_pmu_acpi_probe(armpmu_init_fn init_fn);
+ static inline int arm_pmu_acpi_probe(armpmu_init_fn init_fn) { return 0; }
+ #endif
+ 
++bool arm_pmu_irq_is_nmi(void);
++
+ /* Internal functions only for core arm_pmu code */
+ struct arm_pmu *armpmu_alloc(void);
+ struct arm_pmu *armpmu_alloc_atomic(void);
+-- 
+2.7.4
 
 
 _______________________________________________
