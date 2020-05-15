@@ -2,135 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80D8F1D4CF9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:48:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9CFD31D4D0B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:50:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=V0B2XSPA78WEyPU6U9WAo69XjruNMFKq4FlffbGHNHc=; b=d0KtGMH86x6u4Q
-	rNfeyJ8fgJFgwUblFhXRye0+wOCrnNPMwfFxnfb/4NMPBdW8rlfNDPZj+mo91lJf9gfWuJBh1S9VR
-	NljPb9k0gN0w0rqrjV1gLtzcbZxknoqrIMlUSMs4H5wTddLIxb6Jnyyfpd8PUqY40VwWp5RyoZbUG
-	LojG+jCqecj1Y4Zuq7jMrjq1OA09gKH0eF7WYI5Q+RMHzFEb7AE8cl6O0iuz67VpH27bWKPGRpu6X
-	kh1p6byR1BiF6rNPzTHavGeEzLMftXLtxVltVEJnYZYrFxhM+Ld3OrdQHrgqgwvL7dUe4Wzdjb5T3
-	gnsMeJJTWWEl7VBuUTkA==;
+	List-Owner; bh=xf/0Bax1q5k1plXIAFTCYonOKmKE5Tm5h94vxqm+paA=; b=MQpFKfNhuAgD1R
+	ELVOVp4OdlTnDKFpd69zKcQyGa146nvDHfy8O2oyTmNH6mG86KHnAPs1d24H/2LlikjuV7ZM9TH84
+	7cvBb9t+soZ3C/5cLL4uiKsy6nyUF1Hud/fUHbWsL5sWxJT9efPAQMJGZNXEVx1JFqONGCfRd8S5y
+	oTsmzbyBt3p4WcLg3cdhcvYQd3dqU9CjNwKOFmpJbo1bwFG0AIwxxj72Od5x+zxvmDPuSc/S8nYMO
+	qOsPYr004PtxlD1xlgPPnh7iiOc5MBglSn+XXOCKwYXVvsl4ioMc02mi/kb6npQjIJYKJokS+oKPY
+	dIA4EC6K4mHU7Oytu1Ew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYpA-0005hx-Do; Fri, 15 May 2020 11:48:20 +0000
-Received: from mx0b-00128a01.pphosted.com ([148.163.139.77])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYp0-0005hN-33
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:48:14 +0000
-Received: from pps.filterd (m0167091.ppops.net [127.0.0.1])
- by mx0b-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04FBj86l018828; Fri, 15 May 2020 07:48:01 -0400
-Received: from nam11-dm6-obe.outbound.protection.outlook.com
- (mail-dm6nam11lp2177.outbound.protection.outlook.com [104.47.57.177])
- by mx0b-00128a01.pphosted.com with ESMTP id 3100xpsvtx-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 May 2020 07:48:01 -0400
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LsPUB2h8QruKAPm9Vn1k2wrIsDHV2uVI6J58/AK9hQYWn9+Txy3T1xMECBWZpKUPG/VOSo1lls5tlFzFFxTKipZ7n7aoIQN+w/4jAEiLEKNeu1cj48sskYESnkxOHHjcBgsDWuFjKM64G1Prz7lTfLCyqinbFQo6nhNKAgd7Fik/JeuJ21sDvz3Tg844Ao6nbLnVr/rZ9Lb17w02UodqW4Z77RQlS7bC0J201JJ7yONHdQ0oOkh/LIYACaC2LNBVWrW4uddR3qcHbQ8fqV1DMYS6/VJ535rfZd4g281oacUQqNSIegL3pu8WuYHMBqcEQP+8F3vvUr4m3qO8b3souQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=I5PwNUE9meXfujqcIjeFhoh1QiIDwNYghIPcrcnDK8Y=;
- b=oGNUXVJdTCMY2U8zOZnIR5sZlY115D4seYQ339BUQaC2Dq7QBfyiGduzjOFvd2rzCZ0IsiHpFmXXrbgIu/3wylp/u/iP2VQ/jocsPJ0Ta0vqaL9RtYeaUG4DbqIJWtaLAgk2xJr2FWTp8Nz56eVeJ+UI4iVBKIfufSY26HcN31xHMAoCo9XOat/P30s0NBulrsUg2mGpIQJDYogRuSPkTcwvMnkWBuH/KQejq00vi3zSsTPZu52FzlEf+Fa++iP7nw/o5QoOnDcKt5Sswp7Gm6HYj9CIWGQA/fTCdU39J0SXP7XJnfumjaC/7u/Ge1hE4dGOlOKkl8fLz6+7IHXkmw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=analog.com; dmarc=pass action=none header.from=analog.com;
- dkim=pass header.d=analog.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=I5PwNUE9meXfujqcIjeFhoh1QiIDwNYghIPcrcnDK8Y=;
- b=mqMnvLzuvPesgcKwICKDrgG4gaRdPI0i4sF12k7Q4tBL1k4vBA4rvFYGK8sFGE5y2CrwSc6zSok9vCQmk0GwoZ/JLRpnMG+ktvQK8sPA/ot0SQo2/NE1hJ+y0mySf7AuStFFIDw2ZeV8MXiT/6zBiAtjM6ZOYAlfmrE45Q/lPFI=
-Received: from DM6PR03MB4411.namprd03.prod.outlook.com (2603:10b6:5:10f::14)
- by DM6PR03MB4140.namprd03.prod.outlook.com (2603:10b6:5:5c::12) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.3000.20; Fri, 15 May
- 2020 11:48:00 +0000
-Received: from DM6PR03MB4411.namprd03.prod.outlook.com
- ([fe80::e02f:b3c0:d1e9:5eaf]) by DM6PR03MB4411.namprd03.prod.outlook.com
- ([fe80::e02f:b3c0:d1e9:5eaf%3]) with mapi id 15.20.2979.033; Fri, 15 May 2020
- 11:48:00 +0000
-From: "Ardelean, Alexandru" <alexandru.Ardelean@analog.com>
-To: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "Sa, Nuno" <Nuno.Sa@analog.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-iio@vger.kernel.org" <linux-iio@vger.kernel.org>
-Subject: Re: [PATCH v2 7/8] iio: core: simplify alloc alignment code
-Thread-Topic: [PATCH v2 7/8] iio: core: simplify alloc alignment code
-Thread-Index: AQHWKfIf2AOgR7laW0KzgAXiHIzwAaiovIwAgABM7IA=
-Date: Fri, 15 May 2020 11:47:59 +0000
-Message-ID: <1d89df334b08486e73ca181cf9035d9af8fbccf2.camel@analog.com>
-References: <20200514131710.84201-1-alexandru.ardelean@analog.com>
- <20200514131710.84201-8-alexandru.ardelean@analog.com>
- <BN6PR03MB33472A1B559F98E3BDCAB40B99BD0@BN6PR03MB3347.namprd03.prod.outlook.com>
-In-Reply-To: <BN6PR03MB33472A1B559F98E3BDCAB40B99BD0@BN6PR03MB3347.namprd03.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: lists.infradead.org; dkim=none (message not signed)
- header.d=none;lists.infradead.org; dmarc=none action=none
- header.from=analog.com;
-x-originating-ip: [188.27.130.207]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-ht: Tenant
-x-ms-office365-filtering-correlation-id: 762a94be-8b55-48bd-2b9d-08d7f8c5d160
-x-ms-traffictypediagnostic: DM6PR03MB4140:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM6PR03MB4140FAD07208F009E8CE6C44F9BD0@DM6PR03MB4140.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7691;
-x-forefront-prvs: 04041A2886
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam: BCL:0;
-x-microsoft-antispam-message-info: icw/EXYXuuUlCedmnU+uya06Ar9LsYY4YNeGiioq3HWIFFCA4Zzu3Id/U1oMvbDULK+3G2o7pr69OPg7H7RfakuYp/HFM01Wa03U80j6WH5BP8f3boiP0EliVaEIrdg31Pc5vLBzGjfMDn7ymJWwVlDO2WtvSf0/Fvlew9z903DaaEsBcw300ycJamxGA/v1spu2bUJC5ybTZHwHDW5HeNw95EbSbtIuBVDY0EayEiaee6pxjtfDgHU31U47TV7jOWG33pdSACYlGeuIQYdeFBUMKAhki5oslFD8CqAhrTAwWOSZ6pUfBdNf+GkBVibZsCJLxqCvuLQlRooxFu1CciQcK5T2vyMVjwz+ePt+Z+M++IPe2qizUGnnmx7zWB369vrt5TId+yLLRM/vwLFmXJQqdfUyjO7HLOx1kwTgCVsjah+4oQFd3S7qbtEFbYu4KfYcTm22BShY2yYxYYXE6zwAAAQMEnFfBZKkzF+u9BDohk6lMJw4tuRD3PCoU2gLHnrivEPS17WRfWlQk9Ak8w==
-x-forefront-antispam-report: CIP:255.255.255.255; CTRY:; LANG:en; SCL:1; SRV:;
- IPV:NLI; SFV:NSPM; H:DM6PR03MB4411.namprd03.prod.outlook.com; PTR:; CAT:NONE;
- SFTY:;
- SFS:(366004)(136003)(39860400002)(346002)(376002)(396003)(966005)(71200400001)(53546011)(54906003)(7416002)(36756003)(26005)(64756008)(66946007)(6506007)(4326008)(110136005)(66476007)(66556008)(91956017)(76116006)(186003)(66446008)(86362001)(6512007)(8936002)(2906002)(5660300002)(2616005)(8676002)(316002)(6486002)(478600001);
- DIR:OUT; SFP:1101; 
-x-ms-exchange-antispam-messagedata: lTNpfEsWK07dTdoxaUNDgU5MXTFZ5mVsnNU3pzk4MAAYHG2GQHRRF9sRULYLgykhknw80NK8PjkTmTNZGERL8/m1+YqyKjlvztBfpMrAsdpJD/98L/W433Al/DMiFMTfsU0oJc0Ga+JrRaf31CsXi27vy+374rwCLW25fXLK8/JngECR/VZqxKtUJvEJSQUl5BPT7ZYAOBVQBLj4ISGNmxjztfqQGRzWt5azWXNQUaHG+Vw0Vj4+t8KWv8TCFltJayX1m2BOXTC8Gw50KYkdVU6J4+/x2Bx9WHAaC+60+P+3wStUwBnpm33BsaX//NyczoDtW7wT9qSAcus5i+cknXSAlAzsqZVvZuxSyLSkPEqr4bF5laPJm37A7GoJmSeIGyEMMu46m5VaZNXRqHdaWoRSWHJLuYbZHxdL1SXlr2+nrmUgT9YbJhx1dTkfv2Wqm1xdY/NYU8+UQ2ziTDvzT6gYt9/hDQmYRMuxzoysM0cDh6AJ/Qy2RBbhMKSCauR3
-Content-ID: <CF09CC5698AF824F93E461A5864C8C3D@namprd03.prod.outlook.com>
+	id 1jZYrF-0006cQ-34; Fri, 15 May 2020 11:50:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZYql-0006Z7-9i
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:50:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9EFCAD6E;
+ Fri, 15 May 2020 04:49:58 -0700 (PDT)
+Received: from C02TD0UTHF1T.local (unknown [10.57.24.119])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AA17C3F305;
+ Fri, 15 May 2020 04:49:56 -0700 (PDT)
+Date: Fri, 15 May 2020 12:49:53 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: Re: [PATCH v3 5/7] firmware: smccc: Refactor SMCCC specific bits
+ into separate file
+Message-ID: <20200515114953.GE67718@C02TD0UTHF1T.local>
+References: <20200506164411.3284-1-sudeep.holla@arm.com>
+ <20200506164411.3284-6-sudeep.holla@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 762a94be-8b55-48bd-2b9d-08d7f8c5d160
-X-MS-Exchange-CrossTenant-originalarrivaltime: 15 May 2020 11:47:59.9711 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: lytCTMUNGn08jyAW/2wNoSKPS8w57fYiSskF2Qf+S5cHhlESoCme+sHCddK41Q9G0N/Wbj8UE2h0Cghtl5OgrVlk6IA3c1Mxk35suliktZA=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB4140
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-15_04:2020-05-15,
- 2020-05-15 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- lowpriorityscore=0
- mlxlogscore=999 clxscore=1015 priorityscore=1501 adultscore=0 phishscore=0
- bulkscore=0 malwarescore=0 spamscore=0 mlxscore=0 suspectscore=0
- impostorscore=0 cotscore=-2147483648 classifier=spam adjust=0 reason=mlx
- scancount=1 engine=8.12.0-2004280000 definitions=main-2005150102
+Content-Disposition: inline
+In-Reply-To: <20200506164411.3284-6-sudeep.holla@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_044810_311125_F3CA7A9D 
-X-CRM114-Status: GOOD (  24.72  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20200515_044959_380334_739ECA96 
+X-CRM114-Status: GOOD (  18.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.139.77 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,72 +63,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "alexandre.belloni@bootlin.com" <alexandre.belloni@bootlin.com>,
- "alexandre.torgue@st.com" <alexandre.torgue@st.com>,
- "ludovic.desroches@microchip.com" <ludovic.desroches@microchip.com>,
- "ak@it-klinger.de" <ak@it-klinger.de>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "eugen.hristev@microchip.com" <eugen.hristev@microchip.com>,
- "jic23@kernel.org" <jic23@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Steven Price <steven.price@arm.com>,
+ harb@amperecomputing.com, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCAyMDIwLTA1LTE1IGF0IDA3OjEyICswMDAwLCBTYSwgTnVubyB3cm90ZToNCj4gSGV5
-IEFsZXgsDQo+IA0KPiBKdXN0IGEgc21hbGwgcXVlc3Rpb24uLi4NCj4gDQo+ID4gRnJvbTogbGlu
-dXgtaWlvLW93bmVyQHZnZXIua2VybmVsLm9yZyA8bGludXgtaWlvLW93bmVyQHZnZXIua2VybmVs
-Lm9yZz4NCj4gPiBPbiBCZWhhbGYgT2YgQWxleGFuZHJ1IEFyZGVsZWFuDQo+ID4gU2VudDogRG9u
-bmVyc3RhZywgMTQuIE1haSAyMDIwIDE1OjE3DQo+ID4gVG86IGxpbnV4LWlpb0B2Z2VyLmtlcm5l
-bC5vcmc7IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZzsgbGludXgtDQo+ID4g
-c3RtMzJAc3QtbWQtbWFpbG1hbi5zdG9ybXJlcGx5LmNvbTsgbGludXgta2VybmVsQHZnZXIua2Vy
-bmVsLm9yZw0KPiA+IENjOiBsdWRvdmljLmRlc3JvY2hlc0BtaWNyb2NoaXAuY29tOyBldWdlbi5o
-cmlzdGV2QG1pY3JvY2hpcC5jb207DQo+ID4gamljMjNAa2VybmVsLm9yZzsgbmljb2xhcy5mZXJy
-ZUBtaWNyb2NoaXAuY29tOw0KPiA+IGFsZXhhbmRyZS5iZWxsb25pQGJvb3RsaW4uY29tOyBhbGV4
-YW5kcmUudG9yZ3VlQHN0LmNvbTsNCj4gPiBtY29xdWVsaW4uc3RtMzJAZ21haWwuY29tOyBha0Bp
-dC1rbGluZ2VyLmRlOyBBcmRlbGVhbiwgQWxleGFuZHJ1DQo+ID4gPGFsZXhhbmRydS5BcmRlbGVh
-bkBhbmFsb2cuY29tPg0KPiA+IFN1YmplY3Q6IFtQQVRDSCB2MiA3LzhdIGlpbzogY29yZTogc2lt
-cGxpZnkgYWxsb2MgYWxpZ25tZW50IGNvZGUNCj4gPiANCj4gPiBUaGVyZSB3YXMgYSByZWNlbnQg
-ZGlzY3Vzc2lvbiBhYm91dCB0aGlzIGNvZGU6DQo+ID4gICBodHRwczovL3VybGRlZmVuc2UuY29t
-L3YzL19faHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtDQo+ID4gaWlvLzIwMjAwMzIyMTY1
-MzE3LjBiMWYwNjc0QGFyY2hsaW51eC9fXzshIUEzTmk4Q1MweTJZIXBnZFVTYXlKQ2Z4TWlFDQo+
-ID4gdzhGcHYwTGtFWnVyQ1NrWDBzRWNMblhlRFNDTG1ocHUxeG9udDYtdkJRajNaYkN3JA0KPiA+
-IA0KPiA+IFRoaXMgbG9va3MgbGlrZSBhIGdvb2QgdGltZSB0byByZXdvcmsgdGhpcywgc2luY2Ug
-YW55IGlzc3VlcyBhYm91dCBpdA0KPiA+IHNob3VsZCBwb3AtdXAgdW5kZXIgdGVzdGluZywgYmVj
-YXVzZSB0aGUgaWlvX2RldiBpcyBoYXZpbmcgYSBiaXQgb2YgYW4NCj4gPiBvdmVyaGF1bCBhbmQg
-c3R1ZmYgYmVpbmcgbW92ZWQgdG8gaWlvX2Rldl9wcml2Lg0KPiA+IA0KPiA+IFNpZ25lZC1vZmYt
-Ynk6IEFsZXhhbmRydSBBcmRlbGVhbiA8YWxleGFuZHJ1LmFyZGVsZWFuQGFuYWxvZy5jb20+DQo+
-ID4gLS0tDQo+ID4gIGRyaXZlcnMvaWlvL2luZHVzdHJpYWxpby1jb3JlLmMgfCAxMCArKystLS0t
-LS0tDQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAzIGluc2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0p
-DQo+ID4gDQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaWlvL2luZHVzdHJpYWxpby1jb3JlLmMg
-Yi9kcml2ZXJzL2lpby9pbmR1c3RyaWFsaW8tDQo+ID4gY29yZS5jDQo+ID4gaW5kZXggYTFiMjll
-MGY4ZmQ2Li43NjcxZDM2ZWZhZTcgMTAwNjQ0DQo+ID4gLS0tIGEvZHJpdmVycy9paW8vaW5kdXN0
-cmlhbGlvLWNvcmUuYw0KPiA+ICsrKyBiL2RyaXZlcnMvaWlvL2luZHVzdHJpYWxpby1jb3JlLmMN
-Cj4gPiBAQCAtMTUxNCwxMyArMTUxNCw5IEBAIHN0cnVjdCBpaW9fZGV2ICppaW9fZGV2aWNlX2Fs
-bG9jKGludCBzaXplb2ZfcHJpdikNCj4gPiAgCXN0cnVjdCBpaW9fZGV2ICpkZXY7DQo+ID4gIAlz
-aXplX3QgYWxsb2Nfc2l6ZTsNCj4gPiANCj4gPiAtCWFsbG9jX3NpemUgPSBzaXplb2Yoc3RydWN0
-IGlpb19kZXZfb3BhcXVlKTsNCj4gPiAtCWlmIChzaXplb2ZfcHJpdikgew0KPiA+IC0JCWFsbG9j
-X3NpemUgPSBBTElHTihhbGxvY19zaXplLCBJSU9fQUxJR04pOw0KPiA+IC0JCWFsbG9jX3NpemUg
-Kz0gc2l6ZW9mX3ByaXY7DQo+ID4gLQl9DQo+ID4gLQkvKiBlbnN1cmUgMzItYnl0ZSBhbGlnbm1l
-bnQgb2Ygd2hvbGUgY29uc3RydWN0ID8gKi8NCj4gPiAtCWFsbG9jX3NpemUgKz0gSUlPX0FMSUdO
-IC0gMTsNCj4gPiArCWFsbG9jX3NpemUgPSBBTElHTihzaXplb2Yoc3RydWN0IGlpb19kZXZfb3Bh
-cXVlKSwgSUlPX0FMSUdOKTsNCj4gPiArCWlmIChzaXplb2ZfcHJpdikNCj4gPiArCQlhbGxvY19z
-aXplICs9IEFMSUdOKHNpemVvZl9wcml2LCBJSU9fQUxJR04pOw0KPiANCj4gRG8gd2UgYWN0dWFs
-bHkgbmVlZCB0byBkbyB0aGUgYEFMSUdOYCBhZ2Fpbj8gSXQgc2VlbXMgdG8gbWUgdGhhdCBgYWxs
-b2Nfc2l6ZQ0KPiArPSBzaXplb2ZfcHJpdmANCj4gd291bGQgYmUgZW5vdWdoIG9yIGFtIEkgbWlz
-c2luZyBzb21ldGhpbmcgb2J2aW91cz8NCg0KV2VsbCwgaXQncyBub3QgYWx3YXlzIGNsZWFyIHdo
-YXQgdmFsdWUgJ3NpemVvZl9wcml2JyBoYXMsIGFuZCB3aGV0aGVyIGl0IGlzDQpwcm92aWRlZCBh
-bHJlYWR5IGFsaWduZWQuDQpUaGUgcmVxdWlyZW1lbnQgaXMgdXN1YWxseSB0aGF0IHRoaXMgZGF0
-YSBiZSBjYWNoZWxpbmUgYWxpZ25lZC4NCg0KU28sIHNpemVvZihzdHJ1Y3QgaWlvX2Rldl9vcGFx
-dWUpIGlzIGFsaWduZWQgYWxyZWFkeSBhIGZldyBsaW5lcyBhYm92ZSwgYnV0IHRoZQ0KcHJpdmF0
-ZSBpbmZvcm1hdGlvbiBzaG91bGQgYWxzbyBiZSBhbGlnbmVkIFtnaXZlbiB0aGF0IGl0J3MgYW4g
-dW5rbm93biB2YWx1ZQ0KcHJvdmlkZWQgYnkgdGhlIGRyaXZlcl0uDQpJIHRoaW5rIHRoaXMgaXMg
-bW9zdGx5IGltcG9ydGFudCwgaWYgd2UgbmVlZCB0byBkbyBETUEgYWNjZXNzIHRvIGJ1ZmZlcnMN
-CmFsbG9jYXRlZCBvbiB0aGUgZHJpdmVyJ3Mgc3RhdGUtc3RydWN0LCB3aGljaCBpcyBhbGxvY2F0
-ZWQgaGVyZSwgYW5kIHdoaWNoIGlzDQp1c3VhbGx5IHByb3ZpZGVkIGFzIHNpemVvZl9wcml2Lg0K
-DQpUYmgsIHRoZSBkaXNjdXNzaW9ucyBhcm91bmQgdGhpcyBhbGlnbm1lbnQvY2FjaGVsaW5lLWFs
-aWdubWVudCBhcmUgYSBiaXQgZnV6enkNCnRvIG1lLiBJIGhhdmVuJ3QgcnVuIGludG8gYW55IG9m
-IHRoZXNlIGNvbXBsaWNhdGVkIGlzc3Vlcy4NCg0KPiANCj4gLSBOdW5vIFPDoQ0KPiANCl9fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRw
-Oi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Wed, May 06, 2020 at 05:44:09PM +0100, Sudeep Holla wrote:
+> In order to add newer SMCCC v1.1+ functionality and to avoid cluttering
+> PSCI firmware driver with SMCCC bits, let us move the SMCCC specific
+> details under drivers/firmware/smccc/smccc.c
+> 
+> We can also drop conduit and smccc_version from psci_operations structure
+> as SMCCC was the sole user and now it maintains those.
+> 
+> No functionality change in this patch though.
+> 
+> Signed-off-by: Sudeep Holla <sudeep.holla@arm.com>
+> ---
+>  MAINTAINERS                     |  9 +++++++++
+>  drivers/firmware/Makefile       |  3 ++-
+>  drivers/firmware/psci/psci.c    | 19 ++++---------------
+>  drivers/firmware/smccc/Makefile |  3 +++
+>  drivers/firmware/smccc/smccc.c  | 26 ++++++++++++++++++++++++++
+>  include/linux/arm-smccc.h       | 11 +++++++++++
+>  include/linux/psci.h            |  2 --
+>  7 files changed, 55 insertions(+), 18 deletions(-)
+>  create mode 100644 drivers/firmware/smccc/Makefile
+>  create mode 100644 drivers/firmware/smccc/smccc.c
+> 
+> Hi Mark, Lorenzo,
+> 
+> I have replicated PSCI entry in MAINTAINERS file and added myself to
+> for SMCCC entry. If you prefer I can merge it under PSCI. Let me know
+> your preference along with other review comments.
+
+> +SECURE MONITOR CALL(SMC) CALLING CONVENTION (SMCCC)
+> +M:	Mark Rutland <mark.rutland@arm.com>
+> +M:	Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>
+> +M:	Sudeep Holla <sudeep.holla@arm.com>
+> +L:	linux-arm-kernel@lists.infradead.org
+> +S:	Maintained
+> +F:	drivers/firmware/smccc/
+> +F:	include/linux/arm-smccc.h
+
+As per the above, I'm fine with having this separate from the PSCI
+entry, and I'm fine with sharing this maintainership.
+
+> diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+
+> +/**
+> + * arm_smccc_version_init() - Sets SMCCC version and conduit
+> + * @version: SMCCC version v1.1 or above
+> + * @conduit: SMCCC_CONDUIT_SMC or SMCCC_CONDUIT_HVC
+> + *
+> + * When SMCCCv1.1 or above is not present, defaults to ARM_SMCCC_VERSION_1_0
+> + * and SMCCC_CONDUIT_NONE respectively.
+> + */
+> +void __init arm_smccc_version_init(u32 version, enum arm_smccc_conduit conduit);
+
+Given we only expect the PSCI code to call this, could we avoid putting
+this in a header and just define it within psci.c?
+
+Either way:
+
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+
+Thanks,
+Mark.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
