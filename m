@@ -2,55 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 76A8D1D57BE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:25:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D5341D57BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 19:26:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jkaAeyFJ2ZSnz+FF3xHnntD/lqeM1nfkK/F6D8xFW9o=; b=chMKGw8lZYs/UK
-	fFiTQSmBh+CdjtjPnfVcH2FDQDQ81/6d2P14G7FvsxSIwqJY48zzrxiBWZGgwptX/AJBN8COJqWSZ
-	hqd7lybepGxJm/90PIInqUsWZLSJROZNW+T6Of1DC4Vb6RO9twbC1c0Gv+ieQ0EeLddRqoVUuEoAM
-	hNrOn7SmTxHC7Wv5HaTGjuQYGipmSUSWHSZ586MPOF7K0t9RWrraAt0mf1WZVujF+wTYxekBjHrFw
-	sKsWKYnfAXxI3ez6IybwNL80icKfUqjdN2sVFY9tUfumt3zTovrKvhrrMYo7g3xqAKF6VkQ2kh4GH
-	AB7cdSccsDgrMvQ3gDPA==;
+	List-Owner; bh=eFhqEA9WsDosU44HPwkSA/836tWza2+pRMAGimnhiXY=; b=FisPbwnLzIffOR
+	g0VwNmMApJ2Nw9NsTnJU3decv5bk3O+4RiK3XrzojU7ai6ESw7vhi3DQnhkvllInQO+v3da7uGUET
+	EVcsAH63gop/xzST84REX2X+YoiwqFuxp4Esmio2izKh2bwXbpkZTLqq430QKEchumDBtEU2lE5QM
+	3el+sn9SlQE3dHF1gRmgLjCpiTF1iEW2D+P2hxO13S1epe53/ZP7AJZcHFtSddTyQOAb35QnBJaE2
+	ooA1EsPHxq76eltVwzn8pH084TYM7efuyp3GNB0/KjyR3vk68okkg6MMBfZx/yeZeh4WZUc9hoPjE
+	ESsId9uUOwIJrSxxfRTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZe5k-0006aB-4n; Fri, 15 May 2020 17:25:48 +0000
+	id 1jZe60-0006qU-RZ; Fri, 15 May 2020 17:26:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZe23-0000tG-Jd
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:22:01 +0000
+ id 1jZe43-0002ov-U6
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 17:24:07 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D35B82073E;
- Fri, 15 May 2020 17:21:56 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id C922D20727;
+ Fri, 15 May 2020 17:23:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1589563318;
- bh=0P8rL+XmxOR/BVtEmlu60acHvGkwGm2FDdjswXIkm68=;
+ s=default; t=1589563443;
+ bh=zWhOLyH9TNGBBaNKqL1KsajY5TGVx0wn+S/jS978Jqg=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=GRNC4iSbHX8O2WHd1MLCSQ+5chG8FCYLWzzSuJ1Sdqejq2+A6bxxojc3r++wZatCU
- VsAw+NehG0ZYH8SSRm4A0HLaqagynOVtuaGeMneX4jImS9u7o8WEQgMdCyR8aNkbYU
- e9y0qROMvVqwlLtcwPde3eSYl8XtXXZr11HwXh5M=
-Date: Fri, 15 May 2020 18:21:53 +0100
+ b=u58EeNvoas8dp6AcVakZPDrN6DVn18NlyNjlI3Pdyhnc7mjVPOcn8MbktD+o5Rsq7
+ xcLTIOfxTo116Bo1iK9tGCYZsdxOJ/oLJ7Z+pF5IT90Nnk54qTVuGu5BtrDdGIq1xl
+ sKj3OzlhgENCEF/BhlrMtyX6jMLy7xzMY0UmSyHg=
+Date: Fri, 15 May 2020 18:23:56 +0100
 From: Will Deacon <will@kernel.org>
-To: "Raj, Ashok" <ashok.raj@intel.com>
-Subject: Re: [PATCH 0/4] PCI, iommu: Factor 'untrusted' check for ATS
- enablement
-Message-ID: <20200515172152.GC23334@willie-the-truck>
-References: <20200515104359.1178606-1-jean-philippe@linaro.org>
- <20200515154351.GA6546@infradead.org>
- <20200515171948.GC75440@otc-nc-03>
+To: Sami Tolvanen <samitolvanen@google.com>
+Subject: Re: [PATCH v13 00/12] add support for Clang's Shadow Call Stack
+Message-ID: <20200515172355.GD23334@willie-the-truck>
+References: <20191018161033.261971-1-samitolvanen@google.com>
+ <20200427160018.243569-1-samitolvanen@google.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200515171948.GC75440@otc-nc-03>
+In-Reply-To: <20200427160018.243569-1-samitolvanen@google.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_102159_699799_7D505EB2 
-X-CRM114-Status: GOOD (  11.26  )
+X-CRM114-CacheID: sfid-20200515_102404_033550_BADC8F75 
+X-CRM114-Status: GOOD (  20.87  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -79,35 +77,203 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>, linux-pci@vger.kernel.org,
- joro@8bytes.org, alex.williamson@redhat.com,
- Christoph Hellwig <hch@infradead.org>, iommu@lists.linux-foundation.org,
- bhelgaas@google.com, robin.murphy@arm.com, dwmw2@infradead.org,
- linux-arm-kernel@lists.infradead.org, baolu.lu@linux.intel.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Juri Lelli <juri.lelli@redhat.com>,
+ kernel-hardening@lists.openwall.com, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Masahiro Yamada <masahiroy@kernel.org>, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Laura Abbott <labbott@redhat.com>,
+ Dave Martin <Dave.Martin@arm.com>, Kees Cook <keescook@chromium.org>,
+ Jann Horn <jannh@google.com>, Steven Rostedt <rostedt@goodmis.org>,
+ linux-arm-kernel@lists.infradead.org, Michal Marek <michal.lkml@markovi.net>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Nick Desaulniers <ndesaulniers@google.com>, linux-kernel@vger.kernel.org,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ James Morse <james.morse@arm.com>, Masami Hiramatsu <mhiramat@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Hi Sami,
 
-On Fri, May 15, 2020 at 10:19:49AM -0700, Raj, Ashok wrote:
-> On Fri, May 15, 2020 at 08:43:51AM -0700, Christoph Hellwig wrote:
-> > Can you please lift the untrusted flag into struct device?  It really
-> > isn't a PCI specific concept, and we should not have code poking into
-> > pci_dev all over the iommu code.
+On Mon, Apr 27, 2020 at 09:00:06AM -0700, Sami Tolvanen wrote:
+> This patch series adds support for Clang's Shadow Call Stack
+> (SCS) mitigation, which uses a separately allocated shadow stack
+> to protect against return address overwrites. More information
+> can be found here:
 > 
-> Just for clarification: All IOMMU's today mostly pertain to only PCI devices
-> and for devices that aren't PCI like HPET for instance we give a PCI
-> identifier. Facilities like ATS for instance require the platform to have 
-> an IOMMU.
-> 
-> what additional problems does moving this to struct device solve?
+>   https://clang.llvm.org/docs/ShadowCallStack.html
 
-ATS is PCI specific, but IOMMUs certainly aren't! The vast majority of
-IOMMUs deployed in arm/arm64 SoCs are /not/ using any sort of PCI.
+I'm planning to queue this with the (mostly cosmetic) diff below folded in.
+I also have some extra patches on top which I'll send out shortly for
+review.
+
+However, I really think we need to get to the bottom of the size issue
+since I'm highly sceptical about not being able to afford a full page
+for the shadow stack allocation. We can change this later so it needn't
+hold up the patchset, but given that Android is the only user, I'd like
+to make sure that if we change to use a full page upstream then that is
+also acceptable in AOSP.
+
+Thanks,
 
 Will
+
+--->8
+
+diff --git a/include/linux/compiler-clang.h b/include/linux/compiler-clang.h
+index 18fc4d29ef27..790c0c6b8552 100644
+--- a/include/linux/compiler-clang.h
++++ b/include/linux/compiler-clang.h
+@@ -45,6 +45,4 @@
+ 
+ #if __has_feature(shadow_call_stack)
+ # define __noscs	__attribute__((__no_sanitize__("shadow-call-stack")))
+-#else
+-# define __noscs
+ #endif
+diff --git a/include/linux/scs.h b/include/linux/scs.h
+index 060eeb3d1390..3f3662621a27 100644
+--- a/include/linux/scs.h
++++ b/include/linux/scs.h
+@@ -11,7 +11,7 @@
+ #include <linux/gfp.h>
+ #include <linux/poison.h>
+ #include <linux/sched.h>
+-#include <asm/page.h>
++#include <linux/sizes.h>
+ 
+ #ifdef CONFIG_SHADOW_CALL_STACK
+ 
+@@ -20,7 +20,7 @@
+  * architecture) provided ~40% safety margin on stack usage while keeping
+  * memory allocation overhead reasonable.
+  */
+-#define SCS_SIZE		1024UL
++#define SCS_SIZE		SZ_1K
+ #define GFP_SCS			(GFP_KERNEL | __GFP_ZERO)
+ 
+ /* An illegal pointer value to mark the end of the shadow stack. */
+@@ -29,7 +29,9 @@
+ #define task_scs(tsk)		(task_thread_info(tsk)->scs_base)
+ #define task_scs_offset(tsk)	(task_thread_info(tsk)->scs_offset)
+ 
+-extern void scs_init(void);
++void scs_init(void);
++int scs_prepare(struct task_struct *tsk, int node);
++void scs_release(struct task_struct *tsk);
+ 
+ static inline void scs_task_reset(struct task_struct *tsk)
+ {
+@@ -40,8 +42,6 @@ static inline void scs_task_reset(struct task_struct *tsk)
+	task_scs_offset(tsk) = 0;
+ }
+ 
+-extern int scs_prepare(struct task_struct *tsk, int node);
+-
+ static inline unsigned long *__scs_magic(void *s)
+ {
+	return (unsigned long *)(s + SCS_SIZE) - 1;
+@@ -55,12 +55,8 @@ static inline bool scs_corrupted(struct task_struct *tsk)
+		READ_ONCE_NOCHECK(*magic) != SCS_END_MAGIC);
+ }
+ 
+-extern void scs_release(struct task_struct *tsk);
+-
+ #else /* CONFIG_SHADOW_CALL_STACK */
+ 
+-#define task_scs(tsk)	NULL
+-
+ static inline void scs_init(void) {}
+ static inline void scs_task_reset(struct task_struct *tsk) {}
+ static inline int scs_prepare(struct task_struct *tsk, int node) { return 0; }
+diff --git a/kernel/scs.c b/kernel/scs.c
+index 2a96573f2b1b..9389c28f0853 100644
+--- a/kernel/scs.c
++++ b/kernel/scs.c
+@@ -55,45 +55,37 @@ static void scs_account(struct task_struct *tsk, int account)
+ 
+ int scs_prepare(struct task_struct *tsk, int node)
+ {
+-	void *s;
++	void *s = scs_alloc(node);
+ 
+-	s = scs_alloc(node);
+	if (!s)
+		return -ENOMEM;
+ 
+	task_scs(tsk) = s;
+	task_scs_offset(tsk) = 0;
+	scs_account(tsk, 1);
+-
+	return 0;
+ }
+ 
+-#ifdef CONFIG_DEBUG_STACK_USAGE
+-static unsigned long __scs_used(struct task_struct *tsk)
++static void scs_check_usage(struct task_struct *tsk)
+ {
+-	unsigned long *p = task_scs(tsk);
+-	unsigned long *end = __scs_magic(p);
+-	unsigned long s = (unsigned long)p;
++	static unsigned long highest;
+ 
+-	while (p < end && READ_ONCE_NOCHECK(*p))
+-		p++;
++	unsigned long *p, prev, curr = highest, used = 0;
+ 
+-	return (unsigned long)p - s;
+-}
++	if (!IS_ENABLED(CONFIG_DEBUG_STACK_USAGE))
++		return;
+ 
+-static void scs_check_usage(struct task_struct *tsk)
+-{
+-	static unsigned long highest;
+-	unsigned long used = __scs_used(tsk);
+-	unsigned long prev;
+-	unsigned long curr = highest;
++	for (p = task_scs(tsk); p < __scs_magic(tsk); ++p) {
++		if (!READ_ONCE_NOCHECK(*p))
++			break;
++		used++;
++	}
+ 
+	while (used > curr) {
+		prev = cmpxchg_relaxed(&highest, curr, used);
+ 
+		if (prev == curr) {
+-			pr_info("%s (%d): highest shadow stack usage: "
+-				"%lu bytes\n",
++			pr_info("%s (%d): highest shadow stack usage: %lu bytes\n",
+				tsk->comm, task_pid_nr(tsk), used);
+			break;
+		}
+@@ -101,21 +93,16 @@ static void scs_check_usage(struct task_struct *tsk)
+		curr = prev;
+	}
+ }
+-#else
+-static inline void scs_check_usage(struct task_struct *tsk) {}
+-#endif
+ 
+ void scs_release(struct task_struct *tsk)
+ {
+-	void *s;
++	void *s = task_scs(tsk);
+ 
+-	s = task_scs(tsk);
+	if (!s)
+		return;
+ 
+-	WARN_ON(scs_corrupted(tsk));
++	WARN(scs_corrupted(tsk), "corrupted shadow stack detected when freeing task\n");
+	scs_check_usage(tsk);
+-
+	scs_account(tsk, -1);
+	scs_free(s);
+ }
+
 
 _______________________________________________
 linux-arm-kernel mailing list
