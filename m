@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E19C91D529E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:54:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE5091D529F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:55:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5GArEnv5VcgtikCvvmHKsGKCFkS5ivyk4csCOS+04tg=; b=lKUYEYMDptlAw1
-	tAmtwRgYnZqj8YMbFOaYz6pJIYivMOlAgDo/MwvHP2XQUJN7zt+zoiqr+xTxawNv7p89WvSSmT8H9
-	xMpd+9iEAExR8rkN4vXcZdYplNOeIHqEGYRGXv9Gju0oQ9tZVI1X8/6XiKZEyt3znC1oHPl8TSPHg
-	hx8CE1ivZfkOauF8a6k6RPKzXSVqtP6Pl2tjJ6odoy2K7XWasel5SyEMD2bCANDkTUJ5vT9ms0Ui+
-	+5hpmw2QBgAOw8gNKGg4JGNXSMaBbVn0Y76uukDcMtuE2bItSxJZyqe+jbUmArtvLCAuXnLz7AJ7S
-	yHRLAZIXTbC/6HxrnYjg==;
+	List-Owner; bh=dM1RWDG7GrCSFgIYufKioMtV4ToJ2Jypx0D3+MIBaiY=; b=oSEWJNsNxnuZ2g
+	JHzpxooshIEXUCcKg2iF2YG84YmLt52ndt0oASRb06VOIcuV3YyGnZ4RUieYemCKiku/MTlyXrwxn
+	MlJZj1Dlvt2twZpmt+yr93LTNChg20cvfjdGXDwcvnR8QDhLNi2DaPEcsIs8v5W8sHV4WkIfmgmuj
+	75kyw5rqbV4SXxUzDvfNHON6HoIFjK/KpY63B0UdXweKYFGajgwnWh7WRHMlGVAhqKnfkTQes7QDR
+	JSyVxqqq13j+SRQNHI8YEMiaOLU4zDQKKBEH3p8RaHRqgo3Oyumujq0n19px6HuF4i/jO3Pg+9MOw
+	jzRSGACxuMFXKJwVOp0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbjX-0001kD-Sg; Fri, 15 May 2020 14:54:43 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jZbjp-00022e-Br; Fri, 15 May 2020 14:55:01 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbiF-0000vM-IZ
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:53:25 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e1so3897379wrt.5
+ id 1jZbiH-0000wr-46
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:53:26 +0000
+Received: by mail-wm1-x344.google.com with SMTP id n5so3011415wmd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 07:53:22 -0700 (PDT)
+ Fri, 15 May 2020 07:53:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=1SsS+ZSTt/ULxJrwRQDkWWTbTiy0pezxPev3oDys/NQ=;
- b=iysdOe4FAn3ll8B3ThqIjAYC97gkTK6GJYK6e2G9Edo/ZG49ZDlqMWper0xOGunFje
- hXxuDmze9n1mgqI/VpLiiM0tqXcq9F5T9sED5L//v/DW7JHQZUAFR9bE/2XhqfC5Jo8j
- U/x7cp12WXwjz/xAgyz8HbP2HhU79xHznPxryUnAXOPdj8k743ur+0fJOHxhtRLW5BPI
- 43K4tw810Hwy6U2QcOOhqLH4tlz1I1nhv5s1f+SnF7SfzIvsrUir5RmNdPl9S01AqUZL
- ucGIvNfPFIip+yudT7sXWKdf7zU4gNHjWz3dgsH09bkhXmLZL+pvh/t3N46yvpFeERZI
- 6Qig==
+ bh=Pw1BFCuAKt6IQNELbv0mfDkndwTtb6MnbJ9W2vzOqk8=;
+ b=j88BAb6+W1lKSXmFQXl8c8ubMS3HJmyFIEViI/wy03lMJqlwORgFwADDKCtR9I29kY
+ NxYrRiAqaMrBPjeDqhnXilQi+GQ9m+QVgYpEQabTIWKc2JsTIoAu6ad12GNTl4YhtwEh
+ b9aVBkkXQfxGxeOgPeB2M5xzx2ffUPxdDBA+jNMlKewh0cBElUn0pf2Mq7KwMRdOsr9n
+ L/exgjIUDTRHSgDCmcSufnfYtySvzKEg64HdY/vEHkbdu5A0OxsCFne8EoZZex6pYzmq
+ apMwLQfetctlpkoX5DFm7WKhh6L2NtSAT+P9xXXa3f+3HQzznRVo2ya448azLtJzGutj
+ LH/g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=1SsS+ZSTt/ULxJrwRQDkWWTbTiy0pezxPev3oDys/NQ=;
- b=t86W7S3IIXsH/HdIij71c1TYYn6EHBiLXXbx5mtRnUvcOqXeAFfgacKUIQrgoh3FF0
- zLzzxYEoLcVSFbacrr2XbRG6K/RxrjJP62Hh5rP4+h8OsJBx8F1hSCVYmVfphT0vn04J
- OiITNotnj+t7UxIduzQc49jJn1D1movk2pg+gOSPsULA6/cQ8txgExKiFSWmlaUt/BTx
- RoP9IGgUdFPBHTiWfPGkFdFFDJ0owJoQRHCFDkB6twSywsQqeDgru6kOpPCq7xBj/VXh
- vHuGNm2ere3LFRYAyC1CH9r8VZk80H8eP+DkW2EGoK2Jbagp9gjsj6xizOn9h26ZCSE2
- Gu9Q==
-X-Gm-Message-State: AOAM530oxehZbf3tZntj/Opqkr9jkmTndBSZhX+6FQL/eJnTX58eLaQF
- DN15cV7fu4PNnrQaq8uLj/c=
-X-Google-Smtp-Source: ABdhPJyGosKoHaIyb7spq/jdjjQ71Kd31n//F2dO6CqRU84CNLY2LpOSEHa9VifxuNHIDydbbs0riQ==
-X-Received: by 2002:adf:ed82:: with SMTP id c2mr4878997wro.255.1589554401520; 
- Fri, 15 May 2020 07:53:21 -0700 (PDT)
+ bh=Pw1BFCuAKt6IQNELbv0mfDkndwTtb6MnbJ9W2vzOqk8=;
+ b=q9aQ/xrfHEI4cmY9QB2e274e8yfLLZPlu3Mc1I9/7dlVPCzcUDhLzc0uVEzoS39WED
+ jYaGeILu3/WOsYb6QrqPzkYCMcDPo1Gu3f+IzrZ5CIjHKxFfpZ3QLg4akVjGrvW0lGAu
+ I6c0lK+qwAJBI3R4xNJNZLNkzF+nicjChKt+tswLd/A+AOSBUTQgiRZ3IbFRRB5wXtnk
+ 5/khTwPvClqEkTz0d9vejxn8rVdBtGjE3AXCcov0VtEP7SraWywBl9GUK7wSgtRyfhSF
+ dgVy3hfgXIKAUJykAopuzcqLYIZHo57UoIE2Zv6TMt5UD2P0W/7abv0q5crQXjK08Uwh
+ MqLw==
+X-Gm-Message-State: AOAM531WBoh7IcxnvLSi/I1AsYk6otY4PJBCCtY5FQ70SqJIXhxldKys
+ etTRM/IJv+p2DB/Ta96bQnA=
+X-Google-Smtp-Source: ABdhPJwz+aSEmb0e8zARPKSZaSp1zyqqh1haNvyTswk111Zze6kcNn8DlD6JxBkeQ8WX+I5xJ/O9BA==
+X-Received: by 2002:a7b:cf14:: with SMTP id l20mr4599742wmg.100.1589554403259; 
+ Fri, 15 May 2020 07:53:23 -0700 (PDT)
 Received: from localhost (pD9E51079.dip0.t-ipconnect.de. [217.229.16.121])
- by smtp.gmail.com with ESMTPSA id h133sm4213503wmf.25.2020.05.15.07.53.20
+ by smtp.gmail.com with ESMTPSA id g6sm4015611wrp.75.2020.05.15.07.53.22
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 07:53:20 -0700 (PDT)
+ Fri, 15 May 2020 07:53:22 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: arm@kernel.org,
 	soc@kernel.org
-Subject: [GIT PULL 03/11] dt-bindings: Changes for v5.8-rc1
-Date: Fri, 15 May 2020 16:53:03 +0200
-Message-Id: <20200515145311.1580134-4-thierry.reding@gmail.com>
+Subject: [GIT PULL 04/11] of: Changes for v5.8-rc1
+Date: Fri, 15 May 2020 16:53:04 +0200
+Message-Id: <20200515145311.1580134-5-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.24.1
 In-Reply-To: <20200515145311.1580134-1-thierry.reding@gmail.com>
 References: <20200515145311.1580134-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_075323_666943_517A4C9F 
-X-CRM114-Status: GOOD (  12.88  )
+X-CRM114-CacheID: sfid-20200515_075325_303225_22F95262 
+X-CRM114-Status: GOOD (  10.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -114,51 +114,32 @@ The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-dt-bindings
+  git://git.kernel.org/pub/scm/linux/kernel/git/tegra/linux.git tags/tegra-for-5.8-of
 
-for you to fetch changes up to 4e79691d050e6d06ee7fa09002c52dd1ce9ac6e6:
+for you to fetch changes up to 4a470f00e10e3336350ab60ec6c3206177093019:
 
-  dt-bindings: i2c: tegra: Document Tegra210 VI I2C (2020-05-12 22:47:36 +0200)
+  of: Make <linux/of_reserved_mem.h> self-contained (2020-05-12 22:45:39 +0200)
 
 Thanks,
 Thierry
 
 ----------------------------------------------------------------
-dt-bindings: Changes for v5.8-rc1
+of: Changes for v5.8-rc1
 
-This adds bindings for the CSI TPG clock on Tegra210, moves various
-clocks from the clock and reset controller to the PMC where their
-controls really are, adds bindings for the external memory controller
-and video capture controller on Tegra210, as well as CPU frequency
-scaling on Tegra20 and Tegra30.
+These changes add support for multiple reserved-memory regions per
+device.
 
 ----------------------------------------------------------------
-Dmitry Osipenko (1):
-      dt-bindings: cpufreq: Add binding for NVIDIA Tegra20/30
+Geert Uytterhoeven (1):
+      of: Make <linux/of_reserved_mem.h> self-contained
 
-Joseph Lo (1):
-      dt-bindings: memory: tegra: Add external memory controller binding for Tegra210
+Thierry Reding (2):
+      of: reserved-memory: Support lookup of regions by name
+      of: reserved-memory: Support multiple regions per device
 
-Sowjanya Komatineni (3):
-      dt-bindings: clock: tegra: Add clock ID for CSI TPG clock
-      dt-bindings: clock: tegra: Remove PMC clock IDs
-      dt-bindings: tegra: Add VI and CSI bindings
-
-Thierry Reding (1):
-      dt-bindings: i2c: tegra: Document Tegra210 VI I2C
-
- .../bindings/cpufreq/nvidia,tegra20-cpufreq.txt    | 56 +++++++++++++++
- .../display/tegra/nvidia,tegra20-host1x.txt        | 73 +++++++++++++++----
- .../devicetree/bindings/i2c/nvidia,tegra20-i2c.txt |  6 ++
- .../memory-controllers/nvidia,tegra210-emc.yaml    | 82 ++++++++++++++++++++++
- include/dt-bindings/clock/tegra114-car.h           | 14 ++--
- include/dt-bindings/clock/tegra124-car-common.h    | 14 ++--
- include/dt-bindings/clock/tegra20-car.h            |  2 +-
- include/dt-bindings/clock/tegra210-car.h           | 16 ++---
- include/dt-bindings/clock/tegra30-car.h            | 14 ++--
- 9 files changed, 234 insertions(+), 43 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/cpufreq/nvidia,tegra20-cpufreq.txt
- create mode 100644 Documentation/devicetree/bindings/memory-controllers/nvidia,tegra210-emc.yaml
+ drivers/of/of_reserved_mem.c    | 41 +++++++++++++++++++++++++++++------------
+ include/linux/of_reserved_mem.h | 12 ++++++++++++
+ 2 files changed, 41 insertions(+), 12 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
