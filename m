@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 443DE1D50E7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:38:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 194F11D50EB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:38:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wVwenj3kA4itmLhwxXdVIqrOow5G0rR+MB7OKIwvLYs=; b=LZI7LPxnxc55qY
-	GO9daj6/PRctDwgg5xWtR4/v9RQL19Bsw7nKgNb58dqmM6LlEuVr8F2itUIY+RHvygLN6WpwkFa8Y
-	hlpHXegc5ANRiTmXb8GhP+HOpLvhDKlpj011EkJ+T5LKe1a20M4n7dT/+1vdkwODL5Q1Tqjil1K/7
-	E5Byje/RLy0iDqhyxRWSV/U1BkApN8w7NcphpF5Uj0wTKkprweK79SHMbhsMjGkh1MEn2ahjvel5H
-	agfeJJwL9+SWZfWf5qgMJBGBMeqeK3uBkCr3tmyGtDcgPvnv28MRIowc+cb9wb4GXJGNgWzjxupbK
-	14fJAas/RTqdHqhWxyrQ==;
+	List-Owner; bh=3GUGbInGFJ2jl1WhtHiqepkj+5GBKikREavIrqk4tEw=; b=ndRK3MIh/0FwUc
+	cNdc9WymDPcBEJULW99TlQZq5RNniWjBQ992pDj0BZNdePbOBhqLkjmRyet+HLF0+438ZGVRrCPdU
+	K+letzWei/boPVAWAncg/YGeBbnWiJyZ5u6cl/XxOiO0kI6M0wnFON3gSbvcajUgyvoqL/nSnmS4F
+	/NaQSaJLUfluxobD19HAIi8anzPFn+Y70qnw5roigyNCsUjkdHvMc2hvCyYpr3Fz2poOBeAbSvrtE
+	T0+Y3+OCu2Hqe2iW7pPcnKHULQmMLNcp4ymh2b/WfofRxHOG8uwQPsOHSRXlIRy1gv6RoXG9lR8VG
+	HT2AEejj1IE+zar9JO/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbTg-00053f-Og; Fri, 15 May 2020 14:38:20 +0000
+	id 1jZbU4-0005hi-PW; Fri, 15 May 2020 14:38:44 +0000
 Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbSI-0003nx-7L; Fri, 15 May 2020 14:36:54 +0000
+ id 1jZbSK-0003qc-Oh; Fri, 15 May 2020 14:36:57 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
  Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 02/29] nds32: unexport flush_icache_page
-Date: Fri, 15 May 2020 16:36:19 +0200
-Message-Id: <20200515143646.3857579-3-hch@lst.de>
+Subject: [PATCH 03/29] powerpc: unexport flush_icache_user_range
+Date: Fri, 15 May 2020 16:36:20 +0200
+Message-Id: <20200515143646.3857579-4-hch@lst.de>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
 References: <20200515143646.3857579-1-hch@lst.de>
@@ -58,25 +58,26 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-flush_icache_page is only used by mm/memory.c.
+flush_icache_user_range is only used by copy_to_user_page, which is
+only used by core VM code.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/nds32/mm/cacheflush.c | 1 -
+ arch/powerpc/mm/mem.c | 1 -
  1 file changed, 1 deletion(-)
 
-diff --git a/arch/nds32/mm/cacheflush.c b/arch/nds32/mm/cacheflush.c
-index 254703653b6f5..8f168b33065fa 100644
---- a/arch/nds32/mm/cacheflush.c
-+++ b/arch/nds32/mm/cacheflush.c
-@@ -35,7 +35,6 @@ void flush_icache_page(struct vm_area_struct *vma, struct page *page)
- 	kunmap_atomic((void *)kaddr);
- 	local_irq_restore(flags);
+diff --git a/arch/powerpc/mm/mem.c b/arch/powerpc/mm/mem.c
+index 041ed7cfd341a..f0d1bf0a8e14f 100644
+--- a/arch/powerpc/mm/mem.c
++++ b/arch/powerpc/mm/mem.c
+@@ -587,7 +587,6 @@ void flush_icache_user_range(struct vm_area_struct *vma, struct page *page,
+ 	flush_icache_range(maddr, maddr + len);
+ 	kunmap(page);
  }
--EXPORT_SYMBOL(flush_icache_page);
+-EXPORT_SYMBOL(flush_icache_user_range);
  
- void flush_icache_user_range(struct vm_area_struct *vma, struct page *page,
- 	                     unsigned long addr, int len)
+ /*
+  * System memory should not be in /proc/iomem but various tools expect it
 -- 
 2.26.2
 
