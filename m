@@ -2,80 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12AD01D4416
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 05:36:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3ABF61D445A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 06:20:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=27+U41GSBN7DEeRYL3k6Dr30toLVSeNmxfsb1q9zDS8=; b=BTWY3j8ildoKXy
-	IJaIn5eP9XI/dZ7ccOO4zZ/Jxjm0mAHIl4J2jU9yTOgz/1/aW+qK6xwMj1MlY4yh7PH5Rw08CdBEo
-	hg3FqF5LZw85YgvSzcLrf/8y3PU1j0fVQlSndugoUTE1a4edB71VhDNZW+qRTvvGs3TAosNGzwyq0
-	iBgGQ90svZ0FzMnbWo7m6aPZaE7rCYtVzlWJ6hfgI/3T0LgQYV4FrXtX/xJ6STCnHyiHuoXCgnkij
-	G1TLiGJyaX4XwS3ldc+4AIvSHtTrxFDHlqY+4Ns9XgxWk9/O1hEMseqD6+swGJbiI+MxeFkkaQMkk
-	MouIBrHr/VOzjUuNuI4A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lsoprn8q8fx0whyC+9mr7SdGCXK1epWavdy+TL+eWWA=; b=IqhYd2KUdeFU4+
+	1VEbdqAu6vh96QGntrdpYRa1SxI69ce1fD4ZiLDtqUuDRVihULMEVQ5t3GnvWZfvutZDpD4SjUZiu
+	MPe0abuFDF2AlzyR/rp5ZJdmZWeh4N9XRag2weICd6LCjZgrQhsFmpk7sH5iips8+uesx3SvlX9YX
+	X/fRWnT+iWjSzu2nUuj5bdME1yI5IwxefRtc3mRYp3jQ7VKm0gEnwjgbgmBdqHuwRIJmfC15acx6P
+	gupcZUvjqPX1mt6CbfwiBcMaIThvHS8wougIstOoreJsCMO8SpyqCAbZhISHWDuhvLUPPQE9048oq
+	rYVjv6aDJfQjRu4nbXuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZR8f-0006eI-3n; Fri, 15 May 2020 03:35:57 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1jZRpr-0000K9-OL; Fri, 15 May 2020 04:20:35 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZR8T-0006de-P6; Fri, 15 May 2020 03:35:49 +0000
-X-UUID: 6f46e8b64367460499e477bf3da51099-20200514
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mediatek.com;
- s=dk; 
- h=Content-Transfer-Encoding:MIME-Version:Content-Type:References:In-Reply-To:Date:CC:To:From:Subject:Message-ID;
- bh=VxhYLuYYOUOPauVln+W+RafLc/0dBm6EzZm2DoQqFmU=; 
- b=cGanwmtltlb50v9nBDJldJMBTElcXI9IYhedmxWhkOk8RecTuAYUla7kWlH0wb8KE5XwkKcIUckE8BlrQQIve9vWoQ0crt1o5jwLEckqKa58y01eKjskh5FDELLjP5zF7uLWcDWB1BownmhJz0BpzZlabHEkxbOMimrIH6JucWU=;
-X-UUID: 6f46e8b64367460499e477bf3da51099-20200514
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2141509862; Thu, 14 May 2020 19:35:42 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Thu, 14 May 2020 20:35:36 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1497.2; Fri, 15 May 2020 11:35:22 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1497.2 via Frontend
- Transport; Fri, 15 May 2020 11:35:24 +0800
-Message-ID: <1589513724.16252.3.camel@mtksdaap41>
-Subject: Re: [PATCH v14 03/11] soc: mediatek: Add basic_clk_name to
- scp_power_data
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Date: Fri, 15 May 2020 11:35:24 +0800
-In-Reply-To: <1589176947.21832.9.camel@mtksdaap41>
-References: <1588752963-19934-1-git-send-email-weiyi.lu@mediatek.com>
- <1588752963-19934-4-git-send-email-weiyi.lu@mediatek.com>
- <7ad67855-a3f8-f979-8849-3765bd8289d3@collabora.com>
- <1589176947.21832.9.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1jZRpj-0000JH-TN
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 04:20:30 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id CED2B789477CF5FD1381;
+ Fri, 15 May 2020 12:20:18 +0800 (CST)
+Received: from [10.173.221.230] (10.173.221.230) by
+ DGGEMS411-HUB.china.huawei.com (10.3.19.211) with Microsoft SMTP Server id
+ 14.3.487.0; Fri, 15 May 2020 12:20:12 +0800
+Subject: Re: [Question] Hardware management of stage2 page dirty state
+To: Catalin Marinas <catalin.marinas@arm.com>
+References: <0767678d-d580-eb02-c2f0-423b16526736@huawei.com>
+ <20200514161427.GD1907@gaia>
+From: zhukeqian <zhukeqian1@huawei.com>
+Message-ID: <dce26d58-7b6b-5eaf-8f7d-41361cb5cc9c@huawei.com>
+Date: Fri, 15 May 2020 12:20:00 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.1
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: AE0EB50745E17FFC46BA5D313A2DD7F2096360A4F9CCEF4C7F6FE617EB23E18B2000:8
-X-MTK: N
+In-Reply-To: <20200514161427.GD1907@gaia>
+X-Originating-IP: [10.173.221.230]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200514_203545_823870_696B0EBA 
-X-CRM114-Status: GOOD (  28.38  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200514_212028_119942_EE7B530B 
+X-CRM114-Status: GOOD (  20.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,254 +65,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>,
- Nicolas Boichat <drinkcat@chromium.org>, srv_heupstream@mediatek.com, Rob
- Herring <robh@kernel.org>, Enric Balletbo Serra <eballetbo@gmail.com>,
- linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, Sascha Hauer <kernel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: Marc Zyngier <maz@kernel.org>, "Zengtao \(B\)" <prime.zeng@hisilicon.com>,
+ yuzenghui@huawei.com, wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2020-05-11 at 14:02 +0800, Weiyi Lu wrote:
-> On Wed, 2020-05-06 at 23:01 +0200, Enric Balletbo i Serra wrote:
-> > Hi Weiyi,
-> > 
-> > Thank you for your patch.
-> > 
-> > On 6/5/20 10:15, Weiyi Lu wrote:
-> > > Try to stop extending the clk_id or clk_names if there are
-> > > more and more new BASIC clocks. To get its own clocks by the
-> > > basic_clk_name of each power domain.
-> > > And then use basic_clk_name strings for all compatibles, instead of
-> > > mixing clk_id and clk_name.
-> > > 
-> > > Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> > > Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
-> > > ---
-> > >  drivers/soc/mediatek/mtk-scpsys.c | 134 ++++++++++++--------------------------
-> > >  1 file changed, 41 insertions(+), 93 deletions(-)
-> > > 
-> > > diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-> > > index f669d37..c9c3cf7 100644
-> > > --- a/drivers/soc/mediatek/mtk-scpsys.c
-> > > +++ b/drivers/soc/mediatek/mtk-scpsys.c
-> > > @@ -78,34 +78,6 @@
-> > >  #define PWR_STATUS_HIF1			BIT(26)	/* MT7622 */
-> > >  #define PWR_STATUS_WB			BIT(27)	/* MT7622 */
-> > >  
-> > > -enum clk_id {
-> > > -	CLK_NONE,
-> > > -	CLK_MM,
-> > > -	CLK_MFG,
-> > > -	CLK_VENC,
-> > > -	CLK_VENC_LT,
-> > > -	CLK_ETHIF,
-> > > -	CLK_VDEC,
-> > > -	CLK_HIFSEL,
-> > > -	CLK_JPGDEC,
-> > > -	CLK_AUDIO,
-> > > -	CLK_MAX,
-> > > -};
-> > > -
-> > > -static const char * const clk_names[] = {
-> > > -	NULL,
-> > > -	"mm",
-> > > -	"mfg",
-> > > -	"venc",
-> > > -	"venc_lt",
-> > > -	"ethif",
-> > > -	"vdec",
-> > > -	"hif_sel",
-> > > -	"jpgdec",
-> > > -	"audio",
-> > > -	NULL,
-> > > -};
-> > > -
-> > >  #define MAX_CLKS	3
-> > >  
-> > >  /**
-> > > @@ -116,7 +88,7 @@ enum clk_id {
-> > >   * @sram_pdn_bits: The mask for sram power control bits.
-> > >   * @sram_pdn_ack_bits: The mask for sram power control acked bits.
-> > >   * @bus_prot_mask: The mask for single step bus protection.
-> > > - * @clk_id: The basic clocks required by this power domain.
-> > > + * @basic_clk_name: The basic clocks required by this power domain.
-> > >   * @caps: The flag for active wake-up action.
-> > >   */
-> > >  struct scp_domain_data {
-> > > @@ -126,7 +98,7 @@ struct scp_domain_data {
-> > >  	u32 sram_pdn_bits;
-> > >  	u32 sram_pdn_ack_bits;
-> > >  	u32 bus_prot_mask;
-> > > -	enum clk_id clk_id[MAX_CLKS];
-> > > +	const char *basic_clk_name[MAX_CLKS];
-> > 
-> > I only reviewed v13, so sorry if this was already discussed. I am wondering if
-> > would be better take advantage of the devm_clk_bulk_get() function instead of
-> > kind of reimplementing the same, something like this
-> > 
-> > 	const struct clk_bulk_data *basic_clocks;
-> > 
-> 
-> I thought it should be const struct clk_bulk_data
-> basic_clocks[MAX_CLKS]; instead of const struct clk_bulk_data
-> *basic_clocks; in struct scp_domain_data data type
-> 
-> > >  	u8 caps;
-> > >  };
-> > >  
-> > > @@ -411,12 +383,19 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
-> > >  	return ret;
-> > >  }
-> > >  
-> > > -static void init_clks(struct platform_device *pdev, struct clk **clk)
-> > > +static int init_basic_clks(struct platform_device *pdev, struct clk **clk,
-> > > +			const char * const *name)
-> > >  {
-> > >  	int i;
-> > >  
-> > > -	for (i = CLK_NONE + 1; i < CLK_MAX; i++)
-> > > -		clk[i] = devm_clk_get(&pdev->dev, clk_names[i]);
-> > > +	for (i = 0; i < MAX_CLKS && name[i]; i++) {
-> > > +		clk[i] = devm_clk_get(&pdev->dev, name[i]);
-> > > +
-> > > +		if (IS_ERR(clk[i]))
-> > > +			return PTR_ERR(clk[i]);
-> > > +	}
-> > 
-> > You will be able to remove this function, see below ...
-> > 
-> > > +
-> > > +	return 0;
-> > >  }
-> > >  
-> > >  static struct scp *init_scp(struct platform_device *pdev,
-> > > @@ -426,9 +405,8 @@ static struct scp *init_scp(struct platform_device *pdev,
-> > >  {
-> > >  	struct genpd_onecell_data *pd_data;
-> > >  	struct resource *res;
-> > > -	int i, j;
-> > > +	int i, ret;
-> > >  	struct scp *scp;
-> > > -	struct clk *clk[CLK_MAX];
-> > >  
-> > >  	scp = devm_kzalloc(&pdev->dev, sizeof(*scp), GFP_KERNEL);
-> > >  	if (!scp)
-> > > @@ -481,8 +459,6 @@ static struct scp *init_scp(struct platform_device *pdev,
-> > >  
-> > >  	pd_data->num_domains = num;
-> > >  
-> > > -	init_clks(pdev, clk);
-> > > -
-> > >  	for (i = 0; i < num; i++) {
-> > >  		struct scp_domain *scpd = &scp->domains[i];
-> > >  		struct generic_pm_domain *genpd = &scpd->genpd;
-> > > @@ -493,17 +469,9 @@ static struct scp *init_scp(struct platform_device *pdev,
-> > >  
-> > >  		scpd->data = data;
-> > >  
-> > > -		for (j = 0; j < MAX_CLKS && data->clk_id[j]; j++) {
-> > > -			struct clk *c = clk[data->clk_id[j]];
-> > > -
-> > > -			if (IS_ERR(c)) {
-> > > -				dev_err(&pdev->dev, "%s: clk unavailable\n",
-> > > -					data->name);
-> > > -				return ERR_CAST(c);
-> > > -			}
-> > > -
-> > > -			scpd->clk[j] = c;
-> > > -		}
-> > > +		ret = init_basic_clks(pdev, scpd->clk, data->basic_clk_name);
-> > > +		if (ret)
-> > > +			return ERR_PTR(ret);
-> > 
-> > Just call:
-> > 
-> > 	ret = devm_clk_bulk_get(&pdev->dev, ARRAY_SIZE(basic_clocks),
-> > 				data->basic_clocks);
-> > 	if (ret)
-> > 		return ERR_PTR(ret);
-> > 
-> > >  
-> > >  		genpd->name = data->name;
-> > >  		genpd->power_off = scpsys_power_off;
-> > > @@ -560,7 +528,6 @@ static void mtk_register_power_domains(struct platform_device *pdev,
-> > >  		.ctl_offs = SPM_CONN_PWR_CON,
-> > >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_CONN_M |
-> > >  				 MT2701_TOP_AXI_PROT_EN_CONN_S,
-> > > -		.clk_id = {CLK_NONE},
-> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
-> > >  	},
-> > >  	[MT2701_POWER_DOMAIN_DISP] = {
-> > > @@ -568,7 +535,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
-> > >  		.sta_mask = PWR_STATUS_DISP,
-> > >  		.ctl_offs = SPM_DIS_PWR_CON,
-> > >  		.sram_pdn_bits = GENMASK(11, 8),
-> > > -		.clk_id = {CLK_MM},
-> > > +		.basic_clk_name = {"mm"},
-> > 
-> > 		.basic_clocks[] = {
-> > 			{ .id = "mm" },
-> > 		};
-> > 
-> 
-> Those basic clocks without given a name (name: null) would get incorrect
-> clock via clk_bulk_get(...) due to 
-> 
-> /**
->  * of_parse_clkspec() - Parse a DT clock specifier for a given device
-> node
->  * @np: device node to parse clock specifier from
->  * @index: index of phandle to parse clock out of. If index < 0, @name
-> is used
->  * @name: clock name to find and parse. If name is NULL, the index is
-> used
-> 
-> And the index is 0 here in this callstack
-> 
-> I guess something need to be improved before we use the clk_bulk_ APIs.
-> 
+Hi Catalin,
 
-Hi Enric,
-
-According to the result above, is it necessary to change the APIs or
-maybe I should send the next version v15 first to fix other problems you
-mentioned? Many thanks.
+On 2020/5/15 0:14, Catalin Marinas wrote:
+> Hi Keqian,
+> 
+> On Thu, May 14, 2020 at 05:16:52PM +0800, zhukeqian wrote:
+>> I have some questions after deep reading your patch
+>> https://patchwork.kernel.org/patch/8824261/ which enables hardware updates
+>> of the Access Flag for Stage 2 page tables.
+>>
+>> I notice that at the bottom of commit message, you said the following words:
+>> "After some digging through the KVM code, I concluded that hardware DBM
+>> (dirty bit management) support is not feasible for Stage 2. A potential
+>> user would be dirty logging but this requires a different bitmap exposed
+>> to Qemu and, to avoid races, the stage 2 mappings need to be mapped
+>> read-only on clean, writable on fault. This assumption simplifies the
+>> hardware Stage 2 AF support."
+>>
+>> I have three questions here.
+>>
+>> 1. I do not understand the reason well about "not feasible". Does the main reason
+>>    for this is the "races" you referred?
+> 
+> IIRC, dirty logging works by having a bitmap populated by the host
+> kernel when the guest writes a page. Such write triggers a stage 2 fault
+> and the kernel populates the bitmap. With S2 DBM, you wouldn't get a
+> fault when the guest writes the page, so the host kernel would have to
+> periodically check which S2 entries became writable to update the qemu
+> bitmap.
+Sure, the performance problem introduced by traversing page table entries is
+a defect of DBM mechanism.
 
 > 
-> > >  		.bus_prot_mask = MT2701_TOP_AXI_PROT_EN_MM_M0,
-> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
-> > >  	},
-> > > @@ -578,7 +545,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
-> > >  		.ctl_offs = SPM_MFG_PWR_CON,
-> > >  		.sram_pdn_bits = GENMASK(11, 8),
-> > >  		.sram_pdn_ack_bits = GENMASK(12, 12),
-> > > -		.clk_id = {CLK_MFG},
-> > > +		.basic_clk_name = {"mfg"},
-> > 
-> > 		.basic_clocks[] = {
-> > 			{ .id = "mfg" },
-> > 		};
-> > 
-> > >  		.caps = MTK_SCPD_ACTIVE_WAKEUP,
-> > >  	},
-> > >  	[MT2701_POWER_DOMAIN_VDEC] = {
-> > > @@ -587,7 +554,7 @@ static void mtk_register_power_domains(struct platform_device *pdev,
-> > >  		.ctl_offs = SPM_VDE_PWR_CON,
-> > >  		.sram_pdn_bits = GENMASK(11, 8),
-> > >  		.sram_pdn_ack_bits = GENMASK(12, 12),
-> > > -		.clk_id = {CLK_MM},
-> > > +		.basic_clk_name = {"mm"},
-> > 
-> > ...
-> > 
-> > [snip]
+> I think the race I had in mind was that the bitmap still reports the
+> page as clean while the guest already updated it.
 > 
+> Looking at this again, it may not matter much as qemu can copy those
+> pages again when migrating and before control is handed over to the new
+> host.
+Yes, race is not a problem. Qemu will not miss dirty pages when control is
+handed over to the new Qemu.
+
 > 
+>> 2. What does the "races" refer to? Do you mean the races between [hardware S2 DBM]
+>>    and [dirty information collection that executed by KVM]?
+> 
+> Yes.
+> 
+>>    During VM live migration, Qemu will send dirty page iteratively and finally stop
+>>    VM when dirty pages is not too much. We may miss dirty pages during each iteration
+>>    before VM stop, but there are no races after VM stop, so we won't miss dirty pages
+>>    finally. It seems that "races" is not a convinced reason for "not feasible".
+> 
+> You are probably right. But you'd have to change the dirty tracking from
+> a fault mechanism to a polling one checking the S2 page tables
+> periodically. Or, can you check then only once after VM stop?
+
+Our purpose is to remove performance side effect on guest caused by fault mechanism, so we want to
+use DBM from begin to end.
+
+For now, the only problem of DBM that we can figure out is the page table traversing performance.
+We have done some demo tests on this and situation is not that bad. Besides, we have come up with
+some optimizations which can ease this situation effectively.
+
+I plan to send out all test data and PATCH RFC to community next week. It should work functional
+correctly but without any optimizations. After that I will add all optimizations based on PATCH
+RFC and send PATCH v1.
+
+> 
+>> 3. You said that disable hardware S2 DBM support can simplify the hardware S2 AF support.
+>>    Could you please explain the reason in detail?
+> 
+> I probably meant that it simplifies the patch rather than something
+> specific to the AF support. If you add DBM, you'd need to make sure that
+> making a pte read-only doesn't lose the dirty information (see
+> ptep_set_wrprotect(), not sure whether KVM uses the same macro).
+> 
+OK, I will notice this problem, thanks!
+
+Thanks,
+Keqian
 
 _______________________________________________
 linux-arm-kernel mailing list
