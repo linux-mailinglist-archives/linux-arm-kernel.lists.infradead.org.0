@@ -2,86 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A93DA1D5524
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 17:52:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BDEE1D5531
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 17:53:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eeRVsxUggQc355Eb1S1AEZnGScW1QlbMy5AisNPo3aE=; b=Q7ivxNpgnHwPcd
-	QnNpmEzMuzGg2LDIt/LPqWNC33zy8vIlSz5gKrNuxkb4VpaKb1RJpIQqCGDviuXgOV0Uaet4aV68g
-	UWCgUp8l8/pskRI5rfdHX/fOVWb97jQb37bpdIx6aqjSPBzOJp/VOJo9R9URz0bXhHhtr0tWc5Czi
-	ITmUv9DwPGhetbC2cfXGXvxHk9I4YtVwRsrqd8WKoSXwhc6JQiyr3jrIzDUxcB1ECLIh57fvidwXi
-	sWsllgFg7gmXUdy5F2jCOzWmE1DYcvzyXLg6I5C4PWI5htbTUlgWlZh3kEbbhRbxfZHRXXU3rKMJm
-	452UDyWcgvAmN8fI1MrQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=8mY5BGqPZQdJDrXFIlp2QYo0B6uf8WvWvIoFj+ipwkA=; b=DKvYlnd84tr1jDlvrTukrdtSet
+	XviDJ8H5uistbVu2geUQI1346iAwpbvqIVW0vBGufo1GatB3/v6jn37QiFd3x9qRJeCHCCMJQg/5y
+	lU/8s568VnRdvmmgDT86Rn99gwO8vEYS1QsZRUzidsl7QmDmqhTAZNmCxsq0LwsyXzufy5Vwjup5E
+	5/fVXlNbGgp9yJlGEoW43BoWL+nwDClHjjWhDuOhFFqlJBDpplGU2DD7BQeBzPoktopWCZMQMgpZ5
+	b6vlfon4CYR6tpGTJX2XIXZaFTY8oe+XL+yP6zyFYnmwuGeIjDttc3jmVT/WKcjdQbdpK/hf6KwuF
+	9wUpR6qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZccx-0001q4-G0; Fri, 15 May 2020 15:51:59 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1jZce1-0002Lf-Bz; Fri, 15 May 2020 15:53:05 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZccm-0001p5-Sp
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 15:51:52 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 23so1114938pfy.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 08:51:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=tA+EMjW1VLqca6EzHa71oII4dWMrB7DJ+VRMsfne5wg=;
- b=Z5NnE/EHKLhl5fNCT/O9KT6XzbynyEvJz0IEjG4Ijbev0911UWm6o7shtlZ9ZCiEYE
- 3+Ra6r140tXwXQf2O8Y4mZSrEHubQvM1K8kEW149Jyhn7vvlRfJGkqAyrKJS4ykwH+Nr
- NACf2roUlNkiqMXaLbdbnpNc5Dv/G6nMYvQpXmnnyrpOba4sWPwwMLJ/5d7J8Mpxwg9v
- dLV3yMnFwI5fr+uyKHW45Ys5fTEmk4sGTEkpWMCh/9+geopKiVRYcZ5XH0adjQNiWiY2
- RFGAkWtildUxpjvVfrwdIXfjpqMBArYV/pTJXw+mkWHjQL1ikyCcGeDxgpgwK2YhIZWB
- pv0Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=tA+EMjW1VLqca6EzHa71oII4dWMrB7DJ+VRMsfne5wg=;
- b=kzbuLQZvp1qQPb72lGKCwZLuuRv/5vZvtc7QtZBTwDYeYj3S3T1dH8wwPEgC7Iangp
- xRT2Ple8SG65biewhUlAuy1uZyU/oRHX3y/f9sFkaBHouxelMjHWjiZPmaH+ytCI75Hc
- VH/68cdU0x2329Fid/O9yunSjDlZ/GP8dmcIbgeDnCro/y0tCL80X37+MFS6jvXUn9cn
- ALDgpqPQaVZWFCZd/Cug5UOtecVxbqxqTy3enja00RDT14TalTH4j76TJoGTLEoKEExL
- /Cgxf1ReKgzkQbl3Vlu3q19I9yARObgxFlhJpXlJVEM0vDDIRX0qrzdG4I+h7DM/m6Lr
- JFfQ==
-X-Gm-Message-State: AOAM533JG3AchbgLDkzFr9mHJTyeeYR2pLaS0SOTXRGNxXNz/w4lXalP
- lKEUAr1Z2F3SmGF6+lgsb8hAcg==
-X-Google-Smtp-Source: ABdhPJwlWcwKTqlkYO68NoSZ7gIvSmCybZaXRYhqcFQVJ2OHaE2OmcfLhgtaFFi19JTcmqicgEOGzQ==
-X-Received: by 2002:a62:16d5:: with SMTP id 204mr3198305pfw.10.1589557907919; 
- Fri, 15 May 2020 08:51:47 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id h17sm2261399pfk.13.2020.05.15.08.51.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 08:51:47 -0700 (PDT)
-Date: Fri, 15 May 2020 09:51:44 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-Subject: Re: [PATCH] coresight: etm4x: Add support to disable trace unit
- power up
-Message-ID: <20200515155144.GA7085@xps15>
-References: <20200514105915.27516-1-saiprakash.ranjan@codeaurora.org>
- <20200514180055.GA29384@xps15>
- <2c932d57288508cc72a6ee323cf5595e@codeaurora.org>
- <CANLsYkxun2EWGeLU42ShbqkJMtCTh+Q9L3t=CXQR+-2zVuuJYg@mail.gmail.com>
- <a0f8f01f28506e10001885e387d3cb4f@codeaurora.org>
+ id 1jZcdo-00029o-E2
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 15:52:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589557972; x=1621093972;
+ h=references:from:to:cc:subject:in-reply-to:date:
+ message-id:mime-version;
+ bh=DT1liw8u3FiqTUb6GhvHyfaThMNxutoSlfg3fkyelUI=;
+ b=gHLPcmhnyjpvZBrljH2X85nSxTTUr4joa2Mcbqd87EcQxleMTYtdfW56
+ ydE0ue32KErLuTkTrjWJbJmnqTiVUgwAj2iYhgnS03I5LVjvr8jEqldJ5
+ q7UnIZNdSVatGJNwt3m/r+mijIhr6rrIvAASPtlvHHKbHGKobge1xsYi0
+ 2KQUFTHY/VIqeK+N4/9EFgLjLUlrELcGPk7C/bxyV00a+N69ef3wZxxUu
+ YqpKF5cyFyqknNTlGc7SJveQSMivwPNblkOfzP0RmIoOJ0VLn2AeKr3rA
+ Lpkl7D2HypmuKFdBxfFeMtyiOqy67y/wt/gvo/Fdm4yXEkGsY/6MIP5u7 A==;
+IronPort-SDR: ICu01KXEUFTELz9+q4Bnk3/5o0+7ZDR8cNHr+wFVRriw8cMa6LNxnLsS2rUWo/pBqtfDBEUDMh
+ UioiNPZw09VcW8U3kSt9Q8b4Duy7/TtvIHtVunCZldj61/DIs6xCf5tYcnjb9od08vPgBz0McP
+ JQNO7hWvLo8fRcAeFMicg6+9NhPA8BcJOnOXQ2uQQZ6L+YRD9U4cf1u8MotCTU+gNvd/YtZy8c
+ WSIfrz4sVn2eTAIVy3namJZxzY7JQ4YxKOjPnhmBITMNvM7RPLsnndjgQMw1cYjPtRuS1ADJbA
+ vOA=
+X-IronPort-AV: E=Sophos;i="5.73,395,1583218800"; d="scan'208";a="75403050"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 May 2020 08:52:50 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 15 May 2020 08:52:50 -0700
+Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Fri, 15 May 2020 08:52:50 -0700
+References: <20200513125532.24585-10-lars.povlsen@microchip.com>
+ <202005150200.wnjISCrm%lkp@intel.com>
+From: Lars Povlsen <lars.povlsen@microchip.com>
+To: kbuild test robot <lkp@intel.com>
+Subject: Re: [PATCH 09/14] pinctrl: ocelot: Add Sparx5 SoC support
+In-Reply-To: <202005150200.wnjISCrm%lkp@intel.com>
+Date: Fri, 15 May 2020 17:52:46 +0200
+Message-ID: <87y2ptnqk1.fsf@soft-dev15.microsemi.net>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <a0f8f01f28506e10001885e387d3cb4f@codeaurora.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_085148_934459_5AFEF95E 
-X-CRM114-Status: GOOD (  28.88  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_085252_526937_29BCC439 
+X-CRM114-Status: GOOD (  14.26  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -102,128 +93,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- linux-arm-msm <linux-arm-msm@vger.kernel.org>,
- Coresight ML <coresight@lists.linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>, Tingwei Zhang <tingwei@codeaurora.org>,
- Leo Yan <leo.yan@linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mike Leach <mike.leach@linaro.org>
+Cc: devicetree@vger.kernel.org, kbuild-all@lists.01.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-gpio@vger.kernel.org,
+ Stephen Boyd <sboyd@kernel.org>, Linus Walleij <linus.walleij@linaro.org>,
+ linux-clk@vger.kernel.org,
+ Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>, Michael
+ Turquette <mturquette@baylibre.com>, SoC Team <soc@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Olof Johansson <olof@lixom.net>, Steen
+ Hegelund <Steen.Hegelund@microchip.com>,
+ Lars Povlsen <lars.povlsen@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 08:37:13PM +0530, Sai Prakash Ranjan wrote:
-> Hi Mathieu,
-> 
-> On 2020-05-15 20:22, Mathieu Poirier wrote:
-> > On Thu, 14 May 2020 at 12:39, Sai Prakash Ranjan
-> > <saiprakash.ranjan@codeaurora.org> wrote:
-> > > 
-> > > Hi Mathieu,
-> > > 
-> > > On 2020-05-14 23:30, Mathieu Poirier wrote:
-> > > > Good morning Sai,
-> > > >
-> > > > On Thu, May 14, 2020 at 04:29:15PM +0530, Sai Prakash Ranjan wrote:
-> > > >> From: Tingwei Zhang <tingwei@codeaurora.org>
-> > > >>
-> > > >> On some Qualcomm Technologies Inc. SoCs like SC7180, there
-> > > >> exists a hardware errata where the APSS (Application Processor
-> > > >> SubSystem)/CPU watchdog counter is stopped when ETM register
-> > > >> TRCPDCR.PU=1.
-> > > >
-> > > > Fun stuff...
-> > > >
-> > > 
-> > > Yes :)
-> > > 
-> > > >> Since the ETMs share the same power domain as
-> > > >> that of respective CPU cores, they are powered on when the
-> > > >> CPU core is powered on. So we can disable powering up of the
-> > > >> trace unit after checking for this errata via new property
-> > > >> called "qcom,tupwr-disable".
-> > > >>
-> > > >> Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-> > > >> Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> > > >> Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> > > >
-> > > > Co-developed-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
-> > > > Signed-off-by: Tingwei Zhang <tingwei@codeaurora.org>
-> > > >
-> > > 
-> > > Tingwei is the author, so if I understand correctly, his signed-off-by
-> > > should appear first, am I wrong?
-> > 
-> > It's a gray area and depends on who's code is more prevalent in the
-> > patch.  If Tingwei wrote the most of the code then his name is in the
-> > "from:" section, yours as co-developer and he signs off on it (as I
-> > suggested).  If you did most of the work then it is the opposite.
-> > Adding a Co-developed and a signed-off with the same name doesn't make
-> > sense.
-> > 
-> 
-> I did check the documentation for submitting patches:
-> Documentation/process/submitting-patches.rst. And it clearly states
-> that "Co-developed-by must be followed by Signed-off by the co-author
-> and the last Signed-off-by: must always be that of the developer
-> submitting the patch".
-> 
-> Quoting below from the doc:
-> 
-> Co-developed-by: <snip> ...Since
-> Co-developed-by: denotes authorship, every Co-developed-by: must be
-> immediately
-> followed by a Signed-off-by: of the associated co-author.  Standard sign-off
-> procedure applies, i.e. the ordering of Signed-off-by: tags should reflect
-> the
-> chronological history of the patch insofar as possible, regardless of
-> whether
-> the author is attributed via From: or Co-developed-by:.  Notably, the last
-> Signed-off-by: must always be that of the developer submitting the patch.
 
-Ah yes, glad to see that got clarified.  You can ignore my recommendation on
-that snippet.
+kbuild test robot writes:
 
-> 
-> > > 
-> > > >> ---
-> > > >>  .../devicetree/bindings/arm/coresight.txt     |  6 ++++
-> > > >>  drivers/hwtracing/coresight/coresight-etm4x.c | 29
-> > > >> ++++++++++++-------
-> > > >
-> > > > Please split in two patches.
-> > > >
-> > > 
-> > > Sure, I will split the dt-binding into separate patch, checkpatch did
-> > > warn.
-> > 
-> > And you still sent me the patch...  I usually run checkpatch before
-> > all the submissions I review and flatly ignore patches that return
-> > errors.  You got lucky...
-> > 
-> 
-> I did not mean to ignore it or else I wouldn't have run checkpatch itself.
-> I checked other cases like "arm,scatter-gather" where the binding and the
-> driver change was in a single patch, hence I thought it's not a very strict
-> rule.
+> EXTERNAL EMAIL: Do not click links or open attachments unless you know the content is safe
+>
+> Hi Lars,
+>
+> I love your patch! Perhaps something to improve:
+>
+> [auto build test WARNING on robh/for-next]
+> [also build test WARNING on pinctrl/devel clk/clk-next linus/master v5.7-rc5 next-20200512]
+> [if your patch is applied to the wrong git tree, please drop us a note to help
+> improve the system. BTW, we also suggest to use '--base' option to specify the
+> base tree in git format-patch, please see https://stackoverflow.com/a/37406982]
+>
+> url:    https://github.com/0day-ci/linux/commits/Lars-Povlsen/Adding-support-for-Microchip-Sparx5-SoC/20200514-163536
+> base:   https://git.kernel.org/pub/scm/linux/kernel/git/robh/linux.git for-next
+> config: powerpc-allyesconfig (attached as .config)
+> compiler: powerpc64-linux-gcc (GCC) 9.3.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         COMPILER_INSTALL_PATH=$HOME/0day GCC_VERSION=9.3.0 make.cross ARCH=powerpc
+>
+> If you fix the issue, kindly add following tag as appropriate
+> Reported-by: kbuild test robot <lkp@intel.com>
+>
+> All warnings (new ones prefixed by >>, old ones prefixed by <<):
+>
+>>> drivers/pinctrl/pinctrl-ocelot.c:28: warning: "clrsetbits" redefined
+> 28 | #define clrsetbits(addr, clear, set)          |
+> In file included from include/linux/io.h:13,
+> from include/linux/irq.h:20,
+> from include/linux/gpio/driver.h:7,
+> from drivers/pinctrl/pinctrl-ocelot.c:10:
+> arch/powerpc/include/asm/io.h:849: note: this is the location of the previous definition
+> 849 | #define clrsetbits(type, addr, clear, set)          |
+>
+> vim +/clrsetbits +28 drivers/pinctrl/pinctrl-ocelot.c
+>
+>     27
+>   > 28  #define clrsetbits(addr, clear, set) \
+>     29          writel((readl(addr) & ~(clear)) | (set), (addr))
+>     30
+>
 
-The patch has another warning for a line over 80 characters, that should have
-been fixed before sending.  Putting DT changes in a separate patch is always
-better for the DT people.  They review tons of patches and making their life
-easier is always a good thing.
+I'll change the code to avoid the name clash.
 
-Regards,
-Mathieu
+Thanks,
 
-> 
-> Thanks,
-> Sai
-> -- 
-> QUALCOMM INDIA, on behalf of Qualcomm Innovation Center, Inc. is a member
-> of Code Aurora Forum, hosted by The Linux Foundation
+
+> ---
+> 0-DAY CI Kernel Test Service, Intel Corporation
+> https://lists.01.org/hyperkitty/list/kbuild-all@lists.01.org
+
+-- 
+Lars Povlsen,
+Microchip
 
 _______________________________________________
 linux-arm-kernel mailing list
