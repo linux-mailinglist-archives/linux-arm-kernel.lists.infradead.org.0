@@ -2,67 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 473E61D4F7D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 15:48:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29AC11D4F96
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 15:53:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8P2xzFrNRaNZ1hsnp2YEx8V6GLexlLNn3Co8W8uez6Y=; b=HODdcnO15JqKNS
-	PJo0HxFBlloduy935Sz6gIngLbJcLf7VnNpxq/l3pRxg/5DkZzN8sILwL+KVslLmScLZ6kPYgETsC
-	79LY9Oo6LDtLglPzoXJY8MztJiumSdhr/ok15a0oOO7DbKMe5YMJGVQ4K20S0LrDWp/0vWyf+Ttd/
-	OnyNJz+n0th2tPcSmOUe2Hyf+Q6sO51BZXicV8DOreejAR88yzr3E8Im504W7OrCWvHD0xETrSbsZ
-	fMryqKGgwgRnxnAhjar5pZnEpH0DM1HYgLJN5joenvV3StYwe1Frs4edCCO8739EvQqt5cKahCPm2
-	NOipkMg/IxPAnBGlrJUA==;
+	List-Owner; bh=XqoITRc47IQi5HXtCIwv7TWoDZzDQ4nPj5DZQhynLFg=; b=jWd7HuaXVAaPJ3
+	oEWuRK4ze92voPmyoK3rklJglyDEyXgXb4YYM15mxMgvNlLing4YpTtx5zBOoduF05P2nisO9oOdT
+	UFHb2GJCBKBbHDpEAagprsy0+yrxoTqjU7TKGdXHwaV/pqh13oDP16bPN1J1ut1FOKhOc3JMeVBsh
+	YoGYot/R1z0x2a3wkKOyUzBFKtudZo2FW/3Mvigw3JRb1z7tVSdxyGVWqSxg9u8EfKdayQk0Ss7bE
+	H7RULpefXILnuZNoF4wYZi3q5xn3Fb6Gd7si8om5sRAX2z2yhyTD5KylZqDGHVMOOBbV9H4wN34pN
+	zHZSckXlAWIN9uIw6lBg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZahb-0001Qj-G8; Fri, 15 May 2020 13:48:39 +0000
-Received: from mga12.intel.com ([192.55.52.136])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZahT-0001Pl-HR; Fri, 15 May 2020 13:48:33 +0000
-IronPort-SDR: dsyoqyRsxlED6G5VvsGLCxUxSYj85lv2/xxvA9N1vN1n6bf/0GciF70R2zVuwjGHMyBbBm23/y
- BHLxscOvtwyg==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga106.fm.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 May 2020 06:48:30 -0700
-IronPort-SDR: AgA+QGUcfWXG7JMCt4bkZKGpeJwCLYEmjhD53o86ruEuiXS4tZjJRrdQS4l/MUiU1m+CasJjuD
- MdhoiHBzHs+A==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,395,1583222400"; d="scan'208";a="298444952"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga002.fm.intel.com with ESMTP; 15 May 2020 06:48:25 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jZahP-006scn-I7; Fri, 15 May 2020 16:48:27 +0300
-Date: Fri, 15 May 2020 16:48:27 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Subject: Re: [PATCH v3 1/4] serial: 8250: Fix max baud limit in generic 8250
- port
-Message-ID: <20200515134827.GB1634618@smile.fi.intel.com>
-References: <20200323024611.16039-1-Sergey.Semin@baikalelectronics.ru>
- <20200506233136.11842-1-Sergey.Semin@baikalelectronics.ru>
- <20200506233136.11842-2-Sergey.Semin@baikalelectronics.ru>
+	id 1jZalr-0004Mc-Tw; Fri, 15 May 2020 13:53:03 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZalg-0004M3-Cn
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 13:52:53 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 756DB2F;
+ Fri, 15 May 2020 06:52:51 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.6])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E59F63F71E;
+ Fri, 15 May 2020 06:52:47 -0700 (PDT)
+Date: Fri, 15 May 2020 14:52:37 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v3 3/7] firmware: smccc: Add the definition for SMCCCv1.2
+ version/error codes
+Message-ID: <20200515135237.GA7336@bogus>
+References: <20200506164411.3284-1-sudeep.holla@arm.com>
+ <20200506164411.3284-4-sudeep.holla@arm.com>
+ <20200515113801.GC67718@C02TD0UTHF1T.local>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200506233136.11842-2-Sergey.Semin@baikalelectronics.ru>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <20200515113801.GC67718@C02TD0UTHF1T.local>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_064831_594660_03BB2170 
-X-CRM114-Status: GOOD (  20.19  )
+X-CRM114-CacheID: sfid-20200515_065252_478115_6EDAE561 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [192.55.52.136 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ medium trust [217.140.110.172 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,110 +65,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, Stefan Roese <sr@denx.de>,
- Will Deacon <will@kernel.org>, Paul Burton <paulburton@kernel.org>,
- Russell King <linux@armlinux.org.uk>, Long Cheng <long.cheng@mediatek.com>,
- linux-serial@vger.kernel.org, Jiri Slaby <jslaby@suse.com>,
- Arnd Bergmann <arnd@arndb.de>, Maxime Ripard <mripard@kernel.org>,
- Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>,
- linux-mediatek@lists.infradead.org,
- Mika Westerberg <mika.westerberg@linux.intel.com>,
- linux-arm-kernel@lists.infradead.org,
- Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Serge Semin <fancer.lancer@gmail.com>, Lukas Wunner <lukas@wunner.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Catalin Marinas <catalin.marinas@arm.com>,
+ linux-kernel@vger.kernel.org, Steven Price <steven.price@arm.com>,
+ harb@amperecomputing.com, Sudeep Holla <sudeep.holla@arm.com>,
+ Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 07, 2020 at 02:31:32AM +0300, Serge Semin wrote:
-> Standard 8250 UART ports are designed in a way so they can communicate
-> with baud rates up to 1/16 of a reference frequency. It's expected from
-> most of the currently supported UART controllers. That's why the former
-> version of serial8250_get_baud_rate() method called uart_get_baud_rate()
-> with min and max baud rates passed as (port->uartclk / 16 / UART_DIV_MAX)
-> and ((port->uartclk + tolerance) / 16) respectively. Doing otherwise, like
-> it was suggested in commit ("serial: 8250_mtk: support big baud rate."),
-> caused acceptance of bauds, which was higher than the normal UART
-> controllers actually supported. As a result if some user-space program
-> requested to set a baud greater than (uartclk / 16) it would have been
-> permitted without truncation, but then serial8250_get_divisor(baud)
-> (which calls uart_get_divisor() to get the reference clock divisor) would
-> have returned a zero divisor. Setting zero divisor will cause an
-> unpredictable effect varying from chip to chip. In case of DW APB UART the
-> communications just stop.
-> 
-> Lets fix this problem by getting back the limitation of (uartclk +
-> tolerance) / 16 maximum baud supported by the generic 8250 port. Mediatek
-> 8250 UART ports driver developer shouldn't have touched it in the first
-> place  notably seeing he already provided a custom version of set_termios()
-> callback in that glue-driver which took into account the extended baud
-> rate values and accordingly updated the standard and vendor-specific
-> divisor latch registers anyway.
-
-Some of the hardware support PS != 16 (8250_mid), but for now it lies to UART
-core for real UART clock because of its (core) hard cored assumption PS == 16
-here and there.
-
-Reviewed-by: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-
-> 
-> Fixes: 81bb549fdf14 ("serial: 8250_mtk: support big baud rate.")
-> Signed-off-by: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-> Cc: Alexey Malahov <Alexey.Malahov@baikalelectronics.ru>
-> Cc: Thomas Bogendoerfer <tsbogend@alpha.franken.de>
-> Cc: Paul Burton <paulburton@kernel.org>
-> Cc: Ralf Baechle <ralf@linux-mips.org>
-> Cc: Arnd Bergmann <arnd@arndb.de>
-> Cc: Long Cheng <long.cheng@mediatek.com>
-> Cc: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-> Cc: Maxime Ripard <mripard@kernel.org>
-> Cc: Catalin Marinas <catalin.marinas@arm.com>
-> Cc: Will Deacon <will@kernel.org>
-> Cc: Russell King <linux@armlinux.org.uk>
-> Cc: linux-mips@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-mediatek@lists.infradead.org
-> ---
->  drivers/tty/serial/8250/8250_port.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/tty/serial/8250/8250_port.c b/drivers/tty/serial/8250/8250_port.c
-> index f77bf820b7a3..4d83c85a7389 100644
-> --- a/drivers/tty/serial/8250/8250_port.c
-> +++ b/drivers/tty/serial/8250/8250_port.c
-> @@ -2615,6 +2615,8 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
->  					     struct ktermios *termios,
->  					     struct ktermios *old)
->  {
-> +	unsigned int tolerance = port->uartclk / 100;
-> +
->  	/*
->  	 * Ask the core to calculate the divisor for us.
->  	 * Allow 1% tolerance at the upper limit so uart clks marginally
-> @@ -2623,7 +2625,7 @@ static unsigned int serial8250_get_baud_rate(struct uart_port *port,
->  	 */
->  	return uart_get_baud_rate(port, termios, old,
->  				  port->uartclk / 16 / UART_DIV_MAX,
-> -				  port->uartclk);
-> +				  (port->uartclk + tolerance) / 16);
->  }
->  
->  void
-> -- 
-> 2.25.1
-> 
-
--- 
-With Best Regards,
-Andy Shevchenko
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gRnJpLCBNYXkgMTUsIDIwMjAgYXQgMTI6Mzg6MDFQTSArMDEwMCwgTWFyayBSdXRsYW5kIHdy
+b3RlOgo+IE9uIFdlZCwgTWF5IDA2LCAyMDIwIGF0IDA1OjQ0OjA3UE0gKzAxMDAsIFN1ZGVlcCBI
+b2xsYSB3cm90ZToKPiA+IEFkZCB0aGUgZGVmaW5pdGlvbiBmb3IgU01DQ0MgdjEuMiB2ZXJzaW9u
+IGFuZCBuZXcgZXJyb3IgY29kZSBhZGRlZC4KPiA+IFdoaWxlIGF0IGl0LCBhbHNvIGFkZCBhIG5v
+dGUgdGhhdCBBUk0gREVOIDAwNzBBIGlzIGRlcHJlY2F0ZWQgYW5kIGlzCj4gPiBub3cgbWVyZ2Vk
+IGludG8gdGhlIG1haW4gU01DQ0Mgc3BlY2lmaWNhdGlvbihBUk0gREVOIDAwMjhDKS4KPiA+IAo+
+ID4gUmV2aWV3ZWQtYnk6IFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFybS5jb20+Cj4gPiBT
+aWduZWQtb2ZmLWJ5OiBTdWRlZXAgSG9sbGEgPHN1ZGVlcC5ob2xsYUBhcm0uY29tPgo+IAo+IEht
+bS4uLiB0aGUgU01DQ0MgdjEuMiBkb2Mgc3RpbGwgc2VlbXMgdG8gYmUgRUFDIHJhdGhlciB0aGFu
+IGEgZmluYWwKPiByZWxlYXNlLgo+CgpSaWdodCwgSSB3YXMgdG9sZCBmaW5hbCByZWxlYXNlIHNv
+bWV0aW1lIGluIHRoZSByZWNlbnQgcGFzdCDwn5iECkkgbWVhbiBBcHJpbCBvciBtaWQtTWF5LCBJ
+IHdpbGwgY2hlY2sgb24gdGhhdCBidXQgeWVzIEkgYWdyZWUgb24geW91cgpjb25jZXJucy4KCj4g
+SSBkb24ndCBleHBlY3QgdGhhdCB0aGlzIHdvdWxkIGNoYW5nZSwgYnV0IEkgYW0gYSBsaXR0bGUg
+aGVzaXRhbnQgdG8gYWRkCj4gb3RoZXIgc3R1ZmYgYmFzZWQgb24gYW4gdW5maW5hbGl6ZWQgc3Bl
+Yy4gRG8gd2Uga25vdyB3aGVuIHRoZSBmaW5hbAo+IHJlbGVhc2Ugd2lsbCBiZT8KPgoKSSBoYXZl
+IGFza2VkIGZvciB0aGUgc2FtZSBhcyBJIHdyaXRlIHRoaXMgZW1haWwuCgotLSAKUmVnYXJkcywK
+U3VkZWVwCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwps
+aW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJh
+ZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51
+eC1hcm0ta2VybmVsCg==
