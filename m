@@ -2,58 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57CDC1D4973
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:25:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E91481D497D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:26:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xeTWLOlg7SUTXvxBGcPw/ddmCga/oZw/Mbij99Pd3uU=; b=QHRNo9rIQJ5eEK
-	2x/VKGwX6r2FifMXuSxCiopoh/VwAvtq7i00EVSUyYgkd5Cxox4snkTxycY5WDPhiCTecMTSyj3uI
-	r9m+GkEn6TvyxqWwEFwLfZZMI+5aAf8l3S4rn3OyhUPEpn+aBdMpj6KPFFUc2w42jPh7YLkBbHUuP
-	STZPxDZSq/BQFaonsKmnVsdohhKL3jR8eYogZqc0Y8RrOaWkP/LPXdxXqpG3I0X/WpYknkUfJa8ri
-	6F28My9kFQwXcixO0mh6ieZkghqcUdVCxeuC8Iz/yFnCpwNucSpgaLGdQnOYyJZxh03LU42TQsdxi
-	veKtSDXJJbehSEQ3OSOQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=CYPT+XEuxVt0VTsorA4BTCz7Qgfai61RlkRwv5ELSO8=; b=Hyy015p2q48Mmunn1ITT4otku
+	Et7/ebCIFJXtaEjraLOom9Vb1m7e11EFbUvQNe5/kcBkHhKTe2rf9xGi/vpE+cAELEiiQiSoVxYqh
+	Z2J9PphZE48SlqV7PZ8Rzgkb6lDz74B1Hk3m9vhz49/EW2qyY66hZJApgVFDFOUvI62e4rKNWnOHI
+	LwvK+IpI/06WGcdxO5LpbcHUNxOdr3JYl7zkuqlfToI/AU0hXLtV5M1WoeAFpjtmWXoEv/p54Fkgr
+	j90ZTomu6t7dBNVooKsRHZKyfF8GDReS9ZRWDvvCPcnhBQamizdbcP7yIdybDo2gfvcu1nD0hTxwQ
+	pR33C0oBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWam-0004lZ-F1; Fri, 15 May 2020 09:25:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWaW-0003I8-Ni
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:25:08 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C428C2F;
- Fri, 15 May 2020 02:25:03 -0700 (PDT)
-Received: from bogus (unknown [10.37.12.6])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF31D3F71E;
- Fri, 15 May 2020 02:25:00 -0700 (PDT)
-Date: Fri, 15 May 2020 10:24:57 +0100
-From: Sudeep Holla <sudeep.holla@arm.com>
-To: Etienne Carriere <etienne.carriere@linaro.org>
-Subject: Re: [PATCH 2/2] firmware: psci: support SMCCC v1.2 for SMCCC conduit
-Message-ID: <20200515092457.GB23671@bogus>
-References: <20200514082109.27573-1-etienne.carriere@linaro.org>
- <20200514082109.27573-2-etienne.carriere@linaro.org>
- <20200514142442.GB23401@bogus>
- <CAN5uoS9gZ7820Fg-6dmm4BO5GW+Y6D3O5Xt3gUQtYVZGafm_XA@mail.gmail.com>
+	id 1jZWc8-0005iU-BO; Fri, 15 May 2020 09:26:44 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZWc0-0005hM-2a
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:26:37 +0000
+Received: from localhost (p5486CC07.dip0.t-ipconnect.de [84.134.204.7])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 53824206F1;
+ Fri, 15 May 2020 09:26:34 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1589534795;
+ bh=JONR1pyDiZUuVzDV4dMV5uAVGjvbIMtv5fbdNtZJQJI=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=KXai6YkiZMm63/30RRwO6O6lX2sos3XjZi1OeX33TJi8uY9uz5zoDHc9rxPrUpVh1
+ UUd5IXcrHntKLeLmcELp+ER0FaptSqknwrifF6K/jdQHdh0/lVozMcaY5MVRF7XfVd
+ pNcJBZzF1n1Qtu2AdbgBEnPjlP345J+ZOoopxIG8=
+Date: Fri, 15 May 2020 11:26:31 +0200
+From: Wolfram Sang <wsa@kernel.org>
+To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Subject: Re: [PATCH] i2c: at91: Restore pinctrl state if can't get scl/sda
+ gpios
+Message-ID: <20200515092631.GB2077@ninjato>
+References: <20200513111322.111114-1-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAN5uoS9gZ7820Fg-6dmm4BO5GW+Y6D3O5Xt3gUQtYVZGafm_XA@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20200513111322.111114-1-codrin.ciubotariu@microchip.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_022504_841201_F849BA19 
-X-CRM114-Status: GOOD (  18.86  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_022636_139862_FBA5AFCE 
+X-CRM114-Status: GOOD (  11.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,82 +76,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, lorenzo.pieralisi@arm.com,
- maz@kernel.org, linux-kernel@vger.kernel.org,
- Steven Price <steven.price@arm.com>, alexios.zavras@intel.com,
- Thomas Gleixner <tglx@linutronix.de>, will@kernel.org,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alexandre.belloni@bootlin.com, linus.walleij@linaro.org,
+ linux-kernel@vger.kernel.org, ludovic.desroches@microchip.com,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0769289428006819585=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, May 14, 2020 at 04:56:53PM +0200, Etienne Carriere wrote:
-> On Thu, 14 May 2020 at 16:24, Sudeep Holla <sudeep.holla@arm.com> wrote:
-> >
-> > On Thu, May 14, 2020 at 10:21:09AM +0200, Etienne Carriere wrote:
-> > > Update PSCI driver to support SMCCC v1.2 reported by secure firmware
-> > > and indirectly make SMCCC conduit properly set when so. TF-A release
-> > > v2.3 implements and reports SMCCC v1.2 since commit [1].
-> > >
-> > > Link: [1] https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=e34cc0cedca6e229847c232fe58d37fad2610ce9
-> > > Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
-> > > ---
-> > >  drivers/firmware/psci/psci.c | 14 ++++++++++----
-> > >  include/linux/psci.h         |  1 +
-> > >  2 files changed, 11 insertions(+), 4 deletions(-)
-> > >
-> > > diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
-> > > index 2937d44b5df4..80cf73bea4b0 100644
-> > > --- a/drivers/firmware/psci/psci.c
-> > > +++ b/drivers/firmware/psci/psci.c
-> > > @@ -409,11 +409,17 @@ static void __init psci_init_smccc(void)
-> > >       feature = psci_features(ARM_SMCCC_VERSION_FUNC_ID);
-> > >
-> > >       if (feature != PSCI_RET_NOT_SUPPORTED) {
-> > > -             u32 ret;
-> > > -             ret = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
-> > > -             if (ret == ARM_SMCCC_VERSION_1_1) {
-> > > +             ver = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
-> > > +
-> > > +             switch (ver) {
-> > > +             case ARM_SMCCC_VERSION_1_1:
-> > >                       psci_ops.smccc_version = SMCCC_VERSION_1_1;
-> > > -                     ver = ret;
-> > > +                     break;
-> > > +             case ARM_SMCCC_VERSION_1_2:
-> > > +                     psci_ops.smccc_version = SMCCC_VERSION_1_2;
-> > > +                     break;
-> > > +             default:
-> > > +                     break;
-> > >               }
-> > >       }
-> > >
-> > > diff --git a/include/linux/psci.h b/include/linux/psci.h
-> > > index a67712b73b6c..c7d99b7f34ed 100644
-> > > --- a/include/linux/psci.h
-> > > +++ b/include/linux/psci.h
-> > > @@ -24,6 +24,7 @@ bool psci_has_osi_support(void);
-> > >  enum smccc_version {
-> > >       SMCCC_VERSION_1_0,
-> > >       SMCCC_VERSION_1_1,
-> > > +     SMCCC_VERSION_1_2,
-> >
-> > I took approach to kill this completely [1] instead of having to keep
-> > expanding it for ever.
->
-> Yes, I've been pointed to [1]. Discard this change. Sorry for the
-> (little) noise.
->
 
-No worries, it's not a noise, just different approach.
+--===============0769289428006819585==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="dc+cDN39EJAMEtIO"
+Content-Disposition: inline
 
---
-Regards,
-Sudeep
+
+--dc+cDN39EJAMEtIO
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Wed, May 13, 2020 at 02:13:22PM +0300, Codrin Ciubotariu wrote:
+> If there is a strict pinmux or if simply the scl/sda gpios are missing,
+> the pins will remain in gpio mode, compromizing the I2C bus.
+> Change to the default state of the pins before returning the error.
+>=20
+> Fixes: a53acc7ebf27 ("i2c: at91: Fix pinmux after devm_gpiod_get() for bu=
+s recovery")
+> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+
+I squashed it into the other patch and applied it to for-current,
+thanks!
+
+
+--dc+cDN39EJAMEtIO
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6+YEcACgkQFA3kzBSg
+KbZIIw//RKnTmZzSi3ZieTQnZ64Pv7lEIn6QAM9FBzNk0Pzk8s5maVdQCzWq4/Ho
+CPO1Dk/R1qWQxikxvyKx9sfqVOIXVVLiNs9lYFmMkdQPoALrVvbQicwimZFyUjNO
+8zE1/LXvhLLU4UeP0oM+3OsD4v+5AvQ6igq84Etx2hfHO65w463NpP+tv6ut6q8R
+Zc8UVpJTRf9NGYtk8h3AvThMT+R0KNaEOe445HNLVi8bUg+3cPpDExOrdMJcwqRl
+QykdNi18hi05ATx+PqWDzSQIbUnLGVeEYQ/U3X14AJkfI+mJ0lFtWzK2RkOgUSbg
++m6JCs1/knFQOXE5hIc/S8RDX8Ags8uw1ztmcEvSQ4x8gSDtznWFHWkGo2g/2XeM
+ZkttSMuwfHGebvQwSSmHEJdfi4h5IHax0qgf6IjLYaygA0n9Am7FBij6SKVTecxB
+tgYroBOIX0FoJRvMxpF7TtIQQaK/IEPhotPt21ayT/worPk7Fj4pbBFBSBX9sPIg
+Ydf/8JvTivFgPv6vcT+KV6DxJ5KmWdyuGd3mzh8JnlvEvl5sL6powbU2z8/yPpaK
+2vBF2d1bdFy7kStu5McgvKROKCN+FVZBXOnNXOiHTYURQgpck1VqXuscl5xUkbci
+nzyNwMVQ48o5ptBOMmHMUSC1MTg5Mxyq+7B3x0ZipY2SmPXdk68=
+=Doda
+-----END PGP SIGNATURE-----
+
+--dc+cDN39EJAMEtIO--
+
+
+--===============0769289428006819585==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0769289428006819585==--
+
