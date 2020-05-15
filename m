@@ -2,80 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8983F1D492A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:12:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 85AB41D492B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:14:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
-	In-Reply-To:Subject:To:From:References:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=T9ImOiy4BjI+Jd1hpPvnFao1YJrz87eid32QqI4SXVc=; b=t02VwuUjVkcCZev842UIRvnHKN
-	XPOtG16oKRaoNIc6Sb3mDEbwJURkqsbdmIu72PZ3yLGuGyTi4PK+Mfazzo7X4+22+Viy8G8eUsXBI
-	gWpThk6tgv2ufuPzVleXefIvFEj1KF9QDoRr1JZNbI2PpmqlxFP9yDw/7taDuSwtJa9EffgYYDnJT
-	7oR9f/v2mYmHkJoFqLyGV3BlR4Sb9+GD1KHs1woCCrP/2Uv0HZxuB7+5OB9Sh+hBxARtBWKWO0nl4
-	Sg10kq0pkj05SnKLx7+iKjHjlHNWgeQqq16+EIl+akiGLBllMjARoc4WtqIBR0zhrFaPvDZeURhFC
-	0oVexcdw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nphVMmHl0N6dEDlAwAwizxVIJ70GVGQS3uTPRHH0biU=; b=WI2hIuG7fdC6sl
+	nJqq2hvV8UYk2cL3JKjNdCR5Uk6pPdM7nvM2KGjNSevPB7WM3X9AZlqntHbFl1V7cTTotH5rI1SLf
+	Wu3iEm+zmGgnc+UZADJWh0LKdQUX1+J5UJjnLQNOv1sa1kK9K3cj70rAdVltFjV8nNVI5yNWoGbiq
+	kEGylGKDQtPTyLUnIHleDGN1vdEW181cV+WYLWPGvT4EhbMlu/DONN47jO2dA124Nmd6ebntTOnDY
+	jXqkT/SpTDsQjqKyVGNt6bKQDF1deQQYUot4ikxnfb3cHoRlAudS6RiH0I1QOOzinAKHnHNSO8CZ+
+	vdA1m1B1lVLnqdr3cF7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWO6-0003Xq-Bf; Fri, 15 May 2020 09:12:14 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1jZWQN-0004Ll-Us; Fri, 15 May 2020 09:14:35 +0000
+Received: from us-smtp-2.mimecast.com ([205.139.110.61]
+ helo=us-smtp-delivery-1.mimecast.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWNv-0003BI-D8
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:12:07 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
- t=1589533923; x=1621069923;
- h=references:from:to:cc:subject:in-reply-to:date:
- message-id:mime-version;
- bh=wmtlMa/ByzxofhuCC0VPeSnxK6BCfzWRYql8RxVBaqc=;
- b=MZAqo+2VmnnrNNDiNjQxYQG9fAkBotUvE43X0CLsGikWh47PYPNzNgko
- nu/QwFMmxXXYRlkl8kPw5kOyPoKgbXBLdK1H45I/ayJzKs7PXuS3bUBNH
- jwkTknZz3I/kIzq5NZqJxjJMsA/ElBIohh1tgdPpvRsh3YFV6DD1xrxDi
- DNsIvSH4GKmZh4neB9ShipJKNDuT+zuVm1kqKFmiE+B/tNRMT7a4fMlr5
- Q0hWB2adom212yrooCDPGQZfLHj5VrdxN2m2R5EQ3Tw3iZbs43K66Trul
- 9pjZ10ct2FV6o/Z1MS5WSNdWUvwndLGKwjYu8HGRDUB1/cG1wTnARB97i A==;
-IronPort-SDR: DiM+U75P+/Md9FzuxnzG9/z0ceXFZvbHHtzFIn11OpL0g9Q1x1Uby3/VZY5m1NeVYWhvUBPmE+
- fgXUBBDmoZtQ367KyOjQZknEXfD5iM3FrLkBAERTap365oNNgrj1v8ezcplKZf610CTi+9QIoE
- o5MSEPl/7koBuzmySNOL7Y4LO3u9rXNzVcL3jJlTliM6j+9gKvuMN9IwP6het51vlvoYSL5FN4
- fOUTEcECWvT0h+Gp2PovBvNtR1UGsmCCQYbZxYGTpCE4WgWkOBOKcEjLw/SxtEbpYrTSxwouNm
- V6c=
-X-IronPort-AV: E=Sophos;i="5.73,394,1583218800"; d="scan'208";a="79762318"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 15 May 2020 02:11:52 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex01.mchp-main.com (10.10.85.143) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Fri, 15 May 2020 02:11:52 -0700
-Received: from soft-dev15.microsemi.net.microchip.com (10.10.115.15) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Fri, 15 May 2020 02:11:49 -0700
-References: <20200513140031.25633-1-lars.povlsen@microchip.com>
- <20200513140031.25633-2-lars.povlsen@microchip.com>
- <20200513142050.GH4803@sirena.org.uk>
- <20200514130407.guyk3r4ltjvszy5s@mobilestation>
-From: Lars Povlsen <lars.povlsen@microchip.com>
-To: Serge Semin <Sergey.Semin@baikalelectronics.ru>
-Subject: Re: [PATCH 01/10] spi: dw: Add support for polled operation via no
- IRQ specified in DT
-In-Reply-To: <20200514130407.guyk3r4ltjvszy5s@mobilestation>
-Date: Fri, 15 May 2020 11:11:48 +0200
-Message-ID: <874kshpnor.fsf@soft-dev15.microsemi.net>
+ id 1jZWQF-0004Kj-5v
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:14:28 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1589534064;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ in-reply-to:in-reply-to:references:references;
+ bh=sAyNKqy0PvpNZ7XM4XJFqPAgjGRTcvpeLX/hBzxhqBM=;
+ b=AIDVqZV6IaVr9E8Wx0iCfEZJtCD3gM1285Fcm+Ft7+izU5nsU0Xy1RBkNNUK4l1iNCE9aw
+ RlxM7JdK5lVJgd286q6E9QjA7azu165isTN156sKrtCyiicavjvhcNKdpyWYHZqSXuehFl
+ wXmNRO4RtHgWz0cRHtugwqYKQvuUBcU=
+Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
+ [209.85.222.197]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-156-SdMO9ZXxOB61n1jm-4mdjg-1; Fri, 15 May 2020 05:14:22 -0400
+X-MC-Unique: SdMO9ZXxOB61n1jm-4mdjg-1
+Received: by mail-qk1-f197.google.com with SMTP id 189so1529645qke.17
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 02:14:22 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=sAyNKqy0PvpNZ7XM4XJFqPAgjGRTcvpeLX/hBzxhqBM=;
+ b=UVzHPWLwliG3F8HonfQf00uXlgpFgnCl5MQLPb6fUqIywWmNdvmdUEZknWyvlAZwN4
+ G36K5dWPUsE0TiHi8hAVNwtziZcXrZQxIkHFv2Oy9KU++2Yt/0zkjFEjZdoWbHbjaU0b
+ RrdBUsuHI2I19GBwKbk/QiJcIC6cShoNGcpa5uEaY1M1iY1wDnxgxrQJCoDv7kLZElA3
+ Yk6wd1p2OuD+FTVqkV03tSb5WxPPJK3A3E8ycLTen53OpN8LIYQ3FqeFxHYMhZb/HEm3
+ 9DsQiPxeUbbzcoG6g64qTzG7nCeXQuKADctmr8TpwHvnQoyvUTh6kNPOUEs5BIdospwe
+ 1JPA==
+X-Gm-Message-State: AOAM533c2urHgdTkgeMGhSQyWURNcOsguVaRRQQBs6CC5oeceWP8CN7y
+ hDBnmgbhInlIoq3ajoAJWyoE8BXYHuRVl+aqAXyjzMeAv9BVL4C/JqKlHaGplxoWM/XxYwN2xmA
+ w9k34HIViEwySuXZcr3EQd4Inw1+awLkmfa+RkNLBQHtftYRsx7U=
+X-Received: by 2002:ac8:380d:: with SMTP id q13mr2367458qtb.200.1589534062295; 
+ Fri, 15 May 2020 02:14:22 -0700 (PDT)
+X-Google-Smtp-Source: ABdhPJzwyLTxFyixDvnPyg3oeL1fkkw3utZ2sn7m3Aff/TLZ0tuJ5vQAmsiR8I5ZPVoH3XSv1K0qQ5EhHgkWu/AeBT0=
+X-Received: by 2002:ac8:380d:: with SMTP id q13mr2367418qtb.200.1589534061588; 
+ Fri, 15 May 2020 02:14:21 -0700 (PDT)
 MIME-Version: 1.0
+References: <1586212300-30797-1-git-send-email-bhsharma@redhat.com>
+ <20200408104655.GA92698@C02TD0UTHF1T.local>
+ <CACi5LpP0WqYGxrJL6BJia-ceSR5XbjytsSY+P74xaDJZTJA8jA@mail.gmail.com>
+ <20200428100710.GD3868@gaia>
+ <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
+In-Reply-To: <CACi5LpPW2zmq0-UDnU_115ePxXKWG+1i6UciVWPpq=PzQHrkOw@mail.gmail.com>
+From: Bhupesh Sharma <bhsharma@redhat.com>
+Date: Fri, 15 May 2020 14:44:08 +0530
+Message-ID: <CACi5LpMnbFbmqWOn0GfPD2H50UcZ0XHQ7X+Cd0E-cS-zfL7tQQ@mail.gmail.com>
+Subject: Re: [PATCH] arm64/defconfig: Enable CONFIG_KEXEC_FILE
+To: Catalin Marinas <catalin.marinas@arm.com>, Arnd Bergmann <arnd@arndb.de>
+X-Mimecast-Spam-Score: 0
+X-Mimecast-Originator: redhat.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_021203_494756_A4C74B63 
-X-CRM114-Status: GOOD (  14.86  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20200515_021427_295981_A6480B2A 
+X-CRM114-Status: GOOD (  20.27  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [205.139.110.61 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [205.139.110.61 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,6 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,61 +106,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>,
- linux-kernel@vger.kernel.org, Serge Semin <fancer.lancer@gmail.com>,
- linux-spi@vger.kernel.org, SoC Team <soc@kernel.org>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Microchip Linux Driver Support <UNGLinuxDriver@microchip.com>,
- Lars Povlsen <lars.povlsen@microchip.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>, arm@kernel.org,
+ James Morse <james.morse@arm.com>, Bhupesh SHARMA <bhupesh.linux@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Arnd,
 
-Serge Semin writes:
-
-> Hi Mark
+On Thu, Apr 30, 2020 at 10:05 AM Bhupesh Sharma <bhsharma@redhat.com> wrote:
 >
-> On Wed, May 13, 2020 at 03:20:50PM +0100, Mark Brown wrote:
->> On Wed, May 13, 2020 at 04:00:22PM +0200, Lars Povlsen wrote:
->> > With this change a SPI controller can be added without having a IRQ
->> > associated, and causing all transfers to be polled. For SPI controllers
->> > without DMA, this can significantly improve performance by less
->> > interrupt handling overhead.
->>
->> This overlaps substantially with some work that Serge Semin (CCed) has
->> in progress, please coordinate with him.
+> On Tue, Apr 28, 2020 at 3:37 PM Catalin Marinas <catalin.marinas@arm.com> wrote:
+> >
+> > On Tue, Apr 28, 2020 at 01:55:58PM +0530, Bhupesh Sharma wrote:
+> > > On Wed, Apr 8, 2020 at 4:17 PM Mark Rutland <mark.rutland@arm.com> wrote:
+> > > > On Tue, Apr 07, 2020 at 04:01:40AM +0530, Bhupesh Sharma wrote:
+> > > > >  arch/arm64/configs/defconfig | 1 +
+> > > > >  1 file changed, 1 insertion(+)
+> > > > >
+> > > > > diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+> > > > > index 24e534d85045..fa122f4341a2 100644
+> > > > > --- a/arch/arm64/configs/defconfig
+> > > > > +++ b/arch/arm64/configs/defconfig
+> > > > > @@ -66,6 +66,7 @@ CONFIG_SCHED_SMT=y
+> > > > >  CONFIG_NUMA=y
+> > > > >  CONFIG_SECCOMP=y
+> > > > >  CONFIG_KEXEC=y
+> > > > > +CONFIG_KEXEC_FILE=y
+> > > > >  CONFIG_CRASH_DUMP=y
+> > > > >  CONFIG_XEN=y
+> > > > >  CONFIG_COMPAT=y
+> > > > > --
+> > > > > 2.7.4
+> > >
+> > > Thanks a lot  Mark.
+> > >
+> > > Hi Catalin, Will,
+> > >
+> > > Can you please help pick this patch in the arm tree. We have an
+> > > increasing number of user-cases from distro users
+> > > who want to use kexec_file_load() as the default interface for
+> > > kexec/kdump on arm64.
+> >
+> > We could pick it up if it doesn't conflict with the arm-soc tree. They
+> > tend to pick most of the defconfig changes these days (and could as well
+> > pick this one).
 >
-> Thanks for copying me these mails. I haven't been Cc'ed in the series and
-> hasn't been subscribed to the SPI mailing list, so I would have definitely
-> missed that.
+> Thanks Catalin.
+> (+Cc Arnd)
 >
-> I would like to coordinate my efforts with Lars. I'll have the patchset reviewed
-> soon in addition providing my comments/suggestions of how to make it useful for
-> both mine and Lars solution.
-
-Serge - thanks for taking on this.
-
-Note that my primary concern now is to get Sparx5 upstreamed. The
-mem_ops (or dirmap) and polled mode are both performance enhancements,
-which can be pulled from my series if it creates too much noise. I can
-then add the necessary on top of your work/current kernel at a later
-time.
-
-> One thing I can tell about the mem_ops he implemented, is that they aren't
-> mem_ops, but dirmap (as you remember it's also implemented in my code, but with
-> alignment specific), and the exec_mem_op partly consists of a code, which belong
-> to the supports_op() callback. The rest of my comments will be inlined in the
-> patches.
+> Hi Arnd,
 >
-> -Sergey
+> Can you please help pick this change via the arm-soc tree?
 
--- 
-Lars Povlsen,
-Microchip
+Ping. Any updates on this defconfig patch.
+
+Thanks,
+Bhupesh
+
 
 _______________________________________________
 linux-arm-kernel mailing list
