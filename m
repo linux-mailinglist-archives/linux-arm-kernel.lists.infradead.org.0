@@ -2,37 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5365B1D525F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:48:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 905211D5263
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 16:48:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Uslk36mrvDAZeA/qXSMqqo2TKkvyn1EEWn+RnFB3xJw=; b=eqwddmfTgxtjtl
-	Y+2Ql2ymnDFm2Kg92fcQpfoeHVEsCY590BgkRYTuWihnipYO5rauSbW0xAYptVF5C43h3pX+kD+ox
-	bw7Z/hwK/dPbgvFfx5Zx41UsmAMPKmbM3AUxO6jrdh+8+AyRzSDXm1Pra6ZZjv0VdeOapa+6URocD
-	9zADUuQnwcyM2dd8Yj5U5bCjVGEEFnOktF9Ny05ESc/gjJ9tSAuWZwrVeJOUe0smG/rpw9kleiMax
-	R2k/bfnOrepvmZf30mMgiO7BHpP9B/XcN0hvPFqzKOhK2wYpwNKmsrjwgrd4Dx9lEPJRICqti/j8x
-	kHaoi1Dk0Bb2CXzyFu2Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LB5NbXLkqfh3N9fBKFQJzSlvA4jVF4xH1j7MEgKvSNg=; b=UfxF7GwrocQGY2
+	xzSmLqSj41Zq7uzrhGFDBjTV8rt97PeESEtA+aljy3iMh5yhv3QnojqoNcpFROFIZ1CTaPFAoqchR
+	MmLhZoNY1t44GKzBxh3n5GLY+jaPQy5rfOfdb1d4W2uxuNXj85uhj+i2VKyx65Dd6mYE80fS5lzmu
+	0EITUGF8pZJqo7t2GWe9XjAW3ITsrDpdeEKcu4YoDy5YubeUYJk5EJx4T4h9B3DK/68xU8+jXzqTM
+	cjGWqCwCsH5AtoK96Kf3R+NkKQumGId2pwQu++aej4IDp7YJ3KZqwlM4gxTZksPyzNtd/HIujI/1C
+	vsgs/qIdetTBWWIrkogA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZbcz-0003sx-6X; Fri, 15 May 2020 14:47:57 +0000
-Received: from [2001:4bb8:188:1506:c70:4a89:bc61:2] (helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZbTb-0005KV-FH; Fri, 15 May 2020 14:38:15 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: Andrew Morton <akpm@linux-foundation.org>, Arnd Bergmann <arnd@arndb.de>,
- Roman Zippel <zippel@linux-m68k.org>
-Subject: [PATCH 29/29] module: move the set_fs hack for flush_icache_range to
- m68k
-Date: Fri, 15 May 2020 16:36:46 +0200
-Message-Id: <20200515143646.3857579-30-hch@lst.de>
-X-Mailer: git-send-email 2.26.2
-In-Reply-To: <20200515143646.3857579-1-hch@lst.de>
-References: <20200515143646.3857579-1-hch@lst.de>
+	id 1jZbdF-0004F0-Dr; Fri, 15 May 2020 14:48:13 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZbU8-00064e-HO
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 14:38:52 +0000
+Received: from ptx.hi.pengutronix.de ([2001:67c:670:100:1d::c0])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <pza@pengutronix.de>)
+ id 1jZbU5-0005nL-0e; Fri, 15 May 2020 16:38:45 +0200
+Received: from pza by ptx.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <pza@pengutronix.de>)
+ id 1jZbU4-0004Zk-MV; Fri, 15 May 2020 16:38:44 +0200
+Date: Fri, 15 May 2020 16:38:44 +0200
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: soc@kernel.org
+Subject: [GIT PULL] Reset controller updates for v5.8
+Message-ID: <20200515143844.GA17201@pengutronix.de>
 MIME-Version: 1.0
+Content-Disposition: inline
+X-Uptime: 16:36:30 up 85 days, 22:06, 112 users,  load average: 0.18, 0.16,
+ 0.21
+User-Agent: Mutt/1.10.1 (2018-07-13)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c0
+X-SA-Exim-Mail-From: pza@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20200515_073848_646684_87A3EEB6 
+X-CRM114-Status: GOOD (  11.97  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,78 +67,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-mips@vger.kernel.org, linux-mm@kvack.org, sparclinux@vger.kernel.org,
- linux-riscv@lists.infradead.org, linux-arch@vger.kernel.org,
- linux-c6x-dev@linux-c6x.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
- Geert Uytterhoeven <geert@linux-m68k.org>, linux-xtensa@linux-xtensa.org,
- linux-alpha@vger.kernel.org, linux-um@lists.infradead.org,
- linux-m68k@lists.linux-m68k.org, openrisc@lists.librecores.org,
- linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
- linux-kernel@vger.kernel.org, Jessica Yu <jeyu@kernel.org>,
- linux-fsdevel@vger.kernel.org, linuxppc-dev@lists.ozlabs.org
+Cc: linux-arm-kernel@lists.infradead.org, kernel@pengutronix.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-flush_icache_range generally operates on kernel addresses, but for some
-reason m68k needed a set_fs override.  Move that into the m68k code
-insted of keeping it in the module loader.
+Dear SoC maintainers,
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
-Reviewed-by: Geert Uytterhoeven <geert@linux-m68k.org>
-Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
----
- arch/m68k/mm/cache.c | 4 ++++
- kernel/module.c      | 8 --------
- 2 files changed, 4 insertions(+), 8 deletions(-)
+The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
 
-diff --git a/arch/m68k/mm/cache.c b/arch/m68k/mm/cache.c
-index 7915be3a09712..5ecb3310e8745 100644
---- a/arch/m68k/mm/cache.c
-+++ b/arch/m68k/mm/cache.c
-@@ -107,7 +107,11 @@ void flush_icache_user_range(unsigned long address, unsigned long endaddr)
- 
- void flush_icache_range(unsigned long address, unsigned long endaddr)
- {
-+	mm_segment_t old_fs = get_fs();
-+
-+	set_fs(KERNEL_DS);
- 	flush_icache_user_range(address, endaddr);
-+	set_fs(old_fs);
- }
- EXPORT_SYMBOL(flush_icache_range);
- 
-diff --git a/kernel/module.c b/kernel/module.c
-index 646f1e2330d2b..b1673ed49594f 100644
---- a/kernel/module.c
-+++ b/kernel/module.c
-@@ -3312,12 +3312,6 @@ static int check_module_license_and_versions(struct module *mod)
- 
- static void flush_module_icache(const struct module *mod)
- {
--	mm_segment_t old_fs;
--
--	/* flush the icache in correct context */
--	old_fs = get_fs();
--	set_fs(KERNEL_DS);
--
- 	/*
- 	 * Flush the instruction cache, since we've played with text.
- 	 * Do it before processing of module parameters, so the module
-@@ -3329,8 +3323,6 @@ static void flush_module_icache(const struct module *mod)
- 				   + mod->init_layout.size);
- 	flush_icache_range((unsigned long)mod->core_layout.base,
- 			   (unsigned long)mod->core_layout.base + mod->core_layout.size);
--
--	set_fs(old_fs);
- }
- 
- int __weak module_frob_arch_sections(Elf_Ehdr *hdr,
--- 
-2.26.2
+  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
 
+are available in the Git repository at:
+
+  git://git.pengutronix.de/pza/linux.git tags/reset-for-v5.8
+
+for you to fetch changes up to 697fa27dc5fb4c669471e728e97f176687982f95:
+
+  reset: hi6220: Add support for AO reset controller (2020-05-06 12:03:43 +0200)
+
+----------------------------------------------------------------
+Reset controller updates for v5.8
+
+This tag adds support for i.MX8MP and i.MX8MN SoCs to the i.MX7 reset
+controller driver, extends the Hi6220 reset driver to support the AO
+reset controller used to bring the Mali450 GPU out of reset, and adds
+a define for the internal DAC reset line on Amlogic GXL SoCs.
+
+----------------------------------------------------------------
+Anson Huang (3):
+      dt-bindings: reset: imx7: Add support for i.MX8MN
+      dt-bindings: reset: imx7: Document usage on i.MX8MP SoC
+      reset: imx7: Add support for i.MX8MP SoC
+
+Jerome Brunet (1):
+      dt-bindings: reset: meson: add gxl internal dac reset
+
+Peter Griffin (1):
+      reset: hi6220: Add support for AO reset controller
+
+ .../devicetree/bindings/reset/fsl,imx7-src.txt     |   6 +-
+ drivers/reset/hisilicon/hi6220_reset.c             |  69 +++++++++++++-
+ drivers/reset/reset-imx7.c                         | 101 +++++++++++++++++++++
+ .../dt-bindings/reset/amlogic,meson-gxbb-reset.h   |   2 +-
+ include/dt-bindings/reset/imx8mp-reset.h           |  50 ++++++++++
+ include/dt-bindings/reset/imx8mq-reset.h           |  56 ++++++------
+ 6 files changed, 253 insertions(+), 31 deletions(-)
+ create mode 100644 include/dt-bindings/reset/imx8mp-reset.h
 
 _______________________________________________
 linux-arm-kernel mailing list
