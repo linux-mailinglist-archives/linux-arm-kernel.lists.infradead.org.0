@@ -2,75 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D511A1D593C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 20:42:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6478F1D59A4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 21:06:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/9DtVsYVRvuuhGOcF99voK+C1zrLX9uYG42u+SHJ+m4=; b=fCZyOIplzXQq55
-	yll4Qvrx8Te8ZwhAVXnW0LEYQnB6rFac38cWmjL57fAeQeV6tKN2hLJu2gNUlGdOTqzQUgZvjRt7C
-	Un0yYWct4yTvTavYHB+VxnjMUy075xrwjKHxNKb633WU3ptr6Jw8AgfGoZjlafLQxTrWlimtqcxmB
-	xtgNnFUm13vpYbsjUjKK9fWLFt6LMm6ua2f6cpLceHwHTFIlouwx4biSGZM4dhFol4bF7L9uEvVtT
-	at5AIR9BsUfMsdBnA+OvaCuTC1t8iTR2OMbt8Bfweb9jtyF0JS/AzEp1dEZv4cbYUN9ARPw7y27O8
-	cGHsgrVXFWdu0IYgUq4Q==;
+	List-Owner; bh=2DwEV3W3dq6is1/FmCW12zU5e8SgbTa+0DEN1risxh4=; b=eZhxr83cBZuwH/
+	jsRN6z0nimDlZhuR5tZUNSpPKrc1ue2bSpMT2dj7T+u0xATLFmwTg/Y8PtagXrSlMGZp3ab49f186
+	Da02iQLmvu2KIJnV/YjzTViAsADMkjIaT3VJ+7v04bR4Bh79D3IYoQ0T0m1xgmZHBq/21LJjcZ6WN
+	Ught2DgF4YJEosE0EST/fxFKDpru+gYgnNAyjaZyAERCP0J2oDFSNZWFTh4bURQ6lDtqIJiczUJX2
+	RWVkn3dW3I+/kEEGfF7HBFoC7S8CrFoisgHGjJppEpyV2KUQTh2OcICTjKYPZpoI4G4WX1q7xzCRI
+	fFMZZtFrVLt1lC3+p6Jw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZfHN-0000sl-Dg; Fri, 15 May 2020 18:41:53 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1jZfel-0008Or-CT; Fri, 15 May 2020 19:06:03 +0000
+Received: from mail-ej1-x643.google.com ([2a00:1450:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZfHE-0000qq-Pw; Fri, 15 May 2020 18:41:46 +0000
-Received: by mail-ed1-x543.google.com with SMTP id h16so3053601eds.5;
- Fri, 15 May 2020 11:41:40 -0700 (PDT)
+ id 1jZfeb-0008OI-5D; Fri, 15 May 2020 19:05:54 +0000
+Received: by mail-ej1-x643.google.com with SMTP id l21so3114341eji.4;
+ Fri, 15 May 2020 12:05:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=kv5MUGjy/Y9+njlPVWiZ3iEONaGvUB+Gebu1dnu2KGM=;
- b=ujlKf2bmyqPK5q4p74/GDbGVJ43T0RZnhudgi7n1l3KeJmLjhq9FRvW+ly3rplSZw/
- SShXcTT1vXathOvlWEpN853Noevit9g2dNWB6aHQOaCM3GbURUAjjNABKHtugKyC7pzp
- yrc2jGfe+UP0BX7owd0hprTmIB8+dPFvsRZ2z59fYVlOI6dWY9wJqBFNwvMQF6tytc/C
- J2q8UqC4917gXeX4gvlTV2nZTl2lvRMJp+aqGcW3bG2A4nsFRe0sOmwpoRE6lWWkJQMK
- zSkTCp3aEtIg/2Vg5023BRydDCthya0H6yD4SwWhzdykq2Vf25NK+U24fYDd5keEbumH
- lLTg==
+ :cc; bh=ownehjnT16AeaOm+l2W7DPInUnd4hMg6fuB995cXtKg=;
+ b=IP/nxo/6SfWq7KT7kJmWp4mNJd5k5YCm2N1NtheM85kGUZV7uphToZTGEhsge96QY5
+ t33GhDrF2X14dvzkFcxjwAf63vdNOJEfshNtRj1at//RV2ILdCeefNTwfgtUG5ZQfDpP
+ PEmVpZ1gRnFYaB2vbY09Sr4uMBmtytAbokbaO8xUSjpL6WO3UlgVpY8IPGowF38bldiM
+ kdxtQro62hJG/N0sjnOs2Ny48VKhdA1f6JgvT2dJG1qT+uJqxe1831B3in98+Q08o/cY
+ Yyp2i9lKgcd3jZLGJLaZsInJBKLX7gfvr3rmjgvV7dLMrMxDAaKDMDCZLqMB7xlsmnUT
+ S5ww==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=kv5MUGjy/Y9+njlPVWiZ3iEONaGvUB+Gebu1dnu2KGM=;
- b=GbMfsScpFt6xBvw2TvmRnL7Y2NMAWvyLx6IRXw3GjT0AYwbfCi8+JK3l33trADsJ56
- 2X5l2Yqj2/Saiu4DtfpYiuPnfyK0JuZe9cuQL2cD0j6zmfTJ0uMHI7h5D4DXbf0WQbxF
- NuToUUJFDU3hl8aWyNDMiAR2gpkfBTxsVhRtFFL0VpF7hqWOqwBOVmzV1VFHBN9+qk9d
- Ps3QoHFUsmx88r6Md8A821C4l+f/1k913jQjENfG45RhamtdsuSaaIA9Tl29MH9Mxm31
- ozPGTN1Dq/2F+ca6bu9TjOV6eFMYyXr55eP/vFIZUwC4waSpvyyp4iZj+igyXQGWA1XY
- mITw==
-X-Gm-Message-State: AOAM530uG0eibaTIm3uBDThYLq1k2IcTvxXEPodVAq4dRsqBW9L2z/yj
- JYh5uhY4ZGWcxDIvSTTZ80GFclEwzE084OgluSE=
-X-Google-Smtp-Source: ABdhPJw75eCBt+AI/OMsnjMjqhZaamKLCUTFwu5SGXAJdiwEJWMf0HfnrJS4BYtF3MwaV7yuh1t3Lq3sWs5D+CNlTNk=
-X-Received: by 2002:a05:6402:2208:: with SMTP id
- cq8mr4347508edb.293.1589568098804; 
- Fri, 15 May 2020 11:41:38 -0700 (PDT)
+ bh=ownehjnT16AeaOm+l2W7DPInUnd4hMg6fuB995cXtKg=;
+ b=HOMngxRNuxi63vcgy52AcPGUkIxkICj6BPakE3YROSoRqpQHN8o8fLq7CCARo8XjSi
+ SSupMUwLZeZ454c/HWj4vylzUTRPVvTgGpwvyzdzFowtwwgAughT2AQiHcwjEv/nhXhP
+ ExQnk+D7qJaOLGpieFTtUnPEFO7Zalc49DUISyWOBWaVElZ37XffEGr0IkUAlYuMFtBp
+ UP8AHYB0qaEdBhifk0UtU/5DkkTjscEQ7AUlxntjAsfmFknl5NoJxv1532oEUJvD8elD
+ ykp+N+VrWTxnR1R0bXnqNLb3HnJgrs5vNViMHmlAoX5bbydZd3y4RNkNYnU3AAxPnrbW
+ iQXQ==
+X-Gm-Message-State: AOAM531sJPcR9af0TqrmD88bKOPAxGqe9FSR2rLauz/HONecWeUPs+XY
+ TenDZ9d28k79t8PMOP9m2TIRDWhPwFBlnQrr+Kg=
+X-Google-Smtp-Source: ABdhPJx7c4EEMNLReYLEuyFi/aZ+DUocKLS1t2lZ7DCZmV6nAOMT8syRynGCemDJbZJc1BUoOLTY7Wq/5sfXKOPlLss=
+X-Received: by 2002:a17:906:d8c1:: with SMTP id
+ re1mr4438325ejb.184.1589569551527; 
+ Fri, 15 May 2020 12:05:51 -0700 (PDT)
 MIME-Version: 1.0
 References: <1589472657-3930-1-git-send-email-amittomer25@gmail.com>
- <1589472657-3930-9-git-send-email-amittomer25@gmail.com>
- <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
-In-Reply-To: <b2ad8a81-619f-5f35-9596-c2061ae15e4c@arm.com>
+ <1589472657-3930-6-git-send-email-amittomer25@gmail.com>
+ <afc0d7f3-d763-b936-988c-d802b86836bc@arm.com>
+In-Reply-To: <afc0d7f3-d763-b936-988c-d802b86836bc@arm.com>
 From: Amit Tomer <amittomer25@gmail.com>
-Date: Sat, 16 May 2020 00:11:02 +0530
-Message-ID: <CABHD4K9+2DKWiLATEvHLNgUj-otD1iNAkkYV1feXX3e-0HPvFQ@mail.gmail.com>
-Subject: Re: [PATCH v1 8/9] arm64: dts: actions: Add MMC controller support
- for S700
+Date: Sat, 16 May 2020 00:35:15 +0530
+Message-ID: <CABHD4K_BpHMSypfdiQKeRfHOgdO8e7ekU0TKBmqisDe_+4hGPg@mail.gmail.com>
+Subject: Re: [PATCH v1 5/9] dt-bindings: dmaengine: convert Actions Semi Owl
+ SoCs bindings to yaml
 To: =?UTF-8?Q?Andr=C3=A9_Przywara?= <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_114144_859982_C6B18A66 
-X-CRM114-Status: GOOD (  10.35  )
+X-CRM114-CacheID: sfid-20200515_120553_201621_6D065E40 
+X-CRM114-Status: UNSURE (   6.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -108,22 +109,20 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-> I was wondering if we should add a SoC specific compatible here, to be
-> on the safe side. The BSP driver seems to differentiate between S900 and
-> S700, although it looks like only to cover some misplaced platform setup.
->
-> But if we later find a problem, the DTs stay the same, and the driver
-> can easily be fixed.
->
-> So, using "actions,s700-mmc", "actions,owl-mmc" here, adding this combo
-> to the binding, but leaving the driver alone for now.
+> Could you replace those "maxItems: 1" here and below with:
+>   - description: ...., copying in the explanation from the .txt binding?
+> That should serve the same purpose as "maxItems: 1", but is more
+> descriptive.
 
-I think, it can be a good idea to have this extra compatible string that may
-be needed when MMC driver evolves to support more features which requires
-data to be differentiated based on SoC.
+But having it under reg: looks bit odd to me, no?
+
+reg:
+   - description: ...
+
+Or did you mean something else ?
 
 Thanks
-Amit
+-Amit
 
 _______________________________________________
 linux-arm-kernel mailing list
