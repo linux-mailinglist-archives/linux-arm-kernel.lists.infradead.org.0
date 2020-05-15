@@ -2,76 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7DFF81D4C3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:16:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B17441D4C44
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:16:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=azwZfugf/4M0ddDdS7OWdZnwPCjBC0h2zv8PhcKQhsM=; b=aFBXfhS9QVjni6
-	SIq34Pd3EEwrfG3c6MjYpU0jXoC/GKRpS8cgEf8MMzQ7+ReYvN9BHfvSCBXCVP9Jd/KVjP4fW3b33
-	W620YbfMC3HOyZL0uykpWR/CmkG3jkm8ixoQxqnrlKZyrfYrBI9JYcda/zTHbk8KqwzmkCNVUKbpS
-	69EwlBKzeIXc0umQcwKv+PqJn61tLIQq1vwSbPSlyftDlF/4T3BXx5DBOPs8FrrXgi2tdHrcf89xm
-	Xf8ZfTlgqMYhQK9PxJaCqGJ8d/RAKGBaa8lx7Zolx81TDPs2akNsaBK/nYWjQr6Ik7kCMZqqSjnmZ
-	n/khHsH2rX5TdlvC3Obg==;
+	List-Owner; bh=3b3p53oBpIqvFuXGUH18LnrU0A4ZXUNWcX5wL+ozl4Y=; b=llFZxHNcI2vavS
+	1JXUUTHJhv3mEzU8Cs/vqCoj1sxaG3ExZjQaH/C5xaEX0MsGVZUth0joiG7OFu0qMX9ssytZ4CKvm
+	kCRWrr/HsiFgprzytAUGlx60VWcYUQACOyJOaosJRd0al7JSuUStiddCuCeYZ0TK3hdrL/ZuhJfXs
+	ChAH5j77Nm80vZW8XVURORpWux1Ya5bAXIPjAq1yyG5JZJFepzemqmBsWm3BaQnssPESAnNcZd2DM
+	mkxuFBb60nM3gsi9qm1PeWKCgbMLHZSl+kBsVCHO1DL2Vqvi+B0DRgJ5VjJMNjZ9yiLl3GZAuc0/2
+	Xro8hYZQoFRGnu3swSXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYKC-00052W-B2; Fri, 15 May 2020 11:16:20 +0000
-Received: from mail-io1-xd2e.google.com ([2607:f8b0:4864:20::d2e])
+	id 1jZYKZ-0005Hb-Ht; Fri, 15 May 2020 11:16:43 +0000
+Received: from esa4.microchip.iphmx.com ([68.232.154.123])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYK4-00051x-Dz
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:16:13 +0000
-Received: by mail-io1-xd2e.google.com with SMTP id x5so2269645ioh.6
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 04:16:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=juliacomputing-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=fG9RJAdiQR3KRVbi1EfJRtogMSIdgoMp1F7l88z9wa0=;
- b=jUWlX02LSQ11rfJ6ZVLTgF5Vcv9IS6E6Er1PynDV1jN57S0PWqVwaItvlozJwFC7wq
- I2o04DU+ury1VNLTs5zv+Ojcq9fbllDEIydDEIFkKjMIll8OOfhn6joxrSIL+BDPCQNM
- Tunz7m5SspKk55ADs3bHcuDmxn7r8iTgNBionwhxuI3qrF6lWkOvO52UKwcJ6pmxDm/E
- JufS8YmlONgtbkXVWAgOEjLwvE71LJhxj6GpRzlROlLnB4+oCHHNZQficBhwSWRMJ5Kb
- OH7Fymgk27yDeRVLkLBuHkJjEi7pO265hEen8YlNPfnA/mLpjkDAFsv0Tr+BM4s/B1AR
- h0ow==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=fG9RJAdiQR3KRVbi1EfJRtogMSIdgoMp1F7l88z9wa0=;
- b=B6WRf5f86f1v5PAF2aGqxKvrRHVNDeaidpJzX/3K0Ee2b7ehHBysRtKkxjsAQILO5d
- 5tnRRGcmi60uYVUz54hguqFSjdMwMWjPA7uESGZEAIq5asF7+fp88W4z7M2yJQf4JX3D
- OXk7xddoTTznYsJc86gi8iMYjROmYvf6ZUzgUSlyE6l9wwHs0eNlyIwA+lz4cnsHElIB
- E2mHftUV56SfXOXtRwLJ2w85mArnHiS8eEnAKvG7GZfce7w9fTJwSFi1ru6qTWJVlaUN
- cuOTHf9syXEXDFvO11G8N50sQnmHDfAYlGxTXsosKhG2GGk+pv4AlZPY8nuGKQXD5hHa
- wh4w==
-X-Gm-Message-State: AOAM530+E1ygtYnnvJ48O00Q6fFRtIXpBolbT/G8XgRXJ5p1/m96vSz0
- 837f4FeWlVTxC4LL1G09d+fnaWKGWG7Bm8XeEUz4nQ==
-X-Google-Smtp-Source: ABdhPJzR/BBg4yP9FlNiURi9PB43aqjraWAe8Mz6QOFhgtAH6GTFC0g6gOxZ0lmTiMqJgATJ2Mv6yW+UA4qIm8QKf5Q=
-X-Received: by 2002:a6b:6b04:: with SMTP id g4mr2398603ioc.75.1589541371180;
- Fri, 15 May 2020 04:16:11 -0700 (PDT)
+ id 1jZYKJ-0005F7-Cj
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:16:31 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=microchip.com; i=@microchip.com; q=dns/txt; s=mchp;
+ t=1589541387; x=1621077387;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=ABwPSOt6Vn+yadZj5yycUyO4VKdjl4WcH7rpms4LysM=;
+ b=wa2jPehecrLACtJCmRbXl9G8ndrirgy0v2BvVgWEr1p0myyy+xume62I
+ 4dGs3BYBDI3Bqs5i0AAp4OjE9IbIFlsGLmxIguobraSqQHF8+4++1GWjX
+ CYuSSo2Yu7PLOFgYu7Cu6pwhK6cjuI5sWfsPRxroZdIXAlHdsQuFa6V++
+ QjAO+QUHJGvFfGDMFH9BX+PV8vBJvZWbdNCjwmFw/kUySJn0nDHfBh96U
+ YxDajTKbhtGYdjeF9oUY01gyRlByReVfdGYqfHlgnCjlJrPONSn5d181v
+ rZq2NIIIcgsQiAuQ38G2b2C9vRFJjBmLTb85sUlIMxS45CasVCz89FrOH w==;
+IronPort-SDR: d1Ro/FnxzZNikeDUdQz/SltJMJxGFcl/zWK39dHh0MfNPIZD37uVX1zLfG3rF4HuUkePUfyT25
+ w898hqe9GAvk4PHvCnXJ1shgJuVxQBN6scp70tlGwiucor15kWAtBQvclnIVtX2GfdQ7m8NgcB
+ s0GalkDVsbOYWDopm6KBKlsK01D927pMnPQM4FPpB9NtIaXstLqjXSQbEP4LxjNbgo2g1gRrFq
+ H2yF02dUkYL6EuYvXbRaHcBkQIoxsD8OjPy0xsWEdLcd7+gFjuDms5NMGgR/yljeuvvHzjKQoq
+ stc=
+X-IronPort-AV: E=Sophos;i="5.73,395,1583218800"; d="scan'208";a="73566865"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa4.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 15 May 2020 04:16:23 -0700
+Received: from chn-vm-ex01.mchp-main.com (10.10.85.143) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 15 May 2020 04:16:26 -0700
+Received: from cristi-P53.lan (10.10.115.15) by chn-vm-ex01.mchp-main.com
+ (10.10.85.143) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Fri, 15 May 2020 04:16:20 -0700
+From: <cristian.birsan@microchip.com>
+To: <balbi@kernel.org>, <gregkh@linuxfoundation.org>,
+ <nicolas.ferre@microchip.com>, <alexandre.belloni@bootlin.com>,
+ <ludovic.desroches@microchip.com>, <robh+dt@kernel.org>,
+ <mark.rutland@arm.com>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-usb@vger.kernel.org>, <devicetree@vger.kernel.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: [PATCH v2 0/7] usb: gadget: udc: atmel: add usb device support for
+ SAM9x60 SoC
+Date: Fri, 15 May 2020 14:16:24 +0300
+Message-ID: <20200515111631.31210-1-cristian.birsan@microchip.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
-From: Keno Fischer <keno@juliacomputing.com>
-Date: Fri, 15 May 2020 07:15:35 -0400
-Message-ID: <CABV8kRyHrDMK4o=UZZZWJMuQNjPA8Xuoj-JFF-Lsx26fBTR0WA@mail.gmail.com>
-Subject: PTRACE_SYSEMU behavior difference on arm64
-To: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_041612_541219_0A335D05 
-X-CRM114-Status: UNSURE (   8.07  )
+X-CRM114-CacheID: sfid-20200515_041627_511132_E8847034 
+X-CRM114-Status: UNSURE (   9.00  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d2e listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.154.123 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,32 +95,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, Oleg Nesterov <oleg@redhat.com>,
- linux-arm-kernel@lists.infradead.org, Sudeep Holla <sudeep.holla@arm.com>
+Cc: Cristian Birsan <cristian.birsan@microchip.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The behavior of PTRACE_SYSEMU on arm64
-appears to differ substantially from that of x86 and powerpc
-(the other two architectures on which this feature is implemented).
-In particular, after PTRACE_SYSEMU the syscall will always
-be skipped on x86 and powerpc, but executed on arm64 unless
-the syscall-entry stop was again continued using PTRACE_SYSEMU.
-The skipping behavior is also documented in the manpage,
-so I suspect this may just be a bug (the skipping behavior
-makes sense to me and is what I would expect).
-The reason this happens is that `syscall_trace_enter`
-re-checks TIF_SYSCALL_EMU after the ptrace stop, but at that
-point it may have already been superseded by a new ptrace
-request. x86 and power save the original value of the flag,
-rather than acting on the new value. I can submit a patch to
-fix this, but wanted to check first whether this was intentional.
-If it is, I can fix the man page instead.
+From: Cristian Birsan <cristian.birsan@microchip.com>
 
-Keno
+This patch set adds usb device support for SAM9x60 SoC.
+The DPRAM memory for the USB High Speed Device Port (UDPHS) hardware
+block was increased and the allocation method is changed. This patch
+series simplifies the endpoint allocation scheme to acomodate this SoC
+and the old ones.
+
+Changes in v2:
+- drop the patch that adds reference to pmc for sam9x60
+- use dt-bindings: usb prefix
+- enable usb device in device tree
+
+Claudiu Beznea (1):
+  usb: gadget: udc: atmel: use of_find_matching_node_and_match
+
+Cristian Birsan (6):
+  dt-bindings: usb: atmel: Update DT bindings documentation for sam9x60
+  usb: gadget: udc: atmel: simplify endpoint allocation
+  usb: gadget: udc: atmel: use 1 bank endpoints for control transfers
+  usb: gadget: udc: atmel: rename errata into caps
+  usb: gadget: udc: atmel: update endpoint allocation for sam9x60
+  ARM: dts: at91: sam9x60ek: enable usb device
+
+ .../devicetree/bindings/usb/atmel-usb.txt     |  1 +
+ arch/arm/boot/dts/at91-sam9x60ek.dts          | 13 +++
+ arch/arm/boot/dts/sam9x60.dtsi                | 74 ++++++++++++++++
+ drivers/usb/gadget/udc/atmel_usba_udc.c       | 87 ++++++++++++-------
+ drivers/usb/gadget/udc/atmel_usba_udc.h       |  6 +-
+ 5 files changed, 145 insertions(+), 36 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
