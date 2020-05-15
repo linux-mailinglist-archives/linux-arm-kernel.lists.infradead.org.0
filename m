@@ -2,60 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6D6191D5C18
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 00:12:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CEC681D5C53
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 16 May 2020 00:23:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tUvyTB5xUFZzWmT2r+HPn+JH19nHGG80va3P3MBImlE=; b=B4u3QUx+WVExBUL7TbyqvG3WF
-	fjMgeToHD3GjwniZ2+5rm4iU9fFSkB7aF3kAU9fyZkT0RmUGM/Kx63OiXwYGSCIr7EeevbikIaeAo
-	VpnKJh1bl4JTurLfW4yaTZxpwgQcMa5udiNrKEEBIHul4cQCxJLgctnvyduIOkdnF6GA7fA1MsWXb
-	7853b9uAu1rzO02CZIxeE2oinn8LNYFxiZ9EkJ0QFZYut2RBdRyquf839xfDCFijaOpiJfZYkuL49
-	8iOU+65/HTfelZdvBnG39EzIkZPRPTE/1Xmy1hv6O+J8JECOc2Kd54NRGw3myEu9fcdyp1gxilgiY
-	07VYI5/fQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=f2ap9eamSAdMngvSJnFwO/2NsXvLKN10tM08odhMsXo=; b=PGZVMH3aKsvfmf
+	OAOhiBhaZN7BNX7RyarqB7Gaoyy1erghaHy21IHEevhERbbArPAzpHZ+jSBFCkjELbfayDcfDNg1a
+	rPckXdk1P9fecRFEDB9ytlqpPPKwM53uPh+pXK4sMOksukUIs6+sr1iDlDyOHhgAxlVJzM2la/CEg
+	T3F+yKBCJEex7NZGWkieqexwuGUoSBhRQ9GI+8tPZfH4AHI3le1ew8l3dYyIsT5bCQrJR+7JNKflf
+	p+6vW1h+O2f1wVFGZr4Nx6mLFFMExjRHaISRv8UR9Md8kEE5iFGDsLz+N3eNT35md494jxzAB5+su
+	HRLQXK9Ui0i8bBdLYwKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZiZK-0005De-3C; Fri, 15 May 2020 22:12:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZiZ9-0005D0-Ii
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 22:12:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48A031063;
- Fri, 15 May 2020 15:12:23 -0700 (PDT)
-Received: from [10.57.27.64] (unknown [10.57.27.64])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1B50A3F71E;
- Fri, 15 May 2020 15:12:20 -0700 (PDT)
-Subject: Re: Constantly map and unmap of streaming DMA buffers with IOMMU
- backend might cause serious performance problem
-To: Song Bao Hua <song.bao.hua@hisilicon.com>, "hch@lst.de" <hch@lst.de>
-References: <B926444035E5E2439431908E3842AFD249F263@DGGEMI525-MBS.china.huawei.com>
- <36d67d68-4381-c7a7-dcf1-6383bd9ae0ad@arm.com>
- <20200515144522.GA25652@lst.de>
- <B926444035E5E2439431908E3842AFD249F9F4@DGGEMI525-MBS.china.huawei.com>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <f403a17b-bc3d-436a-4711-93cd8d4537ba@arm.com>
-Date: Fri, 15 May 2020 23:12:19 +0100
-User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
+	id 1jZijW-0002vK-H7; Fri, 15 May 2020 22:23:10 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
+ by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZijO-0002uC-82
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 22:23:03 +0000
+Received: by mail-qk1-x742.google.com with SMTP id g185so4290354qke.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 15:22:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=juliacomputing-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition;
+ bh=TAEeLRHczjNG3Cacn9/4Eq8k480FxxPELQkCilNmlOU=;
+ b=BwkiLuN3CS3wSfV5UK/uFMwWOrqdIuQqkzgFEHnZA9kg/p0ceMCfR2loMYNAIkq/7m
+ fQixDxjcDe6oAk+sKgT3wjq5PUYOKFnQFT9f4IdUe+PWGoMFPfnDTP0EohFkMO9YTTvj
+ 0OWexima9S9sys9Y7txoCZRf4F+yVgioqoAdJf0/RbBg0B3aifD33ddB1j880f10TgqI
+ 8gnIeGfnCVkPvinPsCZiKQVgWgzpYDVHvpHFR+KJe2sAivPii6Ba1Rm9ol7BZx2K+IHC
+ N4VCkR0oofbqlYUm5ueUJbsRooZ3d9ZX54zUi9CZ/1WD85d0MdGRZfczKjEbP8H2Sh8z
+ amHw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition;
+ bh=TAEeLRHczjNG3Cacn9/4Eq8k480FxxPELQkCilNmlOU=;
+ b=KswEyLjjyN9ETjwDo4w/me88TochI+AWT6/7NidoprGZuuBqZip8QUc2Ds+fFYgfdr
+ TpTvsSTsLejZjOl6Gvhxm7ANoZLticB6bGHUBPjYAHPnkb12DyAObCvJbhZvYC3YxE3T
+ 7iMKnMRblqvyz5EnDTkHCPFYxXQx85/pjIaal933D8CeZrUsMRTag/Ad6ME1m86gnTtL
+ 0AvR+Bn9h83HLxVIyNAgLjHMki7t7X2MWgJ3wTxWEtRNO3jJYhmJBtKXbnH9a8xTrNaI
+ GpAmC4uTZm5pKGCgmBOjR/Psw0Crm1xfIswDTnIB5L8C2CxOiRhWiDv/hXn3uesWQ7EA
+ r7eA==
+X-Gm-Message-State: AOAM531jvhreFbURGLJYoqTgVgtXu29axCgPUkjLaJLxoBwCKWTfWkGh
+ SysGrZ77h/o1Hn7xQx6bsj1xVBGPS8Q=
+X-Google-Smtp-Source: ABdhPJxWS5ExnKqQjp6aui5DcHPI3l0EUkcpJEBffC9mwIoRBD5bOFJDjMNSjDsV2dZeT5P2n4OsFA==
+X-Received: by 2002:a37:8347:: with SMTP id f68mr5438179qkd.153.1589581376285; 
+ Fri, 15 May 2020 15:22:56 -0700 (PDT)
+Received: from juliacomputing.com ([2601:184:4780:3aef:d1fc:d97:8a48:767e])
+ by smtp.gmail.com with ESMTPSA id 127sm2642035qkj.59.2020.05.15.15.22.55
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 15 May 2020 15:22:55 -0700 (PDT)
+Date: Fri, 15 May 2020 18:22:53 -0400
+From: Keno Fischer <keno@juliacomputing.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Fix PTRACE_SYSEMU semantics
+Message-ID: <20200515222253.GA38408@juliacomputing.com>
 MIME-Version: 1.0
-In-Reply-To: <B926444035E5E2439431908E3842AFD249F9F4@DGGEMI525-MBS.china.huawei.com>
-Content-Language: en-GB
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_151227_711989_CE6A23D8 
-X-CRM114-Status: GOOD (  22.17  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_152302_286161_C773A84F 
+X-CRM114-Status: GOOD (  14.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [217.140.110.172 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,90 +90,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "davidm@hpl.hp.com" <davidm@hpl.hp.com>,
- "ralf@oss.sgi.com" <ralf@oss.sgi.com>, Linuxarm <linuxarm@huawei.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "sailer@ife.ee.ethz.ch" <sailer@ife.ee.ethz.ch>,
- "Jay.Estabrook@compaq.com" <Jay.Estabrook@compaq.com>,
- "dagum@barrel.engr.sgi.com" <dagum@barrel.engr.sgi.com>,
- "andrea@suse.de" <andrea@suse.de>, "grundler@cup.hp.com" <grundler@cup.hp.com>,
- "jens.axboe@oracle.com" <jens.axboe@oracle.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "m.szyprowski@samsung.com" <m.szyprowski@samsung.com>
+Cc: catalin.marinas@arm.com, will.deacon@arm.com, oleg@redhat.com,
+ linux-kernel@vger.kernel.org, sudeep.holla@arm.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2020-05-15 22:33, Song Bao Hua wrote:
->> Subject: Re: Constantly map and unmap of streaming DMA buffers with
->> IOMMU backend might cause serious performance problem
->>
->> On Fri, May 15, 2020 at 01:10:21PM +0100, Robin Murphy wrote:
->>>> Meanwhile, for the safety of buffers, lower-layer drivers need to make
->> certain the buffers have already been unmapped in iommu before those
->> buffers go back to buddy for other users.
->>>
->>> That sounds like it would only have benefit in a very small set of specific
->>> circumstances, and would be very difficult to generalise to buffers that
->>> are mapped via dma_map_page() or dma_map_single(). Furthermore, a
->>> high-level API that affects a low-level driver's interpretation of
->>> mid-layer API calls without the mid-layer's knowledge sounds like a hideous
->>> abomination of anti-design. If a mid-layer API lends itself to inefficiency
->>> at the lower level, it would seem a lot cleaner and more robust to extend
->>> *that* API for stateful buffer reuse. Failing that, it might possibly be
->>> appropriate to approach this at the driver level - many of the cleverer
->>> network drivers already implement buffer pools to recycle mapped SKBs
->>> internally, couldn't the "zip driver" simply try doing something like that
->>> for itself?
->>
->> Exactly.  If you upper consumer of the DMA API keeps reusing the same
->> pages just map them once and use dma_sync_* to transfer ownership as
->> needed.
-> 
-> The problem is that the lower-layer drivers don't know if upper consumer keeps reusing the same pages. They are running in different software layers.
-> For example, Consumer is here in mm/zswap.c
-> static int zswap_frontswap_store(unsigned type, pgoff_t offset,
-> 				struct page *page)
-> {
-> 	...
-> 	/* compress */
-> 	dst = get_cpu_var(zswap_dstmem);
-> 	...
-> 	ret = crypto_comp_compress(tfm, src, PAGE_SIZE, dst, &dlen);
-> 	...
-> }
-> 
-> But the lower-layer driver is in drivers/crypto/...
-> 
-> Meanwhile, the lower-layer driver couldn't cache the pointers of buffer address coming from consumers to detect if the upper-layer is using the same page.
-> Because the same page might come from different users or come from the different stages of the same user with different permissions.
+Quoth the man page:
+```
+       If the tracee was restarted by PTRACE_SYSCALL or PTRACE_SYSEMU, the
+       tracee enters syscall-enter-stop just prior to entering any system
+       call (which will not be executed if the restart was using
+       PTRACE_SYSEMU, regardless of any change made to registers at this
+       point or how the tracee is restarted after this stop).
+```
 
-Indeed the driver can't cache arbitrary pointers, but if typical buffers 
-are small enough it can copy the data into its own already-mapped page, 
-dma_sync it, and perform the DMA operation from there. That might even 
-be more or less what your first suggestion was, but I'm still not quite 
-sure.
+The parenthetical comment is currently true on x86 and powerpc,
+but not currently true on arm64. arm64 re-checks the _TIF_SYSCALL_EMU
+flag after the syscall entry ptrace stop. However, at this point,
+it reflects which method was used to re-start the syscall
+at the entry stop, rather than the method that was used to reach it.
+Fix that by recording the original flag before performing the ptrace
+stop, bringing the behavior in line with documentation and x86/powerpc.
 
-> For example, consumer A uses the buffer as destination, then returns it to buddy, but consumer B gets the same buffer and uses it as source.
-> 
-> Another possibility is
-> Consumer A uses the buffer, returns it to buddy, after some time, it allocates a buffer again, but gets the same buffer from buddy like before.
-> 
-> For the safety of the buffer, lower-layer driver must guarantee the buffer is unmapped when the buffer returns to buddy.
-> 
-> I think only the upper-layer consumer knows if it is reusing the buffer.
+Signed-off-by: Keno Fischer <keno@juliacomputing.com>
+---
+ arch/arm64/kernel/ptrace.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-Right, and if reusing buffers is common in crypto callers, then there's 
-an argument for "set up reusable buffer", "process updated buffer" and 
-"clean up buffer" operations to be added to the crypto API itself, such 
-that the underlying drivers can then optimise for DMA usage in a robust 
-and obvious way if they want to (or just implement the setup and 
-teardown as no-ops and still do a full map/unmap in each "process" call 
-if they don't).
+diff --git a/arch/arm64/kernel/ptrace.c b/arch/arm64/kernel/ptrace.c
+index b3d3005d9515..b67b4d14aa17 100644
+--- a/arch/arm64/kernel/ptrace.c
++++ b/arch/arm64/kernel/ptrace.c
+@@ -1829,10 +1829,12 @@ static void tracehook_report_syscall(struct pt_regs *regs,
+ 
+ int syscall_trace_enter(struct pt_regs *regs)
+ {
+-	if (test_thread_flag(TIF_SYSCALL_TRACE) ||
+-		test_thread_flag(TIF_SYSCALL_EMU)) {
++	u32 flags = READ_ONCE(current_thread_info()->flags) &
++		(_TIF_SYSCALL_EMU | _TIF_SYSCALL_TRACE);
++
++	if (flags) {
+ 		tracehook_report_syscall(regs, PTRACE_SYSCALL_ENTER);
+-		if (!in_syscall(regs) || test_thread_flag(TIF_SYSCALL_EMU))
++		if (!in_syscall(regs) || (flags & _TIF_SYSCALL_EMU))
+ 			return -1;
+ 	}
+ 
+-- 
+2.25.1
 
-Robin.
 
 _______________________________________________
 linux-arm-kernel mailing list
