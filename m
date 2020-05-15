@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E69831D47A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:03:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ED5AE1D47B4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:05:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fGSYe2J9+iKkIOeywAXKd6db5UfeFRa1WsVqEUd48m0=; b=MoY0Q+ATvhhWWHNJQw91zdjxw
-	niOvq/R4XGugZYAAdLQfYrge19/uxAmGnJAFwf1VUvOiUYyf6a/zO2tfRpYMvgoZdlOmlNoPXLgCN
-	R6QzoVRkw+xm+fyzBmeV3k3XJ3RfIBm8xzZyCk1/gnGvtTLjDVczTB0IpohragBe1ec3IyRJou4mI
-	hxxP+9BzXHA8OjalpAogHbP9kjCPLPHUZXvKiaHEtvhEyBru4AX7fv0StG3ixgFunsZ37y3LSb1ZG
-	/bvd/1zH2zkqRx7ccmr26WzJdwzRCFMnMPeJbJdCH+bMvflLM0vbQQlpdVdB7UvEORw9ayqAwx6PG
-	juoYcbHTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QLNAfja5UvJ7OEmC4QCDXQTTwOHPwywjuvIAG04XLl0=; b=SJ5mV2dppeHCJu
+	AsQqPd5meJfZMS06JYNm6MfSqDNbmcXXI7Vxc6GNSlyQ6M5ZwGf2OiWiMVUtHdP5OcHdtXdg79Tr+
+	FQoBfQiGv3/+bU0KZ19XiINYJ1YfjbITrayN+tBXcRO4WqbSBcWeJ+pbOv8PhxpNg/sKKzLD9TcEc
+	dWUIY1OYSdQOlhL8AY/6GC+iiHQJZFs5Nzxu0rFMmpZYBE2cN1w+qxwtQmqW6otguNqmNUBJUapih
+	K2jPQY5rWuooJcKoS4q4EdVQPvzZsIvBA1rWsQd8Z8rk7XLrmEOlVk9DTgus8NJfQJm6Kxbm/Ek7i
+	hpZYLWcxfO2skLxhx6BA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZVJh-0003ZJ-JT; Fri, 15 May 2020 08:03:37 +0000
+	id 1jZVLM-0006Ow-Cm; Fri, 15 May 2020 08:05:20 +0000
 Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZVJX-0003YY-Go
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:03:29 +0000
-Received: by mail-wr1-x444.google.com with SMTP id w7so2338823wre.13
+ id 1jZVLB-0005aX-F4
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:05:11 +0000
+Received: by mail-wr1-x444.google.com with SMTP id l18so2403640wrn.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 01:03:26 -0700 (PDT)
+ Fri, 15 May 2020 01:05:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=subject:to:cc:references:from:autocrypt:organization:message-id
- :date:user-agent:mime-version:in-reply-to;
- bh=XVSGhIAC2HtlFAdojNxulc+a74d8yyF8HOGROMv5rU8=;
- b=tNIE0jPPEBRRnU5+qUTcyx+V3tk+NrgXIsfXA4Hy0kF9YD/GO0C1p2ucgXNOfSfvOt
- vzu82p/mtNIo964uZLKN6TxsvMbDVdH2PpcWLPojUo3Vamd0A1cs0eFobsxJtPlpFhj2
- vOu/tX2yMF3GhI3TgPiR+bld5Ca55Ge/yBYl6s0PbzDfgptHSbGehDKfrAtRpVoNDAw/
- YXocRnmiD25huvgBFcAdU5PEEiTAXnywnHXxWaGSPPOYCT/zRlziQ4TuV02BUWTvYJPm
- Zy9If7PGQb+RPoENPqFPgb0izfI7gMazpEcGleJsy/N+YD0BgY2+JZZl+Di1YcO7/Glc
- 9K/g==
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=Ka+cKcLR8lJuV8gjRpPRMdYz++ooxArfAv0RBTCP7c8=;
+ b=E+cClAx4sR8jeE9o7QyTEEyqr/+l3AJPGM97foILCtra6xaHJjbxjJ/Fl2Or4K5P7e
+ MV68NNcg4v4C2hV5PPJJlL0f65nB8+7EJZIc1R+5dpoolc7oqKB28Rt0SdaZc6ZK48r1
+ op3yiUq4uM5ePUBocuL7nmHPaVdkO/JDYb4mb37pY5nHQE6a1WjLtbNte7BVy4YLFoJR
+ 75UctLb6YmivwKHPQ5JiJhJrsvmnQiBhkMJhfMCjbgRhTgAETrqAUFSa9h9u8Qz4yawD
+ BHWIHd1LLxLZFR2vbf2ZGsZHoFMCwBYEHaSLqq3wVpTlOOVGp3Md5JFKXeBCDfAOih8O
+ 7/JA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to;
- bh=XVSGhIAC2HtlFAdojNxulc+a74d8yyF8HOGROMv5rU8=;
- b=MCaWygym587GGyccoPbeLVQUEYN4OOVj7Mg6hRBIOFtWbXk6h/d9RdEViX8RzWoYJ3
- 3qwMxkvVV4iEt9bIT1tqchAwJ8GB+ZRLDIbzhIslFUztpv8qSiRm1Riqrp4HEyPaGvgD
- SGfJ/WbRYOVlcYmN5nFsQJwD1IhDO4uASV5LJz9bn3B7LjK/yBoIB64IZmGmlF4NDqRt
- 9MmuWl8cmV8JpDlF1dMHOrNF6M5iDRW61DW6mFxW9K7zwZqwx9JpjjgPIjv90tNSuStt
- OL8CiE3zxC0rF+cMp6M8+1gPH9h5k2xy1IsW7FQsV225vADHoQtWJT/1v2gCjFcgaZD1
- 8Vtw==
-X-Gm-Message-State: AOAM530on0/J/kqMqffhRnx5U+hSycnSzJXb/MwvnAPTZ+2zt3LFey31
- Mqtm1uSmOpZ/PiqyKn1OQb38nA==
-X-Google-Smtp-Source: ABdhPJwNE6JJVIrDJlXFR6kjcyzrDNRzipl4JxUNB38+CjU4YrYhh549I7sMRCXdXzsrrC/Vjp5ogw==
-X-Received: by 2002:a5d:6943:: with SMTP id r3mr2750145wrw.113.1589529805269; 
- Fri, 15 May 2020 01:03:25 -0700 (PDT)
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=Ka+cKcLR8lJuV8gjRpPRMdYz++ooxArfAv0RBTCP7c8=;
+ b=ckjq1f/Oxf0+xuhifyzTcGlvaAS+rj6FMhwO4ZXLxD2t9pX7mlYiS3r3xJSnEoiNBq
+ ArX5uI0GBWqfmEpm8J4YBHaEotuHDM4GTivqR8KFYUxkgYGhlXAYqhBfN2VuaWXA8eLe
+ yQIcVxtrMnuRuCyhxVQw/xX3xOqKOj5vWjK/OZ8kMHhD/P7AxRNyGu46ZApezT/i9XAF
+ tucYoGPfLAPnVgsnaBZkNeZX8MDAdwFM2sV5jGQhnmqoEduhziAhMJ74RWVH6POdKN2q
+ R4yRbSEVRoj7XKZqKoDfMEFeSRr7ePTqRQ553TcFZozMV3H/bxeLo/xYUT3DOW8orzVo
+ DUcA==
+X-Gm-Message-State: AOAM530XaRCGoftGeuu/Bz+SvPVTPy7Ly9Ym3aEBNQ7oV+Xz3Ujt/qsp
+ HpDroHykqpoQJ1H1QihkK059FQ==
+X-Google-Smtp-Source: ABdhPJwf0AkQnlDmnyxvqVQc2yzAgAQDxwbcUdvMzQqCQmiukwzD12WG7bLyOIJ58+AHo9yGLJlJXA==
+X-Received: by 2002:a5d:4006:: with SMTP id n6mr2890572wrp.27.1589529907976;
+ Fri, 15 May 2020 01:05:07 -0700 (PDT)
 Received: from ?IPv6:2a01:e35:2ec0:82b0:4460:3fd3:382:4a71?
  ([2a01:e35:2ec0:82b0:4460:3fd3:382:4a71])
- by smtp.gmail.com with ESMTPSA id i6sm2335992wrw.97.2020.05.15.01.03.22
+ by smtp.gmail.com with ESMTPSA id c80sm2513852wme.15.2020.05.15.01.05.06
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 May 2020 01:03:23 -0700 (PDT)
-Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
-To: Felipe Balbi <balbi@kernel.org>, kishon@ti.com, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com
-References: <20200324102030.31000-1-narmstrong@baylibre.com>
- <87369rfo7l.fsf@kernel.org> <87r1vm4xyq.fsf@kernel.org>
- <8404c7a0-fca7-9e28-b65a-312ed09ecdd3@baylibre.com>
- <87wo5e3c53.fsf@kernel.org>
+ Fri, 15 May 2020 01:05:07 -0700 (PDT)
+Subject: Re: [PATCH v2 3/6] thermal: add support for the MCU controlled FAN on
+ Khadas boards
+To: Amit Kucheria <amit.kucheria@verdurent.com>
+References: <20200512132613.31507-1-narmstrong@baylibre.com>
+ <20200512132613.31507-4-narmstrong@baylibre.com>
+ <CAHLCerPiC3QS5u5CGX20q_5aUk4sN5knF4043_=WjtbhDDGuUg@mail.gmail.com>
 From: Neil Armstrong <narmstrong@baylibre.com>
 Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  xsBNBE1ZBs8BCAD78xVLsXPwV/2qQx2FaO/7mhWL0Qodw8UcQJnkrWmgTFRobtTWxuRx8WWP
@@ -116,15 +117,16 @@ Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
  zR8QplXA5kogS4kLe/7/JmlDMO8Zgm9vKLHSUeesLOrjdZ59EcjldNNBszRZQgEhwaarfz46
  BSwxi7g3Mu7u5kUByanqHyA=
 Organization: Baylibre
-Message-ID: <075fd5b1-7450-e833-2240-527aadbda2b4@baylibre.com>
-Date: Fri, 15 May 2020 10:03:19 +0200
+Message-ID: <da7e8d72-9d70-c4a0-97d8-de9b65782a92@baylibre.com>
+Date: Fri, 15 May 2020 10:05:06 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.4.1
 MIME-Version: 1.0
-In-Reply-To: <87wo5e3c53.fsf@kernel.org>
+In-Reply-To: <CAHLCerPiC3QS5u5CGX20q_5aUk4sN5knF4043_=WjtbhDDGuUg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_010327_562262_AC45A2D6 
-X-CRM114-Status: GOOD (  17.24  )
+X-CRM114-CacheID: sfid-20200515_010509_641116_BCB2CA00 
+X-CRM114-Status: GOOD (  21.70  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -149,165 +151,261 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6689536508899194566=="
+Cc: Linux PM list <linux-pm@vger.kernel.org>,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ LKML <linux-kernel@vger.kernel.org>,
+ Srini Kandagatla <srinivas.kandagatla@linaro.org>,
+ linux-amlogic@lists.infradead.org, Zhang Rui <rui.zhang@intel.com>,
+ lakml <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============6689536508899194566==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w"
-
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w
-Content-Type: multipart/mixed; boundary="cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd";
- protected-headers="v1"
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: Felipe Balbi <balbi@kernel.org>, kishon@ti.com, khilman@baylibre.com,
- martin.blumenstingl@googlemail.com
-Cc: linux-amlogic@lists.infradead.org, linux-usb@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Message-ID: <075fd5b1-7450-e833-2240-527aadbda2b4@baylibre.com>
-Subject: Re: [PATCH 00/13] usb: dwc3: meson: add OTG support for GXL/GXM
-References: <20200324102030.31000-1-narmstrong@baylibre.com>
- <87369rfo7l.fsf@kernel.org> <87r1vm4xyq.fsf@kernel.org>
- <8404c7a0-fca7-9e28-b65a-312ed09ecdd3@baylibre.com>
- <87wo5e3c53.fsf@kernel.org>
-In-Reply-To: <87wo5e3c53.fsf@kernel.org>
-
---cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
-
-On 14/05/2020 14:59, Felipe Balbi wrote:
-> Neil Armstrong <narmstrong@baylibre.com> writes:
->=20
->> Hi,
+On 15/05/2020 08:41, Amit Kucheria wrote:
+> On Tue, May 12, 2020 at 6:56 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >>
->> On 14/05/2020 12:23, Felipe Balbi wrote:
->>> Felipe Balbi <balbi@kernel.org> writes:
->>>
->>>> Neil Armstrong <narmstrong@baylibre.com> writes:
->>>>
->>>>> The USB support was initialy done with a set of PHYs and dwc3-of-si=
-mple
->>>>> because the architecture of the USB complex was not understood corr=
-ectly
->>>>> at the time (and proper documentation was missing...).
->>>>>
->>>>> But with the G12A family, the USB complex was correctly understood =
-and
->>>>> implemented correctly.
->>>>> But seems the G12A architecture was derived for the GXL USB archite=
-cture,
->>>>> with minor differences and looks we can share most of the USB DWC3 =
-glue
->>>>> driver.
->>>>>
->>>>> This patchset refactors and adds callbacks to handle the architectu=
-re
->>>>> difference while keeping the main code shared.
->>>>>
->>>>> The main difference is that on GXL/GXM the USB2 PHY control registe=
-rs
->>>>> are mixed with the PHY registers (we already handle correctly), and=
-
->>>>> the GLUE registers are allmost (99%) the same as G12A.
->>>>>
->>>>> But, the GXL/GXM HW is buggy, here are the quirks :
->>>>> - for the DWC2 controller to reset correctly, the GLUE mux must be =
-switched
->>>>>   to peripheral when the DWC2 controlle probes. For now it's handle=
-d by simply
->>>>>   switching to device when probing the subnodes, but it may be not =
-enough
->>>>> - when manually switching from Host to Device when the USB port is =
-not
->>>>>   populated (should not happen with proper Micro-USB/USB-C OTG swit=
-ch), it
->>>>>   makes the DWC3 to crash. The only way to avoid that is to use the=
- Host
->>>>>   Disconnect bit to disconnect the DWC3 controller from the port, b=
-ut we can't
->>>>>   recover the Host functionnality unless resetting the DWC3 control=
-ler.
->>>>>   This bit is set when only manual switch is done, and a warning is=
- printed
->>>>>   on manual switching.
->>>>>
->>>>> The patches 1-8 should be applied first, then either waiting the ne=
-xt release
->>>>> or if the usb maintainer can provide us a stable tag, we can use it=
- to merge
->>>>> the DT and bindings.
->>>>
->>>> it's unclear to me if this series is ready to be merged. Can someone=
-
->>>> confirm? If it is, can you resend with all reviewed by tags in place=
-?
->>>
->>> Are we getting a v2 for this?
->>>
+>> The new Khadas VIM2 and VIM3 boards controls the cooling fan via the
+>> on-board microcontroller.
 >>
->> Yes, even a v3 with reviews on all patches:
->> http://lkml.kernel.org/r/20200416121910.12723-1-narmstrong@baylibre.co=
-m
->=20
-> In that case, can you check that I have applied everything correctly in=
+>> This implements the FAN control as thermal devices and as cell of the Khadas
+>> MCU MFD driver.
+>>
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+>> ---
+>>  drivers/thermal/Kconfig          |  10 ++
+>>  drivers/thermal/Makefile         |   1 +
+>>  drivers/thermal/khadas_mcu_fan.c | 174 +++++++++++++++++++++++++++++++
+>>  3 files changed, 185 insertions(+)
+>>  create mode 100644 drivers/thermal/khadas_mcu_fan.c
+>>
+>> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
+>> index 91af271e9bb0..72b3960cc5ac 100644
+>> --- a/drivers/thermal/Kconfig
+>> +++ b/drivers/thermal/Kconfig
+>> @@ -490,4 +490,14 @@ config SPRD_THERMAL
+>>         help
+>>           Support for the Spreadtrum thermal sensor driver in the Linux thermal
+>>           framework.
+>> +
+>> +config KHADAS_MCU_FAN_THERMAL
+>> +       tristate "Khadas MCU controller FAN cooling support"
+>> +       depends on OF || COMPILE_TEST
+> 
+> Could you add a depends on the some board/SoC Kconfig option here so
+> this doesn't show up for non-Amlogic/non-Khadas boards?
 
-> testing/next?
->=20
-> cheers
->=20
+Sure,
 
-Looks fine,
+Thanks.
 
-Thanks,
 Neil
 
+> 
+> Looks OK otherwise.
+> 
+>> +       select MFD_CORE
+>> +       select REGMAP
+>> +       help
+>> +         If you say yes here you get support for the FAN controlled
+>> +         by the Microcontroller found on the Khadas VIM boards.
+>> +
+>>  endif
+>> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
+>> index 8c8ed7b79915..460428c2122c 100644
+>> --- a/drivers/thermal/Makefile
+>> +++ b/drivers/thermal/Makefile
+>> @@ -60,3 +60,4 @@ obj-$(CONFIG_ZX2967_THERMAL)  += zx2967_thermal.o
+>>  obj-$(CONFIG_UNIPHIER_THERMAL) += uniphier_thermal.o
+>>  obj-$(CONFIG_AMLOGIC_THERMAL)     += amlogic_thermal.o
+>>  obj-$(CONFIG_SPRD_THERMAL)     += sprd_thermal.o
+>> +obj-$(CONFIG_KHADAS_MCU_FAN_THERMAL)   += khadas_mcu_fan.o
+>> diff --git a/drivers/thermal/khadas_mcu_fan.c b/drivers/thermal/khadas_mcu_fan.c
+>> new file mode 100644
+>> index 000000000000..044d4aba8be2
+>> --- /dev/null
+>> +++ b/drivers/thermal/khadas_mcu_fan.c
+>> @@ -0,0 +1,174 @@
+>> +// SPDX-License-Identifier: GPL-2.0-or-later
+>> +/*
+>> + * Khadas MCU Controlled FAN driver
+>> + *
+>> + * Copyright (C) 2020 BayLibre SAS
+>> + * Author(s): Neil Armstrong <narmstrong@baylibre.com>
+>> + */
+>> +
+>> +#include <linux/module.h>
+>> +#include <linux/of.h>
+>> +#include <linux/platform_device.h>
+>> +#include <linux/mfd/khadas-mcu.h>
+>> +#include <linux/regmap.h>
+>> +#include <linux/sysfs.h>
+>> +#include <linux/thermal.h>
+>> +
+>> +#define MAX_LEVEL 3
+>> +
+>> +struct khadas_mcu_fan_ctx {
+>> +       struct khadas_mcu *mcu;
+>> +       unsigned int level;
+>> +       struct thermal_cooling_device *cdev;
+>> +};
+>> +
+>> +static int khadas_mcu_fan_set_level(struct khadas_mcu_fan_ctx *ctx,
+>> +                                   unsigned int level)
+>> +{
+>> +       int ret;
+>> +
+>> +       ret = regmap_write(ctx->mcu->map, KHADAS_MCU_CMD_FAN_STATUS_CTRL_REG,
+>> +                          level);
+>> +       if (ret)
+>> +               return ret;
+>> +
+>> +       ctx->level = level;
+>> +
+>> +       return 0;
+>> +}
+>> +
+>> +static int khadas_mcu_fan_get_max_state(struct thermal_cooling_device *cdev,
+>> +                                       unsigned long *state)
+>> +{
+>> +       struct khadas_mcu_fan_ctx *ctx = cdev->devdata;
+>> +
+>> +       if (!ctx)
+>> +               return -EINVAL;
+>> +
+>> +       *state = MAX_LEVEL;
+>> +
+>> +       return 0;
+>> +}
+>> +
+>> +static int khadas_mcu_fan_get_cur_state(struct thermal_cooling_device *cdev,
+>> +                                       unsigned long *state)
+>> +{
+>> +       struct khadas_mcu_fan_ctx *ctx = cdev->devdata;
+>> +
+>> +       if (!ctx)
+>> +               return -EINVAL;
+>> +
+>> +       *state = ctx->level;
+>> +
+>> +       return 0;
+>> +}
+>> +
+>> +static int
+>> +khadas_mcu_fan_set_cur_state(struct thermal_cooling_device *cdev,
+>> +                            unsigned long state)
+>> +{
+>> +       struct khadas_mcu_fan_ctx *ctx = cdev->devdata;
+>> +
+>> +       if (!ctx || (state > MAX_LEVEL))
+>> +               return -EINVAL;
+>> +
+>> +       if (state == ctx->level)
+>> +               return 0;
+>> +
+>> +       return khadas_mcu_fan_set_level(ctx, state);
+>> +}
+>> +
+>> +static const struct thermal_cooling_device_ops khadas_mcu_fan_cooling_ops = {
+>> +       .get_max_state = khadas_mcu_fan_get_max_state,
+>> +       .get_cur_state = khadas_mcu_fan_get_cur_state,
+>> +       .set_cur_state = khadas_mcu_fan_set_cur_state,
+>> +};
+>> +
+>> +static int khadas_mcu_fan_probe(struct platform_device *pdev)
+>> +{
+>> +       struct khadas_mcu *mcu = dev_get_drvdata(pdev->dev.parent);
+>> +       struct thermal_cooling_device *cdev;
+>> +       struct device *dev = &pdev->dev;
+>> +       struct khadas_mcu_fan_ctx *ctx;
+>> +       int ret;
+>> +
+>> +       ctx = devm_kzalloc(dev, sizeof(*ctx), GFP_KERNEL);
+>> +       if (!ctx)
+>> +               return -ENOMEM;
+>> +       ctx->mcu = mcu;
+>> +       platform_set_drvdata(pdev, ctx);
+>> +
+>> +       cdev = devm_thermal_of_cooling_device_register(dev->parent,
+>> +                       dev->parent->of_node, "khadas-mcu-fan", ctx,
+>> +                       &khadas_mcu_fan_cooling_ops);
+>> +       if (IS_ERR(cdev)) {
+>> +               ret = PTR_ERR(cdev);
+>> +               dev_err(dev,
+>> +                               "Failed to register khadas-mcu-fan as cooling device: %d\n",
+>> +                               ret);
+>> +               return ret;
+>> +       }
+>> +       ctx->cdev = cdev;
+>> +       thermal_cdev_update(cdev);
+>> +
+>> +       return 0;
+>> +}
+>> +
+>> +static int khadas_mcu_fan_disable(struct device *dev)
+>> +{
+>> +       struct khadas_mcu_fan_ctx *ctx = dev_get_drvdata(dev);
+>> +       unsigned int level_save = ctx->level;
+>> +       int ret;
+>> +
+>> +       ret = khadas_mcu_fan_set_level(ctx, 0);
+>> +       if (ret)
+>> +               return ret;
+>> +
+>> +       ctx->level = level_save;
+>> +
+>> +       return 0;
+>> +}
+>> +
+>> +static void khadas_mcu_fan_shutdown(struct platform_device *pdev)
+>> +{
+>> +       khadas_mcu_fan_disable(&pdev->dev);
+>> +}
+>> +
+>> +#ifdef CONFIG_PM_SLEEP
+>> +static int khadas_mcu_fan_suspend(struct device *dev)
+>> +{
+>> +       return khadas_mcu_fan_disable(dev);
+>> +}
+>> +
+>> +static int khadas_mcu_fan_resume(struct device *dev)
+>> +{
+>> +       struct khadas_mcu_fan_ctx *ctx = dev_get_drvdata(dev);
+>> +
+>> +       return khadas_mcu_fan_set_level(ctx, ctx->level);
+>> +}
+>> +#endif
+>> +
+>> +static SIMPLE_DEV_PM_OPS(khadas_mcu_fan_pm, khadas_mcu_fan_suspend,
+>> +                        khadas_mcu_fan_resume);
+>> +
+>> +static const struct platform_device_id khadas_mcu_fan_id_table[] = {
+>> +       { .name = "khadas-mcu-fan-ctrl", },
+>> +       {},
+>> +};
+>> +MODULE_DEVICE_TABLE(platform, khadas_mcu_fan_id_table);
+>> +
+>> +static struct platform_driver khadas_mcu_fan_driver = {
+>> +       .probe          = khadas_mcu_fan_probe,
+>> +       .shutdown       = khadas_mcu_fan_shutdown,
+>> +       .driver = {
+>> +               .name           = "khadas-mcu-fan-ctrl",
+>> +               .pm             = &khadas_mcu_fan_pm,
+>> +       },
+>> +       .id_table       = khadas_mcu_fan_id_table,
+>> +};
+>> +
+>> +module_platform_driver(khadas_mcu_fan_driver);
+>> +
+>> +MODULE_AUTHOR("Neil Armstrong <narmstrong@baylibre.com>");
+>> +MODULE_DESCRIPTION("Khadas MCU FAN driver");
+>> +MODULE_LICENSE("GPL");
+>> --
+>> 2.22.0
+>>
 
-
---cYZ4ubkvjNBgnpP51bW7jpdr9CEl6QcJd--
-
---jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEEPVPGJshWBf4d9CyLd9zb2sjISdEFAl6+TMcACgkQd9zb2sjI
-SdEv8A//YD813zT/tMcFpTdMmROGnV1YRpi+t3M3BHYKemnko19eLGln54xRg9S5
-t/IhrOdS4BHCR/9yFNvUg1V/B6wPER4O35oeuMuQ/LUNwdVSpsr7evPTFC1ok6Ig
-cXaMLXPQMMHoqifBpMWO0SYpnLFKQlrwUrdJX6b2SBu5aPx12mF+QyeLgZiAAmwk
-K3QtJwB4PWhNRRAVIlRcSlBVT9S+SA19o2ZNRaiDtLsBPK9NVZplzmWSyXG0usjQ
-Wh1uavrCPpB9+EkWcx9dzAK8OHt9IvOccmeadINTCyzmRPK95kmFz5FNVuErBAT4
-ReFMVFsnxB6cZaevDu5Sa/9pjpft2FfDOFlmqm2EadBp2Fn2BlJmz+XCw+5cAgRW
-OzVBpW/DDcwJh8XKjbDv+Bh66XatSKb/FPqEJFAn+Eb3g1tInDLPYBBYTjGmH7R+
-GmBPYNNcLSoJwZRBgV/kUzLpUJYyfBKbVnsY+YmJ60SlLdDAc1SEuT2mNAWBRyF7
-9C9MRkaGm5Q3tXdU6bAwx4NI8xGV3Lx8N11puPzoYrG5VtwAm84seRHQbvu0mVyu
-YskE2vaJeuD6d+U017Eb43VXJnzfYs/zJlTzxnpKxjek+4N30+K8RUZ/eElU9ytc
-Wwot2OrSvqRVmTN7lzSvMG5cQI3iWVYJZKRcKhjEQEW1Y+rEsY8=
-=/b58
------END PGP SIGNATURE-----
-
---jRNEr3iGiPmEA24vzS9fn9IRCNYu4AS1w--
-
-
---===============6689536508899194566==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6689536508899194566==--
-
