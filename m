@@ -2,84 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDF201D4761
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:51:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6E991D4784
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:59:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Ohe7PZsJ4A1ZY7GsQ7pEvONo2UY94MKnUaTyxazcSHo=; b=NDbyJkdGTjGZ15WslW084zaHmh
-	y18tOUSuCYC9VNRshSG8yYtpqMqLHvN4jiBduwzNEwWPoxrEf6XmXY4cdnHGV23y0ZSHZK/KSFpU+
-	VFqkIK7EAYTItyM1avrBORWXRbzYmhBMjVYaYaQaoYYxqXHoawdJ4WIyxtee/LSvbi9t2uzXbxIuv
-	IaPN12A0xQIkiJdkAHXoQzKN/b7XzLwkqIbk+erSvYb8tZndzS6gSV7d5tR9iOsV1e0DRmga3RQlz
-	mNmPdo/e7K91rChKXefU0c1vpDHTSgpRF0+4jh7CWQ1v5UyanyH9hDdGTMYmNQBOqYLsqHrihIio4
-	RLt+/x7Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
+	In-Reply-To:From:Mime-Version:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KcSjUFubgwQqrp+jH9gKZIzs16NJ6/59K9MyvbNmzSw=; b=V57YeFwnQ05Nms
+	/w0Dd3ID16LhPnQLf9Nhqv2ul5zos/5yIBbBuVwnJQyqXIRgBIASfy/7HGJcr0moeW/jBOgB0CRfe
+	qAt/AE3Sr6EbEN3jgiasNyldoC91XzF28SkPwAwsGTInoMH2ieeXmEQ2/n6IIZk8hlGx2rDZ0a3pm
+	2eLuXdhZTm4JKIKBR4VDYKiOIHB7b6kwuzXo9mX7bcQN5R+AktpUPajcfgYlbAv6OqMhtU3RUWcUn
+	aqZB8xlCK3LdPqzTlyuoAZQHPmvPM3+gld7/PL2bkPk7EuZZ1o3zZsASZACjRHB5m/yHb02I6gSm2
+	ZLVSsIyBNXr1sk9J0s+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZV82-0003en-5G; Fri, 15 May 2020 07:51:34 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1jZVF4-00006P-2T; Fri, 15 May 2020 07:58:50 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::5])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZV7o-0003dp-Bm
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:51:24 +0000
-Received: by mail-wr1-x443.google.com with SMTP id l11so2410925wru.0
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 00:51:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/hbVzyFGS1UmGEvVIj57oHLIBKMXLaE4t9FY/qY/HWM=;
- b=fRA0I55PCsxOBnUcYqMa2WZtI05hG6KwLouBvGq4PEw6YZmmrCap11xAqL4f+TFlci
- 4jBAiBJtif+AK0o1ZKEX4SCHE9oBCddNuun2WN7VlS9TTt0GqBScoJN2u4fbLCehoFo5
- iDVxWOz/sqyy1Rn16DU485TpB3VlSwa6x/2svSQ+Ultn8YFz2a6IWrWdrKrGVlrkIuST
- 9Cj3Vw9l6AOb44eeCondkvBsalwoY3Ek2ZvWaE6Kxc2ndAiYvOdbAm+a1RXTlLWFGauh
- 9jkEokfw7pmXwygCvykKFjckA5tO6OGcQbPcduCGkH+SaEGR2LhBX5zl0pAa3tcQyQyx
- JauA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=/hbVzyFGS1UmGEvVIj57oHLIBKMXLaE4t9FY/qY/HWM=;
- b=NW6YgZHGw3/jbf3WaMoDDln7kdE7DBRbLIhwDpLf4IEL1FJ4uKpTUQN9KBUZNaZnRh
- f4bv4UdREoqQWYvSa55C+RJAyywO/bNPsiFqgxYGtS6UmZZCe4qYSOHsbv8zK/Da/axg
- 91Jx6SVhxWMZXDREsWvmKA+HOXhUcBdWc/n6m+rc1wcJDT1wEDR+vTluW3BFcF4zmGGi
- sI6otS+/n8EOlbpCHk3eBhjuHwkPyQu80voackNZtDk02J8vRX9m4RUW3t2m6i0V/+MA
- W6Pol6ZjJZx8Seq2jcTn+dwyrBfeyim6sSIPYR0t+VP1fGBYU+R5g/myq+ftY2r3+jlq
- sN5Q==
-X-Gm-Message-State: AOAM532YBSL+v7Q23uVvt7jaQkuD8ad04d+S4zaUEkfL66KVmjwbw/TL
- xwRqeHwRGmETofB+QGfmRDnrbQ==
-X-Google-Smtp-Source: ABdhPJzzgIqRYccdOCLaRm5r/FwnYo3XCP3xReZ1daSwHywCpusrhkeHpNhGtbsM39QclzulKTXiaQ==
-X-Received: by 2002:adf:fa0b:: with SMTP id m11mr2706089wrr.417.1589529078722; 
- Fri, 15 May 2020 00:51:18 -0700 (PDT)
-Received: from lmecxl0524.lme.st.com
- (2a01cb058702ff00bc4b798f4f30d41e.ipv6.abo.wanadoo.fr.
- [2a01:cb05:8702:ff00:bc4b:798f:4f30:d41e])
- by smtp.gmail.com with ESMTPSA id m3sm2246686wrn.96.2020.05.15.00.51.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 00:51:18 -0700 (PDT)
-From: Etienne Carriere <etienne.carriere@linaro.org>
-To: sudeep.holla@arm.com
-Subject: RE: [PATCH v3 0/7] firmware: smccc: Add basic SMCCC v1.2 +
- ARCH_SOC_ID support
-Date: Fri, 15 May 2020 09:50:32 +0200
-Message-Id: <20200515075032.5325-1-etienne.carriere@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20200506164411.3284-1-sudeep.holla@arm.com>
-References: <20200506164411.3284-1-sudeep.holla@arm.com>
+ id 1jZVEs-00005c-A0
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:58:43 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589529514;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=To:References:Message-Id:Cc:Date:In-Reply-To:From:Subject:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=BlFVs+ve08LHwN7Uvu0hVD6GgM0+61h79p2IJC+S0j0=;
+ b=gS1G+QxwI/mHpe0aBmPEraYeJwbVO1Z+fYvQrKh1AC367FfqyAROi7g6Q5v2IMMGpj
+ iw3LvTTX7zWGB18Ffb4N9uAYmyaziAeyR+ocmJyJjp+i0vs23XktTjTAv00R/w7gYbu0
+ fvRMoag0mj8EV/ArU9IIofKCNyHXCMQgATe1crU1r4h+G7JthGFuJpLnzjoLGssaDZVq
+ lwJbJzpgzE2tov8kcjl0fENTF3JbjHMyQn6M96zwfz9qoN/EL1JI3bAwhJk2L1phpclj
+ YAx6DrW5BYpPjtvbop7tu+5ZzTzbqzik+okHAF3AtK48yUfsxV2x8BFG8qSMV4CZ+dOn
+ URaQ==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMgPgp8VKxflSZ1P34KBj7wpz8NMGH/vtwDOvBTU="
+X-RZG-CLASS-ID: mo00
+Received: from imac.fritz.box by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
+ with ESMTPSA id R0acebw4F7wWYfs
+ (using TLSv1 with cipher ECDHE-RSA-AES256-SHA (curve X9_62_prime256v1 with 256
+ ECDH bits, eq. 3072 bits RSA))
+ (Client did not present a certificate);
+ Fri, 15 May 2020 09:58:32 +0200 (CEST)
+Subject: Re: [PATCH v7 01/12] dt-bindings: add img,
+ pvrsgx.yaml for Imagination GPUs
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+In-Reply-To: <20200503150143.GG37466@atomide.com>
+Date: Fri, 15 May 2020 09:58:31 +0200
+Message-Id: <9A411DCE-A882-4868-9265-532D79922F6E@goldelico.com>
+References: <cover.1587760454.git.hns@goldelico.com>
+ <3a451e360fed84bc40287678b4d6be13821cfbc0.1587760454.git.hns@goldelico.com>
+ <NMCE9Q.LWG45P20NBVJ@crapouillou.net>
+ <28138EC0-0FA5-4F97-B528-3442BF087C7A@goldelico.com>
+ <TEAR9Q.6HI5DFRO5U0I3@crapouillou.net>
+ <3D8B59D6-83E3-4FE6-9C99-E2E5616A8139@goldelico.com>
+ <8EER9Q.C206SXNSICP7@crapouillou.net> <20200503150143.GG37466@atomide.com>
+To: Tony Lindgren <tony@atomide.com>
+X-Mailer: Apple Mail (2.3124)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_005120_439133_862CFDC6 
-X-CRM114-Status: GOOD (  12.16  )
+X-CRM114-CacheID: sfid-20200515_005838_939106_BE0E9E91 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a01:238:20a:202:5302:0:0:5 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -98,68 +89,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, lorenzo.pieralisi@arm.com, arnd@arndb.de,
- catalin.marinas@arm.com, linux-kernel@vger.kernel.org, steven.price@arm.com,
- harb@amperecomputing.com, will@kernel.org,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>, David Airlie <airlied@linux.ie>,
+ James Hogan <jhogan@kernel.org>, Jonathan Bakker <xc-racer2@live.ca>,
+ dri-devel@lists.freedesktop.org, linux-mips@vger.kernel.org,
+ Paul Cercueil <paul@crapouillou.net>, letux-kernel@openphoenux.org,
+ Paul Burton <paulburton@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ linux-samsung-soc@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Kukjin Kim <kgene@kernel.org>, devicetree@vger.kernel.org,
+ =?utf-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ Maxime Ripard <mripard@kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Bogendoerfer <tsbogend@alpha.franken.de>,
+ Philipp Rossak <embed3d@gmail.com>, openpvrsgx-devgroup@letux.org,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Daniel Vetter <daniel@ffwll.ch>, kernel@pyra-handheld.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> From: Sudeep Holla <sudeep.holla@arm.com>
->
-> Hi,
->
-> This patch series adds support for SMCCCv1.2 ARCH_SOC_ID.
-> This doesn't add other changes added in SMCCC v1.2 yet. They will
-> follow these soon along with its first user SPCI/PSA-FF.
->
-> This is tested using upstream TF-A + the patch[2] fixing the original
-> implementation there.
->
->
-> v1[0]->v2[1]:
-> - Incorporated comments from Steven Price in patch 5/5
-> - Fixed build for CONFIG_PSCI_FW=n on some arm32 platforms
-> - Added Steven Price's review tags
->
-> v2[1]->v3:
-> - Incorporated additional comments from Steven Price in patch 5/5
->  and added his review tags
-> - Refactored SMCCC code from PSCI and moved it under
->  drivers/firmware/smccc/smccc.c
-> - Also moved soc_id.c under drivers/firmware/smccc
->
-> Regards,
-> Sudeep
+Hi Tony,
 
-Hello Sudeep,
+> Am 03.05.2020 um 17:01 schrieb Tony Lindgren <tony@atomide.com>:
+> 
+> * Paul Cercueil <paul@crapouillou.net> [200503 14:19]:
+>> You have a new SoC with a SGX, and you only need to enable one clock to get
+>> it to work. So you create a devicetree node which receives only one clock.
+>> 
+>> Turns out, that the bootloader was enabling the other 3 clocks, and since
+>> the last release, it doesn't anymore. You're left with having to support a
+>> broken devicetree.
+>> 
+>> That's the kind of problem that can be easily avoided by enforcing the
+>> number of clocks that have to be provided.
+> 
+> The number of clocks depends on how it's wired for the SoC.
+> 
+> On omaps, there's are no controls for additinoal SGX clocks. Sure some
+> of the clocks may be routed to multple places internally by the wrapper
+> module. But we have no control over that.
+> 
+> If we wanted to specify just the "fck" clock on omaps, then we can
+> do it with something like this:
+> 
+> allOf:
+>  - if:
+>    properites:
+>      compatible:
+>        enum:
+> 	  - "ti,omap4-sgx544-112"
+> 	  - "ti,omap5-sgx544-116"
+> 	  - "ti,dra7-sgx544-116"
+>    then:
+>      properties:
+>        clocks:
+> 	  minItems: 1
+> 	  maxItems: 1
+> 
+>        clock-names:
+> 	  const: fck
+> 
+>    required:
+>      - clocks
+>      - clock-names
 
-In case it helps. I have successfully tested the 7 patches series
-on some platforms, playing a bit with few configurations.
-Qemu emulator for arm64/cortex-a57 with TF-A (v2.x) as secure firmware.
-Qemu emulator for arm/cortex-a15. OP-TEE (v3.x) as secure firmware.
-A stm32mp15 device (arm/cortex-a7), tested both TF-A (v2.x) and
-OP-TEE (3.7.0, 3.9.0-rc) as runtime secure firmware.
+will add to v8 of this series as a separate patch on top of the
+general one. This should make it easier to have a focussed discussion
+and revert/bisect if something goes wrong.
 
-Helper functions arm_smccc_1_1_get_conduit()/arm_smccc_1_1_invoke() 
-works as expected AFAICT. No regression seen with older secure
-firmwares.
+BR and thanks,
+Nikolaus
 
-For the patches 1 to 6, as I poorly tested [v3,7/7] soc ids,
-based on tag next-20200505 [1]:
-Tested-by: Etienne Carriere <etienne.carriere@st.com>
-Reviewed-by: Etienne Carriere <etienne.carriere@st.com>
-
-For [v3,7/7] firmware: smccc: Add ARCH_SOC_ID support
-Acked-by: Etienne Carriere <etienne.carriere@st.com>
-
-[1] 7def1ef0f72c ("Add linux-next specific files for 20200505")
-
-Regards,
-Etienne
 
 _______________________________________________
 linux-arm-kernel mailing list
