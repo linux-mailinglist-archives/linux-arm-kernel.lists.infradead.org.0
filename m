@@ -2,99 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 107841D482B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:32:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF3B41D4839
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 10:32:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9eVbjVq9C9RLl/TlZLwXnZ5ibNAyvcOE56giEHS4Jh8=; b=t9jBW/ai3EzvKT
-	j7ULGN3miT83ORn5hoJI97zE1OuXvXJF+mnKrHMRO2hfggscl/prk5yXXUADgbETMMnbRzocRO412
-	4S4waiUVMF2PLzZUIqNtJbLw00EaoVqX8NcbERlW0YhdnlLyHVhPaePt/s4AGnBrAw2syF35YzocJ
-	OiJmceyl1Hkwpw6kHls+IYKJUE19dl5l2aAtu5BrbLhLaveYhcJiYsUK/a1hiE1uJ36wtgoJTQpkT
-	fjW0gjMO7fHds3jFqOzCXD8yxcEH5sWjLfFBb4baeovgncy43Fs5q+0jfpyRoY0Rgf0dB98ujKGbM
-	E1P+CGF+I1cmRAOz/c0A==;
+	List-Owner; bh=hqSARRnBXv1NnWEfOza9PFtvaeu7UH8vWySTl96zcpg=; b=Gpe8PFdaKWwOK7
+	ut9ZOoYe6gbJkyqX8h50jQHgtP4EyPL4KGBFqaaf33r03H086iYh7ivzgVq6l+fYlHuX/SN8HguRZ
+	9aYaTEnyMKHB2vcPh+YxEUxCd1L5uJq/aGBr1i5ocaDN5VQVUkPflB6axQDCr6LL3GewnTQx5uak2
+	/l6HpjWdUJmQ062yVa/OG82ST6c2ZrhblBZ3DxWrCQ/l6QHHTtcofNqIiT6OLzDtW3hTzHxGD+6SN
+	7X5FNRKShNPKO0TMrq8tTXbBzXQRnZ9gZikKeb7o24rLpa3vSF+QtVB++yD6s2rL/KL5wzyHFo2Ks
+	qMiPaflWRx5KBReBZmow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZVlW-0007gZ-T9; Fri, 15 May 2020 08:32:22 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1jZVlu-0007uv-C0; Fri, 15 May 2020 08:32:46 +0000
+Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZVlL-0007fp-RT
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:32:16 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- 04F8RKCf008633; Fri, 15 May 2020 10:31:56 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=eJdDgRjKpklAGeIMtYx/P/MnYN9oSC9vUDGlJU7uW3M=;
- b=tSlFRvwIszSbH0n6EGhT1cOhcWrR9N2lmFcwsg/0R87FHKn48HaYPpw5Pd1UipFyXSQf
- o1WT15VZt4K04hoYJfOVeGJS0OyBw72LcR736Vyq5gavdNH19bZr8EQhYDHOa3vvq4w/
- XHHgKFeWfc2w6eTVqh35Qw27A+tji4plzvhLdiIs1gnBniHPcQ5R2u+rIZaxdSUMe3BO
- HGoaa12AGYiq2WH6HHLFbfFFZZbq0guYb3R4WaZQHPGf2yX1VuSFO07Eudozax+s4wyS
- WDQWn6+PwKlqIoLgYaB5lFQfjiJOEZwtU/+r+maXSYYGhIMdApxU38rRUoVDx3cEvGvQ bQ== 
-Received: from beta.dmz-eu.st.com (beta.dmz-eu.st.com [164.129.1.35])
- by mx07-00178001.pphosted.com with ESMTP id 3100vyrw43-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 15 May 2020 10:31:56 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-eu.st.com (STMicroelectronics) with ESMTP id DC686100034;
- Fri, 15 May 2020 10:31:54 +0200 (CEST)
-Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id B664E2208D2;
- Fri, 15 May 2020 10:31:54 +0200 (CEST)
-Received: from SFHDAG3NODE3.st.com (10.75.127.9) by SFHDAG3NODE1.st.com
- (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 15 May
- 2020 10:31:54 +0200
-Received: from SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476]) by
- SFHDAG3NODE3.st.com ([fe80::3507:b372:7648:476%20]) with mapi id
- 15.00.1347.000; Fri, 15 May 2020 10:31:54 +0200
-From: Benjamin GAIGNARD <benjamin.gaignard@st.com>
-To: dillon min <dillon.minfei@gmail.com>, Alexandre TORGUE
- <alexandre.torgue@st.com>
-Subject: Re: [Linux-stm32] [PATCH v3 3/5] ARM: dts: stm32: enable ltdc binding
- with ili9341 on stm32429-disco board
-Thread-Topic: [Linux-stm32] [PATCH v3 3/5] ARM: dts: stm32: enable ltdc
- binding with ili9341 on stm32429-disco board
-Thread-Index: AQHWKckeJCttwtJ4Q0KZXBBPInzZ9ainaAuAgAAEJgCAAUVIgA==
-Date: Fri, 15 May 2020 08:31:54 +0000
-Message-ID: <818b93b4-4431-8338-cd90-ed125ecac615@st.com>
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
- <CACRpkda5VjjBdbruXTi33QBNb=VU6vK2zDE8yyQXoWw7=NQFeg@mail.gmail.com>
- <a4ebd7cd-5756-0683-135f-0f96be8a4a7b@st.com>
- <CAL9mu0Jt_xwo5pJfcx6G3grBuOaxLXvakpEjiB4gV3=bkiq2fg@mail.gmail.com>
-In-Reply-To: <CAL9mu0Jt_xwo5pJfcx6G3grBuOaxLXvakpEjiB4gV3=bkiq2fg@mail.gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.75.127.49]
-Content-ID: <EEC9925CAF78A046ADDC74F9DCF8557D@st.com>
+ id 1jZVlh-0007ra-5y
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 08:32:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1589531551;
+ s=strato-dkim-0002; d=chronox.de;
+ h=References:In-Reply-To:Message-ID:Date:Subject:Cc:To:From:
+ X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
+ bh=cHEQOWUyIIldwmU2G5ztyzURhkG246vmV36B4A8PLNg=;
+ b=kENrgC7m/Kpgq4j8ANtKS+MN4QHd1X5Fd+CUkBilHO5KjkgDbUN5te1VZhEnV0W4Sa
+ yBYncnBkSM30eVmV5h4J9lBl16fb55ACLL7P9LPqa/syAmW8WmkYEWca9dDnexJTIlpt
+ O+G97y8cmWa0iHCtqxpNVktz+CFuoeewTNEwrW19t4KNBnyNd4PCComcE7iCODj7JlPX
+ Kq7H8xb9NFElBwtW2QsSSgQ9/uWceuG6PEUg/0LkmkgxyCnNvS2ovI4WUz82QSyFnWQ8
+ vyafwZI1y3kBg+BM7+iiGJMzypUJctwiHTRpd7J/iw3IczyQfjR+nFcclLr/G4EORekK
+ 4iPA==
+X-RZG-AUTH: ":P2ERcEykfu11Y98lp/T7+hdri+uKZK8TKWEqNyiHySGSa9k9xmwdNnzGHXPaJfSc9C1S"
+X-RZG-CLASS-ID: mo00
+Received: from tauon.chronox.de by smtp.strato.de (RZmta 46.6.2 DYNA|AUTH)
+ with ESMTPSA id u08bf3w4F8WN0ZL
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256 bits))
+ (Client did not present a certificate);
+ Fri, 15 May 2020 10:32:23 +0200 (CEST)
+From: Stephan Mueller <smueller@chronox.de>
+To: Lukasz Stelmach <l.stelmach@samsung.com>
+Subject: Re: [PATCH 1/2] hwrng: iproc-rng200 - Set the quality value
+Date: Fri, 15 May 2020 10:32:22 +0200
+Message-ID: <2080864.23lDWg4Bvs@tauon.chronox.de>
+In-Reply-To: <dleftjtv0i88ji.fsf%l.stelmach@samsung.com>
+References: <4493123.C11H8YMYNy@tauon.chronox.de>
+ <CGME20200514221852eucas1p2bea169d0b4467b0ec9e195c6ac58a08a@eucas1p2.samsung.com>
+ <dleftjtv0i88ji.fsf%l.stelmach@samsung.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.216, 18.0.676
- definitions=2020-05-15_03:2020-05-14,
- 2020-05-15 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_013212_366892_B651C603 
-X-CRM114-Status: GOOD (  22.25  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20200515_013233_814368_0192AEFE 
+X-CRM114-Status: GOOD (  14.40  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a01:238:20a:202:5301:0:0:1 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -113,93 +82,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>, Dave Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Daniel Vetter <daniel@ffwll.ch>, Sam
- Ravnborg <sam@ravnborg.org>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Florian Fainelli <f.fainelli@gmail.com>,
+ Herbert Xu <herbert@gondor.apana.org.au>,
+ Scott Branden <sbranden@broadcom.com>, Matthias Brugger <mbrugger@suse.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Matt Mackall <mpm@selenic.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Kukjin Kim <kgene@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Stefan Wahren <wahrenst@gmx.net>, Ray Jui <rjui@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com,
+ Markus Elfring <elfring@users.sourceforge.net>,
+ linux-arm-kernel@lists.infradead.org, linux-crypto@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Am Freitag, 15. Mai 2020, 00:18:41 CEST schrieb Lukasz Stelmach:
+
+Hi Lukasz,
+> 
+> I am running tests using SP800-90B tools and the first issue I can see
+> is the warning that samples contain less than 1e6 bytes of data. I know
+> little about maths behind random number generators, but I have noticed
+> that the bigger chunk of data from an RNG I feed into either ent or ea_iid
+> the higher entropy they report. That is why I divided the data into 1024
+> bit chunks in the first place. To get worse results. With ea_iid they
+> get even worse (128 bytes of random data)
+
+I read that you seem to just take the output data from the RNG. If this is 
+correct, I think we can stop right here. The output of an RNG is usually after 
+post-processing commonly provided by a cryptographic function.
+
+Thus, when processing the output of the RNG all what we measure here is the 
+quality of the cryptographic post-processing and not the entropy that may be 
+present in the data.
+
+What we need is to access the noise source and analyze this with the given 
+tool set. And yes, the analysis may require adjusting the data to a format 
+that can be consumed and analyzed by the statistical tests.
+
+Ciao
+Stephan
 
 
-On 5/14/20 3:07 PM, dillon min wrote:
-> Hi Alexandre,
->
-> On Thu, May 14, 2020 at 8:53 PM Alexandre Torgue
-> <alexandre.torgue@st.com> wrote:
->>
->>
->> On 5/14/20 10:24 AM, Linus Walleij wrote:
->>> On Tue, May 12, 2020 at 9:04 AM <dillon.minfei@gmail.com> wrote:
->>>
->>>> From: dillon min <dillon.minfei@gmail.com>
->>>>
->>>> Enable the ltdc & ili9341 on stm32429-disco board.
->>>>
->>>> Signed-off-by: dillon min <dillon.minfei@gmail.com>
->>> This mostly looks good but...
->>>
->>>> +&spi5 {
->>>> +       status = "okay";
->>>> +       pinctrl-0 = <&spi5_pins>;
->>>> +       pinctrl-names = "default";
->>>> +       #address-cells = <1>;
->>>> +       #size-cells = <0>;
->>>> +       cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
->>>> +       dmas = <&dma2 3 2 0x400 0x0>,
->>>> +              <&dma2 4 2 0x400 0x0>;
->>>> +       dma-names = "rx", "tx";
->>> These DMA assignments seem to be SoC things and should
->>> rather be in the DTS(I) file where &spi5 is defined, right?
->>> stm32f429.dtsi I suppose?
->> I agree with Linus, DMA have to be defined in SoC dtsi. And if a board
->> doesn't want to use it, we use the "delete-property".
-> Yes, will move to Soc dtsi in next submits.
->
-> i'm working on write a v4l2-m2m driver for dma2d of stm32 to support
-> pixel conversion
-> alpha blending between foreground and background graphics.
->
-> as you know, some soc's engineer trying to add this function to drm system.
->
-> do you know st's planning about soc's hardware accelerator driver on stm32mp?
-> such as chrom-art, will add to drm subsystem via ioctl to access, or to v4l2,
-On stm32mp we do not plan to use chrom-art in drm or v4l2 because it 
-does fit
-with userland way of working. We use the GPU to do conversion, scaling, 
-blending
-and composition in only one go.
-As explain here [1] DRM subsytem it isn't a solution and v4l2-m2m isn't 
-used in any
-mainline compositors like Weston or android surfaceflinger.
 
-Benjamin
-
-[1] 
-https://www.phoronix.com/scan.php?page=news_item&px=Linux-DRM-No-2D-Accel-API
->
-> thanks.
->
->>> It is likely the same no matter which device is using spi5.
->>>
->>> Yours,
->>> Linus Walleij
->>>
-> _______________________________________________
-> Linux-stm32 mailing list
-> Linux-stm32@st-md-mailman.stormreply.com
-> https://st-md-mailman.stormreply.com/mailman/listinfo/linux-stm32
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
