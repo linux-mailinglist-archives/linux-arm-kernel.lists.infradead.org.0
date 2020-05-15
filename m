@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 66AD21D4A75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:07:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 371E71D4A7A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:07:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,41 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=3imSqqXYrMP9XDX+fNoru1FO1VJz6PCzNHVxbSjyCrw=; b=fGnOhYqoNvSpWgM57X8VGujTmd
-	OQiQ/WLVzUANhm51F3iap7IG0X/vfDGF3tLfpzoRd4W12K4swZm9U+qwHXlYTV5i0L6Nj96Ualmr9
-	YmVJmuMlvxlauipAYCPoHp9DRoqoHu9kCbcCid6VnoQH9tqa3Epz8i2PtSaODN3eN0yQPmgdOlKhJ
-	xa0jXYirIxPZi6sru7W3pq/reejdFvvNlWi/W4eYe9zTbruvT+uj105lIilPYhO4EK4nDQA8IKfal
-	feJeC5rGF8mCmuwGTH2jK/CXLeFBcSO4DLf7BHIilsIysRcZDv6Qqi8LIHpggyL2WvpMYVp/NRwBq
-	OrUKzD9Q==;
+	bh=ZDhQg4iaCGvt677m1kDaItOBo9tCUZVQPACsk93RSKQ=; b=Njvj6tCYXfr82MQyt7z47q3Z70
+	CKrNfxmt5dWKY8sqtP6HeISPWiHZOIOzYfFZ8uHTNujXUoy3x2ZA9yH2CNzHKfUygyCbk0rtorj4F
+	VFiWi9t8C4kkBsFc+pA7uYJNw73uL/5sJXIb+5ynYAMeBn9vBoKpCc92E6icq2ORoFzM9SVBX9gga
+	KbJTAzNKANohxyvkxQLHDxm4uhZL1plv+NgZHzqRJtnnLHVAzk+9XSRjmcDVQxP/xEqWo2JQ++Mh+
+	6P6GMQ/8mnMXFmTtTVFPYquzOquAZ2lz+GzqpOLmgCoifL23byVpVEdlyYb0MIMuoE3XIA1Hy+AeU
+	ZqlH8EuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZXFT-0004Xm-UR; Fri, 15 May 2020 10:07:23 +0000
+	id 1jZXFl-0004ll-Iu; Fri, 15 May 2020 10:07:41 +0000
 Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZXEL-0003fy-WE
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:06:18 +0000
+ id 1jZXEN-0003fz-Lw
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:06:19 +0000
 Received: from ramsan ([IPv6:2a02:1810:ac12:ed60:ad37:48f9:900a:523e])
  by xavier.telenet-ops.be with bizsmtp
- id ey5w2200B1TfvYq01y5w6J; Fri, 15 May 2020 12:05:56 +0200
+ id ey5w2200D1TfvYq01y5w6K; Fri, 15 May 2020 12:05:56 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jZXE4-0008Qm-Df; Fri, 15 May 2020 12:05:56 +0200
+ id 1jZXE4-0008Qo-EM; Fri, 15 May 2020 12:05:56 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1jZXE4-0003pc-Cd; Fri, 15 May 2020 12:05:56 +0200
+ id 1jZXE4-0003pg-DE; Fri, 15 May 2020 12:05:56 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [GIT PULL 2/5] Renesas ARM DT updates for v5.8 (take two)
-Date: Fri, 15 May 2020 12:05:44 +0200
-Message-Id: <20200515100547.14671-3-geert+renesas@glider.be>
+Subject: [GIT PULL 3/5] Renesas ARM SoC updates for v5.8 (take two)
+Date: Fri, 15 May 2020 12:05:45 +0200
+Message-Id: <20200515100547.14671-4-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200515100547.14671-1-geert+renesas@glider.be>
 References: <20200515100547.14671-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_030614_191934_79014E81 
-X-CRM114-Status: GOOD (  10.87  )
+X-CRM114-CacheID: sfid-20200515_030615_859366_DF179A05 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
@@ -77,58 +78,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit cf8ae446bbcbf5c48214eb7ddaa6ac6e12f4633d:
+The following changes since commit 135e7a156ae2c1a7a1f0c1d44bf2b3daece04bbf:
 
-  arm64: dts: renesas: Fix IOMMU device node names (2020-04-27 12:02:56 +0200)
+  ARM: shmobile: r8a7742: Basic SoC support (2020-04-28 10:13:58 +0200)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-dt-for-v5.8-tag2
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.8-tag2
 
-for you to fetch changes up to 0e36587c0832af5df894f5e5fcc45fb5a05cea5b:
+for you to fetch changes up to 96866b1a1d32318b6bbc321a762bf79db1f4686e:
 
-  arm64: dts: renesas: r8a774c0-cat874: Add support for AISTARVISION MIPI Adapter V2.1 (2020-05-12 10:05:36 +0200)
-
-----------------------------------------------------------------
-Renesas ARM DT updates for v5.8 (take two)
-
-  - Initial support for the Renesas RZ/G1H SoC on the iWave RainboW
-    Qseven SOM (G21M) and board (G21D),
-  - Support for the AISTARVISION MIPI Adapter V2.1 camera board on the
-    Silicon Linux EK874 RZ/G2E evaluation kit.
+  ARM: debug-ll: Add support for r8a7742 (2020-05-04 14:28:21 +0200)
 
 ----------------------------------------------------------------
-Geert Uytterhoeven (1):
-      Merge tag 'renesas-r8a7742-dt-binding-defs-tag' into renesas-arm-dt-for-v5.8
+Renesas ARM SoC updates for v5.8 (take two)
 
-Lad Prabhakar (9):
-      dt-bindings: power: rcar-sysc: Add r8a7742 power domain index macros
-      clk: renesas: Add r8a7742 CPG Core Clock Definitions
-      ARM: dts: r8a7742: Initial SoC device tree
-      ARM: dts: r8a7742-iwg21m: Add iWave RZ/G1H Qseven SOM
-      ARM: dts: r8a7742-iwg21d-q7: Add iWave G21D-Q7 board based on RZ/G1H
-      ARM: dts: r8a7742: Add IRQC support
-      ARM: dts: r8a7742: Add [H]SCIF{A|B} support
-      ARM: dts: r8a7742: Add GPIO nodes
-      arm64: dts: renesas: r8a774c0-cat874: Add support for AISTARVISION MIPI Adapter V2.1
+  - Add debug-ll support for RZ/G1H.
 
- arch/arm/boot/dts/Makefile                         |   1 +
- arch/arm/boot/dts/r8a7742-iwg21d-q7.dts            |  37 ++
- arch/arm/boot/dts/r8a7742-iwg21m.dtsi              |  53 ++
- arch/arm/boot/dts/r8a7742.dtsi                     | 648 +++++++++++++++++++++
- arch/arm64/boot/dts/renesas/Makefile               |   3 +-
- .../dts/renesas/aistarvision-mipi-adapter-2.1.dtsi |  94 +++
- .../boot/dts/renesas/r8a774c0-ek874-mipi-2.1.dts   |  72 +++
- include/dt-bindings/clock/r8a7742-cpg-mssr.h       |  42 ++
- include/dt-bindings/power/r8a7742-sysc.h           |  29 +
- 9 files changed, 978 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm/boot/dts/r8a7742-iwg21d-q7.dts
- create mode 100644 arch/arm/boot/dts/r8a7742-iwg21m.dtsi
- create mode 100644 arch/arm/boot/dts/r8a7742.dtsi
- create mode 100644 arch/arm64/boot/dts/renesas/aistarvision-mipi-adapter-2.1.dtsi
- create mode 100644 arch/arm64/boot/dts/renesas/r8a774c0-ek874-mipi-2.1.dts
- create mode 100644 include/dt-bindings/clock/r8a7742-cpg-mssr.h
- create mode 100644 include/dt-bindings/power/r8a7742-sysc.h
+----------------------------------------------------------------
+Lad Prabhakar (1):
+      ARM: debug-ll: Add support for r8a7742
+
+ arch/arm/Kconfig.debug | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
