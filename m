@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F09FC1D4BFA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:00:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E51131D4BFC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/YqXLPs2VK6Qq18/4CXeSD1YXN1/Fm91knCw+Yiez4A=; b=QbhUM0SL6NLwkC
-	Ms2KW/HvTejcdzBSivKZQmYWAPQcQYdnuKKFhHH1l+oKyGh+F/Ev013KKQBUFVMFuSOJd/2gM1PrX
-	AMgU1LMQ18YtEno1XuGOIiprkt1DvXuBzTu8JQ+VwEC82VwKmAlWsy6YYxSKcdciwxSDlQRCtaksx
-	f8vMYSXr6X5Kgi5MBYVPdn5huUgoGgjFaaIutAxCKpbcuI0czyS/Dxj592TBegQb3MmA9aYCXyJZU
-	6d2AIM71waF0EtfRW/RL+dcJnqMK/HTxEoQ2XrBHAmnZJ+qn+QgHi/gWTLlxTlbanZslkef7LeFaL
-	XIVR5jydiEHh8R+Do0EQ==;
+	List-Owner; bh=n3nyS6iRE5XkC+xbaCSrdxFG40juylo8xThvK0p6SCc=; b=Yz6bUx0PSW6B9F
+	eFPS93FlXe3lrUe+0CMEW15XhVjTtbxsMDYI3I8x8Ccz923d1o9j0Gw98wqLyvZlrGBZYtbJd8bJP
+	Eg6xnGc++ECS0SCbfBCXgzZhUiAJLp/bdOLFTVS6FLjEpwkUGHtXNsGYNBEhjY12IUdGvYqYVlWpw
+	xdEFtzsA2QRUQmKIlB2iUb9qcw62ilChKcGcrfk51UJOjKsptN5g1wgpyLL+qwsD7eDg9fUEQWluu
+	qK59gmZ/1hWscuLerZwSBDsmFhV2qMauO4fueayiwsjHVx3QWHgHrUL+bvbZDgKaIXBkNLKcpxd9b
+	yMdoeU4/itsQ4etZre+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZY59-0005oc-25; Fri, 15 May 2020 11:00:47 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1jZY5V-0006W8-C4; Fri, 15 May 2020 11:01:09 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZY3R-0001lo-68
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:59:03 +0000
-Received: by mail-wr1-x444.google.com with SMTP id 50so2979301wrc.11
+ id 1jZY3S-0001oJ-Tr
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:59:04 +0000
+Received: by mail-wm1-x344.google.com with SMTP id n5so2193626wmd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 03:59:00 -0700 (PDT)
+ Fri, 15 May 2020 03:59:02 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=NjCPJFyitkarvdcIAJOPK9PQxgRJtbWF1KhO25l4eJg=;
- b=Oma0VpTczioC+4xeRB75kaYXI2lIGZ/yWMfNQF1XwTrYqF+DyTsmW6MZNPqtWYQtaH
- yDurhLMFaF6JChKVKItlTc7HqbY6bSUlBg7eAqJNR9k84NxwVD3rOTryV8+aEJpqB8ab
- X065e0TX+rpDWuE7bKAe2zvyz7QtT/+KqDHMSkjshY+MN9tSCbLn0fvoNC8W9SPlQHdF
- JHi5HLpuNCKsG4VxuQZ0tn9p7U6/m3T2dfsKHK92ai1BBh2f2upZ1CmHnbHsGnqy8wgo
- blBnIfCM97l/BpfiFpcJMTxU/G/IjMvYLk2TnkM+cZbFYwbZqDkD7ufOmNMMEEu/2TNN
- LI+Q==
+ bh=WNlsZuKpbaQAO6z1kYuuvPgoFNE3ZTHmZItsK3A1s/4=;
+ b=a2mePthrCkqiv1vOToW6CSfM1wFwyuINH7E8m7j8zyotUbo2SiNOEq+uMYyTMNBrtJ
+ E/gcD+YlaC+y93uhxlTueo9WVda7X9RPZS9K9DakyLmz4dxE7PEbobbL0dVXCmzJvfwK
+ uSYXjdVnwaCRcDVzs1ieIkpKYKB31AtCEcrjY/80JPlRcYqaYZHFB62siP6rxzQ62HlC
+ 39GnrwVZIFOPec4OPezzfAKoarg0qnJu/kfJUsLlac1ZOV5MD/UkDmsQ9mJRqlPyCIPC
+ hO0pFxf+gCVfPSSf3D5JAeZ9sNEjhuHQ/Rl9LGLWrQA7jVHDWX+zL/dPlq28Yb5Vz9lH
+ QAmQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=NjCPJFyitkarvdcIAJOPK9PQxgRJtbWF1KhO25l4eJg=;
- b=eCku2izlxFeUoooiOnp6XAqLtfFlGL/U8BFgBwqhpp6C6GTZgJ3TLgYPrtqx3su5Yi
- UBSfU5Ea8TxYkpaRzBTLySyhdL4XNUcxBzl20IhOPMhWCQVcZNyO8p+09QkHg/5vrf7P
- D1FPWE9OUXrr7laD71T6PwpsExUhFzL9EwcgB7eN/t6pTPvpcQ+OblYAESOz5keaUkq1
- cl0Nvpj5OcN/Dgl7E/rVVNkvwGx/t2fLmf3zIp0n7bM1FzTnM19NNbo4Suje6K3Aeklg
- 54dpboxiMb5VLNLn8mMyH3tusf2tsEk/UfM7o7CWUgjNcMN3iV1QKRQrdlZqbCcQ2hcz
- Ql3g==
-X-Gm-Message-State: AOAM532kW+lQ4H8QckHonJ/gN+rJp7s389cIzjFZDEt56hr6hfVuh4Xe
- 9uo5rjc9b0V8Y3X+Jp/hHGhf9A==
-X-Google-Smtp-Source: ABdhPJzageDhpllf/yEdmFCfj98cPDS81048Tth+APVCmjc5qLlKcXX2da74AD8VO7humjw9AJcACg==
-X-Received: by 2002:a5d:4dc9:: with SMTP id f9mr3574476wru.407.1589540339421; 
- Fri, 15 May 2020 03:58:59 -0700 (PDT)
+ bh=WNlsZuKpbaQAO6z1kYuuvPgoFNE3ZTHmZItsK3A1s/4=;
+ b=mLy7w1vm1HuAWRRnuNwyIHxhEex6kBiDoN2cL58CapPpXICoNgxbEgmJTJSvf1uacJ
+ 2UoP0Yd/0+Uek1KAwPSzapqdvUWIV/PJTnfq4hLhLo0jcPPVjrTOnlwNJT90g8MshHeH
+ s6o49Eb7hHl8GttYZDGiVZImIX5/euBJ1zyPQagEUVqY6JrIt0ssjpm6UaabvyKRye1D
+ zrvTbda1izPERFDBbQNFnIkug11dc4lvlj2QQCwax3lupgOa6LRvETFguKoxyxceYB+6
+ ecqyyZCr+q1sI62wpE55Eg6ip0lhHYeDomGXcE1uxycobe2Z3cnkWaU5aTE2eWh2uRH6
+ MSJw==
+X-Gm-Message-State: AOAM5331fNwvbvltAeJ5zgNsZhbpgM6F0x7Xw2UqfAlGPxyoMbBfcbKv
+ sFM9BPzSTYC2uI9i9nnm5/5Okg==
+X-Google-Smtp-Source: ABdhPJzyvDNr0FNuz6vpDMEhT8+N3AHdMTtoUX6V7+HUHnGp3w2eUv3jrhxHrrXAFF5VEGySY19F+g==
+X-Received: by 2002:a7b:c778:: with SMTP id x24mr3625426wmk.144.1589540341191; 
+ Fri, 15 May 2020 03:59:01 -0700 (PDT)
 Received: from localhost ([2a01:4b00:8523:2d03:d11b:f847:8002:7411])
- by smtp.gmail.com with ESMTPSA id s2sm3010008wme.33.2020.05.15.03.58.58
+ by smtp.gmail.com with ESMTPSA id p9sm3130293wrj.29.2020.05.15.03.59.00
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 15 May 2020 03:58:58 -0700 (PDT)
+ Fri, 15 May 2020 03:59:00 -0700 (PDT)
 From: David Brazdil <dbrazdil@google.com>
 To: Catalin Marinas <catalin.marinas@arm.com>,
  James Morse <james.morse@arm.com>,
  Julien Thierry <julien.thierry.kdev@gmail.com>,
  Marc Zyngier <maz@kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
  Will Deacon <will@kernel.org>
-Subject: [PATCH v2 03/14] arm64: kvm: Formalize hypcall ABI
-Date: Fri, 15 May 2020 11:58:30 +0100
-Message-Id: <20200515105841.73532-4-dbrazdil@google.com>
+Subject: [PATCH v2 04/14] arm64: kvm: Add build rules for separate nVHE object
+ files
+Date: Fri, 15 May 2020 11:58:31 +0100
+Message-Id: <20200515105841.73532-5-dbrazdil@google.com>
 X-Mailer: git-send-email 2.26.2
 In-Reply-To: <20200515105841.73532-1-dbrazdil@google.com>
 References: <20200515105841.73532-1-dbrazdil@google.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_035901_332692_3A08DCEB 
-X-CRM114-Status: GOOD (  20.74  )
+X-CRM114-CacheID: sfid-20200515_035902_971894_5DD9DEE8 
+X-CRM114-Status: GOOD (  18.15  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
  white-list
@@ -113,267 +114,117 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In preparation for unmapping .hyp.text from kernel memory mappings, convert the
-current EL1 - EL2 KVM ABI to use hypercall numbers in lieu of direct function
-pointers. While this in itself does not provide any isolation, it is a first
-step towards having a well-defined EL2 ABI.
+Add new folder arch/arm64/kvm/hyp/nvhe and a Makefile for building code that
+runs in EL2 under nVHE KVM.
 
-The implementation is based on a jump table to known host HVC handlers indexed
-by the hypercall ID. Relative-offset branches were chosen over
-a sys_call_table-like array of function pointers to avoid the need for
-re-computing the addresses under hyp memory mappings.
+Compile each source file into a `.hyp.tmp.o` object first, then prefix all
+its symbols with "__kvm_nvhe_" using `objcopy` and produce a `.hyp.o`.
+Suffixes were chosen so that it would be possible for VHE and nVHE to share
+some source files, but compiled with different CFLAGS. nVHE build rules add
+-D__KVM_NVHE_HYPERVISOR__.
 
-Hypcall IDs start at 0x1000 because comments in hyp.S state that lower IDs
-are allocated for hyp stub operations. This was not originally honored by
-hyp-entry.S, only the actually used IDs would be recognized and all other
-values would be treated as function pointers. This is cleaned up and all IDs
-lower than 0x1000 are routed to __kvm_handle_stub_hvc.
+The nVHE ELF symbol prefix is added to kallsyms.c as ignored. EL2-only symbols
+will never appear in EL1 stack traces.
 
 Signed-off-by: David Brazdil <dbrazdil@google.com>
 ---
- arch/arm64/include/asm/kvm_host.h            | 10 ++--
- arch/arm64/include/asm/kvm_host_hypercalls.h | 59 ++++++++++++++++++++
- arch/arm64/kvm/hyp.S                         | 18 +++---
- arch/arm64/kvm/hyp/hyp-entry.S               | 56 +++++++++++--------
- 4 files changed, 107 insertions(+), 36 deletions(-)
- create mode 100644 arch/arm64/include/asm/kvm_host_hypercalls.h
+ arch/arm64/kernel/image-vars.h   | 12 +++++++++++
+ arch/arm64/kvm/hyp/Makefile      |  4 ++--
+ arch/arm64/kvm/hyp/nvhe/Makefile | 35 ++++++++++++++++++++++++++++++++
+ scripts/kallsyms.c               |  1 +
+ 4 files changed, 50 insertions(+), 2 deletions(-)
+ create mode 100644 arch/arm64/kvm/hyp/nvhe/Makefile
 
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index 32c8a675e5a4..132233b6d853 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -24,6 +24,7 @@
- #include <asm/fpsimd.h>
- #include <asm/kvm.h>
- #include <asm/kvm_asm.h>
-+#include <asm/kvm_host_hypercalls.h>
- #include <asm/thread_info.h>
+diff --git a/arch/arm64/kernel/image-vars.h b/arch/arm64/kernel/image-vars.h
+index 7f06ad93fc95..13850134fc28 100644
+--- a/arch/arm64/kernel/image-vars.h
++++ b/arch/arm64/kernel/image-vars.h
+@@ -51,4 +51,16 @@ __efistub__ctype		= _ctype;
  
- #define __KVM_HAVE_ARCH_INTC_INITIALIZED
-@@ -446,7 +447,7 @@ int kvm_test_age_hva(struct kvm *kvm, unsigned long hva);
- void kvm_arm_halt_guest(struct kvm *kvm);
- void kvm_arm_resume_guest(struct kvm *kvm);
+ #endif
  
--u64 __kvm_call_hyp(void *hypfn, ...);
-+u64 __kvm_call_hyp(unsigned long hcall_id, ...);
++#ifdef CONFIG_KVM
++
++/*
++ * KVM nVHE code has its own symbol namespace prefixed by __hyp_text_, to
++ * isolate it from the kernel proper. The following symbols are legally
++ * accessed by it, therefore provide aliases to make them linkable.
++ * Do not include symbols which may not be safely accessed under hypervisor
++ * memory mappings.
++ */
++
++#endif /* CONFIG_KVM */
++
+ #endif /* __ARM64_KERNEL_IMAGE_VARS_H */
+diff --git a/arch/arm64/kvm/hyp/Makefile b/arch/arm64/kvm/hyp/Makefile
+index 5d8357ddc234..c9fd8618980d 100644
+--- a/arch/arm64/kvm/hyp/Makefile
++++ b/arch/arm64/kvm/hyp/Makefile
+@@ -6,10 +6,10 @@
+ ccflags-y += -fno-stack-protector -DDISABLE_BRANCH_PROFILING \
+ 		$(DISABLE_STACKLEAK_PLUGIN)
  
- /*
-  * The couple of isb() below are there to guarantee the same behaviour
-@@ -459,7 +460,8 @@ u64 __kvm_call_hyp(void *hypfn, ...);
- 			f(__VA_ARGS__);					\
- 			isb();						\
- 		} else {						\
--			__kvm_call_hyp(kvm_ksym_ref(f), ##__VA_ARGS__); \
-+			__kvm_call_hyp(KVM_HOST_HCALL_ID(f),		\
-+				       ##__VA_ARGS__);			\
- 		}							\
- 	} while(0)
+-obj-$(CONFIG_KVM) += hyp.o
++obj-$(CONFIG_KVM) += vhe.o nvhe/
+ obj-$(CONFIG_KVM_INDIRECT_VECTORS) += smccc_wa.o
  
-@@ -471,7 +473,7 @@ u64 __kvm_call_hyp(void *hypfn, ...);
- 			ret = f(__VA_ARGS__);				\
- 			isb();						\
- 		} else {						\
--			ret = __kvm_call_hyp(kvm_ksym_ref(f),		\
-+			ret = __kvm_call_hyp(KVM_HOST_HCALL_ID(f),	\
- 					     ##__VA_ARGS__);		\
- 		}							\
- 									\
-@@ -551,7 +553,7 @@ static inline void __cpu_init_hyp_mode(phys_addr_t pgd_ptr,
- 	 * cpus_have_const_cap() wrapper.
- 	 */
- 	BUG_ON(!system_capabilities_finalized());
--	__kvm_call_hyp((void *)pgd_ptr, hyp_stack_ptr, vector_ptr, tpidr_el2);
-+	__kvm_call_hyp((unsigned long)pgd_ptr, hyp_stack_ptr, vector_ptr, tpidr_el2);
+-hyp-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
++vhe-y := vgic-v3-sr.o timer-sr.o aarch32.o vgic-v2-cpuif-proxy.o sysreg-sr.o \
+ 	 debug-sr.o entry.o switch.o fpsimd.o tlb.o hyp-entry.o
  
- 	/*
- 	 * Disabling SSBD on a non-VHE system requires us to enable SSBS
-diff --git a/arch/arm64/include/asm/kvm_host_hypercalls.h b/arch/arm64/include/asm/kvm_host_hypercalls.h
+ # KVM code is run at a different exception code with a different map, so
+diff --git a/arch/arm64/kvm/hyp/nvhe/Makefile b/arch/arm64/kvm/hyp/nvhe/Makefile
 new file mode 100644
-index 000000000000..ed02878fbda5
+index 000000000000..7d64235dba62
 --- /dev/null
-+++ b/arch/arm64/include/asm/kvm_host_hypercalls.h
-@@ -0,0 +1,59 @@
-+/* SPDX-License-Identifier: GPL-2.0-only */
-+/*
-+ * Copyright (C) 2020 Google, inc
-+ */
++++ b/arch/arm64/kvm/hyp/nvhe/Makefile
+@@ -0,0 +1,35 @@
++# SPDX-License-Identifier: GPL-2.0
++#
++# Makefile for Kernel-based Virtual Machine module, HYP/nVHE part
++#
 +
-+#ifndef __KVM_HOST_HCALL
-+#define __KVM_HOST_HCALL(x)
-+#endif
++asflags-y := -D__KVM_NVHE_HYPERVISOR__
++ccflags-y := -D__KVM_NVHE_HYPERVISOR__ -fno-stack-protector \
++	     -DDISABLE_BRANCH_PROFILING $(DISABLE_STACKLEAK_PLUGIN)
 +
-+#define __KVM_HOST_HCALL_ID___kvm_enable_ssbs			0
-+__KVM_HOST_HCALL(__kvm_enable_ssbs)
++obj-y :=
 +
-+#define __KVM_HOST_HCALL_ID___kvm_get_mdcr_el2			1
-+__KVM_HOST_HCALL(__kvm_get_mdcr_el2)
++obj-y := $(patsubst %.o,%.hyp.o,$(obj-y))
++extra-y := $(patsubst %.hyp.o,%.hyp.tmp.o,$(obj-y))
 +
-+#define __KVM_HOST_HCALL_ID___kvm_timer_set_cntvoff		2
-+__KVM_HOST_HCALL(__kvm_timer_set_cntvoff)
++$(obj)/%.hyp.tmp.o: $(src)/%.c FORCE
++	$(call if_changed_rule,cc_o_c)
++$(obj)/%.hyp.tmp.o: $(src)/%.S FORCE
++	$(call if_changed_rule,as_o_S)
++$(obj)/%.hyp.o: $(obj)/%.hyp.tmp.o FORCE
++	$(call if_changed,hypcopy)
 +
-+#define __KVM_HOST_HCALL_ID___kvm_tlb_flush_local_vmid		3
-+__KVM_HOST_HCALL(__kvm_tlb_flush_local_vmid)
++quiet_cmd_hypcopy = HYPCOPY $@
++      cmd_hypcopy = $(OBJCOPY) --prefix-symbols=__kvm_nvhe_ $< $@
 +
-+#define __KVM_HOST_HCALL_ID___kvm_flush_vm_context		4
-+__KVM_HOST_HCALL(__kvm_flush_vm_context)
++# KVM nVHE code is run at a different exception code with a different map, so
++# compiler instrumentation that inserts callbacks or checks into the code may
++# cause crashes. Just disable it.
++GCOV_PROFILE	:= n
++KASAN_SANITIZE	:= n
++UBSAN_SANITIZE	:= n
++KCOV_INSTRUMENT	:= n
 +
-+#define __KVM_HOST_HCALL_ID___kvm_vcpu_run_nvhe			5
-+__KVM_HOST_HCALL(__kvm_vcpu_run_nvhe)
-+
-+#define __KVM_HOST_HCALL_ID___kvm_tlb_flush_vmid		6
-+__KVM_HOST_HCALL(__kvm_tlb_flush_vmid)
-+
-+#define __KVM_HOST_HCALL_ID___kvm_tlb_flush_vmid_ipa		7
-+__KVM_HOST_HCALL(__kvm_tlb_flush_vmid_ipa)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_init_lrs			8
-+__KVM_HOST_HCALL(__vgic_v3_init_lrs)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_get_ich_vtr_el2		9
-+__KVM_HOST_HCALL(__vgic_v3_get_ich_vtr_el2)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_write_vmcr		10
-+__KVM_HOST_HCALL(__vgic_v3_write_vmcr)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_restore_aprs		11
-+__KVM_HOST_HCALL(__vgic_v3_restore_aprs)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_read_vmcr			12
-+__KVM_HOST_HCALL(__vgic_v3_read_vmcr)
-+
-+#define __KVM_HOST_HCALL_ID___vgic_v3_save_aprs			13
-+__KVM_HOST_HCALL(__vgic_v3_save_aprs)
-+
-+#define KVM_HOST_HCALL_NR					14
-+
-+/*
-+ * Offset KVM hypercall IDs to avoid clashing with stub hypercalls
-+ * (defined in asm/virt.h).
-+ */
-+#define KVM_HOST_HCALL_BASE 	(0x1000UL)
-+#define KVM_HOST_HCALL_ID(name) (KVM_HOST_HCALL_BASE + __KVM_HOST_HCALL_ID_##name)
-diff --git a/arch/arm64/kvm/hyp.S b/arch/arm64/kvm/hyp.S
-index 3c79a1124af2..f603d03cb599 100644
---- a/arch/arm64/kvm/hyp.S
-+++ b/arch/arm64/kvm/hyp.S
-@@ -11,22 +11,20 @@
- #include <asm/cpufeature.h>
- 
- /*
-- * u64 __kvm_call_hyp(void *hypfn, ...);
-+ * u64 __kvm_call_hyp(unsigned long hcall_id, ...);
-  *
-  * This is not really a variadic function in the classic C-way and care must
-  * be taken when calling this to ensure parameters are passed in registers
-  * only, since the stack will change between the caller and the callee.
-  *
-- * Call the function with the first argument containing a pointer to the
-- * function you wish to call in Hyp mode, and subsequent arguments will be
-- * passed as x0, x1, and x2 (a maximum of 3 arguments in addition to the
-- * function pointer can be passed).  The function being called must be mapped
-- * in Hyp mode (see init_hyp_mode in arch/arm/kvm/arm.c).  Return values are
-- * passed in x0.
-+ * Call the function with the first argument containing ID of the function
-+ * you wish to call in Hyp mode, as defined in kvm_host_hypercalls.h, and
-+ * subsequent arguments will be passed as x0, x1, and x2 (a maximum of
-+ * 3 arguments in addition to the hypcall ID can be passed). Return values
-+ * are passed in x0.
-  *
-- * A function pointer with a value less than 0xfff has a special meaning,
-- * and is used to implement hyp stubs in the same way as in
-- * arch/arm64/kernel/hyp_stub.S.
-+ * Hypcalls with ID less than 0x1000 are propagated to operations implemented
-+ * in arch/arm64/kernel/hyp_stub.S.
-  */
- SYM_FUNC_START(__kvm_call_hyp)
- 	hvc	#0
-diff --git a/arch/arm64/kvm/hyp/hyp-entry.S b/arch/arm64/kvm/hyp/hyp-entry.S
-index 65ff99a7e02d..ab14de8d0131 100644
---- a/arch/arm64/kvm/hyp/hyp-entry.S
-+++ b/arch/arm64/kvm/hyp/hyp-entry.S
-@@ -13,25 +13,12 @@
- #include <asm/kvm_arm.h>
- #include <asm/kvm_asm.h>
- #include <asm/kvm_mmu.h>
-+#include <asm/kvm_host_hypercalls.h>
- #include <asm/mmu.h>
- 
- 	.text
- 	.pushsection	.hyp.text, "ax"
- 
--.macro do_el2_call
--	/*
--	 * Shuffle the parameters before calling the function
--	 * pointed to in x0. Assumes parameters in x[1,2,3].
--	 */
--	str	lr, [sp, #-16]!
--	mov	lr, x0
--	mov	x0, x1
--	mov	x1, x2
--	mov	x2, x3
--	blr	lr
--	ldr	lr, [sp], #16
--.endm
--
- el1_sync:				// Guest trapped into EL2
- 
- 	mrs	x0, esr_el2
-@@ -46,9 +33,9 @@ el1_sync:				// Guest trapped into EL2
- 	/* Here, we're pretty sure the host called HVC. */
- 	ldp	x0, x1, [sp], #16
- 
--	/* Check for a stub HVC call */
--	cmp	x0, #HVC_STUB_HCALL_NR
--	b.hs	1f
-+	/* Check if hcall ID (x0) is in the hyp stub hypercall range. */
-+	cmp	x0, #KVM_HOST_HCALL_BASE
-+	b.hs	el1_host_hcall
- 
- 	/*
- 	 * Compute the idmap address of __kvm_handle_stub_hvc and
-@@ -65,13 +52,38 @@ el1_sync:				// Guest trapped into EL2
- 	sub	x5, x5, x6
- 	br	x5
- 
-+el1_host_hcall:
-+	/* Check if hcall ID (x0) is in the KVM host hypercall range. */
-+	sub	x0, x0, #KVM_HOST_HCALL_BASE
-+	cmp	x0, #KVM_HOST_HCALL_NR
-+	b.hs	el1_host_invalid_hvc
-+
-+	/* Compute address of corresponding branch in the jump table below. */
-+	adr	x10, 1f
-+	add	x10, x10, x0, lsl #2
-+
-+	/* Call the host HVC handler. Arguments are in x[1,2,3]. */
-+	mov	x0, x1
-+	mov	x1, x2
-+	mov	x2, x3
-+	str	lr, [sp, #-16]!
-+	adr	lr, 2f
-+	br	x10
-+
-+	/* Generate jump table of branches to all defined host HVC handlers. */
- 1:
--	/*
--	 * Perform the EL2 call
--	 */
--	kern_hyp_va	x0
--	do_el2_call
-+#undef __KVM_HOST_HCALL
-+#define __KVM_HOST_HCALL(hcall_fn_name) \
-+	b	hcall_fn_name
-+#include <asm/kvm_host_hypercalls.h>
-+
-+2:
-+	ldr	lr, [sp], #16
-+	eret
-+	sb
- 
-+el1_host_invalid_hvc:
-+	mov	x0, -ENOSYS
- 	eret
- 	sb
++# Skip objtool checking for this directory because nVHE code is compiled with
++# non-standard build rules.
++OBJECT_FILES_NON_STANDARD := y
+diff --git a/scripts/kallsyms.c b/scripts/kallsyms.c
+index 3e8dea6e0a95..523a1a337ebd 100644
+--- a/scripts/kallsyms.c
++++ b/scripts/kallsyms.c
+@@ -109,6 +109,7 @@ static bool is_ignored_symbol(const char *name, char type)
+ 		".LASANPC",		/* s390 kasan local symbols */
+ 		"__crc_",		/* modversions */
+ 		"__efistub_",		/* arm64 EFI stub namespace */
++		"__kvm_nvhe_",		/* arm64 non-VHE KVM namespace */
+ 		NULL
+ 	};
  
 -- 
 2.26.2
