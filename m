@@ -2,87 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 502BF1D49C9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:37:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E0451D49D2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:40:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=htGPX71sDKhjXoVp9zAluh0xG7WxKn3A7sTwJUiO808=; b=ivHVPAzhEyujp7
-	qUZIWk+8dCzuyCYUwtKJePrsT4Vl0VYULxv1+WxglhPudxj8up9QdZQNboZiCBeQWFXmuOp47hXTQ
-	sjQGI6GZtY3HloNI9kMjd5EcrAXSgaLPCMiDpoL5WKXq2lESYxFDeqLJ0lHk8WT8XXzYk0z9bMU9K
-	k6pWGX5edSLZiJ80DjtxjdAfJ1b2i1V705Tz8hyKkYba5XsKwgJbU7+mWhO/+d/tQXv3rWwlNV9DF
-	BAvui3qfuYSzFwXMT4Ay39yhd+g7rlN4k37uaFMFq8cLHKdbg9kKexncMhEwtf9AnfywfyZIhq8z4
-	h9x0ZyxrFRdU8LRlrE0w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=KBfGWKWTduE4K9GuNsjfYmsps8va8BeZutnv62tTVTY=; b=FuXuzzRtPUloqj7nNB45rce6o
+	bFsmHMCYPu9nm08BKoEPklGuDWJh3Kn8ecBhhqVg88tahMfI47tedheEjaaeouUe/+RJ+vRC5vU6A
+	RmHxv1HoqVA8tqVV24RSVelj08knp7aeypeKS4wvDi6g8CmhPQIhak6V9ym+oQbFzROv9+PGBTRkS
+	Dmbh/PYXs2YQH38mXlTt7RtFKCYW30PQ1j/J4Ul2e5y80uZ1+6/9qnDl03EKNEq+Jbe6EDfA+zN2c
+	UiltXf0zXg/cPnJ4ts1ZPUu1yzHarMUDIihmEjCrepq4Cymd1hHRDaxnI/yvQzGLVBWI4qi6V8dpX
+	xJPIUELpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWms-00057Y-Ug; Fri, 15 May 2020 09:37:50 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWmb-0004wb-T7
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:37:41 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id 04F9bLbF036068;
- Fri, 15 May 2020 04:37:21 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1589535441;
- bh=oEOAmMlHbDMdqsu88ZGLxuLWEWcpJCtqZ15QYDx+IUw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=jzU7nG3RyRqg6BiOsRLMPw7ivW7oO7DL8JhD/D2ayGFbOq74L/3O4lJ784OqebItk
- opK2uoHt0VsAzV8vSHkmXTK/X2QJ7N5cJnTV7jek8KhrqeOE3Jcjp/1HS8hMyTBytg
- sA4u68GfCAethfqAYljk4lJLBx7oI48U2G1SOo7k=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id 04F9bL47130041
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 15 May 2020 04:37:21 -0500
-Received: from DFLE113.ent.ti.com (10.64.6.34) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 15
- May 2020 04:37:20 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE113.ent.ti.com
- (10.64.6.34) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3 via
- Frontend Transport; Fri, 15 May 2020 04:37:21 -0500
-Received: from [10.250.151.179] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id 04F9bHhi005235;
- Fri, 15 May 2020 04:37:18 -0500
-Subject: Re: [PATCH v2] arm64: dts: ti: k3-am654-main: Update otap-del-sel
- values
-To: <linux-kernel@vger.kernel.org>, <devicetree@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>
-References: <20200507181526.12529-1-faiz_abbas@ti.com>
-From: Faiz Abbas <faiz_abbas@ti.com>
-Message-ID: <ed7068a6-3441-be0c-cf78-63e0988e91af@ti.com>
-Date: Fri, 15 May 2020 15:07:11 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.7.0
+	id 1jZWpP-0008MN-Od; Fri, 15 May 2020 09:40:28 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZWpD-0008Id-Uc; Fri, 15 May 2020 09:40:17 +0000
+Received: from localhost (p5486CC07.dip0.t-ipconnect.de [84.134.204.7])
+ by pokefinder.org (Postfix) with ESMTPSA id C49A12C1F6B;
+ Fri, 15 May 2020 11:40:11 +0200 (CEST)
+Date: Fri, 15 May 2020 11:40:11 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Qii Wang <qii.wang@mediatek.com>
+Subject: Re: [PATCH v2 1/2] MAINTAINERS: add maintainer for mediatek i2c
+ controller driver
+Message-ID: <20200515094011.GF2077@ninjato>
+References: <1589461844-15614-1-git-send-email-qii.wang@mediatek.com>
+ <1589461844-15614-2-git-send-email-qii.wang@mediatek.com>
 MIME-Version: 1.0
-In-Reply-To: <20200507181526.12529-1-faiz_abbas@ti.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <1589461844-15614-2-git-send-email-qii.wang@mediatek.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_023734_021001_67BFA8DA 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20200515_024016_135557_11C07E38 
+X-CRM114-Status: UNSURE (   6.02  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,31 +58,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: nm@ti.com, t-kristo@ti.com, robh+dt@kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
+ leilk.liu@mediatek.com, linux-kernel@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5986030863656353982=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tero,
 
-On 07/05/20 11:45 pm, Faiz Abbas wrote:
-> According to the latest AM65x Data Manual[1], a different output tap
-> delay value is optimum for a given speed mode. Update these values.
-> 
-> [1] http://www.ti.com/lit/gpn/am6526
-> 
-> Signed-off-by: Faiz Abbas <faiz_abbas@ti.com>
-> ---
-> v2: Rebased to the latest mainline kernel
-> 
+--===============5986030863656353982==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="ni93GHxFvA+th69W"
+Content-Disposition: inline
 
-Gentle ping.
 
-Thanks,
-Faiz
+--ni93GHxFvA+th69W
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, May 14, 2020 at 09:09:04PM +0800, Qii Wang wrote:
+> Add Qii Wang as maintainer for mediatek i2c controller driver.
+>=20
+> Signed-off-by: Qii Wang <qii.wang@mediatek.com>
+
+Applied to for-current, thanks for stepping up!
+
+
+--ni93GHxFvA+th69W
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl6+Y3sACgkQFA3kzBSg
+KbZugg//TK0hfveJTlzciqv+okPXLT19EfLiDbZcb1Vd4QOqHwyzVuswobDqKlb5
+FYUJwJ4mGytlwxPqa39dZKzCtwQlE/xPjISB+oPyiuESDrnlU/xXNIH6+prfbG7X
+dbJkgNqpAg6hsaWlDh6QzZa+rr+TsBbmF3pm3q6SPZpXXUvp79YPgSE4k2RJJ5Ev
+mF2QFCP88zK/0MsP1+/Dq0G51TE4Qzku8D35ysOB0ENIvtlCQp5RfeSX4OnhXzuP
+Ne5dztd9S6HxoPKKyB0XNtSu1t0nf0Omsd+zagDLTVFJORe3D7MDxCLrAARWdPvA
+c04rpnRuTewEihDJtyNJg3DovgqqGrN4sA4GINzIKkb9wV0L7mH1/4TU30OyhCRS
+ZMce3FcP5gCg70L5E7pNy05EX3xMY8IltUok2AvWEpae6PnuauaxKLJjfgcxLtwz
+xrNlNbZEsbvzAwdmGLZ6+PJMfa5tgEs1Wf0yfqgBrVPModxblx4Z+OrY/xt8rZz1
+8zfQPQYIEeHArP07FIx7TzcdPCG8afJls2o9N6mzo84pJ8kLBOR/6yWGEUb1AuPV
+A+gpFzP+XkrKf648i2YRE8EDVWnJkh42aiyZSBJZgsjYvej65W6nsLkpW5su2KUP
++f0Bf0k+9a6FF9ph+L8s1IRfrFoSzTT5X/Iay5Utatv/zF2ETP8=
+=Bb7H
+-----END PGP SIGNATURE-----
+
+--ni93GHxFvA+th69W--
+
+
+--===============5986030863656353982==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5986030863656353982==--
+
