@@ -2,59 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D0F1D46F5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:22:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 605F51D4702
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:23:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=I9uB3nut6kEG8pG+VicMZ7I0RHl4LigEXvS0pbNM2gM=; b=ocCZ59RGvYRhC9
-	QCSu3WyNP4oOGtYSnEAKOUcd0Kjhe/4Rk77UnoQ9me4r2v5q8+roKeWo30PvJpFoDIOn19BgCRQBL
-	wVE+upD8LN1yk9hA+5pBKZRGF+QCL/+vpONiT8R1AtnJH3tWc/m7s2APApAug7qyQKTI3Xp9W/8hH
-	KmffZk1hvVOfIlMnJCt8fo2mKOBhjCMM5yvLDD8WLYiFiatZ97/qOfb6NoeyJmELv2+7vSo72bXBR
-	pPb7hUGfHCRPXMFQEgo726hvB0cHXYfa0llq6WyuOzGPNJUoaZNlko3mVcGnvxTgJ9QXPDEQS4Amo
-	nCPwut8My06QSTdpIs9g==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g0d4bCAEsPI6AfSDXm71mGuG7ifzvvPfrOyK+xm06F8=; b=GA9SVTXGeCajX7
+	xEUnldBnH5m2//15e/sDgsiUHs4hQh2DuFHFZOd5PnDwiVAtmLQqLxss5RcYQbZgEGBBI+WKTtohj
+	T+qPRgQCqrY4pIO3/KBKZ0T6YH4MmuHUt81N4g610h2WfgbzyAo8pQNtB77mUSDxeB8f8ROaesNhL
+	J0p1Bo/XenmCFOKBw7R79v1GkpxRYUAun37lIv4OrJRb0F5hUy+5Yta4PlaG5+8rSlHPPE1Msl/Ys
+	qhVZ5Tg4yHWMTHqzn78PGuHulx1LBuZU5KLd3sEc0vkPGAPrlFBG0xePrLx9bhgx0T6dCdIp2C1Y3
+	NnIYZXnBGEkYGQ9NDHlA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZUfe-0000Ft-2T; Fri, 15 May 2020 07:22:14 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1jZUgF-0000cX-4E; Fri, 15 May 2020 07:22:51 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZUfR-0000FO-Ph
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:22:03 +0000
-Received: from DGGEMS413-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 6FDD4B761C218209C593;
- Fri, 15 May 2020 15:21:59 +0800 (CST)
-Received: from [10.57.101.250] (10.57.101.250) by
- DGGEMS413-HUB.china.huawei.com (10.3.19.213) with Microsoft SMTP Server id
- 14.3.487.0; Fri, 15 May 2020 15:21:51 +0800
-To: <soc@kernel.org>, "arm@kernel.org" <arm@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-From: Wei Xu <xuwei5@hisilicon.com>
-Subject: [GIT PULL] arm64: dts: hisilicon dts updates for v5.8
-Message-ID: <5EBE430E.6090508@hisilicon.com>
-Date: Fri, 15 May 2020 15:21:50 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.2.0
+ id 1jZUg5-0000bp-5b
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:22:43 +0000
+Received: by mail-oi1-f194.google.com with SMTP id i13so1380728oie.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 15 May 2020 00:22:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=unTaiYNsyJHNbPep69SOcCNp6Xe5J0UrX0ALNxnvuwk=;
+ b=p2BJAKJJ8Vp9FM9AmLQl7arqh1Nj/5AUWJhK3IP3NfOFD3x2Uz/dRj6/jQiVO3eCf+
+ GSC+ZkotwiF2zjgy/qLfV1fD7AEdt+6AyWbAJXIkENrs1nc0vD+ECQ7xk4Y2SkfLCrma
+ qeFEpQAWVK8srZctrVxIIW1OFS5T5LeeF9MBBcry2zf7vP4ANmGdjRsPF1/Uec4yJeoo
+ 40Lk4z/V9aqKBv6P93ESgDmtzx1tocVSD6/ipkf+1Q1zjBf5i2gZWimoISdc7uJ4EpRS
+ /5/0RmvbEhX4JggSuPoe+07OjOAxLxVhjzSXaHfGPkTRUqZdN1qJvMfczCup8w16HN9O
+ Q91Q==
+X-Gm-Message-State: AOAM530lboEdCSAHn55xuRZOESZxyXUumh5LutuwCKGvfudhGBwihUtl
+ bUJiGzRhkbBiiC9lbdA1w7hlKz79rwtCRwsKcAQ=
+X-Google-Smtp-Source: ABdhPJyjJ+/cjMBY1UUSSo3Cxe2NWI07C8OJj+hqOcWICEGnCReUQGucy5vB7JV7cSes4CyFwN+7ATV+zop4u3K0sxQ=
+X-Received: by 2002:aca:cd93:: with SMTP id d141mr1113849oig.148.1589527359964; 
+ Fri, 15 May 2020 00:22:39 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.57.101.250]
-X-CFilter-Loop: Reflected
+References: <1589494238-2933-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+In-Reply-To: <1589494238-2933-1-git-send-email-prabhakar.mahadev-lad.rj@bp.renesas.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 15 May 2020 09:22:28 +0200
+Message-ID: <CAMuHMdW8aQyHm7uzOd3cL2kPXc0EZ=DN_MmVa4AVFLqo5PwMKA@mail.gmail.com>
+Subject: Re: [PATCH] arm64: defconfig: enable CONFIG_PCIE_RCAR_HOST
+To: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_002202_409360_C4EB5AF8 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.1 (--)
+X-CRM114-CacheID: sfid-20200515_002241_203026_E80B157F 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.1 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [geert.uytterhoeven[at]gmail.com]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,61 +81,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>,
- Loic Poulain <loic.poulain@linaro.org>, Tangkunshan <tangkunshan@huawei.com>,
- Arnd Bergmann <arnd@arndb.de>, John Garry <john.garry@huawei.com>,
- Linuxarm <linuxarm@huawei.com>, Shameerali
- Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- huangdaode <huangdaode@hisilicon.com>, "xuwei
- \(O\)" <xuwei5@huawei.com>, Jonathan Cameron <jonathan.cameron@huawei.com>,
- Olof Johansson <olof@lixom.net>, Shiju Jose <shiju.jose@huawei.com>,
- "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
- Zhangyi ac <zhangyi.ac@huawei.com>, Mike Leach <mike.leach@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ Prabhakar Lad <prabhakar.csengg@gmail.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi ARM-SoC team,
+Hi Prabhakar,
 
-Please consider to pull the following changes.
-Thanks!
+On Fri, May 15, 2020 at 12:10 AM Lad Prabhakar
+<prabhakar.mahadev-lad.rj@bp.renesas.com> wrote:
+> config option PCIE_RCAR internally selects PCIE_RCAR_HOST which builds the
+> same driver. So this patch renames CONFIG_PCIE_RCAR to
+> CONFIG_PCIE_RCAR_HOST so that PCIE_RCAR can be safely dropped from Kconfig
+> file.
+>
+> Signed-off-by: Lad Prabhakar <prabhakar.mahadev-lad.rj@bp.renesas.com>
+> Reviewed-by: Yoshihiro Shimoda <yoshihiro.shimoda.uh@renesas.com>
 
-Best Regards,
-Wei
+Reviewed-by: Geert Uytterhoeven <geert+renesas@glider.be>
 
----
+I wrote before:
 
-The following changes since commit 8f3d9f354286745c751374f5f1fcafee6b3f3136:
+   "I can take patch 2/11 through renesas-devel.
+    Probably it's best if I submit it to arm-soc as a fix for v5.8, after
+    the driver part has been merged into v5.8-rc1."
 
-  Linux 5.7-rc1 (2020-04-12 12:35:55 -0700)
+so this will have to wait for v5.8-rc1.
 
-are available in the Git repository at:
+Gr{oetje,eeting}s,
 
-  git://github.com/hisilicon/linux-hisi.git tags/hisi-arm64-dt-for-5.8
+                        Geert
 
-for you to fetch changes up to fd955a7eac362d87f9dcb5c2f2c3e4355726c6fc:
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
 
-  arm64: dts: hi6220: Add CTI options (2020-05-07 14:44:56 +0800)
-
-----------------------------------------------------------------
-ARM64: DT: Hisilicon SoCs DT updates for 5.8
-
-- Add pinconf for spi2 and spi3 nodes and increase the drive
-  strength to achieve the max speed for the Hikey960 board
-- Add CTI nodes for the Hikey620 board
-
-----------------------------------------------------------------
-Loic Poulain (1):
-      arm64: dts: hikey960: pinctrl: Fix spi2/spi3 pinconf
-
-Mike Leach (1):
-      arm64: dts: hi6220: Add CTI options
-
- arch/arm64/boot/dts/hisilicon/hi3660.dtsi          |   4 +-
- .../arm64/boot/dts/hisilicon/hi6220-coresight.dtsi | 130 +++++++++++++++++++--
- .../arm64/boot/dts/hisilicon/hikey960-pinctrl.dtsi |   6 +-
- 3 files changed, 127 insertions(+), 13 deletions(-)
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
