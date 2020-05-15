@@ -2,81 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EAEC1D4CE1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:42:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A7841D4CD8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:41:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Tv67nebneydDyhHKdF+gbdjS4j/rBK8ukCYlbYQpSI0=; b=gfkrQIUEMCKMfJ
-	sruwPYEXEoPOHgK4KBKsBSRG8fwIv46UYhLocSvNduIwkF1UWGPSVFrs0K/Jf4eao36gA/GJ5cdlk
-	bMjPNB6HbV9VW23ZtHK6kDNzd0W5kfOwhpiIhB5fF7jVQXechEN6OCrqTCznt0DgVsQ4VNPEfKV9u
-	E2o7w+aLCzaXO72Ti0vZ1SVhInKgo3MwzO5K/IqouGTN/hCs9nZcnbGWlUO3vTlM9ugs5pgfCinC2
-	ul2fWEoPlq+I14dvPPo+gNtai6UsCkd/Iiblm/3Gwk2cLuZrtmwiq/hzJ+sN6H3taJyZyvoQ6ZnF2
-	8feBug6cKoJ/f70tOVrA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zt4asf5l52kee8G7Xe67yv5IlsE/G5jdZ0yvuDeUtVc=; b=YweiV3plOFIj4o
+	6B0O/t+6aESrg262X/2Ladj+hNnNNAzD91q8OzzwyDtvjDeYUuU1alykjVzASJQtCprMB+oJTnsmP
+	NU4x6LDZqazcKH/cCXcnhNnvWKxMy/TB+SCqxf+Xe7FxLxguyaZs17DZeQRzo6j6JlRvhaUUMkhm0
+	8LZ7K+uUigin3h703ezEJJMpZIjYudEKJa0oB+mo1+e1ePsgO4ubl4PGh2Y3uZvvH47wQyzou8hMr
+	Fm18p+zmH8sSpXPJJH4hRkSxhRiBx/d93KU8/KmtjdjO1ze4S2owok0G0xkpBR5eKo0jWx+GxLdNa
+	ZsGVnKpsp7Yrm4bqGI8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYja-00017V-0v; Fri, 15 May 2020 11:42:34 +0000
-Received: from mail-lf1-f68.google.com ([209.85.167.68])
+	id 1jZYiR-0008OS-RF; Fri, 15 May 2020 11:41:23 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYht-0008Bt-9l
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:40:55 +0000
-Received: by mail-lf1-f68.google.com with SMTP id a9so1537698lfb.8
+ id 1jZYhq-0008AY-M1
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:40:51 +0000
+Received: by mail-lj1-x241.google.com with SMTP id l19so1863934lje.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 04:40:48 -0700 (PDT)
+ Fri, 15 May 2020 04:40:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aAAXCCNupCeXj5L2cJng4wFA9ICiIPL+Nnm0aLx0jK0=;
- b=qwfvdxH8+Gpl4Yu42uZoSpJMtPLrQlvHdvCk5XVwncmLxPK8XbNVns+0CJYMZNX2kx
- HQyffjuyIv0Kh8g29Cbi7wBRBWce3gtJh6KDRZH2OLegnChKibYNllkQgwq7YYUR2NOn
- MMVKZLVgQm4kLbBRzUVMDO3t2NeXiYtpqCGwZweSiRt755tWH9gxshLzyXf+Vtjn9i20
- r1V+NJAxI9QYdYr4bIM0iL96twI/BItwJ+yFLt7ofZ9D+8+TT4Zl0S9hLk/4oeASI0+u
- G3Kna0RJNd9uwp2SlRAT7DJ6Vi6JembQSfIYeL0B21mJn6vvQ3jAEHvi+QHRVlhZ6EqW
- eScQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=g6gTqv4UmGAZbCp5TjzzAy5mfc7aqGMQAl6xsZbz28M=;
+ b=EJFsHD5dwKdPnTApDSgZyxh+EeiRPpCgsoFUjUnXci30Tl6VDc2J6W6sOF4gI6oGWT
+ bRtbGlE0VZ5KRq8/L2HLUlMaYyUBQiN9GNTjLYQqokGXkVK7amK/eUtbChu8UZNlXguY
+ /Amcz3guEbfgMz51CkDhgLSUs3CshMIEgiXz/FSfso3VHv3/Z2uO/spJuavkN66J/yFT
+ HRIxCq1qRlNjrF0bOeEPzwetQZMJpmIZGweJUsKT57cCM03PeckFlut835VYjnvmqkop
+ a4L6n/bASkJqpjPp8wURj0b8tIe7DQY/WxwLaoG5gb1Pvu4ZPsLzZ9pvSpeK2SyIkDLj
+ 9rPw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=aAAXCCNupCeXj5L2cJng4wFA9ICiIPL+Nnm0aLx0jK0=;
- b=I9hS9yGZJaIFN0FlEMwQketScuS8MmLtqFFm+6+gGsp2FiPKLMbYOI6iLNXtdlX9S8
- snsMihJHsH03/OssIEQHRFO2YJrT/Amk+iXw+o4beOTGBhVArcQa9u26h8YvklQwjDpS
- LhoUDfNmNyflYpualiRM4rtafda8morDRKsCLesx3Do//yQkhzoXEemqoTua4J7c3tLe
- 7xpn+o3Cbw8nFgzz3aVtksTN3MLM2E4IeC8/VAdV2P0iLGF1jeEiBSQMCLlF4JTn0P15
- zFEQ6e4GCwCbwwM/9JRAmOgqkRwIcxq0nakZcpA59SYc4lcSDXQdvQnEA5fF9hnTjCYR
- /OZQ==
-X-Gm-Message-State: AOAM533xZa4bz85YzXA1i41CqjisNag+MjjhUahTo7elV63dShPXpWd9
- UXqJaKpWZuFBfsEiEVfDibgWJA==
-X-Google-Smtp-Source: ABdhPJzsoLSimnZKtTSo+TRxNStQML6vXqbMJTRre2xKhV5wijOqjCjyBWvq4uBZDxdkj/qGjYDBEA==
-X-Received: by 2002:a19:644f:: with SMTP id b15mr2196237lfj.28.1589542842015; 
- Fri, 15 May 2020 04:40:42 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=g6gTqv4UmGAZbCp5TjzzAy5mfc7aqGMQAl6xsZbz28M=;
+ b=fHZCIYu+TTJt2rSokG+VpLnive4sd/SB/+Nt/dB/EgsskX5c62ZJu5DrZdLVjUZSl1
+ R0O0iF50icspCTEX3ktc45die9orPUjjXBhBr02EREilQKx1CtRXLl/c9iBsReW8oTQ0
+ BvlHceeQLSmJLl9uUZRSUGi5dsN+Q0CVV7e01u0MroHVSar+uYdfi6CYOrTqaxCGwk9h
+ pF/xtVf5suS15Xs4Je4gWqYD5dKaKvH8Aon2LSwSK6PkxVfMGVl0zcpEYcUDqwg2cGnR
+ HbymG/Sv5xuQrEbGSbRTe24hDCd3w+zCG7pQZPasFu77AQDm9zlpCT0Z2JuzA4V91b/8
+ yLWw==
+X-Gm-Message-State: AOAM531w3eAwg8yoaGu/ArvBfRlGYhn0n6auYSpOZATcO/hxzd+Qt0ye
+ mnwnganKNty28qW7Cwd4uhre5Q==
+X-Google-Smtp-Source: ABdhPJzVHzxu+Pypk/khbiIikysQQu7eZbe7K4WiLVhklXDvUlMyHdoQvDm29LRayhV0iroWfLkLRg==
+X-Received: by 2002:a05:651c:14d:: with SMTP id
+ c13mr1850742ljd.94.1589542844329; 
+ Fri, 15 May 2020 04:40:44 -0700 (PDT)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id 130sm1218445lfl.37.2020.05.15.04.40.41
+ by smtp.gmail.com with ESMTPSA id 130sm1218445lfl.37.2020.05.15.04.40.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 04:40:41 -0700 (PDT)
+ Fri, 15 May 2020 04:40:43 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: Florian Fainelli <f.fainelli@gmail.com>,
  Abbott Liu <liuwenliang@huawei.com>, Russell King <linux@armlinux.org.uk>,
  Ard Biesheuvel <ardb@kernel.org>, Andrey Ryabinin <aryabinin@virtuozzo.com>
-Subject: [PATCH 0/5 v9] KASan for Arm
-Date: Fri, 15 May 2020 13:40:23 +0200
-Message-Id: <20200515114028.135674-1-linus.walleij@linaro.org>
+Subject: [PATCH 1/5 v9] ARM: Disable KASan instrumentation for some code
+Date: Fri, 15 May 2020 13:40:24 +0200
+Message-Id: <20200515114028.135674-2-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.25.4
+In-Reply-To: <20200515114028.135674-1-linus.walleij@linaro.org>
+References: <20200515114028.135674-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_044049_386611_926E1C66 
-X-CRM114-Status: GOOD (  16.88  )
+X-CRM114-CacheID: sfid-20200515_044046_750591_AE6883DE 
+X-CRM114-Status: GOOD (  17.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.68 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.68 listed in wl.mailspike.net]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,87 +99,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>, Arnd Bergmann <arnd@arndb.de>,
- linux-arm-kernel@lists.infradead.org
+Cc: Arnd Bergmann <arnd@arndb.de>, Marc Zyngier <marc.zyngier@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>, kasan-dev@googlegroups.com,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I fixed and debugged kasan so it is time to post it again!
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
 
-It can also be picked from my evolving branch which include
-the prerequisite commit:
-https://git.kernel.org/pub/scm/linux/kernel/git/linusw/linux-integrator.git/log/?h=kasan
+Disable instrumentation for arch/arm/boot/compressed/*
+since that code is executed before the kernel has even
+set up its mappings and definately out of scope for
+KASan.
 
+Disable instrumentation of arch/arm/vdso/* because that code
+is not linked with the kernel image, so the KASan management
+code would fail to link.
+
+Disable instrumentation of arch/arm/mm/physaddr.c. See commit
+ec6d06efb0ba ("arm64: Add support for CONFIG_DEBUG_VIRTUAL")
+for more details.
+
+Disable kasan check in the function unwind_pop_register because
+it does not matter that kasan checks failed when unwind_pop_register()
+reads the stack memory of a task.
+
+Cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Cc: Alexander Potapenko <glider@google.com>
+Cc: Dmitry Vyukov <dvyukov@google.com>
+Cc: kasan-dev@googlegroups.com
+Reviewed-by: Ard Biesheuvel <ardb@kernel.org>
+Tested-by: Ard Biesheuvel <ardb@kernel.org> # QEMU/KVM/mach-virt/LPAE/8G
+Reported-by: Florian Fainelli <f.fainelli@gmail.com>
+Reported-by: Marc Zyngier <marc.zyngier@arm.com>
+Signed-off-by: Abbott Liu <liuwenliang@huawei.com>
+Signed-off-by: Florian Fainelli <f.fainelli@gmail.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
 ChangeLog v8->v9:
+- Collect Ard's tags.
+ChangeLog v7->v8:
+- Do not sanitize arch/arm/mm/mmu.c.
+  Apart from being intuitively correct, it turns out that KASan
+  will insert a __asan_load4() into the set_pte_at() function
+  in mmu.c and this is something that KASan calls in the early
+  initialization, to set up the shadow memory. Naturally,
+  __asan_load4() cannot be called before the shadow memory is
+  set up so we need to exclude mmu.c from sanitization.
+ChangeLog v6->v7:
+- Removed the KVM instrumentaton disablement since KVM
+  on ARM32 is gone.
+---
+ arch/arm/boot/compressed/Makefile | 1 +
+ arch/arm/kernel/unwind.c          | 6 +++++-
+ arch/arm/mm/Makefile              | 2 ++
+ arch/arm/vdso/Makefile            | 2 ++
+ 4 files changed, 10 insertions(+), 1 deletion(-)
 
-- Use Drop the custom CP15 manipulation and cache flushing for swapping
-  TTBR0 and instead just use cpu_switch_mm() in the initialization
-  code (smarter and probably better tested code path).
-- Found the bug that was making KASan fail on ARMv4 and ARMv5, see
-  the separate patch:
-  https://lore.kernel.org/linux-arm-kernel/20200514135737.309146-1-linus.walleij@linaro.org/
-- Tested extensively on a whole bunch of ARM systems, both QEMU and
-  real hardware: it is quite solid. On the D-Link DNS-313 that has
-  only 64 MB of memory, the OOM killer gets upset and start killing
-  off processes with a default OpenWrt install but otherwise debugs
-  nicely with KASan!
-
-Caveat:
-
-- One remaining issue: if the kernel is booted with attached device
-  tree on an odd address, you can get crashes in the DT parser.
-  Example: on the Qualcomm APQ8060 DragonBoard the first piece
-  of physical address space that can be used by the kernel is at
-  0x40200000 so you boot like this:
-  fastboot --base 40200000 --cmdline "console=ttyMSM0,115200,n8" boot zImage
-  This does *NOT* work but crashes in the DT parser.
-  But if you boot on 0x50000000 instead:
-  fastboot --base 50000000 --cmdline "console=ttyMSM0,115200,n8" boot zImage
-  KASan works fine.
-  So something is off when booting with KASan and odd physical memory
-  configurations. I am digging into this.
-
-Abbott Liu (1):
-  ARM: Define the virtual space of KASan's shadow region
-
-Andrey Ryabinin (4):
-  ARM: Disable KASan instrumentation for some code
-  ARM: Replace string mem* functions for KASan
-  ARM: Initialize the mapping of KASan shadow memory
-  ARM: Enable KASan for ARM
-
- Documentation/arm/memory.rst                  |   5 +
- Documentation/dev-tools/kasan.rst             |   4 +-
- .../features/debug/KASAN/arch-support.txt     |   2 +-
- arch/arm/Kconfig                              |  10 +
- arch/arm/boot/compressed/Makefile             |   1 +
- arch/arm/boot/compressed/string.c             |  19 ++
- arch/arm/include/asm/kasan.h                  |  32 ++
- arch/arm/include/asm/kasan_def.h              |  81 +++++
- arch/arm/include/asm/memory.h                 |   5 +
- arch/arm/include/asm/pgalloc.h                |   9 +-
- arch/arm/include/asm/string.h                 |  21 ++
- arch/arm/include/asm/thread_info.h            |   4 +
- arch/arm/kernel/entry-armv.S                  |   5 +-
- arch/arm/kernel/entry-common.S                |   9 +-
- arch/arm/kernel/head-common.S                 |   7 +-
- arch/arm/kernel/setup.c                       |   2 +
- arch/arm/kernel/unwind.c                      |   6 +-
- arch/arm/lib/memcpy.S                         |   3 +
- arch/arm/lib/memmove.S                        |   5 +-
- arch/arm/lib/memset.S                         |   3 +
- arch/arm/mm/Makefile                          |   5 +
- arch/arm/mm/kasan_init.c                      | 294 ++++++++++++++++++
- arch/arm/mm/mmu.c                             |  18 ++
- arch/arm/mm/pgd.c                             |  15 +-
- arch/arm/vdso/Makefile                        |   2 +
- 25 files changed, 552 insertions(+), 15 deletions(-)
- create mode 100644 arch/arm/include/asm/kasan.h
- create mode 100644 arch/arm/include/asm/kasan_def.h
- create mode 100644 arch/arm/mm/kasan_init.c
-
+diff --git a/arch/arm/boot/compressed/Makefile b/arch/arm/boot/compressed/Makefile
+index 9c11e7490292..abd6f3d5c2ba 100644
+--- a/arch/arm/boot/compressed/Makefile
++++ b/arch/arm/boot/compressed/Makefile
+@@ -24,6 +24,7 @@ OBJS		+= hyp-stub.o
+ endif
+ 
+ GCOV_PROFILE		:= n
++KASAN_SANITIZE		:= n
+ 
+ # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
+ KCOV_INSTRUMENT		:= n
+diff --git a/arch/arm/kernel/unwind.c b/arch/arm/kernel/unwind.c
+index 11a964fd66f4..739a77f39a8f 100644
+--- a/arch/arm/kernel/unwind.c
++++ b/arch/arm/kernel/unwind.c
+@@ -236,7 +236,11 @@ static int unwind_pop_register(struct unwind_ctrl_block *ctrl,
+ 		if (*vsp >= (unsigned long *)ctrl->sp_high)
+ 			return -URC_FAILURE;
+ 
+-	ctrl->vrs[reg] = *(*vsp)++;
++	/* Use READ_ONCE_NOCHECK here to avoid this memory access
++	 * from being tracked by KASAN.
++	 */
++	ctrl->vrs[reg] = READ_ONCE_NOCHECK(*(*vsp));
++	(*vsp)++;
+ 	return URC_OK;
+ }
+ 
+diff --git a/arch/arm/mm/Makefile b/arch/arm/mm/Makefile
+index 7cb1699fbfc4..99699c32d8a5 100644
+--- a/arch/arm/mm/Makefile
++++ b/arch/arm/mm/Makefile
+@@ -7,6 +7,7 @@ obj-y				:= extable.o fault.o init.o iomap.o
+ obj-y				+= dma-mapping$(MMUEXT).o
+ obj-$(CONFIG_MMU)		+= fault-armv.o flush.o idmap.o ioremap.o \
+ 				   mmap.o pgd.o mmu.o pageattr.o
++KASAN_SANITIZE_mmu.o		:= n
+ 
+ ifneq ($(CONFIG_MMU),y)
+ obj-y				+= nommu.o
+@@ -16,6 +17,7 @@ endif
+ obj-$(CONFIG_ARM_PTDUMP_CORE)	+= dump.o
+ obj-$(CONFIG_ARM_PTDUMP_DEBUGFS)	+= ptdump_debugfs.o
+ obj-$(CONFIG_MODULES)		+= proc-syms.o
++KASAN_SANITIZE_physaddr.o	:= n
+ obj-$(CONFIG_DEBUG_VIRTUAL)	+= physaddr.o
+ 
+ obj-$(CONFIG_ALIGNMENT_TRAP)	+= alignment.o
+diff --git a/arch/arm/vdso/Makefile b/arch/arm/vdso/Makefile
+index d3c9f03e7e79..71d18d59bd35 100644
+--- a/arch/arm/vdso/Makefile
++++ b/arch/arm/vdso/Makefile
+@@ -42,6 +42,8 @@ GCOV_PROFILE := n
+ # Prevents link failures: __sanitizer_cov_trace_pc() is not linked in.
+ KCOV_INSTRUMENT := n
+ 
++KASAN_SANITIZE := n
++
+ # Force dependency
+ $(obj)/vdso.o : $(obj)/vdso.so
+ 
 -- 
 2.25.4
 
