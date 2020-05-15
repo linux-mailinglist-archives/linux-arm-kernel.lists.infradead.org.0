@@ -2,69 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19AE81D4CD0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:41:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F6571D4CE7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 13:43:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wOokSFUlnVY4ZkCIt6OuTGeYLLwMIlumlVusJQxI870=; b=kuknPHWbHb1AxG
-	SMpRj6GP5wLQgRIbFO5lrE3IBwbHfH6+4pq7c5R6tUrMNjntwBEUn+HBlo/cSIXb7gIdDxTed8zGs
-	gj2G56YNCOdBQpeH9TKVLYGhLRpQ7BQQU67BxJWBAXnulRsErQ+R3Gk3IEAqy+df83ve5bnrQifAH
-	zRx9gnX1Wme9xsAB6dDPcRiYxFq+lvaLhDRlCINLwqTwzgZnIHmsRkobqWYBDZuWIDSkD+GMErwTK
-	OWoDR6ychWWYQ93k9steqWNhvwHWMBl6ZyfLwSML4Y8399ityqbEBytUeMJiwp4oVqGVLSGN+5geL
-	ZZoj4dx5A+hOWdEnWlOw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=Ej9mqNBjObk1jpqXvFLTv1aIQPpXmw1P10oApD9TjaU=; b=gWoeVlTnHxc4Vg
+	YpSLpDQWTyZCK5LI7noJWiRBJZBhtpZZsqQCH5Bb61723YntN1MmhRhJUgc7j1xjeBhHQISUoqZEc
+	dq2LKXbQpSLX5+JEKcdc6v93nIfyyZm+Lez5mhQi4+WbFz1rvdD39YEsse+oJopGIqrDgPCo18mpH
+	D4OepomBYzel1ljYOgC3bDeiTNYOCFQ2OdRRipuuIxeeNRE0Xv7hQWQaSMlfD9FEoGUGPczewJj1v
+	BUeUhAKcKkXxLJkSZKUxc126khI6BylmbY+Sgg0ug83CdhvV5ZEEtTlg6f50mO/yUMTAZbCMQVVDb
+	A0G74ceBjQZDBNQldhPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZYi3-0008BK-Vh; Fri, 15 May 2020 11:40:59 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1jZYkJ-0001yZ-K4; Fri, 15 May 2020 11:43:19 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZYho-0008AJ-FZ; Fri, 15 May 2020 11:40:45 +0000
-IronPort-SDR: 28vGEwlBa0iX4YtKzNR4yjd8QIzU7qfn/KsZ10W2GcvvtYY8dXQhX4eShtmC4+0yeNFE9k/oIK
- o21u+5vDNC2g==
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga004.fm.intel.com ([10.253.24.48])
- by orsmga101.jf.intel.com with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
- 15 May 2020 04:40:43 -0700
-IronPort-SDR: Zxm93dBj9QeuaxwdKrGE0EN+mN8jDYSRw9LLjluNBQVeEX+0HcpZst/qTiBxgupCSun+htzg6Y
- x2dIMorsXzvg==
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.73,395,1583222400"; d="scan'208";a="287758924"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by fmsmga004.fm.intel.com with ESMTP; 15 May 2020 04:40:40 -0700
-Received: from andy by smile with local (Exim 4.93)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1jZYho-006qhy-8y; Fri, 15 May 2020 14:40:44 +0300
-Date: Fri, 15 May 2020 14:40:44 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: Marco Felsch <m.felsch@pengutronix.de>
-Subject: Re: [PATCH v8 2/3] drivers: input: keyboard: Add mtk keypad driver
-Message-ID: <20200515114044.GR185537@smile.fi.intel.com>
-References: <20200515062007.28346-1-fengping.yu@mediatek.com>
- <20200515062007.28346-3-fengping.yu@mediatek.com>
- <20200515093016.rw5bmvoumgzvkqrc@pengutronix.de>
+ id 1jZYj6-0000qz-E0
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 11:42:06 +0000
+Received: from dude.hi.pengutronix.de ([2001:67c:670:100:1d::7])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <str@pengutronix.de>)
+ id 1jZYiz-0000Jx-KQ; Fri, 15 May 2020 13:41:57 +0200
+Received: from str by dude.hi.pengutronix.de with local (Exim 4.92)
+ (envelope-from <str@pengutronix.de>)
+ id 1jZYiy-0001i7-EV; Fri, 15 May 2020 13:41:56 +0200
+From: Steffen Trumtrar <s.trumtrar@pengutronix.de>
+To: Shawn Guo <shawnguo@kernel.org>
+Subject: [PATCH] ARM: dts: imx7d-pinfunc: add input mux for ENET2 mdio
+Date: Fri, 15 May 2020 13:41:51 +0200
+Message-Id: <20200515114151.6516-1-s.trumtrar@pengutronix.de>
+X-Mailer: git-send-email 2.26.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200515093016.rw5bmvoumgzvkqrc@pengutronix.de>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::7
+X-SA-Exim-Mail-From: str@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_044044_560241_DBBAF608 
-X-CRM114-Status: GOOD (  10.80  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20200515_044204_480141_B75BA86B 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [134.134.136.20 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,48 +64,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
- linux-mediatek@lists.infradead.org, Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Fengping Yu <fengping.yu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-kernel@lists.infradead.org, Rob Herring <robh+dt@kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, May 15, 2020 at 11:30:16AM +0200, Marco Felsch wrote:
-> On 20-05-15 14:20, Fengping Yu wrote:
+Add the missing input mux for ENET2 mdio. Without this setting, it is not
+possible to read the MDIO answers back from the PHY.
 
-...
+Signed-off-by: Steffen Trumtrar <s.trumtrar@pengutronix.de>
+---
+ arch/arm/boot/dts/imx7d-pinfunc.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> > +	depends on OF && HAVE_CLK
-> 
-> Please drop those deps and instead use:
-
-+1
-
-> depends on ARCH_MEDIATEK && ARM64
-
-I would go even further
-	depends on (ARCH_MEDIATEK && ARM64) || COMPILE_TEST
-
-> There are still some missing deps:
-> 
-> select CONFIG_REGMAP_MMIO
-> select INPUT_MATRIXKMAP
-
-...
-
-> > +#define MTK_KPD_DEBOUNCE_MAX_US		256000 /*256ms */
-> 
-> Thanks for aligning the defines but the 256ms comment is still useless
-> as Andy already said.
-
-Yes, it seems my comments partially (?) have been ignored.
-
+diff --git a/arch/arm/boot/dts/imx7d-pinfunc.h b/arch/arm/boot/dts/imx7d-pinfunc.h
+index 08ca1608fdb1..69f2c1ec8254 100644
+--- a/arch/arm/boot/dts/imx7d-pinfunc.h
++++ b/arch/arm/boot/dts/imx7d-pinfunc.h
+@@ -592,7 +592,7 @@
+ #define MX7D_PAD_UART2_RX_DATA__ECSPI1_SS3                        0x0130 0x03A0 0x0000 0x3 0x0
+ #define MX7D_PAD_UART2_RX_DATA__ENET2_1588_EVENT1_IN              0x0130 0x03A0 0x0000 0x4 0x0
+ #define MX7D_PAD_UART2_RX_DATA__GPIO4_IO2                         0x0130 0x03A0 0x0000 0x5 0x0
+-#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO                        0x0130 0x03A0 0x0000 0x6 0x0
++#define MX7D_PAD_UART2_RX_DATA__ENET2_MDIO                        0x0130 0x03A0 0x0574 0x6 0x1
+ #define MX7D_PAD_UART2_TX_DATA__UART2_DCE_TX                      0x0134 0x03A4 0x0000 0x0 0x0
+ #define MX7D_PAD_UART2_TX_DATA__UART2_DTE_RX                      0x0134 0x03A4 0x06FC 0x0 0x3
+ #define MX7D_PAD_UART2_TX_DATA__I2C2_SDA                          0x0134 0x03A4 0x05E0 0x1 0x0
 -- 
-With Best Regards,
-Andy Shevchenko
-
+2.26.2
 
 
 _______________________________________________
