@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 673F81D46CB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C464A1D46D1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 09:11:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=E4VzJ3mDqv7S4oBYHoZbQEUnLYEB5U2Y99I1iSbeAdA=; b=F90ifTr68M4Ymc
-	4PgmgUNGTF0+QE5CrQwJmcU3x/caN/gdVrdpRRoxz1AShjU82FTAZzZSQqoxobRwXOz6j3Kr5vc1V
-	+qLhwYFsRhEkRYjYmBoXlwBC2j4gk6ifqQPMyCeMJw3Pgr4VXNkygt2ZxZ4lGNaRq1B96jblCa51j
-	JxqtaxcQumDpvS1dROreg/ycm6K67vvbGmT/SB5kCSvv4wDdZATxT8Nvjx7GrG/IjNh8PEW4CWl6n
-	3Ztrr9uMrZFYJTTefftXlywSlpeV8FZiM4c3VU09sIczCd9J/kza4wrSFgVuASvTfalAj8pBIKW6J
-	kF4y7w9wHAdFi5NfDouQ==;
+	List-Owner; bh=lUFgQnVYBdr4yVWtApx7msXsJQavU+ynpg5RLcrRplU=; b=qTAtRuip6LBRhw
+	9dO4/adF5qzRloWCUTVRh6K0/319CvCEnIjdmVlhieuJLQsrzh22Hd5N09Ogj2EV9p/vTlGwws2c/
+	uEPk9Gt8fBO2YePggCFbOUJSRwCZ233F964BAXGscrDhN+7HLeG2mc75+4rmNTsKcpE+992W3oLk2
+	cfFgsKe7frL6ICq6P7Rw4FpIcAFXhh77Gax62YqtwGtuYyxHS+KCgjbOnSM8SDm/bUVCJY/g1k8oD
+	RLyIzigBfJ5uHLu0E+IglI8JwtZtSxT0CPkODW4bHDsF6jdMnW5PHfdl7mCr6BP1rjZdbLExxPGpD
+	eBUUyCQnNeEE+EoUpweg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZUUf-0000aj-M6; Fri, 15 May 2020 07:10:53 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1jZUVP-00017L-Ce; Fri, 15 May 2020 07:11:39 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZUTs-0006K2-Gp
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:10:08 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id a5so635556vsm.7
+ id 1jZUVF-00013Q-Aj
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 07:11:30 +0000
+Received: by mail-io1-xd42.google.com with SMTP id d7so1559303ioq.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 00:10:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 15 May 2020 00:11:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=S1KNisJsCqChNlKv09ipjuXjD/t4NKsjUgukAjLqwgo=;
- b=KF9Evebmgk0IOkagk7/RIFUBMr+cPh1F1LPbkWTaNsyUq6b8RMhamq3NMmj2URio+7
- +frWZsPYuuQBDWNPFG7eOAsO4HkwALGPJ1tpDzAqi7mZP6Y6amz/LU/lFbChXoGq5u5t
- KbXwuwMjFBMWvu2nPM+eJrhDKuz+7NIpqjdfjS1khs/WHntHd1pW7qgK6i+wbNbs/9lT
- xFLoXUMCgP+Bz8GgRF5UIehxFkG8irzYVxPNfRjighgWUtQxPJFhGm2gUIu0zje9S/wG
- 5bFaq1hDKWAFT3sxy1xy3aoNxIJ3N9ozNfiBsQkPZyIMl/OxORRYKAd6m3nUE02TbaNR
- 0JeA==
+ :cc:content-transfer-encoding;
+ bh=tt+z2QXtaemYOTrQbr/BmXHcmpgvLLmy4PAl95FbkpU=;
+ b=L/Ca4AQayrVuzBB8yZyrO3D7tYVpozvH457DvHs352Wp1VSfJKm8r//QF6MSCmpbkH
+ 0GwKMVW57C2OfloktcoKGNArORBe5fgunch0drFGQ5xQZvaj+Eo8HRCS7xj+ctvvkO5o
+ 2Pe5cGM6oFzxGek6lVJCf1KttKUZYq8neXts0QXNfklSPVsqhXTtB/1JrNepfsrNYga7
+ YpczpMFX1ULJhr9cmxc52UqZwthe1YHTnnpZ+ZjVS9E+vSf2AwDcRprBLx8kSPTvc3Py
+ tBeq6vWaVZbzY8gqnDJ170TbOmDwO8jGNDHUHISIcc04uugvCAXmyyL9uypFw3DHPzIa
+ ReJg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=S1KNisJsCqChNlKv09ipjuXjD/t4NKsjUgukAjLqwgo=;
- b=Lg0R+RhcSnF3MLHiGbPsuUyseYikuiNZD9dDMUBmZHnP/oCRCxBi9Pcq9wOArKKAVo
- Os26+o/YdWmLql1CdKeQ0lL5OgMaAXC68lkdClz18vt8C0OHrbSrGfrb3EZvlmP841EL
- wdhFasCVfCOe/75mqoSisHPEInC220WHBKmfjOfAC3g0etidaLdPvVDRmMmCijCogZkj
- OK/WbBr4FeTMsjs6yV+mwpOhnrC5CRiRxYR7a8WstZS/aH9GmiI9rk35Q2ja1hU54AK0
- 2PV2CfvOht2XmuNfTK7bXn02Q4mW1x7Cp6asB7yod20bENLfYsDLZNqn5A0Yaptp6KuG
- zSGQ==
-X-Gm-Message-State: AOAM530KgBpDX3qVZQUc6pdb1blqKThEYZXMnS0xpb2FcVgfQgDSqij6
- idgHhfyau6Vk4npM237Gkt44RIsM1mPjUALnpR+DqQ==
-X-Google-Smtp-Source: ABdhPJygnTdNDgbwU5IjwBpTpT+E94UNhD0unulxzXkizTZB4BYj5ClHbIbFXY2A/54DrC6ynz4HrgCg7fBD01ytnGc=
-X-Received: by 2002:a67:8b46:: with SMTP id n67mr1453605vsd.35.1589526602387; 
- Fri, 15 May 2020 00:10:02 -0700 (PDT)
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=tt+z2QXtaemYOTrQbr/BmXHcmpgvLLmy4PAl95FbkpU=;
+ b=c/fkg4rJ+kGjyN7NI/8ATvuPsc4aEZ9AdC3cQPw1NnMAf9Xye4yG9niCLo2XimLgEJ
+ 1FMrgkXlW4EhVvahK7+ELb63gdmBKSAs294+OQTfmWPBdZ5/rz/vm4QaP9g5X5AvFgGM
+ z5Wq/GFfe7Mn1jEKxEAoCkrXNKBs6bLZFu3WqxV6BU1lw8tgr735hHDXTJthB1ZZ4CC2
+ kGHBhS3mjjoobjXKpQtFnX9JqBQmpDNIwUIw+6CwICzeBOGUS7JdCC3Iy/VIzUktGwEJ
+ bdtejoWCAkwULgUW4sB2GC2Ec0V0zdIOfkzjB9R1GaaBoJHw1G8CMvzjThy8UcjRjLJa
+ CBOA==
+X-Gm-Message-State: AOAM533anthKIJVbYucZWGUT0ZAETKu5uN7BgolOVvUK5ZLOR2GMC924
+ XMmJCAJh1m0LIRiYqgyIEJHhe1KSF8Rh+rcAZCTLEQ==
+X-Google-Smtp-Source: ABdhPJw2UZPqM2c9AdQ/V2iFTXgewM1zVBwPnll86PitN+1yQpAcr0xdHMo5F1vMIZ2tP/UG8KrfG8WtcaA8puMhawg=
+X-Received: by 2002:a02:a60f:: with SMTP id c15mr552139jam.24.1589526685801;
+ Fri, 15 May 2020 00:11:25 -0700 (PDT)
 MIME-Version: 1.0
-References: <20200512204147.504087-1-martin.blumenstingl@googlemail.com>
-In-Reply-To: <20200512204147.504087-1-martin.blumenstingl@googlemail.com>
-From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Fri, 15 May 2020 09:09:25 +0200
-Message-ID: <CAPDyKFrTxcCy6Py9i4kzgy7gcvpg0dVn-tbuNn-jiKhW=wh4bg@mail.gmail.com>
-Subject: Re: [PATCH v7 0/2] Amlogic 32-bit Meson SoC SDHC MMC controller driver
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <20200514075942.10136-1-brgl@bgdev.pl>
+ <20200514075942.10136-11-brgl@bgdev.pl>
+ <CAK8P3a3=xgbvqrSpCK5h96eRH32AA7xnoK2ossvT0-cLFLzmXA@mail.gmail.com>
+In-Reply-To: <CAK8P3a3=xgbvqrSpCK5h96eRH32AA7xnoK2ossvT0-cLFLzmXA@mail.gmail.com>
+From: Bartosz Golaszewski <brgl@bgdev.pl>
+Date: Fri, 15 May 2020 09:11:14 +0200
+Message-ID: <CAMRc=MeypzZBHo6dJGKm4JujYyejqHxtdo7Ts95DXuL0VuMYCw@mail.gmail.com>
+Subject: Re: [PATCH v3 10/15] net: ethernet: mtk-eth-mac: new driver
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_001004_617207_7BCC0F42 
-X-CRM114-Status: GOOD (  36.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_001129_376803_74627E8A 
+X-CRM114-Status: GOOD (  35.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -90,167 +90,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: DTML <devicetree@vger.kernel.org>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Anand Moon <linux.amoon@gmail.com>,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- yinxin_1989@aliyun.com, Rob Herring <robh+dt@kernel.org>,
- "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
- Jerome Brunet <jbrunet@baylibre.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, lnykww@gmail.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Edwin Peer <edwin.peer@broadcom.com>, DTML <devicetree@vger.kernel.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Stephane Le Provost <stephane.leprovost@mediatek.com>,
+ Jonathan Corbet <corbet@lwn.net>, Networking <netdev@vger.kernel.org>,
+ Sean Wang <sean.wang@mediatek.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Pedro Tsai <pedro.tsai@mediatek.com>, Mark Lee <Mark-MC.Lee@mediatek.com>,
+ Fabien Parent <fparent@baylibre.com>, Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC..." <linux-mediatek@lists.infradead.org>,
+ Andrew Perepech <andrew.perepech@mediatek.com>,
+ John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Jakub Kicinski <kuba@kernel.org>, "David S . Miller" <davem@davemloft.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Heiner Kallweit <hkallweit1@gmail.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 12 May 2020 at 22:42, Martin Blumenstingl
-<martin.blumenstingl@googlemail.com> wrote:
->
-> Hello,
->
-> this is the patchset for a driver for the Amlogic "SDHC" MMC controller
-> found on Meson6, Meson8, Meson8b and Meson8m2 SoCs.
->
-> The public S805 (Meson8b) datasheet has some documentation starting on
-> page 74: [0]
->
-> It's performance is still not as good as the driver from Amlogic's 3.10
-> kernel, but it does not corrupt data anymore (as RFC v1 did).
->
-> Special thanks to the people who supported me off-list - you are
-> amazing and deserve to be mentioned here:
-> - Xin Yin who helped me fix two more write corruption problems. I am
->   hoping that he will reply with Reviewed-by, Tested-by and Bug-fixed-by
-> - Jianxin Pan for sharing some of the internal workings of this MMC
->   controller with me
-> - Wei Wang for spotting the initial write corruption problem and helping
->   test this driver on his board. I have his permission to add his
->   Tested-by (off-list, he's Cc'ed so if there's any problem he can speak
->   up)
->
->
-> Changes since v6 at [6]:
-> - both patches: dropped the clock #include from the dt-bindings as well
->   as #clock-cells = <1> and the self-referencing clock inputs. Instead
->   the driver will not be registering a clock provider anymore. The
->   clock references are obtained using "clk_hw.clk" (thus not going
->   through the dt-bindings anymore) as suggested in [7] until a better
->   solution is implemented. A TODO comment is also in place so it's
->   easier to find this temporary workaround when the new helper exists.
-> - dropped Rob's Reviewed-by because I modified the dt-bindings. schema
->   validation still passes on my build machine.
-> - patch #2: dropped MMC_CAP_ERASE due to the following patch which is
->   queued in mmc's -next: "mmc: host: Drop redundant MMC_CAP_ERASE"
-> - patch #2: fill all clk_{mux,divider,gate,hw} values in
->   meson_mx_sdhc_register_clkc instead of using loops and two separate
->   structs to make the code easier to read. Thanks to Jerome for the
->   suggestion.
-> - I decided to keep all the Tested-by's because testing was smooth
->   for me and none of the clock calculation formulas has changed (only
->   the API how to obtain the clocks).
->
-> Changes since v5 at [5] (thanks to Ulf and Jerome for the feedback):
-> - changed copyright year to 2020
-> - move register #defines to a separate header file
-> - drop unused include linux/clk-provider.h from meson-mx-sdhc.c
-> - used #defines for regmap_read_poll_timeout timeout/sleep values
-> - set MMC_CAP_WAIT_WHILE_BUSY
-> - move the clock controller code to mmc/host/meson-mx-sdhc-clkc.c and
->   don't register a separate platform_device for it. This also means
->   that the driver switched from clk_regmap to the standard
->   clk_{divider,gate,mux}_ops
-> - dropped ".index = -1" for clk_parent_data with .fw_name
-> - use CLK_SET_RATE_PARENT on all leaf clocks and drop
->   CLK_SET_RATE_GATE
-> - switch from parent_data.name to parent_hws
-> - use fallthrough; instead of fallthrough comment
-> - added Anand's Tested-by - thank you!
-> - I decided to keep all Tested-by and Reviewed-by because they were
->   only for the MMC controller part and I have barely touched that with
->   this update.
-> - Ulf asked if the timeout can be shortened. I believe it can but I
->   have no documentation for it. Thus I need a test-case to see if my
->   assumptions are correct - thus I have not addressed this in v6 yet
->
-> Changes since v4 at [4]:
-> - move the four clkin clock inputs to the start of the clock-names list
->   as suggested by Rob, affects patch #1
-> - fixed #include statement in dt-bindings example in patch #1
->
-> Changes since v3 at [3]:
-> - split the clock bits into a separate clock controller driver because
->   of two reasons: 1) it keeps the MMC controller driver mostly clean of
->   the clock bits 2) the pure clock controller can use
->   devm_clk_hw_register() (instead of devm_clk_register(), which is
->   deprecated) and the MMC controller can act as a pure clock consumer.
->   This also affects the dt-bindings which is why I dropped Rob's
->   Reviewed-by. Thanks to Ulf for the suggestions
->
-> Changes since v2 at [2]:
-> - rebased on top of v5.5-rc1
-> - added Rob's and Xin Yin's Reviewed-by and Tested-by (thank you!)
-> - (note: Kevin had v2 of this series in -next for a few days so the
->    build test robots could play with it. I haven't received any negative
->    feedback in that time)
->
-> Changes since RFC v1 at [1]:
-> - don't set MESON_SDHC_MISC_MANUAL_STOP to fix one of three write
->   corruption problems. the out-of-tree 3.10 "reference" driver doesn't
->   set it either
-> - check against data->flags instead of cmd->flags when testing for
->   MMC_DATA_WRITE as spotted by Xin Yin (many thanks!). This fixes
->   another write corruption problem
-> - clear the FIFOs after successfully transferring data as suggested by
->   Xin Yin (many thanks!). This is what the 3.10 driver did and fixes yet
->   another write corruption problem
-> - integrate the clock suggestions from Jianxin Pan so the driver is now
->   able to set up the clocks correctly for all known cases. documentation
->   is also added to the patch description. Thank you Jianxin for the
->   help!
-> - set the correct max_busy_timeout as suggested by Jianxin Pan (thanks!)
-> - convert the dt-bindings to .yaml (which is why I didn't add Rob's
->   Reviewed-by)
-> - switch to struct clk_parent_data as part of newer common clock
->   framework APIs to simplify the clock setup
-> - dropped CMD23 support because it seems to hurt read and write
->   performance by 10-20% in my tests. it's not clear why, but for now we
->   can live without this.
-> - use devm_platform_ioremap_resource instead of open-coding it
->
->
-> [0] https://dn.odroid.com/S805/Datasheet/S805_Datasheet%20V0.8%2020150126.pdf
-> [1] https://patchwork.kernel.org/cover/11035505/
-> [2] http://lists.infradead.org/pipermail/linux-amlogic/2019-November/014576.html
-> [3] https://patchwork.kernel.org/cover/11283179/
-> [4] https://patchwork.kernel.org/cover/11329017/
-> [5] https://patchwork.kernel.org/cover/11463341/
-> [6] https://patchwork.kernel.org/cover/11515603/
-> [7] https://lore.kernel.org/linux-clk/158870581453.26370.15255632521260524214@swboyd.mtv.corp.google.com/
->
->
-> Martin Blumenstingl (2):
->   dt-bindings: mmc: Document the Amlogic Meson SDHC MMC host controller
->   mmc: host: meson-mx-sdhc: new driver for the Amlogic Meson SDHC host
->
->  .../bindings/mmc/amlogic,meson-mx-sdhc.yaml   |  68 ++
->  drivers/mmc/host/Kconfig                      |  14 +
->  drivers/mmc/host/Makefile                     |   1 +
->  drivers/mmc/host/meson-mx-sdhc-clkc.c         | 158 +++
->  drivers/mmc/host/meson-mx-sdhc.c              | 907 ++++++++++++++++++
->  drivers/mmc/host/meson-mx-sdhc.h              | 141 +++
->  6 files changed, 1289 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mmc/amlogic,meson-mx-sdhc.yaml
->  create mode 100644 drivers/mmc/host/meson-mx-sdhc-clkc.c
->  create mode 100644 drivers/mmc/host/meson-mx-sdhc.c
->  create mode 100644 drivers/mmc/host/meson-mx-sdhc.h
->
-
-Applied for next, thanks!
-
-Kind regards
-Uffe
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+Y3p3LiwgMTQgbWFqIDIwMjAgbyAxODoxOSBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPiBu
+YXBpc2HFgihhKToKPgo+IE9uIFRodSwgTWF5IDE0LCAyMDIwIGF0IDEwOjAwIEFNIEJhcnRvc3og
+R29sYXN6ZXdza2kgPGJyZ2xAYmdkZXYucGw+IHdyb3RlOgo+ID4KPiA+IEZyb206IEJhcnRvc3og
+R29sYXN6ZXdza2kgPGJnb2xhc3pld3NraUBiYXlsaWJyZS5jb20+Cj4gPgo+ID4gVGhpcyBhZGRz
+IHRoZSBkcml2ZXIgZm9yIHRoZSBNZWRpYVRlayBFdGhlcm5ldCBNQUMgdXNlZCBvbiB0aGUgTVQ4
+KiBTb0MKPiA+IGZhbWlseS4gRm9yIG5vdyB3ZSBvbmx5IHN1cHBvcnQgZnVsbC1kdXBsZXguCj4g
+Pgo+ID4gU2lnbmVkLW9mZi1ieTogQmFydG9zeiBHb2xhc3pld3NraSA8YmdvbGFzemV3c2tpQGJh
+eWxpYnJlLmNvbT4KPgo+IExvb2tzIHZlcnkgbmljZSBvdmVyYWxsLiBKdXN0IGEgZmV3IHRoaW5n
+cyBJIG5vdGljZWQsIGFuZCBzb21lIGlkZWFzCj4gdGhhdCBtYXkgb3IgbWF5IG5vdCBtYWtlIHNl
+bnNlOgo+Cj4gPiArLyogVGhpcyBpcyBkZWZpbmVkIHRvIDAgb24gYXJtNjQgaW4gYXJjaC9hcm02
+NC9pbmNsdWRlL2FzbS9wcm9jZXNzb3IuaCBidXQKPiA+ICsgKiB0aGlzIElQIGRvZXNuJ3Qgd29y
+ayB3aXRob3V0IHRoaXMgYWxpZ25tZW50IGJlaW5nIGVxdWFsIHRvIDIuCj4gPiArICovCj4gPiAr
+I2lmZGVmIE5FVF9JUF9BTElHTgo+ID4gKyN1bmRlZiBORVRfSVBfQUxJR04KPiA+ICsjZW5kaWYK
+PiA+ICsjZGVmaW5lIE5FVF9JUF9BTElHTiAgICAgICAgICAgICAgICAgICAgICAgICAgIDIKPgo+
+IE1heWJlIHlvdSBzaG91bGQganVzdCBkZWZpbmUgeW91ciBvd24gbWFjcm8gaW5zdGVhZCBvZiBy
+ZXBsYWNpbmcKPiB0aGUgbm9ybWFsIG9uZSB0aGVuPwo+CgpJIGRpZCBpbiBhbiBlYXJsaWVyIHZl
+cnNpb24gYW5kIHdhcyB0b2xkIHRvIHVzZSBORVRfSVBfQUxJR04gYnV0IHRoZW4KZm91bmQgb3V0
+IGl0cyB2YWx1ZSBvbiBhcm02NCBkb2Vzbid0IHdvcmsgZm9yIG1lIHNvIEkgZGlkIHRoZSB0aGlu
+Zwp0aGF0IHdvbid0IG1ha2UgYW55Ym9keSBoYXBweSAtIHJlZGVmaW5lIHRoZSBleGlzdGluZyBj
+b25zdGFudC4gOikKCj4gPiArc3RhdGljIHZvaWQgbXRrX21hY19sb2NrKHN0cnVjdCBtdGtfbWFj
+X3ByaXYgKnByaXYpCj4gPiArewo+ID4gKyAgICAgICBzcGluX2xvY2tfaXJxc2F2ZSgmcHJpdi0+
+bG9jaywgcHJpdi0+bG9ja19mbGFncyk7Cj4gPiArfQo+ID4gKwo+ID4gK3N0YXRpYyB2b2lkIG10
+a19tYWNfdW5sb2NrKHN0cnVjdCBtdGtfbWFjX3ByaXYgKnByaXYpCj4gPiArewo+ID4gKyAgICAg
+ICBzcGluX3VubG9ja19pcnFyZXN0b3JlKCZwcml2LT5sb2NrLCBwcml2LT5sb2NrX2ZsYWdzKTsK
+PiA+ICt9Cj4KPiBUaGlzIGxvb2tzIHdyb25nOiB5b3Ugc2hvdWxkIG5vdCBoYXZlIHNoYXJlZCAn
+ZmxhZ3MnIHBhc3NlZCBpbnRvCj4gc3Bpbl9sb2NrX2lycXNhdmUoKSwgYW5kIEkgZG9uJ3QgZXZl
+biBzZWUgYSBuZWVkIHRvIHVzZSB0aGUKPiBpcnFzYXZlIHZhcmlhbnQgb2YgdGhlIGxvY2sgaW4g
+dGhlIGZpcnN0IHBsYWNlLgo+Cj4gTWF5YmUgc3RhcnQgYnkgb3Blbi1jb2RpbmcgdGhlIGxvY2sg
+YW5kIHJlbW92ZSB0aGUgd3JhcHBlcnMKPiBhYm92ZS4KPgo+IFRoZW4gc2VlIGlmIHlvdSBjYW4g
+dXNlIGEgY2hlYXBlciBzcGluX2xvY2tfYmgoKSBvciBwbGFpbiBzcGluX2xvY2soKQo+IGluc3Rl
+YWQgb2YgaXJxc2F2ZS4KPgoKVGhpcyBpcyBmcm9tIGFuIGVhcmxpZXIgdmVyc2lvbiB3aGVyZSBJ
+IGRpZCBhIGxvdCBtb3JlIGluIGhhcmQgaXJxCmNvbnRleHQuIE5vdyB0aGF0IGFsbW9zdCBhbGwg
+b2YgdGhlIHByb2Nlc3NpbmcgaGFwcGVucyBpbiBzb2Z0LWlycQpjb250ZXh0IEkgZ3Vlc3MgeW91
+J3JlIHJpZ2h0IC0gSSBjYW4gZ28gd2l0aCBhIHJlZ3VsYXIgc3Bpbl9sb2NrKCkuCgo+IEZpbmFs
+bHksIHNlZSBpZiB0aGlzIGNhbiBiZSBkb25lIGluIGEgbG9ja2xlc3Mgd2F5IGJ5IHJlbHlpbmcg
+b24KPiBhcHByb3ByaWF0ZSBiYXJyaWVycyBhbmQgc2VwYXJhdGluZyB0aGUgd3JpdGVycyBpbnRv
+IHNlcGFyYXRlCj4gY2FjaGUgbGluZXMuIEZyb20gYSBicmllZiBsb29rIGF0IHRoZSBkcml2ZXIg
+SSB0aGluayBpdCBjYW4gYmUgZG9uZQo+IHdpdGhvdXQgdG9vIG11Y2ggdHJvdWJsZS4KPgoKVW5m
+b3J0dW5hdGVseSBJIGRvIG5lZWQgc29tZSBsb2NraW5nLiBBY2Nlc3NpbmcgUlggYW5kIFRYIGRl
+c2NyaXB0b3JzCmF0IHRoZSBzYW1lIHRpbWUgc2VlbXMgdG8gdXBzZXQgdGhlIGNvbnRyb2xsZXIu
+IEkgZXhwZXJpbWVudGVkIGEgbG90CndpdGggYmFycmllcnMgYnV0IGl0IHR1cm5lZCBvdXQgdGhh
+dCBJIGdvdCBhIGxvdCBvZiB3ZWlyZCBidWdzIGF0IGhpZ2gKdGhyb3VnaHB1dC4KCj4gPiArc3Rh
+dGljIHVuc2lnbmVkIGludCBtdGtfbWFjX2ludHJfcmVhZF9hbmRfY2xlYXIoc3RydWN0IG10a19t
+YWNfcHJpdiAqcHJpdikKPiA+ICt7Cj4gPiArICAgICAgIHVuc2lnbmVkIGludCB2YWw7Cj4gPiAr
+Cj4gPiArICAgICAgIHJlZ21hcF9yZWFkKHByaXYtPnJlZ3MsIE1US19NQUNfUkVHX0lOVF9TVFMs
+ICZ2YWwpOwo+ID4gKyAgICAgICByZWdtYXBfd3JpdGUocHJpdi0+cmVncywgTVRLX01BQ19SRUdf
+SU5UX1NUUywgdmFsKTsKPiA+ICsKPiA+ICsgICAgICAgcmV0dXJuIHZhbDsKPiA+ICt9Cj4KPiBE
+byB5b3UgYWN0dWFsbHkgbmVlZCB0byByZWFkIHRoZSByZWdpc3Rlcj8gVGhhdCBpcyB1c3VhbGx5
+IGEgcmVsYXRpdmVseQo+IGV4cGVuc2l2ZSBvcGVyYXRpb24sIHNvIGlmIHBvc3NpYmxlIHRyeSB0
+byB1c2UgY2xlYXIgdGhlIGJpdHMgd2hlbgo+IHlvdSBkb24ndCBjYXJlIHdoaWNoIGJpdHMgd2Vy
+ZSBzZXQuCj4KCkkgZG8gY2FyZSwgSSdtIGFmcmFpZC4gVGhlIHJldHVybmVkIHZhbHVlIGlzIGJl
+aW5nIHVzZWQgaW4gdGhlIG5hcGkKcG9sbCBjYWxsYmFjayB0byBzZWUgd2hpY2ggcmluZyB0byBw
+cm9jZXNzLgoKPiA+ICsvKiBBbGwgcHJvY2Vzc2luZyBmb3IgVFggYW5kIFJYIGhhcHBlbnMgaW4g
+dGhlIG5hcGkgcG9sbCBjYWxsYmFjay4gKi8KPiA+ICtzdGF0aWMgaXJxcmV0dXJuX3QgbXRrX21h
+Y19oYW5kbGVfaXJxKGludCBpcnEsIHZvaWQgKmRhdGEpCj4gPiArewo+ID4gKyAgICAgICBzdHJ1
+Y3QgbXRrX21hY19wcml2ICpwcml2Owo+ID4gKyAgICAgICBzdHJ1Y3QgbmV0X2RldmljZSAqbmRl
+djsKPiA+ICsKPiA+ICsgICAgICAgbmRldiA9IGRhdGE7Cj4gPiArICAgICAgIHByaXYgPSBuZXRk
+ZXZfcHJpdihuZGV2KTsKPiA+ICsKPiA+ICsgICAgICAgaWYgKG5ldGlmX3J1bm5pbmcobmRldikp
+IHsKPiA+ICsgICAgICAgICAgICAgICBtdGtfbWFjX2ludHJfbWFza19hbGwocHJpdik7Cj4gPiAr
+ICAgICAgICAgICAgICAgbmFwaV9zY2hlZHVsZSgmcHJpdi0+bmFwaSk7Cj4gPiArICAgICAgIH0K
+PiA+ICsKPiA+ICsgICAgICAgcmV0dXJuIElSUV9IQU5ETEVEOwo+Cj4KPiA+ICtzdGF0aWMgaW50
+IG10a19tYWNfbmV0ZGV2X3N0YXJ0X3htaXQoc3RydWN0IHNrX2J1ZmYgKnNrYiwKPiA+ICsgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzdHJ1Y3QgbmV0X2RldmljZSAqbmRldikK
+PiA+ICt7Cj4gPiArICAgICAgIHN0cnVjdCBtdGtfbWFjX3ByaXYgKnByaXYgPSBuZXRkZXZfcHJp
+dihuZGV2KTsKPiA+ICsgICAgICAgc3RydWN0IG10a19tYWNfcmluZyAqcmluZyA9ICZwcml2LT50
+eF9yaW5nOwo+ID4gKyAgICAgICBzdHJ1Y3QgZGV2aWNlICpkZXYgPSBtdGtfbWFjX2dldF9kZXYo
+cHJpdik7Cj4gPiArICAgICAgIHN0cnVjdCBtdGtfbWFjX3JpbmdfZGVzY19kYXRhIGRlc2NfZGF0
+YTsKPiA+ICsKPiA+ICsgICAgICAgZGVzY19kYXRhLmRtYV9hZGRyID0gbXRrX21hY19kbWFfbWFw
+X3R4KHByaXYsIHNrYik7Cj4gPiArICAgICAgIGlmIChkbWFfbWFwcGluZ19lcnJvcihkZXYsIGRl
+c2NfZGF0YS5kbWFfYWRkcikpCj4gPiArICAgICAgICAgICAgICAgZ290byBlcnJfZHJvcF9wYWNr
+ZXQ7Cj4gPiArCj4gPiArICAgICAgIGRlc2NfZGF0YS5za2IgPSBza2I7Cj4gPiArICAgICAgIGRl
+c2NfZGF0YS5sZW4gPSBza2ItPmxlbjsKPiA+ICsKPiA+ICsgICAgICAgbXRrX21hY19sb2NrKHBy
+aXYpOwo+ID4gKyAgICAgICBtdGtfbWFjX3JpbmdfcHVzaF9oZWFkX3R4KHJpbmcsICZkZXNjX2Rh
+dGEpOwo+ID4gKwo+ID4gKyAgICAgICBpZiAobXRrX21hY19yaW5nX2Z1bGwocmluZykpCj4gPiAr
+ICAgICAgICAgICAgICAgbmV0aWZfc3RvcF9xdWV1ZShuZGV2KTsKPiA+ICsgICAgICAgbXRrX21h
+Y191bmxvY2socHJpdik7Cj4gPiArCj4gPiArICAgICAgIG10a19tYWNfZG1hX3Jlc3VtZV90eChw
+cml2KTsKPiA+ICsKPiA+ICsgICAgICAgcmV0dXJuIE5FVERFVl9UWF9PSzsKPiA+ICsKPiA+ICtl
+cnJfZHJvcF9wYWNrZXQ6Cj4gPiArICAgICAgIGRldl9rZnJlZV9za2Ioc2tiKTsKPiA+ICsgICAg
+ICAgbmRldi0+c3RhdHMudHhfZHJvcHBlZCsrOwo+ID4gKyAgICAgICByZXR1cm4gTkVUREVWX1RY
+X0JVU1k7Cj4gPiArfQo+Cj4gSSB3b3VsZCBhbHdheXMgYWRkIEJRTCBmbG93IGNvbnRyb2wgaW4g
+bmV3IGRyaXZlcnMsIHVzaW5nCj4gbmV0ZGV2X3NlbnRfcXVldWUgaGVyZS4uLgo+CgpPaywgd2ls
+bCBkby4KCj4gPiArc3RhdGljIGludCBtdGtfbWFjX3R4X2NvbXBsZXRlX29uZShzdHJ1Y3QgbXRr
+X21hY19wcml2ICpwcml2KQo+ID4gK3sKPiA+ICsgICAgICAgc3RydWN0IG10a19tYWNfcmluZyAq
+cmluZyA9ICZwcml2LT50eF9yaW5nOwo+ID4gKyAgICAgICBzdHJ1Y3QgbXRrX21hY19yaW5nX2Rl
+c2NfZGF0YSBkZXNjX2RhdGE7Cj4gPiArICAgICAgIGludCByZXQ7Cj4gPiArCj4gPiArICAgICAg
+IHJldCA9IG10a19tYWNfcmluZ19wb3BfdGFpbChyaW5nLCAmZGVzY19kYXRhKTsKPiA+ICsgICAg
+ICAgaWYgKHJldCkKPiA+ICsgICAgICAgICAgICAgICByZXR1cm4gcmV0Owo+ID4gKwo+ID4gKyAg
+ICAgICBtdGtfbWFjX2RtYV91bm1hcF90eChwcml2LCAmZGVzY19kYXRhKTsKPiA+ICsgICAgICAg
+ZGV2X2tmcmVlX3NrYl9pcnEoZGVzY19kYXRhLnNrYik7Cj4gPiArCj4gPiArICAgICAgIHJldHVy
+biAwOwo+ID4gK30KPgo+IC4uLiBhbmQgbmV0ZGV2X2NvbXBsZXRlZF9xdWV1ZSgpICBoZXJlLgo+
+CgpTYW1lIGhlcmUuCgo+ID4gK3N0YXRpYyB2b2lkIG10a19tYWNfdHhfY29tcGxldGVfYWxsKHN0
+cnVjdCBtdGtfbWFjX3ByaXYgKnByaXYpCj4gPiArewo+ID4gKyAgICAgICBzdHJ1Y3QgbXRrX21h
+Y19yaW5nICpyaW5nID0gJnByaXYtPnR4X3Jpbmc7Cj4gPiArICAgICAgIHN0cnVjdCBuZXRfZGV2
+aWNlICpuZGV2ID0gcHJpdi0+bmRldjsKPiA+ICsgICAgICAgaW50IHJldDsKPiA+ICsKPiA+ICsg
+ICAgICAgZm9yICg7Oykgewo+ID4gKyAgICAgICAgICAgICAgIG10a19tYWNfbG9jayhwcml2KTsK
+PiA+ICsKPiA+ICsgICAgICAgICAgICAgICBpZiAoIW10a19tYWNfcmluZ19kZXNjc19hdmFpbGFi
+bGUocmluZykpIHsKPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIG10a19tYWNfdW5sb2NrKHBy
+aXYpOwo+ID4gKyAgICAgICAgICAgICAgICAgICAgICAgYnJlYWs7Cj4gPiArICAgICAgICAgICAg
+ICAgfQo+ID4gKwo+ID4gKyAgICAgICAgICAgICAgIHJldCA9IG10a19tYWNfdHhfY29tcGxldGVf
+b25lKHByaXYpOwo+ID4gKyAgICAgICAgICAgICAgIGlmIChyZXQpIHsKPiA+ICsgICAgICAgICAg
+ICAgICAgICAgICAgIG10a19tYWNfdW5sb2NrKHByaXYpOwo+ID4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgYnJlYWs7Cj4gPiArICAgICAgICAgICAgICAgfQo+ID4gKwo+ID4gKyAgICAgICAgICAg
+ICAgIGlmIChuZXRpZl9xdWV1ZV9zdG9wcGVkKG5kZXYpKQo+ID4gKyAgICAgICAgICAgICAgICAg
+ICAgICAgbmV0aWZfd2FrZV9xdWV1ZShuZGV2KTsKPiA+ICsKPiA+ICsgICAgICAgICAgICAgICBt
+dGtfbWFjX3VubG9jayhwcml2KTsKPiA+ICsgICAgICAgfQo+ID4gK30KPgo+IEl0IGxvb2tzIGxp
+a2UgbW9zdCBvZiB0aGUgc3R1ZmYgaW5zaWRlIG9mIHRoZSBsb29wIGNhbiBiZSBwdWxsZWQgb3V0
+Cj4gYW5kIG9ubHkgZG9uZSBvbmNlIGhlcmUuCj4KCkkgZGlkIHRoYXQgaW4gb25lIG9mIHRoZSBw
+cmV2aW91cyBzdWJtaXNzaW9ucyBidXQgaXQgd2FzIHBvaW50ZWQgb3V0CnRvIG1lIHRoYXQgYSBw
+YXJhbGxlbCBUWCBwYXRoIG1heSBmaWxsIHVwIHRoZSBxdWV1ZSBiZWZvcmUgSSB3YWtlIGl0LgoK
+PiA+ICtzdGF0aWMgaW50IG10a19tYWNfcG9sbChzdHJ1Y3QgbmFwaV9zdHJ1Y3QgKm5hcGksIGlu
+dCBidWRnZXQpCj4gPiArewo+ID4gKyAgICAgICBzdHJ1Y3QgbXRrX21hY19wcml2ICpwcml2Owo+
+ID4gKyAgICAgICB1bnNpZ25lZCBpbnQgc3RhdHVzOwo+ID4gKyAgICAgICBpbnQgcmVjZWl2ZWQg
+PSAwOwo+ID4gKwo+ID4gKyAgICAgICBwcml2ID0gY29udGFpbmVyX29mKG5hcGksIHN0cnVjdCBt
+dGtfbWFjX3ByaXYsIG5hcGkpOwo+ID4gKwo+ID4gKyAgICAgICBzdGF0dXMgPSBtdGtfbWFjX2lu
+dHJfcmVhZF9hbmRfY2xlYXIocHJpdik7Cj4gPiArCj4gPiArICAgICAgIC8qIENsZWFuIHVwIFRY
+ICovCj4gPiArICAgICAgIGlmIChzdGF0dXMgJiBNVEtfTUFDX0JJVF9JTlRfU1RTX1ROVEMpCj4g
+PiArICAgICAgICAgICAgICAgbXRrX21hY190eF9jb21wbGV0ZV9hbGwocHJpdik7Cj4gPiArCj4g
+PiArICAgICAgIC8qIFJlY2VpdmUgdXAgdG8gJGJ1ZGdldCBwYWNrZXRzICovCj4gPiArICAgICAg
+IGlmIChzdGF0dXMgJiBNVEtfTUFDX0JJVF9JTlRfU1RTX0ZOUkMpCj4gPiArICAgICAgICAgICAg
+ICAgcmVjZWl2ZWQgPSBtdGtfbWFjX3Byb2Nlc3NfcngocHJpdiwgYnVkZ2V0KTsKPiA+ICsKPiA+
+ICsgICAgICAgLyogT25lIG9mIHRoZSBjb3VudGVyIHJlYWNoZWQgMHg4MDAwMDAwIC0gdXBkYXRl
+IHN0YXRzIGFuZCByZXNldCBhbGwKPiA+ICsgICAgICAgICogY291bnRlcnMuCj4gPiArICAgICAg
+ICAqLwo+ID4gKyAgICAgICBpZiAoc3RhdHVzICYgTVRLX01BQ19SRUdfSU5UX1NUU19NSUJfQ05U
+X1RIKSB7Cj4gPiArICAgICAgICAgICAgICAgbXRrX21hY191cGRhdGVfc3RhdHMocHJpdik7Cj4g
+PiArICAgICAgICAgICAgICAgbXRrX21hY19yZXNldF9jb3VudGVycyhwcml2KTsKPiA+ICsgICAg
+ICAgfQo+ID4gKwo+ID4gKyAgICAgICBpZiAocmVjZWl2ZWQgPCBidWRnZXQpCj4gPiArICAgICAg
+ICAgICAgICAgbmFwaV9jb21wbGV0ZV9kb25lKG5hcGksIHJlY2VpdmVkKTsKPiA+ICsKPiA+ICsg
+ICAgICAgbXRrX21hY19pbnRyX3VubWFza19hbGwocHJpdik7Cj4gPiArCj4gPiArICAgICAgIHJl
+dHVybiByZWNlaXZlZDsKPiA+ICt9Cj4KPiBJIHRoaW5rIHlvdSB3YW50IHRvIGxlYXZlIChhdCBs
+ZWFzdCBzb21lIG9mKSB0aGUgaW50ZXJydXB0cyBtYXNrZWQKPiBpZiB5b3VyIGJ1ZGdldCBpcyBl
+eGhhdXN0ZWQsIHRvIGF2b2lkIGdlbmVyYXRpbmcgdW5uZWNlc3NhcnkKPiBpcnFzLgo+CgpUaGUg
+bmV0d29ya2luZyBzdGFjayBzaG91bGRuJ3QgcXVldWUgYW55IG5ldyBUWCBwYWNrZXRzIGlmIHRo
+ZSBxdWV1ZQppcyBzdG9wcGVkIC0gaXMgdGhpcyByZWFsbHkgd29ydGggY29tcGxpY2F0aW5nIHRo
+ZSBjb2RlPyBMb29rcyBsaWtlCnByZW1hdHVyZSBvcHRpbWl6YXRpb24gSU1PLgoKPiBJdCBtYXkg
+YWxzbyBiZSBmYXN0ZXIgdG8gbm90IG1hc2svdW5tYXNrIGF0IGFsbCBidXQganVzdAo+IGNsZWFy
+IHRoZSBpbnRlcnJ1cHRzIHRoYXQgeW91IGhhdmUgZmluaXNoZWQgcHJvY2Vzc2luZwo+CgpCYXJ0
+CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1h
+cm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5v
+cmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0t
+a2VybmVsCg==
