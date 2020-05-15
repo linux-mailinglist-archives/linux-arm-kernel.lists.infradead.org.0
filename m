@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 632DB1D4B67
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:48:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CA6A1D4B6D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 12:49:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zhrvSDit51095pVmjSWkhjyUnbyosNnjMw4XwioD8yw=; b=HZiRNQ967BSioM
-	wpVIjJJgj3S123+KfX1gSOLHke0yI95m0P3eI6HcBsESVvgHyhXzFIaqFH47lD27Ce4L6Y1e8NoWa
-	5sLUrEHECQDgePE55iuBvt3cWhMuQ2VWznhLL2o5mWtMfwf9c84xEl6RthdRbPIzwa6i2wnU3CHEk
-	lmmsgtuQQNdJvwAdIUvDbLUZP6oLfbx6/2O2J7ssScDl0cFT8lynmBzEAeZCsVN1T4QRSt49Anw8L
-	4TOLXKRdwf2NZTf52YKtyQXuerbIyBRKycV7sfIgOJEkBiDeruqHMv3T0Wy8U34a8wPBxJ6BW2IH9
-	TtuWAmCMfY2pVgWtQCsQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AqDTL9hIuYPzDbnPK+PI/8aD5QgUIrgCMFprtwR3Oq0=; b=R2oZMKvIdTOdMi
+	124oGaelmBiqfD6VJao02+wC98aDMCZZjtExTzduWp6pW9HmIOu1FllJA/GRZWjdgukQII1B97rak
+	OaGF1yym68L11+1wNhDfDW/Yi7ME1JmOGASc8Ylqt/Yk/zYDPvJJ95V2H2giUoiCgGCqKb/QTeqVm
+	h9QhoFowmxNQ0Xe+zTqoN8GGjegKjFZNRiE894mK46zTORQCcbUcdzV4QC2OTYU+CfmL0RVVBEt7W
+	xQ276flqYhv7QWQmRZPDpmRMAUIkH9lFqZSIpXAwax2jMst7TaP4xmIWkDbDo1wQRCvu913XfNKKb
+	wih5/0zgglNCoiKMFntg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZXtR-0008Q8-T4; Fri, 15 May 2020 10:48:41 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1jZXtk-00008E-T5; Fri, 15 May 2020 10:49:00 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZXtE-0008ON-Op
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:48:32 +0000
-Received: by mail-wm1-x342.google.com with SMTP id w64so2127640wmg.4
+ id 1jZXtG-0008Ok-P8
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 10:48:34 +0000
+Received: by mail-wm1-x341.google.com with SMTP id k12so1835878wmj.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 03:48:27 -0700 (PDT)
+ Fri, 15 May 2020 03:48:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JpC2phLyyYKF8S2b2HVZs4m4/FDmGsrLmfDUKIq2+XU=;
- b=UTrbu7phaIKvcCKf/Ve9t6teHJmN3bXqWH26QoPA9XW9/eFXVzFMnJd7yXk/ufGYO6
- LG4QvKt9zY+sCvKwdmFzBcalHGa3Rbh1I1KJPJBZ2uxo7jWJ45R6JaMa6XWdcV/GOPKP
- tUYFz3NcWw50UGDz+eyN8vwJ441gSD7aTICtNuV9th4D1crstiW7bfxp9T2fVw7fQuVW
- zm6HtX5EFTwISIAY11pWVRaYj/uaKucP/T7x4kzyFwdv+lmzX80pD+xcYCNelol9g+bb
- h3RQo4K/F8AKExBgzpfQ36PTd1yfEVOKckHXo+e1DxxLcKzCzGN0U7DFyoS7T3y4oQTB
- GuwA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=MESJTjk++c2lj6OjtUD3TbcX3ekoiLAlqLoQdQYenvk=;
+ b=d8QewLSvnJpTn6f8rKB+iC7zL5g4c4zD4gf9Y5c58fo+EWwMkk3YHySYd9hhSQj+R5
+ FtRM7iGqWUoDtBI3d64vkhP3ewTf0dPfnHlNzG1spLfWpiC6bh53mz+VswdP4TIl6iK/
+ IAy+POK20EjpGebSxDJFa8vAl12orzLTbfozqcFuR8eQDkbwT0Jw4Yjn4tVR+qDkqyh7
+ F2xJxcunlRjjcDBXrBsRGayTerKPqgLZn9JGXj0rsSf/599MitB9ROn5P6u02Jw3P7DY
+ klaJCMzuR+677XbhASvrvRdqWHRaKKiH9YxoXbqAtFlvxCeNXzudfnXqKjWk659I3pc4
+ KUlQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=JpC2phLyyYKF8S2b2HVZs4m4/FDmGsrLmfDUKIq2+XU=;
- b=oj0G6Tb/cf97b/xKhKxDBTO72j1D/fCF1mYeRU1kZP8K+1hct3iDO6CvDkAgKte54l
- GaF+JDg6OCw/l1QgIn2xZ5l7ni8V4BbzPlVGQtC96Q1d1gZJclImAoQgEYTCs/2LYYjR
- CZHU/TdObRfUVDssbXcKMFFz7dcOch5wPXr6J57sgLkDfs/jaQqRaZNRV23CoJWZLM3U
- Z9DToFOkQQIZJoiLEBbyu3Zi7KMKhMebeMlb+eMI00yj3pnKKj4UFXjp82B2nAUn9iKE
- zlDP3/zFh1ril7mriEKX9xHZBN92pc/3mhLjVWEn7teJau9IuWrl0FIIQF1Xs/b+LddE
- +WRA==
-X-Gm-Message-State: AOAM530L25PYRJZ71IcFa1OgLHs8sYre4IAtxBOI+kIwyERWRRNMI3ii
- aePq14ItrpRk/XaD7svF4ifUrA==
-X-Google-Smtp-Source: ABdhPJzpE90JsHWFWmiq3DLTcslPe1cuELNW3ZN0iUxPcNk8zGAYa3lMkhSlVxo89SFkbP4lE1f/Ig==
-X-Received: by 2002:a1c:6706:: with SMTP id b6mr3116259wmc.54.1589539706443;
- Fri, 15 May 2020 03:48:26 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=MESJTjk++c2lj6OjtUD3TbcX3ekoiLAlqLoQdQYenvk=;
+ b=Z8NsJLbjpPpa5FwfhOXzVNdvf8hWPKZuI6cKstDhE354G6qfv+2ffE5dj81+K3UlEE
+ Y9+3aos2qN5ASefbnPjziNicu4tVT32BSZuQdpaN3fXNAhkl+kYrRbIHwDI00mDNLtWy
+ x1C8umAu5aG4M4lk5Be8njWCVV7ftw8dkktLduFdxVawYDkh0F2ff2/9PiqAvXGkcNxE
+ 9CNYZ4eFOgC8mALtJfyb86iKZnJBw+iZYpmcD5n4h3qTWL7Atvac4OyHQnv8cNT16z6I
+ 2kGv91j6C+kaSZrkDXAdBNmcqYVC2qyLiALlsir9pbdSFcEaGizpUYBsuQuO0yCfEoGB
+ PK5g==
+X-Gm-Message-State: AOAM5323wbslI1YRzzr/S8r1bwifg0JEctgpxAcAEDyEjZ76OiH/IDmX
+ t/kpUnU3edv6f35GZxOBPfN4Kg==
+X-Google-Smtp-Source: ABdhPJxoIQKh0Dl64xNJbAfP1xeyXsKEMQXWWN7NWj2VTSJfKf04HR+XDlR3TmJZkICfK6ATTtGKnA==
+X-Received: by 2002:a05:600c:2219:: with SMTP id
+ z25mr3356941wml.128.1589539709090; 
+ Fri, 15 May 2020 03:48:29 -0700 (PDT)
 Received: from localhost.localdomain
  ([2001:171b:226e:c200:c43b:ef78:d083:b355])
- by smtp.gmail.com with ESMTPSA id h27sm3510392wrc.46.2020.05.15.03.48.25
+ by smtp.gmail.com with ESMTPSA id h27sm3510392wrc.46.2020.05.15.03.48.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 15 May 2020 03:48:25 -0700 (PDT)
+ Fri, 15 May 2020 03:48:28 -0700 (PDT)
 From: Jean-Philippe Brucker <jean-philippe@linaro.org>
 To: linux-pci@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  iommu@lists.linux-foundation.org, joro@8bytes.org, bhelgaas@google.com
-Subject: [PATCH 0/4] PCI, iommu: Factor 'untrusted' check for ATS enablement
-Date: Fri, 15 May 2020 12:43:58 +0200
-Message-Id: <20200515104359.1178606-1-jean-philippe@linaro.org>
+Subject: [PATCH 1/4] PCI/ATS: Only enable ATS for trusted devices
+Date: Fri, 15 May 2020 12:43:59 +0200
+Message-Id: <20200515104359.1178606-2-jean-philippe@linaro.org>
 X-Mailer: git-send-email 2.26.2
+In-Reply-To: <20200515104359.1178606-1-jean-philippe@linaro.org>
+References: <20200515104359.1178606-1-jean-philippe@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_034828_803221_5BA2E3BC 
-X-CRM114-Status: UNSURE (   8.91  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200515_034830_810729_33C61F74 
+X-CRM114-Status: GOOD (  14.66  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,36 +107,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I sent these in March as part of ATS enablement for device-tree [1], but
-haven't found the time to address the largest comment on that series
-about consolidating the root bridge ATS support between the different
-ACPI tables.
+Add pci_ats_supported(), which checks whether a device has an ATS
+capability, and whether it is trusted.  A device is untrusted if it is
+plugged into an external-facing port such as Thunderbolt and could be
+spoof an existing device to exploit weaknesses in the IOMMU
+configuration.  PCIe ATS is one such weaknesses since it allows
+endpoints to cache IOMMU translations and emit transactions with
+'Translated' Address Type (10b) that partially bypass the IOMMU
+translation.
 
-I'm resending only the bits that consolidate the 'untrusted' check for
-ATS, since there have been more discussions about this [2]. Patch 1
-moves the 'untrusted' check to drivers/pci/ats.c and patches 2-4 modify
-the ATS-capable IOMMU drivers.
+The SMMUv3 and VT-d IOMMU drivers already disallow ATS and transactions
+with 'Translated' Address Type for untrusted devices.  Add the check to
+pci_enable_ats() to let other drivers (AMD IOMMU for now) benefit from
+it.
 
-The only functional change should be to the AMD IOMMU driver. With this
-change all IOMMU drivers block 'Translated' PCIe transactions and
-Translation Requests from untrusted devices.
+By checking ats_cap, the pci_ats_supported() helper also returns whether
+ATS was globally disabled with pci=noats, and could later include more
+things, for example whether the whole PCIe hierarchy down to the
+endpoint supports ATS.
 
-[1] https://lore.kernel.org/linux-iommu/20200311124506.208376-1-jean-philippe@linaro.org/
-[2] https://lore.kernel.org/linux-pci/20200513151929.GA38418@bjorn-Precision-5520/
+Signed-off-by: Jean-Philippe Brucker <jean-philippe@linaro.org>
+---
+ include/linux/pci-ats.h |  3 +++
+ drivers/pci/ats.c       | 18 +++++++++++++++++-
+ 2 files changed, 20 insertions(+), 1 deletion(-)
 
-Jean-Philippe Brucker (4):
-  PCI/ATS: Only enable ATS for trusted devices
-  iommu/amd: Use pci_ats_supported()
-  iommu/arm-smmu-v3: Use pci_ats_supported()
-  iommu/vt-d: Use pci_ats_supported()
-
- include/linux/pci-ats.h     |  3 +++
- drivers/iommu/amd_iommu.c   | 12 ++++--------
- drivers/iommu/arm-smmu-v3.c | 20 +++++---------------
- drivers/iommu/intel-iommu.c |  9 +++------
- drivers/pci/ats.c           | 18 +++++++++++++++++-
- 5 files changed, 32 insertions(+), 30 deletions(-)
-
+diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
+index d08f0869f1213e..f75c307f346de9 100644
+--- a/include/linux/pci-ats.h
++++ b/include/linux/pci-ats.h
+@@ -6,11 +6,14 @@
+ 
+ #ifdef CONFIG_PCI_ATS
+ /* Address Translation Service */
++bool pci_ats_supported(struct pci_dev *dev);
+ int pci_enable_ats(struct pci_dev *dev, int ps);
+ void pci_disable_ats(struct pci_dev *dev);
+ int pci_ats_queue_depth(struct pci_dev *dev);
+ int pci_ats_page_aligned(struct pci_dev *dev);
+ #else /* CONFIG_PCI_ATS */
++static inline bool pci_ats_supported(struct pci_dev *d)
++{ return false; }
+ static inline int pci_enable_ats(struct pci_dev *d, int ps)
+ { return -ENODEV; }
+ static inline void pci_disable_ats(struct pci_dev *d) { }
+diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
+index 390e92f2d8d1fc..15fa0c37fd8e44 100644
+--- a/drivers/pci/ats.c
++++ b/drivers/pci/ats.c
+@@ -30,6 +30,22 @@ void pci_ats_init(struct pci_dev *dev)
+ 	dev->ats_cap = pos;
+ }
+ 
++/**
++ * pci_ats_supported - check if the device can use ATS
++ * @dev: the PCI device
++ *
++ * Returns true if the device supports ATS and is allowed to use it, false
++ * otherwise.
++ */
++bool pci_ats_supported(struct pci_dev *dev)
++{
++	if (!dev->ats_cap)
++		return false;
++
++	return !dev->untrusted;
++}
++EXPORT_SYMBOL_GPL(pci_ats_supported);
++
+ /**
+  * pci_enable_ats - enable the ATS capability
+  * @dev: the PCI device
+@@ -42,7 +58,7 @@ int pci_enable_ats(struct pci_dev *dev, int ps)
+ 	u16 ctrl;
+ 	struct pci_dev *pdev;
+ 
+-	if (!dev->ats_cap)
++	if (!pci_ats_supported(dev))
+ 		return -EINVAL;
+ 
+ 	if (WARN_ON(dev->ats_enabled))
 -- 
 2.26.2
 
