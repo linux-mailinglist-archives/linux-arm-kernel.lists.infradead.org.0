@@ -2,92 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBD381D4974
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:25:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57CDC1D4973
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 15 May 2020 11:25:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RQBSuVBS1xt+1omp/P7bvsHjr9zjQf2rSlAzRLemVXE=; b=Ky925bfCfYEZ+m
-	zmMGnpM8+i10u5lpbk6uJghw5ukGrPyjQ0V3qauLYTuUX+a+bAJWeMRV5+V9+68Oya3+T9RWXRa11
-	L6Q4DGEr+FErS87ztTqdG5SNlsBOydm+nmef0Gum38vA6OMsorI2LcYBP59Y5ON/tHuwhN/hXX7WS
-	S588ggzMFjg6EyswvCpwVlJ7XmdQzC1InMk1RGP2Nh2L3y3TfrD8P/VAsNsNxnmlwrdbNpK5IruFN
-	79wVhV/Gsqk3nDQWqC+RAkivRP/vrmt3IFn1VOHCk71Dt8cPYBOansJ655mrFoagwId3W8QdgUTPV
-	dHgugUWCylQQ5sMEWzPQ==;
+	List-Owner; bh=xeTWLOlg7SUTXvxBGcPw/ddmCga/oZw/Mbij99Pd3uU=; b=QHRNo9rIQJ5eEK
+	2x/VKGwX6r2FifMXuSxCiopoh/VwAvtq7i00EVSUyYgkd5Cxox4snkTxycY5WDPhiCTecMTSyj3uI
+	r9m+GkEn6TvyxqWwEFwLfZZMI+5aAf8l3S4rn3OyhUPEpn+aBdMpj6KPFFUc2w42jPh7YLkBbHUuP
+	STZPxDZSq/BQFaonsKmnVsdohhKL3jR8eYogZqc0Y8RrOaWkP/LPXdxXqpG3I0X/WpYknkUfJa8ri
+	6F28My9kFQwXcixO0mh6ieZkghqcUdVCxeuC8Iz/yFnCpwNucSpgaLGdQnOYyJZxh03LU42TQsdxi
+	veKtSDXJJbehSEQ3OSOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jZWay-0005Dw-71; Fri, 15 May 2020 09:25:32 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
- by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jZWaa-0003yn-DV
- for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:25:12 +0000
-Received: by mail-io1-xd41.google.com with SMTP id o5so1854295iow.8
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 15 May 2020 02:25:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Cc4MG6c747g2GpEAJm056wqMJo63ltnWhdsdBk/YjvU=;
- b=ScyKUI9YtsU9p9A901j1O1w7H7TdnTlwcnuWzKYRo3T+bqoIZc8vOQ9X95sdz82tnm
- urIdlt/GUp9Yfq/9xFWZj8mjEJR05XCX47NoY/P6Qt0R26F6a4+luq3nyePE1nmFInMi
- 6BAfAKoBoWEhG6za8fIQD/VCbuJv1yUxDeWf/yoarFgULSJjRsGjQawtvMMXahIIItR+
- KspUduc8eOvKKZ1LH2ZaKUn870ew37S9JgdauJkgRN1oLquW5K4IJPZ6HqXyZzq+NGxx
- sE/WbC8Y9Ybw+RAytAcJEnTXxxp56g590pE4tr+7ttn7UIBYdlYCf8fDbzQ8qu7KV+M1
- 0QRA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Cc4MG6c747g2GpEAJm056wqMJo63ltnWhdsdBk/YjvU=;
- b=PnYKSk85F5qCk9VQrQ6LzLDu3WOMUrA9wP06EYOFAN7xyYx3Tdcslkc76VUbFQIxlx
- Vcu471+O4oz8xW7du1SdHXrKfQxfJ/VFtlVX0Vcwy4u67mTWNMTw0Edq8u9ewM+e3Hy7
- HvBbHTzZWMOJ/rvDEHin1JY+jpzCYFzP1diaJNk0ZbrAiJ/r6yxyVVjr39APae8mdfK3
- 4XEbr29ohL4xhxv3jeTMbbk6B9krgAe1pfck6CWbm5+bD59XT8bFheiQNH/FGuLc/Hrs
- ll26lU3ALlbRwRasuIsUaJ/N+1HLevSDIGgo9HupRt5t+ae1NNoaTHVIFMFcEcGM3lk8
- reFw==
-X-Gm-Message-State: AOAM530oh1FWdwi98TL+4ZUwK8ShN3+/faZwjKbk5BjZnvaLBswiPZrN
- 04nXTufTG/EMKmIRFru4lLhIPpWR8KV0ppii83w=
-X-Google-Smtp-Source: ABdhPJyr7Q+WoA1oeyUp1TGmDyNR7js+O5d1aEorqbluWDehBMJqofjEnccsNnqBusTGHRHYyHOE+n76LGnfJ7BM2as=
-X-Received: by 2002:a05:6638:1121:: with SMTP id
- f1mr2281062jar.62.1589534706577; 
- Fri, 15 May 2020 02:25:06 -0700 (PDT)
+	id 1jZWam-0004lZ-F1; Fri, 15 May 2020 09:25:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1jZWaW-0003I8-Ni
+ for linux-arm-kernel@lists.infradead.org; Fri, 15 May 2020 09:25:08 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C428C2F;
+ Fri, 15 May 2020 02:25:03 -0700 (PDT)
+Received: from bogus (unknown [10.37.12.6])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF31D3F71E;
+ Fri, 15 May 2020 02:25:00 -0700 (PDT)
+Date: Fri, 15 May 2020 10:24:57 +0100
+From: Sudeep Holla <sudeep.holla@arm.com>
+To: Etienne Carriere <etienne.carriere@linaro.org>
+Subject: Re: [PATCH 2/2] firmware: psci: support SMCCC v1.2 for SMCCC conduit
+Message-ID: <20200515092457.GB23671@bogus>
+References: <20200514082109.27573-1-etienne.carriere@linaro.org>
+ <20200514082109.27573-2-etienne.carriere@linaro.org>
+ <20200514142442.GB23401@bogus>
+ <CAN5uoS9gZ7820Fg-6dmm4BO5GW+Y6D3O5Xt3gUQtYVZGafm_XA@mail.gmail.com>
 MIME-Version: 1.0
-References: <1589267017-17294-1-git-send-email-dillon.minfei@gmail.com>
- <1589267017-17294-4-git-send-email-dillon.minfei@gmail.com>
- <CACRpkda5VjjBdbruXTi33QBNb=VU6vK2zDE8yyQXoWw7=NQFeg@mail.gmail.com>
- <a4ebd7cd-5756-0683-135f-0f96be8a4a7b@st.com>
- <CAL9mu0Jt_xwo5pJfcx6G3grBuOaxLXvakpEjiB4gV3=bkiq2fg@mail.gmail.com>
- <818b93b4-4431-8338-cd90-ed125ecac615@st.com>
-In-Reply-To: <818b93b4-4431-8338-cd90-ed125ecac615@st.com>
-From: dillon min <dillon.minfei@gmail.com>
-Date: Fri, 15 May 2020 17:24:29 +0800
-Message-ID: <CAL9mu0L6d2V5qypPfOSeMdhc=DdHkcsaF4GysNG-vfDe5npkhw@mail.gmail.com>
-Subject: Re: [Linux-stm32] [PATCH v3 3/5] ARM: dts: stm32: enable ltdc binding
- with ili9341 on stm32429-disco board
-To: Benjamin GAIGNARD <benjamin.gaignard@st.com>
+Content-Disposition: inline
+In-Reply-To: <CAN5uoS9gZ7820Fg-6dmm4BO5GW+Y6D3O5Xt3gUQtYVZGafm_XA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200515_022508_477639_1AFFCD94 
-X-CRM114-Status: GOOD (  23.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20200515_022504_841201_F849BA19 
+X-CRM114-Status: GOOD (  18.86  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [217.140.110.172 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [dillon.minfei[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,116 +65,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Alexandre TORGUE <alexandre.torgue@st.com>,
- Michael Turquette <mturquette@baylibre.com>, Dave Airlie <airlied@linux.ie>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:DRM PANEL DRIVERS" <dri-devel@lists.freedesktop.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>, Stephen Boyd <sboyd@kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "thierry.reding@gmail.com" <thierry.reding@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Daniel Vetter <daniel@ffwll.ch>, Sam Ravnborg <sam@ravnborg.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, lorenzo.pieralisi@arm.com,
+ maz@kernel.org, linux-kernel@vger.kernel.org,
+ Steven Price <steven.price@arm.com>, alexios.zavras@intel.com,
+ Thomas Gleixner <tglx@linutronix.de>, will@kernel.org,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Benjamin,
-
-thanks for reply.
-
-On Fri, May 15, 2020 at 4:31 PM Benjamin GAIGNARD
-<benjamin.gaignard@st.com> wrote:
->
->
->
-> On 5/14/20 3:07 PM, dillon min wrote:
-> > Hi Alexandre,
+On Thu, May 14, 2020 at 04:56:53PM +0200, Etienne Carriere wrote:
+> On Thu, 14 May 2020 at 16:24, Sudeep Holla <sudeep.holla@arm.com> wrote:
 > >
-> > On Thu, May 14, 2020 at 8:53 PM Alexandre Torgue
-> > <alexandre.torgue@st.com> wrote:
-> >>
-> >>
-> >> On 5/14/20 10:24 AM, Linus Walleij wrote:
-> >>> On Tue, May 12, 2020 at 9:04 AM <dillon.minfei@gmail.com> wrote:
-> >>>
-> >>>> From: dillon min <dillon.minfei@gmail.com>
-> >>>>
-> >>>> Enable the ltdc & ili9341 on stm32429-disco board.
-> >>>>
-> >>>> Signed-off-by: dillon min <dillon.minfei@gmail.com>
-> >>> This mostly looks good but...
-> >>>
-> >>>> +&spi5 {
-> >>>> +       status = "okay";
-> >>>> +       pinctrl-0 = <&spi5_pins>;
-> >>>> +       pinctrl-names = "default";
-> >>>> +       #address-cells = <1>;
-> >>>> +       #size-cells = <0>;
-> >>>> +       cs-gpios = <&gpioc 2 GPIO_ACTIVE_LOW>;
-> >>>> +       dmas = <&dma2 3 2 0x400 0x0>,
-> >>>> +              <&dma2 4 2 0x400 0x0>;
-> >>>> +       dma-names = "rx", "tx";
-> >>> These DMA assignments seem to be SoC things and should
-> >>> rather be in the DTS(I) file where &spi5 is defined, right?
-> >>> stm32f429.dtsi I suppose?
-> >> I agree with Linus, DMA have to be defined in SoC dtsi. And if a board
-> >> doesn't want to use it, we use the "delete-property".
-> > Yes, will move to Soc dtsi in next submits.
+> > On Thu, May 14, 2020 at 10:21:09AM +0200, Etienne Carriere wrote:
+> > > Update PSCI driver to support SMCCC v1.2 reported by secure firmware
+> > > and indirectly make SMCCC conduit properly set when so. TF-A release
+> > > v2.3 implements and reports SMCCC v1.2 since commit [1].
+> > >
+> > > Link: [1] https://git.trustedfirmware.org/TF-A/trusted-firmware-a.git/commit/?id=e34cc0cedca6e229847c232fe58d37fad2610ce9
+> > > Signed-off-by: Etienne Carriere <etienne.carriere@linaro.org>
+> > > ---
+> > >  drivers/firmware/psci/psci.c | 14 ++++++++++----
+> > >  include/linux/psci.h         |  1 +
+> > >  2 files changed, 11 insertions(+), 4 deletions(-)
+> > >
+> > > diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+> > > index 2937d44b5df4..80cf73bea4b0 100644
+> > > --- a/drivers/firmware/psci/psci.c
+> > > +++ b/drivers/firmware/psci/psci.c
+> > > @@ -409,11 +409,17 @@ static void __init psci_init_smccc(void)
+> > >       feature = psci_features(ARM_SMCCC_VERSION_FUNC_ID);
+> > >
+> > >       if (feature != PSCI_RET_NOT_SUPPORTED) {
+> > > -             u32 ret;
+> > > -             ret = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
+> > > -             if (ret == ARM_SMCCC_VERSION_1_1) {
+> > > +             ver = invoke_psci_fn(ARM_SMCCC_VERSION_FUNC_ID, 0, 0, 0);
+> > > +
+> > > +             switch (ver) {
+> > > +             case ARM_SMCCC_VERSION_1_1:
+> > >                       psci_ops.smccc_version = SMCCC_VERSION_1_1;
+> > > -                     ver = ret;
+> > > +                     break;
+> > > +             case ARM_SMCCC_VERSION_1_2:
+> > > +                     psci_ops.smccc_version = SMCCC_VERSION_1_2;
+> > > +                     break;
+> > > +             default:
+> > > +                     break;
+> > >               }
+> > >       }
+> > >
+> > > diff --git a/include/linux/psci.h b/include/linux/psci.h
+> > > index a67712b73b6c..c7d99b7f34ed 100644
+> > > --- a/include/linux/psci.h
+> > > +++ b/include/linux/psci.h
+> > > @@ -24,6 +24,7 @@ bool psci_has_osi_support(void);
+> > >  enum smccc_version {
+> > >       SMCCC_VERSION_1_0,
+> > >       SMCCC_VERSION_1_1,
+> > > +     SMCCC_VERSION_1_2,
 > >
-> > i'm working on write a v4l2-m2m driver for dma2d of stm32 to support
-> > pixel conversion
-> > alpha blending between foreground and background graphics.
-> >
-> > as you know, some soc's engineer trying to add this function to drm system.
-> >
-> > do you know st's planning about soc's hardware accelerator driver on stm32mp?
-> > such as chrom-art, will add to drm subsystem via ioctl to access, or to v4l2,
-> On stm32mp we do not plan to use chrom-art in drm or v4l2 because it
-> does fit
-> with userland way of working. We use the GPU to do conversion, scaling,
-> blending
-> and composition in only one go.
-> As explain here [1] DRM subsytem it isn't a solution and v4l2-m2m isn't
-> used in any
-> mainline compositors like Weston or android surfaceflinger.
+> > I took approach to kill this completely [1] instead of having to keep
+> > expanding it for ever.
 >
-> Benjamin
+> Yes, I've been pointed to [1]. Discard this change. Sorry for the
+> (little) noise.
 >
 
-After check stm32mp's datasheets, they don't have chrom-art ip inside. sorry for
-didn't check it yet.
+No worries, it's not a noise, just different approach.
 
-for stm32h7 series with chrom-art, jpeg hardware accelerator inside.
-does st has plan to
-setup a driver to support it ? i prefer v4l2-m2m should be easier to
-implement it.
-co work with dcmi, fbdev.
-
-thanks.
-
-best regards.
-
-Dillon
-> [1]
-> https://www.phoronix.com/scan.php?page=news_item&px=Linux-DRM-No-2D-Accel-API
-> >
-> > thanks.
-> >
-> >>> It is likely the same no matter which device is using spi5.
-> >>>
-> >>> Yours,
-> >>> Linus Walleij
-> >>>
-> > _______________________________________________
-> > Linux-stm32 mailing list
-> > Linux-stm32@st-md-mailman.stormreply.com
-> > https://st-md-mailman.stormreply.com/mailman/listinfo/linux-stm32
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
